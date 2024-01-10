@@ -179,11 +179,11 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
+        ///  <c>SSE-KMS</c> - Server-side encryption with keys managed by KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.
+        ///  <c>SSE-S3</c> - Server-side encryption with keys managed by Amazon S3.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -464,7 +464,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.
+        /// period ends with a status of <c>TIMEOUT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -487,12 +487,12 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROFILE</code> - The job analyzes the dataset to determine its size, data types,
+        ///  <c>PROFILE</c> - The job analyzes the dataset to determine its size, data types,
         /// data distribution, and more.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RECIPE</code> - The job applies one or more transformations to a dataset.
+        ///  <c>RECIPE</c> - The job applies one or more transformations to a dataset.
         /// </para>
         ///  </li> </ul>
         /// </summary>

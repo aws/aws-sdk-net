@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeModel operation.
-    /// Describes a model that you created using the <code>CreateModel</code> API.
+    /// Describes a model that you created using the <c>CreateModel</c> API.
     /// </summary>
     public partial class DescribeModelRequest : AmazonSageMakerRequest
     {

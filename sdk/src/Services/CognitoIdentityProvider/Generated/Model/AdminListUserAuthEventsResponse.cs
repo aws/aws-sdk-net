@@ -39,8 +39,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthEvents. 
         /// <para>
-        /// The response object. It includes the <code>EventID</code>, <code>EventType</code>,
-        /// <code>CreationDate</code>, <code>EventRisk</code>, and <code>EventResponse</code>.
+        /// The response object. It includes the <c>EventID</c>, <c>EventType</c>, <c>CreationDate</c>,
+        /// <c>EventRisk</c>, and <c>EventResponse</c>.
         /// </para>
         /// </summary>
         public List<AuthEventType> AuthEvents

@@ -37,8 +37,8 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use the <code>ListJobs</code> operation, you must have permission to perform the
-    /// <code>s3:ListJobs</code> action.
+    /// To use the <c>ListJobs</c> operation, you must have permission to perform the <c>s3:ListJobs</c>
+    /// action.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -95,8 +95,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property JobStatuses. 
         /// <para>
-        /// The <code>List Jobs</code> request returns jobs that match the statuses listed in
-        /// this element.
+        /// The <c>List Jobs</c> request returns jobs that match the statuses listed in this element.
         /// </para>
         /// </summary>
         public List<string> JobStatuses
@@ -114,10 +113,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of jobs that Amazon S3 will include in the <code>List Jobs</code>
-        /// response. If there are more jobs than this number, the response will include a pagination
-        /// token in the <code>NextToken</code> field to enable you to retrieve the next page
-        /// of results.
+        /// The maximum number of jobs that Amazon S3 will include in the <c>List Jobs</c> response.
+        /// If there are more jobs than this number, the response will include a pagination token
+        /// in the <c>NextToken</c> field to enable you to retrieve the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -137,8 +135,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token to request the next page of results. Use the token that Amazon
-        /// S3 returned in the <code>NextToken</code> element of the <code>ListJobsResult</code>
-        /// from the previous <code>List Jobs</code> request.
+        /// S3 returned in the <c>NextToken</c> element of the <c>ListJobsResult</c> from the
+        /// previous <c>List Jobs</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

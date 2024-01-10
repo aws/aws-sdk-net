@@ -58,8 +58,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property EnableAnswerMachineDetection. 
         /// <para>
         /// The flag to indicate if answer machine detection analysis needs to be performed for
-        /// a voice call. If set to <code>true</code>, <code>TrafficType</code> must be set as
-        /// <code>CAMPAIGN</code>. 
+        /// a voice call. If set to <c>true</c>, <c>TrafficType</c> must be set as <c>CAMPAIGN</c>.
+        /// 
         /// </para>
         /// </summary>
         public bool EnableAnswerMachineDetection

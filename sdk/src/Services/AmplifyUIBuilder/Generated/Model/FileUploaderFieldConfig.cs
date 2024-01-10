@@ -64,9 +64,9 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property AccessLevel. 
         /// <para>
         /// The access level to assign to the uploaded files in the Amazon S3 bucket where they
-        /// are stored. The valid values for this property are <code>private</code>, <code>protected</code>,
-        /// or <code>public</code>. For detailed information about the permissions associated
-        /// with each access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File
+        /// are stored. The valid values for this property are <c>private</c>, <c>protected</c>,
+        /// or <c>public</c>. For detailed information about the permissions associated with each
+        /// access level, see <a href="https://docs.amplify.aws/lib/storage/configureaccess/q/platform/js/">File
         /// access levels</a> in the <i>Amplify documentation</i>.
         /// </para>
         /// </summary>
@@ -86,13 +86,13 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property IsResumable. 
         /// <para>
-        /// Allows the file upload operation to be paused and resumed. The default value is <code>false</code>.
+        /// Allows the file upload operation to be paused and resumed. The default value is <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// When <code>isResumable</code> is set to <code>true</code>, the file uploader uses
-        /// a multipart upload to break the files into chunks before upload. The progress of the
-        /// upload isn't continuous, because the file uploader uploads a chunk at a time.
+        /// When <c>isResumable</c> is set to <c>true</c>, the file uploader uses a multipart
+        /// upload to break the files into chunks before upload. The progress of the upload isn't
+        /// continuous, because the file uploader uploads a chunk at a time.
         /// </para>
         /// </summary>
         public bool IsResumable
@@ -149,7 +149,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property ShowThumbnails. 
         /// <para>
         /// Specifies whether to display or hide the image preview after selecting a file for
-        /// upload. The default value is <code>true</code> to display the image preview.
+        /// upload. The default value is <c>true</c> to display the image preview.
         /// </para>
         /// </summary>
         public bool ShowThumbnails

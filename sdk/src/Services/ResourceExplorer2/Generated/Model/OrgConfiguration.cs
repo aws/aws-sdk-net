@@ -41,8 +41,8 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property AWSServiceAccessStatus. 
         /// <para>
-        /// This value displays whether your Amazon Web Services service access is <code>ENABLED</code>
-        /// or <code>DISABLED</code>.
+        /// This value displays whether your Amazon Web Services service access is <c>ENABLED</c>
+        /// or <c>DISABLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

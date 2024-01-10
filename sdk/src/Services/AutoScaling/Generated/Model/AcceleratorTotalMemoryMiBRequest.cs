@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Specifies the minimum and maximum for the <code>AcceleratorTotalMemoryMiB</code> object
+    /// Specifies the minimum and maximum for the <c>AcceleratorTotalMemoryMiB</c> object
     /// when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
     /// </summary>
     public partial class AcceleratorTotalMemoryMiBRequest

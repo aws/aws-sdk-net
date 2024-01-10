@@ -32,7 +32,7 @@ namespace Amazon.SSOOIDC.Model
     /// Container for the parameters to the CreateTokenWithIAM operation.
     /// Creates and returns access and refresh tokens for clients and applications that are
     /// authenticated using IAM entities. The access token can be used to fetch short-term
-    /// credentials for the assigned AWS accounts or to access application APIs using <code>bearer</code>
+    /// credentials for the assigned AWS accounts or to access application APIs using <c>bearer</c>
     /// authentication.
     /// </summary>
     public partial class CreateTokenWithIAMRequest : AmazonSSOOIDCRequest
@@ -119,19 +119,19 @@ namespace Amazon.SSOOIDC.Model
         /// </para>
         ///  
         /// <para>
-        /// * Authorization Code - <code>authorization_code</code> 
+        /// * Authorization Code - <c>authorization_code</c> 
         /// </para>
         ///  
         /// <para>
-        /// * Refresh Token - <code>refresh_token</code> 
+        /// * Refresh Token - <c>refresh_token</c> 
         /// </para>
         ///  
         /// <para>
-        /// * JWT Bearer - <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code> 
+        /// * JWT Bearer - <c>urn:ietf:params:oauth:grant-type:jwt-bearer</c> 
         /// </para>
         ///  
         /// <para>
-        /// * Token Exchange - <code>urn:ietf:params:oauth:grant-type:token-exchange</code> 
+        /// * Token Exchange - <c>urn:ietf:params:oauth:grant-type:token-exchange</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -202,11 +202,11 @@ namespace Amazon.SSOOIDC.Model
         /// </para>
         ///  
         /// <para>
-        /// * Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> 
+        /// * Access Token - <c>urn:ietf:params:oauth:token-type:access_token</c> 
         /// </para>
         ///  
         /// <para>
-        /// * Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> 
+        /// * Refresh Token - <c>urn:ietf:params:oauth:token-type:refresh_token</c> 
         /// </para>
         /// </summary>
         public string RequestedTokenType
@@ -227,7 +227,7 @@ namespace Amazon.SSOOIDC.Model
         /// The list of scopes for which authorization is requested. The access token that is
         /// issued is limited to the scopes that are granted. If the value is not specified, IAM
         /// Identity Center authorizes all scopes configured for the application, including the
-        /// following default scopes: <code>openid</code>, <code>aws</code>, <code>sts:identity_context</code>.
+        /// following default scopes: <c>openid</c>, <c>aws</c>, <c>sts:identity_context</c>.
         /// </para>
         /// </summary>
         public List<string> Scope
@@ -273,7 +273,7 @@ namespace Amazon.SSOOIDC.Model
         /// </para>
         ///  
         /// <para>
-        /// * Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> 
+        /// * Access Token - <c>urn:ietf:params:oauth:token-type:access_token</c> 
         /// </para>
         /// </summary>
         public string SubjectTokenType

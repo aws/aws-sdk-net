@@ -39,8 +39,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property ComponentTypeId. 
         /// <para>
-        /// This is the <code>componentTypeId</code> that the <code>compositeComponentType</code>
-        /// refers to.
+        /// This is the <c>componentTypeId</c> that the <c>compositeComponentType</c> refers to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

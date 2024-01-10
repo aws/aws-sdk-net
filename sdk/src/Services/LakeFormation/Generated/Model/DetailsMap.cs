@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LakeFormation.Model
 {
     /// <summary>
-    /// A structure containing the additional details to be returned in the <code>AdditionalDetails</code>
-    /// attribute of <code>PrincipalResourcePermissions</code>.
+    /// A structure containing the additional details to be returned in the <c>AdditionalDetails</c>
+    /// attribute of <c>PrincipalResourcePermissions</c>.
     /// 
     ///  
     /// <para>

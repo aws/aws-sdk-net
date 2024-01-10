@@ -1205,7 +1205,7 @@ namespace Amazon.IoT1ClickProjects
         /// Updates a project associated with your AWS account and region. With the exception
         /// of device template names, you can pass just the values that need to be updated because
         /// the update request will change only the values that are provided. To clear a value,
-        /// pass the empty string (i.e., <code>""</code>).
+        /// pass the empty string (i.e., <c>""</c>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// 
@@ -1237,7 +1237,7 @@ namespace Amazon.IoT1ClickProjects
         /// Updates a project associated with your AWS account and region. With the exception
         /// of device template names, you can pass just the values that need to be updated because
         /// the update request will change only the values that are provided. To clear a value,
-        /// pass the empty string (i.e., <code>""</code>).
+        /// pass the empty string (i.e., <c>""</c>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProject service method.</param>
         /// <param name="cancellationToken">

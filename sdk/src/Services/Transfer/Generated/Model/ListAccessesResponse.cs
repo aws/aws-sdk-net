@@ -40,8 +40,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Accesses. 
         /// <para>
-        /// Returns the accesses and their properties for the <code>ServerId</code> value that
-        /// you specify.
+        /// Returns the accesses and their properties for the <c>ServerId</c> value that you specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,9 +59,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you can get additional results from the <code>ListAccesses</code> call, a <code>NextToken</code>
+        /// When you can get additional results from the <c>ListAccesses</c> call, a <c>NextToken</c>
         /// parameter is returned in the output. You can then pass in a subsequent command to
-        /// the <code>NextToken</code> parameter to continue listing additional accesses.
+        /// the <c>NextToken</c> parameter to continue listing additional accesses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

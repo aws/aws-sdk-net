@@ -59,20 +59,20 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are not using the <code>DataRepositorySubdirectories</code> parameter, the
-        /// path is to an NFS Export directory (or one of its subdirectories) in the format <code>nsf://nfs-domain-name/exportpath</code>.
+        /// If you are not using the <c>DataRepositorySubdirectories</c> parameter, the path is
+        /// to an NFS Export directory (or one of its subdirectories) in the format <c>nsf://nfs-domain-name/exportpath</c>.
         /// You can therefore link a single NFS Export to a single data repository association.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are using the <code>DataRepositorySubdirectories</code> parameter, the path
-        /// is the domain name of the NFS file system in the format <code>nfs://filer-domain-name</code>,
-        /// which indicates the root of the subdirectories specified with the <code>DataRepositorySubdirectories</code>
+        /// If you are using the <c>DataRepositorySubdirectories</c> parameter, the path is the
+        /// domain name of the NFS file system in the format <c>nfs://filer-domain-name</c>, which
+        /// indicates the root of the subdirectories specified with the <c>DataRepositorySubdirectories</c>
         /// parameter.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// The path can be an S3 bucket or prefix in the format <code>s3://myBucket/myPrefix/</code>.
+        /// The path can be an S3 bucket or prefix in the format <c>s3://myBucket/myPrefix/</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -93,10 +93,10 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DataRepositorySubdirectories. 
         /// <para>
         /// A list of NFS Exports that will be linked with this data repository association. The
-        /// Export paths are in the format <code>/exportpath1</code>. To use this parameter, you
-        /// must configure <code>DataRepositoryPath</code> as the domain name of the NFS file
-        /// system. The NFS file system domain name in effect is the root of the subdirectories.
-        /// Note that <code>DataRepositorySubdirectories</code> is not supported for S3 data repositories.
+        /// Export paths are in the format <c>/exportpath1</c>. To use this parameter, you must
+        /// configure <c>DataRepositoryPath</c> as the domain name of the NFS file system. The
+        /// NFS file system domain name in effect is the root of the subdirectories. Note that
+        /// <c>DataRepositorySubdirectories</c> is not supported for S3 data repositories.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -115,12 +115,12 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileCachePath. 
         /// <para>
-        /// A path on the cache that points to a high-level directory (such as <code>/ns1/</code>)
-        /// or subdirectory (such as <code>/ns1/subdir/</code>) that will be mapped 1-1 with <code>DataRepositoryPath</code>.
+        /// A path on the cache that points to a high-level directory (such as <c>/ns1/</c>) or
+        /// subdirectory (such as <c>/ns1/subdir/</c>) that will be mapped 1-1 with <c>DataRepositoryPath</c>.
         /// The leading forward slash in the name is required. Two data repository associations
         /// cannot have overlapping cache paths. For example, if a data repository is associated
-        /// with cache path <code>/ns1/</code>, then you cannot link another data repository with
-        /// cache path <code>/ns1/ns2</code>.
+        /// with cache path <c>/ns1/</c>, then you cannot link another data repository with cache
+        /// path <c>/ns1/ns2</c>.
         /// </para>
         ///  
         /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The cache path can only be set to root (/) on an NFS DRA when <code>DataRepositorySubdirectories</code>
+        /// The cache path can only be set to root (/) on an NFS DRA when <c>DataRepositorySubdirectories</c>
         /// is specified. If you specify root (/) as the cache path, you can create only one DRA
         /// on the cache.
         /// </para>

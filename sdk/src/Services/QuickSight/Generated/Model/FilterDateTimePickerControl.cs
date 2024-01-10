@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FilterControlId. 
         /// <para>
-        /// The ID of the <code>FilterDateTimePickerControl</code>.
+        /// The ID of the <c>FilterDateTimePickerControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceFilterId. 
         /// <para>
-        /// The source filter ID of the <code>FilterDateTimePickerControl</code>.
+        /// The source filter ID of the <c>FilterDateTimePickerControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of the <code>FilterDateTimePickerControl</code>.
+        /// The title of the <c>FilterDateTimePickerControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -117,16 +117,16 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The date time picker type of a <code>FilterDateTimePickerControl</code>. Choose one
-        /// of the following options:
+        /// The date time picker type of a <c>FilterDateTimePickerControl</c>. Choose one of the
+        /// following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SINGLE_VALUED</code>: The filter condition is a fixed date.
+        ///  <c>SINGLE_VALUED</c>: The filter condition is a fixed date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DATE_RANGE</code>: The filter condition is a date time range.
+        ///  <c>DATE_RANGE</c>: The filter condition is a date time range.
         /// </para>
         ///  </li> </ul>
         /// </summary>

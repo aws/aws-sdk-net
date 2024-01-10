@@ -31,7 +31,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// The condition used for the target document attribute or metadata field when ingesting
     /// documents into Amazon Q. You use this with <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeTarget.html">
-    /// <code>DocumentAttributeTarget</code> </a> to apply the condition.
+    /// <c>DocumentAttributeTarget</c> </a> to apply the condition.
     /// 
     ///  
     /// <para>
@@ -45,8 +45,8 @@ namespace Amazon.QBusiness.Model
     /// <para>
     /// Amazon Q can't create a target field if it has not already been created as an index
     /// field. After you create your index field, you can create a document metadata field
-    /// using <code>DocumentAttributeTarget</code>. Amazon Q then will map your newly created
-    /// metadata field to your index field.
+    /// using <c>DocumentAttributeTarget</c>. Amazon Q then will map your newly created metadata
+    /// field to your index field.
     /// </para>
     /// </summary>
     public partial class DocumentAttributeCondition
@@ -67,8 +67,8 @@ namespace Amazon.QBusiness.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Q currently doesn't support <code>_document_body</code> as an attribute key
-        /// used for the condition.
+        /// Amazon Q currently doesn't support <c>_document_body</c> as an attribute key used
+        /// for the condition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -96,8 +96,8 @@ namespace Amazon.QBusiness.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Kendra currently does not support <code>_document_body</code> as an attribute
-        /// key used for the condition.
+        /// Amazon Kendra currently does not support <c>_document_body</c> as an attribute key
+        /// used for the condition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

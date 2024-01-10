@@ -58,8 +58,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property TlsPolicy. 
         /// <para>
         /// Specifies whether messages that use the configuration set are required to use Transport
-        /// Layer Security (TLS). If the value is <code>Require</code>, messages are only delivered
-        /// if a TLS connection can be established. If the value is <code>Optional</code>, messages
+        /// Layer Security (TLS). If the value is <c>Require</c>, messages are only delivered
+        /// if a TLS connection can be established. If the value is <c>Optional</c>, messages
         /// can be delivered in plain text if a TLS connection can't be established.
         /// </para>
         /// </summary>

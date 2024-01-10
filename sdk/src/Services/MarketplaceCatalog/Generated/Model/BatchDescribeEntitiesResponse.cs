@@ -57,8 +57,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A map of errors returned, with <code>EntityId</code> as the key and <code>errorDetail</code>
-        /// as the value.
+        /// A map of errors returned, with <c>EntityId</c> as the key and <c>errorDetail</c> as
+        /// the value.
         /// </para>
         /// </summary>
         public Dictionary<string, BatchDescribeErrorDetail> Errors

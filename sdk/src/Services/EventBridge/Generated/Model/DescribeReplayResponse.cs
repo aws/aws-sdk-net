@@ -68,7 +68,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// A <code>ReplayDestination</code> object that contains details about the replay.
+        /// A <c>ReplayDestination</c> object that contains details about the replay.
         /// </para>
         /// </summary>
         public ReplayDestination Destination

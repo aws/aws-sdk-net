@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAF.Model
 {
     /// <summary>
-    /// The response to a <code>CreateXssMatchSet</code> request.
+    /// The response to a <c>CreateXssMatchSet</c> request.
     /// </summary>
     public partial class CreateXssMatchSetResponse : AmazonWebServiceResponse
     {
@@ -39,9 +39,9 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used to submit the <code>CreateXssMatchSet</code>
-        /// request. You can also use this value to query the status of the request. For more
-        /// information, see <a>GetChangeTokenStatus</a>.
+        /// The <c>ChangeToken</c> that you used to submit the <c>CreateXssMatchSet</c> request.
+        /// You can also use this value to query the status of the request. For more information,
+        /// see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

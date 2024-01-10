@@ -47,9 +47,9 @@ namespace Amazon.MainframeModernization.Model
         /// <para>
         /// Indicates whether to update the runtime environment during the maintenance window.
         /// The default is false. Currently, Amazon Web Services Mainframe Modernization accepts
-        /// the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code>
-        /// is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>,
-        /// it will fail if <code>applyDuringMaintenanceWindow</code> is set to true.
+        /// the <c>engineVersion</c> parameter only if <c>applyDuringMaintenanceWindow</c> is
+        /// true. If any parameter other than <c>engineVersion</c> is provided in <c>UpdateEnvironmentRequest</c>,
+        /// it will fail if <c>applyDuringMaintenanceWindow</c> is set to true.
         /// </para>
         /// </summary>
         public bool ApplyDuringMaintenanceWindow
@@ -134,7 +134,7 @@ namespace Amazon.MainframeModernization.Model
         /// </para>
         ///  
         /// <para>
-        /// This option is not needed if the attribute being updated is <code>preferredMaintenanceWindow</code>.
+        /// This option is not needed if the attribute being updated is <c>preferredMaintenanceWindow</c>.
         /// </para>
         /// </summary>
         public bool ForceUpdate
@@ -171,9 +171,9 @@ namespace Amazon.MainframeModernization.Model
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// Configures the maintenance window that you want for the runtime environment. The maintenance
-        /// window must have the format <code>ddd:hh24:mi-ddd:hh24:mi</code> and must be less
-        /// than 24 hours. The following two examples are valid maintenance windows: <code>sun:23:45-mon:00:15</code>
-        /// or <code>sat:01:00-sat:03:00</code>. 
+        /// window must have the format <c>ddd:hh24:mi-ddd:hh24:mi</c> and must be less than 24
+        /// hours. The following two examples are valid maintenance windows: <c>sun:23:45-mon:00:15</c>
+        /// or <c>sat:01:00-sat:03:00</c>. 
         /// </para>
         ///  
         /// <para>

@@ -40,11 +40,11 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of items in the
-        /// list, call this operation again, adding the next token to the call. To get all of
-        /// the items in the list, keep calling this operation with each subsequent next token
-        /// that is returned, until no more next tokens are returned. 
+        /// specified in <c>maxResults</c>. If there more items in the list, then a unique string
+        /// called a <i>nextToken</i> is returned. To get the next batch of items in the list,
+        /// call this operation again, adding the next token to the call. To get all of the items
+        /// in the list, keep calling this operation with each subsequent next token that is returned,
+        /// until no more next tokens are returned. 
         /// </para>
         /// </summary>
         public string NextToken

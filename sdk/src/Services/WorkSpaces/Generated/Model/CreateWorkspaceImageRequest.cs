@@ -82,7 +82,7 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The tags that you want to add to the new WorkSpace image. To add tags when you're
         /// creating the image, you must create an IAM policy that grants your IAM user permission
-        /// to use <code>workspaces:CreateTags</code>.
+        /// to use <c>workspaces:CreateTags</c>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

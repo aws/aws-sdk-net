@@ -43,8 +43,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        /// The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>,
-        /// or <code>ECS</code>).
+        /// The destination platform type for the deployment (<c>Lambda</c>, <c>Server</c>, or
+        /// <c>ECS</c>).
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform
@@ -143,8 +143,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ZonalConfig. 
         /// <para>
-        /// Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your
-        /// application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+        /// Configure the <c>ZonalConfig</c> object if you want CodeDeploy to deploy your application
+        /// to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
         /// Zone</a> at a time, within an Amazon Web Services Region.
         /// </para>
         ///  

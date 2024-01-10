@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains information about the Certificate Manager managed renewal for an <code>AMAZON_ISSUED</code>
+    /// Contains information about the Certificate Manager managed renewal for an <c>AMAZON_ISSUED</c>
     /// certificate.
     /// </summary>
     public partial class AwsCertificateManagerCertificateRenewalSummary
@@ -44,7 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// Information about the validation of each domain name in the certificate, as it pertains
         /// to Certificate Manager managed renewal. Provided only when the certificate type is
-        /// <code>AMAZON_ISSUED</code>.
+        /// <c>AMAZON_ISSUED</c>.
         /// </para>
         /// </summary>
         public List<AwsCertificateManagerCertificateDomainValidationOption> DomainValidationOptions
@@ -66,8 +66,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>PENDING_AUTO_RENEWAL</code> | <code>PENDING_VALIDATION</code>
-        /// | <code>SUCCESS</code> | <code>FAILED</code> 
+        /// Valid values: <c>PENDING_AUTO_RENEWAL</c> | <c>PENDING_VALIDATION</c> | <c>SUCCESS</c>
+        /// | <c>FAILED</c> 
         /// </para>
         /// </summary>
         public string RenewalStatus
@@ -86,17 +86,16 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RenewalStatusReason. 
         /// <para>
         /// The reason that a renewal request was unsuccessful. This attribute is used only when
-        /// <code>RenewalStatus</code> is <code>FAILED</code>.
+        /// <c>RenewalStatus</c> is <c>FAILED</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code>
-        /// | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code>
-        /// | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code>
-        /// | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code>
-        /// | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code>
-        /// | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code>
-        /// 
+        /// Valid values: <c>NO_AVAILABLE_CONTACTS</c> | <c>ADDITIONAL_VERIFICATION_REQUIRED</c>
+        /// | <c>DOMAIN_NOT_ALLOWED</c> | <c>INVALID_PUBLIC_DOMAIN</c> | <c>DOMAIN_VALIDATION_DENIED</c>
+        /// | <c>CAA_ERROR</c> | <c>PCA_LIMIT_EXCEEDED</c> | <c>PCA_INVALID_ARN</c> | <c>PCA_INVALID_STATE</c>
+        /// | <c>PCA_REQUEST_FAILED</c> | <c>PCA_NAME_CONSTRAINTS_VALIDATION</c> | <c>PCA_RESOURCE_NOT_FOUND</c>
+        /// | <c>PCA_INVALID_ARGS</c> | <c>PCA_INVALID_DURATION</c> | <c>PCA_ACCESS_DENIED</c>
+        /// | <c>SLR_NOT_FOUND</c> | <c>OTHER</c> 
         /// </para>
         /// </summary>
         public string RenewalStatusReason
@@ -118,9 +117,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string UpdatedAt

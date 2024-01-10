@@ -135,13 +135,13 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config
-        /// delivers a configuration item as a result of a resource change.
+        ///  <c>ConfigurationItemChangeNotification</c> - Triggers an evaluation when Config delivers
+        /// a configuration item as a result of a resource change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
-        /// when Config delivers an oversized configuration item. Config may generate this notification
+        ///  <c>OversizedConfigurationItemChangeNotification</c> - Triggers an evaluation when
+        /// Config delivers an oversized configuration item. Config may generate this notification
         /// type when a resource changes and the notification exceeds the maximum size allowed
         /// by Amazon SNS.
         /// </para>

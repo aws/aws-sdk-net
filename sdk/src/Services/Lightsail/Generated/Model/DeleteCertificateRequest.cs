@@ -36,8 +36,8 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// Certificates that are currently attached to a distribution cannot be deleted. Use
-    /// the <code>DetachCertificateFromDistribution</code> action to detach a certificate
-    /// from a distribution.
+    /// the <c>DetachCertificateFromDistribution</c> action to detach a certificate from a
+    /// distribution.
     /// </para>
     /// </summary>
     public partial class DeleteCertificateRequest : AmazonLightsailRequest
@@ -51,8 +51,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetCertificates</code> action to get a list of certificate names that
-        /// you can specify.
+        /// Use the <c>GetCertificates</c> action to get a list of certificate names that you
+        /// can specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

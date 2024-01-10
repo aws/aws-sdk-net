@@ -101,9 +101,8 @@ namespace Amazon.FSx.Model
         /// The SSD IOPS (input output operations per second) configuration for an Amazon FSx
         /// for NetApp ONTAP file system. The default is 3 IOPS per GB of storage capacity, but
         /// you can provision additional IOPS per GB of storage. The configuration consists of
-        /// an IOPS mode (<code>AUTOMATIC</code> or <code>USER_PROVISIONED</code>), and in the
-        /// case of <code>USER_PROVISIONED</code> IOPS, the total number of SSD IOPS provisioned.
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
+        /// an IOPS mode (<c>AUTOMATIC</c> or <c>USER_PROVISIONED</c>), and in the case of <c>USER_PROVISIONED</c>
+        /// IOPS, the total number of SSD IOPS provisioned. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/increase-primary-storage.html">Updating
         /// SSD storage capacity and IOPS</a>.
         /// </para>
         /// </summary>
@@ -122,9 +121,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FsxAdminPassword. 
         /// <para>
-        /// Update the password for the <code>fsxadmin</code> user by entering a new password.
-        /// You use the <code>fsxadmin</code> user to access the NetApp ONTAP CLI and REST API
-        /// to manage your file system resources. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
+        /// Update the password for the <c>fsxadmin</c> user by entering a new password. You use
+        /// the <c>fsxadmin</c> user to access the NetApp ONTAP CLI and REST API to manage your
+        /// file system resources. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/managing-resources-ontap-apps.html">Managing
         /// resources using NetApp Applicaton</a>.
         /// </para>
         /// </summary>
@@ -175,13 +174,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code>
-        /// are not the same value.
+        /// The value of <c>ThroughputCapacity</c> and <c>ThroughputCapacityPerHAPair</c> are
+        /// not the same value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>ThroughputCapacity</code> when divided by the value of <code>HAPairs</code>
-        /// is outside of the valid range for <code>ThroughputCapacity</code>.
+        /// The value of <c>ThroughputCapacity</c> when divided by the value of <c>HAPairs</c>
+        /// is outside of the valid range for <c>ThroughputCapacity</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -206,22 +205,22 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// This field and <code>ThroughputCapacity</code> cannot be defined in the same API call,
-        /// but one is required.
+        /// This field and <c>ThroughputCapacity</c> cannot be defined in the same API call, but
+        /// one is required.
         /// </para>
         ///  
         /// <para>
-        /// This field and <code>ThroughputCapacity</code> are the same for file systems with
-        /// one HA pair.
+        /// This field and <c>ThroughputCapacity</c> are the same for file systems with one HA
+        /// pair.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256,
-        /// 512, 1024, 2048, or 4096 MBps.
+        /// For <c>SINGLE_AZ_1</c> and <c>MULTI_AZ_1</c>, valid values are 128, 256, 512, 1024,
+        /// 2048, or 4096 MBps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.
+        /// For <c>SINGLE_AZ_2</c>, valid values are 3072 or 6144 MBps.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -229,18 +228,17 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code>
-        /// are not the same value for file systems with one HA pair.
+        /// The value of <c>ThroughputCapacity</c> and <c>ThroughputCapacityPerHAPair</c> are
+        /// not the same value for file systems with one HA pair.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code>
-        /// / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and
-        /// 6).
+        /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
+        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 6).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+        /// The value of <c>ThroughputCapacityPerHAPair</c> is not a valid value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

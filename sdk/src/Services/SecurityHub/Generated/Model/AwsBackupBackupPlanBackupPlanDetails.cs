@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides details about an Backup backup plan and an array of <code>BackupRule</code>
-    /// objects, each of which specifies a backup rule.
+    /// Provides details about an Backup backup plan and an array of <c>BackupRule</c> objects,
+    /// each of which specifies a backup rule.
     /// </summary>
     public partial class AwsBackupBackupPlanBackupPlanDetails
     {
@@ -77,8 +77,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property BackupPlanRule. 
         /// <para>
-        /// An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
-        /// that is used to back up a selection of resources. 
+        /// An array of <c>BackupRule</c> objects, each of which specifies a scheduled task that
+        /// is used to back up a selection of resources. 
         /// </para>
         /// </summary>
         public List<AwsBackupBackupPlanRuleDetails> BackupPlanRule

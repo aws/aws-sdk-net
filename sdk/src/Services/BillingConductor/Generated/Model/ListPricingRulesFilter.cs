@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The filter that specifies criteria that the pricing rules returned by the <code>ListPricingRules</code>
+    /// The filter that specifies criteria that the pricing rules returned by the <c>ListPricingRules</c>
     /// API will adhere to.
     /// </summary>
     public partial class ListPricingRulesFilter

@@ -64,7 +64,7 @@ namespace Amazon.SnowDeviceManagement.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// When the <code>CreateTask</code> operation was called.
+        /// When the <c>CreateTask</c> operation was called.
         /// </para>
         /// </summary>
         public DateTime CreatedAt

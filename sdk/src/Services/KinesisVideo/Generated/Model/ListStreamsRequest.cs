@@ -30,8 +30,8 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStreams operation.
-    /// Returns an array of <code>StreamInfo</code> objects. Each object describes a stream.
-    /// To retrieve only streams that satisfy a specific condition, you can specify a <code>StreamNameCondition</code>.
+    /// Returns an array of <c>StreamInfo</c> objects. Each object describes a stream. To
+    /// retrieve only streams that satisfy a specific condition, you can specify a <c>StreamNameCondition</c>.
     /// </summary>
     public partial class ListStreamsRequest : AmazonKinesisVideoRequest
     {
@@ -61,9 +61,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify this parameter, when the result of a <code>ListStreams</code> operation
-        /// is truncated, the call returns the <code>NextToken</code> in the response. To get
-        /// another batch of streams, provide this token in your next request.
+        /// If you specify this parameter, when the result of a <c>ListStreams</c> operation is
+        /// truncated, the call returns the <c>NextToken</c> in the response. To get another batch
+        /// of streams, provide this token in your next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

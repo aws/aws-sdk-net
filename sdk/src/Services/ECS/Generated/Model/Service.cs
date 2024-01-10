@@ -238,7 +238,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
         /// Determines whether the execute command functionality is turned on for the service.
-        /// If <code>true</code>, the execute command functionality is turned on for all containers
+        /// If <c>true</c>, the execute command functionality is turned on for all containers
         /// in tasks as part of the service.
         /// </para>
         /// </summary>
@@ -334,7 +334,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The VPC subnet and security group configuration for tasks that receive their own elastic
-        /// network interface by using the <code>awsvpc</code> networking mode.
+        /// network interface by using the <c>awsvpc</c> networking mode.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -352,7 +352,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PendingCount. 
         /// <para>
-        /// The number of tasks in the cluster that are in the <code>PENDING</code> state.
+        /// The number of tasks in the cluster that are in the <c>PENDING</c> state.
         /// </para>
         /// </summary>
         public int PendingCount
@@ -411,8 +411,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        ///  All tasks that run as part of this service must use the same <code>platformFamily</code>
-        /// value as the service (for example, <code>LINUX</code>).
+        ///  All tasks that run as part of this service must use the same <c>platformFamily</c>
+        /// value as the service (for example, <c>LINUX</c>).
         /// </para>
         /// </summary>
         public string PlatformFamily
@@ -431,8 +431,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// The platform version to run your service on. A platform version is only specified
-        /// for tasks that are hosted on Fargate. If one isn't specified, the <code>LATEST</code>
-        /// platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// for tasks that are hosted on Fargate. If one isn't specified, the <c>LATEST</c> platform
+        /// version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -490,7 +490,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RunningCount. 
         /// <para>
-        /// The number of tasks in the cluster that are in the <code>RUNNING</code> state.
+        /// The number of tasks in the cluster that are in the <c>RUNNING</c> state.
         /// </para>
         /// </summary>
         public int RunningCount
@@ -516,21 +516,21 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired
-        /// number of tasks across your cluster. By default, the service scheduler spreads tasks
-        /// across Availability Zones. You can use task placement strategies and constraints to
-        /// customize task placement decisions.
+        ///  <c>REPLICA</c>-The replica scheduling strategy places and maintains the desired number
+        /// of tasks across your cluster. By default, the service scheduler spreads tasks across
+        /// Availability Zones. You can use task placement strategies and constraints to customize
+        /// task placement decisions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
-        /// active container instance. This task meets all of the task placement constraints that
-        /// you specify in your cluster. The service scheduler also evaluates the task placement
-        /// constraints for running tasks. It stop tasks that don't meet the placement constraints.
+        ///  <c>DAEMON</c>-The daemon scheduling strategy deploys exactly one task on each active
+        /// container instance. This task meets all of the task placement constraints that you
+        /// specify in your cluster. The service scheduler also evaluates the task placement constraints
+        /// for running tasks. It stop tasks that don't meet the placement constraints.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Fargate tasks don't support the <code>DAEMON</code> scheduling strategy.
+        /// Fargate tasks don't support the <c>DAEMON</c> scheduling strategy.
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
@@ -610,8 +610,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the service. The valid values are <code>ACTIVE</code>, <code>DRAINING</code>,
-        /// or <code>INACTIVE</code>.
+        /// The status of the service. The valid values are <c>ACTIVE</c>, <c>DRAINING</c>, or
+        /// <c>INACTIVE</c>.
         /// </para>
         /// </summary>
         public string Status
@@ -666,10 +666,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -708,7 +708,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskSets. 
         /// <para>
-        /// Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
+        /// Information about a set of Amazon ECS tasks in either an CodeDeploy or an <c>EXTERNAL</c>
         /// deployment. An Amazon ECS task set includes details such as the desired number of
         /// tasks, how many tasks are running, and whether the task set serves production traffic.
         /// </para>

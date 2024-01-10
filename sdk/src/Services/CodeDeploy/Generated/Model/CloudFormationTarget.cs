@@ -137,7 +137,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        ///  The unique ID of a deployment target that has a type of <code>CloudFormationTarget</code>.
+        ///  The unique ID of a deployment target that has a type of <c>CloudFormationTarget</c>.
         /// 
         /// </para>
         /// </summary>

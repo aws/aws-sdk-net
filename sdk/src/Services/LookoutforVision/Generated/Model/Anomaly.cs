@@ -40,10 +40,10 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of an anomaly type found in an image. <code>Name</code> maps to an anomaly
-        /// type in the training dataset, apart from the anomaly type <code>background</code>.
-        /// The service automatically inserts the <code>background</code> anomaly type into the
-        /// response from <code>DetectAnomalies</code>. 
+        /// The name of an anomaly type found in an image. <c>Name</c> maps to an anomaly type
+        /// in the training dataset, apart from the anomaly type <c>background</c>. The service
+        /// automatically inserts the <c>background</c> anomaly type into the response from <c>DetectAnomalies</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

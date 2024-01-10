@@ -64,7 +64,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DisplayOptions. 
         /// <para>
-        /// The display options of the <code>FilterDropDownControl</code>.
+        /// The display options of the <c>FilterDropDownControl</c>.
         /// </para>
         /// </summary>
         public DropDownControlDisplayOptions DisplayOptions
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FilterControlId. 
         /// <para>
-        /// The ID of the <code>FilterDropDownControl</code>.
+        /// The ID of the <c>FilterDropDownControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -119,7 +119,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceFilterId. 
         /// <para>
-        /// The source filter ID of the <code>FilterDropDownControl</code>.
+        /// The source filter ID of the <c>FilterDropDownControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -138,7 +138,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of the <code>FilterDropDownControl</code>.
+        /// The title of the <c>FilterDropDownControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -157,15 +157,15 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the <code>FilterDropDownControl</code>. Choose one of the following options:
+        /// The type of the <c>FilterDropDownControl</c>. Choose one of the following options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MULTI_SELECT</code>: The user can select multiple entries from a dropdown menu.
+        ///  <c>MULTI_SELECT</c>: The user can select multiple entries from a dropdown menu.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown menu.
+        ///  <c>SINGLE_SELECT</c>: The user can select a single entry from a dropdown menu.
         /// </para>
         ///  </li> </ul>
         /// </summary>

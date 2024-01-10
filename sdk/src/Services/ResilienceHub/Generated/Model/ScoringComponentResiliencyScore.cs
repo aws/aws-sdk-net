@@ -47,9 +47,8 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if the <code>Excluded count</code> for Resilience Hub recommended Amazon
-        /// CloudWatch alarms is 7, it indicates that 7 Amazon CloudWatch alarms are excluded
-        /// from the assessment.
+        /// For example, if the <c>Excluded count</c> for Resilience Hub recommended Amazon CloudWatch
+        /// alarms is 7, it indicates that 7 Amazon CloudWatch alarms are excluded from the assessment.
         /// </para>
         /// </summary>
         public long ExcludedCount
@@ -74,9 +73,9 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if the <code>Outstanding count</code> for Resilience Hub recommended
-        /// Amazon CloudWatch alarms is 5, it indicates that 5 Amazon CloudWatch alarms must be
-        /// fixed to achieve the maximum possible score.
+        /// For example, if the <c>Outstanding count</c> for Resilience Hub recommended Amazon
+        /// CloudWatch alarms is 5, it indicates that 5 Amazon CloudWatch alarms must be fixed
+        /// to achieve the maximum possible score.
         /// </para>
         /// </summary>
         public long OutstandingCount
@@ -94,9 +93,9 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property PossibleScore. 
         /// <para>
-        /// Maximum possible score that can be obtained for the scoring component. If the <code>Possible
-        /// score</code> is 20 points, it indicates the maximum possible score you can achieve
-        /// for your application when you run a new assessment after implementing all the Resilience
+        /// Maximum possible score that can be obtained for the scoring component. If the <c>Possible
+        /// score</c> is 20 points, it indicates the maximum possible score you can achieve for
+        /// your application when you run a new assessment after implementing all the Resilience
         /// Hub recommendations.
         /// </para>
         /// </summary>

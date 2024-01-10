@@ -48,11 +48,10 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// The semantics of the <code>components</code> field are different from the semantics
-        /// of results for other infrastructure-provisioning resources. That's because at this
-        /// time components don't have associated templates, therefore they don't have the concept
-        /// of staleness. The <code>components</code> object will only contain <code>total</code>
-        /// and <code>failed</code> members.
+        /// The semantics of the <c>components</c> field are different from the semantics of results
+        /// for other infrastructure-provisioning resources. That's because at this time components
+        /// don't have associated templates, therefore they don't have the concept of staleness.
+        /// The <c>components</c> object will only contain <c>total</c> and <c>failed</c> members.
         /// </para>
         /// </summary>
         public ResourceCountsSummary Components
@@ -71,7 +70,7 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property Environments. 
         /// <para>
         /// The staleness counts for Proton environments in the Amazon Web Services account. The
-        /// <code>environments</code> object will only contain <code>total</code> members.
+        /// <c>environments</c> object will only contain <c>total</c> members.
         /// </para>
         /// </summary>
         public ResourceCountsSummary Environments
@@ -90,7 +89,7 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property EnvironmentTemplates. 
         /// <para>
         /// The total number of environment templates in the Amazon Web Services account. The
-        /// <code>environmentTemplates</code> object will only contain <code>total</code> members.
+        /// <c>environmentTemplates</c> object will only contain <c>total</c> members.
         /// </para>
         /// </summary>
         public ResourceCountsSummary EnvironmentTemplates
@@ -162,8 +161,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceTemplates. 
         /// <para>
-        /// The total number of service templates in the Amazon Web Services account. The <code>serviceTemplates</code>
-        /// object will only contain <code>total</code> members.
+        /// The total number of service templates in the Amazon Web Services account. The <c>serviceTemplates</c>
+        /// object will only contain <c>total</c> members.
         /// </para>
         /// </summary>
         public ResourceCountsSummary ServiceTemplates

@@ -41,7 +41,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code for the request. For example, <code>NOT_FOUND</code>.
+        /// The error code for the request. For example, <c>NOT_FOUND</c>.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -59,8 +59,8 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A description of the error. For example, <code>The specified Lifecycle Policy is not
-        /// found</code>.
+        /// A description of the error. For example, <c>The specified Lifecycle Policy is not
+        /// found</c>.
         /// </para>
         /// </summary>
         public string ErrorMessage

@@ -59,7 +59,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Returns <code>OK</code> for successful test, or <code>ERROR</code> if the test fails.
+        /// Returns <c>OK</c> for successful test, or <c>ERROR</c> if the test fails.
         /// </para>
         /// </summary>
         public string Status
@@ -77,9 +77,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// Returns <code>Connection succeeded</code> if the test is successful. Or, returns a
-        /// descriptive error message if the test fails. The following list provides troubleshooting
-        /// details, depending on the error message that you receive.
+        /// Returns <c>Connection succeeded</c> if the test is successful. Or, returns a descriptive
+        /// error message if the test fails. The following list provides troubleshooting details,
+        /// depending on the error message that you receive.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Verify that the trusted host key in the connector configuration matches the <code>ssh-keyscan</code>
+        /// Verify that the trusted host key in the connector configuration matches the <c>ssh-keyscan</c>
         /// output.
         /// </para>
         ///  </li> </ul>

@@ -46,9 +46,9 @@ namespace Amazon.KinesisFirehose.Model
         /// may be present in your input data JSON. To specify these format strings, follow the
         /// pattern syntax of JodaTime's DateTimeFormat format strings. For more information,
         /// see <a href="https://www.joda.org/joda-time/apidocs/org/joda/time/format/DateTimeFormat.html">Class
-        /// DateTimeFormat</a>. You can also use the special value <code>millis</code> to parse
-        /// timestamps in epoch milliseconds. If you don't specify a format, Kinesis Data Firehose
-        /// uses <code>java.sql.Timestamp::valueOf</code> by default.
+        /// DateTimeFormat</a>. You can also use the special value <c>millis</c> to parse timestamps
+        /// in epoch milliseconds. If you don't specify a format, Kinesis Data Firehose uses <c>java.sql.Timestamp::valueOf</c>
+        /// by default.
         /// </para>
         /// </summary>
         public List<string> TimestampFormats

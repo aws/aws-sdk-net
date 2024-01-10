@@ -122,7 +122,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.
+        /// If step property <c>BaselineUsedForDriftCheck</c> is set the same as <c>CalculatedBaseline</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -283,7 +283,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If step property <code>BaselineUsedForDriftCheck</code> is set the same as <code>CalculatedBaseline</code>.
+        /// If step property <c>BaselineUsedForDriftCheck</c> is set the same as <c>CalculatedBaseline</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

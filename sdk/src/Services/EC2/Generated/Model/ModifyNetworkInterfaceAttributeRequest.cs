@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
-        /// Information about the interface attachment. If modifying the <code>delete on termination</code>
+        /// Information about the interface attachment. If modifying the <c>delete on termination</c>
         /// attribute, you must specify the ID of the interface attachment.
         /// </para>
         /// </summary>
@@ -192,10 +192,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
         /// Enable or disable source/destination checks, which ensure that the instance is either
-        /// the source or the destination of any traffic that it receives. If the value is <code>true</code>,
+        /// the source or the destination of any traffic that it receives. If the value is <c>true</c>,
         /// source/destination checks are enabled; otherwise, they are disabled. The default value
-        /// is <code>true</code>. You must disable source/destination checks if the instance runs
-        /// services such as network address translation, routing, or firewalls.
+        /// is <c>true</c>. You must disable source/destination checks if the instance runs services
+        /// such as network address translation, routing, or firewalls.
         /// </para>
         /// </summary>
         public bool SourceDestCheck

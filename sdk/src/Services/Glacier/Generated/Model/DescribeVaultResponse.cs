@@ -44,7 +44,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The Universal Coordinated Time (UTC) date when the vault was created. This value should
-        /// be a string in the ISO 8601 date format, for example <code>2012-03-20T17:03:43.221Z</code>.
+        /// be a string in the ISO 8601 date format, for example <c>2012-03-20T17:03:43.221Z</c>.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -64,7 +64,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The Universal Coordinated Time (UTC) date when Amazon S3 Glacier completed the last
         /// vault inventory. This value should be a string in the ISO 8601 date format, for example
-        /// <code>2012-03-20T17:03:43.221Z</code>.
+        /// <c>2012-03-20T17:03:43.221Z</c>.
         /// </para>
         /// </summary>
         public DateTime LastInventoryDate
@@ -83,8 +83,8 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property NumberOfArchives. 
         /// <para>
         /// The number of archives in the vault as of the last inventory date. This field will
-        /// return <code>null</code> if an inventory has not yet run on the vault, for example
-        /// if you just created the vault.
+        /// return <c>null</c> if an inventory has not yet run on the vault, for example if you
+        /// just created the vault.
         /// </para>
         /// </summary>
         public long NumberOfArchives

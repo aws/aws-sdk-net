@@ -50,10 +50,10 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property AllowProfileCreation. 
         /// <para>
         /// Indicates whether a profile should be created when data is received if one doesn’t
-        /// exist for an object of this type. The default is <code>FALSE</code>. If the AllowProfileCreation
-        /// flag is set to <code>FALSE</code>, then the service tries to fetch a standard profile
-        /// and associate this object with the profile. If it is set to <code>TRUE</code>, and
-        /// if no match is found, then the service creates a new standard profile.
+        /// exist for an object of this type. The default is <c>FALSE</c>. If the AllowProfileCreation
+        /// flag is set to <c>FALSE</c>, then the service tries to fetch a standard profile and
+        /// associate this object with the profile. If it is set to <c>TRUE</c>, and if no match
+        /// is found, then the service creates a new standard profile.
         /// </para>
         /// </summary>
         public bool AllowProfileCreation
@@ -222,8 +222,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property SourceLastUpdatedTimestampFormat. 
         /// <para>
-        /// The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set
-        /// up.
+        /// The format of your <c>sourceLastUpdatedTimestamp</c> that was previously set up.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

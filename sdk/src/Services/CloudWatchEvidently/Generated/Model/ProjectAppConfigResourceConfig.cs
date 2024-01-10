@@ -37,8 +37,8 @@ namespace Amazon.CloudWatchEvidently.Model
     /// 
     ///  
     /// <para>
-    ///  <code>ProjectAppConfigResource</code> is a structure that defines the configuration
-    /// of how your application integrates with AppConfig to run client-side evaluation.
+    ///  <c>ProjectAppConfigResource</c> is a structure that defines the configuration of
+    /// how your application integrates with AppConfig to run client-side evaluation.
     /// </para>
     /// </summary>
     public partial class ProjectAppConfigResourceConfig
@@ -68,7 +68,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The ID of the AppConfig environment to use for client-side evaluation. This must be
-        /// an environment that is within the application that you specify for <code>applicationId</code>.
+        /// an environment that is within the application that you specify for <c>applicationId</c>.
         /// </para>
         /// </summary>
         public string EnvironmentId

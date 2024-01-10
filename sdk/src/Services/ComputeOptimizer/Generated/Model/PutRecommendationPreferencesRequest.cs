@@ -59,7 +59,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the <code>Active</code> status to activate the preference, or specify <code>Inactive</code>
+        /// Specify the <c>Active</c> status to activate the preference, or specify <c>Inactive</c>
         /// to deactivate the preference.
         /// </para>
         ///  
@@ -87,12 +87,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify a valid provider in the <code>source</code> field to activate the preference.
-        /// To delete this preference, see the <a>DeleteRecommendationPreferences</a> action.
+        /// Specify a valid provider in the <c>source</c> field to activate the preference. To
+        /// delete this preference, see the <a>DeleteRecommendationPreferences</a> action.
         /// </para>
         ///  
         /// <para>
-        /// This preference can only be set for the <code>Ec2Instance</code> resource type.
+        /// This preference can only be set for the <c>Ec2Instance</c> resource type.
         /// </para>
         ///  
         /// <para>
@@ -124,7 +124,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Specify the <code>Inactive</code> status to deactivate the feature, or specify <code>Active</code>
+        /// Specify the <c>Inactive</c> status to deactivate the feature, or specify <c>Active</c>
         /// to activate it.
         /// </para>
         ///  
@@ -150,7 +150,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The preference to control the number of days the utilization metrics of the Amazon
         /// Web Services resource are analyzed. When this preference isn't specified, we use the
-        /// default value <code>DAYS_14</code>. 
+        /// default value <c>DAYS_14</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -176,7 +176,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  The preference to control which resource type values are considered when generating
         /// rightsizing recommendations. You can specify this preference as a combination of include
-        /// and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>.
+        /// and exclude lists. You must specify either an <c>includeList</c> or <c>excludeList</c>.
         /// If the preference is an empty set of resource type values, an error occurs. 
         /// </para>
         ///  <note> 
@@ -205,13 +205,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Ec2Instance</code> option encompasses standalone instances and instances
-        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
-        /// only instances that are part of an Auto Scaling group.
+        /// The <c>Ec2Instance</c> option encompasses standalone instances and instances that
+        /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
+        /// instances that are part of an Auto Scaling group.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.
+        /// The valid values for this parameter are <c>Ec2Instance</c> and <c>AutoScalingGroup</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -235,8 +235,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the <code>AfterDiscounts</code> status to activate the preference, or specify
-        /// <code>BeforeDiscounts</code> to deactivate the preference.
+        /// Specify the <c>AfterDiscounts</c> status to activate the preference, or specify <c>BeforeDiscounts</c>
+        /// to deactivate the preference.
         /// </para>
         ///  
         /// <para>
@@ -277,11 +277,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// You cannot create recommendation preferences for Auto Scaling groups at the organization
         /// and account levels. You can create recommendation preferences for Auto Scaling groups
-        /// only at the resource level by specifying a scope name of <code>ResourceArn</code>
-        /// and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will
-        /// configure the preference for all instances that are part of the specified Auto Scaling
-        /// group. You also cannot create recommendation preferences at the resource level for
-        /// instances that are part of an Auto Scaling group. You can create recommendation preferences
+        /// only at the resource level by specifying a scope name of <c>ResourceArn</c> and a
+        /// scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure
+        /// the preference for all instances that are part of the specified Auto Scaling group.
+        /// You also cannot create recommendation preferences at the resource level for instances
+        /// that are part of an Auto Scaling group. You can create recommendation preferences
         /// at the resource level only for standalone instances.
         /// </para>
         ///  </note>
@@ -307,11 +307,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>P99_5</code> for threshold
+        ///  <c>P99_5</c> for threshold
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PERCENT_17</code> for headroom
+        ///  <c>PERCENT_17</c> for headroom
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

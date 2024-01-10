@@ -122,9 +122,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Gets and sets the property Reason. 
         /// <para>
         /// Specifies the reason that the user session was assigned this variation. Possible values
-        /// include <code>DEFAULT</code>, meaning the user was served the default variation; <code>LAUNCH_RULE_MATCH</code>,
-        /// if the user session was enrolled in a launch; or <code>EXPERIMENT_RULE_MATCH</code>,
-        /// if the user session was enrolled in an experiment.
+        /// include <c>DEFAULT</c>, meaning the user was served the default variation; <c>LAUNCH_RULE_MATCH</c>,
+        /// if the user session was enrolled in a launch; or <c>EXPERIMENT_RULE_MATCH</c>, if
+        /// the user session was enrolled in an experiment.
         /// </para>
         /// </summary>
         public string Reason

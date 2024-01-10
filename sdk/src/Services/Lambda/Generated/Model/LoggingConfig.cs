@@ -80,9 +80,9 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property LogGroup. 
         /// <para>
         /// The name of the Amazon CloudWatch log group the function sends logs to. By default,
-        /// Lambda functions send logs to a default log group named <code>/aws/lambda/&lt;function
-        /// name&gt;</code>. To use a different log group, enter an existing log group or enter
-        /// a new log group name.
+        /// Lambda functions send logs to a default log group named <c>/aws/lambda/&lt;function
+        /// name&gt;</c>. To use a different log group, enter an existing log group or enter a
+        /// new log group name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

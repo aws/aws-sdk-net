@@ -31,23 +31,22 @@ namespace Amazon.KinesisVideo.Model
     /// <summary>
     /// Container for the parameters to the GetSignalingChannelEndpoint operation.
     /// Provides an endpoint for the specified signaling channel to send and receive messages.
-    /// This API uses the <code>SingleMasterChannelEndpointConfiguration</code> input parameter,
-    /// which consists of the <code>Protocols</code> and <code>Role</code> properties.
+    /// This API uses the <c>SingleMasterChannelEndpointConfiguration</c> input parameter,
+    /// which consists of the <c>Protocols</c> and <c>Role</c> properties.
     /// 
     ///  
     /// <para>
-    ///  <code>Protocols</code> is used to determine the communication mechanism. For example,
-    /// if you specify <code>WSS</code> as the protocol, this API produces a secure websocket
-    /// endpoint. If you specify <code>HTTPS</code> as the protocol, this API generates an
-    /// HTTPS endpoint. 
+    ///  <c>Protocols</c> is used to determine the communication mechanism. For example, if
+    /// you specify <c>WSS</c> as the protocol, this API produces a secure websocket endpoint.
+    /// If you specify <c>HTTPS</c> as the protocol, this API generates an HTTPS endpoint.
+    /// 
     /// </para>
     ///  
     /// <para>
-    ///  <code>Role</code> determines the messaging permissions. A <code>MASTER</code> role
-    /// results in this API generating an endpoint that a client can use to communicate with
-    /// any of the viewers on the channel. A <code>VIEWER</code> role results in this API
-    /// generating an endpoint that a client can use to communicate only with a <code>MASTER</code>.
-    /// 
+    ///  <c>Role</c> determines the messaging permissions. A <c>MASTER</c> role results in
+    /// this API generating an endpoint that a client can use to communicate with any of the
+    /// viewers on the channel. A <c>VIEWER</c> role results in this API generating an endpoint
+    /// that a client can use to communicate only with a <c>MASTER</c>. 
     /// </para>
     /// </summary>
     public partial class GetSignalingChannelEndpointRequest : AmazonKinesisVideoRequest
@@ -78,8 +77,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property SingleMasterChannelEndpointConfiguration. 
         /// <para>
-        /// A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code>
-        /// channel type.
+        /// A structure containing the endpoint configuration for the <c>SINGLE_MASTER</c> channel
+        /// type.
         /// </para>
         /// </summary>
         public SingleMasterChannelEndpointConfiguration SingleMasterChannelEndpointConfiguration

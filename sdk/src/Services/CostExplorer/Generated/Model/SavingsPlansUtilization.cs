@@ -101,8 +101,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UtilizationPercentage. 
         /// <para>
-        /// The amount of <code>UsedCommitment</code> divided by the <code>TotalCommitment</code>
-        /// for your Savings Plans.
+        /// The amount of <c>UsedCommitment</c> divided by the <c>TotalCommitment</c> for your
+        /// Savings Plans.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

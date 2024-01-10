@@ -30,9 +30,9 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Transcript representation containing Id and list of character intervals that are associated
-    /// with analysis data. For example, this object within a <code>RealTimeContactAnalysisPointOfInterest</code>
-    /// in <code>Category.MatchedDetails</code> would have character interval describing part
-    /// of the text that matched category.
+    /// with analysis data. For example, this object within a <c>RealTimeContactAnalysisPointOfInterest</c>
+    /// in <c>Category.MatchedDetails</c> would have character interval describing part of
+    /// the text that matched category.
     /// </summary>
     public partial class RealTimeContactAnalysisTranscriptItemWithCharacterOffsets
     {

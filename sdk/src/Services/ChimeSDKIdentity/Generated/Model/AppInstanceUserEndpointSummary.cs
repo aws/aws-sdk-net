@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// Summary of the details of an <code>AppInstanceUserEndpoint</code>.
+    /// Summary of the details of an <c>AppInstanceUserEndpoint</c>.
     /// </summary>
     public partial class AppInstanceUserEndpointSummary
     {
@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AllowMessages. 
         /// <para>
-        /// BBoolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in
-        /// to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.
+        /// BBoolean that controls whether the <c>AppInstanceUserEndpoint</c> is opted in to receive
+        /// messages. <c>ALL</c> indicates the endpoint will receive all messages. <c>NONE</c>
+        /// indicates the endpoint will receive no messages.
         /// </para>
         /// </summary>
         public AllowMessages AllowMessages
@@ -63,7 +63,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -82,7 +82,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+        /// The unique identifier of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -101,7 +101,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointState. 
         /// <para>
-        /// A read-only field that represent the state of an <code>AppInstanceUserEndpoint</code>.
+        /// A read-only field that represent the state of an <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         public EndpointState EndpointState
@@ -119,7 +119,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>AppInstanceUserEndpoint</code>.
+        /// The name of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1600)]
@@ -138,7 +138,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the <code>AppInstanceUserEndpoint</code>.
+        /// The type of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         public AppInstanceUserEndpointType Type

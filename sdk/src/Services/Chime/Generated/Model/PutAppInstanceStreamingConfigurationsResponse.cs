@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceStreamingConfigurations. 
         /// <para>
-        /// The streaming configurations of an <code>AppInstance</code>.
+        /// The streaming configurations of an <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

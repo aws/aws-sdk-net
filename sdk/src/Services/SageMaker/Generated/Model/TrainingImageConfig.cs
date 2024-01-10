@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingRepositoryAccessMode. 
         /// <para>
         /// The method that your training job will use to gain access to the images in your private
-        /// Docker registry. For access to an image in a private Docker registry, set to <code>Vpc</code>.
+        /// Docker registry. For access to an image in a private Docker registry, set to <c>Vpc</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

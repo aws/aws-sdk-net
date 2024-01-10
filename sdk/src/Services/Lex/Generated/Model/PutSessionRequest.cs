@@ -58,20 +58,19 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in
-        /// the response.
+        /// If the value is <c>text/plain; charset=utf-8</c>, Amazon Lex returns text in the response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response.
+        /// If the value begins with <c>audio/</c>, Amazon Lex returns speech in the response.
         /// Amazon Lex uses Amazon Polly to generate the speech in the configuration that you
-        /// specify. For example, if you specify <code>audio/mpeg</code> as the value, Amazon
-        /// Lex returns speech in the MPEG format.
+        /// specify. For example, if you specify <c>audio/mpeg</c> as the value, Amazon Lex returns
+        /// speech in the MPEG format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value is <code>audio/pcm</code>, the speech is returned as <code>audio/pcm</code>
-        /// in 16-bit, little endian format.
+        /// If the value is <c>audio/pcm</c>, the speech is returned as <c>audio/pcm</c> in 16-bit,
+        /// little endian format.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -79,23 +78,23 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>audio/mpeg</code> 
+        ///  <c>audio/mpeg</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/ogg</code> 
+        ///  <c>audio/ogg</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/pcm</code> 
+        ///  <c>audio/pcm</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/*</code> (defaults to mpeg)
+        ///  <c>audio/*</c> (defaults to mpeg)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>text/plain; charset=utf-8</code> 
+        ///  <c>text/plain; charset=utf-8</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -206,7 +205,7 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>intentName</code> 
+        ///  <c>intentName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -214,15 +213,15 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>slotToElict</code> 
+        ///  <c>slotToElict</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you send the <code>recentIntentSummaryView</code> parameter in a <code>PutSession</code>
-        /// request, the contents of the new summary view replaces the old summary view. For example,
-        /// if a <code>GetSession</code> request returns three intents in the summary view and
-        /// you call <code>PutSession</code> with one intent in the summary view, the next call
-        /// to <code>GetSession</code> will only return one intent.
+        /// If you send the <c>recentIntentSummaryView</c> parameter in a <c>PutSession</c> request,
+        /// the contents of the new summary view replaces the old summary view. For example, if
+        /// a <c>GetSession</c> request returns three intents in the summary view and you call
+        /// <c>PutSession</c> with one intent in the summary view, the next call to <c>GetSession</c>
+        /// will only return one intent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccess operation.
-    /// Allows you to delete the access specified in the <code>ServerID</code> and <code>ExternalID</code>
+    /// Allows you to delete the access specified in the <c>ServerID</c> and <c>ExternalID</c>
     /// parameters.
     /// </summary>
     public partial class DeleteAccessRequest : AmazonTransferRequest
@@ -48,8 +48,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties
-        /// * | Select SamAccountName,ObjectSid</code> 
+        ///  <c>Get-ADGroup -Filter {samAccountName -like "<i>YourGroupName</i>*"} -Properties
+        /// * | Select SamAccountName,ObjectSid</c> 
         /// </para>
         ///  
         /// <para>

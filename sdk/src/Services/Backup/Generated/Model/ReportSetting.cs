@@ -138,8 +138,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-        /// | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> 
+        ///  <c>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT
+        /// | RESTORE_JOB_REPORT</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

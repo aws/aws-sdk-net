@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>nextToken</code> indicates that there are more items, this value is not present.
+        /// If <c>nextToken</c> indicates that there are more items, this value is not present.
         /// </para>
         /// </summary>
         public DateTime LastEvaluatedTime
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to include in another request to get the next page of items. This value
-        /// is <code>null</code> when there are no more items to return.
+        /// is <c>null</c> when there are no more items to return.
         /// </para>
         /// </summary>
         public string NextToken

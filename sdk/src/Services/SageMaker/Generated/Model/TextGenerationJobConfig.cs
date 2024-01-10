@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         /// The name of the base model to fine-tune. Autopilot supports fine-tuning a variety
         /// of large language models. For information on the list of supported models, see <a
         /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-llms-finetuning-models.html#autopilot-llms-finetuning-supported-llms">Text
-        /// generation models supporting fine-tuning in Autopilot</a>. If no <code>BaseModelName</code>
+        /// generation models supporting fine-tuning in Autopilot</a>. If no <c>BaseModelName</c>
         /// is provided, the default model used is <b>Falcon7BInstruct</b>. 
         /// </para>
         /// </summary>
@@ -74,8 +74,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompletionCriteria. 
         /// <para>
-        /// How long a fine-tuning job is allowed to run. For <code>TextGenerationJobConfig</code>
-        /// problem types, the <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of <code>AutoMLJobCompletionCriteria</code>
+        /// How long a fine-tuning job is allowed to run. For <c>TextGenerationJobConfig</c> problem
+        /// types, the <c>MaxRuntimePerTrainingJobInSeconds</c> attribute of <c>AutoMLJobCompletionCriteria</c>
         /// defaults to 72h (259200s).
         /// </para>
         /// </summary>
@@ -116,28 +116,27 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"epochCount"</code>: The number of times the model goes through the entire
-        /// training dataset. Its value should be a string containing an integer value within
-        /// the range of "1" to "10".
+        ///  <c>"epochCount"</c>: The number of times the model goes through the entire training
+        /// dataset. Its value should be a string containing an integer value within the range
+        /// of "1" to "10".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"batchSize"</code>: The number of data samples used in each iteration of training.
+        ///  <c>"batchSize"</c>: The number of data samples used in each iteration of training.
         /// Its value should be a string containing an integer value within the range of "1" to
         /// "64".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"learningRate"</code>: The step size at which a model's parameters are updated
-        /// during training. Its value should be a string containing a floating-point value within
-        /// the range of "0" to "1".
+        ///  <c>"learningRate"</c>: The step size at which a model's parameters are updated during
+        /// training. Its value should be a string containing a floating-point value within the
+        /// range of "0" to "1".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"learningRateWarmupSteps"</code>: The number of training steps during which
-        /// the learning rate gradually increases before reaching its target or maximum value.
-        /// Its value should be a string containing an integer value within the range of "0" to
-        /// "250".
+        ///  <c>"learningRateWarmupSteps"</c>: The number of training steps during which the learning
+        /// rate gradually increases before reaching its target or maximum value. Its value should
+        /// be a string containing an integer value within the range of "0" to "250".
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -145,8 +144,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps":
-        /// "10" }</code> 
+        ///  <c>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32", "learningRateWarmupSteps":
+        /// "10" }</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]

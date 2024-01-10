@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyInstanceCapacityReservationAttributes operation.
     /// Modifies the Capacity Reservation settings for a stopped instance. Use this action
-    /// to configure an instance to target a specific Capacity Reservation, run in any <code>open</code>
+    /// to configure an instance to target a specific Capacity Reservation, run in any <c>open</c>
     /// Capacity Reservation with matching attributes, or run On-Demand Instance capacity.
     /// </summary>
     public partial class ModifyInstanceCapacityReservationAttributesRequest : AmazonEC2Request

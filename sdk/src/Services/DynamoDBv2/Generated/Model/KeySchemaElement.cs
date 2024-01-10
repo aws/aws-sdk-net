@@ -34,16 +34,16 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// A <code>KeySchemaElement</code> represents exactly one attribute of the primary key.
-    /// For example, a simple primary key would be represented by one <code>KeySchemaElement</code>
-    /// (for the partition key). A composite primary key would require one <code>KeySchemaElement</code>
-    /// for the partition key, and another <code>KeySchemaElement</code> for the sort key.
+    /// A <c>KeySchemaElement</c> represents exactly one attribute of the primary key. For
+    /// example, a simple primary key would be represented by one <c>KeySchemaElement</c>
+    /// (for the partition key). A composite primary key would require one <c>KeySchemaElement</c>
+    /// for the partition key, and another <c>KeySchemaElement</c> for the sort key.
     /// </para>
     ///  
     /// <para>
-    /// A <code>KeySchemaElement</code> must be a scalar, top-level attribute (not a nested
-    /// attribute). The data type must be one of String, Number, or Binary. The attribute
-    /// cannot be nested within a List or a Map.
+    /// A <c>KeySchemaElement</c> must be a scalar, top-level attribute (not a nested attribute).
+    /// The data type must be one of String, Number, or Binary. The attribute cannot be nested
+    /// within a List or a Map.
     /// </para>
     /// </summary>
     public partial class KeySchemaElement
@@ -93,11 +93,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HASH</code> - partition key
+        ///  <c>HASH</c> - partition key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RANGE</code> - sort key
+        ///  <c>RANGE</c> - sort key
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

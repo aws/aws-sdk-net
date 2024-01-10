@@ -42,7 +42,7 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property PredictorExecutions. 
         /// <para>
         /// An array of the backtests performed to evaluate the accuracy of the predictor against
-        /// a particular algorithm. The <code>NumberOfBacktestWindows</code> from the object determines
+        /// a particular algorithm. The <c>NumberOfBacktestWindows</c> from the object determines
         /// the number of windows in the array.
         /// </para>
         /// </summary>

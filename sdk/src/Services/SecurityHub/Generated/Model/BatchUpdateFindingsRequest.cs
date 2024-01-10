@@ -37,49 +37,49 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code>
+    /// Updates from <c>BatchUpdateFindings</c> do not affect the value of <c>UpdatedAt</c>
     /// for a finding.
     /// </para>
     ///  
     /// <para>
-    /// Administrator and member accounts can use <code>BatchUpdateFindings</code> to update
-    /// the following finding fields and objects.
+    /// Administrator and member accounts can use <c>BatchUpdateFindings</c> to update the
+    /// following finding fields and objects.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Confidence</code> 
+    ///  <c>Confidence</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Criticality</code> 
+    ///  <c>Criticality</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Note</code> 
+    ///  <c>Note</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RelatedFindings</code> 
+    ///  <c>RelatedFindings</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Severity</code> 
+    ///  <c>Severity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Types</code> 
+    ///  <c>Types</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UserDefinedFields</code> 
+    ///  <c>UserDefinedFields</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>VerificationState</code> 
+    ///  <c>VerificationState</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Workflow</code> 
+    ///  <c>Workflow</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -156,8 +156,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FindingIdentifiers. 
         /// <para>
-        /// The list of findings to update. <code>BatchUpdateFindings</code> can be used to update
-        /// up to 100 findings at a time.
+        /// The list of findings to update. <c>BatchUpdateFindings</c> can be used to update up
+        /// to 100 findings at a time.
         /// </para>
         ///  
         /// <para>
@@ -299,24 +299,24 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The available values for <code>VerificationState</code> are as follows.
+        /// The available values for <c>VerificationState</c> are as follows.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code> – The default disposition of a security finding
+        ///  <c>UNKNOWN</c> – The default disposition of a security finding
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRUE_POSITIVE</code> – The security finding is confirmed
+        ///  <c>TRUE_POSITIVE</c> – The security finding is confirmed
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FALSE_POSITIVE</code> – The security finding was determined to be a false alarm
+        ///  <c>FALSE_POSITIVE</c> – The security finding was determined to be a false alarm
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BENIGN_POSITIVE</code> – A special case of <code>TRUE_POSITIVE</code> where
-        /// the finding doesn't pose any threat, is expected, or both
+        ///  <c>BENIGN_POSITIVE</c> – A special case of <c>TRUE_POSITIVE</c> where the finding
+        /// doesn't pose any threat, is expected, or both
         /// </para>
         ///  </li> </ul>
         /// </summary>

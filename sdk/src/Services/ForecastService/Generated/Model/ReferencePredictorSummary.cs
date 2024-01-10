@@ -59,7 +59,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Whether the reference predictor is <code>Active</code> or <code>Deleted</code>.
+        /// Whether the reference predictor is <c>Active</c> or <c>Deleted</c>.
         /// </para>
         /// </summary>
         public State State

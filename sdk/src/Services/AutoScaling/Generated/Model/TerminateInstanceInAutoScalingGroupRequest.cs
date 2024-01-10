@@ -36,7 +36,7 @@ namespace Amazon.AutoScaling.Model
     ///  
     /// <para>
     /// This call simply makes a termination request. The instance is not terminated immediately.
-    /// When an instance is terminated, the instance status changes to <code>terminated</code>.
+    /// When an instance is terminated, the instance status changes to <c>terminated</c>.
     /// You can't connect to or start an instance after you've terminated it.
     /// </para>
     ///  

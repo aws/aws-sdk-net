@@ -40,8 +40,7 @@ namespace Amazon.CleanRoomsML.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// The error message that was returned. The message is intended for human consumption
-        /// and can change at any time. Use the <code>statusCode</code> for programmatic error
-        /// handling.
+        /// and can change at any time. Use the <c>statusCode</c> for programmatic error handling.
         /// </para>
         /// </summary>
         public string Message

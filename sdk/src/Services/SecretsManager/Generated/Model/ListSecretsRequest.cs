@@ -61,7 +61,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+    ///  <b>Required permissions: </b> <c>secretsmanager:ListSecrets</c>. For more information,
     /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
     /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
     /// and access control in Secrets Manager</a>. 
@@ -120,8 +120,8 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// If there are more results available, in the response, Secrets Manager includes <code>NextToken</code>.
-        /// To get the next results, call <code>ListSecrets</code> again with the value from <code>NextToken</code>.
+        /// If there are more results available, in the response, Secrets Manager includes <c>NextToken</c>.
+        /// To get the next results, call <c>ListSecrets</c> again with the value from <c>NextToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -141,8 +141,8 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates where the output should continue from, if a previous call did
-        /// not show all results. To get the next results, call <code>ListSecrets</code> again
-        /// with this value.
+        /// not show all results. To get the next results, call <c>ListSecrets</c> again with
+        /// this value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -161,7 +161,7 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// Secrets are listed by <code>CreatedDate</code>. 
+        /// Secrets are listed by <c>CreatedDate</c>. 
         /// </para>
         /// </summary>
         public SortOrderType SortOrder

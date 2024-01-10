@@ -196,8 +196,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The column by which to sort the edge deployment plans. Can be one of <code>NAME</code>,
-        /// <code>DEVICEFLEETNAME</code>, <code>CREATIONTIME</code>, <code>LASTMODIFIEDTIME</code>.
+        /// The column by which to sort the edge deployment plans. Can be one of <c>NAME</c>,
+        /// <c>DEVICEFLEETNAME</c>, <c>CREATIONTIME</c>, <c>LASTMODIFIEDTIME</c>.
         /// </para>
         /// </summary>
         public ListEdgeDeploymentPlansSortBy SortBy

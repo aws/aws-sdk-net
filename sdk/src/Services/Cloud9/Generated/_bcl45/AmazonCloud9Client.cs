@@ -54,58 +54,58 @@ namespace Amazon.Cloud9
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CreateEnvironmentEC2</code>: Creates an Cloud9 development environment, launches
+    ///  <c>CreateEnvironmentEC2</c>: Creates an Cloud9 development environment, launches
     /// an Amazon EC2 instance, and then connects from the instance to the environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateEnvironmentMembership</code>: Adds an environment member to an environment.
+    ///  <c>CreateEnvironmentMembership</c>: Adds an environment member to an environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteEnvironment</code>: Deletes an environment. If an Amazon EC2 instance
-    /// is connected to the environment, also terminates the instance.
+    ///  <c>DeleteEnvironment</c>: Deletes an environment. If an Amazon EC2 instance is connected
+    /// to the environment, also terminates the instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteEnvironmentMembership</code>: Deletes an environment member from an environment.
+    ///  <c>DeleteEnvironmentMembership</c>: Deletes an environment member from an environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeEnvironmentMemberships</code>: Gets information about environment members
+    ///  <c>DescribeEnvironmentMemberships</c>: Gets information about environment members
     /// for an environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeEnvironments</code>: Gets information about environments.
+    ///  <c>DescribeEnvironments</c>: Gets information about environments.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeEnvironmentStatus</code>: Gets status information for an environment.
+    ///  <c>DescribeEnvironmentStatus</c>: Gets status information for an environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListEnvironments</code>: Gets a list of environment identifiers.
+    ///  <c>ListEnvironments</c>: Gets a list of environment identifiers.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListTagsForResource</code>: Gets the tags for an environment.
+    ///  <c>ListTagsForResource</c>: Gets the tags for an environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TagResource</code>: Adds tags to an environment.
+    ///  <c>TagResource</c>: Adds tags to an environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UntagResource</code>: Removes tags from an environment.
+    ///  <c>UntagResource</c>: Removes tags from an environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateEnvironment</code>: Changes the settings of an existing environment.
+    ///  <c>UpdateEnvironment</c>: Changes the settings of an existing environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateEnvironmentMembership</code>: Changes the settings of an existing environment
+    ///  <c>UpdateEnvironmentMembership</c>: Changes the settings of an existing environment
     /// member for an environment.
     /// </para>
     ///  </li> </ul>

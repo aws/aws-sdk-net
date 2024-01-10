@@ -45,8 +45,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Cluster. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of the cluster to use when filtering
-        /// the <code>ListServices</code> results. If you do not specify a cluster, the default
-        /// cluster is assumed.
+        /// the <c>ListServices</c> results. If you do not specify a cluster, the default cluster
+        /// is assumed.
         /// </para>
         /// </summary>
         public string Cluster
@@ -64,7 +64,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property LaunchType. 
         /// <para>
-        /// The launch type to use when filtering the <code>ListServices</code> results.
+        /// The launch type to use when filtering the <c>ListServices</c> results.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -82,13 +82,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of service results that <code>ListServices</code> returned in paginated
-        /// output. When this parameter is used, <code>ListServices</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListServices</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter isn't used, then <code>ListServices</code> returns up
-        /// to 10 results and a <code>nextToken</code> value if applicable.
+        /// The maximum number of service results that <c>ListServices</c> returned in paginated
+        /// output. When this parameter is used, <c>ListServices</c> only returns <c>maxResults</c>
+        /// results in a single page along with a <c>nextToken</c> response element. The remaining
+        /// results of the initial request can be seen by sending another <c>ListServices</c>
+        /// request with the returned <c>nextToken</c> value. This value can be between 1 and
+        /// 100. If this parameter isn't used, then <c>ListServices</c> returns up to 10 results
+        /// and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -106,10 +106,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a <code>ListServices</code> request
-        /// indicating that more results are available to fulfill the request and further calls
-        /// will be needed. If <code>maxResults</code> was provided, it is possible the number
-        /// of results to be fewer than <code>maxResults</code>.
+        /// The <c>nextToken</c> value returned from a <c>ListServices</c> request indicating
+        /// that more results are available to fulfill the request and further calls will be needed.
+        /// If <c>maxResults</c> was provided, it is possible the number of results to be fewer
+        /// than <c>maxResults</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -133,7 +133,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SchedulingStrategy. 
         /// <para>
-        /// The scheduling strategy to use when filtering the <code>ListServices</code> results.
+        /// The scheduling strategy to use when filtering the <c>ListServices</c> results.
         /// </para>
         /// </summary>
         public SchedulingStrategy SchedulingStrategy

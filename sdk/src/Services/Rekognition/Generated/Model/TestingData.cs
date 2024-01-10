@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The dataset used for testing. Optionally, if <code>AutoCreate</code> is set, Amazon
-    /// Rekognition uses the training dataset to create a test dataset with a temporary split
-    /// of the training dataset.
+    /// The dataset used for testing. Optionally, if <c>AutoCreate</c> is set, Amazon Rekognition
+    /// uses the training dataset to create a test dataset with a temporary split of the training
+    /// dataset.
     /// </summary>
     public partial class TestingData
     {

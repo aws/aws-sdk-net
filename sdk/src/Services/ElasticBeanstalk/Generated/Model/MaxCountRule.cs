@@ -41,7 +41,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DeleteSourceFromS3. 
         /// <para>
-        /// Set to <code>true</code> to delete a version's source bundle from Amazon S3 when Elastic
+        /// Set to <c>true</c> to delete a version's source bundle from Amazon S3 when Elastic
         /// Beanstalk deletes the application version.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specify <code>true</code> to apply the rule, or <code>false</code> to disable it.
+        /// Specify <c>true</c> to apply the rule, or <c>false</c> to disable it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

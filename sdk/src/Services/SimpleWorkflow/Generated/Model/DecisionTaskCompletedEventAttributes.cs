@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>DecisionTaskCompleted</code> event.
+    /// Provides the details of the <c>DecisionTaskCompleted</c> event.
     /// </summary>
     public partial class DecisionTaskCompletedEventAttributes
     {
@@ -61,9 +61,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskScheduled</code> event that was recorded when this
-        /// decision task was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event.
+        /// The ID of the <c>DecisionTaskScheduled</c> event that was recorded when this decision
+        /// task was scheduled. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,9 +82,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskStarted</code> event recorded when this decision task
-        /// was started. This information can be useful for diagnosing problems by tracing back
-        /// the chain of events leading up to this event.
+        /// The ID of the <c>DecisionTaskStarted</c> event recorded when this decision task was
+        /// started. This information can be useful for diagnosing problems by tracing back the
+        /// chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

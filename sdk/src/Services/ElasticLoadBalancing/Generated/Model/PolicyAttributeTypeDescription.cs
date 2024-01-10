@@ -60,7 +60,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property AttributeType. 
         /// <para>
-        /// The type of the attribute. For example, <code>Boolean</code> or <code>Integer</code>.
+        /// The type of the attribute. For example, <c>Boolean</c> or <c>Integer</c>.
         /// </para>
         /// </summary>
         public string AttributeType

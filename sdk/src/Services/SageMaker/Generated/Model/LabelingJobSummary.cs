@@ -90,8 +90,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the <code>LabelingJobStatus</code> field is <code>Failed</code>, this field contains
-        /// a description of the error.
+        /// If the <c>LabelingJobStatus</c> field is <c>Failed</c>, this field contains a description
+        /// of the error.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

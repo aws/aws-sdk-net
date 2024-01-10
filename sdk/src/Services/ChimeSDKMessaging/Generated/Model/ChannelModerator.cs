@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The <code>AppInstanceUser</code> who created the moderator.
+        /// The <c>AppInstanceUser</c> who created the moderator.
         /// </para>
         /// </summary>
         public Identity CreatedBy

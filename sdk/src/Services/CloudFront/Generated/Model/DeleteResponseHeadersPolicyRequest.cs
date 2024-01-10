@@ -41,8 +41,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// To delete a response headers policy, you must provide the policy's identifier and
-    /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
-    /// or <code>GetResponseHeadersPolicy</code>.
+    /// version. To get these values, you can use <c>ListResponseHeadersPolicies</c> or <c>GetResponseHeadersPolicy</c>.
     /// </para>
     /// </summary>
     public partial class DeleteResponseHeadersPolicyRequest : AmazonCloudFrontRequest
@@ -57,7 +56,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// To get the identifier, you can use <code>ListResponseHeadersPolicies</code>.
+        /// To get the identifier, you can use <c>ListResponseHeadersPolicies</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,9 +79,8 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// The version is the response headers policy's <code>ETag</code> value, which you can
-        /// get using <code>ListResponseHeadersPolicies</code>, <code>GetResponseHeadersPolicy</code>,
-        /// or <code>GetResponseHeadersPolicyConfig</code>.
+        /// The version is the response headers policy's <c>ETag</c> value, which you can get
+        /// using <c>ListResponseHeadersPolicies</c>, <c>GetResponseHeadersPolicy</c>, or <c>GetResponseHeadersPolicyConfig</c>.
         /// </para>
         /// </summary>
         public string IfMatch

@@ -100,7 +100,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property ReplicatingFrom. 
         /// <para>
-        /// This response value is present only if this index is <code>Type=AGGREGATOR</code>.
+        /// This response value is present only if this index is <c>Type=AGGREGATOR</c>.
         /// </para>
         ///  
         /// <para>
@@ -123,7 +123,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property ReplicatingTo. 
         /// <para>
-        /// This response value is present only if this index is <code>Type=LOCAL</code>.
+        /// This response value is present only if this index is <c>Type=LOCAL</c>.
         /// </para>
         ///  
         /// <para>

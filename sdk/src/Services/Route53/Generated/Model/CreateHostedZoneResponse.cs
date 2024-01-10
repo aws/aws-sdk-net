@@ -61,7 +61,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ChangeInfo. 
         /// <para>
-        /// A complex type that contains information about the <code>CreateHostedZone</code> request.
+        /// A complex type that contains information about the <c>CreateHostedZone</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

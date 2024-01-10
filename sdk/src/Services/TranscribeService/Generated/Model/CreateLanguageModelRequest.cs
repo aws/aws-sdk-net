@@ -73,8 +73,8 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// If the audio you want to transcribe has a sample rate of 16,000 Hz or greater, choose
-        /// <code>WideBand</code>. To transcribe audio with a sample rate less than 16,000 Hz,
-        /// choose <code>NarrowBand</code>.
+        /// <c>WideBand</c>. To transcribe audio with a sample rate less than 16,000 Hz, choose
+        /// <c>NarrowBand</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,10 +98,10 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code>,
-        /// which is the Amazon S3 location of your training data, and <code>DataAccessRoleArn</code>,
+        /// When using <c>InputDataConfig</c>, you must include these sub-parameters: <c>S3Uri</c>,
+        /// which is the Amazon S3 location of your training data, and <c>DataAccessRoleArn</c>,
         /// which is the Amazon Resource Name (ARN) of the role that has permission to access
-        /// your specified Amazon S3 location. You can optionally include <code>TuningDataS3Uri</code>,
+        /// your specified Amazon S3 location. You can optionally include <c>TuningDataS3Uri</c>,
         /// which is the Amazon S3 location of your tuning data. If you specify different Amazon
         /// S3 locations for training and tuning data, the ARN you use must have permissions to
         /// access both locations.
@@ -131,15 +131,14 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// For a list of supported languages and their associated language codes, refer to the
         /// <a href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
-        /// languages</a> table. Note that US English (<code>en-US</code>) is the only language
-        /// supported with Amazon Transcribe Medical.
+        /// languages</a> table. Note that US English (<c>en-US</c>) is the only language supported
+        /// with Amazon Transcribe Medical.
         /// </para>
         ///  
         /// <para>
         /// A custom language model can only be used to transcribe files in the same language
         /// as the model. For example, if you create a custom language model using US English
-        /// (<code>en-US</code>), you can only apply this model to files that contain English
-        /// audio.
+        /// (<c>en-US</c>), you can only apply this model to files that contain English audio.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,8 +163,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
         /// Web Services account. If you try to create a new custom language model with the same
-        /// name as an existing custom language model, you get a <code>ConflictException</code>
-        /// error.
+        /// name as an existing custom language model, you get a <c>ConflictException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

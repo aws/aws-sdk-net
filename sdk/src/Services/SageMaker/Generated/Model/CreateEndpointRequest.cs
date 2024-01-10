@@ -41,10 +41,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  You must not delete an <code>EndpointConfig</code> that is in use by an endpoint
-    /// that is live or while the <code>UpdateEndpoint</code> or <code>CreateEndpoint</code>
-    /// operations are being performed on the endpoint. To update an endpoint, you must create
-    /// a new <code>EndpointConfig</code>.
+    ///  You must not delete an <c>EndpointConfig</c> that is in use by an endpoint that is
+    /// live or while the <c>UpdateEndpoint</c> or <c>CreateEndpoint</c> operations are being
+    /// performed on the endpoint. To update an endpoint, you must create a new <c>EndpointConfig</c>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -61,20 +60,20 @@ namespace Amazon.SageMaker.Model
     /// When you call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
     /// a load call is made to DynamoDB to verify that your endpoint configuration exists.
     /// When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
-    /// <code>Eventually Consistent Reads</code> </a>, the response might not reflect the
-    /// results of a recently completed write operation. The response might include some stale
-    /// data. If the dependent entities are not yet in DynamoDB, this causes a validation
-    /// error. If you repeat your read request after a short time, the response should return
-    /// the latest data. So retry logic is recommended to handle these possible issues. We
-    /// also recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+    /// <c>Eventually Consistent Reads</c> </a>, the response might not reflect the results
+    /// of a recently completed write operation. The response might include some stale data.
+    /// If the dependent entities are not yet in DynamoDB, this causes a validation error.
+    /// If you repeat your read request after a short time, the response should return the
+    /// latest data. So retry logic is recommended to handle these possible issues. We also
+    /// recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
     /// before calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
     /// to minimize the potential impact of a DynamoDB eventually consistent read.
     /// </para>
     ///  </note> 
     /// <para>
-    /// When SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
-    /// After it creates the endpoint, it sets the status to <code>InService</code>. SageMaker
-    /// can then process incoming requests for inferences. To check the status of an endpoint,
+    /// When SageMaker receives the request, it sets the endpoint status to <c>Creating</c>.
+    /// After it creates the endpoint, it sets the status to <c>InService</c>. SageMaker can
+    /// then process incoming requests for inferences. To check the status of an endpoint,
     /// use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
     /// API.
     /// </para>
@@ -99,7 +98,7 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Option 1: For a full SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code>
+    /// Option 1: For a full SageMaker access, search and attach the <c>AmazonSageMakerFullAccess</c>
     /// policy.
     /// </para>
     ///  </li> <li> 
@@ -109,25 +108,23 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code>
-    /// 
+    ///  <c>"Action": ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"Resource": [</code> 
+    ///  <c>"Resource": [</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code> 
+    ///  <c>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
-    /// 
+    ///  <c>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>]</code> 
+    ///  <c>]</c> 
     /// </para>
     ///  
     /// <para>
@@ -182,7 +179,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EndpointName. 
         /// <para>
         /// The name of the endpoint.The name must be unique within an Amazon Web Services Region
-        /// in your Amazon Web Services account. The name is case-insensitive in <code>CreateEndpoint</code>,
+        /// in your Amazon Web Services account. The name is case-insensitive in <c>CreateEndpoint</c>,
         /// but the case is preserved and must be matched in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.
         /// </para>
         /// </summary>

@@ -65,195 +65,195 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora-mysql5.7</code> 
+        ///  <c>aurora-mysql5.7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-mysql8.0</code> 
+        ///  <c>aurora-mysql8.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql10</code> 
+        ///  <c>aurora-postgresql10</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql11</code> 
+        ///  <c>aurora-postgresql11</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql12</code> 
+        ///  <c>aurora-postgresql12</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql13</code> 
+        ///  <c>aurora-postgresql13</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql14</code> 
+        ///  <c>aurora-postgresql14</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom-oracle-ee-19</code> 
+        ///  <c>custom-oracle-ee-19</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-ae</code> 
+        ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-se</code> 
+        ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb10.2</code> 
+        ///  <c>mariadb10.2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb10.3</code> 
+        ///  <c>mariadb10.3</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb10.4</code> 
+        ///  <c>mariadb10.4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb10.5</code> 
+        ///  <c>mariadb10.5</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb10.6</code> 
+        ///  <c>mariadb10.6</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mysql5.7</code> 
+        ///  <c>mysql5.7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mysql8.0</code> 
+        ///  <c>mysql8.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-19</code> 
+        ///  <c>oracle-ee-19</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-cdb-19</code> 
+        ///  <c>oracle-ee-cdb-19</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-cdb-21</code> 
+        ///  <c>oracle-ee-cdb-21</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-19</code> 
+        ///  <c>oracle-se2-19</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-cdb-19</code> 
+        ///  <c>oracle-se2-cdb-19</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-cdb-21</code> 
+        ///  <c>oracle-se2-cdb-21</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres10</code> 
+        ///  <c>postgres10</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres11</code> 
+        ///  <c>postgres11</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres12</code> 
+        ///  <c>postgres12</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres13</code> 
+        ///  <c>postgres13</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres14</code> 
+        ///  <c>postgres14</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee-11.0</code> 
+        ///  <c>sqlserver-ee-11.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee-12.0</code> 
+        ///  <c>sqlserver-ee-12.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee-13.0</code> 
+        ///  <c>sqlserver-ee-13.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee-14.0</code> 
+        ///  <c>sqlserver-ee-14.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee-15.0</code> 
+        ///  <c>sqlserver-ee-15.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex-11.0</code> 
+        ///  <c>sqlserver-ex-11.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex-12.0</code> 
+        ///  <c>sqlserver-ex-12.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex-13.0</code> 
+        ///  <c>sqlserver-ex-13.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex-14.0</code> 
+        ///  <c>sqlserver-ex-14.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex-15.0</code> 
+        ///  <c>sqlserver-ex-15.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se-11.0</code> 
+        ///  <c>sqlserver-se-11.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se-12.0</code> 
+        ///  <c>sqlserver-se-12.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se-13.0</code> 
+        ///  <c>sqlserver-se-13.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se-14.0</code> 
+        ///  <c>sqlserver-se-14.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se-15.0</code> 
+        ///  <c>sqlserver-se-15.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web-11.0</code> 
+        ///  <c>sqlserver-web-11.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web-12.0</code> 
+        ///  <c>sqlserver-web-12.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web-13.0</code> 
+        ///  <c>sqlserver-web-13.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web-14.0</code> 
+        ///  <c>sqlserver-web-14.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web-15.0</code> 
+        ///  <c>sqlserver-web-15.0</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -291,9 +291,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeEngineDefaultParameters</code>
+        /// An optional pagination token provided by a previous <c>DescribeEngineDefaultParameters</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -312,8 +312,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

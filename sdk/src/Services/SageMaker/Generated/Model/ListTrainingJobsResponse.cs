@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobSummaries. 
         /// <para>
-        /// An array of <code>TrainingJobSummary</code> objects, each listing a training job.
+        /// An array of <c>TrainingJobSummary</c> objects, each listing a training job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

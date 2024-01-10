@@ -39,7 +39,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property AccessControls. 
         /// <para>
-        /// A list of <code>AccessControlList</code> objects.
+        /// A list of <c>AccessControlList</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property MemberRelation. 
         /// <para>
-        /// Describes the member relation within the <code>AccessControlList</code> object.
+        /// Describes the member relation within the <c>AccessControlList</c> object.
         /// </para>
         /// </summary>
         public MemberRelation MemberRelation

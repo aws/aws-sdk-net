@@ -213,7 +213,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the subnet. Valid values are <code>available</code> or <code>pending</code>.
+        /// The current state of the subnet. Valid values are <c>available</c> or <c>pending</c>.
         /// </para>
         /// </summary>
         public string State

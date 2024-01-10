@@ -31,7 +31,7 @@ namespace Amazon.RedshiftServerless.Model
     /// <summary>
     /// Container for the parameters to the CreateScheduledAction operation.
     /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
-    /// API action. For example, you can create a schedule of when to run the <code>CreateSnapshot</code>
+    /// API action. For example, you can create a schedule of when to run the <c>CreateSnapshot</c>
     /// API operation.
     /// </summary>
     public partial class CreateScheduledActionRequest : AmazonRedshiftServerlessRequest
@@ -50,8 +50,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Indicates whether the schedule is enabled. If false, the scheduled action does not
-        /// trigger. For more information about <code>state</code> of the scheduled action, see
-        /// <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ScheduledAction.html">ScheduledAction</a>.
+        /// trigger. For more information about <c>state</c> of the scheduled action, see <a href="https://docs.aws.amazon.com/redshift-serverless/latest/APIReference/API_ScheduledAction.html">ScheduledAction</a>.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -138,13 +137,13 @@ namespace Amazon.RedshiftServerless.Model
         /// </para>
         ///  
         /// <para>
-        /// Format of at expressions is "<code>at(yyyy-mm-ddThh:mm:ss)</code>". For example, "<code>at(2016-03-04T17:27:00)</code>".
+        /// Format of at expressions is "<c>at(yyyy-mm-ddThh:mm:ss)</c>". For example, "<c>at(2016-03-04T17:27:00)</c>".
         /// </para>
         ///  
         /// <para>
-        /// Format of cron expressions is "<code>cron(Minutes Hours Day-of-month Month Day-of-week
-        /// Year)</code>". For example, "<code>cron(0 10 ? * MON *)</code>". For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
+        /// Format of cron expressions is "<c>cron(Minutes Hours Day-of-month Month Day-of-week
+        /// Year)</c>". For example, "<c>cron(0 10 ? * MON *)</c>". For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
         /// Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.
         /// </para>
         /// </summary>

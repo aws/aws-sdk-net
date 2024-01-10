@@ -38,8 +38,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ClarifyExplainerConfig. 
         /// <para>
-        /// A member of <code>ExplainerConfig</code> that contains configuration parameters for
-        /// the SageMaker Clarify explainer.
+        /// A member of <c>ExplainerConfig</c> that contains configuration parameters for the
+        /// SageMaker Clarify explainer.
         /// </para>
         /// </summary>
         public ClarifyExplainerConfig ClarifyExplainerConfig

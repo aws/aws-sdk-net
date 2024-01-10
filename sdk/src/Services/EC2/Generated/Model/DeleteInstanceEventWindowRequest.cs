@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ForceDelete. 
         /// <para>
-        /// Specify <code>true</code> to force delete the event window. Use the force delete parameter
+        /// Specify <c>true</c> to force delete the event window. Use the force delete parameter
         /// if the event window is currently associated with targets.
         /// </para>
         /// </summary>

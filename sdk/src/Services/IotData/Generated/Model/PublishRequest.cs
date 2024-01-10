@@ -83,7 +83,7 @@ namespace Amazon.IotData.Model
         /// Gets and sets the property CorrelationData. 
         /// <para>
         /// The base64-encoded binary data used by the sender of the request message to identify
-        /// which request the response message is for when it's received. <code>correlationData</code>
+        /// which request the response message is for when it's received. <c>correlationData</c>
         /// is an HTTP header value in the API.
         /// </para>
         /// </summary>
@@ -103,7 +103,7 @@ namespace Amazon.IotData.Model
         /// Gets and sets the property MessageExpiry. 
         /// <para>
         /// A user-defined integer value that represents the message expiry interval in seconds.
-        /// If absent, the message doesn't expire. For more information about the limits of <code>messageExpiry</code>,
+        /// If absent, the message doesn't expire. For more information about the limits of <c>messageExpiry</c>,
         /// see <a href="https://docs.aws.amazon.com/general/latest/gr/iot-core.html#message-broker-limits">Amazon
         /// Web Services IoT Core message broker and protocol limits and quotas </a> from the
         /// Amazon Web Services Reference Guide.
@@ -128,8 +128,8 @@ namespace Amazon.IotData.Model
         /// </para>
         ///  
         /// <para>
-        /// Publishing an empty (null) payload with <b>retain</b> = <code>true</code> deletes
-        /// the retained message identified by <b>topic</b> from Amazon Web Services IoT Core.
+        /// Publishing an empty (null) payload with <b>retain</b> = <c>true</c> deletes the retained
+        /// message identified by <b>topic</b> from Amazon Web Services IoT Core.
         /// </para>
         /// </summary>
         public MemoryStream Payload
@@ -147,8 +147,8 @@ namespace Amazon.IotData.Model
         /// <summary>
         /// Gets and sets the property PayloadFormatIndicator. 
         /// <para>
-        /// An <code>Enum</code> string value that indicates whether the payload is formatted
-        /// as UTF-8. <code>payloadFormatIndicator</code> is an HTTP header value in the API.
+        /// An <c>Enum</c> string value that indicates whether the payload is formatted as UTF-8.
+        /// <c>payloadFormatIndicator</c> is an HTTP header value in the API.
         /// </para>
         /// </summary>
         public PayloadFormatIndicator PayloadFormatIndicator
@@ -215,11 +215,11 @@ namespace Amazon.IotData.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code> 
+        /// Valid values: <c>true</c> | <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default value: <code>false</code> 
+        /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Retain
@@ -258,17 +258,16 @@ namespace Amazon.IotData.Model
         /// <para>
         /// A JSON string that contains an array of JSON objects. If you don’t use Amazon Web
         /// Services SDK or CLI, you must encode the JSON string to base64 format before adding
-        /// it to the HTTP header. <code>userProperties</code> is an HTTP header value in the
-        /// API.
+        /// it to the HTTP header. <c>userProperties</c> is an HTTP header value in the API.
         /// </para>
         ///  
         /// <para>
-        /// The following example <code>userProperties</code> parameter is a JSON string which
-        /// represents two User Properties. Note that it needs to be base64-encoded:
+        /// The following example <c>userProperties</c> parameter is a JSON string which represents
+        /// two User Properties. Note that it needs to be base64-encoded:
         /// </para>
         ///  
         /// <para>
-        ///  <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> 
+        ///  <c>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</c> 
         /// </para>
         /// </summary>
         public string UserProperties

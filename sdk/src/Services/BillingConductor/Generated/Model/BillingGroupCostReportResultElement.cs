@@ -63,11 +63,10 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The list of key-value pairs that represent the attributes by which the <code>BillingGroupCostReportResults</code>
+        /// The list of key-value pairs that represent the attributes by which the <c>BillingGroupCostReportResults</c>
         /// are grouped. For example, if you want the Amazon S3 service-level breakdown of a billing
-        /// group for November 2023, the attributes list will contain a key-value pair of <code>"PRODUCT_NAME"</code>
-        /// and <code>"S3"</code> and a key-value pair of <code>"BILLING_PERIOD"</code> and <code>"Nov
-        /// 2023"</code>.
+        /// group for November 2023, the attributes list will contain a key-value pair of <c>"PRODUCT_NAME"</c>
+        /// and <c>"S3"</c> and a key-value pair of <c>"BILLING_PERIOD"</c> and <c>"Nov 2023"</c>.
         /// </para>
         /// </summary>
         public List<Attribute> Attributes

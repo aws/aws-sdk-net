@@ -50,7 +50,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AsyncInferenceConfig. 
         /// <para>
         /// Returns the description of an endpoint configuration created using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">
-        /// <code>CreateEndpointConfig</code> </a> API.
+        /// <c>CreateEndpointConfig</c> </a> API.
         /// </para>
         /// </summary>
         public AsyncInferenceConfig AsyncInferenceConfig
@@ -216,8 +216,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
-        /// to host at this endpoint.
+        /// An array of <c>ProductionVariant</c> objects, one for each model that you want to
+        /// host at this endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -236,9 +236,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShadowProductionVariants. 
         /// <para>
-        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
-        /// to host at this endpoint in shadow mode with production traffic replicated from the
-        /// model specified on <code>ProductionVariants</code>.
+        /// An array of <c>ProductionVariant</c> objects, one for each model that you want to
+        /// host at this endpoint in shadow mode with production traffic replicated from the model
+        /// specified on <c>ProductionVariants</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

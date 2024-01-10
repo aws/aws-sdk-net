@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AcceptTransitGatewayPeeringAttachment operation.
     /// Accepts a transit gateway peering attachment request. The peering attachment must
-    /// be in the <code>pendingAcceptance</code> state.
+    /// be in the <c>pendingAcceptance</c> state.
     /// </summary>
     public partial class AcceptTransitGatewayPeeringAttachmentRequest : AmazonEC2Request
     {

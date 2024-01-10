@@ -153,9 +153,9 @@ namespace Amazon.CodeGuruReviewer
 
         /// <summary>
         /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a>
-        /// of <code>RepositoryAnalysis</code>. This type of code review analyzes all code under
-        /// a specified branch in an associated repository. <code>PullRequest</code> code reviews
-        /// are automatically triggered by a pull request.
+        /// of <c>RepositoryAnalysis</c>. This type of code review analyzes all code under a specified
+        /// branch in an associated repository. <c>PullRequest</c> code reviews are automatically
+        /// triggered by a pull request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCodeReview service method.</param>
         /// 

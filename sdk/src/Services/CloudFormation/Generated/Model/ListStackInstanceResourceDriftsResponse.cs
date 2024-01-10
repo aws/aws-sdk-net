@@ -40,10 +40,10 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request didn't return all of the remaining results, the
-        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve
+        /// response object's <c>NextToken</c> parameter value is set to a token. To retrieve
         /// the next set of results, call this action again and assign that token to the request
-        /// object's <code>NextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+        /// object's <c>NextToken</c> parameter. If there are no remaining results, the previous
+        /// response object's <c>NextToken</c> parameter is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -62,7 +62,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <code>StackInstanceResourceDriftSummary</code> structures that contain information
+        /// A list of <c>StackInstanceResourceDriftSummary</c> structures that contain information
         /// about the specified stack instances.
         /// </para>
         /// </summary>

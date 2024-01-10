@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePublicSharingSettings operation.
-    /// Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off
-    /// the public sharing settings of an Amazon QuickSight dashboard.
+    /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
+    /// sharing settings of an Amazon QuickSight dashboard.
     /// 
     ///  
     /// <para>

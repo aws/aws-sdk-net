@@ -40,9 +40,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Flags. 
         /// <para>
-        /// Used in conjunction with the <code>Masks</code> setting to define the flags that must
-        /// be set and flags that must not be set in order for the packet to match. This setting
-        /// can only specify values that are also specified in the <code>Masks</code> setting.
+        /// Used in conjunction with the <c>Masks</c> setting to define the flags that must be
+        /// set and flags that must not be set in order for the packet to match. This setting
+        /// can only specify values that are also specified in the <c>Masks</c> setting.
         /// </para>
         ///  
         /// <para>

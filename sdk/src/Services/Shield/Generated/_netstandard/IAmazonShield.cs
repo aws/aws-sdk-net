@@ -61,8 +61,8 @@ namespace Amazon.Shield
         /// 
         ///  
         /// <para>
-        /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
-        /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+        /// To use the services of the SRT and make an <c>AssociateDRTLogBucket</c> request, you
+        /// must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
         /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
@@ -75,9 +75,8 @@ namespace Amazon.Shield
         /// <returns>The response from the AssociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
         /// In order to grant the necessary access to the Shield Response Team (SRT) the user
-        /// submitting the request must have the <code>iam:PassRole</code> permission. This error
-        /// indicates the user did not have the appropriate permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// submitting the request must have the <c>iam:PassRole</c> permission. This error indicates
+        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
@@ -122,19 +121,18 @@ namespace Amazon.Shield
         /// 
         ///  
         /// <para>
-        /// You can associate only one <code>RoleArn</code> with your subscription. If you submit
-        /// an <code>AssociateDRTRole</code> request for an account that already has an associated
-        /// role, the new <code>RoleArn</code> will replace the existing <code>RoleArn</code>.
-        /// 
+        /// You can associate only one <c>RoleArn</c> with your subscription. If you submit an
+        /// <c>AssociateDRTRole</c> request for an account that already has an associated role,
+        /// the new <c>RoleArn</c> will replace the existing <c>RoleArn</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Prior to making the <code>AssociateDRTRole</code> request, you must attach the <code>AWSShieldDRTAccessPolicy</code>
+        /// Prior to making the <c>AssociateDRTRole</c> request, you must attach the <c>AWSShieldDRTAccessPolicy</c>
         /// managed policy to the role that you'll specify in the request. You can access this
         /// policy in the IAM console at <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSShieldDRTAccessPolicy">AWSShieldDRTAccessPolicy</a>.
         /// For more information see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_manage-attach-detach.html">Adding
         /// and removing IAM identity permissions</a>. The role must also trust the service principal
-        /// <code>drt.shield.amazonaws.com</code>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
+        /// <c>drt.shield.amazonaws.com</c>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html">IAM
         /// JSON policy elements: Principal</a>.
         /// </para>
         ///  
@@ -146,14 +144,14 @@ namespace Amazon.Shield
         /// </para>
         ///  
         /// <para>
-        /// You must have the <code>iam:PassRole</code> permission to make an <code>AssociateDRTRole</code>
+        /// You must have the <c>iam:PassRole</c> permission to make an <c>AssociateDRTRole</c>
         /// request. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a user permissions to pass a role to an Amazon Web Services service</a>. 
         /// </para>
         ///  
         /// <para>
-        /// To use the services of the SRT and make an <code>AssociateDRTRole</code> request,
-        /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+        /// To use the services of the SRT and make an <c>AssociateDRTRole</c> request, you must
+        /// be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
         /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
         /// Support plan</a>.
         /// </para>
@@ -166,9 +164,8 @@ namespace Amazon.Shield
         /// <returns>The response from the AssociateDRTRole service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
         /// In order to grant the necessary access to the Shield Response Team (SRT) the user
-        /// submitting the request must have the <code>iam:PassRole</code> permission. This error
-        /// indicates the user did not have the appropriate permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// submitting the request must have the <c>iam:PassRole</c> permission. This error indicates
+        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
@@ -257,7 +254,7 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// After you have initialized proactive engagement using this call, to disable or enable
-        /// proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+        /// proactive engagement, use the calls <c>DisableProactiveEngagement</c> and <c>EnableProactiveEngagement</c>.
         /// 
         /// </para>
         ///  <note> 
@@ -269,8 +266,7 @@ namespace Amazon.Shield
         /// <para>
         /// The contacts that you provide in the request replace any contacts that were already
         /// defined. If you already have contacts defined and want to use them, retrieve the list
-        /// using <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
-        /// 
+        /// using <c>DescribeEmergencyContactSettings</c> and then provide it to this call. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -317,7 +313,7 @@ namespace Amazon.Shield
         /// 
         ///  
         /// <para>
-        /// You can add protection to only a single resource with each <code>CreateProtection</code>
+        /// You can add protection to only a single resource with each <c>CreateProtection</c>
         /// request. You can add protection to multiple resources at once through the Shield Advanced
         /// console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
         /// For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
@@ -425,7 +421,7 @@ namespace Amazon.Shield
         /// <para>
         /// When you initially create a subscription, your subscription is set to be automatically
         /// renewed at the end of the existing subscription period. You can change this by submitting
-        /// an <code>UpdateSubscription</code> request. 
+        /// an <c>UpdateSubscription</c> request. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSubscription service method.</param>
@@ -527,9 +523,9 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LockedSubscriptionException">
         /// You are trying to update a subscription that has not yet completed the 1-year commitment.
-        /// You can change the <code>AutoRenew</code> parameter during the last 30 days of your
-        /// subscription. This exception indicates that you are attempting to change <code>AutoRenew</code>
-        /// prior to that period.
+        /// You can change the <c>AutoRenew</c> parameter during the last 30 days of your subscription.
+        /// This exception indicates that you are attempting to change <c>AutoRenew</c> prior
+        /// to that period.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -555,8 +551,8 @@ namespace Amazon.Shield
         /// 
         /// <returns>The response from the DescribeAttack service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedException">
-        /// Exception that indicates the specified <code>AttackId</code> does not exist, or the
-        /// requester does not have the appropriate permissions to access the <code>AttackId</code>.
+        /// Exception that indicates the specified <c>AttackId</c> does not exist, or the requester
+        /// does not have the appropriate permissions to access the <c>AttackId</c>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
         /// Exception that indicates that a problem occurred with the service infrastructure.
@@ -580,10 +576,9 @@ namespace Amazon.Shield
         ///  
         /// <para>
         /// The operation returns data for the time range of midnight UTC, one year ago, to midnight
-        /// UTC, today. For example, if the current time is <code>2020-10-26 15:39:32 PDT</code>,
-        /// equal to <code>2020-10-26 22:39:32 UTC</code>, then the time range for the attack
-        /// data returned is from <code>2019-10-26 00:00:00 UTC</code> to <code>2020-10-26 00:00:00
-        /// UTC</code>. 
+        /// UTC, today. For example, if the current time is <c>2020-10-26 15:39:32 PDT</c>, equal
+        /// to <c>2020-10-26 22:39:32 UTC</c>, then the time range for the attack data returned
+        /// is from <c>2019-10-26 00:00:00 UTC</c> to <c>2020-10-26 00:00:00 UTC</c>. 
         /// </para>
         ///  
         /// <para>
@@ -836,9 +831,8 @@ namespace Amazon.Shield
         /// <returns>The response from the DisassociateDRTLogBucket service method, as returned by Shield.</returns>
         /// <exception cref="Amazon.Shield.Model.AccessDeniedForDependencyException">
         /// In order to grant the necessary access to the Shield Response Team (SRT) the user
-        /// submitting the request must have the <code>iam:PassRole</code> permission. This error
-        /// indicates the user did not have the appropriate permissions. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
+        /// submitting the request must have the <c>iam:PassRole</c> permission. This error indicates
+        /// the user did not have the appropriate permissions. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">Granting
         /// a User Permissions to Pass a Role to an Amazon Web Services Service</a>.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InternalErrorException">
@@ -1059,7 +1053,7 @@ namespace Amazon.Shield
 
 
         /// <summary>
-        /// Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.
+        /// Returns the <c>SubscriptionState</c>, either <c>Active</c> or <c>Inactive</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSubscriptionState service method.</param>
         /// <param name="cancellationToken">
@@ -1125,9 +1119,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the <code>NextToken</code> specified in the request
-        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
-        /// in the prior response.
+        /// Exception that indicates that the <c>NextToken</c> specified in the request is invalid.
+        /// Submit the request using the <c>NextToken</c> value that was returned in the prior
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1158,9 +1152,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the <code>NextToken</code> specified in the request
-        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
-        /// in the prior response.
+        /// Exception that indicates that the <c>NextToken</c> specified in the request is invalid.
+        /// Submit the request using the <c>NextToken</c> value that was returned in the prior
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1189,9 +1183,9 @@ namespace Amazon.Shield
         /// You can retry the request.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.InvalidPaginationTokenException">
-        /// Exception that indicates that the <code>NextToken</code> specified in the request
-        /// is invalid. Submit the request using the <code>NextToken</code> value that was returned
-        /// in the prior response.
+        /// Exception that indicates that the <c>NextToken</c> specified in the request is invalid.
+        /// Submit the request using the <c>NextToken</c> value that was returned in the prior
+        /// response.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.ResourceNotFoundException">
         /// Exception indicating the specified resource does not exist. If available, this exception
@@ -1443,9 +1437,9 @@ namespace Amazon.Shield
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.LockedSubscriptionException">
         /// You are trying to update a subscription that has not yet completed the 1-year commitment.
-        /// You can change the <code>AutoRenew</code> parameter during the last 30 days of your
-        /// subscription. This exception indicates that you are attempting to change <code>AutoRenew</code>
-        /// prior to that period.
+        /// You can change the <c>AutoRenew</c> parameter during the last 30 days of your subscription.
+        /// This exception indicates that you are attempting to change <c>AutoRenew</c> prior
+        /// to that period.
         /// </exception>
         /// <exception cref="Amazon.Shield.Model.OptimisticLockException">
         /// Exception that indicates that the resource state has been modified by another client.

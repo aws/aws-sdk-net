@@ -31,13 +31,12 @@ namespace Amazon.SecurityHub.Model
     /// <summary>
     /// Container for the parameters to the UpdateFindingAggregator operation.
     /// Updates the finding aggregation configuration. Used to update the Region linking mode
-    /// and the list of included or excluded Regions. You cannot use <code>UpdateFindingAggregator</code>
+    /// and the list of included or excluded Regions. You cannot use <c>UpdateFindingAggregator</c>
     /// to change the aggregation Region.
     /// 
     ///  
     /// <para>
-    /// You must run <code>UpdateFindingAggregator</code> from the current aggregation Region.
-    /// 
+    /// You must run <c>UpdateFindingAggregator</c> from the current aggregation Region. 
     /// </para>
     /// </summary>
     public partial class UpdateFindingAggregatorRequest : AmazonSecurityHubRequest
@@ -49,7 +48,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FindingAggregatorArn. 
         /// <para>
-        /// The ARN of the finding aggregator. To obtain the ARN, use <code>ListFindingAggregators</code>.
+        /// The ARN of the finding aggregator. To obtain the ARN, use <c>ListFindingAggregators</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,24 +82,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_REGIONS</code> - Indicates to aggregate findings from all of the Regions
-        /// where Security Hub is enabled. When you choose this option, Security Hub also automatically
+        ///  <c>ALL_REGIONS</c> - Indicates to aggregate findings from all of the Regions where
+        /// Security Hub is enabled. When you choose this option, Security Hub also automatically
         /// aggregates findings from new Regions as Security Hub supports them and you opt into
         /// them. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL_REGIONS_EXCEPT_SPECIFIED</code> - Indicates to aggregate findings from
-        /// all of the Regions where Security Hub is enabled, except for the Regions listed in
-        /// the <code>Regions</code> parameter. When you choose this option, Security Hub also
-        /// automatically aggregates findings from new Regions as Security Hub supports them and
-        /// you opt into them. 
+        ///  <c>ALL_REGIONS_EXCEPT_SPECIFIED</c> - Indicates to aggregate findings from all of
+        /// the Regions where Security Hub is enabled, except for the Regions listed in the <c>Regions</c>
+        /// parameter. When you choose this option, Security Hub also automatically aggregates
+        /// findings from new Regions as Security Hub supports them and you opt into them. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPECIFIED_REGIONS</code> - Indicates to aggregate findings only from the Regions
-        /// listed in the <code>Regions</code> parameter. Security Hub does not automatically
-        /// aggregate findings from new Regions. 
+        ///  <c>SPECIFIED_REGIONS</c> - Indicates to aggregate findings only from the Regions
+        /// listed in the <c>Regions</c> parameter. Security Hub does not automatically aggregate
+        /// findings from new Regions. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -120,14 +118,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Regions. 
         /// <para>
-        /// If <code>RegionLinkingMode</code> is <code>ALL_REGIONS_EXCEPT_SPECIFIED</code>, then
-        /// this is a space-separated list of Regions that do not aggregate findings to the aggregation
+        /// If <c>RegionLinkingMode</c> is <c>ALL_REGIONS_EXCEPT_SPECIFIED</c>, then this is a
+        /// space-separated list of Regions that do not aggregate findings to the aggregation
         /// Region.
         /// </para>
         ///  
         /// <para>
-        /// If <code>RegionLinkingMode</code> is <code>SPECIFIED_REGIONS</code>, then this is
-        /// a space-separated list of Regions that do aggregate findings to the aggregation Region.
+        /// If <c>RegionLinkingMode</c> is <c>SPECIFIED_REGIONS</c>, then this is a space-separated
+        /// list of Regions that do aggregate findings to the aggregation Region.
         /// </para>
         /// </summary>
         public List<string> Regions

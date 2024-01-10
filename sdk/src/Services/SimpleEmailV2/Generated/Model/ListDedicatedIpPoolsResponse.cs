@@ -59,8 +59,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates that there are additional IP pools to list. To view additional
-        /// IP pools, issue another request to <code>ListDedicatedIpPools</code>, passing this
-        /// token in the <code>NextToken</code> parameter.
+        /// IP pools, issue another request to <c>ListDedicatedIpPools</c>, passing this token
+        /// in the <c>NextToken</c> parameter.
         /// </para>
         /// </summary>
         public string NextToken

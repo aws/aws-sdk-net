@@ -81,8 +81,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The <code>FraudDetectionConfiguration</code> used to generate this fraud detection
-        /// result.
+        /// The <c>FraudDetectionConfiguration</c> used to generate this fraud detection result.
         /// </para>
         /// </summary>
         public FraudDetectionConfiguration Configuration
@@ -143,8 +142,8 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property Reasons. 
         /// <para>
         /// The reason speaker was flagged by the fraud detection system. This is only be populated
-        /// if fraud detection Decision is <code>HIGH_RISK</code>, and the following possible
-        /// values: <code>KNOWN_FRAUDSTER</code> and <code>VOICE_SPOOFING</code>.
+        /// if fraud detection Decision is <c>HIGH_RISK</c>, and the following possible values:
+        /// <c>KNOWN_FRAUDSTER</c> and <c>VOICE_SPOOFING</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

@@ -177,7 +177,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NcharCharacterSetName. 
         /// <para>
-        /// The <code>NCHAR</code> character set name of the tenant database.
+        /// The <c>NCHAR</c> character set name of the tenant database.
         /// </para>
         /// </summary>
         public string NcharCharacterSetName

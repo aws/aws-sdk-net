@@ -90,12 +90,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can modify the following attributes only: <code>disableApiTermination</code> |
-        /// <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>instanceInitiatedShutdownBehavior</code>
-        /// | <code>blockDeviceMapping</code> | <code>userData</code> | <code>sourceDestCheck</code>
-        /// | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code>
-        /// | <code>enaSupport</code> | <code>nvmeSupport</code> | <code>disableApiStop</code>
-        /// | <code>enclaveOptions</code> 
+        /// You can modify the following attributes only: <c>disableApiTermination</c> | <c>instanceType</c>
+        /// | <c>kernel</c> | <c>ramdisk</c> | <c>instanceInitiatedShutdownBehavior</c> | <c>blockDeviceMapping</c>
+        /// | <c>userData</c> | <c>sourceDestCheck</c> | <c>groupSet</c> | <c>ebsOptimized</c>
+        /// | <c>sriovNetSupport</c> | <c>enaSupport</c> | <c>nvmeSupport</c> | <c>disableApiStop</c>
+        /// | <c>enclaveOptions</c> 
         /// </para>
         ///  </important>
         /// </summary>
@@ -114,9 +113,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently
-        /// attached. The volume must be owned by the caller. If no value is specified for <code>DeleteOnTermination</code>,
-        /// the default is <code>true</code> and the volume is deleted when the instance is terminated.
+        /// Modifies the <c>DeleteOnTermination</c> attribute for volumes that are currently attached.
+        /// The volume must be owned by the caller. If no value is specified for <c>DeleteOnTermination</c>,
+        /// the default is <c>true</c> and the volume is deleted when the instance is terminated.
         /// </para>
         ///  
         /// <para>
@@ -161,9 +160,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If the value is <code>true</code>, you can't terminate the instance using the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot
-        /// Instances.
+        /// If the value is <c>true</c>, you can't terminate the instance using the Amazon EC2
+        /// console, CLI, or API; otherwise, you can. You cannot use this parameter for Spot Instances.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -202,7 +200,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnaSupport. 
         /// <para>
-        /// Set to <code>true</code> to enable enhanced networking with ENA for the instance.
+        /// Set to <c>true</c> to enable enhanced networking with ENA for the instance.
         /// </para>
         ///  
         /// <para>
@@ -285,7 +283,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Changes the instance type to the specified value. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
         /// types</a> in the <i>Amazon EC2 User Guide</i>. If the instance type is not valid,
-        /// the error returned is <code>InvalidInstanceAttributeValue</code>.
+        /// the error returned is <c>InvalidInstanceAttributeValue</c>.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -342,10 +340,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
         /// Enable or disable source/destination checks, which ensure that the instance is either
-        /// the source or the destination of any traffic that it receives. If the value is <code>true</code>,
+        /// the source or the destination of any traffic that it receives. If the value is <c>true</c>,
         /// source/destination checks are enabled; otherwise, they are disabled. The default value
-        /// is <code>true</code>. You must disable source/destination checks if the instance runs
-        /// services such as network address translation, routing, or firewalls.
+        /// is <c>true</c>. You must disable source/destination checks if the instance runs services
+        /// such as network address translation, routing, or firewalls.
         /// </para>
         /// </summary>
         public bool SourceDestCheck
@@ -363,8 +361,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SriovNetSupport. 
         /// <para>
-        /// Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual
-        /// Function interface for the instance.
+        /// Set to <c>simple</c> to enable enhanced networking with the Intel 82599 Virtual Function
+        /// interface for the instance.
         /// </para>
         ///  
         /// <para>
@@ -412,9 +410,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A new value for the attribute. Use only with the <code>kernel</code>, <code>ramdisk</code>,
-        /// <code>userData</code>, <code>disableApiTermination</code>, or <code>instanceInitiatedShutdownBehavior</code>
-        /// attribute.
+        /// A new value for the attribute. Use only with the <c>kernel</c>, <c>ramdisk</c>, <c>userData</c>,
+        /// <c>disableApiTermination</c>, or <c>instanceInitiatedShutdownBehavior</c> attribute.
         /// </para>
         /// </summary>
         public string Value

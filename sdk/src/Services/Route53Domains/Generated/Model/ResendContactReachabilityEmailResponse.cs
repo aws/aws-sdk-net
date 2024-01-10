@@ -79,9 +79,9 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property IsAlreadyVerified. 
         /// <para>
-        ///  <code>True</code> if the email address for the registrant contact has already been
-        /// verified, and <code>false</code> otherwise. If the email address has already been
-        /// verified, we don't send another confirmation email.
+        ///  <c>True</c> if the email address for the registrant contact has already been verified,
+        /// and <c>false</c> otherwise. If the email address has already been verified, we don't
+        /// send another confirmation email.
         /// </para>
         /// </summary>
         public bool IsAlreadyVerified

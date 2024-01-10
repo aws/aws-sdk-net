@@ -38,7 +38,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ResourcePolicy. 
         /// <para>
-        /// The resource policy document, as provided in the <code>PutResourcePolicyRequest</code>.
+        /// The resource policy document, as provided in the <c>PutResourcePolicyRequest</c>.
         /// </para>
         /// </summary>
         public ResourcePolicy ResourcePolicy

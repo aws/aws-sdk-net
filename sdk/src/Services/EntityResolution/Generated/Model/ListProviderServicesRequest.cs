@@ -30,8 +30,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProviderServices operation.
-    /// Returns a list of all the <code>ProviderServices</code> that are available in this
-    /// Amazon Web Services Region.
+    /// Returns a list of all the <c>ProviderServices</c> that are available in this Amazon
+    /// Web Services Region.
     /// </summary>
     public partial class ListProviderServicesRequest : AmazonEntityResolutionRequest
     {

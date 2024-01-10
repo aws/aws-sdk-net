@@ -63,8 +63,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Level. 
         /// <para>
-        /// Specifies the size of the font for a <code>Heading</code> sectional element. Valid
-        /// values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.
+        /// Specifies the size of the font for a <c>Heading</c> sectional element. Valid values
+        /// are <c>1 | 2 | 3 | 4 | 5 | 6</c>.
         /// </para>
         /// </summary>
         public int Level
@@ -82,8 +82,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Orientation. 
         /// <para>
-        /// Specifies the orientation for a <code>Divider</code> sectional element. Valid values
-        /// are <code>horizontal</code> or <code>vertical</code>.
+        /// Specifies the orientation for a <c>Divider</c> sectional element. Valid values are
+        /// <c>horizontal</c> or <c>vertical</c>.
         /// </para>
         /// </summary>
         public string Orientation
@@ -101,7 +101,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Position. 
         /// <para>
-        /// Specifies the position of the text in a field for a <code>Text</code> sectional element.
+        /// Specifies the position of the text in a field for a <c>Text</c> sectional element.
         /// </para>
         /// </summary>
         public FieldPosition Position
@@ -119,7 +119,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The text for a <code>Text</code> sectional element.
+        /// The text for a <c>Text</c> sectional element.
         /// </para>
         /// </summary>
         public string Text
@@ -137,8 +137,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of sectional element. Valid values are <code>Heading</code>, <code>Text</code>,
-        /// and <code>Divider</code>.
+        /// The type of sectional element. Valid values are <c>Heading</c>, <c>Text</c>, and <c>Divider</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

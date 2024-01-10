@@ -62,15 +62,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> 
+        ///  <c>ACTIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID</code> 
+        ///  <c>INVALID</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> 
+        ///  <c>PENDING</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

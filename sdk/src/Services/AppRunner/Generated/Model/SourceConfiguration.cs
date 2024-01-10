@@ -60,17 +60,17 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property AutoDeploymentsEnabled. 
         /// <para>
-        /// If <code>true</code>, continuous integration from the source repository is enabled
-        /// for the App Runner service. Each repository change (including any source code commit
-        /// or new image version) starts a deployment.
+        /// If <c>true</c>, continuous integration from the source repository is enabled for the
+        /// App Runner service. Each repository change (including any source code commit or new
+        /// image version) starts a deployment.
         /// </para>
         ///  
         /// <para>
-        /// Default: App Runner sets to <code>false</code> for a source image that uses an ECR
-        /// Public repository or an ECR repository that's in an Amazon Web Services account other
-        /// than the one that the service is in. App Runner sets to <code>true</code> in all other
-        /// cases (which currently include a source code repository or a source image using a
-        /// same-account ECR repository).
+        /// Default: App Runner sets to <c>false</c> for a source image that uses an ECR Public
+        /// repository or an ECR repository that's in an Amazon Web Services account other than
+        /// the one that the service is in. App Runner sets to <c>true</c> in all other cases
+        /// (which currently include a source code repository or a source image using a same-account
+        /// ECR repository).
         /// </para>
         /// </summary>
         public bool AutoDeploymentsEnabled
@@ -92,7 +92,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// You must provide either this member or <code>ImageRepository</code> (but not both).
+        /// You must provide either this member or <c>ImageRepository</c> (but not both).
         /// </para>
         /// </summary>
         public CodeRepository CodeRepository
@@ -114,7 +114,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// You must provide either this member or <code>CodeRepository</code> (but not both).
+        /// You must provide either this member or <c>CodeRepository</c> (but not both).
         /// </para>
         /// </summary>
         public ImageRepository ImageRepository

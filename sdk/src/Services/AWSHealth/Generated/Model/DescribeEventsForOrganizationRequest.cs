@@ -31,10 +31,10 @@ namespace Amazon.AWSHealth.Model
     /// <summary>
     /// Container for the parameters to the DescribeEventsForOrganization operation.
     /// Returns information about events across your organization in Organizations. You can
-    /// use the<code>filters</code> parameter to specify the events that you want to return.
-    /// Events are returned in a summary form and don't include the affected accounts, detailed
-    /// description, any additional metadata that depends on the event type, or any affected
-    /// resources. To retrieve that information, use the following operations:
+    /// use the<c>filters</c> parameter to specify the events that you want to return. Events
+    /// are returned in a summary form and don't include the affected accounts, detailed description,
+    /// any additional metadata that depends on the event type, or any affected resources.
+    /// To retrieve that information, use the following operations:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -53,8 +53,8 @@ namespace Amazon.AWSHealth.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If you don't specify a <code>filter</code>, the <code>DescribeEventsForOrganizations</code>
-    /// returns all events across your organization. Results are sorted by <code>lastModifiedTime</code>,
+    /// If you don't specify a <c>filter</c>, the <c>DescribeEventsForOrganizations</c> returns
+    /// all events across your organization. Results are sorted by <c>lastModifiedTime</c>,
     /// starting with the most recent event. 
     /// </para>
     ///  
@@ -69,8 +69,8 @@ namespace Amazon.AWSHealth.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-    /// the next request to return more results.
+    /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+    /// next request to return more results.
     /// </para>
     ///  </note>
     /// </summary>
@@ -142,8 +142,8 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the results of a search are large, only a portion of the results are returned,
-        /// and a <code>nextToken</code> pagination token is returned in the response. To retrieve
-        /// the next batch of results, reissue the search request and include the returned token.
+        /// and a <c>nextToken</c> pagination token is returned in the response. To retrieve the
+        /// next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token
         /// value.
         /// </para>

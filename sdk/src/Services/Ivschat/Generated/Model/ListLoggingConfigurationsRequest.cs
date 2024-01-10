@@ -61,7 +61,7 @@ namespace Amazon.Ivschat.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The first logging configurations to retrieve. This is used for pagination; see the
-        /// <code>nextToken</code> response field.
+        /// <c>nextToken</c> response field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

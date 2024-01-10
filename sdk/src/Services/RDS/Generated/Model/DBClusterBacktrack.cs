@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <code>DescribeDBClusterBacktracks</code>
+    /// This data type is used as a response element in the <c>DescribeDBClusterBacktracks</c>
     /// action.
     /// </summary>
     public partial class DBClusterBacktrack
@@ -139,23 +139,23 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>applying</code> - The backtrack is currently being applied to or rolled back
+        ///  <c>applying</c> - The backtrack is currently being applied to or rolled back from
+        /// the DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>completed</c> - The backtrack has successfully been applied to or rolled back
         /// from the DB cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>completed</code> - The backtrack has successfully been applied to or rolled
-        /// back from the DB cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>failed</code> - An error occurred while the backtrack was applied to or rolled
-        /// back from the DB cluster.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>pending</code> - The backtrack is currently pending application to or rollback
+        ///  <c>failed</c> - An error occurred while the backtrack was applied to or rolled back
         /// from the DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>pending</c> - The backtrack is currently pending application to or rollback from
+        /// the DB cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -197,7 +197,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property SlotTypeId. 
         /// <para>
         /// The unique identifier assigned to the slot type. Use this to identify the slot type
-        /// in the <code>UpdateSlotType</code> and <code>DeleteSlotType</code> operations.
+        /// in the <c>UpdateSlotType</c> and <c>DeleteSlotType</c> operations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=10)]

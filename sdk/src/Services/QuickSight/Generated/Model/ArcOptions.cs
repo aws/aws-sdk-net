@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The options that determine the arc thickness of a <code>GaugeChartVisual</code>.
+    /// The options that determine the arc thickness of a <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class ArcOptions
     {
@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ArcThickness. 
         /// <para>
-        /// The arc thickness of a <code>GaugeChartVisual</code>.
+        /// The arc thickness of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public ArcThickness ArcThickness

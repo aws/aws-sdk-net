@@ -74,7 +74,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property AliasName. 
         /// <para>
         /// A friendly name that you can use to refer Amazon Web Services Payment Cryptography
-        /// key. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.
+        /// key. This value must begin with <c>alias/</c> followed by a name, such as <c>alias/ExampleAlias</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=256)]

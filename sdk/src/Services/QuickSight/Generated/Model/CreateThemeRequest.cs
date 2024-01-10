@@ -74,8 +74,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The ID of the theme that a custom theme will inherit from. All themes inherit from
         /// one of the starting themes defined by Amazon QuickSight. For a list of the starting
-        /// themes, use <code>ListThemes</code> or choose <b>Themes</b> from within an analysis.
-        /// 
+        /// themes, use <c>ListThemes</c> or choose <b>Themes</b> from within an analysis. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -191,9 +190,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionDescription. 
         /// <para>
-        /// A description of the first version of the theme that you're creating. Every time <code>UpdateTheme</code>
+        /// A description of the first version of the theme that you're creating. Every time <c>UpdateTheme</c>
         /// is called, a new version is created. Each version of the theme has a description of
-        /// the version in the <code>VersionDescription</code> field.
+        /// the version in the <c>VersionDescription</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

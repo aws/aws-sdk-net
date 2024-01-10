@@ -49,7 +49,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -72,7 +72,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>5</code> 
+        /// Default: <c>5</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -95,11 +95,11 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Path</code> is only applicable when you set <code>Protocol</code> to <code>HTTP</code>.
+        ///  <c>Path</c> is only applicable when you set <c>Protocol</c> to <c>HTTP</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>"/"</code> 
+        /// Default: <c>"/"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -122,12 +122,12 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>Protocol</code> to <code>HTTP</code>, App Runner sends health check
-        /// requests to the HTTP path specified by <code>Path</code>.
+        /// If you set <c>Protocol</c> to <c>HTTP</c>, App Runner sends health check requests
+        /// to the HTTP path specified by <c>Path</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>TCP</code> 
+        /// Default: <c>TCP</c> 
         /// </para>
         /// </summary>
         public HealthCheckProtocol Protocol
@@ -149,7 +149,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>2</code> 
+        /// Default: <c>2</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -173,7 +173,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>5</code> 
+        /// Default: <c>5</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

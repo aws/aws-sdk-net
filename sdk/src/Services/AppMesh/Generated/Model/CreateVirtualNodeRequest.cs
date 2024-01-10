@@ -42,33 +42,31 @@ namespace Amazon.AppMesh.Model
     /// </para>
     ///  
     /// <para>
-    /// You define a <code>listener</code> for any inbound traffic that your virtual node
-    /// expects. Any virtual service that your virtual node expects to communicate to is specified
-    /// as a <code>backend</code>.
+    /// You define a <c>listener</c> for any inbound traffic that your virtual node expects.
+    /// Any virtual service that your virtual node expects to communicate to is specified
+    /// as a <c>backend</c>.
     /// </para>
     ///  
     /// <para>
-    /// The response metadata for your new virtual node contains the <code>arn</code> that
-    /// is associated with the virtual node. Set this value to the full ARN; for example,
-    /// <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>)
-    /// as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's
-    /// Envoy proxy container in your task definition or pod spec. This is then mapped to
-    /// the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.
+    /// The response metadata for your new virtual node contains the <c>arn</c> that is associated
+    /// with the virtual node. Set this value to the full ARN; for example, <c>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</c>)
+    /// as the <c>APPMESH_RESOURCE_ARN</c> environment variable for your task group's Envoy
+    /// proxy container in your task definition or pod spec. This is then mapped to the <c>node.id</c>
+    /// and <c>node.cluster</c> Envoy parameters.
     /// </para>
     ///  <note> 
     /// <para>
-    /// By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code>
+    /// By default, App Mesh uses the name of the resource you specified in <c>APPMESH_RESOURCE_ARN</c>
     /// when Envoy is referring to itself in metrics and traces. You can override this behavior
-    /// by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your
-    /// own name.
+    /// by setting the <c>APPMESH_RESOURCE_CLUSTER</c> environment variable with your own
+    /// name.
     /// </para>
     ///  </note> 
     /// <para>
     /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
-    /// nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
-    /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a
-    /// href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
-    /// in the App Mesh User Guide.
+    /// nodes</a>. You must be using <c>1.15.0</c> or later of the Envoy image when setting
+    /// these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
+    /// image</a> in the App Mesh User Guide.
     /// </para>
     /// </summary>
     public partial class CreateVirtualNodeRequest : AmazonAppMeshRequest

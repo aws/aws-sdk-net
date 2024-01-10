@@ -31,12 +31,11 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Container for the parameters to the ResetDBParameterGroup operation.
     /// Modifies the parameters of a DB parameter group to the engine/system default value.
-    /// To reset specific parameters, provide a list of the following: <code>ParameterName</code>
-    /// and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the
-    /// <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
-    /// When resetting the entire group, dynamic parameters are updated immediately and static
-    /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
-    /// restart or <code>RebootDBInstance</code> request.
+    /// To reset specific parameters, provide a list of the following: <c>ParameterName</c>
+    /// and <c>ApplyMethod</c>. To reset the entire DB parameter group, specify the <c>DBParameterGroup</c>
+    /// name and <c>ResetAllParameters</c> parameters. When resetting the entire group, dynamic
+    /// parameters are updated immediately and static parameters are set to <c>pending-reboot</c>
+    /// to take effect on the next DB instance restart or <c>RebootDBInstance</c> request.
     /// </summary>
     public partial class ResetDBParameterGroupRequest : AmazonNeptuneRequest
     {
@@ -75,14 +74,14 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// To reset the entire DB parameter group, specify the <code>DBParameterGroup</code>
-        /// name and <code>ResetAllParameters</code> parameters. To reset specific parameters,
-        /// provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>.
-        /// A maximum of 20 parameters can be modified in a single request.
+        /// To reset the entire DB parameter group, specify the <c>DBParameterGroup</c> name and
+        /// <c>ResetAllParameters</c> parameters. To reset specific parameters, provide a list
+        /// of the following: <c>ParameterName</c> and <c>ApplyMethod</c>. A maximum of 20 parameters
+        /// can be modified in a single request.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values (for Apply method): <code>pending-reboot</code> 
+        /// Valid Values (for Apply method): <c>pending-reboot</c> 
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -100,12 +99,12 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        /// Specifies whether (<code>true</code>) or not (<code>false</code>) to reset all parameters
-        /// in the DB parameter group to default values.
+        /// Specifies whether (<c>true</c>) or not (<c>false</c>) to reset all parameters in the
+        /// DB parameter group to default values.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool ResetAllParameters

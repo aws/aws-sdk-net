@@ -62,12 +62,12 @@ namespace Amazon.CloudWatchEvidently
 
         /// <summary>
         /// This operation assigns feature variation to user sessions. For each user session,
-        /// you pass in an <code>entityID</code> that represents the user. Evidently then checks
-        /// the evaluation rules and assigns the variation.
+        /// you pass in an <c>entityID</c> that represents the user. Evidently then checks the
+        /// evaluation rules and assigns the variation.
         /// 
         ///  
         /// <para>
-        /// The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
+        /// The first rules that are evaluated are the override rules. If the user's <c>entityID</c>
         /// matches an override rule, the user is served the variation specified by that rule.
         /// </para>
         ///  
@@ -153,9 +153,9 @@ namespace Amazon.CloudWatchEvidently
         /// </para>
         ///  
         /// <para>
-        /// You can optionally specify a <code>segment</code> to have the experiment consider
-        /// only certain audience types in the experiment, such as using only user sessions from
-        /// a certain location or who use a certain internet browser.
+        /// You can optionally specify a <c>segment</c> to have the experiment consider only certain
+        /// audience types in the experiment, such as using only user sessions from a certain
+        /// location or who use a certain internet browser.
         /// </para>
         ///  
         /// <para>
@@ -426,7 +426,7 @@ namespace Amazon.CloudWatchEvidently
         /// </para>
         ///  
         /// <para>
-        /// The pattern that you define for a segment is matched against the value of <code>evaluationContext</code>,
+        /// The pattern that you define for a segment is matched against the value of <c>evaluationContext</c>,
         /// which is passed into Evidently in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
         /// operation, when Evidently assigns a feature variation to a user.
         /// </para>
@@ -774,19 +774,19 @@ namespace Amazon.CloudWatchEvidently
 
         /// <summary>
         /// This operation assigns a feature variation to one given user session. You pass in
-        /// an <code>entityID</code> that represents the user. Evidently then checks the evaluation
+        /// an <c>entityID</c> that represents the user. Evidently then checks the evaluation
         /// rules and assigns the variation.
         /// 
         ///  
         /// <para>
-        /// The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
+        /// The first rules that are evaluated are the override rules. If the user's <c>entityID</c>
         /// matches an override rule, the user is served the variation specified by that rule.
         /// </para>
         ///  
         /// <para>
         /// If there is a current launch with this feature that uses segment overrides, and if
-        /// the user session's <code>evaluationContext</code> matches a segment rule defined in
-        /// a segment override, the configuration in the segment overrides is used. For more information
+        /// the user session's <c>evaluationContext</c> matches a segment rule defined in a segment
+        /// override, the configuration in the segment overrides is used. For more information
         /// about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>
         /// and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use
         /// segments to focus your audience</a>.
@@ -806,7 +806,7 @@ namespace Amazon.CloudWatchEvidently
         /// </para>
         ///  
         /// <para>
-        /// If the experiment uses a segment, then only user sessions with <code>evaluationContext</code>
+        /// If the experiment uses a segment, then only user sessions with <c>evaluationContext</c>
         /// values that match the segment rule are used in the experiment.
         /// </para>
         ///  
@@ -1852,11 +1852,11 @@ namespace Amazon.CloudWatchEvidently
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key for the resource, this tag is appended to the list of
-        /// tags associated with the alarm. If you specify a tag key that is already associated
-        /// with the resource, the new tag value that you specify replaces the previous value
-        /// for that tag.
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key for the resource, this tag is appended to the list of tags
+        /// associated with the alarm. If you specify a tag key that is already associated with
+        /// the resource, the new tag value that you specify replaces the previous value for that
+        /// tag.
         /// </para>
         ///  
         /// <para>
@@ -2271,8 +2271,8 @@ namespace Amazon.CloudWatchEvidently
         /// 
         ///  
         /// <para>
-        /// You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code>
-        /// in the same operation.
+        /// You can't specify both <c>cloudWatchLogs</c> and <c>s3Destination</c> in the same
+        /// operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProjectDataDelivery service method.</param>

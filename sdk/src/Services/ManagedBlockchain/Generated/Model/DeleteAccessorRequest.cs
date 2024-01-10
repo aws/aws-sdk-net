@@ -32,12 +32,11 @@ namespace Amazon.ManagedBlockchain.Model
     /// Container for the parameters to the DeleteAccessor operation.
     /// Deletes an accessor that your Amazon Web Services account owns. An accessor object
     /// is a container that has the information required for token based access to your Ethereum
-    /// nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the
-    /// status of the accessor changes from <code>AVAILABLE</code> to <code>PENDING_DELETION</code>.
-    /// An accessor in the <code>PENDING_DELETION</code> state can’t be used for new WebSocket
-    /// requests or HTTP requests. However, WebSocket connections that were initiated while
-    /// the accessor was in the <code>AVAILABLE</code> state remain open until they expire
-    /// (up to 2 hours).
+    /// nodes including, the <c>BILLING_TOKEN</c>. After an accessor is deleted, the status
+    /// of the accessor changes from <c>AVAILABLE</c> to <c>PENDING_DELETION</c>. An accessor
+    /// in the <c>PENDING_DELETION</c> state can’t be used for new WebSocket requests or HTTP
+    /// requests. However, WebSocket connections that were initiated while the accessor was
+    /// in the <c>AVAILABLE</c> state remain open until they expire (up to 2 hours).
     /// </summary>
     public partial class DeleteAccessorRequest : AmazonManagedBlockchainRequest
     {

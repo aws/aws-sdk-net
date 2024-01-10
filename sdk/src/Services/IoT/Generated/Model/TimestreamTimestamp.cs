@@ -41,12 +41,12 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// The precision of the timestamp value that results from the expression described in
-        /// <code>value</code>.
+        /// <c>value</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>SECONDS</code> | <code>MILLISECONDS</code> | <code>MICROSECONDS</code>
-        /// | <code>NANOSECONDS</code>. The default is <code>MILLISECONDS</code>.
+        /// Valid values: <c>SECONDS</c> | <c>MILLISECONDS</c> | <c>MICROSECONDS</c> | <c>NANOSECONDS</c>.
+        /// The default is <c>MILLISECONDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

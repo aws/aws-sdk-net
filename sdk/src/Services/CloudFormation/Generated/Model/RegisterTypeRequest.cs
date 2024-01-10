@@ -111,7 +111,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// For CloudFormation to assume the specified execution role, the role must contain a
-        /// trust relationship with the CloudFormation service principal (<code>resources.cloudformation.amazonaws.com</code>).
+        /// trust relationship with the CloudFormation service principal (<c>resources.cloudformation.amazonaws.com</c>).
         /// For more information about adding trust relationships, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-managingrole-editing-console.html#roles-managingrole_edit-trust-policy">Modifying
         /// a role trust policy</a> in the <i>Identity and Access Management User Guide</i>.
         /// </para>
@@ -238,27 +238,27 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Alexa</code> 
+        ///  <c>Alexa</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AMZN</code> 
+        ///  <c>AMZN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Amazon</code> 
+        ///  <c>Amazon</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS</code> 
+        ///  <c>AWS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Custom</code> 
+        ///  <c>Custom</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Dev</code> 
+        ///  <c>Dev</c> 
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

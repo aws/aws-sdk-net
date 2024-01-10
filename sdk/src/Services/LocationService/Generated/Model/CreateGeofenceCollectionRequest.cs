@@ -61,7 +61,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No spaces allowed. For example, <code>ExampleGeofenceCollection</code>.
+        /// No spaces allowed. For example, <c>ExampleGeofenceCollection</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -121,7 +121,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
+        /// No longer used. If included, the only allowed value is <c>RequestBasedUsage</c>.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
@@ -164,7 +164,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         ///  
         /// <para>

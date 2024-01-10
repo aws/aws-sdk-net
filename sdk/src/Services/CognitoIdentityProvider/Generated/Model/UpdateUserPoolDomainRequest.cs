@@ -125,7 +125,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Domain. 
         /// <para>
         /// The domain name for the custom domain that hosts the sign-up and sign-in pages for
-        /// your application. One example might be <code>auth.example.com</code>. 
+        /// your application. One example might be <c>auth.example.com</c>. 
         /// </para>
         ///  
         /// <para>

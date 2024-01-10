@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CanarySize. 
         /// <para>
-        /// Batch size for the first step to turn on traffic on the new endpoint fleet. <code>Value</code>
+        /// Batch size for the first step to turn on traffic on the new endpoint fleet. <c>Value</c>
         /// must be less than or equal to 50% of the variant's total instance count.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LinearStepSize. 
         /// <para>
-        /// Batch size for each step to turn on traffic on the new endpoint fleet. <code>Value</code>
+        /// Batch size for each step to turn on traffic on the new endpoint fleet. <c>Value</c>
         /// must be 10-50% of the variant's total instance count.
         /// </para>
         /// </summary>
@@ -84,18 +84,17 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_AT_ONCE</code>: Endpoint traffic shifts to the new fleet in a single step.
-        /// 
+        ///  <c>ALL_AT_ONCE</c>: Endpoint traffic shifts to the new fleet in a single step. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANARY</code>: Endpoint traffic shifts to the new fleet in two steps. The first
-        /// step is the canary, which is a small portion of the traffic. The second step is the
-        /// remainder of the traffic. 
+        ///  <c>CANARY</c>: Endpoint traffic shifts to the new fleet in two steps. The first step
+        /// is the canary, which is a small portion of the traffic. The second step is the remainder
+        /// of the traffic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LINEAR</code>: Endpoint traffic shifts to the new fleet in n steps of a configurable
+        ///  <c>LINEAR</c>: Endpoint traffic shifts to the new fleet in n steps of a configurable
         /// size. 
         /// </para>
         ///  </li> </ul>

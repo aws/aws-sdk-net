@@ -120,7 +120,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property FieldMappings. 
         /// <para>
         /// An array of objects that map database column names to the corresponding fields in
-        /// an index. You must first create the fields in the index using the <code>UpdateIndex</code>
+        /// an index. You must first create the fields in the index using the <c>UpdateIndex</c>
         /// API.
         /// </para>
         /// </summary>

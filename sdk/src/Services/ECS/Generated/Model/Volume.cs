@@ -30,11 +30,11 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// A data volume that's used in a task definition. For tasks that use the Amazon Elastic
-    /// File System (Amazon EFS), specify an <code>efsVolumeConfiguration</code>. For Windows
-    /// tasks that use Amazon FSx for Windows File Server file system, specify a <code>fsxWindowsFileServerVolumeConfiguration</code>.
-    /// For tasks that use a Docker volume, specify a <code>DockerVolumeConfiguration</code>.
-    /// For tasks that use a bind mount host volume, specify a <code>host</code> and optional
-    /// <code>sourcePath</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
+    /// File System (Amazon EFS), specify an <c>efsVolumeConfiguration</c>. For Windows tasks
+    /// that use Amazon FSx for Windows File Server file system, specify a <c>fsxWindowsFileServerVolumeConfiguration</c>.
+    /// For tasks that use a Docker volume, specify a <c>DockerVolumeConfiguration</c>. For
+    /// tasks that use a bind mount host volume, specify a <c>host</c> and optional <c>sourcePath</c>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
     /// Data Volumes in Tasks</a>.
     /// </summary>
     public partial class Volume
@@ -52,8 +52,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Windows containers only support the use of the <code>local</code> driver. To use bind
-        /// mounts, specify the <code>host</code> parameter instead.
+        /// Windows containers only support the use of the <c>local</c> driver. To use bind mounts,
+        /// specify the <c>host</c> parameter instead.
         /// </para>
         ///  <note> 
         /// <para>
@@ -115,18 +115,18 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Host. 
         /// <para>
         /// This parameter is specified when you use bind mount host volumes. The contents of
-        /// the <code>host</code> parameter determine whether your bind mount host volume persists
-        /// on the host container instance and where it's stored. If the <code>host</code> parameter
-        /// is empty, then the Docker daemon assigns a host path for your data volume. However,
-        /// the data isn't guaranteed to persist after the containers that are associated with
-        /// it stop running.
+        /// the <c>host</c> parameter determine whether your bind mount host volume persists on
+        /// the host container instance and where it's stored. If the <c>host</c> parameter is
+        /// empty, then the Docker daemon assigns a host path for your data volume. However, the
+        /// data isn't guaranteed to persist after the containers that are associated with it
+        /// stop running.
         /// </para>
         ///  
         /// <para>
-        /// Windows containers can mount whole directories on the same drive as <code>$env:ProgramData</code>.
+        /// Windows containers can mount whole directories on the same drive as <c>$env:ProgramData</c>.
         /// Windows containers can't mount directories on a different drive, and mount point can't
-        /// be across drives. For example, you can mount <code>C:\my\path:C:\my\path</code> and
-        /// <code>D:\:D:\</code>, but not <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.
+        /// be across drives. For example, you can mount <c>C:\my\path:C:\my\path</c> and <c>D:\:D:\</c>,
+        /// but not <c>D:\my\path:C:\my\path</c> or <c>D:\:C:\my\path</c>.
         /// </para>
         /// </summary>
         public HostVolumeProperties Host
@@ -145,8 +145,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the volume. Up to 255 letters (uppercase and lowercase), numbers, underscores,
-        /// and hyphens are allowed. This name is referenced in the <code>sourceVolume</code>
-        /// parameter of container definition <code>mountPoints</code>.
+        /// and hyphens are allowed. This name is referenced in the <c>sourceVolume</c> parameter
+        /// of container definition <c>mountPoints</c>.
         /// </para>
         ///  
         /// <para>

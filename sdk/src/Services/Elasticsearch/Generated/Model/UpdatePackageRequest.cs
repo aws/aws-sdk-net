@@ -42,7 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        /// An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.
+        /// An info message for the new version which will be shown as part of <c>GetPackageVersionHistoryResponse</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=160)]

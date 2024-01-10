@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled job.
+        ///  <c>CompilationJobArn</c>: The Amazon Resource Name (ARN) of the compiled job.
         /// </para>
         ///  </li> </ul>
         /// </summary>

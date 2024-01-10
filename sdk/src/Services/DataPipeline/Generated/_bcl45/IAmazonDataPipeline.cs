@@ -306,7 +306,7 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code>
+        /// Deactivates the specified running pipeline. The pipeline is set to the <c>DEACTIVATING</c>
         /// state until the deactivation process completes.
         /// 
         ///  
@@ -340,7 +340,7 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code>
+        /// Deactivates the specified running pipeline. The pipeline is set to the <c>DEACTIVATING</c>
         /// state until the deactivation process completes.
         /// 
         ///  
@@ -388,8 +388,8 @@ namespace Amazon.DataPipeline
         /// <para>
         /// Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline.
         /// To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
-        /// the status set to <code>PAUSE</code> on individual components. Components that are
-        /// paused by <a>SetStatus</a> can be resumed.
+        /// the status set to <c>PAUSE</c> on individual components. Components that are paused
+        /// by <a>SetStatus</a> can be resumed.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
@@ -421,8 +421,8 @@ namespace Amazon.DataPipeline
         /// <para>
         /// Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline.
         /// To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
-        /// the status set to <code>PAUSE</code> on individual components. Components that are
-        /// paused by <a>SetStatus</a> can be resumed.
+        /// the status set to <c>PAUSE</c> on individual components. Components that are paused
+        /// by <a>SetStatus</a> can be resumed.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePipeline service method.</param>
@@ -665,9 +665,9 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>EvaluateExpression</code> to evaluate a string in the context
-        /// of the specified object. For example, a task runner can evaluate SQL queries stored
-        /// in Amazon S3.
+        /// Task runners call <c>EvaluateExpression</c> to evaluate a string in the context of
+        /// the specified object. For example, a task runner can evaluate SQL queries stored in
+        /// Amazon S3.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EvaluateExpression service method.</param>
         /// 
@@ -696,9 +696,9 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>EvaluateExpression</code> to evaluate a string in the context
-        /// of the specified object. For example, a task runner can evaluate SQL queries stored
-        /// in Amazon S3.
+        /// Task runners call <c>EvaluateExpression</c> to evaluate a string in the context of
+        /// the specified object. For example, a task runner can evaluate SQL queries stored in
+        /// Amazon S3.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EvaluateExpression service method.</param>
         /// <param name="cancellationToken">
@@ -733,7 +733,7 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code>
+        /// Gets the definition of the specified pipeline. You can call <c>GetPipelineDefinition</c>
         /// to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPipelineDefinition service method.</param>
@@ -760,7 +760,7 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code>
+        /// Gets the definition of the specified pipeline. You can call <c>GetPipelineDefinition</c>
         /// to retrieve the pipeline definition that you provided using <a>PutPipelineDefinition</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPipelineDefinition service method.</param>
@@ -878,22 +878,21 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data
-        /// Pipeline. The task runner specifies which tasks it can perform by setting a value
-        /// for the <code>workerGroup</code> parameter. The task returned can come from any of
-        /// the pipelines that match the <code>workerGroup</code> value passed in by the task
-        /// runner and that was launched using the IAM user credentials specified by the task
-        /// runner.
+        /// Task runners call <c>PollForTask</c> to receive a task to perform from AWS Data Pipeline.
+        /// The task runner specifies which tasks it can perform by setting a value for the <c>workerGroup</c>
+        /// parameter. The task returned can come from any of the pipelines that match the <c>workerGroup</c>
+        /// value passed in by the task runner and that was launched using the IAM user credentials
+        /// specified by the task runner.
         /// 
         ///  
         /// <para>
-        /// If tasks are ready in the work queue, <code>PollForTask</code> returns a response
-        /// immediately. If no tasks are available in the queue, <code>PollForTask</code> uses
-        /// long-polling and holds on to a poll connection for up to a 90 seconds, during which
-        /// time the first newly scheduled task is handed to the task runner. To accomodate this,
-        /// set the socket timeout in your task runner to 90 seconds. The task runner should not
-        /// call <code>PollForTask</code> again on the same <code>workerGroup</code> until it
-        /// receives a response, and this can take up to 90 seconds. 
+        /// If tasks are ready in the work queue, <c>PollForTask</c> returns a response immediately.
+        /// If no tasks are available in the queue, <c>PollForTask</c> uses long-polling and holds
+        /// on to a poll connection for up to a 90 seconds, during which time the first newly
+        /// scheduled task is handed to the task runner. To accomodate this, set the socket timeout
+        /// in your task runner to 90 seconds. The task runner should not call <c>PollForTask</c>
+        /// again on the same <c>workerGroup</c> until it receives a response, and this can take
+        /// up to 90 seconds. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PollForTask service method.</param>
@@ -916,22 +915,21 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data
-        /// Pipeline. The task runner specifies which tasks it can perform by setting a value
-        /// for the <code>workerGroup</code> parameter. The task returned can come from any of
-        /// the pipelines that match the <code>workerGroup</code> value passed in by the task
-        /// runner and that was launched using the IAM user credentials specified by the task
-        /// runner.
+        /// Task runners call <c>PollForTask</c> to receive a task to perform from AWS Data Pipeline.
+        /// The task runner specifies which tasks it can perform by setting a value for the <c>workerGroup</c>
+        /// parameter. The task returned can come from any of the pipelines that match the <c>workerGroup</c>
+        /// value passed in by the task runner and that was launched using the IAM user credentials
+        /// specified by the task runner.
         /// 
         ///  
         /// <para>
-        /// If tasks are ready in the work queue, <code>PollForTask</code> returns a response
-        /// immediately. If no tasks are available in the queue, <code>PollForTask</code> uses
-        /// long-polling and holds on to a poll connection for up to a 90 seconds, during which
-        /// time the first newly scheduled task is handed to the task runner. To accomodate this,
-        /// set the socket timeout in your task runner to 90 seconds. The task runner should not
-        /// call <code>PollForTask</code> again on the same <code>workerGroup</code> until it
-        /// receives a response, and this can take up to 90 seconds. 
+        /// If tasks are ready in the work queue, <c>PollForTask</c> returns a response immediately.
+        /// If no tasks are available in the queue, <c>PollForTask</c> uses long-polling and holds
+        /// on to a poll connection for up to a 90 seconds, during which time the first newly
+        /// scheduled task is handed to the task runner. To accomodate this, set the socket timeout
+        /// in your task runner to 90 seconds. The task runner should not call <c>PollForTask</c>
+        /// again on the same <c>workerGroup</c> until it receives a response, and this can take
+        /// up to 90 seconds. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PollForTask service method.</param>
@@ -960,21 +958,21 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code>
+        /// Adds tasks, schedules, and preconditions to the specified pipeline. You can use <c>PutPipelineDefinition</c>
         /// to populate a new pipeline.
         /// 
         ///  
         /// <para>
-        ///  <code>PutPipelineDefinition</code> also validates the configuration as it adds it
-        /// to the pipeline. Changes to the pipeline are saved unless one of the following three
-        /// validation errors exists in the pipeline. 
+        ///  <c>PutPipelineDefinition</c> also validates the configuration as it adds it to the
+        /// pipeline. Changes to the pipeline are saved unless one of the following three validation
+        /// errors exists in the pipeline. 
         /// </para>
         ///  <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference
         /// field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum
         /// allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> 
         /// <para>
-        ///  Pipeline object definitions are passed to the <code>PutPipelineDefinition</code>
-        /// action and returned by the <a>GetPipelineDefinition</a> action. 
+        ///  Pipeline object definitions are passed to the <c>PutPipelineDefinition</c> action
+        /// and returned by the <a>GetPipelineDefinition</a> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPipelineDefinition service method.</param>
@@ -1001,21 +999,21 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code>
+        /// Adds tasks, schedules, and preconditions to the specified pipeline. You can use <c>PutPipelineDefinition</c>
         /// to populate a new pipeline.
         /// 
         ///  
         /// <para>
-        ///  <code>PutPipelineDefinition</code> also validates the configuration as it adds it
-        /// to the pipeline. Changes to the pipeline are saved unless one of the following three
-        /// validation errors exists in the pipeline. 
+        ///  <c>PutPipelineDefinition</c> also validates the configuration as it adds it to the
+        /// pipeline. Changes to the pipeline are saved unless one of the following three validation
+        /// errors exists in the pipeline. 
         /// </para>
         ///  <ol> <li>An object is missing a name or identifier field.</li> <li>A string or reference
         /// field is empty.</li> <li>The number of objects in the pipeline exceeds the maximum
         /// allowed objects.</li> <li>The pipeline is in a FINISHED state.</li> </ol> 
         /// <para>
-        ///  Pipeline object definitions are passed to the <code>PutPipelineDefinition</code>
-        /// action and returned by the <a>GetPipelineDefinition</a> action. 
+        ///  Pipeline object definitions are passed to the <c>PutPipelineDefinition</c> action
+        /// and returned by the <a>GetPipelineDefinition</a> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPipelineDefinition service method.</param>
@@ -1219,18 +1217,18 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge
-        /// that it has the task. If the web service does not receive this acknowledgement within
-        /// 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this
-        /// initial acknowledgement, the task runner only needs to report progress every 15 minutes
-        /// to maintain its ownership of the task. You can change this reporting time from 15
-        /// minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.
+        /// Task runners call <c>ReportTaskProgress</c> when assigned a task to acknowledge that
+        /// it has the task. If the web service does not receive this acknowledgement within 2
+        /// minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial
+        /// acknowledgement, the task runner only needs to report progress every 15 minutes to
+        /// maintain its ownership of the task. You can change this reporting time from 15 minutes
+        /// by specifying a <c>reportProgressTimeout</c> field in your pipeline.
         /// 
         ///  
         /// <para>
         /// If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes
         /// that the task runner is unable to process the task and reassigns the task in a subsequent
-        /// response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code>
+        /// response to <a>PollForTask</a>. Task runners should call <c>ReportTaskProgress</c>
         /// every 60 seconds.
         /// </para>
         /// </summary>
@@ -1261,18 +1259,18 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge
-        /// that it has the task. If the web service does not receive this acknowledgement within
-        /// 2 minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this
-        /// initial acknowledgement, the task runner only needs to report progress every 15 minutes
-        /// to maintain its ownership of the task. You can change this reporting time from 15
-        /// minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.
+        /// Task runners call <c>ReportTaskProgress</c> when assigned a task to acknowledge that
+        /// it has the task. If the web service does not receive this acknowledgement within 2
+        /// minutes, it assigns the task in a subsequent <a>PollForTask</a> call. After this initial
+        /// acknowledgement, the task runner only needs to report progress every 15 minutes to
+        /// maintain its ownership of the task. You can change this reporting time from 15 minutes
+        /// by specifying a <c>reportProgressTimeout</c> field in your pipeline.
         /// 
         ///  
         /// <para>
         /// If a task runner does not report its status after 5 minutes, AWS Data Pipeline assumes
         /// that the task runner is unable to process the task and reassigns the task in a subsequent
-        /// response to <a>PollForTask</a>. Task runners should call <code>ReportTaskProgress</code>
+        /// response to <a>PollForTask</a>. Task runners should call <c>ReportTaskProgress</c>
         /// every 60 seconds.
         /// </para>
         /// </summary>
@@ -1309,8 +1307,8 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate
-        /// that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource
+        /// Task runners call <c>ReportTaskRunnerHeartbeat</c> every 15 minutes to indicate that
+        /// they are operational. If the AWS Data Pipeline Task Runner is launched on a resource
         /// managed by AWS Data Pipeline, the web service can use this call to detect when the
         /// task runner application has failed and restart a new instance.
         /// </summary>
@@ -1331,8 +1329,8 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate
-        /// that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource
+        /// Task runners call <c>ReportTaskRunnerHeartbeat</c> every 15 minutes to indicate that
+        /// they are operational. If the AWS Data Pipeline Task Runner is launched on a resource
         /// managed by AWS Data Pipeline, the web service can use this call to detect when the
         /// task runner application has failed and restart a new instance.
         /// </summary>
@@ -1362,8 +1360,8 @@ namespace Amazon.DataPipeline
         /// Requests that the status of the specified physical or logical pipeline objects be
         /// updated in the specified pipeline. This update might not occur immediately, but is
         /// eventually consistent. The status that can be set depends on the type of object (for
-        /// example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code>
-        /// pipelines and attempting to do so returns <code>InvalidRequestException</code>.
+        /// example, DataNode or Activity). You cannot perform this operation on <c>FINISHED</c>
+        /// pipelines and attempting to do so returns <c>InvalidRequestException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetStatus service method.</param>
         /// 
@@ -1392,8 +1390,8 @@ namespace Amazon.DataPipeline
         /// Requests that the status of the specified physical or logical pipeline objects be
         /// updated in the specified pipeline. This update might not occur immediately, but is
         /// eventually consistent. The status that can be set depends on the type of object (for
-        /// example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code>
-        /// pipelines and attempting to do so returns <code>InvalidRequestException</code>.
+        /// example, DataNode or Activity). You cannot perform this operation on <c>FINISHED</c>
+        /// pipelines and attempting to do so returns <c>InvalidRequestException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1425,11 +1423,11 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task
-        /// is completed and provide information about the final status. A task runner makes this
+        /// Task runners call <c>SetTaskStatus</c> to notify AWS Data Pipeline that a task is
+        /// completed and provide information about the final status. A task runner makes this
         /// call regardless of whether the task was sucessful. A task runner does not need to
-        /// call <code>SetTaskStatus</code> for tasks that are canceled by the web service during
-        /// a call to <a>ReportTaskProgress</a>.
+        /// call <c>SetTaskStatus</c> for tasks that are canceled by the web service during a
+        /// call to <a>ReportTaskProgress</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTaskStatus service method.</param>
         /// 
@@ -1458,11 +1456,11 @@ namespace Amazon.DataPipeline
 
 
         /// <summary>
-        /// Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task
-        /// is completed and provide information about the final status. A task runner makes this
+        /// Task runners call <c>SetTaskStatus</c> to notify AWS Data Pipeline that a task is
+        /// completed and provide information about the final status. A task runner makes this
         /// call regardless of whether the task was sucessful. A task runner does not need to
-        /// call <code>SetTaskStatus</code> for tasks that are canceled by the web service during
-        /// a call to <a>ReportTaskProgress</a>.
+        /// call <c>SetTaskStatus</c> for tasks that are canceled by the web service during a
+        /// call to <a>ReportTaskProgress</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTaskStatus service method.</param>
         /// <param name="cancellationToken">

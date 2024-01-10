@@ -145,7 +145,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property OnPartialBatchItemFailure. 
         /// <para>
-        /// (Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code>
+        /// (Streams only) Define how to handle item process failures. <c>AUTOMATIC_BISECT</c>
         /// halves each batch and retry each half until all the records are processed or there
         /// is one failed message left in the batch.
         /// </para>
@@ -204,8 +204,8 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property StartingPositionTimestamp. 
         /// <para>
-        /// With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from
-        /// which to start reading, in Unix time seconds.
+        /// With <c>StartingPosition</c> set to <c>AT_TIMESTAMP</c>, the time from which to start
+        /// reading, in Unix time seconds.
         /// </para>
         /// </summary>
         public DateTime StartingPositionTimestamp

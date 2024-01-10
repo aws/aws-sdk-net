@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    ///  <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
+    ///  <c>GetMetricDataV2</c> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
     /// the previous version of this API. It has new metrics, offers filtering at a metric
     /// level, and offers the ability to filter and group data by channels, queues, routing
     /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
@@ -42,8 +42,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// For a description of the historical metrics that are supported by <code>GetMetricDataV2</code>
-    /// and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+    /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
+    /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
     /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
     /// </para>
     /// </summary>
@@ -126,31 +126,30 @@ namespace Amazon.Connect.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>Filter keys</b>: A maximum of 5 filter keys are supported in a single request.
-        /// Valid filter keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code>
-        /// | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code>
-        /// | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code>
-        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code> | <code>FEATURE</code> | <code>contact/segmentAttributes/connect:Subtype</code>
-        /// 
+        /// Valid filter keys: <c>QUEUE</c> | <c>ROUTING_PROFILE</c> | <c>AGENT</c> | <c>CHANNEL</c>
+        /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
+        /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c> | <c>FEATURE</c>
+        /// | <c>contact/segmentAttributes/connect:Subtype</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Filter values</b>: A maximum of 100 filter values are supported in a single request.
-        /// VOICE, CHAT, and TASK are valid <code>filterValue</code> for the CHANNEL filter key.
-        /// They do not count towards limitation of 100 filter values. For example, a GetMetricDataV2
+        /// VOICE, CHAT, and TASK are valid <c>filterValue</c> for the CHANNEL filter key. They
+        /// do not count towards limitation of 100 filter values. For example, a GetMetricDataV2
         /// request can filter by 50 queues, 35 agents, and 15 routing profiles for a total of
         /// 100 filter values, along with 3 channel filters. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>contact_lens_conversational_analytics</code> is a valid filterValue for the
-        /// <code>FEATURE</code> filter key. It is available only to contacts analyzed by Contact
-        /// Lens conversational analytics.
+        ///  <c>contact_lens_conversational_analytics</c> is a valid filterValue for the <c>FEATURE</c>
+        /// filter key. It is available only to contacts analyzed by Contact Lens conversational
+        /// analytics.
         /// </para>
         ///  
         /// <para>
-        ///  <code>connect:Chat</code>, <code>connect:SMS</code>, <code>connect:Telephony</code>,
-        /// and <code>connect:WebRTC</code> are valid <code>filterValue</code> examples (not exhaustive)
-        /// for the <code>contact/segmentAttributes/connect:Subtype filter</code> key.
+        ///  <c>connect:Chat</c>, <c>connect:SMS</c>, <c>connect:Telephony</c>, and <c>connect:WebRTC</c>
+        /// are valid <c>filterValue</c> examples (not exhaustive) for the <c>contact/segmentAttributes/connect:Subtype
+        /// filter</c> key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -180,10 +179,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid grouping keys: <code>QUEUE</code> | <code>ROUTING_PROFILE</code> | <code>AGENT</code>
-        /// | <code>CHANNEL</code> | <code>AGENT_HIERARCHY_LEVEL_ONE</code> | <code>AGENT_HIERARCHY_LEVEL_TWO</code>
-        /// | <code>AGENT_HIERARCHY_LEVEL_THREE</code> | <code>AGENT_HIERARCHY_LEVEL_FOUR</code>
-        /// | <code>AGENT_HIERARCHY_LEVEL_FIVE</code>, <code>contact/segmentAttributes/connect:Subtype</code>
+        /// Valid grouping keys: <c>QUEUE</c> | <c>ROUTING_PROFILE</c> | <c>AGENT</c> | <c>CHANNEL</c>
+        /// | <c>AGENT_HIERARCHY_LEVEL_ONE</c> | <c>AGENT_HIERARCHY_LEVEL_TWO</c> | <c>AGENT_HIERARCHY_LEVEL_THREE</c>
+        /// | <c>AGENT_HIERARCHY_LEVEL_FOUR</c> | <c>AGENT_HIERARCHY_LEVEL_FIVE</c>, <c>contact/segmentAttributes/connect:Subtype</c>
         /// 
         /// </para>
         /// </summary>
@@ -207,55 +205,55 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid
-        /// <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code>
-        /// | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>. 
+        ///  <c>IntervalPeriod</c>: An aggregated grouping applied to request metrics. Valid <c>IntervalPeriod</c>
+        /// values are: <c>FIFTEEN_MIN</c> | <c>THIRTY_MIN</c> | <c>HOUR</c> | <c>DAY</c> | <c>WEEK</c>
+        /// | <c>TOTAL</c>. 
         /// </para>
         ///  
         /// <para>
-        /// For example, if <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code>
-        /// and <code>EndTime</code> differs by 1 day, then Amazon Connect returns 48 results
-        /// in the response. Each result is aggregated by the THIRTY_MIN period. By default Amazon
-        /// Connect aggregates results based on the <code>TOTAL</code> interval period. 
+        /// For example, if <c>IntervalPeriod</c> is selected <c>THIRTY_MIN</c>, <c>StartTime</c>
+        /// and <c>EndTime</c> differs by 1 day, then Amazon Connect returns 48 results in the
+        /// response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect
+        /// aggregates results based on the <c>TOTAL</c> interval period. 
         /// </para>
         ///  
         /// <para>
-        /// The following list describes restrictions on <code>StartTime</code> and <code>EndTime</code>
-        /// based on which <code>IntervalPeriod</code> is requested. 
+        /// The following list describes restrictions on <c>StartTime</c> and <c>EndTime</c> based
+        /// on which <c>IntervalPeriod</c> is requested. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FIFTEEN_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 3 days.
+        ///  <c>FIFTEEN_MIN</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must
+        /// be less than 3 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>THIRTY_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 3 days.
+        ///  <c>THIRTY_MIN</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must
+        /// be less than 3 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HOUR</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 3 days.
+        ///  <c>HOUR</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be less
+        /// than 3 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DAY</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 35 days.
+        ///  <c>DAY</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be less
+        /// than 35 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WEEK</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 35 days.
+        ///  <c>WEEK</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be less
+        /// than 35 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 35 days.
+        ///  <c>TOTAL</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be
+        /// less than 35 days.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>TimeZone</code>: The timezone applied to requested metrics.
+        ///  <c>TimeZone</c>: The timezone applied to requested metrics.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -415,7 +413,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <code>INITIATION_METHOD</code> 
+        /// Valid metric filter key: <c>INITIATION_METHOD</c> 
         /// </para>
         ///  
         /// <para>
@@ -432,9 +430,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <code>INITIATION_METHOD</code>. For now, this metric only
-        /// supports the following as <code>INITIATION_METHOD</code>: <code>INBOUND</code> | <code>OUTBOUND</code>
-        /// | <code>CALLBACK</code> | <code>API</code> 
+        /// Valid metric filter key: <c>INITIATION_METHOD</c>. For now, this metric only supports
+        /// the following as <c>INITIATION_METHOD</c>: <c>INBOUND</c> | <c>OUTBOUND</c> | <c>CALLBACK</c>
+        /// | <c>API</c> 
         /// </para>
         ///  
         /// <para>
@@ -442,7 +440,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.
+        /// The <c>Negate</c> key in Metric Level Filters is not applicable for this metric.
         /// </para>
         ///  </note> </dd> <dt>AVG_AGENT_PAUSE_TIME</dt> <dd> 
         /// <para>
@@ -551,7 +549,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <code>INITIATION_METHOD</code> 
+        /// Valid metric filter key: <c>INITIATION_METHOD</c> 
         /// </para>
         ///  
         /// <para>
@@ -680,7 +678,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <code>INITIATION_METHOD</code> 
+        /// Valid metric filter key: <c>INITIATION_METHOD</c> 
         /// </para>
         ///  
         /// <para>
@@ -696,8 +694,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>
-        /// 
+        /// Valid metric filter key: <c>INITIATION_METHOD</c>, <c>DISCONNECT_REASON</c> 
         /// </para>
         ///  
         /// <para>
@@ -776,9 +773,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: For <code>ThresholdValue</code> enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
-        /// (for "Less than").
+        /// Threshold: For <c>ThresholdValue</c> enter any whole number from 1 to 604800 (inclusive),
+        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than").
         /// </para>
         ///  </dd> <dt>CONTACTS_TRANSFERRED_OUT</dt> <dd> 
         /// <para>
@@ -890,9 +886,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
-        /// (for "Less than"). 
+        /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
+        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
         /// </para>
         ///  </dd> <dt>SUM_AFTER_CONTACT_WORK_TIME</dt> <dd> 
         /// <para>
@@ -908,9 +903,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid metric filter key: <code>INITIATION_METHOD</code>. This metric only supports
-        /// the following filter keys as <code>INITIATION_METHOD</code>: <code>INBOUND</code>
-        /// | <code>OUTBOUND</code> | <code>CALLBACK</code> | <code>API</code> 
+        /// Valid metric filter key: <c>INITIATION_METHOD</c>. This metric only supports the following
+        /// filter keys as <c>INITIATION_METHOD</c>: <c>INBOUND</c> | <c>OUTBOUND</c> | <c>CALLBACK</c>
+        /// | <c>API</c> 
         /// </para>
         ///  
         /// <para>
@@ -918,7 +913,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Negate</code> key in Metric Level Filters is not applicable for this metric.
+        /// The <c>Negate</c> key in Metric Level Filters is not applicable for this metric.
         /// </para>
         ///  </note> </dd> <dt>SUM_CONTACT_FLOW_TIME</dt> <dd> 
         /// <para>
@@ -946,9 +941,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
-        /// (for "Less than"). 
+        /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
+        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
         /// </para>
         ///  </dd> <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> 
         /// <para>
@@ -960,13 +954,12 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
-        /// (for "Less than"). 
+        /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
+        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
         /// </para>
         ///  </dd> <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> 
         /// <para>
-        /// Valid metric filter key: <code>DISCONNECT_REASON</code> 
+        /// Valid metric filter key: <c>DISCONNECT_REASON</c> 
         /// </para>
         ///  
         /// <para>
@@ -1087,7 +1080,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the resource. This includes the <code>instanceId</code>
+        /// The Amazon Resource Name (ARN) of the resource. This includes the <c>instanceId</c>
         /// an Amazon Connect instance.
         /// </para>
         /// </summary>
@@ -1109,9 +1102,9 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The timestamp, in UNIX Epoch time format, at which to start the reporting interval
         /// for the retrieval of historical metrics data. The time must be before the end time
-        /// timestamp. The start and end time depends on the <code>IntervalPeriod</code> selected.
-        /// By default the time range between start and end time is 35 days. Historical metrics
-        /// are available for 3 months.
+        /// timestamp. The start and end time depends on the <c>IntervalPeriod</c> selected. By
+        /// default the time range between start and end time is 35 days. Historical metrics are
+        /// available for 3 months.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

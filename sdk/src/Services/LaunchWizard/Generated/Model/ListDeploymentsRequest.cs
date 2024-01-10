@@ -45,11 +45,11 @@ namespace Amazon.LaunchWizard.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>WORKLOAD_NAME</code> 
+        ///  <c>WORKLOAD_NAME</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEPLOYMENT_STATUS</code> 
+        ///  <c>DEPLOYMENT_STATUS</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

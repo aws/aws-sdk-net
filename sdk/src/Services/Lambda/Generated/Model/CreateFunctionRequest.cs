@@ -40,28 +40,26 @@ namespace Amazon.Lambda.Model
     ///  
     /// <para>
     /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
-    /// image</a>, then you set the package type to <code>Image</code>. For a container image,
-    /// the code property must include the URI of a container image in the Amazon ECR registry.
+    /// image</a>, then you set the package type to <c>Image</c>. For a container image, the
+    /// code property must include the URI of a container image in the Amazon ECR registry.
     /// You do not need to specify the handler and runtime properties.
     /// </para>
     ///  
     /// <para>
     /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
-    /// file archive</a>, then you set the package type to <code>Zip</code>. For a .zip file
-    /// archive, the code property specifies the location of the .zip file. You must also
-    /// specify the handler and runtime properties. The code in the deployment package must
-    /// be compatible with the target instruction set architecture of the function (<code>x86-64</code>
-    /// or <code>arm64</code>). If you do not specify the architecture, then the default value
-    /// is <code>x86-64</code>.
+    /// file archive</a>, then you set the package type to <c>Zip</c>. For a .zip file archive,
+    /// the code property specifies the location of the .zip file. You must also specify the
+    /// handler and runtime properties. The code in the deployment package must be compatible
+    /// with the target instruction set architecture of the function (<c>x86-64</c> or <c>arm64</c>).
+    /// If you do not specify the architecture, then the default value is <c>x86-64</c>.
     /// </para>
     ///  
     /// <para>
     /// When you create a function, Lambda provisions an instance of the function and its
     /// supporting resources. If your function connects to a VPC, this process can take a
-    /// minute or so. During this time, you can't invoke or modify the function. The <code>State</code>,
-    /// <code>StateReason</code>, and <code>StateReasonCode</code> fields in the response
-    /// from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
-    /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
+    /// minute or so. During this time, you can't invoke or modify the function. The <c>State</c>,
+    /// <c>StateReason</c>, and <c>StateReasonCode</c> fields in the response from <a>GetFunctionConfiguration</a>
+    /// indicate when the function is ready to invoke. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
     /// function states</a>.
     /// </para>
     ///  
@@ -70,8 +68,8 @@ namespace Amazon.Lambda.Model
     /// The unpublished version changes when you update your function's code and configuration.
     /// A published version is a snapshot of your function code and configuration that can't
     /// be changed. An alias is a named resource that maps to a version, and can be changed
-    /// to map to a different version. Use the <code>Publish</code> parameter to create version
-    /// <code>1</code> of your function from its initial configuration.
+    /// to map to a different version. Use the <c>Publish</c> parameter to create version
+    /// <c>1</c> of your function from its initial configuration.
     /// </para>
     ///  
     /// <para>
@@ -137,7 +135,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Architectures. 
         /// <para>
         /// The instruction set architecture that the function supports. Enter a string array
-        /// with one of the valid values (arm64 or x86_64). The default value is <code>x86_64</code>.
+        /// with one of the valid values (arm64 or x86_64). The default value is <c>x86_64</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -253,8 +251,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
-        /// The size of the function's <code>/tmp</code> directory in MB. The default value is
-        /// 512, but can be any whole number between 512 and 10,240 MB.
+        /// The size of the function's <c>/tmp</c> directory in MB. The default value is 512,
+        /// but can be any whole number between 512 and 10,240 MB.
         /// </para>
         /// </summary>
         public EphemeralStorage EphemeralStorage
@@ -299,15 +297,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> – <code>my-function</code>.
+        ///  <b>Function name</b> – <c>my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -459,8 +457,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property PackageType. 
         /// <para>
-        /// The type of deployment package. Set to <code>Image</code> for container image and
-        /// set to <code>Zip</code> for .zip file archive.
+        /// The type of deployment package. Set to <c>Image</c> for container image and set to
+        /// <c>Zip</c> for .zip file archive.
         /// </para>
         /// </summary>
         public PackageType PackageType
@@ -599,8 +597,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TracingConfig. 
         /// <para>
-        /// Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming
-        /// requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
+        /// Set <c>Mode</c> to <c>Active</c> to sample and trace a subset of incoming requests
+        /// with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
         /// </para>
         /// </summary>
         public TracingConfig TracingConfig

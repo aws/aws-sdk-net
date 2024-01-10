@@ -43,8 +43,8 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>delete key pair</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>key pair name</code>. For more information,
+    /// The <c>delete key pair</c> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by <c>key pair name</c>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
@@ -61,8 +61,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>expectedFingerprint</code> parameter is required only when specifying to
-        /// delete a Lightsail default key pair.
+        /// The <c>expectedFingerprint</c> parameter is required only when specifying to delete
+        /// a Lightsail default key pair.
         /// </para>
         ///  </note>
         /// </summary>

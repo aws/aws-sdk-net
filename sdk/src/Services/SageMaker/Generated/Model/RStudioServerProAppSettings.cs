@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings that configure user interaction with the <code>RStudioServerPro</code>
+    /// A collection of settings that configure user interaction with the <c>RStudioServerPro</c>
     /// app.
     /// </summary>
     public partial class RStudioServerProAppSettings
@@ -40,8 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AccessStatus. 
         /// <para>
-        /// Indicates whether the current user has access to the <code>RStudioServerPro</code>
-        /// app.
+        /// Indicates whether the current user has access to the <c>RStudioServerPro</c> app.
         /// </para>
         /// </summary>
         public RStudioServerProAccessStatus AccessStatus
@@ -59,9 +58,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UserGroup. 
         /// <para>
-        /// The level of permissions that the user has within the <code>RStudioServerPro</code>
-        /// app. This value defaults to `User`. The `Admin` value allows the user access to the
-        /// RStudio Administrative Dashboard.
+        /// The level of permissions that the user has within the <c>RStudioServerPro</c> app.
+        /// This value defaults to `User`. The `Admin` value allows the user access to the RStudio
+        /// Administrative Dashboard.
         /// </para>
         /// </summary>
         public RStudioServerProUserGroup UserGroup

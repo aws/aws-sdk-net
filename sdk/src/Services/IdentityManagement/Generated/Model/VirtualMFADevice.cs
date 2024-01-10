@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Base32StringSeed. 
         /// <para>
         ///  The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>.
-        /// The <code>Base32StringSeed</code> is base32-encoded. 
+        /// The <c>Base32StringSeed</c> is base32-encoded. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -81,11 +81,10 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property QRCodePNG. 
         /// <para>
-        ///  A QR code PNG image that encodes <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
-        /// where <code>$virtualMFADeviceName</code> is one of the create call arguments. <code>AccountName</code>
-        /// is the user name if set (otherwise, the account ID otherwise), and <code>Base32String</code>
-        /// is the seed in base32 format. The <code>Base32String</code> value is base64-encoded.
-        /// 
+        ///  A QR code PNG image that encodes <c>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</c>
+        /// where <c>$virtualMFADeviceName</c> is one of the create call arguments. <c>AccountName</c>
+        /// is the user name if set (otherwise, the account ID otherwise), and <c>Base32String</c>
+        /// is the seed in base32 format. The <c>Base32String</c> value is base64-encoded. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -104,7 +103,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property SerialNumber. 
         /// <para>
-        /// The serial number associated with <code>VirtualMFADevice</code>.
+        /// The serial number associated with <c>VirtualMFADevice</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=9, Max=256)]

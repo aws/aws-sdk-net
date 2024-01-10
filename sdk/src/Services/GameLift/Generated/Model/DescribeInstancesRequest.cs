@@ -60,9 +60,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, this operation returns <code>Instance</code> objects for each requested
-    /// instance, listed in no particular order. If you call this operation for an Anywhere
-    /// fleet, you receive an InvalidRequestException.
+    /// If successful, this operation returns <c>Instance</c> objects for each requested instance,
+    /// listed in no particular order. If you call this operation for an Anywhere fleet, you
+    /// receive an InvalidRequestException.
     /// </para>
     ///  
     /// <para>
@@ -138,7 +138,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -159,7 +159,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The name of a location to retrieve instance information for, in the form of an Amazon
-        /// Web Services Region code such as <code>us-west-2</code>. 
+        /// Web Services Region code such as <c>us-west-2</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

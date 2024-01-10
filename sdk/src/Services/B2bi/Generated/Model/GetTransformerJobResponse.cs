@@ -78,8 +78,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Returns the current state of the transformer job, either <code>running</code>, <code>succeeded</code>,
-        /// or <code>failed</code>.
+        /// Returns the current state of the transformer job, either <c>running</c>, <c>succeeded</c>,
+        /// or <c>failed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

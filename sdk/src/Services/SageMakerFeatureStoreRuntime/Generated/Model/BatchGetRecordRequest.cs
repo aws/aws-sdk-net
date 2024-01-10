@@ -30,7 +30,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchGetRecord operation.
-    /// Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.
+    /// Retrieves a batch of <c>Records</c> from a <c>FeatureGroup</c>.
     /// </summary>
     public partial class BatchGetRecordRequest : AmazonSageMakerFeatureStoreRuntimeRequest
     {
@@ -40,10 +40,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property ExpirationTimeResponse. 
         /// <para>
-        /// Parameter to request <code>ExpiresAt</code> in response. If <code>Enabled</code>,
-        /// <code>BatchGetRecord</code> will return the value of <code>ExpiresAt</code>, if it
-        /// is not null. If <code>Disabled</code> and null, <code>BatchGetRecord</code> will return
-        /// null.
+        /// Parameter to request <c>ExpiresAt</c> in response. If <c>Enabled</c>, <c>BatchGetRecord</c>
+        /// will return the value of <c>ExpiresAt</c>, if it is not null. If <c>Disabled</c> and
+        /// null, <c>BatchGetRecord</c> will return null.
         /// </para>
         /// </summary>
         public ExpirationTimeResponse ExpirationTimeResponse
@@ -61,9 +60,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property Identifiers. 
         /// <para>
-        /// A list containing the name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code>,
-        /// the list of names of <code>Feature</code>s to be retrieved, and the corresponding
-        /// <code>RecordIdentifier</code> values as strings.
+        /// A list containing the name or Amazon Resource Name (ARN) of the <c>FeatureGroup</c>,
+        /// the list of names of <c>Feature</c>s to be retrieved, and the corresponding <c>RecordIdentifier</c>
+        /// values as strings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

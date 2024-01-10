@@ -101,9 +101,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property GenerateDistinctId. 
         /// <para>
-        /// Specifies whether (<code>true</code>) or not (<code>false</code>) the key identifier
-        /// is distinct from the created API key value. This parameter is deprecated and should
-        /// not be used.
+        /// Specifies whether (<c>true</c>) or not (<c>false</c>) the key identifier is distinct
+        /// from the created API key value. This parameter is deprecated and should not be used.
         /// </para>
         /// </summary>
         public bool GenerateDistinctId
@@ -158,8 +157,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with <code>aws:</code>. The tag
-        /// value can be up to 256 characters.
+        /// key can be up to 128 characters and must not start with <c>aws:</c>. The tag value
+        /// can be up to 256 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

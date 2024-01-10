@@ -40,8 +40,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property IncludeAllTagsOfInstance. 
         /// <para>
         /// Indicates wheter all tag keys in the current Region are registered to appear in scheduled
-        /// event notifications. <code>true</code> indicates that all tag keys in the current
-        /// Region are registered.
+        /// event notifications. <c>true</c> indicates that all tag keys in the current Region
+        /// are registered.
         /// </para>
         /// </summary>
         public bool IncludeAllTagsOfInstance

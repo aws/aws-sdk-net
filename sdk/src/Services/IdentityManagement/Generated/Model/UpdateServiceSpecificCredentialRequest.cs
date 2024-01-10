@@ -30,7 +30,7 @@ namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServiceSpecificCredential operation.
-    /// Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
+    /// Sets the status of a service-specific credential to <c>Active</c> or <c>Inactive</c>.
     /// Service-specific credentials that are inactive cannot be used for authentication to
     /// the service. This operation can be used to disable a user's service-specific credential
     /// as part of a credential rotation work flow.

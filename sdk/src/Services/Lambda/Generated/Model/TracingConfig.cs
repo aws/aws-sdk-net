@@ -30,8 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>
-    /// tracing configuration. To sample and record incoming requests, set <code>Mode</code>
-    /// to <code>Active</code>.
+    /// tracing configuration. To sample and record incoming requests, set <c>Mode</c> to
+    /// <c>Active</c>.
     /// </summary>
     public partial class TracingConfig
     {

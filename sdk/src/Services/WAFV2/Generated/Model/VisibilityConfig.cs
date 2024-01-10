@@ -72,7 +72,7 @@ namespace Amazon.WAFV2.Model
         /// A name of the Amazon CloudWatch metric dimension. The name can contain only the characters:
         /// A-Z, a-z, 0-9, - (hyphen), and _ (underscore). The name can be from one to 128 characters
         /// long. It can't contain whitespace or metric names that are reserved for WAF, for example
-        /// <code>All</code> and <code>Default_Action</code>. 
+        /// <c>All</c> and <c>Default_Action</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

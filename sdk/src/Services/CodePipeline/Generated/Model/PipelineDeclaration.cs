@@ -50,9 +50,9 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must include either <code>artifactStore</code> or <code>artifactStores</code>
-        /// in your pipeline, but you cannot use both. If you create a cross-region action in
-        /// your pipeline, you must use <code>artifactStores</code>.
+        /// You must include either <c>artifactStore</c> or <c>artifactStores</c> in your pipeline,
+        /// but you cannot use both. If you create a cross-region action in your pipeline, you
+        /// must use <c>artifactStores</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -71,15 +71,15 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ArtifactStores. 
         /// <para>
-        /// A mapping of <code>artifactStore</code> objects and their corresponding Amazon Web
-        /// Services Regions. There must be an artifact store for the pipeline Region and for
-        /// each cross-region action in the pipeline.
+        /// A mapping of <c>artifactStore</c> objects and their corresponding Amazon Web Services
+        /// Regions. There must be an artifact store for the pipeline Region and for each cross-region
+        /// action in the pipeline.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must include either <code>artifactStore</code> or <code>artifactStores</code>
-        /// in your pipeline, but you cannot use both. If you create a cross-region action in
-        /// your pipeline, you must use <code>artifactStores</code>.
+        /// You must include either <c>artifactStore</c> or <c>artifactStores</c> in your pipeline,
+        /// but you cannot use both. If you create a cross-region action in your pipeline, you
+        /// must use <c>artifactStores</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -171,7 +171,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for CodePipeline to use to either perform actions with
-        /// no <code>actionRoleArn</code>, or to use to assume roles for actions with an <code>actionRoleArn</code>.
+        /// no <c>actionRoleArn</c>, or to use to assume roles for actions with an <c>actionRoleArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -236,7 +236,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A list that defines the pipeline variables for a pipeline resource. Variable names
-        /// can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9@\-_]+</code>.
+        /// can have alphanumeric and underscore characters, and the values must match <c>[A-Za-z0-9@\-_]+</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

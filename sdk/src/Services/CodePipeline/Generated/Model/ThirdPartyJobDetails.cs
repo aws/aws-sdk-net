@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The details of a job sent in response to a <code>GetThirdPartyJobDetails</code> request.
+    /// The details of a job sent in response to a <c>GetThirdPartyJobDetails</c> request.
     /// </summary>
     public partial class ThirdPartyJobDetails
     {

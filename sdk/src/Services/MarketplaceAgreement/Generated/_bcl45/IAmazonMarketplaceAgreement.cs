@@ -45,18 +45,18 @@ namespace Amazon.MarketplaceAgreement
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DescribeAgreement</code> – Grants permission to users to obtain detailed meta
-    /// data about any of their agreements.
+    ///  <c>DescribeAgreement</c> – Grants permission to users to obtain detailed meta data
+    /// about any of their agreements.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>GetAgreementTerms</code> – Grants permission to users to obtain details about
-    /// the terms of an agreement.
+    ///  <c>GetAgreementTerms</c> – Grants permission to users to obtain details about the
+    /// terms of an agreement.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SearchAgreements</code> – Grants permission to users to search through all
-    /// their agreements.
+    ///  <c>SearchAgreements</c> – Grants permission to users to search through all their
+    /// agreements.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -142,24 +142,24 @@ namespace Amazon.MarketplaceAgreement
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TermType</code> – The type of term, such as <code>LegalTerm</code>, <code>RenewalTerm</code>,
-        /// or <code>ConfigurableUpfrontPricingTerm</code>.
+        ///  <c>TermType</c> – The type of term, such as <c>LegalTerm</c>, <c>RenewalTerm</c>,
+        /// or <c>ConfigurableUpfrontPricingTerm</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TermID</code> – The ID of the particular term, which is common between offer
-        /// and agreement.
+        ///  <c>TermID</c> – The ID of the particular term, which is common between offer and
+        /// agreement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TermPayload</code> – The key information contained in the term, such as the
-        /// EULA for <code>LegalTerm</code> or pricing and dimensions for various pricing terms,
-        /// such as <code>ConfigurableUpfrontPricingTerm</code> or <code>UsageBasedPricingTerm</code>.
+        ///  <c>TermPayload</c> – The key information contained in the term, such as the EULA
+        /// for <c>LegalTerm</c> or pricing and dimensions for various pricing terms, such as
+        /// <c>ConfigurableUpfrontPricingTerm</c> or <c>UsageBasedPricingTerm</c>.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>Configuration</code> – The buyer/acceptor's selection at the time of agreement
-        /// creation, such as the number of units purchased for a dimension or setting the <code>EnableAutoRenew</code>
+        ///  <c>Configuration</c> – The buyer/acceptor's selection at the time of agreement creation,
+        /// such as the number of units purchased for a dimension or setting the <c>EnableAutoRenew</c>
         /// flag.
         /// </para>
         ///  </li> </ul>
@@ -197,24 +197,24 @@ namespace Amazon.MarketplaceAgreement
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TermType</code> – The type of term, such as <code>LegalTerm</code>, <code>RenewalTerm</code>,
-        /// or <code>ConfigurableUpfrontPricingTerm</code>.
+        ///  <c>TermType</c> – The type of term, such as <c>LegalTerm</c>, <c>RenewalTerm</c>,
+        /// or <c>ConfigurableUpfrontPricingTerm</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TermID</code> – The ID of the particular term, which is common between offer
-        /// and agreement.
+        ///  <c>TermID</c> – The ID of the particular term, which is common between offer and
+        /// agreement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TermPayload</code> – The key information contained in the term, such as the
-        /// EULA for <code>LegalTerm</code> or pricing and dimensions for various pricing terms,
-        /// such as <code>ConfigurableUpfrontPricingTerm</code> or <code>UsageBasedPricingTerm</code>.
+        ///  <c>TermPayload</c> – The key information contained in the term, such as the EULA
+        /// for <c>LegalTerm</c> or pricing and dimensions for various pricing terms, such as
+        /// <c>ConfigurableUpfrontPricingTerm</c> or <c>UsageBasedPricingTerm</c>.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>Configuration</code> – The buyer/acceptor's selection at the time of agreement
-        /// creation, such as the number of units purchased for a dimension or setting the <code>EnableAutoRenew</code>
+        ///  <c>Configuration</c> – The buyer/acceptor's selection at the time of agreement creation,
+        /// such as the number of units purchased for a dimension or setting the <c>EnableAutoRenew</c>
         /// flag.
         /// </para>
         ///  </li> </ul>
@@ -258,73 +258,71 @@ namespace Amazon.MarketplaceAgreement
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
+        /// + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>Status</code>
-        /// 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceType</c>
+        /// + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceType</c> + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>OfferId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceType</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>OfferId</c> + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceType</code> + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceIdentifier</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>OfferId</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceIdentifier</c> + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>OfferId</code> + <code>Status</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceIdentifier</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceIdentifier</code> + <code>Status</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceType</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceType</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -358,73 +356,71 @@ namespace Amazon.MarketplaceAgreement
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
+        /// + <c>Status</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>Status</code>
-        /// 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceType</c>
+        /// + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceType</c> + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>OfferId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceType</code>
-        /// + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>OfferId</c> + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceType</code> + <code>Status</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceIdentifier</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>OfferId</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceIdentifier</c> + <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>OfferId</code> + <code>Status</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceIdentifier</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceIdentifier</code> + <code>Status</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-        /// + <code>ResourceType</code> 
+        ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+        /// + <c>ResourceType</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

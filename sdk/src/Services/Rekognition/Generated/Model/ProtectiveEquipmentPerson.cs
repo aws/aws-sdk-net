@@ -30,7 +30,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// A person detected by a call to <a>DetectProtectiveEquipment</a>. The API returns all
-    /// persons detected in the input image in an array of <code>ProtectiveEquipmentPerson</code>
+    /// persons detected in the input image in an array of <c>ProtectiveEquipmentPerson</c>
     /// objects.
     /// </summary>
     public partial class ProtectiveEquipmentPerson
@@ -100,7 +100,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier for the detected person. The identifier is only unique for a single
-        /// call to <code>DetectProtectiveEquipment</code>.
+        /// call to <c>DetectProtectiveEquipment</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

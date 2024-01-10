@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Files. 
         /// <para>
-        ///  A list of <code>SnapshotFile</code> objects.
+        ///  A list of <c>SnapshotFile</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property S3Results. 
         /// <para>
-        ///  A list of <code>SnapshotJobS3Result</code> objects.
+        ///  A list of <c>SnapshotJobS3Result</c> objects.
         /// </para>
         /// </summary>
         public List<SnapshotJobS3Result> S3Results

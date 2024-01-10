@@ -42,12 +42,12 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// A complex type that contains <code>XssMatchTuple</code> objects, which specify the
-    /// parts of web requests that you want AWS WAF to inspect for cross-site scripting attacks
-    /// and, if you want AWS WAF to inspect a header, the name of the header. If a <code>XssMatchSet</code>
-    /// contains more than one <code>XssMatchTuple</code> object, a request needs to include
-    /// cross-site scripting attacks in only one of the specified parts of the request to
-    /// be considered a match.
+    /// A complex type that contains <c>XssMatchTuple</c> objects, which specify the parts
+    /// of web requests that you want AWS WAF to inspect for cross-site scripting attacks
+    /// and, if you want AWS WAF to inspect a header, the name of the header. If a <c>XssMatchSet</c>
+    /// contains more than one <c>XssMatchTuple</c> object, a request needs to include cross-site
+    /// scripting attacks in only one of the specified parts of the request to be considered
+    /// a match.
     /// </para>
     /// </summary>
     public partial class XssMatchSet
@@ -59,7 +59,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name, if any, of the <code>XssMatchSet</code>.
+        /// The name, if any, of the <c>XssMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -78,15 +78,15 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property XssMatchSetId. 
         /// <para>
-        /// A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code>
-        /// to get information about an <code>XssMatchSet</code> (see <a>GetXssMatchSet</a>),
-        /// update an <code>XssMatchSet</code> (see <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code>
-        /// into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>),
-        /// and delete an <code>XssMatchSet</code> from AWS WAF (see <a>DeleteXssMatchSet</a>).
+        /// A unique identifier for an <c>XssMatchSet</c>. You use <c>XssMatchSetId</c> to get
+        /// information about an <c>XssMatchSet</c> (see <a>GetXssMatchSet</a>), update an <c>XssMatchSet</c>
+        /// (see <a>UpdateXssMatchSet</a>), insert an <c>XssMatchSet</c> into a <c>Rule</c> or
+        /// delete one from a <c>Rule</c> (see <a>UpdateRule</a>), and delete an <c>XssMatchSet</c>
+        /// from AWS WAF (see <a>DeleteXssMatchSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
+        ///  <c>XssMatchSetId</c> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

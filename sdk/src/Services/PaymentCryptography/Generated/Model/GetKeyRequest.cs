@@ -63,7 +63,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property KeyIdentifier. 
         /// <para>
-        /// The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key.
+        /// The <c>KeyARN</c> of the Amazon Web Services Payment Cryptography key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]

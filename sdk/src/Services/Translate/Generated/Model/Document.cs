@@ -39,10 +39,10 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The <code>Content</code>field type is Binary large object (blob). This object contains
-        /// the document content converted into base64-encoded binary data. If you use one of
-        /// the AWS SDKs, the SDK performs the Base64-encoding on this field before sending the
-        /// request. 
+        /// The <c>Content</c>field type is Binary large object (blob). This object contains the
+        /// document content converted into base64-encoded binary data. If you use one of the
+        /// AWS SDKs, the SDK performs the Base64-encoding on this field before sending the request.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Max=102400)]
@@ -65,18 +65,18 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>text/html</code> - The input data consists of HTML content. Amazon Translate
-        /// translates only the text in the HTML element.
+        ///  <c>text/html</c> - The input data consists of HTML content. Amazon Translate translates
+        /// only the text in the HTML element.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>text/plain</code> - The input data consists of unformatted text. Amazon Translate
+        ///  <c>text/plain</c> - The input data consists of unformatted text. Amazon Translate
         /// translates every character in the content. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>
-        /// - The input data consists of a Word document (.docx).
+        ///  <c>application/vnd.openxmlformats-officedocument.wordprocessingml.document</c> -
+        /// The input data consists of a Word document (.docx).
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteType operation.
-    /// Deletes a <code>Type</code> object.
+    /// Deletes a <c>Type</c> object.
     /// </summary>
     public partial class DeleteTypeRequest : AmazonAppSyncRequest
     {

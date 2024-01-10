@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Provides face metadata for target image faces that are analyzed by <code>CompareFaces</code>
-    /// and <code>RecognizeCelebrities</code>.
+    /// Provides face metadata for target image faces that are analyzed by <c>CompareFaces</c>
+    /// and <c>RecognizeCelebrities</c>.
     /// </summary>
     public partial class ComparedFace
     {

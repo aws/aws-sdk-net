@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// Contains the name and value of a tag that you can provide to <code>SendEmail</code>
-    /// or <code>SendRawEmail</code> to apply to an email.
+    /// Contains the name and value of a tag that you can provide to <c>SendEmail</c> or <c>SendRawEmail</c>
+    /// to apply to an email.
     /// 
     ///  
     /// <para>

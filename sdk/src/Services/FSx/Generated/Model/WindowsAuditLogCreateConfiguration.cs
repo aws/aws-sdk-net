@@ -57,25 +57,24 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code>
+        /// The name of the Amazon CloudWatch Logs log group must begin with the <c>/aws/fsx</c>
         /// prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with
-        /// the <code>aws-fsx</code> prefix.
+        /// the <c>aws-fsx</c> prefix.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you do not provide a destination in <code>AuditLogDestination</code>, Amazon FSx
-        /// will create and use a log stream in the CloudWatch Logs <code>/aws/fsx/windows</code>
-        /// log group.
+        /// If you do not provide a destination in <c>AuditLogDestination</c>, Amazon FSx will
+        /// create and use a log stream in the CloudWatch Logs <c>/aws/fsx/windows</c> log group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>AuditLogDestination</code> is provided and the resource does not exist, the
-        /// request will fail with a <code>BadRequest</code> error.
+        /// If <c>AuditLogDestination</c> is provided and the resource does not exist, the request
+        /// will fail with a <c>BadRequest</c> error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>FileAccessAuditLogLevel</code> and <code>FileShareAccessAuditLogLevel</code>
-        /// are both set to <code>DISABLED</code>, you cannot specify a destination in <code>AuditLogDestination</code>.
+        /// If <c>FileAccessAuditLogLevel</c> and <c>FileShareAccessAuditLogLevel</c> are both
+        /// set to <c>DISABLED</c>, you cannot specify a destination in <c>AuditLogDestination</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -99,21 +98,20 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are
-        /// logged.
+        ///  <c>SUCCESS_ONLY</c> - only successful attempts to access files or folders are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.
+        ///  <c>FAILURE_ONLY</c> - only failed attempts to access files or folders are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to
-        /// access files or folders are logged.
+        ///  <c>SUCCESS_AND_FAILURE</c> - both successful attempts and failed attempts to access
+        /// files or folders are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - access auditing of files and folders is turned off.
+        ///  <c>DISABLED</c> - access auditing of files and folders is turned off.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -137,20 +135,20 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.
+        ///  <c>SUCCESS_ONLY</c> - only successful attempts to access file shares are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.
+        ///  <c>FAILURE_ONLY</c> - only failed attempts to access file shares are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to
-        /// access file shares are logged.
+        ///  <c>SUCCESS_AND_FAILURE</c> - both successful attempts and failed attempts to access
+        /// file shares are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - access auditing of file shares is turned off.
+        ///  <c>DISABLED</c> - access auditing of file shares is turned off.
         /// </para>
         ///  </li> </ul>
         /// </summary>

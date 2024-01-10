@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of the <code>LambdaFunctionTimedOut</code> event.
+    /// Provides details of the <c>LambdaFunctionTimedOut</c> event.
     /// </summary>
     public partial class LambdaFunctionTimedOutEventAttributes
     {
@@ -40,9 +40,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        /// The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this
-        /// activity task was scheduled. To help diagnose issues, use this information to trace
-        /// back the chain of events leading up to this event.
+        /// The ID of the <c>LambdaFunctionScheduled</c> event that was recorded when this activity
+        /// task was scheduled. To help diagnose issues, use this information to trace back the
+        /// chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The ID of the <code>ActivityTaskStarted</code> event that was recorded when this activity
+        /// The ID of the <c>ActivityTaskStarted</c> event that was recorded when this activity
         /// task started. To help diagnose issues, use this information to trace back the chain
         /// of events leading up to this event.
         /// </para>

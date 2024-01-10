@@ -31,7 +31,7 @@ namespace Amazon.Signer.Model
     /// <summary>
     /// Container for the parameters to the DescribeSigningJob operation.
     /// Returns information about a specific code signing job. You specify the job by using
-    /// the <code>jobId</code> value that is returned by the <a>StartSigningJob</a> operation.
+    /// the <c>jobId</c> value that is returned by the <a>StartSigningJob</a> operation.
     /// </summary>
     public partial class DescribeSigningJobRequest : AmazonSignerRequest
     {

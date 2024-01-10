@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Contains any warnings returned by the <code>GetTemplateSummary</code> API action.
+    /// Contains any warnings returned by the <c>GetTemplateSummary</c> API action.
     /// </summary>
     public partial class Warnings
     {
@@ -38,9 +38,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property UnrecognizedResourceTypes. 
         /// <para>
-        /// A list of all of the unrecognized resource types. This is only returned if the <code>TemplateSummaryConfig</code>
-        /// parameter has the <code>TreatUnrecognizedResourceTypesAsWarning</code> configuration
-        /// set to <code>True</code>.
+        /// A list of all of the unrecognized resource types. This is only returned if the <c>TemplateSummaryConfig</c>
+        /// parameter has the <c>TreatUnrecognizedResourceTypesAsWarning</c> configuration set
+        /// to <c>True</c>.
         /// </para>
         /// </summary>
         public List<string> UnrecognizedResourceTypes

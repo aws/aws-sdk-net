@@ -29,27 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The part of the web request that you want WAF to inspect. Include the single <code>FieldToMatch</code>
+    /// The part of the web request that you want WAF to inspect. Include the single <c>FieldToMatch</c>
     /// type that you want to inspect, with additional specifications as needed, according
-    /// to the type. You specify a single request component in <code>FieldToMatch</code> for
-    /// each rule statement that requires it. To inspect more than one component of the web
-    /// request, create a separate rule statement for each component.
+    /// to the type. You specify a single request component in <c>FieldToMatch</c> for each
+    /// rule statement that requires it. To inspect more than one component of the web request,
+    /// create a separate rule statement for each component.
     /// 
     ///  
     /// <para>
-    /// Example JSON for a <code>QueryString</code> field to match: 
+    /// Example JSON for a <c>QueryString</c> field to match: 
     /// </para>
     ///  
     /// <para>
-    ///  <code> "FieldToMatch": { "QueryString": {} }</code> 
+    ///  <c> "FieldToMatch": { "QueryString": {} }</c> 
     /// </para>
     ///  
     /// <para>
-    /// Example JSON for a <code>Method</code> field to match specification:
+    /// Example JSON for a <c>Method</c> field to match specification:
     /// </para>
     ///  
     /// <para>
-    ///  <code> "FieldToMatch": { "Method": { "Name": "DELETE" } }</code> 
+    ///  <c> "FieldToMatch": { "Method": { "Name": "DELETE" } }</c> 
     /// </para>
     /// </summary>
     public partial class FieldToMatch
@@ -98,12 +98,12 @@ namespace Amazon.WAFV2.Model
         /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
         /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
         /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
-        /// can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
-        /// processing fees. 
+        /// can increase the limit in the web ACL's <c>AssociationConfig</c>, for additional processing
+        /// fees. 
         /// </para>
         ///  
         /// <para>
-        /// For information about how to handle oversized request bodies, see the <code>Body</code>
+        /// For information about how to handle oversized request bodies, see the <c>Body</c>
         /// object configuration. 
         /// </para>
         /// </summary>
@@ -123,16 +123,16 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Cookies. 
         /// <para>
         /// Inspect the request cookies. You must configure scope and pattern matching filters
-        /// in the <code>Cookies</code> object, to define the set of cookies and the parts of
-        /// the cookies that WAF inspects. 
+        /// in the <c>Cookies</c> object, to define the set of cookies and the parts of the cookies
+        /// that WAF inspects. 
         /// </para>
         ///  
         /// <para>
         /// Only the first 8 KB (8192 bytes) of a request's cookies and only the first 200 cookies
         /// are forwarded to WAF for inspection by the underlying host service. You must configure
-        /// how to handle any oversize cookie content in the <code>Cookies</code> object. WAF
-        /// applies the pattern matching filters to the cookies that it receives from the underlying
-        /// host service. 
+        /// how to handle any oversize cookie content in the <c>Cookies</c> object. WAF applies
+        /// the pattern matching filters to the cookies that it receives from the underlying host
+        /// service. 
         /// </para>
         /// </summary>
         public Cookies Cookies
@@ -153,7 +153,7 @@ namespace Amazon.WAFV2.Model
         /// Inspect a string containing the list of the request's header names, ordered as they
         /// appear in the web request that WAF receives for inspection. WAF generates the string
         /// and then uses that as the field to match component in its inspection. WAF separates
-        /// the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+        /// the header names in the string using colons and no added spaces, for example <c>host:user-agent:accept:authorization:referer</c>.
         /// </para>
         /// </summary>
         public HeaderOrder HeaderOrder
@@ -172,16 +172,16 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Headers. 
         /// <para>
         /// Inspect the request headers. You must configure scope and pattern matching filters
-        /// in the <code>Headers</code> object, to define the set of headers to and the parts
-        /// of the headers that WAF inspects. 
+        /// in the <c>Headers</c> object, to define the set of headers to and the parts of the
+        /// headers that WAF inspects. 
         /// </para>
         ///  
         /// <para>
         /// Only the first 8 KB (8192 bytes) of a request's headers and only the first 200 headers
         /// are forwarded to WAF for inspection by the underlying host service. You must configure
-        /// how to handle any oversize header content in the <code>Headers</code> object. WAF
-        /// applies the pattern matching filters to the headers that it receives from the underlying
-        /// host service. 
+        /// how to handle any oversize header content in the <c>Headers</c> object. WAF applies
+        /// the pattern matching filters to the headers that it receives from the underlying host
+        /// service. 
         /// </para>
         /// </summary>
         public Headers Headers
@@ -207,8 +207,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can use this choice only with a string match <code>ByteMatchStatement</code> with
-        /// the <code>PositionalConstraint</code> set to <code>EXACTLY</code>. 
+        /// You can use this choice only with a string match <c>ByteMatchStatement</c> with the
+        /// <c>PositionalConstraint</c> set to <c>EXACTLY</c>. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -248,12 +248,12 @@ namespace Amazon.WAFV2.Model
         /// A limited amount of the request body is forwarded to WAF for inspection by the underlying
         /// host service. For regional resources, the limit is 8 KB (8,192 bytes) and for CloudFront
         /// distributions, the limit is 16 KB (16,384 bytes). For CloudFront distributions, you
-        /// can increase the limit in the web ACL's <code>AssociationConfig</code>, for additional
-        /// processing fees. 
+        /// can increase the limit in the web ACL's <c>AssociationConfig</c>, for additional processing
+        /// fees. 
         /// </para>
         ///  
         /// <para>
-        /// For information about how to handle oversized request bodies, see the <code>JsonBody</code>
+        /// For information about how to handle oversized request bodies, see the <c>JsonBody</c>
         /// object configuration. 
         /// </para>
         /// </summary>
@@ -291,7 +291,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property QueryString. 
         /// <para>
-        /// Inspect the query string. This is the part of a URL that appears after a <code>?</code>
+        /// Inspect the query string. This is the part of a URL that appears after a <c>?</c>
         /// character, if any.
         /// </para>
         /// </summary>
@@ -310,17 +310,17 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SingleHeader. 
         /// <para>
-        /// Inspect a single header. Provide the name of the header to inspect, for example, <code>User-Agent</code>
-        /// or <code>Referer</code>. This setting isn't case sensitive.
+        /// Inspect a single header. Provide the name of the header to inspect, for example, <c>User-Agent</c>
+        /// or <c>Referer</c>. This setting isn't case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// Example JSON: <code>"SingleHeader": { "Name": "haystack" }</code> 
+        /// Example JSON: <c>"SingleHeader": { "Name": "haystack" }</c> 
         /// </para>
         ///  
         /// <para>
-        /// Alternately, you can filter and inspect all headers with the <code>Headers</code>
-        /// <code>FieldToMatch</code> setting. 
+        /// Alternately, you can filter and inspect all headers with the <c>Headers</c> <c>FieldToMatch</c>
+        /// setting. 
         /// </para>
         /// </summary>
         public SingleHeader SingleHeader
@@ -344,7 +344,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> 
+        /// Example JSON: <c>"SingleQueryArgument": { "Name": "myArgument" }</c> 
         /// </para>
         /// </summary>
         public SingleQueryArgument SingleQueryArgument
@@ -363,7 +363,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property UriPath. 
         /// <para>
         /// Inspect the request URI path. This is the part of the web request that identifies
-        /// a resource, for example, <code>/images/daily-ad.jpg</code>.
+        /// a resource, for example, <c>/images/daily-ad.jpg</c>.
         /// </para>
         /// </summary>
         public UriPath UriPath

@@ -109,7 +109,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property ClientSecret. 
         /// <para>
         /// The OAuth 2.0 client secret. This parameter is required if you are creating a rule.
-        /// If you are modifying a rule, you can omit this parameter if you set <code>UseExistingClientSecret</code>
+        /// If you are modifying a rule, you can omit this parameter if you set <c>UseExistingClientSecret</c>
         /// to true.
         /// </para>
         /// </summary>
@@ -180,7 +180,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The set of user claims to be requested from the IdP. The default is <code>openid</code>.
+        /// The set of user claims to be requested from the IdP. The default is <c>openid</c>.
         /// </para>
         ///  
         /// <para>

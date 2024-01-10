@@ -36,7 +36,7 @@ namespace Amazon.RoboMaker.Model
     /// <para>
     /// To remove a tag, specify the tag key. To change the tag value of an existing tag key,
     /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
-    /// <code>TagResource</code> </a>. 
+    /// <c>TagResource</c> </a>. 
     /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonRoboMakerRequest

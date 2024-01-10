@@ -58,11 +58,11 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    /// For the current release of Organizations, specify the <code>us-east-1</code> region
-    /// for all Amazon Web Services API and CLI calls made from the commercial Amazon Web
-    /// Services Regions outside of China. If calling from one of the Amazon Web Services
-    /// Regions in China, then specify <code>cn-northwest-1</code>. You can do this in the
-    /// CLI by using these parameters and commands:
+    /// For the current release of Organizations, specify the <c>us-east-1</c> region for
+    /// all Amazon Web Services API and CLI calls made from the commercial Amazon Web Services
+    /// Regions outside of China. If calling from one of the Amazon Web Services Regions in
+    /// China, then specify <c>cn-northwest-1</c>. You can do this in the CLI by using these
+    /// parameters and commands:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -71,8 +71,8 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    ///  <code>--endpoint-url https://organizations.us-east-1.amazonaws.com</code> <i>(from
-    /// commercial Amazon Web Services Regions outside of China)</i> 
+    ///  <c>--endpoint-url https://organizations.us-east-1.amazonaws.com</c> <i>(from commercial
+    /// Amazon Web Services Regions outside of China)</i> 
     /// </para>
     ///  
     /// <para>
@@ -80,8 +80,8 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    ///  <code>--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn</code>
-    /// <i>(from Amazon Web Services Regions in China)</i> 
+    ///  <c>--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn</c> <i>(from
+    /// Amazon Web Services Regions in China)</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -89,8 +89,8 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    ///  <code>aws configure set default.region us-east-1</code> <i>(from commercial Amazon
-    /// Web Services Regions outside of China)</i> 
+    ///  <c>aws configure set default.region us-east-1</c> <i>(from commercial Amazon Web
+    /// Services Regions outside of China)</i> 
     /// </para>
     ///  
     /// <para>
@@ -98,8 +98,8 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    ///  <code>aws configure set default.region cn-northwest-1</code> <i>(from Amazon Web
-    /// Services Regions in China)</i> 
+    ///  <c>aws configure set default.region cn-northwest-1</c> <i>(from Amazon Web Services
+    /// Regions in China)</i> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    ///  <code>--region us-east-1</code> <i>(from commercial Amazon Web Services Regions outside
+    ///  <c>--region us-east-1</c> <i>(from commercial Amazon Web Services Regions outside
     /// of China)</i> 
     /// </para>
     ///  
@@ -116,7 +116,7 @@ namespace Amazon.Organizations
     /// </para>
     ///  
     /// <para>
-    ///  <code>--region cn-northwest-1</code> <i>(from Amazon Web Services Regions in China)</i>
+    ///  <c>--region cn-northwest-1</c> <i>(from Amazon Web Services Regions in China)</i>
     /// 
     /// </para>
     ///  </li> </ul> 
@@ -164,11 +164,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code>
+        /// The user who calls the API for an invitation to join must have the <c>organizations:AcceptHandshake</c>
         /// permission. If you enabled all features in the organization, the user must also have
-        /// the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
-        /// create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations
+        /// the <c>iam:CreateServiceLinkedRole</c> permission so that Organizations can create
+        /// the required service-linked role named <c>AWSServiceRoleForOrganizations</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations
         /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -200,9 +200,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
-        /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
-        /// for <code>organizations.amazonaws.com</code> permission so that Organizations can
-        /// create the required service-linked role. You don't have that permission.
+        /// The operation that you attempted requires you to have the <c>iam:CreateServiceLinkedRole</c>
+        /// for <c>organizations.amazonaws.com</c> permission so that Organizations can create
+        /// the required service-linked role. You don't have that permission.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -283,7 +283,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidHandshakeTransitionException">
         /// You can't perform the operation on the handshake in its current state. For example,
@@ -337,8 +337,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -357,7 +357,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -446,11 +446,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// The user who calls the API for an invitation to join must have the <code>organizations:AcceptHandshake</code>
+        /// The user who calls the API for an invitation to join must have the <c>organizations:AcceptHandshake</c>
         /// permission. If you enabled all features in the organization, the user must also have
-        /// the <code>iam:CreateServiceLinkedRole</code> permission so that Organizations can
-        /// create the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations
+        /// the <c>iam:CreateServiceLinkedRole</c> permission so that Organizations can create
+        /// the required service-linked role named <c>AWSServiceRoleForOrganizations</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integration_services.html#orgs_integrate_services-using_slrs">Organizations
         /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -485,9 +485,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
-        /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
-        /// for <code>organizations.amazonaws.com</code> permission so that Organizations can
-        /// create the required service-linked role. You don't have that permission.
+        /// The operation that you attempted requires you to have the <c>iam:CreateServiceLinkedRole</c>
+        /// for <c>organizations.amazonaws.com</c> permission so that Organizations can create
+        /// the required service-linked role. You don't have that permission.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -568,7 +568,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidHandshakeTransitionException">
         /// You can't perform the operation on the handshake in its current state. For example,
@@ -622,8 +622,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -642,7 +642,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -982,7 +982,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1047,8 +1047,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1067,7 +1067,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1126,7 +1126,7 @@ namespace Amazon.Organizations
         /// Try the operation again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotEnabledException">
         /// The specified policy type isn't currently enabled in this root. You can't attach policies
@@ -1139,8 +1139,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -1427,7 +1426,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1492,8 +1491,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1512,7 +1511,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1571,7 +1570,7 @@ namespace Amazon.Organizations
         /// Try the operation again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyTypeNotEnabledException">
         /// The specified policy type isn't currently enabled in this root. You can't attach policies
@@ -1584,8 +1583,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -1609,7 +1607,7 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Cancels a handshake. Canceling a handshake sets the handshake state to <code>CANCELED</code>.
+        /// Cancels a handshake. Canceling a handshake sets the handshake state to <c>CANCELED</c>.
         /// 
         ///  
         /// <para>
@@ -1642,7 +1640,7 @@ namespace Amazon.Organizations
         /// accept a handshake that was already accepted.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidHandshakeTransitionException">
         /// You can't perform the operation on the handshake in its current state. For example,
@@ -1696,8 +1694,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1716,7 +1714,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1790,7 +1788,7 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Cancels a handshake. Canceling a handshake sets the handshake state to <code>CANCELED</code>.
+        /// Cancels a handshake. Canceling a handshake sets the handshake state to <c>CANCELED</c>.
         /// 
         ///  
         /// <para>
@@ -1826,7 +1824,7 @@ namespace Amazon.Organizations
         /// accept a handshake that was already accepted.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidHandshakeTransitionException">
         /// You can't perform the operation on the handshake in its current state. For example,
@@ -1880,8 +1878,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1900,7 +1898,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1981,15 +1979,15 @@ namespace Amazon.Organizations
         /// an account when <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
         /// features are enabled </a>. You can't close the management account with this API. This
         /// is an asynchronous request that Amazon Web Services performs in the background. Because
-        /// <code>CloseAccount</code> operates asynchronously, it can return a successful completion
+        /// <c>CloseAccount</c> operates asynchronously, it can return a successful completion
         /// message even though account closure might still be in progress. You need to wait a
         /// few minutes before the account is fully closed. To check the status of the request,
         /// do one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>AccountId</code> that you sent in the <code>CloseAccount</code> request
-        /// to provide as a parameter to the <a>DescribeAccount</a> operation. 
+        /// Use the <c>AccountId</c> that you sent in the <c>CloseAccount</c> request to provide
+        /// as a parameter to the <a>DescribeAccount</a> operation. 
         /// </para>
         ///  
         /// <para>
@@ -1998,7 +1996,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Check the CloudTrail log for the <code>CloseAccountResult</code> event that gets published
+        /// Check the CloudTrail log for the <c>CloseAccountResult</c> event that gets published
         /// after the account closes successfully. For information on using CloudTrail with Organizations,
         /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
@@ -2020,8 +2018,8 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// If the Amazon Web Services account you attempt to close is linked to an Amazon Web
-        /// Services GovCloud (US) account, the <code>CloseAccount</code> request will close both
-        /// accounts. To learn important pre-closure details, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
+        /// Services GovCloud (US) account, the <c>CloseAccount</c> request will close both accounts.
+        /// To learn important pre-closure details, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
         /// Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services
         /// GovCloud User Guide</i>.
         /// </para>
@@ -2040,9 +2038,9 @@ namespace Amazon.Organizations
         /// You attempted to close an account that is already closed.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -2271,7 +2269,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2333,8 +2331,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2353,7 +2351,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2434,15 +2432,15 @@ namespace Amazon.Organizations
         /// an account when <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
         /// features are enabled </a>. You can't close the management account with this API. This
         /// is an asynchronous request that Amazon Web Services performs in the background. Because
-        /// <code>CloseAccount</code> operates asynchronously, it can return a successful completion
+        /// <c>CloseAccount</c> operates asynchronously, it can return a successful completion
         /// message even though account closure might still be in progress. You need to wait a
         /// few minutes before the account is fully closed. To check the status of the request,
         /// do one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>AccountId</code> that you sent in the <code>CloseAccount</code> request
-        /// to provide as a parameter to the <a>DescribeAccount</a> operation. 
+        /// Use the <c>AccountId</c> that you sent in the <c>CloseAccount</c> request to provide
+        /// as a parameter to the <a>DescribeAccount</a> operation. 
         /// </para>
         ///  
         /// <para>
@@ -2451,7 +2449,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Check the CloudTrail log for the <code>CloseAccountResult</code> event that gets published
+        /// Check the CloudTrail log for the <c>CloseAccountResult</c> event that gets published
         /// after the account closes successfully. For information on using CloudTrail with Organizations,
         /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
@@ -2473,8 +2471,8 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// If the Amazon Web Services account you attempt to close is linked to an Amazon Web
-        /// Services GovCloud (US) account, the <code>CloseAccount</code> request will close both
-        /// accounts. To learn important pre-closure details, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
+        /// Services GovCloud (US) account, the <c>CloseAccount</c> request will close both accounts.
+        /// To learn important pre-closure details, see <a href="https://docs.aws.amazon.com/govcloud-us/latest/UserGuide/Closing-govcloud-account.html">
         /// Closing an Amazon Web Services GovCloud (US) account</a> in the <i> Amazon Web Services
         /// GovCloud User Guide</i>.
         /// </para>
@@ -2496,9 +2494,9 @@ namespace Amazon.Organizations
         /// You attempted to close an account that is already closed.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -2727,7 +2725,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2789,8 +2787,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2809,7 +2807,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2891,39 +2889,38 @@ namespace Amazon.Organizations
         /// <summary>
         /// Creates an Amazon Web Services account that is automatically a member of the organization
         /// whose credentials made the request. This is an asynchronous request that Amazon Web
-        /// Services performs in the background. Because <code>CreateAccount</code> operates asynchronously,
+        /// Services performs in the background. Because <c>CreateAccount</c> operates asynchronously,
         /// it can return a successful completion message even though account initialization might
         /// still be in progress. You might need to wait a few minutes before you can successfully
         /// access the account. To check the status of the request, do one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element
-        /// from this operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
-        /// operation.
+        /// Use the <c>Id</c> value of the <c>CreateAccountStatus</c> response element from this
+        /// operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information
+        /// Check the CloudTrail log for the <c>CreateAccountResult</c> event. For information
         /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
+        /// The user who calls the API to create an account must have the <c>organizations:CreateAccount</c>
         /// permission. If you enabled all features in the organization, Organizations creates
-        /// the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
+        /// the required service-linked role named <c>AWSServiceRoleForOrganizations</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
         /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
         /// <para>
-        /// Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
+        /// Organizations preconfigures the new member account with a role (named <c>OrganizationAccountAccessRole</c>
         /// by default) that grants users in the management account administrator permissions
         /// in the new member account. Principals in the management account can assume the role.
         /// Organizations clones the company name and address information for the new account
@@ -2962,7 +2959,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended.
+        /// Using <c>CreateAccount</c> to create multiple temporary accounts isn't recommended.
         /// You can only close an account from the Billing and Cost Management console, and you
         /// must be signed in as the root user. For information on the requirements and process
         /// for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
@@ -3213,7 +3210,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3281,8 +3278,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3301,7 +3298,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3380,39 +3377,38 @@ namespace Amazon.Organizations
         /// <summary>
         /// Creates an Amazon Web Services account that is automatically a member of the organization
         /// whose credentials made the request. This is an asynchronous request that Amazon Web
-        /// Services performs in the background. Because <code>CreateAccount</code> operates asynchronously,
+        /// Services performs in the background. Because <c>CreateAccount</c> operates asynchronously,
         /// it can return a successful completion message even though account initialization might
         /// still be in progress. You might need to wait a few minutes before you can successfully
         /// access the account. To check the status of the request, do one of the following:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element
-        /// from this operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
-        /// operation.
+        /// Use the <c>Id</c> value of the <c>CreateAccountStatus</c> response element from this
+        /// operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information
+        /// Check the CloudTrail log for the <c>CreateAccountResult</c> event. For information
         /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
+        /// The user who calls the API to create an account must have the <c>organizations:CreateAccount</c>
         /// permission. If you enabled all features in the organization, Organizations creates
-        /// the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
+        /// the required service-linked role named <c>AWSServiceRoleForOrganizations</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
         /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
         /// <para>
-        /// Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
+        /// Organizations preconfigures the new member account with a role (named <c>OrganizationAccountAccessRole</c>
         /// by default) that grants users in the management account administrator permissions
         /// in the new member account. Principals in the management account can assume the role.
         /// Organizations clones the company name and address information for the new account
@@ -3451,7 +3447,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended.
+        /// Using <c>CreateAccount</c> to create multiple temporary accounts isn't recommended.
         /// You can only close an account from the Billing and Cost Management console, and you
         /// must be signed in as the root user. For information on the requirements and process
         /// for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
@@ -3705,7 +3701,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3773,8 +3769,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3793,7 +3789,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3893,11 +3889,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You have the <code>organizations:CreateGovCloudAccount</code> permission. 
+        /// You have the <c>organizations:CreateGovCloudAccount</c> permission. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Organizations automatically creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+        /// Organizations automatically creates the required service-linked role named <c>AWSServiceRoleForOrganizations</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
         /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
         /// </para>
@@ -3921,7 +3917,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission. The tags are attached to the commercial account associated with the GovCloud
         /// account, rather than the GovCloud account itself. To add tags to the GovCloud account,
         /// call the <a>TagResource</a> operation in the GovCloud Region after the new GovCloud
@@ -3939,28 +3935,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// Calling <code>CreateGovCloudAccount</code> is an asynchronous request that Amazon
-        /// Web Services performs in the background. Because <code>CreateGovCloudAccount</code>
-        /// operates asynchronously, it can return a successful completion message even though
-        /// account initialization might still be in progress. You might need to wait a few minutes
-        /// before you can successfully access the account. To check the status of the request,
-        /// do one of the following:
+        /// Calling <c>CreateGovCloudAccount</c> is an asynchronous request that Amazon Web Services
+        /// performs in the background. Because <c>CreateGovCloudAccount</c> operates asynchronously,
+        /// it can return a successful completion message even though account initialization might
+        /// still be in progress. You might need to wait a few minutes before you can successfully
+        /// access the account. To check the status of the request, do one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>OperationId</code> response element from this operation to provide as
-        /// a parameter to the <a>DescribeCreateAccountStatus</a> operation.
+        /// Use the <c>OperationId</c> response element from this operation to provide as a parameter
+        /// to the <a>DescribeCreateAccountStatus</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information
+        /// Check the CloudTrail log for the <c>CreateAccountResult</c> event. For information
         /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul>  
         /// <para>
-        /// When you call the <code>CreateGovCloudAccount</code> action, you create two accounts:
-        /// a standalone account in the Amazon Web Services GovCloud (US) Region and an associated
+        /// When you call the <c>CreateGovCloudAccount</c> action, you create two accounts: a
+        /// standalone account in the Amazon Web Services GovCloud (US) Region and an associated
         /// account in the commercial Region for billing and support purposes. The account in
         /// the commercial Region is automatically a member of the organization whose credentials
         /// made the request. Both accounts are associated with the same email address.
@@ -4005,10 +4000,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <code>CreateGovCloudAccount</code> to create multiple temporary accounts isn't
-        /// recommended. You can only close an account from the Amazon Web Services Billing and
-        /// Cost Management console, and you must be signed in as the root user. For information
-        /// on the requirements and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// Using <c>CreateGovCloudAccount</c> to create multiple temporary accounts isn't recommended.
+        /// You can only close an account from the Amazon Web Services Billing and Cost Management
+        /// console, and you must be signed in as the root user. For information on the requirements
+        /// and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> </important> <note> 
@@ -4256,7 +4251,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4324,8 +4319,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4344,7 +4339,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4441,11 +4436,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You have the <code>organizations:CreateGovCloudAccount</code> permission. 
+        /// You have the <c>organizations:CreateGovCloudAccount</c> permission. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Organizations automatically creates the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
+        /// Organizations automatically creates the required service-linked role named <c>AWSServiceRoleForOrganizations</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
         /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
         /// </para>
@@ -4469,7 +4464,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission. The tags are attached to the commercial account associated with the GovCloud
         /// account, rather than the GovCloud account itself. To add tags to the GovCloud account,
         /// call the <a>TagResource</a> operation in the GovCloud Region after the new GovCloud
@@ -4487,28 +4482,27 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// Calling <code>CreateGovCloudAccount</code> is an asynchronous request that Amazon
-        /// Web Services performs in the background. Because <code>CreateGovCloudAccount</code>
-        /// operates asynchronously, it can return a successful completion message even though
-        /// account initialization might still be in progress. You might need to wait a few minutes
-        /// before you can successfully access the account. To check the status of the request,
-        /// do one of the following:
+        /// Calling <c>CreateGovCloudAccount</c> is an asynchronous request that Amazon Web Services
+        /// performs in the background. Because <c>CreateGovCloudAccount</c> operates asynchronously,
+        /// it can return a successful completion message even though account initialization might
+        /// still be in progress. You might need to wait a few minutes before you can successfully
+        /// access the account. To check the status of the request, do one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>OperationId</code> response element from this operation to provide as
-        /// a parameter to the <a>DescribeCreateAccountStatus</a> operation.
+        /// Use the <c>OperationId</c> response element from this operation to provide as a parameter
+        /// to the <a>DescribeCreateAccountStatus</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information
+        /// Check the CloudTrail log for the <c>CreateAccountResult</c> event. For information
         /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html">Logging
         /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul>  
         /// <para>
-        /// When you call the <code>CreateGovCloudAccount</code> action, you create two accounts:
-        /// a standalone account in the Amazon Web Services GovCloud (US) Region and an associated
+        /// When you call the <c>CreateGovCloudAccount</c> action, you create two accounts: a
+        /// standalone account in the Amazon Web Services GovCloud (US) Region and an associated
         /// account in the commercial Region for billing and support purposes. The account in
         /// the commercial Region is automatically a member of the organization whose credentials
         /// made the request. Both accounts are associated with the same email address.
@@ -4553,10 +4547,10 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <code>CreateGovCloudAccount</code> to create multiple temporary accounts isn't
-        /// recommended. You can only close an account from the Amazon Web Services Billing and
-        /// Cost Management console, and you must be signed in as the root user. For information
-        /// on the requirements and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
+        /// Using <c>CreateGovCloudAccount</c> to create multiple temporary accounts isn't recommended.
+        /// You can only close an account from the Amazon Web Services Billing and Cost Management
+        /// console, and you must be signed in as the root user. For information on the requirements
+        /// and process for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
         /// a member account in your organization</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul> </important> <note> 
@@ -4807,7 +4801,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4875,8 +4869,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4895,7 +4889,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4976,7 +4970,7 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Creates an Amazon Web Services organization. The account whose user is calling the
-        /// <code>CreateOrganization</code> operation automatically becomes the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
+        /// <c>CreateOrganization</c> operation automatically becomes the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
         /// account</a> of the new organization.
         /// 
         ///  
@@ -4987,12 +4981,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>),
-        /// the new organization is created with all features enabled and service control policies
-        /// automatically enabled in the root. If you instead choose to create the organization
-        /// supporting only the consolidated billing features by setting the <code>FeatureSet</code>
-        /// parameter to <code>CONSOLIDATED_BILLING</code>, no policy types are enabled by default
-        /// and you can't use organization policies.
+        /// By default (or if you set the <c>FeatureSet</c> parameter to <c>ALL</c>), the new
+        /// organization is created with all features enabled and service control policies automatically
+        /// enabled in the root. If you instead choose to create the organization supporting only
+        /// the consolidated billing features by setting the <c>FeatureSet</c> parameter to <c>CONSOLIDATED_BILLING</c>,
+        /// no policy types are enabled by default and you can't use organization policies.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOrganization service method.</param>
@@ -5005,9 +4998,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
-        /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
-        /// for <code>organizations.amazonaws.com</code> permission so that Organizations can
-        /// create the required service-linked role. You don't have that permission.
+        /// The operation that you attempted requires you to have the <c>iam:CreateServiceLinkedRole</c>
+        /// for <c>organizations.amazonaws.com</c> permission so that Organizations can create
+        /// the required service-linked role. You don't have that permission.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AlreadyInOrganizationException">
         /// This account is already a member of an organization. An account can belong to only
@@ -5233,7 +5226,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5295,8 +5288,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5315,7 +5308,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5390,7 +5383,7 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Creates an Amazon Web Services organization. The account whose user is calling the
-        /// <code>CreateOrganization</code> operation automatically becomes the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
+        /// <c>CreateOrganization</c> operation automatically becomes the <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account">management
         /// account</a> of the new organization.
         /// 
         ///  
@@ -5401,12 +5394,11 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>),
-        /// the new organization is created with all features enabled and service control policies
-        /// automatically enabled in the root. If you instead choose to create the organization
-        /// supporting only the consolidated billing features by setting the <code>FeatureSet</code>
-        /// parameter to <code>CONSOLIDATED_BILLING</code>, no policy types are enabled by default
-        /// and you can't use organization policies.
+        /// By default (or if you set the <c>FeatureSet</c> parameter to <c>ALL</c>), the new
+        /// organization is created with all features enabled and service control policies automatically
+        /// enabled in the root. If you instead choose to create the organization supporting only
+        /// the consolidated billing features by setting the <c>FeatureSet</c> parameter to <c>CONSOLIDATED_BILLING</c>,
+        /// no policy types are enabled by default and you can't use organization policies.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateOrganization service method.</param>
@@ -5422,9 +5414,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccessDeniedForDependencyException">
-        /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
-        /// for <code>organizations.amazonaws.com</code> permission so that Organizations can
-        /// create the required service-linked role. You don't have that permission.
+        /// The operation that you attempted requires you to have the <c>iam:CreateServiceLinkedRole</c>
+        /// for <c>organizations.amazonaws.com</c> permission so that Organizations can create
+        /// the required service-linked role. You don't have that permission.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AlreadyInOrganizationException">
         /// This account is already a member of an organization. An account can belong to only
@@ -5650,7 +5642,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5712,8 +5704,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5732,7 +5724,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5822,7 +5814,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
@@ -6063,7 +6055,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6128,8 +6120,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6148,7 +6140,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6203,7 +6195,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -6238,7 +6230,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
@@ -6482,7 +6474,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6547,8 +6539,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6567,7 +6559,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6622,7 +6614,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -6657,7 +6649,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
@@ -6899,7 +6891,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6964,8 +6956,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6984,7 +6976,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7083,7 +7075,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
@@ -7328,7 +7320,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7393,8 +7385,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7413,7 +7405,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7505,8 +7497,8 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Declines a handshake request. This sets the handshake state to <code>DECLINED</code>
-        /// and effectively deactivates the request.
+        /// Declines a handshake request. This sets the handshake state to <c>DECLINED</c> and
+        /// effectively deactivates the request.
         /// 
         ///  
         /// <para>
@@ -7539,7 +7531,7 @@ namespace Amazon.Organizations
         /// accept a handshake that was already accepted.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidHandshakeTransitionException">
         /// You can't perform the operation on the handshake in its current state. For example,
@@ -7593,8 +7585,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7613,7 +7605,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7687,8 +7679,8 @@ namespace Amazon.Organizations
 
 
         /// <summary>
-        /// Declines a handshake request. This sets the handshake state to <code>DECLINED</code>
-        /// and effectively deactivates the request.
+        /// Declines a handshake request. This sets the handshake state to <c>DECLINED</c> and
+        /// effectively deactivates the request.
         /// 
         ///  
         /// <para>
@@ -7724,7 +7716,7 @@ namespace Amazon.Organizations
         /// accept a handshake that was already accepted.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidHandshakeTransitionException">
         /// You can't perform the operation on the handshake in its current state. For example,
@@ -7778,8 +7770,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7798,7 +7790,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7942,8 +7934,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7962,7 +7954,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8110,8 +8102,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8130,7 +8122,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8283,8 +8275,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8303,7 +8295,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8362,7 +8354,7 @@ namespace Amazon.Organizations
         /// remove all child OUs, and try the operation again.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotFoundException">
-        /// We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
+        /// We can't find an OU with the <c>OrganizationalUnitId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -8459,8 +8451,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8479,7 +8471,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8538,7 +8530,7 @@ namespace Amazon.Organizations
         /// remove all child OUs, and try the operation again.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotFoundException">
-        /// We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
+        /// We can't find an OU with the <c>OrganizationalUnitId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -8636,8 +8628,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8656,7 +8648,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8715,7 +8707,7 @@ namespace Amazon.Organizations
         /// OUs, and accounts before performing this operation.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -8816,8 +8808,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8836,7 +8828,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8895,7 +8887,7 @@ namespace Amazon.Organizations
         /// OUs, and accounts before performing this operation.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -9163,7 +9155,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9447,7 +9439,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9524,9 +9516,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotRegisteredException">
         /// The specified account is not a delegated administrator for this Amazon Web Services
@@ -9756,7 +9748,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9818,8 +9810,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9838,7 +9830,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9951,9 +9943,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotRegisteredException">
         /// The specified account is not a delegated administrator for this Amazon Web Services
@@ -10183,7 +10175,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10245,8 +10237,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10265,7 +10257,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10363,9 +10355,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -10418,8 +10410,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10438,7 +10430,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10533,9 +10525,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -10588,8 +10580,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10608,7 +10600,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10707,8 +10699,8 @@ namespace Amazon.Organizations
         /// the credentials of an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.CreateAccountStatusNotFoundException">
-        /// We can't find an create account request with the <code>CreateAccountRequestId</code>
-        /// that you specified.
+        /// We can't find an create account request with the <c>CreateAccountRequestId</c> that
+        /// you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -10757,8 +10749,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10777,7 +10769,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10879,8 +10871,8 @@ namespace Amazon.Organizations
         /// the credentials of an account that belongs to an organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.CreateAccountStatusNotFoundException">
-        /// We can't find an create account request with the <code>CreateAccountRequestId</code>
-        /// that you specified.
+        /// We can't find an create account request with the <c>CreateAccountRequestId</c> that
+        /// you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -10929,8 +10921,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10949,7 +10941,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11278,7 +11270,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11346,8 +11338,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11366,7 +11358,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11425,8 +11417,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -11699,7 +11690,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11767,8 +11758,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11787,7 +11778,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11846,8 +11837,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -11877,9 +11867,9 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// You can access handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, or
-        /// <code>CANCELED</code> for only 30 days after they change to that state. They're then
-        /// deleted and no longer accessible.
+        /// You can access handshakes that are <c>ACCEPTED</c>, <c>DECLINED</c>, or <c>CANCELED</c>
+        /// for only 30 days after they change to that state. They're then deleted and no longer
+        /// accessible.
         /// </para>
         ///  
         /// <para>
@@ -11900,7 +11890,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -11949,8 +11939,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11969,7 +11959,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12049,9 +12039,9 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// You can access handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, or
-        /// <code>CANCELED</code> for only 30 days after they change to that state. They're then
-        /// deleted and no longer accessible.
+        /// You can access handshakes that are <c>ACCEPTED</c>, <c>DECLINED</c>, or <c>CANCELED</c>
+        /// for only 30 days after they change to that state. They're then deleted and no longer
+        /// accessible.
         /// </para>
         ///  
         /// <para>
@@ -12075,7 +12065,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.HandshakeNotFoundException">
-        /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+        /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -12124,8 +12114,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12144,7 +12134,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12397,8 +12387,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12417,7 +12407,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12472,7 +12462,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotFoundException">
-        /// We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
+        /// We can't find an OU with the <c>OrganizationalUnitId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -12565,8 +12555,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12585,7 +12575,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12640,7 +12630,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotFoundException">
-        /// We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
+        /// We can't find an OU with the <c>OrganizationalUnitId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -12733,8 +12723,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12753,7 +12743,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12808,7 +12798,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -12904,8 +12894,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12924,7 +12914,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12979,7 +12969,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -13244,7 +13234,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13525,7 +13515,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13580,13 +13570,13 @@ namespace Amazon.Organizations
         ///  </important> 
         /// <para>
         /// Every root, OU, and account must have at least one SCP attached. If you want to replace
-        /// the default <code>FullAWSAccess</code> policy with an SCP that limits the permissions
-        /// that can be delegated, you must attach the replacement SCP before you can remove the
-        /// default SCP. This is the authorization strategy of an "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow
-        /// list</a>". If you instead attach a second SCP and leave the <code>FullAWSAccess</code>
-        /// SCP still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to
-        /// override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy
-        /// (or any other attached SCP), you're using the authorization strategy of a "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
+        /// the default <c>FullAWSAccess</c> policy with an SCP that limits the permissions that
+        /// can be delegated, you must attach the replacement SCP before you can remove the default
+        /// SCP. This is the authorization strategy of an "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow
+        /// list</a>". If you instead attach a second SCP and leave the <c>FullAWSAccess</c> SCP
+        /// still attached, and specify <c>"Effect": "Deny"</c> in the second SCP to override
+        /// the <c>"Effect": "Allow"</c> in the <c>FullAWSAccess</c> policy (or any other attached
+        /// SCP), you're using the authorization strategy of a "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
         /// list</a>".
         /// </para>
         ///  
@@ -13828,7 +13818,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13890,8 +13880,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13910,7 +13900,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -13972,15 +13962,14 @@ namespace Amazon.Organizations
         /// The policy isn't attached to the specified target in the specified root.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -14012,13 +14001,13 @@ namespace Amazon.Organizations
         ///  </important> 
         /// <para>
         /// Every root, OU, and account must have at least one SCP attached. If you want to replace
-        /// the default <code>FullAWSAccess</code> policy with an SCP that limits the permissions
-        /// that can be delegated, you must attach the replacement SCP before you can remove the
-        /// default SCP. This is the authorization strategy of an "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow
-        /// list</a>". If you instead attach a second SCP and leave the <code>FullAWSAccess</code>
-        /// SCP still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to
-        /// override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy
-        /// (or any other attached SCP), you're using the authorization strategy of a "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
+        /// the default <c>FullAWSAccess</c> policy with an SCP that limits the permissions that
+        /// can be delegated, you must attach the replacement SCP before you can remove the default
+        /// SCP. This is the authorization strategy of an "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist">allow
+        /// list</a>". If you instead attach a second SCP and leave the <c>FullAWSAccess</c> SCP
+        /// still attached, and specify <c>"Effect": "Deny"</c> in the second SCP to override
+        /// the <c>"Effect": "Allow"</c> in the <c>FullAWSAccess</c> policy (or any other attached
+        /// SCP), you're using the authorization strategy of a "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_denylist">deny
         /// list</a>".
         /// </para>
         ///  
@@ -14263,7 +14252,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14325,8 +14314,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14345,7 +14334,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14407,15 +14396,14 @@ namespace Amazon.Organizations
         /// The policy isn't attached to the specified target in the specified root.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -14440,8 +14428,8 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Disables the integration of an Amazon Web Services service (the service that is specified
-        /// by <code>ServicePrincipal</code>) with Organizations. When you disable integration,
-        /// the specified service no longer can create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// by <c>ServicePrincipal</c>) with Organizations. When you disable integration, the
+        /// specified service no longer can create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
         /// role</a> in <i>new</i> accounts in your organization. This means the service can't
         /// perform operations on your behalf on any new accounts in your organization. The service
         /// can still perform operations in older accounts until the service completes its clean-up
@@ -14498,8 +14486,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> 
         /// <para>
-        /// After you perform the <code>DisableAWSServiceAccess</code> operation, the specified
-        /// service can no longer perform operations in your organization's accounts 
+        /// After you perform the <c>DisableAWSServiceAccess</c> operation, the specified service
+        /// can no longer perform operations in your organization's accounts 
         /// </para>
         ///  
         /// <para>
@@ -14746,7 +14734,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14808,8 +14796,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14828,7 +14816,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14906,8 +14894,8 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Disables the integration of an Amazon Web Services service (the service that is specified
-        /// by <code>ServicePrincipal</code>) with Organizations. When you disable integration,
-        /// the specified service no longer can create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// by <c>ServicePrincipal</c>) with Organizations. When you disable integration, the
+        /// specified service no longer can create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
         /// role</a> in <i>new</i> accounts in your organization. This means the service can't
         /// perform operations on your behalf on any new accounts in your organization. The service
         /// can still perform operations in older accounts until the service completes its clean-up
@@ -14964,8 +14952,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </important> 
         /// <para>
-        /// After you perform the <code>DisableAWSServiceAccess</code> operation, the specified
-        /// service can no longer perform operations in your organization's accounts 
+        /// After you perform the <c>DisableAWSServiceAccess</c> operation, the specified service
+        /// can no longer perform operations in your organization's accounts 
         /// </para>
         ///  
         /// <para>
@@ -15215,7 +15203,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15277,8 +15265,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15297,7 +15285,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15635,7 +15623,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15697,8 +15685,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15717,7 +15705,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -15782,7 +15770,7 @@ namespace Amazon.Organizations
         /// all features in your organization</a> in the <i>Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
-        /// We can't find a root with the <code>RootId</code> that you specified.
+        /// We can't find a root with the <c>RootId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -16068,7 +16056,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16130,8 +16118,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16150,7 +16138,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16215,7 +16203,7 @@ namespace Amazon.Organizations
         /// all features in your organization</a> in the <i>Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
-        /// We can't find a root with the <code>RootId</code> that you specified.
+        /// We can't find a root with the <c>RootId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -16267,7 +16255,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// After all invited member accounts accept the handshake, you finalize the feature set
-        /// change by accepting the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>.
+        /// change by accepting the handshake that contains <c>"Action": "ENABLE_ALL_FEATURES"</c>.
         /// This completes the change.
         /// </para>
         ///  
@@ -16413,8 +16401,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16433,7 +16421,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16531,7 +16519,7 @@ namespace Amazon.Organizations
         ///  
         /// <para>
         /// After all invited member accounts accept the handshake, you finalize the feature set
-        /// change by accepting the handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>.
+        /// change by accepting the handshake that contains <c>"Action": "ENABLE_ALL_FEATURES"</c>.
         /// This completes the change.
         /// </para>
         ///  
@@ -16680,8 +16668,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16700,7 +16688,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -16778,8 +16766,8 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Enables the integration of an Amazon Web Services service (the service that is specified
-        /// by <code>ServicePrincipal</code>) with Organizations. When you enable integration,
-        /// you allow the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// by <c>ServicePrincipal</c>) with Organizations. When you enable integration, you allow
+        /// the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
         /// role</a> in all the accounts in your organization. This allows the service to perform
         /// operations on your behalf in your organization and its accounts.
         /// 
@@ -17039,7 +17027,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17101,8 +17089,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17121,7 +17109,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17199,8 +17187,8 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Enables the integration of an Amazon Web Services service (the service that is specified
-        /// by <code>ServicePrincipal</code>) with Organizations. When you enable integration,
-        /// you allow the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
+        /// by <c>ServicePrincipal</c>) with Organizations. When you enable integration, you allow
+        /// the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked
         /// role</a> in all the accounts in your organization. This allows the service to perform
         /// operations on your behalf in your organization and its accounts.
         /// 
@@ -17463,7 +17451,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17525,8 +17513,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17545,7 +17533,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17880,7 +17868,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17942,8 +17930,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -17962,7 +17950,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18030,7 +18018,7 @@ namespace Amazon.Organizations
         /// Organizations policies</a>in the <i>Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
-        /// We can't find a root with the <code>RootId</code> that you specified.
+        /// We can't find a root with the <c>RootId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -18313,7 +18301,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18375,8 +18363,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18395,7 +18383,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18463,7 +18451,7 @@ namespace Amazon.Organizations
         /// Organizations policies</a>in the <i>Organizations User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.RootNotFoundException">
-        /// We can't find a root with the <code>RootId</code> that you specified.
+        /// We can't find a root with the <c>RootId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -18515,7 +18503,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
@@ -18762,7 +18750,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18903,8 +18891,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -18923,7 +18911,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19021,7 +19009,7 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> </ul> </important> 
         /// <para>
-        /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+        /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
         /// permission.
         /// </para>
         ///  
@@ -19271,7 +19259,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19412,8 +19400,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19432,7 +19420,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19521,7 +19509,7 @@ namespace Amazon.Organizations
         /// <para>
         /// The management account in an organization with all features enabled can set service
         /// control policies (SCPs) that can restrict what administrators of member accounts can
-        /// do. This includes preventing them from successfully calling <code>LeaveOrganization</code>
+        /// do. This includes preventing them from successfully calling <c>LeaveOrganization</c>
         /// and leaving the organization.
         /// </para>
         ///  </li> <li> 
@@ -19581,9 +19569,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are using an organization principal to call <code>LeaveOrganization</code>
-        /// across multiple accounts, you can only do this up to 5 accounts per second in a single
-        /// organization.
+        /// If you are using an organization principal to call <c>LeaveOrganization</c> across
+        /// multiple accounts, you can only do this up to 5 accounts per second in a single organization.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -19597,9 +19584,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -19825,7 +19812,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19887,8 +19874,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19907,7 +19894,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -19998,7 +19985,7 @@ namespace Amazon.Organizations
         /// <para>
         /// The management account in an organization with all features enabled can set service
         /// control policies (SCPs) that can restrict what administrators of member accounts can
-        /// do. This includes preventing them from successfully calling <code>LeaveOrganization</code>
+        /// do. This includes preventing them from successfully calling <c>LeaveOrganization</c>
         /// and leaving the organization.
         /// </para>
         ///  </li> <li> 
@@ -20058,9 +20045,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are using an organization principal to call <code>LeaveOrganization</code>
-        /// across multiple accounts, you can only do this up to 5 accounts per second in a single
-        /// organization.
+        /// If you are using an organization principal to call <c>LeaveOrganization</c> across
+        /// multiple accounts, you can only do this up to 5 accounts per second in a single organization.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -20077,9 +20063,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -20305,7 +20291,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20367,8 +20353,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20387,7 +20373,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20474,11 +20460,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20546,8 +20531,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20566,7 +20551,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20645,11 +20630,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20720,8 +20704,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20740,7 +20724,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20825,11 +20809,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -20897,8 +20880,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20917,7 +20900,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -20972,7 +20955,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -21002,11 +20985,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -21077,8 +21059,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21097,7 +21079,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21152,7 +21134,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -21423,7 +21405,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21485,8 +21467,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21505,7 +21487,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21831,7 +21813,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21893,8 +21875,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21913,7 +21895,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -21999,11 +21981,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22071,8 +22052,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22091,7 +22072,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22146,7 +22127,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -22174,11 +22155,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22249,8 +22229,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22269,7 +22249,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22324,7 +22304,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -22354,11 +22334,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22426,8 +22405,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22446,7 +22425,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22528,11 +22507,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -22603,8 +22581,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22623,7 +22601,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -22941,7 +22919,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23003,8 +22981,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23023,7 +23001,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23341,7 +23319,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23403,8 +23381,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23423,7 +23401,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23522,9 +23500,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotRegisteredException">
         /// The specified account is not a delegated administrator for this Amazon Web Services
@@ -23750,7 +23728,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23812,8 +23790,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23832,7 +23810,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -23931,9 +23909,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotRegisteredException">
         /// The specified account is not a delegated administrator for this Amazon Web Services
@@ -24159,7 +24137,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24221,8 +24199,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24241,7 +24219,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24326,17 +24304,16 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>,
-        /// or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing
-        /// to that state. After that, they're deleted and no longer accessible.
+        /// Handshakes that are <c>ACCEPTED</c>, <c>DECLINED</c>, <c>CANCELED</c>, or <c>EXPIRED</c>
+        /// appear in the results of this API for only 30 days after changing to that state. After
+        /// that, they're deleted and no longer accessible.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24403,8 +24380,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24423,7 +24400,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24502,17 +24479,16 @@ namespace Amazon.Organizations
         /// 
         ///  
         /// <para>
-        /// Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>,
-        /// or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing
-        /// to that state. After that, they're deleted and no longer accessible.
+        /// Handshakes that are <c>ACCEPTED</c>, <c>DECLINED</c>, <c>CANCELED</c>, or <c>EXPIRED</c>
+        /// appear in the results of this API for only 30 days after changing to that state. After
+        /// that, they're deleted and no longer accessible.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24582,8 +24558,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24602,7 +24578,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24680,23 +24656,21 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Lists the handshakes that are associated with the organization that the requesting
-        /// user is part of. The <code>ListHandshakesForOrganization</code> operation returns
-        /// a list of handshake structures. Each structure contains details and status about a
-        /// handshake.
+        /// user is part of. The <c>ListHandshakesForOrganization</c> operation returns a list
+        /// of handshake structures. Each structure contains details and status about a handshake.
         /// 
         ///  
         /// <para>
-        /// Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>,
-        /// or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing
-        /// to that state. After that, they're deleted and no longer accessible.
+        /// Handshakes that are <c>ACCEPTED</c>, <c>DECLINED</c>, <c>CANCELED</c>, or <c>EXPIRED</c>
+        /// appear in the results of this API for only 30 days after changing to that state. After
+        /// that, they're deleted and no longer accessible.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24768,8 +24742,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24788,7 +24762,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24863,23 +24837,21 @@ namespace Amazon.Organizations
 
         /// <summary>
         /// Lists the handshakes that are associated with the organization that the requesting
-        /// user is part of. The <code>ListHandshakesForOrganization</code> operation returns
-        /// a list of handshake structures. Each structure contains details and status about a
-        /// handshake.
+        /// user is part of. The <c>ListHandshakesForOrganization</c> operation returns a list
+        /// of handshake structures. Each structure contains details and status about a handshake.
         /// 
         ///  
         /// <para>
-        /// Handshakes that are <code>ACCEPTED</code>, <code>DECLINED</code>, <code>CANCELED</code>,
-        /// or <code>EXPIRED</code> appear in the results of this API for only 30 days after changing
-        /// to that state. After that, they're deleted and no longer accessible.
+        /// Handshakes that are <c>ACCEPTED</c>, <c>DECLINED</c>, <c>CANCELED</c>, or <c>EXPIRED</c>
+        /// appear in the results of this API for only 30 days after changing to that state. After
+        /// that, they're deleted and no longer accessible.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -24954,8 +24926,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -24974,7 +24946,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25055,11 +25027,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25127,8 +25098,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25147,7 +25118,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25202,7 +25173,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -25228,11 +25199,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25303,8 +25273,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25323,7 +25293,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25378,7 +25348,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ParentNotFoundException">
-        /// We can't find a root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -25409,11 +25379,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25441,7 +25410,7 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ChildNotFoundException">
         /// We can't find an organizational unit (OU) or Amazon Web Services account with the
-        /// <code>ChildId</code> that you specified.
+        /// <c>ChildId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -25490,8 +25459,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25510,7 +25479,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25590,11 +25559,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25625,7 +25593,7 @@ namespace Amazon.Organizations
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ChildNotFoundException">
         /// We can't find an organizational unit (OU) or Amazon Web Services account with the
-        /// <code>ChildId</code> that you specified.
+        /// <c>ChildId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.InvalidInputException">
         /// The requested operation failed because you provided invalid values for one or more
@@ -25674,8 +25642,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25694,7 +25662,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25775,11 +25743,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -25847,8 +25814,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25867,7 +25834,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -25948,11 +25915,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26023,8 +25989,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26043,7 +26009,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26129,11 +26095,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26201,8 +26166,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26221,7 +26186,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26280,8 +26245,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -26308,11 +26272,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26383,8 +26346,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26403,7 +26366,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26462,8 +26425,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -26491,11 +26453,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26572,8 +26533,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26592,7 +26553,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26670,11 +26631,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -26754,8 +26714,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26774,7 +26734,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26939,8 +26899,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26959,7 +26919,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27018,8 +26978,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -27128,8 +27087,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27148,7 +27107,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27207,8 +27166,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -27234,11 +27192,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -27306,8 +27263,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27326,7 +27283,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27381,7 +27338,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -27411,11 +27368,10 @@ namespace Amazon.Organizations
         /// 
         ///  <note> 
         /// <para>
-        /// Always check the <code>NextToken</code> response parameter for a <code>null</code>
-        /// value when calling a <code>List*</code> operation. These operations can occasionally
-        /// return an empty set of results even when there are more results available. The <code>NextToken</code>
-        /// response parameter value is <code>null</code> <i>only</i> when there are no more results
-        /// to display.
+        /// Always check the <c>NextToken</c> response parameter for a <c>null</c> value when
+        /// calling a <c>List*</c> operation. These operations can occasionally return an empty
+        /// set of results even when there are more results available. The <c>NextToken</c> response
+        /// parameter value is <c>null</c> <i>only</i> when there are no more results to display.
         /// </para>
         ///  </note> 
         /// <para>
@@ -27486,8 +27442,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27506,7 +27462,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27561,7 +27517,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -27607,9 +27563,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -27620,8 +27576,8 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.DestinationParentNotFoundException">
-        /// We can't find the destination container (a root or OU) with the <code>ParentId</code>
-        /// that you specified.
+        /// We can't find the destination container (a root or OU) with the <c>ParentId</c> that
+        /// you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.DuplicateAccountException">
         /// That account is already present in the specified destination.
@@ -27673,8 +27629,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27693,7 +27649,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27752,7 +27708,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.SourceParentNotFoundException">
-        /// We can't find a source root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a source root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -27791,9 +27747,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -27804,8 +27760,8 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.DestinationParentNotFoundException">
-        /// We can't find the destination container (a root or OU) with the <code>ParentId</code>
-        /// that you specified.
+        /// We can't find the destination container (a root or OU) with the <c>ParentId</c> that
+        /// you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.DuplicateAccountException">
         /// That account is already present in the specified destination.
@@ -27857,8 +27813,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27877,7 +27833,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -27936,7 +27892,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.SourceParentNotFoundException">
-        /// We can't find a source root or OU with the <code>ParentId</code> that you specified.
+        /// We can't find a source root or OU with the <c>ParentId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -28197,7 +28153,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28259,8 +28215,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28279,7 +28235,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28599,7 +28555,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28661,8 +28617,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28681,7 +28637,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -28793,9 +28749,9 @@ namespace Amazon.Organizations
         /// service.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -29021,7 +28977,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29083,8 +29039,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29103,7 +29059,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29215,9 +29171,9 @@ namespace Amazon.Organizations
         /// service.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -29443,7 +29399,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29505,8 +29461,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29525,7 +29481,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29653,9 +29609,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -29881,7 +29837,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29943,8 +29899,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -29963,7 +29919,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30093,9 +30049,9 @@ namespace Amazon.Organizations
         /// Management</a> in the <i>IAM User Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AccountNotFoundException">
-        /// We can't find an Amazon Web Services account with the <code>AccountId</code> that
-        /// you specified, or the account whose credentials you used to make this request isn't
-        /// a member of an organization.
+        /// We can't find an Amazon Web Services account with the <c>AccountId</c> that you specified,
+        /// or the account whose credentials you used to make this request isn't a member of an
+        /// organization.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.AWSOrganizationsNotInUseException">
         /// Your account isn't a member of an organization. To make this request, you must use
@@ -30321,7 +30277,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30383,8 +30339,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30403,7 +30359,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30746,7 +30702,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30808,8 +30764,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30828,7 +30784,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -30887,8 +30843,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -31170,7 +31125,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31232,8 +31187,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31252,7 +31207,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31311,8 +31266,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -31594,7 +31548,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31656,8 +31610,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31676,7 +31630,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -31735,8 +31689,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -32018,7 +31971,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32080,8 +32033,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32100,7 +32053,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32159,8 +32112,7 @@ namespace Amazon.Organizations
         /// again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TargetNotFoundException">
-        /// We can't find a root, OU, account, or policy with the <code>TargetId</code> that you
-        /// specified.
+        /// We can't find a root, OU, account, or policy with the <c>TargetId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.TooManyRequestsException">
         /// You have sent too many requests in too short a period of time. The quota helps protect
@@ -32256,8 +32208,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32276,7 +32228,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32331,7 +32283,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotFoundException">
-        /// We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
+        /// We can't find an OU with the <c>OrganizationalUnitId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -32431,8 +32383,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32451,7 +32403,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32506,7 +32458,7 @@ namespace Amazon.Organizations
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.OrganizationalUnitNotFoundException">
-        /// We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
+        /// We can't find an OU with the <c>OrganizationalUnitId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -32773,7 +32725,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32838,8 +32790,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32858,7 +32810,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -32923,7 +32875,7 @@ namespace Amazon.Organizations
         /// Try the operation again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try
@@ -33193,7 +33145,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-        /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+        /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33258,8 +33210,8 @@ namespace Amazon.Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-        /// the response to a previous call of the operation.
+        /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+        /// response to a previous call of the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33278,7 +33230,7 @@ namespace Amazon.Organizations
         ///  </li> <li> 
         /// <para>
         /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-        /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+        /// with the reserved prefix <c>AWSServiceRoleFor</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -33343,7 +33295,7 @@ namespace Amazon.Organizations
         /// Try the operation again later.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.PolicyNotFoundException">
-        /// We can't find a policy with the <code>PolicyId</code> that you specified.
+        /// We can't find a policy with the <c>PolicyId</c> that you specified.
         /// </exception>
         /// <exception cref="Amazon.Organizations.Model.ServiceException">
         /// Organizations can't complete your request because of an internal service error. Try

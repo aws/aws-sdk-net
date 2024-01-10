@@ -40,8 +40,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// If the specified manifest object is in the <code>S3BatchOperations_CSV_20180820</code>
-        /// format, this element describes which columns contain the required data.
+        /// If the specified manifest object is in the <c>S3BatchOperations_CSV_20180820</c> format,
+        /// this element describes which columns contain the required data.
         /// </para>
         /// </summary>
         public List<string> Fields

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Controls how a specific <code>DataSource</code> resource is parameterized in the returned
+    /// Controls how a specific <c>DataSource</c> resource is parameterized in the returned
     /// CloudFormation template.
     /// </summary>
     public partial class AssetBundleExportJobDataSourceOverrideProperties
@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the specific <code>DataSource</code> resource whose override properties
-        /// are configured in this structure.
+        /// The ARN of the specific <c>DataSource</c> resource whose override properties are configured
+        /// in this structure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +60,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// A list of <code>DataSource</code> resource properties to generate variables for in
-        /// the returned CloudFormation template.
+        /// A list of <c>DataSource</c> resource properties to generate variables for in the returned
+        /// CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

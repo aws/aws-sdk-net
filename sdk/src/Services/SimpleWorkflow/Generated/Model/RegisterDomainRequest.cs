@@ -48,7 +48,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// Use an <c>Action</c> element to allow or deny permission to call this action.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,8 +58,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// <para>
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+    /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -98,9 +98,9 @@ namespace Amazon.SimpleWorkflow.Model
         ///  
         /// <para>
         /// The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
-        /// any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
-        /// Also, it must <i>not</i> be the literal string <code>arn</code>.
+        /// <c>:</c> (colon), <c>/</c> (slash), <c>|</c> (vertical bar), or any control characters
+        /// (<c>\u0000-\u001f</c> | <c>\u007f-\u009f</c>). Also, it must <i>not</i> be the literal
+        /// string <c>arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -123,8 +123,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_
-        /// . : / = + - @</code>.
+        /// Tags may only contain unicode letters, digits, whitespace, or these symbols: <c>_
+        /// . : / = + - @</c>.
         /// </para>
         /// </summary>
         public List<ResourceTag> Tags
@@ -148,9 +148,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// If you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
-        /// execution history isn't retained. As soon as the workflow execution completes, the
-        /// execution record and its history are deleted.
+        /// If you pass the value <c>NONE</c> or <c>0</c> (zero), then the workflow execution
+        /// history isn't retained. As soon as the workflow execution completes, the execution
+        /// record and its history are deleted.
         /// </para>
         ///  
         /// <para>

@@ -40,9 +40,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property AccessPointId. 
         /// <para>
         /// The Amazon EFS access point ID to use. If an access point is specified, the root directory
-        /// value specified in the <code>EFSVolumeConfiguration</code> must either be omitted
-        /// or set to <code>/</code> which enforces the path set on the EFS access point. If an
-        /// access point is used, transit encryption must be enabled in the <code>EFSVolumeConfiguration</code>.
+        /// value specified in the <c>EFSVolumeConfiguration</c> must either be omitted or set
+        /// to <c>/</c> which enforces the path set on the EFS access point. If an access point
+        /// is used, transit encryption must be enabled in the <c>EFSVolumeConfiguration</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Working
         /// with Amazon EFS access points</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
@@ -64,10 +64,10 @@ namespace Amazon.Batch.Model
         /// <para>
         /// Whether or not to use the Batch job IAM role defined in a job definition when mounting
         /// the Amazon EFS file system. If enabled, transit encryption must be enabled in the
-        /// <code>EFSVolumeConfiguration</code>. If this parameter is omitted, the default value
-        /// of <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
+        /// <c>EFSVolumeConfiguration</c>. If this parameter is omitted, the default value of
+        /// <c>DISABLED</c> is used. For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/efs-volumes.html#efs-volume-accesspoints">Using
         /// Amazon EFS access points</a> in the <i>Batch User Guide</i>. EFS IAM authorization
-        /// requires that <code>TransitEncryption</code> be <code>ENABLED</code> and that a <code>JobRoleArn</code>
+        /// requires that <c>TransitEncryption</c> be <c>ENABLED</c> and that a <c>JobRoleArn</c>
         /// is specified.
         /// </para>
         /// </summary>

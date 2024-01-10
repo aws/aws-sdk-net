@@ -101,9 +101,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// The number of contacts that may be returned at once, which is dependent on if there
         /// are more or less contacts than the value of the PageSize. Use this parameter to paginate
-        /// results. If additional contacts exist beyond the specified limit, the <code>NextToken</code>
-        /// element is sent in the response. Use the <code>NextToken</code> value in subsequent
-        /// requests to retrieve additional contacts.
+        /// results. If additional contacts exist beyond the specified limit, the <c>NextToken</c>
+        /// element is sent in the response. Use the <c>NextToken</c> value in subsequent requests
+        /// to retrieve additional contacts.
         /// </para>
         /// </summary>
         public int PageSize

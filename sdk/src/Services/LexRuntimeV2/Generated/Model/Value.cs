@@ -43,7 +43,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// The value that Amazon Lex V2 determines for the slot, given the user input. The actual
         /// value depends on the setting of the value selection strategy for the bot. You can
         /// choose to use the value entered by the user, or you can have Amazon Lex V2 choose
-        /// the first value in the <code>resolvedValues</code> list.
+        /// the first value in the <c>resolvedValues</c> list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -83,7 +83,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property ResolvedValues. 
         /// <para>
         /// A list of values that Amazon Lex V2 determines are possible resolutions for the user
-        /// input. The first value matches the <code>interpretedValue</code>.
+        /// input. The first value matches the <c>interpretedValue</c>.
         /// </para>
         /// </summary>
         public List<string> ResolvedValues

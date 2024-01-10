@@ -40,7 +40,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderAttributeName. 
         /// <para>
-        /// The name of the provider attribute to link to, such as <code>NameID</code>.
+        /// The name of the provider attribute to link to, such as <c>NameID</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]
@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderAttributeValue. 
         /// <para>
-        /// The value of the provider attribute to link to, such as <code>xxxxx_account</code>.
+        /// The value of the provider attribute to link to, such as <c>xxxxx_account</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=131072)]

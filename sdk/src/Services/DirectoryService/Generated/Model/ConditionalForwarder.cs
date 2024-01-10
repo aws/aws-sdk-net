@@ -80,7 +80,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ReplicationScope. 
         /// <para>
-        /// The replication scope of the conditional forwarder. The only allowed value is <code>Domain</code>,
+        /// The replication scope of the conditional forwarder. The only allowed value is <c>Domain</c>,
         /// which will replicate the conditional forwarder to all of the domain controllers for
         /// your Amazon Web Services directory.
         /// </para>

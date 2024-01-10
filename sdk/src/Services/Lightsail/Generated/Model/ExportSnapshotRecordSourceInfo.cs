@@ -171,7 +171,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (<code>InstanceSnapshot</code> or <code>DiskSnapshot</code>).
+        /// The Lightsail resource type (<c>InstanceSnapshot</c> or <c>DiskSnapshot</c>).
         /// </para>
         /// </summary>
         public ExportSnapshotRecordSourceType ResourceType

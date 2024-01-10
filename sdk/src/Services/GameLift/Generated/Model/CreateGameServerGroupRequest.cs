@@ -108,7 +108,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property AutoScalingPolicy. 
         /// <para>
         /// Configuration settings to define a scaling policy for the Auto Scaling group that
-        /// is optimized for game hosting. The scaling policy uses the metric <code>"PercentUtilizedGameServers"</code>
+        /// is optimized for game hosting. The scaling policy uses the metric <c>"PercentUtilizedGameServers"</c>
         /// to maintain a buffer of idle game servers that can immediately accommodate new games
         /// and players. After the Auto Scaling group is created, update this value directly in
         /// the Auto Scaling group using the Amazon Web Services console or APIs.
@@ -134,15 +134,15 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If
-        /// Spot Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then, no
-        /// new instances are started, and the existing nonviable Spot Instances are terminated
-        /// (after current gameplay ends) and are not replaced.
+        ///  <c>SPOT_ONLY</c> - Only Spot Instances are used in the game server group. If Spot
+        /// Instances are unavailable or not viable for game hosting, the game server group provides
+        /// no hosting capacity until Spot Instances can again be used. Until then, no new instances
+        /// are started, and the existing nonviable Spot Instances are terminated (after current
+        /// gameplay ends) and are not replaced.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available
+        ///  <c>SPOT_PREFERRED</c> - (default value) Spot Instances are used whenever available
         /// in the game server group. If Spot Instances are unavailable, the game server group
         /// continues to provide hosting capacity by falling back to On-Demand Instances. Existing
         /// nonviable Spot Instances are terminated (after current gameplay ends) and are replaced
@@ -150,9 +150,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server
-        /// group. No Spot Instances are used, even when available, while this balancing strategy
-        /// is in force.
+        ///  <c>ON_DEMAND_ONLY</c> - Only On-Demand Instances are used in the game server group.
+        /// No Spot Instances are used, even when available, while this balancing strategy is
+        /// in force.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -198,7 +198,7 @@ namespace Amazon.GameLift.Model
         /// Protected instances cannot be terminated while there are active game servers running
         /// except in the event of a forced game server group deletion (see ). An exception to
         /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
-        /// of protection status. This property is set to <code>NO_PROTECTION</code> by default.
+        /// of protection status. This property is set to <c>NO_PROTECTION</c> by default.
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy
@@ -255,8 +255,8 @@ namespace Amazon.GameLift.Model
         ///  <note> 
         /// <para>
         /// If you specify network interfaces in your launch template, you must explicitly set
-        /// the property <code>AssociatePublicIpAddress</code> to "true". If no network interface
-        /// is specified in the launch template, Amazon GameLift FleetIQ uses your account's default
+        /// the property <c>AssociatePublicIpAddress</c> to "true". If no network interface is
+        /// specified in the launch template, Amazon GameLift FleetIQ uses your account's default
         /// VPC.
         /// </para>
         ///  </note>

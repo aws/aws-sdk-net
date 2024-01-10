@@ -30,8 +30,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Specifies the document attribute to use to sort the response to a Amazon Kendra query.
-    /// You can specify a single attribute for sorting. The attribute must have the <code>Sortable</code>
-    /// flag set to <code>true</code>, otherwise Amazon Kendra returns an exception.
+    /// You can specify a single attribute for sorting. The attribute must have the <c>Sortable</c>
+    /// flag set to <c>true</c>, otherwise Amazon Kendra returns an exception.
     /// 
     ///  
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property DocumentAttributeKey. 
         /// <para>
         /// The name of the document attribute used to sort the response. You can use any field
-        /// that has the <code>Sortable</code> flag set to true.
+        /// that has the <c>Sortable</c> flag set to true.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains information about a stickiness policy that was created using <code>CreateAppCookieStickinessPolicy</code>.
+    /// Contains information about a stickiness policy that was created using <c>CreateAppCookieStickinessPolicy</c>.
     /// </summary>
     public partial class AwsElbAppCookieStickinessPolicy
     {

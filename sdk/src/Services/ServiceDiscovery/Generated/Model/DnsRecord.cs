@@ -46,11 +46,10 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <note> 
         /// <para>
         /// Alias records don't include a TTL because Route 53 uses the TTL for the Amazon Web
-        /// Services resource that an alias record routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code>
+        /// Services resource that an alias record routes traffic to. If you include the <c>AWS_ALIAS_DNS_NAME</c>
         /// attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
-        /// request, the <code>TTL</code> value is ignored. Always specify a TTL for the service;
-        /// you can use a service to register instances that create either alias or non-alias
-        /// records.
+        /// request, the <c>TTL</c> value is ignored. Always specify a TTL for the service; you
+        /// can use a service to register instances that create either alias or non-alias records.
         /// </para>
         ///  </note>
         /// </summary>
@@ -71,38 +70,38 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of the resource, which indicates the type of value that Route 53 returns
-        /// in response to DNS queries. You can specify values for <code>Type</code> in the following
+        /// in response to DNS queries. You can specify values for <c>Type</c> in the following
         /// combinations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>A</code> </b> 
+        ///  <b> <c>A</c> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>AAAA</code> </b> 
+        ///  <b> <c>AAAA</c> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>A</code> </b> and <b> <code>AAAA</code> </b> 
+        ///  <b> <c>A</c> </b> and <b> <c>AAAA</c> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>SRV</code> </b> 
+        ///  <b> <c>SRV</c> </b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>CNAME</code> </b> 
+        ///  <b> <c>CNAME</c> </b> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you want Cloud Map to create a Route 53 alias record when you register an instance,
-        /// specify <code>A</code> or <code>AAAA</code> for <code>Type</code>.
+        /// specify <c>A</c> or <c>AAAA</c> for <c>Type</c>.
         /// </para>
         ///  
         /// <para>
-        /// You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code>
-        /// records, when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
+        /// You specify other settings, such as the IP address for <c>A</c> and <c>AAAA</c> records,
+        /// when you register an instance. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
         /// </para>
         ///  
         /// <para>
@@ -129,21 +128,21 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must specify <code>WEIGHTED</code> for the value of <code>RoutingPolicy</code>.
+        /// You must specify <c>WEIGHTED</c> for the value of <c>RoutingPolicy</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't specify both <code>CNAME</code> for <code>Type</code> and settings for <code>HealthCheckConfig</code>.
-        /// If you do, the request will fail with an <code>InvalidInput</code> error.
+        /// You can't specify both <c>CNAME</c> for <c>Type</c> and settings for <c>HealthCheckConfig</c>.
+        /// If you do, the request will fail with an <c>InvalidInput</c> error.
         /// </para>
         ///  </li> </ul> </dd> <dt>SRV</dt> <dd> 
         /// <para>
-        /// Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code>
-        /// record uses the following values:
+        /// Route 53 returns the value for an <c>SRV</c> record. The value for an <c>SRV</c> record
+        /// uses the following values:
         /// </para>
         ///  
         /// <para>
-        ///  <code>priority weight port service-hostname</code> 
+        ///  <c>priority weight port service-hostname</c> 
         /// </para>
         ///  
         /// <para>
@@ -151,22 +150,22 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The values of <code>priority</code> and <code>weight</code> are both set to <code>1</code>
-        /// and can't be changed. 
+        /// The values of <c>priority</c> and <c>weight</c> are both set to <c>1</c> and can't
+        /// be changed. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>port</code> comes from the value that you specify for the <code>AWS_INSTANCE_PORT</code>
+        /// The value of <c>port</c> comes from the value that you specify for the <c>AWS_INSTANCE_PORT</c>
         /// attribute when you submit a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
         /// request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>service-hostname</code> is a concatenation of the following values:
+        /// The value of <c>service-hostname</c> is a concatenation of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value that you specify for <code>InstanceId</code> when you register an instance.
+        /// The value that you specify for <c>InstanceId</c> when you register an instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -178,32 +177,31 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, if the value of <code>InstanceId</code> is <code>test</code>, the name
-        /// of the service is <code>backend</code>, and the name of the namespace is <code>example.com</code>,
-        /// the value of <code>service-hostname</code> is the following:
+        /// For example, if the value of <c>InstanceId</c> is <c>test</c>, the name of the service
+        /// is <c>backend</c>, and the name of the namespace is <c>example.com</c>, the value
+        /// of <c>service-hostname</c> is the following:
         /// </para>
         ///  
         /// <para>
-        ///  <code>test.backend.example.com</code> 
+        ///  <c>test.backend.example.com</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify settings for an <code>SRV</code> record, note the following:
+        /// If you specify settings for an <c>SRV</c> record, note the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
-        /// or both in the <code>RegisterInstance</code> request, Cloud Map automatically creates
-        /// <code>A</code> and/or <code>AAAA</code> records that have the same name as the value
-        /// of <code>service-hostname</code> in the <code>SRV</code> record. You can ignore these
-        /// records.
+        /// If you specify values for <c>AWS_INSTANCE_IPV4</c>, <c>AWS_INSTANCE_IPV6</c>, or both
+        /// in the <c>RegisterInstance</c> request, Cloud Map automatically creates <c>A</c> and/or
+        /// <c>AAAA</c> records that have the same name as the value of <c>service-hostname</c>
+        /// in the <c>SRV</c> record. You can ignore these records.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you're using a system that requires a specific <code>SRV</code> format, such as
-        /// HAProxy, see the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name">Name</a>
-        /// element in the documentation about <code>CreateService</code> for information about
-        /// how to specify the correct name format.
+        /// If you're using a system that requires a specific <c>SRV</c> format, such as HAProxy,
+        /// see the <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name">Name</a>
+        /// element in the documentation about <c>CreateService</c> for information about how
+        /// to specify the correct name format.
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>

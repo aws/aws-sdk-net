@@ -284,8 +284,8 @@ namespace Amazon.ECRPublic
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -358,7 +358,7 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Deletes a list of specified images that are within a repository in a public registry.
-        /// Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.
+        /// Images are specified with either an <c>imageTag</c> or <c>imageDigest</c>.
         /// 
         ///  
         /// <para>
@@ -437,7 +437,7 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Informs Amazon ECR that the image layer upload is complete for a specified public
-        /// registry, repository name, and upload ID. You can optionally provide a <code>sha256</code>
+        /// registry, repository name, and upload ID. You can optionally provide a <c>sha256</c>
         /// digest of the image layer for data validation purposes.
         /// 
         ///  
@@ -448,8 +448,8 @@ namespace Amazon.ECRPublic
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -618,8 +618,8 @@ namespace Amazon.ECRPublic
 
         /// <summary>
         /// Deletes a repository in a public registry. If the repository contains images, you
-        /// must either manually delete all images in the repository or use the <code>force</code>
-        /// option. This option deletes all images on your behalf before deleting the repository.
+        /// must either manually delete all images in the repository or use the <c>force</c> option.
+        /// This option deletes all images on your behalf before deleting the repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRepository service method.</param>
         /// 
@@ -629,7 +629,7 @@ namespace Amazon.ECRPublic
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotEmptyException">
         /// The specified repository contains images. To delete a repository that contains images,
-        /// you must force the deletion with the <code>force</code> parameter.
+        /// you must force the deletion with the <c>force</c> parameter.
         /// </exception>
         /// <exception cref="Amazon.ECRPublic.Model.RepositoryNotFoundException">
         /// The specified repository can't be found. Check the spelling of the specified repository
@@ -766,9 +766,9 @@ namespace Amazon.ECRPublic
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before
-        /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
-        /// command shows the uncompressed image size. Therefore, it might return a larger image
-        /// size than the image sizes that are returned by <a>DescribeImages</a>.
+        /// pushing them to a V2 Docker registry. The output of the <c>docker images</c> command
+        /// shows the uncompressed image size. Therefore, it might return a larger image size
+        /// than the image sizes that are returned by <a>DescribeImages</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1040,8 +1040,7 @@ namespace Amazon.ECRPublic
         /// Retrieves an authorization token. An authorization token represents your IAM authentication
         /// credentials. You can use it to access any Amazon ECR registry that your IAM principal
         /// has access to. The authorization token is valid for 12 hours. This API requires the
-        /// <code>ecr-public:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
-        /// permissions.
+        /// <c>ecr-public:GetAuthorizationToken</c> and <c>sts:GetServiceBearerToken</c> permissions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAuthorizationToken service method.</param>
         /// 
@@ -1317,8 +1316,8 @@ namespace Amazon.ECRPublic
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1468,8 +1467,8 @@ namespace Amazon.ECRPublic
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1763,7 +1762,7 @@ namespace Amazon.ECRPublic
         #region  TagResource
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags associated with that resource are also
         /// deleted.
@@ -1927,8 +1926,8 @@ namespace Amazon.ECRPublic
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>

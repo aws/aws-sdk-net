@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Information about the dataflow endpoint <code>Config</code>.
+    /// Information about the dataflow endpoint <c>Config</c>.
     /// </summary>
     public partial class DataflowEndpointConfig
     {

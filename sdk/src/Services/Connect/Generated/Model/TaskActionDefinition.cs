@@ -100,8 +100,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property References. 
         /// <para>
-        /// Information about the reference when the <code>referenceType</code> is <code>URL</code>.
-        /// Otherwise, null. (Supports variable injection in the <code>Value</code> field.)
+        /// Information about the reference when the <c>referenceType</c> is <c>URL</c>. Otherwise,
+        /// null. (Supports variable injection in the <c>Value</c> field.)
         /// </para>
         /// </summary>
         public Dictionary<string, Reference> References

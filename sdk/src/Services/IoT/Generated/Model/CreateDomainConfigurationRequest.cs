@@ -133,8 +133,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services IoT Core currently supports only the <code>DATA</code> service
-        /// type.
+        /// Amazon Web Services IoT Core currently supports only the <c>DATA</c> service type.
         /// </para>
         ///  </note>
         /// </summary>

@@ -83,8 +83,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ThroughputMode. 
         /// <para>
         /// Target throughput mode of the feature group. Throughput update is an asynchronous
-        /// operation, and the outcome should be monitored by polling <code>LastUpdateStatus</code>
-        /// field in <code>DescribeFeatureGroup</code> response. You cannot update a feature group's
+        /// operation, and the outcome should be monitored by polling <c>LastUpdateStatus</c>
+        /// field in <c>DescribeFeatureGroup</c> response. You cannot update a feature group's
         /// throughput while another update is in progress. 
         /// </para>
         /// </summary>

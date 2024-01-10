@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Inspect the query string of the web request. This is the part of a URL that appears
-    /// after a <code>?</code> character, if any.
+    /// after a <c>?</c> character, if any.
     /// 
     ///  
     /// <para>
@@ -39,7 +39,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// JSON specification: <code>"QueryString": {}</code> 
+    /// JSON specification: <c>"QueryString": {}</c> 
     /// </para>
     /// </summary>
     public partial class QueryString

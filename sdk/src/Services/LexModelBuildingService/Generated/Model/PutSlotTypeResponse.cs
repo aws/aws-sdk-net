@@ -48,7 +48,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// Checksum of the <code>$LATEST</code> version of the slot type.
+        /// Checksum of the <c>$LATEST</c> version of the slot type.
         /// </para>
         /// </summary>
         public string Checksum
@@ -84,9 +84,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property CreateVersion. 
         /// <para>
-        ///  <code>True</code> if a new version of the slot type was created. If the <code>createVersion</code>
-        /// field was not specified in the request, the <code>createVersion</code> field is set
-        /// to false in the response.
+        ///  <c>True</c> if a new version of the slot type was created. If the <c>createVersion</c>
+        /// field was not specified in the request, the <c>createVersion</c> field is set to false
+        /// in the response.
         /// </para>
         /// </summary>
         public bool CreateVersion
@@ -123,8 +123,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property EnumerationValues. 
         /// <para>
-        /// A list of <code>EnumerationValue</code> objects that defines the values that the slot
-        /// type can take.
+        /// A list of <c>EnumerationValue</c> objects that defines the values that the slot type
+        /// can take.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
@@ -238,7 +238,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the slot type. For a new slot type, the version is always <code>$LATEST</code>.
+        /// The version of the slot type. For a new slot type, the version is always <c>$LATEST</c>.
         /// 
         /// </para>
         /// </summary>

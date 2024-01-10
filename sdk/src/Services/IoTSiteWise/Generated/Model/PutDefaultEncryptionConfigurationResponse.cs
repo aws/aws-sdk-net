@@ -40,8 +40,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property ConfigurationStatus. 
         /// <para>
-        /// The status of the account configuration. This contains the <code>ConfigurationState</code>.
-        /// If there is an error, it also contains the <code>ErrorDetails</code>.
+        /// The status of the account configuration. This contains the <c>ConfigurationState</c>.
+        /// If there is an error, it also contains the <c>ErrorDetails</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Key ARN of the KMS key used for KMS encryption if you use <code>KMS_BASED_ENCRYPTION</code>.
+        /// The Key ARN of the KMS key used for KMS encryption if you use <c>KMS_BASED_ENCRYPTION</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]

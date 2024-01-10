@@ -36,16 +36,16 @@ namespace Amazon.Kendra.Model
     /// <para>
     /// For example, you can delete customer identification numbers associated with the documents,
     /// stored in the document metadata field called 'Customer_ID'. You set the target key
-    /// as 'Customer_ID' and the deletion flag to <code>TRUE</code>. This removes all customer
-    /// ID values in the field 'Customer_ID'. This would scrub personally identifiable information
+    /// as 'Customer_ID' and the deletion flag to <c>TRUE</c>. This removes all customer ID
+    /// values in the field 'Customer_ID'. This would scrub personally identifiable information
     /// from each document's metadata.
     /// </para>
     ///  
     /// <para>
     /// Amazon Kendra cannot create a target field if it has not already been created as an
     /// index field. After you create your index field, you can create a document metadata
-    /// field using <code>DocumentAttributeTarget</code>. Amazon Kendra then will map your
-    /// newly created metadata field to your index field.
+    /// field using <c>DocumentAttributeTarget</c>. Amazon Kendra then will map your newly
+    /// created metadata field to your index field.
     /// </para>
     ///  
     /// <para>
@@ -107,9 +107,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TargetDocumentAttributeValueDeletion. 
         /// <para>
-        ///  <code>TRUE</code> to delete the existing target value for your specified target attribute
-        /// key. You cannot create a target value and set this to <code>TRUE</code>. To create
-        /// a target value (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.
+        ///  <c>TRUE</c> to delete the existing target value for your specified target attribute
+        /// key. You cannot create a target value and set this to <c>TRUE</c>. To create a target
+        /// value (<c>TargetDocumentAttributeValue</c>), set this to <c>FALSE</c>.
         /// </para>
         /// </summary>
         public bool TargetDocumentAttributeValueDeletion

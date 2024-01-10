@@ -49,16 +49,16 @@ namespace Amazon.SimpleWorkflow.Model
         ///  
         /// <para>
         /// You can specify this value only when <i>registering</i> an activity type. The registered
-        /// default value can be overridden when you schedule a task through the <code>ScheduleActivityTask</code>
+        /// default value can be overridden when you schedule a task through the <c>ScheduleActivityTask</c>
         /// <a>Decision</a>. If the activity worker subsequently attempts to record a heartbeat
-        /// or returns a result, the activity worker receives an <code>UnknownResource</code>
-        /// fault. In this case, Amazon SWF no longer considers the activity task to be valid;
-        /// the activity worker should clean up the activity task.
+        /// or returns a result, the activity worker receives an <c>UnknownResource</c> fault.
+        /// In this case, Amazon SWF no longer considers the activity task to be valid; the activity
+        /// worker should clean up the activity task.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -78,9 +78,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property DefaultTaskList. 
         /// <para>
         ///  The default task list specified for this activity type at registration. This default
-        /// is used if a task list isn't provided when a task is scheduled through the <code>ScheduleActivityTask</code>
+        /// is used if a task list isn't provided when a task is scheduled through the <c>ScheduleActivityTask</c>
         /// <a>Decision</a>. You can override the default registered task list when scheduling
-        /// a task through the <code>ScheduleActivityTask</code> <a>Decision</a>.
+        /// a task through the <c>ScheduleActivityTask</c> <a>Decision</a>.
         /// </para>
         /// </summary>
         public TaskList DefaultTaskList
@@ -99,13 +99,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property DefaultTaskPriority. 
         /// <para>
         ///  The default task priority for tasks of this activity type, specified at registration.
-        /// If not set, then <code>0</code> is used as the default priority. This default can
-        /// be overridden when scheduling an activity task.
+        /// If not set, then <c>0</c> is used as the default priority. This default can be overridden
+        /// when scheduling an activity task.
         /// </para>
         ///  
         /// <para>
-        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-        /// to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
+        /// Valid values are integers that range from Java's <c>Integer.MIN_VALUE</c> (-2147483648)
+        /// to <c>Integer.MAX_VALUE</c> (2147483647). Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>
@@ -130,12 +130,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         ///  The default maximum duration, specified when registering the activity type, for tasks
         /// of this activity type. You can override this default when scheduling a task through
-        /// the <code>ScheduleActivityTask</code> <a>Decision</a>.
+        /// the <c>ScheduleActivityTask</c> <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -156,13 +156,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         ///  The default maximum duration, specified when registering the activity type, that
         /// a task of an activity type can wait before being assigned to a worker. You can override
-        /// this default when scheduling a task through the <code>ScheduleActivityTask</code>
-        /// <a>Decision</a>.
+        /// this default when scheduling a task through the <c>ScheduleActivityTask</c> <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -183,12 +182,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         ///  The default maximum duration for tasks of an activity type specified when registering
         /// the activity type. You can override this default when scheduling a task through the
-        /// <code>ScheduleActivityTask</code> <a>Decision</a>.
+        /// <c>ScheduleActivityTask</c> <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]

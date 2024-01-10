@@ -43,8 +43,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetDistributions</code> action to get a list of distribution names that
-        /// you can specify.
+        /// Use the <c>GetDistributions</c> action to get a list of distribution names that you
+        /// can specify.
         /// </para>
         /// </summary>
         public string DistributionName

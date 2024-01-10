@@ -81,7 +81,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This
-        /// operation changes the KSK status to <code>ACTIVE</code>.
+        /// operation changes the KSK status to <c>ACTIVE</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ActivateKeySigningKey service method.</param>
         /// <param name="cancellationToken">
@@ -97,14 +97,14 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <c>INTERNAL_FAILURE</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
         /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
-        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// the status to enable <c>DNSSEC</c> or disable <c>DNSSEC</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
         /// The specified key-signing key (KSK) doesn't exist.
@@ -130,8 +130,8 @@ namespace Amazon.Route53
         /// <para>
         /// If you want to associate a VPC that was created by using one Amazon Web Services account
         /// with a private hosted zone that was created by using a different account, the Amazon
-        /// Web Services account that created the private hosted zone must first submit a <code>CreateVPCAssociationAuthorization</code>
-        /// request. Then the account that created the VPC must submit an <code>AssociateVPCWithHostedZone</code>
+        /// Web Services account that created the private hosted zone must first submit a <c>CreateVPCAssociationAuthorization</c>
+        /// request. Then the account that created the VPC must submit an <c>AssociateVPCWithHostedZone</c>
         /// request.
         /// </para>
         ///  </note> <note> 
@@ -146,15 +146,15 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aws</code> - Amazon Web Services Regions
+        ///  <c>aws</c> - Amazon Web Services Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-cn</code> - China Regions
+        ///  <c>aws-cn</c> - China Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        ///  <c>aws-us-gov</c> - Amazon Web Services GovCloud (US) Region
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -213,10 +213,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PublicZoneVPCAssociationException">
         /// You're trying to associate a VPC with a public hosted zone. Amazon Route 53 doesn't
@@ -256,15 +256,15 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// Use <code>ChangeCidrCollection</code> to perform the following actions:
+        /// Use <c>ChangeCidrCollection</c> to perform the following actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PUT</code>: Create a CIDR block within the specified collection.
+        ///  <c>PUT</c>: Create a CIDR block within the specified collection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> DELETE_IF_EXISTS</code>: Delete an existing CIDR block from the collection.
+        ///  <c> DELETE_IF_EXISTS</c>: Delete an existing CIDR block from the collection.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -278,7 +278,7 @@ namespace Amazon.Route53
         /// This CIDR block is already in use.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.CidrCollectionVersionMismatchException">
-        /// The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code>
+        /// The CIDR collection version you provided, doesn't match the one in the <c>ListCidrCollections</c>
         /// operation.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ConcurrentModificationException">
@@ -308,8 +308,8 @@ namespace Amazon.Route53
         /// <summary>
         /// Creates, changes, or deletes a resource record set, which contains authoritative DNS
         /// information for a specified domain name or subdomain name. For example, you can use
-        /// <code>ChangeResourceRecordSets</code> to create a resource record set that routes
-        /// traffic for test.example.com to a web server that has an IP address of 192.0.2.44.
+        /// <c>ChangeResourceRecordSets</c> to create a resource record set that routes traffic
+        /// for test.example.com to a web server that has an IP address of 192.0.2.44.
         /// 
         ///  
         /// <para>
@@ -326,7 +326,7 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code>
+        /// The request body must include a document with a <c>ChangeResourceRecordSetsRequest</c>
         /// element. The request body contains a list of change items, known as a change batch.
         /// Change batches are considered transactional changes. Route 53 validates the changes
         /// in the request and then either makes all or none of the changes in the change batch
@@ -335,18 +335,17 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// For example, suppose a change batch request contains two changes: it deletes the <code>CNAME</code>
+        /// For example, suppose a change batch request contains two changes: it deletes the <c>CNAME</c>
         /// resource record set for www.example.com and creates an alias resource record set for
         /// www.example.com. If validation for both records succeeds, Route 53 deletes the first
         /// resource record set and creates the second resource record set in a single operation.
-        /// If validation for either the <code>DELETE</code> or the <code>CREATE</code> action
-        /// fails, then the request is canceled, and the original <code>CNAME</code> record continues
-        /// to exist.
+        /// If validation for either the <c>DELETE</c> or the <c>CREATE</c> action fails, then
+        /// the request is canceled, and the original <c>CNAME</c> record continues to exist.
         /// </para>
         ///  <note> 
         /// <para>
         /// If you try to delete the same resource record set more than once in a single change
-        /// batch, Route 53 returns an <code>InvalidChangeBatch</code> error.
+        /// batch, Route 53 returns an <c>InvalidChangeBatch</c> error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -369,20 +368,19 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:
+        /// Use <c>ChangeResourceRecordsSetsRequest</c> to perform the following actions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE</code>: Creates a resource record set that has the specified values.
+        ///  <c>CREATE</c>: Creates a resource record set that has the specified values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE</code>: Deletes an existing resource record set that has the specified
-        /// values.
+        ///  <c>DELETE</c>: Deletes an existing resource record set that has the specified values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it. If a resource
+        ///  <c>UPSERT</c>: If a resource set doesn't exist, Route 53 creates it. If a resource
         /// set exists Route 53 updates it with the values in the request. 
         /// </para>
         ///  </li> </ul> 
@@ -403,7 +401,7 @@ namespace Amazon.Route53
         /// <para>
         /// Don't refer to the syntax in the "Parameter Syntax" section, which includes all of
         /// the elements for every kind of resource record set that you can create, delete, or
-        /// update by using <code>ChangeResourceRecordSets</code>. 
+        /// update by using <c>ChangeResourceRecordSets</c>. 
         /// </para>
         ///  
         /// <para>
@@ -411,12 +409,12 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// When you submit a <code>ChangeResourceRecordSets</code> request, Route 53 propagates
-        /// your changes to all of the Route 53 authoritative DNS servers managing the hosted
-        /// zone. While your changes are propagating, <code>GetChange</code> returns a status
-        /// of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns
-        /// a status of <code>INSYNC</code>. Changes generally propagate to all Route 53 name
-        /// servers managing the hosted zone within 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
+        /// When you submit a <c>ChangeResourceRecordSets</c> request, Route 53 propagates your
+        /// changes to all of the Route 53 authoritative DNS servers managing the hosted zone.
+        /// While your changes are propagating, <c>GetChange</c> returns a status of <c>PENDING</c>.
+        /// When propagation is complete, <c>GetChange</c> returns a status of <c>INSYNC</c>.
+        /// Changes generally propagate to all Route 53 name servers managing the hosted zone
+        /// within 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
         /// </para>
         ///  
         /// <para>
@@ -424,8 +422,8 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// For information about the limits on a <code>ChangeResourceRecordSets</code> request,
-        /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+        /// For information about the limits on a <c>ChangeResourceRecordSets</c> request, see
+        /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
         /// in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -450,10 +448,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ChangeResourceRecordSets">REST API Reference for ChangeResourceRecordSets Operation</seealso>
         Task<ChangeResourceRecordSetsResponse> ChangeResourceRecordSetsAsync(ChangeResourceRecordSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -490,10 +488,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -584,7 +582,7 @@ namespace Amazon.Route53
         /// <para>
         /// You can create a CloudWatch metric, associate an alarm with the metric, and then create
         /// a health check that is based on the state of the alarm. For example, you might create
-        /// a CloudWatch metric that checks the status of the Amazon EC2 <code>StatusCheckFailed</code>
+        /// a CloudWatch metric that checks the status of the Amazon EC2 <c>StatusCheckFailed</c>
         /// metric, add an alarm to the metric, and then create a health check that is based on
         /// the state of the alarm. For information about creating CloudWatch metrics and alarms
         /// by using the CloudWatch console, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
@@ -604,14 +602,13 @@ namespace Amazon.Route53
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The same value for <code>CallerReference</code> as an existing health check, and one
-        /// or more values that differ from the existing health check that has the same caller
-        /// reference.
+        /// The same value for <c>CallerReference</c> as an existing health check, and one or
+        /// more values that differ from the existing health check that has the same caller reference.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The same value for <code>CallerReference</code> as a health check that you created
-        /// and later deleted, regardless of the other settings in the request.
+        /// The same value for <c>CallerReference</c> as a health check that you created and later
+        /// deleted, regardless of the other settings in the request.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -685,7 +682,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// If you want to use the same name servers for multiple public hosted zones, you can
-        /// optionally associate a reusable delegation set with the hosted zone. See the <code>DelegationSetId</code>
+        /// optionally associate a reusable delegation set with the hosted zone. See the <c>DelegationSetId</c>
         /// element.
         /// </para>
         ///  </li> <li> 
@@ -698,14 +695,14 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you submit a <code>CreateHostedZone</code> request, the initial status of the
-        /// hosted zone is <code>PENDING</code>. For public hosted zones, this means that the
-        /// NS and SOA records are not yet available on all Route 53 DNS servers. When the NS
-        /// and SOA records are available, the status of the zone changes to <code>INSYNC</code>.
+        /// When you submit a <c>CreateHostedZone</c> request, the initial status of the hosted
+        /// zone is <c>PENDING</c>. For public hosted zones, this means that the NS and SOA records
+        /// are not yet available on all Route 53 DNS servers. When the NS and SOA records are
+        /// available, the status of the zone changes to <c>INSYNC</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
+        /// The <c>CreateHostedZone</c> request requires the caller to have an <c>ec2:DescribeVpcs</c>
         /// permission.
         /// </para>
         ///  <note> 
@@ -720,15 +717,15 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aws</code> - Amazon Web Services Regions
+        ///  <c>aws</c> - Amazon Web Services Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-cn</code> - China Regions
+        ///  <c>aws-cn</c> - China Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        ///  <c>aws-us-gov</c> - Amazon Web Services GovCloud (US) Region
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -778,7 +775,7 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.HostedZoneAlreadyExistsException">
         /// The hosted zone you're trying to create already exists. Amazon Route 53 returns this
-        /// error when a hosted zone has already been created with the specified <code>CallerReference</code>.
+        /// error when a hosted zone has already been created with the specified <c>CallerReference</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidDomainNameException">
         /// The specified domain name is not valid.
@@ -852,14 +849,14 @@ namespace Amazon.Route53
         /// The key-signing key (KSK) name that you specified isn't a valid name.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <c>INTERNAL_FAILURE</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
         /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
-        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// the status to enable <c>DNSSEC</c> or disable <c>DNSSEC</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyAlreadyExistsException">
         /// You've already created a key-signing key (KSK) with this name or with the same customer
@@ -904,7 +901,7 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DNS response code, such as <code>NoError</code> or <code>ServFail</code> 
+        /// DNS response code, such as <c>NoError</c> or <c>ServFail</c> 
         /// </para>
         ///  </li> </ul> <dl> <dt>Log Group and Resource Policy</dt> <dd> 
         /// <para>
@@ -936,7 +933,7 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        ///  <code>/aws/route53/<i>hosted zone name</i> </code> 
+        ///  <c>/aws/route53/<i>hosted zone name</i> </c> 
         /// </para>
         ///  
         /// <para>
@@ -950,14 +947,14 @@ namespace Amazon.Route53
         /// <para>
         /// Create a CloudWatch Logs resource policy, and give it the permissions that Route 53
         /// needs to create log streams and to send query logs to log streams. For the value of
-        /// <code>Resource</code>, specify the ARN for the log group that you created in the previous
+        /// <c>Resource</c>, specify the ARN for the log group that you created in the previous
         /// step. To use the same resource policy for all the CloudWatch Logs log groups that
-        /// you created for query logging configurations, replace the hosted zone name with <code>*</code>,
+        /// you created for query logging configurations, replace the hosted zone name with <c>*</c>,
         /// for example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</code> 
+        ///  <c>arn:aws:logs:us-east-1:123412341234:log-group:/aws/route53/*</c> 
         /// </para>
         ///  
         /// <para>
@@ -968,14 +965,14 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>aws:SourceArn</code>, supply the hosted zone ARN used in creating the query
-        /// logging configuration. For example, <code>aws:SourceArn: arn:aws:route53:::hostedzone/hosted
-        /// zone ID</code>.
+        /// For <c>aws:SourceArn</c>, supply the hosted zone ARN used in creating the query logging
+        /// configuration. For example, <c>aws:SourceArn: arn:aws:route53:::hostedzone/hosted
+        /// zone ID</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>aws:SourceAccount</code>, supply the account ID for the account that creates
-        /// the query logging configuration. For example, <code>aws:SourceAccount:111111111111</code>.
+        /// For <c>aws:SourceAccount</c>, supply the account ID for the account that creates the
+        /// query logging configuration. For example, <c>aws:SourceAccount:111111111111</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1008,7 +1005,7 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        ///  <code> <i>hosted zone ID</i>/<i>edge location code</i> </code> 
+        ///  <c> <i>hosted zone ID</i>/<i>edge location code</i> </c> 
         /// </para>
         ///  
         /// <para>
@@ -1065,11 +1062,11 @@ namespace Amazon.Route53
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.
+        /// There is no resource policy that specifies the log group ARN in the value for <c>Resource</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The resource policy that includes the log group ARN in the value for <code>Resource</code>
+        /// The resource policy that includes the log group ARN in the value for <c>Resource</c>
         /// doesn't have the necessary permissions.
         /// </para>
         ///  </li> <li> 
@@ -1119,7 +1116,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// You can also create a reusable delegation set that uses the four name servers that
-        /// are associated with an existing hosted zone. Specify the hosted zone ID in the <code>CreateReusableDelegationSet</code>
+        /// are associated with an existing hosted zone. Specify the hosted zone ID in the <c>CreateReusableDelegationSet</c>
         /// request.
         /// </para>
         ///  <note> 
@@ -1244,7 +1241,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
-        /// The format of the traffic policy document that you specified in the <code>Document</code>
+        /// The format of the traffic policy document that you specified in the <c>Document</c>
         /// element is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TooManyTrafficPoliciesException">
@@ -1268,7 +1265,7 @@ namespace Amazon.Route53
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.TrafficPolicyAlreadyExistsException">
-        /// A traffic policy that has the same value for <code>Name</code> already exists.
+        /// A traffic policy that has the same value for <c>Name</c> already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateTrafficPolicy">REST API Reference for CreateTrafficPolicy Operation</seealso>
         Task<CreateTrafficPolicyResponse> CreateTrafficPolicyAsync(CreateTrafficPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1281,20 +1278,19 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Creates resource record sets in a specified hosted zone based on the settings in a
-        /// specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code>
+        /// specified traffic policy version. In addition, <c>CreateTrafficPolicyInstance</c>
         /// associates the resource record sets with a specified domain name (such as example.com)
         /// or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries
-        /// for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code>
+        /// for the domain or subdomain name by using the resource record sets that <c>CreateTrafficPolicyInstance</c>
         /// created.
         /// 
         ///  <note> 
         /// <para>
-        /// After you submit an <code>CreateTrafficPolicyInstance</code> request, there's a brief
-        /// delay while Amazon Route 53 creates the resource record sets that are specified in
-        /// the traffic policy definition. Use <code>GetTrafficPolicyInstance</code> with the
-        /// <code>id</code> of new traffic policy instance to confirm that the <code>CreateTrafficPolicyInstance</code>
-        /// request completed successfully. For more information, see the <code>State</code> response
-        /// element.
+        /// After you submit an <c>CreateTrafficPolicyInstance</c> request, there's a brief delay
+        /// while Amazon Route 53 creates the resource record sets that are specified in the traffic
+        /// policy definition. Use <c>GetTrafficPolicyInstance</c> with the <c>id</c> of new traffic
+        /// policy instance to confirm that the <c>CreateTrafficPolicyInstance</c> request completed
+        /// successfully. For more information, see the <c>State</c> response element.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1367,7 +1363,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidTrafficPolicyDocumentException">
-        /// The format of the traffic policy document that you specified in the <code>Document</code>
+        /// The format of the traffic policy document that you specified in the <c>Document</c>
         /// element is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchTrafficPolicyException">
@@ -1396,10 +1392,10 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Authorizes the Amazon Web Services account that created a specified VPC to submit
-        /// an <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a specified
-        /// hosted zone that was created by a different account. To submit a <code>CreateVPCAssociationAuthorization</code>
+        /// an <c>AssociateVPCWithHostedZone</c> request to associate the VPC with a specified
+        /// hosted zone that was created by a different account. To submit a <c>CreateVPCAssociationAuthorization</c>
         /// request, you must use the account that created the hosted zone. After you authorize
-        /// the association, use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code>
+        /// the association, use the account that created the VPC to submit an <c>AssociateVPCWithHostedZone</c>
         /// request.
         /// 
         ///  <note> 
@@ -1433,8 +1429,8 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.TooManyVPCAssociationAuthorizationsException">
         /// You've created the maximum number of authorizations that can be created for the specified
         /// hosted zone. To authorize another VPC to be associated with the hosted zone, submit
-        /// a <code>DeleteVPCAssociationAuthorization</code> request to remove an existing authorization.
-        /// To get a list of existing authorizations, submit a <code>ListVPCAssociationAuthorizations</code>
+        /// a <c>DeleteVPCAssociationAuthorization</c> request to remove an existing authorization.
+        /// To get a list of existing authorizations, submit a <c>ListVPCAssociationAuthorizations</c>
         /// request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateVPCAssociationAuthorization">REST API Reference for CreateVPCAssociationAuthorization Operation</seealso>
@@ -1448,7 +1444,7 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC.
-        /// This operation changes the KSK status to <code>INACTIVE</code>.
+        /// This operation changes the KSK status to <c>INACTIVE</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeactivateKeySigningKey service method.</param>
         /// <param name="cancellationToken">
@@ -1464,11 +1460,11 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <c>INTERNAL_FAILURE</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
         /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
-        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// the status to enable <c>DNSSEC</c> or disable <c>DNSSEC</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyInParentDSRecordException">
         /// The key-signing key (KSK) is specified in a parent DS record.
@@ -1537,7 +1533,7 @@ namespace Amazon.Route53
         ///  </important> 
         /// <para>
         /// If you're using Cloud Map and you configured Cloud Map to create a Route 53 health
-        /// check when you register an instance, you can't use the Route 53 <code>DeleteHealthCheck</code>
+        /// check when you register an instance, you can't use the Route 53 <c>DeleteHealthCheck</c>
         /// command to delete the health check. The health check is deleted automatically when
         /// you deregister the instance; there can be a delay of several hours before the health
         /// check is deleted from Route 53. 
@@ -1609,8 +1605,8 @@ namespace Amazon.Route53
         /// resource record sets. If the hosted zone contains other resource record sets, you
         /// must delete them before you can delete the hosted zone. If you try to delete a hosted
         /// zone that contains other resource record sets, the request fails, and Route 53 returns
-        /// a <code>HostedZoneNotEmpty</code> error. For information about deleting records from
-        /// your hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
+        /// a <c>HostedZoneNotEmpty</c> error. For information about deleting records from your
+        /// hosted zone, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ChangeResourceRecordSets.html">ChangeResourceRecordSets</a>.
         /// </para>
         ///  
         /// <para>
@@ -1618,12 +1614,11 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>GetHostedZone</code> action to request information about the hosted
-        /// zone.
+        /// Use the <c>GetHostedZone</c> action to request information about the hosted zone.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>ListHostedZones</code> action to get a list of the hosted zones associated
+        /// Use the <c>ListHostedZones</c> action to get a list of the hosted zones associated
         /// with the current Amazon Web Services account.
         /// </para>
         ///  </li> </ul>
@@ -1648,10 +1643,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteHostedZone">REST API Reference for DeleteHostedZone Operation</seealso>
         Task<DeleteHostedZoneResponse> DeleteHostedZoneAsync(DeleteHostedZoneRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1675,7 +1670,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// Use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetDNSSEC.html">GetDNSSEC</a>
-        /// to verify that the KSK is in an <code>INACTIVE</code> status.
+        /// to verify that the KSK is in an <c>INACTIVE</c> status.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeySigningKey service method.</param>
@@ -1692,14 +1687,14 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <c>INTERNAL_FAILURE</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidSigningStatusException">
         /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
-        /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+        /// the status to enable <c>DNSSEC</c> or disable <c>DNSSEC</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchKeySigningKeyException">
         /// The specified key-signing key (KSK) doesn't exist.
@@ -1867,10 +1862,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteTrafficPolicyInstance">REST API Reference for DeleteTrafficPolicyInstance Operation</seealso>
         Task<DeleteTrafficPolicyInstanceResponse> DeleteTrafficPolicyInstanceAsync(DeleteTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1882,18 +1877,18 @@ namespace Amazon.Route53
 
 
         /// <summary>
-        /// Removes authorization to submit an <code>AssociateVPCWithHostedZone</code> request
-        /// to associate a specified VPC with a hosted zone that was created by a different account.
-        /// You must use the account that created the hosted zone to submit a <code>DeleteVPCAssociationAuthorization</code>
+        /// Removes authorization to submit an <c>AssociateVPCWithHostedZone</c> request to associate
+        /// a specified VPC with a hosted zone that was created by a different account. You must
+        /// use the account that created the hosted zone to submit a <c>DeleteVPCAssociationAuthorization</c>
         /// request.
         /// 
         ///  <important> 
         /// <para>
         /// Sending this request only prevents the Amazon Web Services account that created the
         /// VPC from associating the VPC with the Amazon Route 53 hosted zone in the future. If
-        /// the VPC is already associated with the hosted zone, <code>DeleteVPCAssociationAuthorization</code>
+        /// the VPC is already associated with the hosted zone, <c>DeleteVPCAssociationAuthorization</c>
         /// won't disassociate the VPC from the hosted zone. If you want to delete an existing
-        /// association, use <code>DisassociateVPCFromHostedZone</code>.
+        /// association, use <c>DisassociateVPCFromHostedZone</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1953,7 +1948,7 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <c>INTERNAL_FAILURE</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
@@ -1987,8 +1982,8 @@ namespace Amazon.Route53
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the
-        /// account that created the hosted zone or the account that created the Amazon VPC.
+        /// You can submit a <c>DisassociateVPCFromHostedZone</c> request using either the account
+        /// that created the hosted zone or the account that created the Amazon VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2000,8 +1995,8 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">DisassociateVPCFromHostedZone</a>,
-        /// if the hosted zone has a value for <code>OwningAccount</code>, you can use <code>DisassociateVPCFromHostedZone</code>.
-        /// If the hosted zone has a value for <code>OwningService</code>, you can't use <code>DisassociateVPCFromHostedZone</code>.
+        /// if the hosted zone has a value for <c>OwningAccount</c>, you can use <c>DisassociateVPCFromHostedZone</c>.
+        /// If the hosted zone has a value for <c>OwningService</c>, you can't use <c>DisassociateVPCFromHostedZone</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -2015,15 +2010,15 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aws</code> - Amazon Web Services Regions
+        ///  <c>aws</c> - Amazon Web Services Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-cn</code> - China Regions
+        ///  <c>aws-cn</c> - China Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        ///  <c>aws-us-gov</c> - Amazon Web Services GovCloud (US) Region
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2092,13 +2087,13 @@ namespace Amazon.Route53
         /// The input is not valid.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKeySigningKeyStatusException">
-        /// The key-signing key (KSK) status isn't valid or another KSK has the status <code>INTERNAL_FAILURE</code>.
+        /// The key-signing key (KSK) status isn't valid or another KSK has the status <c>INTERNAL_FAILURE</c>.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidKMSArnException">
         /// The KeyManagementServiceArn that you specified isn't valid to use with DNSSEC signing.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.KeySigningKeyWithActiveStatusNotFoundException">
-        /// A key-signing key (KSK) with <code>ACTIVE</code> status wasn't found.
+        /// A key-signing key (KSK) with <c>ACTIVE</c> status wasn't found.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.NoSuchHostedZoneException">
         /// No hosted zone exists with the ID that you specified.
@@ -2155,14 +2150,14 @@ namespace Amazon.Route53
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> indicates that the changes in this request have not propagated
-        /// to all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status
+        ///  <c>PENDING</c> indicates that the changes in this request have not propagated to
+        /// all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status
         /// of all change batch requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS
-        /// servers managing the hosted zone. 
+        ///  <c>INSYNC</c> indicates that the changes have propagated to all Route 53 DNS servers
+        /// managing the hosted zone. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2193,7 +2188,7 @@ namespace Amazon.Route53
         /// 
         ///  <important> 
         /// <para>
-        ///  <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json,
+        ///  <c>GetCheckerIpRanges</c> still works, but we recommend that you download ip-ranges.json,
         /// which includes IP address ranges for all Amazon Web Services services. For more information,
         /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/route-53-ip-addresses.html">IP
         /// Address Ranges of Amazon Route 53 Servers</a> in the <i>Amazon Route 53 Developer
@@ -2259,8 +2254,8 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        ///  <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
-        /// continent</i> </code> 
+        ///  <c>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a continent</i>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
@@ -2268,7 +2263,7 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        ///  <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code>
+        ///  <c>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </c>
         /// 
         /// </para>
         ///  
@@ -2278,8 +2273,8 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        ///  <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision
-        /// code</i> </code> 
+        ///  <c>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision
+        /// code</i> </c> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGeoLocation service method.</param>
@@ -2600,7 +2595,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+        /// For information about how of deleting a traffic policy affects the response from <c>GetTrafficPolicy</c>,
         /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
         /// 
         /// </para>
@@ -2631,10 +2626,10 @@ namespace Amazon.Route53
         /// 
         ///  <note> 
         /// <para>
-        ///  Use <code>GetTrafficPolicyInstance</code> with the <code>id</code> of new traffic
-        /// policy instance to confirm that the <code>CreateTrafficPolicyInstance</code> or an
-        /// <code>UpdateTrafficPolicyInstance</code> request completed successfully. For more
-        /// information, see the <code>State</code> response element.
+        ///  Use <c>GetTrafficPolicyInstance</c> with the <c>id</c> of new traffic policy instance
+        /// to confirm that the <c>CreateTrafficPolicyInstance</c> or an <c>UpdateTrafficPolicyInstance</c>
+        /// request completed successfully. For more information, see the <c>State</c> response
+        /// element.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -2873,13 +2868,13 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current Amazon Web Services account. The response includes a <code>HostedZones</code>
-        /// child element for each hosted zone.
+        /// current Amazon Web Services account. The response includes a <c>HostedZones</c> child
+        /// element for each hosted zone.
         /// 
         ///  
         /// <para>
         /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
-        /// of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups
+        /// of hosted zones, you can use the <c>maxitems</c> parameter to list them in groups
         /// of up to 100.
         /// </para>
         /// </summary>
@@ -2904,13 +2899,13 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of the public and private hosted zones that are associated with the
-        /// current Amazon Web Services account. The response includes a <code>HostedZones</code>
-        /// child element for each hosted zone.
+        /// current Amazon Web Services account. The response includes a <c>HostedZones</c> child
+        /// element for each hosted zone.
         /// 
         ///  
         /// <para>
         /// Amazon Route 53 returns a maximum of 100 items in each response. If you have a lot
-        /// of hosted zones, you can use the <code>maxitems</code> parameter to list them in groups
+        /// of hosted zones, you can use the <c>maxitems</c> parameter to list them in groups
         /// of up to 100.
         /// </para>
         /// </summary>
@@ -2940,17 +2935,17 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Retrieves a list of your hosted zones in lexicographic order. The response includes
-        /// a <code>HostedZones</code> child element for each hosted zone created by the current
-        /// Amazon Web Services account. 
+        /// a <c>HostedZones</c> child element for each hosted zone created by the current Amazon
+        /// Web Services account. 
         /// 
         ///  
         /// <para>
-        ///  <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed.
+        ///  <c>ListHostedZonesByName</c> sorts hosted zones by name with the labels reversed.
         /// For example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>com.example.www.</code> 
+        ///  <c>com.example.www.</c> 
         /// </para>
         ///  
         /// <para>
@@ -2958,15 +2953,15 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code>
+        /// If the domain name includes escape characters or Punycode, <c>ListHostedZonesByName</c>
         /// alphabetizes the domain name using the escaped or Punycoded value, which is the format
         /// that Amazon Route 53 saves in its database. For example, to create a hosted zone for
-        /// exämple.com, you specify ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
+        /// exämple.com, you specify ex\344mple.com for the domain name. <c>ListHostedZonesByName</c>
         /// alphabetizes it as:
         /// </para>
         ///  
         /// <para>
-        ///  <code>com.ex\344mple.</code> 
+        ///  <c>com.ex\344mple.</c> 
         /// </para>
         ///  
         /// <para>
@@ -2978,41 +2973,40 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// Route 53 returns up to 100 items in each response. If you have a lot of hosted zones,
-        /// use the <code>MaxItems</code> parameter to list them in groups of up to 100. The response
-        /// includes values that help navigate from one group of <code>MaxItems</code> hosted
-        /// zones to the next:
+        /// use the <c>MaxItems</c> parameter to list them in groups of up to 100. The response
+        /// includes values that help navigate from one group of <c>MaxItems</c> hosted zones
+        /// to the next:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>DNSName</code> and <code>HostedZoneId</code> elements in the response contain
-        /// the values, if any, specified for the <code>dnsname</code> and <code>hostedzoneid</code>
-        /// parameters in the request that produced the current response.
+        /// The <c>DNSName</c> and <c>HostedZoneId</c> elements in the response contain the values,
+        /// if any, specified for the <c>dnsname</c> and <c>hostedzoneid</c> parameters in the
+        /// request that produced the current response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>MaxItems</code> element in the response contains the value, if any, that
-        /// you specified for the <code>maxitems</code> parameter in the request that produced
-        /// the current response.
+        /// The <c>MaxItems</c> element in the response contains the value, if any, that you specified
+        /// for the <c>maxitems</c> parameter in the request that produced the current response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
+        /// If the value of <c>IsTruncated</c> in the response is true, there are more hosted
         /// zones associated with the current Amazon Web Services account. 
         /// </para>
         ///  
         /// <para>
-        /// If <code>IsTruncated</code> is false, this response includes the last hosted zone
-        /// that is associated with the current account. The <code>NextDNSName</code> element
-        /// and <code>NextHostedZoneId</code> elements are omitted from the response.
+        /// If <c>IsTruncated</c> is false, this response includes the last hosted zone that is
+        /// associated with the current account. The <c>NextDNSName</c> element and <c>NextHostedZoneId</c>
+        /// elements are omitted from the response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response
-        /// contain the domain name and the hosted zone ID of the next hosted zone that is associated
+        /// The <c>NextDNSName</c> and <c>NextHostedZoneId</c> elements in the response contain
+        /// the domain name and the hosted zone ID of the next hosted zone that is associated
         /// with the current Amazon Web Services account. If you want to list more hosted zones,
-        /// make another call to <code>ListHostedZonesByName</code>, and specify the value of
-        /// <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code>
-        /// and <code>hostedzoneid</code> parameters, respectively.
+        /// make another call to <c>ListHostedZonesByName</c>, and specify the value of <c>NextDNSName</c>
+        /// and <c>NextHostedZoneId</c> in the <c>dnsname</c> and <c>hostedzoneid</c> parameters,
+        /// respectively.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3040,20 +3034,20 @@ namespace Amazon.Route53
         /// <summary>
         /// Lists all the private hosted zones that a specified VPC is associated with, regardless
         /// of which Amazon Web Services account or Amazon Web Services service owns the hosted
-        /// zones. The <code>HostedZoneOwner</code> structure in the response contains one of
-        /// the following values:
+        /// zones. The <c>HostedZoneOwner</c> structure in the response contains one of the following
+        /// values:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// An <code>OwningAccount</code> element, which contains the account number of either
-        /// the current Amazon Web Services account or another Amazon Web Services account. Some
-        /// services, such as Cloud Map, create hosted zones using the current account. 
+        /// An <c>OwningAccount</c> element, which contains the account number of either the current
+        /// Amazon Web Services account or another Amazon Web Services account. Some services,
+        /// such as Cloud Map, create hosted zones using the current account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An <code>OwningService</code> element, which identifies the Amazon Web Services service
+        /// An <c>OwningService</c> element, which identifies the Amazon Web Services service
         /// that created and owns the hosted zone. For example, if a hosted zone was created by
-        /// Amazon Elastic File System (Amazon EFS), the value of <code>Owner</code> is <code>efs.amazonaws.com</code>.
+        /// Amazon Elastic File System (Amazon EFS), the value of <c>Owner</c> is <c>efs.amazonaws.com</c>.
         /// 
         /// </para>
         ///  </li> </ul> <note> 
@@ -3069,15 +3063,15 @@ namespace Amazon.Route53
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aws</code> - Amazon Web Services Regions
+        ///  <c>aws</c> - Amazon Web Services Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-cn</code> - China Regions
+        ///  <c>aws-cn</c> - China Regions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws-us-gov</code> - Amazon Web Services GovCloud (US) Region
+        ///  <c>aws-us-gov</c> - Amazon Web Services GovCloud (US) Region
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -3148,8 +3142,8 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        ///  <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time
-        /// in ASCII order, beginning at a position specified by the <code>name</code> and <code>type</code>
+        ///  <c>ListResourceRecordSets</c> returns up to 300 resource record sets at a time in
+        /// ASCII order, beginning at a position specified by the <c>name</c> and <c>type</c>
         /// elements.
         /// </para>
         ///  
@@ -3158,23 +3152,23 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        ///  <code>ListResourceRecordSets</code> sorts results first by DNS name with the labels
-        /// reversed, for example:
+        ///  <c>ListResourceRecordSets</c> sorts results first by DNS name with the labels reversed,
+        /// for example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>com.example.www.</code> 
+        ///  <c>com.example.www.</c> 
         /// </para>
         ///  
         /// <para>
         /// Note the trailing dot, which can change the sort order when the record name contains
-        /// characters that appear before <code>.</code> (decimal 46) in the ASCII table. These
-        /// characters include the following: <code>! " # $ % &amp; ' ( ) * + , -</code> 
+        /// characters that appear before <c>.</c> (decimal 46) in the ASCII table. These characters
+        /// include the following: <c>! " # $ % &amp; ' ( ) * + , -</c> 
         /// </para>
         ///  
         /// <para>
-        /// When multiple records have the same DNS name, <code>ListResourceRecordSets</code>
-        /// sorts results by the record type.
+        /// When multiple records have the same DNS name, <c>ListResourceRecordSets</c> sorts
+        /// results by the record type.
         /// </para>
         ///  
         /// <para>
@@ -3192,16 +3186,16 @@ namespace Amazon.Route53
         ///  </dd> <dt>If you specify Name but not Type</dt> <dd> 
         /// <para>
         /// The results begin with the first resource record set in the list whose name is greater
-        /// than or equal to <code>Name</code>.
+        /// than or equal to <c>Name</c>.
         /// </para>
         ///  </dd> <dt>If you specify Type but not Name</dt> <dd> 
         /// <para>
-        /// Amazon Route 53 returns the <code>InvalidInput</code> error.
+        /// Amazon Route 53 returns the <c>InvalidInput</c> error.
         /// </para>
         ///  </dd> <dt>If you specify both Name and Type</dt> <dd> 
         /// <para>
         /// The results begin with the first resource record set in the list whose name is greater
-        /// than or equal to <code>Name</code>, and whose type is greater than or equal to <code>Type</code>.
+        /// than or equal to <c>Name</c>, and whose type is greater than or equal to <c>Type</c>.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -3210,8 +3204,7 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// This action returns the most current version of the records. This includes records
-        /// that are <code>PENDING</code>, and that are not yet available on all Route 53 DNS
-        /// servers.
+        /// that are <c>PENDING</c>, and that are not yet available on all Route 53 DNS servers.
         /// </para>
         ///  
         /// <para>
@@ -3220,10 +3213,10 @@ namespace Amazon.Route53
         ///  
         /// <para>
         /// To ensure that you get an accurate listing of the resource record sets for a hosted
-        /// zone at a point in time, do not submit a <code>ChangeResourceRecordSets</code> request
-        /// while you're paging through the results of a <code>ListResourceRecordSets</code> request.
-        /// If you do, some pages may display results without the latest changes while other pages
-        /// display results with the latest changes.
+        /// zone at a point in time, do not submit a <c>ChangeResourceRecordSets</c> request while
+        /// you're paging through the results of a <c>ListResourceRecordSets</c> request. If you
+        /// do, some pages may display results without the latest changes while other pages display
+        /// results with the latest changes.
         /// </para>
         ///  
         /// <para>
@@ -3231,12 +3224,11 @@ namespace Amazon.Route53
         /// </para>
         ///  
         /// <para>
-        /// If a <code>ListResourceRecordSets</code> command returns more than one page of results,
-        /// the value of <code>IsTruncated</code> is <code>true</code>. To display the next page
-        /// of results, get the values of <code>NextRecordName</code>, <code>NextRecordType</code>,
-        /// and <code>NextRecordIdentifier</code> (if any) from the response. Then submit another
-        /// <code>ListResourceRecordSets</code> request, and specify those values for <code>StartRecordName</code>,
-        /// <code>StartRecordType</code>, and <code>StartRecordIdentifier</code>.
+        /// If a <c>ListResourceRecordSets</c> command returns more than one page of results,
+        /// the value of <c>IsTruncated</c> is <c>true</c>. To display the next page of results,
+        /// get the values of <c>NextRecordName</c>, <c>NextRecordType</c>, and <c>NextRecordIdentifier</c>
+        /// (if any) from the response. Then submit another <c>ListResourceRecordSets</c> request,
+        /// and specify those values for <c>StartRecordName</c>, <c>StartRecordType</c>, and <c>StartRecordIdentifier</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResourceRecordSets service method.</param>
@@ -3324,10 +3316,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -3367,10 +3359,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
@@ -3391,7 +3383,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>,
+        /// For information about how of deleting a traffic policy affects the response from <c>ListTrafficPolicies</c>,
         /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
         /// 
         /// </para>
@@ -3420,16 +3412,15 @@ namespace Amazon.Route53
         /// 
         ///  <note> 
         /// <para>
-        /// After you submit an <code>UpdateTrafficPolicyInstance</code> request, there's a brief
-        /// delay while Amazon Route 53 creates the resource record sets that are specified in
-        /// the traffic policy definition. For more information, see the <code>State</code> response
-        /// element.
+        /// After you submit an <c>UpdateTrafficPolicyInstance</c> request, there's a brief delay
+        /// while Amazon Route 53 creates the resource record sets that are specified in the traffic
+        /// policy definition. For more information, see the <c>State</c> response element.
         /// </para>
         ///  </note> 
         /// <para>
         /// Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic
-        /// policy instances, you can use the <code>MaxItems</code> parameter to list them in
-        /// groups of up to 100.
+        /// policy instances, you can use the <c>MaxItems</c> parameter to list them in groups
+        /// of up to 100.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstances service method.</param>
@@ -3459,16 +3450,16 @@ namespace Amazon.Route53
         /// 
         ///  <note> 
         /// <para>
-        /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+        /// After you submit a <c>CreateTrafficPolicyInstance</c> or an <c>UpdateTrafficPolicyInstance</c>
         /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
         /// that are specified in the traffic policy definition. For more information, see the
-        /// <code>State</code> response element.
+        /// <c>State</c> response element.
         /// </para>
         ///  </note> 
         /// <para>
         /// Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic
-        /// policy instances, you can use the <code>MaxItems</code> parameter to list them in
-        /// groups of up to 100.
+        /// policy instances, you can use the <c>MaxItems</c> parameter to list them in groups
+        /// of up to 100.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByHostedZone service method.</param>
@@ -3501,16 +3492,16 @@ namespace Amazon.Route53
         /// 
         ///  <note> 
         /// <para>
-        /// After you submit a <code>CreateTrafficPolicyInstance</code> or an <code>UpdateTrafficPolicyInstance</code>
+        /// After you submit a <c>CreateTrafficPolicyInstance</c> or an <c>UpdateTrafficPolicyInstance</c>
         /// request, there's a brief delay while Amazon Route 53 creates the resource record sets
         /// that are specified in the traffic policy definition. For more information, see the
-        /// <code>State</code> response element.
+        /// <c>State</c> response element.
         /// </para>
         ///  </note> 
         /// <para>
         /// Route 53 returns a maximum of 100 items in each response. If you have a lot of traffic
-        /// policy instances, you can use the <code>MaxItems</code> parameter to list them in
-        /// groups of up to 100.
+        /// policy instances, you can use the <c>MaxItems</c> parameter to list them in groups
+        /// of up to 100.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyInstancesByPolicy service method.</param>
@@ -3542,7 +3533,7 @@ namespace Amazon.Route53
         /// 
         ///  
         /// <para>
-        /// Traffic policy versions are listed in numerical order by <code>VersionNumber</code>.
+        /// Traffic policy versions are listed in numerical order by <c>VersionNumber</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrafficPolicyVersions service method.</param>
@@ -3568,13 +3559,13 @@ namespace Amazon.Route53
 
         /// <summary>
         /// Gets a list of the VPCs that were created by other accounts and that can be associated
-        /// with a specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code>
+        /// with a specified hosted zone because you've submitted one or more <c>CreateVPCAssociationAuthorization</c>
         /// requests. 
         /// 
         ///  
         /// <para>
-        /// The response includes a <code>VPCs</code> element with a <code>VPC</code> child element
-        /// for each VPC that can be associated with the hosted zone.
+        /// The response includes a <c>VPCs</c> element with a <c>VPC</c> child element for each
+        /// VPC that can be associated with the hosted zone.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVPCAssociationAuthorizations service method.</param>
@@ -3612,10 +3603,9 @@ namespace Amazon.Route53
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>TestDnsAnswer </code> returns information similar to what you would expect
-        /// from the answer section of the <code>dig</code> command. Therefore, if you query for
-        /// the name servers of a subdomain that point to the parent name servers, those will
-        /// not be returned.
+        /// The <c>TestDnsAnswer </c> returns information similar to what you would expect from
+        /// the answer section of the <c>dig</c> command. Therefore, if you query for the name
+        /// servers of a subdomain that point to the parent name servers, those will not be returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3656,8 +3646,8 @@ namespace Amazon.Route53
         /// 
         /// <returns>The response from the UpdateHealthCheck service method, as returned by Route53.</returns>
         /// <exception cref="Amazon.Route53.Model.HealthCheckVersionMismatchException">
-        /// The value of <code>HealthCheckVersion</code> in the request doesn't match the value
-        /// of <code>HealthCheckVersion</code> in the health check.
+        /// The value of <c>HealthCheckVersion</c> in the request doesn't match the value of <c>HealthCheckVersion</c>
+        /// in the health check.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -3691,10 +3681,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateHostedZoneComment">REST API Reference for UpdateHostedZoneComment Operation</seealso>
         Task<UpdateHostedZoneCommentResponse> UpdateHostedZoneCommentAsync(UpdateHostedZoneCommentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3736,12 +3726,11 @@ namespace Amazon.Route53
         /// <summary>
         /// <note> 
         /// <para>
-        /// After you submit a <code>UpdateTrafficPolicyInstance</code> request, there's a brief
-        /// delay while Route 53 creates the resource record sets that are specified in the traffic
-        /// policy definition. Use <code>GetTrafficPolicyInstance</code> with the <code>id</code>
-        /// of updated traffic policy instance confirm that the <code>UpdateTrafficPolicyInstance</code>
-        /// request completed successfully. For more information, see the <code>State</code> response
-        /// element.
+        /// After you submit a <c>UpdateTrafficPolicyInstance</c> request, there's a brief delay
+        /// while Route 53 creates the resource record sets that are specified in the traffic
+        /// policy definition. Use <c>GetTrafficPolicyInstance</c> with the <c>id</c> of updated
+        /// traffic policy instance confirm that the <c>UpdateTrafficPolicyInstance</c> request
+        /// completed successfully. For more information, see the <c>State</c> response element.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3782,7 +3771,7 @@ namespace Amazon.Route53
         /// <exception cref="Amazon.Route53.Model.ConflictingTypesException">
         /// You tried to update a traffic policy instance by using a traffic policy version that
         /// has a different DNS type than the current type for the instance. You specified the
-        /// type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.
+        /// type in the JSON document in the <c>CreateTrafficPolicy</c> or <c>CreateTrafficPolicyVersion</c>request.
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.InvalidInputException">
         /// The input is not valid.
@@ -3795,10 +3784,10 @@ namespace Amazon.Route53
         /// </exception>
         /// <exception cref="Amazon.Route53.Model.PriorRequestNotCompleteException">
         /// If Amazon Route 53 can't process a request before the next request arrives, it will
-        /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-        /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-        /// request, we recommend that you wait, in intervals of increasing duration, before you
-        /// try the request again.
+        /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+        /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+        /// we recommend that you wait, in intervals of increasing duration, before you try the
+        /// request again.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/UpdateTrafficPolicyInstance">REST API Reference for UpdateTrafficPolicyInstance Operation</seealso>
         Task<UpdateTrafficPolicyInstanceResponse> UpdateTrafficPolicyInstanceAsync(UpdateTrafficPolicyInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

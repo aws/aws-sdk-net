@@ -43,7 +43,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>RegexPatternSet</a> specified by <code>RegexPatternSetId</code>.
+    /// Returns the <a>RegexPatternSet</a> specified by <c>RegexPatternSetId</c>.
     /// </para>
     /// </summary>
     public partial class GetRegexPatternSetRequest : AmazonWAFRequest
@@ -53,9 +53,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RegexPatternSetId. 
         /// <para>
-        /// The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to
-        /// get. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and
-        /// by <a>ListRegexPatternSets</a>.
+        /// The <c>RegexPatternSetId</c> of the <a>RegexPatternSet</a> that you want to get. <c>RegexPatternSetId</c>
+        /// is returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

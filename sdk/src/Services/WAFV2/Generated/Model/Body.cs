@@ -53,7 +53,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes)
         /// for CloudFront distributions. For CloudFront distributions, you can increase the limit
-        /// in the web ACL <code>AssociationConfig</code>, for additional processing fees. 
+        /// in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
         /// </para>
         ///  
         /// <para>
@@ -61,27 +61,27 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Inspect the available body contents normally, according to
-        /// the rule inspection criteria. 
+        ///  <c>CONTINUE</c> - Inspect the available body contents normally, according to the
+        /// rule inspection criteria. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        ///  <c>MATCH</c> - Treat the web request as matching the rule statement. WAF applies
         /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
+        ///  <c>NO_MATCH</c> - Treat the web request as not matching the rule statement.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize
-        /// handling with your rule and web ACL action settings, so that you block any request
-        /// whose body is over the limit. 
+        /// You can combine the <c>MATCH</c> or <c>NO_MATCH</c> settings for oversize handling
+        /// with your rule and web ACL action settings, so that you block any request whose body
+        /// is over the limit. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>CONTINUE</code> 
+        /// Default: <c>CONTINUE</c> 
         /// </para>
         /// </summary>
         public OversizeHandling OversizeHandling

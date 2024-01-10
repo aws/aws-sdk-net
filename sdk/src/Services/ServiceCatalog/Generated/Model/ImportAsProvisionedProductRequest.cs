@@ -42,8 +42,8 @@ namespace Amazon.ServiceCatalog.Model
     ///  
     /// <para>
     ///  The CloudFormation stack must have one of the following statuses to be imported:
-    /// <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>,
-    /// <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>. 
+    /// <c>CREATE_COMPLETE</c>, <c>UPDATE_COMPLETE</c>, <c>UPDATE_ROLLBACK_COMPLETE</c>, <c>IMPORT_COMPLETE</c>,
+    /// and <c>IMPORT_ROLLBACK_COMPLETE</c>. 
     /// </para>
     ///  
     /// <para>
@@ -54,19 +54,18 @@ namespace Amazon.ServiceCatalog.Model
     /// <para>
     ///  When you import an existing CloudFormation stack into a portfolio, Service Catalog
     /// does not apply the product's associated constraints during the import process. Service
-    /// Catalog applies the constraints after you call <code>UpdateProvisionedProduct</code>
-    /// for the provisioned product. 
+    /// Catalog applies the constraints after you call <c>UpdateProvisionedProduct</c> for
+    /// the provisioned product. 
     /// </para>
     ///  </note> 
     /// <para>
-    ///  The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-    /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
+    ///  The user or role that performs this operation must have the <c>cloudformation:GetTemplate</c>
+    /// and <c>cloudformation:DescribeStacks</c> IAM policy permissions. 
     /// </para>
     ///  
     /// <para>
     /// You can only import one provisioned product at a time. The product's CloudFormation
-    /// stack must have the <code>IMPORT_COMPLETE</code> status before you import another.
-    /// 
+    /// stack must have the <c>IMPORT_COMPLETE</c> status before you import another. 
     /// </para>
     /// </summary>
     public partial class ImportAsProvisionedProductRequest : AmazonServiceCatalogRequest
@@ -85,11 +84,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>

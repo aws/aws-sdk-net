@@ -67,11 +67,11 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your <code>ListCallAnalyticsCategories</code> request returns more results than
-        /// can be displayed, <code>NextToken</code> is displayed in the response with an associated
-        /// string. To get the next page of results, copy this string and repeat your request,
-        /// including <code>NextToken</code> with the value of the copied string. Repeat as needed
-        /// to view all your results.
+        /// If your <c>ListCallAnalyticsCategories</c> request returns more results than can be
+        /// displayed, <c>NextToken</c> is displayed in the response with an associated string.
+        /// To get the next page of results, copy this string and repeat your request, including
+        /// <c>NextToken</c> with the value of the copied string. Repeat as needed to view all
+        /// your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

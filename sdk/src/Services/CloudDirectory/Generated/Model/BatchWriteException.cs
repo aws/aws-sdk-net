@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// A <code>BatchWrite</code> exception has occurred.
+    /// A <c>BatchWrite</c> exception has occurred.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

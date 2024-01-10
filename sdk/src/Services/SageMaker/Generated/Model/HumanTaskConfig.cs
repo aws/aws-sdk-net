@@ -117,8 +117,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
         /// task types</a>, use one of the following Amazon SageMaker Ground Truth Lambda function
-        /// ARNs for <code>PreHumanTaskLambdaArn</code>. For custom labeling workflows, see <a
-        /// href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
+        /// ARNs for <c>PreHumanTaskLambdaArn</c>. For custom labeling workflows, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates-step3.html#sms-custom-templates-step3-prelambda">Pre-annotation
         /// Lambda</a>. 
         /// </para>
         ///  
@@ -128,55 +127,51 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-BoundingBox</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-BoundingBox</code> 
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-BoundingBox</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-BoundingBox</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -185,58 +180,51 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</code> 
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</code> 
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClass</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -246,62 +234,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-ImageMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -311,62 +299,56 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-SemanticSegmentation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-SemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-SemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-SemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-SemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-SemanticSegmentation</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-SemanticSegmentation</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-SemanticSegmentation</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-SemanticSegmentation</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-SemanticSegmentation</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-SemanticSegmentation</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-SemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -376,57 +358,51 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</code> 
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</code> 
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</code> 
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClass</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -436,62 +412,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-TextMultiClassMultiLabel</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -501,62 +477,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-NamedEntityRecognition</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -567,58 +543,51 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoMultiClass</code> 
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoMultiClass</code> 
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoMultiClass</code> 
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoMultiClass</code>
-        /// 
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoMultiClass</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -629,62 +598,56 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoObjectDetection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoObjectDetection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoObjectDetection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoObjectDetection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoObjectDetection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoObjectDetection</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoObjectDetection</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoObjectDetection</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoObjectDetection</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoObjectDetection</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoObjectDetection</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoObjectDetection</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -696,62 +659,56 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-VideoObjectTracking</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoObjectTracking</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoObjectTracking</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoObjectTracking</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoObjectTracking</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoObjectTracking</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VideoObjectTracking</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VideoObjectTracking</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VideoObjectTracking</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VideoObjectTracking</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VideoObjectTracking</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VideoObjectTracking</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -773,62 +730,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -840,62 +797,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -907,62 +864,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -983,62 +940,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationBoundingBox</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1048,62 +1005,57 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentBoundingBox</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentBoundingBox</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentBoundingBox</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentBoundingBox</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentBoundingBox</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentBoundingBox</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentBoundingBox</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentBoundingBox</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentBoundingBox</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentBoundingBox</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentBoundingBox</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentBoundingBox</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentBoundingBox</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentBoundingBox</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentBoundingBox</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1114,62 +1066,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-VerificationSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1180,62 +1132,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1246,62 +1198,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentVideoObjectDetection</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentVideoObjectDetection</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1312,62 +1264,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentVideoObjectTracking</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-AdjustmentVideoObjectTracking</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1377,62 +1329,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectDetection</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1442,62 +1394,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudObjectTracking</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -1507,62 +1459,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-1:432418664414:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-east-2:266458841044:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:us-west-2:081040173940:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-1:568282634449:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-1:477331159723:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-2:454466003867:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-south-1:565803892007:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-central-1:203001061592:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-northeast-2:845288260483:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:eu-west-2:487402164563:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ap-southeast-1:377565633583:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</code>
+        ///  <c>arn:aws:lambda:ca-central-1:918755190332:function:PRE-Adjustment3DPointCloudSemanticSegmentation</c>
         /// 
         /// </para>
         ///  </li> </ul>

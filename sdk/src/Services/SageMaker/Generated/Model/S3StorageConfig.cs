@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The Amazon Simple Storage (Amazon S3) location and and security configuration for
-    /// <code>OfflineStore</code>.
+    /// <c>OfflineStore</c>.
     /// </summary>
     public partial class S3StorageConfig
     {
@@ -42,16 +42,16 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Amazon Web Services Key Management Service (KMS) key ARN of the key used to encrypt
-        /// any objects written into the <code>OfflineStore</code> S3 location.
+        /// any objects written into the <c>OfflineStore</c> S3 location.
         /// </para>
         ///  
         /// <para>
-        /// The IAM <code>roleARN</code> that is passed as a parameter to <code>CreateFeatureGroup</code>
-        /// must have below permissions to the <code>KmsKeyId</code>:
+        /// The IAM <c>roleARN</c> that is passed as a parameter to <c>CreateFeatureGroup</c>
+        /// must have below permissions to the <c>KmsKeyId</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"kms:GenerateDataKey"</code> 
+        ///  <c>"kms:GenerateDataKey"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -90,11 +90,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The S3 URI, or location in Amazon S3, of <code>OfflineStore</code>.
+        /// The S3 URI, or location in Amazon S3, of <c>OfflineStore</c>.
         /// </para>
         ///  
         /// <para>
-        /// S3 URIs have a format similar to the following: <code>s3://example-bucket/prefix/</code>.
+        /// S3 URIs have a format similar to the following: <c>s3://example-bucket/prefix/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

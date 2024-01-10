@@ -44,7 +44,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Examples include, but aren't limited to: <code>LINT_ERROR</code>, <code>PARSER_ERROR</code>.
+        /// Examples include, but aren't limited to: <c>LINT_ERROR</c>, <c>PARSER_ERROR</c>.
         /// </para>
         /// </summary>
         public string ErrorType
@@ -84,8 +84,7 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Examples include, but aren't limited to: <code>Parsing error: Unterminated string
-        /// literal</code>.
+        /// Examples include, but aren't limited to: <c>Parsing error: Unterminated string literal</c>.
         /// </para>
         /// </summary>
         public string Value

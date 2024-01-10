@@ -34,8 +34,8 @@ namespace Amazon.GlobalAccelerator.Model
     /// 
     ///  
     /// <para>
-    /// The following describes each BYOIP <code>State</code> that your IP address range can
-    /// be in.
+    /// The following describes each BYOIP <c>State</c> that your IP address range can be
+    /// in.
     /// </para>
     ///  <ul> <li> 
     /// <para>

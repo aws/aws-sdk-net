@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
         /// expression used to select a portion of the input data to pass to the algorithm. Use
-        /// the <code>InputFilter</code> parameter to exclude fields, such as an ID column, from
-        /// the input. If you want SageMaker to pass the entire input dataset to the algorithm,
-        /// accept the default value <code>$</code>.
+        /// the <c>InputFilter</c> parameter to exclude fields, such as an ID column, from the
+        /// input. If you want SageMaker to pass the entire input dataset to the algorithm, accept
+        /// the default value <c>$</c>.
         /// </para>
         ///  
         /// <para>
-        /// Examples: <code>"$"</code>, <code>"$[1:]"</code>, <code>"$.features"</code> 
+        /// Examples: <c>"$"</c>, <c>"$[1:]"</c>, <c>"$.features"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=63)]
@@ -74,20 +74,19 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property JoinSource. 
         /// <para>
         /// Specifies the source of the data to join with the transformed data. The valid values
-        /// are <code>None</code> and <code>Input</code>. The default value is <code>None</code>,
-        /// which specifies not to join the input with the transformed data. If you want the batch
-        /// transform job to join the original input data with the transformed data, set <code>JoinSource</code>
-        /// to <code>Input</code>. You can specify <code>OutputFilter</code> as an additional
-        /// filter to select a portion of the joined dataset and store it in the output file.
+        /// are <c>None</c> and <c>Input</c>. The default value is <c>None</c>, which specifies
+        /// not to join the input with the transformed data. If you want the batch transform job
+        /// to join the original input data with the transformed data, set <c>JoinSource</c> to
+        /// <c>Input</c>. You can specify <c>OutputFilter</c> as an additional filter to select
+        /// a portion of the joined dataset and store it in the output file.
         /// </para>
         ///  
         /// <para>
         /// For JSON or JSONLines objects, such as a JSON array, SageMaker adds the transformed
-        /// data to the input JSON object in an attribute called <code>SageMakerOutput</code>.
-        /// The joined result for JSON must be a key-value pair object. If the input is not a
-        /// key-value pair object, SageMaker creates a new JSON file. In the new JSON file, and
-        /// the input data is stored under the <code>SageMakerInput</code> key and the results
-        /// are stored in <code>SageMakerOutput</code>.
+        /// data to the input JSON object in an attribute called <c>SageMakerOutput</c>. The joined
+        /// result for JSON must be a key-value pair object. If the input is not a key-value pair
+        /// object, SageMaker creates a new JSON file. In the new JSON file, and the input data
+        /// is stored under the <c>SageMakerInput</c> key and the results are stored in <c>SageMakerOutput</c>.
         /// </para>
         ///  
         /// <para>
@@ -120,13 +119,12 @@ namespace Amazon.SageMaker.Model
         /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-transform-data-processing.html#data-processing-operators">JSONPath</a>
         /// expression used to select a portion of the joined dataset to save in the output file
         /// for a batch transform job. If you want SageMaker to store the entire input dataset
-        /// in the output file, leave the default value, <code>$</code>. If you specify indexes
-        /// that aren't within the dimension size of the joined dataset, you get an error.
+        /// in the output file, leave the default value, <c>$</c>. If you specify indexes that
+        /// aren't within the dimension size of the joined dataset, you get an error.
         /// </para>
         ///  
         /// <para>
-        /// Examples: <code>"$"</code>, <code>"$[0,5:]"</code>, <code>"$['id','SageMakerOutput']"</code>
-        /// 
+        /// Examples: <c>"$"</c>, <c>"$[0,5:]"</c>, <c>"$['id','SageMakerOutput']"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=63)]

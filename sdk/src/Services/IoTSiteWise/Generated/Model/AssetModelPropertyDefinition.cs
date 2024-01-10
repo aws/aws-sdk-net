@@ -49,8 +49,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code>
-        /// to identify the type of the structure for this property.
+        /// If you specify <c>STRUCT</c>, you must also specify <c>dataTypeSpec</c> to identify
+        /// the type of the structure for this property.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,13 +70,13 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property DataTypeSpec. 
         /// <para>
         /// The data type of the structure for this property. This parameter is required on properties
-        /// that have the <code>STRUCT</code> data type.
+        /// that have the <c>STRUCT</c> data type.
         /// </para>
         ///  
         /// <para>
         /// The options for this parameter depend on the type of the composite model in which
-        /// you define this property. Use <code>AWS/ALARM_STATE</code> for alarm state in alarm
-        /// composite models.
+        /// you define this property. Use <c>AWS/ALARM_STATE</c> for alarm state in alarm composite
+        /// models.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -157,8 +157,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The property definition type (see <code>PropertyType</code>). You can only specify
-        /// one type in a property definition.
+        /// The property definition type (see <c>PropertyType</c>). You can only specify one type
+        /// in a property definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -177,7 +177,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of the property definition, such as <code>Newtons</code> or <code>RPM</code>.
+        /// The unit of the property definition, such as <c>Newtons</c> or <c>RPM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

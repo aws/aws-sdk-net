@@ -39,7 +39,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property OffsetInNanos. 
         /// <para>
-        /// The nanosecond offset from <code>timeInSeconds</code>.
+        /// The nanosecond offset from <c>timeInSeconds</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999999)]
@@ -59,7 +59,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property TimeInSeconds. 
         /// <para>
         /// The timestamp date, in seconds, in the Unix epoch format. Fractional nanosecond data
-        /// is provided by <code>offsetInNanos</code>.
+        /// is provided by <c>offsetInNanos</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=9223372036854774)]

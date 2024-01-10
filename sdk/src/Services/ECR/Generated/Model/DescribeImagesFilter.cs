@@ -39,7 +39,7 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property TagStatus. 
         /// <para>
         /// The tag status with which to filter your <a>DescribeImages</a> results. You can filter
-        /// results based on whether they are <code>TAGGED</code> or <code>UNTAGGED</code>.
+        /// results based on whether they are <c>TAGGED</c> or <c>UNTAGGED</c>.
         /// </para>
         /// </summary>
         public TagStatus TagStatus

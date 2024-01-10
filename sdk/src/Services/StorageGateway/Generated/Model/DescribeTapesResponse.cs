@@ -39,8 +39,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An opaque string that can be used as part of a subsequent <code>DescribeTapes</code>
-        /// call to retrieve the next page of results.
+        /// An opaque string that can be used as part of a subsequent <c>DescribeTapes</c> call
+        /// to retrieve the next page of results.
         /// </para>
         ///  
         /// <para>

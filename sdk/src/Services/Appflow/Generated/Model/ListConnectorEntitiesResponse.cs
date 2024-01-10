@@ -39,7 +39,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ConnectorEntityMap. 
         /// <para>
-        ///  The response of <code>ListConnectorEntities</code> lists entities grouped by category.
+        ///  The response of <c>ListConnectorEntities</c> lists entities grouped by category.
         /// This map's key represents the group name, and its value contains the list of entities
         /// belonging to that group. 
         /// </para>
@@ -60,9 +60,9 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that you specify in your next <code>ListConnectorEntities</code> operation
-        /// to get the next page of results in paginated response. The <code>ListConnectorEntities</code>
-        /// operation provides this token if the response is too big for the page size.
+        /// A token that you specify in your next <c>ListConnectorEntities</c> operation to get
+        /// the next page of results in paginated response. The <c>ListConnectorEntities</c> operation
+        /// provides this token if the response is too big for the page size.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

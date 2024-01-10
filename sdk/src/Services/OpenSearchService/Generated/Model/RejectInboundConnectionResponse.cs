@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Represents the output of a <code>RejectInboundConnection</code> operation.
+    /// Represents the output of a <c>RejectInboundConnection</c> operation.
     /// </summary>
     public partial class RejectInboundConnectionResponse : AmazonWebServiceResponse
     {

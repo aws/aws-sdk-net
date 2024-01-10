@@ -77,8 +77,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the lineage entity resource. For example: <code>DataSet</code>, <code>Model</code>,
-        /// <code>Endpoint</code>, etc...
+        /// The type of the lineage entity resource. For example: <c>DataSet</c>, <c>Model</c>,
+        /// <c>Endpoint</c>, etc...
         /// </para>
         /// </summary>
         [AWSProperty(Max=40)]

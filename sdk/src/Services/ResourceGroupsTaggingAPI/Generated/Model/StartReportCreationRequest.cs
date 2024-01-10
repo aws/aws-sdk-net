@@ -40,7 +40,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</code>
+    ///  <c>s3://example-bucket/AwsTagPolicies/o-exampleorgid/YYYY-MM-ddTHH:mm:ssZ/report.csv</c>
     /// 
     /// </para>
     ///  
@@ -60,7 +60,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>awsexamplebucket</code> 
+        ///  <c>awsexamplebucket</c> 
         /// </para>
         ///  
         /// <para>

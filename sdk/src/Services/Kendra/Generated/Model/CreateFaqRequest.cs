@@ -59,8 +59,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a FAQ. Multiple calls to
-        /// the <code>CreateFaqRequest</code> API with the same client token will create only
-        /// one FAQ. 
+        /// the <c>CreateFaqRequest</c> API with the same client token will create only one FAQ.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -109,7 +109,7 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// The format must match the format of the file stored in the S3 bucket identified in
-        /// the <code>S3Path</code> parameter.
+        /// the <c>S3Path</c> parameter.
         /// </para>
         ///  
         /// <para>

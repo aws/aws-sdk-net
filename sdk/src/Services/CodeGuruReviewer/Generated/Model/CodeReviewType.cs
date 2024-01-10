@@ -33,12 +33,12 @@ namespace Amazon.CodeGuruReviewer.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PullRequest</code> - A code review that is automatically triggered by a pull
-    /// request on an associated repository.
+    ///  <c>PullRequest</c> - A code review that is automatically triggered by a pull request
+    /// on an associated repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RepositoryAnalysis</code> - A code review that analyzes all code under a specified
+    ///  <c>RepositoryAnalysis</c> - A code review that analyzes all code under a specified
     /// branch in an associated repository. The associated repository is specified using its
     /// ARN in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CreateCodeReview">CreateCodeReview</a>.
     /// </para>
@@ -53,7 +53,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property AnalysisTypes. 
         /// <para>
         /// They types of analysis performed during a repository analysis or a pull request review.
-        /// You can specify either <code>Security</code>, <code>CodeQuality</code>, or both.
+        /// You can specify either <c>Security</c>, <c>CodeQuality</c>, or both.
         /// </para>
         /// </summary>
         public List<string> AnalysisTypes

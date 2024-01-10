@@ -85,11 +85,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Portfolio</code> 
+        ///  <c>Portfolio</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Product</code> 
+        ///  <c>Product</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -62,14 +62,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Specifies the unique pagination token that makes it possible to display the next page
         /// of results. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>Marker</code> is returned by a previous response, there are more results
-        /// available. The value of <code>Marker</code> is a unique pagination token for each
-        /// page. To retrieve the next page, make the call again using the returned token and
-        /// keeping all other arguments unchanged.
+        /// If <c>Marker</c> is returned by a previous response, there are more results available.
+        /// The value of <c>Marker</c> is a unique pagination token for each page. To retrieve
+        /// the next page, make the call again using the returned token and keeping all other
+        /// arguments unchanged.
         /// </para>
         /// </summary>
         public string Marker
@@ -88,8 +88,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, DMS includes a pagination token in the
-        /// response so that you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, DMS includes a pagination token in the response
+        /// so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
         public int MaxRecords

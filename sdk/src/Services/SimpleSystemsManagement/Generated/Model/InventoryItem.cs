@@ -103,8 +103,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Context. 
         /// <para>
         /// A map of associated properties for a specified inventory type. For example, with this
-        /// attribute, you can specify the <code>ExecutionId</code>, <code>ExecutionType</code>,
-        /// <code>ComplianceType</code> properties of the <code>AWS:ComplianceItem</code> type.
+        /// attribute, you can specify the <c>ExecutionId</c>, <c>ExecutionType</c>, <c>ComplianceType</c>
+        /// properties of the <c>AWS:ComplianceItem</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -142,10 +142,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The name of the inventory type. Default inventory item type names start with <code>AWS</code>.
+        /// The name of the inventory type. Default inventory item type names start with <c>AWS</c>.
         /// Custom inventory type names will start with Custom. Default inventory item types include
-        /// the following: <code>AWS:AWSComponent</code>, <code>AWS:Application</code>, <code>AWS:InstanceInformation</code>,
-        /// <code>AWS:Network</code>, and <code>AWS:WindowsUpdate</code>.
+        /// the following: <c>AWS:AWSComponent</c>, <c>AWS:Application</c>, <c>AWS:InstanceInformation</c>,
+        /// <c>AWS:Network</c>, and <c>AWS:WindowsUpdate</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -57,10 +57,10 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If you have more <code>ByteMatchSet</code> objects than the number that you specified
-        /// for <code>Limit</code> in the request, the response includes a <code>NextMarker</code>
-        /// value. To list more <code>ByteMatchSet</code> objects, submit another <code>ListByteMatchSets</code>
-        /// request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code>
+        /// If you have more <c>ByteMatchSet</c> objects than the number that you specified for
+        /// <c>Limit</c> in the request, the response includes a <c>NextMarker</c> value. To list
+        /// more <c>ByteMatchSet</c> objects, submit another <c>ListByteMatchSets</c> request,
+        /// and specify the <c>NextMarker</c> value from the response in the <c>NextMarker</c>
         /// value in the next request.
         /// </para>
         /// </summary>

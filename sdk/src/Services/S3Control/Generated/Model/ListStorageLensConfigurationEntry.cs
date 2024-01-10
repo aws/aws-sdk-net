@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Part of <code>ListStorageLensConfigurationResult</code>. Each entry includes the description
+    /// Part of <c>ListStorageLensConfigurationResult</c>. Each entry includes the description
     /// of the S3 Storage Lens configuration, its home Region, whether it is enabled, its
     /// Amazon Resource Name (ARN), and config ID.
     /// </summary>

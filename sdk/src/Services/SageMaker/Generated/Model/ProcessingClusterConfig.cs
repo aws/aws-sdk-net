@@ -88,7 +88,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Certain Nitro-based instances include local storage, dependent on the instance type.
         /// Local storage volumes are encrypted using a hardware module on the instance. You can't
-        /// request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.
+        /// request a <c>VolumeKmsKeyId</c> when using an instance type with local storage.
         /// </para>
         ///  
         /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.SageMaker.Model
         /// Certain Nitro-based instances include local storage with a fixed total size, dependent
         /// on the instance type. When using these instances for processing, Amazon SageMaker
         /// mounts the local instance storage instead of Amazon EBS gp2 storage. You can't request
-        /// a <code>VolumeSizeInGB</code> greater than the total size of the local instance storage.
+        /// a <c>VolumeSizeInGB</c> greater than the total size of the local instance storage.
         /// </para>
         ///  
         /// <para>

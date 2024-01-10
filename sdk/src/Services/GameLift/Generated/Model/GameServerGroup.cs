@@ -39,10 +39,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// A game server group is created by a successful call to <code>CreateGameServerGroup</code>
-    /// and deleted by calling <code>DeleteGameServerGroup</code>. Game server group activity
-    /// can be temporarily suspended and resumed by calling <code>SuspendGameServerGroup</code>
-    /// and <code>ResumeGameServerGroup</code>, respectively. 
+    /// A game server group is created by a successful call to <c>CreateGameServerGroup</c>
+    /// and deleted by calling <c>DeleteGameServerGroup</c>. Game server group activity can
+    /// be temporarily suspended and resumed by calling <c>SuspendGameServerGroup</c> and
+    /// <c>ResumeGameServerGroup</c>, respectively. 
     /// </para>
     /// </summary>
     public partial class GameServerGroup
@@ -88,15 +88,15 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If
-        /// Spot Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then, no
-        /// new instances are started, and the existing nonviable Spot Instances are terminated
-        /// (after current gameplay ends) and are not replaced.
+        ///  <c>SPOT_ONLY</c> - Only Spot Instances are used in the game server group. If Spot
+        /// Instances are unavailable or not viable for game hosting, the game server group provides
+        /// no hosting capacity until Spot Instances can again be used. Until then, no new instances
+        /// are started, and the existing nonviable Spot Instances are terminated (after current
+        /// gameplay ends) and are not replaced.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available
+        ///  <c>SPOT_PREFERRED</c> - (default value) Spot Instances are used whenever available
         /// in the game server group. If Spot Instances are unavailable, the game server group
         /// continues to provide hosting capacity by falling back to On-Demand Instances. Existing
         /// nonviable Spot Instances are terminated (after current gameplay ends) and are replaced
@@ -104,9 +104,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server
-        /// group. No Spot Instances are used, even when available, while this balancing strategy
-        /// is in force.
+        ///  <c>ON_DEMAND_ONLY</c> - Only On-Demand Instances are used in the game server group.
+        /// No Spot Instances are used, even when available, while this balancing strategy is
+        /// in force.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -126,7 +126,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// A time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -270,38 +270,37 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code> - Amazon GameLift FleetIQ has validated the <code>CreateGameServerGroup()</code>
+        ///  <c>NEW</c> - Amazon GameLift FleetIQ has validated the <c>CreateGameServerGroup()</c>
         /// request. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVATING</code> - Amazon GameLift FleetIQ is setting up a game server group,
-        /// which includes creating an Auto Scaling group in your Amazon Web Services account.
+        ///  <c>ACTIVATING</c> - Amazon GameLift FleetIQ is setting up a game server group, which
+        /// includes creating an Auto Scaling group in your Amazon Web Services account. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ACTIVE</c> - The game server group has been successfully created. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETE_SCHEDULED</c> - A request to delete the game server group has been received.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The game server group has been successfully created. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETE_SCHEDULED</code> - A request to delete the game server group has been
-        /// received. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETING</code> - Amazon GameLift FleetIQ has received a valid <code>DeleteGameServerGroup()</code>
+        ///  <c>DELETING</c> - Amazon GameLift FleetIQ has received a valid <c>DeleteGameServerGroup()</c>
         /// request and is processing it. Amazon GameLift FleetIQ must first complete and release
         /// hosts before it deletes the Auto Scaling group and the game server group. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The game server group has been successfully deleted. 
+        ///  <c>DELETED</c> - The game server group has been successfully deleted. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ERROR</code> - The asynchronous processes of activating or deleting a game
-        /// server group has failed, resulting in an error state.
+        ///  <c>ERROR</c> - The asynchronous processes of activating or deleting a game server
+        /// group has failed, resulting in an error state.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -321,7 +320,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property StatusReason. 
         /// <para>
         /// Additional information about the current game server group status. This information
-        /// might provide additional insight on groups that are in <code>ERROR</code> status.
+        /// might provide additional insight on groups that are in <c>ERROR</c> status.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

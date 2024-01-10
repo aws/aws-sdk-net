@@ -532,7 +532,7 @@ namespace Amazon.ResilienceHub
         /// <para>
         /// This API updates the Resilience Hub application draft version. To use this Application
         /// Component for running assessments, you must publish the Resilience Hub application
-        /// using the <code>PublishAppVersion</code> API.
+        /// using the <c>PublishAppVersion</c> API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -629,12 +629,12 @@ namespace Amazon.ResilienceHub
         /// <para>
         /// This API updates the Resilience Hub application draft version. To use this resource
         /// for running resiliency assessments, you must publish the Resilience Hub application
-        /// using the <code>PublishAppVersion</code> API.
+        /// using the <c>PublishAppVersion</c> API.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To update application version with new <code>physicalResourceID</code>, you must call
-        /// <code>ResolveAppVersionResources</code> API.
+        /// To update application version with new <c>physicalResourceID</c>, you must call <c>ResolveAppVersionResources</c>
+        /// API.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -806,12 +806,12 @@ namespace Amazon.ResilienceHub
         /// 
         ///  <note> 
         /// <para>
-        /// Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and
-        /// <code>rpoInSecs</code> of your resiliency policy. But, while assessing your application,
-        /// the lowest possible assessment result is near zero. Hence, if you provide value zero
-        /// for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO
-        /// and estimated workload RPO result will be near zero and the <b>Compliance status</b>
-        /// for your application will be set to <b>Policy breached</b>.
+        /// Resilience Hub allows you to provide a value of zero for <c>rtoInSecs</c> and <c>rpoInSecs</c>
+        /// of your resiliency policy. But, while assessing your application, the lowest possible
+        /// assessment result is near zero. Hence, if you provide value zero for <c>rtoInSecs</c>
+        /// and <c>rpoInSecs</c>, the estimated workload RTO and estimated workload RPO result
+        /// will be near zero and the <b>Compliance status</b> for your application will be set
+        /// to <b>Policy breached</b>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1131,7 +1131,7 @@ namespace Amazon.ResilienceHub
         /// <para>
         /// This API updates the Resilience Hub application draft version. To use this Application
         /// Component for running assessments, you must publish the Resilience Hub application
-        /// using the <code>PublishAppVersion</code> API.
+        /// using the <c>PublishAppVersion</c> API.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1221,7 +1221,7 @@ namespace Amazon.ResilienceHub
         ///  <note> <ul> <li> 
         /// <para>
         /// You can only delete a manually added resource. To exclude non-manually added resources,
-        /// use the <code>UpdateAppVersionResource</code> API.
+        /// use the <c>UpdateAppVersionResource</c> API.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1231,7 +1231,7 @@ namespace Amazon.ResilienceHub
         /// <para>
         /// This API updates the Resilience Hub application draft version. To use this resource
         /// for running resiliency assessments, you must publish the Resilience Hub application
-        /// using the <code>PublishAppVersion</code> API.
+        /// using the <c>PublishAppVersion</c> API.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -1763,16 +1763,16 @@ namespace Amazon.ResilienceHub
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resourceName</code> 
+        ///  <c>resourceName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logicalResourceId</code> 
+        ///  <c>logicalResourceId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>physicalResourceId</code> (Along with <code>physicalResourceId</code>, you
-        /// can also provide <code>awsAccountId</code>, and <code>awsRegion</code>)
+        ///  <c>physicalResourceId</c> (Along with <c>physicalResourceId</c>, you can also provide
+        /// <c>awsAccountId</c>, and <c>awsRegion</c>)
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -1853,8 +1853,8 @@ namespace Amazon.ResilienceHub
 
         /// <summary>
         /// Returns the resolution status for the specified resolution identifier for an application
-        /// version. If <code>resolutionId</code> is not specified, the current resolution status
-        /// is returned.
+        /// version. If <c>resolutionId</c> is not specified, the current resolution status is
+        /// returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionResourcesResolutionStatus service method.</param>
         /// 
@@ -2002,10 +2002,10 @@ namespace Amazon.ResilienceHub
         /// 
         ///  <note> 
         /// <para>
-        /// If you get a 404 error with <code>ResourceImportStatusNotFoundAppMetadataException</code>,
-        /// you must call <code>importResourcesToDraftAppVersion</code> after creating the application
-        /// and before calling <code>describeDraftAppVersionResourcesImportStatus</code> to obtain
-        /// the status.
+        /// If you get a 404 error with <c>ResourceImportStatusNotFoundAppMetadataException</c>,
+        /// you must call <c>importResourcesToDraftAppVersion</c> after creating the application
+        /// and before calling <c>describeDraftAppVersionResourcesImportStatus</c> to obtain the
+        /// status.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2681,8 +2681,8 @@ namespace Amazon.ResilienceHub
         /// </para>
         ///  
         /// <para>
-        ///  <code>An error occurred (ValidationException) when calling the ListApps operation:
-        /// Only one filter is supported for this operation.</code> 
+        ///  <c>An error occurred (ValidationException) when calling the ListApps operation: Only
+        /// one filter is supported for this operation.</c> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -4196,7 +4196,7 @@ namespace Amazon.ResilienceHub
         /// <para>
         /// This API updates the Resilience Hub application draft version. To use this information
         /// for running resiliency assessments, you must publish the Resilience Hub application
-        /// using the <code>PublishAppVersion</code> API.
+        /// using the <c>PublishAppVersion</c> API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4282,7 +4282,7 @@ namespace Amazon.ResilienceHub
         /// <para>
         /// This API updates the Resilience Hub application draft version. To use this Application
         /// Component for running assessments, you must publish the Resilience Hub application
-        /// using the <code>PublishAppVersion</code> API.
+        /// using the <c>PublishAppVersion</c> API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4372,12 +4372,12 @@ namespace Amazon.ResilienceHub
         /// <para>
         /// This API updates the Resilience Hub application draft version. To use this resource
         /// for running resiliency assessments, you must publish the Resilience Hub application
-        /// using the <code>PublishAppVersion</code> API.
+        /// using the <c>PublishAppVersion</c> API.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To update application version with new <code>physicalResourceID</code>, you must call
-        /// <code>ResolveAppVersionResources</code> API.
+        /// To update application version with new <c>physicalResourceID</c>, you must call <c>ResolveAppVersionResources</c>
+        /// API.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -4466,12 +4466,12 @@ namespace Amazon.ResilienceHub
         /// 
         ///  <note> 
         /// <para>
-        /// Resilience Hub allows you to provide a value of zero for <code>rtoInSecs</code> and
-        /// <code>rpoInSecs</code> of your resiliency policy. But, while assessing your application,
-        /// the lowest possible assessment result is near zero. Hence, if you provide value zero
-        /// for <code>rtoInSecs</code> and <code>rpoInSecs</code>, the estimated workload RTO
-        /// and estimated workload RPO result will be near zero and the <b>Compliance status</b>
-        /// for your application will be set to <b>Policy breached</b>.
+        /// Resilience Hub allows you to provide a value of zero for <c>rtoInSecs</c> and <c>rpoInSecs</c>
+        /// of your resiliency policy. But, while assessing your application, the lowest possible
+        /// assessment result is near zero. Hence, if you provide value zero for <c>rtoInSecs</c>
+        /// and <c>rpoInSecs</c>, the estimated workload RTO and estimated workload RPO result
+        /// will be near zero and the <b>Compliance status</b> for your application will be set
+        /// to <b>Policy breached</b>.
         /// </para>
         ///  </note>
         /// </summary>

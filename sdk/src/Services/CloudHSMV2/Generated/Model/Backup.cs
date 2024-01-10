@@ -30,11 +30,11 @@ namespace Amazon.CloudHSMV2.Model
 {
     /// <summary>
     /// Contains information about a backup of an AWS CloudHSM cluster. All backup objects
-    /// contain the <code>BackupId</code>, <code>BackupState</code>, <code>ClusterId</code>,
-    /// and <code>CreateTimestamp</code> parameters. Backups that were copied into a destination
-    /// region additionally contain the <code>CopyTimestamp</code>, <code>SourceBackup</code>,
-    /// <code>SourceCluster</code>, and <code>SourceRegion</code> parameters. A backup that
-    /// is pending deletion will include the <code>DeleteTimestamp</code> parameter.
+    /// contain the <c>BackupId</c>, <c>BackupState</c>, <c>ClusterId</c>, and <c>CreateTimestamp</c>
+    /// parameters. Backups that were copied into a destination region additionally contain
+    /// the <c>CopyTimestamp</c>, <c>SourceBackup</c>, <c>SourceCluster</c>, and <c>SourceRegion</c>
+    /// parameters. A backup that is pending deletion will include the <c>DeleteTimestamp</c>
+    /// parameter.
     /// </summary>
     public partial class Backup
     {
@@ -163,7 +163,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property NeverExpires. 
         /// <para>
         /// Specifies whether the service should exempt a backup from the retention policy for
-        /// the cluster. <code>True</code> exempts a backup from the retention policy. <code>False</code>
+        /// the cluster. <c>True</c> exempts a backup from the retention policy. <c>False</c>
         /// means the service applies the backup retention policy defined at the cluster.
         /// </para>
         /// </summary>

@@ -113,8 +113,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Property. 
         /// <para>
-        /// Represents a member of the complex data structure. The <code>datatype</code> of the
-        /// property can be either primitive or another <code>struct</code>.
+        /// Represents a member of the complex data structure. The <c>datatype</c> of the property
+        /// can be either primitive or another <c>struct</c>.
         /// </para>
         /// </summary>
         public CustomProperty Property

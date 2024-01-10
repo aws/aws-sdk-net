@@ -57,8 +57,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For each <code>ServiceConnectService</code>, you must provide at least one <code>clientAlias</code>
-        /// with one <code>port</code>.
+        /// For each <c>ServiceConnectService</c>, you must provide at least one <c>clientAlias</c>
+        /// with one <c>port</c>.
         /// </para>
         /// </summary>
         public List<ServiceConnectClientAlias> ClientAliases
@@ -76,15 +76,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DiscoveryName. 
         /// <para>
-        /// The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon
-        /// ECS creates for this Amazon ECS service. This must be unique within the Cloud Map
-        /// namespace. The name can contain up to 64 characters. The name can include lowercase
-        /// letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.
+        /// The <c>discoveryName</c> is the name of the new Cloud Map service that Amazon ECS
+        /// creates for this Amazon ECS service. This must be unique within the Cloud Map namespace.
+        /// The name can contain up to 64 characters. The name can include lowercase letters,
+        /// numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>discoveryName</code> isn't specified, the port mapping name from the
-        /// task definition is used in <code>portName.namespace</code>.
+        /// If the <c>discoveryName</c> isn't specified, the port mapping name from the task definition
+        /// is used in <c>portName.namespace</c>.
         /// </para>
         /// </summary>
         public string DiscoveryName
@@ -107,15 +107,15 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// Use the value of this field to bypass the proxy for traffic on the port number specified
-        /// in the named <code>portMapping</code> in the task definition of this application,
-        /// and then use it in your VPC security groups to allow traffic into the proxy for this
-        /// Amazon ECS service.
+        /// in the named <c>portMapping</c> in the task definition of this application, and then
+        /// use it in your VPC security groups to allow traffic into the proxy for this Amazon
+        /// ECS service.
         /// </para>
         ///  
         /// <para>
-        /// In <code>awsvpc</code> mode and Fargate, the default value is the container port number.
-        /// The container port number is in the <code>portMapping</code> in the task definition.
-        /// In bridge mode, the default value is the ephemeral port of the Service Connect proxy.
+        /// In <c>awsvpc</c> mode and Fargate, the default value is the container port number.
+        /// The container port number is in the <c>portMapping</c> in the task definition. In
+        /// bridge mode, the default value is the ephemeral port of the Service Connect proxy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
@@ -134,8 +134,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PortName. 
         /// <para>
-        /// The <code>portName</code> must match the name of one of the <code>portMappings</code>
-        /// from all the containers in the task definition of this Amazon ECS service.
+        /// The <c>portName</c> must match the name of one of the <c>portMappings</c> from all
+        /// the containers in the task definition of this Amazon ECS service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

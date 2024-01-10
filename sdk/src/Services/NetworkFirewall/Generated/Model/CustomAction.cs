@@ -44,16 +44,16 @@ namespace Amazon.NetworkFirewall.Model
     ///  <ul> <li> 
     /// <para>
     /// In a rule group's <a>StatelessRulesAndCustomActions</a> specification. The custom
-    /// actions are available for use by name inside the <code>StatelessRulesAndCustomActions</code>
+    /// actions are available for use by name inside the <c>StatelessRulesAndCustomActions</c>
     /// where you define them. You can use them for your stateless rule actions to specify
     /// what to do with a packet that matches the rule's match attributes. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// In a <a>FirewallPolicy</a> specification, in <code>StatelessCustomActions</code>.
-    /// The custom actions are available for use inside the policy where you define them.
-    /// You can use them for the policy's default stateless actions settings to specify what
-    /// to do with packets that don't match any of the policy's stateless rules. 
+    /// In a <a>FirewallPolicy</a> specification, in <c>StatelessCustomActions</c>. The custom
+    /// actions are available for use inside the policy where you define them. You can use
+    /// them for the policy's default stateless actions settings to specify what to do with
+    /// packets that don't match any of the policy's stateless rules. 
     /// </para>
     ///  </li> </ul>
     /// </summary>

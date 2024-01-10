@@ -43,22 +43,22 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>pending-associate</code> - The Client VPN endpoint has been created but no
-        /// target networks have been associated. The Client VPN endpoint cannot accept connections.
+        ///  <c>pending-associate</c> - The Client VPN endpoint has been created but no target
+        /// networks have been associated. The Client VPN endpoint cannot accept connections.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available</code> - The Client VPN endpoint has been created and a target network
+        ///  <c>available</c> - The Client VPN endpoint has been created and a target network
         /// has been associated. The Client VPN endpoint can accept connections.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code> - The Client VPN endpoint is being deleted. The Client VPN
-        /// endpoint cannot accept connections.
+        ///  <c>deleting</c> - The Client VPN endpoint is being deleted. The Client VPN endpoint
+        /// cannot accept connections.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code> - The Client VPN endpoint has been deleted. The Client VPN endpoint
+        ///  <c>deleted</c> - The Client VPN endpoint has been deleted. The Client VPN endpoint
         /// cannot accept connections.
         /// </para>
         ///  </li> </ul>

@@ -59,8 +59,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QuantumTasks. 
         /// <para>
-        /// An array of <code>QuantumTaskSummary</code> objects for tasks that match the specified
-        /// filters.
+        /// An array of <c>QuantumTaskSummary</c> objects for tasks that match the specified filters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

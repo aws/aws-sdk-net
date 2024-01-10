@@ -59,7 +59,7 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Windows 11 only supports <code>Microsoft_Office_2019</code>.
+        /// Windows 11 only supports <c>Microsoft_Office_2019</c>.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -139,20 +139,20 @@ namespace Amazon.WorkSpaces.Model
         /// The ingestion process to be used when importing the image, depending on which protocol
         /// you want to use for your BYOL Workspace image, either PCoIP, WorkSpaces Streaming
         /// Protocol (WSP), or bring your own protocol (BYOP). To use WSP, specify a value that
-        /// ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
-        /// To use BYOP, specify a value that ends in <code>_BYOP</code>.
+        /// ends in <c>_WSP</c>. To use PCoIP, specify a value that does not end in <c>_WSP</c>.
+        /// To use BYOP, specify a value that ends in <c>_BYOP</c>.
         /// </para>
         ///  
         /// <para>
         /// For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
-        /// <code>BYOL_REGULAR</code>, <code>BYOL_REGULAR_WSP</code>, or <code>BYOL_REGULAR_BYOP</code>,
-        /// depending on the protocol.
+        /// <c>BYOL_REGULAR</c>, <c>BYOL_REGULAR_WSP</c>, or <c>BYOL_REGULAR_BYOP</c>, depending
+        /// on the protocol.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>BYOL_REGULAR_BYOP</code> and <code>BYOL_GRAPHICS_G4DN_BYOP</code> values
-        /// are only supported by Amazon WorkSpaces Core. Contact your account team to be allow-listed
-        /// to use these values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+        /// The <c>BYOL_REGULAR_BYOP</c> and <c>BYOL_GRAPHICS_G4DN_BYOP</c> values are only supported
+        /// by Amazon WorkSpaces Core. Contact your account team to be allow-listed to use these
+        /// values. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
         /// WorkSpaces Core</a>.
         /// </para>
         ///  </note>

@@ -61,7 +61,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token for the next set of workspaces to return. (You receive this token from a
-        /// previous <code>ListWorkspaces</code> operation.)
+        /// previous <c>ListWorkspaces</c> operation.)
         /// </para>
         /// </summary>
         public string NextToken

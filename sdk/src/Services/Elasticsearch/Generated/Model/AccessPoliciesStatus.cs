@@ -61,7 +61,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the access policy for the Elasticsearch domain. See <code>OptionStatus</code>
+        /// The status of the access policy for the Elasticsearch domain. See <c>OptionStatus</c>
         /// for the status information that's included. 
         /// </para>
         /// </summary>

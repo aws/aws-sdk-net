@@ -34,20 +34,20 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// For services using the rolling update (<code>ECS</code>) you can update the desired
-    /// count, deployment configuration, network configuration, load balancers, service registries,
+    /// For services using the rolling update (<c>ECS</c>) you can update the desired count,
+    /// deployment configuration, network configuration, load balancers, service registries,
     /// enable ECS managed tags option, propagate tags option, task placement constraints
     /// and strategies, and task definition. When you update any of these parameters, Amazon
     /// ECS starts new tasks with the new configuration. 
     /// </para>
     ///  
     /// <para>
-    /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
-    /// only the desired count, deployment configuration, health check grace period, task
-    /// placement constraints and strategies, enable ECS managed tags option, and propagate
-    /// tags can be updated using this API. If the network configuration, platform version,
-    /// task definition, or load balancer need to be updated, create a new CodeDeploy deployment.
-    /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+    /// For services using the blue/green (<c>CODE_DEPLOY</c>) deployment controller, only
+    /// the desired count, deployment configuration, health check grace period, task placement
+    /// constraints and strategies, enable ECS managed tags option, and propagate tags can
+    /// be updated using this API. If the network configuration, platform version, task definition,
+    /// or load balancer need to be updated, create a new CodeDeploy deployment. For more
+    /// information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
     /// in the <i>CodeDeploy API Reference</i>.
     /// </para>
     ///  
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// You can add to or subtract from the number of instantiations of a task definition
-    /// in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code>
+    /// in a service by specifying the cluster that the service is running in and a new <c>desiredCount</c>
     /// parameter.
     /// </para>
     ///  
@@ -74,8 +74,8 @@ namespace Amazon.ECS.Model
     ///  <note> 
     /// <para>
     /// If your updated Docker image uses the same tag as what is in the existing task definition
-    /// for your service (for example, <code>my_image:latest</code>), you don't need to create
-    /// a new revision of your task definition. You can update the service using the <code>forceNewDeployment</code>
+    /// for your service (for example, <c>my_image:latest</c>), you don't need to create a
+    /// new revision of your task definition. You can update the service using the <c>forceNewDeployment</c>
     /// option. The new tasks launched by the deployment pull the current image/tag combination
     /// from your repository when they start.
     /// </para>
@@ -83,34 +83,34 @@ namespace Amazon.ECS.Model
     /// <para>
     /// You can also update the deployment configuration of a service. When a deployment is
     /// triggered by updating the task definition of a service, the service scheduler uses
-    /// the deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
+    /// the deployment configuration parameters, <c>minimumHealthyPercent</c> and <c>maximumPercent</c>,
     /// to determine the deployment strategy.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code>
-    /// temporarily during a deployment. For example, if <code>desiredCount</code> is four
-    /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
-    /// two new tasks. Tasks for services that don't use a load balancer are considered healthy
-    /// if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer
-    /// are considered healthy if they're in the <code>RUNNING</code> state and are reported
-    /// as healthy by the load balancer.
+    /// If <c>minimumHealthyPercent</c> is below 100%, the scheduler can ignore <c>desiredCount</c>
+    /// temporarily during a deployment. For example, if <c>desiredCount</c> is four tasks,
+    /// a minimum of 50% allows the scheduler to stop two existing tasks before starting two
+    /// new tasks. Tasks for services that don't use a load balancer are considered healthy
+    /// if they're in the <c>RUNNING</c> state. Tasks for services that use a load balancer
+    /// are considered healthy if they're in the <c>RUNNING</c> state and are reported as
+    /// healthy by the load balancer.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>maximumPercent</code> parameter represents an upper limit on the number
-    /// of running tasks during a deployment. You can use it to define the deployment batch
-    /// size. For example, if <code>desiredCount</code> is four tasks, a maximum of 200% starts
-    /// four new tasks before stopping the four older tasks (provided that the cluster resources
-    /// required to do this are available).
+    /// The <c>maximumPercent</c> parameter represents an upper limit on the number of running
+    /// tasks during a deployment. You can use it to define the deployment batch size. For
+    /// example, if <c>desiredCount</c> is four tasks, a maximum of 200% starts four new tasks
+    /// before stopping the four older tasks (provided that the cluster resources required
+    /// to do this are available).
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <code>docker
-    /// stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code>
-    /// and a 30-second timeout. After this, <code>SIGKILL</code> is sent and the containers
-    /// are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully
-    /// and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+    /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <c>docker
+    /// stop</c> is issued to the containers running in the task. This results in a <c>SIGTERM</c>
+    /// and a 30-second timeout. After this, <c>SIGKILL</c> is sent and the containers are
+    /// forcibly stopped. If the container handles the <c>SIGTERM</c> gracefully and exits
+    /// within 30 seconds from receiving it, no <c>SIGKILL</c> is sent.
     /// </para>
     ///  
     /// <para>
@@ -165,17 +165,17 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>loadBalancers</code>,
+    ///  <c>loadBalancers</c>,
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>serviceRegistries</code> 
+    ///  <c>serviceRegistries</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For more information about the role see the <code>CreateService</code> request parameter
+    /// For more information about the role see the <c>CreateService</c> request parameter
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
-    /// <code>role</code> </a>. 
+    /// <c>role</c> </a>. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -216,11 +216,10 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// A capacity provider strategy consists of one or more capacity providers along with
-        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
-        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
-        /// status can be used.
+        /// the <c>base</c> and <c>weight</c> to assign to them. A capacity provider must be associated
+        /// with the cluster to be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a>
+        /// API is used to associate a capacity provider with a cluster. Only capacity providers
+        /// with an <c>ACTIVE</c> or <c>UPDATING</c> status can be used.
         /// </para>
         ///  
         /// <para>
@@ -230,7 +229,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+        /// To use a Fargate capacity provider, specify either the <c>FARGATE</c> or <c>FARGATE_SPOT</c>
         /// capacity providers. The Fargate capacity providers are available to all accounts and
         /// only need to be associated with a cluster to be used.
         /// </para>
@@ -319,8 +318,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// Only tasks launched after the update will reflect the update. To update the tags on
-        /// all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon
-        /// ECS starts new tasks with the updated tags.
+        /// all tasks, set <c>forceNewDeployment</c> to <c>true</c>, so that Amazon ECS starts
+        /// new tasks with the updated tags.
         /// </para>
         /// </summary>
         public bool EnableECSManagedTags
@@ -338,12 +337,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// If <code>true</code>, this enables execute command functionality on all task containers.
+        /// If <c>true</c>, this enables execute command functionality on all task containers.
         /// </para>
         ///  
         /// <para>
         /// If you do not want to override the value that was set when the service was created,
-        /// you can set this to <code>null</code> when performing this action.
+        /// you can set this to <c>null</c> when performing this action.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -364,8 +363,8 @@ namespace Amazon.ECS.Model
         /// Determines whether to force a new deployment of the service. By default, deployments
         /// aren't forced. You can use this option to start a new deployment with no service definition
         /// changes. For example, you can update a service's tasks to use a newer Docker image
-        /// with the same image/tag combination (<code>my_image:latest</code>) or to roll Fargate
-        /// tasks onto a newer platform version.
+        /// with the same image/tag combination (<c>my_image:latest</c>) or to roll Fargate tasks
+        /// onto a newer platform version.
         /// </para>
         /// </summary>
         public bool ForceNewDeployment
@@ -427,9 +426,9 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// For services that use blue/green deployments, you can update Elastic Load Balancing
-        /// target groups by using <code> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
-        /// </code> through CodeDeploy. Note that multiple target groups are not supported for
-        /// blue/green deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register
+        /// target groups by using <c> <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// </c> through CodeDeploy. Note that multiple target groups are not supported for blue/green
+        /// deployments. For more information see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Register
         /// multiple target groups with a service</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>. 
         /// </para>
@@ -444,7 +443,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can remove existing <code>loadBalancers</code> by passing an empty list.
+        /// You can remove existing <c>loadBalancers</c> by passing an empty list.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -534,8 +533,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The platform version that your tasks in the service run on. A platform version is
         /// only specified for tasks using the Fargate launch type. If a platform version is not
-        /// specified, the <code>LATEST</code> platform version is used. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// specified, the <c>LATEST</c> platform version is used. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -560,8 +559,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// Only tasks launched after the update will reflect the update. To update the tags on
-        /// all tasks, set <code>forceNewDeployment</code> to <code>true</code>, so that Amazon
-        /// ECS starts new tasks with the updated tags.
+        /// all tasks, set <c>forceNewDeployment</c> to <c>true</c>, so that Amazon ECS starts
+        /// new tasks with the updated tags.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags
@@ -638,7 +637,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can remove existing <code>serviceRegistries</code> by passing an empty list.
+        /// You can remove existing <c>serviceRegistries</c> by passing an empty list.
         /// </para>
         /// </summary>
         public List<ServiceRegistry> ServiceRegistries
@@ -656,12 +655,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinition. 
         /// <para>
-        /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code>
-        /// is not specified, the latest <code>ACTIVE</code> revision is used. If you modify the
-        /// task definition with <code>UpdateService</code>, Amazon ECS spawns a task with the
-        /// new version of the task definition and then stops an old task after the new version
-        /// is running.
+        /// The <c>family</c> and <c>revision</c> (<c>family:revision</c>) or full ARN of the
+        /// task definition to run in your service. If a <c>revision</c> is not specified, the
+        /// latest <c>ACTIVE</c> revision is used. If you modify the task definition with <c>UpdateService</c>,
+        /// Amazon ECS spawns a task with the new version of the task definition and then stops
+        /// an old task after the new version is running.
         /// </para>
         /// </summary>
         public string TaskDefinition

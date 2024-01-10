@@ -63,15 +63,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL</code> 
+        ///  <c>ALL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INCLUDE</code> 
+        ///  <c>INCLUDE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KEYS_ONLY</code> 
+        ///  <c>KEYS_ONLY</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

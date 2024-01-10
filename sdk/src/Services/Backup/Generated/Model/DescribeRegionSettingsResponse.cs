@@ -54,8 +54,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>"DynamoDB":false</code>, you can enable full Backup management for DynamoDB
-        /// backup by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
+        /// If <c>"DynamoDB":false</c>, you can enable full Backup management for DynamoDB backup
+        /// by enabling <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/advanced-ddb-backup.html#advanced-ddb-backup-enable-cli">
         /// Backup's advanced DynamoDB backup features</a>.
         /// </para>
         /// </summary>

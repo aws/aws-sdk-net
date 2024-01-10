@@ -82,7 +82,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventReferences. 
         /// <para>
-        /// A list of references in a <code>TimelineEvent</code>.
+        /// A list of references in a <c>TimelineEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -120,8 +120,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event that occurred. Currently Incident Manager supports only the <code>Custom
-        /// Event</code> and <code>Note</code> types.
+        /// The type of event that occurred. Currently Incident Manager supports only the <c>Custom
+        /// Event</c> and <c>Note</c> types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

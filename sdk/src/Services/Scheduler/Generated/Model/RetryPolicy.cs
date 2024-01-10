@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Scheduler.Model
 {
     /// <summary>
-    /// A <code>RetryPolicy</code> object that includes information about the retry policy
-    /// settings, including the maximum age of an event, and the maximum number of times EventBridge
+    /// A <c>RetryPolicy</c> object that includes information about the retry policy settings,
+    /// including the maximum age of an event, and the maximum number of times EventBridge
     /// Scheduler will try to deliver the event to a target.
     /// </summary>
     public partial class RetryPolicy
@@ -62,7 +62,7 @@ namespace Amazon.Scheduler.Model
         /// <para>
         /// The maximum number of retry attempts to make before the request fails. Retry attempts
         /// with exponential backoff continue until either the maximum number of attempts is made
-        /// or until the duration of the <code>MaximumEventAgeInSeconds</code> is reached.
+        /// or until the duration of the <c>MaximumEventAgeInSeconds</c> is reached.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=185)]

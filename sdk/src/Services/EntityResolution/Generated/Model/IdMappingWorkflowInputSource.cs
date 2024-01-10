@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <code>InputSourceARN</code> and <code>SchemaName</code>.
+    /// An object containing <c>InputSourceARN</c> and <c>SchemaName</c>.
     /// </summary>
     public partial class IdMappingWorkflowInputSource
     {

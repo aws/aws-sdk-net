@@ -30,7 +30,7 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Represents the query results from a <a>DescribeDataSources</a> operation. The content
-    /// is essentially a list of <code>DataSource</code>.
+    /// is essentially a list of <c>DataSource</c>.
     /// </summary>
     public partial class DescribeDataSourcesResponse : AmazonWebServiceResponse
     {
@@ -59,7 +59,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of <code>DataSource</code> that meet the search criteria. 
+        /// A list of <c>DataSource</c> that meet the search criteria. 
         /// </para>
         /// </summary>
         public List<DataSource> Results

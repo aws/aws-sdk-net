@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code>
+    /// A list of HTTP header names that CloudFront includes as values for the <c>Access-Control-Allow-Headers</c>
     /// HTTP response header.
     /// 
     ///  
     /// <para>
-    /// For more information about the <code>Access-Control-Allow-Headers</code> HTTP response
-    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a>
+    /// For more information about the <c>Access-Control-Allow-Headers</c> HTTP response header,
+    /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a>
     /// in the MDN Web Docs.
     /// </para>
     /// </summary>
@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The list of HTTP header names. You can specify <code>*</code> to allow all headers.
+        /// The list of HTTP header names. You can specify <c>*</c> to allow all headers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

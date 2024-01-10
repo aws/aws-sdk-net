@@ -135,7 +135,7 @@ namespace Amazon.TimestreamWrite.Model
         /// Gets and sets the property TimeUnit. 
         /// <para>
         ///  The granularity of the timestamp unit. It indicates if the time value is in seconds,
-        /// milliseconds, nanoseconds, or other supported values. Default is <code>MILLISECONDS</code>.
+        /// milliseconds, nanoseconds, or other supported values. Default is <c>MILLISECONDS</c>.
         /// 
         /// </para>
         /// </summary>

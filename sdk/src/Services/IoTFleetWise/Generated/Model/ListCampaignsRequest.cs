@@ -34,8 +34,8 @@ namespace Amazon.IoTFleetWise.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-    /// the request to return more results.
+    /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+    /// request to return more results.
     /// </para>
     ///  </note>
     /// </summary>
@@ -72,10 +72,10 @@ namespace Amazon.IoTFleetWise.Model
         ///  
         /// <para>
         /// If the results of a search are large, only a portion of the results are returned,
-        /// and a <code>nextToken</code> pagination token is returned in the response. To retrieve
-        /// the next set of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token
-        /// value. 
+        /// and a <c>nextToken</c> pagination token is returned in the response. To retrieve the
+        /// next set of results, reissue the search request and include the returned token. When
+        /// all results have been returned, the response does not contain a pagination token value.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -95,8 +95,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Optional parameter to filter the results by the status of each created campaign in
-        /// your account. The status can be one of: <code>CREATING</code>, <code>WAITING_FOR_APPROVAL</code>,
-        /// <code>RUNNING</code>, or <code>SUSPENDED</code>.
+        /// your account. The status can be one of: <c>CREATING</c>, <c>WAITING_FOR_APPROVAL</c>,
+        /// <c>RUNNING</c>, or <c>SUSPENDED</c>.
         /// </para>
         /// </summary>
         public string Status

@@ -47,7 +47,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp for when the place index resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,15 +70,15 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Esri</code> 
+        ///  <c>Esri</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Grab</code> 
+        ///  <c>Grab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Here</code> 
+        ///  <c>Here</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -145,7 +145,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</code>
+        /// Format example: <c>arn:aws:geo:region:account-id:place-index/ExamplePlaceIndex</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -185,7 +185,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// No longer used. Always returns <code>RequestBasedUsage</code>.
+        /// No longer used. Always returns <c>RequestBasedUsage</c>.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
@@ -224,7 +224,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property UpdateTime. 
         /// <para>
         /// The timestamp for when the place index resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

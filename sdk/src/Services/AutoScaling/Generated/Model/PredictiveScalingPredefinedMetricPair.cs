@@ -41,9 +41,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Indicates which metrics to use. There are two different types of metrics for each
         /// metric type: one is a load metric and one is a scaling metric. For example, if the
-        /// metric type is <code>ASGCPUUtilization</code>, the Auto Scaling group's total CPU
-        /// metric is used as the load metric, and the average CPU metric is used for the scaling
-        /// metric.
+        /// metric type is <c>ASGCPUUtilization</c>, the Auto Scaling group's total CPU metric
+        /// is used as the load metric, and the average CPU metric is used for the scaling metric.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,7 +74,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</code>.
+        ///  <c>app/my-alb/778d41231b141a0f/targetgroup/my-alb-target-group/943f017f100becff</c>.
         /// </para>
         ///  
         /// <para>

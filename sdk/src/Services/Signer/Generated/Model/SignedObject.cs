@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Points to an <code>S3SignedObject</code> object that contains information about your
-    /// signed code image.
+    /// Points to an <c>S3SignedObject</c> object that contains information about your signed
+    /// code image.
     /// </summary>
     public partial class SignedObject
     {
@@ -39,7 +39,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// The <code>S3SignedObject</code>.
+        /// The <c>S3SignedObject</c>.
         /// </para>
         /// </summary>
         public S3SignedObject S3

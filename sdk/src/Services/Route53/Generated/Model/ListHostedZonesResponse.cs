@@ -61,9 +61,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// For the second and subsequent calls to <code>ListHostedZones</code>, <code>Marker</code>
-        /// is the value that you specified for the <code>marker</code> parameter in the request
-        /// that produced the current response.
+        /// For the second and subsequent calls to <c>ListHostedZones</c>, <c>Marker</c> is the
+        /// value that you specified for the <c>marker</c> parameter in the request that produced
+        /// the current response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -83,9 +83,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag indicating whether there are more hosted zones to be listed. If the response
-        /// was truncated, you can get more hosted zones by submitting another <code>ListHostedZones</code>
-        /// request and specifying the value of <code>NextMarker</code> in the <code>marker</code>
-        /// parameter.
+        /// was truncated, you can get more hosted zones by submitting another <c>ListHostedZones</c>
+        /// request and specifying the value of <c>NextMarker</c> in the <c>marker</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,14 +103,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
-        /// identifies the first hosted zone in the next group of hosted zones. Submit another
-        /// <code>ListHostedZones</code> request, and specify the value of <code>NextMarker</code>
-        /// from the response in the <code>marker</code> parameter.
+        /// If <c>IsTruncated</c> is <c>true</c>, the value of <c>NextMarker</c> identifies the
+        /// first hosted zone in the next group of hosted zones. Submit another <c>ListHostedZones</c>
+        /// request, and specify the value of <c>NextMarker</c> from the response in the <c>marker</c>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
+        /// This element is present only if <c>IsTruncated</c> is <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -130,8 +129,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for the <code>maxitems</code> parameter in the call to
-        /// <code>ListHostedZones</code> that produced the current response.
+        /// The value that you specified for the <c>maxitems</c> parameter in the call to <c>ListHostedZones</c>
+        /// that produced the current response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -77,19 +77,19 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
         /// <para>
-        /// A flag that enables encryption at rest when set to <code>true</code>.
+        /// A flag that enables encryption at rest when set to <c>true</c>.
         /// </para>
         ///  
         /// <para>
-        /// You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the replication
+        /// You cannot modify the value of <c>AtRestEncryptionEnabled</c> after the replication
         /// group is created. To enable encryption at rest on a replication group you must set
-        /// <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create the replication
-        /// group. 
+        /// <c>AtRestEncryptionEnabled</c> to <c>true</c> when you create the replication group.
+        /// 
         /// </para>
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
+        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         /// </summary>
         public bool AtRestEncryptionEnabled
@@ -107,12 +107,11 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <code>AuthToken</code> (password) when issuing Redis
-        /// commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis commands.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool AuthTokenEnabled
@@ -297,7 +296,7 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
+        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         /// </summary>
         public bool TransitEncryptionEnabled

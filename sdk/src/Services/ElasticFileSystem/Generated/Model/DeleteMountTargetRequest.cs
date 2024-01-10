@@ -48,12 +48,12 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>elasticfilesystem:DeleteMountTarget</code> 
+    ///  <c>elasticfilesystem:DeleteMountTarget</c> 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <code>DeleteMountTarget</code> call returns while the mount target state is still
-    /// <code>deleting</code>. You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
+    /// The <c>DeleteMountTarget</c> call returns while the mount target state is still <c>deleting</c>.
+    /// You can check the mount target deletion by calling the <a>DescribeMountTargets</a>
     /// operation, which returns a list of mount target descriptions for the given file system.
     /// 
     /// </para>
@@ -64,7 +64,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ec2:DeleteNetworkInterface</code> 
+    ///  <c>ec2:DeleteNetworkInterface</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

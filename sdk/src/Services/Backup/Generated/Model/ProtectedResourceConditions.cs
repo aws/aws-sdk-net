@@ -34,8 +34,8 @@ namespace Amazon.Backup.Model
     /// 
     ///  
     /// <para>
-    /// For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
-    /// "true" },</code>. Condition operators are case sensitive.
+    /// For example, <c>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
+    /// "true" },</c>. Condition operators are case sensitive.
     /// </para>
     /// </summary>
     public partial class ProtectedResourceConditions

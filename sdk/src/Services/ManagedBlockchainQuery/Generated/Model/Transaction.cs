@@ -332,19 +332,19 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// This property is deprecated. You must use the <code>confirmationStatus</code> and
-        /// the <code>executionStatus</code> properties to determine if the <code>status</code>
-        /// of the transaction is <code>FINAL</code> or <code>FAILED</code>.
+        /// This property is deprecated. You must use the <c>confirmationStatus</c> and the <c>executionStatus</c>
+        /// properties to determine if the <c>status</c> of the transaction is <c>FINAL</c> or
+        /// <c>FAILED</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Transactions with a <code>status</code> of <code>FINAL</code> will now have the <code>confirmationStatus</code>
-        /// set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>SUCCEEDED</code>.
+        /// Transactions with a <c>status</c> of <c>FINAL</c> will now have the <c>confirmationStatus</c>
+        /// set to <c>FINAL</c> and the <c>executionStatus</c> set to <c>SUCCEEDED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Transactions with a <code>status</code> of <code>FAILED</code> will now have the <code>confirmationStatus</code>
-        /// set to <code>FINAL</code> and the <code>executionStatus</code> set to <code>FAILED</code>.
+        /// Transactions with a <c>status</c> of <c>FAILED</c> will now have the <c>confirmationStatus</c>
+        /// set to <c>FINAL</c> and the <c>executionStatus</c> set to <c>FAILED</c>.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -460,7 +460,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property TransactionTimestamp. 
         /// <para>
-        /// The <code>Timestamp</code> of the transaction. 
+        /// The <c>Timestamp</c> of the transaction. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

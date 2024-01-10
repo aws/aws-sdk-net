@@ -35,7 +35,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:DisableProfile</c>. 
     /// </para>
     /// </summary>
     public partial class DisableProfileRequest : AmazonIAMRolesAnywhereRequest

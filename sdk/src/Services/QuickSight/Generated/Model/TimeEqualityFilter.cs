@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>TimeEqualityFilter</code> filters values that are equal to a given value.
+    /// A <c>TimeEqualityFilter</c> filters values that are equal to a given value.
     /// </summary>
     public partial class TimeEqualityFilter
     {
@@ -85,7 +85,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// This field is mutually exclusive to <code>Value</code> and <code>RollingDate</code>.
+        /// This field is mutually exclusive to <c>Value</c> and <c>RollingDate</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -104,11 +104,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RollingDate. 
         /// <para>
-        /// The rolling date input for the <code>TimeEquality</code> filter.
+        /// The rolling date input for the <c>TimeEquality</c> filter.
         /// </para>
         ///  
         /// <para>
-        /// This field is mutually exclusive to <code>Value</code> and <code>ParameterName</code>.
+        /// This field is mutually exclusive to <c>Value</c> and <c>ParameterName</c>.
         /// </para>
         /// </summary>
         public RollingDateConfiguration RollingDate
@@ -126,7 +126,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TimeGranularity. 
         /// <para>
-        /// The level of time precision that is used to aggregate <code>DateTime</code> values.
+        /// The level of time precision that is used to aggregate <c>DateTime</c> values.
         /// </para>
         /// </summary>
         public TimeGranularity TimeGranularity
@@ -144,11 +144,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of a <code>TimeEquality</code> filter.
+        /// The value of a <c>TimeEquality</c> filter.
         /// </para>
         ///  
         /// <para>
-        /// This field is mutually exclusive to <code>RollingDate</code> and <code>ParameterName</code>.
+        /// This field is mutually exclusive to <c>RollingDate</c> and <c>ParameterName</c>.
         /// </para>
         /// </summary>
         public DateTime Value

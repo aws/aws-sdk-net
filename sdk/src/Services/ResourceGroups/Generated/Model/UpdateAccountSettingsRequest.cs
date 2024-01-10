@@ -35,9 +35,8 @@ namespace Amazon.ResourceGroups.Model
     ///  
     /// <para>
     /// The preceding example shows that the request to turn on group lifecycle events is
-    /// <code>IN_PROGRESS</code>. You can call the <a>GetAccountSettings</a> operation to
-    /// check for completion by looking for <code>GroupLifecycleEventsStatus</code> to change
-    /// to <code>ACTIVE</code>.
+    /// <c>IN_PROGRESS</c>. You can call the <a>GetAccountSettings</a> operation to check
+    /// for completion by looking for <c>GroupLifecycleEventsStatus</c> to change to <c>ACTIVE</c>.
     /// </para>
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonResourceGroupsRequest

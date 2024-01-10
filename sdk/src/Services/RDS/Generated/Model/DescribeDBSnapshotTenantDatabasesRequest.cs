@@ -62,7 +62,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If supplied, must match the identifier of an existing <code>DBInstance</code>.
+        /// If supplied, must match the identifier of an existing <c>DBInstance</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify an automatic snapshot, you must also specify <code>SnapshotType</code>.
+        /// If you specify an automatic snapshot, you must also specify <c>SnapshotType</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -139,33 +139,33 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tenant-db-name</code> - Tenant database names. The results list only includes
-        /// information about the tenant databases that match these tenant DB names.
+        ///  <c>tenant-db-name</c> - Tenant database names. The results list only includes information
+        /// about the tenant databases that match these tenant DB names.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tenant-database-resource-id</code> - Tenant database resource identifiers.
-        /// The results list only includes information about the tenant databases contained within
-        /// the DB snapshots.
+        ///  <c>tenant-database-resource-id</c> - Tenant database resource identifiers. The results
+        /// list only includes information about the tenant databases contained within the DB
+        /// snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dbi-resource-id</code> - DB instance resource identifiers. The results list
-        /// only includes information about snapshots containing tenant databases contained within
+        ///  <c>dbi-resource-id</c> - DB instance resource identifiers. The results list only
+        /// includes information about snapshots containing tenant databases contained within
         /// the DB instances identified by these resource identifiers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and DB instance Amazon
-        /// Resource Names (ARNs).
+        ///  <c>db-instance-id</c> - Accepts DB instance identifiers and DB instance Amazon Resource
+        /// Names (ARNs).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-snapshot-id</code> - Accepts DB snapshot identifiers.
+        ///  <c>db-snapshot-id</c> - Accepts DB snapshot identifiers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>snapshot-type</code> - Accepts types of DB snapshots.
+        ///  <c>snapshot-type</c> - Accepts types of DB snapshots.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -184,9 +184,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeDBSnapshotTenantDatabases</code>
+        /// An optional pagination token provided by a previous <c>DescribeDBSnapshotTenantDatabases</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -205,8 +205,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -228,27 +228,25 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>automated</code> – All DB snapshots that have been automatically taken by Amazon
+        ///  <c>automated</c> – All DB snapshots that have been automatically taken by Amazon
         /// RDS for my Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>manual</code> – All DB snapshots that have been taken by my Amazon Web Services
+        ///  <c>manual</c> – All DB snapshots that have been taken by my Amazon Web Services account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>shared</c> – All manual DB snapshots that have been shared to my Amazon Web Services
         /// account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>shared</code> – All manual DB snapshots that have been shared to my Amazon
-        /// Web Services account.
+        ///  <c>public</c> – All DB snapshots that have been marked as public.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public</code> – All DB snapshots that have been marked as public.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>awsbackup</code> – All DB snapshots managed by the Amazon Web Services Backup
-        /// service.
+        ///  <c>awsbackup</c> – All DB snapshots managed by the Amazon Web Services Backup service.
         /// </para>
         ///  </li> </ul>
         /// </summary>

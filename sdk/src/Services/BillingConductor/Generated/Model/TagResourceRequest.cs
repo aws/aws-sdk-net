@@ -30,7 +30,7 @@ namespace Amazon.BillingConductor.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+    /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
     /// If existing tags on a resource are not specified in the request parameters, they are
     /// not changed.
     /// </summary>

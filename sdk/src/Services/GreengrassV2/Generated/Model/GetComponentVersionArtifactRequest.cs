@@ -69,7 +69,7 @@ namespace Amazon.GreengrassV2.Model
         /// You can use the <a href="https://docs.aws.amazon.com/greengrass/v2/APIReference/API_GetComponent.html">GetComponent</a>
         /// operation to download the component recipe, which includes the URI of the artifact.
         /// The artifact name is the section of the URI after the scheme. For example, in the
-        /// artifact URI <code>greengrass:SomeArtifact.zip</code>, the artifact name is <code>SomeArtifact.zip</code>.
+        /// artifact URI <c>greengrass:SomeArtifact.zip</c>, the artifact name is <c>SomeArtifact.zip</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

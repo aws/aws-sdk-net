@@ -36,10 +36,10 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// An array of <code>Point</code> objects makes up a <code>Polygon</code>. A <code>Polygon</code>
-    /// is returned by <a>DetectText</a> and by <a>DetectCustomLabels</a> <code>Polygon</code>
-    /// represents a fine-grained polygon around a detected item. For more information, see
-    /// Geometry in the Amazon Rekognition Developer Guide. 
+    /// An array of <c>Point</c> objects makes up a <c>Polygon</c>. A <c>Polygon</c> is returned
+    /// by <a>DetectText</a> and by <a>DetectCustomLabels</a> <c>Polygon</c> represents a
+    /// fine-grained polygon around a detected item. For more information, see Geometry in
+    /// the Amazon Rekognition Developer Guide. 
     /// </para>
     /// </summary>
     public partial class Point
@@ -50,7 +50,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property X. 
         /// <para>
-        /// The value of the X coordinate for a point on a <code>Polygon</code>.
+        /// The value of the X coordinate for a point on a <c>Polygon</c>.
         /// </para>
         /// </summary>
         public float X
@@ -68,7 +68,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Y. 
         /// <para>
-        /// The value of the Y coordinate for a point on a <code>Polygon</code>.
+        /// The value of the Y coordinate for a point on a <c>Polygon</c>.
         /// </para>
         /// </summary>
         public float Y

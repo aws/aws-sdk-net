@@ -124,11 +124,10 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property LimitType. 
         /// <para>
         /// The type of limit. Depending on the feature type, this can be based on a time duration
-        /// or data size. If <code>FeatureType</code> is <code>spectrum</code>, then <code>LimitType</code>
-        /// must be <code>data-scanned</code>. If <code>FeatureType</code> is <code>concurrency-scaling</code>,
-        /// then <code>LimitType</code> must be <code>time</code>. If <code>FeatureType</code>
-        /// is <code>cross-region-datasharing</code>, then <code>LimitType</code> must be <code>data-scanned</code>.
-        /// 
+        /// or data size. If <c>FeatureType</c> is <c>spectrum</c>, then <c>LimitType</c> must
+        /// be <c>data-scanned</c>. If <c>FeatureType</c> is <c>concurrency-scaling</c>, then
+        /// <c>LimitType</c> must be <c>time</c>. If <c>FeatureType</c> is <c>cross-region-datasharing</c>,
+        /// then <c>LimitType</c> must be <c>data-scanned</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -147,8 +146,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The time period that the amount applies to. A <code>weekly</code> period begins on
-        /// Sunday. The default is <code>monthly</code>. 
+        /// The time period that the amount applies to. A <c>weekly</c> period begins on Sunday.
+        /// The default is <c>monthly</c>. 
         /// </para>
         /// </summary>
         public UsageLimitPeriod Period

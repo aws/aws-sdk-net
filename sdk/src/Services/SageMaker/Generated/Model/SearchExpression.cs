@@ -32,31 +32,31 @@ namespace Amazon.SageMaker.Model
     /// A multi-expression that searches for the specified resource or resources in a search.
     /// All resource objects that satisfy the expression's condition are included in the search
     /// results. You must specify at least one subexpression, filter, or nested filter. A
-    /// <code>SearchExpression</code> can contain up to twenty elements.
+    /// <c>SearchExpression</c> can contain up to twenty elements.
     /// 
     ///  
     /// <para>
-    /// A <code>SearchExpression</code> contains the following components:
+    /// A <c>SearchExpression</c> contains the following components:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A list of <code>Filter</code> objects. Each filter defines a simple Boolean expression
-    /// comprised of a resource property name, Boolean operator, and value.
+    /// A list of <c>Filter</c> objects. Each filter defines a simple Boolean expression comprised
+    /// of a resource property name, Boolean operator, and value.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A list of <code>NestedFilter</code> objects. Each nested filter defines a list of
-    /// Boolean expressions using a list of resource properties. A nested filter is satisfied
-    /// if a single object in the list satisfies all Boolean expressions.
+    /// A list of <c>NestedFilter</c> objects. Each nested filter defines a list of Boolean
+    /// expressions using a list of resource properties. A nested filter is satisfied if a
+    /// single object in the list satisfies all Boolean expressions.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A list of <code>SearchExpression</code> objects. A search expression object can be
-    /// nested in a list of search expression objects.
+    /// A list of <c>SearchExpression</c> objects. A search expression object can be nested
+    /// in a list of search expression objects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A Boolean operator: <code>And</code> or <code>Or</code>.
+    /// A Boolean operator: <c>And</c> or <c>Or</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -110,9 +110,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A Boolean operator used to evaluate the search expression. If you want every conditional
         /// statement in all lists to be satisfied for the entire search expression to be true,
-        /// specify <code>And</code>. If only a single conditional statement needs to be true
-        /// for the entire search expression to be true, specify <code>Or</code>. The default
-        /// value is <code>And</code>.
+        /// specify <c>And</c>. If only a single conditional statement needs to be true for the
+        /// entire search expression to be true, specify <c>Or</c>. The default value is <c>And</c>.
         /// </para>
         /// </summary>
         public BooleanOperator Operator

@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the GetStreamingSessionBackup operation.
-    /// Gets <code>StreamingSessionBackup</code> resource.
+    /// Gets <c>StreamingSessionBackup</c> resource.
     /// 
     ///  
     /// <para>

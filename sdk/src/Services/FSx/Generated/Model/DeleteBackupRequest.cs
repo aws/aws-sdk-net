@@ -35,8 +35,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// The <code>DeleteBackup</code> call returns instantly. The backup won't show up in
-    /// later <code>DescribeBackups</code> calls.
+    /// The <c>DeleteBackup</c> call returns instantly. The backup won't show up in later
+    /// <c>DescribeBackups</c> calls.
     /// </para>
     ///  <important> 
     /// <para>

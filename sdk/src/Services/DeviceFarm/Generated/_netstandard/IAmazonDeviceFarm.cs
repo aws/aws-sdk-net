@@ -40,8 +40,8 @@ namespace Amazon.DeviceFarm
     ///  
     /// <para>
     ///  Device Farm makes it possible for you to test your web applications on desktop browsers
-    /// using Selenium. The APIs for desktop browser testing contain <code>TestGrid</code>
-    /// in their names. For more information, see <a href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing
+    /// using Selenium. The APIs for desktop browser testing contain <c>TestGrid</c> in their
+    /// names. For more information, see <a href="https://docs.aws.amazon.com/devicefarm/latest/testgrid/">Testing
     /// Web Applications on Selenium with Device Farm</a>.
     /// </para>
     ///  </li> <li> 
@@ -279,7 +279,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code>
+        /// Creates a signed, short-term URL that can be passed to a Selenium <c>RemoteWebDriver</c>
         /// constructor.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTestGridUrl service method.</param>
@@ -999,9 +999,9 @@ namespace Amazon.DeviceFarm
         /// <summary>
         /// Gets the current status and future status of all offerings purchased by an AWS account.
         /// The response indicates how many offerings are currently available and the offerings
-        /// that will be available in the next period. The API returns a <code>NotEligible</code>
-        /// error if the user is not permitted to invoke the operation. If you must be able to
-        /// invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
+        /// that will be available in the next period. The API returns a <c>NotEligible</c> error
+        /// if the user is not permitted to invoke the operation. If you must be able to invoke
+        /// this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOfferingStatus service method.</param>
         /// <param name="cancellationToken">
@@ -1308,9 +1308,9 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// A session is an instance of a browser created through a <code>RemoteWebDriver</code>
-        /// with the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to
-        /// look up sessions:
+        /// A session is an instance of a browser created through a <c>RemoteWebDriver</c> with
+        /// the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to look
+        /// up sessions:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1674,8 +1674,8 @@ namespace Amazon.DeviceFarm
 
         /// <summary>
         /// Returns a list of offering promotions. Each offering promotion record contains the
-        /// ID and description of the promotion. The API returns a <code>NotEligible</code> error
-        /// if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
+        /// ID and description of the promotion. The API returns a <c>NotEligible</c> error if
+        /// the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>
         /// if you must be able to invoke this operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOfferingPromotions service method.</param>
@@ -1711,9 +1711,9 @@ namespace Amazon.DeviceFarm
         /// <summary>
         /// Returns a list of products or offerings that the user can manage through the API.
         /// Each offering record indicates the recurring price per unit and the frequency for
-        /// that offering. The API returns a <code>NotEligible</code> error if the user is not
-        /// permitted to invoke the operation. If you must be able to invoke this operation, contact
-        /// <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
+        /// that offering. The API returns a <c>NotEligible</c> error if the user is not permitted
+        /// to invoke the operation. If you must be able to invoke this operation, contact <a
+        /// href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOfferings service method.</param>
         /// <param name="cancellationToken">
@@ -1748,8 +1748,8 @@ namespace Amazon.DeviceFarm
         /// <summary>
         /// Returns a list of all historical purchases, renewals, and system renewal transactions
         /// for an AWS account. The list is paginated and ordered by a descending timestamp (most
-        /// recent transactions are first). The API returns a <code>NotEligible</code> error if
-        /// the user is not permitted to invoke the operation. If you must be able to invoke this
+        /// recent transactions are first). The API returns a <c>NotEligible</c> error if the
+        /// user is not permitted to invoke the operation. If you must be able to invoke this
         /// operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOfferingTransactions service method.</param>
@@ -2105,8 +2105,8 @@ namespace Amazon.DeviceFarm
         /// <para>
         /// Unique problems are defined as a single instance of an error across a run, job, or
         /// suite. For example, if a call in your application consistently raises an exception
-        /// (<code>OutOfBoundsException in MyActivity.java:386</code>), <code>ListUniqueProblems</code>
-        /// returns a single entry instead of many individual entries for that exception.
+        /// (<c>OutOfBoundsException in MyActivity.java:386</c>), <c>ListUniqueProblems</c> returns
+        /// a single entry instead of many individual entries for that exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUniqueProblems service method.</param>
@@ -2194,8 +2194,8 @@ namespace Amazon.DeviceFarm
         /// <summary>
         /// Immediately purchases offerings for an AWS account. Offerings renew with the latest
         /// total purchased quantity for an offering, unless the renewal was overridden. The API
-        /// returns a <code>NotEligible</code> error if the user is not permitted to invoke the
-        /// operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
+        /// returns a <c>NotEligible</c> error if the user is not permitted to invoke the operation.
+        /// If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseOffering service method.</param>
         /// <param name="cancellationToken">
@@ -2229,9 +2229,9 @@ namespace Amazon.DeviceFarm
 
         /// <summary>
         /// Explicitly sets the quantity of devices to renew for an offering, starting from the
-        /// <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code>
-        /// error if the user is not permitted to invoke the operation. If you must be able to
-        /// invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
+        /// <c>effectiveDate</c> of the next period. The API returns a <c>NotEligible</c> error
+        /// if the user is not permitted to invoke the operation. If you must be able to invoke
+        /// this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenewOffering service method.</param>
         /// <param name="cancellationToken">
@@ -2395,7 +2395,7 @@ namespace Amazon.DeviceFarm
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource are not specified in the request parameters, they are
         /// not changed. When a resource is deleted, the tags associated with that resource are
         /// also deleted.

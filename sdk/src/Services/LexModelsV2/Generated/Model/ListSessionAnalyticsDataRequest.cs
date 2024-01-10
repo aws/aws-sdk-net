@@ -30,21 +30,21 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSessionAnalyticsData operation.
-    /// Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code>
-    /// and <code>endDateTime</code> fields are required. These fields define a time range
-    /// for which you want to retrieve results. Of the optional fields, you can organize the
-    /// results in the following ways:
+    /// Retrieves a list of metadata for individual user sessions with your bot. The <c>startDateTime</c>
+    /// and <c>endDateTime</c> fields are required. These fields define a time range for which
+    /// you want to retrieve results. Of the optional fields, you can organize the results
+    /// in the following ways:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
-    /// field to specify the values by which to sort the results.
+    /// Use the <c>filters</c> field to filter the results and the <c>sortBy</c> field to
+    /// specify the values by which to sort the results.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the <code>maxResults</code> field to limit the number of results to return in
-    /// a single response and the <code>nextToken</code> field to return the next batch of
-    /// results if the response does not return the full set of results.
+    /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+    /// response and the <c>nextToken</c> field to return the next batch of results if the
+    /// response does not return the full set of results.
     /// </para>
     ///  </li> </ul>
     /// </summary>

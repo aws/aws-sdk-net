@@ -79,8 +79,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ImportStatus. 
         /// <para>
-        /// The current status of the import. When the status is <code>Complete</code> the bot,
-        /// bot alias, or custom vocabulary is ready to use.
+        /// The current status of the import. When the status is <c>Complete</c> the bot, bot
+        /// alias, or custom vocabulary is ready to use.
         /// </para>
         /// </summary>
         public ImportStatus ImportStatus
@@ -99,8 +99,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property MergeStrategy. 
         /// <para>
         /// The strategy used when there was a name conflict between the imported resource and
-        /// an existing resource. When the merge strategy is <code>FailOnConflict</code> existing
-        /// resources are not overwritten and the import fails.
+        /// an existing resource. When the merge strategy is <c>FailOnConflict</c> existing resources
+        /// are not overwritten and the import fails.
         /// </para>
         /// </summary>
         public MergeStrategy MergeStrategy

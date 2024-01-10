@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetSummaries. 
         /// <para>
-        /// A <code>DataSetSummaries</code> object that returns a summary of a dataset.
+        /// A <c>DataSetSummaries</c> object that returns a summary of a dataset.
         /// </para>
         /// </summary>
         public List<DataSetSummary> DataSetSummaries

@@ -62,26 +62,26 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code> - Amazon Web Services IoT FleetWise sucessfully created the
+        ///  <c>CREATED</c> - Amazon Web Services IoT FleetWise sucessfully created the vehicle.
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>READY</c> - The vehicle is ready to receive a campaign deployment. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>HEALTHY</c> - A campaign deployment was delivered to the vehicle. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SUSPENDED</c> - A campaign associated with the vehicle was suspended and data
+        /// collection was paused. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETING</c> - Amazon Web Services IoT FleetWise is removing a campaign from the
         /// vehicle. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>READY</code> - The vehicle is ready to receive a campaign deployment. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>HEALTHY</code> - A campaign deployment was delivered to the vehicle. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SUSPENDED</code> - A campaign associated with the vehicle was suspended and
-        /// data collection was paused. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DELETING</code> - Amazon Web Services IoT FleetWise is removing a campaign
-        /// from the vehicle. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

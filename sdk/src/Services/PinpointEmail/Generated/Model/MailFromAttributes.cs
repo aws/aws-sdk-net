@@ -41,15 +41,15 @@ namespace Amazon.PinpointEmail.Model
         /// Gets and sets the property BehaviorOnMxFailure. 
         /// <para>
         /// The action that Amazon Pinpoint to takes if it can't read the required MX record for
-        /// a custom MAIL FROM domain. When you set this value to <code>UseDefaultValue</code>,
-        /// Amazon Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this
-        /// value to <code>RejectMessage</code>, Amazon Pinpoint returns a <code>MailFromDomainNotVerified</code>
+        /// a custom MAIL FROM domain. When you set this value to <c>UseDefaultValue</c>, Amazon
+        /// Pinpoint uses <i>amazonses.com</i> as the MAIL FROM domain. When you set this value
+        /// to <c>RejectMessage</c>, Amazon Pinpoint returns a <c>MailFromDomainNotVerified</c>
         /// error, and doesn't attempt to deliver the email.
         /// </para>
         ///  
         /// <para>
         /// These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+        /// <c>Pending</c>, <c>Failed</c>, and <c>TemporaryFailure</c> states.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,23 +91,22 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – Amazon Pinpoint hasn't started searching for the MX record
-        /// yet.
+        ///  <c>PENDING</c> – Amazon Pinpoint hasn't started searching for the MX record yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> – Amazon Pinpoint detected the required MX record for the MAIL
-        /// FROM domain.
+        ///  <c>SUCCESS</c> – Amazon Pinpoint detected the required MX record for the MAIL FROM
+        /// domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – Amazon Pinpoint can't find the required MX record, or the record
+        ///  <c>FAILED</c> – Amazon Pinpoint can't find the required MX record, or the record
         /// no longer exists.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon
-        /// Pinpoint from determining the status of the MAIL FROM domain.
+        ///  <c>TEMPORARY_FAILURE</c> – A temporary issue occurred, which prevented Amazon Pinpoint
+        /// from determining the status of the MAIL FROM domain.
         /// </para>
         ///  </li> </ul>
         /// </summary>

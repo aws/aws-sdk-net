@@ -45,8 +45,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// A Boolean value indicating if the subscription is enabled. <code>true</code> indicates
-        /// the subscription is enabled 
+        /// A Boolean value indicating if the subscription is enabled. <c>true</c> indicates the
+        /// subscription is enabled 
         /// </para>
         /// </summary>
         public bool Enabled

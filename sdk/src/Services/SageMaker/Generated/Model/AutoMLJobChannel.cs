@@ -43,13 +43,13 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ChannelType. 
         /// <para>
         /// The type of channel. Defines whether the data are used for training or validation.
-        /// The default value is <code>training</code>. Channels for <code>training</code> and
-        /// <code>validation</code> must share the same <code>ContentType</code> 
+        /// The default value is <c>training</c>. Channels for <c>training</c> and <c>validation</c>
+        /// must share the same <c>ContentType</c> 
         /// </para>
         ///  <note> 
         /// <para>
-        /// The type of channel defaults to <code>training</code> for the time-series forecasting
-        /// problem type.
+        /// The type of channel defaults to <c>training</c> for the time-series forecasting problem
+        /// type.
         /// </para>
         ///  </note>
         /// </summary>
@@ -69,9 +69,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CompressionType. 
         /// <para>
         /// The allowed compression types depend on the input format and problem type. We allow
-        /// the compression type <code>Gzip</code> for <code>S3Prefix</code> inputs on tabular
-        /// data only. For all other inputs, the compression type should be <code>None</code>.
-        /// If no compression type is provided, we default to <code>None</code>.
+        /// the compression type <c>Gzip</c> for <c>S3Prefix</c> inputs on tabular data only.
+        /// For all other inputs, the compression type should be <c>None</c>. If no compression
+        /// type is provided, we default to <c>None</c>.
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -94,28 +94,28 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For tabular problem types: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
-        /// The default value is <code>text/csv;header=present</code>.
+        /// For tabular problem types: <c>text/csv;header=present</c> or <c>x-application/vnd.amazon+parquet</c>.
+        /// The default value is <c>text/csv;header=present</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For image classification: <code>image/png</code>, <code>image/jpeg</code>, or <code>image/*</code>.
-        /// The default value is <code>image/*</code>.
+        /// For image classification: <c>image/png</c>, <c>image/jpeg</c>, or <c>image/*</c>.
+        /// The default value is <c>image/*</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For text classification: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
-        /// The default value is <code>text/csv;header=present</code>.
+        /// For text classification: <c>text/csv;header=present</c> or <c>x-application/vnd.amazon+parquet</c>.
+        /// The default value is <c>text/csv;header=present</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For time-series forecasting: <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
-        /// The default value is <code>text/csv;header=present</code>.
+        /// For time-series forecasting: <c>text/csv;header=present</c> or <c>x-application/vnd.amazon+parquet</c>.
+        /// The default value is <c>text/csv;header=present</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For text generation (LLMs fine-tuning): <code>text/csv;header=present</code> or <code>x-application/vnd.amazon+parquet</code>.
-        /// The default value is <code>text/csv;header=present</code>.
+        /// For text generation (LLMs fine-tuning): <c>text/csv;header=present</c> or <c>x-application/vnd.amazon+parquet</c>.
+        /// The default value is <c>text/csv;header=present</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

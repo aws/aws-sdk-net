@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response to the <code>GetReusableDelegationSet</code>
-    /// request.
+    /// A complex type that contains the response to the <c>GetReusableDelegationSet</c> request.
     /// </summary>
     public partial class GetReusableDelegationSetResponse : AmazonWebServiceResponse
     {

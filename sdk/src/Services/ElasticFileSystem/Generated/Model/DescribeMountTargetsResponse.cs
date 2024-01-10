@@ -40,8 +40,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If the request included the <code>Marker</code>, the response returns that value in
-        /// this field.
+        /// If the request included the <c>Marker</c>, the response returns that value in this
+        /// field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -60,7 +60,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MountTargets. 
         /// <para>
-        /// Returns the file system's mount targets as an array of <code>MountTargetDescription</code>
+        /// Returns the file system's mount targets as an array of <c>MountTargetDescription</c>
         /// objects.
         /// </para>
         /// </summary>
@@ -80,8 +80,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If a value is present, there are more mount targets to return. In a subsequent request,
-        /// you can provide <code>Marker</code> in your request with this value to retrieve the
-        /// next set of mount targets.
+        /// you can provide <c>Marker</c> in your request with this value to retrieve the next
+        /// set of mount targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

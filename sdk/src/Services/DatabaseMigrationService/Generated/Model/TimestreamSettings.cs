@@ -42,10 +42,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CdcInsertsAndUpdates. 
         /// <para>
-        /// Set this attribute to <code>true</code> to specify that DMS only applies inserts and
-        /// updates, and not deletes. Amazon Timestream does not allow deleting records, so if
-        /// this value is <code>false</code>, DMS nulls out the corresponding record in the Timestream
-        /// database rather than deleting it.
+        /// Set this attribute to <c>true</c> to specify that DMS only applies inserts and updates,
+        /// and not deletes. Amazon Timestream does not allow deleting records, so if this value
+        /// is <c>false</c>, DMS nulls out the corresponding record in the Timestream database
+        /// rather than deleting it.
         /// </para>
         /// </summary>
         public bool CdcInsertsAndUpdates
@@ -82,10 +82,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EnableMagneticStoreWrites. 
         /// <para>
-        /// Set this attribute to <code>true</code> to enable memory store writes. When this value
-        /// is <code>false</code>, DMS does not write records that are older in days than the
-        /// value specified in <code>MagneticDuration</code>, because Amazon Timestream does not
-        /// allow memory writes by default. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a>
+        /// Set this attribute to <c>true</c> to enable memory store writes. When this value is
+        /// <c>false</c>, DMS does not write records that are older in days than the value specified
+        /// in <c>MagneticDuration</c>, because Amazon Timestream does not allow memory writes
+        /// by default. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">Storage</a>
         /// in the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/">Amazon
         /// Timestream Developer Guide</a>.
         /// </para>

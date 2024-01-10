@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteMLModel</code> operation.
+    /// Represents the output of a <c>DeleteMLModel</c> operation.
     /// 
     ///  
     /// <para>
-    /// You can use the <code>GetMLModel</code> operation and check the value of the <code>Status</code>
-    /// parameter to see whether an <code>MLModel</code> is marked as <code>DELETED</code>.
+    /// You can use the <c>GetMLModel</c> operation and check the value of the <c>Status</c>
+    /// parameter to see whether an <c>MLModel</c> is marked as <c>DELETED</c>.
     /// </para>
     /// </summary>
     public partial class DeleteMLModelResponse : AmazonWebServiceResponse
@@ -44,8 +44,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should
-        /// be identical to the value of the <code>MLModelID</code> in the request.
+        /// A user-supplied ID that uniquely identifies the <c>MLModel</c>. This value should
+        /// be identical to the value of the <c>MLModelID</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This strategy can only be used if the EC2 Fleet is of type <code>instant</code>.
+    /// This strategy can only be used if the EC2 Fleet is of type <c>instant</c>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -55,13 +55,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused
-        /// Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-        /// If multiple instance pools have unused Capacity Reservations, the On-Demand allocation
-        /// strategy (<code>lowest-price</code> or <code>prioritized</code>) is applied. If the
-        /// number of unused Capacity Reservations is less than the On-Demand target capacity,
-        /// the remaining On-Demand target capacity is launched according to the On-Demand allocation
-        /// strategy (<code>lowest-price</code> or <code>prioritized</code>).
+        /// If you specify <c>use-capacity-reservations-first</c>, the fleet uses unused Capacity
+        /// Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If
+        /// multiple instance pools have unused Capacity Reservations, the On-Demand allocation
+        /// strategy (<c>lowest-price</c> or <c>prioritized</c>) is applied. If the number of
+        /// unused Capacity Reservations is less than the On-Demand target capacity, the remaining
+        /// On-Demand target capacity is launched according to the On-Demand allocation strategy
+        /// (<c>lowest-price</c> or <c>prioritized</c>).
         /// </para>
         ///  
         /// <para>

@@ -58,9 +58,9 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Affiliated. 
         /// <para>
         /// Details on whether the Amazon Web Services account of the remote API caller is related
-        /// to your GuardDuty environment. If this value is <code>True</code> the API caller is
-        /// affiliated to your account in some way. If it is <code>False</code> the API caller
-        /// is from outside your environment.
+        /// to your GuardDuty environment. If this value is <c>True</c> the API caller is affiliated
+        /// to your account in some way. If it is <c>False</c> the API caller is from outside
+        /// your environment.
         /// </para>
         /// </summary>
         public bool Affiliated

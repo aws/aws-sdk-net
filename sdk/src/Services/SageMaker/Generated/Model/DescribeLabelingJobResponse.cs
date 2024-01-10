@@ -188,63 +188,63 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{</code> 
+        ///  <c>{</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "document-version": "2018-11-28"</code> 
+        ///  <c> "document-version": "2018-11-28"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "labels": [</code> 
+        ///  <c> "labels": [</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> {</code> 
+        ///  <c> {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "label": "<i>label 1</i>"</code> 
+        ///  <c> "label": "<i>label 1</i>"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> },</code> 
+        ///  <c> },</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> {</code> 
+        ///  <c> {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "label": "<i>label 2</i>"</code> 
+        ///  <c> "label": "<i>label 2</i>"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> },</code> 
+        ///  <c> },</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> ...</code> 
+        ///  <c> ...</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> {</code> 
+        ///  <c> {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "label": "<i>label n</i>"</code> 
+        ///  <c> "label": "<i>label n</i>"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> }</code> 
+        ///  <c> }</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> ]</code> 
+        ///  <c> ]</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>}</code> 
+        ///  <c>}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

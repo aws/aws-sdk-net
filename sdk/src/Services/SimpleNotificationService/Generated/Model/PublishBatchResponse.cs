@@ -39,7 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// A list of failed <code>PublishBatch</code> responses. 
+        /// A list of failed <c>PublishBatch</c> responses. 
         /// </para>
         /// </summary>
         public List<BatchResultErrorEntry> Failed
@@ -57,7 +57,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Successful. 
         /// <para>
-        /// A list of successful <code>PublishBatch</code> responses.
+        /// A list of successful <c>PublishBatch</c> responses.
         /// </para>
         /// </summary>
         public List<PublishBatchResultEntry> Successful

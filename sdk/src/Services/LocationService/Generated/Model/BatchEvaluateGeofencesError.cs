@@ -80,7 +80,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property SampleTime. 
         /// <para>
         /// Specifies a timestamp for when the error occurred in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> 
+        /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

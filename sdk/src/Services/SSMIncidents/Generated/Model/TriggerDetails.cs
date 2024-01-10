@@ -62,9 +62,9 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// Identifies the service that sourced the event. All events sourced from within Amazon
-        /// Web Services begin with "<code>aws.</code>" Customer-generated events can have any
-        /// value here, as long as it doesn't begin with "<code>aws.</code>" We recommend the
-        /// use of Java package-name style reverse domain-name strings. 
+        /// Web Services begin with "<c>aws.</c>" Customer-generated events can have any value
+        /// here, as long as it doesn't begin with "<c>aws.</c>" We recommend the use of Java
+        /// package-name style reverse domain-name strings. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

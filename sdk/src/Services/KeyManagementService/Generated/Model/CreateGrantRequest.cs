@@ -50,7 +50,7 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>CreateGrant</code> operation returns a <code>GrantToken</code> and a <code>GrantId</code>.
+    /// The <c>CreateGrant</c> operation returns a <c>GrantToken</c> and a <c>GrantId</c>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -62,16 +62,16 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// However, to use the permissions in the grant immediately, use the <code>GrantToken</code>
-    /// that <code>CreateGrant</code> returns. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
+    /// However, to use the permissions in the grant immediately, use the <c>GrantToken</c>
+    /// that <c>CreateGrant</c> returns. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
     /// a grant token</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>CreateGrant</code> operation also returns a <code>GrantId</code>. You can
-    /// use the <code>GrantId</code> and a key identifier to identify the grant in the <a>RetireGrant</a>
-    /// and <a>RevokeGrant</a> operations. To find the grant ID, use the <a>ListGrants</a>
-    /// or <a>ListRetirableGrants</a> operations.
+    /// The <c>CreateGrant</c> operation also returns a <c>GrantId</c>. You can use the <c>GrantId</c>
+    /// and a key identifier to identify the grant in the <a>RetireGrant</a> and <a>RevokeGrant</a>
+    /// operations. To find the grant ID, use the <a>ListGrants</a> or <a>ListRetirableGrants</a>
+    /// operations.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     ///  <b>Cross-account use</b>: Yes. To perform this operation on a KMS key in a different
-    /// Amazon Web Services account, specify the key ARN in the value of the <code>KeyId</code>
+    /// Amazon Web Services account, specify the key ARN in the value of the <c>KeyId</c>
     /// parameter. 
     /// </para>
     ///  
@@ -140,20 +140,19 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// KMS supports the <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
+        /// KMS supports the <c>EncryptionContextEquals</c> and <c>EncryptionContextSubset</c>
         /// grant constraints, which allow the permissions in the grant only when the encryption
-        /// context in the request matches (<code>EncryptionContextEquals</code>) or includes
-        /// (<code>EncryptionContextSubset</code>) the encryption context specified in the constraint.
-        /// 
+        /// context in the request matches (<c>EncryptionContextEquals</c>) or includes (<c>EncryptionContextSubset</c>)
+        /// the encryption context specified in the constraint. 
         /// </para>
         ///  
         /// <para>
         /// The encryption context grant constraints are supported only on <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
-        /// operations</a> that include an <code>EncryptionContext</code> parameter, such as cryptographic
+        /// operations</a> that include an <c>EncryptionContext</c> parameter, such as cryptographic
         /// operations on symmetric encryption KMS keys. Grants with grant constraints can include
         /// the <a>DescribeKey</a> and <a>RetireGrant</a> operations, but the constraint doesn't
-        /// apply to these operations. If a grant with a grant constraint includes the <code>CreateGrant</code>
-        /// operation, the constraint requires that any grants created with the <code>CreateGrant</code>
+        /// apply to these operations. If a grant with a grant constraint includes the <c>CreateGrant</c>
+        /// operation, the constraint requires that any grants created with the <c>CreateGrant</c>
         /// permission have an equally strict or stricter encryption context constraint.
         /// </para>
         ///  
@@ -187,8 +186,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
-        /// 
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter. 
         /// </para>
         ///  
         /// <para>
@@ -279,11 +277,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -317,18 +315,17 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// When this value is absent, all <code>CreateGrant</code> requests result in a new grant
-        /// with a unique <code>GrantId</code> even if all the supplied parameters are identical.
-        /// This can result in unintended duplicates when you retry the <code>CreateGrant</code>
-        /// request.
+        /// When this value is absent, all <c>CreateGrant</c> requests result in a new grant with
+        /// a unique <c>GrantId</c> even if all the supplied parameters are identical. This can
+        /// result in unintended duplicates when you retry the <c>CreateGrant</c> request.
         /// </para>
         ///  
         /// <para>
-        /// When this value is present, you can retry a <code>CreateGrant</code> request with
-        /// identical parameters; if the grant already exists, the original <code>GrantId</code>
-        /// is returned without creating a new grant. Note that the returned grant token is unique
-        /// with every <code>CreateGrant</code> request, even when a duplicate <code>GrantId</code>
-        /// is returned. All grant tokens for the same grant ID can be used interchangeably.
+        /// When this value is present, you can retry a <c>CreateGrant</c> request with identical
+        /// parameters; if the grant already exists, the original <c>GrantId</c> is returned without
+        /// creating a new grant. Note that the returned grant token is unique with every <c>CreateGrant</c>
+        /// request, even when a duplicate <c>GrantId</c> is returned. All grant tokens for the
+        /// same grant ID can be used interchangeably.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -355,7 +352,7 @@ namespace Amazon.KeyManagementService.Model
         /// must be supported on the KMS key. For example, you cannot create a grant for a symmetric
         /// encryption KMS key that allows the <a>Sign</a> operation, or a grant for an asymmetric
         /// KMS key that allows the <a>GenerateDataKey</a> operation. If you try, KMS returns
-        /// a <code>ValidationError</code> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
+        /// a <c>ValidationError</c> exception. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
         /// operations</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         /// </summary>

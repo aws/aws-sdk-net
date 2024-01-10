@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>pem</code> 
+        /// Default: <c>pem</c> 
         /// </para>
         /// </summary>
         public KeyFormat KeyFormat
@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>rsa</code> 
+        /// Default: <c>rsa</c> 
         /// </para>
         /// </summary>
         public KeyType KeyType

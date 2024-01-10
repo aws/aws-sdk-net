@@ -99,7 +99,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property MaxServerErrors. 
         /// <para>
-        /// Number of consecutive <code>5xx</code> errors required for ejection. 
+        /// Number of consecutive <c>5xx</c> errors required for ejection. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

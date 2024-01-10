@@ -101,15 +101,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LambdaConfiguration</code> 
+        ///  <c>LambdaConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QueueConfiguration</code> 
+        ///  <c>QueueConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TopicConfiguration</code> 
+        ///  <c>TopicConfiguration</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

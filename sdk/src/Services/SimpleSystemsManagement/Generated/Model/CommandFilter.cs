@@ -33,8 +33,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// A managed node ID can't be specified when a command status is <code>Pending</code>
-    /// because the command hasn't run on the node yet.
+    /// A managed node ID can't be specified when a command status is <c>Pending</c> because
+    /// the command hasn't run on the node yet.
     /// </para>
     ///  </note>
     /// </summary>
@@ -50,8 +50,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ExecutionStage</code> filter can't be used with the <code>ListCommandInvocations</code>
-        /// operation, only with <code>ListCommands</code>.
+        /// The <c>ExecutionStage</c> filter can't be used with the <c>ListCommandInvocations</c>
+        /// operation, only with <c>ListCommands</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -76,14 +76,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>InvokedAfter</b>: Specify a timestamp to limit your results. For example, specify
-        /// <code>2021-07-07T00:00:00Z</code> to see a list of command executions occurring July
-        /// 7, 2021, and later.
+        /// <c>2021-07-07T00:00:00Z</c> to see a list of command executions occurring July 7,
+        /// 2021, and later.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>InvokedBefore</b>: Specify a timestamp to limit your results. For example, specify
-        /// <code>2021-07-07T00:00:00Z</code> to see a list of command executions from before
-        /// July 7, 2021.
+        /// <c>2021-07-07T00:00:00Z</c> to see a list of command executions from before July 7,
+        /// 2021.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -92,132 +92,131 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// The status values you can specify for <code>ListCommands</code> are:
+        /// The status values you can specify for <c>ListCommands</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Pending</code> 
+        ///  <c>Pending</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code> 
+        ///  <c>InProgress</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Success</code> 
+        ///  <c>Success</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code> 
+        ///  <c>Cancelled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> 
+        ///  <c>Failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TimedOut</code> (this includes both Delivery and Execution time outs) 
+        ///  <c>TimedOut</c> (this includes both Delivery and Execution time outs) 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccessDenied</code> 
+        ///  <c>AccessDenied</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeliveryTimedOut</code> 
+        ///  <c>DeliveryTimedOut</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExecutionTimedOut</code> 
+        ///  <c>ExecutionTimedOut</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Incomplete</code> 
+        ///  <c>Incomplete</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NoInstancesInTag</code> 
+        ///  <c>NoInstancesInTag</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LimitExceeded</code> 
+        ///  <c>LimitExceeded</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The status values you can specify for <code>ListCommandInvocations</code> are:
+        /// The status values you can specify for <c>ListCommandInvocations</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Pending</code> 
+        ///  <c>Pending</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code> 
+        ///  <c>InProgress</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Delayed</code> 
+        ///  <c>Delayed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Success</code> 
+        ///  <c>Success</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code> 
+        ///  <c>Cancelled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> 
+        ///  <c>Failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TimedOut</code> (this includes both Delivery and Execution time outs) 
+        ///  <c>TimedOut</c> (this includes both Delivery and Execution time outs) 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccessDenied</code> 
+        ///  <c>AccessDenied</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeliveryTimedOut</code> 
+        ///  <c>DeliveryTimedOut</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExecutionTimedOut</code> 
+        ///  <c>ExecutionTimedOut</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Undeliverable</code> 
+        ///  <c>Undeliverable</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InvalidPlatform</code> 
+        ///  <c>InvalidPlatform</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Terminated</code> 
+        ///  <c>Terminated</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         ///  <b>DocumentName</b>: Specify name of the Amazon Web Services Systems Manager document
         /// (SSM document) for which you want to see command execution results. For example, specify
-        /// <code>AWS-RunPatchBaseline</code> to see command executions that used this SSM document
+        /// <c>AWS-RunPatchBaseline</c> to see command executions that used this SSM document
         /// to perform security patching operations on managed nodes. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>ExecutionStage</b>: Specify one of the following values (<code>ListCommands</code>
-        /// operations only):
+        ///  <b>ExecutionStage</b>: Specify one of the following values (<c>ListCommands</c> operations
+        /// only):
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Executing</code>: Returns a list of command executions that are currently still
-        /// running.
+        ///  <c>Executing</c>: Returns a list of command executions that are currently still running.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Complete</code>: Returns a list of command executions that have already completed.
+        ///  <c>Complete</c>: Returns a list of command executions that have already completed.
         /// 
         /// </para>
         ///  </li> </ul> </li> </ul>

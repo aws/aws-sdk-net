@@ -42,7 +42,7 @@ namespace Amazon.DirectConnect.Model
     /// <para>
     /// Virtual interfaces created using this function must be confirmed by the owner using
     /// <a>ConfirmPublicVirtualInterface</a>. Until this step has been completed, the virtual
-    /// interface is in the <code>confirming</code> state and is not available to handle traffic.
+    /// interface is in the <c>confirming</c> state and is not available to handle traffic.
     /// </para>
     ///  
     /// <para>

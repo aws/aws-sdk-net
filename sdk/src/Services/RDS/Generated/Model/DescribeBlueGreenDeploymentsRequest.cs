@@ -89,25 +89,25 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>blue-green-deployment-identifier</code> - Accepts system-generated identifiers
-        /// for blue/green deployments. The results list only includes information about the blue/green
+        ///  <c>blue-green-deployment-identifier</c> - Accepts system-generated identifiers for
+        /// blue/green deployments. The results list only includes information about the blue/green
         /// deployments with the specified identifiers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>blue-green-deployment-name</code> - Accepts user-supplied names for blue/green
-        /// deployments. The results list only includes information about the blue/green deployments
-        /// with the specified names.
+        ///  <c>blue-green-deployment-name</c> - Accepts user-supplied names for blue/green deployments.
+        /// The results list only includes information about the blue/green deployments with the
+        /// specified names.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source</code> - Accepts source databases for a blue/green deployment. The results
+        ///  <c>source</c> - Accepts source databases for a blue/green deployment. The results
         /// list only includes information about the blue/green deployments with the specified
         /// source databases.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>target</code> - Accepts target databases for a blue/green deployment. The results
+        ///  <c>target</c> - Accepts target databases for a blue/green deployment. The results
         /// list only includes information about the blue/green deployments with the specified
         /// target databases.
         /// </para>
@@ -128,9 +128,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeBlueGreenDeployments</code>
+        /// An optional pagination token provided by a previous <c>DescribeBlueGreenDeployments</c>
         /// request. If you specify this parameter, the response only includes records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -149,8 +149,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

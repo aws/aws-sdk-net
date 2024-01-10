@@ -95,11 +95,11 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         ///  
         /// <para>
-        /// This variation must also be listed in the <code>variations</code> structure.
+        /// This variation must also be listed in the <c>variations</c> structure.
         /// </para>
         ///  
         /// <para>
-        /// If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code>
+        /// If you omit <c>defaultVariation</c>, the first variation listed in the <c>variations</c>
         /// structure is used as the default variation.
         /// </para>
         /// </summary>
@@ -145,7 +145,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         ///  
         /// <para>
-        /// For the override to be successful, the value of the key must match the <code>entityId</code>
+        /// For the override to be successful, the value of the key must match the <c>entityId</c>
         /// used in the <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_EvaluateFeature.html">EvaluateFeature</a>
         /// operation.
         /// </para>
@@ -184,9 +184,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property EvaluationStrategy. 
         /// <para>
-        /// If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing
-        /// launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-        /// the default variation is being served to all users.
+        /// If this value is <c>ALL_RULES</c>, the traffic allocation specified by any ongoing
+        /// launches or experiments is being used. If this is <c>DEFAULT_VARIATION</c>, the default
+        /// variation is being served to all users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

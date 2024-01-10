@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
-    /// The value that you specified for <code>NextToken</code> in a <code>List</code> request
-    /// isn't valid.
+    /// The value that you specified for <c>NextToken</c> in a <c>List</c> request isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// The Lightsail resource that <code>SetupHistory</code> was ran on.
+    /// The Lightsail resource that <c>SetupHistory</c> was ran on.
     /// </summary>
     public partial class SetupHistoryResource
     {
@@ -111,7 +111,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type. For example, <code>Instance</code>.
+        /// The Lightsail resource type. For example, <c>Instance</c>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

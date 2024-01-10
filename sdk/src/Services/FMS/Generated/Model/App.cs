@@ -59,7 +59,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The application's port number, for example <code>80</code>.
+        /// The application's port number, for example <c>80</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=65535)]
@@ -78,8 +78,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The IP protocol name or number. The name can be one of <code>tcp</code>, <code>udp</code>,
-        /// or <code>icmp</code>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// The IP protocol name or number. The name can be one of <c>tcp</c>, <c>udp</c>, or
+        /// <c>icmp</c>. For information on possible numbers, see <a href="https://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
         /// Numbers</a>.
         /// </para>
         /// </summary>

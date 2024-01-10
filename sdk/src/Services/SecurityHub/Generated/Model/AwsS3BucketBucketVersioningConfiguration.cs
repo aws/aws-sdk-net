@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The versioning status of the S3 bucket. Valid values are <code>Enabled</code> or <code>Suspended</code>.
+        /// The versioning status of the S3 bucket. Valid values are <c>Enabled</c> or <c>Suspended</c>.
         /// </para>
         /// </summary>
         public string Status

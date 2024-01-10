@@ -40,8 +40,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  A token for pagination purposes. Provide this token in the subsequent request to
-        /// <code>GetFindingsHistory</code> to get up to an additional 100 results of history
-        /// for the same finding that you specified in your initial request. 
+        /// <c>GetFindingsHistory</c> to get up to an additional 100 results of history for the
+        /// same finding that you specified in your initial request. 
         /// </para>
         /// </summary>
         public string NextToken

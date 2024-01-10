@@ -254,7 +254,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// The configuration options that control the behavior of the <code>StartTaskExecution</code>
+        /// The configuration options that control the behavior of the <c>StartTaskExecution</c>
         /// operation. Some options include preserving file or object metadata and verifying data
         /// integrity.
         /// </para>

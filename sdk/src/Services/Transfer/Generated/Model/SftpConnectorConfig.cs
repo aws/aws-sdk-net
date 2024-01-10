@@ -41,15 +41,15 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property TrustedHostKeys. 
         /// <para>
         /// The public portion of the host key, or keys, that are used to identify the external
-        /// server to which you are connecting. You can use the <code>ssh-keyscan</code> command
-        /// against the SFTP server to retrieve the necessary key.
+        /// server to which you are connecting. You can use the <c>ssh-keyscan</c> command against
+        /// the SFTP server to retrieve the necessary key.
         /// </para>
         ///  
         /// <para>
-        /// The three standard SSH public key format elements are <code>&lt;key type&gt;</code>,
-        /// <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with
-        /// spaces between each element. Specify only the <code>&lt;key type&gt;</code> and <code>&lt;body
-        /// base64&gt;</code>: do not enter the <code>&lt;comment&gt;</code> portion of the key.
+        /// The three standard SSH public key format elements are <c>&lt;key type&gt;</c>, <c>&lt;body
+        /// base64&gt;</c>, and an optional <c>&lt;comment&gt;</c>, with spaces between each element.
+        /// Specify only the <c>&lt;key type&gt;</c> and <c>&lt;body base64&gt;</c>: do not enter
+        /// the <c>&lt;comment&gt;</c> portion of the key.
         /// </para>
         ///  
         /// <para>
@@ -57,13 +57,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For RSA keys, the <code>&lt;key type&gt;</code> string is <code>ssh-rsa</code>.
+        /// For RSA keys, the <c>&lt;key type&gt;</c> string is <c>ssh-rsa</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For ECDSA keys, the <code>&lt;key type&gt;</code> string is either <code>ecdsa-sha2-nistp256</code>,
-        /// <code>ecdsa-sha2-nistp384</code>, or <code>ecdsa-sha2-nistp521</code>, depending on
-        /// the size of the key you generated.
+        /// For ECDSA keys, the <c>&lt;key type&gt;</c> string is either <c>ecdsa-sha2-nistp256</c>,
+        /// <c>ecdsa-sha2-nistp384</c>, or <c>ecdsa-sha2-nistp521</c>, depending on the size of
+        /// the key you generated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

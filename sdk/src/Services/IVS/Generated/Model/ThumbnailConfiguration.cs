@@ -41,7 +41,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property RecordingMode. 
         /// <para>
-        /// Thumbnail recording mode. Default: <code>INTERVAL</code>.
+        /// Thumbnail recording mode. Default: <c>INTERVAL</c>.
         /// </para>
         /// </summary>
         public RecordingMode RecordingMode
@@ -81,11 +81,11 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Indicates the format in which thumbnails are recorded. <code>SEQUENTIAL</code> records
-        /// all generated thumbnails in a serial manner, to the media/thumbnails directory. <code>LATEST</code>
+        /// Indicates the format in which thumbnails are recorded. <c>SEQUENTIAL</c> records all
+        /// generated thumbnails in a serial manner, to the media/thumbnails directory. <c>LATEST</c>
         /// saves the latest thumbnail in media/latest_thumbnail/thumb.jpg and overwrites it at
-        /// the interval specified by <code>targetIntervalSeconds</code>. You can enable both
-        /// <code>SEQUENTIAL</code> and <code>LATEST</code>. Default: <code>SEQUENTIAL</code>.
+        /// the interval specified by <c>targetIntervalSeconds</c>. You can enable both <c>SEQUENTIAL</c>
+        /// and <c>LATEST</c>. Default: <c>SEQUENTIAL</c>.
         /// </para>
         /// </summary>
         public List<string> Storage
@@ -104,16 +104,16 @@ namespace Amazon.IVS.Model
         /// Gets and sets the property TargetIntervalSeconds. 
         /// <para>
         /// The targeted thumbnail-generation interval in seconds. This is configurable (and required)
-        /// only if <code>recordingMode</code> is <code>INTERVAL</code>. Default: 60.
+        /// only if <c>recordingMode</c> is <c>INTERVAL</c>. Default: 60.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Important:</b> For the <code>BASIC</code> channel type, setting a value for <code>targetIntervalSeconds</code>
+        ///  <b>Important:</b> For the <c>BASIC</c> channel type, setting a value for <c>targetIntervalSeconds</c>
         /// does not guarantee that thumbnails are generated at the specified interval. For thumbnails
-        /// to be generated at the <code>targetIntervalSeconds</code> interval, the <code>IDR/Keyframe</code>
-        /// value for the input video must be less than the <code>targetIntervalSeconds</code>
-        /// value. See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html">
-        /// Amazon IVS Streaming Configuration</a> for information on setting <code>IDR/Keyframe</code>
+        /// to be generated at the <c>targetIntervalSeconds</c> interval, the <c>IDR/Keyframe</c>
+        /// value for the input video must be less than the <c>targetIntervalSeconds</c> value.
+        /// See <a href="https://docs.aws.amazon.com/ivs/latest/userguide/streaming-config.html">
+        /// Amazon IVS Streaming Configuration</a> for information on setting <c>IDR/Keyframe</c>
         /// to the recommended value in video-encoder settings.
         /// </para>
         /// </summary>

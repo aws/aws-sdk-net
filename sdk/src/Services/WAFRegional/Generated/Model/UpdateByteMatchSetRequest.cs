@@ -44,23 +44,23 @@ namespace Amazon.WAFRegional.Model
     ///  </note> 
     /// <para>
     /// Inserts or deletes <a>ByteMatchTuple</a> objects (filters) in a <a>ByteMatchSet</a>.
-    /// For each <code>ByteMatchTuple</code> object, you specify the following values: 
+    /// For each <c>ByteMatchTuple</c> object, you specify the following values: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Whether to insert or delete the object from the array. If you want to change a <code>ByteMatchSetUpdate</code>
+    /// Whether to insert or delete the object from the array. If you want to change a <c>ByteMatchSetUpdate</c>
     /// object, you delete the existing object and add a new one.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The part of a web request that you want AWS WAF to inspect, such as a query string
-    /// or the value of the <code>User-Agent</code> header. 
+    /// or the value of the <c>User-Agent</c> header. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The bytes (typically a string that corresponds with ASCII characters) that you want
     /// AWS WAF to look for. For more information, including how you specify the values for
-    /// the AWS WAF API and the AWS CLI or SDKs, see <code>TargetString</code> in the <a>ByteMatchTuple</a>
+    /// the AWS WAF API and the AWS CLI or SDKs, see <c>TargetString</c> in the <a>ByteMatchTuple</a>
     /// data type. 
     /// </para>
     ///  </li> <li> 
@@ -74,28 +74,28 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For example, you can add a <code>ByteMatchSetUpdate</code> object that matches web
-    /// requests in which <code>User-Agent</code> headers contain the string <code>BadBot</code>.
-    /// You can then configure AWS WAF to block those requests.
+    /// For example, you can add a <c>ByteMatchSetUpdate</c> object that matches web requests
+    /// in which <c>User-Agent</c> headers contain the string <c>BadBot</c>. You can then
+    /// configure AWS WAF to block those requests.
     /// </para>
     ///  
     /// <para>
-    /// To create and configure a <code>ByteMatchSet</code>, perform the following steps:
+    /// To create and configure a <c>ByteMatchSet</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create a <code>ByteMatchSet.</code> For more information, see <a>CreateByteMatchSet</a>.
+    /// Create a <c>ByteMatchSet.</c> For more information, see <a>CreateByteMatchSet</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of an <code>UpdateByteMatchSet</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of an <c>UpdateByteMatchSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit an <code>UpdateByteMatchSet</code> request to specify the part of the request
-    /// that you want AWS WAF to inspect (for example, the header or the URI) and the value
-    /// that you want AWS WAF to watch for.
+    /// Submit an <c>UpdateByteMatchSet</c> request to specify the part of the request that
+    /// you want AWS WAF to inspect (for example, the header or the URI) and the value that
+    /// you want AWS WAF to watch for.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -113,8 +113,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ByteMatchSetId. 
         /// <para>
-        /// The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to update.
-        /// <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
+        /// The <c>ByteMatchSetId</c> of the <a>ByteMatchSet</a> that you want to update. <c>ByteMatchSetId</c>
+        /// is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -152,22 +152,21 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Updates. 
         /// <para>
-        /// An array of <code>ByteMatchSetUpdate</code> objects that you want to insert into or
-        /// delete from a <a>ByteMatchSet</a>. For more information, see the applicable data types:
+        /// An array of <c>ByteMatchSetUpdate</c> objects that you want to insert into or delete
+        /// from a <a>ByteMatchSet</a>. For more information, see the applicable data types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ByteMatchSetUpdate</a>: Contains <code>Action</code> and <code>ByteMatchTuple</code>
-        /// 
+        ///  <a>ByteMatchSetUpdate</a>: Contains <c>Action</c> and <c>ByteMatchTuple</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>, <code>PositionalConstraint</code>,
-        /// <code>TargetString</code>, and <code>TextTransformation</code> 
+        ///  <a>ByteMatchTuple</a>: Contains <c>FieldToMatch</c>, <c>PositionalConstraint</c>,
+        /// <c>TargetString</c>, and <c>TextTransformation</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        ///  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

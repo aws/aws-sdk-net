@@ -77,11 +77,11 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// This operation returns a <code>JobId</code>. Use this parameter in the <code> <a>GetOrganizationsAccessReport</a>
-    /// </code> operation to check the status of the report generation. To check the status
-    /// of this request, use the <code>JobId</code> parameter in the <code> <a>GetOrganizationsAccessReport</a>
-    /// </code> operation and test the <code>JobStatus</code> response parameter. When the
-    /// job is complete, you can retrieve the report.
+    /// This operation returns a <c>JobId</c>. Use this parameter in the <c> <a>GetOrganizationsAccessReport</a>
+    /// </c> operation to check the status of the report generation. To check the status of
+    /// this request, use the <c>JobId</c> parameter in the <c> <a>GetOrganizationsAccessReport</a>
+    /// </c> operation and test the <c>JobStatus</c> response parameter. When the job is complete,
+    /// you can retrieve the report.
     /// </para>
     ///  
     /// <para>
@@ -183,9 +183,9 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The path of the Organizations entity (root, OU, or account). You can build an entity
         /// path using the known structure of your organization. For example, assume that your
-        /// account ID is <code>123456789012</code> and its parent OU ID is <code>ou-rge0-awsabcde</code>.
-        /// The organization root ID is <code>r-f6g7h8i9j0example</code> and your organization
-        /// ID is <code>o-a1b2c3d4e5</code>. Your entity path is <code>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</code>.
+        /// account ID is <c>123456789012</c> and its parent OU ID is <c>ou-rge0-awsabcde</c>.
+        /// The organization root ID is <c>r-f6g7h8i9j0example</c> and your organization ID is
+        /// <c>o-a1b2c3d4e5</c>. Your entity path is <c>o-a1b2c3d4e5/r-f6g7h8i9j0example/ou-rge0-awsabcde/123456789012</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=427)]

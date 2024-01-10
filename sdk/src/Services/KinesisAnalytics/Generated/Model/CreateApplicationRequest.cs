@@ -67,7 +67,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// <para>
     ///  To read data from your source stream or write data to destination streams, Amazon
     /// Kinesis Analytics needs your permissions. You grant these permissions by creating
-    /// IAM roles. This operation requires permissions to perform the <code>kinesisanalytics:CreateApplication</code>
+    /// IAM roles. This operation requires permissions to perform the <c>kinesisanalytics:CreateApplication</c>
     /// action. 
     /// </para>
     ///  
@@ -106,9 +106,9 @@ namespace Amazon.KinesisAnalytics.Model
         ///  
         /// <para>
         /// Note that the application code must create the streams with names specified in the
-        /// <code>Outputs</code>. For example, if your <code>Outputs</code> defines output streams
-        /// named <code>ExampleOutputStream1</code> and <code>ExampleOutputStream2</code>, then
-        /// your application code must create these streams. 
+        /// <c>Outputs</c>. For example, if your <c>Outputs</c> defines output streams named <c>ExampleOutputStream1</c>
+        /// and <c>ExampleOutputStream2</c>, then your application code must create these streams.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=102400)]
@@ -146,7 +146,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// Name of your Amazon Kinesis Analytics application (for example, <code>sample-app</code>).
+        /// Name of your Amazon Kinesis Analytics application (for example, <c>sample-app</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

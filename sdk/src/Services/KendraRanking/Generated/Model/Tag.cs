@@ -31,7 +31,7 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// A key-value pair that identifies or categorizes a rescore execution plan. A rescore
     /// execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning
-    /// the <code>Rescore</code> API. You can also use a tag to help control access to a rescore
+    /// the <c>Rescore</c> API. You can also use a tag to help control access to a rescore
     /// execution plan. A tag key and value can consist of Unicode letters, digits, white
     /// space, and any of the following symbols: _ . : / = + - @.
     /// </summary>

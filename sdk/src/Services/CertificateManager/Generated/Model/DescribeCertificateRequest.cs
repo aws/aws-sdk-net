@@ -34,7 +34,7 @@ namespace Amazon.CertificateManager.Model
     /// 
     ///  
     /// <para>
-    /// If you have just created a certificate using the <code>RequestCertificate</code> action,
+    /// If you have just created a certificate using the <c>RequestCertificate</c> action,
     /// there is a delay of several seconds before you can retrieve information about it.
     /// </para>
     /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         ///  

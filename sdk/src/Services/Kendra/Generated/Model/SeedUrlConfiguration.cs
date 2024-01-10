@@ -74,23 +74,23 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HOST_ONLY</code>—crawl only the website host names. For example, if the seed
-        /// URL is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.
+        ///  <c>HOST_ONLY</c>—crawl only the website host names. For example, if the seed URL
+        /// is "abc.example.com", then only URLs with host name "abc.example.com" are crawled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBDOMAINS</code>—crawl the website host names with subdomains. For example,
-        /// if the seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com"
-        /// are also crawled.
+        ///  <c>SUBDOMAINS</c>—crawl the website host names with subdomains. For example, if the
+        /// seed URL is "abc.example.com", then "a.abc.example.com" and "b.abc.example.com" are
+        /// also crawled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EVERYTHING</code>—crawl the website host names with subdomains and other domains
+        ///  <c>EVERYTHING</c>—crawl the website host names with subdomains and other domains
         /// that the web pages link to.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default mode is set to <code>HOST_ONLY</code>.
+        /// The default mode is set to <c>HOST_ONLY</c>.
         /// </para>
         /// </summary>
         public WebCrawlerMode WebCrawlerMode

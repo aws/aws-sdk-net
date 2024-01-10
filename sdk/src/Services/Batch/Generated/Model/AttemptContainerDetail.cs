@@ -81,8 +81,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property LogStreamName. 
         /// <para>
         /// The name of the CloudWatch Logs log stream that's associated with the container. The
-        /// log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt receives
-        /// a log stream name when they reach the <code>RUNNING</code> status.
+        /// log group for Batch jobs is <c>/aws/batch/job</c>. Each container attempt receives
+        /// a log stream name when they reach the <c>RUNNING</c> status.
         /// </para>
         /// </summary>
         public string LogStreamName
@@ -138,7 +138,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property TaskArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the job
-        /// attempt. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
+        /// attempt. Each container attempt receives a task ARN when they reach the <c>STARTING</c>
         /// status.
         /// </para>
         /// </summary>

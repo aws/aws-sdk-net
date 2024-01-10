@@ -121,10 +121,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs
-        /// and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state.
-        /// This is specifically at the time <a>SubmitJob</a> was called. For array child jobs,
-        /// this is when the child job was spawned by its parent and entered the <code>PENDING</code>
-        /// state.
+        /// and parent array jobs, this is when the job entered the <c>SUBMITTED</c> state. This
+        /// is specifically at the time <a>SubmitJob</a> was called. For array child jobs, this
+        /// is when the child job was spawned by its parent and entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
         public long CreatedAt
@@ -179,8 +178,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property EksProperties. 
         /// <para>
         /// An object with various properties that are specific to Amazon EKS based jobs. Only
-        /// one of <code>container</code>, <code>eksProperties</code>, or <code>nodeDetails</code>
-        /// is specified.
+        /// one of <c>container</c>, <c>eksProperties</c>, or <c>nodeDetails</c> is specified.
         /// </para>
         /// </summary>
         public EksPropertiesDetail EksProperties
@@ -390,7 +388,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property PlatformCapabilities. 
         /// <para>
         /// The platform capabilities required by the job definition. If no value is specified,
-        /// it defaults to <code>EC2</code>. Jobs run on Fargate resources specify <code>FARGATE</code>.
+        /// it defaults to <c>EC2</c>. Jobs run on Fargate resources specify <c>FARGATE</c>.
         /// </para>
         /// </summary>
         public List<string> PlatformCapabilities
@@ -412,7 +410,7 @@ namespace Amazon.Batch.Model
         /// Amazon ECS task. If no value is specified, the tags aren't propagated. Tags can only
         /// be propagated to the tasks when the tasks are created. For tags with the same name,
         /// job tags are given priority over job definitions tags. If the total number of combined
-        /// tags from the job and job definition is over 50, the job is moved to the <code>FAILED</code>
+        /// tags from the job and job definition is over 50, the job is moved to the <c>FAILED</c>
         /// state.
         /// </para>
         /// </summary>
@@ -488,7 +486,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property StartedAt. 
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was started. More specifically,
-        /// it's when the job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
+        /// it's when the job transitioned from the <c>STARTING</c> state to the <c>RUNNING</c>
         /// state. This parameter isn't provided for child jobs of array jobs or multi-node parallel
         /// jobs.
         /// </para>
@@ -513,7 +511,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If your jobs don't progress to <code>STARTING</code>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
+        /// If your jobs don't progress to <c>STARTING</c>, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/troubleshooting.html#job_stuck_in_runnable">Jobs
         /// stuck in RUNNABLE status</a> in the troubleshooting section of the <i>Batch User Guide</i>.
         /// </para>
         ///  </note>
@@ -554,8 +552,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property StoppedAt. 
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was stopped. More specifically,
-        /// it's when the job transitioned from the <code>RUNNING</code> state to a terminal state,
-        /// such as <code>SUCCEEDED</code> or <code>FAILED</code>.
+        /// it's when the job transitioned from the <c>RUNNING</c> state to a terminal state,
+        /// such as <c>SUCCEEDED</c> or <c>FAILED</c>.
         /// </para>
         /// </summary>
         public long StoppedAt

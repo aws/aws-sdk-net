@@ -46,27 +46,26 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>none</code> – No cookies in viewer requests are included in the cache key or
-        /// in requests that CloudFront sends to the origin. Even when this field is set to <code>none</code>,
-        /// any cookies that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included
-        /// in origin requests.
+        ///  <c>none</c> – No cookies in viewer requests are included in the cache key or in requests
+        /// that CloudFront sends to the origin. Even when this field is set to <c>none</c>, any
+        /// cookies that are listed in an <c>OriginRequestPolicy</c> <i>are</i> included in origin
+        /// requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>whitelist</code> – Only the cookies in viewer requests that are listed in the
-        /// <code>CookieNames</code> type are included in the cache key and in requests that CloudFront
-        /// sends to the origin.
+        ///  <c>whitelist</c> – Only the cookies in viewer requests that are listed in the <c>CookieNames</c>
+        /// type are included in the cache key and in requests that CloudFront sends to the origin.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>allExcept</code> – All cookies in viewer requests are included in the cache
-        /// key and in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for
-        /// those that are listed in the <code>CookieNames</code> type, which are not included.
+        ///  <c>allExcept</c> – All cookies in viewer requests are included in the cache key and
+        /// in requests that CloudFront sends to the origin, <i> <b>except</b> </i> for those
+        /// that are listed in the <c>CookieNames</c> type, which are not included.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>all</code> – All cookies in viewer requests are included in the cache key and
-        /// in requests that CloudFront sends to the origin.
+        ///  <c>all</c> – All cookies in viewer requests are included in the cache key and in
+        /// requests that CloudFront sends to the origin.
         /// </para>
         ///  </li> </ul>
         /// </summary>

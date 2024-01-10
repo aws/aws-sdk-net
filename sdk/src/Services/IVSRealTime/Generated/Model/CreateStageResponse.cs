@@ -39,7 +39,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property ParticipantTokens. 
         /// <para>
-        /// Participant tokens attached to the stage. These correspond to the <code>participants</code>
+        /// Participant tokens attached to the stage. These correspond to the <c>participants</c>
         /// in the request.
         /// </para>
         /// </summary>

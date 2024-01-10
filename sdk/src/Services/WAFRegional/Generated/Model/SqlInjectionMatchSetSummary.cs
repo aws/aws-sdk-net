@@ -42,7 +42,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The <code>Id</code> and <code>Name</code> of a <code>SqlInjectionMatchSet</code>.
+    /// The <c>Id</c> and <c>Name</c> of a <c>SqlInjectionMatchSet</c>.
     /// </para>
     /// </summary>
     public partial class SqlInjectionMatchSetSummary
@@ -53,7 +53,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>SqlInjectionMatchSet</code>, if any, specified by <code>Id</code>.
+        /// The name of the <c>SqlInjectionMatchSet</c>, if any, specified by <c>Id</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -72,17 +72,17 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property SqlInjectionMatchSetId. 
         /// <para>
-        /// A unique identifier for a <code>SqlInjectionMatchSet</code>. You use <code>SqlInjectionMatchSetId</code>
-        /// to get information about a <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>),
-        /// update a <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
-        /// insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete one
-        /// from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a <code>SqlInjectionMatchSet</code>
-        /// from AWS WAF (see <a>DeleteSqlInjectionMatchSet</a>).
+        /// A unique identifier for a <c>SqlInjectionMatchSet</c>. You use <c>SqlInjectionMatchSetId</c>
+        /// to get information about a <c>SqlInjectionMatchSet</c> (see <a>GetSqlInjectionMatchSet</a>),
+        /// update a <c>SqlInjectionMatchSet</c> (see <a>UpdateSqlInjectionMatchSet</a>), insert
+        /// a <c>SqlInjectionMatchSet</c> into a <c>Rule</c> or delete one from a <c>Rule</c>
+        /// (see <a>UpdateRule</a>), and delete a <c>SqlInjectionMatchSet</c> from AWS WAF (see
+        /// <a>DeleteSqlInjectionMatchSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a>
-        /// and by <a>ListSqlInjectionMatchSets</a>.
+        ///  <c>SqlInjectionMatchSetId</c> is returned by <a>CreateSqlInjectionMatchSet</a> and
+        /// by <a>ListSqlInjectionMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

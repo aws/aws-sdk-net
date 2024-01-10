@@ -31,7 +31,7 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Contains details about the truck dimensions in the unit of measurement that you specify.
     /// Used to filter out roads that can't support or allow the specified dimensions for
-    /// requests that specify <code>TravelMode</code> as <code>Truck</code>.
+    /// requests that specify <c>TravelMode</c> as <c>Truck</c>.
     /// </summary>
     public partial class TruckDimensions
     {
@@ -47,7 +47,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, <code>4.5</code>.
+        /// For example, <c>4.5</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, <code>15.5</code>.
+        /// For example, <c>15.5</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -105,7 +105,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>Meters</code> 
+        /// Default Value: <c>Meters</c> 
         /// </para>
         /// </summary>
         public DimensionUnit Unit
@@ -127,7 +127,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, <code>4.5</code>.
+        /// For example, <c>4.5</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

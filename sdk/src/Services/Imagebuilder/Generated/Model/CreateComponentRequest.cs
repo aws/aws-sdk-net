@@ -36,11 +36,11 @@ namespace Amazon.Imagebuilder.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Inline, using the <code>data</code> property in the request body.
+    /// Inline, using the <c>data</c> property in the request body.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+    /// A URL that points to a YAML document file stored in Amazon S3, using the <c>uri</c>
     /// property in the request body.
     /// </para>
     ///  </li> </ul>
@@ -103,9 +103,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// Component <code>data</code> contains inline YAML document content for the component.
-        /// Alternatively, you can specify the <code>uri</code> of a YAML document file stored
-        /// in Amazon S3. However, you cannot specify both properties.
+        /// Component <c>data</c> contains inline YAML document content for the component. Alternatively,
+        /// you can specify the <c>uri</c> of a YAML document file stored in Amazon S3. However,
+        /// you cannot specify both properties.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16000)]
@@ -277,13 +277,13 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Uri. 
         /// <para>
-        /// The <code>uri</code> of a YAML component document file. This must be an S3 URL (<code>s3://bucket/key</code>),
+        /// The <c>uri</c> of a YAML component document file. This must be an S3 URL (<c>s3://bucket/key</c>),
         /// and the requester must have permission to access the S3 bucket it points to. If you
         /// use Amazon S3, you can specify component content up to your service quota.
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, you can specify the YAML document inline, using the component <code>data</code>
+        /// Alternatively, you can specify the YAML document inline, using the component <c>data</c>
         /// property. You cannot specify both properties.
         /// </para>
         /// </summary>

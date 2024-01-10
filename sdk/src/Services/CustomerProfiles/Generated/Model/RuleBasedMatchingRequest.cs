@@ -44,7 +44,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AttributeTypesSelector. 
         /// <para>
-        /// Configures information about the <code>AttributeTypesSelector</code> where the rule-based
+        /// Configures information about the <c>AttributeTypesSelector</c> where the rule-based
         /// identity resolution uses to match profiles.
         /// </para>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property MatchingRules. 
         /// <para>
         /// Configures how the rule-based matching process should match profiles. You can have
-        /// up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.
+        /// up to 15 <c>MatchingRule</c> in the <c>MatchingRules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]

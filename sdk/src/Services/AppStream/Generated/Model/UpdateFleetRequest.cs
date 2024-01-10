@@ -34,13 +34,13 @@ namespace Amazon.AppStream.Model
     /// 
     ///  
     /// <para>
-    /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-    /// the fleet name.
+    /// If the fleet is in the <c>STOPPED</c> state, you can update any attribute except the
+    /// fleet name.
     /// </para>
     ///  
     /// <para>
-    /// If the fleet is in the <code>RUNNING</code> state, you can update the following based
-    /// on the fleet type:
+    /// If the fleet is in the <c>RUNNING</c> state, you can update the following based on
+    /// the fleet type:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -48,9 +48,8 @@ namespace Amazon.AppStream.Model
     /// </para>
     ///  
     /// <para>
-    /// You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
-    /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
-    /// attributes.
+    /// You can update the <c>DisplayName</c>, <c>ComputeCapacity</c>, <c>ImageARN</c>, <c>ImageName</c>,
+    /// <c>IdleDisconnectTimeoutInSeconds</c>, and <c>DisconnectTimeoutInSeconds</c> attributes.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,14 +57,13 @@ namespace Amazon.AppStream.Model
     /// </para>
     ///  
     /// <para>
-    /// You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
-    /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, <code>SessionScriptS3Location</code>
-    /// and <code>UsbDeviceFilterStrings</code> attributes.
+    /// You can update the <c>DisplayName</c>, <c>IdleDisconnectTimeoutInSeconds</c>, <c>DisconnectTimeoutInSeconds</c>,
+    /// <c>MaxConcurrentSessions</c>, <c>SessionScriptS3Location</c> and <c>UsbDeviceFilterStrings</c>
+    /// attributes.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't
-    /// update it.
+    /// If the fleet is in the <c>STARTING</c> or <c>STOPPED</c> state, you can't update it.
     /// </para>
     /// </summary>
     public partial class UpdateFleetRequest : AmazonAppStreamRequest
@@ -252,7 +250,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a
-        /// role, a fleet instance calls the AWS Security Token Service (STS) <code>AssumeRole</code>
+        /// role, a fleet instance calls the AWS Security Token Service (STS) <c>AssumeRole</c>
         /// API operation and passes the ARN of the role to use. The operation creates a new session
         /// with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
         /// creates the <b>appstream_machine_role</b> credential profile on the instance.
@@ -280,15 +278,14 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property IdleDisconnectTimeoutInSeconds. 
         /// <para>
         /// The amount of time that users can be idle (inactive) before they are disconnected
-        /// from their streaming session and the <code>DisconnectTimeoutInSeconds</code> time
-        /// interval begins. Users are notified before they are disconnected due to inactivity.
-        /// If users try to reconnect to the streaming session before the time interval specified
-        /// in <code>DisconnectTimeoutInSeconds</code> elapses, they are connected to their previous
-        /// session. Users are considered idle when they stop providing keyboard or mouse input
-        /// during their streaming session. File uploads and downloads, audio in, audio out, and
-        /// pixels changing do not qualify as user activity. If users continue to be idle after
-        /// the time interval in <code>IdleDisconnectTimeoutInSeconds</code> elapses, they are
-        /// disconnected. 
+        /// from their streaming session and the <c>DisconnectTimeoutInSeconds</c> time interval
+        /// begins. Users are notified before they are disconnected due to inactivity. If users
+        /// try to reconnect to the streaming session before the time interval specified in <c>DisconnectTimeoutInSeconds</c>
+        /// elapses, they are connected to their previous session. Users are considered idle when
+        /// they stop providing keyboard or mouse input during their streaming session. File uploads
+        /// and downloads, audio in, audio out, and pixels changing do not qualify as user activity.
+        /// If users continue to be idle after the time interval in <c>IdleDisconnectTimeoutInSeconds</c>
+        /// elapses, they are disconnected. 
         /// </para>
         ///  
         /// <para>
@@ -663,13 +660,13 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property StreamView. 
         /// <para>
         /// The AppStream 2.0 view that is displayed to your users when they stream from the fleet.
-        /// When <code>APP</code> is specified, only the windows of applications opened by users
-        /// display. When <code>DESKTOP</code> is specified, the standard desktop that is provided
-        /// by the operating system displays.
+        /// When <c>APP</c> is specified, only the windows of applications opened by users display.
+        /// When <c>DESKTOP</c> is specified, the standard desktop that is provided by the operating
+        /// system displays.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>APP</code>.
+        /// The default value is <c>APP</c>.
         /// </para>
         /// </summary>
         public StreamView StreamView

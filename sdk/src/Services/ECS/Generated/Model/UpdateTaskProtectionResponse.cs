@@ -61,16 +61,16 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>taskArn</code>: The task ARN.
+        ///  <c>taskArn</c>: The task ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>protectionEnabled</code>: The protection status of the task. If scale-in protection
-        /// is turned on for a task, the value is <code>true</code>. Otherwise, it is <code>false</code>.
+        ///  <c>protectionEnabled</c>: The protection status of the task. If scale-in protection
+        /// is turned on for a task, the value is <c>true</c>. Otherwise, it is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>expirationDate</code>: The epoch time when protection for the task will expire.
+        ///  <c>expirationDate</c>: The epoch time when protection for the task will expire.
         /// </para>
         ///  </li> </ul>
         /// </summary>

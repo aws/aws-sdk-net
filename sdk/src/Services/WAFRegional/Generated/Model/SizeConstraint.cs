@@ -43,10 +43,9 @@ namespace Amazon.WAFRegional.Model
     ///  </note> 
     /// <para>
     /// Specifies a constraint on the size of a part of the web request. AWS WAF uses the
-    /// <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code>
-    /// to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code>
-    /// size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code>
-    /// is considered to match.
+    /// <c>Size</c>, <c>ComparisonOperator</c>, and <c>FieldToMatch</c> to build an expression
+    /// in the form of "<c>Size</c> <c>ComparisonOperator</c> size in bytes of <c>FieldToMatch</c>".
+    /// If that expression is true, the <c>SizeConstraint</c> is considered to match.
     /// </para>
     /// </summary>
     public partial class SizeConstraint
@@ -60,40 +59,39 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
         /// The type of comparison you want AWS WAF to perform. AWS WAF uses this in combination
-        /// with the provided <code>Size</code> and <code>FieldToMatch</code> to build an expression
-        /// in the form of "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
-        /// <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code>
-        /// is considered to match.
+        /// with the provided <c>Size</c> and <c>FieldToMatch</c> to build an expression in the
+        /// form of "<c>Size</c> <c>ComparisonOperator</c> size in bytes of <c>FieldToMatch</c>".
+        /// If that expression is true, the <c>SizeConstraint</c> is considered to match.
         /// </para>
         ///  
         /// <para>
-        ///  <b>EQ</b>: Used to test if the <code>Size</code> is equal to the size of the <code>FieldToMatch</code>
+        ///  <b>EQ</b>: Used to test if the <c>Size</c> is equal to the size of the <c>FieldToMatch</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <b>NE</b>: Used to test if the <code>Size</code> is not equal to the size of the
-        /// <code>FieldToMatch</code> 
+        ///  <b>NE</b>: Used to test if the <c>Size</c> is not equal to the size of the <c>FieldToMatch</c>
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  <b>LE</b>: Used to test if the <code>Size</code> is less than or equal to the size
-        /// of the <code>FieldToMatch</code> 
+        ///  <b>LE</b>: Used to test if the <c>Size</c> is less than or equal to the size of the
+        /// <c>FieldToMatch</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>LT</b>: Used to test if the <code>Size</code> is strictly less than the size of
-        /// the <code>FieldToMatch</code> 
+        ///  <b>LT</b>: Used to test if the <c>Size</c> is strictly less than the size of the
+        /// <c>FieldToMatch</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>GE</b>: Used to test if the <code>Size</code> is greater than or equal to the
-        /// size of the <code>FieldToMatch</code> 
+        ///  <b>GE</b>: Used to test if the <c>Size</c> is greater than or equal to the size of
+        /// the <c>FieldToMatch</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>GT</b>: Used to test if the <code>Size</code> is strictly greater than the size
-        /// of the <code>FieldToMatch</code> 
+        ///  <b>GT</b>: Used to test if the <c>Size</c> is strictly greater than the size of the
+        /// <c>FieldToMatch</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -132,10 +130,10 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Size. 
         /// <para>
         /// The size in bytes that you want AWS WAF to compare against the size of the specified
-        /// <code>FieldToMatch</code>. AWS WAF uses this in combination with <code>ComparisonOperator</code>
-        /// and <code>FieldToMatch</code> to build an expression in the form of "<code>Size</code>
-        /// <code>ComparisonOperator</code> size in bytes of <code>FieldToMatch</code>". If that
-        /// expression is true, the <code>SizeConstraint</code> is considered to match.
+        /// <c>FieldToMatch</c>. AWS WAF uses this in combination with <c>ComparisonOperator</c>
+        /// and <c>FieldToMatch</c> to build an expression in the form of "<c>Size</c> <c>ComparisonOperator</c>
+        /// size in bytes of <c>FieldToMatch</c>". If that expression is true, the <c>SizeConstraint</c>
+        /// is considered to match.
         /// </para>
         ///  
         /// <para>
@@ -143,9 +141,8 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>URI</code> for the value of <code>Type</code>, the / in the URI
-        /// counts as one character. For example, the URI <code>/logo.jpg</code> is nine characters
-        /// long.
+        /// If you specify <c>URI</c> for the value of <c>Type</c>, the / in the URI counts as
+        /// one character. For example, the URI <c>/logo.jpg</c> is nine characters long.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=21474836480)]
@@ -166,8 +163,8 @@ namespace Amazon.WAFRegional.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS
-        /// WAF performs the transformation on <code>FieldToMatch</code> before inspecting it
-        /// for a match.
+        /// WAF performs the transformation on <c>FieldToMatch</c> before inspecting it for a
+        /// match.
         /// </para>
         ///  
         /// <para>
@@ -175,9 +172,9 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that if you choose <code>BODY</code> for the value of <code>Type</code>, you
-        /// must choose <code>NONE</code> for <code>TextTransformation</code> because CloudFront
-        /// forwards only the first 8192 bytes for inspection. 
+        /// Note that if you choose <c>BODY</c> for the value of <c>Type</c>, you must choose
+        /// <c>NONE</c> for <c>TextTransformation</c> because CloudFront forwards only the first
+        /// 8192 bytes for inspection. 
         /// </para>
         ///  
         /// <para>
@@ -185,7 +182,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>NONE</code> if you don't want to perform any text transformations.
+        /// Specify <c>NONE</c> if you don't want to perform any text transformations.
         /// </para>
         ///  
         /// <para>
@@ -252,7 +249,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
+        ///  <c>COMPRESS_WHITE_SPACE</c> also replaces multiple spaces with one space.
         /// </para>
         ///  
         /// <para>
@@ -260,33 +257,33 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+        /// Use this option to replace HTML-encoded characters with unencoded characters. <c>HTML_ENTITY_DECODE</c>
         /// performs the following operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)quot;</code> with <code>"</code> 
+        /// Replaces <c>(ampersand)quot;</c> with <c>"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+        /// Replaces <c>(ampersand)nbsp;</c> with a non-breaking space, decimal 160
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+        /// Replaces <c>(ampersand)lt;</c> with a "less than" symbol
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> 
+        /// Replaces <c>(ampersand)gt;</c> with <c>&gt;</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>,
+        /// Replaces characters that are represented in hexadecimal format, <c>(ampersand)#xhhhh;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
+        /// Replaces characters that are represented in decimal format, <c>(ampersand)#nnnn;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> </ul> 

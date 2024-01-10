@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// A private Autonomous System Number (ASN) for the Amazon side of a BGP session. The
         /// range is 64512 to 65534 for 16-bit ASNs and 4200000000 to 4294967294 for 32-bit ASNs.
-        /// The default is <code>64512</code>.
+        /// The default is <c>64512</c>.
         /// </para>
         /// </summary>
         public long AmazonSideAsn

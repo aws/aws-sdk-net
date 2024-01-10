@@ -43,9 +43,9 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>,
-        /// which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-        /// CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
+        /// Specifies the format of S3 data to be imported. Valid values are <c>CSV</c>, which
+        /// identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
+        /// CSV format</a> or <c>OPENCYPHER</c>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
         /// load format</a>.
         /// </para>
         /// </summary>

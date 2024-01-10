@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Formatting configuration for <code>DateTime</code> fields.
+    /// Formatting configuration for <c>DateTime</c> fields.
     /// </summary>
     public partial class DateTimeFormatConfiguration
     {
@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DateTimeFormat. 
         /// <para>
-        /// Determines the <code>DateTime</code> format.
+        /// Determines the <c>DateTime</c> format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property NumericFormatConfiguration. 
         /// <para>
-        /// The formatting configuration for numeric <code>DateTime</code> fields.
+        /// The formatting configuration for numeric <c>DateTime</c> fields.
         /// </para>
         /// </summary>
         public NumericFormatConfiguration NumericFormatConfiguration

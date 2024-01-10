@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration,
     /// and include the players to be matched. You must also include any player attributes
     /// that are required by the matchmaking configuration's rule set. If successful, a matchmaking
-    /// ticket is returned with status set to <code>QUEUED</code>. 
+    /// ticket is returned with status set to <c>QUEUED</c>. 
     /// </para>
     ///  
     /// <para>
@@ -104,12 +104,12 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Information on each player to be matched. This information must include a player ID,
         /// and may contain player attributes and latency data to be used in the matchmaking process.
-        /// After a successful match, <code>Player</code> objects contain the name of the team
-        /// the player is assigned to.
+        /// After a successful match, <c>Player</c> objects contain the name of the team the player
+        /// is assigned to.
         /// </para>
         ///  
         /// <para>
-        /// You can include up to 10 <code>Players</code> in a <code>StartMatchmaking</code> request.
+        /// You can include up to 10 <c>Players</c> in a <c>StartMatchmaking</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

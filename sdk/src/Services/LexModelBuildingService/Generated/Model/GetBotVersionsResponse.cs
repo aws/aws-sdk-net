@@ -39,8 +39,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Bots. 
         /// <para>
-        /// An array of <code>BotMetadata</code> objects, one for each numbered version of the
-        /// bot plus one for the <code>$LATEST</code> version.
+        /// An array of <c>BotMetadata</c> objects, one for each numbered version of the bot plus
+        /// one for the <c>$LATEST</c> version.
         /// </para>
         /// </summary>
         public List<BotMetadata> Bots

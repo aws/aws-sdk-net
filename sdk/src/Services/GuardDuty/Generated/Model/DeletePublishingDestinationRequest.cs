@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePublishingDestination operation.
-    /// Deletes the publishing definition with the specified <code>destinationId</code>.
+    /// Deletes the publishing definition with the specified <c>destinationId</c>.
     /// </summary>
     public partial class DeletePublishingDestinationRequest : AmazonGuardDutyRequest
     {

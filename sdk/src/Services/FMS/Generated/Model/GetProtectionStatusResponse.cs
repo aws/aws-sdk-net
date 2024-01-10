@@ -102,18 +102,17 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you have more objects than the number that you specified for <code>MaxResults</code>
-        /// in the request, the response includes a <code>NextToken</code> value. To list more
-        /// objects, submit another <code>GetProtectionStatus</code> request, and specify the
-        /// <code>NextToken</code> value from the response in the <code>NextToken</code> value
-        /// in the next request.
+        /// If you have more objects than the number that you specified for <c>MaxResults</c>
+        /// in the request, the response includes a <c>NextToken</c> value. To list more objects,
+        /// submit another <c>GetProtectionStatus</c> request, and specify the <c>NextToken</c>
+        /// value from the response in the <c>NextToken</c> value in the next request.
         /// </para>
         ///  
         /// <para>
-        /// Amazon Web Services SDKs provide auto-pagination that identify <code>NextToken</code>
-        /// in a response and make subsequent request calls automatically on your behalf. However,
-        /// this feature is not supported by <code>GetProtectionStatus</code>. You must submit
-        /// subsequent requests with <code>NextToken</code> using your own processes. 
+        /// Amazon Web Services SDKs provide auto-pagination that identify <c>NextToken</c> in
+        /// a response and make subsequent request calls automatically on your behalf. However,
+        /// this feature is not supported by <c>GetProtectionStatus</c>. You must submit subsequent
+        /// requests with <c>NextToken</c> using your own processes. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -132,7 +131,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ServiceType. 
         /// <para>
-        /// The service type that is protected by the policy. Currently, this is always <code>SHIELD_ADVANCED</code>.
+        /// The service type that is protected by the policy. Currently, this is always <c>SHIELD_ADVANCED</c>.
         /// </para>
         /// </summary>
         public SecurityServiceType ServiceType

@@ -39,25 +39,25 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// The Amazon Web Services account IDs that have access to the manual Amazon RDS DB cluster
-        /// snapshot. If the value <code>all</code> is specified, then the Amazon RDS DB cluster
-        /// snapshot is public and can be copied or restored by all Amazon Web Services accounts.
+        /// snapshot. If the value <c>all</c> is specified, then the Amazon RDS DB cluster snapshot
+        /// is public and can be copied or restored by all Amazon Web Services accounts.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If the configuration is for an existing Amazon RDS DB cluster snapshot and you do
-        /// not specify the <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>,
-        /// then the access preview uses the existing shared <code>accountIds</code> for the snapshot.
+        /// not specify the <c>accountIds</c> in <c>RdsDbClusterSnapshotAttributeValue</c>, then
+        /// the access preview uses the existing shared <c>accountIds</c> for the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the access preview is for a new resource and you do not specify the specify the
-        /// <code>accountIds</code> in <code>RdsDbClusterSnapshotAttributeValue</code>, then the
-        /// access preview considers the snapshot without any attributes.
+        /// <c>accountIds</c> in <c>RdsDbClusterSnapshotAttributeValue</c>, then the access preview
+        /// considers the snapshot without any attributes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To propose deletion of existing shared <code>accountIds</code>, you can specify an
-        /// empty list for <code>accountIds</code> in the <code>RdsDbClusterSnapshotAttributeValue</code>.
+        /// To propose deletion of existing shared <c>accountIds</c>, you can specify an empty
+        /// list for <c>accountIds</c> in the <c>RdsDbClusterSnapshotAttributeValue</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

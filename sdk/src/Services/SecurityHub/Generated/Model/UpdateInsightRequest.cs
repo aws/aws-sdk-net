@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property GroupByAttribute. 
         /// <para>
-        /// The updated <code>GroupBy</code> attribute that defines this insight.
+        /// The updated <c>GroupBy</c> attribute that defines this insight.
         /// </para>
         /// </summary>
         public string GroupByAttribute

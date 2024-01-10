@@ -49,7 +49,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</code>
+        ///  <c>arn:${Partition}:iotsitewise:${Region}:${Account}:access-policy/${AccessPolicyId}</c>
         /// 
         /// </para>
         /// </summary>
@@ -146,8 +146,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyPermission. 
         /// <para>
-        /// The access policy permission. Note that a project <code>ADMINISTRATOR</code> is also
-        /// known as a project owner.
+        /// The access policy permission. Note that a project <c>ADMINISTRATOR</c> is also known
+        /// as a project owner.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

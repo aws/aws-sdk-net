@@ -140,13 +140,12 @@ namespace Amazon.VoiceID.Model
         /// <para>
         /// The current status of audio streaming for this session. This field is useful to infer
         /// next steps when the Authentication or Fraud Detection results are empty or the decision
-        /// is <code>NOT_ENOUGH_SPEECH</code>. In this situation, if the <code>StreamingStatus</code>
-        /// is <code>ONGOING/PENDING_CONFIGURATION</code>, it can mean that the client should
-        /// call the API again later, after Voice ID has enough audio to produce a result. If
-        /// the decision remains <code>NOT_ENOUGH_SPEECH</code> even after <code>StreamingStatus</code>
-        /// is <code>ENDED</code>, it means that the previously streamed session did not have
-        /// enough speech to perform evaluation, and a new streaming session is needed to try
-        /// again.
+        /// is <c>NOT_ENOUGH_SPEECH</c>. In this situation, if the <c>StreamingStatus</c> is <c>ONGOING/PENDING_CONFIGURATION</c>,
+        /// it can mean that the client should call the API again later, after Voice ID has enough
+        /// audio to produce a result. If the decision remains <c>NOT_ENOUGH_SPEECH</c> even after
+        /// <c>StreamingStatus</c> is <c>ENDED</c>, it means that the previously streamed session
+        /// did not have enough speech to perform evaluation, and a new streaming session is needed
+        /// to try again.
         /// </para>
         /// </summary>
         public StreamingStatus StreamingStatus

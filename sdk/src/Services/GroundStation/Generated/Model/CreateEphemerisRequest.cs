@@ -30,7 +30,7 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEphemeris operation.
-    /// Creates an Ephemeris with the specified <code>EphemerisData</code>.
+    /// Creates an Ephemeris with the specified <c>EphemerisData</c>.
     /// </summary>
     public partial class CreateEphemerisRequest : AmazonGroundStationRequest
     {
@@ -46,12 +46,11 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether to set the ephemeris status to <code>ENABLED</code> after validation.
+        /// Whether to set the ephemeris status to <c>ENABLED</c> after validation.
         /// </para>
         ///  
         /// <para>
-        /// Setting this to false will set the ephemeris status to <code>DISABLED</code> after
-        /// validation.
+        /// Setting this to false will set the ephemeris status to <c>DISABLED</c> after validation.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -87,7 +86,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ExpirationTime. 
         /// <para>
-        /// An overall expiration time for the ephemeris in UTC, after which it will become <code>EXPIRED</code>.
+        /// An overall expiration time for the ephemeris in UTC, after which it will become <c>EXPIRED</c>.
         /// </para>
         /// </summary>
         public DateTime ExpirationTime

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecretsManager.Model
 {
     /// <summary>
-    /// A custom type that specifies a <code>Region</code> and the <code>KmsKeyId</code> for
-    /// a replica secret.
+    /// A custom type that specifies a <c>Region</c> and the <c>KmsKeyId</c> for a replica
+    /// secret.
     /// </summary>
     public partial class ReplicaRegionType
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The ARN, key ID, or alias of the KMS key to encrypt the secret. If you don't include
-        /// this field, Secrets Manager uses <code>aws/secretsmanager</code>.
+        /// this field, Secrets Manager uses <c>aws/secretsmanager</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses a <code>MessageId</code> for a successfully-enqueued message in a <code>
-    /// <a>SendMessageBatch</a>.</code>
+    /// Encloses a <c>MessageId</c> for a successfully-enqueued message in a <c> <a>SendMessageBatch</a>.</c>
     /// </summary>
     public partial class SendMessageBatchResultEntry
     {
@@ -152,8 +151,8 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// The length of <code>SequenceNumber</code> is 128 bits. As <code>SequenceNumber</code>
-        /// continues to increase for a particular <code>MessageGroupId</code>.
+        /// The length of <c>SequenceNumber</c> is 128 bits. As <c>SequenceNumber</c> continues
+        /// to increase for a particular <c>MessageGroupId</c>.
         /// </para>
         /// </summary>
         public string SequenceNumber

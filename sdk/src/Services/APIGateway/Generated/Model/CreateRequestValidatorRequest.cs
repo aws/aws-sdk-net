@@ -80,7 +80,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property ValidateRequestBody. 
         /// <para>
         /// A Boolean flag to indicate whether to validate request body according to the configured
-        /// model schema for the method (<code>true</code>) or not (<code>false</code>).
+        /// model schema for the method (<c>true</c>) or not (<c>false</c>).
         /// </para>
         /// </summary>
         public bool ValidateRequestBody
@@ -98,8 +98,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ValidateRequestParameters. 
         /// <para>
-        /// A Boolean flag to indicate whether to validate request parameters, <code>true</code>,
-        /// or not <code>false</code>.
+        /// A Boolean flag to indicate whether to validate request parameters, <c>true</c>, or
+        /// not <c>false</c>.
         /// </para>
         /// </summary>
         public bool ValidateRequestParameters

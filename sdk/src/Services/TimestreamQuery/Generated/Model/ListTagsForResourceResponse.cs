@@ -39,7 +39,7 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token to resume pagination with a subsequent call to <code>ListTagsForResourceResponse</code>.
+        /// A pagination token to resume pagination with a subsequent call to <c>ListTagsForResourceResponse</c>.
         /// </para>
         /// </summary>
         public string NextToken

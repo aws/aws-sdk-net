@@ -40,8 +40,8 @@ namespace Amazon.Glue.Model
     /// If this is the first schema definition to be registered in the Schema Registry, this
     /// API will store the schema version and return immediately. Otherwise, this call has
     /// the potential to run longer than other operations due to compatibility modes. You
-    /// can call the <code>GetSchemaVersion</code> API with the <code>SchemaVersionId</code>
-    /// to check compatibility modes.
+    /// can call the <c>GetSchemaVersion</c> API with the <c>SchemaVersionId</c> to check
+    /// compatibility modes.
     /// </para>
     ///  
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaDefinition. 
         /// <para>
-        /// The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.
+        /// The schema definition using the <c>DataFormat</c> setting for the <c>SchemaName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=170000)]
@@ -80,13 +80,13 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code>
-        /// or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.
+        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <c>SchemaArn</c>
+        /// or <c>SchemaName</c> and <c>RegistryName</c> has to be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code>
-        /// and <code>RegistryName</code> has to be provided.
+        /// SchemaId$SchemaName: The name of the schema. Either <c>SchemaArn</c> or <c>SchemaName</c>
+        /// and <c>RegistryName</c> has to be provided.
         /// </para>
         ///  </li> </ul>
         /// </summary>

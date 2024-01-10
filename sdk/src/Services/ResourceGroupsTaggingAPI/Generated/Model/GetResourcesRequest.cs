@@ -51,11 +51,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     ///  </li> </ul> 
     /// <para>
     /// This operation supports pagination, where the response can be sent in multiple pages.
-    /// You should check the <code>PaginationToken</code> response parameter to determine
-    /// if there are additional results available to return. Repeat the query, passing the
-    /// <code>PaginationToken</code> response parameter value as an input to the next request
-    /// until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code>
-    /// indicates that there are no more results waiting to be returned.
+    /// You should check the <c>PaginationToken</c> response parameter to determine if there
+    /// are additional results available to return. Repeat the query, passing the <c>PaginationToken</c>
+    /// response parameter value as an input to the next request until you recieve a <c>null</c>
+    /// value. A null value for <c>PaginationToken</c> indicates that there are no more results
+    /// waiting to be returned.
     /// </para>
     /// </summary>
     public partial class GetResourcesRequest : AmazonResourceGroupsTaggingAPIRequest
@@ -73,13 +73,13 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property ExcludeCompliantResources. 
         /// <para>
         /// Specifies whether to exclude resources that are compliant with the tag policy. Set
-        /// this to <code>true</code> if you are interested in retrieving information on noncompliant
+        /// this to <c>true</c> if you are interested in retrieving information on noncompliant
         /// resources only.
         /// </para>
         ///  
         /// <para>
-        /// You can use this parameter only if the <code>IncludeComplianceDetails</code> parameter
-        /// is also set to <code>true</code>.
+        /// You can use this parameter only if the <c>IncludeComplianceDetails</c> parameter is
+        /// also set to <c>true</c>.
         /// </para>
         /// </summary>
         public bool ExcludeCompliantResources
@@ -98,8 +98,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property IncludeComplianceDetails. 
         /// <para>
         /// Specifies whether to include details regarding the compliance with the effective tag
-        /// policy. Set this to <code>true</code> to determine whether resources are compliant
-        /// with the tag policy and to get details.
+        /// policy. Set this to <c>true</c> to determine whether resources are compliant with
+        /// the tag policy and to get details.
         /// </para>
         /// </summary>
         public bool IncludeComplianceDetails
@@ -117,9 +117,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// Specifies a <code>PaginationToken</code> response value from a previous request to
-        /// indicate that you want the next page of results. Leave this parameter empty in your
-        /// initial request.
+        /// Specifies a <c>PaginationToken</c> response value from a previous request to indicate
+        /// that you want the next page of results. Leave this parameter empty in your initial
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -139,9 +139,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property ResourceARNList. 
         /// <para>
         /// Specifies a list of ARNs of resources for which you want to retrieve tag data. You
-        /// can't specify both this parameter and any of the pagination parameters (<code>ResourcesPerPage</code>,
-        /// <code>TagsPerPage</code>, <code>PaginationToken</code>) in the same request. If you
-        /// specify both, you get an <code>Invalid Parameter</code> exception.
+        /// can't specify both this parameter and any of the pagination parameters (<c>ResourcesPerPage</c>,
+        /// <c>TagsPerPage</c>, <c>PaginationToken</c>) in the same request. If you specify both,
+        /// you get an <c>Invalid Parameter</c> exception.
         /// </para>
         ///  
         /// <para>
@@ -174,8 +174,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <para>
         /// Specifies the maximum number of results to be returned in each page. A query can return
         /// fewer than this maximum, even if there are more results still to return. You should
-        /// always check the <code>PaginationToken</code> response value to see if there are more
-        /// results. You can specify a minimum of 1 and a maximum value of 100.
+        /// always check the <c>PaginationToken</c> response value to see if there are more results.
+        /// You can specify a minimum of 1 and a maximum value of 100.
         /// </para>
         /// </summary>
         public int ResourcesPerPage
@@ -194,10 +194,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property ResourceTypeFilters. 
         /// <para>
         /// Specifies the resource types that you want included in the response. The format of
-        /// each resource type is <code>service[:resourceType]</code>. For example, specifying
-        /// a resource type of <code>ec2</code> returns all Amazon EC2 resources (which includes
-        /// EC2 instances). Specifying a resource type of <code>ec2:instance</code> returns only
-        /// EC2 instances. 
+        /// each resource type is <c>service[:resourceType]</c>. For example, specifying a resource
+        /// type of <c>ec2</c> returns all Amazon EC2 resources (which includes EC2 instances).
+        /// Specifying a resource type of <c>ec2:instance</c> returns only EC2 instances. 
         /// </para>
         ///  
         /// <para>
@@ -215,7 +214,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>ec2:instance,s3:bucket,auditmanager</code> 
+        ///  <c>ec2:instance,s3:bucket,auditmanager</c> 
         /// </para>
         /// </summary>
         public List<string> ResourceTypeFilters
@@ -235,8 +234,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <para>
         /// Specifies a list of TagFilters (keys and values) to restrict the output to only those
         /// resources that have tags with the specified keys and, if included, the specified values.
-        /// Each <code>TagFilter</code> must contain a key with values optional. A request can
-        /// include up to 50 keys, and each key can include up to 20 values. 
+        /// Each <c>TagFilter</c> must contain a key with values optional. A request can include
+        /// up to 50 keys, and each key can include up to 20 values. 
         /// </para>
         ///  
         /// <para>
@@ -244,9 +243,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you <i>don't</i> specify a <code>TagFilter</code>, the response includes all resources
+        /// If you <i>don't</i> specify a <c>TagFilter</c>, the response includes all resources
         /// that are currently tagged or ever had a tag. Resources that currently don't have tags
-        /// are shown with an empty tag set, like this: <code>"Tags": []</code>.
+        /// are shown with an empty tag set, like this: <c>"Tags": []</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -265,29 +264,27 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the following filters: <code>filter1= {keyA,{value1}}</code>, <code>filter2={keyB,{value2,value3,value4}}</code>,
-        /// <code>filter3= {keyC}</code>:
+        /// For example, for the following filters: <c>filter1= {keyA,{value1}}</c>, <c>filter2={keyB,{value2,value3,value4}}</c>,
+        /// <c>filter3= {keyC}</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GetResources({filter1})</code> returns resources tagged with <code>key1=value1</code>
-        /// 
+        ///  <c>GetResources({filter1})</c> returns resources tagged with <c>key1=value1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetResources({filter2})</code> returns resources tagged with <code>key2=value2</code>
-        /// or <code>key2=value3</code> or <code>key2=value4</code> 
+        ///  <c>GetResources({filter2})</c> returns resources tagged with <c>key2=value2</c> or
+        /// <c>key2=value3</c> or <c>key2=value4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetResources({filter3})</code> returns resources tagged with any tag with the
-        /// key <code>key3</code>, and with any or no value
+        ///  <c>GetResources({filter3})</c> returns resources tagged with any tag with the key
+        /// <c>key3</c>, and with any or no value
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetResources({filter1,filter2,filter3})</code> returns resources tagged with
-        /// <code>(key1=value1) and (key2=value2 or key2=value3 or key2=value4) and (key3, any
-        /// or no value)</code> 
+        ///  <c>GetResources({filter1,filter2,filter3})</c> returns resources tagged with <c>(key1=value1)
+        /// and (key2=value2 or key2=value3 or key2=value4) and (key3, any or no value)</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -307,31 +304,29 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property TagsPerPage. 
         /// <para>
-        /// Amazon Web Services recommends using <code>ResourcesPerPage</code> instead of this
-        /// parameter.
+        /// Amazon Web Services recommends using <c>ResourcesPerPage</c> instead of this parameter.
         /// </para>
         ///  
         /// <para>
-        /// A limit that restricts the number of tags (key and value pairs) returned by <code>GetResources</code>
+        /// A limit that restricts the number of tags (key and value pairs) returned by <c>GetResources</c>
         /// in paginated output. A resource with no tags is counted as having one tag (one key
         /// and value pair).
         /// </para>
         ///  
         /// <para>
-        ///  <code>GetResources</code> does not split a resource and its associated tags across
-        /// pages. If the specified <code>TagsPerPage</code> would cause such a break, a <code>PaginationToken</code>
+        ///  <c>GetResources</c> does not split a resource and its associated tags across pages.
+        /// If the specified <c>TagsPerPage</c> would cause such a break, a <c>PaginationToken</c>
         /// is returned in place of the affected resource and its tags. Use that token in another
-        /// request to get the remaining data. For example, if you specify a <code>TagsPerPage</code>
-        /// of <code>100</code> and the account has 22 resources with 10 tags each (meaning that
-        /// each resource has 10 key and value pairs), the output will consist of three pages.
-        /// The first page displays the first 10 resources, each with its 10 tags. The second
-        /// page displays the next 10 resources, each with its 10 tags. The third page displays
-        /// the remaining 2 resources, each with its 10 tags.
+        /// request to get the remaining data. For example, if you specify a <c>TagsPerPage</c>
+        /// of <c>100</c> and the account has 22 resources with 10 tags each (meaning that each
+        /// resource has 10 key and value pairs), the output will consist of three pages. The
+        /// first page displays the first 10 resources, each with its 10 tags. The second page
+        /// displays the next 10 resources, each with its 10 tags. The third page displays the
+        /// remaining 2 resources, each with its 10 tags.
         /// </para>
         ///  
         /// <para>
-        /// You can set <code>TagsPerPage</code> to a minimum of 100 items up to a maximum of
-        /// 500 items.
+        /// You can set <c>TagsPerPage</c> to a minimum of 100 items up to a maximum of 500 items.
         /// </para>
         /// </summary>
         public int TagsPerPage

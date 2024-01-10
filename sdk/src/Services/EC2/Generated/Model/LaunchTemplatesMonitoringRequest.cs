@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specify <code>true</code> to enable detailed monitoring. Otherwise, basic monitoring
-        /// is enabled.
+        /// Specify <c>true</c> to enable detailed monitoring. Otherwise, basic monitoring is
+        /// enabled.
         /// </para>
         /// </summary>
         public bool Enabled

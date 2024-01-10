@@ -78,7 +78,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ValueType. 
         /// <para>
-        /// The data type of the <code>Value</code> property.
+        /// The data type of the <c>Value</c> property.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

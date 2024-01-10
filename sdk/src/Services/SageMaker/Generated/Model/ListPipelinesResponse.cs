@@ -39,9 +39,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListPipelines</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of pipelines,
-        /// use the token in the next request.
+        /// If the result of the previous <c>ListPipelines</c> request was truncated, the response
+        /// includes a <c>NextToken</c>. To retrieve the next set of pipelines, use the token
+        /// in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -60,10 +60,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PipelineSummaries. 
         /// <para>
-        /// Contains a sorted list of <code>PipelineSummary</code> objects matching the specified
-        /// filters. Each <code>PipelineSummary</code> consists of PipelineArn, PipelineName,
-        /// ExperimentName, PipelineDescription, CreationTime, LastModifiedTime, LastRunTime,
-        /// and RoleArn. This list can be empty. 
+        /// Contains a sorted list of <c>PipelineSummary</c> objects matching the specified filters.
+        /// Each <c>PipelineSummary</c> consists of PipelineArn, PipelineName, ExperimentName,
+        /// PipelineDescription, CreationTime, LastModifiedTime, LastRunTime, and RoleArn. This
+        /// list can be empty. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

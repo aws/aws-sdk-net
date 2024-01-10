@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database
-    /// identifier (unique name) to create a new global database cluster.
+    /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
+    /// (unique name) to create a new global database cluster.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

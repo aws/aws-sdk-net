@@ -34,9 +34,9 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To get a summary of a certificate, omit <code>includeCertificateDetails</code> from
-    /// your request. The response will include only the certificate Amazon Resource Name
-    /// (ARN), certificate name, domain name, and tags.
+    /// To get a summary of a certificate, omit <c>includeCertificateDetails</c> from your
+    /// request. The response will include only the certificate Amazon Resource Name (ARN),
+    /// certificate name, domain name, and tags.
     /// </para>
     ///  </note>
     /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, specify <code>ISSUED</code> to return only certificates with an <code>ISSUED</code>
+        /// For example, specify <c>ISSUED</c> to return only certificates with an <c>ISSUED</c>
         /// status.
         /// </para>
         ///  
@@ -128,9 +128,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a page token, perform an initial <code>GetCertificates</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.
+        /// To get a page token, perform an initial <c>GetCertificates</c> request. If your results
+        /// are paginated, the response will return a next page token that you can specify as
+        /// the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken

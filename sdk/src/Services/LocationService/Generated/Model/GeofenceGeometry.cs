@@ -74,22 +74,21 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Each vertex is a 2-dimensional point of the form: <code>[longitude, latitude]</code>.
-        /// This is represented as an array of doubles of length 2 (so <code>[double, double]</code>).
+        /// Each vertex is a 2-dimensional point of the form: <c>[longitude, latitude]</c>. This
+        /// is represented as an array of doubles of length 2 (so <c>[double, double]</c>).
         /// </para>
         ///  
         /// <para>
         /// An array of 4 or more vertices, where the first and last vertex are the same (to form
         /// a closed boundary), is called a linear ring. The linear ring vertices must be listed
         /// in counter-clockwise order around the ring’s interior. The linear ring is represented
-        /// as an array of vertices, or an array of arrays of doubles (<code>[[double, double],
-        /// ...]</code>).
+        /// as an array of vertices, or an array of arrays of doubles (<c>[[double, double], ...]</c>).
         /// </para>
         ///  
         /// <para>
         /// A geofence consists of a single linear ring. To allow for future expansion, the Polygon
         /// parameter takes an array of linear rings, which is represented as an array of arrays
-        /// of arrays of doubles (<code>[[[double, double], ...], ...]</code>).
+        /// of arrays of doubles (<c>[[[double, double], ...], ...]</c>).
         /// </para>
         ///  
         /// <para>

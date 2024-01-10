@@ -41,9 +41,9 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more items to return. If your results were
-        /// truncated, you can make a subsequent pagination request using the <code>Marker</code>
-        /// request parameter to retrieve more items. We recommend that you check <code>IsTruncated</code>
-        /// after every call to ensure that you receive all your results.
+        /// truncated, you can make a subsequent pagination request using the <c>Marker</c> request
+        /// parameter to retrieve more items. We recommend that you check <c>IsTruncated</c> after
+        /// every call to ensure that you receive all your results.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -61,9 +61,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// When <code>IsTruncated</code> is <code>true</code>, this element is present and contains
-        /// the value to use for the <code>Marker</code> parameter in a subsequent pagination
-        /// request.
+        /// When <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value
+        /// to use for the <c>Marker</c> parameter in a subsequent pagination request.
         /// </para>
         /// </summary>
         public string Marker
@@ -81,8 +80,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PoliciesGrantingServiceAccess. 
         /// <para>
-        /// A <code>ListPoliciesGrantingServiceAccess</code> object that contains details about
-        /// the permissions policies attached to the specified identity (user, group, or role).
+        /// A <c>ListPoliciesGrantingServiceAccess</c> object that contains details about the
+        /// permissions policies attached to the specified identity (user, group, or role).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

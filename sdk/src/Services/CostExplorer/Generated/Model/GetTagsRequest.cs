@@ -67,7 +67,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>GetTags</code>, MaxResults has an upper quota of 1000.
+        /// For <c>GetTags</c>, MaxResults has an upper quota of 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -133,40 +133,39 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BlendedCost</code> 
+        ///  <c>BlendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnblendedCost</code> 
+        ///  <c>UnblendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AmortizedCost</code> 
+        ///  <c>AmortizedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetAmortizedCost</code> 
+        ///  <c>NetAmortizedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetUnblendedCost</code> 
+        ///  <c>NetUnblendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UsageQuantity</code> 
+        ///  <c>UsageQuantity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NormalizedUsageAmount</code> 
+        ///  <c>NormalizedUsageAmount</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
+        /// The supported values for <c>SortOrder</c> are <c>ASCENDING</c> and <c>DESCENDING</c>.
         /// </para>
         ///  
         /// <para>
-        /// When you use <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-        /// aren't supported.
+        /// When you use <c>SortBy</c>, <c>NextPageToken</c> and <c>SearchString</c> aren't supported.
         /// </para>
         /// </summary>
         public List<SortDefinition> SortBy
@@ -204,10 +203,9 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property TimePeriod. 
         /// <para>
         /// The start and end dates for retrieving the dimension values. The start date is inclusive,
-        /// but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-        /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
-        /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
-        /// <code>2017-05-01</code>.
+        /// but the end date is exclusive. For example, if <c>start</c> is <c>2017-01-01</c> and
+        /// <c>end</c> is <c>2017-05-01</c>, then the cost and usage data is retrieved from <c>2017-01-01</c>
+        /// up to and including <c>2017-04-30</c> but not including <c>2017-05-01</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

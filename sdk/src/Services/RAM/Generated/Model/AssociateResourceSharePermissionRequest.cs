@@ -60,8 +60,8 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -105,7 +105,7 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies the version of the RAM permission to associate with the resource share.
         /// You can specify <i>only</i> the version that is currently set as the default version
-        /// for the permission. If you also set the <code>replace</code> pararameter to <code>true</code>,
+        /// for the permission. If you also set the <c>replace</c> pararameter to <c>true</c>,
         /// then this operation updates an outdated version of the permission to the current default
         /// version.
         /// </para>
@@ -133,15 +133,15 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property Replace. 
         /// <para>
         /// Specifies whether the specified permission should replace the existing permission
-        /// associated with the resource share. Use <code>true</code> to replace the current permissions.
-        /// Use <code>false</code> to add the permission to a resource share that currently doesn't
-        /// have a permission. The default value is <code>false</code>.
+        /// associated with the resource share. Use <c>true</c> to replace the current permissions.
+        /// Use <c>false</c> to add the permission to a resource share that currently doesn't
+        /// have a permission. The default value is <c>false</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// A resource share can have only one permission per resource type. If a resource share
-        /// already has a permission for the specified resource type and you don't set <code>replace</code>
-        /// to <code>true</code> then the operation returns an error. This helps prevent accidental
+        /// already has a permission for the specified resource type and you don't set <c>replace</c>
+        /// to <c>true</c> then the operation returns an error. This helps prevent accidental
         /// overwriting of a permission.
         /// </para>
         ///  </note>

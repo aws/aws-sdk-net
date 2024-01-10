@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:DeleteCrl</c>. 
     /// </para>
     /// </summary>
     public partial class DeleteCrlRequest : AmazonIAMRolesAnywhereRequest

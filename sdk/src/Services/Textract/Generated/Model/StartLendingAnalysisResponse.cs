@@ -38,9 +38,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// A unique identifier for the lending or text-detection job. The <code>JobId</code>
-        /// is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is
-        /// only valid for 7 days.
+        /// A unique identifier for the lending or text-detection job. The <c>JobId</c> is returned
+        /// from <c>StartLendingAnalysis</c>. A <c>JobId</c> value is only valid for 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

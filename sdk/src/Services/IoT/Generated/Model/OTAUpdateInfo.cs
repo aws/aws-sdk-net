@@ -125,7 +125,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AwsJobPresignedUrlConfig. 
         /// <para>
-        /// Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains
+        /// Configuration information for pre-signed URLs. Valid when <c>protocols</c> contains
         /// HTTP.
         /// </para>
         /// </summary>

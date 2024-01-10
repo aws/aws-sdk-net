@@ -94,22 +94,21 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>creating</code> - The secret is being created.
+        ///  <c>creating</c> - The secret is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>active</code> - The secret is available for normal use and rotation.
+        ///  <c>active</c> - The secret is available for normal use and rotation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rotating</code> - The secret is being rotated.
+        ///  <c>rotating</c> - The secret is being rotated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>impaired</code> - The secret can be used to access database credentials, but
-        /// it can't be rotated. A secret might have this status if, for example, permissions
-        /// are changed so that RDS can no longer access either the secret or the KMS key for
-        /// the secret.
+        ///  <c>impaired</c> - The secret can be used to access database credentials, but it can't
+        /// be rotated. A secret might have this status if, for example, permissions are changed
+        /// so that RDS can no longer access either the secret or the KMS key for the secret.
         /// </para>
         ///  
         /// <para>

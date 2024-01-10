@@ -240,7 +240,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResetPolicy. 
         /// <para>
-        /// (Gateway endpoint) Specify <code>true</code> to reset the policy document to the default
+        /// (Gateway endpoint) Specify <c>true</c> to reset the policy document to the default
         /// policy. The default policy allows full access to the service.
         /// </para>
         /// </summary>

@@ -42,7 +42,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of filters that limit the result set. The only valid filter is <code>FLOW_TEMPLATE_ID</code>.
+        /// An array of filters that limit the result set. The only valid filter is <c>FLOW_TEMPLATE_ID</c>.
         /// </para>
         /// </summary>
         public List<SystemTemplateFilter> Filters

@@ -41,7 +41,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Array of <code>SearchQuantumTasksFilter</code> objects.
+        /// Array of <c>SearchQuantumTasksFilter</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

@@ -46,7 +46,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MlUserDataEncryption. 
         /// <para>
-        /// An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided
+        /// An <c>MLUserDataEncryption</c> object containing the encryption mode and customer-provided
         /// KMS key ID.
         /// </para>
         /// </summary>

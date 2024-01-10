@@ -31,14 +31,14 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the StartStreamProcessor operation.
     /// Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>.
-    /// To tell <code>StartStreamProcessor</code> which stream processor to start, use the
-    /// value of the <code>Name</code> field specified in the call to <code>CreateStreamProcessor</code>.
+    /// To tell <c>StartStreamProcessor</c> which stream processor to start, use the value
+    /// of the <c>Name</c> field specified in the call to <c>CreateStreamProcessor</c>.
     /// 
     ///  
     /// <para>
     /// If you are using a label detection stream processor to detect labels, you need to
-    /// provide a <code>Start selector</code> and a <code>Stop selector</code> to determine
-    /// the length of the stream processing time.
+    /// provide a <c>Start selector</c> and a <c>Stop selector</c> to determine the length
+    /// of the stream processing time.
     /// </para>
     /// </summary>
     public partial class StartStreamProcessorRequest : AmazonRekognitionRequest

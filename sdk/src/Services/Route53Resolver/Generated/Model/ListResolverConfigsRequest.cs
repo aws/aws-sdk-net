@@ -42,7 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of Resolver configurations that you want to return in the response
-        /// to a <code>ListResolverConfigs</code> request. If you don't specify a value for <code>MaxResults</code>,
+        /// to a <c>ListResolverConfigs</c> request. If you don't specify a value for <c>MaxResults</c>,
         /// up to 100 Resolver configurations are returned.
         /// </para>
         /// </summary>
@@ -62,18 +62,18 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) If the current Amazon Web Services account has more than <code>MaxResults</code>
-        /// Resolver configurations, use <code>NextToken</code> to get the second and subsequent
-        /// pages of results.
+        /// (Optional) If the current Amazon Web Services account has more than <c>MaxResults</c>
+        /// Resolver configurations, use <c>NextToken</c> to get the second and subsequent pages
+        /// of results.
         /// </para>
         ///  
         /// <para>
-        /// For the first <code>ListResolverConfigs</code> request, omit this value.
+        /// For the first <c>ListResolverConfigs</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// For the second and subsequent requests, get the value of <code>NextToken</code> from
-        /// the previous response and specify that value for <code>NextToken</code> in the request.
+        /// For the second and subsequent requests, get the value of <c>NextToken</c> from the
+        /// previous response and specify that value for <c>NextToken</c> in the request.
         /// </para>
         /// </summary>
         public string NextToken

@@ -80,8 +80,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of channel schedules that you want MediaTailor to return in response
-        /// to the current request. If there are more than <code>MaxResults</code> channel schedules,
-        /// use the value of <code>NextToken</code> in the response to get the next page of results.
+        /// to the current request. If there are more than <c>MaxResults</c> channel schedules,
+        /// use the value of <c>NextToken</c> in the response to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -100,22 +100,22 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) If the playback configuration has more than <code>MaxResults</code> channel
-        /// schedules, use <code>NextToken</code> to get the second and subsequent pages of results.
+        /// (Optional) If the playback configuration has more than <c>MaxResults</c> channel schedules,
+        /// use <c>NextToken</c> to get the second and subsequent pages of results.
         /// </para>
         ///  
         /// <para>
-        /// For the first <code>GetChannelScheduleRequest</code> request, omit this value.
+        /// For the first <c>GetChannelScheduleRequest</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// For the second and subsequent requests, get the value of <code>NextToken</code> from
-        /// the previous response and specify that value for <code>NextToken</code> in the request.
+        /// For the second and subsequent requests, get the value of <c>NextToken</c> from the
+        /// previous response and specify that value for <c>NextToken</c> in the request.
         /// </para>
         ///  
         /// <para>
-        /// If the previous response didn't include a <code>NextToken</code> element, there are
-        /// no more channel schedules to get.
+        /// If the previous response didn't include a <c>NextToken</c> element, there are no more
+        /// channel schedules to get.
         /// </para>
         /// </summary>
         public string NextToken

@@ -40,8 +40,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property MultipleDimensionSelection. 
         /// <para>
         /// Determines if buyers are allowed to select multiple dimensions in the rate card. The
-        /// possible values are <code>Allowed</code> and <code>Disallowed</code>. The default
-        /// value is <code>Allowed</code>.
+        /// possible values are <c>Allowed</c> and <c>Disallowed</c>. The default value is <c>Allowed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -61,8 +60,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property QuantityConfiguration. 
         /// <para>
         /// Determines if acceptors are allowed to configure quantity for each dimension in rate
-        /// card. The possible values are <code>Allowed</code> and <code>Disallowed</code>. The
-        /// default value is <code>Allowed</code>.
+        /// card. The possible values are <c>Allowed</c> and <c>Disallowed</c>. The default value
+        /// is <c>Allowed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

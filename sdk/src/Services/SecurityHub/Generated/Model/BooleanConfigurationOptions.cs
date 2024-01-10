@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// The options for customizing a security control parameter with a boolean. For a boolean
-    /// parameter, the options are <code>true</code> and <code>false</code>.
+    /// parameter, the options are <c>true</c> and <c>false</c>.
     /// </summary>
     public partial class BooleanConfigurationOptions
     {

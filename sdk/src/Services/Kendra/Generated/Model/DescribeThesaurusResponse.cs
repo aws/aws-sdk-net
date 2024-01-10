@@ -87,8 +87,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code>
-        /// field provides more information. 
+        /// When the <c>Status</c> field value is <c>FAILED</c>, the <c>ErrorMessage</c> field
+        /// provides more information. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -183,7 +183,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// An IAM role that gives Amazon Kendra permissions to access thesaurus file specified
-        /// in <code>SourceS3Path</code>. 
+        /// in <c>SourceS3Path</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -217,14 +217,14 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the thesaurus. When the value is <code>ACTIVE</code>, queries
-        /// are able to use the thesaurus. If the <code>Status</code> field value is <code>FAILED</code>,
-        /// the <code>ErrorMessage</code> field provides more information. 
+        /// The current status of the thesaurus. When the value is <c>ACTIVE</c>, queries are
+        /// able to use the thesaurus. If the <c>Status</c> field value is <c>FAILED</c>, the
+        /// <c>ErrorMessage</c> field provides more information. 
         /// </para>
         ///  
         /// <para>
-        /// If the status is <code>ACTIVE_BUT_UPDATE_FAILED</code>, it means that Amazon Kendra
-        /// could not ingest the new thesaurus file. The old thesaurus file is still active. 
+        /// If the status is <c>ACTIVE_BUT_UPDATE_FAILED</c>, it means that Amazon Kendra could
+        /// not ingest the new thesaurus file. The old thesaurus file is still active. 
         /// </para>
         /// </summary>
         public ThesaurusStatus Status
@@ -260,8 +260,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TermCount. 
         /// <para>
-        /// The number of unique terms in the thesaurus file. For example, the synonyms <code>a,b,c</code>
-        /// and <code>a=&gt;d</code>, the term count would be 4. 
+        /// The number of unique terms in the thesaurus file. For example, the synonyms <c>a,b,c</c>
+        /// and <c>a=&gt;d</c>, the term count would be 4. 
         /// </para>
         /// </summary>
         public long TermCount

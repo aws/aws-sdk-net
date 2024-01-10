@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Transformations allowed on the dataset. Supported transformations are <code>Filling</code>
-    /// and <code>Aggregation</code>. <code>Filling</code> specifies how to add values to
-    /// missing values in the dataset. <code>Aggregation</code> defines how to aggregate data
-    /// that does not align with forecast frequency.
+    /// Transformations allowed on the dataset. Supported transformations are <c>Filling</c>
+    /// and <c>Aggregation</c>. <c>Filling</c> specifies how to add values to missing values
+    /// in the dataset. <c>Aggregation</c> defines how to aggregate data that does not align
+    /// with forecast frequency.
     /// </summary>
     public partial class TimeSeriesTransformations
     {
@@ -47,8 +47,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// The supported aggregation methods are <code>sum</code> (default), <code>avg</code>,
-        /// <code>first</code>, <code>min</code>, <code>max</code>.
+        /// The supported aggregation methods are <c>sum</c> (default), <c>avg</c>, <c>first</c>,
+        /// <c>min</c>, <c>max</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -82,30 +82,30 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>frontfill</code>: <code>none</code> (Supported only for target column)
+        ///  <c>frontfill</c>: <c>none</c> (Supported only for target column)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>middlefill</c>: <c>zero</c>, <c>value</c>, <c>median</c>, <c>mean</c>, <c>min</c>,
+        /// <c>max</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>backfill</c>: <c>zero</c>, <c>value</c>, <c>median</c>, <c>mean</c>, <c>min</c>,
+        /// <c>max</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>futurefill</c>: <c>zero</c>, <c>value</c>, <c>median</c>, <c>mean</c>, <c>min</c>,
+        /// <c>max</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// To set a filling method to a specific value, set the fill parameter to the chosen
-        /// filling method value (for example <code>"backfill" : "value"</code>), and define the
-        /// filling value in an additional parameter prefixed with "_value". For example, to set
-        /// <code>backfill</code> to a value of <code>2</code>, you must include two parameters:
-        /// <code>"backfill": "value"</code> and <code>"backfill_value":"2"</code>.
+        /// filling method value (for example <c>"backfill" : "value"</c>), and define the filling
+        /// value in an additional parameter prefixed with "_value". For example, to set <c>backfill</c>
+        /// to a value of <c>2</c>, you must include two parameters: <c>"backfill": "value"</c>
+        /// and <c>"backfill_value":"2"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

@@ -101,30 +101,27 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+        /// The mode of authentication for a server. The default value is <c>SERVICE_MANAGED</c>,
         /// which allows you to store and access user credentials within the Transfer Family service.
         /// </para>
         ///  
         /// <para>
-        /// Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-        /// in Directory Service for Microsoft Active Directory or Microsoft Active Directory
-        /// in your on-premises environment or in Amazon Web Services using AD Connector. This
-        /// option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code>
-        /// parameter.
+        /// Use <c>AWS_DIRECTORY_SERVICE</c> to provide access to Active Directory groups in Directory
+        /// Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises
+        /// environment or in Amazon Web Services using AD Connector. This option also requires
+        /// you to provide a Directory ID by using the <c>IdentityProviderDetails</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
-        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API
-        /// Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code>
-        /// parameter.
+        /// Use the <c>API_GATEWAY</c> value to integrate with an identity provider of your choosing.
+        /// The <c>API_GATEWAY</c> setting requires you to provide an Amazon API Gateway endpoint
+        /// URL to call for authentication by using the <c>IdentityProviderDetails</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
+        /// Use the <c>AWS_LAMBDA</c> value to directly use an Lambda function as your identity
         /// provider. If you choose this value, you must specify the ARN for the Lambda function
-        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
-        /// data type.
+        /// in the <c>Function</c> parameter for the <c>IdentityProviderDetails</c> data type.
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType
@@ -182,16 +179,15 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition of the server that was described. A value of <code>ONLINE</code> indicates
-        /// that the server can accept jobs and transfer files. A <code>State</code> value of
-        /// <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+        /// The condition of the server that was described. A value of <c>ONLINE</c> indicates
+        /// that the server can accept jobs and transfer files. A <c>State</c> value of <c>OFFLINE</c>
+        /// means that the server cannot perform file transfer operations.
         /// </para>
         ///  
         /// <para>
-        /// The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server
-        /// is in an intermediate state, either not fully able to respond, or not fully offline.
-        /// The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an
-        /// error condition.
+        /// The states of <c>STARTING</c> and <c>STOPPING</c> indicate that the server is in an
+        /// intermediate state, either not fully able to respond, or not fully offline. The values
+        /// of <c>START_FAILED</c> or <c>STOP_FAILED</c> can indicate an error condition.
         /// </para>
         /// </summary>
         public State State
@@ -210,7 +206,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property UserCount. 
         /// <para>
         /// Specifies the number of users that are assigned to a server you specified with the
-        /// <code>ServerId</code>.
+        /// <c>ServerId</c>.
         /// </para>
         /// </summary>
         public int UserCount

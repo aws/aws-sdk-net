@@ -41,10 +41,10 @@ namespace Amazon.RDS.Model
     ///  <note> 
     /// <para>
     /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
-    /// You must invoke the <code>CreateDBInstance</code> operation to create DB instances
-    /// for the restored DB cluster, specifying the identifier of the restored DB cluster
-    /// in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromSnapshot</code>
-    /// operation has completed and the DB cluster is available.
+    /// You must invoke the <c>CreateDBInstance</c> operation to create DB instances for the
+    /// restored DB cluster, specifying the identifier of the restored DB cluster in <c>DBClusterIdentifier</c>.
+    /// You can create DB instances only after the <c>RestoreDBClusterFromSnapshot</c> operation
+    /// has completed and the DB cluster is available.
     /// </para>
     ///  </note> 
     /// <para>
@@ -220,7 +220,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code> 
+        /// Example: <c>my-snapshot-id</c> 
         /// </para>
         ///  
         /// <para>
@@ -325,7 +325,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mydbsubnetgroup</code> 
+        /// Example: <c>mydbsubnetgroup</c> 
         /// </para>
         ///  
         /// <para>
@@ -431,7 +431,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+        /// Possible values are <c>error</c>, <c>general</c>, and <c>slowquery</c>.
         /// </para>
         ///  
         /// <para>
@@ -439,7 +439,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>postgresql</code> and <code>upgrade</code>.
+        /// Possible values are <c>postgresql</c> and <c>upgrade</c>.
         /// </para>
         ///  
         /// <para>
@@ -447,8 +447,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
-        /// and <code>slowquery</code>.
+        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, and <c>slowquery</c>.
         /// </para>
         ///  
         /// <para>
@@ -456,7 +455,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible value is <code>postgresql</code>.
+        /// Possible value is <c>postgresql</c>.
         /// </para>
         ///  
         /// <para>
@@ -547,7 +546,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// The DB engine mode of the DB cluster, either <c>provisioned</c> or <c>serverless</c>.
         /// </para>
         ///  
         /// <para>
@@ -584,7 +583,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -594,7 +593,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -604,7 +603,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -614,7 +613,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -718,19 +717,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When you don't specify a value for the <code>KmsKeyId</code> parameter, then the following
+        /// When you don't specify a value for the <c>KmsKeyId</c> parameter, then the following
         /// occurs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
+        /// If the DB snapshot or DB cluster snapshot in <c>SnapshotIdentifier</c> is encrypted,
         /// then the restored DB cluster is encrypted using the KMS key that was used to encrypt
         /// the DB snapshot or DB cluster snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> isn't
-        /// encrypted, then the restored DB cluster isn't encrypted.
+        /// If the DB snapshot or DB cluster snapshot in <c>SnapshotIdentifier</c> isn't encrypted,
+        /// then the restored DB cluster isn't encrypted.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -760,17 +759,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IPV4</code> 
+        ///  <c>IPV4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DUAL</code> 
+        ///  <c>DUAL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -823,7 +822,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: This value must be <code>1150-65535</code> 
+        /// Constraints: This value must be <c>1150-65535</c> 
         /// </para>
         ///  
         /// <para>
@@ -867,13 +866,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code>
+        /// Default: The default behavior varies depending on whether <c>DBSubnetGroupName</c>
         /// is specified.
         /// </para>
         ///  
         /// <para>
-        /// If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code>
-        /// isn't specified, the following applies:
+        /// If <c>DBSubnetGroupName</c> isn't specified, and <c>PubliclyAccessible</c> isn't specified,
+        /// the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -887,8 +886,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code>
-        /// isn't specified, the following applies:
+        /// If <c>DBSubnetGroupName</c> is specified, and <c>PubliclyAccessible</c> isn't specified,
+        /// the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -938,8 +937,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ScalingConfiguration. 
         /// <para>
-        /// For DB clusters in <code>serverless</code> DB engine mode, the scaling properties
-        /// of the DB cluster.
+        /// For DB clusters in <c>serverless</c> DB engine mode, the scaling properties of the
+        /// DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -1016,17 +1015,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-        /// is required.
+        /// When specified for a Multi-AZ DB cluster, a value for the <c>Iops</c> parameter is
+        /// required.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
-        /// <code>io1</code> (Multi-AZ DB clusters)
+        /// Valid Values: <c>aurora</c>, <c>aurora-iopt1</c> (Aurora DB clusters); <c>io1</c>
+        /// (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
+        /// Default: <c>aurora</c> (Aurora DB clusters); <c>io1</c> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>

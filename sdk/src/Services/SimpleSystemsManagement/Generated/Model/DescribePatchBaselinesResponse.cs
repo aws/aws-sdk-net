@@ -39,7 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property BaselineIdentities. 
         /// <para>
-        /// An array of <code>PatchBaselineIdentity</code> elements.
+        /// An array of <c>PatchBaselineIdentity</c> elements.
         /// </para>
         /// </summary>
         public List<PatchBaselineIdentity> BaselineIdentities

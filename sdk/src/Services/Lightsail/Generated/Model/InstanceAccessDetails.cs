@@ -48,7 +48,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property CertKey. 
         /// <para>
         /// For SSH access, the public key to use when accessing your instance For OpenSSH clients
-        /// (command line SSH), you should save this value to <code>tempkey-cert.pub</code>.
+        /// (command line SSH), you should save this value to <c>tempkey-cert.pub</c>.
         /// </para>
         /// </summary>
         public string CertKey
@@ -144,8 +144,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you create an instance using any key pair other than the default (<code>LightsailDefaultKeyPair</code>),
-        /// <code>password</code> will always be an empty string.
+        /// If you create an instance using any key pair other than the default (<c>LightsailDefaultKeyPair</c>),
+        /// <c>password</c> will always be an empty string.
         /// </para>
         ///  
         /// <para>
@@ -171,8 +171,8 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property PasswordData. 
         /// <para>
         /// For a Windows Server-based instance, an object with the data you can use to retrieve
-        /// your password. This is only needed if <code>password</code> is empty and the instance
-        /// is not new (and therefore the password is not ready yet). When you create an instance,
+        /// your password. This is only needed if <c>password</c> is empty and the instance is
+        /// not new (and therefore the password is not ready yet). When you create an instance,
         /// it can take up to 15 minutes for the instance to be ready.
         /// </para>
         /// </summary>
@@ -192,7 +192,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property PrivateKey. 
         /// <para>
         /// For SSH access, the temporary private key. For OpenSSH clients (command line SSH),
-        /// you should save this value to <code>tempkey</code>).
+        /// you should save this value to <c>tempkey</c>).
         /// </para>
         /// </summary>
         public string PrivateKey

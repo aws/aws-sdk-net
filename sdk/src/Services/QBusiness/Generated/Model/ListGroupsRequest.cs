@@ -141,8 +141,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property UpdatedEarlierThan. 
         /// <para>
-        /// The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code>
-        /// action for mapping users to their groups.
+        /// The timestamp identifier used for the latest <c>PUT</c> or <c>DELETE</c> action for
+        /// mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -180,8 +180,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property PullRequestStatus. 
         /// <para>
-        /// The status of the pull request. Pull request status can only change from <code>OPEN</code>
-        /// to <code>CLOSED</code>.
+        /// The status of the pull request. Pull request status can only change from <c>OPEN</c>
+        /// to <c>CLOSED</c>.
         /// </para>
         /// </summary>
         public PullRequestStatusEnum PullRequestStatus

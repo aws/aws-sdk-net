@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Contains an optional backup plan display name and an array of <code>BackupRule</code>
-    /// objects, each of which specifies a backup rule. Each rule in a backup plan is a separate
-    /// scheduled task and can back up a different selection of Amazon Web Services resources.
+    /// Contains an optional backup plan display name and an array of <c>BackupRule</c> objects,
+    /// each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled
+    /// task and can back up a different selection of Amazon Web Services resources.
     /// </summary>
     public partial class BackupPlan
     {
@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property AdvancedBackupSettings. 
         /// <para>
-        /// Contains a list of <code>BackupOptions</code> for each resource type.
+        /// Contains a list of <c>BackupOptions</c> for each resource type.
         /// </para>
         /// </summary>
         public List<AdvancedBackupSetting> AdvancedBackupSettings
@@ -79,8 +79,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
-        /// that is used to back up a selection of resources. 
+        /// An array of <c>BackupRule</c> objects, each of which specifies a scheduled task that
+        /// is used to back up a selection of resources. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

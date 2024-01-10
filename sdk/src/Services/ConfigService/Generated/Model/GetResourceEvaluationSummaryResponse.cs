@@ -62,7 +62,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationContext. 
         /// <para>
-        /// Returns an <code>EvaluationContext</code> object.
+        /// Returns an <c>EvaluationContext</c> object.
         /// </para>
         /// </summary>
         public EvaluationContext EvaluationContext
@@ -118,7 +118,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationStatus. 
         /// <para>
-        /// Returns an <code>EvaluationStatus</code> object.
+        /// Returns an <c>EvaluationStatus</c> object.
         /// </para>
         /// </summary>
         public EvaluationStatus EvaluationStatus
@@ -136,7 +136,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceDetails. 
         /// <para>
-        /// Returns a <code>ResourceDetails</code> object.
+        /// Returns a <c>ResourceDetails</c> object.
         /// </para>
         /// </summary>
         public ResourceDetails ResourceDetails
@@ -154,8 +154,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceEvaluationId. 
         /// <para>
-        /// The unique <code>ResourceEvaluationId</code> of Amazon Web Services resource execution
-        /// for which you want to retrieve the evaluation summary.
+        /// The unique <c>ResourceEvaluationId</c> of Amazon Web Services resource execution for
+        /// which you want to retrieve the evaluation summary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

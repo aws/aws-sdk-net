@@ -34,13 +34,13 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// The finding provider can provide the initial severity. The finding provider can only
-    /// update the severity if it hasn't been updated using <code>BatchUpdateFindings</code>.
+    /// update the severity if it hasn't been updated using <c>BatchUpdateFindings</c>.
     /// </para>
     ///  
     /// <para>
-    /// The finding must have either <code>Label</code> or <code>Normalized</code> populated.
-    /// If only one of these attributes is populated, then Security Hub automatically populates
-    /// the other one. If neither attribute is populated, then the finding is invalid. <code>Label</code>
+    /// The finding must have either <c>Label</c> or <c>Normalized</c> populated. If only
+    /// one of these attributes is populated, then Security Hub automatically populates the
+    /// other one. If neither attribute is populated, then the finding is invalid. <c>Label</c>
     /// is the preferred attribute.
     /// </para>
     /// </summary>
@@ -58,48 +58,48 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INFORMATIONAL</code> - No issue was found.
+        ///  <c>INFORMATIONAL</c> - No issue was found.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOW</code> - The issue does not require action on its own.
+        ///  <c>LOW</c> - The issue does not require action on its own.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MEDIUM</code> - The issue must be addressed but not urgently.
+        ///  <c>MEDIUM</c> - The issue must be addressed but not urgently.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HIGH</code> - The issue must be addressed as a priority.
+        ///  <c>HIGH</c> - The issue must be addressed as a priority.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+        ///  <c>CRITICAL</c> - The issue must be remediated immediately to avoid it escalating.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you provide <code>Normalized</code> and do not provide <code>Label</code>, then
-        /// <code>Label</code> is set automatically as follows. 
+        /// If you provide <c>Normalized</c> and do not provide <c>Label</c>, then <c>Label</c>
+        /// is set automatically as follows. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 0 - <code>INFORMATIONAL</code> 
+        /// 0 - <c>INFORMATIONAL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 1–39 - <code>LOW</code> 
+        /// 1–39 - <c>LOW</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 40–69 - <code>MEDIUM</code> 
+        /// 40–69 - <c>MEDIUM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 70–89 - <code>HIGH</code> 
+        /// 70–89 - <c>HIGH</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 90–100 - <code>CRITICAL</code> 
+        /// 90–100 - <c>CRITICAL</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -118,33 +118,33 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Normalized. 
         /// <para>
-        /// Deprecated. The normalized severity of a finding. Instead of providing <code>Normalized</code>,
-        /// provide <code>Label</code>.
+        /// Deprecated. The normalized severity of a finding. Instead of providing <c>Normalized</c>,
+        /// provide <c>Label</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide <code>Label</code> and do not provide <code>Normalized</code>, then
-        /// <code>Normalized</code> is set automatically as follows.
+        /// If you provide <c>Label</c> and do not provide <c>Normalized</c>, then <c>Normalized</c>
+        /// is set automatically as follows.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INFORMATIONAL</code> - 0
+        ///  <c>INFORMATIONAL</c> - 0
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOW</code> - 1
+        ///  <c>LOW</c> - 1
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MEDIUM</code> - 40
+        ///  <c>MEDIUM</c> - 40
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HIGH</code> - 70
+        ///  <c>HIGH</c> - 70
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CRITICAL</code> - 90
+        ///  <c>CRITICAL</c> - 90
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -181,8 +181,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
-        /// Deprecated. This attribute isn't included in findings. Instead of providing <code>Product</code>,
-        /// provide <code>Original</code>.
+        /// Deprecated. This attribute isn't included in findings. Instead of providing <c>Product</c>,
+        /// provide <c>Original</c>.
         /// </para>
         ///  
         /// <para>

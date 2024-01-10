@@ -71,8 +71,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies whether your task report includes the new version of each object transferred
         /// into an S3 bucket. This only applies if you <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/manage-versioning-examples.html">enable
-        /// versioning on your bucket</a>. Keep in mind that setting this to <code>INCLUDE</code>
-        /// can increase the duration of your task execution.
+        /// versioning on your bucket</a>. Keep in mind that setting this to <c>INCLUDE</c> can
+        /// increase the duration of your task execution.
         /// </para>
         /// </summary>
         public ObjectVersionIds ObjectVersionIds
@@ -94,14 +94,13 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUMMARY_ONLY</code>: Provides necessary details about your task, including
-        /// the number of files, objects, and directories transferred and transfer duration.
+        ///  <c>SUMMARY_ONLY</c>: Provides necessary details about your task, including the number
+        /// of files, objects, and directories transferred and transfer duration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STANDARD</code>: Provides complete details about your task, including a full
-        /// list of files, objects, and directories that were transferred, skipped, verified,
-        /// and more.
+        ///  <c>STANDARD</c>: Provides complete details about your task, including a full list
+        /// of files, objects, and directories that were transferred, skipped, verified, and more.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -146,13 +145,13 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ERRORS_ONLY</code>: A report shows what DataSync was unable to transfer, skip,
-        /// verify, and delete.
+        ///  <c>ERRORS_ONLY</c>: A report shows what DataSync was unable to transfer, skip, verify,
+        /// and delete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESSES_AND_ERRORS</code>: A report shows what DataSync was able and unable
-        /// to transfer, skip, verify, and delete.
+        ///  <c>SUCCESSES_AND_ERRORS</c>: A report shows what DataSync was able and unable to
+        /// transfer, skip, verify, and delete.
         /// </para>
         ///  </li> </ul>
         /// </summary>

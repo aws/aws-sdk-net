@@ -42,7 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property Filters. 
         /// <para>
         ///  A list of filters used to match properties for outbound cross-cluster search connection.
-        /// Available <code><a>Filter</a></code> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li>
+        /// Available <c><a>Filter</a></c> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li>
         /// <li>destination-domain-info.domain-name</li> <li>destination-domain-info.owner-id</li>
         /// <li>destination-domain-info.region</li> <li>source-domain-info.domain-name</li> </ul>
         /// 

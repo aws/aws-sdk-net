@@ -40,7 +40,7 @@ namespace Amazon.Account.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The Region code of a given Region (for example, <code>us-east-1</code>).
+        /// The Region code of a given Region (for example, <c>us-east-1</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

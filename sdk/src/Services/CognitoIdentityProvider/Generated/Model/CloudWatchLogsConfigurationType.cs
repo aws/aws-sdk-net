@@ -45,8 +45,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// To send logs to log groups with a resource policy of a size greater than 5120 characters,
-        /// configure a log group with a path that starts with <code>/aws/vendedlogs</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
+        /// configure a log group with a path that starts with <c>/aws/vendedlogs</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
         /// logging from certain Amazon Web Services services</a>.
         /// </para>
         /// </summary>

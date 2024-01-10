@@ -34,7 +34,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permission for the <code>lex:DeleteBotChannelAssociation</code>
+    /// This operation requires permission for the <c>lex:DeleteBotChannelAssociation</c>
     /// action.
     /// </para>
     /// </summary>

@@ -84,8 +84,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmActions. 
         /// <para>
-        /// The actions to execute when this alarm transitions to the <code>ALARM</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).
+        /// The actions to execute when this alarm transitions to the <c>ALARM</c> state from
+        /// any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -236,10 +236,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EvaluateLowSampleCountPercentile. 
         /// <para>
-        /// Used only for alarms based on percentiles. If <code>ignore</code>, the alarm state
-        /// does not change during periods with too few data points to be statistically significant.
-        /// If <code>evaluate</code> or this parameter is not used, the alarm is always evaluated
-        /// and possibly changes state no matter how many data points are available.
+        /// Used only for alarms based on percentiles. If <c>ignore</c>, the alarm state does
+        /// not change during periods with too few data points to be statistically significant.
+        /// If <c>evaluate</c> or this parameter is not used, the alarm is always evaluated and
+        /// possibly changes state no matter how many data points are available.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -277,9 +277,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property EvaluationState. 
         /// <para>
-        /// If the value of this field is <code>PARTIAL_DATA</code>, the alarm is being evaluated
-        /// based on only partial data. This happens if the query used for the alarm returns more
-        /// than 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
+        /// If the value of this field is <c>PARTIAL_DATA</c>, the alarm is being evaluated based
+        /// on only partial data. This happens if the query used for the alarm returns more than
+        /// 10,000 metrics. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create
         /// alarms on Metrics Insights queries</a>.
         /// </para>
         /// </summary>
@@ -317,7 +317,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property InsufficientDataActions. 
         /// <para>
-        /// The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code>
+        /// The actions to execute when this alarm transitions to the <c>INSUFFICIENT_DATA</c>
         /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
@@ -360,7 +360,7 @@ namespace Amazon.CloudWatch.Model
         /// An array of MetricDataQuery structures, used in an alarm based on a metric math expression.
         /// Each structure either retrieves a metric or performs a math expression. One item in
         /// the Metrics array is the math expression that the alarm watches. This expression by
-        /// designated by having <code>ReturnData</code> set to true.
+        /// designated by having <c>ReturnData</c> set to true.
         /// </para>
         /// </summary>
         public List<MetricDataQuery> Metrics
@@ -397,8 +397,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property OKActions. 
         /// <para>
-        /// The actions to execute when this alarm transitions to the <code>OK</code> state from
-        /// any other state. Each action is specified as an Amazon Resource Name (ARN).
+        /// The actions to execute when this alarm transitions to the <c>OK</c> state from any
+        /// other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -474,7 +474,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateTransitionedTimestamp. 
         /// <para>
-        /// The date and time that the alarm's <code>StateValue</code> most recently changed.
+        /// The date and time that the alarm's <c>StateValue</c> most recently changed.
         /// </para>
         /// </summary>
         public DateTime StateTransitionedTimestamp
@@ -492,8 +492,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateUpdatedTimestamp. 
         /// <para>
-        /// The time stamp of the last update to the value of either the <code>StateValue</code>
-        /// or <code>EvaluationState</code> parameters.
+        /// The time stamp of the last update to the value of either the <c>StateValue</c> or
+        /// <c>EvaluationState</c> parameters.
         /// </para>
         /// </summary>
         public DateTime StateUpdatedTimestamp
@@ -530,7 +530,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Statistic. 
         /// <para>
         /// The statistic for the metric associated with the alarm, other than percentile. For
-        /// percentile statistics, use <code>ExtendedStatistic</code>.
+        /// percentile statistics, use <c>ExtendedStatistic</c>.
         /// </para>
         /// </summary>
         public Statistic Statistic
@@ -566,7 +566,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ThresholdMetricId. 
         /// <para>
-        /// In an alarm based on an anomaly detection model, this is the ID of the <code>ANOMALY_DETECTION_BAND</code>
+        /// In an alarm based on an anomaly detection model, this is the ID of the <c>ANOMALY_DETECTION_BAND</c>
         /// function used as the threshold for the alarm.
         /// </para>
         /// </summary>
@@ -586,14 +586,14 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property TreatMissingData. 
         /// <para>
-        /// Sets how this alarm is to handle missing data points. The valid values are <code>breaching</code>,
-        /// <code>notBreaching</code>, <code>ignore</code>, and <code>missing</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
+        /// Sets how this alarm is to handle missing data points. The valid values are <c>breaching</c>,
+        /// <c>notBreaching</c>, <c>ignore</c>, and <c>missing</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarms-and-missing-data">Configuring
         /// how CloudWatch alarms treat missing data</a>.
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is omitted, the default behavior of <code>missing</code> is used.
+        /// If this parameter is omitted, the default behavior of <c>missing</c> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

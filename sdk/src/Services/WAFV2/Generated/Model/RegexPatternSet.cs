@@ -33,8 +33,8 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// WAF assigns an ARN to each <code>RegexPatternSet</code> that you create. To use a
-    /// set in a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>.
+    /// WAF assigns an ARN to each <c>RegexPatternSet</c> that you create. To use a set in
+    /// a rule, you provide the ARN to the <a>Rule</a> statement <a>RegexPatternSetReferenceStatement</a>.
     /// 
     /// </para>
     /// </summary>

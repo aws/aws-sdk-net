@@ -75,19 +75,19 @@ namespace Amazon.WorkDocs
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>READ (Get*)</code> 
+    ///  <c>READ (Get*)</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</code> 
+    ///  <c>WRITE (Activate*, Add*, Create*, Deactivate*, Initiate*, Update*)</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LIST (Describe*)</code> 
+    ///  <c>LIST (Describe*)</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DELETE*, CANCEL</code> 
+    ///  <c>DELETE*, CANCEL</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -1911,10 +1911,10 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Describes the current user's special folders; the <code>RootFolder</code> and the
-        /// <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders
-        /// and <code>RecycleBin</code> is the root of recycled items. This is not a valid action
-        /// for SigV4 (administrative API) clients.
+        /// Describes the current user's special folders; the <c>RootFolder</c> and the <c>RecycleBin</c>.
+        /// <c>RootFolder</c> is the root of user's files and folders and <c>RecycleBin</c> is
+        /// the root of recycled items. This is not a valid action for SigV4 (administrative API)
+        /// clients.
         /// 
         ///  
         /// <para>
@@ -1948,10 +1948,10 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Describes the current user's special folders; the <code>RootFolder</code> and the
-        /// <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders
-        /// and <code>RecycleBin</code> is the root of recycled items. This is not a valid action
-        /// for SigV4 (administrative API) clients.
+        /// Describes the current user's special folders; the <c>RootFolder</c> and the <c>RecycleBin</c>.
+        /// <c>RootFolder</c> is the root of user's files and folders and <c>RecycleBin</c> is
+        /// the root of recycled items. This is not a valid action for SigV4 (administrative API)
+        /// clients.
         /// 
         ///  
         /// <para>
@@ -2525,8 +2525,8 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code>
-        /// supported is <code>SHARED_WITH_ME</code>.
+        /// Retrieves a collection of resources, including folders and documents. The only <c>CollectionType</c>
+        /// supported is <c>SHARED_WITH_ME</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
         /// 
@@ -2553,8 +2553,8 @@ namespace Amazon.WorkDocs
 
 
         /// <summary>
-        /// Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code>
-        /// supported is <code>SHARED_WITH_ME</code>.
+        /// Retrieves a collection of resources, including folders and documents. The only <c>CollectionType</c>
+        /// supported is <c>SHARED_WITH_ME</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResources service method.</param>
         /// <param name="cancellationToken">

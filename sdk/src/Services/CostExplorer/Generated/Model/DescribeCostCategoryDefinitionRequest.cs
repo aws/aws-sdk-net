@@ -35,10 +35,10 @@ namespace Amazon.CostExplorer.Model
     /// 
     ///  
     /// <para>
-    /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that's
-    /// active on a specific date. If there's no <code>EffectiveOn</code> specified, you see
-    /// a Cost Category that's effective on the current date. If Cost Category is still effective,
-    /// <code>EffectiveEnd</code> is omitted in the response. 
+    /// You have the option to use <c>EffectiveOn</c> to return a Cost Category that's active
+    /// on a specific date. If there's no <c>EffectiveOn</c> specified, you see a Cost Category
+    /// that's effective on the current date. If Cost Category is still effective, <c>EffectiveEnd</c>
+    /// is omitted in the response. 
     /// </para>
     /// </summary>
     public partial class DescribeCostCategoryDefinitionRequest : AmazonCostExplorerRequest

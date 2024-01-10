@@ -75,8 +75,8 @@ namespace Amazon.WAFRegional.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS
-        /// WAF performs the transformation on <code>FieldToMatch</code> before inspecting it
-        /// for a match.
+        /// WAF performs the transformation on <c>FieldToMatch</c> before inspecting it for a
+        /// match.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
+        ///  <c>COMPRESS_WHITE_SPACE</c> also replaces multiple spaces with one space.
         /// </para>
         ///  
         /// <para>
@@ -155,33 +155,33 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+        /// Use this option to replace HTML-encoded characters with unencoded characters. <c>HTML_ENTITY_DECODE</c>
         /// performs the following operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)quot;</code> with <code>"</code> 
+        /// Replaces <c>(ampersand)quot;</c> with <c>"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+        /// Replaces <c>(ampersand)nbsp;</c> with a non-breaking space, decimal 160
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+        /// Replaces <c>(ampersand)lt;</c> with a "less than" symbol
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> 
+        /// Replaces <c>(ampersand)gt;</c> with <c>&gt;</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>,
+        /// Replaces characters that are represented in hexadecimal format, <c>(ampersand)#xhhhh;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
+        /// Replaces characters that are represented in decimal format, <c>(ampersand)#nnnn;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> </ul> 
@@ -206,7 +206,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>NONE</code> if you don't want to perform any text transformations.
+        /// Specify <c>NONE</c> if you don't want to perform any text transformations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

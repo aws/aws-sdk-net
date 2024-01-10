@@ -62,9 +62,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property AccessGrantsLocationId. 
         /// <para>
         /// The ID of the registered location to which you are granting access. S3 Access Grants
-        /// assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code>
-        /// to the default location <code>s3://</code> and assigns an auto-generated ID to other
-        /// locations that you register. 
+        /// assigns this ID when you register the location. S3 Access Grants assigns the ID <c>default</c>
+        /// to the default location <c>s3://</c> and assigns an auto-generated ID to other locations
+        /// that you register. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -122,12 +122,12 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property LocationScope. 
         /// <para>
         /// The S3 path to the location that you are registering. The location scope can be the
-        /// default S3 location <code>s3://</code>, the S3 path to a bucket <code>s3://&lt;bucket&gt;</code>,
-        /// or the S3 path to a bucket and prefix <code>s3://&lt;bucket&gt;/&lt;prefix&gt;</code>.
-        /// A prefix in S3 is a string of characters at the beginning of an object key name used
+        /// default S3 location <c>s3://</c>, the S3 path to a bucket <c>s3://&lt;bucket&gt;</c>,
+        /// or the S3 path to a bucket and prefix <c>s3://&lt;bucket&gt;/&lt;prefix&gt;</c>. A
+        /// prefix in S3 is a string of characters at the beginning of an object key name used
         /// to organize the objects that you store in your S3 buckets. For example, object key
-        /// names that start with the <code>engineering/</code> prefix or object key names that
-        /// start with the <code>marketing/campaigns/</code> prefix.
+        /// names that start with the <c>engineering/</c> prefix or object key names that start
+        /// with the <c>marketing/campaigns/</c> prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

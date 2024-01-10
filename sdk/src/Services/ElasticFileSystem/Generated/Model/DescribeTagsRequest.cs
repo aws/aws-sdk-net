@@ -32,20 +32,18 @@ namespace Amazon.ElasticFileSystem.Model
     /// Container for the parameters to the DescribeTags operation.
     /// <note> 
     /// <para>
-    /// DEPRECATED - The <code>DescribeTags</code> action is deprecated and not maintained.
-    /// To view tags associated with EFS resources, use the <code>ListTagsForResource</code>
-    /// API action.
+    /// DEPRECATED - The <c>DescribeTags</c> action is deprecated and not maintained. To view
+    /// tags associated with EFS resources, use the <c>ListTagsForResource</c> API action.
     /// </para>
     ///  </note> 
     /// <para>
     /// Returns the tags associated with a file system. The order of tags returned in the
-    /// response of one <code>DescribeTags</code> call and the order of tags returned across
-    /// the responses of a multiple-call iteration (when using pagination) is unspecified.
-    /// 
+    /// response of one <c>DescribeTags</c> call and the order of tags returned across the
+    /// responses of a multiple-call iteration (when using pagination) is unspecified. 
     /// </para>
     ///  
     /// <para>
-    ///  This operation requires permissions for the <code>elasticfilesystem:DescribeTags</code>
+    ///  This operation requires permissions for the <c>elasticfilesystem:DescribeTags</c>
     /// action. 
     /// </para>
     /// </summary>
@@ -91,7 +89,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// (Optional) An opaque pagination token returned from a previous <code>DescribeTags</code>
+        /// (Optional) An opaque pagination token returned from a previous <c>DescribeTags</c>
         /// operation (String). If present, it specifies to continue the list from where the previous
         /// call left off.
         /// </para>

@@ -50,10 +50,10 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        ///  The name of the package that is displayed. The <code>displayName</code> varies depending
-        /// on the package version's format. For example, if an npm package is named <code>ui</code>,
-        /// is in the namespace <code>vue</code>, and has the format <code>npm</code>, then the
-        /// <code>displayName</code> is <code>@vue/ui</code>. 
+        ///  The name of the package that is displayed. The <c>displayName</c> varies depending
+        /// on the package version's format. For example, if an npm package is named <c>ui</c>,
+        /// is in the namespace <c>vue</c>, and has the format <c>npm</c>, then the <c>displayName</c>
+        /// is <c>@vue/ui</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -131,11 +131,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. 
+        ///  The namespace of a Maven package version is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

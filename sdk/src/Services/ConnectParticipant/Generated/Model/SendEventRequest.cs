@@ -34,7 +34,7 @@ namespace Amazon.ConnectParticipant.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+    ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
     /// </para>
     ///  </note> 
     /// <para>

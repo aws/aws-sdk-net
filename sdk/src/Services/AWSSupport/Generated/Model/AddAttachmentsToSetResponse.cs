@@ -40,10 +40,10 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property AttachmentSetId. 
         /// <para>
-        /// The ID of the attachment set. If an <code>attachmentSetId</code> was not specified,
-        /// a new attachment set is created, and the ID of the set is returned in the response.
-        /// If an <code>attachmentSetId</code> was specified, the attachments are added to the
-        /// specified set, if it exists.
+        /// The ID of the attachment set. If an <c>attachmentSetId</c> was not specified, a new
+        /// attachment set is created, and the ID of the set is returned in the response. If an
+        /// <c>attachmentSetId</c> was specified, the attachments are added to the specified set,
+        /// if it exists.
         /// </para>
         /// </summary>
         public string AttachmentSetId

@@ -86,7 +86,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The date and time in UTC for the recurring schedule to end. For example, <code>"2019-06-01T00:00:00Z"</code>.
+        /// The date and time in UTC for the recurring schedule to end. For example, <c>"2019-06-01T00:00:00Z"</c>.
         /// 
         /// </para>
         /// </summary>
@@ -145,8 +145,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
-        /// they form the boundaries of when the recurring action starts and stops.
+        /// When <c>StartTime</c> and <c>EndTime</c> are specified with <c>Recurrence</c>, they
+        /// form the boundaries of when the recurring action starts and stops.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -203,7 +203,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The date and time in UTC for this action to start. For example, <code>"2019-06-01T00:00:00Z"</code>.
+        /// The date and time in UTC for this action to start. For example, <c>"2019-06-01T00:00:00Z"</c>.
         /// 
         /// </para>
         /// </summary>

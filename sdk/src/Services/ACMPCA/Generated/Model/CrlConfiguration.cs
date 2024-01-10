@@ -32,8 +32,8 @@ namespace Amazon.ACMPCA.Model
     /// Contains configuration information for a certificate revocation list (CRL). Your private
     /// certificate authority (CA) creates base CRLs. Delta CRLs are not supported. You can
     /// enable CRLs for your new or an existing private CA by setting the <b>Enabled</b> parameter
-    /// to <code>true</code>. Your private CA writes CRLs to an S3 bucket that you specify
-    /// in the <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying
+    /// to <c>true</c>. Your private CA writes CRLs to an S3 bucket that you specify in the
+    /// <b>S3BucketName</b> parameter. You can hide the name of your bucket by specifying
     /// a value for the <b>CustomCname</b> parameter. Your private CA copies the CNAME or
     /// the S3 bucket name to the <b>CRL Distribution Points</b> extension of each certificate
     /// it issues. Your S3 bucket policy must give write permission to Amazon Web Services
@@ -133,7 +133,7 @@ namespace Amazon.ACMPCA.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>openssl crl -inform DER -text -in <i>crl_path</i> -noout</code> 
+    ///  <c>openssl crl -inform DER -text -in <i>crl_path</i> -noout</c> 
     /// </para>
     ///  
     /// <para>
@@ -232,7 +232,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>S3BucketName</code> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
+        /// The <c>S3BucketName</c> parameter must conform to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">S3
         /// bucket naming rules</a>.
         /// </para>
         ///  </note>
@@ -261,16 +261,15 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the default is <code>PUBLIC_READ</code>.
+        /// If no value is specified, the default is <c>PUBLIC_READ</c>.
         /// </para>
         ///  
         /// <para>
         ///  <i>Note:</i> This default can cause CA creation to fail in some circumstances. If
         /// you have have enabled the Block Public Access (BPA) feature in your S3 account, then
-        /// you must specify the value of this parameter as <code>BUCKET_OWNER_FULL_CONTROL</code>,
+        /// you must specify the value of this parameter as <c>BUCKET_OWNER_FULL_CONTROL</c>,
         /// and not doing so results in an error. If you have disabled BPA in S3, then you can
-        /// specify either <code>BUCKET_OWNER_FULL_CONTROL</code> or <code>PUBLIC_READ</code>
-        /// as the value.
+        /// specify either <c>BUCKET_OWNER_FULL_CONTROL</c> or <c>PUBLIC_READ</c> as the value.
         /// </para>
         ///  
         /// <para>

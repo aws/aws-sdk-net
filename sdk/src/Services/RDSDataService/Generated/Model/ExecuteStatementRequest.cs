@@ -34,7 +34,7 @@ namespace Amazon.RDSDataService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+    /// If a call isn't part of a transaction because it doesn't include the <c>transactionID</c>
     /// parameter, changes that result from the call are committed automatically.
     /// </para>
     ///  
@@ -106,10 +106,9 @@ namespace Amazon.RDSDataService.Model
         /// Gets and sets the property FormatRecordsAs. 
         /// <para>
         /// A value that indicates whether to format the result set as a single JSON string. This
-        /// parameter only applies to <code>SELECT</code> statements and is ignored for other
-        /// types of statements. Allowed values are <code>NONE</code> and <code>JSON</code>. The
-        /// default value is <code>NONE</code>. The result is returned in the <code>formattedRecords</code>
-        /// field.
+        /// parameter only applies to <c>SELECT</c> statements and is ignored for other types
+        /// of statements. Allowed values are <c>NONE</c> and <c>JSON</c>. The default value is
+        /// <c>NONE</c>. The result is returned in the <c>formattedRecords</c> field.
         /// </para>
         ///  
         /// <para>
@@ -214,7 +213,7 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, the <code>schema</code> parameter isn't supported.
+        /// Currently, the <c>schema</c> parameter isn't supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -278,7 +277,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property TransactionId. 
         /// <para>
-        /// The identifier of a transaction that was started by using the <code>BeginTransaction</code>
+        /// The identifier of a transaction that was started by using the <c>BeginTransaction</c>
         /// operation. Specify the transaction ID of the transaction that you want to include
         /// the SQL statement in.
         /// </para>

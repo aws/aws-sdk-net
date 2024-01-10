@@ -31,7 +31,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the StartSession operation.
     /// Creates a session for running calculations within a workgroup. The session is ready
-    /// when it reaches an <code>IDLE</code> state.
+    /// when it reaches an <c>IDLE</c> state.
     /// </summary>
     public partial class StartSessionRequest : AmazonAthenaRequest
     {
@@ -46,7 +46,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique case-sensitive string used to ensure the request to create the session is
-        /// idempotent (executes only once). If another <code>StartSessionRequest</code> is received,
+        /// idempotent (executes only once). If another <c>StartSessionRequest</c> is received,
         /// the same response is returned and another session is not created. If a parameter has
         /// changed, an error is returned.
         /// </para>
@@ -115,9 +115,8 @@ namespace Amazon.Athena.Model
         /// <para>
         /// The notebook version. This value is supplied automatically for notebook sessions in
         /// the Athena console and is not required for programmatic session access. The only valid
-        /// notebook version is <code>Athena notebook version 1</code>. If you specify a value
-        /// for <code>NotebookVersion</code>, you must also specify a value for <code>NotebookId</code>.
-        /// See <a>EngineConfiguration$AdditionalConfigs</a>.
+        /// notebook version is <c>Athena notebook version 1</c>. If you specify a value for <c>NotebookVersion</c>,
+        /// you must also specify a value for <c>NotebookId</c>. See <a>EngineConfiguration$AdditionalConfigs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -100,8 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property UsePreviousValue. 
         /// <para>
         /// During a stack update, use the existing parameter value that the stack is using for
-        /// a given parameter key. If you specify <code>true</code>, do not specify a parameter
-        /// value.
+        /// a given parameter key. If you specify <c>true</c>, do not specify a parameter value.
         /// </para>
         /// </summary>
         public bool UsePreviousValue

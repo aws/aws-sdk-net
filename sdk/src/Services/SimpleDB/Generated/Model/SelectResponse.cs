@@ -53,8 +53,8 @@ namespace Amazon.SimpleDB.Model
 
         /// <summary>
         /// Gets and sets the property NextToken. An opaque token indicating that more items than
-        /// <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte,
-        /// or the execution time exceeded 5 seconds.
+        /// <c>MaxNumberOfItems</c> were matched, the response size exceeded 1 megabyte, or the
+        /// execution time exceeded 5 seconds.
         /// </summary>
         public string NextToken
         {

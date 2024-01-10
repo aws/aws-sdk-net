@@ -58,8 +58,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default
-        /// value is <code>DESCENDING</code>.
+        /// The sorting order. Can be <c>ASCENDING</c> or <c>DESCENDING</c>. The default value
+        /// is <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

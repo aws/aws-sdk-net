@@ -30,7 +30,7 @@ namespace Amazon.Appflow.Model
 {
     /// <summary>
     /// Specifies the configuration details of a schedule-triggered flow as defined by the
-    /// user. Currently, these settings only apply to the <code>Scheduled</code> trigger type.
+    /// user. Currently, these settings only apply to the <c>Scheduled</c> trigger type.
     /// </summary>
     public partial class ScheduledTriggerProperties
     {
@@ -105,7 +105,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property ScheduleEndTime. 
         /// <para>
         /// The time at which the scheduled flow ends. The time is formatted as a timestamp that
-        /// follows the ISO 8601 standard, such as <code>2022-04-27T13:00:00-07:00</code>.
+        /// follows the ISO 8601 standard, such as <c>2022-04-27T13:00:00-07:00</c>.
         /// </para>
         /// </summary>
         public DateTime ScheduleEndTime
@@ -124,7 +124,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
         ///  The scheduling expression that determines the rate at which the schedule will run,
-        /// for example <code>rate(5minutes)</code>. 
+        /// for example <c>rate(5minutes)</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -164,7 +164,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property ScheduleStartTime. 
         /// <para>
         /// The time at which the scheduled flow starts. The time is formatted as a timestamp
-        /// that follows the ISO 8601 standard, such as <code>2022-04-26T13:00:00-07:00</code>.
+        /// that follows the ISO 8601 standard, such as <c>2022-04-26T13:00:00-07:00</c>.
         /// </para>
         /// </summary>
         public DateTime ScheduleStartTime
@@ -183,16 +183,15 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property Timezone. 
         /// <para>
         /// Specifies the time zone used when referring to the dates and times of a scheduled
-        /// flow, such as <code>America/New_York</code>. This time zone is only a descriptive
-        /// label. It doesn't affect how Amazon AppFlow interprets the timestamps that you specify
-        /// to schedule the flow.
+        /// flow, such as <c>America/New_York</c>. This time zone is only a descriptive label.
+        /// It doesn't affect how Amazon AppFlow interprets the timestamps that you specify to
+        /// schedule the flow.
         /// </para>
         ///  
         /// <para>
         /// If you want to schedule a flow by using times in a particular time zone, indicate
         /// the time zone as a UTC offset in your timestamps. For example, the UTC offsets for
-        /// the <code>America/New_York</code> timezone are <code>-04:00</code> EDT and <code>-05:00
-        /// EST</code>.
+        /// the <c>America/New_York</c> timezone are <c>-04:00</c> EDT and <c>-05:00 EST</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

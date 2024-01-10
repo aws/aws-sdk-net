@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearchDomain.Model
 {
     /// <summary>
-    /// Contains the resource id (<code>rid</code>) and the time it took to process the request
-    /// (<code>timems</code>).
+    /// Contains the resource id (<c>rid</c>) and the time it took to process the request
+    /// (<c>timems</c>).
     /// </summary>
     public partial class SuggestStatus
     {

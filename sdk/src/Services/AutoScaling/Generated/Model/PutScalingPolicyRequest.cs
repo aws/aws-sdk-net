@@ -73,13 +73,13 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property AdjustmentType. 
         /// <para>
         /// Specifies how the scaling adjustment is interpreted (for example, an absolute number
-        /// or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
-        /// and <code>PercentChangeInCapacity</code>.
+        /// or a percentage). The valid values are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>,
+        /// and <c>PercentChangeInCapacity</c>.
         /// </para>
         ///  
         /// <para>
-        /// Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
+        /// Required if the policy type is <c>StepScaling</c> or <c>SimpleScaling</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
         /// adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -123,8 +123,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid only if the policy type is <code>SimpleScaling</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Valid only if the policy type is <c>SimpleScaling</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -179,13 +179,13 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
+        /// Valid only if the policy type is <c>TargetTrackingScaling</c> or <c>StepScaling</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// The default is to use the value for the default instance warmup defined for the group.
-        /// If default instance warmup is null, then <code>EstimatedInstanceWarmup</code> falls
-        /// back to the value of default cooldown.
+        /// If default instance warmup is null, then <c>EstimatedInstanceWarmup</c> falls back
+        /// to the value of default cooldown.
         /// </para>
         ///  </note>
         /// </summary>
@@ -204,13 +204,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetricAggregationType. 
         /// <para>
-        /// The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
-        /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
-        /// value is treated as <code>Average</code>.
+        /// The aggregation type for the CloudWatch metrics. The valid values are <c>Minimum</c>,
+        /// <c>Maximum</c>, and <c>Average</c>. If the aggregation type is null, the value is
+        /// treated as <c>Average</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid only if the policy type is <code>StepScaling</code>.
+        /// Valid only if the policy type is <c>StepScaling</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -229,22 +229,22 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentMagnitude. 
         /// <para>
-        /// The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.
+        /// The minimum value to scale by when the adjustment type is <c>PercentChangeInCapacity</c>.
         /// For example, suppose that you create a step scaling policy to scale out an Auto Scaling
-        /// group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of 2. If
-        /// the group has 4 instances and the scaling policy is performed, 25 percent of 4 is
-        /// 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon
-        /// EC2 Auto Scaling scales out the group by 2 instances.
+        /// group by 25 percent and you specify a <c>MinAdjustmentMagnitude</c> of 2. If the group
+        /// has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However,
+        /// because you specified a <c>MinAdjustmentMagnitude</c> of 2, Amazon EC2 Auto Scaling
+        /// scales out the group by 2 instances.
         /// </para>
         ///  
         /// <para>
-        /// Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
+        /// Valid only if the policy type is <c>StepScaling</c> or <c>SimpleScaling</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
         /// adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code>
+        /// Some Auto Scaling groups use instance weights. In this case, set the <c>MinAdjustmentMagnitude</c>
         /// to a value that is at least as large as your largest instance weight.
         /// </para>
         ///  </note>
@@ -264,7 +264,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentStep. 
         /// <para>
-        /// Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
+        /// Available for backward compatibility. Use <c>MinAdjustmentMagnitude</c> instead.
         /// </para>
         /// </summary>
         public int MinAdjustmentStep
@@ -305,19 +305,19 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TargetTrackingScaling</code> 
+        ///  <c>TargetTrackingScaling</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StepScaling</code> 
+        ///  <c>StepScaling</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SimpleScaling</code> (default)
+        ///  <c>SimpleScaling</c> (default)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PredictiveScaling</code> 
+        ///  <c>PredictiveScaling</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -351,7 +351,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if the policy type is <code>PredictiveScaling</code>.
+        /// Required if the policy type is <c>PredictiveScaling</c>.
         /// </para>
         /// </summary>
         public PredictiveScalingConfiguration PredictiveScalingConfiguration
@@ -375,8 +375,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if the policy type is <code>SimpleScaling</code>. (Not used with any other
-        /// policy type.) 
+        /// Required if the policy type is <c>SimpleScaling</c>. (Not used with any other policy
+        /// type.) 
         /// </para>
         /// </summary>
         public int ScalingAdjustment
@@ -398,8 +398,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if the policy type is <code>StepScaling</code>. (Not used with any other
-        /// policy type.) 
+        /// Required if the policy type is <c>StepScaling</c>. (Not used with any other policy
+        /// type.) 
         /// </para>
         /// </summary>
         public List<StepAdjustment> StepAdjustments
@@ -425,24 +425,24 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASGAverageCPUUtilization</code> 
+        ///  <c>ASGAverageCPUUtilization</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASGAverageNetworkIn</code> 
+        ///  <c>ASGAverageNetworkIn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASGAverageNetworkOut</code> 
+        ///  <c>ASGAverageNetworkOut</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALBRequestCountPerTarget</code> 
+        ///  <c>ALBRequestCountPerTarget</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify
-        /// the <code>ResourceLabel</code> property with the <code>PredefinedMetricSpecification</code>.
+        /// If you specify <c>ALBRequestCountPerTarget</c> for the metric, you must specify the
+        /// <c>ResourceLabel</c> property with the <c>PredefinedMetricSpecification</c>.
         /// </para>
         ///  
         /// <para>
@@ -451,7 +451,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if the policy type is <code>TargetTrackingScaling</code>.
+        /// Required if the policy type is <c>TargetTrackingScaling</c>.
         /// </para>
         /// </summary>
         public TargetTrackingConfiguration TargetTrackingConfiguration

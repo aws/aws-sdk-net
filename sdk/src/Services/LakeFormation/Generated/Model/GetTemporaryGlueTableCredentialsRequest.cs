@@ -143,8 +143,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property SupportedPermissionTypes. 
         /// <para>
-        /// A list of supported permission types for the table. Valid values are <code>COLUMN_PERMISSION</code>
-        /// and <code>CELL_FILTER_PERMISSION</code>.
+        /// A list of supported permission types for the table. Valid values are <c>COLUMN_PERMISSION</c>
+        /// and <c>CELL_FILTER_PERMISSION</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

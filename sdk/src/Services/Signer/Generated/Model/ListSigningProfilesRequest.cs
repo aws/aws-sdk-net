@@ -31,12 +31,12 @@ namespace Amazon.Signer.Model
     /// <summary>
     /// Container for the parameters to the ListSigningProfiles operation.
     /// Lists all available signing profiles in your AWS account. Returns only profiles with
-    /// an <code>ACTIVE</code> status unless the <code>includeCanceled</code> request field
-    /// is set to <code>true</code>. If additional jobs remain to be listed, AWS Signer returns
-    /// a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code>
-    /// to fetch the remaining values. You can continue calling <code>ListSigningJobs</code>
-    /// with your <code>maxResults</code> parameter and with new values that Signer returns
-    /// in the <code>nextToken</code> parameter until all of your signing jobs have been returned.
+    /// an <c>ACTIVE</c> status unless the <c>includeCanceled</c> request field is set to
+    /// <c>true</c>. If additional jobs remain to be listed, AWS Signer returns a <c>nextToken</c>
+    /// value. Use this value in subsequent calls to <c>ListSigningJobs</c> to fetch the remaining
+    /// values. You can continue calling <c>ListSigningJobs</c> with your <c>maxResults</c>
+    /// parameter and with new values that Signer returns in the <c>nextToken</c> parameter
+    /// until all of your signing jobs have been returned.
     /// </summary>
     public partial class ListSigningProfilesRequest : AmazonSignerRequest
     {
@@ -49,7 +49,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property IncludeCanceled. 
         /// <para>
-        /// Designates whether to include profiles with the status of <code>CANCELED</code>.
+        /// Designates whether to include profiles with the status of <c>CANCELED</c>.
         /// </para>
         /// </summary>
         public bool IncludeCanceled
@@ -88,7 +88,7 @@ namespace Amazon.Signer.Model
         /// <para>
         /// Value for specifying the next set of paginated results to return. After you receive
         /// a response with truncated results, use this parameter in a subsequent request. Set
-        /// it to the value of <code>nextToken</code> from the response that you just received.
+        /// it to the value of <c>nextToken</c> from the response that you just received.
         /// </para>
         /// </summary>
         public string NextToken

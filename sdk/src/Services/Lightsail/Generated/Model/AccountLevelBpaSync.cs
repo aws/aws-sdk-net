@@ -40,10 +40,10 @@ namespace Amazon.Lightsail.Model
     /// object permissions that are configured. Lightsail buckets take into account the Amazon
     /// S3 account-level BPA configuration when allowing or denying public access. To do this,
     /// Lightsail periodically fetches the account-level BPA configuration from Amazon S3.
-    /// When the account-level BPA status is <code>InSync</code>, the Amazon S3 account-level
-    /// BPA configuration is synchronized and it applies to your Lightsail buckets. For more
-    /// information about Amazon Simple Storage Service account-level BPA and how it affects
-    /// Lightsail buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
+    /// When the account-level BPA status is <c>InSync</c>, the Amazon S3 account-level BPA
+    /// configuration is synchronized and it applies to your Lightsail buckets. For more information
+    /// about Amazon Simple Storage Service account-level BPA and how it affects Lightsail
+    /// buckets, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-block-public-access-for-buckets">Block
     /// public access for buckets in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
     /// Guide</i>.
     /// </para>
@@ -96,8 +96,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message that provides a reason for a <code>Failed</code> or <code>Defaulted</code>
-        /// synchronization status.
+        /// A message that provides a reason for a <c>Failed</c> or <c>Defaulted</c> synchronization
+        /// status.
         /// </para>
         ///  
         /// <para>
@@ -105,14 +105,14 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SYNC_ON_HOLD</code> - The synchronization has not yet happened. This status
-        /// message occurs immediately after you create your first Lightsail bucket. This status
-        /// message should change after the first synchronization happens, approximately 1 hour
-        /// after the first bucket is created.
+        ///  <c>SYNC_ON_HOLD</c> - The synchronization has not yet happened. This status message
+        /// occurs immediately after you create your first Lightsail bucket. This status message
+        /// should change after the first synchronization happens, approximately 1 hour after
+        /// the first bucket is created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEFAULTED_FOR_SLR_MISSING</code> - The synchronization failed because the required
+        ///  <c>DEFAULTED_FOR_SLR_MISSING</c> - The synchronization failed because the required
         /// service-linked role is missing from your Amazon Web Services account. The account-level
         /// BPA configuration for your Lightsail buckets is defaulted to <i>active</i> until the
         /// synchronization can occur. This means that all your buckets are private and not publicly
@@ -123,19 +123,19 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</code> - The synchronization failed because
-        /// the required service-linked role is missing from your Amazon Web Services account.
-        /// Account-level BPA is not yet configured for your Lightsail buckets. Therefore, only
-        /// the bucket access permissions and individual object access permissions apply to your
-        /// Lightsail buckets. For more information about how to create the required service-linked
-        /// role to allow synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using
+        ///  <c>DEFAULTED_FOR_SLR_MISSING_ON_HOLD</c> - The synchronization failed because the
+        /// required service-linked role is missing from your Amazon Web Services account. Account-level
+        /// BPA is not yet configured for your Lightsail buckets. Therefore, only the bucket access
+        /// permissions and individual object access permissions apply to your Lightsail buckets.
+        /// For more information about how to create the required service-linked role to allow
+        /// synchronization, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-using-service-linked-roles">Using
         /// Service-Linked Roles for Amazon Lightsail</a> in the <i>Amazon Lightsail Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unknown</code> - The reason that synchronization failed is unknown. Contact
-        /// Amazon Web Services Support for more information.
+        ///  <c>Unknown</c> - The reason that synchronization failed is unknown. Contact Amazon
+        /// Web Services Support for more information.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -162,29 +162,28 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>InSync</code> - Account-level BPA is synchronized. The Amazon S3 account-level
-        /// BPA configuration applies to your Lightsail buckets.
+        ///  <c>InSync</c> - Account-level BPA is synchronized. The Amazon S3 account-level BPA
+        /// configuration applies to your Lightsail buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NeverSynced</code> - Synchronization has not yet happened. The Amazon S3 account-level
+        ///  <c>NeverSynced</c> - Synchronization has not yet happened. The Amazon S3 account-level
         /// BPA configuration does not apply to your Lightsail buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - Synchronization failed. The Amazon S3 account-level BPA configuration
+        ///  <c>Failed</c> - Synchronization failed. The Amazon S3 account-level BPA configuration
         /// does not apply to your Lightsail buckets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Defaulted</code> - Synchronization failed and account-level BPA for your Lightsail
+        ///  <c>Defaulted</c> - Synchronization failed and account-level BPA for your Lightsail
         /// buckets is defaulted to <i>active</i>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// You might need to complete further actions if the status is <code>Failed</code> or
-        /// <code>Defaulted</code>. The <code>message</code> parameter provides more information
-        /// for those statuses.
+        /// You might need to complete further actions if the status is <c>Failed</c> or <c>Defaulted</c>.
+        /// The <c>message</c> parameter provides more information for those statuses.
         /// </para>
         ///  </note>
         /// </summary>

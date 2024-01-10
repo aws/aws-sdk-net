@@ -945,11 +945,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul> <important> 
@@ -957,18 +957,18 @@ namespace Amazon.IoTSiteWise
         /// With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp
         /// of no more than 7 days in the past and no more than 10 minutes in the future. IoT
         /// SiteWise rejects timestamps outside of the inclusive range of [-7 days, +10 minutes]
-        /// and returns a <code>TimestampOutOfRangeException</code> error.
+        /// and returns a <c>TimestampOutOfRangeException</c> error.
         /// </para>
         ///  
         /// <para>
         /// For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless
-        /// the newer TQV has a different quality. For example, if you store a TQV <code>{T1,
-        /// GOOD, V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.
+        /// the newer TQV has a different quality. For example, if you store a TQV <c>{T1, GOOD,
+        /// V1}</c>, then storing <c>{T1, GOOD, V2}</c> replaces the existing TQV.
         /// </para>
         ///  </important> 
         /// <para>
-        /// IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry
-        /// individually. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
+        /// IoT SiteWise authorizes access to each <c>BatchPutAssetPropertyValue</c> entry individually.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
         /// authorization</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
@@ -1036,11 +1036,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul> <important> 
@@ -1048,18 +1048,18 @@ namespace Amazon.IoTSiteWise
         /// With respect to Unix epoch time, IoT SiteWise accepts only TQVs that have a timestamp
         /// of no more than 7 days in the past and no more than 10 minutes in the future. IoT
         /// SiteWise rejects timestamps outside of the inclusive range of [-7 days, +10 minutes]
-        /// and returns a <code>TimestampOutOfRangeException</code> error.
+        /// and returns a <c>TimestampOutOfRangeException</c> error.
         /// </para>
         ///  
         /// <para>
         /// For each asset property, IoT SiteWise overwrites TQVs with duplicate timestamps unless
-        /// the newer TQV has a different quality. For example, if you store a TQV <code>{T1,
-        /// GOOD, V1}</code>, then storing <code>{T1, GOOD, V2}</code> replaces the existing TQV.
+        /// the newer TQV has a different quality. For example, if you store a TQV <c>{T1, GOOD,
+        /// V1}</c>, then storing <c>{T1, GOOD, V2}</c> replaces the existing TQV.
         /// </para>
         ///  </important> 
         /// <para>
-        /// IoT SiteWise authorizes access to each <code>BatchPutAssetPropertyValue</code> entry
-        /// individually. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
+        /// IoT SiteWise authorizes access to each <c>BatchPutAssetPropertyValue</c> entry individually.
+        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-batchputassetpropertyvalue-action">BatchPutAssetPropertyValue
         /// authorization</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
@@ -1363,7 +1363,7 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  
         /// <para>
-        /// You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.
+        /// You can create two types of asset models, <c>ASSET_MODEL</c> or <c>COMPONENT_MODEL</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1441,7 +1441,7 @@ namespace Amazon.IoTSiteWise
         /// 
         ///  
         /// <para>
-        /// You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.
+        /// You can create two types of asset models, <c>ASSET_MODEL</c> or <c>COMPONENT_MODEL</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1518,7 +1518,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates a custom composite model from specified property and hierarchy definitions.
-        /// There are two types of custom composite models, <code>inline</code> and <code>component-model-based</code>.
+        /// There are two types of custom composite models, <c>inline</c> and <c>component-model-based</c>.
         /// 
         /// 
         ///  
@@ -1538,13 +1538,13 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  
         /// <para>
-        /// To create a component-model-based model, specify the <code>composedAssetModelId</code>
-        /// of an existing asset model with <code>assetModelType</code> of <code>COMPONENT_MODEL</code>.
+        /// To create a component-model-based model, specify the <c>composedAssetModelId</c> of
+        /// an existing asset model with <c>assetModelType</c> of <c>COMPONENT_MODEL</c>.
         /// </para>
         ///  
         /// <para>
-        /// To create an inline model, specify the <code>assetModelCompositeModelProperties</code>
-        /// and don't include an <code>composedAssetModelId</code>.
+        /// To create an inline model, specify the <c>assetModelCompositeModelProperties</c> and
+        /// don't include an <c>composedAssetModelId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetModelCompositeModel service method.</param>
@@ -1602,7 +1602,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Creates a custom composite model from specified property and hierarchy definitions.
-        /// There are two types of custom composite models, <code>inline</code> and <code>component-model-based</code>.
+        /// There are two types of custom composite models, <c>inline</c> and <c>component-model-based</c>.
         /// 
         /// 
         ///  
@@ -1622,13 +1622,13 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  
         /// <para>
-        /// To create a component-model-based model, specify the <code>composedAssetModelId</code>
-        /// of an existing asset model with <code>assetModelType</code> of <code>COMPONENT_MODEL</code>.
+        /// To create a component-model-based model, specify the <c>composedAssetModelId</c> of
+        /// an existing asset model with <c>assetModelType</c> of <c>COMPONENT_MODEL</c>.
         /// </para>
         ///  
         /// <para>
-        /// To create an inline model, specify the <code>assetModelCompositeModelProperties</code>
-        /// and don't include an <code>composedAssetModelId</code>.
+        /// To create an inline model, specify the <c>assetModelCompositeModelProperties</c> and
+        /// don't include an <c>composedAssetModelId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAssetModelCompositeModel service method.</param>
@@ -3041,7 +3041,7 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// If the time series isn't associated with an asset property, specify the <c>alias</c>
         /// of the time series.
         /// </para>
         ///  </li> <li> 
@@ -3051,11 +3051,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>alias</code> of the time series.
+        /// The <c>alias</c> of the time series.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> that identifies the asset property.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -3109,7 +3109,7 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// If the time series isn't associated with an asset property, specify the <c>alias</c>
         /// of the time series.
         /// </para>
         ///  </li> <li> 
@@ -3119,11 +3119,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>alias</code> of the time series.
+        /// The <c>alias</c> of the time series.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> that identifies the asset property.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -3426,7 +3426,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Retrieves information about an asset composite model (also known as an asset component).
-        /// An <code>AssetCompositeModel</code> is an instance of an <code>AssetModelCompositeModel</code>.
+        /// An <c>AssetCompositeModel</c> is an instance of an <c>AssetModelCompositeModel</c>.
         /// If you want to see information about the model this is based on, call <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html">DescribeAssetModelCompositeModel</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssetCompositeModel service method.</param>
@@ -3466,7 +3466,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Retrieves information about an asset composite model (also known as an asset component).
-        /// An <code>AssetCompositeModel</code> is an instance of an <code>AssetModelCompositeModel</code>.
+        /// An <c>AssetCompositeModel</c> is an instance of an <c>AssetModelCompositeModel</c>.
         /// If you want to see information about the model this is based on, call <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html">DescribeAssetModelCompositeModel</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAssetCompositeModel service method.</param>
@@ -4586,7 +4586,7 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// If the time series isn't associated with an asset property, specify the <c>alias</c>
         /// of the time series.
         /// </para>
         ///  </li> <li> 
@@ -4596,11 +4596,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>alias</code> of the time series.
+        /// The <c>alias</c> of the time series.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> that identifies the asset property.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -4648,7 +4648,7 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the time series isn't associated with an asset property, specify the <code>alias</code>
+        /// If the time series isn't associated with an asset property, specify the <c>alias</c>
         /// of the time series.
         /// </para>
         ///  </li> <li> 
@@ -4658,11 +4658,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>alias</code> of the time series.
+        /// The <c>alias</c> of the time series.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> that identifies the asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> that identifies the asset property.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -5118,11 +5118,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -5175,11 +5175,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -5239,11 +5239,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -5296,11 +5296,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -5360,11 +5360,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -5417,11 +5417,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -5487,11 +5487,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -5550,11 +5550,11 @@ namespace Amazon.IoTSiteWise
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+        /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+        /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
         /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
         /// </para>
         ///  </li> </ul>
@@ -6512,7 +6512,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Retrieves a paginated list of composition relationships for an asset model of type
-        /// <code>COMPONENT_MODEL</code>.
+        /// <c>COMPONENT_MODEL</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompositionRelationships service method.</param>
         /// 
@@ -6551,7 +6551,7 @@ namespace Amazon.IoTSiteWise
 
         /// <summary>
         /// Retrieves a paginated list of composition relationships for an asset model of type
-        /// <code>COMPONENT_MODEL</code>.
+        /// <c>COMPONENT_MODEL</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompositionRelationships service method.</param>
         /// <param name="cancellationToken">
@@ -8106,18 +8106,18 @@ namespace Amazon.IoTSiteWise
         ///  
         /// <para>
         /// To replace an existing composite asset model property with a new one with the same
-        /// <code>name</code>, do the following:
+        /// <c>name</c>, do the following:
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing
-        /// property removed.
+        /// Submit an <c>UpdateAssetModelCompositeModel</c> request with the entire existing property
+        /// removed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes
-        /// the new property. The new asset property will have the same <code>name</code> as the
-        /// previous one and IoT SiteWise will generate a new unique <code>id</code>.
+        /// Submit a second <c>UpdateAssetModelCompositeModel</c> request that includes the new
+        /// property. The new asset property will have the same <c>name</c> as the previous one
+        /// and IoT SiteWise will generate a new unique <c>id</c>.
         /// </para>
         ///  </li> </ol> </important>
         /// </summary>
@@ -8188,18 +8188,18 @@ namespace Amazon.IoTSiteWise
         ///  
         /// <para>
         /// To replace an existing composite asset model property with a new one with the same
-        /// <code>name</code>, do the following:
+        /// <c>name</c>, do the following:
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing
-        /// property removed.
+        /// Submit an <c>UpdateAssetModelCompositeModel</c> request with the entire existing property
+        /// removed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes
-        /// the new property. The new asset property will have the same <code>name</code> as the
-        /// previous one and IoT SiteWise will generate a new unique <code>id</code>.
+        /// Submit a second <c>UpdateAssetModelCompositeModel</c> request that includes the new
+        /// property. The new asset property will have the same <c>name</c> as the previous one
+        /// and IoT SiteWise will generate a new unique <c>id</c>.
         /// </para>
         ///  </li> </ol> </important>
         /// </summary>

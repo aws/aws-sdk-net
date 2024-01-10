@@ -52,8 +52,8 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
+        /// The <c>ExclusiveEndTime</c> must be in <c>ISO 8601</c> date and time format and in
+        /// Universal Coordinated Time (UTC). For example: <c>2019-06-13T21:36:34Z</c>.
         /// </para>
         /// </summary>
         public DateTime ExclusiveEndTime
@@ -72,17 +72,17 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property InclusiveStartTime. 
         /// <para>
         /// The inclusive start date and time from which to start streaming journal data. This
-        /// parameter must be in <code>ISO 8601</code> date and time format and in Universal Coordinated
-        /// Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
+        /// parameter must be in <c>ISO 8601</c> date and time format and in Universal Coordinated
+        /// Time (UTC). For example: <c>2019-06-13T21:36:34Z</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
+        /// The <c>InclusiveStartTime</c> cannot be in the future and must be before <c>ExclusiveEndTime</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>,
-        /// QLDB effectively defaults it to the ledger's <code>CreationDateTime</code>.
+        /// If you provide an <c>InclusiveStartTime</c> that is before the ledger's <c>CreationDateTime</c>,
+        /// QLDB effectively defaults it to the ledger's <c>CreationDateTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -146,8 +146,8 @@ namespace Amazon.QLDB.Model
         ///  
         /// <para>
         /// To pass a role to QLDB when requesting a journal stream, you must have permissions
-        /// to perform the <code>iam:PassRole</code> action on the IAM role resource. This is
-        /// required for all journal stream requests.
+        /// to perform the <c>iam:PassRole</c> action on the IAM role resource. This is required
+        /// for all journal stream requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]

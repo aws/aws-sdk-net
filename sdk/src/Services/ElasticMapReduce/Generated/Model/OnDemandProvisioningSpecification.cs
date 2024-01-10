@@ -49,8 +49,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
         /// Specifies the strategy to use in launching On-Demand instance fleets. Currently, the
-        /// only option is <code>lowest-price</code> (the default), which launches the lowest
-        /// price first.
+        /// only option is <c>lowest-price</c> (the default), which launches the lowest price
+        /// first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

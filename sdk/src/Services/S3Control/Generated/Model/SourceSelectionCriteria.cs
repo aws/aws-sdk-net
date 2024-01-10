@@ -51,7 +51,7 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// To replicate object metadata modifications on replicas, you can specify this element
-        /// and set the <code>Status</code> of this element to <code>Enabled</code>.
+        /// and set the <c>Status</c> of this element to <c>Enabled</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property SseKmsEncryptedObjects. 
         /// <para>
         /// A filter that you can use to select Amazon S3 objects that are encrypted with server-side
-        /// encryption by using Key Management Service (KMS) keys. If you include <code>SourceSelectionCriteria</code>
+        /// encryption by using Key Management Service (KMS) keys. If you include <c>SourceSelectionCriteria</c>
         /// in the replication configuration, this element is required. 
         /// </para>
         ///  <note> 

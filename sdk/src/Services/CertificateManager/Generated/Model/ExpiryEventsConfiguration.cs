@@ -40,9 +40,8 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property DaysBeforeExpiry. 
         /// <para>
         /// Specifies the number of days prior to certificate expiration when ACM starts generating
-        /// <code>EventBridge</code> events. ACM sends one event per day per certificate until
-        /// the certificate expires. By default, accounts receive events starting 45 days before
-        /// certificate expiration.
+        /// <c>EventBridge</c> events. ACM sends one event per day per certificate until the certificate
+        /// expires. By default, accounts receive events starting 45 days before certificate expiration.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

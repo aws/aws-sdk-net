@@ -363,7 +363,7 @@ namespace Amazon.MTurk.Model
         ///  Conditions that a Worker's Qualifications must meet in order to accept the HIT. A
         /// HIT can have between zero and ten Qualification requirements. All requirements must
         /// be met in order for a Worker to accept the HIT. Additionally, other actions can be
-        /// restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code>
+        /// restricted using the <c>ActionsGuarded</c> field on each <c>QualificationRequirement</c>
         /// structure. 
         /// </para>
         /// </summary>

@@ -44,11 +44,11 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – Amazon SES enables engagement metrics for your account.
+        ///  <c>ENABLED</c> – Amazon SES enables engagement metrics for your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – Amazon SES disables engagement metrics for your account.
+        ///  <c>DISABLED</c> – Amazon SES disables engagement metrics for your account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

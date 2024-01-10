@@ -48,14 +48,14 @@ namespace Amazon.AutoScaling.Model
         /// Specifies the upper threshold as a percentage of the desired capacity of the Auto
         /// Scaling group. It represents the maximum percentage of the group that can be in service
         /// and healthy, or pending, to support your workload when replacing instances. Value
-        /// range is 100 to 200. After it's set, a value of <code>-1</code> will clear the previously
+        /// range is 100 to 200. After it's set, a value of <c>-1</c> will clear the previously
         /// set value. 
         /// </para>
         ///  
         /// <para>
-        /// Both <code>MinHealthyPercentage</code> and <code>MaxHealthyPercentage</code> must
-        /// be specified, and the difference between them cannot be greater than 100. A large
-        /// range increases the number of instances that can be replaced at the same time.
+        /// Both <c>MinHealthyPercentage</c> and <c>MaxHealthyPercentage</c> must be specified,
+        /// and the difference between them cannot be greater than 100. A large range increases
+        /// the number of instances that can be replaced at the same time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=200)]
@@ -77,7 +77,7 @@ namespace Amazon.AutoScaling.Model
         /// Specifies the lower threshold as a percentage of the desired capacity of the Auto
         /// Scaling group. It represents the minimum percentage of the group to keep in service,
         /// healthy, and ready to use to support your workload when replacing instances. Value
-        /// range is 0 to 100. After it's set, a value of <code>-1</code> will clear the previously
+        /// range is 0 to 100. After it's set, a value of <c>-1</c> will clear the previously
         /// set value.
         /// </para>
         /// </summary>

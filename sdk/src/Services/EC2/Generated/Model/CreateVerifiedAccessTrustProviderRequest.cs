@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DeviceOptions. 
         /// <para>
         /// The options for a device-based trust provider. This parameter is required when the
-        /// provider type is <code>device</code>.
+        /// provider type is <c>device</c>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessTrustProviderDeviceOptions DeviceOptions
@@ -109,7 +109,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DeviceTrustProviderType. 
         /// <para>
         /// The type of device-based trust provider. This parameter is required when the provider
-        /// type is <code>device</code>.
+        /// type is <c>device</c>.
         /// </para>
         /// </summary>
         public DeviceTrustProviderType DeviceTrustProviderType
@@ -128,7 +128,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property OidcOptions. 
         /// <para>
         /// The options for a OpenID Connect-compatible user-identity trust provider. This parameter
-        /// is required when the provider type is <code>user</code>.
+        /// is required when the provider type is <c>user</c>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessTrustProviderOidcOptions OidcOptions
@@ -221,7 +221,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property UserTrustProviderType. 
         /// <para>
         /// The type of user-based trust provider. This parameter is required when the provider
-        /// type is <code>user</code>.
+        /// type is <c>user</c>.
         /// </para>
         /// </summary>
         public UserTrustProviderType UserTrustProviderType

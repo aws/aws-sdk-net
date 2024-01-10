@@ -60,7 +60,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The version of the add-on. The version must match one of the versions returned by
         /// <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code> </a>.
+        /// <c>DescribeAddonVersions</c> </a>.
         /// </para>
         /// </summary>
         public string AddonVersion

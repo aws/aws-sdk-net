@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
-    /// Contains the identifiers for a group, a group member, and a <code>GroupMembership</code>
+    /// Contains the identifiers for a group, a group member, and a <c>GroupMembership</c>
     /// object in the identity store.
     /// </summary>
     public partial class GroupMembership
@@ -80,7 +80,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property MemberId. 
         /// <para>
-        /// An object that contains the identifier of a group member. Setting the <code>UserID</code>
+        /// An object that contains the identifier of a group member. Setting the <c>UserID</c>
         /// field to the specific identifier for a user indicates that the user is a member of
         /// the group.
         /// </para>
@@ -100,7 +100,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property MembershipId. 
         /// <para>
-        /// The identifier for a <code>GroupMembership</code> object in an identity store.
+        /// The identifier for a <c>GroupMembership</c> object in an identity store.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=47)]

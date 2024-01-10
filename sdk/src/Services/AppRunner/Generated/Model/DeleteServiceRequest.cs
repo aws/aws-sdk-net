@@ -35,8 +35,7 @@ namespace Amazon.AppRunner.Model
     ///  
     /// <para>
     /// This is an asynchronous operation. On a successful call, you can use the returned
-    /// <code>OperationId</code> and the <a>ListOperations</a> call to track the operation's
-    /// progress.
+    /// <c>OperationId</c> and the <a>ListOperations</a> call to track the operation's progress.
     /// </para>
     ///  <note> 
     /// <para>

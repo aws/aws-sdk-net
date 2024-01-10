@@ -110,7 +110,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DocumentName. 
         /// <para>
-        /// The name of the document that was run. For example, <code>AWS-RunShellScript</code>.
+        /// The name of the document that was run. For example, <c>AWS-RunShellScript</c>.
         /// </para>
         /// </summary>
         public string DocumentName
@@ -146,7 +146,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionElapsedTime. 
         /// <para>
-        /// Duration since <code>ExecutionStartDateTime</code>.
+        /// Duration since <c>ExecutionStartDateTime</c>.
         /// </para>
         /// </summary>
         public string ExecutionElapsedTime
@@ -166,11 +166,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The date and time the plugin finished running. Date and time are written in ISO 8601
         /// format. For example, June 7, 2017 is represented as 2017-06-7. The following sample
-        /// Amazon Web Services CLI command uses the <code>InvokedAfter</code> filter.
+        /// Amazon Web Services CLI command uses the <c>InvokedAfter</c> filter.
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</code>
+        ///  <c>aws ssm list-commands --filters key=InvokedAfter,value=2017-06-07T00:00:00Z</c>
         /// 
         /// </para>
         ///  
@@ -195,11 +195,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The date and time the plugin started running. Date and time are written in ISO 8601
         /// format. For example, June 7, 2017 is represented as 2017-06-7. The following sample
-        /// Amazon Web Services CLI command uses the <code>InvokedBefore</code> filter.
+        /// Amazon Web Services CLI command uses the <c>InvokedBefore</c> filter.
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</code>
+        ///  <c>aws ssm list-commands --filters key=InvokedBefore,value=2017-06-07T00:00:00Z</c>
         /// 
         /// </para>
         ///  
@@ -244,7 +244,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PluginName. 
         /// <para>
         /// The name of the plugin, or <i>step name</i>, for which details are reported. For example,
-        /// <code>aws:RunShellScript</code> is a plugin.
+        /// <c>aws:RunShellScript</c> is a plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4)]
@@ -263,7 +263,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResponseCode. 
         /// <para>
-        /// The error level response code for the plugin script. If the response code is <code>-1</code>,
+        /// The error level response code for the plugin script. If the response code is <c>-1</c>,
         /// then the command hasn't started running on the managed node, or it wasn't received
         /// by the node.
         /// </para>
@@ -283,7 +283,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardErrorContent. 
         /// <para>
-        /// The first 8,000 characters written by the plugin to <code>stderr</code>. If the command
+        /// The first 8,000 characters written by the plugin to <c>stderr</c>. If the command
         /// hasn't finished running, then this string is empty.
         /// </para>
         /// </summary>
@@ -303,8 +303,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardErrorUrl. 
         /// <para>
-        /// The URL for the complete text written by the plugin to <code>stderr</code>. If the
-        /// command hasn't finished running, then this string is empty.
+        /// The URL for the complete text written by the plugin to <c>stderr</c>. If the command
+        /// hasn't finished running, then this string is empty.
         /// </para>
         /// </summary>
         public string StandardErrorUrl
@@ -322,9 +322,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardOutputContent. 
         /// <para>
-        /// The first 24,000 characters written by the plugin to <code>stdout</code>. If the command
-        /// hasn't finished running, if <code>ExecutionStatus</code> is neither Succeeded nor
-        /// Failed, then this string is empty.
+        /// The first 24,000 characters written by the plugin to <c>stdout</c>. If the command
+        /// hasn't finished running, if <c>ExecutionStatus</c> is neither Succeeded nor Failed,
+        /// then this string is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Max=24000)]
@@ -343,9 +343,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
-        /// The URL for the complete text written by the plugin to <code>stdout</code> in Amazon
-        /// Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string
-        /// is empty.
+        /// The URL for the complete text written by the plugin to <c>stdout</c> in Amazon Simple
+        /// Storage Service (Amazon S3). If an S3 bucket wasn't specified, then this string is
+        /// empty.
         /// </para>
         /// </summary>
         public string StandardOutputUrl
@@ -363,7 +363,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of this invocation plugin. This status can be different than <code>StatusDetails</code>.
+        /// The status of this invocation plugin. This status can be different than <c>StatusDetails</c>.
         /// </para>
         /// </summary>
         public CommandInvocationStatus Status
@@ -381,13 +381,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// A detailed status of the command execution for an invocation. <code>StatusDetails</code>
-        /// includes more information than <code>Status</code> because it includes states resulting
-        /// from error and concurrency control parameters. <code>StatusDetails</code> can show
-        /// different results than <code>Status</code>. For more information about these statuses,
-        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// A detailed status of the command execution for an invocation. <c>StatusDetails</c>
+        /// includes more information than <c>Status</c> because it includes states resulting
+        /// from error and concurrency control parameters. <c>StatusDetails</c> can show different
+        /// results than <c>Status</c>. For more information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
         /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
-        /// <code>StatusDetails</code> can be one of the following values:
+        /// <c>StatusDetails</c> can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -412,14 +411,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
-        /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
+        /// timeout expired. Delivery timeouts don't count against the parent command's <c>MaxErrors</c>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Execution Timed Out: The command started to run on the managed node, but the execution
-        /// wasn't complete before the timeout expired. Execution timeouts count against the <code>MaxErrors</code>
+        /// wasn't complete before the timeout expired. Execution timeouts count against the <c>MaxErrors</c>
         /// limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
@@ -427,8 +426,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Failed: The command wasn't run successfully on the managed node. For a plugin, this
         /// indicates that the result code wasn't zero. For a command invocation, this indicates
         /// that the result code for one or more plugins wasn't zero. Invocation failures count
-        /// against the <code>MaxErrors</code> limit of the parent command. This is a terminal
-        /// state.
+        /// against the <c>MaxErrors</c> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -439,12 +437,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Undeliverable: The command can't be delivered to the managed node. The node might
         /// not exist or might not be responding. Undeliverable invocations don't count against
-        /// the parent command's <code>MaxErrors</code> limit and don't contribute to whether
-        /// the parent command status is Success or Incomplete. This is a terminal state.
+        /// the parent command's <c>MaxErrors</c> limit and don't contribute to whether the parent
+        /// command status is Success or Incomplete. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Terminated: The parent command exceeded its <code>MaxErrors</code> limit and subsequent
+        /// Terminated: The parent command exceeded its <c>MaxErrors</c> limit and subsequent
         /// command invocations were canceled by the system. This is a terminal state.
         /// </para>
         ///  </li> </ul>

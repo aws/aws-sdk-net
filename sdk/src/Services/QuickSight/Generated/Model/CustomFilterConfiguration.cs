@@ -47,7 +47,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// This field is mutually exclusive to <code>ParameterName</code>.
+        /// This field is mutually exclusive to <c>ParameterName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=512)]
@@ -89,15 +89,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_VALUES</code>: Include null values in filtered results.
+        ///  <c>ALL_VALUES</c>: Include null values in filtered results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NULLS_ONLY</code>: Only include null values in filtered results.
+        ///  <c>NULLS_ONLY</c>: Only include null values in filtered results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+        ///  <c>NON_NULLS_ONLY</c>: Exclude null values from filtered results.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -121,7 +121,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// This field is mutually exclusive to <code>CategoryValue</code>.
+        /// This field is mutually exclusive to <c>CategoryValue</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -144,7 +144,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FILTER_ALL_VALUES</code> 
+        ///  <c>FILTER_ALL_VALUES</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

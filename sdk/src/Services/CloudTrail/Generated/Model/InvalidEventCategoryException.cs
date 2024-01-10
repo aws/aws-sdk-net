@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Occurs if an event category that is not valid is specified as a value of <code>EventCategory</code>.
+    /// Occurs if an event category that is not valid is specified as a value of <c>EventCategory</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -41,14 +41,14 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property AutoMLOverrideStrategy. <note> 
         /// <para>
-        ///  The <code>LatencyOptimized</code> AutoML override strategy is only available in private
+        ///  The <c>LatencyOptimized</c> AutoML override strategy is only available in private
         /// beta. Contact Amazon Web Services Support or your account manager to learn more about
         /// access privileges. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// The AutoML strategy used to train the predictor. Unless <code>LatencyOptimized</code>
-        /// is specified, the AutoML strategy optimizes predictor accuracy.
+        /// The AutoML strategy used to train the predictor. Unless <c>LatencyOptimized</c> is
+        /// specified, the AutoML strategy optimizes predictor accuracy.
         /// </para>
         ///  
         /// <para>

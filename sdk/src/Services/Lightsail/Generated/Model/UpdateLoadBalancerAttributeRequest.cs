@@ -35,9 +35,9 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// The <code>update load balancer attribute</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>update load balancer attribute</c> operation supports tag-based access control
+    /// via resource tags applied to the resource identified by <c>load balancer name</c>.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -73,40 +73,37 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The following values are supported depending on what you specify for the <code>attributeName</code>
+        /// The following values are supported depending on what you specify for the <c>attributeName</c>
         /// request parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>HealthCheckPath</code> for the <code>attributeName</code> request
-        /// parameter, then the <code>attributeValue</code> request parameter must be the path
-        /// to ping on the target (for example, <code>/weather/us/wa/seattle</code>).
+        /// If you specify <c>HealthCheckPath</c> for the <c>attributeName</c> request parameter,
+        /// then the <c>attributeValue</c> request parameter must be the path to ping on the target
+        /// (for example, <c>/weather/us/wa/seattle</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>SessionStickinessEnabled</code> for the <code>attributeName</code>
-        /// request parameter, then the <code>attributeValue</code> request parameter must be
-        /// <code>true</code> to activate session stickiness or <code>false</code> to deactivate
-        /// session stickiness.
+        /// If you specify <c>SessionStickinessEnabled</c> for the <c>attributeName</c> request
+        /// parameter, then the <c>attributeValue</c> request parameter must be <c>true</c> to
+        /// activate session stickiness or <c>false</c> to deactivate session stickiness.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>SessionStickiness_LB_CookieDurationSeconds</code> for the <code>attributeName</code>
-        /// request parameter, then the <code>attributeValue</code> request parameter must be
-        /// an interger that represents the cookie duration in seconds.
+        /// If you specify <c>SessionStickiness_LB_CookieDurationSeconds</c> for the <c>attributeName</c>
+        /// request parameter, then the <c>attributeValue</c> request parameter must be an interger
+        /// that represents the cookie duration in seconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>HttpsRedirectionEnabled</code> for the <code>attributeName</code>
-        /// request parameter, then the <code>attributeValue</code> request parameter must be
-        /// <code>true</code> to activate HTTP to HTTPS redirection or <code>false</code> to deactivate
-        /// HTTP to HTTPS redirection.
+        /// If you specify <c>HttpsRedirectionEnabled</c> for the <c>attributeName</c> request
+        /// parameter, then the <c>attributeValue</c> request parameter must be <c>true</c> to
+        /// activate HTTP to HTTPS redirection or <c>false</c> to deactivate HTTP to HTTPS redirection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>TlsPolicyName</code> for the <code>attributeName</code> request
-        /// parameter, then the <code>attributeValue</code> request parameter must be the name
-        /// of the TLS policy.
+        /// If you specify <c>TlsPolicyName</c> for the <c>attributeName</c> request parameter,
+        /// then the <c>attributeValue</c> request parameter must be the name of the TLS policy.
         /// </para>
         ///  
         /// <para>
@@ -131,7 +128,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerName. 
         /// <para>
-        /// The name of the load balancer that you want to modify (<code>my-load-balancer</code>.
+        /// The name of the load balancer that you want to modify (<c>my-load-balancer</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

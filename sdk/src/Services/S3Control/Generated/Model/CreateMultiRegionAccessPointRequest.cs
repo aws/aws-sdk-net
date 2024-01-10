@@ -50,11 +50,11 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// This request is asynchronous, meaning that you might receive a response before the
     /// command has completed. When this request provides a response, it provides a token
-    /// that you can use to monitor the status of the request with <code>DescribeMultiRegionAccessPointOperation</code>.
+    /// that you can use to monitor the status of the request with <c>DescribeMultiRegionAccessPointOperation</c>.
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>CreateMultiRegionAccessPoint</code>:
+    /// The following actions are related to <c>CreateMultiRegionAccessPoint</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

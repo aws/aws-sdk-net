@@ -78,8 +78,8 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property IncludeExecutionData. 
         /// <para>
-        /// Whether the execution data (specifically, the <code>payload</code>, <code>awsRequest</code>,
-        /// and <code>awsResponse</code> fields) is included in the log messages for this pipe.
+        /// Whether the execution data (specifically, the <c>payload</c>, <c>awsRequest</c>, and
+        /// <c>awsResponse</c> fields) is included in the log messages for this pipe.
         /// </para>
         ///  
         /// <para>

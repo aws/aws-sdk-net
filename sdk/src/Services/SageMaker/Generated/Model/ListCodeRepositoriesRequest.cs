@@ -162,9 +162,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of a <code>ListCodeRepositoriesOutput</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To get the next set of Git repositories,
-        /// use the token in the next request.
+        /// If the result of a <c>ListCodeRepositoriesOutput</c> request was truncated, the response
+        /// includes a <c>NextToken</c>. To get the next set of Git repositories, use the token
+        /// in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -183,7 +183,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field to sort results by. The default is <code>Name</code>.
+        /// The field to sort results by. The default is <c>Name</c>.
         /// </para>
         /// </summary>
         public CodeRepositorySortBy SortBy
@@ -201,7 +201,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for results. The default is <code>Ascending</code>.
+        /// The sort order for results. The default is <c>Ascending</c>.
         /// </para>
         /// </summary>
         public CodeRepositorySortOrder SortOrder

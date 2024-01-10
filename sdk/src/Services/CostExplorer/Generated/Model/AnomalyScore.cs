@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxScore. 
         /// <para>
-        /// The maximum score that's observed during the <code>AnomalyDateInterval</code>. 
+        /// The maximum score that's observed during the <c>AnomalyDateInterval</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
-    /// An object that contains the response from the <code>SendBulkTemplatedEmail</code>
-    /// operation.
+    /// An object that contains the response from the <c>SendBulkTemplatedEmail</c> operation.
     /// </summary>
     public partial class BulkEmailDestinationStatus
     {
@@ -41,7 +40,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code>
+        /// A description of an error that prevented a message being sent using the <c>SendBulkTemplatedEmail</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -60,8 +59,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
-        /// operation.
+        /// The unique message identifier returned from the <c>SendBulkTemplatedEmail</c> operation.
         /// </para>
         /// </summary>
         public string MessageId
@@ -79,7 +77,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.
+        /// The status of a message sent using the <c>SendBulkTemplatedEmail</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -87,71 +85,70 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Success</code>: Amazon SES accepted the message, and attempts to deliver it
-        /// to the recipients.
+        ///  <c>Success</c>: Amazon SES accepted the message, and attempts to deliver it to the
+        /// recipients.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MessageRejected</code>: The message was rejected because it contained a virus.
+        ///  <c>MessageRejected</c>: The message was rejected because it contained a virus.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MailFromDomainNotVerified</code>: The sender's email address or domain was
-        /// not verified.
+        ///  <c>MailFromDomainNotVerified</c>: The sender's email address or domain was not verified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConfigurationSetDoesNotExist</code>: The configuration set you specified does
-        /// not exist.
+        ///  <c>ConfigurationSetDoesNotExist</c>: The configuration set you specified does not
+        /// exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TemplateDoesNotExist</code>: The template you specified does not exist.
+        ///  <c>TemplateDoesNotExist</c>: The template you specified does not exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountSuspended</code>: Your account has been shut down because of issues
-        /// related to your email sending practices.
+        ///  <c>AccountSuspended</c>: Your account has been shut down because of issues related
+        /// to your email sending practices.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountThrottled</code>: The number of emails you can send has been reduced
-        /// because your account has exceeded its allocated sending limit.
+        ///  <c>AccountThrottled</c>: The number of emails you can send has been reduced because
+        /// your account has exceeded its allocated sending limit.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountDailyQuotaExceeded</code>: You have reached or exceeded the maximum
-        /// number of emails you can send from your account in a 24-hour period.
+        ///  <c>AccountDailyQuotaExceeded</c>: You have reached or exceeded the maximum number
+        /// of emails you can send from your account in a 24-hour period.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InvalidSendingPoolName</code>: The configuration set you specified refers to
-        /// an IP pool that does not exist.
+        ///  <c>InvalidSendingPoolName</c>: The configuration set you specified refers to an IP
+        /// pool that does not exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountSendingPaused</code>: Email sending for the Amazon SES account was disabled
+        ///  <c>AccountSendingPaused</c>: Email sending for the Amazon SES account was disabled
         /// using the <a>UpdateAccountSendingEnabled</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConfigurationSetSendingPaused</code>: Email sending for this configuration
-        /// set was disabled using the <a>UpdateConfigurationSetSendingEnabled</a> operation.
+        ///  <c>ConfigurationSetSendingPaused</c>: Email sending for this configuration set was
+        /// disabled using the <a>UpdateConfigurationSetSendingEnabled</a> operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InvalidParameterValue</code>: One or more of the parameters you specified when
-        /// calling this operation was invalid. See the error message for additional information.
+        ///  <c>InvalidParameterValue</c>: One or more of the parameters you specified when calling
+        /// this operation was invalid. See the error message for additional information.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TransientFailure</code>: Amazon SES was unable to process your request because
-        /// of a temporary issue.
+        ///  <c>TransientFailure</c>: Amazon SES was unable to process your request because of
+        /// a temporary issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: Amazon SES was unable to process your request. See the error
-        /// message for additional information.
+        ///  <c>Failed</c>: Amazon SES was unable to process your request. See the error message
+        /// for additional information.
         /// </para>
         ///  </li> </ul>
         /// </summary>

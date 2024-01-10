@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SourceCredentialsInfos. 
         /// <para>
-        ///  A list of <code>SourceCredentialsInfo</code> objects. Each <code>SourceCredentialsInfo</code>
+        ///  A list of <c>SourceCredentialsInfo</c> objects. Each <c>SourceCredentialsInfo</c>
         /// object includes the authentication type, token ARN, and type of source provider for
         /// one set of credentials. 
         /// </para>

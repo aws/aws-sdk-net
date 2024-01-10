@@ -37,11 +37,11 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// The number of things that receive the deployment exceeds the <code>minNumberOfExecutedThings</code>.
+    /// The number of things that receive the deployment exceeds the <c>minNumberOfExecutedThings</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The percentage of failures with type <code>failureType</code> exceeds the <code>thresholdPercentage</code>.
+    /// The percentage of failures with type <c>failureType</c> exceeds the <c>thresholdPercentage</c>.
     /// </para>
     ///  </li> </ol>
     /// </summary>
@@ -112,13 +112,13 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property ThresholdPercentage. 
         /// <para>
-        /// The minimum percentage of <code>failureType</code> failures that occur before the
-        /// job can cancel.
+        /// The minimum percentage of <c>failureType</c> failures that occur before the job can
+        /// cancel.
         /// </para>
         ///  
         /// <para>
         /// This parameter supports up to two digits after the decimal (for example, you can specify
-        /// <code>10.9</code> or <code>10.99</code>, but not <code>10.999</code>).
+        /// <c>10.9</c> or <c>10.99</c>, but not <c>10.999</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=100)]

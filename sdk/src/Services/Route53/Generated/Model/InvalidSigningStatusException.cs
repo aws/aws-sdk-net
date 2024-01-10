@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// Your hosted zone status isn't valid for this operation. In the hosted zone, change
-    /// the status to enable <code>DNSSEC</code> or disable <code>DNSSEC</code>.
+    /// the status to enable <c>DNSSEC</c> or disable <c>DNSSEC</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

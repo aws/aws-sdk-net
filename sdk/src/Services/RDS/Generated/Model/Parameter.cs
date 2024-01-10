@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a request parameter in the <code>ModifyDBParameterGroup</code>
-    /// and <code>ResetDBParameterGroup</code> actions.
+    /// This data type is used as a request parameter in the <c>ModifyDBParameterGroup</c>
+    /// and <c>ResetDBParameterGroup</c> actions.
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeEngineDefaultParameters</code>
-    /// and <code>DescribeDBParameters</code> actions.
+    /// This data type is used as a response element in the <c>DescribeEngineDefaultParameters</c>
+    /// and <c>DescribeDBParameters</c> actions.
     /// </para>
     /// </summary>
     public partial class Parameter
@@ -150,9 +150,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        /// Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
-        /// be modified. Some parameters have security or operational implications that prevent
-        /// them from being changed.
+        /// Indicates whether (<c>true</c>) or not (<c>false</c>) the parameter can be modified.
+        /// Some parameters have security or operational implications that prevent them from being
+        /// changed.
         /// </para>
         /// </summary>
         public bool IsModifiable

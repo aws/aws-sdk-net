@@ -30,7 +30,7 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// A single port range specification. This is used for source and destination port ranges
-    /// in the stateless rule <a>MatchAttributes</a>, <code>SourcePorts</code>, and <code>DestinationPorts</code>
+    /// in the stateless rule <a>MatchAttributes</a>, <c>SourcePorts</c>, and <c>DestinationPorts</c>
     /// settings.
     /// </summary>
     public partial class PortRange
@@ -41,7 +41,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property FromPort. 
         /// <para>
-        /// The lower limit of the port range. This must be less than or equal to the <code>ToPort</code>
+        /// The lower limit of the port range. This must be less than or equal to the <c>ToPort</c>
         /// specification. 
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property ToPort. 
         /// <para>
-        /// The upper limit of the port range. This must be greater than or equal to the <code>FromPort</code>
+        /// The upper limit of the port range. This must be greater than or equal to the <c>FromPort</c>
         /// specification. 
         /// </para>
         /// </summary>

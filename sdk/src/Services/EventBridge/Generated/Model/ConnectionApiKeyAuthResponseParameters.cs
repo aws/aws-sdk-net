@@ -39,7 +39,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ApiKeyName. 
         /// <para>
-        /// The name of the header to use for the <code>APIKeyValue</code> used for authorization.
+        /// The name of the header to use for the <c>APIKeyValue</c> used for authorization.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

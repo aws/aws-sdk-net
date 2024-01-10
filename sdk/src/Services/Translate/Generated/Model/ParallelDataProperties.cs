@@ -332,7 +332,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the parallel data resource. When the parallel data is ready for you
-        /// to use, the status is <code>ACTIVE</code>.
+        /// to use, the status is <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         public ParallelDataStatus Status

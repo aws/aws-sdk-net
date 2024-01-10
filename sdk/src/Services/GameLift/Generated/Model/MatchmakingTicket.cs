@@ -93,7 +93,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Time stamp indicating when the matchmaking request stopped being processed due to
         /// successful completion, timeout, or cancellation. Format is a number expressed in Unix
-        /// time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -152,10 +152,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Players. 
         /// <para>
-        /// A set of <code>Player</code> objects, each representing a player to find matches for.
-        /// Players are identified by a unique player ID and may include latency data for use
-        /// during matchmaking. If the ticket is in status <code>COMPLETED</code>, the <code>Player</code>
-        /// objects include the team the players were assigned to in the resulting match.
+        /// A set of <c>Player</c> objects, each representing a player to find matches for. Players
+        /// are identified by a unique player ID and may include latency data for use during matchmaking.
+        /// If the ticket is in status <c>COMPLETED</c>, the <c>Player</c> objects include the
+        /// team the players were assigned to in the resulting match.
         /// </para>
         /// </summary>
         public List<Player> Players
@@ -174,7 +174,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// Time stamp indicating when this matchmaking request was received. Format is a number
-        /// expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// expressed in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -227,7 +227,7 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>CANCELLED</b> -- The matchmaking request was canceled. This may be the result
-        /// of a <code>StopMatchmaking</code> operation or a proposed match that one or more players
+        /// of a <c>StopMatchmaking</c> operation or a proposed match that one or more players
         /// failed to accept.
         /// </para>
         ///  </li> <li> 
@@ -276,8 +276,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property StatusReason. 
         /// <para>
         /// Code to explain the current status. For example, a status reason may indicate when
-        /// a ticket has returned to <code>SEARCHING</code> status after a proposed match fails
-        /// to receive player acceptances.
+        /// a ticket has returned to <c>SEARCHING</c> status after a proposed match fails to receive
+        /// player acceptances.
         /// </para>
         /// </summary>
         public string StatusReason

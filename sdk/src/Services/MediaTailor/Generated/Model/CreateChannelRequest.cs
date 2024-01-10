@@ -66,8 +66,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property FillerSlate. 
         /// <para>
         /// The slate used to fill gaps between programs in the schedule. You must configure filler
-        /// slate if your channel uses the <code>LINEAR</code> <code>PlaybackMode</code>. MediaTailor
-        /// doesn't support filler slate for channels using the <code>LOOP</code> <code>PlaybackMode</code>.
+        /// slate if your channel uses the <c>LINEAR</c> <c>PlaybackMode</c>. MediaTailor doesn't
+        /// support filler slate for channels using the <c>LOOP</c> <c>PlaybackMode</c>.
         /// </para>
         /// </summary>
         public SlateSource FillerSlate
@@ -108,14 +108,13 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>LINEAR</code> - The programs in the schedule play once back-to-back in the
-        /// schedule.
+        ///  <c>LINEAR</c> - The programs in the schedule play once back-to-back in the schedule.
         /// </para>
         ///  
         /// <para>
-        ///  <code>LOOP</code> - The programs in the schedule play back-to-back in an endless
-        /// loop. When the last program in the schedule stops playing, playback loops back to
-        /// the first program in the schedule.
+        ///  <c>LOOP</c> - The programs in the schedule play back-to-back in an endless loop.
+        /// When the last program in the schedule stops playing, playback loops back to the first
+        /// program in the schedule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

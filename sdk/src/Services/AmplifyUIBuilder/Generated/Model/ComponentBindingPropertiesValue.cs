@@ -30,8 +30,8 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Represents the data binding configuration for a component at runtime. You can use
-    /// <code>ComponentBindingPropertiesValue</code> to add exposed properties to a component
-    /// to allow different values to be entered when a component is reused in different places
+    /// <c>ComponentBindingPropertiesValue</c> to add exposed properties to a component to
+    /// allow different values to be entered when a component is reused in different places
     /// in an app.
     /// </summary>
     public partial class ComponentBindingPropertiesValue

@@ -81,8 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PartitionInputList. 
         /// <para>
-        /// A list of <code>PartitionInput</code> structures that define the partitions to be
-        /// created.
+        /// A list of <c>PartitionInput</c> structures that define the partitions to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

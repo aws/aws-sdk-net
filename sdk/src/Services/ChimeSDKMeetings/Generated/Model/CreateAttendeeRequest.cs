@@ -43,15 +43,15 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// The capabilities (<code>audio</code>, <code>video</code>, or <code>content</code>)
-        /// that you want to grant an attendee. If you don't specify capabilities, all users have
-        /// send and receive capabilities on all media channels by default.
+        /// The capabilities (<c>audio</c>, <c>video</c>, or <c>content</c>) that you want to
+        /// grant an attendee. If you don't specify capabilities, all users have send and receive
+        /// capabilities on all media channels by default.
         /// </para>
         ///  <note> 
         /// <para>
         /// You use the capabilities with a set of values that control what the capabilities can
-        /// do, such as <code>SendReceive</code> data. For more information about those values,
-        /// see .
+        /// do, such as <c>SendReceive</c> data. For more information about those values, see
+        /// .
         /// </para>
         ///  </note> 
         /// <para>
@@ -59,40 +59,36 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Video:MaxResolution:None</c> when you create a meeting,
+        /// all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c> for
+        /// <c>AttendeeCapabilities:Video</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Content:MaxResolution:None</c> when you create a
+        /// meeting, all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c>
+        /// for <c>AttendeeCapabilities:Content</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
-        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
-        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
-        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
-        /// your <code>video</code> capability to receive and you set your <code>content</code>
-        /// capability to not receive.
+        /// You can't set <c>content</c> capabilities to <c>SendReceive</c> or <c>Receive</c>
+        /// unless you also set <c>video</c> capabilities to <c>SendReceive</c> or <c>Receive</c>.
+        /// If you don't set the <c>video</c> capability to receive, the response will contain
+        /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
+        /// to receive and you set your <c>content</c> capability to not receive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
-        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
-        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
+        /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
+        /// flow from the attendee to the other meeting participants.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
-        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-        /// the attendee turned on their video or content streams, remote attendees can receive
-        /// those streams, but only after media renegotiation between the client and the Amazon
-        /// Chime back-end server.
+        /// When you change a <c>video</c> or <c>content</c> capability from <c>None</c> or <c>Receive</c>
+        /// to <c>Send</c> or <c>SendReceive</c> , and if the attendee turned on their video or
+        /// content streams, remote attendees can receive those streams, but only after media
+        /// renegotiation between the client and the Amazon Chime back-end server.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -116,12 +112,12 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  
         /// <para>
-        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// Pattern: <c>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</c> 
         /// </para>
         ///  
         /// <para>
-        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
-        /// that uses this prefix.
+        /// Values that begin with <c>aws:</c> are reserved. You can't configure a value that
+        /// uses this prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]

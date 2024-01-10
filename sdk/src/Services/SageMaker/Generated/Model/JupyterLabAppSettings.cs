@@ -96,7 +96,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LifecycleConfigArns. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the lifecycle configurations attached to the user
-        /// profile or domain. To remove a lifecycle config, you must set <code>LifecycleConfigArns</code>
+        /// profile or domain. To remove a lifecycle config, you must set <c>LifecycleConfigArns</c>
         /// to an empty list.
         /// </para>
         /// </summary>

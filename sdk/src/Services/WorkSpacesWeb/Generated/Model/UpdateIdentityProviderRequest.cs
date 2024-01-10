@@ -98,15 +98,15 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>client_id</code> 
+        ///  <c>client_id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>client_secret</code> 
+        ///  <c>client_secret</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>authorize_scopes</code> 
+        ///  <c>authorize_scopes</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -114,19 +114,19 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>client_id</code> 
+        ///  <c>client_id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>client_secret</code> 
+        ///  <c>client_secret</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>authorize_scopes</code> 
+        ///  <c>authorize_scopes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>api_version</code> 
+        ///  <c>api_version</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -134,23 +134,23 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>client_id</code> 
+        ///  <c>client_id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>team_id</code> 
+        ///  <c>team_id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>key_id</code> 
+        ///  <c>key_id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>private_key</code> 
+        ///  <c>private_key</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>authorize_scopes</code> 
+        ///  <c>authorize_scopes</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -158,42 +158,42 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>client_id</code> 
+        ///  <c>client_id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>client_secret</code> 
+        ///  <c>client_secret</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attributes_request_method</code> 
+        ///  <c>attributes_request_method</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oidc_issuer</code> 
+        ///  <c>oidc_issuer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>authorize_scopes</code> 
+        ///  <c>authorize_scopes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>authorize_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code>
+        ///  <c>authorize_url</c> <i>if not available from discovery URL specified by <c>oidc_issuer</c>
         /// key</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>token_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code>
+        ///  <c>token_url</c> <i>if not available from discovery URL specified by <c>oidc_issuer</c>
         /// key</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attributes_url</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code>
+        ///  <c>attributes_url</c> <i>if not available from discovery URL specified by <c>oidc_issuer</c>
         /// key</i> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>jwks_uri</code> <i>if not available from discovery URL specified by <code>oidc_issuer</code>
+        ///  <c>jwks_uri</c> <i>if not available from discovery URL specified by <c>oidc_issuer</c>
         /// key</i> 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -202,11 +202,11 @@ namespace Amazon.WorkSpacesWeb.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MetadataFile</code> OR <code>MetadataURL</code> 
+        ///  <c>MetadataFile</c> OR <c>MetadataURL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IDPSignout</code> (boolean) <i>optional</i> 
+        ///  <c>IDPSignout</c> (boolean) <i>optional</i> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

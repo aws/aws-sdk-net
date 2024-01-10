@@ -47,21 +47,21 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <dl> <dt>ECS</dt> <dd> 
         /// <para>
-        /// The rolling update (<code>ECS</code>) deployment type involves replacing the current
-        /// running version of the container with the latest version. The number of containers
-        /// Amazon ECS adds or removes from the service during a rolling update is controlled
-        /// by adjusting the minimum and maximum number of healthy tasks allowed during a service
-        /// deployment, as specified in the <a>DeploymentConfiguration</a>.
+        /// The rolling update (<c>ECS</c>) deployment type involves replacing the current running
+        /// version of the container with the latest version. The number of containers Amazon
+        /// ECS adds or removes from the service during a rolling update is controlled by adjusting
+        /// the minimum and maximum number of healthy tasks allowed during a service deployment,
+        /// as specified in the <a>DeploymentConfiguration</a>.
         /// </para>
         ///  </dd> <dt>CODE_DEPLOY</dt> <dd> 
         /// <para>
-        /// The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment
+        /// The blue/green (<c>CODE_DEPLOY</c>) deployment type uses the blue/green deployment
         /// model powered by CodeDeploy, which allows you to verify a new deployment of a service
         /// before sending production traffic to it.
         /// </para>
         ///  </dd> <dt>EXTERNAL</dt> <dd> 
         /// <para>
-        /// The external (<code>EXTERNAL</code>) deployment type enables you to use any third-party
+        /// The external (<c>EXTERNAL</c>) deployment type enables you to use any third-party
         /// deployment controller for full control over the deployment process for an Amazon ECS
         /// service.
         /// </para>

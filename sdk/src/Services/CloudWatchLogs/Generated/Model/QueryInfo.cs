@@ -30,7 +30,7 @@ namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
     /// Information about one CloudWatch Logs Insights query that matches the request in a
-    /// <code>DescribeQueries</code> operation.
+    /// <c>DescribeQueries</c> operation.
     /// </summary>
     public partial class QueryInfo
     {
@@ -119,8 +119,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of this query. Possible values are <code>Cancelled</code>, <code>Complete</code>,
-        /// <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>, and <code>Unknown</code>.
+        /// The status of this query. Possible values are <c>Cancelled</c>, <c>Complete</c>, <c>Failed</c>,
+        /// <c>Running</c>, <c>Scheduled</c>, and <c>Unknown</c>.
         /// </para>
         /// </summary>
         public QueryStatus Status

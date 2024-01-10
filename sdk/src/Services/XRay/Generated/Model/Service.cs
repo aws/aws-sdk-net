@@ -272,22 +272,22 @@ namespace Amazon.XRay.Model
         ///  <ul> <li> 
         /// <para>
         /// Amazon Web Services Resource - The type of an Amazon Web Services resource. For example,
-        /// <code>AWS::EC2::Instance</code> for an application running on Amazon EC2 or <code>AWS::DynamoDB::Table</code>
+        /// <c>AWS::EC2::Instance</c> for an application running on Amazon EC2 or <c>AWS::DynamoDB::Table</c>
         /// for an Amazon DynamoDB table that the application used.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Web Services Service - The type of an Amazon Web Services service. For example,
-        /// <code>AWS::DynamoDB</code> for downstream calls to Amazon DynamoDB that didn't target
-        /// a specific table.
+        /// <c>AWS::DynamoDB</c> for downstream calls to Amazon DynamoDB that didn't target a
+        /// specific table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>client</code> - Represents the clients that sent requests to a root service.
+        ///  <c>client</c> - Represents the clients that sent requests to a root service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>remote</code> - A downstream service of indeterminate type.
+        ///  <c>remote</c> - A downstream service of indeterminate type.
         /// </para>
         ///  </li> </ul>
         /// </summary>

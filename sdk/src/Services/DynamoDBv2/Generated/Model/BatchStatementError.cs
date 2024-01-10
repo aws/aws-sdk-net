@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Item. 
         /// <para>
         /// The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure
-        /// is specified as <code>ALL_OLD</code>.
+        /// is specified as <c>ALL_OLD</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Item

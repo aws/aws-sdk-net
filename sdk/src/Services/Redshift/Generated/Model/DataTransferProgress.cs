@@ -117,7 +117,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Describes the status of the cluster. While the transfer is in progress the status
-        /// is <code>transferringdata</code>.
+        /// is <c>transferringdata</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

@@ -82,9 +82,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  A type of aggregation that specifies how a metric for a frame is analyzed. The supported
-        /// value <code>AggregatedRelativeTotalTime</code> is an aggregation of the metric value
-        /// for one frame that is calculated across the occurrences of all frames in a profile.
-        /// 
+        /// value <c>AggregatedRelativeTotalTime</c> is an aggregation of the metric value for
+        /// one frame that is calculated across the occurrences of all frames in a profile. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

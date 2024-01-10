@@ -30,16 +30,16 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePrincipalMapping operation.
-    /// Describes the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping
-    /// users to their groups. This includes information on the status of actions currently
-    /// processing or yet to be processed, when actions were last updated, when actions were
-    /// received by Amazon Kendra, the latest action that should process and apply after other
-    /// actions, and useful error messages if an action could not be processed.
+    /// Describes the processing of <c>PUT</c> and <c>DELETE</c> actions for mapping users
+    /// to their groups. This includes information on the status of actions currently processing
+    /// or yet to be processed, when actions were last updated, when actions were received
+    /// by Amazon Kendra, the latest action that should process and apply after other actions,
+    /// and useful error messages if an action could not be processed.
     /// 
     ///  
     /// <para>
-    ///  <code>DescribePrincipalMapping</code> is currently not supported in the Amazon Web
-    /// Services GovCloud (US-West) region.
+    ///  <c>DescribePrincipalMapping</c> is currently not supported in the Amazon Web Services
+    /// GovCloud (US-West) region.
     /// </para>
     /// </summary>
     public partial class DescribePrincipalMappingRequest : AmazonKendraRequest
@@ -51,8 +51,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The identifier of the data source to check the processing of <code>PUT</code> and
-        /// <code>DELETE</code> actions for mapping users to their groups.
+        /// The identifier of the data source to check the processing of <c>PUT</c> and <c>DELETE</c>
+        /// actions for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -71,8 +71,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The identifier of the group required to check the processing of <code>PUT</code> and
-        /// <code>DELETE</code> actions for mapping users to their groups.
+        /// The identifier of the group required to check the processing of <c>PUT</c> and <c>DELETE</c>
+        /// actions for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -91,8 +91,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// The identifier of the index required to check the processing of <code>PUT</code> and
-        /// <code>DELETE</code> actions for mapping users to their groups.
+        /// The identifier of the index required to check the processing of <c>PUT</c> and <c>DELETE</c>
+        /// actions for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

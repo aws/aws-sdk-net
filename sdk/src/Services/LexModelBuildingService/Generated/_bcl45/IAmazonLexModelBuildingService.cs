@@ -51,15 +51,14 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Creates a new version of the bot based on the <code>$LATEST</code> version. If the
-        /// <code>$LATEST</code> version of this resource hasn't changed since you created the
-        /// last version, Amazon Lex doesn't create a new version. It returns the last created
-        /// version.
+        /// Creates a new version of the bot based on the <c>$LATEST</c> version. If the <c>$LATEST</c>
+        /// version of this resource hasn't changed since you created the last version, Amazon
+        /// Lex doesn't create a new version. It returns the last created version.
         /// 
         ///  <note> 
         /// <para>
-        /// You can update only the <code>$LATEST</code> version of the bot. You can't update
-        /// the numbered versions that you create with the <code>CreateBotVersion</code> operation.
+        /// You can update only the <c>$LATEST</c> version of the bot. You can't update the numbered
+        /// versions that you create with the <c>CreateBotVersion</c> operation.
         /// </para>
         ///  </note> 
         /// <para>
@@ -68,8 +67,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  This operation requires permission for the <code>lex:CreateBotVersion</code> action.
-        /// 
+        ///  This operation requires permission for the <c>lex:CreateBotVersion</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBotVersion service method.</param>
@@ -101,15 +99,14 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Creates a new version of the bot based on the <code>$LATEST</code> version. If the
-        /// <code>$LATEST</code> version of this resource hasn't changed since you created the
-        /// last version, Amazon Lex doesn't create a new version. It returns the last created
-        /// version.
+        /// Creates a new version of the bot based on the <c>$LATEST</c> version. If the <c>$LATEST</c>
+        /// version of this resource hasn't changed since you created the last version, Amazon
+        /// Lex doesn't create a new version. It returns the last created version.
         /// 
         ///  <note> 
         /// <para>
-        /// You can update only the <code>$LATEST</code> version of the bot. You can't update
-        /// the numbered versions that you create with the <code>CreateBotVersion</code> operation.
+        /// You can update only the <c>$LATEST</c> version of the bot. You can't update the numbered
+        /// versions that you create with the <c>CreateBotVersion</c> operation.
         /// </para>
         ///  </note> 
         /// <para>
@@ -118,8 +115,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  This operation requires permission for the <code>lex:CreateBotVersion</code> action.
-        /// 
+        ///  This operation requires permission for the <c>lex:CreateBotVersion</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBotVersion service method.</param>
@@ -157,15 +153,14 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Creates a new version of an intent based on the <code>$LATEST</code> version of the
-        /// intent. If the <code>$LATEST</code> version of this intent hasn't changed since you
-        /// last updated it, Amazon Lex doesn't create a new version. It returns the last version
-        /// you created.
+        /// Creates a new version of an intent based on the <c>$LATEST</c> version of the intent.
+        /// If the <c>$LATEST</c> version of this intent hasn't changed since you last updated
+        /// it, Amazon Lex doesn't create a new version. It returns the last version you created.
         /// 
         ///  <note> 
         /// <para>
-        /// You can update only the <code>$LATEST</code> version of the intent. You can't update
-        /// the numbered versions that you create with the <code>CreateIntentVersion</code> operation.
+        /// You can update only the <c>$LATEST</c> version of the intent. You can't update the
+        /// numbered versions that you create with the <c>CreateIntentVersion</c> operation.
         /// </para>
         ///  </note> 
         /// <para>
@@ -174,7 +169,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lex:CreateIntentVersion</code>
+        /// This operation requires permissions to perform the <c>lex:CreateIntentVersion</c>
         /// action. 
         /// </para>
         /// </summary>
@@ -207,15 +202,14 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Creates a new version of an intent based on the <code>$LATEST</code> version of the
-        /// intent. If the <code>$LATEST</code> version of this intent hasn't changed since you
-        /// last updated it, Amazon Lex doesn't create a new version. It returns the last version
-        /// you created.
+        /// Creates a new version of an intent based on the <c>$LATEST</c> version of the intent.
+        /// If the <c>$LATEST</c> version of this intent hasn't changed since you last updated
+        /// it, Amazon Lex doesn't create a new version. It returns the last version you created.
         /// 
         ///  <note> 
         /// <para>
-        /// You can update only the <code>$LATEST</code> version of the intent. You can't update
-        /// the numbered versions that you create with the <code>CreateIntentVersion</code> operation.
+        /// You can update only the <c>$LATEST</c> version of the intent. You can't update the
+        /// numbered versions that you create with the <c>CreateIntentVersion</c> operation.
         /// </para>
         ///  </note> 
         /// <para>
@@ -224,7 +218,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lex:CreateIntentVersion</code>
+        /// This operation requires permissions to perform the <c>lex:CreateIntentVersion</c>
         /// action. 
         /// </para>
         /// </summary>
@@ -263,16 +257,15 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Creates a new version of a slot type based on the <code>$LATEST</code> version of
-        /// the specified slot type. If the <code>$LATEST</code> version of this resource has
-        /// not changed since the last version that you created, Amazon Lex doesn't create a new
-        /// version. It returns the last version that you created. 
+        /// Creates a new version of a slot type based on the <c>$LATEST</c> version of the specified
+        /// slot type. If the <c>$LATEST</c> version of this resource has not changed since the
+        /// last version that you created, Amazon Lex doesn't create a new version. It returns
+        /// the last version that you created. 
         /// 
         ///  <note> 
         /// <para>
-        /// You can update only the <code>$LATEST</code> version of a slot type. You can't update
-        /// the numbered versions that you create with the <code>CreateSlotTypeVersion</code>
-        /// operation.
+        /// You can update only the <c>$LATEST</c> version of a slot type. You can't update the
+        /// numbered versions that you create with the <c>CreateSlotTypeVersion</c> operation.
         /// </para>
         ///  </note> 
         /// <para>
@@ -281,8 +274,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
-        /// action.
+        /// This operation requires permissions for the <c>lex:CreateSlotTypeVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSlotTypeVersion service method.</param>
@@ -314,16 +306,15 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Creates a new version of a slot type based on the <code>$LATEST</code> version of
-        /// the specified slot type. If the <code>$LATEST</code> version of this resource has
-        /// not changed since the last version that you created, Amazon Lex doesn't create a new
-        /// version. It returns the last version that you created. 
+        /// Creates a new version of a slot type based on the <c>$LATEST</c> version of the specified
+        /// slot type. If the <c>$LATEST</c> version of this resource has not changed since the
+        /// last version that you created, Amazon Lex doesn't create a new version. It returns
+        /// the last version that you created. 
         /// 
         ///  <note> 
         /// <para>
-        /// You can update only the <code>$LATEST</code> version of a slot type. You can't update
-        /// the numbered versions that you create with the <code>CreateSlotTypeVersion</code>
-        /// operation.
+        /// You can update only the <c>$LATEST</c> version of a slot type. You can't update the
+        /// numbered versions that you create with the <c>CreateSlotTypeVersion</c> operation.
         /// </para>
         ///  </note> 
         /// <para>
@@ -332,8 +323,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:CreateSlotTypeVersion</code>
-        /// action.
+        /// This operation requires permissions for the <c>lex:CreateSlotTypeVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSlotTypeVersion service method.</param>
@@ -371,8 +361,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
-        /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code>
+        /// Deletes all versions of the bot, including the <c>$LATEST</c> version. To delete a
+        /// specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <c>DeleteBot</c>
         /// operation doesn't immediately remove the bot schema. Instead, it is marked for deletion
         /// and removed later.
         /// 
@@ -384,15 +374,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
-        /// returns a <code>ResourceInUseException</code> exception that includes a reference
-        /// to the alias that refers to the bot. To remove the reference to the bot, delete the
-        /// alias. If you get the same exception again, delete the referring alias until the <code>DeleteBot</code>
+        /// If a bot has an alias, you can't delete it. Instead, the <c>DeleteBot</c> operation
+        /// returns a <c>ResourceInUseException</c> exception that includes a reference to the
+        /// alias that refers to the bot. To remove the reference to the bot, delete the alias.
+        /// If you get the same exception again, delete the referring alias until the <c>DeleteBot</c>
         /// operation is successful.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteBot</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteBot</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBot service method.</param>
@@ -424,15 +414,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
@@ -441,8 +431,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
-        /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code>
+        /// Deletes all versions of the bot, including the <c>$LATEST</c> version. To delete a
+        /// specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <c>DeleteBot</c>
         /// operation doesn't immediately remove the bot schema. Instead, it is marked for deletion
         /// and removed later.
         /// 
@@ -454,15 +444,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
-        /// returns a <code>ResourceInUseException</code> exception that includes a reference
-        /// to the alias that refers to the bot. To remove the reference to the bot, delete the
-        /// alias. If you get the same exception again, delete the referring alias until the <code>DeleteBot</code>
+        /// If a bot has an alias, you can't delete it. Instead, the <c>DeleteBot</c> operation
+        /// returns a <c>ResourceInUseException</c> exception that includes a reference to the
+        /// alias that refers to the bot. To remove the reference to the bot, delete the alias.
+        /// If you get the same exception again, delete the referring alias until the <c>DeleteBot</c>
         /// operation is successful.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteBot</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteBot</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBot service method.</param>
@@ -497,15 +487,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBot">REST API Reference for DeleteBot Operation</seealso>
@@ -522,12 +512,11 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// You can't delete an alias that is used in the association between a bot and a messaging
-        /// channel. If an alias is used in a channel association, the <code>DeleteBot</code>
-        /// operation returns a <code>ResourceInUseException</code> exception that includes a
-        /// reference to the channel association that refers to the bot. You can remove the reference
-        /// to the alias by deleting the channel association. If you get the same exception again,
-        /// delete the referring association until the <code>DeleteBotAlias</code> operation is
-        /// successful.
+        /// channel. If an alias is used in a channel association, the <c>DeleteBot</c> operation
+        /// returns a <c>ResourceInUseException</c> exception that includes a reference to the
+        /// channel association that refers to the bot. You can remove the reference to the alias
+        /// by deleting the channel association. If you get the same exception again, delete the
+        /// referring association until the <c>DeleteBotAlias</c> operation is successful.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBotAlias service method.</param>
@@ -559,15 +548,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
@@ -581,12 +570,11 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// You can't delete an alias that is used in the association between a bot and a messaging
-        /// channel. If an alias is used in a channel association, the <code>DeleteBot</code>
-        /// operation returns a <code>ResourceInUseException</code> exception that includes a
-        /// reference to the channel association that refers to the bot. You can remove the reference
-        /// to the alias by deleting the channel association. If you get the same exception again,
-        /// delete the referring association until the <code>DeleteBotAlias</code> operation is
-        /// successful.
+        /// channel. If an alias is used in a channel association, the <c>DeleteBot</c> operation
+        /// returns a <c>ResourceInUseException</c> exception that includes a reference to the
+        /// channel association that refers to the bot. You can remove the reference to the alias
+        /// by deleting the channel association. If you get the same exception again, delete the
+        /// referring association until the <c>DeleteBotAlias</c> operation is successful.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBotAlias service method.</param>
@@ -621,15 +609,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotAlias">REST API Reference for DeleteBotAlias Operation</seealso>
@@ -645,7 +633,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:DeleteBotChannelAssociation</code>
+        /// This operation requires permission for the <c>lex:DeleteBotChannelAssociation</c>
         /// action.
         /// </para>
         /// </summary>
@@ -678,7 +666,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:DeleteBotChannelAssociation</code>
+        /// This operation requires permission for the <c>lex:DeleteBotChannelAssociation</c>
         /// action.
         /// </para>
         /// </summary>
@@ -718,7 +706,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteBotVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBotVersion service method.</param>
@@ -750,15 +738,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
@@ -772,7 +760,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteBotVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBotVersion service method.</param>
@@ -807,15 +795,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteBotVersion">REST API Reference for DeleteBotVersion Operation</seealso>
@@ -827,8 +815,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes all versions of the intent, including the <code>$LATEST</code> version. To
-        /// delete a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
+        /// Deletes all versions of the intent, including the <c>$LATEST</c> version. To delete
+        /// a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
         /// 
         ///  
         /// <para>
@@ -838,16 +826,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you get the <code>ResourceInUseException</code> exception, it provides an example
-        /// reference that shows where the intent is referenced. To remove the reference to the
-        /// intent, either update the bot or delete it. If you get the same exception when you
-        /// attempt to delete the intent again, repeat until the intent has no references and
-        /// the call to <code>DeleteIntent</code> is successful. 
+        ///  If you get the <c>ResourceInUseException</c> exception, it provides an example reference
+        /// that shows where the intent is referenced. To remove the reference to the intent,
+        /// either update the bot or delete it. If you get the same exception when you attempt
+        /// to delete the intent again, repeat until the intent has no references and the call
+        /// to <c>DeleteIntent</c> is successful. 
         /// </para>
         ///  </note> 
         /// <para>
-        ///  This operation requires permission for the <code>lex:DeleteIntent</code> action.
-        /// 
+        ///  This operation requires permission for the <c>lex:DeleteIntent</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntent service method.</param>
@@ -879,15 +866,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
@@ -896,8 +883,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes all versions of the intent, including the <code>$LATEST</code> version. To
-        /// delete a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
+        /// Deletes all versions of the intent, including the <c>$LATEST</c> version. To delete
+        /// a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
         /// 
         ///  
         /// <para>
@@ -907,16 +894,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you get the <code>ResourceInUseException</code> exception, it provides an example
-        /// reference that shows where the intent is referenced. To remove the reference to the
-        /// intent, either update the bot or delete it. If you get the same exception when you
-        /// attempt to delete the intent again, repeat until the intent has no references and
-        /// the call to <code>DeleteIntent</code> is successful. 
+        ///  If you get the <c>ResourceInUseException</c> exception, it provides an example reference
+        /// that shows where the intent is referenced. To remove the reference to the intent,
+        /// either update the bot or delete it. If you get the same exception when you attempt
+        /// to delete the intent again, repeat until the intent has no references and the call
+        /// to <c>DeleteIntent</c> is successful. 
         /// </para>
         ///  </note> 
         /// <para>
-        ///  This operation requires permission for the <code>lex:DeleteIntent</code> action.
-        /// 
+        ///  This operation requires permission for the <c>lex:DeleteIntent</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntent service method.</param>
@@ -951,15 +937,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntent">REST API Reference for DeleteIntent Operation</seealso>
@@ -976,7 +962,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteIntentVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntentVersion service method.</param>
@@ -1008,15 +994,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
@@ -1030,7 +1016,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteIntentVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIntentVersion service method.</param>
@@ -1065,15 +1051,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteIntentVersion">REST API Reference for DeleteIntentVersion Operation</seealso>
@@ -1085,9 +1071,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes all versions of the slot type, including the <code>$LATEST</code> version.
-        /// To delete a specific version of the slot type, use the <a>DeleteSlotTypeVersion</a>
-        /// operation.
+        /// Deletes all versions of the slot type, including the <c>$LATEST</c> version. To delete
+        /// a specific version of the slot type, use the <a>DeleteSlotTypeVersion</a> operation.
         /// 
         ///  
         /// <para>
@@ -1097,16 +1082,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you get the <code>ResourceInUseException</code> exception, the exception provides
-        /// an example reference that shows the intent where the slot type is referenced. To remove
+        ///  If you get the <c>ResourceInUseException</c> exception, the exception provides an
+        /// example reference that shows the intent where the slot type is referenced. To remove
         /// the reference to the slot type, either update the intent or delete it. If you get
         /// the same exception when you attempt to delete the slot type again, repeat until the
-        /// slot type has no references and the <code>DeleteSlotType</code> call is successful.
-        /// 
+        /// slot type has no references and the <c>DeleteSlotType</c> call is successful. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation requires permission for the <code>lex:DeleteSlotType</code> action.
+        /// This operation requires permission for the <c>lex:DeleteSlotType</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlotType service method.</param>
@@ -1138,15 +1122,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
@@ -1155,9 +1139,8 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Deletes all versions of the slot type, including the <code>$LATEST</code> version.
-        /// To delete a specific version of the slot type, use the <a>DeleteSlotTypeVersion</a>
-        /// operation.
+        /// Deletes all versions of the slot type, including the <c>$LATEST</c> version. To delete
+        /// a specific version of the slot type, use the <a>DeleteSlotTypeVersion</a> operation.
         /// 
         ///  
         /// <para>
@@ -1167,16 +1150,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  <note> 
         /// <para>
-        ///  If you get the <code>ResourceInUseException</code> exception, the exception provides
-        /// an example reference that shows the intent where the slot type is referenced. To remove
+        ///  If you get the <c>ResourceInUseException</c> exception, the exception provides an
+        /// example reference that shows the intent where the slot type is referenced. To remove
         /// the reference to the slot type, either update the intent or delete it. If you get
         /// the same exception when you attempt to delete the slot type again, repeat until the
-        /// slot type has no references and the <code>DeleteSlotType</code> call is successful.
-        /// 
+        /// slot type has no references and the <c>DeleteSlotType</c> call is successful. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation requires permission for the <code>lex:DeleteSlotType</code> action.
+        /// This operation requires permission for the <c>lex:DeleteSlotType</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlotType service method.</param>
@@ -1211,15 +1193,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotType">REST API Reference for DeleteSlotType Operation</seealso>
@@ -1236,8 +1218,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code>
-        /// action.
+        /// This operation requires permissions for the <c>lex:DeleteSlotTypeVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlotTypeVersion service method.</param>
@@ -1269,15 +1250,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
@@ -1291,8 +1272,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code>
-        /// action.
+        /// This operation requires permissions for the <c>lex:DeleteSlotTypeVersion</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlotTypeVersion service method.</param>
@@ -1327,15 +1307,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+        ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"resourceReference": {</code> 
+        ///  <c>"resourceReference": {</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+        ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lex-models-2017-04-19/DeleteSlotTypeVersion">REST API Reference for DeleteSlotTypeVersion Operation</seealso>
@@ -1357,15 +1337,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DeleteUtterances</code> operation to manually delete stored utterances
-        /// for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances
-        /// stored for improving your bot's ability to respond to user input are deleted immediately.
-        /// Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted
+        /// Use the <c>DeleteUtterances</c> operation to manually delete stored utterances for
+        /// a specific user. When you use the <c>DeleteUtterances</c> operation, utterances stored
+        /// for improving your bot's ability to respond to user input are deleted immediately.
+        /// Utterances stored for use with the <c>GetUtterancesView</c> operation are deleted
         /// after 15 days.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteUtterances</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteUtterances</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUtterances service method.</param>
@@ -1400,15 +1380,15 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DeleteUtterances</code> operation to manually delete stored utterances
-        /// for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances
-        /// stored for improving your bot's ability to respond to user input are deleted immediately.
-        /// Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted
+        /// Use the <c>DeleteUtterances</c> operation to manually delete stored utterances for
+        /// a specific user. When you use the <c>DeleteUtterances</c> operation, utterances stored
+        /// for improving your bot's ability to respond to user input are deleted immediately.
+        /// Utterances stored for use with the <c>GetUtterancesView</c> operation are deleted
         /// after 15 days.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:DeleteUtterances</code> action.
+        /// This operation requires permissions for the <c>lex:DeleteUtterances</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUtterances service method.</param>
@@ -1444,7 +1424,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        ///  This operation requires permissions for the <code>lex:GetBot</code> action. 
+        ///  This operation requires permissions for the <c>lex:GetBot</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBot service method.</param>
@@ -1474,7 +1454,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        ///  This operation requires permissions for the <code>lex:GetBot</code> action. 
+        ///  This operation requires permissions for the <c>lex:GetBot</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBot service method.</param>
@@ -1510,7 +1490,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotAlias</code> action.
+        /// This operation requires permissions for the <c>lex:GetBotAlias</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotAlias service method.</param>
@@ -1540,7 +1520,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotAlias</code> action.
+        /// This operation requires permissions for the <c>lex:GetBotAlias</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotAlias service method.</param>
@@ -1575,7 +1555,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotAliases</code> action.
+        /// This operation requires permissions for the <c>lex:GetBotAliases</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotAliases service method.</param>
@@ -1601,7 +1581,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotAliases</code> action.
+        /// This operation requires permissions for the <c>lex:GetBotAliases</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotAliases service method.</param>
@@ -1634,8 +1614,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotChannelAssociation</code>
-        /// action.
+        /// This operation requires permissions for the <c>lex:GetBotChannelAssociation</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotChannelAssociation service method.</param>
@@ -1665,8 +1644,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotChannelAssociation</code>
-        /// action.
+        /// This operation requires permissions for the <c>lex:GetBotChannelAssociation</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotChannelAssociation service method.</param>
@@ -1701,8 +1679,8 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetBotChannelAssociations</code> operation requires permissions for the
-        /// <code>lex:GetBotChannelAssociations</code> action.
+        /// The <c>GetBotChannelAssociations</c> operation requires permissions for the <c>lex:GetBotChannelAssociations</c>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotChannelAssociations service method.</param>
@@ -1728,8 +1706,8 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetBotChannelAssociations</code> operation requires permissions for the
-        /// <code>lex:GetBotChannelAssociations</code> action.
+        /// The <c>GetBotChannelAssociations</c> operation requires permissions for the <c>lex:GetBotChannelAssociations</c>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotChannelAssociations service method.</param>
@@ -1761,18 +1739,17 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you provide the <code>nameContains</code> field, the response includes information
-        /// for the <code>$LATEST</code> version of all bots whose name contains the specified
-        /// string.
+        /// If you provide the <c>nameContains</c> field, the response includes information for
+        /// the <c>$LATEST</c> version of all bots whose name contains the specified string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify the <code>nameContains</code> field, the operation returns information
-        /// about the <code>$LATEST</code> version of all of your bots.
+        /// If you don't specify the <c>nameContains</c> field, the operation returns information
+        /// about the <c>$LATEST</c> version of all of your bots.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBots</code> action.
+        /// This operation requires permission for the <c>lex:GetBots</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBots service method.</param>
@@ -1801,18 +1778,17 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you provide the <code>nameContains</code> field, the response includes information
-        /// for the <code>$LATEST</code> version of all bots whose name contains the specified
-        /// string.
+        /// If you provide the <c>nameContains</c> field, the response includes information for
+        /// the <c>$LATEST</c> version of all bots whose name contains the specified string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify the <code>nameContains</code> field, the operation returns information
-        /// about the <code>$LATEST</code> version of all of your bots.
+        /// If you don't specify the <c>nameContains</c> field, the operation returns information
+        /// about the <c>$LATEST</c> version of all of your bots.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBots</code> action.
+        /// This operation requires permission for the <c>lex:GetBots</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBots service method.</param>
@@ -1847,20 +1823,19 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetBotVersions</code> operation returns a <code>BotMetadata</code> object
-        /// for each version of a bot. For example, if a bot has three numbered versions, the
-        /// <code>GetBotVersions</code> operation returns four <code>BotMetadata</code> objects
-        /// in the response, one for each numbered version and one for the <code>$LATEST</code>
-        /// version. 
+        /// The <c>GetBotVersions</c> operation returns a <c>BotMetadata</c> object for each version
+        /// of a bot. For example, if a bot has three numbered versions, the <c>GetBotVersions</c>
+        /// operation returns four <c>BotMetadata</c> objects in the response, one for each numbered
+        /// version and one for the <c>$LATEST</c> version. 
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetBotVersions</code> operation always returns at least one version, the
-        /// <code>$LATEST</code> version.
+        /// The <c>GetBotVersions</c> operation always returns at least one version, the <c>$LATEST</c>
+        /// version.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotVersions</code> action.
+        /// This operation requires permissions for the <c>lex:GetBotVersions</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotVersions service method.</param>
@@ -1889,20 +1864,19 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetBotVersions</code> operation returns a <code>BotMetadata</code> object
-        /// for each version of a bot. For example, if a bot has three numbered versions, the
-        /// <code>GetBotVersions</code> operation returns four <code>BotMetadata</code> objects
-        /// in the response, one for each numbered version and one for the <code>$LATEST</code>
-        /// version. 
+        /// The <c>GetBotVersions</c> operation returns a <c>BotMetadata</c> object for each version
+        /// of a bot. For example, if a bot has three numbered versions, the <c>GetBotVersions</c>
+        /// operation returns four <c>BotMetadata</c> objects in the response, one for each numbered
+        /// version and one for the <c>$LATEST</c> version. 
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetBotVersions</code> operation always returns at least one version, the
-        /// <code>$LATEST</code> version.
+        /// The <c>GetBotVersions</c> operation always returns at least one version, the <c>$LATEST</c>
+        /// version.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetBotVersions</code> action.
+        /// This operation requires permissions for the <c>lex:GetBotVersions</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBotVersions service method.</param>
@@ -1937,7 +1911,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBuiltinIntent</code> action.
+        /// This operation requires permission for the <c>lex:GetBuiltinIntent</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuiltinIntent service method.</param>
@@ -1966,7 +1940,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBuiltinIntent</code> action.
+        /// This operation requires permission for the <c>lex:GetBuiltinIntent</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuiltinIntent service method.</param>
@@ -2001,7 +1975,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBuiltinIntents</code> action.
+        /// This operation requires permission for the <c>lex:GetBuiltinIntents</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuiltinIntents service method.</param>
@@ -2027,7 +2001,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBuiltinIntents</code> action.
+        /// This operation requires permission for the <c>lex:GetBuiltinIntents</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuiltinIntents service method.</param>
@@ -2064,7 +2038,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBuiltInSlotTypes</code> action.
+        /// This operation requires permission for the <c>lex:GetBuiltInSlotTypes</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuiltinSlotTypes service method.</param>
@@ -2095,7 +2069,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permission for the <code>lex:GetBuiltInSlotTypes</code> action.
+        /// This operation requires permission for the <c>lex:GetBuiltInSlotTypes</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBuiltinSlotTypes service method.</param>
@@ -2177,7 +2151,7 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Gets information about an import job started with the <code>StartImport</code> operation.
+        /// Gets information about an import job started with the <c>StartImport</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
         /// 
@@ -2201,7 +2175,7 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Gets information about an import job started with the <code>StartImport</code> operation.
+        /// Gets information about an import job started with the <c>StartImport</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetImport service method.</param>
         /// <param name="cancellationToken">
@@ -2236,8 +2210,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        ///  This operation requires permissions to perform the <code>lex:GetIntent</code> action.
-        /// 
+        ///  This operation requires permissions to perform the <c>lex:GetIntent</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntent service method.</param>
@@ -2267,8 +2240,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        ///  This operation requires permissions to perform the <code>lex:GetIntent</code> action.
-        /// 
+        ///  This operation requires permissions to perform the <c>lex:GetIntent</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntent service method.</param>
@@ -2303,17 +2275,17 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code>
-        /// version of all intents that contain the specified string.
+        /// If you specify the <c>nameContains</c> field, returns the <c>$LATEST</c> version of
+        /// all intents that contain the specified string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If you don't specify the <code>nameContains</code> field, returns information about
-        /// the <code>$LATEST</code> version of all intents. 
+        ///  If you don't specify the <c>nameContains</c> field, returns information about the
+        /// <c>$LATEST</c> version of all intents. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  The operation requires permission for the <code>lex:GetIntents</code> action. 
+        ///  The operation requires permission for the <c>lex:GetIntents</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntents service method.</param>
@@ -2342,17 +2314,17 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code>
-        /// version of all intents that contain the specified string.
+        /// If you specify the <c>nameContains</c> field, returns the <c>$LATEST</c> version of
+        /// all intents that contain the specified string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If you don't specify the <code>nameContains</code> field, returns information about
-        /// the <code>$LATEST</code> version of all intents. 
+        ///  If you don't specify the <c>nameContains</c> field, returns information about the
+        /// <c>$LATEST</c> version of all intents. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  The operation requires permission for the <code>lex:GetIntents</code> action. 
+        ///  The operation requires permission for the <c>lex:GetIntents</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntents service method.</param>
@@ -2387,20 +2359,20 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetIntentVersions</code> operation returns an <code>IntentMetadata</code>
-        /// object for each version of an intent. For example, if an intent has three numbered
-        /// versions, the <code>GetIntentVersions</code> operation returns four <code>IntentMetadata</code>
-        /// objects in the response, one for each numbered version and one for the <code>$LATEST</code>
-        /// version. 
+        /// The <c>GetIntentVersions</c> operation returns an <c>IntentMetadata</c> object for
+        /// each version of an intent. For example, if an intent has three numbered versions,
+        /// the <c>GetIntentVersions</c> operation returns four <c>IntentMetadata</c> objects
+        /// in the response, one for each numbered version and one for the <c>$LATEST</c> version.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetIntentVersions</code> operation always returns at least one version,
-        /// the <code>$LATEST</code> version.
+        /// The <c>GetIntentVersions</c> operation always returns at least one version, the <c>$LATEST</c>
+        /// version.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetIntentVersions</code> action.
+        /// This operation requires permissions for the <c>lex:GetIntentVersions</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntentVersions service method.</param>
@@ -2429,20 +2401,20 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetIntentVersions</code> operation returns an <code>IntentMetadata</code>
-        /// object for each version of an intent. For example, if an intent has three numbered
-        /// versions, the <code>GetIntentVersions</code> operation returns four <code>IntentMetadata</code>
-        /// objects in the response, one for each numbered version and one for the <code>$LATEST</code>
-        /// version. 
+        /// The <c>GetIntentVersions</c> operation returns an <c>IntentMetadata</c> object for
+        /// each version of an intent. For example, if an intent has three numbered versions,
+        /// the <c>GetIntentVersions</c> operation returns four <c>IntentMetadata</c> objects
+        /// in the response, one for each numbered version and one for the <c>$LATEST</c> version.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetIntentVersions</code> operation always returns at least one version,
-        /// the <code>$LATEST</code> version.
+        /// The <c>GetIntentVersions</c> operation always returns at least one version, the <c>$LATEST</c>
+        /// version.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetIntentVersions</code> action.
+        /// This operation requires permissions for the <c>lex:GetIntentVersions</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIntentVersions service method.</param>
@@ -2584,7 +2556,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetSlotType</code> action.
+        /// This operation requires permissions for the <c>lex:GetSlotType</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSlotType service method.</param>
@@ -2614,7 +2586,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetSlotType</code> action.
+        /// This operation requires permissions for the <c>lex:GetSlotType</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSlotType service method.</param>
@@ -2649,17 +2621,17 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code>
-        /// version of all slot types that contain the specified string.
+        /// If you specify the <c>nameContains</c> field, returns the <c>$LATEST</c> version of
+        /// all slot types that contain the specified string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If you don't specify the <code>nameContains</code> field, returns information about
-        /// the <code>$LATEST</code> version of all slot types. 
+        ///  If you don't specify the <c>nameContains</c> field, returns information about the
+        /// <c>$LATEST</c> version of all slot types. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  The operation requires permission for the <code>lex:GetSlotTypes</code> action. 
+        ///  The operation requires permission for the <c>lex:GetSlotTypes</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSlotTypes service method.</param>
@@ -2688,17 +2660,17 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code>
-        /// version of all slot types that contain the specified string.
+        /// If you specify the <c>nameContains</c> field, returns the <c>$LATEST</c> version of
+        /// all slot types that contain the specified string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If you don't specify the <code>nameContains</code> field, returns information about
-        /// the <code>$LATEST</code> version of all slot types. 
+        ///  If you don't specify the <c>nameContains</c> field, returns information about the
+        /// <c>$LATEST</c> version of all slot types. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  The operation requires permission for the <code>lex:GetSlotTypes</code> action. 
+        ///  The operation requires permission for the <c>lex:GetSlotTypes</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSlotTypes service method.</param>
@@ -2733,20 +2705,20 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetSlotTypeVersions</code> operation returns a <code>SlotTypeMetadata</code>
-        /// object for each version of a slot type. For example, if a slot type has three numbered
-        /// versions, the <code>GetSlotTypeVersions</code> operation returns four <code>SlotTypeMetadata</code>
-        /// objects in the response, one for each numbered version and one for the <code>$LATEST</code>
-        /// version. 
+        /// The <c>GetSlotTypeVersions</c> operation returns a <c>SlotTypeMetadata</c> object
+        /// for each version of a slot type. For example, if a slot type has three numbered versions,
+        /// the <c>GetSlotTypeVersions</c> operation returns four <c>SlotTypeMetadata</c> objects
+        /// in the response, one for each numbered version and one for the <c>$LATEST</c> version.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetSlotTypeVersions</code> operation always returns at least one version,
-        /// the <code>$LATEST</code> version.
+        /// The <c>GetSlotTypeVersions</c> operation always returns at least one version, the
+        /// <c>$LATEST</c> version.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.
+        /// This operation requires permissions for the <c>lex:GetSlotTypeVersions</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSlotTypeVersions service method.</param>
@@ -2775,20 +2747,20 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// The <code>GetSlotTypeVersions</code> operation returns a <code>SlotTypeMetadata</code>
-        /// object for each version of a slot type. For example, if a slot type has three numbered
-        /// versions, the <code>GetSlotTypeVersions</code> operation returns four <code>SlotTypeMetadata</code>
-        /// objects in the response, one for each numbered version and one for the <code>$LATEST</code>
-        /// version. 
+        /// The <c>GetSlotTypeVersions</c> operation returns a <c>SlotTypeMetadata</c> object
+        /// for each version of a slot type. For example, if a slot type has three numbered versions,
+        /// the <c>GetSlotTypeVersions</c> operation returns four <c>SlotTypeMetadata</c> objects
+        /// in the response, one for each numbered version and one for the <c>$LATEST</c> version.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetSlotTypeVersions</code> operation always returns at least one version,
-        /// the <code>$LATEST</code> version.
+        /// The <c>GetSlotTypeVersions</c> operation always returns at least one version, the
+        /// <c>$LATEST</c> version.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.
+        /// This operation requires permissions for the <c>lex:GetSlotTypeVersions</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSlotTypeVersions service method.</param>
@@ -2819,18 +2791,17 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Use the <code>GetUtterancesView</code> operation to get information about the utterances
+        /// Use the <c>GetUtterancesView</c> operation to get information about the utterances
         /// that your users have made to your bot. You can use this list to tune the utterances
         /// that your bot responds to.
         /// 
         ///  
         /// <para>
         /// For example, say that you have created a bot to order flowers. After your users have
-        /// used your bot for a while, use the <code>GetUtterancesView</code> operation to see
-        /// the requests that they have made and whether they have been successful. You might
-        /// find that the utterance "I want flowers" is not being recognized. You could add this
-        /// utterance to the <code>OrderFlowers</code> intent so that your bot recognizes that
-        /// utterance.
+        /// used your bot for a while, use the <c>GetUtterancesView</c> operation to see the requests
+        /// that they have made and whether they have been successful. You might find that the
+        /// utterance "I want flowers" is not being recognized. You could add this utterance to
+        /// the <c>OrderFlowers</c> intent so that your bot recognizes that utterance.
         /// </para>
         ///  
         /// <para>
@@ -2846,13 +2817,13 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>childDirected</code> field to true when you created your bot, if
-        /// you are using slot obfuscation with one or more slots, or if you opted out of participating
+        /// If you set <c>childDirected</c> field to true when you created your bot, if you are
+        /// using slot obfuscation with one or more slots, or if you opted out of participating
         /// in improving Amazon Lex, utterances are not available.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
+        /// This operation requires permissions for the <c>lex:GetUtterancesView</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUtterancesView service method.</param>
@@ -2874,18 +2845,17 @@ namespace Amazon.LexModelBuildingService
 
 
         /// <summary>
-        /// Use the <code>GetUtterancesView</code> operation to get information about the utterances
+        /// Use the <c>GetUtterancesView</c> operation to get information about the utterances
         /// that your users have made to your bot. You can use this list to tune the utterances
         /// that your bot responds to.
         /// 
         ///  
         /// <para>
         /// For example, say that you have created a bot to order flowers. After your users have
-        /// used your bot for a while, use the <code>GetUtterancesView</code> operation to see
-        /// the requests that they have made and whether they have been successful. You might
-        /// find that the utterance "I want flowers" is not being recognized. You could add this
-        /// utterance to the <code>OrderFlowers</code> intent so that your bot recognizes that
-        /// utterance.
+        /// used your bot for a while, use the <c>GetUtterancesView</c> operation to see the requests
+        /// that they have made and whether they have been successful. You might find that the
+        /// utterance "I want flowers" is not being recognized. You could add this utterance to
+        /// the <c>OrderFlowers</c> intent so that your bot recognizes that utterance.
         /// </para>
         ///  
         /// <para>
@@ -2901,13 +2871,13 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>childDirected</code> field to true when you created your bot, if
-        /// you are using slot obfuscation with one or more slots, or if you opted out of participating
+        /// If you set <c>childDirected</c> field to true when you created your bot, if you are
+        /// using slot obfuscation with one or more slots, or if you opted out of participating
         /// in improving Amazon Lex, utterances are not available.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:GetUtterancesView</code> action.
+        /// This operation requires permissions for the <c>lex:GetUtterancesView</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUtterancesView service method.</param>
@@ -2996,21 +2966,21 @@ namespace Amazon.LexModelBuildingService
         /// bot is directed toward children under age 13. You can use this to add intents later,
         /// or to remove intents from an existing bot. When you create a bot with the minimum
         /// information, the bot is created or updated but Amazon Lex returns the <code/> response
-        /// <code>FAILED</code>. You can build the bot after you add one or more intents. For
-        /// more information about Amazon Lex bots, see <a>how-it-works</a>. 
+        /// <c>FAILED</c>. You can build the bot after you add one or more intents. For more information
+        /// about Amazon Lex bots, see <a>how-it-works</a>. 
         /// 
         ///  
         /// <para>
         /// If you specify the name of an existing bot, the fields in the request replace the
-        /// existing values in the <code>$LATEST</code> version of the bot. Amazon Lex removes
-        /// any fields that you don't provide values for in the request, except for the <code>idleTTLInSeconds</code>
-        /// and <code>privacySettings</code> fields, which are set to their default values. If
-        /// you don't specify values for required fields, Amazon Lex throws an exception.
+        /// existing values in the <c>$LATEST</c> version of the bot. Amazon Lex removes any fields
+        /// that you don't provide values for in the request, except for the <c>idleTTLInSeconds</c>
+        /// and <c>privacySettings</c> fields, which are set to their default values. If you don't
+        /// specify values for required fields, Amazon Lex throws an exception.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutBot</code> action. For more
-        /// information, see <a>security-iam</a>.
+        /// This operation requires permissions for the <c>lex:PutBot</c> action. For more information,
+        /// see <a>security-iam</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBot service method.</param>
@@ -3044,21 +3014,21 @@ namespace Amazon.LexModelBuildingService
         /// bot is directed toward children under age 13. You can use this to add intents later,
         /// or to remove intents from an existing bot. When you create a bot with the minimum
         /// information, the bot is created or updated but Amazon Lex returns the <code/> response
-        /// <code>FAILED</code>. You can build the bot after you add one or more intents. For
-        /// more information about Amazon Lex bots, see <a>how-it-works</a>. 
+        /// <c>FAILED</c>. You can build the bot after you add one or more intents. For more information
+        /// about Amazon Lex bots, see <a>how-it-works</a>. 
         /// 
         ///  
         /// <para>
         /// If you specify the name of an existing bot, the fields in the request replace the
-        /// existing values in the <code>$LATEST</code> version of the bot. Amazon Lex removes
-        /// any fields that you don't provide values for in the request, except for the <code>idleTTLInSeconds</code>
-        /// and <code>privacySettings</code> fields, which are set to their default values. If
-        /// you don't specify values for required fields, Amazon Lex throws an exception.
+        /// existing values in the <c>$LATEST</c> version of the bot. Amazon Lex removes any fields
+        /// that you don't provide values for in the request, except for the <c>idleTTLInSeconds</c>
+        /// and <c>privacySettings</c> fields, which are set to their default values. If you don't
+        /// specify values for required fields, Amazon Lex throws an exception.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutBot</code> action. For more
-        /// information, see <a>security-iam</a>.
+        /// This operation requires permissions for the <c>lex:PutBot</c> action. For more information,
+        /// see <a>security-iam</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBot service method.</param>
@@ -3099,7 +3069,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutBotAlias</code> action. 
+        /// This operation requires permissions for the <c>lex:PutBotAlias</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBotAlias service method.</param>
@@ -3134,7 +3104,7 @@ namespace Amazon.LexModelBuildingService
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutBotAlias</code> action. 
+        /// This operation requires permissions for the <c>lex:PutBotAlias</c> action. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutBotAlias service method.</param>
@@ -3174,8 +3144,8 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// To define the interaction between the user and your bot, you use one or more intents.
-        /// For a pizza ordering bot, for example, you would create an <code>OrderPizza</code>
-        /// intent. 
+        /// For a pizza ordering bot, for example, you would create an <c>OrderPizza</c> intent.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3183,7 +3153,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Intent name. For example, <code>OrderPizza</code>.
+        /// Intent name. For example, <c>OrderPizza</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3226,11 +3196,11 @@ namespace Amazon.LexModelBuildingService
         ///  </li> </ul> 
         /// <para>
         /// If you specify an existing intent name to update the intent, Amazon Lex replaces the
-        /// values in the <code>$LATEST</code> version of the intent with the values in the request.
+        /// values in the <c>$LATEST</c> version of the intent with the values in the request.
         /// Amazon Lex removes fields that you don't provide in the request. If you don't specify
-        /// the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code>
-        /// version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code>
-        /// version of the intent is set to <code>NOT_BUILT</code>.
+        /// the required fields, Amazon Lex throws an exception. When you update the <c>$LATEST</c>
+        /// version of an intent, the <c>status</c> field of any bot that uses the <c>$LATEST</c>
+        /// version of the intent is set to <c>NOT_BUILT</c>.
         /// </para>
         ///  
         /// <para>
@@ -3238,7 +3208,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutIntent</code> action.
+        /// This operation requires permissions for the <c>lex:PutIntent</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIntent service method.</param>
@@ -3272,8 +3242,8 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// To define the interaction between the user and your bot, you use one or more intents.
-        /// For a pizza ordering bot, for example, you would create an <code>OrderPizza</code>
-        /// intent. 
+        /// For a pizza ordering bot, for example, you would create an <c>OrderPizza</c> intent.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -3281,7 +3251,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Intent name. For example, <code>OrderPizza</code>.
+        /// Intent name. For example, <c>OrderPizza</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3324,11 +3294,11 @@ namespace Amazon.LexModelBuildingService
         ///  </li> </ul> 
         /// <para>
         /// If you specify an existing intent name to update the intent, Amazon Lex replaces the
-        /// values in the <code>$LATEST</code> version of the intent with the values in the request.
+        /// values in the <c>$LATEST</c> version of the intent with the values in the request.
         /// Amazon Lex removes fields that you don't provide in the request. If you don't specify
-        /// the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code>
-        /// version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code>
-        /// version of the intent is set to <code>NOT_BUILT</code>.
+        /// the required fields, Amazon Lex throws an exception. When you update the <c>$LATEST</c>
+        /// version of an intent, the <c>status</c> field of any bot that uses the <c>$LATEST</c>
+        /// version of the intent is set to <c>NOT_BUILT</c>.
         /// </para>
         ///  
         /// <para>
@@ -3336,7 +3306,7 @@ namespace Amazon.LexModelBuildingService
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutIntent</code> action.
+        /// This operation requires permissions for the <c>lex:PutIntent</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutIntent service method.</param>
@@ -3382,15 +3352,15 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// If you specify the name of an existing slot type, the fields in the request replace
-        /// the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex
-        /// removes the fields that you don't provide in the request. If you don't specify required
-        /// fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version
-        /// of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains
-        /// the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.
+        /// the existing values in the <c>$LATEST</c> version of the slot type. Amazon Lex removes
+        /// the fields that you don't provide in the request. If you don't specify required fields,
+        /// Amazon Lex throws an exception. When you update the <c>$LATEST</c> version of a slot
+        /// type, if a bot uses the <c>$LATEST</c> version of an intent that contains the slot
+        /// type, the bot's <c>status</c> field is set to <c>NOT_BUILT</c>.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutSlotType</code> action.
+        /// This operation requires permissions for the <c>lex:PutSlotType</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSlotType service method.</param>
@@ -3430,15 +3400,15 @@ namespace Amazon.LexModelBuildingService
         ///  
         /// <para>
         /// If you specify the name of an existing slot type, the fields in the request replace
-        /// the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex
-        /// removes the fields that you don't provide in the request. If you don't specify required
-        /// fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version
-        /// of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains
-        /// the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.
+        /// the existing values in the <c>$LATEST</c> version of the slot type. Amazon Lex removes
+        /// the fields that you don't provide in the request. If you don't specify required fields,
+        /// Amazon Lex throws an exception. When you update the <c>$LATEST</c> version of a slot
+        /// type, if a bot uses the <c>$LATEST</c> version of an intent that contains the slot
+        /// type, the bot's <c>status</c> field is set to <c>NOT_BUILT</c>.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions for the <code>lex:PutSlotType</code> action.
+        /// This operation requires permissions for the <c>lex:PutSlotType</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSlotType service method.</param>

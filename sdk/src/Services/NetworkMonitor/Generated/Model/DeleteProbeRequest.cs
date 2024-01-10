@@ -41,7 +41,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        /// The name of the monitor to delete. For a list of the available monitors, use the <code>ListMonitors</code>
+        /// The name of the monitor to delete. For a list of the available monitors, use the <c>ListMonitors</c>
         /// action.
         /// </para>
         /// </summary>
@@ -61,8 +61,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property ProbeId. 
         /// <para>
-        /// The ID of the probe to delete. Run <code>GetMonitor</code> to get a lst of all probes
-        /// and probe IDs associated with the monitor.
+        /// The ID of the probe to delete. Run <c>GetMonitor</c> to get a lst of all probes and
+        /// probe IDs associated with the monitor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

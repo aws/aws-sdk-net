@@ -30,8 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// A filter that identifies the subset of objects to which the replication rule applies.
-    /// A <code>Filter</code> element must specify exactly one <code>Prefix</code>, <code>Tag</code>,
-    /// or <code>And</code> child element.
+    /// A <c>Filter</c> element must specify exactly one <c>Prefix</c>, <c>Tag</c>, or <c>And</c>
+    /// child element.
     /// </summary>
     public partial class ReplicationRuleFilter
     {
@@ -48,13 +48,13 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify both a <code>Prefix</code> and a <code>Tag</code> filter, wrap these
-        /// filters in an <code>And</code> element.
+        /// If you specify both a <c>Prefix</c> and a <c>Tag</c> filter, wrap these filters in
+        /// an <c>And</c> element.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a filter based on multiple tags, wrap the <code>Tag</code> elements
-        /// in an <code>And</code> element.
+        /// If you specify a filter based on multiple tags, wrap the <c>Tag</c> elements in an
+        /// <c>And</c> element.
         /// </para>
         ///  </li> </ul>
         /// </summary>

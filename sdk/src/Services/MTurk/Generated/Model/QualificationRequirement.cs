@@ -59,7 +59,7 @@ namespace Amazon.MTurk.Model
         /// that are set to DiscoverPreviewAndAccept, but do not meet all requirements that are
         /// set with PreviewAndAccept, then the Worker will be able to Discover, i.e. see the
         /// HIT in their search result, but will not be able to Preview or Accept the HIT. ActionsGuarded
-        /// should not be used in combination with the <code>RequiredToPreview</code> field. 
+        /// should not be used in combination with the <c>RequiredToPreview</c> field. 
         /// </para>
         /// </summary>
         public HITAccessActions ActionsGuarded
@@ -168,15 +168,15 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property RequiredToPreview. 
         /// <para>
-        ///  DEPRECATED: Use the <code>ActionsGuarded</code> field instead. If RequiredToPreview
-        /// is true, the question data for the HIT will not be shown when a Worker whose Qualifications
+        ///  DEPRECATED: Use the <c>ActionsGuarded</c> field instead. If RequiredToPreview is
+        /// true, the question data for the HIT will not be shown when a Worker whose Qualifications
         /// do not meet this requirement tries to preview the HIT. That is, a Worker's Qualifications
         /// must meet all of the requirements for which RequiredToPreview is true in order to
         /// preview the HIT. If a Worker meets all of the requirements where RequiredToPreview
         /// is true (or if there are no such requirements), but does not meet all of the requirements
         /// for the HIT, the Worker will be allowed to preview the HIT's question data, but will
         /// not be allowed to accept and complete the HIT. The default is false. This should not
-        /// be used in combination with the <code>ActionsGuarded</code> field. 
+        /// be used in combination with the <c>ActionsGuarded</c> field. 
         /// </para>
         /// </summary>
         [Obsolete("Use the ActionsGuarded field instead")]

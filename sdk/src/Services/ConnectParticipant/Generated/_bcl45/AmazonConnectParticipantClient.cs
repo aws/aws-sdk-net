@@ -284,7 +284,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -330,7 +330,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -382,7 +382,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.
+        ///  <c>ParticipantToken</c> is used for invoking this API instead of <c>ConnectionToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -391,9 +391,9 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
-        /// The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s.
-        /// Clients must manually connect to the returned websocket URL and subscribe to the desired
-        /// topic. 
+        /// The response URL for <c>WEBSOCKET</c> Type has a connect expiry timeout of 100s. Clients
+        /// must manually connect to the returned websocket URL and subscribe to the desired topic.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -401,7 +401,7 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> 
+        ///  <c>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</c> 
         /// </para>
         ///  
         /// <para>
@@ -461,7 +461,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.
+        ///  <c>ParticipantToken</c> is used for invoking this API instead of <c>ConnectionToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -470,9 +470,9 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
-        /// The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s.
-        /// Clients must manually connect to the returned websocket URL and subscribe to the desired
-        /// topic. 
+        /// The response URL for <c>WEBSOCKET</c> Type has a connect expiry timeout of 100s. Clients
+        /// must manually connect to the returned websocket URL and subscribe to the desired topic.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -480,7 +480,7 @@ namespace Amazon.ConnectParticipant
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> 
+        ///  <c>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</c> 
         /// </para>
         ///  
         /// <para>
@@ -618,7 +618,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -657,7 +657,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -704,7 +704,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -744,7 +744,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -793,7 +793,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -835,7 +835,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -881,7 +881,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -920,7 +920,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -966,7 +966,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1005,7 +1005,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1052,7 +1052,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1095,7 +1095,7 @@ namespace Amazon.ConnectParticipant
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ConnectionToken</code> is used for invoking this API instead of <code>ParticipantToken</code>.
+        ///  <c>ConnectionToken</c> is used for invoking this API instead of <c>ParticipantToken</c>.
         /// </para>
         ///  </note> 
         /// <para>

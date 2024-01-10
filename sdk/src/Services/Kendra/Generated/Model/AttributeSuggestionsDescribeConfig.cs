@@ -41,10 +41,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AttributeSuggestionsMode. 
         /// <para>
-        /// The mode is set to either <code>ACTIVE</code> or <code>INACTIVE</code>. If the <code>Mode</code>
-        /// for query history is set to <code>ENABLED</code> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
-        /// and <code>AttributeSuggestionsMode</code> to use fields/attributes is set to <code>ACTIVE</code>,
-        /// and you haven't set your <code>SuggestionTypes</code> preference to <code>DOCUMENT_ATTRIBUTES</code>,
+        /// The mode is set to either <c>ACTIVE</c> or <c>INACTIVE</c>. If the <c>Mode</c> for
+        /// query history is set to <c>ENABLED</c> when calling <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateQuerySuggestionsConfig.html">UpdateQuerySuggestionsConfig</a>
+        /// and <c>AttributeSuggestionsMode</c> to use fields/attributes is set to <c>ACTIVE</c>,
+        /// and you haven't set your <c>SuggestionTypes</c> preference to <c>DOCUMENT_ATTRIBUTES</c>,
         /// then Amazon Kendra uses the query history.
         /// </para>
         /// </summary>

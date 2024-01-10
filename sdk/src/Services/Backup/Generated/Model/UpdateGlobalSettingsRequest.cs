@@ -32,7 +32,7 @@ namespace Amazon.Backup.Model
     /// Container for the parameters to the UpdateGlobalSettings operation.
     /// Updates whether the Amazon Web Services account is opted in to cross-account backup.
     /// Returns an error if the account is not an Organizations management account. Use the
-    /// <code>DescribeGlobalSettings</code> API to determine the current settings.
+    /// <c>DescribeGlobalSettings</c> API to determine the current settings.
     /// </summary>
     public partial class UpdateGlobalSettingsRequest : AmazonBackupRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property GlobalSettings. 
         /// <para>
-        /// A value for <code>isCrossAccountBackupEnabled</code> and a Region. Example: <code>update-global-settings
-        /// --global-settings isCrossAccountBackupEnabled=false --region us-west-2</code>.
+        /// A value for <c>isCrossAccountBackupEnabled</c> and a Region. Example: <c>update-global-settings
+        /// --global-settings isCrossAccountBackupEnabled=false --region us-west-2</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> GlobalSettings

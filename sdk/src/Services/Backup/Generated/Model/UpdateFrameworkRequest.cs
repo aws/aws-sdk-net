@@ -30,8 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFramework operation.
-    /// Updates an existing framework identified by its <code>FrameworkName</code> with the
-    /// input document in JSON format.
+    /// Updates an existing framework identified by its <c>FrameworkName</c> with the input
+    /// document in JSON format.
     /// </summary>
     public partial class UpdateFrameworkRequest : AmazonBackupRequest
     {
@@ -103,8 +103,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>UpdateFrameworkInput</code>. Retrying a successful request with the
-        /// same idempotency token results in a success message with no action taken.
+        /// calls to <c>UpdateFrameworkInput</c>. Retrying a successful request with the same
+        /// idempotency token results in a success message with no action taken.
         /// </para>
         /// </summary>
         public string IdempotencyToken

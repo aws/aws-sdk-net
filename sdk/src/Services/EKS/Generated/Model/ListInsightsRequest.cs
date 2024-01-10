@@ -82,13 +82,13 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of identity provider configurations returned by <code>ListInsights</code>
-        /// in paginated output. When you use this parameter, <code>ListInsights</code> returns
-        /// only <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListInsights</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If you don't use this parameter, <code>ListInsights</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if applicable.
+        /// The maximum number of identity provider configurations returned by <c>ListInsights</c>
+        /// in paginated output. When you use this parameter, <c>ListInsights</c> returns only
+        /// <c>maxResults</c> results in a single page along with a <c>nextToken</c> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <c>ListInsights</c> request with the returned <c>nextToken</c> value. This value can
+        /// be between 1 and 100. If you don't use this parameter, <c>ListInsights</c> returns
+        /// up to 100 results and a <c>nextToken</c> value, if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -107,9 +107,9 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListInsights</code>
-        /// request. When the results of a <code>ListInsights</code> request exceed <code>maxResults</code>,
-        /// you can use this value to retrieve the next page of results. This value is <code>null</code>
+        /// The <c>nextToken</c> value returned from a previous paginated <c>ListInsights</c>
+        /// request. When the results of a <c>ListInsights</c> request exceed <c>maxResults</c>,
+        /// you can use this value to retrieve the next page of results. This value is <c>null</c>
         /// when there are no more results to return.
         /// </para>
         /// </summary>

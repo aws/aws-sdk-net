@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>UpdatePipelineNotificationsResponse</code> structure.
+    /// The <c>UpdatePipelineNotificationsResponse</c> structure.
     /// </summary>
     public partial class UpdatePipelineNotificationsResponse : AmazonWebServiceResponse
     {

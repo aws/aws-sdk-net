@@ -52,7 +52,7 @@ namespace Amazon.LaunchWizard
 
         /// <summary>
         /// Creates a deployment for the given workload. Deployments created by this operation
-        /// are not available in the Launch Wizard console to use the <code>Clone deployment</code>
+        /// are not available in the Launch Wizard console to use the <c>Clone deployment</c>
         /// action on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>

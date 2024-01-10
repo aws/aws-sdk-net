@@ -33,7 +33,7 @@ namespace Amazon.PersonalizeRuntime.Model
     /// 
     ///  
     /// <para>
-    /// The API returns a list of <code>PredictedAction</code>s.
+    /// The API returns a list of <c>PredictedAction</c>s.
     /// </para>
     /// </summary>
     public partial class PredictedAction

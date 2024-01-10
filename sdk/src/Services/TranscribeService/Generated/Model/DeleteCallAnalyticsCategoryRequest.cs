@@ -31,8 +31,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Container for the parameters to the DeleteCallAnalyticsCategory operation.
     /// Deletes a Call Analytics category. To use this operation, specify the name of the
-    /// category you want to delete using <code>CategoryName</code>. Category names are case
-    /// sensitive.
+    /// category you want to delete using <c>CategoryName</c>. Category names are case sensitive.
     /// </summary>
     public partial class DeleteCallAnalyticsCategoryRequest : AmazonTranscribeServiceRequest
     {

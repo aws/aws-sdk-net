@@ -61,7 +61,7 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property AllowedAnalysisProviders. 
         /// <para>
         /// The Amazon Web Services accounts that are allowed to query by the custom analysis
-        /// rule. Required when <code>allowedAnalyses</code> is <code>ANY_QUERY</code>.
+        /// rule. Required when <c>allowedAnalyses</c> is <c>ANY_QUERY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

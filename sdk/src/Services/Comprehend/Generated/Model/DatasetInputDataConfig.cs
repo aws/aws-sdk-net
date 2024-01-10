@@ -61,12 +61,12 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataFormat. 
         /// <para>
-        ///  <code>COMPREHEND_CSV</code>: The data format is a two-column CSV file, where the
-        /// first column contains labels and the second column contains documents.
+        ///  <c>COMPREHEND_CSV</c>: The data format is a two-column CSV file, where the first
+        /// column contains labels and the second column contains documents.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AUGMENTED_MANIFEST</code>: The data format 
+        ///  <c>AUGMENTED_MANIFEST</c>: The data format 
         /// </para>
         /// </summary>
         public DatasetDataFormat DataFormat

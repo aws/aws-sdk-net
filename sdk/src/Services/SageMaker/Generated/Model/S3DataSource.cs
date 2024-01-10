@@ -88,13 +88,13 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3DataDistributionType. 
         /// <para>
         /// If you want SageMaker to replicate the entire dataset on each ML compute instance
-        /// that is launched for model training, specify <code>FullyReplicated</code>. 
+        /// that is launched for model training, specify <c>FullyReplicated</c>. 
         /// </para>
         ///  
         /// <para>
         /// If you want SageMaker to replicate a subset of data on each ML compute instance that
-        /// is launched for model training, specify <code>ShardedByS3Key</code>. If there are
-        /// <i>n</i> ML compute instances launched for a training job, each instance gets approximately
+        /// is launched for model training, specify <c>ShardedByS3Key</c>. If there are <i>n</i>
+        /// ML compute instances launched for a training job, each instance gets approximately
         /// 1/<i>n</i> of the number of S3 objects. In this case, model training on each machine
         /// uses only the subset of training data. 
         /// </para>
@@ -108,9 +108,9 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// In distributed training, where you use multiple ML compute EC2 instances, you might
-        /// choose <code>ShardedByS3Key</code>. If the algorithm requires copying training data
-        /// to the ML storage volume (when <code>TrainingInputMode</code> is set to <code>File</code>),
-        /// this copies 1/<i>n</i> of the number of objects. 
+        /// choose <c>ShardedByS3Key</c>. If the algorithm requires copying training data to the
+        /// ML storage volume (when <c>TrainingInputMode</c> is set to <c>File</c>), this copies
+        /// 1/<i>n</i> of the number of objects. 
         /// </para>
         /// </summary>
         public S3DataDistribution S3DataDistributionType
@@ -128,22 +128,21 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataType. 
         /// <para>
-        /// If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix.
-        /// SageMaker uses all objects that match the specified key name prefix for model training.
+        /// If you choose <c>S3Prefix</c>, <c>S3Uri</c> identifies a key name prefix. SageMaker
+        /// uses all objects that match the specified key name prefix for model training. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you choose <c>ManifestFile</c>, <c>S3Uri</c> identifies an object that is a manifest
+        /// file containing a list of object keys that you want SageMaker to use for model training.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that
-        /// is a manifest file containing a list of object keys that you want SageMaker to use
-        /// for model training. 
-        /// </para>
-        ///  
-        /// <para>
-        /// If you choose <code>AugmentedManifestFile</code>, S3Uri identifies an object that
-        /// is an augmented manifest file in JSON lines format. This file contains the data you
-        /// want to use for model training. <code>AugmentedManifestFile</code> can only be used
-        /// if the Channel's input mode is <code>Pipe</code>.
+        /// If you choose <c>AugmentedManifestFile</c>, S3Uri identifies an object that is an
+        /// augmented manifest file in JSON lines format. This file contains the data you want
+        /// to use for model training. <c>AugmentedManifestFile</c> can only be used if the Channel's
+        /// input mode is <c>Pipe</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -162,26 +161,24 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// Depending on the value specified for the <code>S3DataType</code>, identifies either
-        /// a key name prefix or a manifest. For example: 
+        /// Depending on the value specified for the <c>S3DataType</c>, identifies either a key
+        /// name prefix or a manifest. For example: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>
-        /// 
+        ///  A key name prefix might look like this: <c>s3://bucketname/exampleprefix</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A manifest might look like this: <code>s3://bucketname/example.manifest</code> 
+        ///  A manifest might look like this: <c>s3://bucketname/example.manifest</c> 
         /// </para>
         ///  
         /// <para>
         ///  A manifest is an S3 object which is a JSON file consisting of an array of elements.
         /// The first element is a prefix which is followed by one or more suffixes. SageMaker
-        /// appends the suffix elements to the prefix to get a full set of <code>S3Uri</code>.
-        /// Note that the prefix must be a valid non-empty <code>S3Uri</code> that precludes users
-        /// from specifying a manifest whose individual <code>S3Uri</code> is sourced from different
-        /// S3 buckets.
+        /// appends the suffix elements to the prefix to get a full set of <c>S3Uri</c>. Note
+        /// that the prefix must be a valid non-empty <c>S3Uri</c> that precludes users from specifying
+        /// a manifest whose individual <c>S3Uri</c> is sourced from different S3 buckets.
         /// </para>
         ///  
         /// <para>
@@ -189,53 +186,53 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> 
+        ///  <c>[ {"prefix": "s3://customer_bucket/some/prefix/"},</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "relative/path/to/custdata-1",</code> 
+        ///  <c> "relative/path/to/custdata-1",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "relative/path/custdata-2",</code> 
+        ///  <c> "relative/path/custdata-2",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> ...</code> 
+        ///  <c> ...</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "relative/path/custdata-N"</code> 
+        ///  <c> "relative/path/custdata-N"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>]</code> 
+        ///  <c>]</c> 
         /// </para>
         ///  
         /// <para>
-        ///  This JSON is equivalent to the following <code>S3Uri</code> list:
+        ///  This JSON is equivalent to the following <c>S3Uri</c> list:
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> 
+        ///  <c>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> 
+        ///  <c>s3://customer_bucket/some/prefix/relative/path/custdata-2</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>...</code> 
+        ///  <c>...</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> 
+        ///  <c>s3://customer_bucket/some/prefix/relative/path/custdata-N</c> 
         /// </para>
         ///  
         /// <para>
-        /// The complete set of <code>S3Uri</code> in this manifest is the input data for the
-        /// channel for this data source. The object that each <code>S3Uri</code> points to must
-        /// be readable by the IAM role that SageMaker uses to perform tasks on your behalf. 
+        /// The complete set of <c>S3Uri</c> in this manifest is the input data for the channel
+        /// for this data source. The object that each <c>S3Uri</c> points to must be readable
+        /// by the IAM role that SageMaker uses to perform tasks on your behalf. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -48,8 +48,8 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property IamArn. 
         /// <para>
         /// The ARN of the IAM user. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <code>IAM</code>
-        /// for <code>identityType</code>.
+        /// ARNs</a> in the <i>IAM User Guide</i>. This parameter is required if you specify <c>IAM</c>
+        /// for <c>identityType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -68,8 +68,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property IdentityId. 
         /// <para>
-        /// The ID of the identity. This parameter is required if you specify <code>USER</code>
-        /// or <code>GROUP</code> for <code>identityType</code>.
+        /// The ID of the identity. This parameter is required if you specify <c>USER</c> or <c>GROUP</c>
+        /// for <c>identityType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -89,7 +89,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property IdentityType. 
         /// <para>
         /// The type of identity (IAM Identity Center user, IAM Identity Center group, or IAM
-        /// user). This parameter is required if you specify <code>identityId</code>.
+        /// user). This parameter is required if you specify <c>identityId</c>.
         /// </para>
         /// </summary>
         public IdentityType IdentityType
@@ -149,7 +149,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource. This parameter is required if you specify <code>resourceType</code>.
+        /// The ID of the resource. This parameter is required if you specify <c>resourceType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -169,7 +169,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource (portal or project). This parameter is required if you specify
-        /// <code>resourceId</code>.
+        /// <c>resourceId</c>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

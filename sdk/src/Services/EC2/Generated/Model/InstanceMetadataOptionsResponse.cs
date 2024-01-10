@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>disabled</code>, you cannot access your instance metadata.
+        /// If the value is <c>disabled</c>, you cannot access your instance metadata.
         /// </para>
         /// </summary>
         public InstanceMetadataEndpointState HttpEndpoint
@@ -111,27 +111,26 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HttpTokens. 
         /// <para>
-        /// IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <code>optional</code>
-        /// (in other words, indicates whether the use of IMDSv2 is <code>optional</code>) or
-        /// <code>required</code> (in other words, indicates whether the use of IMDSv2 is <code>required</code>).
+        /// IMDSv2 uses token-backed sessions. Indicates whether the use of HTTP tokens is <c>optional</c>
+        /// (in other words, indicates whether the use of IMDSv2 is <c>optional</c>) or <c>required</c>
+        /// (in other words, indicates whether the use of IMDSv2 is <c>required</c>).
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>optional</code> - When IMDSv2 is optional, you can choose to retrieve instance
-        /// metadata with or without a session token in your request. If you retrieve the IAM
-        /// role credentials without a token, the IMDSv1 role credentials are returned. If you
-        /// retrieve the IAM role credentials using a valid session token, the IMDSv2 role credentials
-        /// are returned.
+        ///  <c>optional</c> - When IMDSv2 is optional, you can choose to retrieve instance metadata
+        /// with or without a session token in your request. If you retrieve the IAM role credentials
+        /// without a token, the IMDSv1 role credentials are returned. If you retrieve the IAM
+        /// role credentials using a valid session token, the IMDSv2 role credentials are returned.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>required</code> - When IMDSv2 is required, you must send a session token with
-        /// any instance metadata retrieval requests. In this state, retrieving the IAM role credentials
+        ///  <c>required</c> - When IMDSv2 is required, you must send a session token with any
+        /// instance metadata retrieval requests. In this state, retrieving the IAM role credentials
         /// always returns IMDSv2 credentials; IMDSv1 credentials are not available.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>optional</code> 
+        /// Default: <c>optional</c> 
         /// </para>
         /// </summary>
         public HttpTokensState HttpTokens
@@ -173,13 +172,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>pending</code> - The metadata options are being updated and the instance is
-        /// not ready to process metadata traffic with the new selection.
+        ///  <c>pending</c> - The metadata options are being updated and the instance is not ready
+        /// to process metadata traffic with the new selection.
         /// </para>
         ///  
         /// <para>
-        ///  <code>applied</code> - The metadata options have been successfully applied on the
-        /// instance.
+        ///  <c>applied</c> - The metadata options have been successfully applied on the instance.
         /// </para>
         /// </summary>
         public InstanceMetadataOptionsState State

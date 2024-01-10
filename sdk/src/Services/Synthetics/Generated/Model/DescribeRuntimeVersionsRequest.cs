@@ -42,7 +42,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specify this parameter to limit how many runs are returned each time you use the <code>DescribeRuntimeVersions</code>
+        /// Specify this parameter to limit how many runs are returned each time you use the <c>DescribeRuntimeVersions</c>
         /// operation. If you omit this parameter, the default of 100 is used.
         /// </para>
         /// </summary>
@@ -63,8 +63,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates that there is more data available. You can use this token in
-        /// a subsequent <code>DescribeRuntimeVersions</code> operation to retrieve the next set
-        /// of results.
+        /// a subsequent <c>DescribeRuntimeVersions</c> operation to retrieve the next set of
+        /// results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=252)]

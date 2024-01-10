@@ -44,7 +44,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:GetGroupConfiguration</code> 
+    ///  <c>resource-groups:GetGroupConfiguration</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

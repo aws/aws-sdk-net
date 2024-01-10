@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// The <code>PublicAccessBlock</code> configuration that you want to apply to this Amazon
-    /// S3 account. You can enable the configuration options in any combination. For more
-    /// information about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
+    /// The <c>PublicAccessBlock</c> configuration that you want to apply to this Amazon S3
+    /// account. You can enable the configuration options in any combination. For more information
+    /// about when Amazon S3 considers a bucket or object public, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
     /// Meaning of "Public"</a> in the <i>Amazon S3 User Guide</i>.
     /// 
     ///  
@@ -50,12 +50,11 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property BlockPublicAcls. 
         /// <para>
         /// Specifies whether Amazon S3 should block public access control lists (ACLs) for buckets
-        /// in this account. Setting this element to <code>TRUE</code> causes the following behavior:
+        /// in this account. Setting this element to <c>TRUE</c> causes the following behavior:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PutBucketAcl</code> and <code>PutObjectAcl</code> calls fail if the specified
-        /// ACL is public.
+        ///  <c>PutBucketAcl</c> and <c>PutObjectAcl</c> calls fail if the specified ACL is public.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -90,8 +89,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property BlockPublicPolicy. 
         /// <para>
         /// Specifies whether Amazon S3 should block public bucket policies for buckets in this
-        /// account. Setting this element to <code>TRUE</code> causes Amazon S3 to reject calls
-        /// to PUT Bucket policy if the specified bucket policy allows public access. 
+        /// account. Setting this element to <c>TRUE</c> causes Amazon S3 to reject calls to PUT
+        /// Bucket policy if the specified bucket policy allows public access. 
         /// </para>
         ///  
         /// <para>
@@ -118,8 +117,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property IgnorePublicAcls. 
         /// <para>
         /// Specifies whether Amazon S3 should ignore public ACLs for buckets in this account.
-        /// Setting this element to <code>TRUE</code> causes Amazon S3 to ignore all public ACLs
-        /// on buckets in this account and any objects that they contain. 
+        /// Setting this element to <c>TRUE</c> causes Amazon S3 to ignore all public ACLs on
+        /// buckets in this account and any objects that they contain. 
         /// </para>
         ///  
         /// <para>
@@ -147,8 +146,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property RestrictPublicBuckets. 
         /// <para>
         /// Specifies whether Amazon S3 should restrict public bucket policies for buckets in
-        /// this account. Setting this element to <code>TRUE</code> restricts access to buckets
-        /// with public policies to only Amazon Web Service principals and authorized users within
+        /// this account. Setting this element to <c>TRUE</c> restricts access to buckets with
+        /// public policies to only Amazon Web Service principals and authorized users within
         /// this account.
         /// </para>
         ///  

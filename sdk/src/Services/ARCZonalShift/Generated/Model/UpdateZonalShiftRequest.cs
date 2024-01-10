@@ -88,8 +88,8 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example: <code>20h</code> means the zonal shift expires in 20 hours. <code>120m</code>
-        /// means the zonal shift expires in 120 minutes (2 hours).
+        /// For example: <c>20h</c> means the zonal shift expires in 20 hours. <c>120m</c> means
+        /// the zonal shift expires in 120 minutes (2 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=5)]

@@ -50,8 +50,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Encoding. 
         /// <para>
         /// Specifies the public key encoding format to use in the response. To retrieve the public
-        /// key in ssh-rsa format, use <code>SSH</code>. To retrieve the public key in PEM format,
-        /// use <code>PEM</code>.
+        /// key in ssh-rsa format, use <c>SSH</c>. To retrieve the public key in PEM format, use
+        /// <c>PEM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,7 +31,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Container for the parameters to the DiscoverInstances operation.
     /// Discovers registered instances for a specified namespace and service. You can use
-    /// <code>DiscoverInstances</code> to discover instances for any type of namespace. <code>DiscoverInstances</code>
+    /// <c>DiscoverInstances</c> to discover instances for any type of namespace. <c>DiscoverInstances</c>
     /// returns a randomized list of instances allowing customers to distribute traffic evenly
     /// across instances. For public and private DNS namespaces, you can also use DNS queries
     /// to discover instances.
@@ -86,7 +86,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of instances that you want Cloud Map to return in the response
-        /// to a <code>DiscoverInstances</code> request. If you don't specify a value for <code>MaxResults</code>,
+        /// to a <c>DiscoverInstances</c> request. If you don't specify a value for <c>MaxResults</c>,
         /// Cloud Map returns up to 100 instances.
         /// </para>
         /// </summary>
@@ -106,8 +106,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code>
-        /// member of the <code>Properties</code> member of the namespace.
+        /// The <c>HttpName</c> name of the namespace. It's found in the <c>HttpProperties</c>
+        /// member of the <c>Properties</c> member of the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -127,10 +127,10 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property OptionalParameters. 
         /// <para>
         /// Opportunistic filters to scope the results based on custom attributes. If there are
-        /// instances that match both the filters specified in both the <code>QueryParameters</code>
+        /// instances that match both the filters specified in both the <c>QueryParameters</c>
         /// parameter and this parameter, all of these instances are returned. Otherwise, the
         /// filters are ignored, and only instances that match the filters that are specified
-        /// in the <code>QueryParameters</code> parameter are returned.
+        /// in the <c>QueryParameters</c> parameter are returned.
         /// </para>
         /// </summary>
         public Dictionary<string, string> OptionalParameters
@@ -149,7 +149,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property QueryParameters. 
         /// <para>
         /// Filters to scope the results based on custom attributes for the instance (for example,
-        /// <code>{version=v1, az=1a}</code>). Only instances that match all the specified key-value
+        /// <c>{version=v1, az=1a}</c>). Only instances that match all the specified key-value
         /// pairs are returned.
         /// </para>
         /// </summary>

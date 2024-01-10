@@ -104,9 +104,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
-        /// For rules that you create, this is always <code>{"Name": "CloudWatchLogRule", "Version":
-        /// 1}</code>. For managed rules, this is <code>{"Name": "ServiceLogRule", "Version":
-        /// 1}</code> 
+        /// For rules that you create, this is always <c>{"Name": "CloudWatchLogRule", "Version":
+        /// 1}</c>. For managed rules, this is <c>{"Name": "ServiceLogRule", "Version": 1}</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -50,8 +50,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// When the recommendations page is refreshed, a status of <code>Active</code> confirms
-        /// that the preference is applied to the recommendations, and a status of <code>Inactive</code>
+        /// When the recommendations page is refreshed, a status of <c>Active</c> confirms that
+        /// the preference is applied to the recommendations, and a status of <c>Inactive</c>
         /// confirms that the preference isn't yet applied to recommendations.
         /// </para>
         ///  
@@ -80,9 +80,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         ///  If the preference is applied in the latest recommendation refresh, an object with
-        /// a valid <code>source</code> value appears in the response. If the preference isn't
-        /// applied to the recommendations already, then this object doesn't appear in the response.
-        /// 
+        /// a valid <c>source</c> value appears in the response. If the preference isn't applied
+        /// to the recommendations already, then this object doesn't appear in the response. 
         /// </para>
         /// </summary>
         public ExternalMetricsPreference ExternalMetricsPreference
@@ -104,8 +103,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// When the recommendations page is refreshed, a status of <code>Active</code> confirms
-        /// that the preference is applied to the recommendations, and a status of <code>Inactive</code>
+        /// When the recommendations page is refreshed, a status of <c>Active</c> confirms that
+        /// the preference is applied to the recommendations, and a status of <c>Inactive</c>
         /// confirms that the preference isn't yet applied to recommendations.
         /// </para>
         /// </summary>
@@ -169,9 +168,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Ec2Instance</code> option encompasses standalone instances and instances
-        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
-        /// only instances that are part of an Auto Scaling group.
+        /// The <c>Ec2Instance</c> option encompasses standalone instances and instances that
+        /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
+        /// instances that are part of an Auto Scaling group.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

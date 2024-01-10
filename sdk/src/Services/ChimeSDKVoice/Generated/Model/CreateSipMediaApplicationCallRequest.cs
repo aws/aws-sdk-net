@@ -31,7 +31,7 @@ namespace Amazon.ChimeSDKVoice.Model
     /// <summary>
     /// Container for the parameters to the CreateSipMediaApplicationCall operation.
     /// Creates an outbound call to a phone number from the phone number specified in the
-    /// request, and it invokes the endpoint of the specified <code>sipMediaApplicationId</code>.
+    /// request, and it invokes the endpoint of the specified <c>sipMediaApplicationId</c>.
     /// </summary>
     public partial class CreateSipMediaApplicationCallRequest : AmazonChimeSDKVoiceRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Gets and sets the property ArgumentsMap. 
         /// <para>
         /// Context passed to a CreateSipMediaApplication API call. For example, you could pass
-        /// key-value pairs such as: <code>"FirstName": "John", "LastName": "Doe"</code> 
+        /// key-value pairs such as: <c>"FirstName": "John", "LastName": "Doe"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

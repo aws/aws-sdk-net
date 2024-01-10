@@ -43,13 +43,13 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results returned by <code>ListRoutes</code> in paginated output.
-        /// When you use this parameter, <code>ListRoutes</code> returns only <code>limit</code>
-        /// results in a single page along with a <code>nextToken</code> response element. You
-        /// can see the remaining results of the initial request by sending another <code>ListRoutes</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If you don't use this parameter, <code>ListRoutes</code> returns up to
-        /// 100 results and a <code>nextToken</code> value if applicable.
+        /// The maximum number of results returned by <c>ListRoutes</c> in paginated output. When
+        /// you use this parameter, <c>ListRoutes</c> returns only <c>limit</c> results in a single
+        /// page along with a <c>nextToken</c> response element. You can see the remaining results
+        /// of the initial request by sending another <c>ListRoutes</c> request with the returned
+        /// <c>nextToken</c> value. This value can be between 1 and 100. If you don't use this
+        /// parameter, <c>ListRoutes</c> returns up to 100 results and a <c>nextToken</c> value
+        /// if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -109,10 +109,10 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListRoutes</code>
-        /// request where <code>limit</code> was used and the results exceeded the value of that
-        /// parameter. Pagination continues from the end of the previous results that returned
-        /// the <code>nextToken</code> value.
+        /// The <c>nextToken</c> value returned from a previous paginated <c>ListRoutes</c> request
+        /// where <c>limit</c> was used and the results exceeded the value of that parameter.
+        /// Pagination continues from the end of the previous results that returned the <c>nextToken</c>
+        /// value.
         /// </para>
         /// </summary>
         public string NextToken

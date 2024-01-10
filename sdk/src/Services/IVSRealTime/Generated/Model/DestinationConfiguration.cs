@@ -41,7 +41,7 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property Channel. 
         /// <para>
         /// An IVS channel to be used for broadcasting, for server-side composition. Either a
-        /// <code>channel</code> or an <code>s3</code> must be specified. 
+        /// <c>channel</c> or an <c>s3</c> must be specified. 
         /// </para>
         /// </summary>
         public ChannelDestinationConfiguration Channel
@@ -78,8 +78,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// An S3 storage configuration to be used for recording video data. Either a <code>channel</code>
-        /// or an <code>s3</code> must be specified.
+        /// An S3 storage configuration to be used for recording video data. Either a <c>channel</c>
+        /// or an <c>s3</c> must be specified.
         /// </para>
         /// </summary>
         public S3DestinationConfiguration S3

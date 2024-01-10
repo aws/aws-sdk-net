@@ -63,7 +63,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// Specifies the baseline input/output (I/O) performance of EBS volumes attached to data
-        /// nodes. Applicable only for the <code>gp3</code> and provisioned IOPS EBS volume types.
+        /// nodes. Applicable only for the <c>gp3</c> and provisioned IOPS EBS volume types.
         /// </para>
         /// </summary>
         public int Iops
@@ -82,7 +82,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Throughput. 
         /// <para>
         /// Specifies the throughput (in MiB/s) of the EBS volumes attached to data nodes. Applicable
-        /// only for the <code>gp3</code> volume type.
+        /// only for the <c>gp3</c> volume type.
         /// </para>
         /// </summary>
         public int Throughput

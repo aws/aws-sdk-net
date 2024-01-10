@@ -107,7 +107,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property RequestedBy. 
         /// <para>
-        /// The type of account making the <code>ListEnvironmentAccountConnections</code> request.
+        /// The type of account making the <c>ListEnvironmentAccountConnections</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

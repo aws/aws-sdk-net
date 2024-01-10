@@ -48,12 +48,11 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property AutoRenew. 
         /// <para>
-        /// When you initally create a subscription, <code>AutoRenew</code> is set to <code>ENABLED</code>.
-        /// If <code>ENABLED</code>, the subscription will be automatically renewed at the end
-        /// of the existing subscription period. You can change this by submitting an <code>UpdateSubscription</code>
-        /// request. If the <code>UpdateSubscription</code> request does not included a value
-        /// for <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains
-        /// unchanged.
+        /// When you initally create a subscription, <c>AutoRenew</c> is set to <c>ENABLED</c>.
+        /// If <c>ENABLED</c>, the subscription will be automatically renewed at the end of the
+        /// existing subscription period. You can change this by submitting an <c>UpdateSubscription</c>
+        /// request. If the <c>UpdateSubscription</c> request does not included a value for <c>AutoRenew</c>,
+        /// the existing value for <c>AutoRenew</c> remains unchanged.
         /// </para>
         /// </summary>
         public AutoRenew AutoRenew

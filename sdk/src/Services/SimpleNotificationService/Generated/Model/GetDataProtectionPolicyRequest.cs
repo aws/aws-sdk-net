@@ -30,8 +30,8 @@ namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataProtectionPolicy operation.
-    /// Retrieves the specified inline <code>DataProtectionPolicy</code> document that is
-    /// stored in the specified Amazon SNS topic.
+    /// Retrieves the specified inline <c>DataProtectionPolicy</c> document that is stored
+    /// in the specified Amazon SNS topic.
     /// </summary>
     public partial class GetDataProtectionPolicyRequest : AmazonSimpleNotificationServiceRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the topic whose <code>DataProtectionPolicy</code> you want to get.
+        /// The ARN of the topic whose <c>DataProtectionPolicy</c> you want to get.
         /// </para>
         ///  
         /// <para>

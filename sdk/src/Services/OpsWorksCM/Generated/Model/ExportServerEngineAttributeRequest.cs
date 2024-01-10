@@ -40,10 +40,10 @@ namespace Amazon.OpsWorksCM.Model
     /// </para>
     ///  
     /// <para>
-    ///  A <code>ValidationException</code> is raised when parameters of the request are not
-    /// valid. A <code>ResourceNotFoundException</code> is thrown when the server does not
-    /// exist. An <code>InvalidStateException</code> is thrown when the server is in any of
-    /// the following states: CREATING, TERMINATED, FAILED or DELETING. 
+    ///  A <c>ValidationException</c> is raised when parameters of the request are not valid.
+    /// A <c>ResourceNotFoundException</c> is thrown when the server does not exist. An <c>InvalidStateException</c>
+    /// is thrown when the server is in any of the following states: CREATING, TERMINATED,
+    /// FAILED or DELETING. 
     /// </para>
     /// </summary>
     public partial class ExportServerEngineAttributeRequest : AmazonOpsWorksCMRequest
@@ -55,9 +55,9 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property ExportAttributeName. 
         /// <para>
-        /// The name of the export attribute. Currently, the supported export attribute is <code>Userdata</code>.
+        /// The name of the export attribute. Currently, the supported export attribute is <c>Userdata</c>.
         /// This exports a user data script that includes parameters and values provided in the
-        /// <code>InputAttributes</code> list.
+        /// <c>InputAttributes</c> list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10000)]
@@ -76,8 +76,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property InputAttributes. 
         /// <para>
-        /// The list of engine attributes. The list type is <code>EngineAttribute</code>. An <code>EngineAttribute</code>
-        /// list item is a pair that includes an attribute name and its value. For the <code>Userdata</code>
+        /// The list of engine attributes. The list type is <c>EngineAttribute</c>. An <c>EngineAttribute</c>
+        /// list item is a pair that includes an attribute name and its value. For the <c>Userdata</c>
         /// ExportAttributeName, the following are supported engine attribute names.
         /// </para>
         ///  <ul> <li> 
@@ -88,8 +88,7 @@ namespace Amazon.OpsWorksCM.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>OrganizationName</b> In Chef, an organization name. AWS OpsWorks for Chef Automate
-        /// always creates the organization <code>default</code>. In Puppet, this parameter is
-        /// ignored.
+        /// always creates the organization <c>default</c>. In Puppet, this parameter is ignored.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -46,7 +46,7 @@ namespace Amazon.GameLift.Model
     /// If successful, this operation returns the compute details, including an Amazon GameLift
     /// SDK endpoint. Game server processes that run on the compute use this endpoint to communicate
     /// with the Amazon GameLift service. Each server process includes the SDK endpoint in
-    /// its call to the Amazon GameLift server SDK action <code>InitSDK()</code>.
+    /// its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
     /// </para>
     ///  
     /// <para>

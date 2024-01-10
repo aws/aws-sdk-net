@@ -60,7 +60,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property StatusCounts. 
         /// <para>
         ///  A map that contains the number of each type of status returned by the test results
-        /// in this <code>TestReportSummary</code>. 
+        /// in this <c>TestReportSummary</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,8 +79,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Total. 
         /// <para>
-        ///  The number of test cases in this <code>TestReportSummary</code>. The total includes
-        /// truncated test cases. 
+        ///  The number of test cases in this <c>TestReportSummary</c>. The total includes truncated
+        /// test cases. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -111,8 +111,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerOrchestrationType. 
         /// <para>
-        /// The orchestration type of the compute environment. The valid values are <code>ECS</code>
-        /// (default) or <code>EKS</code>.
+        /// The orchestration type of the compute environment. The valid values are <c>ECS</c>
+        /// (default) or <c>EKS</c>.
         /// </para>
         /// </summary>
         public OrchestrationType ContainerOrchestrationType
@@ -150,7 +150,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property EksConfiguration. 
         /// <para>
         /// The configuration for the Amazon EKS cluster that supports the Batch compute environment.
-        /// Only specify this parameter if the <code>containerOrchestrationType</code> is <code>EKS</code>.
+        /// Only specify this parameter if the <c>containerOrchestrationType</c> is <c>EKS</c>.
         /// </para>
         /// </summary>
         public EksConfiguration EksConfiguration
@@ -189,37 +189,35 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the compute environment. The valid values are <code>ENABLED</code> or
-        /// <code>DISABLED</code>.
+        /// The state of the compute environment. The valid values are <c>ENABLED</c> or <c>DISABLED</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
-        /// jobs from an associated job queue on the compute resources within the environment.
-        /// If the compute environment is managed, then it can scale its instances out or in automatically
+        /// If the state is <c>ENABLED</c>, then the Batch scheduler can attempt to place jobs
+        /// from an associated job queue on the compute resources within the environment. If the
+        /// compute environment is managed, then it can scale its instances out or in automatically
         /// based on the job queue demand.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
-        /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
-        /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
-        /// state don't scale out. 
+        /// If the state is <c>DISABLED</c>, then the Batch scheduler doesn't attempt to place
+        /// jobs within the environment. Jobs in a <c>STARTING</c> or <c>RUNNING</c> state continue
+        /// to progress normally. Managed compute environments in the <c>DISABLED</c> state don't
+        /// scale out. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// Compute environments in a <code>DISABLED</code> state may continue to incur billing
-        /// charges. To prevent additional charges, turn off and then delete the compute environment.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges.
+        /// To prevent additional charges, turn off and then delete the compute environment. For
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
         /// in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// When an instance is idle, the instance scales down to the <code>minvCpus</code> value.
-        /// However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code>
-        /// instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code>
-        /// value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code>
-        /// instance.
+        /// When an instance is idle, the instance scales down to the <c>minvCpus</c> value. However,
+        /// the instance size doesn't change. For example, consider a <c>c5.8xlarge</c> instance
+        /// with a <c>minvCpus</c> value of <c>4</c> and a <c>desiredvCpus</c> value of <c>36</c>.
+        /// This instance doesn't scale down to a <c>c5.large</c> instance.
         /// </para>
         /// </summary>
         public CEState State
@@ -237,8 +235,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the compute environment (for example, <code>CREATING</code>
-        /// or <code>VALID</code>).
+        /// The current status of the compute environment (for example, <c>CREATING</c> or <c>VALID</c>).
         /// </para>
         /// </summary>
         public CEStatus Status
@@ -294,8 +291,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// The type of the compute environment: <c>MANAGED</c> or <c>UNMANAGED</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
         /// environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>

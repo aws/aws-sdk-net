@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// The API key expiration must be set to a value between 1 and 365 days from creation
-    /// (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).
+    /// (for <c>CreateApiKey</c>) or from update (for <c>UpdateApiKey</c>).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

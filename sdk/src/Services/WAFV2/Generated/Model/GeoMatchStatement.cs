@@ -36,8 +36,7 @@ namespace Amazon.WAFV2.Model
     ///  <ul> <li> 
     /// <para>
     /// To manage requests only by country, you can use this statement by itself and specify
-    /// the countries that you want to match against in the <code>CountryCodes</code> array.
-    /// 
+    /// the countries that you want to match against in the <c>CountryCodes</c> array. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -51,19 +50,19 @@ namespace Amazon.WAFV2.Model
     /// WAF labels requests using the alpha-2 country and region codes from the International
     /// Organization for Standardization (ISO) 3166 standard. WAF determines the codes using
     /// either the IP address in the web request origin or, if you specify it, the address
-    /// in the geo match <code>ForwardedIPConfig</code>. 
+    /// in the geo match <c>ForwardedIPConfig</c>. 
     /// </para>
     ///  
     /// <para>
-    /// If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:&lt;ISO
-    /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO
-    /// country code&gt;</code>.
+    /// If you use the web request origin, the label formats are <c>awswaf:clientip:geo:region:&lt;ISO
+    /// country code&gt;-&lt;ISO region code&gt;</c> and <c>awswaf:clientip:geo:country:&lt;ISO
+    /// country code&gt;</c>.
     /// </para>
     ///  
     /// <para>
-    /// If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:&lt;ISO
-    /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO
-    /// country code&gt;</code>.
+    /// If you use a forwarded IP address, the label formats are <c>awswaf:forwardedip:geo:region:&lt;ISO
+    /// country code&gt;-&lt;ISO region code&gt;</c> and <c>awswaf:forwardedip:geo:country:&lt;ISO
+    /// country code&gt;</c>.
     /// </para>
     ///  
     /// <para>
@@ -81,7 +80,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property CountryCodes. 
         /// <para>
         /// An array of two-character country codes that you want to match against, for example,
-        /// <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the ISO 3166 international
+        /// <c>[ "US", "CN" ]</c>, from the alpha-2 country ISO codes of the ISO 3166 international
         /// standard. 
         /// </para>
         ///  

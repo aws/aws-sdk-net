@@ -57,9 +57,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>DescribeJobQueues</code>
-        /// request. When the results of a <code>DescribeJobQueues</code> request exceed <code>maxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// The <c>nextToken</c> value to include in a future <c>DescribeJobQueues</c> request.
+        /// When the results of a <c>DescribeJobQueues</c> request exceed <c>maxResults</c>, this
+        /// value can be used to retrieve the next page of results. This value is <c>null</c>
         /// when there are no more results to return.
         /// </para>
         /// </summary>

@@ -59,7 +59,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property SourceApiAssociationSummaries. 
         /// <para>
-        /// The <code>SourceApiAssociationSummary</code> object data.
+        /// The <c>SourceApiAssociationSummary</c> object data.
         /// </para>
         /// </summary>
         public List<SourceApiAssociationSummary> SourceApiAssociationSummaries

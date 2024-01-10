@@ -58,20 +58,19 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  Regression: <code>InferenceLatency</code>, <code>MAE</code>, <code>MSE</code>, <code>R2</code>,
-        /// <code>RMSE</code> 
+        ///  Regression: <c>InferenceLatency</c>, <c>MAE</c>, <c>MSE</c>, <c>R2</c>, <c>RMSE</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Binary classification: <code>Accuracy</code>, <code>AUC</code>, <code>BalancedAccuracy</code>,
-        /// <code>F1</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>Precision</code>,
-        /// <code>Recall</code> 
+        ///  Binary classification: <c>Accuracy</c>, <c>AUC</c>, <c>BalancedAccuracy</c>, <c>F1</c>,
+        /// <c>InferenceLatency</c>, <c>LogLoss</c>, <c>Precision</c>, <c>Recall</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Multiclass classification: <code>Accuracy</code>, <code>BalancedAccuracy</code>,
-        /// <code>F1macro</code>, <code>InferenceLatency</code>, <code>LogLoss</code>, <code>PrecisionMacro</code>,
-        /// <code>RecallMacro</code> 
+        ///  Multiclass classification: <c>Accuracy</c>, <c>BalancedAccuracy</c>, <c>F1macro</c>,
+        /// <c>InferenceLatency</c>, <c>LogLoss</c>, <c>PrecisionMacro</c>, <c>RecallMacro</c>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -84,15 +83,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Regression: <code>MSE</code>.
+        /// Regression: <c>MSE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Binary classification: <code>F1</code>.
+        /// Binary classification: <c>F1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Multiclass classification: <code>Accuracy</code>.
+        /// Multiclass classification: <c>Accuracy</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
@@ -100,7 +99,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// List of available metrics: <code>Accuracy</code> 
+        /// List of available metrics: <c>Accuracy</c> 
         /// </para>
         ///  
         /// <para>
@@ -109,7 +108,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Default objective metrics: <code>Accuracy</code> 
+        /// Default objective metrics: <c>Accuracy</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -117,8 +116,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// List of available metrics: <code>RMSE</code>, <code>wQL</code>, <code>Average wQL</code>,
-        /// <code>MASE</code>, <code>MAPE</code>, <code>WAPE</code> 
+        /// List of available metrics: <c>RMSE</c>, <c>wQL</c>, <c>Average wQL</c>, <c>MASE</c>,
+        /// <c>MAPE</c>, <c>WAPE</c> 
         /// </para>
         ///  
         /// <para>
@@ -127,12 +126,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Default objective metrics: <code>AverageWeightedQuantileLoss</code> 
+        /// Default objective metrics: <c>AverageWeightedQuantileLoss</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For text generation problem types (LLMs fine-tuning): Fine-tuning language models
-        /// in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot
+        /// in Autopilot does not require setting the <c>AutoMLJobObjective</c> field. Autopilot
         /// fine-tunes LLMs without requiring multiple candidates to be trained and evaluated.
         /// Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance
         /// a default objective metric, the cross-entropy loss. After fine-tuning a language model,

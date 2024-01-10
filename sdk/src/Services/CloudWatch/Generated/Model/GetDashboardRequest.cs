@@ -34,9 +34,9 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data
-    /// returned within <code>DashboardBody</code> as the template for the new dashboard when
-    /// you call <code>PutDashboard</code> to create the copy.
+    /// To copy an existing dashboard, use <c>GetDashboard</c>, and then use the data returned
+    /// within <c>DashboardBody</c> as the template for the new dashboard when you call <c>PutDashboard</c>
+    /// to create the copy.
     /// </para>
     /// </summary>
     public partial class GetDashboardRequest : AmazonCloudWatchRequest

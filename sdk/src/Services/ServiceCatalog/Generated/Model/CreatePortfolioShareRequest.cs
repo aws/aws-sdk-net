@@ -42,8 +42,8 @@ namespace Amazon.ServiceCatalog.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio
-    /// share to an organization node.
+    ///  <c>AWSOrganizationsAccess</c> must be enabled in order to create a portfolio share
+    /// to an organization node.
     /// </para>
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <para>
     /// If the portfolio share with the specified account or organization node already exists,
     /// this action will have no effect and will not return an error. To update an existing
-    /// share, you must use the <code> UpdatePortfolioShare</code> API instead. 
+    /// share, you must use the <c> UpdatePortfolioShare</c> API instead. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -64,9 +64,8 @@ namespace Amazon.ServiceCatalog.Model
     /// a principal name association for the portfolio. Although this user may not know which
     /// principal names are associated through Service Catalog, they may be able to guess
     /// the user. If this potential escalation path is a concern, then Service Catalog recommends
-    /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
-    /// <code>PrincipalARN</code> must already exist in the recipient account before it can
-    /// be associated. 
+    /// using <c>PrincipalType</c> as <c>IAM</c>. With this configuration, the <c>PrincipalARN</c>
+    /// must already exist in the recipient account before it can be associated. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -86,11 +85,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,7 +109,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID. For example, <code>123456789012</code>.
+        /// The Amazon Web Services account ID. For example, <c>123456789012</c>.
         /// </para>
         /// </summary>
         public string AccountId
@@ -128,10 +127,10 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property OrganizationNode. 
         /// <para>
-        /// The organization node to whom you are going to share. When you pass <code>OrganizationNode</code>,
-        /// it creates <code>PortfolioShare</code> for all of the Amazon Web Services accounts
-        /// that are associated to the <code>OrganizationNode</code>. The output returns a <code>PortfolioShareToken</code>,
-        /// which enables the administrator to monitor the status of the <code>PortfolioShare</code>
+        /// The organization node to whom you are going to share. When you pass <c>OrganizationNode</c>,
+        /// it creates <c>PortfolioShare</c> for all of the Amazon Web Services accounts that
+        /// are associated to the <c>OrganizationNode</c>. The output returns a <c>PortfolioShareToken</c>,
+        /// which enables the administrator to monitor the status of the <c>PortfolioShare</c>
         /// creation process.
         /// </para>
         /// </summary>
@@ -170,21 +169,21 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property SharePrincipals. 
         /// <para>
         /// This parameter is only supported for portfolios with an <b>OrganizationalNode</b>
-        /// Type of <code>ORGANIZATION</code> or <code>ORGANIZATIONAL_UNIT</code>. 
+        /// Type of <c>ORGANIZATION</c> or <c>ORGANIZATIONAL_UNIT</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Enables or disables <code>Principal</code> sharing when creating the portfolio share.
-        /// If you do <b>not</b> provide this flag, principal sharing is disabled. 
+        /// Enables or disables <c>Principal</c> sharing when creating the portfolio share. If
+        /// you do <b>not</b> provide this flag, principal sharing is disabled. 
         /// </para>
         ///  
         /// <para>
         /// When you enable Principal Name Sharing for a portfolio share, the share recipient
         /// account end users with a principal that matches any of the associated IAM patterns
         /// can provision products from the portfolio. Once shared, the share recipient can view
-        /// associations of <code>PrincipalType</code>: <code>IAM_PATTERN</code> on their portfolio.
-        /// You can create the principals in the recipient account before or after creating the
-        /// share. 
+        /// associations of <c>PrincipalType</c>: <c>IAM_PATTERN</c> on their portfolio. You can
+        /// create the principals in the recipient account before or after creating the share.
+        /// 
         /// </para>
         /// </summary>
         public bool SharePrincipals
@@ -202,7 +201,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ShareTagOptions. 
         /// <para>
-        /// Enables or disables <code>TagOptions </code> sharing when creating the portfolio share.
+        /// Enables or disables <c>TagOptions </c> sharing when creating the portfolio share.
         /// If this flag is not provided, TagOptions sharing is disabled.
         /// </para>
         /// </summary>

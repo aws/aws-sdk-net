@@ -86,7 +86,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ConditionalFormatting. 
         /// <para>
-        /// The conditional formatting for a <code>PivotTableVisual</code>.
+        /// The conditional formatting for a <c>PivotTableVisual</c>.
         /// </para>
         /// </summary>
         public TableConditionalFormatting ConditionalFormatting

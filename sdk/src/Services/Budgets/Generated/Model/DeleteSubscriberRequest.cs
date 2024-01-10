@@ -48,8 +48,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>accountId</code> that is associated with the budget whose subscriber you
-        /// want to delete.
+        /// The <c>accountId</c> that is associated with the budget whose subscriber you want
+        /// to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

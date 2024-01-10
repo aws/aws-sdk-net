@@ -44,10 +44,10 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CopyTagsToSnapshots. 
         /// <para>
         /// A Boolean value indicating whether tags for the volume should be copied to snapshots
-        /// of the volume. This value defaults to <code>false</code>. If it's set to <code>true</code>,
-        /// all tags for the volume are copied to snapshots where the user doesn't specify tags.
-        /// If this value is <code>true</code> and you specify one or more tags, only the specified
-        /// tags are copied to snapshots. If you specify one or more tags when creating the snapshot,
+        /// of the volume. This value defaults to <c>false</c>. If it's set to <c>true</c>, all
+        /// tags for the volume are copied to snapshots where the user doesn't specify tags. If
+        /// this value is <c>true</c> and you specify one or more tags, only the specified tags
+        /// are copied to snapshots. If you specify one or more tags when creating the snapshot,
         /// no tags are copied from the volume, regardless of this value. 
         /// </para>
         /// </summary>
@@ -67,22 +67,21 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DataCompressionType. 
         /// <para>
         /// Specifies the method used to compress the data on the volume. The compression type
-        /// is <code>NONE</code> by default.
+        /// is <c>NONE</c> by default.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is
-        /// the default.
+        ///  <c>NONE</c> - Doesn't compress the data on the volume. <c>NONE</c> is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-        /// compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio
-        /// to minimize on-disk storage utilization.
+        ///  <c>ZSTD</c> - Compresses the data in the volume using the Zstandard (ZSTD) compression
+        /// algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize
+        /// on-disk storage utilization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm.
+        ///  <c>LZ4</c> - Compresses the data in the volume using the LZ4 compression algorithm.
         /// Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput
         /// speeds.
         /// </para>
@@ -123,8 +122,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ReadOnly. 
         /// <para>
         /// A Boolean value indicating whether the volume is read-only. Setting this value to
-        /// <code>true</code> can be useful after you have completed changes to a volume and no
-        /// longer want changes to occur. 
+        /// <c>true</c> can be useful after you have completed changes to a volume and no longer
+        /// want changes to occur. 
         /// </para>
         /// </summary>
         public bool ReadOnly

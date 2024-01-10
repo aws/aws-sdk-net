@@ -61,8 +61,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ViewId. 
         /// <para>
-        /// The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can
-        /// be used.
+        /// The identifier of the view. Both <c>ViewArn</c> and <c>ViewId</c> can be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

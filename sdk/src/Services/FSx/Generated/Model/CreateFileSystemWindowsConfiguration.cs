@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration object for the Microsoft Windows file system used in <code>CreateFileSystem</code>
-    /// and <code>CreateFileSystemFromBackup</code> operations.
+    /// The configuration object for the Microsoft Windows file system used in <c>CreateFileSystem</c>
+    /// and <c>CreateFileSystemFromBackup</c> operations.
     /// </summary>
     public partial class CreateFileSystemWindowsConfiguration
     {
@@ -91,8 +91,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for
-        /// example, <code>accounting.example.com</code>.
+        /// Formatted as a fully-qualified domain name (FQDN), <c>hostname.domain</c>, for example,
+        /// <c>accounting.example.com</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -149,9 +149,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays. 
         /// <para>
-        /// The number of days to retain automatic backups. Setting this property to <code>0</code>
+        /// The number of days to retain automatic backups. Setting this property to <c>0</c>
         /// disables automatic backups. You can retain automatic backups for a maximum of 90 days.
-        /// The default is <code>30</code>.
+        /// The default is <c>30</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=90)]
@@ -217,21 +217,20 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MULTI_AZ_1</code> - Deploys a high availability file system that is configured
-        /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability.
-        /// You can only deploy a Multi-AZ file system in Amazon Web Services Regions that have
-        /// a minimum of three Availability Zones. Also supports HDD storage type
+        ///  <c>MULTI_AZ_1</c> - Deploys a high availability file system that is configured for
+        /// Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. You
+        /// can only deploy a Multi-AZ file system in Amazon Web Services Regions that have a
+        /// minimum of three Availability Zones. Also supports HDD storage type
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_1</code> - (Default) Choose to deploy a file system that is configured
+        ///  <c>SINGLE_AZ_1</c> - (Default) Choose to deploy a file system that is configured
         /// for single AZ redundancy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_2</code> - The latest generation Single AZ file system. Specifies
-        /// a file system that is configured for single AZ redundancy and supports HDD storage
-        /// type.
+        ///  <c>SINGLE_AZ_2</c> - The latest generation Single AZ file system. Specifies a file
+        /// system that is configured for single AZ redundancy and supports HDD storage type.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -275,11 +274,11 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PreferredSubnetId. 
         /// <para>
-        /// Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This
-        /// specifies the subnet in which you want the preferred file server to be located. For
-        /// in-Amazon Web Services applications, we recommend that you launch your clients in
-        /// the same Availability Zone (AZ) as your preferred file server to reduce cross-AZ data
-        /// transfer costs and minimize latency. 
+        /// Required when <c>DeploymentType</c> is set to <c>MULTI_AZ_1</c>. This specifies the
+        /// subnet in which you want the preferred file server to be located. For in-Amazon Web
+        /// Services applications, we recommend that you launch your clients in the same Availability
+        /// Zone (AZ) as your preferred file server to reduce cross-AZ data transfer costs and
+        /// minimize latency. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]

@@ -79,7 +79,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property PartnerType. 
         /// <para>
-        /// Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
+        /// Partner type of the resource if the identifier type is <c>PartnerAccountId</c>.
         /// </para>
         /// </summary>
         public EventNotificationPartnerType PartnerType

@@ -67,7 +67,7 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// The secure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.
+        /// engagements to <c>VOICE</c> and <c>EMAIL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]
@@ -125,7 +125,7 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property PublicContent. 
         /// <para>
         /// The insecure content of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.
+        /// engagements to <c>SMS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -145,7 +145,7 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property PublicSubject. 
         /// <para>
         /// The insecure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>SMS</code>.
+        /// engagements to <c>SMS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -220,7 +220,7 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property Subject. 
         /// <para>
         /// The secure subject of the message that was sent to the contact. Use this field for
-        /// engagements to <code>VOICE</code> and <code>EMAIL</code>.
+        /// engagements to <c>VOICE</c> and <c>EMAIL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

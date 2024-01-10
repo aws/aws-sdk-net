@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The container path, mount options, and size of the <code>tmpfs</code> mount.
+    /// The container path, mount options, and size of the <c>tmpfs</c> mount.
     /// 
     ///  <note> 
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ContainerPath. 
         /// <para>
-        /// The absolute file path in the container where the <code>tmpfs</code> volume is mounted.
+        /// The absolute file path in the container where the <c>tmpfs</c> volume is mounted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,20 +65,18 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MountOptions. 
         /// <para>
-        /// The list of <code>tmpfs</code> volume mount options.
+        /// The list of <c>tmpfs</c> volume mount options.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: "<code>defaults</code>" | "<code>ro</code>" | "<code>rw</code>" | "<code>suid</code>"
-        /// | "<code>nosuid</code>" | "<code>dev</code>" | "<code>nodev</code>" | "<code>exec</code>"
-        /// | "<code>noexec</code>" | "<code>sync</code>" | "<code>async</code>" | "<code>dirsync</code>"
-        /// | "<code>remount</code>" | "<code>mand</code>" | "<code>nomand</code>" | "<code>atime</code>"
-        /// | "<code>noatime</code>" | "<code>diratime</code>" | "<code>nodiratime</code>" | "<code>bind</code>"
-        /// | "<code>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared"
-        /// | "rshared" | "slave" | "rslave" | "relatime</code>" | "<code>norelatime</code>" |
-        /// "<code>strictatime</code>" | "<code>nostrictatime</code>" | "<code>mode</code>" |
-        /// "<code>uid</code>" | "<code>gid</code>" | "<code>nr_inodes</code>" | "<code>nr_blocks</code>"
-        /// | "<code>mpol</code>"
+        /// Valid values: "<c>defaults</c>" | "<c>ro</c>" | "<c>rw</c>" | "<c>suid</c>" | "<c>nosuid</c>"
+        /// | "<c>dev</c>" | "<c>nodev</c>" | "<c>exec</c>" | "<c>noexec</c>" | "<c>sync</c>"
+        /// | "<c>async</c>" | "<c>dirsync</c>" | "<c>remount</c>" | "<c>mand</c>" | "<c>nomand</c>"
+        /// | "<c>atime</c>" | "<c>noatime</c>" | "<c>diratime</c>" | "<c>nodiratime</c>" | "<c>bind</c>"
+        /// | "<c>rbind" | "unbindable" | "runbindable" | "private" | "rprivate" | "shared" |
+        /// "rshared" | "slave" | "rslave" | "relatime</c>" | "<c>norelatime</c>" | "<c>strictatime</c>"
+        /// | "<c>nostrictatime</c>" | "<c>mode</c>" | "<c>uid</c>" | "<c>gid</c>" | "<c>nr_inodes</c>"
+        /// | "<c>nr_blocks</c>" | "<c>mpol</c>"
         /// </para>
         /// </summary>
         public List<string> MountOptions
@@ -96,7 +94,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The size (in MiB) of the <code>tmpfs</code> volume.
+        /// The size (in MiB) of the <c>tmpfs</c> volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

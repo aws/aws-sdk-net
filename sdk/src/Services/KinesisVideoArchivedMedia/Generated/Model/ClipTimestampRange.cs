@@ -43,16 +43,15 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// This value must be within 24 hours of the specified <code>StartTimestamp</code>, and
-        /// it must be later than the <code>StartTimestamp</code> value. If <code>FragmentSelectorType</code>
-        /// for the request is <code>SERVER_TIMESTAMP</code>, this value must be in the past.
-        /// 
+        /// This value must be within 24 hours of the specified <c>StartTimestamp</c>, and it
+        /// must be later than the <c>StartTimestamp</c> value. If <c>FragmentSelectorType</c>
+        /// for the request is <c>SERVER_TIMESTAMP</c>, this value must be in the past. 
         /// </para>
         ///  
         /// <para>
-        /// This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
-        /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
-        /// value and continue past it are included in the session. 
+        /// This value is inclusive. The <c>EndTimestamp</c> is compared to the (starting) timestamp
+        /// of the fragment. Fragments that start before the <c>EndTimestamp</c> value and continue
+        /// past it are included in the session. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,10 +74,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// Only fragments that start exactly at or after <code>StartTimestamp</code> are included
-        /// in the session. Fragments that start before <code>StartTimestamp</code> and continue
-        /// past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
-        /// the <code>StartTimestamp</code> must be later than the stream head. 
+        /// Only fragments that start exactly at or after <c>StartTimestamp</c> are included in
+        /// the session. Fragments that start before <c>StartTimestamp</c> and continue past it
+        /// aren't included in the session. If <c>FragmentSelectorType</c> is <c>SERVER_TIMESTAMP</c>,
+        /// the <c>StartTimestamp</c> must be later than the stream head. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

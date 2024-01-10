@@ -153,7 +153,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>TEXT_SENT</code> event type is not supported.
+        /// The <c>TEXT_SENT</c> event type is not supported.
         /// </para>
         ///  </note>
         /// </summary>

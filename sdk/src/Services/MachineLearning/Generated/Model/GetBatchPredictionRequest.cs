@@ -30,8 +30,8 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBatchPrediction operation.
-    /// Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and
-    /// data file information for a <code>Batch Prediction</code> request.
+    /// Returns a <c>BatchPrediction</c> that includes detailed metadata, status, and data
+    /// file information for a <c>Batch Prediction</c> request.
     /// </summary>
     public partial class GetBatchPredictionRequest : AmazonMachineLearningRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// An ID assigned to the <code>BatchPrediction</code> at creation.
+        /// An ID assigned to the <c>BatchPrediction</c> at creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

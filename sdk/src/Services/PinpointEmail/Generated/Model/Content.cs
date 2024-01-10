@@ -43,7 +43,7 @@ namespace Amazon.PinpointEmail.Model
         /// The character set for the content. Because of the constraints of the SMTP protocol,
         /// Amazon Pinpoint uses 7-bit ASCII by default. If the text includes characters outside
         /// of the ASCII range, you have to specify a character set. For example, you could specify
-        /// <code>UTF-8</code>, <code>ISO-8859-1</code>, or <code>Shift_JIS</code>.
+        /// <c>UTF-8</c>, <c>ISO-8859-1</c>, or <c>Shift_JIS</c>.
         /// </para>
         /// </summary>
         public string Charset

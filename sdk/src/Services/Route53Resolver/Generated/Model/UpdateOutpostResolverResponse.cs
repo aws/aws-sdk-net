@@ -38,7 +38,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property OutpostResolver. 
         /// <para>
-        /// The response to an <code>UpdateOutpostResolver</code> request.
+        /// The response to an <c>UpdateOutpostResolver</c> request.
         /// </para>
         /// </summary>
         public OutpostResolver OutpostResolver

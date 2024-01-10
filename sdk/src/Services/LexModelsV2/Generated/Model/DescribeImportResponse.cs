@@ -64,8 +64,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// If the <code>importStatus</code> field is <code>Failed</code>, this provides one or
-        /// more reasons for the failure.
+        /// If the <c>importStatus</c> field is <c>Failed</c>, this provides one or more reasons
+        /// for the failure.
         /// </para>
         /// </summary>
         public List<string> FailureReasons
@@ -140,7 +140,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ImportStatus. 
         /// <para>
-        /// The status of the import process. When the status is <code>Completed</code> the resource
+        /// The status of the import process. When the status is <c>Completed</c> the resource
         /// is imported and ready for use.
         /// </para>
         /// </summary>
@@ -178,8 +178,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property MergeStrategy. 
         /// <para>
         /// The strategy used when there was a name conflict between the imported resource and
-        /// an existing resource. When the merge strategy is <code>FailOnConflict</code> existing
-        /// resources are not overwritten and the import fails.
+        /// an existing resource. When the merge strategy is <c>FailOnConflict</c> existing resources
+        /// are not overwritten and the import fails.
         /// </para>
         /// </summary>
         public MergeStrategy MergeStrategy

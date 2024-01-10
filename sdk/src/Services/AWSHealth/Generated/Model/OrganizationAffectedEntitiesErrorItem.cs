@@ -65,10 +65,10 @@ namespace Amazon.AWSHealth.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, the <code>InvalidAccountInputError</code> error message appears if you
-        /// call the <code>DescribeAffectedEntitiesForOrganization</code> operation and specify
-        /// the <code>AccountSpecific</code> value for the <code>EventScopeCode</code> parameter,
-        /// but don't specify an Amazon Web Services account.
+        /// For example, the <c>InvalidAccountInputError</c> error message appears if you call
+        /// the <c>DescribeAffectedEntitiesForOrganization</c> operation and specify the <c>AccountSpecific</c>
+        /// value for the <c>EventScopeCode</c> parameter, but don't specify an Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -104,8 +104,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArn. 
         /// <para>
-        /// The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code> format.
+        /// The unique identifier for the event. The event ARN has the <c>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </c> format.
         /// </para>
         ///  
         /// <para>
@@ -113,7 +113,7 @@ namespace Amazon.AWSHealth.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        ///  <c>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</c>
         /// 
         /// </para>
         /// </summary>

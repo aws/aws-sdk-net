@@ -31,9 +31,9 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Defines the modifications that you are making to an attribute for a what-if forecast.
     /// For example, you can use this operation to create a what-if forecast that investigates
-    /// a 10% off sale on all shoes. To do this, you specify <code>"AttributeName": "shoes"</code>,
-    /// <code>"Operation": "MULTIPLY"</code>, and <code>"Value": "0.90"</code>. Pair this
-    /// operation with the <a>TimeSeriesCondition</a> operation within the <a>CreateWhatIfForecastRequest$TimeSeriesTransformations</a>
+    /// a 10% off sale on all shoes. To do this, you specify <c>"AttributeName": "shoes"</c>,
+    /// <c>"Operation": "MULTIPLY"</c>, and <c>"Value": "0.90"</c>. Pair this operation with
+    /// the <a>TimeSeriesCondition</a> operation within the <a>CreateWhatIfForecastRequest$TimeSeriesTransformations</a>
     /// operation to define a subset of attribute items that are modified.
     /// </summary>
     public partial class Action
@@ -68,19 +68,19 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADD</code> - adds <code>Value</code> to all rows of <code>AttributeName</code>.
+        ///  <c>ADD</c> - adds <c>Value</c> to all rows of <c>AttributeName</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBTRACT</code> - subtracts <code>Value</code> from all rows of <code>AttributeName</code>.
+        ///  <c>SUBTRACT</c> - subtracts <c>Value</c> from all rows of <c>AttributeName</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MULTIPLY</code> - multiplies all rows of <code>AttributeName</code> by <code>Value</code>.
+        ///  <c>MULTIPLY</c> - multiplies all rows of <c>AttributeName</c> by <c>Value</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIVIDE</code> - divides all rows of <code>AttributeName</code> by <code>Value</code>.
+        ///  <c>DIVIDE</c> - divides all rows of <c>AttributeName</c> by <c>Value</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value that is applied for the chosen <code>Operation</code>.
+        /// The value that is applied for the chosen <c>Operation</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

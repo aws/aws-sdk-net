@@ -51,13 +51,12 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property HostedZoneId. 
         /// <para>
         /// (Optional) If you want to list the query logging configuration that is associated
-        /// with a hosted zone, specify the ID in <code>HostedZoneId</code>. 
+        /// with a hosted zone, specify the ID in <c>HostedZoneId</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code> returns
-        /// all of the configurations that are associated with the current Amazon Web Services
-        /// account.
+        /// If you don't specify a hosted zone ID, <c>ListQueryLoggingConfigs</c> returns all
+        /// of the configurations that are associated with the current Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -76,18 +75,18 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) If the current Amazon Web Services account has more than <code>MaxResults</code>
-        /// query logging configurations, use <code>NextToken</code> to get the second and subsequent
+        /// (Optional) If the current Amazon Web Services account has more than <c>MaxResults</c>
+        /// query logging configurations, use <c>NextToken</c> to get the second and subsequent
         /// pages of results.
         /// </para>
         ///  
         /// <para>
-        /// For the first <code>ListQueryLoggingConfigs</code> request, omit this value.
+        /// For the first <c>ListQueryLoggingConfigs</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// For the second and subsequent requests, get the value of <code>NextToken</code> from
-        /// the previous response and specify that value for <code>NextToken</code> in the request.
+        /// For the second and subsequent requests, get the value of <c>NextToken</c> from the
+        /// previous response and specify that value for <c>NextToken</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -108,14 +107,12 @@ namespace Amazon.Route53.Model
         /// <para>
         /// (Optional) The maximum number of query logging configurations that you want Amazon
         /// Route 53 to return in response to the current request. If the current Amazon Web Services
-        /// account has more than <code>MaxResults</code> configurations, use the value of <a
-        /// href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
+        /// account has more than <c>MaxResults</c> configurations, use the value of <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListQueryLoggingConfigs.html#API_ListQueryLoggingConfigs_RequestSyntax">NextToken</a>
         /// in the response to get the next page of results.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>MaxResults</code>, Route 53 returns up to 100
-        /// configurations.
+        /// If you don't specify a value for <c>MaxResults</c>, Route 53 returns up to 100 configurations.
         /// </para>
         /// </summary>
         public string MaxResults

@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInstanceAdmin operation.
-    /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.
+    /// Demotes an <c>AppInstanceAdmin</c> to an <c>AppInstanceUser</c> or <c>AppInstanceBot</c>.
     /// This action does not delete the user.
     /// </summary>
     public partial class DeleteAppInstanceAdminRequest : AmazonChimeSDKIdentityRequest
@@ -41,7 +41,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdminArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>'s administrator.
+        /// The ARN of the <c>AppInstance</c>'s administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

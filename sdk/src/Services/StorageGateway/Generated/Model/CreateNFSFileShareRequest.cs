@@ -182,12 +182,12 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property DefaultStorageClass. 
         /// <para>
         /// The default storage class for objects put into an Amazon S3 bucket by the S3 File
-        /// Gateway. The default value is <code>S3_STANDARD</code>. Optional.
+        /// Gateway. The default value is <c>S3_STANDARD</c>. Optional.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
-        /// | <code>S3_ONEZONE_IA</code> 
+        /// Valid Values: <c>S3_STANDARD</c> | <c>S3_INTELLIGENT_TIERING</c> | <c>S3_STANDARD_IA</c>
+        /// | <c>S3_ONEZONE_IA</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=50)]
@@ -210,7 +210,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>,
+        ///  <c>FileShareName</c> must be set if an S3 prefix name is set in <c>LocationARN</c>,
         /// or if an access point or access point alias is used.
         /// </para>
         ///  </note>
@@ -252,12 +252,12 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GuessMIMETypeEnabled. 
         /// <para>
         /// A value that enables guessing of the MIME type for uploaded objects based on file
-        /// extensions. Set this value to <code>true</code> to enable MIME type guessing, otherwise
-        /// set to <code>false</code>. The default value is <code>true</code>.
+        /// extensions. Set this value to <c>true</c> to enable MIME type guessing, otherwise
+        /// set to <c>false</c>. The default value is <c>true</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool GuessMIMETypeEnabled
@@ -275,12 +275,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <c>true</c> to use Amazon S3 server-side encryption with your own KMS key,
+        /// or <c>false</c> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -300,7 +300,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
         /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
-        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
+        /// value can only be set when <c>KMSEncrypted</c> is <c>true</c>. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]
@@ -334,7 +334,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:s3:::my-bucket/prefix/</code> 
+        ///  <c>arn:aws:s3:::my-bucket/prefix/</c> 
         /// </para>
         ///  
         /// <para>
@@ -342,7 +342,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</code> 
+        ///  <c>arn:aws:s3:region:account-id:accesspoint/access-point-name/prefix/</c> 
         /// </para>
         ///  
         /// <para>
@@ -356,7 +356,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</code> 
+        ///  <c>test-ap-ab123cdef4gehijklmn5opqrstuvuse1a-s3alias</c> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -394,33 +394,33 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property NotificationPolicy. 
         /// <para>
-        /// The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls
-        /// the number of seconds to wait after the last point in time a client wrote to a file
-        /// before generating an <code>ObjectUploaded</code> notification. Because clients can
-        /// make many small writes to files, it's best to set this parameter for as long as possible
-        /// to avoid generating multiple notifications for the same file in a small time period.
+        /// The notification policy of the file share. <c>SettlingTimeInSeconds</c> controls the
+        /// number of seconds to wait after the last point in time a client wrote to a file before
+        /// generating an <c>ObjectUploaded</c> notification. Because clients can make many small
+        /// writes to files, it's best to set this parameter for as long as possible to avoid
+        /// generating multiple notifications for the same file in a small time period.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading
+        ///  <c>SettlingTimeInSeconds</c> has no effect on the timing of the object uploading
         /// to Amazon S3, only the timing of the notification.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code>
+        /// The following example sets <c>NotificationPolicy</c> on with <c>SettlingTimeInSeconds</c>
         /// set to 60.
         /// </para>
         ///  
         /// <para>
-        ///  <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code> 
+        ///  <c>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</c> 
         /// </para>
         ///  
         /// <para>
-        /// The following example sets <code>NotificationPolicy</code> off.
+        /// The following example sets <c>NotificationPolicy</c> off.
         /// </para>
         ///  
         /// <para>
-        ///  <code>{}</code> 
+        ///  <c>{}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=100)]
@@ -440,7 +440,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property ObjectACL. 
         /// <para>
         /// A value that sets the access control list (ACL) permission for objects in the S3 bucket
-        /// that a S3 File Gateway puts objects into. The default value is <code>private</code>.
+        /// that a S3 File Gateway puts objects into. The default value is <c>private</c>.
         /// </para>
         /// </summary>
         public ObjectACL ObjectACL
@@ -458,12 +458,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// A value that sets the write status of a file share. Set this value to <code>true</code>
-        /// to set the write status to read-only, otherwise set to <code>false</code>.
+        /// A value that sets the write status of a file share. Set this value to <c>true</c>
+        /// to set the write status to read-only, otherwise set to <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool ReadOnly
@@ -482,19 +482,19 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property RequesterPays. 
         /// <para>
         /// A value that sets who pays the cost of the request and the cost associated with data
-        /// download from the S3 bucket. If this value is set to <code>true</code>, the requester
-        /// pays the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner
-        /// always pays the cost of storing data.
+        /// download from the S3 bucket. If this value is set to <c>true</c>, the requester pays
+        /// the costs; otherwise, the S3 bucket owner pays. However, the S3 bucket owner always
+        /// pays the cost of storing data.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file
-        /// share, so make sure that the configuration on the file share is the same as the S3
-        /// bucket configuration.
+        ///  <c>RequesterPays</c> is a configuration for the S3 bucket that backs the file share,
+        /// so make sure that the configuration on the file share is the same as the S3 bucket
+        /// configuration.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool RequesterPays
@@ -540,15 +540,15 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RootSquash</code>: Only root is mapped to anonymous user.
+        ///  <c>RootSquash</c>: Only root is mapped to anonymous user.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NoSquash</code>: No one is mapped to anonymous user.
+        ///  <c>NoSquash</c>: No one is mapped to anonymous user.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AllSquash</code>: Everyone is mapped to anonymous user.
+        ///  <c>AllSquash</c>: Everyone is mapped to anonymous user.
         /// </para>
         ///  </li> </ul>
         /// </summary>

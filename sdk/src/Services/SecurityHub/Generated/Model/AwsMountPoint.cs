@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceVolume. 
         /// <para>
-        /// The name of the volume to mount. Must be a volume name referenced in the <code>name</code>
-        /// parameter of task definition <code>volume</code>. 
+        /// The name of the volume to mount. Must be a volume name referenced in the <c>name</c>
+        /// parameter of task definition <c>volume</c>. 
         /// </para>
         /// </summary>
         public string SourceVolume

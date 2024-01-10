@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+    /// The <c>Id</c> of a batch entry in a batch request doesn't abide by the specification.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

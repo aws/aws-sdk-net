@@ -93,7 +93,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CapacityReservationSpecification. 
         /// <para>
         /// The Capacity Reservation targeting option. If you do not specify this parameter, the
-        /// instance's Capacity Reservation preference defaults to <code>open</code>, which enables
+        /// instance's Capacity Reservation preference defaults to <c>open</c>, which enables
         /// it to run in any open Capacity Reservation that has matching attributes (instance
         /// type, platform, Availability Zone).
         /// </para>
@@ -170,10 +170,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If you set this parameter to <code>true</code>, you can't terminate the instance using
-        /// the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute
-        /// after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-        /// Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
+        /// If you set this parameter to <c>true</c>, you can't terminate the instance using the
+        /// Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after
+        /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+        /// Alternatively, if you set <c>InstanceInitiatedShutdownBehavior</c> to <c>terminate</c>,
         /// you can terminate the instance by running the shutdown command from the instance.
         /// </para>
         /// </summary>
@@ -339,23 +339,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ami-17characters00000</code> 
+        ///  <c>ami-17characters00000</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolve:ssm:parameter-name</code> 
+        ///  <c>resolve:ssm:parameter-name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolve:ssm:parameter-name:version-number</code> 
+        ///  <c>resolve:ssm:parameter-name:version-number</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolve:ssm:parameter-name:label</code> 
+        ///  <c>resolve:ssm:parameter-name:label</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolve:ssm:public-parameter</code> 
+        ///  <c>resolve:ssm:public-parameter</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -390,7 +390,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>stop</code> 
+        /// Default: <c>stop</c> 
         /// </para>
         /// </summary>
         public ShutdownBehavior InstanceInitiatedShutdownBehavior
@@ -431,8 +431,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
-        /// are optional. Any unspecified optional attribute is set to its default.
+        /// You must specify <c>VCpuCount</c> and <c>MemoryMiB</c>. All other attributes are optional.
+        /// Any unspecified optional attribute is set to its default.
         /// </para>
         ///  
         /// <para>
@@ -447,17 +447,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AllowedInstanceTypes</code> - The instance types to include in the list. All
-        /// other instance types are ignored, even if they match your specified attributes.
+        ///  <c>AllowedInstanceTypes</c> - The instance types to include in the list. All other
+        /// instance types are ignored, even if they match your specified attributes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list,
-        /// even if they match your specified attributes.
+        ///  <c>ExcludedInstanceTypes</c> - The instance types to exclude from the list, even
+        /// if they match your specified attributes.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+        /// If you specify <c>InstanceRequirements</c>, you can't specify <c>InstanceType</c>.
         /// </para>
         ///  
         /// <para>
@@ -466,7 +466,7 @@ namespace Amazon.EC2.Model
         /// template in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-instance-wizard.html">launch
         /// instance wizard</a>, or with the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>
         /// API or <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-properties-ec2-instance.html">AWS::EC2::Instance</a>
-        /// Amazon Web Services CloudFormation resource, you can't specify <code>InstanceRequirements</code>.
+        /// Amazon Web Services CloudFormation resource, you can't specify <c>InstanceRequirements</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -496,7 +496,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
+        /// If you specify <c>InstanceType</c>, you can't specify <c>InstanceRequirements</c>.
         /// </para>
         /// </summary>
         public InstanceType InstanceType

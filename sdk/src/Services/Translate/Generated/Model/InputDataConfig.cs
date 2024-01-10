@@ -44,42 +44,41 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>text/html</code>: The input data consists of one or more HTML files. Amazon
-        /// Translate translates only the text that resides in the <code>html</code> element in
-        /// each file.
+        ///  <c>text/html</c>: The input data consists of one or more HTML files. Amazon Translate
+        /// translates only the text that resides in the <c>html</c> element in each file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>text/plain</code>: The input data consists of one or more unformatted text
-        /// files. Amazon Translate translates every character in this type of input.
+        ///  <c>text/plain</c>: The input data consists of one or more unformatted text files.
+        /// Amazon Translate translates every character in this type of input.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>application/vnd.openxmlformats-officedocument.wordprocessingml.document</code>:
-        /// The input data consists of one or more Word documents (.docx).
+        ///  <c>application/vnd.openxmlformats-officedocument.wordprocessingml.document</c>: The
+        /// input data consists of one or more Word documents (.docx).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>application/vnd.openxmlformats-officedocument.presentationml.presentation</code>:
+        ///  <c>application/vnd.openxmlformats-officedocument.presentationml.presentation</c>:
         /// The input data consists of one or more PowerPoint Presentation files (.pptx).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</code>: The
-        /// input data consists of one or more Excel Workbook files (.xlsx).
+        ///  <c>application/vnd.openxmlformats-officedocument.spreadsheetml.sheet</c>: The input
+        /// data consists of one or more Excel Workbook files (.xlsx).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>application/x-xliff+xml</code>: The input data consists of one or more XML
-        /// Localization Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports
-        /// only XLIFF version 1.2.
+        ///  <c>application/x-xliff+xml</c>: The input data consists of one or more XML Localization
+        /// Interchange File Format (XLIFF) files (.xlf). Amazon Translate supports only XLIFF
+        /// version 1.2.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// If you structure your input data as HTML, ensure that you set this parameter to <code>text/html</code>.
-        /// By doing so, you cut costs by limiting the translation to the contents of the <code>html</code>
-        /// element in each file. Otherwise, if you set this parameter to <code>text/plain</code>,
-        /// your costs will cover the translation of every character.
+        /// If you structure your input data as HTML, ensure that you set this parameter to <c>text/html</c>.
+        /// By doing so, you cut costs by limiting the translation to the contents of the <c>html</c>
+        /// element in each file. Otherwise, if you set this parameter to <c>text/plain</c>, your
+        /// costs will cover the translation of every character.
         /// </para>
         ///  </important>
         /// </summary>

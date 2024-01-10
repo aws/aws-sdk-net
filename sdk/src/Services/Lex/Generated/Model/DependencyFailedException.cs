@@ -42,8 +42,8 @@ namespace Amazon.Lex.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
-    /// removing any slot values.
+    /// If a fulfillment Lambda function returns a <c>Delegate</c> dialog action without removing
+    /// any slot values.
     /// </para>
     ///  </li> </ul>
     /// </summary>

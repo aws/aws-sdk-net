@@ -30,9 +30,9 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Contains the configuration settings for a user interface (UI) element for an Amplify
-    /// app. A component is configured as a primary, stand-alone UI element. Use <code>ComponentChild</code>
-    /// to configure an instance of a <code>Component</code>. A <code>ComponentChild</code>
-    /// instance inherits the configuration of the main <code>Component</code>.
+    /// app. A component is configured as a primary, stand-alone UI element. Use <c>ComponentChild</c>
+    /// to configure an instance of a <c>Component</c>. A <c>ComponentChild</c> instance inherits
+    /// the configuration of the main <c>Component</c>.
     /// </summary>
     public partial class Component
     {
@@ -77,7 +77,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property BindingProperties. 
         /// <para>
         /// The information to connect a component's properties to data at runtime. You can't
-        /// specify <code>tags</code> as a valid property for <code>bindingProperties</code>.
+        /// specify <c>tags</c> as a valid property for <c>bindingProperties</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,7 +96,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Children. 
         /// <para>
-        /// A list of the component's <code>ComponentChild</code> instances.
+        /// A list of the component's <c>ComponentChild</c> instances.
         /// </para>
         /// </summary>
         public List<ComponentChild> Children
@@ -115,7 +115,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property CollectionProperties. 
         /// <para>
         /// The data binding configuration for the component's properties. Use this for a collection
-        /// component. You can't specify <code>tags</code> as a valid property for <code>collectionProperties</code>.
+        /// component. You can't specify <c>tags</c> as a valid property for <c>collectionProperties</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, ComponentDataConfiguration> CollectionProperties
@@ -267,7 +267,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property Overrides. 
         /// <para>
         /// Describes the component's properties that can be overriden in a customized instance
-        /// of the component. You can't specify <code>tags</code> as a valid property for <code>overrides</code>.
+        /// of the component. You can't specify <c>tags</c> as a valid property for <c>overrides</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -286,8 +286,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// Describes the component's properties. You can't specify <code>tags</code> as a valid
-        /// property for <code>properties</code>.
+        /// Describes the component's properties. You can't specify <c>tags</c> as a valid property
+        /// for <c>properties</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

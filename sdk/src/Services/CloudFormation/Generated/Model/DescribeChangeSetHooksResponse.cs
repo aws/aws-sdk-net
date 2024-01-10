@@ -100,7 +100,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token, <code>null</code> or empty if no more results.
+        /// Pagination token, <c>null</c> or empty if no more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -44,23 +44,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INFORMATIONAL</code> - No issue was found.
+        ///  <c>INFORMATIONAL</c> - No issue was found.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOW</code> - The issue does not require action on its own.
+        ///  <c>LOW</c> - The issue does not require action on its own.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MEDIUM</code> - The issue must be addressed but not urgently.
+        ///  <c>MEDIUM</c> - The issue must be addressed but not urgently.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HIGH</code> - The issue must be addressed as a priority.
+        ///  <c>HIGH</c> - The issue must be addressed as a priority.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CRITICAL</code> - The issue must be remediated immediately to avoid it escalating.
+        ///  <c>CRITICAL</c> - The issue must be remediated immediately to avoid it escalating.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -80,32 +80,32 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Normalized. 
         /// <para>
         /// The normalized severity for the finding. This attribute is to be deprecated in favor
-        /// of <code>Label</code>.
+        /// of <c>Label</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide <code>Normalized</code> and do not provide <code>Label</code>, <code>Label</code>
-        /// is set automatically as follows.
+        /// If you provide <c>Normalized</c> and do not provide <c>Label</c>, <c>Label</c> is
+        /// set automatically as follows.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// 0 - <code>INFORMATIONAL</code> 
+        /// 0 - <c>INFORMATIONAL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 1–39 - <code>LOW</code> 
+        /// 1–39 - <c>LOW</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 40–69 - <code>MEDIUM</code> 
+        /// 40–69 - <c>MEDIUM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 70–89 - <code>HIGH</code> 
+        /// 70–89 - <c>HIGH</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 90–100 - <code>CRITICAL</code> 
+        /// 90–100 - <c>CRITICAL</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

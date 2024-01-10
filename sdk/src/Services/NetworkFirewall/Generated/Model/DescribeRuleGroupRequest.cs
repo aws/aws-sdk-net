@@ -43,8 +43,8 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property AnalyzeRuleGroup. 
         /// <para>
         /// Indicates whether you want Network Firewall to analyze the stateless rules in the
-        /// rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>,
-        /// Network Firewall runs the analysis.
+        /// rule group for rule behavior such as asymmetric routing. If set to <c>TRUE</c>, Network
+        /// Firewall runs the analysis.
         /// </para>
         /// </summary>
         public bool AnalyzeRuleGroup
@@ -114,7 +114,7 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This setting is required for requests that do not include the <code>RuleGroupARN</code>.
+        /// This setting is required for requests that do not include the <c>RuleGroupARN</c>.
         /// </para>
         ///  </note>
         /// </summary>

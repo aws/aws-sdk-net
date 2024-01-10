@@ -72,7 +72,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        ///  <code>TRUE</code> to index document attachments.
+        ///  <c>TRUE</c> to index document attachments.
         /// </para>
         /// </summary>
         public bool CrawlAttachments
@@ -90,7 +90,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DisableLocalGroups. 
         /// <para>
-        ///  <code>TRUE</code> to disable local groups information.
+        ///  <c>TRUE</c> to disable local groups information.
         /// </para>
         /// </summary>
         public bool DisableLocalGroups
@@ -154,10 +154,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map SharePoint data
-        /// source attributes or field names to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to SharePoint fields.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map SharePoint data source
+        /// attributes or field names to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to SharePoint fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The SharePoint data source field names must exist in your
         /// SharePoint custom metadata.
         /// </para>
@@ -330,7 +330,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        ///  <code>TRUE</code> to use the SharePoint change log to determine which documents require
+        ///  <c>TRUE</c> to use the SharePoint change log to determine which documents require
         /// updating in the index. Depending on the change log's size, it may take longer for
         /// Amazon Kendra to use the change log than to scan all of your documents in SharePoint.
         /// </para>

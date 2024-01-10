@@ -40,7 +40,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property ListId. 
         /// <para>
         /// The ID of the protocols list that you want to delete. You can retrieve this ID from
-        /// <code>PutProtocolsList</code>, <code>ListProtocolsLists</code>, and <code>GetProtocolsLost</code>.
+        /// <c>PutProtocolsList</c>, <c>ListProtocolsLists</c>, and <c>GetProtocolsLost</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

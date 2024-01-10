@@ -61,9 +61,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// The expression of the query. For example, <code>SELECT resourceId, resourceType, supplementaryConfiguration.BucketVersioningConfiguration.status
+        /// The expression of the query. For example, <c>SELECT resourceId, resourceType, supplementaryConfiguration.BucketVersioningConfiguration.status
         /// WHERE resourceType = 'AWS::S3::Bucket' AND supplementaryConfiguration.BucketVersioningConfiguration.status
-        /// = 'Off'.</code> 
+        /// = 'Off'.</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

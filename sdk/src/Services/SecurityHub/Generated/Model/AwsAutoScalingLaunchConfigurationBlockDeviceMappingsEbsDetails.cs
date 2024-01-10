@@ -84,9 +84,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Only supported for <code>gp3</code> or <code>io1</code> volumes. Required for <code>io1</code>
-        /// volumes. Not used with <code>standard</code>, <code>gp2</code>, <code>st1</code>,
-        /// or <code>sc1</code> volumes.
+        /// Only supported for <c>gp3</c> or <c>io1</c> volumes. Required for <c>io1</c> volumes.
+        /// Not used with <c>standard</c>, <c>gp2</c>, <c>st1</c>, or <c>sc1</c> volumes.
         /// </para>
         /// </summary>
         public int Iops
@@ -108,7 +107,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either <code>VolumeSize</code> or <code>SnapshotId</code>.
+        /// You must specify either <c>VolumeSize</c> or <c>SnapshotId</c>.
         /// </para>
         /// </summary>
         public string SnapshotId
@@ -147,9 +146,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You must specify either <code>SnapshotId</code> or <code>VolumeSize</code>. If you
-        /// specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size
-        /// must be equal or greater than the size of the snapshot.
+        /// You must specify either <c>SnapshotId</c> or <c>VolumeSize</c>. If you specify both
+        /// <c>SnapshotId</c> and <c>VolumeSize</c>, the volume size must be equal or greater
+        /// than the size of the snapshot.
         /// </para>
         /// </summary>
         public int VolumeSize
@@ -171,27 +170,27 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp2</code> 
+        ///  <c>gp2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>gp3</code> 
+        ///  <c>gp3</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code> 
+        ///  <c>io1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sc1</code> 
+        ///  <c>sc1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>st1</code> 
+        ///  <c>st1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>standard</code> 
+        ///  <c>standard</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

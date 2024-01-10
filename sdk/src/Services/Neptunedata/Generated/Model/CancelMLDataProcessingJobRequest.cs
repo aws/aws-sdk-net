@@ -31,7 +31,7 @@ namespace Amazon.Neptunedata.Model
     /// <summary>
     /// Container for the parameters to the CancelMLDataProcessingJob operation.
     /// Cancels a Neptune ML data processing job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-    /// <code>dataprocessing</code> command</a>.
+    /// <c>dataprocessing</c> command</a>.
     /// 
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Clean. 
         /// <para>
-        /// If set to <code>TRUE</code>, this flag specifies that all Neptune ML S3 artifacts
-        /// should be deleted when the job is stopped. The default is <code>FALSE</code>.
+        /// If set to <c>TRUE</c>, this flag specifies that all Neptune ML S3 artifacts should
+        /// be deleted when the job is stopped. The default is <c>FALSE</c>.
         /// </para>
         /// </summary>
         public bool Clean

@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyEndpoints. 
         /// <para>
-        /// The list of <code>ProxyEndpoint</code> objects returned by the API operation.
+        /// The list of <c>ProxyEndpoint</c> objects returned by the API operation.
         /// </para>
         /// </summary>
         public List<DBProxyEndpoint> DBProxyEndpoints
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker

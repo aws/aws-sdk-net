@@ -63,11 +63,11 @@ namespace Amazon.CodeStarNotifications.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Chatbot topics are specified as <code>SNS</code>.
+        /// Chatbot topics are specified as <c>SNS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Chatbot clients are specified as <code>AWSChatbotSlack</code>.
+        /// Chatbot clients are specified as <c>AWSChatbotSlack</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

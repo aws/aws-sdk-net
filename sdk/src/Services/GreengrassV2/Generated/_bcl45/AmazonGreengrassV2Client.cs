@@ -643,8 +643,8 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  
         /// <para>
-        /// To create a component from a recipe, specify <code>inlineRecipe</code> when you call
-        /// this operation.
+        /// To create a component from a recipe, specify <c>inlineRecipe</c> when you call this
+        /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -663,44 +663,44 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Python 2.7 – <code>python2.7</code> 
+        /// Python 2.7 – <c>python2.7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Python 3.7 – <code>python3.7</code> 
+        /// Python 3.7 – <c>python3.7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Python 3.8 – <code>python3.8</code> 
+        /// Python 3.8 – <c>python3.8</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Python 3.9 – <code>python3.9</code> 
+        /// Python 3.9 – <c>python3.9</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Java 8 – <code>java8</code> 
+        /// Java 8 – <c>java8</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Java 11 – <code>java11</code> 
+        /// Java 11 – <c>java11</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Node.js 10 – <code>nodejs10.x</code> 
+        /// Node.js 10 – <c>nodejs10.x</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Node.js 12 – <code>nodejs12.x</code> 
+        /// Node.js 12 – <c>nodejs12.x</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Node.js 14 – <code>nodejs14.x</code> 
+        /// Node.js 14 – <c>nodejs14.x</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To create a component from a Lambda function, specify <code>lambdaFunction</code>
-        /// when you call this operation.
+        /// To create a component from a Lambda function, specify <c>lambdaFunction</c> when you
+        /// call this operation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -772,8 +772,8 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  
         /// <para>
-        /// To create a component from a recipe, specify <code>inlineRecipe</code> when you call
-        /// this operation.
+        /// To create a component from a recipe, specify <c>inlineRecipe</c> when you call this
+        /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -792,44 +792,44 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Python 2.7 – <code>python2.7</code> 
+        /// Python 2.7 – <c>python2.7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Python 3.7 – <code>python3.7</code> 
+        /// Python 3.7 – <c>python3.7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Python 3.8 – <code>python3.8</code> 
+        /// Python 3.8 – <c>python3.8</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Python 3.9 – <code>python3.9</code> 
+        /// Python 3.9 – <c>python3.9</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Java 8 – <code>java8</code> 
+        /// Java 8 – <c>java8</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Java 11 – <code>java11</code> 
+        /// Java 11 – <c>java11</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Node.js 10 – <code>nodejs10.x</code> 
+        /// Node.js 10 – <c>nodejs10.x</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Node.js 12 – <code>nodejs12.x</code> 
+        /// Node.js 12 – <c>nodejs12.x</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Node.js 14 – <code>nodejs14.x</code> 
+        /// Node.js 14 – <c>nodejs14.x</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To create a component from a Lambda function, specify <code>lambdaFunction</code>
-        /// when you call this operation.
+        /// To create a component from a Lambda function, specify <c>lambdaFunction</c> when you
+        /// call this operation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1691,7 +1691,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// When the status of any component on the core device becomes <c>BROKEN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1761,7 +1761,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// When the status of any component on the core device becomes <c>BROKEN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2197,7 +2197,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// When the status of any component on the core device becomes <c>BROKEN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2264,7 +2264,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// When the status of any component on the core device becomes <c>BROKEN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2462,8 +2462,8 @@ namespace Amazon.GreengrassV2
         /// <summary>
         /// Retrieves a paginated list of the components that a Greengrass core device runs. By
         /// default, this list doesn't include components that are deployed as dependencies of
-        /// other components. To include dependencies in the response, set the <code>topologyFilter</code>
-        /// parameter to <code>ALL</code>.
+        /// other components. To include dependencies in the response, set the <c>topologyFilter</c>
+        /// parameter to <c>ALL</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -2487,7 +2487,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// When the status of any component on the core device becomes <c>BROKEN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2535,8 +2535,8 @@ namespace Amazon.GreengrassV2
         /// <summary>
         /// Retrieves a paginated list of the components that a Greengrass core device runs. By
         /// default, this list doesn't include components that are deployed as dependencies of
-        /// other components. To include dependencies in the response, set the <code>topologyFilter</code>
-        /// parameter to <code>ALL</code>.
+        /// other components. To include dependencies in the response, set the <c>topologyFilter</c>
+        /// parameter to <c>ALL</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -2560,7 +2560,7 @@ namespace Amazon.GreengrassV2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the status of any component on the core device becomes <code>BROKEN</code> 
+        /// When the status of any component on the core device becomes <c>BROKEN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2682,9 +2682,8 @@ namespace Amazon.GreengrassV2
         /// <para>
         /// This operation identifies components that meet all dependency requirements for a deployment.
         /// If the requirements conflict, then this operation returns an error and the deployment
-        /// fails. For example, this occurs if component <code>A</code> requires version <code>&gt;2.0.0</code>
-        /// and component <code>B</code> requires version <code>&lt;2.0.0</code> of a component
-        /// dependency.
+        /// fails. For example, this occurs if component <c>A</c> requires version <c>&gt;2.0.0</c>
+        /// and component <c>B</c> requires version <c>&lt;2.0.0</c> of a component dependency.
         /// </para>
         ///  
         /// <para>
@@ -2745,9 +2744,8 @@ namespace Amazon.GreengrassV2
         /// <para>
         /// This operation identifies components that meet all dependency requirements for a deployment.
         /// If the requirements conflict, then this operation returns an error and the deployment
-        /// fails. For example, this occurs if component <code>A</code> requires version <code>&gt;2.0.0</code>
-        /// and component <code>B</code> requires version <code>&lt;2.0.0</code> of a component
-        /// dependency.
+        /// fails. For example, this occurs if component <c>A</c> requires version <c>&gt;2.0.0</c>
+        /// and component <c>B</c> requires version <c>&lt;2.0.0</c> of a component dependency.
         /// </para>
         ///  
         /// <para>

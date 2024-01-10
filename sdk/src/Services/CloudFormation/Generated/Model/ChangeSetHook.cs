@@ -47,11 +47,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FAIL</code> Stops provisioning resources.
+        ///  <c>FAIL</c> Stops provisioning resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARN</code> Allows provisioning to continue with a warning message.
+        ///  <c>WARN</c> Allows provisioning to continue with a warning message.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -126,7 +126,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TypeName. 
         /// <para>
         /// The unique name for your hook. Specifies a three-part namespace for your hook, with
-        /// a recommended pattern of <code>Organization::Service::Hook</code>.
+        /// a recommended pattern of <c>Organization::Service::Hook</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -135,31 +135,31 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Alexa</code> 
+        ///  <c>Alexa</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AMZN</code> 
+        ///  <c>AMZN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Amazon</code> 
+        ///  <c>Amazon</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASK</code> 
+        ///  <c>ASK</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS</code> 
+        ///  <c>AWS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Custom</code> 
+        ///  <c>Custom</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Dev</code> 
+        ///  <c>Dev</c> 
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

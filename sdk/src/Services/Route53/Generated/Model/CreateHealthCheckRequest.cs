@@ -72,7 +72,7 @@ namespace Amazon.Route53.Model
     /// <para>
     /// You can create a CloudWatch metric, associate an alarm with the metric, and then create
     /// a health check that is based on the state of the alarm. For example, you might create
-    /// a CloudWatch metric that checks the status of the Amazon EC2 <code>StatusCheckFailed</code>
+    /// a CloudWatch metric that checks the status of the Amazon EC2 <c>StatusCheckFailed</c>
     /// metric, add an alarm to the metric, and then create a health check that is based on
     /// the state of the alarm. For information about creating CloudWatch metrics and alarms
     /// by using the CloudWatch console, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/WhatIsCloudWatch.html">Amazon
@@ -89,38 +89,38 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property CallerReference. 
         /// <para>
         /// A unique string that identifies the request and that allows you to retry a failed
-        /// <code>CreateHealthCheck</code> request without the risk of creating two identical
-        /// health checks:
+        /// <c>CreateHealthCheck</c> request without the risk of creating two identical health
+        /// checks:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code>
+        /// If you send a <c>CreateHealthCheck</c> request with the same <c>CallerReference</c>
         /// and settings as a previous request, and if the health check doesn't exist, Amazon
         /// Route 53 creates the health check. If the health check does exist, Route 53 returns
         /// the settings for the existing health check.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code>
-        /// as a deleted health check, regardless of the settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
+        /// If you send a <c>CreateHealthCheck</c> request with the same <c>CallerReference</c>
+        /// as a deleted health check, regardless of the settings, Route 53 returns a <c>HealthCheckAlreadyExists</c>
         /// error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you send a <code>CreateHealthCheck</code> request with the same <code>CallerReference</code>
-        /// as an existing health check but with different settings, Route 53 returns a <code>HealthCheckAlreadyExists</code>
+        /// If you send a <c>CreateHealthCheck</c> request with the same <c>CallerReference</c>
+        /// as an existing health check but with different settings, Route 53 returns a <c>HealthCheckAlreadyExists</c>
         /// error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you send a <code>CreateHealthCheck</code> request with a unique <code>CallerReference</code>
+        /// If you send a <c>CreateHealthCheck</c> request with a unique <c>CallerReference</c>
         /// but settings identical to an existing health check, Route 53 creates the health check.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Route 53 does not store the <code>CallerReference</code> for a deleted health check
-        /// indefinitely. The <code>CallerReference</code> for a deleted health check will be
-        /// deleted after a number of days.
+        ///  Route 53 does not store the <c>CallerReference</c> for a deleted health check indefinitely.
+        /// The <c>CallerReference</c> for a deleted health check will be deleted after a number
+        /// of days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -63,10 +63,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LocationOrder. 
         /// <para>
-        /// The prioritization order to use for fleet locations, when the <code>PriorityOrder</code>
-        /// property includes <code>LOCATION</code>. Locations are identified by Amazon Web Services
-        /// Region codes such as <code>us-west-2</code>. Each location can only be listed once.
-        /// 
+        /// The prioritization order to use for fleet locations, when the <c>PriorityOrder</c>
+        /// property includes <c>LOCATION</c>. Locations are identified by Amazon Web Services
+        /// Region codes such as <c>us-west-2</c>. Each location can only be listed once. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -90,24 +89,24 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LATENCY</code> -- FleetIQ prioritizes locations where the average player latency
+        ///  <c>LATENCY</c> -- FleetIQ prioritizes locations where the average player latency
         /// (provided in each game session request) is lowest. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COST</code> -- FleetIQ prioritizes destinations with the lowest current hosting
-        /// costs. Cost is evaluated based on the location, instance type, and fleet type (Spot
-        /// or On-Demand) for each destination in the queue.
+        ///  <c>COST</c> -- FleetIQ prioritizes destinations with the lowest current hosting costs.
+        /// Cost is evaluated based on the location, instance type, and fleet type (Spot or On-Demand)
+        /// for each destination in the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESTINATION</code> -- FleetIQ prioritizes based on the order that destinations
-        /// are listed in the queue configuration.
+        ///  <c>DESTINATION</c> -- FleetIQ prioritizes based on the order that destinations are
+        /// listed in the queue configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOCATION</code> -- FleetIQ prioritizes based on the provided order of locations,
-        /// as defined in <code>LocationOrder</code>. 
+        ///  <c>LOCATION</c> -- FleetIQ prioritizes based on the provided order of locations,
+        /// as defined in <c>LocationOrder</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

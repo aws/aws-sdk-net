@@ -135,7 +135,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        ///  The unique ID of a deployment target that has a type of <code>ecsTarget</code>. 
+        ///  The unique ID of a deployment target that has a type of <c>ecsTarget</c>. 
         /// </para>
         /// </summary>
         public string TargetId
@@ -153,7 +153,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TaskSetsInfo. 
         /// <para>
-        ///  The <code>ECSTaskSet</code> objects associated with the ECS target. 
+        ///  The <c>ECSTaskSet</c> objects associated with the ECS target. 
         /// </para>
         /// </summary>
         public List<ECSTaskSet> TaskSetsInfo

@@ -57,11 +57,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,8 +100,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductId. 
         /// <para>
-        /// The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-        /// and <code>ProvisionedProductId</code>.
+        /// The identifier of the provisioned product. You cannot specify both <c>ProvisionedProductName</c>
+        /// and <c>ProvisionedProductId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -120,8 +120,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-        /// and <code>ProvisionedProductId</code>.
+        /// The name of the provisioned product. You cannot specify both <c>ProvisionedProductName</c>
+        /// and <c>ProvisionedProductId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]
@@ -140,7 +140,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RetainPhysicalResources. 
         /// <para>
-        /// When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code>
+        /// When this boolean parameter is set to true, the <c>TerminateProvisionedProduct</c>
         /// API deletes the Service Catalog provisioned product. However, it does not remove the
         /// CloudFormation stack, stack set, or the underlying resources of the deleted provisioned
         /// product. The default value is false.

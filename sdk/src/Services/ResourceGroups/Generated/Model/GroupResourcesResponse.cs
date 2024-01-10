@@ -60,9 +60,9 @@ namespace Amazon.ResourceGroups.Model
         /// <para>
         /// A list of ARNs of any resources that this operation is still in the process adding
         /// to the group. These pending additions continue asynchronously. You can check the status
-        /// of pending additions by using the <code> <a>ListGroupResources</a> </code> operation,
-        /// and checking the <code>Resources</code> array in the response and the <code>Status</code>
-        /// field of each object in that array. 
+        /// of pending additions by using the <c> <a>ListGroupResources</a> </c> operation, and
+        /// checking the <c>Resources</c> array in the response and the <c>Status</c> field of
+        /// each object in that array. 
         /// </para>
         /// </summary>
         public List<PendingResource> Pending

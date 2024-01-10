@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Provides feedback on how relevant a document is to a search. Your application uses
-    /// the <code>SubmitFeedback</code> API to provide relevance information.
+    /// the <c>SubmitFeedback</c> API to provide relevance information.
     /// </summary>
     public partial class RelevanceFeedback
     {

@@ -71,7 +71,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The Neptune database engine used by the global database (<code>"neptune"</code>).
+        /// The Neptune database engine used by the global database (<c>"neptune"</c>).
         /// </para>
         /// </summary>
         public string Engine

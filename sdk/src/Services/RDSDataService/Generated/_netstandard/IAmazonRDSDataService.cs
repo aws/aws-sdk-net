@@ -74,7 +74,7 @@ namespace Amazon.RDSDataService
         /// </para>
         ///  <note> 
         /// <para>
-        /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+        /// If a call isn't part of a transaction because it doesn't include the <c>transactionID</c>
         /// parameter, changes that result from the call are committed automatically.
         /// </para>
         ///  
@@ -146,7 +146,7 @@ namespace Amazon.RDSDataService
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter isn't available.
+        /// The service specified by the <c>resourceArn</c> parameter isn't available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.
@@ -179,7 +179,7 @@ namespace Amazon.RDSDataService
         ///  
         /// <para>
         /// DDL statements inside a transaction cause an implicit commit. We recommend that you
-        /// run each DDL statement in a separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code>
+        /// run each DDL statement in a separate <c>ExecuteStatement</c> call with <c>continueAfterTimeout</c>
         /// enabled.
         /// </para>
         ///  </note>
@@ -237,7 +237,7 @@ namespace Amazon.RDSDataService
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter isn't available.
+        /// The service specified by the <c>resourceArn</c> parameter isn't available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.
@@ -255,8 +255,8 @@ namespace Amazon.RDSDataService
 
 
         /// <summary>
-        /// Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
-        /// commits the changes.
+        /// Ends a SQL transaction started with the <c>BeginTransaction</c> operation and commits
+        /// the changes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CommitTransaction service method.</param>
         /// <param name="cancellationToken">
@@ -293,8 +293,7 @@ namespace Amazon.RDSDataService
         /// The Secrets Manager secret used with the request isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.NotFoundException">
-        /// The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code>
-        /// value can't be found.
+        /// The <c>resourceArn</c>, <c>secretArn</c>, or <c>transactionId</c> value can't be found.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.SecretsErrorException">
         /// There was a problem with the Secrets Manager secret used with the request, caused
@@ -315,7 +314,7 @@ namespace Amazon.RDSDataService
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter isn't available.
+        /// The service specified by the <c>resourceArn</c> parameter isn't available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.
@@ -339,7 +338,7 @@ namespace Amazon.RDSDataService
         /// <para>
         /// This operation isn't supported for Aurora PostgreSQL Serverless v2 and provisioned
         /// DB clusters, and for Aurora Serverless v1 DB clusters, the operation is deprecated.
-        /// Use the <code>BatchExecuteStatement</code> or <code>ExecuteStatement</code> operation.
+        /// Use the <c>BatchExecuteStatement</c> or <c>ExecuteStatement</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -363,7 +362,7 @@ namespace Amazon.RDSDataService
         /// An internal error occurred.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter isn't available.
+        /// The service specified by the <c>resourceArn</c> parameter isn't available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-data-2018-08-01/ExecuteSql">REST API Reference for ExecuteSql Operation</seealso>
         [Obsolete("ExecuteSql has been deprecated.  Please use ExecuteStatement or BatchExecuteStatement instead.")]
@@ -380,7 +379,7 @@ namespace Amazon.RDSDataService
         /// 
         ///  <note> 
         /// <para>
-        /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+        /// If a call isn't part of a transaction because it doesn't include the <c>transactionID</c>
         /// parameter, changes that result from the call are committed automatically.
         /// </para>
         ///  
@@ -442,7 +441,7 @@ namespace Amazon.RDSDataService
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter isn't available.
+        /// The service specified by the <c>resourceArn</c> parameter isn't available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.
@@ -514,8 +513,7 @@ namespace Amazon.RDSDataService
         /// The Secrets Manager secret used with the request isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.NotFoundException">
-        /// The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code>
-        /// value can't be found.
+        /// The <c>resourceArn</c>, <c>secretArn</c>, or <c>transactionId</c> value can't be found.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.SecretsErrorException">
         /// There was a problem with the Secrets Manager secret used with the request, caused
@@ -536,7 +534,7 @@ namespace Amazon.RDSDataService
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.ServiceUnavailableErrorException">
-        /// The service specified by the <code>resourceArn</code> parameter isn't available.
+        /// The service specified by the <c>resourceArn</c> parameter isn't available.
         /// </exception>
         /// <exception cref="Amazon.RDSDataService.Model.StatementTimeoutException">
         /// The execution of the SQL statement timed out.

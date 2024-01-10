@@ -66,8 +66,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property ResourceLabel. 
         /// <para>
         /// Identifies the resource associated with the metric type. You can't specify a resource
-        /// label unless the metric type is <code>ALBTargetGroupRequestCount</code> and there
-        /// is a target group for an Application Load Balancer attached to the Auto Scaling group.
+        /// label unless the metric type is <c>ALBTargetGroupRequestCount</c> and there is a target
+        /// group for an Application Load Balancer attached to the Auto Scaling group.
         /// </para>
         ///  
         /// <para>

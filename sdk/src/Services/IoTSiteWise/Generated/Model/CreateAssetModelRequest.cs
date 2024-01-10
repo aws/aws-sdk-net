@@ -39,7 +39,7 @@ namespace Amazon.IoTSiteWise.Model
     /// 
     ///  
     /// <para>
-    /// You can create two types of asset models, <code>ASSET_MODEL</code> or <code>COMPONENT_MODEL</code>.
+    /// You can create two types of asset models, <c>ASSET_MODEL</c> or <c>COMPONENT_MODEL</c>.
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -135,8 +135,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the customer gateway (<code>pending | available | deleting |
-        /// deleted</code>).
+        /// The current state of the customer gateway (<c>pending | available | deleting | deleted</c>).
         /// </para>
         /// </summary>
         public string State
@@ -172,7 +171,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of VPN connection the customer gateway supports (<code>ipsec.1</code>).
+        /// The type of VPN connection the customer gateway supports (<c>ipsec.1</c>).
         /// </para>
         /// </summary>
         public string Type

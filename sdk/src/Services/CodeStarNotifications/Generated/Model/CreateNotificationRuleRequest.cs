@@ -76,10 +76,10 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property DetailType. 
         /// <para>
-        /// The level of detail to include in the notifications for this resource. <code>BASIC</code>
+        /// The level of detail to include in the notifications for this resource. <c>BASIC</c>
         /// will include only the contents of the event as it would appear in Amazon CloudWatch.
-        /// <code>FULL</code> will include any supplemental information provided by AWS CodeStar
-        /// Notifications and/or the service for the resource for which the notification is created.
+        /// <c>FULL</c> will include any supplemental information provided by AWS CodeStar Notifications
+        /// and/or the service for the resource for which the notification is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -159,9 +159,8 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the notification rule. The default value is <code>ENABLED</code>. If
-        /// the status is set to <code>DISABLED</code>, notifications aren't sent for the notification
-        /// rule.
+        /// The status of the notification rule. The default value is <c>ENABLED</c>. If the status
+        /// is set to <c>DISABLED</c>, notifications aren't sent for the notification rule.
         /// </para>
         /// </summary>
         public NotificationRuleStatus Status
@@ -179,7 +178,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags to apply to this notification rule. Key names cannot start with "<code>aws</code>".
+        /// A list of tags to apply to this notification rule. Key names cannot start with "<c>aws</c>".
         /// 
         /// </para>
         /// </summary>

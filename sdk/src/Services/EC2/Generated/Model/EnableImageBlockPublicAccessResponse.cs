@@ -38,8 +38,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageBlockPublicAccessState. 
         /// <para>
-        /// Returns <code>block-new-sharing</code> if the request succeeds; otherwise, it returns
-        /// an error.
+        /// Returns <c>block-new-sharing</c> if the request succeeds; otherwise, it returns an
+        /// error.
         /// </para>
         /// </summary>
         public ImageBlockPublicAccessEnabledState ImageBlockPublicAccessState

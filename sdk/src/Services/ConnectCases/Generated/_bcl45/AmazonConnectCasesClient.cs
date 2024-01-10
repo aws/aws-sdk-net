@@ -436,11 +436,11 @@ namespace Amazon.ConnectCases
         /// <para>
         /// The following fields are required when creating a case:
         /// </para>
-        ///  <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt;
-        /// - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
+        ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
+        /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
         /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
         /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-        /// </code></pre>
+        /// </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// 
@@ -486,11 +486,11 @@ namespace Amazon.ConnectCases
         /// <para>
         /// The following fields are required when creating a case:
         /// </para>
-        ///  <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt;
-        /// - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
+        ///  <pre><c> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt; - You
+        /// must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your_AWS_Region:your_AWS_account
         /// ID:domains/your_profiles_domain_name/profiles/profile_ID&lt;/code&gt; &lt;/p&gt; &lt;/li&gt;
         /// &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt;
-        /// </code></pre>
+        /// </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCase service method.</param>
         /// <param name="cancellationToken">
@@ -547,7 +547,7 @@ namespace Amazon.ConnectCases
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
         /// to Cases</a>.
         /// </para>
-        ///  <pre><code> &lt;/important&gt; </code></pre>
+        ///  <pre><c> &lt;/important&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// 
@@ -596,7 +596,7 @@ namespace Amazon.ConnectCases
         /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
         /// to Cases</a>.
         /// </para>
-        ///  <pre><code> &lt;/important&gt; </code></pre>
+        ///  <pre><c> &lt;/important&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomain service method.</param>
         /// <param name="cancellationToken">
@@ -864,17 +864,16 @@ namespace Amazon.ConnectCases
         ///  <note> <ul> <li> 
         /// <para>
         /// A Related Item is a resource that is associated with a case. It may or may not have
-        /// an external identifier linking it to an external resource (for example, a <code>contactArn</code>).
-        /// All Related Items have their own internal identifier, the <code>relatedItemArn</code>.
-        /// Examples of related items include <code>comments</code> and <code>contacts</code>.
+        /// an external identifier linking it to an external resource (for example, a <c>contactArn</c>).
+        /// All Related Items have their own internal identifier, the <c>relatedItemArn</c>. Examples
+        /// of related items include <c>comments</c> and <c>contacts</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you provide a value for <code>performedBy.userArn</code> you must also have <a
-        /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
-        ///  </li> </ul> <pre><code> &lt;/note&gt; </code></pre>
+        ///  </li> </ul> <pre><c> &lt;/note&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// 
@@ -917,17 +916,16 @@ namespace Amazon.ConnectCases
         ///  <note> <ul> <li> 
         /// <para>
         /// A Related Item is a resource that is associated with a case. It may or may not have
-        /// an external identifier linking it to an external resource (for example, a <code>contactArn</code>).
-        /// All Related Items have their own internal identifier, the <code>relatedItemArn</code>.
-        /// Examples of related items include <code>comments</code> and <code>contacts</code>.
+        /// an external identifier linking it to an external resource (for example, a <c>contactArn</c>).
+        /// All Related Items have their own internal identifier, the <c>relatedItemArn</c>. Examples
+        /// of related items include <c>comments</c> and <c>contacts</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you provide a value for <code>performedBy.userArn</code> you must also have <a
-        /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
         /// permission on the ARN of the user that you provide.
         /// </para>
-        ///  </li> </ul> <pre><code> &lt;/note&gt; </code></pre>
+        ///  </li> </ul> <pre><c> &lt;/note&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRelatedItem service method.</param>
         /// <param name="cancellationToken">
@@ -1077,10 +1075,10 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Deletes a Cases domain.
         /// 
-        ///  <pre><code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate
-        /// the deleted domain from your Amazon Connect instance with another API call before
-        /// being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
-        /// &lt;/note&gt; </code></pre>
+        ///  <pre><c> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the
+        /// deleted domain from your Amazon Connect instance with another API call before being
+        /// able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
+        /// &lt;/note&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// 
@@ -1121,10 +1119,10 @@ namespace Amazon.ConnectCases
         /// <summary>
         /// Deletes a Cases domain.
         /// 
-        ///  <pre><code> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate
-        /// the deleted domain from your Amazon Connect instance with another API call before
-        /// being able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
-        /// &lt;/note&gt; </code></pre>
+        ///  <pre><c> &lt;note&gt; &lt;p&gt;After deleting your domain you must disassociate the
+        /// deleted domain from your Amazon Connect instance with another API call before being
+        /// able to use Cases again with this Amazon Connect instance. See &lt;a href=&quot;https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteIntegrationAssociation.html&quot;&gt;DeleteIntegrationAssociation&lt;/a&gt;.&lt;/p&gt;
+        /// &lt;/note&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// <param name="cancellationToken">
@@ -2150,9 +2148,9 @@ namespace Amazon.ConnectCases
         /// 
         ///  <note> 
         /// <para>
-        /// For <code>customer_id</code> you must provide the full customer profile ARN in this
-        /// format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles
-        /// domain name/profiles/profile ID</code>. 
+        /// For <c>customer_id</c> you must provide the full customer profile ARN in this format:
+        /// <c> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile
+        /// ID</c>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -2193,9 +2191,9 @@ namespace Amazon.ConnectCases
         /// 
         ///  <note> 
         /// <para>
-        /// For <code>customer_id</code> you must provide the full customer profile ARN in this
-        /// format: <code> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles
-        /// domain name/profiles/profile ID</code>. 
+        /// For <c>customer_id</c> you must provide the full customer profile ARN in this format:
+        /// <c> arn:aws:profile:your AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile
+        /// ID</c>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -2476,7 +2474,7 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Updates the values of fields on a case. Fields to be updated are received as an array
-        /// of id/value pairs identical to the <code>CreateCase</code> input .
+        /// of id/value pairs identical to the <c>CreateCase</c> input .
         /// 
         ///  
         /// <para>
@@ -2517,7 +2515,7 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Updates the values of fields on a case. Fields to be updated are received as an array
-        /// of id/value pairs identical to the <code>CreateCase</code> input .
+        /// of id/value pairs identical to the <c>CreateCase</c> input .
         /// 
         ///  
         /// <para>
@@ -2658,7 +2656,7 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
-        /// A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code>
+        /// A <c>ValidationException</c> is returned when you add non-existent <c>fieldIds</c>
         /// to a layout.
         /// </para>
         ///  <note> 
@@ -2717,7 +2715,7 @@ namespace Amazon.ConnectCases
         /// </para>
         ///  
         /// <para>
-        /// A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code>
+        /// A <c>ValidationException</c> is returned when you add non-existent <c>fieldIds</c>
         /// to a layout.
         /// </para>
         ///  <note> 
@@ -2775,10 +2773,10 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Updates the attributes of an existing template. The template attributes that can be
-        /// modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>,
-        /// <code>requiredFields</code>, and <code>status</code>. At least one of these attributes
-        /// must not be null. If a null value is provided for a given attribute, that attribute
-        /// is ignored and its current value is preserved.
+        /// modified include <c>name</c>, <c>description</c>, <c>layoutConfiguration</c>, <c>requiredFields</c>,
+        /// and <c>status</c>. At least one of these attributes must not be null. If a null value
+        /// is provided for a given attribute, that attribute is ignored and its current value
+        /// is preserved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// 
@@ -2818,10 +2816,10 @@ namespace Amazon.ConnectCases
 
         /// <summary>
         /// Updates the attributes of an existing template. The template attributes that can be
-        /// modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>,
-        /// <code>requiredFields</code>, and <code>status</code>. At least one of these attributes
-        /// must not be null. If a null value is provided for a given attribute, that attribute
-        /// is ignored and its current value is preserved.
+        /// modified include <c>name</c>, <c>description</c>, <c>layoutConfiguration</c>, <c>requiredFields</c>,
+        /// and <c>status</c>. At least one of these attributes must not be null. If a null value
+        /// is provided for a given attribute, that attribute is ignored and its current value
+        /// is preserved.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplate service method.</param>
         /// <param name="cancellationToken">

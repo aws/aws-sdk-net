@@ -177,8 +177,8 @@ namespace Amazon.ConfigService.Model
         ///  <note> 
         /// <para>
         /// This field is not to be confused with the Amazon Web Services-wide tag feature for
-        /// Amazon Web Services resources. Tags for <code>PutResourceConfig</code> are tags that
-        /// you supply for the configuration items of your custom resources.
+        /// Amazon Web Services resources. Tags for <c>PutResourceConfig</c> are tags that you
+        /// supply for the configuration items of your custom resources.
         /// </para>
         ///  </note>
         /// </summary>

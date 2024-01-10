@@ -80,7 +80,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform of the device (for example, <code>ANDROID</code> or <code>IOS</code>).
+        /// The platform of the device (for example, <c>ANDROID</c> or <c>IOS</c>).
         /// </para>
         /// </summary>
         public DevicePlatform Platform
@@ -116,7 +116,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of offering (for example, <code>RECURRING</code>) for a device.
+        /// The type of offering (for example, <c>RECURRING</c>) for a device.
         /// </para>
         /// </summary>
         public OfferingType Type

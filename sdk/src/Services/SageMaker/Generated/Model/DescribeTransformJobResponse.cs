@@ -83,8 +83,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// To enable the batch strategy, you must set <code>SplitType</code> to <code>Line</code>,
-        /// <code>RecordIO</code>, or <code>TFRecord</code>.
+        /// To enable the batch strategy, you must set <c>SplitType</c> to <c>Line</c>, <c>RecordIO</c>,
+        /// or <c>TFRecord</c>.
         /// </para>
         /// </summary>
         public BatchStrategy BatchStrategy
@@ -189,9 +189,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the transform job failed, <code>FailureReason</code> describes why it failed. A
-        /// transform job creates a log file, which includes error messages, and stores it as
-        /// an Amazon S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+        /// If the transform job failed, <c>FailureReason</c> describes why it failed. A transform
+        /// job creates a log file, which includes error messages, and stores it as an Amazon
+        /// S3 object. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
         /// Amazon SageMaker Events with Amazon CloudWatch</a>.
         /// </para>
         /// </summary>
@@ -308,7 +308,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TransformEndTime. 
         /// <para>
         /// Indicates when the transform job has been completed, or has stopped or failed. You
-        /// are billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+        /// are billed for the time interval between this time and the value of <c>TransformStartTime</c>.
         /// </para>
         /// </summary>
         public DateTime TransformEndTime
@@ -384,7 +384,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TransformJobStatus. 
         /// <para>
         /// The status of the transform job. If the transform job failed, the reason is returned
-        /// in the <code>FailureReason</code> field.
+        /// in the <c>FailureReason</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -443,7 +443,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TransformStartTime. 
         /// <para>
         /// Indicates when the transform job starts on ML instances. You are billed for the time
-        /// interval between this time and the value of <code>TransformEndTime</code>.
+        /// interval between this time and the value of <c>TransformEndTime</c>.
         /// </para>
         /// </summary>
         public DateTime TransformStartTime

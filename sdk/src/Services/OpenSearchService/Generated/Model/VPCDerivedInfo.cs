@@ -33,7 +33,7 @@ namespace Amazon.OpenSearchService.Model
     /// domain provisioned within a virtual private cloud (VPC). For more information, see
     /// <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
     /// your Amazon OpenSearch Service domains using a VPC</a>. This information only exists
-    /// if the domain was created with <code>VPCOptions</code>.
+    /// if the domain was created with <c>VPCOptions</c>.
     /// </summary>
     public partial class VPCDerivedInfo
     {

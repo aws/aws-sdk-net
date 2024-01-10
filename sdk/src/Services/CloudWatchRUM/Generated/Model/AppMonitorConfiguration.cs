@@ -46,9 +46,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property AllowCookies. 
         /// <para>
-        /// If you set this to <code>true</code>, the RUM web client sets two cookies, a session
-        /// cookie and a user cookie. The cookies allow the RUM web client to collect data relating
-        /// to the number of users an application has and the behavior of the application across
+        /// If you set this to <c>true</c>, the RUM web client sets two cookies, a session cookie
+        /// and a user cookie. The cookies allow the RUM web client to collect data relating to
+        /// the number of users an application has and the behavior of the application across
         /// a sequence of events. Cookies are stored in the top-level domain of the current page.
         /// </para>
         /// </summary>
@@ -67,11 +67,11 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property EnableXRay. 
         /// <para>
-        /// If you set this to <code>true</code>, RUM enables X-Ray tracing for the user sessions
-        /// that RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also
-        /// records an X-Ray segment for allowed HTTP requests. You can see traces and segments
-        /// from these user sessions in the X-Ray console and the CloudWatch ServiceLens console.
-        /// For more information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What
+        /// If you set this to <c>true</c>, RUM enables X-Ray tracing for the user sessions that
+        /// RUM samples. RUM adds an X-Ray trace header to allowed HTTP requests. It also records
+        /// an X-Ray segment for allowed HTTP requests. You can see traces and segments from these
+        /// user sessions in the X-Ray console and the CloudWatch ServiceLens console. For more
+        /// information, see <a href="https://docs.aws.amazon.com/xray/latest/devguide/aws-xray.html">What
         /// is X-Ray?</a> 
         /// </para>
         /// </summary>
@@ -94,8 +94,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in
-        /// the same operation.
+        /// You can't include both <c>ExcludedPages</c> and <c>IncludedPages</c> in the same operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -178,8 +177,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't include both <code>ExcludedPages</code> and <code>IncludedPages</code> in
-        /// the same operation.
+        /// You can't include both <c>ExcludedPages</c> and <c>IncludedPages</c> in the same operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -233,18 +231,17 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>errors</code> indicates that RUM collects data about unhandled JavaScript errors
+        ///  <c>errors</c> indicates that RUM collects data about unhandled JavaScript errors
         /// raised by your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>performance</code> indicates that RUM collects performance data about how your
-        /// application and its resources are loaded and rendered. This includes Core Web Vitals.
+        ///  <c>performance</c> indicates that RUM collects performance data about how your application
+        /// and its resources are loaded and rendered. This includes Core Web Vitals.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>http</code> indicates that RUM collects data about HTTP errors thrown by your
-        /// application.
+        ///  <c>http</c> indicates that RUM collects data about HTTP errors thrown by your application.
         /// </para>
         ///  </li> </ul>
         /// </summary>

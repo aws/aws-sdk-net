@@ -30,8 +30,8 @@ namespace Amazon.RDSDataService.Model
 {
     /// <summary>
     /// Container for the parameters to the CommitTransaction operation.
-    /// Ends a SQL transaction started with the <code>BeginTransaction</code> operation and
-    /// commits the changes.
+    /// Ends a SQL transaction started with the <c>BeginTransaction</c> operation and commits
+    /// the changes.
     /// </summary>
     public partial class CommitTransactionRequest : AmazonRDSDataServiceRequest
     {

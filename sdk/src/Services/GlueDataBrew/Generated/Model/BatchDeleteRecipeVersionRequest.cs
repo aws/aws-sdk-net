@@ -70,7 +70,7 @@ namespace Amazon.GlueDataBrew.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You specify <code>LATEST_WORKING</code>, but it's being used by a project.
+    /// You specify <c>LATEST_WORKING</c>, but it's being used by a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -78,10 +78,10 @@ namespace Amazon.GlueDataBrew.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
-    /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
-    /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed
-    /// as partial failure in the response.
+    /// The <c>LATEST_WORKING</c> version will only be deleted if the recipe has no other
+    /// versions. If you try to delete <c>LATEST_WORKING</c> while other versions exist (or
+    /// if they can't be deleted), then <c>LATEST_WORKING</c> will be listed as partial failure
+    /// in the response.
     /// </para>
     /// </summary>
     public partial class BatchDeleteRecipeVersionRequest : AmazonGlueDataBrewRequest
@@ -112,8 +112,8 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property RecipeVersions. 
         /// <para>
         /// An array of version identifiers, for the recipe versions to be deleted. You can specify
-        /// numeric versions (<code>X.Y</code>) or <code>LATEST_WORKING</code>. <code>LATEST_PUBLISHED</code>
-        /// is not supported.
+        /// numeric versions (<c>X.Y</c>) or <c>LATEST_WORKING</c>. <c>LATEST_PUBLISHED</c> is
+        /// not supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

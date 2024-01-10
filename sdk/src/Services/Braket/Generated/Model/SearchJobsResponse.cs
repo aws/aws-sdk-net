@@ -39,7 +39,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Jobs. 
         /// <para>
-        /// An array of <code>JobSummary</code> objects for devices that match the specified filter
+        /// An array of <c>JobSummary</c> objects for devices that match the specified filter
         /// values.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token used for pagination of results, or <code>null</code> if there are no additional
+        /// A token used for pagination of results, or <c>null</c> if there are no additional
         /// results. Use the token value in a subsequent request to continue results where the
         /// previous request ended.
         /// </para>

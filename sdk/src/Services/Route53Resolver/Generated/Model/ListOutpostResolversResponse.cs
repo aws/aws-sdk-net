@@ -39,10 +39,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> Resolvers match the specified criteria, you can
-        /// submit another <code>ListOutpostResolver</code> request to get the next group of results.
-        /// In the next request, specify the value of <code>NextToken</code> from the previous
-        /// response.
+        /// If more than <c>MaxResults</c> Resolvers match the specified criteria, you can submit
+        /// another <c>ListOutpostResolver</c> request to get the next group of results. In the
+        /// next request, specify the value of <c>NextToken</c> from the previous response.
         /// </para>
         /// </summary>
         public string NextToken

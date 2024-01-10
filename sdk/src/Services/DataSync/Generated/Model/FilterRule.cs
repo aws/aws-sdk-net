@@ -60,8 +60,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// A single filter string that consists of the patterns to include or exclude. The patterns
-        /// are delimited by "|" (that is, a pipe), for example: <code>/folder1|/folder2</code>
-        /// 
+        /// are delimited by "|" (that is, a pipe), for example: <c>/folder1|/folder2</c> 
         /// </para>
         ///  
         /// <para>

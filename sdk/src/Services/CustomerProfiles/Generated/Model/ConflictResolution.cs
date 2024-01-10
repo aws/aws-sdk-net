@@ -43,14 +43,13 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RECENCY</code>: Uses the data that was most recently updated.
+        ///  <c>RECENCY</c>: Uses the data that was most recently updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SOURCE</code>: Uses the data from a specific source. For example, if a company
-        /// has been aquired or two departments have merged, data from the specified source is
-        /// used. If two duplicate profiles are from the same source, then <code>RECENCY</code>
-        /// is used again.
+        ///  <c>SOURCE</c>: Uses the data from a specific source. For example, if a company has
+        /// been aquired or two departments have merged, data from the specified source is used.
+        /// If two duplicate profiles are from the same source, then <c>RECENCY</c> is used again.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -70,8 +69,8 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property SourceName. 
         /// <para>
-        /// The <code>ObjectType</code> name that is used to resolve profile merging conflicts
-        /// when choosing <code>SOURCE</code> as the <code>ConflictResolvingModel</code>.
+        /// The <c>ObjectType</c> name that is used to resolve profile merging conflicts when
+        /// choosing <c>SOURCE</c> as the <c>ConflictResolvingModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

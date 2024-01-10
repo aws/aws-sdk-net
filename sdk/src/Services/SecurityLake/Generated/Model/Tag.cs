@@ -60,7 +60,7 @@ namespace Amazon.SecurityLake.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The name of the tag. This is a general label that acts as a category for a more specific
-        /// tag value (<code>value</code>).
+        /// tag value (<c>value</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -79,9 +79,9 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value that’s associated with the specified tag key (<code>key</code>). This value
-        /// acts as a descriptor for the tag key. A tag value cannot be null, but it can be an
-        /// empty string.
+        /// The value that’s associated with the specified tag key (<c>key</c>). This value acts
+        /// as a descriptor for the tag key. A tag value cannot be null, but it can be an empty
+        /// string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

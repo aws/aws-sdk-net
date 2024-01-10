@@ -58,7 +58,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
-        /// An array of the <code>Policy</code> object.
+        /// An array of the <c>Policy</c> object.
         /// </para>
         /// </summary>
         public List<GetResourcePoliciesResponseEntry> Policies

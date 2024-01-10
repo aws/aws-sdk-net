@@ -124,7 +124,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property NoRestrictions. 
         /// <para>
         /// Speciﬁes whether an Amazon Web Services Payment Cryptography key has no special restrictions
-        /// other than the restrictions implied by <code>KeyUsage</code>.
+        /// other than the restrictions implied by <c>KeyUsage</c>.
         /// </para>
         /// </summary>
         public bool NoRestrictions

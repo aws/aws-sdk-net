@@ -73,15 +73,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>manual</code> - The action requires you to resolve the recommendation manually.
+        ///  <c>manual</c> - The action requires you to resolve the recommendation manually.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>immediately</code> - The action is applied immediately.
+        ///  <c>immediately</c> - The action is applied immediately.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>next-maintainance-window</code> - The action is applied during the next scheduled
+        ///  <c>next-maintainance-window</c> - The action is applied during the next scheduled
         /// maintainance.
         /// </para>
         ///  </li> </ul>
@@ -195,19 +195,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ready</code> 
+        ///  <c>ready</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>applied</code> 
+        ///  <c>applied</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>scheduled</code> 
+        ///  <c>scheduled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolved</code> 
+        ///  <c>resolved</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

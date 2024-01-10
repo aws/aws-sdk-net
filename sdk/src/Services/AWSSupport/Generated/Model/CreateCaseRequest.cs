@@ -51,17 +51,17 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// A successful <code>CreateCase</code> request returns an Amazon Web Services Support
-    /// case number. You can use the <a>DescribeCases</a> operation and specify the case number
+    /// A successful <c>CreateCase</c> request returns an Amazon Web Services Support case
+    /// number. You can use the <a>DescribeCases</a> operation and specify the case number
     /// to get existing Amazon Web Services Support cases. After you create a case, use the
     /// <a>AddCommunicationToCase</a> operation to add additional communication or attachments
     /// to an existing case.
     /// </para>
     ///  
     /// <para>
-    /// The <code>caseId</code> is separate from the <code>displayId</code> that appears in
-    /// the <a href="https://console.aws.amazon.com/support">Amazon Web Services Support Center</a>.
-    /// Use the <a>DescribeCases</a> operation to get the <code>displayId</code>.
+    /// The <c>caseId</c> is separate from the <c>displayId</c> that appears in the <a href="https://console.aws.amazon.com/support">Amazon
+    /// Web Services Support Center</a>. Use the <a>DescribeCases</a> operation to get the
+    /// <c>displayId</c>.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
@@ -71,7 +71,7 @@ namespace Amazon.AWSSupport.Model
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -174,8 +174,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property IssueType. 
         /// <para>
-        /// The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.
-        /// If you don't specify a value, the default is <code>technical</code>.
+        /// The type of issue for the case. You can specify <c>customer-service</c> or <c>technical</c>.
+        /// If you don't specify a value, the default is <c>technical</c>.
         /// </para>
         /// </summary>
         public string IssueType
@@ -195,8 +195,8 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
         /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean
-        /// (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter
-        /// if you want support in that language.
+        /// (“ko”). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
+        /// want support in that language.
         /// </para>
         /// </summary>
         public string Language
@@ -215,7 +215,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property ServiceCode. 
         /// <para>
         /// The code for the Amazon Web Services service. You can use the <a>DescribeServices</a>
-        /// operation to get the possible <code>serviceCode</code> values.
+        /// operation to get the possible <c>serviceCode</c> values.
         /// </para>
         /// </summary>
         public string ServiceCode
@@ -236,7 +236,7 @@ namespace Amazon.AWSSupport.Model
         /// A value that indicates the urgency of the case. This value determines the response
         /// time according to your service level agreement with Amazon Web Services Support. You
         /// can use the <a>DescribeSeverityLevels</a> operation to get the possible values for
-        /// <code>severityCode</code>. 
+        /// <c>severityCode</c>. 
         /// </para>
         ///  
         /// <para>

@@ -45,8 +45,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ChimeSdkMeetingConfiguration. 
         /// <para>
-        /// The configuration for a specified media pipeline. <code>SourceType</code> must be
-        /// <code>ChimeSdkMeeting</code>.
+        /// The configuration for a specified media pipeline. <c>SourceType</c> must be <c>ChimeSdkMeeting</c>.
         /// </para>
         /// </summary>
         public ChimeSdkMeetingConfiguration ChimeSdkMeetingConfiguration

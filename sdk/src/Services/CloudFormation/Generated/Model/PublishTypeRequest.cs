@@ -56,7 +56,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
+        /// Conditional: You must specify <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -84,7 +84,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>MAJOR.MINOR.PATCH</code> 
+        ///  <c>MAJOR.MINOR.PATCH</c> 
         /// </para>
         ///  
         /// <para>
@@ -98,7 +98,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// You cannot specify a version number the first time you publish a type. CloudFormation
-        /// automatically sets the first version number to be <code>1.0.0</code>.
+        /// automatically sets the first version number to be <c>1.0.0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5)]
@@ -121,7 +121,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
+        /// Conditional: You must specify <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         public ThirdPartyType Type
@@ -143,7 +143,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
+        /// Conditional: You must specify <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]

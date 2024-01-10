@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableOptimizers. 
         /// <para>
-        /// A list of <code>BatchTableOptimizer</code> objects.
+        /// A list of <c>BatchTableOptimizer</c> objects.
         /// </para>
         /// </summary>
         public List<BatchTableOptimizer> TableOptimizers

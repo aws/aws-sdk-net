@@ -42,7 +42,7 @@ namespace Amazon.OSIS.Model
         /// Gets and sets the property CloudWatchLogDestination. 
         /// <para>
         /// The destination for OpenSearch Ingestion logs sent to Amazon CloudWatch Logs. This
-        /// parameter is required if <code>IsLoggingEnabled</code> is set to <code>true</code>.
+        /// parameter is required if <c>IsLoggingEnabled</c> is set to <c>true</c>.
         /// </para>
         /// </summary>
         public CloudWatchLogDestination CloudWatchLogDestination

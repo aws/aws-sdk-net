@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Indicates which speaker is on which channel. The options are <code>CLINICIAN</code>
-    /// and <code>PATIENT</code>
+    /// Indicates which speaker is on which channel. The options are <c>CLINICIAN</c> and
+    /// <c>PATIENT</c>
     /// </summary>
     public partial class MedicalScribeChannelDefinition
     {
@@ -59,8 +59,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ParticipantRole. 
         /// <para>
-        /// Specify the participant that you want to flag. The options are <code>CLINICIAN</code>
-        /// and <code>PATIENT</code> 
+        /// Specify the participant that you want to flag. The options are <c>CLINICIAN</c> and
+        /// <c>PATIENT</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

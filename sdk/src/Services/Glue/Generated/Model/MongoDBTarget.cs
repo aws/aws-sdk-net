@@ -81,8 +81,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>true</code> means to scan all records, while a value of <code>false</code>
-        /// means to sample the records. If no value is specified, the value defaults to <code>true</code>.
+        /// A value of <c>true</c> means to scan all records, while a value of <c>false</c> means
+        /// to sample the records. If no value is specified, the value defaults to <c>true</c>.
         /// </para>
         /// </summary>
         public bool ScanAll

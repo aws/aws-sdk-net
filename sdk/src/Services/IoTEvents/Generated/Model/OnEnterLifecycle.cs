@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// When entering this state, perform these <code>actions</code> if the <code>condition</code>
-    /// is TRUE.
+    /// When entering this state, perform these <c>actions</c> if the <c>condition</c> is
+    /// TRUE.
     /// </summary>
     public partial class OnEnterLifecycle
     {
@@ -39,8 +39,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// Specifies the actions that are performed when the state is entered and the <code>condition</code>
-        /// is <code>TRUE</code>.
+        /// Specifies the actions that are performed when the state is entered and the <c>condition</c>
+        /// is <c>TRUE</c>.
         /// </para>
         /// </summary>
         public List<Event> Events

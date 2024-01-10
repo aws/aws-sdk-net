@@ -45,10 +45,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property AnalysisType. 
         /// <para>
-        /// The type of analysis CodeGuru Security performed in the scan, either <code>Security</code>
-        /// or <code>All</code>. The <code>Security</code> type only generates findings related
-        /// to security. The <code>All</code> type generates both security findings and quality
-        /// findings.
+        /// The type of analysis CodeGuru Security performed in the scan, either <c>Security</c>
+        /// or <c>All</c>. The <c>Security</c> type only generates findings related to security.
+        /// The <c>All</c> type generates both security findings and quality findings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,8 +160,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ScanState. 
         /// <para>
-        /// The current state of the scan. Pass either <code>InProgress</code>, <code>Successful</code>,
-        /// or <code>Failed</code>.
+        /// The current state of the scan. Pass either <c>InProgress</c>, <c>Successful</c>, or
+        /// <c>Failed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,8 +180,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The time when the scan was last updated. Only available for <code>STANDARD</code>
-        /// scan types.
+        /// The time when the scan was last updated. Only available for <c>STANDARD</c> scan types.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

@@ -86,7 +86,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name of the power (<code>nano</code>).
+        /// The friendly name of the power (<c>nano</c>).
         /// </para>
         /// </summary>
         public string Name
@@ -104,7 +104,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PowerId. 
         /// <para>
-        /// The ID of the power (<code>nano-1</code>).
+        /// The ID of the power (<c>nano-1</c>).
         /// </para>
         /// </summary>
         public string PowerId

@@ -63,12 +63,11 @@ namespace Amazon.ForecastQueryService.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// The filtering criteria to apply when retrieving the forecast. For example, to get
-        /// the forecast for <code>client_21</code> in the electricity usage dataset, specify
-        /// the following:
+        /// the forecast for <c>client_21</c> in the electricity usage dataset, specify the following:
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"item_id" : "client_21"}</code> 
+        ///  <c>{"item_id" : "client_21"}</c> 
         /// </para>
         ///  
         /// <para>
@@ -92,7 +91,7 @@ namespace Amazon.ForecastQueryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous request was truncated, the response includes a <code>NextToken</code>.
+        /// If the result of the previous request was truncated, the response includes a <c>NextToken</c>.
         /// To retrieve the next set of results, use the token in the next request. Tokens expire
         /// after 24 hours.
         /// </para>

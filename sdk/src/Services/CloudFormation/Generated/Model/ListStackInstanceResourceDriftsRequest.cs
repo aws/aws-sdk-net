@@ -34,9 +34,9 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>ListStackInstanceResourceDrifts</code> returns drift information for the most
-    /// recent drift detection operation. If an operation is in progress, it may only return
-    /// partial results.
+    ///  <c>ListStackInstanceResourceDrifts</c> returns drift information for the most recent
+    /// drift detection operation. If an operation is in progress, it may only return partial
+    /// results.
     /// </para>
     ///  </note>
     /// </summary>
@@ -60,16 +60,16 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// If you are signed in to a delegated administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>
@@ -95,9 +95,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned with a single call. If the number of
-        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
-        /// value that you can assign to the <code>NextToken</code> request parameter to get the
-        /// next set of results.
+        /// available results exceeds this maximum, the response includes a <c>NextToken</c> value
+        /// that you can assign to the <c>NextToken</c> request parameter to get the next set
+        /// of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -117,10 +117,10 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request didn't return all of the remaining results, the
-        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve
+        /// response object's <c>NextToken</c> parameter value is set to a token. To retrieve
         /// the next set of results, call this action again and assign that token to the request
-        /// object's <code>NextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+        /// object's <c>NextToken</c> parameter. If there are no remaining results, the previous
+        /// response object's <c>NextToken</c> parameter is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -201,22 +201,22 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETED</code>: The resource differs from its expected template configuration
-        /// in that the resource has been deleted.
+        ///  <c>DELETED</c>: The resource differs from its expected template configuration in
+        /// that the resource has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODIFIED</code>: One or more resource properties differ from their expected
-        /// template values.
+        ///  <c>MODIFIED</c>: One or more resource properties differ from their expected template
+        /// values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected template
+        ///  <c>IN_SYNC</c>: The resource's actual configuration matches its expected template
         /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.
+        ///  <c>NOT_CHECKED</c>: CloudFormation doesn't currently return this value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

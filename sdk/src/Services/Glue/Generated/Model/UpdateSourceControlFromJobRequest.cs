@@ -188,8 +188,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RepositoryName. 
         /// <para>
         /// The name of the remote repository that contains the job artifacts. For BitBucket providers,
-        /// <code>RepositoryName</code> should include <code>WorkspaceName</code>. Use the format
-        /// <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. 
+        /// <c>RepositoryName</c> should include <c>WorkspaceName</c>. Use the format <c>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

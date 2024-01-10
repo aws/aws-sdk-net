@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <code>ListStreams</code> operation.
+    /// Represents the output of a <c>ListStreams</c> operation.
     /// </summary>
     public partial class ListStreamsResponse : AmazonWebServiceResponse
     {
@@ -45,14 +45,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>LastEvaluatedStreamArn</code> is empty, then the "last page" of results has
-        /// been processed and there is no more data to be retrieved.
+        /// If <c>LastEvaluatedStreamArn</c> is empty, then the "last page" of results has been
+        /// processed and there is no more data to be retrieved.
         /// </para>
         ///  
         /// <para>
-        /// If <code>LastEvaluatedStreamArn</code> is not empty, it does not necessarily mean
-        /// that there is more data in the result set. The only way to know when you have reached
-        /// the end of the result set is when <code>LastEvaluatedStreamArn</code> is empty.
+        /// If <c>LastEvaluatedStreamArn</c> is not empty, it does not necessarily mean that there
+        /// is more data in the result set. The only way to know when you have reached the end
+        /// of the result set is when <c>LastEvaluatedStreamArn</c> is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Min=37, Max=1024)]

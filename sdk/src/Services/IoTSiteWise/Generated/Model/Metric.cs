@@ -38,8 +38,7 @@ namespace Amazon.IoTSiteWise.Model
     /// The maximum number of dependent/cascading variables used in any one metric calculation
     /// is 10. Therefore, a <i>root</i> metric can have up to 10 cascading metrics in its
     /// computational dependency tree. Additionally, a metric can only have a data type of
-    /// <code>DOUBLE</code> and consume properties with data types of <code>INTEGER</code>
-    /// or <code>DOUBLE</code>.
+    /// <c>DOUBLE</c> and consume properties with data types of <c>INTEGER</c> or <c>DOUBLE</c>.
     /// </para>
     ///  
     /// <para>
@@ -123,7 +122,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property Window. 
         /// <para>
         /// The window (time interval) over which IoT SiteWise computes the metric's aggregation
-        /// expression. IoT SiteWise computes one data point per <code>window</code>.
+        /// expression. IoT SiteWise computes one data point per <c>window</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

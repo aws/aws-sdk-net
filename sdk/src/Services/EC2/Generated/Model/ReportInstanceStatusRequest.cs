@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ReportInstanceStatus operation.
-    /// Submits feedback about the status of an instance. The instance must be in the <code>running</code>
+    /// Submits feedback about the status of an instance. The instance must be in the <c>running</c>
     /// state. If your experience with the instance differs from the instance status returned
     /// by <a>DescribeInstanceStatus</a>, use <a>ReportInstanceStatus</a> to report your experience
     /// with the instance. Amazon EC2 collects this information to improve the accuracy of
@@ -112,42 +112,42 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-stuck-in-state</code>: My instance is stuck in a state.
+        ///  <c>instance-stuck-in-state</c>: My instance is stuck in a state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unresponsive</code>: My instance is unresponsive.
+        ///  <c>unresponsive</c>: My instance is unresponsive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>not-accepting-credentials</code>: My instance is not accepting my credentials.
+        ///  <c>not-accepting-credentials</c>: My instance is not accepting my credentials.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>password-not-available</code>: A password is not available for my instance.
+        ///  <c>password-not-available</c>: A password is not available for my instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>performance-network</code>: My instance is experiencing performance problems
-        /// that I believe are network related.
+        ///  <c>performance-network</c>: My instance is experiencing performance problems that
+        /// I believe are network related.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>performance-instance-store</code>: My instance is experiencing performance
-        /// problems that I believe are related to the instance stores.
+        ///  <c>performance-instance-store</c>: My instance is experiencing performance problems
+        /// that I believe are related to the instance stores.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>performance-ebs-volume</code>: My instance is experiencing performance problems
-        /// that I believe are related to an EBS volume.
+        ///  <c>performance-ebs-volume</c>: My instance is experiencing performance problems that
+        /// I believe are related to an EBS volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>performance-other</code>: My instance is experiencing performance problems.
+        ///  <c>performance-other</c>: My instance is experiencing performance problems.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>other</code>: [explain using the description parameter]
+        ///  <c>other</c>: [explain using the description parameter]
         /// </para>
         ///  </li> </ul>
         /// </summary>

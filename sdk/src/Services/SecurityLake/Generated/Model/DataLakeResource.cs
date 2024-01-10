@@ -176,8 +176,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property UpdateStatus. 
         /// <para>
-        /// The status of the last <code>UpdateDataLake </code>or <code>DeleteDataLake</code>
-        /// API request.
+        /// The status of the last <c>UpdateDataLake </c>or <c>DeleteDataLake</c> API request.
         /// </para>
         /// </summary>
         public DataLakeUpdateStatus UpdateStatus

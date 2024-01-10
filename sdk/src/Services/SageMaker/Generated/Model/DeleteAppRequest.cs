@@ -100,8 +100,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SpaceName. 
         /// <para>
-        /// The name of the space. If this value is not set, then <code>UserProfileName</code>
-        /// must be set.
+        /// The name of the space. If this value is not set, then <c>UserProfileName</c> must
+        /// be set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -120,8 +120,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UserProfileName. 
         /// <para>
-        /// The user profile name. If this value is not set, then <code>SpaceName</code> must
-        /// be set.
+        /// The user profile name. If this value is not set, then <c>SpaceName</c> must be set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

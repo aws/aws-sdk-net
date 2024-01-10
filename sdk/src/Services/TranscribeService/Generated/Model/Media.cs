@@ -33,8 +33,8 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// For information on supported media formats, refer to the <code>MediaFormat</code>
-    /// parameter or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
+    /// For information on supported media formats, refer to the <c>MediaFormat</c> parameter
+    /// or the <a href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
     /// formats</a> section in the Amazon S3 Developer Guide.
     /// </para>
     /// </summary>
@@ -50,11 +50,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/my-media-file.flac</code> 
+        ///  <c>s3://DOC-EXAMPLE-BUCKET/my-media-file.flac</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> 
+        ///  <c>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -82,11 +82,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/my-media-file.flac</code> 
+        ///  <c>s3://DOC-EXAMPLE-BUCKET/my-media-file.flac</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</code> 
+        ///  <c>s3://DOC-EXAMPLE-BUCKET/media-files/my-media-file.flac</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -95,8 +95,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <important> 
         /// <para>
-        ///  <code>RedactedMediaFileUri</code> produces a redacted audio file in addition to a
-        /// redacted transcript. It is only supported for Call Analytics (<code>StartCallAnalyticsJob</code>)
+        ///  <c>RedactedMediaFileUri</c> produces a redacted audio file in addition to a redacted
+        /// transcript. It is only supported for Call Analytics (<c>StartCallAnalyticsJob</c>)
         /// transcription requests.
         /// </para>
         ///  </important>

@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDomainName operation.
-    /// Retrieves a custom <code>DomainName</code> object.
+    /// Retrieves a custom <c>DomainName</c> object.
     /// </summary>
     public partial class GetDomainNameRequest : AmazonAppSyncRequest
     {

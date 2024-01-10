@@ -44,46 +44,45 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</code> - Found a black hole route with
-        /// the destination CIDR block.
+        ///  <c>BLACKHOLE_ROUTE_FOR_DESTINATION_FOUND</c> - Found a black hole route with the
+        /// destination CIDR block.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CYCLIC_PATH_DETECTED</code> - Found the same resource multiple times while
-        /// traversing the path.
+        ///  <c>CYCLIC_PATH_DETECTED</c> - Found the same resource multiple times while traversing
+        /// the path.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</code> - Found an inactive route with
-        /// the destination CIDR block.
+        ///  <c>INACTIVE_ROUTE_FOR_DESTINATION_FOUND</c> - Found an inactive route with the destination
+        /// CIDR block.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MAX_HOPS_EXCEEDED</code> - Analysis exceeded 64 hops without finding the destination.
+        ///  <c>MAX_HOPS_EXCEEDED</c> - Analysis exceeded 64 hops without finding the destination.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ROUTE_NOT_FOUND</code> - Cannot find a route table with the destination CIDR
-        /// block.
+        ///  <c>ROUTE_NOT_FOUND</c> - Cannot find a route table with the destination CIDR block.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TGW_ATTACH_ARN_NO_MATCH</code> - Found an attachment, but not with the correct
-        /// destination ARN.
+        ///  <c>TGW_ATTACH_ARN_NO_MATCH</c> - Found an attachment, but not with the correct destination
+        /// ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TGW_ATTACH_NOT_FOUND</code> - Cannot find an attachment.
+        ///  <c>TGW_ATTACH_NOT_FOUND</c> - Cannot find an attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TGW_ATTACH_NOT_IN_TGW</code> - Found an attachment, but not to the correct
-        /// transit gateway.
+        ///  <c>TGW_ATTACH_NOT_IN_TGW</c> - Found an attachment, but not to the correct transit
+        /// gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route table
-        /// association is not associated.
+        ///  <c>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</c> - The state of the route table association
+        /// is not associated.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -120,8 +119,8 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property ResultCode. 
         /// <para>
-        /// The result of the analysis. If the status is <code>NOT_CONNECTED</code>, check the
-        /// reason code.
+        /// The result of the analysis. If the status is <c>NOT_CONNECTED</c>, check the reason
+        /// code.
         /// </para>
         /// </summary>
         public RouteAnalysisCompletionResultCode ResultCode

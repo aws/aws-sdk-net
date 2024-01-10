@@ -30,12 +30,12 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountSubscription operation.
-    /// Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight
+    /// Use the <c>DeleteAccountSubscription</c> operation to delete an Amazon QuickSight
     /// account. This operation will result in an error message if you have configured your
-    /// account termination protection settings to <code>True</code>. To change this setting
-    /// and delete your account, call the <code>UpdateAccountSettings</code> API and set the
-    /// value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>,
-    /// then make another call to the <code>DeleteAccountSubscription</code> API.
+    /// account termination protection settings to <c>True</c>. To change this setting and
+    /// delete your account, call the <c>UpdateAccountSettings</c> API and set the value of
+    /// the <c>TerminationProtectionEnabled</c> parameter to <c>False</c>, then make another
+    /// call to the <c>DeleteAccountSubscription</c> API.
     /// </summary>
     public partial class DeleteAccountSubscriptionRequest : AmazonQuickSightRequest
     {

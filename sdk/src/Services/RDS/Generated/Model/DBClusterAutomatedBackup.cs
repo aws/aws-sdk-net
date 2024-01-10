@@ -63,10 +63,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies
-        /// the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code>
-        /// always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
-        /// automatically adjusts as needed.
+        /// For all database engines except Amazon Aurora, <c>AllocatedStorage</c> specifies the
+        /// allocated storage size in gibibytes (GiB). For Aurora, <c>AllocatedStorage</c> always
+        /// returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically
+        /// adjusts as needed.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -394,7 +394,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <c>1150-65535</c> 
         /// </para>
         /// </summary>
         public int Port
@@ -449,7 +449,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>retained</code> - Automated backups for deleted clusters.
+        ///  <c>retained</c> - Automated backups for deleted clusters.
         /// </para>
         ///  </li> </ul>
         /// </summary>

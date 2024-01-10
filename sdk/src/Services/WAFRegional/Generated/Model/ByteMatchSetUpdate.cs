@@ -42,9 +42,8 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In an <a>UpdateByteMatchSet</a> request, <code>ByteMatchSetUpdate</code> specifies
-    /// whether to insert or delete a <a>ByteMatchTuple</a> and includes the settings for
-    /// the <code>ByteMatchTuple</code>.
+    /// In an <a>UpdateByteMatchSet</a> request, <c>ByteMatchSetUpdate</c> specifies whether
+    /// to insert or delete a <a>ByteMatchTuple</a> and includes the settings for the <c>ByteMatchTuple</c>.
     /// </para>
     /// </summary>
     public partial class ByteMatchSetUpdate
@@ -75,10 +74,9 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property ByteMatchTuple. 
         /// <para>
         /// Information about the part of a web request that you want AWS WAF to inspect and the
-        /// value that you want AWS WAF to search for. If you specify <code>DELETE</code> for
-        /// the value of <code>Action</code>, the <code>ByteMatchTuple</code> values must exactly
-        /// match the values in the <code>ByteMatchTuple</code> that you want to delete from the
-        /// <code>ByteMatchSet</code>.
+        /// value that you want AWS WAF to search for. If you specify <c>DELETE</c> for the value
+        /// of <c>Action</c>, the <c>ByteMatchTuple</c> values must exactly match the values in
+        /// the <c>ByteMatchTuple</c> that you want to delete from the <c>ByteMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

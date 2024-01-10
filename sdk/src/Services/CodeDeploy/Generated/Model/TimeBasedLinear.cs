@@ -42,7 +42,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LinearInterval. 
         /// <para>
-        /// The number of minutes between each incremental traffic shift of a <code>TimeBasedLinear</code>
+        /// The number of minutes between each incremental traffic shift of a <c>TimeBasedLinear</c>
         /// deployment.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LinearPercentage. 
         /// <para>
-        /// The percentage of traffic that is shifted at the start of each increment of a <code>TimeBasedLinear</code>
+        /// The percentage of traffic that is shifted at the start of each increment of a <c>TimeBasedLinear</c>
         /// deployment.
         /// </para>
         /// </summary>

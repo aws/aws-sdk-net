@@ -156,7 +156,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PartitionNumber. 
         /// <para>
         /// The number of the partition the instance should launch in. Valid only if the placement
-        /// group strategy is set to <code>partition</code>.
+        /// group strategy is set to <c>partition</c>.
         /// </para>
         /// </summary>
         public int PartitionNumber
@@ -192,8 +192,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tenancy. 
         /// <para>
-        /// The tenancy of the instance. An instance with a tenancy of <code>dedicated</code>
-        /// runs on single-tenant hardware. 
+        /// The tenancy of the instance. An instance with a tenancy of <c>dedicated</c> runs on
+        /// single-tenant hardware. 
         /// </para>
         /// </summary>
         public Tenancy Tenancy

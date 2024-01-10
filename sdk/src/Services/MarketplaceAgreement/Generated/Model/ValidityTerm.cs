@@ -41,7 +41,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property AgreementDuration. 
         /// <para>
-        /// Defines the duration that the agreement remains active. If <code>AgreementStartDate</code>
+        /// Defines the duration that the agreement remains active. If <c>AgreementStartDate</c>
         /// isn’t provided, the agreement duration is relative to the agreement signature time.
         /// The duration is represented in the ISO_8601 format.
         /// </para>
@@ -63,8 +63,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property AgreementEndDate. 
         /// <para>
         /// Defines the date when the agreement ends. The agreement ends at 23:59:59.999 UTC on
-        /// the date provided. If <code>AgreementEndDate</code> isn’t provided, the agreement
-        /// end date is determined by the validity of individual terms.
+        /// the date provided. If <c>AgreementEndDate</c> isn’t provided, the agreement end date
+        /// is determined by the validity of individual terms.
         /// </para>
         /// </summary>
         public DateTime AgreementEndDate
@@ -83,8 +83,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property AgreementStartDate. 
         /// <para>
         /// Defines the date when agreement starts. The agreement starts at 00:00:00.000 UTC on
-        /// the date provided. If <code>AgreementStartDate</code> isn’t provided, the agreement
-        /// start date is determined based on agreement signature time.
+        /// the date provided. If <c>AgreementStartDate</c> isn’t provided, the agreement start
+        /// date is determined based on agreement signature time.
         /// </para>
         /// </summary>
         public DateTime AgreementStartDate

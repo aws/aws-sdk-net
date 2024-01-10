@@ -43,7 +43,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Currently, the only valid status is <code>active</code>.
+        /// Currently, the only valid status is <c>active</c>.
         /// </para>
         /// </summary>
         public string Status

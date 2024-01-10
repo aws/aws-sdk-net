@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Represents the output of a <code>PurchaseReservedElasticsearchInstanceOffering</code>
-    /// operation.
+    /// Represents the output of a <c>PurchaseReservedElasticsearchInstanceOffering</c> operation.
     /// </summary>
     public partial class PurchaseReservedElasticsearchInstanceOfferingResponse : AmazonWebServiceResponse
     {

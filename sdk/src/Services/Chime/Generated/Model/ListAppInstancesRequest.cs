@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAppInstances operation.
-    /// Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
+    /// Lists all Amazon Chime <c>AppInstance</c>s created under a single AWS account.
     /// 
     ///  <important> 
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of <code>AppInstance</code>s that you want to return.
+        /// The maximum number of <c>AppInstance</c>s that you want to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -73,7 +73,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
+        /// The token passed by previous API requests until you reach the maximum number of <c>AppInstance</c>s.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=2048)]

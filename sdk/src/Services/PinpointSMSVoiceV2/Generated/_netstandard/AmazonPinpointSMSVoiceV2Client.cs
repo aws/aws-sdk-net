@@ -1664,9 +1664,9 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Deletes an account-level monthly spending limit override for sending text messages.
-        /// Deleting a spend limit override will set the <code>EnforcedLimit</code> to equal the
-        /// <code>MaxLimit</code>, which is controlled by Amazon Web Services. For more information
-        /// on spend limits (quotas) see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/quotas.html">Amazon
+        /// Deleting a spend limit override will set the <c>EnforcedLimit</c> to equal the <c>MaxLimit</c>,
+        /// which is controlled by Amazon Web Services. For more information on spend limits (quotas)
+        /// see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/quotas.html">Amazon
         /// Pinpoint quotas </a> in the <i>Amazon Pinpoint Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTextMessageSpendLimitOverride service method.</param>
@@ -1774,7 +1774,7 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Deletes an account level monthly spend limit override for sending voice messages.
-        /// Deleting a spend limit override sets the <code>EnforcedLimit</code> equal to the <code>MaxLimit</code>,
+        /// Deleting a spend limit override sets the <c>EnforcedLimit</c> equal to the <c>MaxLimit</c>,
         /// which is controlled by Amazon Web Services. For more information on spending limits
         /// (quotas) see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/quotas.html">Amazon
         /// Pinpoint quotas</a> in the <i>Amazon Pinpoint Developer Guide</i>.
@@ -3904,8 +3904,8 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Sets an account level monthly spend limit override for sending text messages. The
-        /// requested spend limit must be less than or equal to the <code>MaxLimit</code>, which
-        /// is set by Amazon Web Services.
+        /// requested spend limit must be less than or equal to the <c>MaxLimit</c>, which is
+        /// set by Amazon Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetTextMessageSpendLimitOverride service method.</param>
         /// <param name="cancellationToken">
@@ -3955,8 +3955,8 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Sets an account level monthly spend limit override for sending voice messages. The
-        /// requested spend limit must be less than or equal to the <code>MaxLimit</code>, which
-        /// is set by Amazon Web Services.
+        /// requested spend limit must be less than or equal to the <c>MaxLimit</c>, which is
+        /// set by Amazon Web Services.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVoiceMessageSpendLimitOverride service method.</param>
         /// <param name="cancellationToken">
@@ -4307,9 +4307,9 @@ namespace Amazon.PinpointSMSVoiceV2
 
         /// <summary>
         /// Updates the configuration of an existing pool. You can update the opt-out list, enable
-        /// or disable two-way messaging, change the <code>TwoWayChannelArn</code>, enable or
-        /// disable self-managed opt-outs, enable or disable deletion protection, and enable or
-        /// disable shared routes.
+        /// or disable two-way messaging, change the <c>TwoWayChannelArn</c>, enable or disable
+        /// self-managed opt-outs, enable or disable deletion protection, and enable or disable
+        /// shared routes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePool service method.</param>
         /// <param name="cancellationToken">

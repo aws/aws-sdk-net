@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ExcludeVerboseContent. 
         /// <para>
-        ///  Set to <code>TRUE</code> to exclude sections that contain information such as headers,
+        ///  Set to <c>TRUE</c> to exclude sections that contain information such as headers,
         /// context, and evaluated mapping templates, regardless of logging level. 
         /// </para>
         /// </summary>

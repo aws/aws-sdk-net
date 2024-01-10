@@ -145,12 +145,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>Standard</code> log class supports all CloudWatch Logs features.
+        /// The <c>Standard</c> log class supports all CloudWatch Logs features.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs
-        /// features and incurs lower costs.
+        /// The <c>Infrequent Access</c> log class supports a subset of CloudWatch Logs features
+        /// and incurs lower costs.
         /// </para>
         ///  </li> </ul> 
         /// <para>

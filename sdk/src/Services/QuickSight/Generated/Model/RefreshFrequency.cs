@@ -45,32 +45,30 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MINUTE15</code>: The dataset refreshes every 15 minutes. This value is only
-        /// supported for incremental refreshes. This interval can only be used for one schedule
-        /// per dataset.
+        ///  <c>MINUTE15</c>: The dataset refreshes every 15 minutes. This value is only supported
+        /// for incremental refreshes. This interval can only be used for one schedule per dataset.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MINUTE30</code>:The dataset refreshes every 30 minutes. This value is only
-        /// supported for incremental refreshes. This interval can only be used for one schedule
-        /// per dataset.
+        ///  <c>MINUTE30</c>:The dataset refreshes every 30 minutes. This value is only supported
+        /// for incremental refreshes. This interval can only be used for one schedule per dataset.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HOURLY</code>: The dataset refreshes every hour. This interval can only be
-        /// used for one schedule per dataset.
+        ///  <c>HOURLY</c>: The dataset refreshes every hour. This interval can only be used for
+        /// one schedule per dataset.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DAILY</code>: The dataset refreshes every day.
+        ///  <c>DAILY</c>: The dataset refreshes every day.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WEEKLY</code>: The dataset refreshes every week.
+        ///  <c>WEEKLY</c>: The dataset refreshes every week.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MONTHLY</code>: The dataset refreshes every month.
+        ///  <c>MONTHLY</c>: The dataset refreshes every month.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -129,7 +127,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Timezone. 
         /// <para>
         /// The timezone that you want the refresh schedule to use. The timezone ID must match
-        /// a corresponding ID found on <code>java.util.time.getAvailableIDs()</code>.
+        /// a corresponding ID found on <c>java.util.time.getAvailableIDs()</c>.
         /// </para>
         /// </summary>
         public string Timezone

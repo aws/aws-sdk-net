@@ -31,14 +31,14 @@ namespace Amazon.EBS.Model
     /// <summary>
     /// Container for the parameters to the CompleteSnapshot operation.
     /// Seals and completes the snapshot after all of the required blocks of data have been
-    /// written to it. Completing the snapshot changes the status to <code>completed</code>.
-    /// You cannot write new blocks to a snapshot after it has been completed.
+    /// written to it. Completing the snapshot changes the status to <c>completed</c>. You
+    /// cannot write new blocks to a snapshot after it has been completed.
     /// 
     ///  <note> 
     /// <para>
-    /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-    /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-    /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+    /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+    /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+    /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
     /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  </note>
@@ -100,7 +100,7 @@ namespace Amazon.EBS.Model
         /// Gets and sets the property ChecksumAggregationMethod. 
         /// <para>
         /// The aggregation method used to generate the checksum. Currently, the only supported
-        /// aggregation method is <code>LINEAR</code>.
+        /// aggregation method is <c>LINEAR</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -120,7 +120,7 @@ namespace Amazon.EBS.Model
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
         /// The algorithm used to generate the checksum. Currently, the only supported algorithm
-        /// is <code>SHA256</code>.
+        /// is <c>SHA256</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

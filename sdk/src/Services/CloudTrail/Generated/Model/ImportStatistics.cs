@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Provides statistics for the specified <code>ImportID</code>. CloudTrail does not
-    /// update import statistics in real-time. Returned values for parameters such as <code>EventsCompleted</code>
+    /// Provides statistics for the specified <c>ImportID</c>. CloudTrail does not update
+    /// import statistics in real-time. Returned values for parameters such as <c>EventsCompleted</c>
     /// may be lower than the actual value, because CloudTrail updates statistics incrementally
     /// over the course of the import.
     /// </summary>

@@ -32,8 +32,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// Specifies the directory on the Amazon EFS file system that the access point provides
     /// access to. The access point exposes the specified file system path as the root directory
     /// of your file system to applications using the access point. NFS clients using the
-    /// access point can only access data in the access point's <code>RootDirectory</code>
-    /// and it's subdirectories.
+    /// access point can only access data in the access point's <c>RootDirectory</c> and it's
+    /// subdirectories.
     /// </summary>
     public partial class RootDirectory
     {
@@ -44,16 +44,16 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property CreationInfo. 
         /// <para>
         /// (Optional) Specifies the POSIX IDs and permissions to apply to the access point's
-        /// <code>RootDirectory</code>. If the <code>RootDirectory</code> &gt; <code>Path</code>
-        /// specified does not exist, EFS creates the root directory using the <code>CreationInfo</code>
-        /// settings when a client connects to an access point. When specifying the <code>CreationInfo</code>,
-        /// you must provide values for all properties. 
+        /// <c>RootDirectory</c>. If the <c>RootDirectory</c> &gt; <c>Path</c> specified does
+        /// not exist, EFS creates the root directory using the <c>CreationInfo</c> settings when
+        /// a client connects to an access point. When specifying the <c>CreationInfo</c>, you
+        /// must provide values for all properties. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code>
-        /// &gt; <code>Path</code> does not exist, attempts to mount the file system using the
-        /// access point will fail.
+        /// If you do not provide <c>CreationInfo</c> and the specified <c>RootDirectory</c> &gt;
+        /// <c>Path</c> does not exist, attempts to mount the file system using the access point
+        /// will fail.
         /// </para>
         ///  </important>
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <para>
         /// Specifies the path on the EFS file system to expose as the root directory to NFS clients
         /// using the access point to access the EFS file system. A path can have up to four subdirectories.
-        /// If the specified path does not exist, you are required to provide the <code>CreationInfo</code>.
+        /// If the specified path does not exist, you are required to provide the <c>CreationInfo</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

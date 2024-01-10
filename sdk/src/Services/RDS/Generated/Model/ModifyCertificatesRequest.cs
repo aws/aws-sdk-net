@@ -81,8 +81,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To determine the valid values, use the <code>describe-certificates</code> CLI command
-        /// or the <code>DescribeCertificates</code> API operation.
+        /// To determine the valid values, use the <c>describe-certificates</c> CLI command or
+        /// the <c>DescribeCertificates</c> API operation.
         /// </para>
         /// </summary>
         public string CertificateIdentifier

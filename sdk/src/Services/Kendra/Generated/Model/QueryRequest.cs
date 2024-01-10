@@ -37,8 +37,8 @@ namespace Amazon.Kendra.Model
     /// If you are working with large language models (LLMs) or implementing retrieval augmented
     /// generation (RAG) systems, you can use Amazon Kendra's <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_Retrieve.html">Retrieve</a>
     /// API, which can return longer semantically relevant passages. We recommend using the
-    /// <code>Retrieve</code> API instead of filing a service limit increase to increase the
-    /// <code>Query</code> API document excerpt length.
+    /// <c>Retrieve</c> API instead of filing a service limit increase to increase the <c>Query</c>
+    /// API document excerpt length.
     /// </para>
     ///  </note> 
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can specify that the query return only one type of result using the <code>QueryResultTypeFilter</code>
+    /// You can specify that the query return only one type of result using the <c>QueryResultTypeFilter</c>
     /// parameter. Each query returns the 100 most relevant results. If you filter result
     /// type to only question-answers, a maximum of four results are returned. If you filter
     /// result type to only answers, a maximum of three results are returned.
@@ -95,13 +95,13 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property AttributeFilter. 
         /// <para>
         /// Filters search results by document fields/attributes. You can only provide one attribute
-        /// filter; however, the <code>AndAllFilters</code>, <code>NotFilter</code>, and <code>OrAllFilters</code>
+        /// filter; however, the <c>AndAllFilters</c>, <c>NotFilter</c>, and <c>OrAllFilters</c>
         /// parameters contain a list of other filters.
         /// </para>
         ///  
         /// <para>
-        /// The <code>AttributeFilter</code> parameter means you can create a set of filtering
-        /// rules that a document must satisfy to be included in the query results.
+        /// The <c>AttributeFilter</c> parameter means you can create a set of filtering rules
+        /// that a document must satisfy to be included in the query results.
         /// </para>
         /// </summary>
         public AttributeFilter AttributeFilter
@@ -208,9 +208,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property PageNumber. 
         /// <para>
-        /// Query results are returned in pages the size of the <code>PageSize</code> parameter.
-        /// By default, Amazon Kendra returns the first page of results. Use this parameter to
-        /// get result pages after the first one.
+        /// Query results are returned in pages the size of the <c>PageSize</c> parameter. By
+        /// default, Amazon Kendra returns the first page of results. Use this parameter to get
+        /// result pages after the first one.
         /// </para>
         /// </summary>
         public int PageNumber
@@ -401,9 +401,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property VisitorId. 
         /// <para>
-        /// Provides an identifier for a specific user. The <code>VisitorId</code> should be a
-        /// unique identifier, such as a GUID. Don't use personally identifiable information,
-        /// such as the user's email address, as the <code>VisitorId</code>.
+        /// Provides an identifier for a specific user. The <c>VisitorId</c> should be a unique
+        /// identifier, such as a GUID. Don't use personally identifiable information, such as
+        /// the user's email address, as the <c>VisitorId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

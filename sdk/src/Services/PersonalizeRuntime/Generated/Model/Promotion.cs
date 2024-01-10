@@ -70,11 +70,11 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// For filter expressions that use an <code>INCLUDE</code> element to include items,
-        /// you must provide values for all parameters that are defined in the expression. For
-        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude items,
-        /// you can omit the <code>filter-values</code>. In this case, Amazon Personalize doesn't
-        /// use that portion of the expression to filter recommendations.
+        /// For filter expressions that use an <c>INCLUDE</c> element to include items, you must
+        /// provide values for all parameters that are defined in the expression. For filters
+        /// with expressions that use an <c>EXCLUDE</c> element to exclude items, you can omit
+        /// the <c>filter-values</c>. In this case, Amazon Personalize doesn't use that portion
+        /// of the expression to filter recommendations.
         /// </para>
         ///  
         /// <para>

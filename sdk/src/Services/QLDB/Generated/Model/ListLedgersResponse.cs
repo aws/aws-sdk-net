@@ -61,14 +61,14 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>NextToken</code> is empty, then the last page of results has been processed
-        /// and there are no more results to be retrieved.
+        /// If <c>NextToken</c> is empty, then the last page of results has been processed and
+        /// there are no more results to be retrieved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>NextToken</code> is <i>not</i> empty, then there are more results available.
-        /// To retrieve the next page of results, use the value of <code>NextToken</code> in a
-        /// subsequent <code>ListLedgers</code> call.
+        /// If <c>NextToken</c> is <i>not</i> empty, then there are more results available. To
+        /// retrieve the next page of results, use the value of <c>NextToken</c> in a subsequent
+        /// <c>ListLedgers</c> call.
         /// </para>
         ///  </li> </ul>
         /// </summary>

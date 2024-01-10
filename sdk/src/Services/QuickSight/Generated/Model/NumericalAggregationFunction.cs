@@ -61,47 +61,47 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUM</code>: The sum of a dimension or measure. 
+        ///  <c>SUM</c>: The sum of a dimension or measure. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVERAGE</code>: The average of a dimension or measure.
+        ///  <c>AVERAGE</c>: The average of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MIN</code>: The minimum value of a dimension or measure.
+        ///  <c>MIN</c>: The minimum value of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MAX</code>: The maximum value of a dimension or measure.
+        ///  <c>MAX</c>: The maximum value of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COUNT</code>: The count of a dimension or measure.
+        ///  <c>COUNT</c>: The count of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISTINCT_COUNT</code>: The count of distinct values in a dimension or measure.
+        ///  <c>DISTINCT_COUNT</c>: The count of distinct values in a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VAR</code>: The variance of a dimension or measure.
+        ///  <c>VAR</c>: The variance of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VARP</code>: The partitioned variance of a dimension or measure.
+        ///  <c>VARP</c>: The partitioned variance of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STDEV</code>: The standard deviation of a dimension or measure.
+        ///  <c>STDEV</c>: The standard deviation of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STDEVP</code>: The partitioned standard deviation of a dimension or measure.
+        ///  <c>STDEVP</c>: The partitioned standard deviation of a dimension or measure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MEDIAN</code>: The median value of a dimension or measure.
+        ///  <c>MEDIAN</c>: The median value of a dimension or measure.
         /// </para>
         ///  </li> </ul>
         /// </summary>

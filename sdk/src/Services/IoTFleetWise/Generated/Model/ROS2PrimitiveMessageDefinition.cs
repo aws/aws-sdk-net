@@ -42,7 +42,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property Offset. 
         /// <para>
         /// The offset used to calculate the signal value. Combined with scaling, the calculation
-        /// is <code>value = raw_value * scaling + offset</code>.
+        /// is <c>value = raw_value * scaling + offset</c>.
         /// </para>
         /// </summary>
         public double Offset
@@ -98,7 +98,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property UpperBound. 
         /// <para>
-        /// An optional attribute specifying the upper bound for <code>STRING</code> and <code>WSTRING</code>.
+        /// An optional attribute specifying the upper bound for <c>STRING</c> and <c>WSTRING</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

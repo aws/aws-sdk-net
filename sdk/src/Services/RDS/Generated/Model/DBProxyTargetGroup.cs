@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBProxyTargetGroups</code>
+    /// This data type is used as a response element in the <c>DescribeDBProxyTargetGroups</c>
     /// action.
     /// </para>
     /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Indicates whether this target group is the first one used for connection requests
         /// by the associated proxy. Because each proxy is currently associated with a single
-        /// target group, currently this setting is always <code>true</code>.
+        /// target group, currently this setting is always <c>true</c>.
         /// </para>
         /// </summary>
         public bool IsDefault
@@ -128,10 +128,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of this target group. A status of <code>available</code> means
-        /// the target group is correctly associated with a database. Other values indicate that
-        /// you must wait for the target group to be ready, or take some action to resolve an
-        /// issue.
+        /// The current status of this target group. A status of <c>available</c> means the target
+        /// group is correctly associated with a database. Other values indicate that you must
+        /// wait for the target group to be ready, or take some action to resolve an issue.
         /// </para>
         /// </summary>
         public string Status

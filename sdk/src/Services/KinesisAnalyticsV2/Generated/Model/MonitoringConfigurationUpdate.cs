@@ -42,8 +42,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConfigurationTypeUpdate. 
         /// <para>
         /// Describes updates to whether to use the default CloudWatch logging configuration for
-        /// an application. You must set this property to <code>CUSTOM</code> in order to set
-        /// the <code>LogLevel</code> or <code>MetricsLevel</code> parameters.
+        /// an application. You must set this property to <c>CUSTOM</c> in order to set the <c>LogLevel</c>
+        /// or <c>MetricsLevel</c> parameters.
         /// </para>
         /// </summary>
         public ConfigurationType ConfigurationTypeUpdate
@@ -80,8 +80,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property MetricsLevelUpdate. 
         /// <para>
         /// Describes updates to the granularity of the CloudWatch Logs for an application. The
-        /// <code>Parallelism</code> level is not recommended for applications with a Parallelism
-        /// over 64 due to excessive costs.
+        /// <c>Parallelism</c> level is not recommended for applications with a Parallelism over
+        /// 64 due to excessive costs.
         /// </para>
         /// </summary>
         public MetricsLevel MetricsLevelUpdate

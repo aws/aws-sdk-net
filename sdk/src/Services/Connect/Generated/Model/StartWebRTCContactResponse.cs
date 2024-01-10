@@ -79,8 +79,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ParticipantId. 
         /// <para>
-        /// The identifier for a contact participant. The <code>ParticipantId</code> for a contact
-        /// participant is the same throughout the contact lifecycle.
+        /// The identifier for a contact participant. The <c>ParticipantId</c> for a contact participant
+        /// is the same throughout the contact lifecycle.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

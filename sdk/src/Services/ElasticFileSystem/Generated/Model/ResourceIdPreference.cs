@@ -40,8 +40,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property ResourceIdType. 
         /// <para>
-        /// Identifies the EFS resource ID preference, either <code>LONG_ID</code> (17 characters)
-        /// or <code>SHORT_ID</code> (8 characters).
+        /// Identifies the EFS resource ID preference, either <c>LONG_ID</c> (17 characters) or
+        /// <c>SHORT_ID</c> (8 characters).
         /// </para>
         /// </summary>
         public ResourceIdType ResourceIdType
@@ -59,8 +59,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// Identifies the Amazon EFS resources to which the ID preference setting applies, <code>FILE_SYSTEM</code>
-        /// and <code>MOUNT_TARGET</code>.
+        /// Identifies the Amazon EFS resources to which the ID preference setting applies, <c>FILE_SYSTEM</c>
+        /// and <c>MOUNT_TARGET</c>.
         /// </para>
         /// </summary>
         public List<string> Resources

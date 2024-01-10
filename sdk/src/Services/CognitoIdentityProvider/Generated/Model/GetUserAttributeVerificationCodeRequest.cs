@@ -123,9 +123,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the GetUserAttributeVerificationCode API action, Amazon Cognito invokes the
         /// function that is assigned to the <i>custom message</i> trigger. When Amazon Cognito
         /// invokes this function, it passes a JSON payload, which the function receives as input.
-        /// This payload contains a <code>clientMetadata</code> attribute, which provides the
-        /// data that you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode
-        /// request. In your function code in Lambda, you can process the <code>clientMetadata</code>
+        /// This payload contains a <c>clientMetadata</c> attribute, which provides the data that
+        /// you assigned to the ClientMetadata parameter in your GetUserAttributeVerificationCode
+        /// request. In your function code in Lambda, you can process the <c>clientMetadata</c>
         /// value to enhance your workflow for your specific needs.
         /// </para>
         ///  

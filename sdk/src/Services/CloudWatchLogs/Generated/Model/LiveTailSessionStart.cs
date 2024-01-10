@@ -50,8 +50,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LogEventFilterPattern. 
         /// <para>
         /// An optional pattern to filter the results to include only log events that match the
-        /// pattern. For example, a filter pattern of <code>error 404</code> displays only log
-        /// events that include both <code>error</code> and <code>404</code>.
+        /// pattern. For example, a filter pattern of <c>error 404</c> displays only log events
+        /// that include both <c>error</c> and <c>404</c>.
         /// </para>
         ///  
         /// <para>
@@ -94,9 +94,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamNamePrefixes. 
         /// <para>
-        /// If your StartLiveTail operation request included a <code>logStreamNamePrefixes</code>
-        /// parameter that filtered the session to only include log streams that have names that
-        /// start with certain prefixes, these prefixes are listed here.
+        /// If your StartLiveTail operation request included a <c>logStreamNamePrefixes</c> parameter
+        /// that filtered the session to only include log streams that have names that start with
+        /// certain prefixes, these prefixes are listed here.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -115,7 +115,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property LogStreamNames. 
         /// <para>
-        /// If your StartLiveTail operation request included a <code>logStreamNames</code> parameter
+        /// If your StartLiveTail operation request included a <c>logStreamNames</c> parameter
         /// that filtered the session to only include certain log streams, these streams are listed
         /// here.
         /// </para>

@@ -70,8 +70,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Capabilities. 
         /// <para>
-        /// Set of capabilities that the user is allowed to perform in the stage. Default: <code>PUBLISH,
-        /// SUBSCRIBE</code>.
+        /// Set of capabilities that the user is allowed to perform in the stage. Default: <c>PUBLISH,
+        /// SUBSCRIBE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]

@@ -42,7 +42,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property PerformanceInsightsMetric. 
         /// <para>
         /// This field determines the Performance Insights metric to render for the insight. The
-        /// <code>name</code> field refers to a Performance Insights metric. 
+        /// <c>name</c> field refers to a Performance Insights metric. 
         /// </para>
         /// </summary>
         public PerformanceInsightsMetric PerformanceInsightsMetric

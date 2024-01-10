@@ -55,9 +55,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Cpu</code> - The percentage of allocated EC2 compute units that are currently
-        /// in use on the instance. This metric identifies the processing power required to run
-        /// an application on the instance.
+        ///  <c>Cpu</c> - The percentage of allocated EC2 compute units that are currently in
+        /// use on the instance. This metric identifies the processing power required to run an
+        /// application on the instance.
         /// </para>
         ///  
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Memory</code> - The percentage of memory that is currently in use on the instance.
+        ///  <c>Memory</c> - The percentage of memory that is currently in use on the instance.
         /// This metric identifies the amount of memory required to run an application on the
         /// instance.
         /// </para>
@@ -80,30 +80,29 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Memory</code> metric is returned only for resources that have the unified
-        /// CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// The <c>Memory</c> metric is returned only for resources that have the unified CloudWatch
+        /// agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>GPU</code> - The percentage of allocated GPUs that currently run on the instance.
+        ///  <c>GPU</c> - The percentage of allocated GPUs that currently run on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GPU_MEMORY</code> - The percentage of total GPU memory that currently runs
-        /// on the instance.
+        ///  <c>GPU_MEMORY</c> - The percentage of total GPU memory that currently runs on the
+        /// instance.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources
-        /// with the unified CloudWatch Agent installed on them. For more information, see <a
-        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+        /// The <c>GPU</c> and <c>GPU_MEMORY</c> metrics are only returned for resources with
+        /// the unified CloudWatch Agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
         /// NVIDIA GPU utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>EBS_READ_OPS_PER_SECOND</code> - The completed read operations from all EBS
-        /// volumes attached to the instance in a specified period of time.
+        ///  <c>EBS_READ_OPS_PER_SECOND</c> - The completed read operations from all EBS volumes
+        /// attached to the instance in a specified period of time.
         /// </para>
         ///  
         /// <para>
@@ -111,8 +110,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS_WRITE_OPS_PER_SECOND</code> - The completed write operations to all EBS
-        /// volumes attached to the instance in a specified period of time.
+        ///  <c>EBS_WRITE_OPS_PER_SECOND</c> - The completed write operations to all EBS volumes
+        /// attached to the instance in a specified period of time.
         /// </para>
         ///  
         /// <para>
@@ -120,7 +119,16 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS_READ_BYTES_PER_SECOND</code> - The bytes read from all EBS volumes attached
+        ///  <c>EBS_READ_BYTES_PER_SECOND</c> - The bytes read from all EBS volumes attached to
+        /// the instance in a specified period of time.
+        /// </para>
+        ///  
+        /// <para>
+        /// Unit: Bytes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>EBS_WRITE_BYTES_PER_SECOND</c> - The bytes written to all EBS volumes attached
         /// to the instance in a specified period of time.
         /// </para>
         ///  
@@ -129,80 +137,71 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS_WRITE_BYTES_PER_SECOND</code> - The bytes written to all EBS volumes attached
-        /// to the instance in a specified period of time.
-        /// </para>
-        ///  
-        /// <para>
-        /// Unit: Bytes
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>DISK_READ_OPS_PER_SECOND</code> - The completed read operations from all instance
+        ///  <c>DISK_READ_OPS_PER_SECOND</c> - The completed read operations from all instance
         /// store volumes available to the instance in a specified period of time.
         /// </para>
         ///  
         /// <para>
-        /// If there are no instance store volumes, either the value is <code>0</code> or the
-        /// metric is not reported.
+        /// If there are no instance store volumes, either the value is <c>0</c> or the metric
+        /// is not reported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISK_WRITE_OPS_PER_SECOND</code> - The completed write operations from all
-        /// instance store volumes available to the instance in a specified period of time.
+        ///  <c>DISK_WRITE_OPS_PER_SECOND</c> - The completed write operations from all instance
+        /// store volumes available to the instance in a specified period of time.
         /// </para>
         ///  
         /// <para>
-        /// If there are no instance store volumes, either the value is <code>0</code> or the
-        /// metric is not reported.
+        /// If there are no instance store volumes, either the value is <c>0</c> or the metric
+        /// is not reported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISK_READ_BYTES_PER_SECOND</code> - The bytes read from all instance store
-        /// volumes available to the instance. This metric is used to determine the volume of
-        /// the data the application reads from the disk of the instance. This can be used to
-        /// determine the speed of the application.
+        ///  <c>DISK_READ_BYTES_PER_SECOND</c> - The bytes read from all instance store volumes
+        /// available to the instance. This metric is used to determine the volume of the data
+        /// the application reads from the disk of the instance. This can be used to determine
+        /// the speed of the application.
         /// </para>
         ///  
         /// <para>
-        /// If there are no instance store volumes, either the value is <code>0</code> or the
-        /// metric is not reported.
+        /// If there are no instance store volumes, either the value is <c>0</c> or the metric
+        /// is not reported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISK_WRITE_BYTES_PER_SECOND</code> - The bytes written to all instance store
-        /// volumes available to the instance. This metric is used to determine the volume of
-        /// the data the application writes onto the disk of the instance. This can be used to
-        /// determine the speed of the application.
+        ///  <c>DISK_WRITE_BYTES_PER_SECOND</c> - The bytes written to all instance store volumes
+        /// available to the instance. This metric is used to determine the volume of the data
+        /// the application writes onto the disk of the instance. This can be used to determine
+        /// the speed of the application.
         /// </para>
         ///  
         /// <para>
-        /// If there are no instance store volumes, either the value is <code>0</code> or the
-        /// metric is not reported.
+        /// If there are no instance store volumes, either the value is <c>0</c> or the metric
+        /// is not reported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NETWORK_IN_BYTES_PER_SECOND</code> - The number of bytes received by the instance
+        ///  <c>NETWORK_IN_BYTES_PER_SECOND</c> - The number of bytes received by the instance
         /// on all network interfaces. This metric identifies the volume of incoming network traffic
         /// to a single instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NETWORK_OUT_BYTES_PER_SECOND</code> - The number of bytes sent out by the instance
+        ///  <c>NETWORK_OUT_BYTES_PER_SECOND</c> - The number of bytes sent out by the instance
         /// on all network interfaces. This metric identifies the volume of outgoing network traffic
         /// from a single instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NETWORK_PACKETS_IN_PER_SECOND</code> - The number of packets received by the
-        /// instance on all network interfaces. This metric identifies the volume of incoming
-        /// traffic in terms of the number of packets on a single instance.
+        ///  <c>NETWORK_PACKETS_IN_PER_SECOND</c> - The number of packets received by the instance
+        /// on all network interfaces. This metric identifies the volume of incoming traffic in
+        /// terms of the number of packets on a single instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NETWORK_PACKETS_OUT_PER_SECOND</code> - The number of packets sent out by the
-        /// instance on all network interfaces. This metric identifies the volume of outgoing
-        /// traffic in terms of the number of packets on a single instance.
+        ///  <c>NETWORK_PACKETS_OUT_PER_SECOND</c> - The number of packets sent out by the instance
+        /// on all network interfaces. This metric identifies the volume of outgoing traffic in
+        /// terms of the number of packets on a single instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -226,14 +225,14 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// The Compute Optimizer API, Command Line Interface (CLI), and SDKs return utilization
-        /// metrics using only the <code>Maximum</code> statistic, which is the highest value
-        /// observed during the specified period.
+        /// metrics using only the <c>Maximum</c> statistic, which is the highest value observed
+        /// during the specified period.
         /// </para>
         ///  
         /// <para>
         /// The Compute Optimizer console displays graphs for some utilization metrics using the
-        /// <code>Average</code> statistic, which is the value of <code>Sum</code> / <code>SampleCount</code>
-        /// during the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing
+        /// <c>Average</c> statistic, which is the value of <c>Sum</c> / <c>SampleCount</c> during
+        /// the specified period. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/viewing-recommendations.html">Viewing
         /// resource recommendations</a> in the <i>Compute Optimizer User Guide</i>. You can also
         /// get averaged utilization metric data for your resources using Amazon CloudWatch. For
         /// more information, see the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon

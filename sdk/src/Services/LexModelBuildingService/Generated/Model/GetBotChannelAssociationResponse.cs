@@ -142,8 +142,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason that
-        /// it failed to create the association.
+        /// If <c>status</c> is <c>FAILED</c>, Amazon Lex provides the reason that it failed to
+        /// create the association.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -184,16 +184,16 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code> - The channel has been created and is ready for use.
+        ///  <c>CREATED</c> - The channel has been created and is ready for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - Channel creation is in progress.
+        ///  <c>IN_PROGRESS</c> - Channel creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - There was an error creating the channel. For information about
-        /// the reason for the failure, see the <code>failureReason</code> field.
+        ///  <c>FAILED</c> - There was an error creating the channel. For information about the
+        /// reason for the failure, see the <c>failureReason</c> field.
         /// </para>
         ///  </li> </ul>
         /// </summary>

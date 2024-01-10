@@ -50,8 +50,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
-        /// or <code>Arn</code>.
+        /// Conditional: You must specify either <c>TypeName</c> and <c>Type</c>, or <c>Arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -79,17 +78,17 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LIVE</code>: The extension version is registered and can be used in CloudFormation
+        ///  <c>LIVE</c>: The extension version is registered and can be used in CloudFormation
         /// operations, dependent on its provisioning behavior and visibility scope.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEPRECATED</code>: The extension version has been deregistered and can no longer
+        ///  <c>DEPRECATED</c>: The extension version has been deregistered and can no longer
         /// be used in CloudFormation operations.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>LIVE</code>.
+        /// The default is <c>LIVE</c>.
         /// </para>
         /// </summary>
         public DeprecatedStatus DeprecatedStatus
@@ -108,9 +107,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned with a single call. If the number of
-        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
-        /// value that you can assign to the <code>NextToken</code> request parameter to get the
-        /// next set of results.
+        /// available results exceeds this maximum, the response includes a <c>NextToken</c> value
+        /// that you can assign to the <c>NextToken</c> request parameter to get the next set
+        /// of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -130,10 +129,10 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request didn't return all of the remaining results, the
-        /// response object's <code>NextToken</code> parameter value is set to a token. To retrieve
+        /// response object's <c>NextToken</c> parameter value is set to a token. To retrieve
         /// the next set of results, call this action again and assign that token to the request
-        /// object's <code>NextToken</code> parameter. If there are no remaining results, the
-        /// previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+        /// object's <c>NextToken</c> parameter. If there are no remaining results, the previous
+        /// response object's <c>NextToken</c> parameter is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -179,8 +178,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
-        /// or <code>Arn</code>.
+        /// Conditional: You must specify either <c>TypeName</c> and <c>Type</c>, or <c>Arn</c>.
         /// </para>
         /// </summary>
         public RegistryType Type
@@ -202,8 +200,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>TypeName</code> and <code>Type</code>,
-        /// or <code>Arn</code>.
+        /// Conditional: You must specify either <c>TypeName</c> and <c>Type</c>, or <c>Arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]

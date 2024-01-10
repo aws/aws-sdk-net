@@ -127,7 +127,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyArn. 
         /// <para>
-        /// The <code>KeyARN</code> of the wrapped key.
+        /// The <c>KeyARN</c> of the wrapped key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

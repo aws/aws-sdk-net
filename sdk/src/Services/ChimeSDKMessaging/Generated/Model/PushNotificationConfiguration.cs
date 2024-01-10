@@ -78,8 +78,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Enum value that indicates the type of the push notification for a message. <code>DEFAULT</code>:
-        /// Normal mobile push notification. <code>VOIP</code>: VOIP mobile push notification.
+        /// Enum value that indicates the type of the push notification for a message. <c>DEFAULT</c>:
+        /// Normal mobile push notification. <c>VOIP</c>: VOIP mobile push notification.
         /// </para>
         /// </summary>
         public PushNotificationType Type

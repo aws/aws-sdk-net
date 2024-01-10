@@ -50,11 +50,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The user has permissions to use the API operations.
+        ///  <c>ENABLED</c> – The user has permissions to use the API operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The user does not have permissions to use any API operations.
+        ///  <c>DISABLED</c> – The user does not have permissions to use any API operations.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -154,17 +154,16 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission
+        ///  <c>ADDITION_IN_PROGRESS</c> – The user is currently being added to the permission
         /// group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission
-        /// group.
+        ///  <c>ADDITION_SUCCESS</c> – The user is successfully added to the permission group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission
+        ///  <c>REMOVAL_IN_PROGRESS</c> – The user is currently being removed from the permission
         /// group.
         /// </para>
         ///  </li> </ul>
@@ -188,15 +187,15 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> – The user creation is in progress.
+        ///  <c>CREATING</c> – The user creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The user is created and is currently active.
+        ///  <c>ENABLED</c> – The user is created and is currently active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The user is currently inactive.
+        ///  <c>DISABLED</c> – The user is currently inactive.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -219,13 +218,12 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUPER_USER</code> – A user with permission to all the functionality and data
-        /// in FinSpace.
+        ///  <c>SUPER_USER</c> – A user with permission to all the functionality and data in FinSpace.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are
-        /// assigned permissions by adding them to a permission group.
+        ///  <c>APP_USER</c> – A user with specific permissions in FinSpace. The users are assigned
+        /// permissions by adding them to a permission group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

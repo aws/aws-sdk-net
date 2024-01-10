@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for the <code>TagResource</code> operation.
+    /// The response object for the <c>TagResource</c> operation.
     /// </summary>
     public partial class TagResourceResponse : AmazonWebServiceResponse
     {

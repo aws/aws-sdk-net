@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains a reference to a <code>Statement</code> element in a policy document that
-    /// determines the result of the simulation.
+    /// Contains a reference to a <c>Statement</c> element in a policy document that determines
+    /// the result of the simulation.
     /// 
     ///  
     /// <para>
-    /// This data type is used by the <code>MatchedStatements</code> member of the <code>
-    /// <a>EvaluationResult</a> </code> type.
+    /// This data type is used by the <c>MatchedStatements</c> member of the <c> <a>EvaluationResult</a>
+    /// </c> type.
     /// </para>
     /// </summary>
     public partial class Statement
@@ -48,7 +48,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property EndPosition. 
         /// <para>
-        /// The row and column of the end of a <code>Statement</code> in an IAM policy.
+        /// The row and column of the end of a <c>Statement</c> in an IAM policy.
         /// </para>
         /// </summary>
         public Position EndPosition
@@ -102,7 +102,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property StartPosition. 
         /// <para>
-        /// The row and column of the beginning of the <code>Statement</code> in an IAM policy.
+        /// The row and column of the beginning of the <c>Statement</c> in an IAM policy.
         /// </para>
         /// </summary>
         public Position StartPosition

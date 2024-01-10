@@ -38,8 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If <code>true</code>, detailed monitoring is enabled. Otherwise, basic monitoring
-        /// is enabled.
+        /// If <c>true</c>, detailed monitoring is enabled. Otherwise, basic monitoring is enabled.
         /// </para>
         /// </summary>
         public bool Enabled

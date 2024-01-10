@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateType operation.
-    /// Creates a <code>Type</code> object.
+    /// Creates a <c>Type</c> object.
     /// </summary>
     public partial class CreateTypeRequest : AmazonAppSyncRequest
     {

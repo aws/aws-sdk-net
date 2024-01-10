@@ -46,7 +46,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>8080</code> 
+        /// Default: <c>8080</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=51200)]

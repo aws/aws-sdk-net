@@ -58,29 +58,28 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        ///  Specifies the type audio stream. This should reflect the <code>OutputFormat</code>
-        /// parameter in your request. 
+        ///  Specifies the type audio stream. This should reflect the <c>OutputFormat</c> parameter
+        /// in your request. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  If you request <code>mp3</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-        /// returned is audio/mpeg. 
+        ///  If you request <c>mp3</c> as the <c>OutputFormat</c>, the <c>ContentType</c> returned
+        /// is audio/mpeg. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If you request <code>ogg_vorbis</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
+        ///  If you request <c>ogg_vorbis</c> as the <c>OutputFormat</c>, the <c>ContentType</c>
         /// returned is audio/ogg. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If you request <code>pcm</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-        /// returned is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format.
-        /// 
+        ///  If you request <c>pcm</c> as the <c>OutputFormat</c>, the <c>ContentType</c> returned
+        /// is audio/pcm in a signed 16-bit, 1 channel (mono), little-endian format. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you request <code>json</code> as the <code>OutputFormat</code>, the <code>ContentType</code>
-        /// returned is application/x-json-stream.
+        /// If you request <c>json</c> as the <c>OutputFormat</c>, the <c>ContentType</c> returned
+        /// is application/x-json-stream.
         /// </para>
         ///  </li> </ul> 
         /// <para>

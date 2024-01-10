@@ -121,7 +121,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property GrantedEntity. 
         /// <para>
-        /// The granted entity to be updated as part of the <code>UpdateSubscriptionGrantStatus</code>
+        /// The granted entity to be updated as part of the <c>UpdateSubscriptionGrantStatus</c>
         /// action.
         /// </para>
         /// </summary>
@@ -160,8 +160,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status to be updated as part of the <code>UpdateSubscriptionGrantStatus</code>
-        /// action.
+        /// The status to be updated as part of the <c>UpdateSubscriptionGrantStatus</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

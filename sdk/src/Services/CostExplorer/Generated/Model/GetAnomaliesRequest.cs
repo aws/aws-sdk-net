@@ -31,8 +31,8 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetAnomalies operation.
     /// Retrieves all of the cost anomalies detected on your account during the time period
-    /// that's specified by the <code>DateInterval</code> object. Anomalies are available
-    /// for up to 90 days.
+    /// that's specified by the <c>DateInterval</c> object. Anomalies are available for up
+    /// to 90 days.
     /// </summary>
     public partial class GetAnomaliesRequest : AmazonCostExplorerRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property DateInterval. 
         /// <para>
         /// Assigns the start and end dates for retrieving cost anomalies. The returned anomaly
-        /// object will have an <code>AnomalyEndDate</code> in the specified time range. 
+        /// object will have an <c>AnomalyEndDate</c> in the specified time range. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -144,8 +144,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property TotalImpact. 
         /// <para>
         /// Filters anomaly results by the total impact field on the anomaly object. For example,
-        /// you can filter anomalies <code>GREATER_THAN 200.00</code> to retrieve anomalies, with
-        /// an estimated dollar impact greater than 200. 
+        /// you can filter anomalies <c>GREATER_THAN 200.00</c> to retrieve anomalies, with an
+        /// estimated dollar impact greater than 200. 
         /// </para>
         /// </summary>
         public TotalImpactFilter TotalImpact

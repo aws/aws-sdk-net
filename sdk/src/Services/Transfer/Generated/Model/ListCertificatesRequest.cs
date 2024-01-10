@@ -31,8 +31,8 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the ListCertificates operation.
     /// Returns a list of the current certificates that have been imported into Transfer Family.
-    /// If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code>
-    /// parameter. If you ran the command previously and received a value for the <code>NextToken</code>
+    /// If you want to limit the results to a certain number, supply a value for the <c>MaxResults</c>
+    /// parameter. If you ran the command previously and received a value for the <c>NextToken</c>
     /// parameter, you can supply that value to continue listing certificates from where you
     /// left off.
     /// </summary>
@@ -63,10 +63,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you can get additional results from the <code>ListCertificates</code> call, a
-        /// <code>NextToken</code> parameter is returned in the output. You can then pass in a
-        /// subsequent command to the <code>NextToken</code> parameter to continue listing additional
-        /// certificates.
+        /// When you can get additional results from the <c>ListCertificates</c> call, a <c>NextToken</c>
+        /// parameter is returned in the output. You can then pass in a subsequent command to
+        /// the <c>NextToken</c> parameter to continue listing additional certificates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

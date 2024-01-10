@@ -45,10 +45,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The type of operation: <code>CREATE</code>, <code>UPDATE</code>, or <code>DELETE</code>.
-        /// Create and delete operations affect only the specified stack instances that are associated
-        /// with the specified stack set. Update operations affect both the stack set itself and
-        /// <i>all</i> associated stack set instances.
+        /// The type of operation: <c>CREATE</c>, <c>UPDATE</c>, or <c>DELETE</c>. Create and
+        /// delete operations affect only the specified stack instances that are associated with
+        /// the specified stack set. Update operations affect both the stack set itself and <i>all</i>
+        /// associated stack set instances.
         /// </para>
         /// </summary>
         public StackSetOperationAction Action
@@ -155,36 +155,35 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The operation exceeded the specified failure tolerance. The
-        /// failure tolerance value that you've set for an operation is applied for each Region
-        /// during stack create and update operations. If the number of failed stacks within a
-        /// Region exceeds the failure tolerance, the status of the operation in the Region is
-        /// set to <code>FAILED</code>. This in turn sets the status of the operation as a whole
-        /// to <code>FAILED</code>, and CloudFormation cancels the operation in any remaining
-        /// Regions.
+        ///  <c>FAILED</c>: The operation exceeded the specified failure tolerance. The failure
+        /// tolerance value that you've set for an operation is applied for each Region during
+        /// stack create and update operations. If the number of failed stacks within a Region
+        /// exceeds the failure tolerance, the status of the operation in the Region is set to
+        /// <c>FAILED</c>. This in turn sets the status of the operation as a whole to <c>FAILED</c>,
+        /// and CloudFormation cancels the operation in any remaining Regions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUEUED</code>: [Service-managed permissions] For automatic deployments that
-        /// require a sequence of operations, the operation is queued to be performed. For more
-        /// information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
+        ///  <c>QUEUED</c>: [Service-managed permissions] For automatic deployments that require
+        /// a sequence of operations, the operation is queued to be performed. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-status-codes">stack
         /// set operation status codes</a> in the CloudFormation User Guide.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code>: The operation is currently being performed.
+        ///  <c>RUNNING</c>: The operation is currently being performed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code>: The user has canceled the operation.
+        ///  <c>STOPPED</c>: The user has canceled the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPING</code>: The operation is in the process of stopping, at user request.
+        ///  <c>STOPPING</c>: The operation is in the process of stopping, at user request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code>: The operation completed creating or updating all the specified
+        ///  <c>SUCCEEDED</c>: The operation completed creating or updating all the specified
         /// stacks without exceeding the failure tolerance for the operation.
         /// </para>
         ///  </li> </ul>

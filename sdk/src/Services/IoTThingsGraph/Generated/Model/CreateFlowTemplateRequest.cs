@@ -66,7 +66,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The workflow <code>DefinitionDocument</code>.
+        /// The workflow <c>DefinitionDocument</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

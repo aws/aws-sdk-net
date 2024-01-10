@@ -29,15 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Makes it possible to control how your Medical Scribe job is processed using a <code>MedicalScribeSettings</code>
-    /// object. Specify <code>ChannelIdentification</code> if <code>ChannelDefinitions</code>
-    /// are set. Enabled <code>ShowSpeakerLabels</code> if <code>ChannelIdentification</code>
-    /// and <code>ChannelDefinitions</code> are not set. One and only one of <code>ChannelIdentification</code>
-    /// and <code>ShowSpeakerLabels</code> must be set. If <code>ShowSpeakerLabels</code>
-    /// is set, <code>MaxSpeakerLabels</code> must also be set. Use <code>Settings</code>
-    /// to specify a vocabulary or vocabulary filter or both using <code>VocabularyName</code>,
-    /// <code>VocabularyFilterName</code>. <code>VocabularyFilterMethod</code> must be specified
-    /// if <code>VocabularyFilterName</code> is set.
+    /// Makes it possible to control how your Medical Scribe job is processed using a <c>MedicalScribeSettings</c>
+    /// object. Specify <c>ChannelIdentification</c> if <c>ChannelDefinitions</c> are set.
+    /// Enabled <c>ShowSpeakerLabels</c> if <c>ChannelIdentification</c> and <c>ChannelDefinitions</c>
+    /// are not set. One and only one of <c>ChannelIdentification</c> and <c>ShowSpeakerLabels</c>
+    /// must be set. If <c>ShowSpeakerLabels</c> is set, <c>MaxSpeakerLabels</c> must also
+    /// be set. Use <c>Settings</c> to specify a vocabulary or vocabulary filter or both using
+    /// <c>VocabularyName</c>, <c>VocabularyFilterName</c>. <c>VocabularyFilterMethod</c>
+    /// must be specified if <c>VocabularyFilterName</c> is set.
     /// </summary>
     public partial class MedicalScribeSettings
     {
@@ -88,7 +87,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
+        /// If you specify the <c>MaxSpeakerLabels</c> field, you must set the <c>ShowSpeakerLabels</c>
         /// field to true.
         /// </para>
         /// </summary>
@@ -113,8 +112,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
-        /// <code>MaxSpeakerLabels</code>.
+        /// If you enable <c>ShowSpeakerLabels</c> in your request, you must also include <c>MaxSpeakerLabels</c>.
         /// </para>
         ///  
         /// <para>
@@ -141,15 +139,15 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// To replace words with <code>***</code>, choose <code>mask</code>.
+        /// To replace words with <c>***</c>, choose <c>mask</c>.
         /// </para>
         ///  
         /// <para>
-        /// To delete words, choose <code>remove</code>.
+        /// To delete words, choose <c>remove</c>.
         /// </para>
         ///  
         /// <para>
-        /// To flag words without changing them, choose <code>tag</code>.
+        /// To flag words without changing them, choose <c>tag</c>.
         /// </para>
         /// </summary>
         public VocabularyFilterMethod VocabularyFilterMethod
@@ -172,8 +170,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>VocabularyFilterName</code> in your request, you must
-        /// also include <code>VocabularyFilterMethod</code>.
+        /// Note that if you include <c>VocabularyFilterName</c> in your request, you must also
+        /// include <c>VocabularyFilterMethod</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

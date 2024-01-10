@@ -49,9 +49,9 @@ namespace Amazon.ManagedGrafana.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// While both <code>prefixListIds</code> and <code>vpceIds</code> are required, you can
-    /// pass in an empty array of strings for either parameter if you do not want to allow
-    /// any of that type.
+    /// While both <c>prefixListIds</c> and <c>vpceIds</c> are required, you can pass in an
+    /// empty array of strings for either parameter if you do not want to allow any of that
+    /// type.
     /// </para>
     ///  
     /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        /// Prefix list IDs have the format <code>pl-<i>1a2b3c4d</i> </code>.
+        /// Prefix list IDs have the format <c>pl-<i>1a2b3c4d</i> </c>.
         /// </para>
         ///  
         /// <para>
@@ -101,13 +101,13 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property VpceIds. 
         /// <para>
         /// An array of Amazon VPC endpoint IDs for the workspace. You can create VPC endpoints
-        /// to your Amazon Managed Grafana workspace for access from within a VPC. If a <code>NetworkAccessConfiguration</code>
+        /// to your Amazon Managed Grafana workspace for access from within a VPC. If a <c>NetworkAccessConfiguration</c>
         /// is specified then only VPC endpoints specified here are allowed to access the workspace.
         /// If you pass in an empty array of strings, then no VPCs are allowed to access the workspace.
         /// </para>
         ///  
         /// <para>
-        /// VPC endpoint IDs have the format <code>vpce-<i>1a2b3c4d</i> </code>.
+        /// VPC endpoint IDs have the format <c>vpce-<i>1a2b3c4d</i> </c>.
         /// </para>
         ///  
         /// <para>
@@ -117,8 +117,8 @@ namespace Amazon.ManagedGrafana.Model
         ///  <note> 
         /// <para>
         /// The only VPC endpoints that can be specified here are interface VPC endpoints for
-        /// Grafana workspaces (using the <code>com.amazonaws.[region].grafana-workspace</code>
-        /// service endpoint). Other VPC endpoints are ignored.
+        /// Grafana workspaces (using the <c>com.amazonaws.[region].grafana-workspace</c> service
+        /// endpoint). Other VPC endpoints are ignored.
         /// </para>
         ///  </note>
         /// </summary>

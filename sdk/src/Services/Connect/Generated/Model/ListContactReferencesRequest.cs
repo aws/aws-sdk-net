@@ -34,8 +34,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// For the specified <code>referenceTypes</code>, returns a list of references associated
-    /// with the contact. 
+    /// For the specified <c>referenceTypes</c>, returns a list of references associated with
+    /// the contact. 
     /// </para>
     /// </summary>
     public partial class ListContactReferencesRequest : AmazonConnectRequest

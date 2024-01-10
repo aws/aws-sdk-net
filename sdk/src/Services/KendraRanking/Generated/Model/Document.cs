@@ -144,8 +144,8 @@ namespace Amazon.KendraRanking.Model
         /// Gets and sets the property TokenizedBody. 
         /// <para>
         /// The body text of the search service's document represented as a list of tokens or
-        /// words. You must choose to provide <code>Body</code> or <code>TokenizedBody</code>.
-        /// You cannot provide both.
+        /// words. You must choose to provide <c>Body</c> or <c>TokenizedBody</c>. You cannot
+        /// provide both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -165,8 +165,8 @@ namespace Amazon.KendraRanking.Model
         /// Gets and sets the property TokenizedTitle. 
         /// <para>
         /// The title of the search service's document represented as a list of tokens or words.
-        /// You must choose to provide <code>Title</code> or <code>TokenizedTitle</code>. You
-        /// cannot provide both.
+        /// You must choose to provide <c>Title</c> or <c>TokenizedTitle</c>. You cannot provide
+        /// both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -106,8 +106,7 @@ namespace Amazon.InternetMonitor.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of whether Internet Monitor creates a health event based on a threshold
-        /// percentage set for a local health score. The status can be <code>ENABLED</code> or
-        /// <code>DISABLED</code>.
+        /// percentage set for a local health score. The status can be <c>ENABLED</c> or <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public LocalHealthEventsConfigStatus Status

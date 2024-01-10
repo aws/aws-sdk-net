@@ -87,7 +87,7 @@ namespace Amazon.IoTAnalytics.Model
         ///  
         /// <para>
         /// IoT Analytics updates this value at most once per minute for one channel. Hence, the
-        /// <code>lastMessageArrivalTime</code> value is an approximation.
+        /// <c>lastMessageArrivalTime</c> value is an approximation.
         /// </para>
         ///  
         /// <para>
@@ -183,9 +183,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Where channel data is stored. You can choose one of <code>serviceManagedS3</code>
-        /// or <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
-        /// You can't change this storage option after the channel is created.
+        /// Where channel data is stored. You can choose one of <c>serviceManagedS3</c> or <c>customerManagedS3</c>
+        /// storage. If not specified, the default is <c>serviceManagedS3</c>. You can't change
+        /// this storage option after the channel is created.
         /// </para>
         /// </summary>
         public ChannelStorage Storage

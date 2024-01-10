@@ -34,8 +34,8 @@ namespace Amazon.Transfer.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If the specified workflow ID cannot be found, <code>ListExecutions</code> returns
-    /// a <code>ResourceNotFound</code> exception.
+    /// If the specified workflow ID cannot be found, <c>ListExecutions</c> returns a <c>ResourceNotFound</c>
+    /// exception.
     /// </para>
     ///  </note>
     /// </summary>
@@ -67,29 +67,29 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  <code>ListExecutions</code> returns the <code>NextToken</code> parameter in the output.
-        /// You can then pass the <code>NextToken</code> parameter in a subsequent command to
-        /// continue listing additional executions.
+        ///  <c>ListExecutions</c> returns the <c>NextToken</c> parameter in the output. You can
+        /// then pass the <c>NextToken</c> parameter in a subsequent command to continue listing
+        /// additional executions.
         /// </para>
         ///  
         /// <para>
         ///  This is useful for pagination, for instance. If you have 100 executions for a workflow,
-        /// you might only want to list first 10. If so, call the API by specifying the <code>max-results</code>:
+        /// you might only want to list first 10. If so, call the API by specifying the <c>max-results</c>:
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws transfer list-executions --max-results 10</code> 
+        ///  <c>aws transfer list-executions --max-results 10</c> 
         /// </para>
         ///  
         /// <para>
-        ///  This returns details for the first 10 executions, as well as the pointer (<code>NextToken</code>)
-        /// to the eleventh execution. You can now call the API again, supplying the <code>NextToken</code>
+        ///  This returns details for the first 10 executions, as well as the pointer (<c>NextToken</c>)
+        /// to the eleventh execution. You can now call the API again, supplying the <c>NextToken</c>
         /// value you received: 
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</code>
+        ///  <c>aws transfer list-executions --max-results 10 --next-token $somePointerReturnedFromPreviousListResult</c>
         /// 
         /// </para>
         ///  

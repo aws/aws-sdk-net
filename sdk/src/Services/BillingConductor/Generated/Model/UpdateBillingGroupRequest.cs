@@ -44,7 +44,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AccountGrouping. 
         /// <para>
-        /// Specifies if the billing group has automatic account association (<code>AutoAssociate</code>)
+        /// Specifies if the billing group has automatic account association (<c>AutoAssociate</c>)
         /// enabled.
         /// </para>
         /// </summary>

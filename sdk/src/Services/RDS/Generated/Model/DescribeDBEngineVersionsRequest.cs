@@ -107,67 +107,67 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora-mysql</code> 
+        ///  <c>aurora-mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql</code> 
+        ///  <c>aurora-postgresql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom-oracle-ee</code> 
+        ///  <c>custom-oracle-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-ae</code> 
+        ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-se</code> 
+        ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb</code> 
+        ///  <c>mariadb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mysql</code> 
+        ///  <c>mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee</code> 
+        ///  <c>oracle-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-cdb</code> 
+        ///  <c>oracle-ee-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2</code> 
+        ///  <c>oracle-se2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-cdb</code> 
+        ///  <c>oracle-se2-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres</code> 
+        ///  <c>postgres</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee</code> 
+        ///  <c>sqlserver-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se</code> 
+        ///  <c>sqlserver-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex</code> 
+        ///  <c>sqlserver-ex</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web</code> 
+        ///  <c>sqlserver-web</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -190,7 +190,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.1.49</code> 
+        /// Example: <c>5.1.49</c> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -216,59 +216,58 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db-parameter-group-family</code> - Accepts parameter groups family names. The
-        /// results list only includes information about the DB engine versions for these parameter
-        /// group families.
+        ///  <c>db-parameter-group-family</c> - Accepts parameter groups family names. The results
+        /// list only includes information about the DB engine versions for these parameter group
+        /// families.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>engine</code> - Accepts engine names. The results list only includes information
+        ///  <c>engine</c> - Accepts engine names. The results list only includes information
         /// about the DB engine versions for these engines.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>engine-mode</code> - Accepts DB engine modes. The results list only includes
-        /// information about the DB engine versions for these engine modes. Valid DB engine modes
-        /// are the following:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>global</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>multimaster</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>parallelquery</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>provisioned</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>serverless</code> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <code>engine-version</code> - Accepts engine versions. The results list only includes
-        /// information about the DB engine versions for these engine versions.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>status</code> - Accepts engine version statuses. The results list only includes
-        /// information about the DB engine versions for these statuses. Valid statuses are the
+        ///  <c>engine-mode</c> - Accepts DB engine modes. The results list only includes information
+        /// about the DB engine versions for these engine modes. Valid DB engine modes are the
         /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>available</code> 
+        ///  <c>global</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deprecated</code> 
+        ///  <c>multimaster</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>parallelquery</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>provisioned</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>serverless</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>engine-version</c> - Accepts engine versions. The results list only includes information
+        /// about the DB engine versions for these engine versions.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>status</c> - Accepts engine version statuses. The results list only includes information
+        /// about the DB engine versions for these statuses. Valid statuses are the following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>available</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>deprecated</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -310,9 +309,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is enabled and the requested engine supports the <code>CharacterSetName</code>
-        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// character sets for each engine version.
+        /// If this parameter is enabled and the requested engine supports the <c>CharacterSetName</c>
+        /// parameter for <c>CreateDBInstance</c>, the response includes a list of supported character
+        /// sets for each engine version.
         /// </para>
         ///  
         /// <para>
@@ -339,9 +338,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is enabled and the requested engine supports the <code>TimeZone</code>
-        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// time zones for each engine version.
+        /// If this parameter is enabled and the requested engine supports the <c>TimeZone</c>
+        /// parameter for <c>CreateDBInstance</c>, the response includes a list of supported time
+        /// zones for each engine version.
         /// </para>
         ///  
         /// <para>
@@ -366,7 +365,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -384,7 +383,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
+        /// The maximum number of records to include in the response. If more than the <c>MaxRecords</c>
         /// value is available, a pagination token called a marker is included in the response
         /// so you can retrieve the remaining results.
         /// </para>

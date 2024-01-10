@@ -40,8 +40,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property LegalHoldId. 
         /// <para>
-        /// This is the ID required to use <code>GetLegalHold</code>. This unique ID is associated
-        /// with a specific legal hold.
+        /// This is the ID required to use <c>GetLegalHold</c>. This unique ID is associated with
+        /// a specific legal hold.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

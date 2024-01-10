@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
     /// <para>
     /// The API can take up to 10 minutes to configure this setting. During this time, if
     /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
-    /// the response will be <code>block-new-sharing</code>. When the API has completed the
-    /// configuration, the response will be <code>unblocked</code>.
+    /// the response will be <c>block-new-sharing</c>. When the API has completed the configuration,
+    /// the response will be <c>unblocked</c>.
     /// </para>
     ///  
     /// <para>

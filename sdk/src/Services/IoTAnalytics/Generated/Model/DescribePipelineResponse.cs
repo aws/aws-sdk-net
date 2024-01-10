@@ -38,7 +38,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Pipeline. 
         /// <para>
-        /// A <code>Pipeline</code> object that contains information about the pipeline.
+        /// A <c>Pipeline</c> object that contains information about the pipeline.
         /// </para>
         /// </summary>
         public Pipeline Pipeline

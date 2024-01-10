@@ -39,8 +39,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// Contains a <code>loadId</code> name-value pair that provides an identifier for the
-        /// load operation.
+        /// Contains a <c>loadId</c> name-value pair that provides an identifier for the load
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

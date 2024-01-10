@@ -30,8 +30,8 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// An access entry allows an IAM principal (user or role) to access your cluster. Access
-    /// entries can replace the need to maintain the <code>aws-auth</code> <code>ConfigMap</code>
-    /// for authentication. For more information about access entries, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html">Access
+    /// entries can replace the need to maintain the <c>aws-auth</c> <c>ConfigMap</c> for
+    /// authentication. For more information about access entries, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/access-entries.html">Access
     /// entries</a> in the <i>Amazon EKS User Guide</i>.
     /// </summary>
     public partial class AccessEntry
@@ -103,9 +103,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property KubernetesGroups. 
         /// <para>
-        /// A <code>name</code> that you've specified in a Kubernetes <code>RoleBinding</code>
-        /// or <code>ClusterRoleBinding</code> object so that Kubernetes authorizes the <code>principalARN</code>
-        /// access to cluster objects.
+        /// A <c>name</c> that you've specified in a Kubernetes <c>RoleBinding</c> or <c>ClusterRoleBinding</c>
+        /// object so that Kubernetes authorizes the <c>principalARN</c> access to cluster objects.
         /// </para>
         /// </summary>
         public List<string> KubernetesGroups
@@ -146,11 +145,11 @@ namespace Amazon.EKS.Model
         /// delete the access entry with an ARN for an IAM principal that you delete. If you don't
         /// delete the access entry and ever recreate the IAM principal, even if it has the same
         /// ARN, the access entry won't work. This is because even though the ARN is the same
-        /// for the recreated IAM principal, the <code>roleID</code> or <code>userID</code> (you
-        /// can see this with the Security Token Service <code>GetCallerIdentity</code> API) is
-        /// different for the recreated IAM principal than it was for the original IAM principal.
-        /// Even though you don't see the IAM principal's <code>roleID</code> or <code>userID</code>
-        /// for an access entry, Amazon EKS stores it with the access entry.
+        /// for the recreated IAM principal, the <c>roleID</c> or <c>userID</c> (you can see this
+        /// with the Security Token Service <c>GetCallerIdentity</c> API) is different for the
+        /// recreated IAM principal than it was for the original IAM principal. Even though you
+        /// don't see the IAM principal's <c>roleID</c> or <c>userID</c> for an access entry,
+        /// Amazon EKS stores it with the access entry.
         /// </para>
         /// </summary>
         public string PrincipalArn
@@ -207,7 +206,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The <code>name</code> of a user that can authenticate to your cluster.
+        /// The <c>name</c> of a user that can authenticate to your cluster.
         /// </para>
         /// </summary>
         public string Username

@@ -63,11 +63,11 @@ namespace Amazon.FraudDetector.Model
         /// Gets and sets the property Elements. 
         /// <para>
         ///  One or more list elements to add or replace. If you are providing the elements, make
-        /// sure to specify the <code>updateMode</code> to use. 
+        /// sure to specify the <c>updateMode</c> to use. 
         /// </para>
         ///  
         /// <para>
-        /// If you are deleting all elements from the list, use <code>REPLACE</code> for the <code>updateMode</code>
+        /// If you are deleting all elements from the list, use <c>REPLACE</c> for the <c>updateMode</c>
         /// and provide an empty list (0 elements).
         /// </para>
         /// </summary>
@@ -110,15 +110,15 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code>APPEND</code> if you are adding elements to the list.
+        /// Use <c>APPEND</c> if you are adding elements to the list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>REPLACE</code> if you replacing existing elements in the list.
+        /// Use <c>REPLACE</c> if you replacing existing elements in the list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>REMOVE</code> if you are removing elements from the list.
+        /// Use <c>REMOVE</c> if you are removing elements from the list.
         /// </para>
         ///  </li> </ul>
         /// </summary>

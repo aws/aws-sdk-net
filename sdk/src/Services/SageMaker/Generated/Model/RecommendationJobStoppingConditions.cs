@@ -42,9 +42,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property FlatInvocations. 
         /// <para>
         /// Stops a load test when the number of invocations (TPS) peaks and flattens, which means
-        /// that the instance has reached capacity. The default value is <code>Stop</code>. If
-        /// you want the load test to continue after invocations have flattened, set the value
-        /// to <code>Continue</code>.
+        /// that the instance has reached capacity. The default value is <c>Stop</c>. If you want
+        /// the load test to continue after invocations have flattened, set the value to <c>Continue</c>.
         /// </para>
         /// </summary>
         public FlatInvocations FlatInvocations

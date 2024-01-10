@@ -40,8 +40,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If the request included a <code>Marker</code>, the response returns that value in
-        /// this field.
+        /// If the request included a <c>Marker</c>, the response returns that value in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -61,8 +60,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If a value is present, there are more tags to return. In a subsequent request, you
-        /// can provide the value of <code>NextMarker</code> as the value of the <code>Marker</code>
-        /// parameter in your next request to retrieve the next set of tags.
+        /// can provide the value of <c>NextMarker</c> as the value of the <c>Marker</c> parameter
+        /// in your next request to retrieve the next set of tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -81,8 +80,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Returns tags associated with the file system as an array of <code>Tag</code> objects.
-        /// 
+        /// Returns tags associated with the file system as an array of <c>Tag</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

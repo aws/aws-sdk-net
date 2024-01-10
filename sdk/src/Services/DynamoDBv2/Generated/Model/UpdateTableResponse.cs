@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of an <code>UpdateTable</code> operation.
+    /// Represents the output of an <c>UpdateTable</c> operation.
     /// </summary>
     public partial class UpdateTableResponse : AmazonWebServiceResponse
     {

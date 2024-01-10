@@ -144,15 +144,15 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> 
+        ///  <c>IN_PROGRESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> 
+        ///  <c>COMPLETED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> 
+        ///  <c>FAILED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -171,8 +171,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// Specifies the reason for a <code>FAILED</code> status. This field is present only
-        /// when there <code>status</code> is <code>FAILED</code>.
+        /// Specifies the reason for a <c>FAILED</c> status. This field is present only when there
+        /// <c>status</c> is <c>FAILED</c>.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -191,8 +191,8 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ToPermissionArn. 
         /// <para>
         /// The ARN of the managed permission that this background task is associating with the
-        /// resource shares in place of the managed permission and version specified in <code>fromPermissionArn</code>
-        /// and <code>fromPermissionVersion</code>.
+        /// resource shares in place of the managed permission and version specified in <c>fromPermissionArn</c>
+        /// and <c>fromPermissionVersion</c>.
         /// </para>
         /// </summary>
         public string ToPermissionArn

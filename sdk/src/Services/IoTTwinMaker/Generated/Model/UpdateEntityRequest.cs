@@ -64,9 +64,8 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property CompositeComponentUpdates. 
         /// <para>
-        /// This is an object that maps strings to <code>compositeComponent</code> updates in
-        /// the request. Each key of the map represents the <code>componentPath</code> of the
-        /// <code>compositeComponent</code>.
+        /// This is an object that maps strings to <c>compositeComponent</c> updates in the request.
+        /// Each key of the map represents the <c>componentPath</c> of the <c>compositeComponent</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, CompositeComponentUpdateRequest> CompositeComponentUpdates

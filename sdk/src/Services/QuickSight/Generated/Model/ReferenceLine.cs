@@ -82,11 +82,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLE</code> 
+        ///  <c>ENABLE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLE</code> 
+        ///  <c>DISABLE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

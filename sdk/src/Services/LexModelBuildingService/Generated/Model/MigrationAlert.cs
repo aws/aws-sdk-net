@@ -100,12 +100,12 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ERROR</code> - There was an issue with the migration that can't be resolved.
-        /// The migration stops.
+        ///  <c>ERROR</c> - There was an issue with the migration that can't be resolved. The
+        /// migration stops.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARN</code> - There was an issue with the migration that requires manual changes
+        ///  <c>WARN</c> - There was an issue with the migration that requires manual changes
         /// to the new Amazon Lex V2 bot. The migration continues.
         /// </para>
         ///  </li> </ul>

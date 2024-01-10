@@ -56,7 +56,7 @@ namespace Amazon.XRay.Model
         ///  </important> 
         /// <para>
         /// Use this parameter only when you include a policy in the request and you intend to
-        /// prevent the principal that is making the request from making a subsequent <code>PutResourcePolicy</code>
+        /// prevent the principal that is making the request from making a subsequent <c>PutResourcePolicy</c>
         /// request.
         /// </para>
         ///  
@@ -125,10 +125,9 @@ namespace Amazon.XRay.Model
         ///  
         /// <para>
         /// If the policy revision id does not match the latest revision id, the operation will
-        /// fail with an <code>InvalidPolicyRevisionIdException</code> exception. You can also
-        /// provide a <code>PolicyRevisionId</code> of 0. In this case, the operation will fail
-        /// with an <code>InvalidPolicyRevisionIdException</code> exception if a resource policy
-        /// with the same name already exists. 
+        /// fail with an <c>InvalidPolicyRevisionIdException</c> exception. You can also provide
+        /// a <c>PolicyRevisionId</c> of 0. In this case, the operation will fail with an <c>InvalidPolicyRevisionIdException</c>
+        /// exception if a resource policy with the same name already exists. 
         /// </para>
         /// </summary>
         public string PolicyRevisionId

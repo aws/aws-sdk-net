@@ -33,9 +33,9 @@ namespace Amazon.Connect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>name</code> and <code>description</code> fields support "contains" queries
-    /// with a minimum of 2 characters and a maximum of 25 characters. Any queries with character
-    /// lengths outside of this range will throw invalid results. 
+    /// The <c>name</c> and <c>description</c> fields support "contains" queries with a minimum
+    /// of 2 characters and a maximum of 25 characters. Any queries with character lengths
+    /// outside of this range will throw invalid results. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AndConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>AND</code> condition.
+        /// A list of conditions which would be applied together with an <c>AND</c> condition.
         /// 
         /// </para>
         /// </summary>
@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property OrConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>OR</code> condition.
+        /// A list of conditions which would be applied together with an <c>OR</c> condition.
         /// </para>
         /// </summary>
         public List<UserSearchCriteria> OrConditions
@@ -108,9 +108,9 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// The currently supported values for <code>FieldName</code> are <code>username</code>,
-        /// <code>firstname</code>, <code>lastname</code>, <code>resourceId</code>, <code>routingProfileId</code>,
-        /// <code>securityProfileId</code>, <code>agentGroupId</code>, and <code>agentGroupPathIds</code>.
+        /// The currently supported values for <c>FieldName</c> are <c>username</c>, <c>firstname</c>,
+        /// <c>lastname</c>, <c>resourceId</c>, <c>routingProfileId</c>, <c>securityProfileId</c>,
+        /// <c>agentGroupId</c>, and <c>agentGroupPathIds</c>.
         /// </para>
         /// </summary>
         public StringCondition StringCondition

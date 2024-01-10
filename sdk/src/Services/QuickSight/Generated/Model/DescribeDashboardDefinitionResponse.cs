@@ -69,24 +69,23 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status
-        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>,
-        /// Amazon QuickSight disables the left filter pane on the published dashboard, which
-        /// can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by
+        ///  <c>AvailabilityStatus</c> for <c>AdHocFilteringOption</c> - This status can be either
+        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, Amazon QuickSight
+        /// disables the left filter pane on the published dashboard, which can be used for ad
+        /// hoc (one-time) filtering. This option is <c>ENABLED</c> by default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>ExportToCSVOption</c> - This status can be either
+        /// <c>ENABLED</c> or <c>DISABLED</c>. The visual option to export data to .CSV format
+        /// isn't enabled when this is set to <c>DISABLED</c>. This option is <c>ENABLED</c> by
         /// default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
-        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to
-        /// export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>.
-        /// This option is <code>ENABLED</code> by default. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility
-        /// state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is
-        /// <code>COLLAPSED</code> by default. 
+        ///  <c>VisibilityState</c> for <c>SheetControlsOption</c> - This visibility state can
+        /// be either <c>COLLAPSED</c> or <c>EXPANDED</c>. This option is <c>COLLAPSED</c> by
+        /// default. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -187,31 +186,31 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATION_IN_PROGRESS</code> 
+        ///  <c>CREATION_IN_PROGRESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATION_SUCCESSFUL</code> 
+        ///  <c>CREATION_SUCCESSFUL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATION_FAILED</code> 
+        ///  <c>CREATION_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_IN_PROGRESS</code> 
+        ///  <c>UPDATE_IN_PROGRESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_SUCCESSFUL</code> 
+        ///  <c>UPDATE_SUCCESSFUL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_FAILED</code> 
+        ///  <c>UPDATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> 
+        ///  <c>DELETED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

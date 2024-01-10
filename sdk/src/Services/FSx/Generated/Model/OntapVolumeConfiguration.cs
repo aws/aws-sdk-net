@@ -99,17 +99,16 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> specifies that the volume doesn't have a FlexCache configuration.
-        /// <code>NONE</code> is the default.
+        ///  <c>NONE</c> specifies that the volume doesn't have a FlexCache configuration. <c>NONE</c>
+        /// is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ORIGIN</code> specifies that the volume is the origin volume for a FlexCache
-        /// volume.
+        ///  <c>ORIGIN</c> specifies that the volume is the origin volume for a FlexCache volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CACHE</code> specifies that the volume is a FlexCache volume.
+        ///  <c>CACHE</c> specifies that the volume is a FlexCache volume.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,10 +129,9 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Specifies the directory that network-attached storage (NAS) clients use to mount the
         /// volume, along with the storage virtual machine (SVM) Domain Name System (DNS) name
-        /// or IP address. You can create a <code>JunctionPath</code> directly below a parent
-        /// volume junction or on a directory within a volume. A <code>JunctionPath</code> for
-        /// a volume named <code>vol3</code> might be <code>/vol1/vol2/vol3</code>, or <code>/vol1/dir2/vol3</code>,
-        /// or even <code>/dir1/dir2/vol3</code>.
+        /// or IP address. You can create a <c>JunctionPath</c> directly below a parent volume
+        /// junction or on a directory within a volume. A <c>JunctionPath</c> for a volume named
+        /// <c>vol3</c> might be <c>/vol1/vol2/vol3</c>, or <c>/vol1/dir2/vol3</c>, or even <c>/dir1/dir2/vol3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -156,19 +154,18 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.
+        ///  <c>RW</c> specifies a read/write volume. <c>RW</c> is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DP</code> specifies a data-protection volume. You can protect data by replicating
+        ///  <c>DP</c> specifies a data-protection volume. You can protect data by replicating
         /// it to data-protection mirror copies. If a disaster occurs, you can use these data-protection
         /// mirror copies to recover data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LS</code> specifies a load-sharing mirror volume. A load-sharing mirror reduces
-        /// the network traffic to a FlexVol volume by providing additional read-only access to
-        /// clients.
+        ///  <c>LS</c> specifies a load-sharing mirror volume. A load-sharing mirror reduces the
+        /// network traffic to a FlexVol volume by providing additional read-only access to clients.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -187,8 +184,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SecurityStyle. 
         /// <para>
-        /// The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>,
-        /// or <code>MIXED</code>.
+        /// The security style for the volume, which can be <c>UNIX</c>, <c>NTFS</c>, or <c>MIXED</c>.
         /// </para>
         /// </summary>
         public SecurityStyle SecurityStyle
@@ -266,19 +262,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>default</code>: This is the default policy. A maximum of six hourly snapshots
-        /// taken five minutes past the hour. A maximum of two daily snapshots taken Monday through
+        ///  <c>default</c>: This is the default policy. A maximum of six hourly snapshots taken
+        /// five minutes past the hour. A maximum of two daily snapshots taken Monday through
         /// Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every
         /// Sunday at 15 minutes after midnight.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>default-1weekly</code>: This policy is the same as the <code>default</code>
-        /// policy except that it only retains one snapshot from the weekly schedule.
+        ///  <c>default-1weekly</c>: This policy is the same as the <c>default</c> policy except
+        /// that it only retains one snapshot from the weekly schedule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code>: This policy does not take any snapshots. This policy can be assigned
+        ///  <c>none</c>: This policy does not take any snapshots. This policy can be assigned
         /// to volumes to prevent automatic snapshots from being taken.
         /// </para>
         ///  </li> </ul> 
@@ -347,14 +343,13 @@ namespace Amazon.FSx.Model
         /// <para>
         /// A Boolean flag indicating whether this volume is the root volume for its storage virtual
         /// machine (SVM). Only one volume on an SVM can be the root volume. This value defaults
-        /// to <code>false</code>. If this value is <code>true</code>, then this is the SVM root
-        /// volume.
+        /// to <c>false</c>. If this value is <c>true</c>, then this is the SVM root volume.
         /// </para>
         ///  
         /// <para>
         /// This flag is useful when you're deleting an SVM, because you must first delete all
-        /// non-root volumes. This flag, when set to <code>false</code>, helps you identify which
-        /// volumes to delete before you can delete the SVM.
+        /// non-root volumes. This flag, when set to <c>false</c>, helps you identify which volumes
+        /// to delete before you can delete the SVM.
         /// </para>
         /// </summary>
         public bool StorageVirtualMachineRoot
@@ -372,7 +367,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property TieringPolicy. 
         /// <para>
-        /// The volume's <code>TieringPolicy</code> setting.
+        /// The volume's <c>TieringPolicy</c> setting.
         /// </para>
         /// </summary>
         public TieringPolicy TieringPolicy

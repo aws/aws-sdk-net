@@ -87,19 +87,19 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HEALTHY</code> – There are no reputation-related issues that currently impact
-        /// your account.
+        ///  <c>HEALTHY</c> – There are no reputation-related issues that currently impact your
+        /// account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PROBATION</code> – We've identified potential issues with your Amazon SES account.
+        ///  <c>PROBATION</c> – We've identified potential issues with your Amazon SES account.
         /// We're placing your account under review while you work on correcting these issues.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SHUTDOWN</code> – Your account's ability to send email is currently paused
-        /// because of an issue with the email sent from your account. When you correct the issue,
-        /// you can contact us and request that your account's ability to send email is resumed.
+        ///  <c>SHUTDOWN</c> – Your account's ability to send email is currently paused because
+        /// of an issue with the email sent from your account. When you correct the issue, you
+        /// can contact us and request that your account's ability to send email is resumed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -123,17 +123,17 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>false</code>, then your account is in the <i>sandbox</i>. When
-        /// your account is in the sandbox, you can only send email to verified identities. Additionally,
+        /// If the value is <c>false</c>, then your account is in the <i>sandbox</i>. When your
+        /// account is in the sandbox, you can only send email to verified identities. Additionally,
         /// the maximum number of emails you can send in a 24-hour period (your sending quota)
         /// is 200, and the maximum number of emails you can send per second (your maximum sending
         /// rate) is 1.
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>true</code>, then your account has production access. When your
-        /// account has production access, you can send email to any address. The sending quota
-        /// and maximum sending rate for your account vary based on your specific use case.
+        /// If the value is <c>true</c>, then your account has production access. When your account
+        /// has production access, you can send email to any address. The sending quota and maximum
+        /// sending rate for your account vary based on your specific use case.
         /// </para>
         /// </summary>
         public bool ProductionAccessEnabled

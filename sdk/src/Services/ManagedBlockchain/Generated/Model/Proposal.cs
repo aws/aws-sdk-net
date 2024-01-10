@@ -56,7 +56,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The actions to perform on the network if the proposal is <code>APPROVED</code>.
+        /// The actions to perform on the network if the proposal is <c>APPROVED</c>.
         /// </para>
         /// </summary>
         public ProposalActions Actions
@@ -132,10 +132,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
-        ///  The date and time that the proposal expires. This is the <code>CreationDate</code>
-        /// plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.
+        ///  The date and time that the proposal expires. This is the <c>CreationDate</c> plus
+        /// the <c>ProposalDurationInHours</c> that is specified in the <c>ProposalThresholdPolicy</c>.
         /// After this date and time, if members haven't cast enough votes to determine the outcome
-        /// according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+        /// according to the voting policy, the proposal is <c>EXPIRED</c> and <c>Actions</c>
         /// aren't carried out. 
         /// </para>
         /// </summary>
@@ -173,7 +173,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NoVoteCount. 
         /// <para>
-        ///  The current total of <code>NO</code> votes cast on the proposal by members. 
+        ///  The current total of <c>NO</c> votes cast on the proposal by members. 
         /// </para>
         /// </summary>
         public int NoVoteCount
@@ -192,8 +192,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property OutstandingVoteCount. 
         /// <para>
         ///  The number of votes remaining to be cast on the proposal by members. In other words,
-        /// the number of members minus the sum of <code>YES</code> votes and <code>NO</code>
-        /// votes. 
+        /// the number of members minus the sum of <c>YES</c> votes and <c>NO</c> votes. 
         /// </para>
         /// </summary>
         public int OutstandingVoteCount
@@ -272,30 +271,30 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - The proposal is active and open for member voting.
+        ///  <c>IN_PROGRESS</c> - The proposal is active and open for member voting.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code>
-        /// votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>.
-        /// The specified proposal actions are carried out.
+        ///  <c>APPROVED</c> - The proposal was approved with sufficient <c>YES</c> votes among
+        /// members according to the <c>VotingPolicy</c> specified for the <c>Network</c>. The
+        /// specified proposal actions are carried out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code>
-        /// votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>.
-        /// The specified <code>ProposalActions</code> aren't carried out.
+        ///  <c>REJECTED</c> - The proposal was rejected with insufficient <c>YES</c> votes among
+        /// members according to the <c>VotingPolicy</c> specified for the <c>Network</c>. The
+        /// specified <c>ProposalActions</c> aren't carried out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code> - Members didn't cast the number of votes required to determine
-        /// the proposal outcome before the proposal expired. The specified <code>ProposalActions</code>
+        ///  <c>EXPIRED</c> - Members didn't cast the number of votes required to determine the
+        /// proposal outcome before the proposal expired. The specified <c>ProposalActions</c>
         /// aren't carried out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code>
-        /// in a proposal that was approved couldn't be completed because of an error. The <code>ACTION_FAILED</code>
+        ///  <c>ACTION_FAILED</c> - One or more of the specified <c>ProposalActions</c> in a proposal
+        /// that was approved couldn't be completed because of an error. The <c>ACTION_FAILED</c>
         /// status occurs even if only one ProposalAction fails and other actions are successful.
         /// </para>
         ///  </li> </ul>
@@ -341,7 +340,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property YesVoteCount. 
         /// <para>
-        ///  The current total of <code>YES</code> votes cast on the proposal by members. 
+        ///  The current total of <c>YES</c> votes cast on the proposal by members. 
         /// </para>
         /// </summary>
         public int YesVoteCount

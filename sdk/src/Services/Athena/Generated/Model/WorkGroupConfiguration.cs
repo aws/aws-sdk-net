@@ -34,8 +34,8 @@ namespace Amazon.Athena.Model
     /// query and calculation results, whether the Amazon CloudWatch Metrics are enabled for
     /// the workgroup and whether workgroup settings override query settings, and the data
     /// usage limits for the amount of data scanned per query or per workgroup. The workgroup
-    /// settings override is specified in <code>EnforceWorkGroupConfiguration</code> (true/false)
-    /// in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+    /// settings override is specified in <c>EnforceWorkGroupConfiguration</c> (true/false)
+    /// in the <c>WorkGroupConfiguration</c>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
     /// </summary>
     public partial class WorkGroupConfiguration
     {
@@ -119,8 +119,8 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>EnforceWorkGroupConfiguration</code> setting takes precedence over the <code>EnableMinimumEncryptionConfiguration</code>
-        /// flag. This means that if <code>EnforceWorkGroupConfiguration</code> is true, the <code>EnableMinimumEncryptionConfiguration</code>
+        /// The <c>EnforceWorkGroupConfiguration</c> setting takes precedence over the <c>EnableMinimumEncryptionConfiguration</c>
+        /// flag. This means that if <c>EnforceWorkGroupConfiguration</c> is true, the <c>EnableMinimumEncryptionConfiguration</c>
         /// flag is ignored, and the workgroup configuration for encryption is used.
         /// </para>
         /// </summary>
@@ -159,7 +159,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version that all queries running on the workgroup use. Queries on the <code>AmazonAthenaPreviewFunctionality</code>
+        /// The engine version that all queries running on the workgroup use. Queries on the <c>AmazonAthenaPreviewFunctionality</c>
         /// workgroup run on the preview engine regardless of this setting.
         /// </para>
         /// </summary>
@@ -253,11 +253,11 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property RequesterPaysEnabled. 
         /// <para>
-        /// If set to <code>true</code>, allows members assigned to a workgroup to reference Amazon
-        /// S3 Requester Pays buckets in queries. If set to <code>false</code>, workgroup members
-        /// cannot query data from Requester Pays buckets, and queries that retrieve data from
-        /// Requester Pays buckets cause an error. The default is <code>false</code>. For more
-        /// information about Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
+        /// If set to <c>true</c>, allows members assigned to a workgroup to reference Amazon
+        /// S3 Requester Pays buckets in queries. If set to <c>false</c>, workgroup members cannot
+        /// query data from Requester Pays buckets, and queries that retrieve data from Requester
+        /// Pays buckets cause an error. The default is <c>false</c>. For more information about
+        /// Requester Pays buckets, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester
         /// Pays Buckets</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
         /// </para>
         /// </summary>

@@ -145,8 +145,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// When modifying a major engine version of an instance, also set <code>AllowMajorVersionUpgrade</code>
-        /// to <code>true</code>.
+        /// When modifying a major engine version of an instance, also set <c>AllowMajorVersionUpgrade</c>
+        /// to <c>true</c>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -205,8 +205,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
-        /// your default encryption key.
+        /// If you don't specify a value for the <c>KmsKeyId</c> parameter, then DMS uses your
+        /// default encryption key.
         /// </para>
         ///  
         /// <para>
@@ -231,7 +231,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MultiAZ. 
         /// <para>
         ///  Specifies whether the replication instance is a Multi-AZ deployment. You can't set
-        /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// the <c>AvailabilityZone</c> parameter if the Multi-AZ parameter is set to <c>true</c>.
         /// 
         /// </para>
         /// </summary>
@@ -306,9 +306,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        ///  Specifies the accessibility options for the replication instance. A value of <code>true</code>
-        /// represents an instance with a public IP address. A value of <code>false</code> represents
-        /// an instance with a private IP address. The default value is <code>true</code>. 
+        ///  Specifies the accessibility options for the replication instance. A value of <c>true</c>
+        /// represents an instance with a public IP address. A value of <c>false</c> represents
+        /// an instance with a private IP address. The default value is <c>true</c>. 
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -391,7 +391,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>myrepinstance</code> 
+        /// Example: <c>myrepinstance</c> 
         /// </para>
         /// </summary>
         public string ReplicationInstanceIdentifier
@@ -505,55 +505,55 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"available"</code> 
+        ///  <c>"available"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"creating"</code> 
+        ///  <c>"creating"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"deleted"</code> 
+        ///  <c>"deleted"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"deleting"</code> 
+        ///  <c>"deleting"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"failed"</code> 
+        ///  <c>"failed"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"modifying"</code> 
+        ///  <c>"modifying"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"upgrading"</code> 
+        ///  <c>"upgrading"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"rebooting"</code> 
+        ///  <c>"rebooting"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"resetting-master-credentials"</code> 
+        ///  <c>"resetting-master-credentials"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"storage-full"</code> 
+        ///  <c>"storage-full"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"incompatible-credentials"</code> 
+        ///  <c>"incompatible-credentials"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"incompatible-network"</code> 
+        ///  <c>"incompatible-network"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"maintenance"</code> 
+        ///  <c>"maintenance"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

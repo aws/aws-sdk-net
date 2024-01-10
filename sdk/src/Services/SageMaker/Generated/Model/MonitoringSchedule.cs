@@ -196,19 +196,19 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The schedule is pending being created.
+        ///  <c>PENDING</c> - The schedule is pending being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The schedule failed.
+        ///  <c>FAILED</c> - The schedule failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SCHEDULED</code> - The schedule was successfully created.
+        ///  <c>SCHEDULED</c> - The schedule was successfully created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code> - The schedule was stopped.
+        ///  <c>STOPPED</c> - The schedule was stopped.
         /// </para>
         ///  </li> </ul>
         /// </summary>

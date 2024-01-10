@@ -40,7 +40,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// If <code>True</code>, redistribution is applied immediately.
+        /// If <c>True</c>, redistribution is applied immediately.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

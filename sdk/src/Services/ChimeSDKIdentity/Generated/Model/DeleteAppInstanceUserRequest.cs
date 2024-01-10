@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInstanceUser operation.
-    /// Deletes an <code>AppInstanceUser</code>.
+    /// Deletes an <c>AppInstanceUser</c>.
     /// </summary>
     public partial class DeleteAppInstanceUserRequest : AmazonChimeSDKIdentityRequest
     {

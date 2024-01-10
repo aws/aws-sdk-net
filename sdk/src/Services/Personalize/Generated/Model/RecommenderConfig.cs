@@ -68,9 +68,9 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property ItemExplorationConfig. 
         /// <para>
-        /// Specifies the exploration configuration hyperparameters, including <code>explorationWeight</code>
-        /// and <code>explorationItemAgeCutOff</code>, you want to use to configure the amount
-        /// of item exploration Amazon Personalize uses when recommending items. Provide <code>itemExplorationConfig</code>
+        /// Specifies the exploration configuration hyperparameters, including <c>explorationWeight</c>
+        /// and <c>explorationItemAgeCutOff</c>, you want to use to configure the amount of item
+        /// exploration Amazon Personalize uses when recommending items. Provide <c>itemExplorationConfig</c>
         /// data only if your recommenders generate personalized recommendations for a user (not
         /// popular items or similar items).
         /// </para>
@@ -92,10 +92,10 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property MinRecommendationRequestsPerSecond. 
         /// <para>
         /// Specifies the requested minimum provisioned recommendation requests per second that
-        /// Amazon Personalize will support. A high <code>minRecommendationRequestsPerSecond</code>
-        /// will increase your bill. We recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code>
+        /// Amazon Personalize will support. A high <c>minRecommendationRequestsPerSecond</c>
+        /// will increase your bill. We recommend starting with 1 for <c>minRecommendationRequestsPerSecond</c>
         /// (the default). Track your usage using Amazon CloudWatch metrics, and increase the
-        /// <code>minRecommendationRequestsPerSecond</code> as necessary.
+        /// <c>minRecommendationRequestsPerSecond</c> as necessary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

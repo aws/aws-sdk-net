@@ -46,24 +46,24 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-id</code> - The ID of the resource.
+        ///  <c>resource-id</c> - The ID of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-type</code> - The type of resource. The valid value is: <code>vpc</code>.
+        ///  <c>resource-type</c> - The type of resource. The valid value is: <c>vpc</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the subnet association. Valid values are <code>associated</code>
-        /// | <code>associating</code> | <code>disassociated</code> | <code>disassociating</code>.
+        ///  <c>state</c> - The state of the subnet association. Valid values are <c>associated</c>
+        /// | <c>associating</c> | <c>disassociated</c> | <c>disassociating</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>subnet-id</code> - The ID of the subnet.
+        ///  <c>subnet-id</c> - The ID of the subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
+        ///  <c>transit-gateway-attachment-id</c> - The id of the transit gateway attachment.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

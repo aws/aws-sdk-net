@@ -597,8 +597,8 @@ namespace Amazon.Elasticsearch
 
         /// <summary>
         /// Cancels a scheduled service software update for an Amazon ES domain. You can only
-        /// perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code>
-        /// is in the <code>PENDING_UPDATE</code> state.
+        /// perform this operation before the <c>AutomatedUpdateDate</c> and when the <c>UpdateStatus</c>
+        /// is in the <c>PENDING_UPDATE</c> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelElasticsearchServiceSoftwareUpdate service method.</param>
         /// 
@@ -630,8 +630,8 @@ namespace Amazon.Elasticsearch
 
         /// <summary>
         /// Cancels a scheduled service software update for an Amazon ES domain. You can only
-        /// perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code>
-        /// is in the <code>PENDING_UPDATE</code> state.
+        /// perform this operation before the <c>AutomatedUpdateDate</c> and when the <c>UpdateStatus</c>
+        /// is in the <c>PENDING_UPDATE</c> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelElasticsearchServiceSoftwareUpdate service method.</param>
         /// <param name="cancellationToken">
@@ -1781,8 +1781,8 @@ namespace Amazon.Elasticsearch
 
         /// <summary>
         /// Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion.
-        /// When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know
-        /// what Limits are supported for modifying.
+        /// When modifying existing Domain, specify the <c> <a>DomainName</a> </c> to know what
+        /// Limits are supported for modifying.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticsearchInstanceTypeLimits service method.</param>
         /// 
@@ -1822,8 +1822,8 @@ namespace Amazon.Elasticsearch
 
         /// <summary>
         /// Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion.
-        /// When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know
-        /// what Limits are supported for modifying.
+        /// When modifying existing Domain, specify the <c> <a>DomainName</a> </c> to know what
+        /// Limits are supported for modifying.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeElasticsearchInstanceTypeLimits service method.</param>
         /// <param name="cancellationToken">
@@ -2359,7 +2359,7 @@ namespace Amazon.Elasticsearch
 
         /// <summary>
         /// Returns a list of upgrade compatible Elastisearch versions. You can optionally pass
-        /// a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions
+        /// a <c> <a>DomainName</a> </c> to get all upgrade compatible Elasticsearch versions
         /// for that specific domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCompatibleElasticsearchVersions service method.</param>
@@ -2396,7 +2396,7 @@ namespace Amazon.Elasticsearch
 
         /// <summary>
         /// Returns a list of upgrade compatible Elastisearch versions. You can optionally pass
-        /// a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions
+        /// a <c> <a>DomainName</a> </c> to get all upgrade compatible Elasticsearch versions
         /// for that specific domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCompatibleElasticsearchVersions service method.</param>

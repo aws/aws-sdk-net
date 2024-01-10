@@ -36,8 +36,8 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// When the <code>RegistryId</code> is not provided, all the schemas across registries
-    /// will be part of the API response.
+    /// When the <c>RegistryId</c> is not provided, all the schemas across registries will
+    /// be part of the API response.
     /// </para>
     /// </summary>
     public partial class ListSchemasRequest : AmazonGlueRequest

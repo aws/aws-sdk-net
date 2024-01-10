@@ -61,27 +61,27 @@ namespace Amazon.CloudControlApi.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code>: The operation has been requested, but not yet initiated.
+        ///  <c>PENDING</c>: The operation has been requested, but not yet initiated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code>: The operation is in progress.
+        ///  <c>IN_PROGRESS</c>: The operation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code>: The operation completed.
+        ///  <c>SUCCESS</c>: The operation completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The operation failed.
+        ///  <c>FAILED</c>: The operation failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCEL_IN_PROGRESS</code>: The operation is in the process of being canceled.
+        ///  <c>CANCEL_IN_PROGRESS</c>: The operation is in the process of being canceled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCEL_COMPLETE</code>: The operation has been canceled.
+        ///  <c>CANCEL_COMPLETE</c>: The operation has been canceled.
         /// </para>
         ///  </li> </ul>
         /// </summary>

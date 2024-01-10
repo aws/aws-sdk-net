@@ -31,10 +31,10 @@ namespace Amazon.IoTAnalytics.Model
     /// <summary>
     /// Container for the parameters to the CreateDataset operation.
     /// Used to create a dataset. A dataset stores data retrieved from a data store by applying
-    /// a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
-    /// a containerized application). This operation creates the skeleton of a dataset. The
-    /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
-    /// automatically according to a trigger you specify.
+    /// a <c>queryAction</c> (a SQL query) or a <c>containerAction</c> (executing a containerized
+    /// application). This operation creates the skeleton of a dataset. The dataset can be
+    /// populated manually by calling <c>CreateDatasetContent</c> or automatically according
+    /// to a trigger you specify.
     /// </summary>
     public partial class CreateDatasetRequest : AmazonIoTAnalyticsRequest
     {
@@ -108,7 +108,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property LateDataRules. 
         /// <para>
         /// A list of data rules that send notifications to CloudWatch, when data arrives late.
-        /// To specify <code>lateDataRules</code>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+        /// To specify <c>lateDataRules</c>, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
         /// filter.
         /// </para>
         /// </summary>
@@ -129,10 +129,9 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
         /// Optional. How long, in days, versions of dataset contents are kept for the dataset.
-        /// If not specified or set to <code>null</code>, versions of dataset contents are retained
+        /// If not specified or set to <c>null</c>, versions of dataset contents are retained
         /// for at most 90 days. The number of versions of dataset contents retained is determined
-        /// by the <code>versioningConfiguration</code> parameter. For more information, see <a
-        /// href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
+        /// by the <c>versioningConfiguration</c> parameter. For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">
         /// Keeping Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User
         /// Guide</i>.
         /// </para>
@@ -173,7 +172,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// A list of triggers. A trigger causes dataset contents to be populated at a specified
         /// time interval or when another dataset's contents are created. The list of triggers
-        /// can be empty or contain up to five <code>DataSetTrigger</code> objects.
+        /// can be empty or contain up to five <c>DataSetTrigger</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -194,8 +193,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <para>
         /// Optional. How many versions of dataset contents are kept. If not specified or set
         /// to null, only the latest version plus the latest succeeded version (if they are different)
-        /// are kept for the time period specified by the <code>retentionPeriod</code> parameter.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
+        /// are kept for the time period specified by the <c>retentionPeriod</c> parameter. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions">Keeping
         /// Multiple Versions of IoT Analytics datasets</a> in the <i>IoT Analytics User Guide</i>.
         /// </para>
         /// </summary>

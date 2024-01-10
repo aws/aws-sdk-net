@@ -92,8 +92,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotLocaleStatus. 
         /// <para>
-        /// The status of the bot. If the status is <code>Failed</code>, the reasons for the failure
-        /// are listed in the <code>failureReasons</code> field.
+        /// The status of the bot. If the status is <c>Failed</c>, the reasons for the failure
+        /// are listed in the <c>failureReasons</c> field.
         /// </para>
         /// </summary>
         public BotLocaleStatus BotLocaleStatus
@@ -167,8 +167,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// if <code>botLocaleStatus</code> is <code>Failed</code>, Amazon Lex explains why it
-        /// failed to build the bot.
+        /// if <c>botLocaleStatus</c> is <c>Failed</c>, Amazon Lex explains why it failed to build
+        /// the bot.
         /// </para>
         /// </summary>
         public List<string> FailureReasons
@@ -294,9 +294,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NluIntentConfidenceThreshold. 
         /// <para>
-        /// The confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>
-        /// and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents
-        /// for an utterance.
+        /// The confidence threshold where Amazon Lex inserts the <c>AMAZON.FallbackIntent</c>
+        /// and <c>AMAZON.KendraSearchIntent</c> intents in the list of possible intents for an
+        /// utterance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -315,8 +315,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property RecommendedActions. 
         /// <para>
-        /// Recommended actions to take to resolve an error in the <code>failureReasons</code>
-        /// field.
+        /// Recommended actions to take to resolve an error in the <c>failureReasons</c> field.
         /// </para>
         /// </summary>
         public List<string> RecommendedActions

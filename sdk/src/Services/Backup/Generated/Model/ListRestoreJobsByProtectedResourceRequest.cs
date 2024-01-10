@@ -34,9 +34,9 @@ namespace Amazon.Backup.Model
     /// 
     ///  
     /// <para>
-    /// You must include <code>ResourceArn</code>. You can optionally include <code>NextToken</code>,
-    /// <code>ByStatus</code>, <code>MaxResults</code>, <code>ByRecoveryPointCreationDateAfter</code>
-    /// , and <code>ByRecoveryPointCreationDateBefore</code>.
+    /// You must include <c>ResourceArn</c>. You can optionally include <c>NextToken</c>,
+    /// <c>ByStatus</c>, <c>MaxResults</c>, <c>ByRecoveryPointCreationDateAfter</c> , and
+    /// <c>ByRecoveryPointCreationDateBefore</c>.
     /// </para>
     /// </summary>
     public partial class ListRestoreJobsByProtectedResourceRequest : AmazonBackupRequest
@@ -127,9 +127,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The next item following a partial list of returned items. For example, if a request
-        /// ismade to return <code>MaxResults</code> number of items, <code>NextToken</code> allows
-        /// you to return more items in your list starting at the location pointed to by the next
-        /// token.
+        /// ismade to return <c>MaxResults</c> number of items, <c>NextToken</c> allows you to
+        /// return more items in your list starting at the location pointed to by the next token.
         /// </para>
         /// </summary>
         public string NextToken

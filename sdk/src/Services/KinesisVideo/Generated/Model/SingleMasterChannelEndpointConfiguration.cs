@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// An object that contains the endpoint configuration for the <code>SINGLE_MASTER</code>
-    /// channel type.
+    /// An object that contains the endpoint configuration for the <c>SINGLE_MASTER</c> channel
+    /// type.
     /// </summary>
     public partial class SingleMasterChannelEndpointConfiguration
     {
@@ -40,10 +40,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property Protocols. 
         /// <para>
-        /// This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code>
-        /// signaling channel. If <code>WSS</code> is specified, this API returns a websocket
-        /// endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code>
-        /// endpoint.
+        /// This property is used to determine the nature of communication over this <c>SINGLE_MASTER</c>
+        /// signaling channel. If <c>WSS</c> is specified, this API returns a websocket endpoint.
+        /// If <c>HTTPS</c> is specified, this API returns an <c>HTTPS</c> endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -62,12 +61,12 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code>
-        /// signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint
-        /// that a client can use to receive offers from and send answers to any of the viewers
-        /// on this signaling channel. If <code>VIEWER</code> is specified, this API returns an
-        /// endpoint that a client can use only to send offers to another <code>MASTER</code>
-        /// client on this signaling channel. 
+        /// This property is used to determine messaging permissions in this <c>SINGLE_MASTER</c>
+        /// signaling channel. If <c>MASTER</c> is specified, this API returns an endpoint that
+        /// a client can use to receive offers from and send answers to any of the viewers on
+        /// this signaling channel. If <c>VIEWER</c> is specified, this API returns an endpoint
+        /// that a client can use only to send offers to another <c>MASTER</c> client on this
+        /// signaling channel. 
         /// </para>
         /// </summary>
         public ChannelRole Role

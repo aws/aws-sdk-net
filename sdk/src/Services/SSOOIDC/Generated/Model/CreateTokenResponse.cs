@@ -79,9 +79,9 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property IdToken. 
         /// <para>
-        /// The <code>idToken</code> is not implemented or supported. For more information about
-        /// the features and limitations of the current IAM Identity Center OIDC implementation,
-        /// see <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
+        /// The <c>idToken</c> is not implemented or supported. For more information about the
+        /// features and limitations of the current IAM Identity Center OIDC implementation, see
+        /// <i>Considerations for Using this Guide</i> in the <a href="https://docs.aws.amazon.com/singlesignon/latest/OIDCAPIReference/Welcome.html">IAM
         /// Identity Center OIDC API Reference</a>.
         /// </para>
         ///  
@@ -134,7 +134,7 @@ namespace Amazon.SSOOIDC.Model
         /// Gets and sets the property TokenType. 
         /// <para>
         /// Used to notify the client that the returned token is an access token. The supported
-        /// token type is <code>Bearer</code>.
+        /// token type is <c>Bearer</c>.
         /// </para>
         /// </summary>
         public string TokenType

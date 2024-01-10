@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
-    /// The list of <code>ApplicationSummary</code> objects.
+    /// The list of <c>ApplicationSummary</c> objects.
     /// </summary>
     public partial class ApplicationSummary
     {

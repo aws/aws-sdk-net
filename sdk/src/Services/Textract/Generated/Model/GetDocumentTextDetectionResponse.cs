@@ -77,7 +77,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property DocumentMetadata. 
         /// <para>
-        /// Information about a document that Amazon Textract processed. <code>DocumentMetadata</code>
+        /// Information about a document that Amazon Textract processed. <c>DocumentMetadata</c>
         /// is returned in every page of paginated responses from an Amazon Textract video operation.
         /// </para>
         /// </summary>

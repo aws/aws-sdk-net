@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearchDomain.Model
 {
     /// <summary>
-    /// An autocomplete suggestion that matches the query string specified in a <code>SuggestRequest</code>.
+    /// An autocomplete suggestion that matches the query string specified in a <c>SuggestRequest</c>.
     /// </summary>
     public partial class SuggestionMatch
     {
@@ -76,8 +76,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// <summary>
         /// Gets and sets the property Suggestion. 
         /// <para>
-        /// The string that matches the query string specified in the <code>SuggestRequest</code>.
-        /// 
+        /// The string that matches the query string specified in the <c>SuggestRequest</c>. 
         /// </para>
         /// </summary>
         public string Suggestion

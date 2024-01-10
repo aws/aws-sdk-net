@@ -86,7 +86,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property CategorySpecificSummary. 
         /// <para>
         /// Summary information that relates to the category of the insight. Currently only returned
-        /// with certain insights having category <code>UPGRADE_READINESS</code>.
+        /// with certain insights having category <c>UPGRADE_READINESS</c>.
         /// </para>
         /// </summary>
         public InsightCategorySpecificSummary CategorySpecificSummary

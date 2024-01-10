@@ -40,20 +40,20 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The value for the <code>deliveryFrequency</code> parameter within the delivery channel
-    /// configuration, which sets how often Config delivers configuration snapshots. This
-    /// value also sets how often Config invokes evaluations for Config rules.
+    /// The value for the <c>deliveryFrequency</c> parameter within the delivery channel configuration,
+    /// which sets how often Config delivers configuration snapshots. This value also sets
+    /// how often Config invokes evaluations for Config rules.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The value for the <code>MaximumExecutionFrequency</code> parameter, which sets the
-    /// maximum frequency with which Config invokes evaluations for the rule. For more information,
+    /// The value for the <c>MaximumExecutionFrequency</c> parameter, which sets the maximum
+    /// frequency with which Config invokes evaluations for the rule. For more information,
     /// see <a>ConfigRule</a>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If the <code>deliveryFrequency</code> value is less frequent than the <code>MaximumExecutionFrequency</code>
-    /// value for a rule, Config invokes the rule only as often as the <code>deliveryFrequency</code>
+    /// If the <c>deliveryFrequency</c> value is less frequent than the <c>MaximumExecutionFrequency</c>
+    /// value for a rule, Config invokes the rule only as often as the <c>deliveryFrequency</c>
     /// value.
     /// </para>
     ///  <ol> <li> 
@@ -63,28 +63,27 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You specify the <code>MaximumExecutionFrequency</code> value for <code>Six_Hours</code>.
-    /// 
+    /// You specify the <c>MaximumExecutionFrequency</c> value for <c>Six_Hours</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You then specify the delivery channel <code>deliveryFrequency</code> value for <code>TwentyFour_Hours</code>.
+    /// You then specify the delivery channel <c>deliveryFrequency</c> value for <c>TwentyFour_Hours</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Because the value for <code>deliveryFrequency</code> is less frequent than <code>MaximumExecutionFrequency</code>,
+    /// Because the value for <c>deliveryFrequency</c> is less frequent than <c>MaximumExecutionFrequency</c>,
     /// Config invokes evaluations for the rule every 24 hours. 
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// You should set the <code>MaximumExecutionFrequency</code> value to be at least as
-    /// frequent as the <code>deliveryFrequency</code> value. You can view the <code>deliveryFrequency</code>
-    /// value by using the <code>DescribeDeliveryChannnels</code> action.
+    /// You should set the <c>MaximumExecutionFrequency</c> value to be at least as frequent
+    /// as the <c>deliveryFrequency</c> value. You can view the <c>deliveryFrequency</c> value
+    /// by using the <c>DescribeDeliveryChannnels</c> action.
     /// </para>
     ///  
     /// <para>
-    /// To update the <code>deliveryFrequency</code> with which Config delivers your configuration
-    /// snapshots, use the <code>PutDeliveryChannel</code> action.
+    /// To update the <c>deliveryFrequency</c> with which Config delivers your configuration
+    /// snapshots, use the <c>PutDeliveryChannel</c> action.
     /// </para>
     /// </summary>
     public partial class ConfigSnapshotDeliveryProperties

@@ -47,7 +47,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates that the status is <code>enabled</code>.
+        /// Indicates that the status is <c>enabled</c>.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -161,7 +161,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserMFASettingList. 
         /// <para>
         /// The MFA options that are activated for the user. The possible values in this list
-        /// are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.
+        /// are <c>SMS_MFA</c> and <c>SOFTWARE_TOKEN_MFA</c>.
         /// </para>
         /// </summary>
         public List<string> UserMFASettingList

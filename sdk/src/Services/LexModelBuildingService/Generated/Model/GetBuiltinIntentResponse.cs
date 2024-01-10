@@ -58,8 +58,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Slots. 
         /// <para>
-        /// An array of <code>BuiltinIntentSlot</code> objects, one entry for each slot type in
-        /// the intent.
+        /// An array of <c>BuiltinIntentSlot</c> objects, one entry for each slot type in the
+        /// intent.
         /// </para>
         /// </summary>
         public List<BuiltinIntentSlot> Slots

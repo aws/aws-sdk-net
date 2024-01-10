@@ -64,12 +64,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-id</code> - The ID of the instance.
+        ///  <c>instance-id</c> - The ID of the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the association (<code>associating</code> | <code>associated</code>
-        /// | <code>disassociating</code>).
+        ///  <c>state</c> - The state of the association (<c>associating</c> | <c>associated</c>
+        /// | <c>disassociating</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

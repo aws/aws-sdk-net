@@ -31,8 +31,7 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the StopActivityStream operation.
     /// Stops a database activity stream that was started using the Amazon Web Services console,
-    /// the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code>
-    /// operation.
+    /// the <c>start-activity-stream</c> CLI command, or the <c>StartActivityStream</c> operation.
     /// 
     ///  
     /// <para>
@@ -71,7 +70,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the DB cluster for the database activity stream.
-        /// For example, <code>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</code>.
+        /// For example, <c>arn:aws:rds:us-east-1:12345667890:cluster:das-cluster</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

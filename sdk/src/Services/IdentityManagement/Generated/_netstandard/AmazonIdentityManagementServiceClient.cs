@@ -356,8 +356,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  <note> 
         /// <para>
-        /// The caller of this operation must be granted the <code>PassRole</code> permission
-        /// on the IAM role by a permissions policy.
+        /// The caller of this operation must be granted the <c>PassRole</c> permission on the
+        /// IAM role by a permissions policy.
         /// </para>
         ///  </note> 
         /// <para>
@@ -471,7 +471,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You use this operation to attach a managed policy to a group. To embed an inline policy
         /// in a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html">
-        /// <code>PutGroupPolicy</code> </a>.
+        /// <c>PutGroupPolicy</c> </a>.
         /// </para>
         ///  
         /// <para>
@@ -543,14 +543,14 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You cannot use a managed policy as the role's trust policy. The role's trust policy
         /// is created at the same time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
-        /// <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
-        /// <code>UpdateAssumerolePolicy</code> </a>.
+        /// <c>CreateRole</c> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
+        /// <c>UpdateAssumerolePolicy</c> </a>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Use this operation to attach a <i>managed</i> policy to a role. To embed an inline
         /// policy in a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutRolePolicy.html">
-        /// <code>PutRolePolicy</code> </a>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// <c>PutRolePolicy</c> </a>. For more information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -623,7 +623,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// You use this operation to attach a <i>managed</i> policy to a user. To embed an inline
         /// policy in a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html">
-        /// <code>PutUserPolicy</code> </a>.
+        /// <c>PutUserPolicy</c> </a>.
         /// </para>
         ///  
         /// <para>
@@ -761,7 +761,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates a new Amazon Web Services secret access key and corresponding Amazon Web
         /// Services access key ID for the specified user. The default status for new keys is
-        /// <code>Active</code>.
+        /// <c>Active</c>.
         /// 
         ///  
         /// <para>
@@ -812,7 +812,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Creates a new Amazon Web Services secret access key and corresponding Amazon Web
         /// Services access key ID for the specified user. The default status for new keys is
-        /// <code>Active</code>.
+        /// <c>Active</c>.
         /// 
         ///  
         /// <para>
@@ -1225,8 +1225,8 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// This operation creates a policy version with a version identifier of <code>v1</code>
-        /// and sets v1 as the policy's default version. For more information about policy versions,
+        /// This operation creates a policy version with a version identifier of <c>v1</c> and
+        /// sets v1 as the policy's default version. For more information about policy versions,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning
         /// for managed policies</a> in the <i>IAM User Guide</i>.
         /// </para>
@@ -2791,11 +2791,11 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Submits a service-linked role deletion request and returns a <code>DeletionTaskId</code>,
+        /// Submits a service-linked role deletion request and returns a <c>DeletionTaskId</c>,
         /// which you can use to check the status of the deletion. Before you call this operation,
         /// confirm that the role has no active sessions and that any resources used by the role
         /// in the linked service are deleted. If you call this operation more than once for the
-        /// same service-linked role and an earlier deletion task is not complete, then the <code>DeletionTaskId</code>
+        /// same service-linked role and an earlier deletion task is not complete, then the <c>DeletionTaskId</c>
         /// of the earlier request is returned.
         /// 
         ///  
@@ -3613,11 +3613,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        /// This operation returns a <code>JobId</code>. Use this parameter in the <code> <a>GetOrganizationsAccessReport</a>
-        /// </code> operation to check the status of the report generation. To check the status
-        /// of this request, use the <code>JobId</code> parameter in the <code> <a>GetOrganizationsAccessReport</a>
-        /// </code> operation and test the <code>JobStatus</code> response parameter. When the
-        /// job is complete, you can retrieve the report.
+        /// This operation returns a <c>JobId</c>. Use this parameter in the <c> <a>GetOrganizationsAccessReport</a>
+        /// </c> operation to check the status of the report generation. To check the status of
+        /// this request, use the <c>JobId</c> parameter in the <c> <a>GetOrganizationsAccessReport</a>
+        /// </c> operation and test the <c>JobStatus</c> response parameter. When the job is complete,
+        /// you can retrieve the report.
         /// </para>
         ///  
         /// <para>
@@ -3768,8 +3768,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </important> 
         /// <para>
-        /// The <code>GenerateServiceLastAccessedDetails</code> operation returns a <code>JobId</code>.
-        /// Use this parameter in the following operations to retrieve the following details from
+        /// The <c>GenerateServiceLastAccessedDetails</c> operation returns a <c>JobId</c>. Use
+        /// this parameter in the following operations to retrieve the following details from
         /// your report: 
         /// </para>
         ///  <ul> <li> 
@@ -3781,9 +3781,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code>
-        /// must be used by the same role within a session, or by the same user when used to call
-        /// <code>GetServiceLastAccessedDetail</code>.
+        /// The <c>JobId</c> returned by <c>GenerateServiceLastAccessedDetail</c> must be used
+        /// by the same role within a session, or by the same user when used to call <c>GetServiceLastAccessedDetail</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3793,9 +3792,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To check the status of the <code>GenerateServiceLastAccessedDetails</code> request,
-        /// use the <code>JobId</code> parameter in the same operations and test the <code>JobStatus</code>
-        /// response parameter.
+        /// To check the status of the <c>GenerateServiceLastAccessedDetails</c> request, use
+        /// the <c>JobId</c> parameter in the same operations and test the <c>JobStatus</c> response
+        /// parameter.
         /// </para>
         ///  
         /// <para>
@@ -3903,14 +3902,13 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-        /// text. For example, if you use Java, you can use the <code>decode</code> method of
-        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-        /// and SDKs provide similar functionality.
+        /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can optionally filter the results using the <code>Filter</code> parameter. You
-        /// can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// You can optionally filter the results using the <c>Filter</c> parameter. You can paginate
+        /// the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountAuthorizationDetails service method.</param>
@@ -4101,7 +4099,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. Context keys can be evaluated
-        /// by testing against a value specified in an IAM policy. Use <code>GetContextKeysForCustomPolicy</code>
+        /// by testing against a value specified in an IAM policy. Use <c>GetContextKeysForCustomPolicy</c>
         /// to understand what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
         /// Note that all parameters are shown in unencoded form here for clarity but must be
         /// URL encoded to be included as a part of a real HTML request.
@@ -4136,7 +4134,7 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
         /// provide details about the context of an API query request. Context keys can be evaluated
-        /// by testing against a value specified in an IAM policy. Use <code>GetContextKeysForCustomPolicy</code>
+        /// by testing against a value specified in an IAM policy. Use <c>GetContextKeysForCustomPolicy</c>
         /// to understand what key names and values you must supply when you call <a>SimulateCustomPolicy</a>.
         /// Note that all parameters are shown in unencoded form here for clarity but must be
         /// URL encoded to be included as a part of a real HTML request.
@@ -4433,7 +4431,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Returns a list of IAM users that are in the specified IAM group. You can paginate
-        /// the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGroup service method.</param>
         /// <param name="cancellationToken">
@@ -4481,9 +4479,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-        /// text. For example, if you use Java, you can use the <code>decode</code> method of
-        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-        /// and SDKs provide similar functionality.
+        /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4584,17 +4581,17 @@ namespace Amazon.IdentityManagement
         /// Retrieves the user name for the specified IAM user. A login profile is created when
         /// you create a password for the user to access the Amazon Web Services Management Console.
         /// If the user does not exist or does not have a password, the operation returns a 404
-        /// (<code>NoSuchEntity</code>) error.
+        /// (<c>NoSuchEntity</c>) error.
         /// 
         ///  
         /// <para>
-        /// If you create an IAM user with access to the console, the <code>CreateDate</code>
-        /// reflects the date you created the initial password for the user.
+        /// If you create an IAM user with access to the console, the <c>CreateDate</c> reflects
+        /// the date you created the initial password for the user.
         /// </para>
         ///  
         /// <para>
         /// If you create an IAM user with programmatic access, and then later add a password
-        /// for the user to access the Amazon Web Services Management Console, the <code>CreateDate</code>
+        /// for the user to access the Amazon Web Services Management Console, the <c>CreateDate</c>
         /// reflects the initial password creation date. A user with programmatic access does
         /// not have a login profile unless you create a password for the user to access the Amazon
         /// Web Services Management Console.
@@ -4727,8 +4724,8 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Retrieves the service last accessed data report for Organizations that was previously
-        /// generated using the <code> <a>GenerateOrganizationsAccessReport</a> </code> operation.
-        /// This operation retrieves the status of your report job and the report contents.
+        /// generated using the <c> <a>GenerateOrganizationsAccessReport</a> </c> operation. This
+        /// operation retrieves the status of your report job and the report contents.
         /// 
         ///  
         /// <para>
@@ -4860,9 +4857,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-        /// text. For example, if you use Java, you can use the <code>decode</code> method of
-        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-        /// and SDKs provide similar functionality.
+        /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4937,9 +4933,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-        /// text. For example, if you use Java, you can use the <code>decode</code> method of
-        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-        /// and SDKs provide similar functionality.
+        /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4989,9 +4984,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-        /// text. For example, if you use Java, you can use the <code>decode</code> method of
-        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-        /// and SDKs provide similar functionality.
+        /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5151,8 +5145,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Retrieves a service last accessed report that was created using the <code>GenerateServiceLastAccessedDetails</code>
-        /// operation. You can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetails</code>
+        /// Retrieves a service last accessed report that was created using the <c>GenerateServiceLastAccessedDetails</c>
+        /// operation. You can use the <c>JobId</c> parameter in <c>GetServiceLastAccessedDetails</c>
         /// to retrieve the status of your report job. When the report is complete, you can retrieve
         /// the generated report. The report includes a list of Amazon Web Services services that
         /// the resource (user, group, role, or managed policy) can access.
@@ -5171,15 +5165,15 @@ namespace Amazon.IdentityManagement
         /// For each service that the resource could access using permissions policies, the operation
         /// returns details about the most recent access attempt. If there was no attempt, the
         /// service is listed without details about the most recent attempt to access the service.
-        /// If the operation fails, the <code>GetServiceLastAccessedDetails</code> operation returns
+        /// If the operation fails, the <c>GetServiceLastAccessedDetails</c> operation returns
         /// the reason that it failed.
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetServiceLastAccessedDetails</code> operation returns a list of services.
-        /// This list includes the number of entities that have attempted to access the service
-        /// and the date and time of the last attempt. It also returns the ARN of the following
-        /// entity, depending on the resource ARN that you used to generate the report:
+        /// The <c>GetServiceLastAccessedDetails</c> operation returns a list of services. This
+        /// list includes the number of entities that have attempted to access the service and
+        /// the date and time of the last attempt. It also returns the ARN of the following entity,
+        /// depending on the resource ARN that you used to generate the report:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5205,9 +5199,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// If you specified <code>ACTION_LEVEL</code> granularity when you generated the report,
-        /// this operation returns service and action last accessed data. This includes the most
-        /// recent access attempt for each tracked action within a service. Otherwise, this operation
+        /// If you specified <c>ACTION_LEVEL</c> granularity when you generated the report, this
+        /// operation returns service and action last accessed data. This includes the most recent
+        /// access attempt for each tracked action within a service. Otherwise, this operation
         /// returns only service data.
         /// </para>
         ///  
@@ -5256,8 +5250,8 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// After you generate a group or policy report using the <code>GenerateServiceLastAccessedDetails</code>
-        /// operation, you can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetailsWithEntities</code>.
+        /// After you generate a group or policy report using the <c>GenerateServiceLastAccessedDetails</c>
+        /// operation, you can use the <c>JobId</c> parameter in <c>GetServiceLastAccessedDetailsWithEntities</c>.
         /// This operation retrieves the status of your report job and a list of entities that
         /// could have used group or policy permissions to access the specified service.
         /// 
@@ -5278,8 +5272,8 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// If the operation fails, the <code>GetServiceLastAccessedDetailsWithEntities</code>
-        /// operation returns the reason that it failed.
+        /// If the operation fails, the <c>GetServiceLastAccessedDetailsWithEntities</c> operation
+        /// returns the reason that it failed.
         /// </para>
         ///  
         /// <para>
@@ -5328,9 +5322,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Retrieves the status of your service-linked role deletion. After you use <a>DeleteServiceLinkedRole</a>
-        /// to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code>
-        /// parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of
-        /// the deletion. If the deletion fails, this operation returns the reason that it failed,
+        /// to submit a service-linked role for deletion, you can use the <c>DeletionTaskId</c>
+        /// parameter in <c>GetServiceLinkedRoleDeletionStatus</c> to check the status of the
+        /// deletion. If the deletion fails, this operation returns the reason that it failed,
         /// if that information is returned by the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetServiceLinkedRoleDeletionStatus service method.</param>
@@ -5514,9 +5508,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-        /// text. For example, if you use Java, you can use the <code>decode</code> method of
-        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-        /// and SDKs provide similar functionality.
+        /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5578,14 +5571,14 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Although each user is limited to a small number of keys, you can still paginate the
-        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> is not specified, the user name is determined implicitly
-        /// based on the Amazon Web Services access key ID used to sign the request. If a temporary
-        /// access key is used, then <code>UserName</code> is required. If a long-term key is
-        /// assigned to the user, then <code>UserName</code> is not required.
+        /// If the <c>UserName</c> is not specified, the user name is determined implicitly based
+        /// on the Amazon Web Services access key ID used to sign the request. If a temporary
+        /// access key is used, then <c>UserName</c> is required. If a long-term key is assigned
+        /// to the user, then <c>UserName</c> is not required.
         /// </para>
         ///  
         /// <para>
@@ -5627,14 +5620,14 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Although each user is limited to a small number of keys, you can still paginate the
-        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> is not specified, the user name is determined implicitly
-        /// based on the Amazon Web Services access key ID used to sign the request. If a temporary
-        /// access key is used, then <code>UserName</code> is required. If a long-term key is
-        /// assigned to the user, then <code>UserName</code> is not required.
+        /// If the <c>UserName</c> is not specified, the user name is determined implicitly based
+        /// on the Amazon Web Services access key ID used to sign the request. If a temporary
+        /// access key is used, then <c>UserName</c> is required. If a long-term key is assigned
+        /// to the user, then <c>UserName</c> is not required.
         /// </para>
         ///  
         /// <para>
@@ -5766,11 +5759,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
-        /// policies to only those matching the specified path prefix. If there are no policies
-        /// attached to the specified group (or none that match the specified path prefix), the
-        /// operation returns an empty list.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
+        /// You can use the <c>PathPrefix</c> parameter to limit the list of policies to only
+        /// those matching the specified path prefix. If there are no policies attached to the
+        /// specified group (or none that match the specified path prefix), the operation returns
+        /// an empty list.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttachedGroupPolicies service method.</param>
@@ -5826,11 +5819,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
-        /// policies to only those matching the specified path prefix. If there are no policies
-        /// attached to the specified role (or none that match the specified path prefix), the
-        /// operation returns an empty list.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
+        /// You can use the <c>PathPrefix</c> parameter to limit the list of policies to only
+        /// those matching the specified path prefix. If there are no policies attached to the
+        /// specified role (or none that match the specified path prefix), the operation returns
+        /// an empty list.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttachedRolePolicies service method.</param>
@@ -5886,11 +5879,11 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. You can use the <code>PathPrefix</code> parameter to limit the list of
-        /// policies to only those matching the specified path prefix. If there are no policies
-        /// attached to the specified group (or none that match the specified path prefix), the
-        /// operation returns an empty list.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
+        /// You can use the <c>PathPrefix</c> parameter to limit the list of policies to only
+        /// those matching the specified path prefix. If there are no policies attached to the
+        /// specified group (or none that match the specified path prefix), the operation returns
+        /// an empty list.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttachedUserPolicies service method.</param>
@@ -5941,15 +5934,13 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can use the optional <code>EntityFilter</code> parameter to limit the results
-        /// to a particular type of entity (users, groups, or roles). For example, to list only
-        /// the roles that are attached to the specified policy, set <code>EntityFilter</code>
-        /// to <code>Role</code>.
+        /// You can use the optional <c>EntityFilter</c> parameter to limit the results to a particular
+        /// type of entity (users, groups, or roles). For example, to list only the roles that
+        /// are attached to the specified policy, set <c>EntityFilter</c> to <c>Role</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEntitiesForPolicy service method.</param>
@@ -6006,9 +5997,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. If there are no inline policies embedded with the specified group, the
-        /// operation returns an empty list.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
+        /// If there are no inline policies embedded with the specified group, the operation returns
+        /// an empty list.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupPolicies service method.</param>
@@ -6057,8 +6048,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -6082,8 +6072,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroups service method.</param>
@@ -6125,8 +6114,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGroupsForUser service method.</param>
@@ -6185,8 +6173,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -6220,8 +6207,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfiles service method.</param>
@@ -6266,8 +6252,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstanceProfilesForRole service method.</param>
@@ -6362,8 +6347,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -6394,8 +6378,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMFADevices service method.</param>
@@ -6595,16 +6578,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
-        /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
-        /// the customer managed policies in your Amazon Web Services account, set <code>Scope</code>
-        /// to <code>Local</code>. To list only Amazon Web Services managed policies, set <code>Scope</code>
-        /// to <code>AWS</code>.
+        /// You can filter the list of policies that is returned using the optional <c>OnlyAttached</c>,
+        /// <c>Scope</c>, and <c>PathPrefix</c> parameters. For example, to list only the customer
+        /// managed policies in your Amazon Web Services account, set <c>Scope</c> to <c>Local</c>.
+        /// To list only Amazon Web Services managed policies, set <c>Scope</c> to <c>AWS</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
@@ -6643,16 +6624,14 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// You can filter the list of policies that is returned using the optional <code>OnlyAttached</code>,
-        /// <code>Scope</code>, and <code>PathPrefix</code> parameters. For example, to list only
-        /// the customer managed policies in your Amazon Web Services account, set <code>Scope</code>
-        /// to <code>Local</code>. To list only Amazon Web Services managed policies, set <code>Scope</code>
-        /// to <code>AWS</code>.
+        /// You can filter the list of policies that is returned using the optional <c>OnlyAttached</c>,
+        /// <c>Scope</c>, and <c>PathPrefix</c> parameters. For example, to list only the customer
+        /// managed policies in your Amazon Web Services account, set <c>Scope</c> to <c>Local</c>.
+        /// To list only Amazon Web Services managed policies, set <c>Scope</c> to <c>AWS</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
@@ -6903,9 +6882,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. If there are no inline policies embedded with the specified role, the
-        /// operation returns an empty list.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
+        /// If there are no inline policies embedded with the specified role, the operation returns
+        /// an empty list.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRolePolicies service method.</param>
@@ -6978,8 +6957,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -7027,8 +7005,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRoles service method.</param>
@@ -7250,8 +7227,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
@@ -7291,8 +7267,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        ///  You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        ///  You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
@@ -7453,11 +7428,11 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Although each user is limited to a small number of signing certificates, you can still
-        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// If the <c>UserName</c> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request for this operation.
         /// This operation works for access keys under the Amazon Web Services account. Consequently,
         /// you can use this operation to manage Amazon Web Services account root user credentials
@@ -7491,11 +7466,11 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Although each user is limited to a small number of signing certificates, you can still
-        /// paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// If the <c>UserName</c> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request for this operation.
         /// This operation works for access keys under the Amazon Web Services account. Consequently,
         /// you can use this operation to manage Amazon Web Services account root user credentials
@@ -7554,7 +7529,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Although each user is limited to a small number of keys, you can still paginate the
-        /// results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+        /// results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSSHPublicKeys service method.</param>
@@ -7604,9 +7579,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters. If there are no inline policies embedded with the specified user, the
-        /// operation returns an empty list.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
+        /// If there are no inline policies embedded with the specified user, the operation returns
+        /// an empty list.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUserPolicies service method.</param>
@@ -7675,8 +7650,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -7720,8 +7694,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUsers service method.</param>
@@ -7807,8 +7780,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the virtual MFA devices defined in the Amazon Web Services account by assignment
         /// status. If you do not specify an assignment status, the operation returns a list of
-        /// all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
-        /// or <code>Any</code>.
+        /// all virtual MFA devices. Assignment status can be <c>Assigned</c>, <c>Unassigned</c>,
+        /// or <c>Any</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -7819,8 +7792,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -7839,8 +7811,8 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the virtual MFA devices defined in the Amazon Web Services account by assignment
         /// status. If you do not specify an assignment status, the operation returns a list of
-        /// all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>,
-        /// or <code>Any</code>.
+        /// all virtual MFA devices. Assignment status can be <c>Assigned</c>, <c>Unassigned</c>,
+        /// or <c>Any</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -7851,8 +7823,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters.
+        /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVirtualMFADevices service method.</param>
@@ -7893,8 +7864,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// A user can also have managed policies attached to it. To attach a managed policy to
         /// a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachGroupPolicy.html">
-        /// <code>AttachGroupPolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
-        /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// <c>AttachGroupPolicy</c> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+        /// <c>CreatePolicy</c> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -7906,8 +7877,8 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Because policy documents can be large, you should use POST rather than GET when calling
-        /// <code>PutGroupPolicy</code>. For general information about using the Query API with
-        /// IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// <c>PutGroupPolicy</c>. For general information about using the Query API with IAM,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
@@ -8039,17 +8010,16 @@ namespace Amazon.IdentityManagement
         /// When you embed an inline policy in a role, the inline policy is used as part of the
         /// role's access (permissions) policy. The role's trust policy is created at the same
         /// time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
-        /// <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
-        /// <code>UpdateAssumeRolePolicy</code> </a>. For more information about roles, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM roles</a>
-        /// in the <i>IAM User Guide</i>.
+        /// <c>CreateRole</c> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
+        /// <c>UpdateAssumeRolePolicy</c> </a>. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
+        /// roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// A role can also have a managed policy attached to it. To attach a managed policy to
         /// a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html">
-        /// <code>AttachRolePolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
-        /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// <c>AttachRolePolicy</c> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+        /// <c>CreatePolicy</c> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -8061,8 +8031,8 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Because policy documents can be large, you should use POST rather than GET when calling
-        /// <code>PutRolePolicy</code>. For general information about using the Query API with
-        /// IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// <c>PutRolePolicy</c>. For general information about using the Query API with IAM,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
@@ -8189,8 +8159,8 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// An IAM user can also have a managed policy attached to it. To attach a managed policy
         /// to a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachUserPolicy.html">
-        /// <code>AttachUserPolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
-        /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+        /// <c>AttachUserPolicy</c> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+        /// <c>CreatePolicy</c> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
         /// policies and inline policies</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
@@ -8202,8 +8172,8 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Because policy documents can be large, you should use POST rather than GET when calling
-        /// <code>PutUserPolicy</code>. For general information about using the Query API with
-        /// IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+        /// <c>PutUserPolicy</c>. For general information about using the Query API with IAM,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// query requests</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
@@ -8587,8 +8557,8 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// By default, Security Token Service (STS) is available as a global service, and all
-        /// STS requests go to a single endpoint at <code>https://sts.amazonaws.com</code>. Amazon
-        /// Web Services recommends using Regional STS endpoints to reduce latency, build in redundancy,
+        /// STS requests go to a single endpoint at <c>https://sts.amazonaws.com</c>. Amazon Web
+        /// Services recommends using Regional STS endpoints to reduce latency, build in redundancy,
         /// and increase session token availability. For information about Regional endpoints
         /// for STS, see <a href="https://docs.aws.amazon.com/general/latest/gr/sts.html">Security
         /// Token Service endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
@@ -8606,7 +8576,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// To view the current session token version, see the <code>GlobalEndpointTokenVersion</code>
+        /// To view the current session token version, see the <c>GlobalEndpointTokenVersion</c>
         /// entry in the response of the <a>GetAccountSummary</a> operation.
         /// </para>
         /// </summary>
@@ -8664,13 +8634,13 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// Context keys are variables that are maintained by Amazon Web Services and its services
         /// and which provide details about the context of an API query request. You can use the
-        /// <code>Condition</code> element of an IAM policy to evaluate context keys. To get the
-        /// list of context keys that the policies require for correct simulation, use <a>GetContextKeysForCustomPolicy</a>.
+        /// <c>Condition</c> element of an IAM policy to evaluate context keys. To get the list
+        /// of context keys that the policies require for correct simulation, use <a>GetContextKeysForCustomPolicy</a>.
         /// </para>
         ///  
         /// <para>
-        /// If the output is long, you can use <code>MaxItems</code> and <code>Marker</code> parameters
-        /// to paginate the results.
+        /// If the output is long, you can use <c>MaxItems</c> and <c>Marker</c> parameters to
+        /// paginate the results.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8755,14 +8725,14 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Context keys are variables maintained by Amazon Web Services and its services that
-        /// provide details about the context of an API query request. You can use the <code>Condition</code>
+        /// provide details about the context of an API query request. You can use the <c>Condition</c>
         /// element of an IAM policy to evaluate context keys. To get the list of context keys
         /// that the policies require for correct simulation, use <a>GetContextKeysForPrincipalPolicy</a>.
         /// </para>
         ///  
         /// <para>
-        /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
-        /// parameters to paginate the results.
+        /// If the output is long, you can use the <c>MaxItems</c> and <c>Marker</c> parameters
+        /// to paginate the results.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8852,9 +8822,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -8942,9 +8912,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -9033,9 +9003,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -9122,9 +9092,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -9217,9 +9187,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -9312,9 +9282,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -9414,9 +9384,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -9509,9 +9479,9 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
@@ -9987,13 +9957,13 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// If the <code>UserName</code> is not specified, the user name is determined implicitly
-        /// based on the Amazon Web Services access key ID used to sign the request. If a temporary
-        /// access key is used, then <code>UserName</code> is required. If a long-term key is
-        /// assigned to the user, then <code>UserName</code> is not required. This operation works
-        /// for access keys under the Amazon Web Services account. Consequently, you can use this
-        /// operation to manage Amazon Web Services account root user credentials even if the
-        /// Amazon Web Services account has no associated users.
+        /// If the <c>UserName</c> is not specified, the user name is determined implicitly based
+        /// on the Amazon Web Services access key ID used to sign the request. If a temporary
+        /// access key is used, then <c>UserName</c> is required. If a long-term key is assigned
+        /// to the user, then <c>UserName</c> is not required. This operation works for access
+        /// keys under the Amazon Web Services account. Consequently, you can use this operation
+        /// to manage Amazon Web Services account root user credentials even if the Amazon Web
+        /// Services account has no associated users.
         /// </para>
         ///  
         /// <para>
@@ -10228,9 +10198,9 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// The person making the request (the principal), must have permission to change the
         /// role group with the old name and the new name. For example, to change the group named
-        /// <code>Managers</code> to <code>MGRs</code>, the principal must have a policy that
-        /// allows them to update both groups. If the principal has permission to update the <code>Managers</code>
-        /// group, but not the <code>MGRs</code> group, then the update fails. For more information
+        /// <c>Managers</c> to <c>MGRs</c>, the principal must have a policy that allows them
+        /// to update both groups. If the principal has permission to update the <c>Managers</c>
+        /// group, but not the <c>MGRs</c> group, then the update fails. For more information
         /// about permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
         /// management</a>. 
         /// </para>
@@ -10373,7 +10343,7 @@ namespace Amazon.IdentityManagement
         ///  </note> <note> 
         /// <para>
         /// Trust for the OIDC provider is derived from the provider certificate and is validated
-        /// by the thumbprint. Therefore, it is best to limit access to the <code>UpdateOpenIDConnectProviderThumbprint</code>
+        /// by the thumbprint. Therefore, it is best to limit access to the <c>UpdateOpenIDConnectProviderThumbprint</c>
         /// operation to highly privileged users.
         /// </para>
         ///  </note>
@@ -10474,7 +10444,7 @@ namespace Amazon.IdentityManagement
         ///  
         /// <para>
         /// Modifies only the description of a role. This operation performs the same function
-        /// as the <code>Description</code> parameter in the <code>UpdateRole</code> operation.
+        /// as the <c>Description</c> parameter in the <c>UpdateRole</c> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoleDescription service method.</param>
@@ -10598,12 +10568,11 @@ namespace Amazon.IdentityManagement
         /// <para>
         /// The person making the request (the principal), must have permission to change the
         /// server certificate with the old name and the new name. For example, to change the
-        /// certificate named <code>ProductionCert</code> to <code>ProdCert</code>, the principal
-        /// must have a policy that allows them to update both certificates. If the principal
-        /// has permission to update the <code>ProductionCert</code> group, but not the <code>ProdCert</code>
-        /// certificate, then the update fails. For more information about permissions, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access management</a>
-        /// in the <i>IAM User Guide</i>.
+        /// certificate named <c>ProductionCert</c> to <c>ProdCert</c>, the principal must have
+        /// a policy that allows them to update both certificates. If the principal has permission
+        /// to update the <c>ProductionCert</c> group, but not the <c>ProdCert</c> certificate,
+        /// then the update fails. For more information about permissions, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+        /// management</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -10653,7 +10622,7 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Sets the status of a service-specific credential to <code>Active</code> or <code>Inactive</code>.
+        /// Sets the status of a service-specific credential to <c>Active</c> or <c>Inactive</c>.
         /// Service-specific credentials that are inactive cannot be used for authentication to
         /// the service. This operation can be used to disable a user's service-specific credential
         /// as part of a credential rotation work flow.
@@ -10700,7 +10669,7 @@ namespace Amazon.IdentityManagement
         /// 
         ///  
         /// <para>
-        /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+        /// If the <c>UserName</c> field is not specified, the user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
         /// works for access keys under the Amazon Web Services account. Consequently, you can
         /// use this operation to manage Amazon Web Services account root user credentials even
@@ -10901,7 +10870,7 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Because the body of the public key certificate, private key, and the certificate chain
-        /// can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
+        /// can be large, you should use POST rather than GET when calling <c>UploadServerCertificate</c>.
         /// For information about setting up signatures and authorization through the API, see
         /// <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
         /// Amazon Web Services API requests</a> in the <i>Amazon Web Services General Reference</i>.
@@ -10971,7 +10940,7 @@ namespace Amazon.IdentityManagement
         /// Uploads an X.509 signing certificate and associates it with the specified IAM user.
         /// Some Amazon Web Services services require you to use certificates to validate requests
         /// that are signed with a corresponding private key. When you upload the certificate,
-        /// its default status is <code>Active</code>.
+        /// its default status is <c>Active</c>.
         /// 
         ///  
         /// <para>
@@ -10980,7 +10949,7 @@ namespace Amazon.IdentityManagement
         /// </para>
         ///  
         /// <para>
-        /// If the <code>UserName</code> is not specified, the IAM user name is determined implicitly
+        /// If the <c>UserName</c> is not specified, the IAM user name is determined implicitly
         /// based on the Amazon Web Services access key ID used to sign the request. This operation
         /// works for access keys under the Amazon Web Services account. Consequently, you can
         /// use this operation to manage Amazon Web Services account root user credentials even
@@ -10989,8 +10958,8 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// Because the body of an X.509 certificate can be large, you should use POST rather
-        /// than GET when calling <code>UploadSigningCertificate</code>. For information about
-        /// setting up signatures and authorization through the API, see <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
+        /// than GET when calling <c>UploadSigningCertificate</c>. For information about setting
+        /// up signatures and authorization through the API, see <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
         /// Amazon Web Services API requests</a> in the <i>Amazon Web Services General Reference</i>.
         /// For general information about using the Query API with IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
         /// query requests</a> in the <i>IAM User Guide</i>.

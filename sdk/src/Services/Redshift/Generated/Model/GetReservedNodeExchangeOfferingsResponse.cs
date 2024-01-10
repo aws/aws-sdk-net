@@ -40,10 +40,10 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional parameter that specifies the starting point for returning a set of response
-        /// records. When the results of a <code>GetReservedNodeExchangeOfferings</code> request
-        /// exceed the value specified in MaxRecords, Amazon Redshift returns a value in the marker
-        /// field of the response. You can retrieve the next set of response records by providing
-        /// the returned marker value in the marker parameter and retrying the request. 
+        /// records. When the results of a <c>GetReservedNodeExchangeOfferings</c> request exceed
+        /// the value specified in MaxRecords, Amazon Redshift returns a value in the marker field
+        /// of the response. You can retrieve the next set of response records by providing the
+        /// returned marker value in the marker parameter and retrying the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

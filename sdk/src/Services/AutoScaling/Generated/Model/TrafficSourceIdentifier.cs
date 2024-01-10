@@ -54,16 +54,16 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Application Load Balancer ARN: <code>arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/1234567890123456</code>
+        /// Application Load Balancer ARN: <c>arn:aws:elasticloadbalancing:us-west-2:123456789012:targetgroup/my-targets/1234567890123456</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Classic Load Balancer name: <code>my-classic-load-balancer</code> 
+        /// Classic Load Balancer name: <c>my-classic-load-balancer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// VPC Lattice ARN: <code>arn:aws:vpc-lattice:us-west-2:123456789012:targetgroup/tg-1234567890123456</code>
+        /// VPC Lattice ARN: <c>arn:aws:vpc-lattice:us-west-2:123456789012:targetgroup/tg-1234567890123456</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -96,7 +96,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Provides additional context for the value of <code>Identifier</code>.
+        /// Provides additional context for the value of <c>Identifier</c>.
         /// </para>
         ///  
         /// <para>
@@ -104,17 +104,16 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.
+        ///  <c>elb</c> if <c>Identifier</c> is the name of a Classic Load Balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer,
-        /// Gateway Load Balancer, or Network Load Balancer target group.
+        ///  <c>elbv2</c> if <c>Identifier</c> is the ARN of an Application Load Balancer, Gateway
+        /// Load Balancer, or Network Load Balancer target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target
-        /// group.
+        ///  <c>vpc-lattice</c> if <c>Identifier</c> is the ARN of a VPC Lattice target group.
         /// </para>
         ///  </li> </ul> 
         /// <para>

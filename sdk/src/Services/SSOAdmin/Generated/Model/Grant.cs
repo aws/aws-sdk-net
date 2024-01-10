@@ -43,7 +43,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AuthorizationCode. 
         /// <para>
-        /// Configuration options for the <code>authorization_code</code> grant type.
+        /// Configuration options for the <c>authorization_code</c> grant type.
         /// </para>
         /// </summary>
         public AuthorizationCodeGrant AuthorizationCode
@@ -61,8 +61,8 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property JwtBearer. 
         /// <para>
-        /// Configuration options for the <code>urn:ietf:params:oauth:grant-type:jwt-bearer</code>
-        /// grant type.
+        /// Configuration options for the <c>urn:ietf:params:oauth:grant-type:jwt-bearer</c> grant
+        /// type.
         /// </para>
         /// </summary>
         public JwtBearerGrant JwtBearer
@@ -80,7 +80,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property RefreshToken. 
         /// <para>
-        /// Configuration options for the <code>refresh_token</code> grant type.
+        /// Configuration options for the <c>refresh_token</c> grant type.
         /// </para>
         /// </summary>
         public RefreshTokenGrant RefreshToken
@@ -98,7 +98,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property TokenExchange. 
         /// <para>
-        /// Configuration options for the <code>urn:ietf:params:oauth:grant-type:token-exchange</code>
+        /// Configuration options for the <c>urn:ietf:params:oauth:grant-type:token-exchange</c>
         /// grant type.
         /// </para>
         /// </summary>

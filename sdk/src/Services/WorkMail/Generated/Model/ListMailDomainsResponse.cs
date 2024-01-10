@@ -59,7 +59,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. The value becomes <code>null</code>
+        /// The token to use to retrieve the next page of results. The value becomes <c>null</c>
         /// when there are no more results to return.
         /// </para>
         /// </summary>

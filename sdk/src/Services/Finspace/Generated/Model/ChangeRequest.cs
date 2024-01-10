@@ -40,8 +40,7 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property ChangeType. 
         /// <para>
-        /// Defines the type of change request. A <code>changeType</code> can have the following
-        /// values:
+        /// Defines the type of change request. A <c>changeType</c> can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

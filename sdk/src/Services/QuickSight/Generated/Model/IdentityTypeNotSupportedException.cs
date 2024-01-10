@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The identity type specified isn't supported. Supported identity types include <code>IAM</code>
-    /// and <code>QUICKSIGHT</code>.
+    /// The identity type specified isn't supported. Supported identity types include <c>IAM</c>
+    /// and <c>QUICKSIGHT</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -97,11 +97,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -152,13 +152,13 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter in a subsequent request after you receive a response with truncated
-        /// results. Set it to the value of <code>NextMarker</code> from the truncated response
-        /// you just received.
+        /// results. Set it to the value of <c>NextMarker</c> from the truncated response you
+        /// just received.
         /// </para>
         ///  
         /// <para>
-        /// Do not attempt to construct this value. Use only the value of <code>NextMarker</code>
-        /// from the truncated response you just received.
+        /// Do not attempt to construct this value. Use only the value of <c>NextMarker</c> from
+        /// the truncated response you just received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

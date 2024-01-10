@@ -66,26 +66,26 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>availability-zone</code> - The Availability Zone in which the Elastic Graphics
-        /// accelerator resides.
+        ///  <c>availability-zone</c> - The Availability Zone in which the Elastic Graphics accelerator
+        /// resides.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>elastic-gpu-health</code> - The status of the Elastic Graphics accelerator
-        /// (<code>OK</code> | <code>IMPAIRED</code>).
+        ///  <c>elastic-gpu-health</c> - The status of the Elastic Graphics accelerator (<c>OK</c>
+        /// | <c>IMPAIRED</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>elastic-gpu-state</code> - The state of the Elastic Graphics accelerator (<code>ATTACHED</code>).
+        ///  <c>elastic-gpu-state</c> - The state of the Elastic Graphics accelerator (<c>ATTACHED</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>elastic-gpu-type</code> - The type of Elastic Graphics accelerator; for example,
-        /// <code>eg1.medium</code>.
+        ///  <c>elastic-gpu-type</c> - The type of Elastic Graphics accelerator; for example,
+        /// <c>eg1.medium</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instance-id</code> - The ID of the instance to which the Elastic Graphics accelerator
+        ///  <c>instance-id</c> - The ID of the instance to which the Elastic Graphics accelerator
         /// is associated.
         /// </para>
         ///  </li> </ul>
@@ -106,8 +106,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value. This value
-        /// can be between 5 and 1000.
+        /// results, make another call with the returned <c>NextToken</c> value. This value can
+        /// be between 5 and 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=1000)]

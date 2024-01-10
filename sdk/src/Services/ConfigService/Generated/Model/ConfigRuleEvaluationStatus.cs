@@ -136,13 +136,13 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code> - Config has evaluated your Amazon Web Services resources against
-        /// the rule at least once.
+        ///  <c>true</c> - Config has evaluated your Amazon Web Services resources against the
+        /// rule at least once.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code> - Config has not finished evaluating your Amazon Web Services
-        /// resources against the rule at least once.
+        ///  <c>false</c> - Config has not finished evaluating your Amazon Web Services resources
+        /// against the rule at least once.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -180,7 +180,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property LastDebugLogDeliveryStatus. 
         /// <para>
         /// The status of the last attempted delivery of a debug log for your Config Custom Policy
-        /// rules. Either <code>Successful</code> or <code>Failed</code>.
+        /// rules. Either <c>Successful</c> or <c>Failed</c>.
         /// </para>
         /// </summary>
         public string LastDebugLogDeliveryStatus

@@ -45,8 +45,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, this is set to <code>true</code>, and new controls are enabled automatically.
-        /// To not automatically enable new controls, set this to <code>false</code>. 
+        /// By default, this is set to <c>true</c>, and new controls are enabled automatically.
+        /// To not automatically enable new controls, set this to <c>false</c>. 
         /// </para>
         /// </summary>
         public bool AutoEnableControls
@@ -65,15 +65,14 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ControlFindingGenerator. 
         /// <para>
         /// Updates whether the calling account has consolidated control findings turned on. If
-        /// the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub generates
+        /// the value for this field is set to <c>SECURITY_CONTROL</c>, Security Hub generates
         /// a single finding for a control check even when the check applies to multiple enabled
         /// standards.
         /// </para>
         ///  
         /// <para>
-        /// If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub
-        /// generates separate findings for a control check when the check applies to multiple
-        /// enabled standards.
+        /// If the value for this field is set to <c>STANDARD_CONTROL</c>, Security Hub generates
+        /// separate findings for a control check when the check applies to multiple enabled standards.
         /// </para>
         ///  
         /// <para>

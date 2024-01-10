@@ -69,10 +69,10 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property DisableScaleIn. 
         /// <para>
         /// Indicates whether scale in by the target tracking scaling policy is disabled. If the
-        /// value is <code>true</code>, scale in is disabled and the target tracking scaling policy
+        /// value is <c>true</c>, scale in is disabled and the target tracking scaling policy
         /// won't remove capacity from the scalable target. Otherwise, scale in is enabled and
         /// the target tracking scaling policy can remove capacity from the scalable target. The
-        /// default value is <code>false</code>.
+        /// default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool DisableScaleIn
@@ -157,9 +157,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the scaling policy specifies the <code>ALBRequestCountPerTarget</code> predefined
-        /// metric, specify the target utilization as the optimal average request count per target
-        /// during any one-minute interval.
+        /// If the scaling policy specifies the <c>ALBRequestCountPerTarget</c> predefined metric,
+        /// specify the target utilization as the optimal average request count per target during
+        /// any one-minute interval.
         /// </para>
         ///  </note>
         /// </summary>

@@ -38,8 +38,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Snapshot. 
         /// <para>
-        /// Returned after a successful <code>UpdateSnapshot</code> operation, describing the
-        /// snapshot that you updated.
+        /// Returned after a successful <c>UpdateSnapshot</c> operation, describing the snapshot
+        /// that you updated.
         /// </para>
         /// </summary>
         public Snapshot Snapshot

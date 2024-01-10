@@ -30,7 +30,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// The structure of Cost Categories. This includes detailed metadata and the set of rules
-    /// for the <code>CostCategory</code> object.
+    /// for the <c>CostCategory</c> object.
     /// </summary>
     public partial class CostCategory
     {

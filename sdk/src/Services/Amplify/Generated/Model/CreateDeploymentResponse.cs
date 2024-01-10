@@ -40,7 +40,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property FileUploadUrls. 
         /// <para>
-        ///  When the <code>fileMap</code> argument is provided in the request, <code>fileUploadUrls</code>
+        ///  When the <c>fileMap</c> argument is provided in the request, <c>fileUploadUrls</c>
         /// will contain a map of file names to upload URLs. 
         /// </para>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property ZipUploadUrl. 
         /// <para>
-        ///  When the <code>fileMap</code> argument is not provided in the request, this <code>zipUploadUrl</code>
+        ///  When the <c>fileMap</c> argument is not provided in the request, this <c>zipUploadUrl</c>
         /// is returned. 
         /// </para>
         /// </summary>

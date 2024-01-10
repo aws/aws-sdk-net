@@ -82,7 +82,7 @@ namespace Amazon.LakeFormation.Model
         /// Gets and sets the property QueryAsOfTime. 
         /// <para>
         /// The time as of when to read the table contents. If not set, the most recent transaction
-        /// commit time will be used. Cannot be specified along with <code>TransactionId</code>.
+        /// commit time will be used. Cannot be specified along with <c>TransactionId</c>.
         /// </para>
         /// </summary>
         public DateTime QueryAsOfTime
@@ -121,7 +121,7 @@ namespace Amazon.LakeFormation.Model
         /// The transaction ID at which to read the table contents. If this transaction is not
         /// committed, the read will be treated as part of that transaction and will see its writes.
         /// If this transaction has aborted, an error will be returned. If not set, defaults to
-        /// the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.
+        /// the most recent committed transaction. Cannot be specified along with <c>QueryAsOfTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

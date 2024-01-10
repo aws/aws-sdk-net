@@ -42,7 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CollectorName. 
         /// <para>
-        /// The name of your Fleet Advisor collector (for example, <code>sample-collector</code>).
+        /// The name of your Fleet Advisor collector (for example, <c>sample-collector</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

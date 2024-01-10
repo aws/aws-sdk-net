@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code>
+    /// A list of HTTP headers that CloudFront includes as values for the <c>Access-Control-Expose-Headers</c>
     /// HTTP response header.
     /// 
     ///  
     /// <para>
-    /// For more information about the <code>Access-Control-Expose-Headers</code> HTTP response
+    /// For more information about the <c>Access-Control-Expose-Headers</c> HTTP response
     /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a>
     /// in the MDN Web Docs.
     /// </para>
@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The list of HTTP headers. You can specify <code>*</code> to expose all headers.
+        /// The list of HTTP headers. You can specify <c>*</c> to expose all headers.
         /// </para>
         /// </summary>
         public List<string> Items

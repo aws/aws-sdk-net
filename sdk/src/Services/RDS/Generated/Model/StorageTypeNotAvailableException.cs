@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The <code>aurora-iopt1</code> storage type isn't available, because you modified the
-    /// DB cluster to use this storage type less than one month ago.
+    /// The <c>aurora-iopt1</c> storage type isn't available, because you modified the DB
+    /// cluster to use this storage type less than one month ago.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

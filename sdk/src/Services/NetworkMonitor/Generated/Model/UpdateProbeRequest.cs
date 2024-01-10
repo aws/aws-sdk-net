@@ -30,9 +30,9 @@ namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProbe operation.
-    /// Updates a monitor probe. This action requires both the <code>monitorName</code> and
-    /// <code>probeId</code> parameters. Run <code>ListMonitors</code> to get a list of monitor
-    /// names. Run <code>GetMonitor</code> to get a list of probes and probe IDs.
+    /// Updates a monitor probe. This action requires both the <c>monitorName</c> and <c>probeId</c>
+    /// parameters. Run <c>ListMonitors</c> to get a list of monitor names. Run <c>GetMonitor</c>
+    /// to get a list of probes and probe IDs.
     /// </summary>
     public partial class UpdateProbeRequest : AmazonNetworkMonitorRequest
     {
@@ -67,8 +67,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// The updated port for the probe destination. This is required only if the <code>protocol</code>
-        /// is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.
+        /// The updated port for the probe destination. This is required only if the <c>protocol</c>
+        /// is <c>TCP</c> and must be a number between <c>1</c> and <c>65536</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
@@ -107,7 +107,7 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property PacketSize. 
         /// <para>
         /// he updated packets size for network traffic between the source and destination. This
-        /// must be a number between <code>56</code> and <code>8500</code>.
+        /// must be a number between <c>56</c> and <c>8500</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=56, Max=8500)]
@@ -126,7 +126,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property ProbeId. 
         /// <para>
-        /// Run <code>GetMonitor</code> to get a list of probes and probe IDs.
+        /// Run <c>GetMonitor</c> to get a list of probes and probe IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,9 +145,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The updated network protocol for the destination. This can be either <code>TCP</code>
-        /// or <code>ICMP</code>. If the protocol is <code>TCP</code>, then <code>port</code>
-        /// is also required.
+        /// The updated network protocol for the destination. This can be either <c>TCP</c> or
+        /// <c>ICMP</c>. If the protocol is <c>TCP</c>, then <c>port</c> is also required.
         /// </para>
         /// </summary>
         public Protocol Protocol

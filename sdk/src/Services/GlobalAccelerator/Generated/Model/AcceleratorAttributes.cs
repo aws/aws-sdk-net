@@ -41,7 +41,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property FlowLogsEnabled. 
         /// <para>
         /// Indicates whether flow logs are enabled. The default value is false. If the value
-        /// is true, <code>FlowLogsS3Bucket</code> and <code>FlowLogsS3Prefix</code> must be specified.
+        /// is true, <c>FlowLogsS3Bucket</c> and <c>FlowLogsS3Prefix</c> must be specified.
         /// </para>
         ///  
         /// <para>
@@ -64,8 +64,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property FlowLogsS3Bucket. 
         /// <para>
-        /// The name of the Amazon S3 bucket for the flow logs. Attribute is required if <code>FlowLogsEnabled</code>
-        /// is <code>true</code>. The bucket must exist and have a bucket policy that grants Global
+        /// The name of the Amazon S3 bucket for the flow logs. Attribute is required if <c>FlowLogsEnabled</c>
+        /// is <c>true</c>. The bucket must exist and have a bucket policy that grants Global
         /// Accelerator permission to write to the bucket.
         /// </para>
         /// </summary>
@@ -86,7 +86,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// Gets and sets the property FlowLogsS3Prefix. 
         /// <para>
         /// The prefix for the location in the Amazon S3 bucket for the flow logs. Attribute is
-        /// required if <code>FlowLogsEnabled</code> is <code>true</code>.
+        /// required if <c>FlowLogsEnabled</c> is <c>true</c>.
         /// </para>
         ///  
         /// <para>

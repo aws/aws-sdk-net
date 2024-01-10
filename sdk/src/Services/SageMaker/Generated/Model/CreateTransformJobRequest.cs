@@ -44,29 +44,28 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>TransformJobName</code> - Identifies the transform job. The name must be unique
-    /// within an Amazon Web Services Region in an Amazon Web Services account.
+    ///  <c>TransformJobName</c> - Identifies the transform job. The name must be unique within
+    /// an Amazon Web Services Region in an Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ModelName</code> - Identifies the model to use. <code>ModelName</code> must
-    /// be the name of an existing Amazon SageMaker model in the same Amazon Web Services
-    /// Region and Amazon Web Services account. For information on creating a model, see <a
-    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>.
+    ///  <c>ModelName</c> - Identifies the model to use. <c>ModelName</c> must be the name
+    /// of an existing Amazon SageMaker model in the same Amazon Web Services Region and Amazon
+    /// Web Services account. For information on creating a model, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateModel.html">CreateModel</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TransformInput</code> - Describes the dataset to be transformed and the Amazon
-    /// S3 location where it is stored.
+    ///  <c>TransformInput</c> - Describes the dataset to be transformed and the Amazon S3
+    /// location where it is stored.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TransformOutput</code> - Identifies the Amazon S3 location where you want Amazon
+    ///  <c>TransformOutput</c> - Identifies the Amazon S3 location where you want Amazon
     /// SageMaker to save the results from the transform job.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TransformResources</code> - Identifies the ML compute instances for the transform
+    ///  <c>TransformResources</c> - Identifies the ML compute instances for the transform
     /// job.
     /// </para>
     ///  </li> </ul> 
@@ -101,20 +100,18 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// To enable the batch strategy, you must set the <code>SplitType</code> property to
-        /// <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.
+        /// To enable the batch strategy, you must set the <c>SplitType</c> property to <c>Line</c>,
+        /// <c>RecordIO</c>, or <c>TFRecord</c>.
         /// </para>
         ///  
         /// <para>
         /// To use only one record when making an HTTP invocation request to a container, set
-        /// <code>BatchStrategy</code> to <code>SingleRecord</code> and <code>SplitType</code>
-        /// to <code>Line</code>.
+        /// <c>BatchStrategy</c> to <c>SingleRecord</c> and <c>SplitType</c> to <c>Line</c>.
         /// </para>
         ///  
         /// <para>
-        /// To fit as many records in a mini-batch as can fit within the <code>MaxPayloadInMB</code>
-        /// limit, set <code>BatchStrategy</code> to <code>MultiRecord</code> and <code>SplitType</code>
-        /// to <code>Line</code>.
+        /// To fit as many records in a mini-batch as can fit within the <c>MaxPayloadInMB</c>
+        /// limit, set <c>BatchStrategy</c> to <c>MultiRecord</c> and <c>SplitType</c> to <c>Line</c>.
         /// </para>
         /// </summary>
         public BatchStrategy BatchStrategy
@@ -210,13 +207,12 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxConcurrentTransforms. 
         /// <para>
         /// The maximum number of parallel requests that can be sent to each instance in a transform
-        /// job. If <code>MaxConcurrentTransforms</code> is set to <code>0</code> or left unset,
-        /// Amazon SageMaker checks the optional execution-parameters to determine the settings
-        /// for your chosen algorithm. If the execution-parameters endpoint is not enabled, the
-        /// default value is <code>1</code>. For more information on execution-parameters, see
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
+        /// job. If <c>MaxConcurrentTransforms</c> is set to <c>0</c> or left unset, Amazon SageMaker
+        /// checks the optional execution-parameters to determine the settings for your chosen
+        /// algorithm. If the execution-parameters endpoint is not enabled, the default value
+        /// is <c>1</c>. For more information on execution-parameters, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-batch-code.html#your-algorithms-batch-code-how-containe-serves-requests">How
         /// Containers Serve Requests</a>. For built-in algorithms, you don't need to set a value
-        /// for <code>MaxConcurrentTransforms</code>.
+        /// for <c>MaxConcurrentTransforms</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -236,22 +232,22 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxPayloadInMB. 
         /// <para>
         /// The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion
-        /// of a record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater
+        /// of a record (without metadata). The value in <c>MaxPayloadInMB</c> must be greater
         /// than, or equal to, the size of a single record. To estimate the size of a record in
         /// MB, divide the size of your dataset by the number of records. To ensure that the records
         /// fit within the maximum payload size, we recommend using a slightly larger value. The
-        /// default value is <code>6</code> MB. 
+        /// default value is <c>6</c> MB. 
         /// </para>
         ///  
         /// <para>
-        /// The value of <code>MaxPayloadInMB</code> cannot be greater than 100 MB. If you specify
-        /// the <code>MaxConcurrentTransforms</code> parameter, the value of <code>(MaxConcurrentTransforms
-        /// * MaxPayloadInMB)</code> also cannot exceed 100 MB.
+        /// The value of <c>MaxPayloadInMB</c> cannot be greater than 100 MB. If you specify the
+        /// <c>MaxConcurrentTransforms</c> parameter, the value of <c>(MaxConcurrentTransforms
+        /// * MaxPayloadInMB)</c> also cannot exceed 100 MB.
         /// </para>
         ///  
         /// <para>
         /// For cases where the payload might be arbitrarily large and is transmitted using HTTP
-        /// chunked encoding, set the value to <code>0</code>. This feature works only in supported
+        /// chunked encoding, set the value to <c>0</c>. This feature works only in supported
         /// algorithms. Currently, Amazon SageMaker built-in algorithms do not support HTTP chunked
         /// encoding.
         /// </para>
@@ -291,7 +287,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelName. 
         /// <para>
-        /// The name of the model that you want to use for the transform job. <code>ModelName</code>
+        /// The name of the model that you want to use for the transform job. <c>ModelName</c>
         /// must be the name of an existing Amazon SageMaker model within an Amazon Web Services
         /// Region in an Amazon Web Services account.
         /// </para>

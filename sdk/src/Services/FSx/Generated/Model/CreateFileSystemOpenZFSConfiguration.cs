@@ -67,12 +67,12 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CopyTagsToBackups. 
         /// <para>
         /// A Boolean value indicating whether tags for the file system should be copied to backups.
-        /// This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags
-        /// for the file system are copied to all automatic and user-initiated backups where the
-        /// user doesn't specify tags. If this value is <code>true</code>, and you specify one
-        /// or more tags, only the specified tags are copied to backups. If you specify one or
-        /// more tags when creating a user-initiated backup, no tags are copied from the file
-        /// system, regardless of this value.
+        /// This value defaults to <c>false</c>. If it's set to <c>true</c>, all tags for the
+        /// file system are copied to all automatic and user-initiated backups where the user
+        /// doesn't specify tags. If this value is <c>true</c>, and you specify one or more tags,
+        /// only the specified tags are copied to backups. If you specify one or more tags when
+        /// creating a user-initiated backup, no tags are copied from the file system, regardless
+        /// of this value.
         /// </para>
         /// </summary>
         public bool CopyTagsToBackups
@@ -91,11 +91,11 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CopyTagsToVolumes. 
         /// <para>
         /// A Boolean value indicating whether tags for the file system should be copied to volumes.
-        /// This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags
-        /// for the file system are copied to volumes where the user doesn't specify tags. If
-        /// this value is <code>true</code>, and you specify one or more tags, only the specified
-        /// tags are copied to volumes. If you specify one or more tags when creating the volume,
-        /// no tags are copied from the file system, regardless of this value.
+        /// This value defaults to <c>false</c>. If it's set to <c>true</c>, all tags for the
+        /// file system are copied to volumes where the user doesn't specify tags. If this value
+        /// is <c>true</c>, and you specify one or more tags, only the specified tags are copied
+        /// to volumes. If you specify one or more tags when creating the volume, no tags are
+        /// copied from the file system, regardless of this value.
         /// </para>
         /// </summary>
         public bool CopyTagsToVolumes
@@ -135,24 +135,24 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MULTI_AZ_1</code>- Creates file systems with high availability that are configured
+        ///  <c>MULTI_AZ_1</c>- Creates file systems with high availability that are configured
         /// for Multi-AZ redundancy to tolerate temporary unavailability in Availability Zones
-        /// (AZs). <code>Multi_AZ_1</code> is available only in the US East (N. Virginia), US
-        /// East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and
-        /// Europe (Ireland) Amazon Web Services Regions.
+        /// (AZs). <c>Multi_AZ_1</c> is available only in the US East (N. Virginia), US East (Ohio),
+        /// US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Tokyo), and Europe (Ireland)
+        /// Amazon Web Services Regions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_1</code>- Creates file systems with throughput capacities of 64 -
-        /// 4,096 MB/s. <code>Single_AZ_1</code> is available in all Amazon Web Services Regions
-        /// where Amazon FSx for OpenZFS is available.
+        ///  <c>SINGLE_AZ_1</c>- Creates file systems with throughput capacities of 64 - 4,096
+        /// MB/s. <c>Single_AZ_1</c> is available in all Amazon Web Services Regions where Amazon
+        /// FSx for OpenZFS is available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_2</code>- Creates file systems with throughput capacities of 160
-        /// - 10,240 MB/s using an NVMe L2ARC cache. <code>Single_AZ_2</code> is available only
-        /// in the US East (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore),
-        /// Asia Pacific (Tokyo), and Europe (Ireland) Amazon Web Services Regions.
+        ///  <c>SINGLE_AZ_2</c>- Creates file systems with throughput capacities of 160 - 10,240
+        /// MB/s using an NVMe L2ARC cache. <c>Single_AZ_2</c> is available only in the US East
+        /// (N. Virginia), US East (Ohio), US West (Oregon), Asia Pacific (Singapore), Asia Pacific
+        /// (Tokyo), and Europe (Ireland) Amazon Web Services Regions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -215,8 +215,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PreferredSubnetId. 
         /// <para>
-        /// Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This
-        /// specifies the subnet in which you want the preferred file server to be located.
+        /// Required when <c>DeploymentType</c> is set to <c>MULTI_AZ_1</c>. This specifies the
+        /// subnet in which you want the preferred file server to be located.
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]
@@ -281,13 +281,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>MULTI_AZ_1</code> and <code>SINGLE_AZ_2</code>, valid values are 160, 320,
-        /// 640, 1280, 2560, 3840, 5120, 7680, or 10240 MBps.
+        /// For <c>MULTI_AZ_1</c> and <c>SINGLE_AZ_2</c>, valid values are 160, 320, 640, 1280,
+        /// 2560, 3840, 5120, 7680, or 10240 MBps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>SINGLE_AZ_1</code>, valid values are 64, 128, 256, 512, 1024, 2048, 3072,
-        /// or 4096 MBps.
+        /// For <c>SINGLE_AZ_1</c>, valid values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096
+        /// MBps.
         /// </para>
         ///  </li> </ul> 
         /// <para>

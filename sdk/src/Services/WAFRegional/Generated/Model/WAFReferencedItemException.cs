@@ -34,11 +34,11 @@ namespace Amazon.WAFRegional.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You tried to delete a <code>ByteMatchSet</code> that is still referenced by a <code>Rule</code>.
+    /// You tried to delete a <c>ByteMatchSet</c> that is still referenced by a <c>Rule</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to delete a <code>Rule</code> that is still referenced by a <code>WebACL</code>.
+    /// You tried to delete a <c>Rule</c> that is still referenced by a <c>WebACL</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

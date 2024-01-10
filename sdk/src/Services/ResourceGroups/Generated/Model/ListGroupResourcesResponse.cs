@@ -42,9 +42,9 @@ namespace Amazon.ResourceGroups.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If present, indicates that more output is available than is included in the current
-        /// response. Use this value in the <code>NextToken</code> request parameter in a subsequent
+        /// response. Use this value in the <c>NextToken</c> request parameter in a subsequent
         /// call to the operation to get the next part of the output. You should repeat this until
-        /// the <code>NextToken</code> response element comes back as <code>null</code>.
+        /// the <c>NextToken</c> response element comes back as <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]
@@ -63,9 +63,9 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property QueryErrors. 
         /// <para>
-        /// A list of <code>QueryError</code> objects. Each error is an object that contains <code>ErrorCode</code>
-        /// and <code>Message</code> structures. Possible values for <code>ErrorCode</code> are
-        /// <code>CLOUDFORMATION_STACK_INACTIVE</code> and <code>CLOUDFORMATION_STACK_NOT_EXISTING</code>.
+        /// A list of <c>QueryError</c> objects. Each error is an object that contains <c>ErrorCode</c>
+        /// and <c>Message</c> structures. Possible values for <c>ErrorCode</c> are <c>CLOUDFORMATION_STACK_INACTIVE</c>
+        /// and <c>CLOUDFORMATION_STACK_NOT_EXISTING</c>.
         /// </para>
         /// </summary>
         public List<QueryError> QueryErrors
@@ -83,8 +83,8 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifiers. <important> 
         /// <para>
-        ///  <b> <i>Deprecated - don't use this parameter. Use the <code>Resources</code> response
-        /// field instead.</i> </b> 
+        ///  <b> <i>Deprecated - don't use this parameter. Use the <c>Resources</c> response field
+        /// instead.</i> </b> 
         /// </para>
         ///  </important>
         /// </summary>

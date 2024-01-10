@@ -725,8 +725,7 @@ namespace Amazon.LexModelsV2
         ///  
         /// <para>
         /// To define the interaction between the user and your bot, you define one or more intents.
-        /// For example, for a pizza ordering bot you would create an <code>OrderPizza</code>
-        /// intent.
+        /// For example, for a pizza ordering bot you would create an <c>OrderPizza</c> intent.
         /// </para>
         ///  
         /// <para>
@@ -803,8 +802,7 @@ namespace Amazon.LexModelsV2
         ///  
         /// <para>
         /// To define the interaction between the user and your bot, you define one or more intents.
-        /// For example, for a pizza ordering bot you would create an <code>OrderPizza</code>
-        /// intent.
+        /// For example, for a pizza ordering bot you would create an <c>OrderPizza</c> intent.
         /// </para>
         ///  
         /// <para>
@@ -1047,7 +1045,7 @@ namespace Amazon.LexModelsV2
 
         /// <summary>
         /// Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For
-        /// example, an <code>OrderPizza</code> intent might need slots for size, crust, and number
+        /// example, an <c>OrderPizza</c> intent might need slots for size, crust, and number
         /// of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to
         /// elicit a response from the user.
         /// </summary>
@@ -1083,7 +1081,7 @@ namespace Amazon.LexModelsV2
 
         /// <summary>
         /// Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For
-        /// example, an <code>OrderPizza</code> intent might need slots for size, crust, and number
+        /// example, an <c>OrderPizza</c> intent might need slots for size, crust, and number
         /// of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to
         /// elicit a response from the user.
         /// </summary>
@@ -1348,8 +1346,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Deletes all versions of a bot, including the <code>Draft</code> version. To delete
-        /// a specific version, use the <code>DeleteBotVersion</code> operation.
+        /// Deletes all versions of a bot, including the <c>Draft</c> version. To delete a specific
+        /// version, use the <c>DeleteBotVersion</c> operation.
         /// 
         ///  
         /// <para>
@@ -1359,9 +1357,9 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  
         /// <para>
-        /// If a bot has an alias, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
-        /// exception. If you want to delete the bot and the alias, set the <code>skipResourceInUseCheck</code>
-        /// parameter to <code>true</code>.
+        /// If a bot has an alias, the <c>DeleteBot</c> operation returns a <c>ResourceInUseException</c>
+        /// exception. If you want to delete the bot and the alias, set the <c>skipResourceInUseCheck</c>
+        /// parameter to <c>true</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBot service method.</param>
@@ -1395,8 +1393,8 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Deletes all versions of a bot, including the <code>Draft</code> version. To delete
-        /// a specific version, use the <code>DeleteBotVersion</code> operation.
+        /// Deletes all versions of a bot, including the <c>Draft</c> version. To delete a specific
+        /// version, use the <c>DeleteBotVersion</c> operation.
         /// 
         ///  
         /// <para>
@@ -1406,9 +1404,9 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  
         /// <para>
-        /// If a bot has an alias, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code>
-        /// exception. If you want to delete the bot and the alias, set the <code>skipResourceInUseCheck</code>
-        /// parameter to <code>true</code>.
+        /// If a bot has an alias, the <c>DeleteBot</c> operation returns a <c>ResourceInUseException</c>
+        /// exception. If you want to delete the bot and the alias, set the <c>skipResourceInUseCheck</c>
+        /// parameter to <c>true</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBot service method.</param>
@@ -2152,9 +2150,9 @@ namespace Amazon.LexModelsV2
         /// 
         ///  
         /// <para>
-        /// If a slot is using the slot type, Amazon Lex throws a <code>ResourceInUseException</code>
-        /// exception. To avoid the exception, set the <code>skipResourceInUseCheck</code> parameter
-        /// to <code>true</code>.
+        /// If a slot is using the slot type, Amazon Lex throws a <c>ResourceInUseException</c>
+        /// exception. To avoid the exception, set the <c>skipResourceInUseCheck</c> parameter
+        /// to <c>true</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlotType service method.</param>
@@ -2192,9 +2190,9 @@ namespace Amazon.LexModelsV2
         /// 
         ///  
         /// <para>
-        /// If a slot is using the slot type, Amazon Lex throws a <code>ResourceInUseException</code>
-        /// exception. To avoid the exception, set the <code>skipResourceInUseCheck</code> parameter
-        /// to <code>true</code>.
+        /// If a slot is using the slot type, Amazon Lex throws a <c>ResourceInUseException</c>
+        /// exception. To avoid the exception, set the <c>skipResourceInUseCheck</c> parameter
+        /// to <c>true</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSlotType service method.</param>
@@ -2317,11 +2315,11 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DeleteUtterances</code> operation to manually delete utterances for
-        /// a specific session. When you use the <code>DeleteUtterances</code> operation, utterances
-        /// stored for improving your bot's ability to respond to user input are deleted immediately.
-        /// Utterances stored for use with the <code>ListAggregatedUtterances</code> operation
-        /// are deleted after 15 days.
+        /// Use the <c>DeleteUtterances</c> operation to manually delete utterances for a specific
+        /// session. When you use the <c>DeleteUtterances</c> operation, utterances stored for
+        /// improving your bot's ability to respond to user input are deleted immediately. Utterances
+        /// stored for use with the <c>ListAggregatedUtterances</c> operation are deleted after
+        /// 15 days.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUtterances service method.</param>
@@ -2354,11 +2352,11 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DeleteUtterances</code> operation to manually delete utterances for
-        /// a specific session. When you use the <code>DeleteUtterances</code> operation, utterances
-        /// stored for improving your bot's ability to respond to user input are deleted immediately.
-        /// Utterances stored for use with the <code>ListAggregatedUtterances</code> operation
-        /// are deleted after 15 days.
+        /// Use the <c>DeleteUtterances</c> operation to manually delete utterances for a specific
+        /// session. When you use the <c>DeleteUtterances</c> operation, utterances stored for
+        /// improving your bot's ability to respond to user input are deleted immediately. Utterances
+        /// stored for use with the <c>ListAggregatedUtterances</c> operation are deleted after
+        /// 15 days.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUtterances service method.</param>
@@ -2635,7 +2633,7 @@ namespace Amazon.LexModelsV2
 
         /// <summary>
         /// Returns information about a request to generate a bot through natural language description,
-        /// made through the <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code>
+        /// made through the <c>StartBotResource</c> API. Use the <c>generatedBotLocaleUrl</c>
         /// to retrieve the Amazon S3 object containing the bot locale configuration. You can
         /// then modify and import this configuration.
         /// </summary>
@@ -2663,7 +2661,7 @@ namespace Amazon.LexModelsV2
 
         /// <summary>
         /// Returns information about a request to generate a bot through natural language description,
-        /// made through the <code>StartBotResource</code> API. Use the <code>generatedBotLocaleUrl</code>
+        /// made through the <c>StartBotResource</c> API. Use the <c>generatedBotLocaleUrl</c>
         /// to retrieve the Amazon S3 object containing the bot locale configuration. You can
         /// then modify and import this configuration.
         /// </summary>
@@ -3581,7 +3579,7 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>childDirected</code> field was set to true when the bot was created.
+        /// The <c>childDirected</c> field was set to true when the bot was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3641,7 +3639,7 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>childDirected</code> field was set to true when the bot was created.
+        /// The <c>childDirected</c> field was set to true when the bot was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3960,15 +3958,15 @@ namespace Amazon.LexModelsV2
         /// 
         ///  
         /// <para>
-        /// The <code>ListBotVersions</code> operation returns a summary of each version of a
-        /// bot. For example, if a bot has three numbered versions, the <code>ListBotVersions</code>
-        /// operation returns for summaries, one for each numbered version and one for the <code>DRAFT</code>
+        /// The <c>ListBotVersions</c> operation returns a summary of each version of a bot. For
+        /// example, if a bot has three numbered versions, the <c>ListBotVersions</c> operation
+        /// returns for summaries, one for each numbered version and one for the <c>DRAFT</c>
         /// version.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ListBotVersions</code> operation always returns at least one version, the
-        /// <code>DRAFT</code> version.
+        /// The <c>ListBotVersions</c> operation always returns at least one version, the <c>DRAFT</c>
+        /// version.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBotVersions service method.</param>
@@ -3997,15 +3995,15 @@ namespace Amazon.LexModelsV2
         /// 
         ///  
         /// <para>
-        /// The <code>ListBotVersions</code> operation returns a summary of each version of a
-        /// bot. For example, if a bot has three numbered versions, the <code>ListBotVersions</code>
-        /// operation returns for summaries, one for each numbered version and one for the <code>DRAFT</code>
+        /// The <c>ListBotVersions</c> operation returns a summary of each version of a bot. For
+        /// example, if a bot has three numbered versions, the <c>ListBotVersions</c> operation
+        /// returns for summaries, one for each numbered version and one for the <c>DRAFT</c>
         /// version.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ListBotVersions</code> operation always returns at least one version, the
-        /// <code>DRAFT</code> version.
+        /// The <c>ListBotVersions</c> operation always returns at least one version, the <c>DRAFT</c>
+        /// version.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBotVersions service method.</param>
@@ -4042,7 +4040,7 @@ namespace Amazon.LexModelsV2
         ///  
         /// <para>
         /// To use a built-in intent as a the base for your own intent, include the built-in intent
-        /// signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code>
+        /// signature in the <c>parentIntentSignature</c> parameter when you call the <c>CreateIntent</c>
         /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
         /// </para>
         /// </summary>
@@ -4074,7 +4072,7 @@ namespace Amazon.LexModelsV2
         ///  
         /// <para>
         /// To use a built-in intent as a the base for your own intent, include the built-in intent
-        /// signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code>
+        /// signature in the <c>parentIntentSignature</c> parameter when you call the <c>CreateIntent</c>
         /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
         /// </para>
         /// </summary>
@@ -4326,17 +4324,16 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4344,20 +4341,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// You can specify only one <code>order</code> in a given request.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. You
+        /// can specify only one <c>order</c> in a given request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntentMetrics service method.</param>
@@ -4390,17 +4387,16 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4408,20 +4404,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// You can specify only one <code>order</code> in a given request.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. You
+        /// can specify only one <c>order</c> in a given request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntentMetrics service method.</param>
@@ -4461,20 +4457,19 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>intentPath</code> – Define an order of intents for which you want to retrieve
-        /// metrics. Separate intents in the path with a forward slash. For example, populate
-        /// the <code>intentPath</code> field with <code>/BookCar/BookHotel</code> to see details
-        /// about how many times users invoked the <code>BookCar</code> and <code>BookHotel</code>
-        /// intents in that order.
+        ///  <c>intentPath</c> – Define an order of intents for which you want to retrieve metrics.
+        /// Separate intents in the path with a forward slash. For example, populate the <c>intentPath</c>
+        /// field with <c>/BookCar/BookHotel</c> to see details about how many times users invoked
+        /// the <c>BookCar</c> and <c>BookHotel</c> intents in that order.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Use the optional <code>filters</code> field to filter the results.
+        /// Use the optional <c>filters</c> field to filter the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntentPaths service method.</param>
@@ -4508,20 +4503,19 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>intentPath</code> – Define an order of intents for which you want to retrieve
-        /// metrics. Separate intents in the path with a forward slash. For example, populate
-        /// the <code>intentPath</code> field with <code>/BookCar/BookHotel</code> to see details
-        /// about how many times users invoked the <code>BookCar</code> and <code>BookHotel</code>
-        /// intents in that order.
+        ///  <c>intentPath</c> – Define an order of intents for which you want to retrieve metrics.
+        /// Separate intents in the path with a forward slash. For example, populate the <c>intentPath</c>
+        /// field with <c>/BookCar/BookHotel</c> to see details about how many times users invoked
+        /// the <c>BookCar</c> and <c>BookHotel</c> intents in that order.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Use the optional <code>filters</code> field to filter the results.
+        /// Use the optional <c>filters</c> field to filter the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntentPaths service method.</param>
@@ -4615,17 +4609,16 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4633,20 +4626,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// You can only specify one <code>order</code> in a given request.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. You
+        /// can only specify one <c>order</c> in a given request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntentStageMetrics service method.</param>
@@ -4680,17 +4673,16 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4698,20 +4690,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// You can only specify one <code>order</code> in a given request.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. You
+        /// can only specify one <c>order</c> in a given request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIntentStageMetrics service method.</param>
@@ -4810,21 +4802,21 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code>
-        /// and <code>endDateTime</code> fields are required. These fields define a time range
-        /// for which you want to retrieve results. Of the optional fields, you can organize the
-        /// results in the following ways:
+        /// Retrieves a list of metadata for individual user sessions with your bot. The <c>startDateTime</c>
+        /// and <c>endDateTime</c> fields are required. These fields define a time range for which
+        /// you want to retrieve results. Of the optional fields, you can organize the results
+        /// in the following ways:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
-        /// field to specify the values by which to sort the results.
+        /// Use the <c>filters</c> field to filter the results and the <c>sortBy</c> field to
+        /// specify the values by which to sort the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4854,21 +4846,21 @@ namespace Amazon.LexModelsV2
 
 
         /// <summary>
-        /// Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code>
-        /// and <code>endDateTime</code> fields are required. These fields define a time range
-        /// for which you want to retrieve results. Of the optional fields, you can organize the
-        /// results in the following ways:
+        /// Retrieves a list of metadata for individual user sessions with your bot. The <c>startDateTime</c>
+        /// and <c>endDateTime</c> fields are required. These fields define a time range for which
+        /// you want to retrieve results. Of the optional fields, you can organize the results
+        /// in the following ways:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
-        /// field to specify the values by which to sort the results.
+        /// Use the <c>filters</c> field to filter the results and the <c>sortBy</c> field to
+        /// specify the values by which to sort the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4909,17 +4901,16 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4927,20 +4918,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// Currently, you can specify it in either field, but not in both.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. Currently,
+        /// you can specify it in either field, but not in both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSessionMetrics service method.</param>
@@ -4974,17 +4965,16 @@ namespace Amazon.LexModelsV2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -4992,20 +4982,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// Currently, you can specify it in either field, but not in both.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. Currently,
+        /// you can specify it in either field, but not in both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSessionMetrics service method.</param>
@@ -5451,8 +5441,8 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5460,14 +5450,14 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
-        /// field to specify the values by which to sort the results.
+        /// Use the <c>filters</c> field to filter the results and the <c>sortBy</c> field to
+        /// specify the values by which to sort the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5510,8 +5500,8 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5519,14 +5509,14 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results and the <code>sortBy</code>
-        /// field to specify the values by which to sort the results.
+        /// Use the <c>filters</c> field to filter the results and the <c>sortBy</c> field to
+        /// specify the values by which to sort the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -5575,17 +5565,16 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5593,20 +5582,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// Currently, you can specify it in either field, but not in both.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. Currently,
+        /// you can specify it in either field, but not in both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUtteranceMetrics service method.</param>
@@ -5648,17 +5637,16 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
-        /// objects. In each object, use the <code>name</code> field to specify the metric to
-        /// calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>,
-        /// <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field
-        /// to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code>
-        /// order.
+        ///  <c>metrics</c> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a>
+        /// objects. In each object, use the <c>name</c> field to specify the metric to calculate,
+        /// the <c>statistic</c> field to specify whether to calculate the <c>Sum</c>, <c>Average</c>,
+        /// or <c>Max</c> number, and the <c>order</c> field to specify whether to sort the results
+        /// in <c>Ascending</c> or <c>Descending</c> order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for
-        /// which you want to retrieve results.
+        ///  <c>startDateTime</c> and <c>endDateTime</c> – Define a time range for which you want
+        /// to retrieve results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5666,20 +5654,20 @@ namespace Amazon.LexModelsV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use the <code>filters</code> field to filter the results, the <code>groupBy</code>
-        /// field to specify categories by which to group the results, and the <code>binBy</code>
-        /// field to specify time intervals by which to group the results.
+        /// Use the <c>filters</c> field to filter the results, the <c>groupBy</c> field to specify
+        /// categories by which to group the results, and the <c>binBy</c> field to specify time
+        /// intervals by which to group the results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>maxResults</code> field to limit the number of results to return in
-        /// a single response and the <code>nextToken</code> field to return the next batch of
-        /// results if the response does not return the full set of results.
+        /// Use the <c>maxResults</c> field to limit the number of results to return in a single
+        /// response and the <c>nextToken</c> field to return the next batch of results if the
+        /// response does not return the full set of results.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>.
-        /// Currently, you can specify it in either field, but not in both.
+        /// Note that an <c>order</c> field exists in both <c>binBy</c> and <c>metrics</c>. Currently,
+        /// you can specify it in either field, but not in both.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListUtteranceMetrics service method.</param>
@@ -5857,8 +5845,8 @@ namespace Amazon.LexModelsV2
 
         /// <summary>
         /// Starts a request for the descriptive bot builder to generate a bot locale configuration
-        /// based on the prompt you provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code>
-        /// operation to check on the status of the generation and for the <code>generatedBotLocaleUrl</code>
+        /// based on the prompt you provide it. After you make this call, use the <c>DescribeBotResourceGeneration</c>
+        /// operation to check on the status of the generation and for the <c>generatedBotLocaleUrl</c>
         /// when the generation is complete. Use that value to retrieve the Amazon S3 object containing
         /// the bot locale configuration. You can then modify and import this configuration.
         /// </summary>
@@ -5894,8 +5882,8 @@ namespace Amazon.LexModelsV2
 
         /// <summary>
         /// Starts a request for the descriptive bot builder to generate a bot locale configuration
-        /// based on the prompt you provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code>
-        /// operation to check on the status of the generation and for the <code>generatedBotLocaleUrl</code>
+        /// based on the prompt you provide it. After you make this call, use the <c>DescribeBotResourceGeneration</c>
+        /// operation to check on the status of the generation and for the <c>generatedBotLocaleUrl</c>
         /// when the generation is complete. Use that value to retrieve the Amazon S3 object containing
         /// the bot locale configuration. You can then modify and import this configuration.
         /// </summary>

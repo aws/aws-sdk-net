@@ -41,8 +41,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Do not use. A validation exception occurs if you add a <code>MaxResults</code> parameter
-        /// to a <code>ListTagsRequest</code> call. 
+        /// Do not use. A validation exception occurs if you add a <c>MaxResults</c> parameter
+        /// to a <c>ListTagsRequest</c> call. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -60,8 +60,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Do not use. A validation exception occurs if you add a <code>NextToken</code> parameter
-        /// to a <code>ListTagsRequest</code> call. 
+        /// Do not use. A validation exception occurs if you add a <c>NextToken</c> parameter
+        /// to a <c>ListTagsRequest</c> call. 
         /// </para>
         /// </summary>
         public string NextToken

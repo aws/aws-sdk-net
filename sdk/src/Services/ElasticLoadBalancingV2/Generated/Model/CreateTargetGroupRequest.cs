@@ -80,10 +80,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HealthCheckEnabled. 
         /// <para>
-        /// Indicates whether health checks are enabled. If the target type is <code>lambda</code>,
-        /// health checks are disabled by default but can be enabled. If the target type is <code>instance</code>,
-        /// <code>ip</code>, or <code>alb</code>, health checks are always enabled and cannot
-        /// be disabled.
+        /// Indicates whether health checks are enabled. If the target type is <c>lambda</c>,
+        /// health checks are disabled by default but can be enabled. If the target type is <c>instance</c>,
+        /// <c>ip</c>, or <c>alb</c>, health checks are always enabled and cannot be disabled.
         /// </para>
         /// </summary>
         public bool HealthCheckEnabled
@@ -104,8 +103,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The approximate amount of time, in seconds, between health checks of an individual
         /// target. The range is 5-300. If the target group protocol is TCP, TLS, UDP, TCP_UDP,
         /// HTTP or HTTPS, the default is 30 seconds. If the target group protocol is GENEVE,
-        /// the default is 10 seconds. If the target type is <code>lambda</code>, the default
-        /// is 35 seconds.
+        /// the default is 10 seconds. If the target type is <c>lambda</c>, the default is 35
+        /// seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=300)]
@@ -153,9 +152,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property HealthCheckPort. 
         /// <para>
         /// The port the load balancer uses when performing health checks on targets. If the protocol
-        /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <code>traffic-port</code>,
-        /// which is the port on which each target receives traffic from the load balancer. If
-        /// the protocol is GENEVE, the default is port 80.
+        /// is HTTP, HTTPS, TCP, TLS, UDP, or TCP_UDP, the default is <c>traffic-port</c>, which
+        /// is the port on which each target receives traffic from the load balancer. If the protocol
+        /// is GENEVE, the default is port 80.
         /// </para>
         /// </summary>
         public string HealthCheckPort
@@ -199,7 +198,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// health check. The range is 2–120 seconds. For target groups with a protocol of HTTP,
         /// the default is 6 seconds. For target groups with a protocol of TCP, TLS or HTTPS,
         /// the default is 10 seconds. For target groups with a protocol of GENEVE, the default
-        /// is 5 seconds. If the target type is <code>lambda</code>, the default is 30 seconds.
+        /// is 5 seconds. If the target type is <c>lambda</c>, the default is 30 seconds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=120)]
@@ -221,7 +220,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The number of consecutive health check successes required before considering a target
         /// healthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS,
         /// HTTP or HTTPS, the default is 5. For target groups with a protocol of GENEVE, the
-        /// default is 5. If the target type is <code>lambda</code>, the default is 5.
+        /// default is 5. If the target type is <c>lambda</c>, the default is 5.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]
@@ -240,9 +239,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address used for this target group. The possible values are <code>ipv4</code>
-        /// and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address
-        /// type defaults to <code>ipv4</code>.
+        /// The type of IP address used for this target group. The possible values are <c>ipv4</c>
+        /// and <c>ipv6</c>. This is an optional parameter. If not specified, the IP address type
+        /// defaults to <c>ipv4</c>.
         /// </para>
         /// </summary>
         public TargetGroupIpAddressTypeEnum IpAddressType
@@ -349,9 +348,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property ProtocolVersion. 
         /// <para>
-        /// [HTTP/HTTPS protocol] The protocol version. Specify <code>GRPC</code> to send requests
-        /// to targets using gRPC. Specify <code>HTTP2</code> to send requests to targets using
-        /// HTTP/2. The default is <code>HTTP1</code>, which sends requests to targets using HTTP/1.1.
+        /// [HTTP/HTTPS protocol] The protocol version. Specify <c>GRPC</c> to send requests to
+        /// targets using gRPC. Specify <c>HTTP2</c> to send requests to targets using HTTP/2.
+        /// The default is <c>HTTP1</c>, which sends requests to targets using HTTP/1.1.
         /// </para>
         /// </summary>
         public string ProtocolVersion
@@ -393,22 +392,22 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance</code> - Register targets by instance ID. This is the default value.
+        ///  <c>instance</c> - Register targets by instance ID. This is the default value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip</code> - Register targets by IP address. You can specify IP addresses from
-        /// the subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
-        /// range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
+        ///  <c>ip</c> - Register targets by IP address. You can specify IP addresses from the
+        /// subnets of the virtual private cloud (VPC) for the target group, the RFC 1918 range
+        /// (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10).
         /// You can't specify publicly routable IP addresses.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>lambda</code> - Register a single Lambda function as a target.
+        ///  <c>lambda</c> - Register a single Lambda function as a target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>alb</code> - Register a single Application Load Balancer as a target.
+        ///  <c>alb</c> - Register a single Application Load Balancer as a target.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -430,7 +429,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// The number of consecutive health check failures required before considering a target
         /// unhealthy. The range is 2-10. If the target group protocol is TCP, TCP_UDP, UDP, TLS,
         /// HTTP or HTTPS, the default is 2. For target groups with a protocol of GENEVE, the
-        /// default is 2. If the target type is <code>lambda</code>, the default is 5.
+        /// default is 2. If the target type is <c>lambda</c>, the default is 5.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=10)]

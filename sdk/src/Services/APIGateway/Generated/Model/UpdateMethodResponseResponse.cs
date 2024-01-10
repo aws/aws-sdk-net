@@ -65,15 +65,14 @@ namespace Amazon.APIGateway.Model
         /// A key-value map specifying required or optional response parameters that API Gateway
         /// can send back to the caller. A key defines a method response header and the value
         /// specifies whether the associated method response header is required or not. The expression
-        /// of the key must match the pattern <code>method.response.header.{name}</code>, where
-        /// <code>name</code> is a valid and unique header name. API Gateway passes certain integration
-        /// response data to the method response headers specified here according to the mapping
-        /// you prescribe in the API's IntegrationResponse. The integration response data that
-        /// can be mapped include an integration response header expressed in <code>integration.response.header.{name}</code>,
-        /// a static value enclosed within a pair of single quotes (e.g., <code>'application/json'</code>),
-        /// or a JSON expression from the back-end response payload in the form of <code>integration.response.body.{JSON-expression}</code>,
-        /// where <code>JSON-expression</code> is a valid JSON expression without the <code>$</code>
-        /// prefix.)
+        /// of the key must match the pattern <c>method.response.header.{name}</c>, where <c>name</c>
+        /// is a valid and unique header name. API Gateway passes certain integration response
+        /// data to the method response headers specified here according to the mapping you prescribe
+        /// in the API's IntegrationResponse. The integration response data that can be mapped
+        /// include an integration response header expressed in <c>integration.response.header.{name}</c>,
+        /// a static value enclosed within a pair of single quotes (e.g., <c>'application/json'</c>),
+        /// or a JSON expression from the back-end response payload in the form of <c>integration.response.body.{JSON-expression}</c>,
+        /// where <c>JSON-expression</c> is a valid JSON expression without the <c>$</c> prefix.)
         /// </para>
         /// </summary>
         public Dictionary<string, bool> ResponseParameters

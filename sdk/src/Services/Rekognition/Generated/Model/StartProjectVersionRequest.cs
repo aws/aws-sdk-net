@@ -50,7 +50,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:StartProjectVersion</code>
+    /// This operation requires permissions to perform the <c>rekognition:StartProjectVersion</c>
     /// action.
     /// </para>
     /// </summary>

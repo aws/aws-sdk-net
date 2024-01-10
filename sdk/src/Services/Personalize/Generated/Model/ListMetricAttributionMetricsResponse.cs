@@ -58,7 +58,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specify the pagination token from a previous <code>ListMetricAttributionMetricsResponse</code>
+        /// Specify the pagination token from a previous <c>ListMetricAttributionMetricsResponse</c>
         /// request to retrieve the next page of results.
         /// </para>
         /// </summary>

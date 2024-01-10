@@ -42,7 +42,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time an image set is created. Sample creation date is provided in <code>1985-04-12T23:20:50.52Z</code>
+        /// The time an image set is created. Sample creation date is provided in <c>1985-04-12T23:20:50.52Z</c>
         /// format.
         /// </para>
         /// </summary>

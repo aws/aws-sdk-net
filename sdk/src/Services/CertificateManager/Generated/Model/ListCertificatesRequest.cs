@@ -32,8 +32,8 @@ namespace Amazon.CertificateManager.Model
     /// Container for the parameters to the ListCertificates operation.
     /// Retrieves a list of certificate ARNs and domain names. You can request that only certificates
     /// that match a specific status be listed. You can also filter by specific attributes
-    /// of the certificate. Default filtering returns only <code>RSA_2048</code> certificates.
-    /// For more information, see <a>Filters</a>.
+    /// of the certificate. Default filtering returns only <c>RSA_2048</c> certificates. For
+    /// more information, see <a>Filters</a>.
     /// </summary>
     public partial class ListCertificatesRequest : AmazonCertificateManagerRequest
     {
@@ -85,8 +85,8 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// Use this parameter when paginating results to specify the maximum number of items
         /// to return in the response. If additional items exist beyond the number you specify,
-        /// the <code>NextToken</code> element is sent in the response. Use this <code>NextToken</code>
-        /// value in a subsequent request to retrieve additional items.
+        /// the <c>NextToken</c> element is sent in the response. Use this <c>NextToken</c> value
+        /// in a subsequent request to retrieve additional items.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -106,7 +106,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Use this parameter only when paginating results and only in a subsequent request after
-        /// you receive a response with truncated results. Set it to the value of <code>NextToken</code>
+        /// you receive a response with truncated results. Set it to the value of <c>NextToken</c>
         /// from the response you just received.
         /// </para>
         /// </summary>
@@ -126,8 +126,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Specifies the field to sort results by. If you specify <code>SortBy</code>, you must
-        /// also specify <code>SortOrder</code>.
+        /// Specifies the field to sort results by. If you specify <c>SortBy</c>, you must also
+        /// specify <c>SortOrder</c>.
         /// </para>
         /// </summary>
         public SortBy SortBy
@@ -145,8 +145,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// Specifies the order of sorted results. If you specify <code>SortOrder</code>, you
-        /// must also specify <code>SortBy</code>.
+        /// Specifies the order of sorted results. If you specify <c>SortOrder</c>, you must also
+        /// specify <c>SortBy</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

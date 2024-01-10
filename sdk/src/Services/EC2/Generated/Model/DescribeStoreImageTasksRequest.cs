@@ -36,9 +36,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// For each AMI task, the response indicates if the task is <code>InProgress</code>,
-    /// <code>Completed</code>, or <code>Failed</code>. For tasks <code>InProgress</code>,
-    /// the response shows the estimated progress as a percentage.
+    /// For each AMI task, the response indicates if the task is <c>InProgress</c>, <c>Completed</c>,
+    /// or <c>Failed</c>. For tasks <c>InProgress</c>, the response shows the estimated progress
+    /// as a percentage.
     /// </para>
     ///  
     /// <para>
@@ -71,18 +71,18 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>task-state</code> - Returns tasks in a certain state (<code>InProgress</code>
-        /// | <code>Completed</code> | <code>Failed</code>)
+        ///  <c>task-state</c> - Returns tasks in a certain state (<c>InProgress</c> | <c>Completed</c>
+        /// | <c>Failed</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bucket</code> - Returns task information for tasks that targeted a specific
-        /// bucket. For the filter value, specify the bucket name.
+        ///  <c>bucket</c> - Returns task information for tasks that targeted a specific bucket.
+        /// For the filter value, specify the bucket name.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// When you specify the <code>ImageIds</code> parameter, any filters that you specify
-        /// are ignored. To use the filters, you must remove the <code>ImageIds</code> parameter.
+        /// When you specify the <c>ImageIds</c> parameter, any filters that you specify are ignored.
+        /// To use the filters, you must remove the <c>ImageIds</c> parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -125,8 +125,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter and the <code>ImageIds</code> parameter in the same
-        /// call.
+        /// You cannot specify this parameter and the <c>ImageIds</c> parameter in the same call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

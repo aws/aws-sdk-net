@@ -486,9 +486,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property MapRunStartedEventDetails. 
         /// <para>
-        /// Contains details, such as <code>mapRunArn</code>, and the start date and time of a
-        /// Map Run. <code>mapRunArn</code> is the Amazon Resource Name (ARN) of the Map Run that
-        /// was started.
+        /// Contains details, such as <c>mapRunArn</c>, and the start date and time of a Map Run.
+        /// <c>mapRunArn</c> is the Amazon Resource Name (ARN) of the Map Run that was started.
         /// </para>
         /// </summary>
         public MapRunStartedEventDetails MapRunStartedEventDetails

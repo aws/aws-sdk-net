@@ -52,7 +52,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</code> 
+        ///  <c>urn:tdm:REGION/ACCOUNT ID/default:system:SYSTEMNAME</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=160)]

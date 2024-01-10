@@ -60,20 +60,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StreamUrl. 
         /// <para>
         /// A URL back to SSM Agent on the managed node that the Session Manager client uses to
-        /// send commands and receive output from the node. Format: <code>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</code>
+        /// send commands and receive output from the node. Format: <c>wss://ssmmessages.<b>region</b>.amazonaws.com/v1/data-channel/<b>session-id</b>?stream=(input|output)</c>
         /// 
         /// </para>
         ///  
         /// <para>
         ///  <b>region</b> represents the Region identifier for an Amazon Web Services Region
-        /// supported by Amazon Web Services Systems Manager, such as <code>us-east-2</code> for
-        /// the US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b>
+        /// supported by Amazon Web Services Systems Manager, such as <c>us-east-2</c> for the
+        /// US East (Ohio) Region. For a list of supported <b>region</b> values, see the <b>Region</b>
         /// column in <a href="https://docs.aws.amazon.com/general/latest/gr/ssm.html#ssm_region">Systems
         /// Manager service endpoints</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>session-id</b> represents the ID of a Session Manager session, such as <code>1a2b3c4dEXAMPLE</code>.
+        ///  <b>session-id</b> represents the ID of a Session Manager session, such as <c>1a2b3c4dEXAMPLE</c>.
         /// </para>
         /// </summary>
         public string StreamUrl

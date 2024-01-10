@@ -40,7 +40,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If not null, token that indicates that more results are available. Pass this value
-        /// for the <code>NextToken</code> parameter in a subsequent call to <a>DescribeSharedDirectories</a>
+        /// for the <c>NextToken</c> parameter in a subsequent call to <a>DescribeSharedDirectories</a>
         /// to retrieve the next set of items.
         /// </para>
         /// </summary>

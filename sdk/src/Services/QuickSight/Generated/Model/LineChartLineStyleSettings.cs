@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Line styles options for a line series in <code>LineChartVisual</code>.
+    /// Line styles options for a line series in <c>LineChartVisual</c>.
     /// </summary>
     public partial class LineChartLineStyleSettings
     {
@@ -45,15 +45,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LINEAR</code>: Show as default, linear style.
+        ///  <c>LINEAR</c>: Show as default, linear style.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SMOOTH</code>: Show as a smooth curve.
+        ///  <c>SMOOTH</c>: Show as a smooth curve.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STEPPED</code>: Show steps in line.
+        ///  <c>STEPPED</c>: Show steps in line.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -76,15 +76,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SOLID</code>: Show as a solid line.
+        ///  <c>SOLID</c>: Show as a solid line.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DOTTED</code>: Show as a dotted line.
+        ///  <c>DOTTED</c>: Show as a dotted line.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DASHED</code>: Show as a dashed line.
+        ///  <c>DASHED</c>: Show as a dashed line.
         /// </para>
         ///  </li> </ul>
         /// </summary>

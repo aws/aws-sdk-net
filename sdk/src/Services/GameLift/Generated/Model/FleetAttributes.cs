@@ -85,8 +85,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the Amazon GameLift build resource that is deployed on instances in
-        /// this fleet. In a GameLift build ARN, the resource ID matches the <code>BuildId</code>
-        /// value.
+        /// this fleet. In a GameLift build ARN, the resource ID matches the <c>BuildId</c> value.
         /// </para>
         /// </summary>
         public string BuildArn
@@ -158,7 +157,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// A time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -197,8 +196,8 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
-        /// are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
-        /// In a GameLift fleet ARN, the resource ID matches the <code>FleetId</code> value.
+        /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
+        /// In a GameLift fleet ARN, the resource ID matches the <c>FleetId</c> value.
         /// </para>
         /// </summary>
         public string FleetArn
@@ -235,7 +234,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetType. 
         /// <para>
         /// Indicates whether to use On-Demand or Spot instances for this fleet. By default, this
-        /// property is set to <code>ON_DEMAND</code>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
+        /// property is set to <c>ON_DEMAND</c>. Learn more about when to use <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-ec2-instances.html#gamelift-ec2-instances-spot">
         /// On-Demand versus Spot Instances</a>. This fleet property can't be changed after the
         /// fleet is created.
         /// </para>
@@ -280,11 +279,11 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property InstanceRoleCredentialsProvider. 
         /// <para>
         /// Indicates that fleet instances maintain a shared credentials file for the IAM role
-        /// defined in <code>InstanceRoleArn</code>. Shared credentials allow applications that
-        /// are deployed with the game server executable to communicate with other Amazon Web
-        /// Services resources. This property is used only when the game server is integrated
-        /// with the server SDK version 5.x. For more information about using shared credentials,
-        /// see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
+        /// defined in <c>InstanceRoleArn</c>. Shared credentials allow applications that are
+        /// deployed with the game server executable to communicate with other Amazon Web Services
+        /// resources. This property is used only when the game server is integrated with the
+        /// server SDK version 5.x. For more information about using shared credentials, see <a
+        /// href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-resources.html">
         /// Communicate with other Amazon Web Services resources from your fleets</a>.
         /// </para>
         /// </summary>
@@ -325,8 +324,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LogPaths. 
         /// <para>
         ///  <b>This parameter is no longer used.</b> Game session log paths are now defined using
-        /// the Amazon GameLift server API <code>ProcessReady()</code> <code>logParameters</code>.
-        /// See more information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
+        /// the Amazon GameLift server API <c>ProcessReady()</c> <c>logParameters</c>. See more
+        /// information in the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api-ref.html#gamelift-sdk-server-api-ref-dataypes-process">Server
         /// API Reference</a>. 
         /// </para>
         /// </summary>
@@ -395,8 +394,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FullProtection</b> -- If the game session is in an <code>ACTIVE</code> status,
-        /// it cannot be terminated during a scale-down event.
+        ///  <b>FullProtection</b> -- If the game session is in an <c>ACTIVE</c> status, it cannot
+        /// be terminated during a scale-down event.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -451,8 +450,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         ///  The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// associated with the GameLift script resource that is deployed on instances in this
-        /// fleet. In a GameLift script ARN, the resource ID matches the <code>ScriptId</code>
-        /// value.
+        /// fleet. In a GameLift script ARN, the resource ID matches the <c>ScriptId</c> value.
         /// </para>
         /// </summary>
         public string ScriptArn
@@ -598,7 +596,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TerminationTime. 
         /// <para>
         /// A time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime TerminationTime

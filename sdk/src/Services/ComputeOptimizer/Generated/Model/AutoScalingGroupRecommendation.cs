@@ -188,14 +188,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>NotOptimized</code> </b>—An Auto Scaling group is considered not optimized
-        /// when Compute Optimizer identifies a recommendation that can provide better performance
+        ///  <b> <c>NotOptimized</c> </b>—An Auto Scaling group is considered not optimized when
+        /// Compute Optimizer identifies a recommendation that can provide better performance
         /// for your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Optimized</code> </b>—An Auto Scaling group is considered optimized when
-        /// Compute Optimizer determines that the group is correctly provisioned to run your workload
+        ///  <b> <c>Optimized</c> </b>—An Auto Scaling group is considered optimized when Compute
+        /// Optimizer determines that the group is correctly provisioned to run your workload
         /// based on the chosen instance type. For optimized resources, Compute Optimizer might
         /// recommend a new generation instance type.
         /// </para>
@@ -226,40 +226,39 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.
+        ///  <c>AmazonEmr</c> - Infers that Amazon EMR might be running on the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the
-        /// instances.
+        ///  <c>ApacheCassandra</c> - Infers that Apache Cassandra might be running on the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.
+        ///  <c>ApacheHadoop</c> - Infers that Apache Hadoop might be running on the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Memcached</code> - Infers that Memcached might be running on the instances.
+        ///  <c>Memcached</c> - Infers that Memcached might be running on the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NGINX</code> - Infers that NGINX might be running on the instances.
+        ///  <c>NGINX</c> - Infers that NGINX might be running on the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.
+        ///  <c>PostgreSql</c> - Infers that PostgreSQL might be running on the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Redis</code> - Infers that Redis might be running on the instances.
+        ///  <c>Redis</c> - Infers that Redis might be running on the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Kafka</code> - Infers that Kafka might be running on the instance.
+        ///  <c>Kafka</c> - Infers that Kafka might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+        ///  <c>SQLServer</c> - Infers that SQLServer might be running on the instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -76,10 +76,10 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The result of the check for whether the access is allowed. If the result is <code>PASS</code>,
+        /// The result of the check for whether the access is allowed. If the result is <c>PASS</c>,
         /// the specified policy doesn't allow any of the specified permissions in the access
-        /// object. If the result is <code>FAIL</code>, the specified policy might allow some
-        /// or all of the permissions in the access object.
+        /// object. If the result is <c>FAIL</c>, the specified policy might allow some or all
+        /// of the permissions in the access object.
         /// </para>
         /// </summary>
         public CheckAccessNotGrantedResult Result

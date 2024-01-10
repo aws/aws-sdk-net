@@ -49,8 +49,8 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// A custom vocabulary can only be used to transcribe files in the same language as the
         /// custom vocabulary. For example, if you create a custom vocabulary using US English
-        /// (<code>en-US</code>), you can only apply this custom vocabulary to files that contain
-        /// English audio.
+        /// (<c>en-US</c>), you can only apply this custom vocabulary to files that contain English
+        /// audio.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode
@@ -72,9 +72,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
-        /// 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.761000-07:00</c> represents 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -112,8 +111,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
-        /// you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.
+        /// The processing state of your custom vocabulary. If the state is <c>READY</c>, you
+        /// can use the custom vocabulary in a <c>StartTranscriptionJob</c> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

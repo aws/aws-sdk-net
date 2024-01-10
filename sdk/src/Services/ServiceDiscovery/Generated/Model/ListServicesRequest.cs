@@ -48,7 +48,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  
         /// <para>
         /// If you specify more than one filter, an operation must match all filters to be returned
-        /// by <code>ListServices</code>.
+        /// by <c>ListServices</c>.
         /// </para>
         /// </summary>
         public List<ServiceFilter> Filters
@@ -67,7 +67,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of services that you want Cloud Map to return in the response to
-        /// a <code>ListServices</code> request. If you don't specify a value for <code>MaxResults</code>,
+        /// a <c>ListServices</c> request. If you don't specify a value for <c>MaxResults</c>,
         /// Cloud Map returns up to 100 services.
         /// </para>
         /// </summary>
@@ -87,20 +87,20 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For the first <code>ListServices</code> request, omit this value.
+        /// For the first <c>ListServices</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// If the response contains <code>NextToken</code>, submit another <code>ListServices</code>
-        /// request to get the next group of results. Specify the value of <code>NextToken</code>
-        /// from the previous response in the next request.
+        /// If the response contains <c>NextToken</c>, submit another <c>ListServices</c> request
+        /// to get the next group of results. Specify the value of <c>NextToken</c> from the previous
+        /// response in the next request.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Cloud Map gets <code>MaxResults</code> services and then filters them based on the
-        /// specified criteria. It's possible that no services in the first <code>MaxResults</code>
-        /// services matched the specified criteria but that subsequent groups of <code>MaxResults</code>
-        /// services do contain services that match the criteria.
+        /// Cloud Map gets <c>MaxResults</c> services and then filters them based on the specified
+        /// criteria. It's possible that no services in the first <c>MaxResults</c> services matched
+        /// the specified criteria but that subsequent groups of <c>MaxResults</c> services do
+        /// contain services that match the criteria.
         /// </para>
         ///  </note>
         /// </summary>

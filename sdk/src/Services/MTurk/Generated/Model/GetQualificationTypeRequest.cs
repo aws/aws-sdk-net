@@ -30,7 +30,7 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the GetQualificationType operation.
-    /// The <code>GetQualificationType</code>operation retrieves information about a Qualification
+    /// The <c>GetQualificationType</c>operation retrieves information about a Qualification
     /// type using its ID.
     /// </summary>
     public partial class GetQualificationTypeRequest : AmazonMTurkRequest

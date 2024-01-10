@@ -105,8 +105,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
         /// The number of IPv6 prefixes that Amazon Web Services automatically assigns to the
-        /// network interface. You cannot use this option if you use the <code>Ipv6Prefixes</code>
-        /// option.
+        /// network interface. You cannot use this option if you use the <c>Ipv6Prefixes</c> option.
         /// </para>
         /// </summary>
         public int Ipv6PrefixCount
@@ -125,7 +124,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
         /// One or more IPv6 prefixes assigned to the network interface. You cannot use this option
-        /// if you use the <code>Ipv6PrefixCount</code> option.
+        /// if you use the <c>Ipv6PrefixCount</c> option.
         /// </para>
         /// </summary>
         public List<string> Ipv6Prefixes

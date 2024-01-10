@@ -82,8 +82,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FederatedDatabase. 
         /// <para>
-        /// A <code>FederatedDatabase</code> structure that references an entity outside the Glue
-        /// Data Catalog.
+        /// A <c>FederatedDatabase</c> structure that references an entity outside the Glue Data
+        /// Catalog.
         /// </para>
         /// </summary>
         public FederatedDatabase FederatedDatabase
@@ -162,7 +162,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TargetDatabase. 
         /// <para>
-        /// A <code>DatabaseIdentifier</code> structure that describes a target database for resource
+        /// A <c>DatabaseIdentifier</c> structure that describes a target database for resource
         /// linking.
         /// </para>
         /// </summary>

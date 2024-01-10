@@ -41,7 +41,7 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property Errored. 
         /// <para>
         /// Indicates whether there were validation errors, and the pipeline definition is stored
-        /// but cannot be activated until you correct the pipeline and call <code>PutPipelineDefinition</code>
+        /// but cannot be activated until you correct the pipeline and call <c>PutPipelineDefinition</c>
         /// to commit the corrected pipeline.
         /// </para>
         /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ValidationErrors. 
         /// <para>
-        /// The validation errors that are associated with the objects defined in <code>pipelineObjects</code>.
+        /// The validation errors that are associated with the objects defined in <c>pipelineObjects</c>.
         /// </para>
         /// </summary>
         public List<ValidationError> ValidationErrors
@@ -79,7 +79,7 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property ValidationWarnings. 
         /// <para>
-        /// The validation warnings that are associated with the objects defined in <code>pipelineObjects</code>.
+        /// The validation warnings that are associated with the objects defined in <c>pipelineObjects</c>.
         /// </para>
         /// </summary>
         public List<ValidationWarning> ValidationWarnings

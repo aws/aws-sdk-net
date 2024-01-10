@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// The <code>TransferDomainToAnotherAwsAccount</code> response includes the following
-    /// elements.
+    /// The <c>TransferDomainToAnotherAwsAccount</c> response includes the following elements.
     /// </summary>
     public partial class TransferDomainToAnotherAwsAccountResponse : AmazonWebServiceResponse
     {
@@ -62,8 +61,8 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// To finish transferring a domain to another Amazon Web Services account, the account
         /// that the domain is being transferred to must submit an <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AcceptDomainTransferFromAnotherAwsAccount.html">AcceptDomainTransferFromAnotherAwsAccount</a>
-        /// request. The request must include the value of the <code>Password</code> element that
-        /// was returned in the <code>TransferDomainToAnotherAwsAccount</code> response.
+        /// request. The request must include the value of the <c>Password</c> element that was
+        /// returned in the <c>TransferDomainToAnotherAwsAccount</c> response.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

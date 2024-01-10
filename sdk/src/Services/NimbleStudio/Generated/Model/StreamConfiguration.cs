@@ -48,23 +48,22 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property AutomaticTerminationMode. 
         /// <para>
         /// Indicates if a streaming session created from this launch profile should be terminated
-        /// automatically or retained without termination after being in a <code>STOPPED</code>
-        /// state.
+        /// automatically or retained without termination after being in a <c>STOPPED</c> state.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When <code>ACTIVATED</code>, the streaming session is scheduled for termination after
-        /// being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+        /// When <c>ACTIVATED</c>, the streaming session is scheduled for termination after being
+        /// in the <c>STOPPED</c> state for the time specified in <c>maxStoppedSessionLengthInMinutes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code>
-        /// state indefinitely.
+        /// When <c>DEACTIVATED</c>, the streaming session can remain in the <c>STOPPED</c> state
+        /// indefinitely.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
-        /// When allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+        /// This parameter is only allowed when <c>sessionPersistenceMode</c> is <c>ACTIVATED</c>.
+        /// When allowed, the default value for this parameter is <c>DEACTIVATED</c>.
         /// </para>
         /// </summary>
         public AutomaticTerminationMode AutomaticTerminationMode
@@ -145,26 +144,26 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property MaxStoppedSessionLengthInMinutes. 
         /// <para>
         /// Integer that determines if you can start and stop your sessions and how long a session
-        /// can stay in the <code>STOPPED</code> state. The default value is 0. The maximum value
-        /// is 5760.
+        /// can stay in the <c>STOPPED</c> state. The default value is 0. The maximum value is
+        /// 5760.
         /// </para>
         ///  
         /// <para>
-        /// This field is allowed only when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>
-        /// and <code>automaticTerminationMode</code> is <code>ACTIVATED</code>.
+        /// This field is allowed only when <c>sessionPersistenceMode</c> is <c>ACTIVATED</c>
+        /// and <c>automaticTerminationMode</c> is <c>ACTIVATED</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the value is set to 0, your sessions can’t be <code>STOPPED</code>. If you then
-        /// call <code>StopStreamingSession</code>, the session fails. If the time that a session
-        /// stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code>
-        /// value, the session will automatically be terminated (instead of <code>STOPPED</code>).
+        /// If the value is set to 0, your sessions can’t be <c>STOPPED</c>. If you then call
+        /// <c>StopStreamingSession</c>, the session fails. If the time that a session stays in
+        /// the <c>READY</c> state exceeds the <c>maxSessionLengthInMinutes</c> value, the session
+        /// will automatically be terminated (instead of <c>STOPPED</c>).
         /// </para>
         ///  
         /// <para>
         /// If the value is set to a positive number, the session can be stopped. You can call
-        /// <code>StopStreamingSession</code> to stop sessions in the <code>READY</code> state.
-        /// If the time that a session stays in the <code>READY</code> state exceeds the <code>maxSessionLengthInMinutes</code>
+        /// <c>StopStreamingSession</c> to stop sessions in the <c>READY</c> state. If the time
+        /// that a session stays in the <c>READY</c> state exceeds the <c>maxSessionLengthInMinutes</c>
         /// value, the session will automatically be stopped (instead of terminated).
         /// </para>
         /// </summary>
@@ -203,7 +202,7 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property SessionPersistenceMode. 
         /// <para>
         /// Determine if a streaming session created from this launch profile can configure persistent
-        /// storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code>
+        /// storage. This means that <c>volumeConfiguration</c> and <c>automaticTerminationMode</c>
         /// are configured.
         /// </para>
         /// </summary>
@@ -264,7 +263,7 @@ namespace Amazon.NimbleStudio.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+        /// This parameter is only allowed when <c>sessionPersistenceMode</c> is <c>ACTIVATED</c>.
         /// </para>
         /// </summary>
         public VolumeConfiguration VolumeConfiguration

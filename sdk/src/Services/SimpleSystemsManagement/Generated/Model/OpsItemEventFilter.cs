@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The name of the filter key. Currently, the only supported value is <code>OpsItemId</code>.
+        /// The name of the filter key. Currently, the only supported value is <c>OpsItemId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator used by the filter call. Currently, the only supported value is <code>Equal</code>.
+        /// The operator used by the filter call. Currently, the only supported value is <c>Equal</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

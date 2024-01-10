@@ -61,7 +61,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property ImageDigest. 
         /// <para>
-        /// The <code>sha256</code> digest of the image manifest.
+        /// The <c>sha256</c> digest of the image manifest.
         /// </para>
         /// </summary>
         public string ImageDigest
@@ -125,9 +125,9 @@ namespace Amazon.ECRPublic.Model
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before
-        /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
-        /// command shows the uncompressed image size, so it might return a larger image size
-        /// than the image sizes that are returned by <a>DescribeImages</a>.
+        /// pushing them to a V2 Docker registry. The output of the <c>docker images</c> command
+        /// shows the uncompressed image size, so it might return a larger image size than the
+        /// image sizes that are returned by <a>DescribeImages</a>.
         /// </para>
         ///  </note>
         /// </summary>

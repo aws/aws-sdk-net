@@ -66,7 +66,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastSuccessfulSyncTime. 
         /// <para>
-        /// The last time the sync operations returned a status of <code>SUCCESSFUL</code> (UTC).
+        /// The last time the sync operations returned a status of <c>SUCCESSFUL</c> (UTC).
         /// </para>
         /// </summary>
         public DateTime LastSuccessfulSyncTime
@@ -211,10 +211,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SyncType. 
         /// <para>
-        /// The type of resource data sync. If <code>SyncType</code> is <code>SyncToDestination</code>,
-        /// then the resource data sync synchronizes data to an S3 bucket. If the <code>SyncType</code>
-        /// is <code>SyncFromSource</code> then the resource data sync synchronizes data from
-        /// Organizations or from multiple Amazon Web Services Regions.
+        /// The type of resource data sync. If <c>SyncType</c> is <c>SyncToDestination</c>, then
+        /// the resource data sync synchronizes data to an S3 bucket. If the <c>SyncType</c> is
+        /// <c>SyncFromSource</c> then the resource data sync synchronizes data from Organizations
+        /// or from multiple Amazon Web Services Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

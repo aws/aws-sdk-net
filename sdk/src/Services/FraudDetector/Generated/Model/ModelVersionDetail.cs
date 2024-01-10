@@ -88,8 +88,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property ExternalEventsDetail. 
         /// <para>
-        /// The external events data details. This will be populated if the <code>trainingDataSource</code>
-        /// for the model version is specified as <code>EXTERNAL_EVENTS</code>.
+        /// The external events data details. This will be populated if the <c>trainingDataSource</c>
+        /// for the model version is specified as <c>EXTERNAL_EVENTS</c>.
         /// </para>
         /// </summary>
         public ExternalEventsDetail ExternalEventsDetail
@@ -107,8 +107,8 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property IngestedEventsDetail. 
         /// <para>
-        /// The ingested events data details. This will be populated if the <code>trainingDataSource</code>
-        /// for the model version is specified as <code>INGESTED_EVENTS</code>.
+        /// The ingested events data details. This will be populated if the <c>trainingDataSource</c>
+        /// for the model version is specified as <c>INGESTED_EVENTS</c>.
         /// </para>
         /// </summary>
         public IngestedEventsDetail IngestedEventsDetail

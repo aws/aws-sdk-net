@@ -199,7 +199,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the disk snapshot (<code>my-disk-snapshot</code>).
+        /// The name of the disk snapshot (<c>my-disk-snapshot</c>).
         /// </para>
         /// </summary>
         public string Name
@@ -235,7 +235,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (<code>DiskSnapshot</code>).
+        /// The Lightsail resource type (<c>DiskSnapshot</c>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

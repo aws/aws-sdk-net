@@ -63,10 +63,10 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         ///  
         /// <para>
-        /// If the total number of records available is more than the value specified, <code>nextToken</code>
-        /// is provided in the command's output. To resume pagination, provide the <code>nextToken</code>
-        /// output value in the <code>nextToken</code> argument of a subsequent command. Do not
-        /// use the <code>nextToken</code> response element directly outside of the Amazon CLI.
+        /// If the total number of records available is more than the value specified, <c>nextToken</c>
+        /// is provided in the command's output. To resume pagination, provide the <c>nextToken</c>
+        /// output value in the <c>nextToken</c> argument of a subsequent command. Do not use
+        /// the <c>nextToken</c> response element directly outside of the Amazon CLI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

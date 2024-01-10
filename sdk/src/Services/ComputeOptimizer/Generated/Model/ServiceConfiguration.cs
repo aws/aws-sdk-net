@@ -53,13 +53,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS service is configured
-        /// to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.
+        ///  <c>TARGET_TRACKING_SCALING_CPU</c> — If the Amazon ECS service is configured to use
+        /// target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is configured
-        /// to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.
+        ///  <c>TARGET_TRACKING_SCALING_MEMORY</c> — If the Amazon ECS service is configured to
+        /// use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.
         /// </para>
         ///  </li> </ul> 
         /// <para>

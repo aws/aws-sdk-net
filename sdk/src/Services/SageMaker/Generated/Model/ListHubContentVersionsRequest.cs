@@ -205,8 +205,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response to a previous <code>ListHubContentVersions</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of hub content
+        /// If the response to a previous <c>ListHubContentVersions</c> request was truncated,
+        /// the response includes a <c>NextToken</c>. To retrieve the next set of hub content
         /// versions, use the token in the next request.
         /// </para>
         /// </summary>

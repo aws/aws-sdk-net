@@ -41,9 +41,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of tags that you want to return in the response to a <code>ListTagsForResource</code>
-        /// request. If you don't specify a value for <code>MaxResults</code>, Resolver returns
-        /// up to 100 tags.
+        /// The maximum number of tags that you want to return in the response to a <c>ListTagsForResource</c>
+        /// request. If you don't specify a value for <c>MaxResults</c>, Resolver returns up to
+        /// 100 tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -62,13 +62,13 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For the first <code>ListTagsForResource</code> request, omit this value.
+        /// For the first <c>ListTagsForResource</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// If you have more than <code>MaxResults</code> tags, you can submit another <code>ListTagsForResource</code>
+        /// If you have more than <c>MaxResults</c> tags, you can submit another <c>ListTagsForResource</c>
         /// request to get the next group of tags for the resource. In the next request, specify
-        /// the value of <code>NextToken</code> from the previous response. 
+        /// the value of <c>NextToken</c> from the previous response. 
         /// </para>
         /// </summary>
         public string NextToken

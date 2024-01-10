@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// The response to a <code>DescribeOperatingSystems</code> request.
+    /// The response to a <c>DescribeOperatingSystems</c> request.
     /// </summary>
     public partial class DescribeOperatingSystemsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property OperatingSystems. 
         /// <para>
-        /// Contains information in response to a <code>DescribeOperatingSystems</code> request.
+        /// Contains information in response to a <c>DescribeOperatingSystems</c> request.
         /// </para>
         /// </summary>
         public List<OperatingSystem> OperatingSystems

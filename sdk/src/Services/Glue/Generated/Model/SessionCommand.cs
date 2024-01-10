@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The <code>SessionCommand</code> that runs the job.
+    /// The <c>SessionCommand</c> that runs the job.
     /// </summary>
     public partial class SessionCommand
     {

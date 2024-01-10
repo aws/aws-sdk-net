@@ -38,23 +38,23 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property SizeConstraintSet. 
         /// <para>
-        /// Information about the <a>SizeConstraintSet</a> that you specified in the <code>GetSizeConstraintSet</code>
+        /// Information about the <a>SizeConstraintSet</a> that you specified in the <c>GetSizeConstraintSet</c>
         /// request. For more information, see the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>SizeConstraintSet</a>: Contains <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>,
-        /// and <code>Name</code> 
+        ///  <a>SizeConstraintSet</a>: Contains <c>SizeConstraintSetId</c>, <c>SizeConstraints</c>,
+        /// and <c>Name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SizeConstraints</code>: Contains an array of <a>SizeConstraint</a> objects.
-        /// Each <code>SizeConstraint</code> object contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-        /// <code>ComparisonOperator</code>, and <code>Size</code> 
+        ///  <c>SizeConstraints</c>: Contains an array of <a>SizeConstraint</a> objects. Each
+        /// <c>SizeConstraint</c> object contains <a>FieldToMatch</a>, <c>TextTransformation</c>,
+        /// <c>ComparisonOperator</c>, and <c>Size</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        ///  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

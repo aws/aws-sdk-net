@@ -76,7 +76,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageVirtualMachineId. 
         /// <para>
-        /// The ID of the SVM that you want to update, in the format <code>svm-0123456789abcdef0</code>.
+        /// The ID of the SVM that you want to update, in the format <c>svm-0123456789abcdef0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=21, Max=21)]

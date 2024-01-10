@@ -38,8 +38,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// The list of bootstrap servers for your Kafka brokers in the following format: <code>"KAFKA_BOOTSTRAP_SERVERS":
-        /// ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</code>.
+        /// The list of bootstrap servers for your Kafka brokers in the following format: <c>"KAFKA_BOOTSTRAP_SERVERS":
+        /// ["abc.xyz.com:xxxx","abc2.xyz.com:xxxx"]</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

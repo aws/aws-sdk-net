@@ -63,7 +63,7 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property EndpointId. 
         /// <para>
         /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com,
-        /// then the EndpointId is <code>abcde.veo</code>.
+        /// then the EndpointId is <c>abcde.veo</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=50)]

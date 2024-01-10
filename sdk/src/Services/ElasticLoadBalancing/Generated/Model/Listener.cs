@@ -96,14 +96,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code>
-        /// is secure, (HTTPS or SSL), the listener's <code>InstanceProtocol</code> must also
-        /// be secure.
+        /// If there is another listener with the same <c>InstancePort</c> whose <c>InstanceProtocol</c>
+        /// is secure, (HTTPS or SSL), the listener's <c>InstanceProtocol</c> must also be secure.
         /// </para>
         ///  
         /// <para>
-        /// If there is another listener with the same <code>InstancePort</code> whose <code>InstanceProtocol</code>
-        /// is HTTP or TCP, the listener's <code>InstanceProtocol</code> must be HTTP or TCP.
+        /// If there is another listener with the same <c>InstancePort</c> whose <c>InstanceProtocol</c>
+        /// is HTTP or TCP, the listener's <c>InstanceProtocol</c> must be HTTP or TCP.
         /// </para>
         /// </summary>
         public string InstanceProtocol

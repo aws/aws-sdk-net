@@ -58,8 +58,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that was used in the <code>NextToken</code>request to fetch the next set
-        /// of results. 
+        /// The token that was used in the <c>NextToken</c>request to fetch the next set of results.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

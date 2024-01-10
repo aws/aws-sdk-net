@@ -35,8 +35,8 @@ namespace Amazon.SSMContacts.Model
     /// 
     ///  
     /// <para>
-    /// The <code>ResolutionContact</code> structure describes the information for each node
-    /// or step in that process. It contains information about different contact types, such
+    /// The <c>ResolutionContact</c> structure describes the information for each node or
+    /// step in that process. It contains information about different contact types, such
     /// as the escalation, rotation, and personal contacts.
     /// </para>
     /// </summary>

@@ -276,8 +276,8 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Creates an HTTP namespace. Service instances registered using an HTTP namespace can
-        /// be discovered using a <code>DiscoverInstances</code> request but can't be discovered
-        /// using DNS.
+        /// be discovered using a <c>DiscoverInstances</c> request but can't be discovered using
+        /// DNS.
         /// 
         ///  
         /// <para>
@@ -320,8 +320,8 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Creates an HTTP namespace. Service instances registered using an HTTP namespace can
-        /// be discovered using a <code>DiscoverInstances</code> request but can't be discovered
-        /// using DNS.
+        /// be discovered using a <c>DiscoverInstances</c> request but can't be discovered using
+        /// DNS.
         /// 
         ///  
         /// <para>
@@ -372,12 +372,11 @@ namespace Amazon.ServiceDiscovery
         /// <summary>
         /// Creates a private namespace based on DNS, which is visible only inside a specified
         /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
-        /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-        /// the resulting DNS name for the service is <code>backend.example.com</code>. Service
-        /// instances that are registered using a private DNS namespace can be discovered using
-        /// either a <code>DiscoverInstances</code> request or using DNS. For the current quota
-        /// on the number of namespaces that you can create using the same Amazon Web Services
-        /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+        /// name your namespace <c>example.com</c> and name your service <c>backend</c>, the resulting
+        /// DNS name for the service is <c>backend.example.com</c>. Service instances that are
+        /// registered using a private DNS namespace can be discovered using either a <c>DiscoverInstances</c>
+        /// request or using DNS. For the current quota on the number of namespaces that you can
+        /// create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
         /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateDnsNamespace service method.</param>
@@ -415,12 +414,11 @@ namespace Amazon.ServiceDiscovery
         /// <summary>
         /// Creates a private namespace based on DNS, which is visible only inside a specified
         /// Amazon VPC. The namespace defines your service naming scheme. For example, if you
-        /// name your namespace <code>example.com</code> and name your service <code>backend</code>,
-        /// the resulting DNS name for the service is <code>backend.example.com</code>. Service
-        /// instances that are registered using a private DNS namespace can be discovered using
-        /// either a <code>DiscoverInstances</code> request or using DNS. For the current quota
-        /// on the number of namespaces that you can create using the same Amazon Web Services
-        /// account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+        /// name your namespace <c>example.com</c> and name your service <c>backend</c>, the resulting
+        /// DNS name for the service is <c>backend.example.com</c>. Service instances that are
+        /// registered using a private DNS namespace can be discovered using either a <c>DiscoverInstances</c>
+        /// request or using DNS. For the current quota on the number of namespaces that you can
+        /// create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
         /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePrivateDnsNamespace service method.</param>
@@ -464,18 +462,18 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Creates a public namespace based on DNS, which is visible on the internet. The namespace
-        /// defines your service naming scheme. For example, if you name your namespace <code>example.com</code>
-        /// and name your service <code>backend</code>, the resulting DNS name for the service
-        /// is <code>backend.example.com</code>. You can discover instances that were registered
-        /// with a public DNS namespace by using either a <code>DiscoverInstances</code> request
-        /// or using DNS. For the current quota on the number of namespaces that you can create
-        /// using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+        /// defines your service naming scheme. For example, if you name your namespace <c>example.com</c>
+        /// and name your service <c>backend</c>, the resulting DNS name for the service is <c>backend.example.com</c>.
+        /// You can discover instances that were registered with a public DNS namespace by using
+        /// either a <c>DiscoverInstances</c> request or using DNS. For the current quota on the
+        /// number of namespaces that you can create using the same Amazon Web Services account,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
         /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
         /// 
         ///  <important> 
         /// <para>
-        /// The <code>CreatePublicDnsNamespace</code> API operation is not supported in the Amazon
-        /// Web Services GovCloud (US) Regions.
+        /// The <c>CreatePublicDnsNamespace</c> API operation is not supported in the Amazon Web
+        /// Services GovCloud (US) Regions.
         /// </para>
         ///  </important>
         /// </summary>
@@ -513,18 +511,18 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Creates a public namespace based on DNS, which is visible on the internet. The namespace
-        /// defines your service naming scheme. For example, if you name your namespace <code>example.com</code>
-        /// and name your service <code>backend</code>, the resulting DNS name for the service
-        /// is <code>backend.example.com</code>. You can discover instances that were registered
-        /// with a public DNS namespace by using either a <code>DiscoverInstances</code> request
-        /// or using DNS. For the current quota on the number of namespaces that you can create
-        /// using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
+        /// defines your service naming scheme. For example, if you name your namespace <c>example.com</c>
+        /// and name your service <c>backend</c>, the resulting DNS name for the service is <c>backend.example.com</c>.
+        /// You can discover instances that were registered with a public DNS namespace by using
+        /// either a <c>DiscoverInstances</c> request or using DNS. For the current quota on the
+        /// number of namespaces that you can create using the same Amazon Web Services account,
+        /// see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud
         /// Map quotas</a> in the <i>Cloud Map Developer Guide</i>.
         /// 
         ///  <important> 
         /// <para>
-        /// The <code>CreatePublicDnsNamespace</code> API operation is not supported in the Amazon
-        /// Web Services GovCloud (US) Regions.
+        /// The <c>CreatePublicDnsNamespace</c> API operation is not supported in the Amazon Web
+        /// Services GovCloud (US) Regions.
         /// </para>
         ///  </important>
         /// </summary>
@@ -577,23 +575,23 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>A</code> 
+        ///  <c>A</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AAAA</code> 
+        ///  <c>AAAA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>A</code> and <code>AAAA</code> 
+        ///  <c>A</c> and <c>AAAA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SRV</code> 
+        ///  <c>SRV</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CNAME</code> 
+        ///  <c>CNAME</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -654,23 +652,23 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>A</code> 
+        ///  <c>A</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AAAA</code> 
+        ///  <c>AAAA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>A</code> and <code>AAAA</code> 
+        ///  <c>A</c> and <c>AAAA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SRV</code> 
+        ///  <c>SRV</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CNAME</code> 
+        ///  <c>CNAME</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -951,7 +949,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Discovers registered instances for a specified namespace and service. You can use
-        /// <code>DiscoverInstances</code> to discover instances for any type of namespace. <code>DiscoverInstances</code>
+        /// <c>DiscoverInstances</c> to discover instances for any type of namespace. <c>DiscoverInstances</c>
         /// returns a randomized list of instances allowing customers to distribute traffic evenly
         /// across instances. For public and private DNS namespaces, you can also use DNS queries
         /// to discover instances.
@@ -988,7 +986,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Discovers registered instances for a specified namespace and service. You can use
-        /// <code>DiscoverInstances</code> to discover instances for any type of namespace. <code>DiscoverInstances</code>
+        /// <c>DiscoverInstances</c> to discover instances for any type of namespace. <c>DiscoverInstances</c>
         /// returns a randomized list of instances allowing customers to distribute traffic evenly
         /// across instances. For public and private DNS namespaces, you can also use DNS queries
         /// to discover instances.
@@ -1169,7 +1167,7 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>, or <code>Unknown</code>)
+        /// Gets the current health status (<c>Healthy</c>, <c>Unhealthy</c>, or <c>Unknown</c>)
         /// of one or more instances that are associated with a specified service.
         /// 
         ///  <note> 
@@ -1206,7 +1204,7 @@ namespace Amazon.ServiceDiscovery
 
 
         /// <summary>
-        /// Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>, or <code>Unknown</code>)
+        /// Gets the current health status (<c>Healthy</c>, <c>Unhealthy</c>, or <c>Unknown</c>)
         /// of one or more instances that are associated with a specified service.
         /// 
         ///  <note> 
@@ -1308,7 +1306,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Gets information about any operation that returns an operation ID in the response,
-        /// such as a <code>CreateHttpNamespace</code> request.
+        /// such as a <c>CreateHttpNamespace</c> request.
         /// 
         ///  <note> 
         /// <para>
@@ -1340,7 +1338,7 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Gets information about any operation that returns an operation ID in the response,
-        /// such as a <code>CreateHttpNamespace</code> request.
+        /// such as a <c>CreateHttpNamespace</c> request.
         /// 
         ///  <note> 
         /// <para>
@@ -1709,19 +1707,19 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Creates or updates one or more records and, optionally, creates a health check based
-        /// on the settings in a specified service. When you submit a <code>RegisterInstance</code>
+        /// on the settings in a specified service. When you submit a <c>RegisterInstance</c>
         /// request, the following occurs:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For each DNS record that you define in the service that's specified by <code>ServiceId</code>,
+        /// For each DNS record that you define in the service that's specified by <c>ServiceId</c>,
         /// a record is created or updated in the hosted zone that's associated with the corresponding
         /// namespace.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the service includes <code>HealthCheckConfig</code>, a health check is created
-        /// based on the settings in the health check configuration.
+        /// If the service includes <c>HealthCheckConfig</c>, a health check is created based
+        /// on the settings in the health check configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1729,8 +1727,8 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// One <code>RegisterInstance</code> request must complete before you can submit another
-        /// request and specify the same service ID and instance ID.
+        /// One <c>RegisterInstance</c> request must complete before you can submit another request
+        /// and specify the same service ID and instance ID.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1795,19 +1793,19 @@ namespace Amazon.ServiceDiscovery
 
         /// <summary>
         /// Creates or updates one or more records and, optionally, creates a health check based
-        /// on the settings in a specified service. When you submit a <code>RegisterInstance</code>
+        /// on the settings in a specified service. When you submit a <c>RegisterInstance</c>
         /// request, the following occurs:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// For each DNS record that you define in the service that's specified by <code>ServiceId</code>,
+        /// For each DNS record that you define in the service that's specified by <c>ServiceId</c>,
         /// a record is created or updated in the hosted zone that's associated with the corresponding
         /// namespace.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the service includes <code>HealthCheckConfig</code>, a health check is created
-        /// based on the settings in the health check configuration.
+        /// If the service includes <c>HealthCheckConfig</c>, a health check is created based
+        /// on the settings in the health check configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1815,8 +1813,8 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// One <code>RegisterInstance</code> request must complete before you can submit another
-        /// request and specify the same service ID and instance ID.
+        /// One <c>RegisterInstance</c> request must complete before you can submit another request
+        /// and specify the same service ID and instance ID.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2085,10 +2083,10 @@ namespace Amazon.ServiceDiscovery
         /// 
         ///  
         /// <para>
-        /// You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only
-        /// for custom health checks, which you define using <code>HealthCheckCustomConfig</code>
-        /// when you create a service. You can't use it to change the status for Route 53 health
-        /// checks, which you define using <code>HealthCheckConfig</code>.
+        /// You can use <c>UpdateInstanceCustomHealthStatus</c> to change the status only for
+        /// custom health checks, which you define using <c>HealthCheckCustomConfig</c> when you
+        /// create a service. You can't use it to change the status for Route 53 health checks,
+        /// which you define using <c>HealthCheckConfig</c>.
         /// </para>
         ///  
         /// <para>
@@ -2099,7 +2097,7 @@ namespace Amazon.ServiceDiscovery
         /// 
         /// <returns>The response from the UpdateInstanceCustomHealthStatus service method, as returned by ServiceDiscovery.</returns>
         /// <exception cref="Amazon.ServiceDiscovery.Model.CustomHealthNotFoundException">
-        /// The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code>
+        /// The health check for the instance that's specified by <c>ServiceId</c> and <c>InstanceId</c>
         /// isn't a custom health check.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.InstanceNotFoundException">
@@ -2131,10 +2129,10 @@ namespace Amazon.ServiceDiscovery
         /// 
         ///  
         /// <para>
-        /// You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only
-        /// for custom health checks, which you define using <code>HealthCheckCustomConfig</code>
-        /// when you create a service. You can't use it to change the status for Route 53 health
-        /// checks, which you define using <code>HealthCheckConfig</code>.
+        /// You can use <c>UpdateInstanceCustomHealthStatus</c> to change the status only for
+        /// custom health checks, which you define using <c>HealthCheckCustomConfig</c> when you
+        /// create a service. You can't use it to change the status for Route 53 health checks,
+        /// which you define using <c>HealthCheckConfig</c>.
         /// </para>
         ///  
         /// <para>
@@ -2148,7 +2146,7 @@ namespace Amazon.ServiceDiscovery
         /// 
         /// <returns>The response from the UpdateInstanceCustomHealthStatus service method, as returned by ServiceDiscovery.</returns>
         /// <exception cref="Amazon.ServiceDiscovery.Model.CustomHealthNotFoundException">
-        /// The health check for the instance that's specified by <code>ServiceId</code> and <code>InstanceId</code>
+        /// The health check for the instance that's specified by <c>ServiceId</c> and <c>InstanceId</c>
         /// isn't a custom health check.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.InstanceNotFoundException">
@@ -2325,15 +2323,15 @@ namespace Amazon.ServiceDiscovery
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Update the TTL setting for existing <code>DnsRecords</code> configurations
+        /// Update the TTL setting for existing <c>DnsRecords</c> configurations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Add, update, or delete <code>HealthCheckConfig</code> for a specified service
+        /// Add, update, or delete <c>HealthCheckConfig</c> for a specified service
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.
+        /// You can't add, update, or delete a <c>HealthCheckCustomConfig</c> configuration.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
@@ -2341,14 +2339,13 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you omit any existing <code>DnsRecords</code> or <code>HealthCheckConfig</code>
-        /// configurations from an <code>UpdateService</code> request, the configurations are
-        /// deleted from the service.
+        /// If you omit any existing <c>DnsRecords</c> or <c>HealthCheckConfig</c> configurations
+        /// from an <c>UpdateService</c> request, the configurations are deleted from the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-        /// <code>UpdateService</code> request, the configuration isn't deleted from the service.
+        /// If you omit an existing <c>HealthCheckCustomConfig</c> configuration from an <c>UpdateService</c>
+        /// request, the configuration isn't deleted from the service.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2386,15 +2383,15 @@ namespace Amazon.ServiceDiscovery
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Update the TTL setting for existing <code>DnsRecords</code> configurations
+        /// Update the TTL setting for existing <c>DnsRecords</c> configurations
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Add, update, or delete <code>HealthCheckConfig</code> for a specified service
+        /// Add, update, or delete <c>HealthCheckConfig</c> for a specified service
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.
+        /// You can't add, update, or delete a <c>HealthCheckCustomConfig</c> configuration.
         /// </para>
         ///  </note> </li> </ul> 
         /// <para>
@@ -2402,14 +2399,13 @@ namespace Amazon.ServiceDiscovery
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you omit any existing <code>DnsRecords</code> or <code>HealthCheckConfig</code>
-        /// configurations from an <code>UpdateService</code> request, the configurations are
-        /// deleted from the service.
+        /// If you omit any existing <c>DnsRecords</c> or <c>HealthCheckConfig</c> configurations
+        /// from an <c>UpdateService</c> request, the configurations are deleted from the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-        /// <code>UpdateService</code> request, the configuration isn't deleted from the service.
+        /// If you omit an existing <c>HealthCheckCustomConfig</c> configuration from an <c>UpdateService</c>
+        /// request, the configuration isn't deleted from the service.
         /// </para>
         ///  </li> </ul> 
         /// <para>

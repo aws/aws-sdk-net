@@ -36,86 +36,83 @@ namespace Amazon.CloudWatchRUM.Model
     ///  
     /// <para>
     /// This structure is validated differently for extended metrics and custom metrics. For
-    /// extended metrics that are sent to the <code>AWS/RUM</code> namespace, the following
-    /// validations apply:
+    /// extended metrics that are sent to the <c>AWS/RUM</c> namespace, the following validations
+    /// apply:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The <code>Namespace</code> parameter must be omitted or set to <code>AWS/RUM</code>.
+    /// The <c>Namespace</c> parameter must be omitted or set to <c>AWS/RUM</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Only certain combinations of values for <code>Name</code>, <code>ValueKey</code>,
-    /// and <code>EventPattern</code> are valid. In addition to what is displayed in the list
-    /// below, the <code>EventPattern</code> can also include information used by the <code>DimensionKeys</code>
-    /// field.
+    /// Only certain combinations of values for <c>Name</c>, <c>ValueKey</c>, and <c>EventPattern</c>
+    /// are valid. In addition to what is displayed in the list below, the <c>EventPattern</c>
+    /// can also include information used by the <c>DimensionKeys</c> field.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If <code>Name</code> is <code>PerformanceNavigationDuration</code>, then <code>ValueKey</code>must
-    /// be <code>event_details.duration</code> and the <code>EventPattern</code> must include
-    /// <code>{"event_type":["com.amazon.rum.performance_navigation_event"]}</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If <code>Name</code> is <code>PerformanceResourceDuration</code>, then <code>ValueKey</code>must
-    /// be <code>event_details.duration</code> and the <code>EventPattern</code> must include
-    /// <code>{"event_type":["com.amazon.rum.performance_resource_event"]}</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If <code>Name</code> is <code>NavigationSatisfiedTransaction</code>, then <code>ValueKey</code>must
-    /// be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"],
-    /// "event_details": { "duration": [{ "numeric": ["&gt;",2000] }] } }</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If <code>Name</code> is <code>NavigationToleratedTransaction</code>, then <code>ValueKey</code>must
-    /// be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"],
-    /// "event_details": { "duration": [{ "numeric": ["&gt;=",2000,"&lt;"8000] }] } }</code>
+    /// If <c>Name</c> is <c>PerformanceNavigationDuration</c>, then <c>ValueKey</c>must be
+    /// <c>event_details.duration</c> and the <c>EventPattern</c> must include <c>{"event_type":["com.amazon.rum.performance_navigation_event"]}</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If <code>Name</code> is <code>NavigationFrustratedTransaction</code>, then <code>ValueKey</code>must
-    /// be null and the <code>EventPattern</code> must include <code>{ "event_type": ["com.amazon.rum.performance_navigation_event"],
-    /// "event_details": { "duration": [{ "numeric": ["&gt;=",8000] }] } }</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If <code>Name</code> is <code>WebVitalsCumulativeLayoutShift</code>, then <code>ValueKey</code>must
-    /// be <code>event_details.value</code> and the <code>EventPattern</code> must include
-    /// <code>{"event_type":["com.amazon.rum.cumulative_layout_shift_event"]}</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If <code>Name</code> is <code>WebVitalsFirstInputDelay</code>, then <code>ValueKey</code>must
-    /// be <code>event_details.value</code> and the <code>EventPattern</code> must include
-    /// <code>{"event_type":["com.amazon.rum.first_input_delay_event"]}</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If <code>Name</code> is <code>WebVitalsLargestContentfulPaint</code>, then <code>ValueKey</code>must
-    /// be <code>event_details.value</code> and the <code>EventPattern</code> must include
-    /// <code>{"event_type":["com.amazon.rum.largest_contentful_paint_event"]}</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If <code>Name</code> is <code>JsErrorCount</code>, then <code>ValueKey</code>must
-    /// be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.js_error_event"]}</code>
+    /// If <c>Name</c> is <c>PerformanceResourceDuration</c>, then <c>ValueKey</c>must be
+    /// <c>event_details.duration</c> and the <c>EventPattern</c> must include <c>{"event_type":["com.amazon.rum.performance_resource_event"]}</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If <code>Name</code> is <code>HttpErrorCount</code>, then <code>ValueKey</code>must
-    /// be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.http_event"]}</code>
+    /// If <c>Name</c> is <c>NavigationSatisfiedTransaction</c>, then <c>ValueKey</c>must
+    /// be null and the <c>EventPattern</c> must include <c>{ "event_type": ["com.amazon.rum.performance_navigation_event"],
+    /// "event_details": { "duration": [{ "numeric": ["&gt;",2000] }] } }</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>NavigationToleratedTransaction</c>, then <c>ValueKey</c>must
+    /// be null and the <c>EventPattern</c> must include <c>{ "event_type": ["com.amazon.rum.performance_navigation_event"],
+    /// "event_details": { "duration": [{ "numeric": ["&gt;=",2000,"&lt;"8000] }] } }</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If <code>Name</code> is <code>SessionCount</code>, then <code>ValueKey</code>must
-    /// be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.session_start_event"]}</code>
+    /// If <c>Name</c> is <c>NavigationFrustratedTransaction</c>, then <c>ValueKey</c>must
+    /// be null and the <c>EventPattern</c> must include <c>{ "event_type": ["com.amazon.rum.performance_navigation_event"],
+    /// "event_details": { "duration": [{ "numeric": ["&gt;=",8000] }] } }</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>WebVitalsCumulativeLayoutShift</c>, then <c>ValueKey</c>must
+    /// be <c>event_details.value</c> and the <c>EventPattern</c> must include <c>{"event_type":["com.amazon.rum.cumulative_layout_shift_event"]}</c>
     /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>WebVitalsFirstInputDelay</c>, then <c>ValueKey</c>must be <c>event_details.value</c>
+    /// and the <c>EventPattern</c> must include <c>{"event_type":["com.amazon.rum.first_input_delay_event"]}</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>WebVitalsLargestContentfulPaint</c>, then <c>ValueKey</c>must
+    /// be <c>event_details.value</c> and the <c>EventPattern</c> must include <c>{"event_type":["com.amazon.rum.largest_contentful_paint_event"]}</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>JsErrorCount</c>, then <c>ValueKey</c>must be null and the <c>EventPattern</c>
+    /// must include <c>{"event_type":["com.amazon.rum.js_error_event"]}</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>HttpErrorCount</c>, then <c>ValueKey</c>must be null and the
+    /// <c>EventPattern</c> must include <c>{"event_type":["com.amazon.rum.http_event"]}</c>
+    /// 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <c>Name</c> is <c>SessionCount</c>, then <c>ValueKey</c>must be null and the <c>EventPattern</c>
+    /// must include <c>{"event_type":["com.amazon.rum.session_start_event"]}</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
@@ -123,109 +120,108 @@ namespace Amazon.CloudWatchRUM.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The namespace can't be omitted and can't be <code>AWS/RUM</code>. You can use the
-    /// <code>AWS/RUM</code> namespace only for extended metrics.
+    /// The namespace can't be omitted and can't be <c>AWS/RUM</c>. You can use the <c>AWS/RUM</c>
+    /// namespace only for extended metrics.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// All dimensions listed in the <code>DimensionKeys</code> field must be present in the
-    /// value of <code>EventPattern</code>.
+    /// All dimensions listed in the <c>DimensionKeys</c> field must be present in the value
+    /// of <c>EventPattern</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The values that you specify for <code>ValueKey</code>, <code>EventPattern</code>,
-    /// and <code>DimensionKeys</code> must be fields in RUM events, so all first-level keys
-    /// in these fields must be one of the keys in the list later in this section.
+    /// The values that you specify for <c>ValueKey</c>, <c>EventPattern</c>, and <c>DimensionKeys</c>
+    /// must be fields in RUM events, so all first-level keys in these fields must be one
+    /// of the keys in the list later in this section.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you set a value for <code>EventPattern</code>, it must be a JSON object.
+    /// If you set a value for <c>EventPattern</c>, it must be a JSON object.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For every non-empty <code>event_details</code>, there must be a non-empty <code>event_type</code>.
+    /// For every non-empty <c>event_details</c>, there must be a non-empty <c>event_type</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If <code>EventPattern</code> contains an <code>event_details</code> field, it must
-    /// also contain an <code>event_type</code>. For every built-in <code>event_type</code>
-    /// that you use, you must use a value for <code>event_details</code> that corresponds
-    /// to that <code>event_type</code>. For information about event details that correspond
-    /// to event types, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-datacollected.html#CloudWatch-RUM-datacollected-eventDetails">
+    /// If <c>EventPattern</c> contains an <c>event_details</c> field, it must also contain
+    /// an <c>event_type</c>. For every built-in <c>event_type</c> that you use, you must
+    /// use a value for <c>event_details</c> that corresponds to that <c>event_type</c>. For
+    /// information about event details that correspond to event types, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-datacollected.html#CloudWatch-RUM-datacollected-eventDetails">
     /// RUM event details</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// In <code>EventPattern</code>, any JSON array must contain only one value.
+    /// In <c>EventPattern</c>, any JSON array must contain only one value.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Valid key values for first-level keys in the <code>ValueKey</code>, <code>EventPattern</code>,
-    /// and <code>DimensionKeys</code> fields:
+    /// Valid key values for first-level keys in the <c>ValueKey</c>, <c>EventPattern</c>,
+    /// and <c>DimensionKeys</c> fields:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>account_id</code> 
+    ///  <c>account_id</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>application_Id</code> 
+    ///  <c>application_Id</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>application_version</code> 
+    ///  <c>application_version</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>application_name</code> 
+    ///  <c>application_name</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>batch_id</code> 
+    ///  <c>batch_id</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>event_details</code> 
+    ///  <c>event_details</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>event_id</code> 
+    ///  <c>event_id</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>event_interaction</code> 
+    ///  <c>event_interaction</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>event_timestamp</code> 
+    ///  <c>event_timestamp</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>event_type</code> 
+    ///  <c>event_type</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>event_version</code> 
+    ///  <c>event_version</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>log_stream</code> 
+    ///  <c>log_stream</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>metadata</code> 
+    ///  <c>metadata</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>sessionId</code> 
+    ///  <c>sessionId</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>user_details</code> 
+    ///  <c>user_details</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>userId</code> 
+    ///  <c>userId</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -251,32 +247,32 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"metadata.pageId": "PageId"</code> 
+        ///  <c>"metadata.pageId": "PageId"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"metadata.browserName": "BrowserName"</code> 
+        ///  <c>"metadata.browserName": "BrowserName"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"metadata.deviceType": "DeviceType"</code> 
+        ///  <c>"metadata.deviceType": "DeviceType"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"metadata.osName": "OSName"</code> 
+        ///  <c>"metadata.osName": "OSName"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"metadata.countryCode": "CountryCode"</code> 
+        ///  <c>"metadata.countryCode": "CountryCode"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"event_details.fileType": "FileType"</code> 
+        ///  <c>"event_details.fileType": "FileType"</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         ///  For both extended metrics and custom metrics, all dimensions listed in this field
-        /// must also be included in <code>EventPattern</code>.
+        /// must also be included in <c>EventPattern</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=29)]
@@ -301,7 +297,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  
         /// <para>
-        /// When you define extended metrics, the metric definition is not valid if <code>EventPattern</code>
+        /// When you define extended metrics, the metric definition is not valid if <c>EventPattern</c>
         /// is omitted.
         /// </para>
         ///  
@@ -310,26 +306,26 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName":
-        /// [ "Chrome", "Safari" ], } }'</code> 
+        ///  <c>'{ "event_type": ["com.amazon.rum.js_error_event"], "metadata": { "browserName":
+        /// [ "Chrome", "Safari" ], } }'</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata":
+        ///  <c>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata":
         /// { "browserName": [ "Chrome", "Firefox" ] }, "event_details": { "duration": [{ "numeric":
-        /// [ "&lt;", 2000 ] }] } }'</code> 
+        /// [ "&lt;", 2000 ] }] } }'</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata":
+        ///  <c>'{ "event_type": ["com.amazon.rum.performance_navigation_event"], "metadata":
         /// { "browserName": [ "Chrome", "Safari" ], "countryCode": [ "US" ] }, "event_details":
-        /// { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</code> 
+        /// { "duration": [{ "numeric": [ "&gt;=", 2000, "&lt;", 8000 ] }] } }'</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the metrics destination' is <code>CloudWatch</code> and the event also matches
-        /// a value in <code>DimensionKeys</code>, then the metric is published with the specified
-        /// dimensions. 
+        /// If the metrics destination' is <c>CloudWatch</c> and the event also matches a value
+        /// in <c>DimensionKeys</c>, then the metric is published with the specified dimensions.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]
@@ -353,47 +349,47 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PerformanceNavigationDuration</code> 
+        ///  <c>PerformanceNavigationDuration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PerformanceResourceDuration </code> 
+        ///  <c>PerformanceResourceDuration </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NavigationSatisfiedTransaction</code> 
+        ///  <c>NavigationSatisfiedTransaction</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NavigationToleratedTransaction</code> 
+        ///  <c>NavigationToleratedTransaction</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NavigationFrustratedTransaction</code> 
+        ///  <c>NavigationFrustratedTransaction</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WebVitalsCumulativeLayoutShift</code> 
+        ///  <c>WebVitalsCumulativeLayoutShift</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WebVitalsFirstInputDelay</code> 
+        ///  <c>WebVitalsFirstInputDelay</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WebVitalsLargestContentfulPaint</code> 
+        ///  <c>WebVitalsLargestContentfulPaint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JsErrorCount</code> 
+        ///  <c>JsErrorCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HttpErrorCount</code> 
+        ///  <c>HttpErrorCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SessionCount</code> 
+        ///  <c>SessionCount</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -419,7 +415,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot use any string that starts with <code>AWS/</code> for your namespace.
+        /// You cannot use any string that starts with <c>AWS/</c> for your namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=237)]

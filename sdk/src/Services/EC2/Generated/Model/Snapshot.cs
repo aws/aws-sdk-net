@@ -153,7 +153,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerAlias. 
         /// <para>
-        /// The Amazon Web Services owner alias, from an Amazon-maintained list (<code>amazon</code>).
+        /// The Amazon Web Services owner alias, from an Amazon-maintained list (<c>amazon</c>).
         /// This is not the user-configured Amazon Web Services account alias set using the IAM
         /// console.
         /// </para>
@@ -321,10 +321,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StorageTier. 
         /// <para>
-        /// The storage tier in which the snapshot is stored. <code>standard</code> indicates
-        /// that the snapshot is stored in the standard snapshot storage tier and that it is ready
-        /// for use. <code>archive</code> indicates that the snapshot is currently archived and
-        /// that it must be restored before it can be used.
+        /// The storage tier in which the snapshot is stored. <c>standard</c> indicates that the
+        /// snapshot is stored in the standard snapshot storage tier and that it is ready for
+        /// use. <c>archive</c> indicates that the snapshot is currently archived and that it
+        /// must be restored before it can be used.
         /// </para>
         /// </summary>
         public StorageTier StorageTier

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBSubnetGroupName</code> is already used by an existing DB subnet group.
+    /// <c>DBSubnetGroupName</c> is already used by an existing DB subnet group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

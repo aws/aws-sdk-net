@@ -70,7 +70,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property BloomFilterColumns. 
         /// <para>
         /// The column names for which you want Kinesis Data Firehose to create bloom filters.
-        /// The default is <code>null</code>.
+        /// The default is <c>null</c>.
         /// </para>
         /// </summary>
         public List<string> BloomFilterColumns
@@ -108,7 +108,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Compression. 
         /// <para>
-        /// The compression code to use over data blocks. The default is <code>SNAPPY</code>.
+        /// The compression code to use over data blocks. The default is <c>SNAPPY</c>.
         /// </para>
         /// </summary>
         public OrcCompression Compression
@@ -147,9 +147,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property EnablePadding. 
         /// <para>
-        /// Set this to <code>true</code> to indicate that you want stripes to be padded to the
-        /// HDFS block boundaries. This is useful if you intend to copy the data from Amazon S3
-        /// to HDFS before querying. The default is <code>false</code>.
+        /// Set this to <c>true</c> to indicate that you want stripes to be padded to the HDFS
+        /// block boundaries. This is useful if you intend to copy the data from Amazon S3 to
+        /// HDFS before querying. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool EnablePadding
@@ -167,8 +167,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property FormatVersion. 
         /// <para>
-        /// The version of the file to write. The possible values are <code>V0_11</code> and <code>V0_12</code>.
-        /// The default is <code>V0_12</code>.
+        /// The version of the file to write. The possible values are <c>V0_11</c> and <c>V0_12</c>.
+        /// The default is <c>V0_12</c>.
         /// </para>
         /// </summary>
         public OrcFormatVersion FormatVersion
@@ -202,7 +202,7 @@ namespace Amazon.KinesisFirehose.Model
         ///  
         /// <para>
         /// Kinesis Data Firehose ignores this parameter when <a>OrcSerDe$EnablePadding</a> is
-        /// <code>false</code>.
+        /// <c>false</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

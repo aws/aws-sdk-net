@@ -34,10 +34,10 @@ namespace Amazon.Neptunedata.Model
     /// 
     ///  
     /// <para>
-    /// Amazon Neptune has added a Gremlin feature named <code>explain</code> that provides
-    /// is a self-service tool for understanding the execution approach being taken by the
-    /// Neptune engine for the query. You invoke it by adding an <code>explain</code> parameter
-    /// to an HTTP call that submits a Gremlin query.
+    /// Amazon Neptune has added a Gremlin feature named <c>explain</c> that provides is a
+    /// self-service tool for understanding the execution approach being taken by the Neptune
+    /// engine for the query. You invoke it by adding an <c>explain</c> parameter to an HTTP
+    /// call that submits a Gremlin query.
     /// </para>
     ///  
     /// <para>

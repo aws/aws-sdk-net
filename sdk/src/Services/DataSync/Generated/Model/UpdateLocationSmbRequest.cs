@@ -156,8 +156,8 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies the name of the share exported by your SMB file server where DataSync will
         /// read or write data. You can include a subdirectory in the share path (for example,
-        /// <code>/path/to/subdirectory</code>). Make sure that other SMB clients in your network
-        /// can also mount this path.
+        /// <c>/path/to/subdirectory</c>). Make sure that other SMB clients in your network can
+        /// also mount this path.
         /// </para>
         ///  
         /// <para>

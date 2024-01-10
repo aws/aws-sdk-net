@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>GeospatialMapVisual</code>.
+    /// The configuration of a <c>GeospatialMapVisual</c>.
     /// </summary>
     public partial class GeospatialMapConfiguration
     {

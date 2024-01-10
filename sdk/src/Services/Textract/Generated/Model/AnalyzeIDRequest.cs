@@ -31,8 +31,8 @@ namespace Amazon.Textract.Model
     /// <summary>
     /// Container for the parameters to the AnalyzeID operation.
     /// Analyzes identity documents for relevant information. This information is extracted
-    /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
-    /// field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code>
+    /// and returned as <c>IdentityDocumentFields</c>, which records both the normalized field
+    /// and value of the extracted text. Unlike other Amazon Textract operations, <c>AnalyzeID</c>
     /// doesn't return any Geometry data.
     /// </summary>
     public partial class AnalyzeIDRequest : AmazonTextractRequest

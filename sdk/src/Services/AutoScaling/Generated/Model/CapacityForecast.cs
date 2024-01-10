@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// A <code>GetPredictiveScalingForecast</code> call returns the capacity forecast for
-    /// a predictive scaling policy. This structure includes the data points for that capacity
-    /// forecast, along with the timestamps of those data points.
+    /// A <c>GetPredictiveScalingForecast</c> call returns the capacity forecast for a predictive
+    /// scaling policy. This structure includes the data points for that capacity forecast,
+    /// along with the timestamps of those data points.
     /// </summary>
     public partial class CapacityForecast
     {

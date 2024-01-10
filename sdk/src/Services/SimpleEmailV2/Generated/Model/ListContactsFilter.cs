@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property FilteredStatus. 
         /// <para>
-        /// The status by which you are filtering: <code>OPT_IN</code> or <code>OPT_OUT</code>.
+        /// The status by which you are filtering: <c>OPT_IN</c> or <c>OPT_OUT</c>.
         /// </para>
         /// </summary>
         public SubscriptionStatus FilteredStatus

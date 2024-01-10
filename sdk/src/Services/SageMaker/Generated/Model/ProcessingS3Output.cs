@@ -41,8 +41,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LocalPath. 
         /// <para>
         /// The local path of a directory where you want Amazon SageMaker to upload its contents
-        /// to Amazon S3. <code>LocalPath</code> is an absolute path to a directory containing
-        /// output files. This directory will be created by the platform and exist when your container's
+        /// to Amazon S3. <c>LocalPath</c> is an absolute path to a directory containing output
+        /// files. This directory will be created by the platform and exist when your container's
         /// entrypoint is invoked.
         /// </para>
         /// </summary>

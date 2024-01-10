@@ -44,8 +44,8 @@ namespace Amazon.IoTSiteWise.Model
         ///  <note> 
         /// <para>
         /// If you delete the IAM user, access policies that contain this identity include an
-        /// empty <code>arn</code>. You can delete the access policy for the IAM user that no
-        /// longer exists.
+        /// empty <c>arn</c>. You can delete the access policy for the IAM user that no longer
+        /// exists.
         /// </para>
         ///  </note>
         /// </summary>

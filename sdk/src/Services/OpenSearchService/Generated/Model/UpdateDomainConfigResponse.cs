@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The results of an <code>UpdateDomain</code> request. Contains the status of the domain
-    /// being updated.
+    /// The results of an <c>UpdateDomain</c> request. Contains the status of the domain being
+    /// updated.
     /// </summary>
     public partial class UpdateDomainConfigResponse : AmazonWebServiceResponse
     {

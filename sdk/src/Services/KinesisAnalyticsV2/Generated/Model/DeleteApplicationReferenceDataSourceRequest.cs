@@ -70,7 +70,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// The current application version. You can use the <a>DescribeApplication</a> operation
         /// to get the current application version. If the version specified is not the current
-        /// version, the <code>ConcurrentModificationException</code> is returned.
+        /// version, the <c>ConcurrentModificationException</c> is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]

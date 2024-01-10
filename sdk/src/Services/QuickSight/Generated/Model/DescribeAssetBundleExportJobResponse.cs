@@ -72,7 +72,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssetBundleExportJobId. 
         /// <para>
-        /// The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleExportJob</code>
+        /// The ID of the job. The job ID is set when you start a new job with a <c>StartAssetBundleExportJob</c>
         /// API call.
         /// </para>
         /// </summary>
@@ -152,18 +152,18 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// This URL is available only after the job has succeeded. This URL is valid for 5 minutes
-        /// after issuance. Call <code>DescribeAssetBundleExportJob</code> again for a fresh URL
-        /// if needed.
+        /// after issuance. Call <c>DescribeAssetBundleExportJob</c> again for a fresh URL if
+        /// needed.
         /// </para>
         ///  
         /// <para>
-        /// The downloaded asset bundle is a zip file named <code>assetbundle-{jobId}.qs</code>.
-        /// The file has a <code>.qs</code> extension.
+        /// The downloaded asset bundle is a zip file named <c>assetbundle-{jobId}.qs</c>. The
+        /// file has a <c>.qs</c> extension.
         /// </para>
         ///  
         /// <para>
-        /// This URL can't be used in a <code>StartAssetBundleImportJob</code> API call and should
-        /// only be used for download purposes.
+        /// This URL can't be used in a <c>StartAssetBundleImportJob</c> API call and should only
+        /// be used for download purposes.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -206,8 +206,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ExportFormat. 
         /// <para>
-        /// The format of the exported asset bundle. A <code>QUICKSIGHT_JSON</code> formatted
-        /// file can be used to make a <code>StartAssetBundleImportJob</code> API call. A <code>CLOUDFORMATION_JSON</code>
+        /// The format of the exported asset bundle. A <c>QUICKSIGHT_JSON</c> formatted file can
+        /// be used to make a <c>StartAssetBundleImportJob</c> API call. A <c>CLOUDFORMATION_JSON</c>
         /// formatted file can be used in the CloudFormation console and with the CloudFormation
         /// APIs.
         /// </para>
@@ -285,8 +285,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Poll this <code>DescribeAssetBundleExportApi</code> until <code>JobStatus</code> is
-        /// either <code>SUCCESSFUL</code> or <code>FAILED</code>.
+        /// Poll this <c>DescribeAssetBundleExportApi</c> until <c>JobStatus</c> is either <c>SUCCESSFUL</c>
+        /// or <c>FAILED</c>.
         /// </para>
         /// </summary>
         public AssetBundleExportJobStatus JobStatus
@@ -382,8 +382,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// This property only appears if <code>StrictModeForAllResources</code> in <code>ValidationStrategy</code>
-        /// is set to <code>FALSE</code>.
+        /// This property only appears if <c>StrictModeForAllResources</c> in <c>ValidationStrategy</c>
+        /// is set to <c>FALSE</c>.
         /// </para>
         /// </summary>
         public List<AssetBundleExportJobWarning> Warnings

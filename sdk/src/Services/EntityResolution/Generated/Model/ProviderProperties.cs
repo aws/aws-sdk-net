@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing the <code>providerServiceARN</code>, <code>intermediateSourceConfiguration</code>,
-    /// and <code>providerConfiguration</code>.
+    /// An object containing the <c>providerServiceARN</c>, <c>intermediateSourceConfiguration</c>,
+    /// and <c>providerConfiguration</c>.
     /// </summary>
     public partial class ProviderProperties
     {

@@ -64,15 +64,13 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PUB_SUB</code> – Subscribe to local publish/subscribe messages. This event
-        /// source type doesn't support MQTT wildcards (<code>+</code> and <code>#</code>) in
-        /// the event source topic.
+        ///  <c>PUB_SUB</c> – Subscribe to local publish/subscribe messages. This event source
+        /// type doesn't support MQTT wildcards (<c>+</c> and <c>#</c>) in the event source topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IOT_CORE</code> – Subscribe to Amazon Web Services IoT Core MQTT messages.
-        /// This event source type supports MQTT wildcards (<code>+</code> and <code>#</code>)
-        /// in the event source topic.
+        ///  <c>IOT_CORE</c> – Subscribe to Amazon Web Services IoT Core MQTT messages. This event
+        /// source type supports MQTT wildcards (<c>+</c> and <c>#</c>) in the event source topic.
         /// </para>
         ///  </li> </ul>
         /// </summary>

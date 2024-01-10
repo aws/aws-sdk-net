@@ -31,8 +31,8 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the CreateSampleFindings operation.
     /// Generates sample findings of types specified by the list of finding types. If 'NULL'
-    /// is specified for <code>findingTypes</code>, the API generates sample findings of all
-    /// supported finding types.
+    /// is specified for <c>findingTypes</c>, the API generates sample findings of all supported
+    /// finding types.
     /// </summary>
     public partial class CreateSampleFindingsRequest : AmazonGuardDutyRequest
     {

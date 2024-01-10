@@ -60,7 +60,7 @@ namespace Amazon.OSIS.Model
         /// <para>
         /// The value assigned to the corresponding tag key. Tag values can be null and don't
         /// have to be unique in a tag set. For example, you can have a key value pair in a tag
-        /// set of <code>project : Trinity</code> and <code>cost-center : Trinity</code> 
+        /// set of <c>project : Trinity</c> and <c>cost-center : Trinity</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

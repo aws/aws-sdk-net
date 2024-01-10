@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of <code>DataQualityResultDescription</code> objects.
+        /// A list of <c>DataQualityResultDescription</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -59,8 +59,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags associated with a <code>ResourceArn</code>. Each tag will list the
-        /// key-value pair contained within that tag.
+        /// The list of tags associated with a <c>ResourceArn</c>. Each tag will list the key-value
+        /// pair contained within that tag.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

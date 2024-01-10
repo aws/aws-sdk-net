@@ -35,7 +35,7 @@ namespace Amazon.CostExplorer.Model
     ///  
     /// <para>
     /// You can use this information to retrieve the full Cost Category information using
-    /// <code>DescribeCostCategory</code>.
+    /// <c>DescribeCostCategory</c>.
     /// </para>
     /// </summary>
     public partial class CostCategoryReference

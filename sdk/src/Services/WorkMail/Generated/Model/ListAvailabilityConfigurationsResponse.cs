@@ -39,8 +39,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property AvailabilityConfigurations. 
         /// <para>
-        /// The list of <code>AvailabilityConfiguration</code>'s that exist for the specified
-        /// WorkMail organization.
+        /// The list of <c>AvailabilityConfiguration</c>'s that exist for the specified WorkMail
+        /// organization.
         /// </para>
         /// </summary>
         public List<AvailabilityConfiguration> AvailabilityConfigurations
@@ -58,8 +58,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. The value is <code>null</code>
-        /// when there are no further results to return.
+        /// The token to use to retrieve the next page of results. The value is <c>null</c> when
+        /// there are no further results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -134,7 +134,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// If <code>True</code>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
+        /// If <c>True</c>, then all fields that are required by the <a>RegisterTargetWithMaintenanceWindow</a>
         /// operation are also required for this API request. Optional fields that aren't specified
         /// are set to null.
         /// </para>

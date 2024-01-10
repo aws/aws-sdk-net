@@ -86,7 +86,7 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// You must specify the instance identifier for an Read Replica in the DB cluster. For
-        /// example, <code>mydbcluster-replica1</code>.
+        /// example, <c>mydbcluster-replica1</c>.
         /// </para>
         /// </summary>
         public string TargetDBInstanceIdentifier

@@ -62,7 +62,7 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property InitialRevision. 
         /// <para>
-        /// The current state of the resource as defined in the resource's <code>config-file</code>
+        /// The current state of the resource as defined in the resource's <c>config-file</c>
         /// in the linked repository.
         /// </para>
         /// </summary>
@@ -156,7 +156,7 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property TargetRevision. 
         /// <para>
-        /// The desired state of the resource as defined in the resource's <code>config-file</code>
+        /// The desired state of the resource as defined in the resource's <c>config-file</c>
         /// in the linked repository. Git sync attempts to update the resource to this state.
         /// </para>
         /// </summary>

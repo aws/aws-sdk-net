@@ -62,20 +62,20 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>error</code> - An error with the Spot Fleet request.
+        ///  <c>error</c> - An error with the Spot Fleet request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fleetRequestChange</code> - A change in the status or configuration of the
-        /// Spot Fleet request.
+        ///  <c>fleetRequestChange</c> - A change in the status or configuration of the Spot Fleet
+        /// request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instanceChange</code> - An instance was launched or terminated.
+        ///  <c>instanceChange</c> - An instance was launched or terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Information</code> - An informational event.
+        ///  <c>Information</c> - An informational event.
         /// </para>
         ///  </li> </ul>
         /// </summary>

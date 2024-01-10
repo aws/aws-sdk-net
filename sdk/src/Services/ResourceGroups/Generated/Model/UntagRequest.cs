@@ -42,7 +42,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:Untag</code> 
+    ///  <c>resource-groups:Untag</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

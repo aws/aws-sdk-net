@@ -441,7 +441,7 @@ namespace Amazon.ApplicationInsights
 
 
         /// <summary>
-        /// Adds an log pattern to a <code>LogPatternSet</code>.
+        /// Adds an log pattern to a <c>LogPatternSet</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateLogPattern service method.</param>
         /// <param name="cancellationToken">
@@ -578,7 +578,7 @@ namespace Amazon.ApplicationInsights
 
 
         /// <summary>
-        /// Removes the specified log pattern from a <code>LogPatternSet</code>.
+        /// Removes the specified log pattern from a <c>LogPatternSet</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLogPattern service method.</param>
         /// <param name="cancellationToken">
@@ -796,7 +796,7 @@ namespace Amazon.ApplicationInsights
 
 
         /// <summary>
-        /// Describe a specific log pattern from a <code>LogPatternSet</code>.
+        /// Describe a specific log pattern from a <c>LogPatternSet</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLogPattern service method.</param>
         /// <param name="cancellationToken">
@@ -1152,7 +1152,7 @@ namespace Amazon.ApplicationInsights
 
 
         /// <summary>
-        /// Lists the log patterns in the specific log <code>LogPatternSet</code>.
+        /// Lists the log patterns in the specific log <c>LogPatternSet</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLogPatterns service method.</param>
         /// <param name="cancellationToken">
@@ -1596,7 +1596,7 @@ namespace Amazon.ApplicationInsights
         /// <summary>
         /// Updates the monitoring configurations for the component. The configuration input parameter
         /// is an escaped JSON of the configuration and should match the schema of what is returned
-        /// by <code>DescribeComponentConfigurationRecommendation</code>.
+        /// by <c>DescribeComponentConfigurationRecommendation</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateComponentConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1642,7 +1642,7 @@ namespace Amazon.ApplicationInsights
 
 
         /// <summary>
-        /// Adds a log pattern to a <code>LogPatternSet</code>.
+        /// Adds a log pattern to a <c>LogPatternSet</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLogPattern service method.</param>
         /// <param name="cancellationToken">
@@ -1688,7 +1688,7 @@ namespace Amazon.ApplicationInsights
 
 
         /// <summary>
-        /// Updates the visibility of the problem or specifies the problem as <code>RESOLVED</code>.
+        /// Updates the visibility of the problem or specifies the problem as <c>RESOLVED</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProblem service method.</param>
         /// <param name="cancellationToken">

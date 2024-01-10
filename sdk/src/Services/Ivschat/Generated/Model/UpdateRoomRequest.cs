@@ -123,7 +123,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property MessageReviewHandler. 
         /// <para>
-        /// Configuration information for optional review of messages. Specify an empty <code>uri</code>
+        /// Configuration information for optional review of messages. Specify an empty <c>uri</c>
         /// string to disassociate a message review handler from the specified room.
         /// </para>
         /// </summary>

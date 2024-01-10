@@ -46,19 +46,19 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INFO</code> - An information result tells you about a significant field in
-        /// your detector model. This type of result usually doesn't require immediate action.
+        ///  <c>INFO</c> - An information result tells you about a significant field in your detector
+        /// model. This type of result usually doesn't require immediate action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARNING</code> - A warning result draws special attention to fields that might
-        /// cause issues for your detector model. We recommend that you review warnings and take
-        /// necessary actions before you use your detector model in production environments. Otherwise,
+        ///  <c>WARNING</c> - A warning result draws special attention to fields that might cause
+        /// issues for your detector model. We recommend that you review warnings and take necessary
+        /// actions before you use your detector model in production environments. Otherwise,
         /// the detector model might not work as expected.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ERROR</code> - An error result notifies you about a problem found in your detector
+        ///  <c>ERROR</c> - An error result notifies you about a problem found in your detector
         /// model. You must fix all errors before you can publish your detector model.
         /// </para>
         ///  </li> </ul>
@@ -120,36 +120,35 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>supported-actions</code> - You must specify AWS IoT Events supported actions
-        /// that work with other AWS services in a supported AWS Region.
+        ///  <c>supported-actions</c> - You must specify AWS IoT Events supported actions that
+        /// work with other AWS services in a supported AWS Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>service-limits</code> - Resources or API operations can't exceed service quotas
-        /// (also known as limits). Update your detector model or request a quota increase.
+        ///  <c>service-limits</c> - Resources or API operations can't exceed service quotas (also
+        /// known as limits). Update your detector model or request a quota increase.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>structure</code> - The detector model must follow a structure that AWS IoT
-        /// Events supports. 
+        ///  <c>structure</c> - The detector model must follow a structure that AWS IoT Events
+        /// supports. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>expression-syntax</code> - Your expression must follow the required syntax.
+        ///  <c>expression-syntax</c> - Your expression must follow the required syntax.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>data-type</code> - Data types referenced in the detector model must be compatible.
+        ///  <c>data-type</c> - Data types referenced in the detector model must be compatible.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>referenced-data</code> - You must define the data referenced in your detector
-        /// model before you can use the data.
+        ///  <c>referenced-data</c> - You must define the data referenced in your detector model
+        /// before you can use the data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>referenced-resource</code> - Resources that the detector model uses must be
-        /// available.
+        ///  <c>referenced-resource</c> - Resources that the detector model uses must be available.
         /// </para>
         ///  </li> </ul> 
         /// <para>

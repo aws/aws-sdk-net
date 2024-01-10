@@ -41,12 +41,12 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>ListAgents</code> is eventually consistent. This means the result of running
-    /// the operation might not reflect that you just created or deleted an agent. For example,
+    ///  <c>ListAgents</c> is eventually consistent. This means the result of running the
+    /// operation might not reflect that you just created or deleted an agent. For example,
     /// if you create an agent with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html">CreateAgent</a>
-    /// and then immediately run <code>ListAgents</code>, that agent might not show up in
-    /// the list right away. In situations like this, you can always confirm whether an agent
-    /// has been created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
+    /// and then immediately run <c>ListAgents</c>, that agent might not show up in the list
+    /// right away. In situations like this, you can always confirm whether an agent has been
+    /// created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
     /// </para>
     /// </summary>
     public partial class ListAgentsRequest : AmazonDataSyncRequest

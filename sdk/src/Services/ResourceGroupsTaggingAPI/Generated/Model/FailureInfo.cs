@@ -30,9 +30,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// Information about the errors that are returned for each failed resource. This information
-    /// can include <code>InternalServiceException</code> and <code>InvalidParameterException</code>
-    /// errors. It can also include any valid error code returned by the Amazon Web Services
-    /// service that hosts the resource that the ARN key represents.
+    /// can include <c>InternalServiceException</c> and <c>InvalidParameterException</c> errors.
+    /// It can also include any valid error code returned by the Amazon Web Services service
+    /// that hosts the resource that the ARN key represents.
     /// 
     ///  
     /// <para>
@@ -53,8 +53,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     /// tagging operations in the Amazon Web Services service that contains the resource.
     /// For example, to use the Resource Groups Tagging API to tag a Amazon CloudWatch alarm
     /// resource, you need permission to call both <a href="https://docs.aws.amazon.com/resourcegroupstagging/latest/APIReference/API_TagResources.html">
-    /// <code>TagResources</code> </a> <i>and</i> <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">
-    /// <code>TagResource</code> </a> in the CloudWatch API. 
+    /// <c>TagResources</c> </a> <i>and</i> <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">
+    /// <c>TagResource</c> </a> in the CloudWatch API. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -71,8 +71,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The code of the common error. Valid values include <code>InternalServiceException</code>,
-        /// <code>InvalidParameterException</code>, and any valid error code returned by the Amazon
+        /// The code of the common error. Valid values include <c>InternalServiceException</c>,
+        /// <c>InvalidParameterException</c>, and any valid error code returned by the Amazon
         /// Web Services service that hosts the resource that you want to tag.
         /// </para>
         /// </summary>

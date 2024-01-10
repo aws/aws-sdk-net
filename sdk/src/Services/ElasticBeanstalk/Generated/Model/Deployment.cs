@@ -86,15 +86,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>In Progress</code> : The deployment is in progress.
+        ///  <c>In Progress</c> : The deployment is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deployed</code> : The deployment succeeded.
+        ///  <c>Deployed</c> : The deployment succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> : The deployment failed.
+        ///  <c>Failed</c> : The deployment failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

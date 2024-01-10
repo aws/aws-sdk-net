@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Narrow down the list of resources returned by <code>ListLocations</code>. For example,
-    /// to see all your Amazon S3 locations, create a filter using <code>"Name": "LocationType"</code>,
-    /// <code>"Operator": "Equals"</code>, and <code>"Values": "S3"</code>.
+    /// Narrow down the list of resources returned by <c>ListLocations</c>. For example, to
+    /// see all your Amazon S3 locations, create a filter using <c>"Name": "LocationType"</c>,
+    /// <c>"Operator": "Equals"</c>, and <c>"Values": "S3"</c>.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the filter being used. Each API call supports a list of filters that are
-        /// available for it (for example, <code>LocationType</code> for <code>ListLocations</code>).
+        /// available for it (for example, <c>LocationType</c> for <c>ListLocations</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,8 +68,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator that is used to compare filter values (for example, <code>Equals</code>
-        /// or <code>Contains</code>).
+        /// The operator that is used to compare filter values (for example, <c>Equals</c> or
+        /// <c>Contains</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

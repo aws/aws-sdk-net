@@ -79,12 +79,11 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AmiType. 
         /// <para>
-        /// The AMI type for your node group. If you specify <code>launchTemplate</code>, and
-        /// your launch template uses a custom AMI, then don't specify <code>amiType</code>, or
-        /// the node group deployment will fail. If your launch template uses a Windows custom
-        /// AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code>
-        /// in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using
-        /// launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// The AMI type for your node group. If you specify <c>launchTemplate</c>, and your launch
+        /// template uses a custom AMI, then don't specify <c>amiType</c>, or the node group deployment
+        /// will fail. If your launch template uses a Windows custom AMI, then add <c>eks:kube-proxy-windows</c>
+        /// to your Windows nodes <c>rolearn</c> in the <c>aws-auth</c> <c>ConfigMap</c>. For
+        /// more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -161,9 +160,9 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The root device disk size (in GiB) for your node group instances. The default disk
         /// size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows.
-        /// If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>,
-        /// or the node group deployment will fail. For more information about using launch templates
-        /// with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// If you specify <c>launchTemplate</c>, then don't specify <c>diskSize</c>, or the node
+        /// group deployment will fail. For more information about using launch templates with
+        /// Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -183,15 +182,15 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property InstanceTypes. 
         /// <para>
         /// Specify the instance types for a node group. If you specify a GPU instance type, make
-        /// sure to also specify an applicable GPU AMI type with the <code>amiType</code> parameter.
-        /// If you specify <code>launchTemplate</code>, then you can specify zero or one instance
-        /// type in your launch template <i>or</i> you can specify 0-20 instance types for <code>instanceTypes</code>.
+        /// sure to also specify an applicable GPU AMI type with the <c>amiType</c> parameter.
+        /// If you specify <c>launchTemplate</c>, then you can specify zero or one instance type
+        /// in your launch template <i>or</i> you can specify 0-20 instance types for <c>instanceTypes</c>.
         /// If however, you specify an instance type in your launch template <i>and</i> specify
-        /// any <code>instanceTypes</code>, the node group deployment will fail. If you don't
-        /// specify an instance type in a launch template or for <code>instanceTypes</code>, then
-        /// <code>t3.medium</code> is used, by default. If you specify <code>Spot</code> for <code>capacityType</code>,
-        /// then we recommend specifying multiple values for <code>instanceTypes</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed
+        /// any <c>instanceTypes</c>, the node group deployment will fail. If you don't specify
+        /// an instance type in a launch template or for <c>instanceTypes</c>, then <c>t3.medium</c>
+        /// is used, by default. If you specify <c>Spot</c> for <c>capacityType</c>, then we recommend
+        /// specifying multiple values for <c>instanceTypes</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html#managed-node-group-capacity-types">Managed
         /// node group capacity types</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
@@ -211,8 +210,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// The Kubernetes <code>labels</code> to apply to the nodes in the node group when they
-        /// are created.
+        /// The Kubernetes <c>labels</c> to apply to the nodes in the node group when they are
+        /// created.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Labels
@@ -231,8 +230,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
         /// An object representing a node group's launch template specification. If specified,
-        /// then do not specify <code>instanceTypes</code>, <code>diskSize</code>, or <code>remoteAccess</code>
-        /// and make sure that the launch template meets the requirements in <code>launchTemplateSpecification</code>.
+        /// then do not specify <c>instanceTypes</c>, <c>diskSize</c>, or <c>remoteAccess</c>
+        /// and make sure that the launch template meets the requirements in <c>launchTemplateSpecification</c>.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -270,15 +269,15 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property NodeRole. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to associate with your node group.
-        /// The Amazon EKS worker node <code>kubelet</code> daemon makes calls to Amazon Web Services
+        /// The Amazon EKS worker node <c>kubelet</c> daemon makes calls to Amazon Web Services
         /// APIs on your behalf. Nodes receive permissions for these API calls through an IAM
         /// instance profile and associated policies. Before you can launch nodes and register
         /// them into a cluster, you must create an IAM role for those nodes to use when they
         /// are launched. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon
         /// EKS node IAM role</a> in the <i> <i>Amazon EKS User Guide</i> </i>. If you specify
-        /// <code>launchTemplate</code>, then don't specify <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
-        /// </code> in your launch template, or the node group deployment will fail. For more
-        /// information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// <c>launchTemplate</c>, then don't specify <c> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_IamInstanceProfile.html">IamInstanceProfile</a>
+        /// </c> in your launch template, or the node group deployment will fail. For more information
+        /// about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -308,10 +307,9 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>launchTemplate</code>, and your launch template uses a custom
-        /// AMI, then don't specify <code>releaseVersion</code>, or the node group deployment
-        /// will fail. For more information about using launch templates with Amazon EKS, see
-        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// If you specify <c>launchTemplate</c>, and your launch template uses a custom AMI,
+        /// then don't specify <c>releaseVersion</c>, or the node group deployment will fail.
+        /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -331,9 +329,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property RemoteAccess. 
         /// <para>
         /// The remote access configuration to use with your node group. For Linux, the protocol
-        /// is SSH. For Windows, the protocol is RDP. If you specify <code>launchTemplate</code>,
-        /// then don't specify <code>remoteAccess</code>, or the node group deployment will fail.
-        /// For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// is SSH. For Windows, the protocol is RDP. If you specify <c>launchTemplate</c>, then
+        /// don't specify <c>remoteAccess</c>, or the node group deployment will fail. For more
+        /// information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -372,9 +370,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The subnets to use for the Auto Scaling group that is created for your node group.
-        /// If you specify <code>launchTemplate</code>, then don't specify <code> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
-        /// </code> in your launch template, or the node group deployment will fail. For more
-        /// information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// If you specify <c>launchTemplate</c>, then don't specify <c> <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">SubnetId</a>
+        /// </c> in your launch template, or the node group deployment will fail. For more information
+        /// about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>
@@ -455,9 +453,9 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The Kubernetes version to use for your managed nodes. By default, the Kubernetes version
         /// of the cluster is used, and this is the only accepted specified value. If you specify
-        /// <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't
-        /// specify <code>version</code>, or the node group deployment will fail. For more information
-        /// about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
+        /// <c>launchTemplate</c>, and your launch template uses a custom AMI, then don't specify
+        /// <c>version</c>, or the node group deployment will fail. For more information about
+        /// using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch
         /// template support</a> in the <i>Amazon EKS User Guide</i>.
         /// </para>
         /// </summary>

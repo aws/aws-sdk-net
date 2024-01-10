@@ -30,8 +30,8 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// The high-level properties of a TLS inspection configuration. This, along with the
-    /// <code>TLSInspectionConfiguration</code>, define the TLS inspection configuration.
-    /// You can retrieve all objects for a TLS inspection configuration by calling <code>DescribeTLSInspectionConfiguration</code>.
+    /// <c>TLSInspectionConfiguration</c>, define the TLS inspection configuration. You can
+    /// retrieve all objects for a TLS inspection configuration by calling <c>DescribeTLSInspectionConfiguration</c>.
     /// </summary>
     public partial class TLSInspectionConfigurationResponse
     {

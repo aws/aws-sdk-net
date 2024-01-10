@@ -30,7 +30,7 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// A container element for the job configuration and status information returned by a
-    /// <code>Describe Job</code> request.
+    /// <c>Describe Job</c> request.
     /// </summary>
     public partial class JobDescriptor
     {
@@ -94,7 +94,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description for this job, if one was provided in this job's <code>Create Job</code>
+        /// The description for this job, if one was provided in this job's <c>Create Job</c>
         /// request.
         /// </para>
         /// </summary>
@@ -282,7 +282,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Report. 
         /// <para>
         /// Contains the configuration information for the job-completion report if you requested
-        /// one in the <code>Create Job</code> request.
+        /// one in the <c>Create Job</c> request.
         /// </para>
         /// </summary>
         public JobReport Report
@@ -358,9 +358,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property SuspendedCause. 
         /// <para>
         /// The reason why the specified job was suspended. A job is only suspended if you create
-        /// it through the Amazon S3 console. When you create the job, it enters the <code>Suspended</code>
+        /// it through the Amazon S3 console. When you create the job, it enters the <c>Suspended</c>
         /// state to await confirmation before running. After you confirm the job, it automatically
-        /// exits the <code>Suspended</code> state.
+        /// exits the <c>Suspended</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

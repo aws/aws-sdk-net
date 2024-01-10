@@ -37,7 +37,7 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// Only a management account and a delegated administrator account can delete an organization
     /// Config rule. When calling this API with a delegated administrator, you must ensure
-    /// Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+    /// Organizations <c>ListDelegatedAdministrator</c> permissions are added.
     /// </para>
     ///  
     /// <para>

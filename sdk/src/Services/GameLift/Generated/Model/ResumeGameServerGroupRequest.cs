@@ -45,8 +45,8 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// To resume activity, specify a game server group ARN and the type of activity to be
-    /// resumed. If successful, a <code>GameServerGroup</code> object is returned showing
-    /// that the resumed activity is no longer listed in <code>SuspendedActions</code>. 
+    /// resumed. If successful, a <c>GameServerGroup</c> object is returned showing that the
+    /// resumed activity is no longer listed in <c>SuspendedActions</c>. 
     /// </para>
     ///  
     /// <para>

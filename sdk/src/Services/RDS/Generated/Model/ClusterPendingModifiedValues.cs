@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <code>ModifyDBCluster</code> operation
+    /// This data type is used as a response element in the <c>ModifyDBCluster</c> operation
     /// and contains changes that will be applied during the next maintenance window.
     /// </summary>
     public partial class ClusterPendingModifiedValues
@@ -49,8 +49,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
         /// The allocated storage size in gibibytes (GiB) for all database engines except Amazon
-        /// Aurora. For Aurora, <code>AllocatedStorage</code> always returns 1, because Aurora
-        /// DB cluster storage size isn't fixed, but instead automatically adjusts as needed.
+        /// Aurora. For Aurora, <c>AllocatedStorage</c> always returns 1, because Aurora DB cluster
+        /// storage size isn't fixed, but instead automatically adjusts as needed.
         /// </para>
         /// </summary>
         public int AllocatedStorage

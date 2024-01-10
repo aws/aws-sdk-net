@@ -83,7 +83,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property PaymentOption. 
         /// <para>
-        /// The payment option for the reservation (for example, <code>AllUpfront</code> or <code>NoUpfront</code>).
+        /// The payment option for the reservation (for example, <c>AllUpfront</c> or <c>NoUpfront</c>).
         /// </para>
         /// </summary>
         public PaymentOption PaymentOption

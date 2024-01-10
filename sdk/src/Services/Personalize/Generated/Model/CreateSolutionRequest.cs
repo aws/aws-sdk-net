@@ -33,8 +33,8 @@ namespace Amazon.Personalize.Model
     /// Creates the configuration for training a model. A trained model is known as a solution
     /// version. After the configuration is created, you train the model (create a solution
     /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
-    /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
-    /// the solution is created.
+    /// operation. Every time you call <c>CreateSolutionVersion</c>, a new version of the
+    /// solution is created.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution
+    /// Amazon Personalize doesn't support configuring the <c>hpoObjective</c> for solution
     /// hyperparameter optimization at this time.
     /// </para>
     ///  </note> 
@@ -74,7 +74,7 @@ namespace Amazon.Personalize.Model
     ///  </li> </ul> 
     /// <para>
     /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
-    /// Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
+    /// Wait until the status shows as ACTIVE before calling <c>CreateSolutionVersion</c>.
     /// </para>
     ///  
     /// <para>
@@ -145,13 +145,13 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// When your have multiple event types (using an <code>EVENT_TYPE</code> schema field),
-        /// this parameter specifies which event type (for example, 'click' or 'like') is used
-        /// for training the model.
+        /// When your have multiple event types (using an <c>EVENT_TYPE</c> schema field), this
+        /// parameter specifies which event type (for example, 'click' or 'like') is used for
+        /// training the model.
         /// </para>
         ///  
         /// <para>
-        /// If you do not provide an <code>eventType</code>, Amazon Personalize will use all interactions
+        /// If you do not provide an <c>eventType</c>, Amazon Personalize will use all interactions
         /// for training with equal weight regardless of type.
         /// </para>
         /// </summary>
@@ -196,16 +196,16 @@ namespace Amazon.Personalize.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
-        /// For this case, you must specify <code>recipeArn</code>.
+        /// Whether to perform automated machine learning (AutoML). The default is <c>false</c>.
+        /// For this case, you must specify <c>recipeArn</c>.
         /// </para>
         ///  
         /// <para>
-        /// When set to <code>true</code>, Amazon Personalize analyzes your training data and
-        /// selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case,
-        /// you must omit <code>recipeArn</code>. Amazon Personalize determines the optimal recipe
-        /// by running tests with different values for the hyperparameters. AutoML lengthens the
-        /// training process as compared to selecting a specific recipe.
+        /// When set to <c>true</c>, Amazon Personalize analyzes your training data and selects
+        /// the optimal USER_PERSONALIZATION recipe and hyperparameters. In this case, you must
+        /// omit <c>recipeArn</c>. Amazon Personalize determines the optimal recipe by running
+        /// tests with different values for the hyperparameters. AutoML lengthens the training
+        /// process as compared to selecting a specific recipe.
         /// </para>
         /// </summary>
         public bool PerformAutoML
@@ -224,12 +224,12 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property PerformHPO. 
         /// <para>
         /// Whether to perform hyperparameter optimization (HPO) on the specified or selected
-        /// recipe. The default is <code>false</code>.
+        /// recipe. The default is <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// When performing AutoML, this parameter is always <code>true</code> and you should
-        /// not set it to <code>false</code>.
+        /// When performing AutoML, this parameter is always <c>true</c> and you should not set
+        /// it to <c>false</c>.
         /// </para>
         /// </summary>
         public bool PerformHPO
@@ -247,7 +247,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RecipeArn. 
         /// <para>
-        /// The ARN of the recipe to use for model training. This is required when <code>performAutoML</code>
+        /// The ARN of the recipe to use for model training. This is required when <c>performAutoML</c>
         /// is false.
         /// </para>
         /// </summary>
@@ -267,14 +267,13 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property SolutionConfig. 
         /// <para>
-        /// The configuration to use with the solution. When <code>performAutoML</code> is set
-        /// to true, Amazon Personalize only evaluates the <code>autoMLConfig</code> section of
-        /// the solution configuration.
+        /// The configuration to use with the solution. When <c>performAutoML</c> is set to true,
+        /// Amazon Personalize only evaluates the <c>autoMLConfig</c> section of the solution
+        /// configuration.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this
-        /// time.
+        /// Amazon Personalize doesn't support configuring the <c>hpoObjective</c> at this time.
         /// </para>
         ///  </note>
         /// </summary>

@@ -57,7 +57,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResizeType. 
         /// <para>
-        /// Returns the value <code>ClassicResize</code>.
+        /// Returns the value <c>ClassicResize</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

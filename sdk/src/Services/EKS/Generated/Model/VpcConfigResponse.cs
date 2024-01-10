@@ -67,8 +67,8 @@ namespace Amazon.EKS.Model
         /// If the Amazon EKS private API server endpoint is enabled, Kubernetes API requests
         /// that originate from within your cluster's VPC use the private VPC endpoint instead
         /// of traversing the internet. If this value is disabled and you have nodes or Fargate
-        /// pods in the cluster, then ensure that <code>publicAccessCidrs</code> includes the
-        /// necessary CIDR blocks for communication with the nodes or Fargate pods. For more information,
+        /// pods in the cluster, then ensure that <c>publicAccessCidrs</c> includes the necessary
+        /// CIDR blocks for communication with the nodes or Fargate pods. For more information,
         /// see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
         /// EKS cluster endpoint access control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>

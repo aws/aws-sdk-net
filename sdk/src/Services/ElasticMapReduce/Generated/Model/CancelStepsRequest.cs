@@ -35,8 +35,8 @@ namespace Amazon.ElasticMapReduce.Model
     /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
     /// guarantee that a step will be canceled, even if the request is successfully submitted.
     /// When you use Amazon EMR releases 5.28.0 and later, you can cancel steps that are in
-    /// a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon
-    /// EMR, you can only cancel steps that are in a <code>PENDING</code> state.
+    /// a <c>PENDING</c> or <c>RUNNING</c> state. In earlier versions of Amazon EMR, you can
+    /// only cancel steps that are in a <c>PENDING</c> state.
     /// </summary>
     public partial class CancelStepsRequest : AmazonElasticMapReduceRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        /// The <code>ClusterID</code> for the specified steps that will be canceled. Use <a>RunJobFlow</a>
+        /// The <c>ClusterID</c> for the specified steps that will be canceled. Use <a>RunJobFlow</a>
         /// and <a>ListClusters</a> to get ClusterIDs. 
         /// </para>
         /// </summary>
@@ -67,8 +67,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StepCancellationOption. 
         /// <para>
-        /// The option to choose to cancel <code>RUNNING</code> steps. By default, the value is
-        /// <code>SEND_INTERRUPT</code>.
+        /// The option to choose to cancel <c>RUNNING</c> steps. By default, the value is <c>SEND_INTERRUPT</c>.
         /// </para>
         /// </summary>
         public StepCancellationOption StepCancellationOption
@@ -86,8 +85,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StepIds. 
         /// <para>
-        /// The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps and
-        /// their states for the specified cluster.
+        /// The list of <c>StepIDs</c> to cancel. Use <a>ListSteps</a> to get steps and their
+        /// states for the specified cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

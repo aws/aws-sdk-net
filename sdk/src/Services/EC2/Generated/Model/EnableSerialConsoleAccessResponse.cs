@@ -38,9 +38,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SerialConsoleAccessEnabled. 
         /// <para>
-        /// If <code>true</code>, access to the EC2 serial console of all instances is enabled
-        /// for your account. If <code>false</code>, access to the EC2 serial console of all instances
-        /// is disabled for your account.
+        /// If <c>true</c>, access to the EC2 serial console of all instances is enabled for your
+        /// account. If <c>false</c>, access to the EC2 serial console of all instances is disabled
+        /// for your account.
         /// </para>
         /// </summary>
         public bool SerialConsoleAccessEnabled

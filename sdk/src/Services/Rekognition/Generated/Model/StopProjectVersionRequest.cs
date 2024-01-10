@@ -42,7 +42,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code>
+    /// This operation requires permissions to perform the <c>rekognition:StopProjectVersion</c>
     /// action.
     /// </para>
     /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code>
+        /// This operation requires permissions to perform the <c>rekognition:StopProjectVersion</c>
         /// action.
         /// </para>
         /// </summary>

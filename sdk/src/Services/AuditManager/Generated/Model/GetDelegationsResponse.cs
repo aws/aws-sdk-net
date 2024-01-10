@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Delegations. 
         /// <para>
-        ///  The list of delegations that the <code>GetDelegations</code> API returned. 
+        ///  The list of delegations that the <c>GetDelegations</c> API returned. 
         /// </para>
         /// </summary>
         public List<DelegationMetadata> Delegations

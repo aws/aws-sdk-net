@@ -39,10 +39,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>ListTasks</code> request.
-        /// When the results of a <code>ListTasks</code> request exceed <code>maxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// The <c>nextToken</c> value to include in a future <c>ListTasks</c> request. When the
+        /// results of a <c>ListTasks</c> request exceed <c>maxResults</c>, this value can be
+        /// used to retrieve the next page of results. This value is <c>null</c> when there are
+        /// no more results to return.
         /// </para>
         /// </summary>
         public string NextToken
@@ -60,7 +60,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskArns. 
         /// <para>
-        /// The list of task ARN entries for the <code>ListTasks</code> request.
+        /// The list of task ARN entries for the <c>ListTasks</c> request.
         /// </para>
         /// </summary>
         public List<string> TaskArns

@@ -33,7 +33,7 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
+    /// DynamoDB cancels a <c>TransactWriteItems</c> request under the following circumstances:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -41,13 +41,11 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A table in the <code>TransactWriteItems</code> request is in a different account or
-    /// region.
+    /// A table in the <c>TransactWriteItems</c> request is in a different account or region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// More than one action in the <code>TransactWriteItems</code> operation targets the
-    /// same item.
+    /// More than one action in the <c>TransactWriteItems</c> operation targets the same item.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -65,25 +63,23 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  There is an ongoing <code>TransactWriteItems</code> operation that conflicts with
-    /// a concurrent <code>TransactWriteItems</code> request. In this case the <code>TransactWriteItems</code>
-    /// operation fails with a <code>TransactionCanceledException</code>. 
+    ///  There is an ongoing <c>TransactWriteItems</c> operation that conflicts with a concurrent
+    /// <c>TransactWriteItems</c> request. In this case the <c>TransactWriteItems</c> operation
+    /// fails with a <c>TransactionCanceledException</c>. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
+    /// DynamoDB cancels a <c>TransactGetItems</c> request under the following circumstances:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// There is an ongoing <code>TransactGetItems</code> operation that conflicts with a
-    /// concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code>
-    /// or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code>
-    /// operation fails with a <code>TransactionCanceledException</code>.
+    /// There is an ongoing <c>TransactGetItems</c> operation that conflicts with a concurrent
+    /// <c>PutItem</c>, <c>UpdateItem</c>, <c>DeleteItem</c> or <c>TransactWriteItems</c>
+    /// request. In this case the <c>TransactGetItems</c> operation fails with a <c>TransactionCanceledException</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A table in the <code>TransactGetItems</code> request is in a different account or
-    /// region.
+    /// A table in the <c>TransactGetItems</c> request is in a different account or region.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -95,10 +91,10 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+    /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
     /// property. This property is not set for other languages. Transaction cancellation reasons
     /// are ordered in the order of requested items, if an item has no error it will have
-    /// <code>None</code> code and <code>Null</code> message.
+    /// <c>None</c> code and <c>Null</c> message.
     /// </para>
     ///  </note> 
     /// <para>
@@ -110,11 +106,11 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>None</code> 
+    /// Code: <c>None</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Message: <code>null</code> 
+    /// Message: <c>null</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -122,7 +118,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>ConditionalCheckFailed</code> 
+    /// Code: <c>ConditionalCheckFailed</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -134,7 +130,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+    /// Code: <c>ItemCollectionSizeLimitExceeded</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -146,7 +142,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>TransactionConflict</code> 
+    /// Code: <c>TransactionConflict</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -158,7 +154,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>ProvisionedThroughputExceeded</code> 
+    /// Code: <c>ProvisionedThroughputExceeded</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -191,7 +187,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>ThrottlingError</code> 
+    /// Code: <c>ThrottlingError</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -224,7 +220,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Code: <code>ValidationError</code> 
+    /// Code: <c>ValidationError</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -58,7 +58,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// The ID of the application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
+        /// The ID of the application version. Kinesis Data Analytics updates the <c>ApplicationVersionId</c>
         /// each time you update the application.
         /// </para>
         /// </summary>

@@ -60,8 +60,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property KeyArn. 
         /// <para>
-        /// The <code>keyARN</code> of the major encryption key that Amazon Web Services Payment
-        /// Cryptography uses for ARQC verification.
+        /// The <c>keyARN</c> of the major encryption key that Amazon Web Services Payment Cryptography
+        /// uses for ARQC verification.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

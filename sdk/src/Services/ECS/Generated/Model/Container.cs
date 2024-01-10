@@ -72,8 +72,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of CPU units set for the container. The value is <code>0</code> if no value
-        /// was specified in the container definition when the task definition was registered.
+        /// The number of CPU units set for the container. The value is <c>0</c> if no value was
+        /// specified in the container definition when the task definition was registered.
         /// </para>
         /// </summary>
         public string Cpu
@@ -128,7 +128,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property HealthStatus. 
         /// <para>
         /// The health status of the container. If health checks aren't configured for this container
-        /// in its task definition, then it reports the health status as <code>UNKNOWN</code>.
+        /// in its task definition, then it reports the health status as <c>UNKNOWN</c>.
         /// </para>
         /// </summary>
         public HealthStatus HealthStatus

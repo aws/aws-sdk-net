@@ -43,9 +43,9 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Permanently deletes a <a>RegexPatternSet</a>. You can't delete a <code>RegexPatternSet</code>
-    /// if it's still used in any <code>RegexMatchSet</code> or if the <code>RegexPatternSet</code>
-    /// is not empty. 
+    /// Permanently deletes a <a>RegexPatternSet</a>. You can't delete a <c>RegexPatternSet</c>
+    /// if it's still used in any <c>RegexMatchSet</c> or if the <c>RegexPatternSet</c> is
+    /// not empty. 
     /// </para>
     /// </summary>
     public partial class DeleteRegexPatternSetRequest : AmazonWAFRequest
@@ -75,9 +75,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RegexPatternSetId. 
         /// <para>
-        /// The <code>RegexPatternSetId</code> of the <a>RegexPatternSet</a> that you want to
-        /// delete. <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a>
-        /// and by <a>ListRegexPatternSets</a>.
+        /// The <c>RegexPatternSetId</c> of the <a>RegexPatternSet</a> that you want to delete.
+        /// <c>RegexPatternSetId</c> is returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

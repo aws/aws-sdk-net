@@ -156,8 +156,8 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property UploadStatus. 
         /// <para>
-        /// The status of the upload. The initial status is <code>IN_PROGRESS</code>. The response
-        /// show all validation failures if the upload fails.
+        /// The status of the upload. The initial status is <c>IN_PROGRESS</c>. The response show
+        /// all validation failures if the upload fails.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

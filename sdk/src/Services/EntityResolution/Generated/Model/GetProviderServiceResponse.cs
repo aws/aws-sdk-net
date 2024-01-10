@@ -47,10 +47,10 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property AnonymizedOutput. 
         /// <para>
-        /// Specifies whether output data from the provider is anonymized. A value of <code>TRUE</code>
+        /// Specifies whether output data from the provider is anonymized. A value of <c>TRUE</c>
         /// means the output will be anonymized and you can't relate the data that comes back
-        /// from the provider to the identifying input. A value of <code>FALSE</code> means the
-        /// output won't be anonymized and you can relate the data that comes back from the provider
+        /// from the provider to the identifying input. A value of <c>FALSE</c> means the output
+        /// won't be anonymized and you can relate the data that comes back from the provider
         /// to your source data. 
         /// </para>
         /// </summary>

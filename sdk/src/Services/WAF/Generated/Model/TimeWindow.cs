@@ -42,25 +42,24 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code>
-    /// objects specify the time range for which you want AWS WAF to return a sample of web
-    /// requests.
+    /// In a <a>GetSampledRequests</a> request, the <c>StartTime</c> and <c>EndTime</c> objects
+    /// specify the time range for which you want AWS WAF to return a sample of web requests.
     /// </para>
     ///  
     /// <para>
     /// You must specify the times in Coordinated Universal Time (UTC) format. UTC format
-    /// includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
+    /// includes the special designator, <c>Z</c>. For example, <c>"2016-09-27T14:50Z"</c>.
     /// 
     /// </para>
     ///  
     /// <para>
-    /// In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code>
-    /// objects specify the time range for which AWS WAF actually returned a sample of web
-    /// requests. AWS WAF gets the specified number of requests from among the first 5,000
-    /// requests that your AWS resource receives during the specified time period. If your
-    /// resource receives more than 5,000 requests during that period, AWS WAF stops sampling
-    /// after the 5,000th request. In that case, <code>EndTime</code> is the time that AWS
-    /// WAF received the 5,000th request. 
+    /// In a <a>GetSampledRequests</a> response, the <c>StartTime</c> and <c>EndTime</c> objects
+    /// specify the time range for which AWS WAF actually returned a sample of web requests.
+    /// AWS WAF gets the specified number of requests from among the first 5,000 requests
+    /// that your AWS resource receives during the specified time period. If your resource
+    /// receives more than 5,000 requests during that period, AWS WAF stops sampling after
+    /// the 5,000th request. In that case, <c>EndTime</c> is the time that AWS WAF received
+    /// the 5,000th request. 
     /// </para>
     /// </summary>
     public partial class TimeWindow
@@ -71,11 +70,11 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time range from which you want <code>GetSampledRequests</code> to return
+        /// The end of the time range from which you want <c>GetSampledRequests</c> to return
         /// a sample of the requests that your AWS resource received. You must specify the date
         /// and time in Coordinated Universal Time (UTC) format. UTC format includes the special
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
-        /// specify any time range in the previous three hours.
+        /// designator, <c>Z</c>. For example, <c>"2016-09-27T14:50Z"</c>. You can specify any
+        /// time range in the previous three hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,11 +93,11 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The beginning of the time range from which you want <code>GetSampledRequests</code>
-        /// to return a sample of the requests that your AWS resource received. You must specify
-        /// the date and time in Coordinated Universal Time (UTC) format. UTC format includes
-        /// the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>.
-        /// You can specify any time range in the previous three hours.
+        /// The beginning of the time range from which you want <c>GetSampledRequests</c> to return
+        /// a sample of the requests that your AWS resource received. You must specify the date
+        /// and time in Coordinated Universal Time (UTC) format. UTC format includes the special
+        /// designator, <c>Z</c>. For example, <c>"2016-09-27T14:50Z"</c>. You can specify any
+        /// time range in the previous three hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

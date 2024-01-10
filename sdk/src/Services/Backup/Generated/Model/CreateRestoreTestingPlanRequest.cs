@@ -68,16 +68,15 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingPlan. 
         /// <para>
-        /// A restore testing plan must contain a unique <code>RestoreTestingPlanName</code> string
-        /// you create and must contain a <code>ScheduleExpression</code> cron. You may optionally
-        /// include a <code>StartWindowHours</code> integer and a <code>CreatorRequestId</code>
-        /// string.
+        /// A restore testing plan must contain a unique <c>RestoreTestingPlanName</c> string
+        /// you create and must contain a <c>ScheduleExpression</c> cron. You may optionally include
+        /// a <c>StartWindowHours</c> integer and a <c>CreatorRequestId</c> string.
         /// </para>
         ///  
         /// <para>
-        /// The <code>RestoreTestingPlanName</code> is a unique string that is the name of the
-        /// restore testing plan. This cannot be changed after creation, and it must consist of
-        /// only alphanumeric characters and underscores.
+        /// The <c>RestoreTestingPlanName</c> is a unique string that is the name of the restore
+        /// testing plan. This cannot be changed after creation, and it must consist of only alphanumeric
+        /// characters and underscores.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

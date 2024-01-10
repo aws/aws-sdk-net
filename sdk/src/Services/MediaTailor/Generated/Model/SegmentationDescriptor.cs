@@ -29,20 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// The <code>segmentation_descriptor</code> message can contain advanced metadata fields,
-    /// like content identifiers, to convey a wide range of information about the ad break.
-    /// MediaTailor writes the ad metadata in the egress manifest as part of the <code>EXT-X-DATERANGE</code>
-    /// or <code>EventStream</code> ad marker's SCTE-35 data.
+    /// The <c>segmentation_descriptor</c> message can contain advanced metadata fields, like
+    /// content identifiers, to convey a wide range of information about the ad break. MediaTailor
+    /// writes the ad metadata in the egress manifest as part of the <c>EXT-X-DATERANGE</c>
+    /// or <c>EventStream</c> ad marker's SCTE-35 data.
     /// 
     ///  
     /// <para>
-    ///  <code>segmentation_descriptor</code> messages must be sent with the <code>time_signal</code>
+    ///  <c>segmentation_descriptor</c> messages must be sent with the <c>time_signal</c>
     /// message type.
     /// </para>
     ///  
     /// <para>
-    /// See the <code>segmentation_descriptor()</code> table of the 2022 SCTE-35 specification
-    /// for more information.
+    /// See the <c>segmentation_descriptor()</c> table of the 2022 SCTE-35 specification for
+    /// more information.
     /// </para>
     /// </summary>
     public partial class SegmentationDescriptor
@@ -59,7 +59,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SegmentationEventId. 
         /// <para>
-        /// The Event Identifier to assign to the <code>segmentation_descriptor.segmentation_event_id</code>
+        /// The Event Identifier to assign to the <c>segmentation_descriptor.segmentation_event_id</c>
         /// message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The default
         /// value is 1.
         /// </para>
@@ -79,7 +79,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SegmentationTypeId. 
         /// <para>
-        /// The Type Identifier to assign to the <code>segmentation_descriptor.segmentation_type_id</code>
+        /// The Type Identifier to assign to the <c>segmentation_descriptor.segmentation_type_id</c>
         /// message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values
         /// must be between 0 and 256, inclusive. The default value is 48.
         /// </para>
@@ -99,7 +99,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SegmentationUpid. 
         /// <para>
-        /// The Upid to assign to the <code>segmentation_descriptor.segmentation_upid</code> message,
+        /// The Upid to assign to the <c>segmentation_descriptor.segmentation_upid</c> message,
         /// as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. The value must be
         /// a hexadecimal string containing only the characters 0 though 9 and A through F. The
         /// default value is "" (an empty string).
@@ -120,7 +120,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SegmentationUpidType. 
         /// <para>
-        /// The Upid Type to assign to the <code>segmentation_descriptor.segmentation_upid_type</code>
+        /// The Upid Type to assign to the <c>segmentation_descriptor.segmentation_upid_type</c>
         /// message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values
         /// must be between 0 and 256, inclusive. The default value is 14.
         /// </para>
@@ -140,9 +140,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SegmentNum. 
         /// <para>
-        /// The segment number to assign to the <code>segmentation_descriptor.segment_num</code>
-        /// message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must
-        /// be between 0 and 256, inclusive. The default value is 0.
+        /// The segment number to assign to the <c>segmentation_descriptor.segment_num</c> message,
+        /// as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must be between
+        /// 0 and 256, inclusive. The default value is 0.
         /// </para>
         /// </summary>
         public int SegmentNum
@@ -160,7 +160,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SegmentsExpected. 
         /// <para>
-        /// The number of segments expected, which is assigned to the <code>segmentation_descriptor.segments_expectedS</code>
+        /// The number of segments expected, which is assigned to the <c>segmentation_descriptor.segments_expectedS</c>
         /// message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification Values must
         /// be between 0 and 256, inclusive. The default value is 0.
         /// </para>
@@ -180,7 +180,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SubSegmentNum. 
         /// <para>
-        /// The sub-segment number to assign to the <code>segmentation_descriptor.sub_segment_num</code>
+        /// The sub-segment number to assign to the <c>segmentation_descriptor.sub_segment_num</c>
         /// message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values
         /// must be between 0 and 256, inclusive. The defualt value is null.
         /// </para>
@@ -200,7 +200,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SubSegmentsExpected. 
         /// <para>
-        /// The number of sub-segments expected, which is assigned to the <code>segmentation_descriptor.sub_segments_expected</code>
+        /// The number of sub-segments expected, which is assigned to the <c>segmentation_descriptor.sub_segments_expected</c>
         /// message, as defined in section 10.3.3.1 of the 2022 SCTE-35 specification. Values
         /// must be between 0 and 256, inclusive. The default value is null.
         /// </para>

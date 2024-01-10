@@ -84,9 +84,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS</code> - The table was archived due to
-        /// the table's KMS key being inaccessible for more than seven days. An On-Demand backup
-        /// was created at the archival time.
+        ///  <c>INACCESSIBLE_ENCRYPTION_CREDENTIALS</c> - The table was archived due to the table's
+        /// KMS key being inaccessible for more than seven days. An On-Demand backup was created
+        /// at the archival time.
         /// </para>
         ///  </li> </ul>
         /// </summary>

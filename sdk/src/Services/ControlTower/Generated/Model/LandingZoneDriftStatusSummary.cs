@@ -52,13 +52,13 @@ namespace Amazon.ControlTower.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DRIFTED</code>: The landing zone deployed in this configuration does not match
-        /// the configuration that Amazon Web Services Control Tower expected. 
+        ///  <c>DRIFTED</c>: The landing zone deployed in this configuration does not match the
+        /// configuration that Amazon Web Services Control Tower expected. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The landing zone deployed in this configuration matches the
-        /// configuration that Amazon Web Services Control Tower expected. 
+        ///  <c>IN_SYNC</c>: The landing zone deployed in this configuration matches the configuration
+        /// that Amazon Web Services Control Tower expected. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

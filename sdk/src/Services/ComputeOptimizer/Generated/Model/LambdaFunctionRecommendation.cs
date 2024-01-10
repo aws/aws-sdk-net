@@ -132,32 +132,30 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Optimized</code> </b> — The function is correctly provisioned to run your
-        /// workload based on its current configuration and its utilization history. This finding
-        /// classification does not include finding reason codes.
+        ///  <b> <c>Optimized</c> </b> — The function is correctly provisioned to run your workload
+        /// based on its current configuration and its utilization history. This finding classification
+        /// does not include finding reason codes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NotOptimized</code> </b> — The function is performing at a higher level
-        /// (over-provisioned) or at a lower level (under-provisioned) than required for your
-        /// workload because its current configuration is not optimal. Over-provisioned resources
-        /// might lead to unnecessary infrastructure cost, and under-provisioned resources might
-        /// lead to poor application performance. This finding classification can include the
-        /// <code>MemoryUnderprovisioned</code> and <code>MemoryUnderprovisioned</code> finding
-        /// reason codes.
+        ///  <b> <c>NotOptimized</c> </b> — The function is performing at a higher level (over-provisioned)
+        /// or at a lower level (under-provisioned) than required for your workload because its
+        /// current configuration is not optimal. Over-provisioned resources might lead to unnecessary
+        /// infrastructure cost, and under-provisioned resources might lead to poor application
+        /// performance. This finding classification can include the <c>MemoryUnderprovisioned</c>
+        /// and <c>MemoryUnderprovisioned</c> finding reason codes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Unavailable</code> </b> — Compute Optimizer was unable to generate a recommendation
+        ///  <b> <c>Unavailable</c> </b> — Compute Optimizer was unable to generate a recommendation
         /// for the function. This could be because the function has not accumulated sufficient
         /// metric data, or the function does not qualify for a recommendation. This finding classification
-        /// can include the <code>InsufficientData</code> and <code>Inconclusive</code> finding
-        /// reason codes.
+        /// can include the <c>InsufficientData</c> and <c>Inconclusive</c> finding reason codes.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Functions with a finding of unavailable are not returned unless you specify the <code>filter</code>
-        /// parameter with a value of <code>Unavailable</code> in your <code>GetLambdaFunctionRecommendations</code>
+        /// Functions with a finding of unavailable are not returned unless you specify the <c>filter</c>
+        /// parameter with a value of <c>Unavailable</c> in your <c>GetLambdaFunctionRecommendations</c>
         /// request.
         /// </para>
         ///  </note> </li> </ul>
@@ -181,8 +179,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Functions that have a finding classification of <code>Optimized</code> don't have
-        /// a finding reason code.
+        /// Functions that have a finding classification of <c>Optimized</c> don't have a finding
+        /// reason code.
         /// </para>
         ///  </note> 
         /// <para>
@@ -190,31 +188,31 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>MemoryOverprovisioned</code> </b> — The function is over-provisioned when
-        /// its memory configuration can be sized down while still meeting the performance requirements
+        ///  <b> <c>MemoryOverprovisioned</c> </b> — The function is over-provisioned when its
+        /// memory configuration can be sized down while still meeting the performance requirements
         /// of your workload. An over-provisioned function might lead to unnecessary infrastructure
-        /// cost. This finding reason code is part of the <code>NotOptimized</code> finding classification.
+        /// cost. This finding reason code is part of the <c>NotOptimized</c> finding classification.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>MemoryUnderprovisioned</code> </b> — The function is under-provisioned
-        /// when its memory configuration doesn't meet the performance requirements of the workload.
-        /// An under-provisioned function might lead to poor application performance. This finding
-        /// reason code is part of the <code>NotOptimized</code> finding classification.
+        ///  <b> <c>MemoryUnderprovisioned</c> </b> — The function is under-provisioned when its
+        /// memory configuration doesn't meet the performance requirements of the workload. An
+        /// under-provisioned function might lead to poor application performance. This finding
+        /// reason code is part of the <c>NotOptimized</c> finding classification.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>InsufficientData</code> </b> — The function does not have sufficient metric
-        /// data for Compute Optimizer to generate a recommendation. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
+        ///  <b> <c>InsufficientData</c> </b> — The function does not have sufficient metric data
+        /// for Compute Optimizer to generate a recommendation. For more information, see the
+        /// <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/requirements.html">Supported
         /// resources and requirements</a> in the <i>Compute Optimizer User Guide</i>. This finding
-        /// reason code is part of the <code>Unavailable</code> finding classification.
+        /// reason code is part of the <c>Unavailable</c> finding classification.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Inconclusive</code> </b> — The function does not qualify for a recommendation
+        ///  <b> <c>Inconclusive</c> </b> — The function does not qualify for a recommendation
         /// because Compute Optimizer cannot generate a recommendation with a high degree of confidence.
-        /// This finding reason code is part of the <code>Unavailable</code> finding classification.
+        /// This finding reason code is part of the <c>Unavailable</c> finding classification.
         /// </para>
         ///  </li> </ul>
         /// </summary>

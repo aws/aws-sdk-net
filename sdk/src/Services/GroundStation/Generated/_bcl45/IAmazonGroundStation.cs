@@ -95,11 +95,11 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates a <code>Config</code> with the specified <code>configData</code> parameters.
+        /// Creates a <c>Config</c> with the specified <c>configData</c> parameters.
         /// 
         ///  
         /// <para>
-        /// Only one type of <code>configData</code> can be specified.
+        /// Only one type of <c>configData</c> can be specified.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfig service method.</param>
@@ -123,11 +123,11 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates a <code>Config</code> with the specified <code>configData</code> parameters.
+        /// Creates a <c>Config</c> with the specified <c>configData</c> parameters.
         /// 
         ///  
         /// <para>
-        /// Only one type of <code>configData</code> can be specified.
+        /// Only one type of <c>configData</c> can be specified.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateConfig service method.</param>
@@ -157,18 +157,18 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code>
+        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c>DataflowEndpoint</c>
         /// objects.
         /// 
         ///  
         /// <para>
-        /// The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
         /// to specify which endpoints to use during a contact.
         /// </para>
         ///  
         /// <para>
-        /// When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
-        /// must match a <code>DataflowEndpoint</code> in the same group.
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+        /// must match a <c>DataflowEndpoint</c> in the same group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroup service method.</param>
@@ -189,18 +189,18 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates a <code>DataflowEndpoint</code> group containing the specified list of <code>DataflowEndpoint</code>
+        /// Creates a <c>DataflowEndpoint</c> group containing the specified list of <c>DataflowEndpoint</c>
         /// objects.
         /// 
         ///  
         /// <para>
-        /// The <code>name</code> field in each endpoint is used in your mission profile <code>DataflowEndpointConfig</code>
+        /// The <c>name</c> field in each endpoint is used in your mission profile <c>DataflowEndpointConfig</c>
         /// to specify which endpoints to use during a contact.
         /// </para>
         ///  
         /// <para>
-        /// When a contact uses multiple <code>DataflowEndpointConfig</code> objects, each <code>Config</code>
-        /// must match a <code>DataflowEndpoint</code> in the same group.
+        /// When a contact uses multiple <c>DataflowEndpointConfig</c> objects, each <c>Config</c>
+        /// must match a <c>DataflowEndpoint</c> in the same group.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataflowEndpointGroup service method.</param>
@@ -227,7 +227,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates an Ephemeris with the specified <code>EphemerisData</code>.
+        /// Creates an Ephemeris with the specified <c>EphemerisData</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris service method.</param>
         /// 
@@ -247,7 +247,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Creates an Ephemeris with the specified <code>EphemerisData</code>.
+        /// Creates an Ephemeris with the specified <c>EphemerisData</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEphemeris service method.</param>
         /// <param name="cancellationToken">
@@ -277,8 +277,8 @@ namespace Amazon.GroundStation
         /// 
         ///  
         /// <para>
-        ///  <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of
-        /// strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
+        ///  <c>dataflowEdges</c> is a list of lists of strings. Each lower level list of strings
+        /// has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMissionProfile service method.</param>
@@ -303,8 +303,8 @@ namespace Amazon.GroundStation
         /// 
         ///  
         /// <para>
-        ///  <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of
-        /// strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
+        ///  <c>dataflowEdges</c> is a list of lists of strings. Each lower level list of strings
+        /// has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMissionProfile service method.</param>
@@ -331,7 +331,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Deletes a <code>Config</code>.
+        /// Deletes a <c>Config</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfig service method.</param>
         /// 
@@ -351,7 +351,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Deletes a <code>Config</code>.
+        /// Deletes a <c>Config</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfig service method.</param>
         /// <param name="cancellationToken">
@@ -667,11 +667,11 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns <code>Config</code> information.
+        /// Returns <c>Config</c> information.
         /// 
         ///  
         /// <para>
-        /// Only one <code>Config</code> response can be returned.
+        /// Only one <c>Config</c> response can be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfig service method.</param>
@@ -692,11 +692,11 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns <code>Config</code> information.
+        /// Returns <c>Config</c> information.
         /// 
         ///  
         /// <para>
-        /// Only one <code>Config</code> response can be returned.
+        /// Only one <c>Config</c> response can be returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfig service method.</param>
@@ -907,7 +907,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns a list of <code>Config</code> objects.
+        /// Returns a list of <c>Config</c> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigs service method.</param>
         /// 
@@ -927,7 +927,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns a list of <code>Config</code> objects.
+        /// Returns a list of <c>Config</c> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigs service method.</param>
         /// <param name="cancellationToken">
@@ -957,8 +957,8 @@ namespace Amazon.GroundStation
         /// 
         ///  
         /// <para>
-        /// If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>,
-        /// <code>missionprofileArn</code>, and <code>satelliteArn</code>. 
+        /// If <c>statusList</c> contains AVAILABLE, the request must include <c>groundStation</c>,
+        /// <c>missionprofileArn</c>, and <c>satelliteArn</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContacts service method.</param>
@@ -983,8 +983,8 @@ namespace Amazon.GroundStation
         /// 
         ///  
         /// <para>
-        /// If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>,
-        /// <code>missionprofileArn</code>, and <code>satelliteArn</code>. 
+        /// If <c>statusList</c> contains AVAILABLE, the request must include <c>groundStation</c>,
+        /// <c>missionprofileArn</c>, and <c>satelliteArn</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContacts service method.</param>
@@ -1011,7 +1011,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns a list of <code>DataflowEndpoint</code> groups.
+        /// Returns a list of <c>DataflowEndpoint</c> groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataflowEndpointGroups service method.</param>
         /// 
@@ -1031,7 +1031,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns a list of <code>DataflowEndpoint</code> groups.
+        /// Returns a list of <c>DataflowEndpoint</c> groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataflowEndpointGroups service method.</param>
         /// <param name="cancellationToken">
@@ -1545,12 +1545,12 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Updates the <code>Config</code> used when scheduling contacts.
+        /// Updates the <c>Config</c> used when scheduling contacts.
         /// 
         ///  
         /// <para>
-        /// Updating a <code>Config</code> will not update the execution parameters for existing
-        /// future contacts scheduled with this <code>Config</code>.
+        /// Updating a <c>Config</c> will not update the execution parameters for existing future
+        /// contacts scheduled with this <c>Config</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfig service method.</param>
@@ -1571,12 +1571,12 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Updates the <code>Config</code> used when scheduling contacts.
+        /// Updates the <c>Config</c> used when scheduling contacts.
         /// 
         ///  
         /// <para>
-        /// Updating a <code>Config</code> will not update the execution parameters for existing
-        /// future contacts scheduled with this <code>Config</code>.
+        /// Updating a <c>Config</c> will not update the execution parameters for existing future
+        /// contacts scheduled with this <c>Config</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateConfig service method.</param>

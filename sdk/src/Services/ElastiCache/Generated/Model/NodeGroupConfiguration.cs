@@ -30,8 +30,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Node group (shard) configuration options. Each node group (shard) configuration has
-    /// the following: <code>Slots</code>, <code>PrimaryAvailabilityZone</code>, <code>ReplicaAvailabilityZones</code>,
-    /// <code>ReplicaCount</code>.
+    /// the following: <c>Slots</c>, <c>PrimaryAvailabilityZone</c>, <c>ReplicaAvailabilityZones</c>,
+    /// <c>ReplicaCount</c>.
     /// </summary>
     public partial class NodeGroupConfiguration
     {
@@ -103,7 +103,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ReplicaAvailabilityZones. 
         /// <para>
         /// A list of Availability Zones to be used for the read replicas. The number of Availability
-        /// Zones in this list must match the value of <code>ReplicaCount</code> or <code>ReplicasPerNodeGroup</code>
+        /// Zones in this list must match the value of <c>ReplicaCount</c> or <c>ReplicasPerNodeGroup</c>
         /// if not specified.
         /// </para>
         /// </summary>
@@ -159,11 +159,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property Slots. 
         /// <para>
         /// A string that specifies the keyspace for a particular node group. Keyspaces range
-        /// from 0 to 16,383. The string is in the format <code>startkey-endkey</code>.
+        /// from 0 to 16,383. The string is in the format <c>startkey-endkey</c>.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"0-3999"</code> 
+        /// Example: <c>"0-3999"</c> 
         /// </para>
         /// </summary>
         public string Slots

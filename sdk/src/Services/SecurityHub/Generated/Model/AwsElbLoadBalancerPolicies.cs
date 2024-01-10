@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AppCookieStickinessPolicies. 
         /// <para>
-        /// The stickiness policies that are created using <code>CreateAppCookieStickinessPolicy</code>.
+        /// The stickiness policies that are created using <c>CreateAppCookieStickinessPolicy</c>.
         /// </para>
         /// </summary>
         public List<AwsElbAppCookieStickinessPolicy> AppCookieStickinessPolicies
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LbCookieStickinessPolicies. 
         /// <para>
-        /// The stickiness policies that are created using <code>CreateLBCookieStickinessPolicy</code>.
+        /// The stickiness policies that are created using <c>CreateLBCookieStickinessPolicy</c>.
         /// </para>
         /// </summary>
         public List<AwsElbLbCookieStickinessPolicy> LbCookieStickinessPolicies

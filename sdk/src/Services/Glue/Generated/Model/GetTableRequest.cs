@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTable operation.
-    /// Retrieves the <code>Table</code> definition in a Data Catalog for a specified table.
+    /// Retrieves the <c>Table</c> definition in a Data Catalog for a specified table.
     /// </summary>
     public partial class GetTableRequest : AmazonGlueRequest
     {
@@ -104,7 +104,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property QueryAsOfTime. 
         /// <para>
         /// The time as of when to read the table contents. If not set, the most recent transaction
-        /// commit time will be used. Cannot be specified along with <code>TransactionId</code>.
+        /// commit time will be used. Cannot be specified along with <c>TransactionId</c>.
         /// </para>
         /// </summary>
         public DateTime QueryAsOfTime

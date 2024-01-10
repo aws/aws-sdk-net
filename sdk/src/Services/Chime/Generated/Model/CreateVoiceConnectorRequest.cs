@@ -64,7 +64,7 @@ namespace Amazon.Chime.Model
         /// Gets and sets the property AwsRegion. 
         /// <para>
         ///  The AWS Region in which the Amazon Chime Voice Connector is created. Default value:
-        /// <code>us-east-1</code> . 
+        /// <c>us-east-1</c> . 
         /// </para>
         /// </summary>
         public VoiceConnectorAwsRegion AwsRegion

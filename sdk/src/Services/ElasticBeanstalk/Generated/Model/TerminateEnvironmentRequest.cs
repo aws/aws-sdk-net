@@ -52,7 +52,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentName, or both. If you do
-        /// not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// not specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c>
         /// error. 
         /// </para>
         /// </summary>
@@ -76,8 +76,8 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or an EnvironmentId, or both. If you do not
-        /// specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
-        /// error. 
+        /// specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c> error.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]
@@ -120,13 +120,13 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code>: The specified environment as well as the associated AWS resources,
-        /// such as Auto Scaling group and LoadBalancer, are terminated.
+        ///  <c>true</c>: The specified environment as well as the associated AWS resources, such
+        /// as Auto Scaling group and LoadBalancer, are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code>: AWS Elastic Beanstalk resource management is removed from the
-        /// environment, but the AWS resources continue to operate.
+        ///  <c>false</c>: AWS Elastic Beanstalk resource management is removed from the environment,
+        /// but the AWS resources continue to operate.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -135,11 +135,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>true</code> 
+        ///  Default: <c>true</c> 
         /// </para>
         ///  
         /// <para>
-        ///  Valid Values: <code>true</code> | <code>false</code> 
+        ///  Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool TerminateResources

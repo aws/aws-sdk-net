@@ -66,11 +66,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. 
+        ///  The namespace of a Maven package version is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

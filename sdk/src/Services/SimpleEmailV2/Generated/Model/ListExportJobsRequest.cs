@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ExportSourceType. 
         /// <para>
-        /// A value used to list export jobs that have a certain <code>ExportSourceType</code>.
+        /// A value used to list export jobs that have a certain <c>ExportSourceType</c>.
         /// </para>
         /// </summary>
         public ExportSourceType ExportSourceType
@@ -60,7 +60,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// A value used to list export jobs that have a certain <code>JobStatus</code>.
+        /// A value used to list export jobs that have a certain <c>JobStatus</c>.
         /// </para>
         /// </summary>
         public JobStatus JobStatus
@@ -78,8 +78,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token returned from a previous call to <code>ListExportJobs</code>
-        /// to indicate the position in the list of export jobs.
+        /// The pagination token returned from a previous call to <c>ListExportJobs</c> to indicate
+        /// the position in the list of export jobs.
         /// </para>
         /// </summary>
         public string NextToken
@@ -98,9 +98,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// Maximum number of export jobs to return at once. Use this parameter to paginate results.
-        /// If additional export jobs exist beyond the specified limit, the <code>NextToken</code>
-        /// element is sent in the response. Use the <code>NextToken</code> value in subsequent
-        /// calls to <code>ListExportJobs</code> to retrieve additional export jobs.
+        /// If additional export jobs exist beyond the specified limit, the <c>NextToken</c> element
+        /// is sent in the response. Use the <c>NextToken</c> value in subsequent calls to <c>ListExportJobs</c>
+        /// to retrieve additional export jobs.
         /// </para>
         /// </summary>
         public int PageSize

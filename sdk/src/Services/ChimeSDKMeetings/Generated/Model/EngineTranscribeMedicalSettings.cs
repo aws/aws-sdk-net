@@ -43,8 +43,8 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
         /// <para>
-        /// Set this field to <code>PHI</code> to identify personal health information in the
-        /// transcription output.
+        /// Set this field to <c>PHI</c> to identify personal health information in the transcription
+        /// output.
         /// </para>
         /// </summary>
         public TranscribeMedicalContentIdentificationType ContentIdentificationType

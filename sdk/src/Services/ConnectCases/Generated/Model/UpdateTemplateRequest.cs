@@ -31,10 +31,10 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Container for the parameters to the UpdateTemplate operation.
     /// Updates the attributes of an existing template. The template attributes that can be
-    /// modified include <code>name</code>, <code>description</code>, <code>layoutConfiguration</code>,
-    /// <code>requiredFields</code>, and <code>status</code>. At least one of these attributes
-    /// must not be null. If a null value is provided for a given attribute, that attribute
-    /// is ignored and its current value is preserved.
+    /// modified include <c>name</c>, <c>description</c>, <c>layoutConfiguration</c>, <c>requiredFields</c>,
+    /// and <c>status</c>. At least one of these attributes must not be null. If a null value
+    /// is provided for a given attribute, that attribute is ignored and its current value
+    /// is preserved.
     /// </summary>
     public partial class UpdateTemplateRequest : AmazonConnectCasesRequest
     {

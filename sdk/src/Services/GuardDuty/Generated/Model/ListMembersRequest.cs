@@ -106,7 +106,7 @@ namespace Amazon.GuardDuty.Model
         /// members who haven't been invited yet or have been disassociated). Member accounts
         /// must have been previously associated with the GuardDuty administrator account using
         /// <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-        /// <code>Create Members</code> </a>. 
+        /// <c>Create Members</c> </a>. 
         /// </para>
         /// </summary>
         public string OnlyAssociated

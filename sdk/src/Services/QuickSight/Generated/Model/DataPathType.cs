@@ -43,24 +43,24 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HIERARCHY_ROWS_LAYOUT_COLUMN</code> - The type of data path for the rows layout
-        /// column, when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+        ///  <c>HIERARCHY_ROWS_LAYOUT_COLUMN</c> - The type of data path for the rows layout column,
+        /// when <c>RowsLayout</c> is set to <c>HIERARCHY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MULTIPLE_ROW_METRICS_COLUMN</code> - The type of data path for the metric column
+        ///  <c>MULTIPLE_ROW_METRICS_COLUMN</c> - The type of data path for the metric column
         /// when the row is set to Metric Placement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EMPTY_COLUMN_HEADER</code> - The type of data path for the column with empty
-        /// column header, when there is no field in <code>ColumnsFieldWell</code> and the row
-        /// is set to Metric Placement.
+        ///  <c>EMPTY_COLUMN_HEADER</c> - The type of data path for the column with empty column
+        /// header, when there is no field in <c>ColumnsFieldWell</c> and the row is set to Metric
+        /// Placement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COUNT_METRIC_COLUMN</code> - The type of data path for the column with <code>COUNT</code>
-        /// as the metric, when there is no field in the <code>ValuesFieldWell</code>.
+        ///  <c>COUNT_METRIC_COLUMN</c> - The type of data path for the column with <c>COUNT</c>
+        /// as the metric, when there is no field in the <c>ValuesFieldWell</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

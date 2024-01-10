@@ -51,12 +51,12 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SAML_PROPERTIES_USER_ACCESS_URL</code> to delete the user access URL.
+        ///  <c>SAML_PROPERTIES_USER_ACCESS_URL</c> to delete the user access URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</code> to delete the relay state
-        /// parameter name.
+        ///  <c>SAML_PROPERTIES_RELAY_STATE_PARAMETER_NAME</c> to delete the relay state parameter
+        /// name.
         /// </para>
         ///  </li> </ul>
         /// </summary>

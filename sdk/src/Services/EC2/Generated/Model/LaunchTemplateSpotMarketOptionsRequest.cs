@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceInterruptionBehavior. 
         /// <para>
-        /// The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+        /// The behavior when a Spot Instance is interrupted. The default is <c>terminate</c>.
         /// </para>
         /// </summary>
         public InstanceInterruptionBehavior InstanceInterruptionBehavior
@@ -127,13 +127,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
-        /// date and time is reached. Otherwise, the request remains active until you cancel it.
+        /// For a persistent request, the request remains active until the <c>ValidUntil</c> date
+        /// and time is reached. Otherwise, the request remains active until you cancel it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For a one-time request, <code>ValidUntil</code> is not supported. The request remains
-        /// active until all instances launch or you cancel the request.
+        /// For a one-time request, <c>ValidUntil</c> is not supported. The request remains active
+        /// until all instances launch or you cancel the request.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -172,13 +172,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
-        /// date and time is reached. Otherwise, the request remains active until you cancel it.
+        /// For a persistent request, the request remains active until the <c>ValidUntil</c> date
+        /// and time is reached. Otherwise, the request remains active until you cancel it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For a one-time request, <code>ValidUntil</code> is not supported. The request remains
-        /// active until all instances launch or you cancel the request.
+        /// For a one-time request, <c>ValidUntil</c> is not supported. The request remains active
+        /// until all instances launch or you cancel the request.
         /// </para>
         ///  </li> </ul> 
         /// <para>

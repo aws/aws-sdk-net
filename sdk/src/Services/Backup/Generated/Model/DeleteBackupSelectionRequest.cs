@@ -31,7 +31,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the DeleteBackupSelection operation.
     /// Deletes the resource selection associated with a backup plan that is specified by
-    /// the <code>SelectionId</code>.
+    /// the <c>SelectionId</c>.
     /// </summary>
     public partial class DeleteBackupSelectionRequest : AmazonBackupRequest
     {

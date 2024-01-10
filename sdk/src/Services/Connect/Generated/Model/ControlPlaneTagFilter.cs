@@ -29,16 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// An object that can be used to specify Tag conditions inside the <code>SearchFilter</code>.
-    /// This accepts an <code>OR</code> of <code>AND</code> (List of List) input where: 
+    /// An object that can be used to specify Tag conditions inside the <c>SearchFilter</c>.
+    /// This accepts an <c>OR</c> of <c>AND</c> (List of List) input where: 
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Top level list specifies conditions that need to be applied with <code>OR</code> operator
+    /// Top level list specifies conditions that need to be applied with <c>OR</c> operator
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Inner list specifies conditions that need to be applied with <code>AND</code> operator.
+    /// Inner list specifies conditions that need to be applied with <c>AND</c> operator.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AndConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>AND</code> condition.
+        /// A list of conditions which would be applied together with an <c>AND</c> condition.
         /// </para>
         /// </summary>
         public List<TagCondition> AndConditions
@@ -69,7 +69,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property OrConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>OR</code> condition.
+        /// A list of conditions which would be applied together with an <c>OR</c> condition.
         /// 
         /// </para>
         /// </summary>

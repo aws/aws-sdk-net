@@ -44,13 +44,13 @@ namespace Amazon.Synthetics.Model
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.
+        /// The ARN format of a canary is <c>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
+        /// </c>.
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-        /// </code> 
+        /// The ARN format of a group is <c>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

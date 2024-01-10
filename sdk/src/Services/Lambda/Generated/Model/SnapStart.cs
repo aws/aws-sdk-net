@@ -30,9 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// The function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Lambda
-    /// SnapStart</a> setting. Set <code>ApplyOn</code> to <code>PublishedVersions</code>
-    /// to create a snapshot of the initialized execution environment when you publish a function
-    /// version.
+    /// SnapStart</a> setting. Set <c>ApplyOn</c> to <c>PublishedVersions</c> to create a
+    /// snapshot of the initialized execution environment when you publish a function version.
     /// </summary>
     public partial class SnapStart
     {
@@ -41,7 +40,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ApplyOn. 
         /// <para>
-        /// Set to <code>PublishedVersions</code> to create a snapshot of the initialized execution
+        /// Set to <c>PublishedVersions</c> to create a snapshot of the initialized execution
         /// environment when you publish a function version.
         /// </para>
         /// </summary>

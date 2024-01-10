@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code>
-    /// and <code>MediaUriType</code>) to access the media files that are streamed to the
-    /// camera.
+    /// The configuration details that consist of the credentials required (<c>MediaUriSecretArn</c>
+    /// and <c>MediaUriType</c>) to access the media files that are streamed to the camera.
     /// </summary>
     public partial class MediaSourceConfig
     {
@@ -61,12 +60,12 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property MediaUriType. 
         /// <para>
-        /// The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value can be
-        /// used to stream local media files.
+        /// The Uniform Resource Identifier (URI) type. The <c>FILE_URI</c> value can be used
+        /// to stream local media files.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Preview only supports the <code>RTSP_URI</code> media source URI format .
+        /// Preview only supports the <c>RTSP_URI</c> media source URI format .
         /// </para>
         ///  </note>
         /// </summary>

@@ -35,10 +35,10 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// A task can resolve the <code>dnsName</code> for each of the <code>clientAliases</code>
-    /// of a service. However a task can't resolve the discovery names. If you want to connect
-    /// to a service, refer to the <code>ServiceConnectConfiguration</code> of that service
-    /// for the list of <code>clientAliases</code> that you can use.
+    /// A task can resolve the <c>dnsName</c> for each of the <c>clientAliases</c> of a service.
+    /// However a task can't resolve the discovery names. If you want to connect to a service,
+    /// refer to the <c>ServiceConnectConfiguration</c> of that service for the list of <c>clientAliases</c>
+    /// that you can use.
     /// </para>
     /// </summary>
     public partial class ServiceConnectServiceResource
@@ -74,15 +74,15 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>discoveryName</code> is the name of the new Cloud Map service that Amazon
-        /// ECS creates for this Amazon ECS service. This must be unique within the Cloud Map
-        /// namespace. The name can contain up to 64 characters. The name can include lowercase
-        /// letters, numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.
+        /// The <c>discoveryName</c> is the name of the new Cloud Map service that Amazon ECS
+        /// creates for this Amazon ECS service. This must be unique within the Cloud Map namespace.
+        /// The name can contain up to 64 characters. The name can include lowercase letters,
+        /// numbers, underscores (_), and hyphens (-). The name can't start with a hyphen.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>discoveryName</code> isn't specified, the port mapping name from the
-        /// task definition is used in <code>portName.namespace</code>.
+        /// If the <c>discoveryName</c> isn't specified, the port mapping name from the task definition
+        /// is used in <c>portName.namespace</c>.
         /// </para>
         /// </summary>
         public string DiscoveryName

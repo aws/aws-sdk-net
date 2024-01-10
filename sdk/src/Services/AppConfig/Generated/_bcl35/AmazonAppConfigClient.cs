@@ -647,11 +647,11 @@ namespace Amazon.AppConfig
         /// <summary>
         /// Creates an environment. For each application, you define one or more environments.
         /// An environment is a deployment group of AppConfig targets, such as applications in
-        /// a <code>Beta</code> or <code>Production</code> environment. You can also define environments
-        /// for application subcomponents such as the <code>Web</code>, <code>Mobile</code> and
-        /// <code>Back-end</code> components for your application. You can configure Amazon CloudWatch
-        /// alarms for each environment. The system monitors alarms during a configuration deployment.
-        /// If an alarm is triggered, the system rolls back the configuration.
+        /// a <c>Beta</c> or <c>Production</c> environment. You can also define environments for
+        /// application subcomponents such as the <c>Web</c>, <c>Mobile</c> and <c>Back-end</c>
+        /// components for your application. You can configure Amazon CloudWatch alarms for each
+        /// environment. The system monitors alarms during a configuration deployment. If an alarm
+        /// is triggered, the system rolls back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
         /// 
@@ -752,23 +752,23 @@ namespace Amazon.AppConfig
         /// provided by AppConfig. For an AppConfig extension that uses Lambda, you must create
         /// a Lambda function to perform any computation and processing defined in the extension.
         /// If you plan to create custom versions of the Amazon Web Services authored notification
-        /// extensions, you only need to specify an Amazon Resource Name (ARN) in the <code>Uri</code>
+        /// extensions, you only need to specify an Amazon Resource Name (ARN) in the <c>Uri</c>
         /// field for the new extension version.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// For a custom EventBridge notification extension, enter the ARN of the EventBridge
-        /// default events in the <code>Uri</code> field.
+        /// default events in the <c>Uri</c> field.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For a custom Amazon SNS notification extension, enter the ARN of an Amazon SNS topic
-        /// in the <code>Uri</code> field.
+        /// in the <c>Uri</c> field.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For a custom Amazon SQS notification extension, enter the ARN of an Amazon SQS message
-        /// queue in the <code>Uri</code> field. 
+        /// queue in the <c>Uri</c> field. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -868,13 +868,13 @@ namespace Amazon.AppConfig
         /// <summary>
         /// When you create an extension or configure an Amazon Web Services authored extension,
         /// you associate the extension with an AppConfig application, environment, or configuration
-        /// profile. For example, you can choose to run the <code>AppConfig deployment events
-        /// to Amazon SNS</code> Amazon Web Services authored extension and receive notifications
-        /// on an Amazon SNS topic anytime a configuration deployment is started for a specific
-        /// application. Defining which extension to associate with an AppConfig resource is called
-        /// an <i>extension association</i>. An extension association is a specified relationship
-        /// between an extension and an AppConfig resource, such as an application or a configuration
-        /// profile. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
+        /// profile. For example, you can choose to run the <c>AppConfig deployment events to
+        /// Amazon SNS</c> Amazon Web Services authored extension and receive notifications on
+        /// an Amazon SNS topic anytime a configuration deployment is started for a specific application.
+        /// Defining which extension to associate with an AppConfig resource is called an <i>extension
+        /// association</i>. An extension association is a specified relationship between an extension
+        /// and an AppConfig resource, such as an application or a configuration profile. For
+        /// more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working
         /// with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExtensionAssociation service method.</param>
@@ -1597,7 +1597,7 @@ namespace Amazon.AppConfig
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetConfiguration</code> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        ///  <c>GetConfiguration</c> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -1859,10 +1859,10 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Retrieves information about an environment. An environment is a deployment group of
-        /// AppConfig applications, such as applications in a <code>Production</code> environment
-        /// or in an <code>EU_Region</code> environment. Each configuration deployment targets
-        /// an environment. You can enable one or more Amazon CloudWatch alarms for an environment.
-        /// If an alarm is triggered during a deployment, AppConfig roles back the configuration.
+        /// AppConfig applications, such as applications in a <c>Production</c> environment or
+        /// in an <c>EU_Region</c> environment. Each configuration deployment targets an environment.
+        /// You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm
+        /// is triggered during a deployment, AppConfig roles back the configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEnvironment service method.</param>
         /// 
@@ -2743,7 +2743,7 @@ namespace Amazon.AppConfig
 
         /// <summary>
         /// Stops a deployment. This API action works only on deployments that have a status of
-        /// <code>DEPLOYING</code>. This action moves the deployment to a status of <code>ROLLED_BACK</code>.
+        /// <c>DEPLOYING</c>. This action moves the deployment to a status of <c>ROLLED_BACK</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopDeployment service method.</param>
         /// 

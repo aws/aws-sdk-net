@@ -42,16 +42,15 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies
-    /// a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code>
-    /// in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web
-    /// request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or
-    /// <code>COUNT</code>).
+    /// The <c>ActivatedRule</c> object in an <a>UpdateWebACL</a> request specifies a <c>Rule</c>
+    /// that you want to insert or delete, the priority of the <c>Rule</c> in the <c>WebACL</c>,
+    /// and the action that you want AWS WAF to take when a web request matches the <c>Rule</c>
+    /// (<c>ALLOW</c>, <c>BLOCK</c>, or <c>COUNT</c>).
     /// </para>
     ///  
     /// <para>
-    /// To specify whether to insert or delete a <code>Rule</code>, use the <code>Action</code>
-    /// parameter in the <a>WebACLUpdate</a> data type.
+    /// To specify whether to insert or delete a <c>Rule</c>, use the <c>Action</c> parameter
+    /// in the <a>WebACLUpdate</a> data type.
     /// </para>
     /// </summary>
     public partial class ActivatedRule
@@ -67,29 +66,27 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// Specifies the action that CloudFront or AWS WAF takes when a web request matches the
-        /// conditions in the <code>Rule</code>. Valid values for <code>Action</code> include
-        /// the following:
+        /// conditions in the <c>Rule</c>. Valid values for <c>Action</c> include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALLOW</code>: CloudFront responds with the requested object.
+        ///  <c>ALLOW</c>: CloudFront responds with the requested object.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BLOCK</code>: CloudFront responds with an HTTP 403 (Forbidden) status code.
+        ///  <c>BLOCK</c>: CloudFront responds with an HTTP 403 (Forbidden) status code.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COUNT</code>: AWS WAF increments a counter of requests that match the conditions
+        ///  <c>COUNT</c>: AWS WAF increments a counter of requests that match the conditions
         /// in the rule and then continues to inspect the web request based on the remaining rules
         /// in the web ACL. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-        /// <code>RuleGroup</code> to a <code>WebACL</code>. In this case, you do not use <code>ActivatedRule|Action</code>.
-        /// For all other update requests, <code>ActivatedRule|Action</code> is used instead of
-        /// <code>ActivatedRule|OverrideAction</code>.
+        ///  <c>ActivatedRule|OverrideAction</c> applies only when updating or adding a <c>RuleGroup</c>
+        /// to a <c>WebACL</c>. In this case, you do not use <c>ActivatedRule|Action</c>. For
+        /// all other update requests, <c>ActivatedRule|Action</c> is used instead of <c>ActivatedRule|OverrideAction</c>.
         /// </para>
         /// </summary>
         public WafAction Action
@@ -107,8 +104,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ExcludedRules. 
         /// <para>
-        /// An array of rules to exclude from a rule group. This is applicable only when the <code>ActivatedRule</code>
-        /// refers to a <code>RuleGroup</code>.
+        /// An array of rules to exclude from a rule group. This is applicable only when the <c>ActivatedRule</c>
+        /// refers to a <c>RuleGroup</c>.
         /// </para>
         ///  
         /// <para>
@@ -120,10 +117,10 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Specifying <code>ExcludedRules</code> does not remove those rules from the rule group.
-        /// Rather, it changes the action for the rules to <code>COUNT</code>. Therefore, requests
-        /// that match an <code>ExcludedRule</code> are counted but not blocked. The <code>RuleGroup</code>
-        /// owner will receive COUNT metrics for each <code>ExcludedRule</code>.
+        /// Specifying <c>ExcludedRules</c> does not remove those rules from the rule group. Rather,
+        /// it changes the action for the rules to <c>COUNT</c>. Therefore, requests that match
+        /// an <c>ExcludedRule</c> are counted but not blocked. The <c>RuleGroup</c> owner will
+        /// receive COUNT metrics for each <c>ExcludedRule</c>.
         /// </para>
         ///  
         /// <para>
@@ -143,16 +140,16 @@ namespace Amazon.WAFRegional.Model
         ///  <ul> <li> 
         /// <para>
         /// The first action deletes the existing rule group from the web ACL. That is, in the
-        /// <a>UpdateWebACL</a> request, the first <code>Updates:Action</code> should be <code>DELETE</code>
-        /// and <code>Updates:ActivatedRule:RuleId</code> should be the rule group that contains
-        /// the rules that you want to exclude.
+        /// <a>UpdateWebACL</a> request, the first <c>Updates:Action</c> should be <c>DELETE</c>
+        /// and <c>Updates:ActivatedRule:RuleId</c> should be the rule group that contains the
+        /// rules that you want to exclude.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The second action inserts the same rule group back in, but specifying the rules to
-        /// exclude. That is, the second <code>Updates:Action</code> should be <code>INSERT</code>,
-        /// <code>Updates:ActivatedRule:RuleId</code> should be the rule group that you just removed,
-        /// and <code>ExcludedRules</code> should contain the rules that you want to exclude.
+        /// exclude. That is, the second <c>Updates:Action</c> should be <c>INSERT</c>, <c>Updates:ActivatedRule:RuleId</c>
+        /// should be the rule group that you just removed, and <c>ExcludedRules</c> should contain
+        /// the rules that you want to exclude.
         /// </para>
         ///  </li> </ul> </li> </ol>
         /// </summary>
@@ -171,25 +168,24 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property OverrideAction. 
         /// <para>
-        /// Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
+        /// Use the <c>OverrideAction</c> to test your <c>RuleGroup</c>.
         /// </para>
         ///  
         /// <para>
-        /// Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
-        /// <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> will
-        /// block a request if any individual rule in the <code>RuleGroup</code> matches the request
-        /// and is configured to block that request. However if you first want to test the <code>RuleGroup</code>,
-        /// set the <code>OverrideAction</code> to <code>Count</code>. The <code>RuleGroup</code>
-        /// will then override any block action specified by individual rules contained within
-        /// the group. Instead of blocking matching requests, those requests will be counted.
-        /// You can view a record of counted requests using <a>GetSampledRequests</a>. 
+        /// Any rule in a <c>RuleGroup</c> can potentially block a request. If you set the <c>OverrideAction</c>
+        /// to <c>None</c>, the <c>RuleGroup</c> will block a request if any individual rule in
+        /// the <c>RuleGroup</c> matches the request and is configured to block that request.
+        /// However if you first want to test the <c>RuleGroup</c>, set the <c>OverrideAction</c>
+        /// to <c>Count</c>. The <c>RuleGroup</c> will then override any block action specified
+        /// by individual rules contained within the group. Instead of blocking matching requests,
+        /// those requests will be counted. You can view a record of counted requests using <a>GetSampledRequests</a>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>ActivatedRule|OverrideAction</code> applies only when updating or adding a
-        /// <code>RuleGroup</code> to a <code>WebACL</code>. In this case you do not use <code>ActivatedRule|Action</code>.
-        /// For all other update requests, <code>ActivatedRule|Action</code> is used instead of
-        /// <code>ActivatedRule|OverrideAction</code>.
+        ///  <c>ActivatedRule|OverrideAction</c> applies only when updating or adding a <c>RuleGroup</c>
+        /// to a <c>WebACL</c>. In this case you do not use <c>ActivatedRule|Action</c>. For all
+        /// other update requests, <c>ActivatedRule|Action</c> is used instead of <c>ActivatedRule|OverrideAction</c>.
         /// </para>
         /// </summary>
         public WafOverrideAction OverrideAction
@@ -207,10 +203,10 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// Specifies the order in which the <code>Rules</code> in a <code>WebACL</code> are evaluated.
-        /// Rules with a lower value for <code>Priority</code> are evaluated before <code>Rules</code>
-        /// with a higher value. The value must be a unique integer. If you add multiple <code>Rules</code>
-        /// to a <code>WebACL</code>, the values don't need to be consecutive.
+        /// Specifies the order in which the <c>Rules</c> in a <c>WebACL</c> are evaluated. Rules
+        /// with a lower value for <c>Priority</c> are evaluated before <c>Rules</c> with a higher
+        /// value. The value must be a unique integer. If you add multiple <c>Rules</c> to a <c>WebACL</c>,
+        /// the values don't need to be consecutive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -229,15 +225,14 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// The <code>RuleId</code> for a <code>Rule</code>. You use <code>RuleId</code> to get
-        /// more information about a <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code>
-        /// (see <a>UpdateRule</a>), insert a <code>Rule</code> into a <code>WebACL</code> or
-        /// delete a one from a <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a <code>Rule</code>
-        /// from AWS WAF (see <a>DeleteRule</a>).
+        /// The <c>RuleId</c> for a <c>Rule</c>. You use <c>RuleId</c> to get more information
+        /// about a <c>Rule</c> (see <a>GetRule</a>), update a <c>Rule</c> (see <a>UpdateRule</a>),
+        /// insert a <c>Rule</c> into a <c>WebACL</c> or delete a one from a <c>WebACL</c> (see
+        /// <a>UpdateWebACL</a>), or delete a <c>Rule</c> from AWS WAF (see <a>DeleteRule</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
+        ///  <c>RuleId</c> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -256,8 +251,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The rule type, either <code>REGULAR</code>, as defined by <a>Rule</a>, <code>RATE_BASED</code>,
-        /// as defined by <a>RateBasedRule</a>, or <code>GROUP</code>, as defined by <a>RuleGroup</a>.
+        /// The rule type, either <c>REGULAR</c>, as defined by <a>Rule</a>, <c>RATE_BASED</c>,
+        /// as defined by <a>RateBasedRule</a>, or <c>GROUP</c>, as defined by <a>RuleGroup</a>.
         /// The default is REGULAR. Although this field is optional, be aware that if you try
         /// to add a RATE_BASED rule to a web ACL without setting the type, the <a>UpdateWebACL</a>
         /// request will fail because the request tries to add a REGULAR rule with the specified

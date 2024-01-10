@@ -174,7 +174,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If status is <code>Failed</code>, the reason it failed.
+        /// If status is <c>Failed</c>, the reason it failed.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

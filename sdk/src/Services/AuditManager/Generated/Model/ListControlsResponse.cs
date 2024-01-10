@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlMetadataList. 
         /// <para>
-        ///  A list of metadata that the <code>ListControls</code> API returns for each control.
+        ///  A list of metadata that the <c>ListControls</c> API returns for each control.
         /// </para>
         /// </summary>
         public List<ControlMetadata> ControlMetadataList

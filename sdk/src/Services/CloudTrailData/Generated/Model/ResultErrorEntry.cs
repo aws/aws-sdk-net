@@ -42,9 +42,9 @@ namespace Amazon.CloudTrailData.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// The error code for events that could not be ingested by CloudTrail. Possible error
-        /// codes include: <code>FieldTooLong</code>, <code>FieldNotFound</code>, <code>InvalidChecksum</code>,
-        /// <code>InvalidData</code>, <code>InvalidRecipient</code>, <code>InvalidEventSource</code>,
-        /// <code>AccountNotSubscribed</code>, <code>Throttling</code>, and <code>InternalFailure</code>.
+        /// codes include: <c>FieldTooLong</c>, <c>FieldNotFound</c>, <c>InvalidChecksum</c>,
+        /// <c>InvalidData</c>, <c>InvalidRecipient</c>, <c>InvalidEventSource</c>, <c>AccountNotSubscribed</c>,
+        /// <c>Throttling</c>, and <c>InternalFailure</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

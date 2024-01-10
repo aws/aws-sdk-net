@@ -190,7 +190,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Sheets. 
         /// <para>
-        /// An array of sheet definitions for an analysis. Each <code>SheetDefinition</code> provides
+        /// An array of sheet definitions for an analysis. Each <c>SheetDefinition</c> provides
         /// detailed information about a sheet within this analysis.
         /// </para>
         /// </summary>

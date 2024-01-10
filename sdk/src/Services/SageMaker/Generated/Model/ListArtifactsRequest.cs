@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous call to <code>ListArtifacts</code> didn't return the full set of artifacts,
+        /// If the previous call to <c>ListArtifacts</c> didn't return the full set of artifacts,
         /// the call returns a token for getting the next set of artifacts.
         /// </para>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The property used to sort results. The default value is <code>CreationTime</code>.
+        /// The property used to sort results. The default value is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public SortArtifactsBy SortBy
@@ -158,7 +158,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order. The default value is <code>Descending</code>.
+        /// The sort order. The default value is <c>Descending</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

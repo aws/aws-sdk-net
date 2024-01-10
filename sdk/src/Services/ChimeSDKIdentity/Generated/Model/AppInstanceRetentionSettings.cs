@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// The details of the data-retention settings for an <code>AppInstance</code>.
+    /// The details of the data-retention settings for an <c>AppInstance</c>.
     /// </summary>
     public partial class AppInstanceRetentionSettings
     {

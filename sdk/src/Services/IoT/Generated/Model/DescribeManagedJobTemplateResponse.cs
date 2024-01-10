@@ -87,9 +87,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>documentParameters</code> can only be used when creating jobs from Amazon Web
-        /// Services managed templates. This parameter can't be used with custom job templates
-        /// or to create jobs from them.
+        ///  <c>documentParameters</c> can only be used when creating jobs from Amazon Web Services
+        /// managed templates. This parameter can't be used with custom job templates or to create
+        /// jobs from them.
         /// </para>
         ///  </note>
         /// </summary>
@@ -145,7 +145,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// The unique name of a managed template, such as <code>AWS-Reboot</code>.
+        /// The unique name of a managed template, such as <c>AWS-Reboot</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

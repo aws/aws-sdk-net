@@ -43,7 +43,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>RegexMatchSet</a> specified by <code>RegexMatchSetId</code>.
+    /// Returns the <a>RegexMatchSet</a> specified by <c>RegexMatchSetId</c>.
     /// </para>
     /// </summary>
     public partial class GetRegexMatchSetRequest : AmazonWAFRegionalRequest
@@ -53,8 +53,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RegexMatchSetId. 
         /// <para>
-        /// The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to get.
-        /// <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.
+        /// The <c>RegexMatchSetId</c> of the <a>RegexMatchSet</a> that you want to get. <c>RegexMatchSetId</c>
+        /// is returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

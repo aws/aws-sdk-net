@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// In response to a request by the <code>DescribeReplicationTasks</code> operation, this
-    /// object provides a collection of statistics about a replication task.
+    /// In response to a request by the <c>DescribeReplicationTasks</c> operation, this object
+    /// provides a collection of statistics about a replication task.
     /// </summary>
     public partial class ReplicationTaskStats
     {

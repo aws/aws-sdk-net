@@ -59,9 +59,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. To identify what object comes "next" in the list of <code>ListPickupLocationsRequest</code>
-        /// objects, you have the option of specifying <code>NextToken</code> as the starting
-        /// point for your returned list.
+        /// HTTP requests are stateless. To identify what object comes "next" in the list of <c>ListPickupLocationsRequest</c>
+        /// objects, you have the option of specifying <c>NextToken</c> as the starting point
+        /// for your returned list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

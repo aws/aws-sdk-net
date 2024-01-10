@@ -104,7 +104,7 @@ namespace Amazon.QBusiness.Model
         ///  
         /// <para>
         /// If you want to index snippets or subsets of HTML documents instead of the entirety
-        /// of the HTML documents, you add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+        /// of the HTML documents, you add the <c>HTML</c> start and closing tags (<c>&lt;HTML&gt;content&lt;/HTML&gt;</c>)
         /// around the content.
         /// </para>
         /// </summary>

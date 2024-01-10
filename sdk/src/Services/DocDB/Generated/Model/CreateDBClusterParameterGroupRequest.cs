@@ -40,9 +40,9 @@ namespace Amazon.DocDB.Model
     /// <para>
     /// A cluster parameter group is initially created with the default parameters for the
     /// database engine used by instances in the cluster. In Amazon DocumentDB, you cannot
-    /// make modifications directly to the <code>default.docdb3.6</code> cluster parameter
-    /// group. If your Amazon DocumentDB cluster is using the default cluster parameter group
-    /// and you want to modify a value in it, you must first <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
+    /// make modifications directly to the <c>default.docdb3.6</c> cluster parameter group.
+    /// If your Amazon DocumentDB cluster is using the default cluster parameter group and
+    /// you want to modify a value in it, you must first <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html">
     /// create a new parameter group</a> or <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html">
     /// copy an existing parameter group</a>, modify it, and then apply the modified parameter
     /// group to your cluster. For the new cluster parameter group and associated settings
@@ -69,7 +69,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must not match the name of an existing <code>DBClusterParameterGroup</code>.
+        /// Must not match the name of an existing <c>DBClusterParameterGroup</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

@@ -31,20 +31,18 @@ namespace Amazon.CloudWatchRUM.Model
     /// <summary>
     /// A structure that defines a key and values that you can use to filter the results.
     /// The only performance events that are returned are those that have values matching
-    /// the ones that you specify in one of your <code>QueryFilter</code> structures.
+    /// the ones that you specify in one of your <c>QueryFilter</c> structures.
     /// 
     ///  
     /// <para>
-    /// For example, you could specify <code>Browser</code> as the <code>Name</code> and specify
-    /// <code>Chrome,Firefox</code> as the <code>Values</code> to return events generated
-    /// only from those browsers.
+    /// For example, you could specify <c>Browser</c> as the <c>Name</c> and specify <c>Chrome,Firefox</c>
+    /// as the <c>Values</c> to return events generated only from those browsers.
     /// </para>
     ///  
     /// <para>
-    /// Specifying <code>Invert</code> as the <code>Name</code> works as a "not equal to"
-    /// filter. For example, specify <code>Invert</code> as the <code>Name</code> and specify
-    /// <code>Chrome</code> as the value to return all events except events from user sessions
-    /// with the Chrome browser.
+    /// Specifying <c>Invert</c> as the <c>Name</c> works as a "not equal to" filter. For
+    /// example, specify <c>Invert</c> as the <c>Name</c> and specify <c>Chrome</c> as the
+    /// value to return all events except events from user sessions with the Chrome browser.
     /// </para>
     /// </summary>
     public partial class QueryFilter
@@ -56,13 +54,12 @@ namespace Amazon.CloudWatchRUM.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of a key to search for. The filter returns only the events that match the
-        /// <code>Name</code> and <code>Values</code> that you specify. 
+        /// <c>Name</c> and <c>Values</c> that you specify. 
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>Name</code> are <code>Browser</code> | <code>Device</code>
-        /// | <code>Country</code> | <code>Page</code> | <code>OS</code> | <code>EventType</code>
-        /// | <code>Invert</code> 
+        /// Valid values for <c>Name</c> are <c>Browser</c> | <c>Device</c> | <c>Country</c> |
+        /// <c>Page</c> | <c>OS</c> | <c>EventType</c> | <c>Invert</c> 
         /// </para>
         /// </summary>
         public string Name
@@ -80,7 +77,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values of the <code>Name</code> that are to be be included in the returned results.
+        /// The values of the <c>Name</c> that are to be be included in the returned results.
         /// </para>
         /// </summary>
         public List<string> Values

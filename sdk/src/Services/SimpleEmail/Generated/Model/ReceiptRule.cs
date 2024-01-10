@@ -75,7 +75,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If <code>true</code>, the receipt rule is active. The default value is <code>false</code>.
+        /// If <c>true</c>, the receipt rule is active. The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -145,8 +145,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property ScanEnabled. 
         /// <para>
-        /// If <code>true</code>, then messages that this receipt rule applies to are scanned
-        /// for spam and viruses. The default value is <code>false</code>.
+        /// If <c>true</c>, then messages that this receipt rule applies to are scanned for spam
+        /// and viruses. The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool ScanEnabled
@@ -166,8 +166,8 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// Specifies whether Amazon SES should require that incoming email is delivered over
         /// a connection encrypted with Transport Layer Security (TLS). If this parameter is set
-        /// to <code>Require</code>, Amazon SES bounces emails that are not received over TLS.
-        /// The default is <code>Optional</code>.
+        /// to <c>Require</c>, Amazon SES bounces emails that are not received over TLS. The default
+        /// is <c>Optional</c>.
         /// </para>
         /// </summary>
         public TlsPolicy TlsPolicy

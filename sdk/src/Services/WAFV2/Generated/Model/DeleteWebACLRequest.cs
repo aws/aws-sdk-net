@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// You can only use this if <code>ManagedByFirewallManager</code> is false in the specified
+    /// You can only use this if <c>ManagedByFirewallManager</c> is false in the specified
     /// <a>WebACL</a>. 
     /// </para>
     ///  <note> 
@@ -52,7 +52,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For Amazon CloudFront distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
+    /// For Amazon CloudFront distributions, use the CloudFront call <c>ListDistributionsByWebACLId</c>.
     /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
     /// in the <i>Amazon CloudFront API Reference</i>. 
     /// </para>
@@ -67,7 +67,7 @@ namespace Amazon.WAFV2.Model
     ///  </li> <li> 
     /// <para>
     /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
-    /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+    /// call <c>UpdateDistribution</c>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
     /// in the <i>Amazon CloudFront API Reference</i>. 
     /// </para>
     ///  </li> </ul> </li> </ul> </note>
@@ -102,14 +102,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LockToken. 
         /// <para>
-        /// A token used for optimistic locking. WAF returns a token to your <code>get</code>
-        /// and <code>list</code> requests, to mark the state of the entity at the time of the
-        /// request. To make changes to the entity associated with the token, you provide the
-        /// token to operations like <code>update</code> and <code>delete</code>. WAF uses the
-        /// token to ensure that no changes have been made to the entity since you last retrieved
-        /// it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-        /// If this happens, perform another <code>get</code>, and use the new token returned
-        /// by that operation. 
+        /// A token used for optimistic locking. WAF returns a token to your <c>get</c> and <c>list</c>
+        /// requests, to mark the state of the entity at the time of the request. To make changes
+        /// to the entity associated with the token, you provide the token to operations like
+        /// <c>update</c> and <c>delete</c>. WAF uses the token to ensure that no changes have
+        /// been made to the entity since you last retrieved it. If a change has been made, the
+        /// update fails with a <c>WAFOptimisticLockException</c>. If this happens, perform another
+        /// <c>get</c>, and use the new token returned by that operation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -160,8 +159,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-        /// --region=us-east-1</code>. 
+        /// CLI - Specify the Region when you use the CloudFront scope: <c>--scope=CLOUDFRONT
+        /// --region=us-east-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

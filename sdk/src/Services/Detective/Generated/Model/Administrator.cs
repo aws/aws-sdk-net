@@ -61,7 +61,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property DelegationTime. 
         /// <para>
         /// The date and time when the Detective administrator account was enabled. The value
-        /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime DelegationTime

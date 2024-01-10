@@ -30,7 +30,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMediaAnalysisJobs operation.
-    /// Returns a list of media analysis jobs. Results are sorted by <code>CreationTimestamp</code>
+    /// Returns a list of media analysis jobs. Results are sorted by <c>CreationTimestamp</c>
     /// in descending order.
     /// </summary>
     public partial class ListMediaAnalysisJobsRequest : AmazonRekognitionRequest
@@ -42,7 +42,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return per paginated call. The largest value user
-        /// can specify is 100. If user specifies a value greater than 100, an <code>InvalidParameterException</code>
+        /// can specify is 100. If user specifies a value greater than 100, an <c>InvalidParameterException</c>
         /// error occurs. The default value is 100.
         /// </para>
         /// </summary>

@@ -61,7 +61,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The upload's content type (for example, <code>application/x-yaml</code>).
+        /// The upload's content type (for example, <c>application/x-yaml</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -99,8 +99,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The upload's test spec file name. The name must not contain any forward slashes (/).
-        /// The test spec file name must end with the <code>.yaml</code> or <code>.yml</code>
-        /// file extension.
+        /// The test spec file name must end with the <c>.yaml</c> or <c>.yml</c> file extension.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

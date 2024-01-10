@@ -70,8 +70,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -114,14 +114,14 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Currently, the only valid and required value is <code>Mode</code>.
+        /// Currently, the only valid and required value is <c>Mode</c>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// We recommend that you turn on <code>STRICT</code> mode only after you define a schema.
-        /// If a schema doesn't exist, then <code>STRICT</code> mode causes any policy to fail
-        /// validation, and Verified Permissions rejects the policy. You can turn off validation
-        /// by using the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>.
+        /// We recommend that you turn on <c>STRICT</c> mode only after you define a schema. If
+        /// a schema doesn't exist, then <c>STRICT</c> mode causes any policy to fail validation,
+        /// and Verified Permissions rejects the policy. You can turn off validation by using
+        /// the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>.
         /// Then, when you have a schema defined, use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyStore">UpdatePolicyStore</a>
         /// again to turn validation back on.
         /// </para>

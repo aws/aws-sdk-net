@@ -44,8 +44,7 @@ namespace Amazon.CloudControlApi.Model
         /// <para>
         /// After you have initiated a resource creation request, you can monitor the progress
         /// of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-        /// using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by
-        /// <code>CreateResource</code>.
+        /// using the <c>RequestToken</c> of the <c>ProgressEvent</c> returned by <c>CreateResource</c>.
         /// </para>
         /// </summary>
         public ProgressEvent ProgressEvent

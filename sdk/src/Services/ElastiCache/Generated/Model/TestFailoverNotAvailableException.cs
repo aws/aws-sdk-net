@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The <code>TestFailover</code> action is not available.
+    /// The <c>TestFailover</c> action is not available.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

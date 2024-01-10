@@ -48,19 +48,19 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code> - The hosted zone was successfully deleted.
+        ///  <c>SUCCEEDED</c> - The hosted zone was successfully deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The hosted zone deletion is in progress.
+        ///  <c>PENDING</c> - The hosted zone deletion is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The hosted zone deletion failed.
+        ///  <c>FAILED</c> - The hosted zone deletion failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STARTED</code> - The hosted zone deletion started.
+        ///  <c>STARTED</c> - The hosted zone deletion started.
         /// </para>
         ///  </li> </ul>
         /// </summary>

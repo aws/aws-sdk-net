@@ -302,8 +302,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you create an RDS Custom DB instance, you must set <code>AutoMinorVersionUpgrade</code>
-        /// to <code>false</code>.
+        /// If you create an RDS Custom DB instance, you must set <c>AutoMinorVersionUpgrade</c>
+        /// to <c>false</c>.
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -342,8 +342,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>AvailabilityZone</code> parameter can't be specified if the DB instance
-        /// is a Multi-AZ deployment.
+        /// The <c>AvailabilityZone</c> parameter can't be specified if the DB instance is a Multi-AZ
+        /// deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -352,7 +352,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>us-east-1d</code> 
+        /// Example: <c>us-east-1d</c> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -371,7 +371,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
         /// The number of days for which automated backups are retained. Setting this parameter
-        /// to a positive number enables backups. Setting this parameter to <code>0</code> disables
+        /// to a positive number enables backups. Setting this parameter to <c>0</c> disables
         /// automated backups.
         /// </para>
         ///  
@@ -381,7 +381,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         ///  
         /// <para>
@@ -424,15 +424,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>outposts</code> (Amazon Web Services Outposts)
+        ///  <c>outposts</c> (Amazon Web Services Outposts)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>region</code> (Amazon Web Services Region)
+        ///  <c>region</c> (Amazon Web Services Region)
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>region</code> 
+        /// Default: <c>region</c> 
         /// </para>
         ///  
         /// <para>
@@ -485,8 +485,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CharacterSetName. 
         /// <para>
-        /// For supported engines, the character set (<code>CharacterSet</code>) to associate
-        /// the DB instance with.
+        /// For supported engines, the character set (<c>CharacterSet</c>) to associate the DB
+        /// instance with.
         /// </para>
         ///  
         /// <para>
@@ -495,7 +495,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Amazon Aurora - The character set is managed by the DB cluster. For more information,
-        /// see <code>CreateDBCluster</code>.
+        /// see <c>CreateDBCluster</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -566,7 +566,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// The instance profile name and the associated IAM role name must start with the prefix
-        /// <code>AWSRDSCustom</code>.
+        /// <c>AWSRDSCustom</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -611,7 +611,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the DB instance, for example <code>db.m5.large</code>.
+        /// The compute and memory capacity of the DB instance, for example <c>db.m5.large</c>.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
         /// all database engines. For the full list of DB instance classes, and availability for
         /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
@@ -655,7 +655,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbinstance</code> 
+        /// Example: <c>mydbinstance</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -698,7 +698,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The name of the database to create when the primary DB instance of the Aurora PostgreSQL
         /// DB cluster is created. If this parameter isn't specified for an Aurora PostgreSQL
-        /// DB cluster, a database named <code>postgres</code> is created in the DB cluster.
+        /// DB cluster, a database named <c>postgres</c> is created in the DB cluster.
         /// </para>
         ///  
         /// <para>
@@ -720,12 +720,11 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> </dd> <dt>Amazon RDS Custom for Oracle</dt> <dd> 
         /// <para>
         /// The Oracle System ID (SID) of the created RDS Custom DB instance. If you don't specify
-        /// a value, the default value is <code>ORCL</code> for non-CDBs and <code>RDSCDB</code>
-        /// for CDBs.
+        /// a value, the default value is <c>ORCL</c> for non-CDBs and <c>RDSCDB</c> for CDBs.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ORCL</code> 
+        /// Default: <c>ORCL</c> 
         /// </para>
         ///  
         /// <para>
@@ -816,12 +815,12 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> </dd> <dt>RDS for Oracle</dt> <dd> 
         /// <para>
         /// The Oracle System ID (SID) of the created DB instance. If you don't specify a value,
-        /// the default value is <code>ORCL</code>. You can't specify the string <code>null</code>,
-        /// or any other reserved word, for <code>DBName</code>.
+        /// the default value is <c>ORCL</c>. You can't specify the string <c>null</c>, or any
+        /// other reserved word, for <c>DBName</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ORCL</code> 
+        /// Default: <c>ORCL</c> 
         /// </para>
         ///  
         /// <para>
@@ -834,7 +833,7 @@ namespace Amazon.RDS.Model
         ///  </li> </ul> </dd> <dt>RDS for PostgreSQL</dt> <dd> 
         /// <para>
         /// The name of the database to create when the DB instance is created. If this parameter
-        /// isn't specified, a database named <code>postgres</code> is created in the DB instance.
+        /// isn't specified, a database named <c>postgres</c> is created in the DB instance.
         /// </para>
         ///  
         /// <para>
@@ -920,7 +919,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// This setting applies to the legacy EC2-Classic platform, which is no longer used to
-        /// create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting instead.
+        /// create new DB instances. Use the <c>VpcSecurityGroupIds</c> setting instead.
         /// </para>
         /// </summary>
         public List<string> DBSecurityGroups
@@ -950,11 +949,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must not be <code>default</code>.
+        /// Must not be <c>default</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbsubnetgroup</code> 
+        /// Example: <c>mydbsubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -975,8 +974,8 @@ namespace Amazon.RDS.Model
         /// The Oracle system identifier (SID), which is the name of the Oracle database instance
         /// that manages your database files. In this context, the term "Oracle database instance"
         /// refers exclusively to the system global area (SGA) and Oracle background processes.
-        /// If you don't specify a SID, the value defaults to <code>RDSCDB</code>. The Oracle
-        /// SID is also the name of your CDB.
+        /// If you don't specify a SID, the value defaults to <c>RDSCDB</c>. The Oracle SID is
+        /// also the name of your CDB.
         /// </para>
         /// </summary>
         public string DBSystemId
@@ -1020,7 +1019,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// This setting doesn't apply to Amazon Aurora DB instances. You can enable or disable
-        /// deletion protection for the DB cluster. For more information, see <code>CreateDBCluster</code>.
+        /// deletion protection for the DB cluster. For more information, see <c>CreateDBCluster</c>.
         /// DB instances in a DB cluster can be deleted even when deletion protection is enabled
         /// for the DB cluster.
         /// </para>
@@ -1083,7 +1082,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+        /// Example: <c>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</c>
         /// 
         /// </para>
         /// </summary>
@@ -1115,7 +1114,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>123.124.125.126,234.235.236.237</code> 
+        /// Example: <c>123.124.125.126,234.235.236.237</c> 
         /// </para>
         /// </summary>
         public List<string> DomainDnsIps
@@ -1145,7 +1144,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> 
+        /// Example: <c>mymanagedADtest.mymanagedAD.mydomain</c> 
         /// </para>
         /// </summary>
         public string DomainFqdn
@@ -1210,7 +1209,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+        /// Example: <c>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</c>
         /// 
         /// </para>
         /// </summary>
@@ -1251,27 +1250,27 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// RDS for Db2 - <code>diag.log | notify.log</code> 
+        /// RDS for Db2 - <c>diag.log | notify.log</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MariaDB - <code>audit | error | general | slowquery</code> 
+        /// RDS for MariaDB - <c>audit | error | general | slowquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Microsoft SQL Server - <code>agent | error</code> 
+        /// RDS for Microsoft SQL Server - <c>agent | error</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MySQL - <code>audit | error | general | slowquery</code> 
+        /// RDS for MySQL - <c>audit | error | general | slowquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Oracle - <code>alert | audit | listener | trace | oemagent</code> 
+        /// RDS for Oracle - <c>alert | audit | listener | trace | oemagent</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for PostgreSQL - <code>postgresql | upgrade</code> 
+        /// RDS for PostgreSQL - <c>postgresql | upgrade</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1401,83 +1400,83 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora-mysql</code> (for Aurora MySQL DB instances)
+        ///  <c>aurora-mysql</c> (for Aurora MySQL DB instances)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql</code> (for Aurora PostgreSQL DB instances)
+        ///  <c>aurora-postgresql</c> (for Aurora PostgreSQL DB instances)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom-oracle-ee</code> (for RDS Custom for Oracle DB instances)
+        ///  <c>custom-oracle-ee</c> (for RDS Custom for Oracle DB instances)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom-oracle-ee-cdb</code> (for RDS Custom for Oracle DB instances)
+        ///  <c>custom-oracle-ee-cdb</c> (for RDS Custom for Oracle DB instances)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom-sqlserver-ee</code> (for RDS Custom for SQL Server DB instances)
+        ///  <c>custom-sqlserver-ee</c> (for RDS Custom for SQL Server DB instances)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom-sqlserver-se</code> (for RDS Custom for SQL Server DB instances)
+        ///  <c>custom-sqlserver-se</c> (for RDS Custom for SQL Server DB instances)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>custom-sqlserver-web</code> (for RDS Custom for SQL Server DB instances)
+        ///  <c>custom-sqlserver-web</c> (for RDS Custom for SQL Server DB instances)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-ae</code> 
+        ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-se</code> 
+        ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb</code> 
+        ///  <c>mariadb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mysql</code> 
+        ///  <c>mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee</code> 
+        ///  <c>oracle-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-cdb</code> 
+        ///  <c>oracle-ee-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2</code> 
+        ///  <c>oracle-se2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-cdb</code> 
+        ///  <c>oracle-se2-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres</code> 
+        ///  <c>postgres</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee</code> 
+        ///  <c>sqlserver-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se</code> 
+        ///  <c>sqlserver-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex</code> 
+        ///  <c>sqlserver-ex</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web</code> 
+        ///  <c>sqlserver-web</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1506,8 +1505,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of valid engine versions, use the <code>DescribeDBEngineVersions</code>
-        /// operation.
+        /// For a list of valid engine versions, use the <c>DescribeDBEngineVersions</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -1519,7 +1517,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A custom engine version (CEV) that you have previously created. This setting is required
         /// for RDS Custom for Oracle. The CEV name has the following format: 19.<i>customized_string</i>.
-        /// A valid CEV name is <code>19.my_cev1</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
+        /// A valid CEV name is <c>19.my_cev1</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-creating.html#custom-creating.create">
         /// Creating an RDS Custom for Oracle DB instance</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  </dd> <dt>Amazon RDS Custom for SQL Server</dt> <dd> 
@@ -1625,21 +1623,21 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// This setting doesn't apply to Amazon Aurora DB instances. The Amazon Web Services
-        /// KMS key identifier is managed by the DB cluster. For more information, see <code>CreateDBCluster</code>.
+        /// KMS key identifier is managed by the DB cluster. For more information, see <c>CreateDBCluster</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the
-        /// <code>KmsKeyId</code> parameter, then Amazon RDS uses your default KMS key. There
-        /// is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
-        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// If <c>StorageEncrypted</c> is enabled, and you do not specify a value for the <c>KmsKeyId</c>
+        /// parameter, then Amazon RDS uses your default KMS key. There is a default KMS key for
+        /// your Amazon Web Services account. Your Amazon Web Services account has a different
+        /// default KMS key for each Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>
         /// For Amazon RDS Custom, a KMS key is required for DB instances. For most RDS engines,
-        /// if you leave this parameter empty while enabling <code>StorageEncrypted</code>, the
-        /// engine uses the default KMS key. However, RDS Custom doesn't use the default key when
-        /// this parameter is empty. You must explicitly specify a key.
+        /// if you leave this parameter empty while enabling <c>StorageEncrypted</c>, the engine
+        /// uses the default KMS key. However, RDS Custom doesn't use the default key when this
+        /// parameter is empty. You must explicitly specify a key.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -1669,27 +1667,27 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// RDS for Db2 - <code>bring-your-own-license</code> 
+        /// RDS for Db2 - <c>bring-your-own-license</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MariaDB - <code>general-public-license</code> 
+        /// RDS for MariaDB - <c>general-public-license</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Microsoft SQL Server - <code>license-included</code> 
+        /// RDS for Microsoft SQL Server - <c>license-included</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MySQL - <code>general-public-license</code> 
+        /// RDS for MySQL - <c>general-public-license</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Oracle - <code>bring-your-own-license | license-included</code> 
+        /// RDS for Oracle - <c>bring-your-own-license | license-included</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for PostgreSQL - <code>postgresql-license</code> 
+        /// RDS for PostgreSQL - <c>postgresql-license</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1724,7 +1722,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Can't manage the master user password with Amazon Web Services Secrets Manager if
-        /// <code>MasterUserPassword</code> is specified.
+        /// <c>MasterUserPassword</c> is specified.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1800,7 +1798,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+        /// Can't be specified if <c>ManageMasterUserPassword</c> is turned on.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1868,10 +1866,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+        /// If you don't specify <c>MasterUserSecretKmsKeyId</c>, then the <c>aws/secretsmanager</c>
         /// KMS key is used to encrypt the secret. If the secret is in a different Amazon Web
-        /// Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to
-        /// encrypt the secret, and you must use a customer managed KMS key.
+        /// Services account, then you can't use the <c>aws/secretsmanager</c> KMS key to encrypt
+        /// the secret, and you must use a customer managed KMS key.
         /// </para>
         ///  
         /// <para>
@@ -1935,12 +1933,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
         /// for the DB instance. To disable collection of Enhanced Monitoring metrics, specify
-        /// <code>0</code>.
+        /// <c>0</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code>
-        /// to a value other than <code>0</code>.
+        /// If <c>MonitoringRoleArn</c> is specified, then you must set <c>MonitoringInterval</c>
+        /// to a value other than <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -1948,11 +1946,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> 
+        /// Valid Values: <c>0 | 1 | 5 | 10 | 15 | 30 | 60</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         /// </summary>
         public int MonitoringInterval
@@ -1971,14 +1969,14 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
         /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
-        /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
-        /// For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+        /// CloudWatch Logs. For example, <c>arn:aws:iam:123456789012:role/emaccess</c>. For information
+        /// on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
         /// Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, then
-        /// you must supply a <code>MonitoringRoleArn</code> value.
+        /// If <c>MonitoringInterval</c> is set to a value other than <c>0</c>, then you must
+        /// supply a <c>MonitoringRoleArn</c> value.
         /// </para>
         ///  
         /// <para>
@@ -2000,7 +1998,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MultiAZ. 
         /// <para>
-        /// Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <code>AvailabilityZone</code>
+        /// Specifies whether the DB instance is a Multi-AZ deployment. You can't set the <c>AvailabilityZone</c>
         /// parameter if the DB instance is a Multi-AZ deployment.
         /// </para>
         ///  
@@ -2094,9 +2092,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB instance.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -2105,7 +2103,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>IPV4 | DUAL</code> 
+        /// Valid Values: <c>IPV4 | DUAL</c> 
         /// </para>
         /// </summary>
         public string NetworkType
@@ -2161,8 +2159,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// If you don't specify a value for <c>PerformanceInsightsKMSKeyId</c>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services
         /// account. Your Amazon Web Services account has a different default KMS key for each
         /// Amazon Web Services Region.
         /// </para>
@@ -2198,26 +2196,25 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>7</code> 
+        ///  <c>7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
-        /// <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code>
-        /// (19 months * 31)
+        /// <c>93</c> (3 months * 31), <c>341</c> (11 months * 31), <c>589</c> (19 months * 31)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>731</code> 
+        ///  <c>731</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>7</code> days
+        /// Default: <c>7</c> days
         /// </para>
         ///  
         /// <para>
-        /// If you specify a retention period that isn't valid, such as <code>94</code>, Amazon
-        /// RDS returns an error.
+        /// If you specify a retention period that isn't valid, such as <c>94</c>, Amazon RDS
+        /// returns an error.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -2244,7 +2241,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <c>1150-65535</c> 
         /// </para>
         ///  
         /// <para>
@@ -2252,27 +2249,27 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// RDS for Db2 - <code>50000</code> 
+        /// RDS for Db2 - <c>50000</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MariaDB - <code>3306</code> 
+        /// RDS for MariaDB - <c>3306</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Microsoft SQL Server - <code>1433</code> 
+        /// RDS for Microsoft SQL Server - <c>1433</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MySQL - <code>3306</code> 
+        /// RDS for MySQL - <c>3306</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Oracle - <code>1521</code> 
+        /// RDS for Oracle - <c>1521</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for PostgreSQL - <code>5432</code> 
+        /// RDS for PostgreSQL - <c>5432</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2280,8 +2277,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>,
-        /// <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.
+        /// For RDS for Microsoft SQL Server, the value can't be <c>1234</c>, <c>1434</c>, <c>3260</c>,
+        /// <c>3343</c>, <c>3389</c>, <c>47001</c>, or <c>49152-49156</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2301,9 +2298,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. The default is
-        /// a 30-minute window selected at random from an 8-hour block of time for each Amazon
-        /// Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
+        /// are enabled, using the <c>BackupRetentionPeriod</c> parameter. The default is a 30-minute
+        /// window selected at random from an 8-hour block of time for each Amazon Web Services
+        /// Region. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">Backup
         /// window</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
@@ -2317,7 +2314,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2363,11 +2360,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.
+        /// Must be in the format <c>ddd:hh24:mi-ddd:hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>. 
+        /// The day values must be <c>mon | tue | wed | thu | fri | sat | sun</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2431,11 +2428,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>0 - 15</code> 
+        /// Valid Values: <c>0 - 15</c> 
         /// </para>
         /// </summary>
         public int PromotionTier
@@ -2471,13 +2468,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code>
+        /// Default: The default behavior varies depending on whether <c>DBSubnetGroupName</c>
         /// is specified.
         /// </para>
         ///  
         /// <para>
-        /// If <code>DBSubnetGroupName</code> isn't specified, and <code>PubliclyAccessible</code>
-        /// isn't specified, the following applies:
+        /// If <c>DBSubnetGroupName</c> isn't specified, and <c>PubliclyAccessible</c> isn't specified,
+        /// the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2491,8 +2488,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>DBSubnetGroupName</code> is specified, and <code>PubliclyAccessible</code>
-        /// isn't specified, the following applies:
+        /// If <c>DBSubnetGroupName</c> is specified, and <c>PubliclyAccessible</c> isn't specified,
+        /// the following applies:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2553,7 +2550,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting applies only to the <code>gp3</code> storage type.
+        /// This setting applies only to the <c>gp3</c> storage type.
         /// </para>
         ///  
         /// <para>
@@ -2579,8 +2576,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
-        /// for the <code>Iops</code> parameter.
+        /// If you specify <c>io1</c> or <c>gp3</c>, you must also include a value for the <c>Iops</c>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
@@ -2589,12 +2586,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise,
-        /// <code>gp2</code>.
+        /// Default: <c>io1</c>, if the <c>Iops</c> parameter is specified. Otherwise, <c>gp2</c>.
         /// </para>
         /// </summary>
         public string StorageType

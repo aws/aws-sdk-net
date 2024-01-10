@@ -43,8 +43,8 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property ColumnMetadata. 
         /// <para>
-        /// Metadata for the columns included in the results. This field is blank if the <code>formatRecordsAs</code>
-        /// parameter is set to <code>JSON</code>.
+        /// Metadata for the columns included in the results. This field is blank if the <c>formatRecordsAs</c>
+        /// parameter is set to <c>JSON</c>.
         /// </para>
         /// </summary>
         public List<ColumnMetadata> ColumnMetadata
@@ -62,9 +62,9 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property FormattedRecords. 
         /// <para>
-        /// A string value that represents the result set of a <code>SELECT</code> statement in
-        /// JSON format. This value is only present when the <code>formatRecordsAs</code> parameter
-        /// is set to <code>JSON</code>.
+        /// A string value that represents the result set of a <c>SELECT</c> statement in JSON
+        /// format. This value is only present when the <c>formatRecordsAs</c> parameter is set
+        /// to <c>JSON</c>.
         /// </para>
         ///  
         /// <para>
@@ -91,10 +91,10 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>generatedFields</code> data isn't supported by Aurora PostgreSQL. To get
-        /// the values of generated fields, use the <code>RETURNING</code> clause. For more information,
-        /// see <a href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data
-        /// From Modified Rows</a> in the PostgreSQL documentation.
+        /// The <c>generatedFields</c> data isn't supported by Aurora PostgreSQL. To get the values
+        /// of generated fields, use the <c>RETURNING</c> clause. For more information, see <a
+        /// href="https://www.postgresql.org/docs/10/dml-returning.html">Returning Data From Modified
+        /// Rows</a> in the PostgreSQL documentation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -131,8 +131,8 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property Records. 
         /// <para>
-        /// The records returned by the SQL statement. This field is blank if the <code>formatRecordsAs</code>
-        /// parameter is set to <code>JSON</code>.
+        /// The records returned by the SQL statement. This field is blank if the <c>formatRecordsAs</c>
+        /// parameter is set to <c>JSON</c>.
         /// </para>
         /// </summary>
         public List<List<Field>> Records

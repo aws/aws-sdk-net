@@ -60,7 +60,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// The confidence that Amazon Rekognition has that the bounding box (<code>BoundingBox</code>)
+        /// The confidence that Amazon Rekognition has that the bounding box (<c>BoundingBox</c>)
         /// contains an item of PPE.
         /// </para>
         /// </summary>

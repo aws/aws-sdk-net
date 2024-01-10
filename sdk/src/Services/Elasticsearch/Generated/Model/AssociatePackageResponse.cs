@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>AssociatePackage</a> </code> operation.
+    /// Container for response returned by <c> <a>AssociatePackage</a> </c> operation.
     /// </summary>
     public partial class AssociatePackageResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DomainPackageDetails. 
         /// <para>
-        /// <code>DomainPackageDetails</code>
+        /// <c>DomainPackageDetails</c>
         /// </para>
         /// </summary>
         public DomainPackageDetails DomainPackageDetails

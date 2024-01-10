@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// An object representing a Kubernetes <code>label</code> change for a managed node group.
+    /// An object representing a Kubernetes <c>label</c> change for a managed node group.
     /// </summary>
     public partial class UpdateLabelsPayload
     {
@@ -39,7 +39,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AddOrUpdateLabels. 
         /// <para>
-        /// The Kubernetes <code>labels</code> to add or update.
+        /// The Kubernetes <c>labels</c> to add or update.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AddOrUpdateLabels
@@ -57,7 +57,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property RemoveLabels. 
         /// <para>
-        /// The Kubernetes <code>labels</code> to remove.
+        /// The Kubernetes <c>labels</c> to remove.
         /// </para>
         /// </summary>
         public List<string> RemoveLabels

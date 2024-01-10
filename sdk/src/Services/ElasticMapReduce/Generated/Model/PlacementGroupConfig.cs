@@ -50,7 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  
         /// <para>
-        /// Starting with Amazon EMR release 5.23.0, the only supported instance role is <code>MASTER</code>.
+        /// Starting with Amazon EMR release 5.23.0, the only supported instance role is <c>MASTER</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         ///  
         /// <para>
         /// Starting with Amazon EMR release 5.23.0, the only supported placement strategy is
-        /// <code>SPREAD</code> for the <code>MASTER</code> instance role.
+        /// <c>SPREAD</c> for the <c>MASTER</c> instance role.
         /// </para>
         /// </summary>
         public PlacementGroupStrategy PlacementStrategy

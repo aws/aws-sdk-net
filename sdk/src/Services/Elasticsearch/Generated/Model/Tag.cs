@@ -39,8 +39,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be unique for
-        /// the Elasticsearch domain to which they are attached.
+        /// Specifies the <c>TagKey</c>, the name of the tag. Tag keys must be unique for the
+        /// Elasticsearch domain to which they are attached.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -59,10 +59,10 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// Specifies the <code>TagValue</code>, the value assigned to the corresponding tag key.
-        /// Tag values can be null and do not have to be unique in a tag set. For example, you
-        /// can have a key value pair in a tag set of <code>project : Trinity</code> and <code>cost-center
-        /// : Trinity</code>
+        /// Specifies the <c>TagValue</c>, the value assigned to the corresponding tag key. Tag
+        /// values can be null and do not have to be unique in a tag set. For example, you can
+        /// have a key value pair in a tag set of <c>project : Trinity</c> and <c>cost-center
+        /// : Trinity</c>
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

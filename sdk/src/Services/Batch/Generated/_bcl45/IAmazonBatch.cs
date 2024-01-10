@@ -64,26 +64,25 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code> or
-        /// <code>PENDING</code> are canceled. A job in<code>RUNNABLE</code> remains in <code>RUNNABLE</code>
-        /// until it reaches the head of the job queue. Then the job status is updated to <code>FAILED</code>.
+        /// Cancels a job in an Batch job queue. Jobs that are in the <c>SUBMITTED</c> or <c>PENDING</c>
+        /// are canceled. A job in<c>RUNNABLE</c> remains in <c>RUNNABLE</c> until it reaches
+        /// the head of the job queue. Then the job status is updated to <c>FAILED</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// A <code>PENDING</code> job is canceled after all dependency jobs are completed. Therefore,
-        /// it may take longer than expected to cancel a job in <code>PENDING</code> status.
+        /// A <c>PENDING</c> job is canceled after all dependency jobs are completed. Therefore,
+        /// it may take longer than expected to cancel a job in <c>PENDING</c> status.
         /// </para>
         ///  
         /// <para>
-        /// When you try to cancel an array parent job in <code>PENDING</code>, Batch attempts
-        /// to cancel all child jobs. The array parent job is canceled when all child jobs are
-        /// completed.
+        /// When you try to cancel an array parent job in <c>PENDING</c>, Batch attempts to cancel
+        /// all child jobs. The array parent job is canceled when all child jobs are completed.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Jobs that progressed to the <code>STARTING</code> or <code>RUNNING</code> state aren't
-        /// canceled. However, the API operation still succeeds, even if no job is canceled. These
-        /// jobs must be terminated with the <a>TerminateJob</a> operation.
+        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't canceled.
+        /// However, the API operation still succeeds, even if no job is canceled. These jobs
+        /// must be terminated with the <a>TerminateJob</a> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
@@ -103,26 +102,25 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code> or
-        /// <code>PENDING</code> are canceled. A job in<code>RUNNABLE</code> remains in <code>RUNNABLE</code>
-        /// until it reaches the head of the job queue. Then the job status is updated to <code>FAILED</code>.
+        /// Cancels a job in an Batch job queue. Jobs that are in the <c>SUBMITTED</c> or <c>PENDING</c>
+        /// are canceled. A job in<c>RUNNABLE</c> remains in <c>RUNNABLE</c> until it reaches
+        /// the head of the job queue. Then the job status is updated to <c>FAILED</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// A <code>PENDING</code> job is canceled after all dependency jobs are completed. Therefore,
-        /// it may take longer than expected to cancel a job in <code>PENDING</code> status.
+        /// A <c>PENDING</c> job is canceled after all dependency jobs are completed. Therefore,
+        /// it may take longer than expected to cancel a job in <c>PENDING</c> status.
         /// </para>
         ///  
         /// <para>
-        /// When you try to cancel an array parent job in <code>PENDING</code>, Batch attempts
-        /// to cancel all child jobs. The array parent job is canceled when all child jobs are
-        /// completed.
+        /// When you try to cancel an array parent job in <c>PENDING</c>, Batch attempts to cancel
+        /// all child jobs. The array parent job is canceled when all child jobs are completed.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Jobs that progressed to the <code>STARTING</code> or <code>RUNNING</code> state aren't
-        /// canceled. However, the API operation still succeeds, even if no job is canceled. These
-        /// jobs must be terminated with the <a>TerminateJob</a> operation.
+        /// Jobs that progressed to the <c>STARTING</c> or <c>RUNNING</c> state aren't canceled.
+        /// However, the API operation still succeeds, even if no job is canceled. These jobs
+        /// must be terminated with the <a>TerminateJob</a> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelJob service method.</param>
@@ -148,10 +146,9 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Creates an Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
-        /// compute environments. <code>MANAGED</code> compute environments can use Amazon EC2
-        /// or Fargate resources. <code>UNMANAGED</code> compute environments can only use EC2
-        /// resources.
+        /// Creates an Batch compute environment. You can create <c>MANAGED</c> or <c>UNMANAGED</c>
+        /// compute environments. <c>MANAGED</c> compute environments can use Amazon EC2 or Fargate
+        /// resources. <c>UNMANAGED</c> compute environments can only use EC2 resources.
         /// 
         ///  
         /// <para>
@@ -184,7 +181,7 @@ namespace Amazon.Batch
         ///  <note> 
         /// <para>
         /// To create a compute environment that uses EKS resources, the caller must have permissions
-        /// to call <code>eks:DescribeCluster</code>.
+        /// to call <c>eks:DescribeCluster</c>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -221,45 +218,42 @@ namespace Amazon.Batch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Either don't set the service role (<code>serviceRole</code>) parameter or set it to
-        /// the <b>AWSBatchServiceRole</b> service-linked role.
+        /// Either don't set the service role (<c>serviceRole</c>) parameter or set it to the
+        /// <b>AWSBatchServiceRole</b> service-linked role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
-        /// <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
+        /// Set the allocation strategy (<c>allocationStrategy</c>) parameter to <c>BEST_FIT_PROGRESSIVE</c>,
+        /// <c>SPOT_CAPACITY_OPTIMIZED</c>, or <c>SPOT_PRICE_CAPACITY_OPTIMIZED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
-        /// to <code>true</code>. The <code>updateToLatestImageVersion</code> parameter is used
-        /// when you update a compute environment. This parameter is ignored when you create a
-        /// compute environment.
+        /// Set the update to latest image version (<c>updateToLatestImageVersion</c>) parameter
+        /// to <c>true</c>. The <c>updateToLatestImageVersion</c> parameter is used when you update
+        /// a compute environment. This parameter is ignored when you create a compute environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
-        /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
-        /// <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>).
+        /// Don't specify an AMI ID in <c>imageId</c>, <c>imageIdOverride</c> (in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
+        /// <c>ec2Configuration</c> </a>), or in the launch template (<c>launchTemplate</c>).
         /// In that case, Batch selects the latest Amazon ECS optimized AMI that's supported by
         /// Batch at the time the infrastructure update is initiated. Alternatively, you can specify
-        /// the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code> parameters,
-        /// or the launch template identified by the <code>LaunchTemplate</code> properties. Changing
-        /// any of these properties starts an infrastructure update. If the AMI ID is specified
-        /// in the launch template, it can't be replaced by specifying an AMI ID in either the
-        /// <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be replaced
-        /// by specifying a different launch template, or if the launch template version is set
-        /// to <code>$Default</code> or <code>$Latest</code>, by setting either a new default
-        /// version for the launch template (if <code>$Default</code>) or by adding a new version
-        /// to the launch template (if <code>$Latest</code>).
+        /// the AMI ID in the <c>imageId</c> or <c>imageIdOverride</c> parameters, or the launch
+        /// template identified by the <c>LaunchTemplate</c> properties. Changing any of these
+        /// properties starts an infrastructure update. If the AMI ID is specified in the launch
+        /// template, it can't be replaced by specifying an AMI ID in either the <c>imageId</c>
+        /// or <c>imageIdOverride</c> parameters. It can only be replaced by specifying a different
+        /// launch template, or if the launch template version is set to <c>$Default</c> or <c>$Latest</c>,
+        /// by setting either a new default version for the launch template (if <c>$Default</c>)
+        /// or by adding a new version to the launch template (if <c>$Latest</c>).
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If these rules are followed, any update that starts an infrastructure update causes
-        /// the AMI ID to be re-selected. If the <code>version</code> setting in the launch template
-        /// (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
-        /// the latest or default version of the launch template is evaluated up at the time of
-        /// the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
+        /// the AMI ID to be re-selected. If the <c>version</c> setting in the launch template
+        /// (<c>launchTemplate</c>) is set to <c>$Latest</c> or <c>$Default</c>, the latest or
+        /// default version of the launch template is evaluated up at the time of the infrastructure
+        /// update, even if the <c>launchTemplate</c> wasn't updated.
         /// </para>
         ///  </note>
         /// </summary>
@@ -280,10 +274,9 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Creates an Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
-        /// compute environments. <code>MANAGED</code> compute environments can use Amazon EC2
-        /// or Fargate resources. <code>UNMANAGED</code> compute environments can only use EC2
-        /// resources.
+        /// Creates an Batch compute environment. You can create <c>MANAGED</c> or <c>UNMANAGED</c>
+        /// compute environments. <c>MANAGED</c> compute environments can use Amazon EC2 or Fargate
+        /// resources. <c>UNMANAGED</c> compute environments can only use EC2 resources.
         /// 
         ///  
         /// <para>
@@ -316,7 +309,7 @@ namespace Amazon.Batch
         ///  <note> 
         /// <para>
         /// To create a compute environment that uses EKS resources, the caller must have permissions
-        /// to call <code>eks:DescribeCluster</code>.
+        /// to call <c>eks:DescribeCluster</c>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -353,45 +346,42 @@ namespace Amazon.Batch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Either don't set the service role (<code>serviceRole</code>) parameter or set it to
-        /// the <b>AWSBatchServiceRole</b> service-linked role.
+        /// Either don't set the service role (<c>serviceRole</c>) parameter or set it to the
+        /// <b>AWSBatchServiceRole</b> service-linked role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
-        /// <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
+        /// Set the allocation strategy (<c>allocationStrategy</c>) parameter to <c>BEST_FIT_PROGRESSIVE</c>,
+        /// <c>SPOT_CAPACITY_OPTIMIZED</c>, or <c>SPOT_PRICE_CAPACITY_OPTIMIZED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
-        /// to <code>true</code>. The <code>updateToLatestImageVersion</code> parameter is used
-        /// when you update a compute environment. This parameter is ignored when you create a
-        /// compute environment.
+        /// Set the update to latest image version (<c>updateToLatestImageVersion</c>) parameter
+        /// to <c>true</c>. The <c>updateToLatestImageVersion</c> parameter is used when you update
+        /// a compute environment. This parameter is ignored when you create a compute environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
-        /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
-        /// <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>).
+        /// Don't specify an AMI ID in <c>imageId</c>, <c>imageIdOverride</c> (in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
+        /// <c>ec2Configuration</c> </a>), or in the launch template (<c>launchTemplate</c>).
         /// In that case, Batch selects the latest Amazon ECS optimized AMI that's supported by
         /// Batch at the time the infrastructure update is initiated. Alternatively, you can specify
-        /// the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code> parameters,
-        /// or the launch template identified by the <code>LaunchTemplate</code> properties. Changing
-        /// any of these properties starts an infrastructure update. If the AMI ID is specified
-        /// in the launch template, it can't be replaced by specifying an AMI ID in either the
-        /// <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be replaced
-        /// by specifying a different launch template, or if the launch template version is set
-        /// to <code>$Default</code> or <code>$Latest</code>, by setting either a new default
-        /// version for the launch template (if <code>$Default</code>) or by adding a new version
-        /// to the launch template (if <code>$Latest</code>).
+        /// the AMI ID in the <c>imageId</c> or <c>imageIdOverride</c> parameters, or the launch
+        /// template identified by the <c>LaunchTemplate</c> properties. Changing any of these
+        /// properties starts an infrastructure update. If the AMI ID is specified in the launch
+        /// template, it can't be replaced by specifying an AMI ID in either the <c>imageId</c>
+        /// or <c>imageIdOverride</c> parameters. It can only be replaced by specifying a different
+        /// launch template, or if the launch template version is set to <c>$Default</c> or <c>$Latest</c>,
+        /// by setting either a new default version for the launch template (if <c>$Default</c>)
+        /// or by adding a new version to the launch template (if <c>$Latest</c>).
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If these rules are followed, any update that starts an infrastructure update causes
-        /// the AMI ID to be re-selected. If the <code>version</code> setting in the launch template
-        /// (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
-        /// the latest or default version of the launch template is evaluated up at the time of
-        /// the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
+        /// the AMI ID to be re-selected. If the <c>version</c> setting in the launch template
+        /// (<c>launchTemplate</c>) is set to <c>$Latest</c> or <c>$Default</c>, the latest or
+        /// default version of the launch template is evaluated up at the time of the infrastructure
+        /// update, even if the <c>launchTemplate</c> wasn't updated.
         /// </para>
         ///  </note>
         /// </summary>
@@ -530,7 +520,7 @@ namespace Amazon.Batch
         /// 
         ///  
         /// <para>
-        /// Before you can delete a compute environment, you must set its state to <code>DISABLED</code>
+        /// Before you can delete a compute environment, you must set its state to <c>DISABLED</c>
         /// with the <a>UpdateComputeEnvironment</a> API operation and disassociate it from any
         /// job queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
         /// use Fargate resources must terminate all active jobs on that compute environment before
@@ -559,7 +549,7 @@ namespace Amazon.Batch
         /// 
         ///  
         /// <para>
-        /// Before you can delete a compute environment, you must set its state to <code>DISABLED</code>
+        /// Before you can delete a compute environment, you must set its state to <c>DISABLED</c>
         /// with the <a>UpdateComputeEnvironment</a> API operation and disassociate it from any
         /// job queues with the <a>UpdateJobQueue</a> API operation. Compute environments that
         /// use Fargate resources must terminate all active jobs on that compute environment before
@@ -598,7 +588,7 @@ namespace Amazon.Batch
         ///  
         /// <para>
         /// It's not necessary to disassociate compute environments from a queue before submitting
-        /// a <code>DeleteJobQueue</code> request.
+        /// a <c>DeleteJobQueue</c> request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobQueue service method.</param>
@@ -626,7 +616,7 @@ namespace Amazon.Batch
         ///  
         /// <para>
         /// It's not necessary to disassociate compute environments from a queue before submitting
-        /// a <code>DeleteJobQueue</code> request.
+        /// a <c>DeleteJobQueue</c> request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteJobQueue service method.</param>
@@ -756,9 +746,9 @@ namespace Amazon.Batch
         /// 
         ///  
         /// <para>
-        /// If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
-        /// operation to determine the <code>ecsClusterArn</code> that you launch your Amazon
-        /// ECS container instances into.
+        /// If you're using an unmanaged compute environment, you can use the <c>DescribeComputeEnvironment</c>
+        /// operation to determine the <c>ecsClusterArn</c> that you launch your Amazon ECS container
+        /// instances into.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComputeEnvironments service method.</param>
@@ -782,9 +772,9 @@ namespace Amazon.Batch
         /// 
         ///  
         /// <para>
-        /// If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
-        /// operation to determine the <code>ecsClusterArn</code> that you launch your Amazon
-        /// ECS container instances into.
+        /// If you're using an unmanaged compute environment, you can use the <c>DescribeComputeEnvironment</c>
+        /// operation to determine the <c>ecsClusterArn</c> that you launch your Amazon ECS container
+        /// instances into.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeComputeEnvironments service method.</param>
@@ -810,8 +800,8 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Describes a list of job definitions. You can specify a <code>status</code> (such as
-        /// <code>ACTIVE</code>) to only return job definitions that match that status.
+        /// Describes a list of job definitions. You can specify a <c>status</c> (such as <c>ACTIVE</c>)
+        /// to only return job definitions that match that status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobDefinitions service method.</param>
         /// 
@@ -830,8 +820,8 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Describes a list of job definitions. You can specify a <code>status</code> (such as
-        /// <code>ACTIVE</code>) to only return job definitions that match that status.
+        /// Describes a list of job definitions. You can specify a <c>status</c> (such as <c>ACTIVE</c>)
+        /// to only return job definitions that match that status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJobDefinitions service method.</param>
         /// <param name="cancellationToken">
@@ -1008,8 +998,8 @@ namespace Amazon.Batch
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can filter the results by job status with the <code>jobStatus</code> parameter.
-        /// If you don't specify a status, only <code>RUNNING</code> jobs are returned.
+        /// You can filter the results by job status with the <c>jobStatus</c> parameter. If you
+        /// don't specify a status, only <c>RUNNING</c> jobs are returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
@@ -1049,8 +1039,8 @@ namespace Amazon.Batch
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can filter the results by job status with the <code>jobStatus</code> parameter.
-        /// If you don't specify a status, only <code>RUNNING</code> jobs are returned.
+        /// You can filter the results by job status with the <c>jobStatus</c> parameter. If you
+        /// don't specify a status, only <c>RUNNING</c> jobs are returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListJobs service method.</param>
@@ -1214,11 +1204,10 @@ namespace Amazon.Batch
         /// <summary>
         /// Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
         /// override parameters defined in the job definition. vCPU and memory requirements that
-        /// are specified in the <code>resourceRequirements</code> objects in the job definition
-        /// are the exception. They can't be overridden this way using the <code>memory</code>
-        /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
-        /// parameters in a <code>resourceRequirements</code> object that's included in the <code>containerOverrides</code>
-        /// parameter.
+        /// are specified in the <c>resourceRequirements</c> objects in the job definition are
+        /// the exception. They can't be overridden this way using the <c>memory</c> and <c>vcpus</c>
+        /// parameters. Rather, you must specify updates to job definition parameters in a <c>resourceRequirements</c>
+        /// object that's included in the <c>containerOverrides</c> parameter.
         /// 
         ///  <note> 
         /// <para>
@@ -1252,11 +1241,10 @@ namespace Amazon.Batch
         /// <summary>
         /// Submits an Batch job from a job definition. Parameters that are specified during <a>SubmitJob</a>
         /// override parameters defined in the job definition. vCPU and memory requirements that
-        /// are specified in the <code>resourceRequirements</code> objects in the job definition
-        /// are the exception. They can't be overridden this way using the <code>memory</code>
-        /// and <code>vcpus</code> parameters. Rather, you must specify updates to job definition
-        /// parameters in a <code>resourceRequirements</code> object that's included in the <code>containerOverrides</code>
-        /// parameter.
+        /// are specified in the <c>resourceRequirements</c> objects in the job definition are
+        /// the exception. They can't be overridden this way using the <c>memory</c> and <c>vcpus</c>
+        /// parameters. Rather, you must specify updates to job definition parameters in a <c>resourceRequirements</c>
+        /// object that's included in the <c>containerOverrides</c> parameter.
         /// 
         ///  <note> 
         /// <para>
@@ -1294,7 +1282,7 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags that are associated with that resource
         /// are deleted as well. Batch resources that support tags are compute environments, jobs,
@@ -1318,7 +1306,7 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags that are associated with that resource
         /// are deleted as well. Batch resources that support tags are compute environments, jobs,
@@ -1348,9 +1336,9 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code>
-        /// state are terminated, which causes them to transition to <code>FAILED</code>. Jobs
-        /// that have not progressed to the <code>STARTING</code> state are cancelled.
+        /// Terminates a job in a job queue. Jobs that are in the <c>STARTING</c> or <c>RUNNING</c>
+        /// state are terminated, which causes them to transition to <c>FAILED</c>. Jobs that
+        /// have not progressed to the <c>STARTING</c> state are cancelled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJob service method.</param>
         /// 
@@ -1369,9 +1357,9 @@ namespace Amazon.Batch
 
 
         /// <summary>
-        /// Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code>
-        /// state are terminated, which causes them to transition to <code>FAILED</code>. Jobs
-        /// that have not progressed to the <code>STARTING</code> state are cancelled.
+        /// Terminates a job in a job queue. Jobs that are in the <c>STARTING</c> or <c>RUNNING</c>
+        /// state are terminated, which causes them to transition to <c>FAILED</c>. Jobs that
+        /// have not progressed to the <c>STARTING</c> state are cancelled.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TerminateJob service method.</param>
         /// <param name="cancellationToken">

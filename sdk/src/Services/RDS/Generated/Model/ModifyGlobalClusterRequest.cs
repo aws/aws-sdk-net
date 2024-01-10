@@ -56,8 +56,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be enabled if you specify a value for the <code>EngineVersion</code>
-        /// parameter that's a different major version than the global cluster's current version.
+        /// Constraints: Must be enabled if you specify a value for the <c>EngineVersion</c> parameter
+        /// that's a different major version than the global cluster's current version.
         /// </para>
         ///  
         /// <para>
@@ -104,23 +104,23 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for <code>aurora-mysql</code> (for MySQL-based
+        /// To list all of the available engine versions for <c>aurora-mysql</c> (for MySQL-based
         /// Aurora global databases), use the following command:
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases
-        /// == `true`].[EngineVersion]'</code> 
+        ///  <c>aws rds describe-db-engine-versions --engine aurora-mysql --query '*[]|[?SupportsGlobalDatabases
+        /// == `true`].[EngineVersion]'</c> 
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for <code>aurora-postgresql</code> (for
-        /// PostgreSQL-based Aurora global databases), use the following command:
+        /// To list all of the available engine versions for <c>aurora-postgresql</c> (for PostgreSQL-based
+        /// Aurora global databases), use the following command:
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases
-        /// == `true`].[EngineVersion]'</code> 
+        ///  <c>aws rds describe-db-engine-versions --engine aurora-postgresql --query '*[]|[?SupportsGlobalDatabases
+        /// == `true`].[EngineVersion]'</c> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -186,7 +186,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster2</code> 
+        /// Example: <c>my-cluster2</c> 
         /// </para>
         /// </summary>
         public string NewGlobalClusterIdentifier

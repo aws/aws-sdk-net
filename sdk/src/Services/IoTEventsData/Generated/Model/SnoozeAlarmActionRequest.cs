@@ -119,8 +119,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property SnoozeDuration. 
         /// <para>
-        /// The snooze time in seconds. The alarm automatically changes to the <code>NORMAL</code>
-        /// state after this duration.
+        /// The snooze time in seconds. The alarm automatically changes to the <c>NORMAL</c> state
+        /// after this duration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

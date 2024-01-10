@@ -92,7 +92,7 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// Indicates whether Amazon WorkDocs is enabled or disabled. If you have enabled this
         /// parameter and WorkDocs is not available in the Region, you will receive an OperationNotSupportedException
-        /// error. Set <code>EnableWorkDocs</code> to disabled, and try again.
+        /// error. Set <c>EnableWorkDocs</c> to disabled, and try again.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -152,10 +152,10 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property Tenancy. 
         /// <para>
         /// Indicates whether your WorkSpace directory is dedicated or shared. To use Bring Your
-        /// Own License (BYOL) images, this value must be set to <code>DEDICATED</code> and your
-        /// Amazon Web Services account must be enabled for BYOL. If your account has not been
-        /// enabled for BYOL, you will receive an InvalidParameterValuesException error. For more
-        /// information about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+        /// Own License (BYOL) images, this value must be set to <c>DEDICATED</c> and your Amazon
+        /// Web Services account must be enabled for BYOL. If your account has not been enabled
+        /// for BYOL, you will receive an InvalidParameterValuesException error. For more information
+        /// about BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
         /// Your Own Windows Desktop Images</a>.
         /// </para>
         /// </summary>

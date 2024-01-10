@@ -181,10 +181,9 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current status of the VPC Ingress Connection. The VPC Ingress Connection displays
-        /// one of the following statuses: <code>AVAILABLE</code>, <code>PENDING_CREATION</code>,
-        /// <code>PENDING_UPDATE</code>, <code>PENDING_DELETION</code>,<code>FAILED_CREATION</code>,
-        /// <code>FAILED_UPDATE</code>, <code>FAILED_DELETION</code>, and <code>DELETED</code>..
-        /// 
+        /// one of the following statuses: <c>AVAILABLE</c>, <c>PENDING_CREATION</c>, <c>PENDING_UPDATE</c>,
+        /// <c>PENDING_DELETION</c>,<c>FAILED_CREATION</c>, <c>FAILED_UPDATE</c>, <c>FAILED_DELETION</c>,
+        /// and <c>DELETED</c>.. 
         /// </para>
         /// </summary>
         public VpcIngressConnectionStatus Status

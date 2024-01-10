@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>CreateLayer</code> request.
+    /// Contains the response to a <c>CreateLayer</c> request.
     /// </summary>
     public partial class CreateLayerResponse : AmazonWebServiceResponse
     {

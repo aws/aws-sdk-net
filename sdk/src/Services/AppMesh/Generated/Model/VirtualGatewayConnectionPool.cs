@@ -38,7 +38,7 @@ namespace Amazon.AppMesh.Model
     /// </para>
     ///  
     /// <para>
-    /// If not present the default value for <code>maxPendingRequests</code> is <code>2147483647</code>.
+    /// If not present the default value for <c>maxPendingRequests</c> is <c>2147483647</c>.
     /// </para>
     /// </summary>
     public partial class VirtualGatewayConnectionPool

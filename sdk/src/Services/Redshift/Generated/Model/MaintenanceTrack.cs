@@ -30,10 +30,10 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Defines a maintenance track that determines which Amazon Redshift version to apply
-    /// during a maintenance window. If the value for <code>MaintenanceTrack</code> is <code>current</code>,
+    /// during a maintenance window. If the value for <c>MaintenanceTrack</c> is <c>current</c>,
     /// the cluster is updated to the most recently certified maintenance release. If the
-    /// value is <code>trailing</code>, the cluster is updated to the previously certified
-    /// maintenance release.
+    /// value is <c>trailing</c>, the cluster is updated to the previously certified maintenance
+    /// release.
     /// </summary>
     public partial class MaintenanceTrack
     {
@@ -63,7 +63,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaintenanceTrackName. 
         /// <para>
-        /// The name of the maintenance track. Possible values are <code>current</code> and <code>trailing</code>.
+        /// The name of the maintenance track. Possible values are <c>current</c> and <c>trailing</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

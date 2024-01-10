@@ -89,8 +89,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DataflowEdges. 
         /// <para>
-        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code>
-        /// and a <i>to</i> <code>Config</code>.
+        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <c>Config</c>
+        /// and a <i>to</i> <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -258,7 +258,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property TrackingConfigArn. 
         /// <para>
-        /// ARN of a tracking <code>Config</code>.
+        /// ARN of a tracking <c>Config</c>.
         /// </para>
         /// </summary>
         public string TrackingConfigArn

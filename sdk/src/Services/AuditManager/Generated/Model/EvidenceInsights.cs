@@ -70,7 +70,7 @@ namespace Amazon.AuditManager.Model
         ///  <note> 
         /// <para>
         /// If evidence has a compliance check status of <i>not applicable</i> in the console,
-        /// it's classified as <i>inconclusive</i> in <code>EvidenceInsights</code> data.
+        /// it's classified as <i>inconclusive</i> in <c>EvidenceInsights</c> data.
         /// </para>
         ///  </note>
         /// </summary>

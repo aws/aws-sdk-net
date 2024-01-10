@@ -45,9 +45,9 @@ namespace Amazon.Synthetics.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>TagResource</code> action with a resource that already has tags.
-    /// If you specify a new tag key for the resource, this tag is appended to the list of
-    /// tags associated with the resource. If you specify a tag key that is already associated
+    /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+    /// you specify a new tag key for the resource, this tag is appended to the list of tags
+    /// associated with the resource. If you specify a tag key that is already associated
     /// with the resource, the new tag value that you specify replaces the previous value
     /// for that tag.
     /// </para>
@@ -68,13 +68,13 @@ namespace Amazon.Synthetics.Model
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a canary is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
-        /// </code>.
+        /// The ARN format of a canary is <c>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:canary:<i>canary-name</i>
+        /// </c>.
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a group is <code>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
-        /// </code> 
+        /// The ARN format of a group is <c>arn:aws:synthetics:<i>Region</i>:<i>account-id</i>:group:<i>group-name</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

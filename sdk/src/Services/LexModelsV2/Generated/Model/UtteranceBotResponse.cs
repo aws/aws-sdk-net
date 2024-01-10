@@ -62,22 +62,22 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PlainText</code> – A plain text string.
+        ///  <c>PlainText</c> – A plain text string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CustomPayload</code> – A response string that you can customize to include
-        /// data or metadata for your application.
+        ///  <c>CustomPayload</c> – A response string that you can customize to include data or
+        /// metadata for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SSML</code> – A string that includes Speech Synthesis Markup Language to customize
+        ///  <c>SSML</c> – A string that includes Speech Synthesis Markup Language to customize
         /// the audio response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ImageResponseCard</code> – An image with buttons that the customer can select.
-        /// See <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a>
+        ///  <c>ImageResponseCard</c> – An image with buttons that the customer can select. See
+        /// <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_ImageResponseCard.html">ImageResponseCard</a>
         /// for more information.
         /// </para>
         ///  </li> </ul>

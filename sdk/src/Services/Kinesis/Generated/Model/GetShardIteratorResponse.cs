@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>GetShardIterator</code>.
+    /// Represents the output for <c>GetShardIterator</c>.
     /// </summary>
     public partial class GetShardIteratorResponse : AmazonWebServiceResponse
     {

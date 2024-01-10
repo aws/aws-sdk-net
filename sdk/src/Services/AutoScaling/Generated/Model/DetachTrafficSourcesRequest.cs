@@ -34,10 +34,10 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// When you detach a traffic source, it enters the <code>Removing</code> state while
-    /// deregistering the instances in the group. When all instances are deregistered, then
-    /// you can no longer describe the traffic source using the <a>DescribeTrafficSources</a>
-    /// API call. The instances continue to run.
+    /// When you detach a traffic source, it enters the <c>Removing</c> state while deregistering
+    /// the instances in the group. When all instances are deregistered, then you can no longer
+    /// describe the traffic source using the <a>DescribeTrafficSources</a> API call. The
+    /// instances continue to run.
     /// </para>
     /// </summary>
     public partial class DetachTrafficSourcesRequest : AmazonAutoScalingRequest

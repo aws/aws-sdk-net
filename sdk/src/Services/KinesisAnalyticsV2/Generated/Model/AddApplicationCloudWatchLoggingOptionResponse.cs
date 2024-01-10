@@ -60,8 +60,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
         /// The new version ID of the Kinesis Data Analytics application. Kinesis Data Analytics
-        /// updates the <code>ApplicationVersionId</code> each time you change the CloudWatch
-        /// logging options. 
+        /// updates the <c>ApplicationVersionId</c> each time you change the CloudWatch logging
+        /// options. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

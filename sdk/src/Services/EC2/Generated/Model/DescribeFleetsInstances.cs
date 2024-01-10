@@ -115,7 +115,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The value is <code>Windows</code> for Windows instances. Otherwise, the value is blank.
+        /// The value is <c>Windows</c> for Windows instances. Otherwise, the value is blank.
         /// </para>
         /// </summary>
         public PlatformValues Platform

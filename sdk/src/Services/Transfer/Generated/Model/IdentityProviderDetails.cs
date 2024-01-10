@@ -82,8 +82,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property InvocationRole. 
         /// <para>
-        /// This parameter is only applicable if your <code>IdentityProviderType</code> is <code>API_GATEWAY</code>.
-        /// Provides the type of <code>InvocationRole</code> used to authenticate the user account.
+        /// This parameter is only applicable if your <c>IdentityProviderType</c> is <c>API_GATEWAY</c>.
+        /// Provides the type of <c>InvocationRole</c> used to authenticate the user account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -107,23 +107,23 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PASSWORD</code> - users must provide their password to connect.
+        ///  <c>PASSWORD</c> - users must provide their password to connect.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC_KEY</code> - users must provide their private key to connect.
+        ///  <c>PUBLIC_KEY</c> - users must provide their private key to connect.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC_KEY_OR_PASSWORD</code> - users can authenticate with either their password
+        ///  <c>PUBLIC_KEY_OR_PASSWORD</c> - users can authenticate with either their password
         /// or their key. This is the default value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC_KEY_AND_PASSWORD</code> - users must provide both their private key
-        /// and their password to connect. The server checks the key first, and then if the key
-        /// is valid, the system prompts for a password. If the private key provided does not
-        /// match the public key that is stored, authentication fails.
+        ///  <c>PUBLIC_KEY_AND_PASSWORD</c> - users must provide both their private key and their
+        /// password to connect. The server checks the key first, and then if the key is valid,
+        /// the system prompts for a password. If the private key provided does not match the
+        /// public key that is stored, authentication fails.
         /// </para>
         ///  </li> </ul>
         /// </summary>

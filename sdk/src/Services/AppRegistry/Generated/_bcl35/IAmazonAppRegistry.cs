@@ -118,34 +118,34 @@ namespace Amazon.AppRegistry
         /// </para>
         ///  
         /// <para>
-        ///  You must have the following permissions to associate a resource using the <code>OPTIONS</code>
-        /// parameter set to <code>APPLY_APPLICATION_TAG</code>. 
+        ///  You must have the following permissions to associate a resource using the <c>OPTIONS</c>
+        /// parameter set to <c>APPLY_APPLICATION_TAG</c>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tag:GetResources</code> 
+        ///  <c>tag:GetResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag:TagResources</code> 
+        ///  <c>tag:TagResources</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  You must also have these additional permissions if you don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code>
+        ///  You must also have these additional permissions if you don't use the <c>AWSServiceCatalogAppRegistryFullAccess</c>
         /// policy. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
         /// in the AppRegistry Administrator Guide. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:AssociateResource</code> 
+        ///  <c>resource-groups:AssociateResource</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:UpdateStack</code> 
+        ///  <c>cloudformation:UpdateStack</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:DescribeStacks</code> 
+        ///  <c>cloudformation:DescribeStacks</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -427,7 +427,7 @@ namespace Amazon.AppRegistry
         /// <summary>
         /// Disassociates an attribute group from an application to remove the extra attributes
         /// contained in the attribute group from the application's metadata. This operation reverts
-        /// <code>AssociateAttributeGroup</code>.
+        /// <c>AssociateAttributeGroup</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAttributeGroup service method.</param>
         /// 
@@ -486,34 +486,34 @@ namespace Amazon.AppRegistry
         ///  
         /// <para>
         ///  You must have the following permissions to remove a resource that's been associated
-        /// with an application using the <code>APPLY_APPLICATION_TAG</code> option for <a href="https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html">AssociateResource</a>.
+        /// with an application using the <c>APPLY_APPLICATION_TAG</c> option for <a href="https://docs.aws.amazon.com/servicecatalog/latest/dg/API_app-registry_AssociateResource.html">AssociateResource</a>.
         /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tag:GetResources</code> 
+        ///  <c>tag:GetResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag:UntagResources</code> 
+        ///  <c>tag:UntagResources</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  You must also have the following permissions if you don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code>
+        ///  You must also have the following permissions if you don't use the <c>AWSServiceCatalogAppRegistryFullAccess</c>
         /// policy. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
         /// in the AppRegistry Administrator Guide. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:DisassociateResource</code> 
+        ///  <c>resource-groups:DisassociateResource</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:UpdateStack</code> 
+        ///  <c>cloudformation:UpdateStack</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:DescribeStacks</code> 
+        ///  <c>cloudformation:DescribeStacks</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -576,7 +576,7 @@ namespace Amazon.AppRegistry
         /// Retrieves metadata information about one of your applications. The application can
         /// be specified by its ARN, ID, or name (which is unique within one account in one region
         /// at a given point in time). Specify by ARN or ID in automated workflows if you want
-        /// to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code>
+        /// to make sure that the exact same application is returned or a <c>ResourceNotFoundException</c>
         /// is thrown, avoiding the ABA addressing problem.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApplication service method.</param>
@@ -733,7 +733,7 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Retrieves a <code>TagKey</code> configuration from an account.
+        /// Retrieves a <c>TagKey</c> configuration from an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetConfiguration service method.</param>
         /// 
@@ -1075,7 +1075,7 @@ namespace Amazon.AppRegistry
 
 
         /// <summary>
-        /// Associates a <code>TagKey</code> configuration to an account.
+        /// Associates a <c>TagKey</c> configuration to an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutConfiguration service method.</param>
         /// 

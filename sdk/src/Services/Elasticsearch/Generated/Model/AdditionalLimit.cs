@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// List of limits that are specific to a given InstanceType and for each of it's <code>
-    /// <a>InstanceRole</a> </code> .
+    /// List of limits that are specific to a given InstanceType and for each of it's <c>
+    /// <a>InstanceRole</a> </c> .
     /// </summary>
     public partial class AdditionalLimit
     {
@@ -41,13 +41,12 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property LimitName. 
         /// <para>
         ///  Name of Additional Limit is specific to a given InstanceType and for each of it's
-        /// <code> <a>InstanceRole</a> </code> etc. <br/> Attributes and their details: <br/>
-        /// <ul> <li>MaximumNumberOfDataNodesSupported</li> This attribute will be present in
-        /// Master node only to specify how much data nodes upto which given <code> <a>ESPartitionInstanceType</a>
-        /// </code> can support as master node. <li>MaximumNumberOfDataNodesWithoutMasterNode</li>
-        /// This attribute will be present in Data node only to specify how much data nodes of
-        /// given <code> <a>ESPartitionInstanceType</a> </code> upto which you don't need any
-        /// master nodes to govern them. </ul> 
+        /// <c> <a>InstanceRole</a> </c> etc. <br/> Attributes and their details: <br/> <ul> <li>MaximumNumberOfDataNodesSupported</li>
+        /// This attribute will be present in Master node only to specify how much data nodes
+        /// upto which given <c> <a>ESPartitionInstanceType</a> </c> can support as master node.
+        /// <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be present
+        /// in Data node only to specify how much data nodes of given <c> <a>ESPartitionInstanceType</a>
+        /// </c> upto which you don't need any master nodes to govern them. </ul> 
         /// </para>
         /// </summary>
         public string LimitName
@@ -65,7 +64,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property LimitValues. 
         /// <para>
-        ///  Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . 
+        ///  Value for given <c> <a>AdditionalLimit$LimitName</a> </c> . 
         /// </para>
         /// </summary>
         public List<string> LimitValues

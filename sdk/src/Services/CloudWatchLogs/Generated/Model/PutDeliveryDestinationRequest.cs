@@ -47,8 +47,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>, which
-    /// is a logical object that represents the actual delivery destination. 
+    /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
+    /// a logical object that represents the actual delivery destination. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,8 +58,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-    /// delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+    /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+    /// source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
     /// 
     /// </para>
     ///  </li> </ul> 

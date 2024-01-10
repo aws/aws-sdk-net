@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Defines the X.509 <code>CertificatePolicies</code> extension.
+    /// Defines the X.509 <c>CertificatePolicies</c> extension.
     /// </summary>
     public partial class PolicyInformation
     {
@@ -60,8 +60,8 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property PolicyQualifiers. 
         /// <para>
-        /// Modifies the given <code>CertPolicyId</code> with a qualifier. Amazon Web Services
-        /// Private CA supports the certification practice statement (CPS) qualifier.
+        /// Modifies the given <c>CertPolicyId</c> with a qualifier. Amazon Web Services Private
+        /// CA supports the certification practice statement (CPS) qualifier.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

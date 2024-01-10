@@ -57,7 +57,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags returned by the <code>ListTagsForResource</code> operation.
+        /// List of tags returned by the <c>ListTagsForResource</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

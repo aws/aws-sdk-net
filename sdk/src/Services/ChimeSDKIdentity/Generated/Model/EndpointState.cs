@@ -29,31 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>.
+    /// A read-only field that represents the state of an <c>AppInstanceUserEndpoint</c>.
     /// Supported values:
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able
-    /// to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code>
-    /// remains empty.
+    ///  <c>ACTIVE</c>: The <c>AppInstanceUserEndpoint</c> is active and able to receive messages.
+    /// When <c>ACTIVE</c>, the <c>EndpointStatusReason</c> remains empty.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't
-    /// receive message. When INACTIVE, the corresponding reason will be conveyed through
-    /// EndpointStatusReason.
+    ///  <c>INACTIVE</c>: The <c>AppInstanceUserEndpoint</c> is inactive and can't receive
+    /// message. When INACTIVE, the corresponding reason will be conveyed through EndpointStatusReason.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code>
-    /// is <code>INACTIVE</code> due to invalid device token
+    ///  <c>INVALID_DEVICE_TOKEN</c> indicates that an <c>AppInstanceUserEndpoint</c> is <c>INACTIVE</c>
+    /// due to invalid device token
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code>
-    /// is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the
-    /// <code>ResourceArn</code> field.
+    ///  <c>INVALID_PINPOINT_ARN</c> indicates that an <c>AppInstanceUserEndpoint</c> is <c>INACTIVE</c>
+    /// due to an invalid pinpoint ARN that was input through the <c>ResourceArn</c> field.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -65,7 +62,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Enum that indicates the Status of an <code>AppInstanceUserEndpoint</code>.
+        /// Enum that indicates the Status of an <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +81,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The reason for the <code>EndpointStatus</code>.
+        /// The reason for the <c>EndpointStatus</c>.
         /// </para>
         /// </summary>
         public EndpointStatusReason StatusReason

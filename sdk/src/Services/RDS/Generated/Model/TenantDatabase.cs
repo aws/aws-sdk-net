@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// A tenant database in the DB instance. This data type is an element in the response
-    /// to the <code>DescribeTenantDatabases</code> action.
+    /// to the <c>DescribeTenantDatabases</c> action.
     /// </summary>
     public partial class TenantDatabase
     {
@@ -141,7 +141,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NcharCharacterSetName. 
         /// <para>
-        /// The <code>NCHAR</code> character set name of the tenant database.
+        /// The <c>NCHAR</c> character set name of the tenant database.
         /// </para>
         /// </summary>
         public string NcharCharacterSetName

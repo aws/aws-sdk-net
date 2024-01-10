@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetBatchPrediction</code> operation.
+    /// Represents the output of a <c>GetBatchPrediction</c> operation.
     /// 
     ///  
     /// <para>
     ///  The content consists of the detailed metadata, the status, and the data file information
-    /// of a <code>Batch Prediction</code>.
+    /// of a <c>Batch Prediction</c>.
     /// </para>
     /// </summary>
     public partial class BatchPrediction
@@ -59,8 +59,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionDataSourceId. 
         /// <para>
-        /// The ID of the <code>DataSource</code> that points to the group of observations to
-        /// predict.
+        /// The ID of the <c>DataSource</c> that points to the group of observations to predict.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -79,8 +78,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// The ID assigned to the <code>BatchPrediction</code> at creation. This value should
-        /// be identical to the value of the <code>BatchPredictionID</code> in the request. 
+        /// The ID assigned to the <c>BatchPrediction</c> at creation. This value should be identical
+        /// to the value of the <c>BatchPredictionID</c> in the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -114,8 +113,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time that the <code>BatchPrediction</code> was created. The time is expressed
-        /// in epoch time.
+        /// The time that the <c>BatchPrediction</c> was created. The time is expressed in epoch
+        /// time.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -133,8 +132,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedByIamUser. 
         /// <para>
-        /// The AWS user account that invoked the <code>BatchPrediction</code>. The account type
-        /// can be either an AWS root account or an AWS Identity and Access Management (IAM) user
+        /// The AWS user account that invoked the <c>BatchPrediction</c>. The account type can
+        /// be either an AWS root account or an AWS Identity and Access Management (IAM) user
         /// account.
         /// </para>
         /// </summary>
@@ -203,8 +202,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time of the most recent edit to the <code>BatchPrediction</code>. The time is
-        /// expressed in epoch time.
+        /// The time of the most recent edit to the <c>BatchPrediction</c>. The time is expressed
+        /// in epoch time.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -241,7 +240,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code>
+        /// The ID of the <c>MLModel</c> that generated predictions for the <c>BatchPrediction</c>
         /// request.
         /// </para>
         /// </summary>
@@ -261,7 +260,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user-supplied name or description of the <code>BatchPrediction</code>.
+        /// A user-supplied name or description of the <c>BatchPrediction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -281,8 +280,8 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property OutputUri. 
         /// <para>
         /// The location of an Amazon S3 bucket or directory to receive the operation results.
-        /// The following substrings are not allowed in the <code>s3 key</code> portion of the
-        /// <code>outputURI</code> field: ':', '//', '/./', '/../'.
+        /// The following substrings are not allowed in the <c>s3 key</c> portion of the <c>outputURI</c>
+        /// field: ':', '//', '/./', '/../'.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -316,31 +315,30 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the <code>BatchPrediction</code>. This element can have one of the following
+        /// The status of the <c>BatchPrediction</c>. This element can have one of the following
         /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to
-        /// generate predictions for a batch of observations.
+        ///  <c>PENDING</c> - Amazon Machine Learning (Amazon ML) submitted a request to generate
+        /// predictions for a batch of observations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INPROGRESS</code> - The process is underway.
+        ///  <c>INPROGRESS</c> - The process is underway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The request to perform a batch prediction did not run to completion.
+        ///  <c>FAILED</c> - The request to perform a batch prediction did not run to completion.
         /// It is not usable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The batch prediction process completed successfully.
+        ///  <c>COMPLETED</c> - The batch prediction process completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It
-        /// is not usable.
+        ///  <c>DELETED</c> - The <c>BatchPrediction</c> is marked as deleted. It is not usable.
         /// </para>
         ///  </li> </ul>
         /// </summary>

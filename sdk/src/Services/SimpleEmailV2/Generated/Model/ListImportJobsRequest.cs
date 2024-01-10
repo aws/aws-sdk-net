@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property ImportDestinationType. 
         /// <para>
         /// The destination of the import job, which can be used to list import jobs that have
-        /// a certain <code>ImportDestinationType</code>.
+        /// a certain <c>ImportDestinationType</c>.
         /// </para>
         /// </summary>
         public ImportDestinationType ImportDestinationType
@@ -61,8 +61,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A string token indicating that there might be additional import jobs available to
-        /// be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with
-        /// the same parameters to retrieve the next page of import jobs.
+        /// be listed. Copy this token to a subsequent call to <c>ListImportJobs</c> with the
+        /// same parameters to retrieve the next page of import jobs.
         /// </para>
         /// </summary>
         public string NextToken
@@ -81,9 +81,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property PageSize. 
         /// <para>
         /// Maximum number of import jobs to return at once. Use this parameter to paginate results.
-        /// If additional import jobs exist beyond the specified limit, the <code>NextToken</code>
-        /// element is sent in the response. Use the <code>NextToken</code> value in subsequent
-        /// requests to retrieve additional addresses.
+        /// If additional import jobs exist beyond the specified limit, the <c>NextToken</c> element
+        /// is sent in the response. Use the <c>NextToken</c> value in subsequent requests to
+        /// retrieve additional addresses.
         /// </para>
         /// </summary>
         public int PageSize

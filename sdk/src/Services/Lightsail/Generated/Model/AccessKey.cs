@@ -42,7 +42,7 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// The <code>secretAccessKey</code> value is returned only in response to the <code>CreateBucketAccessKey</code>
+    /// The <c>secretAccessKey</c> value is returned only in response to the <c>CreateBucketAccessKey</c>
     /// action. You can get a secret access key only when you first create an access key;
     /// you cannot get the secret access key later. If you lose the secret access key, you
     /// must create a new access key.
@@ -102,8 +102,8 @@ namespace Amazon.Lightsail.Model
         ///  <note> 
         /// <para>
         /// This object does not include data in the response of a <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_CreateBucketAccessKey.html">CreateBucketAccessKey</a>
-        /// action. If the access key has not been used, the <code>region</code> and <code>serviceName</code>
-        /// values are <code>N/A</code>, and the <code>lastUsedDate</code> value is null.
+        /// action. If the access key has not been used, the <c>region</c> and <c>serviceName</c>
+        /// values are <c>N/A</c>, and the <c>lastUsedDate</c> value is null.
         /// </para>
         ///  </note>
         /// </summary>
@@ -149,8 +149,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// A status of <code>Active</code> means that the key is valid, while <code>Inactive</code>
-        /// means it is not.
+        /// A status of <c>Active</c> means that the key is valid, while <c>Inactive</c> means
+        /// it is not.
         /// </para>
         /// </summary>
         public StatusType Status

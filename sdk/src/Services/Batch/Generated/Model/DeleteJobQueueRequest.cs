@@ -38,7 +38,7 @@ namespace Amazon.Batch.Model
     ///  
     /// <para>
     /// It's not necessary to disassociate compute environments from a queue before submitting
-    /// a <code>DeleteJobQueue</code> request.
+    /// a <c>DeleteJobQueue</c> request.
     /// </para>
     /// </summary>
     public partial class DeleteJobQueueRequest : AmazonBatchRequest

@@ -126,7 +126,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// For a <code>ResourceInUseException</code> error, the type of resource that is currently
+        /// For a <c>ResourceInUseException</c> error, the type of resource that is currently
         /// in use.
         /// </para>
         /// </summary>

@@ -61,10 +61,10 @@ namespace Amazon.CertificateManager.Model
         /// <para>
         /// The domain name that you want ACM to use to send you validation emails. This domain
         /// name is the suffix of the email addresses that you want ACM to use. This must be the
-        /// same as the <code>DomainName</code> value or a superdomain of the <code>DomainName</code>
-        /// value. For example, if you request a certificate for <code>testing.example.com</code>,
-        /// you can specify <code>example.com</code> for this value. In that case, ACM sends domain
-        /// validation emails to the following five addresses:
+        /// same as the <c>DomainName</c> value or a superdomain of the <c>DomainName</c> value.
+        /// For example, if you request a certificate for <c>testing.example.com</c>, you can
+        /// specify <c>example.com</c> for this value. In that case, ACM sends domain validation
+        /// emails to the following five addresses:
         /// </para>
         ///  <ul> <li> 
         /// <para>

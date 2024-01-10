@@ -38,7 +38,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        ///  Retrieves <code>TagKey</code> configuration from an account. 
+        ///  Retrieves <c>TagKey</c> configuration from an account. 
         /// </para>
         /// </summary>
         public AppRegistryConfiguration Configuration

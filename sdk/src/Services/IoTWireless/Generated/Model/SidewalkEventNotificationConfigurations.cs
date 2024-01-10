@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTWireless.Model
 {
     /// <summary>
-    /// <code>SidewalkEventNotificationConfigurations</code> object, which is the event configuration
+    /// <c>SidewalkEventNotificationConfigurations</c> object, which is the event configuration
     /// object for Sidewalk-related event topics.
     /// </summary>
     public partial class SidewalkEventNotificationConfigurations

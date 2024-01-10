@@ -40,8 +40,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action to take for the update request. This can be either <code>ENABLE</code>
-        /// or <code>DISABLE</code>.
+        /// The action to take for the update request. This can be either <c>ENABLE</c> or <c>DISABLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

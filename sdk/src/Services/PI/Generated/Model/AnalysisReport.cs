@@ -142,11 +142,11 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RDS</code> 
+        ///  <c>RDS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DOCDB</code> 
+        ///  <c>DOCDB</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

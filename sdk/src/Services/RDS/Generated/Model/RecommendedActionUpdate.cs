@@ -62,11 +62,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>applied</code> 
+        ///  <c>applied</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>scheduled</code> 
+        ///  <c>scheduled</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

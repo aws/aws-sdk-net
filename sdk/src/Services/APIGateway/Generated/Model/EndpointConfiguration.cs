@@ -41,9 +41,9 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Types. 
         /// <para>
         /// A list of endpoint types of an API (RestApi) or its custom domain name (DomainName).
-        /// For an edge-optimized API and its custom domain name, the endpoint type is <code>"EDGE"</code>.
-        /// For a regional API and its custom domain name, the endpoint type is <code>REGIONAL</code>.
-        /// For a private API, the endpoint type is <code>PRIVATE</code>.
+        /// For an edge-optimized API and its custom domain name, the endpoint type is <c>"EDGE"</c>.
+        /// For a regional API and its custom domain name, the endpoint type is <c>REGIONAL</c>.
+        /// For a private API, the endpoint type is <c>PRIVATE</c>.
         /// </para>
         /// </summary>
         public List<string> Types
@@ -62,7 +62,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property VpcEndpointIds. 
         /// <para>
         /// A list of VpcEndpointIds of an API (RestApi) against which to create Route53 ALIASes.
-        /// It is only supported for <code>PRIVATE</code> endpoint type.
+        /// It is only supported for <c>PRIVATE</c> endpoint type.
         /// </para>
         /// </summary>
         public List<string> VpcEndpointIds

@@ -80,8 +80,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property VersionNumber. 
         /// <para>
         /// Specifies the version of the template that you want to delete. If you don't provide
-        /// a version number, <code>DeleteTemplate</code> deletes all versions of the template.
-        /// 
+        /// a version number, <c>DeleteTemplate</c> deletes all versions of the template. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

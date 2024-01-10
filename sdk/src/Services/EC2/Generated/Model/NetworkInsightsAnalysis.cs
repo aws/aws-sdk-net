@@ -271,7 +271,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The status message, if the status is <code>failed</code>.
+        /// The status message, if the status is <c>failed</c>.
         /// </para>
         /// </summary>
         public string StatusMessage

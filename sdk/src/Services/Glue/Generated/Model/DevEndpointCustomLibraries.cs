@@ -39,12 +39,12 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraJarsS3Path. 
         /// <para>
-        /// The path to one or more Java <code>.jar</code> files in an S3 bucket that should be
-        /// loaded in your <code>DevEndpoint</code>.
+        /// The path to one or more Java <c>.jar</c> files in an S3 bucket that should be loaded
+        /// in your <c>DevEndpoint</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only use pure Java/Scala libraries with a <code>DevEndpoint</code>.
+        /// You can only use pure Java/Scala libraries with a <c>DevEndpoint</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -64,14 +64,14 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
         /// The paths to one or more Python libraries in an Amazon Simple Storage Service (Amazon
-        /// S3) bucket that should be loaded in your <code>DevEndpoint</code>. Multiple values
-        /// must be complete paths separated by a comma.
+        /// S3) bucket that should be loaded in your <c>DevEndpoint</c>. Multiple values must
+        /// be complete paths separated by a comma.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries
-        /// that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
-        /// Python data analysis library, are not currently supported.
+        /// You can only use pure Python libraries with a <c>DevEndpoint</c>. Libraries that rely
+        /// on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python
+        /// data analysis library, are not currently supported.
         /// </para>
         ///  </note>
         /// </summary>

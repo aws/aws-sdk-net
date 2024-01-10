@@ -39,16 +39,15 @@ namespace Amazon.StepFunctions.Model
     ///  
     /// <para>
     /// You can also map an alias to split <a>StartExecution</a> requests between two versions
-    /// of a state machine. To do this, add a second <code>RoutingConfig</code> object in
-    /// the <code>routingConfiguration</code> parameter. You must also specify the percentage
-    /// of execution run requests each version should receive in both <code>RoutingConfig</code>
-    /// objects. Step Functions randomly chooses which version runs a given execution based
-    /// on the percentage you specify.
+    /// of a state machine. To do this, add a second <c>RoutingConfig</c> object in the <c>routingConfiguration</c>
+    /// parameter. You must also specify the percentage of execution run requests each version
+    /// should receive in both <c>RoutingConfig</c> objects. Step Functions randomly chooses
+    /// which version runs a given execution based on the percentage you specify.
     /// </para>
     ///  
     /// <para>
-    /// To create an alias that points to a single version, specify a single <code>RoutingConfig</code>
-    /// object with a <code>weight</code> set to 100.
+    /// To create an alias that points to a single version, specify a single <c>RoutingConfig</c>
+    /// object with a <c>weight</c> set to 100.
     /// </para>
     ///  
     /// <para>
@@ -57,11 +56,10 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>CreateStateMachineAlias</code> is an idempotent API. Step Functions bases the
-    /// idempotency check on the <code>stateMachineArn</code>, <code>description</code>, <code>name</code>,
-    /// and <code>routingConfiguration</code> parameters. Requests that contain the same values
-    /// for these parameters return a successful idempotent response without creating a duplicate
-    /// resource.
+    ///  <c>CreateStateMachineAlias</c> is an idempotent API. Step Functions bases the idempotency
+    /// check on the <c>stateMachineArn</c>, <c>description</c>, <c>name</c>, and <c>routingConfiguration</c>
+    /// parameters. Requests that contain the same values for these parameters return a successful
+    /// idempotent response without creating a duplicate resource.
     /// </para>
     ///  
     /// <para>
@@ -137,10 +135,10 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RoutingConfiguration. 
         /// <para>
         /// The routing configuration of a state machine alias. The routing configuration shifts
-        /// execution traffic between two state machine versions. <code>routingConfiguration</code>
-        /// contains an array of <code>RoutingConfig</code> objects that specify up to two state
-        /// machine versions. Step Functions then randomly choses which version to run an execution
-        /// with based on the weight assigned to each <code>RoutingConfig</code>.
+        /// execution traffic between two state machine versions. <c>routingConfiguration</c>
+        /// contains an array of <c>RoutingConfig</c> objects that specify up to two state machine
+        /// versions. Step Functions then randomly choses which version to run an execution with
+        /// based on the weight assigned to each <c>RoutingConfig</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]

@@ -113,12 +113,12 @@ namespace Amazon.AuditManager.Model
         ///  
         /// <para>
         /// To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a>
-        /// of evidence finder must be <code>ENABLED</code>. 
+        /// of evidence finder must be <c>ENABLED</c>. 
         /// </para>
         ///  
         /// <para>
-        ///  For examples and help resolving <code>queryStatement</code> validation exceptions,
-        /// see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting
+        ///  For examples and help resolving <c>queryStatement</c> validation exceptions, see
+        /// <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting
         /// evidence finder issues</a> in the <i>Audit Manager User Guide.</i> 
         /// </para>
         /// </summary>

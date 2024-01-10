@@ -64,7 +64,7 @@ namespace Amazon.ControlTower.Model
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
         /// The control identifier of the enabled control. For information on how to find the
-        /// <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// <c>controlIdentifier</c>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Array of <code>EnabledControlParameter</code> objects.
+        /// Array of <c>EnabledControlParameter</c> objects.
         /// </para>
         /// </summary>
         public List<EnabledControlParameterSummary> Parameters
@@ -138,7 +138,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
+        /// The ARN of the organizational unit. For information on how to find the <c>targetIdentifier</c>,
         /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>

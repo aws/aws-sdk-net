@@ -30,7 +30,7 @@ namespace Amazon.DAX.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the association of tags from a DAX resource. You can call <code>UntagResource</code>
+    /// Removes the association of tags from a DAX resource. You can call <c>UntagResource</c>
     /// up to 5 times per second, per account.
     /// </summary>
     public partial class UntagResourceRequest : AmazonDAXRequest

@@ -74,8 +74,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Gets and sets the property ConfiguredBy. 
         /// <para>
         /// The principal that configured the notification setting. For default settings configured
-        /// by IAM Roles Anywhere, the value is <code>rolesanywhere.amazonaws.com</code>, and
-        /// for customized notifications settings, it is the respective account ID. 
+        /// by IAM Roles Anywhere, the value is <c>rolesanywhere.amazonaws.com</c>, and for customized
+        /// notifications settings, it is the respective account ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

@@ -82,9 +82,9 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property CreationStatus. 
         /// <para>
         /// The status of the creation of the namespace. This is an asynchronous process. A status
-        /// of <code>CREATED</code> means that your namespace is ready to use. If an error occurs,
-        /// it indicates if the process is <code>retryable</code> or <code>non-retryable</code>.
-        /// In the case of a non-retryable error, refer to the error message for follow-up tasks.
+        /// of <c>CREATED</c> means that your namespace is ready to use. If an error occurs, it
+        /// indicates if the process is <c>retryable</c> or <c>non-retryable</c>. In the case
+        /// of a non-retryable error, refer to the error message for follow-up tasks.
         /// </para>
         /// </summary>
         public NamespaceStatus CreationStatus
@@ -103,7 +103,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property IdentityStore. 
         /// <para>
         /// Specifies the type of your user identity directory. Currently, this supports users
-        /// with an identity type of <code>QUICKSIGHT</code>.
+        /// with an identity type of <c>QUICKSIGHT</c>.
         /// </para>
         /// </summary>
         public IdentityStore IdentityStore

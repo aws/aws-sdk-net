@@ -104,8 +104,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// A modified schedule in either <code>at( )</code> or <code>cron( )</code> format. For
-        /// more information about this parameter, see <a>ScheduledAction</a>.
+        /// A modified schedule in either <c>at( )</c> or <c>cron( )</c> format. For more information
+        /// about this parameter, see <a>ScheduledAction</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

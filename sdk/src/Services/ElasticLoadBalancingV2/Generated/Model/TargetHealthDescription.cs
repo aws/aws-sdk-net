@@ -45,11 +45,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If no anomalies were detected, the result is <code>normal</code>.
+        /// If no anomalies were detected, the result is <c>normal</c>.
         /// </para>
         ///  
         /// <para>
-        /// If anomalies were detected, the result is <code>anomalous</code>.
+        /// If anomalies were detected, the result is <c>anomalous</c>.
         /// </para>
         /// </summary>
         public AnomalyDetection AnomalyDetection

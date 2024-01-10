@@ -40,7 +40,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property AccountAlias. 
         /// <para>
         /// The identifier of an Amazon Web Services support account authorized to restore a snapshot.
-        /// For Amazon Web Services Support, the identifier is <code>amazon-redshift-support</code>.
+        /// For Amazon Web Services Support, the identifier is <c>amazon-redshift-support</c>.
         /// 
         /// </para>
         /// </summary>

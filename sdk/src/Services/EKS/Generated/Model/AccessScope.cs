@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EKS.Model
 {
     /// <summary>
-    /// The scope of an <code>AccessPolicy</code> that's associated to an <code>AccessEntry</code>.
+    /// The scope of an <c>AccessPolicy</c> that's associated to an <c>AccessEntry</c>.
     /// </summary>
     public partial class AccessScope
     {
@@ -39,8 +39,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Namespaces. 
         /// <para>
-        /// A Kubernetes <code>namespace</code> that an access policy is scoped to. A value is
-        /// required if you specified <code>namespace</code> for <code>Type</code>.
+        /// A Kubernetes <c>namespace</c> that an access policy is scoped to. A value is required
+        /// if you specified <c>namespace</c> for <c>Type</c>.
         /// </para>
         /// </summary>
         public List<string> Namespaces

@@ -48,17 +48,17 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code> backup
-        /// option and create a Windows VSS backup. 
+        /// Set to <c>"WindowsVSS":"enabled"</c> to enable the <c>WindowsVSS</c> backup option
+        /// and create a Windows VSS backup. 
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>"WindowsVSS":"disabled"</code> to create a regular backup. The <code>WindowsVSS</code>
+        /// Set to <c>"WindowsVSS":"disabled"</c> to create a regular backup. The <c>WindowsVSS</c>
         /// option is not enabled by default.
         /// </para>
         ///  
         /// <para>
-        /// If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+        /// If you specify an invalid option, you get an <c>InvalidParameterValueException</c>
         /// exception.
         /// </para>
         ///  
@@ -89,7 +89,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>EC2</code>.
+        /// Valid values: <c>EC2</c>.
         /// </para>
         /// </summary>
         public string ResourceType

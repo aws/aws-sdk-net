@@ -85,16 +85,16 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> - Anything specified in this assignment is used when creating
-        /// the data source.
+        ///  <c>ENABLED</c> - Anything specified in this assignment is used when creating the
+        /// data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - This assignment isn't used when creating the data source.
+        ///  <c>DISABLED</c> - This assignment isn't used when creating the data source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DRAFT</code> - This assignment is an unfinished draft and isn't used when creating
+        ///  <c>DRAFT</c> - This assignment is an unfinished draft and isn't used when creating
         /// the data source.
         /// </para>
         ///  </li> </ul>

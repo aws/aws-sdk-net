@@ -42,8 +42,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code>
-    /// from a <code>WebACL</code>.
+    /// Specifies whether to insert a <c>Rule</c> into or delete a <c>Rule</c> from a <c>WebACL</c>.
     /// </para>
     /// </summary>
     public partial class WebACLUpdate
@@ -54,8 +53,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specifies whether to insert a <code>Rule</code> into or delete a <code>Rule</code>
-        /// from a <code>WebACL</code>.
+        /// Specifies whether to insert a <c>Rule</c> into or delete a <c>Rule</c> from a <c>WebACL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,11 +72,10 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ActivatedRule. 
         /// <para>
-        /// The <code>ActivatedRule</code> object in an <a>UpdateWebACL</a> request specifies
-        /// a <code>Rule</code> that you want to insert or delete, the priority of the <code>Rule</code>
-        /// in the <code>WebACL</code>, and the action that you want AWS WAF to take when a web
-        /// request matches the <code>Rule</code> (<code>ALLOW</code>, <code>BLOCK</code>, or
-        /// <code>COUNT</code>).
+        /// The <c>ActivatedRule</c> object in an <a>UpdateWebACL</a> request specifies a <c>Rule</c>
+        /// that you want to insert or delete, the priority of the <c>Rule</c> in the <c>WebACL</c>,
+        /// and the action that you want AWS WAF to take when a web request matches the <c>Rule</c>
+        /// (<c>ALLOW</c>, <c>BLOCK</c>, or <c>COUNT</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

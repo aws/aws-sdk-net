@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Destination. 
         /// <para>
         /// The Region or Availability Zone that's the target for the subscription. For example,
-        /// <code>eu-west-1</code>.
+        /// <c>eu-west-1</c>.
         /// </para>
         /// </summary>
         public string Destination
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// The Region or Availability Zone that's the source for the subscription. For example,
-        /// <code>us-east-1</code>.
+        /// <c>us-east-1</c>.
         /// </para>
         /// </summary>
         public string Source

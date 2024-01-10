@@ -35,8 +35,8 @@ namespace Amazon.MigrationHub.Model
     /// 
     ///  
     /// <para>
-    /// This API is a prerequisite to calling the <code>NotifyMigrationTaskState</code> API
-    /// as the migration tool must first register the migration task with Migration Hub.
+    /// This API is a prerequisite to calling the <c>NotifyMigrationTaskState</c> API as the
+    /// migration tool must first register the migration task with Migration Hub.
     /// </para>
     /// </summary>
     public partial class ImportMigrationTaskRequest : AmazonMigrationHubRequest

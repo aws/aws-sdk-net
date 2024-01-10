@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of custom values for the destination parameter in <code>DestinationParameterValueConfiguration</code>.
+    /// The configuration of custom values for the destination parameter in <c>DestinationParameterValueConfiguration</c>.
     /// </summary>
     public partial class CustomValuesConfiguration
     {

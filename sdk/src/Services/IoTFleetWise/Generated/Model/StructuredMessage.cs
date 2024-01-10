@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
-    /// The structured message for the message signal. It can be defined with either a <code>primitiveMessageDefinition</code>,
-    /// <code>structuredMessageListDefinition</code>, or <code>structuredMessageDefinition</code>
-    /// recursively.
+    /// The structured message for the message signal. It can be defined with either a <c>primitiveMessageDefinition</c>,
+    /// <c>structuredMessageListDefinition</c>, or <c>structuredMessageDefinition</c> recursively.
     /// </summary>
     public partial class StructuredMessage
     {

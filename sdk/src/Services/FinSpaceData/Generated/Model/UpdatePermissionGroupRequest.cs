@@ -30,7 +30,7 @@ namespace Amazon.FinSpaceData.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePermissionGroup operation.
-    /// Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.
+    /// Modifies the details of a permission group. You cannot modify a <c>permissionGroupID</c>.
     /// </summary>
     public partial class UpdatePermissionGroupRequest : AmazonFinSpaceDataRequest
     {
@@ -47,41 +47,40 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// When assigning application permissions, be aware that the permission <code>ManageUsersAndGroups</code>
+        /// When assigning application permissions, be aware that the permission <c>ManageUsersAndGroups</c>
         /// allows users to grant themselves or others access to any functionality in their FinSpace
         /// environment's application. It should only be granted to trusted users.
         /// </para>
         ///  </important> <ul> <li> 
         /// <para>
-        ///  <code>CreateDataset</code> – Group members can create new datasets.
+        ///  <c>CreateDataset</c> – Group members can create new datasets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ManageClusters</code> – Group members can manage Apache Spark clusters from
-        /// FinSpace notebooks.
+        ///  <c>ManageClusters</c> – Group members can manage Apache Spark clusters from FinSpace
+        /// notebooks.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ManageUsersAndGroups</code> – Group members can manage users and permission
-        /// groups. This is a privileged permission that allows users to grant themselves or others
-        /// access to any functionality in the application. It should only be granted to trusted
-        /// users.
+        ///  <c>ManageUsersAndGroups</c> – Group members can manage users and permission groups.
+        /// This is a privileged permission that allows users to grant themselves or others access
+        /// to any functionality in the application. It should only be granted to trusted users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ManageAttributeSets</code> – Group members can manage attribute sets.
+        ///  <c>ManageAttributeSets</c> – Group members can manage attribute sets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ViewAuditData</code> – Group members can view audit data.
+        ///  <c>ViewAuditData</c> – Group members can view audit data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccessNotebooks</code> – Group members will have access to FinSpace notebooks.
+        ///  <c>AccessNotebooks</c> – Group members will have access to FinSpace notebooks.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetTemporaryCredentials</code> – Group members can get temporary API credentials.
+        ///  <c>GetTemporaryCredentials</c> – Group members can get temporary API credentials.
         /// </para>
         ///  </li> </ul>
         /// </summary>

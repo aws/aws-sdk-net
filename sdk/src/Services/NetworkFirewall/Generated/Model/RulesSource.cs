@@ -30,8 +30,8 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// The stateless or stateful rules definitions for use in a single rule group. Each rule
-    /// group requires a single <code>RulesSource</code>. You can use an instance of this
-    /// for either stateless rules or stateful rules.
+    /// group requires a single <c>RulesSource</c>. You can use an instance of this for either
+    /// stateless rules or stateful rules.
     /// </summary>
     public partial class RulesSource
     {
@@ -72,8 +72,8 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can't use the <code>priority</code> keyword if the <code>RuleOrder</code> option
-        /// in <a>StatefulRuleOptions</a> is set to <code>STRICT_ORDER</code>.
+        /// You can't use the <c>priority</c> keyword if the <c>RuleOrder</c> option in <a>StatefulRuleOptions</a>
+        /// is set to <c>STRICT_ORDER</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -96,7 +96,7 @@ namespace Amazon.NetworkFirewall.Model
         /// An array of individual stateful rules inspection criteria to be used together in a
         /// stateful rule group. Use this option to specify simple Suricata rules with protocol,
         /// source and destination, ports, direction, and rule options. For information about
-        /// the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
+        /// the Suricata <c>Rules</c> format, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
         /// Format</a>. 
         /// </para>
         /// </summary>

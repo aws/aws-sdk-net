@@ -36,7 +36,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+    /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>
     /// request. If successful, a new set of credentials are returned, along with the S3 storage
     /// location associated with the build ID.
     /// </para>

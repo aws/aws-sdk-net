@@ -37,25 +37,25 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    /// You can publish either individual data points in the <code>Value</code> field, or
-    /// arrays of values and the number of times each value occurred during the period by
-    /// using the <code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code>
-    /// structure. Using the <code>Values</code> and <code>Counts</code> method enables you
-    /// to publish up to 150 values per metric with one <code>PutMetricData</code> request,
-    /// and supports retrieving percentile statistics on this data.
+    /// You can publish either individual data points in the <c>Value</c> field, or arrays
+    /// of values and the number of times each value occurred during the period by using the
+    /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricDatum</c> structure. Using
+    /// the <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values
+    /// per metric with one <c>PutMetricData</c> request, and supports retrieving percentile
+    /// statistics on this data.
     /// </para>
     ///  
     /// <para>
-    /// Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests.
+    /// Each <c>PutMetricData</c> request is limited to 1 MB in size for HTTP POST requests.
     /// You can send a payload compressed by gzip. Each request is also limited to no more
     /// than 1000 different metrics.
     /// </para>
     ///  
     /// <para>
-    /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
-    /// CloudWatch rejects values that are either too small or too large. Values must be in
-    /// the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
-    /// -Infinity) are not supported.
+    /// Although the <c>Value</c> parameter accepts numbers of type <c>Double</c>, CloudWatch
+    /// rejects values that are either too small or too large. Values must be in the range
+    /// of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
+    /// are not supported.
     /// </para>
     ///  
     /// <para>
@@ -87,13 +87,13 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>,
-    /// <code>Max</code>, and <code>Sum</code> are all equal.
+    /// The <c>SampleCount</c> value of the statistic set is 1 and <c>Min</c>, <c>Max</c>,
+    /// and <c>Sum</c> are all equal.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>Min</code> and <code>Max</code> are equal, and <code>Sum</code> is equal
-    /// to <code>Min</code> multiplied by <code>SampleCount</code>.
+    /// The <c>Min</c> and <c>Max</c> are equal, and <c>Sum</c> is equal to <c>Min</c> multiplied
+    /// by <c>SampleCount</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.CloudWatch.Model
         ///  
         /// <para>
         /// To avoid conflicts with Amazon Web Services service namespaces, you should not specify
-        /// a namespace that begins with <code>AWS/</code> 
+        /// a namespace that begins with <c>AWS/</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

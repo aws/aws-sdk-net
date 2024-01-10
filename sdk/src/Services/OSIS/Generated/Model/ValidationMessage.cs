@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OSIS.Model
 {
     /// <summary>
-    /// A validation message associated with a <code>ValidatePipeline</code> request in OpenSearch
+    /// A validation message associated with a <c>ValidatePipeline</c> request in OpenSearch
     /// Ingestion.
     /// </summary>
     public partial class ValidationMessage

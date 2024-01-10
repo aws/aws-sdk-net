@@ -47,11 +47,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <b>JupyterServer apps</b> only support the <code>system</code> value.
+        ///  <b>JupyterServer apps</b> only support the <c>system</c> value.
         /// </para>
         ///  
         /// <para>
-        /// For <b>KernelGateway apps</b>, the <code>system</code> value is translated to <code>ml.t3.medium</code>.
+        /// For <b>KernelGateway apps</b>, the <c>system</c> value is translated to <c>ml.t3.medium</c>.
         /// KernelGateway apps also support all other values for available instance types.
         /// </para>
         ///  </note>

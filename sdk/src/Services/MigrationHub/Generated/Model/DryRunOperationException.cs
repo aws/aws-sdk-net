@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
-    /// Exception raised to indicate a successfully authorized action when the <code>DryRun</code>
+    /// Exception raised to indicate a successfully authorized action when the <c>DryRun</c>
     /// flag is set to "true".
     /// </summary>
     #if !NETSTANDARD

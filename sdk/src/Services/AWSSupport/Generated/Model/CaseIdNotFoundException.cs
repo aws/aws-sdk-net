@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// The requested <code>caseId</code> couldn't be located.
+    /// The requested <c>caseId</c> couldn't be located.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

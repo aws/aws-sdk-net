@@ -127,9 +127,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you roll back the instance refresh, <code>InstancesToUpdate</code> shows you the
-        /// number of instances that were not yet updated by the instance refresh. Therefore,
-        /// these instances don't need to be replaced as part of the rollback.
+        /// If you roll back the instance refresh, <c>InstancesToUpdate</c> shows you the number
+        /// of instances that were not yet updated by the instance refresh. Therefore, these instances
+        /// don't need to be replaced as part of the rollback.
         /// </para>
         ///  </note>
         /// </summary>
@@ -156,8 +156,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>PercentageComplete</code> does not include instances that are replaced during
-        /// a rollback. This value gradually goes back down to zero during a rollback.
+        ///  <c>PercentageComplete</c> does not include instances that are replaced during a rollback.
+        /// This value gradually goes back down to zero during a rollback.
         /// </para>
         ///  </note>
         /// </summary>
@@ -253,42 +253,41 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Pending</code> - The request was created, but the instance refresh has not
-        /// started.
+        ///  <c>Pending</c> - The request was created, but the instance refresh has not started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code> - An instance refresh is in progress.
+        ///  <c>InProgress</c> - An instance refresh is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Successful</code> - An instance refresh completed successfully.
+        ///  <c>Successful</c> - An instance refresh completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - An instance refresh failed to complete. You can troubleshoot
-        /// using the status reason and the scaling activities. 
+        ///  <c>Failed</c> - An instance refresh failed to complete. You can troubleshoot using
+        /// the status reason and the scaling activities. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelling</code> - An ongoing instance refresh is being cancelled.
+        ///  <c>Cancelling</c> - An ongoing instance refresh is being cancelled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code> - The instance refresh is cancelled. 
+        ///  <c>Cancelled</c> - The instance refresh is cancelled. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RollbackInProgress</code> - An instance refresh is being rolled back.
+        ///  <c>RollbackInProgress</c> - An instance refresh is being rolled back.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RollbackFailed</code> - The rollback failed to complete. You can troubleshoot
-        /// using the status reason and the scaling activities.
+        ///  <c>RollbackFailed</c> - The rollback failed to complete. You can troubleshoot using
+        /// the status reason and the scaling activities.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RollbackSuccessful</code> - The rollback completed successfully.
+        ///  <c>RollbackSuccessful</c> - The rollback completed successfully.
         /// </para>
         ///  </li> </ul>
         /// </summary>

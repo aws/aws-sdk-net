@@ -39,8 +39,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property S3Destinations. 
         /// <para>
-        ///  A list of <code>SnapshotS3DestinationConfiguration</code> objects that contain Amazon
-        /// S3 destination configurations. This structure can hold a maximum of 1 <code>S3DestinationConfiguration</code>.
+        ///  A list of <c>SnapshotS3DestinationConfiguration</c> objects that contain Amazon S3
+        /// destination configurations. This structure can hold a maximum of 1 <c>S3DestinationConfiguration</c>.
         /// 
         /// </para>
         /// </summary>

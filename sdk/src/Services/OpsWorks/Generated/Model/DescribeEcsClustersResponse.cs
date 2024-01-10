@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeEcsClusters</code> request.
+    /// Contains the response to a <c>DescribeEcsClusters</c> request.
     /// </summary>
     public partial class DescribeEcsClustersResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property EcsClusters. 
         /// <para>
-        /// A list of <code>EcsCluster</code> objects containing the cluster descriptions.
+        /// A list of <c>EcsCluster</c> objects containing the cluster descriptions.
         /// </para>
         /// </summary>
         public List<EcsCluster> EcsClusters
@@ -58,9 +58,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If a paginated request does not return all of the remaining results, this parameter
-        /// is set to a token that you can assign to the request object's <code>NextToken</code>
-        /// parameter to retrieve the next set of results. If the previous paginated request returned
-        /// all of the remaining results, this parameter is set to <code>null</code>.
+        /// is set to a token that you can assign to the request object's <c>NextToken</c> parameter
+        /// to retrieve the next set of results. If the previous paginated request returned all
+        /// of the remaining results, this parameter is set to <c>null</c>.
         /// </para>
         /// </summary>
         public string NextToken

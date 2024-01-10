@@ -295,9 +295,9 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-        /// tasks on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity
-        /// providers. These providers are available to all accounts in the Amazon Web Services
-        /// Regions that Fargate supports.
+        /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
+        /// These providers are available to all accounts in the Amazon Web Services Regions that
+        /// Fargate supports.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCapacityProvider service method.</param>
@@ -320,9 +320,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
         /// instance that's specified. If the container agent becomes disconnected while it's
-        /// in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the
-        /// update process can get stuck in that state. However, when the agent reconnects, it
-        /// resumes where it stopped previously.
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateCapacityProvider">REST API Reference for CreateCapacityProvider Operation</seealso>
         public virtual CreateCapacityProviderResponse CreateCapacityProvider(CreateCapacityProviderRequest request)
@@ -373,9 +373,9 @@ namespace Amazon.ECS
         #region  CreateCluster
 
         /// <summary>
-        /// Creates a new Amazon ECS cluster. By default, your account receives a <code>default</code>
+        /// Creates a new Amazon ECS cluster. By default, your account receives a <c>default</c>
         /// cluster when you launch your first container instance. However, you can create your
-        /// own cluster with a unique name with the <code>CreateCluster</code> action.
+        /// own cluster with a unique name with the <c>CreateCluster</c> action.
         /// 
         ///  <note> 
         /// <para>
@@ -456,8 +456,8 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Runs and maintains your desired number of tasks from a specified task definition.
-        /// If the number of tasks running in a service drops below the <code>desiredCount</code>,
-        /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
+        /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
+        /// ECS runs another copy of the task in the specified cluster. To update an existing
         /// service, see the <a>UpdateService</a> action.
         /// 
         ///  <note> 
@@ -481,9 +481,9 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// Tasks for services that don't use a load balancer are considered healthy if they're
-        /// in the <code>RUNNING</code> state. Tasks for services that use a load balancer are
-        /// considered healthy if they're in the <code>RUNNING</code> state and are reported as
-        /// healthy by the load balancer.
+        /// in the <c>RUNNING</c> state. Tasks for services that use a load balancer are considered
+        /// healthy if they're in the <c>RUNNING</c> state and are reported as healthy by the
+        /// load balancer.
         /// </para>
         ///  
         /// <para>
@@ -491,18 +491,18 @@ namespace Amazon.ECS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLICA</code> - The replica scheduling strategy places and maintains your
-        /// desired number of tasks across your cluster. By default, the service scheduler spreads
-        /// tasks across Availability Zones. You can use task placement strategies and constraints
-        /// to customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+        ///  <c>REPLICA</c> - The replica scheduling strategy places and maintains your desired
+        /// number of tasks across your cluster. By default, the service scheduler spreads tasks
+        /// across Availability Zones. You can use task placement strategies and constraints to
+        /// customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
         /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on
-        /// each active container instance that meets all of the task placement constraints that
-        /// you specify in your cluster. The service scheduler also evaluates the task placement
-        /// constraints for running tasks. It also stops tasks that don't meet the placement constraints.
+        ///  <c>DAEMON</c> - The daemon scheduling strategy deploys exactly one task on each active
+        /// container instance that meets all of the task placement constraints that you specify
+        /// in your cluster. The service scheduler also evaluates the task placement constraints
+        /// for running tasks. It also stops tasks that don't meet the placement constraints.
         /// When using this strategy, you don't need to specify a desired number of tasks, a task
         /// placement strategy, or use Service Auto Scaling policies. For more information, see
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
@@ -513,34 +513,33 @@ namespace Amazon.ECS
         /// You can optionally specify a deployment configuration for your service. The deployment
         /// is initiated by changing properties. For example, the deployment might be initiated
         /// by the task definition or by your desired count of a service. This is done with an
-        /// <a>UpdateService</a> operation. The default value for a replica service for <code>minimumHealthyPercent</code>
-        /// is 100%. The default value for a daemon service for <code>minimumHealthyPercent</code>
-        /// is 0%.
+        /// <a>UpdateService</a> operation. The default value for a replica service for <c>minimumHealthyPercent</c>
+        /// is 100%. The default value for a daemon service for <c>minimumHealthyPercent</c> is
+        /// 0%.
         /// </para>
         ///  
         /// <para>
-        /// If a service uses the <code>ECS</code> deployment controller, the minimum healthy
-        /// percent represents a lower limit on the number of tasks in a service that must remain
-        /// in the <code>RUNNING</code> state during a deployment. Specifically, it represents
-        /// it as a percentage of your desired number of tasks (rounded up to the nearest integer).
-        /// This happens when any of your container instances are in the <code>DRAINING</code>
-        /// state if the service contains tasks using the EC2 launch type. Using this parameter,
-        /// you can deploy without using additional cluster capacity. For example, if you set
-        /// your service to have desired number of four tasks and a minimum healthy percent of
-        /// 50%, the scheduler might stop two existing tasks to free up cluster capacity before
-        /// starting two new tasks. If they're in the <code>RUNNING</code> state, tasks for services
-        /// that don't use a load balancer are considered healthy . If they're in the <code>RUNNING</code>
-        /// state and reported as healthy by the load balancer, tasks for services that <i>do</i>
-        /// use a load balancer are considered healthy . The default value for minimum healthy
-        /// percent is 100%.
+        /// If a service uses the <c>ECS</c> deployment controller, the minimum healthy percent
+        /// represents a lower limit on the number of tasks in a service that must remain in the
+        /// <c>RUNNING</c> state during a deployment. Specifically, it represents it as a percentage
+        /// of your desired number of tasks (rounded up to the nearest integer). This happens
+        /// when any of your container instances are in the <c>DRAINING</c> state if the service
+        /// contains tasks using the EC2 launch type. Using this parameter, you can deploy without
+        /// using additional cluster capacity. For example, if you set your service to have desired
+        /// number of four tasks and a minimum healthy percent of 50%, the scheduler might stop
+        /// two existing tasks to free up cluster capacity before starting two new tasks. If they're
+        /// in the <c>RUNNING</c> state, tasks for services that don't use a load balancer are
+        /// considered healthy . If they're in the <c>RUNNING</c> state and reported as healthy
+        /// by the load balancer, tasks for services that <i>do</i> use a load balancer are considered
+        /// healthy . The default value for minimum healthy percent is 100%.
         /// </para>
         ///  
         /// <para>
-        /// If a service uses the <code>ECS</code> deployment controller, the <b>maximum percent</b>
+        /// If a service uses the <c>ECS</c> deployment controller, the <b>maximum percent</b>
         /// parameter represents an upper limit on the number of tasks in a service that are allowed
-        /// in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment. Specifically,
-        /// it represents it as a percentage of the desired number of tasks (rounded down to the
-        /// nearest integer). This happens when any of your container instances are in the <code>DRAINING</code>
+        /// in the <c>RUNNING</c> or <c>PENDING</c> state during a deployment. Specifically, it
+        /// represents it as a percentage of the desired number of tasks (rounded down to the
+        /// nearest integer). This happens when any of your container instances are in the <c>DRAINING</c>
         /// state if the service contains tasks using the EC2 launch type. Using this parameter,
         /// you can define the deployment batch size. For example, if your service has a desired
         /// number of four tasks and a maximum percent value of 200%, the scheduler may start
@@ -549,20 +548,20 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// If a service uses either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
-        /// controller types and tasks that use the EC2 launch type, the <b>minimum healthy percent</b>
-        /// and <b>maximum percent</b> values are used only to define the lower and upper limit
-        /// on the number of the tasks in the service that remain in the <code>RUNNING</code>
-        /// state. This is while the container instances are in the <code>DRAINING</code> state.
-        /// If the tasks in the service use the Fargate launch type, the minimum healthy percent
-        /// and maximum percent values aren't used. This is the case even if they're currently
-        /// visible when describing your service.
+        /// If a service uses either the <c>CODE_DEPLOY</c> or <c>EXTERNAL</c> deployment controller
+        /// types and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> and
+        /// <b>maximum percent</b> values are used only to define the lower and upper limit on
+        /// the number of the tasks in the service that remain in the <c>RUNNING</c> state. This
+        /// is while the container instances are in the <c>DRAINING</c> state. If the tasks in
+        /// the service use the Fargate launch type, the minimum healthy percent and maximum percent
+        /// values aren't used. This is the case even if they're currently visible when describing
+        /// your service.
         /// </para>
         ///  
         /// <para>
-        /// When creating a service that uses the <code>EXTERNAL</code> deployment controller,
-        /// you can specify only parameters that aren't controlled at the task set level. The
-        /// only required parameter is the service name. You control your services using the <a>CreateTaskSet</a>
+        /// When creating a service that uses the <c>EXTERNAL</c> deployment controller, you can
+        /// specify only parameters that aren't controlled at the task set level. The only required
+        /// parameter is the service name. You control your services using the <a>CreateTaskSet</a>
         /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
@@ -657,8 +656,8 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Create a task set in the specified cluster and service. This is used when a service
-        /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// uses the <c>EXTERNAL</c> deployment controller type. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// 
         ///  
@@ -892,8 +891,8 @@ namespace Amazon.ECS
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity providers are reserved
-        /// and can't be deleted. You can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a>
+        /// The <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers are reserved and can't
+        /// be deleted. You can disassociate them from a cluster using either the <a>PutClusterCapacityProviders</a>
         /// API or by deleting the cluster.
         /// </para>
         ///  </note> 
@@ -901,12 +900,12 @@ namespace Amazon.ECS
         /// Prior to a capacity provider being deleted, the capacity provider must be removed
         /// from the capacity provider strategy from all services. The <a>UpdateService</a> API
         /// can be used to remove a capacity provider from a service's capacity provider strategy.
-        /// When updating a service, the <code>forceNewDeployment</code> option can be used to
-        /// ensure that any tasks using the Amazon EC2 instance capacity provided by the capacity
-        /// provider are transitioned to use the capacity from the remaining capacity providers.
-        /// Only capacity providers that aren't associated with a cluster can be deleted. To remove
-        /// a capacity provider from a cluster, you can either use <a>PutClusterCapacityProviders</a>
-        /// or delete the cluster.
+        /// When updating a service, the <c>forceNewDeployment</c> option can be used to ensure
+        /// that any tasks using the Amazon EC2 instance capacity provided by the capacity provider
+        /// are transitioned to use the capacity from the remaining capacity providers. Only capacity
+        /// providers that aren't associated with a cluster can be deleted. To remove a capacity
+        /// provider from a cluster, you can either use <a>PutClusterCapacityProviders</a> or
+        /// delete the cluster.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityProvider service method.</param>
@@ -972,10 +971,10 @@ namespace Amazon.ECS
         #region  DeleteCluster
 
         /// <summary>
-        /// Deletes the specified cluster. The cluster transitions to the <code>INACTIVE</code>
-        /// state. Clusters with an <code>INACTIVE</code> status might remain discoverable in
-        /// your account for a period of time. However, this behavior is subject to change in
-        /// the future. We don't recommend that you rely on <code>INACTIVE</code> clusters persisting.
+        /// Deletes the specified cluster. The cluster transitions to the <c>INACTIVE</c> state.
+        /// Clusters with an <c>INACTIVE</c> status might remain discoverable in your account
+        /// for a period of time. However, this behavior is subject to change in the future. We
+        /// don't recommend that you rely on <c>INACTIVE</c> clusters persisting.
         /// 
         ///  
         /// <para>
@@ -1018,9 +1017,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
         /// instance that's specified. If the container agent becomes disconnected while it's
-        /// in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the
-        /// update process can get stuck in that state. However, when the agent reconnects, it
-        /// resumes where it stopped previously.
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteCluster">REST API Reference for DeleteCluster Operation</seealso>
         public virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -1079,19 +1078,19 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// When you delete a service, if there are still running tasks that require cleanup,
-        /// the service status moves from <code>ACTIVE</code> to <code>DRAINING</code>, and the
-        /// service is no longer visible in the console or in the <a>ListServices</a> API operation.
-        /// After all tasks have transitioned to either <code>STOPPING</code> or <code>STOPPED</code>
-        /// status, the service status moves from <code>DRAINING</code> to <code>INACTIVE</code>.
-        /// Services in the <code>DRAINING</code> or <code>INACTIVE</code> status can still be
-        /// viewed with the <a>DescribeServices</a> API operation. However, in the future, <code>INACTIVE</code>
-        /// services may be cleaned up and purged from Amazon ECS record keeping, and <a>DescribeServices</a>
-        /// calls on those services return a <code>ServiceNotFoundException</code> error.
+        /// the service status moves from <c>ACTIVE</c> to <c>DRAINING</c>, and the service is
+        /// no longer visible in the console or in the <a>ListServices</a> API operation. After
+        /// all tasks have transitioned to either <c>STOPPING</c> or <c>STOPPED</c> status, the
+        /// service status moves from <c>DRAINING</c> to <c>INACTIVE</c>. Services in the <c>DRAINING</c>
+        /// or <c>INACTIVE</c> status can still be viewed with the <a>DescribeServices</a> API
+        /// operation. However, in the future, <c>INACTIVE</c> services may be cleaned up and
+        /// purged from Amazon ECS record keeping, and <a>DescribeServices</a> calls on those
+        /// services return a <c>ServiceNotFoundException</c> error.
         /// </para>
         ///  </note> <important> 
         /// <para>
         /// If you attempt to create a new service with the same name as an existing service in
-        /// either <code>ACTIVE</code> or <code>DRAINING</code> status, you receive an error.
+        /// either <c>ACTIVE</c> or <c>DRAINING</c> status, you receive an error.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1176,29 +1175,28 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// When you delete a task definition revision, it is immediately transitions from the
-        /// <code>INACTIVE</code> to <code>DELETE_IN_PROGRESS</code>. Existing tasks and services
-        /// that reference a <code>DELETE_IN_PROGRESS</code> task definition revision continue
-        /// to run without disruption. Existing services that reference a <code>DELETE_IN_PROGRESS</code>
-        /// task definition revision can still scale up or down by modifying the service's desired
-        /// count.
+        /// <c>INACTIVE</c> to <c>DELETE_IN_PROGRESS</c>. Existing tasks and services that reference
+        /// a <c>DELETE_IN_PROGRESS</c> task definition revision continue to run without disruption.
+        /// Existing services that reference a <c>DELETE_IN_PROGRESS</c> task definition revision
+        /// can still scale up or down by modifying the service's desired count.
         /// </para>
         ///  
         /// <para>
-        /// You can't use a <code>DELETE_IN_PROGRESS</code> task definition revision to run new
-        /// tasks or create new services. You also can't update an existing service to reference
-        /// a <code>DELETE_IN_PROGRESS</code> task definition revision.
+        /// You can't use a <c>DELETE_IN_PROGRESS</c> task definition revision to run new tasks
+        /// or create new services. You also can't update an existing service to reference a <c>DELETE_IN_PROGRESS</c>
+        /// task definition revision.
         /// </para>
         ///  
         /// <para>
-        ///  A task definition revision will stay in <code>DELETE_IN_PROGRESS</code> status until
-        /// all the associated tasks and services have been terminated.
+        ///  A task definition revision will stay in <c>DELETE_IN_PROGRESS</c> status until all
+        /// the associated tasks and services have been terminated.
         /// </para>
         ///  
         /// <para>
-        /// When you delete all <code>INACTIVE</code> task definition revisions, the task definition
+        /// When you delete all <c>INACTIVE</c> task definition revisions, the task definition
         /// name is not displayed in the console and not returned in the API. If a task definition
-        /// revisions are in the <code>DELETE_IN_PROGRESS</code> state, the task definition name
-        /// is displayed in the console and returned in the API. The task definition name is retained
+        /// revisions are in the <c>DELETE_IN_PROGRESS</c> state, the task definition name is
+        /// displayed in the console and returned in the API. The task definition name is retained
         /// by Amazon ECS and the revision is incremented the next time you create a task definition
         /// with that name.
         /// </para>
@@ -1270,7 +1268,7 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Deletes a specified task set within a service. This is used when a service uses the
-        /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// <c>EXTERNAL</c> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTaskSet service method.</param>
@@ -1449,25 +1447,25 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Deregisters the specified task definition by family and revision. Upon deregistration,
-        /// the task definition is marked as <code>INACTIVE</code>. Existing tasks and services
-        /// that reference an <code>INACTIVE</code> task definition continue to run without disruption.
-        /// Existing services that reference an <code>INACTIVE</code> task definition can still
-        /// scale up or down by modifying the service's desired count. If you want to delete a
-        /// task definition revision, you must first deregister the task definition revision.
+        /// the task definition is marked as <c>INACTIVE</c>. Existing tasks and services that
+        /// reference an <c>INACTIVE</c> task definition continue to run without disruption. Existing
+        /// services that reference an <c>INACTIVE</c> task definition can still scale up or down
+        /// by modifying the service's desired count. If you want to delete a task definition
+        /// revision, you must first deregister the task definition revision.
         /// 
         ///  
         /// <para>
-        /// You can't use an <code>INACTIVE</code> task definition to run new tasks or create
-        /// new services, and you can't update an existing service to reference an <code>INACTIVE</code>
-        /// task definition. However, there may be up to a 10-minute window following deregistration
-        /// where these restrictions have not yet taken effect.
+        /// You can't use an <c>INACTIVE</c> task definition to run new tasks or create new services,
+        /// and you can't update an existing service to reference an <c>INACTIVE</c> task definition.
+        /// However, there may be up to a 10-minute window following deregistration where these
+        /// restrictions have not yet taken effect.
         /// </para>
         ///  <note> 
         /// <para>
-        /// At this time, <code>INACTIVE</code> task definitions remain discoverable in your account
+        /// At this time, <c>INACTIVE</c> task definitions remain discoverable in your account
         /// indefinitely. However, this behavior is subject to change in the future. We don't
-        /// recommend that you rely on <code>INACTIVE</code> task definitions persisting beyond
-        /// the lifecycle of any associated tasks and services.
+        /// recommend that you rely on <c>INACTIVE</c> task definitions persisting beyond the
+        /// lifecycle of any associated tasks and services.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1807,14 +1805,14 @@ namespace Amazon.ECS
         #region  DescribeTaskDefinition
 
         /// <summary>
-        /// Describes a task definition. You can specify a <code>family</code> and <code>revision</code>
-        /// to find information about a specific task definition, or you can simply specify the
-        /// family to find the latest <code>ACTIVE</code> revision in that family.
+        /// Describes a task definition. You can specify a <c>family</c> and <c>revision</c> to
+        /// find information about a specific task definition, or you can simply specify the family
+        /// to find the latest <c>ACTIVE</c> revision in that family.
         /// 
         ///  <note> 
         /// <para>
-        /// You can only describe <code>INACTIVE</code> task definitions while an active task
-        /// or service references them.
+        /// You can only describe <c>INACTIVE</c> task definitions while an active task or service
+        /// references them.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1962,7 +1960,7 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Describes the task sets in the specified cluster and service. This is used when a
-        /// service uses the <code>EXTERNAL</code> deployment controller type. For more information,
+        /// service uses the <c>EXTERNAL</c> deployment controller type. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
@@ -2052,7 +2050,7 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// If you use a condition key in your IAM policy to refine the conditions for the policy
-        /// statement, for example limit the actions to a specific cluster, you receive an <code>AccessDeniedException</code>
+        /// statement, for example limit the actions to a specific cluster, you receive an <c>AccessDeniedException</c>
         /// when there is a mismatch between the condition key value and the corresponding parameter
         /// value.
         /// </para>
@@ -2299,12 +2297,11 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Lists the attributes for Amazon ECS resources within a specified target type and cluster.
-        /// When you specify a target type and cluster, <code>ListAttributes</code> returns a
-        /// list of attribute objects, one for each attribute on each resource. You can filter
-        /// the list of results to a single attribute name to only return results that have that
-        /// name. You can also filter the results by attribute name and value. You can do this,
-        /// for example, to see which container instances in a cluster are running a Linux AMI
-        /// (<code>ecs.os-type=linux</code>).
+        /// When you specify a target type and cluster, <c>ListAttributes</c> returns a list of
+        /// attribute objects, one for each attribute on each resource. You can filter the list
+        /// of results to a single attribute name to only return results that have that name.
+        /// You can also filter the results by attribute name and value. You can do this, for
+        /// example, to see which container instances in a cluster are running a Linux AMI (<c>ecs.os-type=linux</c>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAttributes service method.</param>
         /// 
@@ -2431,8 +2428,8 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Returns a list of container instances in a specified cluster. You can filter the results
-        /// of a <code>ListContainerInstances</code> operation with cluster query language statements
-        /// inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// of a <c>ListContainerInstances</c> operation with cluster query language statements
+        /// inside the <c>filter</c> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
         /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContainerInstances service method.</param>
@@ -2573,10 +2570,10 @@ namespace Amazon.ECS
 
         /// <summary>
         /// This operation lists all of the services that are associated with a Cloud Map namespace.
-        /// This list might include services in different clusters. In contrast, <code>ListServices</code>
+        /// This list might include services in different clusters. In contrast, <c>ListServices</c>
         /// can only list services in one cluster at a time. If you need to filter the list of
-        /// services in a single cluster by various parameters, use <code>ListServices</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
+        /// services in a single cluster by various parameters, use <c>ListServices</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service
         /// Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListServicesByNamespace service method.</param>
@@ -2715,14 +2712,14 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Returns a list of task definition families that are registered to your account. This
-        /// list includes task definition families that no longer have any <code>ACTIVE</code>
-        /// task definition revisions.
+        /// list includes task definition families that no longer have any <c>ACTIVE</c> task
+        /// definition revisions.
         /// 
         ///  
         /// <para>
-        /// You can filter out task definition families that don't contain any <code>ACTIVE</code>
-        /// task definition revisions by setting the <code>status</code> parameter to <code>ACTIVE</code>.
-        /// You can also filter the results with the <code>familyPrefix</code> parameter.
+        /// You can filter out task definition families that don't contain any <c>ACTIVE</c> task
+        /// definition revisions by setting the <c>status</c> parameter to <c>ACTIVE</c>. You
+        /// can also filter the results with the <c>familyPrefix</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitionFamilies service method.</param>
@@ -2789,8 +2786,8 @@ namespace Amazon.ECS
 
         /// <summary>
         /// Returns a list of task definitions that are registered to your account. You can filter
-        /// the results by family name with the <code>familyPrefix</code> parameter or by status
-        /// with the <code>status</code> parameter.
+        /// the results by family name with the <c>familyPrefix</c> parameter or by status with
+        /// the <c>status</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTaskDefinitions service method.</param>
         /// 
@@ -2946,18 +2943,18 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When you specify <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>,
-        /// or <code>containerInstanceLongArnFormat</code>, the Amazon Resource Name (ARN) and
-        /// resource ID format of the resource type for a specified user, role, or the root user
-        /// for an account is affected. The opt-in and opt-out account setting must be set for
-        /// each Amazon ECS resource separately. The ARN and resource ID format of a resource
-        /// is defined by the opt-in status of the user or role that created the resource. You
-        /// must turn on this setting to use Amazon ECS features such as resource tagging.
+        /// When you specify <c>serviceLongArnFormat</c>, <c>taskLongArnFormat</c>, or <c>containerInstanceLongArnFormat</c>,
+        /// the Amazon Resource Name (ARN) and resource ID format of the resource type for a specified
+        /// user, role, or the root user for an account is affected. The opt-in and opt-out account
+        /// setting must be set for each Amazon ECS resource separately. The ARN and resource
+        /// ID format of a resource is defined by the opt-in status of the user or role that created
+        /// the resource. You must turn on this setting to use Amazon ECS features such as resource
+        /// tagging.
         /// </para>
         ///  
         /// <para>
-        /// When you specify <code>awsvpcTrunking</code>, the elastic network interface (ENI)
-        /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
+        /// When you specify <c>awsvpcTrunking</c>, the elastic network interface (ENI) limit
+        /// for any new container instances that support the feature is changed. If <c>awsvpcTrunking</c>
         /// is turned on, any new container instances that support the feature are launched have
         /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
         /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
@@ -2965,36 +2962,36 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// When you specify <code>containerInsights</code>, the default setting indicating whether
+        /// When you specify <c>containerInsights</c>, the default setting indicating whether
         /// Amazon Web Services CloudWatch Container Insights is turned on for your clusters is
-        /// changed. If <code>containerInsights</code> is turned on, any new clusters that are
-        /// created will have Container Insights turned on unless you disable it during cluster
-        /// creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+        /// changed. If <c>containerInsights</c> is turned on, any new clusters that are created
+        /// will have Container Insights turned on unless you disable it during cluster creation.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
         /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// Amazon ECS is introducing tagging authorization for resource creation. Users must
-        /// have permissions for actions that create the resource, such as <code>ecsCreateCluster</code>.
+        /// have permissions for actions that create the resource, such as <c>ecsCreateCluster</c>.
         /// If tags are specified when you create a resource, Amazon Web Services performs additional
         /// authorization to verify if users or roles have permissions to create tags. Therefore,
-        /// you must grant explicit permissions to use the <code>ecs:TagResource</code> action.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
+        /// you must grant explicit permissions to use the <c>ecs:TagResource</c> action. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
         /// permission to tag resources on creation</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// When Amazon Web Services determines that a security or infrastructure update is needed
         /// for an Amazon ECS task hosted on Fargate, the tasks need to be stopped and new tasks
-        /// launched to replace them. Use <code>fargateTaskRetirementWaitPeriod</code> to configure
+        /// launched to replace them. Use <c>fargateTaskRetirementWaitPeriod</c> to configure
         /// the wait time to retire a Fargate task. For information about the Fargate tasks maintenance,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-maintenance.html">Amazon
         /// Web Services Fargate task maintenance</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>guardDutyActivate</code> parameter is read-only in Amazon ECS and indicates
-        /// whether Amazon ECS Runtime Monitoring is enabled or disabled by your security administrator
+        /// The <c>guardDutyActivate</c> parameter is read-only in Amazon ECS and indicates whether
+        /// Amazon ECS Runtime Monitoring is enabled or disabled by your security administrator
         /// in your Amazon ECS account. Amazon GuardDuty controls this account setting on your
         /// behalf. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting
         /// Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.
@@ -3222,7 +3219,7 @@ namespace Amazon.ECS
         /// When creating a service or running a task on a cluster, if no capacity provider or
         /// launch type is specified, then the cluster's default capacity provider strategy is
         /// used. We recommend that you define a default capacity provider strategy for your cluster.
-        /// However, you must specify an empty array (<code>[]</code>) to bypass defining a default
+        /// However, you must specify an empty array (<c>[]</c>) to bypass defining a default
         /// strategy.
         /// </para>
         /// </summary>
@@ -3250,9 +3247,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
         /// instance that's specified. If the container agent becomes disconnected while it's
-        /// in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the
-        /// update process can get stuck in that state. However, when the agent reconnects, it
-        /// resumes where it stopped previously.
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutClusterCapacityProviders">REST API Reference for PutClusterCapacityProviders Operation</seealso>
         public virtual PutClusterCapacityProvidersResponse PutClusterCapacityProviders(PutClusterCapacityProvidersRequest request)
@@ -3303,27 +3300,25 @@ namespace Amazon.ECS
         #region  RegisterTaskDefinition
 
         /// <summary>
-        /// Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>.
-        /// Optionally, you can add data volumes to your containers with the <code>volumes</code>
-        /// parameter. For more information about task definition parameters and defaults, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+        /// Registers a new task definition from the supplied <c>family</c> and <c>containerDefinitions</c>.
+        /// Optionally, you can add data volumes to your containers with the <c>volumes</c> parameter.
+        /// For more information about task definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
         /// ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
-        /// You can specify a role for your task with the <code>taskRoleArn</code> parameter.
-        /// When you specify a role for a task, its containers can then use the latest versions
-        /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
-        /// specified in the policy that's associated with the role. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+        /// You can specify a role for your task with the <c>taskRoleArn</c> parameter. When you
+        /// specify a role for a task, its containers can then use the latest versions of the
+        /// CLI or SDKs to make API requests to the Amazon Web Services services that are specified
+        /// in the policy that's associated with the role. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
         /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You can specify a Docker networking mode for the containers in your task definition
-        /// with the <code>networkMode</code> parameter. The available network modes correspond
-        /// to those described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
-        /// settings</a> in the Docker run reference. If you specify the <code>awsvpc</code> network
+        /// with the <c>networkMode</c> parameter. The available network modes correspond to those
+        /// described in <a href="https://docs.docker.com/engine/reference/run/#/network-settings">Network
+        /// settings</a> in the Docker run reference. If you specify the <c>awsvpc</c> network
         /// mode, the task is allocated an elastic network interface, and you must specify a <a>NetworkConfiguration</a>
         /// when you create a service or run a task with the task definition. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
@@ -3465,10 +3460,10 @@ namespace Amazon.ECS
         /// Amazon ECS clusters are Region specific.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ConflictException">
-        /// The <code>RunTask</code> request could not be processed due to conflicts. The provided
-        /// <code>clientToken</code> is already in use with a different <code>RunTask</code> request.
-        /// The <code>resourceIds</code> are the existing task ARNs which are already associated
-        /// with the <code>clientToken</code>. 
+        /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
+        /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
+        /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -3476,12 +3471,11 @@ namespace Amazon.ECS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Run <code>RunTask</code> with a unique <code>clientToken</code>.
+        /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Run <code>RunTask</code> with the <code>clientToken</code> and the original set of
-        /// parameters
+        /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -3641,18 +3635,18 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// When <a>StopTask</a> is called on a task, the equivalent of <code>docker stop</code>
-        /// is issued to the containers running in the task. This results in a <code>SIGTERM</code>
-        /// value and a default 30-second timeout, after which the <code>SIGKILL</code> value
-        /// is sent and the containers are forcibly stopped. If the container handles the <code>SIGTERM</code>
-        /// value gracefully and exits within 30 seconds from receiving it, no <code>SIGKILL</code>
-        /// value is sent.
+        /// When <a>StopTask</a> is called on a task, the equivalent of <c>docker stop</c> is
+        /// issued to the containers running in the task. This results in a <c>SIGTERM</c> value
+        /// and a default 30-second timeout, after which the <c>SIGKILL</c> value is sent and
+        /// the containers are forcibly stopped. If the container handles the <c>SIGTERM</c> value
+        /// gracefully and exits within 30 seconds from receiving it, no <c>SIGKILL</c> value
+        /// is sent.
         /// </para>
         ///  <note> 
         /// <para>
         /// The default 30-second timeout can be configured on the Amazon ECS container agent
-        /// with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+        /// with the <c>ECS_CONTAINER_STOP_TIMEOUT</c> variable. For more information, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
@@ -3801,7 +3795,7 @@ namespace Amazon.ECS
         #region  TagResource
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags that are associated with that resource
         /// are deleted as well.
@@ -4162,24 +4156,24 @@ namespace Amazon.ECS
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>UpdateContainerAgent</code> API isn't supported for container instances
-        /// using the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the container
-        /// agent, you can update the <code>ecs-init</code> package. This updates the agent. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating
+        /// The <c>UpdateContainerAgent</c> API isn't supported for container instances using
+        /// the Amazon ECS-optimized Amazon Linux 2 (arm64) AMI. To update the container agent,
+        /// you can update the <c>ecs-init</c> package. This updates the agent. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/agent-update-ecs-ami.html">Updating
         /// the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Agent updates with the <code>UpdateContainerAgent</code> API operation do not apply
-        /// to Windows container instances. We recommend that you launch new container instances
-        /// to update the agent version in your Windows clusters.
+        /// Agent updates with the <c>UpdateContainerAgent</c> API operation do not apply to Windows
+        /// container instances. We recommend that you launch new container instances to update
+        /// the agent version in your Windows clusters.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The <code>UpdateContainerAgent</code> API requires an Amazon ECS-optimized AMI or
-        /// Amazon Linux AMI with the <code>ecs-init</code> service installed and running. For
-        /// help updating the Amazon ECS container agent on other operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+        /// The <c>UpdateContainerAgent</c> API requires an Amazon ECS-optimized AMI or Amazon
+        /// Linux AMI with the <c>ecs-init</c> service installed and running. For help updating
+        /// the Amazon ECS container agent on other operating systems, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
         /// updating the Amazon ECS container agent</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
@@ -4216,9 +4210,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.UpdateInProgressException">
         /// There's already a current Amazon ECS container agent update in progress on the container
         /// instance that's specified. If the container agent becomes disconnected while it's
-        /// in a transitional stage, such as <code>PENDING</code> or <code>STAGING</code>, the
-        /// update process can get stuck in that state. However, when the agent reconnects, it
-        /// resumes where it stopped previously.
+        /// in a transitional stage, such as <c>PENDING</c> or <c>STAGING</c>, the update process
+        /// can get stuck in that state. However, when the agent reconnects, it resumes where
+        /// it stopped previously.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">REST API Reference for UpdateContainerAgent Operation</seealso>
         public virtual UpdateContainerAgentResponse UpdateContainerAgent(UpdateContainerAgentRequest request)
@@ -4273,65 +4267,64 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// Once a container instance has reached an <code>ACTIVE</code> state, you can change
-        /// the status of a container instance to <code>DRAINING</code> to manually remove an
-        /// instance from a cluster, for example to perform system updates, update the Docker
-        /// daemon, or scale down the cluster size.
+        /// Once a container instance has reached an <c>ACTIVE</c> state, you can change the status
+        /// of a container instance to <c>DRAINING</c> to manually remove an instance from a cluster,
+        /// for example to perform system updates, update the Docker daemon, or scale down the
+        /// cluster size.
         /// </para>
         ///  <important> 
         /// <para>
-        /// A container instance can't be changed to <code>DRAINING</code> until it has reached
-        /// an <code>ACTIVE</code> status. If the instance is in any other status, an error will
-        /// be received.
+        /// A container instance can't be changed to <c>DRAINING</c> until it has reached an <c>ACTIVE</c>
+        /// status. If the instance is in any other status, an error will be received.
         /// </para>
         ///  </important> 
         /// <para>
-        /// When you set a container instance to <code>DRAINING</code>, Amazon ECS prevents new
-        /// tasks from being scheduled for placement on the container instance and replacement
-        /// service tasks are started on other container instances in the cluster if the resources
-        /// are available. Service tasks on the container instance that are in the <code>PENDING</code>
+        /// When you set a container instance to <c>DRAINING</c>, Amazon ECS prevents new tasks
+        /// from being scheduled for placement on the container instance and replacement service
+        /// tasks are started on other container instances in the cluster if the resources are
+        /// available. Service tasks on the container instance that are in the <c>PENDING</c>
         /// state are stopped immediately.
         /// </para>
         ///  
         /// <para>
-        /// Service tasks on the container instance that are in the <code>RUNNING</code> state
-        /// are stopped and replaced according to the service's deployment configuration parameters,
-        /// <code>minimumHealthyPercent</code> and <code>maximumPercent</code>. You can change
-        /// the deployment configuration of your service using <a>UpdateService</a>.
+        /// Service tasks on the container instance that are in the <c>RUNNING</c> state are stopped
+        /// and replaced according to the service's deployment configuration parameters, <c>minimumHealthyPercent</c>
+        /// and <c>maximumPercent</c>. You can change the deployment configuration of your service
+        /// using <a>UpdateService</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code>
-        /// temporarily during task replacement. For example, <code>desiredCount</code> is four
-        /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
-        /// two new tasks. If the minimum is 100%, the service scheduler can't remove existing
-        /// tasks until the replacement tasks are considered healthy. Tasks for services that
-        /// do not use a load balancer are considered healthy if they're in the <code>RUNNING</code>
-        /// state. Tasks for services that use a load balancer are considered healthy if they're
-        /// in the <code>RUNNING</code> state and are reported as healthy by the load balancer.
+        /// If <c>minimumHealthyPercent</c> is below 100%, the scheduler can ignore <c>desiredCount</c>
+        /// temporarily during task replacement. For example, <c>desiredCount</c> is four tasks,
+        /// a minimum of 50% allows the scheduler to stop two existing tasks before starting two
+        /// new tasks. If the minimum is 100%, the service scheduler can't remove existing tasks
+        /// until the replacement tasks are considered healthy. Tasks for services that do not
+        /// use a load balancer are considered healthy if they're in the <c>RUNNING</c> state.
+        /// Tasks for services that use a load balancer are considered healthy if they're in the
+        /// <c>RUNNING</c> state and are reported as healthy by the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>maximumPercent</code> parameter represents an upper limit on the number
-        /// of running tasks during task replacement. You can use this to define the replacement
-        /// batch size. For example, if <code>desiredCount</code> is four tasks, a maximum of
-        /// 200% starts four new tasks before stopping the four tasks to be drained, provided
-        /// that the cluster resources required to do this are available. If the maximum is 100%,
-        /// then replacement tasks can't start until the draining tasks have stopped.
+        /// The <c>maximumPercent</c> parameter represents an upper limit on the number of running
+        /// tasks during task replacement. You can use this to define the replacement batch size.
+        /// For example, if <c>desiredCount</c> is four tasks, a maximum of 200% starts four new
+        /// tasks before stopping the four tasks to be drained, provided that the cluster resources
+        /// required to do this are available. If the maximum is 100%, then replacement tasks
+        /// can't start until the draining tasks have stopped.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not belong to a service
-        /// aren't affected. You must wait for them to finish or stop them manually.
+        /// Any <c>PENDING</c> or <c>RUNNING</c> tasks that do not belong to a service aren't
+        /// affected. You must wait for them to finish or stop them manually.
         /// </para>
         ///  
         /// <para>
-        /// A container instance has completed draining when it has no more <code>RUNNING</code>
-        /// tasks. You can verify this using <a>ListTasks</a>.
+        /// A container instance has completed draining when it has no more <c>RUNNING</c> tasks.
+        /// You can verify this using <a>ListTasks</a>.
         /// </para>
         ///  
         /// <para>
-        /// When a container instance has been drained, you can set a container instance to <code>ACTIVE</code>
+        /// When a container instance has been drained, you can set a container instance to <c>ACTIVE</c>
         /// status and once it has reached that status the Amazon ECS scheduler can begin scheduling
         /// tasks on the instance again.
         /// </para>
@@ -4407,20 +4400,20 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// For services using the rolling update (<code>ECS</code>) you can update the desired
-        /// count, deployment configuration, network configuration, load balancers, service registries,
+        /// For services using the rolling update (<c>ECS</c>) you can update the desired count,
+        /// deployment configuration, network configuration, load balancers, service registries,
         /// enable ECS managed tags option, propagate tags option, task placement constraints
         /// and strategies, and task definition. When you update any of these parameters, Amazon
         /// ECS starts new tasks with the new configuration. 
         /// </para>
         ///  
         /// <para>
-        /// For services using the blue/green (<code>CODE_DEPLOY</code>) deployment controller,
-        /// only the desired count, deployment configuration, health check grace period, task
-        /// placement constraints and strategies, enable ECS managed tags option, and propagate
-        /// tags can be updated using this API. If the network configuration, platform version,
-        /// task definition, or load balancer need to be updated, create a new CodeDeploy deployment.
-        /// For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+        /// For services using the blue/green (<c>CODE_DEPLOY</c>) deployment controller, only
+        /// the desired count, deployment configuration, health check grace period, task placement
+        /// constraints and strategies, enable ECS managed tags option, and propagate tags can
+        /// be updated using this API. If the network configuration, platform version, task definition,
+        /// or load balancer need to be updated, create a new CodeDeploy deployment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
         /// in the <i>CodeDeploy API Reference</i>.
         /// </para>
         ///  
@@ -4434,7 +4427,7 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// You can add to or subtract from the number of instantiations of a task definition
-        /// in a service by specifying the cluster that the service is running in and a new <code>desiredCount</code>
+        /// in a service by specifying the cluster that the service is running in and a new <c>desiredCount</c>
         /// parameter.
         /// </para>
         ///  
@@ -4447,8 +4440,8 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// If your updated Docker image uses the same tag as what is in the existing task definition
-        /// for your service (for example, <code>my_image:latest</code>), you don't need to create
-        /// a new revision of your task definition. You can update the service using the <code>forceNewDeployment</code>
+        /// for your service (for example, <c>my_image:latest</c>), you don't need to create a
+        /// new revision of your task definition. You can update the service using the <c>forceNewDeployment</c>
         /// option. The new tasks launched by the deployment pull the current image/tag combination
         /// from your repository when they start.
         /// </para>
@@ -4456,34 +4449,34 @@ namespace Amazon.ECS
         /// <para>
         /// You can also update the deployment configuration of a service. When a deployment is
         /// triggered by updating the task definition of a service, the service scheduler uses
-        /// the deployment configuration parameters, <code>minimumHealthyPercent</code> and <code>maximumPercent</code>,
+        /// the deployment configuration parameters, <c>minimumHealthyPercent</c> and <c>maximumPercent</c>,
         /// to determine the deployment strategy.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>minimumHealthyPercent</code> is below 100%, the scheduler can ignore <code>desiredCount</code>
-        /// temporarily during a deployment. For example, if <code>desiredCount</code> is four
-        /// tasks, a minimum of 50% allows the scheduler to stop two existing tasks before starting
-        /// two new tasks. Tasks for services that don't use a load balancer are considered healthy
-        /// if they're in the <code>RUNNING</code> state. Tasks for services that use a load balancer
-        /// are considered healthy if they're in the <code>RUNNING</code> state and are reported
-        /// as healthy by the load balancer.
+        /// If <c>minimumHealthyPercent</c> is below 100%, the scheduler can ignore <c>desiredCount</c>
+        /// temporarily during a deployment. For example, if <c>desiredCount</c> is four tasks,
+        /// a minimum of 50% allows the scheduler to stop two existing tasks before starting two
+        /// new tasks. Tasks for services that don't use a load balancer are considered healthy
+        /// if they're in the <c>RUNNING</c> state. Tasks for services that use a load balancer
+        /// are considered healthy if they're in the <c>RUNNING</c> state and are reported as
+        /// healthy by the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>maximumPercent</code> parameter represents an upper limit on the number
-        /// of running tasks during a deployment. You can use it to define the deployment batch
-        /// size. For example, if <code>desiredCount</code> is four tasks, a maximum of 200% starts
-        /// four new tasks before stopping the four older tasks (provided that the cluster resources
-        /// required to do this are available).
+        /// The <c>maximumPercent</c> parameter represents an upper limit on the number of running
+        /// tasks during a deployment. You can use it to define the deployment batch size. For
+        /// example, if <c>desiredCount</c> is four tasks, a maximum of 200% starts four new tasks
+        /// before stopping the four older tasks (provided that the cluster resources required
+        /// to do this are available).
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <code>docker
-        /// stop</code> is issued to the containers running in the task. This results in a <code>SIGTERM</code>
-        /// and a 30-second timeout. After this, <code>SIGKILL</code> is sent and the containers
-        /// are forcibly stopped. If the container handles the <code>SIGTERM</code> gracefully
-        /// and exits within 30 seconds from receiving it, no <code>SIGKILL</code> is sent.
+        /// When <a>UpdateService</a> stops a task during a deployment, the equivalent of <c>docker
+        /// stop</c> is issued to the containers running in the task. This results in a <c>SIGTERM</c>
+        /// and a 30-second timeout. After this, <c>SIGKILL</c> is sent and the containers are
+        /// forcibly stopped. If the container handles the <c>SIGTERM</c> gracefully and exits
+        /// within 30 seconds from receiving it, no <c>SIGKILL</c> is sent.
         /// </para>
         ///  
         /// <para>
@@ -4538,17 +4531,17 @@ namespace Amazon.ECS
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>loadBalancers</code>,
+        ///  <c>loadBalancers</c>,
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>serviceRegistries</code> 
+        ///  <c>serviceRegistries</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about the role see the <code>CreateService</code> request parameter
+        /// For more information about the role see the <c>CreateService</c> request parameter
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_CreateService.html#ECS-CreateService-request-role">
-        /// <code>role</code> </a>. 
+        /// <c>role</c> </a>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -4642,8 +4635,8 @@ namespace Amazon.ECS
         /// <summary>
         /// Modifies which task set in a service is the primary task set. Any parameters that
         /// are updated on the primary task set in a service will transition to the service. This
-        /// is used when a service uses the <code>EXTERNAL</code> deployment controller type.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// is used when a service uses the <c>EXTERNAL</c> deployment controller type. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServicePrimaryTaskSet service method.</param>
@@ -4731,23 +4724,22 @@ namespace Amazon.ECS
         #region  UpdateTaskProtection
 
         /// <summary>
-        /// Updates the protection status of a task. You can set <code>protectionEnabled</code>
-        /// to <code>true</code> to protect your task from termination during scale-in events
-        /// from <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
+        /// Updates the protection status of a task. You can set <c>protectionEnabled</c> to <c>true</c>
+        /// to protect your task from termination during scale-in events from <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-auto-scaling.html">Service
         /// Autoscaling</a> or <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.
         /// 
         ///  
         /// <para>
         /// Task-protection, by default, expires after 2 hours at which point Amazon ECS clears
-        /// the <code>protectionEnabled</code> property making the task eligible for termination
-        /// by a subsequent scale-in event.
+        /// the <c>protectionEnabled</c> property making the task eligible for termination by
+        /// a subsequent scale-in event.
         /// </para>
         ///  
         /// <para>
         /// You can specify a custom expiration period for task protection from 1 minute to up
-        /// to 2,880 minutes (48 hours). To specify the custom expiration period, set the <code>expiresInMinutes</code>
-        /// property. The <code>expiresInMinutes</code> property is always reset when you invoke
-        /// this operation for a task that already has <code>protectionEnabled</code> set to <code>true</code>.
+        /// to 2,880 minutes (48 hours). To specify the custom expiration period, set the <c>expiresInMinutes</c>
+        /// property. The <c>expiresInMinutes</c> property is always reset when you invoke this
+        /// operation for a task that already has <c>protectionEnabled</c> set to <c>true</c>.
         /// You can keep extending the protection expiration period of a task by invoking this
         /// operation repeatedly.
         /// </para>
@@ -4760,8 +4752,8 @@ namespace Amazon.ECS
         ///  <note> 
         /// <para>
         /// This operation is only supported for tasks belonging to an Amazon ECS service. Invoking
-        /// this operation for a standalone task will result in an <code>TASK_NOT_VALID</code>
-        /// failure. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
+        /// this operation for a standalone task will result in an <c>TASK_NOT_VALID</c> failure.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/api_failures_messages.html">API
         /// failure reasons</a>.
         /// </para>
         ///  </note> <important> 
@@ -4848,7 +4840,7 @@ namespace Amazon.ECS
         #region  UpdateTaskSet
 
         /// <summary>
-        /// Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment
+        /// Modifies a task set. This is used when a service uses the <c>EXTERNAL</c> deployment
         /// controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
         /// ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </summary>

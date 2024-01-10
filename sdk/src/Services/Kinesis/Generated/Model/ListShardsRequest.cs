@@ -35,9 +35,9 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  <note> 
     /// <para>
-    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-    /// parameter when you invoke this API.
+    /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+    /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+    /// when you invoke this API.
     /// </para>
     ///  </note> 
     /// <para>
@@ -68,16 +68,16 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property ExclusiveStartShardId. 
         /// <para>
         /// Specify this parameter to indicate that you want to list the shards starting with
-        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.
+        /// the shard whose ID immediately follows <c>ExclusiveStartShardId</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this parameter, the default behavior is for <code>ListShards</code>
+        /// If you don't specify this parameter, the default behavior is for <c>ListShards</c>
         /// to list the shards starting with the first one in the stream.
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter if you specify <code>NextToken</code>.
+        /// You cannot specify this parameter if you specify <c>NextToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -96,15 +96,15 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of shards to return in a single call to <code>ListShards</code>.
-        /// The maximum number of shards to return in a single call. The default value is 1000.
-        /// If you specify a value greater than 1000, at most 1000 results are returned. 
+        /// The maximum number of shards to return in a single call to <c>ListShards</c>. The
+        /// maximum number of shards to return in a single call. The default value is 1000. If
+        /// you specify a value greater than 1000, at most 1000 results are returned. 
         /// </para>
         ///  
         /// <para>
-        /// When the number of shards to be listed is greater than the value of <code>MaxResults</code>,
-        /// the response contains a <code>NextToken</code> value that you can use in a subsequent
-        /// call to <code>ListShards</code> to list the next set of shards.
+        /// When the number of shards to be listed is greater than the value of <c>MaxResults</c>,
+        /// the response contains a <c>NextToken</c> value that you can use in a subsequent call
+        /// to <c>ListShards</c> to list the next set of shards.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -124,31 +124,29 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// When the number of shards in the data stream is greater than the default value for
-        /// the <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code>
+        /// the <c>MaxResults</c> parameter, or if you explicitly specify a value for <c>MaxResults</c>
         /// that is less than the number of shards in the data stream, the response includes a
-        /// pagination token named <code>NextToken</code>. You can specify this <code>NextToken</code>
-        /// value in a subsequent call to <code>ListShards</code> to list the next set of shards.
+        /// pagination token named <c>NextToken</c>. You can specify this <c>NextToken</c> value
+        /// in a subsequent call to <c>ListShards</c> to list the next set of shards.
         /// </para>
         ///  
         /// <para>
-        /// Don't specify <code>StreamName</code> or <code>StreamCreationTimestamp</code> if you
-        /// specify <code>NextToken</code> because the latter unambiguously identifies the stream.
+        /// Don't specify <c>StreamName</c> or <c>StreamCreationTimestamp</c> if you specify <c>NextToken</c>
+        /// because the latter unambiguously identifies the stream.
         /// </para>
         ///  
         /// <para>
-        /// You can optionally specify a value for the <code>MaxResults</code> parameter when
-        /// you specify <code>NextToken</code>. If you specify a <code>MaxResults</code> value
-        /// that is less than the number of shards that the operation returns if you don't specify
-        /// <code>MaxResults</code>, the response will contain a new <code>NextToken</code> value.
-        /// You can use the new <code>NextToken</code> value in a subsequent call to the <code>ListShards</code>
-        /// operation.
+        /// You can optionally specify a value for the <c>MaxResults</c> parameter when you specify
+        /// <c>NextToken</c>. If you specify a <c>MaxResults</c> value that is less than the number
+        /// of shards that the operation returns if you don't specify <c>MaxResults</c>, the response
+        /// will contain a new <c>NextToken</c> value. You can use the new <c>NextToken</c> value
+        /// in a subsequent call to the <c>ListShards</c> operation.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Tokens expire after 300 seconds. When you obtain a value for <code>NextToken</code>
-        /// in the response to a call to <code>ListShards</code>, you have 300 seconds to use
-        /// that value. If you specify an expired token in a call to <code>ListShards</code>,
-        /// you get <code>ExpiredNextTokenException</code>.
+        /// Tokens expire after 300 seconds. When you obtain a value for <c>NextToken</c> in the
+        /// response to a call to <c>ListShards</c>, you have 300 seconds to use that value. If
+        /// you specify an expired token in a call to <c>ListShards</c>, you get <c>ExpiredNextTokenException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -168,33 +166,32 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ShardFilter. 
         /// <para>
-        /// Enables you to filter out the response of the <code>ListShards</code> API. You can
-        /// only specify one filter at a time. 
+        /// Enables you to filter out the response of the <c>ListShards</c> API. You can only
+        /// specify one filter at a time. 
         /// </para>
         ///  
         /// <para>
-        /// If you use the <code>ShardFilter</code> parameter when invoking the ListShards API,
-        /// the <code>Type</code> is the required property and must be specified. If you specify
-        /// the <code>AT_TRIM_HORIZON</code>, <code>FROM_TRIM_HORIZON</code>, or <code>AT_LATEST</code>
-        /// types, you do not need to specify either the <code>ShardId</code> or the <code>Timestamp</code>
-        /// optional properties. 
+        /// If you use the <c>ShardFilter</c> parameter when invoking the ListShards API, the
+        /// <c>Type</c> is the required property and must be specified. If you specify the <c>AT_TRIM_HORIZON</c>,
+        /// <c>FROM_TRIM_HORIZON</c>, or <c>AT_LATEST</c> types, you do not need to specify either
+        /// the <c>ShardId</c> or the <c>Timestamp</c> optional properties. 
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>AFTER_SHARD_ID</code> type, you must also provide the value
-        /// for the optional <code>ShardId</code> property. The <code>ShardId</code> property
-        /// is identical in fuctionality to the <code>ExclusiveStartShardId</code> parameter of
-        /// the <code>ListShards</code> API. When <code>ShardId</code> property is specified,
-        /// the response includes the shards starting with the shard whose ID immediately follows
-        /// the <code>ShardId</code> that you provided. 
+        /// If you specify the <c>AFTER_SHARD_ID</c> type, you must also provide the value for
+        /// the optional <c>ShardId</c> property. The <c>ShardId</c> property is identical in
+        /// fuctionality to the <c>ExclusiveStartShardId</c> parameter of the <c>ListShards</c>
+        /// API. When <c>ShardId</c> property is specified, the response includes the shards starting
+        /// with the shard whose ID immediately follows the <c>ShardId</c> that you provided.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>AT_TIMESTAMP</code> or <code>FROM_TIMESTAMP_ID</code> type,
-        /// you must also provide the value for the optional <code>Timestamp</code> property.
-        /// If you specify the AT_TIMESTAMP type, then all shards that were open at the provided
-        /// timestamp are returned. If you specify the FROM_TIMESTAMP type, then all shards starting
-        /// from the provided timestamp to TIP are returned. 
+        /// If you specify the <c>AT_TIMESTAMP</c> or <c>FROM_TIMESTAMP_ID</c> type, you must
+        /// also provide the value for the optional <c>Timestamp</c> property. If you specify
+        /// the AT_TIMESTAMP type, then all shards that were open at the provided timestamp are
+        /// returned. If you specify the FROM_TIMESTAMP type, then all shards starting from the
+        /// provided timestamp to TIP are returned. 
         /// </para>
         /// </summary>
         public ShardFilter ShardFilter
@@ -238,7 +235,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter if you specify the <code>NextToken</code> parameter.
+        /// You cannot specify this parameter if you specify the <c>NextToken</c> parameter.
         /// </para>
         /// </summary>
         public DateTime StreamCreationTimestamp
@@ -260,7 +257,7 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter if you specify the <code>NextToken</code> parameter.
+        /// You cannot specify this parameter if you specify the <c>NextToken</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

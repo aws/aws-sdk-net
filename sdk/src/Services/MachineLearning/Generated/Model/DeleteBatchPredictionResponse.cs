@@ -29,13 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteBatchPrediction</code> operation.
+    /// Represents the output of a <c>DeleteBatchPrediction</c> operation.
     /// 
     ///  
     /// <para>
-    /// You can use the <code>GetBatchPrediction</code> operation and check the value of the
-    /// <code>Status</code> parameter to see whether a <code>BatchPrediction</code> is marked
-    /// as <code>DELETED</code>.
+    /// You can use the <c>GetBatchPrediction</c> operation and check the value of the <c>Status</c>
+    /// parameter to see whether a <c>BatchPrediction</c> is marked as <c>DELETED</c>.
     /// </para>
     /// </summary>
     public partial class DeleteBatchPredictionResponse : AmazonWebServiceResponse
@@ -45,9 +44,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This
-        /// value should be identical to the value of the <code>BatchPredictionID</code> in the
-        /// request.
+        /// A user-supplied ID that uniquely identifies the <c>BatchPrediction</c>. This value
+        /// should be identical to the value of the <c>BatchPredictionID</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

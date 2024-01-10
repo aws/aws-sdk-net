@@ -31,7 +31,7 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Container for the parameters to the DeleteMedicalScribeJob operation.
     /// Deletes a Medical Scribe job. To use this operation, specify the name of the job you
-    /// want to delete using <code>MedicalScribeJobName</code>. Job names are case sensitive.
+    /// want to delete using <c>MedicalScribeJobName</c>. Job names are case sensitive.
     /// </summary>
     public partial class DeleteMedicalScribeJobRequest : AmazonTranscribeServiceRequest
     {

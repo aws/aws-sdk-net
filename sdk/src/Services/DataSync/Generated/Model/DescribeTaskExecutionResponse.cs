@@ -57,8 +57,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property BytesCompressed. 
         /// <para>
         /// The physical number of bytes transferred over the network after compression was applied.
-        /// In most cases, this number is less than <code>BytesTransferred</code> unless the data
-        /// isn't compressible.
+        /// In most cases, this number is less than <c>BytesTransferred</c> unless the data isn't
+        /// compressible.
         /// </para>
         /// </summary>
         public long BytesCompressed
@@ -77,7 +77,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property BytesTransferred. 
         /// <para>
         /// The total number of bytes that are involved in the transfer. For the number of bytes
-        /// sent over the network, see <code>BytesCompressed</code>. 
+        /// sent over the network, see <c>BytesCompressed</c>. 
         /// </para>
         /// </summary>
         public long BytesTransferred
@@ -134,7 +134,7 @@ namespace Amazon.DataSync.Model
         /// The expected number of files, objects, and directories that DataSync will delete in
         /// your destination location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
         /// your task</a> to delete data in the destination that isn't in the source, the value
-        /// is always <code>0</code>.
+        /// is always <c>0</c>.
         /// </para>
         /// </summary>
         public long EstimatedFilesToDelete
@@ -153,8 +153,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property EstimatedFilesToTransfer. 
         /// <para>
         /// The expected number of files, objects, and directories that DataSync will transfer
-        /// over the network. This value is calculated during the task execution's <code>PREPARING</code>
-        /// phase before the <code>TRANSFERRING</code> phase. The calculation is based on comparing
+        /// over the network. This value is calculated during the task execution's <c>PREPARING</c>
+        /// phase before the <c>TRANSFERRING</c> phase. The calculation is based on comparing
         /// the content of the source and destination locations and finding the difference that
         /// needs to be transferred. 
         /// </para>
@@ -198,7 +198,7 @@ namespace Amazon.DataSync.Model
         /// The number of files, objects, and directories that DataSync deleted in your destination
         /// location. If you don't <a href="https://docs.aws.amazon.com/datasync/latest/userguide/configure-metadata.html">configure
         /// your task</a> to delete data in the destination that isn't in the source, the value
-        /// is always <code>0</code>.
+        /// is always <c>0</c>.
         /// </para>
         /// </summary>
         public long FilesDeleted
@@ -235,13 +235,13 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property FilesTransferred. 
         /// <para>
         /// The actual number of files, objects, and directories that DataSync transferred over
-        /// the network. This value is updated periodically during the task execution's <code>TRANSFERRING</code>
+        /// the network. This value is updated periodically during the task execution's <c>TRANSFERRING</c>
         /// phase when something is read from the source and sent over the network.
         /// </para>
         ///  
         /// <para>
-        /// If DataSync fails to transfer something, this value can be less than <code>EstimatedFilesToTransfer</code>.
-        /// In some cases, this value can also be greater than <code>EstimatedFilesToTransfer</code>.
+        /// If DataSync fails to transfer something, this value can be less than <c>EstimatedFilesToTransfer</c>.
+        /// In some cases, this value can also be greater than <c>EstimatedFilesToTransfer</c>.
         /// This element is implementation-specific for some location types, so don't use it as
         /// an exact indication of what transferred or to monitor your task execution.
         /// </para>
@@ -395,14 +395,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property TaskExecutionArn. 
         /// <para>
-        /// The ARN of the task execution that you wanted information about. <code>TaskExecutionArn</code>
-        /// is hierarchical and includes <code>TaskArn</code> for the task that was executed.
-        /// 
+        /// The ARN of the task execution that you wanted information about. <c>TaskExecutionArn</c>
+        /// is hierarchical and includes <c>TaskArn</c> for the task that was executed. 
         /// </para>
         ///  
         /// <para>
-        /// For example, a <code>TaskExecution</code> value with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</code>
-        /// executed the task with the ARN <code>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</code>.
+        /// For example, a <c>TaskExecution</c> value with the ARN <c>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2/execution/exec-08ef1e88ec491019b</c>
+        /// executed the task with the ARN <c>arn:aws:datasync:us-east-1:111222333444:task/task-0208075f79cedf4a2</c>.
         /// 
         /// </para>
         /// </summary>

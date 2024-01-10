@@ -43,15 +43,15 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SOFT</code> – The component doesn't restart if the dependency changes state.
+        ///  <c>SOFT</c> – The component doesn't restart if the dependency changes state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HARD</code> – The component restarts if the dependency changes state.
+        ///  <c>HARD</c> – The component restarts if the dependency changes state.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>HARD</code> 
+        /// Default: <c>HARD</c> 
         /// </para>
         /// </summary>
         public ComponentDependencyType DependencyType

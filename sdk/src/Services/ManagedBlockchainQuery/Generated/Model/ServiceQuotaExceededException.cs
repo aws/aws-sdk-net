@@ -135,7 +135,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property QuotaCode. 
         /// <para>
-        /// The container for the <code>quotaCode</code>.
+        /// The container for the <c>quotaCode</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -154,7 +154,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The <code>resourceId</code> of the resource that caused the exception.
+        /// The <c>resourceId</c> of the resource that caused the exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -173,7 +173,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The <code>resourceType</code> of the resource that caused the exception.
+        /// The <c>resourceType</c> of the resource that caused the exception.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -192,7 +192,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The container for the <code>serviceCode</code>.
+        /// The container for the <c>serviceCode</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

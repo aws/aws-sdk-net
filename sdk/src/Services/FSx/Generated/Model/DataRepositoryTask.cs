@@ -128,8 +128,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FailureDetails. 
         /// <para>
-        /// Failure message describing why the task failed, it is populated only when <code>Lifecycle</code>
-        /// is set to <code>FAILED</code>.
+        /// Failure message describing why the task failed, it is populated only when <c>Lifecycle</c>
+        /// is set to <c>FAILED</c>.
         /// </para>
         /// </summary>
         public DataRepositoryTaskFailureDetails FailureDetails
@@ -189,38 +189,37 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The task has not started.
+        ///  <c>PENDING</c> - The task has not started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXECUTING</code> - The task is in process.
+        ///  <c>EXECUTING</c> - The task is in process.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The task was not able to be completed. For example, there may
-        /// be files the task failed to process. The <a>DataRepositoryTaskFailureDetails</a> property
+        ///  <c>FAILED</c> - The task was not able to be completed. For example, there may be
+        /// files the task failed to process. The <a>DataRepositoryTaskFailureDetails</a> property
         /// provides more information about task failures.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code> - The task has completed successfully.
+        ///  <c>SUCCEEDED</c> - The task has completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELED</code> - The task was canceled and it did not complete.
+        ///  <c>CANCELED</c> - The task was canceled and it did not complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELING</code> - The task is in process of being canceled.
+        ///  <c>CANCELING</c> - The task is in process of being canceled.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// You cannot delete an FSx for Lustre file system if there are data repository tasks
-        /// for the file system in the <code>PENDING</code> or <code>EXECUTING</code> states.
-        /// Please retry when the data repository task is finished (with a status of <code>CANCELED</code>,
-        /// <code>SUCCEEDED</code>, or <code>FAILED</code>). You can use the DescribeDataRepositoryTask
-        /// action to monitor the task status. Contact the FSx team if you need to delete your
-        /// file system immediately.
+        /// for the file system in the <c>PENDING</c> or <c>EXECUTING</c> states. Please retry
+        /// when the data repository task is finished (with a status of <c>CANCELED</c>, <c>SUCCEEDED</c>,
+        /// or <c>FAILED</c>). You can use the DescribeDataRepositoryTask action to monitor the
+        /// task status. Contact the FSx team if you need to delete your file system immediately.
         /// </para>
         ///  </note>
         /// </summary>
@@ -246,8 +245,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// (Default) If <code>Paths</code> is not specified, Amazon FSx uses the file system
-        /// root directory.
+        /// (Default) If <c>Paths</c> is not specified, Amazon FSx uses the file system root directory.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -392,24 +390,24 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file
-        /// system to a linked data repository.
+        ///  <c>EXPORT_TO_REPOSITORY</c> tasks export from your Amazon FSx for Lustre file system
+        /// to a linked data repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a
-        /// linked S3 bucket to your Amazon FSx for Lustre file system.
+        ///  <c>IMPORT_METADATA_FROM_REPOSITORY</c> tasks import metadata changes from a linked
+        /// S3 bucket to your Amazon FSx for Lustre file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-        /// for Lustre file system that have been exported to a linked S3 bucket and that meet
-        /// your specified release criteria.
+        ///  <c>RELEASE_DATA_FROM_FILESYSTEM</c> tasks release files in your Amazon FSx for Lustre
+        /// file system that have been exported to a linked S3 bucket and that meet your specified
+        /// release criteria.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File
-        /// Cache resource.
+        ///  <c>AUTO_RELEASE_DATA</c> tasks automatically release files from an Amazon File Cache
+        /// resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -135,7 +135,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RowLabelOptions. 
         /// <para>
-        /// The label options of the row that is displayed in a <code>heat map</code>.
+        /// The label options of the row that is displayed in a <c>heat map</c>.
         /// </para>
         /// </summary>
         public ChartAxisLabelOptions RowLabelOptions

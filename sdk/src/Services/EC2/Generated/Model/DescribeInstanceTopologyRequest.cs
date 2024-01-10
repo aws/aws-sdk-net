@@ -57,20 +57,18 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code>
-    /// | <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code>
-    /// | <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code>
+    ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
+    /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
+    /// | <c>hpc7g.16xlarge</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code>
-    /// | <code>p5.48xlarge</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code>
-    /// 
+    ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
@@ -93,21 +91,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>availability-zone</code> - The name of the Availability Zone (for example,
-        /// <code>us-west-2a</code>) or Local Zone (for example, <code>us-west-2-lax-1b</code>)
-        /// that the instance is in.
+        ///  <c>availability-zone</c> - The name of the Availability Zone (for example, <c>us-west-2a</c>)
+        /// or Local Zone (for example, <c>us-west-2-lax-1b</c>) that the instance is in.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instance-type</code> - The instance type (for example, <code>p4d.24xlarge</code>)
-        /// or instance family (for example, <code>p4d*</code>). You can use the <code>*</code>
-        /// wildcard to match zero or more characters, or the <code>?</code> wildcard to match
-        /// zero or one character.
+        ///  <c>instance-type</c> - The instance type (for example, <c>p4d.24xlarge</c>) or instance
+        /// family (for example, <c>p4d*</c>). You can use the <c>*</c> wildcard to match zero
+        /// or more characters, or the <c>?</c> wildcard to match zero or one character.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zone-id</code> - The ID of the Availability Zone (for example, <code>usw2-az2</code>)
-        /// or Local Zone (for example, <code>usw2-lax1-az1</code>) that the instance is in.
+        ///  <c>zone-id</c> - The ID of the Availability Zone (for example, <c>usw2-az2</c>) or
+        /// Local Zone (for example, <c>usw2-lax1-az1</c>) that the instance is in.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -184,7 +180,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>20</code> 
+        /// Default: <c>20</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

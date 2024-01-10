@@ -43,7 +43,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  The maximum number of results to return in one operation. If you omit this parameter,
-        /// the default number is used. The default number is <code>100</code>. 
+        /// the default number is used. The default number is <c>100</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

@@ -33,11 +33,11 @@ namespace Amazon.GameLift.Model
     /// Updates the current runtime configuration for the specified fleet, which tells Amazon
     /// GameLift how to launch server processes on all instances in the fleet. You can update
     /// a fleet's runtime configuration at any time after the fleet is created; it does not
-    /// need to be in <code>ACTIVE</code> status.
+    /// need to be in <c>ACTIVE</c> status.
     /// 
     ///  
     /// <para>
-    /// To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
+    /// To update runtime configuration, specify the fleet ID and provide a <c>RuntimeConfiguration</c>
     /// with an updated set of server process configurations.
     /// </para>
     ///  

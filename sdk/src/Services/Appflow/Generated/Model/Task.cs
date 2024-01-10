@@ -30,7 +30,7 @@ namespace Amazon.Appflow.Model
 {
     /// <summary>
     /// A class for modeling different type of tasks. Task implementation varies based on
-    /// the <code>TaskType</code>.
+    /// the <c>TaskType</c>.
     /// </summary>
     public partial class Task
     {
@@ -101,7 +101,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property TaskProperties. 
         /// <para>
         ///  A map used to store task-related information. The execution service looks for particular
-        /// information based on the <code>TaskType</code>. 
+        /// information based on the <c>TaskType</c>. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> TaskProperties

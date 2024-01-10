@@ -144,10 +144,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>,
-        /// and <code>io2</code> volumes, this represents the number of IOPS that are provisioned
-        /// for the volume. For <code>gp2</code> volumes, this represents the baseline performance
-        /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
+        /// The number of I/O operations per second (IOPS). For <c>gp3</c>, <c>io1</c>, and <c>io2</c>
+        /// volumes, this represents the number of IOPS that are provisioned for the volume. For
+        /// <c>gp2</c> volumes, this represents the baseline performance of the volume and the
+        /// rate at which the volume accumulates I/O credits for bursting.
         /// </para>
         /// </summary>
         public int Iops

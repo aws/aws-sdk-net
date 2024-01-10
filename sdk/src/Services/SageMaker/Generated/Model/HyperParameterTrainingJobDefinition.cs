@@ -111,7 +111,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EnableInterContainerTrafficEncryption. 
         /// <para>
         /// To encrypt all communications between ML compute instances in distributed training,
-        /// choose <code>True</code>. Encryption provides greater security for distributed training,
+        /// choose <c>True</c>. Encryption provides greater security for distributed training,
         /// but training might take longer. How long it takes depends on the amount of communication
         /// between compute instances, especially if you use a deep learning algorithm in distributed
         /// training.
@@ -132,8 +132,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EnableManagedSpotTraining. 
         /// <para>
-        /// A Boolean indicating whether managed spot training is enabled (<code>True</code>)
-        /// or not (<code>False</code>).
+        /// A Boolean indicating whether managed spot training is enabled (<c>True</c>) or not
+        /// (<c>False</c>).
         /// </para>
         /// </summary>
         public bool EnableManagedSpotTraining
@@ -180,10 +180,10 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The maximum number of items specified for <code>Map Entries</code> refers to the maximum
-        /// number of environment variables for each <code>TrainingJobDefinition</code> and also
-        /// the maximum for the hyperparameter tuning job itself. That is, the sum of the number
-        /// of environment variables for all the training job definitions can't exceed the maximum
+        /// The maximum number of items specified for <c>Map Entries</c> refers to the maximum
+        /// number of environment variables for each <c>TrainingJobDefinition</c> and also the
+        /// maximum for the hyperparameter tuning job itself. That is, the sum of the number of
+        /// environment variables for all the training job definitions can't exceed the maximum
         /// number specified.
         /// </para>
         ///  </note>
@@ -221,9 +221,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The configuration for the hyperparameter tuning resources, including the compute instances
         /// and storage volumes, used for training jobs launched by the tuning job. By default,
-        /// storage volumes hold model artifacts and incremental states. Choose <code>File</code>
-        /// for <code>TrainingInputMode</code> in the <code>AlgorithmSpecification</code> parameter
-        /// to additionally store training data in the storage volume (optional).
+        /// storage volumes hold model artifacts and incremental states. Choose <c>File</c> for
+        /// <c>TrainingInputMode</c> in the <c>AlgorithmSpecification</c> parameter to additionally
+        /// store training data in the storage volume (optional).
         /// </para>
         /// </summary>
         public HyperParameterTuningResourceConfig HyperParameterTuningResourceConfig
@@ -288,14 +288,14 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Storage volumes store model artifacts and incremental states. Training algorithms
         /// might also use storage volumes for scratch space. If you want SageMaker to use the
-        /// storage volume to store the training data, choose <code>File</code> as the <code>TrainingInputMode</code>
+        /// storage volume to store the training data, choose <c>File</c> as the <c>TrainingInputMode</c>
         /// in the algorithm specification. For distributed training algorithms, specify an instance
         /// count greater than 1.
         /// </para>
         ///  <note> 
         /// <para>
         /// If you want to use hyperparameter optimization with instance type flexibility, use
-        /// <code>HyperParameterTuningResourceConfig</code> instead.
+        /// <c>HyperParameterTuningResourceConfig</c> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -314,7 +314,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RetryStrategy. 
         /// <para>
-        /// The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+        /// The number of times to retry the job when the job fails due to an <c>InternalServerError</c>.
         /// </para>
         /// </summary>
         public RetryStrategy RetryStrategy

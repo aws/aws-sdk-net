@@ -36,16 +36,16 @@ namespace Amazon.Rekognition.Model
     /// <para>
     /// Amazon Rekognition Video can track the path of people in a video stored in an Amazon
     /// S3 bucket. Use <a>Video</a> to specify the bucket name and the filename of the video.
-    /// <code>StartPersonTracking</code> returns a job identifier (<code>JobId</code>) which
-    /// you use to get the results of the operation. When label detection is finished, Amazon
-    /// Rekognition publishes a completion status to the Amazon Simple Notification Service
-    /// topic that you specify in <code>NotificationChannel</code>. 
+    /// <c>StartPersonTracking</c> returns a job identifier (<c>JobId</c>) which you use to
+    /// get the results of the operation. When label detection is finished, Amazon Rekognition
+    /// publishes a completion status to the Amazon Simple Notification Service topic that
+    /// you specify in <c>NotificationChannel</c>. 
     /// </para>
     ///  
     /// <para>
     /// To get the results of the person detection operation, first check that the status
-    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a>
-    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
+    /// value published to the Amazon SNS topic is <c>SUCCEEDED</c>. If so, call <a>GetPersonTracking</a>
+    /// and pass the job identifier (<c>JobId</c>) from the initial call to <c>StartPersonTracking</c>.
     /// </para>
     /// </summary>
     public partial class StartPersonTrackingRequest : AmazonRekognitionRequest
@@ -59,9 +59,9 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// Idempotent token used to identify the start request. If you use the same token with
-        /// multiple <code>StartPersonTracking</code> requests, the same <code>JobId</code> is
-        /// returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidently
-        /// started more than once. 
+        /// multiple <c>StartPersonTracking</c> requests, the same <c>JobId</c> is returned. Use
+        /// <c>ClientRequestToken</c> to prevent the same job from being accidently started more
+        /// than once. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -81,7 +81,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property JobTag. 
         /// <para>
         /// An identifier you specify that's returned in the completion notification that's published
-        /// to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code>
+        /// to your Amazon Simple Notification Service topic. For example, you can use <c>JobTag</c>
         /// to group related jobs and identify them in the completion notification.
         /// </para>
         /// </summary>

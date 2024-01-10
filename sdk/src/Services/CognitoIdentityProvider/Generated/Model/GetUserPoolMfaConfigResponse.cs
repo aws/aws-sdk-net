@@ -44,16 +44,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OFF</code> MFA won't be used for any users.
+        ///  <c>OFF</c> MFA won't be used for any users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ON</code> MFA is required for all users to sign in.
+        ///  <c>ON</c> MFA is required for all users to sign in.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIONAL</code> MFA will be required only for individual users who have an
-        /// MFA factor activated.
+        ///  <c>OPTIONAL</c> MFA will be required only for individual users who have an MFA factor
+        /// activated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

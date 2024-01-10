@@ -62,15 +62,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KEY_ONLY</code>: Key only.
+        ///  <c>KEY_ONLY</c>: Key only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VALUE_ONLY</code>: Value only.
+        ///  <c>VALUE_ONLY</c>: Value only.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KEY_AND_VALUE</code>: Key and value.
+        ///  <c>KEY_AND_VALUE</c>: Key and value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

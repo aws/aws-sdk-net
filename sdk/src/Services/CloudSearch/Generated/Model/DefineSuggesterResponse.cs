@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured
+    /// The result of a <c>DefineSuggester</c> request. Contains the status of the newly-configured
     /// suggester.
     /// </summary>
     public partial class DefineSuggesterResponse : AmazonWebServiceResponse

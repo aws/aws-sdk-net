@@ -148,17 +148,16 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If the logging level is <code>ERROR</code>, then the logs only include error-level
-        /// entries.
+        /// If the logging level is <c>ERROR</c>, then the logs only include error-level entries.
         /// </para>
         ///  
         /// <para>
-        /// If the logging level is <code>INFO</code>, then the logs include both <code>ERROR</code>
-        /// events and extra informational events.
+        /// If the logging level is <c>INFO</c>, then the logs include both <c>ERROR</c> events
+        /// and extra informational events.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>OFF</code> | <code>ERROR</code> | <code>INFO</code> 
+        /// Valid values: <c>OFF</c> | <c>ERROR</c> | <c>INFO</c> 
         /// </para>
         /// </summary>
         public string LoggingLevel
@@ -217,8 +216,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, the path value <code>/resource/subresource</code> must be encoded as
-        /// <code>/~1resource~1subresource</code>.
+        /// For example, the path value <c>/resource/subresource</c> must be encoded as <c>/~1resource~1subresource</c>.
         /// </para>
         ///  
         /// <para>
@@ -281,8 +279,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>FAIL_WITH_403</code> | <code>SUCCEED_WITH_RESPONSE_HEADER</code>
-        /// | <code>SUCCEED_WITHOUT_RESPONSE_HEADER</code> 
+        /// Valid values: <c>FAIL_WITH_403</c> | <c>SUCCEED_WITH_RESPONSE_HEADER</c> | <c>SUCCEED_WITHOUT_RESPONSE_HEADER</c>
+        /// 
         /// </para>
         /// </summary>
         public string UnauthorizedCacheControlHeaderStrategy

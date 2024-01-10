@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The response object for the Amazon FSx for OpenZFS file system that's being deleted
-    /// in the <code>DeleteFileSystem</code> operation.
+    /// in the <c>DeleteFileSystem</c> operation.
     /// </summary>
     public partial class DeleteFileSystemOpenZFSResponse
     {

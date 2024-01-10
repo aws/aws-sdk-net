@@ -137,8 +137,7 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The overall status of the domain configuration change. This field can take the following
-        /// values: <code>PENDING</code>, <code>PROCESSING</code>, <code>COMPLETED</code> and
-        /// <code>FAILED</code>
+        /// values: <c>PENDING</c>, <c>PROCESSING</c>, <c>COMPLETED</c> and <c>FAILED</c>
         /// </para>
         /// </summary>
         public OverallChangeStatus Status

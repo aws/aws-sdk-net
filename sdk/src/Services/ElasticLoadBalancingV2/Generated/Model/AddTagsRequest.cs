@@ -37,7 +37,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// Each tag consists of a key and an optional value. If a resource already has a tag
-    /// with the same key, <code>AddTags</code> updates its value.
+    /// with the same key, <c>AddTags</c> updates its value.
     /// </para>
     /// </summary>
     public partial class AddTagsRequest : AmazonElasticLoadBalancingV2Request

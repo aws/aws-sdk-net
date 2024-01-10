@@ -39,9 +39,9 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property MigrationTaskSummaryList. 
         /// <para>
-        /// Lists the migration task's summary which includes: <code>MigrationTaskName</code>,
-        /// <code>ProgressPercent</code>, <code>ProgressUpdateStream</code>, <code>Status</code>,
-        /// and the <code>UpdateDateTime</code> for each task.
+        /// Lists the migration task's summary which includes: <c>MigrationTaskName</c>, <c>ProgressPercent</c>,
+        /// <c>ProgressUpdateStream</c>, <c>Status</c>, and the <c>UpdateDateTime</c> for each
+        /// task.
         /// </para>
         /// </summary>
         public List<MigrationTaskSummary> MigrationTaskSummaryList

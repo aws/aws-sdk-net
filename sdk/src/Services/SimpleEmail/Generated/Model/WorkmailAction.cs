@@ -53,13 +53,13 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:workmail:&lt;region&gt;:&lt;awsAccountId&gt;:organization/&lt;workmailOrganizationId&gt;</code>
+        ///  <c>arn:aws:workmail:&lt;region&gt;:&lt;awsAccountId&gt;:organization/&lt;workmailOrganizationId&gt;</c>
         /// 
         /// </para>
         ///  
         /// <para>
         /// You can find the ID of your organization by using the <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_ListOrganizations.html">ListOrganizations</a>
-        /// operation in Amazon WorkMail. Amazon WorkMail organization IDs begin with "<code>m-</code>",
+        /// operation in Amazon WorkMail. Amazon WorkMail organization IDs begin with "<c>m-</c>",
         /// followed by a string of alphanumeric characters.
         /// </para>
         ///  

@@ -107,7 +107,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>fmp4</code> captions have an extension of <code>.ismt</code> 
+        ///  <c>fmp4</c> captions have an extension of <c>.ismt</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -126,7 +126,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Pattern. 
         /// <para>
-        /// The prefix for caption filenames, in the form <i>description</i>-<code>{language}</code>,
+        /// The prefix for caption filenames, in the form <i>description</i>-<c>{language}</c>,
         /// where:
         /// </para>
         ///  <ul> <li> 
@@ -135,15 +135,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>{language}</code> is a literal value that Elastic Transcoder replaces with
-        /// the two- or three-letter code for the language of the caption in the output file names.
+        ///  <c>{language}</c> is a literal value that Elastic Transcoder replaces with the two-
+        /// or three-letter code for the language of the caption in the output file names.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't include <code>{language}</code> in the file name pattern, Elastic Transcoder
-        /// automatically appends "<code>{language}</code>" to the value that you specify for
-        /// the description. In addition, Elastic Transcoder automatically appends the count to
-        /// the end of the segment files.
+        /// If you don't include <c>{language}</c> in the file name pattern, Elastic Transcoder
+        /// automatically appends "<c>{language}</c>" to the value that you specify for the description.
+        /// In addition, Elastic Transcoder automatically appends the count to the end of the
+        /// segment files.
         /// </para>
         ///  
         /// <para>

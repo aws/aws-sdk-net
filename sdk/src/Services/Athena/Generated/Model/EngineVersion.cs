@@ -43,9 +43,8 @@ namespace Amazon.Athena.Model
         /// Read only. The engine version on which the query runs. If the user requests a valid
         /// engine version other than Auto, the effective engine version is the same as the engine
         /// version that the user requested. If the user requests Auto, the effective engine version
-        /// is chosen by Athena. When a request to update the engine version is made by a <code>CreateWorkGroup</code>
-        /// or <code>UpdateWorkGroup</code> operation, the <code>EffectiveEngineVersion</code>
-        /// field is ignored.
+        /// is chosen by Athena. When a request to update the engine version is made by a <c>CreateWorkGroup</c>
+        /// or <c>UpdateWorkGroup</c> operation, the <c>EffectiveEngineVersion</c> field is ignored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -65,7 +64,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property SelectedEngineVersion. 
         /// <para>
         /// The engine version requested by the user. Possible values are determined by the output
-        /// of <code>ListEngineVersions</code>, including AUTO. The default is AUTO.
+        /// of <c>ListEngineVersions</c>, including AUTO. The default is AUTO.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

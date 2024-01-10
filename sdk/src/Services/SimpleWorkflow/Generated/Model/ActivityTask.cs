@@ -101,7 +101,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The ID of the <code>ActivityTaskStarted</code> event recorded in the history.
+        /// The ID of the <c>ActivityTaskStarted</c> event recorded in the history.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

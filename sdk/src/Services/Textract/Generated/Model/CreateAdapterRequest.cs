@@ -32,7 +32,7 @@ namespace Amazon.Textract.Model
     /// Container for the parameters to the CreateAdapter operation.
     /// Creates an adapter, which can be fine-tuned for enhanced performance on user provided
     /// documents. Takes an AdapterName and FeatureType. Currently the only supported feature
-    /// type is <code>QUERIES</code>. You can also provide a Description, Tags, and a ClientRequestToken.
+    /// type is <c>QUERIES</c>. You can also provide a Description, Tags, and a ClientRequestToken.
     /// You can choose whether or not the adapter should be AutoUpdated with the AutoUpdate
     /// argument. By default, AutoUpdate is set to DISABLED.
     /// </summary>
@@ -126,7 +126,7 @@ namespace Amazon.Textract.Model
         /// Gets and sets the property FeatureTypes. 
         /// <para>
         /// The type of feature that the adapter is being trained on. Currrenly, supported feature
-        /// types are: <code>QUERIES</code> 
+        /// types are: <c>QUERIES</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

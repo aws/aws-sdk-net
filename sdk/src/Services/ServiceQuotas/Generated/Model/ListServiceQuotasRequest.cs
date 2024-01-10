@@ -48,15 +48,15 @@ namespace Amazon.ServiceQuotas.Model
         /// Specifies the maximum number of results that you want included on each page of the
         /// response. If you do not include this parameter, it defaults to a value appropriate
         /// to the operation. If additional items exist beyond those included in the current response,
-        /// the <code>NextToken</code> response element is present and has a value (is not null).
-        /// Include that value as the <code>NextToken</code> request parameter in the next call
-        /// to the operation to get the next part of the results.
+        /// the <c>NextToken</c> response element is present and has a value (is not null). Include
+        /// that value as the <c>NextToken</c> request parameter in the next call to the operation
+        /// to get the next part of the results.
         /// </para>
         ///  <note> 
         /// <para>
         /// An API operation can return fewer results than the maximum even when there are more
-        /// results available. You should check <code>NextToken</code> after every operation to
-        /// ensure that you receive all of the results.
+        /// results available. You should check <c>NextToken</c> after every operation to ensure
+        /// that you receive all of the results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -76,9 +76,9 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specifies a value for receiving additional results after you receive a <code>NextToken</code>
-        /// response in a previous request. A <code>NextToken</code> response indicates that more
-        /// output is available. Set this parameter to the value of the previous call's <code>NextToken</code>
+        /// Specifies a value for receiving additional results after you receive a <c>NextToken</c>
+        /// response in a previous request. A <c>NextToken</c> response indicates that more output
+        /// is available. Set this parameter to the value of the previous call's <c>NextToken</c>
         /// response to indicate where the output should continue from.
         /// </para>
         /// </summary>
@@ -117,8 +117,8 @@ namespace Amazon.ServiceQuotas.Model
         /// Gets and sets the property QuotaCode. 
         /// <para>
         /// Specifies the quota identifier. To find the quota code for a specific quota, use the
-        /// <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response
-        /// in the output for the quota you want.
+        /// <a>ListServiceQuotas</a> operation, and look for the <c>QuotaCode</c> response in
+        /// the output for the quota you want.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -67,27 +67,27 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>PendingAutoRenewal</code> </b> - Lightsail is attempting to automatically
-        /// validate the domain names of the certificate. No further action is required. 
+        ///  <b> <c>PendingAutoRenewal</c> </b> - Lightsail is attempting to automatically validate
+        /// the domain names of the certificate. No further action is required. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>PendingValidation</code> </b> - Lightsail couldn't automatically validate
-        /// one or more domain names of the certificate. You must take action to validate these
-        /// domain names or the certificate won't be renewed. Check to make sure your certificate's
-        /// domain validation records exist in your domain's DNS, and that your certificate remains
-        /// in use.
+        ///  <b> <c>PendingValidation</c> </b> - Lightsail couldn't automatically validate one
+        /// or more domain names of the certificate. You must take action to validate these domain
+        /// names or the certificate won't be renewed. Check to make sure your certificate's domain
+        /// validation records exist in your domain's DNS, and that your certificate remains in
+        /// use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Success</code> </b> - All domain names in the certificate are validated,
-        /// and Lightsail renewed the certificate. No further action is required. 
+        ///  <b> <c>Success</c> </b> - All domain names in the certificate are validated, and
+        /// Lightsail renewed the certificate. No further action is required. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Failed</code> </b> - One or more domain names were not validated before
-        /// the certificate expired, and Lightsail did not renew the certificate. You can request
-        /// a new certificate using the <code>CreateCertificate</code> action.
+        ///  <b> <c>Failed</c> </b> - One or more domain names were not validated before the certificate
+        /// expired, and Lightsail did not renew the certificate. You can request a new certificate
+        /// using the <c>CreateCertificate</c> action.
         /// </para>
         ///  </li> </ul>
         /// </summary>

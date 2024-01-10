@@ -39,8 +39,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Reports. 
         /// <para>
-        ///  The array of <code>Report</code> objects returned by <code>BatchGetReports</code>.
-        /// 
+        ///  The array of <c>Report</c> objects returned by <c>BatchGetReports</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -59,8 +58,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ReportsNotFound. 
         /// <para>
-        ///  An array of ARNs passed to <code>BatchGetReportGroups</code> that are not associated
-        /// with a <code>Report</code>. 
+        ///  An array of ARNs passed to <c>BatchGetReportGroups</c> that are not associated with
+        /// a <c>Report</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

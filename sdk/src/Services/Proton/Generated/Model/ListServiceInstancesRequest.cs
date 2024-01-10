@@ -125,12 +125,12 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// When you choose to sort by <code>serviceName</code>, service instances within each
-        /// service are sorted by service instance name.
+        /// When you choose to sort by <c>serviceName</c>, service instances within each service
+        /// are sorted by service instance name.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>serviceName</code> 
+        /// Default: <c>serviceName</c> 
         /// </para>
         /// </summary>
         public ListServiceInstancesSortBy SortBy
@@ -152,7 +152,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ASCENDING</code> 
+        /// Default: <c>ASCENDING</c> 
         /// </para>
         /// </summary>
         public SortOrder SortOrder

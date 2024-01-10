@@ -31,9 +31,9 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Specifies the time window that utterance statistics are returned for. The time window
     /// is always relative to the last time that the that utterances were aggregated. For
-    /// example, if the <code>ListAggregatedUtterances</code> operation is called at 1600,
-    /// the time window is set to 1 hour, and the last refresh time was 1530, only utterances
-    /// made between 1430 and 1530 are returned.
+    /// example, if the <c>ListAggregatedUtterances</c> operation is called at 1600, the time
+    /// window is set to 1 hour, and the last refresh time was 1530, only utterances made
+    /// between 1430 and 1530 are returned.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property TimeDimension. 
         /// <para>
-        /// The type of time period that the <code>timeValue</code> field represents. 
+        /// The type of time period that the <c>timeValue</c> field represents. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,19 +85,19 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property TimeValue. 
         /// <para>
         /// The period of the time window to gather statistics for. The valid value depends on
-        /// the setting of the <code>timeDimension</code> field.
+        /// the setting of the <c>timeDimension</c> field.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Hours</code> - 1/3/6/12/24
+        ///  <c>Hours</c> - 1/3/6/12/24
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Days</code> - 3
+        ///  <c>Days</c> - 3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Weeks</code> - 1/2
+        ///  <c>Weeks</c> - 1/2
         /// </para>
         ///  </li> </ul>
         /// </summary>

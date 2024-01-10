@@ -31,14 +31,14 @@ namespace Amazon.RoboMaker.Model
     /// <summary>
     /// The number of worlds that will be created. You can configure the number of unique
     /// floorplans and the number of unique interiors for each floor plan. For example, if
-    /// you want 1 world with 20 unique interiors, you set <code>floorplanCount = 1</code>
-    /// and <code>interiorCountPerFloorplan = 20</code>. This will result in 20 worlds (<code>floorplanCount</code>
-    /// * <code>interiorCountPerFloorplan)</code>. 
+    /// you want 1 world with 20 unique interiors, you set <c>floorplanCount = 1</c> and <c>interiorCountPerFloorplan
+    /// = 20</c>. This will result in 20 worlds (<c>floorplanCount</c> * <c>interiorCountPerFloorplan)</c>.
+    /// 
     /// 
     ///  
     /// <para>
-    /// If you set <code>floorplanCount = 4</code> and <code>interiorCountPerFloorplan = 5</code>,
-    /// there will be 20 worlds with 5 unique floor plans. 
+    /// If you set <c>floorplanCount = 4</c> and <c>interiorCountPerFloorplan = 5</c>, there
+    /// will be 20 worlds with 5 unique floor plans. 
     /// </para>
     /// </summary>
     public partial class WorldCount

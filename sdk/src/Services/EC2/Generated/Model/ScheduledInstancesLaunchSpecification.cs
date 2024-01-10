@@ -34,7 +34,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// If you are launching the Scheduled Instance in EC2-VPC, you must specify the ID of
-    /// the subnet. You can specify the subnet using either <code>SubnetId</code> or <code>NetworkInterface</code>.
+    /// the subnet. You can specify the subnet using either <c>SubnetId</c> or <c>NetworkInterface</c>.
     /// </para>
     /// </summary>
     public partial class ScheduledInstancesLaunchSpecification
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool EbsOptimized

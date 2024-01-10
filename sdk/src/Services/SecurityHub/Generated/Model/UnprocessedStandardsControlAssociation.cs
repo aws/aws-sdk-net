@@ -80,10 +80,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property StandardsControlAssociationId. 
         /// <para>
         ///  An array with one or more objects that includes a security control (identified with
-        /// <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both
-        /// parameters) and the Amazon Resource Name (ARN) of a standard. This parameter shows
-        /// the specific controls for which the enablement status couldn't be retrieved in specified
-        /// standards when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.
+        /// <c>SecurityControlId</c>, <c>SecurityControlArn</c>, or a mix of both parameters)
+        /// and the Amazon Resource Name (ARN) of a standard. This parameter shows the specific
+        /// controls for which the enablement status couldn't be retrieved in specified standards
+        /// when calling <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">BatchUpdateStandardsControlAssociations</a>.
         /// 
         /// </para>
         /// </summary>

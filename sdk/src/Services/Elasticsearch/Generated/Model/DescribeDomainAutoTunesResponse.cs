@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of <code>DescribeDomainAutoTunes</code> request. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
+    /// The result of <c>DescribeDomainAutoTunes</c> request. See the <a href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
     /// target="_blank">Developer Guide</a> for more information.
     /// </summary>
     public partial class DescribeDomainAutoTunesResponse : AmazonWebServiceResponse

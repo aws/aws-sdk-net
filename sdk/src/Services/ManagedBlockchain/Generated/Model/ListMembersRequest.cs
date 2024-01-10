@@ -50,8 +50,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property IsOwned. 
         /// <para>
         /// An optional Boolean value. If provided, the request is limited either to members that
-        /// the current Amazon Web Services account owns (<code>true</code>) or that other Amazon
-        /// Web Services accountsn own (<code>false</code>). If omitted, all members are listed.
+        /// the current Amazon Web Services account owns (<c>true</c>) or that other Amazon Web
+        /// Services accountsn own (<c>false</c>). If omitted, all members are listed.
         /// </para>
         /// </summary>
         public bool IsOwned

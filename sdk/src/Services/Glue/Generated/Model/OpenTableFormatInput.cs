@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property IcebergInput. 
         /// <para>
-        /// Specifies an <code>IcebergInput</code> structure that defines an Apache Iceberg metadata
+        /// Specifies an <c>IcebergInput</c> structure that defines an Apache Iceberg metadata
         /// table.
         /// </para>
         /// </summary>

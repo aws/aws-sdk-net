@@ -60,28 +60,25 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// Note the following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>,
-    /// or <code>MinSize</code>:
+    /// Note the following about changing <c>DesiredCapacity</c>, <c>MaxSize</c>, or <c>MinSize</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
-    /// that is lower than the current size of the group, the Auto Scaling group uses its
-    /// termination policy to determine which instances to terminate.
+    /// If a scale-in activity occurs as a result of a new <c>DesiredCapacity</c> value that
+    /// is lower than the current size of the group, the Auto Scaling group uses its termination
+    /// policy to determine which instances to terminate.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you specify a new value for <code>MinSize</code> without specifying a value for
-    /// <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the
-    /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
-    /// new <code>MinSize</code> value.
+    /// If you specify a new value for <c>MinSize</c> without specifying a value for <c>DesiredCapacity</c>,
+    /// and the new <c>MinSize</c> is larger than the current size of the group, this sets
+    /// the group's <c>DesiredCapacity</c> to the new <c>MinSize</c> value.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you specify a new value for <code>MaxSize</code> without specifying a value for
-    /// <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the
-    /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
-    /// new <code>MaxSize</code> value.
+    /// If you specify a new value for <c>MaxSize</c> without specifying a value for <c>DesiredCapacity</c>,
+    /// and the new <c>MaxSize</c> is smaller than the current size of the group, this sets
+    /// the group's <c>DesiredCapacity</c> to the new <c>MaxSize</c> value.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -219,7 +216,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DefaultInstanceWarmup. 
         /// <para>
         /// The amount of time, in seconds, until a new instance is considered to have finished
-        /// initializing and resource consumption to become stable after it enters the <code>InService</code>
+        /// initializing and resource consumption to become stable after it enters the <c>InService</c>
         /// state. 
         /// </para>
         ///  
@@ -237,9 +234,9 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// To manage various warm-up settings at the group level, we recommend that you set the
         /// default instance warmup, <i>even if it is set to 0 seconds</i>. To remove a value
-        /// that you previously set, include the property but specify <code>-1</code> for the
-        /// value. However, we strongly recommend keeping the default instance warmup enabled
-        /// by specifying a value of <code>0</code> or other nominal value.
+        /// that you previously set, include the property but specify <c>-1</c> for the value.
+        /// However, we strongly recommend keeping the default instance warmup enabled by specifying
+        /// a value of <c>0</c> or other nominal value.
         /// </para>
         ///  </important>
         /// </summary>
@@ -280,19 +277,19 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DesiredCapacityType. 
         /// <para>
         /// The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto
-        /// Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type
-        /// selection only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
+        /// Scaling supports <c>DesiredCapacityType</c> for attribute-based instance type selection
+        /// only. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/create-asg-instance-type-requirements.html">Creating
         /// an Auto Scaling group using attribute-based instance type selection</a> in the <i>Amazon
         /// EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, Amazon EC2 Auto Scaling specifies <code>units</code>, which translates
-        /// into number of instances.
+        /// By default, Amazon EC2 Auto Scaling specifies <c>units</c>, which translates into
+        /// number of instances.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>units</code> | <code>vcpu</code> | <code>memory-mib</code> 
+        /// Valid values: <c>units</c> | <c>vcpu</c> | <c>memory-mib</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -314,8 +311,8 @@ namespace Amazon.AutoScaling.Model
         /// The amount of time, in seconds, that Amazon EC2 Auto Scaling waits before checking
         /// the health status of an EC2 instance that has come into service and marking it unhealthy
         /// due to a failed health check. This is useful if your instances do not immediately
-        /// pass their health checks after they enter the <code>InService</code> state. For more
-        /// information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
+        /// pass their health checks after they enter the <c>InService</c> state. For more information,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/health-check-grace-period.html">Set
         /// the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2 Auto
         /// Scaling User Guide</i>.
         /// </para>
@@ -339,14 +336,13 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
-        /// <code>EC2</code> is the default health check and cannot be disabled. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+        /// The valid values are <c>EC2</c>, <c>ELB</c>, and <c>VPC_LATTICE</c>. <c>EC2</c> is
+        /// the default health check and cannot be disabled. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
         /// checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Only specify <code>EC2</code> if you must clear a value that was previously set.
+        /// Only specify <c>EC2</c> if you must clear a value that was previously set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -384,8 +380,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchConfigurationName. 
         /// <para>
-        /// The name of the launch configuration. If you specify <code>LaunchConfigurationName</code>
-        /// in your update request, you can't specify <code>LaunchTemplate</code> or <code>MixedInstancesPolicy</code>.
+        /// The name of the launch configuration. If you specify <c>LaunchConfigurationName</c>
+        /// in your update request, you can't specify <c>LaunchTemplate</c> or <c>MixedInstancesPolicy</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -404,9 +400,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LaunchTemplate. 
         /// <para>
-        /// The launch template and version to use to specify the updates. If you specify <code>LaunchTemplate</code>
-        /// in your update request, you can't specify <code>LaunchConfigurationName</code> or
-        /// <code>MixedInstancesPolicy</code>.
+        /// The launch template and version to use to specify the updates. If you specify <c>LaunchTemplate</c>
+        /// in your update request, you can't specify <c>LaunchConfigurationName</c> or <c>MixedInstancesPolicy</c>.
         /// </para>
         /// </summary>
         public LaunchTemplateSpecification LaunchTemplate
@@ -452,10 +447,10 @@ namespace Amazon.AutoScaling.Model
         ///  <note> 
         /// <para>
         /// With a mixed instances policy that uses instance weighting, Amazon EC2 Auto Scaling
-        /// may need to go above <code>MaxSize</code> to meet your capacity requirements. In this
-        /// event, Amazon EC2 Auto Scaling will never go above <code>MaxSize</code> by more than
-        /// your largest instance weight (weights that define how many units each instance contributes
-        /// to the desired capacity of the group).
+        /// may need to go above <c>MaxSize</c> to meet your capacity requirements. In this event,
+        /// Amazon EC2 Auto Scaling will never go above <c>MaxSize</c> by more than your largest
+        /// instance weight (weights that define how many units each instance contributes to the
+        /// desired capacity of the group).
         /// </para>
         ///  </note>
         /// </summary>
@@ -591,9 +586,9 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>Default</code> | <code>AllocationStrategy</code> | <code>ClosestToNextInstanceHour</code>
-        /// | <code>NewestInstance</code> | <code>OldestInstance</code> | <code>OldestLaunchConfiguration</code>
-        /// | <code>OldestLaunchTemplate</code> | <code>arn:aws:lambda:region:account-id:function:my-function:my-alias</code>
+        /// Valid values: <c>Default</c> | <c>AllocationStrategy</c> | <c>ClosestToNextInstanceHour</c>
+        /// | <c>NewestInstance</c> | <c>OldestInstance</c> | <c>OldestLaunchConfiguration</c>
+        /// | <c>OldestLaunchTemplate</c> | <c>arn:aws:lambda:region:account-id:function:my-function:my-alias</c>
         /// 
         /// </para>
         /// </summary>
@@ -613,8 +608,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property VPCZoneIdentifier. 
         /// <para>
         /// A comma-separated list of subnet IDs for a virtual private cloud (VPC). If you specify
-        /// <code>VPCZoneIdentifier</code> with <code>AvailabilityZones</code>, the subnets that
-        /// you specify must reside in those Availability Zones.
+        /// <c>VPCZoneIdentifier</c> with <c>AvailabilityZones</c>, the subnets that you specify
+        /// must reside in those Availability Zones.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2047)]

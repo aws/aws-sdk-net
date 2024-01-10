@@ -49,11 +49,11 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>status=ENABLED</code> 
+        ///  <c>status=ENABLED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status=DISABLED</code> 
+        ///  <c>status=DISABLED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

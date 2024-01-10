@@ -59,8 +59,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  Use to filter for either <code>REACTIVE</code> or <code>PROACTIVE</code> insights.
-        /// 
+        ///  Use to filter for either <c>REACTIVE</c> or <c>PROACTIVE</c> insights. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

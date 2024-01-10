@@ -58,7 +58,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TestWindows. 
         /// <para>
-        /// An array of test windows used to evaluate the algorithm. The <code>NumberOfBacktestWindows</code>
+        /// An array of test windows used to evaluate the algorithm. The <c>NumberOfBacktestWindows</c>
         /// from the object determines the number of windows in the array.
         /// </para>
         /// </summary>

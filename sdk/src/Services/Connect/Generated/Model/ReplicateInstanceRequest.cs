@@ -75,7 +75,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide
-        /// the <code>InstanceId</code>, or the entire ARN.
+        /// the <c>InstanceId</c>, or the entire ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=250)]
@@ -94,7 +94,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ReplicaAlias. 
         /// <para>
-        /// The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.
+        /// The alias for the replicated instance. The <c>ReplicaAlias</c> must be unique.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=45)]

@@ -32,9 +32,9 @@ namespace Amazon.DeviceFarm.Model
     /// Container for the parameters to the ListOfferings operation.
     /// Returns a list of products or offerings that the user can manage through the API.
     /// Each offering record indicates the recurring price per unit and the frequency for
-    /// that offering. The API returns a <code>NotEligible</code> error if the user is not
-    /// permitted to invoke the operation. If you must be able to invoke this operation, contact
-    /// <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
+    /// that offering. The API returns a <c>NotEligible</c> error if the user is not permitted
+    /// to invoke the operation. If you must be able to invoke this operation, contact <a
+    /// href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.
     /// </summary>
     public partial class ListOfferingsRequest : AmazonDeviceFarmRequest
     {

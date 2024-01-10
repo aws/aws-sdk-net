@@ -61,8 +61,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseInput. 
         /// <para>
-        /// A <code>DatabaseInput</code> object specifying the new definition of the metadata
-        /// database in the catalog.
+        /// A <c>DatabaseInput</c> object specifying the new definition of the metadata database
+        /// in the catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

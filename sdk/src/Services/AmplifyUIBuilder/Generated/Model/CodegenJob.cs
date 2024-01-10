@@ -71,7 +71,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Asset. 
         /// <para>
-        /// The <code>CodegenJobAsset</code> to use for the code generation job.
+        /// The <c>CodegenJobAsset</c> to use for the code generation job.
         /// </para>
         /// </summary>
         public CodegenJobAsset Asset

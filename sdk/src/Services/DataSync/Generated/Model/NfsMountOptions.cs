@@ -47,23 +47,23 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AUTOMATIC</code> (default): DataSync chooses NFS version 4.1.
+        ///  <c>AUTOMATIC</c> (default): DataSync chooses NFS version 4.1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NFS3</code>: Stateless protocol version that allows for asynchronous writes
-        /// on the server.
+        ///  <c>NFS3</c>: Stateless protocol version that allows for asynchronous writes on the
+        /// server.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NFSv4_0</code>: Stateful, firewall-friendly protocol version that supports
-        /// delegations and pseudo file systems.
+        ///  <c>NFSv4_0</c>: Stateful, firewall-friendly protocol version that supports delegations
+        /// and pseudo file systems.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NFSv4_1</code>: Stateful protocol version that supports sessions, directory
-        /// delegations, and parallel data processing. NFS version 4.1 also includes all features
-        /// available in version 4.0.
+        ///  <c>NFSv4_1</c>: Stateful protocol version that supports sessions, directory delegations,
+        /// and parallel data processing. NFS version 4.1 also includes all features available
+        /// in version 4.0.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

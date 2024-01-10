@@ -2079,8 +2079,8 @@ namespace Amazon.Outposts
         /// 
         ///  
         /// <para>
-        /// To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait
-        /// for the order to complete or cancel the order.
+        /// To update a rack at a site with an order of <c>IN_PROGRESS</c>, you must wait for
+        /// the order to complete or cancel the order.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSiteRackPhysicalProperties service method.</param>
@@ -2119,8 +2119,8 @@ namespace Amazon.Outposts
         /// 
         ///  
         /// <para>
-        /// To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait
-        /// for the order to complete or cancel the order.
+        /// To update a rack at a site with an order of <c>IN_PROGRESS</c>, you must wait for
+        /// the order to complete or cancel the order.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSiteRackPhysicalProperties service method.</param>

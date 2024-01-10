@@ -59,7 +59,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property DashboardBody. 
         /// <para>
         /// The detailed information about the dashboard, including what widgets are included
-        /// and their location on the dashboard. For more information about the <code>DashboardBody</code>
+        /// and their location on the dashboard. For more information about the <c>DashboardBody</c>
         /// syntax, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/CloudWatch-Dashboard-Body-Structure.html">Dashboard
         /// Body Structure and Syntax</a>. 
         /// </para>

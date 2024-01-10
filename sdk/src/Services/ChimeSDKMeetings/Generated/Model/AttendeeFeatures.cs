@@ -33,9 +33,9 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If you specify <code>FHD</code> for <code>MeetingFeatures:Video:MaxResolution</code>,
-    /// or if you specify <code>UHD</code> for <code>MeetingFeatures:Content:MaxResolution</code>,
-    /// the maximum number of attendees changes from the default of <code>250</code> to <code>25</code>.
+    /// If you specify <c>FHD</c> for <c>MeetingFeatures:Video:MaxResolution</c>, or if you
+    /// specify <c>UHD</c> for <c>MeetingFeatures:Content:MaxResolution</c>, the maximum number
+    /// of attendees changes from the default of <c>250</c> to <c>25</c>.
     /// </para>
     ///  </note>
     /// </summary>

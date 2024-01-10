@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Provides information about an Athena query error. The <code>AthenaError</code> feature
-    /// provides standardized error information to help you understand failed queries and
-    /// take steps after a query failure occurs. <code>AthenaError</code> includes an <code>ErrorCategory</code>
+    /// Provides information about an Athena query error. The <c>AthenaError</c> feature provides
+    /// standardized error information to help you understand failed queries and take steps
+    /// after a query failure occurs. <c>AthenaError</c> includes an <c>ErrorCategory</c>
     /// field that specifies whether the cause of the failed query is due to system error,
     /// user error, or other error.
     /// </summary>

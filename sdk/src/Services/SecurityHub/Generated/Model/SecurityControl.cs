@@ -70,9 +70,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property LastUpdateReason. 
         /// <para>
         ///  The most recent reason for updating the customizable properties of a security control.
-        /// This differs from the <code>UpdateReason</code> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
-        /// <code>BatchUpdateStandardsControlAssociations</code> </a> API, which tracks the reason
-        /// for updating the enablement status of a control. This field accepts alphanumeric characters
+        /// This differs from the <c>UpdateReason</c> field of the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateStandardsControlAssociations.html">
+        /// <c>BatchUpdateStandardsControlAssociations</c> </a> API, which tracks the reason for
+        /// updating the enablement status of a control. This field accepts alphanumeric characters
         /// in addition to white spaces, dashes, and underscores. 
         /// </para>
         /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityControlArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) for a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>.
+        ///  The Amazon Resource Name (ARN) for a security control across standards, such as <c>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</c>.
         /// This parameter doesn't mention a specific standard. 
         /// </para>
         /// </summary>
@@ -231,9 +231,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         ///  Identifies whether customizable properties of a security control are reflected in
-        /// Security Hub findings. A status of <code>READY</code> indicates findings include the
-        /// current parameter values. A status of <code>UPDATING</code> indicates that all findings
-        /// may not include the current parameter values. 
+        /// Security Hub findings. A status of <c>READY</c> indicates findings include the current
+        /// parameter values. A status of <c>UPDATING</c> indicates that all findings may not
+        /// include the current parameter values. 
         /// </para>
         /// </summary>
         public UpdateStatus UpdateStatus

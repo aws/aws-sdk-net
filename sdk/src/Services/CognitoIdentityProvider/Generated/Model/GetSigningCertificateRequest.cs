@@ -36,8 +36,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  
     /// <para>
     /// Amazon Cognito issues and assigns a new signing certificate annually. This process
-    /// returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't
-    /// invalidate the original certificate.
+    /// returns a new value in the response to <c>GetSigningCertificate</c>, but doesn't invalidate
+    /// the original certificate.
     /// </para>
     /// </summary>
     public partial class GetSigningCertificateRequest : AmazonCognitoIdentityProviderRequest

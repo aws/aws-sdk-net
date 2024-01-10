@@ -44,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DisableLocalGroups. 
         /// <para>
-        ///  <code>TRUE</code> to disable local groups information.
+        ///  <c>TRUE</c> to disable local groups information.
         /// </para>
         /// </summary>
         public bool DisableLocalGroups
@@ -89,10 +89,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map OneDrive data
-        /// source attributes or field names to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to OneDrive fields. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map OneDrive data source
+        /// attributes or field names to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to OneDrive fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The OneDrive data source field names must exist in your OneDrive
         /// custom metadata.
         /// </para>

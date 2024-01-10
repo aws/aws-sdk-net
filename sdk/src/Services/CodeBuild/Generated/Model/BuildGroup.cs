@@ -44,7 +44,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property CurrentBuildSummary. 
         /// <para>
-        /// A <code>BuildSummary</code> object that contains a summary of the current build group.
+        /// A <c>BuildSummary</c> object that contains a summary of the current build group.
         /// </para>
         /// </summary>
         public BuildSummary CurrentBuildSummary
@@ -117,8 +117,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property PriorBuildSummaryList. 
         /// <para>
-        /// An array of <code>BuildSummary</code> objects that contain summaries of previous build
-        /// groups.
+        /// An array of <c>BuildSummary</c> objects that contain summaries of previous build groups.
         /// </para>
         /// </summary>
         public List<BuildSummary> PriorBuildSummaryList

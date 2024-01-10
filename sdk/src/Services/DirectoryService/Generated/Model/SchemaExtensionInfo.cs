@@ -135,7 +135,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property SchemaExtensionStatusReason. 
         /// <para>
-        /// The reason for the <code>SchemaExtensionStatus</code>.
+        /// The reason for the <c>SchemaExtensionStatus</c>.
         /// </para>
         /// </summary>
         public string SchemaExtensionStatusReason

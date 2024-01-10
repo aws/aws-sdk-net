@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DestinationDataSharingType. 
         /// <para>
-        /// The sharing data type. Only <code>Organization</code> is supported.
+        /// The sharing data type. Only <c>Organization</c> is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

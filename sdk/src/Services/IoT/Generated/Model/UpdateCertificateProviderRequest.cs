@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AccountDefaultForOperations. 
         /// <para>
         /// A list of the operations that the certificate provider will use to generate certificates.
-        /// Valid value: <code>CreateCertificateFromCsr</code>.
+        /// Valid value: <c>CreateCertificateFromCsr</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

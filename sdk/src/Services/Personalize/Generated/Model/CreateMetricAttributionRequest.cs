@@ -65,9 +65,9 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// A list of metric attributes for the metric attribution. Each metric attribute specifies
-        /// an event type to track and a function. Available functions are <code>SUM()</code>
-        /// or <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type (either
-        /// Interactions or Items) and column to sum as a parameter. For example SUM(Items.PRICE).
+        /// an event type to track and a function. Available functions are <c>SUM()</c> or <c>SAMPLECOUNT()</c>.
+        /// For SUM() functions, provide the dataset type (either Interactions or Items) and column
+        /// to sum as a parameter. For example SUM(Items.PRICE).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

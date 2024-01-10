@@ -45,13 +45,13 @@ namespace Amazon.WellArchitected.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// Either <code>AwsRegions</code>, <code>NonAwsRegions</code>, or both must be specified
-    /// when creating a workload.
+    /// Either <c>AwsRegions</c>, <c>NonAwsRegions</c>, or both must be specified when creating
+    /// a workload.
     /// </para>
     ///  
     /// <para>
-    /// You also must specify <code>ReviewOwner</code>, even though the parameter is listed
-    /// as not being required in the following section. 
+    /// You also must specify <c>ReviewOwner</c>, even though the parameter is listed as not
+    /// being required in the following section. 
     /// </para>
     ///  </important> 
     /// <para>
@@ -60,19 +60,19 @@ namespace Amazon.WellArchitected.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>wellarchitected:GetReviewTemplate</code> 
+    ///  <c>wellarchitected:GetReviewTemplate</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>wellarchitected:GetReviewTemplateAnswer</code> 
+    ///  <c>wellarchitected:GetReviewTemplateAnswer</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>wellarchitected:ListReviewTemplateAnswers</code> 
+    ///  <c>wellarchitected:ListReviewTemplateAnswers</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>wellarchitected:GetReviewTemplateLensReview</code> 
+    ///  <c>wellarchitected:GetReviewTemplateLensReview</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// For each message in the batch, the response contains a <code> <a>SendMessageBatchResultEntry</a>
-    /// </code> tag if the message succeeds or a <code> <a>BatchResultErrorEntry</a> </code>
-    /// tag if the message fails.
+    /// For each message in the batch, the response contains a <c> <a>SendMessageBatchResultEntry</a>
+    /// </c> tag if the message succeeds or a <c> <a>BatchResultErrorEntry</a> </c> tag if
+    /// the message fails.
     /// </summary>
     public partial class SendMessageBatchResponse : AmazonWebServiceResponse
     {
@@ -41,8 +41,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// A list of <code> <a>BatchResultErrorEntry</a> </code> items with error details about
-        /// each message that can't be enqueued.
+        /// A list of <c> <a>BatchResultErrorEntry</a> </c> items with error details about each
+        /// message that can't be enqueued.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Successful. 
         /// <para>
-        /// A list of <code> <a>SendMessageBatchResultEntry</a> </code> items.
+        /// A list of <c> <a>SendMessageBatchResultEntry</a> </c> items.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

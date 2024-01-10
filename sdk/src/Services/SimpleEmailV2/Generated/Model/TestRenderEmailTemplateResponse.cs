@@ -38,7 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property RenderedTemplate. 
         /// <para>
-        /// The complete MIME message rendered by applying the data in the <code>TemplateData</code>
+        /// The complete MIME message rendered by applying the data in the <c>TemplateData</c>
         /// parameter to the template specified in the TemplateName parameter.
         /// </para>
         /// </summary>

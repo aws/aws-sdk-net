@@ -43,8 +43,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property AccountStatus. 
         /// <para>
         /// The current status of your Deliverability dashboard subscription. If this value is
-        /// <code>PENDING_EXPIRATION</code>, your subscription is scheduled to expire at the end
-        /// of the current calendar month.
+        /// <c>PENDING_EXPIRATION</c>, your subscription is scheduled to expire at the end of
+        /// the current calendar month.
         /// </para>
         /// </summary>
         public DeliverabilityDashboardAccountStatus AccountStatus
@@ -82,7 +82,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property DashboardEnabled. 
         /// <para>
-        /// Specifies whether the Deliverability dashboard is enabled. If this value is <code>true</code>,
+        /// Specifies whether the Deliverability dashboard is enabled. If this value is <c>true</c>,
         /// the dashboard is enabled.
         /// </para>
         /// </summary>

@@ -34,8 +34,8 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// The <code>reboot instance</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>instance name</code>. For more information,
+    /// The <c>reboot instance</c> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by <c>instance name</c>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>

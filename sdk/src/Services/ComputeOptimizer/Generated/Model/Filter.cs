@@ -35,10 +35,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
-    /// <code>LambdaFunctionRecommendationFilter</code> with the <a>GetLambdaFunctionRecommendations</a>
-    /// action, and <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a>
-    /// action.
+    /// You can use <c>EBSFilter</c> with the <a>GetEBSVolumeRecommendations</a> action, <c>LambdaFunctionRecommendationFilter</c>
+    /// with the <a>GetLambdaFunctionRecommendations</a> action, and <c>JobFilter</c> with
+    /// the <a>DescribeRecommendationExportJobs</a> action.
     /// </para>
     /// </summary>
     public partial class Filter
@@ -53,43 +52,43 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Finding</code> to return recommendations with a specific finding classification.
-        /// For example, <code>Underprovisioned</code>.
+        /// Specify <c>Finding</c> to return recommendations with a specific finding classification.
+        /// For example, <c>Underprovisioned</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>RecommendationSourceType</code> to return recommendations of a specific
-        /// resource type. For example, <code>Ec2Instance</code>.
+        /// Specify <c>RecommendationSourceType</c> to return recommendations of a specific resource
+        /// type. For example, <c>Ec2Instance</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>FindingReasonCodes</code> to return recommendations with a specific
-        /// finding reason code. For example, <code>CPUUnderprovisioned</code>.
+        /// Specify <c>FindingReasonCodes</c> to return recommendations with a specific finding
+        /// reason code. For example, <c>CPUUnderprovisioned</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific
-        /// inferred workload. For example, <code>Redis</code>.
+        /// Specify <c>InferredWorkloadTypes</c> to return recommendations of a specific inferred
+        /// workload. For example, <c>Redis</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code>
+        /// You can filter your EC2 instance recommendations by <c>tag:key</c> and <c>tag-key</c>
         /// tags.
         /// </para>
         ///  
         /// <para>
-        /// A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations.
+        /// A <c>tag:key</c> is a key and value combination of a tag assigned to your recommendations.
         /// Use the tag key in the filter name and the tag value as the filter value. For example,
-        /// to find all recommendations that have a tag with the key of <code>Owner</code> and
-        /// the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-        /// and <code>TeamA</code> for the filter value.
+        /// to find all recommendations that have a tag with the key of <c>Owner</c> and the value
+        /// of <c>TeamA</c>, specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for
+        /// the filter value.
         /// </para>
         ///  
         /// <para>
-        /// A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this
-        /// filter to find all of your recommendations that have a tag with a specific key. This
-        /// doesn’t consider the tag value. For example, you can find your recommendations with
-        /// a tag key value of <code>Owner</code> or without any tag keys assigned.
+        /// A <c>tag-key</c> is the key of a tag assigned to your recommendations. Use this filter
+        /// to find all of your recommendations that have a tag with a specific key. This doesn’t
+        /// consider the tag value. For example, you can find your recommendations with a tag
+        /// key value of <c>Owner</c> or without any tag keys assigned.
         /// </para>
         /// </summary>
         public FilterName Name
@@ -112,124 +111,120 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// The valid values for this parameter are as follows, depending on what you specify
-        /// for the <code>name</code> parameter and the resource type that you wish to filter
-        /// results for:
+        /// for the <c>name</c> parameter and the resource type that you wish to filter results
+        /// for:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify <code>Optimized</code> or <code>NotOptimized</code> if you specify the <code>name</code>
-        /// parameter as <code>Finding</code> and you want to filter results for Auto Scaling
-        /// groups.
+        /// Specify <c>Optimized</c> or <c>NotOptimized</c> if you specify the <c>name</c> parameter
+        /// as <c>Finding</c> and you want to filter results for Auto Scaling groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <code>Underprovisioned</code>, <code>Overprovisioned</code>, or <code>Optimized</code>
-        /// if you specify the <code>name</code> parameter as <code>Finding</code> and you want
-        /// to filter results for EC2 instances.
+        /// Specify <c>Underprovisioned</c>, <c>Overprovisioned</c>, or <c>Optimized</c> if you
+        /// specify the <c>name</c> parameter as <c>Finding</c> and you want to filter results
+        /// for EC2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <code>Ec2Instance</code> or <code>AutoScalingGroup</code> if you specify the
-        /// <code>name</code> parameter as <code>RecommendationSourceType</code>.
+        /// Specify <c>Ec2Instance</c> or <c>AutoScalingGroup</c> if you specify the <c>name</c>
+        /// parameter as <c>RecommendationSourceType</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify one of the following options if you specify the <code>name</code> parameter
-        /// as <code>FindingReasonCodes</code>:
+        /// Specify one of the following options if you specify the <c>name</c> parameter as <c>FindingReasonCodes</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be
-        /// sized down while still meeting the performance requirements of your workload.
+        ///  <b> <c>CPUOverprovisioned</c> </b> — The instance’s CPU configuration can be sized
+        /// down while still meeting the performance requirements of your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't
-        /// meet the performance requirements of your workload and there is an alternative instance
+        ///  <b> <c>CPUUnderprovisioned</c> </b> — The instance’s CPU configuration doesn't meet
+        /// the performance requirements of your workload and there is an alternative instance
         /// type that provides better CPU performance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration
+        ///  <b> <c>MemoryOverprovisioned</c> </b> — The instance’s memory configuration can be
+        /// sized down while still meeting the performance requirements of your workload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>MemoryUnderprovisioned</c> </b> — The instance’s memory configuration doesn't
+        /// meet the performance requirements of your workload and there is an alternative instance
+        /// type that provides better memory performance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>EBSThroughputOverprovisioned</c> </b> — The instance’s EBS throughput configuration
         /// can be sized down while still meeting the performance requirements of your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration
+        ///  <b> <c>EBSThroughputUnderprovisioned</c> </b> — The instance’s EBS throughput configuration
         /// doesn't meet the performance requirements of your workload and there is an alternative
-        /// instance type that provides better memory performance.
+        /// instance type that provides better EBS throughput performance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
+        ///  <b> <c>EBSIOPSOverprovisioned</c> </b> — The instance’s EBS IOPS configuration can
+        /// be sized down while still meeting the performance requirements of your workload.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>EBSIOPSUnderprovisioned</c> </b> — The instance’s EBS IOPS configuration doesn't
+        /// meet the performance requirements of your workload and there is an alternative instance
+        /// type that provides better EBS IOPS performance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>NetworkBandwidthOverprovisioned</c> </b> — The instance’s network bandwidth
         /// configuration can be sized down while still meeting the performance requirements of
         /// your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-        /// configuration doesn't meet the performance requirements of your workload and there
-        /// is an alternative instance type that provides better EBS throughput performance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-        /// can be sized down while still meeting the performance requirements of your workload.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration
-        /// doesn't meet the performance requirements of your workload and there is an alternative
-        /// instance type that provides better EBS IOPS performance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth
-        /// configuration can be sized down while still meeting the performance requirements of
-        /// your workload.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth
+        ///  <b> <c>NetworkBandwidthUnderprovisioned</c> </b> — The instance’s network bandwidth
         /// configuration doesn't meet the performance requirements of your workload and there
         /// is an alternative instance type that provides better network bandwidth performance.
-        /// This finding reason happens when the <code>NetworkIn</code> or <code>NetworkOut</code>
-        /// performance of an instance is impacted.
+        /// This finding reason happens when the <c>NetworkIn</c> or <c>NetworkOut</c> performance
+        /// of an instance is impacted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets
-        /// per second) configuration can be sized down while still meeting the performance requirements
+        ///  <b> <c>NetworkPPSOverprovisioned</c> </b> — The instance’s network PPS (packets per
+        /// second) configuration can be sized down while still meeting the performance requirements
         /// of your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets
+        ///  <b> <c>NetworkPPSUnderprovisioned</c> </b> — The instance’s network PPS (packets
         /// per second) configuration doesn't meet the performance requirements of your workload
         /// and there is an alternative instance type that provides better network PPS performance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration
+        ///  <b> <c>DiskIOPSOverprovisioned</c> </b> — The instance’s disk IOPS configuration
         /// can be sized down while still meeting the performance requirements of your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration
+        ///  <b> <c>DiskIOPSUnderprovisioned</c> </b> — The instance’s disk IOPS configuration
         /// doesn't meet the performance requirements of your workload and there is an alternative
         /// instance type that provides better disk IOPS performance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput
-        /// configuration can be sized down while still meeting the performance requirements of
-        /// your workload.
+        ///  <b> <c>DiskThroughputOverprovisioned</c> </b> — The instance’s disk throughput configuration
+        /// can be sized down while still meeting the performance requirements of your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput
-        /// configuration doesn't meet the performance requirements of your workload and there
-        /// is an alternative instance type that provides better disk throughput performance.
+        ///  <b> <c>DiskThroughputUnderprovisioned</c> </b> — The instance’s disk throughput configuration
+        /// doesn't meet the performance requirements of your workload and there is an alternative
+        /// instance type that provides better disk throughput performance.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

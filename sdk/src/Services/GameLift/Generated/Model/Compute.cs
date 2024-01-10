@@ -90,8 +90,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeStatus. 
         /// <para>
-        /// Current status of the compute. A compute must have an <code>ACTIVE</code> status to
-        /// host game sessions.
+        /// Current status of the compute. A compute must have an <c>ACTIVE</c> status to host
+        /// game sessions.
         /// </para>
         /// </summary>
         public ComputeStatus ComputeStatus
@@ -110,7 +110,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// A time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime CreationTime

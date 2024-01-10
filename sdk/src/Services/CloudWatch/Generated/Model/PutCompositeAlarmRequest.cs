@@ -66,8 +66,8 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// To get out of such a situation, you must break the cycle by changing the rule of one
     /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
-    /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-    /// of one of the alarms to <code>false</code>. 
+    /// The simplest change to make to break a cycle is to change the <c>AlarmRule</c> of
+    /// one of the alarms to <c>false</c>. 
     /// </para>
     ///  
     /// <para>
@@ -76,11 +76,10 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+    /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
     /// The alarm is then evaluated and its state is set appropriately. Any actions associated
     /// with the new state are then executed. For a composite alarm, this initial time after
-    /// creation is the only time that the alarm can be in <code>INSUFFICIENT_DATA</code>
-    /// state.
+    /// creation is the only time that the alarm can be in <c>INSUFFICIENT_DATA</c> state.
     /// </para>
     ///  
     /// <para>
@@ -89,14 +88,14 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// To use this operation, you must be signed on with the <code>cloudwatch:PutCompositeAlarm</code>
-    /// permission that is scoped to <code>*</code>. You can't create a composite alarms if
-    /// your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.
+    /// To use this operation, you must be signed on with the <c>cloudwatch:PutCompositeAlarm</c>
+    /// permission that is scoped to <c>*</c>. You can't create a composite alarms if your
+    /// <c>cloudwatch:PutCompositeAlarm</c> permission has a narrower scope.
     /// </para>
     ///  
     /// <para>
-    /// If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
-    /// create a composite alarm that has Systems Manager OpsItem actions.
+    /// If you are an IAM user, you must have <c>iam:CreateServiceLinkedRole</c> to create
+    /// a composite alarm that has Systems Manager OpsItem actions.
     /// </para>
     /// </summary>
     public partial class PutCompositeAlarmRequest : AmazonCloudWatchRequest
@@ -117,7 +116,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property ActionsEnabled. 
         /// <para>
         /// Indicates whether actions should be executed during any changes to the alarm state
-        /// of the composite alarm. The default is <code>TRUE</code>.
+        /// of the composite alarm. The default is <c>TRUE</c>.
         /// </para>
         /// </summary>
         public bool ActionsEnabled
@@ -135,9 +134,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ActionsSuppressor. 
         /// <para>
-        ///  Actions will be suppressed if the suppressor alarm is in the <code>ALARM</code> state.
-        /// <code>ActionsSuppressor</code> can be an AlarmName or an Amazon Resource Name (ARN)
-        /// from an existing alarm. 
+        ///  Actions will be suppressed if the suppressor alarm is in the <c>ALARM</c> state.
+        /// <c>ActionsSuppressor</c> can be an AlarmName or an Amazon Resource Name (ARN) from
+        /// an existing alarm. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -157,13 +156,13 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property ActionsSuppressorExtensionPeriod. 
         /// <para>
         ///  The maximum time in seconds that the composite alarm waits after suppressor alarm
-        /// goes out of the <code>ALARM</code> state. After this time, the composite alarm performs
+        /// goes out of the <c>ALARM</c> state. After this time, the composite alarm performs
         /// its actions. 
         /// </para>
         ///  <important> 
         /// <para>
-        ///  <code>ExtensionPeriod</code> is required only when <code>ActionsSuppressor</code>
-        /// is specified. 
+        ///  <c>ExtensionPeriod</c> is required only when <c>ActionsSuppressor</c> is specified.
+        /// 
         /// </para>
         ///  </important>
         /// </summary>
@@ -183,13 +182,12 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property ActionsSuppressorWaitPeriod. 
         /// <para>
         ///  The maximum time in seconds that the composite alarm waits for the suppressor alarm
-        /// to go into the <code>ALARM</code> state. After this time, the composite alarm performs
-        /// its actions. 
+        /// to go into the <c>ALARM</c> state. After this time, the composite alarm performs its
+        /// actions. 
         /// </para>
         ///  <important> 
         /// <para>
-        ///  <code>WaitPeriod</code> is required only when <code>ActionsSuppressor</code> is specified.
-        /// 
+        ///  <c>WaitPeriod</c> is required only when <c>ActionsSuppressor</c> is specified. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -208,14 +206,14 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmActions. 
         /// <para>
-        /// The actions to execute when this alarm transitions to the <code>ALARM</code> state
-        /// from any other state. Each action is specified as an Amazon Resource Name (ARN).
+        /// The actions to execute when this alarm transitions to the <c>ALARM</c> state from
+        /// any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> | <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>
-        /// </code> 
+        /// Valid Values: <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// </c> | <c>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i> </c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -290,57 +288,57 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named
-        /// alarm is in ALARM state.
+        ///  <c>ALARM("<i>alarm-name</i> or <i>alarm-ARN</i>")</c> is TRUE if the named alarm
+        /// is in ALARM state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if the named alarm
-        /// is in OK state.
+        ///  <c>OK("<i>alarm-name</i> or <i>alarm-ARN</i>")</c> is TRUE if the named alarm is
+        /// in OK state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</code> is TRUE if
-        /// the named alarm is in INSUFFICIENT_DATA state.
+        ///  <c>INSUFFICIENT_DATA("<i>alarm-name</i> or <i>alarm-ARN</i>")</c> is TRUE if the
+        /// named alarm is in INSUFFICIENT_DATA state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRUE</code> always evaluates to TRUE.
+        ///  <c>TRUE</c> always evaluates to TRUE.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FALSE</code> always evaluates to FALSE.
+        ///  <c>FALSE</c> always evaluates to FALSE.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// TRUE and FALSE are useful for testing a complex <code>AlarmRule</code> structure,
-        /// and for testing your alarm actions.
+        /// TRUE and FALSE are useful for testing a complex <c>AlarmRule</c> structure, and for
+        /// testing your alarm actions.
         /// </para>
         ///  
         /// <para>
-        /// Alarm names specified in <code>AlarmRule</code> can be surrounded with double-quotes
-        /// ("), but do not have to be.
+        /// Alarm names specified in <c>AlarmRule</c> can be surrounded with double-quotes ("),
+        /// but do not have to be.
         /// </para>
         ///  
         /// <para>
-        /// The following are some examples of <code>AlarmRule</code>:
+        /// The following are some examples of <c>AlarmRule</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</code> specifies
-        /// that the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh
-        /// and DiskReadOpsTooHigh alarms are in ALARM state.
+        ///  <c>ALARM(CPUUtilizationTooHigh) AND ALARM(DiskReadOpsTooHigh)</c> specifies that
+        /// the composite alarm goes into ALARM state only if both CPUUtilizationTooHigh and DiskReadOpsTooHigh
+        /// alarms are in ALARM state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</code> specifies
+        ///  <c>ALARM(CPUUtilizationTooHigh) AND NOT ALARM(DeploymentInProgress)</c> specifies
         /// that the alarm goes to ALARM state if CPUUtilizationTooHigh is in ALARM state and
         /// DeploymentInProgress is not in ALARM state. This example reduces alarm noise during
         /// a known deployment window.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</code>
+        ///  <c>(ALARM(CPUUtilizationTooHigh) OR ALARM(DiskReadOpsTooHigh)) AND OK(NetworkOutTooHigh)</c>
         /// goes into ALARM state if CPUUtilizationTooHigh OR DiskReadOpsTooHigh is in ALARM state,
         /// and if NetworkOutTooHigh is in OK state. This provides another example of using a
         /// composite alarm to prevent noise. This rule ensures that you are not notified with
@@ -348,7 +346,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>AlarmRule</code> can specify as many as 100 "children" alarms. The <code>AlarmRule</code>
+        /// The <c>AlarmRule</c> can specify as many as 100 "children" alarms. The <c>AlarmRule</c>
         /// expression can have as many as 500 elements. Elements are child alarms, TRUE or FALSE
         /// statements, and parentheses.
         /// </para>
@@ -369,13 +367,13 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property InsufficientDataActions. 
         /// <para>
-        /// The actions to execute when this alarm transitions to the <code>INSUFFICIENT_DATA</code>
+        /// The actions to execute when this alarm transitions to the <c>INSUFFICIENT_DATA</c>
         /// state from any other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> 
+        /// Valid Values: <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -394,13 +392,13 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property OKActions. 
         /// <para>
-        /// The actions to execute when this alarm transitions to an <code>OK</code> state from
-        /// any other state. Each action is specified as an Amazon Resource Name (ARN).
+        /// The actions to execute when this alarm transitions to an <c>OK</c> state from any
+        /// other state. Each action is specified as an Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
-        /// </code> 
+        /// Valid Values: <c>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

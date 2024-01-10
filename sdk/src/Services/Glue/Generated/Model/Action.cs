@@ -135,8 +135,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// action.
+        /// The name of the <c>SecurityConfiguration</c> structure to be used with this action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -155,10 +154,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Timeout. 
         /// <para>
-        /// The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run
-        /// can consume resources before it is terminated and enters <code>TIMEOUT</code> status.
-        /// The default is 2,880 minutes (48 hours). This overrides the timeout value set in the
-        /// parent job.
+        /// The <c>JobRun</c> timeout in minutes. This is the maximum time that a job run can
+        /// consume resources before it is terminated and enters <c>TIMEOUT</c> status. The default
+        /// is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

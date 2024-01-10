@@ -187,9 +187,9 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if you set the <code>Mode</code> parameter to <code>ONLY_REDACTION</code>.
-        /// In that case, you must provide a <code>RedactionConfig</code> definition that includes
-        /// the <code>PiiEntityTypes</code> parameter.
+        /// This parameter is required if you set the <c>Mode</c> parameter to <c>ONLY_REDACTION</c>.
+        /// In that case, you must provide a <c>RedactionConfig</c> definition that includes the
+        /// <c>PiiEntityTypes</c> parameter.
         /// </para>
         /// </summary>
         public RedactionConfig RedactionConfig

@@ -36,18 +36,18 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// For example, to filter on a training job's <code>InputDataConfig</code> property with
-    /// a specific channel name and <code>S3Uri</code> prefix, define the following filters:
+    /// For example, to filter on a training job's <c>InputDataConfig</c> property with a
+    /// specific channel name and <c>S3Uri</c> prefix, define the following filters:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</code>
+    ///  <c>'{Name:"InputDataConfig.ChannelName", "Operator":"Equals", "Value":"train"}',</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains",
-    /// "Value":"mybucket/catdata"}'</code> 
+    ///  <c>'{Name:"InputDataConfig.DataSource.S3DataSource.S3Uri", "Operator":"Contains",
+    /// "Value":"mybucket/catdata"}'</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -60,9 +60,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// A list of filters. Each filter acts on a property. Filters must contain at least one
-        /// <code>Filters</code> value. For example, a <code>NestedFilters</code> call might include
-        /// a filter on the <code>PropertyName</code> parameter of the <code>InputDataConfig</code>
-        /// property: <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.
+        /// <c>Filters</c> value. For example, a <c>NestedFilters</c> call might include a filter
+        /// on the <c>PropertyName</c> parameter of the <c>InputDataConfig</c> property: <c>InputDataConfig.DataSource.S3DataSource.S3Uri</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -82,7 +81,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NestedPropertyName. 
         /// <para>
         /// The name of the property to use in the nested filters. The value must match a listed
-        /// property name, such as <code>InputDataConfig</code>.
+        /// property name, such as <c>InputDataConfig</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

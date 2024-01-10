@@ -57,8 +57,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// To list more <code>IPSet</code> objects, submit another <code>ListIPSets</code> request,
-        /// and in the next request use the <code>NextMarker</code> response value as the <code>NextMarker</code>
+        /// To list more <c>IPSet</c> objects, submit another <c>ListIPSets</c> request, and in
+        /// the next request use the <c>NextMarker</c> response value as the <c>NextMarker</c>
         /// value.
         /// </para>
         /// </summary>

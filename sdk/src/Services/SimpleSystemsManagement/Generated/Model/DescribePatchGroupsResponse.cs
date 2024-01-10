@@ -43,12 +43,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PatchGroup</code>: string (between 1 and 256 characters. Regex: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</code>
+        ///  <c>PatchGroup</c>: string (between 1 and 256 characters. Regex: <c>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$)</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PatchBaselineIdentity</code>: A <code>PatchBaselineIdentity</code> element.
+        ///  <c>PatchBaselineIdentity</c>: A <c>PatchBaselineIdentity</c> element.
         /// </para>
         ///  </li> </ul>
         /// </summary>

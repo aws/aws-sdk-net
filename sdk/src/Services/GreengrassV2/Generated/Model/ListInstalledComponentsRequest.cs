@@ -32,8 +32,8 @@ namespace Amazon.GreengrassV2.Model
     /// Container for the parameters to the ListInstalledComponents operation.
     /// Retrieves a paginated list of the components that a Greengrass core device runs. By
     /// default, this list doesn't include components that are deployed as dependencies of
-    /// other components. To include dependencies in the response, set the <code>topologyFilter</code>
-    /// parameter to <code>ALL</code>.
+    /// other components. To include dependencies in the response, set the <c>topologyFilter</c>
+    /// parameter to <c>ALL</c>.
     /// 
     ///  <note> 
     /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// When the status of any component on the core device becomes <code>BROKEN</code> 
+    /// When the status of any component on the core device becomes <c>BROKEN</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -141,17 +141,17 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL</code> – The list includes all components installed on the core device.
+        ///  <c>ALL</c> – The list includes all components installed on the core device.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ROOT</code> – The list includes only <i>root</i> components, which are components
+        ///  <c>ROOT</c> – The list includes only <i>root</i> components, which are components
         /// that you specify in a deployment. When you choose this option, the list doesn't include
         /// components that the core device installs as dependencies of other components.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>ROOT</code> 
+        /// Default: <c>ROOT</c> 
         /// </para>
         /// </summary>
         public InstalledComponentTopologyFilter TopologyFilter

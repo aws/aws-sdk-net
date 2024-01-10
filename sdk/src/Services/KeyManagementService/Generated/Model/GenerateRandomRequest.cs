@@ -34,25 +34,25 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// You must use the <code>NumberOfBytes</code> parameter to specify the length of the
-    /// random byte string. There is no default value for string length.
+    /// You must use the <c>NumberOfBytes</c> parameter to specify the length of the random
+    /// byte string. There is no default value for string length.
     /// </para>
     ///  
     /// <para>
     /// By default, the random byte string is generated in KMS. To generate the byte string
-    /// in the CloudHSM cluster associated with an CloudHSM key store, use the <code>CustomKeyStoreId</code>
+    /// in the CloudHSM cluster associated with an CloudHSM key store, use the <c>CustomKeyStoreId</c>
     /// parameter.
     /// </para>
     ///  
     /// <para>
-    ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+    ///  <c>GenerateRandom</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
     /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-    /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
-    /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+    /// Amazon EC2. To call <c>GenerateRandom</c> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+    /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
     /// parameter to provide the attestation document for the enclave. Instead of plaintext
     /// bytes, the response includes the plaintext bytes encrypted under the public key from
-    /// the attestation document (<code>CiphertextForRecipient</code>).For information about
-    /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+    /// the attestation document (<c>CiphertextForRecipient</c>).For information about the
+    /// interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
     /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
     /// Guide</i>.
     /// </para>
@@ -63,8 +63,8 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: Not applicable. <code>GenerateRandom</code> does not use
-    /// any account-specific resources, such as KMS keys.
+    ///  <b>Cross-account use</b>: Not applicable. <c>GenerateRandom</c> does not use any
+    /// account-specific resources, such as KMS keys.
     /// </para>
     ///  
     /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// External key store IDs are not valid for this parameter. If you specify the ID of
-        /// an external key store, <code>GenerateRandom</code> throws an <code>UnsupportedOperationException</code>.
+        /// an external key store, <c>GenerateRandom</c> throws an <c>UnsupportedOperationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -134,7 +134,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
         /// document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm
-        /// to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
+        /// to use with the enclave's public key. The only valid encryption algorithm is <c>RSAES_OAEP_SHA_256</c>.
         /// 
         /// </para>
         ///  
@@ -147,8 +147,8 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// When you use this parameter, instead of returning plaintext bytes, KMS encrypts the
         /// plaintext bytes under the public key in the attestation document, and returns the
-        /// resulting ciphertext in the <code>CiphertextForRecipient</code> field in the response.
-        /// This ciphertext can be decrypted only with the private key in the enclave. The <code>Plaintext</code>
+        /// resulting ciphertext in the <c>CiphertextForRecipient</c> field in the response. This
+        /// ciphertext can be decrypted only with the private key in the enclave. The <c>Plaintext</c>
         /// field in the response is null or empty.
         /// </para>
         ///  

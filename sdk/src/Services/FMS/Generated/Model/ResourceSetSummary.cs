@@ -123,13 +123,13 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The administrator can manage and delete the resource set.
+        ///  <c>ACTIVE</c> - The administrator can manage and delete the resource set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but
-        /// they can't edit or delete the resource set. Existing protections stay in place. Any
-        /// new resource that come into scope of the resource set won't be protected.
+        ///  <c>OUT_OF_ADMIN_SCOPE</c> - The administrator can view the resource set, but they
+        /// can't edit or delete the resource set. Existing protections stay in place. Any new
+        /// resource that come into scope of the resource set won't be protected.
         /// </para>
         ///  </li> </ul>
         /// </summary>

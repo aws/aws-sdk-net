@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SelectAllOptions. 
         /// <para>
-        /// The configuration of the <code>Select all</code> options in a dropdown control.
+        /// The configuration of the <c>Select all</c> options in a dropdown control.
         /// </para>
         /// </summary>
         public ListControlSelectAllOptions SelectAllOptions

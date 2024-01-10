@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to the <code><a>DescribeVpcEndpoints</a></code>
-    /// operation. Returns a list containing configuration details and status of the VPC Endpoints
-    /// as well as a list containing error responses of the endpoints that could not be described
+    /// Container for response parameters to the <c><a>DescribeVpcEndpoints</a></c> operation.
+    /// Returns a list containing configuration details and status of the VPC Endpoints as
+    /// well as a list containing error responses of the endpoints that could not be described
     /// </summary>
     public partial class DescribeVpcEndpointsResponse : AmazonWebServiceResponse
     {

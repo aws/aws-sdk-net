@@ -205,10 +205,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelVariants. 
         /// <para>
-        ///  An array of <code>ModelVariantConfigSummary</code> objects. There is one for each
-        /// variant in the inference experiment. Each <code>ModelVariantConfigSummary</code> object
-        /// in the array describes the infrastructure configuration for deploying the corresponding
-        /// variant. 
+        ///  An array of <c>ModelVariantConfigSummary</c> objects. There is one for each variant
+        /// in the inference experiment. Each <c>ModelVariantConfigSummary</c> object in the array
+        /// describes the infrastructure configuration for deploying the corresponding variant.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -285,9 +285,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShadowModeConfig. 
         /// <para>
-        ///  The configuration of <code>ShadowMode</code> inference experiment type, which shows
-        /// the production variant that takes all the inference requests, and the shadow variant
-        /// to which Amazon SageMaker replicates a percentage of the inference requests. For the
+        ///  The configuration of <c>ShadowMode</c> inference experiment type, which shows the
+        /// production variant that takes all the inference requests, and the shadow variant to
+        /// which Amazon SageMaker replicates a percentage of the inference requests. For the
         /// shadow variant it also shows the percentage of requests that Amazon SageMaker replicates.
         /// 
         /// </para>
@@ -312,37 +312,37 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Creating</code> - Amazon SageMaker is creating your experiment. 
+        ///  <c>Creating</c> - Amazon SageMaker is creating your experiment. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Created</code> - Amazon SageMaker has finished the creation of your experiment
-        /// and will begin the experiment at the scheduled time. 
+        ///  <c>Created</c> - Amazon SageMaker has finished the creation of your experiment and
+        /// will begin the experiment at the scheduled time. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code> - When you make changes to your experiment, your experiment
-        /// shows as updating. 
+        ///  <c>Updating</c> - When you make changes to your experiment, your experiment shows
+        /// as updating. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Starting</code> - Amazon SageMaker is beginning your experiment. 
+        ///  <c>Starting</c> - Amazon SageMaker is beginning your experiment. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Running</code> - Your experiment is in progress. 
+        ///  <c>Running</c> - Your experiment is in progress. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopping</code> - Amazon SageMaker is stopping your experiment. 
+        ///  <c>Stopping</c> - Amazon SageMaker is stopping your experiment. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Completed</code> - Your experiment has completed. 
+        ///  <c>Completed</c> - Your experiment has completed. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+        ///  <c>Cancelled</c> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
         /// API, or if any operation fails with an unexpected error, it shows as cancelled. 
         /// </para>
         ///  </li> </ul>
@@ -363,7 +363,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        ///  The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+        ///  The error message or client-specified <c>Reason</c> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
         /// API, that explains the status of the inference experiment. 
         /// </para>
         /// </summary>

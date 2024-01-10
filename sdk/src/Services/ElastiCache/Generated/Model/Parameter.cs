@@ -126,9 +126,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        /// Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
-        /// be modified. Some parameters have security or operational implications that prevent
-        /// them from being changed.
+        /// Indicates whether (<c>true</c>) or not (<c>false</c>) the parameter can be modified.
+        /// Some parameters have security or operational implications that prevent them from being
+        /// changed.
         /// </para>
         /// </summary>
         public bool IsModifiable

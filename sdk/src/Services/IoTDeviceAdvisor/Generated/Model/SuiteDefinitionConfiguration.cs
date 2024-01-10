@@ -137,11 +137,11 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// Gets and sets the property RootGroup. 
         /// <para>
         /// Gets the test suite root group. This is a required parameter. For updating or creating
-        /// the latest qualification suite, if <code>intendedForQualification</code> is set to
-        /// true, <code>rootGroup</code> can be an empty string. If <code>intendedForQualification</code>
-        /// is false, <code>rootGroup</code> cannot be an empty string. If <code>rootGroup</code>
-        /// is empty, and <code>intendedForQualification</code> is set to true, all the qualification
-        /// tests are included, and the configuration is default.
+        /// the latest qualification suite, if <c>intendedForQualification</c> is set to true,
+        /// <c>rootGroup</c> can be an empty string. If <c>intendedForQualification</c> is false,
+        /// <c>rootGroup</c> cannot be an empty string. If <c>rootGroup</c> is empty, and <c>intendedForQualification</c>
+        /// is set to true, all the qualification tests are included, and the configuration is
+        /// default.
         /// </para>
         ///  
         /// <para>

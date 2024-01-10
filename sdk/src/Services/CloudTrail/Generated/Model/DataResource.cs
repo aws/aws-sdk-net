@@ -49,29 +49,29 @@ namespace Amazon.CloudTrail.Model
     ///  </note> 
     /// <para>
     /// The following example demonstrates how logging works when you configure logging of
-    /// all data events for an S3 bucket named <code>bucket-1</code>. In this example, the
-    /// CloudTrail user specified an empty prefix, and the option to log both <code>Read</code>
-    /// and <code>Write</code> data events.
+    /// all data events for an S3 bucket named <c>bucket-1</c>. In this example, the CloudTrail
+    /// user specified an empty prefix, and the option to log both <c>Read</c> and <c>Write</c>
+    /// data events.
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// A user uploads an image file to <code>bucket-1</code>.
+    /// A user uploads an image file to <c>bucket-1</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>PutObject</code> API operation is an Amazon S3 object-level API. It is recorded
+    /// The <c>PutObject</c> API operation is an Amazon S3 object-level API. It is recorded
     /// as a data event in CloudTrail. Because the CloudTrail user specified an S3 bucket
     /// with an empty prefix, events that occur on any object in that bucket are logged. The
     /// trail processes and logs the event.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A user uploads an object to an Amazon S3 bucket named <code>arn:aws:s3:::bucket-2</code>.
+    /// A user uploads an object to an Amazon S3 bucket named <c>arn:aws:s3:::bucket-2</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>PutObject</code> API operation occurred for an object in an S3 bucket that
-    /// the CloudTrail user didn't specify for the trail. The trail doesn’t log the event.
+    /// The <c>PutObject</c> API operation occurred for an object in an S3 bucket that the
+    /// CloudTrail user didn't specify for the trail. The trail doesn’t log the event.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -86,17 +86,17 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>Invoke</code> API operation on <i>MyLambdaFunction</i> is an Lambda API.
-    /// It is recorded as a data event in CloudTrail. Because the CloudTrail user specified
-    /// logging data events for <i>MyLambdaFunction</i>, any invocations of that function
-    /// are logged. The trail processes and logs the event.
+    /// The <c>Invoke</c> API operation on <i>MyLambdaFunction</i> is an Lambda API. It is
+    /// recorded as a data event in CloudTrail. Because the CloudTrail user specified logging
+    /// data events for <i>MyLambdaFunction</i>, any invocations of that function are logged.
+    /// The trail processes and logs the event.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>Invoke</code> API operation on <i>MyOtherLambdaFunction</i> is an Lambda
-    /// API. Because the CloudTrail user did not specify logging data events for all Lambda
-    /// functions, the <code>Invoke</code> operation for <i>MyOtherLambdaFunction</i> does
-    /// not match the function specified for the trail. The trail doesn’t log the event. 
+    /// The <c>Invoke</c> API operation on <i>MyOtherLambdaFunction</i> is an Lambda API.
+    /// Because the CloudTrail user did not specify logging data events for all Lambda functions,
+    /// the <c>Invoke</c> operation for <i>MyOtherLambdaFunction</i> does not match the function
+    /// specified for the trail. The trail doesn’t log the event. 
     /// </para>
     ///  </li> </ol>
     /// </summary>
@@ -113,15 +113,15 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::Table</code> 
+        ///  <c>AWS::DynamoDB::Table</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Lambda::Function</code> 
+        ///  <c>AWS::Lambda::Function</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3::Object</code> 
+        ///  <c>AWS::S3::Object</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -132,115 +132,115 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::CloudTrail::Channel</code> 
+        ///  <c>AWS::CloudTrail::Channel</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::CodeWhisperer::Customization</code> 
+        ///  <c>AWS::CodeWhisperer::Customization</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::CodeWhisperer::Profile</code> 
+        ///  <c>AWS::CodeWhisperer::Profile</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Cognito::IdentityPool</code> 
+        ///  <c>AWS::Cognito::IdentityPool</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::Stream</code> 
+        ///  <c>AWS::DynamoDB::Stream</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EC2::Snapshot</code> 
+        ///  <c>AWS::EC2::Snapshot</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EMRWAL::Workspace</code> 
+        ///  <c>AWS::EMRWAL::Workspace</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::FinSpace::Environment</code> 
+        ///  <c>AWS::FinSpace::Environment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Glue::Table</code> 
+        ///  <c>AWS::Glue::Table</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::GuardDuty::Detector</code> 
+        ///  <c>AWS::GuardDuty::Detector</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::KendraRanking::ExecutionPlan</code> 
+        ///  <c>AWS::KendraRanking::ExecutionPlan</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::KinesisVideo::Stream</code> 
+        ///  <c>AWS::KinesisVideo::Stream</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::ManagedBlockchain::Network</code> 
+        ///  <c>AWS::ManagedBlockchain::Network</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::ManagedBlockchain::Node</code> 
+        ///  <c>AWS::ManagedBlockchain::Node</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::MedicalImaging::Datastore</code> 
+        ///  <c>AWS::MedicalImaging::Datastore</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::PCAConnectorAD::Connector</code> 
+        ///  <c>AWS::PCAConnectorAD::Connector</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SageMaker::Endpoint</code> 
+        ///  <c>AWS::SageMaker::Endpoint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SageMaker::ExperimentTrialComponent</code> 
+        ///  <c>AWS::SageMaker::ExperimentTrialComponent</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SageMaker::FeatureGroup</code> 
+        ///  <c>AWS::SageMaker::FeatureGroup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SNS::PlatformEndpoint</code> 
+        ///  <c>AWS::SNS::PlatformEndpoint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SNS::Topic</code> 
+        ///  <c>AWS::SNS::Topic</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3::AccessPoint</code> 
+        ///  <c>AWS::S3::AccessPoint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
+        ///  <c>AWS::S3ObjectLambda::AccessPoint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3Outposts::Object</code> 
+        ///  <c>AWS::S3Outposts::Object</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SSMMessages::ControlChannel</code> 
+        ///  <c>AWS::SSMMessages::ControlChannel</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Timestream::Database</code> 
+        ///  <c>AWS::Timestream::Database</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Timestream::Table</code> 
+        ///  <c>AWS::Timestream::Table</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::VerifiedPermissions::PolicyStore</code> 
+        ///  <c>AWS::VerifiedPermissions::PolicyStore</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -265,7 +265,7 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         /// To log data events for all objects in all S3 buckets in your Amazon Web Services account,
-        /// specify the prefix as <code>arn:aws:s3</code>.
+        /// specify the prefix as <c>arn:aws:s3</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -276,25 +276,25 @@ namespace Amazon.CloudTrail.Model
         ///  </note> </li> <li> 
         /// <para>
         /// To log data events for all objects in an S3 bucket, specify the bucket and an empty
-        /// object prefix such as <code>arn:aws:s3:::bucket-1/</code>. The trail logs data events
-        /// for all objects in this S3 bucket.
+        /// object prefix such as <c>arn:aws:s3:::bucket-1/</c>. The trail logs data events for
+        /// all objects in this S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To log data events for specific objects, specify the S3 bucket and object prefix such
-        /// as <code>arn:aws:s3:::bucket-1/example-images</code>. The trail logs data events for
-        /// objects in this S3 bucket that match the prefix.
+        /// as <c>arn:aws:s3:::bucket-1/example-images</c>. The trail logs data events for objects
+        /// in this S3 bucket that match the prefix.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To log data events for all Lambda functions in your Amazon Web Services account, specify
-        /// the prefix as <code>arn:aws:lambda</code>.
+        /// the prefix as <c>arn:aws:lambda</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This also enables logging of <code>Invoke</code> activity performed by any user or
-        /// role in your Amazon Web Services account, even if that activity is performed on a
-        /// function that belongs to another Amazon Web Services account. 
+        /// This also enables logging of <c>Invoke</c> activity performed by any user or role
+        /// in your Amazon Web Services account, even if that activity is performed on a function
+        /// that belongs to another Amazon Web Services account. 
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -309,7 +309,7 @@ namespace Amazon.CloudTrail.Model
         ///  </note> </li> <li> 
         /// <para>
         /// To log data events for all DynamoDB tables in your Amazon Web Services account, specify
-        /// the prefix as <code>arn:aws:dynamodb</code>.
+        /// the prefix as <c>arn:aws:dynamodb</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

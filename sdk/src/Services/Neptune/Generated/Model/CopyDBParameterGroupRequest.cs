@@ -56,7 +56,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must specify a valid DB parameter group identifier, for example <code>my-db-param-group</code>,
+        /// Must specify a valid DB parameter group identifier, for example <c>my-db-param-group</c>,
         /// or a valid ARN.
         /// </para>
         ///  </li> </ul>
@@ -138,7 +138,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-db-parameter-group</code> 
+        /// Example: <c>my-db-parameter-group</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

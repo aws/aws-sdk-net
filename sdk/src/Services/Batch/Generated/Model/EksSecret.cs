@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information,
+    /// Specifies the configuration of a Kubernetes <c>secret</c> volume. For more information,
     /// see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a>
     /// in the <i>Kubernetes documentation</i>.
     /// </summary>

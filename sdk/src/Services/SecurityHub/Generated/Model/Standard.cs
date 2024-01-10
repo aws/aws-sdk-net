@@ -66,9 +66,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// When Security Hub is enabled using the <code>EnableSecurityHub</code> API operation,
-        /// the standard is enabled by default unless <code>EnableDefaultStandards</code> is set
-        /// to <code>false</code>.
+        /// When Security Hub is enabled using the <c>EnableSecurityHub</c> API operation, the
+        /// standard is enabled by default unless <c>EnableDefaultStandards</c> is set to <c>false</c>.
         /// </para>
         /// </summary>
         public bool EnabledByDefault

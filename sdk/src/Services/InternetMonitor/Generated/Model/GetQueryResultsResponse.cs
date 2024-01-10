@@ -41,9 +41,9 @@ namespace Amazon.InternetMonitor.Model
         /// Gets and sets the property Data. 
         /// <para>
         /// The data results that the query returns. Data is returned in arrays, aligned with
-        /// the <code>Fields</code> for the query, which creates a repository of Amazon CloudWatch
-        /// Internet Monitor information for your application. Then, you can filter the information
-        /// in the repository by using <code>FilterParameters</code> that you define.
+        /// the <c>Fields</c> for the query, which creates a repository of Amazon CloudWatch Internet
+        /// Monitor information for your application. Then, you can filter the information in
+        /// the repository by using <c>FilterParameters</c> that you define.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.InternetMonitor.Model
         /// Gets and sets the property Fields. 
         /// <para>
         /// The fields that the query returns data for. Fields are name-data type pairs, such
-        /// as <code>availability_score</code>-<code>float</code>.
+        /// as <c>availability_score</c>-<c>float</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

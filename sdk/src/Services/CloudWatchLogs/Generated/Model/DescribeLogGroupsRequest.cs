@@ -35,11 +35,11 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
-    /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
-    /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
-    /// </code> condition key to control access. For more information about using tags to
-    /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+    /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+    /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
+    /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
+    /// key to control access. For more information about using tags to control access, see
+    /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
     /// access to Amazon Web Services resources using tags</a>.
     /// </para>
     ///  
@@ -63,9 +63,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property AccountIdentifiers. 
         /// <para>
-        /// When <code>includeLinkedAccounts</code> is set to <code>True</code>, use this parameter
-        /// to specify the list of accounts to search. You can specify as many as 20 account IDs
-        /// in the array. 
+        /// When <c>includeLinkedAccounts</c> is set to <c>True</c>, use this parameter to specify
+        /// the list of accounts to search. You can specify as many as 20 account IDs in the array.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -84,15 +84,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property IncludeLinkedAccounts. 
         /// <para>
-        /// If you are using a monitoring account, set this to <code>True</code> to have the operation
-        /// return log groups in the accounts listed in <code>accountIdentifiers</code>.
+        /// If you are using a monitoring account, set this to <c>True</c> to have the operation
+        /// return log groups in the accounts listed in <c>accountIdentifiers</c>.
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is set to <code>true</code> and <code>accountIdentifiers</code>
-        /// contains a null value, the operation returns all log groups in the monitoring account
-        /// and all log groups in all source accounts that are linked to the monitoring account.
-        /// 
+        /// If this parameter is set to <c>true</c> and <c>accountIdentifiers</c> contains a null
+        /// value, the operation returns all log groups in the monitoring account and all log
+        /// groups in all source accounts that are linked to the monitoring account. 
         /// </para>
         /// </summary>
         public bool IncludeLinkedAccounts
@@ -134,12 +133,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>Standard</code> log class supports all CloudWatch Logs features.
+        /// The <c>Standard</c> log class supports all CloudWatch Logs features.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Infrequent Access</code> log class supports a subset of CloudWatch Logs
-        /// features and incurs lower costs.
+        /// The <c>Infrequent Access</c> log class supports a subset of CloudWatch Logs features
+        /// and incurs lower costs.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -164,20 +163,19 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// If you specify a string for this parameter, the operation returns only log groups
         /// that have names that match the string based on a case-sensitive substring search.
-        /// For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>,
-        /// <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>,
-        /// <code>F/o/o</code> and <code>Froo</code> would not match.
+        /// For example, if you specify <c>Foo</c>, log groups named <c>FooBar</c>, <c>aws/Foo</c>,
+        /// and <c>GroupFoo</c> would match, but <c>foo</c>, <c>F/o/o</c> and <c>Froo</c> would
+        /// not match.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
-        /// <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
-        /// 
+        /// If you specify <c>logGroupNamePattern</c> in your request, then only <c>arn</c>, <c>creationTime</c>,
+        /// and <c>logGroupName</c> are included in the response. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are mutually
-        /// exclusive. Only one of these parameters can be passed. 
+        ///  <c>logGroupNamePattern</c> and <c>logGroupNamePrefix</c> are mutually exclusive.
+        /// Only one of these parameters can be passed. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -201,8 +199,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>logGroupNamePrefix</code> and <code>logGroupNamePattern</code> are mutually
-        /// exclusive. Only one of these parameters can be passed. 
+        ///  <c>logGroupNamePrefix</c> and <c>logGroupNamePattern</c> are mutually exclusive.
+        /// Only one of these parameters can be passed. 
         /// </para>
         ///  </note>
         /// </summary>

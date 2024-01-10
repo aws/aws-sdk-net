@@ -103,8 +103,8 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property FreeTierType. 
         /// <para>
-        /// Describes the type of the Free Tier offer. For example, the offer can be <code>"12
-        /// Months Free"</code>, <code>"Always Free"</code>, and <code>"Free Trial"</code>.
+        /// Describes the type of the Free Tier offer. For example, the offer can be <c>"12 Months
+        /// Free"</c>, <c>"Always Free"</c>, and <c>"Free Trial"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -141,9 +141,9 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property Operation. 
         /// <para>
-        /// Describes <code>usageType</code> more granularly with the specific Amazon Web Service
-        /// API operation. For example, this can be the <code>RunInstances</code> API operation
-        /// for Amazon Elastic Compute Cloud.
+        /// Describes <c>usageType</c> more granularly with the specific Amazon Web Service API
+        /// operation. For example, this can be the <c>RunInstances</c> API operation for Amazon
+        /// Elastic Compute Cloud.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -201,7 +201,7 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// Describes the unit of the <code>usageType</code>, such as <code>Hrs</code>.
+        /// Describes the unit of the <c>usageType</c>, such as <c>Hrs</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -220,7 +220,7 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property UsageType. 
         /// <para>
-        /// Describes the usage details of the offer. For example, this might be <code>Global-BoxUsage:freetrial</code>.
+        /// Describes the usage details of the offer. For example, this might be <c>Global-BoxUsage:freetrial</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

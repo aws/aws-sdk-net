@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response to a <code>DeleteHostedZone</code> request.
+    /// A complex type that contains the response to a <c>DeleteHostedZone</c> request.
     /// </summary>
     public partial class DeleteHostedZoneResponse : AmazonWebServiceResponse
     {

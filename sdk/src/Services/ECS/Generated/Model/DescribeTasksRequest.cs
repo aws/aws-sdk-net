@@ -73,9 +73,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Include. 
         /// <para>
-        /// Specifies whether you want to see the resource tags for the task. If <code>TAGS</code>
-        /// is specified, the tags are included in the response. If this field is omitted, tags
-        /// aren't included in the response.
+        /// Specifies whether you want to see the resource tags for the task. If <c>TAGS</c> is
+        /// specified, the tags are included in the response. If this field is omitted, tags aren't
+        /// included in the response.
         /// </para>
         /// </summary>
         public List<string> Include

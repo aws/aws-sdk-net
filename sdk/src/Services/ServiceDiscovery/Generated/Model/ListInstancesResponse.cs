@@ -57,10 +57,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> instances match the specified criteria, you can
-        /// submit another <code>ListInstances</code> request to get the next group of results.
-        /// Specify the value of <code>NextToken</code> from the previous response in the next
-        /// request.
+        /// If more than <c>MaxResults</c> instances match the specified criteria, you can submit
+        /// another <c>ListInstances</c> request to get the next group of results. Specify the
+        /// value of <c>NextToken</c> from the previous response in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

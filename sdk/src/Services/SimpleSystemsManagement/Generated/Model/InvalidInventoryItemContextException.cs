@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You specified invalid keys or values in the <code>Context</code> attribute for <code>InventoryItem</code>.
+    /// You specified invalid keys or values in the <c>Context</c> attribute for <c>InventoryItem</c>.
     /// Verify the keys and values, and try again.
     /// </summary>
     #if !NETSTANDARD

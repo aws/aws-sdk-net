@@ -61,7 +61,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// String that contains the alias. This value begins with <code>alias/</code>.
+        /// String that contains the alias. This value begins with <c>alias/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

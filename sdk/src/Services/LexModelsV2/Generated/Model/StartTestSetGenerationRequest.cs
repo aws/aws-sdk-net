@@ -141,8 +141,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property TestSetTags. 
         /// <para>
         /// A list of tags to add to the test set. You can only add tags when you import/generate
-        /// a new test set. You can't use the <code>UpdateTestSet</code> operation to update tags.
-        /// To update tags, use the <code>TagResource</code> operation.
+        /// a new test set. You can't use the <c>UpdateTestSet</c> operation to update tags. To
+        /// update tags, use the <c>TagResource</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

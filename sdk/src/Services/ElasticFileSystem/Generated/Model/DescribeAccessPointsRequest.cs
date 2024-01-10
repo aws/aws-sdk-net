@@ -30,14 +30,14 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAccessPoints operation.
-    /// Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code>
-    /// is provided. If you provide an EFS <code>FileSystemId</code>, it returns descriptions
-    /// of all access points for that file system. You can provide either an <code>AccessPointId</code>
-    /// or a <code>FileSystemId</code> in the request, but not both. 
+    /// Returns the description of a specific Amazon EFS access point if the <c>AccessPointId</c>
+    /// is provided. If you provide an EFS <c>FileSystemId</c>, it returns descriptions of
+    /// all access points for that file system. You can provide either an <c>AccessPointId</c>
+    /// or a <c>FileSystemId</c> in the request, but not both. 
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+    /// This operation requires permissions for the <c>elasticfilesystem:DescribeAccessPoints</c>
     /// action.
     /// </para>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property AccessPointId. 
         /// <para>
         /// (Optional) Specifies an EFS access point to describe in the response; mutually exclusive
-        /// with <code>FileSystemId</code>.
+        /// with <c>FileSystemId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -71,8 +71,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// (Optional) If you provide a <code>FileSystemId</code>, EFS returns all access points
-        /// for that file system; mutually exclusive with <code>AccessPointId</code>.
+        /// (Optional) If you provide a <c>FileSystemId</c>, EFS returns all access points for
+        /// that file system; mutually exclusive with <c>AccessPointId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -92,8 +92,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// (Optional) When retrieving all access points for a file system, you can optionally
-        /// specify the <code>MaxItems</code> parameter to limit the number of objects returned
-        /// in a response. The default value is 100. 
+        /// specify the <c>MaxItems</c> parameter to limit the number of objects returned in a
+        /// response. The default value is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -112,7 +112,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  <code>NextToken</code> is present if the response is paginated. You can use <code>NextMarker</code>
+        ///  <c>NextToken</c> is present if the response is paginated. You can use <c>NextMarker</c>
         /// in the subsequent request to fetch the next page of access point descriptions.
         /// </para>
         /// </summary>

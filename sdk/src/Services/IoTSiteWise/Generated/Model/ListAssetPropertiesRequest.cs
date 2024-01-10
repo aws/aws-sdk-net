@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+        /// The ID of the asset. This can be either the actual ID in UUID format, or else <c>externalId:</c>
         /// followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
@@ -70,17 +70,16 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL</code> – The list includes all asset properties for a given asset model
-        /// ID. 
+        ///  <c>ALL</c> – The list includes all asset properties for a given asset model ID. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BASE</code> – The list includes only base asset properties for a given asset
-        /// model ID. 
+        ///  <c>BASE</c> – The list includes only base asset properties for a given asset model
+        /// ID. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>BASE</code> 
+        /// Default: <c>BASE</c> 
         /// </para>
         /// </summary>
         public ListAssetPropertiesFilter Filter

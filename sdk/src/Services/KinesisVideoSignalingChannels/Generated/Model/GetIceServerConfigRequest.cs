@@ -101,7 +101,7 @@ namespace Amazon.KinesisVideoSignalingChannels.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// Specifies the desired service. Currently, <code>TURN</code> is the only valid value.
+        /// Specifies the desired service. Currently, <c>TURN</c> is the only valid value.
         /// </para>
         /// </summary>
         public Service Service

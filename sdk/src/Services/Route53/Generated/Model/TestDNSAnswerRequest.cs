@@ -40,10 +40,9 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>TestDnsAnswer </code> returns information similar to what you would expect
-    /// from the answer section of the <code>dig</code> command. Therefore, if you query for
-    /// the name servers of a subdomain that point to the parent name servers, those will
-    /// not be returned.
+    /// The <c>TestDnsAnswer </c> returns information similar to what you would expect from
+    /// the answer section of the <c>dig</c> command. Therefore, if you query for the name
+    /// servers of a subdomain that point to the parent name servers, those will not be returned.
     /// </para>
     ///  </note>
     /// </summary>
@@ -118,9 +117,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property ResolverIP. 
         /// <para>
         /// If you want to simulate a request from a specific DNS resolver, specify the IP address
-        /// for that resolver. If you omit this value, <code>TestDnsAnswer</code> uses the IP
-        /// address of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region
-        /// (<code>us-east-1</code>).
+        /// for that resolver. If you omit this value, <c>TestDnsAnswer</c> uses the IP address
+        /// of a DNS resolver in the Amazon Web Services US East (N. Virginia) Region (<c>us-east-1</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=45)]
@@ -140,8 +138,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property EDNS0ClientSubnetIP. 
         /// <para>
         /// If the resolver that you specified for resolverip supports EDNS0, specify the IPv4
-        /// or IPv6 address of a client in the applicable location, for example, <code>192.0.2.44</code>
-        /// or <code>2001:db8:85a3::8a2e:370:7334</code>.
+        /// or IPv6 address of a client in the applicable location, for example, <c>192.0.2.44</c>
+        /// or <c>2001:db8:85a3::8a2e:370:7334</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=45)]
@@ -160,17 +158,17 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property EDNS0ClientSubnetMask. 
         /// <para>
-        /// If you specify an IP address for <code>edns0clientsubnetip</code>, you can optionally
-        /// specify the number of bits of the IP address that you want the checking tool to include
-        /// in the DNS query. For example, if you specify <code>192.0.2.44</code> for <code>edns0clientsubnetip</code>
-        /// and <code>24</code> for <code>edns0clientsubnetmask</code>, the checking tool will
-        /// simulate a request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses
-        /// and 64 bits for IPv6 addresses.
+        /// If you specify an IP address for <c>edns0clientsubnetip</c>, you can optionally specify
+        /// the number of bits of the IP address that you want the checking tool to include in
+        /// the DNS query. For example, if you specify <c>192.0.2.44</c> for <c>edns0clientsubnetip</c>
+        /// and <c>24</c> for <c>edns0clientsubnetmask</c>, the checking tool will simulate a
+        /// request from 192.0.2.0/24. The default value is 24 bits for IPv4 addresses and 64
+        /// bits for IPv6 addresses.
         /// </para>
         ///  
         /// <para>
-        /// The range of valid values depends on whether <code>edns0clientsubnetip</code> is an
-        /// IPv4 or an IPv6 address:
+        /// The range of valid values depends on whether <c>edns0clientsubnetip</c> is an IPv4
+        /// or an IPv6 address:
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Describes the parameters for the connector, as identified by the <code>ConnectorId</code>.
+    /// Describes the parameters for the connector, as identified by the <c>ConnectorId</c>.
     /// </summary>
     public partial class DescribedConnector
     {
@@ -55,23 +55,22 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// With AS2, you can send files by calling <code>StartFileTransfer</code> and specifying
-        /// the file paths in the request parameter, <code>SendFilePaths</code>. We use the file’s
-        /// parent directory (for example, for <code>--send-file-paths /bucket/dir/file.txt</code>,
-        /// parent directory is <code>/bucket/dir/</code>) to temporarily store a processed AS2
-        /// message file, store the MDN when we receive them from the partner, and write a final
-        /// JSON file containing relevant metadata of the transmission. So, the <code>AccessRole</code>
-        /// needs to provide read and write access to the parent directory of the file location
-        /// used in the <code>StartFileTransfer</code> request. Additionally, you need to provide
-        /// read and write access to the parent directory of the files that you intend to send
-        /// with <code>StartFileTransfer</code>.
+        /// With AS2, you can send files by calling <c>StartFileTransfer</c> and specifying the
+        /// file paths in the request parameter, <c>SendFilePaths</c>. We use the file’s parent
+        /// directory (for example, for <c>--send-file-paths /bucket/dir/file.txt</c>, parent
+        /// directory is <c>/bucket/dir/</c>) to temporarily store a processed AS2 message file,
+        /// store the MDN when we receive them from the partner, and write a final JSON file containing
+        /// relevant metadata of the transmission. So, the <c>AccessRole</c> needs to provide
+        /// read and write access to the parent directory of the file location used in the <c>StartFileTransfer</c>
+        /// request. Additionally, you need to provide read and write access to the parent directory
+        /// of the files that you intend to send with <c>StartFileTransfer</c>.
         /// </para>
         ///  
         /// <para>
         /// If you are using Basic authentication for your AS2 connector, the access role requires
-        /// the <code>secretsmanager:GetSecretValue</code> permission for the secret. If the secret
+        /// the <c>secretsmanager:GetSecretValue</c> permission for the secret. If the secret
         /// is encrypted using a customer-managed key instead of the Amazon Web Services managed
-        /// key in Secrets Manager, then the role also needs the <code>kms:Decrypt</code> permission
+        /// key in Secrets Manager, then the role also needs the <c>kms:Decrypt</c> permission
         /// for that key.
         /// </para>
         ///  
@@ -81,9 +80,9 @@ namespace Amazon.Transfer.Model
         ///  
         /// <para>
         /// Make sure that the access role provides read and write access to the parent directory
-        /// of the file location that's used in the <code>StartFileTransfer</code> request. Additionally,
-        /// make sure that the role provides <code>secretsmanager:GetSecretValue</code> permission
-        /// to Secrets Manager.
+        /// of the file location that's used in the <c>StartFileTransfer</c> request. Additionally,
+        /// make sure that the role provides <c>secretsmanager:GetSecretValue</c> permission to
+        /// Secrets Manager.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

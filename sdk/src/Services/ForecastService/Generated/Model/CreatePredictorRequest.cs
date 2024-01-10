@@ -59,21 +59,21 @@ namespace Amazon.ForecastService.Model
     ///  
     /// <para>
     /// You can specify a featurization configuration to fill and aggregate the data fields
-    /// in the <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more
-    /// information, see <a>FeaturizationConfig</a>.
+    /// in the <c>TARGET_TIME_SERIES</c> dataset to improve model training. For more information,
+    /// see <a>FeaturizationConfig</a>.
     /// </para>
     ///  
     /// <para>
-    /// For RELATED_TIME_SERIES datasets, <code>CreatePredictor</code> verifies that the <code>DataFrequency</code>
-    /// specified when the dataset was created matches the <code>ForecastFrequency</code>.
-    /// TARGET_TIME_SERIES datasets don't have this restriction. Amazon Forecast also verifies
-    /// the delimiter and timestamp format. For more information, see <a>howitworks-datasets-groups</a>.
+    /// For RELATED_TIME_SERIES datasets, <c>CreatePredictor</c> verifies that the <c>DataFrequency</c>
+    /// specified when the dataset was created matches the <c>ForecastFrequency</c>. TARGET_TIME_SERIES
+    /// datasets don't have this restriction. Amazon Forecast also verifies the delimiter
+    /// and timestamp format. For more information, see <a>howitworks-datasets-groups</a>.
     /// </para>
     ///  
     /// <para>
     /// By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and
     /// 0.9 (P90) quantiles. You can choose custom forecast types to train and evaluate your
-    /// predictor by setting the <code>ForecastTypes</code>. 
+    /// predictor by setting the <c>ForecastTypes</c>. 
     /// </para>
     ///  
     /// <para>
@@ -82,10 +82,10 @@ namespace Amazon.ForecastService.Model
     ///  
     /// <para>
     /// If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes
-    /// the <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>.
-    /// The <code>objective function</code> is defined as the mean of the weighted losses
-    /// over the forecast types. By default, these are the p10, p50, and p90 quantile losses.
-    /// For more information, see <a>EvaluationResult</a>.
+    /// the <c>objective function</c>, set <c>PerformAutoML</c> to <c>true</c>. The <c>objective
+    /// function</c> is defined as the mean of the weighted losses over the forecast types.
+    /// By default, these are the p10, p50, and p90 quantile losses. For more information,
+    /// see <a>EvaluationResult</a>.
     /// </para>
     ///  
     /// <para>
@@ -93,19 +93,19 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AlgorithmArn</code> 
+    ///  <c>AlgorithmArn</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>HPOConfig</code> 
+    ///  <c>HPOConfig</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PerformHPO</code> 
+    ///  <c>PerformHPO</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TrainingParameters</code> 
+    ///  <c>TrainingParameters</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -113,9 +113,9 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Before you can use the predictor to create a forecast, the <code>Status</code> of
-    /// the predictor must be <code>ACTIVE</code>, signifying that training has completed.
-    /// To get the status, use the <a>DescribePredictor</a> operation.
+    /// Before you can use the predictor to create a forecast, the <c>Status</c> of the predictor
+    /// must be <c>ACTIVE</c>, signifying that training has completed. To get the status,
+    /// use the <a>DescribePredictor</a> operation.
     /// </para>
     ///  </note>
     /// </summary>
@@ -141,7 +141,7 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property AlgorithmArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the algorithm to use for model training. Required
-        /// if <code>PerformAutoML</code> is not set to <code>true</code>.
+        /// if <c>PerformAutoML</c> is not set to <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -149,27 +149,27 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:forecast:::algorithm/ARIMA</code> 
+        ///  <c>arn:aws:forecast:::algorithm/ARIMA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:forecast:::algorithm/CNN-QR</code> 
+        ///  <c>arn:aws:forecast:::algorithm/CNN-QR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:forecast:::algorithm/Deep_AR_Plus</code> 
+        ///  <c>arn:aws:forecast:::algorithm/Deep_AR_Plus</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:forecast:::algorithm/ETS</code> 
+        ///  <c>arn:aws:forecast:::algorithm/ETS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:forecast:::algorithm/NPTS</code> 
+        ///  <c>arn:aws:forecast:::algorithm/NPTS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:forecast:::algorithm/Prophet</code> 
+        ///  <c>arn:aws:forecast:::algorithm/Prophet</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -189,14 +189,14 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property AutoMLOverrideStrategy. <note> 
         /// <para>
-        ///  The <code>LatencyOptimized</code> AutoML override strategy is only available in private
+        ///  The <c>LatencyOptimized</c> AutoML override strategy is only available in private
         /// beta. Contact Amazon Web Services Support or your account manager to learn more about
         /// access privileges. 
         /// </para>
         ///  </note> 
         /// <para>
         /// Used to overide the default AutoML strategy, which is to optimize predictor accuracy.
-        /// To apply an AutoML strategy that minimizes training time, use <code>LatencyOptimized</code>.
+        /// To apply an AutoML strategy that minimizes training time, use <c>LatencyOptimized</c>.
         /// </para>
         ///  
         /// <para>
@@ -282,7 +282,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you configure a dataset for daily data collection (using the <code>DataFrequency</code>
+        /// For example, if you configure a dataset for daily data collection (using the <c>DataFrequency</c>
         /// parameter of the <a>CreateDataset</a> operation) and set the forecast horizon to 10,
         /// the model returns predictions for 10 days.
         /// </para>
@@ -310,11 +310,11 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// Specifies the forecast types used to train a predictor. You can specify up to five
         /// forecast types. Forecast types can be quantiles from 0.01 to 0.99, by increments of
-        /// 0.01 or higher. You can also specify the mean forecast with <code>mean</code>. 
+        /// 0.01 or higher. You can also specify the mean forecast with <c>mean</c>. 
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>["0.10", "0.50", "0.9"]</code>.
+        /// The default value is <c>["0.10", "0.50", "0.9"]</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -340,8 +340,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you included the <code>HPOConfig</code> object, you must set <code>PerformHPO</code>
-        /// to true.
+        /// If you included the <c>HPOConfig</c> object, you must set <c>PerformHPO</c> to true.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobConfig HPOConfig
@@ -402,14 +401,13 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code>. In this case, you are required to specify
-        /// an algorithm.
+        /// The default value is <c>false</c>. In this case, you are required to specify an algorithm.
         /// </para>
         ///  
         /// <para>
-        /// Set <code>PerformAutoML</code> to <code>true</code> to have Amazon Forecast perform
-        /// AutoML. This is a good option if you aren't sure which algorithm is suitable for your
-        /// training data. In this case, <code>PerformHPO</code> must be false.
+        /// Set <c>PerformAutoML</c> to <c>true</c> to have Amazon Forecast perform AutoML. This
+        /// is a good option if you aren't sure which algorithm is suitable for your training
+        /// data. In this case, <c>PerformHPO</c> must be false.
         /// </para>
         /// </summary>
         public bool PerformAutoML
@@ -433,16 +431,16 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code>. In this case, Amazon Forecast uses default
-        /// hyperparameter values from the chosen algorithm.
+        /// The default value is <c>false</c>. In this case, Amazon Forecast uses default hyperparameter
+        /// values from the chosen algorithm.
         /// </para>
         ///  
         /// <para>
-        /// To override the default values, set <code>PerformHPO</code> to <code>true</code> and,
-        /// optionally, supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job
-        /// specifies a metric to optimize, which hyperparameters participate in tuning, and the
-        /// valid range for each tunable hyperparameter. In this case, you are required to specify
-        /// an algorithm and <code>PerformAutoML</code> must be false.
+        /// To override the default values, set <c>PerformHPO</c> to <c>true</c> and, optionally,
+        /// supply the <a>HyperParameterTuningJobConfig</a> object. The tuning job specifies a
+        /// metric to optimize, which hyperparameters participate in tuning, and the valid range
+        /// for each tunable hyperparameter. In this case, you are required to specify an algorithm
+        /// and <c>PerformAutoML</c> must be false.
         /// </para>
         ///  
         /// <para>
@@ -529,12 +527,12 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for keys as it is reserved for Amazon Web Services use. You cannot
-        /// edit or delete tag keys with this prefix. Values can have this prefix. If a tag value
-        /// has <code>aws</code> as its prefix but the key does not, then Forecast considers it
-        /// to be a user tag and will count against the limit of 50 tags. Tags with only the key
-        /// prefix of <code>aws</code> do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for keys as it is reserved for Amazon Web Services use. You cannot edit
+        /// or delete tag keys with this prefix. Values can have this prefix. If a tag value has
+        /// <c>aws</c> as its prefix but the key does not, then Forecast considers it to be a
+        /// user tag and will count against the limit of 50 tags. Tags with only the key prefix
+        /// of <c>aws</c> do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

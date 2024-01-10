@@ -4936,7 +4936,7 @@ namespace Amazon.Omics
         ///  
         /// <para>
         /// The total number of runs in your account is subject to a quota per Region. To avoid
-        /// needing to delete runs manually, you can set the retention mode to <code>REMOVE</code>.
+        /// needing to delete runs manually, you can set the retention mode to <c>REMOVE</c>.
         /// Runs with this setting are deleted automatically when the run quoata is exceeded.
         /// </para>
         /// </summary>
@@ -4979,7 +4979,7 @@ namespace Amazon.Omics
         ///  
         /// <para>
         /// The total number of runs in your account is subject to a quota per Region. To avoid
-        /// needing to delete runs manually, you can set the retention mode to <code>REMOVE</code>.
+        /// needing to delete runs manually, you can set the retention mode to <c>REMOVE</c>.
         /// Runs with this setting are deleted automatically when the run quoata is exceeded.
         /// </para>
         /// </summary>

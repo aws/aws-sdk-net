@@ -36,11 +36,11 @@ namespace Amazon.RDS.Model
     /// <para>
     /// A DB parameter group is initially created with the default parameters for the database
     /// engine used by the DB instance. To provide custom values for any of the parameters,
-    /// you must modify the group after creating it using <code>ModifyDBParameterGroup</code>.
-    /// Once you've created a DB parameter group, you need to associate it with your DB instance
-    /// using <code>ModifyDBInstance</code>. When you associate a new DB parameter group with
-    /// a running DB instance, you need to reboot the DB instance without failover for the
-    /// new DB parameter group and associated settings to take effect.
+    /// you must modify the group after creating it using <c>ModifyDBParameterGroup</c>. Once
+    /// you've created a DB parameter group, you need to associate it with your DB instance
+    /// using <c>ModifyDBInstance</c>. When you associate a new DB parameter group with a
+    /// running DB instance, you need to reboot the DB instance without failover for the new
+    /// DB parameter group and associated settings to take effect.
     /// </para>
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.RDS.Model
     /// group. This allows Amazon RDS to fully complete the create action before the parameter
     /// group is used as the default for a new DB instance. This is especially important for
     /// parameters that are critical when creating the default database for a DB instance,
-    /// such as the character set for the default database defined by the <code>character_set_database</code>
+    /// such as the character set for the default database defined by the <c>character_set_database</c>
     /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
     /// RDS console</a> or the <i>DescribeDBParameters</i> command to verify that your DB
     /// parameter group has been created or modified.
@@ -99,8 +99,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
-        /// --engine &lt;engine&gt;</code> 
+        ///  <c>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+        /// --engine &lt;engine&gt;</c> 
         /// </para>
         ///  
         /// <para>
@@ -109,8 +109,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
-        /// --engine mysql</code> 
+        ///  <c>aws rds describe-db-engine-versions --query "DBEngineVersions[].DBParameterGroupFamily"
+        /// --engine mysql</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -122,59 +122,59 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora-mysql</code> 
+        ///  <c>aurora-mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql</code> 
+        ///  <c>aurora-postgresql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-ae</code> 
+        ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-se</code> 
+        ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mysql</code> 
+        ///  <c>mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee</code> 
+        ///  <c>oracle-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-cdb</code> 
+        ///  <c>oracle-ee-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2</code> 
+        ///  <c>oracle-se2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-cdb</code> 
+        ///  <c>oracle-se2-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres</code> 
+        ///  <c>postgres</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee</code> 
+        ///  <c>sqlserver-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se</code> 
+        ///  <c>sqlserver-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex</code> 
+        ///  <c>sqlserver-ex</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web</code> 
+        ///  <c>sqlserver-web</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

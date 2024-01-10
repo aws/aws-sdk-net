@@ -85,8 +85,8 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property EstimatedTimeRemainingSeconds. 
         /// <para>
         /// Estimated amount of time in seconds remaining in the step. This currently only applies
-        /// to the <code>Downloading/Extracting</code> step of the deployment. It is empty for
-        /// other steps.
+        /// to the <c>Downloading/Extracting</c> step of the deployment. It is empty for other
+        /// steps.
         /// </para>
         /// </summary>
         public int EstimatedTimeRemainingSeconds
@@ -104,7 +104,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property PercentDone. 
         /// <para>
-        /// Precentage of the step that is done. This currently only applies to the <code>Downloading/Extracting</code>
+        /// Precentage of the step that is done. This currently only applies to the <c>Downloading/Extracting</c>
         /// step of the deployment. It is empty for other steps.
         /// </para>
         /// </summary>

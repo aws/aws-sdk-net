@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <code>PurchaseReservedCacheNodesOffering</code> operation.
+    /// Represents the output of a <c>PurchaseReservedCacheNodesOffering</c> operation.
     /// </summary>
     public partial class ReservedCacheNode
     {
@@ -86,9 +86,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>M7g node types</b>: <code>cache.m7g.large</code>, <code>cache.m7g.xlarge</code>,
-        /// <code>cache.m7g.2xlarge</code>, <code>cache.m7g.4xlarge</code>, <code>cache.m7g.8xlarge</code>,
-        /// <code>cache.m7g.12xlarge</code>, <code>cache.m7g.16xlarge</code> 
+        ///  <b>M7g node types</b>: <c>cache.m7g.large</c>, <c>cache.m7g.xlarge</c>, <c>cache.m7g.2xlarge</c>,
+        /// <c>cache.m7g.4xlarge</c>, <c>cache.m7g.8xlarge</c>, <c>cache.m7g.12xlarge</c>, <c>cache.m7g.16xlarge</c>
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -98,36 +98,34 @@ namespace Amazon.ElastiCache.Model
         ///  </note> 
         /// <para>
         ///  <b>M6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <code>cache.m6g.large</code>, <code>cache.m6g.xlarge</code>,
-        /// <code>cache.m6g.2xlarge</code>, <code>cache.m6g.4xlarge</code>, <code>cache.m6g.8xlarge</code>,
-        /// <code>cache.m6g.12xlarge</code>, <code>cache.m6g.16xlarge</code> 
+        /// Memcached engine version 1.5.16 onward): <c>cache.m6g.large</c>, <c>cache.m6g.xlarge</c>,
+        /// <c>cache.m6g.2xlarge</c>, <c>cache.m6g.4xlarge</c>, <c>cache.m6g.8xlarge</c>, <c>cache.m6g.12xlarge</c>,
+        /// <c>cache.m6g.16xlarge</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>M5 node types:</b> <code>cache.m5.large</code>, <code>cache.m5.xlarge</code>,
-        /// <code>cache.m5.2xlarge</code>, <code>cache.m5.4xlarge</code>, <code>cache.m5.12xlarge</code>,
-        /// <code>cache.m5.24xlarge</code> 
+        ///  <b>M5 node types:</b> <c>cache.m5.large</c>, <c>cache.m5.xlarge</c>, <c>cache.m5.2xlarge</c>,
+        /// <c>cache.m5.4xlarge</c>, <c>cache.m5.12xlarge</c>, <c>cache.m5.24xlarge</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>M4 node types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
-        /// <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>, <code>cache.m4.10xlarge</code>
-        /// 
+        ///  <b>M4 node types:</b> <c>cache.m4.large</c>, <c>cache.m4.xlarge</c>, <c>cache.m4.2xlarge</c>,
+        /// <c>cache.m4.4xlarge</c>, <c>cache.m4.10xlarge</c> 
         /// </para>
         ///  
         /// <para>
         ///  <b>T4g node types</b> (available only for Redis engine version 5.0.6 onward and Memcached
-        /// engine version 1.5.16 onward): <code>cache.t4g.micro</code>, <code>cache.t4g.small</code>,
-        /// <code>cache.t4g.medium</code> 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <b>T3 node types:</b> <code>cache.t3.micro</code>, <code>cache.t3.small</code>, <code>cache.t3.medium</code>
+        /// engine version 1.5.16 onward): <c>cache.t4g.micro</c>, <c>cache.t4g.small</c>, <c>cache.t4g.medium</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <b>T2 node types:</b> <code>cache.t2.micro</code>, <code>cache.t2.small</code>, <code>cache.t2.medium</code>
+        ///  <b>T3 node types:</b> <c>cache.t3.micro</c>, <c>cache.t3.small</c>, <c>cache.t3.medium</c>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>T2 node types:</b> <c>cache.t2.micro</c>, <c>cache.t2.small</c>, <c>cache.t2.medium</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -137,17 +135,17 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>T1 node types:</b> <code>cache.t1.micro</code> 
+        ///  <b>T1 node types:</b> <c>cache.t1.micro</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
-        /// <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> 
+        ///  <b>M1 node types:</b> <c>cache.m1.small</c>, <c>cache.m1.medium</c>, <c>cache.m1.large</c>,
+        /// <c>cache.m1.xlarge</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>M3 node types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
-        /// <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> 
+        ///  <b>M3 node types:</b> <c>cache.m3.medium</c>, <c>cache.m3.large</c>, <c>cache.m3.xlarge</c>,
+        /// <c>cache.m3.2xlarge</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -160,7 +158,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>C1 node types:</b> <code>cache.c1.xlarge</code> 
+        ///  <b>C1 node types:</b> <c>cache.c1.xlarge</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -172,9 +170,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>R7g node types</b>: <code>cache.r7g.large</code>, <code>cache.r7g.xlarge</code>,
-        /// <code>cache.r7g.2xlarge</code>, <code>cache.r7g.4xlarge</code>, <code>cache.r7g.8xlarge</code>,
-        /// <code>cache.r7g.12xlarge</code>, <code>cache.r7g.16xlarge</code> 
+        ///  <b>R7g node types</b>: <c>cache.r7g.large</c>, <c>cache.r7g.xlarge</c>, <c>cache.r7g.2xlarge</c>,
+        /// <c>cache.r7g.4xlarge</c>, <c>cache.r7g.8xlarge</c>, <c>cache.r7g.12xlarge</c>, <c>cache.r7g.16xlarge</c>
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
@@ -184,21 +182,19 @@ namespace Amazon.ElastiCache.Model
         ///  </note> 
         /// <para>
         ///  <b>R6g node types</b> (available only for Redis engine version 5.0.6 onward and for
-        /// Memcached engine version 1.5.16 onward): <code>cache.r6g.large</code>, <code>cache.r6g.xlarge</code>,
-        /// <code>cache.r6g.2xlarge</code>, <code>cache.r6g.4xlarge</code>, <code>cache.r6g.8xlarge</code>,
-        /// <code>cache.r6g.12xlarge</code>, <code>cache.r6g.16xlarge</code> 
+        /// Memcached engine version 1.5.16 onward): <c>cache.r6g.large</c>, <c>cache.r6g.xlarge</c>,
+        /// <c>cache.r6g.2xlarge</c>, <c>cache.r6g.4xlarge</c>, <c>cache.r6g.8xlarge</c>, <c>cache.r6g.12xlarge</c>,
+        /// <c>cache.r6g.16xlarge</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>R5 node types:</b> <code>cache.r5.large</code>, <code>cache.r5.xlarge</code>,
-        /// <code>cache.r5.2xlarge</code>, <code>cache.r5.4xlarge</code>, <code>cache.r5.12xlarge</code>,
-        /// <code>cache.r5.24xlarge</code> 
+        ///  <b>R5 node types:</b> <c>cache.r5.large</c>, <c>cache.r5.xlarge</c>, <c>cache.r5.2xlarge</c>,
+        /// <c>cache.r5.4xlarge</c>, <c>cache.r5.12xlarge</c>, <c>cache.r5.24xlarge</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <b>R4 node types:</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
-        /// <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>, <code>cache.r4.8xlarge</code>,
-        /// <code>cache.r4.16xlarge</code> 
+        ///  <b>R4 node types:</b> <c>cache.r4.large</c>, <c>cache.r4.xlarge</c>, <c>cache.r4.2xlarge</c>,
+        /// <c>cache.r4.4xlarge</c>, <c>cache.r4.8xlarge</c>, <c>cache.r4.16xlarge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -207,14 +203,13 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>M2 node types:</b> <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
-        /// <code>cache.m2.4xlarge</code> 
+        ///  <b>M2 node types:</b> <c>cache.m2.xlarge</c>, <c>cache.m2.2xlarge</c>, <c>cache.m2.4xlarge</c>
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  <b>R3 node types:</b> <code>cache.r3.large</code>, <code>cache.r3.xlarge</code>,
-        /// <code>cache.r3.2xlarge</code>, <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code>
-        /// 
+        ///  <b>R3 node types:</b> <c>cache.r3.large</c>, <c>cache.r3.xlarge</c>, <c>cache.r3.2xlarge</c>,
+        /// <c>cache.r3.4xlarge</c>, <c>cache.r3.8xlarge</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -234,8 +229,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Redis configuration variables <code>appendonly</code> and <code>appendfsync</code>
-        /// are not supported on Redis version 2.8.22 and later.
+        /// Redis configuration variables <c>appendonly</c> and <c>appendfsync</c> are not supported
+        /// on Redis version 2.8.22 and later.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -348,7 +343,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</code>
+        /// Example: <c>arn:aws:elasticache:us-east-1:123456789012:reserved-instance:ri-2017-03-27-08-33-25-582</c>
         /// 
         /// </para>
         /// </summary>

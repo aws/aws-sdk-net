@@ -62,8 +62,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of items to be returned with each call. The default value is <code>50</code>
-        /// and the maximum value is <code>100</code>.
+        /// The maximum number of items to be returned with each call. The default value is <c>50</c>
+        /// and the maximum value is <c>100</c>.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -124,8 +124,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PolicyTypes. 
         /// <para>
-        /// One or more policy types. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>,
-        /// <code>TargetTrackingScaling</code>, and <code>PredictiveScaling</code>.
+        /// One or more policy types. The valid values are <c>SimpleScaling</c>, <c>StepScaling</c>,
+        /// <c>TargetTrackingScaling</c>, and <c>PredictiveScaling</c>.
         /// </para>
         /// </summary>
         public List<string> PolicyTypes

@@ -39,23 +39,23 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>SNAPSHOT_ONLY</code> - (Default value) moves cold snapshots to the capacity
-    /// pool storage tier.
+    ///  <c>SNAPSHOT_ONLY</c> - (Default value) moves cold snapshots to the capacity pool
+    /// storage tier.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage
-    /// tier based on your access patterns.
+    ///  <c>AUTO</c> - moves cold user data and snapshots to the capacity pool storage tier
+    /// based on your access patterns.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>ALL</code> - moves all user data blocks in both the active file system and
-    /// Snapshot copies to the storage pool tier.
+    ///  <c>ALL</c> - moves all user data blocks in both the active file system and Snapshot
+    /// copies to the storage pool tier.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing
-    /// it from being moved to the capacity pool tier.
+    ///  <c>NONE</c> - keeps a volume's data in the primary storage tier, preventing it from
+    /// being moved to the capacity pool tier.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -68,9 +68,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CoolingPeriod. 
         /// <para>
         /// Specifies the number of days that user data in a volume must remain inactive before
-        /// it is considered "cold" and moved to the capacity pool. Used with the <code>AUTO</code>
-        /// and <code>SNAPSHOT_ONLY</code> tiering policies. Enter a whole number between 2 and
-        /// 183. Default values are 31 days for <code>AUTO</code> and 2 days for <code>SNAPSHOT_ONLY</code>.
+        /// it is considered "cold" and moved to the capacity pool. Used with the <c>AUTO</c>
+        /// and <c>SNAPSHOT_ONLY</c> tiering policies. Enter a whole number between 2 and 183.
+        /// Default values are 31 days for <c>AUTO</c> and 2 days for <c>SNAPSHOT_ONLY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=183)]
@@ -89,26 +89,26 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the tiering policy used to transition data. Default value is <code>SNAPSHOT_ONLY</code>.
+        /// Specifies the tiering policy used to transition data. Default value is <c>SNAPSHOT_ONLY</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SNAPSHOT_ONLY</code> - moves cold snapshots to the capacity pool storage tier.
+        ///  <c>SNAPSHOT_ONLY</c> - moves cold snapshots to the capacity pool storage tier.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTO</code> - moves cold user data and snapshots to the capacity pool storage
-        /// tier based on your access patterns.
+        ///  <c>AUTO</c> - moves cold user data and snapshots to the capacity pool storage tier
+        /// based on your access patterns.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> - moves all user data blocks in both the active file system and
-        /// Snapshot copies to the storage pool tier.
+        ///  <c>ALL</c> - moves all user data blocks in both the active file system and Snapshot
+        /// copies to the storage pool tier.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code> - keeps a volume's data in the primary storage tier, preventing
-        /// it from being moved to the capacity pool tier.
+        ///  <c>NONE</c> - keeps a volume's data in the primary storage tier, preventing it from
+        /// being moved to the capacity pool tier.
         /// </para>
         ///  </li> </ul>
         /// </summary>

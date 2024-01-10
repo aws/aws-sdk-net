@@ -67,11 +67,11 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>-1</code>, then the manual snapshot is retained indefinitely.
+        /// If the value is <c>-1</c>, then the manual snapshot is retained indefinitely.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Either <code>-1</code> or an integer between 1 and 3,653
+        /// Valid values: Either <c>-1</c> or an integer between 1 and 3,653
         /// </para>
         /// </summary>
         public int ManualSnapshotRetentionPeriod

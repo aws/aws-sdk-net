@@ -34,8 +34,8 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  
     /// <para>
-    /// Upon creation, the hosted connection is initially in the <code>Ordering</code> state,
-    /// and remains in this state until the owner confirms creation of the hosted connection.
+    /// Upon creation, the hosted connection is initially in the <c>Ordering</c> state, and
+    /// remains in this state until the owner confirms creation of the hosted connection.
     /// </para>
     /// </summary>
     public partial class ConfirmConnectionRequest : AmazonDirectConnectRequest

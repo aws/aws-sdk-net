@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationItem. 
         /// <para>
-        /// Returns a <code>ConfigurationItem</code> object.
+        /// Returns a <c>ConfigurationItem</c> object.
         /// </para>
         /// </summary>
         public ConfigurationItem ConfigurationItem

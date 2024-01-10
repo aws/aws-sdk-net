@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Represents the provisioned throughput settings for a specified table or index. The
-    /// settings can be modified using the <code>UpdateTable</code> operation.
+    /// settings can be modified using the <c>UpdateTable</c> operation.
     /// 
     ///  
     /// <para>
@@ -63,12 +63,12 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
-        /// returns a <code>ThrottlingException</code>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
+        /// returns a <c>ThrottlingException</c>. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
+        /// If read/write capacity mode is <c>PAY_PER_REQUEST</c> the value is set to 0.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -87,13 +87,13 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property WriteCapacityUnits. 
         /// <para>
-        /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+        /// The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html">Specifying
         /// Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If read/write capacity mode is <code>PAY_PER_REQUEST</code> the value is set to 0.
+        /// If read/write capacity mode is <c>PAY_PER_REQUEST</c> the value is set to 0.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

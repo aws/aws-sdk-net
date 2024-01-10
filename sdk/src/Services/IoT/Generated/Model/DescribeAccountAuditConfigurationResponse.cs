@@ -81,8 +81,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
-        /// is required.
+        /// On the first call to <c>UpdateAccountAuditConfiguration</c>, this parameter is required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

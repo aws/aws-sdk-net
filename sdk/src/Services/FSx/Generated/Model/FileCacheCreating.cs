@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for the Amazon File Cache resource being created in the <code>CreateFileCache</code>
+    /// The response object for the Amazon File Cache resource being created in the <c>CreateFileCache</c>
     /// operation.
     /// </summary>
     public partial class FileCacheCreating
@@ -165,7 +165,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileCacheType. 
         /// <para>
-        /// The type of cache, which must be <code>LUSTRE</code>.
+        /// The type of cache, which must be <c>LUSTRE</c>.
         /// </para>
         /// </summary>
         public FileCacheType FileCacheType
@@ -183,7 +183,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileCacheTypeVersion. 
         /// <para>
-        /// The Lustre version of the cache, which must be <code>2.12</code>.
+        /// The Lustre version of the cache, which must be <c>2.12</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -203,7 +203,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specifies the ID of the Key Management Service (KMS) key to use for encrypting data
-        /// on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed
+        /// on an Amazon File Cache. If a <c>KmsKeyId</c> isn't specified, the Amazon FSx-managed
         /// KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
         /// in the <i>Key Management Service API Reference</i>.
         /// </para>
@@ -229,25 +229,25 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The cache is in a healthy state, and is reachable and available
+        ///  <c>AVAILABLE</c> - The cache is in a healthy state, and is reachable and available
         /// for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The new cache is being created.
+        ///  <c>CREATING</c> - The new cache is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - An existing cache is being deleted.
+        ///  <c>DELETING</c> - An existing cache is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The cache is undergoing a customer-initiated update.
+        ///  <c>UPDATING</c> - The cache is undergoing a customer-initiated update.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - An existing cache has experienced an unrecoverable failure.
-        /// When creating a new cache, the cache was unable to be created.
+        ///  <c>FAILED</c> - An existing cache has experienced an unrecoverable failure. When
+        /// creating a new cache, the cache was unable to be created.
         /// </para>
         ///  </li> </ul>
         /// </summary>

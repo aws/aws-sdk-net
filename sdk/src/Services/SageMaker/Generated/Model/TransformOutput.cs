@@ -63,8 +63,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Defines how to assemble the results of the transform job as a single S3 object. Choose
         /// a format that is most convenient to you. To concatenate the results in binary format,
-        /// specify <code>None</code>. To add a newline character at the end of every transformed
-        /// record, specify <code>Line</code>.
+        /// specify <c>None</c>. To add a newline character at the end of every transformed record,
+        /// specify <c>Line</c>.
         /// </para>
         /// </summary>
         public AssemblyType AssembleWith
@@ -84,25 +84,24 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
         /// Amazon SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side
-        /// encryption. The <code>KmsKeyId</code> can be any of the following formats: 
+        /// encryption. The <c>KmsKeyId</c> can be any of the following formats: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
-        /// 
+        /// Alias name ARN: <c>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -136,16 +135,16 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3OutputPath. 
         /// <para>
         /// The Amazon S3 path where you want Amazon SageMaker to store the results of the transform
-        /// job. For example, <code>s3://bucket-name/key-name-prefix</code>.
+        /// job. For example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         ///  
         /// <para>
         /// For every S3 object used as input for the transform job, batch transform stores the
-        /// transformed data with an .<code>out</code> suffix in a corresponding subfolder in
-        /// the location in the output prefix. For example, for the input data stored at <code>s3://bucket-name/input-name-prefix/dataset01/data.csv</code>,
-        /// batch transform stores the transformed data at <code>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</code>.
+        /// transformed data with an .<c>out</c> suffix in a corresponding subfolder in the location
+        /// in the output prefix. For example, for the input data stored at <c>s3://bucket-name/input-name-prefix/dataset01/data.csv</c>,
+        /// batch transform stores the transformed data at <c>s3://bucket-name/output-name-prefix/input-name-prefix/data.csv.out</c>.
         /// Batch transform doesn't upload partially processed objects. For an input S3 object
-        /// that contains multiple records, it creates an .<code>out</code> file only if the transform
+        /// that contains multiple records, it creates an .<c>out</c> file only if the transform
         /// job succeeds on the entire file. When the input contains multiple S3 objects, the
         /// batch transform job processes the listed S3 objects and uploads only the output for
         /// successfully processed objects. If any object fails in the transform job batch transform

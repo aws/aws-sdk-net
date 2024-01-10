@@ -30,9 +30,9 @@ namespace Amazon.Pipes.Model
 {
     /// <summary>
     /// The overrides that are sent to a container. An empty container override can be passed
-    /// in. An example of an empty container override is <code>{"containerOverrides": [ ]
-    /// }</code>. If a non-empty container override is specified, the <code>name</code> parameter
-    /// must be included.
+    /// in. An example of an empty container override is <c>{"containerOverrides": [ ] }</c>.
+    /// If a non-empty container override is specified, the <c>name</c> parameter must be
+    /// included.
     /// </summary>
     public partial class EcsContainerOverride
     {
@@ -67,7 +67,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        /// The number of <code>cpu</code> units reserved for the container, instead of the default
+        /// The number of <c>cpu</c> units reserved for the container, instead of the default
         /// value from the task definition. You must also specify a container name.
         /// </para>
         /// </summary>

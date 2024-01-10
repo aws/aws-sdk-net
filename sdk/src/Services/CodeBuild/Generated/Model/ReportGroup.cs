@@ -47,7 +47,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the <code>ReportGroup</code>. 
+        /// The ARN of the <c>ReportGroup</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -66,7 +66,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        /// The date and time this <code>ReportGroup</code> was created. 
+        /// The date and time this <c>ReportGroup</c> was created. 
         /// </para>
         /// </summary>
         public DateTime Created
@@ -84,8 +84,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ExportConfig. 
         /// <para>
-        /// Information about the destination where the raw data of this <code>ReportGroup</code>
-        /// is exported. 
+        /// Information about the destination where the raw data of this <c>ReportGroup</c> is
+        /// exported. 
         /// </para>
         /// </summary>
         public ReportExportConfig ExportConfig
@@ -103,7 +103,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property LastModified. 
         /// <para>
-        /// The date and time this <code>ReportGroup</code> was last modified. 
+        /// The date and time this <c>ReportGroup</c> was last modified. 
         /// </para>
         /// </summary>
         public DateTime LastModified
@@ -121,7 +121,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>ReportGroup</code>. 
+        /// The name of the <c>ReportGroup</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=128)]
@@ -195,7 +195,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the <code>ReportGroup</code>. This can be one of the following values:
+        /// The type of the <c>ReportGroup</c>. This can be one of the following values:
         /// </para>
         ///  <dl> <dt>CODE_COVERAGE</dt> <dd> 
         /// <para>

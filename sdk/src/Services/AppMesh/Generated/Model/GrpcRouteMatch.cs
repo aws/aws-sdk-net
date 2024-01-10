@@ -61,7 +61,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property MethodName. 
         /// <para>
         /// The method name to match from the request. If you specify a name, you must also specify
-        /// a <code>serviceName</code>.
+        /// a <c>serviceName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

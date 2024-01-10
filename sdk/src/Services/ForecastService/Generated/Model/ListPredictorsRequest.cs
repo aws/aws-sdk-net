@@ -51,9 +51,9 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// An array of filters. For each filter, you provide a condition and a match statement.
-        /// The condition is either <code>IS</code> or <code>IS_NOT</code>, which specifies whether
-        /// to include or exclude the predictors that match the statement from the list, respectively.
-        /// The match statement consists of a key and a value.
+        /// The condition is either <c>IS</c> or <c>IS_NOT</c>, which specifies whether to include
+        /// or exclude the predictors that match the statement from the list, respectively. The
+        /// match statement consists of a key and a value.
         /// </para>
         ///  
         /// <para>
@@ -61,18 +61,18 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Condition</code> - The condition to apply. Valid values are <code>IS</code>
-        /// and <code>IS_NOT</code>. To include the predictors that match the statement, specify
-        /// <code>IS</code>. To exclude matching predictors, specify <code>IS_NOT</code>.
+        ///  <c>Condition</c> - The condition to apply. Valid values are <c>IS</c> and <c>IS_NOT</c>.
+        /// To include the predictors that match the statement, specify <c>IS</c>. To exclude
+        /// matching predictors, specify <c>IS_NOT</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key</code> - The name of the parameter to filter on. Valid values are <code>DatasetGroupArn</code>
-        /// and <code>Status</code>.
+        ///  <c>Key</c> - The name of the parameter to filter on. Valid values are <c>DatasetGroupArn</c>
+        /// and <c>Status</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Value</code> - The value to match.
+        ///  <c>Value</c> - The value to match.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -80,8 +80,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</code>
-        /// 
+        ///  <c>"Filters": [ { "Condition": "IS", "Key": "Status", "Value": "ACTIVE" } ]</c> 
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -118,7 +117,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous request was truncated, the response includes a <code>NextToken</code>.
+        /// If the result of the previous request was truncated, the response includes a <c>NextToken</c>.
         /// To retrieve the next set of results, use the token in the next request. Tokens expire
         /// after 24 hours.
         /// </para>

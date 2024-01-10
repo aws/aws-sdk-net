@@ -40,7 +40,7 @@ namespace Amazon.Pipes.Model
         /// <para>
         /// Use this structure to specify the VPC subnets and security groups for the task, and
         /// whether a public IP address is to be used. This structure is relevant only for ECS
-        /// tasks that use the <code>awsvpc</code> network mode.
+        /// tasks that use the <c>awsvpc</c> network mode.
         /// </para>
         /// </summary>
         public AwsVpcConfiguration AwsvpcConfiguration

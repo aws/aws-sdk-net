@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SuppressionUnit. 
         /// <para>
-        /// Specifies whether the value of <code>value</code> is in seconds, minutes, or hours.
+        /// Specifies whether the value of <c>value</c> is in seconds, minutes, or hours.
         /// </para>
         /// </summary>
         public SuppressionUnit SuppressionUnit

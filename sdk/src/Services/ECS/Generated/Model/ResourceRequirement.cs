@@ -43,8 +43,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource to assign to a container. The supported values are <code>GPU</code>
-        /// or <code>InferenceAccelerator</code>.
+        /// The type of resource to assign to a container. The supported values are <c>GPU</c>
+        /// or <c>InferenceAccelerator</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,15 +67,15 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>GPU</code> type is used, the value is the number of physical <code>GPUs</code>
-        /// the Amazon ECS container agent reserves for the container. The number of GPUs that's
-        /// reserved for all containers in a task can't exceed the number of available GPUs on
-        /// the container instance that the task is launched on.
+        /// If the <c>GPU</c> type is used, the value is the number of physical <c>GPUs</c> the
+        /// Amazon ECS container agent reserves for the container. The number of GPUs that's reserved
+        /// for all containers in a task can't exceed the number of available GPUs on the container
+        /// instance that the task is launched on.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-        /// the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+        /// If the <c>InferenceAccelerator</c> type is used, the <c>value</c> matches the <c>deviceName</c>
+        /// for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
         /// specified in a task definition.
         /// </para>
         /// </summary>

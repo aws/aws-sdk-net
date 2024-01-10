@@ -604,8 +604,8 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization
-        /// and domain.
+        /// Creates an <c>AvailabilityConfiguration</c> for the given WorkMail organization and
+        /// domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAvailabilityConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1123,8 +1123,8 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Deletes the <code>AvailabilityConfiguration</code> for the given WorkMail organization
-        /// and domain.
+        /// Deletes the <c>AvailabilityConfiguration</c> for the given WorkMail organization and
+        /// domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAvailabilityConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -1620,8 +1620,8 @@ namespace Amazon.WorkMail
 
         /// <summary>
         /// Deletes a user from WorkMail and all subsequent systems. Before you can delete a user,
-        /// the user state must be <code>DISABLED</code>. Use the <a>DescribeUser</a> action to
-        /// confirm the user state.
+        /// the user state must be <c>DISABLED</c>. Use the <a>DescribeUser</a> action to confirm
+        /// the user state.
         /// 
         ///  
         /// <para>
@@ -2780,7 +2780,7 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+        /// List all the <c>AvailabilityConfiguration</c>'s for the given WorkMail organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAvailabilityConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -4083,15 +4083,13 @@ namespace Amazon.WorkMail
         /// EWS, it verifies the provided credentials can be used to successfully log in. For
         /// Lambda, it verifies that the Lambda function can be invoked and that the resource
         /// access policy was configured to deny anonymous access. An anonymous invocation is
-        /// one done without providing either a <code>SourceArn</code> or <code>SourceAccount</code>
-        /// header.
+        /// one done without providing either a <c>SourceArn</c> or <c>SourceAccount</c> header.
         /// 
         ///  <note> 
         /// <para>
-        /// The request must contain either one provider definition (<code>EwsProvider</code>
-        /// or <code>LambdaProvider</code>) or the <code>DomainName</code> parameter. If the <code>DomainName</code>
-        /// parameter is provided, the configuration stored under the <code>DomainName</code>
-        /// will be tested.
+        /// The request must contain either one provider definition (<c>EwsProvider</c> or <c>LambdaProvider</c>)
+        /// or the <c>DomainName</c> parameter. If the <c>DomainName</c> parameter is provided,
+        /// the configuration stored under the <c>DomainName</c> will be tested.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4178,8 +4176,8 @@ namespace Amazon.WorkMail
 
 
         /// <summary>
-        /// Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail
-        /// organization and domain.
+        /// Updates an existing <c>AvailabilityConfiguration</c> for the given WorkMail organization
+        /// and domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAvailabilityConfiguration service method.</param>
         /// <param name="cancellationToken">
@@ -4570,7 +4568,7 @@ namespace Amazon.WorkMail
         /// <summary>
         /// Updates data for the resource. To have the latest information, it must be preceded
         /// by a <a>DescribeResource</a> call. The dataset in the request should be the one expected
-        /// when performing another <code>DescribeResource</code> call.
+        /// when performing another <c>DescribeResource</c> call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResource service method.</param>
         /// <param name="cancellationToken">
@@ -4648,7 +4646,7 @@ namespace Amazon.WorkMail
         /// <summary>
         /// Updates data for the user. To have the latest information, it must be preceded by
         /// a <a>DescribeUser</a> call. The dataset in the request should be the one expected
-        /// when performing another <code>DescribeUser</code> call.
+        /// when performing another <c>DescribeUser</c> call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// <param name="cancellationToken">

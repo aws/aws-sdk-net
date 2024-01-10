@@ -108,7 +108,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ConversationDurationSeconds. 
         /// <para>
         /// The duration of the conversation in seconds. A conversation is defined as a unique
-        /// combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.
+        /// combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
         public long ConversationDurationSeconds
@@ -127,7 +127,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ConversationEndState. 
         /// <para>
         /// The final state of the conversation. A conversation is defined as a unique combination
-        /// of a <code>sessionId</code> and an <code>originatingRequestId</code>.
+        /// of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
         public ConversationEndState ConversationEndState
@@ -146,7 +146,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ConversationEndTime. 
         /// <para>
         /// The date and time when the conversation ended. A conversation is defined as a unique
-        /// combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.
+        /// combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
         public DateTime ConversationEndTime
@@ -165,7 +165,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ConversationStartTime. 
         /// <para>
         /// The date and time when the conversation began. A conversation is defined as a unique
-        /// combination of a <code>sessionId</code> and an <code>originatingRequestId</code>.
+        /// combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
         public DateTime ConversationStartTime
@@ -223,19 +223,19 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Speech</code> – The session was spoken.
+        ///  <c>Speech</c> – The session was spoken.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Text</code> – The session was written.
+        ///  <c>Text</c> – The session was written.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DTMF</code> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).
+        ///  <c>DTMF</c> – The session used a touch-tone keypad (Dual Tone Multi-Frequency).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MultiMode</code> – The session used multiple modes.
+        ///  <c>MultiMode</c> – The session used multiple modes.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -79,10 +79,10 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property NluConfidence. 
         /// <para>
-        /// Determines the threshold where Amazon Lex V2 will insert the <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents
-        /// in a response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code>
-        /// are only inserted if they are configured for the bot.
+        /// Determines the threshold where Amazon Lex V2 will insert the <c>AMAZON.FallbackIntent</c>,
+        /// <c>AMAZON.KendraSearchIntent</c>, or both when returning alternative intents in a
+        /// response. <c>AMAZON.FallbackIntent</c> and <c>AMAZON.KendraSearchIntent</c> are only
+        /// inserted if they are configured for the bot.
         /// </para>
         /// </summary>
         public ConfidenceScore NluConfidence

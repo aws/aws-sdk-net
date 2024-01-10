@@ -50,8 +50,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Formats. 
         /// <para>
-        /// Specify the output format for your subtitle file; if you select both WebVTT (<code>vtt</code>)
-        /// and SubRip (<code>srt</code>) formats, two output files are generated.
+        /// Specify the output format for your subtitle file; if you select both WebVTT (<c>vtt</c>)
+        /// and SubRip (<c>srt</c>) formats, two output files are generated.
         /// </para>
         /// </summary>
         public List<string> Formats
@@ -73,10 +73,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// The default start index for Amazon Transcribe is <code>0</code>, which differs from
-        /// the more widely used standard of <code>1</code>. If you're uncertain which value to
-        /// use, we recommend choosing <code>1</code>, as this may improve compatibility with
-        /// other services.
+        /// The default start index for Amazon Transcribe is <c>0</c>, which differs from the
+        /// more widely used standard of <c>1</c>. If you're uncertain which value to use, we
+        /// recommend choosing <c>1</c>, as this may improve compatibility with other services.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

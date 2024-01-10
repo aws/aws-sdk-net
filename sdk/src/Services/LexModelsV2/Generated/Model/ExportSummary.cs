@@ -80,8 +80,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ExportStatus. 
         /// <para>
-        /// The status of the export. When the status is <code>Completed</code> the export is
-        /// ready to download.
+        /// The status of the export. When the status is <c>Completed</c> the export is ready
+        /// to download.
         /// </para>
         /// </summary>
         public ExportStatus ExportStatus

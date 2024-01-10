@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property Match. 
         /// <para>
-        /// Returns <code>true</code> if the pattern matches the payload.
+        /// Returns <c>true</c> if the pattern matches the payload.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

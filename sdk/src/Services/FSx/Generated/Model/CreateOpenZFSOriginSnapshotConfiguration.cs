@@ -45,14 +45,14 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning
+        ///  <c>CLONE</c> - The new volume references the data in the origin snapshot. Cloning
         /// a snapshot is faster than copying data from the snapshot to a new volume and doesn't
         /// consume disk throughput. However, the origin snapshot can't be deleted if there is
         /// a volume using its copied data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+        ///  <c>FULL_COPY</c> - Copies all data from the snapshot to the new volume.
         /// </para>
         ///  
         /// <para>
@@ -61,9 +61,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
-        /// using a snapshot from another FSx for OpenZFS file system. For more information, see
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.
+        /// The <c>INCREMENTAL_COPY</c> option is only for updating an existing volume by using
+        /// a snapshot from another FSx for OpenZFS file system. For more information, see <a
+        /// href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.
         /// </para>
         ///  </note>
         /// </summary>

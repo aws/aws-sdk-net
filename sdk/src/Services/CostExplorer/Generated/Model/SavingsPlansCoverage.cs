@@ -41,7 +41,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attribute that applies to a specific <code>Dimension</code>.
+        /// The attribute that applies to a specific <c>Dimension</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

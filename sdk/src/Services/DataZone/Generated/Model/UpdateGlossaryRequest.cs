@@ -64,7 +64,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description to be updated as part of the <code>UpdateGlossary</code> action.
+        /// The description to be updated as part of the <c>UpdateGlossary</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=4096)]
@@ -122,7 +122,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to be updated as part of the <code>UpdateGlossary</code> action.
+        /// The name to be updated as part of the <c>UpdateGlossary</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
@@ -141,7 +141,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status to be updated as part of the <code>UpdateGlossary</code> action.
+        /// The status to be updated as part of the <c>UpdateGlossary</c> action.
         /// </para>
         /// </summary>
         public GlossaryStatus Status

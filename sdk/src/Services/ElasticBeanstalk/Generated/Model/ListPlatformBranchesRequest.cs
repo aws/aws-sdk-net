@@ -49,69 +49,64 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Criteria for restricting the resulting list of platform branches. The filter is evaluated
-        /// as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.
+        /// as a logical conjunction (AND) of the separate <c>SearchFilter</c> terms.
         /// </para>
         ///  
         /// <para>
-        /// The following list shows valid attribute values for each of the <code>SearchFilter</code>
-        /// terms. Most operators take a single value. The <code>in</code> and <code>not_in</code>
-        /// operators can take multiple values.
+        /// The following list shows valid attribute values for each of the <c>SearchFilter</c>
+        /// terms. Most operators take a single value. The <c>in</c> and <c>not_in</c> operators
+        /// can take multiple values.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Attribute = BranchName</code>:
+        ///  <c>Attribute = BranchName</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code>
-        /// | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code>
-        /// 
+        ///  <c>Operator</c>: <c>=</c> | <c>!=</c> | <c>begins_with</c> | <c>ends_with</c> | <c>contains</c>
+        /// | <c>in</c> | <c>not_in</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>Attribute = LifecycleState</code>:
+        ///  <c>Attribute = LifecycleState</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code>
-        /// 
+        ///  <c>Operator</c>: <c>=</c> | <c>!=</c> | <c>in</c> | <c>not_in</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code>
-        /// | <code>retired</code> 
-        /// </para>
-        ///  </li> </ul> </li> <li> 
-        /// <para>
-        ///  <code>Attribute = PlatformName</code>:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code>
-        /// | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code>
+        ///  <c>Values</c>: <c>beta</c> | <c>supported</c> | <c>deprecated</c> | <c>retired</c>
         /// 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>Attribute = TierType</code>:
+        ///  <c>Attribute = PlatformName</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Operator</code>: <code>=</code> | <code>!=</code> 
+        ///  <c>Operator</c>: <c>=</c> | <c>!=</c> | <c>begins_with</c> | <c>ends_with</c> | <c>contains</c>
+        /// | <c>in</c> | <c>not_in</c> 
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        ///  <c>Attribute = TierType</c>:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <c>Operator</c>: <c>=</c> | <c>!=</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
-        /// 
+        ///  <c>Values</c>: <c>WebServer/Standard</c> | <c>Worker/SQS/HTTP</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Array size: limited to 10 <code>SearchFilter</code> objects.
+        /// Array size: limited to 10 <c>SearchFilter</c> objects.
         /// </para>
         ///  
         /// <para>
-        /// Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited
-        /// to 10 items.
+        /// Within each <c>SearchFilter</c> item, the <c>Values</c> array is limited to 10 items.
         /// </para>
         /// </summary>
         public List<SearchFilter> Filters
@@ -154,7 +149,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// If no <code>NextToken</code> is specified, the first page is retrieved.
+        /// If no <c>NextToken</c> is specified, the first page is retrieved.
         /// </para>
         /// </summary>
         public string NextToken

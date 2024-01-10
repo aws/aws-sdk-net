@@ -121,7 +121,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// An IAM role that gives Amazon Kendra permissions to access thesaurus file specified
-        /// in <code>SourceS3Path</code>.
+        /// in <c>SourceS3Path</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]

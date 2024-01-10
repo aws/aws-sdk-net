@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterDBProxyTargets operation.
-    /// Remove the association between one or more <code>DBProxyTarget</code> data structures
-    /// and a <code>DBProxyTargetGroup</code>.
+    /// Remove the association between one or more <c>DBProxyTarget</c> data structures and
+    /// a <c>DBProxyTargetGroup</c>.
     /// </summary>
     public partial class DeregisterDBProxyTargetsRequest : AmazonRDSRequest
     {
@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyName. 
         /// <para>
-        /// The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.
+        /// The identifier of the <c>DBProxy</c> that is associated with the <c>DBProxyTargetGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,7 +98,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetGroupName. 
         /// <para>
-        /// The identifier of the <code>DBProxyTargetGroup</code>.
+        /// The identifier of the <c>DBProxyTargetGroup</c>.
         /// </para>
         /// </summary>
         public string TargetGroupName

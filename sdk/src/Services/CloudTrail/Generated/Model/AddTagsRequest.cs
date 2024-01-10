@@ -51,17 +51,17 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        /// The format of a trail ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
+        /// The format of a trail ARN is: <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// The format of an event data store ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The format of an event data store ARN is: <c>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// The format of a channel ARN is: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
+        /// The format of a channel ARN is: <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</c>
         /// 
         /// </para>
         /// </summary>

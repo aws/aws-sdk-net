@@ -115,7 +115,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Required. 
         /// <para>
         /// A boolean flag of an SdkType configuration property to indicate if the associated
-        /// SDK configuration property is required (<code>true</code>) or not (<code>false</code>).
+        /// SDK configuration property is required (<c>true</c>) or not (<c>false</c>).
         /// </para>
         /// </summary>
         public bool Required

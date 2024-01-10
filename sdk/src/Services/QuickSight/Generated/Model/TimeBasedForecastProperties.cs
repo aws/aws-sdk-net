@@ -122,11 +122,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NULL</code>: The input is set to <code>NULL</code>.
+        ///  <c>NULL</c>: The input is set to <c>NULL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_NULL</code>: The input is set to a custom value.
+        ///  <c>NON_NULL</c>: The input is set to a custom value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

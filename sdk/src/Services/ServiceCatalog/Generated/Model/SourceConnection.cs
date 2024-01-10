@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// A top level <code>ProductViewDetail</code> response containing details about the product’s
-    /// connection. Service Catalog returns this field for the <code>CreateProduct</code>,
-    /// <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code>
-    /// APIs. This response contains the same fields as the <code>ConnectionParameters</code>
-    /// request, with the addition of the <code>LastSync</code> response.
+    /// A top level <c>ProductViewDetail</c> response containing details about the product’s
+    /// connection. Service Catalog returns this field for the <c>CreateProduct</c>, <c>UpdateProduct</c>,
+    /// <c>DescribeProductAsAdmin</c>, and <c>SearchProductAsAdmin</c> APIs. This response
+    /// contains the same fields as the <c>ConnectionParameters</c> request, with the addition
+    /// of the <c>LastSync</c> response.
     /// </summary>
     public partial class SourceConnection
     {
@@ -43,7 +43,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ConnectionParameters. 
         /// <para>
-        /// The connection details based on the connection <code>Type</code>. 
+        /// The connection details based on the connection <c>Type</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The only supported <code>SourceConnection</code> type is Codestar. 
+        /// The only supported <c>SourceConnection</c> type is Codestar. 
         /// </para>
         /// </summary>
         public SourceType Type

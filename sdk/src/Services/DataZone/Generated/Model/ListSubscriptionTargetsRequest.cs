@@ -82,11 +82,11 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of subscription targets to return in a single call to <code>ListSubscriptionTargets</code>.
+        /// The maximum number of subscription targets to return in a single call to <c>ListSubscriptionTargets</c>.
         /// When the number of subscription targets to be listed is greater than the value of
-        /// <code>MaxResults</code>, the response contains a <code>NextToken</code> value that
-        /// you can use in a subsequent call to <code>ListSubscriptionTargets</code> to list the
-        /// next set of subscription targets. 
+        /// <c>MaxResults</c>, the response contains a <c>NextToken</c> value that you can use
+        /// in a subsequent call to <c>ListSubscriptionTargets</c> to list the next set of subscription
+        /// targets. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -106,11 +106,10 @@ namespace Amazon.DataZone.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// When the number of subscription targets is greater than the default value for the
-        /// <code>MaxResults</code> parameter, or if you explicitly specify a value for <code>MaxResults</code>
+        /// <c>MaxResults</c> parameter, or if you explicitly specify a value for <c>MaxResults</c>
         /// that is less than the number of subscription targets, the response includes a pagination
-        /// token named <code>NextToken</code>. You can specify this <code>NextToken</code> value
-        /// in a subsequent call to <code>ListSubscriptionTargets</code> to list the next set
-        /// of subscription targets.
+        /// token named <c>NextToken</c>. You can specify this <c>NextToken</c> value in a subsequent
+        /// call to <c>ListSubscriptionTargets</c> to list the next set of subscription targets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

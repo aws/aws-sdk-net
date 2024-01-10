@@ -53,9 +53,9 @@ namespace Amazon.CodeArtifact
     ///  <b>Repository</b>: A CodeArtifact repository contains a set of <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/welcome.html#welcome-concepts-package-version">package
     /// versions</a>, each of which maps to a set of assets, or files. Repositories are polyglot,
     /// so a single repository can contain packages of any supported type. Each repository
-    /// exposes endpoints for fetching and publishing packages using tools like the <b> <code>npm</code>
-    /// </b> CLI, the Maven CLI (<b> <code>mvn</code> </b>), Python CLIs (<b> <code>pip</code>
-    /// </b> and <code>twine</code>), and NuGet CLIs (<code>nuget</code> and <code>dotnet</code>).
+    /// exposes endpoints for fetching and publishing packages using tools like the <b> <c>npm</c>
+    /// </b> CLI, the Maven CLI (<b> <c>mvn</c> </b>), Python CLIs (<b> <c>pip</c> </b> and
+    /// <c>twine</c>), and NuGet CLIs (<c>nuget</c> and <c>dotnet</c>).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -97,16 +97,15 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A <i>name</i> (for example, <code>webpack</code> is the name of a popular npm package)
+    /// A <i>name</i> (for example, <c>webpack</c> is the name of a popular npm package)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An optional namespace (for example, <code>@types</code> in <code>@types/node</code>)
+    /// An optional namespace (for example, <c>@types</c> in <c>@types/node</c>)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A set of versions (for example, <code>1.0.0</code>, <code>1.0.1</code>, <code>1.0.2</code>,
-    /// etc.)
+    /// A set of versions (for example, <c>1.0.0</c>, <c>1.0.1</c>, <c>1.0.2</c>, etc.)
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -114,7 +113,7 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <b>Package version</b>: A version of a package, such as <code>@types/node 12.6.9</code>.
+    ///  <b>Package version</b>: A version of a package, such as <c>@types/node 12.6.9</c>.
     /// The version number format and semantics vary for different package formats. For example,
     /// npm package versions must conform to the <a href="https://semver.org/">Semantic Versioning
     /// specification</a>. In CodeArtifact, a package version consists of the version identifier,
@@ -131,7 +130,7 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <b>Asset</b>: An individual file stored in CodeArtifact associated with a package
-    /// version, such as an npm <code>.tgz</code> file or Maven POM and JAR files.
+    /// version, such as an npm <c>.tgz</c> file or Maven POM and JAR files.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -139,190 +138,190 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AssociateExternalConnection</code>: Adds an existing external connection to
-    /// a repository. 
+    ///  <c>AssociateExternalConnection</c>: Adds an existing external connection to a repository.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CopyPackageVersions</code>: Copies package versions from one repository to
-    /// another repository in the same domain.
+    ///  <c>CopyPackageVersions</c>: Copies package versions from one repository to another
+    /// repository in the same domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateDomain</code>: Creates a domain
+    ///  <c>CreateDomain</c>: Creates a domain
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateRepository</code>: Creates a CodeArtifact repository in a domain. 
+    ///  <c>CreateRepository</c>: Creates a CodeArtifact repository in a domain. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteDomain</code>: Deletes a domain. You cannot delete a domain that contains
-    /// repositories. 
+    ///  <c>DeleteDomain</c>: Deletes a domain. You cannot delete a domain that contains repositories.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteDomainPermissionsPolicy</code>: Deletes the resource policy that is set
-    /// on a domain.
+    ///  <c>DeleteDomainPermissionsPolicy</c>: Deletes the resource policy that is set on
+    /// a domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeletePackage</code>: Deletes a package and all associated package versions.
+    ///  <c>DeletePackage</c>: Deletes a package and all associated package versions.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeletePackageVersions</code>: Deletes versions of a package. After a package
-    /// has been deleted, it can be republished, but its assets and metadata cannot be restored
+    ///  <c>DeletePackageVersions</c>: Deletes versions of a package. After a package has
+    /// been deleted, it can be republished, but its assets and metadata cannot be restored
     /// because they have been permanently removed from storage.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteRepository</code>: Deletes a repository. 
+    ///  <c>DeleteRepository</c>: Deletes a repository. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteRepositoryPermissionsPolicy</code>: Deletes the resource policy that
-    /// is set on a repository.
+    ///  <c>DeleteRepositoryPermissionsPolicy</c>: Deletes the resource policy that is set
+    /// on a repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeDomain</code>: Returns a <code>DomainDescription</code> object that
-    /// contains information about the requested domain.
+    ///  <c>DescribeDomain</c>: Returns a <c>DomainDescription</c> object that contains information
+    /// about the requested domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribePackage</code>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
+    ///  <c>DescribePackage</c>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDescription.html">PackageDescription</a>
     /// object that contains details about a package. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribePackageVersion</code>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
+    ///  <c>DescribePackageVersion</c>: Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a>
     /// object that contains details about a package version. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeRepository</code>: Returns a <code>RepositoryDescription</code> object
-    /// that contains detailed information about the requested repository. 
+    ///  <c>DescribeRepository</c>: Returns a <c>RepositoryDescription</c> object that contains
+    /// detailed information about the requested repository. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DisposePackageVersions</code>: Disposes versions of a package. A package version
-    /// with the status <code>Disposed</code> cannot be restored because they have been permanently
+    ///  <c>DisposePackageVersions</c>: Disposes versions of a package. A package version
+    /// with the status <c>Disposed</c> cannot be restored because they have been permanently
     /// removed from storage.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DisassociateExternalConnection</code>: Removes an existing external connection
-    /// from a repository. 
+    ///  <c>DisassociateExternalConnection</c>: Removes an existing external connection from
+    /// a repository. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>GetAuthorizationToken</code>: Generates a temporary authorization token for
-    /// accessing repositories in the domain. The token expires the authorization period has
-    /// passed. The default authorization period is 12 hours and can be customized to any
-    /// length with a maximum of 12 hours.
+    ///  <c>GetAuthorizationToken</c>: Generates a temporary authorization token for accessing
+    /// repositories in the domain. The token expires the authorization period has passed.
+    /// The default authorization period is 12 hours and can be customized to any length with
+    /// a maximum of 12 hours.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>GetDomainPermissionsPolicy</code>: Returns the policy of a resource that is
-    /// attached to the specified domain. 
+    ///  <c>GetDomainPermissionsPolicy</c>: Returns the policy of a resource that is attached
+    /// to the specified domain. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>GetPackageVersionAsset</code>: Returns the contents of an asset that is in
-    /// a package version. 
+    ///  <c>GetPackageVersionAsset</c>: Returns the contents of an asset that is in a package
+    /// version. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>GetPackageVersionReadme</code>: Gets the readme file or descriptive text for
-    /// a package version.
+    ///  <c>GetPackageVersionReadme</c>: Gets the readme file or descriptive text for a package
+    /// version.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>GetRepositoryEndpoint</code>: Returns the endpoint of a repository for a specific
+    ///  <c>GetRepositoryEndpoint</c>: Returns the endpoint of a repository for a specific
     /// package format. A repository has one endpoint for each package format: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>maven</code> 
+    ///  <c>maven</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>npm</code> 
+    ///  <c>npm</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>nuget</code> 
+    ///  <c>nuget</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>pypi</code> 
+    ///  <c>pypi</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <code>GetRepositoryPermissionsPolicy</code>: Returns the resource policy that is
-    /// set on a repository. 
+    ///  <c>GetRepositoryPermissionsPolicy</c>: Returns the resource policy that is set on
+    /// a repository. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListDomains</code>: Returns a list of <code>DomainSummary</code> objects. Each
-    /// returned <code>DomainSummary</code> object contains information about a domain.
+    ///  <c>ListDomains</c>: Returns a list of <c>DomainSummary</c> objects. Each returned
+    /// <c>DomainSummary</c> object contains information about a domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListPackages</code>: Lists the packages in a repository.
+    ///  <c>ListPackages</c>: Lists the packages in a repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListPackageVersionAssets</code>: Lists the assets for a given package version.
+    ///  <c>ListPackageVersionAssets</c>: Lists the assets for a given package version.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListPackageVersionDependencies</code>: Returns a list of the direct dependencies
+    ///  <c>ListPackageVersionDependencies</c>: Returns a list of the direct dependencies
     /// for a package version. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListPackageVersions</code>: Returns a list of package versions for a specified
-    /// package in a repository.
+    ///  <c>ListPackageVersions</c>: Returns a list of package versions for a specified package
+    /// in a repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListRepositories</code>: Returns a list of repositories owned by the Amazon
-    /// Web Services account that called this method.
+    ///  <c>ListRepositories</c>: Returns a list of repositories owned by the Amazon Web Services
+    /// account that called this method.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a domain.
+    ///  <c>ListRepositoriesInDomain</c>: Returns a list of the repositories in a domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PublishPackageVersion</code>: Creates a new package version containing one
-    /// or more assets.
+    ///  <c>PublishPackageVersion</c>: Creates a new package version containing one or more
+    /// assets.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PutDomainPermissionsPolicy</code>: Attaches a resource policy to a domain.
+    ///  <c>PutDomainPermissionsPolicy</c>: Attaches a resource policy to a domain.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PutPackageOriginConfiguration</code>: Sets the package origin configuration
-    /// for a package, which determine how new versions of the package can be added to a specific
+    ///  <c>PutPackageOriginConfiguration</c>: Sets the package origin configuration for a
+    /// package, which determine how new versions of the package can be added to a specific
     /// repository.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PutRepositoryPermissionsPolicy</code>: Sets the resource policy on a repository
-    /// that specifies permissions to access it. 
+    ///  <c>PutRepositoryPermissionsPolicy</c>: Sets the resource policy on a repository that
+    /// specifies permissions to access it. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdatePackageVersionsStatus</code>: Updates the status of one or more versions
-    /// of a package.
+    ///  <c>UpdatePackageVersionsStatus</c>: Updates the status of one or more versions of
+    /// a package.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateRepository</code>: Updates the properties of a repository.
+    ///  <c>UpdateRepository</c>: Updates the properties of a repository.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -434,8 +433,8 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <note> 
         /// <para>
-        ///  You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
-        /// specify both. 
+        ///  You must specify <c>versions</c> or <c>versionRevisions</c>. You cannot specify both.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -477,8 +476,8 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <note> 
         /// <para>
-        ///  You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
-        /// specify both. 
+        ///  You must specify <c>versions</c> or <c>versionRevisions</c>. You cannot specify both.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -899,7 +898,7 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Deletes one or more versions of a package. A deleted package version cannot be restored
         /// in your repository. If you want to remove a package version from your repository and
-        /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
+        /// be able to restore it later, set its status to <c>Archived</c>. Archived packages
         /// cannot be downloaded from a repository and don't show up with list package APIs (for
         /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
         /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
@@ -935,7 +934,7 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Deletes one or more versions of a package. A deleted package version cannot be restored
         /// in your repository. If you want to remove a package version from your repository and
-        /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
+        /// be able to restore it later, set its status to <c>Archived</c>. Archived packages
         /// cannot be downloaded from a repository and don't show up with list package APIs (for
         /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
         /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
@@ -1049,9 +1048,9 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <important> 
         /// <para>
-        ///  Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is
-        /// deleted, Amazon Web Services users, roles, and accounts lose permissions to perform
-        /// the repository actions granted by the deleted policy. 
+        ///  Use <c>DeleteRepositoryPermissionsPolicy</c> with caution. After a policy is deleted,
+        /// Amazon Web Services users, roles, and accounts lose permissions to perform the repository
+        /// actions granted by the deleted policy. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -1090,9 +1089,9 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <important> 
         /// <para>
-        ///  Use <code>DeleteRepositoryPermissionsPolicy</code> with caution. After a policy is
-        /// deleted, Amazon Web Services users, roles, and accounts lose permissions to perform
-        /// the repository actions granted by the deleted policy. 
+        ///  Use <c>DeleteRepositoryPermissionsPolicy</c> with caution. After a policy is deleted,
+        /// Amazon Web Services users, roles, and accounts lose permissions to perform the repository
+        /// actions granted by the deleted policy. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -1329,7 +1328,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a <code>RepositoryDescription</code> object that contains detailed information
+        /// Returns a <c>RepositoryDescription</c> object that contains detailed information
         /// about the requested repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRepository service method.</param>
@@ -1358,7 +1357,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Returns a <code>RepositoryDescription</code> object that contains detailed information
+        /// Returns a <c>RepositoryDescription</c> object that contains detailed information
         /// about the requested repository.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeRepository service method.</param>
@@ -1469,7 +1468,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>.
+        /// Deletes the assets in package versions and sets the package versions' status to <c>Disposed</c>.
         /// A disposed package version cannot be restored in your repository because its assets
         /// are deleted. 
         /// 
@@ -1477,7 +1476,7 @@ namespace Amazon.CodeArtifact
         /// <para>
         ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
         /// and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-        /// parameter to <code>Disposed</code>. 
+        /// parameter to <c>Disposed</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1514,7 +1513,7 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>.
+        /// Deletes the assets in package versions and sets the package versions' status to <c>Disposed</c>.
         /// A disposed package version cannot be restored in your repository because its assets
         /// are deleted. 
         /// 
@@ -1522,7 +1521,7 @@ namespace Amazon.CodeArtifact
         /// <para>
         ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
         /// and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-        /// parameter to <code>Disposed</code>. 
+        /// parameter to <c>Disposed</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1566,27 +1565,27 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Generates a temporary authorization token for accessing repositories in the domain.
-        /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
+        /// This API requires the <c>codeartifact:GetAuthorizationToken</c> and <c>sts:GetServiceBearerToken</c>
         /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact
         /// authentication and tokens</a>. 
         /// 
         ///  <note> 
         /// <para>
         /// CodeArtifact authorization tokens are valid for a period of 12 hours when created
-        /// with the <code>login</code> command. You can call <code>login</code> periodically
-        /// to refresh the token. When you create an authorization token with the <code>GetAuthorizationToken</code>
+        /// with the <c>login</c> command. You can call <c>login</c> periodically to refresh the
+        /// token. When you create an authorization token with the <c>GetAuthorizationToken</c>
         /// API, you can set a custom authorization period, up to a maximum of 12 hours, with
-        /// the <code>durationSeconds</code> parameter.
+        /// the <c>durationSeconds</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// The authorization period begins after <code>login</code> or <code>GetAuthorizationToken</code>
-        /// is called. If <code>login</code> or <code>GetAuthorizationToken</code> is called while
-        /// assuming a role, the token lifetime is independent of the maximum session duration
-        /// of the role. For example, if you call <code>sts assume-role</code> and specify a session
-        /// duration of 15 minutes, then generate a CodeArtifact authorization token, the token
-        /// will be valid for the full authorization period even though this is longer than the
-        /// 15-minute session duration.
+        /// The authorization period begins after <c>login</c> or <c>GetAuthorizationToken</c>
+        /// is called. If <c>login</c> or <c>GetAuthorizationToken</c> is called while assuming
+        /// a role, the token lifetime is independent of the maximum session duration of the role.
+        /// For example, if you call <c>sts assume-role</c> and specify a session duration of
+        /// 15 minutes, then generate a CodeArtifact authorization token, the token will be valid
+        /// for the full authorization period even though this is longer than the 15-minute session
+        /// duration.
         /// </para>
         ///  
         /// <para>
@@ -1622,27 +1621,27 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Generates a temporary authorization token for accessing repositories in the domain.
-        /// This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code>
+        /// This API requires the <c>codeartifact:GetAuthorizationToken</c> and <c>sts:GetServiceBearerToken</c>
         /// permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact
         /// authentication and tokens</a>. 
         /// 
         ///  <note> 
         /// <para>
         /// CodeArtifact authorization tokens are valid for a period of 12 hours when created
-        /// with the <code>login</code> command. You can call <code>login</code> periodically
-        /// to refresh the token. When you create an authorization token with the <code>GetAuthorizationToken</code>
+        /// with the <c>login</c> command. You can call <c>login</c> periodically to refresh the
+        /// token. When you create an authorization token with the <c>GetAuthorizationToken</c>
         /// API, you can set a custom authorization period, up to a maximum of 12 hours, with
-        /// the <code>durationSeconds</code> parameter.
+        /// the <c>durationSeconds</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// The authorization period begins after <code>login</code> or <code>GetAuthorizationToken</code>
-        /// is called. If <code>login</code> or <code>GetAuthorizationToken</code> is called while
-        /// assuming a role, the token lifetime is independent of the maximum session duration
-        /// of the role. For example, if you call <code>sts assume-role</code> and specify a session
-        /// duration of 15 minutes, then generate a CodeArtifact authorization token, the token
-        /// will be valid for the full authorization period even though this is longer than the
-        /// 15-minute session duration.
+        /// The authorization period begins after <c>login</c> or <c>GetAuthorizationToken</c>
+        /// is called. If <c>login</c> or <c>GetAuthorizationToken</c> is called while assuming
+        /// a role, the token lifetime is independent of the maximum session duration of the role.
+        /// For example, if you call <c>sts assume-role</c> and specify a session duration of
+        /// 15 minutes, then generate a CodeArtifact authorization token, the token will be valid
+        /// for the full authorization period even though this is longer than the 15-minute session
+        /// duration.
         /// </para>
         ///  
         /// <para>
@@ -1762,8 +1761,8 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns an asset (or file) that is in a package. For example, for a Maven package
-        /// version, use <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file,
-        /// a <code>POM</code> file, or any other assets in the package version.
+        /// version, use <c>GetPackageVersionAsset</c> to download a <c>JAR</c> file, a <c>POM</c>
+        /// file, or any other assets in the package version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionAsset service method.</param>
         /// 
@@ -1795,8 +1794,8 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns an asset (or file) that is in a package. For example, for a Maven package
-        /// version, use <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file,
-        /// a <code>POM</code> file, or any other assets in the package version.
+        /// version, use <c>GetPackageVersionAsset</c> to download a <c>JAR</c> file, a <c>POM</c>
+        /// file, or any other assets in the package version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionAsset service method.</param>
         /// <param name="cancellationToken">
@@ -1912,19 +1911,19 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>maven</code> 
+        ///  <c>maven</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>npm</code> 
+        ///  <c>npm</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>nuget</code> 
+        ///  <c>nuget</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pypi</code> 
+        ///  <c>pypi</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1959,19 +1958,19 @@ namespace Amazon.CodeArtifact
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>maven</code> 
+        ///  <c>maven</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>npm</code> 
+        ///  <c>npm</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>nuget</code> 
+        ///  <c>nuget</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pypi</code> 
+        ///  <c>pypi</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2071,7 +2070,7 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
         /// objects for all domains owned by the Amazon Web Services account that makes this call.
-        /// Each returned <code>DomainSummary</code> object contains information about a domain.
+        /// Each returned <c>DomainSummary</c> object contains information about a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// 
@@ -2097,7 +2096,7 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">DomainSummary</a>
         /// objects for all domains owned by the Amazon Web Services account that makes this call.
-        /// Each returned <code>DomainSummary</code> object contains information about a domain.
+        /// Each returned <c>DomainSummary</c> object contains information about a domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// <param name="cancellationToken">
@@ -2258,9 +2257,9 @@ namespace Amazon.CodeArtifact
         /// Returns the direct dependencies for a package version. The dependencies are returned
         /// as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
         /// objects. CodeArtifact extracts the dependencies for a package version from the metadata
-        /// file for the package format (for example, the <code>package.json</code> file for npm
-        /// packages and the <code>pom.xml</code> file for Maven). Any package version dependencies
-        /// that are not listed in the configuration file are not returned.
+        /// file for the package format (for example, the <c>package.json</c> file for npm packages
+        /// and the <c>pom.xml</c> file for Maven). Any package version dependencies that are
+        /// not listed in the configuration file are not returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersionDependencies service method.</param>
         /// 
@@ -2291,9 +2290,9 @@ namespace Amazon.CodeArtifact
         /// Returns the direct dependencies for a package version. The dependencies are returned
         /// as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a>
         /// objects. CodeArtifact extracts the dependencies for a package version from the metadata
-        /// file for the package format (for example, the <code>package.json</code> file for npm
-        /// packages and the <code>pom.xml</code> file for Maven). Any package version dependencies
-        /// that are not listed in the configuration file are not returned.
+        /// file for the package format (for example, the <c>package.json</c> file for npm packages
+        /// and the <c>pom.xml</c> file for Maven). Any package version dependencies that are
+        /// not listed in the configuration file are not returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersionDependencies service method.</param>
         /// <param name="cancellationToken">
@@ -2329,8 +2328,8 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
         /// objects for package versions in a repository that match the request parameters. Package
-        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
-        /// with no <code>--status</code> parameter.
+        /// versions of all statuses will be returned by default when calling <c>list-package-versions</c>
+        /// with no <c>--status</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// 
@@ -2360,8 +2359,8 @@ namespace Amazon.CodeArtifact
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
         /// objects for package versions in a repository that match the request parameters. Package
-        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
-        /// with no <code>--status</code> parameter.
+        /// versions of all statuses will be returned by default when calling <c>list-package-versions</c>
+        /// with no <c>--status</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// <param name="cancellationToken">
@@ -2396,8 +2395,8 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-        /// objects. Each <code>RepositorySummary</code> contains information about a repository
-        /// in the specified Amazon Web Services account and that matches the input parameters.
+        /// objects. Each <c>RepositorySummary</c> contains information about a repository in
+        /// the specified Amazon Web Services account and that matches the input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// 
@@ -2422,8 +2421,8 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-        /// objects. Each <code>RepositorySummary</code> contains information about a repository
-        /// in the specified Amazon Web Services account and that matches the input parameters.
+        /// objects. Each <c>RepositorySummary</c> contains information about a repository in
+        /// the specified Amazon Web Services account and that matches the input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositories service method.</param>
         /// <param name="cancellationToken">
@@ -2454,8 +2453,8 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-        /// objects. Each <code>RepositorySummary</code> contains information about a repository
-        /// in the specified domain and that matches the input parameters.
+        /// objects. Each <c>RepositorySummary</c> contains information about a repository in
+        /// the specified domain and that matches the input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositoriesInDomain service method.</param>
         /// 
@@ -2484,8 +2483,8 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-        /// objects. Each <code>RepositorySummary</code> contains information about a repository
-        /// in the specified domain and that matches the input parameters.
+        /// objects. Each <c>RepositorySummary</c> contains information about a repository in
+        /// the specified domain and that matches the input parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRepositoriesInDomain service method.</param>
         /// <param name="cancellationToken">
@@ -2581,13 +2580,13 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        /// The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code>
+        /// The <c>unfinished</c> flag can be used to keep the package version in the <c>Unfinished</c>
         /// state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
         /// version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s
-        /// status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading
-        /// the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
-        /// Once a package version’s status is set to <code>Published</code>, it cannot change
-        /// back to <code>Unfinished</code>.
+        /// status to <c>Published</c>, omit the <c>unfinished</c> flag when uploading the final
+        /// asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+        /// Once a package version’s status is set to <c>Published</c>, it cannot change back
+        /// to <c>Unfinished</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2634,13 +2633,13 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        /// The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code>
+        /// The <c>unfinished</c> flag can be used to keep the package version in the <c>Unfinished</c>
         /// state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
         /// version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s
-        /// status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading
-        /// the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
-        /// Once a package version’s status is set to <code>Published</code>, it cannot change
-        /// back to <code>Unfinished</code>.
+        /// status to <c>Published</c>, omit the <c>unfinished</c> flag when uploading the final
+        /// asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+        /// Once a package version’s status is set to <c>Published</c>, it cannot change back
+        /// to <c>Unfinished</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2693,10 +2692,10 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the
-        /// domain is ignored when evaluting permissions. This ensures that the owner of a domain
-        /// cannot lock themselves out of the domain, which would prevent them from being able
-        /// to update the resource policy. 
+        ///  When you call <c>PutDomainPermissionsPolicy</c>, the resource policy on the domain
+        /// is ignored when evaluting permissions. This ensures that the owner of a domain cannot
+        /// lock themselves out of the domain, which would prevent them from being able to update
+        /// the resource policy. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDomainPermissionsPolicy service method.</param>
@@ -2736,10 +2735,10 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  When you call <code>PutDomainPermissionsPolicy</code>, the resource policy on the
-        /// domain is ignored when evaluting permissions. This ensures that the owner of a domain
-        /// cannot lock themselves out of the domain, which would prevent them from being able
-        /// to update the resource policy. 
+        ///  When you call <c>PutDomainPermissionsPolicy</c>, the resource policy on the domain
+        /// is ignored when evaluting permissions. This ensures that the owner of a domain cannot
+        /// lock themselves out of the domain, which would prevent them from being able to update
+        /// the resource policy. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDomainPermissionsPolicy service method.</param>
@@ -2794,9 +2793,9 @@ namespace Amazon.CodeArtifact
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
-        /// yet exist in the repository. When called on a package that does not exist, a package
-        /// is created in the repository with no versions and the requested restrictions are set
+        ///  <c>PutPackageOriginConfiguration</c> can be called on a package that doesn't yet
+        /// exist in the repository. When called on a package that does not exist, a package is
+        /// created in the repository with no versions and the requested restrictions are set
         /// on the package. This can be used to preemptively block ingesting or retaining any
         /// versions from external connections or upstream repositories, or to block publishing
         /// any versions of the package into the repository before connecting any package managers
@@ -2842,9 +2841,9 @@ namespace Amazon.CodeArtifact
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
-        /// yet exist in the repository. When called on a package that does not exist, a package
-        /// is created in the repository with no versions and the requested restrictions are set
+        ///  <c>PutPackageOriginConfiguration</c> can be called on a package that doesn't yet
+        /// exist in the repository. When called on a package that does not exist, a package is
+        /// created in the repository with no versions and the requested restrictions are set
         /// on the package. This can be used to preemptively block ingesting or retaining any
         /// versions from external connections or upstream repositories, or to block publishing
         /// any versions of the package into the repository before connecting any package managers
@@ -2888,10 +2887,10 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on
-        /// the repository is ignored when evaluting permissions. This ensures that the owner
-        /// of a repository cannot lock themselves out of the repository, which would prevent
-        /// them from being able to update the resource policy. 
+        ///  When you call <c>PutRepositoryPermissionsPolicy</c>, the resource policy on the repository
+        /// is ignored when evaluting permissions. This ensures that the owner of a repository
+        /// cannot lock themselves out of the repository, which would prevent them from being
+        /// able to update the resource policy. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRepositoryPermissionsPolicy service method.</param>
@@ -2932,10 +2931,10 @@ namespace Amazon.CodeArtifact
         /// 
         ///  
         /// <para>
-        ///  When you call <code>PutRepositoryPermissionsPolicy</code>, the resource policy on
-        /// the repository is ignored when evaluting permissions. This ensures that the owner
-        /// of a repository cannot lock themselves out of the repository, which would prevent
-        /// them from being able to update the resource policy. 
+        ///  When you call <c>PutRepositoryPermissionsPolicy</c>, the resource policy on the repository
+        /// is ignored when evaluting permissions. This ensures that the owner of a repository
+        /// cannot lock themselves out of the repository, which would prevent them from being
+        /// able to update the resource policy. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRepositoryPermissionsPolicy service method.</param>
@@ -3097,10 +3096,10 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>,
-        /// you can update the status of package versions to <code>Archived</code>, <code>Published</code>,
-        /// or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>,
-        /// use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
+        /// Updates the status of one or more versions of a package. Using <c>UpdatePackageVersionsStatus</c>,
+        /// you can update the status of package versions to <c>Archived</c>, <c>Published</c>,
+        /// or <c>Unlisted</c>. To set the status of a package version to <c>Disposed</c>, use
+        /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePackageVersionsStatus service method.</param>
         /// 
@@ -3131,10 +3130,10 @@ namespace Amazon.CodeArtifact
 
 
         /// <summary>
-        /// Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>,
-        /// you can update the status of package versions to <code>Archived</code>, <code>Published</code>,
-        /// or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>,
-        /// use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
+        /// Updates the status of one or more versions of a package. Using <c>UpdatePackageVersionsStatus</c>,
+        /// you can update the status of package versions to <c>Archived</c>, <c>Published</c>,
+        /// or <c>Unlisted</c>. To set the status of a package version to <c>Disposed</c>, use
+        /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePackageVersionsStatus service method.</param>
         /// <param name="cancellationToken">

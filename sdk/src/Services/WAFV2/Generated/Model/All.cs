@@ -39,7 +39,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// JSON specification: <code>"All": {}</code> 
+    /// JSON specification: <c>"All": {}</c> 
     /// </para>
     /// </summary>
     public partial class All

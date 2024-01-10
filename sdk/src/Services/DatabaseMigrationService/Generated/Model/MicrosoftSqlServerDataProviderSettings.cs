@@ -115,7 +115,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SslMode. 
         /// <para>
         /// The SSL mode used to connect to the Microsoft SQL Server data provider. The default
-        /// value is <code>none</code>.
+        /// value is <c>none</c>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

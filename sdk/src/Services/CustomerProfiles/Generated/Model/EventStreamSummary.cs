@@ -138,7 +138,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property StoppedSince. 
         /// <para>
-        /// The timestamp when the <code>State</code> changed to <code>STOPPED</code>.
+        /// The timestamp when the <c>State</c> changed to <c>STOPPED</c>.
         /// </para>
         /// </summary>
         public DateTime StoppedSince

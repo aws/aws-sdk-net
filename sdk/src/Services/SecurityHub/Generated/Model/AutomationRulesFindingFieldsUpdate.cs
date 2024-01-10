@@ -47,7 +47,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        ///  The rule action updates the <code>Confidence</code> field of a finding. 
+        ///  The rule action updates the <c>Confidence</c> field of a finding. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Criticality. 
         /// <para>
-        ///  The rule action updates the <code>Criticality</code> field of a finding. 
+        ///  The rule action updates the <c>Criticality</c> field of a finding. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -100,7 +100,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RelatedFindings. 
         /// <para>
-        ///  The rule action updates the <code>RelatedFindings</code> field of a finding. 
+        ///  The rule action updates the <c>RelatedFindings</c> field of a finding. 
         /// </para>
         /// </summary>
         public List<RelatedFinding> RelatedFindings
@@ -133,7 +133,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        ///  The rule action updates the <code>Types</code> field of a finding. 
+        ///  The rule action updates the <c>Types</c> field of a finding. 
         /// </para>
         /// </summary>
         public List<string> Types
@@ -151,7 +151,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UserDefinedFields. 
         /// <para>
-        ///  The rule action updates the <code>UserDefinedFields</code> field of a finding. 
+        ///  The rule action updates the <c>UserDefinedFields</c> field of a finding. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> UserDefinedFields
@@ -169,7 +169,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VerificationState. 
         /// <para>
-        ///  The rule action updates the <code>VerificationState</code> field of a finding. 
+        ///  The rule action updates the <c>VerificationState</c> field of a finding. 
         /// </para>
         /// </summary>
         public VerificationState VerificationState

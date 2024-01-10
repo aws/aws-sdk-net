@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration for a <code>HistogramVisual</code>.
+    /// The configuration for a <c>HistogramVisual</c>.
     /// </summary>
     public partial class HistogramConfiguration
     {

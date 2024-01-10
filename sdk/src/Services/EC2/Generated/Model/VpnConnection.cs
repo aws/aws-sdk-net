@@ -52,9 +52,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of the VPN connection. A value of <code>VPN</code> indicates an Amazon
-        /// Web Services VPN connection. A value of <code>VPN-Classic</code> indicates an Amazon
-        /// Web Services Classic VPN connection.
+        /// The category of the VPN connection. A value of <c>VPN</c> indicates an Amazon Web
+        /// Services VPN connection. A value of <c>VPN-Classic</c> indicates an Amazon Web Services
+        /// Classic VPN connection.
         /// </para>
         /// </summary>
         public string Category
@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         /// The configuration information for the VPN connection's customer gateway (in the native
         /// XML format). This element is always present in the <a>CreateVpnConnection</a> response;
         /// however, it's present in the <a>DescribeVpnConnections</a> response only if the VPN
-        /// connection is in the <code>pending</code> or <code>available</code> state.
+        /// connection is in the <c>pending</c> or <c>available</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

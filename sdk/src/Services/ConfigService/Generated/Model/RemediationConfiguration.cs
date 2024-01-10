@@ -207,14 +207,13 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property RetryAttemptSeconds. 
         /// <para>
         /// Time window to determine whether or not to add a remediation exception to prevent
-        /// infinite remediation attempts. If <code>MaximumAutomaticAttempts</code> remediation
-        /// attempts have been made under <code>RetryAttemptSeconds</code>, a remediation exception
-        /// will be added to the resource. If you do not select a number, the default is 60 seconds.
-        /// 
+        /// infinite remediation attempts. If <c>MaximumAutomaticAttempts</c> remediation attempts
+        /// have been made under <c>RetryAttemptSeconds</c>, a remediation exception will be added
+        /// to the resource. If you do not select a number, the default is 60 seconds. 
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>RetryAttemptSeconds</code> as 50 seconds and <code>MaximumAutomaticAttempts</code>
+        /// For example, if you specify <c>RetryAttemptSeconds</c> as 50 seconds and <c>MaximumAutomaticAttempts</c>
         /// as 5, Config will run auto-remediations 5 times within 50 seconds before adding a
         /// remediation exception to the resource.
         /// </para>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// A complex type that contains a <code>Message</code> and a <code>Timestamp</code> value
-    /// for changes that you make in the status of an IP address range that you bring to Global
-    /// Accelerator through bring your own IP address (BYOIP).
+    /// A complex type that contains a <c>Message</c> and a <c>Timestamp</c> value for changes
+    /// that you make in the status of an IP address range that you bring to Global Accelerator
+    /// through bring your own IP address (BYOIP).
     /// </summary>
     public partial class ByoipCidrEvent
     {
@@ -41,9 +41,9 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A string that contains an <code>Event</code> message describing changes that you make
-        /// in the status of an IP address range that you bring to Global Accelerator through
-        /// bring your own IP address (BYOIP).
+        /// A string that contains an <c>Event</c> message describing changes that you make in
+        /// the status of an IP address range that you bring to Global Accelerator through bring
+        /// your own IP address (BYOIP).
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

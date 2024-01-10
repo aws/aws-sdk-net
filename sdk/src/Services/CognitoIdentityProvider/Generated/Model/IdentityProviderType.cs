@@ -215,7 +215,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> <li> 
         /// <para>
         /// The following keys are only present if Amazon Cognito didn't discover them at the
-        /// <code>oidc_issuer</code> URL.
+        /// <c>oidc_issuer</c> URL.
         /// </para>
         ///  <ul> <li> 
         /// <para>

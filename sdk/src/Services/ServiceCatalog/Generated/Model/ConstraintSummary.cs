@@ -62,11 +62,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LAUNCH</code> 
+        ///  <c>LAUNCH</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOTIFICATION</code> 
+        ///  <c>NOTIFICATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -74,7 +74,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEMPLATE</code> 
+        ///  <c>TEMPLATE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

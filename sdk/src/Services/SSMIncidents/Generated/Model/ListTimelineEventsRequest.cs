@@ -49,15 +49,15 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>eventReference</code> 
+        ///  <c>eventReference</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>eventTime</code> 
+        ///  <c>eventTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>eventType</code> 
+        ///  <c>eventType</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -171,8 +171,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// Sorts the order of timeline events by the value specified in the <code>sortBy</code>
-        /// field.
+        /// Sorts the order of timeline events by the value specified in the <c>sortBy</c> field.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

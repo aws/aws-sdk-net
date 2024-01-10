@@ -38,8 +38,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID that is returned by <code>ChangeCidrCollection</code>. You can use it as input
-        /// to <code>GetChange</code> to see if a CIDR collection change has propagated or not.
+        /// The ID that is returned by <c>ChangeCidrCollection</c>. You can use it as input to
+        /// <c>GetChange</c> to see if a CIDR collection change has propagated or not.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=6500)]

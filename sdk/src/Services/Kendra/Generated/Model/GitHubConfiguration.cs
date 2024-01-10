@@ -125,10 +125,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GitHubCommitConfigurationFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of GitHub commits to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of GitHub commits to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to GitHub fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
@@ -169,10 +169,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GitHubIssueAttachmentConfigurationFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of GitHub issue attachments to Amazon Kendra index field names. To create
-        /// custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of GitHub issue attachments to Amazon Kendra index field names. To create custom
+        /// fields, use the <c>UpdateIndex</c> API before you map to GitHub fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
@@ -193,10 +193,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GitHubIssueCommentConfigurationFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of GitHub issue comments to Amazon Kendra index field names. To create
-        /// custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of GitHub issue comments to Amazon Kendra index field names. To create custom
+        /// fields, use the <c>UpdateIndex</c> API before you map to GitHub fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
@@ -217,10 +217,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GitHubIssueDocumentConfigurationFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of GitHub issues to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to GitHub fields. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of GitHub issues to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to GitHub fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
@@ -241,10 +241,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GitHubPullRequestCommentConfigurationFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of GitHub pull request comments to Amazon Kendra index field names. To
-        /// create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub
-        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of GitHub pull request comments to Amazon Kendra index field names. To create
+        /// custom fields, use the <c>UpdateIndex</c> API before you map to GitHub fields. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
@@ -266,10 +266,10 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property GitHubPullRequestDocumentAttachmentConfigurationFieldMappings.
         /// 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of GitHub pull request attachments to Amazon Kendra index field names.
-        /// To create custom fields, use the <code>UpdateIndex</code> API before you map to GitHub
-        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of GitHub pull request attachments to Amazon Kendra index field names. To create
+        /// custom fields, use the <c>UpdateIndex</c> API before you map to GitHub fields. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
@@ -290,10 +290,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GitHubPullRequestDocumentConfigurationFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of GitHub pull requests to Amazon Kendra index field names. To create
-        /// custom fields, use the <code>UpdateIndex</code> API before you map to GitHub fields.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of GitHub pull requests to Amazon Kendra index field names. To create custom
+        /// fields, use the <c>UpdateIndex</c> API before you map to GitHub fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
         /// </para>
@@ -314,9 +314,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GitHubRepositoryConfigurationFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map GitHub repository
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map GitHub repository
         /// attributes or field names to Amazon Kendra index field names. To create custom fields,
-        /// use the <code>UpdateIndex</code> API before you map to GitHub fields. For more information,
+        /// use the <c>UpdateIndex</c> API before you map to GitHub fields. For more information,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The GitHub data source field names must exist in your GitHub
         /// custom metadata.
@@ -505,9 +505,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        ///  <code>TRUE</code> to use the GitHub change log to determine which documents require
-        /// updating in the index. Depending on the GitHub change log's size, it may take longer
-        /// for Amazon Kendra to use the change log than to scan all of your documents in GitHub.
+        ///  <c>TRUE</c> to use the GitHub change log to determine which documents require updating
+        /// in the index. Depending on the GitHub change log's size, it may take longer for Amazon
+        /// Kendra to use the change log than to scan all of your documents in GitHub.
         /// </para>
         /// </summary>
         public bool UseChangeLog

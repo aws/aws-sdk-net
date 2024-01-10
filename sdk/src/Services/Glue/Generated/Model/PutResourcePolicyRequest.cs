@@ -43,12 +43,12 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EnableHybrid. 
         /// <para>
-        /// If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account
+        /// If <c>'TRUE'</c>, indicates that you are using both methods to grant cross-account
         /// access to Data Catalog resources:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// By directly updating the resource policy with <code>PutResourePolicy</code> 
+        /// By directly updating the resource policy with <c>PutResourePolicy</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -57,8 +57,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Must be set to <code>'TRUE'</code> if you have already used the Management Console
-        /// to grant cross-account access, otherwise the call fails. Default is 'FALSE'.
+        /// Must be set to <c>'TRUE'</c> if you have already used the Management Console to grant
+        /// cross-account access, otherwise the call fails. Default is 'FALSE'.
         /// </para>
         /// </summary>
         public EnableHybridValues EnableHybrid
@@ -76,9 +76,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PolicyExistsCondition. 
         /// <para>
-        /// A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code>
-        /// is used to create a new policy. If a value of <code>NONE</code> or a null value is
-        /// used, the call does not depend on the existence of a policy.
+        /// A value of <c>MUST_EXIST</c> is used to update a policy. A value of <c>NOT_EXIST</c>
+        /// is used to create a new policy. If a value of <c>NONE</c> or a null value is used,
+        /// the call does not depend on the existence of a policy.
         /// </para>
         /// </summary>
         public ExistCondition PolicyExistsCondition
@@ -96,7 +96,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PolicyHashCondition. 
         /// <para>
-        /// The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>.
+        /// The hash value returned when the previous policy was set using <c>PutResourcePolicy</c>.
         /// Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter
         /// if no previous policy has been set.
         /// </para>

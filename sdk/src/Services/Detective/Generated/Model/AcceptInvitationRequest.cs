@@ -39,7 +39,7 @@ namespace Amazon.Detective.Model
     /// </para>
     ///  
     /// <para>
-    /// The member account status in the graph must be <code>INVITED</code>.
+    /// The member account status in the graph must be <c>INVITED</c>.
     /// </para>
     /// </summary>
     public partial class AcceptInvitationRequest : AmazonDetectiveRequest
@@ -54,7 +54,7 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  
         /// <para>
-        /// The member account status in the behavior graph must be <code>INVITED</code>.
+        /// The member account status in the behavior graph must be <c>INVITED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -35,8 +35,8 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
-    /// specify both. 
+    ///  You must specify <c>versions</c> or <c>versionRevisions</c>. You cannot specify both.
+    /// 
     /// </para>
     ///  </note>
     /// </summary>
@@ -59,8 +59,8 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  Set to true to overwrite a package version that already exists in the destination
         /// repository. If set to false and the package version already exists in the destination
-        /// repository, the package version is returned in the <code>failedVersions</code> field
-        /// of the response with an <code>ALREADY_EXISTS</code> error code. 
+        /// repository, the package version is returned in the <c>failedVersions</c> field of
+        /// the response with an <c>ALREADY_EXISTS</c> error code. 
         /// </para>
         /// </summary>
         public bool AllowOverwrite
@@ -181,12 +181,12 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. The namespace
-        /// is required when copying Maven package versions. 
+        ///  The namespace of a Maven package version is its <c>groupId</c>. The namespace is
+        /// required when copying Maven package versions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -195,7 +195,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -254,13 +254,13 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property VersionRevisions. 
         /// <para>
         ///  A list of key-value pairs. The keys are package versions and the values are package
-        /// version revisions. A <code>CopyPackageVersion</code> operation succeeds if the specified
+        /// version revisions. A <c>CopyPackageVersion</c> operation succeeds if the specified
         /// versions in the source repository match the specified package version revision. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
-        /// specify both. 
+        ///  You must specify <c>versions</c> or <c>versionRevisions</c>. You cannot specify both.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -283,8 +283,8 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must specify <code>versions</code> or <code>versionRevisions</code>. You cannot
-        /// specify both. 
+        ///  You must specify <c>versions</c> or <c>versionRevisions</c>. You cannot specify both.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>

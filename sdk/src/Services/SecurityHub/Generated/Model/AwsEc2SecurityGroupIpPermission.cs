@@ -68,27 +68,25 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>)
-        /// or number.
+        /// The IP protocol name (<c>tcp</c>, <c>udp</c>, <c>icmp</c>, <c>icmpv6</c>) or number.
         /// </para>
         ///  
         /// <para>
-        /// [VPC only] Use <code>-1</code> to specify all protocols.
+        /// [VPC only] Use <c>-1</c> to specify all protocols.
         /// </para>
         ///  
         /// <para>
-        /// When authorizing security group rules, specifying <code>-1</code> or a protocol number
-        /// other than <code>tcp</code>, <code>udp</code>, <code>icmp</code>, or <code>icmpv6</code>
-        /// allows traffic on all ports, regardless of any port range you specify.
+        /// When authorizing security group rules, specifying <c>-1</c> or a protocol number other
+        /// than <c>tcp</c>, <c>udp</c>, <c>icmp</c>, or <c>icmpv6</c> allows traffic on all ports,
+        /// regardless of any port range you specify.
         /// </para>
         ///  
         /// <para>
-        /// For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>, you must specify a
-        /// port range.
+        /// For <c>tcp</c>, <c>udp</c>, and <c>icmp</c>, you must specify a port range.
         /// </para>
         ///  
         /// <para>
-        /// For <code>icmpv6</code>, the port range is optional. If you omit the port range, traffic
+        /// For <c>icmpv6</c>, the port range is optional. If you omit the port range, traffic
         /// for all types and codes is allowed. 
         /// </para>
         /// </summary>
@@ -167,7 +165,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>-1</code> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6
+        /// A value of <c>-1</c> indicates all ICMP/ICMPv6 codes. If you specify all ICMP/ICMPv6
         /// types, you must specify all codes.
         /// </para>
         /// </summary>

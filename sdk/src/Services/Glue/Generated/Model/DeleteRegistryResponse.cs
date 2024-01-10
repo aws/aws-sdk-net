@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the registry. A successful operation will return the <code>Deleting</code>
+        /// The status of the registry. A successful operation will return the <c>Deleting</c>
         /// status.
         /// </para>
         /// </summary>

@@ -56,7 +56,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// Checksum of the <code>$LATEST</code>version of the intent created or updated.
+        /// Checksum of the <c>$LATEST</c>version of the intent created or updated.
         /// </para>
         /// </summary>
         public string Checksum
@@ -74,7 +74,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ConclusionStatement. 
         /// <para>
-        /// After the Lambda function specified in the<code>fulfillmentActivity</code>intent fulfills
+        /// After the Lambda function specified in the<c>fulfillmentActivity</c>intent fulfills
         /// the intent, Amazon Lex conveys this statement to the user.
         /// </para>
         /// </summary>
@@ -130,9 +130,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property CreateVersion. 
         /// <para>
-        ///  <code>True</code> if a new version of the intent was created. If the <code>createVersion</code>
-        /// field was not specified in the request, the <code>createVersion</code> field is set
-        /// to false in the response.
+        ///  <c>True</c> if a new version of the intent was created. If the <c>createVersion</c>
+        /// field was not specified in the request, the <c>createVersion</c> field is set to false
+        /// in the response.
         /// </para>
         /// </summary>
         public bool CreateVersion
@@ -225,8 +225,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property InputContexts. 
         /// <para>
-        /// An array of <code>InputContext</code> objects that lists the contexts that must be
-        /// active for Amazon Lex to choose the intent in a conversation with the user.
+        /// An array of <c>InputContext</c> objects that lists the contexts that must be active
+        /// for Amazon Lex to choose the intent in a conversation with the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -246,7 +246,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property KendraConfiguration. 
         /// <para>
         /// Configuration information, if any, required to connect to an Amazon Kendra index and
-        /// use the <code>AMAZON.KendraSearchIntent</code> intent.
+        /// use the <c>AMAZON.KendraSearchIntent</c> intent.
         /// </para>
         /// </summary>
         public KendraConfiguration KendraConfiguration
@@ -302,8 +302,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property OutputContexts. 
         /// <para>
-        /// An array of <code>OutputContext</code> objects that lists the contexts that the intent
-        /// activates when the intent is fulfilled.
+        /// An array of <c>OutputContext</c> objects that lists the contexts that the intent activates
+        /// when the intent is fulfilled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -340,9 +340,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property RejectionStatement. 
         /// <para>
-        /// If the user answers "no" to the question defined in <code>confirmationPrompt</code>
-        /// Amazon Lex responds with this statement to acknowledge that the intent was canceled.
-        /// 
+        /// If the user answers "no" to the question defined in <c>confirmationPrompt</c> Amazon
+        /// Lex responds with this statement to acknowledge that the intent was canceled. 
         /// </para>
         /// </summary>
         public Statement RejectionStatement
@@ -398,7 +397,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the intent. For a new intent, the version is always <code>$LATEST</code>.
+        /// The version of the intent. For a new intent, the version is always <c>$LATEST</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

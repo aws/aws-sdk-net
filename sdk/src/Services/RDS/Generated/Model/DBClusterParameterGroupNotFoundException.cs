@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing DB cluster
-    /// parameter group.
+    /// <c>DBClusterParameterGroupName</c> doesn't refer to an existing DB cluster parameter
+    /// group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

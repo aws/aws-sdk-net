@@ -40,13 +40,13 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// When using FlexMatch with Amazon GameLift managed hosting, you can request a backfill
-    /// match from a client service by calling this operation with a <code>GameSessions</code>
-    /// ID. You also have the option of making backfill requests directly from your game server.
+    /// match from a client service by calling this operation with a <c>GameSessions</c> ID.
+    /// You also have the option of making backfill requests directly from your game server.
     /// In response to a request, FlexMatch creates player sessions for the new players, updates
-    /// the <code>GameSession</code> resource, and sends updated matchmaking data to the game
-    /// server. You can request a backfill match at any point after a game session is started.
-    /// Each game session can have only one active backfill request at a time; a subsequent
-    /// request automatically replaces the earlier request.
+    /// the <c>GameSession</c> resource, and sends updated matchmaking data to the game server.
+    /// You can request a backfill match at any point after a game session is started. Each
+    /// game session can have only one active backfill request at a time; a subsequent request
+    /// automatically replaces the earlier request.
     /// </para>
     ///  
     /// <para>
@@ -59,9 +59,9 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// To request a backfill match, specify a unique ticket ID, the original matchmaking
     /// configuration, and matchmaking data for all current players in the game session being
-    /// backfilled. Optionally, specify the <code>GameSession</code> ARN. If successful, a
-    /// match backfill ticket is created and returned with status set to QUEUED. Track the
-    /// status of backfill tickets using the same method for tracking tickets for new matches.
+    /// backfilled. Optionally, specify the <c>GameSession</c> ARN. If successful, a match
+    /// backfill ticket is created and returned with status set to QUEUED. Track the status
+    /// of backfill tickets using the same method for tracking tickets for new matches.
     /// </para>
     ///  
     /// <para>
@@ -99,8 +99,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// Name of the matchmaker to use for this request. You can use either the configuration
         /// name or ARN value. The ARN of the matchmaker that was used with the original game
-        /// session is listed in the <code>GameSession</code> object, <code>MatchmakerData</code>
-        /// property.
+        /// session is listed in the <c>GameSession</c> object, <c>MatchmakerData</c> property.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -145,13 +144,12 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// You can include up to 199 <code>Players</code> in a <code>StartMatchBackfill</code>
-        /// request.
+        /// You can include up to 199 <c>Players</c> in a <c>StartMatchBackfill</c> request.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PlayerID, PlayerAttributes, Team -- This information is maintained in the <code>GameSession</code>
-        /// object, <code>MatchmakerData</code> property, for all players who are currently assigned
+        /// PlayerID, PlayerAttributes, Team -- This information is maintained in the <c>GameSession</c>
+        /// object, <c>MatchmakerData</c> property, for all players who are currently assigned
         /// to the game session. The matchmaker data is in JSON syntax, formatted as a string.
         /// For more details, see <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-server.html#match-server-data">
         /// Match Data</a>. 

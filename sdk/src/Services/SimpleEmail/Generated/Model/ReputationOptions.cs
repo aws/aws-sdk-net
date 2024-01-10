@@ -52,7 +52,7 @@ namespace Amazon.SimpleEmail.Model
         ///  
         /// <para>
         /// If email sending for the configuration set has never been disabled and later re-enabled,
-        /// the value of this attribute is <code>null</code>.
+        /// the value of this attribute is <c>null</c>.
         /// </para>
         /// </summary>
         public DateTime LastFreshStart
@@ -75,9 +75,8 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>true</code>, reputation metrics are published. If the value
-        /// is <code>false</code>, reputation metrics are not published. The default value is
-        /// <code>false</code>.
+        /// If the value is <c>true</c>, reputation metrics are published. If the value is <c>false</c>,
+        /// reputation metrics are not published. The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool ReputationMetricsEnabled
@@ -96,10 +95,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property SendingEnabled. 
         /// <para>
         /// Describes whether email sending is enabled or disabled for the configuration set.
-        /// If the value is <code>true</code>, then Amazon SES sends emails that use the configuration
-        /// set. If the value is <code>false</code>, Amazon SES does not send emails that use
-        /// the configuration set. The default value is <code>true</code>. You can change this
-        /// setting using <a>UpdateConfigurationSetSendingEnabled</a>.
+        /// If the value is <c>true</c>, then Amazon SES sends emails that use the configuration
+        /// set. If the value is <c>false</c>, Amazon SES does not send emails that use the configuration
+        /// set. The default value is <c>true</c>. You can change this setting using <a>UpdateConfigurationSetSendingEnabled</a>.
         /// </para>
         /// </summary>
         public bool SendingEnabled

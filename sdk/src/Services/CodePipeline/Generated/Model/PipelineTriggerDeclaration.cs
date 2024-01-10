@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This is only supported for the <code>CodeStarSourceConnection</code> action type.
+    /// This is only supported for the <c>CodeStarSourceConnection</c> action type.
     /// </para>
     ///  </note> <note> 
     /// <para>

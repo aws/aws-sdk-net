@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Provides summary information for aggregated utterances. The <code>ListAggregatedUtterances</code>
+    /// Provides summary information for aggregated utterances. The <c>ListAggregatedUtterances</c>
     /// operations combines all instances of the same utterance into a single aggregated summary.
     /// </summary>
     public partial class AggregatedUtterancesSummary
@@ -102,7 +102,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Utterance. 
         /// <para>
-        /// The text of the utterance. If the utterance was used with the <code>RecognizeUtterance</code>
+        /// The text of the utterance. If the utterance was used with the <c>RecognizeUtterance</c>
         /// operation, the text is the transcription of the audio utterance.
         /// </para>
         /// </summary>

@@ -38,7 +38,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IsPeered. 
         /// <para>
-        /// Returns <code>true</code> if the Lightsail VPC is peered; otherwise, <code>false</code>.
+        /// Returns <c>true</c> if the Lightsail VPC is peered; otherwise, <c>false</c>.
         /// </para>
         /// </summary>
         public bool IsPeered

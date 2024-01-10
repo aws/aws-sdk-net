@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property PresenterPosition. 
         /// <para>
-        /// Defines the position of the presenter video tile. Default: <code>TopRight</code>.
+        /// Defines the position of the presenter video tile. Default: <c>TopRight</c>.
         /// </para>
         /// </summary>
         public PresenterPosition PresenterPosition

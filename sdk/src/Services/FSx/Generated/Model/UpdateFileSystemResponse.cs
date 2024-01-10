@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for the <code>UpdateFileSystem</code> operation.
+    /// The response object for the <c>UpdateFileSystem</c> operation.
     /// </summary>
     public partial class UpdateFileSystemResponse : AmazonWebServiceResponse
     {

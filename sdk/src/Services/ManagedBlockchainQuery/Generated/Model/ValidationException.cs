@@ -129,7 +129,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property FieldList. 
         /// <para>
-        /// The container for the <code>fieldList</code> of the exception.
+        /// The container for the <c>fieldList</c> of the exception.
         /// </para>
         /// </summary>
         public List<ValidationExceptionField> FieldList

@@ -38,8 +38,8 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// An <code>Endpoints</code> object is returned when a <code>DescribeEndpoints</code>
-        /// request is made.
+        /// An <c>Endpoints</c> object is returned when a <c>DescribeEndpoints</c> request is
+        /// made.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -148,7 +148,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         /// </summary>
@@ -246,7 +246,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:sns:us-east-2:123456789012:MyTopic</code> 
+        ///  <c>arn:aws:sns:us-east-2:123456789012:MyTopic</c> 
         /// </para>
         /// </summary>
         public string SnsTopicARN
@@ -264,7 +264,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// This field is no longer in use. Use <code>SnsTopicARN</code>.
+        /// This field is no longer in use. Use <c>SnsTopicARN</c>.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use SnsTopicARN.")]
@@ -288,7 +288,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        ///  <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c> 
         /// </para>
         /// </summary>
         public string TrailARN

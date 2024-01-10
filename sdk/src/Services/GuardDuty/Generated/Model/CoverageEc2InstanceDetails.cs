@@ -128,18 +128,17 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for
-        /// this resource.
+        ///  <c>AUTO_MANAGED</c> indicates that GuardDuty deploys and manages updates for this
+        /// resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage
-        /// the GuardDuty security agent updates for this resource.
+        ///  <c>MANUAL</c> indicates that you are responsible to deploy, update, and manage the
+        /// GuardDuty security agent updates for this resource.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>DISABLED</code> status doesn't apply to Amazon EC2 instances and Amazon
-        /// EKS clusters.
+        /// The <c>DISABLED</c> status doesn't apply to Amazon EC2 instances and Amazon EKS clusters.
         /// </para>
         ///  </note>
         /// </summary>

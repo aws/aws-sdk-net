@@ -45,7 +45,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>CodeConfiguration</code> is required only for <code>CreateService</code> request.
+        ///  <c>CodeConfiguration</c> is required only for <c>CreateService</c> request.
         /// </para>
         ///  </note>
         /// </summary>

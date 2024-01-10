@@ -38,8 +38,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRuleAssociation. 
         /// <para>
-        /// Information about the <code>DisassociateResolverRule</code> request, including the
-        /// status of the request.
+        /// Information about the <c>DisassociateResolverRule</c> request, including the status
+        /// of the request.
         /// </para>
         /// </summary>
         public ResolverRuleAssociation ResolverRuleAssociation

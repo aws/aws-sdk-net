@@ -38,7 +38,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyComplianceDetail. 
         /// <para>
-        /// Information about the resources and the policy that you specified in the <code>GetComplianceDetail</code>
+        /// Information about the resources and the policy that you specified in the <c>GetComplianceDetail</c>
         /// request.
         /// </para>
         /// </summary>

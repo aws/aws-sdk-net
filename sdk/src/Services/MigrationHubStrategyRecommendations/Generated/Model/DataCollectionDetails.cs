@@ -81,7 +81,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <summary>
         /// Gets and sets the property InProgress. 
         /// <para>
-        ///  The number of servers with the assessment status <code>IN_PROGESS</code>. 
+        ///  The number of servers with the assessment status <c>IN_PROGESS</c>. 
         /// </para>
         /// </summary>
         public int InProgress

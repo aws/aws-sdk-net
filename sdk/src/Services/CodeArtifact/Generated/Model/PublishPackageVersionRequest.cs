@@ -34,13 +34,13 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  
     /// <para>
-    /// The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code>
+    /// The <c>unfinished</c> flag can be used to keep the package version in the <c>Unfinished</c>
     /// state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
     /// version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s
-    /// status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading
-    /// the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
-    /// Once a package version’s status is set to <code>Published</code>, it cannot change
-    /// back to <code>Unfinished</code>.
+    /// status to <c>Published</c>, omit the <c>unfinished</c> flag when uploading the final
+    /// asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+    /// Once a package version’s status is set to <c>Published</c>, it cannot change back
+    /// to <c>Unfinished</c>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -87,8 +87,8 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property AssetName. 
         /// <para>
         /// The name of the asset to publish. Asset names can include Unicode letters and numbers,
-        /// and the following special characters: <code>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; ,
-        /// . `</code> 
+        /// and the following special characters: <c>~ ! @ ^ &amp; ( ) - ` _ + [ ] { } ; , . `</c>
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -107,14 +107,14 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property AssetSHA256. 
         /// <para>
-        /// The SHA256 hash of the <code>assetContent</code> to publish. This value must be calculated
+        /// The SHA256 hash of the <c>assetContent</c> to publish. This value must be calculated
         /// by the caller and provided with the request (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html#publishing-generic-packages">Publishing
         /// a generic package</a> in the <i>CodeArtifact User Guide</i>).
         /// </para>
         ///  
         /// <para>
-        /// This value is used as an integrity check to verify that the <code>assetContent</code>
-        /// has not changed after it was originally sent.
+        /// This value is used as an integrity check to verify that the <c>assetContent</c> has
+        /// not changed after it was originally sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=64, Max=64)]
@@ -177,7 +177,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  
         /// <para>
-        /// The only supported value is <code>generic</code>.
+        /// The only supported value is <c>generic</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -234,7 +234,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property PackageVersion. 
         /// <para>
-        /// The package version to publish (for example, <code>3.5.2</code>).
+        /// The package version to publish (for example, <c>3.5.2</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -272,14 +272,13 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Unfinished. 
         /// <para>
-        /// Specifies whether the package version should remain in the <code>unfinished</code>
-        /// state. If omitted, the package version status will be set to <code>Published</code>
-        /// (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package
+        /// Specifies whether the package version should remain in the <c>unfinished</c> state.
+        /// If omitted, the package version status will be set to <c>Published</c> (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status">Package
         /// version status</a> in the <i>CodeArtifact User Guide</i>).
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>unfinished</code> 
+        /// Valid values: <c>unfinished</c> 
         /// </para>
         /// </summary>
         public bool Unfinished

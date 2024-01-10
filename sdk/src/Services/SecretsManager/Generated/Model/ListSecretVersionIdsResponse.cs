@@ -82,7 +82,7 @@ namespace Amazon.SecretsManager.Model
         /// Secrets Manager includes this value if there's more output available than what is
         /// included in the current response. This can occur even when the response includes no
         /// values at all, such as when you ask for a filtered view of a long list. To get the
-        /// next results, call <code>ListSecretVersionIds</code> again with this value. 
+        /// next results, call <c>ListSecretVersionIds</c> again with this value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

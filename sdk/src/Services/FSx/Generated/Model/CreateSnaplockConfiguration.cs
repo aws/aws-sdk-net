@@ -44,9 +44,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property AuditLogVolume. 
         /// <para>
         /// Enables or disables the audit log volume for an FSx for ONTAP SnapLock volume. The
-        /// default value is <code>false</code>. If you set <code>AuditLogVolume</code> to <code>true</code>,
-        /// the SnapLock volume is created as an audit log volume. The minimum retention period
-        /// for an audit log volume is six months. 
+        /// default value is <c>false</c>. If you set <c>AuditLogVolume</c> to <c>true</c>, the
+        /// SnapLock volume is created as an audit log volume. The minimum retention period for
+        /// an audit log volume is six months. 
         /// </para>
         ///  
         /// <para>
@@ -90,9 +90,9 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock
         /// Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete
-        /// WORM files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code>
+        /// WORM files even if they have active retention periods. <c>PERMANENTLY_DISABLED</c>
         /// is a terminal state. If privileged delete is permanently disabled on a SnapLock volume,
-        /// you can't re-enable it. The default value is <code>DISABLED</code>. 
+        /// you can't re-enable it. The default value is <c>DISABLED</c>. 
         /// </para>
         ///  
         /// <para>
@@ -138,19 +138,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COMPLIANCE</code>: Files transitioned to write once, read many (WORM) on a
-        /// Compliance volume can't be deleted until their retention periods expire. This retention
-        /// mode is used to address government or industry-specific mandates or to protect against
+        ///  <c>COMPLIANCE</c>: Files transitioned to write once, read many (WORM) on a Compliance
+        /// volume can't be deleted until their retention periods expire. This retention mode
+        /// is used to address government or industry-specific mandates or to protect against
         /// ransomware attacks. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-compliance.html">SnapLock
         /// Compliance</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENTERPRISE</code>: Files transitioned to WORM on an Enterprise volume can be
-        /// deleted by authorized users before their retention periods expire using privileged
-        /// delete. This retention mode is used to advance an organization's data integrity and
-        /// internal compliance or to test retention settings before using SnapLock Compliance.
-        /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
+        ///  <c>ENTERPRISE</c>: Files transitioned to WORM on an Enterprise volume can be deleted
+        /// by authorized users before their retention periods expire using privileged delete.
+        /// This retention mode is used to advance an organization's data integrity and internal
+        /// compliance or to test retention settings before using SnapLock Compliance. For more
+        /// information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-enterprise.html">SnapLock
         /// Enterprise</a>. 
         /// </para>
         ///  </li> </ul>
@@ -173,7 +173,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Enables or disables volume-append mode on an FSx for ONTAP SnapLock volume. Volume-append
         /// mode allows you to create WORM-appendable files and write data to them incrementally.
-        /// The default value is <code>false</code>. 
+        /// The default value is <c>false</c>. 
         /// </para>
         ///  
         /// <para>

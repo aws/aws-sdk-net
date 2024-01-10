@@ -84,14 +84,14 @@ namespace Amazon.Athena.Model
         /// <para>
         /// The Amazon Web Services account ID that you expect to be the owner of the Amazon S3
         /// bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set, Athena uses
-        /// the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your
-        /// specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services
-        /// account ID does not match the actual owner of the Amazon S3 bucket, the call fails
-        /// with a permissions error.
+        /// the value for <c>ExpectedBucketOwner</c> when it makes Amazon S3 calls to your specified
+        /// output location. If the <c>ExpectedBucketOwner</c> Amazon Web Services account ID
+        /// does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions
+        /// error.
         /// </para>
         ///  
         /// <para>
-        /// If workgroup settings override client-side settings, then the query uses the <code>ExpectedBucketOwner</code>
+        /// If workgroup settings override client-side settings, then the query uses the <c>ExpectedBucketOwner</c>
         /// setting that is specified for the workgroup, and also uses the location for storing
         /// query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
         /// and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
@@ -115,12 +115,12 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property OutputLocation. 
         /// <para>
         /// The location in Amazon S3 where your query and calculation results are stored, such
-        /// as <code>s3://path/to/query/bucket/</code>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+        /// as <c>s3://path/to/query/bucket/</c>. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
         /// with query results, recent queries, and output files</a>. If workgroup settings override
         /// client-side settings, then the query uses the location for the query results and the
         /// encryption configuration that are specified for the workgroup. The "workgroup settings
-        /// override" is specified in <code>EnforceWorkGroupConfiguration</code> (true/false)
-        /// in the <code>WorkGroupConfiguration</code>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+        /// override" is specified in <c>EnforceWorkGroupConfiguration</c> (true/false) in the
+        /// <c>WorkGroupConfiguration</c>. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
         /// </para>
         /// </summary>
         public string OutputLocation
@@ -138,11 +138,11 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property RemoveAclConfiguration. 
         /// <para>
-        /// If set to <code>true</code>, indicates that the previously-specified ACL configuration
-        /// for queries in this workgroup should be ignored and set to null. If set to <code>false</code>
-        /// or not set, and a value is present in the <code>AclConfiguration</code> of <code>ResultConfigurationUpdates</code>,
-        /// the <code>AclConfiguration</code> in the workgroup's <code>ResultConfiguration</code>
-        /// is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// If set to <c>true</c>, indicates that the previously-specified ACL configuration for
+        /// queries in this workgroup should be ignored and set to null. If set to <c>false</c>
+        /// or not set, and a value is present in the <c>AclConfiguration</c> of <c>ResultConfigurationUpdates</c>,
+        /// the <c>AclConfiguration</c> in the workgroup's <c>ResultConfiguration</c> is updated
+        /// with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
@@ -163,9 +163,9 @@ namespace Amazon.Athena.Model
         /// <para>
         /// If set to "true", indicates that the previously-specified encryption configuration
         /// (also known as the client-side setting) for queries in this workgroup should be ignored
-        /// and set to null. If set to "false" or not set, and a value is present in the <code>EncryptionConfiguration</code>
-        /// in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>EncryptionConfiguration</code>
-        /// in the workgroup's <code>ResultConfiguration</code> will be updated with the new value.
+        /// and set to null. If set to "false" or not set, and a value is present in the <c>EncryptionConfiguration</c>
+        /// in <c>ResultConfigurationUpdates</c> (the client-side setting), the <c>EncryptionConfiguration</c>
+        /// in the workgroup's <c>ResultConfiguration</c> will be updated with the new value.
         /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
@@ -187,10 +187,9 @@ namespace Amazon.Athena.Model
         /// <para>
         /// If set to "true", removes the Amazon Web Services account ID previously specified
         /// for <a>ResultConfiguration$ExpectedBucketOwner</a>. If set to "false" or not set,
-        /// and a value is present in the <code>ExpectedBucketOwner</code> in <code>ResultConfigurationUpdates</code>
-        /// (the client-side setting), the <code>ExpectedBucketOwner</code> in the workgroup's
-        /// <code>ResultConfiguration</code> is updated with the new value. For more information,
-        /// see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// and a value is present in the <c>ExpectedBucketOwner</c> in <c>ResultConfigurationUpdates</c>
+        /// (the client-side setting), the <c>ExpectedBucketOwner</c> in the workgroup's <c>ResultConfiguration</c>
+        /// is updated with the new value. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
@@ -211,9 +210,9 @@ namespace Amazon.Athena.Model
         /// <para>
         /// If set to "true", indicates that the previously-specified query results location (also
         /// known as a client-side setting) for queries in this workgroup should be ignored and
-        /// set to null. If set to "false" or not set, and a value is present in the <code>OutputLocation</code>
-        /// in <code>ResultConfigurationUpdates</code> (the client-side setting), the <code>OutputLocation</code>
-        /// in the workgroup's <code>ResultConfiguration</code> will be updated with the new value.
+        /// set to null. If set to "false" or not set, and a value is present in the <c>OutputLocation</c>
+        /// in <c>ResultConfigurationUpdates</c> (the client-side setting), the <c>OutputLocation</c>
+        /// in the workgroup's <c>ResultConfiguration</c> will be updated with the new value.
         /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>

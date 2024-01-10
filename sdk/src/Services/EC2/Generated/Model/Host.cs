@@ -76,9 +76,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AllowsMultipleInstanceTypes. 
         /// <para>
         /// Indicates whether the Dedicated Host supports multiple instance types of the same
-        /// instance family. If the value is <code>on</code>, the Dedicated Host supports multiple
-        /// instance types in the instance family. If the value is <code>off</code>, the Dedicated
-        /// Host supports a single instance type only.
+        /// instance family. If the value is <c>on</c>, the Dedicated Host supports multiple instance
+        /// types in the instance family. If the value is <c>off</c>, the Dedicated Host supports
+        /// a single instance type only.
         /// </para>
         /// </summary>
         public AllowsMultipleInstanceTypes AllowsMultipleInstanceTypes
@@ -278,8 +278,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property HostReservationId. 
         /// <para>
-        /// The reservation ID of the Dedicated Host. This returns a <code>null</code> response
-        /// if the Dedicated Host doesn't have an associated reservation.
+        /// The reservation ID of the Dedicated Host. This returns a <c>null</c> response if the
+        /// Dedicated Host doesn't have an associated reservation.
         /// </para>
         /// </summary>
         public string HostReservationId
@@ -316,7 +316,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MemberOfServiceLinkedResourceGroup. 
         /// <para>
         /// Indicates whether the Dedicated Host is in a host resource group. If <b>memberOfServiceLinkedResourceGroup</b>
-        /// is <code>true</code>, the host is in a host resource group; otherwise, it is not.
+        /// is <c>true</c>, the host is in a host resource group; otherwise, it is not.
         /// </para>
         /// </summary>
         public bool MemberOfServiceLinkedResourceGroup

@@ -45,8 +45,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify
-    /// that you want all resource types. 
+    /// You make a call to the <c>GetDiscoveredResourceCounts</c> action and specify that
+    /// you want all resource types. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -67,9 +67,9 @@ namespace Amazon.ConfigService.Model
     ///  </li> </ul> </li> </ol> 
     /// <para>
     /// The response is paginated. By default, Config lists 100 <a>ResourceCount</a> objects
-    /// on each page. You can customize this number with the <code>limit</code> parameter.
-    /// The response includes a <code>nextToken</code> string. To get the next page of results,
-    /// run the request again and specify the string for the <code>nextToken</code> parameter.
+    /// on each page. You can customize this number with the <c>limit</c> parameter. The response
+    /// includes a <c>nextToken</c> string. To get the next page of results, run the request
+    /// again and specify the string for the <c>nextToken</c> parameter.
     /// </para>
     ///  <note> 
     /// <para>
@@ -121,8 +121,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response.
+        /// The <c>nextToken</c> string returned on a previous page that you use to get the next
+        /// page of results in a paginated response.
         /// </para>
         /// </summary>
         public string NextToken
@@ -141,11 +141,11 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// The comma-separated list that specifies the resource types that you want Config to
-        /// return (for example, <code>"AWS::EC2::Instance"</code>, <code>"AWS::IAM::User"</code>).
+        /// return (for example, <c>"AWS::EC2::Instance"</c>, <c>"AWS::IAM::User"</c>).
         /// </para>
         ///  
         /// <para>
-        /// If a value for <code>resourceTypes</code> is not specified, Config returns all resource
+        /// If a value for <c>resourceTypes</c> is not specified, Config returns all resource
         /// types that Config is recording in the region for your account.
         /// </para>
         ///  <note> 

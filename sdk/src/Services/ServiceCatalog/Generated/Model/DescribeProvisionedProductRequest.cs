@@ -45,11 +45,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+        /// If you do not provide a name or ID, or you provide both name and ID, an <c>InvalidParametersException</c>
         /// will occur.
         /// </para>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not provide a name or ID, or you provide both name and ID, an <code>InvalidParametersException</code>
+        /// If you do not provide a name or ID, or you provide both name and ID, an <c>InvalidParametersException</c>
         /// will occur.
         /// </para>
         /// </summary>

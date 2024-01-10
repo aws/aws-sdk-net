@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The response object for the Amazon FSx for Lustre file system being deleted in the
-    /// <code>DeleteFileSystem</code> operation.
+    /// <c>DeleteFileSystem</c> operation.
     /// </summary>
     public partial class DeleteFileSystemLustreResponse
     {

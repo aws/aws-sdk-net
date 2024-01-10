@@ -63,7 +63,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace. Currently, you should set this to <code>default</code>.
+        /// The namespace. Currently, you should set this to <c>default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]

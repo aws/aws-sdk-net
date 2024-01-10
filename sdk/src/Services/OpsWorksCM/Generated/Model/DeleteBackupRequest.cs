@@ -35,10 +35,9 @@ namespace Amazon.OpsWorksCM.Model
     /// 
     ///  
     /// <para>
-    ///  An <code>InvalidStateException</code> is thrown when a backup deletion is already
-    /// in progress. A <code>ResourceNotFoundException</code> is thrown when the backup does
-    /// not exist. A <code>ValidationException</code> is thrown when parameters of the request
-    /// are not valid. 
+    ///  An <c>InvalidStateException</c> is thrown when a backup deletion is already in progress.
+    /// A <c>ResourceNotFoundException</c> is thrown when the backup does not exist. A <c>ValidationException</c>
+    /// is thrown when parameters of the request are not valid. 
     /// </para>
     /// </summary>
     public partial class DeleteBackupRequest : AmazonOpsWorksCMRequest
@@ -49,7 +48,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property BackupId. 
         /// <para>
         /// The ID of the backup to delete. Run the DescribeBackups command to get a list of backup
-        /// IDs. Backup IDs are in the format <code>ServerName-yyyyMMddHHmmssSSS</code>. 
+        /// IDs. Backup IDs are in the format <c>ServerName-yyyyMMddHHmmssSSS</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=79)]

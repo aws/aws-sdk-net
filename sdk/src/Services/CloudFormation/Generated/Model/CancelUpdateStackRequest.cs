@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can cancel only stacks that are in the <code>UPDATE_IN_PROGRESS</code> state.
+    /// You can cancel only stacks that are in the <c>UPDATE_IN_PROGRESS</c> state.
     /// </para>
     ///  </note>
     /// </summary>
@@ -47,9 +47,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for this <code>CancelUpdateStack</code> request. Specify this
-        /// token if you plan to retry requests so that CloudFormation knows that you're not attempting
-        /// to cancel an update on a stack with the same name. You might retry <code>CancelUpdateStack</code>
+        /// A unique identifier for this <c>CancelUpdateStack</c> request. Specify this token
+        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to cancel an update on a stack with the same name. You might retry <c>CancelUpdateStack</c>
         /// requests to ensure that CloudFormation successfully received them.
         /// </para>
         /// </summary>
@@ -69,8 +69,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. <note> 
         /// <para>
-        /// If you don't pass a parameter to <code>StackName</code>, the API returns a response
-        /// that describes all resources in the account.
+        /// If you don't pass a parameter to <c>StackName</c>, the API returns a response that
+        /// describes all resources in the account.
         /// </para>
         ///  
         /// <para>
@@ -79,8 +79,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
-        /// "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</code> 
+        ///  <c>{ "Version": "2012-10-17", "Statement": [{ "Effect": "Deny", "Action": "cloudformation:DescribeStacks",
+        /// "NotResource": "arn:aws:cloudformation:*:*:stack/*/*" }] }</c> 
         /// </para>
         ///  </note> 
         /// <para>

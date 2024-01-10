@@ -62,7 +62,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The Key ID of the customer managed key used for KMS encryption. This is required if
-        /// you use <code>KMS_BASED_ENCRYPTION</code>.
+        /// you use <c>KMS_BASED_ENCRYPTION</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

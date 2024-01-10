@@ -190,8 +190,8 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property Query. 
         /// <para>
-        /// A query to filter users by user name. Remember the following about the <code>Userids</code>
-        /// and <code>Query</code> parameters:
+        /// A query to filter users by user name. Remember the following about the <c>Userids</c>
+        /// and <c>Query</c> parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -200,21 +200,20 @@ namespace Amazon.WorkDocs.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you use both parameters, the API ignores the <code>Query</code> parameter.
+        /// If you use both parameters, the API ignores the <c>Query</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Userid</code> parameter only returns user names that match a corresponding
-        /// user ID.
+        /// The <c>Userid</c> parameter only returns user names that match a corresponding user
+        /// ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Query</code> parameter runs a "prefix" search for users by the <code>GivenName</code>,
-        /// <code>SurName</code>, or <code>UserName</code> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a>
-        /// API call. For example, querying on <code>Ma</code> returns Márcia Oliveira, María
-        /// García, and Mateo Jackson. If you use multiple characters, the API only returns data
-        /// that matches all characters. For example, querying on <code>Ma J</code> only returns
-        /// Mateo Jackson.
+        /// The <c>Query</c> parameter runs a "prefix" search for users by the <c>GivenName</c>,
+        /// <c>SurName</c>, or <c>UserName</c> fields included in a <a href="https://docs.aws.amazon.com/workdocs/latest/APIReference/API_CreateUser.html">CreateUser</a>
+        /// API call. For example, querying on <c>Ma</c> returns Márcia Oliveira, María García,
+        /// and Mateo Jackson. If you use multiple characters, the API only returns data that
+        /// matches all characters. For example, querying on <c>Ma J</c> only returns Mateo Jackson.
         /// </para>
         ///  </li> </ul>
         /// </summary>

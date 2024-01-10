@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeStackSummary</code> request.
+    /// Contains the response to a <c>DescribeStackSummary</c> request.
     /// </summary>
     public partial class DescribeStackSummaryResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property StackSummary. 
         /// <para>
-        /// A <code>StackSummary</code> object that contains the results.
+        /// A <c>StackSummary</c> object that contains the results.
         /// </para>
         /// </summary>
         public StackSummary StackSummary

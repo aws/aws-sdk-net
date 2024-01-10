@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentAttributeKey. 
         /// <para>
-        /// The key for the facet values. This is the same as the <code>DocumentAttributeKey</code>
+        /// The key for the facet values. This is the same as the <c>DocumentAttributeKey</c>
         /// provided in the query.
         /// </para>
         /// </summary>

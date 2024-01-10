@@ -35,7 +35,7 @@ namespace Amazon.ServiceDiscovery.Model
     ///  <important> 
     /// <para>
     /// The record types of a service can only be changed by deleting the service and recreating
-    /// it with a new <code>Dnsconfig</code>.
+    /// it with a new <c>Dnsconfig</c>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -48,8 +48,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsRecords. 
         /// <para>
-        /// An array that contains one <code>DnsRecord</code> object for each Route 53 DNS record
-        /// that you want Cloud Map to create when you register an instance.
+        /// An array that contains one <c>DnsRecord</c> object for each Route 53 DNS record that
+        /// you want Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <note> 
         /// <para>
         /// If you want to use this service to register instances that create alias records, specify
-        /// <code>WEIGHTED</code> for the routing policy.
+        /// <c>WEIGHTED</c> for the routing policy.
         /// </para>
         ///  </note> 
         /// <para>
@@ -112,11 +112,11 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, suppose that the service includes configurations for one <code>A</code>
-        /// record and a health check. You use the service to register 10 instances. Route 53
-        /// responds to DNS queries with IP addresses for up to eight healthy instances. If fewer
-        /// than eight instances are healthy, Route 53 responds to every DNS query with the IP
-        /// addresses for all of the healthy instances.
+        /// For example, suppose that the service includes configurations for one <c>A</c> record
+        /// and a health check. You use the service to register 10 instances. Route 53 responds
+        /// to DNS queries with IP addresses for up to eight healthy instances. If fewer than
+        /// eight instances are healthy, Route 53 responds to every DNS query with the IP addresses
+        /// for all of the healthy instances.
         /// </para>
         ///  
         /// <para>
@@ -136,11 +136,11 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, suppose that the service includes configurations for one <code>A</code>
-        /// record and a health check. You use the service to register 10 instances. Route 53
-        /// responds to DNS queries with the IP address for one randomly selected instance from
-        /// among the healthy instances. If no instances are healthy, Route 53 responds to DNS
-        /// queries as if all of the instances were healthy.
+        /// For example, suppose that the service includes configurations for one <c>A</c> record
+        /// and a health check. You use the service to register 10 instances. Route 53 responds
+        /// to DNS queries with the IP address for one randomly selected instance from among the
+        /// healthy instances. If no instances are healthy, Route 53 responds to DNS queries as
+        /// if all of the instances were healthy.
         /// </para>
         ///  
         /// <para>

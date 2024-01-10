@@ -153,8 +153,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property SubjectStructures. 
         /// <para>
-        /// This field is only present when the request mode is <code>DETAILED</code>. It contains
-        /// a list of subject structures.
+        /// This field is only present when the request mode is <c>DETAILED</c>. It contains a
+        /// list of subject structures.
         /// </para>
         /// </summary>
         public List<SubjectStructure> SubjectStructures

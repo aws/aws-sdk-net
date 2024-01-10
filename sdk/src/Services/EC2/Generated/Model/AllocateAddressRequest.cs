@@ -112,7 +112,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The network (<code>vpc</code>).
+        /// The network (<c>vpc</c>).
         /// </para>
         /// </summary>
         public DomainType Domain
@@ -157,7 +157,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The ID of an address pool that you own. Use this parameter to let Amazon EC2 select
         /// an address from the address pool. To specify a specific address from the address pool,
-        /// use the <code>Address</code> parameter instead.
+        /// use the <c>Address</c> parameter instead.
         /// </para>
         /// </summary>
         public string PublicIpv4Pool

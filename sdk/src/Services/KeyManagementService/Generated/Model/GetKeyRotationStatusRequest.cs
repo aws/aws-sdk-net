@@ -56,7 +56,7 @@ namespace Amazon.KeyManagementService.Model
     /// of the key material in customer managed KMS keys. Key material rotation of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
     /// Web Services managed KMS keys</a> is not configurable. KMS always rotates the key
     /// material in Amazon Web Services managed KMS keys every year. The key rotation status
-    /// for Amazon Web Services managed KMS keys is always <code>true</code>.
+    /// for Amazon Web Services managed KMS keys is always <c>true</c>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -81,13 +81,13 @@ namespace Amazon.KeyManagementService.Model
     ///  </li> <li> 
     /// <para>
     /// Pending deletion: While a KMS key is pending deletion, its key rotation status is
-    /// <code>false</code> and KMS does not rotate the key material. If you cancel the deletion,
-    /// the original key rotation status returns to <code>true</code>.
+    /// <c>false</c> and KMS does not rotate the key material. If you cancel the deletion,
+    /// the original key rotation status returns to <c>true</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     ///  <b>Cross-account use</b>: Yes. To perform this operation on a KMS key in a different
-    /// Amazon Web Services account, specify the key ARN in the value of the <code>KeyId</code>
+    /// Amazon Web Services account, specify the key ARN in the value of the <c>KeyId</c>
     /// parameter.
     /// </para>
     ///  
@@ -134,11 +134,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 

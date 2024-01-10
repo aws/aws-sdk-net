@@ -31,9 +31,8 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBClusterParameterGroup operation.
     /// Modifies the parameters of a cluster parameter group. To modify more than one parameter,
-    /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
-    /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-    /// request. 
+    /// submit a list of the following: <c>ParameterName</c>, <c>ParameterValue</c>, and <c>ApplyMethod</c>.
+    /// A maximum of 20 parameters can be modified in a single request. 
     /// 
     ///  <note> 
     /// <para>
@@ -47,7 +46,7 @@ namespace Amazon.DocDB.Model
     /// parameter group. This allows Amazon DocumentDB to fully complete the create action
     /// before the parameter group is used as the default for a new cluster. This step is
     /// especially important for parameters that are critical when creating the default database
-    /// for a cluster, such as the character set for the default database defined by the <code>character_set_database</code>
+    /// for a cluster, such as the character set for the default database defined by the <c>character_set_database</c>
     /// parameter.
     /// </para>
     ///  </important>

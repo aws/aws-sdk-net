@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// Within the pay-as-you-go model defined under <code>UsageBasedPricingTerm</code>, the
-    /// <code>UsageBasedRateCardItem</code> defines an individual rate for a product dimension.
+    /// Within the pay-as-you-go model defined under <c>UsageBasedPricingTerm</c>, the <c>UsageBasedRateCardItem</c>
+    /// defines an individual rate for a product dimension.
     /// </summary>
     public partial class UsageBasedRateCardItem
     {

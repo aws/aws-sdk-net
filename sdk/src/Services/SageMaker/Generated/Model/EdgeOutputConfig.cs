@@ -68,17 +68,17 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ComponentName</code> (optional) - Name of the GreenGrass V2 component. If not
-        /// specified, the default name generated consists of "SagemakerEdgeManager" and the name
-        /// of your SageMaker Edge Manager packaging job.
+        ///  <c>ComponentName</c> (optional) - Name of the GreenGrass V2 component. If not specified,
+        /// the default name generated consists of "SagemakerEdgeManager" and the name of your
+        /// SageMaker Edge Manager packaging job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ComponentDescription</code> (optional) - Description of the component.
+        ///  <c>ComponentDescription</c> (optional) - Description of the component.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ComponentVersion</code> (optional) - The version of the component.
+        ///  <c>ComponentVersion</c> (optional) - The version of the component.
         /// </para>
         ///  <note> 
         /// <para>
@@ -89,13 +89,13 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>PlatformOS</code> (optional) - The name of the operating system for the platform.
+        ///  <c>PlatformOS</c> (optional) - The name of the operating system for the platform.
         /// Supported platforms include Windows and Linux.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PlatformArchitecture</code> (optional) - The processor architecture for the
-        /// platform. 
+        ///  <c>PlatformArchitecture</c> (optional) - The processor architecture for the platform.
+        /// 
         /// </para>
         ///  
         /// <para>

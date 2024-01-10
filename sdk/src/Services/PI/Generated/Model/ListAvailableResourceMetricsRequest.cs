@@ -45,8 +45,8 @@ namespace Amazon.PI.Model
         /// <para>
         /// An immutable identifier for a data source that is unique within an Amazon Web Services
         /// Region. Performance Insights gathers metrics from this data source. To use an Amazon
-        /// RDS DB instance as a data source, specify its <code>DbiResourceId</code> value. For
-        /// example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</code>. 
+        /// RDS DB instance as a data source, specify its <c>DbiResourceId</c> value. For example,
+        /// specify <c>db-ABCDEFGHIJKLMNOPQRSTU1VWZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -65,8 +65,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of items to return. If the <code>MaxRecords</code> value is less
-        /// than the number of existing items, the response includes a pagination token. 
+        /// The maximum number of items to return. If the <c>MaxRecords</c> value is less than
+        /// the number of existing items, the response includes a pagination token. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
@@ -90,20 +90,20 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>os</code> (OS counter metrics) - All engines
+        ///  <c>os</c> (OS counter metrics) - All engines
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db</code> (DB load metrics) - All engines except for Amazon DocumentDB
+        ///  <c>db</c> (DB load metrics) - All engines except for Amazon DocumentDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sql.stats</code> (per-SQL metrics) - All engines except for Amazon DocumentDB
+        ///  <c>db.sql.stats</c> (per-SQL metrics) - All engines except for Amazon DocumentDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sql_tokenized.stats</code> (per-SQL digest metrics) - All engines except
-        /// for Amazon DocumentDB
+        ///  <c>db.sql_tokenized.stats</c> (per-SQL digest metrics) - All engines except for Amazon
+        /// DocumentDB
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -125,7 +125,7 @@ namespace Amazon.PI.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the token, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <c>MaxRecords</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

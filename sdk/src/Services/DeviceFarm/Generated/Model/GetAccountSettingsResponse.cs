@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
-    /// Represents the account settings return values from the <code>GetAccountSettings</code>
-    /// request.
+    /// Represents the account settings return values from the <c>GetAccountSettings</c> request.
     /// </summary>
     public partial class GetAccountSettingsResponse : AmazonWebServiceResponse
     {

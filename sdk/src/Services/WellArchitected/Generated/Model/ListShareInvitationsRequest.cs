@@ -34,9 +34,8 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
-    ///  <code>WorkloadNamePrefix</code>, <code>LensNamePrefix</code>, <code>ProfileNamePrefix</code>,
-    /// and <code>TemplateNamePrefix</code> are mutually exclusive. Use the parameter that
-    /// matches your <code>ShareResourceType</code>.
+    ///  <c>WorkloadNamePrefix</c>, <c>LensNamePrefix</c>, <c>ProfileNamePrefix</c>, and <c>TemplateNamePrefix</c>
+    /// are mutually exclusive. Use the parameter that matches your <c>ShareResourceType</c>.
     /// </para>
     /// </summary>
     public partial class ListShareInvitationsRequest : AmazonWellArchitectedRequest

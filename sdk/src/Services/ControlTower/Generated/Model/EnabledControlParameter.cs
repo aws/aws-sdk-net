@@ -30,8 +30,7 @@ namespace Amazon.ControlTower.Model
 {
     /// <summary>
     /// A set of parameters that configure the behavior of the enabled control. A key/value
-    /// pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code>
-    /// is of type <code>Document</code>.
+    /// pair, where <c>Key</c> is of type <c>String</c> and <c>Value</c> is of type <c>Document</c>.
     /// </summary>
     public partial class EnabledControlParameter
     {
@@ -41,7 +40,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of a key/value pair. It is of type <code>string</code>.
+        /// The key of a key/value pair. It is of type <c>string</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +59,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of a key/value pair. It can be of type <code>array</code> <code>string</code>,
-        /// <code>number</code>, <code>object</code>, or <code>boolean</code>. 
+        /// The value of a key/value pair. It can be of type <c>array</c> <c>string</c>, <c>number</c>,
+        /// <c>object</c>, or <c>boolean</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -129,8 +129,8 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Encoding. 
         /// <para>
         /// Specifies the encoding of the log file so that the file can be read correctly. The
-        /// default is <code>utf_8</code>. Encodings supported by Python <code>codecs.decode()</code>
-        /// can be used here.
+        /// default is <c>utf_8</c>. Encodings supported by Python <c>codecs.decode()</c> can
+        /// be used here.
         /// </para>
         /// </summary>
         public CloudWatchLogsEncoding Encoding
@@ -152,15 +152,15 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>File</code> can point to a specific file or multiple files (by using wild card
-        /// characters such as <code>/var/log/system.log*</code>). Only the latest file is pushed
-        /// to CloudWatch Logs, based on file modification time. We recommend that you use wild
-        /// card characters to specify a series of files of the same type, such as <code>access_log.2014-06-01-01</code>,
-        /// <code>access_log.2014-06-01-02</code>, and so on by using a pattern like <code>access_log.*</code>.
-        /// Don't use a wildcard to match multiple file types, such as <code>access_log_80</code>
-        /// and <code>access_log_443</code>. To specify multiple, different file types, add another
-        /// log stream entry to the configuration file, so that each log file type is stored in
-        /// a different log group.
+        ///  <c>File</c> can point to a specific file or multiple files (by using wild card characters
+        /// such as <c>/var/log/system.log*</c>). Only the latest file is pushed to CloudWatch
+        /// Logs, based on file modification time. We recommend that you use wild card characters
+        /// to specify a series of files of the same type, such as <c>access_log.2014-06-01-01</c>,
+        /// <c>access_log.2014-06-01-02</c>, and so on by using a pattern like <c>access_log.*</c>.
+        /// Don't use a wildcard to match multiple file types, such as <c>access_log_80</c> and
+        /// <c>access_log_443</c>. To specify multiple, different file types, add another log
+        /// stream entry to the configuration file, so that each log file type is stored in a
+        /// different log group.
         /// </para>
         ///  
         /// <para>

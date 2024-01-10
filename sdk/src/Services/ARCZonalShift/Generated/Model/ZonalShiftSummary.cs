@@ -136,8 +136,8 @@ namespace Amazon.ARCZonalShift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice
-        /// run configuration does not go into an <code>ALARM</code> state during the practice
-        /// run, and the practice run was not interrupted before it completed.
+        /// run configuration does not go into an <c>ALARM</c> state during the practice run,
+        /// and the practice run was not interrupted before it completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -148,8 +148,8 @@ namespace Amazon.ARCZonalShift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run
-        /// configuration goes into an <code>ALARM</code> state during the practice run, and the
-        /// practice run was not interrupted before it completed.
+        /// configuration goes into an <c>ALARM</c> state during the practice run, and the practice
+        /// run was not interrupted before it completed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -221,7 +221,7 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Status</code> for a zonal shift can have one of the following values:
+        /// The <c>Status</c> for a zonal shift can have one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

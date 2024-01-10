@@ -58,8 +58,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value, specified as a percent total of a service's <code>desiredCount</code>,
-        /// to scale the task set. Accepted values are numbers between 0 and 100.
+        /// The value, specified as a percent total of a service's <c>desiredCount</c>, to scale
+        /// the task set. Accepted values are numbers between 0 and 100.
         /// </para>
         /// </summary>
         public double Value

@@ -93,7 +93,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The upload's content type (for example, <code>application/octet-stream</code>).
+        /// The upload's content type (for example, <c>application/octet-stream</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]

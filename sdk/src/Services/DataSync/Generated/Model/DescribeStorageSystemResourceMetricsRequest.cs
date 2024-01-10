@@ -67,7 +67,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// Specifies a time within the total duration that the discovery job ran. To see information
-        /// gathered during a certain time frame, use this parameter with <code>StartTime</code>.
+        /// gathered during a certain time frame, use this parameter with <c>StartTime</c>.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -164,7 +164,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// Specifies a time within the total duration that the discovery job ran. To see information
-        /// gathered during a certain time frame, use this parameter with <code>EndTime</code>.
+        /// gathered during a certain time frame, use this parameter with <c>EndTime</c>.
         /// </para>
         /// </summary>
         public DateTime StartTime

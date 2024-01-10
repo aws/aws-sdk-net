@@ -35,18 +35,18 @@ namespace Amazon.AutoScalingPlans.Model
     ///  
     /// <para>
     /// For predictive scaling to work with a customized load metric specification, AWS Auto
-    /// Scaling needs access to the <code>Sum</code> and <code>Average</code> statistics that
-    /// CloudWatch computes from metric data.
+    /// Scaling needs access to the <c>Sum</c> and <c>Average</c> statistics that CloudWatch
+    /// computes from metric data.
     /// </para>
     ///  
     /// <para>
-    /// When you choose a load metric, make sure that the required <code>Sum</code> and <code>Average</code>
+    /// When you choose a load metric, make sure that the required <c>Sum</c> and <c>Average</c>
     /// statistics for your metric are available in CloudWatch and that they provide relevant
-    /// data for predictive scaling. The <code>Sum</code> statistic must represent the total
-    /// load on the resource, and the <code>Average</code> statistic must represent the average
-    /// load per capacity unit of the resource. For example, there is a metric that counts
-    /// the number of requests processed by your Auto Scaling group. If the <code>Sum</code>
-    /// statistic represents the total request count processed by the group, then the <code>Average</code>
+    /// data for predictive scaling. The <c>Sum</c> statistic must represent the total load
+    /// on the resource, and the <c>Average</c> statistic must represent the average load
+    /// per capacity unit of the resource. For example, there is a metric that counts the
+    /// number of requests processed by your Auto Scaling group. If the <c>Sum</c> statistic
+    /// represents the total request count processed by the group, then the <c>Average</c>
     /// statistic for the specified metric must represent the average request count processed
     /// by each instance of the group. 
     /// </para>
@@ -142,7 +142,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic of the metric. The only valid value is <code>Sum</code>.
+        /// The statistic of the metric. The only valid value is <c>Sum</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyTargetGroup. 
         /// <para>
-        /// The settings of the modified <code>DBProxyTarget</code>.
+        /// The settings of the modified <c>DBProxyTarget</c>.
         /// </para>
         /// </summary>
         public DBProxyTargetGroup DBProxyTargetGroup

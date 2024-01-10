@@ -183,7 +183,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// If the job fails, <code>StatusMessage</code> provides a descriptive error message.
+        /// If the job fails, <c>StatusMessage</c> provides a descriptive error message.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -216,9 +216,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property VideoMetadata. 
         /// <para>
-        /// Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>
-        /// is returned in every page of paginated responses from <code>GetContentModeration</code>.
-        /// 
+        /// Information about a video that Amazon Rekognition analyzed. <c>Videometadata</c> is
+        /// returned in every page of paginated responses from <c>GetContentModeration</c>. 
         /// </para>
         /// </summary>
         public VideoMetadata VideoMetadata

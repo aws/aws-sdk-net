@@ -33,8 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeExportTasks</code>
-    /// operation.
+    /// This data type is used as a response element in the <c>DescribeExportTasks</c> operation.
     /// </para>
     /// </summary>
     public partial class CancelExportTaskResponse : AmazonWebServiceResponse
@@ -67,23 +66,22 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>database</code> - Export all the data from a specified database.
+        ///  <c>database</c> - Export all the data from a specified database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or
-        /// cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora
-        /// MySQL.
+        ///  <c>database.table</c> <i>table-name</i> - Export a table of the snapshot or cluster.
+        /// This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database.schema</code> <i>schema-name</i> - Export a database schema of the
-        /// snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
+        ///  <c>database.schema</c> <i>schema-name</i> - Export a database schema of the snapshot
+        /// or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database.schema.table</code> <i>table-name</i> - Export a table of the database
-        /// schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
+        ///  <c>database.schema.table</c> <i>table-name</i> - Export a table of the database schema.
+        /// This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -291,27 +289,27 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CANCELED</code> 
+        ///  <c>CANCELED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELING</code> 
+        ///  <c>CANCELING</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETE</code> 
+        ///  <c>COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> 
+        ///  <c>FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> 
+        ///  <c>IN_PROGRESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STARTING</code> 
+        ///  <c>STARTING</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

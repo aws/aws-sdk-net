@@ -31,8 +31,8 @@ namespace Amazon.Lex.Model
     /// <summary>
     /// Describes the next action that the bot should take in its interaction with the user
     /// and provides information about the context in which the action takes place. Use the
-    /// <code>DialogAction</code> data type to set the interaction to a specific state, or
-    /// to return the interaction to a previous state.
+    /// <c>DialogAction</c> data type to set the interaction to a specific state, or to return
+    /// the interaction to a previous state.
     /// </summary>
     public partial class DialogAction
     {
@@ -51,18 +51,18 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Failed</code> - The Lambda function associated with the intent failed to fulfill
+        ///  <c>Failed</c> - The Lambda function associated with the intent failed to fulfill
         /// the intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fulfilled</code> - The intent has fulfilled by the Lambda function associated
-        /// with the intent. 
+        ///  <c>Fulfilled</c> - The intent has fulfilled by the Lambda function associated with
+        /// the intent. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReadyForFulfillment</code> - All of the information necessary for the intent
-        /// is present and the intent ready to be fulfilled by the client application.
+        ///  <c>ReadyForFulfillment</c> - All of the information necessary for the intent is present
+        /// and the intent ready to be fulfilled by the client application.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -119,20 +119,20 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property MessageFormat. <ul> <li> 
         /// <para>
-        ///  <code>PlainText</code> - The message contains plain UTF-8 text.
+        ///  <c>PlainText</c> - The message contains plain UTF-8 text.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CustomPayload</code> - The message is a custom format for the client.
+        ///  <c>CustomPayload</c> - The message is a custom format for the client.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SSML</code> - The message contains text formatted for voice output.
+        ///  <c>SSML</c> - The message contains text formatted for voice output.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Composite</code> - The message contains an escaped JSON object containing one
-        /// or more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message
+        ///  <c>Composite</c> - The message contains an escaped JSON object containing one or
+        /// more messages. For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/howitworks-manage-prompts.html">Message
         /// Groups</a>. 
         /// </para>
         ///  </li> </ul>
@@ -194,26 +194,26 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ConfirmIntent</code> - The next action is asking the user if the intent is
-        /// complete and ready to be fulfilled. This is a yes/no question such as "Place the order?"
+        ///  <c>ConfirmIntent</c> - The next action is asking the user if the intent is complete
+        /// and ready to be fulfilled. This is a yes/no question such as "Place the order?"
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Close</code> - Indicates that the there will not be a response from the user.
-        /// For example, the statement "Your order has been placed" does not require a response.
+        ///  <c>Close</c> - Indicates that the there will not be a response from the user. For
+        /// example, the statement "Your order has been placed" does not require a response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Delegate</code> - The next action is determined by Amazon Lex.
+        ///  <c>Delegate</c> - The next action is determined by Amazon Lex.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ElicitIntent</code> - The next action is to determine the intent that the user
-        /// wants to fulfill.
+        ///  <c>ElicitIntent</c> - The next action is to determine the intent that the user wants
+        /// to fulfill.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ElicitSlot</code> - The next action is to elicit a slot value from the user.
+        ///  <c>ElicitSlot</c> - The next action is to elicit a slot value from the user.
         /// </para>
         ///  </li> </ul>
         /// </summary>

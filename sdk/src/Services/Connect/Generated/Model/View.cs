@@ -143,8 +143,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
         /// <para>
-        /// Latest timestamp of the <code>UpdateViewContent</code> or <code>CreateViewVersion</code>
-        /// operations.
+        /// Latest timestamp of the <c>UpdateViewContent</c> or <c>CreateViewVersion</c> operations.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -181,8 +180,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>.
-        /// The <code>PUBLISHED</code> status will initiate validation on the content.
+        /// Indicates the view status as either <c>SAVED</c> or <c>PUBLISHED</c>. The <c>PUBLISHED</c>
+        /// status will initiate validation on the content.
         /// </para>
         /// </summary>
         public ViewStatus Status
@@ -219,7 +218,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the view - <code>CUSTOMER_MANAGED</code>.
+        /// The type of the view - <c>CUSTOMER_MANAGED</c>.
         /// </para>
         /// </summary>
         public ViewType Type

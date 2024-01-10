@@ -53,8 +53,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified instance.
+        /// The instance ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions
+        /// of the errors associated with the specified instance.
         /// </para>
         /// </summary>
         public string InstanceId
@@ -72,7 +72,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ServiceErrorIds. 
         /// <para>
-        /// An array of service error IDs. If you use this parameter, <code>DescribeServiceErrors</code>
+        /// An array of service error IDs. If you use this parameter, <c>DescribeServiceErrors</c>
         /// returns descriptions of the specified errors. Otherwise, it returns a description
         /// of every error.
         /// </para>
@@ -92,8 +92,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// The stack ID. If you use this parameter, <code>DescribeServiceErrors</code> returns
-        /// descriptions of the errors associated with the specified stack.
+        /// The stack ID. If you use this parameter, <c>DescribeServiceErrors</c> returns descriptions
+        /// of the errors associated with the specified stack.
         /// </para>
         /// </summary>
         public string StackId

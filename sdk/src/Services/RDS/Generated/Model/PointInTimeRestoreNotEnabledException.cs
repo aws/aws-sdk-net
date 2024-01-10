@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>SourceDBInstanceIdentifier</code> refers to a DB instance with <code>BackupRetentionPeriod</code>
+    /// <c>SourceDBInstanceIdentifier</c> refers to a DB instance with <c>BackupRetentionPeriod</c>
     /// equal to 0.
     /// </summary>
     #if !NETSTANDARD

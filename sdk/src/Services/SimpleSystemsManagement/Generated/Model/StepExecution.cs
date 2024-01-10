@@ -209,7 +209,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxAttempts. 
         /// <para>
-        /// The maximum number of tries to run the action of the step. The default value is <code>1</code>.
+        /// The maximum number of tries to run the action of the step. The default value is <c>1</c>.
         /// </para>
         /// </summary>
         public int MaxAttempts
@@ -245,7 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OnFailure. 
         /// <para>
-        /// The action to take if the step fails. The default value is <code>Abort</code>.
+        /// The action to take if the step fails. The default value is <c>Abort</c>.
         /// </para>
         /// </summary>
         public string OnFailure

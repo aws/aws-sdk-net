@@ -89,7 +89,7 @@ namespace Amazon.GlueDataBrew
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You specify <code>LATEST_WORKING</code>, but it's being used by a project.
+        /// You specify <c>LATEST_WORKING</c>, but it's being used by a project.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -97,10 +97,10 @@ namespace Amazon.GlueDataBrew
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
-        /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
-        /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed
-        /// as partial failure in the response.
+        /// The <c>LATEST_WORKING</c> version will only be deleted if the recipe has no other
+        /// versions. If you try to delete <c>LATEST_WORKING</c> while other versions exist (or
+        /// if they can't be deleted), then <c>LATEST_WORKING</c> will be listed as partial failure
+        /// in the response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteRecipeVersion service method.</param>
@@ -161,7 +161,7 @@ namespace Amazon.GlueDataBrew
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You specify <code>LATEST_WORKING</code>, but it's being used by a project.
+        /// You specify <c>LATEST_WORKING</c>, but it's being used by a project.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,10 +169,10 @@ namespace Amazon.GlueDataBrew
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>LATEST_WORKING</code> version will only be deleted if the recipe has no
-        /// other versions. If you try to delete <code>LATEST_WORKING</code> while other versions
-        /// exist (or if they can't be deleted), then <code>LATEST_WORKING</code> will be listed
-        /// as partial failure in the response.
+        /// The <c>LATEST_WORKING</c> version will only be deleted if the recipe has no other
+        /// versions. If you try to delete <c>LATEST_WORKING</c> while other versions exist (or
+        /// if they can't be deleted), then <c>LATEST_WORKING</c> will be listed as partial failure
+        /// in the response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDeleteRecipeVersion service method.</param>
@@ -1291,7 +1291,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
+        /// Lists the versions of a particular DataBrew recipe, except for <c>LATEST_WORKING</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecipeVersions service method.</param>
         /// 
@@ -1305,7 +1305,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
+        /// Lists the versions of a particular DataBrew recipe, except for <c>LATEST_WORKING</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRecipeVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1909,7 +1909,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
+        /// Modifies the definition of the <c>LATEST_WORKING</c> version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecipe service method.</param>
         /// 
@@ -1926,7 +1926,7 @@ namespace Amazon.GlueDataBrew
 
 
         /// <summary>
-        /// Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.
+        /// Modifies the definition of the <c>LATEST_WORKING</c> version of a DataBrew recipe.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecipe service method.</param>
         /// <param name="cancellationToken">

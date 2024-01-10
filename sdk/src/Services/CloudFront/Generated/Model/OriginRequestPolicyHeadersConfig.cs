@@ -45,33 +45,32 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>none</code> – No HTTP headers in viewer requests are included in requests that
-        /// CloudFront sends to the origin. Even when this field is set to <code>none</code>,
-        /// any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin
-        /// requests.
+        ///  <c>none</c> – No HTTP headers in viewer requests are included in requests that CloudFront
+        /// sends to the origin. Even when this field is set to <c>none</c>, any headers that
+        /// are listed in a <c>CachePolicy</c> <i>are</i> included in origin requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code>
-        /// type are included in requests that CloudFront sends to the origin.
+        ///  <c>whitelist</c> – Only the HTTP headers that are listed in the <c>Headers</c> type
+        /// are included in requests that CloudFront sends to the origin.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>allViewer</code> – All HTTP headers in viewer requests are included in requests
-        /// that CloudFront sends to the origin.
+        ///  <c>allViewer</c> – All HTTP headers in viewer requests are included in requests that
+        /// CloudFront sends to the origin.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>allViewerAndWhitelistCloudFront</code> – All HTTP headers in viewer requests
-        /// and the additional CloudFront headers that are listed in the <code>Headers</code>
-        /// type are included in requests that CloudFront sends to the origin. The additional
-        /// headers are added by CloudFront.
+        ///  <c>allViewerAndWhitelistCloudFront</c> – All HTTP headers in viewer requests and
+        /// the additional CloudFront headers that are listed in the <c>Headers</c> type are included
+        /// in requests that CloudFront sends to the origin. The additional headers are added
+        /// by CloudFront.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>allExcept</code> – All HTTP headers in viewer requests are included in requests
-        /// that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the
-        /// <code>Headers</code> type, which are not included.
+        ///  <c>allExcept</c> – All HTTP headers in viewer requests are included in requests that
+        /// CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the <c>Headers</c>
+        /// type, which are not included.
         /// </para>
         ///  </li> </ul>
         /// </summary>

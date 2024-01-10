@@ -36,8 +36,8 @@ namespace Amazon.CloudWatch.Model
     ///  
     /// <para>
     /// To use this operation and return information about composite alarms, you must be signed
-    /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
-    /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+    /// on with the <c>cloudwatch:DescribeAlarms</c> permission that is scoped to <c>*</c>.
+    /// You can't return information about composite alarms if your <c>cloudwatch:DescribeAlarms</c>
     /// permission has a narrower scope.
     /// </para>
     /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is specified, you cannot specify <code>AlarmNames</code>.
+        /// If this parameter is specified, you cannot specify <c>AlarmNames</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -126,14 +126,14 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you omit this parameter or specify <code>MetricAlarms</code>, the
-        /// operation returns only a list of metric alarms. It does not return any composite alarms,
-        /// even if composite alarms exist in the account.
+        /// For example, if you omit this parameter or specify <c>MetricAlarms</c>, the operation
+        /// returns only a list of metric alarms. It does not return any composite alarms, even
+        /// if composite alarms exist in the account.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>CompositeAlarms</code>, the operation returns only a list of
-        /// composite alarms, and does not return any metric alarms.
+        /// If you specify <c>CompositeAlarms</c>, the operation returns only a list of composite
+        /// alarms, and does not return any metric alarms.
         /// </para>
         /// </summary>
         public List<string> AlarmTypes
@@ -153,24 +153,23 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// If you use this parameter and specify the name of a composite alarm, the operation
         /// returns information about the "children" alarms of the alarm you specify. These are
-        /// the metric alarms and composite alarms referenced in the <code>AlarmRule</code> field
-        /// of the composite alarm that you specify in <code>ChildrenOfAlarmName</code>. Information
-        /// about the composite alarm that you name in <code>ChildrenOfAlarmName</code> is not
-        /// returned.
+        /// the metric alarms and composite alarms referenced in the <c>AlarmRule</c> field of
+        /// the composite alarm that you specify in <c>ChildrenOfAlarmName</c>. Information about
+        /// the composite alarm that you name in <c>ChildrenOfAlarmName</c> is not returned.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>ChildrenOfAlarmName</code>, you cannot specify any other parameters
-        /// in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you
-        /// do so, you receive a validation error.
+        /// If you specify <c>ChildrenOfAlarmName</c>, you cannot specify any other parameters
+        /// in the request except for <c>MaxRecords</c> and <c>NextToken</c>. If you do so, you
+        /// receive a validation error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Only the <code>Alarm Name</code>, <code>ARN</code>, <code>StateValue</code> (OK/ALARM/INSUFFICIENT_DATA),
-        /// and <code>StateUpdatedTimestamp</code> information are returned by this operation
-        /// when you use this parameter. To get complete information about these alarms, perform
-        /// another <code>DescribeAlarms</code> operation and specify the parent alarm names in
-        /// the <code>AlarmNames</code> parameter.
+        /// Only the <c>Alarm Name</c>, <c>ARN</c>, <c>StateValue</c> (OK/ALARM/INSUFFICIENT_DATA),
+        /// and <c>StateUpdatedTimestamp</c> information are returned by this operation when you
+        /// use this parameter. To get complete information about these alarms, perform another
+        /// <c>DescribeAlarms</c> operation and specify the parent alarm names in the <c>AlarmNames</c>
+        /// parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -229,21 +228,21 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// If you use this parameter and specify the name of a metric or composite alarm, the
         /// operation returns information about the "parent" alarms of the alarm you specify.
-        /// These are the composite alarms that have <code>AlarmRule</code> parameters that reference
-        /// the alarm named in <code>ParentsOfAlarmName</code>. Information about the alarm that
-        /// you specify in <code>ParentsOfAlarmName</code> is not returned.
+        /// These are the composite alarms that have <c>AlarmRule</c> parameters that reference
+        /// the alarm named in <c>ParentsOfAlarmName</c>. Information about the alarm that you
+        /// specify in <c>ParentsOfAlarmName</c> is not returned.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>ParentsOfAlarmName</code>, you cannot specify any other parameters
-        /// in the request except for <code>MaxRecords</code> and <code>NextToken</code>. If you
-        /// do so, you receive a validation error.
+        /// If you specify <c>ParentsOfAlarmName</c>, you cannot specify any other parameters
+        /// in the request except for <c>MaxRecords</c> and <c>NextToken</c>. If you do so, you
+        /// receive a validation error.
         /// </para>
         ///  <note> 
         /// <para>
         /// Only the Alarm Name and ARN are returned by this operation when you use this parameter.
-        /// To get complete information about these alarms, perform another <code>DescribeAlarms</code>
-        /// operation and specify the parent alarm names in the <code>AlarmNames</code> parameter.
+        /// To get complete information about these alarms, perform another <c>DescribeAlarms</c>
+        /// operation and specify the parent alarm names in the <c>AlarmNames</c> parameter.
         /// </para>
         ///  </note>
         /// </summary>

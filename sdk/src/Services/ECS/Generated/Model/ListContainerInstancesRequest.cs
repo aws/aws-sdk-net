@@ -31,8 +31,8 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the ListContainerInstances operation.
     /// Returns a list of container instances in a specified cluster. You can filter the results
-    /// of a <code>ListContainerInstances</code> operation with cluster query language statements
-    /// inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+    /// of a <c>ListContainerInstances</c> operation with cluster query language statements
+    /// inside the <c>filter</c> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
     /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class ListContainerInstancesRequest : AmazonECSRequest
@@ -65,8 +65,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// You can filter the results of a <code>ListContainerInstances</code> operation with
-        /// cluster query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+        /// You can filter the results of a <c>ListContainerInstances</c> operation with cluster
+        /// query language statements. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
         /// Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -85,13 +85,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of container instance results that <code>ListContainerInstances</code>
-        /// returned in paginated output. When this parameter is used, <code>ListContainerInstances</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// The maximum number of container instance results that <c>ListContainerInstances</c>
+        /// returned in paginated output. When this parameter is used, <c>ListContainerInstances</c>
+        /// only returns <c>maxResults</c> results in a single page along with a <c>nextToken</c>
         /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListContainerInstances</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListContainerInstances</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable.
+        /// another <c>ListContainerInstances</c> request with the returned <c>nextToken</c> value.
+        /// This value can be between 1 and 100. If this parameter isn't used, then <c>ListContainerInstances</c>
+        /// returns up to 100 results and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -109,10 +109,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a <code>ListContainerInstances</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls are needed. If <code>maxResults</code> was provided, it's possible the number
-        /// of results to be fewer than <code>maxResults</code>.
+        /// The <c>nextToken</c> value returned from a <c>ListContainerInstances</c> request indicating
+        /// that more results are available to fulfill the request and further calls are needed.
+        /// If <c>maxResults</c> was provided, it's possible the number of results to be fewer
+        /// than <c>maxResults</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -136,10 +136,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Filters the container instances by status. For example, if you specify the <code>DRAINING</code>
-        /// status, the results include only container instances that have been set to <code>DRAINING</code>
+        /// Filters the container instances by status. For example, if you specify the <c>DRAINING</c>
+        /// status, the results include only container instances that have been set to <c>DRAINING</c>
         /// using <a>UpdateContainerInstancesState</a>. If you don't specify this parameter, the
-        /// default is to include container instances set to all states other than <code>INACTIVE</code>.
+        /// default is to include container instances set to all states other than <c>INACTIVE</c>.
         /// </para>
         /// </summary>
         public ContainerInstanceStatus Status

@@ -51,13 +51,12 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
-    /// the <code>failureReason</code> key, which describes why.
+    /// When the <c>status</c> is <c>CREATE FAILED</c>, the response includes the <c>failureReason</c>
+    /// key, which describes why.
     /// </para>
     ///  
     /// <para>
-    /// The <code>modelMetrics</code> key is null when the recommender is being created or
-    /// deleted.
+    /// The <c>modelMetrics</c> key is null when the recommender is being created or deleted.
     /// </para>
     ///  
     /// <para>

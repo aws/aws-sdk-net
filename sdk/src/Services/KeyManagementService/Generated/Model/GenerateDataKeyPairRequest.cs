@@ -39,9 +39,9 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// You can use the public key that <code>GenerateDataKeyPair</code> returns to encrypt
-    /// data or verify a signature outside of KMS. Then, store the encrypted private key with
-    /// the data. When you are ready to decrypt data or sign a message, you can use the <a>Decrypt</a>
+    /// You can use the public key that <c>GenerateDataKeyPair</c> returns to encrypt data
+    /// or verify a signature outside of KMS. Then, store the encrypted private key with the
+    /// data. When you are ready to decrypt data or sign a message, you can use the <a>Decrypt</a>
     /// operation to decrypt the encrypted private key.
     /// </para>
     ///  
@@ -53,8 +53,8 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// Use the <code>KeyPairSpec</code> parameter to choose an RSA or Elliptic Curve (ECC)
-    /// data key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
+    /// Use the <c>KeyPairSpec</c> parameter to choose an RSA or Elliptic Curve (ECC) data
+    /// key pair. In China Regions, you can also choose an SM2 data key pair. KMS recommends
     /// that you use ECC key pairs for signing, and use RSA and SM2 key pairs for either encryption
     /// or signing, but not both. However, KMS cannot enforce any restrictions on the use
     /// of data key pairs outside of KMS.
@@ -63,33 +63,33 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// If you are using the data key pair to encrypt data, or for any operation where you
     /// don't immediately need a private key, consider using the <a>GenerateDataKeyPairWithoutPlaintext</a>
-    /// operation. <code>GenerateDataKeyPairWithoutPlaintext</code> returns a plaintext public
-    /// key and an encrypted private key, but omits the plaintext private key that you need
-    /// only to decrypt ciphertext or sign a message. Later, when you need to decrypt the
-    /// data or sign a message, use the <a>Decrypt</a> operation to decrypt the encrypted
-    /// private key in the data key pair.
+    /// operation. <c>GenerateDataKeyPairWithoutPlaintext</c> returns a plaintext public key
+    /// and an encrypted private key, but omits the plaintext private key that you need only
+    /// to decrypt ciphertext or sign a message. Later, when you need to decrypt the data
+    /// or sign a message, use the <a>Decrypt</a> operation to decrypt the encrypted private
+    /// key in the data key pair.
     /// </para>
     ///  
     /// <para>
-    ///  <code>GenerateDataKeyPair</code> returns a unique data key pair for each request.
-    /// The bytes in the keys are random; they are not related to the caller or the KMS key
-    /// that is used to encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo,
+    ///  <c>GenerateDataKeyPair</c> returns a unique data key pair for each request. The bytes
+    /// in the keys are random; they are not related to the caller or the KMS key that is
+    /// used to encrypt the private key. The public key is a DER-encoded X.509 SubjectPublicKeyInfo,
     /// as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private
     /// key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5958">RFC
     /// 5958</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>GenerateDataKeyPair</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+    ///  <c>GenerateDataKeyPair</c> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
     /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
-    /// Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web Services Nitro
-    /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
-    /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
-    /// parameter to provide the attestation document for the enclave. <code>GenerateDataKeyPair</code>
+    /// Amazon EC2. To call <c>GenerateDataKeyPair</c> for an Amazon Web Services Nitro enclave,
+    /// use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+    /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <c>Recipient</c>
+    /// parameter to provide the attestation document for the enclave. <c>GenerateDataKeyPair</c>
     /// returns the public data key and a copy of the private data key encrypted under the
     /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
-    /// (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private data
-    /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+    /// (<c>PrivateKeyPlaintext</c>), the response includes a copy of the private data key
+    /// encrypted under the public key from the attestation document (<c>CiphertextForRecipient</c>).
     /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
     /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
     /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
@@ -98,10 +98,10 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// You can use an optional encryption context to add additional security to the encryption
-    /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
-    /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
-    /// data key. Otherwise, the request to decrypt fails with an <code>InvalidCiphertextException</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+    /// operation. If you specify an <c>EncryptionContext</c>, you must specify the same encryption
+    /// context (a case-sensitive exact match) when decrypting the encrypted data key. Otherwise,
+    /// the request to decrypt fails with an <c>InvalidCiphertextException</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
     /// Context</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -114,7 +114,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
     /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-    /// <code>KeyId</code> parameter.
+    /// <c>KeyId</c> parameter.
     /// </para>
     ///  
     /// <para>
@@ -164,8 +164,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
-        /// 
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter. 
         /// </para>
         ///  
         /// <para>
@@ -260,7 +259,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using
-        /// an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different
+        /// an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different
         /// Amazon Web Services account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
@@ -269,20 +268,20 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> 
+        /// Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -334,7 +333,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A signed <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave-how.html#term-attestdoc">attestation
         /// document</a> from an Amazon Web Services Nitro enclave and the encryption algorithm
-        /// to use with the enclave's public key. The only valid encryption algorithm is <code>RSAES_OAEP_SHA_256</code>.
+        /// to use with the enclave's public key. The only valid encryption algorithm is <c>RSAES_OAEP_SHA_256</c>.
         /// 
         /// </para>
         ///  
@@ -347,11 +346,11 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// When you use this parameter, instead of returning a plaintext copy of the private
         /// data key, KMS encrypts the plaintext private data key under the public key in the
-        /// attestation document, and returns the resulting ciphertext in the <code>CiphertextForRecipient</code>
+        /// attestation document, and returns the resulting ciphertext in the <c>CiphertextForRecipient</c>
         /// field in the response. This ciphertext can be decrypted only with the private key
-        /// in the enclave. The <code>CiphertextBlob</code> field in the response contains a copy
-        /// of the private data key encrypted under the KMS key specified by the <code>KeyId</code>
-        /// parameter. The <code>PrivateKeyPlaintext</code> field in the response is null or empty.
+        /// in the enclave. The <c>CiphertextBlob</c> field in the response contains a copy of
+        /// the private data key encrypted under the KMS key specified by the <c>KeyId</c> parameter.
+        /// The <c>PrivateKeyPlaintext</c> field in the response is null or empty.
         /// </para>
         ///  
         /// <para>

@@ -101,7 +101,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>databaseName</code> - the name of the Glue database used to store the schema.
+        ///  <c>databaseName</c> - the name of the Glue database used to store the schema.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -35,13 +35,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You must have the <code>logs:FilterLogEvents</code> permission to perform this operation.
+    /// You must have the <c>logs:FilterLogEvents</c> permission to perform this operation.
     /// </para>
     ///  
     /// <para>
-    /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-    /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-    /// can't include both. 
+    /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+    /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+    /// include both. 
     /// </para>
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// The returned log events are sorted by event timestamp, the timestamp when the event
-    /// was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.
+    /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
     /// </para>
     ///  
     /// <para>
@@ -81,9 +81,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time range, expressed as the number of milliseconds after <code>Jan
-        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this time are not
-        /// returned.
+        /// The end of the time range, expressed as the number of milliseconds after <c>Jan 1,
+        /// 1970 00:00:00 UTC</c>. Events with a timestamp later than this time are not returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -179,8 +178,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
-        /// but not both. 
+        ///  You must include either <c>logGroupIdentifier</c> or <c>logGroupName</c>, but not
+        /// both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -204,8 +203,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
-        /// but not both. 
+        ///  You must include either <c>logGroupIdentifier</c> or <c>logGroupName</c>, but not
+        /// both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -230,10 +229,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>,
-        /// but the value for <code>logStreamNamePrefix</code> does not match any log stream names
-        /// specified in <code>logStreamNames</code>, the action returns an <code>InvalidParameterException</code>
-        /// error.
+        /// If you specify a value for both <c>logStreamNamePrefix</c> and <c>logStreamNames</c>,
+        /// but the value for <c>logStreamNamePrefix</c> does not match any log stream names specified
+        /// in <c>logStreamNames</c>, the action returns an <c>InvalidParameterException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -256,8 +254,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for both <code>logStreamNamePrefix</code> and <code>logStreamNames</code>,
-        /// the action returns an <code>InvalidParameterException</code> error.
+        /// If you specify a value for both <c>logStreamNamePrefix</c> and <c>logStreamNames</c>,
+        /// the action returns an <c>InvalidParameterException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -296,8 +294,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time range, expressed as the number of milliseconds after <code>Jan
-        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time are not returned.
+        /// The start of the time range, expressed as the number of milliseconds after <c>Jan
+        /// 1, 1970 00:00:00 UTC</c>. Events with a timestamp before this time are not returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -316,13 +314,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Unmask. 
         /// <para>
-        /// Specify <code>true</code> to display the log event fields with all sensitive data
-        /// unmasked and visible. The default is <code>false</code>.
+        /// Specify <c>true</c> to display the log event fields with all sensitive data unmasked
+        /// and visible. The default is <c>false</c>.
         /// </para>
         ///  
         /// <para>
         /// To use this operation with this parameter, you must be signed into an account with
-        /// the <code>logs:Unmask</code> permission.
+        /// the <c>logs:Unmask</c> permission.
         /// </para>
         /// </summary>
         public bool Unmask

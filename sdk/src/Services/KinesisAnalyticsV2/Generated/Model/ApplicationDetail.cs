@@ -130,7 +130,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMode. 
         /// <para>
-        /// To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+        /// To create a Kinesis Data Analytics Studio notebook, you must set the mode to <c>INTERACTIVE</c>.
         /// However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
         /// </para>
         /// </summary>
@@ -187,7 +187,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationVersionId. 
         /// <para>
-        /// Provides the current application version. Kinesis Data Analytics updates the <code>ApplicationVersionId</code>
+        /// Provides the current application version. Kinesis Data Analytics updates the <c>ApplicationVersionId</c>
         /// each time you update the application.
         /// </para>
         /// </summary>
@@ -208,7 +208,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ApplicationVersionRolledBackFrom. 
         /// <para>
         /// If you reverted the application using <a>RollbackApplication</a>, the application
-        /// version when <code>RollbackApplication</code> was called.
+        /// version when <c>RollbackApplication</c> was called.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

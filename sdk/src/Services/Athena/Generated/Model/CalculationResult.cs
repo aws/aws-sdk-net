@@ -79,7 +79,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property StdErrorS3Uri. 
         /// <para>
-        /// The Amazon S3 location of the <code>stderr</code> error messages file for the calculation.
+        /// The Amazon S3 location of the <c>stderr</c> error messages file for the calculation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -98,7 +98,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property StdOutS3Uri. 
         /// <para>
-        /// The Amazon S3 location of the <code>stdout</code> file for the calculation.
+        /// The Amazon S3 location of the <c>stdout</c> file for the calculation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

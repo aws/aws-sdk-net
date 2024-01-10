@@ -40,9 +40,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property AuthenticationMode. 
         /// <para>
         /// The desired authentication mode for the cluster. If you create a cluster by using
-        /// the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is <code>CONFIG_MAP</code>.
+        /// the EKS API, Amazon Web Services SDKs, or CloudFormation, the default is <c>CONFIG_MAP</c>.
         /// If you create the cluster by using the Amazon Web Services Management Console, the
-        /// default value is <code>API_AND_CONFIG_MAP</code>.
+        /// default value is <c>API_AND_CONFIG_MAP</c>.
         /// </para>
         /// </summary>
         public AuthenticationMode AuthenticationMode
@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property BootstrapClusterCreatorAdminPermissions. 
         /// <para>
         /// Specifies whether or not the cluster creator IAM principal was set as a cluster admin
-        /// access entry during cluster creation time. The default value is <code>true</code>.
+        /// access entry during cluster creation time. The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool BootstrapClusterCreatorAdminPermissions

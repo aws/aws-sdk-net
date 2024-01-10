@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code>
+    /// The configuration object for the Microsoft Windows file system used in the <c>DeleteFileSystem</c>
     /// operation.
     /// </summary>
     public partial class DeleteFileSystemWindowsConfiguration
@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SkipFinalBackup. 
         /// <para>
-        /// By default, Amazon FSx for Windows takes a final backup on your behalf when the <code>DeleteFileSystem</code>
+        /// By default, Amazon FSx for Windows takes a final backup on your behalf when the <c>DeleteFileSystem</c>
         /// operation is invoked. Doing this helps protect you from data loss, and we highly recommend
         /// taking the final backup. If you want to skip this backup, use this flag to do so.
         /// </para>

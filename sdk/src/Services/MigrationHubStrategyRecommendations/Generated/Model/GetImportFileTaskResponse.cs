@@ -66,7 +66,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  The import file task <code>id</code> returned in the response of <a>StartImportFileTask</a>.
+        ///  The import file task <c>id</c> returned in the response of <a>StartImportFileTask</a>.
         /// 
         /// </para>
         /// </summary>

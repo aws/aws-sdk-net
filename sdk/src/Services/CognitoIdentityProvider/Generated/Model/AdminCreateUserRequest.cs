@@ -34,8 +34,8 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// 
     ///  
     /// <para>
-    /// If <code>MessageAction</code> isn't set, the default is to send a welcome message
-    /// via email or phone (SMS).
+    /// If <c>MessageAction</c> isn't set, the default is to send a welcome message via email
+    /// or phone (SMS).
     /// </para>
     ///  <note> 
     /// <para>
@@ -66,14 +66,13 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// Alternatively, you can call <code>AdminCreateUser</code> with <code>SUPPRESS</code>
-    /// for the <code>MessageAction</code> parameter, and Amazon Cognito won't send any email.
-    /// 
+    /// Alternatively, you can call <c>AdminCreateUser</c> with <c>SUPPRESS</c> for the <c>MessageAction</c>
+    /// parameter, and Amazon Cognito won't send any email. 
     /// </para>
     ///  
     /// <para>
-    /// In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until
-    /// they sign in and change their password.
+    /// In either case, the user will be in the <c>FORCE_CHANGE_PASSWORD</c> state until they
+    /// sign in and change their password.
     /// </para>
     ///  <note> 
     /// <para>
@@ -121,10 +120,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the AdminCreateUser API action, Amazon Cognito invokes the function that is
         /// assigned to the <i>pre sign-up</i> trigger. When Amazon Cognito invokes this function,
         /// it passes a JSON payload, which the function receives as input. This payload contains
-        /// a <code>clientMetadata</code> attribute, which provides the data that you assigned
-        /// to the ClientMetadata parameter in your AdminCreateUser request. In your function
-        /// code in Lambda, you can process the <code>clientMetadata</code> value to enhance your
-        /// workflow for your specific needs.
+        /// a <c>clientMetadata</c> attribute, which provides the data that you assigned to the
+        /// ClientMetadata parameter in your AdminCreateUser request. In your function code in
+        /// Lambda, you can process the <c>clientMetadata</c> value to enhance your workflow for
+        /// your specific needs.
         /// </para>
         ///  
         /// <para>
@@ -168,8 +167,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DesiredDeliveryMediums. 
         /// <para>
-        /// Specify <code>"EMAIL"</code> if email will be used to send the welcome message. Specify
-        /// <code>"SMS"</code> if the phone number will be used. The default value is <code>"SMS"</code>.
+        /// Specify <c>"EMAIL"</c> if email will be used to send the welcome message. Specify
+        /// <c>"SMS"</c> if the phone number will be used. The default value is <c>"SMS"</c>.
         /// You can specify more than one value.
         /// </para>
         /// </summary>
@@ -188,20 +187,20 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ForceAliasCreation. 
         /// <para>
-        /// This parameter is used only if the <code>phone_number_verified</code> or <code>email_verified</code>
-        /// attribute is set to <code>True</code>. Otherwise, it is ignored.
+        /// This parameter is used only if the <c>phone_number_verified</c> or <c>email_verified</c>
+        /// attribute is set to <c>True</c>. Otherwise, it is ignored.
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is set to <code>True</code> and the phone number or email address
-        /// specified in the UserAttributes parameter already exists as an alias with a different
-        /// user, the API call will migrate the alias from the previous user to the newly created
-        /// user. The previous user will no longer be able to log in using that alias.
+        /// If this parameter is set to <c>True</c> and the phone number or email address specified
+        /// in the UserAttributes parameter already exists as an alias with a different user,
+        /// the API call will migrate the alias from the previous user to the newly created user.
+        /// The previous user will no longer be able to log in using that alias.
         /// </para>
         ///  
         /// <para>
-        /// If this parameter is set to <code>False</code>, the API throws an <code>AliasExistsException</code>
-        /// error if the alias already exists. The default value is <code>False</code>.
+        /// If this parameter is set to <c>False</c>, the API throws an <c>AliasExistsException</c>
+        /// error if the alias already exists. The default value is <c>False</c>.
         /// </para>
         /// </summary>
         public bool ForceAliasCreation
@@ -219,9 +218,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property MessageAction. 
         /// <para>
-        /// Set to <code>RESEND</code> to resend the invitation message to a user that already
-        /// exists and reset the expiration limit on the user's account. Set to <code>SUPPRESS</code>
-        /// to suppress sending the message. You can specify only one value.
+        /// Set to <c>RESEND</c> to resend the invitation message to a user that already exists
+        /// and reset the expiration limit on the user's account. Set to <c>SUPPRESS</c> to suppress
+        /// sending the message. You can specify only one value.
         /// </para>
         /// </summary>
         public MessageActionType MessageAction
@@ -257,7 +256,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The temporary password can only be used until the user account expiration limit that
         /// you set for your user pool. To reset the account after that time limit, you must call
-        /// <code>AdminCreateUser</code> again and specify <code>RESEND</code> for the <code>MessageAction</code>
+        /// <c>AdminCreateUser</c> again and specify <c>RESEND</c> for the <c>MessageAction</c>
         /// parameter.
         /// </para>
         /// </summary>
@@ -279,14 +278,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// An array of name-value pairs that contain user attributes and attribute values to
         /// be set for the user to be created. You can create a user without specifying any attributes
-        /// other than <code>Username</code>. However, any attributes that you specify as required
-        /// (when creating a user pool or in the <b>Attributes</b> tab of the console) either
-        /// you should supply (in your call to <code>AdminCreateUser</code>) or the user should
-        /// supply (when they sign up in response to your welcome message).
+        /// other than <c>Username</c>. However, any attributes that you specify as required (when
+        /// creating a user pool or in the <b>Attributes</b> tab of the console) either you should
+        /// supply (in your call to <c>AdminCreateUser</c>) or the user should supply (when they
+        /// sign up in response to your welcome message).
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
         /// name.
         /// </para>
         ///  
@@ -297,23 +296,23 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// In your call to <code>AdminCreateUser</code>, you can set the <code>email_verified</code>
-        /// attribute to <code>True</code>, and you can set the <code>phone_number_verified</code>
-        /// attribute to <code>True</code>. You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.
+        /// In your call to <c>AdminCreateUser</c>, you can set the <c>email_verified</c> attribute
+        /// to <c>True</c>, and you can set the <c>phone_number_verified</c> attribute to <c>True</c>.
+        /// You can also do this by calling <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminUpdateUserAttributes.html">AdminUpdateUserAttributes</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <b>email</b>: The email address of the user to whom the message that contains the
-        /// code and username will be sent. Required if the <code>email_verified</code> attribute
-        /// is set to <code>True</code>, or if <code>"EMAIL"</code> is specified in the <code>DesiredDeliveryMediums</code>
+        /// code and username will be sent. Required if the <c>email_verified</c> attribute is
+        /// set to <c>True</c>, or if <c>"EMAIL"</c> is specified in the <c>DesiredDeliveryMediums</c>
         /// parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>phone_number</b>: The phone number of the user to whom the message that contains
-        /// the code and username will be sent. Required if the <code>phone_number_verified</code>
-        /// attribute is set to <code>True</code>, or if <code>"SMS"</code> is specified in the
-        /// <code>DesiredDeliveryMediums</code> parameter.
+        /// the code and username will be sent. Required if the <c>phone_number_verified</c> attribute
+        /// is set to <c>True</c>, or if <c>"SMS"</c> is specified in the <c>DesiredDeliveryMediums</c>
+        /// parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>

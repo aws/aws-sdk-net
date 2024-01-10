@@ -38,9 +38,9 @@ namespace Amazon.EC2.Model
     /// <para>
     /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
     /// the VPC security groups. You cannot link an EC2-Classic instance to more than one
-    /// VPC at a time. You can only link an instance that's in the <code>running</code> state.
-    /// An instance is automatically unlinked from a VPC when it's stopped - you can link
-    /// it to the VPC again when you restart it.
+    /// VPC at a time. You can only link an instance that's in the <c>running</c> state. An
+    /// instance is automatically unlinked from a VPC when it's stopped - you can link it
+    /// to the VPC again when you restart it.
     /// </para>
     ///  
     /// <para>

@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Automation. 
         /// <para>
-        /// The parameters for an <code>AUTOMATION</code> task type.
+        /// The parameters for an <c>AUTOMATION</c> task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowAutomationParameters Automation
@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
-        /// The parameters for a <code>LAMBDA</code> task type.
+        /// The parameters for a <c>LAMBDA</c> task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowLambdaParameters Lambda
@@ -77,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RunCommand. 
         /// <para>
-        /// The parameters for a <code>RUN_COMMAND</code> task type.
+        /// The parameters for a <c>RUN_COMMAND</c> task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowRunCommandParameters RunCommand
@@ -95,7 +95,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StepFunctions. 
         /// <para>
-        /// The parameters for a <code>STEP_FUNCTIONS</code> task type.
+        /// The parameters for a <c>STEP_FUNCTIONS</c> task type.
         /// </para>
         /// </summary>
         public MaintenanceWindowStepFunctionsParameters StepFunctions

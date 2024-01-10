@@ -61,7 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>RDS_LOGIN_EVENTS</code> is currently not supported with <code>topAccountsByFeature</code>.
+        ///  <c>RDS_LOGIN_EVENTS</c> is currently not supported with <c>topAccountsByFeature</c>.
         /// </para>
         /// </summary>
         public UsageFeature Feature

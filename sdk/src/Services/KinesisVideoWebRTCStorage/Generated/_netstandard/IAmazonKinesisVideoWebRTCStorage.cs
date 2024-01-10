@@ -48,10 +48,10 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// 
         ///  
         /// <para>
-        /// Currently for the <code>SINGLE_MASTER</code> type, a video producing device is able
-        /// to ingest both audio and video media into a stream, while viewers can only ingest
-        /// audio. Both a video producing device and viewers can join the session first, and wait
-        /// for other participants.
+        /// Currently for the <c>SINGLE_MASTER</c> type, a video producing device is able to ingest
+        /// both audio and video media into a stream, while viewers can only ingest audio. Both
+        /// a video producing device and viewers can join the session first, and wait for other
+        /// participants.
         /// </para>
         ///  
         /// <para>
@@ -61,8 +61,8 @@ namespace Amazon.KinesisVideoWebRTCStorage
         /// </para>
         ///  
         /// <para>
-        /// Customers can also use existing Kinesis Video Streams features like <code>HLS</code>
-        /// or <code>DASH</code> playback, Image generation, and more with ingested WebRTC media.
+        /// Customers can also use existing Kinesis Video Streams features like <c>HLS</c> or
+        /// <c>DASH</c> playback, Image generation, and more with ingested WebRTC media.
         /// </para>
         ///  <note> 
         /// <para>

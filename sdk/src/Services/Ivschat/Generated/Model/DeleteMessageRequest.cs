@@ -32,8 +32,7 @@ namespace Amazon.Ivschat.Model
     /// Container for the parameters to the DeleteMessage operation.
     /// Sends an event to a specific room which directs clients to delete a specific message;
     /// that is, unrender it from view and delete it from the client’s chat history. This
-    /// event’s <code>EventName</code> is <code>aws:DELETE_MESSAGE</code>. This replicates
-    /// the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
+    /// event’s <c>EventName</c> is <c>aws:DELETE_MESSAGE</c>. This replicates the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
     /// DeleteMessage</a> WebSocket operation in the Amazon IVS Chat Messaging API.
     /// </summary>
     public partial class DeleteMessageRequest : AmazonIvschatRequest
@@ -45,8 +44,8 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// ID of the message to be deleted. This is the <code>Id</code> field in the received
-        /// message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html">
+        /// ID of the message to be deleted. This is the <c>Id</c> field in the received message
+        /// (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html">
         /// Message (Subscribe)</a> in the Chat Messaging API).
         /// </para>
         /// </summary>

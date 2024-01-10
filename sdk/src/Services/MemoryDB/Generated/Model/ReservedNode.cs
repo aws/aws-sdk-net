@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MemoryDB.Model
 {
     /// <summary>
-    /// Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.
+    /// Represents the output of a <c>PurchaseReservedNodesOffering</c> operation.
     /// </summary>
     public partial class ReservedNode
     {

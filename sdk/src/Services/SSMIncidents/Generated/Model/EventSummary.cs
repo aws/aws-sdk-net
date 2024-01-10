@@ -62,7 +62,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventReferences. 
         /// <para>
-        /// A list of references in a <code>TimelineEvent</code>.
+        /// A list of references in a <c>TimelineEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -100,7 +100,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. The timeline event must be <code>Custom Event</code> or <code>Note</code>.
+        /// The type of event. The timeline event must be <c>Custom Event</c> or <c>Note</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

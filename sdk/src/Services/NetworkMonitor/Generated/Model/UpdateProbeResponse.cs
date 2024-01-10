@@ -50,7 +50,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property AddressFamily. 
         /// <para>
-        /// The updated IP address family. This will be either <code>IPV4</code> or <code>IPV6</code>.
+        /// The updated IP address family. This will be either <c>IPV4</c> or <c>IPV6</c>.
         /// </para>
         /// </summary>
         public AddressFamily AddressFamily
@@ -105,7 +105,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// The updated destination port. This will be a number between <code>1</code> and <code>65536</code>.
+        /// The updated destination port. This will be a number between <c>1</c> and <c>65536</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]

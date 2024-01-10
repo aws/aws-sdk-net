@@ -62,8 +62,8 @@ namespace Amazon.IoT.Model
         ///  
         /// <para>
         /// A list of metrics whose data is retained (stored). By default, data is retained for
-        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.
+        /// any metric used in the profile's <c>behaviors</c>, but it is also retained for any
+        /// metric specified here. Can be used with custom metrics; cannot be used with dimensions.
         /// </para>
         /// </summary>
         [Obsolete("Use additionalMetricsToRetainV2.")]
@@ -139,9 +139,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DeleteAdditionalMetricsToRetain. 
         /// <para>
-        /// If true, delete all <code>additionalMetricsToRetain</code> defined for this security
-        /// profile. If any <code>additionalMetricsToRetain</code> are defined in the current
-        /// invocation, an exception occurs.
+        /// If true, delete all <c>additionalMetricsToRetain</c> defined for this security profile.
+        /// If any <c>additionalMetricsToRetain</c> are defined in the current invocation, an
+        /// exception occurs.
         /// </para>
         /// </summary>
         public bool DeleteAdditionalMetricsToRetain
@@ -159,9 +159,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DeleteAlertTargets. 
         /// <para>
-        /// If true, delete all <code>alertTargets</code> defined for this security profile. If
-        /// any <code>alertTargets</code> are defined in the current invocation, an exception
-        /// occurs.
+        /// If true, delete all <c>alertTargets</c> defined for this security profile. If any
+        /// <c>alertTargets</c> are defined in the current invocation, an exception occurs.
         /// </para>
         /// </summary>
         public bool DeleteAlertTargets
@@ -179,8 +178,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DeleteBehaviors. 
         /// <para>
-        /// If true, delete all <code>behaviors</code> defined for this security profile. If any
-        /// <code>behaviors</code> are defined in the current invocation, an exception occurs.
+        /// If true, delete all <c>behaviors</c> defined for this security profile. If any <c>behaviors</c>
+        /// are defined in the current invocation, an exception occurs.
         /// </para>
         /// </summary>
         public bool DeleteBehaviors
@@ -218,7 +217,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The expected version of the security profile. A new version is generated whenever
         /// the security profile is updated. If you specify a value that is different from the
-        /// actual version, a <code>VersionConflictException</code> is thrown.
+        /// actual version, a <c>VersionConflictException</c> is thrown.
         /// </para>
         /// </summary>
         public long ExpectedVersion

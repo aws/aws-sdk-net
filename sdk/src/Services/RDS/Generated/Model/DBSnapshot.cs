@@ -33,8 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBSnapshots</code>
-    /// action.
+    /// This data type is used as a response element in the <c>DescribeDBSnapshots</c> action.
     /// </para>
     /// </summary>
     public partial class DBSnapshot
@@ -338,8 +337,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>Encrypted</code> is true, the Amazon Web Services KMS key identifier for
-        /// the encrypted DB snapshot.
+        /// If <c>Encrypted</c> is true, the Amazon Web Services KMS key identifier for the encrypted
+        /// DB snapshot.
         /// </para>
         ///  
         /// <para>
@@ -716,9 +715,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The time zone of the DB snapshot. In most cases, the <code>Timezone</code> element
-        /// is empty. <code>Timezone</code> content appears only for snapshots taken from Microsoft
-        /// SQL Server DB instances that were created with a time zone specified.
+        /// The time zone of the DB snapshot. In most cases, the <c>Timezone</c> element is empty.
+        /// <c>Timezone</c> content appears only for snapshots taken from Microsoft SQL Server
+        /// DB instances that were created with a time zone specified.
         /// </para>
         /// </summary>
         public string Timezone

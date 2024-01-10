@@ -237,7 +237,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// You can cancel only stacks that are in the <code>UPDATE_IN_PROGRESS</code> state.
+        /// You can cancel only stacks that are in the <c>UPDATE_IN_PROGRESS</c> state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -258,7 +258,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// You can cancel only stacks that are in the <code>UPDATE_IN_PROGRESS</code> state.
+        /// You can cancel only stacks that are in the <c>UPDATE_IN_PROGRESS</c> state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -280,21 +280,21 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// For a specified stack that's in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues
-        /// rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the
-        /// cause of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+        /// For a specified stack that's in the <c>UPDATE_ROLLBACK_FAILED</c> state, continues
+        /// rolling it back to the <c>UPDATE_ROLLBACK_COMPLETE</c> state. Depending on the cause
+        /// of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
         /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
-        /// your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), and
-        /// then try to update the stack again.
+        /// your stack to a working state (the <c>UPDATE_ROLLBACK_COMPLETE</c> state), and then
+        /// try to update the stack again.
         /// 
         ///  
         /// <para>
-        /// A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when CloudFormation
-        /// can't roll back all changes after a failed stack update. For example, you might have
-        /// a stack that's rolling back to an old database instance that was deleted outside of
-        /// CloudFormation. Because CloudFormation doesn't know the database was deleted, it assumes
-        /// that the database instance still exists and attempts to roll back to it, causing the
-        /// update rollback to fail.
+        /// A stack goes into the <c>UPDATE_ROLLBACK_FAILED</c> state when CloudFormation can't
+        /// roll back all changes after a failed stack update. For example, you might have a stack
+        /// that's rolling back to an old database instance that was deleted outside of CloudFormation.
+        /// Because CloudFormation doesn't know the database was deleted, it assumes that the
+        /// database instance still exists and attempts to roll back to it, causing the update
+        /// rollback to fail.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
@@ -309,21 +309,21 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// For a specified stack that's in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues
-        /// rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the
-        /// cause of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
+        /// For a specified stack that's in the <c>UPDATE_ROLLBACK_FAILED</c> state, continues
+        /// rolling it back to the <c>UPDATE_ROLLBACK_COMPLETE</c> state. Depending on the cause
+        /// of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed">
         /// fix the error</a> and continue the rollback. By continuing the rollback, you can return
-        /// your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), and
-        /// then try to update the stack again.
+        /// your stack to a working state (the <c>UPDATE_ROLLBACK_COMPLETE</c> state), and then
+        /// try to update the stack again.
         /// 
         ///  
         /// <para>
-        /// A stack goes into the <code>UPDATE_ROLLBACK_FAILED</code> state when CloudFormation
-        /// can't roll back all changes after a failed stack update. For example, you might have
-        /// a stack that's rolling back to an old database instance that was deleted outside of
-        /// CloudFormation. Because CloudFormation doesn't know the database was deleted, it assumes
-        /// that the database instance still exists and attempts to roll back to it, causing the
-        /// update rollback to fail.
+        /// A stack goes into the <c>UPDATE_ROLLBACK_FAILED</c> state when CloudFormation can't
+        /// roll back all changes after a failed stack update. For example, you might have a stack
+        /// that's rolling back to an old database instance that was deleted outside of CloudFormation.
+        /// Because CloudFormation doesn't know the database was deleted, it assumes that the
+        /// database instance still exists and attempts to roll back to it, causing the update
+        /// rollback to fail.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ContinueUpdateRollback service method.</param>
@@ -356,13 +356,13 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code>
-        /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
-        /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. To create
-        /// a change set for an import operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
-        /// parameter. After the <code>CreateChangeSet</code> call successfully completes, CloudFormation
-        /// starts creating the change set. To check the status of the change set or to review
-        /// it, use the <a>DescribeChangeSet</a> action.
+        /// To create a change set for a stack that doesn't exist, for the <c>ChangeSetType</c>
+        /// parameter, specify <c>CREATE</c>. To create a change set for an existing stack, specify
+        /// <c>UPDATE</c> for the <c>ChangeSetType</c> parameter. To create a change set for an
+        /// import operation, specify <c>IMPORT</c> for the <c>ChangeSetType</c> parameter. After
+        /// the <c>CreateChangeSet</c> call successfully completes, CloudFormation starts creating
+        /// the change set. To check the status of the change set or to review it, use the <a>DescribeChangeSet</a>
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -372,8 +372,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// To create a change set for the entire stack hierarchy, set <code>IncludeNestedStacks</code>
-        /// to <code>True</code>.
+        /// To create a change set for the entire stack hierarchy, set <c>IncludeNestedStacks</c>
+        /// to <c>True</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet service method.</param>
@@ -413,13 +413,13 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code>
-        /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
-        /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. To create
-        /// a change set for an import operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
-        /// parameter. After the <code>CreateChangeSet</code> call successfully completes, CloudFormation
-        /// starts creating the change set. To check the status of the change set or to review
-        /// it, use the <a>DescribeChangeSet</a> action.
+        /// To create a change set for a stack that doesn't exist, for the <c>ChangeSetType</c>
+        /// parameter, specify <c>CREATE</c>. To create a change set for an existing stack, specify
+        /// <c>UPDATE</c> for the <c>ChangeSetType</c> parameter. To create a change set for an
+        /// import operation, specify <c>IMPORT</c> for the <c>ChangeSetType</c> parameter. After
+        /// the <c>CreateChangeSet</c> call successfully completes, CloudFormation starts creating
+        /// the change set. To check the status of the change set or to review it, use the <a>DescribeChangeSet</a>
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -429,8 +429,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// To create a change set for the entire stack hierarchy, set <code>IncludeNestedStacks</code>
-        /// to <code>True</code>.
+        /// To create a change set for the entire stack hierarchy, set <c>IncludeNestedStacks</c>
+        /// to <c>True</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateChangeSet service method.</param>
@@ -536,8 +536,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Creates stack instances for the specified accounts, within the specified Amazon Web
         /// Services Regions. A stack instance refers to a stack in a specific account and Region.
-        /// You must specify at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
-        /// and you must specify at least one value for <code>Regions</code>.
+        /// You must specify at least one value for either <c>Accounts</c> or <c>DeploymentTargets</c>,
+        /// and you must specify at least one value for <c>Regions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStackInstances service method.</param>
         /// 
@@ -576,8 +576,8 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Creates stack instances for the specified accounts, within the specified Amazon Web
         /// Services Regions. A stack instance refers to a stack in a specific account and Region.
-        /// You must specify at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
-        /// and you must specify at least one value for <code>Regions</code>.
+        /// You must specify at least one value for either <c>Accounts</c> or <c>DeploymentTargets</c>,
+        /// and you must specify at least one value for <c>Regions</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStackInstances service method.</param>
         /// <param name="cancellationToken">
@@ -788,10 +788,10 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// If <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
-        /// of the nested change set, then <code>DeleteChangeSet</code> will delete all change
-        /// sets that belong to the stacks hierarchy and will also delete all change sets for
-        /// nested stacks with the status of <code>REVIEW_IN_PROGRESS</code>.
+        /// If <c>IncludeNestedStacks</c> specifies <c>True</c> during the creation of the nested
+        /// change set, then <c>DeleteChangeSet</c> will delete all change sets that belong to
+        /// the stacks hierarchy and will also delete all change sets for nested stacks with the
+        /// status of <c>REVIEW_IN_PROGRESS</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet service method.</param>
@@ -799,8 +799,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DeleteChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set can't be used to update the stack. For example, the change
-        /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-        /// <code>UPDATE_IN_PROGRESS</code>.
+        /// set status might be <c>CREATE_IN_PROGRESS</c>, or the stack status might be <c>UPDATE_IN_PROGRESS</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
         DeleteChangeSetResponse DeleteChangeSet(DeleteChangeSetRequest request);
@@ -818,10 +817,10 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// If <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation
-        /// of the nested change set, then <code>DeleteChangeSet</code> will delete all change
-        /// sets that belong to the stacks hierarchy and will also delete all change sets for
-        /// nested stacks with the status of <code>REVIEW_IN_PROGRESS</code>.
+        /// If <c>IncludeNestedStacks</c> specifies <c>True</c> during the creation of the nested
+        /// change set, then <c>DeleteChangeSet</c> will delete all change sets that belong to
+        /// the stacks hierarchy and will also delete all change sets for nested stacks with the
+        /// status of <c>REVIEW_IN_PROGRESS</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteChangeSet service method.</param>
@@ -832,8 +831,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DeleteChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set can't be used to update the stack. For example, the change
-        /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-        /// <code>UPDATE_IN_PROGRESS</code>.
+        /// set status might be <c>CREATE_IN_PROGRESS</c>, or the stack status might be <c>UPDATE_IN_PROGRESS</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeleteChangeSet">REST API Reference for DeleteChangeSet Operation</seealso>
         Task<DeleteChangeSetResponse> DeleteChangeSetAsync(DeleteChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -992,7 +990,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Marks an extension or extension version as <code>DEPRECATED</code> in the CloudFormation
+        /// Marks an extension or extension version as <c>DEPRECATED</c> in the CloudFormation
         /// registry, removing it from active use. Deprecated extensions or extension versions
         /// cannot be used in CloudFormation operations.
         /// 
@@ -1029,7 +1027,7 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Marks an extension or extension version as <code>DEPRECATED</code> in the CloudFormation
+        /// Marks an extension or extension version as <c>DEPRECATED</c> in the CloudFormation
         /// registry, removing it from active use. Deprecated extensions or extension versions
         /// cannot be used in CloudFormation operations.
         /// 
@@ -1115,7 +1113,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DescribeChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
         DescribeChangeSetResponse DescribeChangeSet(DescribeChangeSetRequest request);
@@ -1135,7 +1133,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DescribeChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSet">REST API Reference for DescribeChangeSet Operation</seealso>
         Task<DescribeChangeSetResponse> DescribeChangeSetAsync(DescribeChangeSetRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1154,7 +1152,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DescribeChangeSetHooks service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSetHooks">REST API Reference for DescribeChangeSetHooks Operation</seealso>
         DescribeChangeSetHooksResponse DescribeChangeSetHooks(DescribeChangeSetHooksRequest request);
@@ -1173,7 +1171,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the DescribeChangeSetHooks service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeChangeSetHooks">REST API Reference for DescribeChangeSetHooks Operation</seealso>
         Task<DescribeChangeSetHooksResponse> DescribeChangeSetHooksAsync(DescribeChangeSetHooksRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1184,10 +1182,10 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Retrieves information about the account's <code>OrganizationAccess</code> status.
-        /// This API can be called either by the management account or the delegated administrator
-        /// by using the <code>CallAs</code> parameter. This API can also be called without the
-        /// <code>CallAs</code> parameter by the management account.
+        /// Retrieves information about the account's <c>OrganizationAccess</c> status. This API
+        /// can be called either by the management account or the delegated administrator by using
+        /// the <c>CallAs</c> parameter. This API can also be called without the <c>CallAs</c>
+        /// parameter by the management account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationsAccess service method.</param>
         /// 
@@ -1204,10 +1202,10 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Retrieves information about the account's <code>OrganizationAccess</code> status.
-        /// This API can be called either by the management account or the delegated administrator
-        /// by using the <code>CallAs</code> parameter. This API can also be called without the
-        /// <code>CallAs</code> parameter by the management account.
+        /// Retrieves information about the account's <c>OrganizationAccess</c> status. This API
+        /// can be called either by the management account or the delegated administrator by using
+        /// the <c>CallAs</c> parameter. This API can also be called without the <c>CallAs</c>
+        /// parameter by the management account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationsAccess service method.</param>
         /// <param name="cancellationToken">
@@ -1234,9 +1232,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// If you don't supply a <code>PublisherId</code>, and you have registered as an extension
-        /// publisher, <code>DescribePublisher</code> returns information about your own publisher
-        /// account.
+        /// If you don't supply a <c>PublisherId</c>, and you have registered as an extension
+        /// publisher, <c>DescribePublisher</c> returns information about your own publisher account.
         /// </para>
         ///  
         /// <para>
@@ -1271,9 +1268,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// If you don't supply a <code>PublisherId</code>, and you have registered as an extension
-        /// publisher, <code>DescribePublisher</code> returns information about your own publisher
-        /// account.
+        /// If you don't supply a <c>PublisherId</c>, and you have registered as an extension
+        /// publisher, <c>DescribePublisher</c> returns information about your own publisher account.
         /// </para>
         ///  
         /// <para>
@@ -1320,11 +1316,11 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// Use <a>DetectStackDrift</a> to initiate a stack drift detection operation. <code>DetectStackDrift</code>
-        /// returns a <code>StackDriftDetectionId</code> you can use to monitor the progress of
-        /// the operation using <code>DescribeStackDriftDetectionStatus</code>. Once the drift
-        /// detection operation has completed, use <a>DescribeStackResourceDrifts</a> to return
-        /// drift information about the stack and its resources.
+        /// Use <a>DetectStackDrift</a> to initiate a stack drift detection operation. <c>DetectStackDrift</c>
+        /// returns a <c>StackDriftDetectionId</c> you can use to monitor the progress of the
+        /// operation using <c>DescribeStackDriftDetectionStatus</c>. Once the drift detection
+        /// operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift information
+        /// about the stack and its resources.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackDriftDetectionStatus service method.</param>
@@ -1346,11 +1342,11 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// Use <a>DetectStackDrift</a> to initiate a stack drift detection operation. <code>DetectStackDrift</code>
-        /// returns a <code>StackDriftDetectionId</code> you can use to monitor the progress of
-        /// the operation using <code>DescribeStackDriftDetectionStatus</code>. Once the drift
-        /// detection operation has completed, use <a>DescribeStackResourceDrifts</a> to return
-        /// drift information about the stack and its resources.
+        /// Use <a>DetectStackDrift</a> to initiate a stack drift detection operation. <c>DetectStackDrift</c>
+        /// returns a <c>StackDriftDetectionId</c> you can use to monitor the progress of the
+        /// operation using <c>DescribeStackDriftDetectionStatus</c>. Once the drift detection
+        /// operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift information
+        /// about the stack and its resources.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackDriftDetectionStatus service method.</param>
@@ -1512,11 +1508,11 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For a given stack, there will be one <code>StackResourceDrift</code> for each stack
-        /// resource that has been checked for drift. Resources that haven't yet been checked
-        /// for drift aren't included. Resources that don't currently support drift detection
-        /// aren't checked, and so not included. For a list of resources that support drift detection,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// For a given stack, there will be one <c>StackResourceDrift</c> for each stack resource
+        /// that has been checked for drift. Resources that haven't yet been checked for drift
+        /// aren't included. Resources that don't currently support drift detection aren't checked,
+        /// and so not included. For a list of resources that support drift detection, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>.
         /// </para>
         ///  
@@ -1540,11 +1536,11 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For a given stack, there will be one <code>StackResourceDrift</code> for each stack
-        /// resource that has been checked for drift. Resources that haven't yet been checked
-        /// for drift aren't included. Resources that don't currently support drift detection
-        /// aren't checked, and so not included. For a list of resources that support drift detection,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// For a given stack, there will be one <c>StackResourceDrift</c> for each stack resource
+        /// that has been checked for drift. Resources that haven't yet been checked for drift
+        /// aren't included. Resources that don't currently support drift detection aren't checked,
+        /// and so not included. For a list of resources that support drift detection, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>.
         /// </para>
         ///  
@@ -1569,32 +1565,32 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns Amazon Web Services resource descriptions for running and deleted stacks.
-        /// If <code>StackName</code> is specified, all the associated resources that are part
-        /// of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated
-        /// resources of the stack that the resource belongs to are returned.
+        /// If <c>StackName</c> is specified, all the associated resources that are part of the
+        /// stack are returned. If <c>PhysicalResourceId</c> is specified, the associated resources
+        /// of the stack that the resource belongs to are returned.
         /// 
         ///  <note> 
         /// <para>
         /// Only the first 100 resources will be returned. If your stack has more resources than
-        /// this, you should use <code>ListStackResources</code> instead.
+        /// this, you should use <c>ListStackResources</c> instead.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
-        /// for up to 90 days after the stack has been deleted.
+        /// For deleted stacks, <c>DescribeStackResources</c> returns resource information for
+        /// up to 90 days after the stack has been deleted.
         /// </para>
         ///  
         /// <para>
-        /// You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>,
-        /// but not both. In addition, you can specify <code>LogicalResourceId</code> to filter
-        /// the returned result. For more information about resources, the <code>LogicalResourceId</code>
-        /// and <code>PhysicalResourceId</code>, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
+        /// You must specify either <c>StackName</c> or <c>PhysicalResourceId</c>, but not both.
+        /// In addition, you can specify <c>LogicalResourceId</c> to filter the returned result.
+        /// For more information about resources, the <c>LogicalResourceId</c> and <c>PhysicalResourceId</c>,
+        /// go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
         /// User Guide</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
-        /// and <code>PhysicalResourceId</code> in the same request.
+        /// A <c>ValidationError</c> is returned if you specify both <c>StackName</c> and <c>PhysicalResourceId</c>
+        /// in the same request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1608,32 +1604,32 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns Amazon Web Services resource descriptions for running and deleted stacks.
-        /// If <code>StackName</code> is specified, all the associated resources that are part
-        /// of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated
-        /// resources of the stack that the resource belongs to are returned.
+        /// If <c>StackName</c> is specified, all the associated resources that are part of the
+        /// stack are returned. If <c>PhysicalResourceId</c> is specified, the associated resources
+        /// of the stack that the resource belongs to are returned.
         /// 
         ///  <note> 
         /// <para>
         /// Only the first 100 resources will be returned. If your stack has more resources than
-        /// this, you should use <code>ListStackResources</code> instead.
+        /// this, you should use <c>ListStackResources</c> instead.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For deleted stacks, <code>DescribeStackResources</code> returns resource information
-        /// for up to 90 days after the stack has been deleted.
+        /// For deleted stacks, <c>DescribeStackResources</c> returns resource information for
+        /// up to 90 days after the stack has been deleted.
         /// </para>
         ///  
         /// <para>
-        /// You must specify either <code>StackName</code> or <code>PhysicalResourceId</code>,
-        /// but not both. In addition, you can specify <code>LogicalResourceId</code> to filter
-        /// the returned result. For more information about resources, the <code>LogicalResourceId</code>
-        /// and <code>PhysicalResourceId</code>, go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
+        /// You must specify either <c>StackName</c> or <c>PhysicalResourceId</c>, but not both.
+        /// In addition, you can specify <c>LogicalResourceId</c> to filter the returned result.
+        /// For more information about resources, the <c>LogicalResourceId</c> and <c>PhysicalResourceId</c>,
+        /// go to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/">CloudFormation
         /// User Guide</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// A <code>ValidationError</code> is returned if you specify both <code>StackName</code>
-        /// and <code>PhysicalResourceId</code> in the same request.
+        /// A <c>ValidationError</c> is returned if you specify both <c>StackName</c> and <c>PhysicalResourceId</c>
+        /// in the same request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1657,7 +1653,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <c>ValidationError</c> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1673,7 +1669,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <c>ValidationError</c> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1690,7 +1686,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <c>ValidationError</c> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1710,7 +1706,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
+        /// If the stack doesn't exist, a <c>ValidationError</c> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1807,9 +1803,9 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
-        /// about that specific extension version. Otherwise, it returns information about the
-        /// default extension version.
+        /// If you specify a <c>VersionId</c>, <c>DescribeType</c> returns information about that
+        /// specific extension version. Otherwise, it returns information about the default extension
+        /// version.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
@@ -1831,9 +1827,9 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information
-        /// about that specific extension version. Otherwise, it returns information about the
-        /// default extension version.
+        /// If you specify a <c>VersionId</c>, <c>DescribeType</c> returns information about that
+        /// specific extension version. Otherwise, it returns information about the default extension
+        /// version.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeType service method.</param>
@@ -1927,8 +1923,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// Use <code>DetectStackDrift</code> to detect drift on all supported resources for a
-        /// given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual resources.
+        /// Use <c>DetectStackDrift</c> to detect drift on all supported resources for a given
+        /// stack, or <a>DetectStackResourceDrift</a> to detect drift on individual resources.
         /// </para>
         ///  
         /// <para>
@@ -1937,8 +1933,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        ///  <code>DetectStackDrift</code> can take up to several minutes, depending on the number
-        /// of resources contained within the stack. Use <a>DescribeStackDriftDetectionStatus</a>
+        ///  <c>DetectStackDrift</c> can take up to several minutes, depending on the number of
+        /// resources contained within the stack. Use <a>DescribeStackDriftDetectionStatus</a>
         /// to monitor the progress of a detect stack drift operation. Once the drift detection
         /// operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift information
         /// about the stack and its resources.
@@ -1946,8 +1942,8 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// When detecting drift on a stack, CloudFormation doesn't detect drift on any nested
-        /// stacks belonging to that stack. Perform <code>DetectStackDrift</code> directly on
-        /// the nested stack itself.
+        /// stacks belonging to that stack. Perform <c>DetectStackDrift</c> directly on the nested
+        /// stack itself.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectStackDrift service method.</param>
@@ -1971,8 +1967,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// Use <code>DetectStackDrift</code> to detect drift on all supported resources for a
-        /// given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual resources.
+        /// Use <c>DetectStackDrift</c> to detect drift on all supported resources for a given
+        /// stack, or <a>DetectStackResourceDrift</a> to detect drift on individual resources.
         /// </para>
         ///  
         /// <para>
@@ -1981,8 +1977,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        ///  <code>DetectStackDrift</code> can take up to several minutes, depending on the number
-        /// of resources contained within the stack. Use <a>DescribeStackDriftDetectionStatus</a>
+        ///  <c>DetectStackDrift</c> can take up to several minutes, depending on the number of
+        /// resources contained within the stack. Use <a>DescribeStackDriftDetectionStatus</a>
         /// to monitor the progress of a detect stack drift operation. Once the drift detection
         /// operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift information
         /// about the stack and its resources.
@@ -1990,8 +1986,8 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// When detecting drift on a stack, CloudFormation doesn't detect drift on any nested
-        /// stacks belonging to that stack. Perform <code>DetectStackDrift</code> directly on
-        /// the nested stack itself.
+        /// stacks belonging to that stack. Perform <c>DetectStackDrift</c> directly on the nested
+        /// stack itself.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectStackDrift service method.</param>
@@ -2019,9 +2015,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// Use <code>DetectStackResourceDrift</code> to detect drift on individual resources,
-        /// or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that
-        /// support drift detection.
+        /// Use <c>DetectStackResourceDrift</c> to detect drift on individual resources, or <a>DetectStackDrift</a>
+        /// to detect drift on all resources in a given stack that support drift detection.
         /// </para>
         ///  
         /// <para>
@@ -2049,9 +2044,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// Use <code>DetectStackResourceDrift</code> to detect drift on individual resources,
-        /// or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that
-        /// support drift detection.
+        /// Use <c>DetectStackResourceDrift</c> to detect drift on individual resources, or <a>DetectStackDrift</a>
+        /// to detect drift on all resources in a given stack that support drift detection.
         /// </para>
         ///  
         /// <para>
@@ -2082,9 +2076,9 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        ///  <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack
-        /// set drift detection operation. Use this operation id with <a>DescribeStackSetOperation</a>
-        /// to monitor the progress of the drift detection operation. The drift detection operation
+        ///  <c>DetectStackSetDrift</c> returns the <c>OperationId</c> of the stack set drift
+        /// detection operation. Use this operation id with <a>DescribeStackSetOperation</a> to
+        /// monitor the progress of the drift detection operation. The drift detection operation
         /// may take some time, depending on the number of stack instances included in the stack
         /// set, in addition to the number of resources included in each stack.
         /// </para>
@@ -2149,9 +2143,9 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        ///  <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack
-        /// set drift detection operation. Use this operation id with <a>DescribeStackSetOperation</a>
-        /// to monitor the progress of the drift detection operation. The drift detection operation
+        ///  <c>DetectStackSetDrift</c> returns the <c>OperationId</c> of the stack set drift
+        /// detection operation. Use this operation id with <a>DescribeStackSetOperation</a> to
+        /// monitor the progress of the drift detection operation. The drift detection operation
         /// may take some time, depending on the number of stack instances included in the stack
         /// set, in addition to the number of resources included in each stack.
         /// </para>
@@ -2264,8 +2258,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// To create a change set for the entire stack hierarchy, <code>IncludeNestedStacks</code>
-        /// must have been set to <code>True</code>.
+        /// To create a change set for the entire stack hierarchy, <c>IncludeNestedStacks</c>
+        /// must have been set to <c>True</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet service method.</param>
@@ -2273,7 +2267,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the ExecuteChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
         /// The template contains resources with capabilities that weren't specified in the Capabilities
@@ -2281,8 +2275,7 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set can't be used to update the stack. For example, the change
-        /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-        /// <code>UPDATE_IN_PROGRESS</code>.
+        /// set status might be <c>CREATE_IN_PROGRESS</c>, or the stack status might be <c>UPDATE_IN_PROGRESS</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
         /// A client request token already exists.
@@ -2310,8 +2303,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// To create a change set for the entire stack hierarchy, <code>IncludeNestedStacks</code>
-        /// must have been set to <code>True</code>.
+        /// To create a change set for the entire stack hierarchy, <c>IncludeNestedStacks</c>
+        /// must have been set to <c>True</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteChangeSet service method.</param>
@@ -2322,7 +2315,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the ExecuteChangeSet service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InsufficientCapabilitiesException">
         /// The template contains resources with capabilities that weren't specified in the Capabilities
@@ -2330,8 +2323,7 @@ namespace Amazon.CloudFormation
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.InvalidChangeSetStatusException">
         /// The specified change set can't be used to update the stack. For example, the change
-        /// set status might be <code>CREATE_IN_PROGRESS</code>, or the stack status might be
-        /// <code>UPDATE_IN_PROGRESS</code>.
+        /// set status might be <c>CREATE_IN_PROGRESS</c>, or the stack status might be <c>UPDATE_IN_PROGRESS</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFormation.Model.TokenAlreadyExistsException">
         /// A client request token already exists.
@@ -2380,12 +2372,12 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For deleted stacks, <code>GetTemplate</code> returns the template for up to 90 days
-        /// after the stack has been deleted.
+        /// For deleted stacks, <c>GetTemplate</c> returns the template for up to 90 days after
+        /// the stack has been deleted.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the template doesn't exist, a <code>ValidationError</code> is returned.
+        /// If the template doesn't exist, a <c>ValidationError</c> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2394,7 +2386,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         GetTemplateResponse GetTemplate(GetTemplateRequest request);
@@ -2407,12 +2399,12 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For deleted stacks, <code>GetTemplate</code> returns the template for up to 90 days
-        /// after the stack has been deleted.
+        /// For deleted stacks, <c>GetTemplate</c> returns the template for up to 90 days after
+        /// the stack has been deleted.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the template doesn't exist, a <code>ValidationError</code> is returned.
+        /// If the template doesn't exist, a <c>ValidationError</c> is returned.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2424,7 +2416,7 @@ namespace Amazon.CloudFormation
         /// <returns>The response from the GetTemplate service method, as returned by CloudFormation.</returns>
         /// <exception cref="Amazon.CloudFormation.Model.ChangeSetNotFoundException">
         /// The specified change set name or ID doesn't exit. To view valid change sets for a
-        /// stack, use the <code>ListChangeSets</code> operation.
+        /// stack, use the <c>ListChangeSets</c> operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/GetTemplate">REST API Reference for GetTemplate Operation</seealso>
         Task<GetTemplateResponse> GetTemplateAsync(GetTemplateRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2435,20 +2427,20 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns information about a new or existing template. The <code>GetTemplateSummary</code>
+        /// Returns information about a new or existing template. The <c>GetTemplateSummary</c>
         /// action is useful for viewing parameter information, such as default parameter values
         /// and parameter types, before you create or update a stack or stack set.
         /// 
         ///  
         /// <para>
-        /// You can use the <code>GetTemplateSummary</code> action when you submit a template,
-        /// or you can get template information for a stack set, or a running or deleted stack.
+        /// You can use the <c>GetTemplateSummary</c> action when you submit a template, or you
+        /// can get template information for a stack set, or a running or deleted stack.
         /// </para>
         ///  
         /// <para>
-        /// For deleted stacks, <code>GetTemplateSummary</code> returns the template information
-        /// for up to 90 days after the stack has been deleted. If the template doesn't exist,
-        /// a <code>ValidationError</code> is returned.
+        /// For deleted stacks, <c>GetTemplateSummary</c> returns the template information for
+        /// up to 90 days after the stack has been deleted. If the template doesn't exist, a <c>ValidationError</c>
+        /// is returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary service method.</param>
@@ -2463,20 +2455,20 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// Returns information about a new or existing template. The <code>GetTemplateSummary</code>
+        /// Returns information about a new or existing template. The <c>GetTemplateSummary</c>
         /// action is useful for viewing parameter information, such as default parameter values
         /// and parameter types, before you create or update a stack or stack set.
         /// 
         ///  
         /// <para>
-        /// You can use the <code>GetTemplateSummary</code> action when you submit a template,
-        /// or you can get template information for a stack set, or a running or deleted stack.
+        /// You can use the <c>GetTemplateSummary</c> action when you submit a template, or you
+        /// can get template information for a stack set, or a running or deleted stack.
         /// </para>
         ///  
         /// <para>
-        /// For deleted stacks, <code>GetTemplateSummary</code> returns the template information
-        /// for up to 90 days after the stack has been deleted. If the template doesn't exist,
-        /// a <code>ValidationError</code> is returned.
+        /// For deleted stacks, <c>GetTemplateSummary</c> returns the template information for
+        /// up to 90 days after the stack has been deleted. If the template doesn't exist, a <c>ValidationError</c>
+        /// is returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemplateSummary service method.</param>
@@ -2592,7 +2584,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the ID and status of each active change set for a stack. For example, CloudFormation
-        /// lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code>
+        /// lists change sets that are in the <c>CREATE_IN_PROGRESS</c> or <c>CREATE_PENDING</c>
         /// state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChangeSets service method.</param>
@@ -2605,7 +2597,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns the ID and status of each active change set for a stack. For example, CloudFormation
-        /// lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code>
+        /// lists change sets that are in the <c>CREATE_IN_PROGRESS</c> or <c>CREATE_PENDING</c>
         /// state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListChangeSets service method.</param>
@@ -2717,9 +2709,9 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ListStackInstanceResourceDrifts</code> returns drift information for the most
-        /// recent drift detection operation. If an operation is in progress, it may only return
-        /// partial results.
+        ///  <c>ListStackInstanceResourceDrifts</c> returns drift information for the most recent
+        /// drift detection operation. If an operation is in progress, it may only return partial
+        /// results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2745,9 +2737,9 @@ namespace Amazon.CloudFormation
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ListStackInstanceResourceDrifts</code> returns drift information for the most
-        /// recent drift detection operation. If an operation is in progress, it may only return
-        /// partial results.
+        ///  <c>ListStackInstanceResourceDrifts</c> returns drift information for the most recent
+        /// drift detection operation. If an operation is in progress, it may only return partial
+        /// results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2992,21 +2984,21 @@ namespace Amazon.CloudFormation
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
-        /// while signed in to your Amazon Web Services account, <code>ListStackSets</code> returns
-        /// all self-managed stack sets in your Amazon Web Services account.
+        /// [Self-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c> while
+        /// signed in to your Amazon Web Services account, <c>ListStackSets</c> returns all self-managed
+        /// stack sets in your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
-        /// while signed in to the organization's management account, <code>ListStackSets</code>
-        /// returns all stack sets in the management account.
+        /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c>
+        /// while signed in to the organization's management account, <c>ListStackSets</c> returns
+        /// all stack sets in the management account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
-        /// while signed in to your member account, <code>ListStackSets</code> returns all stack
-        /// sets with service-managed permissions in the management account.
+        /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>DELEGATED_ADMIN</c>
+        /// while signed in to your member account, <c>ListStackSets</c> returns all stack sets
+        /// with service-managed permissions in the management account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3023,21 +3015,21 @@ namespace Amazon.CloudFormation
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
-        /// while signed in to your Amazon Web Services account, <code>ListStackSets</code> returns
-        /// all self-managed stack sets in your Amazon Web Services account.
+        /// [Self-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c> while
+        /// signed in to your Amazon Web Services account, <c>ListStackSets</c> returns all self-managed
+        /// stack sets in your Amazon Web Services account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
-        /// while signed in to the organization's management account, <code>ListStackSets</code>
-        /// returns all stack sets in the management account.
+        /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c>
+        /// while signed in to the organization's management account, <c>ListStackSets</c> returns
+        /// all stack sets in the management account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
-        /// while signed in to your member account, <code>ListStackSets</code> returns all stack
-        /// sets with service-managed permissions in the management account.
+        /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>DELEGATED_ADMIN</c>
+        /// while signed in to your member account, <c>ListStackSets</c> returns all stack sets
+        /// with service-managed permissions in the management account.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3440,40 +3432,40 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// When specifying <code>RollbackStack</code>, you preserve the state of previously provisioned
+        /// When specifying <c>RollbackStack</c>, you preserve the state of previously provisioned
         /// resources when an operation fails. You can check the status of the stack through the
         /// <a>DescribeStacks</a> operation.
         /// 
         ///  
         /// <para>
-        /// Rolls back the specified stack to the last known stable state from <code>CREATE_FAILED</code>
-        /// or <code>UPDATE_FAILED</code> stack statuses.
+        /// Rolls back the specified stack to the last known stable state from <c>CREATE_FAILED</c>
+        /// or <c>UPDATE_FAILED</c> stack statuses.
         /// </para>
         ///  
         /// <para>
         /// This operation will delete a stack if it doesn't contain a last known stable state.
-        /// A last known stable state includes any status in a <code>*_COMPLETE</code>. This includes
+        /// A last known stable state includes any status in a <c>*_COMPLETE</c>. This includes
         /// the following stack statuses.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_COMPLETE</code> 
+        ///  <c>CREATE_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_COMPLETE</code> 
+        ///  <c>UPDATE_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_ROLLBACK_COMPLETE</code> 
+        ///  <c>UPDATE_ROLLBACK_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORT_COMPLETE</code> 
+        ///  <c>IMPORT_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORT_ROLLBACK_COMPLETE</code> 
+        ///  <c>IMPORT_ROLLBACK_COMPLETE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3489,40 +3481,40 @@ namespace Amazon.CloudFormation
 
 
         /// <summary>
-        /// When specifying <code>RollbackStack</code>, you preserve the state of previously provisioned
+        /// When specifying <c>RollbackStack</c>, you preserve the state of previously provisioned
         /// resources when an operation fails. You can check the status of the stack through the
         /// <a>DescribeStacks</a> operation.
         /// 
         ///  
         /// <para>
-        /// Rolls back the specified stack to the last known stable state from <code>CREATE_FAILED</code>
-        /// or <code>UPDATE_FAILED</code> stack statuses.
+        /// Rolls back the specified stack to the last known stable state from <c>CREATE_FAILED</c>
+        /// or <c>UPDATE_FAILED</c> stack statuses.
         /// </para>
         ///  
         /// <para>
         /// This operation will delete a stack if it doesn't contain a last known stable state.
-        /// A last known stable state includes any status in a <code>*_COMPLETE</code>. This includes
+        /// A last known stable state includes any status in a <c>*_COMPLETE</c>. This includes
         /// the following stack statuses.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_COMPLETE</code> 
+        ///  <c>CREATE_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_COMPLETE</code> 
+        ///  <c>UPDATE_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_ROLLBACK_COMPLETE</code> 
+        ///  <c>UPDATE_ROLLBACK_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORT_COMPLETE</code> 
+        ///  <c>IMPORT_COMPLETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORT_ROLLBACK_COMPLETE</code> 
+        ///  <c>IMPORT_ROLLBACK_COMPLETE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3577,7 +3569,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code>
+        /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
         /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
@@ -3611,7 +3603,7 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code>
+        /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
         /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
@@ -3689,11 +3681,11 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Sends a signal to the specified resource with a success or failure status. You can
-        /// use the <code>SignalResource</code> operation in conjunction with a creation policy
-        /// or update policy. CloudFormation doesn't proceed with a stack creation or update until
-        /// resources receive the required number of signals or the timeout period is exceeded.
-        /// The <code>SignalResource</code> operation is useful in cases where you want to send
-        /// signals from anywhere other than an Amazon EC2 instance.
+        /// use the <c>SignalResource</c> operation in conjunction with a creation policy or update
+        /// policy. CloudFormation doesn't proceed with a stack creation or update until resources
+        /// receive the required number of signals or the timeout period is exceeded. The <c>SignalResource</c>
+        /// operation is useful in cases where you want to send signals from anywhere other than
+        /// an Amazon EC2 instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SignalResource service method.</param>
         /// 
@@ -3705,11 +3697,11 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Sends a signal to the specified resource with a success or failure status. You can
-        /// use the <code>SignalResource</code> operation in conjunction with a creation policy
-        /// or update policy. CloudFormation doesn't proceed with a stack creation or update until
-        /// resources receive the required number of signals or the timeout period is exceeded.
-        /// The <code>SignalResource</code> operation is useful in cases where you want to send
-        /// signals from anywhere other than an Amazon EC2 instance.
+        /// use the <c>SignalResource</c> operation in conjunction with a creation policy or update
+        /// policy. CloudFormation doesn't proceed with a stack creation or update until resources
+        /// receive the required number of signals or the timeout period is exceeded. The <c>SignalResource</c>
+        /// operation is useful in cases where you want to send signals from anywhere other than
+        /// an Amazon EC2 instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SignalResource service method.</param>
         /// <param name="cancellationToken">
@@ -3804,13 +3796,13 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// Once you've initiated testing on an extension using <code>TestType</code>, you can
-        /// pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+        /// Once you've initiated testing on an extension using <c>TestType</c>, you can pass
+        /// the returned <c>TypeVersionArn</c> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
         /// to monitor the current test status and test status description for the extension.
         /// </para>
         ///  
         /// <para>
-        /// An extension must have a test status of <code>PASSED</code> before it can be published.
+        /// An extension must have a test status of <c>PASSED</c> before it can be published.
         /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
         /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
         /// User Guide</i>.
@@ -3859,13 +3851,13 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// Once you've initiated testing on an extension using <code>TestType</code>, you can
-        /// pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+        /// Once you've initiated testing on an extension using <c>TestType</c>, you can pass
+        /// the returned <c>TypeVersionArn</c> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
         /// to monitor the current test status and test status description for the extension.
         /// </para>
         ///  
         /// <para>
-        /// An extension must have a test status of <code>PASSED</code> before it can be published.
+        /// An extension must have a test status of <c>PASSED</c> before it can be published.
         /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
         /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
         /// User Guide</i>.
@@ -3985,7 +3977,7 @@ namespace Amazon.CloudFormation
         /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
         /// to update all stack instances with the updated template and parameter value specified
         /// in the stack set. Once a stack instance has been updated with the new parameter, you
-        /// can then override the parameter value using <code>UpdateStackInstances</code>.
+        /// can then override the parameter value using <c>UpdateStackInstances</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStackInstances service method.</param>
@@ -4040,7 +4032,7 @@ namespace Amazon.CloudFormation
         /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
         /// to update all stack instances with the updated template and parameter value specified
         /// in the stack set. Once a stack instance has been updated with the new parameter, you
-        /// can then override the parameter value using <code>UpdateStackInstances</code>.
+        /// can then override the parameter value using <c>UpdateStackInstances</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateStackInstances service method.</param>

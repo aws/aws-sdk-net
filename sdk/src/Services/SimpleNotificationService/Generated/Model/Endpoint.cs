@@ -57,7 +57,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property EndpointArn. 
         /// <para>
-        /// The <code>EndpointArn</code> for mobile app and device.
+        /// The <c>EndpointArn</c> for mobile app and device.
         /// </para>
         /// </summary>
         public string EndpointArn

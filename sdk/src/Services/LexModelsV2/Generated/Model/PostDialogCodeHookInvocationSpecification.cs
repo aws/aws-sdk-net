@@ -47,8 +47,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property FailureConditional. 
         /// <para>
         /// A list of conditional branches to evaluate after the dialog code hook throws an exception
-        /// or returns with the <code>State</code> field of the <code>Intent</code> object set
-        /// to <code>Failed</code>.
+        /// or returns with the <c>State</c> field of the <c>Intent</c> object set to <c>Failed</c>.
         /// </para>
         /// </summary>
         public ConditionalSpecification FailureConditional
@@ -67,8 +66,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property FailureNextStep. 
         /// <para>
         /// Specifies the next step the bot runs after the dialog code hook throws an exception
-        /// or returns with the <code>State</code> field of the <code>Intent</code> object set
-        /// to <code>Failed</code>.
+        /// or returns with the <c>State</c> field of the <c>Intent</c> object set to <c>Failed</c>.
         /// </para>
         /// </summary>
         public DialogState FailureNextStep

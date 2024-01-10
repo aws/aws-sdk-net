@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// A <code>LambdaAuthorizerConfig</code> specifies how to authorize AppSync API access
-    /// when using the <code>AWS_LAMBDA</code> authorizer mode. Be aware that an AppSync API
-    /// can have only one Lambda authorizer configured at a time.
+    /// A <c>LambdaAuthorizerConfig</c> specifies how to authorize AppSync API access when
+    /// using the <c>AWS_LAMBDA</c> authorizer mode. Be aware that an AppSync API can have
+    /// only one Lambda authorizer configured at a time.
     /// </summary>
     public partial class LambdaAuthorizerConfig
     {
@@ -43,9 +43,9 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property AuthorizerResultTtlInSeconds. 
         /// <para>
         /// The number of seconds a response should be cached for. The default is 0 seconds, which
-        /// disables caching. If you don't specify a value for <code>authorizerResultTtlInSeconds</code>,
+        /// disables caching. If you don't specify a value for <c>authorizerResultTtlInSeconds</c>,
         /// the default value is used. The maximum value is one hour (3600 seconds). The Lambda
-        /// function can override this by returning a <code>ttlOverride</code> key in its response.
+        /// function can override this by returning a <c>ttlOverride</c> key in its response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]
@@ -65,8 +65,8 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property AuthorizerUri. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Lambda function to be called for authorization.
-        /// This can be a standard Lambda ARN, a version ARN (<code>.../v3</code>), or an alias
-        /// ARN. 
+        /// This can be a standard Lambda ARN, a version ARN (<c>.../v3</c>), or an alias ARN.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -76,8 +76,8 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function"
-        /// --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</code>
+        ///  <c>aws lambda add-permission --function-name "arn:aws:lambda:us-east-2:111122223333:function:my-function"
+        /// --statement-id "appsync" --principal appsync.amazonaws.com --action lambda:InvokeFunction</c>
         /// 
         /// </para>
         /// </summary>

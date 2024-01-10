@@ -41,8 +41,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The namespace of the capability configuration. For example, if you configure OPC-UA
         /// sources from the IoT SiteWise console, your OPC-UA capability configuration has the
-        /// namespace <code>iotsitewise:opcuacollector:version</code>, where <code>version</code>
-        /// is a number such as <code>1</code>.
+        /// namespace <c>iotsitewise:opcuacollector:version</c>, where <c>version</c> is a number
+        /// such as <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -66,15 +66,15 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code> – The gateway is running the capability configuration.
+        ///  <c>IN_SYNC</c> – The gateway is running the capability configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OUT_OF_SYNC</code> – The gateway hasn't received the capability configuration.
+        ///  <c>OUT_OF_SYNC</c> – The gateway hasn't received the capability configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SYNC_FAILED</code> – The gateway rejected the capability configuration.
+        ///  <c>SYNC_FAILED</c> – The gateway rejected the capability configuration.
         /// </para>
         ///  </li> </ul>
         /// </summary>

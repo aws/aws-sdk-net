@@ -64,8 +64,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The user-specified description that was included in the specified job's <code>Create
-        /// Job</code> request.
+        /// The user-specified description that was included in the specified job's <c>Create
+        /// Job</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

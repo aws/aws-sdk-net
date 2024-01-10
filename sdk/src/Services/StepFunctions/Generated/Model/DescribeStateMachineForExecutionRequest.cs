@@ -42,7 +42,7 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This API action is not supported by <code>EXPRESS</code> state machines.
+    /// This API action is not supported by <c>EXPRESS</c> state machines.
     /// </para>
     /// </summary>
     public partial class DescribeStateMachineForExecutionRequest : AmazonStepFunctionsRequest

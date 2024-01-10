@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code>
-    /// and <code>Hashed</code>. Each of these objects selects a column to be included in
-    /// the output table, and whether the values of the column should be hashed.
+    /// A list of <c>OutputAttribute</c> objects, each of which have the fields <c>Name</c>
+    /// and <c>Hashed</c>. Each of these objects selects a column to be included in the output
+    /// table, and whether the values of the column should be hashed.
     /// </summary>
     public partial class OutputSource
     {
@@ -44,9 +44,9 @@ namespace Amazon.EntityResolution.Model
         /// Gets and sets the property ApplyNormalization. 
         /// <para>
         /// Normalizes the attributes defined in the schema in the input data. For example, if
-        /// an attribute has an <code>AttributeType</code> of <code>PHONE_NUMBER</code>, and the
-        /// data in the input table is in a format of 1234567890, Entity Resolution will normalize
-        /// this field in the output to (123)-456-7890.
+        /// an attribute has an <c>AttributeType</c> of <c>PHONE_NUMBER</c>, and the data in the
+        /// input table is in a format of 1234567890, Entity Resolution will normalize this field
+        /// in the output to (123)-456-7890.
         /// </para>
         /// </summary>
         public bool ApplyNormalization
@@ -83,9 +83,9 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property Output. 
         /// <para>
-        /// A list of <code>OutputAttribute</code> objects, each of which have the fields <code>Name</code>
-        /// and <code>Hashed</code>. Each of these objects selects a column to be included in
-        /// the output table, and whether the values of the column should be hashed.
+        /// A list of <c>OutputAttribute</c> objects, each of which have the fields <c>Name</c>
+        /// and <c>Hashed</c>. Each of these objects selects a column to be included in the output
+        /// table, and whether the values of the column should be hashed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=750)]

@@ -56,8 +56,8 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>status</b> - The alert status of the check can be <code>ok</code> (green), <code>warning</code>
-    /// (yellow), <code>error</code> (red), or <code>not_available</code>.
+    ///  <b>status</b> - The alert status of the check can be <c>ok</c> (green), <c>warning</c>
+    /// (yellow), <c>error</c> (red), or <c>not_available</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.AWSSupport.Model
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -125,47 +125,47 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Chinese, Simplified - <code>zh</code> 
+        /// Chinese, Simplified - <c>zh</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Chinese, Traditional - <code>zh_TW</code> 
+        /// Chinese, Traditional - <c>zh_TW</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// English - <code>en</code> 
+        /// English - <c>en</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// French - <code>fr</code> 
+        /// French - <c>fr</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// German - <code>de</code> 
+        /// German - <c>de</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Indonesian - <code>id</code> 
+        /// Indonesian - <c>id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Italian - <code>it</code> 
+        /// Italian - <c>it</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Japanese - <code>ja</code> 
+        /// Japanese - <c>ja</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Korean - <code>ko</code> 
+        /// Korean - <c>ko</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Portuguese, Brazilian - <code>pt_BR</code> 
+        /// Portuguese, Brazilian - <c>pt_BR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Spanish - <code>es</code> 
+        /// Spanish - <c>es</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

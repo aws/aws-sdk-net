@@ -87,8 +87,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// The Kubernetes <code>labels</code> to apply to the nodes in the node group after the
-        /// update.
+        /// The Kubernetes <c>labels</c> to apply to the nodes in the node group after the update.
         /// </para>
         /// </summary>
         public UpdateLabelsPayload Labels

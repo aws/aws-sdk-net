@@ -30,14 +30,14 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the StopMonitoringMembers operation.
-    /// Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
+    /// Stops GuardDuty monitoring for the specified member accounts. Use the <c>StartMonitoringMembers</c>
     /// operation to restart monitoring for those accounts.
     /// 
     ///  
     /// <para>
-    /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
-    /// set to <code>ALL</code>, you'll receive an error if you attempt to stop monitoring
-    /// the member accounts in your organization.
+    /// With <c>autoEnableOrganizationMembers</c> configuration for your organization set
+    /// to <c>ALL</c>, you'll receive an error if you attempt to stop monitoring the member
+    /// accounts in your organization.
     /// </para>
     /// </summary>
     public partial class StopMonitoringMembersRequest : AmazonGuardDutyRequest

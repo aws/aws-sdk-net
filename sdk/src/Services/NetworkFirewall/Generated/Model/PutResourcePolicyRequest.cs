@@ -109,7 +109,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// In the Resource section of the statement, you specify the ARNs for the rule groups
         /// and firewall policies that you want to share with the account that you specified in
-        /// <code>Arn</code>.
+        /// <c>Arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=395000)]

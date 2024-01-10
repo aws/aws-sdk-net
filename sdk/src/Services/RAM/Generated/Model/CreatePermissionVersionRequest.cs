@@ -65,8 +65,8 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -110,7 +110,7 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Effect</b>: must be set to <code>ALLOW</code>.
+        ///  <b>Effect</b>: must be set to <c>ALLOW</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -129,11 +129,11 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This template can't include either the <code>Resource</code> or <code>Principal</code>
-        /// elements. Those are both filled in by RAM when it instantiates the resource-based
-        /// policy on each resource shared using this managed permission. The <code>Resource</code>
-        /// comes from the ARN of the specific resource that you are sharing. The <code>Principal</code>
-        /// comes from the list of identities added to the resource share.
+        /// This template can't include either the <c>Resource</c> or <c>Principal</c> elements.
+        /// Those are both filled in by RAM when it instantiates the resource-based policy on
+        /// each resource shared using this managed permission. The <c>Resource</c> comes from
+        /// the ARN of the specific resource that you are sharing. The <c>Principal</c> comes
+        /// from the list of identities added to the resource share.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

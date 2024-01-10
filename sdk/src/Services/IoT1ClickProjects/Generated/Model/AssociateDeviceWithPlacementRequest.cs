@@ -43,8 +43,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// Gets and sets the property DeviceId. 
         /// <para>
         /// The ID of the physical device to be associated with the given placement in the project.
-        /// Note that a mandatory 4 character prefix is required for all <code>deviceId</code>
-        /// values.
+        /// Note that a mandatory 4 character prefix is required for all <c>deviceId</c> values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

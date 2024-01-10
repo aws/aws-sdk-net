@@ -36,12 +36,12 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// By default, this operation returns up to 10 items. If there are more vaults to list,
-    /// the response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
-    /// at which to continue the list with a new List Vaults request; otherwise, the <code>marker</code>
-    /// field is <code>null</code>. To return a list of vaults that begins at a specific vault,
-    /// set the <code>marker</code> request parameter to the vault ARN you obtained from a
-    /// previous List Vaults request. You can also limit the number of vaults returned in
-    /// the response by specifying the <code>limit</code> parameter in the request. 
+    /// the response <c>marker</c> field contains the vault Amazon Resource Name (ARN) at
+    /// which to continue the list with a new List Vaults request; otherwise, the <c>marker</c>
+    /// field is <c>null</c>. To return a list of vaults that begins at a specific vault,
+    /// set the <c>marker</c> request parameter to the vault ARN you obtained from a previous
+    /// List Vaults request. You can also limit the number of vaults returned in the response
+    /// by specifying the <c>limit</c> parameter in the request. 
     /// </para>
     ///  
     /// <para>
@@ -94,12 +94,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> value is the AWS account ID. This value must match the
-        /// AWS account ID associated with the credentials used to sign the request. You can either
-        /// specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
-        /// case Amazon Glacier uses the AWS account ID associated with the credentials used to
-        /// sign the request. If you specify your account ID, do not include any hyphens ('-')
-        /// in the ID.
+        /// The <c>AccountId</c> value is the AWS account ID. This value must match the AWS account
+        /// ID associated with the credentials used to sign the request. You can either specify
+        /// an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon
+        /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+        /// If you specify your account ID, do not include any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

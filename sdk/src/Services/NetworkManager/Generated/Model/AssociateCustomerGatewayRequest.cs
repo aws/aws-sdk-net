@@ -40,7 +40,7 @@ namespace Amazon.NetworkManager.Model
     /// a transit gateway or core network, customer gateways that are connected to the transit
     /// gateway are automatically included in the global network. To list customer gateways
     /// that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
-    /// EC2 API and filter by <code>transit-gateway-id</code>.
+    /// EC2 API and filter by <c>transit-gateway-id</c>.
     /// </para>
     ///  
     /// <para>

@@ -31,8 +31,8 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the ListStackInstancesForProvisionedProduct operation.
     /// Returns summary information about stack instances that are associated with the specified
-    /// <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances
-    /// that are associated with a specific Amazon Web Services account name or Region.
+    /// <c>CFN_STACKSET</c> type provisioned product. You can filter for stack instances that
+    /// are associated with a specific Amazon Web Services account name or Region.
     /// </summary>
     public partial class ListStackInstancesForProvisionedProductRequest : AmazonServiceCatalogRequest
     {
@@ -48,11 +48,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>

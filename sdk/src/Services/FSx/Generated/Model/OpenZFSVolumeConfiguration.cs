@@ -60,14 +60,14 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLONE</code> - The new volume references the data in the origin snapshot. Cloning
+        ///  <c>CLONE</c> - The new volume references the data in the origin snapshot. Cloning
         /// a snapshot is faster than copying data from the snapshot to a new volume and doesn't
         /// consume disk throughput. However, the origin snapshot can't be deleted if there is
         /// a volume using its copied data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FULL_COPY</code> - Copies all data from the snapshot to the new volume.
+        ///  <c>FULL_COPY</c> - Copies all data from the snapshot to the new volume.
         /// </para>
         ///  
         /// <para>
@@ -76,9 +76,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>INCREMENTAL_COPY</code> option is only for updating an existing volume by
-        /// using a snapshot from another FSx for OpenZFS file system. For more information, see
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.
+        /// The <c>INCREMENTAL_COPY</c> option is only for updating an existing volume by using
+        /// a snapshot from another FSx for OpenZFS file system. For more information, see <a
+        /// href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_CopySnapshotAndUpdateVolume.html">CopySnapshotAndUpdateVolume</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -98,11 +98,11 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CopyTagsToSnapshots. 
         /// <para>
         /// A Boolean value indicating whether tags for the volume should be copied to snapshots.
-        /// This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags
-        /// for the volume are copied to snapshots where the user doesn't specify tags. If this
-        /// value is <code>true</code> and you specify one or more tags, only the specified tags
-        /// are copied to snapshots. If you specify one or more tags when creating the snapshot,
-        /// no tags are copied from the volume, regardless of this value.
+        /// This value defaults to <c>false</c>. If it's set to <c>true</c>, all tags for the
+        /// volume are copied to snapshots where the user doesn't specify tags. If this value
+        /// is <c>true</c> and you specify one or more tags, only the specified tags are copied
+        /// to snapshots. If you specify one or more tags when creating the snapshot, no tags
+        /// are copied from the volume, regardless of this value.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshots
@@ -121,22 +121,21 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DataCompressionType. 
         /// <para>
         /// Specifies the method used to compress the data on the volume. The compression type
-        /// is <code>NONE</code> by default.
+        /// is <c>NONE</c> by default.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is
-        /// the default.
+        ///  <c>NONE</c> - Doesn't compress the data on the volume. <c>NONE</c> is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-        /// compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio
-        /// to minimize on-disk storage utilization.
+        ///  <c>ZSTD</c> - Compresses the data in the volume using the Zstandard (ZSTD) compression
+        /// algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize
+        /// on-disk storage utilization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm.
+        ///  <c>LZ4</c> - Compresses the data in the volume using the LZ4 compression algorithm.
         /// Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput
         /// speeds.
         /// </para>
@@ -426,7 +425,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumePath. 
         /// <para>
-        /// The path to the volume from the root volume. For example, <code>fsx/parentVolume/volume1</code>.
+        /// The path to the volume from the root volume. For example, <c>fsx/parentVolume/volume1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

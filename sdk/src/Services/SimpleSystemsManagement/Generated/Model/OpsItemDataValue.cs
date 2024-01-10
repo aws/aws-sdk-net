@@ -39,8 +39,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of key-value pair. Valid types include <code>SearchableString</code> and
-        /// <code>String</code>.
+        /// The type of key-value pair. Valid types include <c>SearchableString</c> and <c>String</c>.
         /// </para>
         /// </summary>
         public OpsItemDataType Type

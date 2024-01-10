@@ -83,17 +83,17 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// This field is only used when the <code>SortBy</code> value is provided in the request.
+        /// This field is only used when the <c>SortBy</c> value is provided in the request.
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of objects that are returned for this request. If <code>MaxResults</code>
-        /// isn't specified with the <code>SortBy</code> value, the request returns 1000 results
-        /// as the default value for this parameter.
+        /// The maximum number of objects that are returned for this request. If <c>MaxResults</c>
+        /// isn't specified with the <c>SortBy</c> value, the request returns 1000 results as
+        /// the default value for this parameter.
         /// </para>
         ///  
         /// <para>
-        /// For <code>GetCostCategories</code>, MaxResults has an upper quota of 1000.
+        /// For <c>GetCostCategories</c>, MaxResults has an upper quota of 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -138,10 +138,10 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a <code>CostCategoryName</code>, <code>SearchString</code> is
-        /// used to filter Cost Category names that match the <code>SearchString</code> pattern.
-        /// If you specify a <code>CostCategoryName</code>, <code>SearchString</code> is used
-        /// to filter Cost Category values that match the <code>SearchString</code> pattern.
+        /// If you don't specify a <c>CostCategoryName</c>, <c>SearchString</c> is used to filter
+        /// Cost Category names that match the <c>SearchString</c> pattern. If you specify a <c>CostCategoryName</c>,
+        /// <c>SearchString</c> is used to filter Cost Category values that match the <c>SearchString</c>
+        /// pattern.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -168,40 +168,39 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BlendedCost</code> 
+        ///  <c>BlendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnblendedCost</code> 
+        ///  <c>UnblendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AmortizedCost</code> 
+        ///  <c>AmortizedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetAmortizedCost</code> 
+        ///  <c>NetAmortizedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetUnblendedCost</code> 
+        ///  <c>NetUnblendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UsageQuantity</code> 
+        ///  <c>UsageQuantity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NormalizedUsageAmount</code> 
+        ///  <c>NormalizedUsageAmount</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The supported key values for the <code>SortOrder</code> value are <code>ASCENDING</code>
-        /// and <code>DESCENDING</code>.
+        /// The supported key values for the <c>SortOrder</c> value are <c>ASCENDING</c> and <c>DESCENDING</c>.
         /// </para>
         ///  
         /// <para>
-        /// When you use the <code>SortBy</code> value, the <code>NextPageToken</code> and <code>SearchString</code>
+        /// When you use the <c>SortBy</c> value, the <c>NextPageToken</c> and <c>SearchString</c>
         /// key values aren't supported.
         /// </para>
         /// </summary>

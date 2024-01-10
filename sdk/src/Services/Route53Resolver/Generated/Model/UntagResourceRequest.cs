@@ -41,8 +41,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the resource that you want to remove tags from.
-        /// To get the ARN for a resource, use the applicable <code>Get</code> or <code>List</code>
-        /// command: 
+        /// To get the ARN for a resource, use the applicable <c>Get</c> or <c>List</c> command:
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>

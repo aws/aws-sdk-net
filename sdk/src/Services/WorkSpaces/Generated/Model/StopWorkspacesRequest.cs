@@ -34,9 +34,8 @@ namespace Amazon.WorkSpaces.Model
     /// 
     ///  
     /// <para>
-    /// You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code>
-    /// and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>,
-    /// or <code>ERROR</code>.
+    /// You cannot stop a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
+    /// state of <c>AVAILABLE</c>, <c>IMPAIRED</c>, <c>UNHEALTHY</c>, or <c>ERROR</c>.
     /// </para>
     /// </summary>
     public partial class StopWorkspacesRequest : AmazonWorkSpacesRequest

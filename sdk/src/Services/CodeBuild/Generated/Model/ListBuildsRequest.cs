@@ -66,11 +66,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASCENDING</code>: List the build IDs in ascending order by build ID.
+        ///  <c>ASCENDING</c>: List the build IDs in ascending order by build ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESCENDING</code>: List the build IDs in descending order by build ID.
+        ///  <c>DESCENDING</c>: List the build IDs in descending order by build ID.
         /// </para>
         ///  </li> </ul>
         /// </summary>

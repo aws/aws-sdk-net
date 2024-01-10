@@ -44,21 +44,21 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you included <code>OutputBucketName</code> in your transcription job request, this
-        /// is the URI of that bucket. If you also included <code>OutputKey</code> in your request,
-        /// your output is located in the path you specified in your request.
+        /// If you included <c>OutputBucketName</c> in your transcription job request, this is
+        /// the URI of that bucket. If you also included <c>OutputKey</c> in your request, your
+        /// output is located in the path you specified in your request.
         /// </para>
         ///  
         /// <para>
-        /// If you didn't include <code>OutputBucketName</code> in your transcription job request,
-        /// your transcript is stored in a service-managed bucket, and <code>RedactedTranscriptFileUri</code>
+        /// If you didn't include <c>OutputBucketName</c> in your transcription job request, your
+        /// transcript is stored in a service-managed bucket, and <c>RedactedTranscriptFileUri</c>
         /// provides you with a temporary URI you can use for secure access to your transcript.
         /// </para>
         ///  <note> 
         /// <para>
         /// Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes.
-        /// If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running
-        /// a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.
+        /// If you get an <c>AccesDenied</c> error, you can get a new temporary URI by running
+        /// a <c>GetTranscriptionJob</c> or <c>ListTranscriptionJob</c> request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -83,21 +83,21 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you included <code>OutputBucketName</code> in your transcription job request, this
-        /// is the URI of that bucket. If you also included <code>OutputKey</code> in your request,
-        /// your output is located in the path you specified in your request.
+        /// If you included <c>OutputBucketName</c> in your transcription job request, this is
+        /// the URI of that bucket. If you also included <c>OutputKey</c> in your request, your
+        /// output is located in the path you specified in your request.
         /// </para>
         ///  
         /// <para>
-        /// If you didn't include <code>OutputBucketName</code> in your transcription job request,
-        /// your transcript is stored in a service-managed bucket, and <code>TranscriptFileUri</code>
-        /// provides you with a temporary URI you can use for secure access to your transcript.
+        /// If you didn't include <c>OutputBucketName</c> in your transcription job request, your
+        /// transcript is stored in a service-managed bucket, and <c>TranscriptFileUri</c> provides
+        /// you with a temporary URI you can use for secure access to your transcript.
         /// </para>
         ///  <note> 
         /// <para>
         /// Temporary URIs for service-managed Amazon S3 buckets are only valid for 15 minutes.
-        /// If you get an <code>AccesDenied</code> error, you can get a new temporary URI by running
-        /// a <code>GetTranscriptionJob</code> or <code>ListTranscriptionJob</code> request.
+        /// If you get an <c>AccesDenied</c> error, you can get a new temporary URI by running
+        /// a <c>GetTranscriptionJob</c> or <c>ListTranscriptionJob</c> request.
         /// </para>
         ///  </note>
         /// </summary>

@@ -106,10 +106,10 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies
-        /// a protocol that defines how data is communicated between electronic control units
-        /// (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic
-        /// data is communicated between ECUs.
+        /// The network protocol for the vehicle. For example, <c>CAN_SIGNAL</c> specifies a protocol
+        /// that defines how data is communicated between electronic control units (ECUs). <c>OBD_SIGNAL</c>
+        /// specifies a protocol that defines how self-diagnostic data is communicated between
+        /// ECUs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,7 +129,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property VehicleMiddleware. 
         /// <para>
         /// The vehicle middleware defined as a type of network interface. Examples of vehicle
-        /// middleware include <code>ROS2</code> and <code>SOME/IP</code>.
+        /// middleware include <c>ROS2</c> and <c>SOME/IP</c>.
         /// </para>
         /// </summary>
         public VehicleMiddleware VehicleMiddleware

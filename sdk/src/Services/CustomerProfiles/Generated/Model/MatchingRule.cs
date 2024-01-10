@@ -98,7 +98,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Any customized profile attributes that start with the <code>Attributes</code> 
+    /// Any customized profile attributes that start with the <c>Attributes</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -109,8 +109,8 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// A single rule level of the <code>MatchRules</code>. Configures how the rule-based
-        /// matching process should match profiles.
+        /// A single rule level of the <c>MatchRules</c>. Configures how the rule-based matching
+        /// process should match profiles.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]

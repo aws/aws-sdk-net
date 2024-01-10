@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The conditional formatting for a <code>PivotTableVisual</code>.
+    /// The conditional formatting for a <c>PivotTableVisual</c>.
     /// </summary>
     public partial class PivotTableConditionalFormatting
     {
@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ConditionalFormattingOptions. 
         /// <para>
-        /// Conditional formatting options for a <code>PivotTableVisual</code>.
+        /// Conditional formatting options for a <c>PivotTableVisual</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

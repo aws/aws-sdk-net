@@ -33,7 +33,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     ///  
     /// <para>
-    /// The filter is evaluated as follows: <code>Type Operator Values[1]</code> 
+    /// The filter is evaluated as follows: <c>Type Operator Values[1]</c> 
     /// </para>
     /// </summary>
     public partial class PlatformFilter
@@ -45,13 +45,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to apply to the <code>Type</code> with each of the <code>Values</code>.
+        /// The operator to apply to the <c>Type</c> with each of the <c>Values</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>=</code> | <code>!=</code> | <code>&lt;</code> | <code>&lt;=</code>
-        /// | <code>&gt;</code> | <code>&gt;=</code> | <code>contains</code> | <code>begins_with</code>
-        /// | <code>ends_with</code> 
+        /// Valid values: <c>=</c> | <c>!=</c> | <c>&lt;</c> | <c>&lt;=</c> | <c>&gt;</c> | <c>&gt;=</c>
+        /// | <c>contains</c> | <c>begins_with</c> | <c>ends_with</c> 
         /// </para>
         /// </summary>
         public string Operator
@@ -73,10 +72,10 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>PlatformName</code> | <code>PlatformVersion</code> | <code>PlatformStatus</code>
-        /// | <code>PlatformBranchName</code> | <code>PlatformLifecycleState</code> | <code>PlatformOwner</code>
-        /// | <code>SupportedTier</code> | <code>SupportedAddon</code> | <code>ProgrammingLanguageName</code>
-        /// | <code>OperatingSystemName</code> 
+        /// Valid values: <c>PlatformName</c> | <c>PlatformVersion</c> | <c>PlatformStatus</c>
+        /// | <c>PlatformBranchName</c> | <c>PlatformLifecycleState</c> | <c>PlatformOwner</c>
+        /// | <c>SupportedTier</c> | <c>SupportedAddon</c> | <c>ProgrammingLanguageName</c> |
+        /// <c>OperatingSystemName</c> 
         /// </para>
         /// </summary>
         public string Type
@@ -103,22 +102,21 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PlatformStatus</code>: <code>Creating</code> | <code>Failed</code> | <code>Ready</code>
-        /// | <code>Deleting</code> | <code>Deleted</code> 
+        ///  <c>PlatformStatus</c>: <c>Creating</c> | <c>Failed</c> | <c>Ready</c> | <c>Deleting</c>
+        /// | <c>Deleted</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PlatformLifecycleState</code>: <code>recommended</code> 
+        ///  <c>PlatformLifecycleState</c>: <c>recommended</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SupportedTier</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code>
+        ///  <c>SupportedTier</c>: <c>WebServer/Standard</c> | <c>Worker/SQS/HTTP</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>SupportedAddon</c>: <c>Log/S3</c> | <c>Monitoring/Healthd</c> | <c>WorkerDaemon/SQSD</c>
         /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>SupportedAddon</code>: <code>Log/S3</code> | <code>Monitoring/Healthd</code>
-        /// | <code>WorkerDaemon/SQSD</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

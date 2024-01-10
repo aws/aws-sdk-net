@@ -30,9 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes
-    /// (64 KB) of the response JSON. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
-    /// 
+    /// (64 KB) of the response JSON. This is part of the <c>ResponseInspection</c> configuration
+    /// for <c>AWSManagedRulesATPRuleSet</c> and <c>AWSManagedRulesACFPRuleSet</c>. 
     /// 
     ///  <note> 
     /// <para>
@@ -56,7 +55,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"FailureValues": [ "False", "Failed" ]</code> 
+        /// JSON example: <c>"FailureValues": [ "False", "Failed" ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -80,8 +79,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON examples: <code>"Identifier": [ "/login/success" ]</code> and <code>"Identifier":
-        /// [ "/sign-up/success" ]</code> 
+        /// JSON examples: <c>"Identifier": [ "/login/success" ]</c> and <c>"Identifier": [ "/sign-up/success"
+        /// ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -107,7 +106,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"SuccessValues": [ "True", "Succeeded" ]</code> 
+        /// JSON example: <c>"SuccessValues": [ "True", "Succeeded" ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

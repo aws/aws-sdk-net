@@ -41,7 +41,7 @@ namespace Amazon.AlexaForBusiness.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</code>
+    ///  <c>ffmpeg -i &lt;input-file&gt; -ac 2 -codec:a libmp3lame -b:a 48k -ar 16000 &lt;output-file.mp3&gt;</c>
     /// 
     /// </para>
     /// </summary>

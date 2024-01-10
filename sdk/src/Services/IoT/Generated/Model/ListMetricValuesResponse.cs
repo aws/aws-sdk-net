@@ -57,8 +57,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that can be used to retrieve the next set of results, or <code>null</code>
-        /// if there are no additional results.
+        /// A token that can be used to retrieve the next set of results, or <c>null</c> if there
+        /// are no additional results.
         /// </para>
         /// </summary>
         public string NextToken

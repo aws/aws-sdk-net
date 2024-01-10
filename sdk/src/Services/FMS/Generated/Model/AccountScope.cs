@@ -42,12 +42,12 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property Accounts. 
         /// <para>
         /// The list of accounts within the organization that the specified Firewall Manager administrator
-        /// either can or cannot apply policies to, based on the value of <code>ExcludeSpecifiedAccounts</code>.
-        /// If <code>ExcludeSpecifiedAccounts</code> is set to <code>true</code>, then the Firewall
-        /// Manager administrator can apply policies to all members of the organization except
-        /// for the accounts in this list. If <code>ExcludeSpecifiedAccounts</code> is set to
-        /// <code>false</code>, then the Firewall Manager administrator can only apply policies
-        /// to the accounts in this list.
+        /// either can or cannot apply policies to, based on the value of <c>ExcludeSpecifiedAccounts</c>.
+        /// If <c>ExcludeSpecifiedAccounts</c> is set to <c>true</c>, then the Firewall Manager
+        /// administrator can apply policies to all members of the organization except for the
+        /// accounts in this list. If <c>ExcludeSpecifiedAccounts</c> is set to <c>false</c>,
+        /// then the Firewall Manager administrator can only apply policies to the accounts in
+        /// this list.
         /// </para>
         /// </summary>
         public List<string> Accounts
@@ -68,7 +68,7 @@ namespace Amazon.FMS.Model
         /// A boolean value that indicates if the administrator can apply policies to all accounts
         /// within an organization. If true, the administrator can apply policies to all accounts
         /// within the organization. You can either enable management of all accounts through
-        /// this operation, or you can specify a list of accounts to manage in <code>AccountScope$Accounts</code>.
+        /// this operation, or you can specify a list of accounts to manage in <c>AccountScope$Accounts</c>.
         /// You cannot specify both.
         /// </para>
         /// </summary>
@@ -87,11 +87,11 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ExcludeSpecifiedAccounts. 
         /// <para>
-        /// A boolean value that excludes the accounts in <code>AccountScope$Accounts</code> from
-        /// the administrator's scope. If true, the Firewall Manager administrator can apply policies
-        /// to all members of the organization except for the accounts listed in <code>AccountScope$Accounts</code>.
-        /// You can either specify a list of accounts to exclude by <code>AccountScope$Accounts</code>,
-        /// or you can enable management of all accounts by <code>AccountScope$AllAccountsEnabled</code>.
+        /// A boolean value that excludes the accounts in <c>AccountScope$Accounts</c> from the
+        /// administrator's scope. If true, the Firewall Manager administrator can apply policies
+        /// to all members of the organization except for the accounts listed in <c>AccountScope$Accounts</c>.
+        /// You can either specify a list of accounts to exclude by <c>AccountScope$Accounts</c>,
+        /// or you can enable management of all accounts by <c>AccountScope$AllAccountsEnabled</c>.
         /// You cannot specify both.
         /// </para>
         /// </summary>

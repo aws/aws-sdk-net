@@ -58,9 +58,8 @@ namespace Amazon.SageMakerGeospatial.Model
         /// <summary>
         /// Gets and sets the property PredefinedIndices. 
         /// <para>
-        /// One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>,
-        /// <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>,
-        /// and <code>WDRVI</code>.
+        /// One or many of the supported predefined indices to compute. Allowed values: <c>NDVI</c>,
+        /// <c>EVI2</c>, <c>MSAVI</c>, <c>NDWI</c>, <c>NDMI</c>, <c>NDSI</c>, and <c>WDRVI</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

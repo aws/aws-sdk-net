@@ -40,15 +40,15 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property RuleOrder. 
         /// <para>
-        /// Indicates how to manage the order of stateful rule evaluation for the policy. <code>STRICT_ORDER</code>
-        /// is the default and recommended option. With <code>STRICT_ORDER</code>, provide your
-        /// rules in the order that you want them to be evaluated. You can then choose one or
-        /// more default actions for packets that don't match any rules. Choose <code>STRICT_ORDER</code>
-        /// to have the stateful rules engine determine the evaluation order of your rules. The
-        /// default action for this rule order is <code>PASS</code>, followed by <code>DROP</code>,
-        /// <code>REJECT</code>, and <code>ALERT</code> actions. Stateful rules are provided to
-        /// the rule engine as Suricata compatible strings, and Suricata evaluates them based
-        /// on your settings. For more information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
+        /// Indicates how to manage the order of stateful rule evaluation for the policy. <c>STRICT_ORDER</c>
+        /// is the default and recommended option. With <c>STRICT_ORDER</c>, provide your rules
+        /// in the order that you want them to be evaluated. You can then choose one or more default
+        /// actions for packets that don't match any rules. Choose <c>STRICT_ORDER</c> to have
+        /// the stateful rules engine determine the evaluation order of your rules. The default
+        /// action for this rule order is <c>PASS</c>, followed by <c>DROP</c>, <c>REJECT</c>,
+        /// and <c>ALERT</c> actions. Stateful rules are provided to the rule engine as Suricata
+        /// compatible strings, and Suricata evaluates them based on your settings. For more information,
+        /// see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation
         /// order for stateful rules</a> in the <i>Network Firewall Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -73,26 +73,26 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DROP</code> - Network Firewall fails closed and drops all subsequent traffic
-        /// going to the firewall. This is the default behavior.
+        ///  <c>DROP</c> - Network Firewall fails closed and drops all subsequent traffic going
+        /// to the firewall. This is the default behavior.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Network Firewall continues to apply rules to the subsequent
-        /// traffic without context from traffic before the break. This impacts the behavior of
-        /// rules that depend on this context. For example, if you have a stateful rule to <code>drop
-        /// http</code> traffic, Network Firewall won't match the traffic for this rule because
-        /// the service won't have the context from session initialization defining the application
-        /// layer protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule
-        /// using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code>
+        ///  <c>CONTINUE</c> - Network Firewall continues to apply rules to the subsequent traffic
+        /// without context from traffic before the break. This impacts the behavior of rules
+        /// that depend on this context. For example, if you have a stateful rule to <c>drop http</c>
+        /// traffic, Network Firewall won't match the traffic for this rule because the service
+        /// won't have the context from session initialization defining the application layer
+        /// protocol as HTTP. However, this behavior is rule dependent—a TCP-layer rule using
+        /// a <c>flow:stateless</c> rule would still match, as would the <c>aws:drop_strict</c>
         /// default action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic
-        /// going to the firewall. Network Firewall also sends a TCP reject packet back to your
-        /// client so that the client can immediately establish a new session. Network Firewall
-        /// will have context about the new session and will apply rules to the subsequent traffic.
+        ///  <c>REJECT</c> - Network Firewall fails closed and drops all subsequent traffic going
+        /// to the firewall. Network Firewall also sends a TCP reject packet back to your client
+        /// so that the client can immediately establish a new session. Network Firewall will
+        /// have context about the new session and will apply rules to the subsequent traffic.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -105,8 +105,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        /// If <code>true</code>, major version upgrades can be applied during the maintenance
-        /// window to the Amazon Redshift engine that is running on the cluster.
+        /// If <c>true</c>, major version upgrades can be applied during the maintenance window
+        /// to the Amazon Redshift engine that is running on the cluster.
         /// </para>
         ///  
         /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool AllowVersionUpgrade
@@ -164,7 +164,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         ///  
         /// <para>
@@ -198,7 +198,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-2d</code> 
+        /// Example: <c>us-east-2d</c> 
         /// </para>
         ///  
         /// <para>
@@ -271,7 +271,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>myexamplecluster</code> 
+        /// Example: <c>myexamplecluster</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]
@@ -382,19 +382,19 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>single-node</code>, the <b>NumberOfNodes</b> parameter is not required.
+        ///  <c>single-node</c>, the <b>NumberOfNodes</b> parameter is not required.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>multi-node</code>, the <b>NumberOfNodes</b> parameter is required.
+        ///  <c>multi-node</c>, the <b>NumberOfNodes</b> parameter is required.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Valid Values: <code>multi-node</code> | <code>single-node</code> 
+        /// Valid Values: <c>multi-node</c> | <c>single-node</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>multi-node</code> 
+        /// Default: <c>multi-node</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -426,7 +426,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>1.0</code> 
+        /// Example: <c>1.0</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -456,7 +456,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>dev</code> 
+        /// Default: <c>dev</c> 
         /// </para>
         ///  
         /// <para>
@@ -541,7 +541,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// If <code>true</code>, the data in the cluster is encrypted at rest. 
+        /// If <c>true</c>, the data in the cluster is encrypted at rest. 
         /// </para>
         ///  
         /// <para>
@@ -570,7 +570,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// If this option is <c>true</c>, enhanced VPC routing is enabled. 
         /// </para>
         ///  
         /// <para>
@@ -658,8 +658,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IP address types that the cluster supports. Possible values are <code>ipv4</code>
-        /// and <code>dualstack</code>.
+        /// The IP address types that the cluster supports. Possible values are <c>ipv4</c> and
+        /// <c>dualstack</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -718,7 +718,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaintenanceTrackName. 
         /// <para>
         /// An optional parameter for the name of the maintenance track for the cluster. If you
-        /// don't provide a maintenance track name, the cluster is assigned to the <code>current</code>
+        /// don't provide a maintenance track name, the cluster is assigned to the <c>current</c>
         /// track.
         /// </para>
         /// </summary>
@@ -738,10 +738,10 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ManageMasterPassword. 
         /// <para>
-        /// If <code>true</code>, Amazon Redshift uses Secrets Manager to manage this cluster's
-        /// admin credentials. You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code>
-        /// is true. If <code>ManageMasterPassword</code> is false or not set, Amazon Redshift
-        /// uses <code>MasterUserPassword</code> for the admin user account's password. 
+        /// If <c>true</c>, Amazon Redshift uses Secrets Manager to manage this cluster's admin
+        /// credentials. You can't use <c>MasterUserPassword</c> if <c>ManageMasterPassword</c>
+        /// is true. If <c>ManageMasterPassword</c> is false or not set, Amazon Redshift uses
+        /// <c>MasterUserPassword</c> for the admin user account's password. 
         /// </para>
         /// </summary>
         public bool ManageMasterPassword
@@ -784,7 +784,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MasterPasswordSecretKmsKeyId. 
         /// <para>
         /// The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's
-        /// admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code>
+        /// admin credentials secret. You can only use this parameter if <c>ManageMasterPassword</c>
         /// is true.
         /// </para>
         /// </summary>
@@ -813,7 +813,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <code>PUBLIC</code>.
+        /// Must be 1 - 128 alphanumeric characters or hyphens. The user name can't be <c>PUBLIC</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -856,8 +856,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't use <code>MasterUserPassword</code> if <code>ManageMasterPassword</code>
-        /// is <code>true</code>.
+        /// You can't use <c>MasterUserPassword</c> if <c>ManageMasterPassword</c> is <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -881,8 +880,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can be any printable ASCII character (ASCII code 33-126) except <code>'</code> (single
-        /// quote), <code>"</code> (double quote), <code>\</code>, <code>/</code>, or <code>@</code>.
+        /// Can be any printable ASCII character (ASCII code 33-126) except <c>'</c> (single quote),
+        /// <c>"</c> (double quote), <c>\</c>, <c>/</c>, or <c>@</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -927,9 +926,9 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code>
-        /// | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code>
-        /// | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> 
+        /// Valid Values: <c>ds2.xlarge</c> | <c>ds2.8xlarge</c> | <c>dc1.large</c> | <c>dc1.8xlarge</c>
+        /// | <c>dc2.large</c> | <c>dc2.8xlarge</c> | <c>ra3.xlplus</c> | <c>ra3.4xlarge</c> |
+        /// <c>ra3.16xlarge</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]
@@ -949,7 +948,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
         /// The number of compute nodes in the cluster. This parameter is required when the <b>ClusterType</b>
-        /// parameter is specified as <code>multi-node</code>. 
+        /// parameter is specified as <c>multi-node</c>. 
         /// </para>
         ///  
         /// <para>
@@ -964,7 +963,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         ///  
         /// <para>
@@ -996,11 +995,11 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>5439</code> 
+        /// Default: <c>5439</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <c>1150-65535</c> 
         /// </para>
         /// </summary>
         public int Port
@@ -1022,7 +1021,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        ///  Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>
@@ -1056,7 +1055,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// If <code>true</code>, the cluster can be accessed from a public network. 
+        /// If <c>true</c>, the cluster can be accessed from a public network. 
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

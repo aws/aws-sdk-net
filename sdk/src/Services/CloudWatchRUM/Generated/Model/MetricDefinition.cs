@@ -48,8 +48,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <para>
         /// This field is a map of field paths to dimension names. It defines the dimensions to
         /// associate with this metric in CloudWatch The value of this field is used only if the
-        /// metric destination is <code>CloudWatch</code>. If the metric destination is <code>Evidently</code>,
-        /// the value of <code>DimensionKeys</code> is ignored.
+        /// metric destination is <c>CloudWatch</c>. If the metric destination is <c>Evidently</c>,
+        /// the value of <c>DimensionKeys</c> is ignored.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=29)]
@@ -73,9 +73,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  
         /// <para>
-        /// If the metrics destination is <code>CloudWatch</code> and the event also matches a
-        /// value in <code>DimensionKeys</code>, then the metric is published with the specified
-        /// dimensions. 
+        /// If the metrics destination is <c>CloudWatch</c> and the event also matches a value
+        /// in <c>DimensionKeys</c>, then the metric is published with the specified dimensions.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4000)]

@@ -99,9 +99,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token to retrieve the next set of results. For example, if you previously specified
-        /// 100 IDs for <code>ListServerNeighborsRequest$neighborConfigurationIds</code> but set
-        /// <code>ListServerNeighborsRequest$maxResults</code> to 10, you received a set of 10
-        /// results along with a token. Use that token in this query to get the next set of 10.
+        /// 100 IDs for <c>ListServerNeighborsRequest$neighborConfigurationIds</c> but set <c>ListServerNeighborsRequest$maxResults</c>
+        /// to 10, you received a set of 10 results along with a token. Use that token in this
+        /// query to get the next set of 10.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

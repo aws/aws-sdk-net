@@ -60,8 +60,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property ReplicationRegions. 
         /// <para>
-        ///  If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>,
-        /// a list of replication Regions is returned. 
+        ///  If the <c>replicationStrategy</c> of the keyspace is <c>MULTI_REGION</c>, a list
+        /// of replication Regions is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=6)]
@@ -81,8 +81,7 @@ namespace Amazon.Keyspaces.Model
         /// Gets and sets the property ReplicationStrategy. 
         /// <para>
         ///  This property specifies if a keyspace is a single Region keyspace or a multi-Region
-        /// keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.
-        /// 
+        /// keyspace. The available values are <c>SINGLE_REGION</c> or <c>MULTI_REGION</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

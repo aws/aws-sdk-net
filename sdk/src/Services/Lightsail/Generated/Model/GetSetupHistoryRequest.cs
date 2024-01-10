@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSetupHistory operation.
-    /// Returns detailed information for five of the most recent <code>SetupInstanceHttps</code>
+    /// Returns detailed information for five of the most recent <c>SetupInstanceHttps</c>
     /// requests that were ran on the target instance.
     /// </summary>
     public partial class GetSetupHistoryRequest : AmazonLightsailRequest
@@ -45,9 +45,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a page token, perform an initial <code>GetSetupHistory</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.
+        /// To get a page token, perform an initial <c>GetSetupHistory</c> request. If your results
+        /// are paginated, the response will return a next page token that you can specify as
+        /// the page token in a subsequent request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=24, Max=40)]

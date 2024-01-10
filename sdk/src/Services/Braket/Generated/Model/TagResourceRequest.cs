@@ -40,7 +40,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Specify the <code>resourceArn</code> of the resource to which a tag will be added.
+        /// Specify the <c>resourceArn</c> of the resource to which a tag will be added.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

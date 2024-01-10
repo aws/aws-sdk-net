@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
+    /// You obtain a shard iterator, but before you use the iterator in a <c>GetRecords</c>
     /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
     /// causes the iterator to access a record that no longer exists.
     /// </para>

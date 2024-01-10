@@ -41,8 +41,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CategoricalParameterRangeSpecification. 
         /// <para>
-        /// A <code>CategoricalParameterRangeSpecification</code> object that defines the possible
-        /// values for a categorical hyperparameter.
+        /// A <c>CategoricalParameterRangeSpecification</c> object that defines the possible values
+        /// for a categorical hyperparameter.
         /// </para>
         /// </summary>
         public CategoricalParameterRangeSpecification CategoricalParameterRangeSpecification
@@ -60,8 +60,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContinuousParameterRangeSpecification. 
         /// <para>
-        /// A <code>ContinuousParameterRangeSpecification</code> object that defines the possible
-        /// values for a continuous hyperparameter.
+        /// A <c>ContinuousParameterRangeSpecification</c> object that defines the possible values
+        /// for a continuous hyperparameter.
         /// </para>
         /// </summary>
         public ContinuousParameterRangeSpecification ContinuousParameterRangeSpecification
@@ -79,8 +79,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IntegerParameterRangeSpecification. 
         /// <para>
-        /// A <code>IntegerParameterRangeSpecification</code> object that defines the possible
-        /// values for an integer hyperparameter.
+        /// A <c>IntegerParameterRangeSpecification</c> object that defines the possible values
+        /// for an integer hyperparameter.
         /// </para>
         /// </summary>
         public IntegerParameterRangeSpecification IntegerParameterRangeSpecification

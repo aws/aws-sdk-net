@@ -122,8 +122,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol for the health check request. If you specify <code>grpc</code>, then
-        /// your service must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
+        /// The protocol for the health check request. If you specify <c>grpc</c>, then your service
+        /// must conform to the <a href="https://github.com/grpc/grpc/blob/master/doc/health-checking.md">GRPC
         /// Health Checking Protocol</a>.
         /// </para>
         /// </summary>

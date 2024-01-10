@@ -88,8 +88,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>STRUCT</code>, you must also specify <code>dataTypeSpec</code>
-        /// to identify the type of the structure for this time series.
+        /// If you specify <c>STRUCT</c>, you must also specify <c>dataTypeSpec</c> to identify
+        /// the type of the structure for this time series.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -109,12 +109,12 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property DataTypeSpec. 
         /// <para>
         /// The data type of the structure for this time series. This parameter is required for
-        /// time series that have the <code>STRUCT</code> data type.
+        /// time series that have the <c>STRUCT</c> data type.
         /// </para>
         ///  
         /// <para>
         /// The options for this parameter depend on the type of the composite model in which
-        /// you created the asset property that is associated with your time series. Use <code>AWS/ALARM_STATE</code>
+        /// you created the asset property that is associated with your time series. Use <c>AWS/ALARM_STATE</c>
         /// for alarm state in alarm composite models.
         /// </para>
         /// </summary>
@@ -158,7 +158,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</code>
+        ///  <c>arn:${Partition}:iotsitewise:${Region}:${Account}:time-series/${TimeSeriesId}</c>
         /// 
         /// </para>
         /// </summary>

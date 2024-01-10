@@ -59,7 +59,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>removeAttributes</code> activity.
+        /// The name of the <c>removeAttributes</c> activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

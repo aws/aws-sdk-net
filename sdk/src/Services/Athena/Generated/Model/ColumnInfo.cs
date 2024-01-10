@@ -120,7 +120,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Nullable. 
         /// <para>
-        /// Unsupported constraint. This value always shows as <code>UNKNOWN</code>.
+        /// Unsupported constraint. This value always shows as <c>UNKNOWN</c>.
         /// </para>
         /// </summary>
         public ColumnNullable Nullable
@@ -138,8 +138,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Precision. 
         /// <para>
-        /// For <code>DECIMAL</code> data types, specifies the total number of digits, up to 38.
-        /// For performance reasons, we recommend up to 18 digits.
+        /// For <c>DECIMAL</c> data types, specifies the total number of digits, up to 38. For
+        /// performance reasons, we recommend up to 18 digits.
         /// </para>
         /// </summary>
         public int Precision
@@ -157,7 +157,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Scale. 
         /// <para>
-        /// For <code>DECIMAL</code> data types, specifies the total number of digits in the fractional
+        /// For <c>DECIMAL</c> data types, specifies the total number of digits in the fractional
         /// part of the value. Defaults to 0.
         /// </para>
         /// </summary>

@@ -35,8 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  
     /// <para>
-    ///  This operation requires permissions to perform the <code>lex:GetIntent</code> action.
-    /// 
+    ///  This operation requires permissions to perform the <c>lex:GetIntent</c> action. 
     /// </para>
     /// </summary>
     public partial class GetIntentRequest : AmazonLexModelBuildingServiceRequest

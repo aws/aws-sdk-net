@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Describes an <code>ApiAssociation</code> object.
+    /// Describes an <c>ApiAssociation</c> object.
     /// </summary>
     public partial class ApiAssociation
     {

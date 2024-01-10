@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a>
-    /// </code> operation.
+    /// Container for response returned by <c> <a>GetCompatibleElasticsearchVersions</a>
+    /// </c> operation.
     /// </summary>
     public partial class GetCompatibleElasticsearchVersionsResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CompatibleElasticsearchVersions. 
         /// <para>
-        ///  A map of compatible Elasticsearch versions returned as part of the <code> <a>GetCompatibleElasticsearchVersions</a>
-        /// </code> operation. 
+        ///  A map of compatible Elasticsearch versions returned as part of the <c> <a>GetCompatibleElasticsearchVersions</a>
+        /// </c> operation. 
         /// </para>
         /// </summary>
         public List<CompatibleVersionsMap> CompatibleElasticsearchVersions

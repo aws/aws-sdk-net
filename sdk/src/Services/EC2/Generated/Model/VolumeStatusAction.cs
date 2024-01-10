@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The code identifying the operation, for example, <code>enable-volume-io</code>.
+        /// The code identifying the operation, for example, <c>enable-volume-io</c>.
         /// </para>
         /// </summary>
         public string Code

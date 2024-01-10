@@ -102,8 +102,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         /// You can specify a qualified or unqualified ARN. If you specify an unqualified ARN
         /// without a function version suffix, Compute Optimizer will return recommendations for
-        /// the latest (<code>$LATEST</code>) version of the function. If you specify a qualified
-        /// ARN with a version suffix, Compute Optimizer will return recommendations for the specified
+        /// the latest (<c>$LATEST</c>) version of the function. If you specify a qualified ARN
+        /// with a version suffix, Compute Optimizer will return recommendations for the specified
         /// function version. For more information about using function versions, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-versions.html#versioning-versions-using">Using
         /// versions</a> in the <i>Lambda Developer Guide</i>.
         /// </para>
@@ -127,7 +127,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <c>nextToken</c>
         /// value.
         /// </para>
         /// </summary>

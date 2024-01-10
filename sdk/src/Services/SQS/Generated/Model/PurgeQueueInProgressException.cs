@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
+    /// Indicates that the specified queue previously received a <c>PurgeQueue</c> request
     /// within the last 60 seconds (the time it can take to delete the messages in the queue).
     /// </summary>
     #if !NETSTANDARD

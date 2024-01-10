@@ -90,7 +90,7 @@ namespace Amazon.CodePipeline.Model
         ///  
         /// <para>
         /// To grant permission to another account, specify the account ID as the Principal, a
-        /// domain-style identifier defined by the service, for example <code>codepipeline.amazonaws.com</code>.
+        /// domain-style identifier defined by the service, for example <c>codepipeline.amazonaws.com</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -114,8 +114,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The integration model used to create and update the action type, <code>Lambda</code>
-        /// or <code>JobWorker</code>. 
+        /// The integration model used to create and update the action type, <c>Lambda</c> or
+        /// <c>JobWorker</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

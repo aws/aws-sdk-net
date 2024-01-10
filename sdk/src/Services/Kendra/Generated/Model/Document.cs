@@ -116,8 +116,8 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// Documents passed to the <code>Blob</code> parameter must be base64 encoded. Your code
-        /// might not need to encode the document file bytes if you're using an Amazon Web Services
+        /// Documents passed to the <c>Blob</c> parameter must be base64 encoded. Your code might
+        /// not need to encode the document file bytes if you're using an Amazon Web Services
         /// SDK to call Amazon Kendra APIs. If you are calling the Amazon Kendra endpoint directly
         /// using REST, you must base64 encode the contents before sending.
         /// </para>
@@ -137,12 +137,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The file type of the document in the <code>Blob</code> field.
+        /// The file type of the document in the <c>Blob</c> field.
         /// </para>
         ///  
         /// <para>
         /// If you want to index snippets or subsets of HTML documents instead of the entirety
-        /// of the HTML documents, you must add the <code>HTML</code> start and closing tags (<code>&lt;HTML&gt;content&lt;/HTML&gt;</code>)
+        /// of the HTML documents, you must add the <c>HTML</c> start and closing tags (<c>&lt;HTML&gt;content&lt;/HTML&gt;</c>)
         /// around the content.
         /// </para>
         /// </summary>
@@ -186,9 +186,9 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// Note, each document ID must be unique per index. You cannot create a data source to
-        /// index your documents with their unique IDs and then use the <code>BatchPutDocument</code>
+        /// index your documents with their unique IDs and then use the <c>BatchPutDocument</c>
         /// API to index the same documents, or vice versa. You can delete a data source and then
-        /// use the <code>BatchPutDocument</code> API to index the same documents, or vice versa.
+        /// use the <c>BatchPutDocument</c> API to index the same documents, or vice versa.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

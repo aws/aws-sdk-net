@@ -34,8 +34,8 @@ namespace Amazon.GroundStation.Model
     /// 
     ///  
     /// <para>
-    /// If <code>statusList</code> contains AVAILABLE, the request must include <code>groundStation</code>,
-    /// <code>missionprofileArn</code>, and <code>satelliteArn</code>. 
+    /// If <c>statusList</c> contains AVAILABLE, the request must include <c>groundStation</c>,
+    /// <c>missionprofileArn</c>, and <c>satelliteArn</c>. 
     /// </para>
     /// </summary>
     public partial class ListContactsRequest : AmazonGroundStationRequest
@@ -127,8 +127,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next token returned in the request of a previous <code>ListContacts</code> call. Used
-        /// to get the next page of results.
+        /// Next token returned in the request of a previous <c>ListContacts</c> call. Used to
+        /// get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=1000)]

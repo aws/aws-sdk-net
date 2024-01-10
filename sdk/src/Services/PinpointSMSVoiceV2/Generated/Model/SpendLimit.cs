@@ -45,8 +45,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// Gets and sets the property EnforcedLimit. 
         /// <para>
         /// The maximum amount of money, in US dollars, that you want to be able to spend sending
-        /// messages each month. This value has to be less than or equal to the amount in <code>MaxLimit</code>.
-        /// To use this custom limit, <code>Overridden</code> must be set to true.
+        /// messages each month. This value has to be less than or equal to the amount in <c>MaxLimit</c>.
+        /// To use this custom limit, <c>Overridden</c> must be set to true.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// <summary>
         /// Gets and sets the property Overridden. 
         /// <para>
-        /// When set to <code>True</code>, the value that has been specified in the <code>EnforcedLimit</code>
+        /// When set to <c>True</c>, the value that has been specified in the <c>EnforcedLimit</c>
         /// is used to determine the maximum amount in US dollars that can be spent to send messages
         /// each month, in US dollars.
         /// </para>

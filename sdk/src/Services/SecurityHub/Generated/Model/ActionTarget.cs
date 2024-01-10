@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An <code>ActionTarget</code> object.
+    /// An <c>ActionTarget</c> object.
     /// </summary>
     public partial class ActionTarget
     {

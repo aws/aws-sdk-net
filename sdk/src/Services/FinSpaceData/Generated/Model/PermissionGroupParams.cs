@@ -33,13 +33,13 @@ namespace Amazon.FinSpaceData.Model
     /// 
     ///  
     /// <para>
-    /// Here is an example of how you could specify the <code>PermissionGroupParams</code>:
+    /// Here is an example of how you could specify the <c>PermissionGroupParams</c>:
     /// </para>
     ///  
     /// <para>
-    ///  <code> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission":
+    ///  <c> { "permissionGroupId": "0r6fCRtSTUk4XPfXQe3M0g", "datasetPermissions": [ {"permission":
     /// "ViewDatasetDetails"}, {"permission": "AddDatasetData"}, {"permission": "EditDatasetMetadata"},
-    /// {"permission": "DeleteDataset"} ] } </code> 
+    /// {"permission": "DeleteDataset"} ] } </c> 
     /// </para>
     /// </summary>
     public partial class PermissionGroupParams
@@ -68,7 +68,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property PermissionGroupId. 
         /// <para>
-        /// The unique identifier for the <code>PermissionGroup</code>.
+        /// The unique identifier for the <c>PermissionGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=26)]

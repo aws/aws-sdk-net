@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents a single entry in a list of locations. <code>LocationListEntry</code> returns
+    /// Represents a single entry in a list of locations. <c>LocationListEntry</c> returns
     /// an array that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
     /// operation is called.
     /// </summary>
@@ -62,24 +62,24 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property LocationUri. 
         /// <para>
-        /// Represents a list of URIs of a location. <code>LocationUri</code> returns an array
-        /// that contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
+        /// Represents a list of URIs of a location. <c>LocationUri</c> returns an array that
+        /// contains a list of locations when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListLocations.html">ListLocations</a>
         /// operation is called.
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>TYPE://GLOBAL_ID/SUBDIR</code>.
+        /// Format: <c>TYPE://GLOBAL_ID/SUBDIR</c>.
         /// </para>
         ///  
         /// <para>
-        /// TYPE designates the type of location (for example, <code>nfs</code> or <code>s3</code>).
+        /// TYPE designates the type of location (for example, <c>nfs</c> or <c>s3</c>).
         /// </para>
         ///  
         /// <para>
         /// GLOBAL_ID is the globally unique identifier of the resource that backs the location.
-        /// An example for EFS is <code>us-east-2.fs-abcd1234</code>. An example for Amazon S3
-        /// is the bucket name, such as <code>myBucket</code>. An example for NFS is a valid IPv4
-        /// address or a hostname that is compliant with Domain Name Service (DNS).
+        /// An example for EFS is <c>us-east-2.fs-abcd1234</c>. An example for Amazon S3 is the
+        /// bucket name, such as <c>myBucket</c>. An example for NFS is a valid IPv4 address or
+        /// a hostname that is compliant with Domain Name Service (DNS).
         /// </para>
         ///  
         /// <para>

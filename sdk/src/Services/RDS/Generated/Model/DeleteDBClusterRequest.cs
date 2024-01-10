@@ -108,13 +108,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
-        /// The DB cluster snapshot identifier of the new DB cluster snapshot created when <code>SkipFinalSnapshot</code>
+        /// The DB cluster snapshot identifier of the new DB cluster snapshot created when <c>SkipFinalSnapshot</c>
         /// is disabled.
         /// </para>
         ///  <note> 
         /// <para>
         /// Specifying this parameter and also skipping the creation of a final DB cluster snapshot
-        /// with the <code>SkipFinalShapshot</code> parameter results in an error.
+        /// with the <c>SkipFinalShapshot</c> parameter results in an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -157,7 +157,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify a <code>FinalDBSnapshotIdentifier</code> parameter if <code>SkipFinalSnapshot</code>
+        /// You must specify a <c>FinalDBSnapshotIdentifier</c> parameter if <c>SkipFinalSnapshot</c>
         /// is disabled.
         /// </para>
         ///  </note>

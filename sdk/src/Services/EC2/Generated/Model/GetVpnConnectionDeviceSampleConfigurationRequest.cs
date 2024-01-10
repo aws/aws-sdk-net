@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InternetKeyExchangeVersion. 
         /// <para>
         /// The IKE version to be used in the sample configuration file for your customer gateway
-        /// device. You can specify one of the following versions: <code>ikev1</code> or <code>ikev2</code>.
+        /// device. You can specify one of the following versions: <c>ikev1</c> or <c>ikev2</c>.
         /// </para>
         /// </summary>
         public string InternetKeyExchangeVersion
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpnConnectionDeviceTypeId. 
         /// <para>
-        /// Device identifier provided by the <code>GetVpnConnectionDeviceTypes</code> API.
+        /// Device identifier provided by the <c>GetVpnConnectionDeviceTypes</c> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,8 +80,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpnConnectionId. 
         /// <para>
-        /// The <code>VpnConnectionId</code> specifies the Site-to-Site VPN connection used for
-        /// the sample configuration.
+        /// The <c>VpnConnectionId</c> specifies the Site-to-Site VPN connection used for the
+        /// sample configuration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

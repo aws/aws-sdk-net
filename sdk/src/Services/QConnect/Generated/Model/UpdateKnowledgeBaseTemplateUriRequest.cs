@@ -31,10 +31,9 @@ namespace Amazon.QConnect.Model
     /// <summary>
     /// Container for the parameters to the UpdateKnowledgeBaseTemplateUri operation.
     /// Updates the template URI of a knowledge base. This is only supported for knowledge
-    /// bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format;
-    /// this interpolated by Amazon Q using ingested content. For example, if you ingest a
-    /// Salesforce article, it has an <code>Id</code> value, and you can set the template
-    /// URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>.
+    /// bases of type EXTERNAL. Include a single variable in <c>${variable}</c> format; this
+    /// interpolated by Amazon Q using ingested content. For example, if you ingest a Salesforce
+    /// article, it has an <c>Id</c> value, and you can set the template URI to <c>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</c>.
     /// </summary>
     public partial class UpdateKnowledgeBaseTemplateUriRequest : AmazonQConnectRequest
     {

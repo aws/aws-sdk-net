@@ -112,8 +112,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property EvaluationResult. 
         /// <para>
-        /// The training results. <code>EvaluationResult</code> is only returned if training is
-        /// successful.
+        /// The training results. <c>EvaluationResult</c> is only returned if training is successful.
         /// </para>
         /// </summary>
         public EvaluationResult EvaluationResult
@@ -283,7 +282,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SourceProjectVersionArn. 
         /// <para>
-        /// If the model version was copied from a different project, <code>SourceProjectVersionArn</code>
+        /// If the model version was copied from a different project, <c>SourceProjectVersionArn</c>
         /// contains the ARN of the source model version. 
         /// </para>
         /// </summary>

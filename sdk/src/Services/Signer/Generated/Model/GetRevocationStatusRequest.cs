@@ -59,26 +59,25 @@ namespace Amazon.Signer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</code> 
+        ///  <c>openssl asn1parse -in childCert.pem -strparse 4 -out childCert.tbs</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</code> 
+        ///  <c>openssl sha384 &lt; childCert.tbs -binary &gt; childCertTbsHash</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</code>
+        ///  <c>openssl asn1parse -in parentCert.pem -strparse 4 -out parentCert.tbs</c> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash
+        /// &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl sha384 &lt; parentCert.tbs -binary &gt; parentCertTbsHash xxd -p childCertTbsHash
-        /// &gt; certificateHash.hex xxd -p parentCertTbsHash &gt;&gt; certificateHash.hex</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>cat certificateHash.hex | tr -d '\n'</code> 
+        ///  <c>cat certificateHash.hex | tr -d '\n'</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBClusterSnapshots</code>
+    /// This data type is used as a response element in the <c>DescribeDBClusterSnapshots</c>
     /// action.
     /// </para>
     /// </summary>
@@ -287,8 +287,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the Amazon Web Services KMS key identifier
-        /// for the encrypted DB cluster snapshot.
+        /// If <c>StorageEncrypted</c> is true, the Amazon Web Services KMS key identifier for
+        /// the encrypted DB cluster snapshot.
         /// </para>
         ///  
         /// <para>
@@ -442,15 +442,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>available</code> 
+        ///  <c>available</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>copying</code> 
+        ///  <c>copying</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>creating</code> 
+        ///  <c>creating</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

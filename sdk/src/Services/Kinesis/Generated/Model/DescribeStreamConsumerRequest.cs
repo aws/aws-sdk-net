@@ -44,8 +44,8 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// When making a cross-account call with <code>DescribeStreamConsumer</code>, make sure
-    /// to provide the ARN of the consumer. 
+    /// When making a cross-account call with <c>DescribeStreamConsumer</c>, make sure to
+    /// provide the ARN of the consumer. 
     /// </para>
     ///  </note>
     /// </summary>

@@ -41,13 +41,13 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property InputPathsMap. 
         /// <para>
         /// Map of JSON paths to be extracted from the event. You can then insert these in the
-        /// template in <code>InputTemplate</code> to produce the output you want to be sent to
-        /// the target.
+        /// template in <c>InputTemplate</c> to produce the output you want to be sent to the
+        /// target.
         /// </para>
         ///  
         /// <para>
-        ///  <code>InputPathsMap</code> is an array key-value pairs, where each value is a valid
-        /// JSON path. You can have as many as 100 key-value pairs. You must use JSON dot notation,
+        ///  <c>InputPathsMap</c> is an array key-value pairs, where each value is a valid JSON
+        /// path. You can have as many as 100 key-value pairs. You must use JSON dot notation,
         /// not bracket notation.
         /// </para>
         ///  
@@ -72,12 +72,12 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property InputTemplate. 
         /// <para>
         /// Input template where you specify placeholders that will be filled with the values
-        /// of the keys from <code>InputPathsMap</code> to customize the data sent to the target.
-        /// Enclose each <code>InputPathsMaps</code> value in brackets: &lt;<i>value</i>&gt; 
+        /// of the keys from <c>InputPathsMap</c> to customize the data sent to the target. Enclose
+        /// each <c>InputPathsMaps</c> value in brackets: &lt;<i>value</i>&gt; 
         /// </para>
         ///  
         /// <para>
-        /// If <code>InputTemplate</code> is a JSON object (surrounded by curly braces), the following
+        /// If <c>InputTemplate</c> is a JSON object (surrounded by curly braces), the following
         /// restrictions apply:
         /// </para>
         ///  <ul> <li> 
@@ -86,81 +86,81 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following example shows the syntax for using <code>InputPathsMap</code> and <code>InputTemplate</code>.
+        /// The following example shows the syntax for using <c>InputPathsMap</c> and <c>InputTemplate</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code> "InputTransformer":</code> 
+        ///  <c> "InputTransformer":</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>{</code> 
+        ///  <c>{</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+        ///  <c>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</code> 
+        ///  <c>"InputTemplate": "&lt;instance&gt; is in state &lt;status&gt;"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>}</code> 
+        ///  <c>}</c> 
         /// </para>
         ///  
         /// <para>
-        /// To have the <code>InputTemplate</code> include quote marks within a JSON string, escape
+        /// To have the <c>InputTemplate</c> include quote marks within a JSON string, escape
         /// each quote marks with a slash, as in the following example:
         /// </para>
         ///  
         /// <para>
-        ///  <code> "InputTransformer":</code> 
+        ///  <c> "InputTransformer":</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>{</code> 
+        ///  <c>{</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+        ///  <c>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</code> 
+        ///  <c>"InputTemplate": "&lt;instance&gt; is in state \"&lt;status&gt;\""</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>}</code> 
+        ///  <c>}</c> 
         /// </para>
         ///  
         /// <para>
-        /// The <code>InputTemplate</code> can also be valid JSON with varibles in quotes or out,
-        /// as in the following example:
+        /// The <c>InputTemplate</c> can also be valid JSON with varibles in quotes or out, as
+        /// in the following example:
         /// </para>
         ///  
         /// <para>
-        ///  <code> "InputTransformer":</code> 
+        ///  <c> "InputTransformer":</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>{</code> 
+        ///  <c>{</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</code>
+        ///  <c>"InputPathsMap": {"instance": "$.detail.instance","status": "$.detail.status"},</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt;
-        /// is in state \"&lt;status&gt;\""}'</code> 
+        ///  <c>"InputTemplate": '{"myInstance": &lt;instance&gt;,"myStatus": "&lt;instance&gt;
+        /// is in state \"&lt;status&gt;\""}'</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>}</code> 
+        ///  <c>}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8192)]

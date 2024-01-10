@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Up to 255 characters in length. Cannot start with <code>sg-</code>.
+        /// Constraints: Up to 255 characters in length. Cannot start with <c>sg-</c>.
         /// </para>
         ///  
         /// <para>

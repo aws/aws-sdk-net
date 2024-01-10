@@ -30,9 +30,9 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// A sample configuration for profile jobs only, which determines the number of rows
-    /// on which the profile job is run. If a <code>JobSample</code> value isn't provided,
-    /// the default is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000
-    /// for the size parameter.
+    /// on which the profile job is run. If a <c>JobSample</c> value isn't provided, the default
+    /// is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000 for the
+    /// size parameter.
     /// </summary>
     public partial class JobSample
     {
@@ -51,7 +51,7 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// CUSTOM_ROWS - The profile job is run on the number of rows specified in the <code>Size</code>
+        /// CUSTOM_ROWS - The profile job is run on the number of rows specified in the <c>Size</c>
         /// parameter.
         /// </para>
         ///  </li> </ul>
@@ -71,9 +71,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property Size. 
         /// <para>
-        /// The <code>Size</code> parameter is only required when the mode is CUSTOM_ROWS. The
-        /// profile job is run on the specified number of rows. The maximum value for size is
-        /// Long.MAX_VALUE.
+        /// The <c>Size</c> parameter is only required when the mode is CUSTOM_ROWS. The profile
+        /// job is run on the specified number of rows. The maximum value for size is Long.MAX_VALUE.
         /// </para>
         ///  
         /// <para>

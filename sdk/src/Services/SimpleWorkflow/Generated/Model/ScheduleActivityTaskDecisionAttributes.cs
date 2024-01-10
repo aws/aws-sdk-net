@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>ScheduleActivityTask</code> decision.
+    /// Provides the details of the <c>ScheduleActivityTask</c> decision.
     /// 
     ///  
     /// <para>
@@ -42,36 +42,36 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use a <code>Resource</code> element with the domain name to limit the action to only
-    /// specified domains.
+    /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+    /// domains.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// Use an <c>Action</c> element to allow or deny permission to call this action.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.
+    /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+    /// keys.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>activityType.name</code> – String constraint. The key is <code>swf:activityType.name</code>.
+    ///  <c>activityType.name</c> – String constraint. The key is <c>swf:activityType.name</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>activityType.version</code> – String constraint. The key is <code>swf:activityType.version</code>.
+    ///  <c>activityType.version</c> – String constraint. The key is <c>swf:activityType.version</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
+    ///  <c>taskList</c> – String constraint. The key is <c>swf:taskList.name</c>.
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+    /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -91,13 +91,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ActivityId. 
         /// <para>
-        ///  The <code>activityId</code> of the activity task.
+        ///  The <c>activityId</c> of the activity task.
         /// </para>
         ///  
         /// <para>
-        /// The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash),
-        /// <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code>
-        /// | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.
+        /// The specified string must not contain a <c>:</c> (colon), <c>/</c> (slash), <c>|</c>
+        /// (vertical bar), or any control characters (<c>\u0000-\u001f</c> | <c>\u007f-\u009f</c>).
+        /// Also, it must <i>not</i> be the literal string <c>arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -163,8 +163,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -206,8 +206,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         ///  <note> 
         /// <para>
@@ -239,8 +239,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         ///  <note> 
         /// <para>
@@ -272,8 +272,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         ///  <note> 
         /// <para>
@@ -300,8 +300,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TaskList. 
         /// <para>
         /// If set, specifies the name of the task list in which to schedule the activity task.
-        /// If not specified, the <code>defaultTaskList</code> registered with the activity type
-        /// is used.
+        /// If not specified, the <c>defaultTaskList</c> registered with the activity type is
+        /// used.
         /// </para>
         ///  <note> 
         /// <para>
@@ -311,9 +311,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash),
-        /// <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code>
-        /// | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.
+        /// The specified string must not contain a <c>:</c> (colon), <c>/</c> (slash), <c>|</c>
+        /// (vertical bar), or any control characters (<c>\u0000-\u001f</c> | <c>\u007f-\u009f</c>).
+        /// Also, it must <i>not</i> be the literal string <c>arn</c>.
         /// </para>
         /// </summary>
         public TaskList TaskList
@@ -334,8 +334,8 @@ namespace Amazon.SimpleWorkflow.Model
         ///  If set, specifies the priority with which the activity task is to be assigned to
         /// a worker. This overrides the defaultTaskPriority specified when registering the activity
         /// type using <a>RegisterActivityType</a>. Valid values are integers that range from
-        /// Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-        /// (2147483647). Higher numbers indicate higher priority.
+        /// Java's <c>Integer.MIN_VALUE</c> (-2147483648) to <c>Integer.MAX_VALUE</c> (2147483647).
+        /// Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>

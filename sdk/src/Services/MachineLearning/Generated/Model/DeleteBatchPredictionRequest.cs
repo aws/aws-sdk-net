@@ -30,18 +30,16 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBatchPrediction operation.
-    /// Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.
+    /// Assigns the DELETED status to a <c>BatchPrediction</c>, rendering it unusable.
     /// 
     ///  
     /// <para>
-    /// After using the <code>DeleteBatchPrediction</code> operation, you can use the <a>GetBatchPrediction</a>
-    /// operation to verify that the status of the <code>BatchPrediction</code> changed to
-    /// DELETED.
+    /// After using the <c>DeleteBatchPrediction</c> operation, you can use the <a>GetBatchPrediction</a>
+    /// operation to verify that the status of the <c>BatchPrediction</c> changed to DELETED.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Caution:</b> The result of the <code>DeleteBatchPrediction</code> operation is
-    /// irreversible.
+    ///  <b>Caution:</b> The result of the <c>DeleteBatchPrediction</c> operation is irreversible.
     /// </para>
     /// </summary>
     public partial class DeleteBatchPredictionRequest : AmazonMachineLearningRequest
@@ -51,7 +49,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.
+        /// A user-supplied ID that uniquely identifies the <c>BatchPrediction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

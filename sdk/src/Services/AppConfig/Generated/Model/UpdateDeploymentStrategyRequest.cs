@@ -155,22 +155,22 @@ namespace Amazon.AppConfig.Model
         ///  
         /// <para>
         ///  <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially
-        /// using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code>
-        /// is the growth factor specified by the user and <code>N</code> is the number of steps
-        /// until the configuration is deployed to all targets. For example, if you specify a
-        /// growth factor of 2, then the system rolls out the configuration as follows:
+        /// using the following formula: <c>G*(2^N)</c>. In this formula, <c>G</c> is the growth
+        /// factor specified by the user and <c>N</c> is the number of steps until the configuration
+        /// is deployed to all targets. For example, if you specify a growth factor of 2, then
+        /// the system rolls out the configuration as follows:
         /// </para>
         ///  
         /// <para>
-        ///  <code>2*(2^0)</code> 
+        ///  <c>2*(2^0)</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>2*(2^1)</code> 
+        ///  <c>2*(2^1)</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>2*(2^2)</code> 
+        ///  <c>2*(2^2)</c> 
         /// </para>
         ///  
         /// <para>

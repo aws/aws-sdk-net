@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NOW</code> 
+        ///  <c>NOW</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

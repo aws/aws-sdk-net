@@ -107,7 +107,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATED | RUNNING | COMPLETED | FAILED</code> 
+        ///  <c>CREATED | RUNNING | COMPLETED | FAILED</c> 
         /// </para>
         /// </summary>
         public string ByStatus

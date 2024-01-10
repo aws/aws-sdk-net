@@ -63,9 +63,8 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property CacheControl. 
         /// <para>
-        /// An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP spec at
-        /// <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.
+        /// An optional <c>CacheControl</c> header that allows the caller to control the object's
+        /// cache behavior. Headers can be passed in as specified in the HTTP spec at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.
         /// </para>
         ///  
         /// <para>

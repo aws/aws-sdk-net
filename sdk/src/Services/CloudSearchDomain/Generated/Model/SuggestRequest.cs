@@ -45,11 +45,11 @@ namespace Amazon.CloudSearchDomain.Model
     /// </para>
     ///  
     /// <para>
-    /// The endpoint for submitting <code>Suggest</code> requests is domain-specific. You
-    /// submit suggest requests to a domain's search endpoint. To get the search endpoint
-    /// for your domain, use the Amazon CloudSearch configuration service <code>DescribeDomains</code>
-    /// action. A domain's endpoints are also displayed on the domain dashboard in the Amazon
-    /// CloudSearch console. 
+    /// The endpoint for submitting <c>Suggest</c> requests is domain-specific. You submit
+    /// suggest requests to a domain's search endpoint. To get the search endpoint for your
+    /// domain, use the Amazon CloudSearch configuration service <c>DescribeDomains</c> action.
+    /// A domain's endpoints are also displayed on the domain dashboard in the Amazon CloudSearch
+    /// console. 
     /// </para>
     /// </summary>
     public partial class SuggestRequest : AmazonCloudSearchDomainRequest

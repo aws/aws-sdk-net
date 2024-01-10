@@ -44,10 +44,10 @@ namespace Amazon.IoT.Model
     ///  <important> 
     /// <para>
     /// After you create a certificate provider, the behavior of <a href="https://docs.aws.amazon.com/iot/latest/developerguide/fleet-provision-api.html#create-cert-csr">
-    /// <code>CreateCertificateFromCsr</code> API for fleet provisioning</a> will change and
-    /// all API calls to <code>CreateCertificateFromCsr</code> will invoke the certificate
-    /// provider to create the certificates. It can take up to a few minutes for this behavior
-    /// to change after a certificate provider is created.
+    /// <c>CreateCertificateFromCsr</c> API for fleet provisioning</a> will change and all
+    /// API calls to <c>CreateCertificateFromCsr</c> will invoke the certificate provider
+    /// to create the certificates. It can take up to a few minutes for this behavior to change
+    /// after a certificate provider is created.
     /// </para>
     ///  </important>
     /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AccountDefaultForOperations. 
         /// <para>
         /// A list of the operations that the certificate provider will use to generate certificates.
-        /// Valid value: <code>CreateCertificateFromCsr</code>.
+        /// Valid value: <c>CreateCertificateFromCsr</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -101,8 +101,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A string that you can optionally pass in the <code>CreateCertificateProvider</code>
-        /// request to make sure the request is idempotent.
+        /// A string that you can optionally pass in the <c>CreateCertificateProvider</c> request
+        /// to make sure the request is idempotent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=64)]

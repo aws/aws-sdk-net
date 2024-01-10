@@ -40,8 +40,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Blocks. 
         /// <para>
-        /// An array of <code>Block</code> objects that contain the text that's detected in the
-        /// document.
+        /// An array of <c>Block</c> objects that contain the text that's detected in the document.
         /// </para>
         /// </summary>
         public List<Block> Blocks

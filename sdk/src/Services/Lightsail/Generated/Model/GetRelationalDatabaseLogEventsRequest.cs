@@ -61,7 +61,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then
-        /// you input <code>1538424000</code> as the end time.
+        /// you input <c>1538424000</c> as the end time.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -84,8 +84,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>get relational database log streams</code> operation to get a list of
-        /// available log streams.
+        /// Use the <c>get relational database log streams</c> operation to get a list of available
+        /// log streams.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,10 +108,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a page token, perform an initial <code>GetRelationalDatabaseLogEvents</code>
-        /// request. If your results are paginated, the response will return a next forward token
-        /// and/or next backward token that you can specify as the page token in a subsequent
-        /// request.
+        /// To get a page token, perform an initial <c>GetRelationalDatabaseLogEvents</c> request.
+        /// If your results are paginated, the response will return a next forward token and/or
+        /// next backward token that you can specify as the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken
@@ -148,13 +147,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property StartFromHead. 
         /// <para>
-        /// Parameter to specify if the log should start from head or tail. If <code>true</code>
-        /// is specified, the log event starts from the head of the log. If <code>false</code>
-        /// is specified, the log event starts from the tail of the log.
+        /// Parameter to specify if the log should start from head or tail. If <c>true</c> is
+        /// specified, the log event starts from the head of the log. If <c>false</c> is specified,
+        /// the log event starts from the tail of the log.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For PostgreSQL, the default value of <code>false</code> is the only option available.
+        /// For PostgreSQL, the default value of <c>false</c> is the only option available.
         /// </para>
         ///  </note>
         /// </summary>
@@ -190,7 +189,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then
-        /// you input <code>1538424000</code> as the start time.
+        /// you input <c>1538424000</c> as the start time.
         /// </para>
         ///  </li> </ul>
         /// </summary>

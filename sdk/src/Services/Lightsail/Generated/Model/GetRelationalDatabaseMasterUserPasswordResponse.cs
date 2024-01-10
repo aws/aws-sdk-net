@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The master user password for the <code>password version</code> specified.
+        /// The master user password for the <c>password version</c> specified.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

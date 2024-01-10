@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         /// The public IPv4 address can only be assigned to a network interface for eth0, and
         /// can only be assigned to a new network interface, not an existing one. You cannot specify
         /// more than one network interface in the request. If launching into a default subnet,
-        /// the default value is <code>true</code>.
+        /// the default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool AssociatePublicIpAddress

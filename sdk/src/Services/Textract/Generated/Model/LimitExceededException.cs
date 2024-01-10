@@ -30,7 +30,7 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// An Amazon Textract service limit was exceeded. For example, if you start too many
-    /// asynchronous jobs concurrently, calls to start operations (<code>StartDocumentTextDetection</code>,
+    /// asynchronous jobs concurrently, calls to start operations (<c>StartDocumentTextDetection</c>,
     /// for example) raise a LimitExceededException exception (HTTP status code: 400) until
     /// the number of concurrently running jobs is below the Amazon Textract service limit.
     /// </summary>

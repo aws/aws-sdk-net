@@ -61,7 +61,7 @@ namespace Amazon.AppFabric
         /// 
         ///  
         /// <para>
-        /// This action polls data from the tasks that are kicked off by the <code>StartUserAccessTasks</code>
+        /// This action polls data from the tasks that are kicked off by the <c>StartUserAccessTasks</c>
         /// action.
         /// </para>
         /// </summary>
@@ -1450,8 +1450,8 @@ namespace Amazon.AppFabric
         /// 
         ///  
         /// <para>
-        /// If the app authorization was in a <code>connected</code> state, updating the app authorization
-        /// will set it back to a <code>PendingConnect</code> state.
+        /// If the app authorization was in a <c>connected</c> state, updating the app authorization
+        /// will set it back to a <c>PendingConnect</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAppAuthorization service method.</param>

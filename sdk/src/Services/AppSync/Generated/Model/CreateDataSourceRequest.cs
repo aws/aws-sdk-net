@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSource operation.
-    /// Creates a <code>DataSource</code> object.
+    /// Creates a <c>DataSource</c> object.
     /// </summary>
     public partial class CreateDataSourceRequest : AmazonAppSyncRequest
     {
@@ -50,7 +50,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiId. 
         /// <para>
-        /// The API ID for the GraphQL API for the <code>DataSource</code>.
+        /// The API ID for the GraphQL API for the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,7 +69,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the <code>DataSource</code>.
+        /// A description of the <c>DataSource</c>.
         /// </para>
         /// </summary>
         public string Description
@@ -183,7 +183,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user-supplied name for the <code>DataSource</code>.
+        /// A user-supplied name for the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65536)]
@@ -257,7 +257,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the <code>DataSource</code>.
+        /// The type of the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

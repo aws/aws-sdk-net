@@ -30,9 +30,9 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the ListHITs operation.
-    /// The <code>ListHITs</code> operation returns all of a Requester's HITs. The operation
-    /// returns HITs of any status, except for HITs that have been deleted of with the DeleteHIT
-    /// operation or that have been auto-deleted.
+    /// The <c>ListHITs</c> operation returns all of a Requester's HITs. The operation returns
+    /// HITs of any status, except for HITs that have been deleted of with the DeleteHIT operation
+    /// or that have been auto-deleted.
     /// </summary>
     public partial class ListHITsRequest : AmazonMTurkRequest
     {

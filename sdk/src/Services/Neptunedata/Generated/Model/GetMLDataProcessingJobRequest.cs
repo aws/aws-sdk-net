@@ -31,7 +31,7 @@ namespace Amazon.Neptunedata.Model
     /// <summary>
     /// Container for the parameters to the GetMLDataProcessingJob operation.
     /// Retrieves information about a specified data processing job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-    /// <code>dataprocessing</code> command</a>.
+    /// <c>dataprocessing</c> command</a>.
     /// 
     ///  
     /// <para>

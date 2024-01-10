@@ -78,7 +78,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property PackageVersion. 
         /// <para>
-        ///  A string that contains the package version (for example, <code>3.5.2</code>). 
+        ///  A string that contains the package version (for example, <c>3.5.2</c>). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

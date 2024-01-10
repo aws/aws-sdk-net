@@ -50,7 +50,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Compute Optimizer only supports <code>CpuUtilization</code>.
+        /// Compute Optimizer only supports <c>CpuUtilization</c>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -72,12 +72,12 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// A collection of key:value pairs containing player information for use in matchmaking.
         /// Player attribute keys must match the <i>playerAttributes</i> used in a matchmaking
-        /// rule set. Example: <code>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S":
-        /// "deathmatch"}}</code>.
+        /// rule set. Example: <c>"PlayerAttributes": {"skill": {"N": "23"}, "gameMode": {"S":
+        /// "deathmatch"}}</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can provide up to 10 <code>PlayerAttributes</code>.
+        /// You can provide up to 10 <c>PlayerAttributes</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> PlayerAttributes

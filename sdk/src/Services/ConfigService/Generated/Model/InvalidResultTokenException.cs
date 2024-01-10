@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The specified <code>ResultToken</code> is not valid.
+    /// The specified <c>ResultToken</c> is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

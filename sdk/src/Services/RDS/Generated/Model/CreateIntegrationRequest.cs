@@ -50,7 +50,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only include this parameter if you specify the <code>KMSKeyId</code> parameter.
+        /// You can only include this parameter if you specify the <c>KMSKeyId</c> parameter.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalEncryptionContext

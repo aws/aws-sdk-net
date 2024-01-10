@@ -367,7 +367,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A high value, such as <code>999999</code>, turns off price protection.
+        /// A high value, such as <c>999999</c>, turns off price protection.
         /// </para>
         /// </summary>
         public int OnDemandMaxPricePercentageOverLowestPrice
@@ -416,7 +416,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A high value, such as <code>999999</code>, turns off price protection.
+        /// A high value, such as <c>999999</c>, turns off price protection.
         /// </para>
         /// </summary>
         public int SpotMaxPricePercentageOverLowestPrice

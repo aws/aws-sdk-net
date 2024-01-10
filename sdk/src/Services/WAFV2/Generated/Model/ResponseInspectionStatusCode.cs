@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Configures inspection of the response status code. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
+    /// Configures inspection of the response status code. This is part of the <c>ResponseInspection</c>
+    /// configuration for <c>AWSManagedRulesATPRuleSet</c> and <c>AWSManagedRulesACFPRuleSet</c>.
     /// 
     /// 
     ///  <note> 
@@ -53,7 +53,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"FailureCodes": [ 400, 404 ]</code> 
+        /// JSON example: <c>"FailureCodes": [ 400, 404 ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -78,7 +78,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"SuccessCodes": [ 200, 201 ]</code> 
+        /// JSON example: <c>"SuccessCodes": [ 200, 201 ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

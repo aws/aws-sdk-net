@@ -47,8 +47,8 @@ namespace Amazon.FSx.Model
     ///  <note> 
     /// <para>
     /// If a file meets the last accessed time criteria, its file or directory path must also
-    /// be specified with the <code>Paths</code> parameter of the operation in order for the
-    /// file to be released.
+    /// be specified with the <c>Paths</c> parameter of the operation in order for the file
+    /// to be released.
     /// </para>
     ///  </note>
     /// </summary>

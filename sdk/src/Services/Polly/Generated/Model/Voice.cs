@@ -51,7 +51,7 @@ namespace Amazon.Polly.Model
         /// <para>
         /// For example, the default language for Aditi is Indian English (en-IN) because it was
         /// first used for that language. Since Aditi is bilingual and fluent in both Indian English
-        /// and Hindi, this parameter would show the code <code>hi-IN</code>.
+        /// and Hindi, this parameter would show the code <c>hi-IN</c>.
         /// </para>
         /// </summary>
         public List<string> AdditionalLanguageCodes
@@ -87,7 +87,7 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Amazon Polly assigned voice ID. This is the ID that you specify when calling the <code>SynthesizeSpeech</code>
+        /// Amazon Polly assigned voice ID. This is the ID that you specify when calling the <c>SynthesizeSpeech</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -161,8 +161,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property SupportedEngines. 
         /// <para>
-        /// Specifies which engines (<code>standard</code>, <code>neural</code> or <code>long-form</code>)
-        /// are supported by a given voice.
+        /// Specifies which engines (<c>standard</c>, <c>neural</c> or <c>long-form</c>) are supported
+        /// by a given voice.
         /// </para>
         /// </summary>
         public List<string> SupportedEngines

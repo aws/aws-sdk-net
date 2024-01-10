@@ -30,7 +30,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGeneratedPolicy operation.
-    /// Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
+    /// Retrieves the policy that was generated using <c>StartPolicyGeneration</c>.
     /// </summary>
     public partial class GetGeneratedPolicyRequest : AmazonAccessAnalyzerRequest
     {
@@ -48,7 +48,7 @@ namespace Amazon.AccessAnalyzer.Model
         ///  
         /// <para>
         /// For example, in the resource section of a policy, you can receive a placeholder such
-        /// as <code>"Resource":"arn:aws:s3:::${BucketName}"</code> instead of <code>"*"</code>.
+        /// as <c>"Resource":"arn:aws:s3:::${BucketName}"</c> instead of <c>"*"</c>.
         /// </para>
         /// </summary>
         public bool IncludeResourcePlaceholders
@@ -71,8 +71,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM Access Analyzer uses <code>iam:servicelastaccessed</code> to identify services
-        /// that have been used recently to create this service-level template.
+        /// IAM Access Analyzer uses <c>iam:servicelastaccessed</c> to identify services that
+        /// have been used recently to create this service-level template.
         /// </para>
         /// </summary>
         public bool IncludeServiceLevelTemplate
@@ -90,10 +90,10 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The <code>JobId</code> that is returned by the <code>StartPolicyGeneration</code>
-        /// operation. The <code>JobId</code> can be used with <code>GetGeneratedPolicy</code>
-        /// to retrieve the generated policies or used with <code>CancelPolicyGeneration</code>
-        /// to cancel the policy generation request.
+        /// The <c>JobId</c> that is returned by the <c>StartPolicyGeneration</c> operation. The
+        /// <c>JobId</c> can be used with <c>GetGeneratedPolicy</c> to retrieve the generated
+        /// policies or used with <c>CancelPolicyGeneration</c> to cancel the policy generation
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -200,8 +200,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with <code>aws:</code>. The tag
-        /// value can be up to 256 characters.
+        /// key can be up to 128 characters and must not start with <c>aws:</c>. The tag value
+        /// can be up to 256 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
@@ -238,7 +238,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for the new Stage resource. Variable names
-        /// can have alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// can have alphanumeric and underscore characters, and the values must match <c>[A-Za-z0-9-._~:/?#&amp;=,]+</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

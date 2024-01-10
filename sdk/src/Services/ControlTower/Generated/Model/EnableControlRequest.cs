@@ -48,7 +48,7 @@ namespace Amazon.ControlTower.Model
         /// <para>
         /// The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls
         /// are permitted, with the exception of the <b>landing zone Region deny</b> control.
-        /// For information on how to find the <code>controlIdentifier</code>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
+        /// For information on how to find the <c>controlIdentifier</c>, see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// An array of <code>EnabledControlParameter</code> objects
+        /// An array of <c>EnabledControlParameter</c> objects
         /// </para>
         /// </summary>
         public List<EnabledControlParameter> Parameters
@@ -86,7 +86,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be applied to the <code>EnabledControl</code> resource.
+        /// Tags to be applied to the <c>EnabledControl</c> resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -105,7 +105,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
+        /// The ARN of the organizational unit. For information on how to find the <c>targetIdentifier</c>,
         /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>

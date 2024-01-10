@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Shows the latest objective metric emitted by a training job that was launched by a
-    /// hyperparameter tuning job. You define the objective metric in the <code>HyperParameterTuningJobObjective</code>
+    /// hyperparameter tuning job. You define the objective metric in the <c>HyperParameterTuningJobObjective</c>
     /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>.
     /// </summary>
     public partial class FinalHyperParameterTuningJobObjectiveMetric

@@ -41,7 +41,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Quality. 
         /// <para>
         /// Optional. A string that describes the quality of the value. Accepts substitution templates.
-        /// Must be <code>GOOD</code>, <code>BAD</code>, or <code>UNCERTAIN</code>.
+        /// Must be <c>GOOD</c>, <c>BAD</c>, or <c>UNCERTAIN</c>.
         /// </para>
         /// </summary>
         public string Quality

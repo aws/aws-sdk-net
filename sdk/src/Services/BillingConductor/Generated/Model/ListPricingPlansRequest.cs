@@ -61,8 +61,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A <code>ListPricingPlansFilter</code> that specifies the Amazon Resource Name (ARNs)
-        /// of pricing plans to retrieve pricing plans information.
+        /// A <c>ListPricingPlansFilter</c> that specifies the Amazon Resource Name (ARNs) of
+        /// pricing plans to retrieve pricing plans information.
         /// </para>
         /// </summary>
         public ListPricingPlansFilter Filters

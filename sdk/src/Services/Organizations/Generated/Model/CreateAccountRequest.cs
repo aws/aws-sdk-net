@@ -32,39 +32,38 @@ namespace Amazon.Organizations.Model
     /// Container for the parameters to the CreateAccount operation.
     /// Creates an Amazon Web Services account that is automatically a member of the organization
     /// whose credentials made the request. This is an asynchronous request that Amazon Web
-    /// Services performs in the background. Because <code>CreateAccount</code> operates asynchronously,
+    /// Services performs in the background. Because <c>CreateAccount</c> operates asynchronously,
     /// it can return a successful completion message even though account initialization might
     /// still be in progress. You might need to wait a few minutes before you can successfully
     /// access the account. To check the status of the request, do one of the following:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>Id</code> value of the <code>CreateAccountStatus</code> response element
-    /// from this operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a>
-    /// operation.
+    /// Use the <c>Id</c> value of the <c>CreateAccountStatus</c> response element from this
+    /// operation to provide as a parameter to the <a>DescribeCreateAccountStatus</a> operation.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Check the CloudTrail log for the <code>CreateAccountResult</code> event. For information
+    /// Check the CloudTrail log for the <c>CreateAccountResult</c> event. For information
     /// on using CloudTrail with Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration">Logging
     /// and monitoring in Organizations</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
+    /// The user who calls the API to create an account must have the <c>organizations:CreateAccount</c>
     /// permission. If you enabled all features in the organization, Organizations creates
-    /// the required service-linked role named <code>AWSServiceRoleForOrganizations</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
+    /// the required service-linked role named <c>AWSServiceRoleForOrganizations</c>. For
+    /// more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs">Organizations
     /// and service-linked roles</a> in the <i>Organizations User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
     /// permission.
     /// </para>
     ///  
     /// <para>
-    /// Organizations preconfigures the new member account with a role (named <code>OrganizationAccountAccessRole</code>
+    /// Organizations preconfigures the new member account with a role (named <c>OrganizationAccountAccessRole</c>
     /// by default) that grants users in the management account administrator permissions
     /// in the new member account. Principals in the management account can assume the role.
     /// Organizations clones the company name and address information for the new account
@@ -103,7 +102,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Using <code>CreateAccount</code> to create multiple temporary accounts isn't recommended.
+    /// Using <c>CreateAccount</c> to create multiple temporary accounts isn't recommended.
     /// You can only close an account from the Billing and Cost Management console, and you
     /// must be signed in as the root user. For information on the requirements and process
     /// for closing an account, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_close.html">Closing
@@ -219,18 +218,18 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property IamUserAccessToBilling. 
         /// <para>
-        /// If set to <code>ALLOW</code>, the new account enables IAM users to access account
-        /// billing information <i>if</i> they have the required permissions. If set to <code>DENY</code>,
-        /// only the root user of the new account can access account billing information. For
-        /// more information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
+        /// If set to <c>ALLOW</c>, the new account enables IAM users to access account billing
+        /// information <i>if</i> they have the required permissions. If set to <c>DENY</c>, only
+        /// the root user of the new account can access account billing information. For more
+        /// information, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate">About
         /// IAM access to the Billing and Cost Management console</a> in the <i>Amazon Web Services
         /// Billing and Cost Management User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this parameter, the value defaults to <code>ALLOW</code>, and
-        /// IAM users and roles with the required permissions can access billing information for
-        /// the new account.
+        /// If you don't specify this parameter, the value defaults to <c>ALLOW</c>, and IAM users
+        /// and roles with the required permissions can access billing information for the new
+        /// account.
         /// </para>
         /// </summary>
         public IAMUserAccessToBilling IamUserAccessToBilling
@@ -255,7 +254,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this parameter, the role name defaults to <code>OrganizationAccountAccessRole</code>.
+        /// If you don't specify this parameter, the role name defaults to <c>OrganizationAccountAccessRole</c>.
         /// </para>
         ///  
         /// <para>
@@ -299,8 +298,8 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// A list of tags that you want to attach to the newly created account. For each tag
         /// in the list, you must specify both a tag key and a value. You can set the value to
-        /// an empty string, but you can't set it to <code>null</code>. For more information about
-        /// tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// an empty string, but you can't set it to <c>null</c>. For more information about tagging,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
         /// Organizations resources</a> in the Organizations User Guide.
         /// </para>
         ///  <note> 

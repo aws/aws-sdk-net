@@ -39,9 +39,9 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Payload. 
         /// <para>
-        /// The <code>payload</code> is only returned by the <code>initiateDatabaseReset</code>
-        /// action, and contains the unique token to use with the <code>performDatabaseReset</code>
-        /// action to make the reset occur.
+        /// The <c>payload</c> is only returned by the <c>initiateDatabaseReset</c> action, and
+        /// contains the unique token to use with the <c>performDatabaseReset</c> action to make
+        /// the reset occur.
         /// </para>
         /// </summary>
         public FastResetToken Payload
@@ -59,8 +59,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The <code>status</code> is only returned for the <code>performDatabaseReset</code>
-        /// action, and indicates whether or not the fast reset rquest is accepted.
+        /// The <c>status</c> is only returned for the <c>performDatabaseReset</c> action, and
+        /// indicates whether or not the fast reset rquest is accepted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

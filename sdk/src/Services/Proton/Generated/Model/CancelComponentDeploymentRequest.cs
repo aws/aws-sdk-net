@@ -30,7 +30,7 @@ namespace Amazon.Proton.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelComponentDeployment operation.
-    /// Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code>
+    /// Attempts to cancel a component deployment (for a component that is in the <c>IN_PROGRESS</c>
     /// deployment status).
     /// 
     ///  

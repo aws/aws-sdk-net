@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The additional attributes of <code>RecommendedAction</code> data type.
+    /// The additional attributes of <c>RecommendedAction</c> data type.
     /// </summary>
     public partial class ContextAttribute
     {
@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of <code>ContextAttribute</code>.
+        /// The key of <c>ContextAttribute</c>.
         /// </para>
         /// </summary>
         public string Key
@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of <code>ContextAttribute</code>.
+        /// The value of <c>ContextAttribute</c>.
         /// </para>
         /// </summary>
         public string Value

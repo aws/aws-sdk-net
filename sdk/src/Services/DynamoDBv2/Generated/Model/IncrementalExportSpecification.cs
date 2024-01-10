@@ -81,8 +81,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExportViewType. 
         /// <para>
-        /// The view type that was chosen for the export. Valid values are <code>NEW_AND_OLD_IMAGES</code>
-        /// and <code>NEW_IMAGES</code>. The default value is <code>NEW_AND_OLD_IMAGES</code>.
+        /// The view type that was chosen for the export. Valid values are <c>NEW_AND_OLD_IMAGES</c>
+        /// and <c>NEW_IMAGES</c>. The default value is <c>NEW_AND_OLD_IMAGES</c>.
         /// </para>
         /// </summary>
         public ExportViewType ExportViewType

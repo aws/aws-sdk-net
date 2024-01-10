@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
-    /// Aggregated details about the data quality metrics collected for the <code>AnomalyDetectorArn</code>
+    /// Aggregated details about the data quality metrics collected for the <c>AnomalyDetectorArn</c>
     /// provided in the <a>GetDataQualityMetrics</a> object.
     /// </summary>
     public partial class AnomalyDetectorDataQualityMetric
@@ -40,7 +40,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property MetricSetDataQualityMetricList. 
         /// <para>
-        /// An array of <code>DataQualityMetricList</code> objects. Each object in the array contains
+        /// An array of <c>DataQualityMetricList</c> objects. Each object in the array contains
         /// information about a data quality metric.
         /// </para>
         /// </summary>

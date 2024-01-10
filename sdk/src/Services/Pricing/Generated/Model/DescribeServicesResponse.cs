@@ -40,7 +40,7 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property FormatVersion. 
         /// <para>
-        /// The format version of the response. For example, <code>aws_v1</code>.
+        /// The format version of the response. For example, <c>aws_v1</c>.
         /// </para>
         /// </summary>
         public string FormatVersion

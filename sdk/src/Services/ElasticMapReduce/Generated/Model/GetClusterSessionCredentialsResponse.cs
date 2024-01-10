@@ -58,7 +58,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ExpiresAt. 
         /// <para>
-        /// The time when the credentials that are returned by the <code>GetClusterSessionCredentials</code>
+        /// The time when the credentials that are returned by the <c>GetClusterSessionCredentials</c>
         /// API expire.
         /// </para>
         /// </summary>

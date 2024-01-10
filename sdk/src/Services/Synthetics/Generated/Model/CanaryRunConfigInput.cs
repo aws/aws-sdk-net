@@ -49,7 +49,7 @@ namespace Amazon.Synthetics.Model
         /// </para>
         ///  
         /// <para>
-        /// You can enable active tracing only for canaries that use version <code>syn-nodejs-2.0</code>
+        /// You can enable active tracing only for canaries that use version <c>syn-nodejs-2.0</c>
         /// or later for their canary runtime.
         /// </para>
         /// </summary>

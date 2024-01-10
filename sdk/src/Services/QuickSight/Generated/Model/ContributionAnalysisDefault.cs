@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ContributorDimensions. 
         /// <para>
         /// The dimensions columns that are used in the contribution analysis, usually a list
-        /// of <code>ColumnIdentifiers</code>.
+        /// of <c>ColumnIdentifiers</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4)]

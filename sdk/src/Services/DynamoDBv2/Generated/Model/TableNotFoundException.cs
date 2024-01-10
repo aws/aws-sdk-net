@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// A source table with the name <code>TableName</code> does not currently exist within
-    /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+    /// A source table with the name <c>TableName</c> does not currently exist within the
+    /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
     /// Region.
     /// </summary>
     #if !NETSTANDARD

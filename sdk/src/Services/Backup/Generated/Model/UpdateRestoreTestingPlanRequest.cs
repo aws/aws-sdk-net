@@ -30,32 +30,32 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateRestoreTestingPlan operation.
-    /// This request will send changes to your specified restore testing plan. <code>RestoreTestingPlanName</code>
+    /// This request will send changes to your specified restore testing plan. <c>RestoreTestingPlanName</c>
     /// cannot be updated after it is created.
     /// 
     ///  
     /// <para>
-    ///  <code>RecoveryPointSelection</code> can contain:
+    ///  <c>RecoveryPointSelection</c> can contain:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Algorithm</code> 
+    ///  <c>Algorithm</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ExcludeVaults</code> 
+    ///  <c>ExcludeVaults</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>IncludeVaults</code> 
+    ///  <c>IncludeVaults</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RecoveryPointTypes</code> 
+    ///  <c>RecoveryPointTypes</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SelectionWindowDays</code> 
+    ///  <c>SelectionWindowDays</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

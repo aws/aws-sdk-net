@@ -77,7 +77,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// To create a cluster layer, set the <code>EcsClusterArn</code> attribute to the cluster's
+        /// To create a cluster layer, set the <c>EcsClusterArn</c> attribute to the cluster's
         /// ARN.
         /// </para>
         /// </summary>
@@ -196,7 +196,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CustomRecipes. 
         /// <para>
-        /// A <code>LayerCustomRecipes</code> object that specifies the layer custom recipes.
+        /// A <c>LayerCustomRecipes</c> object that specifies the layer custom recipes.
         /// </para>
         /// </summary>
         public Recipes CustomRecipes
@@ -251,16 +251,15 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>. To control when updates are installed, set this
-        /// value to <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command
-        /// or by manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
-        /// on the instances. 
+        /// default value is <c>true</c>. To control when updates are installed, set this value
+        /// to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a>
+        /// to run the <c>update_dependencies</c> stack command or by manually running <c>yum</c>
+        /// (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. 
         /// </para>
         ///  <note> 
         /// <para>
         /// To ensure that your instances have the latest security updates, we strongly recommend
-        /// using the default value of <code>true</code>.
+        /// using the default value of <c>true</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -279,9 +278,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LifecycleEventConfiguration. 
         /// <para>
-        /// A <code>LifeCycleEventConfiguration</code> object that you can use to configure the
-        /// Shutdown event to specify an execution timeout and enable or disable Elastic Load
-        /// Balancer connection draining.
+        /// A <c>LifeCycleEventConfiguration</c> object that you can use to configure the Shutdown
+        /// event to specify an execution timeout and enable or disable Elastic Load Balancer
+        /// connection draining.
         /// </para>
         /// </summary>
         public LifecycleEventConfiguration LifecycleEventConfiguration
@@ -318,7 +317,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Packages. 
         /// <para>
-        /// An array of <code>Package</code> objects that describes the layer packages.
+        /// An array of <c>Package</c> objects that describes the layer packages.
         /// </para>
         /// </summary>
         public List<string> Packages
@@ -423,7 +422,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VolumeConfigurations. 
         /// <para>
-        /// A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
+        /// A <c>VolumeConfigurations</c> object that describes the layer's Amazon EBS volumes.
         /// </para>
         /// </summary>
         public List<VolumeConfiguration> VolumeConfigurations

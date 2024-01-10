@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBSecurityGroupName</code> doesn't refer to an existing DB security group.
+    /// <c>DBSecurityGroupName</c> doesn't refer to an existing DB security group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,9 +34,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// Use the <code>scope</code> parameter to specify which preferences to return. You can
-    /// specify to return preferences for an organization, a specific account ID, or a specific
-    /// EC2 instance or Auto Scaling group Amazon Resource Name (ARN).
+    /// Use the <c>scope</c> parameter to specify which preferences to return. You can specify
+    /// to return preferences for an organization, a specific account ID, or a specific EC2
+    /// instance or Auto Scaling group Amazon Resource Name (ARN).
     /// </para>
     ///  
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <c>nextToken</c>
         /// value.
         /// </para>
         /// </summary>
@@ -100,13 +100,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Ec2Instance</code> option encompasses standalone instances and instances
-        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
-        /// only instances that are part of an Auto Scaling group.
+        /// The <c>Ec2Instance</c> option encompasses standalone instances and instances that
+        /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
+        /// instances that are part of an Auto Scaling group.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.
+        /// The valid values for this parameter are <c>Ec2Instance</c> and <c>AutoScalingGroup</c>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -100,8 +100,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ContactProtocols. 
         /// <para>
-        /// The contact protocols for the alarm, such as <code>Email</code>, <code>SMS</code>
-        /// (text messaging), or both.
+        /// The contact protocols for the alarm, such as <c>Email</c>, <c>SMS</c> (text messaging),
+        /// or both.
         /// </para>
         /// </summary>
         public List<string> ContactProtocols
@@ -327,16 +327,16 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALARM</code> - The metric is outside of the defined threshold.
+        ///  <c>ALARM</c> - The metric is outside of the defined threshold.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSUFFICIENT_DATA</code> - The alarm has just started, the metric is not available,
+        ///  <c>INSUFFICIENT_DATA</c> - The alarm has just started, the metric is not available,
         /// or not enough data is available for the metric to determine the alarm state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OK</code> - The metric is within the defined threshold.
+        ///  <c>OK</c> - The metric is within the defined threshold.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -363,29 +363,29 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Minimum</code> - The lowest value observed during the specified period. Use
-        /// this value to determine low volumes of activity for your application.
+        ///  <c>Minimum</c> - The lowest value observed during the specified period. Use this
+        /// value to determine low volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.
+        ///  <c>Maximum</c> - The highest value observed during the specified period. Use this
+        /// value to determine high volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.
+        ///  <c>Sum</c> - All values submitted for the matching metric added together. You can
+        /// use this statistic to determine the total volume of a metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> - The value of Sum / SampleCount during the specified period.
-        /// By comparing this statistic with the Minimum and Maximum values, you can determine
-        /// the full scope of a metric and how close the average use is to the Minimum and Maximum
-        /// values. This comparison helps you to know when to increase or decrease your resources.
+        ///  <c>Average</c> - The value of Sum / SampleCount during the specified period. By comparing
+        /// this statistic with the Minimum and Maximum values, you can determine the full scope
+        /// of a metric and how close the average use is to the Minimum and Maximum values. This
+        /// comparison helps you to know when to increase or decrease your resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SampleCount</code> - The count, or number, of data points used for the statistical
+        ///  <c>SampleCount</c> - The count, or number, of data points used for the statistical
         /// calculation.
         /// </para>
         ///  </li> </ul>
@@ -451,21 +451,21 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>breaching</code> - Assume the missing data is not within the threshold. Missing
-        /// data counts towards the number of times the metric is not within the threshold.
+        ///  <c>breaching</c> - Assume the missing data is not within the threshold. Missing data
+        /// counts towards the number of times the metric is not within the threshold.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notBreaching</code> - Assume the missing data is within the threshold. Missing
-        /// data does not count towards the number of times the metric is not within the threshold.
+        ///  <c>notBreaching</c> - Assume the missing data is within the threshold. Missing data
+        /// does not count towards the number of times the metric is not within the threshold.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ignore</code> - Ignore the missing data. Maintains the current alarm state.
+        ///  <c>ignore</c> - Ignore the missing data. Maintains the current alarm state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>missing</code> - Missing data is treated as missing.
+        ///  <c>missing</c> - Missing data is treated as missing.
         /// </para>
         ///  </li> </ul>
         /// </summary>

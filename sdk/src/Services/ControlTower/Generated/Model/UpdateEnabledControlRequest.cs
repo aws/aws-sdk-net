@@ -34,22 +34,21 @@ namespace Amazon.ControlTower.Model
     /// 
     ///  
     /// <para>
-    /// If the enabled control shows an <code>EnablementStatus</code> of SUCCEEDED, supply
-    /// parameters that are different from the currently configured parameters. Otherwise,
-    /// Amazon Web Services Control Tower will not accept the request.
+    /// If the enabled control shows an <c>EnablementStatus</c> of SUCCEEDED, supply parameters
+    /// that are different from the currently configured parameters. Otherwise, Amazon Web
+    /// Services Control Tower will not accept the request.
     /// </para>
     ///  
     /// <para>
-    /// If the enabled control shows an <code>EnablementStatus</code> of FAILED, Amazon Web
-    /// Services Control Tower will update the control to match any valid parameters that
-    /// you supply.
+    /// If the enabled control shows an <c>EnablementStatus</c> of FAILED, Amazon Web Services
+    /// Control Tower will update the control to match any valid parameters that you supply.
     /// </para>
     ///  
     /// <para>
-    /// If the <code>DriftSummary</code> status for the control shows as DRIFTED, you cannot
-    /// call this API. Instead, you can update the control by calling <code>DisableControl</code>
-    /// and again calling <code>EnableControl</code>, or you can run an extending governance
-    /// operation. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+    /// If the <c>DriftSummary</c> status for the control shows as DRIFTED, you cannot call
+    /// this API. Instead, you can update the control by calling <c>DisableControl</c> and
+    /// again calling <c>EnableControl</c>, or you can run an extending governance operation.
+    /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
     /// <i>the Amazon Web Services Control Tower User Guide</i> </a> 
     /// </para>
     /// </summary>
@@ -80,8 +79,8 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A key/value pair, where <code>Key</code> is of type <code>String</code> and <code>Value</code>
-        /// is of type <code>Document</code>.
+        /// A key/value pair, where <c>Key</c> is of type <c>String</c> and <c>Value</c> is of
+        /// type <c>Document</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

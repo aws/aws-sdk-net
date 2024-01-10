@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The format of the project policy document that you supplied to <code>PutProjectPolicy</code>
+    /// The format of the project policy document that you supplied to <c>PutProjectPolicy</c>
     /// is incorrect.
     /// </summary>
     #if !NETSTANDARD

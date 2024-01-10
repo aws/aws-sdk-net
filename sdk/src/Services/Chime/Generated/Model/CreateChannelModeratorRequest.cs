@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateChannelModerator operation.
-    /// Creates a new <code>ChannelModerator</code>. A channel moderator can:
+    /// Creates a new <c>ChannelModerator</c>. A channel moderator can:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
     /// of the user that makes the API call as the value in the header.
     /// </para>
     ///  </note> <important> 
@@ -118,7 +118,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The <c>AppInstanceUserArn</c> of the user that makes the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

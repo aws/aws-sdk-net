@@ -64,7 +64,7 @@ namespace Amazon.ECR.Model
         /// </para>
         ///  
         /// <para>
-        /// When a registry scanning configuration is not defined, by default the <code>BASIC</code>
+        /// When a registry scanning configuration is not defined, by default the <c>BASIC</c>
         /// scan type is used. When basic scanning is used, you may specify filters to determine
         /// which individual repositories, or all repositories, are scanned when new images are
         /// pushed to those repositories. Alternatively, you can do manual scans of images with
@@ -72,10 +72,9 @@ namespace Amazon.ECR.Model
         /// </para>
         ///  
         /// <para>
-        /// When the <code>ENHANCED</code> scan type is set, Amazon Inspector provides automated
-        /// vulnerability scanning. You may choose between continuous scanning or scan on push
-        /// and you may specify filters to determine which individual repositories, or all repositories,
-        /// are scanned.
+        /// When the <c>ENHANCED</c> scan type is set, Amazon Inspector provides automated vulnerability
+        /// scanning. You may choose between continuous scanning or scan on push and you may specify
+        /// filters to determine which individual repositories, or all repositories, are scanned.
         /// </para>
         /// </summary>
         public ScanType ScanType

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a>
-    /// </code> operation.
+    /// Container for the parameters received from <c> <a>DescribeElasticsearchInstanceTypeLimits</a>
+    /// </c> operation.
     /// </summary>
     public partial class DescribeElasticsearchInstanceTypeLimitsResponse : AmazonWebServiceResponse
     {

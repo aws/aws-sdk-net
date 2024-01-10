@@ -52,8 +52,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  Contains the new <code>AllocatedStorage</code> size for then instance that will be
-        /// applied or is currently being applied. 
+        ///  Contains the new <c>AllocatedStorage</c> size for then instance that will be applied
+        /// or is currently being applied. 
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -108,8 +108,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  Contains the new <code>DBInstanceClass</code> for the instance that will be applied
-        /// or is currently being applied. 
+        ///  Contains the new <c>DBInstanceClass</c> for the instance that will be applied or
+        /// is currently being applied. 
         /// </para>
         /// </summary>
         public string DBInstanceClass
@@ -127,8 +127,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Contains the new <code>DBInstanceIdentifier</code> for the instance that will be
-        /// applied or is currently being applied. 
+        ///  Contains the new <c>DBInstanceIdentifier</c> for the instance that will be applied
+        /// or is currently being applied. 
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -205,8 +205,8 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>license-included</code>, <code>bring-your-own-license</code>,
-        /// <code>general-public-license</code> 
+        /// Valid values: <c>license-included</c>, <c>bring-your-own-license</c>, <c>general-public-license</c>
+        /// 
         /// </para>
         /// </summary>
         public string LicenseModel

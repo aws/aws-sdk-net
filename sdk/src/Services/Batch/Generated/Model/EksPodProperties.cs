@@ -61,16 +61,16 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DnsPolicy. 
         /// <para>
-        /// The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the
-        /// <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>.
-        /// <code>ClusterFirst</code> indicates that any DNS query that does not match the configured
-        /// cluster domain suffix is forwarded to the upstream nameserver inherited from the node.
-        /// For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
+        /// The DNS policy for the pod. The default value is <c>ClusterFirst</c>. If the <c>hostNetwork</c>
+        /// parameter is not specified, the default is <c>ClusterFirstWithHostNet</c>. <c>ClusterFirst</c>
+        /// indicates that any DNS query that does not match the configured cluster domain suffix
+        /// is forwarded to the upstream nameserver inherited from the node. For more information,
+        /// see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
         /// DNS policy</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code>
+        /// Valid values: <c>Default</c> | <c>ClusterFirst</c> | <c>ClusterFirstWithHostNet</c>
         /// 
         /// </para>
         /// </summary>
@@ -89,10 +89,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property HostNetwork. 
         /// <para>
-        /// Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>.
-        /// Setting this to <code>false</code> enables the Kubernetes pod networking model. Most
-        /// Batch workloads are egress-only and don't require the overhead of IP allocation for
-        /// each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host
+        /// Indicates if the pod uses the hosts' network IP address. The default value is <c>true</c>.
+        /// Setting this to <c>false</c> enables the Kubernetes pod networking model. Most Batch
+        /// workloads are egress-only and don't require the overhead of IP allocation for each
+        /// pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host
         /// namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod
         /// networking</a> in the <i>Kubernetes documentation</i>.
         /// </para>

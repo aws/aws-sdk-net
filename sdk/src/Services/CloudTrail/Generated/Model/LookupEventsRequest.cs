@@ -37,7 +37,7 @@ namespace Amazon.CloudTrail.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>LookupEvents</code> returns recent Insights events for trails that enable Insights.
+    ///  <c>LookupEvents</c> returns recent Insights events for trails that enable Insights.
     /// To view Insights events for an event data store, you can run queries on your Insights
     /// event data store, and you can also view the Lake dashboard for Insights.
     /// </para>
@@ -138,8 +138,8 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property EventCategory. 
         /// <para>
         /// Specifies the event category. If you do not specify an event category, events of the
-        /// category are not returned in the response. For example, if you do not specify <code>insight</code>
-        /// as the value of <code>EventCategory</code>, no Insights events are returned.
+        /// category are not returned in the response. For example, if you do not specify <c>insight</c>
+        /// as the value of <c>EventCategory</c>, no Insights events are returned.
         /// </para>
         /// </summary>
         public EventCategory EventCategory

@@ -31,7 +31,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Describes the noncompliant resources in a member account for a specific Firewall Manager
     /// policy. A maximum of 100 entries are displayed. If more than 100 resources are noncompliant,
-    /// <code>EvaluationLimitExceeded</code> is set to <code>True</code>.
+    /// <c>EvaluationLimitExceeded</c> is set to <c>True</c>.
     /// </summary>
     public partial class PolicyComplianceDetail
     {

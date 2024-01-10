@@ -35,20 +35,19 @@ namespace Amazon.DirectoryService.Model
     ///  
     /// <para>
     /// You can retrieve information about specific directories by passing the directory identifiers
-    /// in the <code>DirectoryIds</code> parameter. Otherwise, all directories that belong
-    /// to the current account are returned.
+    /// in the <c>DirectoryIds</c> parameter. Otherwise, all directories that belong to the
+    /// current account are returned.
     /// </para>
     ///  
     /// <para>
-    /// This operation supports pagination with the use of the <code>NextToken</code> request
-    /// and response parameters. If more results are available, the <code>DescribeDirectoriesResult.NextToken</code>
+    /// This operation supports pagination with the use of the <c>NextToken</c> request and
+    /// response parameters. If more results are available, the <c>DescribeDirectoriesResult.NextToken</c>
     /// member contains a token that you pass in the next call to <a>DescribeDirectories</a>
     /// to retrieve the next set of items.
     /// </para>
     ///  
     /// <para>
-    /// You can also specify a maximum number of return results with the <code>Limit</code>
-    /// parameter.
+    /// You can also specify a maximum number of return results with the <c>Limit</c> parameter.
     /// </para>
     /// </summary>
     public partial class DescribeDirectoriesRequest : AmazonDirectoryServiceRequest
@@ -65,7 +64,7 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         ///  
         /// <para>
-        /// An empty list results in an <code>InvalidParameterException</code> being thrown.
+        /// An empty list results in an <c>InvalidParameterException</c> being thrown.
         /// </para>
         /// </summary>
         public List<string> DirectoryIds
@@ -103,8 +102,8 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>DescribeDirectoriesResult.NextToken</code> value from a previous call to
-        /// <a>DescribeDirectories</a>. Pass null if this is the first call.
+        /// The <c>DescribeDirectoriesResult.NextToken</c> value from a previous call to <a>DescribeDirectories</a>.
+        /// Pass null if this is the first call.
         /// </para>
         /// </summary>
         public string NextToken

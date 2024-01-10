@@ -58,8 +58,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Limits the number of vertices in the response. Use the <code>NextToken</code> in a
-        /// response to to retrieve the next page of results.
+        /// Limits the number of vertices in the response. Use the <c>NextToken</c> in a response
+        /// to to retrieve the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

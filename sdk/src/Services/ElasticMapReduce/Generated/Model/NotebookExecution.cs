@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// A notebook execution. An execution is a specific instance that an Amazon EMR Notebook
-    /// is run using the <code>StartNotebookExecution</code> action.
+    /// is run using the <c>StartNotebookExecution</c> action.
     /// </summary>
     public partial class NotebookExecution
     {
@@ -341,47 +341,46 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>START_PENDING</code> indicates that the cluster has received the execution
-        /// request but execution has not begun.
+        ///  <c>START_PENDING</c> indicates that the cluster has received the execution request
+        /// but execution has not begun.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STARTING</code> indicates that the execution is starting on the cluster.
+        ///  <c>STARTING</c> indicates that the execution is starting on the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code> indicates that the execution is being processed by the cluster.
+        ///  <c>RUNNING</c> indicates that the execution is being processed by the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FINISHING</code> indicates that execution processing is in the final stages.
+        ///  <c>FINISHING</c> indicates that execution processing is in the final stages.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FINISHED</code> indicates that the execution has completed without error.
+        ///  <c>FINISHED</c> indicates that the execution has completed without error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILING</code> indicates that the execution is failing and will not finish
-        /// successfully.
+        ///  <c>FAILING</c> indicates that the execution is failing and will not finish successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> indicates that the execution failed.
+        ///  <c>FAILED</c> indicates that the execution failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code>
+        ///  <c>STOP_PENDING</c> indicates that the cluster has received a <c>StopNotebookExecution</c>
         /// request and the stop is pending.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-        /// execution as a result of a <code>StopNotebookExecution</code> request.
+        ///  <c>STOPPING</c> indicates that the cluster is in the process of stopping the execution
+        /// as a result of a <c>StopNotebookExecution</c> request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code>
+        ///  <c>STOPPED</c> indicates that the execution stopped because of a <c>StopNotebookExecution</c>
         /// request.
         /// </para>
         ///  </li> </ul>

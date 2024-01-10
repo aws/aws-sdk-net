@@ -64,28 +64,28 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>connection-notification-arn</code> - The ARN of the SNS topic for the notification.
+        ///  <c>connection-notification-arn</c> - The ARN of the SNS topic for the notification.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>connection-notification-id</code> - The ID of the notification.
+        ///  <c>connection-notification-id</c> - The ID of the notification.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>connection-notification-state</code> - The state of the notification (<code>Enabled</code>
-        /// | <code>Disabled</code>).
+        ///  <c>connection-notification-state</c> - The state of the notification (<c>Enabled</c>
+        /// | <c>Disabled</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>connection-notification-type</code> - The type of notification (<code>Topic</code>).
+        ///  <c>connection-notification-type</c> - The type of notification (<c>Topic</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>service-id</code> - The ID of the endpoint service.
+        ///  <c>service-id</c> - The ID of the endpoint service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-id</code> - The ID of the VPC endpoint.
+        ///  <c>vpc-endpoint-id</c> - The ID of the VPC endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another request with the returned <code>NextToken</code> value.
+        /// results, make another request with the returned <c>NextToken</c> value.
         /// </para>
         /// </summary>
         public int MaxResults

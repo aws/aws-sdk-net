@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The value for a given type of <code>UpdateSettings</code>.
+    /// The value for a given type of <c>UpdateSettings</c>.
     /// </summary>
     public partial class UpdateValue
     {

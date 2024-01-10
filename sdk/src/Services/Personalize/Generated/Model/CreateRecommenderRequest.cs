@@ -41,35 +41,35 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
-    /// recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the
-    /// default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+    /// A high <c>minRecommendationRequestsPerSecond</c> will increase your bill. We recommend
+    /// starting with 1 for <c>minRecommendationRequestsPerSecond</c> (the default). Track
+    /// your usage using Amazon CloudWatch metrics, and increase the <c>minRecommendationRequestsPerSecond</c>
     /// as necessary.
     /// </para>
     ///  </important> 
     /// <para>
     /// When you create a recommender, you can configure the recommender's minimum recommendation
-    /// requests per second. The minimum recommendation requests per second (<code>minRecommendationRequestsPerSecond</code>)
+    /// requests per second. The minimum recommendation requests per second (<c>minRecommendationRequestsPerSecond</c>)
     /// specifies the baseline recommendation request throughput provisioned by Amazon Personalize.
-    /// The default minRecommendationRequestsPerSecond is <code>1</code>. A recommendation
-    /// request is a single <code>GetRecommendations</code> operation. Request throughput
-    /// is measured in requests per second and Amazon Personalize uses your requests per second
-    /// to derive your requests per hour and the price of your recommender usage. 
+    /// The default minRecommendationRequestsPerSecond is <c>1</c>. A recommendation request
+    /// is a single <c>GetRecommendations</c> operation. Request throughput is measured in
+    /// requests per second and Amazon Personalize uses your requests per second to derive
+    /// your requests per hour and the price of your recommender usage. 
     /// </para>
     ///  
     /// <para>
-    ///  If your requests per second increases beyond <code>minRecommendationRequestsPerSecond</code>,
+    ///  If your requests per second increases beyond <c>minRecommendationRequestsPerSecond</c>,
     /// Amazon Personalize auto-scales the provisioned capacity up and down, but never below
-    /// <code>minRecommendationRequestsPerSecond</code>. There's a short time delay while
-    /// the capacity is increased that might cause loss of requests.
+    /// <c>minRecommendationRequestsPerSecond</c>. There's a short time delay while the capacity
+    /// is increased that might cause loss of requests.
     /// </para>
     ///  
     /// <para>
     ///  Your bill is the greater of either the minimum requests per hour (based on minRecommendationRequestsPerSecond)
     /// or the actual number of requests. The actual request throughput used is calculated
     /// as the average requests/second within a one-hour window. We recommend starting with
-    /// the default <code>minRecommendationRequestsPerSecond</code>, track your usage using
-    /// Amazon CloudWatch metrics, and then increase the <code>minRecommendationRequestsPerSecond</code>
+    /// the default <c>minRecommendationRequestsPerSecond</c>, track your usage using Amazon
+    /// CloudWatch metrics, and then increase the <c>minRecommendationRequestsPerSecond</c>
     /// as necessary. 
     /// </para>
     ///  
@@ -99,8 +99,8 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before
-    /// asking the recommender for recommendations.
+    /// Wait until the <c>status</c> of the recommender is <c>ACTIVE</c> before asking the
+    /// recommender for recommendations.
     /// </para>
     ///  </note> 
     /// <para>

@@ -68,15 +68,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>APPROVED</code> - The model is approved
+        ///  <c>APPROVED</c> - The model is approved
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECTED</code> - The model is rejected.
+        ///  <c>REJECTED</c> - The model is rejected.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.
+        ///  <c>PENDING_MANUAL_APPROVAL</c> - The model is waiting for manual approval.
         /// </para>
         ///  </li> </ul>
         /// </summary>

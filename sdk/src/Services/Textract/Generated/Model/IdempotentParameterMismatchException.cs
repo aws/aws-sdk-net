@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Textract.Model
 {
     /// <summary>
-    /// A <code>ClientRequestToken</code> input parameter was reused with an operation, but
-    /// at least one of the other input parameters is different from the previous call to
-    /// the operation.
+    /// A <c>ClientRequestToken</c> input parameter was reused with an operation, but at least
+    /// one of the other input parameters is different from the previous call to the operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

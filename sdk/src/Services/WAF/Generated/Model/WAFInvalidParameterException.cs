@@ -42,33 +42,33 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to update an object (<code>ByteMatchSet</code>, <code>IPSet</code>, <code>Rule</code>,
-    /// or <code>WebACL</code>) using an action other than <code>INSERT</code> or <code>DELETE</code>.
+    /// You tried to update an object (<c>ByteMatchSet</c>, <c>IPSet</c>, <c>Rule</c>, or
+    /// <c>WebACL</c>) using an action other than <c>INSERT</c> or <c>DELETE</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to create a <code>WebACL</code> with a <code>DefaultAction</code> <code>Type</code>
-    /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+    /// You tried to create a <c>WebACL</c> with a <c>DefaultAction</c> <c>Type</c> other
+    /// than <c>ALLOW</c>, <c>BLOCK</c>, or <c>COUNT</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to create a <code>RateBasedRule</code> with a <code>RateKey</code> value
-    /// other than <code>IP</code>.
+    /// You tried to create a <c>RateBasedRule</c> with a <c>RateKey</c> value other than
+    /// <c>IP</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to update a <code>WebACL</code> with a <code>WafAction</code> <code>Type</code>
-    /// other than <code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>.
+    /// You tried to update a <c>WebACL</c> with a <c>WafAction</c> <c>Type</c> other than
+    /// <c>ALLOW</c>, <c>BLOCK</c>, or <c>COUNT</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to update a <code>ByteMatchSet</code> with a <code>FieldToMatch</code> <code>Type</code>
-    /// other than HEADER, METHOD, QUERY_STRING, URI, or BODY.
+    /// You tried to update a <c>ByteMatchSet</c> with a <c>FieldToMatch</c> <c>Type</c> other
+    /// than HEADER, METHOD, QUERY_STRING, URI, or BODY.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to update a <code>ByteMatchSet</code> with a <code>Field</code> of <code>HEADER</code>
-    /// but no value for <code>Data</code>.
+    /// You tried to update a <c>ByteMatchSet</c> with a <c>Field</c> of <c>HEADER</c> but
+    /// no value for <c>Data</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Specifies an item and related attribute values to retrieve in a <code>TransactGetItem</code>
+    /// Specifies an item and related attribute values to retrieve in a <c>TransactGetItem</c>
     /// object.
     /// </summary>
     public partial class Get
@@ -60,8 +60,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A map of attribute names to <code>AttributeValue</code> objects that specifies the
-        /// primary key of the item to retrieve.
+        /// A map of attribute names to <c>AttributeValue</c> objects that specifies the primary
+        /// key of the item to retrieve.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

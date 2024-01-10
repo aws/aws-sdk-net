@@ -39,10 +39,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// When it receives a <code>StopCompilationJob</code> request, Amazon SageMaker changes
-    /// the <code>CompilationJobStatus</code> of the job to <code>Stopping</code>. After Amazon
-    /// SageMaker stops the job, it sets the <code>CompilationJobStatus</code> to <code>Stopped</code>.
-    /// 
+    /// When it receives a <c>StopCompilationJob</c> request, Amazon SageMaker changes the
+    /// <c>CompilationJobStatus</c> of the job to <c>Stopping</c>. After Amazon SageMaker
+    /// stops the job, it sets the <c>CompilationJobStatus</c> to <c>Stopped</c>. 
     /// </para>
     /// </summary>
     public partial class StopCompilationJobRequest : AmazonSageMakerRequest

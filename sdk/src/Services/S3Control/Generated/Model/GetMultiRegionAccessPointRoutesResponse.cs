@@ -59,7 +59,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Routes. 
         /// <para>
         /// The different routes that make up the route configuration. Active routes return a
-        /// value of <code>100</code>, and passive routes return a value of <code>0</code>.
+        /// value of <c>100</c>, and passive routes return a value of <c>0</c>.
         /// </para>
         /// </summary>
         public List<MultiRegionAccessPointRoute> Routes

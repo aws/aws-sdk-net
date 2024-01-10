@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The value of the <code>clientId</code> key in an MQTT authorization request.
+        /// The value of the <c>clientId</c> key in an MQTT authorization request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -59,7 +59,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The value of the <code>password</code> key in an MQTT authorization request.
+        /// The value of the <c>password</c> key in an MQTT authorization request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]
@@ -78,7 +78,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// The value of the <code>username</code> key in an MQTT authorization request.
+        /// The value of the <c>username</c> key in an MQTT authorization request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

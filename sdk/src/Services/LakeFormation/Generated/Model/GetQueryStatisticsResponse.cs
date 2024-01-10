@@ -40,7 +40,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatistics. 
         /// <para>
-        /// An <code>ExecutionStatistics</code> structure containing execution statistics.
+        /// An <c>ExecutionStatistics</c> structure containing execution statistics.
         /// </para>
         /// </summary>
         public ExecutionStatistics ExecutionStatistics
@@ -58,7 +58,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property PlanningStatistics. 
         /// <para>
-        /// A <code>PlanningStatistics</code> structure containing query planning statistics.
+        /// A <c>PlanningStatistics</c> structure containing query planning statistics.
         /// </para>
         /// </summary>
         public PlanningStatistics PlanningStatistics

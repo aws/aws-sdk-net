@@ -86,8 +86,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Values</code> property can't be changed. If you want to change the partition
-        /// key values for a partition, delete and recreate the partition.
+        /// The <c>Values</c> property can't be changed. If you want to change the partition key
+        /// values for a partition, delete and recreate the partition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

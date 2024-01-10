@@ -140,9 +140,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListMonitoringAlertHistory</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set
-        /// of alerts in the history, use the token in the next request.
+        /// If the result of the previous <c>ListMonitoringAlertHistory</c> request was truncated,
+        /// the response includes a <c>NextToken</c>. To retrieve the next set of alerts in the
+        /// history, use the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -161,7 +161,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field used to sort results. The default is <code>CreationTime</code>.
+        /// The field used to sort results. The default is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public MonitoringAlertHistorySortKey SortBy
@@ -179,8 +179,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order, whether <code>Ascending</code> or <code>Descending</code>, of the
-        /// alert history. The default is <code>Descending</code>.
+        /// The sort order, whether <c>Ascending</c> or <c>Descending</c>, of the alert history.
+        /// The default is <c>Descending</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

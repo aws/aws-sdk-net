@@ -75,7 +75,7 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// Data points with a period of less than 60 seconds are available for 3 hours. These
     /// data points are high-resolution metrics and are available only for custom metrics
-    /// that have been defined with a <code>StorageResolution</code> of 1.
+    /// that have been defined with a <c>StorageResolution</c> of 1.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -176,10 +176,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ExtendedStatistics. 
         /// <para>
-        /// The percentile statistics. Specify values between p0.0 and p100. When calling <code>GetMetricStatistics</code>,
-        /// you must specify either <code>Statistics</code> or <code>ExtendedStatistics</code>,
-        /// but not both. Percentile statistics are not available for metrics when any of the
-        /// metric values are negative numbers.
+        /// The percentile statistics. Specify values between p0.0 and p100. When calling <c>GetMetricStatistics</c>,
+        /// you must specify either <c>Statistics</c> or <c>ExtendedStatistics</c>, but not both.
+        /// Percentile statistics are not available for metrics when any of the metric values
+        /// are negative numbers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -240,14 +240,14 @@ namespace Amazon.CloudWatch.Model
         /// resolution, a period can be as short as one minute (60 seconds) and must be a multiple
         /// of 60. For high-resolution metrics that are collected at intervals of less than one
         /// minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
-        /// metrics are those metrics stored by a <code>PutMetricData</code> call that includes
-        /// a <code>StorageResolution</code> of 1 second.
+        /// metrics are those metrics stored by a <c>PutMetricData</c> call that includes a <c>StorageResolution</c>
+        /// of 1 second.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-        /// 3 hours ago, you must specify the period as follows or no data points in that time
-        /// range is returned:
+        /// If the <c>StartTime</c> parameter specifies a time stamp that is greater than 3 hours
+        /// ago, you must specify the period as follows or no data points in that time range is
+        /// returned:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -309,8 +309,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
+        /// If you set <c>Period</c> to 5, 10, or 30, the start time of your request is rounded
+        /// down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
         /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
         /// 10-second period, the start time of your request is rounded down and you receive data
         /// from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes
@@ -334,9 +334,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// The metric statistics, other than percentile. For percentile statistics, use <code>ExtendedStatistics</code>.
-        /// When calling <code>GetMetricStatistics</code>, you must specify either <code>Statistics</code>
-        /// or <code>ExtendedStatistics</code>, but not both.
+        /// The metric statistics, other than percentile. For percentile statistics, use <c>ExtendedStatistics</c>.
+        /// When calling <c>GetMetricStatistics</c>, you must specify either <c>Statistics</c>
+        /// or <c>ExtendedStatistics</c>, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -355,7 +355,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit for a given metric. If you omit <code>Unit</code>, all data that was collected
+        /// The unit for a given metric. If you omit <c>Unit</c>, all data that was collected
         /// with any unit is returned, along with the corresponding units that were specified
         /// when the data was reported to CloudWatch. If you specify a unit, the operation returns
         /// only data that was collected with that unit specified. If you specify a unit that
@@ -456,8 +456,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
+        /// If you set <c>Period</c> to 5, 10, or 30, the start time of your request is rounded
+        /// down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
         /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
         /// 10-second period, the start time of your request is rounded down and you receive data
         /// from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes

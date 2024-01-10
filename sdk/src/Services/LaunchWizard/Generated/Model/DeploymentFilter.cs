@@ -59,8 +59,8 @@ namespace Amazon.LaunchWizard.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// The filter values. Filter values are case-sensitive. If you specify multiple values
-        /// for a filter, the values are joined with an <code>OR</code>, and the request returns
-        /// all results that match any of the specified values.
+        /// for a filter, the values are joined with an <c>OR</c>, and the request returns all
+        /// results that match any of the specified values.
         /// </para>
         /// </summary>
         public List<string> Values

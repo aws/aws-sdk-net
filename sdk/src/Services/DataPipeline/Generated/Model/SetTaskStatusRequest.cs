@@ -30,11 +30,11 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the SetTaskStatus operation.
-    /// Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task
-    /// is completed and provide information about the final status. A task runner makes this
+    /// Task runners call <c>SetTaskStatus</c> to notify AWS Data Pipeline that a task is
+    /// completed and provide information about the final status. A task runner makes this
     /// call regardless of whether the task was sucessful. A task runner does not need to
-    /// call <code>SetTaskStatus</code> for tasks that are canceled by the web service during
-    /// a call to <a>ReportTaskProgress</a>.
+    /// call <c>SetTaskStatus</c> for tasks that are canceled by the web service during a
+    /// call to <a>ReportTaskProgress</a>.
     /// </summary>
     public partial class SetTaskStatusRequest : AmazonDataPipelineRequest
     {
@@ -129,8 +129,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property TaskStatus. 
         /// <para>
-        /// If <code>FINISHED</code>, the task successfully completed. If <code>FAILED</code>,
-        /// the task ended unsuccessfully. Preconditions use false.
+        /// If <c>FINISHED</c>, the task successfully completed. If <c>FAILED</c>, the task ended
+        /// unsuccessfully. Preconditions use false.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

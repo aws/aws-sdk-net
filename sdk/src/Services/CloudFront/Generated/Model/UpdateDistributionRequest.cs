@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// The update process includes getting the current distribution configuration, updating
-    /// it to make your changes, and then submitting an <code>UpdateDistribution</code> request
+    /// it to make your changes, and then submitting an <c>UpdateDistribution</c> request
     /// to make the updates.
     /// </para>
     ///  
@@ -44,8 +44,8 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use <code>GetDistributionConfig</code> to get the current configuration, including
-    /// the version identifier (<code>ETag</code>).
+    /// Use <c>GetDistributionConfig</c> to get the current configuration, including the version
+    /// identifier (<c>ETag</c>).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -54,19 +54,19 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value
-    /// unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>,
-    /// then remove the <code>ETag</code> field.)
+    /// You must rename the <c>ETag</c> field to <c>IfMatch</c>, leaving the value unchanged.
+    /// (Set the value of <c>IfMatch</c> to the value of <c>ETag</c>, then remove the <c>ETag</c>
+    /// field.)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can't change the value of <code>CallerReference</code>.
+    /// You can't change the value of <c>CallerReference</c>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Submit an <code>UpdateDistribution</code> request, providing the distribution configuration.
+    /// Submit an <c>UpdateDistribution</c> request, providing the distribution configuration.
     /// The new configuration replaces the existing configuration. The values that you specify
-    /// in an <code>UpdateDistribution</code> request are not merged into your existing configuration.
+    /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
     /// Make sure to include all fields: the ones that you modified and also the ones that
     /// you didn't.
     /// </para>
@@ -137,8 +137,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The value of the <code>ETag</code> header that you received when retrieving the distribution's
-        /// configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// The value of the <c>ETag</c> header that you received when retrieving the distribution's
+        /// configuration. For example: <c>E2QWRUHAPOMQZL</c>.
         /// </para>
         /// </summary>
         public string IfMatch

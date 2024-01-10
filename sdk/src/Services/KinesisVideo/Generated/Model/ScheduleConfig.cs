@@ -30,19 +30,18 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// This API enables you to specify the duration that the camera, or local media file,
-    /// should record onto the Edge Agent. The <code>ScheduleConfig</code> consists of the
-    /// <code>ScheduleExpression</code> and the <code>DurationInMinutes</code> attributes.
-    /// 
+    /// should record onto the Edge Agent. The <c>ScheduleConfig</c> consists of the <c>ScheduleExpression</c>
+    /// and the <c>DurationInMinutes</c> attributes. 
     /// 
     ///  
     /// <para>
-    /// If the <code>ScheduleConfig</code> is not provided in the <code>RecorderConfig</code>,
-    /// then the Edge Agent will always be set to recording mode.
+    /// If the <c>ScheduleConfig</c> is not provided in the <c>RecorderConfig</c>, then the
+    /// Edge Agent will always be set to recording mode.
     /// </para>
     ///  
     /// <para>
-    /// If the <code>ScheduleConfig</code> is not provided in the <code>UploaderConfig</code>,
-    /// then the Edge Agent will upload at regular intervals (every 1 hour).
+    /// If the <c>ScheduleConfig</c> is not provided in the <c>UploaderConfig</c>, then the
+    /// Edge Agent will upload at regular intervals (every 1 hour).
     /// </para>
     /// </summary>
     public partial class ScheduleConfig
@@ -53,8 +52,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
-        /// The total duration to record the media. If the <code>ScheduleExpression</code> attribute
-        /// is provided, then the <code>DurationInSeconds</code> attribute should also be specified.
+        /// The total duration to record the media. If the <c>ScheduleExpression</c> attribute
+        /// is provided, then the <c>DurationInSeconds</c> attribute should also be specified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=3600)]
@@ -74,9 +73,9 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
         /// The Quartz cron expression that takes care of scheduling jobs to record from the camera,
-        /// or local media file, onto the Edge Agent. If the <code>ScheduleExpression</code> is
-        /// not provided for the <code>RecorderConfig</code>, then the Edge Agent will always
-        /// be set to recording mode.
+        /// or local media file, onto the Edge Agent. If the <c>ScheduleExpression</c> is not
+        /// provided for the <c>RecorderConfig</c>, then the Edge Agent will always be set to
+        /// recording mode.
         /// </para>
         ///  
         /// <para>

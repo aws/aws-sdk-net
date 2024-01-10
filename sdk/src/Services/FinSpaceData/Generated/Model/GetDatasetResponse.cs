@@ -165,11 +165,11 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TABULAR</code> – Data is structured in a tabular format.
+        ///  <c>TABULAR</c> – Data is structured in a tabular format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_TABULAR</code> – Data is structured in a non-tabular format.
+        ///  <c>NON_TABULAR</c> – Data is structured in a non-tabular format.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -230,19 +230,19 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – Dataset is pending creation.
+        ///  <c>PENDING</c> – Dataset is pending creation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – Dataset creation has failed.
+        ///  <c>FAILED</c> – Dataset creation has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> – Dataset creation has succeeded.
+        ///  <c>SUCCESS</c> – Dataset creation has succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code> – Dataset creation is running.
+        ///  <c>RUNNING</c> – Dataset creation is running.
         /// </para>
         ///  </li> </ul>
         /// </summary>

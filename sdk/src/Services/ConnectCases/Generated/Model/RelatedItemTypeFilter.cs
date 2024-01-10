@@ -39,7 +39,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// A filter for related items of type <code>Comment</code>.
+        /// A filter for related items of type <c>Comment</c>.
         /// </para>
         /// </summary>
         public CommentFilter Comment
@@ -57,7 +57,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Contact. 
         /// <para>
-        /// A filter for related items of type <code>Contact</code>.
+        /// A filter for related items of type <c>Contact</c>.
         /// </para>
         /// </summary>
         public ContactFilter Contact

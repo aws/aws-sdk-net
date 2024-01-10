@@ -64,7 +64,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property IncrementalRunConfig. 
         /// <para>
-        /// An object which defines an incremental run type and has only <code>incrementalRunType</code>
+        /// An object which defines an incremental run type and has only <c>incrementalRunType</c>
         /// as a field.
         /// </para>
         /// </summary>
@@ -83,8 +83,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property InputSourceConfig. 
         /// <para>
-        /// A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code>
-        /// and <code>SchemaName</code>.
+        /// A list of <c>InputSource</c> objects, which have the fields <c>InputSourceARN</c>
+        /// and <c>SchemaName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -103,8 +103,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
-        /// A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>,
-        /// <code>ApplyNormalization</code>, and <code>Output</code>.
+        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>OutputS3Path</c>,
+        /// <c>ApplyNormalization</c>, and <c>Output</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -123,7 +123,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ResolutionTechniques. 
         /// <para>
-        /// An object which defines the <code>resolutionType</code> and the <code>ruleBasedProperties</code>.
+        /// An object which defines the <c>resolutionType</c> and the <c>ruleBasedProperties</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -162,7 +162,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property WorkflowArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.
+        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <c>MatchingWorkflow</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

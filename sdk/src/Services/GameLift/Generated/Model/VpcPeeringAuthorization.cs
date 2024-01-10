@@ -56,7 +56,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// Time stamp indicating when this authorization was issued. Format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -75,7 +75,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ExpirationTime. 
         /// <para>
         /// Time stamp indicating when this authorization expires (24 hours after issuance). Format
-        /// is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// is a number expressed in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime ExpirationTime

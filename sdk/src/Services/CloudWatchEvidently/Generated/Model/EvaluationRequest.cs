@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// An internal ID that represents a unique user session of the application. This <code>entityID</code>
+        /// An internal ID that represents a unique user session of the application. This <c>entityID</c>
         /// is checked against any override rules assigned for this feature.
         /// </para>
         /// </summary>

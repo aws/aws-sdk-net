@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The recorder configuration consists of the local <code>MediaSourceConfig</code> details
+    /// The recorder configuration consists of the local <c>MediaSourceConfig</c> details
     /// that are used as credentials to accesss the local media files streamed on the camera.
     /// </summary>
     public partial class RecorderConfig
@@ -40,8 +40,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property MediaSourceConfig. 
         /// <para>
-        /// The configuration details that consist of the credentials required (<code>MediaUriSecretArn</code>
-        /// and <code>MediaUriType</code>) to access the media files streamed to the camera. 
+        /// The configuration details that consist of the credentials required (<c>MediaUriSecretArn</c>
+        /// and <c>MediaUriType</c>) to access the media files streamed to the camera. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,10 +60,10 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ScheduleConfig. 
         /// <para>
-        /// The configuration that consists of the <code>ScheduleExpression</code> and the <code>DurationInMinutes</code>
+        /// The configuration that consists of the <c>ScheduleExpression</c> and the <c>DurationInMinutes</c>
         /// details that specify the scheduling to record from a camera, or local media file,
-        /// onto the Edge Agent. If the <code>ScheduleExpression</code> attribute is not provided,
-        /// then the Edge Agent will always be set to recording mode.
+        /// onto the Edge Agent. If the <c>ScheduleExpression</c> attribute is not provided, then
+        /// the Edge Agent will always be set to recording mode.
         /// </para>
         /// </summary>
         public ScheduleConfig ScheduleConfig

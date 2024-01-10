@@ -88,11 +88,10 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property FailuresNotRedrivable. 
         /// <para>
-        /// The number of <code>FAILED</code>, <code>ABORTED</code>, or <code>TIMED_OUT</code>
-        /// child workflow executions that cannot be redriven because their execution status is
-        /// terminal. For example, child workflows with an execution status of <code>FAILED</code>,
-        /// <code>ABORTED</code>, or <code>TIMED_OUT</code> and a <code>redriveStatus</code> of
-        /// <code>NOT_REDRIVABLE</code>.
+        /// The number of <c>FAILED</c>, <c>ABORTED</c>, or <c>TIMED_OUT</c> child workflow executions
+        /// that cannot be redriven because their execution status is terminal. For example, child
+        /// workflows with an execution status of <c>FAILED</c>, <c>ABORTED</c>, or <c>TIMED_OUT</c>
+        /// and a <c>redriveStatus</c> of <c>NOT_REDRIVABLE</c>.
         /// </para>
         /// </summary>
         public long FailuresNotRedrivable
@@ -131,9 +130,8 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property PendingRedrive. 
         /// <para>
         /// The number of unsuccessful child workflow executions currently waiting to be redriven.
-        /// The status of these child workflow executions could be <code>FAILED</code>, <code>ABORTED</code>,
-        /// or <code>TIMED_OUT</code> in the original execution attempt or a previous redrive
-        /// attempt.
+        /// The status of these child workflow executions could be <c>FAILED</c>, <c>ABORTED</c>,
+        /// or <c>TIMED_OUT</c> in the original execution attempt or a previous redrive attempt.
         /// </para>
         /// </summary>
         public long PendingRedrive
@@ -151,7 +149,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ResultsWritten. 
         /// <para>
-        /// Returns the count of child workflow executions whose results were written by <code>ResultWriter</code>.
+        /// Returns the count of child workflow executions whose results were written by <c>ResultWriter</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/input-output-resultwriter.html">ResultWriter</a>
         /// in the <i>Step Functions Developer Guide</i>.
         /// </para>

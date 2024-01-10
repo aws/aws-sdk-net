@@ -59,9 +59,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you can get additional results from the <code>ListConnectors</code> call, a <code>NextToken</code>
+        /// When you can get additional results from the <c>ListConnectors</c> call, a <c>NextToken</c>
         /// parameter is returned in the output. You can then pass in a subsequent command to
-        /// the <code>NextToken</code> parameter to continue listing additional connectors.
+        /// the <c>NextToken</c> parameter to continue listing additional connectors.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

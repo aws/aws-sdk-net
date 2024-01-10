@@ -36,8 +36,8 @@ namespace Amazon.CodeDeploy.Model
     /// <para>
     /// You can use load balancers and target groups in combination. For example, if you have
     /// two Classic Load Balancers, and five target groups tied to an Application Load Balancer,
-    /// you can specify the two Classic Load Balancers in <code>elbInfoList</code>, and the
-    /// five target groups in <code>targetGroupInfoList</code>.
+    /// you can specify the two Classic Load Balancers in <c>elbInfoList</c>, and the five
+    /// target groups in <c>targetGroupInfoList</c>.
     /// </para>
     /// </summary>
     public partial class LoadBalancerInfo
@@ -59,7 +59,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// If you're using Application Load Balancers or Network Load Balancers, use the <code>targetGroupInfoList</code>
+        /// If you're using Application Load Balancers or Network Load Balancers, use the <c>targetGroupInfoList</c>
         /// array instead of this one.
         /// </para>
         ///  </note>
@@ -89,8 +89,8 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// If you're using Classic Load Balancers, use the <code>elbInfoList</code> array instead
-        /// of this one.
+        /// If you're using Classic Load Balancers, use the <c>elbInfoList</c> array instead of
+        /// this one.
         /// </para>
         ///  </note>
         /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetGroupPairInfoList. 
         /// <para>
-        ///  The target group pair information. This is an array of <code>TargeGroupPairInfo</code>
+        ///  The target group pair information. This is an array of <c>TargeGroupPairInfo</c>
         /// objects with a maximum size of one. 
         /// </para>
         /// </summary>

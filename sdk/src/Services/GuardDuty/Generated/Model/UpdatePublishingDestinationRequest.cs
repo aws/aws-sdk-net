@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePublishingDestination operation.
-    /// Updates information about the publishing destination specified by the <code>destinationId</code>.
+    /// Updates information about the publishing destination specified by the <c>destinationId</c>.
     /// </summary>
     public partial class UpdatePublishingDestinationRequest : AmazonGuardDutyRequest
     {
@@ -60,8 +60,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationProperties. 
         /// <para>
-        /// A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.
+        /// A <c>DestinationProperties</c> object that includes the <c>DestinationArn</c> and
+        /// <c>KmsKeyArn</c> of the publishing destination.
         /// </para>
         /// </summary>
         public DestinationProperties DestinationProperties

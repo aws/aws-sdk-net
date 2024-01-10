@@ -41,8 +41,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CategoryFilterFunction. 
         /// <para>
-        /// The category filter function. Valid values for this structure are <code>EXACT</code>
-        /// and <code>CONTAINS</code>.
+        /// The category filter function. Valid values for this structure are <c>EXACT</c> and
+        /// <c>CONTAINS</c>.
         /// </para>
         /// </summary>
         public CategoryFilterFunction CategoryFilterFunction

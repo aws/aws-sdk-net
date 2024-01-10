@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization.
+    /// Allows filtering on <c>CreatedDate</c> of a ResaleAuthorization.
     /// </summary>
     public partial class ResaleAuthorizationCreatedDateFilter
     {
@@ -39,8 +39,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property DateRange. 
         /// <para>
-        /// Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization with date range
-        /// as input.
+        /// Allows filtering on <c>CreatedDate</c> of a ResaleAuthorization with date range as
+        /// input.
         /// </para>
         /// </summary>
         public ResaleAuthorizationCreatedDateFilterDateRange DateRange
@@ -58,8 +58,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ValueList. 
         /// <para>
-        /// Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization with date value
-        /// as input.
+        /// Allows filtering on <c>CreatedDate</c> of a ResaleAuthorization with date value as
+        /// input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

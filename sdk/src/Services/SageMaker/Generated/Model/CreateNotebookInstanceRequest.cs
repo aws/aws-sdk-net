@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// In a <code>CreateNotebookInstance</code> request, specify the type of ML compute instance
+    /// In a <c>CreateNotebookInstance</c> request, specify the type of ML compute instance
     /// that you want to run. SageMaker launches the instance, installs common libraries that
     /// you can use to explore datasets for model training, and attaches an ML storage volume
     /// to the notebook instance. 
@@ -55,17 +55,17 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Option) If you specified <code>SubnetId</code>, SageMaker creates a network interface
-    /// in your own VPC, which is inferred from the subnet ID that you provide in the input.
+    /// (Option) If you specified <c>SubnetId</c>, SageMaker creates a network interface in
+    /// your own VPC, which is inferred from the subnet ID that you provide in the input.
     /// When creating this network interface, SageMaker attaches the security group that you
     /// specified in the request to the network interface that it creates in your VPC.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Launches an EC2 instance of the type specified in the request in the SageMaker VPC.
-    /// If you specified <code>SubnetId</code> of your VPC, SageMaker specifies both network
-    /// interfaces when launching this instance. This enables inbound traffic from your own
-    /// VPC to the notebook instance, assuming that the security groups allow it.
+    /// If you specified <c>SubnetId</c> of your VPC, SageMaker specifies both network interfaces
+    /// when launching this instance. This enables inbound traffic from your own VPC to the
+    /// notebook instance, assuming that the security groups allow it.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -179,15 +179,15 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DirectInternetAccess. 
         /// <para>
         /// Sets whether SageMaker provides internet access to the notebook instance. If you set
-        /// this to <code>Disabled</code> this notebook instance is able to access resources only
-        /// in your VPC, and is not be able to connect to SageMaker training and endpoint services
+        /// this to <c>Disabled</c> this notebook instance is able to access resources only in
+        /// your VPC, and is not be able to connect to SageMaker training and endpoint services
         /// unless you configure a NAT Gateway in your VPC.
         /// </para>
         ///  
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access">Notebook
         /// Instances Are Internet-Enabled by Default</a>. You can set the value of this parameter
-        /// to <code>Disabled</code> only if you set a value for the <code>SubnetId</code> parameter.
+        /// to <c>Disabled</c> only if you set a value for the <c>SubnetId</c> parameter.
         /// </para>
         /// </summary>
         public DirectInternetAccess DirectInternetAccess
@@ -333,7 +333,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+        /// To be able to pass this role to SageMaker, the caller of this API must have the <c>iam:PassRole</c>
         /// permission.
         /// </para>
         ///  </note>
@@ -355,7 +355,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RootAccess. 
         /// <para>
         /// Whether root access is enabled or disabled for users of the notebook instance. The
-        /// default value is <code>Enabled</code>.
+        /// default value is <c>Enabled</c>.
         /// </para>
         ///  <note> 
         /// <para>

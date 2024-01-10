@@ -39,7 +39,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationSummaries. 
         /// <para>
-        /// A list of <code>ApplicationSummary</code> objects.
+        /// A list of <c>ApplicationSummary</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,9 +58,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token for the next set of results, or <code>null</code> if there are
-        /// no additional results. Pass this token into a subsequent command to retrieve the next
-        /// set of items For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
+        /// The pagination token for the next set of results, or <c>null</c> if there are no additional
+        /// results. Pass this token into a subsequent command to retrieve the next set of items
+        /// For more information about pagination, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
         /// the Amazon Command Line Interface's Pagination Options</a>.
         /// </para>
         /// </summary>

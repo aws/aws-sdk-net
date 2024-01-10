@@ -131,8 +131,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        /// Specifies the type of volume to create; <code>ONTAP</code> and <code>OPENZFS</code>
-        /// are the only valid volume types.
+        /// Specifies the type of volume to create; <c>ONTAP</c> and <c>OPENZFS</c> are the only
+        /// valid volume types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

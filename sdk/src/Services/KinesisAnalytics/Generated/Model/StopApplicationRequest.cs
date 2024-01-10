@@ -47,7 +47,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:StopApplication</code>
+    /// This operation requires permissions to perform the <c>kinesisanalytics:StopApplication</c>
     /// action.
     /// </para>
     /// </summary>

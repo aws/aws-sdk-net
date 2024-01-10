@@ -378,8 +378,7 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Returns the details about a probe. You'll need both the <code>monitorName</code> and
-        /// <code>probeId</code>.
+        /// Returns the details about a probe. You'll need both the <c>monitorName</c> and <c>probeId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProbe service method.</param>
         /// 
@@ -405,8 +404,7 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Returns the details about a probe. You'll need both the <code>monitorName</code> and
-        /// <code>probeId</code>.
+        /// Returns the details about a probe. You'll need both the <c>monitorName</c> and <c>probeId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProbe service method.</param>
         /// <param name="cancellationToken">
@@ -682,8 +680,8 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Updates the <code>aggregationPeriod</code> for a monitor. Monitors support an <code>aggregationPeriod</code>
-        /// of either <code>30</code> or <code>60</code> seconds.
+        /// Updates the <c>aggregationPeriod</c> for a monitor. Monitors support an <c>aggregationPeriod</c>
+        /// of either <c>30</c> or <c>60</c> seconds.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMonitor service method.</param>
         /// 
@@ -712,8 +710,8 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Updates the <code>aggregationPeriod</code> for a monitor. Monitors support an <code>aggregationPeriod</code>
-        /// of either <code>30</code> or <code>60</code> seconds.
+        /// Updates the <c>aggregationPeriod</c> for a monitor. Monitors support an <c>aggregationPeriod</c>
+        /// of either <c>30</c> or <c>60</c> seconds.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateMonitor service method.</param>
         /// <param name="cancellationToken">
@@ -748,9 +746,9 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Updates a monitor probe. This action requires both the <code>monitorName</code> and
-        /// <code>probeId</code> parameters. Run <code>ListMonitors</code> to get a list of monitor
-        /// names. Run <code>GetMonitor</code> to get a list of probes and probe IDs.
+        /// Updates a monitor probe. This action requires both the <c>monitorName</c> and <c>probeId</c>
+        /// parameters. Run <c>ListMonitors</c> to get a list of monitor names. Run <c>GetMonitor</c>
+        /// to get a list of probes and probe IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProbe service method.</param>
         /// 
@@ -779,9 +777,9 @@ namespace Amazon.NetworkMonitor
 
 
         /// <summary>
-        /// Updates a monitor probe. This action requires both the <code>monitorName</code> and
-        /// <code>probeId</code> parameters. Run <code>ListMonitors</code> to get a list of monitor
-        /// names. Run <code>GetMonitor</code> to get a list of probes and probe IDs.
+        /// Updates a monitor probe. This action requires both the <c>monitorName</c> and <c>probeId</c>
+        /// parameters. Run <c>ListMonitors</c> to get a list of monitor names. Run <c>GetMonitor</c>
+        /// to get a list of probes and probe IDs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProbe service method.</param>
         /// <param name="cancellationToken">

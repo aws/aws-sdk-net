@@ -38,7 +38,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used in the request. Use this value in a <code>GetChangeTokenStatus</code>
+        /// The <c>ChangeToken</c> that you used in the request. Use this value in a <c>GetChangeTokenStatus</c>
         /// request to get the current status of the request. 
         /// </para>
         /// </summary>

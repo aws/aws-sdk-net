@@ -48,9 +48,9 @@ namespace Amazon.Private5G.Model
     ///  </li> </ul> 
     /// <para>
     /// After you submit a request to replace or return a network resource, the status of
-    /// the network resource changes to <code>CREATING_SHIPPING_LABEL</code>. The shipping
-    /// label is available when the status of the network resource is <code>PENDING_RETURN</code>.
-    /// After the network resource is successfully returned, its status changes to <code>DELETED</code>.
+    /// the network resource changes to <c>CREATING_SHIPPING_LABEL</c>. The shipping label
+    /// is available when the status of the network resource is <c>PENDING_RETURN</c>. After
+    /// the network resource is successfully returned, its status changes to <c>DELETED</c>.
     /// For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return
     /// a radio unit</a>.
     /// </para>
@@ -178,20 +178,20 @@ namespace Amazon.Private5G.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLACE</code> - Submits a request to replace a defective radio unit. We provide
+        ///  <c>REPLACE</c> - Submits a request to replace a defective radio unit. We provide
         /// a shipping label that you can use for the return process and we ship a replacement
         /// radio unit to you.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RETURN</code> - Submits a request to return a radio unit that you no longer
-        /// need. We provide a shipping label that you can use for the return process.
+        ///  <c>RETURN</c> - Submits a request to return a radio unit that you no longer need.
+        /// We provide a shipping label that you can use for the return process.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMMITMENT</code> - Submits a request to change or renew the commitment period.
-        /// If you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration">
-        /// <code>commitmentConfiguration</code> </a>.
+        ///  <c>COMMITMENT</c> - Submits a request to change or renew the commitment period. If
+        /// you choose this value, then you must set <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_StartNetworkResourceUpdate.html#privatenetworks-StartNetworkResourceUpdate-request-commitmentConfiguration">
+        /// <c>commitmentConfiguration</c> </a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

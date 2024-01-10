@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        /// The device name (for example, <c>/dev/sdh</c> or <c>xvdh</c>).
         /// </para>
         /// </summary>
         public string DeviceName
@@ -98,11 +98,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The virtual device name (<code>ephemeral</code>N). Instance store volumes are numbered
-        /// starting from 0. An instance type with 2 available instance store volumes can specify
-        /// mappings for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available
-        /// instance store volumes depends on the instance type. After you connect to the instance,
-        /// you must mount the volume.
+        /// The virtual device name (<c>ephemeral</c>N). Instance store volumes are numbered starting
+        /// from 0. An instance type with 2 available instance store volumes can specify mappings
+        /// for <c>ephemeral0</c> and <c>ephemeral1</c>. The number of available instance store
+        /// volumes depends on the instance type. After you connect to the instance, you must
+        /// mount the volume.
         /// </para>
         ///  
         /// <para>

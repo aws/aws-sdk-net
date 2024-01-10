@@ -188,7 +188,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property EstimatedSavingsPercentage. 
         /// <para>
         /// The estimated savings relative to the total cost of On-Demand usage, over the lookback
-        /// period. This is calculated as <code>estimatedSavingsAmount</code>/ <code>CurrentOnDemandSpend</code>*100.
+        /// period. This is calculated as <c>estimatedSavingsAmount</c>/ <c>CurrentOnDemandSpend</c>*100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

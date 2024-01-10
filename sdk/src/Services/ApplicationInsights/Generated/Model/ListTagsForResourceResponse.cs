@@ -39,7 +39,7 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// An array that lists all the tags that are associated with the application. Each tag
-        /// consists of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>).
+        /// consists of a required tag key (<c>Key</c>) and an associated tag value (<c>Value</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

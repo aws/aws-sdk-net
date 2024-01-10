@@ -34,9 +34,9 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// Only use <code>ModelSettings</code> with the <code>LanguageModelName</code> sub-parameter
-    /// if you're <b>not</b> using automatic language identification (<code/>). If using <code>LanguageIdSettings</code>
-    /// in your request, this parameter contains a <code>LanguageModelName</code> sub-parameter.
+    /// Only use <c>ModelSettings</c> with the <c>LanguageModelName</c> sub-parameter if you're
+    /// <b>not</b> using automatic language identification (<code/>). If using <c>LanguageIdSettings</c>
+    /// in your request, this parameter contains a <c>LanguageModelName</c> sub-parameter.
     /// </para>
     /// </summary>
     public partial class ModelSettings

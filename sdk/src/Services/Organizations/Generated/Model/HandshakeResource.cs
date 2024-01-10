@@ -40,7 +40,7 @@ namespace Amazon.Organizations.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// When needed, contains an additional array of <code>HandshakeResource</code> objects.
+        /// When needed, contains an additional array of <c>HandshakeResource</c> objects.
         /// </para>
         /// </summary>
         public List<HandshakeResource> Resources
@@ -63,31 +63,31 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACCOUNT</code> - Specifies an Amazon Web Services account ID number.
+        ///  <c>ACCOUNT</c> - Specifies an Amazon Web Services account ID number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ORGANIZATION</code> - Specifies an organization ID number.
+        ///  <c>ORGANIZATION</c> - Specifies an organization ID number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EMAIL</code> - Specifies the email address that is associated with the account
-        /// that receives the handshake. 
+        ///  <c>EMAIL</c> - Specifies the email address that is associated with the account that
+        /// receives the handshake. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OWNER_EMAIL</code> - Specifies the email address associated with the management
-        /// account. Included as information about an organization. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>OWNER_NAME</code> - Specifies the name associated with the management account.
+        ///  <c>OWNER_EMAIL</c> - Specifies the email address associated with the management account.
         /// Included as information about an organization. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOTES</code> - Additional text provided by the handshake initiator and intended
-        /// for the recipient to read.
+        ///  <c>OWNER_NAME</c> - Specifies the name associated with the management account. Included
+        /// as information about an organization. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NOTES</c> - Additional text provided by the handshake initiator and intended for
+        /// the recipient to read.
         /// </para>
         ///  </li> </ul>
         /// </summary>

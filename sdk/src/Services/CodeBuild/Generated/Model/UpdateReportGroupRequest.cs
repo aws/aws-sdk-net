@@ -64,11 +64,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>S3</code>: The report results are exported to an S3 bucket. 
+        ///  <c>S3</c>: The report results are exported to an S3 bucket. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_EXPORT</code>: The report results are not exported. 
+        ///  <c>NO_EXPORT</c>: The report results are not exported. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

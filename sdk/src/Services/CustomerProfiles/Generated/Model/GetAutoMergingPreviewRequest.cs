@@ -45,9 +45,9 @@ namespace Amazon.CustomerProfiles.Model
     /// <para>
     /// We strongly recommend you use this API to do a dry run of the automerging process
     /// before running the Identity Resolution Job. Include <b>at least</b> two matching attributes.
-    /// If your matching list includes too few attributes (such as only <code>FirstName</code>
-    /// or only <code>LastName</code>), there may be a large number of matches. This increases
-    /// the chances of erroneous merges.
+    /// If your matching list includes too few attributes (such as only <c>FirstName</c> or
+    /// only <c>LastName</c>), there may be a large number of matches. This increases the
+    /// chances of erroneous merges.
     /// </para>
     ///  </important>
     /// </summary>

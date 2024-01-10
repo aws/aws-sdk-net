@@ -68,7 +68,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// For example, if you have an application update scheduled to launch on May 1, 2024,
         /// and you don't want practice runs to shift traffic away at that time, you could set
-        /// a blocked date for <code>2024-05-01</code>.
+        /// a blocked date for <c>2024-05-01</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
@@ -101,7 +101,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// For example, say you run business report summaries three days a week. For this scenario,
         /// you might set the following recurring days and times as blocked windows, for example:
-        /// <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.
+        /// <c>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
@@ -122,8 +122,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// An Amazon CloudWatch alarm that you can specify for zonal autoshift practice runs.
         /// This alarm blocks Route 53 ARC from starting practice run zonal shifts, and ends a
-        /// practice run that's in progress, when the alarm is in an <code>ALARM</code> state.
-        /// 
+        /// practice run that's in progress, when the alarm is in an <c>ALARM</c> state. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -143,14 +142,14 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property OutcomeAlarms. 
         /// <para>
         /// The <i>outcome alarm</i> for practice runs is a required Amazon CloudWatch alarm that
-        /// you specify that ends a practice run when the alarm is in an <code>ALARM</code> state.
+        /// you specify that ends a practice run when the alarm is in an <c>ALARM</c> state.
         /// </para>
         ///  
         /// <para>
         /// Configure the alarm to monitor the health of your application when traffic is shifted
         /// away from an Availability Zone during each weekly practice run. You should configure
-        /// the alarm to go into an <code>ALARM</code> state if your application is impacted by
-        /// the zonal shift, and you want to stop the zonal shift, to let traffic for the resource
+        /// the alarm to go into an <c>ALARM</c> state if your application is impacted by the
+        /// zonal shift, and you want to stop the zonal shift, to let traffic for the resource
         /// return to the Availability Zone.
         /// </para>
         /// </summary>

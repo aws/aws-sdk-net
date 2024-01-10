@@ -42,21 +42,20 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
-    /// of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting,
-    /// non-tabular problem types such as image or text classification, and text generation
-    /// (LLMs fine-tuning).
+    ///  <c>CreateAutoMLJobV2</c> can manage tabular problem types identical to those of its
+    /// previous version <c>CreateAutoMLJob</c>, as well as time-series forecasting, non-tabular
+    /// problem types such as image or text classification, and text generation (LLMs fine-tuning).
     /// </para>
     ///  
     /// <para>
-    /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+    /// Find guidelines about how to migrate a <c>CreateAutoMLJob</c> to <c>CreateAutoMLJobV2</c>
     /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
     /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
     /// </para>
     ///  </note> 
     /// <para>
-    /// For the list of available problem types supported by <code>CreateAutoMLJobV2</code>,
-    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLProblemTypeConfig.html">AutoMLProblemTypeConfig</a>.
+    /// For the list of available problem types supported by <c>CreateAutoMLJobV2</c>, see
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLProblemTypeConfig.html">AutoMLProblemTypeConfig</a>.
     /// </para>
     ///  
     /// <para>
@@ -82,28 +81,28 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of channel objects describing the input data and their location. Each channel
         /// is a named input source. Similar to the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-        /// attribute in the <code>CreateAutoMLJob</code> input parameters. The supported formats
-        /// depend on the problem type:
+        /// attribute in the <c>CreateAutoMLJob</c> input parameters. The supported formats depend
+        /// on the problem type:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For tabular problem types: <code>S3Prefix</code>, <code>ManifestFile</code>.
+        /// For tabular problem types: <c>S3Prefix</c>, <c>ManifestFile</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For image classification: <code>S3Prefix</code>, <code>ManifestFile</code>, <code>AugmentedManifestFile</code>.
+        /// For image classification: <c>S3Prefix</c>, <c>ManifestFile</c>, <c>AugmentedManifestFile</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For text classification: <code>S3Prefix</code>.
+        /// For text classification: <c>S3Prefix</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For time-series forecasting: <code>S3Prefix</code>.
+        /// For time-series forecasting: <c>S3Prefix</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For text generation (LLMs fine-tuning): <code>S3Prefix</code>.
+        /// For text generation (LLMs fine-tuning): <c>S3Prefix</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,14 +147,14 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// For tabular problem types: You must either provide both the <code>AutoMLJobObjective</code>
-        /// and indicate the type of supervised learning problem in <code>AutoMLProblemTypeConfig</code>
-        /// (<code>TabularJobConfig.ProblemType</code>), or none at all.
+        /// For tabular problem types: You must either provide both the <c>AutoMLJobObjective</c>
+        /// and indicate the type of supervised learning problem in <c>AutoMLProblemTypeConfig</c>
+        /// (<c>TabularJobConfig.ProblemType</c>), or none at all.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For text generation problem types (LLMs fine-tuning): Fine-tuning language models
-        /// in Autopilot does not require setting the <code>AutoMLJobObjective</code> field. Autopilot
+        /// in Autopilot does not require setting the <c>AutoMLJobObjective</c> field. Autopilot
         /// fine-tunes LLMs without requiring multiple candidates to be trained and evaluated.
         /// Instead, using your dataset, Autopilot directly fine-tunes your target model to enhance
         /// a default objective metric, the cross-entropy loss. After fine-tuning a language model,
@@ -204,8 +203,8 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// The validation and training datasets must contain the same headers. For jobs created
-        /// by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than
-        /// 2 GB in size.
+        /// by calling <c>CreateAutoMLJob</c>, the validation dataset must be less than 2 GB in
+        /// size.
         /// </para>
         ///  <note> 
         /// <para>

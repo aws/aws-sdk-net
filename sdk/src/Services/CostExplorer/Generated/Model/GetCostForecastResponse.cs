@@ -39,8 +39,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property ForecastResultsByTime. 
         /// <para>
-        /// The forecasts for your query, in order. For <code>DAILY</code> forecasts, this is
-        /// a list of days. For <code>MONTHLY</code> forecasts, this is a list of months.
+        /// The forecasts for your query, in order. For <c>DAILY</c> forecasts, this is a list
+        /// of days. For <c>MONTHLY</c> forecasts, this is a list of months.
         /// </para>
         /// </summary>
         public List<ForecastResult> ForecastResultsByTime
@@ -58,7 +58,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Total. 
         /// <para>
-        /// How much you are forecasted to spend over the forecast period, in <code>USD</code>.
+        /// How much you are forecasted to spend over the forecast period, in <c>USD</c>.
         /// </para>
         /// </summary>
         public MetricValue Total

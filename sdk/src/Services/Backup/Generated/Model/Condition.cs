@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Contains an array of triplets made up of a condition type (such as <code>StringEquals</code>),
+    /// Contains an array of triplets made up of a condition type (such as <c>StringEquals</c>),
     /// a key, and a value. Used to filter resources using their tags and assign them to a
     /// backup plan. Case sensitive.
     /// </summary>
@@ -42,8 +42,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionKey. 
         /// <para>
-        /// The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
-        /// <code>Department</code> is the key.
+        /// The key in a key-value pair. For example, in the tag <c>Department: Accounting</c>,
+        /// <c>Department</c> is the key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,10 +63,10 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ConditionType. 
         /// <para>
         /// An operation applied to a key-value pair used to assign resources to your backup plan.
-        /// Condition only supports <code>StringEquals</code>. For more flexible assignment options,
-        /// including <code>StringLike</code> and the ability to exclude resources from your backup
-        /// plan, use <code>Conditions</code> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html">
-        /// <code>BackupSelection</code> </a>.
+        /// Condition only supports <c>StringEquals</c>. For more flexible assignment options,
+        /// including <c>StringLike</c> and the ability to exclude resources from your backup
+        /// plan, use <c>Conditions</c> (with an "s" on the end) for your <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_BackupSelection.html">
+        /// <c>BackupSelection</c> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,8 +85,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionValue. 
         /// <para>
-        /// The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
-        /// <code>Accounting</code> is the value.
+        /// The value in a key-value pair. For example, in the tag <c>Department: Accounting</c>,
+        /// <c>Accounting</c> is the value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

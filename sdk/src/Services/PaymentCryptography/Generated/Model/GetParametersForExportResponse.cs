@@ -83,7 +83,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property SigningKeyAlgorithm. 
         /// <para>
         /// The algorithm of the signing key certificate for use in TR-34 key block generation.
-        /// <code>RSA_2048</code> is the only signing key algorithm allowed.
+        /// <c>RSA_2048</c> is the only signing key algorithm allowed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

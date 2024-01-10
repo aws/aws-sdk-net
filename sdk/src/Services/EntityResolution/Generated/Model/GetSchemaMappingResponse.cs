@@ -45,7 +45,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp of when the <code>SchemaMapping</code> was created.
+        /// The timestamp of when the <c>SchemaMapping</c> was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,8 +102,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property MappedInputFields. 
         /// <para>
-        /// A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds
-        /// to a column the source data table, and contains column name plus additional information
+        /// A list of <c>MappedInputFields</c>. Each <c>MappedInputField</c> corresponds to a
+        /// column the source data table, and contains column name plus additional information
         /// Venice uses for matching.
         /// </para>
         /// </summary>
@@ -180,7 +180,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp of when the <code>SchemaMapping</code> was last updated.
+        /// The timestamp of when the <c>SchemaMapping</c> was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

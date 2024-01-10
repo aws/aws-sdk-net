@@ -30,7 +30,7 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// The health check configuration of a target group. Health check configurations aren't
-    /// used for <code>LAMBDA</code> and <code>ALB</code> target groups.
+    /// used for <c>LAMBDA</c> and <c>ALB</c> target groups.
     /// </summary>
     public partial class HealthCheckConfig
     {
@@ -145,11 +145,10 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The destination for health checks on the targets. If the protocol version is <code>HTTP/1.1</code>
-        /// or <code>HTTP/2</code>, specify a valid URI (for example, <code>/path?query</code>).
-        /// The default path is <code>/</code>. Health checks are not supported if the protocol
-        /// version is <code>gRPC</code>, however, you can choose <code>HTTP/1.1</code> or <code>HTTP/2</code>
-        /// and specify a valid URI.
+        /// The destination for health checks on the targets. If the protocol version is <c>HTTP/1.1</c>
+        /// or <c>HTTP/2</c>, specify a valid URI (for example, <c>/path?query</c>). The default
+        /// path is <c>/</c>. Health checks are not supported if the protocol version is <c>gRPC</c>,
+        /// however, you can choose <c>HTTP/1.1</c> or <c>HTTP/2</c> and specify a valid URI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -189,7 +188,7 @@ namespace Amazon.VPCLattice.Model
         /// Gets and sets the property Protocol. 
         /// <para>
         /// The protocol used when performing health checks on targets. The possible protocols
-        /// are <code>HTTP</code> and <code>HTTPS</code>. The default is <code>HTTP</code>.
+        /// are <c>HTTP</c> and <c>HTTPS</c>. The default is <c>HTTP</c>.
         /// </para>
         /// </summary>
         public TargetGroupProtocol Protocol
@@ -208,7 +207,7 @@ namespace Amazon.VPCLattice.Model
         /// Gets and sets the property ProtocolVersion. 
         /// <para>
         /// The protocol version used when performing health checks on targets. The possible protocol
-        /// versions are <code>HTTP1</code> and <code>HTTP2</code>.
+        /// versions are <c>HTTP1</c> and <c>HTTP2</c>.
         /// </para>
         /// </summary>
         public HealthCheckProtocolVersion ProtocolVersion

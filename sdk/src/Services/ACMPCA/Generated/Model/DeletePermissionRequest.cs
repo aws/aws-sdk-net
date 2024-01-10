@@ -52,8 +52,8 @@ namespace Amazon.ACMPCA.Model
     ///  <ul> <li> 
     /// <para>
     /// If the private CA and the certificates it issues reside in the same account, you can
-    /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-    /// certificate renewals.
+    /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+    /// renewals.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -85,8 +85,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>. 
+        ///  <c>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        /// </c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=200)]
@@ -106,7 +106,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property Principal. 
         /// <para>
         /// The Amazon Web Services service or identity that will have its CA permissions revoked.
-        /// At this time, the only valid service principal is <code>acm.amazonaws.com</code> 
+        /// At this time, the only valid service principal is <c>acm.amazonaws.com</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

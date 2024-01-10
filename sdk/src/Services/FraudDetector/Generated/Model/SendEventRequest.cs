@@ -31,7 +31,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Container for the parameters to the SendEvent operation.
     /// Stores events in Amazon Fraud Detector without generating fraud predictions for those
-    /// events. For example, you can use <code>SendEvent</code> to upload a historical dataset,
+    /// events. For example, you can use <c>SendEvent</c> to upload a historical dataset,
     /// which you can then later use to train a model.
     /// </summary>
     public partial class SendEventRequest : AmazonFraudDetectorRequest
@@ -47,7 +47,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property AssignedLabel. 
         /// <para>
-        /// The label to associate with the event. Required if specifying <code>labelTimestamp</code>.
+        /// The label to associate with the event. Required if specifying <c>labelTimestamp</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -163,7 +163,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property LabelTimestamp. 
         /// <para>
-        /// The timestamp associated with the label. Required if specifying <code>assignedLabel</code>.
+        /// The timestamp associated with the label. Required if specifying <c>assignedLabel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=30)]

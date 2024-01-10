@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// The exception is thrown when a predict request is made to an unmounted <code>MLModel</code>.
+    /// The exception is thrown when a predict request is made to an unmounted <c>MLModel</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -42,17 +42,17 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// The way in which Amazon EC2 instances are added (if <code>ScalingAdjustment</code>
-        /// is a positive number) or terminated (if <code>ScalingAdjustment</code> is a negative
-        /// number) each time the scaling activity is triggered. <code>CHANGE_IN_CAPACITY</code>
-        /// is the default. <code>CHANGE_IN_CAPACITY</code> indicates that the Amazon EC2 instance
-        /// count increments or decrements by <code>ScalingAdjustment</code>, which should be
-        /// expressed as an integer. <code>PERCENT_CHANGE_IN_CAPACITY</code> indicates the instance
-        /// count increments or decrements by the percentage specified by <code>ScalingAdjustment</code>,
-        /// which should be expressed as an integer. For example, 20 indicates an increase in
-        /// 20% increments of cluster capacity. <code>EXACT_CAPACITY</code> indicates the scaling
-        /// activity results in an instance group with the number of Amazon EC2 instances specified
-        /// by <code>ScalingAdjustment</code>, which should be expressed as a positive integer.
+        /// The way in which Amazon EC2 instances are added (if <c>ScalingAdjustment</c> is a
+        /// positive number) or terminated (if <c>ScalingAdjustment</c> is a negative number)
+        /// each time the scaling activity is triggered. <c>CHANGE_IN_CAPACITY</c> is the default.
+        /// <c>CHANGE_IN_CAPACITY</c> indicates that the Amazon EC2 instance count increments
+        /// or decrements by <c>ScalingAdjustment</c>, which should be expressed as an integer.
+        /// <c>PERCENT_CHANGE_IN_CAPACITY</c> indicates the instance count increments or decrements
+        /// by the percentage specified by <c>ScalingAdjustment</c>, which should be expressed
+        /// as an integer. For example, 20 indicates an increase in 20% increments of cluster
+        /// capacity. <c>EXACT_CAPACITY</c> indicates the scaling activity results in an instance
+        /// group with the number of Amazon EC2 instances specified by <c>ScalingAdjustment</c>,
+        /// which should be expressed as a positive integer.
         /// </para>
         /// </summary>
         public AdjustmentType AdjustmentType
@@ -89,13 +89,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ScalingAdjustment. 
         /// <para>
-        /// The amount by which to scale in or scale out, based on the specified <code>AdjustmentType</code>.
+        /// The amount by which to scale in or scale out, based on the specified <c>AdjustmentType</c>.
         /// A positive value adds to the instance group's Amazon EC2 instance count while a negative
-        /// number removes instances. If <code>AdjustmentType</code> is set to <code>EXACT_CAPACITY</code>,
-        /// the number should only be a positive integer. If <code>AdjustmentType</code> is set
-        /// to <code>PERCENT_CHANGE_IN_CAPACITY</code>, the value should express the percentage
-        /// as an integer. For example, -20 indicates a decrease in 20% increments of cluster
-        /// capacity.
+        /// number removes instances. If <c>AdjustmentType</c> is set to <c>EXACT_CAPACITY</c>,
+        /// the number should only be a positive integer. If <c>AdjustmentType</c> is set to <c>PERCENT_CHANGE_IN_CAPACITY</c>,
+        /// the value should express the percentage as an integer. For example, -20 indicates
+        /// a decrease in 20% increments of cluster capacity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

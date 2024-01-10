@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>DeleteIndexField</a></code> request.
+    /// The result of a <c><a>DeleteIndexField</a></c> request.
     /// </summary>
     public partial class DeleteIndexFieldResponse : AmazonWebServiceResponse
     {

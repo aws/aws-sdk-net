@@ -59,8 +59,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The agent version. This parameter is set to <code>LATEST</code> for auto-update. or
-        /// a version number for a fixed agent version.
+        /// The agent version. This parameter is set to <c>LATEST</c> for auto-update. or a version
+        /// number for a fixed agent version.
         /// </para>
         /// </summary>
         public string AgentVersion
@@ -114,8 +114,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ChefConfiguration. 
         /// <para>
-        /// A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf
-        /// and the Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// A <c>ChefConfiguration</c> object that specifies whether to enable Berkshelf and the
+        /// Berkshelf version. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.
         /// </para>
         /// </summary>
@@ -198,7 +198,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> 
+        ///  <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c> 
         /// </para>
         ///  
         /// <para>

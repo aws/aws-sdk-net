@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// The result for the calculated route of one <code>DeparturePosition</code> <code>DestinationPosition</code>
+    /// The result for the calculated route of one <c>DeparturePosition</c> <c>DestinationPosition</c>
     /// pair.
     /// </summary>
     public partial class RouteMatrixEntry
@@ -79,8 +79,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// An error corresponding to the calculation of a route between the <code>DeparturePosition</code>
-        /// and <code>DestinationPosition</code>.
+        /// An error corresponding to the calculation of a route between the <c>DeparturePosition</c>
+        /// and <c>DestinationPosition</c>.
         /// </para>
         /// </summary>
         public RouteMatrixEntryError Error

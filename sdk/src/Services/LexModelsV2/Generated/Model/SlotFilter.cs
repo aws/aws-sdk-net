@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Filters the response from the <code>ListSlots</code> operation.
+    /// Filters the response from the <c>ListSlots</c> operation.
     /// </summary>
     public partial class SlotFilter
     {
@@ -59,10 +59,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to use for the filter. Specify <code>EQ</code> when the <code>ListSlots</code>
-        /// operation should return only aliases that equal the specified value. Specify <code>CO</code>
-        /// when the <code>ListSlots</code> operation should return aliases that contain the specified
-        /// value.
+        /// The operator to use for the filter. Specify <c>EQ</c> when the <c>ListSlots</c> operation
+        /// should return only aliases that equal the specified value. Specify <c>CO</c> when
+        /// the <c>ListSlots</c> operation should return aliases that contain the specified value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

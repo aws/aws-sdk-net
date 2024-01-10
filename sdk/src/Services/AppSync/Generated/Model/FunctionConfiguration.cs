@@ -50,9 +50,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The <code>function</code> code that contains the request and response functions. When
-        /// code is used, the <code>runtime</code> is required. The <code>runtime</code> value
-        /// must be <code>APPSYNC_JS</code>.
+        /// The <c>function</c> code that contains the request and response functions. When code
+        /// is used, the <c>runtime</c> is required. The <c>runtime</c> value must be <c>APPSYNC_JS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32768)]
@@ -71,7 +70,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DataSourceName. 
         /// <para>
-        /// The name of the <code>DataSource</code>.
+        /// The name of the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
@@ -90,7 +89,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The <code>Function</code> description.
+        /// The <c>Function</c> description.
         /// </para>
         /// </summary>
         public string Description
@@ -108,7 +107,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <code>Function</code> object.
+        /// The Amazon Resource Name (ARN) of the <c>Function</c> object.
         /// </para>
         /// </summary>
         public string FunctionArn
@@ -126,7 +125,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionId. 
         /// <para>
-        /// A unique ID representing the <code>Function</code> object.
+        /// A unique ID representing the <c>Function</c> object.
         /// </para>
         /// </summary>
         public string FunctionId
@@ -182,7 +181,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>Function</code> object.
+        /// The name of the <c>Function</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]
@@ -201,7 +200,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property RequestMappingTemplate. 
         /// <para>
-        /// The <code>Function</code> request mapping template. Functions support only the 2018-05-29
+        /// The <c>Function</c> request mapping template. Functions support only the 2018-05-29
         /// version of the request mapping template.
         /// </para>
         /// </summary>
@@ -221,7 +220,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ResponseMappingTemplate. 
         /// <para>
-        /// The <code>Function</code> response mapping template.
+        /// The <c>Function</c> response mapping template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]

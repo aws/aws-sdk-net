@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// No origin exists with the specified <code>Origin Id</code>.
+    /// No origin exists with the specified <c>Origin Id</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

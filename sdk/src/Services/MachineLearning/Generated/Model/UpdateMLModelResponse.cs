@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <code>UpdateMLModel</code> operation.
+    /// Represents the output of an <c>UpdateMLModel</c> operation.
     /// 
     ///  
     /// <para>
-    /// You can see the updated content by using the <code>GetMLModel</code> operation.
+    /// You can see the updated content by using the <c>GetMLModel</c> operation.
     /// </para>
     /// </summary>
     public partial class UpdateMLModelResponse : AmazonWebServiceResponse
@@ -43,8 +43,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID assigned to the <code>MLModel</code> during creation. This value should be
-        /// identical to the value of the <code>MLModelID</code> in the request.
+        /// The ID assigned to the <c>MLModel</c> during creation. This value should be identical
+        /// to the value of the <c>MLModelID</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

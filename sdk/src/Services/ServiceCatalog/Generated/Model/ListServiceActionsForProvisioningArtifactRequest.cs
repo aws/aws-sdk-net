@@ -48,11 +48,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+        /// The product identifier. For example, <c>prod-abcdzk7xy33qa</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -130,7 +130,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+        /// The identifier of the provisioning artifact. For example, <c>pa-4abcdjnxjj6ne</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

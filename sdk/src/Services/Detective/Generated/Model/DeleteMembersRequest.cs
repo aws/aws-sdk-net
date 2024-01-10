@@ -44,14 +44,14 @@ namespace Amazon.Detective.Model
     /// <para>
     /// For organization accounts in the organization behavior graph, the Detective administrator
     /// account can always enable the organization account again. Organization accounts that
-    /// are not enabled as member accounts are not included in the <code>ListMembers</code>
-    /// results for the organization behavior graph.
+    /// are not enabled as member accounts are not included in the <c>ListMembers</c> results
+    /// for the organization behavior graph.
     /// </para>
     ///  
     /// <para>
-    /// An administrator account cannot use <code>DeleteMembers</code> to remove their own
-    /// account from the behavior graph. To disable a behavior graph, the administrator account
-    /// uses the <code>DeleteGraph</code> API method.
+    /// An administrator account cannot use <c>DeleteMembers</c> to remove their own account
+    /// from the behavior graph. To disable a behavior graph, the administrator account uses
+    /// the <c>DeleteGraph</c> API method.
     /// </para>
     /// </summary>
     public partial class DeleteMembersRequest : AmazonDetectiveRequest

@@ -38,8 +38,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Meeting. 
         /// <para>
-        ///  The meeting information, including the meeting ID and <code>MediaPlacement</code>
-        /// . 
+        ///  The meeting information, including the meeting ID and <c>MediaPlacement</c> . 
         /// </para>
         /// </summary>
         public Meeting Meeting

@@ -57,7 +57,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPoints. 
         /// <para>
-        /// This is a list of the recovery points returned by <code>ListRecoveryPointsByLegalHold</code>.
+        /// This is a list of the recovery points returned by <c>ListRecoveryPointsByLegalHold</c>.
         /// </para>
         /// </summary>
         public List<RecoveryPointMember> RecoveryPoints

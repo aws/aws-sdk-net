@@ -77,7 +77,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// The content type of the sprite sheet and offsets. For example, the sprite sheet content
-        /// type is <code>image/png</code>, and the sprite offset JSON document is <code>application/json</code>.
+        /// type is <c>image/png</c>, and the sprite offset JSON document is <c>application/json</c>.
         /// 
         /// </para>
         /// </summary>

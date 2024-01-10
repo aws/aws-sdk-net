@@ -41,7 +41,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// A description of the target health that provides additional details. If the state
-        /// is <code>healthy</code>, a description is not provided.
+        /// is <c>healthy</c>, a description is not provided.
         /// </para>
         /// </summary>
         public string Description
@@ -63,96 +63,92 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the target state is <code>healthy</code>, a reason code is not provided.
+        /// If the target state is <c>healthy</c>, a reason code is not provided.
         /// </para>
         ///  
         /// <para>
-        /// If the target state is <code>initial</code>, the reason code can be one of the following
+        /// If the target state is <c>initial</c>, the reason code can be one of the following
         /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Elb.RegistrationInProgress</code> - The target is in the process of being registered
+        ///  <c>Elb.RegistrationInProgress</c> - The target is in the process of being registered
         /// with the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Elb.InitialHealthChecking</code> - The load balancer is still sending the target
+        ///  <c>Elb.InitialHealthChecking</c> - The load balancer is still sending the target
         /// the minimum number of health checks required to determine its health status.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the target state is <code>unhealthy</code>, the reason code can be one of the following
+        /// If the target state is <c>unhealthy</c>, the reason code can be one of the following
         /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected
+        ///  <c>Target.ResponseCodeMismatch</c> - The health checks did not return an expected
         /// HTTP code. Applies only to Application Load Balancers and Gateway Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.Timeout</code> - The health check requests timed out. Applies only to
-        /// Application Load Balancers and Gateway Load Balancers.
+        ///  <c>Target.Timeout</c> - The health check requests timed out. Applies only to Application
+        /// Load Balancers and Gateway Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.FailedHealthChecks</code> - The load balancer received an error while
-        /// establishing a connection to the target or the target response was malformed.
+        ///  <c>Target.FailedHealthChecks</c> - The load balancer received an error while establishing
+        /// a connection to the target or the target response was malformed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Elb.InternalError</code> - The health checks failed due to an internal error.
-        /// Applies only to Application Load Balancers.
+        ///  <c>Elb.InternalError</c> - The health checks failed due to an internal error. Applies
+        /// only to Application Load Balancers.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the target state is <code>unused</code>, the reason code can be one of the following
+        /// If the target state is <c>unused</c>, the reason code can be one of the following
         /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Target.NotRegistered</code> - The target is not registered with the target
-        /// group.
+        ///  <c>Target.NotRegistered</c> - The target is not registered with the target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.NotInUse</code> - The target group is not used by any load balancer
-        /// or the target is in an Availability Zone that is not enabled for its load balancer.
+        ///  <c>Target.NotInUse</c> - The target group is not used by any load balancer or the
+        /// target is in an Availability Zone that is not enabled for its load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.InvalidState</code> - The target is in the stopped or terminated state.
+        ///  <c>Target.InvalidState</c> - The target is in the stopped or terminated state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Target.IpUnusable</code> - The target IP address is reserved for use by a load
-        /// balancer.
+        ///  <c>Target.IpUnusable</c> - The target IP address is reserved for use by a load balancer.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the target state is <code>draining</code>, the reason code can be the following
-        /// value:
+        /// If the target state is <c>draining</c>, the reason code can be the following value:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Target.DeregistrationInProgress</code> - The target is in the process of being
-        /// deregistered and the deregistration delay period has not expired.
+        ///  <c>Target.DeregistrationInProgress</c> - The target is in the process of being deregistered
+        /// and the deregistration delay period has not expired.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the target state is <code>unavailable</code>, the reason code can be the following
-        /// value:
+        /// If the target state is <c>unavailable</c>, the reason code can be the following value:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Target.HealthCheckDisabled</code> - Health checks are disabled for the target
-        /// group. Applies only to Application Load Balancers.
+        ///  <c>Target.HealthCheckDisabled</c> - Health checks are disabled for the target group.
+        /// Applies only to Application Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Elb.InternalError</code> - Target health is unavailable due to an internal
-        /// error. Applies only to Network Load Balancers.
+        ///  <c>Elb.InternalError</c> - Target health is unavailable due to an internal error.
+        /// Applies only to Network Load Balancers.
         /// </para>
         ///  </li> </ul>
         /// </summary>

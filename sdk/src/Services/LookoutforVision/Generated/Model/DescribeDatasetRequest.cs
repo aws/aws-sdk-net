@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code>
+    /// This operation requires permissions to perform the <c>lookoutvision:DescribeDataset</c>
     /// operation.
     /// </para>
     /// </summary>
@@ -46,9 +46,9 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property DatasetType. 
         /// <para>
-        /// The type of the dataset to describe. Specify <code>train</code> to describe the training
-        /// dataset. Specify <code>test</code> to describe the test dataset. If you have a single
-        /// dataset project, specify <code>train</code> 
+        /// The type of the dataset to describe. Specify <c>train</c> to describe the training
+        /// dataset. Specify <c>test</c> to describe the test dataset. If you have a single dataset
+        /// project, specify <c>train</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

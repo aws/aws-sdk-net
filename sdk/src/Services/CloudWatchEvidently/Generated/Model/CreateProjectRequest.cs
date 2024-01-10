@@ -63,7 +63,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         ///  
         /// <para>
-        /// To create a project that uses client-side evaluation, you must have the <code>evidently:ExportProjectAsConfiguration</code>
+        /// To create a project that uses client-side evaluation, you must have the <c>evidently:ExportProjectAsConfiguration</c>
         /// permission.
         /// </para>
         /// </summary>

@@ -67,7 +67,7 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
-        /// <code>SYMMETRIC_DEFAULT</code> </a>. 
+        /// <c>SYMMETRIC_DEFAULT</c> </a>. 
         /// </para>
         ///  </note>
         /// </summary>

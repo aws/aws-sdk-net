@@ -38,8 +38,8 @@ namespace Amazon.CloudFront.Model
     /// You can optionally specify the maximum number of items to receive in the response.
     /// If the total number of items in the list exceeds the maximum that you specify, or
     /// the default maximum, the response is paginated. To get the next page of items, send
-    /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-    /// response as the <code>Marker</code> value in the subsequent request.
+    /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+    /// as the <c>Marker</c> value in the subsequent request.
     /// </para>
     /// </summary>
     public partial class ListDistributionsByKeyGroupRequest : AmazonCloudFrontRequest
@@ -73,7 +73,7 @@ namespace Amazon.CloudFront.Model
         /// Use this field when paginating results to indicate where to begin in your list of
         /// distribution IDs. The response includes distribution IDs in the list that occur after
         /// the marker. To get the next page of the list, set this field's value to the value
-        /// of <code>NextMarker</code> from the current page's response.
+        /// of <c>NextMarker</c> from the current page's response.
         /// </para>
         /// </summary>
         public string Marker

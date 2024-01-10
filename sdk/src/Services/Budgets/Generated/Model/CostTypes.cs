@@ -29,13 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Budgets.Model
 {
     /// <summary>
-    /// The types of cost that are included in a <code>COST</code> budget, such as tax and
-    /// subscriptions.
+    /// The types of cost that are included in a <c>COST</c> budget, such as tax and subscriptions.
     /// 
     ///  
     /// <para>
-    ///  <code>USAGE</code>, <code>RI_UTILIZATION</code>, <code>RI_COVERAGE</code>, <code>SAVINGS_PLANS_UTILIZATION</code>,
-    /// and <code>SAVINGS_PLANS_COVERAGE</code> budgets don't have <code>CostTypes</code>.
+    ///  <c>USAGE</c>, <c>RI_UTILIZATION</c>, <c>RI_COVERAGE</c>, <c>SAVINGS_PLANS_UTILIZATION</c>,
+    /// and <c>SAVINGS_PLANS_COVERAGE</c> budgets don't have <c>CostTypes</c>.
     /// </para>
     /// </summary>
     public partial class CostTypes
@@ -59,7 +58,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeCredit
@@ -81,7 +80,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeDiscount
@@ -103,7 +102,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeOtherSubscription
@@ -125,7 +124,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeRecurring
@@ -147,7 +146,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeRefund
@@ -169,7 +168,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeSubscription
@@ -191,7 +190,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeSupport
@@ -213,7 +212,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeTax
@@ -235,7 +234,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code>.
+        /// The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeUpfront
@@ -257,7 +256,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code>.
+        /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool UseAmortized
@@ -279,7 +278,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code>.
+        /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool UseBlended

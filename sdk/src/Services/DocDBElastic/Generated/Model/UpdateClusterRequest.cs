@@ -133,7 +133,7 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        ///  <i>Format</i>: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>

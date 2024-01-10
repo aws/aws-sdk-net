@@ -39,14 +39,14 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property BudgetPerformanceHistory. 
         /// <para>
-        /// The history of how often the budget has gone into an <code>ALARM</code> state.
+        /// The history of how often the budget has gone into an <c>ALARM</c> state.
         /// </para>
         ///  
         /// <para>
-        /// For <code>DAILY</code> budgets, the history saves the state of the budget for the
-        /// last 60 days. For <code>MONTHLY</code> budgets, the history saves the state of the
-        /// budget for the current month plus the last 12 months. For <code>QUARTERLY</code> budgets,
-        /// the history saves the state of the budget for the last four quarters.
+        /// For <c>DAILY</c> budgets, the history saves the state of the budget for the last 60
+        /// days. For <c>MONTHLY</c> budgets, the history saves the state of the budget for the
+        /// current month plus the last 12 months. For <c>QUARTERLY</c> budgets, the history saves
+        /// the state of the budget for the last four quarters.
         /// </para>
         /// </summary>
         public BudgetPerformanceHistory BudgetPerformanceHistory

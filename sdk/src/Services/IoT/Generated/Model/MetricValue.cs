@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// The value to be compared with the <code>metric</code>.
+    /// The value to be compared with the <c>metric</c>.
     /// </summary>
     public partial class MetricValue
     {
@@ -43,8 +43,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Cidrs. 
         /// <para>
-        /// If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to specify
-        /// that set to be compared with the <code>metric</code>.
+        /// If the <c>comparisonOperator</c> calls for a set of CIDRs, use this to specify that
+        /// set to be compared with the <c>metric</c>.
         /// </para>
         /// </summary>
         public List<string> Cidrs
@@ -62,8 +62,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// If the <code>comparisonOperator</code> calls for a numeric value, use this to specify
-        /// that numeric value to be compared with the <code>metric</code>.
+        /// If the <c>comparisonOperator</c> calls for a numeric value, use this to specify that
+        /// numeric value to be compared with the <c>metric</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -118,8 +118,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Ports. 
         /// <para>
-        /// If the <code>comparisonOperator</code> calls for a set of ports, use this to specify
-        /// that set to be compared with the <code>metric</code>.
+        /// If the <c>comparisonOperator</c> calls for a set of ports, use this to specify that
+        /// set to be compared with the <c>metric</c>.
         /// </para>
         /// </summary>
         public List<int> Ports

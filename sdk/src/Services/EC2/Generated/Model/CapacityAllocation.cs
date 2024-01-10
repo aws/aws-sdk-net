@@ -39,8 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationType. 
         /// <para>
-        /// The usage type. <code>used</code> indicates that the instance capacity is in use by
-        /// instances that are running in the Capacity Reservation.
+        /// The usage type. <c>used</c> indicates that the instance capacity is in use by instances
+        /// that are running in the Capacity Reservation.
         /// </para>
         /// </summary>
         public AllocationType AllocationType
@@ -59,7 +59,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Count. 
         /// <para>
         /// The amount of instance capacity associated with the usage. For example a value of
-        /// <code>4</code> indicates that instance capacity for 4 instances is currently in use.
+        /// <c>4</c> indicates that instance capacity for 4 instances is currently in use.
         /// </para>
         /// </summary>
         public int Count

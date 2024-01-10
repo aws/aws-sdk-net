@@ -38,9 +38,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <para>
     /// Each tag consists of a key and value, both of which you define. A key is a general
     /// category for more specific values. For example, if you have two versions of a user
-    /// pool, one for testing and another for production, you might assign an <code>Environment</code>
-    /// tag key to both user pools. The value of this key might be <code>Test</code> for one
-    /// user pool, and <code>Production</code> for the other.
+    /// pool, one for testing and another for production, you might assign an <c>Environment</c>
+    /// tag key to both user pools. The value of this key might be <c>Test</c> for one user
+    /// pool, and <c>Production</c> for the other.
     /// </para>
     ///  
     /// <para>

@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateViewMetadata operation.
-    /// Updates the view metadata. Note that either <code>Name</code> or <code>Description</code>
-    /// must be provided.
+    /// Updates the view metadata. Note that either <c>Name</c> or <c>Description</c> must
+    /// be provided.
     /// </summary>
     public partial class UpdateViewMetadataRequest : AmazonConnectRequest
     {
@@ -101,8 +101,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ViewId. 
         /// <para>
-        /// The identifier of the view. Both <code>ViewArn</code> and <code>ViewId</code> can
-        /// be used.
+        /// The identifier of the view. Both <c>ViewArn</c> and <c>ViewId</c> can be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

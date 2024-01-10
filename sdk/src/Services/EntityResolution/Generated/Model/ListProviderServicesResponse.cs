@@ -58,7 +58,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ProviderServiceSummaries. 
         /// <para>
-        /// A list of <code>ProviderServices</code> objects.
+        /// A list of <c>ProviderServices</c> objects.
         /// </para>
         /// </summary>
         public List<ProviderServiceSummary> ProviderServiceSummaries

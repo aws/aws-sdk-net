@@ -87,33 +87,32 @@ namespace Amazon.CognitoIdentity.Model
         /// Gets and sets the property Logins. 
         /// <para>
         /// A set of optional name-value pairs that map provider names to provider tokens. The
-        /// available provider names for <code>Logins</code> are as follows:
+        /// available provider names for <c>Logins</c> are as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Facebook: <code>graph.facebook.com</code> 
+        /// Facebook: <c>graph.facebook.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Cognito user pool: <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
-        /// for example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
-        /// 
+        /// Amazon Cognito user pool: <c>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</c>,
+        /// for example, <c>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Google: <code>accounts.google.com</code> 
+        /// Google: <c>accounts.google.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon: <code>www.amazon.com</code> 
+        /// Amazon: <c>www.amazon.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Twitter: <code>api.twitter.com</code> 
+        /// Twitter: <c>api.twitter.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Digits: <code>www.digits.com</code> 
+        /// Digits: <c>www.digits.com</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

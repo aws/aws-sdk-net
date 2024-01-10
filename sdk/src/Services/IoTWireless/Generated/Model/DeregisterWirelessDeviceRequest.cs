@@ -59,8 +59,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property WirelessDeviceType. 
         /// <para>
-        /// The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code>
-        /// or <code>Sidewalk</code>.
+        /// The type of wireless device to deregister from AWS IoT Wireless, which can be <c>LoRaWAN</c>
+        /// or <c>Sidewalk</c>.
         /// </para>
         /// </summary>
         public WirelessDeviceType WirelessDeviceType

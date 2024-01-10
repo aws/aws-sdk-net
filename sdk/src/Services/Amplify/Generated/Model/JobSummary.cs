@@ -159,10 +159,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        ///  The type for the job. If the value is <code>RELEASE</code>, the job was manually
-        /// released from its source by using the <code>StartJob</code> API. If the value is <code>RETRY</code>,
-        /// the job was manually retried using the <code>StartJob</code> API. If the value is
-        /// <code>WEB_HOOK</code>, the job was automatically triggered by webhooks. 
+        ///  The type for the job. If the value is <c>RELEASE</c>, the job was manually released
+        /// from its source by using the <c>StartJob</c> API. If the value is <c>RETRY</c>, the
+        /// job was manually retried using the <c>StartJob</c> API. If the value is <c>WEB_HOOK</c>,
+        /// the job was automatically triggered by webhooks. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

@@ -31,8 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Information about the tag keys to register for the current Region. You can either
     /// specify individual tag keys or register all tag keys in the current Region. You must
-    /// specify either <code>IncludeAllTagsOfInstance</code> or <code>InstanceTagKeys</code>
-    /// in the request
+    /// specify either <c>IncludeAllTagsOfInstance</c> or <c>InstanceTagKeys</c> in the request
     /// </summary>
     public partial class RegisterInstanceTagAttributeRequest
     {
@@ -42,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IncludeAllTagsOfInstance. 
         /// <para>
-        /// Indicates whether to register all tag keys in the current Region. Specify <code>true</code>
+        /// Indicates whether to register all tag keys in the current Region. Specify <c>true</c>
         /// to register all tag keys.
         /// </para>
         /// </summary>

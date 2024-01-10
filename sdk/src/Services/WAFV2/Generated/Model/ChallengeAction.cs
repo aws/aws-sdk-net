@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies that WAF should run a <code>Challenge</code> check against the request to
-    /// verify that the request is coming from a legitimate client session: 
+    /// Specifies that WAF should run a <c>Challenge</c> check against the request to verify
+    /// that the request is coming from a legitimate client session: 
     /// 
     ///  <ul> <li> 
     /// <para>
     /// If the request includes a valid, unexpired challenge token, WAF applies any custom
     /// request handling and labels that you've configured and then allows the web request
-    /// inspection to proceed to the next rule, similar to a <code>CountAction</code>. 
+    /// inspection to proceed to the next rule, similar to a <c>CountAction</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -50,16 +50,15 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The header <code>x-amzn-waf-action</code> with a value of <code>challenge</code>.
-    /// 
+    /// The header <c>x-amzn-waf-action</c> with a value of <c>challenge</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The HTTP status code <code>202 Request Accepted</code>. 
+    /// The HTTP status code <c>202 Request Accepted</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the request contains an <code>Accept</code> header with a value of <code>text/html</code>,
+    /// If the request contains an <c>Accept</c> header with a value of <c>text/html</c>,
     /// the response includes a JavaScript page interstitial with a challenge script. 
     /// </para>
     ///  </li> </ul> 
@@ -81,7 +80,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can configure the expiration time in the <code>ChallengeConfig</code> <code>ImmunityTimeProperty</code>
+    /// You can configure the expiration time in the <c>ChallengeConfig</c> <c>ImmunityTimeProperty</c>
     /// setting at the rule and web ACL level. The rule setting overrides the web ACL setting.
     /// 
     /// </para>

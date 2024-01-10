@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceState. 
         /// <para>
         /// The intended state of the instance. <a>DescribeInstanceStatus</a> requires that an
-        /// instance be in the <code>running</code> state.
+        /// instance be in the <c>running</c> state.
         /// </para>
         /// </summary>
         public InstanceState InstanceState

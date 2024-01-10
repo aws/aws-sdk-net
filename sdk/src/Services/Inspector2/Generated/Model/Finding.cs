@@ -208,9 +208,9 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property FixAvailable. 
         /// <para>
         /// Details on whether a fix is available through a version update. This value can be
-        /// <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code>
-        /// fix means that some, but not all, of the packages identified in the finding have fixes
-        /// available through updated versions.
+        /// <c>YES</c>, <c>NO</c>, or <c>PARTIAL</c>. A <c>PARTIAL</c> fix means that some, but
+        /// not all, of the packages identified in the finding have fixes available through updated
+        /// versions.
         /// </para>
         /// </summary>
         public FixAvailable FixAvailable
@@ -338,9 +338,9 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// Contains information on the resources involved in a finding. The <code>resource</code>
-        /// value determines the valid values for <code>type</code> in your request. For more
-        /// information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+        /// Contains information on the resources involved in a finding. The <c>resource</c> value
+        /// determines the valid values for <c>type</c> in your request. For more information,
+        /// see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
         /// types</a> in the Amazon Inspector user guide.
         /// </para>
         /// </summary>
@@ -360,7 +360,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the finding. <code>UNTRIAGED</code> applies to <code>PACKAGE_VULNERABILITY</code>
+        /// The severity of the finding. <c>UNTRIAGED</c> applies to <c>PACKAGE_VULNERABILITY</c>
         /// type findings that the vendor has not assigned a severity yet. For more information,
         /// see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-understanding-severity.html">Severity
         /// levels for findings</a> in the Amazon Inspector user guide.
@@ -420,8 +420,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the finding. The <code>type</code> value determines the valid values for
-        /// <code>resource</code> in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
+        /// The type of the finding. The <c>type</c> value determines the valid values for <c>resource</c>
+        /// in your request. For more information, see <a href="https://docs.aws.amazon.com/inspector/latest/user/findings-types.html">Finding
         /// types</a> in the Amazon Inspector user guide.
         /// </para>
         /// </summary>

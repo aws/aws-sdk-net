@@ -42,7 +42,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Added. 
         /// <para>
-        /// The <code>added</code> statistic for the data source run.
+        /// The <c>added</c> statistic for the data source run.
         /// </para>
         /// </summary>
         public int Added
@@ -60,7 +60,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// The <code>failed</code> statistic for the data source run.
+        /// The <c>failed</c> statistic for the data source run.
         /// </para>
         /// </summary>
         public int Failed
@@ -78,7 +78,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Skipped. 
         /// <para>
-        /// The <code>skipped</code> statistic for the data source run.
+        /// The <c>skipped</c> statistic for the data source run.
         /// </para>
         /// </summary>
         public int Skipped
@@ -96,7 +96,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Unchanged. 
         /// <para>
-        /// The <code>unchanged</code> statistic for the data source run.
+        /// The <c>unchanged</c> statistic for the data source run.
         /// </para>
         /// </summary>
         public int Unchanged
@@ -114,7 +114,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Updated. 
         /// <para>
-        /// The <code>updated</code> statistic for the data source run.
+        /// The <c>updated</c> statistic for the data source run.
         /// </para>
         /// </summary>
         public int Updated

@@ -39,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        ///  Specifies the <code>DomainName</code>.
+        ///  Specifies the <c>DomainName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
@@ -58,7 +58,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        ///  Specifies the <code>EngineType</code> of the domain.
+        ///  Specifies the <c>EngineType</c> of the domain.
         /// </para>
         /// </summary>
         public EngineType EngineType

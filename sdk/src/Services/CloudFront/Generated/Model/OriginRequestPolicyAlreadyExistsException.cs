@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// An origin request policy with this name already exists. You must provide a unique
-    /// name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
+    /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

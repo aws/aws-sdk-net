@@ -44,8 +44,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The alias of the template that you want to describe. If you name a specific alias,
         /// you describe the version that the alias points to. You can specify the latest version
-        /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. The keyword <code>$PUBLISHED</code> doesn't apply to templates.
+        /// of the template by providing the keyword <c>$LATEST</c> in the <c>AliasName</c> parameter.
+        /// The keyword <c>$PUBLISHED</c> doesn't apply to templates.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -102,8 +102,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VersionNumber. 
         /// <para>
-        /// (Optional) The number for the version to describe. If a <code>VersionNumber</code>
-        /// parameter value isn't provided, the latest version of the template is described.
+        /// (Optional) The number for the version to describe. If a <c>VersionNumber</c> parameter
+        /// value isn't provided, the latest version of the template is described.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

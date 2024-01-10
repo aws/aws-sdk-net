@@ -50,9 +50,9 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// Access protocol actions to include in the rule. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.
+        /// Access protocol actions to include in the rule. Valid values include <c>ActiveSync</c>,
+        /// <c>AutoDiscover</c>, <c>EWS</c>, <c>IMAP</c>, <c>SMTP</c>, <c>WindowsOutlook</c>,
+        /// and <c>WebMail</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -201,9 +201,9 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property NotActions. 
         /// <para>
-        /// Access protocol actions to exclude from the rule. Valid values include <code>ActiveSync</code>,
-        /// <code>AutoDiscover</code>, <code>EWS</code>, <code>IMAP</code>, <code>SMTP</code>,
-        /// <code>WindowsOutlook</code>, and <code>WebMail</code>.
+        /// Access protocol actions to exclude from the rule. Valid values include <c>ActiveSync</c>,
+        /// <c>AutoDiscover</c>, <c>EWS</c>, <c>IMAP</c>, <c>SMTP</c>, <c>WindowsOutlook</c>,
+        /// and <c>WebMail</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

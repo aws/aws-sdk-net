@@ -46,8 +46,8 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Replace the enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
-        /// <code>CLUSTER_NAME</code> has been deprecated.
+        /// Replace the enum value <c>CLUSTER_NAME</c> with <c>EKS_CLUSTER_NAME</c>. <c>CLUSTER_NAME</c>
+        /// has been deprecated.
         /// </para>
         ///  </note>
         /// </summary>

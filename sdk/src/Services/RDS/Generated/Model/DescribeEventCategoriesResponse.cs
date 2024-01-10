@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Data returned from the <code>DescribeEventCategories</code> operation.
+    /// Data returned from the <c>DescribeEventCategories</c> operation.
     /// </summary>
     public partial class DescribeEventCategoriesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EventCategoriesMapList. 
         /// <para>
-        /// A list of <code>EventCategoriesMap</code> data types.
+        /// A list of <c>EventCategoriesMap</c> data types.
         /// </para>
         /// </summary>
         public List<EventCategoriesMap> EventCategoriesMapList

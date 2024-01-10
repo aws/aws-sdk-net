@@ -30,11 +30,11 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFileSystemPolicy operation.
-    /// Returns the <code>FileSystemPolicy</code> for the specified EFS file system.
+    /// Returns the <c>FileSystemPolicy</c> for the specified EFS file system.
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:DescribeFileSystemPolicy</code>
+    /// This operation requires permissions for the <c>elasticfilesystem:DescribeFileSystemPolicy</c>
     /// action.
     /// </para>
     /// </summary>
@@ -45,7 +45,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// Specifies which EFS file system to retrieve the <code>FileSystemPolicy</code> for.
+        /// Specifies which EFS file system to retrieve the <c>FileSystemPolicy</c> for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

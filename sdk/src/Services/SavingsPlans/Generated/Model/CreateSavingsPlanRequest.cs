@@ -140,7 +140,7 @@ namespace Amazon.SavingsPlans.Model
         /// <para>
         /// The up-front payment amount. This is a whole number between 50 and 99 percent of the
         /// total value of the Savings Plan. This parameter is supported only if the payment option
-        /// is <code>Partial Upfront</code>.
+        /// is <c>Partial Upfront</c>.
         /// </para>
         /// </summary>
         public string UpfrontPaymentAmount

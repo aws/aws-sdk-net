@@ -30,8 +30,8 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateQualificationType operation.
-    /// The <code>CreateQualificationType</code> operation creates a new Qualification type,
-    /// which is represented by a <code>QualificationType</code> data structure.
+    /// The <c>CreateQualificationType</c> operation creates a new Qualification type, which
+    /// is represented by a <c>QualificationType</c> data structure.
     /// </summary>
     public partial class CreateQualificationTypeRequest : AmazonMTurkRequest
     {
@@ -230,7 +230,7 @@ namespace Amazon.MTurk.Model
         /// Gets and sets the property Test. 
         /// <para>
         ///  The questions for the Qualification test a Worker must answer correctly to obtain
-        /// a Qualification of this type. If this parameter is specified, <code>TestDurationInSeconds</code>
+        /// a Qualification of this type. If this parameter is specified, <c>TestDurationInSeconds</c>
         /// must also be specified. 
         /// </para>
         ///  

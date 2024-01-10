@@ -31,10 +31,10 @@ namespace Amazon.PI.Model
     /// <summary>
     /// Container for the parameters to the GetDimensionKeyDetails operation.
     /// Get the attributes of the specified dimension group for a DB instance or data source.
-    /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
-    /// the full text of the dimension <code>db.sql.statement</code> associated with this
-    /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
-    /// don't support retrieval of large SQL statement text.
+    /// For example, if you specify a SQL ID, <c>GetDimensionKeyDetails</c> retrieves the
+    /// full text of the dimension <c>db.sql.statement</c> associated with this ID. This operation
+    /// is useful because <c>GetResourceMetrics</c> and <c>DescribeDimensionKeys</c> don't
+    /// support retrieval of large SQL statement text.
     /// </summary>
     public partial class GetDimensionKeyDetailsRequest : AmazonPIRequest
     {
@@ -52,11 +52,11 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.query</code> (Amazon DocumentDB only)
+        ///  <c>db.query</c> (Amazon DocumentDB only)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sql</code> (Amazon RDS and Aurora only)
+        ///  <c>db.sql</c> (Amazon RDS and Aurora only)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -77,16 +77,16 @@ namespace Amazon.PI.Model
         /// Gets and sets the property GroupIdentifier. 
         /// <para>
         /// The ID of the dimension group from which to retrieve dimension details. For dimension
-        /// group <code>db.sql</code>, the group ID is <code>db.sql.id</code>. The following group
-        /// ID values are valid:
+        /// group <c>db.sql</c>, the group ID is <c>db.sql.id</c>. The following group ID values
+        /// are valid:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.sql.id</code> for dimension group <code>db.sql</code> (Aurora and RDS only)
+        ///  <c>db.sql.id</c> for dimension group <c>db.sql</c> (Aurora and RDS only)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.query.id</code> for dimension group <code>db.query</code> (DocumentDB only)
+        ///  <c>db.query.id</c> for dimension group <c>db.query</c> (DocumentDB only)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -108,7 +108,7 @@ namespace Amazon.PI.Model
         /// <para>
         /// The ID for a data source from which to gather dimension data. This ID must be immutable
         /// and unique within an Amazon Web Services Region. When a DB instance is the data source,
-        /// specify its <code>DbiResourceId</code> value. For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.
+        /// specify its <c>DbiResourceId</c> value. For example, specify <c>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</c>.
         /// 
         /// </para>
         /// </summary>
@@ -135,13 +135,13 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.sql</code> - Specify either the full dimension name <code>db.sql.statement</code>
-        /// or the short dimension name <code>statement</code> (Aurora and RDS only).
+        ///  <c>db.sql</c> - Specify either the full dimension name <c>db.sql.statement</c> or
+        /// the short dimension name <c>statement</c> (Aurora and RDS only).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.query</code> - Specify either the full dimension name <code>db.query.statement</code>
-        /// or the short dimension name <code>statement</code> (DocumentDB only).
+        ///  <c>db.query</c> - Specify either the full dimension name <c>db.query.statement</c>
+        /// or the short dimension name <c>statement</c> (DocumentDB only).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -162,7 +162,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property ServiceType. 
         /// <para>
         /// The Amazon Web Services service for which Performance Insights returns data. The only
-        /// valid value is <code>RDS</code>.
+        /// valid value is <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

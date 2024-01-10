@@ -274,15 +274,15 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONING</code> - allocating resources for the session.
+        ///  <c>PROVISIONING</c> - allocating resources for the session.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INITIALIZING</code> - getting the session ready for first use.
+        ///  <c>INITIALIZING</c> - getting the session ready for first use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASSIGNED</code> - the session is ready for use.
+        ///  <c>ASSIGNED</c> - the session is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

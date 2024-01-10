@@ -51,11 +51,10 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <b>Cross-account use</b>: You must specify a principal in your Amazon Web Services
     /// account. This operation returns a list of grants where the retiring principal specified
-    /// in the <code>ListRetirableGrants</code> request is the same retiring principal on
-    /// the grant. This can include grants on KMS keys owned by other Amazon Web Services
-    /// accounts, but you do not need <code>kms:ListRetirableGrants</code> permission (or
-    /// any other additional permission) in any Amazon Web Services account other than your
-    /// own.
+    /// in the <c>ListRetirableGrants</c> request is the same retiring principal on the grant.
+    /// This can include grants on KMS keys owned by other Amazon Web Services accounts, but
+    /// you do not need <c>kms:ListRetirableGrants</c> permission (or any other additional
+    /// permission) in any Amazon Web Services account other than your own.
     /// </para>
     ///  
     /// <para>
@@ -64,11 +63,11 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// KMS authorizes <code>ListRetirableGrants</code> requests by evaluating the caller
-    /// account's kms:ListRetirableGrants permissions. The authorized resource in <code>ListRetirableGrants</code>
+    /// KMS authorizes <c>ListRetirableGrants</c> requests by evaluating the caller account's
+    /// kms:ListRetirableGrants permissions. The authorized resource in <c>ListRetirableGrants</c>
     /// calls is the retiring principal specified in the request. KMS does not evaluate the
     /// caller's permissions to verify their access to any KMS keys or grants that might be
-    /// returned by the <code>ListRetirableGrants</code> call.
+    /// returned by the <c>ListRetirableGrants</c> call.
     /// </para>
     ///  </note> 
     /// <para>
@@ -133,8 +132,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter in a subsequent request after you receive a response with truncated
-        /// results. Set it to the value of <code>NextMarker</code> from the truncated response
-        /// you just received.
+        /// results. Set it to the value of <c>NextMarker</c> from the truncated response you
+        /// just received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

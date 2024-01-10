@@ -31,7 +31,7 @@ namespace Amazon.CertificateManager.Model
     /// <summary>
     /// Contains information about the status of ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
     /// renewal</a> for the certificate. This structure exists only when the certificate type
-    /// is <code>AMAZON_ISSUED</code>.
+    /// is <c>AMAZON_ISSUED</c>.
     /// </summary>
     public partial class RenewalSummary
     {
@@ -47,7 +47,7 @@ namespace Amazon.CertificateManager.Model
         /// as it pertains to ACM's <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
         /// renewal</a>. This is different from the initial validation that occurs as a result
         /// of the <a>RequestCertificate</a> request. This field exists only when the certificate
-        /// type is <code>AMAZON_ISSUED</code>.
+        /// type is <c>AMAZON_ISSUED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

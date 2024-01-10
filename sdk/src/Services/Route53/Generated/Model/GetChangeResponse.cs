@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the <code>ChangeInfo</code> element.
+    /// A complex type that contains the <c>ChangeInfo</c> element.
     /// </summary>
     public partial class GetChangeResponse : AmazonWebServiceResponse
     {

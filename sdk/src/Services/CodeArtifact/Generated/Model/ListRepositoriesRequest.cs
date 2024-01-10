@@ -31,8 +31,8 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Container for the parameters to the ListRepositories operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_RepositorySummary.html">RepositorySummary</a>
-    /// objects. Each <code>RepositorySummary</code> contains information about a repository
-    /// in the specified Amazon Web Services account and that matches the input parameters.
+    /// objects. Each <c>RepositorySummary</c> contains information about a repository in
+    /// the specified Amazon Web Services account and that matches the input parameters.
     /// </summary>
     public partial class ListRepositoriesRequest : AmazonCodeArtifactRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property RepositoryPrefix. 
         /// <para>
         ///  A prefix used to filter returned repositories. Only repositories with names that
-        /// start with <code>repositoryPrefix</code> are returned.
+        /// start with <c>repositoryPrefix</c> are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=100)]

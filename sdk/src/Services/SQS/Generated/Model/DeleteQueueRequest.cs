@@ -30,19 +30,18 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteQueue operation.
-    /// Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's
-    /// contents.
+    /// Deletes the queue specified by the <c>QueueUrl</c>, regardless of the queue's contents.
     /// 
     ///  <important> 
     /// <para>
-    /// Be careful with the <code>DeleteQueue</code> action: When you delete a queue, any
-    /// messages in the queue are no longer available. 
+    /// Be careful with the <c>DeleteQueue</c> action: When you delete a queue, any messages
+    /// in the queue are no longer available. 
     /// </para>
     ///  </important> 
     /// <para>
     /// When you delete a queue, the deletion process takes up to 60 seconds. Requests you
-    /// send involving that queue during the 60 seconds might succeed. For example, a <code>
-    /// <a>SendMessage</a> </code> request might succeed, but after 60 seconds the queue and
+    /// send involving that queue during the 60 seconds might succeed. For example, a <c>
+    /// <a>SendMessage</a> </c> request might succeed, but after 60 seconds the queue and
     /// the message you sent no longer exist.
     /// </para>
     ///  
@@ -59,7 +58,7 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    /// The delete operation uses the HTTP <code>GET</code> verb.
+    /// The delete operation uses the HTTP <c>GET</c> verb.
     /// </para>
     ///  </note>
     /// </summary>

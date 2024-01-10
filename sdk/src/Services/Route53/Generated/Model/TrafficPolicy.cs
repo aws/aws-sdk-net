@@ -63,7 +63,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version number that Amazon Route 53 assigns to a traffic policy. For a new traffic
-        /// policy, the value of <code>Version</code> is always 1.
+        /// policy, the value of <c>Version</c> is always 1.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -122,8 +122,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Document. 
         /// <para>
         /// The definition of a traffic policy in JSON format. You specify the JSON document to
-        /// use for a new traffic policy in the <code>CreateTrafficPolicy</code> request. For
-        /// more information about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
+        /// use for a new traffic policy in the <c>CreateTrafficPolicy</c> request. For more information
+        /// about the JSON format, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/api-policies-traffic-policy-document-format.html">Traffic
         /// Policy Document Format</a>.
         /// </para>
         /// </summary>
@@ -143,7 +143,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// The comment that you specify in the <code>CreateTrafficPolicy</code> request, if any.
+        /// The comment that you specify in the <c>CreateTrafficPolicy</c> request, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

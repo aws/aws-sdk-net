@@ -43,8 +43,8 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>RateBasedRule</a> that is specified by the <code>RuleId</code> that
-    /// you included in the <code>GetRateBasedRule</code> request.
+    /// Returns the <a>RateBasedRule</a> that is specified by the <c>RuleId</c> that you included
+    /// in the <c>GetRateBasedRule</c> request.
     /// </para>
     /// </summary>
     public partial class GetRateBasedRuleRequest : AmazonWAFRegionalRequest
@@ -54,7 +54,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get. <code>RuleId</code>
+        /// The <c>RuleId</c> of the <a>RateBasedRule</a> that you want to get. <c>RuleId</c>
         /// is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.
         /// </para>
         /// </summary>

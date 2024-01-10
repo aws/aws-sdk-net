@@ -42,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter that specifies the maximum number of results to return. You
-        /// can use <code>nextToken</code> to get the next page of results.
+        /// can use <c>nextToken</c> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -61,9 +61,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code>
-        /// operations, which returns results in the next page.
+        /// If your initial <c>ListVersions</c> operation returns a <c>nextToken</c>, you can
+        /// include the returned <c>nextToken</c> in subsequent <c>ListVersions</c> operations,
+        /// which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

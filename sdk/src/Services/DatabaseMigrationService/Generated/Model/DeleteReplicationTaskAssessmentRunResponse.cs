@@ -38,7 +38,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskAssessmentRun. 
         /// <para>
-        /// The <code>ReplicationTaskAssessmentRun</code> object for the deleted assessment run.
+        /// The <c>ReplicationTaskAssessmentRun</c> object for the deleted assessment run.
         /// </para>
         /// </summary>
         public ReplicationTaskAssessmentRun ReplicationTaskAssessmentRun

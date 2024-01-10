@@ -39,7 +39,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property JobId. 
         /// <para>
         /// The identifier generated for the job. To get the status of a job, use this identifier
-        /// with the <code>StartICD10CMInferenceJob</code> operation.
+        /// with the <c>StartICD10CMInferenceJob</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

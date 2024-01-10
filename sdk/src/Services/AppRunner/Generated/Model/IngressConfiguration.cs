@@ -39,8 +39,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property IsPubliclyAccessible. 
         /// <para>
         /// Specifies whether your App Runner service is publicly accessible. To make the service
-        /// publicly accessible set it to <code>True</code>. To make the service privately accessible,
-        /// from only within an Amazon VPC set it to <code>False</code>. 
+        /// publicly accessible set it to <c>True</c>. To make the service privately accessible,
+        /// from only within an Amazon VPC set it to <c>False</c>. 
         /// </para>
         /// </summary>
         public bool IsPubliclyAccessible

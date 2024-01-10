@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>ListTagsForStream</code>.
+    /// Represents the output for <c>ListTagsForStream</c>.
     /// </summary>
     public partial class ListTagsForStreamResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property HasMoreTags. 
         /// <para>
-        /// If set to <code>true</code>, more tags are available. To request additional tags,
-        /// set <code>ExclusiveStartTagKey</code> to the key of the last tag returned.
+        /// If set to <c>true</c>, more tags are available. To request additional tags, set <c>ExclusiveStartTagKey</c>
+        /// to the key of the last tag returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,9 +59,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags associated with <code>StreamName</code>, starting with the first tag
-        /// after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.
-        /// 
+        /// A list of tags associated with <c>StreamName</c>, starting with the first tag after
+        /// <c>ExclusiveStartTagKey</c> and up to the specified <c>Limit</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

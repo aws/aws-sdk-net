@@ -43,18 +43,18 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>allow-all</code> - Viewers can use HTTP or HTTPS.
+        ///  <c>allow-all</c> - Viewers can use HTTP or HTTPS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>redirect-to-https</code> - CloudFront responds to HTTP requests with an HTTP
-        /// status code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the
-        /// new URL to resubmit.
+        ///  <c>redirect-to-https</c> - CloudFront responds to HTTP requests with an HTTP status
+        /// code of 301 (Moved Permanently) and the HTTPS URL. The viewer then uses the new URL
+        /// to resubmit.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>https-only</code> - CloudFront responds to HTTP request with an HTTP status
-        /// code of 403 (Forbidden).
+        ///  <c>https-only</c> - CloudFront responds to HTTP request with an HTTP status code
+        /// of 403 (Forbidden).
         /// </para>
         ///  </li> </ul>
         /// </summary>

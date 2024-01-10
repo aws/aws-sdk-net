@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The <code>ResourceChange</code> structure describes the resource and the action that
-    /// CloudFormation will perform on it if you execute this change set.
+    /// The <c>ResourceChange</c> structure describes the resource and the action that CloudFormation
+    /// will perform on it if you execute this change set.
     /// </summary>
     public partial class ResourceChange
     {
@@ -47,10 +47,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that CloudFormation takes on the resource, such as <code>Add</code> (adds
-        /// a new resource), <code>Modify</code> (changes a resource), <code>Remove</code> (deletes
-        /// a resource), <code>Import</code> (imports a resource), or <code>Dynamic</code> (exact
-        /// action for the resource can't be determined).
+        /// The action that CloudFormation takes on the resource, such as <c>Add</c> (adds a new
+        /// resource), <c>Modify</c> (changes a resource), <c>Remove</c> (deletes a resource),
+        /// <c>Import</c> (imports a resource), or <c>Dynamic</c> (exact action for the resource
+        /// can't be determined).
         /// </para>
         /// </summary>
         public ChangeAction Action
@@ -87,8 +87,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// For the <code>Modify</code> action, a list of <code>ResourceChangeDetail</code> structures
-        /// that describes the changes that CloudFormation will make to the resource.
+        /// For the <c>Modify</c> action, a list of <c>ResourceChangeDetail</c> structures that
+        /// describes the changes that CloudFormation will make to the resource.
         /// </para>
         /// </summary>
         public List<ResourceChangeDetail> Details
@@ -162,21 +162,20 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Replacement. 
         /// <para>
-        /// For the <code>Modify</code> action, indicates whether CloudFormation will replace
-        /// the resource by creating a new one and deleting the old one. This value depends on
-        /// the value of the <code>RequiresRecreation</code> property in the <code>ResourceTargetDefinition</code>
-        /// structure. For example, if the <code>RequiresRecreation</code> field is <code>Always</code>
-        /// and the <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code>
-        /// is <code>True</code>. If the <code>RequiresRecreation</code> field is <code>Always</code>
-        /// and the <code>Evaluation</code> field is <code>Dynamic</code>, <code>Replacement</code>
-        /// is <code>Conditionally</code>.
+        /// For the <c>Modify</c> action, indicates whether CloudFormation will replace the resource
+        /// by creating a new one and deleting the old one. This value depends on the value of
+        /// the <c>RequiresRecreation</c> property in the <c>ResourceTargetDefinition</c> structure.
+        /// For example, if the <c>RequiresRecreation</c> field is <c>Always</c> and the <c>Evaluation</c>
+        /// field is <c>Static</c>, <c>Replacement</c> is <c>True</c>. If the <c>RequiresRecreation</c>
+        /// field is <c>Always</c> and the <c>Evaluation</c> field is <c>Dynamic</c>, <c>Replacement</c>
+        /// is <c>Conditionally</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you have multiple changes with different <code>RequiresRecreation</code> values,
-        /// the <code>Replacement</code> value depends on the change with the most impact. A <code>RequiresRecreation</code>
-        /// value of <code>Always</code> has the most impact, followed by <code>Conditionally</code>,
-        /// and then <code>Never</code>.
+        /// If you have multiple changes with different <c>RequiresRecreation</c> values, the
+        /// <c>Replacement</c> value depends on the change with the most impact. A <c>RequiresRecreation</c>
+        /// value of <c>Always</c> has the most impact, followed by <c>Conditionally</c>, and
+        /// then <c>Never</c>.
         /// </para>
         /// </summary>
         public Replacement Replacement
@@ -194,7 +193,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
+        /// The type of CloudFormation resource, such as <c>AWS::S3::Bucket</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -213,9 +212,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// For the <code>Modify</code> action, indicates which resource attribute is triggering
-        /// this update, such as a change in the resource attribute's <code>Metadata</code>, <code>Properties</code>,
-        /// or <code>Tags</code>.
+        /// For the <c>Modify</c> action, indicates which resource attribute is triggering this
+        /// update, such as a change in the resource attribute's <c>Metadata</c>, <c>Properties</c>,
+        /// or <c>Tags</c>.
         /// </para>
         /// </summary>
         public List<string> Scope

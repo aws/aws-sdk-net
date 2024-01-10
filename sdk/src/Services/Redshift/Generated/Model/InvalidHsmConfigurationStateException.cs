@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The specified HSM configuration is not in the <code>available</code> state, or it
-    /// is still in use by one or more Amazon Redshift clusters.
+    /// The specified HSM configuration is not in the <c>available</c> state, or it is still
+    /// in use by one or more Amazon Redshift clusters.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

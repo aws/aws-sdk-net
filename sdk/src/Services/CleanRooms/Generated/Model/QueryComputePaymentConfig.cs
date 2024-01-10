@@ -40,21 +40,20 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property IsResponsible. 
         /// <para>
         /// Indicates whether the collaboration creator has configured the collaboration member
-        /// to pay for query compute costs (<code>TRUE</code>) or has not configured the collaboration
-        /// member to pay for query compute costs (<code>FALSE</code>).
+        /// to pay for query compute costs (<c>TRUE</c>) or has not configured the collaboration
+        /// member to pay for query compute costs (<c>FALSE</c>).
         /// </para>
         ///  
         /// <para>
         /// Exactly one member can be configured to pay for query compute costs. An error is returned
-        /// if the collaboration creator sets a <code>TRUE</code> value for more than one member
-        /// in the collaboration. 
+        /// if the collaboration creator sets a <c>TRUE</c> value for more than one member in
+        /// the collaboration. 
         /// </para>
         ///  
         /// <para>
         /// If the collaboration creator hasn't specified anyone as the member paying for query
         /// compute costs, then the member who can query is the default payer. An error is returned
-        /// if the collaboration creator sets a <code>FALSE</code> value for the member who can
-        /// query.
+        /// if the collaboration creator sets a <c>FALSE</c> value for the member who can query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

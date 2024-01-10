@@ -62,63 +62,63 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>core</code> 
+        ///  <c>core</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cpu</code> 
+        ///  <c>cpu</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>data</code> 
+        ///  <c>data</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fsize</code> 
+        ///  <c>fsize</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>locks</code> 
+        ///  <c>locks</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>memlock</code> 
+        ///  <c>memlock</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>msgqueue</code> 
+        ///  <c>msgqueue</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>nice</code> 
+        ///  <c>nice</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>nofile</code> 
+        ///  <c>nofile</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>nproc</code> 
+        ///  <c>nproc</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rss</code> 
+        ///  <c>rss</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rtprio</code> 
+        ///  <c>rtprio</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rttime</code> 
+        ///  <c>rttime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sigpending</code> 
+        ///  <c>sigpending</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stack</code> 
+        ///  <c>stack</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

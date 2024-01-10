@@ -63,9 +63,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property AttributeMap. 
         /// <para>
-        /// SAML attribute name and value. The name must always be <code>Email</code> and the
-        /// value should be set to the attribute definition in which user email is set. For example,
-        /// name would be <code>Email</code> and value <code>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</code>.
+        /// SAML attribute name and value. The name must always be <c>Email</c> and the value
+        /// should be set to the attribute definition in which user email is set. For example,
+        /// name would be <c>Email</c> and value <c>http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress</c>.
         /// Please check your SAML 2.0 compliant identity provider (IdP) documentation for details.
         /// </para>
         /// </summary>

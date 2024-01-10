@@ -47,7 +47,7 @@ namespace Amazon.XRay.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+    /// Don't use <c>aws:</c> as a prefix for keys; it's reserved for Amazon Web Services
     /// use. You cannot edit or delete system tags.
     /// </para>
     ///  </li> </ul>
@@ -60,10 +60,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A tag key, such as <code>Stage</code> or <code>Name</code>. A tag key cannot be empty.
-        /// The key can be a maximum of 128 characters, and can contain only Unicode letters,
-        /// numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
-        /// 
+        /// A tag key, such as <c>Stage</c> or <c>Name</c>. A tag key cannot be empty. The key
+        /// can be a maximum of 128 characters, and can contain only Unicode letters, numbers,
+        /// or separators, or the following special characters: <c>+ - = . _ : /</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -82,9 +81,9 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// An optional tag value, such as <code>Production</code> or <code>test-only</code>.
-        /// The value can be a maximum of 255 characters, and contain only Unicode letters, numbers,
-        /// or separators, or the following special characters: <code>+ - = . _ : /</code> 
+        /// An optional tag value, such as <c>Production</c> or <c>test-only</c>. The value can
+        /// be a maximum of 255 characters, and contain only Unicode letters, numbers, or separators,
+        /// or the following special characters: <c>+ - = . _ : /</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

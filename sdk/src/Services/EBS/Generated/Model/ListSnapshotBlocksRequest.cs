@@ -34,9 +34,9 @@ namespace Amazon.EBS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-    /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-    /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+    /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+    /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+    /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
     /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
     /// </para>
     ///  </note>
@@ -61,8 +61,8 @@ namespace Amazon.EBS.Model
         ///  
         /// <para>
         /// To retrieve the next set of blocks from the snapshot, make another request with the
-        /// returned <b>NextToken</b> value. The value of <b>NextToken</b> is <code>null</code>
-        /// when there are no more blocks to return.
+        /// returned <b>NextToken</b> value. The value of <b>NextToken</b> is <c>null</c> when
+        /// there are no more blocks to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=100, Max=10000)]

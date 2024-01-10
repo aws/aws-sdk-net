@@ -30,8 +30,7 @@ namespace Amazon.Neptunedata.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelLoaderJob operation.
-    /// Cancels a specified load job. This is an HTTP <code>DELETE</code> request. See <a
-    /// href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
+    /// Cancels a specified load job. This is an HTTP <c>DELETE</c> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
     /// Loader Get-Status API</a> for more information.
     /// 
     ///  

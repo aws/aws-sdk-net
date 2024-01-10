@@ -43,13 +43,12 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DISCOVER_EXISTING</code>: Use instances that already exist or will be created
-        /// manually.
+        ///  <c>DISCOVER_EXISTING</c>: Use instances that already exist or will be created manually.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COPY_AUTO_SCALING_GROUP</code>: Use settings from a specified Auto Scaling
-        /// group to define and create instances in a new Auto Scaling group.
+        ///  <c>COPY_AUTO_SCALING_GROUP</c>: Use settings from a specified Auto Scaling group
+        /// to define and create instances in a new Auto Scaling group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

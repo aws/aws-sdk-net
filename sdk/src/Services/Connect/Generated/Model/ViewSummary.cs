@@ -118,8 +118,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>.
-        /// The <code>PUBLISHED</code> status will initiate validation on the content.
+        /// Indicates the view status as either <c>SAVED</c> or <c>PUBLISHED</c>. The <c>PUBLISHED</c>
+        /// status will initiate validation on the content.
         /// </para>
         /// </summary>
         public ViewStatus Status

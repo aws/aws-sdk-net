@@ -44,7 +44,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityPublicKeyIdentifier. 
         /// <para>
-        /// The <code>KeyARN</code> of the certificate chain that signs the signing key certificate
+        /// The <c>KeyARN</c> of the certificate chain that signs the signing key certificate
         /// during TR-34 key import.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property KeyBlockFormat. 
         /// <para>
-        /// The key block format to use during key import. The only value allowed is <code>X9_TR34_2012</code>.
+        /// The key block format to use during key import. The only value allowed is <c>X9_TR34_2012</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

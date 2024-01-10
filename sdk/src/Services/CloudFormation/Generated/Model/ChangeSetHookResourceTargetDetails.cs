@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Specifies <code>RESOURCE</code> type target details for activated hooks.
+    /// Specifies <c>RESOURCE</c> type target details for activated hooks.
     /// </summary>
     public partial class ChangeSetHookResourceTargetDetails
     {
@@ -76,7 +76,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of CloudFormation resource, such as <code>AWS::S3::Bucket</code>.
+        /// The type of CloudFormation resource, such as <c>AWS::S3::Bucket</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -34,8 +34,8 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you
-    /// can use the dataset group to create a predictor. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
+    /// The <c>Status</c> of the dataset group must be <c>ACTIVE</c> before you can use the
+    /// dataset group to create a predictor. Use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>
     /// operation to get the status.
     /// </para>
     ///  </note>

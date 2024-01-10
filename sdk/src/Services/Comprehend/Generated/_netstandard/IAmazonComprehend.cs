@@ -158,8 +158,7 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Inspects a batch of documents and returns an inference of the prevailing sentiment,
-        /// <code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>,
-        /// in each one.
+        /// <c>POSITIVE</c>, <c>NEUTRAL</c>, <c>MIXED</c>, or <c>NEGATIVE</c>, in each one.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDetectSentiment service method.</param>
         /// <param name="cancellationToken">
@@ -277,7 +276,7 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Creates a classification request to analyze a single document in real-time. <code>ClassifyDocument</code>
+        /// Creates a classification request to analyze a single document in real-time. <c>ClassifyDocument</c>
         /// supports the following model types:
         /// 
         ///  <ul> <li> 
@@ -291,19 +290,19 @@ namespace Amazon.Comprehend
         /// <para>
         /// Prompt safety classifier - Amazon Comprehend provides a pre-trained model for classifying
         /// input prompts for generative AI applications. For input, you provide English plain
-        /// text input. For prompt safety classification, the response includes only the <code>Classes</code>
+        /// text input. For prompt safety classification, the response includes only the <c>Classes</c>
         /// field. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
         /// safety classification</a> in the <i>Amazon Comprehend Developer Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the system detects errors while processing a page in the input document, the API
-        /// response includes an <code>Errors</code> field that describes the errors.
+        /// response includes an <c>Errors</c> field that describes the errors.
         /// </para>
         ///  
         /// <para>
         /// If the system detects a document-level error in your input document, the API returns
-        /// an <code>InvalidRequestException</code> error response. For details about this exception,
+        /// an <c>InvalidRequestException</c> error response. For details about this exception,
         /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
         /// Errors in semi-structured documents</a> in the Comprehend Developer Guide. 
         /// </para>
@@ -515,8 +514,8 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code>
-        /// request is submitted, you can check job status using the <code>DescribeEntityRecognizer</code>
+        /// Creates an entity recognizer using submitted files. After your <c>CreateEntityRecognizer</c>
+        /// request is submitted, you can check job status using the <c>DescribeEntityRecognizer</c>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEntityRecognizer service method.</param>
@@ -651,8 +650,8 @@ namespace Amazon.Comprehend
         ///  
         /// <para>
         /// Only those classifiers that are in terminated states (IN_ERROR, TRAINED) will be deleted.
-        /// If an active inference job is using the model, a <code>ResourceInUseException</code>
-        /// will be returned.
+        /// If an active inference job is using the model, a <c>ResourceInUseException</c> will
+        /// be returned.
         /// </para>
         ///  
         /// <para>
@@ -738,8 +737,8 @@ namespace Amazon.Comprehend
         ///  
         /// <para>
         /// Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted.
-        /// If an active inference job is using the model, a <code>ResourceInUseException</code>
-        /// will be returned.
+        /// If an active inference job is using the model, a <c>ResourceInUseException</c> will
+        /// be returned.
         /// </para>
         ///  
         /// <para>
@@ -1395,12 +1394,12 @@ namespace Amazon.Comprehend
         ///  
         /// <para>
         /// If the system detects errors while processing a page in the input document, the API
-        /// response includes an entry in <code>Errors</code> for each error. 
+        /// response includes an entry in <c>Errors</c> for each error. 
         /// </para>
         ///  
         /// <para>
         /// If the system detects a document-level error in your input document, the API returns
-        /// an <code>InvalidRequestException</code> error response. For details about this exception,
+        /// an <c>InvalidRequestException</c> error response. For details about this exception,
         /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
         /// Errors in semi-structured documents</a> in the Comprehend Developer Guide. 
         /// </para>
@@ -1503,8 +1502,8 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Inspects text and returns an inference of the prevailing sentiment (<code>POSITIVE</code>,
-        /// <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>).
+        /// Inspects text and returns an inference of the prevailing sentiment (<c>POSITIVE</c>,
+        /// <c>NEUTRAL</c>, <c>MIXED</c>, or <c>NEGATIVE</c>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectSentiment service method.</param>
         /// <param name="cancellationToken">
@@ -2285,8 +2284,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Starts an asynchronous document classification job using a custom classification model.
-        /// Use the <code>DescribeDocumentClassificationJob</code> operation to track the progress
-        /// of the job.
+        /// Use the <c>DescribeDocumentClassificationJob</c> operation to track the progress of
+        /// the job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDocumentClassificationJob service method.</param>
         /// <param name="cancellationToken">
@@ -2379,7 +2378,7 @@ namespace Amazon.Comprehend
         ///  
         /// <para>
         /// This API can be used for either standard entity detection or custom entity recognition.
-        /// In order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code>
+        /// In order to be used for custom entity recognition, the optional <c>EntityRecognizerArn</c>
         /// must be used in order to provide access to the recognizer being used to detect the
         /// custom entity.
         /// </para>
@@ -2627,8 +2626,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
-        /// Use the <code>DescribeTargetedSentimentDetectionJob</code> operation to track the
-        /// status of a job.
+        /// Use the <c>DescribeTargetedSentimentDetectionJob</c> operation to track the status
+        /// of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTargetedSentimentDetectionJob service method.</param>
         /// <param name="cancellationToken">
@@ -2668,7 +2667,7 @@ namespace Amazon.Comprehend
 
 
         /// <summary>
-        /// Starts an asynchronous topic detection job. Use the <code>DescribeTopicDetectionJob</code>
+        /// Starts an asynchronous topic detection job. Use the <c>DescribeTopicDetectionJob</c>
         /// operation to track the status of a job.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTopicsDetectionJob service method.</param>
@@ -2713,16 +2712,15 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
-        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
-        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
-        /// stopped and put into the <code>STOPPED</code> state.
+        /// If the job state is <c>IN_PROGRESS</c> the job is marked for termination and put into
+        /// the <c>STOP_REQUESTED</c> state. If the job completes before it can be stopped, it
+        /// is put into the <c>COMPLETED</c> state; otherwise the job is stopped and put into
+        /// the <c>STOPPED</c> state.
         /// </para>
         ///  
         /// <para>
-        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
-        /// a 400 Internal Request Exception. 
+        /// If the job is in the <c>COMPLETED</c> or <c>FAILED</c> state when you call the <c>StopDominantLanguageDetectionJob</c>
+        /// operation, the operation returns a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
@@ -2758,16 +2756,15 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
-        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
-        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
-        /// stopped and put into the <code>STOPPED</code> state.
+        /// If the job state is <c>IN_PROGRESS</c> the job is marked for termination and put into
+        /// the <c>STOP_REQUESTED</c> state. If the job completes before it can be stopped, it
+        /// is put into the <c>COMPLETED</c> state; otherwise the job is stopped and put into
+        /// the <c>STOPPED</c> state.
         /// </para>
         ///  
         /// <para>
-        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
-        /// a 400 Internal Request Exception. 
+        /// If the job is in the <c>COMPLETED</c> or <c>FAILED</c> state when you call the <c>StopDominantLanguageDetectionJob</c>
+        /// operation, the operation returns a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
@@ -2830,16 +2827,15 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code> the job is marked for termination and
-        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
-        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
-        /// stopped and put into the <code>STOPPED</code> state.
+        /// If the job state is <c>IN_PROGRESS</c> the job is marked for termination and put into
+        /// the <c>STOP_REQUESTED</c> state. If the job completes before it can be stopped, it
+        /// is put into the <c>COMPLETED</c> state; otherwise the job is stopped and put into
+        /// the <c>STOPPED</c> state.
         /// </para>
         ///  
         /// <para>
-        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
-        /// a 400 Internal Request Exception. 
+        /// If the job is in the <c>COMPLETED</c> or <c>FAILED</c> state when you call the <c>StopDominantLanguageDetectionJob</c>
+        /// operation, the operation returns a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
@@ -2902,16 +2898,15 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
-        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
-        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
-        /// be stopped and put into the <code>STOPPED</code> state.
+        /// If the job state is <c>IN_PROGRESS</c>, the job is marked for termination and put
+        /// into the <c>STOP_REQUESTED</c> state. If the job completes before it can be stopped,
+        /// it is put into the <c>COMPLETED</c> state; otherwise the job is be stopped and put
+        /// into the <c>STOPPED</c> state.
         /// </para>
         ///  
         /// <para>
-        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
-        /// a 400 Internal Request Exception. 
+        /// If the job is in the <c>COMPLETED</c> or <c>FAILED</c> state when you call the <c>StopDominantLanguageDetectionJob</c>
+        /// operation, the operation returns a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
@@ -2947,16 +2942,15 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the job state is <code>IN_PROGRESS</code>, the job is marked for termination and
-        /// put into the <code>STOP_REQUESTED</code> state. If the job completes before it can
-        /// be stopped, it is put into the <code>COMPLETED</code> state; otherwise the job is
-        /// be stopped and put into the <code>STOPPED</code> state.
+        /// If the job state is <c>IN_PROGRESS</c>, the job is marked for termination and put
+        /// into the <c>STOP_REQUESTED</c> state. If the job completes before it can be stopped,
+        /// it is put into the <c>COMPLETED</c> state; otherwise the job is be stopped and put
+        /// into the <c>STOPPED</c> state.
         /// </para>
         ///  
         /// <para>
-        /// If the job is in the <code>COMPLETED</code> or <code>FAILED</code> state when you
-        /// call the <code>StopDominantLanguageDetectionJob</code> operation, the operation returns
-        /// a 400 Internal Request Exception. 
+        /// If the job is in the <c>COMPLETED</c> or <c>FAILED</c> state when you call the <c>StopDominantLanguageDetectionJob</c>
+        /// operation, the operation returns a 400 Internal Request Exception. 
         /// </para>
         ///  
         /// <para>
@@ -2992,11 +2986,11 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the training job state is <code>TRAINING</code>, the job is marked for termination
-        /// and put into the <code>STOP_REQUESTED</code> state. If the training job completes
-        /// before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training
-        /// job is stopped and put into the <code>STOPPED</code> state and the service sends back
-        /// an HTTP 200 response with an empty HTTP body. 
+        /// If the training job state is <c>TRAINING</c>, the job is marked for termination and
+        /// put into the <c>STOP_REQUESTED</c> state. If the training job completes before it
+        /// can be stopped, it is put into the <c>TRAINED</c>; otherwise the training job is stopped
+        /// and put into the <c>STOPPED</c> state and the service sends back an HTTP 200 response
+        /// with an empty HTTP body. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTrainingDocumentClassifier service method.</param>
@@ -3031,11 +3025,11 @@ namespace Amazon.Comprehend
         /// 
         ///  
         /// <para>
-        /// If the training job state is <code>TRAINING</code>, the job is marked for termination
-        /// and put into the <code>STOP_REQUESTED</code> state. If the training job completes
-        /// before it can be stopped, it is put into the <code>TRAINED</code>; otherwise the training
-        /// job is stopped and putted into the <code>STOPPED</code> state and the service sends
-        /// back an HTTP 200 response with an empty HTTP body.
+        /// If the training job state is <c>TRAINING</c>, the job is marked for termination and
+        /// put into the <c>STOP_REQUESTED</c> state. If the training job completes before it
+        /// can be stopped, it is put into the <c>TRAINED</c>; otherwise the training job is stopped
+        /// and putted into the <c>STOPPED</c> state and the service sends back an HTTP 200 response
+        /// with an empty HTTP body.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTrainingEntityRecognizer service method.</param>

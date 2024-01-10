@@ -30,16 +30,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes an instance's Capacity Reservation targeting option. You can specify only
-    /// one parameter at a time. If you specify <code>CapacityReservationPreference</code>
-    /// and <code>CapacityReservationTarget</code>, the request fails.
+    /// one parameter at a time. If you specify <c>CapacityReservationPreference</c> and <c>CapacityReservationTarget</c>,
+    /// the request fails.
     /// 
     ///  
     /// <para>
-    /// Use the <code>CapacityReservationPreference</code> parameter to configure the instance
-    /// to run as an On-Demand Instance or to run in any <code>open</code> Capacity Reservation
-    /// that has matching attributes (instance type, platform, Availability Zone). Use the
-    /// <code>CapacityReservationTarget</code> parameter to explicitly target a specific Capacity
-    /// Reservation or a Capacity Reservation group.
+    /// Use the <c>CapacityReservationPreference</c> parameter to configure the instance to
+    /// run as an On-Demand Instance or to run in any <c>open</c> Capacity Reservation that
+    /// has matching attributes (instance type, platform, Availability Zone). Use the <c>CapacityReservationTarget</c>
+    /// parameter to explicitly target a specific Capacity Reservation or a Capacity Reservation
+    /// group.
     /// </para>
     /// </summary>
     public partial class CapacityReservationSpecification
@@ -54,13 +54,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation
-        /// that has matching attributes (instance type, platform, Availability Zone).
+        ///  <c>open</c> - The instance can run in any <c>open</c> Capacity Reservation that has
+        /// matching attributes (instance type, platform, Availability Zone).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code> - The instance avoids running in a Capacity Reservation even if
-        /// one is available. The instance runs as an On-Demand Instance.
+        ///  <c>none</c> - The instance avoids running in a Capacity Reservation even if one is
+        /// available. The instance runs as an On-Demand Instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

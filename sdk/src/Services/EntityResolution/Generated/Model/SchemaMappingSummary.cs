@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>,
-    /// and<code>UpdatedAt</code>.
+    /// An object containing <c>SchemaName</c>, <c>SchemaArn</c>, <c>CreatedAt</c>, and<c>UpdatedAt</c>.
     /// </summary>
     public partial class SchemaMappingSummary
     {
@@ -43,7 +42,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp of when the <code>SchemaMapping</code> was created.
+        /// The timestamp of when the <c>SchemaMapping</c> was created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +80,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property SchemaArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>SchemaMapping</code>.
+        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <c>SchemaMapping</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,7 +118,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The timestamp of when the <code>SchemaMapping</code> was last updated.
+        /// The timestamp of when the <c>SchemaMapping</c> was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

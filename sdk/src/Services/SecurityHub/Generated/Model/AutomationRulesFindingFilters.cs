@@ -214,11 +214,11 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Confidence. 
         /// <para>
         /// The likelihood that a finding accurately identifies the behavior or issue that it
-        /// was intended to identify. <code>Confidence</code> is scored on a 0–100 basis using
-        /// a ratio scale. A value of <code>0</code> means 0 percent confidence, and a value of
-        /// <code>100</code> means 100 percent confidence. For example, a data exfiltration detection
-        /// based on a statistical deviation of network traffic has low confidence because an
-        /// actual exfiltration hasn't been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a>
+        /// was intended to identify. <c>Confidence</c> is scored on a 0–100 basis using a ratio
+        /// scale. A value of <c>0</c> means 0 percent confidence, and a value of <c>100</c> means
+        /// 100 percent confidence. For example, a data exfiltration detection based on a statistical
+        /// deviation of network traffic has low confidence because an actual exfiltration hasn't
+        /// been verified. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-confidence">Confidence</a>
         /// in the <i>Security Hub User Guide</i>.
         /// </para>
         ///  
@@ -245,9 +245,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         ///  
         /// <para>
@@ -270,10 +270,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Criticality. 
         /// <para>
         ///  The level of importance that is assigned to the resources that are associated with
-        /// a finding. <code>Criticality</code> is scored on a 0–100 basis, using a ratio scale
-        /// that supports only full integers. A score of <code>0</code> means that the underlying
-        /// resources have no criticality, and a score of <code>100</code> is reserved for the
-        /// most critical resources. For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a>
+        /// a finding. <c>Criticality</c> is scored on a 0–100 basis, using a ratio scale that
+        /// supports only full integers. A score of <c>0</c> means that the underlying resources
+        /// have no criticality, and a score of <c>100</c> is reserved for the most critical resources.
+        /// For more information, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/asff-top-level-attributes.html#asff-criticality">Criticality</a>
         /// in the <i>Security Hub User Guide</i>.
         /// </para>
         ///  
@@ -323,9 +323,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         ///  
         /// <para>
@@ -396,9 +396,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         ///  
         /// <para>
@@ -444,7 +444,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The timestamp of when the note was updated. Uses the date-time format specified in
         /// <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
-        /// Internet Date/Time Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// Internet Date/Time Format</a>. The value cannot contain spaces. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// 
         /// </para>
         ///  
@@ -880,9 +880,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         ///  
         /// <para>

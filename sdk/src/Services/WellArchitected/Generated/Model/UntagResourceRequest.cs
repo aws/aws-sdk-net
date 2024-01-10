@@ -43,7 +43,7 @@ namespace Amazon.WellArchitected.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> 
+    ///  <c>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</c> 
     /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonWellArchitectedRequest

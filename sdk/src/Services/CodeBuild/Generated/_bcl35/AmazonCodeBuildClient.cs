@@ -2064,7 +2064,7 @@ namespace Amazon.CodeBuild
         #region  ListReportsForReportGroup
 
         /// <summary>
-        /// Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>.
+        /// Returns a list of ARNs for the reports that belong to a <c>ReportGroup</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReportsForReportGroup service method.</param>
         /// 
@@ -2240,7 +2240,7 @@ namespace Amazon.CodeBuild
         #region  ListSourceCredentials
 
         /// <summary>
-        /// Returns a list of <code>SourceCredentialsInfo</code> objects.
+        /// Returns a list of <c>SourceCredentialsInfo</c> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSourceCredentials service method.</param>
         /// 
@@ -2297,8 +2297,7 @@ namespace Amazon.CodeBuild
         #region  PutResourcePolicy
 
         /// <summary>
-        /// Stores a resource policy for the ARN of a <code>Project</code> or <code>ReportGroup</code>
-        /// object.
+        /// Stores a resource policy for the ARN of a <c>Project</c> or <c>ReportGroup</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
@@ -2950,7 +2949,7 @@ namespace Amazon.CodeBuild
         /// 
         ///  <note> 
         /// <para>
-        ///  If you use Bitbucket for your repository, <code>rotateSecret</code> is ignored. 
+        ///  If you use Bitbucket for your repository, <c>rotateSecret</c> is ignored. 
         /// </para>
         ///  </note>
         /// </summary>

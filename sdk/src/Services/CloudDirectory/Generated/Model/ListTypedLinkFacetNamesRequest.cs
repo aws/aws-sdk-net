@@ -30,7 +30,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTypedLinkFacetNames operation.
-    /// Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
+    /// Returns a paginated list of <c>TypedLink</c> facet names for a particular schema.
     /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
     /// Links</a>.
     /// </summary>

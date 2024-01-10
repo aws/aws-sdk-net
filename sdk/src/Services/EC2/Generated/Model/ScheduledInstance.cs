@@ -178,7 +178,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform (<code>Linux/UNIX</code> or <code>Windows</code>).
+        /// The platform (<c>Linux/UNIX</c> or <c>Windows</c>).
         /// </para>
         /// </summary>
         public string Platform

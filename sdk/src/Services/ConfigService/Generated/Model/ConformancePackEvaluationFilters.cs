@@ -46,7 +46,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code>
+        /// The allowed values are <c>COMPLIANT</c> and <c>NON_COMPLIANT</c>. <c>INSUFFICIENT_DATA</c>
         /// is not supported.
         /// </para>
         /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Filters the results by the resource type (for example, <code>"AWS::EC2::Instance"</code>).
+        /// Filters the results by the resource type (for example, <c>"AWS::EC2::Instance"</c>).
         /// 
         /// </para>
         /// </summary>

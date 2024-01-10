@@ -41,7 +41,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To get service template major version detail data, include <code>major Version</code>.
+        /// To get service template major version detail data, include <c>major Version</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -60,7 +60,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MinorVersion. 
         /// <para>
-        /// To get service template minor version detail data, include <code>minorVersion</code>.
+        /// To get service template minor version detail data, include <c>minorVersion</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

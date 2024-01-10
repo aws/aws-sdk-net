@@ -30,8 +30,7 @@ namespace Amazon.KendraRanking.Model
 {
     /// <summary>
     /// Summary information for a rescore execution plan. A rescore execution plan is an Amazon
-    /// Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code>
-    /// API.
+    /// Kendra Intelligent Ranking resource used for provisioning the <c>Rescore</c> API.
     /// </summary>
     public partial class RescoreExecutionPlanSummary
     {
@@ -100,7 +99,7 @@ namespace Amazon.KendraRanking.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the rescore execution plan. When the value is <code>ACTIVE</code>,
+        /// The current status of the rescore execution plan. When the value is <c>ACTIVE</c>,
         /// the rescore execution plan is ready for use.
         /// </para>
         /// </summary>

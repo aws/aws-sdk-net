@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// Points to an <code>S3Destination</code> object that contains information about your
-    /// S3 bucket.
+    /// Points to an <c>S3Destination</c> object that contains information about your S3 bucket.
     /// </summary>
     public partial class Destination
     {
@@ -39,7 +38,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// The <code>S3Destination</code> object.
+        /// The <c>S3Destination</c> object.
         /// </para>
         /// </summary>
         public S3Destination S3

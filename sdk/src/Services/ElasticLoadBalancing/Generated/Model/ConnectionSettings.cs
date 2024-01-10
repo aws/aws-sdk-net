@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Information about the <code>ConnectionSettings</code> attribute.
+    /// Information about the <c>ConnectionSettings</c> attribute.
     /// </summary>
     public partial class ConnectionSettings
     {

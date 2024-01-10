@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkMail.Model
 {
     /// <summary>
-    /// List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.
+    /// List all the <c>AvailabilityConfiguration</c>'s for the given WorkMail organization.
     /// </summary>
     public partial class AvailabilityConfiguration
     {
@@ -98,7 +98,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EwsProvider. 
         /// <para>
-        /// If <code>ProviderType</code> is <code>EWS</code>, then this field contains <code>RedactedEwsAvailabilityProvider</code>.
+        /// If <c>ProviderType</c> is <c>EWS</c>, then this field contains <c>RedactedEwsAvailabilityProvider</c>.
         /// Otherwise, it is not required.
         /// </para>
         /// </summary>
@@ -117,7 +117,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property LambdaProvider. 
         /// <para>
-        /// If ProviderType is <code>LAMBDA</code> then this field contains <code>LambdaAvailabilityProvider</code>.
+        /// If ProviderType is <c>LAMBDA</c> then this field contains <c>LambdaAvailabilityProvider</c>.
         /// Otherwise, it is not required.
         /// </para>
         /// </summary>

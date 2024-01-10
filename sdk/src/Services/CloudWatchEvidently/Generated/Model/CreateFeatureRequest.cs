@@ -61,11 +61,11 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         ///  
         /// <para>
-        /// This variation must also be listed in the <code>variations</code> structure.
+        /// This variation must also be listed in the <c>variations</c> structure.
         /// </para>
         ///  
         /// <para>
-        /// If you omit <code>defaultVariation</code>, the first variation listed in the <code>variations</code>
+        /// If you omit <c>defaultVariation</c>, the first variation listed in the <c>variations</c>
         /// structure is used as the default variation.
         /// </para>
         /// </summary>
@@ -131,9 +131,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property EvaluationStrategy. 
         /// <para>
-        /// Specify <code>ALL_RULES</code> to activate the traffic allocation specified by any
-        /// ongoing launches or experiments. Specify <code>DEFAULT_VARIATION</code> to serve the
-        /// default variation to all users instead.
+        /// Specify <c>ALL_RULES</c> to activate the traffic allocation specified by any ongoing
+        /// launches or experiments. Specify <c>DEFAULT_VARIATION</c> to serve the default variation
+        /// to all users instead.
         /// </para>
         /// </summary>
         public FeatureEvaluationStrategy EvaluationStrategy

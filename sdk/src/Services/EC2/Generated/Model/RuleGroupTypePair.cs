@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RuleGroupType. 
         /// <para>
-        /// The rule group type. The possible values are <code>Domain List</code> and <code>Suricata</code>.
+        /// The rule group type. The possible values are <c>Domain List</c> and <c>Suricata</c>.
         /// </para>
         /// </summary>
         public string RuleGroupType

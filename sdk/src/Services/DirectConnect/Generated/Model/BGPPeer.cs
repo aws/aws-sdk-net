@@ -179,25 +179,25 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>verifying</code>: The BGP peering addresses or ASN require validation before
-        /// the BGP peer can be created. This state applies only to public virtual interfaces.
+        ///  <c>verifying</c>: The BGP peering addresses or ASN require validation before the
+        /// BGP peer can be created. This state applies only to public virtual interfaces.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code>: The BGP peer is created, and remains in this state until it
-        /// is ready to be established.
+        ///  <c>pending</c>: The BGP peer is created, and remains in this state until it is ready
+        /// to be established.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available</code>: The BGP peer is ready to be established.
+        ///  <c>available</c>: The BGP peer is ready to be established.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code>: The BGP peer is being deleted.
+        ///  <c>deleting</c>: The BGP peer is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code>: The BGP peer is deleted and cannot be established.
+        ///  <c>deleted</c>: The BGP peer is deleted and cannot be established.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -220,16 +220,16 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>up</code>: The BGP peer is established. This state does not indicate the state
-        /// of the routing function. Ensure that you are receiving routes over the BGP session.
+        ///  <c>up</c>: The BGP peer is established. This state does not indicate the state of
+        /// the routing function. Ensure that you are receiving routes over the BGP session.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>down</code>: The BGP peer is down.
+        ///  <c>down</c>: The BGP peer is down.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unknown</code>: The BGP peer status is not available.
+        ///  <c>unknown</c>: The BGP peer status is not available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

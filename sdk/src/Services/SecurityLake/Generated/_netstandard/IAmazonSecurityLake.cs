@@ -99,7 +99,7 @@ namespace Amazon.SecurityLake
         ///  
         /// <para>
         /// You can use this API only to enable natively supported Amazon Web Services as a source.
-        /// Use <code>CreateCustomLogSource</code> to enable data collection from a custom source.
+        /// Use <c>CreateCustomLogSource</c> to enable data collection from a custom source.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAwsLogSource service method.</param>
@@ -199,15 +199,15 @@ namespace Amazon.SecurityLake
         /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
         /// You can enable Security Lake in Amazon Web Services Regions with customized settings
         /// before enabling log collection in Regions. To specify particular Regions, configure
-        /// these Regions using the <code>configurations</code> parameter. If you have already
-        /// enabled Security Lake in a Region when you call this command, the command will update
-        /// the Region if you provide new configuration parameters. If you have not already enabled
+        /// these Regions using the <c>configurations</c> parameter. If you have already enabled
+        /// Security Lake in a Region when you call this command, the command will update the
+        /// Region if you provide new configuration parameters. If you have not already enabled
         /// Security Lake in the Region when you call this API, it will set up the data lake in
         /// the Region with the specified configurations.
         /// 
         ///  
         /// <para>
-        /// When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code>
+        /// When you enable Security Lake, it starts ingesting security data after the <c>CreateAwsLogSource</c>
         /// call. This includes ingesting security data from sources, storing data, and making
         /// data accessible to subscribers. Security Lake also enables all the existing settings
         /// and resources that it stores or maintains for your Amazon Web Services account in
@@ -556,9 +556,9 @@ namespace Amazon.SecurityLake
         /// 
         ///  
         /// <para>
-        /// The <code>DeleteDataLake</code> operation does not delete the data that is stored
-        /// in your Amazon S3 bucket, which is owned by your Amazon Web Services account. For
-        /// more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
+        /// The <c>DeleteDataLake</c> operation does not delete the data that is stored in your
+        /// Amazon S3 bucket, which is owned by your Amazon Web Services account. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
         /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
@@ -701,7 +701,7 @@ namespace Amazon.SecurityLake
 
         /// <summary>
         /// Deletes the subscription permission and all notification settings for accounts that
-        /// are already enabled in Amazon Security Lake. When you run <code>DeleteSubscriber</code>,
+        /// are already enabled in Amazon Security Lake. When you run <c>DeleteSubscriber</c>,
         /// the subscriber will no longer consume data from Security Lake and the subscriber is
         /// removed. This operation deletes the subscriber and removes access to data in the current
         /// Amazon Web Services Region.

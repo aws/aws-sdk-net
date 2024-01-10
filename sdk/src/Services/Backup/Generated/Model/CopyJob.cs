@@ -114,9 +114,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time a copy job is completed, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds.
-        /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM.
+        /// Time (UTC). The value of <c>CompletionDate</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CompletionDate
@@ -189,9 +188,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time a copy job is created, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM.
+        /// Time (UTC). The value of <c>CreationDate</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -210,7 +208,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property DestinationBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a destination copy vault; for
-        /// example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string DestinationBackupVaultArn
@@ -228,7 +226,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property DestinationRecoveryPointArn. 
         /// <para>
-        /// An ARN that uniquely identifies a destination recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// An ARN that uniquely identifies a destination recovery point; for example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string DestinationRecoveryPointArn
@@ -246,7 +244,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// Specifies the IAM role ARN used to copy the target recovery point; for example, <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -286,8 +284,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
-        /// and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+        /// Example strings may include <c>AccessDenied</c>, <c>SUCCESS</c>, <c>AGGREGATE_ALL</c>,
+        /// and <c>InvalidParameters</c>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
         /// for a list of MessageCategory strings.
         /// </para>
         ///  
@@ -296,7 +294,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts for all message categories and returns
         /// the sum
         /// </para>
         /// </summary>
@@ -410,7 +408,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SourceBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a source copy vault; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>. 
+        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>. 
         /// </para>
         /// </summary>
         public string SourceBackupVaultArn
@@ -428,7 +426,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property SourceRecoveryPointArn. 
         /// <para>
-        /// An ARN that uniquely identifies a source recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// An ARN that uniquely identifies a source recovery point; for example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string SourceRecoveryPointArn

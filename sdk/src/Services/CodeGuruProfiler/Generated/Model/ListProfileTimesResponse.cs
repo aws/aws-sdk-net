@@ -39,9 +39,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>ListProfileTimes</code>
-        /// request. When the results of a <code>ListProfileTimes</code> request exceed <code>maxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// The <c>nextToken</c> value to include in a future <c>ListProfileTimes</c> request.
+        /// When the results of a <c>ListProfileTimes</c> request exceed <c>maxResults</c>, this
+        /// value can be used to retrieve the next page of results. This value is <c>null</c>
         /// when there are no more results to return. 
         /// </para>
         /// </summary>

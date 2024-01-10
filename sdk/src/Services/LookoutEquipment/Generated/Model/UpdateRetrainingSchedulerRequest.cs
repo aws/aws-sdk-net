@@ -80,9 +80,9 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property PromoteMode. 
         /// <para>
-        /// Indicates how the service will use new models. In <code>MANAGED</code> mode, new models
+        /// Indicates how the service will use new models. In <c>MANAGED</c> mode, new models
         /// will automatically be used for inference if they have better performance than the
-        /// current model. In <code>MANUAL</code> mode, the new models will not be used <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">until
+        /// current model. In <c>MANUAL</c> mode, the new models will not be used <a href="https://docs.aws.amazon.com/lookout-for-equipment/latest/ug/versioning-model.html#model-activation">until
         /// they are manually activated</a>.
         /// </para>
         /// </summary>

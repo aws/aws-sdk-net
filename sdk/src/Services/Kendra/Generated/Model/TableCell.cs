@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Header. 
         /// <para>
-        ///  <code>TRUE</code> means that the table cell should be treated as a header.
+        ///  <c>TRUE</c> means that the table cell should be treated as a header.
         /// </para>
         /// </summary>
         public bool Header
@@ -59,7 +59,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Highlighted. 
         /// <para>
-        ///  <code>TRUE</code> means that the table cell has a high enough confidence and is relevant
+        ///  <c>TRUE</c> means that the table cell has a high enough confidence and is relevant
         /// to the query, so the value or content should be highlighted.
         /// </para>
         /// </summary>
@@ -78,9 +78,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TopAnswer. 
         /// <para>
-        ///  <code>TRUE</code> if the response of the table cell is the top answer. This is the
-        /// cell value or content with the highest confidence score or is the most relevant to
-        /// the query.
+        ///  <c>TRUE</c> if the response of the table cell is the top answer. This is the cell
+        /// value or content with the highest confidence score or is the most relevant to the
+        /// query.
         /// </para>
         /// </summary>
         public bool TopAnswer

@@ -46,8 +46,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Defaults to <code>true</code>. Set it to <code>false</code> if you want to disable
-        /// format conversion while preserving the configuration details.
+        /// Defaults to <c>true</c>. Set it to <c>false</c> if you want to disable format conversion
+        /// while preserving the configuration details.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -66,8 +66,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property InputFormatConfiguration. 
         /// <para>
         /// Specifies the deserializer that you want Kinesis Data Firehose to use to convert the
-        /// format of your data from JSON. This parameter is required if <code>Enabled</code>
-        /// is set to true.
+        /// format of your data from JSON. This parameter is required if <c>Enabled</c> is set
+        /// to true.
         /// </para>
         /// </summary>
         public InputFormatConfiguration InputFormatConfiguration
@@ -86,7 +86,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property OutputFormatConfiguration. 
         /// <para>
         /// Specifies the serializer that you want Kinesis Data Firehose to use to convert the
-        /// format of your data to the Parquet or ORC format. This parameter is required if <code>Enabled</code>
+        /// format of your data to the Parquet or ORC format. This parameter is required if <c>Enabled</c>
         /// is set to true.
         /// </para>
         /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property SchemaConfiguration. 
         /// <para>
         /// Specifies the Amazon Web Services Glue Data Catalog table that contains the column
-        /// information. This parameter is required if <code>Enabled</code> is set to true.
+        /// information. This parameter is required if <c>Enabled</c> is set to true.
         /// </para>
         /// </summary>
         public SchemaConfiguration SchemaConfiguration

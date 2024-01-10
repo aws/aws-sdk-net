@@ -30,8 +30,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListImports operation.
-    /// Returns information on all imports, or a select set of imports by <code>ImportStatus</code>
-    /// or <code>Destination</code>.
+    /// Returns information on all imports, or a select set of imports by <c>ImportStatus</c>
+    /// or <c>Destination</c>.
     /// </summary>
     public partial class ListImportsRequest : AmazonCloudTrailRequest
     {

@@ -388,8 +388,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
-        ///  Provides List of DB security group elements containing only <code>DBSecurityGroup.Name</code>
-        /// and <code>DBSecurityGroup.Status</code> subelements.
+        ///  Provides List of DB security group elements containing only <c>DBSecurityGroup.Name</c>
+        /// and <c>DBSecurityGroup.Status</c> subelements.
         /// </para>
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
@@ -812,7 +812,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
+        /// backups are enabled, as determined by the <c>BackupRetentionPeriod</c>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow

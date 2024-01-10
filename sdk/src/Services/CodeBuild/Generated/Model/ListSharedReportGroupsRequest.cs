@@ -43,9 +43,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of paginated shared report groups per response. Use <code>nextToken</code>
-        /// to iterate pages in the list of returned <code>ReportGroup</code> objects. The default
-        /// value is 100. 
+        ///  The maximum number of paginated shared report groups per response. Use <c>nextToken</c>
+        /// to iterate pages in the list of returned <c>ReportGroup</c> objects. The default value
+        /// is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -65,11 +65,11 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of items in the
-        /// list, call this operation again, adding the next token to the call. To get all of
-        /// the items in the list, keep calling this operation with each subsequent next token
-        /// that is returned, until no more next tokens are returned. 
+        /// specified in <c>maxResults</c>. If there more items in the list, then a unique string
+        /// called a <i>nextToken</i> is returned. To get the next batch of items in the list,
+        /// call this operation again, adding the next token to the call. To get all of the items
+        /// in the list, keep calling this operation with each subsequent next token that is returned,
+        /// until no more next tokens are returned. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -92,12 +92,12 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ARN</code>: List based on the ARN. 
+        ///  <c>ARN</c>: List based on the ARN. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODIFIED_TIME</code>: List based on when information about the shared report
-        /// group was last changed. 
+        ///  <c>MODIFIED_TIME</c>: List based on when information about the shared report group
+        /// was last changed. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -120,11 +120,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASCENDING</code>: List in ascending order.
+        ///  <c>ASCENDING</c>: List in ascending order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESCENDING</code>: List in descending order.
+        ///  <c>DESCENDING</c>: List in descending order.
         /// </para>
         ///  </li> </ul>
         /// </summary>

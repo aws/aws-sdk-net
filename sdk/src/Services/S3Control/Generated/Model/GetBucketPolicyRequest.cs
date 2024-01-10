@@ -44,16 +44,16 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// If you are using an identity other than the root user of the Amazon Web Services account
-    /// that owns the bucket, the calling identity must have the <code>GetBucketPolicy</code>
-    /// permissions on the specified bucket and belong to the bucket owner's account in order
-    /// to use this action.
+    /// that owns the bucket, the calling identity must have the <c>GetBucketPolicy</c> permissions
+    /// on the specified bucket and belong to the bucket owner's account in order to use this
+    /// action.
     /// </para>
     ///  
     /// <para>
     /// Only users from Outposts bucket owner account with the right permissions can perform
-    /// actions on an Outposts bucket. If you don't have <code>s3-outposts:GetBucketPolicy</code>
+    /// actions on an Outposts bucket. If you don't have <c>s3-outposts:GetBucketPolicy</c>
     /// permissions or you're not using an identity that belongs to the bucket owner's account,
-    /// Amazon S3 returns a <code>403 Access Denied</code> error.
+    /// Amazon S3 returns a <c>403 Access Denied</c> error.
     /// </para>
     ///  <important> 
     /// <para>
@@ -69,16 +69,16 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
-    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// parameter of <c>x-amz-outpost-id</c> to be passed with the request. In addition, you
+    /// must use an S3 on Outposts endpoint hostname prefix instead of <c>s3-control</c>.
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">Examples</a>
+    /// Outposts endpoint hostname prefix and the <c>x-amz-outpost-id</c> derived by using
+    /// the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketPolicy.html#API_control_GetBucketPolicy_Examples">Examples</a>
     /// section.
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>GetBucketPolicy</code>:
+    /// The following actions are related to <c>GetBucketPolicy</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -134,10 +134,10 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
-        /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
-        /// For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code>
-        /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
-        /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+        /// CLI, you must specify the ARN of the bucket accessed in the format <c>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</c>.
+        /// For example, to access the bucket <c>reports</c> through Outpost <c>my-outpost</c>
+        /// owned by account <c>123456789012</c> in Region <c>us-west-2</c>, use the URL encoding
+        /// of <c>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</c>.
         /// The value must be URL encoded. 
         /// </para>
         /// </summary>

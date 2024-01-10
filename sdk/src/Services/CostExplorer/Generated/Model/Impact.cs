@@ -102,7 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property TotalImpact. 
         /// <para>
         /// The cumulative dollar difference between the total actual spend and total expected
-        /// spend. It is calculated as <code>TotalActualSpend - TotalExpectedSpend</code>.
+        /// spend. It is calculated as <c>TotalActualSpend - TotalExpectedSpend</c>.
         /// </para>
         /// </summary>
         public double TotalImpact
@@ -121,9 +121,9 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property TotalImpactPercentage. 
         /// <para>
         /// The cumulative percentage difference between the total actual spend and total expected
-        /// spend. It is calculated as <code>(TotalImpact / TotalExpectedSpend) * 100</code>.
-        /// When <code>TotalExpectedSpend</code> is zero, this field is omitted. Expected spend
-        /// can be zero in situations such as when you start to use a service for the first time.
+        /// spend. It is calculated as <c>(TotalImpact / TotalExpectedSpend) * 100</c>. When <c>TotalExpectedSpend</c>
+        /// is zero, this field is omitted. Expected spend can be zero in situations such as when
+        /// you start to use a service for the first time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -109,8 +109,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request that created the query logging configuration.
-        /// The <code>CreatorRequestId</code> allows failed requests to be retried without the
-        /// risk of running the operation twice.
+        /// The <c>CreatorRequestId</c> allows failed requests to be retried without the risk
+        /// of running the operation twice.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -232,21 +232,21 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code>: Resolver is creating the query logging configuration.
+        ///  <c>CREATING</c>: Resolver is creating the query logging configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATED</code>: The query logging configuration was successfully created. Resolver
+        ///  <c>CREATED</c>: The query logging configuration was successfully created. Resolver
         /// is logging queries that originate in the specified VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code>: Resolver is deleting this query logging configuration.
+        ///  <c>DELETING</c>: Resolver is deleting this query logging configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: Resolver can't deliver logs to the location that is specified
-        /// in the query logging configuration. Here are two common causes:
+        ///  <c>FAILED</c>: Resolver can't deliver logs to the location that is specified in the
+        /// query logging configuration. Here are two common causes:
         /// </para>
         ///  <ul> <li> 
         /// <para>

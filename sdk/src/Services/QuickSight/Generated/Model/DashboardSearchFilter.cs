@@ -40,8 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the value that you want to use as a filter, for example, <code>"Name":
-        /// "QUICKSIGHT_OWNER"</code>.
+        /// The name of the value that you want to use as a filter, for example, <c>"Name": "QUICKSIGHT_OWNER"</c>.
         /// </para>
         ///  
         /// <para>
@@ -49,38 +48,38 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group, and any
-        /// dashboards with that ARN listed as one of the dashboards's owners or viewers are returned.
-        /// Implicit permissions from folders or groups are considered.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any dashboards
-        /// with that ARN listed as one of the owners of the dashboards are returned. Implicit
+        ///  <c>QUICKSIGHT_VIEWER_OR_OWNER</c>: Provide an ARN of a user or group, and any dashboards
+        /// with that ARN listed as one of the dashboards's owners or viewers are returned. Implicit
         /// permissions from folders or groups are considered.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIRECT_QUICKSIGHT_SOLE_OWNER</code>: Provide an ARN of a user or group, and
-        /// any dashboards with that ARN listed as the only owner of the dashboard are returned.
-        /// Implicit permissions from folders or groups are not considered.
+        ///  <c>QUICKSIGHT_OWNER</c>: Provide an ARN of a user or group, and any dashboards with
+        /// that ARN listed as one of the owners of the dashboards are returned. Implicit permissions
+        /// from folders or groups are considered.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIRECT_QUICKSIGHT_OWNER</code>: Provide an ARN of a user or group, and any
-        /// dashboards with that ARN listed as one of the owners of the dashboards are returned.
-        /// Implicit permissions from folders or groups are not considered.
+        ///  <c>DIRECT_QUICKSIGHT_SOLE_OWNER</c>: Provide an ARN of a user or group, and any dashboards
+        /// with that ARN listed as the only owner of the dashboard are returned. Implicit permissions
+        /// from folders or groups are not considered.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</code>: Provide an ARN of a user or group,
-        /// and any dashboards with that ARN listed as one of the owners or viewers of the dashboards
+        ///  <c>DIRECT_QUICKSIGHT_OWNER</c>: Provide an ARN of a user or group, and any dashboards
+        /// with that ARN listed as one of the owners of the dashboards are returned. Implicit
+        /// permissions from folders or groups are not considered.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DIRECT_QUICKSIGHT_VIEWER_OR_OWNER</c>: Provide an ARN of a user or group, and
+        /// any dashboards with that ARN listed as one of the owners or viewers of the dashboards
         /// are returned. Implicit permissions from folders or groups are not considered.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match to
-        /// this value will be returned.
+        ///  <c>DASHBOARD_NAME</c>: Any dashboards whose names have a substring match to this
+        /// value will be returned.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -99,22 +98,22 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The comparison operator that you want to use as a filter, for example <code>"Operator":
-        /// "StringEquals"</code>. Valid values are <code>"StringEquals"</code> and <code>"StringLike"</code>.
+        /// The comparison operator that you want to use as a filter, for example <c>"Operator":
+        /// "StringEquals"</c>. Valid values are <c>"StringEquals"</c> and <c>"StringLike"</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you set the operator value to <code>"StringEquals"</code>, you need to provide
-        /// an ownership related filter in the <code>"NAME"</code> field and the arn of the user
-        /// or group whose folders you want to search in the <code>"Value"</code> field. For example,
-        /// <code>"Name":"DIRECT_QUICKSIGHT_OWNER", "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+        /// If you set the operator value to <c>"StringEquals"</c>, you need to provide an ownership
+        /// related filter in the <c>"NAME"</c> field and the arn of the user or group whose folders
+        /// you want to search in the <c>"Value"</c> field. For example, <c>"Name":"DIRECT_QUICKSIGHT_OWNER",
+        /// "Operator": "StringEquals", "Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you set the value to <code>"StringLike"</code>, you need to provide the name of
-        /// the folders you are searching for. For example, <code>"Name":"DASHBOARD_NAME", "Operator":
-        /// "StringLike", "Value": "Test"</code>. The <code>"StringLike"</code> operator only
-        /// supports the <code>NAME</code> value <code>DASHBOARD_NAME</code>.
+        /// If you set the value to <c>"StringLike"</c>, you need to provide the name of the folders
+        /// you are searching for. For example, <c>"Name":"DASHBOARD_NAME", "Operator": "StringLike",
+        /// "Value": "Test"</c>. The <c>"StringLike"</c> operator only supports the <c>NAME</c>
+        /// value <c>DASHBOARD_NAME</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -133,8 +132,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the named item, in this case <code>QUICKSIGHT_USER</code>, that you want
-        /// to use as a filter, for example, <code>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>.
+        /// The value of the named item, in this case <c>QUICKSIGHT_USER</c>, that you want to
+        /// use as a filter, for example, <c>"Value": "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</c>.
         /// 
         /// </para>
         /// </summary>

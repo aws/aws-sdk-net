@@ -40,8 +40,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DbPassword. 
         /// <para>
-        /// A temporary password that authorizes the user name returned by <code>DbUser</code>
-        /// to log on to the database <code>DbName</code>. 
+        /// A temporary password that authorizes the user name returned by <c>DbUser</c> to log
+        /// on to the database <c>DbName</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -60,12 +60,11 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DbUser. 
         /// <para>
-        /// A database user name that is authorized to log on to the database <code>DbName</code>
-        /// using the password <code>DbPassword</code>. If the specified DbUser exists in the
-        /// database, the new user name has the same database permissions as the the user named
-        /// in DbUser. By default, the user is added to PUBLIC. If the <code>DbGroups</code> parameter
-        /// is specifed, <code>DbUser</code> is added to the listed groups for any sessions created
-        /// using these credentials.
+        /// A database user name that is authorized to log on to the database <c>DbName</c> using
+        /// the password <c>DbPassword</c>. If the specified DbUser exists in the database, the
+        /// new user name has the same database permissions as the the user named in DbUser. By
+        /// default, the user is added to PUBLIC. If the <c>DbGroups</c> parameter is specifed,
+        /// <c>DbUser</c> is added to the listed groups for any sessions created using these credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -84,7 +83,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Expiration. 
         /// <para>
-        /// The date and time the password in <code>DbPassword</code> expires.
+        /// The date and time the password in <c>DbPassword</c> expires.
         /// </para>
         /// </summary>
         public DateTime Expiration

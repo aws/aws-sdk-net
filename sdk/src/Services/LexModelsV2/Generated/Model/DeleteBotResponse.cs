@@ -58,8 +58,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotStatus. 
         /// <para>
-        /// The current status of the bot. The status is <code>Deleting</code> while the bot and
-        /// its associated resources are being deleted.
+        /// The current status of the bot. The status is <c>Deleting</c> while the bot and its
+        /// associated resources are being deleted.
         /// </para>
         /// </summary>
         public BotStatus BotStatus

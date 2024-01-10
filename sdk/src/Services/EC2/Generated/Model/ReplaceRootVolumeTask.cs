@@ -195,36 +195,36 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>pending</code> - the replacement volume is being created.
+        ///  <c>pending</c> - the replacement volume is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>in-progress</code> - the original volume is being detached and the replacement
-        /// volume is being attached.
+        ///  <c>in-progress</c> - the original volume is being detached and the replacement volume
+        /// is being attached.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>succeeded</code> - the replacement volume has been successfully attached to
-        /// the instance and the instance is available.
+        ///  <c>succeeded</c> - the replacement volume has been successfully attached to the instance
+        /// and the instance is available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failing</code> - the replacement task is in the process of failing.
+        ///  <c>failing</c> - the replacement task is in the process of failing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed</code> - the replacement task has failed but the original root volume
-        /// is still attached.
+        ///  <c>failed</c> - the replacement task has failed but the original root volume is still
+        /// attached.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failing-detached</code> - the replacement task is in the process of failing.
-        /// The instance might have no root volume attached.
+        ///  <c>failing-detached</c> - the replacement task is in the process of failing. The
+        /// instance might have no root volume attached.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed-detached</code> - the replacement task has failed and the instance has
-        /// no root volume attached.
+        ///  <c>failed-detached</c> - the replacement task has failed and the instance has no
+        /// root volume attached.
         /// </para>
         ///  </li> </ul>
         /// </summary>

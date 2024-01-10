@@ -111,7 +111,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// A container that provides information about encryption. If <code>SourceSelectionCriteria</code>
+        /// A container that provides information about encryption. If <c>SourceSelectionCriteria</c>
         /// is specified, you must specify this element.
         /// </para>
         ///  <note> 
@@ -155,8 +155,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// A container that specifies S3 Replication Time Control (S3 RTC) settings, including
         /// whether S3 RTC is enabled and the time when all objects and operations on objects
-        /// must be replicated. Must be specified together with a <code>Metrics</code> block.
-        /// 
+        /// must be replicated. Must be specified together with a <c>Metrics</c> block. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -180,13 +179,12 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property StorageClass. 
         /// <para>
         ///  The storage class to use when replicating objects. All objects stored on S3 on Outposts
-        /// are stored in the <code>OUTPOSTS</code> storage class. S3 on Outposts uses the <code>OUTPOSTS</code>
+        /// are stored in the <c>OUTPOSTS</c> storage class. S3 on Outposts uses the <c>OUTPOSTS</c>
         /// storage class to create the object replicas. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// Values other than <code>OUTPOSTS</code> aren't supported by Amazon S3 on Outposts.
-        /// 
+        /// Values other than <c>OUTPOSTS</c> aren't supported by Amazon S3 on Outposts. 
         /// </para>
         ///  </note>
         /// </summary>

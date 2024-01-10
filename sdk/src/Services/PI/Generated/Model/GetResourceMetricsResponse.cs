@@ -43,8 +43,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property AlignedEndTime. 
         /// <para>
         /// The end time for the returned metrics, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be greater
-        /// than or equal to the value of the user-specified <code>Endtime</code>.
+        /// specified by <c>PeriodInSeconds</c>). <c>AlignedEndTime</c> will be greater than or
+        /// equal to the value of the user-specified <c>Endtime</c>.
         /// </para>
         /// </summary>
         public DateTime AlignedEndTime
@@ -63,8 +63,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property AlignedStartTime. 
         /// <para>
         /// The start time for the returned metrics, after alignment to a granular boundary (as
-        /// specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will be
-        /// less than or equal to the value of the user-specified <code>StartTime</code>.
+        /// specified by <c>PeriodInSeconds</c>). <c>AlignedStartTime</c> will be less than or
+        /// equal to the value of the user-specified <c>StartTime</c>.
         /// </para>
         /// </summary>
         public DateTime AlignedStartTime
@@ -84,8 +84,8 @@ namespace Amazon.PI.Model
         /// <para>
         /// An immutable identifier for a data source that is unique for an Amazon Web Services
         /// Region. Performance Insights gathers metrics from this data source. In the console,
-        /// the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>,
-        /// the identifier is returned as <code>DbiResourceId</code>.
+        /// the identifier is shown as <i>ResourceID</i>. When you call <c>DescribeDBInstances</c>,
+        /// the identifier is returned as <c>DbiResourceId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -125,7 +125,7 @@ namespace Amazon.PI.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the token, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <c>MaxRecords</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

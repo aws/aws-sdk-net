@@ -61,7 +61,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property FilterNamePrefix. 
         /// <para>
         /// The prefix to match. CloudWatch Logs uses the value that you set here only if you
-        /// also include the <code>logGroupName</code> parameter in your request.
+        /// also include the <c>logGroupName</c> parameter in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -120,8 +120,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         /// Filters results to include only those with the specified metric name. If you include
-        /// this parameter in your request, you must also include the <code>metricNamespace</code>
-        /// parameter.
+        /// this parameter in your request, you must also include the <c>metricNamespace</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -141,7 +140,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property MetricNamespace. 
         /// <para>
         /// Filters results to include only those in the specified namespace. If you include this
-        /// parameter in your request, you must also include the <code>metricName</code> parameter.
+        /// parameter in your request, you must also include the <c>metricName</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

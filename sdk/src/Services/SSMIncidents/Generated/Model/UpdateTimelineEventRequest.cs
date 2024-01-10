@@ -30,7 +30,7 @@ namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateTimelineEvent operation.
-    /// Updates a timeline event. You can update events of type <code>Custom Event</code>.
+    /// Updates a timeline event. You can update events of type <c>Custom Event</c>.
     /// </summary>
     public partial class UpdateTimelineEventRequest : AmazonSSMIncidentsRequest
     {
@@ -84,8 +84,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The ID of the event to update. You can use <code>ListTimelineEvents</code> to find
-        /// an event's ID.
+        /// The ID of the event to update. You can use <c>ListTimelineEvents</c> to find an event's
+        /// ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]
@@ -104,12 +104,12 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventReferences. 
         /// <para>
-        /// Updates all existing references in a <code>TimelineEvent</code>. A reference is an
-        /// Amazon Web Services resource involved or associated with the incident. To specify
-        /// a reference, enter its Amazon Resource Name (ARN). You can also specify a related
-        /// item associated with that resource. For example, to specify an Amazon DynamoDB (DynamoDB)
-        /// table as a resource, use its ARN. You can also specify an Amazon CloudWatch metric
-        /// associated with the DynamoDB table as a related item.
+        /// Updates all existing references in a <c>TimelineEvent</c>. A reference is an Amazon
+        /// Web Services resource involved or associated with the incident. To specify a reference,
+        /// enter its Amazon Resource Name (ARN). You can also specify a related item associated
+        /// with that resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as
+        /// a resource, use its ARN. You can also specify an Amazon CloudWatch metric associated
+        /// with the DynamoDB table as a related item.
         /// </para>
         ///  <important> 
         /// <para>
@@ -153,7 +153,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. You can update events of type <code>Custom Event</code> and <code>Note</code>.
+        /// The type of event. You can update events of type <c>Custom Event</c> and <c>Note</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

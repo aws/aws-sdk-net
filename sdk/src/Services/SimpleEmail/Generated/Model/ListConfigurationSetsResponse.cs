@@ -61,7 +61,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token indicating that there are additional configuration sets available to be listed.
-        /// Pass this token to successive calls of <code>ListConfigurationSets</code>. 
+        /// Pass this token to successive calls of <c>ListConfigurationSets</c>. 
         /// </para>
         /// </summary>
         public string NextToken

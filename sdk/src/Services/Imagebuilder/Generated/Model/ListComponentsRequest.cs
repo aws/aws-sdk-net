@@ -31,8 +31,8 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the ListComponents operation.
     /// Returns the list of components that can be filtered by name, or by using the listed
-    /// <code>filters</code> to streamline results. Newly created components can take up to
-    /// two minutes to appear in the ListComponents API Results.
+    /// <c>filters</c> to streamline results. Newly created components can take up to two
+    /// minutes to appear in the ListComponents API Results.
     /// 
     ///  <note> 
     /// <para>
@@ -81,27 +81,27 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>description</code> 
+        ///  <c>description</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code> 
+        ///  <c>name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>platform</code> 
+        ///  <c>platform</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>supportedOsVersion</code> 
+        ///  <c>supportedOsVersion</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> 
+        ///  <c>type</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code> 
+        ///  <c>version</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

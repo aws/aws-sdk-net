@@ -139,7 +139,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property ZonalAutoshiftStatus. 
         /// <para>
-        /// The status for zonal autoshift for a resource. When the autoshift status is <code>ENABLED</code>,
+        /// The status for zonal autoshift for a resource. When the autoshift status is <c>ENABLED</c>,
         /// Amazon Web Services shifts traffic for a resource away from an Availability Zone,
         /// on your behalf, when Amazon Web Services determines that there's an issue in the Availability
         /// Zone that could potentially affect customers.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response information for the <code>AssociateVPCWithHostedZone</code>
+    /// A complex type that contains the response information for the <c>AssociateVPCWithHostedZone</c>
     /// request.
     /// </summary>
     public partial class AssociateVPCWithHostedZoneResponse : AmazonWebServiceResponse

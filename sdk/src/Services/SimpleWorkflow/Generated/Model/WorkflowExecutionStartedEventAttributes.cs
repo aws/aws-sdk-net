@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details of <code>WorkflowExecutionStarted</code> event.
+    /// Provides details of <c>WorkflowExecutionStarted</c> event.
     /// </summary>
     public partial class WorkflowExecutionStartedEventAttributes
     {
@@ -59,18 +59,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE</code> – The child executions are terminated.
+        ///  <c>TERMINATE</c> – The child executions are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
-        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
-        /// It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.
+        ///  <c>REQUEST_CANCEL</c> – A request to cancel is attempted for each child execution
+        /// by recording a <c>WorkflowExecutionCancelRequested</c> event in its history. It is
+        /// up to the decider to take appropriate actions when it receives an execution history
+        /// with this event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        ///  <c>ABANDON</c> – No action is taken. The child executions continue to run.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -90,9 +90,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ContinuedExecutionRunId. 
         /// <para>
-        /// If this workflow execution was started due to a <code>ContinueAsNewWorkflowExecution</code>
-        /// decision, then it contains the <code>runId</code> of the previous workflow execution
-        /// that was closed and continued as this execution.
+        /// If this workflow execution was started due to a <c>ContinueAsNewWorkflowExecution</c>
+        /// decision, then it contains the <c>runId</c> of the previous workflow execution that
+        /// was closed and continued as this execution.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -115,8 +115,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -173,11 +173,11 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ParentInitiatedEventId. 
         /// <para>
-        /// The ID of the <code>StartChildWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start this workflow
-        /// execution. The source event with this ID can be found in the history of the source
-        /// workflow execution. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event.
+        /// The ID of the <c>StartChildWorkflowExecutionInitiated</c> event corresponding to the
+        /// <c>StartChildWorkflowExecution</c> <a>Decision</a> to start this workflow execution.
+        /// The source event with this ID can be found in the history of the source workflow execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         public long ParentInitiatedEventId
@@ -275,8 +275,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]

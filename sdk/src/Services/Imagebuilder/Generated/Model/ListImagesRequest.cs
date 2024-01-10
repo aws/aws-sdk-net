@@ -67,23 +67,23 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>name</code> 
+        ///  <c>name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>osVersion</code> 
+        ///  <c>osVersion</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>platform</code> 
+        ///  <c>platform</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> 
+        ///  <c>type</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code> 
+        ///  <c>version</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -46,36 +46,35 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>prefix-list-id</code> - The ID of the prefix list.
+        ///  <c>prefix-list-id</c> - The ID of the prefix list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route-search.exact-match</code> - The exact match of the specified filter.
+        ///  <c>route-search.exact-match</c> - The exact match of the specified filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route-search.longest-prefix-match</code> - The longest prefix that matches
-        /// the route.
+        ///  <c>route-search.longest-prefix-match</c> - The longest prefix that matches the route.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route-search.subnet-of-match</code> - The routes with a subnet that match the
-        /// specified CIDR filter.
+        ///  <c>route-search.subnet-of-match</c> - The routes with a subnet that match the specified
+        /// CIDR filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route-search.supernet-of-match</code> - The routes with a CIDR that encompass
-        /// the CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your
-        /// route table and you specify <code>supernet-of-match</code> as 10.0.1.0/30, then the
-        /// result returns 10.0.1.0/29.
+        ///  <c>route-search.supernet-of-match</c> - The routes with a CIDR that encompass the
+        /// CIDR filter. For example, if you have 10.0.1.0/29 and 10.0.1.0/31 routes in your route
+        /// table and you specify <c>supernet-of-match</c> as 10.0.1.0/30, then the result returns
+        /// 10.0.1.0/29.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the route.
+        ///  <c>state</c> - The state of the route.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> - The route type.
+        ///  <c>type</c> - The route type.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -114,7 +113,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         public int MaxResults

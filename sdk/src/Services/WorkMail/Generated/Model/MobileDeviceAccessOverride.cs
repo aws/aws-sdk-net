@@ -117,7 +117,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Effect. 
         /// <para>
-        /// The effect of the override, <code>ALLOW</code> or <code>DENY</code>.
+        /// The effect of the override, <c>ALLOW</c> or <c>DENY</c>.
         /// </para>
         /// </summary>
         public MobileDeviceAccessRuleEffect Effect

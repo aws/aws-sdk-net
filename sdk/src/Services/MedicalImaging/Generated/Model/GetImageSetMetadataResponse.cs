@@ -58,7 +58,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The format in which the study metadata is returned to the customer. Default is <code>text/plain</code>.
+        /// The format in which the study metadata is returned to the customer. Default is <c>text/plain</c>.
         /// </para>
         /// </summary>
         public string ContentType

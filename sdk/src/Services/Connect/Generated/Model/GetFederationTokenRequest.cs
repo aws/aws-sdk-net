@@ -47,8 +47,8 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>Provided identity: Principal: .... User: .... cannot be used for federation
-    /// with Amazon Connect</code> 
+    ///  <c>Provided identity: Principal: .... User: .... cannot be used for federation with
+    /// Amazon Connect</c> 
     /// </para>
     ///  </note>
     /// </summary>

@@ -42,9 +42,8 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In an <a>UpdateRegexMatchSet</a> request, <code>RegexMatchSetUpdate</code> specifies
-    /// whether to insert or delete a <a>RegexMatchTuple</a> and includes the settings for
-    /// the <code>RegexMatchTuple</code>.
+    /// In an <a>UpdateRegexMatchSet</a> request, <c>RegexMatchSetUpdate</c> specifies whether
+    /// to insert or delete a <a>RegexMatchTuple</a> and includes the settings for the <c>RegexMatchTuple</c>.
     /// </para>
     /// </summary>
     public partial class RegexMatchSetUpdate
@@ -76,9 +75,9 @@ namespace Amazon.WAF.Model
         /// <para>
         /// Information about the part of a web request that you want AWS WAF to inspect and the
         /// identifier of the regular expression (regex) pattern that you want AWS WAF to search
-        /// for. If you specify <code>DELETE</code> for the value of <code>Action</code>, the
-        /// <code>RegexMatchTuple</code> values must exactly match the values in the <code>RegexMatchTuple</code>
-        /// that you want to delete from the <code>RegexMatchSet</code>.
+        /// for. If you specify <c>DELETE</c> for the value of <c>Action</c>, the <c>RegexMatchTuple</c>
+        /// values must exactly match the values in the <c>RegexMatchTuple</c> that you want to
+        /// delete from the <c>RegexMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

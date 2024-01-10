@@ -30,10 +30,10 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateServerEngineAttributes operation.
-    /// Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code>
+    /// Updates engine-specific attributes on a specified server. The server enters the <c>MODIFYING</c>
     /// state when this operation is in progress. Only one update can occur at a time. You
-    /// can use this command to reset a Chef server's public key (<code>CHEF_PIVOTAL_KEY</code>)
-    /// or a Puppet server's admin password (<code>PUPPET_ADMIN_PASSWORD</code>). 
+    /// can use this command to reset a Chef server's public key (<c>CHEF_PIVOTAL_KEY</c>)
+    /// or a Puppet server's admin password (<c>PUPPET_ADMIN_PASSWORD</c>). 
     /// 
     ///  
     /// <para>
@@ -41,10 +41,10 @@ namespace Amazon.OpsWorksCM.Model
     /// </para>
     ///  
     /// <para>
-    ///  This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code>
-    /// states. Otherwise, an <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code>
-    /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-    /// when parameters of the request are not valid. 
+    ///  This operation can only be called for servers in <c>HEALTHY</c> or <c>UNHEALTHY</c>
+    /// states. Otherwise, an <c>InvalidStateException</c> is raised. A <c>ResourceNotFoundException</c>
+    /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
+    /// parameters of the request are not valid. 
     /// </para>
     /// </summary>
     public partial class UpdateServerEngineAttributesRequest : AmazonOpsWorksCMRequest

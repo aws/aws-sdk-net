@@ -48,15 +48,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// A status of <code>Active</code> confirms that the preference is applied in the latest
-        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not
-        /// yet applied to recommendations.
+        /// A status of <c>Active</c> confirms that the preference is applied in the latest recommendation
+        /// refresh, and a status of <c>Inactive</c> confirms that it's not yet applied to recommendations.
         /// </para>
         ///  
         /// <para>
         /// To validate whether the preference is applied to your last generated set of recommendations,
-        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
-        /// the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a>
+        /// review the <c>effectiveRecommendationPreferences</c> value in the response of the
+        /// <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a>
         /// actions.
         /// </para>
         ///  
@@ -86,14 +85,14 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// If the preference is applied in the latest recommendation refresh, an object with
-        /// a valid <code>source</code> value appears in the response. If the preference isn't
-        /// applied to the recommendations already, then this object doesn't appear in the response.
+        /// a valid <c>source</c> value appears in the response. If the preference isn't applied
+        /// to the recommendations already, then this object doesn't appear in the response.
         /// </para>
         ///  
         /// <para>
         /// To validate whether the preference is applied to your last generated set of recommendations,
-        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
-        /// the <a>GetEC2InstanceRecommendations</a> actions.
+        /// review the <c>effectiveRecommendationPreferences</c> value in the response of the
+        /// <a>GetEC2InstanceRecommendations</a> actions.
         /// </para>
         ///  
         /// <para>
@@ -122,8 +121,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// To validate that the preference is applied to your last generated set of recommendations,
-        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
-        /// the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
+        /// review the <c>effectiveRecommendationPreferences</c> value in the response of the
+        /// GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
         /// </para>
         /// </summary>
         public LookBackPeriodPreference LookBackPeriod
@@ -149,8 +148,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// To validate that the preference is applied to your last generated set of recommendations,
-        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
-        /// the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
+        /// review the <c>effectiveRecommendationPreferences</c> value in the response of the
+        /// GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
         /// </para>
         /// </summary>
         public List<EffectivePreferredResource> PreferredResources
@@ -175,8 +174,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// To validate that the preference is applied to your last generated set of recommendations,
-        /// review the <code>effectiveRecommendationPreferences</code> value in the response of
-        /// the GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
+        /// review the <c>effectiveRecommendationPreferences</c> value in the response of the
+        /// GetAutoScalingGroupRecommendations or GetEC2InstanceRecommendations actions.
         /// </para>
         /// </summary>
         public List<UtilizationPreference> UtilizationPreferences

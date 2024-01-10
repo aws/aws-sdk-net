@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAppInstanceUser operation.
-    /// Returns the full details of an <code>AppInstanceUser</code>.
+    /// Returns the full details of an <c>AppInstanceUser</c>.
     /// </summary>
     public partial class DescribeAppInstanceUserRequest : AmazonChimeSDKIdentityRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

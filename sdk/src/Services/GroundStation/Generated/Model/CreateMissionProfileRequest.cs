@@ -34,8 +34,8 @@ namespace Amazon.GroundStation.Model
     /// 
     ///  
     /// <para>
-    ///  <code>dataflowEdges</code> is a list of lists of strings. Each lower level list of
-    /// strings has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
+    ///  <c>dataflowEdges</c> is a list of lists of strings. Each lower level list of strings
+    /// has two elements: a <i>from</i> ARN and a <i>to</i> ARN.
     /// </para>
     /// </summary>
     public partial class CreateMissionProfileRequest : AmazonGroundStationRequest
@@ -93,8 +93,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DataflowEdges. 
         /// <para>
-        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <code>Config</code>
-        /// and a <i>to</i> <code>Config</code>.
+        /// A list of lists of ARNs. Each list of ARNs is an edge, with a <i>from</i> <c>Config</c>
+        /// and a <i>to</i> <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=500)]
@@ -206,7 +206,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property TrackingConfigArn. 
         /// <para>
-        /// ARN of a tracking <code>Config</code>.
+        /// ARN of a tracking <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

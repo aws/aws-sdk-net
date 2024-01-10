@@ -111,7 +111,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ExpirationDate. 
         /// <para>
         /// The date and time at which the snapshot lock is to automatically expire, in the UTC
-        /// time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).
+        /// time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         ///  
         /// <para>
@@ -165,8 +165,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>governance</code> - Locks the snapshot in governance mode. Snapshots locked
-        /// in governance mode can't be deleted until one of the following conditions are met:
+        ///  <c>governance</c> - Locks the snapshot in governance mode. Snapshots locked in governance
+        /// mode can't be deleted until one of the following conditions are met:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -179,24 +179,23 @@ namespace Amazon.EC2.Model
         ///  </li> </ul> 
         /// <para>
         /// Users with the appropriate IAM permissions can unlock the snapshot, increase or decrease
-        /// the lock duration, and change the lock mode to <code>compliance</code> at any time.
+        /// the lock duration, and change the lock mode to <c>compliance</c> at any time.
         /// </para>
         ///  
         /// <para>
-        /// If you lock a snapshot in <code>governance</code> mode, omit <b> CoolOffPeriod</b>.
+        /// If you lock a snapshot in <c>governance</c> mode, omit <b> CoolOffPeriod</b>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>compliance</code> - Locks the snapshot in compliance mode. Snapshots locked
-        /// in compliance mode can't be unlocked by any user. They can be deleted only after the
-        /// lock duration expires. Users can't decrease the lock duration or change the lock mode
-        /// to <code>governance</code>. However, users with appropriate IAM permissions can increase
-        /// the lock duration at any time.
+        ///  <c>compliance</c> - Locks the snapshot in compliance mode. Snapshots locked in compliance
+        /// mode can't be unlocked by any user. They can be deleted only after the lock duration
+        /// expires. Users can't decrease the lock duration or change the lock mode to <c>governance</c>.
+        /// However, users with appropriate IAM permissions can increase the lock duration at
+        /// any time.
         /// </para>
         ///  
         /// <para>
-        /// If you lock a snapshot in <code>compliance</code> mode, you can optionally specify
-        /// <b>CoolOffPeriod</b>.
+        /// If you lock a snapshot in <c>compliance</c> mode, you can optionally specify <b>CoolOffPeriod</b>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

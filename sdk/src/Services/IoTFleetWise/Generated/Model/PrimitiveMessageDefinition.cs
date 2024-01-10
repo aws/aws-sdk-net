@@ -38,8 +38,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Ros2PrimitiveMessageDefinition. 
         /// <para>
-        /// Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant primitive
-        /// type message of the complex data structure.
+        /// Information about a <c>PrimitiveMessage</c> using a ROS 2 compliant primitive type
+        /// message of the complex data structure.
         /// </para>
         /// </summary>
         public ROS2PrimitiveMessageDefinition Ros2PrimitiveMessageDefinition

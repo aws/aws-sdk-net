@@ -38,7 +38,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property CancelRequested. 
         /// <para>
-        /// Set to <code>true</code> if cancellation of the task is requested.
+        /// Set to <c>true</c> if cancellation of the task is requested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

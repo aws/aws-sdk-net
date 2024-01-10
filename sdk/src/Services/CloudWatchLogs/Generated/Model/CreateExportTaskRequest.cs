@@ -31,9 +31,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// <summary>
     /// Container for the parameters to the CreateExportTask operation.
     /// Creates an export task so that you can efficiently export data from a log group to
-    /// an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you
-    /// must use credentials that have permission to write to the S3 bucket that you specify
-    /// as the destination.
+    /// an Amazon S3 bucket. When you perform a <c>CreateExportTask</c> operation, you must
+    /// use credentials that have permission to write to the S3 bucket that you specify as
+    /// the destination.
     /// 
     ///  
     /// <para>
@@ -50,8 +50,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// This is an asynchronous call. If all the required information is provided, this operation
     /// initiates an export task and responds with the ID of the task. After the task has
     /// started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
-    /// to get the status of the export task. Each account can only have one active (<code>RUNNING</code>
-    /// or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
+    /// to get the status of the export task. Each account can only have one active (<c>RUNNING</c>
+    /// or <c>PENDING</c>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
     /// </para>
     ///  
     /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property DestinationPrefix. 
         /// <para>
         /// The prefix used as the start of the key for every object exported. If you don't specify
-        /// a value, the default is <code>exportedlogs</code>.
+        /// a value, the default is <c>exportedlogs</c>.
         /// </para>
         /// </summary>
         public string DestinationPrefix
@@ -119,8 +119,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property From. 
         /// <para>
         /// The start time of the range for the request, expressed as the number of milliseconds
-        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp earlier than
-        /// this time are not exported.
+        /// after <c>Jan 1, 1970 00:00:00 UTC</c>. Events with a timestamp earlier than this time
+        /// are not exported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -198,8 +198,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property To. 
         /// <para>
         /// The end time of the range for the request, expressed as the number of milliseconds
-        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this
-        /// time are not exported.
+        /// after <c>Jan 1, 1970 00:00:00 UTC</c>. Events with a timestamp later than this time
+        /// are not exported.
         /// </para>
         ///  
         /// <para>

@@ -41,11 +41,11 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>TagResource</code> operation with an Amazon Location Service
-    /// resource that already has tags. If you specify a new tag key for the resource, this
-    /// tag is appended to the tags already associated with the resource. If you specify a
-    /// tag key that's already associated with the resource, the new tag value that you specify
-    /// replaces the previous value for that tag. 
+    /// You can use the <c>TagResource</c> operation with an Amazon Location Service resource
+    /// that already has tags. If you specify a new tag key for the resource, this tag is
+    /// appended to the tags already associated with the resource. If you specify a tag key
+    /// that's already associated with the resource, the new tag value that you specify replaces
+    /// the previous value for that tag. 
     /// </para>
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// Format example: <c>arn:aws:geo:region:account-id:resourcetype/ExampleResource</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -90,7 +90,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         ///  
         /// <para>

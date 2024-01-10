@@ -30,8 +30,7 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// Object that contains date range of the last modified date to be filtered on. You can
-    /// optionally provide a <code>BeforeValue</code> and/or <code>AfterValue</code>. Both
-    /// are inclusive.
+    /// optionally provide a <c>BeforeValue</c> and/or <c>AfterValue</c>. Both are inclusive.
     /// </summary>
     public partial class AmiProductLastModifiedDateFilterDateRange
     {

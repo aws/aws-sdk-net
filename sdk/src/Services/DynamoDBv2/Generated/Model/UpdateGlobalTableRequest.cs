@@ -55,7 +55,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    ///  Although you can use <code>UpdateGlobalTable</code> to add replicas and remove replicas
+    ///  Although you can use <c>UpdateGlobalTable</c> to add replicas and remove replicas
     /// in a single request, for simplicity we recommend that you issue separate requests
     /// for adding or removing replicas. 
     /// </para>

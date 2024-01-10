@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SelectFields. 
         /// <para>
-        /// Returns a <code>FieldInfo</code> object.
+        /// Returns a <c>FieldInfo</c> object.
         /// </para>
         /// </summary>
         public List<FieldInfo> SelectFields

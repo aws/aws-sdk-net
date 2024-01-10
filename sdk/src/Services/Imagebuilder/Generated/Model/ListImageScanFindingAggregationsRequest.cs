@@ -33,8 +33,8 @@ namespace Amazon.Imagebuilder.Model
     /// Returns a list of image scan aggregations for your account. You can filter by the
     /// type of key that Image Builder uses to group results. For example, if you want to
     /// get a list of findings by severity level for one of your pipelines, you might specify
-    /// your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify
-    /// a filter, Image Builder returns an aggregation for your account.
+    /// your pipeline with the <c>imagePipelineArn</c> filter. If you don't specify a filter,
+    /// Image Builder returns an aggregation for your account.
     /// 
     ///  
     /// <para>
@@ -42,19 +42,19 @@ namespace Amazon.Imagebuilder.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>accountId</code> 
+    ///  <c>accountId</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>imageBuildVersionArn</code> 
+    ///  <c>imageBuildVersionArn</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>imagePipelineArn</code> 
+    ///  <c>imagePipelineArn</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>vulnerabilityId</code> 
+    ///  <c>vulnerabilityId</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

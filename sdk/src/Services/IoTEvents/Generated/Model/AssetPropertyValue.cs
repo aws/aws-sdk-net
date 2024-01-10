@@ -34,8 +34,8 @@ namespace Amazon.IoTEvents.Model
     /// 
     ///  
     /// <para>
-    /// You must use expressions for all parameters in <code>AssetPropertyValue</code>. The
-    /// expressions accept literals, operators, functions, references, and substitution templates.
+    /// You must use expressions for all parameters in <c>AssetPropertyValue</c>. The expressions
+    /// accept literals, operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
@@ -44,12 +44,12 @@ namespace Amazon.IoTEvents.Model
     ///  <ul> <li> 
     /// <para>
     /// For literal values, the expressions must contain single quotes. For example, the value
-    /// for the <code>quality</code> parameter can be <code>'GOOD'</code>.
+    /// for the <c>quality</c> parameter can be <c>'GOOD'</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For references, you must specify either variables or input values. For example, the
-    /// value for the <code>quality</code> parameter can be <code>$input.TemperatureInput.sensorData.quality</code>.
+    /// value for the <c>quality</c> parameter can be <c>$input.TemperatureInput.sensorData.quality</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -66,8 +66,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Quality. 
         /// <para>
-        /// The quality of the asset property value. The value must be <code>'GOOD'</code>, <code>'BAD'</code>,
-        /// or <code>'UNCERTAIN'</code>.
+        /// The quality of the asset property value. The value must be <c>'GOOD'</c>, <c>'BAD'</c>,
+        /// or <c>'UNCERTAIN'</c>.
         /// </para>
         /// </summary>
         public string Quality

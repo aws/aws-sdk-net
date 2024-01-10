@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Describes an event notification subscription created by the <code>CreateEventSubscription</code>
+    /// Describes an event notification subscription created by the <c>CreateEventSubscription</c>
     /// operation.
     /// </summary>
     public partial class EventSubscription

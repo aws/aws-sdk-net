@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because of the <code>ConnectionState</code> of the custom
-    /// key store. To get the <code>ConnectionState</code> of a custom key store, use the
-    /// <a>DescribeCustomKeyStores</a> operation.
+    /// The request was rejected because of the <c>ConnectionState</c> of the custom key store.
+    /// To get the <c>ConnectionState</c> of a custom key store, use the <a>DescribeCustomKeyStores</a>
+    /// operation.
     /// 
     ///  
     /// <para>
@@ -40,34 +40,34 @@ namespace Amazon.KeyManagementService.Model
     ///  <ul> <li> 
     /// <para>
     /// You requested the <a>ConnectCustomKeyStore</a> operation on a custom key store with
-    /// a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>FAILED</code>.
-    /// This operation is valid for all other <code>ConnectionState</code> values. To reconnect
-    /// a custom key store in a <code>FAILED</code> state, disconnect it (<a>DisconnectCustomKeyStore</a>),
-    /// then connect it (<code>ConnectCustomKeyStore</code>).
+    /// a <c>ConnectionState</c> of <c>DISCONNECTING</c> or <c>FAILED</c>. This operation
+    /// is valid for all other <c>ConnectionState</c> values. To reconnect a custom key store
+    /// in a <c>FAILED</c> state, disconnect it (<a>DisconnectCustomKeyStore</a>), then connect
+    /// it (<c>ConnectCustomKeyStore</c>).
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You requested the <a>CreateKey</a> operation in a custom key store that is not connected.
-    /// This operations is valid only when the custom key store <code>ConnectionState</code>
-    /// is <code>CONNECTED</code>.
+    /// This operations is valid only when the custom key store <c>ConnectionState</c> is
+    /// <c>CONNECTED</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You requested the <a>DisconnectCustomKeyStore</a> operation on a custom key store
-    /// with a <code>ConnectionState</code> of <code>DISCONNECTING</code> or <code>DISCONNECTED</code>.
-    /// This operation is valid for all other <code>ConnectionState</code> values.
+    /// with a <c>ConnectionState</c> of <c>DISCONNECTING</c> or <c>DISCONNECTED</c>. This
+    /// operation is valid for all other <c>ConnectionState</c> values.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You requested the <a>UpdateCustomKeyStore</a> or <a>DeleteCustomKeyStore</a> operation
     /// on a custom key store that is not disconnected. This operation is valid only when
-    /// the custom key store <code>ConnectionState</code> is <code>DISCONNECTED</code>.
+    /// the custom key store <c>ConnectionState</c> is <c>DISCONNECTED</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// You requested the <a>GenerateRandom</a> operation in an CloudHSM key store that is
-    /// not connected. This operation is valid only when the CloudHSM key store <code>ConnectionState</code>
-    /// is <code>CONNECTED</code>. 
+    /// not connected. This operation is valid only when the CloudHSM key store <c>ConnectionState</c>
+    /// is <c>CONNECTED</c>. 
     /// </para>
     ///  </li> </ul>
     /// </summary>

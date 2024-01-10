@@ -34,12 +34,12 @@ namespace Amazon.Proton.Model
     /// 
     ///  
     /// <para>
-    /// There are four modes for updating a service pipeline. The <code>deploymentType</code>
-    /// field defines the mode.
+    /// There are four modes for updating a service pipeline. The <c>deploymentType</c> field
+    /// defines the mode.
     /// </para>
     ///  <dl> <dt/> <dd> 
     /// <para>
-    ///  <code>NONE</code> 
+    ///  <c>NONE</c> 
     /// </para>
     ///  
     /// <para>
@@ -48,17 +48,17 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  </dd> <dt/> <dd> 
     /// <para>
-    ///  <code>CURRENT_VERSION</code> 
+    ///  <c>CURRENT_VERSION</c> 
     /// </para>
     ///  
     /// <para>
     /// In this mode, the service pipeline is deployed and updated with the new spec that
     /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
-    /// minor version parameters when you use this <code>deployment-type</code>.
+    /// minor version parameters when you use this <c>deployment-type</c>.
     /// </para>
     ///  </dd> <dt/> <dd> 
     /// <para>
-    ///  <code>MINOR_VERSION</code> 
+    ///  <c>MINOR_VERSION</c> 
     /// </para>
     ///  
     /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  </dd> <dt/> <dd> 
     /// <para>
-    ///  <code>MAJOR_VERSION</code> 
+    ///  <c>MAJOR_VERSION</c> 
     /// </para>
     ///  
     /// <para>
@@ -94,12 +94,12 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// There are four modes for updating a service pipeline. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are four modes for updating a service pipeline. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
-        ///  <code>NONE</code> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  
         /// <para>
@@ -108,17 +108,17 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>CURRENT_VERSION</code> 
+        ///  <c>CURRENT_VERSION</c> 
         /// </para>
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the new spec that
         /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
-        /// minor version parameters when you use this <code>deployment-type</code>.
+        /// minor version parameters when you use this <c>deployment-type</c>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MINOR_VERSION</code> 
+        ///  <c>MINOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -128,7 +128,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MAJOR_VERSION</code> 
+        ///  <c>MAJOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>

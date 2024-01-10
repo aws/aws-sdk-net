@@ -62,7 +62,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// The code for an Amazon Web Services service returned by the <a>DescribeServices</a>
-        /// response. The <code>name</code> element contains the corresponding friendly name.
+        /// response. The <c>name</c> element contains the corresponding friendly name.
         /// </para>
         /// </summary>
         public string Code
@@ -80,8 +80,8 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name for an Amazon Web Services service. The <code>code</code> element
-        /// contains the corresponding code.
+        /// The friendly name for an Amazon Web Services service. The <c>code</c> element contains
+        /// the corresponding code.
         /// </para>
         /// </summary>
         public string Name

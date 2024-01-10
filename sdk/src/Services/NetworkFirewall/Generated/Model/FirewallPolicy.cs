@@ -158,8 +158,8 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property StatelessCustomActions. 
         /// <para>
         /// The custom action definitions that are available for use in the firewall policy's
-        /// <code>StatelessDefaultActions</code> setting. You name each custom action that you
-        /// define, and then you can use it by name in your default actions specifications.
+        /// <c>StatelessDefaultActions</c> setting. You name each custom action that you define,
+        /// and then you can use it by name in your default actions specifications.
         /// </para>
         /// </summary>
         public List<CustomAction> StatelessCustomActions
@@ -179,18 +179,18 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The actions to take on a packet if it doesn't match any of the stateless rules in
         /// the policy. If you want non-matching packets to be forwarded for stateful inspection,
-        /// specify <code>aws:forward_to_sfe</code>. 
+        /// specify <c>aws:forward_to_sfe</c>. 
         /// </para>
         ///  
         /// <para>
-        /// You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>,
-        /// or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that
-        /// are compatible with your standard section choice.
+        /// You must specify one of the standard actions: <c>aws:pass</c>, <c>aws:drop</c>, or
+        /// <c>aws:forward_to_sfe</c>. In addition, you can specify custom actions that are compatible
+        /// with your standard section choice.
         /// </para>
         ///  
         /// <para>
-        /// For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
-        /// “customActionName”]</code>. For information about compatibility, see the custom action
+        /// For example, you could specify <c>["aws:pass"]</c> or you could specify <c>["aws:pass",
+        /// “customActionName”]</c>. For information about compatibility, see the custom action
         /// descriptions under <a>CustomAction</a>.
         /// </para>
         /// </summary>
@@ -213,19 +213,19 @@ namespace Amazon.NetworkFirewall.Model
         /// The actions to take on a fragmented UDP packet if it doesn't match any of the stateless
         /// rules in the policy. Network Firewall only manages UDP packet fragments and silently
         /// drops packet fragments for other protocols. If you want non-matching fragmented UDP
-        /// packets to be forwarded for stateful inspection, specify <code>aws:forward_to_sfe</code>.
+        /// packets to be forwarded for stateful inspection, specify <c>aws:forward_to_sfe</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// You must specify one of the standard actions: <code>aws:pass</code>, <code>aws:drop</code>,
-        /// or <code>aws:forward_to_sfe</code>. In addition, you can specify custom actions that
-        /// are compatible with your standard section choice.
+        /// You must specify one of the standard actions: <c>aws:pass</c>, <c>aws:drop</c>, or
+        /// <c>aws:forward_to_sfe</c>. In addition, you can specify custom actions that are compatible
+        /// with your standard section choice.
         /// </para>
         ///  
         /// <para>
-        /// For example, you could specify <code>["aws:pass"]</code> or you could specify <code>["aws:pass",
-        /// “customActionName”]</code>. For information about compatibility, see the custom action
+        /// For example, you could specify <c>["aws:pass"]</c> or you could specify <c>["aws:pass",
+        /// “customActionName”]</c>. For information about compatibility, see the custom action
         /// descriptions under <a>CustomAction</a>.
         /// </para>
         /// </summary>

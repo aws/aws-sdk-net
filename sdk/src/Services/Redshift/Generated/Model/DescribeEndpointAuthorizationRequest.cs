@@ -44,8 +44,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Account. 
         /// <para>
         /// The Amazon Web Services account ID of either the cluster owner (grantor) or grantee.
-        /// If <code>Grantee</code> parameter is true, then the <code>Account</code> value is
-        /// of the grantor.
+        /// If <c>Grantee</c> parameter is true, then the <c>Account</c> value is of the grantor.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -103,9 +102,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code>
+        /// An optional pagination token provided by a previous <c>DescribeEndpointAuthorization</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+        /// the marker, up to the value specified by the <c>MaxRecords</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -125,8 +124,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code>
-        /// is included in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a <c>Marker</c> is
+        /// included in the response so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         public int MaxRecords

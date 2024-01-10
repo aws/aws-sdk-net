@@ -46,10 +46,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify at least the <code>DestinationEnvironmentID</code> or
-        /// the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify
-        /// the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>.
-        /// 
+        ///  Condition: You must specify at least the <c>DestinationEnvironmentID</c> or the <c>DestinationEnvironmentName</c>.
+        /// You may also specify both. You must specify the <c>SourceEnvironmentId</c> with the
+        /// <c>DestinationEnvironmentId</c>. 
         /// </para>
         /// </summary>
         public string DestinationEnvironmentId
@@ -71,10 +70,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify at least the <code>DestinationEnvironmentID</code> or
-        /// the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify
-        /// the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>.
-        /// 
+        ///  Condition: You must specify at least the <c>DestinationEnvironmentID</c> or the <c>DestinationEnvironmentName</c>.
+        /// You may also specify both. You must specify the <c>SourceEnvironmentName</c> with
+        /// the <c>DestinationEnvironmentName</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]
@@ -97,10 +95,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
-        /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
-        /// <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>.
-        /// 
+        ///  Condition: You must specify at least the <c>SourceEnvironmentID</c> or the <c>SourceEnvironmentName</c>.
+        /// You may also specify both. If you specify the <c>SourceEnvironmentId</c>, you must
+        /// specify the <c>DestinationEnvironmentId</c>. 
         /// </para>
         /// </summary>
         public string SourceEnvironmentId
@@ -122,10 +119,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Condition: You must specify at least the <code>SourceEnvironmentID</code> or the
-        /// <code>SourceEnvironmentName</code>. You may also specify both. If you specify the
-        /// <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>.
-        /// 
+        ///  Condition: You must specify at least the <c>SourceEnvironmentID</c> or the <c>SourceEnvironmentName</c>.
+        /// You may also specify both. If you specify the <c>SourceEnvironmentName</c>, you must
+        /// specify the <c>DestinationEnvironmentName</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]

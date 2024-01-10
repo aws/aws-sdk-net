@@ -139,9 +139,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The certificate can be either <code>ACTIVE</code>, <code>PENDING_ROTATION</code>,
-        /// or <code>INACTIVE</code>. <code>PENDING_ROTATION</code> means that this certificate
-        /// will replace the current certificate when it expires.
+        /// The certificate can be either <c>ACTIVE</c>, <c>PENDING_ROTATION</c>, or <c>INACTIVE</c>.
+        /// <c>PENDING_ROTATION</c> means that this certificate will replace the current certificate
+        /// when it expires.
         /// </para>
         /// </summary>
         public CertificateStatusType Status
@@ -160,8 +160,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type for the certificate. If a private key has been specified for the certificate,
-        /// its type is <code>CERTIFICATE_WITH_PRIVATE_KEY</code>. If there is no private key,
-        /// the type is <code>CERTIFICATE</code>.
+        /// its type is <c>CERTIFICATE_WITH_PRIVATE_KEY</c>. If there is no private key, the type
+        /// is <c>CERTIFICATE</c>.
         /// </para>
         /// </summary>
         public CertificateType Type

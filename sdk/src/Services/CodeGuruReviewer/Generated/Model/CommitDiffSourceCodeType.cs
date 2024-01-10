@@ -31,8 +31,8 @@ namespace Amazon.CodeGuruReviewer.Model
     /// <summary>
     /// A type of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
     /// that specifies the commit diff for a pull request on an associated repository. The
-    /// <code>SourceCommit</code> and <code>DestinationCommit</code> fields are required to
-    /// do a pull request code review.
+    /// <c>SourceCommit</c> and <c>DestinationCommit</c> fields are required to do a pull
+    /// request code review.
     /// </summary>
     public partial class CommitDiffSourceCodeType
     {

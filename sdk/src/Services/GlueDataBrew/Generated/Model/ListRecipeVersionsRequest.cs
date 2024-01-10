@@ -30,7 +30,7 @@ namespace Amazon.GlueDataBrew.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRecipeVersions operation.
-    /// Lists the versions of a particular DataBrew recipe, except for <code>LATEST_WORKING</code>.
+    /// Lists the versions of a particular DataBrew recipe, except for <c>LATEST_WORKING</c>.
     /// </summary>
     public partial class ListRecipeVersionsRequest : AmazonGlueDataBrewRequest
     {

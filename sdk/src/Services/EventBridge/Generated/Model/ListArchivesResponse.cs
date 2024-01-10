@@ -39,7 +39,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Archives. 
         /// <para>
-        /// An array of <code>Archive</code> objects that include details about an archive.
+        /// An array of <c>Archive</c> objects that include details about an archive.
         /// </para>
         /// </summary>
         public List<Archive> Archives

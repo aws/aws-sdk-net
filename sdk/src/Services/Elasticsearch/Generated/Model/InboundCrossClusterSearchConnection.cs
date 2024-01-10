@@ -41,8 +41,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property ConnectionStatus. 
         /// <para>
-        /// Specifies the <code><a>InboundCrossClusterSearchConnectionStatus</a></code> for the
-        /// outbound connection.
+        /// Specifies the <c><a>InboundCrossClusterSearchConnectionStatus</a></c> for the outbound
+        /// connection.
         /// </para>
         /// </summary>
         public InboundCrossClusterSearchConnectionStatus ConnectionStatus
@@ -78,8 +78,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DestinationDomainInfo. 
         /// <para>
-        /// Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch
-        /// domain.
+        /// Specifies the <c><a>DomainInformation</a></c> for the destination Elasticsearch domain.
         /// </para>
         /// </summary>
         public DomainInformation DestinationDomainInfo
@@ -97,7 +96,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property SourceDomainInfo. 
         /// <para>
-        /// Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.
+        /// Specifies the <c><a>DomainInformation</a></c> for the source Elasticsearch domain.
         /// </para>
         /// </summary>
         public DomainInformation SourceDomainInfo

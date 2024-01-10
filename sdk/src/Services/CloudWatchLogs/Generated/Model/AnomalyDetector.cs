@@ -67,7 +67,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property AnomalyDetectorStatus. 
         /// <para>
         /// Specifies the current status of the anomaly detector. To pause an anomaly detector,
-        /// use the <code>enabled</code> parameter in the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html">UpdateLogAnomalyDetector</a>
+        /// use the <c>enabled</c> parameter in the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html">UpdateLogAnomalyDetector</a>
         /// operation.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// An Amazon Lex V2 chat bot created under an <code>AppInstance</code>.
+    /// An Amazon Lex V2 chat bot created under an <c>AppInstance</c>.
     /// </summary>
     public partial class AppInstanceBot
     {
@@ -80,7 +80,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time at which the <code>AppInstanceBot</code> was created.
+        /// The time at which the <c>AppInstanceBot</c> was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -98,7 +98,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimestamp. 
         /// <para>
-        /// The time at which the <code>AppInstanceBot</code> was last updated.
+        /// The time at which the <c>AppInstanceBot</c> was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimestamp

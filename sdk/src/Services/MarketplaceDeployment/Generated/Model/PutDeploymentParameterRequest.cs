@@ -30,8 +30,7 @@ namespace Amazon.MarketplaceDeployment.Model
 {
     /// <summary>
     /// Container for the parameters to the PutDeploymentParameter operation.
-    /// Creates or updates a deployment parameter and is targeted by <code>catalog</code>
-    /// and <code>agreementId</code>.
+    /// Creates or updates a deployment parameter and is targeted by <c>catalog</c> and <c>agreementId</c>.
     /// </summary>
     public partial class PutDeploymentParameterRequest : AmazonMarketplaceDeploymentRequest
     {
@@ -65,7 +64,7 @@ namespace Amazon.MarketplaceDeployment.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        /// The catalog related to the request. Fixed value: <code>AWS Marketplace</code> 
+        /// The catalog related to the request. Fixed value: <c>AWS Marketplace</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

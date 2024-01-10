@@ -63,34 +63,33 @@ namespace Amazon.Translate.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUBMITTED</code> - The job has been received and is queued for processing.
+        ///  <c>SUBMITTED</c> - The job has been received and is queued for processing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - Amazon Translate is processing the job.
+        ///  <c>IN_PROGRESS</c> - Amazon Translate is processing the job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The job was successfully completed and the output is available.
+        ///  <c>COMPLETED</c> - The job was successfully completed and the output is available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED_WITH_ERROR</code> - The job was completed with errors. The errors
-        /// can be analyzed in the job's output.
+        ///  <c>COMPLETED_WITH_ERROR</c> - The job was completed with errors. The errors can be
+        /// analyzed in the job's output.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The job did not complete. To get details, use the <a>DescribeTextTranslationJob</a>
+        ///  <c>FAILED</c> - The job did not complete. To get details, use the <a>DescribeTextTranslationJob</a>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOP_REQUESTED</code> - The user who started the job has requested that it
-        /// be stopped.
+        ///  <c>STOP_REQUESTED</c> - The user who started the job has requested that it be stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code> - The job has been stopped.
+        ///  <c>STOPPED</c> - The job has been stopped.
         /// </para>
         ///  </li> </ul>
         /// </summary>

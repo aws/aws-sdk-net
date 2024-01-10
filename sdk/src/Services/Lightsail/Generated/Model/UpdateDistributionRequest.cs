@@ -71,7 +71,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>cacheBehaviorSettings</code> specified in your <code>UpdateDistributionRequest</code>
+        /// The <c>cacheBehaviorSettings</c> specified in your <c>UpdateDistributionRequest</c>
         /// will replace your distribution's existing settings.
         /// </para>
         ///  </note>
@@ -113,8 +113,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetDistributions</code> action to get a list of distribution names that
-        /// you can specify.
+        /// Use the <c>GetDistributions</c> action to get a list of distribution names that you
+        /// can specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

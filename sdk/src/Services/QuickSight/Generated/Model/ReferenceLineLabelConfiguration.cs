@@ -102,15 +102,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LEFT</code> 
+        ///  <c>LEFT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CENTER</code> 
+        ///  <c>CENTER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RIGHT</code> 
+        ///  <c>RIGHT</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -152,11 +152,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ABOVE</code> 
+        ///  <c>ABOVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BELOW</code> 
+        ///  <c>BELOW</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

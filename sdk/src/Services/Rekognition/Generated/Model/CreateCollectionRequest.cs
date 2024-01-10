@@ -36,9 +36,9 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// For example, you might create collections, one for each of your application users.
-    /// A user can then index faces using the <code>IndexFaces</code> operation and persist
-    /// results in a specific collection. Then, a user can search the collection for faces
-    /// in the user-specific container. 
+    /// A user can then index faces using the <c>IndexFaces</c> operation and persist results
+    /// in a specific collection. Then, a user can search the collection for faces in the
+    /// user-specific container. 
     /// </para>
     ///  
     /// <para>
@@ -51,9 +51,9 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:CreateCollection</code>
+    /// This operation requires permissions to perform the <c>rekognition:CreateCollection</c>
     /// action. If you want to tag your collection, you also require permission to perform
-    /// the <code>rekognition:TagResource</code> operation.
+    /// the <c>rekognition:TagResource</c> operation.
     /// </para>
     /// </summary>
     public partial class CreateCollectionRequest : AmazonRekognitionRequest

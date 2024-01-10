@@ -41,13 +41,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use <code>PutDeliverySource</code> to create a delivery source, which is a logical
-    /// object that represents the resource that is actually sending the logs. 
+    /// Use <c>PutDeliverySource</c> to create a delivery source, which is a logical object
+    /// that represents the resource that is actually sending the logs. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>, which
-    /// is a logical object that represents the actual delivery destination. For more information,
+    /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
+    /// a logical object that represents the actual delivery destination. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.
     /// </para>
     ///  </li> <li> 
@@ -58,8 +58,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-    /// delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+    /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+    /// source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
     /// 
     /// </para>
     ///  </li> </ul> 
@@ -132,7 +132,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The ARN of the Amazon Web Services resource that is generating and sending logs. For
-        /// example, <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code>
+        /// example, <c>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</c>
         /// 
         /// </para>
         /// </summary>

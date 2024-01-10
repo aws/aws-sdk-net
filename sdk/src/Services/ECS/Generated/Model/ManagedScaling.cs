@@ -35,8 +35,8 @@ namespace Amazon.ECS.Model
     /// <para>
     /// When managed scaling is turned on, Amazon ECS manages the scale-in and scale-out actions
     /// of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using
-    /// an Amazon ECS managed CloudWatch metric with the specified <code>targetCapacity</code>
-    /// value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using
+    /// an Amazon ECS managed CloudWatch metric with the specified <c>targetCapacity</c> value
+    /// as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using
     /// managed scaling</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -57,7 +57,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute
         /// to CloudWatch metrics for Auto Scaling group. If this parameter is omitted, the default
-        /// value of <code>300</code> seconds is used.
+        /// value of <c>300</c> seconds is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
@@ -78,7 +78,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The maximum number of Amazon EC2 instances that Amazon ECS will scale out at one time.
         /// The scale in process is not affected by this parameter. If this parameter is omitted,
-        /// the default value of <code>10000</code> is used.
+        /// the default value of <c>10000</c> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -99,7 +99,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The minimum number of Amazon EC2 instances that Amazon ECS will scale out at one time.
         /// The scale in process is not affected by this parameter If this parameter is omitted,
-        /// the default value of <code>1</code> is used.
+        /// the default value of <c>1</c> is used.
         /// </para>
         ///  
         /// <para>
@@ -149,11 +149,11 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TargetCapacity. 
         /// <para>
         /// The target capacity utilization as a percentage for the capacity provider. The specified
-        /// value must be greater than <code>0</code> and less than or equal to <code>100</code>.
-        /// For example, if you want the capacity provider to maintain 10% spare capacity, then
-        /// that means the utilization is 90%, so use a <code>targetCapacity</code> of <code>90</code>.
-        /// The default value of <code>100</code> percent results in the Amazon EC2 instances
-        /// in your Auto Scaling group being completely used.
+        /// value must be greater than <c>0</c> and less than or equal to <c>100</c>. For example,
+        /// if you want the capacity provider to maintain 10% spare capacity, then that means
+        /// the utilization is 90%, so use a <c>targetCapacity</c> of <c>90</c>. The default value
+        /// of <c>100</c> percent results in the Amazon EC2 instances in your Auto Scaling group
+        /// being completely used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

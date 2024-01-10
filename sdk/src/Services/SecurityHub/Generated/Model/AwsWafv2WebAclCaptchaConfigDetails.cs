@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their
-    /// own <code>CaptchaConfig</code> settings.
+    /// own <c>CaptchaConfig</c> settings.
     /// </summary>
     public partial class AwsWafv2WebAclCaptchaConfigDetails
     {

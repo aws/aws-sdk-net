@@ -58,9 +58,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property WorkflowSummaries. 
         /// <para>
-        /// A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the
-        /// fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>,
-        /// and <code>UpdatedAt</code>.
+        /// A list of <c>MatchingWorkflowSummary</c> objects, each of which contain the fields
+        /// <c>WorkflowName</c>, <c>WorkflowArn</c>, <c>CreatedAt</c>, and <c>UpdatedAt</c>.
         /// </para>
         /// </summary>
         public List<MatchingWorkflowSummary> WorkflowSummaries

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// A list of <code>ProviderService</code> objects, each of which contain the fields <code>providerName</code>,
-    /// <code>providerServiceArn</code>, <code>providerServiceName</code>, and <code>providerServiceType</code>.
+    /// A list of <c>ProviderService</c> objects, each of which contain the fields <c>providerName</c>,
+    /// <c>providerServiceArn</c>, <c>providerServiceName</c>, and <c>providerServiceType</c>.
     /// </summary>
     public partial class ProviderServiceSummary
     {
@@ -62,7 +62,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property ProviderServiceArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>providerService</code>.
+        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <c>providerService</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=255)]

@@ -86,16 +86,16 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Failed</code>, which indicates that the replica was not created.
+        ///  <c>Failed</c>, which indicates that the replica was not created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code>, which indicates that Secrets Manager is in the process of
-        /// creating the replica.
+        ///  <c>InProgress</c>, which indicates that Secrets Manager is in the process of creating
+        /// the replica.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InSync</code>, which indicates that the replica was created.
+        ///  <c>InSync</c>, which indicates that the replica was created.
         /// </para>
         ///  </li> </ul>
         /// </summary>

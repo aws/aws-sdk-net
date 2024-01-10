@@ -70,12 +70,12 @@ namespace Amazon.Rekognition.Model
     ///  </note> 
     /// <para>
     /// Copying a model version takes a while to complete. To get the current status, call
-    /// <a>DescribeProjectVersions</a> and check the value of <code>Status</code> in the <a>ProjectVersionDescription</a>
-    /// object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.
+    /// <a>DescribeProjectVersions</a> and check the value of <c>Status</c> in the <a>ProjectVersionDescription</a>
+    /// object. The copy operation has finished when the value of <c>Status</c> is <c>COPYING_COMPLETED</c>.
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:CopyProjectVersion</code>
+    /// This operation requires permissions to perform the <c>rekognition:CopyProjectVersion</c>
     /// action.
     /// </para>
     /// </summary>
@@ -115,7 +115,7 @@ namespace Amazon.Rekognition.Model
         /// The identifier for your AWS Key Management Service key (AWS KMS key). You can supply
         /// the Amazon Resource Name (ARN) of your KMS key, the ID of your KMS key, an alias for
         /// your KMS key, or an alias ARN. The key is used to encrypt training results and manifest
-        /// files written to the output Amazon S3 bucket (<code>OutputConfig</code>).
+        /// files written to the output Amazon S3 bucket (<c>OutputConfig</c>).
         /// </para>
         ///  
         /// <para>
@@ -140,8 +140,8 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify a value for <code>KmsKeyId</code>, images copied into the service
-        /// are encrypted using a key that AWS owns and manages.
+        /// If you don't specify a value for <c>KmsKeyId</c>, images copied into the service are
+        /// encrypted using a key that AWS owns and manages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

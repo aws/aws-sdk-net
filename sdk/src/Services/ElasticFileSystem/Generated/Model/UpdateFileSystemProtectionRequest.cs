@@ -34,7 +34,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:UpdateFileSystemProtection</code>
+    /// This operation requires permissions for the <c>elasticfilesystem:UpdateFileSystemProtection</c>
     /// action. 
     /// </para>
     /// </summary>
@@ -69,20 +69,20 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The file system cannot be used as the destination file system
-        /// in a replication configuration. The file system is writeable. Replication overwrite
-        /// protection is <code>ENABLED</code> by default. 
+        ///  <c>ENABLED</c> – The file system cannot be used as the destination file system in
+        /// a replication configuration. The file system is writeable. Replication overwrite protection
+        /// is <c>ENABLED</c> by default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The file system can be used as the destination file system
-        /// in a replication configuration. The file system is read-only and can only be modified
-        /// by EFS replication.
+        ///  <c>DISABLED</c> – The file system can be used as the destination file system in a
+        /// replication configuration. The file system is read-only and can only be modified by
+        /// EFS replication.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REPLICATING</code> – The file system is being used as the destination file
-        /// system in a replication configuration. The file system is read-only and is only modified
+        ///  <c>REPLICATING</c> – The file system is being used as the destination file system
+        /// in a replication configuration. The file system is read-only and is only modified
         /// only by EFS replication.
         /// </para>
         ///  </li> </ul> 

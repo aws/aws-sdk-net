@@ -130,7 +130,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster</code> 
+        /// Example: <c>my-cluster</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -171,12 +171,12 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not
-        /// be default.
+        /// Constraints: Must match the name of an existing <c>DBSubnetGroup</c>. Must not be
+        /// default.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <c>mySubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -194,10 +194,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Specifies whether this cluster can be deleted. If <code>DeletionProtection</code>
-        /// is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code>
-        /// is disabled. <code>DeletionProtection</code> protects clusters from being accidentally
-        /// deleted.
+        /// Specifies whether this cluster can be deleted. If <c>DeletionProtection</c> is enabled,
+        /// the cluster cannot be deleted unless it is modified and <c>DeletionProtection</c>
+        /// is disabled. <c>DeletionProtection</c> protects clusters from being accidentally deleted.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -240,7 +239,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>docdb</code> 
+        /// Valid values: <c>docdb</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -259,8 +258,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version number of the database engine to use. The <code>--engine-version</code>
-        /// will default to the latest major engine version. For production workloads, we recommend
+        /// The version number of the database engine to use. The <c>--engine-version</c> will
+        /// default to the latest major engine version. For production workloads, we recommend
         /// explicitly declaring this parameter with the intended major engine version.
         /// </para>
         /// </summary>
@@ -309,12 +308,12 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// If an encryption key is not specified in <code>KmsKeyId</code>: 
+        /// If an encryption key is not specified in <c>KmsKeyId</c>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB
-        /// uses your default encryption key. 
+        /// If the <c>StorageEncrypted</c> parameter is <c>true</c>, Amazon DocumentDB uses your
+        /// default encryption key. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -415,7 +414,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled using the <code>BackupRetentionPeriod</code> parameter. 
+        /// are enabled using the <c>BackupRetentionPeriod</c> parameter. 
         /// </para>
         ///  
         /// <para>
@@ -428,7 +427,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -464,7 +463,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>
@@ -540,17 +539,17 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for storage type - <code>standard | iopt1</code> 
+        /// Valid values for storage type - <c>standard | iopt1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default value is <code>standard </code> 
+        /// Default value is <c>standard </c> 
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you create a DocumentDB DB cluster with the storage type set to <code>iopt1</code>,
+        /// When you create a DocumentDB DB cluster with the storage type set to <c>iopt1</c>,
         /// the storage type is returned in the response. The storage type isn't returned when
-        /// you set it to <code>standard</code>.
+        /// you set it to <c>standard</c>.
         /// </para>
         ///  </note>
         /// </summary>

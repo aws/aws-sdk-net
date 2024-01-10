@@ -76,8 +76,8 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// The types of elements included in a <code>set</code>, or the types of expressions
-    /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+    /// The types of elements included in a <c>set</c>, or the types of expressions used in
+    /// an <c>if...then...else</c> clause aren't compatible in this context.
     /// </para>
     ///  </li> <li> 
     /// <para>

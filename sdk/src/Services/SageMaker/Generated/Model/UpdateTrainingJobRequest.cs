@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RemoteDebugConfig. 
         /// <para>
         /// Configuration for remote debugging while the training job is running. You can update
-        /// the remote debugging configuration when the <code>SecondaryStatus</code> of the job
-        /// is <code>Downloading</code> or <code>Training</code>.To learn more about the remote
-        /// debugging functionality of SageMaker, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
+        /// the remote debugging configuration when the <c>SecondaryStatus</c> of the job is <c>Downloading</c>
+        /// or <c>Training</c>.To learn more about the remote debugging functionality of SageMaker,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-remote-debugging.html">Access
         /// a training container through Amazon Web Services Systems Manager (SSM) for remote
         /// debugging</a>.
         /// </para>
@@ -106,7 +106,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceConfig. 
         /// <para>
-        /// The training job <code>ResourceConfig</code> to update warm pool retention length.
+        /// The training job <c>ResourceConfig</c> to update warm pool retention length.
         /// </para>
         /// </summary>
         public ResourceConfigForUpdate ResourceConfig

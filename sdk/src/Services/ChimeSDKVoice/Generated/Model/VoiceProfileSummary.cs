@@ -61,8 +61,8 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property ExpirationTimestamp. 
         /// <para>
-        /// Extends the life of the voice profile. You can use <code>UpdateVoiceProfile</code>
-        /// to refresh an existing voice profile's voice print and extend the life of the summary.
+        /// Extends the life of the voice profile. You can use <c>UpdateVoiceProfile</c> to refresh
+        /// an existing voice profile's voice print and extend the life of the summary.
         /// </para>
         /// </summary>
         public DateTime ExpirationTimestamp

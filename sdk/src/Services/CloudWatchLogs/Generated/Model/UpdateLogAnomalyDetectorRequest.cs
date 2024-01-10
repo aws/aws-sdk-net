@@ -105,8 +105,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// Specifies how often the anomaly detector runs and look for anomalies. Set this value
         /// according to the frequency that the log group receives new logs. For example, if the
-        /// log group receives new log events every 10 minutes, then setting <code>evaluationFrequency</code>
-        /// to <code>FIFTEEN_MIN</code> might be appropriate.
+        /// log group receives new log events every 10 minutes, then setting <c>evaluationFrequency</c>
+        /// to <c>FIFTEEN_MIN</c> might be appropriate.
         /// </para>
         /// </summary>
         public EvaluationFrequency EvaluationFrequency

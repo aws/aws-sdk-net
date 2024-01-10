@@ -46,7 +46,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AutoUpgradeDate. 
         /// <para>
         /// The date when the replication instance will be automatically upgraded. This setting
-        /// only applies if the <code>auto-minor-version</code> setting is enabled.
+        /// only applies if the <c>auto-minor-version</c> setting is enabled.
         /// </para>
         /// </summary>
         public DateTime AutoUpgradeDate
@@ -137,8 +137,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The lifecycle status of the replication instance version. Valid values are <code>DEPRECATED</code>,
-        /// <code>DEFAULT_VERSION</code>, and <code>ACTIVE</code>.
+        /// The lifecycle status of the replication instance version. Valid values are <c>DEPRECATED</c>,
+        /// <c>DEFAULT_VERSION</c>, and <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         public string Lifecycle

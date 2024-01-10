@@ -33,10 +33,9 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
-    /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-    /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
-    /// with <code>ValidationError 400</code>.
+    /// If you specify <c>MeetingFeatures:Content:MaxResolution:None</c> when you create a
+    /// meeting, all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c>
+    /// for <c>AttendeeCapabilities:Content</c> will be rejected with <c>ValidationError 400</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -51,7 +50,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Defaults to <code>FHD</code>. To use <code>UHD</code>, you must also provide a <code>MeetingFeatures:Attendee:MaxCount</code>
+        /// Defaults to <c>FHD</c>. To use <c>UHD</c>, you must also provide a <c>MeetingFeatures:Attendee:MaxCount</c>
         /// value and override the default size limit of 250 attendees.
         /// </para>
         ///  </note>

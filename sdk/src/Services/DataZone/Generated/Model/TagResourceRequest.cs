@@ -59,7 +59,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Specifies the tags for the <code>TagResource</code> action.
+        /// Specifies the tags for the <c>TagResource</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

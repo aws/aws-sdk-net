@@ -53,15 +53,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
+        /// You can call <c>DescribeStream</c> at a maximum rate of 10 times per second.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
-        /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
-        /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
-        /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-        /// are present, then that shard is closed and can no longer receive more data.
+        /// Each shard in the stream has a <c>SequenceNumberRange</c> associated with it. If the
+        /// <c>SequenceNumberRange</c> has a <c>StartingSequenceNumber</c> but no <c>EndingSequenceNumber</c>,
+        /// then the shard is still open (able to receive more stream records). If both <c>StartingSequenceNumber</c>
+        /// and <c>EndingSequenceNumber</c> are present, then that shard is closed and can no
+        /// longer receive more data.
         /// </para>
         /// </summary>
         /// <param name="streamArn">The Amazon Resource Name (ARN) for the stream.</param>
@@ -72,7 +72,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         DescribeStreamResponse DescribeStream(string streamArn);
@@ -84,15 +84,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
+        /// You can call <c>DescribeStream</c> at a maximum rate of 10 times per second.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
-        /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
-        /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
-        /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-        /// are present, then that shard is closed and can no longer receive more data.
+        /// Each shard in the stream has a <c>SequenceNumberRange</c> associated with it. If the
+        /// <c>SequenceNumberRange</c> has a <c>StartingSequenceNumber</c> but no <c>EndingSequenceNumber</c>,
+        /// then the shard is still open (able to receive more stream records). If both <c>StartingSequenceNumber</c>
+        /// and <c>EndingSequenceNumber</c> are present, then that shard is closed and can no
+        /// longer receive more data.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
@@ -103,7 +103,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         DescribeStreamResponse DescribeStream(DescribeStreamRequest request);
@@ -116,15 +116,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
+        /// You can call <c>DescribeStream</c> at a maximum rate of 10 times per second.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
-        /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
-        /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
-        /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-        /// are present, then that shard is closed and can no longer receive more data.
+        /// Each shard in the stream has a <c>SequenceNumberRange</c> associated with it. If the
+        /// <c>SequenceNumberRange</c> has a <c>StartingSequenceNumber</c> but no <c>EndingSequenceNumber</c>,
+        /// then the shard is still open (able to receive more stream records). If both <c>StartingSequenceNumber</c>
+        /// and <c>EndingSequenceNumber</c> are present, then that shard is closed and can no
+        /// longer receive more data.
         /// </para>
         /// </summary>
         /// <param name="streamArn">The Amazon Resource Name (ARN) for the stream.</param>
@@ -138,7 +138,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         Task<DescribeStreamResponse> DescribeStreamAsync(string streamArn, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -151,15 +151,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
+        /// You can call <c>DescribeStream</c> at a maximum rate of 10 times per second.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
-        /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
-        /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
-        /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-        /// are present, then that shard is closed and can no longer receive more data.
+        /// Each shard in the stream has a <c>SequenceNumberRange</c> associated with it. If the
+        /// <c>SequenceNumberRange</c> has a <c>StartingSequenceNumber</c> but no <c>EndingSequenceNumber</c>,
+        /// then the shard is still open (able to receive more stream records). If both <c>StartingSequenceNumber</c>
+        /// and <c>EndingSequenceNumber</c> are present, then that shard is closed and can no
+        /// longer receive more data.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStream service method.</param>
@@ -173,7 +173,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/DescribeStream">REST API Reference for DescribeStream Operation</seealso>
         Task<DescribeStreamResponse> DescribeStreamAsync(DescribeStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -188,16 +188,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
-        /// iterator specifies the position in the shard from which you want to start reading
-        /// stream records sequentially. If there are no stream records available in the portion
-        /// of the shard that the iterator points to, <code>GetRecords</code> returns an empty
-        /// list. Note that it might take multiple calls to get to a portion of the shard that
-        /// contains stream records.
+        /// Specify a shard iterator using the <c>ShardIterator</c> parameter. The shard iterator
+        /// specifies the position in the shard from which you want to start reading stream records
+        /// sequentially. If there are no stream records available in the portion of the shard
+        /// that the iterator points to, <c>GetRecords</c> returns an empty list. Note that it
+        /// might take multiple calls to get to a portion of the shard that contains stream records.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
+        ///  <c>GetRecords</c> can retrieve a maximum of 1 MB of data or 1000 stream records,
         /// whichever comes first.
         /// </para>
         ///  </note>
@@ -207,7 +206,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
         /// The shard iterator has expired and can no longer be used to retrieve stream records.
-        /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
+        /// A shard iterator expires 15 minutes after it is retrieved using the <c>GetShardIterator</c>
         /// action.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -219,8 +218,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -249,7 +248,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -267,7 +266,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
+        /// You obtain a shard iterator, but before you use the iterator in a <c>GetRecords</c>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -281,16 +280,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
-        /// iterator specifies the position in the shard from which you want to start reading
-        /// stream records sequentially. If there are no stream records available in the portion
-        /// of the shard that the iterator points to, <code>GetRecords</code> returns an empty
-        /// list. Note that it might take multiple calls to get to a portion of the shard that
-        /// contains stream records.
+        /// Specify a shard iterator using the <c>ShardIterator</c> parameter. The shard iterator
+        /// specifies the position in the shard from which you want to start reading stream records
+        /// sequentially. If there are no stream records available in the portion of the shard
+        /// that the iterator points to, <c>GetRecords</c> returns an empty list. Note that it
+        /// might take multiple calls to get to a portion of the shard that contains stream records.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
+        ///  <c>GetRecords</c> can retrieve a maximum of 1 MB of data or 1000 stream records,
         /// whichever comes first.
         /// </para>
         ///  </note>
@@ -300,7 +298,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
         /// The shard iterator has expired and can no longer be used to retrieve stream records.
-        /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
+        /// A shard iterator expires 15 minutes after it is retrieved using the <c>GetShardIterator</c>
         /// action.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -312,8 +310,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -342,7 +340,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -360,7 +358,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
+        /// You obtain a shard iterator, but before you use the iterator in a <c>GetRecords</c>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -375,16 +373,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
-        /// iterator specifies the position in the shard from which you want to start reading
-        /// stream records sequentially. If there are no stream records available in the portion
-        /// of the shard that the iterator points to, <code>GetRecords</code> returns an empty
-        /// list. Note that it might take multiple calls to get to a portion of the shard that
-        /// contains stream records.
+        /// Specify a shard iterator using the <c>ShardIterator</c> parameter. The shard iterator
+        /// specifies the position in the shard from which you want to start reading stream records
+        /// sequentially. If there are no stream records available in the portion of the shard
+        /// that the iterator points to, <c>GetRecords</c> returns an empty list. Note that it
+        /// might take multiple calls to get to a portion of the shard that contains stream records.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
+        ///  <c>GetRecords</c> can retrieve a maximum of 1 MB of data or 1000 stream records,
         /// whichever comes first.
         /// </para>
         ///  </note>
@@ -397,7 +394,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
         /// The shard iterator has expired and can no longer be used to retrieve stream records.
-        /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
+        /// A shard iterator expires 15 minutes after it is retrieved using the <c>GetShardIterator</c>
         /// action.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -409,8 +406,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -439,7 +436,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -457,7 +454,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
+        /// You obtain a shard iterator, but before you use the iterator in a <c>GetRecords</c>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -472,16 +469,15 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
-        /// iterator specifies the position in the shard from which you want to start reading
-        /// stream records sequentially. If there are no stream records available in the portion
-        /// of the shard that the iterator points to, <code>GetRecords</code> returns an empty
-        /// list. Note that it might take multiple calls to get to a portion of the shard that
-        /// contains stream records.
+        /// Specify a shard iterator using the <c>ShardIterator</c> parameter. The shard iterator
+        /// specifies the position in the shard from which you want to start reading stream records
+        /// sequentially. If there are no stream records available in the portion of the shard
+        /// that the iterator points to, <c>GetRecords</c> returns an empty list. Note that it
+        /// might take multiple calls to get to a portion of the shard that contains stream records.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>GetRecords</code> can retrieve a maximum of 1 MB of data or 1000 stream records,
+        ///  <c>GetRecords</c> can retrieve a maximum of 1 MB of data or 1000 stream records,
         /// whichever comes first.
         /// </para>
         ///  </note>
@@ -494,7 +490,7 @@ namespace Amazon.DynamoDBv2
         /// <returns>The response from the GetRecords service method, as returned by DynamoDBStreams.</returns>
         /// <exception cref="Amazon.DynamoDBv2.Model.ExpiredIteratorException">
         /// The shard iterator has expired and can no longer be used to retrieve stream records.
-        /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
+        /// A shard iterator expires 15 minutes after it is retrieved using the <c>GetShardIterator</c>
         /// action.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InternalServerErrorException">
@@ -506,8 +502,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -536,7 +532,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -554,7 +550,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
+        /// You obtain a shard iterator, but before you use the iterator in a <c>GetRecords</c>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -570,7 +566,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns a shard iterator. A shard iterator provides information about how to retrieve
-        /// the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code>
+        /// the stream records from within a shard. Use the shard iterator in a subsequent <c>GetRecords</c>
         /// request to read the stream records from the shard.
         /// 
         ///  <note> 
@@ -587,7 +583,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -605,7 +601,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
+        /// You obtain a shard iterator, but before you use the iterator in a <c>GetRecords</c>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -618,7 +614,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns a shard iterator. A shard iterator provides information about how to retrieve
-        /// the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code>
+        /// the stream records from within a shard. Use the shard iterator in a subsequent <c>GetRecords</c>
         /// request to read the stream records from the shard.
         /// 
         ///  <note> 
@@ -638,7 +634,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TrimmedDataAccessException">
         /// The operation attempted to read past the oldest stream record in a shard.
@@ -656,7 +652,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
+        /// You obtain a shard iterator, but before you use the iterator in a <c>GetRecords</c>
         /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This
         /// causes the iterator to access a record that no longer exists.
         /// </para>
@@ -672,12 +668,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
-        /// If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
-        /// will return only the streams ARNs for that table.
+        /// If the <c>TableName</c> parameter is present, then <c>ListStreams</c> will return
+        /// only the streams ARNs for that table.
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
+        /// You can call <c>ListStreams</c> at a maximum rate of 5 times per second.
         /// </para>
         ///  </note>
         /// </summary>
@@ -688,7 +684,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         ListStreamsResponse ListStreams();
@@ -696,12 +692,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
-        /// If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
-        /// will return only the streams ARNs for that table.
+        /// If the <c>TableName</c> parameter is present, then <c>ListStreams</c> will return
+        /// only the streams ARNs for that table.
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
+        /// You can call <c>ListStreams</c> at a maximum rate of 5 times per second.
         /// </para>
         ///  </note>
         /// </summary>
@@ -713,7 +709,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         ListStreamsResponse ListStreams(ListStreamsRequest request);
@@ -721,12 +717,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
-        /// If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
-        /// will return only the streams ARNs for that table.
+        /// If the <c>TableName</c> parameter is present, then <c>ListStreams</c> will return
+        /// only the streams ARNs for that table.
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
+        /// You can call <c>ListStreams</c> at a maximum rate of 5 times per second.
         /// </para>
         ///  </note>
         /// </summary>
@@ -740,7 +736,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         Task<ListStreamsResponse> ListStreamsAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -749,12 +745,12 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of stream ARNs associated with the current account and endpoint.
-        /// If the <code>TableName</code> parameter is present, then <code>ListStreams</code>
-        /// will return only the streams ARNs for that table.
+        /// If the <c>TableName</c> parameter is present, then <c>ListStreams</c> will return
+        /// only the streams ARNs for that table.
         /// 
         ///  <note> 
         /// <para>
-        /// You can call <code>ListStreams</code> at a maximum rate of 5 times per second.
+        /// You can call <c>ListStreams</c> at a maximum rate of 5 times per second.
         /// </para>
         ///  </note>
         /// </summary>
@@ -769,7 +765,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/streams-dynamodb-2012-08-10/ListStreams">REST API Reference for ListStreams Operation</seealso>
         Task<ListStreamsResponse> ListStreamsAsync(ListStreamsRequest request, CancellationToken cancellationToken = default(CancellationToken));

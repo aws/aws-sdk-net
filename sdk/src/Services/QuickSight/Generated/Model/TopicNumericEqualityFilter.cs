@@ -41,10 +41,9 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Aggregation. 
         /// <para>
         /// An aggregation function that specifies how to calculate the value of a numeric field
-        /// for a topic. Valid values for this structure are <code>NO_AGGREGATION</code>, <code>SUM</code>,
-        /// <code>AVERAGE</code>, <code>COUNT</code>, <code>DISTINCT_COUNT</code>, <code>MAX</code>,
-        /// <code>MEDIAN</code>, <code>MIN</code>, <code>STDEV</code>, <code>STDEVP</code>, <code>VAR</code>,
-        /// and <code>VARP</code>.
+        /// for a topic. Valid values for this structure are <c>NO_AGGREGATION</c>, <c>SUM</c>,
+        /// <c>AVERAGE</c>, <c>COUNT</c>, <c>DISTINCT_COUNT</c>, <c>MAX</c>, <c>MEDIAN</c>, <c>MIN</c>,
+        /// <c>STDEV</c>, <c>STDEVP</c>, <c>VAR</c>, and <c>VARP</c>.
         /// </para>
         /// </summary>
         public NamedFilterAggType Aggregation

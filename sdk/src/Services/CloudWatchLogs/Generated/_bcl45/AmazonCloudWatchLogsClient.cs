@@ -309,15 +309,15 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// When you use <code>AssociateKmsKey</code>, you specify either the <code>logGroupName</code>
-        /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
-        /// of those parameters in the same operation.
+        /// When you use <c>AssociateKmsKey</c>, you specify either the <c>logGroupName</c> parameter
+        /// or the <c>resourceIdentifier</c> parameter. You can't specify both of those parameters
+        /// in the same operation.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify the <code>logGroupName</code> parameter to cause all log events stored in
-        /// the log group to be encrypted with that key. Only the log events ingested after the
-        /// key is associated are encrypted with that key.
+        /// Specify the <c>logGroupName</c> parameter to cause all log events stored in the log
+        /// group to be encrypted with that key. Only the log events ingested after the key is
+        /// associated are encrypted with that key.
         /// </para>
         ///  
         /// <para>
@@ -331,13 +331,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Associating a key with a log group does not cause the results of queries of that log
         /// group to be encrypted with that key. To have query results encrypted with a KMS key,
-        /// you must use an <code>AssociateKmsKey</code> operation with the <code>resourceIdentifier</code>
-        /// parameter that specifies a <code>query-result</code> resource. 
+        /// you must use an <c>AssociateKmsKey</c> operation with the <c>resourceIdentifier</c>
+        /// parameter that specifies a <c>query-result</c> resource. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify the <code>resourceIdentifier</code> parameter with a <code>query-result</code>
-        /// resource, to use that key to encrypt the stored results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// Specify the <c>resourceIdentifier</c> parameter with a <c>query-result</c> resource,
+        /// to use that key to encrypt the stored results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
         /// operations in the account. The response from a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
         /// operation will still return the query results in plain text.
         /// </para>
@@ -370,8 +370,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// If you attempt to associate a KMS key with a log group but the KMS key does not exist
-        /// or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
-        /// error. 
+        /// or the KMS key is disabled, you receive an <c>InvalidParameterException</c> error.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKey service method.</param>
@@ -406,15 +406,15 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// When you use <code>AssociateKmsKey</code>, you specify either the <code>logGroupName</code>
-        /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
-        /// of those parameters in the same operation.
+        /// When you use <c>AssociateKmsKey</c>, you specify either the <c>logGroupName</c> parameter
+        /// or the <c>resourceIdentifier</c> parameter. You can't specify both of those parameters
+        /// in the same operation.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify the <code>logGroupName</code> parameter to cause all log events stored in
-        /// the log group to be encrypted with that key. Only the log events ingested after the
-        /// key is associated are encrypted with that key.
+        /// Specify the <c>logGroupName</c> parameter to cause all log events stored in the log
+        /// group to be encrypted with that key. Only the log events ingested after the key is
+        /// associated are encrypted with that key.
         /// </para>
         ///  
         /// <para>
@@ -428,13 +428,13 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// Associating a key with a log group does not cause the results of queries of that log
         /// group to be encrypted with that key. To have query results encrypted with a KMS key,
-        /// you must use an <code>AssociateKmsKey</code> operation with the <code>resourceIdentifier</code>
-        /// parameter that specifies a <code>query-result</code> resource. 
+        /// you must use an <c>AssociateKmsKey</c> operation with the <c>resourceIdentifier</c>
+        /// parameter that specifies a <c>query-result</c> resource. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify the <code>resourceIdentifier</code> parameter with a <code>query-result</code>
-        /// resource, to use that key to encrypt the stored results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// Specify the <c>resourceIdentifier</c> parameter with a <c>query-result</c> resource,
+        /// to use that key to encrypt the stored results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
         /// operations in the account. The response from a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
         /// operation will still return the query results in plain text.
         /// </para>
@@ -467,8 +467,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// If you attempt to associate a KMS key with a log group but the KMS key does not exist
-        /// or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
-        /// error. 
+        /// or the KMS key is disabled, you receive an <c>InvalidParameterException</c> error.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateKmsKey service method.</param>
@@ -509,7 +509,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// The task must be in the <code>PENDING</code> or <code>RUNNING</code> state.
+        /// The task must be in the <c>PENDING</c> or <c>RUNNING</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
@@ -543,7 +543,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// The task must be in the <code>PENDING</code> or <code>RUNNING</code> state.
+        /// The task must be in the <c>PENDING</c> or <c>RUNNING</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelExportTask service method.</param>
@@ -618,8 +618,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-        /// delivery source and one delivery destination. 
+        /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+        /// source and one delivery destination. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -706,8 +706,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-        /// delivery source and one delivery destination. 
+        /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+        /// source and one delivery destination. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -764,9 +764,9 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates an export task so that you can efficiently export data from a log group to
-        /// an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you
-        /// must use credentials that have permission to write to the S3 bucket that you specify
-        /// as the destination.
+        /// an Amazon S3 bucket. When you perform a <c>CreateExportTask</c> operation, you must
+        /// use credentials that have permission to write to the S3 bucket that you specify as
+        /// the destination.
         /// 
         ///  
         /// <para>
@@ -783,8 +783,8 @@ namespace Amazon.CloudWatchLogs
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
         /// started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
-        /// to get the status of the export task. Each account can only have one active (<code>RUNNING</code>
-        /// or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
+        /// to get the status of the export task. Each account can only have one active (<c>RUNNING</c>
+        /// or <c>PENDING</c>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
         /// </para>
         ///  
         /// <para>
@@ -833,9 +833,9 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Creates an export task so that you can efficiently export data from a log group to
-        /// an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you
-        /// must use credentials that have permission to write to the S3 bucket that you specify
-        /// as the destination.
+        /// an Amazon S3 bucket. When you perform a <c>CreateExportTask</c> operation, you must
+        /// use credentials that have permission to write to the S3 bucket that you specify as
+        /// the destination.
         /// 
         ///  
         /// <para>
@@ -852,8 +852,8 @@ namespace Amazon.CloudWatchLogs
         /// This is an asynchronous call. If all the required information is provided, this operation
         /// initiates an export task and responds with the ID of the task. After the task has
         /// started, you can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>
-        /// to get the status of the export task. Each account can only have one active (<code>RUNNING</code>
-        /// or <code>PENDING</code>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
+        /// to get the status of the export task. Each account can only have one active (<c>RUNNING</c>
+        /// or <c>PENDING</c>) export task at a time. To cancel an export task, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CancelExportTask.html">CancelExportTask</a>.
         /// </para>
         ///  
         /// <para>
@@ -921,15 +921,15 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// The anomaly detector uses pattern recognition to find <code>anomalies</code>, which
-        /// are unusual log events. It uses the <code>evaluationFrequency</code> to compare current
-        /// log events and patterns with trained baselines. 
+        /// The anomaly detector uses pattern recognition to find <c>anomalies</c>, which are
+        /// unusual log events. It uses the <c>evaluationFrequency</c> to compare current log
+        /// events and patterns with trained baselines. 
         /// </para>
         ///  
         /// <para>
         /// Fields within a pattern are called <i>tokens</i>. Fields that vary within a pattern,
         /// such as a request ID or timestamp, are referred to as <i>dynamic tokens</i> and represented
-        /// by <code>&lt;*&gt;</code>. 
+        /// by <c>&lt;*&gt;</c>. 
         /// </para>
         ///  
         /// <para>
@@ -937,14 +937,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        ///  <code>[INFO] Request time: &lt;*&gt; ms</code> 
+        ///  <c>[INFO] Request time: &lt;*&gt; ms</c> 
         /// </para>
         ///  
         /// <para>
-        /// This pattern represents log events like <code>[INFO] Request time: 327 ms</code> and
-        /// other similar log events that differ only by the number, in this csse 327. When the
-        /// pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code>
-        /// 
+        /// This pattern represents log events like <c>[INFO] Request time: 327 ms</c> and other
+        /// similar log events that differ only by the number, in this csse 327. When the pattern
+        /// is displayed, the different numbers are replaced by <c>&lt;*&gt;</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -997,15 +996,15 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// The anomaly detector uses pattern recognition to find <code>anomalies</code>, which
-        /// are unusual log events. It uses the <code>evaluationFrequency</code> to compare current
-        /// log events and patterns with trained baselines. 
+        /// The anomaly detector uses pattern recognition to find <c>anomalies</c>, which are
+        /// unusual log events. It uses the <c>evaluationFrequency</c> to compare current log
+        /// events and patterns with trained baselines. 
         /// </para>
         ///  
         /// <para>
         /// Fields within a pattern are called <i>tokens</i>. Fields that vary within a pattern,
         /// such as a request ID or timestamp, are referred to as <i>dynamic tokens</i> and represented
-        /// by <code>&lt;*&gt;</code>. 
+        /// by <c>&lt;*&gt;</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1013,14 +1012,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        ///  <code>[INFO] Request time: &lt;*&gt; ms</code> 
+        ///  <c>[INFO] Request time: &lt;*&gt; ms</c> 
         /// </para>
         ///  
         /// <para>
-        /// This pattern represents log events like <code>[INFO] Request time: 327 ms</code> and
-        /// other similar log events that differ only by the number, in this csse 327. When the
-        /// pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code>
-        /// 
+        /// This pattern represents log events like <c>[INFO] Request time: 327 ms</c> and other
+        /// similar log events that differ only by the number, in this csse 327. When the pattern
+        /// is displayed, the different numbers are replaced by <c>&lt;*&gt;</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1103,7 +1101,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// If you attempt to associate a KMS key with the log group but the KMS key does not
-        /// exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
+        /// exist or the KMS key is disabled, you receive an <c>InvalidParameterException</c>
         /// error. 
         /// </para>
         ///  <important> 
@@ -1180,7 +1178,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// If you attempt to associate a KMS key with the log group but the KMS key does not
-        /// exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
+        /// exist or the KMS key is disabled, you receive an <c>InvalidParameterException</c>
         /// error. 
         /// </para>
         ///  <important> 
@@ -1235,8 +1233,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// There is no limit on the number of log streams that you can create for a log group.
-        /// There is a limit of 50 TPS on <code>CreateLogStream</code> operations, after which
-        /// transactions are throttled.
+        /// There is a limit of 50 TPS on <c>CreateLogStream</c> operations, after which transactions
+        /// are throttled.
         /// </para>
         ///  
         /// <para>
@@ -1290,8 +1288,8 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// There is no limit on the number of log streams that you can create for a log group.
-        /// There is a limit of 50 TPS on <code>CreateLogStream</code> operations, after which
-        /// transactions are throttled.
+        /// There is a limit of 50 TPS on <c>CreateLogStream</c> operations, after which transactions
+        /// are throttled.
         /// </para>
         ///  
         /// <para>
@@ -1349,8 +1347,8 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must be signed on with the <code>logs:DeleteDataProtectionPolicy</code>
-        /// and <code>logs:DeleteAccountPolicy</code> permissions.
+        /// To use this operation, you must be signed on with the <c>logs:DeleteDataProtectionPolicy</c>
+        /// and <c>logs:DeleteAccountPolicy</c> permissions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPolicy service method.</param>
@@ -1384,8 +1382,8 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// To use this operation, you must be signed on with the <code>logs:DeleteDataProtectionPolicy</code>
-        /// and <code>logs:DeleteAccountPolicy</code> permissions.
+        /// To use this operation, you must be signed on with the <c>logs:DeleteDataProtectionPolicy</c>
+        /// and <c>logs:DeleteAccountPolicy</c> permissions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPolicy service method.</param>
@@ -1588,7 +1586,7 @@ namespace Amazon.CloudWatchLogs
         /// You can't delete a delivery destination if any current deliveries are associated with
         /// it. To find whether any deliveries are associated with this delivery destination,
         /// use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
-        /// operation and check the <code>deliveryDestinationArn</code> field in the results.
+        /// operation and check the <c>deliveryDestinationArn</c> field in the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeliveryDestination service method.</param>
@@ -1632,7 +1630,7 @@ namespace Amazon.CloudWatchLogs
         /// You can't delete a delivery destination if any current deliveries are associated with
         /// it. To find whether any deliveries are associated with this delivery destination,
         /// use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
-        /// operation and check the <code>deliveryDestinationArn</code> field in the results.
+        /// operation and check the <c>deliveryDestinationArn</c> field in the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeliveryDestination service method.</param>
@@ -1750,7 +1748,7 @@ namespace Amazon.CloudWatchLogs
         /// You can't delete a delivery source if any current deliveries are associated with it.
         /// To find whether any deliveries are associated with this delivery source, use the <a
         /// href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
-        /// operation and check the <code>deliverySourceName</code> field in the results.
+        /// operation and check the <c>deliverySourceName</c> field in the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeliverySource service method.</param>
@@ -1794,7 +1792,7 @@ namespace Amazon.CloudWatchLogs
         /// You can't delete a delivery source if any current deliveries are associated with it.
         /// To find whether any deliveries are associated with this delivery source, use the <a
         /// href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
-        /// operation and check the <code>deliverySourceName</code> field in the results.
+        /// operation and check the <c>deliverySourceName</c> field in the results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDeliverySource service method.</param>
@@ -2175,12 +2173,12 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// Each <code>DeleteQueryDefinition</code> operation can delete one query definition.
+        /// Each <c>DeleteQueryDefinition</c> operation can delete one query definition.
         /// </para>
         ///  
         /// <para>
-        /// You must have the <code>logs:DeleteQueryDefinition</code> permission to be able to
-        /// perform this operation.
+        /// You must have the <c>logs:DeleteQueryDefinition</c> permission to be able to perform
+        /// this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueryDefinition service method.</param>
@@ -2212,12 +2210,12 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// Each <code>DeleteQueryDefinition</code> operation can delete one query definition.
+        /// Each <c>DeleteQueryDefinition</c> operation can delete one query definition.
         /// </para>
         ///  
         /// <para>
-        /// You must have the <code>logs:DeleteQueryDefinition</code> permission to be able to
-        /// perform this operation.
+        /// You must have the <c>logs:DeleteQueryDefinition</c> permission to be able to perform
+        /// this operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueryDefinition service method.</param>
@@ -2825,11 +2823,11 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
-        /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
-        /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
-        /// </code> condition key to control access. For more information about using tags to
-        /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
+        /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
+        /// key to control access. For more information about using tags to control access, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
         /// </para>
         ///  
@@ -2861,11 +2859,11 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
-        /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
-        /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
-        /// </code> condition key to control access. For more information about using tags to
-        /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
+        /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
+        /// key to control access. For more information about using tags to control access, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
         /// </para>
         ///  
@@ -2902,11 +2900,11 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
-        /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
-        /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
-        /// </code> condition key to control access. For more information about using tags to
-        /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
+        /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
+        /// key to control access. For more information about using tags to control access, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
         /// </para>
         ///  
@@ -2940,11 +2938,11 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// CloudWatch Logs doesn’t support IAM policies that control access to the <code>DescribeLogGroups</code>
-        /// action by using the <code>aws:ResourceTag/<i>key-name</i> </code> condition key. Other
-        /// CloudWatch Logs actions do support the use of the <code>aws:ResourceTag/<i>key-name</i>
-        /// </code> condition key to control access. For more information about using tags to
-        /// control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
+        /// CloudWatch Logs doesn’t support IAM policies that control access to the <c>DescribeLogGroups</c>
+        /// action by using the <c>aws:ResourceTag/<i>key-name</i> </c> condition key. Other CloudWatch
+        /// Logs actions do support the use of the <c>aws:ResourceTag/<i>key-name</i> </c> condition
+        /// key to control access. For more information about using tags to control access, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
         /// </para>
         ///  
@@ -2988,9 +2986,9 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-        /// can't include both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+        /// include both. 
         /// </para>
         ///  
         /// <para>
@@ -3034,9 +3032,9 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-        /// can't include both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+        /// include both. 
         /// </para>
         ///  
         /// <para>
@@ -3214,8 +3212,8 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results
-        /// to only the query definitions that have names that start with a certain string.
+        /// You can use the <c>queryDefinitionNamePrefix</c> parameter to limit the results to
+        /// only the query definitions that have names that start with a certain string.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueryDefinitions service method.</param>
@@ -3245,8 +3243,8 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results
-        /// to only the query definitions that have names that start with a certain string.
+        /// You can use the <c>queryDefinitionNamePrefix</c> parameter to limit the results to
+        /// only the query definitions that have names that start with a certain string.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeQueryDefinitions service method.</param>
@@ -3396,22 +3394,22 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// When you use <code>DisassociateKmsKey</code>, you specify either the <code>logGroupName</code>
-        /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
-        /// of those parameters in the same operation.
+        /// When you use <c>DisassociateKmsKey</c>, you specify either the <c>logGroupName</c>
+        /// parameter or the <c>resourceIdentifier</c> parameter. You can't specify both of those
+        /// parameters in the same operation.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify the <code>logGroupName</code> parameter to stop using the KMS key to encrypt
-        /// future log events ingested and stored in the log group. Instead, they will be encrypted
-        /// with the default CloudWatch Logs method. The log events that were ingested while the
-        /// key was associated with the log group are still encrypted with that key. Therefore,
-        /// CloudWatch Logs will need permissions for the key whenever that data is accessed.
+        /// Specify the <c>logGroupName</c> parameter to stop using the KMS key to encrypt future
+        /// log events ingested and stored in the log group. Instead, they will be encrypted with
+        /// the default CloudWatch Logs method. The log events that were ingested while the key
+        /// was associated with the log group are still encrypted with that key. Therefore, CloudWatch
+        /// Logs will need permissions for the key whenever that data is accessed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify the <code>resourceIdentifier</code> parameter with the <code>query-result</code>
-        /// resource to stop using the KMS key to encrypt the results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// Specify the <c>resourceIdentifier</c> parameter with the <c>query-result</c> resource
+        /// to stop using the KMS key to encrypt the results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
         /// operations in the account. They will instead be encrypted with the default CloudWatch
         /// Logs method. The results from queries that ran while the key was associated with the
         /// account are still encrypted with that key. Therefore, CloudWatch Logs will need permissions
@@ -3454,22 +3452,22 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// When you use <code>DisassociateKmsKey</code>, you specify either the <code>logGroupName</code>
-        /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
-        /// of those parameters in the same operation.
+        /// When you use <c>DisassociateKmsKey</c>, you specify either the <c>logGroupName</c>
+        /// parameter or the <c>resourceIdentifier</c> parameter. You can't specify both of those
+        /// parameters in the same operation.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify the <code>logGroupName</code> parameter to stop using the KMS key to encrypt
-        /// future log events ingested and stored in the log group. Instead, they will be encrypted
-        /// with the default CloudWatch Logs method. The log events that were ingested while the
-        /// key was associated with the log group are still encrypted with that key. Therefore,
-        /// CloudWatch Logs will need permissions for the key whenever that data is accessed.
+        /// Specify the <c>logGroupName</c> parameter to stop using the KMS key to encrypt future
+        /// log events ingested and stored in the log group. Instead, they will be encrypted with
+        /// the default CloudWatch Logs method. The log events that were ingested while the key
+        /// was associated with the log group are still encrypted with that key. Therefore, CloudWatch
+        /// Logs will need permissions for the key whenever that data is accessed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify the <code>resourceIdentifier</code> parameter with the <code>query-result</code>
-        /// resource to stop using the KMS key to encrypt the results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+        /// Specify the <c>resourceIdentifier</c> parameter with the <c>query-result</c> resource
+        /// to stop using the KMS key to encrypt the results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
         /// operations in the account. They will instead be encrypted with the default CloudWatch
         /// Logs method. The results from queries that ran while the key was associated with the
         /// account are still encrypted with that key. Therefore, CloudWatch Logs will need permissions
@@ -3519,13 +3517,13 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You must have the <code>logs:FilterLogEvents</code> permission to perform this operation.
+        /// You must have the <c>logs:FilterLogEvents</c> permission to perform this operation.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-        /// can't include both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+        /// include both. 
         /// </para>
         ///  
         /// <para>
@@ -3538,7 +3536,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
-        /// was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.
+        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
         /// </para>
         ///  
         /// <para>
@@ -3577,13 +3575,13 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You must have the <code>logs:FilterLogEvents</code> permission to perform this operation.
+        /// You must have the <c>logs:FilterLogEvents</c> permission to perform this operation.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-        /// can't include both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+        /// include both. 
         /// </para>
         ///  
         /// <para>
@@ -3596,7 +3594,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// The returned log events are sorted by event timestamp, the timestamp when the event
-        /// was ingested by CloudWatch Logs, and the ID of the <code>PutLogEvents</code> request.
+        /// was ingested by CloudWatch Logs, and the ID of the <c>PutLogEvents</c> request.
         /// </para>
         ///  
         /// <para>
@@ -3708,8 +3706,8 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You need to specify the delivery <code>id</code> in this operation. You can find the
-        /// IDs of the deliveries in your account with the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
+        /// You need to specify the delivery <c>id</c> in this operation. You can find the IDs
+        /// of the deliveries in your account with the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -3749,8 +3747,8 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You need to specify the delivery <code>id</code> in this operation. You can find the
-        /// IDs of the deliveries in your account with the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
+        /// You need to specify the delivery <c>id</c> in this operation. You can find the IDs
+        /// of the deliveries in your account with the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -4080,9 +4078,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-        /// can't include both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+        /// include both. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents service method.</param>
@@ -4128,9 +4126,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-        /// can't include both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+        /// include both. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogEvents service method.</param>
@@ -4170,15 +4168,15 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must specify one of these parameters, but you can't
-        /// specify both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must specify one of these parameters, but you can't specify
+        /// both. 
         /// </para>
         ///  
         /// <para>
-        /// In the results, fields that start with <code>@</code> are fields generated by CloudWatch
-        /// Logs. For example, <code>@timestamp</code> is the timestamp of each log event. For
-        /// more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
+        /// In the results, fields that start with <c>@</c> are fields generated by CloudWatch
+        /// Logs. For example, <c>@timestamp</c> is the timestamp of each log event. For more
+        /// information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
         /// Logs and Discovered Fields</a>.
         /// </para>
         ///  
@@ -4227,15 +4225,15 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-        /// or <code>logGroupName</code>. You must specify one of these parameters, but you can't
-        /// specify both. 
+        /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+        /// or <c>logGroupName</c>. You must specify one of these parameters, but you can't specify
+        /// both. 
         /// </para>
         ///  
         /// <para>
-        /// In the results, fields that start with <code>@</code> are fields generated by CloudWatch
-        /// Logs. For example, <code>@timestamp</code> is the timestamp of each log event. For
-        /// more information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
+        /// In the results, fields that start with <c>@</c> are fields generated by CloudWatch
+        /// Logs. For example, <c>@timestamp</c> is the timestamp of each log event. For more
+        /// information about the fields that are generated by CloudWatch logs, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_AnalyzeLogData-discoverable-fields.html">Supported
         /// Logs and Discovered Fields</a>.
         /// </para>
         ///  
@@ -4286,12 +4284,12 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Retrieves all of the fields and values of a single log event. All fields are retrieved,
-        /// even if the original query that produced the <code>logRecordPointer</code> retrieved
-        /// only a subset of fields. Fields are returned as field name/field value pairs.
+        /// even if the original query that produced the <c>logRecordPointer</c> retrieved only
+        /// a subset of fields. Fields are returned as field name/field value pairs.
         /// 
         ///  
         /// <para>
-        /// The full unparsed log event is returned within <code>@message</code>.
+        /// The full unparsed log event is returned within <c>@message</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogRecord service method.</param>
@@ -4322,12 +4320,12 @@ namespace Amazon.CloudWatchLogs
 
         /// <summary>
         /// Retrieves all of the fields and values of a single log event. All fields are retrieved,
-        /// even if the original query that produced the <code>logRecordPointer</code> retrieved
-        /// only a subset of fields. Fields are returned as field name/field value pairs.
+        /// even if the original query that produced the <c>logRecordPointer</c> retrieved only
+        /// a subset of fields. Fields are returned as field name/field value pairs.
         /// 
         ///  
         /// <para>
-        /// The full unparsed log event is returned within <code>@message</code>.
+        /// The full unparsed log event is returned within <c>@message</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLogRecord service method.</param>
@@ -4368,25 +4366,23 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// Only the fields requested in the query are returned, along with a <code>@ptr</code>
-        /// field, which is the identifier for the log record. You can use the value of <code>@ptr</code>
-        /// in a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
+        /// Only the fields requested in the query are returned, along with a <c>@ptr</c> field,
+        /// which is the identifier for the log record. You can use the value of <c>@ptr</c> in
+        /// a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
         /// operation to get the full log record.
         /// </para>
         ///  
         /// <para>
-        ///  <code>GetQueryResults</code> does not start running a query. To run a query, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
+        ///  <c>GetQueryResults</c> does not start running a query. To run a query, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
         /// For more information about how long results of previous queries are available, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html">CloudWatch
         /// Logs quotas</a>.
         /// </para>
         ///  
         /// <para>
-        /// If the value of the <code>Status</code> field in the output is <code>Running</code>,
-        /// this operation returns only partial results. If you see a value of <code>Scheduled</code>
-        /// or <code>Running</code> for the status, you can retry the operation later to see the
-        /// final results. 
+        /// If the value of the <c>Status</c> field in the output is <c>Running</c>, this operation
+        /// returns only partial results. If you see a value of <c>Scheduled</c> or <c>Running</c>
+        /// for the status, you can retry the operation later to see the final results. 
         /// </para>
         ///  
         /// <para>
@@ -4424,25 +4420,23 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// Only the fields requested in the query are returned, along with a <code>@ptr</code>
-        /// field, which is the identifier for the log record. You can use the value of <code>@ptr</code>
-        /// in a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
+        /// Only the fields requested in the query are returned, along with a <c>@ptr</c> field,
+        /// which is the identifier for the log record. You can use the value of <c>@ptr</c> in
+        /// a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogRecord.html">GetLogRecord</a>
         /// operation to get the full log record.
         /// </para>
         ///  
         /// <para>
-        ///  <code>GetQueryResults</code> does not start running a query. To run a query, use
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
+        ///  <c>GetQueryResults</c> does not start running a query. To run a query, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>.
         /// For more information about how long results of previous queries are available, see
         /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/cloudwatch_limits_cwl.html">CloudWatch
         /// Logs quotas</a>.
         /// </para>
         ///  
         /// <para>
-        /// If the value of the <code>Status</code> field in the output is <code>Running</code>,
-        /// this operation returns only partial results. If you see a value of <code>Scheduled</code>
-        /// or <code>Running</code> for the status, you can retry the operation later to see the
-        /// final results. 
+        /// If the value of the <c>Status</c> field in the output is <c>Running</c>, this operation
+        /// returns only partial results. If you see a value of <c>Scheduled</c> or <c>Running</c>
+        /// for the status, you can retry the operation later to see the final results. 
         /// </para>
         ///  
         /// <para>
@@ -4764,22 +4758,22 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you use <code>PutAccountPolicy</code> to create a data protection policy for your
-        /// whole account, it applies to both existing log groups and all log groups that are
-        /// created later in this account. The account policy is applied to existing log groups
-        /// with eventual consistency. It might take up to 5 minutes before sensitive data in
-        /// existing log groups begins to be masked.
+        /// If you use <c>PutAccountPolicy</c> to create a data protection policy for your whole
+        /// account, it applies to both existing log groups and all log groups that are created
+        /// later in this account. The account policy is applied to existing log groups with eventual
+        /// consistency. It might take up to 5 minutes before sensitive data in existing log groups
+        /// begins to be masked.
         /// </para>
         ///  
         /// <para>
         /// By default, when a user views a log event that includes masked data, the sensitive
-        /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
-        /// can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+        /// data is replaced by asterisks. A user who has the <c>logs:Unmask</c> permission can
+        /// use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
-        /// operation with the <code>unmask</code> parameter set to <code>true</code> to view
-        /// the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked
-        /// data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with
-        /// the <code>unmask</code> query command.
+        /// operation with the <c>unmask</c> parameter set to <c>true</c> to view the unmasked
+        /// log events. Users with the <c>logs:Unmask</c> can also view unmasked data in the CloudWatch
+        /// Logs console by running a CloudWatch Logs Insights query with the <c>unmask</c> query
+        /// command.
         /// </para>
         ///  
         /// <para>
@@ -4789,13 +4783,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// To use the <code>PutAccountPolicy</code> operation, you must be signed on with the
-        /// <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.
+        /// To use the <c>PutAccountPolicy</c> operation, you must be signed on with the <c>logs:PutDataProtectionPolicy</c>
+        /// and <c>logs:PutAccountPolicy</c> permissions.
         /// </para>
         ///  
         /// <para>
-        /// The <code>PutAccountPolicy</code> operation applies to all log groups in the account.
-        /// You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+        /// The <c>PutAccountPolicy</c> operation applies to all log groups in the account. You
+        /// can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
         /// to create a data protection policy that applies to just one log group. If a log group
         /// has its own data protection policy and the account also has an account-level data
         /// protection policy, then the two policies are cumulative. Any sensitive term specified
@@ -4842,22 +4836,22 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you use <code>PutAccountPolicy</code> to create a data protection policy for your
-        /// whole account, it applies to both existing log groups and all log groups that are
-        /// created later in this account. The account policy is applied to existing log groups
-        /// with eventual consistency. It might take up to 5 minutes before sensitive data in
-        /// existing log groups begins to be masked.
+        /// If you use <c>PutAccountPolicy</c> to create a data protection policy for your whole
+        /// account, it applies to both existing log groups and all log groups that are created
+        /// later in this account. The account policy is applied to existing log groups with eventual
+        /// consistency. It might take up to 5 minutes before sensitive data in existing log groups
+        /// begins to be masked.
         /// </para>
         ///  
         /// <para>
         /// By default, when a user views a log event that includes masked data, the sensitive
-        /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
-        /// can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+        /// data is replaced by asterisks. A user who has the <c>logs:Unmask</c> permission can
+        /// use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
-        /// operation with the <code>unmask</code> parameter set to <code>true</code> to view
-        /// the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked
-        /// data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with
-        /// the <code>unmask</code> query command.
+        /// operation with the <c>unmask</c> parameter set to <c>true</c> to view the unmasked
+        /// log events. Users with the <c>logs:Unmask</c> can also view unmasked data in the CloudWatch
+        /// Logs console by running a CloudWatch Logs Insights query with the <c>unmask</c> query
+        /// command.
         /// </para>
         ///  
         /// <para>
@@ -4867,13 +4861,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// To use the <code>PutAccountPolicy</code> operation, you must be signed on with the
-        /// <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.
+        /// To use the <c>PutAccountPolicy</c> operation, you must be signed on with the <c>logs:PutDataProtectionPolicy</c>
+        /// and <c>logs:PutAccountPolicy</c> permissions.
         /// </para>
         ///  
         /// <para>
-        /// The <code>PutAccountPolicy</code> operation applies to all log groups in the account.
-        /// You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+        /// The <c>PutAccountPolicy</c> operation applies to all log groups in the account. You
+        /// can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
         /// to create a data protection policy that applies to just one log group. If a log group
         /// has its own data protection policy and the account also has an account-level data
         /// protection policy, then the two policies are cumulative. Any sensitive term specified
@@ -4927,13 +4921,13 @@ namespace Amazon.CloudWatchLogs
         ///  </important> 
         /// <para>
         /// By default, when a user views a log event that includes masked data, the sensitive
-        /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
-        /// can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+        /// data is replaced by asterisks. A user who has the <c>logs:Unmask</c> permission can
+        /// use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
-        /// operation with the <code>unmask</code> parameter set to <code>true</code> to view
-        /// the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked
-        /// data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with
-        /// the <code>unmask</code> query command.
+        /// operation with the <c>unmask</c> parameter set to <c>true</c> to view the unmasked
+        /// log events. Users with the <c>logs:Unmask</c> can also view unmasked data in the CloudWatch
+        /// Logs console by running a CloudWatch Logs Insights query with the <c>unmask</c> query
+        /// command.
         /// </para>
         ///  
         /// <para>
@@ -4943,8 +4937,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// The <code>PutDataProtectionPolicy</code> operation applies to only the specified log
-        /// group. You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+        /// The <c>PutDataProtectionPolicy</c> operation applies to only the specified log group.
+        /// You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
         /// to create an account-level data protection policy that applies to all log groups in
         /// the account, including both existing log groups and log groups that are created level.
         /// If a log group has its own data protection policy and the account also has an account-level
@@ -4995,13 +4989,13 @@ namespace Amazon.CloudWatchLogs
         ///  </important> 
         /// <para>
         /// By default, when a user views a log event that includes masked data, the sensitive
-        /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
-        /// can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+        /// data is replaced by asterisks. A user who has the <c>logs:Unmask</c> permission can
+        /// use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
-        /// operation with the <code>unmask</code> parameter set to <code>true</code> to view
-        /// the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked
-        /// data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with
-        /// the <code>unmask</code> query command.
+        /// operation with the <c>unmask</c> parameter set to <c>true</c> to view the unmasked
+        /// log events. Users with the <c>logs:Unmask</c> can also view unmasked data in the CloudWatch
+        /// Logs console by running a CloudWatch Logs Insights query with the <c>unmask</c> query
+        /// command.
         /// </para>
         ///  
         /// <para>
@@ -5011,8 +5005,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// The <code>PutDataProtectionPolicy</code> operation applies to only the specified log
-        /// group. You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+        /// The <c>PutDataProtectionPolicy</c> operation applies to only the specified log group.
+        /// You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
         /// to create an account-level data protection policy that applies to all log groups in
         /// the account, including both existing log groups and log groups that are created level.
         /// If a log group has its own data protection policy and the account also has an account-level
@@ -5074,8 +5068,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>, which
-        /// is a logical object that represents the actual delivery destination. 
+        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
+        /// a logical object that represents the actual delivery destination. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5085,8 +5079,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-        /// delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+        /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+        /// source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -5159,8 +5153,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>, which
-        /// is a logical object that represents the actual delivery destination. 
+        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
+        /// a logical object that represents the actual delivery destination. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5170,8 +5164,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-        /// delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+        /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+        /// source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -5384,13 +5378,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code>PutDeliverySource</code> to create a delivery source, which is a logical
-        /// object that represents the resource that is actually sending the logs. 
+        /// Use <c>PutDeliverySource</c> to create a delivery source, which is a logical object
+        /// that represents the resource that is actually sending the logs. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>, which
-        /// is a logical object that represents the actual delivery destination. For more information,
+        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
+        /// a logical object that represents the actual delivery destination. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.
         /// </para>
         ///  </li> <li> 
@@ -5401,8 +5395,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-        /// delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+        /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+        /// source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -5468,13 +5462,13 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code>PutDeliverySource</code> to create a delivery source, which is a logical
-        /// object that represents the resource that is actually sending the logs. 
+        /// Use <c>PutDeliverySource</c> to create a delivery source, which is a logical object
+        /// that represents the resource that is actually sending the logs. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>PutDeliveryDestination</code> to create a <i>delivery destination</i>, which
-        /// is a logical object that represents the actual delivery destination. For more information,
+        /// Use <c>PutDeliveryDestination</c> to create a <i>delivery destination</i>, which is
+        /// a logical object that represents the actual delivery destination. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDeliveryDestination.html">PutDeliveryDestination</a>.
         /// </para>
         ///  </li> <li> 
@@ -5485,8 +5479,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-        /// delivery source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
+        /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+        /// source and one delivery destination. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_CreateDelivery.html">CreateDelivery</a>.
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -5560,14 +5554,14 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// Through an access policy, a destination controls what is written to it. By default,
-        /// <code>PutDestination</code> does not set any access policy with the destination, which
-        /// means a cross-account user cannot call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html">PutSubscriptionFilter</a>
+        /// <c>PutDestination</c> does not set any access policy with the destination, which means
+        /// a cross-account user cannot call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html">PutSubscriptionFilter</a>
         /// against this destination. To enable this, the destination owner must call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>
-        /// after <code>PutDestination</code>.
+        /// after <c>PutDestination</c>.
         /// </para>
         ///  
         /// <para>
-        /// To perform a <code>PutDestination</code> operation, you must also have the <code>iam:PassRole</code>
+        /// To perform a <c>PutDestination</c> operation, you must also have the <c>iam:PassRole</c>
         /// permission.
         /// </para>
         /// </summary>
@@ -5607,14 +5601,14 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// Through an access policy, a destination controls what is written to it. By default,
-        /// <code>PutDestination</code> does not set any access policy with the destination, which
-        /// means a cross-account user cannot call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html">PutSubscriptionFilter</a>
+        /// <c>PutDestination</c> does not set any access policy with the destination, which means
+        /// a cross-account user cannot call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutSubscriptionFilter.html">PutSubscriptionFilter</a>
         /// against this destination. To enable this, the destination owner must call <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDestinationPolicy.html">PutDestinationPolicy</a>
-        /// after <code>PutDestination</code>.
+        /// after <c>PutDestination</c>.
         /// </para>
         ///  
         /// <para>
-        /// To perform a <code>PutDestination</code> operation, you must also have the <code>iam:PassRole</code>
+        /// To perform a <c>PutDestination</c> operation, you must also have the <c>iam:PassRole</c>
         /// permission.
         /// </para>
         /// </summary>
@@ -5718,10 +5712,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  <important> 
         /// <para>
-        /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
-        /// actions are always accepted and never return <code>InvalidSequenceTokenException</code>
-        /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
-        /// You can use parallel <code>PutLogEvents</code> actions on the same log stream. 
+        /// The sequence token is now ignored in <c>PutLogEvents</c> actions. <c>PutLogEvents</c>
+        /// actions are always accepted and never return <c>InvalidSequenceTokenException</c>
+        /// or <c>DataAlreadyAcceptedException</c> even if the sequence token is not valid. You
+        /// can use parallel <c>PutLogEvents</c> actions on the same log stream. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -5745,10 +5739,9 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// The log events in the batch must be in chronological order by their timestamp. The
         /// timestamp is the time that the event occurred, expressed as the number of milliseconds
-        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for PowerShell
+        /// after <c>Jan 1, 1970 00:00:00 UTC</c>. (In Amazon Web Services Tools for PowerShell
         /// and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format:
-        /// <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)
-        /// 
+        /// <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2017-09-15T13:45:30</c>.) 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5765,14 +5758,14 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> <important> 
         /// <para>
-        /// The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code>
+        /// The quota of five requests per second per log stream has been removed. Instead, <c>PutLogEvents</c>
         /// actions are throttled based on a per-second per-account quota. You can request an
         /// increase to the per-second throttling quota by using the Service Quotas service.
         /// </para>
         ///  </important> </li> </ul> 
         /// <para>
-        /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
-        /// likely cause is a non-valid Amazon Web Services access key ID or secret key. 
+        /// If a call to <c>PutLogEvents</c> returns "UnrecognizedClientException" the most likely
+        /// cause is a non-valid Amazon Web Services access key ID or secret key. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>
@@ -5783,7 +5776,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  <important> 
         /// <para>
-        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code>
+        ///  <c>PutLogEvents</c> actions are now always accepted and never return <c>DataAlreadyAcceptedException</c>
         /// regardless of whether a given batch of log events has already been accepted. 
         /// </para>
         ///  </important>
@@ -5792,12 +5785,12 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
-        /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
-        /// field in the <code>InvalidSequenceTokenException</code> message. 
+        /// The sequence token is not valid. You can get the correct sequence token in the <c>expectedSequenceToken</c>
+        /// field in the <c>InvalidSequenceTokenException</c> message. 
         /// 
         ///  <important> 
         /// <para>
-        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code>
+        ///  <c>PutLogEvents</c> actions are now always accepted and never return <c>InvalidSequenceTokenException</c>
         /// regardless of receiving an invalid sequence token. 
         /// </para>
         ///  </important>
@@ -5828,10 +5821,10 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  <important> 
         /// <para>
-        /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
-        /// actions are always accepted and never return <code>InvalidSequenceTokenException</code>
-        /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
-        /// You can use parallel <code>PutLogEvents</code> actions on the same log stream. 
+        /// The sequence token is now ignored in <c>PutLogEvents</c> actions. <c>PutLogEvents</c>
+        /// actions are always accepted and never return <c>InvalidSequenceTokenException</c>
+        /// or <c>DataAlreadyAcceptedException</c> even if the sequence token is not valid. You
+        /// can use parallel <c>PutLogEvents</c> actions on the same log stream. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -5855,10 +5848,9 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// The log events in the batch must be in chronological order by their timestamp. The
         /// timestamp is the time that the event occurred, expressed as the number of milliseconds
-        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for PowerShell
+        /// after <c>Jan 1, 1970 00:00:00 UTC</c>. (In Amazon Web Services Tools for PowerShell
         /// and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format:
-        /// <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)
-        /// 
+        /// <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2017-09-15T13:45:30</c>.) 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5875,14 +5867,14 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  </li> <li> <important> 
         /// <para>
-        /// The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code>
+        /// The quota of five requests per second per log stream has been removed. Instead, <c>PutLogEvents</c>
         /// actions are throttled based on a per-second per-account quota. You can request an
         /// increase to the per-second throttling quota by using the Service Quotas service.
         /// </para>
         ///  </important> </li> </ul> 
         /// <para>
-        /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
-        /// likely cause is a non-valid Amazon Web Services access key ID or secret key. 
+        /// If a call to <c>PutLogEvents</c> returns "UnrecognizedClientException" the most likely
+        /// cause is a non-valid Amazon Web Services access key ID or secret key. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLogEvents service method.</param>
@@ -5896,7 +5888,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  <important> 
         /// <para>
-        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code>
+        ///  <c>PutLogEvents</c> actions are now always accepted and never return <c>DataAlreadyAcceptedException</c>
         /// regardless of whether a given batch of log events has already been accepted. 
         /// </para>
         ///  </important>
@@ -5905,12 +5897,12 @@ namespace Amazon.CloudWatchLogs
         /// A parameter is specified incorrectly.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidSequenceTokenException">
-        /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
-        /// field in the <code>InvalidSequenceTokenException</code> message. 
+        /// The sequence token is not valid. You can get the correct sequence token in the <c>expectedSequenceToken</c>
+        /// field in the <c>InvalidSequenceTokenException</c> message. 
         /// 
         ///  <important> 
         /// <para>
-        ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code>
+        ///  <c>PutLogEvents</c> actions are now always accepted and never return <c>InvalidSequenceTokenException</c>
         /// regardless of receiving an invalid sequence token. 
         /// </para>
         ///  </important>
@@ -5957,9 +5949,9 @@ namespace Amazon.CloudWatchLogs
         ///  <important> 
         /// <para>
         /// Metrics extracted from log events are charged as custom metrics. To prevent unexpected
-        /// high charges, do not specify high-cardinality fields such as <code>IPAddress</code>
-        /// or <code>requestID</code> as dimensions. Each different value found for a dimension
-        /// is treated as a separate metric and accrues charges as a separate custom metric. 
+        /// high charges, do not specify high-cardinality fields such as <c>IPAddress</c> or <c>requestID</c>
+        /// as dimensions. Each different value found for a dimension is treated as a separate
+        /// metric and accrues charges as a separate custom metric. 
         /// </para>
         ///  
         /// <para>
@@ -6021,9 +6013,9 @@ namespace Amazon.CloudWatchLogs
         ///  <important> 
         /// <para>
         /// Metrics extracted from log events are charged as custom metrics. To prevent unexpected
-        /// high charges, do not specify high-cardinality fields such as <code>IPAddress</code>
-        /// or <code>requestID</code> as dimensions. Each different value found for a dimension
-        /// is treated as a separate metric and accrues charges as a separate custom metric. 
+        /// high charges, do not specify high-cardinality fields such as <c>IPAddress</c> or <c>requestID</c>
+        /// as dimensions. Each different value found for a dimension is treated as a separate
+        /// metric and accrues charges as a separate custom metric. 
         /// </para>
         ///  
         /// <para>
@@ -6082,17 +6074,16 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// To update a query definition, specify its <code>queryDefinitionId</code> in your request.
-        /// The values of <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code>
-        /// are changed to the values that you specify in your update operation. No current values
-        /// are retained from the current query definition. For example, imagine updating a current
-        /// query definition that includes log groups. If you don't specify the <code>logGroupNames</code>
-        /// parameter in your update operation, the query definition changes to contain no log
-        /// groups.
+        /// To update a query definition, specify its <c>queryDefinitionId</c> in your request.
+        /// The values of <c>name</c>, <c>queryString</c>, and <c>logGroupNames</c> are changed
+        /// to the values that you specify in your update operation. No current values are retained
+        /// from the current query definition. For example, imagine updating a current query definition
+        /// that includes log groups. If you don't specify the <c>logGroupNames</c> parameter
+        /// in your update operation, the query definition changes to contain no log groups.
         /// </para>
         ///  
         /// <para>
-        /// You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform
+        /// You must have the <c>logs:PutQueryDefinition</c> permission to be able to perform
         /// this operation.
         /// </para>
         /// </summary>
@@ -6129,17 +6120,16 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// To update a query definition, specify its <code>queryDefinitionId</code> in your request.
-        /// The values of <code>name</code>, <code>queryString</code>, and <code>logGroupNames</code>
-        /// are changed to the values that you specify in your update operation. No current values
-        /// are retained from the current query definition. For example, imagine updating a current
-        /// query definition that includes log groups. If you don't specify the <code>logGroupNames</code>
-        /// parameter in your update operation, the query definition changes to contain no log
-        /// groups.
+        /// To update a query definition, specify its <c>queryDefinitionId</c> in your request.
+        /// The values of <c>name</c>, <c>queryString</c>, and <c>logGroupNames</c> are changed
+        /// to the values that you specify in your update operation. No current values are retained
+        /// from the current query definition. For example, imagine updating a current query definition
+        /// that includes log groups. If you don't specify the <c>logGroupNames</c> parameter
+        /// in your update operation, the query definition changes to contain no log groups.
         /// </para>
         ///  
         /// <para>
-        /// You must have the <code>logs:PutQueryDefinition</code> permission to be able to perform
+        /// You must have the <c>logs:PutQueryDefinition</c> permission to be able to perform
         /// this operation.
         /// </para>
         /// </summary>
@@ -6264,8 +6254,8 @@ namespace Amazon.CloudWatchLogs
         /// When log events reach their retention setting they are marked for deletion. After
         /// they are marked for deletion, they do not add to your archival storage costs anymore,
         /// even if they are not actually deleted until later. These log events marked for deletion
-        /// are also not included when you use an API to retrieve the <code>storedBytes</code>
-        /// value to see how many bytes a log group is storing.
+        /// are also not included when you use an API to retrieve the <c>storedBytes</c> value
+        /// to see how many bytes a log group is storing.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6320,8 +6310,8 @@ namespace Amazon.CloudWatchLogs
         /// When log events reach their retention setting they are marked for deletion. After
         /// they are marked for deletion, they do not add to your archival storage costs anymore,
         /// even if they are not actually deleted until later. These log events marked for deletion
-        /// are also not included when you use an API to retrieve the <code>storedBytes</code>
-        /// value to see how many bytes a log group is storing.
+        /// are also not included when you use an API to retrieve the <c>storedBytes</c> value
+        /// to see how many bytes a log group is storing.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6393,13 +6383,13 @@ namespace Amazon.CloudWatchLogs
         ///  </li> </ul> 
         /// <para>
         /// Each log group can have up to two subscription filters associated with it. If you
-        /// are updating an existing filter, you must specify the correct name in <code>filterName</code>.
+        /// are updating an existing filter, you must specify the correct name in <c>filterName</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// To perform a <code>PutSubscriptionFilter</code> operation for any destination except
-        /// a Lambda function, you must also have the <code>iam:PassRole</code> permission.
+        /// To perform a <c>PutSubscriptionFilter</c> operation for any destination except a Lambda
+        /// function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter service method.</param>
@@ -6466,13 +6456,13 @@ namespace Amazon.CloudWatchLogs
         ///  </li> </ul> 
         /// <para>
         /// Each log group can have up to two subscription filters associated with it. If you
-        /// are updating an existing filter, you must specify the correct name in <code>filterName</code>.
+        /// are updating an existing filter, you must specify the correct name in <c>filterName</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// To perform a <code>PutSubscriptionFilter</code> operation for any destination except
-        /// a Lambda function, you must also have the <code>iam:PassRole</code> permission.
+        /// To perform a <c>PutSubscriptionFilter</c> operation for any destination except a Lambda
+        /// function, you must also have the <c>iam:PassRole</c> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter service method.</param>
@@ -6538,21 +6528,21 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// If no new log events were ingested in the past second, the <code>LiveTailSessionUpdate</code>
+        /// If no new log events were ingested in the past second, the <c>LiveTailSessionUpdate</c>
         /// object will contain an empty array.
         /// </para>
         ///  
         /// <para>
-        /// The array of log events contained in a <code>LiveTailSessionUpdate</code> can include
-        /// as many as 500 log events. If the number of log events matching the request exceeds
-        /// 500 per second, the log events are sampled down to 500 log events to be included in
-        /// each <code>LiveTailSessionUpdate</code> object.
+        /// The array of log events contained in a <c>LiveTailSessionUpdate</c> can include as
+        /// many as 500 log events. If the number of log events matching the request exceeds 500
+        /// per second, the log events are sampled down to 500 log events to be included in each
+        /// <c>LiveTailSessionUpdate</c> object.
         /// </para>
         ///  
         /// <para>
         /// If your client consumes the log events slower than the server produces them, CloudWatch
-        /// Logs buffers up to 10 <code>LiveTailSessionUpdate</code> events or 5000 log events,
-        /// after which it starts dropping the oldest events.
+        /// Logs buffers up to 10 <c>LiveTailSessionUpdate</c> events or 5000 log events, after
+        /// which it starts dropping the oldest events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6629,21 +6619,21 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// If no new log events were ingested in the past second, the <code>LiveTailSessionUpdate</code>
+        /// If no new log events were ingested in the past second, the <c>LiveTailSessionUpdate</c>
         /// object will contain an empty array.
         /// </para>
         ///  
         /// <para>
-        /// The array of log events contained in a <code>LiveTailSessionUpdate</code> can include
-        /// as many as 500 log events. If the number of log events matching the request exceeds
-        /// 500 per second, the log events are sampled down to 500 log events to be included in
-        /// each <code>LiveTailSessionUpdate</code> object.
+        /// The array of log events contained in a <c>LiveTailSessionUpdate</c> can include as
+        /// many as 500 log events. If the number of log events matching the request exceeds 500
+        /// per second, the log events are sampled down to 500 log events to be included in each
+        /// <c>LiveTailSessionUpdate</c> object.
         /// </para>
         ///  
         /// <para>
         /// If your client consumes the log events slower than the server produces them, CloudWatch
-        /// Logs buffers up to 10 <code>LiveTailSessionUpdate</code> events or 5000 log events,
-        /// after which it starts dropping the oldest events.
+        /// Logs buffers up to 10 <c>LiveTailSessionUpdate</c> events or 5000 log events, after
+        /// which it starts dropping the oldest events.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6711,9 +6701,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// After you run a query using <code>StartQuery</code>, the query results are stored
-        /// by CloudWatch Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
-        /// to retrieve the results of a query, using the <code>queryId</code> that <code>StartQuery</code>
+        /// After you run a query using <c>StartQuery</c>, the query results are stored by CloudWatch
+        /// Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+        /// to retrieve the results of a query, using the <c>queryId</c> that <c>StartQuery</c>
         /// returns. 
         /// </para>
         ///  
@@ -6733,7 +6723,7 @@ namespace Amazon.CloudWatchLogs
         /// If you are using CloudWatch cross-account observability, you can use this operation
         /// in a monitoring account to start a query in a linked source account. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
-        /// cross-account observability</a>. For a cross-account <code>StartQuery</code> operation,
+        /// cross-account observability</a>. For a cross-account <c>StartQuery</c> operation,
         /// the query definition must be defined in the monitoring account.
         /// </para>
         ///  
@@ -6752,7 +6742,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.MalformedQueryException">
-        /// The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code>
+        /// The query string is not valid. Details about this error are displayed in a <c>QueryCompileError</c>
         /// object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.
         /// 
         ///  
@@ -6789,9 +6779,9 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// After you run a query using <code>StartQuery</code>, the query results are stored
-        /// by CloudWatch Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
-        /// to retrieve the results of a query, using the <code>queryId</code> that <code>StartQuery</code>
+        /// After you run a query using <c>StartQuery</c>, the query results are stored by CloudWatch
+        /// Logs. You can use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
+        /// to retrieve the results of a query, using the <c>queryId</c> that <c>StartQuery</c>
         /// returns. 
         /// </para>
         ///  
@@ -6811,7 +6801,7 @@ namespace Amazon.CloudWatchLogs
         /// If you are using CloudWatch cross-account observability, you can use this operation
         /// in a monitoring account to start a query in a linked source account. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Unified-Cross-Account.html">CloudWatch
-        /// cross-account observability</a>. For a cross-account <code>StartQuery</code> operation,
+        /// cross-account observability</a>. For a cross-account <c>StartQuery</c> operation,
         /// the query definition must be defined in the monitoring account.
         /// </para>
         ///  
@@ -6833,7 +6823,7 @@ namespace Amazon.CloudWatchLogs
         /// You have reached the maximum number of resources that can be created.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchLogs.Model.MalformedQueryException">
-        /// The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code>
+        /// The query string is not valid. Details about this error are displayed in a <c>QueryCompileError</c>
         /// object. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html">QueryCompileError</a>.
         /// 
         ///  
@@ -6948,7 +6938,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
-        /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+        /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
         /// </para>
@@ -6998,7 +6988,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
-        /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+        /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. For more information about using tags to control access, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_tags.html">Controlling
         /// access to Amazon Web Services resources using tags</a>.
         /// </para>
@@ -7049,8 +7039,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key for the alarm, this tag is appended to the list of tags
         /// associated with the alarm. If you specify a tag key that is already associated with
         /// the alarm, the new tag value that you specify replaces the previous value for that
         /// tag.
@@ -7104,8 +7094,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key for the alarm, this tag is appended to the list of tags
         /// associated with the alarm. If you specify a tag key that is already associated with
         /// the alarm, the new tag value that you specify replaces the previous value for that
         /// tag.
@@ -7222,7 +7212,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
-        /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+        /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. 
         /// </para>
         /// </summary>
@@ -7263,7 +7253,7 @@ namespace Amazon.CloudWatchLogs
         ///  
         /// <para>
         /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
-        /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+        /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
         /// condition keys. 
         /// </para>
         /// </summary>
@@ -7359,15 +7349,15 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You must specify either <code>anomalyId</code> or <code>patternId</code>, but you
-        /// can't specify both parameters in the same operation.
+        /// You must specify either <c>anomalyId</c> or <c>patternId</c>, but you can't specify
+        /// both parameters in the same operation.
         /// </para>
         ///  
         /// <para>
         /// If you have previously used this operation to suppress detection of a pattern or anomaly,
         /// you can use it again to cause CloudWatch Logs to end the suppression. To do this,
         /// use this operation and specify the anomaly or pattern to stop suppressing, and omit
-        /// the <code>suppressionType</code> and <code>suppressionPeriod</code> parameters.
+        /// the <c>suppressionType</c> and <c>suppressionPeriod</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomaly service method.</param>
@@ -7404,15 +7394,15 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You must specify either <code>anomalyId</code> or <code>patternId</code>, but you
-        /// can't specify both parameters in the same operation.
+        /// You must specify either <c>anomalyId</c> or <c>patternId</c>, but you can't specify
+        /// both parameters in the same operation.
         /// </para>
         ///  
         /// <para>
         /// If you have previously used this operation to suppress detection of a pattern or anomaly,
         /// you can use it again to cause CloudWatch Logs to end the suppression. To do this,
         /// use this operation and specify the anomaly or pattern to stop suppressing, and omit
-        /// the <code>suppressionType</code> and <code>suppressionPeriod</code> parameters.
+        /// the <c>suppressionType</c> and <c>suppressionPeriod</c> parameters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAnomaly service method.</param>

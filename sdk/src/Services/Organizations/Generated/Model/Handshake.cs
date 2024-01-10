@@ -36,9 +36,9 @@ namespace Amazon.Organizations.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, <code>DECLINED</code>,
-    /// or <code>EXPIRED</code> show up in lists for only 30 days after entering that state
-    /// After that they are deleted.
+    ///  <b>Note:</b> Handshakes that are <c>CANCELED</c>, <c>ACCEPTED</c>, <c>DECLINED</c>,
+    /// or <c>EXPIRED</c> show up in lists for only 30 days after entering that state After
+    /// that they are deleted.
     /// </para>
     /// </summary>
     public partial class Handshake
@@ -74,9 +74,9 @@ namespace Amazon.Organizations.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations
-        /// service when all member accounts have approved the <code>ENABLE_ALL_FEATURES</code>
-        /// invitation. It is sent only to the management account and signals the master that
-        /// it can finalize the process to enable all features.
+        /// service when all member accounts have approved the <c>ENABLE_ALL_FEATURES</c> invitation.
+        /// It is sent only to the management account and signals the master that it can finalize
+        /// the process to enable all features.
         /// </para>
         ///  </li> </ul>
         /// </summary>

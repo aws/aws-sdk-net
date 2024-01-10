@@ -58,9 +58,9 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that can be used in the next <code>ListHosts</code> call. To view all items
-        /// in the list, continue to call this operation with each subsequent token until no more
-        /// <code>nextToken</code> values are returned.
+        /// A token that can be used in the next <c>ListHosts</c> call. To view all items in the
+        /// list, continue to call this operation with each subsequent token until no more <c>nextToken</c>
+        /// values are returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

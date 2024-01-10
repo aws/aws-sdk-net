@@ -30,17 +30,17 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHIT operation.
-    /// The <code>DeleteHIT</code> operation is used to delete HIT that is no longer needed.
-    /// Only the Requester who created the HIT can delete it. 
+    /// The <c>DeleteHIT</c> operation is used to delete HIT that is no longer needed. Only
+    /// the Requester who created the HIT can delete it. 
     /// 
     ///  
     /// <para>
-    ///  You can only dispose of HITs that are in the <code>Reviewable</code> state, with
-    /// all of their submitted assignments already either approved or rejected. If you call
-    /// the DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
-    /// (for example, that has not expired, or still has active assignments), or on a HIT
-    /// that is Reviewable but without all of its submitted assignments already approved or
-    /// rejected, the service will return an error. 
+    ///  You can only dispose of HITs that are in the <c>Reviewable</c> state, with all of
+    /// their submitted assignments already either approved or rejected. If you call the DeleteHIT
+    /// operation on a HIT that is not in the <c>Reviewable</c> state (for example, that has
+    /// not expired, or still has active assignments), or on a HIT that is Reviewable but
+    /// without all of its submitted assignments already approved or rejected, the service
+    /// will return an error. 
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DescribeLimits</code> operation.
+    /// Represents the output of a <c>DescribeLimits</c> operation.
     /// </summary>
     public partial class DescribeLimitsResponse : AmazonWebServiceResponse
     {

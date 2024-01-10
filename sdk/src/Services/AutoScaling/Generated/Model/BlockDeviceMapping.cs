@@ -41,14 +41,14 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name assigned to the volume (for example, <code>/dev/sdh</code> or <code>xvdh</code>).
+        /// The device name assigned to the volume (for example, <c>/dev/sdh</c> or <c>xvdh</c>).
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/device_naming.html">Device
         /// naming on Linux instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// To define a block device mapping, set the device name and exactly one of the following
-        /// properties: <code>Ebs</code>, <code>NoDevice</code>, or <code>VirtualName</code>.
+        /// properties: <c>Ebs</c>, <c>NoDevice</c>, or <c>VirtualName</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -86,15 +86,13 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property NoDevice. 
         /// <para>
-        /// Setting this value to <code>true</code> prevents a volume that is included in the
-        /// block device mapping of the AMI from being mapped to the specified device name at
-        /// launch.
+        /// Setting this value to <c>true</c> prevents a volume that is included in the block
+        /// device mapping of the AMI from being mapped to the specified device name at launch.
         /// </para>
         ///  
         /// <para>
-        /// If <code>NoDevice</code> is <code>true</code> for the root device, instances might
-        /// fail the EC2 health check. In that case, Amazon EC2 Auto Scaling launches replacement
-        /// instances.
+        /// If <c>NoDevice</c> is <c>true</c> for the root device, instances might fail the EC2
+        /// health check. In that case, Amazon EC2 Auto Scaling launches replacement instances.
         /// </para>
         /// </summary>
         public bool NoDevice
@@ -114,7 +112,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The name of the instance store volume (virtual device) to attach to an instance at
         /// launch. The name must be in the form ephemeral<i>X</i> where <i>X</i> is a number
-        /// starting from zero (0), for example, <code>ephemeral0</code>.
+        /// starting from zero (0), for example, <c>ephemeral0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -37,7 +37,7 @@ namespace Amazon.Pipes.Model
     ///  <note> 
     /// <para>
     /// This parameter is only supported for tasks hosted on Fargate using Linux platform
-    /// version <code>1.4.0</code> or later. This parameter is not supported for Windows containers
+    /// version <c>1.4.0</c> or later. This parameter is not supported for Windows containers
     /// on Fargate.
     /// </para>
     ///  </note>
@@ -50,7 +50,7 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property SizeInGiB. 
         /// <para>
         /// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported
-        /// value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.
+        /// value is <c>21</c> GiB and the maximum supported value is <c>200</c> GiB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=21, Max=200)]

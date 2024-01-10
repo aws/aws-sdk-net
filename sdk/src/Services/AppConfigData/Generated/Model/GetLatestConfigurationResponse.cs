@@ -81,13 +81,13 @@ namespace Amazon.AppConfigData.Model
         /// Gets and sets the property NextPollConfigurationToken. 
         /// <para>
         /// The latest token describing the current state of the configuration session. This <i>must</i>
-        /// be provided to the next call to <code>GetLatestConfiguration.</code> 
+        /// be provided to the next call to <c>GetLatestConfiguration.</c> 
         /// </para>
         ///  <important> 
         /// <para>
         /// This token should only be used once. To support long poll use cases, the token is
-        /// valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired
-        /// token, the system returns <code>BadRequestException</code>.
+        /// valid for up to 24 hours. If a <c>GetLatestConfiguration</c> call uses an expired
+        /// token, the system returns <c>BadRequestException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -107,8 +107,7 @@ namespace Amazon.AppConfigData.Model
         /// Gets and sets the property NextPollIntervalInSeconds. 
         /// <para>
         /// The amount of time the client should wait before polling for configuration updates
-        /// again. Use <code>RequiredMinimumPollIntervalInSeconds</code> to set the desired poll
-        /// interval.
+        /// again. Use <c>RequiredMinimumPollIntervalInSeconds</c> to set the desired poll interval.
         /// </para>
         /// </summary>
         public int NextPollIntervalInSeconds

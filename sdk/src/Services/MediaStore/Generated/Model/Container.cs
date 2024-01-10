@@ -44,11 +44,11 @@ namespace Amazon.MediaStore.Model
         /// <summary>
         /// Gets and sets the property AccessLoggingEnabled. 
         /// <para>
-        /// The state of access logging on the container. This value is <code>false</code> by
-        /// default, indicating that AWS Elemental MediaStore does not send access logs to Amazon
-        /// CloudWatch Logs. When you enable access logging on the container, MediaStore changes
-        /// this value to <code>true</code>, indicating that the service delivers access logs
-        /// for objects stored in that container to CloudWatch Logs.
+        /// The state of access logging on the container. This value is <c>false</c> by default,
+        /// indicating that AWS Elemental MediaStore does not send access logs to Amazon CloudWatch
+        /// Logs. When you enable access logging on the container, MediaStore changes this value
+        /// to <c>true</c>, indicating that the service delivers access logs for objects stored
+        /// in that container to CloudWatch Logs.
         /// </para>
         /// </summary>
         public bool AccessLoggingEnabled
@@ -153,9 +153,9 @@ namespace Amazon.MediaStore.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of container creation or deletion. The status is one of the following:
-        /// <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service
-        /// is creating the container, the status is <code>CREATING</code>. When the endpoint
-        /// is available, the status changes to <code>ACTIVE</code>.
+        /// <c>CREATING</c>, <c>ACTIVE</c>, or <c>DELETING</c>. While the service is creating
+        /// the container, the status is <c>CREATING</c>. When the endpoint is available, the
+        /// status changes to <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]

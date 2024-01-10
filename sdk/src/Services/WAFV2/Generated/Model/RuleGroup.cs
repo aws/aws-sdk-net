@@ -71,7 +71,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property AvailableLabels. 
         /// <para>
         /// The labels that one or more rules in this rule group add to matching web requests.
-        /// These labels are defined in the <code>RuleLabels</code> for a <a>Rule</a>.
+        /// These labels are defined in the <c>RuleLabels</c> for a <a>Rule</a>.
         /// </para>
         /// </summary>
         public List<LabelSummary> AvailableLabels
@@ -125,7 +125,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property ConsumedLabels. 
         /// <para>
         /// The labels that one or more rules in this rule group match against in label match
-        /// statements. These labels are defined in a <code>LabelMatchStatement</code> specification,
+        /// statements. These labels are defined in a <c>LabelMatchStatement</c> specification,
         /// in the <a>Statement</a> definition of a rule. 
         /// </para>
         /// </summary>
@@ -224,7 +224,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code> 
+        ///  <c>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -235,7 +235,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code> 
+        ///  <c>&lt;label namespace&gt;:&lt;label from rule&gt;</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

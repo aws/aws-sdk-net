@@ -52,24 +52,24 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The string to match against. The setting you provide for this depends on the match
-        /// statement's <code>Scope</code> setting: 
+        /// statement's <c>Scope</c> setting: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the <code>Scope</code> indicates <code>LABEL</code>, then this specification must
-        /// include the name and can include any number of preceding namespace specifications
-        /// and prefix up to providing the fully qualified label name. 
+        /// If the <c>Scope</c> indicates <c>LABEL</c>, then this specification must include the
+        /// name and can include any number of preceding namespace specifications and prefix up
+        /// to providing the fully qualified label name. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>Scope</code> indicates <code>NAMESPACE</code>, then this specification
-        /// can include any number of contiguous namespace strings, and can include the entire
-        /// label namespace prefix from the rule group or web ACL where the label originates.
+        /// If the <c>Scope</c> indicates <c>NAMESPACE</c>, then this specification can include
+        /// any number of contiguous namespace strings, and can include the entire label namespace
+        /// prefix from the rule group or web ACL where the label originates.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Labels are case sensitive and components of a label must be separated by colon, for
-        /// example <code>NS1:NS2:name</code>.
+        /// example <c>NS1:NS2:name</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

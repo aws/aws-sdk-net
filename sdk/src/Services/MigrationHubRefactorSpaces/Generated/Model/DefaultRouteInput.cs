@@ -38,8 +38,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property ActivationState. 
         /// <para>
-        /// If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service after
-        /// the route is created. 
+        /// If set to <c>ACTIVE</c>, traffic is forwarded to this route’s service after the route
+        /// is created. 
         /// </para>
         /// </summary>
         public RouteActivationState ActivationState

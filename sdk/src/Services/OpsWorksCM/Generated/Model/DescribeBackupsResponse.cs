@@ -39,7 +39,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Backups. 
         /// <para>
-        /// Contains the response to a <code>DescribeBackups</code> request. 
+        /// Contains the response to a <c>DescribeBackups</c> request. 
         /// </para>
         /// </summary>
         public List<Backup> Backups
@@ -57,7 +57,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// This is not currently implemented for <code>DescribeBackups</code> requests.
+        /// This is not currently implemented for <c>DescribeBackups</c> requests.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

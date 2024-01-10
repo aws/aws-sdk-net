@@ -104,7 +104,7 @@ namespace Amazon.Shield.Model
         /// <para>
         /// The resource type configuration of the protection groups that you want to retrieve.
         /// In the protection group configuration, you specify the resource type when you set
-        /// the group's <code>Pattern</code> to <code>BY_RESOURCE_TYPE</code>. 
+        /// the group's <c>Pattern</c> to <c>BY_RESOURCE_TYPE</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

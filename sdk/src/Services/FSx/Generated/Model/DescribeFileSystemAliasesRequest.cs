@@ -82,8 +82,8 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Maximum number of DNS aliases to return in the response (integer). This parameter
         /// value must be greater than 0. The number of items that Amazon FSx returns is the minimum
-        /// of the <code>MaxResults</code> parameter specified in the request and the service's
-        /// internal maximum number of items per page.
+        /// of the <c>MaxResults</c> parameter specified in the request and the service's internal
+        /// maximum number of items per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
@@ -102,7 +102,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Opaque pagination token returned from a previous <code>DescribeFileSystemAliases</code>
+        /// Opaque pagination token returned from a previous <c>DescribeFileSystemAliases</c>
         /// operation (String). If a token is included in the request, the action continues the
         /// list from where the previous returning call left off.
         /// </para>

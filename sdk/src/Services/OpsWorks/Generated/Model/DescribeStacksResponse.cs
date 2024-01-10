@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeStacks</code> request.
+    /// Contains the response to a <c>DescribeStacks</c> request.
     /// </summary>
     public partial class DescribeStacksResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Stacks. 
         /// <para>
-        /// An array of <code>Stack</code> objects that describe the stacks.
+        /// An array of <c>Stack</c> objects that describe the stacks.
         /// </para>
         /// </summary>
         public List<Stack> Stacks

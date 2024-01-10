@@ -171,9 +171,9 @@ namespace Amazon.Lex
         /// 
         ///  
         /// <para>
-        /// The <code>PostContent</code> operation supports audio input at 8kHz and 16kHz. You
-        /// can use 8kHz audio to achieve higher speech recognition accuracy in telephone audio
-        /// applications. 
+        /// The <c>PostContent</c> operation supports audio input at 8kHz and 16kHz. You can use
+        /// 8kHz audio to achieve higher speech recognition accuracy in telephone audio applications.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -183,8 +183,8 @@ namespace Amazon.Lex
         ///  <ul> <li> 
         /// <para>
         ///  For a user input "I would like a pizza," Amazon Lex might return a response with
-        /// a message eliciting slot data (for example, <code>PizzaSize</code>): "What size pizza
-        /// would you like?". 
+        /// a message eliciting slot data (for example, <c>PizzaSize</c>): "What size pizza would
+        /// you like?". 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -200,8 +200,8 @@ namespace Amazon.Lex
         /// <para>
         ///  Not all Amazon Lex messages require a response from the user. For example, conclusion
         /// statements do not require a response. Some messages require only a yes or no response.
-        /// In addition to the <code>message</code>, Amazon Lex provides additional context about
-        /// the message in the response that you can use to enhance client behavior, such as displaying
+        /// In addition to the <c>message</c>, Amazon Lex provides additional context about the
+        /// message in the response that you can use to enhance client behavior, such as displaying
         /// the appropriate client user interface. Consider the following examples: 
         /// </para>
         ///  <ul> <li> 
@@ -211,39 +211,38 @@ namespace Amazon.Lex
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>x-amz-lex-dialog-state</code> header set to <code>ElicitSlot</code> 
+        ///  <c>x-amz-lex-dialog-state</c> header set to <c>ElicitSlot</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x-amz-lex-intent-name</code> header set to the intent name in the current context
+        ///  <c>x-amz-lex-intent-name</c> header set to the intent name in the current context
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x-amz-lex-slot-to-elicit</code> header set to the slot name for which the <code>message</code>
+        ///  <c>x-amz-lex-slot-to-elicit</c> header set to the slot name for which the <c>message</c>
         /// is eliciting information 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x-amz-lex-slots</code> header set to a map of slots configured for the intent
-        /// with their current values 
+        ///  <c>x-amz-lex-slots</c> header set to a map of slots configured for the intent with
+        /// their current values 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  If the message is a confirmation prompt, the <code>x-amz-lex-dialog-state</code>
-        /// header is set to <code>Confirmation</code> and the <code>x-amz-lex-slot-to-elicit</code>
-        /// header is omitted. 
+        ///  If the message is a confirmation prompt, the <c>x-amz-lex-dialog-state</c> header
+        /// is set to <c>Confirmation</c> and the <c>x-amz-lex-slot-to-elicit</c> header is omitted.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  If the message is a clarification prompt configured for the intent, indicating that
-        /// the user intent is not understood, the <code>x-amz-dialog-state</code> header is set
-        /// to <code>ElicitIntent</code> and the <code>x-amz-slot-to-elicit</code> header is omitted.
-        /// 
+        /// the user intent is not understood, the <c>x-amz-dialog-state</c> header is set to
+        /// <c>ElicitIntent</c> and the <c>x-amz-slot-to-elicit</c> header is omitted. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
+        ///  In addition, Amazon Lex also returns your application-specific <c>sessionAttributes</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
@@ -276,8 +275,8 @@ namespace Amazon.Lex
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
-        /// removing any slot values.
+        /// If a fulfillment Lambda function returns a <c>Delegate</c> dialog action without removing
+        /// any slot values.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -300,7 +299,7 @@ namespace Amazon.Lex
         /// The input speech is too long.
         /// </exception>
         /// <exception cref="Amazon.Lex.Model.UnsupportedMediaTypeException">
-        /// The Content-Type header (<code>PostContent</code> API) has an invalid value.
+        /// The Content-Type header (<c>PostContent</c> API) has an invalid value.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
         PostContentResponse PostContent(PostContentRequest request);
@@ -314,9 +313,9 @@ namespace Amazon.Lex
         /// 
         ///  
         /// <para>
-        /// The <code>PostContent</code> operation supports audio input at 8kHz and 16kHz. You
-        /// can use 8kHz audio to achieve higher speech recognition accuracy in telephone audio
-        /// applications. 
+        /// The <c>PostContent</c> operation supports audio input at 8kHz and 16kHz. You can use
+        /// 8kHz audio to achieve higher speech recognition accuracy in telephone audio applications.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -326,8 +325,8 @@ namespace Amazon.Lex
         ///  <ul> <li> 
         /// <para>
         ///  For a user input "I would like a pizza," Amazon Lex might return a response with
-        /// a message eliciting slot data (for example, <code>PizzaSize</code>): "What size pizza
-        /// would you like?". 
+        /// a message eliciting slot data (for example, <c>PizzaSize</c>): "What size pizza would
+        /// you like?". 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -343,8 +342,8 @@ namespace Amazon.Lex
         /// <para>
         ///  Not all Amazon Lex messages require a response from the user. For example, conclusion
         /// statements do not require a response. Some messages require only a yes or no response.
-        /// In addition to the <code>message</code>, Amazon Lex provides additional context about
-        /// the message in the response that you can use to enhance client behavior, such as displaying
+        /// In addition to the <c>message</c>, Amazon Lex provides additional context about the
+        /// message in the response that you can use to enhance client behavior, such as displaying
         /// the appropriate client user interface. Consider the following examples: 
         /// </para>
         ///  <ul> <li> 
@@ -354,39 +353,38 @@ namespace Amazon.Lex
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>x-amz-lex-dialog-state</code> header set to <code>ElicitSlot</code> 
+        ///  <c>x-amz-lex-dialog-state</c> header set to <c>ElicitSlot</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x-amz-lex-intent-name</code> header set to the intent name in the current context
+        ///  <c>x-amz-lex-intent-name</c> header set to the intent name in the current context
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x-amz-lex-slot-to-elicit</code> header set to the slot name for which the <code>message</code>
+        ///  <c>x-amz-lex-slot-to-elicit</c> header set to the slot name for which the <c>message</c>
         /// is eliciting information 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x-amz-lex-slots</code> header set to a map of slots configured for the intent
-        /// with their current values 
+        ///  <c>x-amz-lex-slots</c> header set to a map of slots configured for the intent with
+        /// their current values 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  If the message is a confirmation prompt, the <code>x-amz-lex-dialog-state</code>
-        /// header is set to <code>Confirmation</code> and the <code>x-amz-lex-slot-to-elicit</code>
-        /// header is omitted. 
+        ///  If the message is a confirmation prompt, the <c>x-amz-lex-dialog-state</c> header
+        /// is set to <c>Confirmation</c> and the <c>x-amz-lex-slot-to-elicit</c> header is omitted.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  If the message is a clarification prompt configured for the intent, indicating that
-        /// the user intent is not understood, the <code>x-amz-dialog-state</code> header is set
-        /// to <code>ElicitIntent</code> and the <code>x-amz-slot-to-elicit</code> header is omitted.
-        /// 
+        /// the user intent is not understood, the <c>x-amz-dialog-state</c> header is set to
+        /// <c>ElicitIntent</c> and the <c>x-amz-slot-to-elicit</c> header is omitted. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
+        ///  In addition, Amazon Lex also returns your application-specific <c>sessionAttributes</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
@@ -422,8 +420,8 @@ namespace Amazon.Lex
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
-        /// removing any slot values.
+        /// If a fulfillment Lambda function returns a <c>Delegate</c> dialog action without removing
+        /// any slot values.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -446,7 +444,7 @@ namespace Amazon.Lex
         /// The input speech is too long.
         /// </exception>
         /// <exception cref="Amazon.Lex.Model.UnsupportedMediaTypeException">
-        /// The Content-Type header (<code>PostContent</code> API) has an invalid value.
+        /// The Content-Type header (<c>PostContent</c> API) has an invalid value.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/runtime.lex-2016-11-28/PostContent">REST API Reference for PostContent Operation</seealso>
         Task<PostContentResponse> PostContentAsync(PostContentRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -463,8 +461,8 @@ namespace Amazon.Lex
         /// 
         ///  
         /// <para>
-        ///  In response, Amazon Lex returns the next <code>message</code> to convey to the user
-        /// an optional <code>responseCard</code> to display. Consider the following example messages:
+        ///  In response, Amazon Lex returns the next <c>message</c> to convey to the user an
+        /// optional <c>responseCard</c> to display. Consider the following example messages:
         /// 
         /// </para>
         ///  <ul> <li> 
@@ -488,11 +486,11 @@ namespace Amazon.Lex
         /// <para>
         ///  Not all Amazon Lex messages require a user response. For example, a conclusion statement
         /// does not require a response. Some messages require only a "yes" or "no" user response.
-        /// In addition to the <code>message</code>, Amazon Lex provides additional context about
-        /// the message in the response that you might use to enhance client behavior, for example,
-        /// to display the appropriate client user interface. These are the <code>slotToElicit</code>,
-        /// <code>dialogState</code>, <code>intentName</code>, and <code>slots</code> fields in
-        /// the response. Consider the following examples: 
+        /// In addition to the <c>message</c>, Amazon Lex provides additional context about the
+        /// message in the response that you might use to enhance client behavior, for example,
+        /// to display the appropriate client user interface. These are the <c>slotToElicit</c>,
+        /// <c>dialogState</c>, <c>intentName</c>, and <c>slots</c> fields in the response. Consider
+        /// the following examples: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -500,36 +498,36 @@ namespace Amazon.Lex
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>dialogState</code> set to ElicitSlot 
+        ///  <c>dialogState</c> set to ElicitSlot 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>intentName</code> set to the intent name in the current context 
+        ///  <c>intentName</c> set to the intent name in the current context 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>slotToElicit</code> set to the slot name for which the <code>message</code>
-        /// is eliciting information 
+        ///  <c>slotToElicit</c> set to the slot name for which the <c>message</c> is eliciting
+        /// information 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>slots</code> set to a map of slots, configured for the intent, with currently
-        /// known values 
+        ///  <c>slots</c> set to a map of slots, configured for the intent, with currently known
+        /// values 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  If the message is a confirmation prompt, the <code>dialogState</code> is set to ConfirmIntent
-        /// and <code>SlotToElicit</code> is set to null. 
+        ///  If the message is a confirmation prompt, the <c>dialogState</c> is set to ConfirmIntent
+        /// and <c>SlotToElicit</c> is set to null. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the message is a clarification prompt (configured for the intent) that indicates
-        /// that user intent is not understood, the <code>dialogState</code> is set to ElicitIntent
-        /// and <code>slotToElicit</code> is set to null. 
+        /// that user intent is not understood, the <c>dialogState</c> is set to ElicitIntent
+        /// and <c>slotToElicit</c> is set to null. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
+        ///  In addition, Amazon Lex also returns your application-specific <c>sessionAttributes</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
@@ -562,8 +560,8 @@ namespace Amazon.Lex
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
-        /// removing any slot values.
+        /// If a fulfillment Lambda function returns a <c>Delegate</c> dialog action without removing
+        /// any slot values.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -591,8 +589,8 @@ namespace Amazon.Lex
         /// 
         ///  
         /// <para>
-        ///  In response, Amazon Lex returns the next <code>message</code> to convey to the user
-        /// an optional <code>responseCard</code> to display. Consider the following example messages:
+        ///  In response, Amazon Lex returns the next <c>message</c> to convey to the user an
+        /// optional <c>responseCard</c> to display. Consider the following example messages:
         /// 
         /// </para>
         ///  <ul> <li> 
@@ -616,11 +614,11 @@ namespace Amazon.Lex
         /// <para>
         ///  Not all Amazon Lex messages require a user response. For example, a conclusion statement
         /// does not require a response. Some messages require only a "yes" or "no" user response.
-        /// In addition to the <code>message</code>, Amazon Lex provides additional context about
-        /// the message in the response that you might use to enhance client behavior, for example,
-        /// to display the appropriate client user interface. These are the <code>slotToElicit</code>,
-        /// <code>dialogState</code>, <code>intentName</code>, and <code>slots</code> fields in
-        /// the response. Consider the following examples: 
+        /// In addition to the <c>message</c>, Amazon Lex provides additional context about the
+        /// message in the response that you might use to enhance client behavior, for example,
+        /// to display the appropriate client user interface. These are the <c>slotToElicit</c>,
+        /// <c>dialogState</c>, <c>intentName</c>, and <c>slots</c> fields in the response. Consider
+        /// the following examples: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -628,36 +626,36 @@ namespace Amazon.Lex
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>dialogState</code> set to ElicitSlot 
+        ///  <c>dialogState</c> set to ElicitSlot 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>intentName</code> set to the intent name in the current context 
+        ///  <c>intentName</c> set to the intent name in the current context 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>slotToElicit</code> set to the slot name for which the <code>message</code>
-        /// is eliciting information 
+        ///  <c>slotToElicit</c> set to the slot name for which the <c>message</c> is eliciting
+        /// information 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>slots</code> set to a map of slots, configured for the intent, with currently
-        /// known values 
+        ///  <c>slots</c> set to a map of slots, configured for the intent, with currently known
+        /// values 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  If the message is a confirmation prompt, the <code>dialogState</code> is set to ConfirmIntent
-        /// and <code>SlotToElicit</code> is set to null. 
+        ///  If the message is a confirmation prompt, the <c>dialogState</c> is set to ConfirmIntent
+        /// and <c>SlotToElicit</c> is set to null. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the message is a clarification prompt (configured for the intent) that indicates
-        /// that user intent is not understood, the <code>dialogState</code> is set to ElicitIntent
-        /// and <code>slotToElicit</code> is set to null. 
+        /// that user intent is not understood, the <c>dialogState</c> is set to ElicitIntent
+        /// and <c>slotToElicit</c> is set to null. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
+        ///  In addition, Amazon Lex also returns your application-specific <c>sessionAttributes</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
         /// Conversation Context</a>. 
         /// </para>
@@ -693,8 +691,8 @@ namespace Amazon.Lex
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
-        /// removing any slot values.
+        /// If a fulfillment Lambda function returns a <c>Delegate</c> dialog action without removing
+        /// any slot values.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -756,8 +754,8 @@ namespace Amazon.Lex
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
-        /// removing any slot values.
+        /// If a fulfillment Lambda function returns a <c>Delegate</c> dialog action without removing
+        /// any slot values.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -819,8 +817,8 @@ namespace Amazon.Lex
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a fulfillment Lambda function returns a <code>Delegate</code> dialog action without
-        /// removing any slot values.
+        /// If a fulfillment Lambda function returns a <c>Delegate</c> dialog action without removing
+        /// any slot values.
         /// </para>
         ///  </li> </ul>
         /// </exception>

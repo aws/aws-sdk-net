@@ -103,16 +103,16 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Creating</code> - The access preview creation is in progress.
+        ///  <c>Creating</c> - The access preview creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Completed</code> - The access preview is complete and previews the findings
-        /// for external access to the resource.
+        ///  <c>Completed</c> - The access preview is complete and previews the findings for external
+        /// access to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The access preview creation has failed.
+        ///  <c>Failed</c> - The access preview creation has failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

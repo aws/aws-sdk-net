@@ -62,7 +62,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// Type of the event. For example, <code>application/vnd.amazonaws.connect.event.participant.left</code>.
+        /// Type of the event. For example, <c>application/vnd.amazonaws.connect.event.participant.left</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

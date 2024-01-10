@@ -62,8 +62,7 @@ namespace Amazon.Personalize.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this
-        /// time.
+        /// Amazon Personalize doesn't support configuring the <c>hpoObjective</c> at this time.
         /// </para>
         ///  </note>
         /// </summary>

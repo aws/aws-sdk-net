@@ -31,14 +31,13 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Container for the parameters to the DescribeEventSubscriptions operation.
     /// Lists all the event subscriptions for a customer account. The description of a subscription
-    /// includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
-    /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
-    /// 
+    /// includes <c>SubscriptionName</c>, <c>SNSTopicARN</c>, <c>CustomerID</c>, <c>SourceType</c>,
+    /// <c>SourceID</c>, <c>CreationTime</c>, and <c>Status</c>. 
     /// 
     ///  
     /// <para>
-    /// If you specify <code>SubscriptionName</code>, this action lists the description for
-    /// that subscription.
+    /// If you specify <c>SubscriptionName</c>, this action lists the description for that
+    /// subscription.
     /// </para>
     /// </summary>
     public partial class DescribeEventSubscriptionsRequest : AmazonDatabaseMigrationServiceRequest
@@ -75,7 +74,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <c>MaxRecords</c>. 
         /// </para>
         /// </summary>
         public string Marker
@@ -94,8 +93,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that the remaining results can be retrieved. 
         /// </para>
         ///  
         /// <para>

@@ -39,7 +39,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiKeys. 
         /// <para>
-        /// The <code>ApiKey</code> objects.
+        /// The <c>ApiKey</c> objects.
         /// </para>
         /// </summary>
         public List<ApiKey> ApiKeys

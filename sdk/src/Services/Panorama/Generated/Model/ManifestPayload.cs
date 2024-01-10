@@ -30,9 +30,9 @@ namespace Amazon.Panorama.Model
 {
     /// <summary>
     /// A application verion's manifest file. This is a JSON document that has a single key
-    /// (<code>PayloadData</code>) where the value is an escaped string representation of
-    /// the application manifest (<code>graph.json</code>). This file is located in the <code>graphs</code>
-    /// folder in your application source.
+    /// (<c>PayloadData</c>) where the value is an escaped string representation of the application
+    /// manifest (<c>graph.json</c>). This file is located in the <c>graphs</c> folder in
+    /// your application source.
     /// </summary>
     public partial class ManifestPayload
     {

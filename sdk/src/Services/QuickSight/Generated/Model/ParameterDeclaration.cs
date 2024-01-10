@@ -52,7 +52,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DateTimeParameterDeclaration. 
         /// <para>
-        /// A parameter declaration for the <code>DateTime</code> data type.
+        /// A parameter declaration for the <c>DateTime</c> data type.
         /// </para>
         /// </summary>
         public DateTimeParameterDeclaration DateTimeParameterDeclaration
@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DecimalParameterDeclaration. 
         /// <para>
-        /// A parameter declaration for the <code>Decimal</code> data type.
+        /// A parameter declaration for the <c>Decimal</c> data type.
         /// </para>
         /// </summary>
         public DecimalParameterDeclaration DecimalParameterDeclaration
@@ -88,7 +88,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IntegerParameterDeclaration. 
         /// <para>
-        /// A parameter declaration for the <code>Integer</code> data type.
+        /// A parameter declaration for the <c>Integer</c> data type.
         /// </para>
         /// </summary>
         public IntegerParameterDeclaration IntegerParameterDeclaration
@@ -106,7 +106,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property StringParameterDeclaration. 
         /// <para>
-        /// A parameter declaration for the <code>String</code> data type.
+        /// A parameter declaration for the <c>String</c> data type.
         /// </para>
         /// </summary>
         public StringParameterDeclaration StringParameterDeclaration

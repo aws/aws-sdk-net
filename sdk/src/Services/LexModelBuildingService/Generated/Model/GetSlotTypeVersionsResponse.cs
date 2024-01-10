@@ -60,8 +60,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property SlotTypes. 
         /// <para>
-        /// An array of <code>SlotTypeMetadata</code> objects, one for each numbered version of
-        /// the slot type plus one for the <code>$LATEST</code> version.
+        /// An array of <c>SlotTypeMetadata</c> objects, one for each numbered version of the
+        /// slot type plus one for the <c>$LATEST</c> version.
         /// </para>
         /// </summary>
         public List<SlotTypeMetadata> SlotTypes

@@ -37,12 +37,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// The number of sync configurations might be too large to return using a single call
-    /// to <code>ListResourceDataSync</code>. You can limit the number of sync configurations
-    /// returned by using the <code>MaxResults</code> parameter. To determine whether there
-    /// are more sync configurations to list, check the value of <code>NextToken</code> in
-    /// the output. If there are more sync configurations to list, you can request them by
-    /// specifying the <code>NextToken</code> returned in the call to the parameter of a subsequent
-    /// call. 
+    /// to <c>ListResourceDataSync</c>. You can limit the number of sync configurations returned
+    /// by using the <c>MaxResults</c> parameter. To determine whether there are more sync
+    /// configurations to list, check the value of <c>NextToken</c> in the output. If there
+    /// are more sync configurations to list, you can request them by specifying the <c>NextToken</c>
+    /// returned in the call to the parameter of a subsequent call. 
     /// </para>
     /// </summary>
     public partial class ListResourceDataSyncRequest : AmazonSimpleSystemsManagementRequest
@@ -92,10 +91,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SyncType. 
         /// <para>
-        /// View a list of resource data syncs according to the sync type. Specify <code>SyncToDestination</code>
+        /// View a list of resource data syncs according to the sync type. Specify <c>SyncToDestination</c>
         /// to view resource data syncs that synchronize data to an Amazon S3 bucket. Specify
-        /// <code>SyncFromSource</code> to view resource data syncs from Organizations or from
-        /// multiple Amazon Web Services Regions.
+        /// <c>SyncFromSource</c> to view resource data syncs from Organizations or from multiple
+        /// Amazon Web Services Regions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomains</code> request. Contains the status of the domains
+    /// The result of a <c>DescribeDomains</c> request. Contains the status of the domains
     /// specified in the request or all domains owned by the account.
     /// </summary>
     public partial class DescribeDomainsResponse : AmazonWebServiceResponse

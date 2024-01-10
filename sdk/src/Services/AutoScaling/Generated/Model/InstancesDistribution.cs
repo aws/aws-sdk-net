@@ -117,8 +117,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property OnDemandPercentageAboveBaseCapacity. 
         /// <para>
         /// Controls the percentages of On-Demand Instances and Spot Instances for your additional
-        /// capacity beyond <code>OnDemandBaseCapacity</code>. Expressed as a number (for example,
-        /// 20 specifies 20% On-Demand Instances, 80% Spot Instances). If set to 100, only On-Demand
+        /// capacity beyond <c>OnDemandBaseCapacity</c>. Expressed as a number (for example, 20
+        /// specifies 20% On-Demand Instances, 80% Spot Instances). If set to 100, only On-Demand
         /// Instances are used.
         /// </para>
         ///  
@@ -152,21 +152,21 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// Requests Spot Instances using pools that are optimally chosen based on the available
         /// Spot capacity. This strategy has the lowest risk of interruption. To give certain
-        /// instance types a higher chance of launching first, use <code>capacity-optimized-prioritized</code>.
+        /// instance types a higher chance of launching first, use <c>capacity-optimized-prioritized</c>.
         /// </para>
         ///  </dd> <dt>capacity-optimized-prioritized</dt> <dd> 
         /// <para>
         /// You set the order of instance types for the launch template overrides from highest
         /// to lowest priority (from first to last in the list). Amazon EC2 Auto Scaling honors
         /// the instance type priorities on a best effort basis but optimizes for capacity first.
-        /// Note that if the On-Demand allocation strategy is set to <code>prioritized</code>,
-        /// the same priority is applied when fulfilling On-Demand capacity. This is not a valid
-        /// value for Auto Scaling groups that specify <a>InstanceRequirements</a>.
+        /// Note that if the On-Demand allocation strategy is set to <c>prioritized</c>, the same
+        /// priority is applied when fulfilling On-Demand capacity. This is not a valid value
+        /// for Auto Scaling groups that specify <a>InstanceRequirements</a>.
         /// </para>
         ///  </dd> <dt>lowest-price</dt> <dd> 
         /// <para>
         /// Requests Spot Instances using the lowest priced pools within an Availability Zone,
-        /// across the number of Spot pools that you specify for the <code>SpotInstancePools</code>
+        /// across the number of Spot pools that you specify for the <c>SpotInstancePools</c>
         /// property. To ensure that your desired capacity is met, you might receive Spot Instances
         /// from several pools. This is the default value, but it might lead to high interruption
         /// rates because this strategy only considers instance price and not available capacity.
@@ -196,8 +196,8 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The number of Spot Instance pools across which to allocate your Spot Instances. The
         /// Spot pools are determined from the different instance types in the overrides. Valid
-        /// only when the <code>SpotAllocationStrategy</code> is <code>lowest-price</code>. Value
-        /// must be in the range of 1–20.
+        /// only when the <c>SpotAllocationStrategy</c> is <c>lowest-price</c>. Value must be
+        /// in the range of 1–20.
         /// </para>
         ///  
         /// <para>

@@ -46,9 +46,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  For example, if your simulation output location is <code>s3://my-bucket</code> and
-        /// your upload configuration name is <code>robot-test</code>, your files will be uploaded
-        /// to <code>s3://my-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</code>. 
+        ///  For example, if your simulation output location is <c>s3://my-bucket</c> and your
+        /// upload configuration name is <c>robot-test</c>, your files will be uploaded to <c>s3://my-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -68,9 +68,9 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property Path. 
         /// <para>
         ///  Specifies the path of the file(s) to upload. Standard Unix glob matching rules are
-        /// accepted, with the addition of <code>**</code> as a <i>super asterisk</i>. For example,
-        /// specifying <code>/var/log/**.log</code> causes all .log files in the <code>/var/log</code>
-        /// directory tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob
+        /// accepted, with the addition of <c>**</c> as a <i>super asterisk</i>. For example,
+        /// specifying <c>/var/log/**.log</c> causes all .log files in the <c>/var/log</c> directory
+        /// tree to be collected. For more examples, see <a href="https://github.com/gobwas/glob">Glob
         /// Library</a>. 
         /// </para>
         /// </summary>
@@ -94,9 +94,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  <dl> <dt>UPLOAD_ON_TERMINATE</dt> <dd> 
         /// <para>
-        /// Matching files are uploaded once the simulation enters the <code>TERMINATING</code>
-        /// state. Matching files are not uploaded until all of your code (including tools) have
-        /// stopped. 
+        /// Matching files are uploaded once the simulation enters the <c>TERMINATING</c> state.
+        /// Matching files are not uploaded until all of your code (including tools) have stopped.
+        /// 
         /// </para>
         ///  
         /// <para>

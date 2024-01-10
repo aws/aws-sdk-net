@@ -35,8 +35,8 @@ namespace Amazon.EC2.Model
     ///  <ul> <li> 
     /// <para>
     /// Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
-    /// Host</a>. When affinity is set to <code>host</code> and the instance is not associated
-    /// with a specific Dedicated Host, the next time the instance is launched, it is automatically
+    /// Host</a>. When affinity is set to <c>host</c> and the instance is not associated with
+    /// a specific Dedicated Host, the next time the instance is launched, it is automatically
     /// associated with the host on which it lands. If the instance is restarted or rebooted,
     /// this relationship persists.
     /// </para>
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// To modify the host ID, tenancy, placement group, or partition for an instance, the
-    /// instance must be in the <code>stopped</code> state.
+    /// instance must be in the <c>stopped</c> state.
     /// </para>
     /// </summary>
     public partial class ModifyInstancePlacementRequest : AmazonEC2Request
@@ -116,9 +116,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property GroupName. 
         /// <para>
         /// The name of the placement group in which to place the instance. For spread placement
-        /// groups, the instance must have a tenancy of <code>default</code>. For cluster and
-        /// partition placement groups, the instance must have a tenancy of <code>default</code>
-        /// or <code>dedicated</code>.
+        /// groups, the instance must have a tenancy of <c>default</c>. For cluster and partition
+        /// placement groups, the instance must have a tenancy of <c>default</c> or <c>dedicated</c>.
         /// </para>
         ///  
         /// <para>
@@ -159,7 +158,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property HostResourceGroupArn. 
         /// <para>
         /// The ARN of the host resource group in which to place the instance. The instance must
-        /// have a tenancy of <code>host</code> to specify this parameter.
+        /// have a tenancy of <c>host</c> to specify this parameter.
         /// </para>
         /// </summary>
         public string HostResourceGroupArn
@@ -197,7 +196,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PartitionNumber. 
         /// <para>
         /// The number of the partition in which to place the instance. Valid only if the placement
-        /// group strategy is set to <code>partition</code>.
+        /// group strategy is set to <c>partition</c>.
         /// </para>
         /// </summary>
         public int PartitionNumber
@@ -220,9 +219,9 @@ namespace Amazon.EC2.Model
         ///  <note> 
         /// <para>
         /// For T3 instances, you must launch the instance on a Dedicated Host to use a tenancy
-        /// of <code>host</code>. You can't change the tenancy from <code>host</code> to <code>dedicated</code>
-        /// or <code>default</code>. Attempting to make one of these unsupported tenancy changes
-        /// results in an <code>InvalidRequest</code> error code.
+        /// of <c>host</c>. You can't change the tenancy from <c>host</c> to <c>dedicated</c>
+        /// or <c>default</c>. Attempting to make one of these unsupported tenancy changes results
+        /// in an <c>InvalidRequest</c> error code.
         /// </para>
         ///  </note>
         /// </summary>

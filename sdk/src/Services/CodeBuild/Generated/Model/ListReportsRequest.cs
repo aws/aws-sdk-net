@@ -42,7 +42,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        ///  A <code>ReportFilter</code> object used to filter the returned reports. 
+        ///  A <c>ReportFilter</c> object used to filter the returned reports. 
         /// </para>
         /// </summary>
         public ReportFilter Filter
@@ -60,9 +60,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of paginated reports returned per response. Use <code>nextToken</code>
-        /// to iterate pages in the list of returned <code>Report</code> objects. The default
-        /// value is 100. 
+        ///  The maximum number of paginated reports returned per response. Use <c>nextToken</c>
+        /// to iterate pages in the list of returned <c>Report</c> objects. The default value
+        /// is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -82,11 +82,11 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of items in the
-        /// list, call this operation again, adding the next token to the call. To get all of
-        /// the items in the list, keep calling this operation with each subsequent next token
-        /// that is returned, until no more next tokens are returned. 
+        /// specified in <c>maxResults</c>. If there more items in the list, then a unique string
+        /// called a <i>nextToken</i> is returned. To get the next batch of items in the list,
+        /// call this operation again, adding the next token to the call. To get all of the items
+        /// in the list, keep calling this operation with each subsequent next token that is returned,
+        /// until no more next tokens are returned. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -108,13 +108,13 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASCENDING</code>: return reports in chronological order based on their creation
-        /// date. 
+        ///  <c>ASCENDING</c>: return reports in chronological order based on their creation date.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESCENDING</code>: return reports in the reverse chronological order based
-        /// on their creation date. 
+        ///  <c>DESCENDING</c>: return reports in the reverse chronological order based on their
+        /// creation date. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

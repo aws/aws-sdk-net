@@ -125,10 +125,10 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property DeliveryStreamStatus. 
         /// <para>
-        /// The status of the delivery stream. If the status of a delivery stream is <code>CREATING_FAILED</code>,
-        /// this status doesn't change, and you can't invoke <code>CreateDeliveryStream</code>
-        /// again on it. However, you can invoke the <a>DeleteDeliveryStream</a> operation to
-        /// delete it.
+        /// The status of the delivery stream. If the status of a delivery stream is <c>CREATING_FAILED</c>,
+        /// this status doesn't change, and you can't invoke <c>CreateDeliveryStream</c> again
+        /// on it. However, you can invoke the <a>DeleteDeliveryStream</a> operation to delete
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -151,12 +151,12 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DirectPut</code>: Provider applications access the delivery stream directly.
+        ///  <c>DirectPut</c>: Provider applications access the delivery stream directly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream
-        /// as a source.
+        ///  <c>KinesisStreamAsSource</c>: The delivery stream uses a Kinesis data stream as a
+        /// source.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -252,8 +252,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// If the <code>DeliveryStreamType</code> parameter is <code>KinesisStreamAsSource</code>,
-        /// a <a>SourceDescription</a> object describing the source Kinesis data stream.
+        /// If the <c>DeliveryStreamType</c> parameter is <c>KinesisStreamAsSource</c>, a <a>SourceDescription</a>
+        /// object describing the source Kinesis data stream.
         /// </para>
         /// </summary>
         public SourceDescription Source

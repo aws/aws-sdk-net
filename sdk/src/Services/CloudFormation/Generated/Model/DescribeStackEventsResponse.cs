@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackEvents. 
         /// <para>
-        /// A list of <code>StackEvents</code> structures.
+        /// A list of <c>StackEvents</c> structures.
         /// </para>
         /// </summary>
         public List<StackEvent> StackEvents

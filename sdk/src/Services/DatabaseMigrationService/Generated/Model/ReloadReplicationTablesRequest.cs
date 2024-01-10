@@ -36,7 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
     ///  
     /// <para>
     /// You can only use this operation with a task in the RUNNING state, otherwise the service
-    /// will throw an <code>InvalidResourceStateFault</code> exception.
+    /// will throw an <c>InvalidResourceStateFault</c> exception.
     /// </para>
     /// </summary>
     public partial class ReloadReplicationTablesRequest : AmazonDatabaseMigrationServiceRequest
@@ -48,9 +48,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReloadOption. 
         /// <para>
-        /// Options for reload. Specify <code>data-reload</code> to reload the data and re-validate
-        /// it if validation is enabled. Specify <code>validate-only</code> to re-validate the
-        /// table. This option applies only when validation is enabled for the replication. 
+        /// Options for reload. Specify <c>data-reload</c> to reload the data and re-validate
+        /// it if validation is enabled. Specify <c>validate-only</c> to re-validate the table.
+        /// This option applies only when validation is enabled for the replication. 
         /// </para>
         /// </summary>
         public ReloadOptionValue ReloadOption

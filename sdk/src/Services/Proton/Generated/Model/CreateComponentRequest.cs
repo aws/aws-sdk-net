@@ -94,8 +94,7 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property EnvironmentName. 
         /// <para>
         /// The name of the Proton environment that you want to associate this component with.
-        /// You must specify this when you don't specify <code>serviceInstanceName</code> and
-        /// <code>serviceName</code>.
+        /// You must specify this when you don't specify <c>serviceInstanceName</c> and <c>serviceName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -155,7 +154,7 @@ namespace Amazon.Proton.Model
         /// <para>
         /// The name of the service instance that you want to attach this component to. If you
         /// don't specify this, the component isn't attached to any service instance. Specify
-        /// both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.
+        /// both <c>serviceInstanceName</c> and <c>serviceName</c> or neither of them.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -174,9 +173,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the service that <code>serviceInstanceName</code> is associated with.
-        /// If you don't specify this, the component isn't attached to any service instance. Specify
-        /// both <code>serviceInstanceName</code> and <code>serviceName</code> or neither of them.
+        /// The name of the service that <c>serviceInstanceName</c> is associated with. If you
+        /// don't specify this, the component isn't attached to any service instance. Specify
+        /// both <c>serviceInstanceName</c> and <c>serviceName</c> or neither of them.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -43,7 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>in-sync</code> | <code>adding</code> | <code>removing</code> 
+        /// Valid values: <c>in-sync</c> | <c>adding</c> | <c>removing</c> 
         /// </para>
         /// </summary>
         public string ApplyStatus

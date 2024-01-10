@@ -142,9 +142,9 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategories. 
         /// <para>
-        /// A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
-        /// or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
-        /// supported at this time.
+        /// A list of event type category codes. Possible values are <c>issue</c>, <c>accountNotification</c>,
+        /// or <c>scheduledChange</c>. Currently, the <c>investigation</c> value isn't supported
+        /// at this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -163,7 +163,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCodes. 
         /// <para>
-        /// A list of unique identifiers for event types. For example, <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</code>
+        /// A list of unique identifiers for event types. For example, <c>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED".</c>
         /// 
         /// </para>
         /// </summary>
@@ -217,8 +217,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Services. 
         /// <para>
-        /// The Amazon Web Services associated with the event. For example, <code>EC2</code>,
-        /// <code>RDS</code>.
+        /// The Amazon Web Services associated with the event. For example, <c>EC2</c>, <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

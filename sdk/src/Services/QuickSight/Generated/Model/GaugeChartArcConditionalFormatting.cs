@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.
+    /// The options that determine the presentation of the arc of a <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class GaugeChartArcConditionalFormatting
     {

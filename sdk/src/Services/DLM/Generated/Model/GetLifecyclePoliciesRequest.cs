@@ -54,15 +54,15 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VOLUME</code> - To get only the default policy for EBS snapshots
+        ///  <c>VOLUME</c> - To get only the default policy for EBS snapshots
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE</code> - To get only the default policy for EBS-backed AMIs
+        ///  <c>INSTANCE</c> - To get only the default policy for EBS-backed AMIs
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> - To get all default policies
+        ///  <c>ALL</c> - To get all default policies
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  
         /// <para>
-        /// Tags are strings in the format <code>key=value</code>.
+        /// Tags are strings in the format <c>key=value</c>.
         /// </para>
         ///  
         /// <para>
@@ -168,7 +168,7 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  
         /// <para>
-        /// Tags are strings in the format <code>key=value</code>.
+        /// Tags are strings in the format <c>key=value</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

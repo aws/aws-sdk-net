@@ -34,20 +34,20 @@ namespace Amazon.ElasticBeanstalk.Model
     ///  
     /// <para>
     /// For operators that apply a single value to the attribute, the filter is evaluated
-    /// as follows: <code>Attribute Operator Values[1]</code> 
+    /// as follows: <c>Attribute Operator Values[1]</c> 
     /// </para>
     ///  
     /// <para>
-    /// Some operators, e.g. <code>in</code>, can apply multiple values. In this case, the
-    /// filter is evaluated as a logical union (OR) of applications of the operator to the
-    /// attribute with each one of the values: <code>(Attribute Operator Values[1]) OR (Attribute
-    /// Operator Values[2]) OR ...</code> 
+    /// Some operators, e.g. <c>in</c>, can apply multiple values. In this case, the filter
+    /// is evaluated as a logical union (OR) of applications of the operator to the attribute
+    /// with each one of the values: <c>(Attribute Operator Values[1]) OR (Attribute Operator
+    /// Values[2]) OR ...</c> 
     /// </para>
     ///  
     /// <para>
-    /// The valid values for attributes of <code>SearchFilter</code> depend on the API action.
-    /// For valid values, see the reference page for the API action you're calling that takes
-    /// a <code>SearchFilter</code> parameter.
+    /// The valid values for attributes of <c>SearchFilter</c> depend on the API action. For
+    /// valid values, see the reference page for the API action you're calling that takes
+    /// a <c>SearchFilter</c> parameter.
     /// </para>
     /// </summary>
     public partial class SearchFilter
@@ -78,8 +78,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to apply to the <code>Attribute</code> with each of the <code>Values</code>.
-        /// Valid values vary by <code>Attribute</code>.
+        /// The operator to apply to the <c>Attribute</c> with each of the <c>Values</c>. Valid
+        /// values vary by <c>Attribute</c>.
         /// </para>
         /// </summary>
         public string Operator
@@ -97,8 +97,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The list of values applied to the <code>Attribute</code> and <code>Operator</code>
-        /// attributes. Number of values and valid values vary by <code>Attribute</code>.
+        /// The list of values applied to the <c>Attribute</c> and <c>Operator</c> attributes.
+        /// Number of values and valid values vary by <c>Attribute</c>.
         /// </para>
         /// </summary>
         public List<string> Values

@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// You can use API filters to narrow down the list of resources returned by <code>ListTasks</code>.
-    /// For example, to retrieve all tasks on a source location, you can use <code>ListTasks</code>
-    /// with filter name <code>LocationId</code> and <code>Operator Equals</code> with the
-    /// ARN for the location.
+    /// You can use API filters to narrow down the list of resources returned by <c>ListTasks</c>.
+    /// For example, to retrieve all tasks on a source location, you can use <c>ListTasks</c>
+    /// with filter name <c>LocationId</c> and <c>Operator Equals</c> with the ARN for the
+    /// location.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the filter being used. Each API call supports a list of filters that are
-        /// available for it. For example, <code>LocationId</code> for <code>ListTasks</code>.
+        /// available for it. For example, <c>LocationId</c> for <c>ListTasks</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,8 +69,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator that is used to compare filter values (for example, <code>Equals</code>
-        /// or <code>Contains</code>).
+        /// The operator that is used to compare filter values (for example, <c>Equals</c> or
+        /// <c>Contains</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -58,8 +58,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ThemeIds. 
         /// <para>
-        /// A list of theme IDs that you want to apply overrides to. You can use <code>*</code>
-        /// to override all themes in this asset bundle.
+        /// A list of theme IDs that you want to apply overrides to. You can use <c>*</c> to override
+        /// all themes in this asset bundle.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

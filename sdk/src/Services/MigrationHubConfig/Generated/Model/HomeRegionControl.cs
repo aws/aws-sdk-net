@@ -30,7 +30,7 @@ namespace Amazon.MigrationHubConfig.Model
 {
     /// <summary>
     /// A home region control is an object that specifies the home region for an account,
-    /// with some additional information. It contains a target (always of type <code>ACCOUNT</code>),
+    /// with some additional information. It contains a target (always of type <c>ACCOUNT</c>),
     /// an ID, and a time at which the home region was set.
     /// </summary>
     public partial class HomeRegionControl
@@ -83,7 +83,7 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property RequestedTime. 
         /// <para>
-        /// A timestamp representing the time when the customer called <code>CreateHomeregionControl</code>
+        /// A timestamp representing the time when the customer called <c>CreateHomeregionControl</c>
         /// and set the home region for the account.
         /// </para>
         /// </summary>
@@ -103,8 +103,7 @@ namespace Amazon.MigrationHubConfig.Model
         /// Gets and sets the property Target. 
         /// <para>
         /// The target parameter specifies the identifier to which the home region is applied,
-        /// which is always an <code>ACCOUNT</code>. It applies the home region to the current
-        /// <code>ACCOUNT</code>.
+        /// which is always an <c>ACCOUNT</c>. It applies the home region to the current <c>ACCOUNT</c>.
         /// </para>
         /// </summary>
         public Target Target

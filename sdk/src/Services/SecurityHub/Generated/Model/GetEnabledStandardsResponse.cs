@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StandardsSubscriptions. 
         /// <para>
-        /// The list of <code>StandardsSubscriptions</code> objects that include information about
-        /// the enabled standards.
+        /// The list of <c>StandardsSubscriptions</c> objects that include information about the
+        /// enabled standards.
         /// </para>
         /// </summary>
         public List<StandardsSubscription> StandardsSubscriptions

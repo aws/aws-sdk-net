@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchEvents.Model
 {
     /// <summary>
-    /// A <code>Replay</code> object that contains details about a replay.
+    /// A <c>Replay</c> object that contains details about a replay.
     /// </summary>
     public partial class Replay
     {
@@ -47,7 +47,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property EventEndTime. 
         /// <para>
         /// A time stamp for the time to start replaying events. Any event with a creation time
-        /// prior to the <code>EventEndTime</code> specified is replayed.
+        /// prior to the <c>EventEndTime</c> specified is replayed.
         /// </para>
         /// </summary>
         public DateTime EventEndTime

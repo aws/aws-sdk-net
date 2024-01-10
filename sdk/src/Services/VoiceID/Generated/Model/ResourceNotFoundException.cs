@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-    /// message for more details.
+    /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+    /// for more details.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -127,9 +127,8 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource which cannot not be found. Possible types are <code>BATCH_JOB</code>,
-        /// <code>COMPLIANCE_CONSENT</code>, <code>DOMAIN</code>, <code>FRAUDSTER</code>, <code>SESSION</code>
-        /// and <code>SPEAKER</code>.
+        /// The type of resource which cannot not be found. Possible types are <c>BATCH_JOB</c>,
+        /// <c>COMPLIANCE_CONSENT</c>, <c>DOMAIN</c>, <c>FRAUDSTER</c>, <c>SESSION</c> and <c>SPEAKER</c>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

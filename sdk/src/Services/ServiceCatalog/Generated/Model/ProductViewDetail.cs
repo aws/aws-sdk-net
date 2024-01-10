@@ -97,11 +97,11 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SourceConnection. 
         /// <para>
-        /// A top level <code>ProductViewDetail</code> response containing details about the product’s
-        /// connection. Service Catalog returns this field for the <code>CreateProduct</code>,
-        /// <code>UpdateProduct</code>, <code>DescribeProductAsAdmin</code>, and <code>SearchProductAsAdmin</code>
-        /// APIs. This response contains the same fields as the <code>ConnectionParameters</code>
-        /// request, with the addition of the <code>LastSync</code> response.
+        /// A top level <c>ProductViewDetail</c> response containing details about the product’s
+        /// connection. Service Catalog returns this field for the <c>CreateProduct</c>, <c>UpdateProduct</c>,
+        /// <c>DescribeProductAsAdmin</c>, and <c>SearchProductAsAdmin</c> APIs. This response
+        /// contains the same fields as the <c>ConnectionParameters</c> request, with the addition
+        /// of the <c>LastSync</c> response.
         /// </para>
         /// </summary>
         public SourceConnectionDetail SourceConnection
@@ -123,16 +123,15 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The product is ready for use.
+        ///  <c>AVAILABLE</c> - The product is ready for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Product creation has started; the product is not ready for
-        /// use.
+        ///  <c>CREATING</c> - Product creation has started; the product is not ready for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - An action failed.
+        ///  <c>FAILED</c> - An action failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

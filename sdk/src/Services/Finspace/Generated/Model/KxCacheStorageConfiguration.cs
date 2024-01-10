@@ -74,9 +74,9 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For cache type <code>CACHE_1000</code> and <code>CACHE_250</code> you can select cache
-        /// size as 1200 GB or increments of 2400 GB. For cache type <code>CACHE_12</code> you
-        /// can select the cache size in increments of 6000 GB.
+        /// For cache type <c>CACHE_1000</c> and <c>CACHE_250</c> you can select cache size as
+        /// 1200 GB or increments of 2400 GB. For cache type <c>CACHE_12</c> you can select the
+        /// cache size in increments of 6000 GB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=10)]

@@ -244,11 +244,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>8 | 10 | 12 | 24</code> 
+        /// Valid values: <c>8 | 10 | 12 | 24</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default value: <code>24</code> 
+        /// Default value: <c>24</c> 
         /// </para>
         /// </summary>
         public int SessionTimeoutHours
@@ -311,11 +311,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>443</code> | <code>1194</code> 
+        /// Valid Values: <c>443</c> | <c>1194</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>443</code> 
+        /// Default Value: <c>443</c> 
         /// </para>
         /// </summary>
         public int VpnPort

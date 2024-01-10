@@ -124,18 +124,18 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>never</code> – CloudFront doesn't sign any origin requests.
+        ///  <c>never</c> – CloudFront doesn't sign any origin requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>always</code> – CloudFront signs all origin requests, overwriting the <code>Authorization</code>
+        ///  <c>always</c> – CloudFront signs all origin requests, overwriting the <c>Authorization</c>
         /// header from the viewer request if necessary.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>no-override</code> – If the viewer request doesn't contain the <code>Authorization</code>
-        /// header, CloudFront signs the origin request. If the viewer request contains the <code>Authorization</code>
-        /// header, CloudFront doesn't sign the origin request, but instead passes along the <code>Authorization</code>
+        ///  <c>no-override</c> – If the viewer request doesn't contain the <c>Authorization</c>
+        /// header, CloudFront signs the origin request. If the viewer request contains the <c>Authorization</c>
+        /// header, CloudFront doesn't sign the origin request, but instead passes along the <c>Authorization</c>
         /// header that it received in the viewer request.
         /// </para>
         ///  </li> </ul>
@@ -157,7 +157,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property SigningProtocol. 
         /// <para>
         /// The signing protocol of the origin access control. The signing protocol determines
-        /// how CloudFront signs (authenticates) requests. The only valid value is <code>sigv4</code>.
+        /// how CloudFront signs (authenticates) requests. The only valid value is <c>sigv4</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

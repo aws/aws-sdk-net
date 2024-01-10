@@ -44,8 +44,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// Determines whether a conditional branch is active. When <code>active</code> is false,
-        /// the conditions are not evaluated.
+        /// Determines whether a conditional branch is active. When <c>active</c> is false, the
+        /// conditions are not evaluated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

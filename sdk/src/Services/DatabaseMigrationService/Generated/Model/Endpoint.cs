@@ -34,15 +34,15 @@ namespace Amazon.DatabaseMigrationService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CreateEndpoint</code> 
+    ///  <c>CreateEndpoint</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeEndpoint</code> 
+    ///  <c>DescribeEndpoint</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ModifyEndpoint</code> 
+    ///  <c>ModifyEndpoint</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -158,7 +158,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DynamoDbSettings. 
         /// <para>
-        /// The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
+        /// The settings for the DynamoDB target endpoint. For more information, see the <c>DynamoDBSettings</c>
         /// structure.
         /// </para>
         /// </summary>
@@ -177,7 +177,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchSettings. 
         /// <para>
-        /// The settings for the OpenSearch source endpoint. For more information, see the <code>ElasticsearchSettings</code>
+        /// The settings for the OpenSearch source endpoint. For more information, see the <c>ElasticsearchSettings</c>
         /// structure.
         /// </para>
         /// </summary>
@@ -234,7 +234,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
+        /// The type of endpoint. Valid values are <c>source</c> and <c>target</c>.
         /// </para>
         /// </summary>
         public ReplicationEndpointTypeValue EndpointType
@@ -252,8 +252,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineDisplayName. 
         /// <para>
-        /// The expanded name for the engine name. For example, if the <code>EngineName</code>
-        /// parameter is "aurora", this value would be "Amazon Aurora MySQL".
+        /// The expanded name for the engine name. For example, if the <c>EngineName</c> parameter
+        /// is "aurora", this value would be "Amazon Aurora MySQL".
         /// </para>
         /// </summary>
         public string EngineDisplayName
@@ -271,13 +271,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
-        /// <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"redshift-serverless"</code>,
-        /// <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>, <code>"azuredb"</code>,
-        /// <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>, <code>"kinesis"</code>,
-        /// <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, <code>"sqlserver"</code>,
-        /// <code>"neptune"</code>, and <code>"babelfish"</code>.
+        /// The database engine name. Valid values, depending on the EndpointType, include <c>"mysql"</c>,
+        /// <c>"oracle"</c>, <c>"postgres"</c>, <c>"mariadb"</c>, <c>"aurora"</c>, <c>"aurora-postgresql"</c>,
+        /// <c>"redshift"</c>, <c>"redshift-serverless"</c>, <c>"s3"</c>, <c>"db2"</c>, <c>"db2-zos"</c>,
+        /// <c>"azuredb"</c>, <c>"sybase"</c>, <c>"dynamodb"</c>, <c>"mongodb"</c>, <c>"kinesis"</c>,
+        /// <c>"kafka"</c>, <c>"elasticsearch"</c>, <c>"documentdb"</c>, <c>"sqlserver"</c>, <c>"neptune"</c>,
+        /// and <c>"babelfish"</c>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -369,7 +368,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property IBMDb2Settings. 
         /// <para>
-        /// The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code>
+        /// The settings for the IBM Db2 LUW source endpoint. For more information, see the <c>IBMDb2Settings</c>
         /// structure. 
         /// </para>
         /// </summary>
@@ -388,7 +387,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property KafkaSettings. 
         /// <para>
-        /// The settings for the Apache Kafka target endpoint. For more information, see the <code>KafkaSettings</code>
+        /// The settings for the Apache Kafka target endpoint. For more information, see the <c>KafkaSettings</c>
         /// structure.
         /// </para>
         /// </summary>
@@ -408,7 +407,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KinesisSettings. 
         /// <para>
         /// The settings for the Amazon Kinesis target endpoint. For more information, see the
-        /// <code>KinesisSettings</code> structure.
+        /// <c>KinesisSettings</c> structure.
         /// </para>
         /// </summary>
         public KinesisSettings KinesisSettings
@@ -430,8 +429,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
-        /// your default encryption key.
+        /// If you don't specify a value for the <c>KmsKeyId</c> parameter, then DMS uses your
+        /// default encryption key.
         /// </para>
         ///  
         /// <para>
@@ -456,7 +455,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MicrosoftSQLServerSettings. 
         /// <para>
         /// The settings for the Microsoft SQL Server source and target endpoint. For more information,
-        /// see the <code>MicrosoftSQLServerSettings</code> structure.
+        /// see the <c>MicrosoftSQLServerSettings</c> structure.
         /// </para>
         /// </summary>
         public MicrosoftSQLServerSettings MicrosoftSQLServerSettings
@@ -474,7 +473,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MongoDbSettings. 
         /// <para>
-        /// The settings for the MongoDB source endpoint. For more information, see the <code>MongoDbSettings</code>
+        /// The settings for the MongoDB source endpoint. For more information, see the <c>MongoDbSettings</c>
         /// structure.
         /// </para>
         /// </summary>
@@ -494,7 +493,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MySQLSettings. 
         /// <para>
         /// The settings for the MySQL source and target endpoint. For more information, see the
-        /// <code>MySQLSettings</code> structure.
+        /// <c>MySQLSettings</c> structure.
         /// </para>
         /// </summary>
         public MySQLSettings MySQLSettings
@@ -513,7 +512,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property NeptuneSettings. 
         /// <para>
         /// The settings for the Amazon Neptune target endpoint. For more information, see the
-        /// <code>NeptuneSettings</code> structure.
+        /// <c>NeptuneSettings</c> structure.
         /// </para>
         /// </summary>
         public NeptuneSettings NeptuneSettings
@@ -532,7 +531,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property OracleSettings. 
         /// <para>
         /// The settings for the Oracle source and target endpoint. For more information, see
-        /// the <code>OracleSettings</code> structure.
+        /// the <c>OracleSettings</c> structure.
         /// </para>
         /// </summary>
         public OracleSettings OracleSettings
@@ -569,7 +568,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property PostgreSQLSettings. 
         /// <para>
         /// The settings for the PostgreSQL source and target endpoint. For more information,
-        /// see the <code>PostgreSQLSettings</code> structure.
+        /// see the <c>PostgreSQLSettings</c> structure.
         /// </para>
         /// </summary>
         public PostgreSQLSettings PostgreSQLSettings
@@ -587,7 +586,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property RedisSettings. 
         /// <para>
-        /// The settings for the Redis target endpoint. For more information, see the <code>RedisSettings</code>
+        /// The settings for the Redis target endpoint. For more information, see the <c>RedisSettings</c>
         /// structure.
         /// </para>
         /// </summary>
@@ -624,7 +623,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property S3Settings. 
         /// <para>
-        /// The settings for the S3 target endpoint. For more information, see the <code>S3Settings</code>
+        /// The settings for the S3 target endpoint. For more information, see the <c>S3Settings</c>
         /// structure.
         /// </para>
         /// </summary>
@@ -662,7 +661,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) used by the service to access the IAM role. The role
-        /// must allow the <code>iam:PassRole</code> action.
+        /// must allow the <c>iam:PassRole</c> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn
@@ -680,7 +679,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslMode. 
         /// <para>
-        /// The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
+        /// The SSL mode used to connect to the endpoint. The default value is <c>none</c>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode
@@ -717,7 +716,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SybaseSettings. 
         /// <para>
         /// The settings for the SAP ASE source and target endpoint. For more information, see
-        /// the <code>SybaseSettings</code> structure.
+        /// the <c>SybaseSettings</c> structure.
         /// </para>
         /// </summary>
         public SybaseSettings SybaseSettings
@@ -736,7 +735,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property TimestreamSettings. 
         /// <para>
         /// The settings for the Amazon Timestream target endpoint. For more information, see
-        /// the <code>TimestreamSettings</code> structure.
+        /// the <c>TimestreamSettings</c> structure.
         /// </para>
         /// </summary>
         public TimestreamSettings TimestreamSettings

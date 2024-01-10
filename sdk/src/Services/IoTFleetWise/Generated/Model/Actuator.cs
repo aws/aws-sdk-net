@@ -170,7 +170,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property FullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the actuator. For example, the fully qualified name of
-        /// an actuator might be <code>Vehicle.Front.Left.Door.Lock</code>.
+        /// an actuator might be <c>Vehicle.Front.Left.Door.Lock</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -226,8 +226,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property StructFullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the struct node for the actuator if the data type of the
-        /// actuator is <code>Struct</code> or <code>StructArray</code>. For example, the struct
-        /// fully qualified name of an actuator might be <code>Vehicle.Door.LockStruct</code>.
+        /// actuator is <c>Struct</c> or <c>StructArray</c>. For example, the struct fully qualified
+        /// name of an actuator might be <c>Vehicle.Door.LockStruct</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=150)]

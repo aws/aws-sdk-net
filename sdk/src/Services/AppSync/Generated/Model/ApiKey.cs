@@ -44,19 +44,19 @@ namespace Amazon.AppSync.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ListApiKeys</code> returns the expiration time in milliseconds.
+    ///  <c>ListApiKeys</c> returns the expiration time in milliseconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateApiKey</code> returns the expiration time in milliseconds.
+    ///  <c>CreateApiKey</c> returns the expiration time in milliseconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateApiKey</code> is not available for this key version.
+    ///  <c>UpdateApiKey</c> is not available for this key version.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteApiKey</code> deletes the item from the table.
+    ///  <c>DeleteApiKey</c> deletes the item from the table.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -71,23 +71,23 @@ namespace Amazon.AppSync.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ListApiKeys</code> returns the expiration time and deletion time in seconds.
+    ///  <c>ListApiKeys</c> returns the expiration time and deletion time in seconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateApiKey</code> returns the expiration time and deletion time in seconds
-    /// and accepts a user-provided expiration time in seconds.
+    ///  <c>CreateApiKey</c> returns the expiration time and deletion time in seconds and
+    /// accepts a user-provided expiration time in seconds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds
+    ///  <c>UpdateApiKey</c> returns the expiration time and and deletion time in seconds
     /// and accepts a user-provided expiration time in seconds. Expired API keys are kept
     /// for 60 days after the expiration time. You can update the key expiration time as long
     /// as the key isn't deleted.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteApiKey</code> deletes the item from the table.
+    ///  <c>DeleteApiKey</c> deletes the item from the table.
     /// </para>
     ///  </li> <li> 
     /// <para>

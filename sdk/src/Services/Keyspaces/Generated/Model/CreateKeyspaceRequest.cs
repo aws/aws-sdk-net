@@ -30,13 +30,13 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateKeyspace operation.
-    /// The <code>CreateKeyspace</code> operation adds a new keyspace to your account. In
-    /// an Amazon Web Services account, keyspace names must be unique within each Region.
+    /// The <c>CreateKeyspace</c> operation adds a new keyspace to your account. In an Amazon
+    /// Web Services account, keyspace names must be unique within each Region.
     /// 
     ///  
     /// <para>
-    ///  <code>CreateKeyspace</code> is an asynchronous operation. You can monitor the creation
-    /// status of the new keyspace by using the <code>GetKeyspace</code> operation.
+    ///  <c>CreateKeyspace</c> is an asynchronous operation. You can monitor the creation
+    /// status of the new keyspace by using the <c>GetKeyspace</c> operation.
     /// </para>
     ///  
     /// <para>
@@ -76,15 +76,14 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code>
-        /// or <code>MULTI_REGION</code>.
+        ///  <c>replicationStrategy</c> - the required value is <c>SINGLE_REGION</c> or <c>MULTI_REGION</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>,
-        /// the <code>regionList</code> requires the current Region and at least one additional
-        /// Amazon Web Services Region where the keyspace is going to be replicated in. The maximum
-        /// number of supported replication Regions including the current Region is six.
+        ///  <c>regionList</c> - if the <c>replicationStrategy</c> is <c>MULTI_REGION</c>, the
+        /// <c>regionList</c> requires the current Region and at least one additional Amazon Web
+        /// Services Region where the keyspace is going to be replicated in. The maximum number
+        /// of supported replication Regions including the current Region is six.
         /// </para>
         ///  </li> </ul>
         /// </summary>

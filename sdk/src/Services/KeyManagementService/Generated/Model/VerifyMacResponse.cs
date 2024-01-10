@@ -77,13 +77,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MacValid. 
         /// <para>
-        /// A Boolean value that indicates whether the HMAC was verified. A value of <code>True</code>
-        /// indicates that the HMAC (<code>Mac</code>) was generated with the specified <code>Message</code>,
-        /// HMAC KMS key (<code>KeyID</code>) and <code>MacAlgorithm.</code>.
+        /// A Boolean value that indicates whether the HMAC was verified. A value of <c>True</c>
+        /// indicates that the HMAC (<c>Mac</c>) was generated with the specified <c>Message</c>,
+        /// HMAC KMS key (<c>KeyID</c>) and <c>MacAlgorithm.</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the HMAC is not verified, the <code>VerifyMac</code> operation fails with a <code>KMSInvalidMacException</code>
+        /// If the HMAC is not verified, the <c>VerifyMac</c> operation fails with a <c>KMSInvalidMacException</c>
         /// exception. This exception indicates that one or more of the inputs changed since the
         /// HMAC was computed.
         /// </para>

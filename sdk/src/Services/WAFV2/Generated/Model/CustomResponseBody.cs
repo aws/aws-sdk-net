@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// The response body to use in a custom response to a web request. This is referenced
-    /// by key from <a>CustomResponse</a> <code>CustomResponseBodyKey</code>.
+    /// by key from <a>CustomResponse</a> <c>CustomResponseBodyKey</c>.
     /// </summary>
     public partial class CustomResponseBody
     {
@@ -45,7 +45,7 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// You can use JSON escape strings in JSON content. To do this, you must specify JSON
-        /// content in the <code>ContentType</code> setting. 
+        /// content in the <c>ContentType</c> setting. 
         /// </para>
         ///  
         /// <para>
@@ -70,8 +70,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The type of content in the payload that you are defining in the <code>Content</code>
-        /// string.
+        /// The type of content in the payload that you are defining in the <c>Content</c> string.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

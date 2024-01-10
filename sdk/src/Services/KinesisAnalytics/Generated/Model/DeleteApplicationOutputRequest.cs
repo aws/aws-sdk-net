@@ -45,7 +45,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:DeleteApplicationOutput</code>
+    /// This operation requires permissions to perform the <c>kinesisanalytics:DeleteApplicationOutput</c>
     /// action.
     /// </para>
     /// </summary>
@@ -79,8 +79,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Amazon Kinesis Analytics application version. You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation to get the current application version. If the version specified is not
-        /// the current version, the <code>ConcurrentModificationException</code> is returned.
-        /// 
+        /// the current version, the <c>ConcurrentModificationException</c> is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
@@ -104,7 +103,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// operation, has a unique ID. You need to provide the ID to uniquely identify the output
         /// configuration that you want to delete from the application configuration. You can
         /// use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-        /// operation to get the specific <code>OutputId</code>. 
+        /// operation to get the specific <c>OutputId</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

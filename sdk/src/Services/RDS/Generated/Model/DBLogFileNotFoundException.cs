@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>LogFileName</code> doesn't refer to an existing DB log file.
+    /// <c>LogFileName</c> doesn't refer to an existing DB log file.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -49,8 +49,8 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    ///  The application status must be <code>READY</code> for you to start an application.
-    /// You can get the application status in the console or using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
+    ///  The application status must be <c>READY</c> for you to start an application. You
+    /// can get the application status in the console or using the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
     /// operation.
     /// </para>
     ///  
@@ -61,7 +61,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:StartApplication</code>
+    /// This operation requires permissions to perform the <c>kinesisanalytics:StartApplication</c>
     /// action.
     /// </para>
     /// </summary>

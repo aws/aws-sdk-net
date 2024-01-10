@@ -40,7 +40,7 @@ namespace Amazon.ServiceCatalog.Model
     /// is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted
     /// TagOption keys as tags, or this causes the error "Parameter validation failed: Missing
     /// required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with
-    /// the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
+    /// the value <c>sc-tagoption-conflict-portfolioId-productId</c>.
     /// </para>
     /// </summary>
     public partial class DescribeProvisioningParametersRequest : AmazonServiceCatalogRequest
@@ -60,11 +60,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>

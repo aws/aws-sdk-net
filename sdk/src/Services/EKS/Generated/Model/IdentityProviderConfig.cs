@@ -58,7 +58,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the identity provider configuration. The only type available is <code>oidc</code>.
+        /// The type of the identity provider configuration. The only type available is <c>oidc</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

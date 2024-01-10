@@ -74,7 +74,7 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Replace. A flag specifying whether or not to replace the
         /// attribute/value pair or to add a new attribute/value pair. The default setting is
-        /// <code>false</code>.
+        /// <c>false</c>.
         /// </summary>
         public bool Replace
         {

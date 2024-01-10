@@ -58,8 +58,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property TokenBalances. 
         /// <para>
-        /// An array of <code>TokenBalance</code> objects. Each object contains details about
-        /// the token balance.
+        /// An array of <c>TokenBalance</c> objects. Each object contains details about the token
+        /// balance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=250)]

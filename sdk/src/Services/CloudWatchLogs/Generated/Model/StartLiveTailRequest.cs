@@ -56,21 +56,21 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// If no new log events were ingested in the past second, the <code>LiveTailSessionUpdate</code>
+    /// If no new log events were ingested in the past second, the <c>LiveTailSessionUpdate</c>
     /// object will contain an empty array.
     /// </para>
     ///  
     /// <para>
-    /// The array of log events contained in a <code>LiveTailSessionUpdate</code> can include
-    /// as many as 500 log events. If the number of log events matching the request exceeds
-    /// 500 per second, the log events are sampled down to 500 log events to be included in
-    /// each <code>LiveTailSessionUpdate</code> object.
+    /// The array of log events contained in a <c>LiveTailSessionUpdate</c> can include as
+    /// many as 500 log events. If the number of log events matching the request exceeds 500
+    /// per second, the log events are sampled down to 500 log events to be included in each
+    /// <c>LiveTailSessionUpdate</c> object.
     /// </para>
     ///  
     /// <para>
     /// If your client consumes the log events slower than the server produces them, CloudWatch
-    /// Logs buffers up to 10 <code>LiveTailSessionUpdate</code> events or 5000 log events,
-    /// after which it starts dropping the oldest events.
+    /// Logs buffers up to 10 <c>LiveTailSessionUpdate</c> events or 5000 log events, after
+    /// which it starts dropping the oldest events.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -102,9 +102,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LogEventFilterPattern. 
         /// <para>
         /// An optional pattern to use to filter the results to include only log events that match
-        /// the pattern. For example, a filter pattern of <code>error 404</code> causes only log
-        /// events that include both <code>error</code> and <code>404</code> to be included in
-        /// the Live Tail stream.
+        /// the pattern. For example, a filter pattern of <c>error 404</c> causes only log events
+        /// that include both <c>error</c> and <c>404</c> to be included in the Live Tail stream.
         /// </para>
         ///  
         /// <para>
@@ -169,7 +168,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can specify this parameter only if you specify only one log group in <code>logGroupIdentifiers</code>.
+        /// You can specify this parameter only if you specify only one log group in <c>logGroupIdentifiers</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -194,7 +193,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can specify this parameter only if you specify only one log group in <code>logGroupIdentifiers</code>.
+        /// You can specify this parameter only if you specify only one log group in <c>logGroupIdentifiers</c>.
         /// </para>
         ///  </note>
         /// </summary>

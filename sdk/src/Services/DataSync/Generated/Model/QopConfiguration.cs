@@ -42,7 +42,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property DataTransferProtection. 
         /// <para>
         /// The data transfer protection setting configured on the HDFS cluster. This setting
-        /// corresponds to your <code>dfs.data.transfer.protection</code> setting in the <code>hdfs-site.xml</code>
+        /// corresponds to your <c>dfs.data.transfer.protection</c> setting in the <c>hdfs-site.xml</c>
         /// file on your Hadoop cluster.
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property RpcProtection. 
         /// <para>
         /// The RPC protection setting configured on the HDFS cluster. This setting corresponds
-        /// to your <code>hadoop.rpc.protection</code> setting in your <code>core-site.xml</code>
-        /// file on your Hadoop cluster.
+        /// to your <c>hadoop.rpc.protection</c> setting in your <c>core-site.xml</c> file on
+        /// your Hadoop cluster.
         /// </para>
         /// </summary>
         public HdfsRpcProtection RpcProtection

@@ -36,11 +36,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  
     /// <para>
-    ///  <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter
+    ///  <c>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter
     /// operation: You attempted to create a new version of <i>parameter-name</i> by calling
     /// the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest
     /// version, can't be deleted because it has a label associated with it. Move the label
-    /// to another version of the parameter, and try again.</code> 
+    /// to another version of the parameter, and try again.</c> 
     /// </para>
     ///  
     /// <para>

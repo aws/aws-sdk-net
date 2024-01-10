@@ -35,10 +35,10 @@ namespace Amazon.DatabaseMigrationService.Model
     ///  <note> 
     /// <para>
     /// For a MySQL source or target endpoint, don't explicitly specify the database using
-    /// the <code>DatabaseName</code> request parameter on the <code>ModifyEndpoint</code>
-    /// API call. Specifying <code>DatabaseName</code> when you modify a MySQL endpoint replicates
-    /// all the task tables to this single database. For MySQL endpoints, you specify the
-    /// database only when you specify the schema in the table-mapping rules of the DMS task.
+    /// the <c>DatabaseName</c> request parameter on the <c>ModifyEndpoint</c> API call. Specifying
+    /// <c>DatabaseName</c> when you modify a MySQL endpoint replicates all the task tables
+    /// to this single database. For MySQL endpoints, you specify the database only when you
+    /// specify the schema in the table-mapping rules of the DMS task.
     /// </para>
     ///  </note>
     /// </summary>
@@ -128,7 +128,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  <ul> <li> 
         /// <para>
         /// serviceAccessRoleArn - The Amazon Resource Name (ARN) used by the service access IAM
-        /// role. The role must allow the <code>iam:PassRole</code> action.
+        /// role. The role must allow the <c>iam:PassRole</c> action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -136,13 +136,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string
-        /// ,BucketName=string</code> 
+        /// Shorthand syntax for these settings is as follows: <c>ServiceAccessRoleArn=string
+        /// ,BucketName=string</c> 
         /// </para>
         ///  
         /// <para>
-        /// JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string"} </code> 
+        /// JSON syntax for these settings is as follows: <c>{ "ServiceAccessRoleArn": "string",
+        /// "BucketName": "string"} </c> 
         /// </para>
         /// </summary>
         public DmsTransferSettings DmsTransferSettings
@@ -262,7 +262,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
+        /// The type of endpoint. Valid values are <c>source</c> and <c>target</c>.
         /// </para>
         /// </summary>
         public ReplicationEndpointTypeValue EndpointType
@@ -280,12 +280,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
-        /// <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-        /// <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-        /// <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
+        /// The database engine name. Valid values, depending on the EndpointType, include <c>"mysql"</c>,
+        /// <c>"oracle"</c>, <c>"postgres"</c>, <c>"mariadb"</c>, <c>"aurora"</c>, <c>"aurora-postgresql"</c>,
+        /// <c>"redshift"</c>, <c>"s3"</c>, <c>"db2"</c>, <c>"db2-zos"</c>, <c>"azuredb"</c>,
+        /// <c>"sybase"</c>, <c>"dynamodb"</c>, <c>"mongodb"</c>, <c>"kinesis"</c>, <c>"kafka"</c>,
+        /// <c>"elasticsearch"</c>, <c>"documentdb"</c>, <c>"sqlserver"</c>, <c>"neptune"</c>,
+        /// and <c>"babelfish"</c>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -303,10 +303,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExactSettings. 
         /// <para>
-        /// If this attribute is Y, the current call to <code>ModifyEndpoint</code> replaces all
-        /// existing endpoint settings with the exact settings that you specify in this call.
-        /// If this attribute is N, the current call to <code>ModifyEndpoint</code> does two things:
-        /// 
+        /// If this attribute is Y, the current call to <c>ModifyEndpoint</c> replaces all existing
+        /// endpoint settings with the exact settings that you specify in this call. If this attribute
+        /// is N, the current call to <c>ModifyEndpoint</c> does two things: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -320,17 +319,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, if you call <code>create-endpoint ... --endpoint-settings '{"a":1}' ...</code>,
-        /// the endpoint has the following endpoint settings: <code>'{"a":1}'</code>. If you then
-        /// call <code>modify-endpoint ... --endpoint-settings '{"b":2}' ...</code> for the same
-        /// endpoint, the endpoint has the following settings: <code>'{"a":1,"b":2}'</code>. 
+        /// For example, if you call <c>create-endpoint ... --endpoint-settings '{"a":1}' ...</c>,
+        /// the endpoint has the following endpoint settings: <c>'{"a":1}'</c>. If you then call
+        /// <c>modify-endpoint ... --endpoint-settings '{"b":2}' ...</c> for the same endpoint,
+        /// the endpoint has the following settings: <c>'{"a":1,"b":2}'</c>. 
         /// </para>
         ///  
         /// <para>
-        /// However, suppose that you follow this with a call to <code>modify-endpoint ... --endpoint-settings
-        /// '{"b":2}' --exact-settings ...</code> for that same endpoint again. Then the endpoint
-        /// has the following settings: <code>'{"b":2}'</code>. All existing settings are replaced
-        /// with the exact settings that you specify. 
+        /// However, suppose that you follow this with a call to <c>modify-endpoint ... --endpoint-settings
+        /// '{"b":2}' --exact-settings ...</c> for that same endpoint again. Then the endpoint
+        /// has the following settings: <c>'{"b":2}'</c>. All existing settings are replaced with
+        /// the exact settings that you specify. 
         /// </para>
         /// </summary>
         public bool ExactSettings
@@ -706,7 +705,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) for the IAM role you want to use to modify the endpoint.
-        /// The role must allow the <code>iam:PassRole</code> action.
+        /// The role must allow the <c>iam:PassRole</c> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn
@@ -724,7 +723,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslMode. 
         /// <para>
-        /// The SSL mode used to connect to the endpoint. The default value is <code>none</code>.
+        /// The SSL mode used to connect to the endpoint. The default value is <c>none</c>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

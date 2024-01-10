@@ -31,9 +31,8 @@ namespace Amazon.CloudSearch.Model
     /// <summary>
     /// Container for the parameters to the DescribeAvailabilityOptions operation.
     /// Gets the availability options configured for a domain. By default, shows the configuration
-    /// with any pending changes. Set the <code>Deployed</code> option to <code>true</code>
-    /// to show the active configuration and exclude pending changes. For more information,
-    /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+    /// with any pending changes. Set the <c>Deployed</c> option to <c>true</c> to show the
+    /// active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
     /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
     /// Developer Guide</i>.
     /// </summary>
@@ -45,8 +44,8 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Deployed. 
         /// <para>
-        /// Whether to display the deployed configuration (<code>true</code>) or include any pending
-        /// changes (<code>false</code>). Defaults to <code>false</code>.
+        /// Whether to display the deployed configuration (<c>true</c>) or include any pending
+        /// changes (<c>false</c>). Defaults to <c>false</c>.
         /// </para>
         /// </summary>
         public bool Deployed

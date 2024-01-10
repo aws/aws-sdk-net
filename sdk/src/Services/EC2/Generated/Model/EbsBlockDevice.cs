@@ -67,7 +67,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Encrypted. 
         /// <para>
         /// Indicates whether the encryption state of an EBS volume is changed while being restored
-        /// from a backing snapshot. The effect of setting the encryption state to <code>true</code>
+        /// from a backing snapshot. The effect of setting the encryption state to <c>true</c>
         /// depends on the volume origin (new or from a snapshot), starting encryption state,
         /// ownership, and whether encryption by default is enabled. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html#encryption-parameters">Amazon
@@ -96,9 +96,9 @@ namespace Amazon.EC2.Model
         ///  <ul> <li> 
         /// <para>
         /// If you are creating a block device mapping for a <b>new (empty) volume</b>, you can
-        /// include this parameter, and specify either <code>true</code> for an encrypted volume,
-        /// or <code>false</code> for an unencrypted volume. If you omit this parameter, it defaults
-        /// to <code>false</code> (unencrypted).
+        /// include this parameter, and specify either <c>true</c> for an encrypted volume, or
+        /// <c>false</c> for an unencrypted volume. If you omit this parameter, it defaults to
+        /// <c>false</c> (unencrypted).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -109,16 +109,15 @@ namespace Amazon.EC2.Model
         ///  </li> <li> 
         /// <para>
         /// If you are creating a block device mapping from an <b>existing unencrypted volume</b>,
-        /// you can include this parameter, but you must specify <code>false</code>. If you specify
-        /// <code>true</code>, the request will fail. In this case, we recommend that you omit
-        /// the parameter.
+        /// you can include this parameter, but you must specify <c>false</c>. If you specify
+        /// <c>true</c>, the request will fail. In this case, we recommend that you omit the parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you are creating a block device mapping from an <b>existing encrypted volume</b>,
-        /// you can include this parameter, and specify either <code>true</code> or <code>false</code>.
-        /// However, if you specify <code>false</code>, the parameter is ignored and the block
-        /// device mapping is always encrypted. In this case, we recommend that you omit the parameter.
+        /// you can include this parameter, and specify either <c>true</c> or <c>false</c>. However,
+        /// if you specify <c>false</c>, the parameter is ignored and the block device mapping
+        /// is always encrypted. In this case, we recommend that you omit the parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -137,10 +136,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS). For <code>gp3</code>, <code>io1</code>,
-        /// and <code>io2</code> volumes, this represents the number of IOPS that are provisioned
-        /// for the volume. For <code>gp2</code> volumes, this represents the baseline performance
-        /// of the volume and the rate at which the volume accumulates I/O credits for bursting.
+        /// The number of I/O operations per second (IOPS). For <c>gp3</c>, <c>io1</c>, and <c>io2</c>
+        /// volumes, this represents the number of IOPS that are provisioned for the volume. For
+        /// <c>gp2</c> volumes, this represents the baseline performance of the volume and the
+        /// rate at which the volume accumulates I/O credits for bursting.
         /// </para>
         ///  
         /// <para>
@@ -148,26 +147,26 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp3</code>: 3,000 - 16,000 IOPS
+        ///  <c>gp3</c>: 3,000 - 16,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code>: 100 - 64,000 IOPS
+        ///  <c>io1</c>: 100 - 64,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io2</code>: 100 - 256,000 IOPS
+        ///  <c>io2</c>: 100 - 256,000 IOPS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <code>io2</code> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
+        /// For <c>io2</c> volumes, you can achieve up to 256,000 IOPS on <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">instances
         /// built on the Nitro System</a>. On other instances, you can achieve performance up
         /// to 32,000 IOPS.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required for <code>io1</code> and <code>io2</code> volumes. The
-        /// default for <code>gp3</code> volumes is 3,000 IOPS.
+        /// This parameter is required for <c>io1</c> and <c>io2</c> volumes. The default for
+        /// <c>gp3</c> volumes is 3,000 IOPS.
         /// </para>
         /// </summary>
         public int Iops
@@ -190,8 +189,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is only supported on <code>BlockDeviceMapping</code> objects called
-        /// by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+        /// This parameter is only supported on <c>BlockDeviceMapping</c> objects called by <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
         /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.
         /// </para>
@@ -255,7 +254,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only for <code>gp3</code> volumes.
+        /// This parameter is valid only for <c>gp3</c> volumes.
         /// </para>
         ///  
         /// <para>
@@ -287,23 +286,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp2</code> and <code>gp3</code>: 1 - 16,384 GiB
+        ///  <c>gp2</c> and <c>gp3</c>: 1 - 16,384 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code>: 4 - 16,384 GiB
+        ///  <c>io1</c>: 4 - 16,384 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io2</code>: 4 - 65,536 GiB
+        ///  <c>io2</c>: 4 - 65,536 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>st1</code> and <code>sc1</code>: 125 - 16,384 GiB
+        ///  <c>st1</c> and <c>sc1</c>: 125 - 16,384 GiB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>standard</code>: 1 - 1024 GiB
+        ///  <c>standard</c>: 1 - 1024 GiB
         /// </para>
         ///  </li> </ul>
         /// </summary>

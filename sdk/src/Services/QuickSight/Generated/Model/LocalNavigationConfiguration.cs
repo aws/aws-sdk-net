@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The navigation configuration for <code>CustomActionNavigationOperation</code>.
+    /// The navigation configuration for <c>CustomActionNavigationOperation</c>.
     /// </summary>
     public partial class LocalNavigationConfiguration
     {

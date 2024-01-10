@@ -34,31 +34,31 @@ namespace Amazon.AuditManager.Model
     ///  
     /// <para>
     /// This summary is a snapshot of the data that your active assessments collected on the
-    /// <code>lastUpdated</code> date. It’s important to understand that the following totals
-    /// are daily counts based on this date — they aren’t a total sum to date. 
+    /// <c>lastUpdated</c> date. It’s important to understand that the following totals are
+    /// daily counts based on this date — they aren’t a total sum to date. 
     /// </para>
     ///  
     /// <para>
-    /// The <code>Insights</code> data is eventually consistent. This means that, when you
-    /// read data from <code>Insights</code>, the response might not instantly reflect the
-    /// results of a recently completed write or update operation. If you repeat your read
-    /// request after a few hours, the response should return the latest data.
+    /// The <c>Insights</c> data is eventually consistent. This means that, when you read
+    /// data from <c>Insights</c>, the response might not instantly reflect the results of
+    /// a recently completed write or update operation. If you repeat your read request after
+    /// a few hours, the response should return the latest data.
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you delete an assessment or change its status to inactive, <code>InsightsByAssessment</code>
+    /// If you delete an assessment or change its status to inactive, <c>InsightsByAssessment</c>
     /// includes data for that assessment as follows.
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>Inactive assessments</b> - If Audit Manager collected evidence for your assessment
-    /// before you changed it inactive, that evidence is included in the <code>InsightsByAssessment</code>
+    /// before you changed it inactive, that evidence is included in the <c>InsightsByAssessment</c>
     /// counts for that day.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Deleted assessments</b> - If Audit Manager collected evidence for your assessment
-    /// before you deleted it, that evidence isn't included in the <code>InsightsByAssessment</code>
+    /// before you deleted it, that evidence isn't included in the <c>InsightsByAssessment</c>
     /// counts for that day.
     /// </para>
     ///  </li> </ul> </note>
@@ -94,7 +94,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentControlsCountByNoncompliantEvidence. 
         /// <para>
-        /// The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code>
+        /// The number of assessment controls that collected non-compliant evidence on the <c>lastUpdated</c>
         /// date. 
         /// </para>
         /// </summary>
@@ -114,9 +114,9 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property CompliantEvidenceCount. 
         /// <para>
         /// The number of compliance check evidence that Audit Manager classified as compliant
-        /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
-        /// Security Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i>
-        /// ruling. 
+        /// on the <c>lastUpdated</c> date. This includes evidence that was collected from Security
+        /// Hub with a <i>Pass</i> ruling, or collected from Config with a <i>Compliant</i> ruling.
+        /// 
         /// </para>
         /// </summary>
         public int CompliantEvidenceCount
@@ -143,7 +143,7 @@ namespace Amazon.AuditManager.Model
         ///  <note> 
         /// <para>
         /// If evidence has a compliance check status of <i>not applicable</i>, it's classed as
-        /// <i>inconclusive</i> in <code>Insights</code> data.
+        /// <i>inconclusive</i> in <c>Insights</c> data.
         /// </para>
         ///  </note>
         /// </summary>
@@ -181,8 +181,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property NoncompliantEvidenceCount. 
         /// <para>
         /// The number of compliance check evidence that Audit Manager classified as non-compliant
-        /// on the <code>lastUpdated</code> date. This includes evidence that was collected from
-        /// Security Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i>
+        /// on the <c>lastUpdated</c> date. This includes evidence that was collected from Security
+        /// Hub with a <i>Fail</i> ruling, or collected from Config with a <i>Non-compliant</i>
         /// ruling. 
         /// </para>
         /// </summary>

@@ -46,8 +46,8 @@ namespace Amazon.EC2.Model
     ///  <ul> <li> 
     /// <para>
     ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-    /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
-    /// volume permissions for these snapshots.
+    /// snapshot to the <c>all</c> group. All Amazon Web Services accounts have create volume
+    /// permissions for these snapshots.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -74,18 +74,17 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
-    /// only snapshots from the specified owners and for which you have access are returned.
-    /// The results can include the Amazon Web Services account IDs of the specified owners,
-    /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
-    /// that you own.
+    /// If you specify one or more snapshot owners using the <c>OwnerIds</c> option, only
+    /// snapshots from the specified owners and for which you have access are returned. The
+    /// results can include the Amazon Web Services account IDs of the specified owners, <c>amazon</c>
+    /// for snapshots owned by Amazon, or <c>self</c> for snapshots that you own.
     /// </para>
     ///  
     /// <para>
     /// If you specify a list of restorable users, only snapshots with create snapshot permissions
     /// for those users are returned. You can specify Amazon Web Services account IDs (if
-    /// you own the snapshots), <code>self</code> for snapshots for which you own or have
-    /// explicit permissions, or <code>all</code> for public snapshots.
+    /// you own the snapshots), <c>self</c> for snapshots for which you own or have explicit
+    /// permissions, or <c>all</c> for public snapshots.
     /// </para>
     ///  
     /// <para>
@@ -118,67 +117,62 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>description</code> - A description of the snapshot.
+        ///  <c>description</c> - A description of the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>encrypted</code> - Indicates whether the snapshot is encrypted (<code>true</code>
-        /// | <code>false</code>)
+        ///  <c>encrypted</c> - Indicates whether the snapshot is encrypted (<c>true</c> | <c>false</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-alias</code> - The owner alias, from an Amazon-maintained list (<code>amazon</code>).
+        ///  <c>owner-alias</c> - The owner alias, from an Amazon-maintained list (<c>amazon</c>).
         /// This is not the user-configured Amazon Web Services account alias set using the IAM
         /// console. We recommend that you use the related parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The Amazon Web Services account ID of the owner. We recommend
-        /// that you use the related parameter instead of this filter.
+        ///  <c>owner-id</c> - The Amazon Web Services account ID of the owner. We recommend that
+        /// you use the related parameter instead of this filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>progress</code> - The progress of the snapshot, as a percentage (for example,
-        /// 80%).
+        ///  <c>progress</c> - The progress of the snapshot, as a percentage (for example, 80%).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>snapshot-id</code> - The snapshot ID.
+        ///  <c>snapshot-id</c> - The snapshot ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>start-time</code> - The time stamp when the snapshot was initiated.
+        ///  <c>start-time</c> - The time stamp when the snapshot was initiated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> - The status of the snapshot (<code>pending</code> | <code>completed</code>
-        /// | <code>error</code>).
+        ///  <c>status</c> - The status of the snapshot (<c>pending</c> | <c>completed</c> | <c>error</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>storage-tier</code> - The storage tier of the snapshot (<code>archive</code>
-        /// | <code>standard</code>).
+        ///  <c>storage-tier</c> - The storage tier of the snapshot (<c>archive</c> | <c>standard</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the
-        /// resource. Use the tag key in the filter name and the tag value as the filter value.
-        /// For example, to find all resources that have a tag with the key <code>Owner</code>
-        /// and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-        /// and <code>TeamA</code> for the filter value.
+        ///  <c>tag</c>:&lt;key&gt; - The key/value combination of a tag assigned to the resource.
+        /// Use the tag key in the filter name and the tag value as the filter value. For example,
+        /// to find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
+        /// specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
-        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
+        ///  <c>tag-key</c> - The key of a tag assigned to the resource. Use this filter to find
+        /// all resources assigned a tag with a specific key, regardless of the tag value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>volume-id</code> - The ID of the volume the snapshot is for.
+        ///  <c>volume-id</c> - The ID of the volume the snapshot is for.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>volume-size</code> - The size of the volume, in GiB.
+        ///  <c>volume-size</c> - The size of the volume, in GiB.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -239,7 +233,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property OwnerIds. 
         /// <para>
         /// Scopes the results to snapshots with the specified owners. You can specify a combination
-        /// of Amazon Web Services account IDs, <code>self</code>, and <code>amazon</code>.
+        /// of Amazon Web Services account IDs, <c>self</c>, and <c>amazon</c>.
         /// </para>
         /// </summary>
         public List<string> OwnerIds

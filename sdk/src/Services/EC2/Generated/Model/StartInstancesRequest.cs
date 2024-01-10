@@ -54,11 +54,10 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimted</code>
-    /// CPU credit option, the request fails. The <code>unlimited</code> CPU credit option
-    /// is not supported on Dedicated Hosts. Before you start the instance, either change
-    /// its CPU credit option to <code>standard</code>, or change its tenancy to <code>default</code>
-    /// or <code>dedicated</code>.
+    /// If you attempt to start a T3 instance with <c>host</c> tenancy and the <c>unlimted</c>
+    /// CPU credit option, the request fails. The <c>unlimited</c> CPU credit option is not
+    /// supported on Dedicated Hosts. Before you start the instance, either change its CPU
+    /// credit option to <c>standard</c>, or change its tenancy to <c>default</c> or <c>dedicated</c>.
     /// </para>
     ///  
     /// <para>

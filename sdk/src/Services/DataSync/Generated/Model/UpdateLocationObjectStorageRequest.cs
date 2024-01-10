@@ -130,12 +130,12 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies a certificate to authenticate with an object storage system that uses a
         /// private or self-signed certificate authority (CA). You must specify a Base64-encoded
-        /// <code>.pem</code> file (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>).
+        /// <c>.pem</c> file (for example, <c>file:///home/user/.ssh/storage_sys_certificate.pem</c>).
         /// The certificate can be up to 32768 bytes (before Base64 encoding).
         /// </para>
         ///  
         /// <para>
-        /// To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+        /// To use this parameter, configure <c>ServerProtocol</c> to <c>HTTPS</c>.
         /// </para>
         ///  
         /// <para>

@@ -101,9 +101,9 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
-        /// returns a <code>ThrottlingException</code>. Eventually consistent reads require less
-        /// effort than strongly consistent reads, so a setting of 50 <code>ReadCapacityUnits</code>
-        /// per second provides 100 eventually consistent <code>ReadCapacityUnits</code> per second.
+        /// returns a <c>ThrottlingException</c>. Eventually consistent reads require less effort
+        /// than strongly consistent reads, so a setting of 50 <c>ReadCapacityUnits</c> per second
+        /// provides 100 eventually consistent <c>ReadCapacityUnits</c> per second.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -122,7 +122,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property WriteCapacityUnits. 
         /// <para>
-        /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+        /// The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

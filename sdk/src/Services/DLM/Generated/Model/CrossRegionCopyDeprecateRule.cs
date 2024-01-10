@@ -62,7 +62,7 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property IntervalUnit. 
         /// <para>
         /// The unit of time in which to measure the <b>Interval</b>. For example, to deprecate
-        /// a cross-Region AMI copy after 3 months, specify <code>Interval=3</code> and <code>IntervalUnit=MONTHS</code>.
+        /// a cross-Region AMI copy after 3 months, specify <c>Interval=3</c> and <c>IntervalUnit=MONTHS</c>.
         /// </para>
         /// </summary>
         public RetentionIntervalUnitValues IntervalUnit

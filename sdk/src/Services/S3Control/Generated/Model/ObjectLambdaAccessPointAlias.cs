@@ -40,10 +40,10 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the Object Lambda Access Point alias. If the status is <code>PROVISIONING</code>,
+        /// The status of the Object Lambda Access Point alias. If the status is <c>PROVISIONING</c>,
         /// the Object Lambda Access Point is provisioning the alias and the alias is not ready
-        /// for use yet. If the status is <code>READY</code>, the Object Lambda Access Point alias
-        /// is successfully provisioned and ready for use.
+        /// for use yet. If the status is <c>READY</c>, the Object Lambda Access Point alias is
+        /// successfully provisioned and ready for use.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]

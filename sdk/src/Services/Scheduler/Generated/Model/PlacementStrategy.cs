@@ -40,11 +40,11 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property Field. 
         /// <para>
         /// The field to apply the placement strategy against. For the spread placement strategy,
-        /// valid values are <code>instanceId</code> (or <code>instanceId</code>, which has the
-        /// same effect), or any platform or custom attribute that is applied to a container instance,
-        /// such as <code>attribute:ecs.availability-zone</code>. For the binpack placement strategy,
-        /// valid values are <code>cpu</code> and <code>memory</code>. For the random placement
-        /// strategy, this field is not used.
+        /// valid values are <c>instanceId</c> (or <c>instanceId</c>, which has the same effect),
+        /// or any platform or custom attribute that is applied to a container instance, such
+        /// as <c>attribute:ecs.availability-zone</c>. For the binpack placement strategy, valid
+        /// values are <c>cpu</c> and <c>memory</c>. For the random placement strategy, this field
+        /// is not used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]

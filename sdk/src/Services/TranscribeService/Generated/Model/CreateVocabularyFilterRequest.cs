@@ -70,8 +70,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>.
         /// </para>
         ///  
         /// <para>
@@ -102,8 +102,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// A custom vocabulary filter can only be used to transcribe files in the same language
         /// as the filter. For example, if you create a custom vocabulary filter using US English
-        /// (<code>en-US</code>), you can only apply this filter to files that contain English
-        /// audio.
+        /// (<c>en-US</c>), you can only apply this filter to files that contain English audio.
         /// </para>
         ///  
         /// <para>
@@ -159,13 +158,13 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</code>
+        /// Here's an example URI path: <c>s3://DOC-EXAMPLE-BUCKET/my-vocab-filter-file.txt</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>VocabularyFilterFileUri</code> in your request, you
-        /// cannot use <code>Words</code>; you must choose one or the other.
+        /// Note that if you include <c>VocabularyFilterFileUri</c> in your request, you cannot
+        /// use <c>Words</c>; you must choose one or the other.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -190,7 +189,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
         /// Web Services account. If you try to create a new custom vocabulary filter with the
-        /// same name as an existing custom vocabulary filter, you get a <code>ConflictException</code>
+        /// same name as an existing custom vocabulary filter, you get a <c>ConflictException</c>
         /// error.
         /// </para>
         /// </summary>
@@ -213,12 +212,12 @@ namespace Amazon.TranscribeService.Model
         /// Use this parameter if you want to create your custom vocabulary filter by including
         /// all desired terms, as comma-separated values, within your request. The other option
         /// for creating your vocabulary filter is to save your entries in a text file and upload
-        /// them to an Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFilterFileUri</code>
+        /// them to an Amazon S3 bucket, then specify the location of your file using the <c>VocabularyFilterFileUri</c>
         /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>Words</code> in your request, you cannot use <code>VocabularyFilterFileUri</code>;
+        /// Note that if you include <c>Words</c> in your request, you cannot use <c>VocabularyFilterFileUri</c>;
         /// you must choose one or the other.
         /// </para>
         ///  

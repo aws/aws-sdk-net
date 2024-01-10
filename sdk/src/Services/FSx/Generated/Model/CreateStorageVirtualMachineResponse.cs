@@ -38,7 +38,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageVirtualMachine. 
         /// <para>
-        /// Returned after a successful <code>CreateStorageVirtualMachine</code> operation; describes
+        /// Returned after a successful <c>CreateStorageVirtualMachine</c> operation; describes
         /// the SVM just created.
         /// </para>
         /// </summary>

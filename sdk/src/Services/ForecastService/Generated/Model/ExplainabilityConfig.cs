@@ -34,14 +34,14 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// If you provide a predictor ARN for <code>ResourceArn</code>, you must set both <code>TimePointGranularity</code>
-    /// and <code>TimeSeriesGranularity</code> to “ALL”. When creating Predictor Explainability,
+    /// If you provide a predictor ARN for <c>ResourceArn</c>, you must set both <c>TimePointGranularity</c>
+    /// and <c>TimeSeriesGranularity</c> to “ALL”. When creating Predictor Explainability,
     /// Amazon Forecast considers all time series and time points.
     /// </para>
     ///  
     /// <para>
-    /// If you provide a forecast ARN for <code>ResourceArn</code>, you can set <code>TimePointGranularity</code>
-    /// and <code>TimeSeriesGranularity</code> to either “ALL” or “Specific”.
+    /// If you provide a forecast ARN for <c>ResourceArn</c>, you can set <c>TimePointGranularity</c>
+    /// and <c>TimeSeriesGranularity</c> to either “ALL” or “Specific”.
     /// </para>
     /// </summary>
     public partial class ExplainabilityConfig
@@ -52,14 +52,14 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TimePointGranularity. 
         /// <para>
-        /// To create an Explainability for all time points in your forecast horizon, use <code>ALL</code>.
+        /// To create an Explainability for all time points in your forecast horizon, use <c>ALL</c>.
         /// To create an Explainability for specific time points in your forecast horizon, use
-        /// <code>SPECIFIC</code>.
+        /// <c>SPECIFIC</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify time points with the <code>StartDateTime</code> and <code>EndDateTime</code>
-        /// parameters within the <a>CreateExplainability</a> operation.
+        /// Specify time points with the <c>StartDateTime</c> and <c>EndDateTime</c> parameters
+        /// within the <a>CreateExplainability</a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,8 +78,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TimeSeriesGranularity. 
         /// <para>
-        /// To create an Explainability for all time series in your datasets, use <code>ALL</code>.
-        /// To create an Explainability for specific time series in your datasets, use <code>SPECIFIC</code>.
+        /// To create an Explainability for all time series in your datasets, use <c>ALL</c>.
+        /// To create an Explainability for specific time series in your datasets, use <c>SPECIFIC</c>.
         /// </para>
         ///  
         /// <para>

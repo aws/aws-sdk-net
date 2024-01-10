@@ -44,10 +44,9 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// JSON Lines in the response include information about non-terminal errors found in
-    /// the dataset. Non terminal errors are reported in <code>errors</code> lists within
-    /// each JSON Line. The same information is reported in the training and testing validation
-    /// result manifests that Amazon Rekognition Custom Labels creates during model training.
-    /// 
+    /// the dataset. Non terminal errors are reported in <c>errors</c> lists within each JSON
+    /// Line. The same information is reported in the training and testing validation result
+    /// manifests that Amazon Rekognition Custom Labels creates during model training. 
     /// </para>
     ///  
     /// <para>
@@ -56,7 +55,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:ListDatasetEntries</code>
+    /// This operation requires permissions to perform the <c>rekognition:ListDatasetEntries</c>
     /// action.
     /// </para>
     /// </summary>
@@ -74,7 +73,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property ContainsLabels. 
         /// <para>
         /// Specifies a label filter for the response. The response includes an entry only if
-        /// one or more of the labels in <code>ContainsLabels</code> exist in the entry. 
+        /// one or more of the labels in <c>ContainsLabels</c> exist in the entry. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -112,8 +111,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property HasErrors. 
         /// <para>
-        /// Specifies an error filter for the response. Specify <code>True</code> to only include
-        /// entries that have errors. 
+        /// Specifies an error filter for the response. Specify <c>True</c> to only include entries
+        /// that have errors. 
         /// </para>
         /// </summary>
         public bool HasErrors
@@ -131,10 +130,10 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Labeled. 
         /// <para>
-        ///  Specify <code>true</code> to get only the JSON Lines where the image is labeled.
-        /// Specify <code>false</code> to get only the JSON Lines where the image isn't labeled.
-        /// If you don't specify <code>Labeled</code>, <code>ListDatasetEntries</code> returns
-        /// JSON Lines for labeled and unlabeled images. 
+        ///  Specify <c>true</c> to get only the JSON Lines where the image is labeled. Specify
+        /// <c>false</c> to get only the JSON Lines where the image isn't labeled. If you don't
+        /// specify <c>Labeled</c>, <c>ListDatasetEntries</c> returns JSON Lines for labeled and
+        /// unlabeled images. 
         /// </para>
         /// </summary>
         public bool Labeled
@@ -194,11 +193,11 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SourceRefContains. 
         /// <para>
-        /// If specified, <code>ListDatasetEntries</code> only returns JSON Lines where the value
-        /// of <code>SourceRefContains</code> is part of the <code>source-ref</code> field. The
-        /// <code>source-ref</code> field contains the Amazon S3 location of the image. You can
-        /// use <code>SouceRefContains</code> for tasks such as getting the JSON Line for a single
-        /// image, or gettting JSON Lines for all images within a specific folder.
+        /// If specified, <c>ListDatasetEntries</c> only returns JSON Lines where the value of
+        /// <c>SourceRefContains</c> is part of the <c>source-ref</c> field. The <c>source-ref</c>
+        /// field contains the Amazon S3 location of the image. You can use <c>SouceRefContains</c>
+        /// for tasks such as getting the JSON Line for a single image, or gettting JSON Lines
+        /// for all images within a specific folder.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

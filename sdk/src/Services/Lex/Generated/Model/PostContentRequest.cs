@@ -37,9 +37,9 @@ namespace Amazon.Lex.Model
     /// 
     ///  
     /// <para>
-    /// The <code>PostContent</code> operation supports audio input at 8kHz and 16kHz. You
-    /// can use 8kHz audio to achieve higher speech recognition accuracy in telephone audio
-    /// applications. 
+    /// The <c>PostContent</c> operation supports audio input at 8kHz and 16kHz. You can use
+    /// 8kHz audio to achieve higher speech recognition accuracy in telephone audio applications.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -49,8 +49,8 @@ namespace Amazon.Lex.Model
     ///  <ul> <li> 
     /// <para>
     ///  For a user input "I would like a pizza," Amazon Lex might return a response with
-    /// a message eliciting slot data (for example, <code>PizzaSize</code>): "What size pizza
-    /// would you like?". 
+    /// a message eliciting slot data (for example, <c>PizzaSize</c>): "What size pizza would
+    /// you like?". 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -66,8 +66,8 @@ namespace Amazon.Lex.Model
     /// <para>
     ///  Not all Amazon Lex messages require a response from the user. For example, conclusion
     /// statements do not require a response. Some messages require only a yes or no response.
-    /// In addition to the <code>message</code>, Amazon Lex provides additional context about
-    /// the message in the response that you can use to enhance client behavior, such as displaying
+    /// In addition to the <c>message</c>, Amazon Lex provides additional context about the
+    /// message in the response that you can use to enhance client behavior, such as displaying
     /// the appropriate client user interface. Consider the following examples: 
     /// </para>
     ///  <ul> <li> 
@@ -77,39 +77,38 @@ namespace Amazon.Lex.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-lex-dialog-state</code> header set to <code>ElicitSlot</code> 
+    ///  <c>x-amz-lex-dialog-state</c> header set to <c>ElicitSlot</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-lex-intent-name</code> header set to the intent name in the current context
+    ///  <c>x-amz-lex-intent-name</c> header set to the intent name in the current context
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-lex-slot-to-elicit</code> header set to the slot name for which the <code>message</code>
+    ///  <c>x-amz-lex-slot-to-elicit</c> header set to the slot name for which the <c>message</c>
     /// is eliciting information 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-lex-slots</code> header set to a map of slots configured for the intent
-    /// with their current values 
+    ///  <c>x-amz-lex-slots</c> header set to a map of slots configured for the intent with
+    /// their current values 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  If the message is a confirmation prompt, the <code>x-amz-lex-dialog-state</code>
-    /// header is set to <code>Confirmation</code> and the <code>x-amz-lex-slot-to-elicit</code>
-    /// header is omitted. 
+    ///  If the message is a confirmation prompt, the <c>x-amz-lex-dialog-state</c> header
+    /// is set to <c>Confirmation</c> and the <c>x-amz-lex-slot-to-elicit</c> header is omitted.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  If the message is a clarification prompt configured for the intent, indicating that
-    /// the user intent is not understood, the <code>x-amz-dialog-state</code> header is set
-    /// to <code>ElicitIntent</code> and the <code>x-amz-slot-to-elicit</code> header is omitted.
-    /// 
+    /// the user intent is not understood, the <c>x-amz-dialog-state</c> header is set to
+    /// <c>ElicitIntent</c> and the <c>x-amz-slot-to-elicit</c> header is omitted. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  In addition, Amazon Lex also returns your application-specific <code>sessionAttributes</code>.
+    ///  In addition, Amazon Lex also returns your application-specific <c>sessionAttributes</c>.
     /// For more information, see <a href="https://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html">Managing
     /// Conversation Context</a>. 
     /// </para>
@@ -129,29 +128,29 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property Accept. 
         /// <para>
-        ///  You pass this value as the <code>Accept</code> HTTP header. 
+        ///  You pass this value as the <c>Accept</c> HTTP header. 
         /// </para>
         ///  
         /// <para>
         ///  The message Amazon Lex returns in the response can be either text or speech based
-        /// on the <code>Accept</code> HTTP header value in the request. 
+        /// on the <c>Accept</c> HTTP header value in the request. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex returns text in
-        /// the response. 
+        ///  If the value is <c>text/plain; charset=utf-8</c>, Amazon Lex returns text in the
+        /// response. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If the value begins with <code>audio/</code>, Amazon Lex returns speech in the response.
+        ///  If the value begins with <c>audio/</c>, Amazon Lex returns speech in the response.
         /// Amazon Lex uses Amazon Polly to generate the speech (using the configuration you specified
-        /// in the <code>Accept</code> header). For example, if you specify <code>audio/mpeg</code>
-        /// as the value, Amazon Lex returns speech in the MPEG format.
+        /// in the <c>Accept</c> header). For example, if you specify <c>audio/mpeg</c> as the
+        /// value, Amazon Lex returns speech in the MPEG format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code>
-        /// in 16-bit, little endian format. 
+        /// If the value is <c>audio/pcm</c>, the speech returned is <c>audio/pcm</c> in 16-bit,
+        /// little endian format. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -257,7 +256,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        ///  You pass this value as the <code>Content-Type</code> HTTP header. 
+        ///  You pass this value as the <c>Content-Type</c> HTTP header. 
         /// </para>
         ///  
         /// <para>
@@ -315,7 +314,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property InputStream. 
         /// <para>
-        ///  User input in PCM or Opus audio format or text format as described in the <code>Content-Type</code>
+        ///  User input in PCM or Opus audio format or text format as described in the <c>Content-Type</c>
         /// HTTP header. 
         /// </para>
         ///  
@@ -341,19 +340,19 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property RequestAttributes. 
         /// <para>
-        /// You pass this value as the <code>x-amz-lex-request-attributes</code> HTTP header.
+        /// You pass this value as the <c>x-amz-lex-request-attributes</c> HTTP header.
         /// </para>
         ///  
         /// <para>
         /// Request-specific information passed between Amazon Lex and a client application. The
         /// value must be a JSON serialized and base64 encoded map with string keys and values.
-        /// The total size of the <code>requestAttributes</code> and <code>sessionAttributes</code>
-        /// headers is limited to 12 KB.
+        /// The total size of the <c>requestAttributes</c> and <c>sessionAttributes</c> headers
+        /// is limited to 12 KB.
         /// </para>
         ///  
         /// <para>
-        /// The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create
-        /// any request attributes with the prefix <code>x-amz-lex:</code>.
+        /// The namespace <c>x-amz-lex:</c> is reserved for special attributes. Don't create any
+        /// request attributes with the prefix <c>x-amz-lex:</c>.
         /// </para>
         ///  
         /// <para>
@@ -377,14 +376,14 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property SessionAttributes. 
         /// <para>
-        /// You pass this value as the <code>x-amz-lex-session-attributes</code> HTTP header.
+        /// You pass this value as the <c>x-amz-lex-session-attributes</c> HTTP header.
         /// </para>
         ///  
         /// <para>
         /// Application-specific information passed between Amazon Lex and a client application.
         /// The value must be a JSON serialized and base64 encoded map with string keys and values.
-        /// The total size of the <code>sessionAttributes</code> and <code>requestAttributes</code>
-        /// headers is limited to 12 KB.
+        /// The total size of the <c>sessionAttributes</c> and <c>requestAttributes</c> headers
+        /// is limited to 12 KB.
         /// </para>
         ///  
         /// <para>
@@ -409,7 +408,7 @@ namespace Amazon.Lex.Model
         /// Gets and sets the property UserId. 
         /// <para>
         /// The ID of the client application user. Amazon Lex uses this to identify a user's conversation
-        /// with your bot. At runtime, each request must contain the <code>userID</code> field.
+        /// with your bot. At runtime, each request must contain the <c>userID</c> field.
         /// </para>
         ///  
         /// <para>
@@ -417,9 +416,9 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>userID</code> field must not contain any personally identifiable information
-        /// of the user, for example, name, personal identification numbers, or other end user
-        /// personal information.
+        /// The <c>userID</c> field must not contain any personally identifiable information of
+        /// the user, for example, name, personal identification numbers, or other end user personal
+        /// information.
         /// </para>
         ///  </li> <li> 
         /// <para>

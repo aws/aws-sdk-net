@@ -37,15 +37,15 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
-    /// to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field
-    /// of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+    /// Setting the <c>allSupported</c> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+    /// to <c>true</c>, but providing a non-empty list for the <c>resourceTypes</c>field of
+    /// <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
-    /// to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
-    /// to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+    /// Setting the <c>allSupported</c> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+    /// to <c>true</c>, but also setting the <c>useOnly</c> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+    /// to <c>EXCLUSION_BY_RESOURCE_TYPES</c>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>

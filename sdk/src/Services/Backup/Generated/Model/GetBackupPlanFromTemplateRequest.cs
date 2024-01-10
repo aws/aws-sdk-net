@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBackupPlanFromTemplate operation.
-    /// Returns the template specified by its <code>templateId</code> as a backup plan.
+    /// Returns the template specified by its <c>templateId</c> as a backup plan.
     /// </summary>
     public partial class GetBackupPlanFromTemplateRequest : AmazonBackupRequest
     {

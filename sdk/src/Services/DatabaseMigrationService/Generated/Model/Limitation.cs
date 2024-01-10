@@ -89,9 +89,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineName. 
         /// <para>
         /// The name of the target engine that Fleet Advisor should use in the target engine recommendation.
-        /// Valid values include <code>"rds-aurora-mysql"</code>, <code>"rds-aurora-postgresql"</code>,
-        /// <code>"rds-mysql"</code>, <code>"rds-oracle"</code>, <code>"rds-sql-server"</code>,
-        /// and <code>"rds-postgresql"</code>.
+        /// Valid values include <c>"rds-aurora-mysql"</c>, <c>"rds-aurora-postgresql"</c>, <c>"rds-mysql"</c>,
+        /// <c>"rds-oracle"</c>, <c>"rds-sql-server"</c>, and <c>"rds-postgresql"</c>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -110,8 +109,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property Impact. 
         /// <para>
         /// The impact of the limitation. You can use this parameter to prioritize limitations
-        /// that you want to address. Valid values include <code>"Blocker"</code>, <code>"High"</code>,
-        /// <code>"Medium"</code>, and <code>"Low"</code>.
+        /// that you want to address. Valid values include <c>"Blocker"</c>, <c>"High"</c>, <c>"Medium"</c>,
+        /// and <c>"Low"</c>.
         /// </para>
         /// </summary>
         public string Impact

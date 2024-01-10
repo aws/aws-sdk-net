@@ -30,9 +30,9 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the StartStreamingSession operation.
-    /// Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code>
-    /// state. The <code>START_IN_PROGRESS</code> state is the intermediate state between
-    /// the <code>STOPPED</code> and <code>READY</code> states.
+    /// Transitions sessions from the <c>STOPPED</c> state into the <c>READY</c> state. The
+    /// <c>START_IN_PROGRESS</c> state is the intermediate state between the <c>STOPPED</c>
+    /// and <c>READY</c> states.
     /// </summary>
     public partial class StartStreamingSessionRequest : AmazonNimbleStudioRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The streaming session ID for the <code>StartStreamingSessionRequest</code>.
+        /// The streaming session ID for the <c>StartStreamingSessionRequest</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

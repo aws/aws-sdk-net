@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
-    /// Represents item interaction event information sent using the <code>PutEvents</code>
-    /// API.
+    /// Represents item interaction event information sent using the <c>PutEvents</c> API.
     /// </summary>
     public partial class Event
     {
@@ -69,7 +68,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event, such as click or download. This property corresponds to the <code>EVENT_TYPE</code>
+        /// The type of event, such as click or download. This property corresponds to the <c>EVENT_TYPE</c>
         /// field of your Item interactions dataset's schema and depends on the types of events
         /// you are tracking.
         /// </para>
@@ -90,8 +89,8 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property EventValue. 
         /// <para>
-        /// The event value that corresponds to the <code>EVENT_VALUE</code> field of the Item
-        /// interactions schema.
+        /// The event value that corresponds to the <c>EVENT_VALUE</c> field of the Item interactions
+        /// schema.
         /// </para>
         /// </summary>
         public float EventValue
@@ -110,9 +109,9 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property Impression. 
         /// <para>
         /// A list of item IDs that represents the sequence of items you have shown the user.
-        /// For example, <code>["itemId1", "itemId2", "itemId3"]</code>. Provide a list of items
-        /// to manually record impressions data for an event. For more information on recording
-        /// impressions data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
+        /// For example, <c>["itemId1", "itemId2", "itemId3"]</c>. Provide a list of items to
+        /// manually record impressions data for an event. For more information on recording impressions
+        /// data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html#putevents-including-impressions-data">Recording
         /// impressions data</a>. 
         /// </para>
         /// </summary>
@@ -132,7 +131,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property ItemId. 
         /// <para>
-        /// The item ID key that corresponds to the <code>ITEM_ID</code> field of the Item interactions
+        /// The item ID key that corresponds to the <c>ITEM_ID</c> field of the Item interactions
         /// dataset's schema.
         /// </para>
         /// </summary>
@@ -173,9 +172,9 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property Properties. 
         /// <para>
         /// A string map of event-specific data that you might choose to record. For example,
-        /// if a user rates a movie on your site, other than movie ID (<code>itemId</code>) and
-        /// rating (<code>eventValue</code>) , you might also send the number of movie ratings
-        /// made by the user.
+        /// if a user rates a movie on your site, other than movie ID (<c>itemId</c>) and rating
+        /// (<c>eventValue</c>) , you might also send the number of movie ratings made by the
+        /// user.
         /// </para>
         ///  
         /// <para>
@@ -183,12 +182,12 @@ namespace Amazon.PersonalizeEvents.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"numberOfRatings": "12"}</code> 
+        ///  <c>{"numberOfRatings": "12"}</c> 
         /// </para>
         ///  
         /// <para>
         /// The keys use camel case names that match the fields in the Item interactions dataset's
-        /// schema. In the above example, the <code>numberOfRatings</code> would match the 'NUMBER_OF_RATINGS'
+        /// schema. In the above example, the <c>numberOfRatings</c> would match the 'NUMBER_OF_RATINGS'
         /// field defined in the Item interactions dataset's schema.
         /// </para>
         ///  
@@ -238,8 +237,8 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property RecommendationId. 
         /// <para>
         /// The ID of the list of recommendations that contains the item the user interacted with.
-        /// Provide a <code>recommendationId</code> to have Amazon Personalize implicitly record
-        /// the recommendations you show your user as impressions data. Or provide a <code>recommendationId</code>
+        /// Provide a <c>recommendationId</c> to have Amazon Personalize implicitly record the
+        /// recommendations you show your user as impressions data. Or provide a <c>recommendationId</c>
         /// if you use a metric attribution to measure the impact of recommendations. 
         /// </para>
         ///  

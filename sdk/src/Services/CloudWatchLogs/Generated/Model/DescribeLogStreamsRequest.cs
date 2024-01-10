@@ -35,9 +35,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-    /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-    /// can't include both. 
+    /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+    /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+    /// include both. 
     /// </para>
     ///  
     /// <para>
@@ -124,8 +124,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
-        /// but not both. 
+        ///  You must include either <c>logGroupIdentifier</c> or <c>logGroupName</c>, but not
+        /// both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -149,8 +149,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
-        /// but not both. 
+        ///  You must include either <c>logGroupIdentifier</c> or <c>logGroupName</c>, but not
+        /// both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -174,7 +174,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>orderBy</code> is <code>LastEventTime</code>, you cannot specify this parameter.
+        /// If <c>orderBy</c> is <c>LastEventTime</c>, you cannot specify this parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -213,22 +213,22 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property OrderBy. 
         /// <para>
-        /// If the value is <code>LogStreamName</code>, the results are ordered by log stream
-        /// name. If the value is <code>LastEventTime</code>, the results are ordered by the event
-        /// time. The default value is <code>LogStreamName</code>.
+        /// If the value is <c>LogStreamName</c>, the results are ordered by log stream name.
+        /// If the value is <c>LastEventTime</c>, the results are ordered by the event time. The
+        /// default value is <c>LogStreamName</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you order the results by event time, you cannot specify the <code>logStreamNamePrefix</code>
+        /// If you order the results by event time, you cannot specify the <c>logStreamNamePrefix</c>
         /// parameter.
         /// </para>
         ///  
         /// <para>
-        ///  <code>lastEventTimestamp</code> represents the time of the most recent log event
-        /// in the log stream in CloudWatch Logs. This number is expressed as the number of milliseconds
-        /// after <code>Jan 1, 1970 00:00:00 UTC</code>. <code>lastEventTimestamp</code> updates
-        /// on an eventual consistency basis. It typically updates in less than an hour from ingestion,
-        /// but in rare situations might take longer.
+        ///  <c>lastEventTimestamp</c> represents the time of the most recent log event in the
+        /// log stream in CloudWatch Logs. This number is expressed as the number of milliseconds
+        /// after <c>Jan 1, 1970 00:00:00 UTC</c>. <c>lastEventTimestamp</c> updates on an eventual
+        /// consistency basis. It typically updates in less than an hour from ingestion, but in
+        /// rare situations might take longer.
         /// </para>
         /// </summary>
         public OrderBy OrderBy

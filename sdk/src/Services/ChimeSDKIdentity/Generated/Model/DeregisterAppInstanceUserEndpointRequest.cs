@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the DeregisterAppInstanceUserEndpoint operation.
-    /// Deregisters an <code>AppInstanceUserEndpoint</code>.
+    /// Deregisters an <c>AppInstanceUserEndpoint</c>.
     /// </summary>
     public partial class DeregisterAppInstanceUserEndpointRequest : AmazonChimeSDKIdentityRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+        /// The unique identifier of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=64)]

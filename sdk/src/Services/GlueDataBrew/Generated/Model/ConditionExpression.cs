@@ -39,8 +39,8 @@ namespace Amazon.GlueDataBrew.Model
     ///  
     /// <para>
     /// If a recipe requires more than one condition, then the recipe must specify multiple
-    /// <code>ConditionExpression</code> elements. Each condition is applied to the rows in
-    /// a dataset first, before the recipe action is performed.
+    /// <c>ConditionExpression</c> elements. Each condition is applied to the rows in a dataset
+    /// first, before the recipe action is performed.
     /// </para>
     /// </summary>
     public partial class ConditionExpression

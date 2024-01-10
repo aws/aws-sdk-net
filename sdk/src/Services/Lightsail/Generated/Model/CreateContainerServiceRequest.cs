@@ -83,15 +83,15 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// The power specifies the amount of memory, vCPUs, and base monthly cost of each node
-        /// of the container service. The <code>power</code> and <code>scale</code> of a container
-        /// service makes up its configured capacity. To determine the monthly price of your container
-        /// service, multiply the base price of the <code>power</code> with the <code>scale</code>
-        /// (the number of nodes) of the service.
+        /// of the container service. The <c>power</c> and <c>scale</c> of a container service
+        /// makes up its configured capacity. To determine the monthly price of your container
+        /// service, multiply the base price of the <c>power</c> with the <c>scale</c> (the number
+        /// of nodes) of the service.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetContainerServicePowers</code> action to get a list of power options
-        /// that you can specify using this parameter, and their base monthly cost.
+        /// Use the <c>GetContainerServicePowers</c> action to get a list of power options that
+        /// you can specify using this parameter, and their base monthly cost.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -136,8 +136,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PublicDomainNames. 
         /// <para>
-        /// The public domain names to use with the container service, such as <code>example.com</code>
-        /// and <code>www.example.com</code>.
+        /// The public domain names to use with the container service, such as <c>example.com</c>
+        /// and <c>www.example.com</c>.
         /// </para>
         ///  
         /// <para>
@@ -153,9 +153,8 @@ namespace Amazon.Lightsail.Model
         ///  <important> 
         /// <para>
         /// You must create and validate an SSL/TLS certificate before you can use public domain
-        /// names with your container service. Use the <code>CreateCertificate</code> action to
-        /// create a certificate for the public domain names you want to use with your container
-        /// service.
+        /// names with your container service. Use the <c>CreateCertificate</c> action to create
+        /// a certificate for the public domain names you want to use with your container service.
         /// </para>
         ///  </important> 
         /// <para>
@@ -182,10 +181,10 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The scale specifies the allocated compute nodes of the container service. The <code>power</code>
-        /// and <code>scale</code> of a container service makes up its configured capacity. To
-        /// determine the monthly price of your container service, multiply the base price of
-        /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.
+        /// The scale specifies the allocated compute nodes of the container service. The <c>power</c>
+        /// and <c>scale</c> of a container service makes up its configured capacity. To determine
+        /// the monthly price of your container service, multiply the base price of the <c>power</c>
+        /// with the <c>scale</c> (the number of nodes) of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -209,10 +208,10 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// The name that you specify for your container service will make up part of its default
-        /// domain. The default domain of a container service is typically <code>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</code>.
-        /// If the name of your container service is <code>container-service-1</code>, and it's
-        /// located in the US East (Ohio) Amazon Web Services Region (<code>us-east-2</code>),
-        /// then the domain for your container service will be like the following example: <code>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</code>
+        /// domain. The default domain of a container service is typically <c>https://&lt;ServiceName&gt;.&lt;RandomGUID&gt;.&lt;AWSRegion&gt;.cs.amazonlightsail.com</c>.
+        /// If the name of your container service is <c>container-service-1</c>, and it's located
+        /// in the US East (Ohio) Amazon Web Services Region (<c>us-east-2</c>), then the domain
+        /// for your container service will be like the following example: <c>https://container-service-1.ur4EXAMPLE2uq.us-east-2.cs.amazonlightsail.com</c>
         /// 
         /// </para>
         ///  
@@ -257,7 +256,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
         ///  
         /// <para>

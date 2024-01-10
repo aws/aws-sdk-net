@@ -43,8 +43,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property AlignedEndTime. 
         /// <para>
         /// The end time for the returned dimension keys, after alignment to a granular boundary
-        /// (as specified by <code>PeriodInSeconds</code>). <code>AlignedEndTime</code> will be
-        /// greater than or equal to the value of the user-specified <code>Endtime</code>. 
+        /// (as specified by <c>PeriodInSeconds</c>). <c>AlignedEndTime</c> will be greater than
+        /// or equal to the value of the user-specified <c>Endtime</c>. 
         /// </para>
         /// </summary>
         public DateTime AlignedEndTime
@@ -63,8 +63,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property AlignedStartTime. 
         /// <para>
         /// The start time for the returned dimension keys, after alignment to a granular boundary
-        /// (as specified by <code>PeriodInSeconds</code>). <code>AlignedStartTime</code> will
-        /// be less than or equal to the value of the user-specified <code>StartTime</code>. 
+        /// (as specified by <c>PeriodInSeconds</c>). <c>AlignedStartTime</c> will be less than
+        /// or equal to the value of the user-specified <c>StartTime</c>. 
         /// </para>
         /// </summary>
         public DateTime AlignedStartTime
@@ -101,9 +101,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token that indicates the response didn’t return all available records
-        /// because <code>MaxRecords</code> was specified in the previous request. To get the
-        /// remaining records, specify <code>NextToken</code> in a separate request with this
-        /// value. 
+        /// because <c>MaxRecords</c> was specified in the previous request. To get the remaining
+        /// records, specify <c>NextToken</c> in a separate request with this value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -122,8 +121,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property PartitionKeys. 
         /// <para>
-        /// If <code>PartitionBy</code> was present in the request, <code>PartitionKeys</code>
-        /// contains the breakdown of dimension keys by the specified partitions. 
+        /// If <c>PartitionBy</c> was present in the request, <c>PartitionKeys</c> contains the
+        /// breakdown of dimension keys by the specified partitions. 
         /// </para>
         /// </summary>
         public List<ResponsePartitionKey> PartitionKeys

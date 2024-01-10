@@ -188,8 +188,8 @@ namespace Amazon.IoT.Model
         ///  <note> 
         /// <para>
         /// To avoid unintentional changes to the information in the registry, you can pass the
-        /// version information in the <code>expectedVersion</code> parameter of the <code>UpdateThing</code>
-        /// and <code>DeleteThing</code> calls.
+        /// version information in the <c>expectedVersion</c> parameter of the <c>UpdateThing</c>
+        /// and <c>DeleteThing</c> calls.
         /// </para>
         ///  </note>
         /// </summary>

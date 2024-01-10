@@ -65,14 +65,14 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property DisableScaleIn. 
         /// <para>
         /// Indicates whether scale in by the target tracking scaling policy is disabled. If the
-        /// value is <code>true</code>, scale in is disabled and the target tracking scaling policy
+        /// value is <c>true</c>, scale in is disabled and the target tracking scaling policy
         /// doesn't remove capacity from the scalable resource. Otherwise, scale in is enabled
         /// and the target tracking scaling policy can remove capacity from the scalable resource.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code>.
+        /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool DisableScaleIn

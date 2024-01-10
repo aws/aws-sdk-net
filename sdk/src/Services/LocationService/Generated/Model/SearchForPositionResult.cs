@@ -85,13 +85,13 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PlaceId. 
         /// <para>
-        /// The unique identifier of the place. You can use this with the <code>GetPlace</code>
-        /// operation to find the place again later.
+        /// The unique identifier of the place. You can use this with the <c>GetPlace</c> operation
+        /// to find the place again later.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For <code>SearchPlaceIndexForPosition</code> operations, the <code>PlaceId</code>
-        /// is returned only by place indexes that use HERE or Grab as a data provider.
+        /// For <c>SearchPlaceIndexForPosition</c> operations, the <c>PlaceId</c> is returned
+        /// only by place indexes that use HERE or Grab as a data provider.
         /// </para>
         ///  </note>
         /// </summary>

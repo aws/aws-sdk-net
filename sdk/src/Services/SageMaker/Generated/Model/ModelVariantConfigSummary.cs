@@ -83,28 +83,28 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Creating</code> - Amazon SageMaker is preparing the model variant on the hosted
-        /// inference endpoint. 
+        ///  <c>Creating</c> - Amazon SageMaker is preparing the model variant on the hosted inference
+        /// endpoint. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InService</code> - The model variant is running on the hosted inference endpoint.
+        ///  <c>InService</c> - The model variant is running on the hosted inference endpoint.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code> - Amazon SageMaker is updating the model variant on the hosted
-        /// inference endpoint. 
+        ///  <c>Updating</c> - Amazon SageMaker is updating the model variant on the hosted inference
+        /// endpoint. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code> - Amazon SageMaker is deleting the model variant on the hosted
-        /// inference endpoint. 
+        ///  <c>Deleting</c> - Amazon SageMaker is deleting the model variant on the hosted inference
+        /// endpoint. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleted</code> - The model variant has been deleted on the hosted inference
-        /// endpoint. This can only happen after stopping the experiment. 
+        ///  <c>Deleted</c> - The model variant has been deleted on the hosted inference endpoint.
+        /// This can only happen after stopping the experiment. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

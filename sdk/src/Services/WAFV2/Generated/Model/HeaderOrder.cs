@@ -32,7 +32,7 @@ namespace Amazon.WAFV2.Model
     /// Inspect a string containing the list of the request's header names, ordered as they
     /// appear in the web request that WAF receives for inspection. WAF generates the string
     /// and then uses that as the field to match component in its inspection. WAF separates
-    /// the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
+    /// the header names in the string using colons and no added spaces, for example <c>host:user-agent:accept:authorization:referer</c>.
     /// </summary>
     public partial class HeaderOrder
     {
@@ -52,17 +52,17 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Inspect the available headers normally, according to the
-        /// rule inspection criteria. 
+        ///  <c>CONTINUE</c> - Inspect the available headers normally, according to the rule inspection
+        /// criteria. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        ///  <c>MATCH</c> - Treat the web request as matching the rule statement. WAF applies
         /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
+        ///  <c>NO_MATCH</c> - Treat the web request as not matching the rule statement.
         /// </para>
         ///  </li> </ul>
         /// </summary>

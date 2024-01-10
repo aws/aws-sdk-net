@@ -46,22 +46,22 @@ namespace Amazon.AWSHealth.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// When you call the <code>DescribeEventDetailsForOrganization</code> operation, specify
-    /// the <code>organizationEventDetailFilters</code> object in the request. Depending on
-    /// the Health event type, note the following differences:
+    /// When you call the <c>DescribeEventDetailsForOrganization</c> operation, specify the
+    /// <c>organizationEventDetailFilters</c> object in the request. Depending on the Health
+    /// event type, note the following differences:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// To return event details for a public event, you must specify a null value for the
-    /// <code>awsAccountId</code> parameter. If you specify an account ID for a public event,
-    /// Health returns an error message because public events aren't specific to an account.
+    /// <c>awsAccountId</c> parameter. If you specify an account ID for a public event, Health
+    /// returns an error message because public events aren't specific to an account.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To return event details for an event that is specific to an account in your organization,
-    /// you must specify the <code>awsAccountId</code> parameter in the request. If you don't
-    /// specify an account ID, Health returns an error message because the event is specific
-    /// to an account in your organization. 
+    /// you must specify the <c>awsAccountId</c> parameter in the request. If you don't specify
+    /// an account ID, Health returns an error message because the event is specific to an
+    /// account in your organization. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -103,7 +103,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property OrganizationEventDetailFilters. 
         /// <para>
-        /// A set of JSON elements that includes the <code>awsAccountId</code> and the <code>eventArn</code>.
+        /// A set of JSON elements that includes the <c>awsAccountId</c> and the <c>eventArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

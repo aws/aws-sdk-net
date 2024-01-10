@@ -88,7 +88,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The analytics metadata for collecting Amazon Pinpoint metrics for <code>AdminInitiateAuth</code>
+        /// The analytics metadata for collecting Amazon Pinpoint metrics for <c>AdminInitiateAuth</c>
         /// calls.
         /// </para>
         /// </summary>
@@ -112,18 +112,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REFRESH_TOKEN_AUTH</code> will take in a valid refresh token and return new
-        /// tokens.
+        ///  <c>REFRESH_TOKEN_AUTH</c> will take in a valid refresh token and return new tokens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USER_SRP_AUTH</code> will take in <code>USERNAME</code> and <code>SRP_A</code>
-        /// and return the Secure Remote Password (SRP) protocol variables to be used for next
-        /// challenge execution.
+        ///  <c>USER_SRP_AUTH</c> will take in <c>USERNAME</c> and <c>SRP_A</c> and return the
+        /// Secure Remote Password (SRP) protocol variables to be used for next challenge execution.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN_USER_PASSWORD_AUTH</code> will take in <code>USERNAME</code> and <code>PASSWORD</code>
+        ///  <c>ADMIN_USER_PASSWORD_AUTH</c> will take in <c>USERNAME</c> and <c>PASSWORD</c>
         /// and return the next challenge or tokens.
         /// </para>
         ///  </li> </ul> 
@@ -132,29 +130,27 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>USER_SRP_AUTH</code>: Authentication flow for the Secure Remote Password (SRP)
-        /// protocol.
+        ///  <c>USER_SRP_AUTH</c>: Authentication flow for the Secure Remote Password (SRP) protocol.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REFRESH_TOKEN_AUTH</code>/<code>REFRESH_TOKEN</code>: Authentication flow for
-        /// refreshing the access token and ID token by supplying a valid refresh token.
+        ///  <c>REFRESH_TOKEN_AUTH</c>/<c>REFRESH_TOKEN</c>: Authentication flow for refreshing
+        /// the access token and ID token by supplying a valid refresh token.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CUSTOM_AUTH</code>: Custom authentication flow.
+        ///  <c>CUSTOM_AUTH</c>: Custom authentication flow.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN_NO_SRP_AUTH</code>: Non-SRP authentication flow; you can pass in the
-        /// USERNAME and PASSWORD directly if the flow is enabled for calling the app client.
+        ///  <c>ADMIN_NO_SRP_AUTH</c>: Non-SRP authentication flow; you can pass in the USERNAME
+        /// and PASSWORD directly if the flow is enabled for calling the app client.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN_USER_PASSWORD_AUTH</code>: Admin-based user password authentication.
-        /// This replaces the <code>ADMIN_NO_SRP_AUTH</code> authentication flow. In this flow,
-        /// Amazon Cognito receives the password in the request instead of using the SRP process
-        /// to verify passwords.
+        ///  <c>ADMIN_USER_PASSWORD_AUTH</c>: Admin-based user password authentication. This replaces
+        /// the <c>ADMIN_NO_SRP_AUTH</c> authentication flow. In this flow, Amazon Cognito receives
+        /// the password in the request instead of using the SRP process to verify passwords.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -174,38 +170,36 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AuthParameters. 
         /// <para>
-        /// The authentication parameters. These are inputs corresponding to the <code>AuthFlow</code>
-        /// that you're invoking. The required values depend on the value of <code>AuthFlow</code>:
+        /// The authentication parameters. These are inputs corresponding to the <c>AuthFlow</c>
+        /// that you're invoking. The required values depend on the value of <c>AuthFlow</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>USER_SRP_AUTH</code>: <code>USERNAME</code> (required), <code>SRP_A</code>
-        /// (required), <code>SECRET_HASH</code> (required if the app client is configured with
-        /// a client secret), <code>DEVICE_KEY</code>.
+        /// For <c>USER_SRP_AUTH</c>: <c>USERNAME</c> (required), <c>SRP_A</c> (required), <c>SECRET_HASH</c>
+        /// (required if the app client is configured with a client secret), <c>DEVICE_KEY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>ADMIN_USER_PASSWORD_AUTH</code>: <code>USERNAME</code> (required), <code>PASSWORD</code>
-        /// (required), <code>SECRET_HASH</code> (required if the app client is configured with
-        /// a client secret), <code>DEVICE_KEY</code>.
+        /// For <c>ADMIN_USER_PASSWORD_AUTH</c>: <c>USERNAME</c> (required), <c>PASSWORD</c> (required),
+        /// <c>SECRET_HASH</c> (required if the app client is configured with a client secret),
+        /// <c>DEVICE_KEY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</code>: <code>REFRESH_TOKEN</code> (required),
-        /// <code>SECRET_HASH</code> (required if the app client is configured with a client secret),
-        /// <code>DEVICE_KEY</code>.
+        /// For <c>REFRESH_TOKEN_AUTH/REFRESH_TOKEN</c>: <c>REFRESH_TOKEN</c> (required), <c>SECRET_HASH</c>
+        /// (required if the app client is configured with a client secret), <c>DEVICE_KEY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>CUSTOM_AUTH</code>: <code>USERNAME</code> (required), <code>SECRET_HASH</code>
-        /// (if app client is configured with client secret), <code>DEVICE_KEY</code>. To start
-        /// the authentication flow with password verification, include <code>ChallengeName: SRP_A</code>
-        /// and <code>SRP_A: (The SRP_A Value)</code>.
+        /// For <c>CUSTOM_AUTH</c>: <c>USERNAME</c> (required), <c>SECRET_HASH</c> (if app client
+        /// is configured with client secret), <c>DEVICE_KEY</c>. To start the authentication
+        /// flow with password verification, include <c>ChallengeName: SRP_A</c> and <c>SRP_A:
+        /// (The SRP_A Value)</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more information about <code>SECRET_HASH</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
-        /// secret hash values</a>. For information about <code>DEVICE_KEY</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
+        /// For more information about <c>SECRET_HASH</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+        /// secret hash values</a>. For information about <c>DEVICE_KEY</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-device-tracking.html">Working
         /// with user devices in your user pool</a>.
         /// </para>
         /// </summary>
@@ -269,10 +263,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  </li> </ul> 
         /// <para>
         /// When Amazon Cognito invokes the functions for these triggers, it passes a JSON payload,
-        /// which the function receives as input. This payload contains a <code>validationData</code>
+        /// which the function receives as input. This payload contains a <c>validationData</c>
         /// attribute, which provides the data that you assigned to the ClientMetadata parameter
         /// in your AdminInitiateAuth request. In your function code in Lambda, you can process
-        /// the <code>validationData</code> value to enhance your workflow for your specific needs.
+        /// the <c>validationData</c> value to enhance your workflow for your specific needs.
         /// </para>
         ///  
         /// <para>

@@ -30,10 +30,9 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Sets the start date and end date for retrieving a cost estimate. The start date is
-    /// inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-    /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
-    /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
-    /// <code>2017-05-01</code>.
+    /// inclusive, but the end date is exclusive. For example, if <c>start</c> is <c>2017-01-01</c>
+    /// and <c>end</c> is <c>2017-05-01</c>, then the cost and usage data is retrieved from
+    /// <c>2017-01-01</c> up to and including <c>2017-04-30</c> but not including <c>2017-05-01</c>.
     /// </summary>
     public partial class TimePeriod
     {
@@ -43,9 +42,9 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property End. 
         /// <para>
-        /// The end of the time period. The end date is exclusive. For example, if <code>end</code>
-        /// is <code>2017-05-01</code>, Lightsail for Research retrieves cost and usage data from
-        /// the start date up to, but not including, <code>2017-05-01</code>.
+        /// The end of the time period. The end date is exclusive. For example, if <c>end</c>
+        /// is <c>2017-05-01</c>, Lightsail for Research retrieves cost and usage data from the
+        /// start date up to, but not including, <c>2017-05-01</c>.
         /// </para>
         /// </summary>
         public DateTime End
@@ -63,10 +62,10 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Start. 
         /// <para>
-        /// The beginning of the time period. The start date is inclusive. For example, if <code>start</code>
-        /// is <code>2017-01-01</code>, Lightsail for Research retrieves cost and usage data starting
-        /// at <code>2017-01-01</code> up to the end date. The start date must be equal to or
-        /// no later than the current date to avoid a validation error.
+        /// The beginning of the time period. The start date is inclusive. For example, if <c>start</c>
+        /// is <c>2017-01-01</c>, Lightsail for Research retrieves cost and usage data starting
+        /// at <c>2017-01-01</c> up to the end date. The start date must be equal to or no later
+        /// than the current date to avoid a validation error.
         /// </para>
         /// </summary>
         public DateTime Start

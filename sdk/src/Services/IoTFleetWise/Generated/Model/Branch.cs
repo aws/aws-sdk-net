@@ -99,7 +99,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property FullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the branch. For example, the fully qualified name of a
-        /// branch might be <code>Vehicle.Body.Engine</code>.
+        /// branch might be <c>Vehicle.Body.Engine</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// A <code>ReplayDestination</code> object that contains details about a replay.
+    /// A <c>ReplayDestination</c> object that contains details about a replay.
     /// </summary>
     public partial class ReplayDestination
     {

@@ -66,7 +66,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Audience. 
         /// <para>
-        ///  The value of the <code>Recipient</code> attribute of the <code>SubjectConfirmationData</code>
+        ///  The value of the <c>Recipient</c> attribute of the <c>SubjectConfirmationData</c>
         /// element of the SAML assertion. 
         /// </para>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Issuer. 
         /// <para>
-        /// The value of the <code>Issuer</code> element of the SAML assertion.
+        /// The value of the <c>Issuer</c> element of the SAML assertion.
         /// </para>
         /// </summary>
         public string Issuer
@@ -132,7 +132,7 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>Issuer</code> response value.
+        /// The <c>Issuer</c> response value.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,8 +144,8 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The combination of <code>NameQualifier</code> and <code>Subject</code> can be used
-        /// to uniquely identify a user.
+        /// The combination of <c>NameQualifier</c> and <c>Subject</c> can be used to uniquely
+        /// identify a user.
         /// </para>
         ///  
         /// <para>
@@ -153,8 +153,8 @@ namespace Amazon.SecurityToken.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP"
-        /// ) )</code> 
+        ///  <c>BASE64 ( SHA1 ( "https://example.com/saml" + "123456789012" + "/MySAMLIdP" ) )</c>
+        /// 
         /// </para>
         /// </summary>
         public string NameQualifier
@@ -193,18 +193,18 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property SourceIdentity. 
         /// <para>
-        /// The value in the <code>SourceIdentity</code> attribute in the SAML assertion. 
+        /// The value in the <c>SourceIdentity</c> attribute in the SAML assertion. 
         /// </para>
         ///  
         /// <para>
         /// You can require users to set a source identity value when they assume a role. You
-        /// do this by using the <code>sts:SourceIdentity</code> condition key in a role trust
-        /// policy. That way, actions that are taken with the role are associated with that user.
-        /// After the source identity is set, the value cannot be changed. It is present in the
-        /// request for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
+        /// do this by using the <c>sts:SourceIdentity</c> condition key in a role trust policy.
+        /// That way, actions that are taken with the role are associated with that user. After
+        /// the source identity is set, the value cannot be changed. It is present in the request
+        /// for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
         /// role</a> sessions. You can configure your SAML identity provider to use an attribute
         /// associated with your users, like user name or email, as the source identity when calling
-        /// <code>AssumeRoleWithSAML</code>. You do this by adding an attribute to the SAML assertion.
+        /// <c>AssumeRoleWithSAML</c>. You do this by adding an attribute to the SAML assertion.
         /// For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
         /// and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
         /// </para>
@@ -231,8 +231,7 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The value of the <code>NameID</code> element in the <code>Subject</code> element of
-        /// the SAML assertion.
+        /// The value of the <c>NameID</c> element in the <c>Subject</c> element of the SAML assertion.
         /// </para>
         /// </summary>
         public string Subject
@@ -250,16 +249,16 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property SubjectType. 
         /// <para>
-        ///  The format of the name ID, as defined by the <code>Format</code> attribute in the
-        /// <code>NameID</code> element of the SAML assertion. Typical examples of the format
-        /// are <code>transient</code> or <code>persistent</code>. 
+        ///  The format of the name ID, as defined by the <c>Format</c> attribute in the <c>NameID</c>
+        /// element of the SAML assertion. Typical examples of the format are <c>transient</c>
+        /// or <c>persistent</c>. 
         /// </para>
         ///  
         /// <para>
-        ///  If the format includes the prefix <code>urn:oasis:names:tc:SAML:2.0:nameid-format</code>,
-        /// that prefix is removed. For example, <code>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</code>
-        /// is returned as <code>transient</code>. If the format includes any other prefix, the
-        /// format is returned with no modifications.
+        ///  If the format includes the prefix <c>urn:oasis:names:tc:SAML:2.0:nameid-format</c>,
+        /// that prefix is removed. For example, <c>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</c>
+        /// is returned as <c>transient</c>. If the format includes any other prefix, the format
+        /// is returned with no modifications.
         /// </para>
         /// </summary>
         public string SubjectType

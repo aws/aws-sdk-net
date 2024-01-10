@@ -62,14 +62,14 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>,
-        /// <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.
+        /// A <i>tag key</i> (for example, <c>CostCenter</c>, <c>Environment</c>, <c>Project</c>,
+        /// or <c>Secret</c>). Tag keys are case sensitive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
-        /// <code>Production</code>, or a team name). Omitting the tag value is the same as using
-        /// an empty string. Like tag keys, tag values are case sensitive.
+        /// An optional field known as a <i>tag value</i> (for example, <c>111122223333</c>, <c>Production</c>,
+        /// or a team name). Omitting the tag value is the same as using an empty string. Like
+        /// tag keys, tag values are case sensitive.
         /// </para>
         ///  </li> </ul>
         /// </summary>

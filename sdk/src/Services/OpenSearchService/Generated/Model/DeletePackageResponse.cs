@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response parameters to the <code>DeletePackage</code> operation.
+    /// Container for the response parameters to the <c>DeletePackage</c> operation.
     /// </summary>
     public partial class DeletePackageResponse : AmazonWebServiceResponse
     {

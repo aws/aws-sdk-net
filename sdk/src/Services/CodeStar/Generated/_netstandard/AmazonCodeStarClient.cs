@@ -53,35 +53,35 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DeleteProject</code>, which deletes a project.
+    ///  <c>DeleteProject</c>, which deletes a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeProject</code>, which lists the attributes of a project.
+    ///  <c>DescribeProject</c>, which lists the attributes of a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListProjects</code>, which lists all projects associated with your AWS account.
+    ///  <c>ListProjects</c>, which lists all projects associated with your AWS account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListResources</code>, which lists the resources associated with a project.
+    ///  <c>ListResources</c>, which lists the resources associated with a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListTagsForProject</code>, which lists the tags associated with a project.
+    ///  <c>ListTagsForProject</c>, which lists the tags associated with a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TagProject</code>, which adds tags to a project.
+    ///  <c>TagProject</c>, which adds tags to a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UntagProject</code>, which removes tags from a project.
+    ///  <c>UntagProject</c>, which removes tags from a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateProject</code>, which updates the attributes of a project.
+    ///  <c>UpdateProject</c>, which updates the attributes of a project.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -89,21 +89,20 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AssociateTeamMember</code>, which adds an IAM user to the team for a project.
+    ///  <c>AssociateTeamMember</c>, which adds an IAM user to the team for a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DisassociateTeamMember</code>, which removes an IAM user from the team for
-    /// a project.
+    ///  <c>DisassociateTeamMember</c>, which removes an IAM user from the team for a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListTeamMembers</code>, which lists all the IAM users in the team for a project,
+    ///  <c>ListTeamMembers</c>, which lists all the IAM users in the team for a project,
     /// including their roles and attributes.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateTeamMember</code>, which updates a team member's attributes in a project.
+    ///  <c>UpdateTeamMember</c>, which updates a team member's attributes in a project.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -111,25 +110,24 @@ namespace Amazon.CodeStar
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CreateUserProfile</code>, which creates a user profile that contains data associated
+    ///  <c>CreateUserProfile</c>, which creates a user profile that contains data associated
     /// with the user across all projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteUserProfile</code>, which deletes all user profile information across
-    /// all projects.
+    ///  <c>DeleteUserProfile</c>, which deletes all user profile information across all projects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeUserProfile</code>, which describes the profile of a user.
+    ///  <c>DescribeUserProfile</c>, which describes the profile of a user.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListUserProfiles</code>, which lists all user profiles.
+    ///  <c>ListUserProfiles</c>, which lists all user profiles.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateUserProfile</code>, which updates the profile for a user.
+    ///  <c>UpdateUserProfile</c>, which updates the profile for a user.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -90,8 +90,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-        /// used to sign certificates when they are issued.
+        /// This parameter should not be confused with the <c>SigningAlgorithm</c> parameter used
+        /// to sign certificates when they are issued.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,9 +38,8 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
-    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
-    /// as the value in the header.
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the ARN of the <c>AppInstanceUser</c>
+    /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -101,8 +100,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
-        /// the API call.
+        /// The ARN of the <c>AppInstanceUser</c> or <c>AppInstanceBot</c> that makes the API
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -121,7 +120,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The client token for the request. An <code>Idempotency</code> token.
+        /// The client token for the request. An <c>Idempotency</c> token.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=64)]
@@ -215,9 +214,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.
+        /// The channel mode: <c>UNRESTRICTED</c> or <c>RESTRICTED</c>. Administrators, moderators,
+        /// and channel members can add themselves and other members to unrestricted channels.
+        /// Only administrators and moderators can add members to restricted channels.
         /// </para>
         /// </summary>
         public ChannelMode Mode
@@ -273,9 +272,9 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Privacy. 
         /// <para>
-        /// The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.
+        /// The channel's privacy level: <c>PUBLIC</c> or <c>PRIVATE</c>. Private channels aren't
+        /// discoverable by users outside the channel. Public channels are discoverable by anyone
+        /// in the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         public ChannelPrivacy Privacy

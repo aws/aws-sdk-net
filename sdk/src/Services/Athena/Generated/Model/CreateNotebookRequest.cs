@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateNotebook operation.
-    /// Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup.
+    /// Creates an empty <c>ipynb</c> file in the specified Apache Spark enabled workgroup.
     /// Throws an error if a file in the workgroup with the same name already exists.
     /// </summary>
     public partial class CreateNotebookRequest : AmazonAthenaRequest
@@ -70,8 +70,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>ipynb</code> file to be created in the Spark workgroup, without
-        /// the <code>.ipynb</code> extension.
+        /// The name of the <c>ipynb</c> file to be created in the Spark workgroup, without the
+        /// <c>.ipynb</c> extension.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

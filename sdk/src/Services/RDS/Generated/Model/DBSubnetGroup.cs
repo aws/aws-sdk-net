@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBSubnetGroups</code>
+    /// This data type is used as a response element in the <c>DescribeDBSubnetGroups</c>
     /// action.
     /// </para>
     /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Subnets. 
         /// <para>
-        /// Contains a list of <code>Subnet</code> elements.
+        /// Contains a list of <c>Subnet</c> elements.
         /// </para>
         /// </summary>
         public List<Subnet> Subnets
@@ -148,16 +148,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IPV4</code> 
+        ///  <c>IPV4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DUAL</code> 
+        ///  <c>DUAL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4 and the
-        /// IPv6 protocols (<code>DUAL</code>).
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>

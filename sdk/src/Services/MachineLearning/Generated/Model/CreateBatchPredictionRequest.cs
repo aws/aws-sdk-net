@@ -31,22 +31,22 @@ namespace Amazon.MachineLearning.Model
     /// <summary>
     /// Container for the parameters to the CreateBatchPrediction operation.
     /// Generates predictions for a group of observations. The observations to process exist
-    /// in one or more data files referenced by a <code>DataSource</code>. This operation
-    /// creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the
-    /// data files referenced by the <code>DataSource</code> as information sources. 
+    /// in one or more data files referenced by a <c>DataSource</c>. This operation creates
+    /// a new <c>BatchPrediction</c>, and uses an <c>MLModel</c> and the data files referenced
+    /// by the <c>DataSource</c> as information sources. 
     /// 
     ///  
     /// <para>
-    ///  <code>CreateBatchPrediction</code> is an asynchronous operation. In response to <code>CreateBatchPrediction</code>,
-    /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <code>BatchPrediction</code>
-    /// status to <code>PENDING</code>. After the <code>BatchPrediction</code> completes,
-    /// Amazon ML sets the status to <code>COMPLETED</code>. 
+    ///  <c>CreateBatchPrediction</c> is an asynchronous operation. In response to <c>CreateBatchPrediction</c>,
+    /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <c>BatchPrediction</c>
+    /// status to <c>PENDING</c>. After the <c>BatchPrediction</c> completes, Amazon ML sets
+    /// the status to <c>COMPLETED</c>. 
     /// </para>
     ///  
     /// <para>
     /// You can poll for status updates by using the <a>GetBatchPrediction</a> operation and
-    /// checking the <code>Status</code> parameter of the result. After the <code>COMPLETED</code>
-    /// status appears, the results are available in the location specified by the <code>OutputUri</code>
+    /// checking the <c>Status</c> parameter of the result. After the <c>COMPLETED</c> status
+    /// appears, the results are available in the location specified by the <c>OutputUri</c>
     /// parameter.
     /// </para>
     /// </summary>
@@ -61,8 +61,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionDataSourceId. 
         /// <para>
-        /// The ID of the <code>DataSource</code> that points to the group of observations to
-        /// predict.
+        /// The ID of the <c>DataSource</c> that points to the group of observations to predict.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -81,7 +80,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>.
+        /// A user-supplied ID that uniquely identifies the <c>BatchPrediction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -100,7 +99,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionName. 
         /// <para>
-        /// A user-supplied name or description of the <code>BatchPrediction</code>. <code>BatchPredictionName</code>
+        /// A user-supplied name or description of the <c>BatchPrediction</c>. <c>BatchPredictionName</c>
         /// can only use the UTF-8 character set.
         /// </para>
         /// </summary>
@@ -120,8 +119,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID of the <code>MLModel</code> that will generate predictions for the group of
-        /// observations. 
+        /// The ID of the <c>MLModel</c> that will generate predictions for the group of observations.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -142,8 +141,7 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// The location of an Amazon Simple Storage Service (Amazon S3) bucket or directory to
         /// store the batch prediction results. The following substrings are not allowed in the
-        /// <code>s3 key</code> portion of the <code>outputURI</code> field: ':', '//', '/./',
-        /// '/../'.
+        /// <c>s3 key</c> portion of the <c>outputURI</c> field: ':', '//', '/./', '/../'.
         /// </para>
         ///  
         /// <para>

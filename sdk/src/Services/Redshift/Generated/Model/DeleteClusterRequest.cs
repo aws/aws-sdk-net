@@ -40,11 +40,11 @@ namespace Amazon.Redshift.Model
     ///  
     /// <para>
     /// If you want to shut down the cluster and retain it for future use, set <i>SkipFinalClusterSnapshot</i>
-    /// to <code>false</code> and specify a name for <i>FinalClusterSnapshotIdentifier</i>.
-    /// You can later restore this snapshot to resume using the cluster. If a final cluster
-    /// snapshot is requested, the status of the cluster will be "final-snapshot" while the
-    /// snapshot is being taken, then it's "deleting" once Amazon Redshift begins deleting
-    /// the cluster. 
+    /// to <c>false</c> and specify a name for <i>FinalClusterSnapshotIdentifier</i>. You
+    /// can later restore this snapshot to resume using the cluster. If a final cluster snapshot
+    /// is requested, the status of the cluster will be "final-snapshot" while the snapshot
+    /// is being taken, then it's "deleting" once Amazon Redshift begins deleting the cluster.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -104,7 +104,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The identifier of the final snapshot that is to be created immediately before deleting
         /// the cluster. If this parameter is provided, <i>SkipFinalClusterSnapshot</i> must be
-        /// <code>false</code>. 
+        /// <c>false</c>. 
         /// </para>
         ///  
         /// <para>
@@ -168,18 +168,17 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SkipFinalClusterSnapshot. 
         /// <para>
         /// Determines whether a final snapshot of the cluster is created before Amazon Redshift
-        /// deletes the cluster. If <code>true</code>, a final cluster snapshot is not created.
-        /// If <code>false</code>, a final cluster snapshot is created before the cluster is deleted.
-        /// 
+        /// deletes the cluster. If <c>true</c>, a final cluster snapshot is not created. If <c>false</c>,
+        /// a final cluster snapshot is created before the cluster is deleted. 
         /// </para>
         ///  <note> 
         /// <para>
         /// The <i>FinalClusterSnapshotIdentifier</i> parameter must be specified if <i>SkipFinalClusterSnapshot</i>
-        /// is <code>false</code>.
+        /// is <c>false</c>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool SkipFinalClusterSnapshot

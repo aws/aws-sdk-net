@@ -77,7 +77,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the asset property (see <code>Variant</code>).
+        /// The value of the asset property (see <c>Variant</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

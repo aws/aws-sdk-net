@@ -160,8 +160,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
-        /// </code>}
+        ///  <c>{ "Metric": { "Name": "OLDEST_CONTACT_AGE", "Unit": "SECONDS" }, "Value": 24113.0
+        /// </c>}
         /// </para>
         ///  
         /// <para>
@@ -250,23 +250,23 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Groupings. 
         /// <para>
-        /// The grouping applied to the metrics returned. For example, when grouped by <code>QUEUE</code>,
+        /// The grouping applied to the metrics returned. For example, when grouped by <c>QUEUE</c>,
         /// the metrics returned apply to each queue rather than aggregated for all queues. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you group by <code>CHANNEL</code>, you should include a Channels filter. VOICE,
-        /// CHAT, and TASK channels are supported.
+        /// If you group by <c>CHANNEL</c>, you should include a Channels filter. VOICE, CHAT,
+        /// and TASK channels are supported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you group by <code>ROUTING_PROFILE</code>, you must include either a queue or routing
-        /// profile filter. In addition, a routing profile filter is required for metrics <code>CONTACTS_SCHEDULED</code>,
-        /// <code>CONTACTS_IN_QUEUE</code>, and <code> OLDEST_CONTACT_AGE</code>.
+        /// If you group by <c>ROUTING_PROFILE</c>, you must include either a queue or routing
+        /// profile filter. In addition, a routing profile filter is required for metrics <c>CONTACTS_SCHEDULED</c>,
+        /// <c>CONTACTS_IN_QUEUE</c>, and <c> OLDEST_CONTACT_AGE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If no <code>Grouping</code> is included in the request, a summary of metrics is returned.
+        /// If no <c>Grouping</c> is included in the request, a summary of metrics is returned.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -351,7 +351,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property SortCriteria. 
         /// <para>
         /// The way to sort the resulting response based on metrics. You can enter one sort criteria.
-        /// By default resources are sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>.
+        /// By default resources are sorted based on <c>AGENTS_ONLINE</c>, <c>DESCENDING</c>.
         /// The metric collection is sorted based on the input metrics.
         /// </para>
         ///  
@@ -360,7 +360,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Sorting on <code>SLOTS_ACTIVE</code> and <code>SLOTS_AVAILABLE</code> is not supported.
+        /// Sorting on <c>SLOTS_ACTIVE</c> and <c>SLOTS_AVAILABLE</c> is not supported.
         /// </para>
         ///  </li> </ul>
         /// </summary>

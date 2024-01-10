@@ -65,7 +65,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         ///  If set to true, the export <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html#API_StartExportTask_RequestSyntax">preferences</a>
-        /// is set to <code>Ec2RecommendationsExportPreferences</code>. 
+        /// is set to <c>Ec2RecommendationsExportPreferences</c>. 
         /// </para>
         /// </summary>
         public bool Enabled

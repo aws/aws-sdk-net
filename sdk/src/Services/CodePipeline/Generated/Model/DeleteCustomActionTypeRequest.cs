@@ -30,8 +30,8 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCustomActionType operation.
-    /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails
-    /// after the action is marked for deletion. Used for custom actions only.
+    /// Marks a custom action as deleted. <c>PollForJobs</c> for the custom action fails after
+    /// the action is marked for deletion. Used for custom actions only.
     /// 
     ///  <important> 
     /// <para>

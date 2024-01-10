@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// A filter for related items of type <code>Comment</code>.
+    /// A filter for related items of type <c>Comment</c>.
     /// </summary>
     public partial class CommentFilter
     {

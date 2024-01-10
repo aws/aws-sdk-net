@@ -58,11 +58,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ActivityStatus. 
         /// <para>
-        /// The progress of the EC2 Fleet. If there is an error, the status is <code>error</code>.
-        /// After all requests are placed, the status is <code>pending_fulfillment</code>. If
-        /// the size of the EC2 Fleet is equal to or greater than its target capacity, the status
-        /// is <code>fulfilled</code>. If the size of the EC2 Fleet is decreased, the status is
-        /// <code>pending_termination</code> while instances are terminating.
+        /// The progress of the EC2 Fleet. If there is an error, the status is <c>error</c>. After
+        /// all requests are placed, the status is <c>pending_fulfillment</c>. If the size of
+        /// the EC2 Fleet is equal to or greater than its target capacity, the status is <c>fulfilled</c>.
+        /// If the size of the EC2 Fleet is decreased, the status is <c>pending_termination</c>
+        /// while instances are terminating.
         /// </para>
         /// </summary>
         public FleetActivityStatus ActivityStatus
@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Errors. 
         /// <para>
         /// Information about the instances that could not be launched by the fleet. Valid only
-        /// when <b>Type</b> is set to <code>instant</code>.
+        /// when <b>Type</b> is set to <c>instant</c>.
         /// </para>
         /// </summary>
         public List<DescribeFleetError> Errors
@@ -164,7 +164,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported only for fleets of type <code>maintain</code>.
+        /// Supported only for fleets of type <c>maintain</c>.
         /// </para>
         /// </summary>
         public FleetExcessCapacityTerminationPolicy ExcessCapacityTerminationPolicy
@@ -256,7 +256,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Instances. 
         /// <para>
         /// Information about the instances that were launched by the fleet. Valid only when <b>Type</b>
-        /// is set to <code>instant</code>.
+        /// is set to <c>instant</c>.
         /// </para>
         /// </summary>
         public List<DescribeFleetsInstances> Instances
@@ -311,7 +311,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ReplaceUnhealthyInstances. 
         /// <para>
         /// Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only
-        /// for fleets of type <code>maintain</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+        /// for fleets of type <c>maintain</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
         /// Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -368,8 +368,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The number of units to request. You can choose to set the target capacity in terms
         /// of instances or a performance characteristic that is important to your application
-        /// workload, such as vCPUs, memory, or I/O. If the request type is <code>maintain</code>,
-        /// you can specify a target capacity of 0 and add capacity later.
+        /// workload, such as vCPUs, memory, or I/O. If the request type is <c>maintain</c>, you
+        /// can specify a target capacity of 0 and add capacity later.
         /// </para>
         /// </summary>
         public TargetCapacitySpecification TargetCapacitySpecification
@@ -406,13 +406,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of request. Indicates whether the EC2 Fleet only <code>requests</code> the
-        /// target capacity, or also attempts to <code>maintain</code> it. If you request a certain
-        /// target capacity, EC2 Fleet only places the required requests; it does not attempt
-        /// to replenish instances if capacity is diminished, and it does not submit requests
-        /// in alternative capacity pools if capacity is unavailable. To maintain a certain target
-        /// capacity, EC2 Fleet places the required requests to meet this target capacity. It
-        /// also automatically replenishes any interrupted Spot Instances. Default: <code>maintain</code>.
+        /// The type of request. Indicates whether the EC2 Fleet only <c>requests</c> the target
+        /// capacity, or also attempts to <c>maintain</c> it. If you request a certain target
+        /// capacity, EC2 Fleet only places the required requests; it does not attempt to replenish
+        /// instances if capacity is diminished, and it does not submit requests in alternative
+        /// capacity pools if capacity is unavailable. To maintain a certain target capacity,
+        /// EC2 Fleet places the required requests to meet this target capacity. It also automatically
+        /// replenishes any interrupted Spot Instances. Default: <c>maintain</c>.
         /// </para>
         /// </summary>
         public FleetType Type

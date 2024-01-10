@@ -70,33 +70,33 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// When using <code>MetricMathAnomalyDetector</code>, you cannot include following parameters
+        /// When using <c>MetricMathAnomalyDetector</c>, you cannot include following parameters
         /// in the same operation:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Dimensions</code>,
+        ///  <c>Dimensions</c>,
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MetricName</code> 
+        ///  <c>MetricName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Namespace</code> 
+        ///  <c>Namespace</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stat</code> 
+        ///  <c>Stat</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// the <code>SingleMetricAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// the <c>SingleMetricAnomalyDetector</c> parameters of <c>DeleteAnomalyDetectorInput</c>
         /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Instead, specify the metric math anomaly detector attributes as part of the <code>MetricMathAnomalyDetector</code>
+        /// Instead, specify the metric math anomaly detector attributes as part of the <c>MetricMathAnomalyDetector</c>
         /// property.
         /// </para>
         /// </summary>
@@ -159,33 +159,33 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// When using <code>SingleMetricAnomalyDetector</code>, you cannot include the following
-        /// parameters in the same operation:
+        /// When using <c>SingleMetricAnomalyDetector</c>, you cannot include the following parameters
+        /// in the same operation:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Dimensions</code>,
+        ///  <c>Dimensions</c>,
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MetricName</code> 
+        ///  <c>MetricName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Namespace</code> 
+        ///  <c>Namespace</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stat</code> 
+        ///  <c>Stat</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// the <code>MetricMathAnomalyDetector</code> parameters of <code>DeleteAnomalyDetectorInput</code>
+        /// the <c>MetricMathAnomalyDetector</c> parameters of <c>DeleteAnomalyDetectorInput</c>
         /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Instead, specify the single metric anomaly detector attributes as part of the <code>SingleMetricAnomalyDetector</code>
+        /// Instead, specify the single metric anomaly detector attributes as part of the <c>SingleMetricAnomalyDetector</c>
         /// property.
         /// </para>
         /// </summary>

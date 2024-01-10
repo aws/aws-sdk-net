@@ -44,11 +44,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_VISUALS</code> 
+        ///  <c>ALL_VISUALS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SELECTED_VISUALS</code> 
+        ///  <c>SELECTED_VISUALS</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

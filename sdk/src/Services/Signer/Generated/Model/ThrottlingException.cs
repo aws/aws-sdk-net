@@ -33,7 +33,7 @@ namespace Amazon.Signer.Model
     /// 
     ///  
     /// <para>
-    /// Instead of this error, <code>TooManyRequestsException</code> should be used.
+    /// Instead of this error, <c>TooManyRequestsException</c> should be used.
     /// </para>
     /// </summary>
     [Obsolete("Instead of this error, TooManyRequestsException should be used.")]

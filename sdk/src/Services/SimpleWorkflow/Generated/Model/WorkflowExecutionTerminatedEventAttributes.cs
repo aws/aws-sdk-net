@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>WorkflowExecutionTerminated</code> event.
+    /// Provides the details of the <c>WorkflowExecutionTerminated</c> event.
     /// </summary>
     public partial class WorkflowExecutionTerminatedEventAttributes
     {
@@ -69,18 +69,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE</code> – The child executions are terminated.
+        ///  <c>TERMINATE</c> – The child executions are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
-        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
-        /// It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.
+        ///  <c>REQUEST_CANCEL</c> – A request to cancel is attempted for each child execution
+        /// by recording a <c>WorkflowExecutionCancelRequested</c> event in its history. It is
+        /// up to the decider to take appropriate actions when it receives an execution history
+        /// with this event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        ///  <c>ABANDON</c> – No action is taken. The child executions continue to run.
         /// </para>
         ///  </li> </ul>
         /// </summary>

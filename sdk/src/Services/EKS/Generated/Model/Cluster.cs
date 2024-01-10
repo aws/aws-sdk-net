@@ -94,7 +94,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthority. 
         /// <para>
-        /// The <code>certificate-authority-data</code> for your cluster.
+        /// The <c>certificate-authority-data</c> for your cluster.
         /// </para>
         /// </summary>
         public Certificate CertificateAuthority

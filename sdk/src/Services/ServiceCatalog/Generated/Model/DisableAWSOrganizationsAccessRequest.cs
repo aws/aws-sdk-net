@@ -42,7 +42,7 @@ namespace Amazon.ServiceCatalog.Model
     /// </para>
     ///  
     /// <para>
-    /// Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.
+    /// Note that a delegated administrator is not authorized to invoke <c>DisableAWSOrganizationsAccess</c>.
     /// </para>
     ///  <important> 
     /// <para>

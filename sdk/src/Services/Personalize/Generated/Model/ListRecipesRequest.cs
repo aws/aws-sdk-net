@@ -82,8 +82,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token returned from the previous call to <code>ListRecipes</code> for getting the
-        /// next set of recipes (if they exist).
+        /// A token returned from the previous call to <c>ListRecipes</c> for getting the next
+        /// set of recipes (if they exist).
         /// </para>
         /// </summary>
         [AWSProperty(Max=1500)]
@@ -102,7 +102,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RecipeProvider. 
         /// <para>
-        /// The default is <code>SERVICE</code>.
+        /// The default is <c>SERVICE</c>.
         /// </para>
         /// </summary>
         public RecipeProvider RecipeProvider

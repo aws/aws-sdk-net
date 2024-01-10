@@ -40,7 +40,7 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property AuthenticationMethod. 
         /// <para>
         /// A structure that describes an authentication method. The contents of this structure
-        /// is determined by the <code>AuthenticationMethodType</code>.
+        /// is determined by the <c>AuthenticationMethodType</c>.
         /// </para>
         /// </summary>
         public AuthenticationMethod AuthenticationMethod

@@ -111,12 +111,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        /// If <code>true</code>, major version upgrades can be applied during the maintenance
-        /// window to the Amazon Redshift engine that is running on the cluster. 
+        /// If <c>true</c>, major version upgrades can be applied during the maintenance window
+        /// to the Amazon Redshift engine that is running on the cluster. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool AllowVersionUpgrade
@@ -194,7 +194,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-2a</code> 
+        /// Example: <c>us-east-2a</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -434,7 +434,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// If this option is <c>true</c>, enhanced VPC routing is enabled. 
         /// </para>
         ///  
         /// <para>
@@ -522,7 +522,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+        /// The IP address type for the cluster. Possible values are <c>ipv4</c> and <c>dualstack</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -566,11 +566,11 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaintenanceTrackName. 
         /// <para>
         /// The name of the maintenance track for the restored cluster. When you take a snapshot,
-        /// the snapshot inherits the <code>MaintenanceTrack</code> value from the cluster. The
-        /// snapshot might be on a different track than the cluster that was the source for the
-        /// snapshot. For example, suppose that you take a snapshot of a cluster that is on the
-        /// current track and then change the cluster to be on the trailing track. In this case,
-        /// the snapshot and the source cluster are on different tracks.
+        /// the snapshot inherits the <c>MaintenanceTrack</c> value from the cluster. The snapshot
+        /// might be on a different track than the cluster that was the source for the snapshot.
+        /// For example, suppose that you take a snapshot of a cluster that is on the current
+        /// track and then change the cluster to be on the trailing track. In this case, the snapshot
+        /// and the source cluster are on different tracks.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -589,10 +589,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ManageMasterPassword. 
         /// <para>
-        /// If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored
-        /// cluster's admin credentials. If <code>ManageMasterPassword</code> is false or not
-        /// set, Amazon Redshift uses the admin credentials the cluster had at the time the snapshot
-        /// was taken.
+        /// If <c>true</c>, Amazon Redshift uses Secrets Manager to manage the restored cluster's
+        /// admin credentials. If <c>ManageMasterPassword</c> is false or not set, Amazon Redshift
+        /// uses the admin credentials the cluster had at the time the snapshot was taken.
         /// </para>
         /// </summary>
         public bool ManageMasterPassword
@@ -635,7 +634,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MasterPasswordSecretKmsKeyId. 
         /// <para>
         /// The ID of the Key Management Service (KMS) key used to encrypt and store the cluster's
-        /// admin credentials secret. You can only use this parameter if <code>ManageMasterPassword</code>
+        /// admin credentials secret. You can only use this parameter if <c>ManageMasterPassword</c>
         /// is true.
         /// </para>
         /// </summary>
@@ -752,7 +751,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be between <code>1115</code> and <code>65535</code>.
+        /// Constraints: Must be between <c>1115</c> and <c>65535</c>.
         /// </para>
         /// </summary>
         public int Port
@@ -774,7 +773,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        ///  Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>
@@ -807,7 +806,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// If <code>true</code>, the cluster can be accessed from a public network. 
+        /// If <c>true</c>, the cluster can be accessed from a public network. 
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -845,8 +844,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the snapshot associated with the message to restore
-        /// from a cluster. You must specify this parameter or <code>snapshotIdentifier</code>,
-        /// but not both.
+        /// from a cluster. You must specify this parameter or <c>snapshotIdentifier</c>, but
+        /// not both.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -887,12 +886,11 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property SnapshotIdentifier. 
         /// <para>
         /// The name of the snapshot from which to create the new cluster. This parameter isn't
-        /// case sensitive. You must specify this parameter or <code>snapshotArn</code>, but not
-        /// both.
+        /// case sensitive. You must specify this parameter or <c>snapshotArn</c>, but not both.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>my-snapshot-id</code> 
+        /// Example: <c>my-snapshot-id</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

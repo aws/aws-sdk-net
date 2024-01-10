@@ -51,14 +51,14 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property AllowPublicOverrides. 
         /// <para>
         /// A Boolean value that indicates whether the access control list (ACL) permissions that
-        /// are applied to individual objects override the <code>getObject</code> option that
-        /// is currently specified.
+        /// are applied to individual objects override the <c>getObject</c> option that is currently
+        /// specified.
         /// </para>
         ///  
         /// <para>
         /// When this is true, you can use the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectAcl.html">PutObjectAcl</a>
-        /// Amazon S3 API action to set individual objects to public (read-only) using the <code>public-read</code>
-        /// ACL, or to private using the <code>private</code> ACL.
+        /// Amazon S3 API action to set individual objects to public (read-only) using the <c>public-read</c>
+        /// ACL, or to private using the <c>private</c> ACL.
         /// </para>
         /// </summary>
         public bool AllowPublicOverrides
@@ -84,26 +84,25 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>public</code> - Sets all objects in the bucket to public (read-only), making
-        /// them readable by anyone in the world.
+        ///  <c>public</c> - Sets all objects in the bucket to public (read-only), making them
+        /// readable by anyone in the world.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>getObject</code> value is set to <code>public</code>, then all objects
-        /// in the bucket default to public regardless of the <code>allowPublicOverrides</code>
-        /// value.
+        /// If the <c>getObject</c> value is set to <c>public</c>, then all objects in the bucket
+        /// default to public regardless of the <c>allowPublicOverrides</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>private</code> - Sets all objects in the bucket to private, making them readable
+        ///  <c>private</c> - Sets all objects in the bucket to private, making them readable
         /// only by you or anyone you give access to.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>getObject</code> value is set to <code>private</code>, and the <code>allowPublicOverrides</code>
-        /// value is set to <code>true</code>, then all objects in the bucket default to private
-        /// unless they are configured with a <code>public-read</code> ACL. Individual objects
-        /// with a <code>public-read</code> ACL are readable by anyone in the world.
+        /// If the <c>getObject</c> value is set to <c>private</c>, and the <c>allowPublicOverrides</c>
+        /// value is set to <c>true</c>, then all objects in the bucket default to private unless
+        /// they are configured with a <c>public-read</c> ACL. Individual objects with a <c>public-read</c>
+        /// ACL are readable by anyone in the world.
         /// </para>
         ///  </li> </ul>
         /// </summary>

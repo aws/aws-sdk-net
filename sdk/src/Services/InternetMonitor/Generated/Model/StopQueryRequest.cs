@@ -59,7 +59,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The ID of the query that you want to stop. A <code>QueryId</code> is an internally-generated
+        /// The ID of the query that you want to stop. A <c>QueryId</c> is an internally-generated
         /// identifier for a specific query.
         /// </para>
         /// </summary>

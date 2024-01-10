@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code>CancelElasticsearchServiceSoftwareUpdate</code> operation. Contains
+    /// The result of a <c>CancelElasticsearchServiceSoftwareUpdate</c> operation. Contains
     /// the status of the update.
     /// </summary>
     public partial class CancelElasticsearchServiceSoftwareUpdateResponse : AmazonWebServiceResponse

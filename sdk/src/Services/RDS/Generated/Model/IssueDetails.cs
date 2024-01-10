@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property PerformanceIssueDetails. 
         /// <para>
-        /// A detailed description of the issue when the recommendation category is <code>performance</code>.
+        /// A detailed description of the issue when the recommendation category is <c>performance</c>.
         /// </para>
         /// </summary>
         public PerformanceIssueDetails PerformanceIssueDetails

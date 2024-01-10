@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AppsLists. 
         /// <para>
-        /// An array of <code>AppsListDataSummary</code> objects.
+        /// An array of <c>AppsListDataSummary</c> objects.
         /// </para>
         /// </summary>
         public List<AppsListDataSummary> AppsLists
@@ -57,9 +57,9 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify a value for <code>MaxResults</code> in your list request, and you have
-        /// more objects than the maximum, Firewall Manager returns this token in the response.
-        /// You can use this token in subsequent requests to retrieve the next batch of objects.
+        /// If you specify a value for <c>MaxResults</c> in your list request, and you have more
+        /// objects than the maximum, Firewall Manager returns this token in the response. You
+        /// can use this token in subsequent requests to retrieve the next batch of objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

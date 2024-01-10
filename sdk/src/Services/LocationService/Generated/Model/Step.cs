@@ -43,7 +43,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Distance. 
         /// <para>
-        /// The travel distance between the step's <code>StartPosition</code> and <code>EndPosition</code>.
+        /// The travel distance between the step's <c>StartPosition</c> and <c>EndPosition</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -62,9 +62,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        /// The estimated travel time, in seconds, from the step's <code>StartPosition</code>
-        /// to the <code>EndPosition</code>. . The travel mode and departure time that you specify
-        /// in the request determines the calculated time.
+        /// The estimated travel time, in seconds, from the step's <c>StartPosition</c> to the
+        /// <c>EndPosition</c>. . The travel mode and departure time that you specify in the request
+        /// determines the calculated time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -104,12 +104,12 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property GeometryOffset. 
         /// <para>
         /// Represents the start position, or index, in a sequence of steps within the leg's line
-        /// string geometry. For example, the index of the first step in a leg geometry is <code>0</code>.
+        /// string geometry. For example, the index of the first step in a leg geometry is <c>0</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// Included in the response for queries that set <code>IncludeLegGeometry</code> to <code>True</code>.
+        /// Included in the response for queries that set <c>IncludeLegGeometry</c> to <c>True</c>.
         /// 
         /// </para>
         /// </summary>

@@ -47,22 +47,22 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the attachment. Valid values are <code>available</code>
-        /// | <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code>
-        /// | <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
+        ///  <c>state</c> - The state of the attachment. Valid values are <c>available</c> | <c>deleted</c>
+        /// | <c>deleting</c> | <c>failed</c> | <c>failing</c> | <c>initiatingRequest</c> | <c>modifying</c>
+        /// | <c>pendingAcceptance</c> | <c>pending</c> | <c>rollingBack</c> | <c>rejected</c>
+        /// | <c>rejecting</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+        ///  <c>transit-gateway-attachment-id</c> - The ID of the attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-id</code> - The ID of the transit gateway.
+        ///  <c>transit-gateway-id</c> - The ID of the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-id</code> - The ID of the VPC.
+        ///  <c>vpc-id</c> - The ID of the VPC.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

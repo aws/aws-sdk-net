@@ -114,8 +114,7 @@ namespace Amazon.ConfigService.Model
         ///  <note> 
         /// <para>
         /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
-        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-        /// parameter.
+        /// the frequency, specify a valid value for the <c>MaximumExecutionFrequency</c> parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -139,20 +138,20 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config
-        /// delivers a configuration item as a result of a resource change.
+        ///  <c>ConfigurationItemChangeNotification</c> - Triggers an evaluation when Config delivers
+        /// a configuration item as a result of a resource change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
-        /// when Config delivers an oversized configuration item. Config may generate this notification
+        ///  <c>OversizedConfigurationItemChangeNotification</c> - Triggers an evaluation when
+        /// Config delivers an oversized configuration item. Config may generate this notification
         /// type when a resource changes and the notification exceeds the maximum size allowed
         /// by Amazon SNS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
-        /// specified for <code>MaximumExecutionFrequency</code>.
+        ///  <c>ScheduledNotification</c> - Triggers a periodic evaluation at the frequency specified
+        /// for <c>MaximumExecutionFrequency</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

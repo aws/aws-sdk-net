@@ -85,7 +85,7 @@ namespace Amazon.Ivschat
     /// <para>
     /// A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag comprises
     /// a <i>key</i> and a <i>value</i>, both set by you. For example, you might set a tag
-    /// as <code>topic:nature</code> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
     /// AWS Resources</a> for more information, including restrictions that apply to tags
     /// and "Tag naming limits and requirements"; Amazon IVS Chat has no service-specific
     /// constraints beyond what is documented there.
@@ -148,7 +148,7 @@ namespace Amazon.Ivschat
     /// <para>
     /// You generate a signature using valid AWS credentials for an IAM role that has permission
     /// to perform the requested action. For example, DeleteMessage requests must be made
-    /// using an IAM role that has the <code>ivschat:DeleteMessage</code> permission.
+    /// using an IAM role that has the <c>ivschat:DeleteMessage</c> permission.
     /// </para>
     ///  
     /// <para>
@@ -184,8 +184,8 @@ namespace Amazon.Ivschat
     /// <para>
     ///  <a>DeleteMessage</a> — Sends an event to a specific room which directs clients to
     /// delete a specific message; that is, unrender it from view and delete it from the client’s
-    /// chat history. This event’s <code>EventName</code> is <code>aws:DELETE_MESSAGE</code>.
-    /// This replicates the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
+    /// chat history. This event’s <c>EventName</c> is <c>aws:DELETE_MESSAGE</c>. This replicates
+    /// the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
     /// DeleteMessage</a> WebSocket operation in the Amazon IVS Chat Messaging API.
     /// </para>
     ///  </li> <li> 
@@ -311,12 +311,12 @@ namespace Amazon.Ivschat
         /// 
         ///  
         /// <para>
-        /// Use the <code>capabilities</code> field to permit an end user to send messages or
-        /// moderate a room.
+        /// Use the <c>capabilities</c> field to permit an end user to send messages or moderate
+        /// a room.
         /// </para>
         ///  
         /// <para>
-        /// The <code>attributes</code> field securely attaches structured data to the chat session;
+        /// The <c>attributes</c> field securely attaches structured data to the chat session;
         /// the data is included within each message sent by the end user and received by other
         /// participants in the room. Common use cases for attributes include passing end-user
         /// profile data like an icon, display name, colors, badges, and other display features.
@@ -549,8 +549,7 @@ namespace Amazon.Ivschat
         /// <summary>
         /// Sends an event to a specific room which directs clients to delete a specific message;
         /// that is, unrender it from view and delete it from the client’s chat history. This
-        /// event’s <code>EventName</code> is <code>aws:DELETE_MESSAGE</code>. This replicates
-        /// the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
+        /// event’s <c>EventName</c> is <c>aws:DELETE_MESSAGE</c>. This replicates the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html">
         /// DeleteMessage</a> WebSocket operation in the Amazon IVS Chat Messaging API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessage service method.</param>
@@ -861,7 +860,7 @@ namespace Amazon.Ivschat
 
         /// <summary>
         /// Gets summary information about all your rooms in the AWS region where the API request
-        /// is processed. Results are sorted in descending order of <code>updateTime</code>.
+        /// is processed. Results are sorted in descending order of <c>updateTime</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRooms service method.</param>
         /// 

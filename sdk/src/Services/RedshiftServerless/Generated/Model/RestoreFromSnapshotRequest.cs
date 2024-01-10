@@ -64,10 +64,10 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property ManageAdminPassword. 
         /// <para>
-        /// If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the restored
-        /// snapshot's admin credentials. If <code>MmanageAdminPassword</code> is false or not
-        /// set, Amazon Redshift uses the admin credentials that the namespace or cluster had
-        /// at the time the snapshot was taken.
+        /// If <c>true</c>, Amazon Redshift uses Secrets Manager to manage the restored snapshot's
+        /// admin credentials. If <c>MmanageAdminPassword</c> is false or not set, Amazon Redshift
+        /// uses the admin credentials that the namespace or cluster had at the time the snapshot
+        /// was taken.
         /// </para>
         /// </summary>
         public bool ManageAdminPassword
@@ -124,7 +124,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the snapshot to restore from. Required if restoring
         /// from Amazon Redshift Serverless to a provisioned cluster. Must not be specified at
-        /// the same time as <code>snapshotName</code>.
+        /// the same time as <c>snapshotName</c>.
         /// </para>
         ///  
         /// <para>
@@ -147,7 +147,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property SnapshotName. 
         /// <para>
         /// The name of the snapshot to restore from. Must not be specified at the same time as
-        /// <code>snapshotArn</code>.
+        /// <c>snapshotArn</c>.
         /// </para>
         /// </summary>
         public string SnapshotName

@@ -31,11 +31,11 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// Container for the parameters to the PurgeQueue operation.
     /// Deletes available messages in a queue (including in-flight messages) specified by
-    /// the <code>QueueURL</code> parameter.
+    /// the <c>QueueURL</c> parameter.
     /// 
     ///  <important> 
     /// <para>
-    /// When you use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted
+    /// When you use the <c>PurgeQueue</c> action, you can't retrieve any messages deleted
     /// from a queue.
     /// </para>
     ///  
@@ -45,13 +45,13 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// Messages sent to the queue <i>before</i> you call <code>PurgeQueue</code> might be
-    /// received but are deleted within the next minute.
+    /// Messages sent to the queue <i>before</i> you call <c>PurgeQueue</c> might be received
+    /// but are deleted within the next minute.
     /// </para>
     ///  
     /// <para>
-    /// Messages sent to the queue <i>after</i> you call <code>PurgeQueue</code> might be
-    /// deleted while the queue is being purged.
+    /// Messages sent to the queue <i>after</i> you call <c>PurgeQueue</c> might be deleted
+    /// while the queue is being purged.
     /// </para>
     /// </summary>
     public partial class PurgeQueueRequest : AmazonSQSRequest
@@ -61,7 +61,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrl. 
         /// <para>
-        /// The URL of the queue from which the <code>PurgeQueue</code> action deletes messages.
+        /// The URL of the queue from which the <c>PurgeQueue</c> action deletes messages.
         /// </para>
         ///  
         /// <para>

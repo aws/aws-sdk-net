@@ -39,7 +39,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property ErrorEntries. 
         /// <para>
         /// A list of the errors (if any) associated with the batch put request. Each error entry
-        /// contains the <code>entryId</code> of the entry that failed.
+        /// contains the <c>entryId</c> of the entry that failed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

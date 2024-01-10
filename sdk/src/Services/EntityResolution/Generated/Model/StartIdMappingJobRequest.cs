@@ -30,8 +30,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the StartIdMappingJob operation.
-    /// Starts the <code>IdMappingJob</code> of a workflow. The workflow must have previously
-    /// been created using the <code>CreateIdMappingWorkflow</code> endpoint.
+    /// Starts the <c>IdMappingJob</c> of a workflow. The workflow must have previously been
+    /// created using the <c>CreateIdMappingWorkflow</c> endpoint.
     /// </summary>
     public partial class StartIdMappingJobRequest : AmazonEntityResolutionRequest
     {

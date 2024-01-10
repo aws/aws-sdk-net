@@ -158,9 +158,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status returned by the test case after it was run. Valid statuses are <code>SUCCEEDED</code>,
-        /// <code>FAILED</code>, <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>.
-        /// 
+        ///  The status returned by the test case after it was run. Valid statuses are <c>SUCCEEDED</c>,
+        /// <c>FAILED</c>, <c>ERROR</c>, <c>SKIPPED</c>, and <c>UNKNOWN</c>. 
         /// </para>
         /// </summary>
         public string Status

@@ -44,7 +44,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property CommitMessage. 
         /// <para>
-        /// Commit message for the updated file, which is shown as part of <code>GetPackageVersionHistoryResponse</code>.
+        /// Commit message for the updated file, which is shown as part of <c>GetPackageVersionHistoryResponse</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=160)]

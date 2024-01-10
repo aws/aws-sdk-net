@@ -78,23 +78,23 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HTTP1Only</code> 
+        ///  <c>HTTP1Only</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HTTP2Only</code> 
+        ///  <c>HTTP2Only</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HTTP2Optional</code> 
+        ///  <c>HTTP2Optional</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HTTP2Preferred</code> 
+        ///  <c>HTTP2Preferred</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>None</code> 
+        ///  <c>None</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -118,8 +118,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Certificates. 
         /// <para>
         /// [HTTPS and TLS listeners] The default certificate for the listener. You must provide
-        /// exactly one certificate. Set <code>CertificateArn</code> to the certificate ARN but
-        /// do not set <code>IsDefault</code>.
+        /// exactly one certificate. Set <c>CertificateArn</c> to the certificate ARN but do not
+        /// set <c>IsDefault</c>.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates

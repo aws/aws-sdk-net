@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response information for the <code>CreateTrafficPolicyVersion</code>
+    /// A complex type that contains the response information for the <c>CreateTrafficPolicyVersion</c>
     /// request.
     /// </summary>
     public partial class CreateTrafficPolicyVersionResponse : AmazonWebServiceResponse

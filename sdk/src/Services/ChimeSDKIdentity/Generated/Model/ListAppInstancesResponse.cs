@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstances. 
         /// <para>
-        /// The information for each <code>AppInstance</code>.
+        /// The information for each <c>AppInstance</c>.
         /// </para>
         /// </summary>
         public List<AppInstanceSummary> AppInstances
@@ -57,7 +57,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token passed by previous API requests until the maximum number of <code>AppInstance</code>s
+        /// The token passed by previous API requests until the maximum number of <c>AppInstance</c>s
         /// is reached.
         /// </para>
         /// </summary>

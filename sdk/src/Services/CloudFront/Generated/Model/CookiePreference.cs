@@ -34,13 +34,13 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// If you want to include cookies in the cache key, use <code>CookiesConfig</code> in
-    /// a cache policy. See <code>CachePolicy</code>.
+    /// If you want to include cookies in the cache key, use <c>CookiesConfig</c> in a cache
+    /// policy. See <c>CachePolicy</c>.
     /// </para>
     ///  
     /// <para>
     /// If you want to send cookies to the origin but not include them in the cache key, use
-    /// <code>CookiesConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.
+    /// <c>CookiesConfig</c> in an origin request policy. See <c>OriginRequestPolicy</c>.
     /// </para>
     ///  
     /// <para>
@@ -76,12 +76,12 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// Specifies which cookies to forward to the origin for this cache behavior: all, none,
-        /// or the list of cookies specified in the <code>WhitelistedNames</code> complex type.
+        /// or the list of cookies specified in the <c>WhitelistedNames</c> complex type.
         /// </para>
         ///  
         /// <para>
         /// Amazon S3 doesn't process cookies. When the cache behavior is forwarding requests
-        /// to an Amazon S3 origin, specify none for the <code>Forward</code> element.
+        /// to an Amazon S3 origin, specify none for the <c>Forward</c> element.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -117,17 +117,16 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if you specify <code>whitelist</code> for the value of <code>Forward</code>.
-        /// A complex type that specifies how many different cookies you want CloudFront to forward
-        /// to the origin for this cache behavior and, if you want to forward selected cookies,
-        /// the names of those cookies.
+        /// Required if you specify <c>whitelist</c> for the value of <c>Forward</c>. A complex
+        /// type that specifies how many different cookies you want CloudFront to forward to the
+        /// origin for this cache behavior and, if you want to forward selected cookies, the names
+        /// of those cookies.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>all</code> or <code>none</code> for the value of <code>Forward</code>,
-        /// omit <code>WhitelistedNames</code>. If you change the value of <code>Forward</code>
-        /// from <code>whitelist</code> to <code>all</code> or <code>none</code> and you don't
-        /// delete the <code>WhitelistedNames</code> element and its child elements, CloudFront
+        /// If you specify <c>all</c> or <c>none</c> for the value of <c>Forward</c>, omit <c>WhitelistedNames</c>.
+        /// If you change the value of <c>Forward</c> from <c>whitelist</c> to <c>all</c> or <c>none</c>
+        /// and you don't delete the <c>WhitelistedNames</c> element and its child elements, CloudFront
         /// deletes them automatically.
         /// </para>
         ///  

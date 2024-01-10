@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes a load balancer when creating an Amazon Web Services Verified Access endpoint
-    /// using the <code>load-balancer</code> type.
+    /// using the <c>load-balancer</c> type.
     /// </summary>
     public partial class ModifyVerifiedAccessEndpointLoadBalancerOptions
     {

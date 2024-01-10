@@ -34,10 +34,9 @@ namespace Amazon.Budgets.Model
     /// 
     ///  <important> 
     /// <para>
-    /// Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
-    /// in the syntax at one time. Use the syntax that matches your case. The Request Syntax
-    /// section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
-    /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
+    /// Only one of <c>BudgetLimit</c> or <c>PlannedBudgetLimits</c> can be present in the
+    /// syntax at one time. Use the syntax that matches your case. The Request Syntax section
+    /// shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
     /// section. 
     /// </para>
     ///  </important>
@@ -51,7 +50,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>accountId</code> that is associated with the budget.
+        /// The <c>accountId</c> that is associated with the budget.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -91,7 +90,7 @@ namespace Amazon.Budgets.Model
         /// <para>
         /// A notification that you want to associate with a budget. A budget can have up to five
         /// notifications, and each notification can have one SNS subscriber and up to 10 email
-        /// subscribers. If you include notifications and subscribers in your <code>CreateBudget</code>
+        /// subscribers. If you include notifications and subscribers in your <c>CreateBudget</c>
         /// call, Amazon Web Services creates the notifications and subscribers for you.
         /// </para>
         /// </summary>

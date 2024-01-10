@@ -35,25 +35,24 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket.
-    /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartSegmentDetection</code>
-    /// returns a job identifier (<code>JobId</code>) which you use to get the results of
-    /// the operation. When segment detection is finished, Amazon Rekognition Video publishes
-    /// a completion status to the Amazon Simple Notification Service topic that you specify
-    /// in <code>NotificationChannel</code>.
+    /// Use <a>Video</a> to specify the bucket name and the filename of the video. <c>StartSegmentDetection</c>
+    /// returns a job identifier (<c>JobId</c>) which you use to get the results of the operation.
+    /// When segment detection is finished, Amazon Rekognition Video publishes a completion
+    /// status to the Amazon Simple Notification Service topic that you specify in <c>NotificationChannel</c>.
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>Filters</code> (<a>StartSegmentDetectionFilters</a>) input parameter
-    /// to specify the minimum detection confidence returned in the response. Within <code>Filters</code>,
-    /// use <code>ShotFilter</code> (<a>StartShotDetectionFilter</a>) to filter detected shots.
-    /// Use <code>TechnicalCueFilter</code> (<a>StartTechnicalCueDetectionFilter</a>) to filter
+    /// You can use the <c>Filters</c> (<a>StartSegmentDetectionFilters</a>) input parameter
+    /// to specify the minimum detection confidence returned in the response. Within <c>Filters</c>,
+    /// use <c>ShotFilter</c> (<a>StartShotDetectionFilter</a>) to filter detected shots.
+    /// Use <c>TechnicalCueFilter</c> (<a>StartTechnicalCueDetectionFilter</a>) to filter
     /// technical cues. 
     /// </para>
     ///  
     /// <para>
     /// To get the results of the segment detection operation, first check that the status
-    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetSegmentDetection</a>
-    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
+    /// value published to the Amazon SNS topic is <c>SUCCEEDED</c>. if so, call <a>GetSegmentDetection</a>
+    /// and pass the job identifier (<c>JobId</c>) from the initial call to <c>StartSegmentDetection</c>.
     /// 
     /// </para>
     ///  
@@ -75,9 +74,9 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// Idempotent token used to identify the start request. If you use the same token with
-        /// multiple <code>StartSegmentDetection</code> requests, the same <code>JobId</code>
-        /// is returned. Use <code>ClientRequestToken</code> to prevent the same job from being
-        /// accidently started more than once. 
+        /// multiple <c>StartSegmentDetection</c> requests, the same <c>JobId</c> is returned.
+        /// Use <c>ClientRequestToken</c> to prevent the same job from being accidently started
+        /// more than once. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -115,7 +114,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property JobTag. 
         /// <para>
         /// An identifier you specify that's returned in the completion notification that's published
-        /// to your Amazon Simple Notification Service topic. For example, you can use <code>JobTag</code>
+        /// to your Amazon Simple Notification Service topic. For example, you can use <c>JobTag</c>
         /// to group related jobs and identify them in the completion notification.
         /// </para>
         /// </summary>

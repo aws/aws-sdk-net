@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DateTimeHierarchy. 
         /// <para>
-        /// The option that determines the hierarchy of any <code>DateTime</code> fields.
+        /// The option that determines the hierarchy of any <c>DateTime</c> fields.
         /// </para>
         /// </summary>
         public DateTimeHierarchy DateTimeHierarchy

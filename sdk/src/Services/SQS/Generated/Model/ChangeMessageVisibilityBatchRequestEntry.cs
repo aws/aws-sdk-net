@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses a receipt handle and an entry ID for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
+    /// Encloses a receipt handle and an entry ID for each message in <c> <a>ChangeMessageVisibilityBatch</a>.</c>
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequestEntry
     {
@@ -60,7 +60,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Id</code>s of a batch request need to be unique within a request.
+        /// The <c>Id</c>s of a batch request need to be unique within a request.
         /// </para>
         ///  
         /// <para>

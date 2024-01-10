@@ -111,13 +111,13 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause.
-        /// The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a>
+        /// The expression uses SQL syntax similar to the SQL <c>WHERE</c> filter clause. The
+        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a>
         /// parses the expression. 
         /// </para>
         ///  
         /// <para>
-        ///  <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code>
+        ///  <i>Operators</i>: The following are the operators that you can use in the <c>Expression</c>
         /// API call:
         /// </para>
         ///  <dl> <dt>=</dt> <dd> 
@@ -188,39 +188,39 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>string</code> 
+        ///  <c>string</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>date</code> 
+        ///  <c>date</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>timestamp</code> 
+        ///  <c>timestamp</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>int</code> 
+        ///  <c>int</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bigint</code> 
+        ///  <c>bigint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>long</code> 
+        ///  <c>long</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tinyint</code> 
+        ///  <c>tinyint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>smallint</code> 
+        ///  <c>smallint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>decimal</code> 
+        ///  <c>decimal</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -229,8 +229,8 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// The following list shows the valid operators on each type. When you define a crawler,
-        /// the <code>partitionKey</code> type is created as a <code>STRING</code>, to be compatible
-        /// with the catalog partitions. 
+        /// the <c>partitionKey</c> type is created as a <c>STRING</c>, to be compatible with
+        /// the catalog partitions. 
         /// </para>
         ///  
         /// <para>
@@ -291,7 +291,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property QueryAsOfTime. 
         /// <para>
         /// The time as of when to read the partition contents. If not set, the most recent transaction
-        /// commit time will be used. Cannot be specified along with <code>TransactionId</code>.
+        /// commit time will be used. Cannot be specified along with <c>TransactionId</c>.
         /// </para>
         /// </summary>
         public DateTime QueryAsOfTime

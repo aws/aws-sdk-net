@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3ModelArtifacts. 
         /// <para>
-        /// The path of the S3 object that contains the model artifacts. For example, <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.
+        /// The path of the S3 object that contains the model artifacts. For example, <c>s3://bucket-name/keynameprefix/model.tar.gz</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

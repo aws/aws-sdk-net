@@ -39,8 +39,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token to pass along to the next <code>ListSubscriptionsByTopic</code> request. This
-        /// element is returned if there are more subscriptions to retrieve.
+        /// Token to pass along to the next <c>ListSubscriptionsByTopic</c> request. This element
+        /// is returned if there are more subscriptions to retrieve.
         /// </para>
         /// </summary>
         public string NextToken

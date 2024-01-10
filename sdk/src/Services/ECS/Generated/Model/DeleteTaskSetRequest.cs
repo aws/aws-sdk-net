@@ -31,7 +31,7 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the DeleteTaskSet operation.
     /// Deletes a specified task set within a service. This is used when a service uses the
-    /// <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+    /// <c>EXTERNAL</c> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </summary>
     public partial class DeleteTaskSetRequest : AmazonECSRequest
@@ -64,8 +64,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// If <code>true</code>, you can delete a task set even if it hasn't been scaled down
-        /// to zero.
+        /// If <c>true</c>, you can delete a task set even if it hasn't been scaled down to zero.
         /// </para>
         /// </summary>
         public bool Force

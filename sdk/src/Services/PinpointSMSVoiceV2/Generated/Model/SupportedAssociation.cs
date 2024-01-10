@@ -46,19 +46,19 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASSOCIATE_BEFORE_SUBMIT</code> The origination identity has to be supplied
-        /// when creating a registration.
+        ///  <c>ASSOCIATE_BEFORE_SUBMIT</c> The origination identity has to be supplied when creating
+        /// a registration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASSOCIATE_ON_APPROVAL</code> This applies to all short code registrations.
-        /// The short code will be automatically provisioned once the registration is approved.
+        ///  <c>ASSOCIATE_ON_APPROVAL</c> This applies to all short code registrations. The short
+        /// code will be automatically provisioned once the registration is approved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASSOCIATE_AFTER_COMPLETE</code> This applies to phone number registrations
-        /// when you must complete a registration first, then associate one or more phone numbers
-        /// later. For example 10DLC campaigns and long codes. 
+        ///  <c>ASSOCIATE_AFTER_COMPLETE</c> This applies to phone number registrations when you
+        /// must complete a registration first, then associate one or more phone numbers later.
+        /// For example 10DLC campaigns and long codes. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -82,18 +82,18 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DISASSOCIATE_ALL_CLOSES_REGISTRATION</code> All origination identities must
-        /// be disassociated from the registration before the registration can be closed.
+        ///  <c>DISASSOCIATE_ALL_CLOSES_REGISTRATION</c> All origination identities must be disassociated
+        /// from the registration before the registration can be closed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</code> All origination identities
-        /// must be disassociated from the registration before the registration can be deleted.
+        ///  <c>DISASSOCIATE_ALL_ALLOWS_DELETE_REGISTRATION</c> All origination identities must
+        /// be disassociated from the registration before the registration can be deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_REGISTRATION_DISASSOCIATES</code> The registration can be deleted and
-        /// all origination identities will be disasscoiated.
+        ///  <c>DELETE_REGISTRATION_DISASSOCIATES</c> The registration can be deleted and all
+        /// origination identities will be disasscoiated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

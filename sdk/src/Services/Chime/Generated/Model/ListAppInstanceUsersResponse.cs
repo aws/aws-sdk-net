@@ -40,7 +40,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -59,7 +59,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUsers. 
         /// <para>
-        /// The information for each requested <code>AppInstanceUser</code>.
+        /// The information for each requested <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         public List<AppInstanceUserSummary> AppInstanceUsers

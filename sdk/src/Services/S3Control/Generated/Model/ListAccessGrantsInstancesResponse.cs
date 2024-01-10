@@ -58,8 +58,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token to request the next page of results. Pass this value into a subsequent
-        /// <code>List Access Grants Instances</code> request in order to retrieve the next page
-        /// of results.
+        /// <c>List Access Grants Instances</c> request in order to retrieve the next page of
+        /// results.
         /// </para>
         /// </summary>
         public string NextToken

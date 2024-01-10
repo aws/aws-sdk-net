@@ -77,8 +77,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Changes. 
         /// <para>
-        /// A list of <code>Change</code> structures that describes the resources CloudFormation
-        /// changes if you execute the change set.
+        /// A list of <c>Change</c> structures that describes the resources CloudFormation changes
+        /// if you execute the change set.
         /// </para>
         /// </summary>
         public List<Change> Changes
@@ -171,11 +171,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ExecutionStatus. 
         /// <para>
-        /// If the change set execution status is <code>AVAILABLE</code>, you can execute the
-        /// change set. If you can't execute the change set, the status indicates why. For example,
-        /// a change set might be in an <code>UNAVAILABLE</code> state because CloudFormation
-        /// is still creating it or in an <code>OBSOLETE</code> state because the stack was already
-        /// updated.
+        /// If the change set execution status is <c>AVAILABLE</c>, you can execute the change
+        /// set. If you can't execute the change set, the status indicates why. For example, a
+        /// change set might be in an <c>UNAVAILABLE</c> state because CloudFormation is still
+        /// creating it or in an <c>OBSOLETE</c> state because the stack was already updated.
         /// </para>
         /// </summary>
         public ExecutionStatus ExecutionStatus
@@ -219,7 +218,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property IncludeNestedStacks. 
         /// <para>
-        /// Verifies if <code>IncludeNestedStacks</code> is set to <code>True</code>.
+        /// Verifies if <c>IncludeNestedStacks</c> is set to <c>True</c>.
         /// </para>
         /// </summary>
         public bool IncludeNestedStacks
@@ -278,27 +277,25 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property OnStackFailure. 
         /// <para>
         /// Determines what action will be taken if stack creation fails. When this parameter
-        /// is specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// is specified, the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
         /// API operation must not be specified. This must be one of these values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETE</code> - Deletes the change set if the stack creation fails. This is
-        /// only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>.
-        /// If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.
+        ///  <c>DELETE</c> - Deletes the change set if the stack creation fails. This is only
+        /// valid when the <c>ChangeSetType</c> parameter is set to <c>CREATE</c>. If the deletion
+        /// of the stack fails, the status of the stack is <c>DELETE_FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent
-        /// to specifying <code>true</code> for the <code>DisableRollback</code> parameter to
-        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        ///  <c>DO_NOTHING</c> - if the stack creation fails, do nothing. This is equivalent to
+        /// specifying <c>true</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
         /// API operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is
-        /// equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter
-        /// to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        ///  <c>ROLLBACK</c> - if the stack creation fails, roll back the stack. This is equivalent
+        /// to specifying <c>false</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
         /// API operation.
         /// </para>
         ///  </li> </ul>
@@ -318,8 +315,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of <code>Parameter</code> structures that describes the input parameters and
-        /// their values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
+        /// A list of <c>Parameter</c> structures that describes the input parameters and their
+        /// values used to create the change set. For more information, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_Parameter.html">Parameter</a>
         /// data type.
         /// </para>
         /// </summary>
@@ -433,8 +430,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the change set, such as <code>CREATE_IN_PROGRESS</code>, <code>CREATE_COMPLETE</code>,
-        /// or <code>FAILED</code>.
+        /// The current status of the change set, such as <c>CREATE_IN_PROGRESS</c>, <c>CREATE_COMPLETE</c>,
+        /// or <c>FAILED</c>.
         /// </para>
         /// </summary>
         public ChangeSetStatus Status

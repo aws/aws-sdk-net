@@ -35,7 +35,7 @@ namespace Amazon.FSx.Model
     /// When deleting a data repository association, you have the option of deleting the data
     /// in the file system that corresponds to the data repository association. Data repository
     /// associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding
-    /// <code>scratch_1</code> deployment type.
+    /// <c>scratch_1</c> deployment type.
     /// </summary>
     public partial class DeleteDataRepositoryAssociationRequest : AmazonFSxRequest
     {
@@ -81,8 +81,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DeleteDataInFileSystem. 
         /// <para>
-        /// Set to <code>true</code> to delete the data in the file system that corresponds to
-        /// the data repository association.
+        /// Set to <c>true</c> to delete the data in the file system that corresponds to the data
+        /// repository association.
         /// </para>
         /// </summary>
         public bool DeleteDataInFileSystem

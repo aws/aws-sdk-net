@@ -41,22 +41,21 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The policy must include specifications for <code>Effect</code>, <code>Action</code>,
-    /// and <code>Principal</code>.
+    /// The policy must include specifications for <c>Effect</c>, <c>Action</c>, and <c>Principal</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Effect</code> must specify <code>Allow</code>.
+    ///  <c>Effect</c> must specify <c>Allow</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Action</code> must specify <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>,
-    /// and <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify <code>wafv2:GetRuleGroup</code>.
+    ///  <c>Action</c> must specify <c>wafv2:CreateWebACL</c>, <c>wafv2:UpdateWebACL</c>,
+    /// and <c>wafv2:PutFirewallManagerRuleGroups</c> and may optionally specify <c>wafv2:GetRuleGroup</c>.
     /// WAF rejects any extra actions or wildcard actions in the policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The policy must not include a <code>Resource</code> parameter.
+    /// The policy must not include a <c>Resource</c> parameter.
     /// </para>
     ///  </li> </ul> 
     /// <para>

@@ -36,11 +36,11 @@ namespace Amazon.EKS.Model
     /// <para>
     /// If you want to authenticate identities using an identity provider, you can create
     /// an identity provider configuration and associate it to your cluster. After configuring
-    /// authentication to your cluster you can create Kubernetes <code>Role</code> and <code>ClusterRole</code>
+    /// authentication to your cluster you can create Kubernetes <c>Role</c> and <c>ClusterRole</c>
     /// objects, assign permissions to them, and then bind them to the identities using Kubernetes
-    /// <code>RoleBinding</code> and <code>ClusterRoleBinding</code> objects. For more information
-    /// see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using
-    /// RBAC Authorization</a> in the Kubernetes documentation.
+    /// <c>RoleBinding</c> and <c>ClusterRoleBinding</c> objects. For more information see
+    /// <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
+    /// Authorization</a> in the Kubernetes documentation.
     /// </para>
     /// </summary>
     public partial class AssociateIdentityProviderConfigRequest : AmazonEKSRequest

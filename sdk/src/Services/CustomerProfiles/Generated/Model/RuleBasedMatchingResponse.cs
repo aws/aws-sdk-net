@@ -45,7 +45,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AttributeTypesSelector. 
         /// <para>
-        /// Configures information about the <code>AttributeTypesSelector</code> where the rule-based
+        /// Configures information about the <c>AttributeTypesSelector</c> where the rule-based
         /// identity resolution uses to match profiles.
         /// </para>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property MatchingRules. 
         /// <para>
         /// Configures how the rule-based matching process should match profiles. You can have
-        /// up to 15 <code>MatchingRule</code> in the <code>MatchingRules</code>.
+        /// up to 15 <c>MatchingRule</c> in the <c>MatchingRules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
@@ -177,7 +177,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <para>
         /// The first status after configuration a rule-based matching rule. If it is an existing
         /// domain, the rule-based Identity Resolution waits one hour before creating the matching
-        /// rule. If it is a new domain, the system will skip the <code>PENDING</code> stage.
+        /// rule. If it is a new domain, the system will skip the <c>PENDING</c> stage.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -195,7 +195,7 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The rule is ready to use. You can change the rule a day after the status is in <code>ACTIVE</code>.
+        /// The rule is ready to use. You can change the rule a day after the status is in <c>ACTIVE</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

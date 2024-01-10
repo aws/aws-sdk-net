@@ -69,8 +69,8 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>MinSegmentConfidence</code>, <code>GetSegmentDetection</code>
-        /// returns segments with confidence values greater than or equal to 50 percent.
+        /// If you don't specify <c>MinSegmentConfidence</c>, <c>GetSegmentDetection</c> returns
+        /// segments with confidence values greater than or equal to 50 percent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=100)]

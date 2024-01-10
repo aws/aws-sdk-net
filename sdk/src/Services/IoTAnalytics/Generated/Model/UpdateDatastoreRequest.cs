@@ -61,10 +61,10 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatastoreStorage. 
         /// <para>
-        /// Where data in a data store is stored.. You can choose <code>serviceManagedS3</code>
-        /// storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code>
-        /// storage. The default is <code>serviceManagedS3</code>. You can't change the choice
-        /// of Amazon S3 storage after your data store is created. 
+        /// Where data in a data store is stored.. You can choose <c>serviceManagedS3</c> storage,
+        /// <c>customerManagedS3</c> storage, or <c>iotSiteWiseMultiLayerStorage</c> storage.
+        /// The default is <c>serviceManagedS3</c>. You can't change the choice of Amazon S3 storage
+        /// after your data store is created. 
         /// </para>
         /// </summary>
         public DatastoreStorage DatastoreStorage

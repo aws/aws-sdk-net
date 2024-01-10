@@ -31,7 +31,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the CreateSipMediaApplicationCall operation.
     /// Creates an outbound call to a phone number from the phone number specified in the
-    /// request, and it invokes the endpoint of the specified <code>sipMediaApplicationId</code>.
+    /// request, and it invokes the endpoint of the specified <c>sipMediaApplicationId</c>.
     /// 
     ///  <important> 
     /// <para>

@@ -30,16 +30,16 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// Container for the parameters to the PutRecord operation.
-    /// Writes a single data record into an Amazon Kinesis data stream. Call <code>PutRecord</code>
+    /// Writes a single data record into an Amazon Kinesis data stream. Call <c>PutRecord</c>
     /// to send data into the stream for real-time ingestion and subsequent processing, one
     /// record at a time. Each shard can support writes up to 1,000 records per second, up
     /// to a maximum data write total of 1 MiB per second.
     /// 
     ///  <note> 
     /// <para>
-    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-    /// parameter when you invoke this API.
+    /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+    /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+    /// when you invoke this API.
     /// </para>
     ///  </note> 
     /// <para>
@@ -64,21 +64,21 @@ namespace Amazon.Kinesis.Model
     /// for each key. An MD5 hash function is used to map partition keys to 128-bit integer
     /// values and to map associated data records to shards using the hash key ranges of the
     /// shards. You can override hashing the partition key to determine the shard by explicitly
-    /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
-    /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+    /// specifying a hash value using the <c>ExplicitHashKey</c> parameter. For more information,
+    /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
     /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>PutRecord</code> returns the shard ID of where the data record was placed and
-    /// the sequence number that was assigned to the data record.
+    ///  <c>PutRecord</c> returns the shard ID of where the data record was placed and the
+    /// sequence number that was assigned to the data record.
     /// </para>
     ///  
     /// <para>
     /// Sequence numbers increase over time and are specific to a shard within a stream, not
     /// across all shards within a stream. To guarantee strictly increasing ordering, write
-    /// serially to a shard and use the <code>SequenceNumberForOrdering</code> parameter.
-    /// For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+    /// serially to a shard and use the <c>SequenceNumberForOrdering</c> parameter. For more
+    /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
     /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
     ///  <important> 
@@ -88,8 +88,8 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// If a <code>PutRecord</code> request cannot be processed because of insufficient provisioned
-    /// throughput on the shard involved in the request, <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code>.
+    /// If a <c>PutRecord</c> request cannot be processed because of insufficient provisioned
+    /// throughput on the shard involved in the request, <c>PutRecord</c> throws <c>ProvisionedThroughputExceededException</c>.
     /// 
     /// </para>
     ///  
@@ -177,10 +177,10 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property SequenceNumberForOrdering. 
         /// <para>
         /// Guarantees strictly increasing sequence numbers, for puts from the same client and
-        /// to the same partition key. Usage: set the <code>SequenceNumberForOrdering</code> of
-        /// record <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result
-        /// when putting record <i>n-1</i>). If this parameter is not set, records are coarsely
-        /// ordered based on arrival time.
+        /// to the same partition key. Usage: set the <c>SequenceNumberForOrdering</c> of record
+        /// <i>n</i> to the sequence number of record <i>n-1</i> (as returned in the result when
+        /// putting record <i>n-1</i>). If this parameter is not set, records are coarsely ordered
+        /// based on arrival time.
         /// </para>
         /// </summary>
         public string SequenceNumberForOrdering

@@ -81,8 +81,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The <code>AmazonOpenSearchServiceCognitoAccess</code> role that allows OpenSearch
-        /// Service to configure your user pool and identity pool.
+        /// The <c>AmazonOpenSearchServiceCognitoAccess</c> role that allows OpenSearch Service
+        /// to configure your user pool and identity pool.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

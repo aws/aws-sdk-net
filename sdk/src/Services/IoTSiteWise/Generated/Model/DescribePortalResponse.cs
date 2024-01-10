@@ -95,8 +95,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</code>
-        /// 
+        ///  <c>arn:${Partition}:iotsitewise:${Region}:${Account}:portal/${PortalId}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -134,8 +133,8 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property PortalClientId. 
         /// <para>
         /// The IAM Identity Center application generated client ID (used with IAM Identity Center
-        /// API operations). IoT SiteWise includes <code>portalClientId</code> for only portals
-        /// that use IAM Identity Center to authenticate users.
+        /// API operations). IoT SiteWise includes <c>portalClientId</c> for only portals that
+        /// use IAM Identity Center to authenticate users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

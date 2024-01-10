@@ -40,7 +40,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The job ID of the job whose shipment date you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The job ID of the job whose shipment date you want to update, for example <c>JID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=39, Max=39)]
@@ -63,11 +63,11 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>RECEIVED</code> when the device arrives at your location.
+        /// Set to <c>RECEIVED</c> when the device arrives at your location.
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>RETURNED</code> when you have returned the device to Amazon Web Services.
+        /// Set to <c>RETURNED</c> when you have returned the device to Amazon Web Services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

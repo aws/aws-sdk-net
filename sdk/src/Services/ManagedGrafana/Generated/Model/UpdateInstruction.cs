@@ -60,7 +60,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Role. 
         /// <para>
-        /// The role to add or revoke for the user or the group specified in <code>users</code>.
+        /// The role to add or revoke for the user or the group specified in <c>users</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

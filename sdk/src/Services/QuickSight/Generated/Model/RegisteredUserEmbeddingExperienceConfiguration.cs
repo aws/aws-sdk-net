@@ -34,8 +34,8 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Exactly one of the experience configurations is required. You can choose <code>Dashboard</code>
-    /// or <code>QuickSightConsole</code>. You cannot choose more than one experience configuration.
+    /// Exactly one of the experience configurations is required. You can choose <c>Dashboard</c>
+    /// or <c>QuickSightConsole</c>. You cannot choose more than one experience configuration.
     /// </para>
     ///  </note>
     /// </summary>
@@ -115,16 +115,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
-        /// </code> where you want to provide an authoring portal that allows users to create
-        /// data sources, datasets, analyses, and dashboards. The users who accesses an embedded
-        /// Amazon QuickSight console needs to belong to the author or admin security cohort.
-        /// If you want to restrict permissions to some of these features, add a custom permissions
-        /// profile to the user with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> API operation. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
-        /// </code> API operation to add a new user with a custom permission profile attached.
-        /// For more information, see the following sections in the <i>Amazon QuickSight User
-        /// Guide</i>:
+        /// Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html">GenerateEmbedUrlForRegisteredUser</a>
+        /// </c> where you want to provide an authoring portal that allows users to create data
+        /// sources, datasets, analyses, and dashboards. The users who accesses an embedded Amazon
+        /// QuickSight console needs to belong to the author or admin security cohort. If you
+        /// want to restrict permissions to some of these features, add a custom permissions profile
+        /// to the user with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+        /// </c> API operation. Use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
+        /// </c> API operation to add a new user with a custom permission profile attached. For
+        /// more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>

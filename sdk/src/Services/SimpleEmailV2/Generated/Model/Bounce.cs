@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Information about a <code>Bounce</code> event.
+    /// Information about a <c>Bounce</c> event.
     /// </summary>
     public partial class Bounce
     {
@@ -58,8 +58,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property BounceType. 
         /// <para>
-        /// The type of the bounce, as determined by SES. Can be one of <code>UNDETERMINED</code>,
-        /// <code>TRANSIENT</code>, or <code>PERMANENT</code> 
+        /// The type of the bounce, as determined by SES. Can be one of <c>UNDETERMINED</c>, <c>TRANSIENT</c>,
+        /// or <c>PERMANENT</c> 
         /// </para>
         /// </summary>
         public BounceType BounceType
@@ -79,7 +79,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// The status code issued by the reporting Message Transfer Authority (MTA). This field
         /// only appears if a delivery status notification (DSN) was attached to the bounce and
-        /// the <code>Diagnostic-Code</code> was provided in the DSN. 
+        /// the <c>Diagnostic-Code</c> was provided in the DSN. 
         /// </para>
         /// </summary>
         public string DiagnosticCode

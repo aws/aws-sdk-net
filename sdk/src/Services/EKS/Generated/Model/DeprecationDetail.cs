@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// The summary information about deprecated resource usage for an insight check in the
-    /// <code>UPGRADE_READINESS</code> category.
+    /// <c>UPGRADE_READINESS</c> category.
     /// </summary>
     public partial class DeprecationDetail
     {

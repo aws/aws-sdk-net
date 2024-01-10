@@ -39,8 +39,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property FindingsMetrics. 
         /// <para>
-        /// A list of <code>AccountFindingsMetric</code> objects retrieved from the specified
-        /// time interval.
+        /// A list of <c>AccountFindingsMetric</c> objects retrieved from the specified time interval.
         /// </para>
         /// </summary>
         public List<AccountFindingsMetric> FindingsMetrics
@@ -58,7 +57,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token. You can use this in future calls to <code>ListFindingMetrics</code>
+        /// A pagination token. You can use this in future calls to <c>ListFindingMetrics</c>
         /// to continue listing results after the current page. 
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Represents a conditional expression to set a component property. Use <code>ComponentConditionProperty</code>
+    /// Represents a conditional expression to set a component property. Use <c>ComponentConditionProperty</c>
     /// to set a property to different values conditionally, based on the value of another
     /// property.
     /// </summary>
@@ -118,8 +118,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to use to perform the evaluation, such as <code>eq</code> to represent
-        /// equals.
+        /// The operator to use to perform the evaluation, such as <c>eq</c> to represent equals.
         /// </para>
         /// </summary>
         public string Operator

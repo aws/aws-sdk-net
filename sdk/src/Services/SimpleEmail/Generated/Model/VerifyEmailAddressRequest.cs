@@ -30,8 +30,7 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the VerifyEmailAddress operation.
-    /// Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a new email
-    /// address.
+    /// Deprecated. Use the <c>VerifyEmailIdentity</c> operation to verify a new email address.
     /// </summary>
     public partial class VerifyEmailAddressRequest : AmazonSimpleEmailServiceRequest
     {

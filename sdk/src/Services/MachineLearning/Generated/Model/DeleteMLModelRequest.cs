@@ -30,16 +30,16 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteMLModel operation.
-    /// Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.
+    /// Assigns the <c>DELETED</c> status to an <c>MLModel</c>, rendering it unusable.
     /// 
     ///  
     /// <para>
-    /// After using the <code>DeleteMLModel</code> operation, you can use the <code>GetMLModel</code>
-    /// operation to verify that the status of the <code>MLModel</code> changed to DELETED.
+    /// After using the <c>DeleteMLModel</c> operation, you can use the <c>GetMLModel</c>
+    /// operation to verify that the status of the <c>MLModel</c> changed to DELETED.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Caution:</b> The result of the <code>DeleteMLModel</code> operation is irreversible.
+    ///  <b>Caution:</b> The result of the <c>DeleteMLModel</c> operation is irreversible.
     /// </para>
     /// </summary>
     public partial class DeleteMLModelRequest : AmazonMachineLearningRequest
@@ -49,7 +49,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>MLModel</code>.
+        /// A user-supplied ID that uniquely identifies the <c>MLModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

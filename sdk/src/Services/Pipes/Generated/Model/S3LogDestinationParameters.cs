@@ -85,16 +85,16 @@ namespace Amazon.Pipes.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>json</code>: JSON 
+        ///  <c>json</c>: JSON 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>plain</code>: Plain text
+        ///  <c>plain</c>: Plain text
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>w3c</code>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging
-        /// file format</a> 
+        ///  <c>w3c</c>: <a href="https://www.w3.org/TR/WD-logfile">W3C extended logging file
+        /// format</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

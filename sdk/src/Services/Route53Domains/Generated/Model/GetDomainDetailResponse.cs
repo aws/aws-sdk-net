@@ -119,10 +119,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AdminPrivacy. 
         /// <para>
         /// Specifies whether contact information is concealed from WHOIS queries. If the value
-        /// is <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
-        /// the information that you entered for the admin contact.
+        /// is <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If the value is <c>false</c>, WHOIS queries return the information
+        /// that you entered for the admin contact.
         /// </para>
         /// </summary>
         public bool AdminPrivacy
@@ -289,10 +289,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property RegistrantPrivacy. 
         /// <para>
         /// Specifies whether contact information is concealed from WHOIS queries. If the value
-        /// is <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
-        /// the information that you entered for the registrant contact (domain owner).
+        /// is <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If the value is <c>false</c>, WHOIS queries return the information
+        /// that you entered for the registrant contact (domain owner).
         /// </para>
         /// </summary>
         public bool RegistrantPrivacy
@@ -313,7 +313,7 @@ namespace Amazon.Route53Domains.Model
         /// Name of the registrar of the domain as identified in the registry. Domains with a
         /// .com, .net, or .org TLD are registered by Amazon Registrar. All other domains are
         /// registered by our registrar associate, Gandi. The value for domains that are registered
-        /// by Gandi is <code>"GANDI SAS"</code>. 
+        /// by Gandi is <c>"GANDI SAS"</c>. 
         /// </para>
         /// </summary>
         public string RegistrarName
@@ -368,7 +368,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Reseller. 
         /// <para>
         /// Reseller of the domain. Domains registered or transferred using Route 53 domains will
-        /// have <code>"Amazon"</code> as the reseller. 
+        /// have <c>"Amazon"</c> as the reseller. 
         /// </para>
         /// </summary>
         public string Reseller
@@ -401,8 +401,8 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// For a current list of domain name status codes and an explanation of what each code
         /// means, go to the <a href="https://www.icann.org/">ICANN website</a> and search for
-        /// <code>epp status codes</code>. (Search on the ICANN website; web searches sometimes
-        /// return an old version of the document.)
+        /// <c>epp status codes</c>. (Search on the ICANN website; web searches sometimes return
+        /// an old version of the document.)
         /// </para>
         /// </summary>
         public List<string> StatusList
@@ -440,10 +440,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property TechPrivacy. 
         /// <para>
         /// Specifies whether contact information is concealed from WHOIS queries. If the value
-        /// is <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If the value is <code>false</code>, WHOIS queries return
-        /// the information that you entered for the technical contact.
+        /// is <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If the value is <c>false</c>, WHOIS queries return the information
+        /// that you entered for the technical contact.
         /// </para>
         /// </summary>
         public bool TechPrivacy

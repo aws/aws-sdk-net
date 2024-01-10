@@ -59,7 +59,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceModelVersion. 
         /// <para>
-        /// Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+        /// Version number of the face detection model associated with the input collection (<c>CollectionId</c>).
         /// </para>
         /// </summary>
         public string FaceModelVersion
@@ -96,8 +96,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SearchedFaceConfidence. 
         /// <para>
-        /// The level of confidence that the <code>searchedFaceBoundingBox</code>, contains a
-        /// face.
+        /// The level of confidence that the <c>searchedFaceBoundingBox</c>, contains a face.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

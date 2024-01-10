@@ -44,9 +44,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FindingCreated. 
         /// <para>
-        ///  Identifies whether the event marks the creation of a new finding. A value of <code>True</code>
-        /// means that the finding is newly created. A value of <code>False</code> means that
-        /// the finding isn’t newly created. 
+        ///  Identifies whether the event marks the creation of a new finding. A value of <c>True</c>
+        /// means that the finding is newly created. A value of <c>False</c> means that the finding
+        /// isn’t newly created. 
         /// </para>
         /// </summary>
         public bool FindingCreated
@@ -81,8 +81,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  A token for pagination purposes. Provide this token in the subsequent request to
         /// <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_GetFindingsHistory.html">
-        /// <code>GetFindingsHistory</code> </a> to get up to an additional 100 results of history
-        /// for the same finding that you specified in your initial request. 
+        /// <c>GetFindingsHistory</c> </a> to get up to an additional 100 results of history for
+        /// the same finding that you specified in your initial request. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -122,8 +122,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  Identifies the source of the event that changed the finding. For example, an integrated
         /// Amazon Web Service or third-party partner integration may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchImportFindings.html">
-        /// <code>BatchImportFindings</code> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
-        /// <code>BatchUpdateFindings</code> </a>. 
+        /// <c>BatchImportFindings</c> </a>, or an Security Hub customer may call <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateFindings.html">
+        /// <c>BatchUpdateFindings</c> </a>. 
         /// </para>
         /// </summary>
         public FindingHistoryUpdateSource UpdateSource
@@ -146,10 +146,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. 
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>. 
         /// </para>
         /// </summary>
         public DateTime UpdateTime

@@ -80,10 +80,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CriticalNonCompliantCount. 
         /// <para>
-        /// The number of patches per node that are specified as <code>Critical</code> for compliance
+        /// The number of patches per node that are specified as <c>Critical</c> for compliance
         /// reporting in the patch baseline aren't installed. These patches might be missing,
         /// have failed installation, were rejected, or were installed but awaiting a required
-        /// managed node reboot. The status of these managed nodes is <code>NON_COMPLIANT</code>.
+        /// managed node reboot. The status of these managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
         public int CriticalNonCompliantCount
@@ -176,14 +176,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property InstalledRejectedCount. 
         /// <para>
-        /// The number of patches installed on a managed node that are specified in a <code>RejectedPatches</code>
-        /// list. Patches with a status of <code>InstalledRejected</code> were typically installed
-        /// before they were added to a <code>RejectedPatches</code> list.
+        /// The number of patches installed on a managed node that are specified in a <c>RejectedPatches</c>
+        /// list. Patches with a status of <c>InstalledRejected</c> were typically installed before
+        /// they were added to a <c>RejectedPatches</c> list.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>,
-        /// the value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
+        /// If <c>ALLOW_AS_DEPENDENCY</c> is the specified option for <c>RejectedPatchesAction</c>,
+        /// the value of <c>InstalledRejectedCount</c> will always be <c>0</c> (zero).
         /// </para>
         ///  </note>
         /// </summary>
@@ -204,15 +204,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// An https URL or an Amazon Simple Storage Service (Amazon S3) path-style URL to a list
         /// of patches to be installed. This patch installation list, which you maintain in an
-        /// S3 bucket in YAML format and specify in the SSM document <code>AWS-RunPatchBaseline</code>,
+        /// S3 bucket in YAML format and specify in the SSM document <c>AWS-RunPatchBaseline</c>,
         /// overrides the patches specified by the default patch baseline.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>InstallOverrideList</code> parameter, see <a
-        /// href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
-        /// the <code>AWS-RunPatchBaseline</code> </a> SSM document in the <i>Amazon Web Services
-        /// Systems Manager User Guide</i>.
+        /// For more information about the <c>InstallOverrideList</c> parameter, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/patch-manager-about-aws-runpatchbaseline.html">About
+        /// the <c>AWS-RunPatchBaseline</c> </a> SSM document in the <i>Amazon Web Services Systems
+        /// Manager User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -251,8 +250,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property LastNoRebootInstallOperationTime. 
         /// <para>
-        /// The time of the last attempt to patch the managed node with <code>NoReboot</code>
-        /// specified as the reboot option.
+        /// The time of the last attempt to patch the managed node with <c>NoReboot</c> specified
+        /// as the reboot option.
         /// </para>
         /// </summary>
         public DateTime LastNoRebootInstallOperationTime
@@ -292,7 +291,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The number of patches from the patch baseline that aren't applicable for the managed
         /// node and therefore aren't installed on the node. This number may be truncated if the
         /// list of patch names is very large. The number of patches beyond this limit are reported
-        /// in <code>UnreportedNotApplicableCount</code>.
+        /// in <c>UnreportedNotApplicableCount</c>.
         /// </para>
         /// </summary>
         public int NotApplicableCount
@@ -314,11 +313,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SCAN</code> assesses the patch compliance state.
+        ///  <c>SCAN</c> assesses the patch compliance state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTALL</code> installs missing patches.
+        ///  <c>INSTALL</c> installs missing patches.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -376,9 +375,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OtherNonCompliantCount. 
         /// <para>
-        /// The number of patches per node that are specified as other than <code>Critical</code>
-        /// or <code>Security</code> but aren't compliant with the patch baseline. The status
-        /// of these managed nodes is <code>NON_COMPLIANT</code>.
+        /// The number of patches per node that are specified as other than <c>Critical</c> or
+        /// <c>Security</c> but aren't compliant with the patch baseline. The status of these
+        /// managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
         public int OtherNonCompliantCount
@@ -439,20 +438,20 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Reboot options apply to <code>Install</code> operations only. Reboots aren't attempted
-        /// for Patch Manager <code>Scan</code> operations.
+        /// Reboot options apply to <c>Install</c> operations only. Reboots aren't attempted for
+        /// Patch Manager <c>Scan</c> operations.
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        ///  <code>RebootIfNeeded</code>: Patch Manager tries to reboot the managed node if it
-        /// installed any patches, or if any patches are detected with a status of <code>InstalledPendingReboot</code>.
+        ///  <c>RebootIfNeeded</c>: Patch Manager tries to reboot the managed node if it installed
+        /// any patches, or if any patches are detected with a status of <c>InstalledPendingReboot</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NoReboot</code>: Patch Manager attempts to install missing packages without
-        /// trying to reboot the system. Patches installed with this option are assigned a status
-        /// of <code>InstalledPendingReboot</code>. These patches might not be in effect until
-        /// a reboot is performed.
+        ///  <c>NoReboot</c>: Patch Manager attempts to install missing packages without trying
+        /// to reboot the system. Patches installed with this option are assigned a status of
+        /// <c>InstalledPendingReboot</c>. These patches might not be in effect until a reboot
+        /// is performed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -471,10 +470,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SecurityNonCompliantCount. 
         /// <para>
-        /// The number of patches per node that are specified as <code>Security</code> in a patch
-        /// advisory aren't installed. These patches might be missing, have failed installation,
-        /// were rejected, or were installed but awaiting a required managed node reboot. The
-        /// status of these managed nodes is <code>NON_COMPLIANT</code>.
+        /// The number of patches per node that are specified as <c>Security</c> in a patch advisory
+        /// aren't installed. These patches might be missing, have failed installation, were rejected,
+        /// or were installed but awaiting a required managed node reboot. The status of these
+        /// managed nodes is <c>NON_COMPLIANT</c>.
         /// </para>
         /// </summary>
         public int SecurityNonCompliantCount
@@ -512,9 +511,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property UnreportedNotApplicableCount. 
         /// <para>
-        /// The number of patches beyond the supported limit of <code>NotApplicableCount</code>
-        /// that aren't reported by name to Inventory. Inventory is a capability of Amazon Web
-        /// Services Systems Manager.
+        /// The number of patches beyond the supported limit of <c>NotApplicableCount</c> that
+        /// aren't reported by name to Inventory. Inventory is a capability of Amazon Web Services
+        /// Systems Manager.
         /// </para>
         /// </summary>
         public int UnreportedNotApplicableCount

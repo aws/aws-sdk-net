@@ -46,9 +46,9 @@ namespace Amazon.CloudWatchLogs.Model
     ///  <important> 
     /// <para>
     /// Metrics extracted from log events are charged as custom metrics. To prevent unexpected
-    /// high charges, do not specify high-cardinality fields such as <code>IPAddress</code>
-    /// or <code>requestID</code> as dimensions. Each different value found for a dimension
-    /// is treated as a separate metric and accrues charges as a separate custom metric. 
+    /// high charges, do not specify high-cardinality fields such as <c>IPAddress</c> or <c>requestID</c>
+    /// as dimensions. Each different value found for a dimension is treated as a separate
+    /// metric and accrues charges as a separate custom metric. 
     /// </para>
     ///  
     /// <para>

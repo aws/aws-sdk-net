@@ -149,7 +149,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property FullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the sensor. For example, the fully qualified name of a
-        /// sensor might be <code>Vehicle.Body.Engine.Battery</code>.
+        /// sensor might be <c>Vehicle.Body.Engine.Battery</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -205,8 +205,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property StructFullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the struct node for a sensor if the data type of the actuator
-        /// is <code>Struct</code> or <code>StructArray</code>. For example, the struct fully
-        /// qualified name of a sensor might be <code>Vehicle.ADAS.CameraStruct</code>.
+        /// is <c>Struct</c> or <c>StructArray</c>. For example, the struct fully qualified name
+        /// of a sensor might be <c>Vehicle.ADAS.CameraStruct</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=150)]

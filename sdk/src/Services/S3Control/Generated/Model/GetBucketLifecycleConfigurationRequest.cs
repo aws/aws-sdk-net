@@ -46,7 +46,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// To use this action, you must have permission to perform the <code>s3-outposts:GetLifecycleConfiguration</code>
+    /// To use this action, you must have permission to perform the <c>s3-outposts:GetLifecycleConfiguration</c>
     /// action. The Outposts bucket owner has this permission, by default. The bucket owner
     /// can grant this permission to others. For more information about permissions, see <a
     /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
@@ -56,20 +56,20 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
-    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// parameter of <c>x-amz-outpost-id</c> to be passed with the request. In addition, you
+    /// must use an S3 on Outposts endpoint hostname prefix instead of <c>s3-control</c>.
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">Examples</a>
+    /// Outposts endpoint hostname prefix and the <c>x-amz-outpost-id</c> derived by using
+    /// the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketLifecycleConfiguration.html#API_control_GetBucketLifecycleConfiguration_Examples">Examples</a>
     /// section.
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetBucketLifecycleConfiguration</code> has the following special error:
+    ///  <c>GetBucketLifecycleConfiguration</c> has the following special error:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Error code: <code>NoSuchLifecycleConfiguration</code> 
+    /// Error code: <c>NoSuchLifecycleConfiguration</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// The following actions are related to <code>GetBucketLifecycleConfiguration</code>:
+    /// The following actions are related to <c>GetBucketLifecycleConfiguration</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -136,10 +136,10 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
-        /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
-        /// For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code>
-        /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
-        /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+        /// CLI, you must specify the ARN of the bucket accessed in the format <c>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</c>.
+        /// For example, to access the bucket <c>reports</c> through Outpost <c>my-outpost</c>
+        /// owned by account <c>123456789012</c> in Region <c>us-west-2</c>, use the URL encoding
+        /// of <c>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</c>.
         /// The value must be URL encoded. 
         /// </para>
         /// </summary>

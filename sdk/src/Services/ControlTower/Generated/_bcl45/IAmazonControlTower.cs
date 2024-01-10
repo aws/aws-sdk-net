@@ -41,11 +41,11 @@ namespace Amazon.ControlTower
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// the <code>controlIdentifier</code> for the control--or guardrail--you are targeting.
+    /// the <c>controlIdentifier</c> for the control--or guardrail--you are targeting.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// the ARN associated with the target organizational unit (OU), which we call the <code>targetIdentifier</code>.
+    /// the ARN associated with the target organizational unit (OU), which we call the <c>targetIdentifier</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -53,20 +53,20 @@ namespace Amazon.ControlTower
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <b>To get the <code>controlIdentifier</code> for your Amazon Web Services Control
-    /// Tower control:</b> 
+    ///  <b>To get the <c>controlIdentifier</c> for your Amazon Web Services Control Tower
+    /// control:</b> 
     /// </para>
     ///  
     /// <para>
-    /// The <code>controlIdentifier</code> is an ARN that is specified for each control. You
-    /// can view the <code>controlIdentifier</code> in the console on the <b>Control details</b>
-    /// page, as well as in the documentation.
+    /// The <c>controlIdentifier</c> is an ARN that is specified for each control. You can
+    /// view the <c>controlIdentifier</c> in the console on the <b>Control details</b> page,
+    /// as well as in the documentation.
     /// </para>
     ///  
     /// <para>
-    /// The <code>controlIdentifier</code> is unique in each Amazon Web Services Region for
-    /// each control. You can find the <code>controlIdentifier</code> for each Region and
-    /// control in the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables
+    /// The <c>controlIdentifier</c> is unique in each Amazon Web Services Region for each
+    /// control. You can find the <c>controlIdentifier</c> for each Region and control in
+    /// the <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-metadata-tables.html">Tables
     /// of control metadata</a> in the <i>Amazon Web Services Control Tower User Guide.</i>
     /// 
     /// </para>
@@ -80,8 +80,7 @@ namespace Amazon.ControlTower
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <b>ARN format:</b> <code>arn:aws:controltower:{REGION}::control/{CONTROL_NAME}</code>
-    /// 
+    ///  <b>ARN format:</b> <c>arn:aws:controltower:{REGION}::control/{CONTROL_NAME}</c> 
     /// </para>
     ///  
     /// <para>
@@ -89,16 +88,16 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:aws:controltower:us-west-2::control/AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED</code>
+    ///  <c>arn:aws:controltower:us-west-2::control/AWS-GR_AUTOSCALING_LAUNCH_CONFIG_PUBLIC_IP_DISABLED</c>
     /// 
     /// </para>
     ///  </note> 
     /// <para>
-    ///  <b>To get the <code>targetIdentifier</code>:</b> 
+    ///  <b>To get the <c>targetIdentifier</c>:</b> 
     /// </para>
     ///  
     /// <para>
-    /// The <code>targetIdentifier</code> is the ARN for an OU.
+    /// The <c>targetIdentifier</c> is the ARN for an OU.
     /// </para>
     ///  
     /// <para>
@@ -111,7 +110,7 @@ namespace Amazon.ControlTower
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}</code>
+    ///  <c>arn:${Partition}:organizations::${MasterAccountId}:ou/o-${OrganizationId}/ou-${OrganizationalUnitId}</c>
     /// 
     /// </para>
     ///  </note> 
@@ -480,9 +479,9 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code>
-        /// operation. Displays a message in case of error. Details for an operation are available
-        /// for 90 days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// Returns the status of a particular <c>EnableControl</c> or <c>DisableControl</c> operation.
+        /// Displays a message in case of error. Details for an operation are available for 90
+        /// days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControlOperation service method.</param>
@@ -509,9 +508,9 @@ namespace Amazon.ControlTower
 
 
         /// <summary>
-        /// Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code>
-        /// operation. Displays a message in case of error. Details for an operation are available
-        /// for 90 days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// Returns the status of a particular <c>EnableControl</c> or <c>DisableControl</c> operation.
+        /// Displays a message in case of error. Details for an operation are available for 90
+        /// days. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the Amazon Web Services Control Tower User Guide</i> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControlOperation service method.</param>
@@ -1064,22 +1063,21 @@ namespace Amazon.ControlTower
         /// 
         ///  
         /// <para>
-        /// If the enabled control shows an <code>EnablementStatus</code> of SUCCEEDED, supply
-        /// parameters that are different from the currently configured parameters. Otherwise,
-        /// Amazon Web Services Control Tower will not accept the request.
+        /// If the enabled control shows an <c>EnablementStatus</c> of SUCCEEDED, supply parameters
+        /// that are different from the currently configured parameters. Otherwise, Amazon Web
+        /// Services Control Tower will not accept the request.
         /// </para>
         ///  
         /// <para>
-        /// If the enabled control shows an <code>EnablementStatus</code> of FAILED, Amazon Web
-        /// Services Control Tower will update the control to match any valid parameters that
-        /// you supply.
+        /// If the enabled control shows an <c>EnablementStatus</c> of FAILED, Amazon Web Services
+        /// Control Tower will update the control to match any valid parameters that you supply.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>DriftSummary</code> status for the control shows as DRIFTED, you cannot
-        /// call this API. Instead, you can update the control by calling <code>DisableControl</code>
-        /// and again calling <code>EnableControl</code>, or you can run an extending governance
-        /// operation. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// If the <c>DriftSummary</c> status for the control shows as DRIFTED, you cannot call
+        /// this API. Instead, you can update the control by calling <c>DisableControl</c> and
+        /// again calling <c>EnableControl</c>, or you can run an extending governance operation.
+        /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the Amazon Web Services Control Tower User Guide</i> </a> 
         /// </para>
         /// </summary>
@@ -1118,22 +1116,21 @@ namespace Amazon.ControlTower
         /// 
         ///  
         /// <para>
-        /// If the enabled control shows an <code>EnablementStatus</code> of SUCCEEDED, supply
-        /// parameters that are different from the currently configured parameters. Otherwise,
-        /// Amazon Web Services Control Tower will not accept the request.
+        /// If the enabled control shows an <c>EnablementStatus</c> of SUCCEEDED, supply parameters
+        /// that are different from the currently configured parameters. Otherwise, Amazon Web
+        /// Services Control Tower will not accept the request.
         /// </para>
         ///  
         /// <para>
-        /// If the enabled control shows an <code>EnablementStatus</code> of FAILED, Amazon Web
-        /// Services Control Tower will update the control to match any valid parameters that
-        /// you supply.
+        /// If the enabled control shows an <c>EnablementStatus</c> of FAILED, Amazon Web Services
+        /// Control Tower will update the control to match any valid parameters that you supply.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>DriftSummary</code> status for the control shows as DRIFTED, you cannot
-        /// call this API. Instead, you can update the control by calling <code>DisableControl</code>
-        /// and again calling <code>EnableControl</code>, or you can run an extending governance
-        /// operation. For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
+        /// If the <c>DriftSummary</c> status for the control shows as DRIFTED, you cannot call
+        /// this API. Instead, you can update the control by calling <c>DisableControl</c> and
+        /// again calling <c>EnableControl</c>, or you can run an extending governance operation.
+        /// For usage examples, see <a href="https://docs.aws.amazon.com/controltower/latest/userguide/control-api-examples-short.html">
         /// <i>the Amazon Web Services Control Tower User Guide</i> </a> 
         /// </para>
         /// </summary>

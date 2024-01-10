@@ -34,8 +34,8 @@ namespace Amazon.IoTWireless.Model
     /// 
     ///  
     /// <para>
-    /// For a LoRaWAN gateway, possible events for a log message are <code>CUPS_Request</code>
-    /// and <code>Certificate</code>.
+    /// For a LoRaWAN gateway, possible events for a log message are <c>CUPS_Request</c> and
+    /// <c>Certificate</c>.
     /// </para>
     /// </summary>
     public partial class WirelessGatewayEventLogOption

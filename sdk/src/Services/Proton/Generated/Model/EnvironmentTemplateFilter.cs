@@ -39,7 +39,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// Include <code>majorVersion</code> to filter search for a major version.
+        /// Include <c>majorVersion</c> to filter search for a major version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -58,7 +58,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        /// Include <code>templateName</code> to filter search for a template name.
+        /// Include <c>templateName</c> to filter search for a template name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

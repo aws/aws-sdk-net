@@ -102,8 +102,8 @@ namespace Amazon.ServiceQuotas.Model
         /// Gets and sets the property QuotaCode. 
         /// <para>
         /// Specifies the quota identifier. To find the quota code for a specific quota, use the
-        /// <a>ListServiceQuotas</a> operation, and look for the <code>QuotaCode</code> response
-        /// in the output for the quota you want.
+        /// <a>ListServiceQuotas</a> operation, and look for the <c>QuotaCode</c> response in
+        /// the output for the quota you want.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

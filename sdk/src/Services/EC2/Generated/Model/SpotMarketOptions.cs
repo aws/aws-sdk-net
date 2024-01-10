@@ -64,17 +64,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
-        /// <code>HibernationOptions</code> </a>) is set to <code>true</code>, the <code>InstanceInterruptionBehavior</code>
-        /// parameter is automatically set to <code>hibernate</code>. If you set it to <code>stop</code>
-        /// or <code>terminate</code>, you'll get an error.
+        /// If <c>Configured</c> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+        /// <c>HibernationOptions</c> </a>) is set to <c>true</c>, the <c>InstanceInterruptionBehavior</c>
+        /// parameter is automatically set to <c>hibernate</c>. If you set it to <c>stop</c> or
+        /// <c>terminate</c>, you'll get an error.
         /// </para>
         ///  
         /// <para>
-        /// If <code>Configured</code> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
-        /// <code>HibernationOptions</code> </a>) is set to <code>false</code> or <code>null</code>,
-        /// the <code>InstanceInterruptionBehavior</code> parameter is automatically set to <code>terminate</code>.
-        /// You can also set it to <code>stop</code> or <code>hibernate</code>.
+        /// If <c>Configured</c> (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_HibernationOptionsRequest.html">
+        /// <c>HibernationOptions</c> </a>) is set to <c>false</c> or <c>null</c>, the <c>InstanceInterruptionBehavior</c>
+        /// parameter is automatically set to <c>terminate</c>. You can also set it to <c>stop</c>
+        /// or <c>hibernate</c>.
         /// </para>
         ///  
         /// <para>
@@ -125,7 +125,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The Spot Instance request type. For <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances">RunInstances</a>,
         /// persistent Spot Instance requests are only supported when the instance interruption
-        /// behavior is either <code>hibernate</code> or <code>stop</code>.
+        /// behavior is either <c>hibernate</c> or <c>stop</c>.
         /// </para>
         /// </summary>
         public SpotInstanceType SpotInstanceType
@@ -148,13 +148,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
-        /// date and time is reached. Otherwise, the request remains active until you cancel it.
+        /// For a persistent request, the request remains active until the <c>ValidUntil</c> date
+        /// and time is reached. Otherwise, the request remains active until you cancel it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For a one-time request, <code>ValidUntil</code> is not supported. The request remains
-        /// active until all instances launch or you cancel the request.
+        /// For a one-time request, <c>ValidUntil</c> is not supported. The request remains active
+        /// until all instances launch or you cancel the request.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -190,13 +190,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
-        /// date and time is reached. Otherwise, the request remains active until you cancel it.
+        /// For a persistent request, the request remains active until the <c>ValidUntil</c> date
+        /// and time is reached. Otherwise, the request remains active until you cancel it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For a one-time request, <code>ValidUntil</code> is not supported. The request remains
-        /// active until all instances launch or you cancel the request.
+        /// For a one-time request, <c>ValidUntil</c> is not supported. The request remains active
+        /// until all instances launch or you cancel the request.
         /// </para>
         ///  </li> </ul>
         /// </summary>

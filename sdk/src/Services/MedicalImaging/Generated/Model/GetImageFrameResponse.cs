@@ -40,7 +40,7 @@ namespace Amazon.MedicalImaging.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// The format in which the image frame information is returned to the customer. Default
-        /// is <code>application/octet-stream</code>.
+        /// is <c>application/octet-stream</c>.
         /// </para>
         /// </summary>
         public string ContentType

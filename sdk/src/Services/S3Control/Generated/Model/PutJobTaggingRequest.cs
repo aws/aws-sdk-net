@@ -83,8 +83,8 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </li> </ul> </note> <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use the <code>PutJobTagging</code> operation, you must have permission to perform
-    /// the <code>s3:PutJobTagging</code> action.
+    /// To use the <c>PutJobTagging</c> operation, you must have permission to perform the
+    /// <c>s3:PutJobTagging</c> action.
     /// </para>
     ///  </dd> </dl> 
     /// <para>

@@ -51,7 +51,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> 
+        ///  <c>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=160)]

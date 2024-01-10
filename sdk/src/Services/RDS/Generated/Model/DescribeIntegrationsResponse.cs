@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that can be used in a later <code>DescribeIntegrations</code> request.
+        /// A pagination token that can be used in a later <c>DescribeIntegrations</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=340)]

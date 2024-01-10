@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutMetrics.Model
 {
     /// <summary>
-    /// An array of <code>DataQualityMetric</code> objects that describes one or more data
-    /// quality metrics.
+    /// An array of <c>DataQualityMetric</c> objects that describes one or more data quality
+    /// metrics.
     /// </summary>
     public partial class MetricSetDataQualityMetric
     {

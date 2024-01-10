@@ -29,16 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The data structure used by the Data Catalog to encrypt the password as part of <code>CreateConnection</code>
-    /// or <code>UpdateConnection</code> and store it in the <code>ENCRYPTED_PASSWORD</code>
-    /// field in the connection properties. You can enable catalog encryption or only password
-    /// encryption.
+    /// The data structure used by the Data Catalog to encrypt the password as part of <c>CreateConnection</c>
+    /// or <c>UpdateConnection</c> and store it in the <c>ENCRYPTED_PASSWORD</c> field in
+    /// the connection properties. You can enable catalog encryption or only password encryption.
     /// 
     ///  
     /// <para>
-    /// When a <code>CreationConnection</code> request arrives containing a password, the
-    /// Data Catalog first encrypts the password using your KMS key. It then encrypts the
-    /// whole connection object again if catalog encryption is also enabled.
+    /// When a <c>CreationConnection</c> request arrives containing a password, the Data Catalog
+    /// first encrypts the password using your KMS key. It then encrypts the whole connection
+    /// object again if catalog encryption is also enabled.
     /// </para>
     ///  
     /// <para>
@@ -59,10 +58,9 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// If connection password protection is enabled, the caller of <code>CreateConnection</code>
-        /// and <code>UpdateConnection</code> needs at least <code>kms:Encrypt</code> permission
-        /// on the specified KMS key, to encrypt passwords before storing them in the Data Catalog.
-        /// 
+        /// If connection password protection is enabled, the caller of <c>CreateConnection</c>
+        /// and <c>UpdateConnection</c> needs at least <c>kms:Encrypt</c> permission on the specified
+        /// KMS key, to encrypt passwords before storing them in the Data Catalog. 
         /// </para>
         ///  
         /// <para>
@@ -86,8 +84,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ReturnConnectionPasswordEncrypted. 
         /// <para>
-        /// When the <code>ReturnConnectionPasswordEncrypted</code> flag is set to "true", passwords
-        /// remain encrypted in the responses of <code>GetConnection</code> and <code>GetConnections</code>.
+        /// When the <c>ReturnConnectionPasswordEncrypted</c> flag is set to "true", passwords
+        /// remain encrypted in the responses of <c>GetConnection</c> and <c>GetConnections</c>.
         /// This encryption takes effect independently from catalog encryption. 
         /// </para>
         /// </summary>

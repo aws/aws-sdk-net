@@ -122,9 +122,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
-        /// results can be seen by sending another request with the returned <code>nextToken</code>
-        /// value. This value can be between 5 and 500. If <code>maxResults</code> is given a
-        /// larger value than 500, you receive an error.
+        /// results can be seen by sending another request with the returned <c>nextToken</c>
+        /// value. This value can be between 5 and 500. If <c>maxResults</c> is given a larger
+        /// value than 500, you receive an error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

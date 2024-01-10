@@ -88,8 +88,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property ClusterEndpoint. 
         /// <para>
         /// The endpoint to use when communicating with the cluster. Kinesis Data Firehose uses
-        /// either this <code>ClusterEndpoint</code> or the <code>DomainARN</code> field to send
-        /// data to Amazon ES.
+        /// either this <c>ClusterEndpoint</c> or the <c>DomainARN</c> field to send data to Amazon
+        /// ES.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -132,8 +132,8 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// Kinesis Data Firehose uses either <code>ClusterEndpoint</code> or <code>DomainARN</code>
-        /// to send data to Amazon ES.
+        /// Kinesis Data Firehose uses either <c>ClusterEndpoint</c> or <c>DomainARN</c> to send
+        /// data to Amazon ES.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -283,7 +283,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property TypeName. 
         /// <para>
         /// The Elasticsearch type name. This applies to Elasticsearch 6.x and lower versions.
-        /// For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for <code>TypeName</code>.
+        /// For Elasticsearch 7.x and OpenSearch Service 1.x, there's no value for <c>TypeName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

@@ -78,8 +78,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to get the next set of results, or <code>null</code> if there are
-        /// no additional results.
+        /// The token to use to get the next set of results, or <c>null</c> if there are no additional
+        /// results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

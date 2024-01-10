@@ -62,27 +62,27 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>associating</code> 
+        ///  <c>associating</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>associated</code> 
+        ///  <c>associated</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociating</code> 
+        ///  <c>disassociating</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociated</code> 
+        ///  <c>disassociated</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed</code> 
+        ///  <c>failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failing</code> 
+        ///  <c>failing</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

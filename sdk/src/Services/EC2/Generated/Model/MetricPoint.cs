@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Indicates whether the network was healthy or degraded at a particular point. The value
-    /// is aggregated from the <code>startDate</code> to the <code>endDate</code>. Currently
-    /// only <code>five_minutes</code> is supported.
+    /// is aggregated from the <c>startDate</c> to the <c>endDate</c>. Currently only <c>five_minutes</c>
+    /// is supported.
     /// </summary>
     public partial class MetricPoint
     {
@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EndDate. 
         /// <para>
-        /// The end date for the metric point. The ending time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>.
-        /// For example, <code>2022-06-12T12:00:00.000Z</code>.
+        /// The end date for the metric point. The ending time must be formatted as <c>yyyy-mm-ddThh:mm:ss</c>.
+        /// For example, <c>2022-06-12T12:00:00.000Z</c>.
         /// </para>
         /// </summary>
         public DateTime EndDate
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The start date for the metric point. The starting date for the metric point. The starting
-        /// time must be formatted as <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2022-06-10T12:00:00.000Z</code>.
+        /// time must be formatted as <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2022-06-10T12:00:00.000Z</c>.
         /// </para>
         /// </summary>
         public DateTime StartDate

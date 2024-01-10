@@ -43,7 +43,7 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>TLS_1_0</code> 
+        ///  <c>TLS_1_0</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -63,7 +63,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the directory setting for which to retrieve information. For example,
-        /// for <code>TLS_1_0</code>, the valid values are: <code>Enable</code> and <code>Disable</code>.
+        /// for <c>TLS_1_0</c>, the valid values are: <c>Enable</c> and <c>Disable</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

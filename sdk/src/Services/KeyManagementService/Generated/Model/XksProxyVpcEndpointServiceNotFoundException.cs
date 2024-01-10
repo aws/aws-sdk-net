@@ -31,9 +31,8 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// The request was rejected because KMS could not find the specified VPC endpoint service.
     /// Use <a>DescribeCustomKeyStores</a> to verify the VPC endpoint service name for the
-    /// external key store. Also, confirm that the <code>Allow principals</code> list for
-    /// the VPC endpoint service includes the KMS service principal for the Region, such as
-    /// <code>cks.kms.us-east-1.amazonaws.com</code>.
+    /// external key store. Also, confirm that the <c>Allow principals</c> list for the VPC
+    /// endpoint service includes the KMS service principal for the Region, such as <c>cks.kms.us-east-1.amazonaws.com</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

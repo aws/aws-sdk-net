@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. 
+    ///  <c>AfterContactWorkTimeLimit</c> is returned in milliseconds. 
     /// </para>
     ///  </note>
     /// </summary>

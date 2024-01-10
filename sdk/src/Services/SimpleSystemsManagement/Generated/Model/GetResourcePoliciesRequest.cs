@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResourcePolicies operation.
-    /// Returns an array of the <code>Policy</code> object.
+    /// Returns an array of the <c>Policy</c> object.
     /// </summary>
     public partial class GetResourcePoliciesRequest : AmazonSimpleSystemsManagementRequest
     {

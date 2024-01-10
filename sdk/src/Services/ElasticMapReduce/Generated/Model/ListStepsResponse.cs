@@ -40,10 +40,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The maximum number of steps that a single <code>ListSteps</code> action returns is
-        /// 50. To return a longer list of steps, use multiple <code>ListSteps</code> actions
-        /// along with the <code>Marker</code> parameter, which is a pagination token that indicates
-        /// the next set of results to retrieve.
+        /// The maximum number of steps that a single <c>ListSteps</c> action returns is 50. To
+        /// return a longer list of steps, use multiple <c>ListSteps</c> actions along with the
+        /// <c>Marker</c> parameter, which is a pagination token that indicates the next set of
+        /// results to retrieve.
         /// </para>
         /// </summary>
         public string Marker

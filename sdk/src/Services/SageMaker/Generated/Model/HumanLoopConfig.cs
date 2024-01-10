@@ -116,9 +116,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TaskCount. 
         /// <para>
         /// The number of distinct workers who will perform the same task on each object. For
-        /// example, if <code>TaskCount</code> is set to <code>3</code> for an image classification
-        /// labeling job, three workers will classify each input image. Increasing <code>TaskCount</code>
-        /// can improve label accuracy.
+        /// example, if <c>TaskCount</c> is set to <c>3</c> for an image classification labeling
+        /// job, three workers will classify each input image. Increasing <c>TaskCount</c> can
+        /// improve label accuracy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]

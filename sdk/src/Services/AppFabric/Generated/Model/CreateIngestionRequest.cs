@@ -52,51 +52,51 @@ namespace Amazon.AppFabric.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SLACK</code> 
+        ///  <c>SLACK</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ASANA</code> 
+        ///  <c>ASANA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JIRA</code> 
+        ///  <c>JIRA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>M365</code> 
+        ///  <c>M365</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>M365AUDITLOGS</code> 
+        ///  <c>M365AUDITLOGS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZOOM</code> 
+        ///  <c>ZOOM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZENDESK</code> 
+        ///  <c>ZENDESK</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OKTA</code> 
+        ///  <c>OKTA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GOOGLE</code> 
+        ///  <c>GOOGLE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DROPBOX</code> 
+        ///  <c>DROPBOX</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SMARTSHEET</code> 
+        ///  <c>SMARTSHEET</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CISCO</code> 
+        ///  <c>CISCO</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -150,8 +150,8 @@ namespace Amazon.AppFabric.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         public string ClientToken

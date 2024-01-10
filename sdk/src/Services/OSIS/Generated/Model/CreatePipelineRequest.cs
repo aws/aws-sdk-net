@@ -142,7 +142,7 @@ namespace Amazon.OSIS.Model
         /// <para>
         /// The pipeline configuration in YAML format. The command accepts the pipeline configuration
         /// as a string or within a .yaml file. If you provide the configuration as a string,
-        /// each new line must be escaped with <code>\n</code>.
+        /// each new line must be escaped with <c>\n</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=24000)]

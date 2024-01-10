@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
-    /// Represents an action interaction event sent using the <code>PutActionInteractions</code>
+    /// Represents an action interaction event sent using the <c>PutActionInteractions</c>
     /// API.
     /// </summary>
     public partial class ActionInteraction
@@ -47,7 +47,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property ActionId. 
         /// <para>
-        /// The ID of the action the user interacted with. This corresponds to the <code>ACTION_ID</code>
+        /// The ID of the action the user interacted with. This corresponds to the <c>ACTION_ID</c>
         /// field of the Action interaction schema.
         /// </para>
         /// </summary>
@@ -89,9 +89,9 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of action interaction event. You can specify <code>Viewed</code>, <code>Taken</code>,
-        /// and <code>Not Taken</code> event types. For more information about action interaction
-        /// event type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event
+        /// The type of action interaction event. You can specify <c>Viewed</c>, <c>Taken</c>,
+        /// and <c>Not Taken</c> event types. For more information about action interaction event
+        /// type data, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event
         /// type data</a>. 
         /// </para>
         /// </summary>
@@ -112,9 +112,9 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property Impression. 
         /// <para>
         /// A list of action IDs that represents the sequence of actions you have shown the user.
-        /// For example, <code>["actionId1", "actionId2", "actionId3"]</code>. Amazon Personalize
-        /// doesn't use impressions data from action interaction events. Instead, record multiple
-        /// events for each action and use the <code>Viewed</code> event type. 
+        /// For example, <c>["actionId1", "actionId2", "actionId3"]</c>. Amazon Personalize doesn't
+        /// use impressions data from action interaction events. Instead, record multiple events
+        /// for each action and use the <c>Viewed</c> event type. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -143,12 +143,12 @@ namespace Amazon.PersonalizeEvents.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"numberOfActions": "12"}</code> 
+        ///  <c>{"numberOfActions": "12"}</c> 
         /// </para>
         ///  
         /// <para>
         /// The keys use camel case names that match the fields in the Action interactions schema.
-        /// In the above example, the <code>numberOfActions</code> would match the 'NUMBER_OF_ACTIONS'
+        /// In the above example, the <c>numberOfActions</c> would match the 'NUMBER_OF_ACTIONS'
         /// field defined in the Action interactions schema.
         /// </para>
         ///  
@@ -217,7 +217,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The ID associated with the user's visit. Your application generates a unique <code>sessionId</code>
+        /// The ID associated with the user's visit. Your application generates a unique <c>sessionId</c>
         /// when a user first visits your website or uses your application. 
         /// </para>
         /// </summary>
@@ -257,7 +257,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// The ID of the user who interacted with the action. This corresponds to the <code>USER_ID</code>
+        /// The ID of the user who interacted with the action. This corresponds to the <c>USER_ID</c>
         /// field of the Action interaction schema.
         /// </para>
         /// </summary>

@@ -43,12 +43,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>product</code> - Filter results based on the specified product identifier.
+        ///  <c>product</c> - Filter results based on the specified product identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>provisionedproduct</code> - Filter results based on the provisioned product
-        /// identifier.
+        ///  <c>provisionedproduct</c> - Filter results based on the provisioned product identifier.
         /// </para>
         ///  </li> </ul>
         /// </summary>

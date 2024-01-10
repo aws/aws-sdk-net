@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the size of <code>SecurityGroups</code> specified in the request is greater
+    /// Returned if the size of <c>SecurityGroups</c> specified in the request is greater
     /// than five.
     /// </summary>
     #if !NETSTANDARD

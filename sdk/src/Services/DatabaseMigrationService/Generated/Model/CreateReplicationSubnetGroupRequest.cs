@@ -35,7 +35,7 @@ namespace Amazon.DatabaseMigrationService.Model
     ///  
     /// <para>
     /// The VPC needs to have at least one subnet in at least two availability zones in the
-    /// Amazon Web Services Region, otherwise the service will throw a <code>ReplicationSubnetGroupDoesNotCoverEnoughAZs</code>
+    /// Amazon Web Services Region, otherwise the service will throw a <c>ReplicationSubnetGroupDoesNotCoverEnoughAZs</c>
     /// exception.
     /// </para>
     ///  
@@ -85,7 +85,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <c>mySubnetgroup</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

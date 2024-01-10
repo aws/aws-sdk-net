@@ -30,7 +30,7 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDataSources operation.
-    /// Returns a list of <code>DataSource</code> that match the search criteria in the request.
+    /// Returns a list of <c>DataSource</c> that match the search criteria in the request.
     /// </summary>
     public partial class DescribeDataSourcesRequest : AmazonMachineLearningRequest
     {
@@ -49,8 +49,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EQ. 
         /// <para>
-        /// The equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
-        /// values that exactly match the value specified with <code>EQ</code>.
+        /// The equal to operator. The <c>DataSource</c> results will have <c>FilterVariable</c>
+        /// values that exactly match the value specified with <c>EQ</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -69,32 +69,30 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property FilterVariable. 
         /// <para>
-        /// Use one of the following variables to filter a list of <code>DataSource</code>:
+        /// Use one of the following variables to filter a list of <c>DataSource</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation
-        /// dates.
+        ///  <c>CreatedAt</c> - Sets the search criteria to <c>DataSource</c> creation dates.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+        ///  <c>Status</c> - Sets the search criteria to <c>DataSource</c> statuses.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code>
-        /// <code>Name</code>.
+        ///  <c>Name</c> - Sets the search criteria to the contents of <c>DataSource</c> <c>Name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DataUri</code> - Sets the search criteria to the URI of data files used to
-        /// create the <code>DataSource</code>. The URI can identify either a file or an Amazon
-        /// Simple Storage Service (Amazon S3) bucket or directory.
+        ///  <c>DataUri</c> - Sets the search criteria to the URI of data files used to create
+        /// the <c>DataSource</c>. The URI can identify either a file or an Amazon Simple Storage
+        /// Service (Amazon S3) bucket or directory.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-        /// the <code>DataSource</code> creation.
+        ///  <c>IAMUser</c> - Sets the search criteria to the user account that invoked the <c>DataSource</c>
+        /// creation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -113,9 +111,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property GE. 
         /// <para>
-        /// The greater than or equal to operator. The <code>DataSource</code> results will have
-        /// <code>FilterVariable</code> values that are greater than or equal to the value specified
-        /// with <code>GE</code>. 
+        /// The greater than or equal to operator. The <c>DataSource</c> results will have <c>FilterVariable</c>
+        /// values that are greater than or equal to the value specified with <c>GE</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -134,8 +131,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property GT. 
         /// <para>
-        /// The greater than operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
-        /// values that are greater than the value specified with <code>GT</code>.
+        /// The greater than operator. The <c>DataSource</c> results will have <c>FilterVariable</c>
+        /// values that are greater than the value specified with <c>GT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -154,9 +151,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LE. 
         /// <para>
-        /// The less than or equal to operator. The <code>DataSource</code> results will have
-        /// <code>FilterVariable</code> values that are less than or equal to the value specified
-        /// with <code>LE</code>.
+        /// The less than or equal to operator. The <c>DataSource</c> results will have <c>FilterVariable</c>
+        /// values that are less than or equal to the value specified with <c>LE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -175,7 +171,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        ///  The maximum number of <code>DataSource</code> to include in the result.
+        ///  The maximum number of <c>DataSource</c> to include in the result.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -194,8 +190,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LT. 
         /// <para>
-        /// The less than operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
-        /// values that are less than the value specified with <code>LT</code>.
+        /// The less than operator. The <c>DataSource</c> results will have <c>FilterVariable</c>
+        /// values that are less than the value specified with <c>LT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -214,8 +210,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property NE. 
         /// <para>
-        /// The not equal to operator. The <code>DataSource</code> results will have <code>FilterVariable</code>
-        /// values not equal to the value specified with <code>NE</code>.
+        /// The not equal to operator. The <c>DataSource</c> results will have <c>FilterVariable</c>
+        /// values not equal to the value specified with <c>NE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -252,14 +248,13 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// A string that is found at the beginning of a variable, such as <code>Name</code> or
-        /// <code>Id</code>.
+        /// A string that is found at the beginning of a variable, such as <c>Name</c> or <c>Id</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, a <code>DataSource</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>.
-        /// To search for this <code>DataSource</code>, select <code>Name</code> for the <code>FilterVariable</code>
-        /// and any of the following strings for the <code>Prefix</code>: 
+        /// For example, a <c>DataSource</c> could have the <c>Name</c> <c>2014-09-09-HolidayGiftMailer</c>.
+        /// To search for this <c>DataSource</c>, select <c>Name</c> for the <c>FilterVariable</c>
+        /// and any of the following strings for the <c>Prefix</c>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -291,19 +286,19 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.
+        /// A two-value parameter that determines the sequence of the resulting list of <c>DataSource</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+        ///  <c>asc</c> - Arranges the list in ascending order (A-Z, 0-9).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+        ///  <c>dsc</c> - Arranges the list in descending order (Z-A, 9-0).
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Results are sorted by <code>FilterVariable</code>.
+        /// Results are sorted by <c>FilterVariable</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

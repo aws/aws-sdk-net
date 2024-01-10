@@ -31,7 +31,7 @@ namespace Amazon.LakeFormation.Model
     /// <summary>
     /// Container for the parameters to the RemoveLFTagsFromResource operation.
     /// Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource
-    /// are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code>
+    /// are allowed. To tag columns, use the column inclusion list in <c>tableWithColumns</c>
     /// to specify column input.
     /// </summary>
     public partial class RemoveLFTagsFromResourceRequest : AmazonLakeFormationRequest

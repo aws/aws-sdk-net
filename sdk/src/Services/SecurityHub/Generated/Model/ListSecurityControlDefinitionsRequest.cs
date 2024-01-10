@@ -44,9 +44,8 @@ namespace Amazon.SecurityHub.Model
         ///  An optional parameter that limits the total results of the API response to the specified
         /// number. If this parameter isn't provided in the request, the results include the first
         /// 25 security controls that apply to the specified standard. The results also include
-        /// a <code>NextToken</code> parameter that you can use in a subsequent API call to get
-        /// the next 25 controls. This repeats until all controls for the standard are returned.
-        /// 
+        /// a <c>NextToken</c> parameter that you can use in a subsequent API call to get the
+        /// next 25 controls. This repeats until all controls for the standard are returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

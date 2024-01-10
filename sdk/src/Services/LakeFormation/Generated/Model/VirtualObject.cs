@@ -30,7 +30,7 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// An object that defines an Amazon S3 object to be deleted if a transaction cancels,
-    /// provided that <code>VirtualPut</code> was called before writing the object.
+    /// provided that <c>VirtualPut</c> was called before writing the object.
     /// </summary>
     public partial class VirtualObject
     {

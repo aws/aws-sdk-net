@@ -39,8 +39,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property FailedDisassociatedResources. 
         /// <para>
-        ///  A list of <code>DisassociateResourceResponseElement</code> for each resource that
-        /// failed disassociation from a percentage custom line item. 
+        ///  A list of <c>DisassociateResourceResponseElement</c> for each resource that failed
+        /// disassociation from a percentage custom line item. 
         /// </para>
         /// </summary>
         public List<DisassociateResourceResponseElement> FailedDisassociatedResources
@@ -58,8 +58,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property SuccessfullyDisassociatedResources. 
         /// <para>
-        ///  A list of <code>DisassociateResourceResponseElement</code> for each resource that's
-        /// been disassociated from a percentage custom line item successfully. 
+        ///  A list of <c>DisassociateResourceResponseElement</c> for each resource that's been
+        /// disassociated from a percentage custom line item successfully. 
         /// </para>
         /// </summary>
         public List<DisassociateResourceResponseElement> SuccessfullyDisassociatedResources

@@ -35,9 +35,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// 
     ///  
     /// <para>
-    /// Both the <code>StreamName</code> and the <code>StreamARN</code> parameters are optional,
-    /// but you must specify either the <code>StreamName</code> or the <code>StreamARN</code>
-    /// when invoking this API operation.
+    /// Both the <c>StreamName</c> and the <c>StreamARN</c> parameters are optional, but you
+    /// must specify either the <c>StreamName</c> or the <c>StreamARN</c> when invoking this
+    /// API operation.
     /// </para>
     ///  
     /// <para>
@@ -47,9 +47,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  <ul> <li> 
     /// <para>
     /// The media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
-    /// encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
+    /// encoded audio. Specifically, the codec ID of track 1 should be <c>V_MPEG/ISO/AVC</c>
     /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec ID of track 2 should
-    /// be <code>A_AAC</code> (for AAC) or A_MS/ACM (for G.711).
+    /// be <c>A_AAC</c> (for AAC) or A_MS/ACM (for G.711).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,16 +77,15 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  <ol> <li> 
     /// <para>
     /// Get an endpoint using <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html">GetDataEndpoint</a>,
-    /// specifying <code>GET_DASH_STREAMING_SESSION_URL</code> for the <code>APIName</code>
-    /// parameter.
+    /// specifying <c>GET_DASH_STREAMING_SESSION_URL</c> for the <c>APIName</c> parameter.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Retrieve the MPEG-DASH URL using <code>GetDASHStreamingSessionURL</code>. Kinesis
-    /// Video Streams creates an MPEG-DASH streaming session to be used for accessing content
-    /// in a stream using the MPEG-DASH protocol. <code>GetDASHStreamingSessionURL</code>
-    /// returns an authenticated URL (that includes an encrypted session token) for the session's
-    /// MPEG-DASH <i>manifest</i> (the root resource needed for streaming with MPEG-DASH).
+    /// Retrieve the MPEG-DASH URL using <c>GetDASHStreamingSessionURL</c>. Kinesis Video
+    /// Streams creates an MPEG-DASH streaming session to be used for accessing content in
+    /// a stream using the MPEG-DASH protocol. <c>GetDASHStreamingSessionURL</c> returns an
+    /// authenticated URL (that includes an encrypted session token) for the session's MPEG-DASH
+    /// <i>manifest</i> (the root resource needed for streaming with MPEG-DASH).
     /// </para>
     ///  <note> 
     /// <para>
@@ -123,8 +122,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// <para>
     ///  <b>GetMP4InitFragment:</b> Retrieves the MP4 initialization fragment. The media player
     /// typically loads the initialization fragment before loading any media fragments. This
-    /// fragment contains the "<code>fytp</code>" and "<code>moov</code>" MP4 atoms, and the
-    /// child atoms that are needed to initialize the media player decoder.
+    /// fragment contains the "<c>fytp</c>" and "<c>moov</c>" MP4 atoms, and the child atoms
+    /// that are needed to initialize the media player decoder.
     /// </para>
     ///  
     /// <para>
@@ -135,8 +134,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments contain
-    /// the "<code>moof</code>" and "<code>mdat</code>" MP4 atoms and their child atoms, containing
-    /// the encoded fragment's media frames and their timestamps. 
+    /// the "<c>moof</c>" and "<c>mdat</c>" MP4 atoms and their child atoms, containing the
+    /// encoded fragment's media frames and their timestamps. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -160,7 +159,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  </note> 
     /// <para>
     /// You can monitor the amount of data that the media player consumes by monitoring the
-    /// <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For information
+    /// <c>GetMP4MediaFragment.OutgoingBytes</c> Amazon CloudWatch metric. For information
     /// about using CloudWatch to monitor Kinesis Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
     /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon
     /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">Amazon
@@ -180,14 +179,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type in
-    /// addition to what the HTTP status code provides. 
+    ///  <c>x-amz-ErrorType</c> HTTP header – contains a more specific error type in addition
+    /// to what the HTTP status code provides. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to Amazon
-    /// Web Services the support team can better diagnose the problem if given the Request
-    /// Id.
+    ///  <c>x-amz-RequestId</c> HTTP header – if you want to report an issue to Amazon Web
+    /// Services the support team can better diagnose the problem if given the Request Id.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -222,12 +220,11 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>
-        /// or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/>
-        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code>
-        /// can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code>
-        /// is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code>
-        /// and <code>TimestampRange</code> must be set.
+        /// This parameter is required if <c>PlaybackMode</c> is <c>ON_DEMAND</c> or <c>LIVE_REPLAY</c>.
+        /// This parameter is optional if PlaybackMode is<code/> <c>LIVE</c>. If <c>PlaybackMode</c>
+        /// is <c>LIVE</c>, the <c>FragmentSelectorType</c> can be set, but the <c>TimestampRange</c>
+        /// should not be set. If <c>PlaybackMode</c> is <c>ON_DEMAND</c> or <c>LIVE_REPLAY</c>,
+        /// both <c>FragmentSelectorType</c> and <c>TimestampRange</c> must be set.
         /// </para>
         /// </summary>
         public DASHFragmentSelector DASHFragmentSelector
@@ -246,15 +243,15 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property DisplayFragmentNumber. 
         /// <para>
         /// Fragments are identified in the manifest file based on their sequence number in the
-        /// session. If DisplayFragmentNumber is set to <code>ALWAYS</code>, the Kinesis Video
-        /// Streams fragment number is added to each S element in the manifest file with the attribute
+        /// session. If DisplayFragmentNumber is set to <c>ALWAYS</c>, the Kinesis Video Streams
+        /// fragment number is added to each S element in the manifest file with the attribute
         /// name “kvs:fn”. These fragment numbers can be used for logging or for use with other
-        /// APIs (e.g. <code>GetMedia</code> and <code>GetMediaForFragmentList</code>). A custom
-        /// MPEG-DASH media player is necessary to leverage these this custom attribute.
+        /// APIs (e.g. <c>GetMedia</c> and <c>GetMediaForFragmentList</c>). A custom MPEG-DASH
+        /// media player is necessary to leverage these this custom attribute.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>NEVER</code>.
+        /// The default value is <c>NEVER</c>.
         /// </para>
         /// </summary>
         public DASHDisplayFragmentNumber DisplayFragmentNumber
@@ -277,16 +274,16 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// compatible media players do not properly handle gaps in the media timeline. Kinesis
         /// Video Streams adjusts the media timeline in the manifest file to enable playback of
         /// media with discontinuities. Therefore, the wall-clock time derived from the manifest
-        /// file may be inaccurate. If DisplayFragmentTimestamp is set to <code>ALWAYS</code>,
-        /// the accurate fragment timestamp is added to each S element in the manifest file with
-        /// the attribute name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage
-        /// this custom attribute.
+        /// file may be inaccurate. If DisplayFragmentTimestamp is set to <c>ALWAYS</c>, the accurate
+        /// fragment timestamp is added to each S element in the manifest file with the attribute
+        /// name “kvs:ts”. A custom MPEG-DASH media player is necessary to leverage this custom
+        /// attribute.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>NEVER</code>. When <a>DASHFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>,
+        /// The default value is <c>NEVER</c>. When <a>DASHFragmentSelector</a> is <c>SERVER_TIMESTAMP</c>,
         /// the timestamps will be the server start timestamps. Similarly, when <a>DASHFragmentSelector</a>
-        /// is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+        /// is <c>PRODUCER_TIMESTAMP</c>, the timestamps will be the producer start timestamps.
         /// 
         /// </para>
         /// </summary>
@@ -310,8 +307,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When a session expires, no new calls to <code>GetDashManifest</code>, <code>GetMP4InitFragment</code>,
-        /// or <code>GetMP4MediaFragment</code> can be made for that session.
+        /// When a session expires, no new calls to <c>GetDashManifest</c>, <c>GetMP4InitFragment</c>,
+        /// or <c>GetMP4MediaFragment</c> can be made for that session.
         /// </para>
         ///  
         /// <para>
@@ -338,9 +335,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments
-        /// are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-        /// the oldest fragments are returned, up to this maximum number.
+        /// When the <c>PlaybackMode</c> is <c>LIVE</c>, the most recent fragments are returned
+        /// up to this value. When the <c>PlaybackMode</c> is <c>ON_DEMAND</c>, the oldest fragments
+        /// are returned, up to this maximum number.
         /// </para>
         ///  
         /// <para>
@@ -352,8 +349,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>,
-        /// and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. 
+        /// The default is 5 fragments if <c>PlaybackMode</c> is <c>LIVE</c> or <c>LIVE_REPLAY</c>,
+        /// and 1,000 if <c>PlaybackMode</c> is <c>ON_DEMAND</c>. 
         /// </para>
         ///  
         /// <para>
@@ -386,48 +383,46 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>LIVE</code> </b>: For sessions of this type, the MPEG-DASH manifest is
-        /// continually updated with the latest fragments as they become available. We recommend
-        /// that the media player retrieve a new manifest on a one-second interval. When this
-        /// type of session is played in a media player, the user interface typically displays
-        /// a "live" notification, with no scrubber control for choosing the position in the playback
-        /// window to display.
+        ///  <b> <c>LIVE</c> </b>: For sessions of this type, the MPEG-DASH manifest is continually
+        /// updated with the latest fragments as they become available. We recommend that the
+        /// media player retrieve a new manifest on a one-second interval. When this type of session
+        /// is played in a media player, the user interface typically displays a "live" notification,
+        /// with no scrubber control for choosing the position in the playback window to display.
         /// </para>
         ///  <note> 
         /// <para>
-        /// In <code>LIVE</code> mode, the newest available fragments are included in an MPEG-DASH
-        /// manifest, even if there is a gap between fragments (that is, if a fragment is missing).
-        /// A gap like this might cause a media player to halt or cause a jump in playback. In
-        /// this mode, fragments are not added to the MPEG-DASH manifest if they are older than
-        /// the newest fragment in the playlist. If the missing fragment becomes available after
-        /// a subsequent fragment is added to the manifest, the older fragment is not added, and
+        /// In <c>LIVE</c> mode, the newest available fragments are included in an MPEG-DASH manifest,
+        /// even if there is a gap between fragments (that is, if a fragment is missing). A gap
+        /// like this might cause a media player to halt or cause a jump in playback. In this
+        /// mode, fragments are not added to the MPEG-DASH manifest if they are older than the
+        /// newest fragment in the playlist. If the missing fragment becomes available after a
+        /// subsequent fragment is added to the manifest, the older fragment is not added, and
         /// the gap is not filled.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the MPEG-DASH manifest
-        /// is updated similarly to how it is updated for <code>LIVE</code> mode except that it
-        /// starts by including fragments from a given start time. Instead of fragments being
-        /// added as they are ingested, fragments are added as the duration of the next fragment
-        /// elapses. For example, if the fragments in the session are two seconds long, then a
-        /// new fragment is added to the manifest every two seconds. This mode is useful to be
-        /// able to start playback from when an event is detected and continue live streaming
-        /// media that has not yet been ingested as of the time of the session creation. This
-        /// mode is also useful to stream previously archived media without being limited by the
-        /// 1,000 fragment limit in the <code>ON_DEMAND</code> mode. 
+        ///  <b> <c>LIVE_REPLAY</c> </b>: For sessions of this type, the MPEG-DASH manifest is
+        /// updated similarly to how it is updated for <c>LIVE</c> mode except that it starts
+        /// by including fragments from a given start time. Instead of fragments being added as
+        /// they are ingested, fragments are added as the duration of the next fragment elapses.
+        /// For example, if the fragments in the session are two seconds long, then a new fragment
+        /// is added to the manifest every two seconds. This mode is useful to be able to start
+        /// playback from when an event is detected and continue live streaming media that has
+        /// not yet been ingested as of the time of the session creation. This mode is also useful
+        /// to stream previously archived media without being limited by the 1,000 fragment limit
+        /// in the <c>ON_DEMAND</c> mode. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the MPEG-DASH manifest
-        /// contains all the fragments for the session, up to the number that is specified in
-        /// <code>MaxManifestFragmentResults</code>. The manifest must be retrieved only once
-        /// for each session. When this type of session is played in a media player, the user
-        /// interface typically displays a scrubber control for choosing the position in the playback
-        /// window to display.
+        ///  <b> <c>ON_DEMAND</c> </b>: For sessions of this type, the MPEG-DASH manifest contains
+        /// all the fragments for the session, up to the number that is specified in <c>MaxManifestFragmentResults</c>.
+        /// The manifest must be retrieved only once for each session. When this type of session
+        /// is played in a media player, the user interface typically displays a scrubber control
+        /// for choosing the position in the playback window to display.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+        /// In all playback modes, if <c>FragmentSelectorType</c> is <c>PRODUCER_TIMESTAMP</c>,
         /// and if there are multiple fragments with the same start timestamp, the fragment that
         /// has the larger fragment number (that is, the newer fragment) is included in the MPEG-DASH
         /// manifest. The other fragments are not included. Fragments that have different timestamps
@@ -436,7 +431,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>LIVE</code>.
+        /// The default is <c>LIVE</c>.
         /// </para>
         /// </summary>
         public DASHPlaybackMode PlaybackMode
@@ -459,7 +454,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// You must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -482,7 +477,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// You must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

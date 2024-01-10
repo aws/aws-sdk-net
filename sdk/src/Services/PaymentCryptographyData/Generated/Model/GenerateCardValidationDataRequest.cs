@@ -43,9 +43,8 @@ namespace Amazon.PaymentCryptographyData.Model
     /// processing. To begin this operation, a CVK (Card Verification Key) encryption key
     /// is required. You can use <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>
     /// or <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>
-    /// to establish a CVK within Amazon Web Services Payment Cryptography. The <code>KeyModesOfUse</code>
-    /// should be set to <code>Generate</code> and <code>Verify</code> for a CVK encryption
-    /// key. 
+    /// to establish a CVK within Amazon Web Services Payment Cryptography. The <c>KeyModesOfUse</c>
+    /// should be set to <c>Generate</c> and <c>Verify</c> for a CVK encryption key. 
     /// </para>
     ///  
     /// <para>
@@ -104,8 +103,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property KeyIdentifier. 
         /// <para>
-        /// The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment
-        /// Cryptography uses to generate card data.
+        /// The <c>keyARN</c> of the CVK encryption key that Amazon Web Services Payment Cryptography
+        /// uses to generate card data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]

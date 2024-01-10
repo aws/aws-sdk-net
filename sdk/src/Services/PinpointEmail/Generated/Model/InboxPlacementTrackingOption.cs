@@ -31,7 +31,7 @@ namespace Amazon.PinpointEmail.Model
     /// <summary>
     /// An object that contains information about the inbox placement data settings for a
     /// verified domain that’s associated with your AWS account. This data is available only
-    /// if you enabled the Deliverability dashboard for the domain (<code>PutDeliverabilityDashboardOption</code>
+    /// if you enabled the Deliverability dashboard for the domain (<c>PutDeliverabilityDashboardOption</c>
     /// operation).
     /// </summary>
     public partial class InboxPlacementTrackingOption

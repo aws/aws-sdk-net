@@ -54,23 +54,23 @@ namespace Amazon.ControlTower.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DRIFTED</code>: The <code>enabledControl</code> deployed in this configuration
-        /// doesn’t match the configuration that Amazon Web Services Control Tower expected. 
+        ///  <c>DRIFTED</c>: The <c>enabledControl</c> deployed in this configuration doesn’t
+        /// match the configuration that Amazon Web Services Control Tower expected. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The <code>enabledControl</code> deployed in this configuration
-        /// matches the configuration that Amazon Web Services Control Tower expected.
+        ///  <c>IN_SYNC</c>: The <c>enabledControl</c> deployed in this configuration matches
+        /// the configuration that Amazon Web Services Control Tower expected.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKING</code>: Amazon Web Services Control Tower does not check drift
-        /// for this enabled control. Drift is not supported for the control type.
+        ///  <c>NOT_CHECKING</c>: Amazon Web Services Control Tower does not check drift for this
+        /// enabled control. Drift is not supported for the control type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code>: Amazon Web Services Control Tower is not able to check the
-        /// drift status for the enabled control. 
+        ///  <c>UNKNOWN</c>: Amazon Web Services Control Tower is not able to check the drift
+        /// status for the enabled control. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

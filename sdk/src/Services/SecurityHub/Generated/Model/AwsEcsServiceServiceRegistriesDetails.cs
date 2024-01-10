@@ -45,14 +45,14 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If the task definition uses the <code>bridge</code> or <code>host</code> network mode,
-        /// you must specify <code>ContainerName</code> and <code>ContainerPort</code>.
+        /// If the task definition uses the <c>bridge</c> or <c>host</c> network mode, you must
+        /// specify <c>ContainerName</c> and <c>ContainerPort</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS
-        /// record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>,
-        /// or <code>Port</code> , but not both.
+        /// If the task definition uses the <c>awsvpc</c> network mode and a type SRV DNS record,
+        /// you must specify either <c>ContainerName</c> and <c>ContainerPort</c>, or <c>Port</c>
+        /// , but not both.
         /// </para>
         /// </summary>
         public string ContainerName
@@ -74,14 +74,14 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If the task definition uses the <code>bridge</code> or <code>host</code> network mode,
-        /// you must specify <code>ContainerName</code> and <code>ContainerPort</code>.
+        /// If the task definition uses the <c>bridge</c> or <c>host</c> network mode, you must
+        /// specify <c>ContainerName</c> and <c>ContainerPort</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the task definition uses the <code>awsvpc</code> network mode and a type SRV DNS
-        /// record, you must specify either <code>ContainerName</code> and <code>ContainerPort</code>,
-        /// or <code>Port</code> , but not both.
+        /// If the task definition uses the <c>awsvpc</c> network mode and a type SRV DNS record,
+        /// you must specify either <c>ContainerName</c> and <c>ContainerPort</c>, or <c>Port</c>
+        /// , but not both.
         /// </para>
         /// </summary>
         public int ContainerPort
@@ -100,8 +100,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The port value to use for a service discovery service that specifies an SRV record.
-        /// This field can be used if both the <code>awsvpc</code>awsvpc network mode and SRV
-        /// records are used.
+        /// This field can be used if both the <c>awsvpc</c>awsvpc network mode and SRV records
+        /// are used.
         /// </para>
         /// </summary>
         public int Port

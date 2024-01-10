@@ -40,7 +40,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property JsonPath. 
         /// <para>
         /// A JsonPath expression that is applied to the body/payload of the webhook. The value
-        /// selected by the JsonPath expression must match the value specified in the <code>MatchEquals</code>
+        /// selected by the JsonPath expression must match the value specified in the <c>MatchEquals</c>
         /// field. Otherwise, the request is ignored. For more information, see <a href="https://github.com/json-path/JsonPath">Java
         /// JsonPath implementation</a> in GitHub.
         /// </para>
@@ -61,14 +61,14 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property MatchEquals. 
         /// <para>
-        /// The value selected by the <code>JsonPath</code> expression must match what is supplied
-        /// in the <code>MatchEquals</code> field. Otherwise, the request is ignored. Properties
-        /// from the target action configuration can be included as placeholders in this value
-        /// by surrounding the action configuration key with curly brackets. For example, if the
-        /// value supplied here is "refs/heads/{Branch}" and the target action has an action configuration
-        /// property called "Branch" with a value of "main", the <code>MatchEquals</code> value
-        /// is evaluated as "refs/heads/main". For a list of action configuration properties for
-        /// built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+        /// The value selected by the <c>JsonPath</c> expression must match what is supplied in
+        /// the <c>MatchEquals</c> field. Otherwise, the request is ignored. Properties from the
+        /// target action configuration can be included as placeholders in this value by surrounding
+        /// the action configuration key with curly brackets. For example, if the value supplied
+        /// here is "refs/heads/{Branch}" and the target action has an action configuration property
+        /// called "Branch" with a value of "main", the <c>MatchEquals</c> value is evaluated
+        /// as "refs/heads/main". For a list of action configuration properties for built-in action
+        /// types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
         /// Structure Reference Action Requirements</a>.
         /// </para>
         /// </summary>

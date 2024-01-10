@@ -39,8 +39,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineVersions. 
         /// <para>
-        /// Returned <code>EngineVersion</code> objects that describe the replication instance
-        /// engine versions used in the project.
+        /// Returned <c>EngineVersion</c> objects that describe the replication instance engine
+        /// versions used in the project.
         /// </para>
         /// </summary>
         public List<EngineVersion> EngineVersions
@@ -60,7 +60,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <c>MaxRecords</c>. 
         /// </para>
         /// </summary>
         public string Marker

@@ -60,7 +60,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property StreamType. 
         /// <para>
         /// The type of data stream where you are sending real-time log data. The only valid value
-        /// is <code>Kinesis</code>.
+        /// is <c>Kinesis</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,15 +38,15 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</code> 
+    ///  <c>{ "resourceType": BOT | BOTALIAS | BOTCHANNEL | INTENT,</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"resourceReference": {</code> 
+    ///  <c>"resourceReference": {</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"name": <i>string</i>, "version": <i>string</i> } }</code> 
+    ///  <c>"name": <i>string</i>, "version": <i>string</i> } }</c> 
     /// </para>
     /// </summary>
     #if !NETSTANDARD

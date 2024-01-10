@@ -209,7 +209,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>EC2</code> | <code>FARGATE</code> | <code>EXTERNAL</code> 
+        /// Valid values: <c>EC2</c> | <c>FARGATE</c> | <c>EXTERNAL</c> 
         /// </para>
         /// </summary>
         public string LaunchType
@@ -263,7 +263,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// For tasks that use the <code>awsvpc</code> networking mode, the VPC subnet and security
+        /// For tasks that use the <c>awsvpc</c> networking mode, the VPC subnet and security
         /// group configuration.
         /// </para>
         /// </summary>
@@ -319,8 +319,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// The platform version on which to run the service. Only specified for tasks that are
-        /// hosted on Fargate. If a platform version is not specified, the <code>LATEST</code>
-        /// platform version is used by default.
+        /// hosted on Fargate. If a platform version is not specified, the <c>LATEST</c> platform
+        /// version is used by default.
         /// </para>
         /// </summary>
         public string PlatformVersion
@@ -343,7 +343,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>TASK_DEFINITION</code> | <code>SERVICE</code> 
+        /// Valid values: <c>TASK_DEFINITION</c> | <c>SERVICE</c> 
         /// </para>
         /// </summary>
         public string PropagateTags
@@ -385,21 +385,21 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>REPLICA</code> scheduling strategy places and maintains the desired number
-        /// of tasks across the cluster. By default, the service scheduler spreads tasks across
-        /// Availability Zones. Task placement strategies and constraints are used to customize
-        /// task placement decisions.
+        /// The <c>REPLICA</c> scheduling strategy places and maintains the desired number of
+        /// tasks across the cluster. By default, the service scheduler spreads tasks across Availability
+        /// Zones. Task placement strategies and constraints are used to customize task placement
+        /// decisions.
         /// </para>
         ///  
         /// <para>
-        /// The <code>DAEMON</code> scheduling strategy deploys exactly one task on each active
-        /// container instance that meets all of the task placement constraints that are specified
-        /// in the cluster. The service scheduler also evaluates the task placement constraints
-        /// for running tasks and stops tasks that do not meet the placement constraints.
+        /// The <c>DAEMON</c> scheduling strategy deploys exactly one task on each active container
+        /// instance that meets all of the task placement constraints that are specified in the
+        /// cluster. The service scheduler also evaluates the task placement constraints for running
+        /// tasks and stops tasks that do not meet the placement constraints.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>REPLICA</code> | <code>DAEMON</code> 
+        /// Valid values: <c>REPLICA</c> | <c>DAEMON</c> 
         /// </para>
         /// </summary>
         public string SchedulingStrategy

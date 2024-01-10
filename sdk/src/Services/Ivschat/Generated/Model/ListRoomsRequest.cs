@@ -31,7 +31,7 @@ namespace Amazon.Ivschat.Model
     /// <summary>
     /// Container for the parameters to the ListRooms operation.
     /// Gets summary information about all your rooms in the AWS region where the API request
-    /// is processed. Results are sorted in descending order of <code>updateTime</code>.
+    /// is processed. Results are sorted in descending order of <c>updateTime</c>.
     /// </summary>
     public partial class ListRoomsRequest : AmazonIvschatRequest
     {
@@ -120,7 +120,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The first room to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// The first room to retrieve. This is used for pagination; see the <c>nextToken</c>
         /// response field.
         /// </para>
         /// </summary>

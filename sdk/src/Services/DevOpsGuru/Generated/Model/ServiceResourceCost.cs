@@ -82,10 +82,10 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the resource. The resource is <code>ACTIVE</code> if it produces metrics,
-        /// events, or logs within an hour, otherwise it is <code>INACTIVE</code>. You pay for
-        /// the number of active Amazon Web Services resource hours analyzed for each resource.
-        /// Inactive resources are not charged. 
+        /// The state of the resource. The resource is <c>ACTIVE</c> if it produces metrics, events,
+        /// or logs within an hour, otherwise it is <c>INACTIVE</c>. You pay for the number of
+        /// active Amazon Web Services resource hours analyzed for each resource. Inactive resources
+        /// are not charged. 
         /// </para>
         /// </summary>
         public CostEstimationServiceResourceState State

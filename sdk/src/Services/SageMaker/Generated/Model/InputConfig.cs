@@ -43,13 +43,13 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DataInputConfig. 
         /// <para>
         /// Specifies the name and shape of the expected data inputs for your trained model with
-        /// a JSON dictionary form. The data inputs are <code>Framework</code> specific. 
+        /// a JSON dictionary form. The data inputs are <c>Framework</c> specific. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of the
-        /// expected data inputs using a dictionary format for your trained model. The dictionary
-        /// formats required for the console and CLI are different.
+        ///  <c>TensorFlow</c>: You must specify the name and shape (NHWC format) of the expected
+        /// data inputs using a dictionary format for your trained model. The dictionary formats
+        /// required for the console and CLI are different.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -57,11 +57,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"input":[1,1024,1024,3]}</code> 
+        /// If using the console, <c>{"input":[1,1024,1024,3]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> 
+        /// If using the CLI, <c>{\"input\":[1,1024,1024,3]}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -69,17 +69,17 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> 
+        /// If using the console, <c>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> 
+        /// If using the CLI, <c>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>KERAS</code>: You must specify the name and shape (NCHW format) of expected
-        /// data inputs using a dictionary format for your trained model. Note that while Keras
-        /// model artifacts should be uploaded in NHWC (channel-last) format, <code>DataInputConfig</code>
+        ///  <c>KERAS</c>: You must specify the name and shape (NCHW format) of expected data
+        /// inputs using a dictionary format for your trained model. Note that while Keras model
+        /// artifacts should be uploaded in NHWC (channel-last) format, <c>DataInputConfig</c>
         /// should be specified in NCHW (channel-first) format. The dictionary formats required
         /// for the console and CLI are different.
         /// </para>
@@ -89,11 +89,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"input_1":[1,3,224,224]}</code> 
+        /// If using the console, <c>{"input_1":[1,3,224,224]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> 
+        /// If using the CLI, <c>{\"input_1\":[1,3,224,224]}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -101,19 +101,18 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code>
+        /// If using the console, <c>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</code>
-        /// 
+        /// If using the CLI, <c>{\"input_1\": [1,3,224,224], \"input_2\":[1,3,224,224]}</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>MXNET/ONNX/DARKNET</code>: You must specify the name and shape (NCHW format)
-        /// of the expected data inputs in order using a dictionary format for your trained model.
-        /// The dictionary formats required for the console and CLI are different.
+        ///  <c>MXNET/ONNX/DARKNET</c>: You must specify the name and shape (NCHW format) of the
+        /// expected data inputs in order using a dictionary format for your trained model. The
+        /// dictionary formats required for the console and CLI are different.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -121,11 +120,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"data":[1,3,1024,1024]}</code> 
+        /// If using the console, <c>{"data":[1,3,1024,1024]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"data\":[1,3,1024,1024]}</code> 
+        /// If using the CLI, <c>{\"data\":[1,3,1024,1024]}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -133,19 +132,18 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"var1": [1,1,28,28], "var2":[1,1,28,28]} </code> 
+        /// If using the console, <c>{"var1": [1,1,28,28], "var2":[1,1,28,28]} </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"var1\": [1,1,28,28], \"var2\":[1,1,28,28]}</code> 
+        /// If using the CLI, <c>{\"var1\": [1,1,28,28], \"var2\":[1,1,28,28]}</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>PyTorch</code>: You can either specify the name and shape (NCHW format) of
-        /// expected data inputs in order using a dictionary format for your trained model or
-        /// you can specify the shape only using a list format. The dictionary formats required
-        /// for the console and CLI are different. The list formats for the console and CLI are
-        /// the same.
+        ///  <c>PyTorch</c>: You can either specify the name and shape (NCHW format) of expected
+        /// data inputs in order using a dictionary format for your trained model or you can specify
+        /// the shape only using a list format. The dictionary formats required for the console
+        /// and CLI are different. The list formats for the console and CLI are the same.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -153,15 +151,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"input0":[1,3,224,224]}</code> 
+        /// If using the console, <c>{"input0":[1,3,224,224]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"input0\":[1,3,224,224]}</code> 
+        /// If using the CLI, <c>{\"input0\":[1,3,224,224]}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Example for one input in list format: <code>[[1,3,224,224]]</code> 
+        /// Example for one input in list format: <c>[[1,3,224,224]]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,71 +167,68 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If using the console, <code>{"input0":[1,3,224,224], "input1":[1,3,224,224]}</code>
-        /// 
+        /// If using the console, <c>{"input0":[1,3,224,224], "input1":[1,3,224,224]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If using the CLI, <code>{\"input0\":[1,3,224,224], \"input1\":[1,3,224,224]} </code>
-        /// 
+        /// If using the CLI, <c>{\"input0\":[1,3,224,224], \"input1\":[1,3,224,224]} </c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Example for two inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code>
-        /// 
+        /// Example for two inputs in list format: <c>[[1,3,224,224], [1,3,224,224]]</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>XGBOOST</code>: input data name and shape are not needed.
+        ///  <c>XGBOOST</c>: input data name and shape are not needed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-        /// <code>TargetDevice</code> (ML Model format):
+        ///  <c>DataInputConfig</c> supports the following parameters for <c>CoreML</c> <c>TargetDevice</c>
+        /// (ML Model format):
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>shape</code>: Input shape, for example <code>{"input_1": {"shape": [1,224,224,3]}}</code>.
+        ///  <c>shape</c>: Input shape, for example <c>{"input_1": {"shape": [1,224,224,3]}}</c>.
         /// In addition to static input shapes, CoreML converter supports Flexible input shapes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Range Dimension. You can use the Range Dimension feature if you know the input shape
-        /// will be within some specific interval in that dimension, for example: <code>{"input_1":
-        /// {"shape": ["1..10", 224, 224, 3]}}</code> 
+        /// will be within some specific interval in that dimension, for example: <c>{"input_1":
+        /// {"shape": ["1..10", 224, 224, 3]}}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Enumerated shapes. Sometimes, the models are trained to work only on a select set
-        /// of inputs. You can enumerate all supported input shapes, for example: <code>{"input_1":
-        /// {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</code> 
+        /// of inputs. You can enumerate all supported input shapes, for example: <c>{"input_1":
+        /// {"shape": [[1, 224, 224, 3], [1, 160, 160, 3]]}}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>default_shape</code>: Default input shape. You can set a default shape during
-        /// conversion for both Range Dimension and Enumerated Shapes. For example <code>{"input_1":
-        /// {"shape": ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</code> 
+        ///  <c>default_shape</c>: Default input shape. You can set a default shape during conversion
+        /// for both Range Dimension and Enumerated Shapes. For example <c>{"input_1": {"shape":
+        /// ["1..10", 224, 224, 3], "default_shape": [1, 224, 224, 3]}}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code>: Input type. Allowed values: <code>Image</code> and <code>Tensor</code>.
-        /// By default, the converter generates an ML Model with inputs of type Tensor (MultiArray).
-        /// User can set input type to be Image. Image input type requires additional input parameters
-        /// such as <code>bias</code> and <code>scale</code>.
+        ///  <c>type</c>: Input type. Allowed values: <c>Image</c> and <c>Tensor</c>. By default,
+        /// the converter generates an ML Model with inputs of type Tensor (MultiArray). User
+        /// can set input type to be Image. Image input type requires additional input parameters
+        /// such as <c>bias</c> and <c>scale</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bias</code>: If the input type is an Image, you need to provide the bias vector.
+        ///  <c>bias</c>: If the input type is an Image, you need to provide the bias vector.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>scale</code>: If the input type is an Image, you need to provide a scale factor.
+        ///  <c>scale</c>: If the input type is an Image, you need to provide a scale factor.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// CoreML <code>ClassifierConfig</code> parameters can be specified using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
-        /// <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models.
-        /// CoreML conversion examples:
+        /// CoreML <c>ClassifierConfig</c> parameters can be specified using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+        /// <c>CompilerOptions</c>. CoreML converter supports Tensorflow and PyTorch models. CoreML
+        /// conversion examples:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -241,8 +236,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-        /// [1,224,224,3]}}</code> 
+        ///  <c>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
+        /// [1,224,224,3]}}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -250,8 +245,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape":
-        /// [1,3,224,224]}]</code> 
+        ///  <c>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape":
+        /// [1,3,224,224]}]</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -259,13 +254,13 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-        /// [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</code>
+        ///  <c>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
+        /// [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}}</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code> 
+        ///  <c>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -273,49 +268,49 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape":
-        /// [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</code>
+        ///  <c>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]], "default_shape":
+        /// [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale": 0.007843137255}]</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code> 
+        ///  <c>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Depending on the model format, <code>DataInputConfig</code> requires the following
-        /// parameters for <code>ml_eia2</code> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.
+        /// Depending on the model format, <c>DataInputConfig</c> requires the following parameters
+        /// for <c>ml_eia2</c> <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// For TensorFlow models saved in the SavedModel format, specify the input names from
-        /// <code>signature_def_key</code> and the input model shapes for <code>DataInputConfig</code>.
-        /// Specify the <code>signature_def_key</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
-        /// <code>OutputConfig:CompilerOptions</code> </a> if the model does not use TensorFlow's
-        /// default signature def key. For example:
+        /// <c>signature_def_key</c> and the input model shapes for <c>DataInputConfig</c>. Specify
+        /// the <c>signature_def_key</c> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
+        /// <c>OutputConfig:CompilerOptions</c> </a> if the model does not use TensorFlow's default
+        /// signature def key. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</code> 
+        ///  <c>"DataInputConfig": {"inputs": [1, 224, 224, 3]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"CompilerOptions": {"signature_def_key": "serving_custom"}</code> 
+        ///  <c>"CompilerOptions": {"signature_def_key": "serving_custom"}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For TensorFlow models saved as a frozen graph, specify the input tensor names and
-        /// shapes in <code>DataInputConfig</code> and the output tensor names for <code>output_names</code>
+        /// shapes in <c>DataInputConfig</c> and the output tensor names for <c>output_names</c>
         /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-CompilerOptions">
-        /// <code>OutputConfig:CompilerOptions</code> </a>. For example:
+        /// <c>OutputConfig:CompilerOptions</c> </a>. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</code> 
+        ///  <c>"DataInputConfig": {"input_tensor:0": [1, 224, 224, 3]}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"CompilerOptions": {"output_names": ["output_tensor:0"]}</code> 
+        ///  <c>"CompilerOptions": {"output_names": ["output_tensor:0"]}</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

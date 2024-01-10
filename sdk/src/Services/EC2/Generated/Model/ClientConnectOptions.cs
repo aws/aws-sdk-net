@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether client connect options are enabled. The default is <code>false</code>
+        /// Indicates whether client connect options are enabled. The default is <c>false</c>
         /// (not enabled).
         /// </para>
         /// </summary>

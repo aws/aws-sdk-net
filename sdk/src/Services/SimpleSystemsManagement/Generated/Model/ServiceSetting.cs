@@ -33,22 +33,21 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  
     /// <para>
-    ///  <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services
-    /// service. This setting defines how a user interacts with or uses a service or a feature
-    /// of a service. For example, if an Amazon Web Services service charges money to the
-    /// account based on feature or service usage, then the Amazon Web Services service team
-    /// might create a default setting of "false". This means the user can't use this feature
-    /// unless they change the setting to "true" and intentionally opt in for a paid feature.
+    ///  <c>ServiceSetting</c> is an account-level setting for an Amazon Web Services service.
+    /// This setting defines how a user interacts with or uses a service or a feature of a
+    /// service. For example, if an Amazon Web Services service charges money to the account
+    /// based on feature or service usage, then the Amazon Web Services service team might
+    /// create a default setting of "false". This means the user can't use this feature unless
+    /// they change the setting to "true" and intentionally opt in for a paid feature.
     /// </para>
     ///  
     /// <para>
-    /// Services map a <code>SettingId</code> object to a setting value. Amazon Web Services
-    /// services teams define the default value for a <code>SettingId</code>. You can't create
-    /// a new <code>SettingId</code>, but you can overwrite the default value if you have
-    /// the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the <a>UpdateServiceSetting</a>
-    /// API operation to change the default setting. Or, use the <a>ResetServiceSetting</a>
-    /// to change the value back to the original value defined by the Amazon Web Services
-    /// service team.
+    /// Services map a <c>SettingId</c> object to a setting value. Amazon Web Services services
+    /// teams define the default value for a <c>SettingId</c>. You can't create a new <c>SettingId</c>,
+    /// but you can overwrite the default value if you have the <c>ssm:UpdateServiceSetting</c>
+    /// permission for the setting. Use the <a>UpdateServiceSetting</a> API operation to change
+    /// the default setting. Or, use the <a>ResetServiceSetting</a> to change the value back
+    /// to the original value defined by the Amazon Web Services service team.
     /// </para>
     /// </summary>
     public partial class ServiceSetting

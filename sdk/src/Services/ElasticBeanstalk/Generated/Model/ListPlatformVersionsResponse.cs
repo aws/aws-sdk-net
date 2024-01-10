@@ -39,8 +39,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// In a paginated request, if this value isn't <code>null</code>, it's the token that
-        /// you can pass in a subsequent request to get the next response page.
+        /// In a paginated request, if this value isn't <c>null</c>, it's the token that you can
+        /// pass in a subsequent request to get the next response page.
         /// </para>
         /// </summary>
         public string NextToken

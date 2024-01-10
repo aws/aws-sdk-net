@@ -39,9 +39,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The code indicating the reason for the change in status.<code>USER_REQUEST</code>
-        /// indicates that the scaling policy status was changed by a user. <code>PROVISION_FAILURE</code>
-        /// indicates that the status change was because the policy failed to provision. <code>CLEANUP_FAILURE</code>
+        /// The code indicating the reason for the change in status.<c>USER_REQUEST</c> indicates
+        /// that the scaling policy status was changed by a user. <c>PROVISION_FAILURE</c> indicates
+        /// that the status change was because the policy failed to provision. <c>CLEANUP_FAILURE</c>
         /// indicates an error.
         /// </para>
         /// </summary>

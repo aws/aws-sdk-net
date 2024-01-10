@@ -35,7 +35,7 @@ namespace Amazon.Proton.Model
     ///  
     /// <para>
     /// If the environment is associated with an environment account connection, <i>don't</i>
-    /// update or include the <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
+    /// update or include the <c>protonServiceRoleArn</c> and <c>provisioningRepository</c>
     /// parameter to update or connect to an environment account connection.
     /// </para>
     ///  
@@ -47,24 +47,24 @@ namespace Amazon.Proton.Model
     ///  
     /// <para>
     /// If the environment <i>isn't</i> associated with an environment account connection,
-    /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter.
+    /// <i>don't</i> update or include the <c>environmentAccountConnectionId</c> parameter.
     /// You <i>can't</i> update or connect the environment to an environment account connection
     /// if it <i>isn't</i> already associated with an environment connection.
     /// </para>
     ///  
     /// <para>
-    /// You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+    /// You can update either the <c>environmentAccountConnectionId</c> or <c>protonServiceRoleArn</c>
     /// parameter and value. You can’t update both.
     /// </para>
     ///  
     /// <para>
     /// If the environment was configured for Amazon Web Services-managed provisioning, omit
-    /// the <code>provisioningRepository</code> parameter.
+    /// the <c>provisioningRepository</c> parameter.
     /// </para>
     ///  
     /// <para>
-    /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
-    /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
+    /// If the environment was configured for self-managed provisioning, specify the <c>provisioningRepository</c>
+    /// parameter and omit the <c>protonServiceRoleArn</c> and <c>environmentAccountConnectionId</c>
     /// parameters.
     /// </para>
     ///  
@@ -75,12 +75,12 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  
     /// <para>
-    /// There are four modes for updating an environment. The <code>deploymentType</code>
-    /// field defines the mode.
+    /// There are four modes for updating an environment. The <c>deploymentType</c> field
+    /// defines the mode.
     /// </para>
     ///  <dl> <dt/> <dd> 
     /// <para>
-    ///  <code>NONE</code> 
+    ///  <c>NONE</c> 
     /// </para>
     ///  
     /// <para>
@@ -89,17 +89,17 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  </dd> <dt/> <dd> 
     /// <para>
-    ///  <code>CURRENT_VERSION</code> 
+    ///  <c>CURRENT_VERSION</c> 
     /// </para>
     ///  
     /// <para>
     /// In this mode, the environment is deployed and updated with the new spec that you provide.
     /// Only requested parameters are updated. <i>Don’t</i> include minor or major version
-    /// parameters when you use this <code>deployment-type</code>.
+    /// parameters when you use this <c>deployment-type</c>.
     /// </para>
     ///  </dd> <dt/> <dd> 
     /// <para>
-    ///  <code>MINOR_VERSION</code> 
+    ///  <c>MINOR_VERSION</c> 
     /// </para>
     ///  
     /// <para>
@@ -109,7 +109,7 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  </dd> <dt/> <dd> 
     /// <para>
-    ///  <code>MAJOR_VERSION</code> 
+    ///  <c>MAJOR_VERSION</c> 
     /// </para>
     ///  
     /// <para>
@@ -163,8 +163,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// The environment must have a <code>componentRoleArn</code> to allow directly defined
-        /// components to be associated with the environment.
+        /// The environment must have a <c>componentRoleArn</c> to allow directly defined components
+        /// to be associated with the environment.
         /// </para>
         ///  
         /// <para>
@@ -188,12 +188,12 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// There are four modes for updating an environment. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are four modes for updating an environment. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
-        ///  <code>NONE</code> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  
         /// <para>
@@ -202,17 +202,17 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>CURRENT_VERSION</code> 
+        ///  <c>CURRENT_VERSION</c> 
         /// </para>
         ///  
         /// <para>
         /// In this mode, the environment is deployed and updated with the new spec that you provide.
         /// Only requested parameters are updated. <i>Don’t</i> include major or minor version
-        /// parameters when you use this <code>deployment-type</code>.
+        /// parameters when you use this <c>deployment-type</c>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MINOR_VERSION</code> 
+        ///  <c>MINOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -222,7 +222,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MAJOR_VERSION</code> 
+        ///  <c>MAJOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>

@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property OntapConfiguration. 
         /// <para>
         /// For Amazon FSx for ONTAP volumes, specify whether to take a final backup of the volume
-        /// and apply tags to the backup. To apply tags to the backup, you must have the <code>fsx:TagResource</code>
+        /// and apply tags to the backup. To apply tags to the backup, you must have the <c>fsx:TagResource</c>
         /// permission.
         /// </para>
         /// </summary>

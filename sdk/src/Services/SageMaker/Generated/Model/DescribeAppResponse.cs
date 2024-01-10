@@ -179,9 +179,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastUserActivityTimestamp. 
         /// <para>
-        /// The timestamp of the last user's activity. <code>LastUserActivityTimestamp</code>
-        /// is also updated when SageMaker performs health checks without user activity. As a
-        /// result, this value is set to the same value as <code>LastHealthCheckTimestamp</code>.
+        /// The timestamp of the last user's activity. <c>LastUserActivityTimestamp</c> is also
+        /// updated when SageMaker performs health checks without user activity. As a result,
+        /// this value is set to the same value as <c>LastHealthCheckTimestamp</c>.
         /// </para>
         /// </summary>
         public DateTime LastUserActivityTimestamp
@@ -218,8 +218,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SpaceName. 
         /// <para>
-        /// The name of the space. If this value is not set, then <code>UserProfileName</code>
-        /// must be set.
+        /// The name of the space. If this value is not set, then <c>UserProfileName</c> must
+        /// be set.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]

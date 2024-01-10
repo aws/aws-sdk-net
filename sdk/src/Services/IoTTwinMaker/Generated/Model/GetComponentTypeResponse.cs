@@ -111,8 +111,8 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property CompositeComponentTypes. 
         /// <para>
-        /// This is an object that maps strings to <code>compositeComponentTypes</code> of the
-        /// <code>componentType</code>. <code>CompositeComponentType</code> is referenced by <code>componentTypeId</code>.
+        /// This is an object that maps strings to <c>compositeComponentTypes</c> of the <c>componentType</c>.
+        /// <c>CompositeComponentType</c> is referenced by <c>componentTypeId</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, CompositeComponentTypeResponse> CompositeComponentTypes

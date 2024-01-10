@@ -46,7 +46,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The last day that you want to obtain deliverability data for. This value has to be
-        /// less than or equal to 30 days after the value of the <code>StartDate</code> parameter.
+        /// less than or equal to 30 days after the value of the <c>StartDate</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code>
+        /// A token that’s returned from a previous call to the <c>ListDomainDeliverabilityCampaigns</c>
         /// operation. This token indicates the position of a campaign in the list of campaigns.
         /// </para>
         /// </summary>
@@ -84,10 +84,10 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The maximum number of results to include in response to a single call to the <code>ListDomainDeliverabilityCampaigns</code>
+        /// The maximum number of results to include in response to a single call to the <c>ListDomainDeliverabilityCampaigns</c>
         /// operation. If the number of results is larger than the number that you specify in
-        /// this parameter, the response includes a <code>NextToken</code> element, which you
-        /// can use to obtain additional results.
+        /// this parameter, the response includes a <c>NextToken</c> element, which you can use
+        /// to obtain additional results.
         /// </para>
         /// </summary>
         public int PageSize

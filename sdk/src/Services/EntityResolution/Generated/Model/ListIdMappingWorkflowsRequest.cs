@@ -30,8 +30,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the ListIdMappingWorkflows operation.
-    /// Returns a list of all the <code>IdMappingWorkflows</code> that have been created for
-    /// an Amazon Web Services account.
+    /// Returns a list of all the <c>IdMappingWorkflows</c> that have been created for an
+    /// Amazon Web Services account.
     /// </summary>
     public partial class ListIdMappingWorkflowsRequest : AmazonEntityResolutionRequest
     {

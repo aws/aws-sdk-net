@@ -87,10 +87,10 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To make changes to the policy, you provide the token in your request. Network Firewall
         /// uses the token to ensure that the policy hasn't changed since you last retrieved it.
-        /// If it has changed, the operation fails with an <code>InvalidTokenException</code>.
-        /// If this happens, retrieve the firewall policy again to get a current copy of it with
-        /// current token. Reapply your changes as needed, then try the operation again using
-        /// the new token. 
+        /// If it has changed, the operation fails with an <c>InvalidTokenException</c>. If this
+        /// happens, retrieve the firewall policy again to get a current copy of it with current
+        /// token. Reapply your changes as needed, then try the operation again using the new
+        /// token. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

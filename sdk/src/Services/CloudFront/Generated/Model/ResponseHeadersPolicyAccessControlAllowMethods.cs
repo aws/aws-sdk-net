@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code>
+    /// A list of HTTP methods that CloudFront includes as values for the <c>Access-Control-Allow-Methods</c>
     /// HTTP response header.
     /// 
     ///  
     /// <para>
-    /// For more information about the <code>Access-Control-Allow-Methods</code> HTTP response
-    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a>
+    /// For more information about the <c>Access-Control-Allow-Methods</c> HTTP response header,
+    /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a>
     /// in the MDN Web Docs.
     /// </para>
     /// </summary>
@@ -51,39 +51,39 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GET</code> 
+        ///  <c>GET</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE</code> 
+        ///  <c>DELETE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HEAD</code> 
+        ///  <c>HEAD</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIONS</code> 
+        ///  <c>OPTIONS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PATCH</code> 
+        ///  <c>PATCH</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>POST</code> 
+        ///  <c>POST</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUT</code> 
+        ///  <c>PUT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> 
+        ///  <c>ALL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>ALL</code> is a special value that includes all of the listed HTTP methods.
+        ///  <c>ALL</c> is a special value that includes all of the listed HTTP methods.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

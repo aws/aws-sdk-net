@@ -89,11 +89,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Linux platform version <code>1.4.0</code> or later.
+        /// Linux platform version <c>1.4.0</c> or later.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Windows platform version <code>1.0.0</code> or later.
+        /// Windows platform version <c>1.0.0</c> or later.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

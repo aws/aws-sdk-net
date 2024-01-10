@@ -30,9 +30,9 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAwsAccountFromPartnerAccount operation.
-    /// Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code>
-    /// and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account
-    /// from all partner accounts.
+    /// Disassociates your AWS account from a partner account. If <c>PartnerAccountId</c>
+    /// and <c>PartnerType</c> are <c>null</c>, disassociates your AWS account from all partner
+    /// accounts.
     /// </summary>
     public partial class DisassociateAwsAccountFromPartnerAccountRequest : AmazonIoTWirelessRequest
     {

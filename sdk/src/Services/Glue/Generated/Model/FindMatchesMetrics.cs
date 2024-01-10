@@ -73,7 +73,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ColumnImportances. 
         /// <para>
-        /// A list of <code>ColumnImportance</code> structures containing column importance metrics,
+        /// A list of <c>ColumnImportance</c> structures containing column importance metrics,
         /// sorted in order of descending importance.
         /// </para>
         /// </summary>

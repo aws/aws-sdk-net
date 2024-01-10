@@ -67,7 +67,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// </para>
         ///  
         /// <para>
-        /// Event bus names cannot contain the / character. You can't use the name <code>default</code>
+        /// Event bus names cannot contain the / character. You can't use the name <c>default</c>
         /// for a custom event bus, as this name is already used for your account's default event
         /// bus.
         /// </para>

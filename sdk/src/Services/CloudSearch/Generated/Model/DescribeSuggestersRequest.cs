@@ -33,8 +33,8 @@ namespace Amazon.CloudSearch.Model
     /// Gets the suggesters configured for a domain. A suggester enables you to display possible
     /// matches before users finish typing their queries. Can be limited to specific suggesters
     /// by name. By default, shows all suggesters and includes any pending changes to the
-    /// configuration. Set the <code>Deployed</code> option to <code>true</code> to show the
-    /// active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
+    /// configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active configuration
+    /// and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
     /// target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer
     /// Guide</i>.
     /// </summary>
@@ -47,8 +47,8 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Deployed. 
         /// <para>
-        /// Whether to display the deployed configuration (<code>true</code>) or include any pending
-        /// changes (<code>false</code>). Defaults to <code>false</code>.
+        /// Whether to display the deployed configuration (<c>true</c>) or include any pending
+        /// changes (<c>false</c>). Defaults to <c>false</c>.
         /// </para>
         /// </summary>
         public bool Deployed

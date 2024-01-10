@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SupportedFeatures. 
         /// <para>
-        /// Indicates whether the instance type supports AMD SEV-SNP. If the request returns <code>amd-sev-snp</code>,
+        /// Indicates whether the instance type supports AMD SEV-SNP. If the request returns <c>amd-sev-snp</c>,
         /// AMD SEV-SNP is supported. Otherwise, it is not supported. For more information, see
         /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html"> AMD SEV-SNP</a>.
         /// </para>

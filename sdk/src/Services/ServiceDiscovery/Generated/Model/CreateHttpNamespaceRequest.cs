@@ -31,8 +31,8 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// Container for the parameters to the CreateHttpNamespace operation.
     /// Creates an HTTP namespace. Service instances registered using an HTTP namespace can
-    /// be discovered using a <code>DiscoverInstances</code> request but can't be discovered
-    /// using DNS.
+    /// be discovered using a <c>DiscoverInstances</c> request but can't be discovered using
+    /// DNS.
     /// 
     ///  
     /// <para>
@@ -51,8 +51,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// A unique string that identifies the request and that allows failed <code>CreateHttpNamespace</code>
-        /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code>
+        /// A unique string that identifies the request and that allows failed <c>CreateHttpNamespace</c>
+        /// requests to be retried without the risk of running the operation twice. <c>CreatorRequestId</c>
         /// can be any unique string (for example, a date/time stamp).
         /// </para>
         /// </summary>

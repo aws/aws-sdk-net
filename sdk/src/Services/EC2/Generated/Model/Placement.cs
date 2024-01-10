@@ -110,8 +110,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// The ID of the placement group that the instance is in. If you specify <code>GroupId</code>,
-        /// you can't specify <code>GroupName</code>.
+        /// The ID of the placement group that the instance is in. If you specify <c>GroupId</c>,
+        /// you can't specify <c>GroupName</c>.
         /// </para>
         /// </summary>
         public string GroupId
@@ -129,8 +129,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// The name of the placement group that the instance is in. If you specify <code>GroupName</code>,
-        /// you can't specify <code>GroupId</code>.
+        /// The name of the placement group that the instance is in. If you specify <c>GroupName</c>,
+        /// you can't specify <c>GroupId</c>.
         /// </para>
         /// </summary>
         public string GroupName
@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// If you specify this parameter, either omit the <b>Tenancy</b> parameter or set it
-        /// to <code>host</code>.
+        /// to <c>host</c>.
         /// </para>
         ///  
         /// <para>
@@ -199,7 +199,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PartitionNumber. 
         /// <para>
         /// The number of the partition that the instance is in. Valid only if the placement group
-        /// strategy is set to <code>partition</code>.
+        /// strategy is set to <c>partition</c>.
         /// </para>
         ///  
         /// <para>
@@ -239,15 +239,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tenancy. 
         /// <para>
-        /// The tenancy of the instance. An instance with a tenancy of <code>dedicated</code>
-        /// runs on single-tenant hardware.
+        /// The tenancy of the instance. An instance with a tenancy of <c>dedicated</c> runs on
+        /// single-tenant hardware.
         /// </para>
         ///  
         /// <para>
         /// This parameter is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateFleet">CreateFleet</a>.
-        /// The <code>host</code> tenancy is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
-        /// or for T3 instances that are configured for the <code>unlimited</code> CPU credit
-        /// option.
+        /// The <c>host</c> tenancy is not supported for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportInstance.html">ImportInstance</a>
+        /// or for T3 instances that are configured for the <c>unlimited</c> CPU credit option.
         /// </para>
         /// </summary>
         public Tenancy Tenancy

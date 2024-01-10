@@ -94,7 +94,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DefaultSeriesSettings. 
         /// <para>
-        /// The options that determine the default presentation of all line series in <code>LineChartVisual</code>.
+        /// The options that determine the default presentation of all line series in <c>LineChartVisual</c>.
         /// </para>
         /// </summary>
         public LineChartDefaultSeriesSettings DefaultSeriesSettings

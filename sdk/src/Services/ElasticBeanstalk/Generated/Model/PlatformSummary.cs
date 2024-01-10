@@ -107,8 +107,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code>
-        /// | <code>retired</code> 
+        /// Possible values: <c>beta</c> | <c>supported</c> | <c>deprecated</c> | <c>retired</c>
+        /// 
         /// </para>
         /// </summary>
         public string PlatformBranchLifecycleState
@@ -166,7 +166,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values: <code>recommended</code> | empty
+        /// Possible values: <c>recommended</c> | empty
         /// </para>
         ///  
         /// <para>

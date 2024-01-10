@@ -32,8 +32,8 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBInstanceAutomatedBackups operation.
     /// Displays backups for both current and deleted instances. For example, use this operation
     /// to find details about automated backups for previously deleted instances. Current
-    /// instances with retention periods greater than zero (0) are returned for both the <code>DescribeDBInstanceAutomatedBackups</code>
-    /// and <code>DescribeDBInstances</code> operations.
+    /// instances with retention periods greater than zero (0) are returned for both the <c>DescribeDBInstanceAutomatedBackups</c>
+    /// and <c>DescribeDBInstances</c> operations.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the replicated automated backups, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// The Amazon Resource Name (ARN) of the replicated automated backups, for example, <c>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</c>.
         /// </para>
         ///  
         /// <para>
@@ -121,32 +121,32 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>status</code> 
+        ///  <c>status</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - Automated backups for current instances.
+        ///  <c>active</c> - Automated backups for current instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>creating</code> - Automated backups that are waiting for the first automated
-        /// snapshot to be available.
+        ///  <c>creating</c> - Automated backups that are waiting for the first automated snapshot
+        /// to be available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>retained</code> - Automated backups for deleted instances and after backup
-        /// replication is stopped.
+        ///  <c>retained</c> - Automated backups for deleted instances and after backup replication
+        /// is stopped.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts DB instance identifiers and Amazon Resource
-        /// Names (ARNs). The results list includes only information about the DB instance automated
+        ///  <c>db-instance-id</c> - Accepts DB instance identifiers and Amazon Resource Names
+        /// (ARNs). The results list includes only information about the DB instance automated
         /// backups identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dbi-resource-id</code> - Accepts DB resource identifiers and Amazon Resource
-        /// Names (ARNs). The results list includes only information about the DB instance resources
+        ///  <c>dbi-resource-id</c> - Accepts DB resource identifiers and Amazon Resource Names
+        /// (ARNs). The results list includes only information about the DB instance resources
         /// identified by these ARNs.
         /// </para>
         ///  </li> </ul> 
@@ -171,7 +171,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// The pagination token provided in the previous request. If this parameter is specified
-        /// the response includes only records beyond the marker, up to <code>MaxRecords</code>.
+        /// the response includes only records beyond the marker, up to <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -190,8 +190,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
         public int MaxRecords

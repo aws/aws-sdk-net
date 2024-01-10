@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// An error entity for the <code>BatchCreateDelegationByAssessment</code> API. This
-    /// is used to provide more meaningful errors than a simple string message.
+    /// An error entity for the <c>BatchCreateDelegationByAssessment</c> API. This is used
+    /// to provide more meaningful errors than a simple string message.
     /// </summary>
     public partial class BatchCreateDelegationByAssessmentError
     {
@@ -59,8 +59,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  The error code that the <code>BatchCreateDelegationByAssessment</code> API returned.
-        /// 
+        ///  The error code that the <c>BatchCreateDelegationByAssessment</c> API returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=3)]
@@ -79,7 +78,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message that the <code>BatchCreateDelegationByAssessment</code> API returned.
+        ///  The error message that the <c>BatchCreateDelegationByAssessment</c> API returned.
         /// 
         /// </para>
         /// </summary>

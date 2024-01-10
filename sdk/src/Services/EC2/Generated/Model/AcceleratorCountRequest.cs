@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// The minimum and maximum number of accelerators (GPUs, FPGAs, or Amazon Web Services
     /// Inferentia chips) on an instance. To exclude accelerator-enabled instance types, set
-    /// <code>Max</code> to <code>0</code>.
+    /// <c>Max</c> to <c>0</c>.
     /// </summary>
     public partial class AcceleratorCountRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Max. 
         /// <para>
         /// The maximum number of accelerators. To specify no maximum limit, omit this parameter.
-        /// To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
+        /// To exclude accelerator-enabled instance types, set <c>Max</c> to <c>0</c>.
         /// </para>
         /// </summary>
         public int Max

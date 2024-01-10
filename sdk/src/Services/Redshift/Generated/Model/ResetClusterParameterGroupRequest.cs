@@ -86,12 +86,12 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        /// If <code>true</code>, all parameters in the specified parameter group will be reset
-        /// to their default values. 
+        /// If <c>true</c>, all parameters in the specified parameter group will be reset to their
+        /// default values. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool ResetAllParameters

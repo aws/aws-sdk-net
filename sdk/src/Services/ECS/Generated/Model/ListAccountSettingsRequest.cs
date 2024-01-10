@@ -44,10 +44,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EffectiveSettings. 
         /// <para>
-        /// Determines whether to return the effective settings. If <code>true</code>, the account
-        /// settings for the root user or the default setting for the <code>principalArn</code>
-        /// are returned. If <code>false</code>, the account settings for the <code>principalArn</code>
-        /// are returned if they're set. Otherwise, no account settings are returned.
+        /// Determines whether to return the effective settings. If <c>true</c>, the account settings
+        /// for the root user or the default setting for the <c>principalArn</c> are returned.
+        /// If <c>false</c>, the account settings for the <c>principalArn</c> are returned if
+        /// they're set. Otherwise, no account settings are returned.
         /// </para>
         /// </summary>
         public bool EffectiveSettings
@@ -65,13 +65,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of account setting results returned by <code>ListAccountSettings</code>
-        /// in paginated output. When this parameter is used, <code>ListAccountSettings</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListAccountSettings</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 10. If this parameter isn't used, then <code>ListAccountSettings</code>
-        /// returns up to 10 results and a <code>nextToken</code> value if applicable.
+        /// The maximum number of account setting results returned by <c>ListAccountSettings</c>
+        /// in paginated output. When this parameter is used, <c>ListAccountSettings</c> only
+        /// returns <c>maxResults</c> results in a single page along with a <c>nextToken</c> response
+        /// element. The remaining results of the initial request can be seen by sending another
+        /// <c>ListAccountSettings</c> request with the returned <c>nextToken</c> value. This
+        /// value can be between 1 and 10. If this parameter isn't used, then <c>ListAccountSettings</c>
+        /// returns up to 10 results and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -107,10 +107,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a <code>ListAccountSettings</code>
-        /// request indicating that more results are available to fulfill the request and further
-        /// calls will be needed. If <code>maxResults</code> was provided, it's possible the number
-        /// of results to be fewer than <code>maxResults</code>.
+        /// The <c>nextToken</c> value returned from a <c>ListAccountSettings</c> request indicating
+        /// that more results are available to fulfill the request and further calls will be needed.
+        /// If <c>maxResults</c> was provided, it's possible the number of results to be fewer
+        /// than <c>maxResults</c>.
         /// </para>
         ///  <note> 
         /// <para>

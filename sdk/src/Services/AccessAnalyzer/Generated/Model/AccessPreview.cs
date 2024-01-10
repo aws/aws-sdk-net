@@ -123,16 +123,16 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Creating</code> - The access preview creation is in progress.
+        ///  <c>Creating</c> - The access preview creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Completed</code> - The access preview is complete. You can preview findings
-        /// for external access to the resource.
+        ///  <c>Completed</c> - The access preview is complete. You can preview findings for external
+        /// access to the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The access preview creation has failed.
+        ///  <c>Failed</c> - The access preview creation has failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -156,9 +156,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if the creation of the access preview fails, a <code>Failed</code> status
-        /// is returned. This failure can be due to an internal issue with the analysis or due
-        /// to an invalid resource configuration.
+        /// For example, if the creation of the access preview fails, a <c>Failed</c> status is
+        /// returned. This failure can be due to an internal issue with the analysis or due to
+        /// an invalid resource configuration.
         /// </para>
         /// </summary>
         public AccessPreviewStatusReason StatusReason

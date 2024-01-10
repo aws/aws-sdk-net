@@ -30,8 +30,8 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// You cannot delete the event data store because Lake query federation is enabled.
-    /// To delete the event data store, run the <code>DisableFederation</code> operation to
-    /// disable Lake query federation on the event data store.
+    /// To delete the event data store, run the <c>DisableFederation</c> operation to disable
+    /// Lake query federation on the event data store.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

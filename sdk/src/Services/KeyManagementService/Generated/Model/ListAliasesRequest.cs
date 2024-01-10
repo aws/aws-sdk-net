@@ -35,30 +35,30 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// By default, the <code>ListAliases</code> operation returns all aliases in the account
-    /// and region. To get only the aliases associated with a particular KMS key, use the
-    /// <code>KeyId</code> parameter.
+    /// By default, the <c>ListAliases</c> operation returns all aliases in the account and
+    /// region. To get only the aliases associated with a particular KMS key, use the <c>KeyId</c>
+    /// parameter.
     /// </para>
     ///  
     /// <para>
-    /// The <code>ListAliases</code> response can include aliases that you created and associated
+    /// The <c>ListAliases</c> response can include aliases that you created and associated
     /// with your customer managed keys, and aliases that Amazon Web Services created and
     /// associated with Amazon Web Services managed keys in your account. You can recognize
-    /// Amazon Web Services aliases because their names have the format <code>aws/&lt;service-name&gt;</code>,
-    /// such as <code>aws/dynamodb</code>.
+    /// Amazon Web Services aliases because their names have the format <c>aws/&lt;service-name&gt;</c>,
+    /// such as <c>aws/dynamodb</c>.
     /// </para>
     ///  
     /// <para>
-    /// The response might also include aliases that have no <code>TargetKeyId</code> field.
-    /// These are predefined aliases that Amazon Web Services has created but has not yet
-    /// associated with a KMS key. Aliases that Amazon Web Services creates in your account,
-    /// including predefined aliases, do not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">KMS
+    /// The response might also include aliases that have no <c>TargetKeyId</c> field. These
+    /// are predefined aliases that Amazon Web Services has created but has not yet associated
+    /// with a KMS key. Aliases that Amazon Web Services creates in your account, including
+    /// predefined aliases, do not count against your <a href="https://docs.aws.amazon.com/kms/latest/developerguide/limits.html#aliases-limit">KMS
     /// aliases quota</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Cross-account use</b>: No. <code>ListAliases</code> does not return aliases in
-    /// other Amazon Web Services accounts.
+    ///  <b>Cross-account use</b>: No. <c>ListAliases</c> does not return aliases in other
+    /// Amazon Web Services accounts.
     /// </para>
     ///  
     /// <para>
@@ -107,7 +107,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is optional. If you omit it, <code>ListAliases</code> returns all aliases
+        /// This parameter is optional. If you omit it, <c>ListAliases</c> returns all aliases
         /// in the account and Region.
         /// </para>
         ///  
@@ -120,11 +120,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -175,8 +175,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter in a subsequent request after you receive a response with truncated
-        /// results. Set it to the value of <code>NextMarker</code> from the truncated response
-        /// you just received.
+        /// results. Set it to the value of <c>NextMarker</c> from the truncated response you
+        /// just received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

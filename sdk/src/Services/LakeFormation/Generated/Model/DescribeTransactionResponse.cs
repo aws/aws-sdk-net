@@ -38,8 +38,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property TransactionDescription. 
         /// <para>
-        /// Returns a <code>TransactionDescription</code> object containing information about
-        /// the transaction.
+        /// Returns a <c>TransactionDescription</c> object containing information about the transaction.
         /// </para>
         /// </summary>
         public TransactionDescription TransactionDescription

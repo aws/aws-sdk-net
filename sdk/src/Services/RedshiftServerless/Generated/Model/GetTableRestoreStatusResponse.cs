@@ -38,8 +38,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property TableRestoreStatus. 
         /// <para>
-        /// The returned <code>TableRestoreStatus</code> object that contains information about
-        /// the status of your <code>RestoreTableFromSnapshot</code> request.
+        /// The returned <c>TableRestoreStatus</c> object that contains information about the
+        /// status of your <c>RestoreTableFromSnapshot</c> request.
         /// </para>
         /// </summary>
         public TableRestoreStatus TableRestoreStatus

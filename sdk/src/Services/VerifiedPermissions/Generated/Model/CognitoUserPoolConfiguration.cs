@@ -39,8 +39,8 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// Example:<code>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds":
-    /// ["a1b2c3d4e5f6g7h8i9j0kalbmc"]}</code> 
+    /// Example:<c>"CognitoUserPoolConfiguration":{"UserPoolArn":"arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5","ClientIds":
+    /// ["a1b2c3d4e5f6g7h8i9j0kalbmc"]}</c> 
     /// </para>
     /// </summary>
     public partial class CognitoUserPoolConfiguration
@@ -56,7 +56,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"ClientIds": ["&amp;ExampleCogClientId;"]</code> 
+        /// Example: <c>"ClientIds": ["&amp;ExampleCogClientId;"]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -81,7 +81,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</code>
+        /// Example: <c>"UserPoolArn": "arn:aws:cognito-idp:us-east-1:123456789012:userpool/us-east-1_1a2b3c4d5"</c>
         /// 
         /// </para>
         /// </summary>

@@ -46,12 +46,12 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ContentSecurityPolicy. 
         /// <para>
         /// The policy directives and their values that CloudFront includes as values for the
-        /// <code>Content-Security-Policy</code> HTTP response header.
+        /// <c>Content-Security-Policy</c> HTTP response header.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Content-Security-Policy</code> HTTP response
-        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a>
+        /// For more information about the <c>Content-Security-Policy</c> HTTP response header,
+        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Content-Security-Policy">Content-Security-Policy</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -70,12 +70,12 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ContentTypeOptions. 
         /// <para>
-        /// Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP
-        /// response header with its value set to <code>nosniff</code>.
+        /// Determines whether CloudFront includes the <c>X-Content-Type-Options</c> HTTP response
+        /// header with its value set to <c>nosniff</c>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>X-Content-Type-Options</code> HTTP response header,
+        /// For more information about the <c>X-Content-Type-Options</c> HTTP response header,
         /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a>
         /// in the MDN Web Docs.
         /// </para>
@@ -95,13 +95,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property FrameOptions. 
         /// <para>
-        /// Determines whether CloudFront includes the <code>X-Frame-Options</code> HTTP response
-        /// header and the header's value.
+        /// Determines whether CloudFront includes the <c>X-Frame-Options</c> HTTP response header
+        /// and the header's value.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>X-Frame-Options</code> HTTP response header,
-        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
+        /// For more information about the <c>X-Frame-Options</c> HTTP response header, see <a
+        /// href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -120,13 +120,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ReferrerPolicy. 
         /// <para>
-        /// Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response
-        /// header and the header's value.
+        /// Determines whether CloudFront includes the <c>Referrer-Policy</c> HTTP response header
+        /// and the header's value.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Referrer-Policy</code> HTTP response header,
-        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
+        /// For more information about the <c>Referrer-Policy</c> HTTP response header, see <a
+        /// href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -145,13 +145,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property StrictTransportSecurity. 
         /// <para>
-        /// Determines whether CloudFront includes the <code>Strict-Transport-Security</code>
-        /// HTTP response header and the header's value.
+        /// Determines whether CloudFront includes the <c>Strict-Transport-Security</c> HTTP response
+        /// header and the header's value.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Strict-Transport-Security</code> HTTP response
-        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
+        /// For more information about the <c>Strict-Transport-Security</c> HTTP response header,
+        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -170,13 +170,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property XSSProtection. 
         /// <para>
-        /// Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response
-        /// header and the header's value.
+        /// Determines whether CloudFront includes the <c>X-XSS-Protection</c> HTTP response header
+        /// and the header's value.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>X-XSS-Protection</code> HTTP response header,
-        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
+        /// For more information about the <c>X-XSS-Protection</c> HTTP response header, see <a
+        /// href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>

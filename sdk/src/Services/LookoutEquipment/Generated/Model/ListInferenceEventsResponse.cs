@@ -40,8 +40,8 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property InferenceEventSummaries. 
         /// <para>
         /// Provides an array of information about the individual inference events returned from
-        /// the <code>ListInferenceEvents</code> operation, including scheduler used, event start
-        /// time, event end time, diagnostics, and so on. 
+        /// the <c>ListInferenceEvents</c> operation, including scheduler used, event start time,
+        /// event end time, diagnostics, and so on. 
         /// </para>
         /// </summary>
         public List<InferenceEventSummary> InferenceEventSummaries

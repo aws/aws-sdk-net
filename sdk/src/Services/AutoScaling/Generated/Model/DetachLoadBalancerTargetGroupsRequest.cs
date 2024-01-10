@@ -33,10 +33,10 @@ namespace Amazon.AutoScaling.Model
     /// <note> 
     /// <para>
     /// This API operation is superseded by <a>DetachTrafficSources</a>, which can detach
-    /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-    /// to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancerTargetGroups</code>.
-    /// You can use both the original <code>DetachLoadBalancerTargetGroups</code> API operation
-    /// and <code>DetachTrafficSources</code> on the same Auto Scaling group.
+    /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+    /// simplify how you manage traffic sources. However, we continue to support <c>DetachLoadBalancerTargetGroups</c>.
+    /// You can use both the original <c>DetachLoadBalancerTargetGroups</c> API operation
+    /// and <c>DetachTrafficSources</c> on the same Auto Scaling group.
     /// </para>
     ///  </note> 
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// When you detach a target group, it enters the <code>Removing</code> state while deregistering
+    /// When you detach a target group, it enters the <c>Removing</c> state while deregistering
     /// the instances in the group. When all instances are deregistered, then you can no longer
     /// describe the target group using the <a>DescribeLoadBalancerTargetGroups</a> API call.
     /// The instances remain running.

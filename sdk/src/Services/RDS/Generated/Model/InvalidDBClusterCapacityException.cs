@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>Capacity</code> isn't a valid Aurora Serverless DB cluster capacity. Valid
-    /// capacity values are <code>2</code>, <code>4</code>, <code>8</code>, <code>16</code>,
-    /// <code>32</code>, <code>64</code>, <code>128</code>, and <code>256</code>.
+    /// <c>Capacity</c> isn't a valid Aurora Serverless DB cluster capacity. Valid capacity
+    /// values are <c>2</c>, <c>4</c>, <c>8</c>, <c>16</c>, <c>32</c>, <c>64</c>, <c>128</c>,
+    /// and <c>256</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

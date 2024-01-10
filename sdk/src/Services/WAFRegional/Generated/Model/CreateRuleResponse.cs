@@ -39,8 +39,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used to submit the <code>CreateRule</code> request.
-        /// You can also use this value to query the status of the request. For more information,
+        /// The <c>ChangeToken</c> that you used to submit the <c>CreateRule</c> request. You
+        /// can also use this value to query the status of the request. For more information,
         /// see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// The <a>Rule</a> returned in the <code>CreateRule</code> response.
+        /// The <a>Rule</a> returned in the <c>CreateRule</c> response.
         /// </para>
         /// </summary>
         public Rule Rule

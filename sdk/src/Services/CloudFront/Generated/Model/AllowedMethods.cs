@@ -34,16 +34,15 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// CloudFront forwards only <code>GET</code> and <code>HEAD</code> requests.
+    /// CloudFront forwards only <c>GET</c> and <c>HEAD</c> requests.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// CloudFront forwards only <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>
-    /// requests.
+    /// CloudFront forwards only <c>GET</c>, <c>HEAD</c>, and <c>OPTIONS</c> requests.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// CloudFront forwards <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code>
+    /// CloudFront forwards <c>GET, HEAD, OPTIONS, PUT, PATCH, POST</c>, and <c>DELETE</c>
     /// requests.
     /// </para>
     ///  </li> </ul> 
@@ -99,9 +98,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The number of HTTP methods that you want CloudFront to forward to your origin. Valid
-        /// values are 2 (for <code>GET</code> and <code>HEAD</code> requests), 3 (for <code>GET</code>,
-        /// <code>HEAD</code>, and <code>OPTIONS</code> requests) and 7 (for <code>GET, HEAD,
-        /// OPTIONS, PUT, PATCH, POST</code>, and <code>DELETE</code> requests).
+        /// values are 2 (for <c>GET</c> and <c>HEAD</c> requests), 3 (for <c>GET</c>, <c>HEAD</c>,
+        /// and <c>OPTIONS</c> requests) and 7 (for <c>GET, HEAD, OPTIONS, PUT, PATCH, POST</c>,
+        /// and <c>DELETE</c> requests).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

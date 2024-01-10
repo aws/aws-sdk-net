@@ -49,7 +49,7 @@ namespace Amazon.Personalize.Model
     ///  
     /// <para>
     ///  If you use the Similar-Items recipe, Amazon Personalize can add descriptive themes
-    /// to batch recommendations. To generate themes, set the job's mode to <code>THEME_GENERATION</code>
+    /// to batch recommendations. To generate themes, set the job's mode to <c>THEME_GENERATION</c>
     /// and specify the name of the field that contains item names in the input data.
     /// </para>
     ///  
@@ -98,8 +98,8 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property BatchInferenceJobMode. 
         /// <para>
         /// The mode of the batch inference job. To generate descriptive themes for groups of
-        /// similar items, set the job mode to <code>THEME_GENERATION</code>. If you don't want
-        /// to generate themes, use the default <code>BATCH_INFERENCE</code>.
+        /// similar items, set the job mode to <c>THEME_GENERATION</c>. If you don't want to generate
+        /// themes, use the default <c>BATCH_INFERENCE</c>.
         /// </para>
         ///  
         /// <para>

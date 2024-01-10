@@ -85,10 +85,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// The last reported health status of this instance. <code>Healthy</code> means that
-        /// the instance is healthy and should remain in service. <code>Unhealthy</code> means
-        /// that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
-        /// it.
+        /// The last reported health status of this instance. <c>Healthy</c> means that the instance
+        /// is healthy and should remain in service. <c>Unhealthy</c> means that the instance
+        /// is unhealthy and Amazon EC2 Auto Scaling should terminate and replace it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -183,20 +182,18 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property LifecycleState. 
         /// <para>
-        /// The lifecycle state for the instance. The <code>Quarantined</code> state is not used.
-        /// For information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
+        /// The lifecycle state for the instance. The <c>Quarantined</c> state is not used. For
+        /// information about lifecycle states, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>Pending</code> | <code>Pending:Wait</code> | <code>Pending:Proceed</code>
-        /// | <code>Quarantined</code> | <code>InService</code> | <code>Terminating</code> | <code>Terminating:Wait</code>
-        /// | <code>Terminating:Proceed</code> | <code>Terminated</code> | <code>Detaching</code>
-        /// | <code>Detached</code> | <code>EnteringStandby</code> | <code>Standby</code> | <code>Warmed:Pending</code>
-        /// | <code>Warmed:Pending:Wait</code> | <code>Warmed:Pending:Proceed</code> | <code>Warmed:Terminating</code>
-        /// | <code>Warmed:Terminating:Wait</code> | <code>Warmed:Terminating:Proceed</code> |
-        /// <code>Warmed:Terminated</code> | <code>Warmed:Stopped</code> | <code>Warmed:Running</code>
-        /// 
+        /// Valid values: <c>Pending</c> | <c>Pending:Wait</c> | <c>Pending:Proceed</c> | <c>Quarantined</c>
+        /// | <c>InService</c> | <c>Terminating</c> | <c>Terminating:Wait</c> | <c>Terminating:Proceed</c>
+        /// | <c>Terminated</c> | <c>Detaching</c> | <c>Detached</c> | <c>EnteringStandby</c>
+        /// | <c>Standby</c> | <c>Warmed:Pending</c> | <c>Warmed:Pending:Wait</c> | <c>Warmed:Pending:Proceed</c>
+        /// | <c>Warmed:Terminating</c> | <c>Warmed:Terminating:Wait</c> | <c>Warmed:Terminating:Proceed</c>
+        /// | <c>Warmed:Terminated</c> | <c>Warmed:Stopped</c> | <c>Warmed:Running</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

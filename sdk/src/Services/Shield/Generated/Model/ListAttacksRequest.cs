@@ -43,9 +43,9 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time period for the attacks. This is a <code>timestamp</code> type.
-        /// The request syntax listing for this call indicates a <code>number</code> type, but
-        /// you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp
+        /// The end of the time period for the attacks. This is a <c>timestamp</c> type. The request
+        /// syntax listing for this call indicates a <c>number</c> type, but you can provide the
+        /// time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp
         /// format</a> setting. 
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.Shield.Model
         /// The greatest number of objects that you want Shield Advanced to return to the list
         /// request. Shield Advanced might return fewer objects than you indicate in this setting,
         /// even if more objects are available. If there are more objects remaining, Shield Advanced
-        /// will always also return a <code>NextToken</code> value in the response.
+        /// will always also return a <c>NextToken</c> value in the response.
         /// </para>
         ///  
         /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.Shield.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// When you request a list of objects from Shield Advanced, if the response does not
-        /// include all of the remaining available objects, Shield Advanced includes a <code>NextToken</code>
+        /// include all of the remaining available objects, Shield Advanced includes a <c>NextToken</c>
         /// value in the response. You can retrieve the next batch of objects by requesting the
         /// list again and providing the token that was returned by the prior call in your request.
         /// 
@@ -99,14 +99,14 @@ namespace Amazon.Shield.Model
         ///  
         /// <para>
         /// You can indicate the maximum number of objects that you want Shield Advanced to return
-        /// for a single call with the <code>MaxResults</code> setting. Shield Advanced will not
-        /// return more than <code>MaxResults</code> objects, but may return fewer, even if more
-        /// objects are still available.
+        /// for a single call with the <c>MaxResults</c> setting. Shield Advanced will not return
+        /// more than <c>MaxResults</c> objects, but may return fewer, even if more objects are
+        /// still available.
         /// </para>
         ///  
         /// <para>
         /// Whenever more objects remain that Shield Advanced has not yet returned to you, the
-        /// response will include a <code>NextToken</code> value.
+        /// response will include a <c>NextToken</c> value.
         /// </para>
         ///  
         /// <para>
@@ -148,9 +148,9 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time period for the attacks. This is a <code>timestamp</code> type.
-        /// The request syntax listing for this call indicates a <code>number</code> type, but
-        /// you can provide the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp
+        /// The start of the time period for the attacks. This is a <c>timestamp</c> type. The
+        /// request syntax listing for this call indicates a <c>number</c> type, but you can provide
+        /// the time in any valid <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-parameters-types.html#parameter-type-timestamp">timestamp
         /// format</a> setting. 
         /// </para>
         /// </summary>

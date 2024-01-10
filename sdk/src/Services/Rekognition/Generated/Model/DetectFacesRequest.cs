@@ -34,11 +34,11 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    ///  <code>DetectFaces</code> detects the 100 largest faces in the image. For each face
-    /// detected, the operation returns face details. These details include a bounding box
-    /// of the face, a confidence value (that the bounding box contains a face), and a fixed
-    /// set of attributes such as facial landmarks (for example, coordinates of eye and mouth),
-    /// pose, presence of facial occlusion, and so on.
+    ///  <c>DetectFaces</c> detects the 100 largest faces in the image. For each face detected,
+    /// the operation returns face details. These details include a bounding box of the face,
+    /// a confidence value (that the bounding box contains a face), and a fixed set of attributes
+    /// such as facial landmarks (for example, coordinates of eye and mouth), pose, presence
+    /// of facial occlusion, and so on.
     /// </para>
     ///  
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DetectFaces</code>
+    /// This operation requires permissions to perform the <c>rekognition:DetectFaces</c>
     /// action. 
     /// </para>
     /// </summary>
@@ -71,24 +71,23 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// An array of facial attributes you want to be returned. A <code>DEFAULT</code> subset
-        /// of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>, <code>Pose</code>,
-        /// <code>Quality</code>, and <code>Landmarks</code> - will always be returned. You can
-        /// request for specific facial attributes (in addition to the default list) - by using
-        /// [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or just [<code>"FACE_OCCLUDED"</code>].
-        /// You can request for all facial attributes by using [<code>"ALL"]</code>. Requesting
-        /// more attributes may increase response time.
+        /// An array of facial attributes you want to be returned. A <c>DEFAULT</c> subset of
+        /// facial attributes - <c>BoundingBox</c>, <c>Confidence</c>, <c>Pose</c>, <c>Quality</c>,
+        /// and <c>Landmarks</c> - will always be returned. You can request for specific facial
+        /// attributes (in addition to the default list) - by using [<c>"DEFAULT", "FACE_OCCLUDED"</c>]
+        /// or just [<c>"FACE_OCCLUDED"</c>]. You can request for all facial attributes by using
+        /// [<c>"ALL"]</c>. Requesting more attributes may increase response time.
         /// </para>
         ///  
         /// <para>
-        /// If you provide both, <code>["ALL", "DEFAULT"]</code>, the service uses a logical "AND"
-        /// operator to determine which attributes to return (in this case, all attributes). 
+        /// If you provide both, <c>["ALL", "DEFAULT"]</c>, the service uses a logical "AND" operator
+        /// to determine which attributes to return (in this case, all attributes). 
         /// </para>
         ///  
         /// <para>
         /// Note that while the FaceOccluded and EyeDirection attributes are supported when using
-        /// <code>DetectFaces</code>, they aren't supported when analyzing videos with <code>StartFaceDetection</code>
-        /// and <code>GetFaceDetection</code>.
+        /// <c>DetectFaces</c>, they aren't supported when analyzing videos with <c>StartFaceDetection</c>
+        /// and <c>GetFaceDetection</c>.
         /// </para>
         /// </summary>
         public List<string> Attributes
@@ -113,7 +112,7 @@ namespace Amazon.Rekognition.Model
         ///  
         /// <para>
         /// If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. For more information, see Images
+        /// image bytes passed using the <c>Bytes</c> field. For more information, see Images
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Datasets. 
         /// <para>
-        /// An array of <code>Dataset</code> objects. Each object provides metadata information.
+        /// An array of <c>Dataset</c> objects. Each object provides metadata information.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

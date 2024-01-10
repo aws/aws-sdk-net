@@ -41,13 +41,13 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Date. 
         /// <para>
         /// A date on which to transition objects to the specified storage class. If you provide
-        /// <code>Date</code>, you cannot provide <code>Days</code>.
+        /// <c>Date</c>, you cannot provide <c>Days</c>.
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string Date
@@ -66,7 +66,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Days. 
         /// <para>
         /// The number of days after which to transition the object to the specified storage class.
-        /// If you provide <code>Days</code>, you cannot provide <code>Date</code>.
+        /// If you provide <c>Days</c>, you cannot provide <c>Date</c>.
         /// </para>
         /// </summary>
         public int Days
@@ -88,23 +88,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DEEP_ARCHIVE</code> 
+        ///  <c>DEEP_ARCHIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GLACIER</code> 
+        ///  <c>GLACIER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INTELLIGENT_TIERING</code> 
+        ///  <c>INTELLIGENT_TIERING</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ONEZONE_IA</code> 
+        ///  <c>ONEZONE_IA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STANDARD_IA</code> 
+        ///  <c>STANDARD_IA</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

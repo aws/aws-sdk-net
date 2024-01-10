@@ -231,8 +231,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Requires. 
         /// <para>
-        /// A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
-        /// document requires an <code>ApplicationConfigurationSchema</code> document.
+        /// A list of SSM documents required by a document. For example, an <c>ApplicationConfiguration</c>
+        /// document requires an <c>ApplicationConfigurationSchema</c> document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -307,8 +307,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The target type which defines the kinds of resources the document can run on. For
-        /// example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// example, <c>/AWS::EC2::Instance</c>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
         /// Web Services resource and property types reference</a> in the <i>CloudFormation User
         /// Guide</i>. 
         /// </para>

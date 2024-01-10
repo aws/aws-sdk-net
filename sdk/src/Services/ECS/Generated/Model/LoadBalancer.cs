@@ -79,9 +79,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerPort. 
         /// <para>
         /// The port on the container to associate with the load balancer. This port must correspond
-        /// to a <code>containerPort</code> in the task definition the tasks in the service are
-        /// using. For tasks that use the EC2 launch type, the container instance they're launched
-        /// on must allow ingress traffic on the <code>hostPort</code> of the port mapping.
+        /// to a <c>containerPort</c> in the task definition the tasks in the service are using.
+        /// For tasks that use the EC2 launch type, the container instance they're launched on
+        /// must allow ingress traffic on the <c>hostPort</c> of the port mapping.
         /// </para>
         /// </summary>
         public int ContainerPort
@@ -132,25 +132,25 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For services using the <code>ECS</code> deployment controller, you can specify one
-        /// or multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
+        /// For services using the <c>ECS</c> deployment controller, you can specify one or multiple
+        /// target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/register-multiple-targetgroups.html">Registering
         /// multiple target groups with a service</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For services using the <code>CODE_DEPLOY</code> deployment controller, you're required
-        /// to define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/green
+        /// For services using the <c>CODE_DEPLOY</c> deployment controller, you're required to
+        /// define two target groups for the load balancer. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-bluegreen.html">Blue/green
         /// deployment with CodeDeploy</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If your service's task definition uses the <code>awsvpc</code> network mode, you must
-        /// choose <code>ip</code> as the target type, not <code>instance</code>. Do this when
-        /// creating your target groups because tasks that use the <code>awsvpc</code> network
-        /// mode are associated with an elastic network interface, not an Amazon EC2 instance.
-        /// This network mode is required for the Fargate launch type.
+        /// If your service's task definition uses the <c>awsvpc</c> network mode, you must choose
+        /// <c>ip</c> as the target type, not <c>instance</c>. Do this when creating your target
+        /// groups because tasks that use the <c>awsvpc</c> network mode are associated with an
+        /// elastic network interface, not an Amazon EC2 instance. This network mode is required
+        /// for the Fargate launch type.
         /// </para>
         ///  </important>
         /// </summary>

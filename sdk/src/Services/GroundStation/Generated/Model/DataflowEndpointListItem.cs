@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Item in a list of <code>DataflowEndpoint</code> groups.
+    /// Item in a list of <c>DataflowEndpoint</c> groups.
     /// </summary>
     public partial class DataflowEndpointListItem
     {

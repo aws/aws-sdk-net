@@ -62,27 +62,27 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETED</code>: The resource differs from its expected configuration in that
-        /// it has been deleted.
+        ///  <c>DELETED</c>: The resource differs from its expected configuration in that it has
+        /// been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODIFIED</code>: The resource differs from its expected configuration.
+        ///  <c>MODIFIED</c>: The resource differs from its expected configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation has not checked if the resource differs
-        /// from its expected configuration.
+        ///  <c>NOT_CHECKED</c>: CloudFormation has not checked if the resource differs from its
+        /// expected configuration.
         /// </para>
         ///  
         /// <para>
-        /// Any resources that do not currently support drift detection have a status of <code>NOT_CHECKED</code>.
+        /// Any resources that do not currently support drift detection have a status of <c>NOT_CHECKED</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected configuration.
+        ///  <c>IN_SYNC</c>: The resource's actual configuration matches its expected configuration.
         /// </para>
         ///  </li> </ul>
         /// </summary>

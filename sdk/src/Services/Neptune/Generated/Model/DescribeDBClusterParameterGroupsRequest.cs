@@ -30,7 +30,7 @@ namespace Amazon.Neptune.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDBClusterParameterGroups operation.
-    /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
+    /// Returns a list of <c>DBClusterParameterGroup</c> descriptions. If a <c>DBClusterParameterGroupName</c>
     /// parameter is specified, the list will contain only the description of the specified
     /// DB cluster parameter group.
     /// </summary>
@@ -89,9 +89,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        ///  An optional pagination token provided by a previous <code>DescribeDBClusterParameterGroups</code>
+        ///  An optional pagination token provided by a previous <c>DescribeDBClusterParameterGroups</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -110,8 +110,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>

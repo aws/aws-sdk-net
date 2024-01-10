@@ -39,10 +39,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  <code>NextToken</code> is sent when <code>isTruncated</code> is true, which means
-        /// there are more buckets that can be listed. The next list requests to Amazon S3 can
-        /// be continued with this <code>NextToken</code>. <code>NextToken</code> is obfuscated
-        /// and is not a real key.
+        ///  <c>NextToken</c> is sent when <c>isTruncated</c> is true, which means there are more
+        /// buckets that can be listed. The next list requests to Amazon S3 can be continued with
+        /// this <c>NextToken</c>. <c>NextToken</c> is obfuscated and is not a real key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

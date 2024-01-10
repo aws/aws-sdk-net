@@ -110,8 +110,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-        /// where <code>123456789012</code> is your Amazon Web Services account ID.
+        /// The ARN (Amazon Resource Name) for the distribution. For example: <c>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</c>,
+        /// where <c>123456789012</c> is your Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,7 +130,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CacheBehaviors. 
         /// <para>
-        /// A complex type that contains zero or more <code>CacheBehavior</code> elements.
+        /// A complex type that contains zero or more <c>CacheBehavior</c> elements.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -168,7 +168,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CustomErrorResponses. 
         /// <para>
-        /// A complex type that contains zero or more <code>CustomErrorResponses</code> elements.
+        /// A complex type that contains zero or more <c>CustomErrorResponses</c> elements.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -187,8 +187,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultCacheBehavior. 
         /// <para>
-        /// A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
-        /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+        /// A complex type that describes the default cache behavior if you don't specify a <c>CacheBehavior</c>
+        /// element or if files don't match any of the values of <c>PathPattern</c> in <c>CacheBehavior</c>
         /// elements. You must create exactly one default cache behavior.
         /// </para>
         /// </summary>
@@ -208,7 +208,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name that corresponds to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
+        /// The domain name that corresponds to the distribution, for example, <c>d111111abcdef8.cloudfront.net</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -247,8 +247,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property HttpVersion. 
         /// <para>
         /// Specify the maximum HTTP version that you want viewers to use to communicate with
-        /// CloudFront. The default value for new web distributions is <code>http2</code>. Viewers
-        /// that don't support <code>HTTP/2</code> will automatically use an earlier version.
+        /// CloudFront. The default value for new web distributions is <c>http2</c>. Viewers that
+        /// don't support <c>HTTP/2</c> will automatically use an earlier version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -267,7 +267,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the distribution. For example: <code>EDFDVBD632BHDS5</code>.
+        /// The identifier for the distribution. For example: <c>EDFDVBD632BHDS5</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -419,8 +419,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the distribution. When the status is <code>Deployed</code>,
-        /// the distribution's information is propagated to all CloudFront edge locations.
+        /// The current status of the distribution. When the status is <c>Deployed</c>, the distribution's
+        /// information is propagated to all CloudFront edge locations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

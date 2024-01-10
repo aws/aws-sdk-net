@@ -39,9 +39,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Input. 
         /// <para>
         /// A JSON object that contains values for the variables defined in the template. It is
-        /// made available to the template under the substitution variable <code>task.input</code>.
-        /// For example, if you define a variable <code>task.input.text</code> in your template,
-        /// you can supply the variable in the JSON object as <code>"text": "sample text"</code>.
+        /// made available to the template under the substitution variable <c>task.input</c>.
+        /// For example, if you define a variable <c>task.input.text</c> in your template, you
+        /// can supply the variable in the JSON object as <c>"text": "sample text"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=128000)]

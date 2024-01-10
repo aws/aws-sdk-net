@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Summary of the membership details of an <code>AppInstanceUser</code>.
+    /// Summary of the membership details of an <c>AppInstanceUser</c>.
     /// </summary>
     public partial class AppInstanceUserMembershipSummary
     {
@@ -57,7 +57,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of <code>ChannelMembership</code>.
+        /// The type of <c>ChannelMembership</c>.
         /// </para>
         /// </summary>
         public ChannelMembershipType Type

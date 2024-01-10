@@ -39,10 +39,10 @@ namespace Amazon.SimpleEmail.Model
     /// <para>
     /// You can execute this operation no more than once per second. This operation returns
     /// up to 1,000 configuration sets each time it is run. If your Amazon SES account has
-    /// more than 1,000 configuration sets, this operation also returns <code>NextToken</code>.
-    /// You can then execute the <code>ListConfigurationSets</code> operation again, passing
-    /// the <code>NextToken</code> parameter and the value of the NextToken element to retrieve
-    /// additional results.
+    /// more than 1,000 configuration sets, this operation also returns <c>NextToken</c>.
+    /// You can then execute the <c>ListConfigurationSets</c> operation again, passing the
+    /// <c>NextToken</c> parameter and the value of the NextToken element to retrieve additional
+    /// results.
     /// </para>
     /// </summary>
     public partial class ListConfigurationSetsRequest : AmazonSimpleEmailServiceRequest
@@ -71,7 +71,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token returned from a previous call to <code>ListConfigurationSets</code> to indicate
+        /// A token returned from a previous call to <c>ListConfigurationSets</c> to indicate
         /// the position of the configuration set in the configuration set list.
         /// </para>
         /// </summary>

@@ -79,12 +79,12 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property FeatureSpecificationS3Uri. 
         /// <para>
         /// A URL to the Amazon S3 data source containing selected features from the input data
-        /// source to run an Autopilot job V2. You can input <code>FeatureAttributeNames</code>
-        /// (optional) in JSON format as shown below: 
+        /// source to run an Autopilot job V2. You can input <c>FeatureAttributeNames</c> (optional)
+        /// in JSON format as shown below: 
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "FeatureAttributeNames":["col1", "col2", ...] }</code>.
+        ///  <c>{ "FeatureAttributeNames":["col1", "col2", ...] }</c>.
         /// </para>
         ///  
         /// <para>
@@ -92,8 +92,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</code>
-        /// 
+        ///  <c>{ "FeatureDataTypes":{"col1":"numeric", "col2":"categorical" ... } }</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -101,28 +100,27 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// In ensembling mode, Autopilot only supports the following data types: <code>numeric</code>,
-        /// <code>categorical</code>, <code>text</code>, and <code>datetime</code>. In HPO mode,
-        /// Autopilot can support <code>numeric</code>, <code>categorical</code>, <code>text</code>,
-        /// <code>datetime</code>, and <code>sequence</code>.
+        /// In ensembling mode, Autopilot only supports the following data types: <c>numeric</c>,
+        /// <c>categorical</c>, <c>text</c>, and <c>datetime</c>. In HPO mode, Autopilot can support
+        /// <c>numeric</c>, <c>categorical</c>, <c>text</c>, <c>datetime</c>, and <c>sequence</c>.
         /// </para>
         ///  
         /// <para>
-        /// If only <code>FeatureDataTypes</code> is provided, the column keys (<code>col1</code>,
-        /// <code>col2</code>,..) should be a subset of the column names in the input data. 
+        /// If only <c>FeatureDataTypes</c> is provided, the column keys (<c>col1</c>, <c>col2</c>,..)
+        /// should be a subset of the column names in the input data. 
         /// </para>
         ///  
         /// <para>
-        /// If both <code>FeatureDataTypes</code> and <code>FeatureAttributeNames</code> are provided,
-        /// then the column keys should be a subset of the column names provided in <code>FeatureAttributeNames</code>.
+        /// If both <c>FeatureDataTypes</c> and <c>FeatureAttributeNames</c> are provided, then
+        /// the column keys should be a subset of the column names provided in <c>FeatureAttributeNames</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// The key name <code>FeatureAttributeNames</code> is fixed. The values listed in <code>["col1",
-        /// "col2", ...]</code> are case sensitive and should be a list of strings containing
-        /// unique values that are a subset of the column names in the input data. The list of
-        /// columns provided must not include the target column.
+        /// The key name <c>FeatureAttributeNames</c> is fixed. The values listed in <c>["col1",
+        /// "col2", ...]</c> are case sensitive and should be a list of strings containing unique
+        /// values that are a subset of the column names in the input data. The list of columns
+        /// provided must not include the target column.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -161,28 +159,27 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Mode. 
         /// <para>
         /// The method that Autopilot uses to train the data. You can either specify the mode
-        /// manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>.
-        /// In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets
-        /// smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.
+        /// manually or let Autopilot choose for you based on the dataset size by selecting <c>AUTO</c>.
+        /// In <c>AUTO</c> mode, Autopilot chooses <c>ENSEMBLING</c> for datasets smaller than
+        /// 100 MB, and <c>HYPERPARAMETER_TUNING</c> for larger ones.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification
+        /// The <c>ENSEMBLING</c> mode uses a multi-stack ensemble model to predict classification
         /// and regression tasks directly from your dataset. This machine learning mode combines
         /// several base models to produce an optimal predictive model. It then uses a stacking
         /// ensemble method to combine predictions from contributing members. A multi-stack ensemble
         /// model can provide better performance over a single model by combining the predictive
         /// capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
-        /// algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code>
-        /// mode.
+        /// algorithm support</a> for a list of algorithms supported by <c>ENSEMBLING</c> mode.
         /// </para>
         ///  
         /// <para>
-        /// The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to
-        /// train the best version of a model. HPO automatically selects an algorithm for the
-        /// type of problem you want to solve. Then HPO finds the best hyperparameters according
-        /// to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
-        /// algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code>
+        /// The <c>HYPERPARAMETER_TUNING</c> (HPO) mode uses the best hyperparameters to train
+        /// the best version of a model. HPO automatically selects an algorithm for the type of
+        /// problem you want to solve. Then HPO finds the best hyperparameters according to your
+        /// objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
+        /// algorithm support</a> for a list of algorithms supported by <c>HYPERPARAMETER_TUNING</c>
         /// mode.
         /// </para>
         /// </summary>
@@ -207,7 +204,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must either specify the type of supervised learning problem in <code>ProblemType</code>
+        /// You must either specify the type of supervised learning problem in <c>ProblemType</c>
         /// and provide the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
         /// metric, or none at all.
         /// </para>

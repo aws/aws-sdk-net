@@ -86,7 +86,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination for the probe. This should be either an <code>IPV4</code> or <code>IPV6</code>.
+        /// The destination for the probe. This should be either an <c>IPV4</c> or <c>IPV6</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -105,8 +105,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// The destination port for the probe. This is required only if the <code>protocol</code>
-        /// is <code>TCP</code> and must be a number between <code>1</code> and <code>65536</code>.
+        /// The destination port for the probe. This is required only if the <c>protocol</c> is
+        /// <c>TCP</c> and must be a number between <c>1</c> and <c>65536</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
@@ -143,8 +143,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property PacketSize. 
         /// <para>
-        /// The size of the packets traveling between the <code>source</code> and <code>destination</code>.
-        /// This must be a number between <code>56</code> and 
+        /// The size of the packets traveling between the <c>source</c> and <c>destination</c>.
+        /// This must be a number between <c>56</c> and 
         /// </para>
         /// </summary>
         [AWSProperty(Min=56, Max=8500)]
@@ -200,8 +200,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The network protocol for the destination. This can be either <code>TCP</code> or <code>ICMP</code>.
-        /// If the protocol is <code>TCP</code>, then <code>port</code> is also required.
+        /// The network protocol for the destination. This can be either <c>TCP</c> or <c>ICMP</c>.
+        /// If the protocol is <c>TCP</c>, then <c>port</c> is also required.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

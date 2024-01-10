@@ -110,7 +110,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>json</code> 
+        /// Default: <c>json</c> 
         /// </para>
         /// </summary>
         public LambdaInputPayloadEncodingType InputPayloadEncodingType
@@ -214,12 +214,12 @@ namespace Amazon.GreengrassV2.Model
         ///  </li> <li> 
         /// <para>
         /// A non-pinned Lambda function starts only when it receives a work item and exists after
-        /// it idles for <code>maxIdleTimeInSeconds</code>. If the function has multiple work
-        /// items, the IoT Greengrass Core software creates multiple instances of the function.
+        /// it idles for <c>maxIdleTimeInSeconds</c>. If the function has multiple work items,
+        /// the IoT Greengrass Core software creates multiple instances of the function.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool Pinned

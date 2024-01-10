@@ -31,7 +31,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DeleteAssociation operation.
     /// Disassociates the specified Amazon Web Services Systems Manager document (SSM document)
-    /// from the specified managed node. If you created the association by using the <code>Targets</code>
+    /// from the specified managed node. If you created the association by using the <c>Targets</c>
     /// parameter, then you must delete the association by using the association ID.
     /// 
     ///  
@@ -89,14 +89,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an
-        /// association, use the <code>Targets</code> parameter. Requests that include the parameter
-        /// <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema
-        /// version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
-        /// you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
-        /// <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>,
-        /// or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code>
-        /// parameter.
+        ///  <c>InstanceId</c> has been deprecated. To specify a managed node ID for an association,
+        /// use the <c>Targets</c> parameter. Requests that include the parameter <c>InstanceID</c>
+        /// with Systems Manager documents (SSM documents) that use schema version 2.0 or later
+        /// will fail. In addition, if you use the parameter <c>InstanceId</c>, you can't use
+        /// the parameters <c>AssociationName</c>, <c>DocumentVersion</c>, <c>MaxErrors</c>, <c>MaxConcurrency</c>,
+        /// <c>OutputLocation</c>, or <c>ScheduleExpression</c>. To use these parameters, you
+        /// must use the <c>Targets</c> parameter.
         /// </para>
         ///  </note>
         /// </summary>

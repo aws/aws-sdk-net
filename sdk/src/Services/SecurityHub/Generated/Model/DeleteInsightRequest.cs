@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteInsight operation.
-    /// Deletes the insight specified by the <code>InsightArn</code>.
+    /// Deletes the insight specified by the <c>InsightArn</c>.
     /// </summary>
     public partial class DeleteInsightRequest : AmazonSecurityHubRequest
     {

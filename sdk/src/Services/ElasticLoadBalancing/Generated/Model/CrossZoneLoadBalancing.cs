@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticLoadBalancing.Model
 {
     /// <summary>
-    /// Information about the <code>CrossZoneLoadBalancing</code> attribute.
+    /// Information about the <c>CrossZoneLoadBalancing</c> attribute.
     /// </summary>
     public partial class CrossZoneLoadBalancing
     {

@@ -31,7 +31,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Container for the parameters to the UpdateLinkAttributes operation.
     /// Updates a given typed link’s attributes. Attributes to be updated must not contribute
-    /// to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.
+    /// to the typed link’s identity, as defined by its <c>IdentityAttributeOrder</c>.
     /// </summary>
     public partial class UpdateLinkAttributesRequest : AmazonCloudDirectoryRequest
     {

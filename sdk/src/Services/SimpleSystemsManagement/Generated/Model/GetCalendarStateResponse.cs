@@ -41,7 +41,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AtTime. 
         /// <para>
         /// The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-        /// that you specified in your command. If you don't specify a time, <code>GetCalendarState</code>
+        /// that you specified in your command. If you don't specify a time, <c>GetCalendarState</c>
         /// uses the current time.
         /// </para>
         /// </summary>
@@ -61,8 +61,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property NextTransitionTime. 
         /// <para>
         /// The time, as an <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> string,
-        /// that the calendar state will change. If the current calendar state is <code>OPEN</code>,
-        /// <code>NextTransitionTime</code> indicates when the calendar state changes to <code>CLOSED</code>,
+        /// that the calendar state will change. If the current calendar state is <c>OPEN</c>,
+        /// <c>NextTransitionTime</c> indicates when the calendar state changes to <c>CLOSED</c>,
         /// and vice-versa.
         /// </para>
         /// </summary>
@@ -81,9 +81,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the calendar. An <code>OPEN</code> calendar indicates that actions are
-        /// allowed to proceed, and a <code>CLOSED</code> calendar indicates that actions aren't
-        /// allowed to proceed.
+        /// The state of the calendar. An <c>OPEN</c> calendar indicates that actions are allowed
+        /// to proceed, and a <c>CLOSED</c> calendar indicates that actions aren't allowed to
+        /// proceed.
         /// </para>
         /// </summary>
         public CalendarState State

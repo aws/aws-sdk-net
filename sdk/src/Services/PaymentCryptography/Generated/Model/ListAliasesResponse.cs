@@ -39,7 +39,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Aliases. 
         /// <para>
-        /// The list of aliases. Each alias describes the <code>KeyArn</code> contained within.
+        /// The list of aliases. Each alias describes the <c>KeyArn</c> contained within.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

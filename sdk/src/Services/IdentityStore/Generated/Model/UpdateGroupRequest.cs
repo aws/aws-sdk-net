@@ -80,8 +80,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// A list of <code>AttributeOperation</code> objects to apply to the requested group.
-        /// These operations might add, replace, or remove an attribute.
+        /// A list of <c>AttributeOperation</c> objects to apply to the requested group. These
+        /// operations might add, replace, or remove an attribute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

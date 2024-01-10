@@ -525,7 +525,7 @@ namespace Amazon.AccessAnalyzer
         /// You can find examples for reference policies and learn how to set up and run a custom
         /// policy check for new access in the <a href="https://github.com/aws-samples/iam-access-analyzer-custom-policy-check-samples">IAM
         /// Access Analyzer custom policy checks samples</a> repository on GitHub. The reference
-        /// policies in this repository are meant to be passed to the <code>existingPolicyDocument</code>
+        /// policies in this repository are meant to be passed to the <c>existingPolicyDocument</c>
         /// request parameter.
         /// </para>
         /// </summary>
@@ -570,7 +570,7 @@ namespace Amazon.AccessAnalyzer
         /// You can find examples for reference policies and learn how to set up and run a custom
         /// policy check for new access in the <a href="https://github.com/aws-samples/iam-access-analyzer-custom-policy-check-samples">IAM
         /// Access Analyzer custom policy checks samples</a> repository on GitHub. The reference
-        /// policies in this repository are meant to be passed to the <code>existingPolicyDocument</code>
+        /// policies in this repository are meant to be passed to the <c>existingPolicyDocument</c>
         /// request parameter.
         /// </para>
         /// </summary>
@@ -1457,7 +1457,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
+        /// Retrieves the policy that was generated using <c>StartPolicyGeneration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGeneratedPolicy service method.</param>
         /// 
@@ -1486,7 +1486,7 @@ namespace Amazon.AccessAnalyzer
 
 
         /// <summary>
-        /// Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
+        /// Retrieves the policy that was generated using <c>StartPolicyGeneration</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGeneratedPolicy service method.</param>
         /// <param name="cancellationToken">

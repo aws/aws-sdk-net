@@ -60,7 +60,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property OperationSummaryList. 
         /// <para>
         /// A list of operation summary information records. In a paginated request, the request
-        /// returns up to <code>MaxResults</code> records for each call.
+        /// returns up to <c>MaxResults</c> records for each call.
         /// </para>
         /// </summary>
         public List<OperationSummary> OperationSummaryList

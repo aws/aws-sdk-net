@@ -59,8 +59,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property UsePreviousValue. 
         /// <para>
-        /// If set to true, <code>Value</code> is ignored and the previous parameter value is
-        /// kept.
+        /// If set to true, <c>Value</c> is ignored and the previous parameter value is kept.
         /// </para>
         /// </summary>
         public bool UsePreviousValue

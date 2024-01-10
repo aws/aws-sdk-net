@@ -42,8 +42,8 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Gets and sets the property Details. 
         /// <para>
         /// If the experiment doesn't yet have enough events to provide valid results, this field
-        /// is returned with the message <code>Not enough events to generate results</code>. If
-        /// there are enough events to provide valid results, this field is not returned.
+        /// is returned with the message <c>Not enough events to generate results</c>. If there
+        /// are enough events to provide valid results, this field is not returned.
         /// </para>
         /// </summary>
         public string Details

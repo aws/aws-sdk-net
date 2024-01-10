@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Destination. 
         /// <para>
         /// The target Region or Availability Zone that the metric subscription is enabled for.
-        /// For example, <code>eu-west-1</code>.
+        /// For example, <c>eu-west-1</c>.
         /// </para>
         /// </summary>
         public string Destination
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// The source Region or Availability Zone that the metric subscription is enabled for.
-        /// For example, <code>us-east-1</code>.
+        /// For example, <c>us-east-1</c>.
         /// </para>
         /// </summary>
         public string Source

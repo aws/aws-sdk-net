@@ -518,7 +518,7 @@ namespace Amazon.CodeCatalyst
 
         /// <summary>
         /// Creates an empty Git-based source repository in a specified project. The repository
-        /// is created with an initial empty commit with a default branch named <code>main</code>.
+        /// is created with an initial empty commit with a default branch named <c>main</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSourceRepository service method.</param>
         /// 
@@ -556,7 +556,7 @@ namespace Amazon.CodeCatalyst
 
         /// <summary>
         /// Creates an empty Git-based source repository in a specified project. The repository
-        /// is created with an initial empty commit with a default branch named <code>main</code>.
+        /// is created with an initial empty commit with a default branch named <c>main</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSourceRepository service method.</param>
         /// <param name="cancellationToken">

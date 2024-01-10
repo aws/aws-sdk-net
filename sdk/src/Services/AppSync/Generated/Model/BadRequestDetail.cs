@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Provides further details for the reason behind the bad request. For reason type <code>CODE_ERROR</code>,
+    /// Provides further details for the reason behind the bad request. For reason type <c>CODE_ERROR</c>,
     /// the detail will contain a list of code errors.
     /// </summary>
     public partial class BadRequestDetail

@@ -58,13 +58,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-family</code> - The instance family of the offering (for example,
-        /// <code>m4</code>).
+        ///  <c>instance-family</c> - The instance family of the offering (for example, <c>m4</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>payment-option</code> - The payment option (<code>NoUpfront</code> | <code>PartialUpfront</code>
-        /// | <code>AllUpfront</code>).
+        ///  <c>payment-option</c> - The payment option (<c>NoUpfront</c> | <c>PartialUpfront</c>
+        /// | <c>AllUpfront</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -105,9 +104,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
-        /// results can be seen by sending another request with the returned <code>nextToken</code>
-        /// value. This value can be between 5 and 500. If <code>maxResults</code> is given a
-        /// larger value than 500, you receive an error.
+        /// results can be seen by sending another request with the returned <c>nextToken</c>
+        /// value. This value can be between 5 and 500. If <c>maxResults</c> is given a larger
+        /// value than 500, you receive an error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=500)]

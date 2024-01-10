@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a <code>ListDeploymentConfigs</code> operation.
+    /// Represents the output of a <c>ListDeploymentConfigs</c> operation.
     /// </summary>
     public partial class ListDeploymentConfigsResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentConfigsList. 
         /// <para>
-        /// A list of deployment configurations, including built-in configurations such as <code>CodeDeployDefault.OneAtATime</code>.
+        /// A list of deployment configurations, including built-in configurations such as <c>CodeDeployDefault.OneAtATime</c>.
         /// </para>
         /// </summary>
         public List<string> DeploymentConfigsList

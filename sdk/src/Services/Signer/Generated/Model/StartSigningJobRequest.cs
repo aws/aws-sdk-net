@@ -31,8 +31,8 @@ namespace Amazon.Signer.Model
     /// <summary>
     /// Container for the parameters to the StartSigningJob operation.
     /// Initiates a signing job to be performed on the code provided. Signing jobs are viewable
-    /// by the <code>ListSigningJobs</code> operation for two years after they are performed.
-    /// Note the following requirements: 
+    /// by the <c>ListSigningJobs</c> operation for two years after they are performed. Note
+    /// the following requirements: 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.Signer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You specify the name of the source and destination buckets when calling the <code>StartSigningJob</code>
+    /// You specify the name of the source and destination buckets when calling the <c>StartSigningJob</c>
     /// operation.
     /// </para>
     ///  </li> <li> 
@@ -60,7 +60,7 @@ namespace Amazon.Signer.Model
     ///  </li> </ul> 
     /// <para>
     /// You can call the <a>DescribeSigningJob</a> and the <a>ListSigningJobs</a> actions
-    /// after you call <code>StartSigningJob</code>.
+    /// after you call <c>StartSigningJob</c>.
     /// </para>
     ///  
     /// <para>

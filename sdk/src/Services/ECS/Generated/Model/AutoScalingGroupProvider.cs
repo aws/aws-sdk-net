@@ -67,7 +67,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>ENABLED</code>.
+        /// The default is <c>ENABLED</c>.
         /// </para>
         /// </summary>
         public ManagedDraining ManagedDraining

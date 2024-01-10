@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
     /// <para>
     /// This operation applies only to Aurora PostgreSQL Serverless v2 and provisioned DB
     /// clusters. To disable the HTTP endpoint for Aurora Serverless v1 DB clusters, use the
-    /// <code>EnableHttpEndpoint</code> parameter of the <code>ModifyDBCluster</code> operation.
+    /// <c>EnableHttpEndpoint</c> parameter of the <c>ModifyDBCluster</c> operation.
     /// </para>
     ///  </note>
     /// </summary>

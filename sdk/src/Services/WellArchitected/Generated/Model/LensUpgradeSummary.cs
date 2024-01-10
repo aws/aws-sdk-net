@@ -117,7 +117,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  <code>ResourceArn</code> of the lens being upgraded
+        ///  <c>ResourceArn</c> of the lens being upgraded
         /// </para>
         /// </summary>
         [AWSProperty(Min=50, Max=250)]

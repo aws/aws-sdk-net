@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// A <code>controlSet</code> entity that represents a collection of controls in Audit
-    /// Manager. This doesn't contain the control set ID.
+    /// A <c>controlSet</c> entity that represents a collection of controls in Audit Manager.
+    /// This doesn't contain the control set ID.
     /// </summary>
     public partial class CreateAssessmentFrameworkControlSet
     {

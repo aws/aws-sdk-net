@@ -43,11 +43,11 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property ChildAssetModelId. 
         /// <para>
         /// The ID of the asset model, in UUID format. All assets in this hierarchy must be instances
-        /// of the <code>childAssetModelId</code> asset model. IoT SiteWise will always return
-        /// the actual asset model ID for this value. However, when you are specifying this value
-        /// as part of a call to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>,
-        /// you may provide either the asset model ID or else <code>externalId:</code> followed
-        /// by the asset model's external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// of the <c>childAssetModelId</c> asset model. IoT SiteWise will always return the actual
+        /// asset model ID for this value. However, when you are specifying this value as part
+        /// of a call to <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>,
+        /// you may provide either the asset model ID or else <c>externalId:</c> followed by the
+        /// asset model's external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
         /// external IDs</a> in the <i>IoT SiteWise User Guide</i>. 
         /// </para>
         /// </summary>
@@ -92,7 +92,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the asset model hierarchy. This ID is a <code>hierarchyId</code>.
+        /// The ID of the asset model hierarchy. This ID is a <c>hierarchyId</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -105,8 +105,8 @@ namespace Amazon.IoTSiteWise.Model
         ///  </li> <li> 
         /// <para>
         /// If you are calling UpdateAssetModel to modify an <i>existing</i> hierarchy: This can
-        /// be either the actual ID in UUID format, or else <code>externalId:</code> followed
-        /// by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// be either the actual ID in UUID format, or else <c>externalId:</c> followed by the
+        /// external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  </li> </ul>

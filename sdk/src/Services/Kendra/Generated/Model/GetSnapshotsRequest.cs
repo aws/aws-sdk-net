@@ -68,33 +68,33 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>THIS_WEEK</code>: The current week, starting on the Sunday and ending on the
-        /// day before the current date.
+        ///  <c>THIS_WEEK</c>: The current week, starting on the Sunday and ending on the day
+        /// before the current date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ONE_WEEK_AGO</code>: The previous week, starting on the Sunday and ending on
-        /// the following Saturday.
+        ///  <c>ONE_WEEK_AGO</c>: The previous week, starting on the Sunday and ending on the
+        /// following Saturday.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TWO_WEEKS_AGO</code>: The week before the previous week, starting on the Sunday
-        /// and ending on the following Saturday.
+        ///  <c>TWO_WEEKS_AGO</c>: The week before the previous week, starting on the Sunday and
+        /// ending on the following Saturday.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>THIS_MONTH</code>: The current month, starting on the first day of the month
-        /// and ending on the day before the current date.
+        ///  <c>THIS_MONTH</c>: The current month, starting on the first day of the month and
+        /// ending on the day before the current date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ONE_MONTH_AGO</code>: The previous month, starting on the first day of the
-        /// month and ending on the last day of the month.
+        ///  <c>ONE_MONTH_AGO</c>: The previous month, starting on the first day of the month
+        /// and ending on the last day of the month.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TWO_MONTHS_AGO</code>: The month before the previous month, starting on the
-        /// first day of the month and ending on last day of the month.
+        ///  <c>TWO_MONTHS_AGO</c>: The month before the previous month, starting on the first
+        /// day of the month and ending on last day of the month.
         /// </para>
         ///  </li> </ul>
         /// </summary>

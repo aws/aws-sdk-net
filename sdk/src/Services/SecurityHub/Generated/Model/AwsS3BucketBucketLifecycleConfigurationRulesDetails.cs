@@ -71,9 +71,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string ExpirationDate
@@ -110,13 +110,13 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ExpiredObjectDeleteMarker. 
         /// <para>
         /// Whether Amazon S3 removes a delete marker that has no noncurrent versions. If set
-        /// to <code>true</code>, the delete marker is expired. If set to <code>false</code>,
-        /// the policy takes no action.
+        /// to <c>true</c>, the delete marker is expired. If set to <c>false</c>, the policy takes
+        /// no action.
         /// </para>
         ///  
         /// <para>
-        /// If you provide <code>ExpiredObjectDeleteMarker</code>, you cannot provide <code>ExpirationInDays</code>
-        /// or <code>ExpirationDate</code>.
+        /// If you provide <c>ExpiredObjectDeleteMarker</c>, you cannot provide <c>ExpirationInDays</c>
+        /// or <c>ExpirationDate</c>.
         /// </para>
         /// </summary>
         public bool ExpiredObjectDeleteMarker

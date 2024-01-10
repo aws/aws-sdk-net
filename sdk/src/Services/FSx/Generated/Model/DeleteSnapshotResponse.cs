@@ -39,8 +39,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The lifecycle status of the snapshot. If the <code>DeleteSnapshot</code> operation
-        /// is successful, this status is <code>DELETING</code>.
+        /// The lifecycle status of the snapshot. If the <c>DeleteSnapshot</c> operation is successful,
+        /// this status is <c>DELETING</c>.
         /// </para>
         /// </summary>
         public SnapshotLifecycle Lifecycle

@@ -33,8 +33,8 @@ namespace Amazon.Snowball.Model
     /// Creates a job to import or export data between Amazon S3 and your on-premises data
     /// center. Your Amazon Web Services account must have the right trust policies and permissions
     /// in place to create a job for a Snow device. If you're creating a job for a node in
-    /// a cluster, you only need to provide the <code>clusterId</code> value; the other job
-    /// attributes are inherited from the cluster. 
+    /// a cluster, you only need to provide the <c>clusterId</c> value; the other job attributes
+    /// are inherited from the cluster. 
     /// 
     ///  <note> 
     /// <para>
@@ -235,8 +235,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property ClusterId. 
         /// <para>
         /// The ID of a cluster. If you're creating a job for a node in a cluster, you need to
-        /// provide only this <code>clusterId</code> value. The other job attributes are inherited
-        /// from the cluster.
+        /// provide only this <c>clusterId</c> value. The other job attributes are inherited from
+        /// the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Min=39, Max=39)]
@@ -255,8 +255,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// Defines an optional description of this specific job, for example <code>Important
-        /// Photos 2016-08-11</code>.
+        /// Defines an optional description of this specific job, for example <c>Important Photos
+        /// 2016-08-11</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -355,8 +355,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
-        /// The <code>KmsKeyARN</code> that you want to associate with this job. <code>KmsKeyARN</code>s
-        /// are created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+        /// The <c>KmsKeyARN</c> that you want to associate with this job. <c>KmsKeyARN</c>s are
+        /// created using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
         /// Key Management Service (KMS) API action.
         /// </para>
         /// </summary>
@@ -454,9 +454,9 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RemoteManagement. 
         /// <para>
         /// Allows you to securely operate and manage Snowcone devices remotely from outside of
-        /// your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management
-        /// will automatically be available when the device arrives at your location. Otherwise,
-        /// you need to use the Snowball Edge client to manage the device. When set to <code>NOT_INSTALLED</code>,
+        /// your internal network. When set to <c>INSTALLED_AUTOSTART</c>, remote management will
+        /// automatically be available when the device arrives at your location. Otherwise, you
+        /// need to use the Snowball Edge client to manage the device. When set to <c>NOT_INSTALLED</c>,
         /// remote management will not be available on the device. 
         /// </para>
         /// </summary>
@@ -479,16 +479,16 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  
         /// <para>
-        /// With <code>IMPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be imported into.
+        /// With <c>IMPORT</c> jobs, you specify the bucket or buckets that your transferred data
+        /// will be imported into.
         /// </para>
         ///  
         /// <para>
-        /// With <code>EXPORT</code> jobs, you specify the bucket or buckets that your transferred
-        /// data will be exported from. Optionally, you can also specify a <code>KeyRange</code>
-        /// value. If you choose to export a range, you define the length of the range by providing
-        /// either an inclusive <code>BeginMarker</code> value, an inclusive <code>EndMarker</code>
-        /// value, or both. Ranges are UTF-8 binary sorted.
+        /// With <c>EXPORT</c> jobs, you specify the bucket or buckets that your transferred data
+        /// will be exported from. Optionally, you can also specify a <c>KeyRange</c> value. If
+        /// you choose to export a range, you define the length of the range by providing either
+        /// an inclusive <c>BeginMarker</c> value, an inclusive <c>EndMarker</c> value, or both.
+        /// Ranges are UTF-8 binary sorted.
         /// </para>
         /// </summary>
         public JobResource Resources
@@ -506,8 +506,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The <code>RoleARN</code> that you want to associate with this job. <code>RoleArn</code>s
-        /// are created using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// The <c>RoleARN</c> that you want to associate with this job. <c>RoleArn</c>s are created
+        /// using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// Identity and Access Management (IAM) API action.
         /// </para>
         /// </summary>
@@ -597,13 +597,13 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code>
+        /// For cluster jobs, Amazon Web Services Snow Family currently supports only the <c>EDGE</c>
         /// device type.
         /// </para>
         ///  </note> 
         /// <para>
         /// The type of Amazon Web Services Snow device to use for this job. Currently, the only
-        /// supported device type for cluster jobs is <code>EDGE</code>.
+        /// supported device type for cluster jobs is <c>EDGE</c>.
         /// </para>
         ///  
         /// <para>

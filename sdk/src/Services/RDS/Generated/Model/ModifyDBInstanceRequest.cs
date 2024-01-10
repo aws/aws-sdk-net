@@ -32,8 +32,8 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the ModifyDBInstance operation.
     /// Modifies settings for a DB instance. You can change one or more database configuration
     /// parameters by specifying these parameters and the new values in the request. To learn
-    /// what modifications you can make to your DB instance, call <code>DescribeValidDBInstanceModifications</code>
-    /// before you call <code>ModifyDBInstance</code>.
+    /// what modifications you can make to your DB instance, call <c>DescribeValidDBInstanceModifications</c>
+    /// before you call <c>ModifyDBInstance</c>.
     /// </summary>
     public partial class ModifyDBInstanceRequest : AmazonRDSRequest
     {
@@ -126,7 +126,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For the valid values for allocated storage for each engine, see <code>CreateDBInstance</code>.
+        /// For the valid values for allocated storage for each engine, see <c>CreateDBInstance</c>.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -157,7 +157,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Major version upgrades must be allowed when specifying a value for the <code>EngineVersion</code>
+        /// Major version upgrades must be allowed when specifying a value for the <c>EngineVersion</c>
         /// parameter that's a different major version than the DB instance's current version.
         /// </para>
         ///  </li> </ul>
@@ -178,7 +178,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
         /// Specifies whether the modifications in this request and any pending modifications
-        /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+        /// are asynchronously applied as soon as possible, regardless of the <c>PreferredMaintenanceWindow</c>
         /// setting for the DB instance. By default, this parameter is disabled.
         /// </para>
         ///  
@@ -188,7 +188,7 @@ namespace Amazon.RDS.Model
         /// the next call to <a>RebootDBInstance</a>, or the next failure reboot. Review the table
         /// of parameters in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Modifying.html">Modifying
         /// a DB Instance</a> in the <i>Amazon RDS User Guide</i> to see the impact of enabling
-        /// or disabling <code>ApplyImmediately</code> for each modified parameter and to determine
+        /// or disabling <c>ApplyImmediately</c> for each modified parameter and to determine
         /// when the changes are applied.
         /// </para>
         /// </summary>
@@ -207,9 +207,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutomationMode. 
         /// <para>
-        /// The automation mode of the RDS Custom DB instance. If <code>full</code>, the DB instance
-        /// automates monitoring and instance recovery. If <code>all paused</code>, the instance
-        /// pauses automation for the duration set by <code>ResumeFullAutomationModeMinutes</code>.
+        /// The automation mode of the RDS Custom DB instance. If <c>full</c>, the DB instance
+        /// automates monitoring and instance recovery. If <c>all paused</c>, the instance pauses
+        /// automation for the duration set by <c>ResumeFullAutomationModeMinutes</c>.
         /// </para>
         /// </summary>
         public AutomationMode AutomationMode
@@ -302,14 +302,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// These changes are applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        /// These changes are applied during the next maintenance window unless the <c>ApplyImmediately</c>
         /// parameter is enabled for this request. If you change the parameter from one non-zero
         /// value to another non-zero value, the change is asynchronously applied as soon as possible.
         /// </para>
         ///  
         /// <para>
         /// This setting doesn't apply to Amazon Aurora DB instances. The retention period for
-        /// automated backups is managed by the DB cluster. For more information, see <code>ModifyDBCluster</code>.
+        /// automated backups is managed by the DB cluster. For more information, see <c>ModifyDBCluster</c>.
         /// </para>
         ///  
         /// <para>
@@ -430,9 +430,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// A change to the <code>CloudwatchLogsExportConfiguration</code> parameter is always
-        /// applied to the DB instance immediately. Therefore, the <code>ApplyImmediately</code>
-        /// parameter has no effect.
+        /// A change to the <c>CloudwatchLogsExportConfiguration</c> parameter is always applied
+        /// to the DB instance immediately. Therefore, the <c>ApplyImmediately</c> parameter has
+        /// no effect.
         /// </para>
         ///  
         /// <para>
@@ -461,7 +461,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots
         /// is managed by the DB cluster. Setting this value for an Aurora DB instance has no
-        /// effect on the DB cluster setting. For more information, see <code>ModifyDBCluster</code>.
+        /// effect on the DB cluster setting. For more information, see <c>ModifyDBCluster</c>.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -479,7 +479,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The new compute and memory capacity of the DB instance, for example <code>db.m4.large</code>.
+        /// The new compute and memory capacity of the DB instance, for example <c>db.m4.large</c>.
         /// Not all DB instance classes are available in all Amazon Web Services Regions, or for
         /// all database engines. For the full list of DB instance classes, and availability for
         /// your engine, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
@@ -492,7 +492,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If you modify the DB instance class, an outage occurs during the change. The change
-        /// is applied during the next maintenance window, unless you specify <code>ApplyImmediately</code>
+        /// is applied during the next maintenance window, unless you specify <c>ApplyImmediately</c>
         /// in your request. 
         /// </para>
         ///  
@@ -604,13 +604,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The value of the <code>DBPortNumber</code> parameter must not match any of the port
-        /// values specified for options in the option group for the DB instance.
+        /// The value of the <c>DBPortNumber</c> parameter must not match any of the port values
+        /// specified for options in the option group for the DB instance.
         /// </para>
         ///  
         /// <para>
-        /// If you change the <code>DBPortNumber</code> value, your database restarts regardless
-        /// of the value of the <code>ApplyImmediately</code> parameter.
+        /// If you change the <c>DBPortNumber</c> value, your database restarts regardless of
+        /// the value of the <c>ApplyImmediately</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -618,7 +618,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <c>1150-65535</c> 
         /// </para>
         ///  
         /// <para>
@@ -626,31 +626,31 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Aurora - <code>3306</code> 
+        /// Amazon Aurora - <c>3306</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Db2 - <code>50000</code> 
+        /// RDS for Db2 - <c>50000</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MariaDB - <code>3306</code> 
+        /// RDS for MariaDB - <c>3306</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Microsoft SQL Server - <code>1433</code> 
+        /// RDS for Microsoft SQL Server - <c>1433</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MySQL - <code>3306</code> 
+        /// RDS for MySQL - <c>3306</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Oracle - <code>1521</code> 
+        /// RDS for Oracle - <c>1521</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for PostgreSQL - <code>5432</code> 
+        /// RDS for PostgreSQL - <c>5432</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -658,8 +658,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For RDS for Microsoft SQL Server, the value can't be <code>1234</code>, <code>1434</code>,
-        /// <code>3260</code>, <code>3343</code>, <code>3389</code>, <code>47001</code>, or <code>49152-49156</code>.
+        /// For RDS for Microsoft SQL Server, the value can't be <c>1234</c>, <c>1434</c>, <c>3260</c>,
+        /// <c>3343</c>, <c>3389</c>, <c>47001</c>, or <c>49152-49156</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -718,7 +718,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Changing the subnet group causes an outage during the change. The change is applied
-        /// during the next maintenance window, unless you enable <code>ApplyImmediately</code>.
+        /// during the next maintenance window, unless you enable <c>ApplyImmediately</c>.
         /// </para>
         ///  
         /// <para>
@@ -734,7 +734,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbsubnetgroup</code> 
+        /// Example: <c>mydbsubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -809,7 +809,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Active Directory directory ID to move the DB instance to. Specify <code>none</code>
+        /// The Active Directory directory ID to move the DB instance to. Specify <c>none</c>
         /// to remove the instance from its current domain. You must create the domain before
         /// this operation. Currently, you can create only Db2, MySQL, Microsoft SQL Server, Oracle,
         /// and PostgreSQL DB instances in an Active Directory Domain.
@@ -844,7 +844,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+        /// Example: <c>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</c>
         /// 
         /// </para>
         /// </summary>
@@ -876,7 +876,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>123.124.125.126,234.235.236.237</code> 
+        /// Example: <c>123.124.125.126,234.235.236.237</c> 
         /// </para>
         /// </summary>
         public List<string> DomainDnsIps
@@ -906,7 +906,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> 
+        /// Example: <c>mymanagedADtest.mymanagedAD.mydomain</c> 
         /// </para>
         /// </summary>
         public string DomainFqdn
@@ -962,7 +962,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+        /// Example: <c>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</c>
         /// 
         /// </para>
         /// </summary>
@@ -1088,7 +1088,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.
+        /// Make sure that you specify <c>oracle-ee-cdb</c> or <c>oracle-se2-cdb</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1116,8 +1116,8 @@ namespace Amazon.RDS.Model
         /// You can't convert the existing custom parameter or option group when it has options
         /// or parameters that are permanent or persistent. In this situation, the DB instance
         /// reverts to the default option and parameter group. To avoid reverting to the default,
-        /// specify a new parameter group with <code>--db-parameter-group-name</code> and a new
-        /// option group with <code>--option-group-name</code>.
+        /// specify a new parameter group with <c>--db-parameter-group-name</c> and a new option
+        /// group with <c>--option-group-name</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1138,7 +1138,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The version number of the database engine to upgrade to. Changing this parameter results
         /// in an outage and the change is applied during the next maintenance window unless the
-        /// <code>ApplyImmediately</code> parameter is enabled for this request.
+        /// <c>ApplyImmediately</c> parameter is enabled for this request.
         /// </para>
         ///  
         /// <para>
@@ -1151,7 +1151,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If you specify only a major version, Amazon RDS updates the DB instance to the default
         /// minor version if the current minor version is lower. For information about valid engine
-        /// versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
+        /// versions, see <c>CreateDBInstance</c>, or call <c>DescribeDBEngineVersions</c>.
         /// </para>
         ///  
         /// <para>
@@ -1162,7 +1162,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// In RDS Custom for Oracle, this parameter is supported for read replicas only if they
-        /// are in the <code>PATCH_DB_FAILURE</code> lifecycle.
+        /// are in the <c>PATCH_DB_FAILURE</c> lifecycle.
         /// </para>
         ///  
         /// <para>
@@ -1198,8 +1198,8 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Changing this setting doesn't result in an outage and the change is applied during
-        /// the next maintenance window unless the <code>ApplyImmediately</code> parameter is
-        /// enabled for this request. If you are migrating from Provisioned IOPS to standard storage,
+        /// the next maintenance window unless the <c>ApplyImmediately</c> parameter is enabled
+        /// for this request. If you are migrating from Provisioned IOPS to standard storage,
         /// set this value to 0. The DB instance will require a reboot for the change in storage
         /// type to take effect.
         /// </para>
@@ -1260,27 +1260,27 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// RDS for Db2 - <code>bring-your-own-license</code> 
+        /// RDS for Db2 - <c>bring-your-own-license</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MariaDB - <code>general-public-license</code> 
+        /// RDS for MariaDB - <c>general-public-license</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Microsoft SQL Server - <code>license-included</code> 
+        /// RDS for Microsoft SQL Server - <c>license-included</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MySQL - <code>general-public-license</code> 
+        /// RDS for MySQL - <c>general-public-license</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for Oracle - <code>bring-your-own-license | license-included</code> 
+        /// RDS for Oracle - <c>bring-your-own-license | license-included</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for PostgreSQL - <code>postgresql-license</code> 
+        /// RDS for PostgreSQL - <c>postgresql-license</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1306,15 +1306,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If the DB instance doesn't manage the master user password with Amazon Web Services
         /// Secrets Manager, you can turn on this management. In this case, you can't specify
-        /// <code>MasterUserPassword</code>.
+        /// <c>MasterUserPassword</c>.
         /// </para>
         ///  
         /// <para>
         /// If the DB instance already manages the master user password with Amazon Web Services
         /// Secrets Manager, and you specify that the master user password is not managed with
-        /// Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>.
+        /// Amazon Web Services Secrets Manager, then you must specify <c>MasterUserPassword</c>.
         /// In this case, Amazon RDS deletes the secret and uses the new password for the master
-        /// user specified by <code>MasterUserPassword</code>.
+        /// user specified by <c>MasterUserPassword</c>.
         /// </para>
         ///  
         /// <para>
@@ -1329,7 +1329,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Can't manage the master user password with Amazon Web Services Secrets Manager if
-        /// <code>MasterUserPassword</code> is specified.
+        /// <c>MasterUserPassword</c> is specified.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1354,7 +1354,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Changing this parameter doesn't result in an outage and the change is asynchronously
         /// applied as soon as possible. Between the time of the request and the completion of
-        /// the request, the <code>MasterUserPassword</code> element exists in the <code>PendingModifiedValues</code>
+        /// the request, the <c>MasterUserPassword</c> element exists in the <c>PendingModifiedValues</c>
         /// element of the operation response.
         /// </para>
         ///  <note> 
@@ -1370,7 +1370,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Amazon Aurora (The password for the master user is managed by the DB cluster. For
-        /// more information, see <code>ModifyDBCluster</code>.)
+        /// more information, see <c>ModifyDBCluster</c>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1386,7 +1386,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+        /// Can't be specified if <c>ManageMasterUserPassword</c> is turned on.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1457,14 +1457,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are turning on <code>ManageMasterUserPassword</code> to manage the master user
-        /// password in Amazon Web Services Secrets Manager.
+        /// You are turning on <c>ManageMasterUserPassword</c> to manage the master user password
+        /// in Amazon Web Services Secrets Manager.
         /// </para>
         ///  
         /// <para>
-        /// If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>,
-        /// then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If
-        /// the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code>
+        /// If you are turning on <c>ManageMasterUserPassword</c> and don't specify <c>MasterUserSecretKmsKeyId</c>,
+        /// then the <c>aws/secretsmanager</c> KMS key is used to encrypt the secret. If the secret
+        /// is in a different Amazon Web Services account, then you can't use the <c>aws/secretsmanager</c>
         /// KMS key to encrypt the secret, and you must use a customer managed KMS key.
         /// </para>
         ///  </li> </ul> 
@@ -1526,12 +1526,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
         /// for the DB instance. To disable collection of Enhanced Monitoring metrics, specify
-        /// <code>0</code>.
+        /// <c>0</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringRoleArn</code> is specified, set <code>MonitoringInterval</code>
-        /// to a value other than <code>0</code>.
+        /// If <c>MonitoringRoleArn</c> is specified, set <c>MonitoringInterval</c> to a value
+        /// other than <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -1539,11 +1539,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> 
+        /// Valid Values: <c>0 | 1 | 5 | 10 | 15 | 30 | 60</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         /// </summary>
         public int MonitoringInterval
@@ -1562,15 +1562,15 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
         /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
-        /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
-        /// For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// CloudWatch Logs. For example, <c>arn:aws:iam:123456789012:role/emaccess</c>. For information
+        /// on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User
         /// Guide.</i> 
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply
-        /// a <code>MonitoringRoleArn</code> value.
+        /// If <c>MonitoringInterval</c> is set to a value other than <c>0</c>, supply a <c>MonitoringRoleArn</c>
+        /// value.
         /// </para>
         ///  
         /// <para>
@@ -1594,7 +1594,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Specifies whether the DB instance is a Multi-AZ deployment. Changing this parameter
         /// doesn't result in an outage. The change is applied during the next maintenance window
-        /// unless the <code>ApplyImmediately</code> parameter is enabled for this request.
+        /// unless the <c>ApplyImmediately</c> parameter is enabled for this request.
         /// </para>
         ///  
         /// <para>
@@ -1625,14 +1625,14 @@ namespace Amazon.RDS.Model
         /// During the conversion, RDS creates an initial tenant database and associates the DB
         /// name, master user name, character set, and national character set metadata with this
         /// database. The tags associated with the instance also propagate to the initial tenant
-        /// database. You can add more tenant databases to your DB instance by using the <code>CreateTenantDatabase</code>
+        /// database. You can add more tenant databases to your DB instance by using the <c>CreateTenantDatabase</c>
         /// operation.
         /// </para>
         ///  <important> 
         /// <para>
         /// The conversion to the multi-tenant configuration is permanent and irreversible, so
         /// you can't later convert back to the single-tenant configuration. When you specify
-        /// this parameter, you must also specify <code>ApplyImmediately</code>.
+        /// this parameter, you must also specify <c>ApplyImmediately</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1655,9 +1655,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB instance.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -1666,7 +1666,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>IPV4 | DUAL</code> 
+        /// Valid Values: <c>IPV4 | DUAL</c> 
         /// </para>
         /// </summary>
         public string NetworkType
@@ -1685,8 +1685,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property NewDBInstanceIdentifier. 
         /// <para>
         /// The new identifier for the DB instance when renaming a DB instance. When you change
-        /// the DB instance identifier, an instance reboot occurs immediately if you enable <code>ApplyImmediately</code>,
-        /// or will occur during the next maintenance window if you disable <code>ApplyImmediately</code>.
+        /// the DB instance identifier, an instance reboot occurs immediately if you enable <c>ApplyImmediately</c>,
+        /// or will occur during the next maintenance window if you disable <c>ApplyImmediately</c>.
         /// This value is stored as a lowercase string.
         /// </para>
         ///  
@@ -1711,7 +1711,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbinstance</code> 
+        /// Example: <c>mydbinstance</c> 
         /// </para>
         /// </summary>
         public string NewDBInstanceIdentifier
@@ -1740,7 +1740,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The change is applied during the next maintenance window unless the <code>ApplyImmediately</code>
+        /// The change is applied during the next maintenance window unless the <c>ApplyImmediately</c>
         /// parameter is enabled for this request.
         /// </para>
         ///  
@@ -1779,8 +1779,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// If you don't specify a value for <c>PerformanceInsightsKMSKeyId</c>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services
         /// account. Your Amazon Web Services account has a different default KMS key for each
         /// Amazon Web Services Region.
         /// </para>
@@ -1816,26 +1816,25 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>7</code> 
+        ///  <c>7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
-        /// <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code>
-        /// (19 months * 31)
+        /// <c>93</c> (3 months * 31), <c>341</c> (11 months * 31), <c>589</c> (19 months * 31)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>731</code> 
+        ///  <c>731</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>7</code> days
+        /// Default: <c>7</c> days
         /// </para>
         ///  
         /// <para>
-        /// If you specify a retention period that isn't valid, such as <code>94</code>, Amazon
-        /// RDS returns an error.
+        /// If you specify a retention period that isn't valid, such as <c>94</c>, Amazon RDS
+        /// returns an error.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -1854,7 +1853,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, as determined by the <code>BackupRetentionPeriod</code> parameter. Changing
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c> parameter. Changing
         /// this parameter doesn't result in an outage and the change is asynchronously applied
         /// as soon as possible. The default is a 30-minute window selected at random from an
         /// 8-hour block of time for each Amazon Web Services Region. For more information, see
@@ -1865,7 +1864,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// This setting doesn't apply to Amazon Aurora DB instances. The daily time range for
         /// creating automated backups is managed by the DB cluster. For more information, see
-        /// <code>ModifyDBCluster</code>.
+        /// <c>ModifyDBCluster</c>.
         /// </para>
         ///  
         /// <para>
@@ -1873,7 +1872,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1927,11 +1926,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.
+        /// Must be in the format <c>ddd:hh24:mi-ddd:hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The day values must be <code>mon | tue | wed | thu | fri | sat | sun</code>. 
+        /// The day values must be <c>mon | tue | wed | thu | fri | sat | sun</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1995,11 +1994,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>0 - 15</code> 
+        /// Valid Values: <c>0 - 15</c> 
         /// </para>
         /// </summary>
         public int PromotionTier
@@ -2035,14 +2034,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>PubliclyAccessible</code> only applies to DB instances in a VPC. The DB instance
-        /// must be part of a public subnet and <code>PubliclyAccessible</code> must be enabled
-        /// for it to be publicly accessible.
+        ///  <c>PubliclyAccessible</c> only applies to DB instances in a VPC. The DB instance
+        /// must be part of a public subnet and <c>PubliclyAccessible</c> must be enabled for
+        /// it to be publicly accessible.
         /// </para>
         ///  
         /// <para>
-        /// Changes to the <code>PubliclyAccessible</code> parameter are applied immediately regardless
-        /// of the value of the <code>ApplyImmediately</code> parameter.
+        /// Changes to the <c>PubliclyAccessible</c> parameter are applied immediately regardless
+        /// of the value of the <c>ApplyImmediately</c> parameter.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -2100,7 +2099,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>60</code> 
+        /// Default: <c>60</c> 
         /// </para>
         ///  
         /// <para>
@@ -2175,7 +2174,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting applies only to the <code>gp3</code> storage type.
+        /// This setting applies only to the <c>gp3</c> storage type.
         /// </para>
         ///  
         /// <para>
@@ -2201,8 +2200,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify Provisioned IOPS (<code>io1</code>), you must also include a value
-        /// for the <code>Iops</code> parameter.
+        /// If you specify Provisioned IOPS (<c>io1</c>), you must also include a value for the
+        /// <c>Iops</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -2220,12 +2219,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise,
-        /// <code>gp2</code>.
+        /// Default: <c>io1</c>, if the <c>Iops</c> parameter is specified. Otherwise, <c>gp2</c>.
         /// </para>
         /// </summary>
         public string StorageType
@@ -2320,7 +2318,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Amazon Aurora (The associated list of EC2 VPC security groups is managed by the DB
-        /// cluster. For more information, see <code>ModifyDBCluster</code>.)
+        /// cluster. For more information, see <c>ModifyDBCluster</c>.)
         /// </para>
         ///  </li> <li> 
         /// <para>

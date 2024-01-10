@@ -78,9 +78,9 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ProvisioningEngine. 
         /// <para>
-        /// The resource provisioning engine. At this time, <code>CLOUDFORMATION</code> can be
-        /// used for Amazon Web Services-managed provisioning, and <code>TERRAFORM</code> can
-        /// be used for self-managed provisioning.
+        /// The resource provisioning engine. At this time, <c>CLOUDFORMATION</c> can be used
+        /// for Amazon Web Services-managed provisioning, and <c>TERRAFORM</c> can be used for
+        /// self-managed provisioning.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeRaidArrays</code> request.
+    /// Contains the response to a <c>DescribeRaidArrays</c> request.
     /// </summary>
     public partial class DescribeRaidArraysResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RaidArrays. 
         /// <para>
-        /// A <code>RaidArrays</code> object that describes the specified RAID arrays.
+        /// A <c>RaidArrays</c> object that describes the specified RAID arrays.
         /// </para>
         /// </summary>
         public List<RaidArray> RaidArrays

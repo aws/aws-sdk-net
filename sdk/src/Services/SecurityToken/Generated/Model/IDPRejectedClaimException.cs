@@ -34,8 +34,8 @@ namespace Amazon.SecurityToken.Model
     /// 
     ///  
     /// <para>
-    /// If this error is returned for the <code>AssumeRoleWithWebIdentity</code> operation,
-    /// it can also mean that the claim has expired or has been explicitly revoked. 
+    /// If this error is returned for the <c>AssumeRoleWithWebIdentity</c> operation, it can
+    /// also mean that the claim has expired or has been explicitly revoked. 
     /// </para>
     /// </summary>
     #if !NETSTANDARD

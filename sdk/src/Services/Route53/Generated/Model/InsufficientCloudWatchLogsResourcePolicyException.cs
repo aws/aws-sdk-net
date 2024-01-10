@@ -34,11 +34,11 @@ namespace Amazon.Route53.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// There is no resource policy that specifies the log group ARN in the value for <code>Resource</code>.
+    /// There is no resource policy that specifies the log group ARN in the value for <c>Resource</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The resource policy that includes the log group ARN in the value for <code>Resource</code>
+    /// The resource policy that includes the log group ARN in the value for <c>Resource</c>
     /// doesn't have the necessary permissions.
     /// </para>
     ///  </li> <li> 

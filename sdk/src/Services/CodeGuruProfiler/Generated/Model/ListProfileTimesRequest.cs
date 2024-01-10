@@ -65,12 +65,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of profile time results returned by <code>ListProfileTimes</code>
-        /// in paginated output. When this parameter is used, <code>ListProfileTimes</code> only
-        /// returns <code>maxResults</code> results in a single page with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListProfileTimes</code> request with the returned <code>nextToken</code>
-        /// value. 
+        /// The maximum number of profile time results returned by <c>ListProfileTimes</c> in
+        /// paginated output. When this parameter is used, <c>ListProfileTimes</c> only returns
+        /// <c>maxResults</c> results in a single page with a <c>nextToken</c> response element.
+        /// The remaining results of the initial request can be seen by sending another <c>ListProfileTimes</c>
+        /// request with the returned <c>nextToken</c> value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -89,10 +88,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. 
+        /// The <c>nextToken</c> value returned from a previous paginated <c>ListProfileTimes</c>
+        /// request where <c>maxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>nextToken</c> value. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -118,7 +117,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property OrderBy. 
         /// <para>
         /// The order (ascending or descending by start time of the profile) to use when listing
-        /// profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. 
+        /// profiles. Defaults to <c>TIMESTAMP_DESCENDING</c>. 
         /// </para>
         /// </summary>
         public OrderBy OrderBy
@@ -141,15 +140,15 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>P1D</code> — 1 day 
+        ///  <c>P1D</c> — 1 day 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PT1H</code> — 1 hour 
+        ///  <c>PT1H</c> — 1 hour 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PT5M</code> — 5 minutes 
+        ///  <c>PT5M</c> — 5 minutes 
         /// </para>
         ///  </li> </ul>
         /// </summary>

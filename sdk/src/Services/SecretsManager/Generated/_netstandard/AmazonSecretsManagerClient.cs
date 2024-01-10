@@ -335,31 +335,31 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code>
+        /// Retrieves the contents of the encrypted fields <c>SecretString</c> or <c>SecretBinary</c>
         /// for up to 20 secrets. To retrieve a single secret, call <a>GetSecretValue</a>. 
         /// 
         ///  
         /// <para>
         /// To choose which secrets to retrieve, you can specify a list of secrets by name or
-        /// ARN, or you can use filters. If Secrets Manager encounters errors such as <code>AccessDeniedException</code>
-        /// while attempting to retrieve any of the secrets, you can see the errors in <code>Errors</code>
+        /// ARN, or you can use filters. If Secrets Manager encounters errors such as <c>AccessDeniedException</c>
+        /// while attempting to retrieve any of the secrets, you can see the errors in <c>Errors</c>
         /// in the response.
         /// </para>
         ///  
         /// <para>
-        /// Secrets Manager generates CloudTrail <code>GetSecretValue</code> log entries for each
-        /// secret you request when you call this action. Do not include sensitive information
-        /// in request parameters because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// Secrets Manager generates CloudTrail <c>GetSecretValue</c> log entries for each secret
+        /// you request when you call this action. Do not include sensitive information in request
+        /// parameters because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
         /// Secrets Manager events with CloudTrail</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:BatchGetSecretValue</code>, and
-        /// you must have <code>secretsmanager:GetSecretValue</code> for each secret. If you use
-        /// filters, you must also have <code>secretsmanager:ListSecrets</code>. If the secrets
-        /// are encrypted using customer-managed keys instead of the Amazon Web Services managed
-        /// key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code> permissions
-        /// for the keys. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:BatchGetSecretValue</c>, and you
+        /// must have <c>secretsmanager:GetSecretValue</c> for each secret. If you use filters,
+        /// you must also have <c>secretsmanager:ListSecrets</c>. If the secrets are encrypted
+        /// using customer-managed keys instead of the Amazon Web Services managed key <c>aws/secretsmanager</c>,
+        /// then you also need <c>kms:Decrypt</c> permissions for the keys. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -377,7 +377,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is invalid.
+        /// The <c>NextToken</c> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// The parameter name or value is invalid.
@@ -440,12 +440,12 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// If you cancel a rotation in progress, it can leave the <code>VersionStage</code> labels
-        /// in an unexpected state. You might need to remove the staging label <code>AWSPENDING</code>
+        /// If you cancel a rotation in progress, it can leave the <c>VersionStage</c> labels
+        /// in an unexpected state. You might need to remove the staging label <c>AWSPENDING</c>
         /// from the partially created version. You also need to determine whether to roll back
-        /// to the previous version of the secret by moving the staging label <code>AWSCURRENT</code>
-        /// to the version that has <code>AWSPENDING</code>. To determine which version has a
-        /// specific staging label, call <a>ListSecretVersionIds</a>. Then use <a>UpdateSecretVersionStage</a>
+        /// to the previous version of the secret by moving the staging label <c>AWSCURRENT</c>
+        /// to the version that has <c>AWSPENDING</c>. To determine which version has a specific
+        /// staging label, call <a>ListSecretVersionIds</a>. Then use <a>UpdateSecretVersionStage</a>
         /// to change staging labels. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">How
         /// rotation works</a>.
         /// </para>
@@ -462,8 +462,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:CancelRotateSecret</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:CancelRotateSecret</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -554,54 +554,52 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         /// To create a secret, you can provide the secret value to be encrypted in either the
-        /// <code>SecretString</code> parameter or the <code>SecretBinary</code> parameter, but
-        /// not both. If you include <code>SecretString</code> or <code>SecretBinary</code> then
-        /// Secrets Manager creates an initial secret version and automatically attaches the staging
-        /// label <code>AWSCURRENT</code> to it.
+        /// <c>SecretString</c> parameter or the <c>SecretBinary</c> parameter, but not both.
+        /// If you include <c>SecretString</c> or <c>SecretBinary</c> then Secrets Manager creates
+        /// an initial secret version and automatically attaches the staging label <c>AWSCURRENT</c>
+        /// to it.
         /// </para>
         ///  
         /// <para>
         /// For database credentials you want to rotate, for Secrets Manager to be able to rotate
-        /// the secret, you must make sure the JSON you store in the <code>SecretString</code>
-        /// matches the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_secret_json_structure.html">JSON
+        /// the secret, you must make sure the JSON you store in the <c>SecretString</c> matches
+        /// the <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_secret_json_structure.html">JSON
         /// structure of a database secret</a>.
         /// </para>
         ///  
         /// <para>
         /// If you don't specify an KMS encryption key, Secrets Manager uses the Amazon Web Services
-        /// managed key <code>aws/secretsmanager</code>. If this key doesn't already exist in
-        /// your account, then Secrets Manager creates it for you automatically. All users and
-        /// roles in the Amazon Web Services account automatically have access to use <code>aws/secretsmanager</code>.
-        /// Creating <code>aws/secretsmanager</code> can result in a one-time significant delay
-        /// in returning the result.
+        /// managed key <c>aws/secretsmanager</c>. If this key doesn't already exist in your account,
+        /// then Secrets Manager creates it for you automatically. All users and roles in the
+        /// Amazon Web Services account automatically have access to use <c>aws/secretsmanager</c>.
+        /// Creating <c>aws/secretsmanager</c> can result in a one-time significant delay in returning
+        /// the result.
         /// </para>
         ///  
         /// <para>
         /// If the secret is in a different Amazon Web Services account from the credentials calling
-        /// the API, then you can't use <code>aws/secretsmanager</code> to encrypt the secret,
-        /// and you must create and use a customer managed KMS key. 
+        /// the API, then you can't use <c>aws/secretsmanager</c> to encrypt the secret, and you
+        /// must create and use a customer managed KMS key. 
         /// </para>
         ///  
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-        /// include sensitive information in request parameters except <code>SecretBinary</code>
-        /// or <code>SecretString</code> because it might be logged. For more information, see
-        /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// include sensitive information in request parameters except <c>SecretBinary</c> or
+        /// <c>SecretString</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
         /// Secrets Manager events with CloudTrail</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:CreateSecret</code>. If you include
-        /// tags in the secret, you also need <code>secretsmanager:TagResource</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:CreateSecret</c>. If you include
+        /// tags in the secret, you also need <c>secretsmanager:TagResource</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
         ///  
         /// <para>
-        /// To encrypt the secret with a KMS key other than <code>aws/secretsmanager</code>, you
-        /// need <code>kms:GenerateDataKey</code> and <code>kms:Decrypt</code> permission to the
-        /// key. 
+        /// To encrypt the secret with a KMS key other than <c>aws/secretsmanager</c>, you need
+        /// <c>kms:GenerateDataKey</c> and <c>kms:Decrypt</c> permission to the key. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSecret service method.</param>
@@ -702,8 +700,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:DeleteResourcePolicy</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:DeleteResourcePolicy</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -775,8 +773,8 @@ namespace Amazon.SecretsManager
         /// <summary>
         /// Deletes a secret and all of its versions. You can specify a recovery window during
         /// which you can restore the secret. The minimum recovery window is 7 days. The default
-        /// recovery window is 30 days. Secrets Manager attaches a <code>DeletionDate</code> stamp
-        /// to the secret that specifies the end of the recovery window. At the end of the recovery
+        /// recovery window is 30 days. Secrets Manager attaches a <c>DeletionDate</c> stamp to
+        /// the secret that specifies the end of the recovery window. At the end of the recovery
         /// window, Secrets Manager deletes the secret permanently.
         /// 
         ///  
@@ -807,7 +805,7 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         /// At any time before recovery window ends, you can use <a>RestoreSecret</a> to remove
-        /// the <code>DeletionDate</code> and cancel the deletion of the secret.
+        /// the <c>DeletionDate</c> and cancel the deletion of the secret.
         /// </para>
         ///  
         /// <para>
@@ -824,8 +822,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:DeleteSecret</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:DeleteSecret</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -907,8 +905,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:DescribeSecret</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:DescribeSecret</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -967,8 +965,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:GetRandomPassword</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:GetRandomPassword</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1048,8 +1046,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:GetResourcePolicy</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:GetResourcePolicy</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1119,7 +1117,7 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code>
+        /// Retrieves the contents of the encrypted fields <c>SecretString</c> or <c>SecretBinary</c>
         /// from the specified version of a secret, whichever contains content.
         /// 
         ///  
@@ -1134,7 +1132,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the previous version of a secret, use <code>VersionStage</code> and specify
+        /// To retrieve the previous version of a secret, use <c>VersionStage</c> and specify
         /// AWSPREVIOUS. To revert to the previous version of a secret, call <a href="https://docs.aws.amazon.com/cli/latest/reference/secretsmanager/update-secret-version-stage.html">UpdateSecretVersionStage</a>.
         /// </para>
         ///  
@@ -1146,10 +1144,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:GetSecretValue</code>. If the
-        /// secret is encrypted using a customer-managed key instead of the Amazon Web Services
-        /// managed key <code>aws/secretsmanager</code>, then you also need <code>kms:Decrypt</code>
-        /// permissions for that key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:GetSecretValue</c>. If the secret
+        /// is encrypted using a customer-managed key instead of the Amazon Web Services managed
+        /// key <c>aws/secretsmanager</c>, then you also need <c>kms:Decrypt</c> permissions for
+        /// that key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1253,7 +1251,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:ListSecrets</code>. For more information,
+        ///  <b>Required permissions: </b> <c>secretsmanager:ListSecrets</c>. For more information,
         /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
@@ -1269,7 +1267,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is invalid.
+        /// The <c>NextToken</c> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// The parameter name or value is invalid.
@@ -1341,8 +1339,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:ListSecretVersionIds</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:ListSecretVersionIds</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1357,7 +1355,7 @@ namespace Amazon.SecretsManager
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is invalid.
+        /// The <c>NextToken</c> value is invalid.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.InvalidParameterException">
         /// The parameter name or value is invalid.
@@ -1409,8 +1407,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:PutResourcePolicy</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:PutResourcePolicy</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1455,8 +1453,8 @@ namespace Amazon.SecretsManager
         /// The resource policy has syntax errors.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.PublicPolicyException">
-        /// The <code>BlockPublicPolicy</code> parameter is set to true, and the resource policy
-        /// did not prevent broad access to the secret.
+        /// The <c>BlockPublicPolicy</c> parameter is set to true, and the resource policy did
+        /// not prevent broad access to the secret.
         /// </exception>
         /// <exception cref="Amazon.SecretsManager.Model.ResourceNotFoundException">
         /// Secrets Manager can't find the resource that you asked for.
@@ -1488,33 +1486,32 @@ namespace Amazon.SecretsManager
 
         /// <summary>
         /// Creates a new version with a new encrypted secret value and attaches it to the secret.
-        /// The version can contain a new <code>SecretString</code> value or a new <code>SecretBinary</code>
+        /// The version can contain a new <c>SecretString</c> value or a new <c>SecretBinary</c>
         /// value. 
         /// 
         ///  
         /// <para>
-        /// We recommend you avoid calling <code>PutSecretValue</code> at a sustained rate of
-        /// more than once every 10 minutes. When you update the secret value, Secrets Manager
-        /// creates a new version of the secret. Secrets Manager removes outdated versions when
-        /// there are more than 100, but it does not remove versions created less than 24 hours
-        /// ago. If you call <code>PutSecretValue</code> more than once every 10 minutes, you
-        /// create more versions than Secrets Manager removes, and you will reach the quota for
-        /// secret versions.
+        /// We recommend you avoid calling <c>PutSecretValue</c> at a sustained rate of more than
+        /// once every 10 minutes. When you update the secret value, Secrets Manager creates a
+        /// new version of the secret. Secrets Manager removes outdated versions when there are
+        /// more than 100, but it does not remove versions created less than 24 hours ago. If
+        /// you call <c>PutSecretValue</c> more than once every 10 minutes, you create more versions
+        /// than Secrets Manager removes, and you will reach the quota for secret versions.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the staging labels to attach to the new version in <code>VersionStages</code>.
-        /// If you don't include <code>VersionStages</code>, then Secrets Manager automatically
-        /// moves the staging label <code>AWSCURRENT</code> to this version. If this operation
-        /// creates the first version for the secret, then Secrets Manager automatically attaches
-        /// the staging label <code>AWSCURRENT</code> to it. If this operation moves the staging
-        /// label <code>AWSCURRENT</code> from another version to this version, then Secrets Manager
-        /// also automatically moves the staging label <code>AWSPREVIOUS</code> to the version
-        /// that <code>AWSCURRENT</code> was removed from.
+        /// You can specify the staging labels to attach to the new version in <c>VersionStages</c>.
+        /// If you don't include <c>VersionStages</c>, then Secrets Manager automatically moves
+        /// the staging label <c>AWSCURRENT</c> to this version. If this operation creates the
+        /// first version for the secret, then Secrets Manager automatically attaches the staging
+        /// label <c>AWSCURRENT</c> to it. If this operation moves the staging label <c>AWSCURRENT</c>
+        /// from another version to this version, then Secrets Manager also automatically moves
+        /// the staging label <c>AWSPREVIOUS</c> to the version that <c>AWSCURRENT</c> was removed
+        /// from.
         /// </para>
         ///  
         /// <para>
-        /// This operation is idempotent. If you call this operation with a <code>ClientRequestToken</code>
+        /// This operation is idempotent. If you call this operation with a <c>ClientRequestToken</c>
         /// that matches an existing version's VersionId, and you specify the same secret data,
         /// the operation succeeds but does nothing. However, if the secret data is different,
         /// then the operation fails because you can't modify an existing version; you can only
@@ -1523,15 +1520,14 @@ namespace Amazon.SecretsManager
         ///  
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-        /// include sensitive information in request parameters except <code>SecretBinary</code>
-        /// or <code>SecretString</code> because it might be logged. For more information, see
-        /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// include sensitive information in request parameters except <c>SecretBinary</c> or
+        /// <c>SecretString</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
         /// Secrets Manager events with CloudTrail</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:PutSecretValue</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:PutSecretValue</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1628,7 +1624,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:RemoveRegionsFromReplication</code>.
+        ///  <b>Required permissions: </b> <c>secretsmanager:RemoveRegionsFromReplication</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
@@ -1711,8 +1707,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:ReplicateSecretToRegions</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:ReplicateSecretToRegions</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1782,8 +1778,8 @@ namespace Amazon.SecretsManager
 
 
         /// <summary>
-        /// Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code>
-        /// time stamp. You can access a secret again after it has been restored.
+        /// Cancels the scheduled deletion of a secret by removing the <c>DeletedDate</c> time
+        /// stamp. You can access a secret again after it has been restored.
         /// 
         ///  
         /// <para>
@@ -1794,8 +1790,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:RestoreSecret</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:RestoreSecret</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -1874,13 +1870,13 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// When rotation is successful, the <code>AWSPENDING</code> staging label might be attached
-        /// to the same version as the <code>AWSCURRENT</code> version, or it might not be attached
-        /// to any version. If the <code>AWSPENDING</code> staging label is present but not attached
-        /// to the same version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code>
+        /// When rotation is successful, the <c>AWSPENDING</c> staging label might be attached
+        /// to the same version as the <c>AWSCURRENT</c> version, or it might not be attached
+        /// to any version. If the <c>AWSPENDING</c> staging label is present but not attached
+        /// to the same version as <c>AWSCURRENT</c>, then any later invocation of <c>RotateSecret</c>
         /// assumes that a previous rotation request is still in progress and returns an error.
-        /// When rotation is unsuccessful, the <code>AWSPENDING</code> staging label might be
-        /// attached to an empty secret version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot_rotation.html">Troubleshoot
+        /// When rotation is unsuccessful, the <c>AWSPENDING</c> staging label might be attached
+        /// to an empty secret version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot_rotation.html">Troubleshoot
         /// rotation</a> in the <i>Secrets Manager User Guide</i>.
         /// </para>
         ///  
@@ -1892,10 +1888,10 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:RotateSecret</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-        /// and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code>
+        /// and access control in Secrets Manager</a>. You also need <c>lambda:InvokeFunction</c>
         /// permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
         /// Permissions for rotation</a>.
         /// </para>
@@ -1982,8 +1978,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:StopReplicationToReplica</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:StopReplicationToReplica</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -2078,7 +2074,7 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:TagResource</code>. For more information,
+        ///  <b>Required permissions: </b> <c>secretsmanager:TagResource</c>. For more information,
         /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
@@ -2172,8 +2168,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:UntagResource</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:UntagResource</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -2258,44 +2254,43 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        /// We recommend you avoid calling <code>UpdateSecret</code> at a sustained rate of more
-        /// than once every 10 minutes. When you call <code>UpdateSecret</code> to update the
-        /// secret value, Secrets Manager creates a new version of the secret. Secrets Manager
-        /// removes outdated versions when there are more than 100, but it does not remove versions
-        /// created less than 24 hours ago. If you update the secret value more than once every
-        /// 10 minutes, you create more versions than Secrets Manager removes, and you will reach
-        /// the quota for secret versions.
+        /// We recommend you avoid calling <c>UpdateSecret</c> at a sustained rate of more than
+        /// once every 10 minutes. When you call <c>UpdateSecret</c> to update the secret value,
+        /// Secrets Manager creates a new version of the secret. Secrets Manager removes outdated
+        /// versions when there are more than 100, but it does not remove versions created less
+        /// than 24 hours ago. If you update the secret value more than once every 10 minutes,
+        /// you create more versions than Secrets Manager removes, and you will reach the quota
+        /// for secret versions.
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>SecretString</code> or <code>SecretBinary</code> to create a
-        /// new secret version, Secrets Manager automatically moves the staging label <code>AWSCURRENT</code>
-        /// to the new version. Then it attaches the label <code>AWSPREVIOUS</code> to the version
-        /// that <code>AWSCURRENT</code> was removed from.
+        /// If you include <c>SecretString</c> or <c>SecretBinary</c> to create a new secret version,
+        /// Secrets Manager automatically moves the staging label <c>AWSCURRENT</c> to the new
+        /// version. Then it attaches the label <c>AWSPREVIOUS</c> to the version that <c>AWSCURRENT</c>
+        /// was removed from.
         /// </para>
         ///  
         /// <para>
-        /// If you call this operation with a <code>ClientRequestToken</code> that matches an
-        /// existing version's <code>VersionId</code>, the operation results in an error. You
-        /// can't modify an existing version, you can only create a new version. To remove a version,
-        /// remove all staging labels from it. See <a>UpdateSecretVersionStage</a>.
+        /// If you call this operation with a <c>ClientRequestToken</c> that matches an existing
+        /// version's <c>VersionId</c>, the operation results in an error. You can't modify an
+        /// existing version, you can only create a new version. To remove a version, remove all
+        /// staging labels from it. See <a>UpdateSecretVersionStage</a>.
         /// </para>
         ///  
         /// <para>
         /// Secrets Manager generates a CloudTrail log entry when you call this action. Do not
-        /// include sensitive information in request parameters except <code>SecretBinary</code>
-        /// or <code>SecretString</code> because it might be logged. For more information, see
-        /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
+        /// include sensitive information in request parameters except <c>SecretBinary</c> or
+        /// <c>SecretString</c> because it might be logged. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/retrieve-ct-entries.html">Logging
         /// Secrets Manager events with CloudTrail</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:UpdateSecret</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:UpdateSecret</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. If you use a customer managed key, you
-        /// must also have <code>kms:GenerateDataKey</code>, <code>kms:Encrypt</code>, and <code>kms:Decrypt</code>
-        /// permissions on the key. If you change the KMS key and you don't have <code>kms:Encrypt</code>
+        /// must also have <c>kms:GenerateDataKey</c>, <c>kms:Encrypt</c>, and <c>kms:Decrypt</c>
+        /// permissions on the key. If you change the KMS key and you don't have <c>kms:Encrypt</c>
         /// permission to the new key, Secrets Manager does not re-ecrypt existing secret versions
         /// with the new key. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/security-encryption.html">
         /// Secret encryption and decryption</a>.
@@ -2397,19 +2392,18 @@ namespace Amazon.SecretsManager
         /// 
         ///  
         /// <para>
-        /// The staging labels that you specify in the <code>VersionStage</code> parameter are
-        /// added to the existing list of staging labels for the version. 
+        /// The staging labels that you specify in the <c>VersionStage</c> parameter are added
+        /// to the existing list of staging labels for the version. 
         /// </para>
         ///  
         /// <para>
-        /// You can move the <code>AWSCURRENT</code> staging label to this version by including
-        /// it in this call.
+        /// You can move the <c>AWSCURRENT</c> staging label to this version by including it in
+        /// this call.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Whenever you move <code>AWSCURRENT</code>, Secrets Manager automatically moves the
-        /// label <code>AWSPREVIOUS</code> to the version that <code>AWSCURRENT</code> was removed
-        /// from.
+        /// Whenever you move <c>AWSCURRENT</c>, Secrets Manager automatically moves the label
+        /// <c>AWSPREVIOUS</c> to the version that <c>AWSCURRENT</c> was removed from.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2425,8 +2419,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:UpdateSecretVersionStage</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:UpdateSecretVersionStage</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>
@@ -2529,8 +2523,8 @@ namespace Amazon.SecretsManager
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>secretsmanager:ValidateResourcePolicy</code>
-        /// and <code>secretsmanager:PutResourcePolicy</code>. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+        ///  <b>Required permissions: </b> <c>secretsmanager:ValidateResourcePolicy</c> and <c>secretsmanager:PutResourcePolicy</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
         /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
         /// and access control in Secrets Manager</a>. 
         /// </para>

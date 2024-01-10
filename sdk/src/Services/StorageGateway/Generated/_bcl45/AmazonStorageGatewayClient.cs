@@ -85,9 +85,9 @@ namespace Amazon.StorageGateway
     /// Storage Gateway resource IDs are in uppercase. When you use these resource IDs with
     /// the Amazon EC2 API, EC2 expects resource IDs in lowercase. You must change your resource
     /// ID to lowercase to use it with the EC2 API. For example, in Storage Gateway the ID
-    /// for a volume might be <code>vol-AA22BB012345DAF670</code>. When you use this ID with
-    /// the EC2 API, you must change it to <code>vol-aa22bb012345daf670</code>. Otherwise,
-    /// the EC2 API might not behave as expected.
+    /// for a volume might be <c>vol-AA22BB012345DAF670</c>. When you use this ID with the
+    /// EC2 API, you must change it to <c>vol-aa22bb012345daf670</c>. Otherwise, the EC2 API
+    /// might not behave as expected.
     /// </para>
     ///  </note> <important> 
     /// <para>
@@ -105,11 +105,11 @@ namespace Amazon.StorageGateway
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</code>.
+    ///  <c>arn:aws:storagegateway:us-west-2:111122223333:gateway/sgw-12A3456B/volume/vol-1122AABBCCDDEEFFG</c>.
     /// </para>
     ///  
     /// <para>
-    /// A snapshot ID with the longer ID format looks like the following: <code>snap-78e226633445566ee</code>.
+    /// A snapshot ID with the longer ID format looks like the following: <c>snap-78e226633445566ee</c>.
     /// </para>
     ///  
     /// <para>
@@ -1099,10 +1099,10 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code>
+        /// Optionally, you can provide the ARN for an existing volume as the <c>SourceVolumeARN</c>
         /// for this cached volume, which creates an exact copy of the existing volume’s latest
-        /// recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger
-        /// than the size of the copied volume, in bytes.
+        /// recovery point. The <c>VolumeSizeInBytes</c> value must be equal to or larger than
+        /// the size of the copied volume, in bytes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCachediSCSIVolume service method.</param>
@@ -1146,10 +1146,10 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// Optionally, you can provide the ARN for an existing volume as the <code>SourceVolumeARN</code>
+        /// Optionally, you can provide the ARN for an existing volume as the <c>SourceVolumeARN</c>
         /// for this cached volume, which creates an exact copy of the existing volume’s latest
-        /// recovery point. The <code>VolumeSizeInBytes</code> value must be equal to or larger
-        /// than the size of the copied volume, in bytes.
+        /// recovery point. The <c>VolumeSizeInBytes</c> value must be equal to or larger than
+        /// the size of the copied volume, in bytes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCachediSCSIVolume service method.</param>
@@ -1385,13 +1385,13 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// In the <code>CreateSnapshot</code> request, you identify the volume by providing its
-        /// Amazon Resource Name (ARN). You must also provide description for the snapshot. When
-        /// Storage Gateway takes the snapshot of specified volume, the snapshot and description
-        /// appears in the Storage Gateway console. In response, Storage Gateway returns you a
-        /// snapshot ID. You can use this snapshot ID to check the snapshot progress or later
-        /// use it when you want to create a volume from a snapshot. This operation is only supported
-        /// in stored and cached volume gateway type.
+        /// In the <c>CreateSnapshot</c> request, you identify the volume by providing its Amazon
+        /// Resource Name (ARN). You must also provide description for the snapshot. When Storage
+        /// Gateway takes the snapshot of specified volume, the snapshot and description appears
+        /// in the Storage Gateway console. In response, Storage Gateway returns you a snapshot
+        /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
+        /// you want to create a volume from a snapshot. This operation is only supported in stored
+        /// and cached volume gateway type.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1448,13 +1448,13 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// In the <code>CreateSnapshot</code> request, you identify the volume by providing its
-        /// Amazon Resource Name (ARN). You must also provide description for the snapshot. When
-        /// Storage Gateway takes the snapshot of specified volume, the snapshot and description
-        /// appears in the Storage Gateway console. In response, Storage Gateway returns you a
-        /// snapshot ID. You can use this snapshot ID to check the snapshot progress or later
-        /// use it when you want to create a volume from a snapshot. This operation is only supported
-        /// in stored and cached volume gateway type.
+        /// In the <c>CreateSnapshot</c> request, you identify the volume by providing its Amazon
+        /// Resource Name (ARN). You must also provide description for the snapshot. When Storage
+        /// Gateway takes the snapshot of specified volume, the snapshot and description appears
+        /// in the Storage Gateway console. In response, Storage Gateway returns you a snapshot
+        /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
+        /// you want to create a volume from a snapshot. This operation is only supported in stored
+        /// and cached volume gateway type.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1516,9 +1516,9 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
-        /// volume by providing its Amazon Resource Name (ARN). You must also provide a description
-        /// for the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
+        /// In the <c>CreateSnapshotFromVolumeRecoveryPoint</c> request, you identify the volume
+        /// by providing its Amazon Resource Name (ARN). You must also provide a description for
+        /// the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
         /// and its description appear in the Storage Gateway console. In response, the gateway
         /// returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress
         /// or later use it when you want to create a volume from a snapshot.
@@ -1570,9 +1570,9 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  
         /// <para>
-        /// In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
-        /// volume by providing its Amazon Resource Name (ARN). You must also provide a description
-        /// for the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
+        /// In the <c>CreateSnapshotFromVolumeRecoveryPoint</c> request, you identify the volume
+        /// by providing its Amazon Resource Name (ARN). You must also provide a description for
+        /// the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
         /// and its description appear in the Storage Gateway console. In response, the gateway
         /// returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress
         /// or later use it when you want to create a volume from a snapshot.
@@ -2268,8 +2268,8 @@ namespace Amazon.StorageGateway
         /// You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This
         /// API action enables you to delete a snapshot schedule for a volume. For more information,
         /// see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing
-        /// up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
-        /// the volume by providing its Amazon Resource Name (ARN). This operation is only supported
+        /// up your volumes</a>. In the <c>DeleteSnapshotSchedule</c> request, you identify the
+        /// volume by providing its Amazon Resource Name (ARN). This operation is only supported
         /// for cached volume gateway types.
         /// </para>
         ///  <note> 
@@ -2310,8 +2310,8 @@ namespace Amazon.StorageGateway
         /// You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This
         /// API action enables you to delete a snapshot schedule for a volume. For more information,
         /// see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing
-        /// up your volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify
-        /// the volume by providing its Amazon Resource Name (ARN). This operation is only supported
+        /// up your volumes</a>. In the <c>DeleteSnapshotSchedule</c> request, you identify the
+        /// volume by providing its Amazon Resource Name (ARN). This operation is only supported
         /// for cached volume gateway types.
         /// </para>
         ///  <note> 
@@ -3559,7 +3559,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// If a specific <c>TapeARN</c> is not specified, Storage Gateway returns a description
         /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
@@ -3586,7 +3586,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// If a specific <c>TapeARN</c> is not specified, Storage Gateway returns a description
         /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
@@ -3618,7 +3618,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// If a specific <c>TapeARN</c> is not specified, Storage Gateway returns a description
         /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
@@ -3647,7 +3647,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+        /// If a specific <c>TapeARN</c> is not specified, Storage Gateway returns a description
         /// of all virtual tapes found in the VTS associated with your account.
         /// </para>
         /// </summary>
@@ -3757,9 +3757,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
-        /// If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes
-        /// associated with the specified gateway. This operation is only supported in the tape
-        /// gateway type.
+        /// If a <c>TapeARN</c> is not specified, returns a description of all virtual tapes associated
+        /// with the specified gateway. This operation is only supported in the tape gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapes service method.</param>
         /// 
@@ -3785,9 +3784,8 @@ namespace Amazon.StorageGateway
 
         /// <summary>
         /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
-        /// If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes
-        /// associated with the specified gateway. This operation is only supported in the tape
-        /// gateway type.
+        /// If a <c>TapeARN</c> is not specified, returns a description of all virtual tapes associated
+        /// with the specified gateway. This operation is only supported in the tape gateway type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTapes service method.</param>
         /// <param name="cancellationToken">
@@ -4468,8 +4466,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
-        /// a summary of a file system association. This operation is only supported for FSx File
+        /// Gets a list of <c>FileSystemAssociationSummary</c> objects. Each object contains a
+        /// summary of a file system association. This operation is only supported for FSx File
         /// Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations service method.</param>
@@ -4495,8 +4493,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
-        /// a summary of a file system association. This operation is only supported for FSx File
+        /// Gets a list of <c>FileSystemAssociationSummary</c> objects. Each object contains a
+        /// summary of a file system association. This operation is only supported for FSx File
         /// Gateways.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFileSystemAssociations service method.</param>
@@ -4695,10 +4693,10 @@ namespace Amazon.StorageGateway
         /// <para>
         /// The request returns a list of all disks, specifying which are configured as working
         /// storage, cache storage, or stored volume or not configured at all. The response includes
-        /// a <code>DiskStatus</code> field. This field can have a value of present (the disk
-        /// is available to use), missing (the disk is no longer connected to the gateway), or
-        /// mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk
-        /// content is corrupted).
+        /// a <c>DiskStatus</c> field. This field can have a value of present (the disk is available
+        /// to use), missing (the disk is no longer connected to the gateway), or mismatch (the
+        /// disk node is occupied by a disk that has incorrect metadata or the disk content is
+        /// corrupted).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLocalDisks service method.</param>
@@ -4731,10 +4729,10 @@ namespace Amazon.StorageGateway
         /// <para>
         /// The request returns a list of all disks, specifying which are configured as working
         /// storage, cache storage, or stored volume or not configured at all. The response includes
-        /// a <code>DiskStatus</code> field. This field can have a value of present (the disk
-        /// is available to use), missing (the disk is no longer connected to the gateway), or
-        /// mismatch (the disk node is occupied by a disk that has incorrect metadata or the disk
-        /// content is corrupted).
+        /// a <c>DiskStatus</c> field. This field can have a value of present (the disk is available
+        /// to use), missing (the disk is no longer connected to the gateway), or mismatch (the
+        /// disk node is occupied by a disk that has incorrect metadata or the disk content is
+        /// corrupted).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLocalDisks service method.</param>
@@ -4832,9 +4830,9 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// This operation supports pagination. You can optionally specify the <code>Limit</code>
-        /// parameter in the body to limit the number of tape pools in the response. If the number
-        /// of tape pools returned in the response is truncated, the response includes a <code>Marker</code>
+        /// This operation supports pagination. You can optionally specify the <c>Limit</c> parameter
+        /// in the body to limit the number of tape pools in the response. If the number of tape
+        /// pools returned in the response is truncated, the response includes a <c>Marker</c>
         /// element that you can use in your subsequent request to retrieve the next set of tape
         /// pools.
         /// </para>
@@ -4868,9 +4866,9 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// This operation supports pagination. You can optionally specify the <code>Limit</code>
-        /// parameter in the body to limit the number of tape pools in the response. If the number
-        /// of tape pools returned in the response is truncated, the response includes a <code>Marker</code>
+        /// This operation supports pagination. You can optionally specify the <c>Limit</c> parameter
+        /// in the body to limit the number of tape pools in the response. If the number of tape
+        /// pools returned in the response is truncated, the response includes a <c>Marker</c>
         /// element that you can use in your subsequent request to retrieve the next set of tape
         /// pools.
         /// </para>
@@ -4913,11 +4911,11 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// This operation supports pagination. By default, the operation returns a maximum of
-        /// up to 100 tapes. You can optionally specify the <code>Limit</code> parameter in the
-        /// body to limit the number of tapes in the response. If the number of tapes returned
-        /// in the response is truncated, the response includes a <code>Marker</code> element
-        /// that you can use in your subsequent request to retrieve the next set of tapes. This
-        /// operation is only supported in the tape gateway type.
+        /// up to 100 tapes. You can optionally specify the <c>Limit</c> parameter in the body
+        /// to limit the number of tapes in the response. If the number of tapes returned in the
+        /// response is truncated, the response includes a <c>Marker</c> element that you can
+        /// use in your subsequent request to retrieve the next set of tapes. This operation is
+        /// only supported in the tape gateway type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTapes service method.</param>
@@ -4951,11 +4949,11 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// This operation supports pagination. By default, the operation returns a maximum of
-        /// up to 100 tapes. You can optionally specify the <code>Limit</code> parameter in the
-        /// body to limit the number of tapes in the response. If the number of tapes returned
-        /// in the response is truncated, the response includes a <code>Marker</code> element
-        /// that you can use in your subsequent request to retrieve the next set of tapes. This
-        /// operation is only supported in the tape gateway type.
+        /// up to 100 tapes. You can optionally specify the <c>Limit</c> parameter in the body
+        /// to limit the number of tapes in the response. If the number of tapes returned in the
+        /// response is truncated, the response includes a <c>Marker</c> element that you can
+        /// use in your subsequent request to retrieve the next set of tapes. This operation is
+        /// only supported in the tape gateway type.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTapes service method.</param>
@@ -5132,9 +5130,9 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// The operation supports pagination. By default, the operation returns a maximum of
-        /// up to 100 volumes. You can optionally specify the <code>Limit</code> field in the
-        /// body to limit the number of volumes in the response. If the number of volumes returned
-        /// in the response is truncated, the response includes a Marker field. You can use this
+        /// up to 100 volumes. You can optionally specify the <c>Limit</c> field in the body to
+        /// limit the number of volumes in the response. If the number of volumes returned in
+        /// the response is truncated, the response includes a Marker field. You can use this
         /// Marker value in your subsequent request to retrieve the next set of volumes. This
         /// operation is only supported in the cached volume and stored volume gateway types.
         /// </para>
@@ -5170,9 +5168,9 @@ namespace Amazon.StorageGateway
         ///  
         /// <para>
         /// The operation supports pagination. By default, the operation returns a maximum of
-        /// up to 100 volumes. You can optionally specify the <code>Limit</code> field in the
-        /// body to limit the number of volumes in the response. If the number of volumes returned
-        /// in the response is truncated, the response includes a Marker field. You can use this
+        /// up to 100 volumes. You can optionally specify the <c>Limit</c> field in the body to
+        /// limit the number of volumes in the response. If the number of volumes returned in
+        /// the response is truncated, the response includes a Marker field. You can use this
         /// Marker value in your subsequent request to retrieve the next set of volumes. This
         /// operation is only supported in the cached volume and stored volume gateway types.
         /// </para>
@@ -5307,7 +5305,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// You can subscribe to be notified through an Amazon CloudWatch event when your <code>RefreshCache</code>
+        /// You can subscribe to be notified through an Amazon CloudWatch event when your <c>RefreshCache</c>
         /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This
         /// operation is Only supported for S3 File Gateways.
@@ -5318,7 +5316,7 @@ namespace Amazon.StorageGateway
         /// completes and returns a success code, it doesn't necessarily mean that the file refresh
         /// has completed. You should use the refresh-complete notification to determine that
         /// the operation has completed before you check for new files on the gateway file share.
-        /// You can subscribe to be notified through a CloudWatch event when your <code>RefreshCache</code>
+        /// You can subscribe to be notified through a CloudWatch event when your <c>RefreshCache</c>
         /// operation completes.
         /// </para>
         ///  
@@ -5335,7 +5333,7 @@ namespace Amazon.StorageGateway
         ///  </li> <li> 
         /// <para>
         /// If you invoke the RefreshCache API when two requests are already being processed,
-        /// any new request will cause an <code>InvalidGatewayRequestException</code> error because
+        /// any new request will cause an <c>InvalidGatewayRequestException</c> error because
         /// too many requests were sent to the server.
         /// </para>
         ///  </li> </ul> </important> <note> 
@@ -5381,7 +5379,7 @@ namespace Amazon.StorageGateway
         /// 
         ///  
         /// <para>
-        /// You can subscribe to be notified through an Amazon CloudWatch event when your <code>RefreshCache</code>
+        /// You can subscribe to be notified through an Amazon CloudWatch event when your <c>RefreshCache</c>
         /// operation completes. For more information, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification">Getting
         /// notified about file operations</a> in the <i>Storage Gateway User Guide</i>. This
         /// operation is Only supported for S3 File Gateways.
@@ -5392,7 +5390,7 @@ namespace Amazon.StorageGateway
         /// completes and returns a success code, it doesn't necessarily mean that the file refresh
         /// has completed. You should use the refresh-complete notification to determine that
         /// the operation has completed before you check for new files on the gateway file share.
-        /// You can subscribe to be notified through a CloudWatch event when your <code>RefreshCache</code>
+        /// You can subscribe to be notified through a CloudWatch event when your <c>RefreshCache</c>
         /// operation completes.
         /// </para>
         ///  
@@ -5409,7 +5407,7 @@ namespace Amazon.StorageGateway
         ///  </li> <li> 
         /// <para>
         /// If you invoke the RefreshCache API when two requests are already being processed,
-        /// any new request will cause an <code>InvalidGatewayRequestException</code> error because
+        /// any new request will cause an <c>InvalidGatewayRequestException</c> error because
         /// too many requests were sent to the server.
         /// </para>
         ///  </li> </ul> </important> <note> 
@@ -5907,8 +5905,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code>
-        /// user is the user when the authentication method for the file share is set to <code>GuestAccess</code>.
+        /// Sets the password for the guest user <c>smbguest</c>. The <c>smbguest</c> user is
+        /// the user when the authentication method for the file share is set to <c>GuestAccess</c>.
         /// This operation only supported for S3 File Gateways
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSMBGuestPassword service method.</param>
@@ -5934,8 +5932,8 @@ namespace Amazon.StorageGateway
 
 
         /// <summary>
-        /// Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code>
-        /// user is the user when the authentication method for the file share is set to <code>GuestAccess</code>.
+        /// Sets the password for the guest user <c>smbguest</c>. The <c>smbguest</c> user is
+        /// the user when the authentication method for the file share is set to <c>GuestAccess</c>.
         /// This operation only supported for S3 File Gateways
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetSMBGuestPassword service method.</param>
@@ -5990,10 +5988,9 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you make a shutdown request, you will get a <code>200 OK</code> success response
-        /// immediately. However, it might take some time for the gateway to shut down. You can
-        /// call the <a>DescribeGatewayInformation</a> API to check the status. For more information,
-        /// see <a>ActivateGateway</a>.
+        /// When you make a shutdown request, you will get a <c>200 OK</c> success response immediately.
+        /// However, it might take some time for the gateway to shut down. You can call the <a>DescribeGatewayInformation</a>
+        /// API to check the status. For more information, see <a>ActivateGateway</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6046,10 +6043,9 @@ namespace Amazon.StorageGateway
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you make a shutdown request, you will get a <code>200 OK</code> success response
-        /// immediately. However, it might take some time for the gateway to shut down. You can
-        /// call the <a>DescribeGatewayInformation</a> API to check the status. For more information,
-        /// see <a>ActivateGateway</a>.
+        /// When you make a shutdown request, you will get a <c>200 OK</c> success response immediately.
+        /// However, it might take some time for the gateway to shut down. You can call the <a>DescribeGatewayInformation</a>
+        /// API to check the status. For more information, see <a>ActivateGateway</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6090,7 +6086,7 @@ namespace Amazon.StorageGateway
         /// Start a test that verifies that the specified gateway is configured for High Availability
         /// monitoring in your host environment. This request only initiates the test and that
         /// a successful response only indicates that the test was started. It doesn't indicate
-        /// that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code>
+        /// that the test passed. For the status of the test, invoke the <c>DescribeAvailabilityMonitorTest</c>
         /// API.
         /// 
         ///  <note> 
@@ -6125,7 +6121,7 @@ namespace Amazon.StorageGateway
         /// Start a test that verifies that the specified gateway is configured for High Availability
         /// monitoring in your host environment. This request only initiates the test and that
         /// a successful response only indicates that the test was started. It doesn't indicate
-        /// that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code>
+        /// that the test passed. For the status of the test, invoke the <c>DescribeAvailabilityMonitorTest</c>
         /// API.
         /// 
         ///  <note> 
@@ -6706,9 +6702,9 @@ namespace Amazon.StorageGateway
         /// 
         ///  <note> 
         /// <para>
-        /// When you make this request, you get a <code>200 OK</code> success response immediately.
+        /// When you make this request, you get a <c>200 OK</c> success response immediately.
         /// However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a>
-        /// to verify the gateway is in the <code>STATE_RUNNING</code> state.
+        /// to verify the gateway is in the <c>STATE_RUNNING</c> state.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -6749,9 +6745,9 @@ namespace Amazon.StorageGateway
         /// 
         ///  <note> 
         /// <para>
-        /// When you make this request, you get a <code>200 OK</code> success response immediately.
+        /// When you make this request, you get a <c>200 OK</c> success response immediately.
         /// However, it might take some time for the update to complete. You can call <a>DescribeGatewayInformation</a>
-        /// to verify the gateway is in the <code>STATE_RUNNING</code> state.
+        /// to verify the gateway is in the <c>STATE_RUNNING</c> state.
         /// </para>
         ///  </note> <important> 
         /// <para>

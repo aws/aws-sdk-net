@@ -64,8 +64,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Cancellable. 
         /// <para>
-        /// <code>True</code> if you are able to cancel your service software version update.
-        /// <code>False</code> if you are not able to cancel your service software version. 
+        /// <c>True</c> if you are able to cancel your service software version update. <c>False</c>
+        /// if you are not able to cancel your service software version. 
         /// </para>
         /// </summary>
         public bool Cancellable
@@ -101,7 +101,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the <code>UpdateStatus</code>.
+        /// The description of the <c>UpdateStatus</c>.
         /// </para>
         /// </summary>
         public string Description
@@ -137,9 +137,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property OptionalDeployment. 
         /// <para>
-        /// <code>True</code> if a service software is never automatically updated. <code>False</code>
-        /// if a service software is automatically updated after <code>AutomatedUpdateDate</code>.
-        /// 
+        /// <c>True</c> if a service software is never automatically updated. <c>False</c> if
+        /// a service software is automatically updated after <c>AutomatedUpdateDate</c>. 
         /// </para>
         /// </summary>
         public bool OptionalDeployment
@@ -157,8 +156,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property UpdateAvailable. 
         /// <para>
-        /// <code>True</code> if you are able to update you service software version. <code>False</code>
-        /// if you are not able to update your service software version. 
+        /// <c>True</c> if you are able to update you service software version. <c>False</c> if
+        /// you are not able to update your service software version. 
         /// </para>
         /// </summary>
         public bool UpdateAvailable
@@ -177,8 +176,8 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         /// The status of your service software update. This field can take the following values:
-        /// <code>ELIGIBLE</code>, <code>PENDING_UPDATE</code>, <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-        /// and <code>NOT_ELIGIBLE</code>.
+        /// <c>ELIGIBLE</c>, <c>PENDING_UPDATE</c>, <c>IN_PROGRESS</c>, <c>COMPLETED</c>, and
+        /// <c>NOT_ELIGIBLE</c>.
         /// </para>
         /// </summary>
         public DeploymentStatus UpdateStatus

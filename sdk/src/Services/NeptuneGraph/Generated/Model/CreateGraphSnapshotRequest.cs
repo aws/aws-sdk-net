@@ -60,7 +60,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property SnapshotName. 
         /// <para>
-        /// The snapshot name. For example: <code>my-snapshot-1</code>.
+        /// The snapshot name. For example: <c>my-snapshot-1</c>.
         /// </para>
         ///  
         /// <para>

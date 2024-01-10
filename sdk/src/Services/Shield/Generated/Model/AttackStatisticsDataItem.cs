@@ -62,7 +62,7 @@ namespace Amazon.Shield.Model
         /// Gets and sets the property AttackVolume. 
         /// <para>
         /// Information about the volume of attacks during the time period. If the accompanying
-        /// <code>AttackCount</code> is zero, this setting might be empty.
+        /// <c>AttackCount</c> is zero, this setting might be empty.
         /// </para>
         /// </summary>
         public AttackVolume AttackVolume

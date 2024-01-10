@@ -41,17 +41,17 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property SourceLocation. 
         /// <para>
         /// The location of the source code, as a formatted string, depending on the value of
-        /// <code>SourceRepository</code> 
+        /// <c>SourceRepository</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>CodeCommit</code>, the format is the repository name and commit ID, separated
-        /// by a forward slash. For example, <code>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</code>.
+        /// For <c>CodeCommit</c>, the format is the repository name and commit ID, separated
+        /// by a forward slash. For example, <c>my-git-repo/265cfa0cf6af46153527f55d6503ec030551f57a</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>S3</code>, the format is the S3 bucket name and object key, separated by
-        /// a forward slash. For example, <code>my-s3-bucket/Folders/my-source-file</code>.
+        /// For <c>S3</c>, the format is the S3 bucket name and object key, separated by a forward
+        /// slash. For example, <c>my-s3-bucket/Folders/my-source-file</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -75,11 +75,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CodeCommit</code> 
+        ///  <c>CodeCommit</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code> 
+        ///  <c>S3</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -103,11 +103,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Git</code> 
+        ///  <c>Git</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Zip</code> 
+        ///  <c>Zip</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

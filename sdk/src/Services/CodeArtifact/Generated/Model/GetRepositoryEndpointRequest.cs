@@ -35,19 +35,19 @@ namespace Amazon.CodeArtifact.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>maven</code> 
+    ///  <c>maven</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>npm</code> 
+    ///  <c>npm</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>nuget</code> 
+    ///  <c>nuget</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>pypi</code> 
+    ///  <c>pypi</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

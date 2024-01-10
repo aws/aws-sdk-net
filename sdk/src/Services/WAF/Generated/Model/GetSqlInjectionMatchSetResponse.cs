@@ -38,22 +38,22 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property SqlInjectionMatchSet. 
         /// <para>
-        /// Information about the <a>SqlInjectionMatchSet</a> that you specified in the <code>GetSqlInjectionMatchSet</code>
+        /// Information about the <a>SqlInjectionMatchSet</a> that you specified in the <c>GetSqlInjectionMatchSet</c>
         /// request. For more information, see the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>SqlInjectionMatchSet</a>: Contains <code>Name</code>, <code>SqlInjectionMatchSetId</code>,
-        /// and an array of <code>SqlInjectionMatchTuple</code> objects
+        ///  <a>SqlInjectionMatchSet</a>: Contains <c>Name</c>, <c>SqlInjectionMatchSetId</c>,
+        /// and an array of <c>SqlInjectionMatchTuple</c> objects
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>SqlInjectionMatchTuple</a>: Each <code>SqlInjectionMatchTuple</code> object contains
-        /// <code>FieldToMatch</code> and <code>TextTransformation</code> 
+        ///  <a>SqlInjectionMatchTuple</a>: Each <c>SqlInjectionMatchTuple</c> object contains
+        /// <c>FieldToMatch</c> and <c>TextTransformation</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        ///  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

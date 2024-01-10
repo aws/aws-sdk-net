@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// An authorization request that you include in a <code>BatchIsAuthorized</code> API
-    /// request.
+    /// An authorization request that you include in a <c>BatchIsAuthorized</c> API request.
     /// </summary>
     public partial class BatchIsAuthorizedInputItem
     {

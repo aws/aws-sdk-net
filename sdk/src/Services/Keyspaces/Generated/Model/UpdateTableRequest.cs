@@ -53,11 +53,11 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>name</code> - The name of the column.
+        ///  <c>name</c> - The name of the column.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
+        ///  <c>type</c> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
         /// types</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -82,16 +82,16 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
+        ///  <c>throughputMode:PAY_PER_REQUEST</c> and 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
-        /// and <code>writeCapacityUnits</code> as input.
+        ///  <c>throughputMode:PROVISIONED</c> - Provisioned capacity mode requires <c>readCapacityUnits</c>
+        /// and <c>writeCapacityUnits</c> as input.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
+        /// The default is <c>throughput_mode:PAY_PER_REQUEST</c>.
         /// </para>
         ///  
         /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>status: "enabled"</code> 
+        ///  <c>status: "enabled"</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -170,17 +170,17 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        ///  <c>type:AWS_OWNED_KMS_KEY</c> - This key is owned by Amazon Keyspaces. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and
-        /// is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        ///  <c>type:CUSTOMER_MANAGED_KMS_KEY</c> - This key is stored in your account and is
+        /// created, owned, and managed by you. This option requires the <c>kms_key_identifier</c>
         /// of the KMS key in Amazon Resource Name (ARN) format as input. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>AWS_OWNED_KMS_KEY</code>.
+        /// The default is <c>AWS_OWNED_KMS_KEY</c>.
         /// </para>
         ///  
         /// <para>
@@ -222,19 +222,19 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property PointInTimeRecovery. 
         /// <para>
-        /// Modifies the <code>pointInTimeRecovery</code> settings of the table. The options are:
+        /// Modifies the <c>pointInTimeRecovery</c> settings of the table. The options are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>status=ENABLED</code> 
+        ///  <c>status=ENABLED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status=DISABLED</code> 
+        ///  <c>status=DISABLED</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If it's not specified, the default is <code>status=DISABLED</code>.
+        /// If it's not specified, the default is <c>status=DISABLED</c>.
         /// </para>
         ///  
         /// <para>
@@ -280,16 +280,16 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>status:enabled</code> 
+        ///  <c>status:enabled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status:disabled</code> 
+        ///  <c>status:disabled</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
-        /// can't disable it for the table.
+        /// The default is <c>status:disabled</c>. After <c>ttl</c> is enabled, you can't disable
+        /// it for the table.
         /// </para>
         ///  
         /// <para>

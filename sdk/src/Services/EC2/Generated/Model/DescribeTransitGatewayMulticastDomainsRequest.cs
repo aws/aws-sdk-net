@@ -46,17 +46,17 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the transit gateway multicast domain. Valid values
-        /// are <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>.
+        ///  <c>state</c> - The state of the transit gateway multicast domain. Valid values are
+        /// <c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-id</code> - The ID of the transit gateway.
+        ///  <c>transit-gateway-id</c> - The ID of the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-multicast-domain-id</code> - The ID of the transit gateway
-        /// multicast domain.
+        ///  <c>transit-gateway-multicast-domain-id</c> - The ID of the transit gateway multicast
+        /// domain.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

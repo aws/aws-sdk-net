@@ -107,9 +107,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotStatus. 
         /// <para>
-        /// Shows the current status of the bot. The bot is first in the <code>Creating</code>
-        /// status. Once the bot is read for use, it changes to the <code>Available</code> status.
-        /// After the bot is created, you can use the <code>DRAFT</code> version of the bot.
+        /// Shows the current status of the bot. The bot is first in the <c>Creating</c> status.
+        /// Once the bot is read for use, it changes to the <c>Available</c> status. After the
+        /// bot is created, you can use the <c>DRAFT</c> version of the bot.
         /// </para>
         /// </summary>
         public BotStatus BotStatus

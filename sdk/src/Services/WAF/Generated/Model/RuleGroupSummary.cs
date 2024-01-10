@@ -42,7 +42,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Contains the identifier and the friendly name or description of the <code>RuleGroup</code>.
+    /// Contains the identifier and the friendly name or description of the <c>RuleGroup</c>.
     /// </para>
     /// </summary>
     public partial class RuleGroupSummary
@@ -54,7 +54,7 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A friendly name or description of the <a>RuleGroup</a>. You can't change the name
-        /// of a <code>RuleGroup</code> after you create it.
+        /// of a <c>RuleGroup</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -73,15 +73,15 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RuleGroupId. 
         /// <para>
-        /// A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code>
-        /// to get more information about a <code>RuleGroup</code> (see <a>GetRuleGroup</a>),
-        /// update a <code>RuleGroup</code> (see <a>UpdateRuleGroup</a>), insert a <code>RuleGroup</code>
-        /// into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <a>UpdateWebACL</a>),
-        /// or delete a <code>RuleGroup</code> from AWS WAF (see <a>DeleteRuleGroup</a>).
+        /// A unique identifier for a <c>RuleGroup</c>. You use <c>RuleGroupId</c> to get more
+        /// information about a <c>RuleGroup</c> (see <a>GetRuleGroup</a>), update a <c>RuleGroup</c>
+        /// (see <a>UpdateRuleGroup</a>), insert a <c>RuleGroup</c> into a <c>WebACL</c> or delete
+        /// one from a <c>WebACL</c> (see <a>UpdateWebACL</a>), or delete a <c>RuleGroup</c> from
+        /// AWS WAF (see <a>DeleteRuleGroup</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.
+        ///  <c>RuleGroupId</c> is returned by <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -30,8 +30,7 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// The filter element sets the criteria for the Storage Lens group data that is displayed.
-    /// For multiple filter conditions, the <code>AND</code> or <code>OR</code> logical operator
-    /// is used.
+    /// For multiple filter conditions, the <c>AND</c> or <c>OR</c> logical operator is used.
     /// </summary>
     public partial class StorageLensGroupFilter
     {
@@ -48,8 +47,8 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// A logical operator that allows multiple filter conditions to be joined for more complex
         /// comparisons of Storage Lens group data. Objects must match all of the listed filter
-        /// conditions that are joined by the <code>And</code> logical operator. Only one of each
-        /// filter condition is allowed.
+        /// conditions that are joined by the <c>And</c> logical operator. Only one of each filter
+        /// condition is allowed.
         /// </para>
         /// </summary>
         public StorageLensGroupAndOperator And
@@ -124,8 +123,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MatchObjectAge. 
         /// <para>
-        ///  Contains <code>DaysGreaterThan</code> and <code>DaysLessThan</code> to define the
-        /// object age range (minimum and maximum number of days). 
+        ///  Contains <c>DaysGreaterThan</c> and <c>DaysLessThan</c> to define the object age
+        /// range (minimum and maximum number of days). 
         /// </para>
         /// </summary>
         public MatchObjectAge MatchObjectAge
@@ -143,8 +142,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MatchObjectSize. 
         /// <para>
-        ///  Contains <code>BytesGreaterThan</code> and <code>BytesLessThan</code> to define the
-        /// object size range (minimum and maximum number of Bytes). 
+        ///  Contains <c>BytesGreaterThan</c> and <c>BytesLessThan</c> to define the object size
+        /// range (minimum and maximum number of Bytes). 
         /// </para>
         /// </summary>
         public MatchObjectSize MatchObjectSize
@@ -163,8 +162,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Or. 
         /// <para>
         /// A single logical operator that allows multiple filter conditions to be joined. Objects
-        /// can match any of the listed filter conditions, which are joined by the <code>Or</code>
-        /// logical operator. Only one of each filter condition is allowed. 
+        /// can match any of the listed filter conditions, which are joined by the <c>Or</c> logical
+        /// operator. Only one of each filter condition is allowed. 
         /// </para>
         /// </summary>
         public StorageLensGroupOrOperator Or

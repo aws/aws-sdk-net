@@ -54,9 +54,9 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// Indicates whether to display the status of image update availability before AppStream
         /// 2.0 initiates the process of creating a new updated image. If this value is set to
-        /// <code>true</code>, AppStream 2.0 displays whether image updates are available. If
-        /// this value is set to <code>false</code>, AppStream 2.0 initiates the process of creating
-        /// a new updated image without displaying whether image updates are available.
+        /// <c>true</c>, AppStream 2.0 displays whether image updates are available. If this value
+        /// is set to <c>false</c>, AppStream 2.0 initiates the process of creating a new updated
+        /// image without displaying whether image updates are available.
         /// </para>
         /// </summary>
         public bool DryRun

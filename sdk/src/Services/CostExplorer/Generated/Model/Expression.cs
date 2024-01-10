@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Use <code>Expression</code> to filter in various Cost Explorer APIs.
+    /// Use <c>Expression</c> to filter in various Cost Explorer APIs.
     /// 
     ///  
     /// <para>
-    /// Not all <code>Expression</code> types are supported in each API. Refer to the documentation
+    /// Not all <c>Expression</c> types are supported in each API. Refer to the documentation
     /// for each specific API to see what is supported.
     /// </para>
     ///  
@@ -46,23 +46,21 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// There are three types of simple dimension values: <code>CostCategories</code>, <code>Tags</code>,
-    /// and <code>Dimensions</code>.
+    /// There are three types of simple dimension values: <c>CostCategories</c>, <c>Tags</c>,
+    /// and <c>Dimensions</c>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Specify the <code>CostCategories</code> field to define a filter that acts on Cost
-    /// Categories.
+    /// Specify the <c>CostCategories</c> field to define a filter that acts on Cost Categories.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Specify the <code>Tags</code> field to define a filter that acts on Cost Allocation
-    /// Tags.
+    /// Specify the <c>Tags</c> field to define a filter that acts on Cost Allocation Tags.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Specify the <code>Dimensions</code> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html">
-    /// <code>DimensionValues</code> </a>.
+    /// Specify the <c>Dimensions</c> field to define a filter that acts on the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_DimensionValues.html">
+    /// <c>DimensionValues</c> </a>.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -71,19 +69,18 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// For example, you can filter for <code>REGION==us-east-1 OR REGION==us-west-1</code>.
-    /// For <code>GetRightsizingRecommendation</code>, the Region is a full name (for example,
-    /// <code>REGION==US East (N. Virginia)</code>.
+    /// For example, you can filter for <c>REGION==us-east-1 OR REGION==us-west-1</c>. For
+    /// <c>GetRightsizingRecommendation</c>, the Region is a full name (for example, <c>REGION==US
+    /// East (N. Virginia)</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The corresponding <code>Expression</code> for this example is as follows: <code>{
-    /// "Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</code>
-    /// 
+    /// The corresponding <c>Expression</c> for this example is as follows: <c>{ "Dimensions":
+    /// { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ] } }</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// As shown in the previous example, lists of dimension values are combined with <code>OR</code>
+    /// As shown in the previous example, lists of dimension values are combined with <c>OR</c>
     /// when applying the filter.
     /// </para>
     ///  </li> </ul> </li> <li> 
@@ -98,56 +95,56 @@ namespace Amazon.CostExplorer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The corresponding <code>Expression</code> for this example is as follows: <code>{
-    /// "Dimensions": { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values":
-    /// [ "a" ] } }</code> 
+    /// The corresponding <c>Expression</c> for this example is as follows: <c>{ "Dimensions":
+    /// { "Key": "LINKED_ACCOUNT_NAME", "MatchOptions": [ "STARTS_WITH" ], "Values": [ "a"
+    /// ] } }</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> </li> <li> 
     /// <para>
-    /// Compound <code>Expression</code> types with logical operations.
+    /// Compound <c>Expression</c> types with logical operations.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You can use multiple <code>Expression</code> types and the logical operators <code>AND/OR/NOT</code>
-    /// to create a list of one or more <code>Expression</code> objects. By doing this, you
-    /// can filter by more advanced options.
+    /// You can use multiple <c>Expression</c> types and the logical operators <c>AND/OR/NOT</c>
+    /// to create a list of one or more <c>Expression</c> objects. By doing this, you can
+    /// filter by more advanced options.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For example, you can filter by <code>((REGION == us-east-1 OR REGION == us-west-1)
-    /// OR (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</code>.
+    /// For example, you can filter by <c>((REGION == us-east-1 OR REGION == us-west-1) OR
+    /// (TAG.Type == Type1)) AND (USAGE_TYPE != DataTransfer)</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The corresponding <code>Expression</code> for this example is as follows: <code>{
-    /// "And": [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1"
-    /// ] }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions":
-    /// { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </code> 
+    /// The corresponding <c>Expression</c> for this example is as follows: <c>{ "And": [
+    /// {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ]
+    /// }}, {"Tags": { "Key": "TagName", "Values": ["Value1"] } } ]}, {"Not": {"Dimensions":
+    /// { "Key": "USAGE_TYPE", "Values": ["DataTransfer"] }}} ] } </c> 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// Because each <code>Expression</code> can have only one operator, the service returns
-    /// an error if more than one is specified. The following example shows an <code>Expression</code>
-    /// object that creates an error: <code> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE",
-    /// "Values": [ "DataTransfer" ] } } </code> 
+    /// Because each <c>Expression</c> can have only one operator, the service returns an
+    /// error if more than one is specified. The following example shows an <c>Expression</c>
+    /// object that creates an error: <c> { "And": [ ... ], "Dimensions": { "Key": "USAGE_TYPE",
+    /// "Values": [ "DataTransfer" ] } } </c> 
     /// </para>
     ///  
     /// <para>
-    /// The following is an example of the corresponding error message: <code>"Expression
-    /// has more than one roots. Only one root operator is allowed for each expression: And,
-    /// Or, Not, Dimensions, Tags, CostCategories"</code> 
+    /// The following is an example of the corresponding error message: <c>"Expression has
+    /// more than one roots. Only one root operator is allowed for each expression: And, Or,
+    /// Not, Dimensions, Tags, CostCategories"</c> 
     /// </para>
     ///  </note> </li> </ul> <note> 
     /// <para>
-    /// For the <code>GetRightsizingRecommendation</code> action, a combination of OR and
-    /// NOT isn't supported. OR isn't supported between different dimensions, or dimensions
-    /// and tags. NOT operators aren't supported. Dimensions are also limited to <code>LINKED_ACCOUNT</code>,
-    /// <code>REGION</code>, or <code>RIGHTSIZING_TYPE</code>.
+    /// For the <c>GetRightsizingRecommendation</c> action, a combination of OR and NOT isn't
+    /// supported. OR isn't supported between different dimensions, or dimensions and tags.
+    /// NOT operators aren't supported. Dimensions are also limited to <c>LINKED_ACCOUNT</c>,
+    /// <c>REGION</c>, or <c>RIGHTSIZING_TYPE</c>.
     /// </para>
     ///  
     /// <para>
-    /// For the <code>GetReservationPurchaseRecommendation</code> action, only NOT is supported.
-    /// AND and OR aren't supported. Dimensions are limited to <code>LINKED_ACCOUNT</code>.
+    /// For the <c>GetReservationPurchaseRecommendation</c> action, only NOT is supported.
+    /// AND and OR aren't supported. Dimensions are limited to <c>LINKED_ACCOUNT</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -163,7 +160,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property And. 
         /// <para>
-        /// Return results that match both <code>Dimension</code> objects.
+        /// Return results that match both <c>Dimension</c> objects.
         /// </para>
         /// </summary>
         public List<Expression> And
@@ -181,7 +178,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostCategories. 
         /// <para>
-        /// The filter that's based on <code>CostCategory</code> values.
+        /// The filter that's based on <c>CostCategory</c> values.
         /// </para>
         /// </summary>
         public CostCategoryValues CostCategories
@@ -199,7 +196,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// The specific <code>Dimension</code> to use for <code>Expression</code>.
+        /// The specific <c>Dimension</c> to use for <c>Expression</c>.
         /// </para>
         /// </summary>
         public DimensionValues Dimensions
@@ -217,7 +214,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Not. 
         /// <para>
-        /// Return results that don't match a <code>Dimension</code> object.
+        /// Return results that don't match a <c>Dimension</c> object.
         /// </para>
         /// </summary>
         public Expression Not
@@ -235,7 +232,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Or. 
         /// <para>
-        /// Return results that match either <code>Dimension</code> object.
+        /// Return results that match either <c>Dimension</c> object.
         /// </para>
         /// </summary>
         public List<Expression> Or
@@ -253,7 +250,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The specific <code>Tag</code> to use for <code>Expression</code>.
+        /// The specific <c>Tag</c> to use for <c>Expression</c>.
         /// </para>
         /// </summary>
         public TagValues Tags

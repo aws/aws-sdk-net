@@ -99,7 +99,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property FullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the custom structure. For example, the fully qualified
-        /// name of a custom structure might be <code>ComplexDataTypes.VehicleDataTypes.SVMCamera</code>.
+        /// name of a custom structure might be <c>ComplexDataTypes.VehicleDataTypes.SVMCamera</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

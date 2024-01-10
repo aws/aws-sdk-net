@@ -30,8 +30,8 @@ namespace Amazon.DAX.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associates a set of tags with a DAX resource. You can call <code>TagResource</code>
-    /// up to 5 times per second, per account.
+    /// Associates a set of tags with a DAX resource. You can call <c>TagResource</c> up to
+    /// 5 times per second, per account.
     /// </summary>
     public partial class TagResourceRequest : AmazonDAXRequest
     {

@@ -57,9 +57,9 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property ApiPassthrough. 
         /// <para>
         /// Specifies X.509 certificate information to be included in the issued certificate.
-        /// An <code>APIPassthrough</code> or <code>APICSRPassthrough</code> template variant
-        /// must be selected, or else this parameter is ignored. For more information about using
-        /// these templates, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding
+        /// An <c>APIPassthrough</c> or <c>APICSRPassthrough</c> template variant must be selected,
+        /// or else this parameter is ignored. For more information about using these templates,
+        /// see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding
         /// Certificate Templates</a>.
         /// </para>
         ///  
@@ -89,8 +89,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code> 
+        ///  <c>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=200)]
@@ -115,19 +115,19 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem
-        /// -out csr/test_cert_.csr</code> 
+        ///  <c>openssl req -new -newkey rsa:2048 -days 365 -keyout private/test_cert_priv_key.pem
+        /// -out csr/test_cert_.csr</c> 
         /// </para>
         ///  
         /// <para>
         /// If you have a configuration file, you can then use the following OpenSSL command.
-        /// The <code>usr_cert</code> block in the configuration file contains your X509 version
-        /// 3 extensions. 
+        /// The <c>usr_cert</c> block in the configuration file contains your X509 version 3 extensions.
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
-        /// -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</code> 
+        ///  <c>openssl req -new -config openssl_rsa.cnf -extensions usr_cert -newkey rsa:2048
+        /// -days 365 -keyout private/test_cert_priv_key.pem -out csr/test_cert_.csr</c> 
         /// </para>
         ///  
         /// <para>
@@ -181,8 +181,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter should not be confused with the <code>SigningAlgorithm</code> parameter
-        /// used to sign a CSR in the <code>CreateCertificateAuthority</code> action.
+        /// This parameter should not be confused with the <c>SigningAlgorithm</c> parameter used
+        /// to sign a CSR in the <c>CreateCertificateAuthority</c> action.
         /// </para>
         ///  <note> 
         /// <para>
@@ -208,7 +208,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property TemplateArn. 
         /// <para>
         /// Specifies a custom configuration template to use when issuing a certificate. If this
-        /// parameter is not provided, Amazon Web Services Private CA defaults to the <code>EndEntityCertificate/V1</code>
+        /// parameter is not provided, Amazon Web Services Private CA defaults to the <c>EndEntityCertificate/V1</c>
         /// template. For CA certificates, you should choose the shortest path length that meets
         /// your needs. The path length is indicated by the PathLen<i>N</i> portion of the ARN,
         /// where <i>N</i> is the <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaTerms.html#terms-cadepth">CA
@@ -221,8 +221,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// For a list of <code>TemplateArn</code> values supported by Amazon Web Services Private
-        /// CA, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding
+        /// For a list of <c>TemplateArn</c> values supported by Amazon Web Services Private CA,
+        /// see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding
         /// Certificate Templates</a>.
         /// </para>
         /// </summary>
@@ -255,10 +255,9 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is unaffected when <code>ValidityNotBefore</code> is also specified. For
-        /// example, if <code>Validity</code> is set to 20 days in the future, the certificate
-        /// will expire 20 days from issuance time regardless of the <code>ValidityNotBefore</code>
-        /// value.
+        /// This value is unaffected when <c>ValidityNotBefore</c> is also specified. For example,
+        /// if <c>Validity</c> is set to 20 days in the future, the certificate will expire 20
+        /// days from issuance time regardless of the <c>ValidityNotBefore</c> value.
         /// </para>
         ///  
         /// <para>
@@ -289,19 +288,17 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// By default, when issuing a certificate, Amazon Web Services Private CA sets the "Not
         /// Before" date to the issuance time minus 60 minutes. This compensates for clock inconsistencies
-        /// across computer systems. The <code>ValidityNotBefore</code> parameter can be used
-        /// to customize the “Not Before” value. 
+        /// across computer systems. The <c>ValidityNotBefore</c> parameter can be used to customize
+        /// the “Not Before” value. 
         /// </para>
         ///  
         /// <para>
-        /// Unlike the <code>Validity</code> parameter, the <code>ValidityNotBefore</code> parameter
-        /// is optional.
+        /// Unlike the <c>Validity</c> parameter, the <c>ValidityNotBefore</c> parameter is optional.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ValidityNotBefore</code> value is expressed as an explicit date and time,
-        /// using the <code>Validity</code> type value <code>ABSOLUTE</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
+        /// The <c>ValidityNotBefore</c> value is expressed as an explicit date and time, using
+        /// the <c>Validity</c> type value <c>ABSOLUTE</c>. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_Validity.html">Validity</a>
         /// in this API reference and <a href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
         /// in RFC 5280.
         /// </para>

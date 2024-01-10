@@ -82,7 +82,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property DeleteSourceBundle. 
         /// <para>
-        /// Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise,
+        /// Set to <c>true</c> to delete the source bundle from your storage bucket. Otherwise,
         /// the application version is deleted only from Elastic Beanstalk and the source bundle
         /// remains in Amazon S3.
         /// </para>

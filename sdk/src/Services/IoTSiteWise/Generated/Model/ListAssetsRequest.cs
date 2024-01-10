@@ -63,9 +63,9 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AssetModelId. 
         /// <para>
         /// The ID of the asset model by which to filter the list of assets. This parameter is
-        /// required if you choose <code>ALL</code> for <code>filter</code>. This can be either
-        /// the actual ID in UUID format, or else <code>externalId:</code> followed by the external
-        /// ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// required if you choose <c>ALL</c> for <c>filter</c>. This can be either the actual
+        /// ID in UUID format, or else <c>externalId:</c> followed by the external ID, if it has
+        /// one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
@@ -89,17 +89,17 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL</code> – The list includes all assets for a given asset model ID. The <code>assetModelId</code>
-        /// parameter is required if you filter by <code>ALL</code>.
+        ///  <c>ALL</c> – The list includes all assets for a given asset model ID. The <c>assetModelId</c>
+        /// parameter is required if you filter by <c>ALL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy
+        ///  <c>TOP_LEVEL</c> – The list includes only top-level assets in the asset hierarchy
         /// tree.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>ALL</code> 
+        /// Default: <c>ALL</c> 
         /// </para>
         /// </summary>
         public ListAssetsFilter Filter

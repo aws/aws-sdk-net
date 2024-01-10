@@ -47,8 +47,8 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>MaxResults</code>, the request retrieves all available
-        /// results in a single response.
+        /// If you don't specify <c>MaxResults</c>, the request retrieves all available results
+        /// in a single response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -73,8 +73,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>NextToken</code>, the request retrieves the first result
-        /// page.
+        /// If you don't specify <c>NextToken</c>, the request retrieves the first result page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=51200)]

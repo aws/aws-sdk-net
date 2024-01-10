@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeUserProfile operation.
-    /// Describes a user profile. For more information, see <code>CreateUserProfile</code>.
+    /// Describes a user profile. For more information, see <c>CreateUserProfile</c>.
     /// </summary>
     public partial class DescribeUserProfileRequest : AmazonSageMakerRequest
     {

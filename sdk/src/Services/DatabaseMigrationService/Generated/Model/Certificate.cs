@@ -122,7 +122,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificatePem. 
         /// <para>
-        /// The contents of a <code>.pem</code> file, which contains an X.509 certificate.
+        /// The contents of a <c>.pem</c> file, which contains an X.509 certificate.
         /// </para>
         /// </summary>
         public string CertificatePem
@@ -140,7 +140,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificateWallet. 
         /// <para>
-        /// The location of an imported Oracle Wallet certificate for use with SSL. Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code>
+        /// The location of an imported Oracle Wallet certificate for use with SSL. Example: <c>filebase64("${path.root}/rds-ca-2019-root.sso")</c>
         /// 
         /// </para>
         /// </summary>

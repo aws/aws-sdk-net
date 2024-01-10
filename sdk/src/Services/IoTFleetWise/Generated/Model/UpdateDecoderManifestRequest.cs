@@ -34,8 +34,8 @@ namespace Amazon.IoTFleetWise.Model
     /// 
     ///  
     /// <para>
-    /// A decoder manifest can only be updated when the status is <code>DRAFT</code>. Only
-    /// <code>ACTIVE</code> decoder manifests can be associated with vehicles.
+    /// A decoder manifest can only be updated when the status is <c>DRAFT</c>. Only <c>ACTIVE</c>
+    /// decoder manifests can be associated with vehicles.
     /// </para>
     /// </summary>
     public partial class UpdateDecoderManifestRequest : AmazonIoTFleetWiseRequest
@@ -209,9 +209,9 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder
-        /// manifest can't be edited. If the status is <code>DRAFT</code>, you can edit the decoder
-        /// manifest. 
+        ///  The state of the decoder manifest. If the status is <c>ACTIVE</c>, the decoder manifest
+        /// can't be edited. If the status is <c>DRAFT</c>, you can edit the decoder manifest.
+        /// 
         /// </para>
         /// </summary>
         public ManifestStatus Status

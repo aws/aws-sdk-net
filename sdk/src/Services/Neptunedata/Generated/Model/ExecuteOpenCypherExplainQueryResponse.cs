@@ -38,7 +38,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A text blob containing the openCypher <code>explain</code> results.
+        /// A text blob containing the openCypher <c>explain</c> results.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

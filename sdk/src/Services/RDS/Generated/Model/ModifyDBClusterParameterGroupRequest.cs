@@ -31,9 +31,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the ModifyDBClusterParameterGroup operation.
     /// Modifies the parameters of a DB cluster parameter group. To modify more than one parameter,
-    /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
-    /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-    /// request.
+    /// submit a list of the following: <c>ParameterName</c>, <c>ParameterValue</c>, and <c>ApplyMethod</c>.
+    /// A maximum of 20 parameters can be modified in a single request.
     /// 
     ///  <important> 
     /// <para>
@@ -42,10 +41,10 @@ namespace Amazon.RDS.Model
     /// the default parameter group. This allows Amazon RDS to fully complete the create operation
     /// before the parameter group is used as the default for a new DB cluster. This is especially
     /// important for parameters that are critical when creating the default database for
-    /// a DB cluster, such as the character set for the default database defined by the <code>character_set_database</code>
+    /// a DB cluster, such as the character set for the default database defined by the <c>character_set_database</c>
     /// parameter. You can use the <i>Parameter Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon
-    /// RDS console</a> or the <code>DescribeDBClusterParameters</code> operation to verify
-    /// that your DB cluster parameter group has been created or modified.
+    /// RDS console</a> or the <c>DescribeDBClusterParameters</c> operation to verify that
+    /// your DB cluster parameter group has been created or modified.
     /// </para>
     ///  
     /// <para>
@@ -96,21 +95,20 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values (for the application method): <code>immediate | pending-reboot</code>
-        /// 
+        /// Valid Values (for the application method): <c>immediate | pending-reboot</c> 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can use the <code>immediate</code> value with dynamic parameters only. You can
-        /// use the <code>pending-reboot</code> value for both dynamic and static parameters.
+        /// You can use the <c>immediate</c> value with dynamic parameters only. You can use the
+        /// <c>pending-reboot</c> value for both dynamic and static parameters.
         /// </para>
         ///  
         /// <para>
-        /// When the application method is <code>immediate</code>, changes to dynamic parameters
-        /// are applied immediately to the DB clusters associated with the parameter group. When
-        /// the application method is <code>pending-reboot</code>, changes to dynamic and static
-        /// parameters are applied after a reboot without failover to the DB clusters associated
-        /// with the parameter group.
+        /// When the application method is <c>immediate</c>, changes to dynamic parameters are
+        /// applied immediately to the DB clusters associated with the parameter group. When the
+        /// application method is <c>pending-reboot</c>, changes to dynamic and static parameters
+        /// are applied after a reboot without failover to the DB clusters associated with the
+        /// parameter group.
         /// </para>
         ///  </note>
         /// </summary>

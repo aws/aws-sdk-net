@@ -208,7 +208,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SortBy. 
         /// <para>
         /// The field by which to sort the inference components in the response. The default is
-        /// <code>CreationTime</code>.
+        /// <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public InferenceComponentSortKey SortBy
@@ -226,7 +226,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for results. The default is <code>Descending</code>.
+        /// The sort order for results. The default is <c>Descending</c>.
         /// </para>
         /// </summary>
         public OrderKey SortOrder

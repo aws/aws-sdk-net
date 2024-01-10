@@ -41,7 +41,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// To delete a cache policy, you must provide the policy's identifier and version. To
-    /// get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
+    /// get these values, you can use <c>ListCachePolicies</c> or <c>GetCachePolicy</c>.
     /// </para>
     /// </summary>
     public partial class DeleteCachePolicyRequest : AmazonCloudFrontRequest
@@ -53,7 +53,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier for the cache policy that you are deleting. To get the identifier,
-        /// you can use <code>ListCachePolicies</code>.
+        /// you can use <c>ListCachePolicies</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -73,8 +73,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IfMatch. 
         /// <para>
         /// The version of the cache policy that you are deleting. The version is the cache policy's
-        /// <code>ETag</code> value, which you can get using <code>ListCachePolicies</code>, <code>GetCachePolicy</code>,
-        /// or <code>GetCachePolicyConfig</code>.
+        /// <c>ETag</c> value, which you can get using <c>ListCachePolicies</c>, <c>GetCachePolicy</c>,
+        /// or <c>GetCachePolicyConfig</c>.
         /// </para>
         /// </summary>
         public string IfMatch

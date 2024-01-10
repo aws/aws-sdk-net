@@ -39,9 +39,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        ///  <b>Optional</b>: A list that contains one <code>OriginCustomHeader</code> element
-        /// for each custom header that you want CloudFront to forward to the origin. If Quantity
-        /// is <code>0</code>, omit <code>Items</code>.
+        ///  <b>Optional</b>: A list that contains one <c>OriginCustomHeader</c> element for each
+        /// custom header that you want CloudFront to forward to the origin. If Quantity is <c>0</c>,
+        /// omit <c>Items</c>.
         /// </para>
         /// </summary>
         public List<OriginCustomHeader> Items

@@ -38,8 +38,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The policy adjustment type. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
-        /// and <code>PercentChangeInCapacity</code>.
+        /// The policy adjustment type. The valid values are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>,
+        /// and <c>PercentChangeInCapacity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

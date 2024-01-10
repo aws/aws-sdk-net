@@ -110,7 +110,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The <code>EphemerisSource</code> that generated a given ephemeris.
+        /// The <c>EphemerisSource</c> that generated a given ephemeris.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

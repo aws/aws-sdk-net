@@ -39,10 +39,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the request doesn't return all the remaining results, <code>NextToken</code> is
-        /// set to a token. To retrieve the next set of results, call <code>DescribeStackResourceDrifts</code>
-        /// again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If the request returns all results, <code>NextToken</code> is set to <code>null</code>.
+        /// If the request doesn't return all the remaining results, <c>NextToken</c> is set to
+        /// a token. To retrieve the next set of results, call <c>DescribeStackResourceDrifts</c>
+        /// again and assign that token to the request object's <c>NextToken</c> parameter. If
+        /// the request returns all results, <c>NextToken</c> is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -67,11 +67,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For a given stack, there will be one <code>StackResourceDrift</code> for each stack
-        /// resource that has been checked for drift. Resources that haven't yet been checked
-        /// for drift aren't included. Resources that do not currently support drift detection
-        /// aren't checked, and so not included. For a list of resources that support drift detection,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
+        /// For a given stack, there will be one <c>StackResourceDrift</c> for each stack resource
+        /// that has been checked for drift. Resources that haven't yet been checked for drift
+        /// aren't included. Resources that do not currently support drift detection aren't checked,
+        /// and so not included. For a list of resources that support drift detection, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift-resource-list.html">Resources
         /// that Support Drift Detection</a>.
         /// </para>
         /// </summary>

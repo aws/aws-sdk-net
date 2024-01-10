@@ -64,7 +64,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// The application version. You can use the <a>DescribeApplication</a> operation to get
         /// the current application version. If the version specified is not the current version,
-        /// the <code>ConcurrentModificationException</code> is returned. 
+        /// the <c>ConcurrentModificationException</c> is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]
@@ -87,7 +87,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// the application (either when the application is created or later) using the <a>AddApplicationOutput</a>
         /// operation has a unique ID. You need to provide the ID to uniquely identify the output
         /// configuration that you want to delete from the application configuration. You can
-        /// use the <a>DescribeApplication</a> operation to get the specific <code>OutputId</code>.
+        /// use the <a>DescribeApplication</a> operation to get the specific <c>OutputId</c>.
         /// 
         /// </para>
         /// </summary>

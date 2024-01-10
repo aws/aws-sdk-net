@@ -31,8 +31,8 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the PutRestoreValidationResult operation.
     /// This request allows you to send your independent self-run restore test validation
-    /// results. <code>RestoreJobId</code> and <code>ValidationStatus</code> are required.
-    /// Optionally, you can input a <code>ValidationStatusMessage</code>.
+    /// results. <c>RestoreJobId</c> and <c>ValidationStatus</c> are required. Optionally,
+    /// you can input a <c>ValidationStatusMessage</c>.
     /// </summary>
     public partial class PutRestoreValidationResultRequest : AmazonBackupRequest
     {

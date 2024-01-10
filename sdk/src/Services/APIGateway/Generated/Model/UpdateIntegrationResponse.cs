@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// Represents an <code>HTTP</code>, <code>HTTP_PROXY</code>, <code>AWS</code>, <code>AWS_PROXY</code>,
-    /// or Mock integration.
+    /// Represents an <c>HTTP</c>, <c>HTTP_PROXY</c>, <c>AWS</c>, <c>AWS_PROXY</c>, or Mock
+    /// integration.
     /// </summary>
     public partial class UpdateIntegrationResponse : AmazonWebServiceResponse
     {
@@ -54,8 +54,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CacheKeyParameters. 
         /// <para>
         /// A list of request parameters whose values API Gateway caches. To be valid values for
-        /// <code>cacheKeyParameters</code>, these parameters must also be specified for Method
-        /// <code>requestParameters</code>.
+        /// <c>cacheKeyParameters</c>, these parameters must also be specified for Method <c>requestParameters</c>.
         /// </para>
         /// </summary>
         public List<string> CacheKeyParameters
@@ -74,8 +73,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property CacheNamespace. 
         /// <para>
         /// Specifies a group of related cached parameters. By default, API Gateway uses the resource
-        /// ID as the <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code>
-        /// across resources to return the same cached data for requests to different resources.
+        /// ID as the <c>cacheNamespace</c>. You can specify the same <c>cacheNamespace</c> across
+        /// resources to return the same cached data for requests to different resources.
         /// </para>
         /// </summary>
         public string CacheNamespace
@@ -93,7 +92,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property ConnectionId. 
         /// <para>
-        /// The ID of the VpcLink used for the integration when <code>connectionType=VPC_LINK</code>
+        /// The ID of the VpcLink used for the integration when <c>connectionType=VPC_LINK</c>
         /// and undefined, otherwise.
         /// </para>
         /// </summary>
@@ -113,9 +112,9 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property ConnectionType. 
         /// <para>
         /// The type of the network connection to the integration endpoint. The valid value is
-        /// <code>INTERNET</code> for connections through the public routable internet or <code>VPC_LINK</code>
+        /// <c>INTERNET</c> for connections through the public routable internet or <c>VPC_LINK</c>
         /// for private connections between API Gateway and a network load balancer in a VPC.
-        /// The default value is <code>INTERNET</code>.
+        /// The default value is <c>INTERNET</c>.
         /// </para>
         /// </summary>
         public ConnectionType ConnectionType
@@ -134,13 +133,12 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property ContentHandling. 
         /// <para>
         /// Specifies how to handle request payload content type conversions. Supported values
-        /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
-        /// behaviors:
+        /// are <c>CONVERT_TO_BINARY</c> and <c>CONVERT_TO_TEXT</c>, with the following behaviors:
         /// </para>
         ///  
         /// <para>
         /// If this property is not defined, the request payload will be passed through from the
-        /// method request to integration request without modification, provided that the <code>passthroughBehavior</code>
+        /// method request to integration request without modification, provided that the <c>passthroughBehavior</c>
         /// is configured to support payload pass-through.
         /// </para>
         /// </summary>
@@ -162,9 +160,8 @@ namespace Amazon.APIGateway.Model
         /// Specifies the credentials required for the integration, if any. For AWS integrations,
         /// three options are available. To specify an IAM Role for API Gateway to assume, use
         /// the role's Amazon Resource Name (ARN). To require that the caller's identity be passed
-        /// through from the request, specify the string <code>arn:aws:iam::\*:user/\*</code>.
-        /// To use resource-based permissions on supported Amazon Web Services services, specify
-        /// null.
+        /// through from the request, specify the string <c>arn:aws:iam::\*:user/\*</c>. To use
+        /// resource-based permissions on supported Amazon Web Services services, specify null.
         /// </para>
         /// </summary>
         public string Credentials
@@ -183,9 +180,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property HttpMethod. 
         /// <para>
         /// Specifies the integration's HTTP method type. For the Type property, if you specify
-        /// <code>MOCK</code>, this property is optional. For Lambda integrations, you must set
-        /// the integration method to <code>POST</code>. For all other types, you must specify
-        /// this property.
+        /// <c>MOCK</c>, this property is optional. For Lambda integrations, you must set the
+        /// integration method to <c>POST</c>. For all other types, you must specify this property.
         /// </para>
         /// </summary>
         public string HttpMethod
@@ -224,19 +220,19 @@ namespace Amazon.APIGateway.Model
         /// Specifies how the method request body of an unmapped content type will be passed through
         /// the integration request to the back end without transformation. A content type is
         /// unmapped if no mapping template is defined in the integration or the content type
-        /// does not match any of the mapped content types, as specified in <code>requestTemplates</code>.
-        /// The valid value is one of the following: <code>WHEN_NO_MATCH</code>: passes the method
-        /// request body through the integration request to the back end without transformation
-        /// when the method request content type does not match any content type associated with
-        /// the mapping templates defined in the integration request. <code>WHEN_NO_TEMPLATES</code>:
-        /// passes the method request body through the integration request to the back end without
-        /// transformation when no mapping template is defined in the integration request. If
-        /// a template is defined when this option is selected, the method request of an unmapped
-        /// content-type will be rejected with an HTTP 415 Unsupported Media Type response. <code>NEVER</code>:
-        /// rejects the method request with an HTTP 415 Unsupported Media Type response when either
-        /// the method request content type does not match any content type associated with the
-        /// mapping templates defined in the integration request or no mapping template is defined
-        /// in the integration request.
+        /// does not match any of the mapped content types, as specified in <c>requestTemplates</c>.
+        /// The valid value is one of the following: <c>WHEN_NO_MATCH</c>: passes the method request
+        /// body through the integration request to the back end without transformation when the
+        /// method request content type does not match any content type associated with the mapping
+        /// templates defined in the integration request. <c>WHEN_NO_TEMPLATES</c>: passes the
+        /// method request body through the integration request to the back end without transformation
+        /// when no mapping template is defined in the integration request. If a template is defined
+        /// when this option is selected, the method request of an unmapped content-type will
+        /// be rejected with an HTTP 415 Unsupported Media Type response. <c>NEVER</c>: rejects
+        /// the method request with an HTTP 415 Unsupported Media Type response when either the
+        /// method request content type does not match any content type associated with the mapping
+        /// templates defined in the integration request or no mapping template is defined in
+        /// the integration request.
         /// </para>
         /// </summary>
         public string PassthroughBehavior
@@ -258,9 +254,9 @@ namespace Amazon.APIGateway.Model
         /// to the back end. The key is an integration request parameter name and the associated
         /// value is a method request parameter value or static value that must be enclosed within
         /// single quotes and pre-encoded as required by the back end. The method request parameter
-        /// value must match the pattern of <code>method.request.{location}.{name}</code>, where
-        /// <code>location</code> is <code>querystring</code>, <code>path</code>, or <code>header</code>
-        /// and <code>name</code> must be a valid and unique method request parameter name.
+        /// value must match the pattern of <c>method.request.{location}.{name}</c>, where <c>location</c>
+        /// is <c>querystring</c>, <c>path</c>, or <c>header</c> and <c>name</c> must be a valid
+        /// and unique method request parameter name.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestParameters
@@ -340,10 +336,10 @@ namespace Amazon.APIGateway.Model
         ///  
         /// <para>
         /// For the HTTP and HTTP proxy integrations, each integration can specify a protocol
-        /// (<code>http/https</code>), port and path. Standard 80 and 443 ports are supported
-        /// as well as custom ports above 1024. An HTTP or HTTP proxy integration with a <code>connectionType</code>
-        /// of <code>VPC_LINK</code> is referred to as a private integration and uses a VpcLink
-        /// to connect API Gateway to a network load balancer of a VPC.
+        /// (<c>http/https</c>), port and path. Standard 80 and 443 ports are supported as well
+        /// as custom ports above 1024. An HTTP or HTTP proxy integration with a <c>connectionType</c>
+        /// of <c>VPC_LINK</c> is referred to as a private integration and uses a VpcLink to connect
+        /// API Gateway to a network load balancer of a VPC.
         /// </para>
         /// </summary>
         public IntegrationType Type
@@ -365,11 +361,10 @@ namespace Amazon.APIGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully
-        /// formed, encoded HTTP(S) URL according to the RFC-3986 specification for standard integrations.
-        /// If <code>connectionType</code> is <code>VPC_LINK</code> specify the Network Load Balancer
-        /// DNS name. For <code>AWS</code> or <code>AWS_PROXY</code> integrations, the URI is
-        /// of the form <code>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</code>.
+        /// For <c>HTTP</c> or <c>HTTP_PROXY</c> integrations, the URI must be a fully formed,
+        /// encoded HTTP(S) URL according to the RFC-3986 specification for standard integrations.
+        /// If <c>connectionType</c> is <c>VPC_LINK</c> specify the Network Load Balancer DNS
+        /// name. For <c>AWS</c> or <c>AWS_PROXY</c> integrations, the URI is of the form <c>arn:aws:apigateway:{region}:{subdomain.service|service}:path|action/{service_api}</c>.
         /// Here, {Region} is the API Gateway region (e.g., us-east-1); {service} is the name
         /// of the integrated Amazon Web Services service (e.g., s3); and {subdomain} is a designated
         /// subdomain supported by certain Amazon Web Services service for fast host-name lookup.
@@ -379,8 +374,8 @@ namespace Amazon.APIGateway.Model
         /// service path-based API. The ensuing service_api refers to the path to an Amazon Web
         /// Services service resource, including the region of the integrated Amazon Web Services
         /// service, if applicable. For example, for integration with the S3 API of GetObject,
-        /// the uri can be either <code>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</code>
-        /// or <code>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</code> 
+        /// the uri can be either <c>arn:aws:apigateway:us-west-2:s3:action/GetObject&amp;Bucket={bucket}&amp;Key={key}</c>
+        /// or <c>arn:aws:apigateway:us-west-2:s3:path/{bucket}/{key}</c> 
         /// </para>
         /// </summary>
         public string Uri

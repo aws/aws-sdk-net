@@ -108,9 +108,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property ForwardingEnabled. 
         /// <para>
         /// Describes whether Amazon SES forwards bounce and complaint notifications as email.
-        /// <code>true</code> indicates that Amazon SES forwards bounce and complaint notifications
-        /// as email, while <code>false</code> indicates that bounce and complaint notifications
-        /// are published only to the specified bounce and complaint Amazon SNS topics.
+        /// <c>true</c> indicates that Amazon SES forwards bounce and complaint notifications
+        /// as email, while <c>false</c> indicates that bounce and complaint notifications are
+        /// published only to the specified bounce and complaint Amazon SNS topics.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,9 +130,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property HeadersInBounceNotificationsEnabled. 
         /// <para>
         /// Describes whether Amazon SES includes the original email headers in Amazon SNS notifications
-        /// of type <code>Bounce</code>. A value of <code>true</code> specifies that Amazon SES
-        /// includes headers in bounce notifications, and a value of <code>false</code> specifies
-        /// that Amazon SES does not include headers in bounce notifications.
+        /// of type <c>Bounce</c>. A value of <c>true</c> specifies that Amazon SES includes headers
+        /// in bounce notifications, and a value of <c>false</c> specifies that Amazon SES does
+        /// not include headers in bounce notifications.
         /// </para>
         /// </summary>
         public bool HeadersInBounceNotificationsEnabled
@@ -151,9 +151,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property HeadersInComplaintNotificationsEnabled. 
         /// <para>
         /// Describes whether Amazon SES includes the original email headers in Amazon SNS notifications
-        /// of type <code>Complaint</code>. A value of <code>true</code> specifies that Amazon
-        /// SES includes headers in complaint notifications, and a value of <code>false</code>
-        /// specifies that Amazon SES does not include headers in complaint notifications.
+        /// of type <c>Complaint</c>. A value of <c>true</c> specifies that Amazon SES includes
+        /// headers in complaint notifications, and a value of <c>false</c> specifies that Amazon
+        /// SES does not include headers in complaint notifications.
         /// </para>
         /// </summary>
         public bool HeadersInComplaintNotificationsEnabled
@@ -172,9 +172,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property HeadersInDeliveryNotificationsEnabled. 
         /// <para>
         /// Describes whether Amazon SES includes the original email headers in Amazon SNS notifications
-        /// of type <code>Delivery</code>. A value of <code>true</code> specifies that Amazon
-        /// SES includes headers in delivery notifications, and a value of <code>false</code>
-        /// specifies that Amazon SES does not include headers in delivery notifications.
+        /// of type <c>Delivery</c>. A value of <c>true</c> specifies that Amazon SES includes
+        /// headers in delivery notifications, and a value of <c>false</c> specifies that Amazon
+        /// SES does not include headers in delivery notifications.
         /// </para>
         /// </summary>
         public bool HeadersInDeliveryNotificationsEnabled

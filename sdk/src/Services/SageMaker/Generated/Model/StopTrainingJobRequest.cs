@@ -30,15 +30,14 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the StopTrainingJob operation.
-    /// Stops a training job. To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code>
+    /// Stops a training job. To stop a job, SageMaker sends the algorithm the <c>SIGTERM</c>
     /// signal, which delays job termination for 120 seconds. Algorithms might use this 120-second
     /// window to save the model artifacts, so the results of the training is not lost. 
     /// 
     ///  
     /// <para>
-    /// When it receives a <code>StopTrainingJob</code> request, SageMaker changes the status
-    /// of the job to <code>Stopping</code>. After SageMaker stops the job, it sets the status
-    /// to <code>Stopped</code>.
+    /// When it receives a <c>StopTrainingJob</c> request, SageMaker changes the status of
+    /// the job to <c>Stopping</c>. After SageMaker stops the job, it sets the status to <c>Stopped</c>.
     /// </para>
     /// </summary>
     public partial class StopTrainingJobRequest : AmazonSageMakerRequest

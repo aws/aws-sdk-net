@@ -30,15 +30,14 @@ namespace Amazon.Pipes.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePipe operation.
-    /// Update an existing pipe. When you call <code>UpdatePipe</code>, EventBridge only the
-    /// updates fields you have specified in the request; the rest remain unchanged. The exception
-    /// to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>,
-    /// <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. For example,
-    /// <code>DynamoDBStreamParameters</code> or <code>EventBridgeEventBusParameters</code>.
-    /// EventBridge updates the fields in these objects atomically as one and overrides existing
-    /// values. This is by design, and means that if you don't specify an optional field in
-    /// one of these <code>Parameters</code> objects, EventBridge sets that field to its system-default
-    /// value during the update.
+    /// Update an existing pipe. When you call <c>UpdatePipe</c>, EventBridge only the updates
+    /// fields you have specified in the request; the rest remain unchanged. The exception
+    /// to this is if you modify any Amazon Web Services-service specific fields in the <c>SourceParameters</c>,
+    /// <c>EnrichmentParameters</c>, or <c>TargetParameters</c> objects. For example, <c>DynamoDBStreamParameters</c>
+    /// or <c>EventBridgeEventBusParameters</c>. EventBridge updates the fields in these objects
+    /// atomically as one and overrides existing values. This is by design, and means that
+    /// if you don't specify an optional field in one of these <c>Parameters</c> objects,
+    /// EventBridge sets that field to its system-default value during the update.
     /// 
     ///  
     /// <para>

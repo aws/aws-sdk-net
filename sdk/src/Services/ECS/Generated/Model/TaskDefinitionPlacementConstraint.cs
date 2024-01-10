@@ -67,8 +67,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of constraint. The <code>MemberOf</code> constraint restricts selection to
-        /// be from a group of valid candidates.
+        /// The type of constraint. The <c>MemberOf</c> constraint restricts selection to be from
+        /// a group of valid candidates.
         /// </para>
         /// </summary>
         public TaskDefinitionPlacementConstraintType Type

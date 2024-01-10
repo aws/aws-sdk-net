@@ -91,7 +91,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CacheBehaviors. 
         /// <para>
-        /// A complex type that contains zero or more <code>CacheBehavior</code> elements.
+        /// A complex type that contains zero or more <c>CacheBehavior</c> elements.
         /// </para>
         /// </summary>
         public CacheBehaviors CacheBehaviors
@@ -114,14 +114,13 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value of <code>CallerReference</code> is new (regardless of the content of
-        /// the <code>DistributionConfig</code> object), CloudFront creates a new distribution.
+        /// If the value of <c>CallerReference</c> is new (regardless of the content of the <c>DistributionConfig</c>
+        /// object), CloudFront creates a new distribution.
         /// </para>
         ///  
         /// <para>
-        /// If <code>CallerReference</code> is a value that you already sent in a previous request
-        /// to create a distribution, CloudFront returns a <code>DistributionAlreadyExists</code>
-        /// error.
+        /// If <c>CallerReference</c> is a value that you already sent in a previous request to
+        /// create a distribution, CloudFront returns a <c>DistributionAlreadyExists</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -159,7 +158,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ContinuousDeploymentPolicyId. 
         /// <para>
-        /// The identifier of a continuous deployment policy. For more information, see <code>CreateContinuousDeploymentPolicy</code>.
+        /// The identifier of a continuous deployment policy. For more information, see <c>CreateContinuousDeploymentPolicy</c>.
         /// </para>
         /// </summary>
         public string ContinuousDeploymentPolicyId
@@ -209,8 +208,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultCacheBehavior. 
         /// <para>
-        /// A complex type that describes the default cache behavior if you don't specify a <code>CacheBehavior</code>
-        /// element or if files don't match any of the values of <code>PathPattern</code> in <code>CacheBehavior</code>
+        /// A complex type that describes the default cache behavior if you don't specify a <c>CacheBehavior</c>
+        /// element or if files don't match any of the values of <c>PathPattern</c> in <c>CacheBehavior</c>
         /// elements. You must create exactly one default cache behavior.
         /// </para>
         /// </summary>
@@ -230,25 +229,25 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DefaultRootObject. 
         /// <para>
-        /// The object that you want CloudFront to request from your origin (for example, <code>index.html</code>)
-        /// when a viewer requests the root URL for your distribution (<code>https://www.example.com</code>)
-        /// instead of an object in your distribution (<code>https://www.example.com/product-description.html</code>).
+        /// The object that you want CloudFront to request from your origin (for example, <c>index.html</c>)
+        /// when a viewer requests the root URL for your distribution (<c>https://www.example.com</c>)
+        /// instead of an object in your distribution (<c>https://www.example.com/product-description.html</c>).
         /// Specifying a default root object avoids exposing the contents of your distribution.
         /// </para>
         ///  
         /// <para>
-        /// Specify only the object name, for example, <code>index.html</code>. Don't add a <code>/</code>
+        /// Specify only the object name, for example, <c>index.html</c>. Don't add a <c>/</c>
         /// before the object name.
         /// </para>
         ///  
         /// <para>
         /// If you don't want to specify a default root object when you create a distribution,
-        /// include an empty <code>DefaultRootObject</code> element.
+        /// include an empty <c>DefaultRootObject</c> element.
         /// </para>
         ///  
         /// <para>
         /// To delete the default root object from an existing distribution, update the distribution
-        /// configuration and include an empty <code>DefaultRootObject</code> element.
+        /// configuration and include an empty <c>DefaultRootObject</c> element.
         /// </para>
         ///  
         /// <para>
@@ -296,8 +295,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property HttpVersion. 
         /// <para>
         /// (Optional) Specify the maximum HTTP version(s) that you want viewers to use to communicate
-        /// with CloudFront. The default value for new web distributions is <code>http2</code>.
-        /// Viewers that don't support HTTP/2 automatically use an earlier HTTP version.
+        /// with CloudFront. The default value for new web distributions is <c>http2</c>. Viewers
+        /// that don't support HTTP/2 automatically use an earlier HTTP version.
         /// </para>
         ///  
         /// <para>
@@ -331,16 +330,15 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IsIPV6Enabled. 
         /// <para>
         /// If you want CloudFront to respond to IPv6 DNS requests with an IPv6 address for your
-        /// distribution, specify <code>true</code>. If you specify <code>false</code>, CloudFront
-        /// responds to IPv6 DNS requests with the DNS response code <code>NOERROR</code> and
-        /// with no IP addresses. This allows viewers to submit a second request, for an IPv4
-        /// address for your distribution.
+        /// distribution, specify <c>true</c>. If you specify <c>false</c>, CloudFront responds
+        /// to IPv6 DNS requests with the DNS response code <c>NOERROR</c> and with no IP addresses.
+        /// This allows viewers to submit a second request, for an IPv4 address for your distribution.
         /// </para>
         ///  
         /// <para>
         /// In general, you should enable IPv6 if you have users on IPv6 networks who want to
         /// access your content. However, if you're using signed URLs or signed cookies to restrict
-        /// access to your content, and if you're using a custom policy that includes the <code>IpAddress</code>
+        /// access to your content, and if you're using a custom policy that includes the <c>IpAddress</c>
         /// parameter to restrict the IP addresses that can access your content, don't enable
         /// IPv6. If you want to restrict access to some content by IP address and not restrict
         /// access to other content (or restrict access but not by IP address), you can create
@@ -451,14 +449,14 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property PriceClass. 
         /// <para>
         /// The price class that corresponds with the maximum price that you want to pay for CloudFront
-        /// service. If you specify <code>PriceClass_All</code>, CloudFront responds to requests
-        /// for your objects from all CloudFront edge locations.
+        /// service. If you specify <c>PriceClass_All</c>, CloudFront responds to requests for
+        /// your objects from all CloudFront edge locations.
         /// </para>
         ///  
         /// <para>
-        /// If you specify a price class other than <code>PriceClass_All</code>, CloudFront serves
-        /// your objects from the CloudFront edge location that has the lowest latency among the
-        /// edge locations in your price class. Viewers who are in or near regions that are excluded
+        /// If you specify a price class other than <c>PriceClass_All</c>, CloudFront serves your
+        /// objects from the CloudFront edge location that has the lowest latency among the edge
+        /// locations in your price class. Viewers who are in or near regions that are excluded
         /// from your specified price class may encounter slower performance.
         /// </para>
         ///  
@@ -505,8 +503,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Staging. 
         /// <para>
         /// A Boolean that indicates whether this is a staging distribution. When this value is
-        /// <code>true</code>, this is a staging distribution. When this value is <code>false</code>,
-        /// this is not a staging distribution.
+        /// <c>true</c>, this is a staging distribution. When this value is <c>false</c>, this
+        /// is not a staging distribution.
         /// </para>
         /// </summary>
         public bool Staging
@@ -545,8 +543,8 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// A unique identifier that specifies the WAF web ACL, if any, to associate with this
         /// distribution. To specify a web ACL created using the latest version of WAF, use the
-        /// ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </para>
         ///  
         /// <para>

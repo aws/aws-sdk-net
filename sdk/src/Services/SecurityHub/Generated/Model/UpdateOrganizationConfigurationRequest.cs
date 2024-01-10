@@ -47,17 +47,17 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>true</code>, then Security Hub is automatically enabled in new accounts.
-        /// If set to <code>false</code>, then Security Hub isn't enabled in new accounts automatically.
-        /// The default value is <code>false</code>.
+        /// If set to <c>true</c>, then Security Hub is automatically enabled in new accounts.
+        /// If set to <c>false</c>, then Security Hub isn't enabled in new accounts automatically.
+        /// The default value is <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>,
-        /// then this field is set to <code>false</code> and can't be changed in the home Region
-        /// and linked Regions. However, in that case, the delegated administrator can create
-        /// a configuration policy in which Security Hub is enabled and associate the policy with
-        /// new organization accounts.
+        /// If the <c>ConfigurationType</c> of your organization is set to <c>CENTRAL</c>, then
+        /// this field is set to <c>false</c> and can't be changed in the home Region and linked
+        /// Regions. However, in that case, the delegated administrator can create a configuration
+        /// policy in which Security Hub is enabled and associate the policy with new organization
+        /// accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,21 +81,21 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value of this parameter is equal to <code>DEFAULT</code>.
+        /// The default value of this parameter is equal to <c>DEFAULT</c>.
         /// </para>
         ///  
         /// <para>
-        /// If equal to <code>DEFAULT</code>, then Security Hub default standards are automatically
-        /// enabled for new member accounts. If equal to <code>NONE</code>, then default standards
-        /// are not automatically enabled for new member accounts.
+        /// If equal to <c>DEFAULT</c>, then Security Hub default standards are automatically
+        /// enabled for new member accounts. If equal to <c>NONE</c>, then default standards are
+        /// not automatically enabled for new member accounts.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>ConfigurationType</code> of your organization is set to <code>CENTRAL</code>,
-        /// then this field is set to <code>NONE</code> and can't be changed in the home Region
-        /// and linked Regions. However, in that case, the delegated administrator can create
-        /// a configuration policy in which specific security standards are enabled and associate
-        /// the policy with new organization accounts.
+        /// If the <c>ConfigurationType</c> of your organization is set to <c>CENTRAL</c>, then
+        /// this field is set to <c>NONE</c> and can't be changed in the home Region and linked
+        /// Regions. However, in that case, the delegated administrator can create a configuration
+        /// policy in which specific security standards are enabled and associate the policy with
+        /// new organization accounts.
         /// </para>
         /// </summary>
         public AutoEnableStandards AutoEnableStandards

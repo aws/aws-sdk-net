@@ -59,7 +59,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PublicKeyBase64. 
         /// <para>
-        /// A base64-encoded public key of the <code>ssh-rsa</code> type.
+        /// A base64-encoded public key of the <c>ssh-rsa</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

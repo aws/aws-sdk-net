@@ -277,28 +277,27 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         ///  
         /// <para>
-        /// If the optional <code>AdditionalSearchKeys</code> parameter was included in the <a
-        /// href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
-        /// request, the <code>FoundByItems</code> list should be interpreted based on the <code>LogicalOperator</code>
+        /// If the optional <c>AdditionalSearchKeys</c> parameter was included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+        /// request, the <c>FoundByItems</c> list should be interpreted based on the <c>LogicalOperator</c>
         /// used in the request:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AND</code> - The profile included in the response matched all of the search
-        /// keys specified in the request. The <code>FoundByItems</code> will include all of the
-        /// key-value(s) pairs that were specified in the request (as this is a requirement of
-        /// <code>AND</code> search logic).
+        ///  <c>AND</c> - The profile included in the response matched all of the search keys
+        /// specified in the request. The <c>FoundByItems</c> will include all of the key-value(s)
+        /// pairs that were specified in the request (as this is a requirement of <c>AND</c> search
+        /// logic).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OR</code> - The profile included in the response matched at least one of the
-        /// search keys specified in the request. The <code>FoundByItems</code> will include each
-        /// of the key-value(s) pairs that the profile was found by.
+        ///  <c>OR</c> - The profile included in the response matched at least one of the search
+        /// keys specified in the request. The <c>FoundByItems</c> will include each of the key-value(s)
+        /// pairs that the profile was found by.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>OR</code> relationship is the default behavior if the <code>LogicalOperator</code>
-        /// parameter is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+        /// The <c>OR</c> relationship is the default behavior if the <c>LogicalOperator</c> parameter
+        /// is not included in the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
         /// request.
         /// </para>
         /// </summary>

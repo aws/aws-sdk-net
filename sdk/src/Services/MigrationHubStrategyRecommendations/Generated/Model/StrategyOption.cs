@@ -79,7 +79,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Gets and sets the property TargetDestination. 
         /// <para>
         ///  Destination information about where the application component can migrate to. For
-        /// example, <code>EC2</code>, <code>ECS</code>, and so on. 
+        /// example, <c>EC2</c>, <c>ECS</c>, and so on. 
         /// </para>
         /// </summary>
         public TargetDestination TargetDestination

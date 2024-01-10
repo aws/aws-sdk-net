@@ -40,9 +40,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The limit that you requested: <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code>, the
-        /// maximum number of hosted zones that you can associate with the specified reusable
-        /// delegation set.
+        /// The limit that you requested: <c>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</c>, the maximum
+        /// number of hosted zones that you can associate with the specified reusable delegation
+        /// set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The current value for the <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> limit.
+        /// The current value for the <c>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</c> limit.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

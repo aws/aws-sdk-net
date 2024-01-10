@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Contains a property type, which can be one of <code>attribute</code>, <code>measurement</code>,
-    /// <code>metric</code>, or <code>transform</code>.
+    /// Contains a property type, which can be one of <c>attribute</c>, <c>measurement</c>,
+    /// <c>metric</c>, or <c>transform</c>.
     /// </summary>
     public partial class PropertyType
     {

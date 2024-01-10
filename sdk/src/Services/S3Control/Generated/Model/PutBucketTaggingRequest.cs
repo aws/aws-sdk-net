@@ -60,7 +60,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// To use this action, you must have permissions to perform the <code>s3-outposts:PutBucketTagging</code>
+    /// To use this action, you must have permissions to perform the <c>s3-outposts:PutBucketTagging</c>
     /// action. The Outposts bucket owner has this permission by default and can grant this
     /// permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">
     /// Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
@@ -68,11 +68,11 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>PutBucketTagging</code> has the following special errors:
+    ///  <c>PutBucketTagging</c> has the following special errors:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Error code: <code>InvalidTagError</code> 
+    /// Error code: <c>InvalidTagError</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Error code: <code>MalformedXMLError</code> 
+    /// Error code: <c>MalformedXMLError</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Error code: <code>OperationAbortedError </code> 
+    /// Error code: <c>OperationAbortedError </c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    /// Error code: <code>InternalError</code> 
+    /// Error code: <c>InternalError</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -109,16 +109,16 @@ namespace Amazon.S3Control.Model
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
-    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// parameter of <c>x-amz-outpost-id</c> to be passed with the request. In addition, you
+    /// must use an S3 on Outposts endpoint hostname prefix instead of <c>s3-control</c>.
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">Examples</a>
+    /// Outposts endpoint hostname prefix and the <c>x-amz-outpost-id</c> derived by using
+    /// the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketTagging.html#API_control_PutBucketTagging_Examples">Examples</a>
     /// section.
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>PutBucketTagging</code>:
+    /// The following actions are related to <c>PutBucketTagging</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -170,10 +170,10 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
-        /// CLI, you must specify the ARN of the bucket accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>.
-        /// For example, to access the bucket <code>reports</code> through Outpost <code>my-outpost</code>
-        /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
-        /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>.
+        /// CLI, you must specify the ARN of the bucket accessed in the format <c>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</c>.
+        /// For example, to access the bucket <c>reports</c> through Outpost <c>my-outpost</c>
+        /// owned by account <c>123456789012</c> in Region <c>us-west-2</c>, use the URL encoding
+        /// of <c>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</c>.
         /// The value must be URL encoded. 
         /// </para>
         /// </summary>

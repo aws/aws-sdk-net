@@ -209,8 +209,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ConversationEndTime. 
         /// <para>
         /// The date and time when the conversation in which the utterance took place ended. A
-        /// conversation is defined as a unique combination of a <code>sessionId</code> and an
-        /// <code>originatingRequestId</code>.
+        /// conversation is defined as a unique combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
         public DateTime ConversationEndTime
@@ -229,8 +228,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ConversationStartTime. 
         /// <para>
         /// The date and time when the conversation in which the utterance took place began. A
-        /// conversation is defined as a unique combination of a <code>sessionId</code> and an
-        /// <code>originatingRequestId</code>.
+        /// conversation is defined as a unique combination of a <c>sessionId</c> and an <c>originatingRequestId</c>.
         /// </para>
         /// </summary>
         public DateTime ConversationStartTime
@@ -248,7 +246,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property DialogActionType. 
         /// <para>
-        /// The type of dialog action that the utterance is associated to. See the <code>type</code>
+        /// The type of dialog action that the utterance is associated to. See the <c>type</c>
         /// field in <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_DialogAction.html">DialogAction</a>
         /// for more information.
         /// </para>
@@ -276,15 +274,15 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>audio/l16; rate=16000; channels=1</code> 
+        ///  <c>audio/l16; rate=16000; channels=1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/x-l16; sample-rate=16000; channel-count=1</code> 
+        ///  <c>audio/x-l16; sample-rate=16000; channel-count=1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</code>
+        ///  <c>audio/lpcm; sample-rate=8000; sample-size-bits=16; channel-count=1; is-big-endian=false</c>
         /// 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -293,7 +291,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</code>
+        ///  <c>audio/x-cbr-opus-with-preamble;preamble-size=0;bit-rate=256000;frame-size-milliseconds=4</c>
         /// 
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -302,7 +300,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>text/plain; charset=utf-8</code> 
+        ///  <c>text/plain; charset=utf-8</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -361,20 +359,20 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Speech</code> – The session consisted of spoken dialogue.
+        ///  <c>Speech</c> – The session consisted of spoken dialogue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Text</code> – The session consisted of written dialogue.
+        ///  <c>Text</c> – The session consisted of written dialogue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DTMF</code> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency)
+        ///  <c>DTMF</c> – The session consisted of touch-tone keypad (Dual Tone Multi-Frequency)
         /// key presses.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MultiMode</code> – The session consisted of multiple modes.
+        ///  <c>MultiMode</c> – The session consisted of multiple modes.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -397,23 +395,23 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>audio/mpeg</code> 
+        ///  <c>audio/mpeg</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/ogg</code> 
+        ///  <c>audio/ogg</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/pcm (16 KHz)</code> 
+        ///  <c>audio/pcm (16 KHz)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audio/</code> (defaults to <code>mpeg</code>)
+        ///  <c>audio/</c> (defaults to <c>mpeg</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>text/plain; charset=utf-8</code> 
+        ///  <c>text/plain; charset=utf-8</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

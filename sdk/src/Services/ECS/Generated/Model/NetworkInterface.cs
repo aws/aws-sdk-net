@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the elastic network interface for tasks that use the <code>awsvpc</code>
+    /// An object representing the elastic network interface for tasks that use the <c>awsvpc</c>
     /// network mode.
     /// </summary>
     public partial class NetworkInterface

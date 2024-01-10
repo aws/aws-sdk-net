@@ -67,7 +67,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ChartConfiguration. 
         /// <para>
-        /// The configuration for a <code>HistogramVisual</code>.
+        /// The configuration for a <c>HistogramVisual</c>.
         /// </para>
         /// </summary>
         public HistogramConfiguration ChartConfiguration

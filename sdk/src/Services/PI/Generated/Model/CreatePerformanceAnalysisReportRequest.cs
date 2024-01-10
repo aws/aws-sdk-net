@@ -67,8 +67,8 @@ namespace Amazon.PI.Model
         /// </para>
         ///  
         /// <para>
-        /// To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
-        /// value. For example, specify <code>db-ADECBTYHKTSAUMUZQYPDS2GW4A</code>.
+        /// To use an Amazon RDS instance as a data source, you specify its <c>DbiResourceId</c>
+        /// value. For example, specify <c>db-ADECBTYHKTSAUMUZQYPDS2GW4A</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -88,7 +88,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property ServiceType. 
         /// <para>
         /// The Amazon Web Services service for which Performance Insights will return metrics.
-        /// Valid value is <code>RDS</code>.
+        /// Valid value is <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

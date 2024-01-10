@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomainChangeProgress</code> request. Contains the progress
+    /// The result of a <c>DescribeDomainChangeProgress</c> request. Contains the progress
     /// information of the requested domain change.
     /// </summary>
     public partial class DescribeDomainChangeProgressResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property ChangeProgressStatus. 
         /// <para>
-        /// Progress information for the configuration change that is requested in the <code>DescribeDomainChangeProgress</code>
+        /// Progress information for the configuration change that is requested in the <c>DescribeDomainChangeProgress</c>
         /// request. 
         /// </para>
         /// </summary>

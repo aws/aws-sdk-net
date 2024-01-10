@@ -38,25 +38,23 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The rolling update (<code>ECS</code>) deployment type replaces the current running
-        /// version of the container with the latest version.
+        /// The rolling update (<c>ECS</c>) deployment type replaces the current running version
+        /// of the container with the latest version.
         /// </para>
         ///  
         /// <para>
-        /// The blue/green (<code>CODE_DEPLOY</code>) deployment type uses the blue/green deployment
+        /// The blue/green (<c>CODE_DEPLOY</c>) deployment type uses the blue/green deployment
         /// model that is powered by CodeDeploy. This deployment model a new deployment of a service
         /// can be verified before production traffic is sent to it.
         /// </para>
         ///  
         /// <para>
-        /// The external (<code>EXTERNAL</code>) deployment type allows the use of any third-party
-        /// deployment controller for full control over the deployment process for an Amazon ECS
-        /// service.
+        /// The external (<c>EXTERNAL</c>) deployment type allows the use of any third-party deployment
+        /// controller for full control over the deployment process for an Amazon ECS service.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ECS</code> | <code>CODE_DEPLOY</code> | <code>EXTERNAL</code>
-        /// 
+        /// Valid values: <c>ECS</c> | <c>CODE_DEPLOY</c> | <c>EXTERNAL</c> 
         /// </para>
         /// </summary>
         public string Type

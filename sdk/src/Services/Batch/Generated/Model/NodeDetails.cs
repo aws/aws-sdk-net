@@ -58,7 +58,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property NodeIndex. 
         /// <para>
         /// The node index for the node. Node index numbering starts at zero. This index is also
-        /// available on the node with the <code>AWS_BATCH_JOB_NODE_INDEX</code> environment variable.
+        /// available on the node with the <c>AWS_BATCH_JOB_NODE_INDEX</c> environment variable.
         /// </para>
         /// </summary>
         public int NodeIndex

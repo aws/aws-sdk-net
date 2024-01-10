@@ -32,7 +32,7 @@ namespace Amazon.IoT.Model
     /// Container for the parameters to the CreateThing operation.
     /// Creates a thing record in the registry. If this call is made multiple times using
     /// the same thing name and configuration, the call will succeed. If this call is made
-    /// with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code>
+    /// with the same thing name but different configuration a <c>ResourceAlreadyExistsException</c>
     /// is thrown.
     /// 
     ///  <note> 
@@ -61,7 +61,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{\"attributes\":{\"string1\":\"string2\"}}</code> 
+        ///  <c>{\"attributes\":{\"string1\":\"string2\"}}</c> 
         /// </para>
         /// </summary>
         public AttributePayload AttributePayload

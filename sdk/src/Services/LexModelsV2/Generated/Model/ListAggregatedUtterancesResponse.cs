@@ -233,8 +233,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates whether there are more results to return in a response to the
-        /// <code>ListAggregatedUtterances</code> operation. If the <code>nextToken</code> field
-        /// is present, you send the contents as the <code>nextToken</code> parameter of a <code>ListAggregatedUtterances</code>
+        /// <c>ListAggregatedUtterances</c> operation. If the <c>nextToken</c> field is present,
+        /// you send the contents as the <c>nextToken</c> parameter of a <c>ListAggregatedUtterances</c>
         /// operation request to get the next page of results.
         /// </para>
         /// </summary>

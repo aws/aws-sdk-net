@@ -47,8 +47,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get the next page of results, perform another <code>GetSetupHistory</code> request
-        /// and specify the next page token using the pageToken parameter.
+        /// To get the next page of results, perform another <c>GetSetupHistory</c> request and
+        /// specify the next page token using the pageToken parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=24, Max=40)]

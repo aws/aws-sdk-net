@@ -30,13 +30,13 @@ namespace Amazon.TranscribeService.Model
 {
     /// <summary>
     /// Makes it possible to control how your transcription job is processed. Currently, the
-    /// only <code>JobExecutionSettings</code> modification you can choose is enabling job
-    /// queueing using the <code>AllowDeferredExecution</code> sub-parameter.
+    /// only <c>JobExecutionSettings</c> modification you can choose is enabling job queueing
+    /// using the <c>AllowDeferredExecution</c> sub-parameter.
     /// 
     ///  
     /// <para>
-    /// If you include <code>JobExecutionSettings</code> in your request, you must also include
-    /// the sub-parameters: <code>AllowDeferredExecution</code> and <code>DataAccessRoleArn</code>.
+    /// If you include <c>JobExecutionSettings</c> in your request, you must also include
+    /// the sub-parameters: <c>AllowDeferredExecution</c> and <c>DataAccessRoleArn</c>.
     /// </para>
     /// </summary>
     public partial class JobExecutionSettings
@@ -48,16 +48,16 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property AllowDeferredExecution. 
         /// <para>
         /// Makes it possible to enable job queuing when your concurrent request limit is exceeded.
-        /// When <code>AllowDeferredExecution</code> is set to <code>true</code>, transcription
-        /// job requests are placed in a queue until the number of jobs falls below the concurrent
-        /// request limit. If <code>AllowDeferredExecution</code> is set to <code>false</code>
-        /// and the number of transcription job requests exceed the concurrent request limit,
-        /// you get a <code>LimitExceededException</code> error.
+        /// When <c>AllowDeferredExecution</c> is set to <c>true</c>, transcription job requests
+        /// are placed in a queue until the number of jobs falls below the concurrent request
+        /// limit. If <c>AllowDeferredExecution</c> is set to <c>false</c> and the number of transcription
+        /// job requests exceed the concurrent request limit, you get a <c>LimitExceededException</c>
+        /// error.
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>AllowDeferredExecution</code> in your request, you must also
-        /// include <code>DataAccessRoleArn</code>.
+        /// If you include <c>AllowDeferredExecution</c> in your request, you must also include
+        /// <c>DataAccessRoleArn</c>.
         /// </para>
         /// </summary>
         public bool AllowDeferredExecution
@@ -82,15 +82,15 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
         /// ARNs</a>.
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>DataAccessRoleArn</code> in your request, you must
-        /// also include <code>AllowDeferredExecution</code>.
+        /// Note that if you include <c>DataAccessRoleArn</c> in your request, you must also include
+        /// <c>AllowDeferredExecution</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

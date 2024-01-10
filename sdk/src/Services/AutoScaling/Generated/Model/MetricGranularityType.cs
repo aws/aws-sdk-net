@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// The granularity. The only valid value is <code>1Minute</code>.
+        /// The granularity. The only valid value is <c>1Minute</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

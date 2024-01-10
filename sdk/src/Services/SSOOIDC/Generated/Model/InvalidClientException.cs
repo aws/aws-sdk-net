@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
-    /// Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request
-    /// is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code>
-    /// or an expired <code>clientSecret</code>.
+    /// Indicates that the <c>clientId</c> or <c>clientSecret</c> in the request is invalid.
+    /// For example, this can occur when a client sends an incorrect <c>clientId</c> or an
+    /// expired <c>clientSecret</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -131,7 +131,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Single error code. For this exception the value will be <code>invalid_client</code>.
+        /// Single error code. For this exception the value will be <c>invalid_client</c>.
         /// </para>
         /// </summary>
         public string Error

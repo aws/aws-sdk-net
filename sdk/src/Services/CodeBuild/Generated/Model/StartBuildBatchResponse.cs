@@ -38,7 +38,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BuildBatch. 
         /// <para>
-        /// A <code>BuildBatch</code> object that contains information about the batch build.
+        /// A <c>BuildBatch</c> object that contains information about the batch build.
         /// </para>
         /// </summary>
         public BuildBatch BuildBatch

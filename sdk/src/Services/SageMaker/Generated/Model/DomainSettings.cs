@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings that apply to the <code>SageMaker Domain</code>. These settings
-    /// are specified through the <code>CreateDomain</code> API call.
+    /// A collection of settings that apply to the <c>SageMaker Domain</c>. These settings
+    /// are specified through the <c>CreateDomain</c> API call.
     /// </summary>
     public partial class DomainSettings
     {
@@ -80,8 +80,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RStudioServerProDomainSettings. 
         /// <para>
-        /// A collection of settings that configure the <code>RStudioServerPro</code> Domain-level
-        /// app.
+        /// A collection of settings that configure the <c>RStudioServerPro</c> Domain-level app.
         /// </para>
         /// </summary>
         public RStudioServerProDomainSettings RStudioServerProDomainSettings
@@ -99,8 +98,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The security groups for the Amazon Virtual Private Cloud that the <code>Domain</code>
-        /// uses for communication between Domain-level apps and user apps.
+        /// The security groups for the Amazon Virtual Private Cloud that the <c>Domain</c> uses
+        /// for communication between Domain-level apps and user apps.
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]

@@ -30,7 +30,7 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Specifies the weights for the fair share identifiers for the fair share policy. Fair
-    /// share identifiers that aren't included have a default weight of <code>1.0</code>.
+    /// share identifiers that aren't included have a default weight of <c>1.0</c>.
     /// </summary>
     public partial class ShareAttributes
     {
@@ -43,9 +43,8 @@ namespace Amazon.Batch.Model
         /// A fair share identifier or fair share identifier prefix. If the string ends with an
         /// asterisk (*), this entry specifies the weight factor to use for fair share identifiers
         /// that start with that prefix. The list of fair share identifiers in a fair share policy
-        /// can't overlap. For example, you can't have one that specifies a <code>shareIdentifier</code>
-        /// of <code>UserA*</code> and another that specifies a <code>shareIdentifier</code> of
-        /// <code>UserA-1</code>.
+        /// can't overlap. For example, you can't have one that specifies a <c>shareIdentifier</c>
+        /// of <c>UserA*</c> and another that specifies a <c>shareIdentifier</c> of <c>UserA-1</c>.
         /// </para>
         ///  
         /// <para>

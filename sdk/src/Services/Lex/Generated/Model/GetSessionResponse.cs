@@ -43,7 +43,7 @@ namespace Amazon.Lex.Model
         /// Gets and sets the property ActiveContexts. 
         /// <para>
         /// A list of active contexts for the session. A context can be set when an intent is
-        /// fulfilled or by calling the <code>PostContent</code>, <code>PostText</code>, or <code>PutSession</code>
+        /// fulfilled or by calling the <c>PostContent</c>, <c>PostText</c>, or <c>PutSession</c>
         /// operation.
         /// </para>
         ///  
@@ -88,13 +88,13 @@ namespace Amazon.Lex.Model
         /// <para>
         /// An array of information about the intents used in the session. The array can contain
         /// a maximum of three summaries. If more than three intents are used in the session,
-        /// the <code>recentIntentSummaryView</code> operation contains information about the
-        /// last three intents used.
+        /// the <c>recentIntentSummaryView</c> operation contains information about the last three
+        /// intents used.
         /// </para>
         ///  
         /// <para>
-        /// If you set the <code>checkpointLabelFilter</code> parameter in the request, the array
-        /// contains only the intents with the specified label.
+        /// If you set the <c>checkpointLabelFilter</c> parameter in the request, the array contains
+        /// only the intents with the specified label.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

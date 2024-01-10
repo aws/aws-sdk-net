@@ -40,8 +40,8 @@ namespace Amazon.PinpointEmail.Model
         /// Gets and sets the property DailyVolumes. 
         /// <para>
         /// An object that contains deliverability metrics for the domain that you specified.
-        /// This object contains data for each day, starting on the <code>StartDate</code> and
-        /// ending on the <code>EndDate</code>.
+        /// This object contains data for each day, starting on the <c>StartDate</c> and ending
+        /// on the <c>EndDate</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.PinpointEmail.Model
         /// <para>
         /// An object that contains deliverability metrics for the domain that you specified.
         /// The data in this object is a summary of all of the data that was collected from the
-        /// <code>StartDate</code> to the <code>EndDate</code>.
+        /// <c>StartDate</c> to the <c>EndDate</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DefineExpression</code> request. Contains the status of the
-    /// newly-configured expression.
+    /// The result of a <c>DefineExpression</c> request. Contains the status of the newly-configured
+    /// expression.
     /// </summary>
     public partial class DefineExpressionResponse : AmazonWebServiceResponse
     {

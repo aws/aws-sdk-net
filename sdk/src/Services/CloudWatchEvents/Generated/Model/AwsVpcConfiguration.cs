@@ -31,7 +31,7 @@ namespace Amazon.CloudWatchEvents.Model
     /// <summary>
     /// This structure specifies the VPC subnets and security groups for the task, and whether
     /// a public IP address is to be used. This structure is relevant only for ECS tasks that
-    /// use the <code>awsvpc</code> network mode.
+    /// use the <c>awsvpc</c> network mode.
     /// </summary>
     public partial class AwsVpcConfiguration
     {
@@ -43,8 +43,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property AssignPublicIp. 
         /// <para>
         /// Specifies whether the task's elastic network interface receives a public IP address.
-        /// You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code>
-        /// is set to <code>FARGATE</code>.
+        /// You can specify <c>ENABLED</c> only when <c>LaunchType</c> in <c>EcsParameters</c>
+        /// is set to <c>FARGATE</c>.
         /// </para>
         /// </summary>
         public AssignPublicIp AssignPublicIp

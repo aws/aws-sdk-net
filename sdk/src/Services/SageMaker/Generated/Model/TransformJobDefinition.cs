@@ -49,8 +49,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>SingleRecord</code> means only one record is used per mini-batch. <code>MultiRecord</code>
-        /// means a mini-batch is set to contain as many records that can fit within the <code>MaxPayloadInMB</code>
+        ///  <c>SingleRecord</c> means only one record is used per mini-batch. <c>MultiRecord</c>
+        /// means a mini-batch is set to contain as many records that can fit within the <c>MaxPayloadInMB</c>
         /// limit.
         /// </para>
         /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Configures inspection of the response header. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
+    /// Configures inspection of the response header. This is part of the <c>ResponseInspection</c>
+    /// configuration for <c>AWSManagedRulesATPRuleSet</c> and <c>AWSManagedRulesACFPRuleSet</c>.
     /// 
     /// 
     ///  <note> 
@@ -55,8 +55,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON examples: <code>"FailureValues": [ "LoginFailed", "Failed login" ]</code> and
-        /// <code>"FailureValues": [ "AccountCreationFailed" ]</code> 
+        /// JSON examples: <c>"FailureValues": [ "LoginFailed", "Failed login" ]</c> and <c>"FailureValues":
+        /// [ "AccountCreationFailed" ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
@@ -80,7 +80,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"Name": [ "RequestResult" ]</code> 
+        /// JSON example: <c>"Name": [ "RequestResult" ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -106,9 +106,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON examples: <code>"SuccessValues": [ "LoginPassed", "Successful login" ]</code>
-        /// and <code>"SuccessValues": [ "AccountCreated", "Successful account creation" ]</code>
-        /// 
+        /// JSON examples: <c>"SuccessValues": [ "LoginPassed", "Successful login" ]</c> and <c>"SuccessValues":
+        /// [ "AccountCreated", "Successful account creation" ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]

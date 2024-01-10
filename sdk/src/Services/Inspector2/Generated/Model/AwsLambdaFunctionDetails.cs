@@ -49,7 +49,7 @@ namespace Amazon.Inspector2.Model
         /// <para>
         /// The instruction set architecture that the AWS Lambda function supports. Architecture
         /// is a string array with one of the valid values. The default architecture value is
-        /// <code>x86_64</code>.
+        /// <c>x86_64</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -164,8 +164,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property PackageType. 
         /// <para>
-        /// The type of deployment package. Set to <code>Image</code> for container image and
-        /// set <code>Zip</code> for .zip file archive.
+        /// The type of deployment package. Set to <c>Image</c> for container image and set <c>Zip</c>
+        /// for .zip file archive.
         /// </para>
         /// </summary>
         public PackageType PackageType

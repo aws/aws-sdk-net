@@ -52,9 +52,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property Actions. 
         /// <para>
         /// The type of actions proposed, such as inviting a member or removing a member. The
-        /// types of <code>Actions</code> in a proposal are mutually exclusive. For example, a
-        /// proposal with <code>Invitations</code> actions cannot also contain <code>Removals</code>
-        /// actions.
+        /// types of <c>Actions</c> in a proposal are mutually exclusive. For example, a proposal
+        /// with <c>Invitations</c> actions cannot also contain <c>Removals</c> actions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

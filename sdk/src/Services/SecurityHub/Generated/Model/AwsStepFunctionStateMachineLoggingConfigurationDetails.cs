@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.
+    /// The <c>LoggingConfiguration</c> data type is used to set CloudWatch Logs options.
     /// </summary>
     public partial class AwsStepFunctionStateMachineLoggingConfigurationDetails
     {

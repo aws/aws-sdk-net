@@ -79,10 +79,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Use this parameter if you receive a <code>NextToken</code> response in a previous
-        /// request that indicates that there is more output available. Set it to the value of
-        /// the previous call's <code>NextToken</code> response to indicate where the output should
-        /// continue from. 
+        /// Use this parameter if you receive a <c>NextToken</c> response in a previous request
+        /// that indicates that there is more output available. Set it to the value of the previous
+        /// call's <c>NextToken</c> response to indicate where the output should continue from.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

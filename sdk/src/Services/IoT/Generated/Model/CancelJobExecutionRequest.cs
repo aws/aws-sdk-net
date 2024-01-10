@@ -72,11 +72,11 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// (Optional) If <code>true</code> the job execution will be canceled if it has status
-        /// IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has
-        /// status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you
-        /// do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code>
-        /// will be thrown. The default is <code>false</code>.
+        /// (Optional) If <c>true</c> the job execution will be canceled if it has status IN_PROGRESS
+        /// or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED.
+        /// If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <c>force</c>
+        /// to <c>true</c>, then an <c>InvalidStateTransitionException</c> will be thrown. The
+        /// default is <c>false</c>.
         /// </para>
         ///  
         /// <para>

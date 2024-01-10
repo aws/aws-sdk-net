@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxValue. 
         /// <para>
         /// The maximum value for the hyperparameter. The tuning job uses floating-point values
-        /// between <code>MinValue</code> value and this value for tuning.
+        /// between <c>MinValue</c> value and this value for tuning.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MinValue. 
         /// <para>
         /// The minimum value for the hyperparameter. The tuning job uses floating-point values
-        /// between this value and <code>MaxValue</code>for tuning.
+        /// between this value and <c>MaxValue</c>for tuning.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

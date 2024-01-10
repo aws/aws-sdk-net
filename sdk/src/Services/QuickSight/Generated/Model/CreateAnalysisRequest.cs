@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the CreateAnalysis operation.
     /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
-    /// or from an <code>AnalysisDefinition</code>.
+    /// or from an <c>AnalysisDefinition</c>.
     /// </summary>
     public partial class CreateAnalysisRequest : AmazonQuickSightRequest
     {
@@ -96,8 +96,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
-        /// order for the request to be valid.
+        /// Either a <c>SourceEntity</c> or a <c>Definition</c> must be provided in order for
+        /// the request to be valid.
         /// </para>
         /// </summary>
         public AnalysisDefinition Definition
@@ -174,13 +174,13 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Permissions. 
         /// <para>
         /// A structure that describes the principals and the resource-level permissions on an
-        /// analysis. You can use the <code>Permissions</code> structure to grant permissions
-        /// by providing a list of Identity and Access Management (IAM) action information for
-        /// each principal listed by Amazon Resource Name (ARN). 
+        /// analysis. You can use the <c>Permissions</c> structure to grant permissions by providing
+        /// a list of Identity and Access Management (IAM) action information for each principal
+        /// listed by Amazon Resource Name (ARN). 
         /// </para>
         ///  
         /// <para>
-        /// To specify no permissions, omit <code>Permissions</code>.
+        /// To specify no permissions, omit <c>Permissions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -204,8 +204,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
-        /// order for the request to be valid.
+        /// Either a <c>SourceEntity</c> or a <c>Definition</c> must be provided in order for
+        /// the request to be valid.
         /// </para>
         /// </summary>
         public AnalysisSourceEntity SourceEntity

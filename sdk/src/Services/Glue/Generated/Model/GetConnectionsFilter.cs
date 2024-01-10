@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Filters the connection definitions that are returned by the <code>GetConnections</code>
+    /// Filters the connection definitions that are returned by the <c>GetConnections</c>
     /// API operation.
     /// </summary>
     public partial class GetConnectionsFilter

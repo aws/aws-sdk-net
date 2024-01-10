@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ConstantType. 
         /// <para>
-        /// The type of the singular filter constant. Valid values for this structure are <code>SINGULAR</code>.
+        /// The type of the singular filter constant. Valid values for this structure are <c>SINGULAR</c>.
         /// </para>
         /// </summary>
         public ConstantType ConstantType

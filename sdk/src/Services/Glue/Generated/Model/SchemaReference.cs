@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaId. 
         /// <para>
-        /// A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code>
+        /// A structure that contains schema identity fields. Either this or the <c>SchemaVersionId</c>
         /// has to be provided.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaVersionId. 
         /// <para>
-        /// The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code>
+        /// The unique ID assigned to a version of the schema. Either this or the <c>SchemaId</c>
         /// has to be provided.
         /// </para>
         /// </summary>

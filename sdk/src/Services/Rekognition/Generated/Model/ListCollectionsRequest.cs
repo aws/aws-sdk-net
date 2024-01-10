@@ -31,8 +31,8 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Container for the parameters to the ListCollections operation.
     /// Returns list of collection IDs in your account. If the result is truncated, the response
-    /// also provides a <code>NextToken</code> that you can use in the subsequent request
-    /// to fetch the next set of collection IDs.
+    /// also provides a <c>NextToken</c> that you can use in the subsequent request to fetch
+    /// the next set of collection IDs.
     /// 
     ///  
     /// <para>
@@ -40,7 +40,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:ListCollections</code>
+    /// This operation requires permissions to perform the <c>rekognition:ListCollections</c>
     /// action.
     /// </para>
     /// </summary>

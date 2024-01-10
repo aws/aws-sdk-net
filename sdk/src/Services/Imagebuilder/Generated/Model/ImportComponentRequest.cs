@@ -92,8 +92,8 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// The data of the component. Used to specify the data inline. Either <code>data</code>
-        /// or <code>uri</code> can be used to specify the data within the component.
+        /// The data of the component. Used to specify the data inline. Either <c>data</c> or
+        /// <c>uri</c> can be used to specify the data within the component.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -280,8 +280,8 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The uri of the component. Must be an Amazon S3 URL and the requester must have permission
         /// to access the Amazon S3 bucket. If you use Amazon S3, you can specify component content
-        /// up to your service quota. Either <code>data</code> or <code>uri</code> can be used
-        /// to specify the data within the component.
+        /// up to your service quota. Either <c>data</c> or <c>uri</c> can be used to specify
+        /// the data within the component.
         /// </para>
         /// </summary>
         public string Uri

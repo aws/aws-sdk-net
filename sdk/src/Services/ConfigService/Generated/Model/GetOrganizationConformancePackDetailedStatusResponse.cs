@@ -58,7 +58,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationConformancePackDetailedStatuses. 
         /// <para>
-        /// A list of <code>OrganizationConformancePackDetailedStatus</code> objects. 
+        /// A list of <c>OrganizationConformancePackDetailedStatus</c> objects. 
         /// </para>
         /// </summary>
         public List<OrganizationConformancePackDetailedStatus> OrganizationConformancePackDetailedStatuses

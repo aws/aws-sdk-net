@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for the parameters for response received from <code> <a>ListElasticsearchVersions</a>
-    /// </code> operation.
+    /// Container for the parameters for response received from <c> <a>ListElasticsearchVersions</a>
+    /// </c> operation.
     /// </summary>
     public partial class ListElasticsearchVersionsResponse : AmazonWebServiceResponse
     {

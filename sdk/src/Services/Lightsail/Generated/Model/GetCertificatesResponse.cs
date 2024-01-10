@@ -57,10 +57,9 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// If <code>NextPageToken</code> is returned there are more results available. The value
-        /// of <code>NextPageToken</code> is a unique pagination token for each page. Make the
-        /// call again using the returned token to retrieve the next page. Keep all other arguments
-        /// unchanged.
+        /// If <c>NextPageToken</c> is returned there are more results available. The value of
+        /// <c>NextPageToken</c> is a unique pagination token for each page. Make the call again
+        /// using the returned token to retrieve the next page. Keep all other arguments unchanged.
         /// </para>
         /// </summary>
         public string NextPageToken

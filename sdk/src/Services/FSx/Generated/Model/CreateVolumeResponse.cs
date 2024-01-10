@@ -38,8 +38,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Volume. 
         /// <para>
-        /// Returned after a successful <code>CreateVolume</code> API operation, describing the
-        /// volume just created.
+        /// Returned after a successful <c>CreateVolume</c> API operation, describing the volume
+        /// just created.
         /// </para>
         /// </summary>
         public Volume Volume

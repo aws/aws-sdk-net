@@ -40,8 +40,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the KMS key that is used for encryption. Provided if <code>Type</code>
-        /// is <code>KMS</code>.
+        /// The identifier of the KMS key that is used for encryption. Provided if <c>Type</c>
+        /// is <c>KMS</c>.
         /// </para>
         /// </summary>
         public string KeyId
@@ -59,13 +59,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the encryption configuration. Valid values are <code>ACTIVE</code>
-        /// or <code>UPDATING</code>.
+        /// The current status of the encryption configuration. Valid values are <c>ACTIVE</c>
+        /// or <c>UPDATING</c>.
         /// </para>
         ///  
         /// <para>
-        /// When <code>Status</code> is equal to <code>UPDATING</code>, X-Ray might use both the
-        /// old and new encryption.
+        /// When <c>Status</c> is equal to <c>UPDATING</c>, X-Ray might use both the old and new
+        /// encryption.
         /// </para>
         /// </summary>
         public string Status
@@ -83,8 +83,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of encryption. <code>KMS</code> indicates that the encryption uses KMS keys.
-        /// <code>NONE</code> indicates the default encryption.
+        /// The type of encryption. <c>KMS</c> indicates that the encryption uses KMS keys. <c>NONE</c>
+        /// indicates the default encryption.
         /// </para>
         /// </summary>
         public string Type

@@ -31,10 +31,10 @@ namespace Amazon.CodeGuruProfiler.Model
     /// <summary>
     /// Container for the parameters to the GetRecommendations operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html">
-    /// <code>Recommendation</code> </a> objects that contain recommendations for a profiling
-    /// group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html">
-    /// <code>Anomaly</code> </a> objects that contains details about anomalies detected in
-    /// the profiling group for the same time period is also returned.
+    /// <c>Recommendation</c> </a> objects that contain recommendations for a profiling group
+    /// for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html">
+    /// <c>Anomaly</c> </a> objects that contains details about anomalies detected in the
+    /// profiling group for the same time period is also returned.
     /// </summary>
     public partial class GetRecommendationsRequest : AmazonCodeGuruProfilerRequest
     {
@@ -46,10 +46,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  The start time of the profile to get analysis data about. You must specify <code>startTime</code>
-        /// and <code>endTime</code>. This is specified using the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// 
+        ///  The start time of the profile to get analysis data about. You must specify <c>startTime</c>
+        /// and <c>endTime</c>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+        /// represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,51 +68,51 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property Locale. 
         /// <para>
         ///  The language used to provide analysis. Specify using a string that is one of the
-        /// following <code>BCP 47</code> language codes. 
+        /// following <c>BCP 47</c> language codes. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>de-DE</code> - German, Germany 
+        ///  <c>de-DE</c> - German, Germany 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>en-GB</code> - English, United Kingdom 
+        ///  <c>en-GB</c> - English, United Kingdom 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>en-US</code> - English, United States 
+        ///  <c>en-US</c> - English, United States 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>es-ES</code> - Spanish, Spain 
+        ///  <c>es-ES</c> - Spanish, Spain 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fr-FR</code> - French, France 
+        ///  <c>fr-FR</c> - French, France 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>it-IT</code> - Italian, Italy 
+        ///  <c>it-IT</c> - Italian, Italy 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ja-JP</code> - Japanese, Japan 
+        ///  <c>ja-JP</c> - Japanese, Japan 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ko-KR</code> - Korean, Republic of Korea 
+        ///  <c>ko-KR</c> - Korean, Republic of Korea 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pt-BR</code> - Portugese, Brazil 
+        ///  <c>pt-BR</c> - Portugese, Brazil 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh-CN</code> - Chinese, China 
+        ///  <c>zh-CN</c> - Chinese, China 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh-TW</code> - Chinese, Taiwan 
+        ///  <c>zh-TW</c> - Chinese, Taiwan 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -151,10 +150,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  The end time of the profile to get analysis data about. You must specify <code>startTime</code>
-        /// and <code>endTime</code>. This is specified using the ISO 8601 format. For example,
-        /// 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
-        /// 
+        ///  The end time of the profile to get analysis data about. You must specify <c>startTime</c>
+        /// and <c>endTime</c>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+        /// represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

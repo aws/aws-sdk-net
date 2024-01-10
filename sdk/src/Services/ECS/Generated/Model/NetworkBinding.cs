@@ -30,9 +30,9 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Details on the network bindings between a container and its host container instance.
-    /// After a task reaches the <code>RUNNING</code> status, manual and automatic host and
-    /// container port assignments are visible in the <code>networkBindings</code> section
-    /// of <a>DescribeTasks</a> API responses.
+    /// After a task reaches the <c>RUNNING</c> status, manual and automatic host and container
+    /// port assignments are visible in the <c>networkBindings</c> section of <a>DescribeTasks</a>
+    /// API responses.
     /// </summary>
     public partial class NetworkBinding
     {
@@ -87,12 +87,11 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The following rules apply when you specify a <code>containerPortRange</code>:
+        /// The following rules apply when you specify a <c>containerPortRange</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must use either the <code>bridge</code> network mode or the <code>awsvpc</code>
-        /// network mode.
+        /// You must use either the <c>bridge</c> network mode or the <c>awsvpc</c> network mode.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -105,7 +104,7 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// The container instance must have at least version 1.67.0 of the container agent and
-        /// at least version 1.67.0-1 of the <code>ecs-init</code> package 
+        /// at least version 1.67.0-1 of the <c>ecs-init</c> package 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -113,24 +112,24 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You do not specify a <code>hostPortRange</code>. The value of the <code>hostPortRange</code>
-        /// is set as follows:
+        /// You do not specify a <c>hostPortRange</c>. The value of the <c>hostPortRange</c> is
+        /// set as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For containers in a task with the <code>awsvpc</code> network mode, the <code>hostPortRange</code>
-        /// is set to the same value as the <code>containerPortRange</code>. This is a static
-        /// mapping strategy.
+        /// For containers in a task with the <c>awsvpc</c> network mode, the <c>hostPortRange</c>
+        /// is set to the same value as the <c>containerPortRange</c>. This is a static mapping
+        /// strategy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For containers in a task with the <code>bridge</code> network mode, the Amazon ECS
-        /// agent finds open host ports from the default ephemeral range and passes it to docker
-        /// to bind them to the container ports.
+        /// For containers in a task with the <c>bridge</c> network mode, the Amazon ECS agent
+        /// finds open host ports from the default ephemeral range and passes it to docker to
+        /// bind them to the container ports.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// The <code>containerPortRange</code> valid values are between 1 and 65535.
+        /// The <c>containerPortRange</c> valid values are between 1 and 65535.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -163,8 +162,8 @@ namespace Amazon.ECS.Model
         ///  </li> </ul> 
         /// <para>
         /// You can call <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">
-        /// <code>DescribeTasks</code> </a> to view the <code>hostPortRange</code> which are the
-        /// host ports that are bound to the container ports.
+        /// <c>DescribeTasks</c> </a> to view the <c>hostPortRange</c> which are the host ports
+        /// that are bound to the container ports.
         /// </para>
         /// </summary>
         public string ContainerPortRange

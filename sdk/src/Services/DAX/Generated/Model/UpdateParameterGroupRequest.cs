@@ -65,8 +65,8 @@ namespace Amazon.DAX.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>record-ttl-millis</code> and <code>query-ttl-millis</code> are the only supported
-        /// parameter names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring
+        ///  <c>record-ttl-millis</c> and <c>query-ttl-millis</c> are the only supported parameter
+        /// names. For more details, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DAX.cluster-management.html#DAX.cluster-management.custom-settings.ttl">Configuring
         /// TTL Settings</a>.
         /// </para>
         ///  </note>

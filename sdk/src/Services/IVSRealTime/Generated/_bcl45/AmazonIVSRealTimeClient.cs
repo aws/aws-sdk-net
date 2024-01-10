@@ -99,7 +99,7 @@ namespace Amazon.IVSRealTime
     /// <para>
     /// A <i>tag</i> is a metadata label that you assign to an AWS resource. A tag comprises
     /// a <i>key</i> and a <i>value</i>, both set by you. For example, you might set a tag
-    /// as <code>topic:nature</code> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+    /// as <c>topic:nature</c> to label a particular video category. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
     /// AWS Resources</a> for more information, including restrictions that apply to tags
     /// and "Tag naming limits and requirements"; Amazon IVS stages has no service-specific
     /// constraints beyond what is documented there.

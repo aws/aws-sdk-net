@@ -195,8 +195,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property SupportedTimezones. 
         /// <para>
-        /// A list of the time zones supported by this engine for the <code>Timezone</code> parameter
-        /// of the <code>CreateDBInstance</code> action.
+        /// A list of the time zones supported by this engine for the <c>Timezone</c> parameter
+        /// of the <c>CreateDBInstance</c> action.
         /// </para>
         /// </summary>
         public List<Timezone> SupportedTimezones

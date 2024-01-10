@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Indicates whether UDP traffic uses ENA Express for your instance. To ensure that UDP
         /// traffic can use ENA Express when you launch an instance, you must also set <b>EnaSrdEnabled</b>
-        /// in the <b>EnaSrdSpecificationRequest</b> to <code>true</code> in your launch template.
+        /// in the <b>EnaSrdSpecificationRequest</b> to <c>true</c> in your launch template.
         /// </para>
         /// </summary>
         public bool EnaSrdUdpEnabled

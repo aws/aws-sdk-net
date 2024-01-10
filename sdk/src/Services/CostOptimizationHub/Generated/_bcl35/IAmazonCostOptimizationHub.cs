@@ -120,9 +120,9 @@ namespace Amazon.CostOptimizationHub
         /// 
         ///  
         /// <para>
-        /// The <code>recommendationId</code> is only valid for up to a maximum of 24 hours as
-        /// recommendations are refreshed daily. To retrieve the <code>recommendationId</code>,
-        /// use the <code>ListRecommendations</code> API.
+        /// The <c>recommendationId</c> is only valid for up to a maximum of 24 hours as recommendations
+        /// are refreshed daily. To retrieve the <c>recommendationId</c>, use the <c>ListRecommendations</c>
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendation service method.</param>
@@ -288,8 +288,8 @@ namespace Amazon.CostOptimizationHub
         /// 
         ///  <note> 
         /// <para>
-        /// The following filters are not supported for this API: <code>recommendationIds</code>,
-        /// <code>resourceArns</code>, and <code>resourceIds</code>.
+        /// The following filters are not supported for this API: <c>recommendationIds</c>, <c>resourceArns</c>,
+        /// and <c>resourceIds</c>.
         /// </para>
         ///  </note>
         /// </summary>

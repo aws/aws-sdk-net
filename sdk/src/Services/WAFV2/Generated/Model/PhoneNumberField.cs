@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used in the <code>RequestInspectionACFP</code> data type. 
+    /// This data type is used in the <c>RequestInspectionACFP</c> data type. 
     /// </para>
     /// </summary>
     public partial class PhoneNumberField
@@ -60,10 +60,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "primaryphoneline1": "THE_PHONE1",
-        /// "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</code>, the
-        /// phone number field identifiers are <code>/form/primaryphoneline1</code>, <code>/form/primaryphoneline2</code>,
-        /// and <code>/form/primaryphoneline3</code>.
+        /// For example, for the JSON payload <c>{ "form": { "primaryphoneline1": "THE_PHONE1",
+        /// "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</c>, the
+        /// phone number field identifiers are <c>/form/primaryphoneline1</c>, <c>/form/primaryphoneline2</c>,
+        /// and <c>/form/primaryphoneline3</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -71,10 +71,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with input elements named <code>primaryphoneline1</code>,
-        /// <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number
-        /// field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>,
-        /// and <code>primaryphoneline3</code>. 
+        /// For example, for an HTML form with input elements named <c>primaryphoneline1</c>,
+        /// <c>primaryphoneline2</c>, and <c>primaryphoneline3</c>, the phone number field identifiers
+        /// are <c>primaryphoneline1</c>, <c>primaryphoneline2</c>, and <c>primaryphoneline3</c>.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

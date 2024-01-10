@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Displays the settings that control the size and behavior of the connection pool associated
-    /// with a <code>DBProxyTarget</code>.
+    /// with a <c>DBProxyTarget</c>.
     /// </summary>
     public partial class ConnectionPoolConfigurationInfo
     {
@@ -64,11 +64,10 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property InitQuery. 
         /// <para>
         /// One or more SQL statements for the proxy to run when opening each new database connection.
-        /// Typically used with <code>SET</code> statements to make sure that each connection
-        /// has identical settings such as time zone and character set. This setting is empty
-        /// by default. For multiple statements, use semicolons as the separator. You can also
-        /// include multiple variables in a single <code>SET</code> statement, such as <code>SET
-        /// x=1, y=2</code>.
+        /// Typically used with <c>SET</c> statements to make sure that each connection has identical
+        /// settings such as time zone and character set. This setting is empty by default. For
+        /// multiple statements, use semicolons as the separator. You can also include multiple
+        /// variables in a single <c>SET</c> statement, such as <c>SET x=1, y=2</c>.
         /// </para>
         /// </summary>
         public string InitQuery
@@ -87,8 +86,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxConnectionsPercent. 
         /// <para>
         /// The maximum size of the connection pool for each target in a target group. The value
-        /// is expressed as a percentage of the <code>max_connections</code> setting for the RDS
-        /// DB instance or Aurora DB cluster used by the target group.
+        /// is expressed as a percentage of the <c>max_connections</c> setting for the RDS DB
+        /// instance or Aurora DB cluster used by the target group.
         /// </para>
         /// </summary>
         public int MaxConnectionsPercent
@@ -107,7 +106,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxIdleConnectionsPercent. 
         /// <para>
         /// Controls how actively the proxy closes idle database connections in the connection
-        /// pool. The value is expressed as a percentage of the <code>max_connections</code> setting
+        /// pool. The value is expressed as a percentage of the <c>max_connections</c> setting
         /// for the RDS DB instance or Aurora DB cluster used by the target group. With a high
         /// value, the proxy leaves a high percentage of idle database connections open. A low
         /// value causes the proxy to close more idle connections and return them to the database.
@@ -132,7 +131,7 @@ namespace Amazon.RDS.Model
         /// later statements in a session using a proxy to be pinned to the same underlying database
         /// connection. Including an item in the list exempts that class of SQL operations from
         /// the pinning behavior. This setting is only supported for MySQL engine family databases.
-        /// Currently, the only allowed value is <code>EXCLUDE_VARIABLE_SETS</code>.
+        /// Currently, the only allowed value is <c>EXCLUDE_VARIABLE_SETS</c>.
         /// </para>
         /// </summary>
         public List<string> SessionPinningFilters

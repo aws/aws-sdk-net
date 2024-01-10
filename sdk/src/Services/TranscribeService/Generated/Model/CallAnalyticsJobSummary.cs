@@ -68,9 +68,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
-        /// results at the location specified in <code>TranscriptFileUri</code> (or <code>RedactedTranscriptFileUri</code>,
-        /// if you requested transcript redaction). If the status is <code>FAILED</code>, <code>FailureReason</code>
+        /// If the status is <c>COMPLETED</c>, the job is finished and you can find the results
+        /// at the location specified in <c>TranscriptFileUri</c> (or <c>RedactedTranscriptFileUri</c>,
+        /// if you requested transcript redaction). If the status is <c>FAILED</c>, <c>FailureReason</c>
         /// provides details on why your transcription job failed.
         /// </para>
         /// </summary>
@@ -93,9 +93,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
-        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:33:13.922000-07:00</c> represents a transcription job that started
+        /// processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -117,9 +117,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.761000-07:00</c> represents a transcription job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -137,8 +137,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If <code>CallAnalyticsJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// If <c>CallAnalyticsJobStatus</c> is <c>FAILED</c>, <c>FailureReason</c> contains information
+        /// about why the Call Analytics job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
         /// Errors</a>.
         /// </para>
         /// </summary>
@@ -179,9 +179,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.789000-07:00</c> represents a transcription job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime

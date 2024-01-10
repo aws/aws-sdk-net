@@ -48,7 +48,7 @@ namespace Amazon.B2bi
     /// </para>
     ///  <note> 
     /// <para>
-    /// Rather than actually running a command, you can use the <code>--generate-cli-skeleton</code>
+    /// Rather than actually running a command, you can use the <c>--generate-cli-skeleton</c>
     /// parameter with any API call to generate and display a parameter template. You can
     /// then use the generated template to customize and use as input on a later command.
     /// For details, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-skeleton.html#cli-usage-skeleton-generate">Generate
@@ -1600,8 +1600,7 @@ namespace Amazon.B2bi
         /// <para>
         /// If you only want to transform EDI (electronic data interchange) documents, you don't
         /// need to create profiles, partnerships or capabilities. Just create and configure a
-        /// transformer, and then run the <code>StartTransformerJob</code> API to process your
-        /// files.
+        /// transformer, and then run the <c>StartTransformerJob</c> API to process your files.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartTransformerJob service method.</param>
@@ -1747,7 +1746,7 @@ namespace Amazon.B2bi
         /// <summary>
         /// Maps the input file according to the provided template file. The API call downloads
         /// the file contents from the Amazon S3 location, and passes the contents in as a string,
-        /// to the <code>inputFileContent</code> parameter.
+        /// to the <c>inputFileContent</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestMapping service method.</param>
         /// 

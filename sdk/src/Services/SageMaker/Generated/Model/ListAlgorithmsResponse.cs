@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AlgorithmSummaryList. 
         /// <para>
-        /// &gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an algorithm.
+        /// &gt;An array of <c>AlgorithmSummary</c> objects, each of which lists an algorithm.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -58,8 +58,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// When <code>Truncated</code> is true, this element is present and contains the value
-        /// to use for the <code>Marker</code> parameter in a subsequent request.
+        /// When <c>Truncated</c> is true, this element is present and contains the value to use
+        /// for the <c>Marker</c> parameter in a subsequent request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -80,8 +80,8 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A flag that indicates whether there are more items in the list. When this value is
         /// true, the list in this response is truncated. To get more items, pass the value of
-        /// the <code>NextMarker</code> element in thisresponse to the <code>Marker</code> parameter
-        /// in a subsequent request.
+        /// the <c>NextMarker</c> element in thisresponse to the <c>Marker</c> parameter in a
+        /// subsequent request.
         /// </para>
         /// </summary>
         public bool Truncated

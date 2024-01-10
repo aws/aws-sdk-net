@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property BlueprintRuns. 
         /// <para>
-        /// Returns a list of <code>BlueprintRun</code> objects.
+        /// Returns a list of <c>BlueprintRun</c> objects.
         /// </para>
         /// </summary>
         public List<BlueprintRun> BlueprintRuns

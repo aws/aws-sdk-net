@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The configuration for <code>Hyperband</code>, a multi-fidelity based hyperparameter
-    /// tuning strategy. <code>Hyperband</code> uses the final and intermediate results of
-    /// a training job to dynamically allocate resources to utilized hyperparameter configurations
-    /// while automatically stopping under-performing configurations. This parameter should
-    /// be provided only if <code>Hyperband</code> is selected as the <code>StrategyConfig</code>
-    /// under the <code>HyperParameterTuningJobConfig</code> API.
+    /// The configuration for <c>Hyperband</c>, a multi-fidelity based hyperparameter tuning
+    /// strategy. <c>Hyperband</c> uses the final and intermediate results of a training job
+    /// to dynamically allocate resources to utilized hyperparameter configurations while
+    /// automatically stopping under-performing configurations. This parameter should be provided
+    /// only if <c>Hyperband</c> is selected as the <c>StrategyConfig</c> under the <c>HyperParameterTuningJobConfig</c>
+    /// API.
     /// </summary>
     public partial class HyperbandStrategyConfig
     {
@@ -45,35 +45,34 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxResource. 
         /// <para>
         /// The maximum number of resources (such as epochs) that can be used by a training job
-        /// launched by a hyperparameter tuning job. Once a job reaches the <code>MaxResource</code>
-        /// value, it is stopped. If a value for <code>MaxResource</code> is not provided, and
-        /// <code>Hyperband</code> is selected as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code>
-        /// attempts to infer <code>MaxResource</code> from the following keys (if present) in
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:
+        /// launched by a hyperparameter tuning job. Once a job reaches the <c>MaxResource</c>
+        /// value, it is stopped. If a value for <c>MaxResource</c> is not provided, and <c>Hyperband</c>
+        /// is selected as the hyperparameter tuning strategy, <c>HyperbandTrainingJ</c> attempts
+        /// to infer <c>MaxResource</c> from the following keys (if present) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>epochs</code> 
+        ///  <c>epochs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>numepochs</code> 
+        ///  <c>numepochs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>n-epochs</code> 
+        ///  <c>n-epochs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>n_epochs</code> 
+        ///  <c>n_epochs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>num_epochs</code> 
+        ///  <c>num_epochs</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>HyperbandStrategyConfig</code> is unable to infer a value for <code>MaxResource</code>,
+        /// If <c>HyperbandStrategyConfig</c> is unable to infer a value for <c>MaxResource</c>,
         /// it generates a validation error. The maximum value is 20,000 epochs. All metrics that
         /// correspond to an objective metric are used to derive <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-early-stopping.html">early
         /// stopping decisions</a>. For <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/distributed-training.html">distributive</a>
@@ -100,8 +99,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MinResource. 
         /// <para>
         /// The minimum number of resources (such as epochs) that can be used by a training job
-        /// launched by a hyperparameter tuning job. If the value for <code>MinResource</code>
-        /// has not been reached, the training job is not stopped by <code>Hyperband</code>.
+        /// launched by a hyperparameter tuning job. If the value for <c>MinResource</c> has not
+        /// been reached, the training job is not stopped by <c>Hyperband</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

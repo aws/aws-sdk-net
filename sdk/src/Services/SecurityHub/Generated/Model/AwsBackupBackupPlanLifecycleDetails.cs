@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property DeleteAfterDays. 
         /// <para>
         /// Specifies the number of days after creation that a recovery point is deleted. Must
-        /// be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. 
+        /// be greater than 90 days plus <c>MoveToColdStorageAfterDays</c>. 
         /// </para>
         /// </summary>
         public long DeleteAfterDays

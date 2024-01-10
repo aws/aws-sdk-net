@@ -33,9 +33,9 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// For example, you could add the tag <code>Department:Sales</code> to a resource to
-    /// indicate that it pertains to your organization's sales department. You can also use
-    /// tags for tag-based access control.
+    /// For example, you could add the tag <c>Department:Sales</c> to a resource to indicate
+    /// that it pertains to your organization's sales department. You can also use tags for
+    /// tag-based access control.
     /// </para>
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The first part of a key:value pair that forms a tag associated with a given resource.
-        /// For example, in the tag <code>Department:Sales</code>, the key is 'Department'.
+        /// For example, in the tag <c>Department:Sales</c>, the key is 'Department'.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -72,7 +72,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The second part of a key:value pair that forms a tag associated with a given resource.
-        /// For example, in the tag <code>Department:Sales</code>, the value is 'Sales'.
+        /// For example, in the tag <c>Department:Sales</c>, the value is 'Sales'.
         /// </para>
         ///  
         /// <para>

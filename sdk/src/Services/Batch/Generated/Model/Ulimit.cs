@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The <code>ulimit</code> settings to pass to the container.
+    /// The <c>ulimit</c> settings to pass to the container.
     /// 
     ///  <note> 
     /// <para>
@@ -46,7 +46,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property HardLimit. 
         /// <para>
-        /// The hard limit for the <code>ulimit</code> type.
+        /// The hard limit for the <c>ulimit</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The <code>type</code> of the <code>ulimit</code>.
+        /// The <c>type</c> of the <c>ulimit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property SoftLimit. 
         /// <para>
-        /// The soft limit for the <code>ulimit</code> type.
+        /// The soft limit for the <c>ulimit</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
-    /// The summary information for environments as a response to <code>ListEnvironments</code>.
+    /// The summary information for environments as a response to <c>ListEnvironments</c>.
     /// </summary>
     public partial class EnvironmentSummary
     {

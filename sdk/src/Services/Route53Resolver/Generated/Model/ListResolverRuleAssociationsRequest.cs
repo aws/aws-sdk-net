@@ -47,9 +47,9 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you submit a second or subsequent <code>ListResolverRuleAssociations</code> request
-        /// and specify the <code>NextToken</code> parameter, you must use the same values for
-        /// <code>Filters</code>, if any, as in the previous request.
+        /// If you submit a second or subsequent <c>ListResolverRuleAssociations</c> request and
+        /// specify the <c>NextToken</c> parameter, you must use the same values for <c>Filters</c>,
+        /// if any, as in the previous request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -69,8 +69,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of rule associations that you want to return in the response to
-        /// a <code>ListResolverRuleAssociations</code> request. If you don't specify a value
-        /// for <code>MaxResults</code>, Resolver returns up to 100 rule associations. 
+        /// a <c>ListResolverRuleAssociations</c> request. If you don't specify a value for <c>MaxResults</c>,
+        /// Resolver returns up to 100 rule associations. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -89,14 +89,14 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For the first <code>ListResolverRuleAssociation</code> request, omit this value.
+        /// For the first <c>ListResolverRuleAssociation</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// If you have more than <code>MaxResults</code> rule associations, you can submit another
-        /// <code>ListResolverRuleAssociation</code> request to get the next group of rule associations.
-        /// In the next request, specify the value of <code>NextToken</code> from the previous
-        /// response. 
+        /// If you have more than <c>MaxResults</c> rule associations, you can submit another
+        /// <c>ListResolverRuleAssociation</c> request to get the next group of rule associations.
+        /// In the next request, specify the value of <c>NextToken</c> from the previous response.
+        /// 
         /// </para>
         /// </summary>
         public string NextToken

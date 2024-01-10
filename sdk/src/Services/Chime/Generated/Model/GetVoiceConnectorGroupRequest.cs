@@ -31,7 +31,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorGroup operation.
     /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name,
-    /// and associated <code>VoiceConnectorItems</code>.
+    /// and associated <c>VoiceConnectorItems</c>.
     /// 
     ///  <important> 
     /// <para>

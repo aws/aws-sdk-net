@@ -53,7 +53,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the snapshot (<code>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the snapshot (<c>arn:aws:lightsail:us-east-2:123456789101:InstanceSnapshot/d23b5706-3322-4d83-81e5-12345EXAMPLE</c>).
         /// </para>
         /// </summary>
         public string Arn
@@ -71,7 +71,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the snapshot was created (<code>1479907467.024</code>).
+        /// The timestamp when the snapshot was created (<c>1479907467.024</c>).
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -107,9 +107,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBlueprintId. 
         /// <para>
-        /// The blueprint ID from which you created the snapshot (<code>os_debian_8_3</code>).
-        /// A blueprint is a virtual private server (or <i>instance</i>) image used to create
-        /// instances quickly.
+        /// The blueprint ID from which you created the snapshot (<c>os_debian_8_3</c>). A blueprint
+        /// is a virtual private server (or <i>instance</i>) image used to create instances quickly.
         /// </para>
         /// </summary>
         public string FromBlueprintId
@@ -127,7 +126,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FromBundleId. 
         /// <para>
-        /// The bundle ID from which you created the snapshot (<code>micro_1_0</code>).
+        /// The bundle ID from which you created the snapshot (<c>micro_1_0</c>).
         /// </para>
         /// </summary>
         public string FromBundleId
@@ -146,7 +145,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property FromInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the instance from which the snapshot was created
-        /// (<code>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</code>).
+        /// (<c>arn:aws:lightsail:us-east-2:123456789101:Instance/64b8404c-ccb1-430b-8daf-12345EXAMPLE</c>).
         /// </para>
         /// </summary>
         public string FromInstanceArn
@@ -240,7 +239,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is populated only for disk snapshots, and is <code>null</code> for instance snapshots.
+        /// This is populated only for disk snapshots, and is <c>null</c> for instance snapshots.
         /// </para>
         ///  </note>
         /// </summary>
@@ -259,7 +258,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource (usually <code>InstanceSnapshot</code>).
+        /// The type of resource (usually <c>InstanceSnapshot</c>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

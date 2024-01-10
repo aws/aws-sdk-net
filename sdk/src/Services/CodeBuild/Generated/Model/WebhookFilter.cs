@@ -40,10 +40,10 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ExcludeMatchedPattern. 
         /// <para>
-        ///  Used to indicate that the <code>pattern</code> determines which webhook events do
-        /// not trigger a build. If true, then a webhook event that does not match the <code>pattern</code>
-        /// triggers a build. If false, then a webhook event that matches the <code>pattern</code>
-        /// triggers a build. 
+        ///  Used to indicate that the <c>pattern</c> determines which webhook events do not trigger
+        /// a build. If true, then a webhook event that does not match the <c>pattern</c> triggers
+        /// a build. If false, then a webhook event that matches the <c>pattern</c> triggers a
+        /// build. 
         /// </para>
         /// </summary>
         public bool ExcludeMatchedPattern
@@ -61,18 +61,17 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Pattern. 
         /// <para>
-        ///  For a <code>WebHookFilter</code> that uses <code>EVENT</code> type, a comma-separated
-        /// string that specifies one or more events. For example, the webhook filter <code>PUSH,
-        /// PULL_REQUEST_CREATED, PULL_REQUEST_UPDATED</code> allows all push, pull request created,
-        /// and pull request updated events to trigger a build. 
+        ///  For a <c>WebHookFilter</c> that uses <c>EVENT</c> type, a comma-separated string
+        /// that specifies one or more events. For example, the webhook filter <c>PUSH, PULL_REQUEST_CREATED,
+        /// PULL_REQUEST_UPDATED</c> allows all push, pull request created, and pull request updated
+        /// events to trigger a build. 
         /// </para>
         ///  
         /// <para>
-        ///  For a <code>WebHookFilter</code> that uses any of the other filter types, a regular
-        /// expression pattern. For example, a <code>WebHookFilter</code> that uses <code>HEAD_REF</code>
-        /// for its <code>type</code> and the pattern <code>^refs/heads/</code> triggers a build
-        /// when the head reference is a branch with a reference name <code>refs/heads/branch-name</code>.
-        /// 
+        ///  For a <c>WebHookFilter</c> that uses any of the other filter types, a regular expression
+        /// pattern. For example, a <c>WebHookFilter</c> that uses <c>HEAD_REF</c> for its <c>type</c>
+        /// and the pattern <c>^refs/heads/</c> triggers a build when the head reference is a
+        /// branch with a reference name <c>refs/heads/branch-name</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,33 +90,31 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of webhook filter. There are six webhook filter types: <code>EVENT</code>,
-        /// <code>ACTOR_ACCOUNT_ID</code>, <code>HEAD_REF</code>, <code>BASE_REF</code>, <code>FILE_PATH</code>,
-        /// and <code>COMMIT_MESSAGE</code>. 
+        ///  The type of webhook filter. There are six webhook filter types: <c>EVENT</c>, <c>ACTOR_ACCOUNT_ID</c>,
+        /// <c>HEAD_REF</c>, <c>BASE_REF</c>, <c>FILE_PATH</c>, and <c>COMMIT_MESSAGE</c>. 
         /// </para>
         ///  <dl> <dt> EVENT </dt> <dd> 
         /// <para>
-        ///  A webhook event triggers a build when the provided <code>pattern</code> matches one
-        /// of five event types: <code>PUSH</code>, <code>PULL_REQUEST_CREATED</code>, <code>PULL_REQUEST_UPDATED</code>,
-        /// <code>PULL_REQUEST_REOPENED</code>, and <code>PULL_REQUEST_MERGED</code>. The <code>EVENT</code>
-        /// patterns are specified as a comma-separated string. For example, <code>PUSH, PULL_REQUEST_CREATED,
-        /// PULL_REQUEST_UPDATED</code> filters all push, pull request created, and pull request
+        ///  A webhook event triggers a build when the provided <c>pattern</c> matches one of
+        /// five event types: <c>PUSH</c>, <c>PULL_REQUEST_CREATED</c>, <c>PULL_REQUEST_UPDATED</c>,
+        /// <c>PULL_REQUEST_REOPENED</c>, and <c>PULL_REQUEST_MERGED</c>. The <c>EVENT</c> patterns
+        /// are specified as a comma-separated string. For example, <c>PUSH, PULL_REQUEST_CREATED,
+        /// PULL_REQUEST_UPDATED</c> filters all push, pull request created, and pull request
         /// updated events. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  The <code>PULL_REQUEST_REOPENED</code> works with GitHub and GitHub Enterprise only.
-        /// 
+        ///  The <c>PULL_REQUEST_REOPENED</c> works with GitHub and GitHub Enterprise only. 
         /// </para>
         ///  </note> </dd> <dt> ACTOR_ACCOUNT_ID </dt> <dd> 
         /// <para>
         ///  A webhook event triggers a build when a GitHub, GitHub Enterprise, or Bitbucket account
-        /// ID matches the regular expression <code>pattern</code>. 
+        /// ID matches the regular expression <c>pattern</c>. 
         /// </para>
         ///  </dd> <dt> HEAD_REF </dt> <dd> 
         /// <para>
         ///  A webhook event triggers a build when the head reference matches the regular expression
-        /// <code>pattern</code>. For example, <code>refs/heads/branch-name</code> and <code>refs/tags/tag-name</code>.
+        /// <c>pattern</c>. For example, <c>refs/heads/branch-name</c> and <c>refs/tags/tag-name</c>.
         /// 
         /// </para>
         ///  
@@ -128,7 +125,7 @@ namespace Amazon.CodeBuild.Model
         ///  </dd> <dt> BASE_REF </dt> <dd> 
         /// <para>
         ///  A webhook event triggers a build when the base reference matches the regular expression
-        /// <code>pattern</code>. For example, <code>refs/heads/branch-name</code>. 
+        /// <c>pattern</c>. For example, <c>refs/heads/branch-name</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -137,7 +134,7 @@ namespace Amazon.CodeBuild.Model
         ///  </note> </dd> <dt> FILE_PATH </dt> <dd> 
         /// <para>
         ///  A webhook triggers a build when the path of a changed file matches the regular expression
-        /// <code>pattern</code>. 
+        /// <c>pattern</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -148,7 +145,7 @@ namespace Amazon.CodeBuild.Model
         ///  </note> </dd> <dt>COMMIT_MESSAGE</dt> <dd> 
         /// <para>
         /// A webhook triggers a build when the head commit message matches the regular expression
-        /// <code>pattern</code>.
+        /// <c>pattern</c>.
         /// </para>
         ///  <note> 
         /// <para>

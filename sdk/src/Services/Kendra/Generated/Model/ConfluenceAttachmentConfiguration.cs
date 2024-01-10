@@ -42,15 +42,15 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property AttachmentFieldMappings. 
         /// <para>
         /// Maps attributes or field names of Confluence attachments to Amazon Kendra index field
-        /// names. To create custom fields, use the <code>UpdateIndex</code> API before you map
-        /// to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// names. To create custom fields, use the <c>UpdateIndex</c> API before you map to Confluence
+        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Confluence data source field names must exist in your
         /// Confluence custom metadata.
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>AttachentFieldMappings</code> parameter, you must specify
-        /// at least one field mapping.
+        /// If you specify the <c>AttachentFieldMappings</c> parameter, you must specify at least
+        /// one field mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=11)]
@@ -69,7 +69,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        ///  <code>TRUE</code> to index attachments of pages and blogs in Confluence.
+        ///  <c>TRUE</c> to index attachments of pages and blogs in Confluence.
         /// </para>
         /// </summary>
         public bool CrawlAttachments

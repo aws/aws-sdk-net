@@ -38,8 +38,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ResultStream. 
         /// <para>
-        /// Rows returned from the <code>GetWorkUnitResults</code> operation as a stream of Apache
-        /// Arrow v1.0 messages.
+        /// Rows returned from the <c>GetWorkUnitResults</c> operation as a stream of Apache Arrow
+        /// v1.0 messages.
         /// </para>
         /// </summary>
         public Stream ResultStream

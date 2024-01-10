@@ -30,7 +30,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Provides information for filtering a list of dominant language detection jobs. For
-    /// more information, see the <code>ListTargetedSentimentDetectionJobs</code> operation.
+    /// more information, see the <c>ListTargetedSentimentDetectionJobs</c> operation.
     /// </summary>
     public partial class TargetedSentimentDetectionJobFilter
     {

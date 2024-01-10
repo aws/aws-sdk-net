@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the record subdomain the service provider needs to create. The service
-        /// provider adds the <code>value</code> text to the <code>name</code>.
+        /// provider adds the <c>value</c> text to the <c>name</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// &gt;Consumers of the endpoint service can use the private name only when the state
-        /// is <code>verified</code>.
+        /// is <c>verified</c>.
         /// </para>
         /// </summary>
         public DnsNameState State

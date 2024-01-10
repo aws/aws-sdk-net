@@ -52,7 +52,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// If successful, a set of <code>IpPermission</code> objects is returned for the requested
+    /// If successful, a set of <c>IpPermission</c> objects is returned for the requested
     /// fleet ID. When a location is specified, a pending status is included. If the requested
     /// fleet has been deleted, the result set is empty.
     /// </para>
@@ -95,7 +95,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// A remote location to check for status of port setting updates. Use the Amazon Web
-        /// Services Region code format, such as <code>us-west-2</code>.
+        /// Services Region code format, such as <c>us-west-2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

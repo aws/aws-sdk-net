@@ -35,7 +35,7 @@ namespace Amazon.MediaStore.Model
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have permission to perform the <code>MediaStore:GetCorsPolicy</code>
+    /// To use this operation, you must have permission to perform the <c>MediaStore:GetCorsPolicy</c>
     /// action. By default, the container owner has this permission and can grant it to others.
     /// </para>
     /// </summary>

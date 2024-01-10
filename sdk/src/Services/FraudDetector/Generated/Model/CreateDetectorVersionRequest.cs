@@ -30,7 +30,7 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDetectorVersion operation.
-    /// Creates a detector version. The detector version starts in a <code>DRAFT</code> status.
+    /// Creates a detector version. The detector version starts in a <c>DRAFT</c> status.
     /// </summary>
     public partial class CreateDetectorVersionRequest : AmazonFraudDetectorRequest
     {
@@ -128,18 +128,18 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+        /// If you specify <c>FIRST_MATCHED</c>, Amazon Fraud Detector evaluates rules sequentially,
         /// first to last, stopping at the first matched rule. Amazon Fraud dectector then provides
         /// the outcomes for that single rule.
         /// </para>
         ///  
         /// <para>
-        /// If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules
-        /// and returns the outcomes for all matched rules. 
+        /// If you specifiy <c>ALL_MATCHED</c>, Amazon Fraud Detector evaluates all rules and
+        /// returns the outcomes for all matched rules. 
         /// </para>
         ///  
         /// <para>
-        /// The default behavior is <code>FIRST_MATCHED</code>.
+        /// The default behavior is <c>FIRST_MATCHED</c>.
         /// </para>
         /// </summary>
         public RuleExecutionMode RuleExecutionMode

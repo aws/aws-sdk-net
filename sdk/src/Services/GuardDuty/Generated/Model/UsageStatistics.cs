@@ -121,7 +121,7 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  
         /// <para>
-        /// Currently, this doesn't support <code>RDS_LOGIN_EVENTS</code>.
+        /// Currently, this doesn't support <c>RDS_LOGIN_EVENTS</c>.
         /// </para>
         /// </summary>
         public List<UsageTopAccountsResult> TopAccountsByFeature

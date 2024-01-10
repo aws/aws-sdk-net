@@ -57,7 +57,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next token returned in the response of a previous <code>ListDataflowEndpointGroups</code>
+        /// Next token returned in the response of a previous <c>ListDataflowEndpointGroups</c>
         /// call. Used to get the next page of results.
         /// </para>
         /// </summary>

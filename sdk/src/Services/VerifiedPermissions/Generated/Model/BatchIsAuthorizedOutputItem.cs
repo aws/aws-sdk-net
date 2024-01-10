@@ -30,7 +30,7 @@ namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
     /// The decision, based on policy evaluation, from an individual authorization request
-    /// in a <code>BatchIsAuthorized</code> API request.
+    /// in a <c>BatchIsAuthorized</c> API request.
     /// </summary>
     public partial class BatchIsAuthorizedOutputItem
     {

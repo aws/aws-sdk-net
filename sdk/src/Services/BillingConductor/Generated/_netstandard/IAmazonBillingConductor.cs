@@ -108,9 +108,8 @@ namespace Amazon.BillingConductor
 
 
         /// <summary>
-        /// Connects an array of <code>PricingRuleArns</code> to a defined <code>PricingPlan</code>.
-        /// The maximum number <code>PricingRuleArn</code> that can be associated in one call
-        /// is 30.
+        /// Connects an array of <c>PricingRuleArns</c> to a defined <c>PricingPlan</c>. The maximum
+        /// number <c>PricingRuleArn</c> that can be associated in one call is 30.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePricingRules service method.</param>
         /// <param name="cancellationToken">
@@ -975,7 +974,7 @@ namespace Amazon.BillingConductor
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource are not specified in the request parameters, they are
         /// not changed.
         /// </summary>

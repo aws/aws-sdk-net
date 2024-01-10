@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInstanceStreamingConfigurations operation.
-    /// Deletes the streaming configurations of an <code>AppInstance</code>.
+    /// Deletes the streaming configurations of an <c>AppInstance</c>.
     /// 
     ///  <important> 
     /// <para>

@@ -43,7 +43,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ConnectionName. 
         /// <para>
         /// The name of the connection for an Amazon S3-backed Data Catalog table to be a target
-        /// of the crawl when using a <code>Catalog</code> connection type paired with a <code>NETWORK</code>
+        /// of the crawl when using a <c>Catalog</c> connection type paired with a <c>NETWORK</c>
         /// Connection type.
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DlqEventQueueArn. 
         /// <para>
-        /// A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+        /// A valid Amazon dead-letter SQS ARN. For example, <c>arn:aws:sqs:region:account:deadLetterQueue</c>.
         /// </para>
         /// </summary>
         public string DlqEventQueueArn
@@ -99,7 +99,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EventQueueArn. 
         /// <para>
-        /// A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+        /// A valid Amazon SQS ARN. For example, <c>arn:aws:sqs:region:account:sqs</c>.
         /// </para>
         /// </summary>
         public string EventQueueArn

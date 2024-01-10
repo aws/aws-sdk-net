@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status
-    /// of the Elasticsearch domain being updated.
+    /// The result of an <c>UpdateElasticsearchDomain</c> request. Contains the status of
+    /// the Elasticsearch domain being updated.
     /// </summary>
     public partial class UpdateElasticsearchDomainConfigResponse : AmazonWebServiceResponse
     {

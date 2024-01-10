@@ -57,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmForgotPassword</code>
+        /// The Amazon Pinpoint analytics metadata for collecting metrics for <c>ConfirmForgotPassword</c>
         /// calls.
         /// </para>
         /// </summary>
@@ -104,10 +104,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the ConfirmForgotPassword API action, Amazon Cognito invokes the function
         /// that is assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes
         /// this function, it passes a JSON payload, which the function receives as input. This
-        /// payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your ConfirmForgotPassword request.
-        /// In your function code in Lambda, you can process the <code>clientMetadata</code> value
-        /// to enhance your workflow for your specific needs.
+        /// payload contains a <c>clientMetadata</c> attribute, which provides the data that you
+        /// assigned to the ClientMetadata parameter in your ConfirmForgotPassword request. In
+        /// your function code in Lambda, you can process the <c>clientMetadata</c> value to enhance
+        /// your workflow for your specific needs.
         /// </para>
         ///  
         /// <para>
@@ -192,7 +192,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// A keyed-hash message authentication code (HMAC) calculated using the secret key of
         /// a user pool client and username plus the client ID in the message. For more information
-        /// about <code>SecretHash</code>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+        /// about <c>SecretHash</c>, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
         /// secret hash values</a>.
         /// </para>
         /// </summary>
@@ -236,8 +236,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

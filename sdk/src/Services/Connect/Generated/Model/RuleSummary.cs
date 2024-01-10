@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A list of <code>ActionTypes</code> associated with a rule.
+    /// A list of <c>ActionTypes</c> associated with a rule.
     /// </summary>
     public partial class RuleSummary
     {

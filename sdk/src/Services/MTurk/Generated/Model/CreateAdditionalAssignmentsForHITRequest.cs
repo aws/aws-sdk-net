@@ -30,8 +30,8 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAdditionalAssignmentsForHIT operation.
-    /// The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the maximum
-    /// number of assignments of an existing HIT. 
+    /// The <c>CreateAdditionalAssignmentsForHIT</c> operation increases the maximum number
+    /// of assignments of an existing HIT. 
     /// 
     ///  
     /// <para>
@@ -42,12 +42,12 @@ namespace Amazon.MTurk.Model
     /// HITs created with fewer than 10 assignments cannot be extended to have 10 or more
     /// assignments. Attempting to add assignments in a way that brings the total number of
     /// assignments for a HIT from fewer than 10 assignments to 10 or more assignments will
-    /// result in an <code>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</code> exception.
+    /// result in an <c>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</c> exception.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// HITs that were created before July 22, 2015 cannot be extended. Attempting to extend
-    /// HITs that were created before July 22, 2015 will result in an <code>AWS.MechanicalTurk.HITTooOldForExtension</code>
+    /// HITs that were created before July 22, 2015 will result in an <c>AWS.MechanicalTurk.HITTooOldForExtension</c>
     /// exception. 
     /// </para>
     ///  </li> </ul> </note>
@@ -102,7 +102,7 @@ namespace Amazon.MTurk.Model
         ///  A unique identifier for this request, which allows you to retry the call on error
         /// without extending the HIT multiple times. This is useful in cases such as network
         /// timeouts where it is unclear whether or not the call succeeded on the server. If the
-        /// extend HIT already exists in the system from a previous call using the same <code>UniqueRequestToken</code>,
+        /// extend HIT already exists in the system from a previous call using the same <c>UniqueRequestToken</c>,
         /// subsequent calls will return an error with a message containing the request ID. 
         /// </para>
         /// </summary>

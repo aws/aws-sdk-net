@@ -58,7 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CoveredContainerInstances. 
         /// <para>
-        /// Represents the nodes in the Amazon ECS cluster that has a <code>HEALTHY</code> coverage
+        /// Represents the nodes in the Amazon ECS cluster that has a <c>HEALTHY</c> coverage
         /// status.
         /// </para>
         /// </summary>

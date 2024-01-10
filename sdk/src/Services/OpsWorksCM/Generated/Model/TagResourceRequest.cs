@@ -42,7 +42,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of a resource to which you want to apply tags. For
-        /// example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.
+        /// example, <c>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,13 +71,13 @@ namespace Amazon.OpsWorksCM.Model
         ///  </li> <li> 
         /// <para>
         /// The key can be a maximum of 127 characters, and can contain only Unicode letters,
-        /// numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// numbers, or separators, or the following special characters: <c>+ - = . _ : /</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The value can be a maximum 255 characters, and contain only Unicode letters, numbers,
-        /// or separators, or the following special characters: <code>+ - = . _ : /</code> 
+        /// or separators, or the following special characters: <c>+ - = . _ : /</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

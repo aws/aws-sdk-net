@@ -41,7 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// A value that you use to access the second and subsequent pages of results, if any.
         /// When the pipelines fit on one page or when you've reached the last page of results,
-        /// the value of <code>NextPageToken</code> is <code>null</code>.
+        /// the value of <c>NextPageToken</c> is <c>null</c>.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -59,7 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Pipelines. 
         /// <para>
-        /// An array of <code>Pipeline</code> objects.
+        /// An array of <c>Pipeline</c> objects.
         /// </para>
         /// </summary>
         public List<Pipeline> Pipelines

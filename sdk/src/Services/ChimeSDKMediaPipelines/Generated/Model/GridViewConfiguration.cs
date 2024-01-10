@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property ActiveSpeakerOnlyConfiguration. 
         /// <para>
-        /// The configuration settings for an <code>ActiveSpeakerOnly</code> video tile.
+        /// The configuration settings for an <c>ActiveSpeakerOnly</c> video tile.
         /// </para>
         /// </summary>
         public ActiveSpeakerOnlyConfiguration ActiveSpeakerOnlyConfiguration

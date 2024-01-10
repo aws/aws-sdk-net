@@ -188,8 +188,8 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Does not include <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
-        /// ThirdParty jobs.
+        /// Does not include <c>pipelineArn</c> and <c>pipelineExecutionId</c> for ThirdParty
+        /// jobs.
         /// </para>
         ///  </note>
         /// </summary>

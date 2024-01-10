@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>CertificateIdentifier</code> doesn't refer to an existing certificate.
+    /// <c>CertificateIdentifier</c> doesn't refer to an existing certificate.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

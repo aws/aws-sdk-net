@@ -32,12 +32,11 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the UpdateTrafficPolicyInstance operation.
     /// <note> 
     /// <para>
-    /// After you submit a <code>UpdateTrafficPolicyInstance</code> request, there's a brief
-    /// delay while Route 53 creates the resource record sets that are specified in the traffic
-    /// policy definition. Use <code>GetTrafficPolicyInstance</code> with the <code>id</code>
-    /// of updated traffic policy instance confirm that the <code>UpdateTrafficPolicyInstance</code>
-    /// request completed successfully. For more information, see the <code>State</code> response
-    /// element.
+    /// After you submit a <c>UpdateTrafficPolicyInstance</c> request, there's a brief delay
+    /// while Route 53 creates the resource record sets that are specified in the traffic
+    /// policy definition. Use <c>GetTrafficPolicyInstance</c> with the <c>id</c> of updated
+    /// traffic policy instance confirm that the <c>UpdateTrafficPolicyInstance</c> request
+    /// completed successfully. For more information, see the <c>State</c> response element.
     /// </para>
     ///  </note> 
     /// <para>

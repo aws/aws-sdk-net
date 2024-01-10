@@ -31,15 +31,14 @@ namespace Amazon.DocDB.Model
     /// <summary>
     /// Container for the parameters to the ResetDBClusterParameterGroup operation.
     /// Modifies the parameters of a cluster parameter group to the default value. To reset
-    /// specific parameters, submit a list of the following: <code>ParameterName</code> and
-    /// <code>ApplyMethod</code>. To reset the entire cluster parameter group, specify the
-    /// <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
-    /// 
+    /// specific parameters, submit a list of the following: <c>ParameterName</c> and <c>ApplyMethod</c>.
+    /// To reset the entire cluster parameter group, specify the <c>DBClusterParameterGroupName</c>
+    /// and <c>ResetAllParameters</c> parameters. 
     /// 
     ///  
     /// <para>
     ///  When you reset the entire group, dynamic parameters are updated immediately and static
-    /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
+    /// parameters are set to <c>pending-reboot</c> to take effect on the next DB instance
     /// reboot.
     /// </para>
     /// </summary>
@@ -72,8 +71,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// A list of parameter names in the cluster parameter group to reset to the default values.
-        /// You can't use this parameter if the <code>ResetAllParameters</code> parameter is set
-        /// to <code>true</code>.
+        /// You can't use this parameter if the <c>ResetAllParameters</c> parameter is set to
+        /// <c>true</c>.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -91,10 +90,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ResetAllParameters. 
         /// <para>
-        /// A value that is set to <code>true</code> to reset all parameters in the cluster parameter
-        /// group to their default values, and <code>false</code> otherwise. You can't use this
-        /// parameter if there is a list of parameter names specified for the <code>Parameters</code>
-        /// parameter.
+        /// A value that is set to <c>true</c> to reset all parameters in the cluster parameter
+        /// group to their default values, and <c>false</c> otherwise. You can't use this parameter
+        /// if there is a list of parameter names specified for the <c>Parameters</c> parameter.
         /// </para>
         /// </summary>
         public bool ResetAllParameters

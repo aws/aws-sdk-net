@@ -31,9 +31,9 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the AcceptVpcPeeringConnection operation.
     /// Accept a VPC peering connection request. To accept a request, the VPC peering connection
-    /// must be in the <code>pending-acceptance</code> state, and you must be the owner of
-    /// the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC
-    /// peering connection requests.
+    /// must be in the <c>pending-acceptance</c> state, and you must be the owner of the peer
+    /// VPC. Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering
+    /// connection requests.
     /// 
     ///  
     /// <para>

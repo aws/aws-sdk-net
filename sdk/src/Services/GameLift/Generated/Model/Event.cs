@@ -53,41 +53,41 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// FLEET_CREATED -- A fleet resource was successfully created with a status of <code>NEW</code>.
+        /// FLEET_CREATED -- A fleet resource was successfully created with a status of <c>NEW</c>.
         /// Event messaging includes the fleet ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_STATE_DOWNLOADING -- Fleet status changed from <code>NEW</code> to <code>DOWNLOADING</code>.
+        /// FLEET_STATE_DOWNLOADING -- Fleet status changed from <c>NEW</c> to <c>DOWNLOADING</c>.
         /// The compressed build has started downloading to a fleet instance for installation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_STATE_VALIDATING -- Fleet status changed from <code>DOWNLOADING</code> to <code>VALIDATING</code>.
+        /// FLEET_STATE_VALIDATING -- Fleet status changed from <c>DOWNLOADING</c> to <c>VALIDATING</c>.
         /// Amazon GameLift has successfully downloaded the build and is now validating the build
         /// files.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_STATE_BUILDING -- Fleet status changed from <code>VALIDATING</code> to <code>BUILDING</code>.
+        /// FLEET_STATE_BUILDING -- Fleet status changed from <c>VALIDATING</c> to <c>BUILDING</c>.
         /// Amazon GameLift has successfully verified the build files and is now running the installation
         /// scripts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_STATE_ACTIVATING -- Fleet status changed from <code>BUILDING</code> to <code>ACTIVATING</code>.
+        /// FLEET_STATE_ACTIVATING -- Fleet status changed from <c>BUILDING</c> to <c>ACTIVATING</c>.
         /// Amazon GameLift is trying to launch an instance and test the connectivity between
         /// the build and the Amazon GameLift Service via the Server SDK.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_STATE_ACTIVE -- The fleet's status changed from <code>ACTIVATING</code> to <code>ACTIVE</code>.
+        /// FLEET_STATE_ACTIVE -- The fleet's status changed from <c>ACTIVATING</c> to <c>ACTIVE</c>.
         /// The fleet is now ready to host game sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FLEET_STATE_ERROR -- The Fleet's status changed to <code>ERROR</code>. Describe the
-        /// fleet event message for more details.
+        /// FLEET_STATE_ERROR -- The Fleet's status changed to <c>ERROR</c>. Describe the fleet
+        /// event message for more details.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.GameLift.Model
         /// the GameLift is now verifying that the game server launch paths, which are specified
         /// in the fleet's runtime configuration, exist. If any listed launch path exists, Amazon
         /// GameLift tries to launch a game server process and waits for the process to report
-        /// ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
+        /// ready. Failures in this stage prevent a fleet from moving to <c>ACTIVE</c> status.
         /// Logs for this stage list the launch paths in the runtime configuration and indicate
         /// whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
         /// </para>
@@ -206,20 +206,20 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <code>InitSDK()</code>
-        /// within the time expected (5 minutes). Check your game session log to see why <code>InitSDK()</code>
+        /// SERVER_PROCESS_SDK_INITIALIZATION_TIMEOUT -- The server process did not call <c>InitSDK()</c>
+        /// within the time expected (5 minutes). Check your game session log to see why <c>InitSDK()</c>
         /// was not called in time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <code>ProcessReady()</code>
-        /// within the time expected (5 minutes) after calling <code>InitSDK()</code>. Check your
-        /// game session log to see why <code>ProcessReady()</code> was not called in time.
+        /// SERVER_PROCESS_PROCESS_READY_TIMEOUT -- The server process did not call <c>ProcessReady()</c>
+        /// within the time expected (5 minutes) after calling <c>InitSDK()</c>. Check your game
+        /// session log to see why <c>ProcessReady()</c> was not called in time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SERVER_PROCESS_CRASHED -- The server process exited without calling <code>ProcessEnding()</code>.
-        /// Check your game session log to see why <code>ProcessEnding()</code> was not called.
+        /// SERVER_PROCESS_CRASHED -- The server process exited without calling <c>ProcessEnding()</c>.
+        /// Check your game session log to see why <c>ProcessEnding()</c> was not called.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -230,14 +230,14 @@ namespace Amazon.GameLift.Model
         ///  </li> <li> 
         /// <para>
         /// SERVER_PROCESS_FORCE_TERMINATED -- The server process did not exit cleanly within
-        /// the time expected after <code>OnProcessTerminate()</code> was sent. Check your game
-        /// session log to see why termination took longer than expected.
+        /// the time expected after <c>OnProcessTerminate()</c> was sent. Check your game session
+        /// log to see why termination took longer than expected.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// SERVER_PROCESS_PROCESS_EXIT_TIMEOUT -- The server process did not exit cleanly within
-        /// the time expected (30 seconds) after calling <code>ProcessEnding()</code>. Check your
-        /// game session log to see why termination took longer than expected.
+        /// the time expected (30 seconds) after calling <c>ProcessEnding()</c>. Check your game
+        /// session log to see why termination took longer than expected.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -246,8 +246,8 @@ namespace Amazon.GameLift.Model
         ///  <ul> <li> 
         /// <para>
         /// GAME_SESSION_ACTIVATION_TIMEOUT -- GameSession failed to activate within the expected
-        /// time. Check your game session log to see why <code>ActivateGameSession()</code> took
-        /// longer to complete than expected.
+        /// time. Check your game session log to see why <c>ActivateGameSession()</c> took longer
+        /// to complete than expected.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -310,7 +310,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property EventTime. 
         /// <para>
         /// Time stamp indicating when this event occurred. Format is a number expressed in Unix
-        /// time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime EventTime

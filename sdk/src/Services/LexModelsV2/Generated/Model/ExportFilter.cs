@@ -60,10 +60,10 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to use for the filter. Specify EQ when the <code>ListExports</code> operation
+        /// The operator to use for the filter. Specify EQ when the <c>ListExports</c> operation
         /// should return only resource types that equal the specified value. Specify CO when
-        /// the <code>ListExports</code> operation should return resource types that contain the
-        /// specified value.
+        /// the <c>ListExports</c> operation should return resource types that contain the specified
+        /// value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,8 +82,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values to use to filter the response. The values must be <code>Bot</code>, <code>BotLocale</code>,
-        /// or <code>CustomVocabulary</code>.
+        /// The values to use to filter the response. The values must be <c>Bot</c>, <c>BotLocale</c>,
+        /// or <c>CustomVocabulary</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

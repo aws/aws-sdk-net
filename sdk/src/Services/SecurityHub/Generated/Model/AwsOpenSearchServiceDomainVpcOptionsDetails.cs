@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Contains information that OpenSearch Service derives based on the <code>VPCOptions</code>
+    /// Contains information that OpenSearch Service derives based on the <c>VPCOptions</c>
     /// for the domain.
     /// </summary>
     public partial class AwsOpenSearchServiceDomainVpcOptionsDetails

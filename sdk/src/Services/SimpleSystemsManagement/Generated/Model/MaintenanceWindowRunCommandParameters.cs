@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The parameters for a <code>RUN_COMMAND</code> task type.
+    /// The parameters for a <c>RUN_COMMAND</c> task type.
     /// 
     ///  
     /// <para>
@@ -38,23 +38,23 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
-    /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
-    /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
-    /// structure. For information about how Amazon Web Services Systems Manager handles these
-    /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+    ///  <c>LoggingInfo</c> has been deprecated. To specify an Amazon Simple Storage Service
+    /// (Amazon S3) bucket to contain logs, instead use the <c>OutputS3BucketName</c> and
+    /// <c>OutputS3KeyPrefix</c> options in the <c>TaskInvocationParameters</c> structure.
+    /// For information about how Amazon Web Services Systems Manager handles these options
+    /// for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
-    /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+    ///  <c>TaskParameters</c> has been deprecated. To specify parameters to pass to a task
+    /// when it runs, instead use the <c>Parameters</c> option in the <c>TaskInvocationParameters</c>
     /// structure. For information about how Systems Manager handles these options for the
     /// supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
     /// </para>
     ///  
     /// <para>
-    /// For <code>RUN_COMMAND</code> tasks, Systems Manager uses specified values for <code>TaskParameters</code>
-    /// and <code>LoggingInfo</code> only if no values are specified for <code>TaskInvocationParameters</code>.
+    /// For <c>RUN_COMMAND</c> tasks, Systems Manager uses specified values for <c>TaskParameters</c>
+    /// and <c>LoggingInfo</c> only if no values are specified for <c>TaskInvocationParameters</c>.
     /// 
     /// </para>
     ///  </note>
@@ -149,22 +149,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property DocumentVersion. 
         /// <para>
         /// The Amazon Web Services Systems Manager document (SSM document) version to use in
-        /// the request. You can specify <code>$DEFAULT</code>, <code>$LATEST</code>, or a specific
-        /// version number. If you run commands by using the Amazon Web Services CLI, then you
-        /// must escape the first two options by using a backslash. If you specify a version number,
-        /// then you don't need to use the backslash. For example:
+        /// the request. You can specify <c>$DEFAULT</c>, <c>$LATEST</c>, or a specific version
+        /// number. If you run commands by using the Amazon Web Services CLI, then you must escape
+        /// the first two options by using a backslash. If you specify a version number, then
+        /// you don't need to use the backslash. For example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>--document-version "\$DEFAULT"</code> 
+        ///  <c>--document-version "\$DEFAULT"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>--document-version "\$LATEST"</code> 
+        ///  <c>--document-version "\$LATEST"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>--document-version "3"</code> 
+        ///  <c>--document-version "3"</c> 
         /// </para>
         /// </summary>
         public string DocumentVersion
@@ -239,7 +239,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters for the <code>RUN_COMMAND</code> task execution.
+        /// The parameters for the <c>RUN_COMMAND</c> task execution.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

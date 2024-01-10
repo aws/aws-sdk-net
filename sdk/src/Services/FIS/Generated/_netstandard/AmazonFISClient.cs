@@ -358,8 +358,8 @@ namespace Amazon.FIS
 
         /// <summary>
         /// Creates a target account configuration for the experiment template. A target account
-        /// configuration is required when <code>accountTargeting</code> of <code>experimentOptions</code>
-        /// is set to <code>multi-account</code>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
+        /// configuration is required when <c>accountTargeting</c> of <c>experimentOptions</c>
+        /// is set to <c>multi-account</c>. For more information, see <a href="https://docs.aws.amazon.com/fis/latest/userguide/experiment-options.html">experiment
         /// options</a> in the <i>Fault Injection Simulator User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTargetAccountConfiguration service method.</param>

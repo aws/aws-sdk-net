@@ -105,9 +105,9 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>,
+        ///  <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <c>CREATED_FROM_POLICY</c>,
         /// but the customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation
-        /// is still in progress. This value changes to <code>STANDARD</code> when complete.
+        /// is still in progress. This value changes to <c>STANDARD</c> when complete.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -205,21 +205,20 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ATTACHABLE</code> – This permission or version can be associated with resource
-        /// shares.
+        ///  <c>ATTACHABLE</c> – This permission or version can be associated with resource shares.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNATTACHABLE</code> – This permission or version can't currently be associated
-        /// with resource shares.
+        ///  <c>UNATTACHABLE</c> – This permission or version can't currently be associated with
+        /// resource shares.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> – This permission or version is in the process of being deleted.
+        ///  <c>DELETING</c> – This permission or version is in the process of being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> – This permission or version is deleted.
+        ///  <c>DELETED</c> – This permission or version is deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

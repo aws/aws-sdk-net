@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+    /// <c>DBClusterIdentifier</c> doesn't refer to an existing DB cluster.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

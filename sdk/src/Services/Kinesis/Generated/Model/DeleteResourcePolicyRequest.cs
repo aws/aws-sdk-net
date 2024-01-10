@@ -35,11 +35,11 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+    /// Data stream pattern: <c>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+    /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
     /// 
     /// </para>
     ///  </li> </ul>

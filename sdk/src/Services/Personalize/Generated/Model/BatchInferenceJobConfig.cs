@@ -39,9 +39,9 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property ItemExplorationConfig. 
         /// <para>
         /// A string to string map specifying the exploration configuration hyperparameters, including
-        /// <code>explorationWeight</code> and <code>explorationItemAgeCutOff</code>, you want
-        /// to use to configure the amount of item exploration Amazon Personalize uses when recommending
-        /// items. See <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.
+        /// <c>explorationWeight</c> and <c>explorationItemAgeCutOff</c>, you want to use to configure
+        /// the amount of item exploration Amazon Personalize uses when recommending items. See
+        /// <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

@@ -39,11 +39,11 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you have more <code>PolicySummary</code> objects than the number that you specified
-        /// for <code>MaxResults</code> in the request, the response includes a <code>NextToken</code>
-        /// value. To list more <code>PolicySummary</code> objects, submit another <code>ListPolicies</code>
-        /// request, and specify the <code>NextToken</code> value from the response in the <code>NextToken</code>
-        /// value in the next request.
+        /// If you have more <c>PolicySummary</c> objects than the number that you specified for
+        /// <c>MaxResults</c> in the request, the response includes a <c>NextToken</c> value.
+        /// To list more <c>PolicySummary</c> objects, submit another <c>ListPolicies</c> request,
+        /// and specify the <c>NextToken</c> value from the response in the <c>NextToken</c> value
+        /// in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -62,7 +62,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyList. 
         /// <para>
-        /// An array of <code>PolicySummary</code> objects.
+        /// An array of <c>PolicySummary</c> objects.
         /// </para>
         /// </summary>
         public List<PolicySummary> PolicyList

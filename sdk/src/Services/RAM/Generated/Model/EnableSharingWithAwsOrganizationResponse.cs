@@ -38,8 +38,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ReturnValue. 
         /// <para>
-        /// A return value of <code>true</code> indicates that the request succeeded. A value
-        /// of <code>false</code> indicates that the request failed.
+        /// A return value of <c>true</c> indicates that the request succeeded. A value of <c>false</c>
+        /// indicates that the request failed.
         /// </para>
         /// </summary>
         public bool ReturnValue

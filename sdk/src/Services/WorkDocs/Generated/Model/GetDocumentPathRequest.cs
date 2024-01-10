@@ -90,8 +90,8 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// A comma-separated list of values. Specify <code>NAME</code> to include the names of
-        /// the parent folders.
+        /// A comma-separated list of values. Specify <c>NAME</c> to include the names of the
+        /// parent folders.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

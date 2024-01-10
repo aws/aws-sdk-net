@@ -62,9 +62,9 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property FacetStyle. 
         /// <para>
-        /// There are two different styles that you can define on any given facet, <code>Static</code>
-        /// and <code>Dynamic</code>. For static facets, all attributes must be defined in the
-        /// schema. For dynamic facets, attributes can be defined during data plane operations.
+        /// There are two different styles that you can define on any given facet, <c>Static</c>
+        /// and <c>Dynamic</c>. For static facets, all attributes must be defined in the schema.
+        /// For dynamic facets, attributes can be defined during data plane operations.
         /// </para>
         /// </summary>
         public FacetStyle FacetStyle

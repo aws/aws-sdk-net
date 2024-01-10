@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the <code>CheckerIpRanges</code> element.
+    /// A complex type that contains the <c>CheckerIpRanges</c> element.
     /// </summary>
     public partial class GetCheckerIpRangesResponse : AmazonWebServiceResponse
     {

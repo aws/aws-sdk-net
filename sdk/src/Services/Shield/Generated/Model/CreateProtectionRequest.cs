@@ -38,7 +38,7 @@ namespace Amazon.Shield.Model
     /// 
     ///  
     /// <para>
-    /// You can add protection to only a single resource with each <code>CreateProtection</code>
+    /// You can add protection to only a single resource with each <c>CreateProtection</c>
     /// request. You can add protection to multiple resources at once through the Shield Advanced
     /// console at <a href="https://console.aws.amazon.com/wafv2/shieldv2#/">https://console.aws.amazon.com/wafv2/shieldv2#/</a>.
     /// For more information see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/getting-started-ddos.html">Getting
@@ -55,7 +55,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Friendly name for the <code>Protection</code> you are creating.
+        /// Friendly name for the <c>Protection</c> you are creating.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -82,33 +82,32 @@ namespace Amazon.Shield.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For an Application Load Balancer: <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
-        /// </code> 
+        /// For an Application Load Balancer: <c>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/app/<i>load-balancer-name</i>/<i>load-balancer-id</i>
+        /// </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Elastic Load Balancer (Classic Load Balancer): <code>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
-        /// </code> 
+        /// For an Elastic Load Balancer (Classic Load Balancer): <c>arn:aws:elasticloadbalancing:<i>region</i>:<i>account-id</i>:loadbalancer/<i>load-balancer-name</i>
+        /// </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Amazon CloudFront distribution: <code>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
-        /// </code> 
+        /// For an Amazon CloudFront distribution: <c>arn:aws:cloudfront::<i>account-id</i>:distribution/<i>distribution-id</i>
+        /// </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Global Accelerator standard accelerator: <code>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
-        /// </code> 
+        /// For an Global Accelerator standard accelerator: <c>arn:aws:globalaccelerator::<i>account-id</i>:accelerator/<i>accelerator-id</i>
+        /// </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Route 53: <code>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </code>
-        /// 
+        /// For Amazon Route 53: <c>arn:aws:route53:::hostedzone/<i>hosted-zone-id</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Elastic IP address: <code>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
-        /// </code> 
+        /// For an Elastic IP address: <c>arn:aws:ec2:<i>region</i>:<i>account-id</i>:eip-allocation/<i>allocation-id</i>
+        /// </c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -119,8 +119,8 @@ namespace Amazon.PinpointEmail.Model
         /// Gets and sets the property EmailTags. 
         /// <para>
         /// A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of
-        /// the email that you define, so that you can publish email sending events. 
+        /// using the <c>SendEmail</c> operation. Tags correspond to characteristics of the email
+        /// that you define, so that you can publish email sending events. 
         /// </para>
         /// </summary>
         public List<MessageTag> EmailTags

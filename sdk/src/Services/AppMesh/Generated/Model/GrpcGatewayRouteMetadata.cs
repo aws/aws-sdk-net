@@ -40,8 +40,8 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Invert. 
         /// <para>
-        /// Specify <code>True</code> to match anything except the match criteria. The default
-        /// value is <code>False</code>.
+        /// Specify <c>True</c> to match anything except the match criteria. The default value
+        /// is <c>False</c>.
         /// </para>
         /// </summary>
         public bool Invert

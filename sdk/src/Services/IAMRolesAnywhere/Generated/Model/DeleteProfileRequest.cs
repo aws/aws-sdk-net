@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:DeleteProfile</c>. 
     /// </para>
     /// </summary>
     public partial class DeleteProfileRequest : AmazonIAMRolesAnywhereRequest

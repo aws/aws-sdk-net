@@ -36,8 +36,8 @@ namespace Amazon.ManagedGrafana.Model
     /// 
     ///  
     /// <para>
-    /// Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead, use
-    /// <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.
+    /// Don't use <c>CreateWorkspace</c> to modify an existing workspace. Instead, use <a
+    /// href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.
     /// </para>
     /// </summary>
     public partial class CreateWorkspaceRequest : AmazonManagedGrafanaRequest
@@ -65,8 +65,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// Specifies whether the workspace can access Amazon Web Services resources in this Amazon
         /// Web Services account only, or whether it can also access Amazon Web Services resources
-        /// in other accounts in the same organization. If you specify <code>ORGANIZATION</code>,
-        /// you must specify which organizational units the workspace can access in the <code>workspaceOrganizationalUnits</code>
+        /// in other accounts in the same organization. If you specify <c>ORGANIZATION</c>, you
+        /// must specify which organizational units the workspace can access in the <c>workspaceOrganizationalUnits</c>
         /// parameter.
         /// </para>
         /// </summary>
@@ -152,7 +152,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a list of supported version, use the <code>ListVersions</code> operation.
+        /// To get a list of supported version, use the <c>ListVersions</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -226,19 +226,19 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        /// You must also specify a <code>workspaceRoleArn</code> for a role that you will manage
-        /// for the workspace to use when accessing those datasources and notification channels.
+        /// You must also specify a <c>workspaceRoleArn</c> for a role that you will manage for
+        /// the workspace to use when accessing those datasources and notification channels.
         /// </para>
         ///  
         /// <para>
         /// The ability for Amazon Managed Grafana to create and update IAM roles on behalf of
         /// the user is supported only in the Amazon Managed Grafana console, where this value
-        /// may be set to <code>SERVICE_MANAGED</code>.
+        /// may be set to <c>SERVICE_MANAGED</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Use only the <code>CUSTOMER_MANAGED</code> permission type when creating a workspace
-        /// with the API, CLI or Amazon Web Services CloudFormation. 
+        /// Use only the <c>CUSTOMER_MANAGED</c> permission type when creating a workspace with
+        /// the API, CLI or Amazon Web Services CloudFormation. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -348,7 +348,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        /// Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> 
+        /// Pattern: <c>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=2048)]

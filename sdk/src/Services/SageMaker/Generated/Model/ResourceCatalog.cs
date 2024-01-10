@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// A resource catalog containing all of the resources of a specific resource type within
     /// a resource owner account. For an example on sharing the Amazon SageMaker Feature Store
-    /// <code>DefaultFeatureGroupCatalog</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/feature-store-cross-account-discoverability-share-sagemaker-catalog.html">Share
+    /// <c>DefaultFeatureGroupCatalog</c>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/feature-store-cross-account-discoverability-share-sagemaker-catalog.html">Share
     /// Amazon SageMaker Catalog resource type</a> in the Amazon SageMaker Developer Guide.
     /// </summary>
     public partial class ResourceCatalog
@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        ///  The time the <code>ResourceCatalog</code> was created. 
+        ///  The time the <c>ResourceCatalog</c> was created. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  A free form description of the <code>ResourceCatalog</code>. 
+        ///  A free form description of the <c>ResourceCatalog</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -82,7 +82,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceCatalogArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. 
+        ///  The Amazon Resource Name (ARN) of the <c>ResourceCatalog</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -101,7 +101,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceCatalogName. 
         /// <para>
-        ///  The name of the <code>ResourceCatalog</code>. 
+        ///  The name of the <c>ResourceCatalog</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

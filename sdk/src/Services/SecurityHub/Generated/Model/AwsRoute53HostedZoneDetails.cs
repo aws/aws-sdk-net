@@ -80,8 +80,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property QueryLoggingConfig. 
         /// <para>
-        ///  An array that contains one <code>QueryLoggingConfig</code> element for each DNS query
-        /// logging configuration that is associated with the current Amazon Web Services account.
+        ///  An array that contains one <c>QueryLoggingConfig</c> element for each DNS query logging
+        /// configuration that is associated with the current Amazon Web Services account.
         /// </para>
         /// </summary>
         public AwsRoute53QueryLoggingConfigDetails QueryLoggingConfig

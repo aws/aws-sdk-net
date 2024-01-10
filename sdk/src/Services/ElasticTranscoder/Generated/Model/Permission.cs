@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>Permission</code> structure.
+    /// The <c>Permission</c> structure.
     /// </summary>
     public partial class Permission
     {
@@ -45,23 +45,23 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READ</code>: The grantee can read the thumbnails and metadata for thumbnails
-        /// that Elastic Transcoder adds to the Amazon S3 bucket.
+        ///  <c>READ</c>: The grantee can read the thumbnails and metadata for thumbnails that
+        /// Elastic Transcoder adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic
+        ///  <c>READ_ACP</c>: The grantee can read the object ACL for thumbnails that Elastic
         /// Transcoder adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic
-        /// Transcoder adds to the Amazon S3 bucket.
+        ///  <c>WRITE_ACP</c>: The grantee can write the ACL for the thumbnails that Elastic Transcoder
+        /// adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FULL_CONTROL</code>: The grantee has READ, READ_ACP, and WRITE_ACP permissions
-        /// for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.
+        ///  <c>FULL_CONTROL</c>: The grantee has READ, READ_ACP, and WRITE_ACP permissions for
+        /// the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -107,8 +107,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Canonical</code>: Either the canonical user ID for an AWS account or an origin
-        /// access identity for an Amazon CloudFront distribution.
+        ///  <c>Canonical</c>: Either the canonical user ID for an AWS account or an origin access
+        /// identity for an Amazon CloudFront distribution.
         /// </para>
         ///  <important> 
         /// <para>
@@ -116,12 +116,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        ///  <code>Email</code>: The registered email address of an AWS account.
+        ///  <c>Email</c>: The registered email address of an AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Group</code>: One of the following predefined Amazon S3 groups: <code>AllUsers</code>,
-        /// <code>AuthenticatedUsers</code>, or <code>LogDelivery</code>.
+        ///  <c>Group</c>: One of the following predefined Amazon S3 groups: <c>AllUsers</c>,
+        /// <c>AuthenticatedUsers</c>, or <c>LogDelivery</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

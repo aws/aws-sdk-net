@@ -63,7 +63,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property HorizontalAlign. 
         /// <para>
-        /// The horizontal position of the watermark unless you specify a non-zero value for <code>HorizontalOffset</code>:
+        /// The horizontal position of the watermark unless you specify a non-zero value for <c>HorizontalOffset</c>:
         /// 
         /// </para>
         ///  <ul> <li> 
@@ -111,23 +111,23 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, if you specify Left for <code>HorizontalAlign</code> and 5px for <code>HorizontalOffset</code>,
+        /// For example, if you specify Left for <c>HorizontalAlign</c> and 5px for <c>HorizontalOffset</c>,
         /// the left side of the watermark appears 5 pixels from the left border of the output
         /// video.
         /// </para>
         ///  
         /// <para>
-        ///  <code>HorizontalOffset</code> is only valid when the value of <code>HorizontalAlign</code>
-        /// is <code>Left</code> or <code>Right</code>. If you specify an offset that causes the
-        /// watermark to extend beyond the left or right border and Elastic Transcoder has not
-        /// added black bars, the watermark is cropped. If Elastic Transcoder has added black
-        /// bars, the watermark extends into the black bars. If the watermark extends beyond the
-        /// black bars, it is cropped.
+        ///  <c>HorizontalOffset</c> is only valid when the value of <c>HorizontalAlign</c> is
+        /// <c>Left</c> or <c>Right</c>. If you specify an offset that causes the watermark to
+        /// extend beyond the left or right border and Elastic Transcoder has not added black
+        /// bars, the watermark is cropped. If Elastic Transcoder has added black bars, the watermark
+        /// extends into the black bars. If the watermark extends beyond the black bars, it is
+        /// cropped.
         /// </para>
         ///  
         /// <para>
-        /// Use the value of <code>Target</code> to specify whether you want to include the black
-        /// bars that are added by Elastic Transcoder, if any, in the offset calculation.
+        /// Use the value of <c>Target</c> to specify whether you want to include the black bars
+        /// that are added by Elastic Transcoder, if any, in the offset calculation.
         /// </para>
         /// </summary>
         public string HorizontalOffset
@@ -145,8 +145,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        ///  A unique identifier for the settings for one watermark. The value of <code>Id</code>
-        /// can be up to 40 characters long. 
+        ///  A unique identifier for the settings for one watermark. The value of <c>Id</c> can
+        /// be up to 40 characters long. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
@@ -170,18 +170,18 @@ namespace Amazon.ElasticTranscoder.Model
         ///  <ul> <li> 
         /// <para>
         /// number of pixels (px): The minimum value is 16 pixels, and the maximum value is the
-        /// value of <code>MaxHeight</code>.
+        /// value of <c>MaxHeight</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code>
+        /// integer percentage (%): The range of valid values is 0 to 100. Use the value of <c>Target</c>
         /// to specify whether you want Elastic Transcoder to include the black bars that are
         /// added by Elastic Transcoder, if any, in the calculation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you specify the value in pixels, it must be less than or equal to the value of
-        /// <code>MaxHeight</code>.
+        /// <c>MaxHeight</c>.
         /// </para>
         /// </summary>
         public string MaxHeight
@@ -204,18 +204,18 @@ namespace Amazon.ElasticTranscoder.Model
         ///  <ul> <li> 
         /// <para>
         /// number of pixels (px): The minimum value is 16 pixels, and the maximum value is the
-        /// value of <code>MaxWidth</code>.
+        /// value of <c>MaxWidth</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// integer percentage (%): The range of valid values is 0 to 100. Use the value of <code>Target</code>
+        /// integer percentage (%): The range of valid values is 0 to 100. Use the value of <c>Target</c>
         /// to specify whether you want Elastic Transcoder to include the black bars that are
         /// added by Elastic Transcoder, if any, in the calculation.
         /// </para>
         ///  
         /// <para>
         /// If you specify the value in pixels, it must be less than or equal to the value of
-        /// <code>MaxWidth</code>.
+        /// <c>MaxWidth</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -237,13 +237,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// A percentage that indicates how much you want a watermark to obscure the video in
         /// the location where it appears. Valid values are 0 (the watermark is invisible) to
         /// 100 (the watermark completely obscures the video in the specified location). The datatype
-        /// of <code>Opacity</code> is float.
+        /// of <c>Opacity</c> is float.
         /// </para>
         ///  
         /// <para>
         /// Elastic Transcoder supports transparent .png graphics. If you use a transparent .png,
         /// the transparent portion of the video appears as if you had specified a value of 0
-        /// for <code>Opacity</code>. The .jpg file format doesn't support transparency.
+        /// for <c>Opacity</c>. The .jpg file format doesn't support transparency.
         /// </para>
         /// </summary>
         public string Opacity
@@ -266,22 +266,22 @@ namespace Amazon.ElasticTranscoder.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>Fit</b>: Elastic Transcoder scales the watermark so it matches the value that
-        /// you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without exceeding
-        /// the other value.
+        /// you specified in either <c>MaxWidth</c> or <c>MaxHeight</c> without exceeding the
+        /// other value.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Stretch</b>: Elastic Transcoder stretches the watermark to match the values that
-        /// you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative
-        /// proportions of the watermark and the values of <code>MaxWidth</code> and <code>MaxHeight</code>
-        /// are different, the watermark will be distorted.
+        /// you specified for <c>MaxWidth</c> and <c>MaxHeight</c>. If the relative proportions
+        /// of the watermark and the values of <c>MaxWidth</c> and <c>MaxHeight</c> are different,
+        /// the watermark will be distorted.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>ShrinkToFit</b>: Elastic Transcoder scales the watermark down so that its dimensions
-        /// match the values that you specified for at least one of <code>MaxWidth</code> and
-        /// <code>MaxHeight</code> without exceeding either value. If you specify this option,
-        /// Elastic Transcoder does not scale the watermark up.
+        /// match the values that you specified for at least one of <c>MaxWidth</c> and <c>MaxHeight</c>
+        /// without exceeding either value. If you specify this option, Elastic Transcoder does
+        /// not scale the watermark up.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -301,24 +301,23 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Target. 
         /// <para>
         /// A value that determines how Elastic Transcoder interprets values that you specified
-        /// for <code>HorizontalOffset</code>, <code>VerticalOffset</code>, <code>MaxWidth</code>,
-        /// and <code>MaxHeight</code>:
+        /// for <c>HorizontalOffset</c>, <c>VerticalOffset</c>, <c>MaxWidth</c>, and <c>MaxHeight</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Content</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values
+        ///  <b>Content</b>: <c>HorizontalOffset</c> and <c>VerticalOffset</c> values are calculated
+        /// based on the borders of the video excluding black bars added by Elastic Transcoder,
+        /// if any. In addition, <c>MaxWidth</c> and <c>MaxHeight</c>, if specified as a percentage,
         /// are calculated based on the borders of the video excluding black bars added by Elastic
-        /// Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>,
-        /// if specified as a percentage, are calculated based on the borders of the video excluding
-        /// black bars added by Elastic Transcoder, if any.
+        /// Transcoder, if any.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Frame</b>: <code>HorizontalOffset</code> and <code>VerticalOffset</code> values
+        ///  <b>Frame</b>: <c>HorizontalOffset</c> and <c>VerticalOffset</c> values are calculated
+        /// based on the borders of the video including black bars added by Elastic Transcoder,
+        /// if any. In addition, <c>MaxWidth</c> and <c>MaxHeight</c>, if specified as a percentage,
         /// are calculated based on the borders of the video including black bars added by Elastic
-        /// Transcoder, if any. In addition, <code>MaxWidth</code> and <code>MaxHeight</code>,
-        /// if specified as a percentage, are calculated based on the borders of the video including
-        /// black bars added by Elastic Transcoder, if any.
+        /// Transcoder, if any.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -337,7 +336,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property VerticalAlign. 
         /// <para>
-        /// The vertical position of the watermark unless you specify a non-zero value for <code>VerticalOffset</code>:
+        /// The vertical position of the watermark unless you specify a non-zero value for <c>VerticalOffset</c>:
         /// 
         /// </para>
         ///  <ul> <li> 
@@ -370,7 +369,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property VerticalOffset. 
         /// <para>
-        ///  <code>VerticalOffset</code> 
+        ///  <c>VerticalOffset</c> 
         /// </para>
         ///  
         /// <para>
@@ -380,7 +379,7 @@ namespace Amazon.ElasticTranscoder.Model
         ///  <ul> <li> 
         /// <para>
         /// number of pixels (px): The minimum value is 0 pixels, and the maximum value is the
-        /// value of <code>MaxHeight</code>.
+        /// value of <c>MaxHeight</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -388,14 +387,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, if you specify <code>Top</code> for <code>VerticalAlign</code> and <code>5px</code>
-        /// for <code>VerticalOffset</code>, the top of the watermark appears 5 pixels from the
-        /// top border of the output video.
+        /// For example, if you specify <c>Top</c> for <c>VerticalAlign</c> and <c>5px</c> for
+        /// <c>VerticalOffset</c>, the top of the watermark appears 5 pixels from the top border
+        /// of the output video.
         /// </para>
         ///  
         /// <para>
-        ///  <code>VerticalOffset</code> is only valid when the value of VerticalAlign is Top
-        /// or Bottom.
+        ///  <c>VerticalOffset</c> is only valid when the value of VerticalAlign is Top or Bottom.
         /// </para>
         ///  
         /// <para>
@@ -406,9 +404,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the value of <code>Target</code> to specify whether you want Elastic Transcoder
-        /// to include the black bars that are added by Elastic Transcoder, if any, in the offset
-        /// calculation.
+        /// Use the value of <c>Target</c> to specify whether you want Elastic Transcoder to include
+        /// the black bars that are added by Elastic Transcoder, if any, in the offset calculation.
         /// </para>
         /// </summary>
         public string VerticalOffset

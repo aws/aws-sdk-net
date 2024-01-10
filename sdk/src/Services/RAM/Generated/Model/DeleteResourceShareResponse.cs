@@ -40,7 +40,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// The idempotency identifier associated with this request. If you want to repeat the
-        /// same operation in an idempotent manner then you must include this value in the <code>clientToken</code>
+        /// same operation in an idempotent manner then you must include this value in the <c>clientToken</c>
         /// request parameter of that later call. All other parameters must also have the same
         /// values that you used in the first call.
         /// </para>
@@ -60,8 +60,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property ReturnValue. 
         /// <para>
-        /// A return value of <code>true</code> indicates that the request succeeded. A value
-        /// of <code>false</code> indicates that the request failed.
+        /// A return value of <c>true</c> indicates that the request succeeded. A value of <c>false</c>
+        /// indicates that the request failed.
         /// </para>
         /// </summary>
         public bool ReturnValue

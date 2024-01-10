@@ -30,9 +30,9 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// The engine does not support filtering data based on the enforced permissions. For
-    /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
-    /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
-    /// permissions exist on the table, this exception is thrown.
+    /// example, if you call the <c>GetTemporaryGlueTableCredentials</c> operation with <c>SupportedPermissionType</c>
+    /// equal to <c>ColumnPermission</c>, but cell-level permissions exist on the table, this
+    /// exception is thrown.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -59,7 +59,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you want to use an end time of October 1, 2018, at 9 PM UTC, specify
-        /// <code>1538427600</code> as the end time.
+        /// <c>1538427600</c> as the end time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you want to use a start time of October 1, 2018, at 8 PM UTC, specify
-        /// <code>1538424000</code> as the start time.
+        /// <c>1538424000</c> as the start time.
         /// </para>
         ///  </li> </ul> 
         /// <para>

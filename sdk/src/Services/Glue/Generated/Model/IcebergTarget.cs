@@ -99,7 +99,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Paths. 
         /// <para>
-        /// One or more Amazon S3 paths that contains Iceberg metadata folders as <code>s3://bucket/prefix</code>.
+        /// One or more Amazon S3 paths that contains Iceberg metadata folders as <c>s3://bucket/prefix</c>.
         /// </para>
         /// </summary>
         public List<string> Paths

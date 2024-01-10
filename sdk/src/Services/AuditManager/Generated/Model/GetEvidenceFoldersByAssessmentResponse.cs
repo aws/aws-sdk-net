@@ -39,8 +39,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property EvidenceFolders. 
         /// <para>
-        ///  The list of evidence folders that the <code>GetEvidenceFoldersByAssessment</code>
-        /// API returned. 
+        ///  The list of evidence folders that the <c>GetEvidenceFoldersByAssessment</c> API returned.
+        /// 
         /// </para>
         /// </summary>
         public List<AssessmentEvidenceFolder> EvidenceFolders

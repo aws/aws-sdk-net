@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to <code> <a>DeletePackage</a> </code> operation.
+    /// Container for response parameters to <c> <a>DeletePackage</a> </c> operation.
     /// </summary>
     public partial class DeletePackageResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property PackageDetails. 
         /// <para>
-        /// <code>PackageDetails</code>
+        /// <c>PackageDetails</c>
         /// </para>
         /// </summary>
         public PackageDetails PackageDetails

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomainNodes</code> request. Contains information about
-    /// the nodes on the requested domain.
+    /// The result of a <c>DescribeDomainNodes</c> request. Contains information about the
+    /// nodes on the requested domain.
     /// </summary>
     public partial class DescribeDomainNodesResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DomainNodesStatusList. 
         /// <para>
-        /// Contains nodes information list <code>DomainNodesStatusList</code> with details about
-        /// the all nodes on the requested domain.
+        /// Contains nodes information list <c>DomainNodesStatusList</c> with details about the
+        /// all nodes on the requested domain.
         /// </para>
         /// </summary>
         public List<DomainNodesStatus> DomainNodesStatusList

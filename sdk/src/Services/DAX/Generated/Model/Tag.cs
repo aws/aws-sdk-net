@@ -34,9 +34,9 @@ namespace Amazon.DAX.Model
     /// 
     ///  
     /// <para>
-    /// AWS-assigned tag names and values are automatically assigned the <code>aws:</code>
-    /// prefix, which the user cannot assign. AWS-assigned tag names do not count towards
-    /// the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>.
+    /// AWS-assigned tag names and values are automatically assigned the <c>aws:</c> prefix,
+    /// which the user cannot assign. AWS-assigned tag names do not count towards the tag
+    /// limit of 50. User-assigned tag names have the prefix <c>user:</c>.
     /// </para>
     ///  
     /// <para>

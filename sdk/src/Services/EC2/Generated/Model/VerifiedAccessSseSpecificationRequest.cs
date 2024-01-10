@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>True</code> | <code>False</code> 
+        /// Valid values: <c>True</c> | <c>False</c> 
         /// </para>
         /// </summary>
         public bool CustomerManagedKeyEnabled

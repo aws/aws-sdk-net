@@ -35,7 +35,7 @@ namespace Amazon.DataSync.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Response elements related to <code>SMB</code> aren't supported with the <code>DescribeLocationFsxOpenZfs</code>
+    /// Response elements related to <c>SMB</c> aren't supported with the <c>DescribeLocationFsxOpenZfs</c>
     /// operation.
     /// </para>
     ///  </note>

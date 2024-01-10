@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The <code>Status</code> and <code>TrackingNumber</code> information for an inbound
-    /// or outbound shipment.
+    /// The <c>Status</c> and <c>TrackingNumber</c> information for an inbound or outbound
+    /// shipment.
     /// </summary>
     public partial class Shipment
     {

@@ -38,8 +38,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Agreement. 
         /// <para>
-        /// The details for the specified agreement, returned as a <code>DescribedAgreement</code>
-        /// object.
+        /// The details for the specified agreement, returned as a <c>DescribedAgreement</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

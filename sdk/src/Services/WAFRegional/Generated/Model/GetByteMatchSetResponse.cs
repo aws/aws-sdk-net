@@ -38,23 +38,23 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ByteMatchSet. 
         /// <para>
-        /// Information about the <a>ByteMatchSet</a> that you specified in the <code>GetByteMatchSet</code>
+        /// Information about the <a>ByteMatchSet</a> that you specified in the <c>GetByteMatchSet</c>
         /// request. For more information, see the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>ByteMatchSet</a>: Contains <code>ByteMatchSetId</code>, <code>ByteMatchTuples</code>,
-        /// and <code>Name</code> 
+        ///  <a>ByteMatchSet</a>: Contains <c>ByteMatchSetId</c>, <c>ByteMatchTuples</c>, and
+        /// <c>Name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ByteMatchTuples</code>: Contains an array of <a>ByteMatchTuple</a> objects.
-        /// Each <code>ByteMatchTuple</code> object contains <a>FieldToMatch</a>, <code>PositionalConstraint</code>,
-        /// <code>TargetString</code>, and <code>TextTransformation</code> 
+        ///  <c>ByteMatchTuples</c>: Contains an array of <a>ByteMatchTuple</a> objects. Each
+        /// <c>ByteMatchTuple</c> object contains <a>FieldToMatch</a>, <c>PositionalConstraint</c>,
+        /// <c>TargetString</c>, and <c>TextTransformation</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        ///  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

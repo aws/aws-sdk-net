@@ -67,8 +67,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that is required for pagination. On your first call to the <code>ListMembers</code>
-        /// operation, set the value of this parameter to <code>NULL</code>.
+        /// The token that is required for pagination. On your first call to the <c>ListMembers</c>
+        /// operation, set the value of this parameter to <c>NULL</c>.
         /// </para>
         ///  
         /// <para>
@@ -92,18 +92,17 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property OnlyAssociated. 
         /// <para>
         /// Specifies which member accounts to include in the response based on their relationship
-        /// status with the administrator account. The default value is <code>TRUE</code>.
+        /// status with the administrator account. The default value is <c>TRUE</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>OnlyAssociated</code> is set to <code>TRUE</code>, the response includes
-        /// member accounts whose relationship status with the administrator account is set to
-        /// <code>ENABLED</code>.
+        /// If <c>OnlyAssociated</c> is set to <c>TRUE</c>, the response includes member accounts
+        /// whose relationship status with the administrator account is set to <c>ENABLED</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>OnlyAssociated</code> is set to <code>FALSE</code>, the response includes
-        /// all existing member accounts. 
+        /// If <c>OnlyAssociated</c> is set to <c>FALSE</c>, the response includes all existing
+        /// member accounts. 
         /// </para>
         /// </summary>
         public bool OnlyAssociated

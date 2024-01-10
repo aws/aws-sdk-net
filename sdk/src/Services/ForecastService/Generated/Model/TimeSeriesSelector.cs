@@ -29,24 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// Defines the set of time series that are used to create the forecasts in a <code>TimeSeriesIdentifiers</code>
+    /// Defines the set of time series that are used to create the forecasts in a <c>TimeSeriesIdentifiers</c>
     /// object.
     /// 
     ///  
     /// <para>
-    /// The <code>TimeSeriesIdentifiers</code> object needs the following information:
+    /// The <c>TimeSeriesIdentifiers</c> object needs the following information:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DataSource</code> 
+    ///  <c>DataSource</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Format</code> 
+    ///  <c>Format</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Schema</code> 
+    ///  <c>Schema</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

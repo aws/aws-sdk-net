@@ -38,8 +38,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property NodeAssociationStatusToken. 
         /// <para>
-        /// Contains a token which can be passed to the <code>DescribeNodeAssociationStatus</code>
-        /// API call to get the status of the disassociation request. 
+        /// Contains a token which can be passed to the <c>DescribeNodeAssociationStatus</c> API
+        /// call to get the status of the disassociation request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

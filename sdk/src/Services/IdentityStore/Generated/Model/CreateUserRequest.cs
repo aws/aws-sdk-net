@@ -52,7 +52,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Addresses. 
         /// <para>
-        /// A list of <code>Address</code> objects containing addresses associated with the user.
+        /// A list of <c>Address</c> objects containing addresses associated with the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -91,8 +91,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Emails. 
         /// <para>
-        /// A list of <code>Email</code> objects containing email addresses associated with the
-        /// user.
+        /// A list of <c>Email</c> objects containing email addresses associated with the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -186,8 +185,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property PhoneNumbers. 
         /// <para>
-        /// A list of <code>PhoneNumber</code> objects containing phone numbers associated with
-        /// the user.
+        /// A list of <c>PhoneNumber</c> objects containing phone numbers associated with the
+        /// user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -287,7 +286,7 @@ namespace Amazon.IdentityStore.Model
         /// A unique string used to identify the user. The length limit is 128 characters. This
         /// value can consist of letters, accented characters, symbols, numbers, and punctuation.
         /// This value is specified at the time the user is created and stored as an attribute
-        /// of the user object in the identity store. <code>Administrator</code> and <code>AWSAdministrators</code>
+        /// of the user object in the identity store. <c>Administrator</c> and <c>AWSAdministrators</c>
         /// are reserved names and can't be used for users or groups.
         /// </para>
         /// </summary>

@@ -47,7 +47,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.
+        /// Currently, accessor type is restricted to <c>BILLING_TOKEN</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -90,26 +90,25 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// The blockchain network that the <code>Accessor</code> token is created for.
+        /// The blockchain network that the <c>Accessor</c> token is created for.
         /// </para>
         ///  <note> 
         /// <para>
-        /// We recommend using the appropriate <code>networkType</code> value for the blockchain
-        /// network that you are creating the <code>Accessor</code> token for. You cannnot use
-        /// the value <code>ETHEREUM_MAINNET_AND_GOERLI</code> to specify a <code>networkType</code>
-        /// for your Accessor token.
+        /// We recommend using the appropriate <c>networkType</c> value for the blockchain network
+        /// that you are creating the <c>Accessor</c> token for. You cannnot use the value <c>ETHEREUM_MAINNET_AND_GOERLI</c>
+        /// to specify a <c>networkType</c> for your Accessor token.
         /// </para>
         ///  
         /// <para>
-        /// The default value of <code>ETHEREUM_MAINNET_AND_GOERLI</code> is only applied:
+        /// The default value of <c>ETHEREUM_MAINNET_AND_GOERLI</c> is only applied:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// when the <code>CreateAccessor</code> action does not set a <code>networkType</code>.
+        /// when the <c>CreateAccessor</c> action does not set a <c>networkType</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// to all existing <code>Accessor</code> tokens that were created before the <code>networkType</code>
+        /// to all existing <c>Accessor</c> tokens that were created before the <c>networkType</c>
         /// property was introduced. 
         /// </para>
         ///  </li> </ul> </note>

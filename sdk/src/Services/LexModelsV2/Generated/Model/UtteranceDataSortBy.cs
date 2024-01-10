@@ -43,11 +43,11 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Count</code> – The number of utterances.
+        ///  <c>Count</c> – The number of utterances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UtteranceTimestamp</code> – The date and time of the utterance.
+        ///  <c>UtteranceTimestamp</c> – The date and time of the utterance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

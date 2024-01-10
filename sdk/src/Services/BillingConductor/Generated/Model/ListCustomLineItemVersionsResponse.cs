@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CustomLineItemVersions. 
         /// <para>
-        /// A list of <code>CustomLineItemVersionListElements</code> that are received.
+        /// A list of <c>CustomLineItemVersionListElements</c> that are received.
         /// </para>
         /// </summary>
         public List<CustomLineItemVersionListElement> CustomLineItemVersions

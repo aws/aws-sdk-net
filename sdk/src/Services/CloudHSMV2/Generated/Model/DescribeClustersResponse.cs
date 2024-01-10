@@ -58,7 +58,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// An opaque string that indicates that the response contains only a subset of clusters.
-        /// Use this value in a subsequent <code>DescribeClusters</code> request to get more clusters.
+        /// Use this value in a subsequent <c>DescribeClusters</c> request to get more clusters.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

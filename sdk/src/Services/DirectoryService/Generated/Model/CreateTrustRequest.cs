@@ -171,7 +171,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property TrustType. 
         /// <para>
-        /// The trust relationship type. <code>Forest</code> is the default.
+        /// The trust relationship type. <c>Forest</c> is the default.
         /// </para>
         /// </summary>
         public TrustType TrustType

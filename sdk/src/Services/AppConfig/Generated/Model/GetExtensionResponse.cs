@@ -139,7 +139,7 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// The parameters accepted by the extension. You specify parameter values when you associate
-        /// the extension to an AppConfig resource by using the <code>CreateExtensionAssociation</code>
+        /// the extension to an AppConfig resource by using the <c>CreateExtensionAssociation</c>
         /// API action. For Lambda extension actions, these parameters are included in the Lambda
         /// request object.
         /// </para>

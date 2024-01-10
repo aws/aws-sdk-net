@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// The <code>ZonalConfig</code> object is not valid.
+    /// The <c>ZonalConfig</c> object is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

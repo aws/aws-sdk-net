@@ -44,9 +44,9 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// To test a function, you provide the function's name and version (<code>ETag</code>
-    /// value) along with the event object. To get the function's name and version, you can
-    /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+    /// To test a function, you provide the function's name and version (<c>ETag</c> value)
+    /// along with the event object. To get the function's name and version, you can use <c>ListFunctions</c>
+    /// and <c>DescribeFunction</c>.
     /// </para>
     /// </summary>
     public partial class TestFunctionRequest : AmazonCloudFrontRequest
@@ -80,8 +80,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The current version (<code>ETag</code> value) of the function that you are testing,
-        /// which you can get using <code>DescribeFunction</code>.
+        /// The current version (<c>ETag</c> value) of the function that you are testing, which
+        /// you can get using <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,8 +119,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        /// The stage of the function that you are testing, either <code>DEVELOPMENT</code> or
-        /// <code>LIVE</code>.
+        /// The stage of the function that you are testing, either <c>DEVELOPMENT</c> or <c>LIVE</c>.
         /// </para>
         /// </summary>
         public FunctionStage Stage

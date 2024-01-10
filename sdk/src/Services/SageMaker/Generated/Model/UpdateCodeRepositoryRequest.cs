@@ -61,12 +61,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The configuration of the git repository, including the URL and the Amazon Resource
         /// Name (ARN) of the Amazon Web Services Secrets Manager secret that contains the credentials
-        /// used to access the repository. The secret must have a staging label of <code>AWSCURRENT</code>
+        /// used to access the repository. The secret must have a staging label of <c>AWSCURRENT</c>
         /// and must be in the following format:
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"username": <i>UserName</i>, "password": <i>Password</i>}</code> 
+        ///  <c>{"username": <i>UserName</i>, "password": <i>Password</i>}</c> 
         /// </para>
         /// </summary>
         public GitConfigForUpdate GitConfig

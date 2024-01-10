@@ -30,8 +30,8 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Contains additional details about the state's execution, including its input and output
-    /// data processing flow, and HTTP response information. The <code>inspectionLevel</code>
-    /// request parameter specifies which details are returned.
+    /// data processing flow, and HTTP response information. The <c>inspectionLevel</c> request
+    /// parameter specifies which details are returned.
     /// </summary>
     public partial class InspectionDataResponse
     {

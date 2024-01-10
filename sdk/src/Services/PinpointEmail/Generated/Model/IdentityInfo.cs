@@ -62,15 +62,15 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EMAIL_ADDRESS</code> – The identity is an email address.
+        ///  <c>EMAIL_ADDRESS</c> – The identity is an email address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DOMAIN</code> – The identity is a domain.
+        ///  <c>DOMAIN</c> – The identity is a domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by AWS.
+        ///  <c>MANAGED_DOMAIN</c> – The identity is a domain that is managed by AWS.
         /// </para>
         ///  </li> </ul>
         /// </summary>

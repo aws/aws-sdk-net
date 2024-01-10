@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>ListDomainNames</code> request. Contains a list of the domains
-    /// owned by an account.
+    /// The result of a <c>ListDomainNames</c> request. Contains a list of the domains owned
+    /// by an account.
     /// </summary>
     public partial class ListDomainNamesResponse : AmazonWebServiceResponse
     {

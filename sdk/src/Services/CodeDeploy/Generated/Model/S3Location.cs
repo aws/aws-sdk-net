@@ -64,23 +64,23 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tar</code>: A tar archive file.
+        ///  <c>tar</c>: A tar archive file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tgz</code>: A compressed tar archive file.
+        ///  <c>tgz</c>: A compressed tar archive file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zip</code>: A zip archive file.
+        ///  <c>zip</c>: A zip archive file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>YAML</code>: A YAML-formatted file.
+        ///  <c>YAML</c>: A YAML-formatted file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JSON</code>: A JSON-formatted file.
+        ///  <c>JSON</c>: A JSON-formatted file.
         /// </para>
         ///  </li> </ul>
         /// </summary>

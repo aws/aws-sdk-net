@@ -63,9 +63,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>in-sync</code> | <code>pending-reboot</code> | <code>applying</code>
-        /// | <code>invalid-parameter</code> | <code>apply-deferred</code> | <code>apply-error</code>
-        /// | <code>unknown-error</code> 
+        /// Valid values: <c>in-sync</c> | <c>pending-reboot</c> | <c>applying</c> | <c>invalid-parameter</c>
+        /// | <c>apply-deferred</c> | <c>apply-error</c> | <c>unknown-error</c> 
         /// </para>
         /// </summary>
         public string ParameterApplyStatus

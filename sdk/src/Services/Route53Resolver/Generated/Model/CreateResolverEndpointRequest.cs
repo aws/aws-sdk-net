@@ -62,8 +62,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and that allows failed requests to be
-        /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
-        /// can be any unique string, for example, a date/time stamp. 
+        /// retried without the risk of running the operation twice. <c>CreatorRequestId</c> can
+        /// be any unique string, for example, a date/time stamp. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -86,13 +86,13 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INBOUND</code>: Resolver forwards DNS queries to the DNS service for a VPC
-        /// from your network
+        ///  <c>INBOUND</c>: Resolver forwards DNS queries to the DNS service for a VPC from your
+        /// network
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OUTBOUND</code>: Resolver forwards DNS queries from the DNS service for a VPC
-        /// to your network
+        ///  <c>OUTBOUND</c>: Resolver forwards DNS queries from the DNS service for a VPC to
+        /// your network
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -159,7 +159,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property OutpostArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also
-        /// specify a value for the <code>PreferredInstanceType</code>. 
+        /// specify a value for the <c>PreferredInstanceType</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -178,7 +178,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property PreferredInstanceType. 
         /// <para>
-        /// The instance type. If you specify this, you must also specify a value for the <code>OutpostArn</code>.
+        /// The instance type. If you specify this, you must also specify a value for the <c>OutpostArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -94,8 +94,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Output. 
         /// <para>
         ///  A section of the request body that provides information about the transcoded (target)
-        /// file. We strongly recommend that you use the <code>Outputs</code> syntax instead of
-        /// the <code>Output</code> syntax. 
+        /// file. We strongly recommend that you use the <c>Outputs</c> syntax instead of the
+        /// <c>Output</c> syntax. 
         /// </para>
         /// </summary>
         public CreateJobOutput Output
@@ -134,7 +134,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Outputs. 
         /// <para>
         ///  A section of the request body that provides information about the transcoded (target)
-        /// files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code>
+        /// files. We recommend that you use the <c>Outputs</c> syntax instead of the <c>Output</c>
         /// syntax. 
         /// </para>
         /// </summary>
@@ -154,7 +154,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        /// The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding.
+        /// The <c>Id</c> of the pipeline that you want Elastic Transcoder to use for transcoding.
         /// The pipeline determines several settings, including the Amazon S3 bucket from which
         /// Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder
         /// puts the transcoded files.
@@ -176,7 +176,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Playlists. 
         /// <para>
-        /// If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code>
+        /// If you specify a preset in <c>PresetId</c> for which the value of <c>Container</c>
         /// is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists contains information about the
         /// master playlists that you want Elastic Transcoder to create.
         /// </para>
@@ -202,9 +202,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property UserMetadata. 
         /// <para>
         /// User-defined metadata that you want to associate with an Elastic Transcoder job. You
-        /// specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code>
-        /// pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs
-        /// are returned in the same order in which you specify them.
+        /// specify metadata in <c>key/value</c> pairs, and you can add up to 10 <c>key/value</c>
+        /// pairs per job. Elastic Transcoder does not guarantee that <c>key/value</c> pairs are
+        /// returned in the same order in which you specify them.
         /// </para>
         /// </summary>
         public Dictionary<string, string> UserMetadata

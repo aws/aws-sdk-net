@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AuthenticationStrategy. 
         /// <para>
-        ///  The authentication strategy used to secure the broker. The default is <code>SIMPLE</code>.
+        ///  The authentication strategy used to secure the broker. The default is <c>SIMPLE</c>.
         /// 
         /// </para>
         /// </summary>

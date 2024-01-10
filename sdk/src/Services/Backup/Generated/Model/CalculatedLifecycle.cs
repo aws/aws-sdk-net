@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Contains <code>DeleteAt</code> and <code>MoveToColdStorageAt</code> timestamps, which
-    /// are used to specify a lifecycle for a recovery point.
+    /// Contains <c>DeleteAt</c> and <c>MoveToColdStorageAt</c> timestamps, which are used
+    /// to specify a lifecycle for a recovery point.
     /// 
     ///  
     /// <para>

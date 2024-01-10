@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Decision attributes specified in <code>scheduleLambdaFunctionDecisionAttributes</code>
-    /// within the list of decisions <code>decisions</code> passed to <a>RespondDecisionTaskCompleted</a>.
+    /// Decision attributes specified in <c>scheduleLambdaFunctionDecisionAttributes</c> within
+    /// the list of decisions <c>decisions</c> passed to <a>RespondDecisionTaskCompleted</a>.
     /// </summary>
     public partial class ScheduleLambdaFunctionDecisionAttributes
     {

@@ -38,8 +38,8 @@ namespace Amazon.MediaStore.Model
     ///  
     /// <para>
     /// For this release of the REST API, you can create only one policy for a container.
-    /// If you enter <code>PutContainerPolicy</code> twice, the second command modifies the
-    /// existing policy. 
+    /// If you enter <c>PutContainerPolicy</c> twice, the second command modifies the existing
+    /// policy. 
     /// </para>
     /// </summary>
     public partial class PutContainerPolicyRequest : AmazonMediaStoreRequest
@@ -73,11 +73,11 @@ namespace Amazon.MediaStore.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// One <code>Version</code> tag
+        /// One <c>Version</c> tag
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// One <code>Statement</code> tag that contains the standard tags for the policy.
+        /// One <c>Statement</c> tag that contains the standard tags for the policy.
         /// </para>
         ///  </li> </ul>
         /// </summary>

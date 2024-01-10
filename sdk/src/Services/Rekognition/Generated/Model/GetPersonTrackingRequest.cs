@@ -34,28 +34,28 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// The person path tracking operation is started by a call to <code>StartPersonTracking</code>
-    /// which returns a job identifier (<code>JobId</code>). When the operation finishes,
-    /// Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification
-    /// Service topic registered in the initial call to <code>StartPersonTracking</code>.
+    /// The person path tracking operation is started by a call to <c>StartPersonTracking</c>
+    /// which returns a job identifier (<c>JobId</c>). When the operation finishes, Amazon
+    /// Rekognition Video publishes a completion status to the Amazon Simple Notification
+    /// Service topic registered in the initial call to <c>StartPersonTracking</c>.
     /// </para>
     ///  
     /// <para>
     /// To get the results of the person path tracking operation, first check that the status
-    /// value published to the Amazon SNS topic is <code>SUCCEEDED</code>. If so, call <a>GetPersonTracking</a>
-    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartPersonTracking</code>.
+    /// value published to the Amazon SNS topic is <c>SUCCEEDED</c>. If so, call <a>GetPersonTracking</a>
+    /// and pass the job identifier (<c>JobId</c>) from the initial call to <c>StartPersonTracking</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetPersonTracking</code> returns an array, <code>Persons</code>, of tracked
-    /// persons and the time(s) their paths were tracked in the video. 
+    ///  <c>GetPersonTracking</c> returns an array, <c>Persons</c>, of tracked persons and
+    /// the time(s) their paths were tracked in the video. 
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>GetPersonTracking</code> only returns the default facial attributes (<code>BoundingBox</code>,
-    /// <code>Confidence</code>, <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>).
-    /// The other facial attributes listed in the <code>Face</code> object of the following
-    /// response syntax are not returned. 
+    ///  <c>GetPersonTracking</c> only returns the default facial attributes (<c>BoundingBox</c>,
+    /// <c>Confidence</c>, <c>Landmarks</c>, <c>Pose</c>, and <c>Quality</c>). The other facial
+    /// attributes listed in the <c>Face</c> object of the following response syntax are not
+    /// returned. 
     /// </para>
     ///  
     /// <para>
@@ -64,17 +64,17 @@ namespace Amazon.Rekognition.Model
     ///  </note> 
     /// <para>
     /// By default, the array is sorted by the time(s) a person's path is tracked in the video.
-    /// You can sort by tracked persons by specifying <code>INDEX</code> for the <code>SortBy</code>
-    /// input parameter.
+    /// You can sort by tracked persons by specifying <c>INDEX</c> for the <c>SortBy</c> input
+    /// parameter.
     /// </para>
     ///  
     /// <para>
-    /// Use the <code>MaxResults</code> parameter to limit the number of items returned. If
-    /// there are more results than specified in <code>MaxResults</code>, the value of <code>NextToken</code>
+    /// Use the <c>MaxResults</c> parameter to limit the number of items returned. If there
+    /// are more results than specified in <c>MaxResults</c>, the value of <c>NextToken</c>
     /// in the operation response contains a pagination token for getting the next set of
-    /// results. To get the next page of results, call <code>GetPersonTracking</code> and
-    /// populate the <code>NextToken</code> request parameter with the token value returned
-    /// from the previous call to <code>GetPersonTracking</code>.
+    /// results. To get the next page of results, call <c>GetPersonTracking</c> and populate
+    /// the <c>NextToken</c> request parameter with the token value returned from the previous
+    /// call to <c>GetPersonTracking</c>.
     /// </para>
     /// </summary>
     public partial class GetPersonTrackingRequest : AmazonRekognitionRequest
@@ -87,8 +87,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for a job that tracks persons in a video. You get the <code>JobId</code>
-        /// from a call to <code>StartPersonTracking</code>. 
+        /// The identifier for a job that tracks persons in a video. You get the <c>JobId</c>
+        /// from a call to <c>StartPersonTracking</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -149,10 +149,10 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Sort to use for elements in the <code>Persons</code> array. Use <code>TIMESTAMP</code>
-        /// to sort array elements by the time persons are detected. Use <code>INDEX</code> to
-        /// sort by the tracked persons. If you sort by <code>INDEX</code>, the array elements
-        /// for each person are sorted by detection confidence. The default sort is by <code>TIMESTAMP</code>.
+        /// Sort to use for elements in the <c>Persons</c> array. Use <c>TIMESTAMP</c> to sort
+        /// array elements by the time persons are detected. Use <c>INDEX</c> to sort by the tracked
+        /// persons. If you sort by <c>INDEX</c>, the array elements for each person are sorted
+        /// by detection confidence. The default sort is by <c>TIMESTAMP</c>.
         /// </para>
         /// </summary>
         public PersonTrackingSortBy SortBy

@@ -41,8 +41,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property DeviceProfileType. 
         /// <para>
-        /// A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code>
-        /// or <code>Sidewalk</code>.
+        /// A filter to list only device profiles that use this type, which can be <c>LoRaWAN</c>
+        /// or <c>Sidewalk</c>.
         /// </para>
         /// </summary>
         public DeviceProfileType DeviceProfileType
@@ -79,8 +79,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// To retrieve the next set of results, the <code>nextToken</code> value from a previous
-        /// response; otherwise <b>null</b> to receive the first set of results.
+        /// To retrieve the next set of results, the <c>nextToken</c> value from a previous response;
+        /// otherwise <b>null</b> to receive the first set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

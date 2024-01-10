@@ -78,10 +78,10 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// You can use this operation to create a static labeling job or a streaming labeling
     /// job. A static labeling job stops if all data objects in the input manifest file identified
-    /// in <code>ManifestS3Uri</code> have been labeled. A streaming labeling job runs perpetually
+    /// in <c>ManifestS3Uri</c> have been labeled. A streaming labeling job runs perpetually
     /// until it is manually stopped, or remains idle for 10 days. You can send new data objects
-    /// to an active (<code>InProgress</code>) streaming labeling job in real time. To learn
-    /// how to create a static labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create
+    /// to an active (<c>InProgress</c>) streaming labeling job in real time. To learn how
+    /// to create a static labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-create-labeling-job-api.html">Create
     /// a Labeling Job (API) </a> in the Amazon SageMaker Developer Guide. To learn how to
     /// create a streaming labeling job, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-streaming-create-job.html">Create
     /// a Streaming Labeling Job</a>.
@@ -128,27 +128,27 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>.
+        /// You must specify at least one of the following: <c>S3DataSource</c> or <c>SnsDataSource</c>.
         /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling
-        /// job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time
+        /// Use <c>SnsDataSource</c> to specify an SNS input topic for a streaming labeling job.
+        /// If you do not specify and SNS input topic ARN, Ground Truth will create a one-time
         /// labeling job that stops after all data objects in the input manifest file have been
         /// labeled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>S3DataSource</code> to specify an input manifest file for both streaming
-        /// and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you
-        /// use <code>SnsDataSource</code> to create a streaming labeling job.
+        /// Use <c>S3DataSource</c> to specify an input manifest file for both streaming and one-time
+        /// labeling jobs. Adding an <c>S3DataSource</c> is optional if you use <c>SnsDataSource</c>
+        /// to create a streaming labeling job.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you use the Amazon Mechanical Turk workforce, your input data should not include
         /// confidential information, personal information or protected health information. Use
-        /// <code>ContentClassifiers</code> to specify that your data is free of personally identifiable
+        /// <c>ContentClassifiers</c> to specify that your data is free of personally identifiable
         /// information and adult content.
         /// </para>
         /// </summary>
@@ -170,7 +170,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The attribute name to use for the label in the output manifest file. This is the key
         /// for the key/value pair formed with the label that a worker assigns to the object.
-        /// The <code>LabelAttributeName</code> must meet the following requirements.
+        /// The <c>LabelAttributeName</c> must meet the following requirements.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -184,41 +184,39 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Image semantic segmentation (<code>SemanticSegmentation)</code>, and adjustment (<code>AdjustmentSemanticSegmentation</code>)
-        /// and verification (<code>VerificationSemanticSegmentation</code>) labeling jobs for
-        /// this task type.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Video frame object detection (<code>VideoObjectDetection</code>), and adjustment and
-        /// verification (<code>AdjustmentVideoObjectDetection</code>) labeling jobs for this
+        /// Image semantic segmentation (<c>SemanticSegmentation)</c>, and adjustment (<c>AdjustmentSemanticSegmentation</c>)
+        /// and verification (<c>VerificationSemanticSegmentation</c>) labeling jobs for this
         /// task type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Video frame object tracking (<code>VideoObjectTracking</code>), and adjustment and
-        /// verification (<code>AdjustmentVideoObjectTracking</code>) labeling jobs for this task
-        /// type.
+        /// Video frame object detection (<c>VideoObjectDetection</c>), and adjustment and verification
+        /// (<c>AdjustmentVideoObjectDetection</c>) labeling jobs for this task type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 3D point cloud semantic segmentation (<code>3DPointCloudSemanticSegmentation</code>),
-        /// and adjustment and verification (<code>Adjustment3DPointCloudSemanticSegmentation</code>)
-        /// labeling jobs for this task type. 
+        /// Video frame object tracking (<c>VideoObjectTracking</c>), and adjustment and verification
+        /// (<c>AdjustmentVideoObjectTracking</c>) labeling jobs for this task type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// 3D point cloud object tracking (<code>3DPointCloudObjectTracking</code>), and adjustment
-        /// and verification (<code>Adjustment3DPointCloudObjectTracking</code>) labeling jobs
-        /// for this task type. 
+        /// 3D point cloud semantic segmentation (<c>3DPointCloudSemanticSegmentation</c>), and
+        /// adjustment and verification (<c>Adjustment3DPointCloudSemanticSegmentation</c>) labeling
+        /// jobs for this task type. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// 3D point cloud object tracking (<c>3DPointCloudObjectTracking</c>), and adjustment
+        /// and verification (<c>Adjustment3DPointCloudObjectTracking</c>) labeling jobs for this
+        /// task type. 
         /// </para>
         ///  </li> </ul> </li> </ul>  <important> 
         /// <para>
         /// If you are creating an adjustment or verification labeling job, you must use a <i>different</i>
-        /// <code>LabelAttributeName</code> than the one used in the original labeling job. The
-        /// original labeling job is the Ground Truth labeling job that produced the labels that
-        /// you want verified or adjusted. To learn more about adjustment and verification labeling
-        /// jobs, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
+        /// <c>LabelAttributeName</c> than the one used in the original labeling job. The original
+        /// labeling job is the Ground Truth labeling job that produced the labels that you want
+        /// verified or adjusted. To learn more about adjustment and verification labeling jobs,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-verification-data.html">Verify
         /// and Adjust Labels</a>.
         /// </para>
         ///  </important>
@@ -251,10 +249,10 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For named entity recognition jobs, in addition to <code>"labels"</code>, you must
-        /// provide worker instructions in the label category configuration file using the <code>"instructions"</code>
-        /// parameter: <code>"instructions": {"shortInstruction":"&lt;h1&gt;Add header&lt;/h1&gt;&lt;p&gt;Add
-        /// Instructions&lt;/p&gt;", "fullInstruction":"&lt;p&gt;Add additional instructions.&lt;/p&gt;"}</code>.
+        /// For named entity recognition jobs, in addition to <c>"labels"</c>, you must provide
+        /// worker instructions in the label category configuration file using the <c>"instructions"</c>
+        /// parameter: <c>"instructions": {"shortInstruction":"&lt;h1&gt;Add header&lt;/h1&gt;&lt;p&gt;Add
+        /// Instructions&lt;/p&gt;", "fullInstruction":"&lt;p&gt;Add additional instructions.&lt;/p&gt;"}</c>.
         /// For details and an example, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-named-entity-recg.html#sms-creating-ner-api">Create
         /// a Named Entity Recognition Labeling Job (API) </a>.
         /// </para>
@@ -263,25 +261,25 @@ namespace Amazon.SageMaker.Model
         /// For all other <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-task-types.html">built-in
         /// task types</a> and <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-custom-templates.html">custom
         /// tasks</a>, your label category configuration file must be a JSON file in the following
-        /// format. Identify the labels you want to use by replacing <code>label_1</code>, <code>label_2</code>,<code>...</code>,<code>label_n</code>
+        /// format. Identify the labels you want to use by replacing <c>label_1</c>, <c>label_2</c>,<c>...</c>,<c>label_n</c>
         /// with your label categories.
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ </code> 
+        ///  <c>{ </c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"document-version": "2018-11-28",</code> 
+        ///  <c>"document-version": "2018-11-28",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</code>
+        ///  <c>"labels": [{"label": "label_1"},{"label": "label_2"},...{"label": "label_n"}]</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>}</code> 
+        ///  <c>}</c> 
         /// </para>
         ///  
         /// <para>
@@ -300,10 +298,10 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         /// If you create a 3D point cloud or video frame adjustment or verification labeling
-        /// job, you must include <code>auditLabelAttributeName</code> in the label category configuration.
+        /// job, you must include <c>auditLabelAttributeName</c> in the label category configuration.
         /// Use this parameter to enter the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateLabelingJob.html#sagemaker-CreateLabelingJob-request-LabelAttributeName">
-        /// <code>LabelAttributeName</code> </a> of the labeling job you want to adjust or verify
-        /// annotations of.
+        /// <c>LabelAttributeName</c> </a> of the labeling job you want to adjust or verify annotations
+        /// of.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -343,8 +341,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The name of the labeling job. This name is used to identify the job in a list of labeling
         /// jobs. Labeling job names must be unique within an Amazon Web Services account and
-        /// region. <code>LabelingJobName</code> is not case sensitive. For example, Example-job
-        /// and example-job are considered the same labeling job name by Ground Truth.
+        /// region. <c>LabelingJobName</c> is not case sensitive. For example, Example-job and
+        /// example-job are considered the same labeling job name by Ground Truth.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

@@ -135,7 +135,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property PostSetupScriptDetails. 
         /// <para>
         /// The post setup script details of the app block. This can only be provided for the
-        /// <code>APPSTREAM2</code> PackagingType.
+        /// <c>APPSTREAM2</c> PackagingType.
         /// </para>
         /// </summary>
         public ScriptDetails PostSetupScriptDetails
@@ -153,7 +153,7 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property SetupScriptDetails. 
         /// <para>
-        /// The setup script details of the app block. This must be provided for the <code>CUSTOM</code>
+        /// The setup script details of the app block. This must be provided for the <c>CUSTOM</c>
         /// PackagingType.
         /// </para>
         /// </summary>

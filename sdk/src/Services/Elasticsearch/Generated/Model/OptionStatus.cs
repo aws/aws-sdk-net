@@ -79,7 +79,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Provides the <code>OptionState</code> for the Elasticsearch domain.
+        /// Provides the <c>OptionState</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

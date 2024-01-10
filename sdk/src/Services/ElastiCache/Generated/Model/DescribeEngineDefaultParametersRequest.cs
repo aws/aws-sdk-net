@@ -60,10 +60,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code>
-        /// | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code>
-        /// | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis6.2</code> | <code>redis7</code>
-        /// 
+        /// Valid values are: <c>memcached1.4</c> | <c>memcached1.5</c> | <c>memcached1.6</c>
+        /// | <c>redis2.6</c> | <c>redis2.8</c> | <c>redis3.2</c> | <c>redis4.0</c> | <c>redis5.0</c>
+        /// | <c>redis6.x</c> | <c>redis6.2</c> | <c>redis7</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +83,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
         /// results from this operation. If this parameter is specified, the response includes
-        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+        /// only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -103,8 +102,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a marker is included in the response
-        /// so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>

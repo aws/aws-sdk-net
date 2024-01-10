@@ -46,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// ExecutionType: Specify patch, association, or Custom:<code>string</code>.
+    /// ExecutionType: Specify patch, association, or Custom:<c>string</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -63,16 +63,16 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Status: The status of the compliance item. For example, <code>approved</code> for
-    /// patches, or <code>Failed</code> for associations.
+    /// Status: The status of the compliance item. For example, <c>approved</c> for patches,
+    /// or <c>Failed</c> for associations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Severity: A patch severity. For example, <code>Critical</code>.
+    /// Severity: A patch severity. For example, <c>Critical</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// DocumentName: An SSM document name. For example, <code>AWS-RunPatchBaseline</code>.
+    /// DocumentName: An SSM document name. For example, <c>AWS-RunPatchBaseline</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Classification: A patch classification. For example, <code>security updates</code>.
+    /// Classification: A patch classification. For example, <c>security updates</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -88,11 +88,11 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// PatchSeverity: A patch severity. For example, <code>Critical</code>.
+    /// PatchSeverity: A patch severity. For example, <c>Critical</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// PatchState: A patch state. For example, <code>InstancesWithFailedPatches</code>.
+    /// PatchState: A patch state. For example, <c>InstancesWithFailedPatches</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ComplianceType. 
         /// <para>
         /// Specify the compliance type. For example, specify Association (for a State Manager
-        /// association), Patch, or Custom:<code>string</code>.
+        /// association), Patch, or Custom:<c>string</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -139,7 +139,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionSummary. 
         /// <para>
         /// A summary of the call execution that includes an execution ID, the type of execution
-        /// (for example, <code>Command</code>), and the date/time of the execution using a datetime
+        /// (for example, <c>Command</c>), and the date/time of the execution using a datetime
         /// object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
         /// </para>
         /// </summary>
@@ -181,7 +181,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Items. 
         /// <para>
         /// Information about the compliance as defined by the resource type. For example, for
-        /// a patch compliance type, <code>Items</code> includes information about the PatchSeverity,
+        /// a patch compliance type, <c>Items</c> includes information about the PatchSeverity,
         /// Classification, and so on.
         /// </para>
         /// </summary>
@@ -220,7 +220,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Specify the type of resource. <code>ManagedInstance</code> is currently the only supported
+        /// Specify the type of resource. <c>ManagedInstance</c> is currently the only supported
         /// resource type.
         /// </para>
         /// </summary>
@@ -240,16 +240,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property UploadType. 
         /// <para>
-        /// The mode for uploading compliance items. You can specify <code>COMPLETE</code> or
-        /// <code>PARTIAL</code>. In <code>COMPLETE</code> mode, the system overwrites all existing
-        /// compliance information for the resource. You must provide a full list of compliance
-        /// items each time you send the request.
+        /// The mode for uploading compliance items. You can specify <c>COMPLETE</c> or <c>PARTIAL</c>.
+        /// In <c>COMPLETE</c> mode, the system overwrites all existing compliance information
+        /// for the resource. You must provide a full list of compliance items each time you send
+        /// the request.
         /// </para>
         ///  
         /// <para>
-        /// In <code>PARTIAL</code> mode, the system overwrites compliance information for a specific
-        /// association. The association must be configured with <code>SyncCompliance</code> set
-        /// to <code>MANUAL</code>. By default, all requests use <code>COMPLETE</code> mode.
+        /// In <c>PARTIAL</c> mode, the system overwrites compliance information for a specific
+        /// association. The association must be configured with <c>SyncCompliance</c> set to
+        /// <c>MANUAL</c>. By default, all requests use <c>COMPLETE</c> mode.
         /// </para>
         ///  <note> 
         /// <para>

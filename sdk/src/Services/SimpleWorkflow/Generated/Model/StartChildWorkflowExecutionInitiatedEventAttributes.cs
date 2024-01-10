@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>StartChildWorkflowExecutionInitiated</code> event.
+    /// Provides the details of the <c>StartChildWorkflowExecutionInitiated</c> event.
     /// </summary>
     public partial class StartChildWorkflowExecutionInitiatedEventAttributes
     {
@@ -59,18 +59,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE</code> – The child executions are terminated.
+        ///  <c>TERMINATE</c> – The child executions are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
-        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
-        /// It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.
+        ///  <c>REQUEST_CANCEL</c> – A request to cancel is attempted for each child execution
+        /// by recording a <c>WorkflowExecutionCancelRequested</c> event in its history. It is
+        /// up to the decider to take appropriate actions when it receives an execution history
+        /// with this event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        ///  <c>ABANDON</c> – No action is taken. The child executions continue to run.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,10 +110,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>StartChildWorkflowExecution</code> <a>Decision</a>
-        /// to request this child workflow execution. This information can be useful for diagnosing
-        /// problems by tracing back the cause of events.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>StartChildWorkflowExecution</c> <a>Decision</a> to request
+        /// this child workflow execution. This information can be useful for diagnosing problems
+        /// by tracing back the cause of events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,8 +137,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -234,8 +234,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TaskPriority. 
         /// <para>
         ///  The priority assigned for the decision tasks for this workflow execution. Valid values
-        /// are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
-        /// <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
+        /// are integers that range from Java's <c>Integer.MIN_VALUE</c> (-2147483648) to <c>Integer.MAX_VALUE</c>
+        /// (2147483647). Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>
@@ -262,8 +262,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -282,7 +282,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The <code>workflowId</code> of the child workflow execution.
+        /// The <c>workflowId</c> of the child workflow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

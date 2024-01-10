@@ -40,11 +40,11 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Linux platform version <code>1.4.0</code> or later.
+    /// Linux platform version <c>1.4.0</c> or later.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Windows platform version <code>1.0.0</code> or later.
+    /// Windows platform version <c>1.0.0</c> or later.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -56,7 +56,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property SizeInGiB. 
         /// <para>
         /// The total amount, in GiB, of ephemeral storage to set for the task. The minimum supported
-        /// value is <code>21</code> GiB and the maximum supported value is <code>200</code> GiB.
+        /// value is <c>21</c> GiB and the maximum supported value is <c>200</c> GiB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -50,33 +50,33 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate the
-        /// highest version of SMB that they mutually support between 2.1 and 3.1.1.
+        ///  <c>AUTOMATIC</c> (default): DataSync and the SMB file server negotiate the highest
+        /// version of SMB that they mutually support between 2.1 and 3.1.1.
         /// </para>
         ///  
         /// <para>
         /// This is the recommended option. If you instead choose a specific version that your
-        /// file server doesn't support, you may get an <code>Operation Not Supported</code> error.
+        /// file server doesn't support, you may get an <c>Operation Not Supported</c> error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SMB3</code>: Restricts the protocol negotiation to only SMB version 3.0.2.
+        ///  <c>SMB3</c>: Restricts the protocol negotiation to only SMB version 3.0.2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SMB2</code>: Restricts the protocol negotiation to only SMB version 2.1.
+        ///  <c>SMB2</c>: Restricts the protocol negotiation to only SMB version 2.1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SMB2_0</code>: Restricts the protocol negotiation to only SMB version 2.0.
+        ///  <c>SMB2_0</c>: Restricts the protocol negotiation to only SMB version 2.0.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SMB1</code>: Restricts the protocol negotiation to only SMB version 1.0.
+        ///  <c>SMB1</c>: Restricts the protocol negotiation to only SMB version 1.0.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>SMB1</code> option isn't available when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
+        /// The <c>SMB1</c> option isn't available when <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
         /// an Amazon FSx for NetApp ONTAP location</a>.
         /// </para>
         ///  </note> </li> </ul>

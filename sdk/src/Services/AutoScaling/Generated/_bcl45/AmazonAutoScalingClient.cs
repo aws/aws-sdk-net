@@ -375,9 +375,9 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
-        /// multiple traffic sources types. We recommend using <code>AttachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancers</code>.
-        /// You can use both the original <code>AttachLoadBalancers</code> API operation and <code>AttachTrafficSources</code>
+        /// multiple traffic sources types. We recommend using <c>AttachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>AttachLoadBalancers</c>.
+        /// You can use both the original <c>AttachLoadBalancers</c> API operation and <c>AttachTrafficSources</c>
         /// on the same Auto Scaling group.
         /// </para>
         ///  </note> 
@@ -428,9 +428,9 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
-        /// multiple traffic sources types. We recommend using <code>AttachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancers</code>.
-        /// You can use both the original <code>AttachLoadBalancers</code> API operation and <code>AttachTrafficSources</code>
+        /// multiple traffic sources types. We recommend using <c>AttachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>AttachLoadBalancers</c>.
+        /// You can use both the original <c>AttachLoadBalancers</c> API operation and <c>AttachTrafficSources</c>
         /// on the same Auto Scaling group.
         /// </para>
         ///  </note> 
@@ -488,10 +488,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
-        /// multiple traffic sources types. We recommend using <code>AttachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancerTargetGroups</code>.
-        /// You can use both the original <code>AttachLoadBalancerTargetGroups</code> API operation
-        /// and <code>AttachTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>AttachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>AttachLoadBalancerTargetGroups</c>.
+        /// You can use both the original <c>AttachLoadBalancerTargetGroups</c> API operation
+        /// and <c>AttachTrafficSources</c> on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -558,10 +558,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>AttachTrafficSources</a>, which can attach
-        /// multiple traffic sources types. We recommend using <code>AttachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>AttachLoadBalancerTargetGroups</code>.
-        /// You can use both the original <code>AttachLoadBalancerTargetGroups</code> API operation
-        /// and <code>AttachTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>AttachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>AttachLoadBalancerTargetGroups</c>.
+        /// You can use both the original <c>AttachLoadBalancerTargetGroups</c> API operation
+        /// and <c>AttachTrafficSources</c> on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -878,8 +878,7 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Cancels an instance refresh or rollback that is in progress. If an instance refresh
-        /// or rollback is not in progress, an <code>ActiveInstanceRefreshNotFound</code> error
-        /// occurs.
+        /// or rollback is not in progress, an <c>ActiveInstanceRefreshNotFound</c> error occurs.
         /// 
         ///  
         /// <para>
@@ -923,8 +922,7 @@ namespace Amazon.AutoScaling
 
         /// <summary>
         /// Cancels an instance refresh or rollback that is in progress. If an instance refresh
-        /// or rollback is not in progress, an <code>ActiveInstanceRefreshNotFound</code> error
-        /// occurs.
+        /// or rollback is not in progress, an <c>ActiveInstanceRefreshNotFound</c> error occurs.
         /// 
         ///  
         /// <para>
@@ -1135,11 +1133,11 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// Every Auto Scaling group has three size properties (<code>DesiredCapacity</code>,
-        /// <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based
-        /// on a specific number of instances. However, if you configure a mixed instances policy
-        /// that defines weights for the instance types, you must specify these sizes with the
-        /// same units that you use for weighting instances.
+        /// Every Auto Scaling group has three size properties (<c>DesiredCapacity</c>, <c>MaxSize</c>,
+        /// and <c>MinSize</c>). Usually, you set these sizes based on a specific number of instances.
+        /// However, if you configure a mixed instances policy that defines weights for the instance
+        /// types, you must specify these sizes with the same units that you use for weighting
+        /// instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
@@ -1197,11 +1195,11 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// Every Auto Scaling group has three size properties (<code>DesiredCapacity</code>,
-        /// <code>MaxSize</code>, and <code>MinSize</code>). Usually, you set these sizes based
-        /// on a specific number of instances. However, if you configure a mixed instances policy
-        /// that defines weights for the instance types, you must specify these sizes with the
-        /// same units that you use for weighting instances.
+        /// Every Auto Scaling group has three size properties (<c>DesiredCapacity</c>, <c>MaxSize</c>,
+        /// and <c>MinSize</c>). Usually, you set these sizes based on a specific number of instances.
+        /// However, if you configure a mixed instances policy that defines weights for the instance
+        /// types, you must specify these sizes with the same units that you use for weighting
+        /// instances.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAutoScalingGroup service method.</param>
@@ -1640,8 +1638,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code>
-        /// for launching instances, <code>CONTINUE</code> for terminating instances).
+        /// If there are any outstanding lifecycle actions, they are completed first (<c>ABANDON</c>
+        /// for launching instances, <c>CONTINUE</c> for terminating instances).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleHook service method.</param>
@@ -1667,8 +1665,8 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If there are any outstanding lifecycle actions, they are completed first (<code>ABANDON</code>
-        /// for launching instances, <code>CONTINUE</code> for terminating instances).
+        /// If there are any outstanding lifecycle actions, they are completed first (<c>ABANDON</c>
+        /// for launching instances, <c>CONTINUE</c> for terminating instances).
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLifecycleHook service method.</param>
@@ -2137,15 +2135,15 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ChangeInCapacity</code> 
+        ///  <c>ChangeInCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExactCapacity</code> 
+        ///  <c>ExactCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PercentChangeInCapacity</code> 
+        ///  <c>PercentChangeInCapacity</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2171,15 +2169,15 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ChangeInCapacity</code> 
+        ///  <c>ChangeInCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExactCapacity</code> 
+        ///  <c>ExactCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PercentChangeInCapacity</code> 
+        ///  <c>PercentChangeInCapacity</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2210,15 +2208,15 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ChangeInCapacity</code> 
+        ///  <c>ChangeInCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExactCapacity</code> 
+        ///  <c>ExactCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PercentChangeInCapacity</code> 
+        ///  <c>PercentChangeInCapacity</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2246,15 +2244,15 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ChangeInCapacity</code> 
+        ///  <c>ChangeInCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExactCapacity</code> 
+        ///  <c>ExactCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PercentChangeInCapacity</code> 
+        ///  <c>PercentChangeInCapacity</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2304,7 +2302,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2339,7 +2337,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2380,7 +2378,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2417,7 +2415,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingGroups service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2444,7 +2442,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2464,7 +2462,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2490,7 +2488,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2512,7 +2510,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeAutoScalingInstances service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2639,7 +2637,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeInstanceRefreshes service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2682,7 +2680,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeInstanceRefreshes service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2709,7 +2707,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2729,7 +2727,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2755,7 +2753,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2777,7 +2775,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLaunchConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2856,11 +2854,11 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_LAUNCHING</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_TERMINATING</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_TERMINATING</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2891,11 +2889,11 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_LAUNCHING</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_TERMINATING</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_TERMINATING</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2928,10 +2926,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
-        /// multiple traffic sources types. We recommend using <code>DescribeTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancers</code>.
-        /// You can use both the original <code>DescribeLoadBalancers</code> API operation and
-        /// <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>DescribeTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancers</c>.
+        /// You can use both the original <c>DescribeLoadBalancers</c> API operation and <c>DescribeTrafficSources</c>
+        /// on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2945,23 +2943,22 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// To determine the attachment status of the load balancer, use the <code>State</code>
-        /// element in the response. When you attach a load balancer to an Auto Scaling group,
-        /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
-        /// to <code>Added</code> after all Auto Scaling instances are registered with the load
-        /// balancer. If Elastic Load Balancing health checks are enabled for the Auto Scaling
-        /// group, the state transitions to <code>InService</code> after at least one Auto Scaling
-        /// instance passes the health check. When the load balancer is in the <code>InService</code>
-        /// state, Amazon EC2 Auto Scaling can terminate and replace any instances that are reported
-        /// as unhealthy. If no registered instances pass the health checks, the load balancer
-        /// doesn't enter the <code>InService</code> state. 
+        /// To determine the attachment status of the load balancer, use the <c>State</c> element
+        /// in the response. When you attach a load balancer to an Auto Scaling group, the initial
+        /// <c>State</c> value is <c>Adding</c>. The state transitions to <c>Added</c> after all
+        /// Auto Scaling instances are registered with the load balancer. If Elastic Load Balancing
+        /// health checks are enabled for the Auto Scaling group, the state transitions to <c>InService</c>
+        /// after at least one Auto Scaling instance passes the health check. When the load balancer
+        /// is in the <c>InService</c> state, Amazon EC2 Auto Scaling can terminate and replace
+        /// any instances that are reported as unhealthy. If no registered instances pass the
+        /// health checks, the load balancer doesn't enter the <c>InService</c> state. 
         /// </para>
         ///  
         /// <para>
-        /// Load balancers also have an <code>InService</code> state if you attach them in the
-        /// <a>CreateAutoScalingGroup</a> API call. If your load balancer state is <code>InService</code>,
-        /// but it is not working properly, check the scaling activities by calling <a>DescribeScalingActivities</a>
-        /// and take any corrective actions necessary.
+        /// Load balancers also have an <c>InService</c> state if you attach them in the <a>CreateAutoScalingGroup</a>
+        /// API call. If your load balancer state is <c>InService</c>, but it is not working properly,
+        /// check the scaling activities by calling <a>DescribeScalingActivities</a> and take
+        /// any corrective actions necessary.
         /// </para>
         ///  
         /// <para>
@@ -2976,7 +2973,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -2997,10 +2994,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
-        /// multiple traffic sources types. We recommend using <code>DescribeTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancers</code>.
-        /// You can use both the original <code>DescribeLoadBalancers</code> API operation and
-        /// <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>DescribeTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancers</c>.
+        /// You can use both the original <c>DescribeLoadBalancers</c> API operation and <c>DescribeTrafficSources</c>
+        /// on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3014,23 +3011,22 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// To determine the attachment status of the load balancer, use the <code>State</code>
-        /// element in the response. When you attach a load balancer to an Auto Scaling group,
-        /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
-        /// to <code>Added</code> after all Auto Scaling instances are registered with the load
-        /// balancer. If Elastic Load Balancing health checks are enabled for the Auto Scaling
-        /// group, the state transitions to <code>InService</code> after at least one Auto Scaling
-        /// instance passes the health check. When the load balancer is in the <code>InService</code>
-        /// state, Amazon EC2 Auto Scaling can terminate and replace any instances that are reported
-        /// as unhealthy. If no registered instances pass the health checks, the load balancer
-        /// doesn't enter the <code>InService</code> state. 
+        /// To determine the attachment status of the load balancer, use the <c>State</c> element
+        /// in the response. When you attach a load balancer to an Auto Scaling group, the initial
+        /// <c>State</c> value is <c>Adding</c>. The state transitions to <c>Added</c> after all
+        /// Auto Scaling instances are registered with the load balancer. If Elastic Load Balancing
+        /// health checks are enabled for the Auto Scaling group, the state transitions to <c>InService</c>
+        /// after at least one Auto Scaling instance passes the health check. When the load balancer
+        /// is in the <c>InService</c> state, Amazon EC2 Auto Scaling can terminate and replace
+        /// any instances that are reported as unhealthy. If no registered instances pass the
+        /// health checks, the load balancer doesn't enter the <c>InService</c> state. 
         /// </para>
         ///  
         /// <para>
-        /// Load balancers also have an <code>InService</code> state if you attach them in the
-        /// <a>CreateAutoScalingGroup</a> API call. If your load balancer state is <code>InService</code>,
-        /// but it is not working properly, check the scaling activities by calling <a>DescribeScalingActivities</a>
-        /// and take any corrective actions necessary.
+        /// Load balancers also have an <c>InService</c> state if you attach them in the <a>CreateAutoScalingGroup</a>
+        /// API call. If your load balancer state is <c>InService</c>, but it is not working properly,
+        /// check the scaling activities by calling <a>DescribeScalingActivities</a> and take
+        /// any corrective actions necessary.
         /// </para>
         ///  
         /// <para>
@@ -3048,7 +3044,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLoadBalancers service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3073,10 +3069,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
-        /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancerTargetGroups</code>.
-        /// You can use both the original <code>DescribeLoadBalancerTargetGroups</code> API operation
-        /// and <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancerTargetGroups</c>.
+        /// You can use both the original <c>DescribeLoadBalancerTargetGroups</c> API operation
+        /// and <c>DescribeTrafficSources</c> on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3085,23 +3081,22 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// To determine the attachment status of the target group, use the <code>State</code>
-        /// element in the response. When you attach a target group to an Auto Scaling group,
-        /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
-        /// to <code>Added</code> after all Auto Scaling instances are registered with the target
-        /// group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group,
-        /// the state transitions to <code>InService</code> after at least one Auto Scaling instance
-        /// passes the health check. When the target group is in the <code>InService</code> state,
-        /// Amazon EC2 Auto Scaling can terminate and replace any instances that are reported
-        /// as unhealthy. If no registered instances pass the health checks, the target group
-        /// doesn't enter the <code>InService</code> state. 
+        /// To determine the attachment status of the target group, use the <c>State</c> element
+        /// in the response. When you attach a target group to an Auto Scaling group, the initial
+        /// <c>State</c> value is <c>Adding</c>. The state transitions to <c>Added</c> after all
+        /// Auto Scaling instances are registered with the target group. If Elastic Load Balancing
+        /// health checks are enabled for the Auto Scaling group, the state transitions to <c>InService</c>
+        /// after at least one Auto Scaling instance passes the health check. When the target
+        /// group is in the <c>InService</c> state, Amazon EC2 Auto Scaling can terminate and
+        /// replace any instances that are reported as unhealthy. If no registered instances pass
+        /// the health checks, the target group doesn't enter the <c>InService</c> state. 
         /// </para>
         ///  
         /// <para>
-        /// Target groups also have an <code>InService</code> state if you attach them in the
-        /// <a>CreateAutoScalingGroup</a> API call. If your target group state is <code>InService</code>,
-        /// but it is not working properly, check the scaling activities by calling <a>DescribeScalingActivities</a>
-        /// and take any corrective actions necessary.
+        /// Target groups also have an <c>InService</c> state if you attach them in the <a>CreateAutoScalingGroup</a>
+        /// API call. If your target group state is <c>InService</c>, but it is not working properly,
+        /// check the scaling activities by calling <a>DescribeScalingActivities</a> and take
+        /// any corrective actions necessary.
         /// </para>
         ///  
         /// <para>
@@ -3122,7 +3117,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLoadBalancerTargetGroups service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3143,10 +3138,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
-        /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancerTargetGroups</code>.
-        /// You can use both the original <code>DescribeLoadBalancerTargetGroups</code> API operation
-        /// and <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancerTargetGroups</c>.
+        /// You can use both the original <c>DescribeLoadBalancerTargetGroups</c> API operation
+        /// and <c>DescribeTrafficSources</c> on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3155,23 +3150,22 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// To determine the attachment status of the target group, use the <code>State</code>
-        /// element in the response. When you attach a target group to an Auto Scaling group,
-        /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
-        /// to <code>Added</code> after all Auto Scaling instances are registered with the target
-        /// group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group,
-        /// the state transitions to <code>InService</code> after at least one Auto Scaling instance
-        /// passes the health check. When the target group is in the <code>InService</code> state,
-        /// Amazon EC2 Auto Scaling can terminate and replace any instances that are reported
-        /// as unhealthy. If no registered instances pass the health checks, the target group
-        /// doesn't enter the <code>InService</code> state. 
+        /// To determine the attachment status of the target group, use the <c>State</c> element
+        /// in the response. When you attach a target group to an Auto Scaling group, the initial
+        /// <c>State</c> value is <c>Adding</c>. The state transitions to <c>Added</c> after all
+        /// Auto Scaling instances are registered with the target group. If Elastic Load Balancing
+        /// health checks are enabled for the Auto Scaling group, the state transitions to <c>InService</c>
+        /// after at least one Auto Scaling instance passes the health check. When the target
+        /// group is in the <c>InService</c> state, Amazon EC2 Auto Scaling can terminate and
+        /// replace any instances that are reported as unhealthy. If no registered instances pass
+        /// the health checks, the target group doesn't enter the <c>InService</c> state. 
         /// </para>
         ///  
         /// <para>
-        /// Target groups also have an <code>InService</code> state if you attach them in the
-        /// <a>CreateAutoScalingGroup</a> API call. If your target group state is <code>InService</code>,
-        /// but it is not working properly, check the scaling activities by calling <a>DescribeScalingActivities</a>
-        /// and take any corrective actions necessary.
+        /// Target groups also have an <c>InService</c> state if you attach them in the <a>CreateAutoScalingGroup</a>
+        /// API call. If your target group state is <c>InService</c>, but it is not working properly,
+        /// check the scaling activities by calling <a>DescribeScalingActivities</a> and take
+        /// any corrective actions necessary.
         /// </para>
         ///  
         /// <para>
@@ -3195,7 +3189,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeLoadBalancerTargetGroups service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3306,7 +3300,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3327,7 +3321,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3354,7 +3348,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3377,7 +3371,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeNotificationConfigurations service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3404,7 +3398,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3427,7 +3421,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3456,7 +3450,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3481,7 +3475,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribePolicies service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3517,18 +3511,18 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If the scaling event succeeds, the value of the <code>StatusCode</code> element in
-        /// the response is <code>Successful</code>. If an attempt to launch instances failed,
-        /// the <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code>
-        /// and the <code>StatusMessage</code> element in the response indicates the cause of
-        /// the failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
+        /// If the scaling event succeeds, the value of the <c>StatusCode</c> element in the response
+        /// is <c>Successful</c>. If an attempt to launch instances failed, the <c>StatusCode</c>
+        /// value is <c>Failed</c> or <c>Cancelled</c> and the <c>StatusMessage</c> element in
+        /// the response indicates the cause of the failure. For help interpreting the <c>StatusMessage</c>,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
         /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3553,11 +3547,11 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If the scaling event succeeds, the value of the <code>StatusCode</code> element in
-        /// the response is <code>Successful</code>. If an attempt to launch instances failed,
-        /// the <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code>
-        /// and the <code>StatusMessage</code> element in the response indicates the cause of
-        /// the failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
+        /// If the scaling event succeeds, the value of the <c>StatusCode</c> element in the response
+        /// is <c>Successful</c>. If an attempt to launch instances failed, the <c>StatusCode</c>
+        /// value is <c>Failed</c> or <c>Cancelled</c> and the <c>StatusMessage</c> element in
+        /// the response indicates the cause of the failure. For help interpreting the <c>StatusMessage</c>,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
         /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
@@ -3565,7 +3559,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3594,11 +3588,11 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If the scaling event succeeds, the value of the <code>StatusCode</code> element in
-        /// the response is <code>Successful</code>. If an attempt to launch instances failed,
-        /// the <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code>
-        /// and the <code>StatusMessage</code> element in the response indicates the cause of
-        /// the failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
+        /// If the scaling event succeeds, the value of the <c>StatusCode</c> element in the response
+        /// is <c>Successful</c>. If an attempt to launch instances failed, the <c>StatusCode</c>
+        /// value is <c>Failed</c> or <c>Cancelled</c> and the <c>StatusMessage</c> element in
+        /// the response indicates the cause of the failure. For help interpreting the <c>StatusMessage</c>,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
         /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
@@ -3608,7 +3602,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3632,11 +3626,11 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If the scaling event succeeds, the value of the <code>StatusCode</code> element in
-        /// the response is <code>Successful</code>. If an attempt to launch instances failed,
-        /// the <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code>
-        /// and the <code>StatusMessage</code> element in the response indicates the cause of
-        /// the failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
+        /// If the scaling event succeeds, the value of the <c>StatusCode</c> element in the response
+        /// is <c>Successful</c>. If an attempt to launch instances failed, the <c>StatusCode</c>
+        /// value is <c>Failed</c> or <c>Cancelled</c> and the <c>StatusMessage</c> element in
+        /// the response indicates the cause of the failure. For help interpreting the <c>StatusMessage</c>,
+        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
         /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
         /// </para>
         /// </summary>
@@ -3647,7 +3641,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScalingActivities service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3768,7 +3762,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3795,7 +3789,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3828,7 +3822,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3857,7 +3851,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeScheduledActions service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3902,7 +3896,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3940,7 +3934,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -3984,7 +3978,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -4024,7 +4018,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTags service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -4174,7 +4168,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTrafficSources service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -4212,7 +4206,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeTrafficSources service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.ResourceContentionException">
         /// You already have a pending update to an Amazon EC2 Auto Scaling resource (for example,
@@ -4246,7 +4240,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeWarmPool service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
@@ -4285,7 +4279,7 @@ namespace Amazon.AutoScaling
         /// 
         /// <returns>The response from the DescribeWarmPool service method, as returned by AutoScaling.</returns>
         /// <exception cref="Amazon.AutoScaling.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
@@ -4411,9 +4405,9 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DetachTrafficSources</a>, which can detach
-        /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancers</code>.
-        /// You can use both the original <code>DetachLoadBalancers</code> API operation and <code>DetachTrafficSources</code>
+        /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DetachLoadBalancers</c>.
+        /// You can use both the original <c>DetachLoadBalancers</c> API operation and <c>DetachTrafficSources</c>
         /// on the same Auto Scaling group.
         /// </para>
         ///  </note> 
@@ -4428,7 +4422,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
+        /// When you detach a load balancer, it enters the <c>Removing</c> state while deregistering
         /// the instances in the group. When all instances are deregistered, then you can no longer
         /// describe the load balancer using the <a>DescribeLoadBalancers</a> API call. The instances
         /// remain running.
@@ -4456,9 +4450,9 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DetachTrafficSources</a>, which can detach
-        /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancers</code>.
-        /// You can use both the original <code>DetachLoadBalancers</code> API operation and <code>DetachTrafficSources</code>
+        /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DetachLoadBalancers</c>.
+        /// You can use both the original <c>DetachLoadBalancers</c> API operation and <c>DetachTrafficSources</c>
         /// on the same Auto Scaling group.
         /// </para>
         ///  </note> 
@@ -4473,7 +4467,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// When you detach a load balancer, it enters the <code>Removing</code> state while deregistering
+        /// When you detach a load balancer, it enters the <c>Removing</c> state while deregistering
         /// the instances in the group. When all instances are deregistered, then you can no longer
         /// describe the load balancer using the <a>DescribeLoadBalancers</a> API call. The instances
         /// remain running.
@@ -4508,10 +4502,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DetachTrafficSources</a>, which can detach
-        /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancerTargetGroups</code>.
-        /// You can use both the original <code>DetachLoadBalancerTargetGroups</code> API operation
-        /// and <code>DetachTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DetachLoadBalancerTargetGroups</c>.
+        /// You can use both the original <c>DetachLoadBalancerTargetGroups</c> API operation
+        /// and <c>DetachTrafficSources</c> on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4519,7 +4513,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// When you detach a target group, it enters the <code>Removing</code> state while deregistering
+        /// When you detach a target group, it enters the <c>Removing</c> state while deregistering
         /// the instances in the group. When all instances are deregistered, then you can no longer
         /// describe the target group using the <a>DescribeLoadBalancerTargetGroups</a> API call.
         /// The instances remain running.
@@ -4553,10 +4547,10 @@ namespace Amazon.AutoScaling
         /// <note> 
         /// <para>
         /// This API operation is superseded by <a>DetachTrafficSources</a>, which can detach
-        /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-        /// to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancerTargetGroups</code>.
-        /// You can use both the original <code>DetachLoadBalancerTargetGroups</code> API operation
-        /// and <code>DetachTrafficSources</code> on the same Auto Scaling group.
+        /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+        /// simplify how you manage traffic sources. However, we continue to support <c>DetachLoadBalancerTargetGroups</c>.
+        /// You can use both the original <c>DetachLoadBalancerTargetGroups</c> API operation
+        /// and <c>DetachTrafficSources</c> on the same Auto Scaling group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4564,7 +4558,7 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// When you detach a target group, it enters the <code>Removing</code> state while deregistering
+        /// When you detach a target group, it enters the <c>Removing</c> state while deregistering
         /// the instances in the group. When all instances are deregistered, then you can no longer
         /// describe the target group using the <a>DescribeLoadBalancerTargetGroups</a> API call.
         /// The instances remain running.
@@ -4606,10 +4600,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you detach a traffic source, it enters the <code>Removing</code> state while
-        /// deregistering the instances in the group. When all instances are deregistered, then
-        /// you can no longer describe the traffic source using the <a>DescribeTrafficSources</a>
-        /// API call. The instances continue to run.
+        /// When you detach a traffic source, it enters the <c>Removing</c> state while deregistering
+        /// the instances in the group. When all instances are deregistered, then you can no longer
+        /// describe the traffic source using the <a>DescribeTrafficSources</a> API call. The
+        /// instances continue to run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachTrafficSources service method.</param>
@@ -4635,10 +4629,10 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// When you detach a traffic source, it enters the <code>Removing</code> state while
-        /// deregistering the instances in the group. When all instances are deregistered, then
-        /// you can no longer describe the traffic source using the <a>DescribeTrafficSources</a>
-        /// API call. The instances continue to run.
+        /// When you detach a traffic source, it enters the <c>Removing</c> state while deregistering
+        /// the instances in the group. When all instances are deregistered, then you can no longer
+        /// describe the traffic source using the <a>DescribeTrafficSources</a> API call. The
+        /// instances continue to run.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachTrafficSources service method.</param>
@@ -5902,11 +5896,11 @@ namespace Amazon.AutoScaling
         ///  </li> <li> 
         /// <para>
         /// The Auto Scaling group has a launch template that uses an Amazon Web Services Systems
-        /// Manager parameter instead of an AMI ID for the <code>ImageId</code> property.
+        /// Manager parameter instead of an AMI ID for the <c>ImageId</c> property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code>
+        /// The Auto Scaling group uses the launch template's <c>$Latest</c> or <c>$Default</c>
         /// version.
         /// </para>
         ///  </li> </ul> 
@@ -5926,8 +5920,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.IrreversibleInstanceRefreshException">
         /// The request failed because a desired configuration was not found or an incompatible
         /// launch template (uses a Systems Manager parameter instead of an AMI ID) or launch
-        /// template version (<code>$Latest</code> or <code>$Default</code>) is present on the
-        /// Auto Scaling group.
+        /// template version (<c>$Latest</c> or <c>$Default</c>) is present on the Auto Scaling
+        /// group.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
@@ -5973,11 +5967,11 @@ namespace Amazon.AutoScaling
         ///  </li> <li> 
         /// <para>
         /// The Auto Scaling group has a launch template that uses an Amazon Web Services Systems
-        /// Manager parameter instead of an AMI ID for the <code>ImageId</code> property.
+        /// Manager parameter instead of an AMI ID for the <c>ImageId</c> property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code>
+        /// The Auto Scaling group uses the launch template's <c>$Latest</c> or <c>$Default</c>
         /// version.
         /// </para>
         ///  </li> </ul> 
@@ -6000,8 +5994,8 @@ namespace Amazon.AutoScaling
         /// <exception cref="Amazon.AutoScaling.Model.IrreversibleInstanceRefreshException">
         /// The request failed because a desired configuration was not found or an incompatible
         /// launch template (uses a Systems Manager parameter instead of an AMI ID) or launch
-        /// template version (<code>$Latest</code> or <code>$Default</code>) is present on the
-        /// Auto Scaling group.
+        /// template version (<c>$Latest</c> or <c>$Default</c>) is present on the Auto Scaling
+        /// group.
         /// </exception>
         /// <exception cref="Amazon.AutoScaling.Model.LimitExceededException">
         /// You have already reached a limit for your Amazon EC2 Auto Scaling resources (for example,
@@ -6033,9 +6027,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
-        /// that is lower than the current size of the group, the Auto Scaling group uses its
-        /// termination policy to determine which instances to terminate. 
+        /// If a scale-in activity occurs as a result of a new <c>DesiredCapacity</c> value that
+        /// is lower than the current size of the group, the Auto Scaling group uses its termination
+        /// policy to determine which instances to terminate. 
         /// </para>
         ///  
         /// <para>
@@ -6069,9 +6063,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
-        /// that is lower than the current size of the group, the Auto Scaling group uses its
-        /// termination policy to determine which instances to terminate. 
+        /// If a scale-in activity occurs as a result of a new <c>DesiredCapacity</c> value that
+        /// is lower than the current size of the group, the Auto Scaling group uses its termination
+        /// policy to determine which instances to terminate. 
         /// </para>
         ///  
         /// <para>
@@ -6279,17 +6273,17 @@ namespace Amazon.AutoScaling
         /// <para>
         /// An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured
         /// health checks, or not ignoring or allowing the termination of instances that are in
-        /// <code>Standby</code> state or protected from scale in. You can monitor for failed
-        /// EC2 launches using the scaling activities. To find the scaling activities, call the
-        /// <a>DescribeScalingActivities</a> API.
+        /// <c>Standby</c> state or protected from scale in. You can monitor for failed EC2 launches
+        /// using the scaling activities. To find the scaling activities, call the <a>DescribeScalingActivities</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
         /// If you enable auto rollback, your Auto Scaling group will be rolled back automatically
         /// when the instance refresh fails. You can enable this feature before starting an instance
-        /// refresh by specifying the <code>AutoRollback</code> property in the instance refresh
-        /// preferences. Otherwise, to roll back an instance refresh before it finishes, use the
-        /// <a>RollbackInstanceRefresh</a> API. 
+        /// refresh by specifying the <c>AutoRollback</c> property in the instance refresh preferences.
+        /// Otherwise, to roll back an instance refresh before it finishes, use the <a>RollbackInstanceRefresh</a>
+        /// API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstanceRefresh service method.</param>
@@ -6344,17 +6338,17 @@ namespace Amazon.AutoScaling
         /// <para>
         /// An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured
         /// health checks, or not ignoring or allowing the termination of instances that are in
-        /// <code>Standby</code> state or protected from scale in. You can monitor for failed
-        /// EC2 launches using the scaling activities. To find the scaling activities, call the
-        /// <a>DescribeScalingActivities</a> API.
+        /// <c>Standby</c> state or protected from scale in. You can monitor for failed EC2 launches
+        /// using the scaling activities. To find the scaling activities, call the <a>DescribeScalingActivities</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
         /// If you enable auto rollback, your Auto Scaling group will be rolled back automatically
         /// when the instance refresh fails. You can enable this feature before starting an instance
-        /// refresh by specifying the <code>AutoRollback</code> property in the instance refresh
-        /// preferences. Otherwise, to roll back an instance refresh before it finishes, use the
-        /// <a>RollbackInstanceRefresh</a> API. 
+        /// refresh by specifying the <c>AutoRollback</c> property in the instance refresh preferences.
+        /// Otherwise, to roll back an instance refresh before it finishes, use the <a>RollbackInstanceRefresh</a>
+        /// API. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartInstanceRefresh service method.</param>
@@ -6398,9 +6392,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
-        /// it can prevent other process types from functioning properly. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+        /// If you suspend either the <c>Launch</c> or <c>Terminate</c> process types, it can
+        /// prevent other process types from functioning properly. For more information, see <a
+        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
         /// and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -6435,9 +6429,9 @@ namespace Amazon.AutoScaling
         /// 
         ///  
         /// <para>
-        /// If you suspend either the <code>Launch</code> or <code>Terminate</code> process types,
-        /// it can prevent other process types from functioning properly. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
+        /// If you suspend either the <c>Launch</c> or <c>Terminate</c> process types, it can
+        /// prevent other process types from functioning properly. For more information, see <a
+        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-suspend-resume-processes.html">Suspending
         /// and resuming scaling processes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
@@ -6480,7 +6474,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This call simply makes a termination request. The instance is not terminated immediately.
-        /// When an instance is terminated, the instance status changes to <code>terminated</code>.
+        /// When an instance is terminated, the instance status changes to <c>terminated</c>.
         /// You can't connect to or start an instance after you've terminated it.
         /// </para>
         ///  
@@ -6526,7 +6520,7 @@ namespace Amazon.AutoScaling
         ///  
         /// <para>
         /// This call simply makes a termination request. The instance is not terminated immediately.
-        /// When an instance is terminated, the instance status changes to <code>terminated</code>.
+        /// When an instance is terminated, the instance status changes to <c>terminated</c>.
         /// You can't connect to or start an instance after you've terminated it.
         /// </para>
         ///  
@@ -6603,28 +6597,25 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// Note the following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>,
-        /// or <code>MinSize</code>:
+        /// Note the following about changing <c>DesiredCapacity</c>, <c>MaxSize</c>, or <c>MinSize</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
-        /// that is lower than the current size of the group, the Auto Scaling group uses its
-        /// termination policy to determine which instances to terminate.
+        /// If a scale-in activity occurs as a result of a new <c>DesiredCapacity</c> value that
+        /// is lower than the current size of the group, the Auto Scaling group uses its termination
+        /// policy to determine which instances to terminate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a new value for <code>MinSize</code> without specifying a value for
-        /// <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the
-        /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
-        /// new <code>MinSize</code> value.
+        /// If you specify a new value for <c>MinSize</c> without specifying a value for <c>DesiredCapacity</c>,
+        /// and the new <c>MinSize</c> is larger than the current size of the group, this sets
+        /// the group's <c>DesiredCapacity</c> to the new <c>MinSize</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a new value for <code>MaxSize</code> without specifying a value for
-        /// <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the
-        /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
-        /// new <code>MaxSize</code> value.
+        /// If you specify a new value for <c>MaxSize</c> without specifying a value for <c>DesiredCapacity</c>,
+        /// and the new <c>MaxSize</c> is smaller than the current size of the group, this sets
+        /// the group's <c>DesiredCapacity</c> to the new <c>MaxSize</c> value.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6689,28 +6680,25 @@ namespace Amazon.AutoScaling
         /// </para>
         ///  
         /// <para>
-        /// Note the following about changing <code>DesiredCapacity</code>, <code>MaxSize</code>,
-        /// or <code>MinSize</code>:
+        /// Note the following about changing <c>DesiredCapacity</c>, <c>MaxSize</c>, or <c>MinSize</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If a scale-in activity occurs as a result of a new <code>DesiredCapacity</code> value
-        /// that is lower than the current size of the group, the Auto Scaling group uses its
-        /// termination policy to determine which instances to terminate.
+        /// If a scale-in activity occurs as a result of a new <c>DesiredCapacity</c> value that
+        /// is lower than the current size of the group, the Auto Scaling group uses its termination
+        /// policy to determine which instances to terminate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a new value for <code>MinSize</code> without specifying a value for
-        /// <code>DesiredCapacity</code>, and the new <code>MinSize</code> is larger than the
-        /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
-        /// new <code>MinSize</code> value.
+        /// If you specify a new value for <c>MinSize</c> without specifying a value for <c>DesiredCapacity</c>,
+        /// and the new <c>MinSize</c> is larger than the current size of the group, this sets
+        /// the group's <c>DesiredCapacity</c> to the new <c>MinSize</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a new value for <code>MaxSize</code> without specifying a value for
-        /// <code>DesiredCapacity</code>, and the new <code>MaxSize</code> is smaller than the
-        /// current size of the group, this sets the group's <code>DesiredCapacity</code> to the
-        /// new <code>MaxSize</code> value.
+        /// If you specify a new value for <c>MaxSize</c> without specifying a value for <c>DesiredCapacity</c>,
+        /// and the new <c>MaxSize</c> is smaller than the current size of the group, this sets
+        /// the group's <c>DesiredCapacity</c> to the new <c>MaxSize</c> value.
         /// </para>
         ///  </li> </ul> 
         /// <para>

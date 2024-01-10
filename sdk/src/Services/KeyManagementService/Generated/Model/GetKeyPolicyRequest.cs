@@ -74,11 +74,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -102,8 +102,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property PolicyName. 
         /// <para>
-        /// Specifies the name of the key policy. The only valid name is <code>default</code>.
-        /// To get the names of key policies, use <a>ListKeyPolicies</a>.
+        /// Specifies the name of the key policy. The only valid name is <c>default</c>. To get
+        /// the names of key policies, use <a>ListKeyPolicies</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

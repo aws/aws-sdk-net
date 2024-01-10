@@ -89,7 +89,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// The date that the version was created, in ISO 8601 format. For example, <code>2018-11-27T15:10:45.123+0000</code>.
+        /// The date that the version was created, in ISO 8601 format. For example, <c>2018-11-27T15:10:45.123+0000</c>.
         /// </para>
         /// </summary>
         public string CreatedDate

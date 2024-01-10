@@ -34,14 +34,14 @@ namespace Amazon.WellArchitected.Model
     /// 
     ///  
     /// <para>
-    /// To update an existing custom lens, specify its ARN as the <code>LensAlias</code>.
-    /// If no ARN is specified, a new custom lens is created.
+    /// To update an existing custom lens, specify its ARN as the <c>LensAlias</c>. If no
+    /// ARN is specified, a new custom lens is created.
     /// </para>
     ///  
     /// <para>
-    /// The new or updated lens will have a status of <code>DRAFT</code>. The lens cannot
-    /// be applied to workloads or shared with other Amazon Web Services accounts until it's
-    /// published with <a>CreateLensVersion</a>.
+    /// The new or updated lens will have a status of <c>DRAFT</c>. The lens cannot be applied
+    /// to workloads or shared with other Amazon Web Services accounts until it's published
+    /// with <a>CreateLensVersion</a>.
     /// </para>
     ///  
     /// <para>

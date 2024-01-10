@@ -35,7 +35,7 @@ namespace Amazon.Batch.Model
     ///  <note> 
     /// <para>
     /// This parameter isn't applicable to jobs that are running on Fargate resources. Don't
-    /// provide it for these jobs. Rather, use <code>containerOverrides</code> instead.
+    /// provide it for these jobs. Rather, use <c>containerOverrides</c> instead.
     /// </para>
     ///  </note>
     /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.Batch.Model
         ///  <ul> <li> 
         /// <para>
         /// There must be at least one node range in your job definition that has an open upper
-        /// boundary, such as <code>:</code> or <code>n:</code>.
+        /// boundary, such as <c>:</c> or <c>n:</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -147,9 +147,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property NamePrefix. 
         /// <para>
         /// The name prefix to use when creating an in-application stream. Suppose that you specify
-        /// a prefix "<code>MyInApplicationStream</code>." Kinesis Data Analytics then creates
-        /// one or more (as per the <code>InputParallelism</code> count you specified) in-application
-        /// streams with the names "<code>MyInApplicationStream_001</code>," "<code>MyInApplicationStream_002</code>,"
+        /// a prefix "<c>MyInApplicationStream</c>." Kinesis Data Analytics then creates one or
+        /// more (as per the <c>InputParallelism</c> count you specified) in-application streams
+        /// with the names "<c>MyInApplicationStream_001</c>," "<c>MyInApplicationStream_002</c>,"
         /// and so on. 
         /// </para>
         /// </summary>

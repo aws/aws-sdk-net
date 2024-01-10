@@ -60,8 +60,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ReputationMetricsEnabled. 
         /// <para>
-        /// If <code>true</code>, tracking of reputation metrics is enabled for the configuration
-        /// set. If <code>false</code>, tracking of reputation metrics is disabled for the configuration
+        /// If <c>true</c>, tracking of reputation metrics is enabled for the configuration set.
+        /// If <c>false</c>, tracking of reputation metrics is disabled for the configuration
         /// set.
         /// </para>
         /// </summary>

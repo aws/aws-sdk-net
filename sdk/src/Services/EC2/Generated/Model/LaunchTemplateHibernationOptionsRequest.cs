@@ -40,11 +40,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Configured. 
         /// <para>
-        /// If you set this parameter to <code>true</code>, the instance is enabled for hibernation.
+        /// If you set this parameter to <c>true</c>, the instance is enabled for hibernation.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Configured

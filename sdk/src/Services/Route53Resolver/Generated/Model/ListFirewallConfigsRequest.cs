@@ -36,7 +36,7 @@ namespace Amazon.Route53Resolver.Model
     ///  
     /// <para>
     /// A single call might return only a partial list of the configurations. For information,
-    /// see <code>MaxResults</code>. 
+    /// see <c>MaxResults</c>. 
     /// </para>
     /// </summary>
     public partial class ListFirewallConfigsRequest : AmazonRoute53ResolverRequest
@@ -48,13 +48,13 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects that you want Resolver to return for this request. If
-        /// more objects are available, in the response, Resolver provides a <code>NextToken</code>
+        /// more objects are available, in the response, Resolver provides a <c>NextToken</c>
         /// value that you can use in a subsequent call to get the next batch of objects.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100
-        /// objects. 
+        /// If you don't specify a value for <c>MaxResults</c>, Resolver returns up to 100 objects.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=10)]
@@ -78,10 +78,9 @@ namespace Amazon.Route53Resolver.Model
         ///  
         /// <para>
         /// When you request a list of objects, Resolver returns at most the number of objects
-        /// specified in <code>MaxResults</code>. If more objects are available for retrieval,
-        /// Resolver returns a <code>NextToken</code> value in the response. To retrieve the next
-        /// batch of objects, use the token that was returned for the prior request in your next
-        /// request.
+        /// specified in <c>MaxResults</c>. If more objects are available for retrieval, Resolver
+        /// returns a <c>NextToken</c> value in the response. To retrieve the next batch of objects,
+        /// use the token that was returned for the prior request in your next request.
         /// </para>
         /// </summary>
         public string NextToken

@@ -39,7 +39,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigList. 
         /// <para>
-        /// List of <code>Config</code> items.
+        /// List of <c>Config</c> items.
         /// </para>
         /// </summary>
         public List<ConfigListItem> ConfigList
@@ -57,8 +57,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next token returned in the response of a previous <code>ListConfigs</code> call. Used
-        /// to get the next page of results.
+        /// Next token returned in the response of a previous <c>ListConfigs</c> call. Used to
+        /// get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=1000)]

@@ -34,8 +34,8 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// When using <code>InputDataConfig</code>, you must include these sub-parameters: <code>S3Uri</code>
-    /// and <code>DataAccessRoleArn</code>. You can optionally include <code>TuningDataS3Uri</code>.
+    /// When using <c>InputDataConfig</c>, you must include these sub-parameters: <c>S3Uri</c>
+    /// and <c>DataAccessRoleArn</c>. You can optionally include <c>TuningDataS3Uri</c>.
     /// </para>
     /// </summary>
     public partial class InputDataConfig
@@ -54,8 +54,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>.
         /// </para>
         ///  
         /// <para>
@@ -84,7 +84,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</code>
+        /// Here's an example URI path: <c>s3://DOC-EXAMPLE-BUCKET/my-model-training-data/</c>
         /// 
         /// </para>
         /// </summary>
@@ -109,8 +109,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</code>
-        /// 
+        /// Here's an example URI path: <c>s3://DOC-EXAMPLE-BUCKET/my-model-tuning-data/</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

@@ -40,7 +40,7 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property MqttTopic. 
         /// <para>
         /// The MQTT topic of the message. You can use a string expression that includes variables
-        /// (<code>$variable.&lt;variable-name&gt;</code>) and input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>)
+        /// (<c>$variable.&lt;variable-name&gt;</c>) and input values (<c>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</c>)
         /// as the topic string.
         /// </para>
         /// </summary>

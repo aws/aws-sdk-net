@@ -31,9 +31,8 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Container for the parameters to the CreatePermission operation.
     /// Grants one or more permissions on a private CA to the Certificate Manager (ACM) service
-    /// principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to issue and
-    /// renew ACM certificates that reside in the same Amazon Web Services account as the
-    /// CA.
+    /// principal (<c>acm.amazonaws.com</c>). These permissions allow ACM to issue and renew
+    /// ACM certificates that reside in the same Amazon Web Services account as the CA.
     /// 
     ///  
     /// <para>
@@ -48,8 +47,8 @@ namespace Amazon.ACMPCA.Model
     ///  <ul> <li> 
     /// <para>
     /// If the private CA and the certificates it issues reside in the same account, you can
-    /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-    /// certificate renewals.
+    /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+    /// renewals.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -77,7 +76,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property Actions. 
         /// <para>
         /// The actions that the specified Amazon Web Services service principal can use. These
-        /// include <code>IssueCertificate</code>, <code>GetCertificate</code>, and <code>ListPermissions</code>.
+        /// include <c>IssueCertificate</c>, <c>GetCertificate</c>, and <c>ListPermissions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=3)]
@@ -102,8 +101,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>. 
+        ///  <c>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        /// </c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=200)]
@@ -123,7 +122,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property Principal. 
         /// <para>
         /// The Amazon Web Services service or identity that receives the permission. At this
-        /// time, the only valid principal is <code>acm.amazonaws.com</code>.
+        /// time, the only valid principal is <c>acm.amazonaws.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

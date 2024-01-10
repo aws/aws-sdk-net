@@ -77,10 +77,10 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property DeleteProtection. 
         /// <para>
-        /// A flag indicating whether it is possible to delete the firewall. A setting of <code>TRUE</code>
+        /// A flag indicating whether it is possible to delete the firewall. A setting of <c>TRUE</c>
         /// indicates that the firewall is protected against deletion. Use this setting to protect
         /// against accidentally deleting a firewall that is in use. When you create a firewall,
-        /// the operation initializes this flag to <code>TRUE</code>.
+        /// the operation initializes this flag to <c>TRUE</c>.
         /// </para>
         /// </summary>
         public bool DeleteProtection
@@ -178,7 +178,7 @@ namespace Amazon.NetworkFirewall.Model
         /// A setting indicating whether the firewall is protected against a change to the firewall
         /// policy association. Use this setting to protect against accidentally modifying the
         /// firewall policy for a firewall that is in use. When you create a firewall, the operation
-        /// initializes this setting to <code>TRUE</code>.
+        /// initializes this setting to <c>TRUE</c>.
         /// </para>
         /// </summary>
         public bool FirewallPolicyChangeProtection
@@ -199,7 +199,7 @@ namespace Amazon.NetworkFirewall.Model
         /// A setting indicating whether the firewall is protected against changes to the subnet
         /// associations. Use this setting to protect against accidentally modifying the subnet
         /// associations for a firewall that is in use. When you create a firewall, the operation
-        /// initializes this setting to <code>TRUE</code>.
+        /// initializes this setting to <c>TRUE</c>.
         /// </para>
         /// </summary>
         public bool SubnetChangeProtection

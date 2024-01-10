@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Details about the configuration for the <code>Lambda</code> action engine, or executor.
+    /// Details about the configuration for the <c>Lambda</c> action engine, or executor.
     /// </summary>
     public partial class LambdaExecutorConfiguration
     {

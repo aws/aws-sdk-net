@@ -215,9 +215,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Serde. 
         /// <para>
         /// Sets the SerDe for processing CSV in the classifier, which will be applied in the
-        /// Data Catalog. Valid values are <code>OpenCSVSerDe</code>, <code>LazySimpleSerDe</code>,
-        /// and <code>None</code>. You can specify the <code>None</code> value when you want the
-        /// crawler to do the detection.
+        /// Data Catalog. Valid values are <c>OpenCSVSerDe</c>, <c>LazySimpleSerDe</c>, and <c>None</c>.
+        /// You can specify the <c>None</c> value when you want the crawler to do the detection.
         /// </para>
         /// </summary>
         public CsvSerdeOption Serde

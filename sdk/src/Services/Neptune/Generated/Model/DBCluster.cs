@@ -87,8 +87,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  <code>AllocatedStorage</code> always returns 1, because Neptune DB cluster storage
-        /// size is not fixed, but instead automatically adjusts as needed.
+        ///  <c>AllocatedStorage</c> always returns 1, because Neptune DB cluster storage size
+        /// is not fixed, but instead automatically adjusts as needed.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -236,8 +236,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        ///  <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster
-        /// that is created.</i> 
+        ///  <i>If set to <c>true</c>, tags are copied to any snapshot of the DB cluster that
+        /// is created.</i> 
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -255,7 +255,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CrossAccountClone. 
         /// <para>
-        /// If set to <code>true</code>, the DB cluster can be cloned across accounts.
+        /// If set to <c>true</c>, the DB cluster can be cloned across accounts.
         /// </para>
         /// </summary>
         public bool CrossAccountClone
@@ -462,8 +462,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property EnabledCloudwatchLogsExports. 
         /// <para>
         /// A list of the log types that this DB cluster is configured to export to CloudWatch
-        /// Logs. Valid log types are: <code>audit</code> (to publish audit logs to CloudWatch)
-        /// and slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+        /// Logs. Valid log types are: <c>audit</c> (to publish audit logs to CloudWatch) and
+        /// slowquery (to publish slow-query logs to CloudWatch). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
         /// Neptune logs to Amazon CloudWatch logs</a>.
         /// </para>
         /// </summary>
@@ -593,8 +593,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property IOOptimizedNextAllowedModificationTime. 
         /// <para>
-        /// The next time you can modify the DB cluster to use the <code>iopt1</code> storage
-        /// type.
+        /// The next time you can modify the DB cluster to use the <c>iopt1</c> storage type.
         /// </para>
         /// </summary>
         public DateTime IOOptimizedNextAllowedModificationTime
@@ -612,7 +611,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted
+        /// If <c>StorageEncrypted</c> is true, the Amazon KMS key identifier for the encrypted
         /// DB cluster.
         /// </para>
         /// </summary>
@@ -685,7 +684,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PendingModifiedValues. 
         /// <para>
-        /// This data type is used as a response element in the <code>ModifyDBCluster</code> operation
+        /// This data type is used as a response element in the <c>ModifyDBCluster</c> operation
         /// and contains changes that will be applied during the next maintenance window.
         /// </para>
         /// </summary>
@@ -741,7 +740,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>.
+        /// backups are enabled, as determined by the <c>BackupRetentionPeriod</c>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow

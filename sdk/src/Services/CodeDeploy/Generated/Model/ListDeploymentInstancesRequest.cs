@@ -32,9 +32,9 @@ namespace Amazon.CodeDeploy.Model
     /// Container for the parameters to the ListDeploymentInstances operation.
     /// <note> 
     /// <para>
-    ///  The newer <code>BatchGetDeploymentTargets</code> should be used instead because it
-    /// works with all compute types. <code>ListDeploymentInstances</code> throws an exception
-    /// if it is used with a compute platform other than EC2/On-premises or Lambda. 
+    ///  The newer <c>BatchGetDeploymentTargets</c> should be used instead because it works
+    /// with all compute types. <c>ListDeploymentInstances</c> throws an exception if it is
+    /// used with a compute platform other than EC2/On-premises or Lambda. 
     /// </para>
     ///  </note> 
     /// <para>
@@ -75,27 +75,27 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Pending</code>: Include those instances with pending deployments.
+        ///  <c>Pending</c>: Include those instances with pending deployments.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code>: Include those instances where deployments are still in progress.
+        ///  <c>InProgress</c>: Include those instances where deployments are still in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Succeeded</code>: Include those instances with successful deployments.
+        ///  <c>Succeeded</c>: Include those instances with successful deployments.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: Include those instances with failed deployments.
+        ///  <c>Failed</c>: Include those instances with failed deployments.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Skipped</code>: Include those instances with skipped deployments.
+        ///  <c>Skipped</c>: Include those instances with skipped deployments.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unknown</code>: Include those instances with deployments in an unknown state.
+        ///  <c>Unknown</c>: Include those instances with deployments in an unknown state.
         /// </para>
         ///  </li> </ul>
         /// </summary>

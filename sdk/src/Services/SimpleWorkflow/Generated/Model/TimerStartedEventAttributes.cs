@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>TimerStarted</code> event.
+    /// Provides the details of the <c>TimerStarted</c> event.
     /// </summary>
     public partial class TimerStartedEventAttributes
     {
@@ -61,10 +61,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>StartTimer</code> decision for this activity task.
-        /// This information can be useful for diagnosing problems by tracing back the chain of
-        /// events leading up to this event.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>StartTimer</c> decision for this activity task. This information
+        /// can be useful for diagnosing problems by tracing back the chain of events leading
+        /// up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +87,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=8)]

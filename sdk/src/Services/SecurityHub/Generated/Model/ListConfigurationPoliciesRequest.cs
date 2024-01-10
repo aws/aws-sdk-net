@@ -42,12 +42,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of results that's returned by <code>ListConfigurationPolicies</code>
-        /// in each page of the response. When this parameter is used, <code>ListConfigurationPolicies</code>
-        /// returns the specified number of results in a single page and a <code>NextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListConfigurationPolicies</code> request with the returned <code>NextToken</code>
-        /// value. A valid range for <code>MaxResults</code> is between 1 and 100. 
+        ///  The maximum number of results that's returned by <c>ListConfigurationPolicies</c>
+        /// in each page of the response. When this parameter is used, <c>ListConfigurationPolicies</c>
+        /// returns the specified number of results in a single page and a <c>NextToken</c> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <c>ListConfigurationPolicies</c> request with the returned <c>NextToken</c> value.
+        /// A valid range for <c>MaxResults</c> is between 1 and 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -66,12 +66,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The NextToken value that's returned from a previous paginated <code>ListConfigurationPolicies</code>
-        /// request where <code>MaxResults</code> was used but the results exceeded the value
-        /// of that parameter. Pagination continues from the <code>MaxResults</code> was used
-        /// but the results exceeded the value of that parameter. Pagination continues from the
-        /// end of the previous response that returned the <code>NextToken</code> value. This
-        /// value is <code>null</code> when there are no more results to return. 
+        ///  The NextToken value that's returned from a previous paginated <c>ListConfigurationPolicies</c>
+        /// request where <c>MaxResults</c> was used but the results exceeded the value of that
+        /// parameter. Pagination continues from the <c>MaxResults</c> was used but the results
+        /// exceeded the value of that parameter. Pagination continues from the end of the previous
+        /// response that returned the <c>NextToken</c> value. This value is <c>null</c> when
+        /// there are no more results to return. 
         /// </para>
         /// </summary>
         public string NextToken

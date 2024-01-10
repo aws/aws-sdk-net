@@ -134,8 +134,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property FieldMappings. 
         /// <para>
         /// Maps Google Drive data source attributes or field names to Amazon Kendra index field
-        /// names. To create custom fields, use the <code>UpdateIndex</code> API before you map
-        /// to Google Drive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// names. To create custom fields, use the <c>UpdateIndex</c> API before you map to Google
+        /// Drive fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Google Drive data source field names must exist in your
         /// Google Drive custom metadata.
         /// </para>

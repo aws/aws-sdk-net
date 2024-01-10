@@ -64,8 +64,8 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property ConfigurationSyncStateSummary. 
         /// <para>
         /// The configuration sync state for the firewall. This summarizes the sync states reported
-        /// in the <code>Config</code> settings for all of the Availability Zones where you have
-        /// configured the firewall. 
+        /// in the <c>Config</c> settings for all of the Availability Zones where you have configured
+        /// the firewall. 
         /// </para>
         ///  
         /// <para>
@@ -76,9 +76,9 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  
         /// <para>
-        /// This status must be <code>IN_SYNC</code> for the firewall to be ready for use, but
-        /// it doesn't indicate that the firewall is ready. The <code>Status</code> setting indicates
-        /// firewall readiness.
+        /// This status must be <c>IN_SYNC</c> for the firewall to be ready for use, but it doesn't
+        /// indicate that the firewall is ready. The <c>Status</c> setting indicates firewall
+        /// readiness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,10 +98,9 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The readiness of the configured firewall to handle network traffic across all of the
-        /// Availability Zones where you've configured it. This setting is <code>READY</code>
-        /// only when the <code>ConfigurationSyncStateSummary</code> value is <code>IN_SYNC</code>
-        /// and the <code>Attachment</code> <code>Status</code> values for all of the configured
-        /// subnets are <code>READY</code>. 
+        /// Availability Zones where you've configured it. This setting is <c>READY</c> only when
+        /// the <c>ConfigurationSyncStateSummary</c> value is <c>IN_SYNC</c> and the <c>Attachment</c>
+        /// <c>Status</c> values for all of the configured subnets are <c>READY</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,8 +121,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The subnets that you've configured for use by the Network Firewall firewall. This
         /// contains one array element per Availability Zone where you've configured a subnet.
-        /// These objects provide details of the information that is summarized in the <code>ConfigurationSyncStateSummary</code>
-        /// and <code>Status</code>, broken down by zone and configuration object. 
+        /// These objects provide details of the information that is summarized in the <c>ConfigurationSyncStateSummary</c>
+        /// and <c>Status</c>, broken down by zone and configuration object. 
         /// </para>
         /// </summary>
         public Dictionary<string, SyncState> SyncStates

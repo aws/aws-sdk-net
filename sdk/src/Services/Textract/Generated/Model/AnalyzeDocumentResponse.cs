@@ -59,7 +59,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Blocks. 
         /// <para>
-        /// The items that are detected and analyzed by <code>AnalyzeDocument</code>.
+        /// The items that are detected and analyzed by <c>AnalyzeDocument</c>.
         /// </para>
         /// </summary>
         public List<Block> Blocks

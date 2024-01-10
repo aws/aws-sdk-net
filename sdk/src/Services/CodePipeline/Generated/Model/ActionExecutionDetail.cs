@@ -213,8 +213,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the action execution. Status categories are <code>InProgress</code>,
-        /// <code>Succeeded</code>, and <code>Failed</code>.
+        ///  The status of the action execution. Status categories are <c>InProgress</c>, <c>Succeeded</c>,
+        /// and <c>Failed</c>.
         /// </para>
         /// </summary>
         public ActionExecutionStatus Status

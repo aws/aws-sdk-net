@@ -48,8 +48,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DeploymentOption. 
         /// <para>
         /// Describes the deployment option for the recommended Amazon RDS DB instance. The deployment
-        /// options include Multi-AZ and Single-AZ deployments. Valid values include <code>"MULTI_AZ"</code>
-        /// and <code>"SINGLE_AZ"</code>.
+        /// options include Multi-AZ and Single-AZ deployments. Valid values include <c>"MULTI_AZ"</c>
+        /// and <c>"SINGLE_AZ"</c>.
         /// </para>
         /// </summary>
         public string DeploymentOption

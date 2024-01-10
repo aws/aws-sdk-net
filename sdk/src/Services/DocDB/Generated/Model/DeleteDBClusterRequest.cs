@@ -51,7 +51,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match an existing <code>DBClusterIdentifier</code>.
+        /// Must match an existing <c>DBClusterIdentifier</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -71,13 +71,13 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
-        ///  The cluster snapshot identifier of the new cluster snapshot created when <code>SkipFinalSnapshot</code>
-        /// is set to <code>false</code>. 
+        ///  The cluster snapshot identifier of the new cluster snapshot created when <c>SkipFinalSnapshot</c>
+        /// is set to <c>false</c>. 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Specifying this parameter and also setting the <code>SkipFinalShapshot</code> parameter
-        /// to <code>true</code> results in an error. 
+        ///  Specifying this parameter and also setting the <c>SkipFinalShapshot</c> parameter
+        /// to <c>true</c> results in an error. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -113,17 +113,17 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
         ///  Determines whether a final cluster snapshot is created before the cluster is deleted.
-        /// If <code>true</code> is specified, no cluster snapshot is created. If <code>false</code>
-        /// is specified, a cluster snapshot is created before the DB cluster is deleted. 
+        /// If <c>true</c> is specified, no cluster snapshot is created. If <c>false</c> is specified,
+        /// a cluster snapshot is created before the DB cluster is deleted. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>SkipFinalSnapshot</code> is <code>false</code>, you must specify a <code>FinalDBSnapshotIdentifier</code>
+        /// If <c>SkipFinalSnapshot</c> is <c>false</c>, you must specify a <c>FinalDBSnapshotIdentifier</c>
         /// parameter.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool SkipFinalSnapshot

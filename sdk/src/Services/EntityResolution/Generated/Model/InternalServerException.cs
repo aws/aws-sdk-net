@@ -30,7 +30,7 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// This exception occurs when there is an internal failure in the Entity Resolution service.
-    /// <code>HTTP Status Code: 500</code>
+    /// <c>HTTP Status Code: 500</c>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

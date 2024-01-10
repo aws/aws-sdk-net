@@ -30,9 +30,9 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// This key-value pair can store custom data about a game session. For example, you might
-    /// use a <code>GameProperty</code> to track a game session's map, level of difficulty,
-    /// or remaining time. The difficulty level could be specified like this: <code>{"Key":
-    /// "difficulty", "Value":"Novice"}</code>. 
+    /// use a <c>GameProperty</c> to track a game session's map, level of difficulty, or remaining
+    /// time. The difficulty level could be specified like this: <c>{"Key": "difficulty",
+    /// "Value":"Novice"}</c>. 
     /// 
     ///  
     /// <para>

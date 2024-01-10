@@ -38,8 +38,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property ScheduledAction. 
         /// <para>
-        /// The returned <code>ScheduledAction</code> object that describes the properties of
-        /// a scheduled action.
+        /// The returned <c>ScheduledAction</c> object that describes the properties of a scheduled
+        /// action.
         /// </para>
         /// </summary>
         public ScheduledActionResponse ScheduledAction

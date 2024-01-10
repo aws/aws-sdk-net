@@ -32,8 +32,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// Container for the parameters to the UntagResource operation.
     /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
     /// used to manage a resource. To untag a resource, the caller account must be the same
-    /// as the resource’s <code>OwnerAccountId</code>. Untagging resources across accounts
-    /// is not supported.
+    /// as the resource’s <c>OwnerAccountId</c>. Untagging resources across accounts is not
+    /// supported.
     /// </summary>
     public partial class UntagResourceRequest : AmazonMigrationHubRefactorSpacesRequest
     {

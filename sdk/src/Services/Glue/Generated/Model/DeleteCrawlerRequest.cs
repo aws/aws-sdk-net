@@ -31,7 +31,7 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the DeleteCrawler operation.
     /// Removes a specified crawler from the Glue Data Catalog, unless the crawler state is
-    /// <code>RUNNING</code>.
+    /// <c>RUNNING</c>.
     /// </summary>
     public partial class DeleteCrawlerRequest : AmazonGlueRequest
     {

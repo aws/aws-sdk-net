@@ -82,7 +82,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EntityType. 
         /// <para>
-        /// Shows the type as <code>User</code> or <code>Group</code>.
+        /// Shows the type as <c>User</c> or <c>Group</c>.
         /// </para>
         /// </summary>
         public EntityType EntityType

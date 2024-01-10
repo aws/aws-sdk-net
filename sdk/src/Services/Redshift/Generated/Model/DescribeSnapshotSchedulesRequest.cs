@@ -65,9 +65,9 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A value that indicates the starting point for the next set of response records in
         /// a subsequent request. If a value is returned in a response, you can retrieve the next
-        /// set of records by providing this returned marker value in the <code>marker</code>
-        /// parameter and retrying the command. If the <code>marker</code> field is empty, all
-        /// response records have been retrieved for the request.
+        /// set of records by providing this returned marker value in the <c>marker</c> parameter
+        /// and retrying the command. If the <c>marker</c> field is empty, all response records
+        /// have been retrieved for the request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -87,9 +87,9 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number or response records to return in each call. If the number of remaining
-        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
-        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
-        /// by retrying the command with the returned <code>marker</code> value.
+        /// response records exceeds the specified <c>MaxRecords</c> value, a value is returned
+        /// in a <c>marker</c> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned <c>marker</c> value.
         /// </para>
         /// </summary>
         public int MaxRecords

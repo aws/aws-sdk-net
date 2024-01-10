@@ -43,8 +43,7 @@ namespace Amazon.AppConfigData
     /// </para>
     ///  
     /// <para>
-    /// When calling <code>StartConfigurationSession</code>, your code sends the following
-    /// information:
+    /// When calling <c>StartConfigurationSession</c>, your code sends the following information:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -54,36 +53,36 @@ namespace Amazon.AppConfigData
     ///  </li> <li> 
     /// <para>
     /// (Optional) The minimum amount of time the session's client must wait between calls
-    /// to <code>GetLatestConfiguration</code>.
+    /// to <c>GetLatestConfiguration</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// In response, AppConfig provides an <code>InitialConfigurationToken</code> to be given
-    /// to the session's client and used the first time it calls <code>GetLatestConfiguration</code>
+    /// In response, AppConfig provides an <c>InitialConfigurationToken</c> to be given to
+    /// the session's client and used the first time it calls <c>GetLatestConfiguration</c>
     /// for that session.
     /// </para>
     ///  <important> 
     /// <para>
-    /// This token should only be used once in your first call to <code>GetLatestConfiguration</code>.
-    /// You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response
-    /// (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
+    /// This token should only be used once in your first call to <c>GetLatestConfiguration</c>.
+    /// You <i>must</i> use the new token in the <c>GetLatestConfiguration</c> response (<c>NextPollConfigurationToken</c>)
+    /// in each subsequent call to <c>GetLatestConfiguration</c>.
     /// </para>
     ///  </important> 
     /// <para>
-    /// When calling <code>GetLatestConfiguration</code>, your client code sends the most
-    /// recent <code>ConfigurationToken</code> value it has and receives in response:
+    /// When calling <c>GetLatestConfiguration</c>, your client code sends the most recent
+    /// <c>ConfigurationToken</c> value it has and receives in response:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>NextPollConfigurationToken</code>: the <code>ConfigurationToken</code> value
-    /// to use on the next call to <code>GetLatestConfiguration</code>.
+    ///  <c>NextPollConfigurationToken</c>: the <c>ConfigurationToken</c> value to use on
+    /// the next call to <c>GetLatestConfiguration</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>NextPollIntervalInSeconds</code>: the duration the client should wait before
-    /// making its next call to <code>GetLatestConfiguration</code>. This duration may vary
-    /// over the course of the session, so it should be used instead of the value sent on
-    /// the <code>StartConfigurationSession</code> call.
+    ///  <c>NextPollIntervalInSeconds</c>: the duration the client should wait before making
+    /// its next call to <c>GetLatestConfiguration</c>. This duration may vary over the course
+    /// of the session, so it should be used instead of the value sent on the <c>StartConfigurationSession</c>
+    /// call.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -92,16 +91,16 @@ namespace Amazon.AppConfigData
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
-    /// The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code>
-    /// should only be used once. To support long poll use cases, the tokens are valid for
-    /// up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token,
-    /// the system returns <code>BadRequestException</code>.
+    /// The <c>InitialConfigurationToken</c> and <c>NextPollConfigurationToken</c> should
+    /// only be used once. To support long poll use cases, the tokens are valid for up to
+    /// 24 hours. If a <c>GetLatestConfiguration</c> call uses an expired token, the system
+    /// returns <c>BadRequestException</c>.
     /// </para>
     ///  </important> 
     /// <para>
     /// For more information and to view example CLI commands that show how to retrieve a
-    /// configuration using the AppConfig Data <code>StartConfigurationSession</code> and
-    /// <code>GetLatestConfiguration</code> API actions, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
+    /// configuration using the AppConfig Data <c>StartConfigurationSession</c> and <c>GetLatestConfiguration</c>
+    /// API actions, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
     /// the configuration</a> in the <i>AppConfig User Guide</i>.
     /// </para>
     /// </summary>
@@ -126,15 +125,14 @@ namespace Amazon.AppConfigData
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Each configuration token is only valid for one call to <code>GetLatestConfiguration</code>.
-        /// The <code>GetLatestConfiguration</code> response includes a <code>NextPollConfigurationToken</code>
+        /// Each configuration token is only valid for one call to <c>GetLatestConfiguration</c>.
+        /// The <c>GetLatestConfiguration</c> response includes a <c>NextPollConfigurationToken</c>
         /// that should always replace the token used for the just-completed call in preparation
         /// for the next one. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetLatestConfiguration</code> is a priced call. For more information, see <a
-        /// href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        ///  <c>GetLatestConfiguration</c> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -171,15 +169,14 @@ namespace Amazon.AppConfigData
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Each configuration token is only valid for one call to <code>GetLatestConfiguration</code>.
-        /// The <code>GetLatestConfiguration</code> response includes a <code>NextPollConfigurationToken</code>
+        /// Each configuration token is only valid for one call to <c>GetLatestConfiguration</c>.
+        /// The <c>GetLatestConfiguration</c> response includes a <c>NextPollConfigurationToken</c>
         /// that should always replace the token used for the just-completed call in preparation
         /// for the next one. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetLatestConfiguration</code> is a priced call. For more information, see <a
-        /// href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
+        ///  <c>GetLatestConfiguration</c> is a priced call. For more information, see <a href="https://aws.amazon.com/systems-manager/pricing/">Pricing</a>.
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>

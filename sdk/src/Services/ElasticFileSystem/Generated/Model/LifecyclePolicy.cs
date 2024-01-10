@@ -35,11 +35,11 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  <note> 
     /// <para>
-    /// When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code>
-    /// API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have
-    /// only a single transition. This means that in a request body, <code>LifecyclePolicies</code>
-    /// must be structured as an array of <code>LifecyclePolicy</code> objects, one object
-    /// for each transition. For more information, see the request examples in <a>PutLifecycleConfiguration</a>.
+    /// When using the <c>put-lifecycle-configuration</c> CLI command or the <c>PutLifecycleConfiguration</c>
+    /// API action, Amazon EFS requires that each <c>LifecyclePolicy</c> object have only
+    /// a single transition. This means that in a request body, <c>LifecyclePolicies</c> must
+    /// be structured as an array of <c>LifecyclePolicy</c> objects, one object for each transition.
+    /// For more information, see the request examples in <a>PutLifecycleConfiguration</a>.
     /// </para>
     ///  </note>
     /// </summary>

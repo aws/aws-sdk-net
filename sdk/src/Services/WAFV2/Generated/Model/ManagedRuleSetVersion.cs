@@ -39,8 +39,8 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// Vendors, you can use the managed rule set APIs to provide controlled rollout of your
-    /// versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>,
-    /// <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+    /// versioned managed rule group offerings for your customers. The APIs are <c>ListManagedRuleSets</c>,
+    /// <c>GetManagedRuleSet</c>, <c>PutManagedRuleSetVersions</c>, and <c>UpdateManagedRuleSetVersionExpiryDate</c>.
     /// </para>
     ///  </note>
     /// </summary>

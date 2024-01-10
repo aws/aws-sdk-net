@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// You use this operation to attach a <i>managed</i> policy to a user. To embed an inline
     /// policy in a user, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutUserPolicy.html">
-    /// <code>PutUserPolicy</code> </a>.
+    /// <c>PutUserPolicy</c> </a>.
     /// </para>
     ///  
     /// <para>

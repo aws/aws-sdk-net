@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The details of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code>
-    /// API request which failed.
+    /// The details of the last <c>UpdateDataLake</c> or <c>DeleteDataLake</c> API request
+    /// which failed.
     /// </summary>
     public partial class DataLakeUpdateException
     {
@@ -40,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The reason code for the exception of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code>
+        /// The reason code for the exception of the last <c>UpdateDataLake</c> or <c>DeleteDataLake</c>
         /// API request.
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason for the exception of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code>
+        /// The reason for the exception of the last <c>UpdateDataLake</c>or <c>DeleteDataLake</c>
         /// API request.
         /// </para>
         /// </summary>

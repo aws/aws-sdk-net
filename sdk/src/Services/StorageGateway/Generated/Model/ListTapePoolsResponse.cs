@@ -61,9 +61,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property PoolInfos. 
         /// <para>
-        /// An array of <code>PoolInfo</code> objects, where each object describes a single custom
-        /// tape pool. If there are no custom tape pools, the <code>PoolInfos</code> is an empty
-        /// array. 
+        /// An array of <c>PoolInfo</c> objects, where each object describes a single custom tape
+        /// pool. If there are no custom tape pools, the <c>PoolInfos</c> is an empty array. 
         /// </para>
         /// </summary>
         public List<PoolInfo> PoolInfos

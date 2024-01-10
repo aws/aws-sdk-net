@@ -40,8 +40,8 @@ namespace Amazon.Ivschat.Model
         /// Gets and sets the property LoggingConfigurations. 
         /// <para>
         /// List of the matching logging configurations (summary information only). There is only
-        /// one type of destination (<code>cloudWatchLogs</code>, <code>firehose</code>, or <code>s3</code>)
-        /// in a <code>destinationConfiguration</code>.
+        /// one type of destination (<c>cloudWatchLogs</c>, <c>firehose</c>, or <c>s3</c>) in
+        /// a <c>destinationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more logging configurations than <code>maxResults</code>, use <code>nextToken</code>
+        /// If there are more logging configurations than <c>maxResults</c>, use <c>nextToken</c>
         /// in the request to get the next set.
         /// </para>
         /// </summary>

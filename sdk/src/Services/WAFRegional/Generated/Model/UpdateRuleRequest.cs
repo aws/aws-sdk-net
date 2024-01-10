@@ -43,58 +43,58 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Inserts or deletes <a>Predicate</a> objects in a <code>Rule</code>. Each <code>Predicate</code>
+    /// Inserts or deletes <a>Predicate</a> objects in a <c>Rule</c>. Each <c>Predicate</c>
     /// object identifies a predicate, such as a <a>ByteMatchSet</a> or an <a>IPSet</a>, that
     /// specifies the web requests that you want to allow, block, or count. If you add more
-    /// than one predicate to a <code>Rule</code>, a request must match all of the specifications
+    /// than one predicate to a <c>Rule</c>, a request must match all of the specifications
     /// to be allowed, blocked, or counted. For example, suppose that you add the following
-    /// to a <code>Rule</code>: 
+    /// to a <c>Rule</c>: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A <code>ByteMatchSet</code> that matches the value <code>BadBot</code> in the <code>User-Agent</code>
+    /// A <c>ByteMatchSet</c> that matches the value <c>BadBot</c> in the <c>User-Agent</c>
     /// header
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An <code>IPSet</code> that matches the IP address <code>192.0.2.44</code> 
+    /// An <c>IPSet</c> that matches the IP address <c>192.0.2.44</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You then add the <code>Rule</code> to a <code>WebACL</code> and specify that you want
-    /// to block requests that satisfy the <code>Rule</code>. For a request to be blocked,
-    /// the <code>User-Agent</code> header in the request must contain the value <code>BadBot</code>
-    /// <i>and</i> the request must originate from the IP address 192.0.2.44.
+    /// You then add the <c>Rule</c> to a <c>WebACL</c> and specify that you want to block
+    /// requests that satisfy the <c>Rule</c>. For a request to be blocked, the <c>User-Agent</c>
+    /// header in the request must contain the value <c>BadBot</c> <i>and</i> the request
+    /// must originate from the IP address 192.0.2.44.
     /// </para>
     ///  
     /// <para>
-    /// To create and configure a <code>Rule</code>, perform the following steps:
+    /// To create and configure a <c>Rule</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create and update the predicates that you want to include in the <code>Rule</code>.
+    /// Create and update the predicates that you want to include in the <c>Rule</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Create the <code>Rule</code>. See <a>CreateRule</a>.
+    /// Create the <c>Rule</c>. See <a>CreateRule</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+    /// Use <c>GetChangeToken</c> to get the change token that you provide in the <c>ChangeToken</c>
     /// parameter of an <a>UpdateRule</a> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit an <code>UpdateRule</code> request to add predicates to the <code>Rule</code>.
+    /// Submit an <c>UpdateRule</c> request to add predicates to the <c>Rule</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Create and update a <code>WebACL</code> that contains the <code>Rule</code>. See <a>CreateWebACL</a>.
+    /// Create and update a <c>WebACL</c> that contains the <c>Rule</c>. See <a>CreateWebACL</a>.
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// If you want to replace one <code>ByteMatchSet</code> or <code>IPSet</code> with another,
-    /// you delete the existing one and add the new one.
+    /// If you want to replace one <c>ByteMatchSet</c> or <c>IPSet</c> with another, you delete
+    /// the existing one and add the new one.
     /// </para>
     ///  
     /// <para>
@@ -131,8 +131,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// The <code>RuleId</code> of the <code>Rule</code> that you want to update. <code>RuleId</code>
-        /// is returned by <code>CreateRule</code> and by <a>ListRules</a>.
+        /// The <c>RuleId</c> of the <c>Rule</c> that you want to update. <c>RuleId</c> is returned
+        /// by <c>CreateRule</c> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -151,21 +151,20 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Updates. 
         /// <para>
-        /// An array of <code>RuleUpdate</code> objects that you want to insert into or delete
-        /// from a <a>Rule</a>. For more information, see the applicable data types:
+        /// An array of <c>RuleUpdate</c> objects that you want to insert into or delete from
+        /// a <a>Rule</a>. For more information, see the applicable data types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>RuleUpdate</a>: Contains <code>Action</code> and <code>Predicate</code> 
+        ///  <a>RuleUpdate</a>: Contains <c>Action</c> and <c>Predicate</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>Predicate</a>: Contains <code>DataId</code>, <code>Negated</code>, and <code>Type</code>
-        /// 
+        ///  <a>Predicate</a>: Contains <c>DataId</c>, <c>Negated</c>, and <c>Type</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        ///  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

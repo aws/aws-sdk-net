@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// Contains information about managed Contributor Insights rules, as returned by <code>ListManagedInsightRules</code>.
+    /// Contains information about managed Contributor Insights rules, as returned by <c>ListManagedInsightRules</c>.
     /// </summary>
     public partial class ManagedRuleDescription
     {
@@ -80,7 +80,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property TemplateName. 
         /// <para>
-        ///  The template name for the managed rule. Used to enable managed rules using <code>PutManagedInsightRules</code>.
+        ///  The template name for the managed rule. Used to enable managed rules using <c>PutManagedInsightRules</c>.
         /// 
         /// </para>
         /// </summary>

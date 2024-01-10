@@ -51,8 +51,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// To query by parameter label, use <code>"Name": "name:label"</code>. To query by parameter
-        /// version, use <code>"Name": "name:version"</code>.
+        /// To query by parameter label, use <c>"Name": "name:label"</c>. To query by parameter
+        /// version, use <c>"Name": "name:version"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -72,8 +72,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property WithDecryption. 
         /// <para>
         /// Return decrypted secure string value. Return decrypted values for secure string parameters.
-        /// This flag is ignored for <code>String</code> and <code>StringList</code> parameter
-        /// types.
+        /// This flag is ignored for <c>String</c> and <c>StringList</c> parameter types.
         /// </para>
         /// </summary>
         public bool WithDecryption

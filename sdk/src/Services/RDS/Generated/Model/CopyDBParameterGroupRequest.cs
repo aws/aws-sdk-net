@@ -138,7 +138,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-db-parameter-group</code> 
+        /// Example: <c>my-db-parameter-group</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

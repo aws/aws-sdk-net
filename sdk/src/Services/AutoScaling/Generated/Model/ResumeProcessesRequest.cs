@@ -70,39 +70,39 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Launch</code> 
+        ///  <c>Launch</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Terminate</code> 
+        ///  <c>Terminate</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AddToLoadBalancer</code> 
+        ///  <c>AddToLoadBalancer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AlarmNotification</code> 
+        ///  <c>AlarmNotification</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AZRebalance</code> 
+        ///  <c>AZRebalance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HealthCheck</code> 
+        ///  <c>HealthCheck</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InstanceRefresh</code> 
+        ///  <c>InstanceRefresh</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReplaceUnhealthy</code> 
+        ///  <c>ReplaceUnhealthy</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ScheduledActions</code> 
+        ///  <c>ScheduledActions</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

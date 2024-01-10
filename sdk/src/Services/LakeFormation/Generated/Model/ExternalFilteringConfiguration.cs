@@ -40,7 +40,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property AuthorizedTargets. 
         /// <para>
-        /// List of third-party application <code>ARNs</code> integrated with Lake Formation.
+        /// List of third-party application <c>ARNs</c> integrated with Lake Formation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

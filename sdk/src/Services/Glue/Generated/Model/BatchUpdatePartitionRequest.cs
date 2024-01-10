@@ -81,7 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.
+        /// A list of up to 100 <c>BatchUpdatePartitionRequestEntry</c> objects to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

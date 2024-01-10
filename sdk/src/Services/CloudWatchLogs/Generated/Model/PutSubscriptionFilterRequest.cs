@@ -64,13 +64,13 @@ namespace Amazon.CloudWatchLogs.Model
     ///  </li> </ul> 
     /// <para>
     /// Each log group can have up to two subscription filters associated with it. If you
-    /// are updating an existing filter, you must specify the correct name in <code>filterName</code>.
+    /// are updating an existing filter, you must specify the correct name in <c>filterName</c>.
     /// 
     /// </para>
     ///  
     /// <para>
-    /// To perform a <code>PutSubscriptionFilter</code> operation for any destination except
-    /// a Lambda function, you must also have the <code>iam:PassRole</code> permission.
+    /// To perform a <c>PutSubscriptionFilter</c> operation for any destination except a Lambda
+    /// function, you must also have the <c>iam:PassRole</c> permission.
     /// </para>
     /// </summary>
     public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest
@@ -154,8 +154,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property FilterName. 
         /// <para>
         /// A name for the subscription filter. If you are updating an existing filter, you must
-        /// specify the correct name in <code>filterName</code>. To find the name of the filter
-        /// currently associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.
+        /// specify the correct name in <c>filterName</c>. To find the name of the filter currently
+        /// associated with a log group, use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeSubscriptionFilters.html">DescribeSubscriptionFilters</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

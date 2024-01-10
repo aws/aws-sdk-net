@@ -30,12 +30,12 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVolume operation.
-    /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
-    /// state (not attached to an instance).
+    /// Deletes the specified EBS volume. The volume must be in the <c>available</c> state
+    /// (not attached to an instance).
     /// 
     ///  
     /// <para>
-    /// The volume can remain in the <code>deleting</code> state for several minutes.
+    /// The volume can remain in the <c>deleting</c> state for several minutes.
     /// </para>
     ///  
     /// <para>

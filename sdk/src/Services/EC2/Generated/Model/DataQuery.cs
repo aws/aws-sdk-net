@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Destination. 
         /// <para>
         /// The Region or Availability Zone that's the target for the data query. For example,
-        /// <code>eu-north-1</code>.
+        /// <c>eu-north-1</c>.
         /// </para>
         /// </summary>
         public string Destination
@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A user-defined ID associated with a data query that's returned in the <code>dataResponse</code>
-        /// identifying the query. For example, if you set the Id to <code>MyQuery01</code>in
-        /// the query, the <code>dataResponse</code> identifies the query as <code>MyQuery01</code>.
+        /// A user-defined ID associated with a data query that's returned in the <c>dataResponse</c>
+        /// identifying the query. For example, if you set the Id to <c>MyQuery01</c>in the query,
+        /// the <c>dataResponse</c> identifies the query as <c>MyQuery01</c>.
         /// </para>
         /// </summary>
         public string Id
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
-        /// The metric, <code>aggregation-latency</code>, indicating that network latency is aggregated
+        /// The metric, <c>aggregation-latency</c>, indicating that network latency is aggregated
         /// for the query. This is the only supported metric.
         /// </para>
         /// </summary>
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// The Region or Availability Zone that's the source for the data query. For example,
-        /// <code>us-east-1</code>.
+        /// <c>us-east-1</c>.
         /// </para>
         /// </summary>
         public string Source
@@ -138,10 +138,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The metric data aggregation period, <code>p50</code>, between the specified <code>startDate</code>
-        /// and <code>endDate</code>. For example, a metric of <code>five_minutes</code> is the
-        /// median of all the data points gathered within those five minutes. <code>p50</code>
-        /// is the only supported metric.
+        /// The metric data aggregation period, <c>p50</c>, between the specified <c>startDate</c>
+        /// and <c>endDate</c>. For example, a metric of <c>five_minutes</c> is the median of
+        /// all the data points gathered within those five minutes. <c>p50</c> is the only supported
+        /// metric.
         /// </para>
         /// </summary>
         public StatisticType Statistic

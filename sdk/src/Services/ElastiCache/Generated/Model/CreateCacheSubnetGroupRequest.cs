@@ -75,7 +75,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mysubnetgroup</code> 
+        /// Example: <c>mysubnetgroup</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

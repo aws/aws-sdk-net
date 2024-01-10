@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration object for the Amazon FSx for OpenZFS file system used in the <code>DeleteFileSystem</code>
+    /// The configuration object for the Amazon FSx for OpenZFS file system used in the <c>DeleteFileSystem</c>
     /// operation.
     /// </summary>
     public partial class DeleteFileSystemOpenZFSConfiguration
@@ -61,8 +61,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Options. 
         /// <para>
         /// To delete a file system if there are child volumes present below the root volume,
-        /// use the string <code>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</code>. If your file system
-        /// has child volumes and you don't use this option, the delete request will fail.
+        /// use the string <c>DELETE_CHILD_VOLUMES_AND_SNAPSHOTS</c>. If your file system has
+        /// child volumes and you don't use this option, the delete request will fail.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]
@@ -81,10 +81,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SkipFinalBackup. 
         /// <para>
-        /// By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <code>DeleteFileSystem</code>
+        /// By default, Amazon FSx for OpenZFS takes a final backup on your behalf when the <c>DeleteFileSystem</c>
         /// operation is invoked. Doing this helps protect you from data loss, and we highly recommend
         /// taking the final backup. If you want to skip taking a final backup, set this value
-        /// to <code>true</code>.
+        /// to <c>true</c>.
         /// </para>
         /// </summary>
         public bool SkipFinalBackup

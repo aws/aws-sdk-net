@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFunction operation.
-    /// Deletes a <code>Function</code>.
+    /// Deletes a <c>Function</c>.
     /// </summary>
     public partial class DeleteFunctionRequest : AmazonAppSyncRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionId. 
         /// <para>
-        /// The <code>Function</code> ID.
+        /// The <c>Function</c> ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65536)]

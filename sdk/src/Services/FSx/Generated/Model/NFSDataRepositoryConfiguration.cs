@@ -82,8 +82,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Version. 
         /// <para>
         /// The version of the NFS (Network File System) protocol of the NFS data repository.
-        /// Currently, the only supported value is <code>NFS3</code>, which indicates that the
-        /// data repository must support the NFSv3 protocol.
+        /// Currently, the only supported value is <c>NFS3</c>, which indicates that the data
+        /// repository must support the NFSv3 protocol.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

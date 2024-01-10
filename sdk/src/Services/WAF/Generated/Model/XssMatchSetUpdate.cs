@@ -44,7 +44,7 @@ namespace Amazon.WAF.Model
     /// <para>
     /// Specifies the part of a web request that you want to inspect for cross-site scripting
     /// attacks and indicates whether you want to add the specification to an <a>XssMatchSet</a>
-    /// or delete it from an <code>XssMatchSet</code>.
+    /// or delete it from an <c>XssMatchSet</c>.
     /// </para>
     /// </summary>
     public partial class XssMatchSetUpdate
@@ -55,8 +55,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specify <code>INSERT</code> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>.
-        /// Use <code>DELETE</code> to remove an <code>XssMatchSetUpdate</code> from an <code>XssMatchSet</code>.
+        /// Specify <c>INSERT</c> to add an <a>XssMatchSetUpdate</a> to an <a>XssMatchSet</a>.
+        /// Use <c>DELETE</c> to remove an <c>XssMatchSetUpdate</c> from an <c>XssMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

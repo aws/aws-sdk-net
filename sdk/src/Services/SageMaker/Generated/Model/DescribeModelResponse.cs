@@ -103,8 +103,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EnableNetworkIsolation. 
         /// <para>
-        /// If <code>True</code>, no inbound or outbound network calls can be made to or from
-        /// the model container.
+        /// If <c>True</c>, no inbound or outbound network calls can be made to or from the model
+        /// container.
         /// </para>
         /// </summary>
         public bool EnableNetworkIsolation

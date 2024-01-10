@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a <code>BatchGetDeployments</code> operation.
+    /// Represents the output of a <c>BatchGetDeployments</c> operation.
     /// </summary>
     public partial class BatchGetDeploymentsResponse : AmazonWebServiceResponse
     {

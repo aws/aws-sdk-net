@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to resume pagination of <code>ListFeatureGroups</code> results.
+        /// A token to resume pagination of <c>ListFeatureGroups</c> results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

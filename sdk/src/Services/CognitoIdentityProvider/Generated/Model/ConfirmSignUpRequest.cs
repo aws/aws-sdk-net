@@ -72,7 +72,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata for collecting metrics for <code>ConfirmSignUp</code>
+        /// The Amazon Pinpoint analytics metadata for collecting metrics for <c>ConfirmSignUp</c>
         /// calls.
         /// </para>
         /// </summary>
@@ -119,10 +119,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the ConfirmSignUp API action, Amazon Cognito invokes the function that is
         /// assigned to the <i>post confirmation</i> trigger. When Amazon Cognito invokes this
         /// function, it passes a JSON payload, which the function receives as input. This payload
-        /// contains a <code>clientMetadata</code> attribute, which provides the data that you
-        /// assigned to the ClientMetadata parameter in your ConfirmSignUp request. In your function
-        /// code in Lambda, you can process the <code>clientMetadata</code> value to enhance your
-        /// workflow for your specific needs.
+        /// contains a <c>clientMetadata</c> attribute, which provides the data that you assigned
+        /// to the ClientMetadata parameter in your ConfirmSignUp request. In your function code
+        /// in Lambda, you can process the <c>clientMetadata</c> value to enhance your workflow
+        /// for your specific needs.
         /// </para>
         ///  
         /// <para>
@@ -186,11 +186,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property ForceAliasCreation. 
         /// <para>
         /// Boolean to be specified to force user confirmation irrespective of existing alias.
-        /// By default set to <code>False</code>. If this parameter is set to <code>True</code>
-        /// and the phone number/email used for sign up confirmation already exists as an alias
-        /// with a different user, the API call will migrate the alias from the previous user
-        /// to the newly created user being confirmed. If set to <code>False</code>, the API will
-        /// throw an <b>AliasExistsException</b> error.
+        /// By default set to <c>False</c>. If this parameter is set to <c>True</c> and the phone
+        /// number/email used for sign up confirmation already exists as an alias with a different
+        /// user, the API call will migrate the alias from the previous user to the newly created
+        /// user being confirmed. If set to <c>False</c>, the API will throw an <b>AliasExistsException</b>
+        /// error.
         /// </para>
         /// </summary>
         public bool ForceAliasCreation
@@ -252,8 +252,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

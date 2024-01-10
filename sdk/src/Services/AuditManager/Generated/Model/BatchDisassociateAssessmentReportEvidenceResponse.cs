@@ -39,8 +39,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  A list of errors that the <code>BatchDisassociateAssessmentReportEvidence</code>
-        /// API returned. 
+        ///  A list of errors that the <c>BatchDisassociateAssessmentReportEvidence</c> API returned.
+        /// 
         /// </para>
         /// </summary>
         public List<AssessmentReportEvidenceError> Errors

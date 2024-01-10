@@ -39,10 +39,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value to include in a future <code>GetVpnConnectionDeviceTypes</code>
-        /// request. When the results of a <code>GetVpnConnectionDeviceTypes</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results.
-        /// This value is null when there are no more results to return.
+        /// The <c>NextToken</c> value to include in a future <c>GetVpnConnectionDeviceTypes</c>
+        /// request. When the results of a <c>GetVpnConnectionDeviceTypes</c> request exceed <c>MaxResults</c>,
+        /// this value can be used to retrieve the next page of results. This value is null when
+        /// there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

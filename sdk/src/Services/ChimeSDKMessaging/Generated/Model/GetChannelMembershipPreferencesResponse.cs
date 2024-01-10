@@ -77,7 +77,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Preferences. 
         /// <para>
-        /// The channel membership preferences for an <code>AppInstanceUser</code> .
+        /// The channel membership preferences for an <c>AppInstanceUser</c> .
         /// </para>
         /// </summary>
         public ChannelMembershipPreferences Preferences

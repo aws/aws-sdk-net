@@ -107,8 +107,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotStatus. 
         /// <para>
-        /// The current status of the bot. When the status is <code>Available</code>, the bot
-        /// version is ready for use.
+        /// The current status of the bot. When the status is <c>Available</c>, the bot version
+        /// is ready for use.
         /// </para>
         /// </summary>
         public BotStatus BotStatus
@@ -218,8 +218,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// If the <code>botStatus</code> is <code>Failed</code>, this contains a list of reasons
-        /// that the version couldn't be built.
+        /// If the <c>botStatus</c> is <c>Failed</c>, this contains a list of reasons that the
+        /// version couldn't be built.
         /// </para>
         /// </summary>
         public List<string> FailureReasons

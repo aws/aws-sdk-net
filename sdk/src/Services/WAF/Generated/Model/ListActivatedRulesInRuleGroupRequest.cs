@@ -55,10 +55,10 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies the number of <code>ActivatedRules</code> that you want AWS WAF to return
-        /// for this request. If you have more <code>ActivatedRules</code> than the number that
-        /// you specify for <code>Limit</code>, the response includes a <code>NextMarker</code>
-        /// value that you can use to get another batch of <code>ActivatedRules</code>.
+        /// Specifies the number of <c>ActivatedRules</c> that you want AWS WAF to return for
+        /// this request. If you have more <c>ActivatedRules</c> than the number that you specify
+        /// for <c>Limit</c>, the response includes a <c>NextMarker</c> value that you can use
+        /// to get another batch of <c>ActivatedRules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -77,12 +77,11 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If you specify a value for <code>Limit</code> and you have more <code>ActivatedRules</code>
-        /// than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value
-        /// in the response that allows you to list another group of <code>ActivatedRules</code>.
-        /// For the second and subsequent <code>ListActivatedRulesInRuleGroup</code> requests,
-        /// specify the value of <code>NextMarker</code> from the previous response to get information
-        /// about another batch of <code>ActivatedRules</code>.
+        /// If you specify a value for <c>Limit</c> and you have more <c>ActivatedRules</c> than
+        /// the value of <c>Limit</c>, AWS WAF returns a <c>NextMarker</c> value in the response
+        /// that allows you to list another group of <c>ActivatedRules</c>. For the second and
+        /// subsequent <c>ListActivatedRulesInRuleGroup</c> requests, specify the value of <c>NextMarker</c>
+        /// from the previous response to get information about another batch of <c>ActivatedRules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]
@@ -101,8 +100,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RuleGroupId. 
         /// <para>
-        /// The <code>RuleGroupId</code> of the <a>RuleGroup</a> for which you want to get a list
-        /// of <a>ActivatedRule</a> objects.
+        /// The <c>RuleGroupId</c> of the <a>RuleGroup</a> for which you want to get a list of
+        /// <a>ActivatedRule</a> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

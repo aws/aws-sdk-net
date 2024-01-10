@@ -30,7 +30,7 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProviderService operation.
-    /// Returns the <code>ProviderService</code> of a given name.
+    /// Returns the <c>ProviderService</c> of a given name.
     /// </summary>
     public partial class GetProviderServiceRequest : AmazonEntityResolutionRequest
     {

@@ -61,7 +61,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property ControlIdentifier. 
         /// <para>
-        /// The <code>controlIdentifier</code> of the enabled control.
+        /// The <c>controlIdentifier</c> of the enabled control.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

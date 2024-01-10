@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code>ListTags</code> operation. Contains tags for all requested Elasticsearch
+    /// The result of a <c>ListTags</c> operation. Contains tags for all requested Elasticsearch
     /// domains.
     /// </summary>
     public partial class ListTagsResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        ///  List of <code>Tag</code> for the requested Elasticsearch domain.
+        ///  List of <c>Tag</c> for the requested Elasticsearch domain.
         /// </para>
         /// </summary>
         public List<Tag> TagList

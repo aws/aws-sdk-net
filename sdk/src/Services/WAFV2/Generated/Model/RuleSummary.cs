@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// High-level information about a <a>Rule</a>, returned by operations like <a>DescribeManagedRuleGroup</a>.
-    /// This provides information like the ID, that you can use to retrieve and manage a <code>RuleGroup</code>,
+    /// This provides information like the ID, that you can use to retrieve and manage a <c>RuleGroup</c>,
     /// and the ARN, that you provide to the <a>RuleGroupReferenceStatement</a> to use the
     /// rule group in a <a>Rule</a>.
     /// </summary>

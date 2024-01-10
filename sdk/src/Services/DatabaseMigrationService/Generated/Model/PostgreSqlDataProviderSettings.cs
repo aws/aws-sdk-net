@@ -115,7 +115,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SslMode. 
         /// <para>
         /// The SSL mode used to connect to the PostgreSQL data provider. The default value is
-        /// <code>none</code>.
+        /// <c>none</c>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

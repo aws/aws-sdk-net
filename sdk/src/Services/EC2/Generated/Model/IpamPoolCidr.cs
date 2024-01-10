@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The CIDR provisioned to the IPAM pool. A CIDR is a representation of an IP address
         /// and its associated network mask (or netmask) and refers to a range of IP addresses.
-        /// An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR example is <code>2001:DB8::/32</code>.
+        /// An IPv4 CIDR example is <c>10.24.34.0/23</c>. An IPv6 CIDR example is <c>2001:DB8::/32</c>.
         /// </para>
         /// </summary>
         public string Cidr

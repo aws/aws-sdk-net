@@ -90,7 +90,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property KeyArn. 
         /// <para>
-        /// The <code>KeyARN</code> for the key that you are updating or removing from the alias.
+        /// The <c>KeyARN</c> for the key that you are updating or removing from the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Min=70, Max=150)]

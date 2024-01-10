@@ -37,7 +37,7 @@ namespace Amazon.RDS.Model
     /// Backup duration is a function of the amount of changes to the database since the previous
     /// backup. If you plan to promote a read replica to a standalone instance, we recommend
     /// that you enable backups and complete at least one backup prior to promotion. In addition,
-    /// a read replica cannot be promoted to a standalone instance when it is in the <code>backing-up</code>
+    /// a read replica cannot be promoted to a standalone instance when it is in the <c>backing-up</c>
     /// status. If you have enabled backups on your read replica, configure the automated
     /// backup window so that daily backups do not interfere with read replica promotion.
     /// </para>
@@ -105,7 +105,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbinstance</code> 
+        /// Example: <c>mydbinstance</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,7 +125,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter.
+        /// are enabled, using the <c>BackupRetentionPeriod</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -140,7 +140,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -84,13 +84,13 @@ namespace Amazon.ManagedBlockchainQuery.Model
         ///  <note> 
         /// <para>
         /// Even if additional results can be retrieved, the request can return less results than
-        /// <code>maxResults</code> or an empty array of results.
+        /// <c>maxResults</c> or an empty array of results.
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the next set of results, make another request with the returned <code>nextToken</code>
-        /// value. The value of <code>nextToken</code> is <code>null</code> when there are no
-        /// more results to return
+        /// To retrieve the next set of results, make another request with the returned <c>nextToken</c>
+        /// value. The value of <c>nextToken</c> is <c>null</c> when there are no more results
+        /// to return
         /// </para>
         ///  </note>
         /// </summary>
@@ -148,8 +148,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// Sorts items in an ascending order if the first page starts at <code>fromTime</code>.
-        /// Sorts items in a descending order if the first page starts at <code>toTime</code>.
+        /// Sorts items in an ascending order if the first page starts at <c>fromTime</c>. Sorts
+        /// items in a descending order if the first page starts at <c>toTime</c>.
         /// </para>
         /// </summary>
         public ListTransactionsSort Sort

@@ -41,7 +41,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property ConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection.
-        /// Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+        /// Its format is <c>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
         /// in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
         /// </para>

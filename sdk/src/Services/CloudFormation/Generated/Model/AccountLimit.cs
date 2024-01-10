@@ -66,7 +66,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Values: <code>ConcurrentResourcesLimit</code> | <code>StackLimit</code> | <code>StackOutputsLimit</code>
+        /// Values: <c>ConcurrentResourcesLimit</c> | <c>StackLimit</c> | <c>StackOutputsLimit</c>
         /// 
         /// </para>
         /// </summary>

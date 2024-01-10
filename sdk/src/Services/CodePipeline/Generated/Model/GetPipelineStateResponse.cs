@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetPipelineState</code> action.
+    /// Represents the output of a <c>GetPipelineState</c> action.
     /// </summary>
     public partial class GetPipelineStateResponse : AmazonWebServiceResponse
     {
@@ -83,7 +83,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// A newly created pipeline is always assigned a version number of <code>1</code>.
+        /// A newly created pipeline is always assigned a version number of <c>1</c>.
         /// </para>
         ///  </note>
         /// </summary>

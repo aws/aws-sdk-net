@@ -45,21 +45,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>availability-zone</code>: The Availability Zone of the snapshot.
+        ///  <c>availability-zone</c>: The Availability Zone of the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code>: The ID of the Amazon Web Services account that enabled fast
-        /// snapshot restore on the snapshot.
+        ///  <c>owner-id</c>: The ID of the Amazon Web Services account that enabled fast snapshot
+        /// restore on the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>snapshot-id</code>: The ID of the snapshot.
+        ///  <c>snapshot-id</c>: The ID of the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code>: The state of fast snapshot restores for the snapshot (<code>enabling</code>
-        /// | <code>optimizing</code> | <code>enabled</code> | <code>disabling</code> | <code>disabled</code>).
+        ///  <c>state</c>: The state of fast snapshot restores for the snapshot (<c>enabling</c>
+        /// | <c>optimizing</c> | <c>enabled</c> | <c>disabling</c> | <c>disabled</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

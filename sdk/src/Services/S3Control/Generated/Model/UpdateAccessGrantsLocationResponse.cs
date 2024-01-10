@@ -63,7 +63,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The ID of the registered location to which you are granting access. S3 Access Grants
         /// assigned this ID when you registered the location. S3 Access Grants assigns the ID
-        /// <code>default</code> to the default location <code>s3://</code> and assigns an auto-generated
+        /// <c>default</c> to the default location <c>s3://</c> and assigns an auto-generated
         /// ID to other locations that you register. 
         /// </para>
         /// </summary>
@@ -122,9 +122,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property LocationScope. 
         /// <para>
         /// The S3 URI path of the location that you are updating. You cannot update the scope
-        /// of the registered location. The location scope can be the default S3 location <code>s3://</code>,
-        /// the S3 path to a bucket <code>s3://&lt;bucket&gt;</code>, or the S3 path to a bucket
-        /// and prefix <code>s3://&lt;bucket&gt;/&lt;prefix&gt;</code>. 
+        /// of the registered location. The location scope can be the default S3 location <c>s3://</c>,
+        /// the S3 path to a bucket <c>s3://&lt;bucket&gt;</c>, or the S3 path to a bucket and
+        /// prefix <c>s3://&lt;bucket&gt;/&lt;prefix&gt;</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

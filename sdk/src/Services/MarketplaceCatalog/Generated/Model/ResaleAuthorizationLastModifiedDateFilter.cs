@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.
+    /// Allows filtering on the <c>LastModifiedDate</c> of a ResaleAuthorization.
     /// </summary>
     public partial class ResaleAuthorizationLastModifiedDateFilter
     {
@@ -38,8 +38,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property DateRange. 
         /// <para>
-        /// Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization with
-        /// date range as input.
+        /// Allows filtering on the <c>LastModifiedDate</c> of a ResaleAuthorization with date
+        /// range as input.
         /// </para>
         /// </summary>
         public ResaleAuthorizationLastModifiedDateFilterDateRange DateRange

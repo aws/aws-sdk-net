@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>ClearQuerySuggestions</code> is currently not supported in the Amazon Web Services
+    ///  <c>ClearQuerySuggestions</c> is currently not supported in the Amazon Web Services
     /// GovCloud (US-West) region.
     /// </para>
     /// </summary>

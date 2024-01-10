@@ -54,8 +54,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>UpdateQuerySuggestionsConfig</code> is currently not supported in the Amazon
-    /// Web Services GovCloud (US-West) region.
+    ///  <c>UpdateQuerySuggestionsConfig</c> is currently not supported in the Amazon Web
+    /// Services GovCloud (US-West) region.
     /// </para>
     /// </summary>
     public partial class UpdateQuerySuggestionsConfigRequest : AmazonKendraRequest
@@ -90,26 +90,25 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IncludeQueriesWithoutUserInformation. 
         /// <para>
-        ///  <code>TRUE</code> to include queries without user information (i.e. all queries,
-        /// irrespective of the user), otherwise <code>FALSE</code> to only include queries with
-        /// user information.
+        ///  <c>TRUE</c> to include queries without user information (i.e. all queries, irrespective
+        /// of the user), otherwise <c>FALSE</c> to only include queries with user information.
         /// </para>
         ///  
         /// <para>
         /// If you pass user information to Amazon Kendra along with the queries, you can set
-        /// this flag to <code>FALSE</code> and instruct Amazon Kendra to only consider queries
-        /// with user information.
+        /// this flag to <c>FALSE</c> and instruct Amazon Kendra to only consider queries with
+        /// user information.
         /// </para>
         ///  
         /// <para>
-        /// If you set to <code>FALSE</code>, Amazon Kendra only considers queries searched at
-        /// least <code>MinimumQueryCount</code> times across <code>MinimumNumberOfQueryingUsers</code>
-        /// unique users for suggestions.
+        /// If you set to <c>FALSE</c>, Amazon Kendra only considers queries searched at least
+        /// <c>MinimumQueryCount</c> times across <c>MinimumNumberOfQueryingUsers</c> unique users
+        /// for suggestions.
         /// </para>
         ///  
         /// <para>
-        /// If you set to <code>TRUE</code>, Amazon Kendra ignores all user information and learns
-        /// from all queries.
+        /// If you set to <c>TRUE</c>, Amazon Kendra ignores all user information and learns from
+        /// all queries.
         /// </para>
         /// </summary>
         public bool IncludeQueriesWithoutUserInformation
@@ -205,17 +204,17 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Set the mode to <code>ENABLED</code> or <code>LEARN_ONLY</code>.
+        /// Set the mode to <c>ENABLED</c> or <c>LEARN_ONLY</c>.
         /// </para>
         ///  
         /// <para>
-        /// By default, Amazon Kendra enables query suggestions. <code>LEARN_ONLY</code> mode
-        /// allows you to turn off query suggestions. You can to update this at any time.
+        /// By default, Amazon Kendra enables query suggestions. <c>LEARN_ONLY</c> mode allows
+        /// you to turn off query suggestions. You can to update this at any time.
         /// </para>
         ///  
         /// <para>
-        /// In <code>LEARN_ONLY</code> mode, Amazon Kendra continues to learn from new queries
-        /// to keep suggestions up to date for when you are ready to switch to ENABLED mode again.
+        /// In <c>LEARN_ONLY</c> mode, Amazon Kendra continues to learn from new queries to keep
+        /// suggestions up to date for when you are ready to switch to ENABLED mode again.
         /// </para>
         /// </summary>
         public Mode Mode

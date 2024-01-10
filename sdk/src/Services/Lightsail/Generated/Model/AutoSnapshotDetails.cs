@@ -59,7 +59,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Date. 
         /// <para>
-        /// The date of the automatic snapshot in <code>YYYY-MM-DD</code> format.
+        /// The date of the automatic snapshot in <c>YYYY-MM-DD</c> format.
         /// </para>
         /// </summary>
         public string Date

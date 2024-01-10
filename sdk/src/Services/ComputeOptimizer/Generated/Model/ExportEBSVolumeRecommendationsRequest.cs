@@ -120,7 +120,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The only export file format currently supported is <code>Csv</code>.
+        /// The only export file format currently supported is <c>Csv</c>.
         /// </para>
         /// </summary>
         public FileFormat FileFormat

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A value for a segment attribute. This is structured as a map where the key is <code>valueString</code>
+    /// A value for a segment attribute. This is structured as a map where the key is <c>valueString</c>
     /// and the value is a string.
     /// </summary>
     public partial class SegmentAttributeValue

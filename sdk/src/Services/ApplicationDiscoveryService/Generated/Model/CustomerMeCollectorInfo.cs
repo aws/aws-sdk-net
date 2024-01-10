@@ -101,7 +101,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ShutdownMeCollectors. 
         /// <para>
-        ///  The number of Migration Evaluator collectors with <code>SHUTDOWN</code> status. 
+        ///  The number of Migration Evaluator collectors with <c>SHUTDOWN</c> status. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

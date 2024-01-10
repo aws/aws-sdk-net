@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearchDomain.Model
 {
     /// <summary>
-    /// The result of a <code>Search</code> request. Contains the documents that match the
-    /// specified search criteria and any requested fields, highlights, and facet information.
+    /// The result of a <c>Search</c> request. Contains the documents that match the specified
+    /// search criteria and any requested fields, highlights, and facet information.
     /// </summary>
     public partial class SearchResponse : AmazonWebServiceResponse
     {

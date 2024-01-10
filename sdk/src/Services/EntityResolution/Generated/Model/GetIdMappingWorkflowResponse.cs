@@ -85,7 +85,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property IdMappingTechniques. 
         /// <para>
-        /// An object which defines the <code>idMappingType</code> and the <code>providerProperties</code>.
+        /// An object which defines the <c>idMappingType</c> and the <c>providerProperties</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,8 +104,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property InputSourceConfig. 
         /// <para>
-        /// A list of <code>InputSource</code> objects, which have the fields <code>InputSourceARN</code>
-        /// and <code>SchemaName</code>.
+        /// A list of <c>InputSource</c> objects, which have the fields <c>InputSourceARN</c>
+        /// and <c>SchemaName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -124,8 +124,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property OutputSourceConfig. 
         /// <para>
-        /// A list of <code>OutputSource</code> objects, each of which contains fields <code>OutputS3Path</code>
-        /// and <code>KMSArn</code>.
+        /// A list of <c>OutputSource</c> objects, each of which contains fields <c>OutputS3Path</c>
+        /// and <c>KMSArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
@@ -202,7 +202,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property WorkflowArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code>
+        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <c>IdMappingWorkflow</c>
         /// .
         /// </para>
         /// </summary>

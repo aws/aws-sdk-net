@@ -42,9 +42,9 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Date. 
         /// <para>
-        /// The date of the automatic snapshot to delete in <code>YYYY-MM-DD</code> format. Use
-        /// the <code>get auto snapshots</code> operation to get the available automatic snapshots
-        /// for a resource.
+        /// The date of the automatic snapshot to delete in <c>YYYY-MM-DD</c> format. Use the
+        /// <c>get auto snapshots</c> operation to get the available automatic snapshots for a
+        /// resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -79,19 +79,19 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>started</code> 
+        ///  <c>started</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>starting</code> 
+        ///  <c>starting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stopped</code> 
+        ///  <c>stopped</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stopping</code> 
+        ///  <c>stopping</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -205,9 +205,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string ClusterCreateTime
@@ -485,15 +485,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora</code> 
+        ///  <c>aurora</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-mysql</code> 
+        ///  <c>aurora-mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aurora-postgresql</code> 
+        ///  <c>aurora-postgresql</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -516,23 +516,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>global</code> 
+        ///  <c>global</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>multimaster</code> 
+        ///  <c>multimaster</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>parallelquery</code> 
+        ///  <c>parallelquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>provisioned</code> 
+        ///  <c>provisioned</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>serverless</code> 
+        ///  <c>serverless</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -701,7 +701,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the format <code>HH:MM-HH:MM</code>. For example, <code>04:52-05:22</code>.
+        /// Uses the format <c>HH:MM-HH:MM</c>. For example, <c>04:52-05:22</c>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -724,15 +724,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the format <code>&lt;day&gt;:HH:MM-&lt;day&gt;:HH:MM</code>.
+        /// Uses the format <c>&lt;day&gt;:HH:MM-&lt;day&gt;:HH:MM</c>.
         /// </para>
         ///  
         /// <para>
-        /// For the day values, use <code>mon</code>|<code>tue</code>|<code>wed</code>|<code>thu</code>|<code>fri</code>|<code>sat</code>|<code>sun</code>.
+        /// For the day values, use <c>mon</c>|<c>tue</c>|<c>wed</c>|<c>thu</c>|<c>fri</c>|<c>sat</c>|<c>sun</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>sun:09:32-sun:10:02</code>.
+        /// For example, <c>sun:09:32-sun:10:02</c>.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

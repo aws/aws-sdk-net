@@ -34,14 +34,13 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code>
-    /// status when you poll the job with a <code>DescribeDashboardSnapshotJob</code> API
-    /// call.
+    /// A finished snapshot job will return a <c>COMPLETED</c> or <c>FAILED</c> status when
+    /// you poll the job with a <c>DescribeDashboardSnapshotJob</c> API call.
     /// </para>
     ///  
     /// <para>
-    /// If the job has not finished running, this operation returns a message that says <code>Dashboard
-    /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.
+    /// If the job has not finished running, this operation returns a message that says <c>Dashboard
+    /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</c>.
     /// </para>
     /// </summary>
     public partial class DescribeDashboardSnapshotJobResultRequest : AmazonQuickSightRequest
@@ -93,7 +92,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SnapshotJobId. 
         /// <para>
         /// The ID of the job to be described. The job ID is set when you start a new job with
-        /// a <code>StartDashboardSnapshotJob</code> API call.
+        /// a <c>StartDashboardSnapshotJob</c> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// The shard iterator has expired and can no longer be used to retrieve stream records.
-    /// A shard iterator expires 15 minutes after it is retrieved using the <code>GetShardIterator</code>
+    /// A shard iterator expires 15 minutes after it is retrieved using the <c>GetShardIterator</c>
     /// action.
     /// </summary>
     #if !NETSTANDARD

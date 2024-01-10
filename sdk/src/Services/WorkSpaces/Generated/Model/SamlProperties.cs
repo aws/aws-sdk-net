@@ -73,21 +73,21 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the setting is <code>DISABLED</code>, end users will be directed to login with
-        /// their directory credentials.
+        /// If the setting is <c>DISABLED</c>, end users will be directed to login with their
+        /// directory credentials.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the setting is <code>ENABLED</code>, end users will be directed to login via the
-        /// user access URL. Users attempting to connect to WorkSpaces from a client application
-        /// that does not support SAML 2.0 authentication will not be able to connect.
+        /// If the setting is <c>ENABLED</c>, end users will be directed to login via the user
+        /// access URL. Users attempting to connect to WorkSpaces from a client application that
+        /// does not support SAML 2.0 authentication will not be able to connect.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the setting is <code>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</code>, end users will
-        /// be directed to login via the user access URL on supported client applications, but
-        /// will not prevent clients that do not support SAML 2.0 authentication from connecting
-        /// as if SAML 2.0 authentication was disabled.
+        /// If the setting is <c>ENABLED_WITH_DIRECTORY_LOGIN_FALLBACK</c>, end users will be
+        /// directed to login via the user access URL on supported client applications, but will
+        /// not prevent clients that do not support SAML 2.0 authentication from connecting as
+        /// if SAML 2.0 authentication was disabled.
         /// </para>
         ///  </li> </ul>
         /// </summary>

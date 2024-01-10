@@ -33,7 +33,7 @@ namespace Amazon.IoT1ClickProjects.Model
     /// Updates a project associated with your AWS account and region. With the exception
     /// of device template names, you can pass just the values that need to be updated because
     /// the update request will change only the values that are provided. To clear a value,
-    /// pass the empty string (i.e., <code>""</code>).
+    /// pass the empty string (i.e., <c>""</c>).
     /// </summary>
     public partial class UpdateProjectRequest : AmazonIoT1ClickProjectsRequest
     {
@@ -64,9 +64,9 @@ namespace Amazon.IoT1ClickProjects.Model
         /// Gets and sets the property PlacementTemplate. 
         /// <para>
         /// An object defining the project update. Once a project has been created, you cannot
-        /// add device template names to the project. However, for a given <code>placementTemplate</code>,
-        /// you can update the associated <code>callbackOverrides</code> for the device definition
-        /// using this API.
+        /// add device template names to the project. However, for a given <c>placementTemplate</c>,
+        /// you can update the associated <c>callbackOverrides</c> for the device definition using
+        /// this API.
         /// </para>
         /// </summary>
         public PlacementTemplate PlacementTemplate

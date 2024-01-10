@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ChannelSummaries. 
         /// <para>
-        /// A list of <code>ChannelSummary</code> objects.
+        /// A list of <c>ChannelSummary</c> objects.
         /// </para>
         /// </summary>
         public List<ChannelSummary> ChannelSummaries
@@ -57,8 +57,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next set of results, or <code>null</code> if there are no
-        /// more results.
+        /// The token to retrieve the next set of results, or <c>null</c> if there are no more
+        /// results.
         /// </para>
         /// </summary>
         public string NextToken

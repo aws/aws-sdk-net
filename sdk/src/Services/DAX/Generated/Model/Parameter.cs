@@ -66,8 +66,8 @@ namespace Amazon.DAX.Model
         /// Gets and sets the property ChangeType. 
         /// <para>
         /// The conditions under which changes to this parameter can be applied. For example,
-        /// <code>requires-reboot</code> indicates that a new value for this parameter will only
-        /// take effect if a node is rebooted.
+        /// <c>requires-reboot</c> indicates that a new value for this parameter will only take
+        /// effect if a node is rebooted.
         /// </para>
         /// </summary>
         public ChangeType ChangeType
@@ -85,7 +85,7 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type of the parameter. For example, <code>integer</code>:
+        /// The data type of the parameter. For example, <c>integer</c>:
         /// </para>
         /// </summary>
         public string DataType
@@ -212,7 +212,7 @@ namespace Amazon.DAX.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// How the parameter is defined. For example, <code>system</code> denotes a system-defined
+        /// How the parameter is defined. For example, <c>system</c> denotes a system-defined
         /// parameter.
         /// </para>
         /// </summary>

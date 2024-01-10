@@ -158,10 +158,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ThreadsPerCore. 
         /// <para>
-        /// The number you specified to <code>TreadsPerCore</code> in <code>CreateCluster</code>
-        /// for enabling or disabling multithreading. For instance types that support multithreading,
-        /// you can specify 1 for disabling multithreading and 2 for enabling multithreading.
-        /// For more information, see the reference table of <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">CPU
+        /// The number you specified to <c>TreadsPerCore</c> in <c>CreateCluster</c> for enabling
+        /// or disabling multithreading. For instance types that support multithreading, you can
+        /// specify 1 for disabling multithreading and 2 for enabling multithreading. For more
+        /// information, see the reference table of <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cpu-options-supported-instances-values.html">CPU
         /// cores and threads per CPU core per instance type</a> in the <i>Amazon Elastic Compute
         /// Cloud User Guide</i>.
         /// </para>

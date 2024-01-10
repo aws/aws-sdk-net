@@ -40,7 +40,7 @@ namespace Amazon.QLDBSession.Model
     ///  <ul> <li> 
     /// <para>
     /// If you are working with an AWS SDK, use the QLDB driver. The driver provides a high-level
-    /// abstraction layer above this <i>QLDB Session</i> data plane and manages <code>SendCommand</code>
+    /// abstraction layer above this <i>QLDB Session</i> data plane and manages <c>SendCommand</c>
     /// API calls for you. For information and a list of supported programming languages,
     /// see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/getting-started-driver.html">Getting
     /// started with the driver</a> in the <i>Amazon QLDB Developer Guide</i>.
@@ -163,7 +163,7 @@ namespace Amazon.QLDBSession.Model
         /// </para>
         ///  
         /// <para>
-        /// To obtain a session token, run the <code>StartSession</code> command. This <code>SessionToken</code>
+        /// To obtain a session token, run the <c>StartSession</c> command. This <c>SessionToken</c>
         /// is required for every subsequent command that is issued during the current session.
         /// </para>
         /// </summary>

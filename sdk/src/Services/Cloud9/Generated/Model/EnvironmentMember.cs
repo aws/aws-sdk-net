@@ -85,15 +85,15 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>owner</code>: Owns the environment.
+        ///  <c>owner</c>: Owns the environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>read-only</code>: Has read-only access to the environment.
+        ///  <c>read-only</c>: Has read-only access to the environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>read-write</code>: Has read-write access to the environment.
+        ///  <c>read-write</c>: Has read-write access to the environment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

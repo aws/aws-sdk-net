@@ -43,13 +43,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results returned by <code>GetVpnConnectionDeviceTypes</code>
-        /// in paginated output. When this parameter is used, <code>GetVpnConnectionDeviceTypes</code>
-        /// only returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>GetVpnConnectionDeviceTypes</code> request with the returned <code>NextToken</code>
-        /// value. This value can be between 200 and 1000. If this parameter is not used, then
-        /// <code>GetVpnConnectionDeviceTypes</code> returns all results.
+        /// The maximum number of results returned by <c>GetVpnConnectionDeviceTypes</c> in paginated
+        /// output. When this parameter is used, <c>GetVpnConnectionDeviceTypes</c> only returns
+        /// <c>MaxResults</c> results in a single page along with a <c>NextToken</c> response
+        /// element. The remaining results of the initial request can be seen by sending another
+        /// <c>GetVpnConnectionDeviceTypes</c> request with the returned <c>NextToken</c> value.
+        /// This value can be between 200 and 1000. If this parameter is not used, then <c>GetVpnConnectionDeviceTypes</c>
+        /// returns all results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=200, Max=1000)]
@@ -68,11 +68,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value returned from a previous paginated <code>GetVpnConnectionDeviceTypes</code>
-        /// request where <code>MaxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>NextToken</code> value. This value is null when there are no more
-        /// results to return. 
+        /// The <c>NextToken</c> value returned from a previous paginated <c>GetVpnConnectionDeviceTypes</c>
+        /// request where <c>MaxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>NextToken</c> value. This value is null when there are no more results to return.
+        /// 
         /// </para>
         /// </summary>
         public string NextToken

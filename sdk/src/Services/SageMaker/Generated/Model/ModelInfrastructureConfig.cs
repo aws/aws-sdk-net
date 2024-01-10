@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RealTime</code>: Deploy to real-time inference.
+        ///  <c>RealTime</c>: Deploy to real-time inference.
         /// </para>
         ///  </li> </ul>
         /// </summary>

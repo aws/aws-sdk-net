@@ -38,7 +38,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Finding. 
         /// <para>
-        /// A <code>finding</code> object that contains finding details.
+        /// A <c>finding</c> object that contains finding details.
         /// </para>
         /// </summary>
         public Finding Finding

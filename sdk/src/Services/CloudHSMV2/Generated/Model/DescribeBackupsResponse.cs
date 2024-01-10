@@ -58,7 +58,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// An opaque string that indicates that the response contains only a subset of backups.
-        /// Use this value in a subsequent <code>DescribeBackups</code> request to get more backups.
+        /// Use this value in a subsequent <c>DescribeBackups</c> request to get more backups.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

@@ -119,7 +119,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Subject. 
         /// <para>
-        /// The subject of the email if the delivery method is <code>EMAIL</code>. Supports variable
+        /// The subject of the email if the delivery method is <c>EMAIL</c>. Supports variable
         /// injection. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-lens-variable-injection.html">JSONPath
         /// reference</a> in the <i>Amazon Connect Administrators Guide</i>.
         /// </para>

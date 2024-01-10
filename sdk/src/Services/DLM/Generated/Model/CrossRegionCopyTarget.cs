@@ -39,7 +39,7 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property TargetRegion. 
         /// <para>
-        /// The target Region, for example <code>us-east-1</code>.
+        /// The target Region, for example <c>us-east-1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]

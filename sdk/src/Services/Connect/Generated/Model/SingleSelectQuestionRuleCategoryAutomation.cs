@@ -60,10 +60,10 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// The condition to apply for the automation option. If the condition is <code>PRESENT</code>,
+        /// The condition to apply for the automation option. If the condition is <c>PRESENT</c>,
         /// then the option is applied when the contact data includes the category. Similarly,
-        /// if the condition is <code>NOT_PRESENT</code>, then the option is applied when the
-        /// contact data does not include the category.
+        /// if the condition is <c>NOT_PRESENT</c>, then the option is applied when the contact
+        /// data does not include the category.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

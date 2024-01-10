@@ -57,7 +57,7 @@ namespace Amazon.EventBridge.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code> 
+    ///  <c> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -115,8 +115,8 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the partner event source. This name must be unique and must be in the
-        /// format <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code>.
-        /// The Amazon Web Services account that wants to use this partner event source must create
+        /// format <c> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </c>. The
+        /// Amazon Web Services account that wants to use this partner event source must create
         /// a partner event bus with a name that matches the name of the partner event source.
         /// </para>
         /// </summary>

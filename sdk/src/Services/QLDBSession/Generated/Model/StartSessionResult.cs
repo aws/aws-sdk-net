@@ -39,8 +39,8 @@ namespace Amazon.QLDBSession.Model
         /// <summary>
         /// Gets and sets the property SessionToken. 
         /// <para>
-        /// Session token of the started session. This <code>SessionToken</code> is required for
-        /// every subsequent command that is issued during the current session.
+        /// Session token of the started session. This <c>SessionToken</c> is required for every
+        /// subsequent command that is issued during the current session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]

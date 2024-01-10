@@ -70,7 +70,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property AdvancedOptions. 
         /// <para>
-        /// Specifies the <code>AdvancedOptions</code> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
+        /// Specifies the <c>AdvancedOptions</c> for the domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
         /// target="_blank">Configuring Advanced Options</a> for more information.
         /// </para>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property AdvancedSecurityOptions. 
         /// <para>
-        /// Specifies <code>AdvancedSecurityOptions</code> for the domain. 
+        /// Specifies <c>AdvancedSecurityOptions</c> for the domain. 
         /// </para>
         /// </summary>
         public AdvancedSecurityOptionsStatus AdvancedSecurityOptions
@@ -107,7 +107,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property AutoTuneOptions. 
         /// <para>
-        /// Specifies <code>AutoTuneOptions</code> for the domain. 
+        /// Specifies <c>AutoTuneOptions</c> for the domain. 
         /// </para>
         /// </summary>
         public AutoTuneOptionsStatus AutoTuneOptions
@@ -143,8 +143,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CognitoOptions. 
         /// <para>
-        /// The <code>CognitoOptions</code> for the specified domain. For more information, see
-        /// <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+        /// The <c>CognitoOptions</c> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
         /// target="_blank">Amazon Cognito Authentication for Kibana</a>.
         /// </para>
         /// </summary>
@@ -163,7 +162,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DomainEndpointOptions. 
         /// <para>
-        /// Specifies the <code>DomainEndpointOptions</code> for the Elasticsearch domain.
+        /// Specifies the <c>DomainEndpointOptions</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         public DomainEndpointOptionsStatus DomainEndpointOptions
@@ -181,7 +180,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property EBSOptions. 
         /// <para>
-        /// Specifies the <code>EBSOptions</code> for the Elasticsearch domain.
+        /// Specifies the <c>EBSOptions</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         public EBSOptionsStatus EBSOptions
@@ -199,7 +198,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchClusterConfig. 
         /// <para>
-        /// Specifies the <code>ElasticsearchClusterConfig</code> for the Elasticsearch domain.
+        /// Specifies the <c>ElasticsearchClusterConfig</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         public ElasticsearchClusterConfigStatus ElasticsearchClusterConfig
@@ -235,7 +234,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property EncryptionAtRestOptions. 
         /// <para>
-        /// Specifies the <code>EncryptionAtRestOptions</code> for the Elasticsearch domain.
+        /// Specifies the <c>EncryptionAtRestOptions</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         public EncryptionAtRestOptionsStatus EncryptionAtRestOptions
@@ -271,7 +270,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property NodeToNodeEncryptionOptions. 
         /// <para>
-        /// Specifies the <code>NodeToNodeEncryptionOptions</code> for the Elasticsearch domain.
+        /// Specifies the <c>NodeToNodeEncryptionOptions</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         public NodeToNodeEncryptionOptionsStatus NodeToNodeEncryptionOptions
@@ -289,7 +288,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property SnapshotOptions. 
         /// <para>
-        /// Specifies the <code>SnapshotOptions</code> for the Elasticsearch domain.
+        /// Specifies the <c>SnapshotOptions</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         public SnapshotOptionsStatus SnapshotOptions
@@ -307,8 +306,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property VPCOptions. 
         /// <para>
-        /// The <code>VPCOptions</code> for the specified domain. For more information, see <a
-        /// href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+        /// The <c>VPCOptions</c> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
         /// target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
         /// </para>
         /// </summary>

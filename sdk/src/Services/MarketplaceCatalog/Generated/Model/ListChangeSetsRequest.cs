@@ -31,7 +31,7 @@ namespace Amazon.MarketplaceCatalog.Model
     /// <summary>
     /// Container for the parameters to the ListChangeSets operation.
     /// Returns the list of change sets owned by the account being used to make the call.
-    /// You can filter this list by providing any combination of <code>entityId</code>, <code>ChangeSetName</code>,
+    /// You can filter this list by providing any combination of <c>entityId</c>, <c>ChangeSetName</c>,
     /// and status. If you provide more than one filter, the API operation applies a logical
     /// AND between the filters.
     /// 
@@ -52,7 +52,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        /// The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
+        /// The catalog related to the request. Fixed value: <c>AWSMarketplace</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -129,7 +129,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
+        /// An object that contains two attributes, <c>SortBy</c> and <c>SortOrder</c>.
         /// </para>
         /// </summary>
         public Sort Sort

@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the GetShardIterator operation.
     /// Returns a shard iterator. A shard iterator provides information about how to retrieve
-    /// the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code>
+    /// the stream records from within a shard. Use the shard iterator in a subsequent <c>GetRecords</c>
     /// request to read the stream records from the shard.
     /// 
     ///  <note> 
@@ -93,25 +93,25 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AT_SEQUENCE_NUMBER</code> - Start reading exactly from the position denoted
-        /// by a specific sequence number.
+        ///  <c>AT_SEQUENCE_NUMBER</c> - Start reading exactly from the position denoted by a
+        /// specific sequence number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position denoted
-        /// by a specific sequence number.
+        ///  <c>AFTER_SEQUENCE_NUMBER</c> - Start reading right after the position denoted by
+        /// a specific sequence number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream record,
-        /// which is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit
-        /// on data retention. Stream records whose age exceeds this limit are subject to removal
+        ///  <c>TRIM_HORIZON</c> - Start reading at the last (untrimmed) stream record, which
+        /// is the oldest record in the shard. In DynamoDB Streams, there is a 24 hour limit on
+        /// data retention. Stream records whose age exceeds this limit are subject to removal
         /// (trimming) from the stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LATEST</code> - Start reading just after the most recent stream record in the
-        /// shard, so that you always read the most recent data in the shard.
+        ///  <c>LATEST</c> - Start reading just after the most recent stream record in the shard,
+        /// so that you always read the most recent data in the shard.
         /// </para>
         ///  </li> </ul>
         /// </summary>

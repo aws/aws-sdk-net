@@ -73,8 +73,8 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property AdvancedOptions. 
         /// <para>
         /// Modifies the advanced option to allow references to indices in an HTTP request body.
-        /// Must be <code>false</code> when configuring access to individual sub-resources. By
-        /// default, the value is <code>true</code>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
+        /// Must be <c>false</c> when configuring access to individual sub-resources. By default,
+        /// the value is <c>true</c>. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
         /// target="_blank">Configuration Advanced Options</a> for more information.
         /// </para>
         /// </summary>
@@ -186,7 +186,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        ///  This flag, when set to True, specifies whether the <code>UpdateElasticsearchDomain</code>
+        ///  This flag, when set to True, specifies whether the <c>UpdateElasticsearchDomain</c>
         /// request should return the results of validation checks without actually applying the
         /// change. This flag, when set to True, specifies the deployment mechanism through which
         /// the update shall be applied on the domain. This will not actually perform the Update.
@@ -262,8 +262,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
-        /// Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing
-        /// options to publish a given type of Elasticsearch log.
+        /// Map of <c>LogType</c> and <c>LogPublishingOption</c>, each containing options to publish
+        /// a given type of Elasticsearch log.
         /// </para>
         /// </summary>
         public Dictionary<string, LogPublishingOption> LogPublishingOptions
@@ -300,7 +300,7 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property SnapshotOptions. 
         /// <para>
         /// Option to set the time, in UTC format, for the daily automated snapshot. Default value
-        /// is <code>0</code> hours. 
+        /// is <c>0</c> hours. 
         /// </para>
         /// </summary>
         public SnapshotOptions SnapshotOptions

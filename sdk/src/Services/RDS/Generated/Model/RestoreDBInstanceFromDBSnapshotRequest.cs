@@ -40,22 +40,22 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// If you want to replace your original DB instance with the new, restored DB instance,
-    /// then rename your original DB instance before you call the <code>RestoreDBInstanceFromDBSnapshot</code>
+    /// then rename your original DB instance before you call the <c>RestoreDBInstanceFromDBSnapshot</c>
     /// operation. RDS doesn't allow two DB instances with the same name. After you have renamed
     /// your original DB instance with a different identifier, then you can pass the original
-    /// name of the DB instance as the <code>DBInstanceIdentifier</code> in the call to the
-    /// <code>RestoreDBInstanceFromDBSnapshot</code> operation. The result is that you replace
-    /// the original DB instance with the DB instance created from the snapshot.
+    /// name of the DB instance as the <c>DBInstanceIdentifier</c> in the call to the <c>RestoreDBInstanceFromDBSnapshot</c>
+    /// operation. The result is that you replace the original DB instance with the DB instance
+    /// created from the snapshot.
     /// </para>
     ///  
     /// <para>
-    /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
+    /// If you are restoring from a shared manual DB snapshot, the <c>DBSnapshotIdentifier</c>
     /// must be the ARN of the shared DB snapshot.
     /// </para>
     ///  <note> 
     /// <para>
     /// This command doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
-    /// <code>RestoreDBClusterFromSnapshot</code>.
+    /// <c>RestoreDBClusterFromSnapshot</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -177,12 +177,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB
-        /// instance is a Multi-AZ deployment.
+        /// Constraint: You can't specify the <c>AvailabilityZone</c> parameter if the DB instance
+        /// is a Multi-AZ deployment.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-1a</code> 
+        /// Example: <c>us-east-1a</c> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -205,8 +205,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>outposts</code> (Amazon Web Services Outposts) and <code>region</code>
-        /// (Amazon Web Services Region). The default is <code>region</code>.
+        /// Possible values are <c>outposts</c> (Amazon Web Services Outposts) and <c>region</c>
+        /// (Amazon Web Services Region). The default is <c>region</c>.
         /// </para>
         ///  
         /// <para>
@@ -275,7 +275,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// The instance profile name and the associated IAM role name must start with the prefix
-        /// <code>AWSRDSCustom</code>.
+        /// <c>AWSRDSCustom</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -319,15 +319,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified when <code>DBSnapshotIdentifier</code> is specified.
+        /// Can't be specified when <c>DBSnapshotIdentifier</c> is specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be specified when <code>DBSnapshotIdentifier</code> isn't specified.
+        /// Must be specified when <c>DBSnapshotIdentifier</c> isn't specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <code>DBClusterSnapshotIdentifier</code>
+        /// If you are restoring from a shared manual Multi-AZ DB cluster snapshot, the <c>DBClusterSnapshotIdentifier</c>
         /// must be the ARN of the shared snapshot.
         /// </para>
         ///  </li> <li> 
@@ -401,7 +401,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code> 
+        /// Example: <c>my-snapshot-id</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -447,8 +447,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>DBParameterGroupName</code>, then RDS uses
-        /// the default <code>DBParameterGroup</code> for the specified DB engine.
+        /// If you don't specify a value for <c>DBParameterGroupName</c>, then RDS uses the default
+        /// <c>DBParameterGroup</c> for the specified DB engine.
         /// </para>
         ///  
         /// <para>
@@ -503,15 +503,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified when <code>DBClusterSnapshotIdentifier</code> is specified.
+        /// Can't be specified when <c>DBClusterSnapshotIdentifier</c> is specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be specified when <code>DBClusterSnapshotIdentifier</code> isn't specified.
+        /// Must be specified when <c>DBClusterSnapshotIdentifier</c> isn't specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code>
+        /// If you are restoring from a shared manual DB snapshot, the <c>DBSnapshotIdentifier</c>
         /// must be the ARN of the shared DB snapshot.
         /// </para>
         ///  </li> </ul>
@@ -543,7 +543,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbsubnetgroup</code> 
+        /// Example: <c>mydbsubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -642,7 +642,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+        /// Example: <c>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</c>
         /// 
         /// </para>
         /// </summary>
@@ -674,7 +674,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>123.124.125.126,234.235.236.237</code> 
+        /// Example: <c>123.124.125.126,234.235.236.237</c> 
         /// </para>
         /// </summary>
         public List<string> DomainDnsIps
@@ -704,7 +704,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> 
+        /// Example: <c>mymanagedADtest.mymanagedAD.mydomain</c> 
         /// </para>
         /// </summary>
         public string DomainFqdn
@@ -760,7 +760,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+        /// Example: <c>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</c>
         /// 
         /// </para>
         /// </summary>
@@ -893,55 +893,55 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db2-ae</code> 
+        ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-se</code> 
+        ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb</code> 
+        ///  <c>mariadb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mysql</code> 
+        ///  <c>mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee</code> 
+        ///  <c>oracle-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-cdb</code> 
+        ///  <c>oracle-ee-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2</code> 
+        ///  <c>oracle-se2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-cdb</code> 
+        ///  <c>oracle-se2-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres</code> 
+        ///  <c>postgres</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee</code> 
+        ///  <c>sqlserver-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se</code> 
+        ///  <c>sqlserver-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex</code> 
+        ///  <c>sqlserver-ex</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web</code> 
+        ///  <c>sqlserver-web</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1004,8 +1004,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>license-included</code> | <code>bring-your-own-license</code>
-        /// | <code>general-public-license</code> 
+        /// Valid Values: <c>license-included</c> | <c>bring-your-own-license</c> | <c>general-public-license</c>
+        /// 
         /// </para>
         /// </summary>
         public string LicenseModel
@@ -1031,8 +1031,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You can't specify the <code>AvailabilityZone</code> parameter if the DB
-        /// instance is a Multi-AZ deployment.
+        /// Constraint: You can't specify the <c>AvailabilityZone</c> parameter if the DB instance
+        /// is a Multi-AZ deployment.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -1058,17 +1058,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IPV4</code> 
+        ///  <c>IPV4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DUAL</code> 
+        ///  <c>DUAL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB instance.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -1127,7 +1127,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code> 
+        /// Constraints: Value must be <c>1150-65535</c> 
         /// </para>
         /// </summary>
         public int Port
@@ -1230,17 +1230,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
-        /// for the <code>Iops</code> parameter.
+        /// If you specify <c>io1</c> or <c>gp3</c>, you must also include a value for the <c>Iops</c>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified, otherwise
-        /// <code>gp2</code> 
+        /// Default: <c>io1</c> if the <c>Iops</c> parameter is specified, otherwise <c>gp2</c>
+        /// 
         /// </para>
         /// </summary>
         public string StorageType

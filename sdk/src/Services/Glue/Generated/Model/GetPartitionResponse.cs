@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Partition. 
         /// <para>
-        /// The requested information, in the form of a <code>Partition</code> object.
+        /// The requested information, in the form of a <c>Partition</c> object.
         /// </para>
         /// </summary>
         public Partition Partition

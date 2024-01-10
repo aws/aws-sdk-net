@@ -134,7 +134,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the <code>SetupInstanceHttps</code> request.
+        /// The status of the <c>SetupInstanceHttps</c> request.
         /// </para>
         /// </summary>
         public SetupStatus Status

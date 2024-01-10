@@ -30,11 +30,11 @@ namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
     /// Container for the parameters to the ResolveCustomer operation.
-    /// <code>ResolveCustomer</code> is called by a SaaS application during the registration
-    /// process. When a buyer visits your website during the registration process, the buyer
-    /// submits a registration token through their browser. The registration token is resolved
-    /// through this API to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code>
-    /// and <code>ProductCode</code>.
+    /// <c>ResolveCustomer</c> is called by a SaaS application during the registration process.
+    /// When a buyer visits your website during the registration process, the buyer submits
+    /// a registration token through their browser. The registration token is resolved through
+    /// this API to obtain a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c>
+    /// and <c>ProductCode</c>.
     /// 
     ///  <note> 
     /// <para>
@@ -43,7 +43,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
     /// </para>
     ///  
     /// <para>
-    /// For an example of using <code>ResolveCustomer</code>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
+    /// For an example of using <c>ResolveCustomer</c>, see <a href="https://docs.aws.amazon.com/marketplace/latest/userguide/saas-code-examples.html#saas-resolvecustomer-example">
     /// ResolveCustomer code example</a> in the <i>AWS Marketplace Seller Guide</i>.
     /// </para>
     ///  </note>
@@ -57,8 +57,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <para>
         /// When a buyer visits your website during the registration process, the buyer submits
         /// a registration token through the browser. The registration token is resolved to obtain
-        /// a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code>
-        /// and <code>ProductCode</code>.
+        /// a <c>CustomerIdentifier</c> along with the <c>CustomerAWSAccountId</c> and <c>ProductCode</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

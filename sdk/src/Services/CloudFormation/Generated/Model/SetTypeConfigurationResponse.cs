@@ -42,8 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code>
-        /// and <code>TypeName</code>.
+        /// Conditional: You must specify <c>ConfigurationArn</c>, or <c>Type</c> and <c>TypeName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

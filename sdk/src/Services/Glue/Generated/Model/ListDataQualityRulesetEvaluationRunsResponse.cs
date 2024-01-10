@@ -57,8 +57,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Runs. 
         /// <para>
-        /// A list of <code>DataQualityRulesetEvaluationRunDescription</code> objects representing
-        /// data quality ruleset runs.
+        /// A list of <c>DataQualityRulesetEvaluationRunDescription</c> objects representing data
+        /// quality ruleset runs.
         /// </para>
         /// </summary>
         public List<DataQualityRulesetEvaluationRunDescription> Runs

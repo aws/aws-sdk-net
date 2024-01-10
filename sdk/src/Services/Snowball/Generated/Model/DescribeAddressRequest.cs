@@ -30,8 +30,8 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAddress operation.
-    /// Takes an <code>AddressId</code> and returns specific details about that address in
-    /// the form of an <code>Address</code> object.
+    /// Takes an <c>AddressId</c> and returns specific details about that address in the form
+    /// of an <c>Address</c> object.
     /// </summary>
     public partial class DescribeAddressRequest : AmazonSnowballRequest
     {

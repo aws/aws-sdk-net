@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDataSource operation.
-    /// Updates a <code>DataSource</code> object.
+    /// Updates a <c>DataSource</c> object.
     /// </summary>
     public partial class UpdateDataSourceRequest : AmazonAppSyncRequest
     {

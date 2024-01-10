@@ -59,8 +59,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FileGroups. 
         /// <para>
-        /// A list of <code>SnapshotJobResultFileGroup</code> objects that contain information
-        /// about the snapshot that is generated. This list can hold a maximum of 6 <code>FileGroup</code>
+        /// A list of <c>SnapshotJobResultFileGroup</c> objects that contain information about
+        /// the snapshot that is generated. This list can hold a maximum of 6 <c>FileGroup</c>
         /// configurations.
         /// </para>
         /// </summary>

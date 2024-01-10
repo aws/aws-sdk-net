@@ -36,7 +36,7 @@ namespace Amazon.LookoutforVision.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:UntagResource</code>
+    /// This operation requires permissions to perform the <c>lookoutvision:UntagResource</c>
     /// operation.
     /// </para>
     /// </summary>

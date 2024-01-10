@@ -42,15 +42,15 @@ namespace Amazon.Pipes.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REQUEST_RESPONSE</code> (default) - Invoke synchronously. This corresponds
-        /// to the <code>RequestResponse</code> option in the <code>InvocationType</code> parameter
-        /// for the Lambda <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+        ///  <c>REQUEST_RESPONSE</c> (default) - Invoke synchronously. This corresponds to the
+        /// <c>RequestResponse</c> option in the <c>InvocationType</c> parameter for the Lambda
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
         /// API.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FIRE_AND_FORGET</code> - Invoke asynchronously. This corresponds to the <code>Event</code>
-        /// option in the <code>InvocationType</code> parameter for the Lambda <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
+        ///  <c>FIRE_AND_FORGET</c> - Invoke asynchronously. This corresponds to the <c>Event</c>
+        /// option in the <c>InvocationType</c> parameter for the Lambda <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html#API_Invoke_RequestSyntax">Invoke</a>
         /// API.
         /// </para>
         ///  </li> </ul> 

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>WorkflowExecutionSignaled</code> event.
+    /// Provides the details of the <c>WorkflowExecutionSignaled</c> event.
     /// </summary>
     public partial class WorkflowExecutionSignaledEventAttributes
     {
@@ -41,8 +41,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExternalInitiatedEventId. 
         /// <para>
-        /// The ID of the <code>SignalExternalWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>SignalExternalWorkflow</code> decision to signal this workflow execution.The
+        /// The ID of the <c>SignalExternalWorkflowExecutionInitiated</c> event corresponding
+        /// to the <c>SignalExternalWorkflow</c> decision to signal this workflow execution.The
         /// source event with this ID can be found in the history of the source workflow execution.
         /// This information can be useful for diagnosing problems by tracing back the chain of
         /// events leading up to this event. This field is set only if the signal was initiated

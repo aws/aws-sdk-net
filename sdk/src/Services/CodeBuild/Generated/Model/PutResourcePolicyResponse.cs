@@ -38,8 +38,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN of the <code>Project</code> or <code>ReportGroup</code> resource that is
-        /// associated with a resource policy. 
+        ///  The ARN of the <c>Project</c> or <c>ReportGroup</c> resource that is associated with
+        /// a resource policy. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

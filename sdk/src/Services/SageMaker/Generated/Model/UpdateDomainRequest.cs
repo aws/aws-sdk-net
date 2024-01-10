@@ -49,19 +49,18 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon
-        /// SageMaker, which allows direct internet access.
+        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker,
+        /// which allows direct internet access.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets.
+        ///  <c>VpcOnly</c> - All Studio traffic is through the specified VPC and subnets.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This configuration can only be modified if there are no apps in the <code>InService</code>,
-        /// <code>Pending</code>, or <code>Deleting</code> state. The configuration cannot be
-        /// updated if <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-        /// is already set or <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// This configuration can only be modified if there are no apps in the <c>InService</c>,
+        /// <c>Pending</c>, or <c>Deleting</c> state. The configuration cannot be updated if <c>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</c>
+        /// is already set or <c>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</c>
         /// is provided as part of the same request.
         /// </para>
         /// </summary>
@@ -81,10 +80,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AppSecurityGroupManagement. 
         /// <para>
         /// The entity that creates and manages the required security groups for inter-app communication
-        /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
-        /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// in <c>VPCOnly</c> mode. Required when <c>CreateDomain.AppNetworkAccessType</c> is
+        /// <c>VPCOnly</c> and <c>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</c>
         /// is provided. If setting up the domain for use with RStudio, this value must be set
-        /// to <code>Service</code>.
+        /// to <c>Service</c>.
         /// </para>
         /// </summary>
         public AppSecurityGroupManagement AppSecurityGroupManagement
@@ -157,7 +156,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainSettingsForUpdate. 
         /// <para>
-        /// A collection of <code>DomainSettings</code> configuration values to update.
+        /// A collection of <c>DomainSettings</c> configuration values to update.
         /// </para>
         /// </summary>
         public DomainSettingsForUpdate DomainSettingsForUpdate
@@ -179,8 +178,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If removing subnets, ensure there are no apps in the <code>InService</code>, <code>Pending</code>,
-        /// or <code>Deleting</code> state.
+        /// If removing subnets, ensure there are no apps in the <c>InService</c>, <c>Pending</c>,
+        /// or <c>Deleting</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]

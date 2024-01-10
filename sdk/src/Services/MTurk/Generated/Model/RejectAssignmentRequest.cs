@@ -30,7 +30,7 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the RejectAssignment operation.
-    /// The <code>RejectAssignment</code> operation rejects the results of a completed assignment.
+    /// The <c>RejectAssignment</c> operation rejects the results of a completed assignment.
     /// 
     /// 
     ///  

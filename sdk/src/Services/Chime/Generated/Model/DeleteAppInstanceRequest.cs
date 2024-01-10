@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInstance operation.
-    /// Deletes an <code>AppInstance</code> and all associated data asynchronously.
+    /// Deletes an <c>AppInstance</c> and all associated data asynchronously.
     /// 
     ///  <important> 
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

@@ -30,18 +30,18 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the MergeDeveloperIdentities operation.
-    /// Merges two users having different <code>IdentityId</code>s, existing in the same identity
+    /// Merges two users having different <c>IdentityId</c>s, existing in the same identity
     /// pool, and identified by the same developer provider. You can use this action to request
     /// that discrete users be merged and identified as a single user in the Cognito environment.
-    /// Cognito associates the given source user (<code>SourceUserIdentifier</code>) with
-    /// the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated
-    /// users can be merged. If the users to be merged are associated with the same public
-    /// provider, but as two different users, an exception will be thrown.
+    /// Cognito associates the given source user (<c>SourceUserIdentifier</c>) with the <c>IdentityId</c>
+    /// of the <c>DestinationUserIdentifier</c>. Only developer-authenticated users can be
+    /// merged. If the users to be merged are associated with the same public provider, but
+    /// as two different users, an exception will be thrown.
     /// 
     ///  
     /// <para>
     /// The number of linked logins is limited to 20. So, the number of linked logins for
-    /// the source user, <code>SourceUserIdentifier</code>, and the destination user, <code>DestinationUserIdentifier</code>,
+    /// the source user, <c>SourceUserIdentifier</c>, and the destination user, <c>DestinationUserIdentifier</c>,
     /// together should not be larger than 20. Otherwise, an exception will be thrown.
     /// </para>
     ///  
@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property DestinationUserIdentifier. 
         /// <para>
-        /// User identifier for the destination user. The value should be a <code>DeveloperUserIdentifier</code>.
+        /// User identifier for the destination user. The value should be a <c>DeveloperUserIdentifier</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -81,8 +81,8 @@ namespace Amazon.CognitoIdentity.Model
         /// The "domain" by which Cognito will refer to your users. This is a (pseudo) domain
         /// name that you provide while creating an identity pool. This name acts as a placeholder
         /// that allows your backend and the Cognito service to communicate about the developer
-        /// provider. For the <code>DeveloperProviderName</code>, you can use letters as well
-        /// as period (.), underscore (_), and dash (-).
+        /// provider. For the <c>DeveloperProviderName</c>, you can use letters as well as period
+        /// (.), underscore (_), and dash (-).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -120,7 +120,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property SourceUserIdentifier. 
         /// <para>
-        /// User identifier for the source user. The value should be a <code>DeveloperUserIdentifier</code>.
+        /// User identifier for the source user. The value should be a <c>DeveloperUserIdentifier</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

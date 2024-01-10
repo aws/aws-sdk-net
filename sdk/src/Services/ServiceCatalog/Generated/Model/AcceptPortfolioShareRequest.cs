@@ -45,11 +45,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -92,21 +92,21 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS_ORGANIZATIONS</code> - Accept portfolios shared by the management account
-        /// of your organization.
+        ///  <c>AWS_ORGANIZATIONS</c> - Accept portfolios shared by the management account of
+        /// your organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORTED</code> - Accept imported portfolios.
+        ///  <c>IMPORTED</c> - Accept imported portfolios.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_SERVICECATALOG</code> - Not supported. (Throws ResourceNotFoundException.)
+        ///  <c>AWS_SERVICECATALOG</c> - Not supported. (Throws ResourceNotFoundException.)
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, <code>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
-        /// --portfolio-share-type AWS_ORGANIZATIONS</code> 
+        /// For example, <c>aws servicecatalog accept-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
+        /// --portfolio-share-type AWS_ORGANIZATIONS</c> 
         /// </para>
         /// </summary>
         public PortfolioShareType PortfolioShareType

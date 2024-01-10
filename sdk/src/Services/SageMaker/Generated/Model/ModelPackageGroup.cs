@@ -138,27 +138,27 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The model group is pending being created.
+        ///  <c>PENDING</c> - The model group is pending being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - The model group is in the process of being created.
+        ///  <c>IN_PROGRESS</c> - The model group is in the process of being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The model group was successfully created.
+        ///  <c>COMPLETED</c> - The model group was successfully created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The model group failed.
+        ///  <c>FAILED</c> - The model group failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The model group is in the process of being deleted.
+        ///  <c>DELETING</c> - The model group is in the process of being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_FAILED</code> - SageMaker failed to delete the model group.
+        ///  <c>DELETE_FAILED</c> - SageMaker failed to delete the model group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

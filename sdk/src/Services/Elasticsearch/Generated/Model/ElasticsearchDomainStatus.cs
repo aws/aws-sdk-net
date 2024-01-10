@@ -80,7 +80,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property AdvancedOptions. 
         /// <para>
-        /// Specifies the status of the <code>AdvancedOptions</code>
+        /// Specifies the status of the <c>AdvancedOptions</c>
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdvancedOptions
@@ -173,8 +173,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CognitoOptions. 
         /// <para>
-        /// The <code>CognitoOptions</code> for the specified domain. For more information, see
-        /// <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
+        /// The <c>CognitoOptions</c> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-cognito-auth.html"
         /// target="_blank">Amazon Cognito Authentication for Kibana</a>.
         /// </para>
         /// </summary>
@@ -193,8 +192,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        /// The domain creation status. <code>True</code> if the creation of an Elasticsearch
-        /// domain is complete. <code>False</code> if domain creation is still in progress.
+        /// The domain creation status. <c>True</c> if the creation of an Elasticsearch domain
+        /// is complete. <c>False</c> if domain creation is still in progress.
         /// </para>
         /// </summary>
         public bool Created
@@ -212,10 +211,10 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Deleted. 
         /// <para>
-        /// The domain deletion status. <code>True</code> if a delete request has been received
-        /// for the domain but resource cleanup is still in progress. <code>False</code> if the
-        /// domain has not been deleted. Once domain deletion is complete, the status of the domain
-        /// is no longer returned.
+        /// The domain deletion status. <c>True</c> if a delete request has been received for
+        /// the domain but resource cleanup is still in progress. <c>False</c> if the domain has
+        /// not been deleted. Once domain deletion is complete, the status of the domain is no
+        /// longer returned.
         /// </para>
         /// </summary>
         public bool Deleted
@@ -291,7 +290,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property EBSOptions. 
         /// <para>
-        /// The <code>EBSOptions</code> for the specified domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs"
+        /// The <c>EBSOptions</c> for the specified domain. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-ebs"
         /// target="_blank">Configuring EBS-based Storage</a> for more information.
         /// </para>
         /// </summary>
@@ -344,7 +343,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property EncryptionAtRestOptions. 
         /// <para>
-        ///  Specifies the status of the <code>EncryptionAtRestOptions</code>.
+        ///  Specifies the status of the <c>EncryptionAtRestOptions</c>.
         /// </para>
         /// </summary>
         public EncryptionAtRestOptions EncryptionAtRestOptions
@@ -381,7 +380,7 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property Endpoints. 
         /// <para>
         /// Map containing the Elasticsearch domain endpoints used to submit index and search
-        /// requests. Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+        /// requests. Example <c>key, value</c>: <c>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Endpoints
@@ -417,7 +416,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property NodeToNodeEncryptionOptions. 
         /// <para>
-        /// Specifies the status of the <code>NodeToNodeEncryptionOptions</code>.
+        /// Specifies the status of the <c>NodeToNodeEncryptionOptions</c>.
         /// </para>
         /// </summary>
         public NodeToNodeEncryptionOptions NodeToNodeEncryptionOptions
@@ -435,9 +434,9 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Processing. 
         /// <para>
-        /// The status of the Elasticsearch domain configuration. <code>True</code> if Amazon
-        /// Elasticsearch Service is processing configuration changes. <code>False</code> if the
-        /// configuration is active.
+        /// The status of the Elasticsearch domain configuration. <c>True</c> if Amazon Elasticsearch
+        /// Service is processing configuration changes. <c>False</c> if the configuration is
+        /// active.
         /// </para>
         /// </summary>
         public bool Processing
@@ -473,7 +472,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property SnapshotOptions. 
         /// <para>
-        /// Specifies the status of the <code>SnapshotOptions</code>
+        /// Specifies the status of the <c>SnapshotOptions</c>
         /// </para>
         /// </summary>
         public SnapshotOptions SnapshotOptions
@@ -491,9 +490,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property UpgradeProcessing. 
         /// <para>
-        /// The status of an Elasticsearch domain version upgrade. <code>True</code> if Amazon
-        /// Elasticsearch Service is undergoing a version upgrade. <code>False</code> if the configuration
-        /// is active.
+        /// The status of an Elasticsearch domain version upgrade. <c>True</c> if Amazon Elasticsearch
+        /// Service is undergoing a version upgrade. <c>False</c> if the configuration is active.
         /// </para>
         /// </summary>
         public bool UpgradeProcessing
@@ -511,8 +509,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property VPCOptions. 
         /// <para>
-        /// The <code>VPCOptions</code> for the specified domain. For more information, see <a
-        /// href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
+        /// The <c>VPCOptions</c> for the specified domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html"
         /// target="_blank">VPC Endpoints for Amazon Elasticsearch Service Domains</a>.
         /// </para>
         /// </summary>

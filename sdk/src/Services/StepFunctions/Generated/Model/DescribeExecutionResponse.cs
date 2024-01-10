@@ -180,19 +180,19 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// brackets <code>&lt; &gt; { } [ ]</code> 
+        /// brackets <c>&lt; &gt; { } [ ]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// wildcard characters <code>? *</code> 
+        /// wildcard characters <c>? *</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> 
+        /// special characters <c>" # % \ ^ | ~ ` $ &amp; , ; : /</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+        /// control characters (<c>U+0000-001F</c>, <c>U+007F-009F</c>)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -258,7 +258,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RedriveCount. 
         /// <para>
         /// The number of times you've redriven an execution. If you have not yet redriven an
-        /// execution, the <code>redriveCount</code> is 0. This count is only updated if you successfully
+        /// execution, the <c>redriveCount</c> is 0. This count is only updated if you successfully
         /// redrive an execution.
         /// </para>
         /// </summary>
@@ -278,12 +278,12 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RedriveDate. 
         /// <para>
         /// The date the execution was last redriven. If you have not yet redriven an execution,
-        /// the <code>redriveDate</code> is null.
+        /// the <c>redriveDate</c> is null.
         /// </para>
         ///  
         /// <para>
-        /// The <code>redriveDate</code> is unavailable if you redrive a Map Run that starts child
-        /// workflow executions of type <code>EXPRESS</code>.
+        /// The <c>redriveDate</c> is unavailable if you redrive a Map Run that starts child workflow
+        /// executions of type <c>EXPRESS</c>.
         /// </para>
         /// </summary>
         public DateTime RedriveDate
@@ -305,26 +305,24 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For executions of type <code>STANDARD</code>, <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>
-        /// if calling the <a>RedriveExecution</a> API action would return the <code>ExecutionNotRedrivable</code>
+        /// For executions of type <c>STANDARD</c>, <c>redriveStatus</c> is <c>NOT_REDRIVABLE</c>
+        /// if calling the <a>RedriveExecution</a> API action would return the <c>ExecutionNotRedrivable</c>
         /// error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For a Distributed Map that includes child workflows of type <code>STANDARD</code>,
-        /// <code>redriveStatus</code> indicates whether or not the Map Run can redrive child
-        /// workflow executions.
+        /// For a Distributed Map that includes child workflows of type <c>STANDARD</c>, <c>redriveStatus</c>
+        /// indicates whether or not the Map Run can redrive child workflow executions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For a Distributed Map that includes child workflows of type <code>EXPRESS</code>,
-        /// <code>redriveStatus</code> indicates whether or not the Map Run can redrive child
-        /// workflow executions.
+        /// For a Distributed Map that includes child workflows of type <c>EXPRESS</c>, <c>redriveStatus</c>
+        /// indicates whether or not the Map Run can redrive child workflow executions.
         /// </para>
         ///  
         /// <para>
-        /// You can redrive failed or timed out <code>EXPRESS</code> workflows <i>only if</i>
-        /// they're a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a>
+        /// You can redrive failed or timed out <c>EXPRESS</c> workflows <i>only if</i> they're
+        /// a part of a Map Run. When you <a href="https://docs.aws.amazon.com/step-functions/latest/dg/redrive-map-run.html">redrive</a>
         /// the Map Run, these workflows are restarted using the <a>StartExecution</a> API action.
         /// </para>
         ///  </li> </ul>
@@ -344,48 +342,48 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property RedriveStatusReason. 
         /// <para>
-        /// When <code>redriveStatus</code> is <code>NOT_REDRIVABLE</code>, <code>redriveStatusReason</code>
-        /// specifies the reason why an execution cannot be redriven.
+        /// When <c>redriveStatus</c> is <c>NOT_REDRIVABLE</c>, <c>redriveStatusReason</c> specifies
+        /// the reason why an execution cannot be redriven.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For executions of type <code>STANDARD</code>, or for a Distributed Map that includes
-        /// child workflows of type <code>STANDARD</code>, <code>redriveStatusReason</code> can
-        /// include one of the following reasons:
+        /// For executions of type <c>STANDARD</c>, or for a Distributed Map that includes child
+        /// workflows of type <c>STANDARD</c>, <c>redriveStatusReason</c> can include one of the
+        /// following reasons:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>State machine is in DELETING status</code>.
+        ///  <c>State machine is in DELETING status</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Execution is RUNNING and cannot be redriven</code>.
+        ///  <c>Execution is RUNNING and cannot be redriven</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Execution is SUCCEEDED and cannot be redriven</code>.
+        ///  <c>Execution is SUCCEEDED and cannot be redriven</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Execution was started before the launch of RedriveExecution</code>.
+        ///  <c>Execution was started before the launch of RedriveExecution</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Execution history event limit exceeded</code>.
+        ///  <c>Execution history event limit exceeded</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Execution has exceeded the max execution time</code>.
+        ///  <c>Execution has exceeded the max execution time</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Execution redrivable period exceeded</code>.
+        ///  <c>Execution redrivable period exceeded</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// For a Distributed Map that includes child workflows of type <code>EXPRESS</code>,
-        /// <code>redriveStatusReason</code> is only returned if the child workflows are not redrivable.
-        /// This happens when the child workflow executions have completed successfully.
+        /// For a Distributed Map that includes child workflows of type <c>EXPRESS</c>, <c>redriveStatusReason</c>
+        /// is only returned if the child workflows are not redrivable. This happens when the
+        /// child workflow executions have completed successfully.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -426,12 +424,12 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the state machine alias associated with the execution.
         /// The alias ARN is a combination of state machine ARN and the alias name separated by
-        /// a colon (:). For example, <code>stateMachineARN:PROD</code>.
+        /// a colon (:). For example, <c>stateMachineARN:PROD</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you start an execution from a <code>StartExecution</code> request with a state
-        /// machine version ARN, this field will be null.
+        /// If you start an execution from a <c>StartExecution</c> request with a state machine
+        /// version ARN, this field will be null.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -471,11 +469,11 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the state machine version associated with the execution.
         /// The version ARN is a combination of state machine ARN and the version number separated
-        /// by a colon (:). For example, <code>stateMachineARN:1</code>.
+        /// by a colon (:). For example, <c>stateMachineARN:1</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you start an execution from a <code>StartExecution</code> request without specifying
+        /// If you start an execution from a <c>StartExecution</c> request without specifying
         /// a state machine version or alias ARN, Step Functions returns a null value.
         /// </para>
         /// </summary>

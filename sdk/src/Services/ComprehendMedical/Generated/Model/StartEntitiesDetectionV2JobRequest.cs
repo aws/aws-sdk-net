@@ -31,8 +31,7 @@ namespace Amazon.ComprehendMedical.Model
     /// <summary>
     /// Container for the parameters to the StartEntitiesDetectionV2Job operation.
     /// Starts an asynchronous medical entity detection job for a collection of documents.
-    /// Use the <code>DescribeEntitiesDetectionV2Job</code> operation to track the status
-    /// of a job.
+    /// Use the <c>DescribeEntitiesDetectionV2Job</c> operation to track the status of a job.
     /// </summary>
     public partial class StartEntitiesDetectionV2JobRequest : AmazonComprehendMedicalRequest
     {

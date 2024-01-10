@@ -59,9 +59,9 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// An associated custom domain endpoint. It can be a root domain (for example, <code>example.com</code>),
-        /// a subdomain (for example, <code>login.example.com</code> or <code>admin.login.example.com</code>),
-        /// or a wildcard (for example, <code>*.example.com</code>).
+        /// An associated custom domain endpoint. It can be a root domain (for example, <c>example.com</c>),
+        /// a subdomain (for example, <c>login.example.com</c> or <c>admin.login.example.com</c>),
+        /// or a wildcard (for example, <c>*.example.com</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -80,8 +80,8 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property EnableWWWSubdomain. 
         /// <para>
-        /// When <code>true</code>, the subdomain <code>www.<i>DomainName</i> </code> is associated
-        /// with the App Runner service in addition to the base domain.
+        /// When <c>true</c>, the subdomain <c>www.<i>DomainName</i> </c> is associated with the
+        /// App Runner service in addition to the base domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

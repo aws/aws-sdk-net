@@ -135,9 +135,9 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property RepositoryArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the repository. The ARN contains the
-        /// <code>arn:aws:ecr</code> namespace, followed by the region of the repository, Amazon
-        /// Web Services account ID of the repository owner, repository namespace, and repository
-        /// name. For example, <code>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</code>.
+        /// <c>arn:aws:ecr</c> namespace, followed by the region of the repository, Amazon Web
+        /// Services account ID of the repository owner, repository namespace, and repository
+        /// name. For example, <c>arn:aws:ecr:region:012345678910:repository-namespace/repository-name</c>.
         /// </para>
         /// </summary>
         public string RepositoryArn
@@ -174,8 +174,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property RepositoryUri. 
         /// <para>
-        /// The URI for the repository. You can use this URI for container image <code>push</code>
-        /// and <code>pull</code> operations.
+        /// The URI for the repository. You can use this URI for container image <c>push</c> and
+        /// <c>pull</c> operations.
         /// </para>
         /// </summary>
         public string RepositoryUri

@@ -64,15 +64,15 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Range for <code>VOICE</code>: Minimum value of 1. Maximum value of 1.
+        /// Valid Range for <c>VOICE</c>: Minimum value of 1. Maximum value of 1.
         /// </para>
         ///  
         /// <para>
-        /// Valid Range for <code>CHAT</code>: Minimum value of 1. Maximum value of 10.
+        /// Valid Range for <c>CHAT</c>: Minimum value of 1. Maximum value of 10.
         /// </para>
         ///  
         /// <para>
-        /// Valid Range for <code>TASK</code>: Minimum value of 1. Maximum value of 10.
+        /// Valid Range for <c>TASK</c>: Minimum value of 1. Maximum value of 10.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code>
+    /// This operation requires permissions to perform the <c>lookoutvision:ListTagsForResource</c>
     /// operation.
     /// </para>
     /// </summary>

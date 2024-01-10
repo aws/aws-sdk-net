@@ -51,9 +51,9 @@ namespace Amazon.RDS.Model
     /// <para>
     /// The MediaImport service that imports files from Amazon S3 to create CEVs isn't integrated
     /// with Amazon Web Services CloudTrail. If you turn on data logging for Amazon RDS in
-    /// CloudTrail, calls to the <code>DeleteCustomDbEngineVersion</code> event aren't logged.
-    /// However, you might see calls from the API gateway that accesses your Amazon S3 bucket.
-    /// These calls originate from the MediaImport service for the <code>DeleteCustomDbEngineVersion</code>
+    /// CloudTrail, calls to the <c>DeleteCustomDbEngineVersion</c> event aren't logged. However,
+    /// you might see calls from the API gateway that accesses your Amazon S3 bucket. These
+    /// calls originate from the MediaImport service for the <c>DeleteCustomDbEngineVersion</c>
     /// event.
     /// </para>
     ///  </note> 
@@ -70,8 +70,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database engine. The only supported engines are <code>custom-oracle-ee</code>
-        /// and <code>custom-oracle-ee-cdb</code>.
+        /// The database engine. The only supported engines are <c>custom-oracle-ee</c> and <c>custom-oracle-ee-cdb</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]
@@ -91,8 +90,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The custom engine version (CEV) for your DB instance. This option is required for
-        /// RDS Custom, but optional for Amazon RDS. The combination of <code>Engine</code> and
-        /// <code>EngineVersion</code> is unique per customer per Amazon Web Services Region.
+        /// RDS Custom, but optional for Amazon RDS. The combination of <c>Engine</c> and <c>EngineVersion</c>
+        /// is unique per customer per Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=60)]

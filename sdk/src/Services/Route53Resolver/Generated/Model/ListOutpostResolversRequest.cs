@@ -43,7 +43,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of Resolvers on the Outpost that you want to return in the response
-        /// to a <code>ListOutpostResolver</code> request. If you don't specify a value for <code>MaxResults</code>,
+        /// to a <c>ListOutpostResolver</c> request. If you don't specify a value for <c>MaxResults</c>,
         /// the request returns up to 100 Resolvers.
         /// </para>
         /// </summary>
@@ -63,7 +63,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For the first <code>ListOutpostResolver</code> request, omit this value.
+        /// For the first <c>ListOutpostResolver</c> request, omit this value.
         /// </para>
         /// </summary>
         public string NextToken

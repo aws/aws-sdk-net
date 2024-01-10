@@ -61,7 +61,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property CaptionSources. 
         /// <para>
         /// Source files for the input sidecar captions used during the transcoding process. To
-        /// omit all sidecar captions, leave <code>CaptionSources</code> blank.
+        /// omit all sidecar captions, leave <c>CaptionSources</c> blank.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
@@ -96,17 +96,17 @@ namespace Amazon.ElasticTranscoder.Model
         ///  <b>MergeRetain:</b> Elastic Transcoder transcodes both embedded and sidecar captions
         /// into outputs. If captions for a language are embedded in the input file and also appear
         /// in a sidecar file, Elastic Transcoder uses the embedded captions and ignores the sidecar
-        /// captions for that language. If <code>CaptionSources</code> is empty, Elastic Transcoder
+        /// captions for that language. If <c>CaptionSources</c> is empty, Elastic Transcoder
         /// omits all sidecar captions from the output files.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Override:</b> Elastic Transcoder transcodes only the sidecar captions that you
-        /// specify in <code>CaptionSources</code>.
+        /// specify in <c>CaptionSources</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>MergePolicy</code> cannot be null.
+        ///  <c>MergePolicy</c> cannot be null.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]

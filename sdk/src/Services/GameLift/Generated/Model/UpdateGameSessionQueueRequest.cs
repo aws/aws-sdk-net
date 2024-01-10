@@ -122,7 +122,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FilterConfiguration. 
         /// <para>
         /// A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>.
+        /// are specified in the form of Amazon Web Services Region codes, such as <c>us-west-2</c>.
         /// If this parameter is not set, game sessions can be placed in any queue location. To
         /// remove an existing filter configuration, pass in an empty set.
         /// </para>
@@ -252,7 +252,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The maximum time, in seconds, that a new game session placement request remains in
         /// the queue. When a request exceeds this time, the game session placement changes to
-        /// a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.
+        /// a <c>TIMED_OUT</c> status. By default, this property is set to <c>600</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -30,8 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRestoreTestingSelections operation.
-    /// Returns a list of restore testing selections. Can be filtered by <code>MaxResults</code>
-    /// and <code>RestoreTestingPlanName</code>.
+    /// Returns a list of restore testing selections. Can be filtered by <c>MaxResults</c>
+    /// and <c>RestoreTestingPlanName</c>.
     /// </summary>
     public partial class ListRestoreTestingSelectionsRequest : AmazonBackupRequest
     {
@@ -62,9 +62,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The next item following a partial list of returned items. For example, if a request
-        /// is made to return <code>MaxResults</code> number of items, <code>NextToken</code>
-        /// allows you to return more items in your list starting at the location pointed to by
-        /// the nexttoken.
+        /// is made to return <c>MaxResults</c> number of items, <c>NextToken</c> allows you to
+        /// return more items in your list starting at the location pointed to by the nexttoken.
         /// </para>
         /// </summary>
         public string NextToken

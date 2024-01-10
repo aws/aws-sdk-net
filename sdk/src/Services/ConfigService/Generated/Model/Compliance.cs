@@ -41,7 +41,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ComplianceContributorCount. 
         /// <para>
         /// The number of Amazon Web Services resources or Config rules that cause a result of
-        /// <code>NON_COMPLIANT</code>, up to a maximum number.
+        /// <c>NON_COMPLIANT</c>, up to a maximum number.
         /// </para>
         /// </summary>
         public ComplianceContributorCount ComplianceContributorCount
@@ -73,15 +73,14 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// Config returns the <code>INSUFFICIENT_DATA</code> value when no evaluation results
-        /// are available for the Amazon Web Services resource or Config rule.
+        /// Config returns the <c>INSUFFICIENT_DATA</c> value when no evaluation results are available
+        /// for the Amazon Web Services resource or Config rule.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>Compliance</code> data type, Config supports only <code>COMPLIANT</code>,
-        /// <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code> values. Config does
-        /// not support the <code>NOT_APPLICABLE</code> value for the <code>Compliance</code>
-        /// data type.
+        /// For the <c>Compliance</c> data type, Config supports only <c>COMPLIANT</c>, <c>NON_COMPLIANT</c>,
+        /// and <c>INSUFFICIENT_DATA</c> values. Config does not support the <c>NOT_APPLICABLE</c>
+        /// value for the <c>Compliance</c> data type.
         /// </para>
         /// </summary>
         public ComplianceType ComplianceType

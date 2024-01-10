@@ -39,8 +39,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
         /// <para>
-        /// The capacity units consumed by the entire <code>TransactWriteItems</code> operation.
-        /// The values of the list are ordered according to the ordering of the <code>TransactItems</code>
+        /// The capacity units consumed by the entire <c>TransactWriteItems</c> operation. The
+        /// values of the list are ordered according to the ordering of the <c>TransactItems</c>
         /// request parameter. 
         /// </para>
         /// </summary>
@@ -59,9 +59,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ItemCollectionMetrics. 
         /// <para>
-        /// A list of tables that were processed by <code>TransactWriteItems</code> and, for each
-        /// table, information about any item collections that were affected by individual <code>UpdateItem</code>,
-        /// <code>PutItem</code>, or <code>DeleteItem</code> operations. 
+        /// A list of tables that were processed by <c>TransactWriteItems</c> and, for each table,
+        /// information about any item collections that were affected by individual <c>UpdateItem</c>,
+        /// <c>PutItem</c>, or <c>DeleteItem</c> operations. 
         /// </para>
         /// </summary>
         public Dictionary<string, List<ItemCollectionMetrics>> ItemCollectionMetrics

@@ -85,7 +85,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</code> 
+        ///  <c>"B": "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</c> 
         /// </para>
         /// </summary>
         public MemoryStream B
@@ -107,7 +107,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"BOOL": true</code> 
+        ///  <c>"BOOL": true</c> 
         /// </para>
         /// </summary>
         public bool BOOL
@@ -151,7 +151,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</code> 
+        ///  <c>"BS": ["U3Vubnk=", "UmFpbnk=", "U25vd3k="]</c> 
         /// </para>
         /// </summary>
         public List<MemoryStream> BS
@@ -173,7 +173,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</code> 
+        ///  <c>"L": [ {"S": "Cookies"} , {"S": "Coffee"}, {"N": "3.14159"}]</c> 
         /// </para>
         /// </summary>
         public List<AttributeValue> L
@@ -217,7 +217,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</code> 
+        ///  <c>"M": {"Name": {"S": "Joe"}, "Age": {"N": "35"}}</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> M
@@ -261,7 +261,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"N": "123.45"</code> 
+        ///  <c>"N": "123.45"</c> 
         /// </para>
         ///  
         /// <para>
@@ -289,7 +289,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"NS": ["42.2", "-19", "7.5", "3.14"]</code> 
+        ///  <c>"NS": ["42.2", "-19", "7.5", "3.14"]</c> 
         /// </para>
         ///  
         /// <para>
@@ -317,7 +317,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"NULL": true</code> 
+        ///  <c>"NULL": true</c> 
         /// </para>
         /// </summary>
         public bool NULL
@@ -339,7 +339,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"S": "Hello"</code> 
+        ///  <c>"S": "Hello"</c> 
         /// </para>
         /// </summary>
         public string S
@@ -361,7 +361,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"SS": ["Giraffe", "Hippo" ,"Zebra"]</code> 
+        ///  <c>"SS": ["Giraffe", "Hippo" ,"Zebra"]</c> 
         /// </para>
         /// </summary>
         public List<string> SS

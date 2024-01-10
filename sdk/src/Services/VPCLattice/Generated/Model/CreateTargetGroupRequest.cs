@@ -73,8 +73,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// The target group configuration. If <code>type</code> is set to <code>LAMBDA</code>,
-        /// this parameter doesn't apply.
+        /// The target group configuration. If <c>type</c> is set to <c>LAMBDA</c>, this parameter
+        /// doesn't apply.
         /// </para>
         /// </summary>
         public TargetGroupConfig Config

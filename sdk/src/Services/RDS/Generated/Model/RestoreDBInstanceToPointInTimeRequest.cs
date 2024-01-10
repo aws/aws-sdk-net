@@ -31,8 +31,8 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the RestoreDBInstanceToPointInTime operation.
     /// Restores a DB instance to an arbitrary point in time. You can restore to any point
-    /// in time before the time identified by the <code>LatestRestorableTime</code> property.
-    /// You can restore to a point up to the number of days specified by the <code>BackupRetentionPeriod</code>
+    /// in time before the time identified by the <c>LatestRestorableTime</c> property. You
+    /// can restore to a point up to the number of days specified by the <c>BackupRetentionPeriod</c>
     /// property.
     /// 
     ///  
@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
     ///  <note> 
     /// <para>
     /// This operation doesn't apply to Aurora MySQL and Aurora PostgreSQL. For Aurora, use
-    /// <code>RestoreDBClusterToPointInTime</code>.
+    /// <c>RestoreDBClusterToPointInTime</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
         /// The amount of storage (in gibibytes) to allocate initially for the DB instance. Follow
-        /// the allocation rules specified in <code>CreateDBInstance</code>.
+        /// the allocation rules specified in <c>CreateDBInstance</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -177,12 +177,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-        /// a Multi-AZ deployment.
+        /// You can't specify the <c>AvailabilityZone</c> parameter if the DB instance is a Multi-AZ
+        /// deployment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>us-east-1a</code> 
+        /// Example: <c>us-east-1a</c> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -209,15 +209,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>outposts</code> (Amazon Web Services Outposts)
+        ///  <c>outposts</c> (Amazon Web Services Outposts)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>region</code> (Amazon Web Services Region)
+        ///  <c>region</c> (Amazon Web Services Region)
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>region</code> 
+        /// Default: <c>region</c> 
         /// </para>
         ///  
         /// <para>
@@ -273,7 +273,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// The instance profile name and the associated IAM role name must start with the prefix
-        /// <code>AWSRDSCustom</code>.
+        /// <c>AWSRDSCustom</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -369,8 +369,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for <code>DBParameterGroupName</code>, then the default
-        /// <code>DBParameterGroup</code> for the specified DB engine is used.
+        /// If you do not specify a value for <c>DBParameterGroupName</c>, then the default <c>DBParameterGroup</c>
+        /// for the specified DB engine is used.
         /// </para>
         ///  
         /// <para>
@@ -425,7 +425,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbsubnetgroup</code> 
+        /// Example: <c>mydbsubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -524,7 +524,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+        /// Example: <c>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</c>
         /// 
         /// </para>
         /// </summary>
@@ -556,7 +556,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>123.124.125.126,234.235.236.237</code> 
+        /// Example: <c>123.124.125.126,234.235.236.237</c> 
         /// </para>
         /// </summary>
         public List<string> DomainDnsIps
@@ -586,7 +586,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> 
+        /// Example: <c>mymanagedADtest.mymanagedAD.mydomain</c> 
         /// </para>
         /// </summary>
         public string DomainFqdn
@@ -642,7 +642,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+        /// Example: <c>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</c>
         /// 
         /// </para>
         /// </summary>
@@ -767,55 +767,55 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db2-ae</code> 
+        ///  <c>db2-ae</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db2-se</code> 
+        ///  <c>db2-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mariadb</code> 
+        ///  <c>mariadb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mysql</code> 
+        ///  <c>mysql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee</code> 
+        ///  <c>oracle-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-ee-cdb</code> 
+        ///  <c>oracle-ee-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2</code> 
+        ///  <c>oracle-se2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>oracle-se2-cdb</code> 
+        ///  <c>oracle-se2-cdb</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>postgres</code> 
+        ///  <c>postgres</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ee</code> 
+        ///  <c>sqlserver-ee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-se</code> 
+        ///  <c>sqlserver-se</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-ex</code> 
+        ///  <c>sqlserver-ex</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sqlserver-web</code> 
+        ///  <c>sqlserver-web</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -886,8 +886,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>license-included</code> | <code>bring-your-own-license</code>
-        /// | <code>general-public-license</code> 
+        /// Valid Values: <c>license-included</c> | <c>bring-your-own-license</c> | <c>general-public-license</c>
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -951,8 +951,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't specify the <code>AvailabilityZone</code> parameter if the DB instance is
-        /// a Multi-AZ deployment.
+        /// You can't specify the <c>AvailabilityZone</c> parameter if the DB instance is a Multi-AZ
+        /// deployment.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -975,9 +975,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB instance.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -990,11 +990,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IPV4</code> 
+        ///  <c>IPV4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DUAL</code> 
+        ///  <c>DUAL</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1053,7 +1053,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value must be <code>1150-65535</code>.
+        /// The value must be <c>1150-65535</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1147,11 +1147,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.
+        /// Can't be specified if the <c>UseLatestRestorableTime</c> parameter is enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>2009-09-07T23:45:00Z</code> 
+        /// Example: <c>2009-09-07T23:45:00Z</c> 
         /// </para>
         /// </summary>
         public DateTime RestoreTimeUtc
@@ -1170,7 +1170,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBInstanceAutomatedBackupsArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the replicated automated backups from which to restore,
-        /// for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// for example, <c>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</c>.
         /// </para>
         ///  
         /// <para>
@@ -1263,12 +1263,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise,
-        /// <code>gp2</code>.
+        /// Default: <c>io1</c>, if the <c>Iops</c> parameter is specified. Otherwise, <c>gp2</c>.
         /// </para>
         ///  
         /// <para>
@@ -1276,8 +1275,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
-        /// for the <code>Iops</code> parameter.
+        /// If you specify <c>io1</c> or <c>gp3</c>, you must also include a value for the <c>Iops</c>
+        /// parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1423,7 +1422,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can't be specified if the <code>RestoreTime</code> parameter is provided.
+        /// Can't be specified if the <c>RestoreTime</c> parameter is provided.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1492,11 +1491,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>UseLatestRestorableTime</code> parameter is enabled.
+        /// Can't be specified if the <c>UseLatestRestorableTime</c> parameter is enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>2009-09-07T23:45:00Z</code> 
+        /// Example: <c>2009-09-07T23:45:00Z</c> 
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

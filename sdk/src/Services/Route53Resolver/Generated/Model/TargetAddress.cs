@@ -80,7 +80,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port at <code>Ip</code> that you want to forward DNS queries to.
+        /// The port at <c>Ip</c> that you want to forward DNS queries to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]

@@ -121,8 +121,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property InputFormat. 
         /// <para>
-        ///  The format of the source data. Valid values are <code>CSV</code>, <code>DYNAMODB_JSON</code>
-        /// or <code>ION</code>.
+        ///  The format of the source data. Valid values are <c>CSV</c>, <c>DYNAMODB_JSON</c>
+        /// or <c>ION</c>.
         /// </para>
         /// </summary>
         public InputFormat InputFormat

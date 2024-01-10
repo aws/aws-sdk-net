@@ -58,7 +58,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property IsA. 
         /// <para>
-        /// The <code>isA</code> property of the term relations.
+        /// The <c>isA</c> property of the term relations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

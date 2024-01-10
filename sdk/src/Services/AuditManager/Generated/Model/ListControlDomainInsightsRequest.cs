@@ -36,7 +36,7 @@ namespace Amazon.AuditManager.Model
     ///  <note> 
     /// <para>
     /// A control domain is listed only if at least one of the controls within that domain
-    /// collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>.
+    /// collected evidence on the <c>lastUpdated</c> date of <c>controlDomainInsights</c>.
     /// If this condition isn’t met, no data is listed for that control domain.
     /// </para>
     ///  </note>

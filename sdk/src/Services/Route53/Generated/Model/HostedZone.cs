@@ -85,9 +85,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about how to specify characters other than <code>a-z</code>, <code>0-9</code>,
-        /// and <code>-</code> (hyphen) and how to specify internationalized domain names, see
-        /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.
+        /// For information about how to specify characters other than <c>a-z</c>, <c>0-9</c>,
+        /// and <c>-</c> (hyphen) and how to specify internationalized domain names, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateHostedZone.html">CreateHostedZone</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -106,8 +105,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// The value that you specified for <code>CallerReference</code> when you created the
-        /// hosted zone.
+        /// The value that you specified for <c>CallerReference</c> when you created the hosted
+        /// zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -126,10 +125,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        /// A complex type that includes the <code>Comment</code> and <code>PrivateZone</code>
-        /// elements. If you omitted the <code>HostedZoneConfig</code> and <code>Comment</code>
-        /// elements from the request, the <code>Config</code> and <code>Comment</code> elements
-        /// don't appear in the response.
+        /// A complex type that includes the <c>Comment</c> and <c>PrivateZone</c> elements. If
+        /// you omitted the <c>HostedZoneConfig</c> and <c>Comment</c> elements from the request,
+        /// the <c>Config</c> and <c>Comment</c> elements don't appear in the response.
         /// </para>
         /// </summary>
         public HostedZoneConfig Config

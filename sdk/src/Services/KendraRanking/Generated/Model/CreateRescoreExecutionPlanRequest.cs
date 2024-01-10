@@ -31,14 +31,14 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// Container for the parameters to the CreateRescoreExecutionPlan operation.
     /// Creates a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent
-    /// Ranking resource used for provisioning the <code>Rescore</code> API. You set the number
+    /// Ranking resource used for provisioning the <c>Rescore</c> API. You set the number
     /// of capacity units that you require for Amazon Kendra Intelligent Ranking to rescore
     /// or re-rank a search service's results.
     /// 
     ///  
     /// <para>
-    /// For an example of using the <code>CreateRescoreExecutionPlan</code> API, including
-    /// using the Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-service-rerank.html">Semantically
+    /// For an example of using the <c>CreateRescoreExecutionPlan</c> API, including using
+    /// the Python and Java SDKs, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/search-service-rerank.html">Semantically
     /// ranking a search service's results</a>.
     /// </para>
     /// </summary>
@@ -76,8 +76,8 @@ namespace Amazon.KendraRanking.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a rescore execution plan.
-        /// Multiple calls to the <code>CreateRescoreExecutionPlanRequest</code> API with the
-        /// same client token will create only one rescore execution plan.
+        /// Multiple calls to the <c>CreateRescoreExecutionPlanRequest</c> API with the same client
+        /// token will create only one rescore execution plan.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -30,7 +30,7 @@ namespace Amazon.Scheduler.Model
 {
     /// <summary>
     /// The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">
-    /// <code>PutEvents</code> </a> API operation.
+    /// <c>PutEvents</c> </a> API operation.
     /// </summary>
     public partial class EventBridgeParameters
     {

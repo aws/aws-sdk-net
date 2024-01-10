@@ -57,7 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectIdentifiers. 
         /// <para>
-        /// A list of <code>ObjectIdentifiers</code> to which the policy is attached.
+        /// A list of <c>ObjectIdentifiers</c> to which the policy is attached.
         /// </para>
         /// </summary>
         public List<string> ObjectIdentifiers

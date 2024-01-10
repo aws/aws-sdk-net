@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// A single parameter to use with the <code>RecommendedAction</code> API operation to
-    /// apply the action.
+    /// A single parameter to use with the <c>RecommendedAction</c> API operation to apply
+    /// the action.
     /// </summary>
     public partial class RecommendedActionParameter
     {
@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key of the parameter to use with the <code>RecommendedAction</code> API operation.
+        /// The key of the parameter to use with the <c>RecommendedAction</c> API operation.
         /// </para>
         /// </summary>
         public string Key
@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the parameter to use with the <code>RecommendedAction</code> API operation.
+        /// The value of the parameter to use with the <c>RecommendedAction</c> API operation.
         /// </para>
         /// </summary>
         public string Value

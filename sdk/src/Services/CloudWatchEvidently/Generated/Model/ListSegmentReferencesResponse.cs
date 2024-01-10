@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use in a subsequent <code>ListSegmentReferences</code> operation to return
+        /// The token to use in a subsequent <c>ListSegmentReferences</c> operation to return
         /// the next set of results.
         /// </para>
         /// </summary>

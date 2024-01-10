@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Table. 
         /// <para>
-        /// The <code>Table</code> object that defines the specified table.
+        /// The <c>Table</c> object that defines the specified table.
         /// </para>
         /// </summary>
         public Table Table

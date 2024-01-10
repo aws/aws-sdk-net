@@ -35,8 +35,7 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
-    /// second.
+    /// You can call <c>RestoreTableFromBackup</c> at a maximum rate of 10 times per second.
     /// </para>
     ///  
     /// <para>

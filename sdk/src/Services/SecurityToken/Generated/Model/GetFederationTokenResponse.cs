@@ -67,8 +67,8 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property FederatedUser. 
         /// <para>
-        /// Identifiers for the federated user associated with the credentials (such as <code>arn:aws:sts::123456789012:federated-user/Bob</code>
-        /// or <code>123456789012:Bob</code>). You can use the federated user's ARN in your resource-based
+        /// Identifiers for the federated user associated with the credentials (such as <c>arn:aws:sts::123456789012:federated-user/Bob</c>
+        /// or <c>123456789012:Bob</c>). You can use the federated user's ARN in your resource-based
         /// policies, such as an Amazon S3 bucket policy. 
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Summary information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>
-    /// operation returns a list of <code>RepositoryAssociationSummary</code> objects.
+    /// operation returns a list of <c>RepositoryAssociationSummary</c> objects.
     /// </summary>
     public partial class RepositoryAssociationSummary
     {
@@ -86,7 +86,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property ConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection.
-        /// Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+        /// Its format is <c>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
         /// in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
         /// </para>
@@ -207,10 +207,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub
-        /// Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks
-        /// in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
+        /// If your repository <c>ProviderType</c> is <c>GitHub</c>, <c>GitHub Enterprise Server</c>,
+        /// or <c>Bitbucket</c>, CodeGuru Reviewer creates webhooks in your repository to trigger
+        /// CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository
+        /// cannot be triggered.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>

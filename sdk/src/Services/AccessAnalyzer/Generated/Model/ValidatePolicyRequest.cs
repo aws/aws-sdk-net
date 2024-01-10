@@ -152,9 +152,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property ValidatePolicyResourceType. 
         /// <para>
         /// The type of resource to attach to your resource policy. Specify a value for the policy
-        /// validation resource type only if the policy type is <code>RESOURCE_POLICY</code>.
-        /// For example, to validate a resource policy to attach to an Amazon S3 bucket, you can
-        /// choose <code>AWS::S3::Bucket</code> for the policy validation resource type.
+        /// validation resource type only if the policy type is <c>RESOURCE_POLICY</c>. For example,
+        /// to validate a resource policy to attach to an Amazon S3 bucket, you can choose <c>AWS::S3::Bucket</c>
+        /// for the policy validation resource type.
         /// </para>
         ///  
         /// <para>

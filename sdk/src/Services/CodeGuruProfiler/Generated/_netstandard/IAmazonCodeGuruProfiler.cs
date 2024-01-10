@@ -148,8 +148,8 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Used by profiler agents to report their current state and to receive remote configuration
-        /// updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether
-        /// to profile or not and for how long to return profiling data.
+        /// updates. For example, <c>ConfigureAgent</c> can be used to tell an agent whether to
+        /// profile or not and for how long to return profiling data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfigureAgent service method.</param>
         /// <param name="cancellationToken">
@@ -250,8 +250,8 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code> </a> object that contains information about
-        /// the requested profiling group.
+        /// <c>ProfilingGroupDescription</c> </a> object that contains information about the requested
+        /// profiling group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProfilingGroup service method.</param>
         /// <param name="cancellationToken">
@@ -282,8 +282,8 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html">
-        /// <code>FindingsReportSummary</code> </a> objects that contain analysis results for
-        /// all profiling groups in your AWS account.
+        /// <c>FindingsReportSummary</c> </a> objects that contain analysis results for all profiling
+        /// groups in your AWS account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindingsReportAccountSummary service method.</param>
         /// <param name="cancellationToken">
@@ -371,7 +371,7 @@ namespace Amazon.CodeGuruProfiler
         /// CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated
         /// profiles. 
         /// 
-        ///  <pre><code> &lt;note&gt; &lt;p&gt; Because aggregated profiles expire over time &lt;code&gt;GetProfile&lt;/code&gt;
+        ///  <pre><c> &lt;note&gt; &lt;p&gt; Because aggregated profiles expire over time &lt;code&gt;GetProfile&lt;/code&gt;
         /// is not idempotent. &lt;/p&gt; &lt;/note&gt; &lt;p&gt; Specify the time range for the
         /// requested aggregated profile using 1 or 2 of the following parameters: &lt;code&gt;startTime&lt;/code&gt;,
         /// &lt;code&gt;endTime&lt;/code&gt;, &lt;code&gt;period&lt;/code&gt;. The maximum time
@@ -401,7 +401,7 @@ namespace Amazon.CodeGuruProfiler
         /// for the full time range requested, then aggregated profiles for a smaller time range
         /// are returned. For example, if the requested time range is from 00:00 to 00:20, and
         /// the existing aggregated profiles are from 00:15 and 00:25, then the aggregated profiles
-        /// from 00:15 to 00:20 are returned. &lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; </code></pre>
+        /// from 00:15 to 00:20 are returned. &lt;/p&gt; &lt;/li&gt; &lt;/ol&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProfile service method.</param>
         /// <param name="cancellationToken">
@@ -432,10 +432,10 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html">
-        /// <code>Recommendation</code> </a> objects that contain recommendations for a profiling
-        /// group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html">
-        /// <code>Anomaly</code> </a> objects that contains details about anomalies detected in
-        /// the profiling group for the same time period is also returned.
+        /// <c>Recommendation</c> </a> objects that contain recommendations for a profiling group
+        /// for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html">
+        /// <c>Anomaly</c> </a> objects that contains details about anomalies detected in the
+        /// profiling group for the same time period is also returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -527,7 +527,7 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Returns a list of profiling groups. The profiling groups are returned as <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code> </a> objects.
+        /// <c>ProfilingGroupDescription</c> </a> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProfilingGroups service method.</param>
         /// <param name="cancellationToken">
@@ -580,7 +580,7 @@ namespace Amazon.CodeGuruProfiler
         /// <summary>
         /// Submits profiling data to an aggregated profile of a profiling group. To get an aggregated
         /// profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html">
-        /// <code>GetProfile</code> </a>.
+        /// <c>GetProfile</c> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PostAgentProfile service method.</param>
         /// <param name="cancellationToken">
@@ -613,9 +613,9 @@ namespace Amazon.CodeGuruProfiler
         /// Adds permissions to a profiling group's resource-based policy that are provided using
         /// an action group. If a profiling group doesn't have a resource-based policy, one is
         /// created for it using the permissions in the action group and the roles and users in
-        /// the <code>principals</code> parameter. 
+        /// the <c>principals</c> parameter. 
         /// 
-        ///  <pre><code> &lt;p&gt; The one supported action group that can be added is &lt;code&gt;agentPermission&lt;/code&gt;
+        ///  <pre><c> &lt;p&gt; The one supported action group that can be added is &lt;code&gt;agentPermission&lt;/code&gt;
         /// which grants &lt;code&gt;ConfigureAgent&lt;/code&gt; and &lt;code&gt;PostAgent&lt;/code&gt;
         /// permissions. For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html&quot;&gt;Resource-based
         /// policies in CodeGuru Profiler&lt;/a&gt; in the &lt;i&gt;Amazon CodeGuru Profiler User
@@ -627,7 +627,7 @@ namespace Amazon.CodeGuruProfiler
         /// policy. Subsequent calls must provide a &lt;code&gt;revisionId&lt;/code&gt; to specify
         /// which revision of the resource-based policy to add the permissions to. &lt;/p&gt;
         /// &lt;p&gt; The response contains the profiling group's JSON-formatted resource policy.
-        /// &lt;/p&gt; </code></pre>
+        /// &lt;/p&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPermission service method.</param>
         /// <param name="cancellationToken">
@@ -692,13 +692,13 @@ namespace Amazon.CodeGuruProfiler
 
         /// <summary>
         /// Removes permissions from a profiling group's resource-based policy that are provided
-        /// using an action group. The one supported action group that can be removed is <code>agentPermission</code>
-        /// which grants <code>ConfigureAgent</code> and <code>PostAgent</code> permissions. For
-        /// more information, see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based
+        /// using an action group. The one supported action group that can be removed is <c>agentPermission</c>
+        /// which grants <c>ConfigureAgent</c> and <c>PostAgent</c> permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/resource-based-policies.html">Resource-based
         /// policies in CodeGuru Profiler</a> in the <i>Amazon CodeGuru Profiler User Guide</i>,
         /// <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
-        /// <code>ConfigureAgent</code> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html">
-        /// <code>PostAgentProfile</code> </a>.
+        /// <c>ConfigureAgent</c> </a>, and <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_PostAgentProfile.html">
+        /// <c>PostAgentProfile</c> </a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// <param name="cancellationToken">

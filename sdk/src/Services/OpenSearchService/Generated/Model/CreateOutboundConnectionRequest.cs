@@ -82,7 +82,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionProperties. 
         /// <para>
-        /// The <code>ConnectionProperties</code> for the outbound connection.
+        /// The <c>ConnectionProperties</c> for the outbound connection.
         /// </para>
         /// </summary>
         public ConnectionProperties ConnectionProperties

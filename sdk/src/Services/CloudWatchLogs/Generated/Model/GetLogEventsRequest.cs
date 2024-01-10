@@ -49,9 +49,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can specify the log group to search by using either <code>logGroupIdentifier</code>
-    /// or <code>logGroupName</code>. You must include one of these two parameters, but you
-    /// can't include both. 
+    /// You can specify the log group to search by using either <c>logGroupIdentifier</c>
+    /// or <c>logGroupName</c>. You must include one of these two parameters, but you can't
+    /// include both. 
     /// </para>
     /// </summary>
     public partial class GetLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -85,9 +85,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The end of the time range, expressed as the number of milliseconds after <code>Jan
-        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to or later than this time
-        /// are not included.
+        /// The end of the time range, expressed as the number of milliseconds after <c>Jan 1,
+        /// 1970 00:00:00 UTC</c>. Events with a timestamp equal to or later than this time are
+        /// not included.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -132,8 +132,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
-        /// but not both. 
+        ///  You must include either <c>logGroupIdentifier</c> or <c>logGroupName</c>, but not
+        /// both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -157,8 +157,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You must include either <code>logGroupIdentifier</code> or <code>logGroupName</code>,
-        /// but not both. 
+        ///  You must include either <c>logGroupIdentifier</c> or <c>logGroupName</c>, but not
+        /// both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -222,8 +222,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are using a previous <code>nextForwardToken</code> value as the <code>nextToken</code>
-        /// in this operation, you must specify <code>true</code> for <code>startFromHead</code>.
+        /// If you are using a previous <c>nextForwardToken</c> value as the <c>nextToken</c>
+        /// in this operation, you must specify <c>true</c> for <c>startFromHead</c>.
         /// </para>
         /// </summary>
         public bool StartFromHead
@@ -241,8 +241,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The start of the time range, expressed as the number of milliseconds after <code>Jan
-        /// 1, 1970 00:00:00 UTC</code>. Events with a timestamp equal to this time or later than
+        /// The start of the time range, expressed as the number of milliseconds after <c>Jan
+        /// 1, 1970 00:00:00 UTC</c>. Events with a timestamp equal to this time or later than
         /// this time are included. Events with a timestamp earlier than this time are not included.
         /// </para>
         /// </summary>
@@ -262,13 +262,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Unmask. 
         /// <para>
-        /// Specify <code>true</code> to display the log event fields with all sensitive data
-        /// unmasked and visible. The default is <code>false</code>.
+        /// Specify <c>true</c> to display the log event fields with all sensitive data unmasked
+        /// and visible. The default is <c>false</c>.
         /// </para>
         ///  
         /// <para>
         /// To use this operation with this parameter, you must be signed into an account with
-        /// the <code>logs:Unmask</code> permission.
+        /// the <c>logs:Unmask</c> permission.
         /// </para>
         /// </summary>
         public bool Unmask

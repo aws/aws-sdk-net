@@ -81,8 +81,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  (Optional) A <code>ListResourcesAssociatedToCustomLineItemFilter</code> that can
-        /// specify the types of resources that should be retrieved. 
+        ///  (Optional) A <c>ListResourcesAssociatedToCustomLineItemFilter</c> that can specify
+        /// the types of resources that should be retrieved. 
         /// </para>
         /// </summary>
         public ListResourcesAssociatedToCustomLineItemFilter Filters

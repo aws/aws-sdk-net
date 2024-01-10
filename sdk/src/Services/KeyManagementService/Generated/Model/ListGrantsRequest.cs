@@ -46,16 +46,16 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
-    /// contains the user or role designated as the grantee principal in the grant. However,
-    /// when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code>
+    /// The <c>GranteePrincipal</c> field in the <c>ListGrants</c> response usually contains
+    /// the user or role designated as the grantee principal in the grant. However, when the
+    /// grantee principal in the grant is an Amazon Web Services service, the <c>GranteePrincipal</c>
     /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
     /// principal</a>, which might represent several different grantee principals.
     /// </para>
     ///  </note> 
     /// <para>
     ///  <b>Cross-account use</b>: Yes. To perform this operation on a KMS key in a different
-    /// Amazon Web Services account, specify the key ARN in the value of the <code>KeyId</code>
+    /// Amazon Web Services account, specify the key ARN in the value of the <c>KeyId</c>
     /// parameter.
     /// </para>
     ///  
@@ -154,11 +154,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -209,8 +209,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter in a subsequent request after you receive a response with truncated
-        /// results. Set it to the value of <code>NextMarker</code> from the truncated response
-        /// you just received.
+        /// results. Set it to the value of <c>NextMarker</c> from the truncated response you
+        /// just received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

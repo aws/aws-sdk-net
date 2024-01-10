@@ -97,7 +97,7 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For importing quick response resource, set the value to <code>QUICK_RESPONSES</code>.
+        /// For importing quick response resource, set the value to <c>QUICK_RESPONSES</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -123,8 +123,8 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For importing Amazon Q quick responses, this should be a <code>QUICK_RESPONSES</code>
-        /// type knowledge base.
+        /// For importing Amazon Q quick responses, this should be a <c>QUICK_RESPONSES</c> type
+        /// knowledge base.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -44,8 +44,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FacetResults. 
         /// <para>
-        /// Contains the facet results. A <code>FacetResult</code> contains the counts for each
-        /// field/attribute key that was specified in the <code>Facets</code> input parameter.
+        /// Contains the facet results. A <c>FacetResult</c> contains the counts for each field/attribute
+        /// key that was specified in the <c>Facets</c> input parameter.
         /// </para>
         /// </summary>
         public List<FacetResult> FacetResults
@@ -83,7 +83,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The identifier for the search. You also use <code>QueryId</code> to identify the search
+        /// The identifier for the search. You also use <c>QueryId</c> to identify the search
         /// when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">SubmitFeedback</a>
         /// API.
         /// </para>

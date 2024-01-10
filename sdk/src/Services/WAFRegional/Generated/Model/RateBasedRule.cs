@@ -42,11 +42,11 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// A <code>RateBasedRule</code> is identical to a regular <a>Rule</a>, with one addition:
-    /// a <code>RateBasedRule</code> counts the number of requests that arrive from a specified
-    /// IP address every five minutes. For example, based on recent requests that you've seen
-    /// from an attacker, you might create a <code>RateBasedRule</code> that includes the
-    /// following conditions: 
+    /// A <c>RateBasedRule</c> is identical to a regular <a>Rule</a>, with one addition: a
+    /// <c>RateBasedRule</c> counts the number of requests that arrive from a specified IP
+    /// address every five minutes. For example, based on recent requests that you've seen
+    /// from an attacker, you might create a <c>RateBasedRule</c> that includes the following
+    /// conditions: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// They contain the value <code>BadBot</code> in the <code>User-Agent</code> header.
+    /// They contain the value <c>BadBot</c> in the <c>User-Agent</c> header.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -78,9 +78,9 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property MatchPredicates. 
         /// <para>
-        /// The <code>Predicates</code> object contains one <code>Predicate</code> element for
-        /// each <a>ByteMatchSet</a>, <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that
-        /// you want to include in a <code>RateBasedRule</code>.
+        /// The <c>Predicates</c> object contains one <c>Predicate</c> element for each <a>ByteMatchSet</a>,
+        /// <a>IPSet</a>, or <a>SqlInjectionMatchSet</a> object that you want to include in a
+        /// <c>RateBasedRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,11 +99,11 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// A friendly name or description for the metrics for a <code>RateBasedRule</code>. The
-        /// name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length
-        /// 128 and minimum length one. It can't contain whitespace or metric names reserved for
-        /// AWS WAF, including "All" and "Default_Action." You can't change the name of the metric
-        /// after you create the <code>RateBasedRule</code>.
+        /// A friendly name or description for the metrics for a <c>RateBasedRule</c>. The name
+        /// can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128
+        /// and minimum length one. It can't contain whitespace or metric names reserved for AWS
+        /// WAF, including "All" and "Default_Action." You can't change the name of the metric
+        /// after you create the <c>RateBasedRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -122,8 +122,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description for a <code>RateBasedRule</code>. You can't change
-        /// the name of a <code>RateBasedRule</code> after you create it.
+        /// A friendly name or description for a <c>RateBasedRule</c>. You can't change the name
+        /// of a <c>RateBasedRule</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -143,9 +143,9 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property RateKey. 
         /// <para>
         /// The field that AWS WAF uses to determine if requests are likely arriving from single
-        /// source and thus subject to rate monitoring. The only valid value for <code>RateKey</code>
-        /// is <code>IP</code>. <code>IP</code> indicates that requests arriving from the same
-        /// IP address are subject to the <code>RateLimit</code> that is specified in the <code>RateBasedRule</code>.
+        /// source and thus subject to rate monitoring. The only valid value for <c>RateKey</c>
+        /// is <c>IP</c>. <c>IP</c> indicates that requests arriving from the same IP address
+        /// are subject to the <c>RateLimit</c> that is specified in the <c>RateBasedRule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -165,9 +165,9 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property RateLimit. 
         /// <para>
         /// The maximum number of requests, which have an identical value in the field specified
-        /// by the <code>RateKey</code>, allowed in a five-minute period. If the number of requests
-        /// exceeds the <code>RateLimit</code> and the other predicates specified in the rule
-        /// are also met, AWS WAF triggers the action that is specified for this rule.
+        /// by the <c>RateKey</c>, allowed in a five-minute period. If the number of requests
+        /// exceeds the <c>RateLimit</c> and the other predicates specified in the rule are also
+        /// met, AWS WAF triggers the action that is specified for this rule.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=100, Max=2000000000)]
@@ -186,11 +186,11 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// A unique identifier for a <code>RateBasedRule</code>. You use <code>RuleId</code>
-        /// to get more information about a <code>RateBasedRule</code> (see <a>GetRateBasedRule</a>),
-        /// update a <code>RateBasedRule</code> (see <a>UpdateRateBasedRule</a>), insert a <code>RateBasedRule</code>
-        /// into a <code>WebACL</code> or delete one from a <code>WebACL</code> (see <a>UpdateWebACL</a>),
-        /// or delete a <code>RateBasedRule</code> from AWS WAF (see <a>DeleteRateBasedRule</a>).
+        /// A unique identifier for a <c>RateBasedRule</c>. You use <c>RuleId</c> to get more
+        /// information about a <c>RateBasedRule</c> (see <a>GetRateBasedRule</a>), update a <c>RateBasedRule</c>
+        /// (see <a>UpdateRateBasedRule</a>), insert a <c>RateBasedRule</c> into a <c>WebACL</c>
+        /// or delete one from a <c>WebACL</c> (see <a>UpdateWebACL</a>), or delete a <c>RateBasedRule</c>
+        /// from AWS WAF (see <a>DeleteRateBasedRule</a>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

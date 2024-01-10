@@ -41,9 +41,9 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property CustomActions. 
         /// <para>
         /// Defines an array of individual custom action definitions that are available for use
-        /// by the stateless rules in this <code>StatelessRulesAndCustomActions</code> specification.
+        /// by the stateless rules in this <c>StatelessRulesAndCustomActions</c> specification.
         /// You name each custom action that you define, and then you can use it by name in your
-        /// <a>StatelessRule</a> <a>RuleDefinition</a> <code>Actions</code> specification.
+        /// <a>StatelessRule</a> <a>RuleDefinition</a> <c>Actions</c> specification.
         /// </para>
         /// </summary>
         public List<CustomAction> CustomActions

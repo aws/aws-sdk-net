@@ -39,7 +39,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// If you delete the certificate provider resource, the behavior of <code>CreateCertificateFromCsr</code>
+    /// If you delete the certificate provider resource, the behavior of <c>CreateCertificateFromCsr</c>
     /// will resume, and IoT will create certificates signed by IoT from a certificate signing
     /// request (CSR).
     /// </para>

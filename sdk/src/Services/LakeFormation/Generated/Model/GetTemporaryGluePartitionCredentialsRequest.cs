@@ -30,10 +30,10 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTemporaryGluePartitionCredentials operation.
-    /// This API is identical to <code>GetTemporaryTableCredentials</code> except that this
-    /// is used when the target Data Catalog resource is of type Partition. Lake Formation
-    /// restricts the permission of the vended credentials with the same scope down policy
-    /// which restricts access to a single Amazon S3 prefix.
+    /// This API is identical to <c>GetTemporaryTableCredentials</c> except that this is used
+    /// when the target Data Catalog resource is of type Partition. Lake Formation restricts
+    /// the permission of the vended credentials with the same scope down policy which restricts
+    /// access to a single Amazon S3 prefix.
     /// </summary>
     public partial class GetTemporaryGluePartitionCredentialsRequest : AmazonLakeFormationRequest
     {
@@ -123,8 +123,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property SupportedPermissionTypes. 
         /// <para>
-        /// A list of supported permission types for the partition. Valid values are <code>COLUMN_PERMISSION</code>
-        /// and <code>CELL_FILTER_PERMISSION</code>.
+        /// A list of supported permission types for the partition. Valid values are <c>COLUMN_PERMISSION</c>
+        /// and <c>CELL_FILTER_PERMISSION</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

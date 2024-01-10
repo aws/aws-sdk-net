@@ -120,37 +120,35 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATING</code> - The session is being started, including acquiring resources.
+        ///  <c>CREATING</c> - The session is being started, including acquiring resources.
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATED</code> - The session has been started.
+        ///  <c>CREATED</c> - The session has been started.
         /// </para>
         ///  
         /// <para>
-        ///  <code>IDLE</code> - The session is able to accept a calculation.
+        ///  <c>IDLE</c> - The session is able to accept a calculation.
         /// </para>
         ///  
         /// <para>
-        ///  <code>BUSY</code> - The session is processing another task and is unable to accept
-        /// a calculation.
+        ///  <c>BUSY</c> - The session is processing another task and is unable to accept a calculation.
         /// </para>
         ///  
         /// <para>
-        ///  <code>TERMINATING</code> - The session is in the process of shutting down.
+        ///  <c>TERMINATING</c> - The session is in the process of shutting down.
         /// </para>
         ///  
         /// <para>
-        ///  <code>TERMINATED</code> - The session and its resources are no longer running.
+        ///  <c>TERMINATED</c> - The session and its resources are no longer running.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DEGRADED</code> - The session has no healthy coordinators.
+        ///  <c>DEGRADED</c> - The session has no healthy coordinators.
         /// </para>
         ///  
         /// <para>
-        ///  <code>FAILED</code> - Due to a failure, the session and its resources are no longer
-        /// running.
+        ///  <c>FAILED</c> - Due to a failure, the session and its resources are no longer running.
         /// </para>
         /// </summary>
         public SessionState State

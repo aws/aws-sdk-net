@@ -40,8 +40,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  
     /// <para>
-    /// As a prerequisite to using GetCLip API, you must obtain an endpoint using <code>GetDataEndpoint</code>,
-    /// specifying GET_CLIP for<code/> the <code>APIName</code> parameter. 
+    /// As a prerequisite to using GetCLip API, you must obtain an endpoint using <c>GetDataEndpoint</c>,
+    /// specifying GET_CLIP for<code/> the <c>APIName</c> parameter. 
     /// </para>
     ///  
     /// <para>
@@ -51,9 +51,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  <ul> <li> 
     /// <para>
     /// The media must contain h.264 or h.265 encoded video and, optionally, AAC or G.711
-    /// encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
+    /// encoded audio. Specifically, the codec ID of track 1 should be <c>V_MPEG/ISO/AVC</c>
     /// (for h.264) or V_MPEGH/ISO/HEVC (for H.265). Optionally, the codec ID of track 2 should
-    /// be <code>A_AAC</code> (for AAC) or A_MS/ACM (for G.711).
+    /// be <c>A_AAC</c> (for AAC) or A_MS/ACM (for G.711).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can monitor the amount of outgoing data by monitoring the <code>GetClip.OutgoingBytes</code>
+    /// You can monitor the amount of outgoing data by monitoring the <c>GetClip.OutgoingBytes</c>
     /// Amazon CloudWatch metric. For information about using CloudWatch to monitor Kinesis
     /// Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
     /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon

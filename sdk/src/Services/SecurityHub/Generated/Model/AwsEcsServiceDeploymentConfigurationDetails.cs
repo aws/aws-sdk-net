@@ -58,18 +58,18 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaximumPercent. 
         /// <para>
-        /// For a service that uses the rolling update (<code>ECS</code>) deployment type, the
-        /// maximum number of tasks in a service that are allowed in the <code>RUNNING</code>
-        /// or <code>PENDING</code> state during a deployment, and for tasks that use the EC2
-        /// launch type, when any container instances are in the <code>DRAINING</code> state.
-        /// Provided as a percentage of the desired number of tasks. The default value is 200%.
+        /// For a service that uses the rolling update (<c>ECS</c>) deployment type, the maximum
+        /// number of tasks in a service that are allowed in the <c>RUNNING</c> or <c>PENDING</c>
+        /// state during a deployment, and for tasks that use the EC2 launch type, when any container
+        /// instances are in the <c>DRAINING</c> state. Provided as a percentage of the desired
+        /// number of tasks. The default value is 200%.
         /// </para>
         ///  
         /// <para>
-        /// For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
-        /// deployment types, and tasks that use the EC2 launch type, the maximum number of tasks
-        /// in the service that remain in the <code>RUNNING</code> state while the container instances
-        /// are in the <code>DRAINING</code> state.
+        /// For a service that uses the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c> deployment
+        /// types, and tasks that use the EC2 launch type, the maximum number of tasks in the
+        /// service that remain in the <c>RUNNING</c> state while the container instances are
+        /// in the <c>DRAINING</c> state.
         /// </para>
         ///  
         /// <para>
@@ -91,18 +91,18 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MinimumHealthyPercent. 
         /// <para>
-        /// For a service that uses the rolling update (<code>ECS</code>) deployment type, the
-        /// minimum number of tasks in a service that must remain in the <code>RUNNING</code>
-        /// state during a deployment, and while any container instances are in the <code>DRAINING</code>
-        /// state if the service contains tasks using the EC2 launch type. Expressed as a percentage
-        /// of the desired number of tasks. The default value is 100%.
+        /// For a service that uses the rolling update (<c>ECS</c>) deployment type, the minimum
+        /// number of tasks in a service that must remain in the <c>RUNNING</c> state during a
+        /// deployment, and while any container instances are in the <c>DRAINING</c> state if
+        /// the service contains tasks using the EC2 launch type. Expressed as a percentage of
+        /// the desired number of tasks. The default value is 100%.
         /// </para>
         ///  
         /// <para>
-        /// For a service that uses the blue/green (<code>CODE_DEPLOY</code>) or <code>EXTERNAL</code>
-        /// deployment types and tasks that use the EC2 launch type, the minimum number of the
-        /// tasks in the service that remain in the <code>RUNNING</code> state while the container
-        /// instances are in the <code>DRAINING</code> state.
+        /// For a service that uses the blue/green (<c>CODE_DEPLOY</c>) or <c>EXTERNAL</c> deployment
+        /// types and tasks that use the EC2 launch type, the minimum number of the tasks in the
+        /// service that remain in the <c>RUNNING</c> state while the container instances are
+        /// in the <c>DRAINING</c> state.
         /// </para>
         ///  
         /// <para>

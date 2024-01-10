@@ -688,7 +688,7 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Enables resource sharing within your organization in Organizations. This operation
-        /// creates a service-linked role called <code>AWSServiceRoleForResourceAccessManager</code>
+        /// creates a service-linked role called <c>AWSServiceRoleForResourceAccessManager</c>
         /// that has the IAM managed policy named AWSResourceAccessManagerServiceRolePolicy attached.
         /// This role permits RAM to retrieve information about the organization and its structure.
         /// This lets you share resources with all of the accounts in the calling account's organization
@@ -777,9 +777,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourcePolicies service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -819,9 +819,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShareAssociations service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -862,13 +862,12 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShareInvitations service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidMaxResultsException">
-        /// The operation failed because the specified value for <code>MaxResults</code> isn't
-        /// valid.
+        /// The operation failed because the specified value for <c>MaxResults</c> isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -910,9 +909,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShares service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -942,8 +941,8 @@ namespace Amazon.RAM
 
         /// <summary>
         /// Lists the resources in a resource share that is shared with you but for which the
-        /// invitation is still <code>PENDING</code>. That means that you haven't accepted or
-        /// rejected the invitation and the invitation hasn't expired.
+        /// invitation is still <c>PENDING</c>. That means that you haven't accepted or rejected
+        /// the invitation and the invitation hasn't expired.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPendingInvitationResources service method.</param>
         /// <param name="cancellationToken">
@@ -952,9 +951,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPendingInvitationResources service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1005,9 +1004,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPermissionAssociations service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1043,9 +1042,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPermissions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1079,9 +1078,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPermissionVersions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1123,9 +1122,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPrincipals service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1164,9 +1163,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListReplacePermissionAssociationsWork service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1198,9 +1197,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResources service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1241,9 +1240,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResourceSharePermissions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1284,9 +1283,9 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResourceTypes service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The operation failed because the specified value for <code>NextToken</code> isn't
-        /// valid. You must specify a value you received in the <code>NextToken</code> response
-        /// of a previous call to this operation.
+        /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+        /// You must specify a value you received in the <c>NextToken</c> response of a previous
+        /// call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
         /// The operation failed because a parameter you specified isn't valid.
@@ -1309,10 +1308,10 @@ namespace Amazon.RAM
 
         /// <summary>
         /// When you attach a resource-based policy to a resource, RAM automatically creates a
-        /// resource share of <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a
-        /// managed permission that has the same IAM permissions as the original resource-based
-        /// policy. However, this type of managed permission is visible to only the resource share
-        /// owner, and the associated resource share can't be modified by using RAM.
+        /// resource share of <c>featureSet</c>=<c>CREATED_FROM_POLICY</c> with a managed permission
+        /// that has the same IAM permissions as the original resource-based policy. However,
+        /// this type of managed permission is visible to only the resource share owner, and the
+        /// associated resource share can't be modified by using RAM.
         /// 
         ///  
         /// <para>
@@ -1328,22 +1327,22 @@ namespace Amazon.RAM
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// The original <code>CREATED_FROM_POLICY</code> policy isn't deleted, and resource shares
+        /// The original <c>CREATED_FROM_POLICY</c> policy isn't deleted, and resource shares
         /// using that original policy aren't automatically updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't modify a <code>CREATED_FROM_POLICY</code> resource share so you can't associate
-        /// the new customer managed permission by using <code>ReplacePermsissionAssociations</code>.
+        /// You can't modify a <c>CREATED_FROM_POLICY</c> resource share so you can't associate
+        /// the new customer managed permission by using <c>ReplacePermsissionAssociations</c>.
         /// However, if you use <a>PromoteResourceShareCreatedFromPolicy</a>, that operation automatically
         /// associates the fully manageable customer managed permission to the newly promoted
-        /// <code>STANDARD</code> resource share.
+        /// <c>STANDARD</c> resource share.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// After you promote a resource share, if the original <code>CREATED_FROM_POLICY</code>
-        /// managed permission has no other associations to A resource share, then RAM automatically
-        /// deletes it.
+        /// After you promote a resource share, if the original <c>CREATED_FROM_POLICY</c> managed
+        /// permission has no other associations to A resource share, then RAM automatically deletes
+        /// it.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -1387,15 +1386,15 @@ namespace Amazon.RAM
 
         /// <summary>
         /// When you attach a resource-based policy to a resource, RAM automatically creates a
-        /// resource share of <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a
-        /// managed permission that has the same IAM permissions as the original resource-based
-        /// policy. However, this type of managed permission is visible to only the resource share
-        /// owner, and the associated resource share can't be modified by using RAM.
+        /// resource share of <c>featureSet</c>=<c>CREATED_FROM_POLICY</c> with a managed permission
+        /// that has the same IAM permissions as the original resource-based policy. However,
+        /// this type of managed permission is visible to only the resource share owner, and the
+        /// associated resource share can't be modified by using RAM.
         /// 
         ///  
         /// <para>
-        /// This operation promotes the resource share to a <code>STANDARD</code> resource share
-        /// that is fully manageable in RAM. When you promote a resource share, you can then manage
+        /// This operation promotes the resource share to a <c>STANDARD</c> resource share that
+        /// is fully manageable in RAM. When you promote a resource share, you can then manage
         /// the resource share in RAM and it becomes visible to all of the principals you shared
         /// it with.
         /// </para>
@@ -1404,7 +1403,7 @@ namespace Amazon.RAM
         /// Before you perform this operation, you should first run <a>PromotePermissionCreatedFromPolicy</a>to
         /// ensure that you have an appropriate customer managed permission that can be associated
         /// with this resource share after its is promoted. If this operation can't find a managed
-        /// permission that exactly matches the existing <code>CREATED_FROM_POLICY</code> permission,
+        /// permission that exactly matches the existing <c>CREATED_FROM_POLICY</c> permission,
         /// then this operation fails.
         /// </para>
         ///  </important>
@@ -1525,14 +1524,14 @@ namespace Amazon.RAM
         ///  
         /// <para>
         /// You can use this operation to update all of your resource shares to use the current
-        /// default version of the permission by specifying the same value for the <code>fromPermissionArn</code>
-        /// and <code>toPermissionArn</code> parameters.
+        /// default version of the permission by specifying the same value for the <c>fromPermissionArn</c>
+        /// and <c>toPermissionArn</c> parameters.
         /// </para>
         ///  
         /// <para>
-        /// You can use the optional <code>fromPermissionVersion</code> parameter to update only
-        /// those resources that use a specified version of the managed permission to the new
-        /// managed permission.
+        /// You can use the optional <c>fromPermissionVersion</c> parameter to update only those
+        /// resources that use a specified version of the managed permission to the new managed
+        /// permission.
         /// </para>
         ///  <important> 
         /// <para>

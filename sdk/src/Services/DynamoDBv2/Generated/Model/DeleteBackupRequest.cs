@@ -34,7 +34,7 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  
     /// <para>
-    /// You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+    /// You can call <c>DeleteBackup</c> at a maximum rate of 10 times per second.
     /// </para>
     /// </summary>
     public partial class DeleteBackupRequest : AmazonDynamoDBRequest

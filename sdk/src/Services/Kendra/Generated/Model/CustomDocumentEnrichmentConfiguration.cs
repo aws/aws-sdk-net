@@ -112,9 +112,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to run <code>PreExtractionHookConfiguration</code>
-        /// and <code>PostExtractionHookConfiguration</code> for altering document metadata and
-        /// content during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// The Amazon Resource Name (ARN) of a role with permission to run <c>PreExtractionHookConfiguration</c>
+        /// and <c>PostExtractionHookConfiguration</c> for altering document metadata and content
+        /// during the document ingestion process. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
         /// roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>

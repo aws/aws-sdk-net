@@ -82,9 +82,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EndEventTime. 
         /// <para>
-        ///  Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request,
-        /// and limit imported trail events to only those events logged within a specified time
-        /// period. 
+        ///  Used with <c>StartEventTime</c> to bound a <c>StartImport</c> request, and limit
+        /// imported trail events to only those events logged within a specified time period.
+        /// 
         /// </para>
         /// </summary>
         public DateTime EndEventTime
@@ -139,9 +139,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ImportStatus. 
         /// <para>
-        ///  Shows the status of the import after a <code>StartImport</code> request. An import
-        /// finishes with a status of <code>COMPLETED</code> if there were no failures, or <code>FAILED</code>
-        /// if there were failures. 
+        ///  Shows the status of the import after a <c>StartImport</c> request. An import finishes
+        /// with a status of <c>COMPLETED</c> if there were no failures, or <c>FAILED</c> if there
+        /// were failures. 
         /// </para>
         /// </summary>
         public ImportStatus ImportStatus
@@ -159,9 +159,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property StartEventTime. 
         /// <para>
-        ///  Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request,
-        /// and limit imported trail events to only those events logged within a specified time
-        /// period. 
+        ///  Used with <c>EndEventTime</c> to bound a <c>StartImport</c> request, and limit imported
+        /// trail events to only those events logged within a specified time period. 
         /// </para>
         /// </summary>
         public DateTime StartEventTime

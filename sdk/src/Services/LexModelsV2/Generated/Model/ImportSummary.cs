@@ -138,8 +138,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ImportStatus. 
         /// <para>
-        /// The status of the resource. When the status is <code>Completed</code> the resource
-        /// is ready to build.
+        /// The status of the resource. When the status is <c>Completed</c> the resource is ready
+        /// to build.
         /// </para>
         /// </summary>
         public ImportStatus ImportStatus

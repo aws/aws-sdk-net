@@ -39,9 +39,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property CharacterOffsets. 
         /// <para>
         /// List of character intervals each describing a part of the text that was redacted.
-        /// For <code>OutputType.Raw</code>, part of the original text that contains data that
-        /// can be redacted. For <code> OutputType.Redacted</code>, part of the string with redaction
-        /// tag.
+        /// For <c>OutputType.Raw</c>, part of the original text that contains data that can be
+        /// redacted. For <c> OutputType.Redacted</c>, part of the string with redaction tag.
         /// </para>
         /// </summary>
         public List<RealTimeContactAnalysisCharacterInterval> CharacterOffsets

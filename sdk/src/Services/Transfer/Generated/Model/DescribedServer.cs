@@ -78,7 +78,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Certificate. 
         /// <para>
         /// Specifies the ARN of the Amazon Web ServicesCertificate Manager (ACM) certificate.
-        /// Required when <code>Protocols</code> is set to <code>FTPS</code>.
+        /// Required when <c>Protocols</c> is set to <c>FTPS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1600)]
@@ -157,8 +157,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property HostKeyFingerprint. 
         /// <para>
         /// Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value
-        /// is equivalent to the output of the <code>ssh-keygen -l -f my-new-server-key</code>
-        /// command.
+        /// is equivalent to the output of the <c>ssh-keygen -l -f my-new-server-key</c> command.
         /// </para>
         /// </summary>
         public string HostKeyFingerprint
@@ -177,8 +176,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
         /// Specifies information to call a customer-supplied authentication API. This field is
-        /// not populated when the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code>
-        /// or <code>SERVICE_MANAGED</code>.
+        /// not populated when the <c>IdentityProviderType</c> of a server is <c>AWS_DIRECTORY_SERVICE</c>
+        /// or <c>SERVICE_MANAGED</c>.
         /// </para>
         /// </summary>
         public IdentityProviderDetails IdentityProviderDetails
@@ -196,30 +195,27 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderType. 
         /// <para>
-        /// The mode of authentication for a server. The default value is <code>SERVICE_MANAGED</code>,
+        /// The mode of authentication for a server. The default value is <c>SERVICE_MANAGED</c>,
         /// which allows you to store and access user credentials within the Transfer Family service.
         /// </para>
         ///  
         /// <para>
-        /// Use <code>AWS_DIRECTORY_SERVICE</code> to provide access to Active Directory groups
-        /// in Directory Service for Microsoft Active Directory or Microsoft Active Directory
-        /// in your on-premises environment or in Amazon Web Services using AD Connector. This
-        /// option also requires you to provide a Directory ID by using the <code>IdentityProviderDetails</code>
-        /// parameter.
+        /// Use <c>AWS_DIRECTORY_SERVICE</c> to provide access to Active Directory groups in Directory
+        /// Service for Microsoft Active Directory or Microsoft Active Directory in your on-premises
+        /// environment or in Amazon Web Services using AD Connector. This option also requires
+        /// you to provide a Directory ID by using the <c>IdentityProviderDetails</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>API_GATEWAY</code> value to integrate with an identity provider of your
-        /// choosing. The <code>API_GATEWAY</code> setting requires you to provide an Amazon API
-        /// Gateway endpoint URL to call for authentication by using the <code>IdentityProviderDetails</code>
-        /// parameter.
+        /// Use the <c>API_GATEWAY</c> value to integrate with an identity provider of your choosing.
+        /// The <c>API_GATEWAY</c> setting requires you to provide an Amazon API Gateway endpoint
+        /// URL to call for authentication by using the <c>IdentityProviderDetails</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
+        /// Use the <c>AWS_LAMBDA</c> value to directly use an Lambda function as your identity
         /// provider. If you choose this value, you must specify the ARN for the Lambda function
-        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
-        /// data type.
+        /// in the <c>Function</c> parameter for the <c>IdentityProviderDetails</c> data type.
         /// </para>
         /// </summary>
         public IdentityProviderType IdentityProviderType
@@ -289,9 +285,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>This system is for the use of authorized users only. Individuals using this
-        /// computer system without authority, or in excess of their authority, are subject to
-        /// having all of their activities on this system monitored and recorded by system personnel.</code>
+        ///  <c>This system is for the use of authorized users only. Individuals using this computer
+        /// system without authority, or in excess of their authority, are subject to having all
+        /// of their activities on this system monitored and recorded by system personnel.</c>
         /// 
         /// </para>
         /// </summary>
@@ -315,28 +311,28 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  To indicate passive mode (for FTP and FTPS protocols), use the <code>PassiveIp</code>
-        /// parameter. Enter a single dotted-quad IPv4 address, such as the external IP address
-        /// of a firewall, router, or load balancer. 
+        ///  To indicate passive mode (for FTP and FTPS protocols), use the <c>PassiveIp</c> parameter.
+        /// Enter a single dotted-quad IPv4 address, such as the external IP address of a firewall,
+        /// router, or load balancer. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To ignore the error that is generated when the client attempts to use the <code>SETSTAT</code>
-        /// command on a file that you are uploading to an Amazon S3 bucket, use the <code>SetStatOption</code>
-        /// parameter. To have the Transfer Family server ignore the <code>SETSTAT</code> command
-        /// and upload files without needing to make any changes to your SFTP client, set the
-        /// value to <code>ENABLE_NO_OP</code>. If you set the <code>SetStatOption</code> parameter
-        /// to <code>ENABLE_NO_OP</code>, Transfer Family generates a log entry to Amazon CloudWatch
-        /// Logs, so that you can determine when the client is making a <code>SETSTAT</code> call.
+        /// To ignore the error that is generated when the client attempts to use the <c>SETSTAT</c>
+        /// command on a file that you are uploading to an Amazon S3 bucket, use the <c>SetStatOption</c>
+        /// parameter. To have the Transfer Family server ignore the <c>SETSTAT</c> command and
+        /// upload files without needing to make any changes to your SFTP client, set the value
+        /// to <c>ENABLE_NO_OP</c>. If you set the <c>SetStatOption</c> parameter to <c>ENABLE_NO_OP</c>,
+        /// Transfer Family generates a log entry to Amazon CloudWatch Logs, so that you can determine
+        /// when the client is making a <c>SETSTAT</c> call.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To determine whether your Transfer Family server resumes recent, negotiated sessions
-        /// through a unique session ID, use the <code>TlsSessionResumptionMode</code> parameter.
+        /// through a unique session ID, use the <c>TlsSessionResumptionMode</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>As2Transports</code> indicates the transport method for the AS2 messages. Currently,
+        ///  <c>As2Transports</c> indicates the transport method for the AS2 messages. Currently,
         /// only HTTP is supported.
         /// </para>
         ///  </li> </ul>
@@ -361,50 +357,48 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over
-        /// SSH
+        ///  <c>SFTP</c> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
+        ///  <c>FTPS</c> (File Transfer Protocol Secure): File transfer with TLS encryption
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
+        ///  <c>FTP</c> (File Transfer Protocol): Unencrypted file transfer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AS2</code> (Applicability Statement 2): used for transporting structured business-to-business
+        ///  <c>AS2</c> (Applicability Statement 2): used for transporting structured business-to-business
         /// data
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
-        /// If you select <code>FTPS</code>, you must choose a certificate stored in Certificate
-        /// Manager (ACM) which is used to identify your server when clients connect to it over
-        /// FTPS.
+        /// If you select <c>FTPS</c>, you must choose a certificate stored in Certificate Manager
+        /// (ACM) which is used to identify your server when clients connect to it over FTPS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then
-        /// the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code>
-        /// must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
+        /// If <c>Protocol</c> includes either <c>FTP</c> or <c>FTPS</c>, then the <c>EndpointType</c>
+        /// must be <c>VPC</c> and the <c>IdentityProviderType</c> must be either <c>AWS_DIRECTORY_SERVICE</c>,
+        /// <c>AWS_LAMBDA</c>, or <c>API_GATEWAY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>Protocol</code> includes <code>FTP</code>, then <code>AddressAllocationIds</code>
-        /// cannot be associated.
+        /// If <c>Protocol</c> includes <c>FTP</c>, then <c>AddressAllocationIds</c> cannot be
+        /// associated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
-        /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be
-        /// set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>,
-        /// <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
+        /// If <c>Protocol</c> is set only to <c>SFTP</c>, the <c>EndpointType</c> can be set
+        /// to <c>PUBLIC</c> and the <c>IdentityProviderType</c> can be set any of the supported
+        /// identity types: <c>SERVICE_MANAGED</c>, <c>AWS_DIRECTORY_SERVICE</c>, <c>AWS_LAMBDA</c>,
+        /// or <c>API_GATEWAY</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>Protocol</code> includes <code>AS2</code>, then the <code>EndpointType</code>
-        /// must be <code>VPC</code>, and domain must be Amazon S3.
+        /// If <c>Protocol</c> includes <c>AS2</c>, then the <c>EndpointType</c> must be <c>VPC</c>,
+        /// and domain must be Amazon S3.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -429,9 +423,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>.
-        /// If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
-        /// <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.
+        /// By default, home directory mappings have a <c>TYPE</c> of <c>DIRECTORY</c>. If you
+        /// enable this option, you would then need to explicitly set the <c>HomeDirectoryMapEntry</c>
+        /// <c>Type</c> to <c>FILE</c> if you want a mapping to have a file target.
         /// </para>
         /// </summary>
         public S3StorageOptions S3StorageOptions
@@ -487,16 +481,15 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The condition of the server that was described. A value of <code>ONLINE</code> indicates
-        /// that the server can accept jobs and transfer files. A <code>State</code> value of
-        /// <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+        /// The condition of the server that was described. A value of <c>ONLINE</c> indicates
+        /// that the server can accept jobs and transfer files. A <c>State</c> value of <c>OFFLINE</c>
+        /// means that the server cannot perform file transfer operations.
         /// </para>
         ///  
         /// <para>
-        /// The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server
-        /// is in an intermediate state, either not fully able to respond, or not fully offline.
-        /// The values of <code>START_FAILED</code> or <code>STOP_FAILED</code> can indicate an
-        /// error condition.
+        /// The states of <c>STARTING</c> and <c>STOPPING</c> indicate that the server is in an
+        /// intermediate state, either not fully able to respond, or not fully offline. The values
+        /// of <c>START_FAILED</c> or <c>STOP_FAILED</c> can indicate an error condition.
         /// </para>
         /// </summary>
         public State State
@@ -523,23 +516,21 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</code>
-        /// 
+        ///  <c>arn:aws:logs:region-name:amazon-account-id:log-group:log-group-name:*</c> 
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</code>
-        /// 
+        /// For example, <c>arn:aws:logs:us-east-1:111122223333:log-group:mytestgroup:*</c> 
         /// </para>
         ///  
         /// <para>
         /// If you have previously specified a log group for a server, you can clear it, and in
         /// effect turn off structured logging, by providing an empty value for this parameter
-        /// in an <code>update-server</code> call. For example:
+        /// in an <c>update-server</c> call. For example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</code>
+        ///  <c>update-server --server-id s-1234567890abcdef0 --structured-log-destinations</c>
         /// 
         /// </para>
         /// </summary>
@@ -580,7 +571,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property UserCount. 
         /// <para>
         /// Specifies the number of users that are assigned to a server you specified with the
-        /// <code>ServerId</code>.
+        /// <c>ServerId</c>.
         /// </para>
         /// </summary>
         public int UserCount
@@ -603,7 +594,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code>
+        /// In addition to a workflow to execute when a file is uploaded completely, <c>WorkflowDetails</c>
         /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
         /// upload. A partial upload occurs when the server session disconnects while the file
         /// is still being uploaded.

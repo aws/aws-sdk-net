@@ -50,7 +50,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AscendingOrder. 
         /// <para>
         ///  Determines whether suppressions are listed in ascending order by expiration date
-        /// or not. If parameter isn't provided, <code>ascendingOrder=true</code>. 
+        /// or not. If parameter isn't provided, <c>ascendingOrder=true</c>. 
         /// </para>
         /// </summary>
         public bool AscendingOrder

@@ -58,29 +58,28 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property StreamViewType. 
         /// <para>
-        ///  When an item in the table is modified, <code>StreamViewType</code> determines what
-        /// information is written to the stream for this table. Valid values for <code>StreamViewType</code>
-        /// are:
+        ///  When an item in the table is modified, <c>StreamViewType</c> determines what information
+        /// is written to the stream for this table. Valid values for <c>StreamViewType</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written
+        ///  <c>KEYS_ONLY</c> - Only the key attributes of the modified item are written to the
+        /// stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NEW_IMAGE</c> - The entire item, as it appears after it was modified, is written
         /// to the stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is
+        ///  <c>OLD_IMAGE</c> - The entire item, as it appeared before it was modified, is written
+        /// to the stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NEW_AND_OLD_IMAGES</c> - Both the new and the old item images of the item are
         /// written to the stream.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
-        /// is written to the stream.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item
-        /// are written to the stream.
         /// </para>
         ///  </li> </ul>
         /// </summary>

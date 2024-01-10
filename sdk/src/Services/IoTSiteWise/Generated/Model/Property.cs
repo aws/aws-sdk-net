@@ -47,7 +47,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property Alias. 
         /// <para>
         /// The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
+        /// (for example, <c>/company/windfarm/3/turbine/7/temperature</c>). For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
         /// industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
@@ -181,7 +181,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The property type (see <code>PropertyType</code>). A property contains one type.
+        /// The property type (see <c>PropertyType</c>). A property contains one type.
         /// </para>
         /// </summary>
         public PropertyType Type
@@ -199,7 +199,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit (such as <code>Newtons</code> or <code>RPM</code>) of the asset property.
+        /// The unit (such as <c>Newtons</c> or <c>RPM</c>) of the asset property.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

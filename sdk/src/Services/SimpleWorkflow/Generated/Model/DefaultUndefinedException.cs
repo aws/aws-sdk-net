@@ -29,15 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// The <code>StartWorkflowExecution</code> API action was called without the required
-    /// parameters set.
+    /// The <c>StartWorkflowExecution</c> API action was called without the required parameters
+    /// set.
     /// 
     ///  
     /// <para>
-    /// Some workflow execution parameters, such as the decision <code>taskList</code>, must
-    /// be set to start the execution. However, these parameters might have been set as defaults
+    /// Some workflow execution parameters, such as the decision <c>taskList</c>, must be
+    /// set to start the execution. However, these parameters might have been set as defaults
     /// when the workflow type was registered. In this case, you can omit these parameters
-    /// from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined
+    /// from the <c>StartWorkflowExecution</c> call and Amazon SWF uses the values defined
     /// in the workflow type.
     /// </para>
     ///  <note> 

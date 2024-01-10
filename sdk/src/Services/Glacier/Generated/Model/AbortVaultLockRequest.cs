@@ -30,16 +30,15 @@ namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Container for the parameters to the AbortVaultLock operation.
-    /// This operation aborts the vault locking process if the vault lock is not in the <code>Locked</code>
-    /// state. If the vault lock is in the <code>Locked</code> state when this operation is
-    /// requested, the operation returns an <code>AccessDeniedException</code> error. Aborting
-    /// the vault locking process removes the vault lock policy from the specified vault.
-    /// 
+    /// This operation aborts the vault locking process if the vault lock is not in the <c>Locked</c>
+    /// state. If the vault lock is in the <c>Locked</c> state when this operation is requested,
+    /// the operation returns an <c>AccessDeniedException</c> error. Aborting the vault locking
+    /// process removes the vault lock policy from the specified vault. 
     /// 
     ///  
     /// <para>
-    /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
-    /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+    /// A vault lock is put into the <c>InProgress</c> state by calling <a>InitiateVaultLock</a>.
+    /// A vault lock is put into the <c>Locked</c> state by calling <a>CompleteVaultLock</a>.
     /// You can get the state of a vault lock by calling <a>GetVaultLock</a>. For more information
     /// about the vault locking process, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
     /// Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
@@ -48,8 +47,8 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// This operation is idempotent. You can successfully invoke this operation multiple
-    /// times, if the vault lock is in the <code>InProgress</code> state or if there is no
-    /// policy associated with the vault.
+    /// times, if the vault lock is in the <c>InProgress</c> state or if there is no policy
+    /// associated with the vault.
     /// </para>
     /// </summary>
     public partial class AbortVaultLockRequest : AmazonGlacierRequest
@@ -60,12 +59,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> value is the AWS account ID. This value must match the
-        /// AWS account ID associated with the credentials used to sign the request. You can either
-        /// specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
-        /// case Amazon Glacier uses the AWS account ID associated with the credentials used to
-        /// sign the request. If you specify your account ID, do not include any hyphens ('-')
-        /// in the ID.
+        /// The <c>AccountId</c> value is the AWS account ID. This value must match the AWS account
+        /// ID associated with the credentials used to sign the request. You can either specify
+        /// an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon
+        /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+        /// If you specify your account ID, do not include any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

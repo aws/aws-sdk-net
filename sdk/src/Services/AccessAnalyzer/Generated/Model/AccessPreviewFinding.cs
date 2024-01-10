@@ -76,24 +76,21 @@ namespace Amazon.AccessAnalyzer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>New</code> - The finding is for newly-introduced access.
+        ///  <c>New</c> - The finding is for newly-introduced access.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unchanged</code> - The preview finding is an existing finding that would remain
-        /// unchanged.
+        ///  <c>Unchanged</c> - The preview finding is an existing finding that would remain unchanged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Changed</code> - The preview finding is an existing finding with a change in
-        /// status.
+        ///  <c>Changed</c> - The preview finding is an existing finding with a change in status.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, a <code>Changed</code> finding with preview status <code>Resolved</code>
-        /// and existing status <code>Active</code> indicates the existing <code>Active</code>
-        /// finding would become <code>Resolved</code> as a result of the proposed permissions
-        /// change.
+        /// For example, a <c>Changed</c> finding with preview status <c>Resolved</c> and existing
+        /// status <c>Active</c> indicates the existing <c>Active</c> finding would become <c>Resolved</c>
+        /// as a result of the proposed permissions change.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -339,10 +336,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The preview status of the finding. This is what the status of the finding would be
-        /// after permissions deployment. For example, a <code>Changed</code> finding with preview
-        /// status <code>Resolved</code> and existing status <code>Active</code> indicates the
-        /// existing <code>Active</code> finding would become <code>Resolved</code> as a result
-        /// of the proposed permissions change.
+        /// after permissions deployment. For example, a <c>Changed</c> finding with preview status
+        /// <c>Resolved</c> and existing status <c>Active</c> indicates the existing <c>Active</c>
+        /// finding would become <c>Resolved</c> as a result of the proposed permissions change.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -77,9 +77,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property StateReasonCode. 
         /// <para>
-        /// If this value is <code>CANARY_FAILURE</code>, an exception occurred in the canary
-        /// code. If this value is <code>EXECUTION_FAILURE</code>, an exception occurred in CloudWatch
-        /// Synthetics.
+        /// If this value is <c>CANARY_FAILURE</c>, an exception occurred in the canary code.
+        /// If this value is <c>EXECUTION_FAILURE</c>, an exception occurred in CloudWatch Synthetics.
         /// </para>
         /// </summary>
         public CanaryRunStateReasonCode StateReasonCode

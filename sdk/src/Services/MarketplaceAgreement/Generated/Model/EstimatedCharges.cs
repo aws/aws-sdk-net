@@ -43,17 +43,16 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is the total contract value if accepted terms contain <code>ConfigurableUpfrontPricingTerm</code>
-        /// or <code>FixedUpfrontPricingTerm</code>. In the case of pure contract pricing, this
-        /// will be the total value of the contract. In the case of contracts with consumption
-        /// pricing, this will only include the committed value and not include any overages that
-        /// occur.
+        /// This is the total contract value if accepted terms contain <c>ConfigurableUpfrontPricingTerm</c>
+        /// or <c>FixedUpfrontPricingTerm</c>. In the case of pure contract pricing, this will
+        /// be the total value of the contract. In the case of contracts with consumption pricing,
+        /// this will only include the committed value and not include any overages that occur.
         /// </para>
         ///  
         /// <para>
-        /// If the accepted terms contain <code>PaymentScheduleTerm</code>, it will be the total
-        /// payment schedule amount. This occurs when flexible payment schedule is used, and is
-        /// the sum of all invoice charges in the payment schedule.
+        /// If the accepted terms contain <c>PaymentScheduleTerm</c>, it will be the total payment
+        /// schedule amount. This occurs when flexible payment schedule is used, and is the sum
+        /// of all invoice charges in the payment schedule.
         /// </para>
         ///  
         /// <para>
@@ -63,10 +62,10 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  
         /// <para>
-        /// This is <code>0</code> if the accepted terms contain <code>UsageBasedPricingTerm</code>
-        /// without <code>ConfigurableUpfrontPricingTerm</code> or <code>RecurringPaymentTerm</code>.
-        /// This occurs for usage-based pricing (such as SaaS metered or AMI/container hourly
-        /// or monthly), because the exact usage is not known upfront.
+        /// This is <c>0</c> if the accepted terms contain <c>UsageBasedPricingTerm</c> without
+        /// <c>ConfigurableUpfrontPricingTerm</c> or <c>RecurringPaymentTerm</c>. This occurs
+        /// for usage-based pricing (such as SaaS metered or AMI/container hourly or monthly),
+        /// because the exact usage is not known upfront.
         /// </para>
         ///  </note>
         /// </summary>

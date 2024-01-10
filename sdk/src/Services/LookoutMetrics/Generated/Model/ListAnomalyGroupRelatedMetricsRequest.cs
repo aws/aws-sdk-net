@@ -120,8 +120,8 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property RelationshipTypeFilter. 
         /// <para>
-        /// Filter for potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>) or downstream
-        /// effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly group.
+        /// Filter for potential causes (<c>CAUSE_OF_INPUT_ANOMALY_GROUP</c>) or downstream effects
+        /// (<c>EFFECT_OF_INPUT_ANOMALY_GROUP</c>) of the anomaly group.
         /// </para>
         /// </summary>
         public RelationshipType RelationshipTypeFilter

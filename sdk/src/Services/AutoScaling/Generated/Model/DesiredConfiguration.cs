@@ -33,8 +33,8 @@ namespace Amazon.AutoScaling.Model
     /// 
     ///  
     /// <para>
-    /// If you specify a desired configuration, you must specify either a <code>LaunchTemplate</code>
-    /// or a <code>MixedInstancesPolicy</code>. 
+    /// If you specify a desired configuration, you must specify either a <c>LaunchTemplate</c>
+    /// or a <c>MixedInstancesPolicy</c>. 
     /// </para>
     /// </summary>
     public partial class DesiredConfiguration

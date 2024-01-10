@@ -116,7 +116,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mysecuritygroup</code> 
+        /// Example: <c>mysecuritygroup</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

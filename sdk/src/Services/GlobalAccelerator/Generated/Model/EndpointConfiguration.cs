@@ -69,7 +69,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is set to true, the client's IP address is preserved in the <code>X-Forwarded-For</code>
+        /// If the value is set to true, the client's IP address is preserved in the <c>X-Forwarded-For</c>
         /// request header as traffic travels to applications on the endpoint fronted by the accelerator.
         /// </para>
         ///  

@@ -59,7 +59,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The ARN of the IAM principal for the <code>AccessEntry</code>.
+        /// The ARN of the IAM principal for the <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

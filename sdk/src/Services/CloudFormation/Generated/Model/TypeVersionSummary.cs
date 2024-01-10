@@ -88,7 +88,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// This applies only to private extensions you have registered in your account, and extensions
-        /// published by Amazon. For public third-party extensions, CloudFormation returns <code>null</code>.
+        /// published by Amazon. For public third-party extensions, CloudFormation returns <c>null</c>.
         /// </para>
         /// </summary>
         public bool IsDefaultVersion
@@ -109,13 +109,13 @@ namespace Amazon.CloudFormation.Model
         /// For public extensions that have been activated for this account and Region, the version
         /// of the public extension to be used for CloudFormation operations in this account and
         /// Region. For any extensions other than activated third-arty extensions, CloudFormation
-        /// returns <code>null</code>.
+        /// returns <c>null</c>.
         /// </para>
         ///  
         /// <para>
-        /// How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extension in this account and Region when
-        /// a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
+        /// How you specified <c>AutoUpdate</c> when enabling the extension affects whether CloudFormation
+        /// automatically updates the extension in this account and Region when a new version
+        /// is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
         /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
         /// User Guide</i>.
         /// </para>

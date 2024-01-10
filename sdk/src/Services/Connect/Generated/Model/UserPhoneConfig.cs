@@ -45,8 +45,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When returned by a <code>SearchUsers</code> call, <code>AfterContactWorkTimeLimit</code>
-        /// is returned in milliseconds. 
+        /// When returned by a <c>SearchUsers</c> call, <c>AfterContactWorkTimeLimit</c> is returned
+        /// in milliseconds. 
         /// </para>
         ///  </note>
         /// </summary>

@@ -44,7 +44,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property AnomalyInstanceId. 
         /// <para>
         /// The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html">
-        /// <code>AnomalyInstance</code> </a> object that is included in the analysis data.
+        /// <c>AnomalyInstance</c> </a> object that is included in the analysis data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The feedback tpye. Thee are two valid values, <code>Positive</code> and <code>Negative</code>.
+        ///  The feedback tpye. Thee are two valid values, <c>Positive</c> and <c>Negative</c>.
         /// 
         /// </para>
         /// </summary>

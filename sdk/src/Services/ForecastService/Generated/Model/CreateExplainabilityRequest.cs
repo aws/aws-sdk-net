@@ -66,8 +66,8 @@ namespace Amazon.ForecastService.Model
     ///  <note> 
     /// <para>
     /// You can only have one Explainability resource per predictor. If you already enabled
-    /// <code>ExplainPredictor</code> in <a>CreateAutoPredictor</a>, that predictor already
-    /// has an Explainability resource.
+    /// <c>ExplainPredictor</c> in <a>CreateAutoPredictor</a>, that predictor already has
+    /// an Explainability resource.
     /// </para>
     ///  </note> 
     /// <para>
@@ -75,19 +75,19 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ExplainabilityName</code> - A unique name for the Explainability.
+    ///  <c>ExplainabilityName</c> - A unique name for the Explainability.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ResourceArn</code> - The Arn of the predictor.
+    ///  <c>ResourceArn</c> - The Arn of the predictor.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TimePointGranularity</code> - Must be set to “ALL”.
+    ///  <c>TimePointGranularity</c> - Must be set to “ALL”.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TimeSeriesGranularity</code> - Must be set to “ALL”.
+    ///  <c>TimeSeriesGranularity</c> - Must be set to “ALL”.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -95,19 +95,19 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DataSource</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
+    ///  <c>DataSource</c> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Schema</code> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
+    ///  <c>Schema</c> - Only valid when TimeSeriesGranularity is “SPECIFIC”.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StartDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.
+    ///  <c>StartDateTime</c> - Only valid when TimePointGranularity is “SPECIFIC”.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>EndDateTime</code> - Only valid when TimePointGranularity is “SPECIFIC”.
+    ///  <c>EndDateTime</c> - Only valid when TimePointGranularity is “SPECIFIC”.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -123,19 +123,19 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ExplainabilityName</code> - A unique name for the Explainability.
+    ///  <c>ExplainabilityName</c> - A unique name for the Explainability.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ResourceArn</code> - The Arn of the forecast.
+    ///  <c>ResourceArn</c> - The Arn of the forecast.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TimePointGranularity</code> - Either “ALL” or “SPECIFIC”.
+    ///  <c>TimePointGranularity</c> - Either “ALL” or “SPECIFIC”.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TimeSeriesGranularity</code> - Either “ALL” or “SPECIFIC”.
+    ///  <c>TimeSeriesGranularity</c> - Either “ALL” or “SPECIFIC”.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -143,12 +143,12 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DataSource</code> - The S3 location of the CSV file specifying your time series.
+    ///  <c>DataSource</c> - The S3 location of the CSV file specifying your time series.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Schema</code> - The Schema defines the attributes and attribute types listed
-    /// in the Data Source.
+    ///  <c>Schema</c> - The Schema defines the attributes and attribute types listed in the
+    /// Data Source.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -156,11 +156,11 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>StartDateTime</code> - The first timestamp in the range of time points.
+    ///  <c>StartDateTime</c> - The first timestamp in the range of time points.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>EndDateTime</code> - The last timestamp in the range of time points.
+    ///  <c>EndDateTime</c> - The last timestamp in the range of time points.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -213,8 +213,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EndDateTime. 
         /// <para>
-        /// If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the last
-        /// time point for the Explainability.
+        /// If <c>TimePointGranularity</c> is set to <c>SPECIFIC</c>, define the last time point
+        /// for the Explainability.
         /// </para>
         ///  
         /// <para>
@@ -310,8 +310,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property StartDateTime. 
         /// <para>
-        /// If <code>TimePointGranularity</code> is set to <code>SPECIFIC</code>, define the first
-        /// point for the Explainability.
+        /// If <c>TimePointGranularity</c> is set to <c>SPECIFIC</c>, define the first point for
+        /// the Explainability.
         /// </para>
         ///  
         /// <para>
@@ -366,12 +366,11 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key prefixes cannot include any upper or lowercase combination of <code>aws:</code>
-        /// or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, Forecast considers it to be a user tag and will
-        /// count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit. You cannot edit or delete tag keys
-        /// with this prefix.
+        /// Key prefixes cannot include any upper or lowercase combination of <c>aws:</c> or <c>AWS:</c>.
+        /// Values can have this prefix. If a tag value has <c>aws</c> as its prefix but the key
+        /// does not, Forecast considers it to be a user tag and will count against the limit
+        /// of 50 tags. Tags with only the key prefix of <c>aws</c> do not count against your
+        /// tags per resource limit. You cannot edit or delete tag keys with this prefix.
         /// </para>
         ///  </li> </ul>
         /// </summary>

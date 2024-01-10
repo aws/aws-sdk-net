@@ -243,7 +243,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LoadBalancerOptions. 
         /// <para>
         /// The load balancer details if creating the Amazon Web Services Verified Access endpoint
-        /// as <code>load-balancer</code>type.
+        /// as <c>load-balancer</c>type.
         /// </para>
         /// </summary>
         public VerifiedAccessEndpointLoadBalancerOptions LoadBalancerOptions

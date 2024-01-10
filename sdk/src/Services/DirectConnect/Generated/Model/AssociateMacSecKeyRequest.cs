@@ -35,8 +35,8 @@ namespace Amazon.DirectConnect.Model
     /// 
     ///  
     /// <para>
-    /// You must supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code>
-    /// and <code>cak</code>) pair in the request.
+    /// You must supply either the <c>secretARN,</c> or the CKN/CAK (<c>ckn</c> and <c>cak</c>)
+    /// pair in the request.
     /// </para>
     ///  
     /// <para>
@@ -66,8 +66,8 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use this request parameter, you must use the <code>ckn</code> request parameter
-        /// and not use the <code>secretARN</code> request parameter.
+        /// If you use this request parameter, you must use the <c>ckn</c> request parameter and
+        /// not use the <c>secretARN</c> request parameter.
         /// </para>
         /// </summary>
         public string Cak
@@ -97,8 +97,8 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use this request parameter, you must use the <code>cak</code> request parameter
-        /// and not use the <code>secretARN</code> request parameter.
+        /// If you use this request parameter, you must use the <c>cak</c> request parameter and
+        /// not use the <c>secretARN</c> request parameter.
         /// </para>
         /// </summary>
         public string Ckn
@@ -150,8 +150,8 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code>
-        /// request parameters.
+        /// If you use this request parameter, you do not use the <c>ckn</c> and <c>cak</c> request
+        /// parameters.
         /// </para>
         /// </summary>
         public string SecretARN

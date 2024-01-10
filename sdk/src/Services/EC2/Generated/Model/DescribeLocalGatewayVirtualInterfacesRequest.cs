@@ -46,37 +46,37 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>local-address</code> - The local address.
+        ///  <c>local-address</c> - The local address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>local-bgp-asn</code> - The Border Gateway Protocol (BGP) Autonomous System
-        /// Number (ASN) of the local gateway.
+        ///  <c>local-bgp-asn</c> - The Border Gateway Protocol (BGP) Autonomous System Number
+        /// (ASN) of the local gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>local-gateway-id</code> - The ID of the local gateway.
+        ///  <c>local-gateway-id</c> - The ID of the local gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>local-gateway-virtual-interface-id</code> - The ID of the virtual interface.
+        ///  <c>local-gateway-virtual-interface-id</c> - The ID of the virtual interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local
-        /// gateway virtual interface.
+        ///  <c>owner-id</c> - The ID of the Amazon Web Services account that owns the local gateway
+        /// virtual interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>peer-address</code> - The peer address.
+        ///  <c>peer-address</c> - The peer address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>peer-bgp-asn</code> - The peer BGP ASN.
+        ///  <c>peer-bgp-asn</c> - The peer BGP ASN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vlan</code> - The ID of the VLAN.
+        ///  <c>vlan</c> - The ID of the VLAN.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -114,7 +114,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

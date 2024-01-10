@@ -42,9 +42,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of time used by the <code>Value</code> parameter to determine if a file can
-        /// be released, based on when it was last accessed. <code>DAYS</code> is the only supported
-        /// value. This is a required parameter.
+        /// The unit of time used by the <c>Value</c> parameter to determine if a file can be
+        /// released, based on when it was last accessed. <c>DAYS</c> is the only supported value.
+        /// This is a required parameter.
         /// </para>
         /// </summary>
         public Unit Unit
@@ -63,16 +63,16 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// An integer that represents the minimum amount of time (in days) since a file was last
-        /// accessed in the file system. Only exported files with a <code>MAX(atime, ctime, mtime)</code>
+        /// accessed in the file system. Only exported files with a <c>MAX(atime, ctime, mtime)</c>
         /// timestamp that is more than this amount of time in the past (relative to the task
-        /// create time) will be released. The default of <code>Value</code> is <code>0</code>.
-        /// This is a required parameter.
+        /// create time) will be released. The default of <c>Value</c> is <c>0</c>. This is a
+        /// required parameter.
         /// </para>
         ///  <note> 
         /// <para>
         /// If an exported file meets the last accessed time criteria, its file or directory path
-        /// must also be specified in the <code>Paths</code> parameter of the operation in order
-        /// for the file to be released.
+        /// must also be specified in the <c>Paths</c> parameter of the operation in order for
+        /// the file to be released.
         /// </para>
         ///  </note>
         /// </summary>

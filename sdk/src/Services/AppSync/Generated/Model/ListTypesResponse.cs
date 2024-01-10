@@ -59,7 +59,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// The <code>Type</code> objects.
+        /// The <c>Type</c> objects.
         /// </para>
         /// </summary>
         public List<Type> Types

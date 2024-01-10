@@ -49,8 +49,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CreatorRequestId</code> can be any unique string, for example, a date/time
-        /// stamp.
+        ///  <c>CreatorRequestId</c> can be any unique string, for example, a date/time stamp.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -109,7 +108,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property OutpostArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Outpost. If you specify this, you must also
-        /// specify a value for the <code>PreferredInstanceType</code>.
+        /// specify a value for the <c>PreferredInstanceType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -129,7 +128,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property PreferredInstanceType. 
         /// <para>
         ///  The Amazon EC2 instance type. If you specify this, you must also specify a value
-        /// for the <code>OutpostArn</code>. 
+        /// for the <c>OutpostArn</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

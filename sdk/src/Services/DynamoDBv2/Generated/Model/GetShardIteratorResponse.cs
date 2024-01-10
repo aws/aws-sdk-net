@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetShardIterator</code> operation.
+    /// Represents the output of a <c>GetShardIterator</c> operation.
     /// </summary>
     public partial class GetShardIteratorResponse : AmazonWebServiceResponse
     {

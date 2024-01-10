@@ -30,10 +30,10 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// WAF is not able to access the service linked role. This can be caused by a previous
-    /// <code>PutLoggingConfiguration</code> request, which can lock the service linked role
-    /// for about 20 seconds. Please try your request again. The service linked role can also
-    /// be locked by a previous <code>DeleteServiceLinkedRole</code> request, which can lock
-    /// the role for 15 minutes or more. If you recently made a call to <code>DeleteServiceLinkedRole</code>,
+    /// <c>PutLoggingConfiguration</c> request, which can lock the service linked role for
+    /// about 20 seconds. Please try your request again. The service linked role can also
+    /// be locked by a previous <c>DeleteServiceLinkedRole</c> request, which can lock the
+    /// role for 15 minutes or more. If you recently made a call to <c>DeleteServiceLinkedRole</c>,
     /// wait at least 15 minutes and try the request again. If you receive this same exception
     /// again, you will have to wait additional time until the role is unlocked.
     /// </summary>

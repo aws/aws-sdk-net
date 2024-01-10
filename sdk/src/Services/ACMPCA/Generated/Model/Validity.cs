@@ -37,11 +37,11 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  
     /// <para>
-    /// Amazon Web Services Private CA API consumes the <code>Validity</code> data type differently
-    /// in two distinct parameters of the <code>IssueCertificate</code> action. The required
-    /// parameter <code>IssueCertificate</code>:<code>Validity</code> specifies the end of
-    /// a certificate's validity period. The optional parameter <code>IssueCertificate</code>:<code>ValidityNotBefore</code>
-    /// specifies a customized starting time for the validity period.
+    /// Amazon Web Services Private CA API consumes the <c>Validity</c> data type differently
+    /// in two distinct parameters of the <c>IssueCertificate</c> action. The required parameter
+    /// <c>IssueCertificate</c>:<c>Validity</c> specifies the end of a certificate's validity
+    /// period. The optional parameter <c>IssueCertificate</c>:<c>ValidityNotBefore</c> specifies
+    /// a customized starting time for the validity period.
     /// </para>
     /// </summary>
     public partial class Validity
@@ -52,17 +52,16 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Determines how <i>Amazon Web Services Private CA</i> interprets the <code>Value</code>
-        /// parameter, an integer. Supported validity types include those listed below. Type definitions
+        /// Determines how <i>Amazon Web Services Private CA</i> interprets the <c>Value</c> parameter,
+        /// an integer. Supported validity types include those listed below. Type definitions
         /// with values include a sample input value and the resulting output. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>END_DATE</code>: The specific date and time when the certificate will expire,
-        /// expressed using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format.
-        /// When UTCTime is used, if the year field (YY) is greater than or equal to 50, the year
-        /// is interpreted as 19YY. If the year field is less than 50, the year is interpreted
-        /// as 20YY.
+        ///  <c>END_DATE</c>: The specific date and time when the certificate will expire, expressed
+        /// using UTCTime (YYMMDDHHMMSS) or GeneralizedTime (YYYYMMDDHHMMSS) format. When UTCTime
+        /// is used, if the year field (YY) is greater than or equal to 50, the year is interpreted
+        /// as 19YY. If the year field is less than 50, the year is interpreted as 20YY.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -74,8 +73,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>ABSOLUTE</code>: The specific date and time when the validity of a certificate
-        /// will start or expire, expressed in seconds since the Unix Epoch. 
+        ///  <c>ABSOLUTE</c>: The specific date and time when the validity of a certificate will
+        /// start or expire, expressed in seconds since the Unix Epoch. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -87,13 +86,12 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>DAYS</code>, <code>MONTHS</code>, <code>YEARS</code>: The relative time from
-        /// the moment of issuance until the certificate will expire, expressed in days, months,
-        /// or years. 
+        ///  <c>DAYS</c>, <c>MONTHS</c>, <c>YEARS</c>: The relative time from the moment of issuance
+        /// until the certificate will expire, expressed in days, months, or years. 
         /// </para>
         ///  
         /// <para>
-        /// Example if <code>DAYS</code>, issued on 10/12/2020 at 12:34:54 UTC:
+        /// Example if <c>DAYS</c>, issued on 10/12/2020 at 12:34:54 UTC:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -105,9 +103,9 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The minimum validity duration for a certificate using relative time (<code>DAYS</code>)
-        /// is one day. The minimum validity for a certificate using absolute time (<code>ABSOLUTE</code>
-        /// or <code>END_DATE</code>) is one second.
+        /// The minimum validity duration for a certificate using relative time (<c>DAYS</c>)
+        /// is one day. The minimum validity for a certificate using absolute time (<c>ABSOLUTE</c>
+        /// or <c>END_DATE</c>) is one second.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +124,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A long integer interpreted according to the value of <code>Type</code>, below.
+        /// A long integer interpreted according to the value of <c>Type</c>, below.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

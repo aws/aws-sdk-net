@@ -31,37 +31,37 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// If using automatic language identification in your request and you want to apply a
     /// custom language model, a custom vocabulary, or a custom vocabulary filter, include
-    /// <code>LanguageIdSettings</code> with the relevant sub-parameters (<code>VocabularyName</code>,
-    /// <code>LanguageModelName</code>, and <code>VocabularyFilterName</code>). Note that
-    /// multi-language identification (<code>IdentifyMultipleLanguages</code>) doesn't support
-    /// custom language models.
+    /// <c>LanguageIdSettings</c> with the relevant sub-parameters (<c>VocabularyName</c>,
+    /// <c>LanguageModelName</c>, and <c>VocabularyFilterName</c>). Note that multi-language
+    /// identification (<c>IdentifyMultipleLanguages</c>) doesn't support custom language
+    /// models.
     /// 
     ///  
     /// <para>
-    ///  <code>LanguageIdSettings</code> supports two to five language codes. Each language
-    /// code you include can have an associated custom language model, custom vocabulary,
-    /// and custom vocabulary filter. The language codes that you specify must match the languages
-    /// of the associated custom language models, custom vocabularies, and custom vocabulary
+    ///  <c>LanguageIdSettings</c> supports two to five language codes. Each language code
+    /// you include can have an associated custom language model, custom vocabulary, and custom
+    /// vocabulary filter. The language codes that you specify must match the languages of
+    /// the associated custom language models, custom vocabularies, and custom vocabulary
     /// filters.
     /// </para>
     ///  
     /// <para>
-    /// It's recommended that you include <code>LanguageOptions</code> when using <code>LanguageIdSettings</code>
+    /// It's recommended that you include <c>LanguageOptions</c> when using <c>LanguageIdSettings</c>
     /// to ensure that the correct language dialect is identified. For example, if you specify
-    /// a custom vocabulary that is in <code>en-US</code> but Amazon Transcribe determines
-    /// that the language spoken in your media is <code>en-AU</code>, your custom vocabulary
-    /// <i>is not</i> applied to your transcription. If you include <code>LanguageOptions</code>
-    /// and include <code>en-US</code> as the only English language dialect, your custom vocabulary
-    /// <i>is</i> applied to your transcription.
+    /// a custom vocabulary that is in <c>en-US</c> but Amazon Transcribe determines that
+    /// the language spoken in your media is <c>en-AU</c>, your custom vocabulary <i>is not</i>
+    /// applied to your transcription. If you include <c>LanguageOptions</c> and include <c>en-US</c>
+    /// as the only English language dialect, your custom vocabulary <i>is</i> applied to
+    /// your transcription.
     /// </para>
     ///  
     /// <para>
     /// If you want to include a custom language model with your request but <b>do not</b>
     /// want to use automatic language identification, use instead the <code/> parameter with
-    /// the <code>LanguageModelName</code> sub-parameter. If you want to include a custom
-    /// vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b>
-    /// want to use automatic language identification, use instead the <code/> parameter with
-    /// the <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both) sub-parameter.
+    /// the <c>LanguageModelName</c> sub-parameter. If you want to include a custom vocabulary
+    /// or a custom vocabulary filter (or both) with your request but <b>do not</b> want to
+    /// use automatic language identification, use instead the <code/> parameter with the
+    /// <c>VocabularyName</c> or <c>VocabularyFilterName</c> (or both) sub-parameter.
     /// </para>
     /// </summary>
     public partial class LanguageIdSettings
@@ -112,8 +112,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>VocabularyFilterName</code> in your request, you must
-        /// also include <code>VocabularyFilterMethod</code>.
+        /// Note that if you include <c>VocabularyFilterName</c> in your request, you must also
+        /// include <c>VocabularyFilterMethod</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

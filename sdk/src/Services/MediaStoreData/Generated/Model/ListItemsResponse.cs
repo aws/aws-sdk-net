@@ -58,8 +58,8 @@ namespace Amazon.MediaStoreData.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token that can be used in a request to view the next set of results. For example,
-        /// you submit a <code>ListItems</code> request that matches 2,000 items with <code>MaxResults</code>
-        /// set at 500. The service returns the first batch of results (up to 500) and a <code>NextToken</code>
+        /// you submit a <c>ListItems</c> request that matches 2,000 items with <c>MaxResults</c>
+        /// set at 500. The service returns the first batch of results (up to 500) and a <c>NextToken</c>
         /// value that can be used to fetch the next batch of results.
         /// </para>
         /// </summary>

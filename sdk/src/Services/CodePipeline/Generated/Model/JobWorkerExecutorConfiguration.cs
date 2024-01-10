@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Details about the polling configuration for the <code>JobWorker</code> action engine,
-    /// or executor.
+    /// Details about the polling configuration for the <c>JobWorker</c> action engine, or
+    /// executor.
     /// </summary>
     public partial class JobWorkerExecutorConfiguration
     {

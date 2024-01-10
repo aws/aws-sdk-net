@@ -162,7 +162,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;,&lt;instance-id-3&gt;</code>
+        ///  <c>Key=InstanceIds,Values=&lt;instance-id-1&gt;,&lt;instance-id-2&gt;,&lt;instance-id-3&gt;</c>
         /// 
         /// </para>
         ///  
@@ -171,7 +171,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=tag:&lt;my-tag-key&gt;,Values=&lt;my-tag-value-1&gt;,&lt;my-tag-value-2&gt;</code>
+        ///  <c>Key=tag:&lt;my-tag-key&gt;,Values=&lt;my-tag-value-1&gt;,&lt;my-tag-value-2&gt;</c>
         /// 
         /// </para>
         ///  
@@ -180,7 +180,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=tag-key,Values=&lt;my-tag-key-1&gt;,&lt;my-tag-key-2&gt;</code> 
+        ///  <c>Key=tag-key,Values=&lt;my-tag-key-1&gt;,&lt;my-tag-key-2&gt;</c> 
         /// </para>
         ///  
         /// <para>
@@ -188,7 +188,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=resource-groups:Name,Values=&lt;resource-group-name&gt;</code> 
+        ///  <c>Key=resource-groups:Name,Values=&lt;resource-group-name&gt;</c> 
         /// </para>
         ///  
         /// <para>
@@ -196,17 +196,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=resource-groups:ResourceTypeFilters,Values=&lt;resource-type-1&gt;,&lt;resource-type-2&gt;</code>
+        ///  <c>Key=resource-groups:ResourceTypeFilters,Values=&lt;resource-type-1&gt;,&lt;resource-type-2&gt;</c>
         /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For <code>Key=resource-groups:ResourceTypeFilters</code>, specify resource types in
-        /// the following format
+        /// For <c>Key=resource-groups:ResourceTypeFilters</c>, specify resource types in the
+        /// following format
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</code>
+        ///  <c>Key=resource-groups:ResourceTypeFilters,Values=AWS::EC2::INSTANCE,AWS::EC2::VPC</c>
         /// 
         /// </para>
         ///  </note> 

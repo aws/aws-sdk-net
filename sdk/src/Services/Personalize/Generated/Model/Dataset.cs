@@ -250,8 +250,8 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property TrackingId. 
         /// <para>
         /// The ID of the event tracker for an Action interactions dataset. You specify the tracker's
-        /// ID in the <code>PutActionInteractions</code> API operation. Amazon Personalize uses
-        /// it to direct new data to the Action interactions dataset in your dataset group.
+        /// ID in the <c>PutActionInteractions</c> API operation. Amazon Personalize uses it to
+        /// direct new data to the Action interactions dataset in your dataset group.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

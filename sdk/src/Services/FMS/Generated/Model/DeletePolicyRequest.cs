@@ -40,7 +40,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property DeleteAllPolicyResources. 
         /// <para>
-        /// If <code>True</code>, the request performs cleanup according to the policy type. 
+        /// If <c>True</c>, the request performs cleanup according to the policy type. 
         /// </para>
         ///  
         /// <para>
@@ -74,7 +74,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// For security group common policies, even if set to <code>False</code>, Firewall Manager
+        /// For security group common policies, even if set to <c>False</c>, Firewall Manager
         /// deletes all security groups created by Firewall Manager that aren't associated with
         /// any other resources through another policy.
         /// </para>
@@ -104,8 +104,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the policy that you want to delete. You can retrieve this ID from <code>PutPolicy</code>
-        /// and <code>ListPolicies</code>.
+        /// The ID of the policy that you want to delete. You can retrieve this ID from <c>PutPolicy</c>
+        /// and <c>ListPolicies</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

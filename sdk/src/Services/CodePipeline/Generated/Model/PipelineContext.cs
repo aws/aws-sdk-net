@@ -33,9 +33,9 @@ namespace Amazon.CodePipeline.Model
     /// 
     ///  <note> 
     /// <para>
-    /// PipelineContext contains <code>pipelineArn</code> and <code>pipelineExecutionId</code>
-    /// for custom action jobs. The <code>pipelineArn</code> and <code>pipelineExecutionId</code>
-    /// fields are not populated for ThirdParty action jobs.
+    /// PipelineContext contains <c>pipelineArn</c> and <c>pipelineExecutionId</c> for custom
+    /// action jobs. The <c>pipelineArn</c> and <c>pipelineExecutionId</c> fields are not
+    /// populated for ThirdParty action jobs.
     /// </para>
     ///  </note>
     /// </summary>

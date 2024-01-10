@@ -85,7 +85,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityControlArn. 
         /// <para>
-        ///  The ARN of a security control across standards, such as <code>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</code>.
+        ///  The ARN of a security control across standards, such as <c>arn:aws:securityhub:eu-central-1:123456789012:security-control/S3.1</c>.
         /// This parameter doesn't mention a specific standard. 
         /// </para>
         /// </summary>

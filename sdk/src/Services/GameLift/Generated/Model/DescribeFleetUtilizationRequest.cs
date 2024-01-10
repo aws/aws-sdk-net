@@ -58,8 +58,8 @@ namespace Amazon.GameLift.Model
     /// <para>
     /// If successful, a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_FleetUtilization.html">FleetUtilization</a>
     /// object is returned for each requested fleet ID, unless the fleet identifier is not
-    /// found. Each fleet utilization object includes a <code>Location</code> property, which
-    /// is set to the fleet's home Region. 
+    /// found. Each fleet utilization object includes a <c>Location</c> property, which is
+    /// set to the fleet's home Region. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -112,7 +112,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages. This parameter is ignored when the request
         /// specifies one or a list of fleet IDs.
         /// </para>

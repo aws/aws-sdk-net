@@ -87,21 +87,21 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ONBOARDING</code> - The account is onboarding to Firewall Manager as an administrator.
+        ///  <c>ONBOARDING</c> - The account is onboarding to Firewall Manager as an administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ONBOARDING_COMPLETE</code> - Firewall Manager The account is onboarded to Firewall
+        ///  <c>ONBOARDING_COMPLETE</c> - Firewall Manager The account is onboarded to Firewall
         /// Manager as an administrator, and can perform actions on the resources defined in their
         /// <a>AdminScope</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OFFBOARDING</code> - The account is being removed as an Firewall Manager administrator.
+        ///  <c>OFFBOARDING</c> - The account is being removed as an Firewall Manager administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an Firewall Manager
+        ///  <c>OFFBOARDING_COMPLETE</c> - The account has been removed as an Firewall Manager
         /// administrator.
         /// </para>
         ///  </li> </ul>

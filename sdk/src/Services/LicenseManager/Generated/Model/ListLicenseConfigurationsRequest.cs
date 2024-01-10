@@ -46,19 +46,19 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>licenseCountingType</code> - The dimension for which licenses are counted.
-        /// Possible values are <code>vCPU</code> | <code>Instance</code> | <code>Core</code>
-        /// | <code>Socket</code>. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        ///  <c>licenseCountingType</c> - The dimension for which licenses are counted. Possible
+        /// values are <c>vCPU</c> | <c>Instance</c> | <c>Core</c> | <c>Socket</c>. Logical operators
+        /// are <c>EQUALS</c> | <c>NOT_EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>enforceLicenseCount</code> - A Boolean value that indicates whether hard license
-        /// enforcement is used. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        ///  <c>enforceLicenseCount</c> - A Boolean value that indicates whether hard license
+        /// enforcement is used. Logical operators are <c>EQUALS</c> | <c>NOT_EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>usagelimitExceeded</code> - A Boolean value that indicates whether the available
-        /// licenses have been exceeded. Logical operators are <code>EQUALS</code> | <code>NOT_EQUALS</code>.
+        ///  <c>usagelimitExceeded</c> - A Boolean value that indicates whether the available
+        /// licenses have been exceeded. Logical operators are <c>EQUALS</c> | <c>NOT_EQUALS</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

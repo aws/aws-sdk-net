@@ -164,7 +164,7 @@ namespace Amazon.DirectConnect
         /// <para>
         /// Virtual interfaces created using this action must be confirmed by the owner using
         /// <a>ConfirmPrivateVirtualInterface</a>. Until then, the virtual interface is in the
-        /// <code>Confirming</code> state and is not available to handle traffic.
+        /// <c>Confirming</c> state and is not available to handle traffic.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocatePrivateVirtualInterface service method.</param>
@@ -207,7 +207,7 @@ namespace Amazon.DirectConnect
         /// <para>
         /// Virtual interfaces created using this function must be confirmed by the owner using
         /// <a>ConfirmPublicVirtualInterface</a>. Until this step has been completed, the virtual
-        /// interface is in the <code>confirming</code> state and is not available to handle traffic.
+        /// interface is in the <c>confirming</c> state and is not available to handle traffic.
         /// </para>
         ///  
         /// <para>
@@ -257,7 +257,7 @@ namespace Amazon.DirectConnect
         /// <para>
         /// After you create a transit virtual interface, it must be confirmed by the owner using
         /// <a>ConfirmTransitVirtualInterface</a>. Until this step has been completed, the transit
-        /// virtual interface is in the <code>requested</code> state and is not available to handle
+        /// virtual interface is in the <c>requested</c> state and is not available to handle
         /// traffic.
         /// </para>
         /// </summary>
@@ -371,8 +371,8 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// You must supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code>
-        /// and <code>cak</code>) pair in the request.
+        /// You must supply either the <c>secretARN,</c> or the CKN/CAK (<c>ckn</c> and <c>cak</c>)
+        /// pair in the request.
         /// </para>
         ///  
         /// <para>
@@ -447,8 +447,8 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// Upon creation, the hosted connection is initially in the <code>Ordering</code> state,
-        /// and remains in this state until the owner confirms creation of the hosted connection.
+        /// Upon creation, the hosted connection is initially in the <c>Ordering</c> state, and
+        /// remains in this state until the owner confirms creation of the hosted connection.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ConfirmConnection service method.</param>
@@ -955,9 +955,9 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// When creating an IPv6 public virtual interface (<code>addressFamily</code> is <code>ipv6</code>),
-        /// leave the <code>customer</code> and <code>amazon</code> address fields blank to use
-        /// auto-assigned IPv6 space. Custom IPv6 addresses are not supported.
+        /// When creating an IPv6 public virtual interface (<c>addressFamily</c> is <c>ipv6</c>),
+        /// leave the <c>customer</c> and <c>amazon</c> address fields blank to use auto-assigned
+        /// IPv6 space. Custom IPv6 addresses are not supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePublicVirtualInterface service method.</param>
@@ -1131,10 +1131,10 @@ namespace Amazon.DirectConnect
         /// 
         ///  
         /// <para>
-        /// We recommend that you specify the <code>associationID</code> to delete the association.
+        /// We recommend that you specify the <c>associationID</c> to delete the association.
         /// Alternatively, if you own virtual gateway and a Direct Connect gateway association,
-        /// you can specify the <code>virtualGatewayId</code> and <code>directConnectGatewayId</code>
-        /// to delete an association.
+        /// you can specify the <c>virtualGatewayId</c> and <c>directConnectGatewayId</c> to delete
+        /// an association.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDirectConnectGatewayAssociation service method.</param>

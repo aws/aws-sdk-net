@@ -69,22 +69,22 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// If the value of <code>Status</code> is <code>FAILED</code>, the value of <code>Error</code>
-        /// indicates the cause:
+        /// If the value of <c>Status</c> is <c>FAILED</c>, the value of <c>Error</c> indicates
+        /// the cause:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DESTINATION_NOT_FOUND</code>: The specified destination (for example, an Amazon
-        /// S3 bucket) was deleted.
+        ///  <c>DESTINATION_NOT_FOUND</c>: The specified destination (for example, an Amazon S3
+        /// bucket) was deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCESS_DENIED</code>: Permissions don't allow sending logs to the destination.
+        ///  <c>ACCESS_DENIED</c>: Permissions don't allow sending logs to the destination.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the value of <code>Status</code> is a value other than <code>FAILED</code>, <code>Error</code>
-        /// is null. 
+        /// If the value of <c>Status</c> is a value other than <c>FAILED</c>, <c>Error</c> is
+        /// null. 
         /// </para>
         /// </summary>
         public ResolverQueryLogConfigAssociationError Error
@@ -102,8 +102,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// Contains additional information about the error. If the value or <code>Error</code>
-        /// is null, the value of <code>ErrorMessage</code> also is null.
+        /// Contains additional information about the error. If the value or <c>Error</c> is null,
+        /// the value of <c>ErrorMessage</c> also is null.
         /// </para>
         /// </summary>
         public string ErrorMessage
@@ -182,23 +182,23 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code>: Resolver is creating an association between an Amazon VPC
-        /// and a query logging configuration.
+        ///  <c>CREATING</c>: Resolver is creating an association between an Amazon VPC and a
+        /// query logging configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATED</code>: The association between an Amazon VPC and a query logging configuration
+        ///  <c>CREATED</c>: The association between an Amazon VPC and a query logging configuration
         /// was successfully created. Resolver is logging queries that originate in the specified
         /// VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code>: Resolver is deleting this query logging association.
+        ///  <c>DELETING</c>: Resolver is deleting this query logging association.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query
-        /// logging association.
+        ///  <c>FAILED</c>: Resolver either couldn't create or couldn't delete the query logging
+        /// association.
         /// </para>
         ///  </li> </ul>
         /// </summary>

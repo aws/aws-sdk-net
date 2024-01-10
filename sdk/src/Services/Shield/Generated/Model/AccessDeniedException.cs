@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Shield.Model
 {
     /// <summary>
-    /// Exception that indicates the specified <code>AttackId</code> does not exist, or the
-    /// requester does not have the appropriate permissions to access the <code>AttackId</code>.
+    /// Exception that indicates the specified <c>AttackId</c> does not exist, or the requester
+    /// does not have the appropriate permissions to access the <c>AttackId</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

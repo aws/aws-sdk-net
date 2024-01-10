@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The scope configuration for a <code>FilterGroup</code>.
+    /// The scope configuration for a <c>FilterGroup</c>.
     /// 
     ///  
     /// <para>

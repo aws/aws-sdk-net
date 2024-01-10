@@ -44,31 +44,30 @@ namespace Amazon.WAFRegional.Model
     ///  </note> 
     /// <para>
     /// Permanently deletes a <a>RateBasedRule</a>. You can't delete a rule if it's still
-    /// used in any <code>WebACL</code> objects or if it still includes any predicates, such
-    /// as <code>ByteMatchSet</code> objects.
+    /// used in any <c>WebACL</c> objects or if it still includes any predicates, such as
+    /// <c>ByteMatchSet</c> objects.
     /// </para>
     ///  
     /// <para>
-    /// If you just want to remove a rule from a <code>WebACL</code>, use <a>UpdateWebACL</a>.
+    /// If you just want to remove a rule from a <c>WebACL</c>, use <a>UpdateWebACL</a>.
     /// </para>
     ///  
     /// <para>
-    /// To permanently delete a <code>RateBasedRule</code> from AWS WAF, perform the following
-    /// steps:
+    /// To permanently delete a <c>RateBasedRule</c> from AWS WAF, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Update the <code>RateBasedRule</code> to remove predicates, if any. For more information,
+    /// Update the <c>RateBasedRule</c> to remove predicates, if any. For more information,
     /// see <a>UpdateRateBasedRule</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of a <code>DeleteRateBasedRule</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of a <c>DeleteRateBasedRule</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit a <code>DeleteRateBasedRule</code> request.
+    /// Submit a <c>DeleteRateBasedRule</c> request.
     /// </para>
     ///  </li> </ol>
     /// </summary>
@@ -99,7 +98,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete. <code>RuleId</code>
+        /// The <c>RuleId</c> of the <a>RateBasedRule</a> that you want to delete. <c>RuleId</c>
         /// is returned by <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.
         /// </para>
         /// </summary>

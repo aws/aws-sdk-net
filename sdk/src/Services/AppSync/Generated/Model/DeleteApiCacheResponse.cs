@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteApiCache</code> operation.
+    /// Represents the output of a <c>DeleteApiCache</c> operation.
     /// </summary>
     public partial class DeleteApiCacheResponse : AmazonWebServiceResponse
     {

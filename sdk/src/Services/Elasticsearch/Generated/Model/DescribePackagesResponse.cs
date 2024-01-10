@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>DescribePackages</a> </code> operation.
+    /// Container for response returned by <c> <a>DescribePackages</a> </c> operation.
     /// </summary>
     public partial class DescribePackagesResponse : AmazonWebServiceResponse
     {
@@ -54,7 +54,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property PackageDetailsList. 
         /// <para>
-        /// List of <code>PackageDetails</code> objects.
+        /// List of <c>PackageDetails</c> objects.
         /// </para>
         /// </summary>
         public List<PackageDetails> PackageDetailsList

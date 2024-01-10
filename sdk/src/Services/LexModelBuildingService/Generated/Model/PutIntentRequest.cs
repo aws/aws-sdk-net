@@ -35,8 +35,8 @@ namespace Amazon.LexModelBuildingService.Model
     ///  
     /// <para>
     /// To define the interaction between the user and your bot, you use one or more intents.
-    /// For a pizza ordering bot, for example, you would create an <code>OrderPizza</code>
-    /// intent. 
+    /// For a pizza ordering bot, for example, you would create an <c>OrderPizza</c> intent.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -44,7 +44,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Intent name. For example, <code>OrderPizza</code>.
+    /// Intent name. For example, <c>OrderPizza</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -87,11 +87,11 @@ namespace Amazon.LexModelBuildingService.Model
     ///  </li> </ul> 
     /// <para>
     /// If you specify an existing intent name to update the intent, Amazon Lex replaces the
-    /// values in the <code>$LATEST</code> version of the intent with the values in the request.
+    /// values in the <c>$LATEST</c> version of the intent with the values in the request.
     /// Amazon Lex removes fields that you don't provide in the request. If you don't specify
-    /// the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code>
-    /// version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code>
-    /// version of the intent is set to <code>NOT_BUILT</code>.
+    /// the required fields, Amazon Lex throws an exception. When you update the <c>$LATEST</c>
+    /// version of an intent, the <c>status</c> field of any bot that uses the <c>$LATEST</c>
+    /// version of the intent is set to <c>NOT_BUILT</c>.
     /// </para>
     ///  
     /// <para>
@@ -99,7 +99,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>lex:PutIntent</code> action.
+    /// This operation requires permissions for the <c>lex:PutIntent</c> action.
     /// </para>
     /// </summary>
     public partial class PutIntentRequest : AmazonLexModelBuildingServiceRequest
@@ -124,19 +124,19 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// Identifies a specific revision of the <code>$LATEST</code> version.
+        /// Identifies a specific revision of the <c>$LATEST</c> version.
         /// </para>
         ///  
         /// <para>
-        /// When you create a new intent, leave the <code>checksum</code> field blank. If you
-        /// specify a checksum you get a <code>BadRequestException</code> exception.
+        /// When you create a new intent, leave the <c>checksum</c> field blank. If you specify
+        /// a checksum you get a <c>BadRequestException</c> exception.
         /// </para>
         ///  
         /// <para>
-        /// When you want to update a intent, set the <code>checksum</code> field to the checksum
-        /// of the most recent revision of the <code>$LATEST</code> version. If you don't specify
-        /// the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code>
-        /// version, you get a <code>PreconditionFailedException</code> exception.
+        /// When you want to update a intent, set the <c>checksum</c> field to the checksum of
+        /// the most recent revision of the <c>$LATEST</c> version. If you don't specify the <c>
+        /// checksum</c> field, or if the checksum does not match the <c>$LATEST</c> version,
+        /// you get a <c>PreconditionFailedException</c> exception.
         /// </para>
         /// </summary>
         public string Checksum
@@ -159,13 +159,13 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  
         /// <para>
-        /// This element is relevant only if you provide a Lambda function in the <code>fulfillmentActivity</code>.
+        /// This element is relevant only if you provide a Lambda function in the <c>fulfillmentActivity</c>.
         /// If you return the intent to the client application, you can't specify this element.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>followUpPrompt</code> and <code>conclusionStatement</code> are mutually
-        /// exclusive. You can specify only one.
+        /// The <c>followUpPrompt</c> and <c>conclusionStatement</c> are mutually exclusive. You
+        /// can specify only one.
         /// </para>
         ///  </note>
         /// </summary>
@@ -189,14 +189,14 @@ namespace Amazon.LexModelBuildingService.Model
         ///  
         /// <para>
         /// Amazon Lex uses this prompt to ensure that the user acknowledges that the intent is
-        /// ready for fulfillment. For example, with the <code>OrderPizza</code> intent, you might
-        /// want to confirm that the order is correct before placing it. For other intents, such
-        /// as intents that simply respond to user questions, you might not need to ask the user
+        /// ready for fulfillment. For example, with the <c>OrderPizza</c> intent, you might want
+        /// to confirm that the order is correct before placing it. For other intents, such as
+        /// intents that simply respond to user questions, you might not need to ask the user
         /// for confirmation before providing the information. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You you must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>,
+        /// You you must provide both the <c>rejectionStatement</c> and the <c>confirmationPrompt</c>,
         /// or neither.
         /// </para>
         ///  </note>
@@ -216,9 +216,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property CreateVersion. 
         /// <para>
-        /// When set to <code>true</code> a new numbered version of the intent is created. This
-        /// is the same as calling the <code>CreateIntentVersion</code> operation. If you do not
-        /// specify <code>createVersion</code>, the default is <code>false</code>.
+        /// When set to <c>true</c> a new numbered version of the intent is created. This is the
+        /// same as calling the <c>CreateIntentVersion</c> operation. If you do not specify <c>createVersion</c>,
+        /// the default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool CreateVersion
@@ -263,8 +263,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// For example, suppose your bot determines that the user is John. Your Lambda function
         /// might retrieve John's information from a backend database and prepopulate some of
         /// the values. For example, if you find that John is gluten intolerant, you might set
-        /// the corresponding intent slot, <code>GlutenIntolerant</code>, to true. You might find
-        /// John's phone number and set the corresponding session attribute. 
+        /// the corresponding intent slot, <c>GlutenIntolerant</c>, to true. You might find John's
+        /// phone number and set the corresponding session attribute. 
         /// </para>
         /// </summary>
         public CodeHook DialogCodeHook
@@ -283,8 +283,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property FollowUpPrompt. 
         /// <para>
         /// Amazon Lex uses this prompt to solicit additional activity after fulfilling an intent.
-        /// For example, after the <code>OrderPizza</code> intent is fulfilled, you might prompt
-        /// the user to order a drink.
+        /// For example, after the <c>OrderPizza</c> intent is fulfilled, you might prompt the
+        /// user to order a drink.
         /// </para>
         ///  
         /// <para>
@@ -311,8 +311,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>followUpPrompt</code> field and the <code>conclusionStatement</code> field
-        /// are mutually exclusive. You can specify only one. 
+        /// The <c>followUpPrompt</c> field and the <c>conclusionStatement</c> field are mutually
+        /// exclusive. You can specify only one. 
         /// </para>
         /// </summary>
         public FollowUpPrompt FollowUpPrompt
@@ -331,8 +331,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property FulfillmentActivity. 
         /// <para>
         /// Required. Describes how the intent is fulfilled. For example, after a user provides
-        /// all of the information for a pizza order, <code>fulfillmentActivity</code> defines
-        /// how the bot places an order with a local pizza store. 
+        /// all of the information for a pizza order, <c>fulfillmentActivity</c> defines how the
+        /// bot places an order with a local pizza store. 
         /// </para>
         ///  
         /// <para>
@@ -356,8 +356,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property InputContexts. 
         /// <para>
-        /// An array of <code>InputContext</code> objects that lists the contexts that must be
-        /// active for Amazon Lex to choose the intent in a conversation with the user.
+        /// An array of <c>InputContext</c> objects that lists the contexts that must be active
+        /// for Amazon Lex to choose the intent in a conversation with the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -376,8 +376,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property KendraConfiguration. 
         /// <para>
-        /// Configuration information required to use the <code>AMAZON.KendraSearchIntent</code>
-        /// intent to connect to an Amazon Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+        /// Configuration information required to use the <c>AMAZON.KendraSearchIntent</c> intent
+        /// to connect to an Amazon Kendra index. For more information, see <a href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
         /// AMAZON.KendraSearchIntent</a>.
         /// </para>
         /// </summary>
@@ -401,8 +401,8 @@ namespace Amazon.LexModelBuildingService.Model
         ///  
         /// <para>
         /// The name can't match a built-in intent name, or a built-in intent name with "AMAZON."
-        /// removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>,
-        /// you can't create a custom intent called <code>HelpIntent</code>.
+        /// removed. For example, because there is a built-in intent called <c>AMAZON.HelpIntent</c>,
+        /// you can't create a custom intent called <c>HelpIntent</c>.
         /// </para>
         ///  
         /// <para>
@@ -426,8 +426,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property OutputContexts. 
         /// <para>
-        /// An array of <code>OutputContext</code> objects that lists the contexts that the intent
-        /// activates when the intent is fulfilled.
+        /// An array of <c>OutputContext</c> objects that lists the contexts that the intent activates
+        /// when the intent is fulfilled.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -466,13 +466,12 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property RejectionStatement. 
         /// <para>
-        /// When the user answers "no" to the question defined in <code>confirmationPrompt</code>,
-        /// Amazon Lex responds with this statement to acknowledge that the intent was canceled.
-        /// 
+        /// When the user answers "no" to the question defined in <c>confirmationPrompt</c>, Amazon
+        /// Lex responds with this statement to acknowledge that the intent was canceled. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must provide both the <code>rejectionStatement</code> and the <code>confirmationPrompt</code>,
+        /// You must provide both the <c>rejectionStatement</c> and the <c>confirmationPrompt</c>,
         /// or neither.
         /// </para>
         ///  </note>

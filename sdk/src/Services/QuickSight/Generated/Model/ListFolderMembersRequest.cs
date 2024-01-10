@@ -30,8 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFolderMembers operation.
-    /// List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>)
-    /// in a folder.
+    /// List all assets (<c>DASHBOARD</c>, <c>ANALYSIS</c>, and <c>DATASET</c>) in a folder.
     /// </summary>
     public partial class ListFolderMembersRequest : AmazonQuickSightRequest
     {

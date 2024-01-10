@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Compression. 
         /// <para>
         /// Specifies how the data is compressed. This is generally not necessary if the data
-        /// has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        /// has a standard file extension. Possible values are <c>"gzip"</c> and <c>"bzip"</c>).
         /// </para>
         /// </summary>
         public ParquetCompressionType Compression

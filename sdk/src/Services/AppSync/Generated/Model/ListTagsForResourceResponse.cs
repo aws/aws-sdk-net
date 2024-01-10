@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A <code>TagMap</code> object.
+        /// A <c>TagMap</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

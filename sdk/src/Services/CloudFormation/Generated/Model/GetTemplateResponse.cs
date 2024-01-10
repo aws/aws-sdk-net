@@ -39,10 +39,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StagesAvailable. 
         /// <para>
-        /// The stage of the template that you can retrieve. For stacks, the <code>Original</code>
-        /// and <code>Processed</code> templates are always available. For change sets, the <code>Original</code>
+        /// The stage of the template that you can retrieve. For stacks, the <c>Original</c> and
+        /// <c>Processed</c> templates are always available. For change sets, the <c>Original</c>
         /// template is always available. After CloudFormation finishes creating the change set,
-        /// the <code>Processed</code> template becomes available.
+        /// the <c>Processed</c> template becomes available.
         /// </para>
         /// </summary>
         public List<string> StagesAvailable

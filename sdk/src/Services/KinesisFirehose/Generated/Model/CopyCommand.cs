@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
-    /// Describes a <code>COPY</code> command for Amazon Redshift.
+    /// Describes a <c>COPY</c> command for Amazon Redshift.
     /// </summary>
     public partial class CopyCommand
     {
@@ -40,34 +40,34 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CopyOptions. 
         /// <para>
-        /// Optional parameters to use with the Amazon Redshift <code>COPY</code> command. For
-        /// more information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
+        /// Optional parameters to use with the Amazon Redshift <c>COPY</c> command. For more
+        /// information, see the "Optional Parameters" section of <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">Amazon
         /// Redshift COPY command</a>. Some possible examples that would apply to Kinesis Data
         /// Firehose are as follows:
         /// </para>
         ///  
         /// <para>
-        ///  <code>delimiter '\t' lzop;</code> - fields are delimited with "\t" (TAB character)
-        /// and compressed using lzop.
+        ///  <c>delimiter '\t' lzop;</c> - fields are delimited with "\t" (TAB character) and
+        /// compressed using lzop.
         /// </para>
         ///  
         /// <para>
-        ///  <code>delimiter '|'</code> - fields are delimited with "|" (this is the default delimiter).
+        ///  <c>delimiter '|'</c> - fields are delimited with "|" (this is the default delimiter).
         /// </para>
         ///  
         /// <para>
-        ///  <code>delimiter '|' escape</code> - the delimiter should be escaped.
+        ///  <c>delimiter '|' escape</c> - the delimiter should be escaped.
         /// </para>
         ///  
         /// <para>
-        ///  <code>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</code>
+        ///  <c>fixedwidth 'venueid:3,venuename:25,venuecity:12,venuestate:2,venueseats:6'</c>
         /// - fields are fixed width in the source, with each width specified after every column
         /// in the table.
         /// </para>
         ///  
         /// <para>
-        ///  <code>JSON 's3://mybucket/jsonpaths.txt'</code> - data is in JSON format, and the
-        /// path specified is the format of the data.
+        ///  <c>JSON 's3://mybucket/jsonpaths.txt'</c> - data is in JSON format, and the path
+        /// specified is the format of the data.
         /// </para>
         ///  
         /// <para>

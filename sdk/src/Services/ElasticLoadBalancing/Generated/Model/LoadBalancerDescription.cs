@@ -265,13 +265,13 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public
-        /// DNS name that resolves to a public IP address.
+        /// If <c>Scheme</c> is <c>internet-facing</c>, the load balancer has a public DNS name
+        /// that resolves to a public IP address.
         /// </para>
         ///  
         /// <para>
-        /// If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS
-        /// name that resolves to a private IP address.
+        /// If <c>Scheme</c> is <c>internal</c>, the load balancer has a public DNS name that
+        /// resolves to a private IP address.
         /// </para>
         /// </summary>
         public string Scheme

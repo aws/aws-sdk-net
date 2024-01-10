@@ -61,8 +61,8 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ClientParameters. 
         /// <para>
-        /// A <code>CreateConnectionOAuthClientRequestParameters</code> object that contains the
-        /// client parameters for OAuth authorization.
+        /// A <c>CreateConnectionOAuthClientRequestParameters</c> object that contains the client
+        /// parameters for OAuth authorization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property OAuthHttpParameters. 
         /// <para>
-        /// A <code>ConnectionHttpParameters</code> object that contains details about the additional
+        /// A <c>ConnectionHttpParameters</c> object that contains details about the additional
         /// parameters to use for the connection.
         /// </para>
         /// </summary>

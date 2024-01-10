@@ -61,7 +61,7 @@ namespace Amazon.PinpointEmail.Model
         /// <para>
         /// A token that indicates that there are additional predictive inbox placement tests
         /// to list. To view additional predictive inbox placement tests, issue another request
-        /// to <code>ListDeliverabilityTestReports</code>, and pass this token in the <code>NextToken</code>
+        /// to <c>ListDeliverabilityTestReports</c>, and pass this token in the <c>NextToken</c>
         /// parameter.
         /// </para>
         /// </summary>

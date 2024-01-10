@@ -39,7 +39,7 @@ namespace Amazon.PinpointEmail.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// An array that lists all the tags that are associated with the resource. Each tag consists
-        /// of a required tag key (<code>Key</code>) and an associated tag value (<code>Value</code>)
+        /// of a required tag key (<c>Key</c>) and an associated tag value (<c>Value</c>)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

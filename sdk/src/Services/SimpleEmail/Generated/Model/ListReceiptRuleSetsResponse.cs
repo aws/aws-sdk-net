@@ -40,8 +40,8 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token indicating that there are additional receipt rule sets available to be listed.
-        /// Pass this token to successive calls of <code>ListReceiptRuleSets</code> to retrieve
-        /// up to 100 receipt rule sets at a time.
+        /// Pass this token to successive calls of <c>ListReceiptRuleSets</c> to retrieve up to
+        /// 100 receipt rule sets at a time.
         /// </para>
         /// </summary>
         public string NextToken

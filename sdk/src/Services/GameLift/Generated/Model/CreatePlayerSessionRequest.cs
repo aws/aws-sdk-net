@@ -31,9 +31,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreatePlayerSession operation.
     /// Reserves an open player slot in a game session for a player. New player sessions can
-    /// be created in any game session with an open slot that is in <code>ACTIVE</code> status
-    /// and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of
-    /// players to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
+    /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
+    /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
+    /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
     /// . 
     /// 
     ///  
@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code>
+    /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
     /// object is returned with a player session ID. The player references the player session
     /// ID when sending a connection request to the game session, and the game server can
     /// use it to validate the player reservation with the Amazon GameLift service. Player

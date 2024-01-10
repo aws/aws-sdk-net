@@ -57,21 +57,19 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property GlobalTableBillingMode. 
         /// <para>
-        /// The billing mode of the global table. If <code>GlobalTableBillingMode</code> is not
-        /// specified, the global table defaults to <code>PROVISIONED</code> capacity billing
-        /// mode.
+        /// The billing mode of the global table. If <c>GlobalTableBillingMode</c> is not specified,
+        /// the global table defaults to <c>PROVISIONED</c> capacity billing mode.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
-        /// workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+        ///  <c>PROVISIONED</c> - We recommend using <c>PROVISIONED</c> for predictable workloads.
+        /// <c>PROVISIONED</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
         /// Mode</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
-        /// unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-        /// href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+        ///  <c>PAY_PER_REQUEST</c> - We recommend using <c>PAY_PER_REQUEST</c> for unpredictable
+        /// workloads. <c>PAY_PER_REQUEST</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
         /// Mode</a>. 
         /// </para>
         ///  </li> </ul>
@@ -149,7 +147,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property GlobalTableProvisionedWriteCapacityUnits. 
         /// <para>
-        /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+        /// The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException.</c>
         /// 
         /// </para>
         /// </summary>

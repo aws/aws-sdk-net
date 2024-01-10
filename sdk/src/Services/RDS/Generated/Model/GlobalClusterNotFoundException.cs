@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
-    /// cluster.
+    /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

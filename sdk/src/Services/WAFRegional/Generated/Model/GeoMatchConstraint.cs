@@ -53,7 +53,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of geographical area you want AWS WAF to search for. Currently <code>Country</code>
+        /// The type of geographical area you want AWS WAF to search for. Currently <c>Country</c>
         /// is the only valid value.
         /// </para>
         /// </summary>

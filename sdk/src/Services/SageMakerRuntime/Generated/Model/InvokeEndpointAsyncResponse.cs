@@ -59,7 +59,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property InferenceId. 
         /// <para>
-        /// Identifier for an inference request. This will be the same as the <code>InferenceId</code>
+        /// Identifier for an inference request. This will be the same as the <c>InferenceId</c>
         /// specified in the input. Amazon SageMaker will generate an identifier for you if you
         /// do not specify one.
         /// </para>

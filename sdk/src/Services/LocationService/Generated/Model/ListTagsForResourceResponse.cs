@@ -39,11 +39,11 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags that have been applied to the specified resource. Tags are mapped from the tag
-        /// key to the tag value: <code>"TagKey" : "TagValue"</code>.
+        /// key to the tag value: <c>"TagKey" : "TagValue"</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>{"tag1" : "value1", "tag2" : "value2"} </code> 
+        /// Format example: <c>{"tag1" : "value1", "tag2" : "value2"} </c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

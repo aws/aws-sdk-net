@@ -38,15 +38,15 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Ensure you have the <code>cloudformation:DescribeType</code> role setup to validate
-    /// the resource type schema.
+    /// Ensure you have the <c>cloudformation:DescribeType</c> role setup to validate the
+    /// resource type schema.
     /// </para>
     ///  
     /// <para>
     /// You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
     /// type schema</a> in "<i>Amazon Web Services public extensions</i>" within the CloudFormation
-    /// registry or with the following CLI commmand: <code>aws cloudformation describe-type
-    /// --type-name "AWS::S3::Bucket" --type RESOURCE</code>.
+    /// registry or with the following CLI commmand: <c>aws cloudformation describe-type --type-name
+    /// "AWS::S3::Bucket" --type RESOURCE</c>.
     /// </para>
     ///  
     /// <para>
@@ -99,7 +99,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationContext. 
         /// <para>
-        /// Returns an <code>EvaluationContext</code> object.
+        /// Returns an <c>EvaluationContext</c> object.
         /// </para>
         /// </summary>
         public EvaluationContext EvaluationContext
@@ -117,8 +117,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property EvaluationMode. 
         /// <para>
-        /// The mode of an evaluation. The valid values for this API are <code>DETECTIVE</code>
-        /// and <code>PROACTIVE</code>.
+        /// The mode of an evaluation. The valid values for this API are <c>DETECTIVE</c> and
+        /// <c>PROACTIVE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,7 +157,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceDetails. 
         /// <para>
-        /// Returns a <code>ResourceDetails</code> object.
+        /// Returns a <c>ResourceDetails</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

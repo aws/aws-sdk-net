@@ -54,11 +54,11 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// A friendly name or description for the metrics for this <code>RuleGroup</code>. The
-        /// name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length
-        /// 128 and minimum length one. It can't contain whitespace or metric names reserved for
-        /// AWS WAF, including "All" and "Default_Action." You can't change the name of the metric
-        /// after you create the <code>RuleGroup</code>.
+        /// A friendly name or description for the metrics for this <c>RuleGroup</c>. The name
+        /// can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128
+        /// and minimum length one. It can't contain whitespace or metric names reserved for AWS
+        /// WAF, including "All" and "Default_Action." You can't change the name of the metric
+        /// after you create the <c>RuleGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -77,8 +77,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <code>RuleGroup</code>. You can't change the
-        /// name of a <code>RuleGroup</code> after you create it.
+        /// A friendly name or description of the <c>RuleGroup</c>. You can't change the name
+        /// of a <c>RuleGroup</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -97,7 +97,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleGroupId. 
         /// <para>
-        /// A unique identifier for a <code>RuleGroup</code>.
+        /// A unique identifier for a <c>RuleGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

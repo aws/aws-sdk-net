@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find a policy with the <code>PolicyId</code> that you specified.
+    /// We can't find a policy with the <c>PolicyId</c> that you specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

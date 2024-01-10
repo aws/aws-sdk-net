@@ -124,10 +124,10 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property EventIngestion. 
         /// <para>
-        /// If <code>Enabled</code>, Amazon Fraud Detector stores event data when you generate
-        /// a prediction and uses that data to update calculated variables in near real-time.
-        /// Amazon Fraud Detector uses this data, known as <code>INGESTED_EVENTS</code>, to train
-        /// your model and improve fraud predictions.
+        /// If <c>Enabled</c>, Amazon Fraud Detector stores event data when you generate a prediction
+        /// and uses that data to update calculated variables in near real-time. Amazon Fraud
+        /// Detector uses this data, known as <c>INGESTED_EVENTS</c>, to train your model and
+        /// improve fraud predictions.
         /// </para>
         /// </summary>
         public EventIngestion EventIngestion

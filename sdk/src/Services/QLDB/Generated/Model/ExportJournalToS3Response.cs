@@ -43,8 +43,8 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// To describe your export request and check the status of the job, you can use <code>ExportId</code>
-        /// to call <code>DescribeJournalS3Export</code>.
+        /// To describe your export request and check the status of the job, you can use <c>ExportId</c>
+        /// to call <c>DescribeJournalS3Export</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]

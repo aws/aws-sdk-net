@@ -57,9 +57,8 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property NextPageMarker. 
         /// <para>
-        /// If there are more domains than you specified for <code>MaxItems</code> in the request,
-        /// submit another request and include the value of <code>NextPageMarker</code> in the
-        /// value of <code>Marker</code>.
+        /// If there are more domains than you specified for <c>MaxItems</c> in the request, submit
+        /// another request and include the value of <c>NextPageMarker</c> in the value of <c>Marker</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

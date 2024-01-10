@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code>
+    /// Unable to stop the pipeline execution. The execution might already be in a <c>Stopped</c>
     /// state, or it might no longer be in progress.
     /// </summary>
     #if !NETSTANDARD

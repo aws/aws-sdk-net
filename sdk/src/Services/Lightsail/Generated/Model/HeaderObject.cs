@@ -35,11 +35,11 @@ namespace Amazon.Lightsail.Model
     /// <para>
     /// For the headers that you specify, your distribution caches separate versions of the
     /// specified content based on the header values in viewer requests. For example, suppose
-    /// viewer requests for <code>logo.jpg</code> contain a custom <code>product</code> header
-    /// that has a value of either <code>acme</code> or <code>apex</code>, and you configure
-    /// your distribution to cache your content based on values in the <code>product</code>
-    /// header. Your distribution forwards the <code>product</code> header to the origin and
-    /// caches the response from the origin once for each header value. 
+    /// viewer requests for <c>logo.jpg</c> contain a custom <c>product</c> header that has
+    /// a value of either <c>acme</c> or <c>apex</c>, and you configure your distribution
+    /// to cache your content based on values in the <c>product</c> header. Your distribution
+    /// forwards the <c>product</c> header to the origin and caches the response from the
+    /// origin once for each header value. 
     /// </para>
     /// </summary>
     public partial class HeaderObject
@@ -77,16 +77,16 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>all</code> </b> - Forward all headers to your origin.
+        ///  <b> <c>all</c> </b> - Forward all headers to your origin.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>none</code> </b> - Forward only the default headers.
+        ///  <b> <c>none</c> </b> - Forward only the default headers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>allow-list</code> </b> - Forward only the headers you specify using the
-        /// <code>headersAllowList</code> parameter.
+        ///  <b> <c>allow-list</c> </b> - Forward only the headers you specify using the <c>headersAllowList</c>
+        /// parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>

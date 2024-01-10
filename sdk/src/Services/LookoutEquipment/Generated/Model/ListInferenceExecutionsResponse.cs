@@ -40,7 +40,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property InferenceExecutionSummaries. 
         /// <para>
         /// Provides an array of information about the individual inference executions returned
-        /// from the <code>ListInferenceExecutions</code> operation, including model used, inference
+        /// from the <c>ListInferenceExecutions</c> operation, including model used, inference
         /// scheduler, data configuration, and so on. 
         /// </para>
         /// </summary>

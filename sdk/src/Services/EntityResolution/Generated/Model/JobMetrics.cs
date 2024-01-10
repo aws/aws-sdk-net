@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <code>InputRecords</code>, <code>TotalRecordsProcessed</code>,
-    /// <code>MatchIDs</code>, and <code>RecordsNotProcessed</code>.
+    /// An object containing <c>InputRecords</c>, <c>TotalRecordsProcessed</c>, <c>MatchIDs</c>,
+    /// and <c>RecordsNotProcessed</c>.
     /// </summary>
     public partial class JobMetrics
     {
@@ -60,7 +60,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property MatchIDs. 
         /// <para>
-        /// The total number of <code>matchID</code>s generated.
+        /// The total number of <c>matchID</c>s generated.
         /// </para>
         /// </summary>
         public int MatchIDs

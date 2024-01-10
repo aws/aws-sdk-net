@@ -40,8 +40,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// A <code>TableOptimizerConfiguration</code> object that was specified when creating
-        /// or updating a table optimizer.
+        /// A <c>TableOptimizerConfiguration</c> object that was specified when creating or updating
+        /// a table optimizer.
         /// </para>
         /// </summary>
         public TableOptimizerConfiguration Configuration
@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LastRun. 
         /// <para>
-        /// A <code>TableOptimizerRun</code> object representing the last run of the table optimizer.
+        /// A <c>TableOptimizerRun</c> object representing the last run of the table optimizer.
         /// </para>
         /// </summary>
         public TableOptimizerRun LastRun
@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of table optimizer. Currently, the only valid value is <code>compaction</code>.
+        /// The type of table optimizer. Currently, the only valid value is <c>compaction</c>.
         /// </para>
         /// </summary>
         public TableOptimizerType Type

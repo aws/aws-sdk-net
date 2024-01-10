@@ -93,8 +93,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property Compression. 
         /// <para>
         ///  Whether to compress signals before transmitting data to Amazon Web Services IoT FleetWise.
-        /// If <code>OFF</code> is specified, the signals aren't compressed. If it's not specified,
-        /// <code>SNAPPY</code> is used. 
+        /// If <c>OFF</c> is specified, the signals aren't compressed. If it's not specified,
+        /// <c>SNAPPY</c> is used. 
         /// </para>
         /// </summary>
         public Compression Compression
@@ -391,8 +391,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The state of the campaign. The status can be one of: <code>CREATING</code>, <code>WAITING_FOR_APPROVAL</code>,
-        /// <code>RUNNING</code>, and <code>SUSPENDED</code>. 
+        /// The state of the campaign. The status can be one of: <c>CREATING</c>, <c>WAITING_FOR_APPROVAL</c>,
+        /// <c>RUNNING</c>, and <c>SUSPENDED</c>. 
         /// </para>
         /// </summary>
         public CampaignStatus Status

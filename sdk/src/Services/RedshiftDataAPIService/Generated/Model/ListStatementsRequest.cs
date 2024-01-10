@@ -52,7 +52,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of SQL statements to return in the response. If more SQL statements
-        /// exist than fit in one response, then <code>NextToken</code> is returned to page through
+        /// exist than fit in one response, then <c>NextToken</c> is returned to page through
         /// the results. 
         /// </para>
         /// </summary>
@@ -114,12 +114,12 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property StatementName. 
         /// <para>
-        /// The name of the SQL statement specified as input to <code>BatchExecuteStatement</code>
-        /// or <code>ExecuteStatement</code> to identify the query. You can list multiple statements
-        /// by providing a prefix that matches the beginning of the statement name. For example,
+        /// The name of the SQL statement specified as input to <c>BatchExecuteStatement</c> or
+        /// <c>ExecuteStatement</c> to identify the query. You can list multiple statements by
+        /// providing a prefix that matches the beginning of the statement name. For example,
         /// to list myStatement1, myStatement2, myStatement3, and so on, then provide the a value
-        /// of <code>myStatement</code>. Data API does a case-sensitive match of SQL statement
-        /// names to the prefix value you provide. 
+        /// of <c>myStatement</c>. Data API does a case-sensitive match of SQL statement names
+        /// to the prefix value you provide. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]

@@ -40,15 +40,15 @@ namespace Amazon.QLDBSession.Model
         /// Gets and sets the property CommitDigest. 
         /// <para>
         /// Specifies the commit digest for the transaction to commit. For every active transaction,
-        /// the commit digest must be passed. QLDB validates <code>CommitDigest</code> and rejects
-        /// the commit with an error if the digest computed on the client does not match the digest
+        /// the commit digest must be passed. QLDB validates <c>CommitDigest</c> and rejects the
+        /// commit with an error if the digest computed on the client does not match the digest
         /// computed by QLDB.
         /// </para>
         ///  
         /// <para>
-        /// The purpose of the <code>CommitDigest</code> parameter is to ensure that QLDB commits
-        /// a transaction if and only if the server has processed the exact set of statements
-        /// sent by the client, in the same order that client sent them, and with no duplicates.
+        /// The purpose of the <c>CommitDigest</c> parameter is to ensure that QLDB commits a
+        /// transaction if and only if the server has processed the exact set of statements sent
+        /// by the client, in the same order that client sent them, and with no duplicates.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

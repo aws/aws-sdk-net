@@ -31,7 +31,7 @@ namespace Amazon.ComprehendMedical.Model
     /// <summary>
     /// Container for the parameters to the StartRxNormInferenceJob operation.
     /// Starts an asynchronous job to detect medication entities and link them to the RxNorm
-    /// ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status
+    /// ontology. Use the <c>DescribeRxNormInferenceJob</c> operation to track the status
     /// of a job.
     /// </summary>
     public partial class StartRxNormInferenceJobRequest : AmazonComprehendMedicalRequest

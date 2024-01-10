@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeStackProvisioningParameters</code> request.
+    /// Contains the response to a <c>DescribeStackProvisioningParameters</c> request.
     /// </summary>
     public partial class DescribeStackProvisioningParametersResponse : AmazonWebServiceResponse
     {

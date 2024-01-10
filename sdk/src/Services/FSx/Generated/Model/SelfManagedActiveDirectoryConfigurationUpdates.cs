@@ -150,7 +150,7 @@ namespace Amazon.FSx.Model
         ///  
         /// <para>
         /// This account must have the permissions required to join computers to the domain in
-        /// the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>.
+        /// the organizational unit provided in <c>OrganizationalUnitDistinguishedName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

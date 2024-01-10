@@ -48,7 +48,7 @@ namespace Amazon.Chime.Model
         /// <para>
         /// When origination settings are disabled, inbound calls are not enabled for your Amazon
         /// Chime Voice Connector. This parameter is not required, but you must specify this parameter
-        /// or <code>Routes</code>.
+        /// or <c>Routes</c>.
         /// </para>
         /// </summary>
         public bool Disabled
@@ -68,7 +68,7 @@ namespace Amazon.Chime.Model
         /// <para>
         /// The call distribution properties defined for your SIP hosts. Valid range: Minimum
         /// value of 1. Maximum value of 20. This parameter is not required, but you must specify
-        /// this parameter or <code>Disabled</code>.
+        /// this parameter or <c>Disabled</c>.
         /// </para>
         /// </summary>
         public List<OriginationRoute> Routes

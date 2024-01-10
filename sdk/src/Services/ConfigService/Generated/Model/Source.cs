@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Provides the CustomPolicyDetails, the rule owner (<code>Amazon Web Services</code>
-    /// for managed rules, <code>CUSTOM_POLICY</code> for Custom Policy rules, and <code>CUSTOM_LAMBDA</code>
-    /// for Custom Lambda rules), the rule identifier, and the events that cause the evaluation
+    /// Provides the CustomPolicyDetails, the rule owner (<c>Amazon Web Services</c> for managed
+    /// rules, <c>CUSTOM_POLICY</c> for Custom Policy rules, and <c>CUSTOM_LAMBDA</c> for
+    /// Custom Lambda rules), the rule identifier, and the events that cause the evaluation
     /// of your Amazon Web Services resources.
     /// </summary>
     public partial class Source
@@ -45,7 +45,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property CustomPolicyDetails. 
         /// <para>
         /// Provides the runtime system, policy definition, and whether debug logging is enabled.
-        /// Required when owner is set to <code>CUSTOM_POLICY</code>.
+        /// Required when owner is set to <c>CUSTOM_POLICY</c>.
         /// </para>
         /// </summary>
         public CustomPolicyDetails CustomPolicyDetails
@@ -74,8 +74,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// Config Custom Rules are rules that you can develop either with Guard (<code>CUSTOM_POLICY</code>)
-        /// or Lambda (<code>CUSTOM_LAMBDA</code>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
+        /// Config Custom Rules are rules that you can develop either with Guard (<c>CUSTOM_POLICY</c>)
+        /// or Lambda (<c>CUSTOM_LAMBDA</c>). For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">Config
         /// Custom Rules </a> in the <i>Config developer guide</i>.
         /// </para>
         /// </summary>
@@ -101,9 +101,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the owner is set to <code>CUSTOM_POLICY</code>, the only acceptable values for
-        /// the Config rule trigger message type are <code>ConfigurationItemChangeNotification</code>
-        /// and <code>OversizedConfigurationItemChangeNotification</code>.
+        /// If the owner is set to <c>CUSTOM_POLICY</c>, the only acceptable values for the Config
+        /// rule trigger message type are <c>ConfigurationItemChangeNotification</c> and <c>OversizedConfigurationItemChangeNotification</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]
@@ -122,14 +121,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property SourceIdentifier. 
         /// <para>
-        /// For Config Managed rules, a predefined identifier from a list. For example, <code>IAM_PASSWORD_POLICY</code>
+        /// For Config Managed rules, a predefined identifier from a list. For example, <c>IAM_PASSWORD_POLICY</c>
         /// is a managed rule. To reference a managed rule, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">List
         /// of Config Managed Rules</a>.
         /// </para>
         ///  
         /// <para>
         /// For Config Custom Lambda rules, the identifier is the Amazon Resource Name (ARN) of
-        /// the rule's Lambda function, such as <code>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</code>.
+        /// the rule's Lambda function, such as <c>arn:aws:lambda:us-east-2:123456789012:function:custom_rule_name</c>.
         /// </para>
         ///  
         /// <para>

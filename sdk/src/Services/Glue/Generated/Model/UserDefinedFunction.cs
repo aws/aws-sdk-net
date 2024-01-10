@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.
+    /// Represents the equivalent of a Hive user-defined function (<c>UDF</c>) definition.
     /// </summary>
     public partial class UserDefinedFunction
     {

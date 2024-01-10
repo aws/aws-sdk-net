@@ -30,16 +30,15 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBudget operation.
-    /// Updates a budget. You can change every part of a budget except for the <code>budgetName</code>
-    /// and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code>
+    /// Updates a budget. You can change every part of a budget except for the <c>budgetName</c>
+    /// and the <c>calculatedSpend</c>. When you modify a budget, the <c>calculatedSpend</c>
     /// drops to zero until Amazon Web Services has new usage data to use for forecasting.
     /// 
     ///  <important> 
     /// <para>
-    /// Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
-    /// in the syntax at one time. Use the syntax that matches your case. The Request Syntax
-    /// section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
-    /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
+    /// Only one of <c>BudgetLimit</c> or <c>PlannedBudgetLimits</c> can be present in the
+    /// syntax at one time. Use the syntax that matches your case. The Request Syntax section
+    /// shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
     /// section. 
     /// </para>
     ///  </important>
@@ -52,7 +51,7 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>accountId</code> that is associated with the budget that you want to update.
+        /// The <c>accountId</c> that is associated with the budget that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

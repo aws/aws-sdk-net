@@ -41,7 +41,7 @@ namespace Amazon.ConnectCases.Model
     /// For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/required-permissions-iam-cases.html#onboard-cases-iam">Onboard
     /// to Cases</a>.
     /// </para>
-    ///  <pre><code> &lt;/important&gt; </code></pre>
+    ///  <pre><c> &lt;/important&gt; </c></pre>
     /// </summary>
     public partial class CreateDomainRequest : AmazonConnectCasesRequest
     {

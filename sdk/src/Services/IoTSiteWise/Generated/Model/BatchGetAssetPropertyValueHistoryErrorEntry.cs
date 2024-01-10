@@ -30,7 +30,7 @@ namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
     /// A list of the errors (if any) associated with the batch request. Each error entry
-    /// contains the <code>entryId</code> of the entry that failed.
+    /// contains the <c>entryId</c> of the entry that failed.
     /// </summary>
     public partial class BatchGetAssetPropertyValueHistoryErrorEntry
     {

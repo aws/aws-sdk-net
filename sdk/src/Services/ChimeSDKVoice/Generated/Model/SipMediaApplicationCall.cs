@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// A <code>Call</code> instance for a SIP media application.
+    /// A <c>Call</c> instance for a SIP media application.
     /// </summary>
     public partial class SipMediaApplicationCall
     {

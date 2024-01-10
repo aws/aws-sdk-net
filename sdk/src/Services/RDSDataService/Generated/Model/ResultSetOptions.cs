@@ -39,10 +39,10 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property DecimalReturnType. 
         /// <para>
-        /// A value that indicates how a field of <code>DECIMAL</code> type is represented in
-        /// the response. The value of <code>STRING</code>, the default, specifies that it is
-        /// converted to a String value. The value of <code>DOUBLE_OR_LONG</code> specifies that
-        /// it is converted to a Long value if its scale is 0, or to a Double value otherwise.
+        /// A value that indicates how a field of <c>DECIMAL</c> type is represented in the response.
+        /// The value of <c>STRING</c>, the default, specifies that it is converted to a String
+        /// value. The value of <c>DOUBLE_OR_LONG</c> specifies that it is converted to a Long
+        /// value if its scale is 0, or to a Double value otherwise.
         /// </para>
         ///  <note> 
         /// <para>
@@ -66,10 +66,10 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property LongReturnType. 
         /// <para>
-        /// A value that indicates how a field of <code>LONG</code> type is represented. Allowed
-        /// values are <code>LONG</code> and <code>STRING</code>. The default is <code>LONG</code>.
-        /// Specify <code>STRING</code> if the length or precision of numeric values might cause
-        /// truncation or rounding errors. 
+        /// A value that indicates how a field of <c>LONG</c> type is represented. Allowed values
+        /// are <c>LONG</c> and <c>STRING</c>. The default is <c>LONG</c>. Specify <c>STRING</c>
+        /// if the length or precision of numeric values might cause truncation or rounding errors.
+        /// 
         /// </para>
         /// </summary>
         public LongReturnType LongReturnType

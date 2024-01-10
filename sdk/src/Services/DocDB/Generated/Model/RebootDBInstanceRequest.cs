@@ -58,7 +58,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing <code>DBInstance</code>.
+        /// Must match the identifier of an existing <c>DBInstance</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -78,12 +78,11 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ForceFailover. 
         /// <para>
-        ///  When <code>true</code>, the reboot is conducted through a Multi-AZ failover. 
+        ///  When <c>true</c>, the reboot is conducted through a Multi-AZ failover. 
         /// </para>
         ///  
         /// <para>
-        /// Constraint: You can't specify <code>true</code> if the instance is not configured
-        /// for Multi-AZ.
+        /// Constraint: You can't specify <c>true</c> if the instance is not configured for Multi-AZ.
         /// </para>
         /// </summary>
         public bool ForceFailover

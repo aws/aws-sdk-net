@@ -37,20 +37,20 @@ namespace Amazon.SecurityToken.Model
     /// 
     ///  
     /// <para>
-    /// You must call the <code>GetFederationToken</code> operation using the long-term security
+    /// You must call the <c>GetFederationToken</c> operation using the long-term security
     /// credentials of an IAM user. As a result, this call is appropriate in contexts where
     /// those credentials can be safeguarded, usually in a server-based application. For a
-    /// comparison of <code>GetFederationToken</code> with the other API operations that produce
+    /// comparison of <c>GetFederationToken</c> with the other API operations that produce
     /// temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
     /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// Although it is possible to call <code>GetFederationToken</code> using the security
-    /// credentials of an Amazon Web Services account root user rather than an IAM user that
-    /// you create for the purpose of a proxy application, we do not recommend it. For more
-    /// information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
+    /// Although it is possible to call <c>GetFederationToken</c> using the security credentials
+    /// of an Amazon Web Services account root user rather than an IAM user that you create
+    /// for the purpose of a proxy application, we do not recommend it. For more information,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#lock-away-credentials">Safeguard
     /// your root user credentials and don't use them for everyday tasks</a> in the <i>IAM
     /// User Guide</i>. 
     /// </para>
@@ -59,8 +59,7 @@ namespace Amazon.SecurityToken.Model
     /// You can create a mobile-based or browser-based app that can authenticate users using
     /// a web identity provider like Login with Amazon, Facebook, Google, or an OpenID Connect-compatible
     /// identity provider. In this case, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
-    /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
-    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+    /// Cognito</a> or <c>AssumeRoleWithWebIdentity</c>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
     /// Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note> 
@@ -80,8 +79,8 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the temporary credentials created by <code>GetFederationToken</code> in
-    /// any Amazon Web Services service with the following exceptions:
+    /// You can use the temporary credentials created by <c>GetFederationToken</c> in any
+    /// Amazon Web Services service with the following exceptions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -90,7 +89,7 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You cannot call any STS operations except <code>GetCallerIdentity</code>.
+    /// You cannot call any STS operations except <c>GetCallerIdentity</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -113,14 +112,14 @@ namespace Amazon.SecurityToken.Model
     /// a federated user. You cannot use session policies to grant more permissions than those
     /// that are defined in the permissions policy of the IAM user. For more information,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
-    /// Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code>
+    /// Policies</a> in the <i>IAM User Guide</i>. For information about using <c>GetFederationToken</c>
     /// to create temporary security credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken">GetFederationToken—Federation
     /// Through a Custom Identity Broker</a>. 
     /// </para>
     ///  
     /// <para>
     /// You can use the credentials to access a resource that has a resource-based policy.
-    /// If that policy specifically references the federated user session in the <code>Principal</code>
+    /// If that policy specifically references the federated user session in the <c>Principal</c>
     /// element of the policy, the session has the permissions allowed by the policy. These
     /// permissions are granted in addition to the permissions granted by the session policies.
     /// </para>
@@ -139,8 +138,7 @@ namespace Amazon.SecurityToken.Model
     /// You can create a mobile-based or browser-based app that can authenticate users using
     /// a web identity provider like Login with Amazon, Facebook, Google, or an OpenID Connect-compatible
     /// identity provider. In this case, we recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon
-    /// Cognito</a> or <code>AssumeRoleWithWebIdentity</code>. For more information, see <a
-    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
+    /// Cognito</a> or <c>AssumeRoleWithWebIdentity</c>. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity">Federation
     /// Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note> 
@@ -153,11 +151,11 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// Tag key–value pairs are not case sensitive, but case is preserved. This means that
-    /// you cannot have separate <code>Department</code> and <code>department</code> tag keys.
-    /// Assume that the user that you are federating has the <code>Department</code>=<code>Marketing</code>
-    /// tag and you pass the <code>department</code>=<code>engineering</code> session tag.
-    /// <code>Department</code> and <code>department</code> are not saved as separate tags,
-    /// and the session tag passed in the request takes precedence over the user tag.
+    /// you cannot have separate <c>Department</c> and <c>department</c> tag keys. Assume
+    /// that the user that you are federating has the <c>Department</c>=<c>Marketing</c> tag
+    /// and you pass the <c>department</c>=<c>engineering</c> session tag. <c>Department</c>
+    /// and <c>department</c> are not saved as separate tags, and the session tag passed in
+    /// the request takes precedence over the user tag.
     /// </para>
     /// </summary>
     public partial class GetFederationTokenRequest : AmazonSecurityTokenServiceRequest
@@ -210,8 +208,8 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the federated user. The name is used as an identifier for the temporary
-        /// security credentials (such as <code>Bob</code>). For example, you can reference the
-        /// federated user name in a resource-based policy, such as in an Amazon S3 bucket policy.
+        /// security credentials (such as <c>Bob</c>). For example, you can reference the federated
+        /// user name in a resource-based policy, such as in an Amazon S3 bucket policy.
         /// </para>
         ///  
         /// <para>
@@ -262,7 +260,7 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// The resulting credentials can be used to access a resource that has a resource-based
-        /// policy. If that policy specifically references the federated user session in the <code>Principal</code>
+        /// policy. If that policy specifically references the federated user session in the <c>Principal</c>
         /// element of the policy, the session has the permissions allowed by the policy. These
         /// permissions are granted in addition to the permissions that are granted by the session
         /// policies.
@@ -279,8 +277,8 @@ namespace Amazon.SecurityToken.Model
         /// An Amazon Web Services conversion compresses the passed inline session policy, managed
         /// policy ARNs, and session tags into a packed binary format that has a separate limit.
         /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
-        /// the policies and tags for your request are to the upper size limit.
+        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
+        /// policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -332,7 +330,7 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// The resulting credentials can be used to access a resource that has a resource-based
-        /// policy. If that policy specifically references the federated user session in the <code>Principal</code>
+        /// policy. If that policy specifically references the federated user session in the <c>Principal</c>
         /// element of the policy, the session has the permissions allowed by the policy. These
         /// permissions are granted in addition to the permissions that are granted by the session
         /// policies.
@@ -342,8 +340,8 @@ namespace Amazon.SecurityToken.Model
         /// An Amazon Web Services conversion compresses the passed inline session policy, managed
         /// policy ARNs, and session tags into a packed binary format that has a separate limit.
         /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
-        /// the policies and tags for your request are to the upper size limit.
+        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
+        /// policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -378,8 +376,8 @@ namespace Amazon.SecurityToken.Model
         /// An Amazon Web Services conversion compresses the passed inline session policy, managed
         /// policy ARNs, and session tags into a packed binary format that has a separate limit.
         /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
-        /// the policies and tags for your request are to the upper size limit.
+        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
+        /// policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>
@@ -390,11 +388,10 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// Tag key–value pairs are not case sensitive, but case is preserved. This means that
-        /// you cannot have separate <code>Department</code> and <code>department</code> tag keys.
-        /// Assume that the role has the <code>Department</code>=<code>Marketing</code> tag and
-        /// you pass the <code>department</code>=<code>engineering</code> session tag. <code>Department</code>
-        /// and <code>department</code> are not saved as separate tags, and the session tag passed
-        /// in the request takes precedence over the role tag.
+        /// you cannot have separate <c>Department</c> and <c>department</c> tag keys. Assume
+        /// that the role has the <c>Department</c>=<c>Marketing</c> tag and you pass the <c>department</c>=<c>engineering</c>
+        /// session tag. <c>Department</c> and <c>department</c> are not saved as separate tags,
+        /// and the session tag passed in the request takes precedence over the role tag.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

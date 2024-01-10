@@ -139,18 +139,18 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>accepted</code>: The proposal has been accepted. The Direct Connect gateway
-        /// association is available to use in this state.
+        ///  <c>accepted</c>: The proposal has been accepted. The Direct Connect gateway association
+        /// is available to use in this state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code>: The proposal has been deleted by the owner that made the proposal.
+        ///  <c>deleted</c>: The proposal has been deleted by the owner that made the proposal.
         /// The Direct Connect gateway association cannot be used in this state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requested</code>: The proposal has been requested. The Direct Connect gateway
-        /// association cannot be used in this state.
+        ///  <c>requested</c>: The proposal has been requested. The Direct Connect gateway association
+        /// cannot be used in this state.
         /// </para>
         ///  </li> </ul>
         /// </summary>

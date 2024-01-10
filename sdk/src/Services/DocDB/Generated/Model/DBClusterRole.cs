@@ -57,21 +57,21 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the state of association between the IAMrole and the cluster. The <code>Status</code>
+        /// Describes the state of association between the IAMrole and the cluster. The <c>Status</c>
         /// property returns one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The IAMrole ARN is associated with the cluster and can be used
-        /// to access other Amazon Web Services services on your behalf.
+        ///  <c>ACTIVE</c> - The IAMrole ARN is associated with the cluster and can be used to
+        /// access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The IAMrole ARN is being associated with the cluster.
+        ///  <c>PENDING</c> - The IAMrole ARN is being associated with the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID</code> - The IAMrole ARN is associated with the cluster, but the cluster
+        ///  <c>INVALID</c> - The IAMrole ARN is associated with the cluster, but the cluster
         /// cannot assume the IAMrole to access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> </ul>

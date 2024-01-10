@@ -43,11 +43,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code> : The CNAME is available.
+        ///  <c>true</c> : The CNAME is available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code> : The CNAME is not available.
+        ///  <c>false</c> : The CNAME is not available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

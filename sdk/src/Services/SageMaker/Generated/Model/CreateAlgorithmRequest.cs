@@ -186,8 +186,7 @@ namespace Amazon.SageMaker.Model
         ///  </li> <li> 
         /// <para>
         /// The input channels that the algorithm supports for training data. For example, an
-        /// algorithm might support <code>train</code>, <code>validation</code>, and <code>test</code>
-        /// channels.
+        /// algorithm might support <c>train</c>, <c>validation</c>, and <c>test</c> channels.
         /// </para>
         ///  </li> </ul>
         /// </summary>

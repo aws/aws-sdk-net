@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration object for the Amazon FSx for Lustre file system being deleted in
-    /// the <code>DeleteFileSystem</code> operation.
+    /// the <c>DeleteFileSystem</c> operation.
     /// </summary>
     public partial class DeleteFileSystemLustreConfiguration
     {
@@ -40,11 +40,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FinalBackupTags. 
         /// <para>
-        /// Use if <code>SkipFinalBackup</code> is set to <code>false</code>, and you want to
-        /// apply an array of tags to the final backup. If you have set the file system property
-        /// <code>CopyTagsToBackups</code> to true, and you specify one or more <code>FinalBackupTags</code>
-        /// when deleting a file system, Amazon FSx will not copy any existing file system tags
-        /// to the backup.
+        /// Use if <c>SkipFinalBackup</c> is set to <c>false</c>, and you want to apply an array
+        /// of tags to the final backup. If you have set the file system property <c>CopyTagsToBackups</c>
+        /// to true, and you specify one or more <c>FinalBackupTags</c> when deleting a file system,
+        /// Amazon FSx will not copy any existing file system tags to the backup.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -63,15 +62,14 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SkipFinalBackup. 
         /// <para>
-        /// Set <code>SkipFinalBackup</code> to false if you want to take a final backup of the
-        /// file system you are deleting. By default, Amazon FSx will not take a final backup
-        /// on your behalf when the <code>DeleteFileSystem</code> operation is invoked. (Default
-        /// = true)
+        /// Set <c>SkipFinalBackup</c> to false if you want to take a final backup of the file
+        /// system you are deleting. By default, Amazon FSx will not take a final backup on your
+        /// behalf when the <c>DeleteFileSystem</c> operation is invoked. (Default = true)
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>fsx:CreateBackup</code> permission is required if you set <code>SkipFinalBackup</code>
-        /// to <code>false</code> in order to delete the file system and take a final backup.
+        /// The <c>fsx:CreateBackup</c> permission is required if you set <c>SkipFinalBackup</c>
+        /// to <c>false</c> in order to delete the file system and take a final backup.
         /// </para>
         ///  </note>
         /// </summary>

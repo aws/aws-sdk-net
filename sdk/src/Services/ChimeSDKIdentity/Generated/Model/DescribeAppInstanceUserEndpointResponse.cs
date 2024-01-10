@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserEndpoint. 
         /// <para>
-        /// The full details of an <code>AppInstanceUserEndpoint</code>: the <code>AppInstanceUserArn</code>,
+        /// The full details of an <c>AppInstanceUserEndpoint</c>: the <c>AppInstanceUserArn</c>,
         /// ID, name, type, resource ARN, attributes, allow messages, state, and created and last
         /// updated timestamps. All timestamps use epoch milliseconds.
         /// </para>

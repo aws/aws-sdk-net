@@ -36,7 +36,7 @@ namespace Amazon.InternetMonitor.Model
     ///  
     /// <para>
     /// A minimum of one tag is required for this call. It returns an error if you use the
-    /// <code>TagResource</code> request with 0 tags.
+    /// <c>TagResource</c> request with 0 tags.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonInternetMonitorRequest

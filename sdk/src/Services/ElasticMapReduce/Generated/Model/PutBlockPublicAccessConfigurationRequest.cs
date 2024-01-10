@@ -45,10 +45,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// clusters created in your account for the current Region. The configuration specifies
         /// whether block public access is enabled. If block public access is enabled, security
         /// groups associated with the cluster cannot have rules that allow inbound traffic from
-        /// 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <code>PermittedPublicSecurityGroupRuleRanges</code>
-        /// in the <code>BlockPublicAccessConfiguration</code>. By default, Port 22 (SSH) is an
-        /// exception, and public access is allowed on this port. You can change this by updating
-        /// <code>BlockPublicSecurityGroupRules</code> to remove the exception.
+        /// 0.0.0.0/0 or ::/0 on a port, unless the port is specified as an exception using <c>PermittedPublicSecurityGroupRuleRanges</c>
+        /// in the <c>BlockPublicAccessConfiguration</c>. By default, Port 22 (SSH) is an exception,
+        /// and public access is allowed on this port. You can change this by updating <c>BlockPublicSecurityGroupRules</c>
+        /// to remove the exception.
         /// </para>
         ///  <note> 
         /// <para>

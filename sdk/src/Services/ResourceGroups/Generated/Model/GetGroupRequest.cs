@@ -42,7 +42,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:GetGroup</code> 
+    ///  <c>resource-groups:GetGroup</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property GroupName. 
         /// <para>
-        /// Deprecated - don't use this parameter. Use <code>Group</code> instead.
+        /// Deprecated - don't use this parameter. Use <c>Group</c> instead.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use Group instead.")]

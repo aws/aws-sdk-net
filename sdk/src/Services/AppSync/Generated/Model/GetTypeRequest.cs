@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the GetType operation.
-    /// Retrieves a <code>Type</code> object.
+    /// Retrieves a <c>Type</c> object.
     /// </summary>
     public partial class GetTypeRequest : AmazonAppSyncRequest
     {

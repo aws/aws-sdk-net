@@ -35,9 +35,9 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// The <code>attach disk</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>disk name</code>. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>attach disk</c> operation supports tag-based access control via resource tags
+    /// applied to the resource identified by <c>disk name</c>. For more information, see
+    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property AutoMounting. 
         /// <para>
         /// A Boolean value used to determine the automatic mounting of a storage volume to a
-        /// virtual computer. The default value is <code>False</code>.
+        /// virtual computer. The default value is <c>False</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique Lightsail disk name (<code>my-disk</code>).
+        /// The unique Lightsail disk name (<c>my-disk</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,7 +94,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskPath. 
         /// <para>
-        /// The disk path to expose to the instance (<code>/dev/xvdf</code>).
+        /// The disk path to expose to the instance (<c>/dev/xvdf</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

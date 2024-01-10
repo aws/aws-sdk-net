@@ -58,7 +58,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the customer agreement. This will be either <code>signed</code> or <code>unsigned</code>
+        /// The status of the customer agreement. This will be either <c>signed</c> or <c>unsigned</c>
         /// 
         /// </para>
         /// </summary>

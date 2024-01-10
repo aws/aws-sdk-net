@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Required if the <code>RootDirectory</code> &gt; <code>Path</code> specified does not
-    /// exist. Specifies the POSIX IDs and permissions to apply to the access point's <code>RootDirectory</code>
-    /// &gt; <code>Path</code>. If the access point root directory does not exist, EFS creates
-    /// it with these settings when a client connects to the access point. When specifying
-    /// <code>CreationInfo</code>, you must include values for all properties. 
+    /// Required if the <c>RootDirectory</c> &gt; <c>Path</c> specified does not exist. Specifies
+    /// the POSIX IDs and permissions to apply to the access point's <c>RootDirectory</c>
+    /// &gt; <c>Path</c>. If the access point root directory does not exist, EFS creates it
+    /// with these settings when a client connects to the access point. When specifying <c>CreationInfo</c>,
+    /// you must include values for all properties. 
     /// 
     ///  
     /// <para>
@@ -44,8 +44,8 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// If you do not provide <code>CreationInfo</code> and the specified <code>RootDirectory</code>
-    /// does not exist, attempts to mount the file system using the access point will fail.
+    /// If you do not provide <c>CreationInfo</c> and the specified <c>RootDirectory</c> does
+    /// not exist, attempts to mount the file system using the access point will fail.
     /// </para>
     ///  </important>
     /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerGid. 
         /// <para>
-        /// Specifies the POSIX group ID to apply to the <code>RootDirectory</code>. Accepts values
+        /// Specifies the POSIX group ID to apply to the <c>RootDirectory</c>. Accepts values
         /// from 0 to 2^32 (4294967295).
         /// </para>
         /// </summary>
@@ -78,8 +78,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property OwnerUid. 
         /// <para>
-        /// Specifies the POSIX user ID to apply to the <code>RootDirectory</code>. Accepts values
-        /// from 0 to 2^32 (4294967295).
+        /// Specifies the POSIX user ID to apply to the <c>RootDirectory</c>. Accepts values from
+        /// 0 to 2^32 (4294967295).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=4294967295)]
@@ -98,8 +98,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// Specifies the POSIX permissions to apply to the <code>RootDirectory</code>, in the
-        /// format of an octal number representing the file's mode bits.
+        /// Specifies the POSIX permissions to apply to the <c>RootDirectory</c>, in the format
+        /// of an octal number representing the file's mode bits.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=4)]

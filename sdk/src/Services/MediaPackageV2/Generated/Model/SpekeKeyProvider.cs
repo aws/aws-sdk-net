@@ -91,7 +91,7 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following example shows a resource ID: <code>MovieNight20171126093045</code> 
+        /// The following example shows a resource ID: <c>MovieNight20171126093045</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -117,8 +117,8 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid format: <code>arn:aws:iam::{accountID}:role/{name}</code>. The following example
-        /// shows a role ARN: <code>arn:aws:iam::444455556666:role/SpekeAccess</code> 
+        /// Valid format: <c>arn:aws:iam::{accountID}:role/{name}</c>. The following example shows
+        /// a role ARN: <c>arn:aws:iam::444455556666:role/SpekeAccess</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -143,7 +143,7 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The following example shows a URL: <code>https://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection</code>
+        /// The following example shows a URL: <c>https://1wm2dx1f33.execute-api.us-west-2.amazonaws.com/SpekeSample/copyProtection</c>
         /// 
         /// </para>
         /// </summary>

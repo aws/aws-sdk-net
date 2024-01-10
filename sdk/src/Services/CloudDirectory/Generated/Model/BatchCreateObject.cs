@@ -118,8 +118,8 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property SchemaFacet. 
         /// <para>
-        /// A list of <code>FacetArns</code> that will be associated with the object. For more
-        /// information, see <a>arns</a>.
+        /// A list of <c>FacetArns</c> that will be associated with the object. For more information,
+        /// see <a>arns</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

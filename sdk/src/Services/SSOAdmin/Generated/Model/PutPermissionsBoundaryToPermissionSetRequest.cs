@@ -62,7 +62,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PermissionsBoundary. 
         /// <para>
-        /// The permissions boundary that you want to attach to a <code>PermissionSet</code>.
+        /// The permissions boundary that you want to attach to a <c>PermissionSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
-        /// The ARN of the <code>PermissionSet</code>.
+        /// The ARN of the <c>PermissionSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

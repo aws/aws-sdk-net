@@ -44,25 +44,25 @@ namespace Amazon.StepFunctions.Model
     ///  <ul> <li> 
     /// <para>
     /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
-    /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+    /// with a label <c>mapStateLabel</c> in a state machine named <c>myStateMachine</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+    ///  <c>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</c>
     /// 
     /// </para>
     ///  <note> 
     /// <para>
     /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
-    /// the request fails with <code>ValidationException</code>.
+    /// the request fails with <c>ValidationException</c>.
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    /// The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+    /// The following qualified state machine ARN refers to an alias named <c>PROD</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+    ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</c>
     /// 
     /// </para>
     ///  <note> 
@@ -72,11 +72,11 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+    /// The following unqualified state machine ARN refers to a state machine named <c>myStateMachine</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+    ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</c>
     /// 
     /// </para>
     ///  </li> </ul> 
@@ -87,22 +87,20 @@ namespace Amazon.StepFunctions.Model
     ///  
     /// <para>
     /// To start executions of a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
-    /// call <code>StartExecution</code> and provide the version ARN or the ARN of an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
+    /// call <c>StartExecution</c> and provide the version ARN or the ARN of an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
     /// that points to the version.
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>StartExecution</code> is idempotent for <code>STANDARD</code> workflows. For
-    /// a <code>STANDARD</code> workflow, if you call <code>StartExecution</code> with the
-    /// same name and input as a running execution, the call succeeds and return the same
-    /// response as the original request. If the execution is closed or if the input is different,
-    /// it returns a <code>400 ExecutionAlreadyExists</code> error. You can reuse names after
-    /// 90 days. 
+    ///  <c>StartExecution</c> is idempotent for <c>STANDARD</c> workflows. For a <c>STANDARD</c>
+    /// workflow, if you call <c>StartExecution</c> with the same name and input as a running
+    /// execution, the call succeeds and return the same response as the original request.
+    /// If the execution is closed or if the input is different, it returns a <c>400 ExecutionAlreadyExists</c>
+    /// error. You can reuse names after 90 days. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>StartExecution</code> isn't idempotent for <code>EXPRESS</code> workflows.
-    /// 
+    ///  <c>StartExecution</c> isn't idempotent for <c>EXPRESS</c> workflows. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -120,12 +118,12 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"input": "{\"first_name\" : \"test\"}"</code> 
+        ///  <c>"input": "{\"first_name\" : \"test\"}"</c> 
         /// </para>
         ///  <note> 
         /// <para>
         /// If you don't include any JSON input data, you still must include the two braces, for
-        /// example: <code>"input": "{}"</code> 
+        /// example: <c>"input": "{}"</c> 
         /// </para>
         ///  </note> 
         /// <para>
@@ -169,19 +167,19 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// brackets <code>&lt; &gt; { } [ ]</code> 
+        /// brackets <c>&lt; &gt; { } [ ]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// wildcard characters <code>? *</code> 
+        /// wildcard characters <c>? *</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> 
+        /// special characters <c>" # % \ ^ | ~ ` $ &amp; , ; : /</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+        /// control characters (<c>U+0000-001F</c>, <c>U+007F-009F</c>)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -209,7 +207,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>stateMachineArn</code> parameter accepts one of the following inputs:
+        /// The <c>stateMachineArn</c> parameter accepts one of the following inputs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -219,7 +217,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+        ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</c>
         /// 
         /// </para>
         ///  
@@ -236,7 +234,7 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</code>
+        ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;:10</c>
         /// 
         /// </para>
         ///  
@@ -248,11 +246,11 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         ///  <b>A state machine alias ARN</b> – Refers to an alias ARN, which is a combination
         /// of state machine ARN and the alias name separated by a colon (:). The following is
-        /// an example of the ARN for an alias named <code>PROD</code>.
+        /// an example of the ARN for an alias named <c>PROD</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+        ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</c>
         /// 
         /// </para>
         ///  

@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon Resource Name (ARN) from which you want to remove the tag or tags. For
-        /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
+        /// example, <c>arn:aws:redshift:us-east-2:123456789:cluster:t1</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

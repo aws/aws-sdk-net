@@ -38,7 +38,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The automatically generated ID for a job, for example <c>JID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=39, Max=39)]

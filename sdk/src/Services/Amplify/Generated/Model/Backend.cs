@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Amplify.Model
 {
     /// <summary>
-    /// Describes the backend properties associated with an Amplify <code>Branch</code>.
+    /// Describes the backend properties associated with an Amplify <c>Branch</c>.
     /// </summary>
     public partial class Backend
     {

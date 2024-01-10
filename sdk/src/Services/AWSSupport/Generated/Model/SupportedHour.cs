@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Time range object with <code>startTime</code> and <code>endTime</code> range in RFC
-    /// 3339 format. <code>'HH:mm:ss.SSS'</code>.
+    /// Time range object with <c>startTime</c> and <c>endTime</c> range in RFC 3339 format.
+    /// <c>'HH:mm:ss.SSS'</c>.
     /// </summary>
     public partial class SupportedHour
     {
@@ -40,7 +40,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        ///  End Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. 
+        ///  End Time. RFC 3339 format <c>'HH:mm:ss.SSS'</c>. 
         /// </para>
         /// </summary>
         public string EndTime
@@ -58,7 +58,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        ///  Start Time. RFC 3339 format <code>'HH:mm:ss.SSS'</code>. 
+        ///  Start Time. RFC 3339 format <c>'HH:mm:ss.SSS'</c>. 
         /// </para>
         /// </summary>
         public string StartTime

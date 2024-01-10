@@ -102,9 +102,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Priority. 
         /// <para>
         ///  If you define more than one Rule in a WebACL, WAF evaluates each request against
-        /// the Rules in order based on the value of <code>Priority</code>. WAF processes rules
-        /// with lower priority first. The priorities don't need to be consecutive, but they must
-        /// all be different. 
+        /// the Rules in order based on the value of <c>Priority</c>. WAF processes rules with
+        /// lower priority first. The priorities don't need to be consecutive, but they must all
+        /// be different. 
         /// </para>
         /// </summary>
         public int Priority

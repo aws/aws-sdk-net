@@ -48,8 +48,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The unique identifier for the event. The event ARN has the <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-        /// </code> format.
+        /// The unique identifier for the event. The event ARN has the <c>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+        /// </c> format.
         /// </para>
         ///  
         /// <para>
@@ -57,7 +57,7 @@ namespace Amazon.AWSHealth.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+        ///  <c>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</c>
         /// 
         /// </para>
         /// </summary>
@@ -100,21 +100,20 @@ namespace Amazon.AWSHealth.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+        /// If the <c>eventScopeCode</c> value is <c>PUBLIC</c>, then the <c>affectedAccounts</c>
         /// value is always empty.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
-        /// <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts
-        /// in your organization. For example, if an event affects a service such as Amazon Elastic
-        /// Compute Cloud and you have Amazon Web Services accounts that use that service, those
-        /// account IDs appear in the response.
+        /// If the <c>eventScopeCode</c> value is <c>ACCOUNT_SPECIFIC</c>, then the <c>affectedAccounts</c>
+        /// value lists the affected Amazon Web Services accounts in your organization. For example,
+        /// if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon
+        /// Web Services accounts that use that service, those account IDs appear in the response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code>
-        /// that you specified in the request is invalid or doesn't exist.
+        /// If the <c>eventScopeCode</c> value is <c>NONE</c>, then the <c>eventArn</c> that you
+        /// specified in the request is invalid or doesn't exist.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -133,9 +132,9 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCategory. 
         /// <para>
-        /// A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
-        /// or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
-        /// supported at this time.
+        /// A list of event type category codes. Possible values are <c>issue</c>, <c>accountNotification</c>,
+        /// or <c>scheduledChange</c>. Currently, the <c>investigation</c> value isn't supported
+        /// at this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -154,8 +153,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventTypeCode. 
         /// <para>
-        /// The unique identifier for the event type. The format is <code>AWS_SERVICE_DESCRIPTION</code>.
-        /// For example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+        /// The unique identifier for the event type. The format is <c>AWS_SERVICE_DESCRIPTION</c>.
+        /// For example, <c>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=100)]
@@ -248,8 +247,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The most recent status of the event. Possible values are <code>open</code>, <code>closed</code>,
-        /// and <code>upcoming</code>.
+        /// The most recent status of the event. Possible values are <c>open</c>, <c>closed</c>,
+        /// and <c>upcoming</c>.
         /// </para>
         /// </summary>
         public EventStatusCode StatusCode

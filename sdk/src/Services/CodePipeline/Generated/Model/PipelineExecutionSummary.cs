@@ -186,7 +186,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Trigger. 
         /// <para>
         /// The interaction or event that started a pipeline execution, such as automated change
-        /// detection or a <code>StartPipelineExecution</code> API call.
+        /// detection or a <c>StartPipelineExecution</c> API call.
         /// </para>
         /// </summary>
         public ExecutionTrigger Trigger

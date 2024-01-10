@@ -39,9 +39,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token to include in the next request. Token value is <code>null</code>
-        /// if there are no additional results to request, or if you did not set <code>MaxResults</code>
-        /// in the request.
+        /// Pagination token to include in the next request. Token value is <c>null</c> if there
+        /// are no additional results to request, or if you did not set <c>MaxResults</c> in the
+        /// request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -59,8 +59,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrls. 
         /// <para>
-        /// A list of queue URLs, up to 1,000 entries, or the value of <code>MaxResults</code>
-        /// that you sent in the request.
+        /// A list of queue URLs, up to 1,000 entries, or the value of <c>MaxResults</c> that
+        /// you sent in the request.
         /// </para>
         /// </summary>
         public List<string> QueueUrls

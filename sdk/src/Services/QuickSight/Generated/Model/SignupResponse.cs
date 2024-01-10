@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>SignupResponse</code> object that contains a summary of a newly created account.
+    /// A <c>SignupResponse</c> object that contains a summary of a newly created account.
     /// </summary>
     public partial class SignupResponse
     {
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property DirectoryType. 
         /// <para>
         /// The type of Active Directory that is being used to authenticate the Amazon QuickSight
-        /// account. Valid values are <code>SIMPLE_AD</code>, <code>AD_CONNECTOR</code>, and <code>MICROSOFT_AD</code>.
+        /// account. Valid values are <c>SIMPLE_AD</c>, <c>AD_CONNECTOR</c>, and <c>MICROSOFT_AD</c>.
         /// </para>
         /// </summary>
         public string DirectoryType
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property IAMUser. 
         /// <para>
-        /// A Boolean that is <code>TRUE</code> if the Amazon QuickSight uses IAM as an authentication
+        /// A Boolean that is <c>TRUE</c> if the Amazon QuickSight uses IAM as an authentication
         /// method.
         /// </para>
         /// </summary>

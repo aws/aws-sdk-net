@@ -31,9 +31,9 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// The operation failed because you are inspecting the web request body, headers, or
     /// cookies without specifying how to handle oversize components. Rules that inspect the
-    /// body must either provide an <code>OversizeHandling</code> configuration or they must
-    /// be preceded by a <code>SizeConstraintStatement</code> that blocks the body content
-    /// from being too large. Rules that inspect the headers or cookies must provide an <code>OversizeHandling</code>
+    /// body must either provide an <c>OversizeHandling</c> configuration or they must be
+    /// preceded by a <c>SizeConstraintStatement</c> that blocks the body content from being
+    /// too large. Rules that inspect the headers or cookies must provide an <c>OversizeHandling</c>
     /// configuration. 
     /// 
     ///  
@@ -43,8 +43,8 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// Alternately, you can suppress this warning by adding the following tag to the resource
-    /// that you provide to this operation: <code>Tag</code> (key:<code>WAF:OversizeFieldsHandlingConstraintOptOut</code>,
-    /// value:<code>true</code>).
+    /// that you provide to this operation: <c>Tag</c> (key:<c>WAF:OversizeFieldsHandlingConstraintOptOut</c>,
+    /// value:<c>true</c>).
     /// </para>
     /// </summary>
     #if !NETSTANDARD

@@ -58,8 +58,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot that was exported. This will be either <code>DRAFT</code> or
-        /// the version number.
+        /// The version of the bot that was exported. This will be either <c>DRAFT</c> or the
+        /// version number.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

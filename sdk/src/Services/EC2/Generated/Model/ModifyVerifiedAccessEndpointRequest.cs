@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerOptions. 
         /// <para>
-        /// The load balancer details if creating the Verified Access endpoint as <code>load-balancer</code>type.
+        /// The load balancer details if creating the Verified Access endpoint as <c>load-balancer</c>type.
         /// </para>
         /// </summary>
         public ModifyVerifiedAccessEndpointLoadBalancerOptions LoadBalancerOptions

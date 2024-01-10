@@ -32,7 +32,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// Container for the parameters to the BatchDeleteAgents operation.
     /// Deletes one or more agents or collectors as specified by ID. Deleting an agent or
     /// collector does not delete the previously discovered data. To delete the data collected,
-    /// use <code>StartBatchDeleteConfigurationTask</code>.
+    /// use <c>StartBatchDeleteConfigurationTask</c>.
     /// </summary>
     public partial class BatchDeleteAgentsRequest : AmazonApplicationDiscoveryServiceRequest
     {

@@ -31,8 +31,8 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the StartTargetedSentimentDetectionJob operation.
     /// Starts an asynchronous targeted sentiment detection job for a collection of documents.
-    /// Use the <code>DescribeTargetedSentimentDetectionJob</code> operation to track the
-    /// status of a job.
+    /// Use the <c>DescribeTargetedSentimentDetectionJob</c> operation to track the status
+    /// of a job.
     /// </summary>
     public partial class StartTargetedSentimentDetectionJobRequest : AmazonComprehendRequest
     {
@@ -190,11 +190,11 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// KMS Key ID: <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// Amazon Resource Name (ARN) of a KMS Key: <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> </ul>

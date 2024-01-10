@@ -53,13 +53,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccessControlAllowCredentials. 
         /// <para>
-        /// A Boolean that CloudFront uses as the value for the <code>Access-Control-Allow-Credentials</code>
+        /// A Boolean that CloudFront uses as the value for the <c>Access-Control-Allow-Credentials</c>
         /// HTTP response header.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Access-Control-Allow-Credentials</code> HTTP
-        /// response header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a>
+        /// For more information about the <c>Access-Control-Allow-Credentials</c> HTTP response
+        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Credentials">Access-Control-Allow-Credentials</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -79,13 +79,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccessControlAllowHeaders. 
         /// <para>
-        /// A list of HTTP header names that CloudFront includes as values for the <code>Access-Control-Allow-Headers</code>
+        /// A list of HTTP header names that CloudFront includes as values for the <c>Access-Control-Allow-Headers</c>
         /// HTTP response header.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Access-Control-Allow-Headers</code> HTTP response
-        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a>
+        /// For more information about the <c>Access-Control-Allow-Headers</c> HTTP response header,
+        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Headers">Access-Control-Allow-Headers</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -105,13 +105,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccessControlAllowMethods. 
         /// <para>
-        /// A list of HTTP methods that CloudFront includes as values for the <code>Access-Control-Allow-Methods</code>
+        /// A list of HTTP methods that CloudFront includes as values for the <c>Access-Control-Allow-Methods</c>
         /// HTTP response header.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Access-Control-Allow-Methods</code> HTTP response
-        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a>
+        /// For more information about the <c>Access-Control-Allow-Methods</c> HTTP response header,
+        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Methods">Access-Control-Allow-Methods</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -131,13 +131,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccessControlAllowOrigins. 
         /// <para>
-        /// A list of origins (domain names) that CloudFront can use as the value for the <code>Access-Control-Allow-Origin</code>
+        /// A list of origins (domain names) that CloudFront can use as the value for the <c>Access-Control-Allow-Origin</c>
         /// HTTP response header.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Access-Control-Allow-Origin</code> HTTP response
-        /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a>
+        /// For more information about the <c>Access-Control-Allow-Origin</c> HTTP response header,
+        /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a>
         /// in the MDN Web Docs.
         /// </para>
         /// </summary>
@@ -157,12 +157,12 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccessControlExposeHeaders. 
         /// <para>
-        /// A list of HTTP headers that CloudFront includes as values for the <code>Access-Control-Expose-Headers</code>
+        /// A list of HTTP headers that CloudFront includes as values for the <c>Access-Control-Expose-Headers</c>
         /// HTTP response header.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Access-Control-Expose-Headers</code> HTTP response
+        /// For more information about the <c>Access-Control-Expose-Headers</c> HTTP response
         /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a>
         /// in the MDN Web Docs.
         /// </para>
@@ -182,12 +182,12 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccessControlMaxAgeSec. 
         /// <para>
-        /// A number that CloudFront uses as the value for the <code>Access-Control-Max-Age</code>
-        /// HTTP response header.
+        /// A number that CloudFront uses as the value for the <c>Access-Control-Max-Age</c> HTTP
+        /// response header.
         /// </para>
         ///  
         /// <para>
-        /// For more information about the <code>Access-Control-Max-Age</code> HTTP response header,
+        /// For more information about the <c>Access-Control-Max-Age</c> HTTP response header,
         /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Access-Control-Max-Age">Access-Control-Max-Age</a>
         /// in the MDN Web Docs.
         /// </para>

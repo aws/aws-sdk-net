@@ -66,16 +66,15 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCESS</code>: The association or disassociation succeeded. 
+        ///  <c>SUCCESS</c>: The association or disassociation succeeded. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The association or disassociation failed. 
+        ///  <c>FAILED</c>: The association or disassociation failed. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code>: The association or disassociation is still in progress.
-        /// 
+        ///  <c>IN_PROGRESS</c>: The association or disassociation is still in progress. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

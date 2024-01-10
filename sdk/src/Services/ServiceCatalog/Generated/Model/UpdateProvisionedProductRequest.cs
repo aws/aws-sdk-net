@@ -66,11 +66,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -188,8 +188,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductName. 
         /// <para>
-        /// The name of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-        /// and <code>ProvisionedProductId</code>.
+        /// The name of the provisioned product. You cannot specify both <c>ProvisionedProductName</c>
+        /// and <c>ProvisionedProductId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]
@@ -283,9 +283,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code> constraint
-        /// with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code> to allow
-        /// tag updates.
+        /// One or more tags. Requires the product to have <c>RESOURCE_UPDATE</c> constraint with
+        /// <c>TagUpdatesOnProvisionedProduct</c> set to <c>ALLOWED</c> to allow tag updates.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

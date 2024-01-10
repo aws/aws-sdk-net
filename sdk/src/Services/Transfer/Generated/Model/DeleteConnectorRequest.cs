@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteConnector operation.
-    /// Deletes the connector that's specified in the provided <code>ConnectorId</code>.
+    /// Deletes the connector that's specified in the provided <c>ConnectorId</c>.
     /// </summary>
     public partial class DeleteConnectorRequest : AmazonTransferRequest
     {

@@ -44,8 +44,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CaseInsensitive. 
         /// <para>
-        /// When set to <code>true</code>, which is the default, Kinesis Data Firehose converts
-        /// JSON keys to lowercase before deserializing them.
+        /// When set to <c>true</c>, which is the default, Kinesis Data Firehose converts JSON
+        /// keys to lowercase before deserializing them.
         /// </para>
         /// </summary>
         public bool CaseInsensitive
@@ -64,9 +64,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property ColumnToJsonKeyMappings. 
         /// <para>
         /// Maps column names to JSON keys that aren't identical to the column names. This is
-        /// useful when the JSON contains keys that are Hive keywords. For example, <code>timestamp</code>
-        /// is a Hive keyword. If you have a JSON key named <code>timestamp</code>, set this parameter
-        /// to <code>{"ts": "timestamp"}</code> to map this key to a column named <code>ts</code>.
+        /// useful when the JSON contains keys that are Hive keywords. For example, <c>timestamp</c>
+        /// is a Hive keyword. If you have a JSON key named <c>timestamp</c>, set this parameter
+        /// to <c>{"ts": "timestamp"}</c> to map this key to a column named <c>ts</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ColumnToJsonKeyMappings
@@ -84,15 +84,15 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ConvertDotsInJsonKeysToUnderscores. 
         /// <para>
-        /// When set to <code>true</code>, specifies that the names of the keys include dots and
-        /// that you want Kinesis Data Firehose to replace them with underscores. This is useful
-        /// because Apache Hive does not allow dots in column names. For example, if the JSON
-        /// contains a key whose name is "a.b", you can define the column name to be "a_b" when
-        /// using this option.
+        /// When set to <c>true</c>, specifies that the names of the keys include dots and that
+        /// you want Kinesis Data Firehose to replace them with underscores. This is useful because
+        /// Apache Hive does not allow dots in column names. For example, if the JSON contains
+        /// a key whose name is "a.b", you can define the column name to be "a_b" when using this
+        /// option.
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>false</code>.
+        /// The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool ConvertDotsInJsonKeysToUnderscores

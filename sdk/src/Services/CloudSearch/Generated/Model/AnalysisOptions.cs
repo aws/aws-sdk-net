@@ -43,9 +43,9 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property AlgorithmicStemming. 
         /// <para>
-        /// The level of algorithmic stemming to perform: <code>none</code>, <code>minimal</code>,
-        /// <code>light</code>, or <code>full</code>. The available levels vary depending on the
-        /// language. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
+        /// The level of algorithmic stemming to perform: <c>none</c>, <c>minimal</c>, <c>light</c>,
+        /// or <c>full</c>. The available levels vary depending on the language. For more information,
+        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/text-processing.html#text-processing-settings"
         /// target="_blank">Language Specific Text Processing Settings</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i> 
         /// </para>
@@ -87,7 +87,7 @@ namespace Amazon.CloudSearch.Model
         /// Gets and sets the property StemmingDictionary. 
         /// <para>
         /// A JSON object that contains a collection of string:value pairs that each map a term
-        /// to its stem. For example, <code>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</code>.
+        /// to its stem. For example, <c>{"term1": "stem1", "term2": "stem2", "term3": "stem3"}</c>.
         /// The stemming dictionary is applied in addition to any algorithmic stemming. This enables
         /// you to override the results of the algorithmic stemming to correct specific cases
         /// of overstemming or understemming. The maximum size of a stemming dictionary is 500
@@ -109,9 +109,9 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property Stopwords. 
         /// <para>
-        /// A JSON array of terms to ignore during indexing and searching. For example, <code>["a",
-        /// "an", "the", "of"]</code>. The stopwords dictionary must explicitly list each word
-        /// you want to ignore. Wildcards and regular expressions are not supported. 
+        /// A JSON array of terms to ignore during indexing and searching. For example, <c>["a",
+        /// "an", "the", "of"]</c>. The stopwords dictionary must explicitly list each word you
+        /// want to ignore. Wildcards and regular expressions are not supported. 
         /// </para>
         /// </summary>
         public string Stopwords

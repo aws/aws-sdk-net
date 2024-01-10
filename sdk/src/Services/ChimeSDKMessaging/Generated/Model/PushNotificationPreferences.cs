@@ -40,9 +40,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// Gets and sets the property AllowNotifications. 
         /// <para>
         /// Enum value that indicates which push notifications to send to the requested member
-        /// of a channel. <code>ALL</code> sends all push notifications, <code>NONE</code> sends
-        /// no push notifications, <code>FILTERED</code> sends only filtered push notifications.
-        /// 
+        /// of a channel. <c>ALL</c> sends all push notifications, <c>NONE</c> sends no push notifications,
+        /// <c>FILTERED</c> sends only filtered push notifications. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

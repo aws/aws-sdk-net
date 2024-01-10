@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
-        /// If training data is compressed, the compression type. The default value is <code>None</code>.
-        /// <code>CompressionType</code> is used only in Pipe input mode. In File mode, leave
-        /// this field unset or set it to None.
+        /// If training data is compressed, the compression type. The default value is <c>None</c>.
+        /// <c>CompressionType</c> is used only in Pipe input mode. In File mode, leave this field
+        /// unset or set it to None.
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -122,18 +122,17 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InputMode. 
         /// <para>
         /// (Optional) The input mode to use for the data channel in a training job. If you don't
-        /// set a value for <code>InputMode</code>, SageMaker uses the value set for <code>TrainingInputMode</code>.
-        /// Use this parameter to override the <code>TrainingInputMode</code> setting in a <a
-        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
+        /// set a value for <c>InputMode</c>, SageMaker uses the value set for <c>TrainingInputMode</c>.
+        /// Use this parameter to override the <c>TrainingInputMode</c> setting in a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
         /// request when you have a channel that needs a different input mode from the training
         /// job's general setting. To download the data from Amazon Simple Storage Service (Amazon
         /// S3) to the provisioned ML storage volume, and mount the directory to a Docker volume,
-        /// use <code>File</code> input mode. To stream data directly from Amazon S3 to the container,
-        /// choose <code>Pipe</code> input mode.
+        /// use <c>File</c> input mode. To stream data directly from Amazon S3 to the container,
+        /// choose <c>Pipe</c> input mode.
         /// </para>
         ///  
         /// <para>
-        /// To use a model for incremental training, choose <code>File</code> input model.
+        /// To use a model for incremental training, choose <c>File</c> input model.
         /// </para>
         /// </summary>
         public TrainingInputMode InputMode
@@ -177,21 +176,21 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShuffleConfig. 
         /// <para>
-        /// A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code>
-        /// for <code>S3DataType</code>, this shuffles the results of the S3 key prefix matches.
-        /// If you use <code>ManifestFile</code>, the order of the S3 object references in the
-        /// <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>,
-        /// the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled.
-        /// The shuffling order is determined using the <code>Seed</code> value.
+        /// A configuration for a shuffle option for input data in a channel. If you use <c>S3Prefix</c>
+        /// for <c>S3DataType</c>, this shuffles the results of the S3 key prefix matches. If
+        /// you use <c>ManifestFile</c>, the order of the S3 object references in the <c>ManifestFile</c>
+        /// is shuffled. If you use <c>AugmentedManifestFile</c>, the order of the JSON lines
+        /// in the <c>AugmentedManifestFile</c> is shuffled. The shuffling order is determined
+        /// using the <c>Seed</c> value.
         /// </para>
         ///  
         /// <para>
         /// For Pipe input mode, shuffling is done at the start of every epoch. With large datasets
         /// this ensures that the order of the training data is different for each epoch, it helps
         /// reduce bias and possible overfitting. In a multi-node training job when ShuffleConfig
-        /// is combined with <code>S3DataDistributionType</code> of <code>ShardedByS3Key</code>,
-        /// the data is shuffled across nodes so that the content sent to a particular node on
-        /// the first epoch might be sent to a different node on the second epoch.
+        /// is combined with <c>S3DataDistributionType</c> of <c>ShardedByS3Key</c>, the data
+        /// is shuffled across nodes so that the content sent to a particular node on the first
+        /// epoch might be sent to a different node on the second epoch.
         /// </para>
         /// </summary>
         public ShuffleConfig ShuffleConfig

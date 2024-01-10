@@ -116,7 +116,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlerSecurityConfiguration. 
         /// <para>
-        /// The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
+        /// The name of the <c>SecurityConfiguration</c> structure to be used by this crawler.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

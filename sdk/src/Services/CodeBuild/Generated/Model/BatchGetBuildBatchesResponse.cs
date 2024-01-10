@@ -39,7 +39,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BuildBatches. 
         /// <para>
-        /// An array of <code>BuildBatch</code> objects that represent the retrieved batch builds.
+        /// An array of <c>BuildBatch</c> objects that represent the retrieved batch builds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

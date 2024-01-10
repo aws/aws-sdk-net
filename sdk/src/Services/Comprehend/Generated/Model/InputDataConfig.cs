@@ -64,13 +64,13 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ONE_DOC_PER_FILE</code> - Each file is considered a separate document. Use
-        /// this option when you are processing large documents, such as newspaper articles or
-        /// scientific papers.
+        ///  <c>ONE_DOC_PER_FILE</c> - Each file is considered a separate document. Use this option
+        /// when you are processing large documents, such as newspaper articles or scientific
+        /// papers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ONE_DOC_PER_LINE</code> - Each line in a file is considered a separate document.
+        ///  <c>ONE_DOC_PER_LINE</c> - Each line in a file is considered a separate document.
         /// Use this option when you are processing many short documents, such as text messages.
         /// </para>
         ///  </li> </ul>
@@ -96,9 +96,9 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you use the URI <code>S3://bucketName/prefix</code>, if the prefix
-        /// is a single file, Amazon Comprehend uses that file as input. If more than one file
-        /// begins with the prefix, Amazon Comprehend uses all of them as input.
+        /// For example, if you use the URI <c>S3://bucketName/prefix</c>, if the prefix is a
+        /// single file, Amazon Comprehend uses that file as input. If more than one file begins
+        /// with the prefix, Amazon Comprehend uses all of them as input.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

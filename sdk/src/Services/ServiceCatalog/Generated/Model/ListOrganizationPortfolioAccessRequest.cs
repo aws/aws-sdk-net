@@ -54,11 +54,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -82,16 +82,16 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ORGANIZATION</code> - Organization that has access to the portfolio. 
+        ///  <c>ORGANIZATION</c> - Organization that has access to the portfolio. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ORGANIZATIONAL_UNIT</code> - Organizational unit that has access to the portfolio
+        ///  <c>ORGANIZATIONAL_UNIT</c> - Organizational unit that has access to the portfolio
         /// within your organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCOUNT</code> - Account that has access to the portfolio within your organization.
+        ///  <c>ACCOUNT</c> - Account that has access to the portfolio within your organization.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -150,7 +150,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PortfolioId. 
         /// <para>
-        /// The portfolio identifier. For example, <code>port-2abcdext3y5fk</code>.
+        /// The portfolio identifier. For example, <c>port-2abcdext3y5fk</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

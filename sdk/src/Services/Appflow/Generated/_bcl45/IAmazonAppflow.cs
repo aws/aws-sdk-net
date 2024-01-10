@@ -74,10 +74,10 @@ namespace Amazon.Appflow
     ///  
     /// <para>
     /// Amazon AppFlow API users can use vendor-specific mechanisms for OAuth, and include
-    /// applicable OAuth attributes (such as <code>auth-code</code> and <code>redirecturi</code>)
-    /// with the connector-specific <code>ConnectorProfileProperties</code> when creating
-    /// a new connector profile using Amazon AppFlow API operations. For example, Salesforce
-    /// users can refer to the <a href="https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm">
+    /// applicable OAuth attributes (such as <c>auth-code</c> and <c>redirecturi</c>) with
+    /// the connector-specific <c>ConnectorProfileProperties</c> when creating a new connector
+    /// profile using Amazon AppFlow API operations. For example, Salesforce users can refer
+    /// to the <a href="https://help.salesforce.com/articleView?id=remoteaccess_authenticate.htm">
     /// <i>Authorize Apps with OAuth</i> </a> documentation.
     /// </para>
     /// </summary>
@@ -106,7 +106,7 @@ namespace Amazon.Appflow
         /// You can cancel a flow run only when the run is in progress. You can't cancel a run
         /// that has already completed or failed. You also can't cancel a run that's scheduled
         /// to occur but hasn't started yet. To prevent a scheduled run, you can deactivate the
-        /// flow with the <code>StopFlow</code> action.
+        /// flow with the <c>StopFlow</c> action.
         /// </para>
         ///  
         /// <para>
@@ -114,8 +114,8 @@ namespace Amazon.Appflow
         /// </para>
         ///  
         /// <para>
-        /// When you send your request, the status for each run becomes <code>CancelStarted</code>.
-        /// When the cancellation completes, the status becomes <code>Canceled</code>.
+        /// When you send your request, the status for each run becomes <c>CancelStarted</c>.
+        /// When the cancellation completes, the status becomes <c>Canceled</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -167,7 +167,7 @@ namespace Amazon.Appflow
         /// You can cancel a flow run only when the run is in progress. You can't cancel a run
         /// that has already completed or failed. You also can't cancel a run that's scheduled
         /// to occur but hasn't started yet. To prevent a scheduled run, you can deactivate the
-        /// flow with the <code>StopFlow</code> action.
+        /// flow with the <c>StopFlow</c> action.
         /// </para>
         ///  
         /// <para>
@@ -175,8 +175,8 @@ namespace Amazon.Appflow
         /// </para>
         ///  
         /// <para>
-        /// When you send your request, the status for each run becomes <code>CancelStarted</code>.
-        /// When the cancellation completes, the status becomes <code>Canceled</code>.
+        /// When you send your request, the status for each run becomes <c>CancelStarted</c>.
+        /// When the cancellation completes, the status becomes <c>Canceled</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -618,13 +618,13 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Returns a list of <code>connector-profile</code> details matching the provided <code>connector-profile</code>
-        /// names and <code>connector-types</code>. Both input lists are optional, and you can
-        /// use them to filter the result. 
+        /// Returns a list of <c>connector-profile</c> details matching the provided <c>connector-profile</c>
+        /// names and <c>connector-types</c>. Both input lists are optional, and you can use them
+        /// to filter the result. 
         /// 
         ///  
         /// <para>
-        /// If no names or <code>connector-types</code> are provided, returns all connector profiles
+        /// If no names or <c>connector-types</c> are provided, returns all connector profiles
         /// in a paginated form. If there is no match, this operation returns an empty list.
         /// </para>
         /// </summary>
@@ -644,13 +644,13 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Returns a list of <code>connector-profile</code> details matching the provided <code>connector-profile</code>
-        /// names and <code>connector-types</code>. Both input lists are optional, and you can
-        /// use them to filter the result. 
+        /// Returns a list of <c>connector-profile</c> details matching the provided <c>connector-profile</c>
+        /// names and <c>connector-types</c>. Both input lists are optional, and you can use them
+        /// to filter the result. 
         /// 
         ///  
         /// <para>
-        /// If no names or <code>connector-types</code> are provided, returns all connector profiles
+        /// If no names or <c>connector-types</c> are provided, returns all connector profiles
         /// in a paginated form. If there is no match, this operation returns an empty list.
         /// </para>
         /// </summary>
@@ -679,9 +679,8 @@ namespace Amazon.Appflow
         /// Describes the connectors vended by Amazon AppFlow for specified connector types.
         /// If you don't specify a connector type, this operation describes all connectors vended
         /// by Amazon AppFlow. If there are more connectors than can be returned in one page,
-        /// the response contains a <code>nextToken</code> object, which can be be passed in to
-        /// the next call to the <code>DescribeConnectors</code> API operation to retrieve the
-        /// next page.
+        /// the response contains a <c>nextToken</c> object, which can be be passed in to the
+        /// next call to the <c>DescribeConnectors</c> API operation to retrieve the next page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectors service method.</param>
         /// 
@@ -702,9 +701,8 @@ namespace Amazon.Appflow
         /// Describes the connectors vended by Amazon AppFlow for specified connector types.
         /// If you don't specify a connector type, this operation describes all connectors vended
         /// by Amazon AppFlow. If there are more connectors than can be returned in one page,
-        /// the response contains a <code>nextToken</code> object, which can be be passed in to
-        /// the next call to the <code>DescribeConnectors</code> API operation to retrieve the
-        /// next page.
+        /// the response contains a <c>nextToken</c> object, which can be be passed in to the
+        /// next call to the <c>DescribeConnectors</c> API operation to retrieve the next page.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeConnectors service method.</param>
         /// <param name="cancellationToken">
@@ -1264,7 +1262,7 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Deactivates the existing flow. For on-demand flows, this operation returns an <code>unsupportedOperationException</code>
+        /// Deactivates the existing flow. For on-demand flows, this operation returns an <c>unsupportedOperationException</c>
         /// error message. For schedule and event-triggered flows, this operation deactivates
         /// the flow.
         /// </summary>
@@ -1293,7 +1291,7 @@ namespace Amazon.Appflow
 
 
         /// <summary>
-        /// Deactivates the existing flow. For on-demand flows, this operation returns an <code>unsupportedOperationException</code>
+        /// Deactivates the existing flow. For on-demand flows, this operation returns an <c>unsupportedOperationException</c>
         /// error message. For schedule and event-triggered flows, this operation deactivates
         /// the flow.
         /// </summary>

@@ -52,14 +52,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property IpAddressType. 
         /// <para>
         /// [Network Load Balancers] The type of IP addresses used by the subnets for your load
-        /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
-        /// (for IPv4 and IPv6 addresses). You can’t specify <code>dualstack</code> for a load
-        /// balancer with a UDP or TCP_UDP listener.
+        /// balancer. The possible values are <c>ipv4</c> (for IPv4 addresses) and <c>dualstack</c>
+        /// (for IPv4 and IPv6 addresses). You can’t specify <c>dualstack</c> for a load balancer
+        /// with a UDP or TCP_UDP listener.
         /// </para>
         ///  
         /// <para>
         /// [Gateway Load Balancers] The type of IP addresses used by the subnets for your load
-        /// balancer. The possible values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code>
+        /// balancer. The possible values are <c>ipv4</c> (for IPv4 addresses) and <c>dualstack</c>
         /// (for IPv4 and IPv6 addresses).
         /// </para>
         /// </summary>

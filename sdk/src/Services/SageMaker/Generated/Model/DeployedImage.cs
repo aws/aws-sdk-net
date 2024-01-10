@@ -34,11 +34,11 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// If you used the <code>registry/repository[:tag]</code> form to specify the image path
-    /// of the primary container when you created the model hosted in this <code>ProductionVariant</code>,
-    /// the path resolves to a path of the form <code>registry/repository[@digest]</code>.
-    /// A digest is a hash value that identifies a specific version of an image. For information
-    /// about Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling
+    /// If you used the <c>registry/repository[:tag]</c> form to specify the image path of
+    /// the primary container when you created the model hosted in this <c>ProductionVariant</c>,
+    /// the path resolves to a path of the form <c>registry/repository[@digest]</c>. A digest
+    /// is a hash value that identifies a specific version of an image. For information about
+    /// Amazon ECR paths, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/docker-pull-ecr-image.html">Pulling
     /// an Image</a> in the <i>Amazon ECR User Guide</i>.
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolutionTime. 
         /// <para>
-        /// The date and time when the image path for the model resolved to the <code>ResolvedImage</code>
+        /// The date and time when the image path for the model resolved to the <c>ResolvedImage</c>
         /// 
         /// </para>
         /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolvedImage. 
         /// <para>
-        /// The specific digest path of the image hosted in this <code>ProductionVariant</code>.
+        /// The specific digest path of the image hosted in this <c>ProductionVariant</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

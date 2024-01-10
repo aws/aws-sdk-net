@@ -255,8 +255,8 @@ namespace Amazon.DLM.Model
         ///  <b>[AMI policies and snapshot policies that target instances only]</b> A collection
         /// of key/value pairs with values determined dynamically when the policy is executed.
         /// Keys may be any valid Amazon EC2 tag key. Values must be in one of the two following
-        /// formats: <code>$(instance-id)</code> or <code>$(timestamp)</code>. Variable tags are
-        /// only valid for EBS Snapshot Management – Instance policies.
+        /// formats: <c>$(instance-id)</c> or <c>$(timestamp)</c>. Variable tags are only valid
+        /// for EBS Snapshot Management – Instance policies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=45)]

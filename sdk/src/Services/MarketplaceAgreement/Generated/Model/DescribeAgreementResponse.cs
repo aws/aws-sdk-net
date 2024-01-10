@@ -51,8 +51,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>AcceptanceTime</code> and <code>StartTime</code> can differ for future dated
-        /// agreements (FDAs).
+        ///  <c>AcceptanceTime</c> and <c>StartTime</c> can differ for future dated agreements
+        /// (FDAs).
         /// </para>
         ///  </note>
         /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property Acceptor. 
         /// <para>
         /// The details of the party accepting the agreement terms. This is commonly the buyer
-        /// for <code>PurchaseAgreement</code>.
+        /// for <c>PurchaseAgreement</c>.
         /// </para>
         /// </summary>
         public Acceptor Acceptor
@@ -109,7 +109,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property AgreementType. 
         /// <para>
-        /// The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.
+        /// The type of agreement. Values are <c>PurchaseAgreement</c> or <c>VendorInsightsAgreement</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -128,7 +128,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go
+        /// The date and time when the agreement ends. The field is <c>null</c> for pay-as-you-go
         /// agreements, which don’t have end dates.
         /// </para>
         /// </summary>
@@ -184,7 +184,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property Proposer. 
         /// <para>
         /// The details of the party proposing the agreement terms. This is commonly the seller
-        /// for <code>PurchaseAgreement</code>.
+        /// for <c>PurchaseAgreement</c>.
         /// </para>
         /// </summary>
         public Proposer Proposer
@@ -228,46 +228,43 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> – The terms of the agreement are active.
+        ///  <c>ACTIVE</c> – The terms of the agreement are active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ARCHIVED</code> – The agreement ended without a specified reason.
+        ///  <c>ARCHIVED</c> – The agreement ended without a specified reason.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELLED</code> – The acceptor ended the agreement before the defined end
-        /// date.
+        ///  <c>CANCELLED</c> – The acceptor ended the agreement before the defined end date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code> – The agreement ended on the defined end date.
+        ///  <c>EXPIRED</c> – The agreement ended on the defined end date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RENEWED</code> – The agreement was renewed into a new agreement (for example,
-        /// an auto-renewal).
+        ///  <c>RENEWED</c> – The agreement was renewed into a new agreement (for example, an
+        /// auto-renewal).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REPLACED</code> – The agreement was replaced using an agreement replacement
-        /// offer.
+        ///  <c>REPLACED</c> – The agreement was replaced using an agreement replacement offer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ROLLED_BACK</code> (Only applicable to inactive agreement revisions) – The
-        /// agreement revision has been rolled back because of an error. An earlier revision is
-        /// now active.
+        ///  <c>ROLLED_BACK</c> (Only applicable to inactive agreement revisions) – The agreement
+        /// revision has been rolled back because of an error. An earlier revision is now active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUPERCEDED</code> (Only applicable to inactive agreement revisions) – The agreement
+        ///  <c>SUPERCEDED</c> (Only applicable to inactive agreement revisions) – The agreement
         /// revision is no longer active and another agreement revision is now active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERMINATED</code> – The agreement ended before the defined end date because
-        /// of an AWS termination (for example, a payment failure).
+        ///  <c>TERMINATED</c> – The agreement ended before the defined end date because of an
+        /// AWS termination (for example, a payment failure).
         /// </para>
         ///  </li> </ul>
         /// </summary>

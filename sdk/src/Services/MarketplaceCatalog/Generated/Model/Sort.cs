@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.
+    /// An object that contains two attributes, <c>SortBy</c> and <c>SortOrder</c>.
     /// </summary>
     public partial class Sort
     {
@@ -39,14 +39,13 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code>
-        /// (default) and <code>EntityId</code>. In addition to <code>LastModifiedDate</code>
-        /// and <code>EntityId</code>, each <code>EntityType</code> might support additional fields.
+        /// For <c>ListEntities</c>, supported attributes include <c>LastModifiedDate</c> (default)
+        /// and <c>EntityId</c>. In addition to <c>LastModifiedDate</c> and <c>EntityId</c>, each
+        /// <c>EntityType</c> might support additional fields.
         /// </para>
         ///  
         /// <para>
-        /// For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code>
-        /// and <code>EndTime</code>.
+        /// For <c>ListChangeSets</c>, supported attributes include <c>StartTime</c> and <c>EndTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -65,8 +64,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default
-        /// value is <code>DESCENDING</code>.
+        /// The sorting order. Can be <c>ASCENDING</c> or <c>DESCENDING</c>. The default value
+        /// is <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

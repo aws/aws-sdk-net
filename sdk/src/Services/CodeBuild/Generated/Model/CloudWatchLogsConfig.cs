@@ -64,11 +64,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code>: CloudWatch Logs are enabled for this build project.
+        ///  <c>ENABLED</c>: CloudWatch Logs are enabled for this build project.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code>: CloudWatch Logs are not enabled for this build project.
+        ///  <c>DISABLED</c>: CloudWatch Logs are not enabled for this build project.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -51,7 +51,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// To use custom alarms, you must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
+        /// To use custom alarms, you must update your service role to allow <c>cloudwatch:DescribeAlarms</c>.
         /// You can either have AWS OpsWorks Stacks update the role for you when you first use
         /// this feature or you can edit the role manually. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
         /// AWS OpsWorks Stacks to Act on Your Behalf</a>.
@@ -97,8 +97,8 @@ namespace Amazon.OpsWorks.Model
         /// Stacks adds new instances following an upscaling event but the instances won't start
         /// reducing the load until they have been booted and configured. There is no point in
         /// raising additional scaling events during that operation, which typically takes several
-        /// minutes. <code>IgnoreMetricsTime</code> allows you to direct AWS OpsWorks Stacks to
-        /// suppress scaling events long enough to get the new instances online.
+        /// minutes. <c>IgnoreMetricsTime</c> allows you to direct AWS OpsWorks Stacks to suppress
+        /// scaling events long enough to get the new instances online.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

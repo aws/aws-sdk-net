@@ -121,7 +121,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// The <code>ResourceTag</code> objects associated with the resource.
+        /// The <c>ResourceTag</c> objects associated with the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

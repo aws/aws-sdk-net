@@ -33,8 +33,8 @@ namespace Amazon.Kendra.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Support for <code>AlfrescoConfiguration</code> ended May 2023. We recommend migrating
-    /// to or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
+    /// Support for <c>AlfrescoConfiguration</c> ended May 2023. We recommend migrating to
+    /// or using the Alfresco data source template schema / <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_TemplateConfiguration.html">TemplateConfiguration</a>
     /// API.
     /// </para>
     ///  </note>
@@ -58,12 +58,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property BlogFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Alfresco blogs to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
-        /// Mapping data source fields</a>. The Alfresco data source field names must exist in
-        /// your Alfresco custom metadata.
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Alfresco blogs to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Alfresco fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
+        /// data source fields</a>. The Alfresco data source field names must exist in your Alfresco
+        /// custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -82,7 +82,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlComments. 
         /// <para>
-        ///  <code>TRUE</code> to index comments of blogs and other content.
+        ///  <c>TRUE</c> to index comments of blogs and other content.
         /// </para>
         /// </summary>
         public bool CrawlComments
@@ -100,7 +100,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlSystemFolders. 
         /// <para>
-        ///  <code>TRUE</code> to index shared files.
+        ///  <c>TRUE</c> to index shared files.
         /// </para>
         /// </summary>
         public bool CrawlSystemFolders
@@ -118,10 +118,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DocumentLibraryFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Alfresco document libraries to Amazon Kendra index field names. To
-        /// create custom fields, use the <code>UpdateIndex</code> API before you map to Alfresco
-        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Alfresco document libraries to Amazon Kendra index field names. To create
+        /// custom fields, use the <c>UpdateIndex</c> API before you map to Alfresco fields. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
         /// Mapping data source fields</a>. The Alfresco data source field names must exist in
         /// your Alfresco custom metadata.
         /// </para>
@@ -322,12 +322,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property WikiFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Alfresco wikis to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to Alfresco fields. For
-        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
-        /// Mapping data source fields</a>. The Alfresco data source field names must exist in
-        /// your Alfresco custom metadata.
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Alfresco wikis to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Alfresco fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
+        /// data source fields</a>. The Alfresco data source field names must exist in your Alfresco
+        /// custom metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

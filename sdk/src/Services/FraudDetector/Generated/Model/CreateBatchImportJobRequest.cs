@@ -108,7 +108,7 @@ namespace Amazon.FraudDetector.Model
         /// Gets and sets the property JobId. 
         /// <para>
         /// The ID of the batch import job. The ID cannot be of a past job, unless the job exists
-        /// in <code>CREATE_FAILED</code> state.
+        /// in <c>CREATE_FAILED</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

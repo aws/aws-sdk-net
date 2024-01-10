@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You get the full benefit of fast snapshot restores after they enter the <code>enabled</code>
+    /// You get the full benefit of fast snapshot restores after they enter the <c>enabled</c>
     /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
     /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
     /// </para>
@@ -53,7 +53,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// One or more Availability Zones. For example, <code>us-east-2a</code>.
+        /// One or more Availability Zones. For example, <c>us-east-2a</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,9 +72,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceSnapshotIds. 
         /// <para>
-        /// The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.
-        /// You can specify a snapshot that was shared with you from another Amazon Web Services
-        /// account.
+        /// The IDs of one or more snapshots. For example, <c>snap-1234567890abcdef0</c>. You
+        /// can specify a snapshot that was shared with you from another Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,10 +39,10 @@ namespace Amazon.Redshift.Model
     /// <para>
     /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
     /// all snapshots that match any combination of the specified keys and values. For example,
-    /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
-    /// and <code>test</code> for tag values, all snapshots that have any combination of those
-    /// values are returned. Only snapshots that you own are returned in the response; shared
-    /// snapshots are not returned with the tag key and tag value request parameters.
+    /// if you have <c>owner</c> and <c>environment</c> for tag keys, and <c>admin</c> and
+    /// <c>test</c> for tag values, all snapshots that have any combination of those values
+    /// are returned. Only snapshots that you own are returned in the response; shared snapshots
+    /// are not returned with the tag key and tag value request parameters.
     /// </para>
     ///  
     /// <para>
@@ -76,24 +76,23 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>ClusterExists</code> is set to <code>true</code>, <code>ClusterIdentifier</code>
-        /// is required.
+        /// If <c>ClusterExists</c> is set to <c>true</c>, <c>ClusterIdentifier</c> is required.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code>
-        /// isn't specified, all snapshots associated with deleted clusters (orphaned snapshots)
-        /// are returned. 
+        /// If <c>ClusterExists</c> is set to <c>false</c> and <c>ClusterIdentifier</c> isn't
+        /// specified, all snapshots associated with deleted clusters (orphaned snapshots) are
+        /// returned. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code>
-        /// is specified for a deleted cluster, snapshots associated with that cluster are returned.
+        /// If <c>ClusterExists</c> is set to <c>false</c> and <c>ClusterIdentifier</c> is specified
+        /// for a deleted cluster, snapshots associated with that cluster are returned.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>ClusterExists</code> is set to <code>false</code> and <code>ClusterIdentifier</code>
-        /// is specified for an existing cluster, no snapshots are returned. 
+        /// If <c>ClusterExists</c> is set to <c>false</c> and <c>ClusterIdentifier</c> is specified
+        /// for an existing cluster, no snapshots are returned. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -138,7 +137,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2012-07-16T18:00:00Z</code> 
+        /// Example: <c>2012-07-16T18:00:00Z</c> 
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -158,10 +157,10 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterSnapshots</a> request exceed the
-        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in
-        /// the <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter
-        /// and retrying the request. 
+        /// value specified in <c>MaxRecords</c>, Amazon Web Services returns a value in the <c>Marker</c>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <c>Marker</c> parameter and retrying the request.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -181,13 +180,13 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of response records to return in each call. If the number of remaining
-        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
-        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// response records exceeds the specified <c>MaxRecords</c> value, a value is returned
+        /// in a <c>marker</c> field of the response. You can retrieve the next set of records
         /// by retrying the command with the returned marker value. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code> 
+        /// Default: <c>100</c> 
         /// </para>
         ///  
         /// <para>
@@ -274,7 +273,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>automated</code> | <code>manual</code> 
+        /// Valid Values: <c>automated</c> | <c>manual</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -314,7 +313,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2012-07-16T18:00:00Z</code> 
+        /// Example: <c>2012-07-16T18:00:00Z</c> 
         /// </para>
         /// </summary>
         public DateTime StartTimeUtc
@@ -334,8 +333,8 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A tag key or keys for which you want to return all matching cluster snapshots that
         /// are associated with the specified key or keys. For example, suppose that you have
-        /// snapshots that are tagged with keys called <code>owner</code> and <code>environment</code>.
-        /// If you specify both of these tag keys in the request, Amazon Redshift returns a response
+        /// snapshots that are tagged with keys called <c>owner</c> and <c>environment</c>. If
+        /// you specify both of these tag keys in the request, Amazon Redshift returns a response
         /// with the snapshots that have either or both of these tag keys associated with them.
         /// </para>
         /// </summary>
@@ -356,7 +355,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A tag value or values for which you want to return all matching cluster snapshots
         /// that are associated with the specified tag value or values. For example, suppose that
-        /// you have snapshots that are tagged with values called <code>admin</code> and <code>test</code>.
+        /// you have snapshots that are tagged with values called <c>admin</c> and <c>test</c>.
         /// If you specify both of these tag values in the request, Amazon Redshift returns a
         /// response with the snapshots that have either or both of these tag values associated
         /// with them.
@@ -397,7 +396,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2012-07-16T18:00:00Z</code> 
+        /// Example: <c>2012-07-16T18:00:00Z</c> 
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -432,7 +431,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2012-07-16T18:00:00Z</code> 
+        /// Example: <c>2012-07-16T18:00:00Z</c> 
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

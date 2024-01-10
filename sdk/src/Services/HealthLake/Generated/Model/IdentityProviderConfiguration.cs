@@ -105,28 +105,28 @@ namespace Amazon.HealthLake.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>authorization_endpoint</code>: The URL to the OAuth2 authorization endpoint.
+        ///  <c>authorization_endpoint</c>: The URL to the OAuth2 authorization endpoint.
         /// </para>
         ///  
         /// <para>
-        ///  <code>grant_types_supported</code>: An array of grant types that are supported at
-        /// the token endpoint. You must provide at least one grant type option. Valid options
-        /// are <code>authorization_code</code> and <code>client_credentials</code>.
+        ///  <c>grant_types_supported</c>: An array of grant types that are supported at the token
+        /// endpoint. You must provide at least one grant type option. Valid options are <c>authorization_code</c>
+        /// and <c>client_credentials</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>token_endpoint</code>: The URL to the OAuth2 token endpoint.
+        ///  <c>token_endpoint</c>: The URL to the OAuth2 token endpoint.
         /// </para>
         ///  
         /// <para>
-        ///  <code>capabilities</code>: An array of strings of the SMART capabilities that the
-        /// authorization server supports.
+        ///  <c>capabilities</c>: An array of strings of the SMART capabilities that the authorization
+        /// server supports.
         /// </para>
         ///  
         /// <para>
-        ///  <code>code_challenge_methods_supported</code>: An array of strings of supported PKCE
-        /// code challenge methods. You must include the <code>S256</code> method in the array
-        /// of PKCE code challenge methods.
+        ///  <c>code_challenge_methods_supported</c>: An array of strings of supported PKCE code
+        /// challenge methods. You must include the <c>S256</c> method in the array of PKCE code
+        /// challenge methods.
         /// </para>
         /// </summary>
         public string Metadata

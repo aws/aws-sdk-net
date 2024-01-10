@@ -52,18 +52,18 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
         /// Specifies whether the modifications in this request and any pending modifications
-        /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+        /// are asynchronously applied as soon as possible, regardless of the <c>PreferredMaintenanceWindow</c>
         /// setting for the instance. 
         /// </para>
         ///  
         /// <para>
-        ///  If this parameter is set to <code>false</code>, changes to the instance are applied
-        /// during the next maintenance window. Some parameter changes can cause an outage and
-        /// are applied on the next reboot.
+        ///  If this parameter is set to <c>false</c>, changes to the instance are applied during
+        /// the next maintenance window. Some parameter changes can cause an outage and are applied
+        /// on the next reboot.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -170,14 +170,14 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The new compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
+        /// The new compute and memory capacity of the instance; for example, <c>db.r5.large</c>.
         /// Not all instance classes are available in all Amazon Web Services Regions. 
         /// </para>
         ///  
         /// <para>
         /// If you modify the instance class, an outage occurs during the change. The change is
-        /// applied during the next maintenance window, unless <code>ApplyImmediately</code> is
-        /// specified as <code>true</code> for this request. 
+        /// applied during the next maintenance window, unless <c>ApplyImmediately</c> is specified
+        /// as <c>true</c> for this request. 
         /// </para>
         ///  
         /// <para>
@@ -207,7 +207,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing <code>DBInstance</code>.
+        /// Must match the identifier of an existing <c>DBInstance</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -248,10 +248,10 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property NewDBInstanceIdentifier. 
         /// <para>
         ///  The new instance identifier for the instance when renaming an instance. When you
-        /// change the instance identifier, an instance reboot occurs immediately if you set <code>Apply
-        /// Immediately</code> to <code>true</code>. It occurs during the next maintenance window
-        /// if you set <code>Apply Immediately</code> to <code>false</code>. This value is stored
-        /// as a lowercase string. 
+        /// change the instance identifier, an instance reboot occurs immediately if you set <c>Apply
+        /// Immediately</c> to <c>true</c>. It occurs during the next maintenance window if you
+        /// set <c>Apply Immediately</c> to <c>false</c>. This value is stored as a lowercase
+        /// string. 
         /// </para>
         ///  
         /// <para>
@@ -271,7 +271,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbinstance</code> 
+        /// Example: <c>mydbinstance</c> 
         /// </para>
         /// </summary>
         public string NewDBInstanceIdentifier
@@ -334,7 +334,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>

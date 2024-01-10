@@ -48,11 +48,11 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies the total number of results that you want included on each page of the response.
         /// If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+        /// operation. If additional items exist beyond the number you specify, the <c>NextToken</c>
         /// response element is returned with a value (not null). Include the specified value
-        /// as the <code>NextToken</code> request parameter in the next call to the operation
-        /// to get the next part of the results. Note that the service might return fewer results
-        /// than the maximum even when there are more results available. You should check <code>NextToken</code>
+        /// as the <c>NextToken</c> request parameter in the next call to the operation to get
+        /// the next part of the results. Note that the service might return fewer results than
+        /// the maximum even when there are more results available. You should check <c>NextToken</c>
         /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
@@ -73,9 +73,9 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Specifies that you want to receive the next page of results. Valid only if you received
-        /// a <code>NextToken</code> response in the previous request. If you did, it indicates
-        /// that more output is available. Set this parameter to the value provided by the previous
-        /// call's <code>NextToken</code> response to request the next page of results.
+        /// a <c>NextToken</c> response in the previous request. If you did, it indicates that
+        /// more output is available. Set this parameter to the value provided by the previous
+        /// call's <c>NextToken</c> response to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -101,26 +101,26 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An Amazon Web Services account ID, for example: <code>123456789012</code> 
+        /// An Amazon Web Services account ID, for example: <c>123456789012</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
+        /// Resource Name (ARN)</a> of an organization in Organizations, for example: <c>organizations::123456789012:organization/o-exampleorgid</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+        /// An ARN of an organizational unit (OU) in Organizations, for example: <c>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> 
+        /// An ARN of an IAM role, for example: <c>iam::123456789012:role/rolename</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> 
+        /// An ARN of an IAM user, for example: <c>iam::123456789012user/username</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -170,12 +170,12 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>SELF</code> </b> – principals that your account is sharing resources with
+        ///  <b> <c>SELF</c> </b> – principals that your account is sharing resources with
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>OTHER-ACCOUNTS</code> </b> – principals that are sharing resources with
-        /// your account
+        ///  <b> <c>OTHER-ACCOUNTS</c> </b> – principals that are sharing resources with your
+        /// account
         /// </para>
         ///  </li> </ul>
         /// </summary>

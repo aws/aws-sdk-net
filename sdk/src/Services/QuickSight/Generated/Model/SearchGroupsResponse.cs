@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property GroupList. 
         /// <para>
-        /// A list of groups in a specified namespace that match the filters you set in your <code>SearchGroups</code>
+        /// A list of groups in a specified namespace that match the filters you set in your <c>SearchGroups</c>
         /// request.
         /// </para>
         /// </summary>

@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster1</code> 
+        /// Example: <c>my-cluster1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster1-snapshot1</code> 
+        /// Example: <c>my-cluster1-snapshot1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

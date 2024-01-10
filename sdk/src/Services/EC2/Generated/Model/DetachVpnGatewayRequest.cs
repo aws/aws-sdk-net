@@ -37,8 +37,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You must wait for the attachment's state to switch to <code>detached</code> before
-    /// you can delete the VPC or attach a different VPC to the virtual private gateway.
+    /// You must wait for the attachment's state to switch to <c>detached</c> before you can
+    /// delete the VPC or attach a different VPC to the virtual private gateway.
     /// </para>
     /// </summary>
     public partial class DetachVpnGatewayRequest : AmazonEC2Request

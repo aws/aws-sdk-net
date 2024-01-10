@@ -41,17 +41,17 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property DeleteAfterUpload. 
         /// <para>
-        /// The <code>boolean</code> value used to indicate whether or not you want to mark the
-        /// media for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The
-        /// media files can be deleted if any of the deletion configuration values are set to
-        /// <code>true</code>, such as when the limit for the <code>EdgeRetentionInHours</code>,
-        /// or the <code>MaxLocalMediaSizeInMB</code>, has been reached. 
+        /// The <c>boolean</c> value used to indicate whether or not you want to mark the media
+        /// for deletion, once it has been uploaded to the Kinesis Video Stream cloud. The media
+        /// files can be deleted if any of the deletion configuration values are set to <c>true</c>,
+        /// such as when the limit for the <c>EdgeRetentionInHours</c>, or the <c>MaxLocalMediaSizeInMB</c>,
+        /// has been reached. 
         /// </para>
         ///  
         /// <para>
-        /// Since the default value is set to <code>true</code>, configure the uploader schedule
-        /// such that the media files are not being deleted before they are initially uploaded
-        /// to the Amazon Web Services cloud.
+        /// Since the default value is set to <c>true</c>, configure the uploader schedule such
+        /// that the media files are not being deleted before they are initially uploaded to the
+        /// Amazon Web Services cloud.
         /// </para>
         /// </summary>
         public bool DeleteAfterUpload

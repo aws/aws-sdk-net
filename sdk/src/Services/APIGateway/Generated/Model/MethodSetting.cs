@@ -123,10 +123,9 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property LoggingLevel. 
         /// <para>
         /// Specifies the logging level for this method, which affects the log entries pushed
-        /// to Amazon CloudWatch Logs. Valid values are <code>OFF</code>, <code>ERROR</code>,
-        /// and <code>INFO</code>. Choose <code>ERROR</code> to write only error-level entries
-        /// to CloudWatch Logs, or choose <code>INFO</code> to include all <code>ERROR</code>
-        /// events as well as extra informational events.
+        /// to Amazon CloudWatch Logs. Valid values are <c>OFF</c>, <c>ERROR</c>, and <c>INFO</c>.
+        /// Choose <c>ERROR</c> to write only error-level entries to CloudWatch Logs, or choose
+        /// <c>INFO</c> to include all <c>ERROR</c> events as well as extra informational events.
         /// </para>
         /// </summary>
         public string LoggingLevel

@@ -158,12 +158,12 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the analyzer. An <code>Active</code> analyzer successfully monitors
-        /// supported resources and generates new findings. The analyzer is <code>Disabled</code>
-        /// when a user action, such as removing trusted access for Identity and Access Management
-        /// Access Analyzer from Organizations, causes the analyzer to stop generating new findings.
-        /// The status is <code>Creating</code> when the analyzer creation is in progress and
-        /// <code>Failed</code> when the analyzer creation has failed. 
+        /// The status of the analyzer. An <c>Active</c> analyzer successfully monitors supported
+        /// resources and generates new findings. The analyzer is <c>Disabled</c> when a user
+        /// action, such as removing trusted access for Identity and Access Management Access
+        /// Analyzer from Organizations, causes the analyzer to stop generating new findings.
+        /// The status is <c>Creating</c> when the analyzer creation is in progress and <c>Failed</c>
+        /// when the analyzer creation has failed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -182,11 +182,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        /// The <code>statusReason</code> provides more details about the current status of the
-        /// analyzer. For example, if the creation for the analyzer fails, a <code>Failed</code>
-        /// status is returned. For an analyzer with organization as the type, this failure can
-        /// be due to an issue with creating the service-linked roles required in the member accounts
-        /// of the Amazon Web Services organization.
+        /// The <c>statusReason</c> provides more details about the current status of the analyzer.
+        /// For example, if the creation for the analyzer fails, a <c>Failed</c> status is returned.
+        /// For an analyzer with organization as the type, this failure can be due to an issue
+        /// with creating the service-linked roles required in the member accounts of the Amazon
+        /// Web Services organization.
         /// </para>
         /// </summary>
         public StatusReason StatusReason

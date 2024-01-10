@@ -45,7 +45,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property AclConfiguration. 
         /// <para>
         /// Indicates that an Amazon S3 canned ACL should be set to control ownership of stored
-        /// query results. Currently the only supported canned ACL is <code>BUCKET_OWNER_FULL_CONTROL</code>.
+        /// query results. Currently the only supported canned ACL is <c>BUCKET_OWNER_FULL_CONTROL</c>.
         /// This is a client-side setting. If workgroup settings override client-side settings,
         /// then the query uses the ACL configuration that is specified for the workgroup, and
         /// also uses the location for storing query results specified in the workgroup. For more
@@ -70,11 +70,11 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
         /// If query and calculation results are encrypted in Amazon S3, indicates the encryption
-        /// option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.
-        /// This is a client-side setting. If workgroup settings override client-side settings,
-        /// then the query uses the encryption configuration that is specified for the workgroup,
-        /// and also uses the location for storing query results specified in the workgroup. See
-        /// <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// option used (for example, <c>SSE_KMS</c> or <c>CSE_KMS</c>) and key information. This
+        /// is a client-side setting. If workgroup settings override client-side settings, then
+        /// the query uses the encryption configuration that is specified for the workgroup, and
+        /// also uses the location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
@@ -95,18 +95,17 @@ namespace Amazon.Athena.Model
         /// <para>
         /// The Amazon Web Services account ID that you expect to be the owner of the Amazon S3
         /// bucket specified by <a>ResultConfiguration$OutputLocation</a>. If set, Athena uses
-        /// the value for <code>ExpectedBucketOwner</code> when it makes Amazon S3 calls to your
-        /// specified output location. If the <code>ExpectedBucketOwner</code> Amazon Web Services
-        /// account ID does not match the actual owner of the Amazon S3 bucket, the call fails
-        /// with a permissions error.
+        /// the value for <c>ExpectedBucketOwner</c> when it makes Amazon S3 calls to your specified
+        /// output location. If the <c>ExpectedBucketOwner</c> Amazon Web Services account ID
+        /// does not match the actual owner of the Amazon S3 bucket, the call fails with a permissions
+        /// error.
         /// </para>
         ///  
         /// <para>
         /// This is a client-side setting. If workgroup settings override client-side settings,
-        /// then the query uses the <code>ExpectedBucketOwner</code> setting that is specified
-        /// for the workgroup, and also uses the location for storing query results specified
-        /// in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
-        /// and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// then the query uses the <c>ExpectedBucketOwner</c> setting that is specified for the
+        /// workgroup, and also uses the location for storing query results specified in the workgroup.
+        /// See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
@@ -127,9 +126,9 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property OutputLocation. 
         /// <para>
         /// The location in Amazon S3 where your query and calculation results are stored, such
-        /// as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the
-        /// query results location using one of the ways: either for individual queries using
-        /// either this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>.
+        /// as <c>s3://path/to/query/bucket/</c>. To run the query, you must specify the query
+        /// results location using one of the ways: either for individual queries using either
+        /// this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>.
         /// If none of them is set, Athena issues an error that no output location is provided.
         /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
         /// with query results, recent queries, and output files</a>. If workgroup settings override

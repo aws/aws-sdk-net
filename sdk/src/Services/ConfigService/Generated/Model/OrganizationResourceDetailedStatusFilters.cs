@@ -59,12 +59,11 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Indicates deployment status for conformance pack in a member account. When management
-        /// account calls <code>PutOrganizationConformancePack</code> action for the first time,
-        /// conformance pack status is created in the member account. When management account
-        /// calls <code>PutOrganizationConformancePack</code> action for the second time, conformance
-        /// pack status is updated in the member account. Conformance pack status is deleted when
-        /// the management account deletes <code>OrganizationConformancePack</code> and disables
-        /// service access for <code>config-multiaccountsetup.amazonaws.com</code>. 
+        /// account calls <c>PutOrganizationConformancePack</c> action for the first time, conformance
+        /// pack status is created in the member account. When management account calls <c>PutOrganizationConformancePack</c>
+        /// action for the second time, conformance pack status is updated in the member account.
+        /// Conformance pack status is deleted when the management account deletes <c>OrganizationConformancePack</c>
+        /// and disables service access for <c>config-multiaccountsetup.amazonaws.com</c>. 
         /// </para>
         ///  
         /// <para>
@@ -72,48 +71,41 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_SUCCESSFUL</code> when conformance pack has been created in the member
-        /// account. 
+        ///  <c>CREATE_SUCCESSFUL</c> when conformance pack has been created in the member account.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> when conformance pack is being created in the member
-        /// account.
+        ///  <c>CREATE_IN_PROGRESS</c> when conformance pack is being created in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> when conformance pack creation has failed in the member
-        /// account.
+        ///  <c>CREATE_FAILED</c> when conformance pack creation has failed in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_FAILED</code> when conformance pack deletion has failed in the member
-        /// account.
+        ///  <c>DELETE_FAILED</c> when conformance pack deletion has failed in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_IN_PROGRESS</code> when conformance pack is being deleted in the member
-        /// account.
+        ///  <c>DELETE_IN_PROGRESS</c> when conformance pack is being deleted in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_SUCCESSFUL</code> when conformance pack has been deleted in the member
-        /// account. 
+        ///  <c>DELETE_SUCCESSFUL</c> when conformance pack has been deleted in the member account.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_SUCCESSFUL</code> when conformance pack has been updated in the member
-        /// account.
+        ///  <c>UPDATE_SUCCESSFUL</c> when conformance pack has been updated in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_IN_PROGRESS</code> when conformance pack is being updated in the member
-        /// account.
+        ///  <c>UPDATE_IN_PROGRESS</c> when conformance pack is being updated in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_FAILED</code> when conformance pack deletion has failed in the member
-        /// account.
+        ///  <c>UPDATE_FAILED</c> when conformance pack deletion has failed in the member account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -60,7 +60,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ExternalEvaluation. 
         /// <para>
-        /// An <code>ExternalEvaluation</code> object that provides details about compliance.
+        /// An <c>ExternalEvaluation</c> object that provides details about compliance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

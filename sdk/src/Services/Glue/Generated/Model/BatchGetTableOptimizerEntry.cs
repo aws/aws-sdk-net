@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Represents a table optimizer to retrieve in the <code>BatchGetTableOptimizer</code>
-    /// operation.
+    /// Represents a table optimizer to retrieve in the <c>BatchGetTableOptimizer</c> operation.
     /// </summary>
     public partial class BatchGetTableOptimizerEntry
     {

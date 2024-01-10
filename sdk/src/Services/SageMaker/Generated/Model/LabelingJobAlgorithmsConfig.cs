@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Provides configuration information for auto-labeling of your data objects. A <code>LabelingJobAlgorithmsConfig</code>
+    /// Provides configuration information for auto-labeling of your data objects. A <c>LabelingJobAlgorithmsConfig</c>
     /// object must be supplied in order to use auto-labeling.
     /// </summary>
     public partial class LabelingJobAlgorithmsConfig
@@ -71,7 +71,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</code>
+        ///  <c>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/image-classification</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</code>
+        ///  <c>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/text-classification</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</code>
+        ///  <c>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/object-detection</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</code>
+        ///  <c>arn:aws:sagemaker:<i>region</i>:027400017018:labeling-job-algorithm-specification/semantic-segmentation</c>
         /// 
         /// </para>
         ///  </li> </ul>

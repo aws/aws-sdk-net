@@ -41,34 +41,32 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    /// In addition to listing the properties provided in the <code>CreatePredictor</code>
-    /// request, this operation lists the following properties:
+    /// In addition to listing the properties provided in the <c>CreatePredictor</c> request,
+    /// this operation lists the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DatasetImportJobArns</code> - The dataset import jobs used to import training
-    /// data.
+    ///  <c>DatasetImportJobArns</c> - The dataset import jobs used to import training data.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AutoMLAlgorithmArns</code> - If AutoML is performed, the algorithms that were
-    /// evaluated.
+    ///  <c>AutoMLAlgorithmArns</c> - If AutoML is performed, the algorithms that were evaluated.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreationTime</code> 
+    ///  <c>CreationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastModificationTime</code> 
+    ///  <c>LastModificationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Status</code> 
+    ///  <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Message</code> - If an error occurred, information about the error.
+    ///  <c>Message</c> - If an error occurred, information about the error.
     /// </para>
     ///  </li> </ul>
     /// </summary>

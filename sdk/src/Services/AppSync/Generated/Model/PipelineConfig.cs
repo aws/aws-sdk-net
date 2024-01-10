@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// The pipeline configuration for a resolver of kind <code>PIPELINE</code>.
+    /// The pipeline configuration for a resolver of kind <c>PIPELINE</c>.
     /// </summary>
     public partial class PipelineConfig
     {
@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Functions. 
         /// <para>
-        /// A list of <code>Function</code> objects.
+        /// A list of <c>Function</c> objects.
         /// </para>
         /// </summary>
         public List<string> Functions

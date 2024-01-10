@@ -44,7 +44,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:PutGroupConfiguration</code> 
+    ///  <c>resource-groups:PutGroupConfiguration</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>,
+        /// A resource group can contain either a <c>Configuration</c> or a <c>ResourceQuery</c>,
         /// but not both.
         /// </para>
         ///  </note>

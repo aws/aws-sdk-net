@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBParameterGroups</code>
+    /// This data type is used as a response element in the <c>DescribeDBParameterGroups</c>
     /// action.
     /// </para>
     /// </summary>

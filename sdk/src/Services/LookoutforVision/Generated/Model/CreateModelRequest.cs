@@ -30,13 +30,13 @@ namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateModel operation.
-    /// Creates a new version of a model within an an Amazon Lookout for Vision project. <code>CreateModel</code>
+    /// Creates a new version of a model within an an Amazon Lookout for Vision project. <c>CreateModel</c>
     /// is an asynchronous operation in which Amazon Lookout for Vision trains, tests, and
     /// evaluates a new version of a model. 
     /// 
     ///  
     /// <para>
-    /// To get the current status, check the <code>Status</code> field returned in the response
+    /// To get the current status, check the <c>Status</c> field returned in the response
     /// from <a>DescribeModel</a>.
     /// </para>
     ///  
@@ -49,12 +49,12 @@ namespace Amazon.LookoutforVision.Model
     ///  
     /// <para>
     /// After training completes, the evaluation metrics are stored at the location specified
-    /// in <code>OutputConfig</code>. 
+    /// in <c>OutputConfig</c>. 
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:CreateModel</code>
-    /// operation. If you want to tag your model, you also require permission to the <code>lookoutvision:TagResource</code>
+    /// This operation requires permissions to perform the <c>lookoutvision:CreateModel</c>
+    /// operation. If you want to tag your model, you also require permission to the <c>lookoutvision:TagResource</c>
     /// operation.
     /// </para>
     /// </summary>
@@ -70,23 +70,21 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// ClientToken is an idempotency token that ensures a call to <code>CreateModel</code>
-        /// completes only once. You choose the value to pass. For example, An issue might prevent
-        /// you from getting a response from <code>CreateModel</code>. In this case, safely retry
-        /// your call to <code>CreateModel</code> by using the same <code>ClientToken</code> parameter
-        /// value. 
+        /// ClientToken is an idempotency token that ensures a call to <c>CreateModel</c> completes
+        /// only once. You choose the value to pass. For example, An issue might prevent you from
+        /// getting a response from <c>CreateModel</c>. In this case, safely retry your call to
+        /// <c>CreateModel</c> by using the same <c>ClientToken</c> parameter value. 
         /// </para>
         ///  
         /// <para>
-        /// If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using
-        /// inserts a value for you. This prevents retries after a network error from starting
-        /// multiple training jobs. You'll need to provide your own value for other use cases.
-        /// 
+        /// If you don't supply a value for <c>ClientToken</c>, the AWS SDK you are using inserts
+        /// a value for you. This prevents retries after a network error from starting multiple
+        /// training jobs. You'll need to provide your own value for other use cases. 
         /// </para>
         ///  
         /// <para>
         /// An error occurs if the other input parameters are not the same as in the first request.
-        /// Using a different value for <code>ClientToken</code> is considered a new call to <code>CreateModel</code>.
+        /// Using a different value for <c>ClientToken</c> is considered a new call to <c>CreateModel</c>.
         /// An idempotency token is active for 8 hours.
         /// </para>
         /// </summary>

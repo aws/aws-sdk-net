@@ -48,14 +48,14 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// The minimum and maximum values for this property depend on the value of <code>HAPairs</code>
-        /// and <code>StorageCapacity</code>. The minimum value is calculated as <code>StorageCapacity</code>
-        /// * 3 * <code>HAPairs</code> (3 IOPS per GB of <code>StorageCapacity</code>). The maximum
-        /// value is calculated as 200,000 * <code>HAPairs</code>.
+        /// The minimum and maximum values for this property depend on the value of <c>HAPairs</c>
+        /// and <c>StorageCapacity</c>. The minimum value is calculated as <c>StorageCapacity</c>
+        /// * 3 * <c>HAPairs</c> (3 IOPS per GB of <c>StorageCapacity</c>). The maximum value
+        /// is calculated as 200,000 * <c>HAPairs</c>.
         /// </para>
         ///  
         /// <para>
-        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>Iops</code>
+        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <c>Iops</c>
         /// is outside of the minimum or maximum values.
         /// </para>
         /// </summary>
@@ -75,9 +75,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Specifies whether the file system is using the <code>AUTOMATIC</code> setting of SSD
-        /// IOPS of 3 IOPS per GB of storage capacity, , or if it using a <code>USER_PROVISIONED</code>
-        /// value.
+        /// Specifies whether the file system is using the <c>AUTOMATIC</c> setting of SSD IOPS
+        /// of 3 IOPS per GB of storage capacity, , or if it using a <c>USER_PROVISIONED</c> value.
         /// </para>
         /// </summary>
         public DiskIopsConfigurationMode Mode

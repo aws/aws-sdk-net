@@ -87,8 +87,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property VolumeInfos. 
         /// <para>
         /// An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI volume.
-        /// If no volumes are defined for the gateway, then <code>VolumeInfos</code> is an empty
-        /// array "[]".
+        /// If no volumes are defined for the gateway, then <c>VolumeInfos</c> is an empty array
+        /// "[]".
         /// </para>
         /// </summary>
         public List<VolumeInfo> VolumeInfos

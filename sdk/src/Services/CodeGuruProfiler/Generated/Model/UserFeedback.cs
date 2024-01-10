@@ -39,8 +39,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Optional <code>Positive</code> or <code>Negative</code> feedback submitted by the
-        /// user about whether the recommendation is useful or not.
+        /// Optional <c>Positive</c> or <c>Negative</c> feedback submitted by the user about whether
+        /// the recommendation is useful or not.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

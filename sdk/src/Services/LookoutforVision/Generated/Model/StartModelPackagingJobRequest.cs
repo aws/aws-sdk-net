@@ -37,7 +37,7 @@ namespace Amazon.LookoutforVision.Model
     ///  
     /// <para>
     /// Use the <a>DescribeModelPackagingJob</a> API to determine the current status of the
-    /// job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.
+    /// job. The model packaging job is complete if the value of <c>Status</c> is <c>SUCCEEDED</c>.
     /// </para>
     ///  
     /// <para>
@@ -51,32 +51,31 @@ namespace Amazon.LookoutforVision.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>lookoutvision:StartModelPackagingJob</code> 
+    ///  <c>lookoutvision:StartModelPackagingJob</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>s3:PutObject</code> 
+    ///  <c>s3:PutObject</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>s3:GetBucketLocation</code> 
+    ///  <c>s3:GetBucketLocation</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>kms:GenerateDataKey</code> 
+    ///  <c>kms:GenerateDataKey</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>greengrass:CreateComponentVersion</code> 
+    ///  <c>greengrass:CreateComponentVersion</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>greengrass:DescribeComponent</code> 
+    ///  <c>greengrass:DescribeComponent</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// (Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the
-    /// component.
+    /// (Optional) <c>greengrass:TagResource</c>. Only required if you want to tag the component.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -96,23 +95,23 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// ClientToken is an idempotency token that ensures a call to <code>StartModelPackagingJob</code>
+        /// ClientToken is an idempotency token that ensures a call to <c>StartModelPackagingJob</c>
         /// completes only once. You choose the value to pass. For example, An issue might prevent
-        /// you from getting a response from <code>StartModelPackagingJob</code>. In this case,
-        /// safely retry your call to <code>StartModelPackagingJob</code> by using the same <code>ClientToken</code>
+        /// you from getting a response from <c>StartModelPackagingJob</c>. In this case, safely
+        /// retry your call to <c>StartModelPackagingJob</c> by using the same <c>ClientToken</c>
         /// parameter value.
         /// </para>
         ///  
         /// <para>
-        /// If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using
-        /// inserts a value for you. This prevents retries after a network error from making multiple
+        /// If you don't supply a value for <c>ClientToken</c>, the AWS SDK you are using inserts
+        /// a value for you. This prevents retries after a network error from making multiple
         /// dataset creation requests. You'll need to provide your own value for other use cases.
         /// 
         /// </para>
         ///  
         /// <para>
         /// An error occurs if the other input parameters are not the same as in the first request.
-        /// Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModelPackagingJob</code>.
+        /// Using a different value for <c>ClientToken</c> is considered a new call to <c>StartModelPackagingJob</c>.
         /// An idempotency token is active for 8 hours. 
         /// </para>
         /// </summary>

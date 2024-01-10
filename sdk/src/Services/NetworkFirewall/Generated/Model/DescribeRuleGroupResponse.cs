@@ -102,7 +102,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To make changes to the rule group, you provide the token in your request. Network
         /// Firewall uses the token to ensure that the rule group hasn't changed since you last
-        /// retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+        /// retrieved it. If it has changed, the operation fails with an <c>InvalidTokenException</c>.
         /// If this happens, retrieve the rule group again to get a current copy of it with a
         /// current token. Reapply your changes as needed, then try the operation again using
         /// the new token. 

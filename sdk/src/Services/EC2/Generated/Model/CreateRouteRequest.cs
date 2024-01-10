@@ -40,22 +40,22 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// When determining how to route traffic, we use the route with the most specific match.
-    /// For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and
-    /// the route table includes the following two IPv4 routes:
+    /// For example, traffic is destined for the IPv4 address <c>192.0.2.3</c>, and the route
+    /// table includes the following two IPv4 routes:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>192.0.2.0/24</code> (goes to some target A)
+    ///  <c>192.0.2.0/24</c> (goes to some target A)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>192.0.2.0/28</code> (goes to some target B)
+    ///  <c>192.0.2.0/28</c> (goes to some target B)
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the
-    /// second route in the list covers a smaller number of IP addresses and is therefore
-    /// more specific, so we use that route to determine where to target the traffic.
+    /// Both routes apply to the traffic destined for <c>192.0.2.3</c>. However, the second
+    /// route in the list covers a smaller number of IP addresses and is therefore more specific,
+    /// so we use that route to determine where to target the traffic.
     /// </para>
     ///  
     /// <para>
@@ -127,7 +127,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The IPv4 CIDR address block used for the destination match. Routing decisions are
         /// based on the most specific match. We modify the specified CIDR block to its canonical
-        /// form; for example, if you specify <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
+        /// form; for example, if you specify <c>100.68.0.18/18</c>, we modify it to <c>100.68.0.0/18</c>.
         /// </para>
         /// </summary>
         public string DestinationCidrBlock

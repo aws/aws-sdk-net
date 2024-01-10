@@ -147,11 +147,11 @@ namespace Amazon.AppFabric.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Active</code>: The ingestion destination is active and is ready to be used.
+        ///  <c>Active</c>: The ingestion destination is active and is ready to be used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: The ingestion destination has failed. If the ingestion destination
+        ///  <c>Failed</c>: The ingestion destination has failed. If the ingestion destination
         /// is in this state, you should verify the ingestion destination configuration and try
         /// again.
         /// </para>
@@ -176,7 +176,7 @@ namespace Amazon.AppFabric.Model
         /// </para>
         ///  
         /// <para>
-        /// Only present when the <code>status</code> of ingestion destination is <code>Failed</code>.
+        /// Only present when the <c>status</c> of ingestion destination is <c>Failed</c>.
         /// </para>
         /// </summary>
         public string StatusReason

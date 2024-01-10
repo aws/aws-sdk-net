@@ -30,10 +30,10 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationsAccess operation.
-    /// Retrieves information about the account's <code>OrganizationAccess</code> status.
-    /// This API can be called either by the management account or the delegated administrator
-    /// by using the <code>CallAs</code> parameter. This API can also be called without the
-    /// <code>CallAs</code> parameter by the management account.
+    /// Retrieves information about the account's <c>OrganizationAccess</c> status. This API
+    /// can be called either by the management account or the delegated administrator by using
+    /// the <c>CallAs</c> parameter. This API can also be called without the <c>CallAs</c>
+    /// parameter by the management account.
     /// </summary>
     public partial class DescribeOrganizationsAccessRequest : AmazonCloudFormationRequest
     {
@@ -48,15 +48,15 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified.
+        /// By default, <c>SELF</c> is specified.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// If you are signed in to a delegated administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>

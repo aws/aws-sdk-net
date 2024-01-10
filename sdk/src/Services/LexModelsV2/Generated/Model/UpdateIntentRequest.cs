@@ -74,7 +74,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot that contains the intent. Must be <code>DRAFT</code>.
+        /// The version of the bot that contains the intent. Must be <c>DRAFT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]

@@ -39,8 +39,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property MaxVersions. 
         /// <para>
-        /// How many versions of dataset contents are kept. The <code>unlimited</code> parameter
-        /// must be <code>false</code>.
+        /// How many versions of dataset contents are kept. The <c>unlimited</c> parameter must
+        /// be <c>false</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

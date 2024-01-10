@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A parameter declaration for the <code>String</code> data type.
+    /// A parameter declaration for the <c>String</c> data type.
     /// </summary>
     public partial class StringParameterDeclaration
     {
@@ -115,8 +115,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ValueWhenUnset. 
         /// <para>
-        /// The configuration that defines the default value of a <code>String</code> parameter
-        /// when a value has not been set.
+        /// The configuration that defines the default value of a <c>String</c> parameter when
+        /// a value has not been set.
         /// </para>
         /// </summary>
         public StringValueWhenUnsetConfiguration ValueWhenUnset

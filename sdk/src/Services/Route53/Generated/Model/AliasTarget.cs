@@ -81,21 +81,21 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For regional APIs, specify the value of <code>regionalHostedZoneId</code>.
+        /// For regional APIs, specify the value of <c>regionalHostedZoneId</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For edge-optimized APIs, specify the value of <code>distributionHostedZoneId</code>.
+        /// For edge-optimized APIs, specify the value of <c>distributionHostedZoneId</c>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd>
         /// 
         /// <para>
-        /// Specify the hosted zone ID for your interface endpoint. You can get the value of <code>HostedZoneId</code>
+        /// Specify the hosted zone ID for your interface endpoint. You can get the value of <c>HostedZoneId</c>
         /// using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.
         /// </para>
         ///  </dd> <dt>CloudFront distribution</dt> <dd> 
         /// <para>
-        /// Specify <code>Z2FDTNDATAQYW2</code>.
+        /// Specify <c>Z2FDTNDATAQYW2</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -129,37 +129,37 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
-        /// the applicable value. For more information, see the applicable guide:
+        ///  <b>Elastic Load Balancing API</b>: Use <c>DescribeLoadBalancers</c> to get the applicable
+        /// value. For more information, see the applicable guide:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Classic Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/2012-06-01/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-        /// to get the value of <code>CanonicalHostedZoneNameId</code>.
+        /// to get the value of <c>CanonicalHostedZoneNameId</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Application and Network Load Balancers: Use <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeLoadBalancers.html">DescribeLoadBalancers</a>
-        /// to get the value of <code>CanonicalHostedZoneId</code>.
+        /// to get the value of <c>CanonicalHostedZoneId</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>CLI</b>: Use <code>describe-load-balancers</code> to get the applicable value.
-        /// For more information, see the applicable guide:
+        ///  <b>CLI</b>: Use <c>describe-load-balancers</c> to get the applicable value. For more
+        /// information, see the applicable guide:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Classic Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elb/describe-load-balancers.html">describe-load-balancers</a>
-        /// to get the value of <code>CanonicalHostedZoneNameId</code>.
+        /// to get the value of <c>CanonicalHostedZoneNameId</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Application and Network Load Balancers: Use <a href="http://docs.aws.amazon.com/cli/latest/reference/elbv2/describe-load-balancers.html">describe-load-balancers</a>
-        /// to get the value of <code>CanonicalHostedZoneId</code>.
+        /// to get the value of <c>CanonicalHostedZoneId</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>Global Accelerator accelerator</dt> <dd> 
         /// <para>
-        /// Specify <code>Z2BJ6XQ5FK7U4H</code>.
+        /// Specify <c>Z2BJ6XQ5FK7U4H</c>.
         /// </para>
         ///  </dd> <dt>An Amazon S3 bucket configured as a static website</dt> <dd> 
         /// <para>
@@ -201,24 +201,23 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For regional APIs, specify the value of <code>regionalDomainName</code>.
+        /// For regional APIs, specify the value of <c>regionalDomainName</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For edge-optimized APIs, specify the value of <code>distributionDomainName</code>.
-        /// This is the name of the associated CloudFront distribution, such as <code>da1b2c3d4e5.cloudfront.net</code>.
+        /// For edge-optimized APIs, specify the value of <c>distributionDomainName</c>. This
+        /// is the name of the associated CloudFront distribution, such as <c>da1b2c3d4e5.cloudfront.net</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// The name of the record that you're creating must match a custom domain name for your
-        /// API, such as <code>api.example.com</code>.
+        /// API, such as <c>api.example.com</c>.
         /// </para>
         ///  </note> </dd> <dt>Amazon Virtual Private Cloud interface VPC endpoint</dt> <dd> 
         /// <para>
-        /// Enter the API endpoint for the interface endpoint, such as <code>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</code>.
+        /// Enter the API endpoint for the interface endpoint, such as <c>vpce-123456789abcdef01-example-us-east-1a.elasticloadbalancing.us-east-1.vpce.amazonaws.com</c>.
         /// For edge-optimized APIs, this is the domain name for the corresponding CloudFront
-        /// distribution. You can get the value of <code>DnsName</code> using the CLI command
-        /// <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.
+        /// distribution. You can get the value of <c>DnsName</c> using the CLI command <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/describe-vpc-endpoints.html">describe-vpc-endpoints</a>.
         /// </para>
         ///  </dd> <dt>CloudFront distribution</dt> <dd> 
         /// <para>
@@ -249,7 +248,7 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If the domain name for your Elastic Beanstalk environment includes the region that
         /// you deployed the environment in, you can create an alias record that routes traffic
-        /// to the environment. For example, the domain name <code>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</code>
+        /// to the environment. For example, the domain name <c>my-environment.<i>us-west-2</i>.elasticbeanstalk.com</c>
         /// is a regionalized domain name. 
         /// </para>
         ///  <important> 
@@ -265,8 +264,8 @@ namespace Amazon.Route53.Model
         ///  </important> 
         /// <para>
         /// For Elastic Beanstalk environments that have regionalized subdomains, specify the
-        /// <code>CNAME</code> attribute for the environment. You can use the following methods
-        /// to get the value of the CNAME attribute:
+        /// <c>CNAME</c> attribute for the environment. You can use the following methods to get
+        /// the value of the CNAME attribute:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -276,14 +275,14 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Elastic Beanstalk API</i>: Use the <code>DescribeEnvironments</code> action to
-        /// get the value of the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a>
+        ///  <i>Elastic Beanstalk API</i>: Use the <c>DescribeEnvironments</c> action to get the
+        /// value of the <c>CNAME</c> attribute. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_DescribeEnvironments.html">DescribeEnvironments</a>
         /// in the <i>Elastic Beanstalk API Reference</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>CLI</i>: Use the <code>describe-environments</code> command to get the value of
-        /// the <code>CNAME</code> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
+        ///  <i>CLI</i>: Use the <c>describe-environments</c> command to get the value of the
+        /// <c>CNAME</c> attribute. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/reference/elasticbeanstalk/describe-environments.html">describe-environments</a>
         /// in the <i>CLI Command Reference</i>.
         /// </para>
         ///  </li> </ul> </dd> <dt>ELB load balancer</dt> <dd> 
@@ -305,8 +304,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Elastic Load Balancing API</b>: Use <code>DescribeLoadBalancers</code> to get
-        /// the value of <code>DNSName</code>. For more information, see the applicable guide:
+        ///  <b>Elastic Load Balancing API</b>: Use <c>DescribeLoadBalancers</c> to get the value
+        /// of <c>DNSName</c>. For more information, see the applicable guide:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -320,7 +319,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>CLI</b>: Use <code>describe-load-balancers</code> to get the value of <code>DNSName</code>.
+        ///  <b>CLI</b>: Use <c>describe-load-balancers</c> to get the value of <c>DNSName</c>.
         /// For more information, see the applicable guide:
         /// </para>
         ///  <ul> <li> 
@@ -349,24 +348,24 @@ namespace Amazon.Route53.Model
         /// <dd> 
         /// <para>
         /// Specify the domain name of the Amazon S3 website endpoint that you created the bucket
-        /// in, for example, <code>s3-website.us-east-2.amazonaws.com</code>. For more information
-        /// about valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon
+        /// in, for example, <c>s3-website.us-east-2.amazonaws.com</c>. For more information about
+        /// valid values, see the table <a href="https://docs.aws.amazon.com/general/latest/gr/s3.html#s3_website_region_endpoints">Amazon
         /// S3 Website Endpoints</a> in the <i>Amazon Web Services General Reference</i>. For
         /// more information about using S3 buckets for websites, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/getting-started.html">Getting
         /// Started with Amazon Route 53</a> in the <i>Amazon Route 53 Developer Guide.</i> 
         /// </para>
         ///  </dd> <dt>Another Route 53 resource record set</dt> <dd> 
         /// <para>
-        /// Specify the value of the <code>Name</code> element for a resource record set in the
-        /// current hosted zone.
+        /// Specify the value of the <c>Name</c> element for a resource record set in the current
+        /// hosted zone.
         /// </para>
         ///  <note> 
         /// <para>
         /// If you're creating an alias record that has the same name as the hosted zone (known
         /// as the zone apex), you can't specify the domain name for a record for which the value
-        /// of <code>Type</code> is <code>CNAME</code>. This is because the alias record must
-        /// have the same type as the record that you're routing traffic to, and creating a CNAME
-        /// record for the zone apex isn't supported even for an alias record.
+        /// of <c>Type</c> is <c>CNAME</c>. This is because the alias record must have the same
+        /// type as the record that you're routing traffic to, and creating a CNAME record for
+        /// the zone apex isn't supported even for an alias record.
         /// </para>
         ///  </note> </dd> </dl>
         /// </summary>
@@ -387,8 +386,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property EvaluateTargetHealth. 
         /// <para>
         ///  <i>Applies only to alias, failover alias, geolocation alias, latency alias, and weighted
-        /// alias resource record sets:</i> When <code>EvaluateTargetHealth</code> is <code>true</code>,
-        /// an alias resource record set inherits the health of the referenced Amazon Web Services
+        /// alias resource record sets:</i> When <c>EvaluateTargetHealth</c> is <c>true</c>, an
+        /// alias resource record set inherits the health of the referenced Amazon Web Services
         /// resource, such as an ELB load balancer or another resource record set in the hosted
         /// zone.
         /// </para>
@@ -398,19 +397,19 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <dl> <dt>CloudFront distributions</dt> <dd> 
         /// <para>
-        /// You can't set <code>EvaluateTargetHealth</code> to <code>true</code> when the alias
-        /// target is a CloudFront distribution.
+        /// You can't set <c>EvaluateTargetHealth</c> to <c>true</c> when the alias target is
+        /// a CloudFront distribution.
         /// </para>
         ///  </dd> <dt>Elastic Beanstalk environments that have regionalized subdomains</dt> <dd>
         /// 
         /// <para>
-        /// If you specify an Elastic Beanstalk environment in <code>DNSName</code> and the environment
+        /// If you specify an Elastic Beanstalk environment in <c>DNSName</c> and the environment
         /// contains an ELB load balancer, Elastic Load Balancing routes queries only to the healthy
         /// Amazon EC2 instances that are registered with the load balancer. (An environment automatically
         /// contains an ELB load balancer if it includes more than one Amazon EC2 instance.) If
-        /// you set <code>EvaluateTargetHealth</code> to <code>true</code> and either no Amazon
-        /// EC2 instances are healthy or the load balancer itself is unhealthy, Route 53 routes
-        /// queries to other available resources that are healthy, if any. 
+        /// you set <c>EvaluateTargetHealth</c> to <c>true</c> and either no Amazon EC2 instances
+        /// are healthy or the load balancer itself is unhealthy, Route 53 routes queries to other
+        /// available resources that are healthy, if any. 
         /// </para>
         ///  
         /// <para>
@@ -422,18 +421,18 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <code>DNSName</code>,
+        ///  <b>Classic Load Balancers</b>: If you specify an ELB Classic Load Balancer in <c>DNSName</c>,
         /// Elastic Load Balancing routes queries only to the healthy Amazon EC2 instances that
-        /// are registered with the load balancer. If you set <code>EvaluateTargetHealth</code>
-        /// to <code>true</code> and either no EC2 instances are healthy or the load balancer
-        /// itself is unhealthy, Route 53 routes queries to other resources.
+        /// are registered with the load balancer. If you set <c>EvaluateTargetHealth</c> to <c>true</c>
+        /// and either no EC2 instances are healthy or the load balancer itself is unhealthy,
+        /// Route 53 routes queries to other resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Application and Network Load Balancers</b>: If you specify an ELB Application
-        /// or Network Load Balancer and you set <code>EvaluateTargetHealth</code> to <code>true</code>,
-        /// Route 53 routes queries to the load balancer based on the health of the target groups
-        /// that are associated with the load balancer:
+        /// or Network Load Balancer and you set <c>EvaluateTargetHealth</c> to <c>true</c>, Route
+        /// 53 routes queries to the load balancer based on the health of the target groups that
+        /// are associated with the load balancer:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -455,15 +454,15 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </note> </dd> <dt>S3 buckets</dt> <dd> 
         /// <para>
-        /// There are no special requirements for setting <code>EvaluateTargetHealth</code> to
-        /// <code>true</code> when the alias target is an S3 bucket.
+        /// There are no special requirements for setting <c>EvaluateTargetHealth</c> to <c>true</c>
+        /// when the alias target is an S3 bucket.
         /// </para>
         ///  </dd> <dt>Other records in the same hosted zone</dt> <dd> 
         /// <para>
-        /// If the Amazon Web Services resource that you specify in <code>DNSName</code> is a
-        /// record or a group of records (for example, a group of weighted records) but is not
-        /// another alias record, we recommend that you associate a health check with all of the
-        /// records in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
+        /// If the Amazon Web Services resource that you specify in <c>DNSName</c> is a record
+        /// or a group of records (for example, a group of weighted records) but is not another
+        /// alias record, we recommend that you associate a health check with all of the records
+        /// in the alias target. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-failover-complex-configs.html#dns-failover-complex-configs-hc-omitting">What
         /// Happens When You Omit Health Checks?</a> in the <i>Amazon Route 53 Developer Guide</i>.
         /// </para>
         ///  </dd> </dl> 

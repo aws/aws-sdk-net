@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
         /// Specifies how long a traffic phase should be. For custom load tests, the value should
-        /// be between 120 and 3600. This value should not exceed <code>JobDurationInSeconds</code>.
+        /// be between 120 and 3600. This value should not exceed <c>JobDurationInSeconds</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -30,21 +30,21 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppInstanceAdmin operation.
-    /// Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>.
+    /// Promotes an <c>AppInstanceUser</c> or <c>AppInstanceBot</c> to an <c>AppInstanceAdmin</c>.
     /// The promoted entity can perform the following actions. 
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
+    ///  <c>ChannelModerator</c> actions across all channels in the <c>AppInstance</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteChannelMessage</code> actions.
+    ///  <c>DeleteChannelMessage</c> actions.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted
-    /// to an <code>AppInstanceAdmin</code> role.
+    /// Only an <c>AppInstanceUser</c> and <c>AppInstanceBot</c> can be promoted to an <c>AppInstanceAdmin</c>
+    /// role.
     /// </para>
     /// </summary>
     public partial class CreateAppInstanceAdminRequest : AmazonChimeSDKIdentityRequest
@@ -55,7 +55,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdminArn. 
         /// <para>
-        /// The ARN of the administrator of the current <code>AppInstance</code>.
+        /// The ARN of the administrator of the current <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -74,7 +74,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

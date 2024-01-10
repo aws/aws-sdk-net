@@ -60,7 +60,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property LocalMountPath. 
         /// <para>
-        /// The path where the function can access the file system, starting with <code>/mnt/</code>.
+        /// The path where the function can access the file system, starting with <c>/mnt/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=160)]

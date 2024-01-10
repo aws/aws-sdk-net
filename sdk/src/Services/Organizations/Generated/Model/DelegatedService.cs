@@ -59,7 +59,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property ServicePrincipal. 
         /// <para>
         /// The name of an Amazon Web Services service that can request an operation for the specified
-        /// service. This is typically in the form of a URL, such as: <code> <i>servicename</i>.amazonaws.com</code>.
+        /// service. This is typically in the form of a URL, such as: <c> <i>servicename</i>.amazonaws.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

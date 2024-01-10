@@ -39,7 +39,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Max. 
         /// <para>
-        /// The maximum number of protections that can be created for the specified <code>Type</code>.
+        /// The maximum number of protections that can be created for the specified <c>Type</c>.
         /// </para>
         /// </summary>
         public long Max

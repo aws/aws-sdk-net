@@ -31,7 +31,7 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Container for the parameters to the EnableSharingWithAwsOrganization operation.
     /// Enables resource sharing within your organization in Organizations. This operation
-    /// creates a service-linked role called <code>AWSServiceRoleForResourceAccessManager</code>
+    /// creates a service-linked role called <c>AWSServiceRoleForResourceAccessManager</c>
     /// that has the IAM managed policy named AWSResourceAccessManagerServiceRolePolicy attached.
     /// This role permits RAM to retrieve information about the organization and its structure.
     /// This lets you share resources with all of the accounts in the calling account's organization

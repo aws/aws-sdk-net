@@ -39,7 +39,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// The entity ID. If you do not know the <code>entityId</code>, you can pass <code>unknown</code>,
+        /// The entity ID. If you do not know the <c>entityId</c>, you can pass <c>unknown</c>,
         /// which is areserved string literal.
         /// </para>
         /// </summary>

@@ -67,8 +67,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property MappedInputFields. 
         /// <para>
-        /// A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds
-        /// to a column the source data table, and contains column name plus additional information
+        /// A list of <c>MappedInputFields</c>. Each <c>MappedInputField</c> corresponds to a
+        /// column the source data table, and contains column name plus additional information
         /// that Entity Resolution uses for matching.
         /// </para>
         /// </summary>
@@ -88,8 +88,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property SchemaName. 
         /// <para>
-        /// The name of the schema. There can't be multiple <code>SchemaMappings</code> with the
-        /// same name.
+        /// The name of the schema. There can't be multiple <c>SchemaMappings</c> with the same
+        /// name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

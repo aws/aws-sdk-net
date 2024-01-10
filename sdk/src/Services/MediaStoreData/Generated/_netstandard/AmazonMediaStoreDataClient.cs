@@ -211,8 +211,8 @@ namespace Amazon.MediaStoreData
 
         /// <summary>
         /// Downloads the object at the specified path. If the object’s upload availability is
-        /// set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even
-        /// if it’s still uploading the object.
+        /// set to <c>streaming</c>, AWS Elemental MediaStore downloads the object even if it’s
+        /// still uploading the object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetObject service method.</param>
         /// <param name="cancellationToken">

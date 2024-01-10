@@ -45,32 +45,31 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported keys for <code>DescribePatchBaselines</code> include the following:
+        /// Supported keys for <c>DescribePatchBaselines</c> include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>NAME_PREFIX</code> </b> 
+        ///  <b> <c>NAME_PREFIX</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>AWS-</code> | <code>My-</code> 
+        /// Sample values: <c>AWS-</c> | <c>My-</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>OWNER</code> </b> 
+        ///  <b> <c>OWNER</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>AWS</code> | <code>Self</code> 
+        /// Sample values: <c>AWS</c> | <c>Self</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>OPERATING_SYSTEM</code> </b> 
+        ///  <b> <c>OPERATING_SYSTEM</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>AMAZON_LINUX</code> | <code>SUSE</code> | <code>WINDOWS</code>
-        /// 
+        /// Sample values: <c>AMAZON_LINUX</c> | <c>SUSE</c> | <c>WINDOWS</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

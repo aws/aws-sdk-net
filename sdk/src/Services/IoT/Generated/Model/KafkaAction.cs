@@ -63,7 +63,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// The ARN of Kafka action's VPC <code>TopicRuleDestination</code>.
+        /// The ARN of Kafka action's VPC <c>TopicRuleDestination</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

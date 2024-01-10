@@ -76,8 +76,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// An optional description of this specific cluster, for example <code>Environmental
-        /// Data Cluster-01</code>.
+        /// An optional description of this specific cluster, for example <c>Environmental Data
+        /// Cluster-01</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -99,7 +99,7 @@ namespace Amazon.Snowball.Model
         /// Force to create cluster when user attempts to overprovision or underprovision a cluster.
         /// A cluster is overprovisioned or underprovisioned if the initial size of the cluster
         /// is more (overprovisioned) or less (underprovisioned) than what needed to meet capacity
-        /// requirement specified with <code>OnDeviceServiceConfiguration</code>.
+        /// requirement specified with <c>OnDeviceServiceConfiguration</c>.
         /// </para>
         /// </summary>
         public bool ForceCreateJobs
@@ -157,7 +157,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property JobType. 
         /// <para>
         /// The type of job for this cluster. Currently, the only job type supported for clusters
-        /// is <code>LOCAL_USE</code>.
+        /// is <c>LOCAL_USE</c>.
         /// </para>
         ///  
         /// <para>
@@ -182,7 +182,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property KmsKeyARN. 
         /// <para>
-        /// The <code>KmsKeyARN</code> value that you want to associate with this cluster. <code>KmsKeyARN</code>
+        /// The <c>KmsKeyARN</c> value that you want to associate with this cluster. <c>KmsKeyARN</c>
         /// values are created by using the <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
         /// API action in Key Management Service (KMS). 
         /// </para>
@@ -262,9 +262,9 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RemoteManagement. 
         /// <para>
         /// Allows you to securely operate and manage Snow devices in a cluster remotely from
-        /// outside of your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote
-        /// management will automatically be available when the device arrives at your location.
-        /// Otherwise, you need to use the Snowball Client to manage the device.
+        /// outside of your internal network. When set to <c>INSTALLED_AUTOSTART</c>, remote management
+        /// will automatically be available when the device arrives at your location. Otherwise,
+        /// you need to use the Snowball Client to manage the device.
         /// </para>
         /// </summary>
         public RemoteManagement RemoteManagement
@@ -301,8 +301,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property RoleARN. 
         /// <para>
-        /// The <code>RoleARN</code> that you want to associate with this cluster. <code>RoleArn</code>
-        /// values are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+        /// The <c>RoleARN</c> that you want to associate with this cluster. <c>RoleArn</c> values
+        /// are created by using the <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
         /// API action in Identity and Access Management (IAM).
         /// </para>
         /// </summary>
@@ -414,7 +414,7 @@ namespace Amazon.Snowball.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For cluster jobs, Amazon Web Services Snow Family currently supports only the <code>EDGE</code>
+        /// For cluster jobs, Amazon Web Services Snow Family currently supports only the <c>EDGE</c>
         /// device type.
         /// </para>
         ///  </note> 

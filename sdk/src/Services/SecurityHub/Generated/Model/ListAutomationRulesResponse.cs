@@ -39,8 +39,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AutomationRulesMetadata. 
         /// <para>
-        ///  Metadata for rules in the calling account. The response includes rules with a <code>RuleStatus</code>
-        /// of <code>ENABLED</code> and <code>DISABLED</code>. 
+        ///  Metadata for rules in the calling account. The response includes rules with a <c>RuleStatus</c>
+        /// of <c>ENABLED</c> and <c>DISABLED</c>. 
         /// </para>
         /// </summary>
         public List<AutomationRulesMetadata> AutomationRulesMetadata

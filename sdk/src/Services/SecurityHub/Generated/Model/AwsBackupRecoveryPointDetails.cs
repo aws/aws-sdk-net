@@ -115,7 +115,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CalculatedLifecycle. 
         /// <para>
-        /// A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code>
+        /// A <c>CalculatedLifecycle</c> object containing <c>DeleteAt</c> and <c>MoveToColdStorageAt</c>
         /// timestamps. 
         /// </para>
         /// </summary>
@@ -135,9 +135,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time that a job to create a recovery point is completed, in Unix format
-        /// and UTC. The value of <code>CompletionDate</code> is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM. 
+        /// and UTC. The value of <c>CompletionDate</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. 
         /// </para>
         /// </summary>
         public string CompletionDate
@@ -156,8 +155,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property CreatedBy. 
         /// <para>
         /// Contains identifying information about the creation of a recovery point, including
-        /// the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
-        /// and <code>BackupRuleId</code> of the backup plan that is used to create it. 
+        /// the <c>BackupPlanArn</c>, <c>BackupPlanId</c>, <c>BackupPlanVersion</c>, and <c>BackupRuleId</c>
+        /// of the backup plan that is used to create it. 
         /// </para>
         /// </summary>
         public AwsBackupRecoveryPointCreatedByDetails CreatedBy
@@ -176,7 +175,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time a recovery point is created, in Unix format and UTC. The value of
-        /// <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+        /// <c>CreationDate</c> is accurate to milliseconds. For example, the value 1516925490.087
         /// represents Friday, January 26, 2018 12:11:30.087 AM. 
         /// </para>
         /// </summary>
@@ -231,8 +230,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IsEncrypted. 
         /// <para>
-        /// A Boolean value that is returned as <code>TRUE</code> if the specified recovery point
-        /// is encrypted, or <code>FALSE</code> if the recovery point is not encrypted. 
+        /// A Boolean value that is returned as <c>TRUE</c> if the specified recovery point is
+        /// encrypted, or <c>FALSE</c> if the recovery point is not encrypted. 
         /// </para>
         /// </summary>
         public bool IsEncrypted
@@ -251,8 +250,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property LastRestoreTime. 
         /// <para>
         /// The date and time that a recovery point was last restored, in Unix format and UTC.
-        /// The value of <code>LastRestoreTime</code> is accurate to milliseconds. For example,
-        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. 
+        /// The value of <c>LastRestoreTime</c> is accurate to milliseconds. For example, the
+        /// value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM. 
         /// </para>
         /// </summary>
         public string LastRestoreTime
@@ -369,19 +368,19 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> 
+        ///  <c>COMPLETED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> 
+        ///  <c>DELETING</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code> 
+        ///  <c>EXPIRED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PARTIAL</code> 
+        ///  <c>PARTIAL</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -422,15 +421,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COLD</code> 
+        ///  <c>COLD</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> 
+        ///  <c>DELETED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARM</code> 
+        ///  <c>WARM</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -60,8 +60,8 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Formatted as a fully-qualified domain name (FQDN), <i> <code>hostname.domain</code>
-        /// </i>, for example, <code>accounting.corp.example.com</code>.
+        /// Formatted as a fully-qualified domain name (FQDN), <i> <c>hostname.domain</c> </i>,
+        /// for example, <c>accounting.corp.example.com</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

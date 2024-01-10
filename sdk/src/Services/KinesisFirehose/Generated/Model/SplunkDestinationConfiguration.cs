@@ -202,16 +202,16 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property S3BackupMode. 
         /// <para>
-        /// Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>,
+        /// Defines how documents should be delivered to Amazon S3. When set to <c>FailedEventsOnly</c>,
         /// Kinesis Data Firehose writes any data that could not be indexed to the configured
-        /// Amazon S3 destination. When set to <code>AllEvents</code>, Kinesis Data Firehose delivers
+        /// Amazon S3 destination. When set to <c>AllEvents</c>, Kinesis Data Firehose delivers
         /// all incoming records to Amazon S3, and also writes failed documents to Amazon S3.
-        /// The default value is <code>FailedEventsOnly</code>.
+        /// The default value is <c>FailedEventsOnly</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>.
-        /// You can't update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
+        /// You can update this backup mode from <c>FailedEventsOnly</c> to <c>AllEvents</c>.
+        /// You can't update it from <c>AllEvents</c> to <c>FailedEventsOnly</c>.
         /// </para>
         /// </summary>
         public SplunkS3BackupMode S3BackupMode

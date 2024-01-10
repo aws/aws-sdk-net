@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:ListTrustAnchors</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:ListTrustAnchors</c>. 
     /// </para>
     /// </summary>
     public partial class ListTrustAnchorsRequest : AmazonIAMRolesAnywhereRequest

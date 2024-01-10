@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains <code>Tag</code> key and <code>Tag</code> value.
+    /// A complex type that contains <c>Tag</c> key and <c>Tag</c> value.
     /// </summary>
     public partial class Tag
     {
@@ -39,13 +39,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A string that contains <code>Tag</code> key.
+        /// A string that contains <c>Tag</c> key.
         /// </para>
         ///  
         /// <para>
         /// The string length should be between 1 and 128 characters. Valid characters include
-        /// <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters
-        /// <code>_ - . : / = + @</code>.
+        /// <c>a-z</c>, <c>A-Z</c>, <c>0-9</c>, space, and the special characters <c>_ - . : /
+        /// = + @</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -64,13 +64,13 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A string that contains an optional <code>Tag</code> value.
+        /// A string that contains an optional <c>Tag</c> value.
         /// </para>
         ///  
         /// <para>
         /// The string length should be between 0 and 256 characters. Valid characters include
-        /// <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters
-        /// <code>_ - . : / = + @</code>.
+        /// <c>a-z</c>, <c>A-Z</c>, <c>0-9</c>, space, and the special characters <c>_ - . : /
+        /// = + @</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

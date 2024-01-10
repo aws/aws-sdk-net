@@ -62,7 +62,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// Lists your data access role ARN (Amazon Resource Name) and the Amazon S3 locations
-        /// you provided for your training (<code>S3Uri</code>) and tuning (<code>TuningDataS3Uri</code>)
+        /// you provided for your training (<c>S3Uri</c>) and tuning (<c>TuningDataS3Uri</c>)
         /// data.
         /// </para>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ModelStatus. 
         /// <para>
-        /// The status of your custom language model. When the status displays as <code>COMPLETED</code>,
+        /// The status of your custom language model. When the status displays as <c>COMPLETED</c>,
         /// your model is ready to use.
         /// </para>
         /// </summary>

@@ -79,37 +79,35 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol of the contact method, such as <code>Email</code> or <code>SMS</code>
-        /// (text messaging).
+        /// The protocol of the contact method, such as <c>Email</c> or <c>SMS</c> (text messaging).
         /// </para>
         ///  
         /// <para>
-        /// The <code>SMS</code> protocol is supported only in the following Amazon Web Services
-        /// Regions.
+        /// The <c>SMS</c> protocol is supported only in the following Amazon Web Services Regions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// US East (N. Virginia) (<code>us-east-1</code>)
+        /// US East (N. Virginia) (<c>us-east-1</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// US West (Oregon) (<code>us-west-2</code>)
+        /// US West (Oregon) (<c>us-west-2</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Europe (Ireland) (<code>eu-west-1</code>)
+        /// Europe (Ireland) (<c>eu-west-1</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Asia Pacific (Tokyo) (<code>ap-northeast-1</code>)
+        /// Asia Pacific (Tokyo) (<c>ap-northeast-1</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Asia Pacific (Singapore) (<code>ap-southeast-1</code>)
+        /// Asia Pacific (Singapore) (<c>ap-southeast-1</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Asia Pacific (Sydney) (<code>ap-southeast-2</code>)
+        /// Asia Pacific (Sydney) (<c>ap-southeast-2</c>)
         /// </para>
         ///  </li> </ul> 
         /// <para>

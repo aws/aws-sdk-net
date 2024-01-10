@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RowLevelPermissionTagKeys. 
         /// <para>
-        /// The tag keys for the <code>RowLevelPermissionTags</code>.
+        /// The tag keys for the <c>RowLevelPermissionTags</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

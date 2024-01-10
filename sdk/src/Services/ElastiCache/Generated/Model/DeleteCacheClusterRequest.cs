@@ -30,10 +30,10 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCacheCluster operation.
-    /// Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code> deletes
-    /// all associated cache nodes, node endpoints and the cluster itself. When you receive
-    /// a successful response from this operation, Amazon ElastiCache immediately begins deleting
-    /// the cluster; you cannot cancel or revert this operation.
+    /// Deletes a previously provisioned cluster. <c>DeleteCacheCluster</c> deletes all associated
+    /// cache nodes, node endpoints and the cluster itself. When you receive a successful
+    /// response from this operation, Amazon ElastiCache immediately begins deleting the cluster;
+    /// you cannot cancel or revert this operation.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A cluster that is not in the <code>available</code> state
+    /// A cluster that is not in the <c>available</c> state
     /// </para>
     ///  </li> </ul>
     /// </summary>

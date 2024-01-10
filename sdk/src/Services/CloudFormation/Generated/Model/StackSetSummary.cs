@@ -90,23 +90,23 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set
-        /// stack differs from the expected template and parameter configuration. A stack instance
-        /// is considered to have drifted if one or more of the resources in the associated stack
+        ///  <c>DRIFTED</c>: One or more of the stack instances belonging to the stack set stack
+        /// differs from the expected template and parameter configuration. A stack instance is
+        /// considered to have drifted if one or more of the resources in the associated stack
         /// have drifted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.
+        ///  <c>NOT_CHECKED</c>: CloudFormation hasn't checked the stack set for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: All the stack instances belonging to the stack set stack match
-        /// from the expected template and parameter configuration.
+        ///  <c>IN_SYNC</c>: All the stack instances belonging to the stack set stack match from
+        /// the expected template and parameter configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code>: This value is reserved for future use.
+        ///  <c>UNKNOWN</c>: This value is reserved for future use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -126,7 +126,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property LastDriftCheckTimestamp. 
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
-        /// stack set. This value will be <code>NULL</code> for any stack set on which drift detection
+        /// stack set. This value will be <c>NULL</c> for any stack set on which drift detection
         /// hasn't yet been performed.
         /// </para>
         /// </summary>
@@ -168,16 +168,15 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// With <code>self-managed</code> permissions, you must create the administrator and
-        /// execution roles required to deploy to target accounts. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// With <c>self-managed</c> permissions, you must create the administrator and execution
+        /// roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
         /// Self-Managed Stack Set Permissions</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by Organizations. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+        /// With <c>service-managed</c> permissions, StackSets automatically creates the IAM roles
+        /// required to deploy to accounts managed by Organizations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
         /// Service-Managed Stack Set Permissions</a>.
         /// </para>
         ///  </li> </ul>

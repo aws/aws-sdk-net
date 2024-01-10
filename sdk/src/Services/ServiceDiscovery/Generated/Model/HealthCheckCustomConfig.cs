@@ -35,10 +35,10 @@ namespace Amazon.ServiceDiscovery.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You can't use a health check that's defined by <code>HealthCheckConfig</code> because
-    /// the resource isn't available over the internet. For example, you can use a custom
-    /// health check when the instance is in an Amazon VPC. (To check the health of resources
-    /// in a VPC, the health checker must also be in the VPC.)
+    /// You can't use a health check that's defined by <c>HealthCheckConfig</c> because the
+    /// resource isn't available over the internet. For example, you can use a custom health
+    /// check when the instance is in an Amazon VPC. (To check the health of resources in
+    /// a VPC, the health checker must also be in the VPC.)
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -47,14 +47,14 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
-    /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
-    /// or <code>HealthCheckConfig</code> but not both.
+    /// If you specify a health check configuration, you can specify either <c>HealthCheckCustomConfig</c>
+    /// or <c>HealthCheckConfig</c> but not both.
     /// </para>
     ///  </important> 
     /// <para>
-    /// To change the status of a custom health check, submit an <code>UpdateInstanceCustomHealthStatus</code>
+    /// To change the status of a custom health check, submit an <c>UpdateInstanceCustomHealthStatus</c>
     /// request. Cloud Map doesn't monitor the status of the resource, it just keeps a record
-    /// of the status specified in the most recent <code>UpdateInstanceCustomHealthStatus</code>
+    /// of the status specified in the most recent <c>UpdateInstanceCustomHealthStatus</c>
     /// request.
     /// </para>
     ///  
@@ -85,7 +85,7 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Your application submits an <code>UpdateInstanceCustomHealthStatus</code> request.
+    /// Your application submits an <c>UpdateInstanceCustomHealthStatus</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -93,9 +93,9 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If another <code>UpdateInstanceCustomHealthStatus</code> request doesn't arrive during
-    /// that time to change the status back to healthy, Cloud Map stops routing traffic to
-    /// the resource.
+    /// If another <c>UpdateInstanceCustomHealthStatus</c> request doesn't arrive during that
+    /// time to change the status back to healthy, Cloud Map stops routing traffic to the
+    /// resource.
     /// </para>
     ///  </li> </ol>
     /// </summary>
@@ -107,20 +107,20 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property FailureThreshold. <important> 
         /// <para>
         /// This parameter is no longer supported and is always set to 1. Cloud Map waits for
-        /// approximately 30 seconds after receiving an <code>UpdateInstanceCustomHealthStatus</code>
+        /// approximately 30 seconds after receiving an <c>UpdateInstanceCustomHealthStatus</c>
         /// request before changing the status of the service instance.
         /// </para>
         ///  </important> 
         /// <para>
         /// The number of 30-second intervals that you want Cloud Map to wait after receiving
-        /// an <code>UpdateInstanceCustomHealthStatus</code> request before it changes the health
-        /// status of a service instance.
+        /// an <c>UpdateInstanceCustomHealthStatus</c> request before it changes the health status
+        /// of a service instance.
         /// </para>
         ///  
         /// <para>
-        /// Sending a second or subsequent <code>UpdateInstanceCustomHealthStatus</code> request
-        /// with the same value before 30 seconds has passed doesn't accelerate the change. Cloud
-        /// Map still waits <code>30</code> seconds after the first request to make the change.
+        /// Sending a second or subsequent <c>UpdateInstanceCustomHealthStatus</c> request with
+        /// the same value before 30 seconds has passed doesn't accelerate the change. Cloud Map
+        /// still waits <c>30</c> seconds after the first request to make the change.
         /// </para>
         /// </summary>
         [Obsolete("Configurable FailureThreshold of HealthCheckCustomConfig is deprecated.  It will always have value 1.")]

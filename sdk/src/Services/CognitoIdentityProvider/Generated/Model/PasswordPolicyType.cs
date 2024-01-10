@@ -141,15 +141,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The number of days a temporary password is valid in the password policy. If the user
         /// doesn't sign in during this time, an administrator must reset their password. Defaults
-        /// to <code>7</code>. If you submit a value of <code>0</code>, Amazon Cognito treats
-        /// it as a null value and sets <code>TemporaryPasswordValidityDays</code> to its default
-        /// value.
+        /// to <c>7</c>. If you submit a value of <c>0</c>, Amazon Cognito treats it as a null
+        /// value and sets <c>TemporaryPasswordValidityDays</c> to its default value.
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you set <code>TemporaryPasswordValidityDays</code> for a user pool, you can no
-        /// longer set a value for the legacy <code>UnusedAccountValidityDays</code> parameter
-        /// in that user pool.
+        /// When you set <c>TemporaryPasswordValidityDays</c> for a user pool, you can no longer
+        /// set a value for the legacy <c>UnusedAccountValidityDays</c> parameter in that user
+        /// pool.
         /// </para>
         ///  </note>
         /// </summary>

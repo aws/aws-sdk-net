@@ -31,8 +31,8 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Container for the parameters to the ListInsights operation.
     /// Returns a list of insights in your Amazon Web Services account. You can specify which
-    /// insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>,
-    /// or <code>ANY</code>).
+    /// insights are returned by their start time and status (<c>ONGOING</c>, <c>CLOSED</c>,
+    /// or <c>ANY</c>).
     /// </summary>
     public partial class ListInsightsRequest : AmazonDevOpsGuruRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

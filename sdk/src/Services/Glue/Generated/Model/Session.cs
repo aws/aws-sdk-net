@@ -298,7 +298,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfWorkers. 
         /// <para>
-        /// The number of workers of a defined <code>WorkerType</code> to use for the session.
+        /// The number of workers of a defined <c>WorkerType</c> to use for the session.
         /// </para>
         /// </summary>
         public int NumberOfWorkers
@@ -391,8 +391,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property WorkerType. 
         /// <para>
         /// The type of predefined worker that is allocated when a session runs. Accepts a value
-        /// of <code>G.1X</code>, <code>G.2X</code>, <code>G.4X</code>, or <code>G.8X</code> for
-        /// Spark sessions. Accepts the value <code>Z.2X</code> for Ray sessions.
+        /// of <c>G.1X</c>, <c>G.2X</c>, <c>G.4X</c>, or <c>G.8X</c> for Spark sessions. Accepts
+        /// the value <c>Z.2X</c> for Ray sessions.
         /// </para>
         /// </summary>
         public WorkerType WorkerType

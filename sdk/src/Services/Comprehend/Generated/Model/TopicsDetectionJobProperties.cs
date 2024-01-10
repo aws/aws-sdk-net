@@ -112,7 +112,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</code>
+        ///  <c>arn:&lt;partition&gt;:comprehend:&lt;region&gt;:&lt;account-id&gt;:topics-detection-job/&lt;job-id&gt;</c>
         /// 
         /// </para>
         ///  
@@ -121,7 +121,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</code>
+        ///  <c>arn:aws:comprehend:us-west-2:111122223333:topics-detection-job/1234abcd12ab34cd56ef1234567890ab</c>
         /// 
         /// </para>
         /// </summary>
@@ -179,8 +179,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The current status of the topic detection job. If the status is <code>Failed</code>,
-        /// the reason for the failure is shown in the <code>Message</code> field.
+        /// The current status of the topic detection job. If the status is <c>Failed</c>, the
+        /// reason for the failure is shown in the <c>Message</c> field.
         /// </para>
         /// </summary>
         public JobStatus JobStatus
@@ -277,11 +277,11 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// KMS Key ID: <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// Amazon Resource Name (ARN) of a KMS Key: <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> </ul>

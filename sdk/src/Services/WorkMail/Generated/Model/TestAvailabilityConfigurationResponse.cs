@@ -39,7 +39,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// String containing the reason for a failed test if <code>TestPassed</code> is false.
+        /// String containing the reason for a failed test if <c>TestPassed</c> is false.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

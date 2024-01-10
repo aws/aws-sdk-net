@@ -139,7 +139,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
+        /// The Amazon EC2 instance type, for example <c>m3.xlarge</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -158,7 +158,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Market. 
         /// <para>
-        /// The instance purchasing option. Valid values are <code>ON_DEMAND</code> or <code>SPOT</code>.
+        /// The instance purchasing option. Valid values are <c>ON_DEMAND</c> or <c>SPOT</c>.
         /// 
         /// </para>
         /// </summary>

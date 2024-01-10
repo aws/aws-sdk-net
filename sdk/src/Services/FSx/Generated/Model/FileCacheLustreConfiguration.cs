@@ -43,7 +43,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// The deployment type of the Amazon File Cache resource, which must be <code>CACHE_1</code>.
+        /// The deployment type of the Amazon File Cache resource, which must be <c>CACHE_1</c>.
         /// </para>
         /// </summary>
         public FileCacheLustreDeploymentType DeploymentType
@@ -98,9 +98,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property MountName. 
         /// <para>
-        /// You use the <code>MountName</code> value when mounting the cache. If you pass a cache
-        /// ID to the <code>DescribeFileCaches</code> operation, it returns the the <code>MountName</code>
-        /// value as part of the cache's description.
+        /// You use the <c>MountName</c> value when mounting the cache. If you pass a cache ID
+        /// to the <c>DescribeFileCaches</c> operation, it returns the the <c>MountName</c> value
+        /// as part of the cache's description.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8)]
@@ -122,7 +122,7 @@ namespace Amazon.FSx.Model
         /// Per unit storage throughput represents the megabytes per second of read or write throughput
         /// per 1 tebibyte of storage provisioned. Cache throughput capacity is equal to Storage
         /// capacity (TiB) * PerUnitStorageThroughput (MB/s/TiB). The only supported value is
-        /// <code>1000</code>.
+        /// <c>1000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=1000)]

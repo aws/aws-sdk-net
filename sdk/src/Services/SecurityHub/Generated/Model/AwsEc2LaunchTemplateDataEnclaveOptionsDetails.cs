@@ -38,8 +38,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        ///  If this parameter is set to <code>true</code>, the instance is enabled for Amazon
-        /// Web Services Nitro Enclaves. 
+        ///  If this parameter is set to <c>true</c>, the instance is enabled for Amazon Web Services
+        /// Nitro Enclaves. 
         /// </para>
         /// </summary>
         public bool Enabled

@@ -64,7 +64,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property BelongsToFieldOnRelatedModel. 
         /// <para>
-        /// The value of the <code>belongsTo</code> field on the related data model. 
+        /// The value of the <c>belongsTo</c> field on the related data model. 
         /// </para>
         /// </summary>
         public string BelongsToFieldOnRelatedModel
@@ -100,8 +100,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property IsHasManyIndex. 
         /// <para>
-        /// Specifies whether the <code>@index</code> directive is supported for a <code>hasMany</code>
-        /// data relationship.
+        /// Specifies whether the <c>@index</c> directive is supported for a <c>hasMany</c> data
+        /// relationship.
         /// </para>
         /// </summary>
         public bool IsHasManyIndex

@@ -41,7 +41,7 @@ namespace Amazon.NimbleStudio.Model
     /// <para>
     /// If the studio does not have a valid IAM Identity Center configuration currently associated
     /// with it, then a new IAM Identity Center application is created for the studio and
-    /// the studio is changed to the <code>READY</code> state.
+    /// the studio is changed to the <c>READY</c> state.
     /// </para>
     ///  
     /// <para>

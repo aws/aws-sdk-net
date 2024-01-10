@@ -39,20 +39,20 @@ namespace Amazon.AppConfigData.Model
         /// Gets and sets the property InitialConfigurationToken. 
         /// <para>
         /// Token encapsulating state about the configuration session. Provide this token to the
-        /// <code>GetLatestConfiguration</code> API to retrieve configuration data.
+        /// <c>GetLatestConfiguration</c> API to retrieve configuration data.
         /// </para>
         ///  <important> 
         /// <para>
-        /// This token should only be used once in your first call to <code>GetLatestConfiguration</code>.
-        /// You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response
-        /// (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
+        /// This token should only be used once in your first call to <c>GetLatestConfiguration</c>.
+        /// You <i>must</i> use the new token in the <c>GetLatestConfiguration</c> response (<c>NextPollConfigurationToken</c>)
+        /// in each subsequent call to <c>GetLatestConfiguration</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code>
-        /// should only be used once. To support long poll use cases, the tokens are valid for
-        /// up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token,
-        /// the system returns <code>BadRequestException</code>.
+        /// The <c>InitialConfigurationToken</c> and <c>NextPollConfigurationToken</c> should
+        /// only be used once. To support long poll use cases, the tokens are valid for up to
+        /// 24 hours. If a <c>GetLatestConfiguration</c> call uses an expired token, the system
+        /// returns <c>BadRequestException</c>.
         /// </para>
         ///  </important>
         /// </summary>

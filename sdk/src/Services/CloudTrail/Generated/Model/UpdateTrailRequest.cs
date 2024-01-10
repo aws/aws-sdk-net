@@ -34,8 +34,8 @@ namespace Amazon.CloudTrail.Model
     /// log files. Changes to a trail do not require stopping the CloudTrail service. Use
     /// this action to designate an existing bucket for log delivery. If the existing bucket
     /// has previously been a target for CloudTrail log files, an IAM policy exists for the
-    /// bucket. <code>UpdateTrail</code> must be called from the Region in which the trail
-    /// was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.
+    /// bucket. <c>UpdateTrail</c> must be called from the Region in which the trail was created;
+    /// otherwise, an <c>InvalidHomeRegionException</c> is thrown.
     /// </summary>
     public partial class UpdateTrailRequest : AmazonCloudTrailRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        /// Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
+        /// Not required unless you specify <c>CloudWatchLogsRoleArn</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -179,11 +179,10 @@ namespace Amazon.CloudTrail.Model
         /// or only for the current Amazon Web Services account. The default is false, and cannot
         /// be true unless the call is made on behalf of an Amazon Web Services account that is
         /// the management account for an organization in Organizations. If the trail is not an
-        /// organization trail and this is set to <code>true</code>, the trail will be created
-        /// in all Amazon Web Services accounts that belong to the organization. If the trail
-        /// is an organization trail and this is set to <code>false</code>, the trail will remain
-        /// in the current Amazon Web Services account but be deleted from all member accounts
-        /// in the organization.
+        /// organization trail and this is set to <c>true</c>, the trail will be created in all
+        /// Amazon Web Services accounts that belong to the organization. If the trail is an organization
+        /// trail and this is set to <c>false</c>, the trail will remain in the current Amazon
+        /// Web Services account but be deleted from all member accounts in the organization.
         /// </para>
         ///  <note> 
         /// <para>
@@ -255,8 +254,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Specifies the name of the trail or trail ARN. If <code>Name</code> is a trail name,
-        /// the string must meet the following requirements:
+        /// Specifies the name of the trail or trail ARN. If <c>Name</c> is a trail name, the
+        /// string must meet the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -273,8 +272,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.
+        /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+        /// <c>my--namespace</c> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -282,11 +281,11 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>Name</code> is a trail ARN, it must be in the following format.
+        /// If <c>Name</c> is a trail ARN, it must be in the following format.
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        ///  <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

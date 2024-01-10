@@ -53,7 +53,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property OneTimePassword. 
         /// <para>
-        /// The OTP sent to the destination number from the <code>CreateSMSSandBoxPhoneNumber</code>
+        /// The OTP sent to the destination number from the <c>CreateSMSSandBoxPhoneNumber</c>
         /// call.
         /// </para>
         /// </summary>

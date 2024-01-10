@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeCommands</code> request.
+    /// Contains the response to a <c>DescribeCommands</c> request.
     /// </summary>
     public partial class DescribeCommandsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Commands. 
         /// <para>
-        /// An array of <code>Command</code> objects that describe each of the specified commands.
+        /// An array of <c>Command</c> objects that describe each of the specified commands.
         /// </para>
         /// </summary>
         public List<Command> Commands

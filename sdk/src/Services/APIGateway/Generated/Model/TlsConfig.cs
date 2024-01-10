@@ -43,14 +43,14 @@ namespace Amazon.APIGateway.Model
         /// but it enables you to use certificates that are signed by private certificate authorities,
         /// or certificates that are self-signed. If enabled, API Gateway still performs basic
         /// certificate validation, which includes checking the certificate's expiration date,
-        /// hostname, and presence of a root certificate authority. Supported only for <code>HTTP</code>
-        /// and <code>HTTP_PROXY</code> integrations.
+        /// hostname, and presence of a root certificate authority. Supported only for <c>HTTP</c>
+        /// and <c>HTTP_PROXY</c> integrations.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Enabling <code>insecureSkipVerification</code> isn't recommended, especially for integrations
-        /// with public HTTPS endpoints. If you enable <code>insecureSkipVerification</code>,
-        /// you increase the risk of man-in-the-middle attacks.
+        /// Enabling <c>insecureSkipVerification</c> isn't recommended, especially for integrations
+        /// with public HTTPS endpoints. If you enable <c>insecureSkipVerification</c>, you increase
+        /// the risk of man-in-the-middle attacks.
         /// </para>
         ///  </important>
         /// </summary>

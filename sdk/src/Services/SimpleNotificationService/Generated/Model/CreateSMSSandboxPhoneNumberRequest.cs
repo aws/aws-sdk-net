@@ -53,7 +53,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language to use for sending the OTP. The default value is <code>en-US</code>.
+        /// The language to use for sending the OTP. The default value is <c>en-US</c>.
         /// </para>
         /// </summary>
         public LanguageCodeString LanguageCode

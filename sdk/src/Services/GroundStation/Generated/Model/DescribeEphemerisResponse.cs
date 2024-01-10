@@ -102,7 +102,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property InvalidReason. 
         /// <para>
-        /// Reason that an ephemeris failed validation. Only provided for ephemerides with <code>INVALID</code>
+        /// Reason that an ephemeris failed validation. Only provided for ephemerides with <c>INVALID</c>
         /// status.
         /// </para>
         /// </summary>

@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Time to live duration, where the record is hard deleted after the expiration time
-    /// is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>.
-    /// For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+    /// is reached; <c>ExpiresAt</c> = <c>EventTime</c> + <c>TtlDuration</c>. For information
+    /// on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
     /// API in the Amazon SageMaker API Reference guide.
     /// </summary>
     public partial class TtlDuration
@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  <code>TtlDuration</code> time unit.
+        ///  <c>TtlDuration</c> time unit.
         /// </para>
         /// </summary>
         public TtlDurationUnit Unit
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  <code>TtlDuration</code> time value.
+        ///  <c>TtlDuration</c> time value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

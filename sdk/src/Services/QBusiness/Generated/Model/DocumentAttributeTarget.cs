@@ -36,8 +36,8 @@ namespace Amazon.QBusiness.Model
     /// <para>
     /// For example, you can delete all customer identification numbers associated with the
     /// documents, stored in the document metadata field called 'Customer_ID' by setting the
-    /// target key as 'Customer_ID' and the deletion flag to <code>TRUE</code>. This removes
-    /// all customer ID values in the field 'Customer_ID'. This would scrub personally identifiable
+    /// target key as 'Customer_ID' and the deletion flag to <c>TRUE</c>. This removes all
+    /// customer ID values in the field 'Customer_ID'. This would scrub personally identifiable
     /// information from each document's metadata.
     /// </para>
     ///  
@@ -45,13 +45,13 @@ namespace Amazon.QBusiness.Model
     /// Amazon Q can't create a target field if it has not already been created as an index
     /// field. After you create your index field, you can create a document metadata field
     /// using <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeTarget.html">
-    /// <code>DocumentAttributeTarget</code> </a>. Amazon Q will then map your newly created
-    /// document attribute to your index field.
+    /// <c>DocumentAttributeTarget</c> </a>. Amazon Q will then map your newly created document
+    /// attribute to your index field.
     /// </para>
     ///  
     /// <para>
     /// You can also use this with <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_DocumentAttributeCondition.html">
-    /// <code>DocumentAttributeCondition</code> </a>.
+    /// <c>DocumentAttributeCondition</c> </a>.
     /// </para>
     /// </summary>
     public partial class DocumentAttributeTarget
@@ -63,8 +63,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property AttributeValueOperator. 
         /// <para>
-        ///  <code>TRUE</code> to delete the existing target value for your specified target attribute
-        /// key. You cannot create a target value and set this to <code>TRUE</code>.
+        ///  <c>TRUE</c> to delete the existing target value for your specified target attribute
+        /// key. You cannot create a target value and set this to <c>TRUE</c>.
         /// </para>
         /// </summary>
         public AttributeValueOperator AttributeValueOperator

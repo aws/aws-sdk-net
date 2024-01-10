@@ -110,7 +110,7 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property EndpointId. 
         /// <para>
         /// The URL subdomain of the endpoint. For example, if the URL for Endpoint is https://abcde.veo.endpoints.event.amazonaws.com,
-        /// then the EndpointId is <code>abcde.veo</code>.
+        /// then the EndpointId is <c>abcde.veo</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -205,9 +205,8 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property ReplicationConfig. 
         /// <para>
         /// Whether event replication was enabled or disabled for this endpoint. The default state
-        /// is <code>ENABLED</code> which means you must supply a <code>RoleArn</code>. If you
-        /// don't have a <code>RoleArn</code> or you don't want event replication enabled, set
-        /// the state to <code>DISABLED</code>.
+        /// is <c>ENABLED</c> which means you must supply a <c>RoleArn</c>. If you don't have
+        /// a <c>RoleArn</c> or you don't want event replication enabled, set the state to <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public ReplicationConfig ReplicationConfig

@@ -39,11 +39,11 @@ namespace Amazon.Proton.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Use the <code>description</code> parameter to modify the description.
+    /// Use the <c>description</c> parameter to modify the description.
     /// </para>
     ///  
     /// <para>
-    /// Edit the <code>spec</code> parameter to add or delete instances.
+    /// Edit the <c>spec</c> parameter to add or delete instances.
     /// </para>
     ///  <note> 
     /// <para>

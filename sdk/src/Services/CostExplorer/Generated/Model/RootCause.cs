@@ -120,7 +120,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property UsageType. 
         /// <para>
-        /// The <code>UsageType</code> value that's associated with the cost anomaly. 
+        /// The <c>UsageType</c> value that's associated with the cost anomaly. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

@@ -40,9 +40,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property AllRegions. 
         /// <para>
-        /// Possible values are <code>true</code> or <code>false</code>. If set to <code>true</code>,
-        /// IAM Access Analyzer retrieves CloudTrail data from all regions to analyze and generate
-        /// a policy.
+        /// Possible values are <c>true</c> or <c>false</c>. If set to <c>true</c>, IAM Access
+        /// Analyzer retrieves CloudTrail data from all regions to analyze and generate a policy.
         /// </para>
         /// </summary>
         public bool AllRegions
@@ -60,7 +59,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property CloudTrailArn. 
         /// <para>
-        /// Specifies the ARN of the trail. The format of a trail ARN is <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>.
+        /// Specifies the ARN of the trail. The format of a trail ARN is <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

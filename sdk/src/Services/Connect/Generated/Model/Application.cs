@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ApplicationPermissions. 
         /// <para>
-        /// The permissions that the agent is granted on the application. Only the <code>ACCESS</code>
+        /// The permissions that the agent is granted on the application. Only the <c>ACCESS</c>
         /// permission is supported.
         /// </para>
         /// </summary>

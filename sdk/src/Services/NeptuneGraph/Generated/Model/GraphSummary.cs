@@ -66,7 +66,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// If <code>true</code>, deletion protection is enabled for the graph.
+        /// If <c>true</c>, deletion protection is enabled for the graph.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -177,7 +177,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property PublicConnectivity. 
         /// <para>
-        /// If <code>true</code>, the graph has a public endpoint, otherwise not.
+        /// If <c>true</c>, the graph has a public endpoint, otherwise not.
         /// </para>
         /// </summary>
         public bool PublicConnectivity

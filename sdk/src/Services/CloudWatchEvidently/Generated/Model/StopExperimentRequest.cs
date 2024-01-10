@@ -43,7 +43,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property DesiredState. 
         /// <para>
-        /// Specify whether the experiment is to be considered <code>COMPLETED</code> or <code>CANCELLED</code>
+        /// Specify whether the experiment is to be considered <c>COMPLETED</c> or <c>CANCELLED</c>
         /// after it stops.
         /// </para>
         /// </summary>

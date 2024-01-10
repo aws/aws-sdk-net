@@ -30,8 +30,8 @@ namespace Amazon.ElasticBeanstalk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateApplication operation.
-    /// Creates an application that has one configuration template named <code>default</code>
-    /// and no application versions.
+    /// Creates an application that has one configuration template named <c>default</c> and
+    /// no application versions.
     /// </summary>
     public partial class CreateApplicationRequest : AmazonElasticBeanstalkRequest
     {

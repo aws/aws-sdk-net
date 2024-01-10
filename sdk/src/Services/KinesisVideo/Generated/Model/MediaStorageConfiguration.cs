@@ -33,13 +33,13 @@ namespace Amazon.KinesisVideo.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// If <code>StorageStatus</code> is enabled, the data will be stored in the <code>StreamARN</code>
+    /// If <c>StorageStatus</c> is enabled, the data will be stored in the <c>StreamARN</c>
     /// provided. In order for WebRTC Ingestion to work, the stream must have data retention
     /// enabled.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If <code>StorageStatus</code> is disabled, no data will be stored, and the <code>StreamARN</code>
+    /// If <c>StorageStatus</c> is disabled, no data will be stored, and the <c>StreamARN</c>
     /// parameter will not be needed. 
     /// </para>
     ///  </li> </ul>

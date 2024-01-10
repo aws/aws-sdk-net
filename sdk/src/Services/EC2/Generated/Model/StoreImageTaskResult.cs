@@ -117,7 +117,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property StoreTaskFailureReason. 
         /// <para>
         /// If the tasks fails, the reason for the failure is returned. If the task succeeds,
-        /// <code>null</code> is returned.
+        /// <c>null</c> is returned.
         /// </para>
         /// </summary>
         public string StoreTaskFailureReason
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StoreTaskState. 
         /// <para>
-        /// The state of the store task (<code>InProgress</code>, <code>Completed</code>, or <code>Failed</code>).
+        /// The state of the store task (<c>InProgress</c>, <c>Completed</c>, or <c>Failed</c>).
         /// </para>
         /// </summary>
         public string StoreTaskState

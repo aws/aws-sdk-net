@@ -30,8 +30,8 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Used to store channel data in an S3 bucket that you manage. If customer-managed storage
-    /// is selected, the <code>retentionPeriod</code> parameter is ignored. You can't change
-    /// the choice of S3 storage after the data store is created.
+    /// is selected, the <c>retentionPeriod</c> parameter is ignored. You can't change the
+    /// choice of S3 storage after the data store is created.
     /// </summary>
     public partial class CustomerManagedChannelS3Storage
     {

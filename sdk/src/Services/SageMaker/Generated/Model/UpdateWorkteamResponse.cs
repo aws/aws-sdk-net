@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Workteam. 
         /// <para>
-        /// A <code>Workteam</code> object that describes the updated work team.
+        /// A <c>Workteam</c> object that describes the updated work team.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

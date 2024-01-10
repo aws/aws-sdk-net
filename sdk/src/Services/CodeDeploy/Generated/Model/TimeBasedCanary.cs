@@ -41,7 +41,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CanaryInterval. 
         /// <para>
-        /// The number of minutes between the first and second traffic shifts of a <code>TimeBasedCanary</code>
+        /// The number of minutes between the first and second traffic shifts of a <c>TimeBasedCanary</c>
         /// deployment.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property CanaryPercentage. 
         /// <para>
-        /// The percentage of traffic to shift in the first increment of a <code>TimeBasedCanary</code>
+        /// The percentage of traffic to shift in the first increment of a <c>TimeBasedCanary</c>
         /// deployment.
         /// </para>
         /// </summary>

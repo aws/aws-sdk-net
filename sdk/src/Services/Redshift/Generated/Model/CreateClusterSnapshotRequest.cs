@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClusterSnapshot operation.
-    /// Creates a manual snapshot of the specified cluster. The cluster must be in the <code>available</code>
+    /// Creates a manual snapshot of the specified cluster. The cluster must be in the <c>available</c>
     /// state. 
     /// 
     ///  
@@ -120,7 +120,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code> 
+        /// Example: <c>my-snapshot-id</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

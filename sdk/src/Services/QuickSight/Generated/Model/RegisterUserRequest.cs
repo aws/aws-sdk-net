@@ -81,8 +81,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The URL of the custom OpenID Connect (OIDC) provider that provides identity to let
         /// a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM)
-        /// role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code>
-        /// parameter is set to <code>CUSTOM_OIDC</code>.
+        /// role. This parameter should only be used when <c>ExternalLoginFederationProviderType</c>
+        /// parameter is set to <c>CUSTOM_OIDC</c>.
         /// </para>
         /// </summary>
         public string CustomFederationProviderUrl
@@ -122,14 +122,14 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To add custom permissions to an existing user, use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> instead.
+        /// To add custom permissions to an existing user, use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+        /// </c> instead.
         /// </para>
         ///  
         /// <para>
         /// A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon
-        /// QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign
+        /// QuickSight console. Then, you use the <c>RegisterUser</c> API operation to assign
         /// the named set of permissions to a Amazon QuickSight user. 
         /// </para>
         ///  
@@ -184,15 +184,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
-        /// When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl"
+        ///  <c>COGNITO</c>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+        /// When choosing the <c>COGNITO</c> provider type, don’t use the "CustomFederationProviderUrl"
         /// parameter which is only needed when the external provider is custom.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
-        /// type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom
-        /// OIDC provider URL.
+        ///  <c>CUSTOM_OIDC</c>: Custom OpenID Connect (OIDC) provider. When choosing <c>CUSTOM_OIDC</c>
+        /// type, use the <c>CustomFederationProviderUrl</c> parameter to provide the custom OIDC
+        /// provider URL.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -252,12 +252,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IAM</code>: A user whose identity maps to an existing IAM user or role. 
+        ///  <c>IAM</c>: A user whose identity maps to an existing IAM user or role. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUICKSIGHT</code>: A user whose identity is owned and managed internally by
-        /// Amazon QuickSight. 
+        ///  <c>QUICKSIGHT</c>: A user whose identity is owned and managed internally by Amazon
+        /// QuickSight. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -277,7 +277,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace. Currently, you should set this to <code>default</code>.
+        /// The namespace. Currently, you should set this to <c>default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -301,7 +301,7 @@ namespace Amazon.QuickSight.Model
         /// when you are registering an IAM user or an Amazon QuickSight user. You can register
         /// multiple users using the same IAM role if each user has a different session name.
         /// For more information on assuming IAM roles, see <a href="https://docs.aws.amazon.com/cli/latest/reference/sts/assume-role.html">
-        /// <code>assume-role</code> </a> in the <i>CLI Reference.</i> 
+        /// <c>assume-role</c> </a> in the <i>CLI Reference.</i> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
@@ -362,25 +362,23 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READER</code>: A user who has read-only access to dashboards.
+        ///  <c>READER</c>: A user who has read-only access to dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-        /// dashboards.
+        ///  <c>AUTHOR</c>: A user who can create data sources, datasets, analyses, and dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-        /// settings.
+        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon QuickSight settings.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+        ///  <c>RESTRICTED_READER</c>: This role isn't currently available for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+        ///  <c>RESTRICTED_AUTHOR</c>: This role isn't currently available for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

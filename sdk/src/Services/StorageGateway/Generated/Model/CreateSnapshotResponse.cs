@@ -40,8 +40,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property SnapshotId. 
         /// <para>
         /// The snapshot ID that is used to refer to the snapshot in future operations such as
-        /// describing snapshots (Amazon Elastic Compute Cloud API <code>DescribeSnapshots</code>)
-        /// or creating a volume from a snapshot (<a>CreateStorediSCSIVolume</a>).
+        /// describing snapshots (Amazon Elastic Compute Cloud API <c>DescribeSnapshots</c>) or
+        /// creating a volume from a snapshot (<a>CreateStorediSCSIVolume</a>).
         /// </para>
         /// </summary>
         public string SnapshotId

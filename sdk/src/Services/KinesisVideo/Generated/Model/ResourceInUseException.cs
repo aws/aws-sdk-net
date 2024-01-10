@@ -29,25 +29,25 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// When the input <code>StreamARN</code> or <code>ChannelARN</code> in <code>CLOUD_STORAGE_MODE</code>
+    /// When the input <c>StreamARN</c> or <c>ChannelARN</c> in <c>CLOUD_STORAGE_MODE</c>
     /// is already mapped to a different Kinesis Video Stream resource, or if the provided
-    /// input <code>StreamARN</code> or <code>ChannelARN</code> is not in Active status, try
-    /// one of the following : 
+    /// input <c>StreamARN</c> or <c>ChannelARN</c> is not in Active status, try one of the
+    /// following : 
     /// 
     ///  <ol> <li> 
     /// <para>
-    /// The <code>DescribeMediaStorageConfiguration</code> API to determine what the stream
-    /// given channel is mapped to. 
+    /// The <c>DescribeMediaStorageConfiguration</c> API to determine what the stream given
+    /// channel is mapped to. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>DescribeMappedResourceConfiguration</code> API to determine the channel
-    /// that the given stream is mapped to. 
+    /// The <c>DescribeMappedResourceConfiguration</c> API to determine the channel that the
+    /// given stream is mapped to. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>DescribeStream</code> or <code>DescribeSignalingChannel</code> API to determine
-    /// the status of the resource. 
+    /// The <c>DescribeStream</c> or <c>DescribeSignalingChannel</c> API to determine the
+    /// status of the resource. 
     /// </para>
     ///  </li> </ol>
     /// </summary>

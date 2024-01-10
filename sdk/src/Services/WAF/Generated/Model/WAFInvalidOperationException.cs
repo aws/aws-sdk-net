@@ -33,28 +33,28 @@ namespace Amazon.WAF.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You tried to remove a <code>Rule</code> from a <code>WebACL</code>, but the <code>Rule</code>
-    /// isn't in the specified <code>WebACL</code>.
+    /// You tried to remove a <c>Rule</c> from a <c>WebACL</c>, but the <c>Rule</c> isn't
+    /// in the specified <c>WebACL</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to remove an IP address from an <code>IPSet</code>, but the IP address isn't
-    /// in the specified <code>IPSet</code>.
+    /// You tried to remove an IP address from an <c>IPSet</c>, but the IP address isn't in
+    /// the specified <c>IPSet</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to remove a <code>ByteMatchTuple</code> from a <code>ByteMatchSet</code>,
-    /// but the <code>ByteMatchTuple</code> isn't in the specified <code>WebACL</code>.
+    /// You tried to remove a <c>ByteMatchTuple</c> from a <c>ByteMatchSet</c>, but the <c>ByteMatchTuple</c>
+    /// isn't in the specified <c>WebACL</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to add a <code>Rule</code> to a <code>WebACL</code>, but the <code>Rule</code>
-    /// already exists in the specified <code>WebACL</code>.
+    /// You tried to add a <c>Rule</c> to a <c>WebACL</c>, but the <c>Rule</c> already exists
+    /// in the specified <c>WebACL</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to add a <code>ByteMatchTuple</code> to a <code>ByteMatchSet</code>, but
-    /// the <code>ByteMatchTuple</code> already exists in the specified <code>WebACL</code>.
+    /// You tried to add a <c>ByteMatchTuple</c> to a <c>ByteMatchSet</c>, but the <c>ByteMatchTuple</c>
+    /// already exists in the specified <c>WebACL</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

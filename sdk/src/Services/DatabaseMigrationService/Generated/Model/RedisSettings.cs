@@ -44,8 +44,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AuthPassword. 
         /// <para>
-        /// The password provided with the <code>auth-role</code> and <code>auth-token</code>
-        /// options of the <code>AuthType</code> setting for a Redis target endpoint.
+        /// The password provided with the <c>auth-role</c> and <c>auth-token</c> options of the
+        /// <c>AuthType</c> setting for a Redis target endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -65,10 +65,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AuthType. 
         /// <para>
         /// The type of authentication to perform when connecting to a Redis target. Options include
-        /// <code>none</code>, <code>auth-token</code>, and <code>auth-role</code>. The <code>auth-token</code>
-        /// option requires an <code>AuthPassword</code> value to be provided. The <code>auth-role</code>
-        /// option requires <code>AuthUserName</code> and <code>AuthPassword</code> values to
-        /// be provided.
+        /// <c>none</c>, <c>auth-token</c>, and <c>auth-role</c>. The <c>auth-token</c> option
+        /// requires an <c>AuthPassword</c> value to be provided. The <c>auth-role</c> option
+        /// requires <c>AuthUserName</c> and <c>AuthPassword</c> values to be provided.
         /// </para>
         /// </summary>
         public RedisAuthTypeValue AuthType
@@ -86,8 +85,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AuthUserName. 
         /// <para>
-        /// The user name provided with the <code>auth-role</code> option of the <code>AuthType</code>
-        /// setting for a Redis target endpoint.
+        /// The user name provided with the <c>auth-role</c> option of the <c>AuthType</c> setting
+        /// for a Redis target endpoint.
         /// </para>
         /// </summary>
         public string AuthUserName
@@ -163,15 +162,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SslSecurityProtocol. 
         /// <para>
         /// The connection to a Redis target endpoint using Transport Layer Security (TLS). Valid
-        /// values include <code>plaintext</code> and <code>ssl-encryption</code>. The default
-        /// is <code>ssl-encryption</code>. The <code>ssl-encryption</code> option makes an encrypted
-        /// connection. Optionally, you can identify an Amazon Resource Name (ARN) for an SSL
-        /// certificate authority (CA) using the <code>SslCaCertificateArn </code>setting. If
-        /// an ARN isn't given for a CA, DMS uses the Amazon root CA.
+        /// values include <c>plaintext</c> and <c>ssl-encryption</c>. The default is <c>ssl-encryption</c>.
+        /// The <c>ssl-encryption</c> option makes an encrypted connection. Optionally, you can
+        /// identify an Amazon Resource Name (ARN) for an SSL certificate authority (CA) using
+        /// the <c>SslCaCertificateArn </c>setting. If an ARN isn't given for a CA, DMS uses the
+        /// Amazon root CA.
         /// </para>
         ///  
         /// <para>
-        /// The <code>plaintext</code> option doesn't provide Transport Layer Security (TLS) encryption
+        /// The <c>plaintext</c> option doesn't provide Transport Layer Security (TLS) encryption
         /// for traffic between endpoint and database.
         /// </para>
         /// </summary>

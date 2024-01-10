@@ -41,15 +41,14 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property BatchMode. 
         /// <para>
-        /// Whether to process the action as a batch. The default value is <code>false</code>.
+        /// Whether to process the action as a batch. The default value is <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates
-        /// to an Array, each Array element is delivered as a separate message when passed by
-        /// <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
-        /// <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting array
-        /// can't have more than 100 messages.
+        /// When <c>batchMode</c> is <c>true</c> and the rule SQL statement evaluates to an Array,
+        /// each Array element is delivered as a separate message when passed by <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+        /// <c>BatchPutMessage</c> </a> to the IoT Analytics channel. The resulting array can't
+        /// have more than 100 messages.
         /// </para>
         /// </summary>
         public bool BatchMode

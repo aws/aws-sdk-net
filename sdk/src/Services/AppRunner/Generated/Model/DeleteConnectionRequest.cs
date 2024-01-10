@@ -31,7 +31,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Container for the parameters to the DeleteConnection operation.
     /// Delete an App Runner connection. You must first ensure that there are no running App
-    /// Runner services that use this connection. If there are any, the <code>DeleteConnection</code>
+    /// Runner services that use this connection. If there are any, the <c>DeleteConnection</c>
     /// action fails.
     /// </summary>
     public partial class DeleteConnectionRequest : AmazonAppRunnerRequest

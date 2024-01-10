@@ -130,8 +130,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>BENCHMARK</code>: Evaluate the performance of your model on different instance
-        /// types.
+        ///  <c>BENCHMARK</c>: Evaluate the performance of your model on different instance types.
         /// </para>
         /// </summary>
         public RecommendationStepType StepType

@@ -34,9 +34,9 @@ namespace Amazon.Connect.Model
     /// 
     ///  
     /// <para>
-    /// If you do not specify a <code>QueueTypes</code> parameter, both standard and agent
-    /// queues are returned. This might cause an unexpected truncation of results if you have
-    /// more than 1000 agents and you limit the number of results of the API call in code.
+    /// If you do not specify a <c>QueueTypes</c> parameter, both standard and agent queues
+    /// are returned. This might cause an unexpected truncation of results if you have more
+    /// than 1000 agents and you limit the number of results of the API call in code.
     /// </para>
     ///  
     /// <para>

@@ -35,8 +35,8 @@ namespace Amazon.AppStream.Model
     /// 
     ///  
     /// <para>
-    /// The initial state of the builder is <code>PENDING</code>. When it is ready, the state
-    /// is <code>RUNNING</code>.
+    /// The initial state of the builder is <c>PENDING</c>. When it is ready, the state is
+    /// <c>RUNNING</c>.
     /// </para>
     /// </summary>
     public partial class CreateImageBuilderRequest : AmazonAppStreamRequest
@@ -174,7 +174,7 @@ namespace Amazon.AppStream.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume
-        /// a role, the image builder calls the AWS Security Token Service (STS) <code>AssumeRole</code>
+        /// a role, the image builder calls the AWS Security Token Service (STS) <c>AssumeRole</c>
         /// API operation and passes the ARN of the role to use. The operation creates a new session
         /// with temporary credentials. AppStream 2.0 retrieves the temporary credentials and
         /// creates the <b>appstream_machine_role</b> credential profile on the instance.

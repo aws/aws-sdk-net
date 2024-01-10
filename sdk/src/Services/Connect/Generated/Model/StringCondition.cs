@@ -33,8 +33,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The currently supported values for <code>FieldName</code> are <code>name</code> and
-    /// <code>description</code>.
+    /// The currently supported values for <c>FieldName</c> are <c>name</c> and <c>description</c>.
     /// </para>
     ///  </note>
     /// </summary>

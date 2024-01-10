@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// The request parameter used to filter out the response of the <code>ListShards</code>
-    /// API.
+    /// The request parameter used to filter out the response of the <c>ListShards</c> API.
     /// </summary>
     public partial class ShardFilter
     {
@@ -41,9 +40,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ShardId. 
         /// <para>
-        /// The exclusive start <code>shardID</code> speified in the <code>ShardFilter</code>
-        /// parameter. This property can only be used if the <code>AFTER_SHARD_ID</code> shard
-        /// type is specified.
+        /// The exclusive start <c>shardID</c> speified in the <c>ShardFilter</c> parameter. This
+        /// property can only be used if the <c>AFTER_SHARD_ID</c> shard type is specified.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -62,10 +60,10 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The timestamps specified in the <code>ShardFilter</code> parameter. A timestamp is
-        /// a Unix epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00
-        /// or 1459799926.480. This property can only be used if <code>FROM_TIMESTAMP</code> or
-        /// <code>AT_TIMESTAMP</code> shard types are specified.
+        /// The timestamps specified in the <c>ShardFilter</c> parameter. A timestamp is a Unix
+        /// epoch date with precision in milliseconds. For example, 2016-04-04T19:58:46.480-00:00
+        /// or 1459799926.480. This property can only be used if <c>FROM_TIMESTAMP</c> or <c>AT_TIMESTAMP</c>
+        /// shard types are specified.
         /// </para>
         /// </summary>
         public DateTime Timestamp
@@ -83,8 +81,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The shard type specified in the <code>ShardFilter</code> parameter. This is a required
-        /// property of the <code>ShardFilter</code> parameter.
+        /// The shard type specified in the <c>ShardFilter</c> parameter. This is a required property
+        /// of the <c>ShardFilter</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -92,37 +90,35 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AFTER_SHARD_ID</code> - the response includes all the shards, starting with
-        /// the shard whose ID immediately follows the <code>ShardId</code> that you provided.
-        /// 
+        ///  <c>AFTER_SHARD_ID</c> - the response includes all the shards, starting with the shard
+        /// whose ID immediately follows the <c>ShardId</c> that you provided. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AT_TRIM_HORIZON</code> - the response includes all the shards that were open
-        /// at <code>TRIM_HORIZON</code>.
+        ///  <c>AT_TRIM_HORIZON</c> - the response includes all the shards that were open at <c>TRIM_HORIZON</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FROM_TRIM_HORIZON</code> - (default), the response includes all the shards
-        /// within the retention period of the data stream (trim to tip).
+        ///  <c>FROM_TRIM_HORIZON</c> - (default), the response includes all the shards within
+        /// the retention period of the data stream (trim to tip).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AT_LATEST</code> - the response includes only the currently open shards of
-        /// the data stream.
+        ///  <c>AT_LATEST</c> - the response includes only the currently open shards of the data
+        /// stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AT_TIMESTAMP</code> - the response includes all shards whose start timestamp
-        /// is less than or equal to the given timestamp and end timestamp is greater than or
-        /// equal to the given timestamp or still open. 
+        ///  <c>AT_TIMESTAMP</c> - the response includes all shards whose start timestamp is less
+        /// than or equal to the given timestamp and end timestamp is greater than or equal to
+        /// the given timestamp or still open. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FROM_TIMESTAMP</code> - the response incldues all closed shards whose end timestamp
+        ///  <c>FROM_TIMESTAMP</c> - the response incldues all closed shards whose end timestamp
         /// is greater than or equal to the given timestamp and also all open shards. Corrected
-        /// to <code>TRIM_HORIZON</code> of the data stream if <code>FROM_TIMESTAMP</code> is
-        /// less than the <code>TRIM_HORIZON</code> value.
+        /// to <c>TRIM_HORIZON</c> of the data stream if <c>FROM_TIMESTAMP</c> is less than the
+        /// <c>TRIM_HORIZON</c> value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

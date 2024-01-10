@@ -49,8 +49,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>CreateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
-    /// Web Services GovCloud (US-West) region.
+    ///  <c>CreateQuerySuggestionsBlockList</c> is currently not supported in the Amazon Web
+    /// Services GovCloud (US-West) region.
     /// </para>
     ///  
     /// <para>

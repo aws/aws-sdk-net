@@ -86,7 +86,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ExecutableSha256. 
         /// <para>
-        /// The <code>SHA256</code> hash of the process executable.
+        /// The <c>SHA256</c> hash of the process executable.
         /// </para>
         /// </summary>
         public string ExecutableSha256

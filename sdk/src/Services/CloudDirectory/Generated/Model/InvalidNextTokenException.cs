@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Indicates that the <code>NextToken</code> value is not valid.
+    /// Indicates that the <c>NextToken</c> value is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

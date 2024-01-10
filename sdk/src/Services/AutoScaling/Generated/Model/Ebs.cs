@@ -46,7 +46,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
         /// Indicates whether the volume is deleted on instance termination. For Amazon EC2 Auto
-        /// Scaling, the default value is <code>true</code>.
+        /// Scaling, the default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -106,10 +106,10 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Iops. 
         /// <para>
         /// The number of input/output (I/O) operations per second (IOPS) to provision for the
-        /// volume. For <code>gp3</code> and <code>io1</code> volumes, this represents the number
-        /// of IOPS that are provisioned for the volume. For <code>gp2</code> volumes, this represents
-        /// the baseline performance of the volume and the rate at which the volume accumulates
-        /// I/O credits for bursting. 
+        /// volume. For <c>gp3</c> and <c>io1</c> volumes, this represents the number of IOPS
+        /// that are provisioned for the volume. For <c>gp2</c> volumes, this represents the baseline
+        /// performance of the volume and the rate at which the volume accumulates I/O credits
+        /// for bursting. 
         /// </para>
         ///  
         /// <para>
@@ -117,23 +117,23 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp3</code>: 3,000-16,000 IOPS
+        ///  <c>gp3</c>: 3,000-16,000 IOPS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code>: 100-64,000 IOPS
+        ///  <c>io1</c>: 100-64,000 IOPS
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+        /// For <c>io1</c> volumes, we guarantee 64,000 IOPS only for <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
         /// built on the Nitro System</a>. Other instance families guarantee performance up to
         /// 32,000 IOPS. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code>
-        /// and required only when the volume type is <code>io1</code>. (Not used with <code>standard</code>,
-        /// <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.) 
+        ///  <c>Iops</c> is supported when the volume type is <c>gp3</c> or <c>io1</c> and required
+        /// only when the volume type is <c>io1</c>. (Not used with <c>standard</c>, <c>gp2</c>,
+        /// <c>st1</c>, or <c>sc1</c> volumes.) 
         /// </para>
         /// </summary>
         [AWSProperty(Min=100, Max=20000)]
@@ -156,7 +156,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
+        /// You must specify either a <c>VolumeSize</c> or a <c>SnapshotId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -175,7 +175,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        /// The throughput (MiBps) to provision for a <code>gp3</code> volume.
+        /// The throughput (MiBps) to provision for a <c>gp3</c> volume.
         /// </para>
         /// </summary>
         [AWSProperty(Min=125, Max=1000)]
@@ -199,25 +199,25 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gp2</code> and <code>gp3</code>: 1-16,384
+        ///  <c>gp2</c> and <c>gp3</c>: 1-16,384
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>io1</code>: 4-16,384
+        ///  <c>io1</c>: 4-16,384
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>st1</code> and <code>sc1</code>: 125-16,384
+        ///  <c>st1</c> and <c>sc1</c>: 125-16,384
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>standard</code>: 1-1,024
+        ///  <c>standard</c>: 1-1,024
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If
-        /// you specify both <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size
-        /// must be equal or greater than the size of the snapshot.
+        /// You must specify either a <c>SnapshotId</c> or a <c>VolumeSize</c>. If you specify
+        /// both <c>SnapshotId</c> and <c>VolumeSize</c>, the volume size must be equal or greater
+        /// than the size of the snapshot.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
@@ -241,8 +241,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code>
-        /// | <code>sc1</code> | <code>gp3</code> 
+        /// Valid values: <c>standard</c> | <c>io1</c> | <c>gp2</c> | <c>st1</c> | <c>sc1</c>
+        /// | <c>gp3</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -44,7 +44,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeviceName. 
         /// <para>
         /// The Elastic Inference accelerator device name to override for the task. This parameter
-        /// must match a <code>deviceName</code> specified in the task definition.
+        /// must match a <c>deviceName</c> specified in the task definition.
         /// </para>
         /// </summary>
         public string DeviceName

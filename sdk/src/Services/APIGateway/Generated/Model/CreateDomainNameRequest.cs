@@ -261,7 +261,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property SecurityPolicy. 
         /// <para>
         /// The Transport Layer Security (TLS) version + cipher suite for this DomainName. The
-        /// valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+        /// valid values are <c>TLS_1_0</c> and <c>TLS_1_2</c>.
         /// </para>
         /// </summary>
         public SecurityPolicy SecurityPolicy
@@ -280,8 +280,8 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The tag
-        /// key can be up to 128 characters and must not start with <code>aws:</code>. The tag
-        /// value can be up to 256 characters.
+        /// key can be up to 128 characters and must not start with <c>aws:</c>. The tag value
+        /// can be up to 256 characters.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

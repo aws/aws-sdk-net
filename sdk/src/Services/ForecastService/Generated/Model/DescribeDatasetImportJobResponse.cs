@@ -153,8 +153,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>DataSource</code> includes an Key Management Service
-        /// (KMS) key.
+        /// If encryption is used, <c>DataSource</c> includes an Key Management Service (KMS)
+        /// key.
         /// </para>
         /// </summary>
         public DataSource DataSource
@@ -227,8 +227,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property GeolocationFormat. 
         /// <para>
-        /// The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
-        /// <code>"CC_POSTALCODE"</code>.
+        /// The format of the geolocation attribute. Valid Values:<c>"LAT_LONG"</c> and <c>"CC_POSTALCODE"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -270,23 +269,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+        ///  <c>CREATE_PENDING</c> - The <c>CreationTime</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+        ///  <c>CREATE_IN_PROGRESS</c> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPING</code> - The current timestamp.
+        ///  <c>CREATE_STOPPING</c> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPED</code> - When the job stopped.
+        ///  <c>CREATE_STOPPED</c> - When the job stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+        ///  <c>ACTIVE</c> or <c>CREATE_FAILED</c> - When the job finished or failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -327,21 +326,19 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> 
+        ///  <c>ACTIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
-        /// 
+        ///  <c>CREATE_PENDING</c>, <c>CREATE_IN_PROGRESS</c>, <c>CREATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
-        /// 
+        ///  <c>DELETE_PENDING</c>, <c>DELETE_IN_PROGRESS</c>, <c>DELETE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> 
+        ///  <c>CREATE_STOPPING</c>, <c>CREATE_STOPPED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -362,7 +359,7 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property TimestampFormat. 
         /// <para>
         /// The format of timestamps in the dataset. The format that you specify depends on the
-        /// <code>DataFrequency</code> specified when the dataset was created. The following formats
+        /// <c>DataFrequency</c> specified when the dataset was created. The following formats
         /// are supported
         /// </para>
         ///  <ul> <li> 
@@ -419,7 +416,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property UseGeolocationForTimeZone. 
         /// <para>
-        /// Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+        /// Whether <c>TimeZone</c> is automatically derived from the geolocation attribute.
         /// </para>
         /// </summary>
         public bool UseGeolocationForTimeZone

@@ -59,8 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property LatestRestorableDateTime. 
         /// <para>
-        ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
-        /// 
+        ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. 
         /// </para>
         /// </summary>
         public DateTime LatestRestorableDateTime
@@ -82,11 +81,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> - Point in time recovery is enabled.
+        ///  <c>ENABLED</c> - Point in time recovery is enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - Point in time recovery is disabled.
+        ///  <c>DISABLED</c> - Point in time recovery is disabled.
         /// </para>
         ///  </li> </ul>
         /// </summary>

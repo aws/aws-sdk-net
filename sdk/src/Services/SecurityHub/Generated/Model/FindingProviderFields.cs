@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code>
+    /// In a <c>BatchImportFindings</c> request, finding providers use <c>FindingProviderFields</c>
     /// to provide and update values for confidence, criticality, related findings, severity,
     /// and types.
     /// </summary>
@@ -129,8 +129,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// One or more finding types in the format of <code>namespace/category/classifier</code>
-        /// that classify a finding.
+        /// One or more finding types in the format of <c>namespace/category/classifier</c> that
+        /// classify a finding.
         /// </para>
         ///  
         /// <para>

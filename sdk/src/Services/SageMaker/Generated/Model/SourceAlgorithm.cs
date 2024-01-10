@@ -63,8 +63,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ModelDataUrl. 
         /// <para>
         /// The Amazon S3 path where the model artifacts, which result from model training, are
-        /// stored. This path must point to a single <code>gzip</code> compressed tar archive
-        /// (<code>.tar.gz</code> suffix).
+        /// stored. This path must point to a single <c>gzip</c> compressed tar archive (<c>.tar.gz</c>
+        /// suffix).
         /// </para>
         ///  <note> 
         /// <para>

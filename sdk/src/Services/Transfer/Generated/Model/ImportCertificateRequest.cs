@@ -65,13 +65,13 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Certificate. <ul> <li> 
         /// <para>
-        /// For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate
-        /// file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.
+        /// For the CLI, provide a file path for a certificate in URI format. For example, <c>--certificate
+        /// file://encryption-cert.pem</c>. Alternatively, you can provide the raw content.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the SDK, specify the raw content of a certificate file. For example, <code>--certificate
-        /// "`cat encryption-cert.pem`"</code>.
+        /// For the SDK, specify the raw content of a certificate file. For example, <c>--certificate
+        /// "`cat encryption-cert.pem`"</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,14 +148,14 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PrivateKey. <ul> <li> 
         /// <para>
-        /// For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key
-        /// file://encryption-key.pem</code>. Alternatively, you can provide the raw content of
-        /// the private key file.
+        /// For the CLI, provide a file path for a private key in URI format.For example, <c>--private-key
+        /// file://encryption-key.pem</c>. Alternatively, you can provide the raw content of the
+        /// private key file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the SDK, specify the raw content of a private key file. For example, <code>--private-key
-        /// "`cat encryption-key.pem`"</code> 
+        /// For the SDK, specify the raw content of a private key file. For example, <c>--private-key
+        /// "`cat encryption-key.pem`"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

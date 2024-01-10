@@ -42,8 +42,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property CategoriesWithMostFindings. 
         /// <para>
-        /// A list of <code>CategoryWithFindingNum</code> objects for the top 5 finding categories
-        /// with the most open findings in an account.
+        /// A list of <c>CategoryWithFindingNum</c> objects for the top 5 finding categories with
+        /// the most open findings in an account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -98,8 +98,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ScansWithMostOpenCriticalFindings. 
         /// <para>
-        /// A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the
-        /// most number of open findings in an account.
+        /// A list of <c>ScanNameWithFindingNum</c> objects for the top 3 scans with the most
+        /// number of open findings in an account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
@@ -118,8 +118,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ScansWithMostOpenFindings. 
         /// <para>
-        /// A list of <code>ScanNameWithFindingNum</code> objects for the top 3 scans with the
-        /// most number of open critical findings in an account.
+        /// A list of <c>ScanNameWithFindingNum</c> objects for the top 3 scans with the most
+        /// number of open critical findings in an account.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

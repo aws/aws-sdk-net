@@ -39,7 +39,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// An array of <code>BatchGetTokenBalanceErrorItem</code> objects returned from the request.
+        /// An array of <c>BatchGetTokenBalanceErrorItem</c> objects returned from the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]
@@ -58,7 +58,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property TokenBalances. 
         /// <para>
-        /// An array of <code>BatchGetTokenBalanceOutputItem</code> objects returned by the response.
+        /// An array of <c>BatchGetTokenBalanceOutputItem</c> objects returned by the response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10)]

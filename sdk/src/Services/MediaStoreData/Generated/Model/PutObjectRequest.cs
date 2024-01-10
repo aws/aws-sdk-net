@@ -65,8 +65,8 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property CacheControl. 
         /// <para>
-        /// An optional <code>CacheControl</code> header that allows the caller to control the
-        /// object's cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.
+        /// An optional <c>CacheControl</c> header that allows the caller to control the object's
+        /// cache behavior. Headers can be passed in as specified in the HTTP at <a href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.
         /// </para>
         ///  
         /// <para>
@@ -111,8 +111,8 @@ namespace Amazon.MediaStoreData.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code>
-        /// in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.
+        /// For example, to upload the file <c>mlaw.avi</c> to the folder path <c>premium\canada</c>
+        /// in the container <c>movies</c>, enter the path <c>premium/canada/mlaw.avi</c>.
         /// </para>
         ///  
         /// <para>
@@ -121,10 +121,10 @@ namespace Amazon.MediaStoreData.Model
         ///  
         /// <para>
         /// If the path includes any folders that don't exist yet, the service creates them. For
-        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
-        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in
-        /// the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
-        /// <code>canada</code>, in the <code>premium</code> folder. 
+        /// example, suppose you have an existing <c>premium/usa</c> subfolder. If you specify
+        /// <c>premium/canada</c>, the service creates a <c>canada</c> subfolder in the <c>premium</c>
+        /// folder. You then have two subfolders, <c>usa</c> and <c>canada</c>, in the <c>premium</c>
+        /// folder. 
         /// </para>
         ///  
         /// <para>
@@ -159,7 +159,7 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        /// Indicates the storage class of a <code>Put</code> request. Defaults to high-performance
+        /// Indicates the storage class of a <c>Put</c> request. Defaults to high-performance
         /// temporal storage class, and objects are persisted into durable storage shortly after
         /// being received.
         /// </para>
@@ -181,15 +181,15 @@ namespace Amazon.MediaStoreData.Model
         /// Gets and sets the property UploadAvailability. 
         /// <para>
         /// Indicates the availability of an object while it is still uploading. If the value
-        /// is set to <code>streaming</code>, the object is available for downloading after some
-        /// initial buffering but before the object is uploaded completely. If the value is set
-        /// to <code>standard</code>, the object is available for downloading only when it is
-        /// uploaded completely. The default value for this header is <code>standard</code>.
+        /// is set to <c>streaming</c>, the object is available for downloading after some initial
+        /// buffering but before the object is uploaded completely. If the value is set to <c>standard</c>,
+        /// the object is available for downloading only when it is uploaded completely. The default
+        /// value for this header is <c>standard</c>.
         /// </para>
         ///  
         /// <para>
-        /// To use this header, you must also set the HTTP <code>Transfer-Encoding</code> header
-        /// to <code>chunked</code>.
+        /// To use this header, you must also set the HTTP <c>Transfer-Encoding</c> header to
+        /// <c>chunked</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]

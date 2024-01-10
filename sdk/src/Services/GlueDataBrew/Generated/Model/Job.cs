@@ -200,11 +200,11 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SSE-KMS</code> - Server-side encryption with keys managed by KMS.
+        ///  <c>SSE-KMS</c> - Server-side encryption with keys managed by KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SSE-S3</code> - Server-side encryption with keys managed by Amazon S3.
+        ///  <c>SSE-S3</c> - Server-side encryption with keys managed by Amazon S3.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -224,9 +224,9 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property JobSample. 
         /// <para>
         /// A sample configuration for profile jobs only, which determines the number of rows
-        /// on which the profile job is run. If a <code>JobSample</code> value isn't provided,
-        /// the default value is used. The default value is CUSTOM_ROWS for the mode parameter
-        /// and 20,000 for the size parameter.
+        /// on which the profile job is run. If a <c>JobSample</c> value isn't provided, the default
+        /// value is used. The default value is CUSTOM_ROWS for the mode parameter and 20,000
+        /// for the size parameter.
         /// </para>
         /// </summary>
         public JobSample JobSample
@@ -468,7 +468,7 @@ namespace Amazon.GlueDataBrew.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The job's timeout in minutes. A job that attempts to run longer than this timeout
-        /// period ends with a status of <code>TIMEOUT</code>.
+        /// period ends with a status of <c>TIMEOUT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -491,12 +491,12 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROFILE</code> - A job to analyze a dataset, to determine its size, data types,
-        /// data distribution, and more.
+        ///  <c>PROFILE</c> - A job to analyze a dataset, to determine its size, data types, data
+        /// distribution, and more.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RECIPE</code> - A job to apply one or more transformations to a dataset.
+        ///  <c>RECIPE</c> - A job to apply one or more transformations to a dataset.
         /// </para>
         ///  </li> </ul>
         /// </summary>

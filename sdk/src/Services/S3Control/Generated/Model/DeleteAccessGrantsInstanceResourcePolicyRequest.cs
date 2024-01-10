@@ -37,8 +37,8 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:DeleteAccessGrantsInstanceResourcePolicy</code> permission
-    /// to use this operation. 
+    /// You must have the <c>s3:DeleteAccessGrantsInstanceResourcePolicy</c> permission to
+    /// use this operation. 
     /// </para>
     ///  </dd> </dl>
     /// </summary>

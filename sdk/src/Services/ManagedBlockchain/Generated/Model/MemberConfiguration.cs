@@ -113,7 +113,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  
         /// <para>
-        /// The following is an example of a KMS key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// The following is an example of a KMS key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul>

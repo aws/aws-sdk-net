@@ -86,7 +86,7 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// Content type as specified in the <code>Accept</code> HTTP header in the request.
+        /// Content type as specified in the <c>Accept</c> HTTP header in the request.
         /// </para>
         /// </summary>
         public string ContentType
@@ -104,33 +104,31 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property DialogState.  <ul> <li> 
         /// <para>
-        ///  <code>ConfirmIntent</code> - Amazon Lex is expecting a "yes" or "no" response to
-        /// confirm the intent before fulfilling an intent.
+        ///  <c>ConfirmIntent</c> - Amazon Lex is expecting a "yes" or "no" response to confirm
+        /// the intent before fulfilling an intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ElicitIntent</code> - Amazon Lex wants to elicit the user's intent.
+        ///  <c>ElicitIntent</c> - Amazon Lex wants to elicit the user's intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ElicitSlot</code> - Amazon Lex is expecting the value of a slot for the current
+        ///  <c>ElicitSlot</c> - Amazon Lex is expecting the value of a slot for the current intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Failed</c> - Conveys that the conversation with the user has failed. This can
+        /// happen for various reasons, including the user does not provide an appropriate response
+        /// to prompts from the service, or if the Lambda function fails to fulfill the intent.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Fulfilled</c> - Conveys that the Lambda function has sucessfully fulfilled the
         /// intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - Conveys that the conversation with the user has failed. This
-        /// can happen for various reasons, including the user does not provide an appropriate
-        /// response to prompts from the service, or if the Lambda function fails to fulfill the
-        /// intent.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Fulfilled</code> - Conveys that the Lambda function has sucessfully fulfilled
-        /// the intent.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ReadyForFulfillment</code> - Conveys that the client has to fulfill the intent.
+        ///  <c>ReadyForFulfillment</c> - Conveys that the client has to fulfill the intent.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -153,8 +151,8 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>encodedMessage</code> field is base-64 encoded. You must decode the field
-        /// before you can use the value.
+        /// The <c>encodedMessage</c> field is base-64 encoded. You must decode the field before
+        /// you can use the value.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1366)]
@@ -196,8 +194,8 @@ namespace Amazon.Lex.Model
         ///  
         /// <para>
         /// You can only use this field in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US,
-        /// fr-CA, fr-FR, and it-IT locales. In all other locales, the <code>message</code> field
-        /// is null. You should use the <code>encodedMessage</code> field instead.
+        /// fr-CA, fr-FR, and it-IT locales. In all other locales, the <c>message</c> field is
+        /// null. You should use the <c>encodedMessage</c> field instead.
         /// </para>
         /// </summary>
         [Obsolete("The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.")]
@@ -221,21 +219,20 @@ namespace Amazon.Lex.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PlainText</code> - The message contains plain UTF-8 text.
+        ///  <c>PlainText</c> - The message contains plain UTF-8 text.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CustomPayload</code> - The message is a custom format for the client.
+        ///  <c>CustomPayload</c> - The message is a custom format for the client.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SSML</code> - The message contains text formatted for voice output.
+        ///  <c>SSML</c> - The message contains text formatted for voice output.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Composite</code> - The message contains an escaped JSON object containing one
-        /// or more messages from the groups that messages were assigned to when the intent was
-        /// created.
+        ///  <c>Composite</c> - The message contains an escaped JSON object containing one or
+        /// more messages from the groups that messages were assigned to when the intent was created.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -296,13 +293,13 @@ namespace Amazon.Lex.Model
         ///  
         /// <para>
         /// Amazon Lex creates a resolution list containing likely values for a slot. The value
-        /// that it returns is determined by the <code>valueSelectionStrategy</code> selected
-        /// when the slot type was created or updated. If <code>valueSelectionStrategy</code>
-        /// is set to <code>ORIGINAL_VALUE</code>, the value provided by the user is returned,
-        /// if the user value is similar to the slot values. If <code>valueSelectionStrategy</code>
-        /// is set to <code>TOP_RESOLUTION</code> Amazon Lex returns the first value in the resolution
-        /// list or, if there is no resolution list, null. If you don't specify a <code>valueSelectionStrategy</code>
-        /// the default is <code>ORIGINAL_VALUE</code>. 
+        /// that it returns is determined by the <c>valueSelectionStrategy</c> selected when the
+        /// slot type was created or updated. If <c>valueSelectionStrategy</c> is set to <c>ORIGINAL_VALUE</c>,
+        /// the value provided by the user is returned, if the user value is similar to the slot
+        /// values. If <c>valueSelectionStrategy</c> is set to <c>TOP_RESOLUTION</c> Amazon Lex
+        /// returns the first value in the resolution list or, if there is no resolution list,
+        /// null. If you don't specify a <c>valueSelectionStrategy</c> the default is <c>ORIGINAL_VALUE</c>.
+        /// 
         /// </para>
         /// </summary>
         public string Slots
@@ -320,8 +317,8 @@ namespace Amazon.Lex.Model
         /// <summary>
         /// Gets and sets the property SlotToElicit. 
         /// <para>
-        /// If the <code>dialogState</code> is <code>ElicitSlot</code>, returns the name of the
-        /// slot for which Amazon Lex is eliciting a value.
+        /// If the <c>dialogState</c> is <c>ElicitSlot</c>, returns the name of the slot for which
+        /// Amazon Lex is eliciting a value.
         /// </para>
         /// </summary>
         public string SlotToElicit

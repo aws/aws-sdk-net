@@ -80,7 +80,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property IncludeCustomMetadata. 
         /// <para>
-        /// Set this to <code>TRUE</code> to include custom metadata in the response.
+        /// Set this to <c>TRUE</c> to include custom metadata in the response.
         /// </para>
         /// </summary>
         public bool IncludeCustomMetadata

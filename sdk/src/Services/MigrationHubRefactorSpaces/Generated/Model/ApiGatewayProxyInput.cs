@@ -40,16 +40,16 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Gets and sets the property EndpointType. 
         /// <para>
         /// The type of endpoint to use for the API Gateway proxy. If no value is specified in
-        /// the request, the value is set to <code>REGIONAL</code> by default.
+        /// the request, the value is set to <c>REGIONAL</c> by default.
         /// </para>
         ///  
         /// <para>
-        /// If the value is set to <code>PRIVATE</code> in the request, this creates a private
-        /// API endpoint that is isolated from the public internet. The private endpoint can only
-        /// be accessed by using Amazon Virtual Private Cloud (Amazon VPC) interface endpoints
-        /// for the Amazon API Gateway that has been granted access. For more information about
-        /// creating a private connection with Refactor Spaces and interface endpoint (Amazon
-        /// Web Services PrivateLink) availability, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
+        /// If the value is set to <c>PRIVATE</c> in the request, this creates a private API endpoint
+        /// that is isolated from the public internet. The private endpoint can only be accessed
+        /// by using Amazon Virtual Private Cloud (Amazon VPC) interface endpoints for the Amazon
+        /// API Gateway that has been granted access. For more information about creating a private
+        /// connection with Refactor Spaces and interface endpoint (Amazon Web Services PrivateLink)
+        /// availability, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
         /// Refactor Spaces using an interface endpoint (Amazon Web Services PrivateLink)</a>.
         /// </para>
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property StageName. 
         /// <para>
-        /// The name of the API Gateway stage. The name defaults to <code>prod</code>. 
+        /// The name of the API Gateway stage. The name defaults to <c>prod</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

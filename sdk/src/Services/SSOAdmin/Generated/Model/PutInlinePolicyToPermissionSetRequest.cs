@@ -35,8 +35,8 @@ namespace Amazon.SSOAdmin.Model
     ///  <note> 
     /// <para>
     /// If the permission set is already referenced by one or more account assignments, you
-    /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
-    /// apply the corresponding IAM policy updates to all assigned accounts.
+    /// will need to call <c> <a>ProvisionPermissionSet</a> </c> after this action to apply
+    /// the corresponding IAM policy updates to all assigned accounts.
     /// </para>
     ///  </note>
     /// </summary>

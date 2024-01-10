@@ -99,7 +99,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property PartitionPredicate. 
         /// <para>
         /// Partitions satisfying this predicate are deleted. Files within the retention period
-        /// in these partitions are not deleted. Set to <code>""</code> – empty by default.
+        /// in these partitions are not deleted. Set to <c>""</c> – empty by default.
         /// </para>
         /// </summary>
         public string PartitionPredicate

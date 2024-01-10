@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// A <code>UsageRecordResult</code> indicates the status of a given <code>UsageRecord</code>
-    /// processed by <code>BatchMeterUsage</code>.
+    /// A <c>UsageRecordResult</c> indicates the status of a given <c>UsageRecord</c> processed
+    /// by <c>BatchMeterUsage</c>.
     /// </summary>
     public partial class UsageRecordResult
     {
@@ -41,7 +41,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property MeteringRecordId. 
         /// <para>
-        /// The <code>MeteringRecordId</code> is a unique identifier for this metering event.
+        /// The <c>MeteringRecordId</c> is a unique identifier for this metering event.
         /// </para>
         /// </summary>
         public string MeteringRecordId
@@ -59,18 +59,18 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The <code>UsageRecordResult</code> <code>Status</code> indicates the status of an
-        /// individual <code>UsageRecord</code> processed by <code>BatchMeterUsage</code>.
+        /// The <c>UsageRecordResult</c> <c>Status</c> indicates the status of an individual <c>UsageRecord</c>
+        /// processed by <c>BatchMeterUsage</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Success</i>- The <code>UsageRecord</code> was accepted and honored by <code>BatchMeterUsage</code>.
+        ///  <i>Success</i>- The <c>UsageRecord</c> was accepted and honored by <c>BatchMeterUsage</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>CustomerNotSubscribed</i>- The <code>CustomerIdentifier</code> specified is not
-        /// able to use your product. The <code>UsageRecord</code> was not honored. There are
-        /// three causes for this result:
+        ///  <i>CustomerNotSubscribed</i>- The <c>CustomerIdentifier</c> specified is not able
+        /// to use your product. The <c>UsageRecord</c> was not honored. There are three causes
+        /// for this result:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -79,8 +79,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         ///  </li> <li> 
         /// <para>
         /// The customer identifier provided in the metering record does not have an active agreement
-        /// or subscription with this product. Future <code>UsageRecords</code> for this customer
-        /// will fail until the customer subscribes to your product.
+        /// or subscription with this product. Future <c>UsageRecords</c> for this customer will
+        /// fail until the customer subscribes to your product.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -88,9 +88,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <i>DuplicateRecord</i>- Indicates that the <code>UsageRecord</code> was invalid and
-        /// not honored. A previously metered <code>UsageRecord</code> had the same customer,
-        /// dimension, and time, but a different quantity.
+        ///  <i>DuplicateRecord</i>- Indicates that the <c>UsageRecord</c> was invalid and not
+        /// honored. A previously metered <c>UsageRecord</c> had the same customer, dimension,
+        /// and time, but a different quantity.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -109,7 +109,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UsageRecord. 
         /// <para>
-        /// The <code>UsageRecord</code> that was part of the <code>BatchMeterUsage</code> request.
+        /// The <c>UsageRecord</c> that was part of the <c>BatchMeterUsage</c> request.
         /// </para>
         /// </summary>
         public UsageRecord UsageRecord

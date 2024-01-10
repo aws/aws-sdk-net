@@ -34,9 +34,8 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// The <code>TestWindowStart</code> and <code>TestWindowEnd</code> parameters are determined
-    /// by the <code>BackTestWindowOffset</code> parameter of the <a>EvaluationParameters</a>
-    /// object.
+    /// The <c>TestWindowStart</c> and <c>TestWindowEnd</c> parameters are determined by the
+    /// <c>BackTestWindowOffset</c> parameter of the <a>EvaluationParameters</a> object.
     /// </para>
     /// </summary>
     public partial class WindowSummary
@@ -54,11 +53,11 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUMMARY</code> - The average metrics across all windows.
+        ///  <c>SUMMARY</c> - The average metrics across all windows.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPUTED</code> - The metrics for the specified window.
+        ///  <c>COMPUTED</c> - The metrics for the specified window.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -128,8 +128,8 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The date, in UTC, before which the schedule can invoke its target. Depending on the
-        /// schedule's recurrence expression, invocations might stop on, or before, the <code>EndDate</code>
-        /// you specify. EventBridge Scheduler ignores <code>EndDate</code> for one-time schedules.
+        /// schedule's recurrence expression, invocations might stop on, or before, the <c>EndDate</c>
+        /// you specify. EventBridge Scheduler ignores <c>EndDate</c> for one-time schedules.
         /// </para>
         /// </summary>
         public DateTime EndDate
@@ -247,36 +247,36 @@ namespace Amazon.Scheduler.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>at</code> expression - <code>at(yyyy-mm-ddThh:mm:ss)</code> 
+        ///  <c>at</c> expression - <c>at(yyyy-mm-ddThh:mm:ss)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rate</code> expression - <code>rate(value unit)</code> 
+        ///  <c>rate</c> expression - <c>rate(value unit)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cron</code> expression - <code>cron(fields)</code> 
+        ///  <c>cron</c> expression - <c>cron(fields)</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  You can use <code>at</code> expressions to create one-time schedules that invoke
-        /// a target once, at the time and in the time zone, that you specify. You can use <code>rate</code>
-        /// and <code>cron</code> expressions to create recurring schedules. Rate-based schedules
-        /// are useful when you want to invoke a target at regular intervals, such as every 15
-        /// minutes or every five days. Cron-based schedules are useful when you want to invoke
-        /// a target periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day
-        /// of the month. 
+        ///  You can use <c>at</c> expressions to create one-time schedules that invoke a target
+        /// once, at the time and in the time zone, that you specify. You can use <c>rate</c>
+        /// and <c>cron</c> expressions to create recurring schedules. Rate-based schedules are
+        /// useful when you want to invoke a target at regular intervals, such as every 15 minutes
+        /// or every five days. Cron-based schedules are useful when you want to invoke a target
+        /// periodically at a specific time, such as at 8:00 am (UTC+0) every 1st day of the month.
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  A <code>cron</code> expression consists of six fields separated by white spaces:
-        /// <code>(minutes hours day_of_month month day_of_week year)</code>. 
+        ///  A <c>cron</c> expression consists of six fields separated by white spaces: <c>(minutes
+        /// hours day_of_month month day_of_week year)</c>. 
         /// </para>
         ///  
         /// <para>
-        ///  A <code>rate</code> expression consists of a <i>value</i> as a positive integer,
-        /// and a <i>unit</i> with the following options: <code>minute</code> | <code>minutes</code>
-        /// | <code>hour</code> | <code>hours</code> | <code>day</code> | <code>days</code> 
+        ///  A <c>rate</c> expression consists of a <i>value</i> as a positive integer, and a
+        /// <i>unit</i> with the following options: <c>minute</c> | <c>minutes</c> | <c>hour</c>
+        /// | <c>hours</c> | <c>day</c> | <c>days</c> 
         /// </para>
         ///  
         /// <para>
@@ -322,8 +322,8 @@ namespace Amazon.Scheduler.Model
         /// <para>
         /// The date, in UTC, after which the schedule can begin invoking its target. Depending
         /// on the schedule's recurrence expression, invocations might occur on, or after, the
-        /// <code>StartDate</code> you specify. EventBridge Scheduler ignores <code>StartDate</code>
-        /// for one-time schedules.
+        /// <c>StartDate</c> you specify. EventBridge Scheduler ignores <c>StartDate</c> for one-time
+        /// schedules.
         /// </para>
         /// </summary>
         public DateTime StartDate

@@ -32,7 +32,7 @@ namespace Amazon.Rekognition.Model
     /// Container for the parameters to the CreateProjectVersion operation.
     /// Creates a new version of Amazon Rekognition project (like a Custom Labels model or
     /// a custom adapter) and begins training. Models and adapters are managed as part of
-    /// a Rekognition project. The response from <code>CreateProjectVersion</code> is an Amazon
+    /// a Rekognition project. The response from <c>CreateProjectVersion</c> is an Amazon
     /// Resource Name (ARN) for the project version. 
     /// 
     ///  
@@ -41,13 +41,13 @@ namespace Amazon.Rekognition.Model
     /// settings. You can provide a description to the project version by using the VersionDescription
     /// argment. Training can take a while to complete. You can get the current status by
     /// calling <a>DescribeProjectVersions</a>. Training completed successfully if the value
-    /// of the <code>Status</code> field is <code>TRAINING_COMPLETED</code>. Once training
-    /// has successfully completed, call <a>DescribeProjectVersions</a> to get the training
-    /// results and evaluate the model.
+    /// of the <c>Status</c> field is <c>TRAINING_COMPLETED</c>. Once training has successfully
+    /// completed, call <a>DescribeProjectVersions</a> to get the training results and evaluate
+    /// the model.
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:CreateProjectVersion</code>
+    /// This operation requires permissions to perform the <c>rekognition:CreateProjectVersion</c>
     /// action.
     /// </para>
     ///  <note> 
@@ -58,8 +58,7 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// You can train a model in a project that doesn't have associated datasets by specifying
-    /// manifest files in the <code>TrainingData</code> and <code>TestingData</code> fields.
-    /// 
+    /// manifest files in the <c>TrainingData</c> and <c>TestingData</c> fields. 
     /// </para>
     ///  
     /// <para>
@@ -115,7 +114,7 @@ namespace Amazon.Rekognition.Model
         /// your KMS key, or an alias ARN. The key is used to encrypt training images, test images,
         /// and manifest files copied into the service for the project version. Your source images
         /// are unaffected. The key is also used to encrypt training results and manifest files
-        /// written to the output Amazon S3 bucket (<code>OutputConfig</code>).
+        /// written to the output Amazon S3 bucket (<c>OutputConfig</c>).
         /// </para>
         ///  
         /// <para>
@@ -140,8 +139,8 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify a value for <code>KmsKeyId</code>, images copied into the service
-        /// are encrypted using a key that AWS owns and manages.
+        /// If you don't specify a value for <c>KmsKeyId</c>, images copied into the service are
+        /// encrypted using a key that AWS owns and manages.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -161,8 +160,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property OutputConfig. 
         /// <para>
         /// The Amazon S3 bucket location to store the results of training. The bucket can be
-        /// any S3 bucket in your AWS account. You need <code>s3:PutObject</code> permission on
-        /// the bucket. 
+        /// any S3 bucket in your AWS account. You need <c>s3:PutObject</c> permission on the
+        /// bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -221,8 +220,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property TestingData. 
         /// <para>
         /// Specifies an external manifest that the service uses to test the project version.
-        /// If you specify <code>TestingData</code> you must also specify <code>TrainingData</code>.
-        /// The project must not have any associated datasets.
+        /// If you specify <c>TestingData</c> you must also specify <c>TrainingData</c>. The project
+        /// must not have any associated datasets.
         /// </para>
         /// </summary>
         public TestingData TestingData
@@ -241,8 +240,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property TrainingData. 
         /// <para>
         /// Specifies an external manifest that the services uses to train the project version.
-        /// If you specify <code>TrainingData</code> you must also specify <code>TestingData</code>.
-        /// The project must not have any associated datasets. 
+        /// If you specify <c>TrainingData</c> you must also specify <c>TestingData</c>. The project
+        /// must not have any associated datasets. 
         /// </para>
         /// </summary>
         public TrainingData TrainingData

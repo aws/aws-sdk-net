@@ -147,27 +147,27 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING_ACCEPTANCE</code>: The operation is waiting for acceptance from the
-        /// account that is receiving the domain.
+        ///  <c>PENDING_ACCEPTANCE</c>: The operation is waiting for acceptance from the account
+        /// that is receiving the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_CUSTOMER_ACTION</code>: The operation is waiting for customer action,
-        /// for example, returning an email.
+        ///  <c>PENDING_CUSTOMER_ACTION</c>: The operation is waiting for customer action, for
+        /// example, returning an email.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_AUTHORIZATION</code>: The operation is waiting for the form of authorization.
+        ///  <c>PENDING_AUTHORIZATION</c>: The operation is waiting for the form of authorization.
         /// For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ResendOperationAuthorization.html">ResendOperationAuthorization</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_PAYMENT_VERIFICATION</code>: The operation is waiting for the payment
-        /// method to validate.
+        ///  <c>PENDING_PAYMENT_VERIFICATION</c>: The operation is waiting for the payment method
+        /// to validate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_SUPPORT_CASE</code>: The operation includes a support case and is waiting
+        ///  <c>PENDING_SUPPORT_CASE</c>: The operation includes a support case and is waiting
         /// for its resolution.
         /// </para>
         ///  </li> </ul>

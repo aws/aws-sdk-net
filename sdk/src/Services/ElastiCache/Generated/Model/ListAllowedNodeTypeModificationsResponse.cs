@@ -66,8 +66,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// When scaling up a Redis cluster or replication group using <code>ModifyCacheCluster</code>
-        /// or <code>ModifyReplicationGroup</code>, use a value from this list for the <code>CacheNodeType</code>
+        /// When scaling up a Redis cluster or replication group using <c>ModifyCacheCluster</c>
+        /// or <c>ModifyReplicationGroup</c>, use a value from this list for the <c>CacheNodeType</c>
         /// parameter.
         /// </para>
         /// </summary>

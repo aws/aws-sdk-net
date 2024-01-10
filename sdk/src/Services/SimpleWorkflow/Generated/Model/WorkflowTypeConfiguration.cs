@@ -46,7 +46,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The default policy to use for the child workflow executions when a workflow execution
         /// of this type is terminated, by calling the <a>TerminateWorkflowExecution</a> action
         /// explicitly or due to an expired timeout. This default can be overridden when starting
-        /// a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// a workflow execution using the <a>StartWorkflowExecution</a> action or the <c>StartChildWorkflowExecution</c>
         /// <a>Decision</a>.
         /// </para>
         ///  
@@ -55,18 +55,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE</code> – The child executions are terminated.
+        ///  <c>TERMINATE</c> – The child executions are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
-        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
-        /// It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.
+        ///  <c>REQUEST_CANCEL</c> – A request to cancel is attempted for each child execution
+        /// by recording a <c>WorkflowExecutionCancelRequested</c> event in its history. It is
+        /// up to the decider to take appropriate actions when it receives an execution history
+        /// with this event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        ///  <c>ABANDON</c> – No action is taken. The child executions continue to run.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -87,13 +87,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         ///  The default maximum duration, specified when registering the workflow type, for executions
         /// of this workflow type. This default can be overridden when starting a workflow execution
-        /// using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// using the <a>StartWorkflowExecution</a> action or the <c>StartChildWorkflowExecution</c>
         /// <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -142,7 +142,7 @@ namespace Amazon.SimpleWorkflow.Model
         ///  The default task list, specified when registering the workflow type, for decisions
         /// tasks scheduled for workflow executions of this type. This default can be overridden
         /// when starting a workflow execution using the <a>StartWorkflowExecution</a> action
-        /// or the <code>StartChildWorkflowExecution</code> <a>Decision</a>.
+        /// or the <c>StartChildWorkflowExecution</c> <a>Decision</a>.
         /// </para>
         /// </summary>
         public TaskList DefaultTaskList
@@ -162,13 +162,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         ///  The default task priority, specified when registering the workflow type, for all
         /// decision tasks of this workflow type. This default can be overridden when starting
-        /// a workflow execution using the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// a workflow execution using the <a>StartWorkflowExecution</a> action or the <c>StartChildWorkflowExecution</c>
         /// decision.
         /// </para>
         ///  
         /// <para>
-        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-        /// to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
+        /// Valid values are integers that range from Java's <c>Integer.MIN_VALUE</c> (-2147483648)
+        /// to <c>Integer.MAX_VALUE</c> (2147483647). Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>
@@ -196,13 +196,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// or failure. If the task doesn'tdo close in the specified time then the task is automatically
         /// timed out and rescheduled. If the decider eventually reports a completion or failure,
         /// it is ignored. This default can be overridden when starting a workflow execution using
-        /// the <a>StartWorkflowExecution</a> action or the <code>StartChildWorkflowExecution</code>
+        /// the <a>StartWorkflowExecution</a> action or the <c>StartChildWorkflowExecution</c>
         /// <a>Decision</a>.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]

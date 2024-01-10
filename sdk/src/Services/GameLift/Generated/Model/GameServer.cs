@@ -39,9 +39,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// A game server is created by a successful call to <code>RegisterGameServer</code> and
-    /// deleted by calling <code>DeregisterGameServer</code>. A game server is claimed to
-    /// host a game session by calling <code>ClaimGameServer</code>. 
+    /// A game server is created by a successful call to <c>RegisterGameServer</c> and deleted
+    /// by calling <c>DeregisterGameServer</c>. A game server is claimed to host a game session
+    /// by calling <c>ClaimGameServer</c>. 
     /// </para>
     /// </summary>
     public partial class GameServer
@@ -62,7 +62,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ClaimStatus. 
         /// <para>
         /// Indicates when an available game server has been reserved for gameplay but has not
-        /// yet started hosting a game. Once it is claimed, the game server remains in <code>CLAIMED</code>
+        /// yet started hosting a game. Once it is claimed, the game server remains in <c>CLAIMED</c>
         /// status for a maximum of one minute. During this time, game clients connect to the
         /// game server to start the game and trigger the game server to update its utilization
         /// status. After one minute, the game server claim status reverts to null.
@@ -183,7 +183,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The unique identifier for the instance where the game server is running. This ID is
         /// available in the instance metadata. EC2 instance IDs use a 17-character format, for
-        /// example: <code>i-1234567890abcdef0</code>.
+        /// example: <c>i-1234567890abcdef0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]
@@ -203,7 +203,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LastClaimTime. 
         /// <para>
         /// Timestamp that indicates the last time the game server was claimed. The format is
-        /// a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// a number expressed in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// This value is used to calculate when a claimed game server's status should revert
         /// to null.
         /// </para>
@@ -224,7 +224,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LastHealthCheckTime. 
         /// <para>
         /// Timestamp that indicates the last time the game server was updated with health status.
-        /// The format is a number expressed in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// The format is a number expressed in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// After game server registration, this property is only changed when a game server update
         /// specifies a health check value.
         /// </para>
@@ -245,7 +245,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property RegistrationTime. 
         /// <para>
         /// Timestamp that indicates when the game server registered. The format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime RegistrationTime
@@ -268,14 +268,13 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The game server is available to be claimed. A game server
-        /// that has been claimed remains in this status until it reports game hosting activity.
-        /// 
+        ///  <c>AVAILABLE</c> - The game server is available to be claimed. A game server that
+        /// has been claimed remains in this status until it reports game hosting activity. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UTILIZED</code> - The game server is currently hosting a game session with
-        /// players. 
+        ///  <c>UTILIZED</c> - The game server is currently hosting a game session with players.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

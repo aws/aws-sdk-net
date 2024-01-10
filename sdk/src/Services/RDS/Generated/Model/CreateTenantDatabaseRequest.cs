@@ -47,7 +47,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property CharacterSetName. 
         /// <para>
         /// The character set for your tenant database. If you don't specify a value, the character
-        /// set name defaults to <code>AL32UTF8</code>.
+        /// set name defaults to <c>AL32UTF8</c>.
         /// </para>
         /// </summary>
         public string CharacterSetName
@@ -135,9 +135,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can include any printable ASCII character except forward slash (<code>/</code>), double
-        /// quote (<code>"</code>), at symbol (<code>@</code>), ampersand (<code>&amp;</code>),
-        /// or single quote (<code>'</code>).
+        /// Can include any printable ASCII character except forward slash (<c>/</c>), double
+        /// quote (<c>"</c>), at symbol (<c>@</c>), ampersand (<c>&amp;</c>), or single quote
+        /// (<c>'</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -157,7 +157,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NcharCharacterSetName. 
         /// <para>
-        /// The <code>NCHAR</code> value for the tenant database.
+        /// The <c>NCHAR</c> value for the tenant database.
         /// </para>
         /// </summary>
         public string NcharCharacterSetName
@@ -191,7 +191,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property TenantDBName. 
         /// <para>
         /// The user-supplied name of the tenant database that you want to create in your DB instance.
-        /// This parameter has the same constraints as <code>DBName</code> in <code>CreateDBInstance</code>.
+        /// This parameter has the same constraints as <c>DBName</c> in <c>CreateDBInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

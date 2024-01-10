@@ -158,7 +158,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PreviousAppsList. 
         /// <para>
-        /// A map of previous version numbers to their corresponding <code>App</code> object arrays.
+        /// A map of previous version numbers to their corresponding <c>App</c> object arrays.
         /// </para>
         /// </summary>
         public Dictionary<string, List<App>> PreviousAppsList

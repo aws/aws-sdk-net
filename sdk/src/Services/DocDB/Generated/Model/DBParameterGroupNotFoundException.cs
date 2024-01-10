@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing parameter group.
+    /// <c>DBParameterGroupName</c> doesn't refer to an existing parameter group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

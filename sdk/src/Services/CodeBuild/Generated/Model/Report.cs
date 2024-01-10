@@ -71,8 +71,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property CodeCoverageSummary. 
         /// <para>
-        /// A <code>CodeCoverageReportSummary</code> object that contains a code coverage summary
-        /// for this report.
+        /// A <c>CodeCoverageReportSummary</c> object that contains a code coverage summary for
+        /// this report.
         /// </para>
         /// </summary>
         public CodeCoverageReportSummary CodeCoverageSummary
@@ -218,8 +218,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property TestSummary. 
         /// <para>
-        ///  A <code>TestReportSummary</code> object that contains information about this test
-        /// report. 
+        ///  A <c>TestReportSummary</c> object that contains information about this test report.
+        /// 
         /// </para>
         /// </summary>
         public TestReportSummary TestSummary

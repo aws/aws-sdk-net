@@ -46,26 +46,26 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+        ///  <c>ip-address-type</c> - The IP address type (<c>ipv4</c> | <c>ipv6</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>service-id</code> - The ID of the service.
+        ///  <c>service-id</c> - The ID of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-owner</code> - The ID of the Amazon Web Services account ID that
-        /// owns the endpoint.
+        ///  <c>vpc-endpoint-owner</c> - The ID of the Amazon Web Services account ID that owns
+        /// the endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>
-        /// | <code>rejected</code> | <code>failed</code>).
+        ///  <c>vpc-endpoint-state</c> - The state of the endpoint (<c>pendingAcceptance</c> |
+        /// <c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c> | <c>rejected</c>
+        /// | <c>failed</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-id</code> - The ID of the endpoint.
+        ///  <c>vpc-endpoint-id</c> - The ID of the endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -86,7 +86,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results of the initial request can be seen by sending another request with the returned
-        /// <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code>
+        /// <c>NextToken</c> value. This value can be between 5 and 1,000; if <c>MaxResults</c>
         /// is given a value larger than 1,000, only 1,000 results are returned.
         /// </para>
         /// </summary>

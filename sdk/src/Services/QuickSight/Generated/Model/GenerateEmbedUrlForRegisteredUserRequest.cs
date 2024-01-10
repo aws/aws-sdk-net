@@ -47,8 +47,8 @@ namespace Amazon.QuickSight.Model
     ///  </li> <li> 
     /// <para>
     /// The URL validity period should not be confused with the actual session lifetime that
-    /// can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-    /// </code> parameter.
+    /// can be customized using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
+    /// </c> parameter.
     /// </para>
     ///  
     /// <para>
@@ -90,9 +90,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// To include all subdomains under a specific domain to the allow list, use <code>*</code>.
-        /// For example, <code>https://*.sapp.amazon.com</code> includes all subdomains under
-        /// <code>https://sapp.amazon.com</code>.
+        /// To include all subdomains under a specific domain to the allow list, use <c>*</c>.
+        /// For example, <c>https://*.sapp.amazon.com</c> includes all subdomains under <c>https://sapp.amazon.com</c>.
         /// </para>
         /// </summary>
         public List<string> AllowedDomains

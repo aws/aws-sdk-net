@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         ///  The client token that was provided for the import task. Reusing the client token
-        /// on retry makes a call to <code>ImportTable</code> idempotent. 
+        /// on retry makes a call to <c>ImportTable</c> idempotent. 
         /// </para>
         /// </summary>
         public string ClientToken

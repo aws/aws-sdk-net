@@ -53,9 +53,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Amazon EC2 Availability Zone for the cluster. <code>AvailabilityZone</code> is
-        /// used for uniform instance groups, while <code>AvailabilityZones</code> (plural) is
-        /// used for instance fleets.
+        /// The Amazon EC2 Availability Zone for the cluster. <c>AvailabilityZone</c> is used
+        /// for uniform instance groups, while <c>AvailabilityZones</c> (plural) is used for instance
+        /// fleets.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -75,9 +75,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// When multiple Availability Zones are specified, Amazon EMR evaluates them and launches
-        /// instances in the optimal Availability Zone. <code>AvailabilityZones</code> is used
-        /// for instance fleets, while <code>AvailabilityZone</code> (singular) is used for uniform
-        /// instance groups.
+        /// instances in the optimal Availability Zone. <c>AvailabilityZones</c> is used for instance
+        /// fleets, while <c>AvailabilityZone</c> (singular) is used for uniform instance groups.
         /// </para>
         ///  <note> 
         /// <para>

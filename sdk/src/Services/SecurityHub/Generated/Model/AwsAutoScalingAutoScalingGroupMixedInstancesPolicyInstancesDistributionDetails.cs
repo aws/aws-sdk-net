@@ -43,7 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OnDemandAllocationStrategy. 
         /// <para>
-        /// How to allocate instance types to fulfill On-Demand capacity. The valid value is <code>prioritized</code>.
+        /// How to allocate instance types to fulfill On-Demand capacity. The valid value is <c>prioritized</c>.
         /// </para>
         /// </summary>
         public string OnDemandAllocationStrategy
@@ -81,7 +81,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property OnDemandPercentageAboveBaseCapacity. 
         /// <para>
         /// The percentage of On-Demand Instances and Spot Instances for additional capacity beyond
-        /// <code>OnDemandBaseCapacity</code>.
+        /// <c>OnDemandBaseCapacity</c>.
         /// </para>
         /// </summary>
         public int OnDemandPercentageAboveBaseCapacity
@@ -103,15 +103,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>lowest-price</code> 
+        ///  <c>lowest-price</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>capacity-optimized</code> 
+        ///  <c>capacity-optimized</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>capacity-optimized-prioritized</code> 
+        ///  <c>capacity-optimized-prioritized</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

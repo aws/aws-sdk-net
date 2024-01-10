@@ -30,9 +30,9 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// An array with one or more objects that includes a security control (identified with
-    /// <code>SecurityControlId</code>, <code>SecurityControlArn</code>, or a mix of both
-    /// parameters) and the Amazon Resource Name (ARN) of a standard. The security control
-    /// ID or ARN is the same across standards.
+    /// <c>SecurityControlId</c>, <c>SecurityControlArn</c>, or a mix of both parameters)
+    /// and the Amazon Resource Name (ARN) of a standard. The security control ID or ARN is
+    /// the same across standards.
     /// </summary>
     public partial class StandardsControlAssociationId
     {
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SecurityControlId. 
         /// <para>
-        ///  The unique identifier (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>,
+        ///  The unique identifier (identified with <c>SecurityControlId</c>, <c>SecurityControlArn</c>,
         /// or a mix of both parameters) of a security control across standards. 
         /// </para>
         /// </summary>

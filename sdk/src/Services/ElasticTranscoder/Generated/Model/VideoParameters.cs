@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>VideoParameters</code> structure.
+    /// The <c>VideoParameters</c> structure.
     /// </summary>
     public partial class VideoParameters
     {
@@ -53,10 +53,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property AspectRatio. <important> 
         /// <para>
         /// To better control resolution and aspect ratio of output videos, we recommend that
-        /// you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>,
-        /// <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code>
-        /// and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-        /// not use them together.
+        /// you use the values <c>MaxWidth</c>, <c>MaxHeight</c>, <c>SizingPolicy</c>, <c>PaddingPolicy</c>,
+        /// and <c>DisplayAspectRatio</c> instead of <c>Resolution</c> and <c>AspectRatio</c>.
+        /// The two groups of settings are mutually exclusive. Do not use them together.
         /// </para>
         ///  </important> 
         /// <para>
@@ -64,13 +63,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
-        /// 
+        ///  <c>auto</c>, <c>1:1</c>, <c>4:3</c>, <c>3:2</c>, <c>16:9</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect
-        /// ratio of the input file.
+        /// If you specify <c>auto</c>, Elastic Transcoder tries to preserve the aspect ratio
+        /// of the input file.
         /// </para>
         ///  
         /// <para>
@@ -96,11 +94,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property BitRate. 
         /// <para>
         /// The bit rate of the video stream in the output file, in kilobits/second. Valid values
-        /// depend on the values of <code>Level</code> and <code>Profile</code>. If you specify
-        /// <code>auto</code>, Elastic Transcoder uses the detected bit rate of the input source.
-        /// If you specify a value other than <code>auto</code>, we recommend that you specify
-        /// a value less than or equal to the maximum H.264-compliant value listed for your level
-        /// and profile:
+        /// depend on the values of <c>Level</c> and <c>Profile</c>. If you specify <c>auto</c>,
+        /// Elastic Transcoder uses the detected bit rate of the input source. If you specify
+        /// a value other than <c>auto</c>, we recommend that you specify a value less than or
+        /// equal to the maximum H.264-compliant value listed for your level and profile:
         /// </para>
         ///  
         /// <para>
@@ -168,11 +165,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Codec. 
         /// <para>
-        /// The video codec for the output file. Valid values include <code>gif</code>, <code>H.264</code>,
-        /// <code>mpeg2</code>, <code>vp8</code>, and <code>vp9</code>. You can only specify <code>vp8</code>
-        /// and <code>vp9</code> when the container type is <code>webm</code>, <code>gif</code>
-        /// when the container type is <code>gif</code>, and <code>mpeg2</code> when the container
-        /// type is <code>mpg</code>.
+        /// The video codec for the output file. Valid values include <c>gif</c>, <c>H.264</c>,
+        /// <c>mpeg2</c>, <c>vp8</c>, and <c>vp9</c>. You can only specify <c>vp8</c> and <c>vp9</c>
+        /// when the container type is <c>webm</c>, <c>gif</c> when the container type is <c>gif</c>,
+        /// and <c>mpeg2</c> when the container type is <c>mpg</c>.
         /// </para>
         /// </summary>
         public string Codec
@@ -199,17 +195,17 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>baseline</code>: The profile most commonly used for videoconferencing and for
-        /// mobile applications.
+        ///  <c>baseline</c>: The profile most commonly used for videoconferencing and for mobile
+        /// applications.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>main</code>: The profile used for standard-definition digital TV broadcasts.
+        ///  <c>main</c>: The profile used for standard-definition digital TV broadcasts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>high</code>: The profile used for high-definition digital TV broadcasts and
-        /// for Blu-ray discs.
+        ///  <c>high</c>: The profile used for high-definition digital TV broadcasts and for Blu-ray
+        /// discs.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -222,9 +218,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>1</code>, <code>1b</code>, <code>1.1</code>, <code>1.2</code>, <code>1.3</code>,
-        /// <code>2</code>, <code>2.1</code>, <code>2.2</code>, <code>3</code>, <code>3.1</code>,
-        /// <code>3.2</code>, <code>4</code>, <code>4.1</code> 
+        ///  <c>1</c>, <c>1b</c>, <c>1.1</c>, <c>1.2</c>, <c>1.3</c>, <c>2</c>, <c>2.1</c>, <c>2.2</c>,
+        /// <c>3</c>, <c>3.1</c>, <c>3.2</c>, <c>4</c>, <c>4.1</c> 
         /// </para>
         ///  
         /// <para>
@@ -239,14 +234,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels
-        /// * Height in pixels)), 16)</code> 
+        ///  <c>Min(Floor(Maximum decoded picture buffer in macroblocks * 256 / (Width in pixels
+        /// * Height in pixels)), 16)</c> 
         /// </para>
         ///  
         /// <para>
         /// where <i>Width in pixels</i> and <i>Height in pixels</i> represent either MaxWidth
         /// and MaxHeight, or Resolution. <i>Maximum decoded picture buffer in macroblocks</i>
-        /// depends on the value of the <code>Level</code> object. See the list below. (A macroblock
+        /// depends on the value of the <c>Level</c> object. See the list below. (A macroblock
         /// is a block of pixels measuring 16x16.) 
         /// </para>
         ///  <ul> <li> 
@@ -308,9 +303,9 @@ namespace Amazon.ElasticTranscoder.Model
         ///  
         /// <para>
         /// The maximum number of bits per second in a video buffer; the size of the buffer is
-        /// specified by <code>BufferSize</code>. Specify a value between 16 and 62,500. You can
-        /// reduce the bandwidth required to stream a video by reducing the maximum bit rate,
-        /// but this also reduces the quality of the video.
+        /// specified by <c>BufferSize</c>. Specify a value between 16 and 62,500. You can reduce
+        /// the bandwidth required to stream a video by reducing the maximum bit rate, but this
+        /// also reduces the quality of the video.
         /// </para>
         ///  
         /// <para>
@@ -321,8 +316,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// The maximum number of bits in any x seconds of the output video. This window is commonly
         /// 10 seconds, the standard segment duration when you're using FMP4 or MPEG-TS for the
         /// container type of the output video. Specify an integer greater than 0. If you specify
-        /// <code>MaxBitRate</code> and omit <code>BufferSize</code>, Elastic Transcoder sets
-        /// <code>BufferSize</code> to 10 times the value of <code>MaxBitRate</code>.
+        /// <c>MaxBitRate</c> and omit <c>BufferSize</c>, Elastic Transcoder sets <c>BufferSize</c>
+        /// to 10 times the value of <c>MaxBitRate</c>.
         /// </para>
         ///  
         /// <para>
@@ -342,14 +337,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values include <code>Progressive</code> (no interlacing, top to bottom), <code>TopFirst</code>
-        /// (top field first), <code>BottomFirst</code> (bottom field first), and <code>Auto</code>.
+        /// Valid values include <c>Progressive</c> (no interlacing, top to bottom), <c>TopFirst</c>
+        /// (top field first), <c>BottomFirst</c> (bottom field first), and <c>Auto</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>InterlaceMode</code> is not specified, Elastic Transcoder uses <code>Progressive</code>
-        /// for the output. If <code>Auto</code> is specified, Elastic Transcoder interlaces the
-        /// output.
+        /// If <c>InterlaceMode</c> is not specified, Elastic Transcoder uses <c>Progressive</c>
+        /// for the output. If <c>Auto</c> is specified, Elastic Transcoder interlaces the output.
         /// </para>
         ///  
         /// <para>
@@ -359,55 +353,53 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The color space conversion Elastic Transcoder applies to the output video. Color spaces
         /// are the algorithms used by the computer to store information about how to render color.
-        /// <code>Bt.601</code> is the standard for standard definition video, while <code>Bt.709</code>
-        /// is the standard for high definition video.
+        /// <c>Bt.601</c> is the standard for standard definition video, while <c>Bt.709</c> is
+        /// the standard for high definition video.
         /// </para>
         ///  
         /// <para>
-        /// Valid values include <code>None</code>, <code>Bt709toBt601</code>, <code>Bt601toBt709</code>,
-        /// and <code>Auto</code>.
+        /// Valid values include <c>None</c>, <c>Bt709toBt601</c>, <c>Bt601toBt709</c>, and <c>Auto</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you chose <code>Auto</code> for <code>ColorSpaceConversionMode</code> and your
-        /// output is interlaced, your frame rate is one of <code>23.97</code>, <code>24</code>,
-        /// <code>25</code>, <code>29.97</code>, <code>50</code>, or <code>60</code>, your <code>SegmentDuration</code>
-        /// is null, and you are using one of the resolution changes from the list below, Elastic
-        /// Transcoder applies the following color space conversions:
+        /// If you chose <c>Auto</c> for <c>ColorSpaceConversionMode</c> and your output is interlaced,
+        /// your frame rate is one of <c>23.97</c>, <c>24</c>, <c>25</c>, <c>29.97</c>, <c>50</c>,
+        /// or <c>60</c>, your <c>SegmentDuration</c> is null, and you are using one of the resolution
+        /// changes from the list below, Elastic Transcoder applies the following color space
+        /// conversions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+        ///  <i>Standard to HD, 720x480 to 1920x1080</i> - Elastic Transcoder applies <c>Bt601ToBt709</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <code>Bt601ToBt709</code>
+        ///  <i>Standard to HD, 720x576 to 1920x1080</i> - Elastic Transcoder applies <c>Bt601ToBt709</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+        ///  <i>HD to Standard, 1920x1080 to 720x480</i> - Elastic Transcoder applies <c>Bt709ToBt601</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <code>Bt709ToBt601</code>
+        ///  <i>HD to Standard, 1920x1080 to 720x576</i> - Elastic Transcoder applies <c>Bt709ToBt601</c>
         /// 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Elastic Transcoder may change the behavior of the <code>ColorspaceConversionMode</code>
-        /// <code>Auto</code> mode in the future. All outputs in a playlist must use the same
-        /// <code>ColorSpaceConversionMode</code>.
+        /// Elastic Transcoder may change the behavior of the <c>ColorspaceConversionMode</c>
+        /// <c>Auto</c> mode in the future. All outputs in a playlist must use the same <c>ColorSpaceConversionMode</c>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// If you do not specify a <code>ColorSpaceConversionMode</code>, Elastic Transcoder
-        /// does not change the color space of a file. If you are unsure what <code>ColorSpaceConversionMode</code>
-        /// was applied to your output file, you can check the <code>AppliedColorSpaceConversion</code>
-        /// parameter included in your job response. If your job does not have an <code>AppliedColorSpaceConversion</code>
-        /// in its response, no <code>ColorSpaceConversionMode</code> was applied.
+        /// If you do not specify a <c>ColorSpaceConversionMode</c>, Elastic Transcoder does not
+        /// change the color space of a file. If you are unsure what <c>ColorSpaceConversionMode</c>
+        /// was applied to your output file, you can check the <c>AppliedColorSpaceConversion</c>
+        /// parameter included in your job response. If your job does not have an <c>AppliedColorSpaceConversion</c>
+        /// in its response, no <c>ColorSpaceConversionMode</c> was applied.
         /// </para>
         ///  
         /// <para>
@@ -416,13 +408,13 @@ namespace Amazon.ElasticTranscoder.Model
         ///  
         /// <para>
         /// The sampling pattern for the chroma (color) channels of the output video. Valid values
-        /// include <code>yuv420p</code> and <code>yuv422p</code>.
+        /// include <c>yuv420p</c> and <c>yuv422p</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>yuv420p</code> samples the chroma information of every other horizontal and
-        /// every other vertical line, <code>yuv422p</code> samples the color information of every
-        /// horizontal line and every other vertical line.
+        ///  <c>yuv420p</c> samples the chroma information of every other horizontal and every
+        /// other vertical line, <c>yuv422p</c> samples the color information of every horizontal
+        /// line and every other vertical line.
         /// </para>
         ///  
         /// <para>
@@ -430,8 +422,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// The number of times you want the output gif to loop. Valid values include <code>Infinite</code>
-        /// and integers between <code>0</code> and <code>100</code>, inclusive.
+        /// The number of times you want the output gif to loop. Valid values include <c>Infinite</c>
+        /// and integers between <c>0</c> and <c>100</c>, inclusive.
         /// </para>
         /// </summary>
         [AWSProperty(Max=30)]
@@ -468,27 +460,26 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property FixedGOP. 
         /// <para>
-        /// Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>,
-        /// or <code>VP8</code>.
+        /// Applicable only when the value of Video:Codec is one of <c>H.264</c>, <c>MPEG2</c>,
+        /// or <c>VP8</c>.
         /// </para>
         ///  
         /// <para>
-        /// Whether to use a fixed value for <code>FixedGOP</code>. Valid values are <code>true</code>
-        /// and <code>false</code>:
+        /// Whether to use a fixed value for <c>FixedGOP</c>. Valid values are <c>true</c> and
+        /// <c>false</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code>: Elastic Transcoder uses the value of <code>KeyframesMaxDist</code>
-        /// for the distance between key frames (the number of frames in a group of pictures,
-        /// or GOP).
+        ///  <c>true</c>: Elastic Transcoder uses the value of <c>KeyframesMaxDist</c> for the
+        /// distance between key frames (the number of frames in a group of pictures, or GOP).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code>: The distance between key frames can vary.
+        ///  <c>false</c>: The distance between key frames can vary.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        ///  <code>FixedGOP</code> must be set to <code>true</code> for <code>fmp4</code> containers.
+        ///  <c>FixedGOP</c> must be set to <c>true</c> for <c>fmp4</c> containers.
         /// </para>
         ///  </important>
         /// </summary>
@@ -511,19 +502,19 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>auto</code>, <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>,
-        /// <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code> 
+        ///  <c>auto</c>, <c>10</c>, <c>15</c>, <c>23.97</c>, <c>24</c>, <c>25</c>, <c>29.97</c>,
+        /// <c>30</c>, <c>60</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>auto</code>, Elastic Transcoder uses the detected frame rate
-        /// of the input source. If you specify a frame rate, we recommend that you perform the
-        /// following calculation:
+        /// If you specify <c>auto</c>, Elastic Transcoder uses the detected frame rate of the
+        /// input source. If you specify a frame rate, we recommend that you perform the following
+        /// calculation:
         /// </para>
         ///  
         /// <para>
-        ///  <code>Frame rate = maximum recommended decoding speed in luma samples/second / (width
-        /// in pixels * height in pixels)</code> 
+        ///  <c>Frame rate = maximum recommended decoding speed in luma samples/second / (width
+        /// in pixels * height in pixels)</c> 
         /// </para>
         ///  
         /// <para>
@@ -614,8 +605,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property KeyframesMaxDist. 
         /// <para>
-        /// Applicable only when the value of Video:Codec is one of <code>H.264</code>, <code>MPEG2</code>,
-        /// or <code>VP8</code>.
+        /// Applicable only when the value of Video:Codec is one of <c>H.264</c>, <c>MPEG2</c>,
+        /// or <c>VP8</c>.
         /// </para>
         ///  
         /// <para>
@@ -627,21 +618,21 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>Smooth</code> outputs, the <code>FrameRate</code> must have a constant ratio
-        /// to the <code>KeyframesMaxDist</code>. This allows <code>Smooth</code> playlists to
-        /// switch between different quality levels while the file is being played.
+        /// For <c>Smooth</c> outputs, the <c>FrameRate</c> must have a constant ratio to the
+        /// <c>KeyframesMaxDist</c>. This allows <c>Smooth</c> playlists to switch between different
+        /// quality levels while the file is being played.
         /// </para>
         ///  
         /// <para>
-        /// For example, an input file can have a <code>FrameRate</code> of 30 with a <code>KeyframesMaxDist</code>
+        /// For example, an input file can have a <c>FrameRate</c> of 30 with a <c>KeyframesMaxDist</c>
         /// of 90. The output file then needs to have a ratio of 1:3. Valid outputs would have
-        /// <code>FrameRate</code> of 30, 25, and 10, and <code>KeyframesMaxDist</code> of 90,
-        /// 75, and 30, respectively.
+        /// <c>FrameRate</c> of 30, 25, and 10, and <c>KeyframesMaxDist</c> of 90, 75, and 30,
+        /// respectively.
         /// </para>
         ///  
         /// <para>
-        /// Alternately, this can be achieved by setting <code>FrameRate</code> to auto and having
-        /// the same values for <code>MaxFrameRate</code> and <code>KeyframesMaxDist</code>.
+        /// Alternately, this can be achieved by setting <c>FrameRate</c> to auto and having the
+        /// same values for <c>MaxFrameRate</c> and <c>KeyframesMaxDist</c>.
         /// </para>
         /// </summary>
         public string KeyframesMaxDist
@@ -659,12 +650,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property MaxFrameRate. 
         /// <para>
-        /// If you specify <code>auto</code> for <code>FrameRate</code>, Elastic Transcoder uses
-        /// the frame rate of the input video for the frame rate of the output video. Specify
-        /// the maximum frame rate that you want Elastic Transcoder to use when the frame rate
-        /// of the input video is greater than the desired maximum frame rate of the output video.
-        /// Valid values include: <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>,
-        /// <code>25</code>, <code>29.97</code>, <code>30</code>, <code>60</code>.
+        /// If you specify <c>auto</c> for <c>FrameRate</c>, Elastic Transcoder uses the frame
+        /// rate of the input video for the frame rate of the output video. Specify the maximum
+        /// frame rate that you want Elastic Transcoder to use when the frame rate of the input
+        /// video is greater than the desired maximum frame rate of the output video. Valid values
+        /// include: <c>10</c>, <c>15</c>, <c>23.97</c>, <c>24</c>, <c>25</c>, <c>29.97</c>, <c>30</c>,
+        /// <c>60</c>.
         /// </para>
         /// </summary>
         public string MaxFrameRate
@@ -682,9 +673,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property MaxHeight. 
         /// <para>
-        /// The maximum height of the output video in pixels. If you specify <code>auto</code>,
-        /// Elastic Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric
-        /// value, enter an even integer between 96 and 3072.
+        /// The maximum height of the output video in pixels. If you specify <c>auto</c>, Elastic
+        /// Transcoder uses 1080 (Full HD) as the default value. If you specify a numeric value,
+        /// enter an even integer between 96 and 3072.
         /// </para>
         /// </summary>
         public string MaxHeight
@@ -702,9 +693,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property MaxWidth. 
         /// <para>
-        ///  The maximum width of the output video in pixels. If you specify <code>auto</code>,
-        /// Elastic Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric
-        /// value, enter an even integer between 128 and 4096. 
+        ///  The maximum width of the output video in pixels. If you specify <c>auto</c>, Elastic
+        /// Transcoder uses 1920 (Full HD) as the default value. If you specify a numeric value,
+        /// enter an even integer between 128 and 4096. 
         /// </para>
         /// </summary>
         public string MaxWidth
@@ -722,10 +713,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PaddingPolicy. 
         /// <para>
-        /// When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may
-        /// add black bars to the top and bottom and/or left and right sides of the output video
-        /// to make the total size of the output video match the values that you specified for
-        /// <code>MaxWidth</code> and <code>MaxHeight</code>.
+        /// When you set <c>PaddingPolicy</c> to <c>Pad</c>, Elastic Transcoder may add black
+        /// bars to the top and bottom and/or left and right sides of the output video to make
+        /// the total size of the output video match the values that you specified for <c>MaxWidth</c>
+        /// and <c>MaxHeight</c>.
         /// </para>
         /// </summary>
         public string PaddingPolicy
@@ -744,25 +735,24 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Resolution. <important> 
         /// <para>
         /// To better control resolution and aspect ratio of output videos, we recommend that
-        /// you use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>,
-        /// <code>PaddingPolicy</code>, and <code>DisplayAspectRatio</code> instead of <code>Resolution</code>
-        /// and <code>AspectRatio</code>. The two groups of settings are mutually exclusive. Do
-        /// not use them together.
+        /// you use the values <c>MaxWidth</c>, <c>MaxHeight</c>, <c>SizingPolicy</c>, <c>PaddingPolicy</c>,
+        /// and <c>DisplayAspectRatio</c> instead of <c>Resolution</c> and <c>AspectRatio</c>.
+        /// The two groups of settings are mutually exclusive. Do not use them together.
         /// </para>
         ///  </important> 
         /// <para>
         /// The width and height of the video in the output file, in pixels. Valid values are
-        /// <code>auto</code> and <i>width</i> x <i>height</i>:
+        /// <c>auto</c> and <i>width</i> x <i>height</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>auto</code>: Elastic Transcoder attempts to preserve the width and height of
-        /// the input file, subject to the following rules.
+        ///  <c>auto</c>: Elastic Transcoder attempts to preserve the width and height of the
+        /// input file, subject to the following rules.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> <i>width</i> x <i>height</i> </code>: The width and height of the output video
-        /// in pixels.
+        ///  <c> <i>width</i> x <i>height</i> </c>: The width and height of the output video in
+        /// pixels.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -865,43 +855,42 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Fit</code>: Elastic Transcoder scales the output video so it matches the value
-        /// that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without
-        /// exceeding the other value.
+        ///  <c>Fit</c>: Elastic Transcoder scales the output video so it matches the value that
+        /// you specified in either <c>MaxWidth</c> or <c>MaxHeight</c> without exceeding the
+        /// other value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fill</code>: Elastic Transcoder scales the output video so it matches the value
-        /// that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches
-        /// or exceeds the other value. Elastic Transcoder centers the output video and then crops
-        /// it in the dimension (if any) that exceeds the maximum value.
+        ///  <c>Fill</c>: Elastic Transcoder scales the output video so it matches the value that
+        /// you specified in either <c>MaxWidth</c> or <c>MaxHeight</c> and matches or exceeds
+        /// the other value. Elastic Transcoder centers the output video and then crops it in
+        /// the dimension (if any) that exceeds the maximum value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stretch</code>: Elastic Transcoder stretches the output video to match the
-        /// values that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If
-        /// the relative proportions of the input video and the output video are different, the
-        /// output video will be distorted.
+        ///  <c>Stretch</c>: Elastic Transcoder stretches the output video to match the values
+        /// that you specified for <c>MaxWidth</c> and <c>MaxHeight</c>. If the relative proportions
+        /// of the input video and the output video are different, the output video will be distorted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Keep</code>: Elastic Transcoder does not scale the output video. If either
-        /// dimension of the input video exceeds the values that you specified for <code>MaxWidth</code>
-        /// and <code>MaxHeight</code>, Elastic Transcoder crops the output video.
+        ///  <c>Keep</c>: Elastic Transcoder does not scale the output video. If either dimension
+        /// of the input video exceeds the values that you specified for <c>MaxWidth</c> and <c>MaxHeight</c>,
+        /// Elastic Transcoder crops the output video.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ShrinkToFit</code>: Elastic Transcoder scales the output video down so that
-        /// its dimensions match the values that you specified for at least one of <code>MaxWidth</code>
-        /// and <code>MaxHeight</code> without exceeding either value. If you specify this option,
+        ///  <c>ShrinkToFit</c>: Elastic Transcoder scales the output video down so that its dimensions
+        /// match the values that you specified for at least one of <c>MaxWidth</c> and <c>MaxHeight</c>
+        /// without exceeding either value. If you specify this option, Elastic Transcoder does
+        /// not scale the video up.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>ShrinkToFill</c>: Elastic Transcoder scales the output video down so that its
+        /// dimensions match the values that you specified for at least one of <c>MaxWidth</c>
+        /// and <c>MaxHeight</c> without dropping below either value. If you specify this option,
         /// Elastic Transcoder does not scale the video up.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>ShrinkToFill</code>: Elastic Transcoder scales the output video down so that
-        /// its dimensions match the values that you specified for at least one of <code>MaxWidth</code>
-        /// and <code>MaxHeight</code> without dropping below either value. If you specify this
-        /// option, Elastic Transcoder does not scale the video up.
         /// </para>
         ///  </li> </ul>
         /// </summary>

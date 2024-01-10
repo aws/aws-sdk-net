@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies how WAF should handle <code>CAPTCHA</code> evaluations. This is available
-    /// at the web ACL level and in each rule.
+    /// Specifies how WAF should handle <c>CAPTCHA</c> evaluations. This is available at the
+    /// web ACL level and in each rule.
     /// </summary>
     public partial class CaptchaConfig
     {
@@ -39,8 +39,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ImmunityTimeProperty. 
         /// <para>
-        /// Determines how long a <code>CAPTCHA</code> timestamp in the token remains valid after
-        /// the client successfully solves a <code>CAPTCHA</code> puzzle. 
+        /// Determines how long a <c>CAPTCHA</c> timestamp in the token remains valid after the
+        /// client successfully solves a <c>CAPTCHA</c> puzzle. 
         /// </para>
         /// </summary>
         public ImmunityTimeProperty ImmunityTimeProperty

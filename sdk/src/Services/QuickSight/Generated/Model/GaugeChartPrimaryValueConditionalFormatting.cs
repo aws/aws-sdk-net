@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The conditional formatting for the primary value of a <code>GaugeChartVisual</code>.
+    /// The conditional formatting for the primary value of a <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class GaugeChartPrimaryValueConditionalFormatting
     {

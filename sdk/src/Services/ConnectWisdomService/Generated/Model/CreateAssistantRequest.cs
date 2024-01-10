@@ -108,12 +108,11 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         ///  
         /// <para>
-        /// The customer managed key must have a policy that allows <code>kms:CreateGrant</code>,
-        /// <code> kms:DescribeKey</code>, and <code>kms:Decrypt/kms:GenerateDataKey</code> permissions
-        /// to the IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key
-        /// policy must also allow <code>kms:Decrypt</code>, <code>kms:GenerateDataKey*</code>,
-        /// and <code>kms:DescribeKey</code> permissions to the <code>connect.amazonaws.com</code>
-        /// service principal. 
+        /// The customer managed key must have a policy that allows <c>kms:CreateGrant</c>, <c>
+        /// kms:DescribeKey</c>, and <c>kms:Decrypt/kms:GenerateDataKey</c> permissions to the
+        /// IAM identity using the key to invoke Wisdom. To use Wisdom with chat, the key policy
+        /// must also allow <c>kms:Decrypt</c>, <c>kms:GenerateDataKey*</c>, and <c>kms:DescribeKey</c>
+        /// permissions to the <c>connect.amazonaws.com</c> service principal. 
         /// </para>
         ///  
         /// <para>

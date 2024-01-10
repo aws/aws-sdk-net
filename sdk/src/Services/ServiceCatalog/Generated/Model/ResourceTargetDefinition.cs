@@ -58,8 +58,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// If the attribute is <code>Properties</code>, the value is the name of the property.
-        /// Otherwise, the value is null.
+        /// If the attribute is <c>Properties</c>, the value is the name of the property. Otherwise,
+        /// the value is null.
         /// </para>
         /// </summary>
         public string Name
@@ -77,7 +77,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property RequiresRecreation. 
         /// <para>
-        /// If the attribute is <code>Properties</code>, indicates whether a change to this property
+        /// If the attribute is <c>Properties</c>, indicates whether a change to this property
         /// causes the resource to be re-created.
         /// </para>
         /// </summary>

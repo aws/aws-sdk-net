@@ -32,7 +32,7 @@ namespace Amazon.ConnectWisdomService.Model
     /// Container for the parameters to the NotifyRecommendationsReceived operation.
     /// Removes the specified recommendations from the specified assistant's queue of newly
     /// available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-    /// and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate
+    /// and a <c>waitTimeSeconds</c> input for long-polling behavior and avoiding duplicate
     /// recommendations.
     /// </summary>
     public partial class NotifyRecommendationsReceivedRequest : AmazonConnectWisdomServiceRequest

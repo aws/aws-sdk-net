@@ -120,7 +120,7 @@ namespace Amazon.SageMaker.Model
         /// (SSM) access for a production variant behind an endpoint. By default, SSM access is
         /// disabled for all production variants behind an endpoint. You can turn on or turn off
         /// SSM access for a production variant behind an existing endpoint by creating a new
-        /// endpoint configuration and calling <code>UpdateEndpoint</code>. 
+        /// endpoint configuration and calling <c>UpdateEndpoint</c>. 
         /// </para>
         /// </summary>
         public bool EnableSSMAccess
@@ -159,8 +159,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Determines initial traffic distribution among all of the models that you specify in
         /// the endpoint configuration. The traffic to a production variant is determined by the
-        /// ratio of the <code>VariantWeight</code> to the sum of all <code>VariantWeight</code>
-        /// values across all ProductionVariants. If unspecified, it defaults to 1.0. 
+        /// ratio of the <c>VariantWeight</c> to the sum of all <c>VariantWeight</c> values across
+        /// all ProductionVariants. If unspecified, it defaults to 1.0. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

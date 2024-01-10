@@ -159,8 +159,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous call to <code>ListImageVersions</code> didn't return the full set
-        /// of versions, the call returns a token for getting the next set of versions.
+        /// If the previous call to <c>ListImageVersions</c> didn't return the full set of versions,
+        /// the call returns a token for getting the next set of versions.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -179,7 +179,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The property used to sort results. The default value is <code>CREATION_TIME</code>.
+        /// The property used to sort results. The default value is <c>CREATION_TIME</c>.
         /// </para>
         /// </summary>
         public ImageVersionSortBy SortBy
@@ -197,7 +197,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order. The default value is <code>DESCENDING</code>.
+        /// The sort order. The default value is <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public ImageVersionSortOrder SortOrder

@@ -33,8 +33,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner
     /// of the service resource is always the environment owner, regardless of which account
     /// creates the route. Routes target a service in the application. If an application does
-    /// not have any routes, then the first route must be created as a <code>DEFAULT</code>
-    /// <code>RouteType</code>.
+    /// not have any routes, then the first route must be created as a <c>DEFAULT</c> <c>RouteType</c>.
     /// 
     ///  
     /// <para>
@@ -64,9 +63,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     ///  
     /// <para>
     /// Refactor Spaces automatically resolves the public Domain Name System (DNS) names that
-    /// are set in <code>CreateService:UrlEndpoint </code>when you create a service. The DNS
-    /// names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs
-    /// less than 60 seconds. This periodic DNS resolution ensures that the route configuration
+    /// are set in <c>CreateService:UrlEndpoint </c>when you create a service. The DNS names
+    /// resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs less
+    /// than 60 seconds. This periodic DNS resolution ensures that the route configuration
     /// remains up-to-date. 
     /// </para>
     ///   
@@ -77,9 +76,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <para>
     /// A one-time health check is performed on the service when either the route is updated
     /// from inactive to active, or when it is created with an active state. If the health
-    /// check fails, the route transitions the route state to <code>FAILED</code>, an error
-    /// code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic
-    /// is sent to the service.
+    /// check fails, the route transitions the route state to <c>FAILED</c>, an error code
+    /// of <c>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</c> is provided, and no traffic is sent
+    /// to the service.
     /// </para>
     ///  
     /// <para>
@@ -107,8 +106,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <para>
     /// The Lambda function state is checked. If the function is not active, the function
     /// configuration is updated so that Lambda resources are provisioned. If the Lambda state
-    /// is <code>Failed</code>, then the route creation fails. For more information, see the
-    /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
+    /// is <c>Failed</c>, then the route creation fails. For more information, see the <a
+    /// href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
     /// State response parameter</a> in the <i>Lambda Developer Guide</i>.
     /// </para>
     ///  
@@ -124,8 +123,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     ///  
     /// <para>
     /// When you create environments without a network bridge (<a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-    /// is <code>NONE)</code> and you use your own networking infrastructure, you need to
-    /// configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC
+    /// is <c>NONE)</c> and you use your own networking infrastructure, you need to configure
+    /// <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC
     /// to VPC connectivity</a> between your network and the application proxy VPC. Route
     /// creation from the application proxy to service endpoints will fail if your network
     /// is not configured to connect to the application proxy VPC. For more information, see
@@ -223,10 +222,10 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property RouteType. 
         /// <para>
-        /// The route type of the route. <code>DEFAULT</code> indicates that all traffic that
-        /// does not match another route is forwarded to the default route. Applications must
-        /// have a default route before any other routes can be created. <code>URI_PATH</code>
-        /// indicates a route that is based on a URI path.
+        /// The route type of the route. <c>DEFAULT</c> indicates that all traffic that does not
+        /// match another route is forwarded to the default route. Applications must have a default
+        /// route before any other routes can be created. <c>URI_PATH</c> indicates a route that
+        /// is based on a URI path.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

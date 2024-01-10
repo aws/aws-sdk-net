@@ -130,7 +130,7 @@ namespace Amazon.Private5G.Model
         /// <summary>
         /// Gets and sets the property CpiUserPassword. 
         /// <para>
-        /// The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.
+        /// The CPI password associated with the CPI certificate in <c>cpiSecretKey</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]

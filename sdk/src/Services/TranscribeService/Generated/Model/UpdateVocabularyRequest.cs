@@ -52,8 +52,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>.
         /// </para>
         ///  
         /// <para>
@@ -84,8 +84,8 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// A custom vocabulary can only be used to transcribe files in the same language as the
         /// custom vocabulary. For example, if you create a custom vocabulary using US English
-        /// (<code>en-US</code>), you can only apply this custom vocabulary to files that contain
-        /// English audio.
+        /// (<c>en-US</c>), you can only apply this custom vocabulary to files that contain English
+        /// audio.
         /// </para>
         ///  
         /// <para>
@@ -113,12 +113,12 @@ namespace Amazon.TranscribeService.Model
         /// Use this parameter if you want to update your custom vocabulary by including all desired
         /// terms, as comma-separated values, within your request. The other option for updating
         /// your custom vocabulary is to save your entries in a text file and upload them to an
-        /// Amazon S3 bucket, then specify the location of your file using the <code>VocabularyFileUri</code>
+        /// Amazon S3 bucket, then specify the location of your file using the <c>VocabularyFileUri</c>
         /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>Phrases</code> in your request, you cannot use <code>VocabularyFileUri</code>;
+        /// Note that if you include <c>Phrases</c> in your request, you cannot use <c>VocabularyFileUri</c>;
         /// you must choose one or the other.
         /// </para>
         ///  
@@ -150,13 +150,12 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Here's an example URI path: <code>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</code>
-        /// 
+        /// Here's an example URI path: <c>s3://DOC-EXAMPLE-BUCKET/my-vocab-file.txt</c> 
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>VocabularyFileUri</code> in your request, you cannot
-        /// use the <code>Phrases</code> flag; you must choose one or the other.
+        /// Note that if you include <c>VocabularyFileUri</c> in your request, you cannot use
+        /// the <c>Phrases</c> flag; you must choose one or the other.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

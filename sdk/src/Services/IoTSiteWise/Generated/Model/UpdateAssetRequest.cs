@@ -86,8 +86,8 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AssetId. 
         /// <para>
         /// The ID of the asset to update. This can be either the actual ID in UUID format, or
-        /// else <code>externalId:</code> followed by the external ID, if it has one. For more
-        /// information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// else <c>externalId:</c> followed by the external ID, if it has one. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>

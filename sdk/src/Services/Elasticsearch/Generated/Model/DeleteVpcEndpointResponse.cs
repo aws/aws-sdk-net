@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to the <code><a>DeleteVpcEndpoint</a></code> operation.
+    /// Container for response parameters to the <c><a>DeleteVpcEndpoint</a></c> operation.
     /// Contains the summarized detail of the VPC Endpoint being deleted.
     /// </summary>
     public partial class DeleteVpcEndpointResponse : AmazonWebServiceResponse
@@ -39,8 +39,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointSummary. 
         /// <para>
-        /// Information about the deleted endpoint, including its current status (<code>DELETING</code>
-        /// or <code>DELETE_FAILED</code>).
+        /// Information about the deleted endpoint, including its current status (<c>DELETING</c>
+        /// or <c>DELETE_FAILED</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

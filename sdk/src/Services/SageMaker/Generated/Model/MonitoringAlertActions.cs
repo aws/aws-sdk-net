@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A list of alert actions taken in response to an alert going into <code>InAlert</code>
-    /// status.
+    /// A list of alert actions taken in response to an alert going into <c>InAlert</c> status.
     /// </summary>
     public partial class MonitoringAlertActions
     {
@@ -40,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ModelDashboardIndicator. 
         /// <para>
         /// An alert action taken to light up an icon on the Model Dashboard when an alert goes
-        /// into <code>InAlert</code> status.
+        /// into <c>InAlert</c> status.
         /// </para>
         /// </summary>
         public ModelDashboardIndicatorAction ModelDashboardIndicator

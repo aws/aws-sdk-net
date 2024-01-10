@@ -128,10 +128,10 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property StreamId. 
         /// <para>
         /// An optional stream identifier that MediaTailor uses to prefetch ads for multiple streams
-        /// that use the same playback configuration. If <code>StreamId</code> is specified, MediaTailor
-        /// returns all of the prefetch schedules with an exact match on <code>StreamId</code>.
-        /// If not specified, MediaTailor returns all of the prefetch schedules for the playback
-        /// configuration, regardless of <code>StreamId</code>.
+        /// that use the same playback configuration. If <c>StreamId</c> is specified, MediaTailor
+        /// returns all of the prefetch schedules with an exact match on <c>StreamId</c>. If not
+        /// specified, MediaTailor returns all of the prefetch schedules for the playback configuration,
+        /// regardless of <c>StreamId</c>.
         /// </para>
         /// </summary>
         public string StreamId

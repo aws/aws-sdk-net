@@ -68,8 +68,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>CreateDelivery</code> to create a <i>delivery</i> by pairing exactly one
-    /// delivery source and one delivery destination. 
+    /// Use <c>CreateDelivery</c> to create a <i>delivery</i> by pairing exactly one delivery
+    /// source and one delivery destination. 
     /// </para>
     ///  </li> </ul> 
     /// <para>

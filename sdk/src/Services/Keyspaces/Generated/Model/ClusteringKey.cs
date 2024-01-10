@@ -59,7 +59,7 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property OrderBy. 
         /// <para>
-        /// Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>) order modifier.
+        /// Sets the ascendant (<c>ASC</c>) or descendant (<c>DESC</c>) order modifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -83,8 +83,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
         /// objects, one for each model hosted behind this endpoint in shadow mode with production
-        /// traffic replicated from the model specified on <code>ProductionVariants</code> for
-        /// the in-progress deployment.
+        /// traffic replicated from the model specified on <c>ProductionVariants</c> for the in-progress
+        /// deployment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

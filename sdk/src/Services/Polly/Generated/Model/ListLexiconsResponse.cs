@@ -58,7 +58,7 @@ namespace Amazon.Polly.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The pagination token to use in the next request to continue the listing of lexicons.
-        /// <code>NextToken</code> is returned only if the response is truncated.
+        /// <c>NextToken</c> is returned only if the response is truncated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]

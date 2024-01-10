@@ -38,7 +38,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CoverageStatistics. 
         /// <para>
-        /// Represents the count aggregated by the <code>statusCode</code> and <code>resourceType</code>.
+        /// Represents the count aggregated by the <c>statusCode</c> and <c>resourceType</c>.
         /// </para>
         /// </summary>
         public CoverageStatistics CoverageStatistics

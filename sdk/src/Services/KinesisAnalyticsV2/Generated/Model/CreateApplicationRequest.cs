@@ -85,9 +85,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationMode. 
         /// <para>
-        /// Use the <code>STREAMING</code> mode to create a Kinesis Data Analytics For Flink application.
-        /// To create a Kinesis Data Analytics Studio notebook, use the <code>INTERACTIVE</code>
-        /// mode.
+        /// Use the <c>STREAMING</c> mode to create a Kinesis Data Analytics For Flink application.
+        /// To create a Kinesis Data Analytics Studio notebook, use the <c>INTERACTIVE</c> mode.
         /// </para>
         /// </summary>
         public ApplicationMode ApplicationMode
@@ -105,7 +104,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of your application (for example, <code>sample-app</code>).
+        /// The name of your application (for example, <c>sample-app</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -38,8 +38,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Success. 
         /// <para>
-        /// Returns <code>true</code> if the work team was successfully deleted; otherwise, returns
-        /// <code>false</code>.
+        /// Returns <c>true</c> if the work team was successfully deleted; otherwise, returns
+        /// <c>false</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

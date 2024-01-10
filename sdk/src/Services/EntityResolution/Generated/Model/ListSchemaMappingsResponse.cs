@@ -58,8 +58,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property SchemaList. 
         /// <para>
-        /// A list of <code>SchemaMappingSummary</code> objects, each of which contain the fields
-        /// <code>SchemaName</code>, <code>SchemaArn</code>, <code>CreatedAt</code>, <code>UpdatedAt</code>.
+        /// A list of <c>SchemaMappingSummary</c> objects, each of which contain the fields <c>SchemaName</c>,
+        /// <c>SchemaArn</c>, <c>CreatedAt</c>, <c>UpdatedAt</c>.
         /// </para>
         /// </summary>
         public List<SchemaMappingSummary> SchemaList

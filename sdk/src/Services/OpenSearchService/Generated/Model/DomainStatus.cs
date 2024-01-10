@@ -368,7 +368,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Endpoints. 
         /// <para>
         /// The key-value pair that exists if the OpenSearch Service domain uses VPC endpoints.
-        /// Example <code>key, value</code>: <code>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</code>.
+        /// Example <c>key, value</c>: <c>'vpc','vpc-endpoint-h2dsd34efgyghrtguk5gt6j2foh4.us-east-1.es.amazonaws.com'</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Endpoints
@@ -386,10 +386,10 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EndpointV2. 
         /// <para>
-        /// If <code>IPAddressType</code> to set to <code>dualstack</code>, a version 2 domain
-        /// endpoint is provisioned. This endpoint functions like a normal endpoint, except that
-        /// it works with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4
-        /// IP addresses. 
+        /// If <c>IPAddressType</c> to set to <c>dualstack</c>, a version 2 domain endpoint is
+        /// provisioned. This endpoint functions like a normal endpoint, except that it works
+        /// with both IPv4 and IPv6 IP addresses. Normal endpoints work only with IPv4 IP addresses.
+        /// 
         /// </para>
         /// </summary>
         public string EndpointV2
@@ -407,8 +407,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Version of OpenSearch or Elasticsearch that the domain is running, in the format <code>Elasticsearch_X.Y</code>
-        /// or <code>OpenSearch_X.Y</code>.
+        /// Version of OpenSearch or Elasticsearch that the domain is running, in the format <c>Elasticsearch_X.Y</c>
+        /// or <c>OpenSearch_X.Y</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=14, Max=18)]

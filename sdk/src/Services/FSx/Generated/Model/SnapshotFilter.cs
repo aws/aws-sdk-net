@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// A filter used to restrict the results of <code>DescribeSnapshots</code> calls. You
-    /// can use multiple filters to return results that meet all applied filter requirements.
+    /// A filter used to restrict the results of <c>DescribeSnapshots</c> calls. You can use
+    /// multiple filters to return results that meet all applied filter requirements.
     /// </summary>
     public partial class SnapshotFilter
     {
@@ -40,8 +40,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter to use. You can filter by the <code>file-system-id</code> or
-        /// by <code>volume-id</code>.
+        /// The name of the filter to use. You can filter by the <c>file-system-id</c> or by <c>volume-id</c>.
         /// </para>
         /// </summary>
         public SnapshotFilterName Name
@@ -59,7 +58,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The <code>file-system-id</code> or <code>volume-id</code> that you are filtering for.
+        /// The <c>file-system-id</c> or <c>volume-id</c> that you are filtering for.
         /// </para>
         /// </summary>
         [AWSProperty(Max=20)]

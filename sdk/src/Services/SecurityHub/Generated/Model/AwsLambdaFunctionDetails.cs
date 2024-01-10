@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Architectures. 
         /// <para>
-        /// The instruction set architecture that the function uses. Valid values are <code>x86_64</code>
-        /// or <code>arm64</code>.
+        /// The instruction set architecture that the function uses. Valid values are <c>x86_64</c>
+        /// or <c>arm64</c>.
         /// </para>
         /// </summary>
         public List<string> Architectures
@@ -76,7 +76,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// An <code>AwsLambdaFunctionCode</code> object.
+        /// An <c>AwsLambdaFunctionCode</c> object.
         /// </para>
         /// </summary>
         public AwsLambdaFunctionCode Code
@@ -207,9 +207,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string LastModified
@@ -282,8 +282,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property PackageType. 
         /// <para>
         /// The type of deployment package that's used to deploy the function code to Lambda.
-        /// Set to <code>Image</code> for a container image and <code>Zip</code> for a .zip file
-        /// archive. 
+        /// Set to <c>Image</c> for a container image and <c>Zip</c> for a .zip file archive.
+        /// 
         /// </para>
         /// </summary>
         public string PackageType

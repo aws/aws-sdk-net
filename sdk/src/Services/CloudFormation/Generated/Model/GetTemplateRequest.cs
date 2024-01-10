@@ -35,12 +35,12 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For deleted stacks, <code>GetTemplate</code> returns the template for up to 90 days
-    /// after the stack has been deleted.
+    /// For deleted stacks, <c>GetTemplate</c> returns the template for up to 90 days after
+    /// the stack has been deleted.
     /// </para>
     ///  <note> 
     /// <para>
-    /// If the template doesn't exist, a <code>ValidationError</code> is returned.
+    /// If the template doesn't exist, a <c>ValidationError</c> is returned.
     /// </para>
     ///  </note>
     /// </summary>
@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ChangeSetName. 
         /// <para>
         /// The name or Amazon Resource Name (ARN) of a change set for which CloudFormation returns
-        /// the associated template. If you specify a name, you must also specify the <code>StackName</code>.
+        /// the associated template. If you specify a name, you must also specify the <c>StackName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -105,13 +105,13 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TemplateStage. 
         /// <para>
         /// For templates that include transforms, the stage of the template that CloudFormation
-        /// returns. To get the user-submitted template, specify <code>Original</code>. To get
-        /// the template after CloudFormation has processed all transforms, specify <code>Processed</code>.
+        /// returns. To get the user-submitted template, specify <c>Original</c>. To get the template
+        /// after CloudFormation has processed all transforms, specify <c>Processed</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the template doesn't include transforms, <code>Original</code> and <code>Processed</code>
-        /// return the same template. By default, CloudFormation specifies <code>Processed</code>.
+        /// If the template doesn't include transforms, <c>Original</c> and <c>Processed</c> return
+        /// the same template. By default, CloudFormation specifies <c>Processed</c>.
         /// </para>
         /// </summary>
         public TemplateStage TemplateStage

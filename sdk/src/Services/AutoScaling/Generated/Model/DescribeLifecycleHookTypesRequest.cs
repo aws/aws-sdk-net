@@ -38,11 +38,11 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> 
+    ///  <c>autoscaling:EC2_INSTANCE_LAUNCHING</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>autoscaling:EC2_INSTANCE_TERMINATING</code> 
+    ///  <c>autoscaling:EC2_INSTANCE_TERMINATING</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

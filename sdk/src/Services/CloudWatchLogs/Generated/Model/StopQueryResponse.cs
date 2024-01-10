@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Success. 
         /// <para>
-        /// This is true if the query was stopped by the <code>StopQuery</code> operation.
+        /// This is true if the query was stopped by the <c>StopQuery</c> operation.
         /// </para>
         /// </summary>
         public bool Success

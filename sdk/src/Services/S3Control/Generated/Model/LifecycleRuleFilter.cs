@@ -42,7 +42,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property And. 
         /// <para>
-        /// The container for the <code>AND</code> condition for the lifecycle rule.
+        /// The container for the <c>AND</c> condition for the lifecycle rule.
         /// </para>
         /// </summary>
         public LifecycleRuleAndOperator And

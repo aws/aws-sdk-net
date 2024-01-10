@@ -30,9 +30,9 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the ListClusters operation.
-    /// Returns an array of <code>ClusterListEntry</code> objects of the specified length.
-    /// Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's
-    /// ID, and other important status information.
+    /// Returns an array of <c>ClusterListEntry</c> objects of the specified length. Each
+    /// <c>ClusterListEntry</c> object contains a cluster's state, a cluster's ID, and other
+    /// important status information.
     /// </summary>
     public partial class ListClustersRequest : AmazonSnowballRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of <code>ClusterListEntry</code> objects to return.
+        /// The number of <c>ClusterListEntry</c> objects to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -61,9 +61,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. To identify what object comes "next" in the list of <code>ClusterListEntry</code>
-        /// objects, you have the option of specifying <code>NextToken</code> as the starting
-        /// point for your returned list.
+        /// HTTP requests are stateless. To identify what object comes "next" in the list of <c>ClusterListEntry</c>
+        /// objects, you have the option of specifying <c>NextToken</c> as the starting point
+        /// for your returned list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

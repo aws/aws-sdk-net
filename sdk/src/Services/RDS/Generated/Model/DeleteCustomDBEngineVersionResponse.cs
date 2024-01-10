@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.
+    /// This data type is used as a response element in the action <c>DescribeDBEngineVersions</c>.
     /// </summary>
     public partial class DeleteCustomDBEngineVersionResponse : AmazonWebServiceResponse
     {
@@ -240,7 +240,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DefaultCharacterSet. 
         /// <para>
-        /// The default character set for new instances of this engine version, if the <code>CharacterSetName</code>
+        /// The default character set for new instances of this engine version, if the <c>CharacterSetName</c>
         /// parameter of the CreateDBInstance API isn't specified.
         /// </para>
         /// </summary>
@@ -369,7 +369,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the DB engine version, either <code>available</code> or <code>deprecated</code>.
+        /// The status of the DB engine version, either <c>available</c> or <c>deprecated</c>.
         /// </para>
         /// </summary>
         public string Status
@@ -413,8 +413,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportedCharacterSets. 
         /// <para>
-        /// A list of the character sets supported by this engine for the <code>CharacterSetName</code>
-        /// parameter of the <code>CreateDBInstance</code> operation.
+        /// A list of the character sets supported by this engine for the <c>CharacterSetName</c>
+        /// parameter of the <c>CreateDBInstance</c> operation.
         /// </para>
         /// </summary>
         public List<CharacterSet> SupportedCharacterSets
@@ -463,8 +463,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version
-        /// &lt;engine_version&gt;</code> 
+        ///  <c>aws rds describe-db-engine-versions --engine &lt;engine_name&gt; --engine-version
+        /// &lt;engine_version&gt;</c> 
         /// </para>
         ///  
         /// <para>
@@ -473,13 +473,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</code>
+        ///  <c>aws rds describe-db-engine-versions --engine postgres --engine-version 13.3</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// The supported features are listed under <code>SupportedFeatureNames</code> in the
-        /// output.
+        /// The supported features are listed under <c>SupportedFeatureNames</c> in the output.
         /// </para>
         /// </summary>
         public List<string> SupportedFeatureNames
@@ -497,8 +496,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportedNcharCharacterSets. 
         /// <para>
-        /// A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
-        /// parameter of the <code>CreateDBInstance</code> operation.
+        /// A list of the character sets supported by the Oracle DB engine for the <c>NcharCharacterSetName</c>
+        /// parameter of the <c>CreateDBInstance</c> operation.
         /// </para>
         /// </summary>
         public List<CharacterSet> SupportedNcharCharacterSets
@@ -516,8 +515,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportedTimezones. 
         /// <para>
-        /// A list of the time zones supported by this engine for the <code>Timezone</code> parameter
-        /// of the <code>CreateDBInstance</code> action.
+        /// A list of the time zones supported by this engine for the <c>Timezone</c> parameter
+        /// of the <c>CreateDBInstance</c> action.
         /// </para>
         /// </summary>
         public List<Timezone> SupportedTimezones

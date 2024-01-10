@@ -83,8 +83,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceResourceType. 
         /// <para>
-        /// The evaluated compliance resource type. Config accepts <code>AWS::::Account</code>
-        /// resource type.
+        /// The evaluated compliance resource type. Config accepts <c>AWS::::Account</c> resource
+        /// type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -103,8 +103,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceType. 
         /// <para>
-        /// The compliance of the Amazon Web Services resource. The valid values are <code>COMPLIANT,
-        /// NON_COMPLIANT, </code> and <code>NOT_APPLICABLE</code>.
+        /// The compliance of the Amazon Web Services resource. The valid values are <c>COMPLIANT,
+        /// NON_COMPLIANT, </c> and <c>NOT_APPLICABLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

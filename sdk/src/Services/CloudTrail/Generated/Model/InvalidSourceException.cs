@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the specified value of <code>Source</code> is not valid.
+    /// This exception is thrown when the specified value of <c>Source</c> is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

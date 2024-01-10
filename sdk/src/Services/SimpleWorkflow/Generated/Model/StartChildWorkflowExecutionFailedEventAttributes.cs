@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>StartChildWorkflowExecutionFailed</code> event.
+    /// Provides the details of the <c>StartChildWorkflowExecutionFailed</c> event.
     /// </summary>
     public partial class StartChildWorkflowExecutionFailedEventAttributes
     {
@@ -48,9 +48,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
-        /// fails because it lacks sufficient permissions. For details and example IAM policies,
-        /// see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">
+        /// When <c>cause</c> is set to <c>OPERATION_NOT_PERMITTED</c>, the decision fails because
+        /// it lacks sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">
         /// Using IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
         /// Guide</i>.
         /// </para>
@@ -92,10 +91,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>StartChildWorkflowExecution</code> <a>Decision</a>
-        /// to request this child workflow execution. This information can be useful for diagnosing
-        /// problems by tracing back the chain of events.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>StartChildWorkflowExecution</c> <a>Decision</a> to request
+        /// this child workflow execution. This information can be useful for diagnosing problems
+        /// by tracing back the chain of events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,17 +113,17 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
-        /// When the <code>cause</code> is <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code>
-        /// is the ID of the <code>StartChildWorkflowExecutionInitiated</code> event that corresponds
-        /// to the <code>StartChildWorkflowExecution</code> <a>Decision</a> to start the workflow
-        /// execution. You can use this information to diagnose problems by tracing back the chain
-        /// of events leading up to this event.
+        /// When the <c>cause</c> is <c>WORKFLOW_ALREADY_RUNNING</c>, <c>initiatedEventId</c>
+        /// is the ID of the <c>StartChildWorkflowExecutionInitiated</c> event that corresponds
+        /// to the <c>StartChildWorkflowExecution</c> <a>Decision</a> to start the workflow execution.
+        /// You can use this information to diagnose problems by tracing back the chain of events
+        /// leading up to this event.
         /// </para>
         ///  
         /// <para>
-        /// When the <code>cause</code> isn't <code>WORKFLOW_ALREADY_RUNNING</code>, <code>initiatedEventId</code>
-        /// is set to <code>0</code> because the <code>StartChildWorkflowExecutionInitiated</code>
-        /// event doesn't exist.
+        /// When the <c>cause</c> isn't <c>WORKFLOW_ALREADY_RUNNING</c>, <c>initiatedEventId</c>
+        /// is set to <c>0</c> because the <c>StartChildWorkflowExecutionInitiated</c> event doesn't
+        /// exist.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,7 +142,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The <code>workflowId</code> of the child workflow execution.
+        /// The <c>workflowId</c> of the child workflow execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -162,7 +161,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowType. 
         /// <para>
-        /// The workflow type provided in the <code>StartChildWorkflowExecution</code> <a>Decision</a>
+        /// The workflow type provided in the <c>StartChildWorkflowExecution</c> <a>Decision</a>
         /// that failed.
         /// </para>
         /// </summary>

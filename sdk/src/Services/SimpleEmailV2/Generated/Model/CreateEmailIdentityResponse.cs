@@ -64,8 +64,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// The email identity type. Note: the <code>MANAGED_DOMAIN</code> identity type is not
-        /// supported.
+        /// The email identity type. Note: the <c>MANAGED_DOMAIN</c> identity type is not supported.
         /// </para>
         /// </summary>
         public IdentityType IdentityType

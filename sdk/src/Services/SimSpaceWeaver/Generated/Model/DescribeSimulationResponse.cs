@@ -168,9 +168,9 @@ namespace Amazon.SimSpaceWeaver.Model
         /// <para>
         /// The maximum running time of the simulation, specified as a number of minutes (m or
         /// M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.
-        /// The maximum value is <code>14D</code>, or its equivalent in the other units. The default
-        /// value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation
-        /// immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
+        /// The maximum value is <c>14D</c>, or its equivalent in the other units. The default
+        /// value is <c>14D</c>. A value equivalent to <c>0</c> makes the simulation immediately
+        /// transition to <c>Stopping</c> as soon as it reaches <c>Started</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=6)]
@@ -288,7 +288,7 @@ namespace Amazon.SimSpaceWeaver.Model
         /// Gets and sets the property StartError. 
         /// <para>
         /// An error message that SimSpace Weaver returns only if a problem occurs when the simulation
-        /// is in the <code>STARTING</code> state.
+        /// is in the <c>STARTING</c> state.
         /// </para>
         /// </summary>
         public string StartError

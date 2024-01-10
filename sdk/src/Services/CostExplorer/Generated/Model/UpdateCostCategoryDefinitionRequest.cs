@@ -102,8 +102,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// The <code>Expression</code> object used to categorize costs. For more information,
-        /// see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule
+        /// The <c>Expression</c> object used to categorize costs. For more information, see <a
+        /// href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule
         /// </a>. 
         /// </para>
         /// </summary>

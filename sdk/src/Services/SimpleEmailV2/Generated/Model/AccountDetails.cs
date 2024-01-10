@@ -62,8 +62,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ContactLanguage. 
         /// <para>
-        /// The language you would prefer for the case. The contact language can be one of <code>ENGLISH</code>
-        /// or <code>JAPANESE</code>.
+        /// The language you would prefer for the case. The contact language can be one of <c>ENGLISH</c>
+        /// or <c>JAPANESE</c>.
         /// </para>
         /// </summary>
         public ContactLanguage ContactLanguage
@@ -85,13 +85,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MARKETING</code> – Most of your sending traffic is to keep your customers informed
+        ///  <c>MARKETING</c> – Most of your sending traffic is to keep your customers informed
         /// of your latest offering.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRANSACTIONAL</code> – Most of your sending traffic is to communicate during
-        /// a transaction with a customer.
+        ///  <c>TRANSACTIONAL</c> – Most of your sending traffic is to communicate during a transaction
+        /// with a customer.
         /// </para>
         ///  </li> </ul>
         /// </summary>

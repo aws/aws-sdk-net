@@ -115,7 +115,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The job document. Required if you don't specify a value for <code>documentSource</code>.
+        /// The job document. Required if you don't specify a value for <c>documentSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32768)]
@@ -135,11 +135,11 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DocumentSource. 
         /// <para>
         /// An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object
-        /// URL and is required if you don't specify a value for <code>document</code>.
+        /// URL and is required if you don't specify a value for <c>document</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+        /// For example, <c>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</c>
         /// 
         /// </para>
         ///  

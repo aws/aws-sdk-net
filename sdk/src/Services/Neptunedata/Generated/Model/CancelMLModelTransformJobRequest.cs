@@ -50,8 +50,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Clean. 
         /// <para>
-        /// If this flag is set to <code>TRUE</code>, all Neptune ML S3 artifacts should be deleted
-        /// when the job is stopped. The default is <code>FALSE</code>.
+        /// If this flag is set to <c>TRUE</c>, all Neptune ML S3 artifacts should be deleted
+        /// when the job is stopped. The default is <c>FALSE</c>.
         /// </para>
         /// </summary>
         public bool Clean

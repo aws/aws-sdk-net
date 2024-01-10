@@ -100,8 +100,8 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property RecordIdentifierValueAsString. 
         /// <para>
-        /// The value for the <code>RecordIdentifier</code> in string format of a Record from
-        /// a <code>FeatureGroup</code> that is causing an error when attempting to be retrieved.
+        /// The value for the <c>RecordIdentifier</c> in string format of a Record from a <c>FeatureGroup</c>
+        /// that is causing an error when attempting to be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=358400)]

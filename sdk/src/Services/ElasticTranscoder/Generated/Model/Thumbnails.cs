@@ -46,9 +46,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property AspectRatio. <important> 
         /// <para>
         /// To better control resolution and aspect ratio of thumbnails, we recommend that you
-        /// use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>,
-        /// and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>.
-        /// The two groups of settings are mutually exclusive. Do not use them together.
+        /// use the values <c>MaxWidth</c>, <c>MaxHeight</c>, <c>SizingPolicy</c>, and <c>PaddingPolicy</c>
+        /// instead of <c>Resolution</c> and <c>AspectRatio</c>. The two groups of settings are
+        /// mutually exclusive. Do not use them together.
         /// </para>
         ///  </important> 
         /// <para>
@@ -56,13 +56,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>auto</code>, <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code>
-        /// 
+        ///  <c>auto</c>, <c>1:1</c>, <c>4:3</c>, <c>3:2</c>, <c>16:9</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>auto</code>, Elastic Transcoder tries to preserve the aspect
-        /// ratio of the video in the output file.
+        /// If you specify <c>auto</c>, Elastic Transcoder tries to preserve the aspect ratio
+        /// of the video in the output file.
         /// </para>
         /// </summary>
         public string AspectRatio
@@ -80,8 +79,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of thumbnails, if any. Valid values are <code>jpg</code> and <code>png</code>.
-        /// 
+        /// The format of thumbnails, if any. Valid values are <c>jpg</c> and <c>png</c>. 
         /// </para>
         ///  
         /// <para>
@@ -162,10 +160,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PaddingPolicy. 
         /// <para>
-        /// When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may
-        /// add black bars to the top and bottom and/or left and right sides of thumbnails to
-        /// make the total size of the thumbnails match the values that you specified for thumbnail
-        /// <code>MaxWidth</code> and <code>MaxHeight</code> settings.
+        /// When you set <c>PaddingPolicy</c> to <c>Pad</c>, Elastic Transcoder may add black
+        /// bars to the top and bottom and/or left and right sides of thumbnails to make the total
+        /// size of the thumbnails match the values that you specified for thumbnail <c>MaxWidth</c>
+        /// and <c>MaxHeight</c> settings.
         /// </para>
         /// </summary>
         public string PaddingPolicy
@@ -184,15 +182,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Resolution. <important> 
         /// <para>
         /// To better control resolution and aspect ratio of thumbnails, we recommend that you
-        /// use the values <code>MaxWidth</code>, <code>MaxHeight</code>, <code>SizingPolicy</code>,
-        /// and <code>PaddingPolicy</code> instead of <code>Resolution</code> and <code>AspectRatio</code>.
-        /// The two groups of settings are mutually exclusive. Do not use them together.
+        /// use the values <c>MaxWidth</c>, <c>MaxHeight</c>, <c>SizingPolicy</c>, and <c>PaddingPolicy</c>
+        /// instead of <c>Resolution</c> and <c>AspectRatio</c>. The two groups of settings are
+        /// mutually exclusive. Do not use them together.
         /// </para>
         ///  </important> 
         /// <para>
-        /// The width and height of thumbnail files in pixels. Specify a value in the format <code>
-        /// <i>width</i> </code> x <code> <i>height</i> </code> where both values are even integers.
-        /// The values cannot exceed the width and height that you specified in the <code>Video:Resolution</code>
+        /// The width and height of thumbnail files in pixels. Specify a value in the format <c>
+        /// <i>width</i> </c> x <c> <i>height</i> </c> where both values are even integers. The
+        /// values cannot exceed the width and height that you specified in the <c>Video:Resolution</c>
         /// object.
         /// </para>
         /// </summary>
@@ -215,43 +213,43 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Fit</code>: Elastic Transcoder scales thumbnails so they match the value that
-        /// you specified in thumbnail MaxWidth or MaxHeight settings without exceeding the other
+        ///  <c>Fit</c>: Elastic Transcoder scales thumbnails so they match the value that you
+        /// specified in thumbnail MaxWidth or MaxHeight settings without exceeding the other
         /// value. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fill</code>: Elastic Transcoder scales thumbnails so they match the value that
-        /// you specified in thumbnail <code>MaxWidth</code> or <code>MaxHeight</code> settings
-        /// and matches or exceeds the other value. Elastic Transcoder centers the image in thumbnails
-        /// and then crops in the dimension (if any) that exceeds the maximum value.
+        ///  <c>Fill</c>: Elastic Transcoder scales thumbnails so they match the value that you
+        /// specified in thumbnail <c>MaxWidth</c> or <c>MaxHeight</c> settings and matches or
+        /// exceeds the other value. Elastic Transcoder centers the image in thumbnails and then
+        /// crops in the dimension (if any) that exceeds the maximum value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stretch</code>: Elastic Transcoder stretches thumbnails to match the values
-        /// that you specified for thumbnail <code>MaxWidth</code> and <code>MaxHeight</code>
-        /// settings. If the relative proportions of the input video and thumbnails are different,
-        /// the thumbnails will be distorted.
+        ///  <c>Stretch</c>: Elastic Transcoder stretches thumbnails to match the values that
+        /// you specified for thumbnail <c>MaxWidth</c> and <c>MaxHeight</c> settings. If the
+        /// relative proportions of the input video and thumbnails are different, the thumbnails
+        /// will be distorted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Keep</code>: Elastic Transcoder does not scale thumbnails. If either dimension
-        /// of the input video exceeds the values that you specified for thumbnail <code>MaxWidth</code>
-        /// and <code>MaxHeight</code> settings, Elastic Transcoder crops the thumbnails.
+        ///  <c>Keep</c>: Elastic Transcoder does not scale thumbnails. If either dimension of
+        /// the input video exceeds the values that you specified for thumbnail <c>MaxWidth</c>
+        /// and <c>MaxHeight</c> settings, Elastic Transcoder crops the thumbnails.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ShrinkToFit</code>: Elastic Transcoder scales thumbnails down so that their
-        /// dimensions match the values that you specified for at least one of thumbnail <code>MaxWidth</code>
-        /// and <code>MaxHeight</code> without exceeding either value. If you specify this option,
-        /// Elastic Transcoder does not scale thumbnails up.
+        ///  <c>ShrinkToFit</c>: Elastic Transcoder scales thumbnails down so that their dimensions
+        /// match the values that you specified for at least one of thumbnail <c>MaxWidth</c>
+        /// and <c>MaxHeight</c> without exceeding either value. If you specify this option, Elastic
+        /// Transcoder does not scale thumbnails up.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ShrinkToFill</code>: Elastic Transcoder scales thumbnails down so that their
-        /// dimensions match the values that you specified for at least one of <code>MaxWidth</code>
-        /// and <code>MaxHeight</code> without dropping below either value. If you specify this
-        /// option, Elastic Transcoder does not scale thumbnails up.
+        ///  <c>ShrinkToFill</c>: Elastic Transcoder scales thumbnails down so that their dimensions
+        /// match the values that you specified for at least one of <c>MaxWidth</c> and <c>MaxHeight</c>
+        /// without dropping below either value. If you specify this option, Elastic Transcoder
+        /// does not scale thumbnails up.
         /// </para>
         ///  </li> </ul>
         /// </summary>

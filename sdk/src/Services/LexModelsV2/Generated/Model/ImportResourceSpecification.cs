@@ -30,7 +30,7 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Provides information about the bot or bot locale that you want to import. You can
-    /// specify the <code>botImportSpecification</code> or the <code>botLocaleImportSpecification</code>,
+    /// specify the <c>botImportSpecification</c> or the <c>botLocaleImportSpecification</c>,
     /// but not both.
     /// </summary>
     public partial class ImportResourceSpecification

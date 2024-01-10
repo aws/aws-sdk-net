@@ -142,21 +142,21 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// Config sets the state of the rule to <code>EVALUATING</code> temporarily after you
-        /// use the <code>StartConfigRulesEvaluation</code> request to evaluate your resources
-        /// against the Config rule.
+        /// Config sets the state of the rule to <c>EVALUATING</c> temporarily after you use the
+        /// <c>StartConfigRulesEvaluation</c> request to evaluate your resources against the Config
+        /// rule.
         /// </para>
         ///  
         /// <para>
-        /// Config sets the state of the rule to <code>DELETING_RESULTS</code> temporarily after
-        /// you use the <code>DeleteEvaluationResults</code> request to delete the current evaluation
-        /// results for the Config rule.
+        /// Config sets the state of the rule to <c>DELETING_RESULTS</c> temporarily after you
+        /// use the <c>DeleteEvaluationResults</c> request to delete the current evaluation results
+        /// for the Config rule.
         /// </para>
         ///  
         /// <para>
-        /// Config temporarily sets the state of a rule to <code>DELETING</code> after you use
-        /// the <code>DeleteConfigRule</code> request to delete the rule. After Config deletes
-        /// the rule, the rule and all of its evaluations are erased and are no longer available.
+        /// Config temporarily sets the state of a rule to <c>DELETING</c> after you use the <c>DeleteConfigRule</c>
+        /// request to delete the rule. After Config deletes the rule, the rule and all of its
+        /// evaluations are erased and are no longer available.
         /// </para>
         /// </summary>
         public ConfigRuleState ConfigRuleState
@@ -257,7 +257,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
         /// The maximum frequency with which Config runs evaluations for a rule. You can specify
-        /// a value for <code>MaximumExecutionFrequency</code> when:
+        /// a value for <c>MaximumExecutionFrequency</c> when:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -271,8 +271,7 @@ namespace Amazon.ConfigService.Model
         ///  </li> </ul> <note> 
         /// <para>
         /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
-        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-        /// parameter.
+        /// the frequency, specify a valid value for the <c>MaximumExecutionFrequency</c> parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -318,10 +317,10 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// Provides the rule owner (<code>Amazon Web Services</code> for managed rules, <code>CUSTOM_POLICY</code>
-        /// for Custom Policy rules, and <code>CUSTOM_LAMBDA</code> for Custom Lambda rules),
-        /// the rule identifier, and the notifications that cause the function to evaluate your
-        /// Amazon Web Services resources.
+        /// Provides the rule owner (<c>Amazon Web Services</c> for managed rules, <c>CUSTOM_POLICY</c>
+        /// for Custom Policy rules, and <c>CUSTOM_LAMBDA</c> for Custom Lambda rules), the rule
+        /// identifier, and the notifications that cause the function to evaluate your Amazon
+        /// Web Services resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

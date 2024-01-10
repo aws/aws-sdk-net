@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>TimerFired</code> event.
+    /// Provides the details of the <c>TimerFired</c> event.
     /// </summary>
     public partial class TimerFiredEventAttributes
     {
@@ -39,9 +39,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The ID of the <code>TimerStarted</code> event that was recorded when this timer was
-        /// started. This information can be useful for diagnosing problems by tracing back the
-        /// chain of events leading up to this event.
+        /// The ID of the <c>TimerStarted</c> event that was recorded when this timer was started.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

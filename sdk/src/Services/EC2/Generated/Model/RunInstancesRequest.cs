@@ -78,8 +78,8 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// An instance is ready for you to use when it's in the <code>running</code> state. You
-    /// can check the state of your instance using <a>DescribeInstances</a>. You can tag instances
+    /// An instance is ready for you to use when it's in the <c>running</c> state. You can
+    /// check the state of your instance using <a>DescribeInstances</a>. You can tag instances
     /// and EBS volumes during launch, after launch, or both. For more information, see <a>CreateTags</a>
     /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
     /// your Amazon EC2 resources</a>.
@@ -201,7 +201,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CapacityReservationSpecification. 
         /// <para>
         /// Information about the Capacity Reservation targeting option. If you do not specify
-        /// this parameter, the instance's Capacity Reservation preference defaults to <code>open</code>,
+        /// this parameter, the instance's Capacity Reservation preference defaults to <c>open</c>,
         /// which enables it to run in any open Capacity Reservation that has matching attributes
         /// (instance type, platform, Availability Zone).
         /// </para>
@@ -270,19 +270,18 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CreditSpecification. 
         /// <para>
         /// The credit option for CPU usage of the burstable performance instance. Valid values
-        /// are <code>standard</code> and <code>unlimited</code>. To change this attribute after
-        /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
+        /// are <c>standard</c> and <c>unlimited</c>. To change this attribute after launch, use
+        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceCreditSpecification.html">
         /// ModifyInstanceCreditSpecification</a>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances.html">Burstable
         /// performance instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> (T2 instances) or <code>unlimited</code> (T3/T3a/T4g
-        /// instances)
+        /// Default: <c>standard</c> (T2 instances) or <c>unlimited</c> (T3/T3a/T4g instances)
         /// </para>
         ///  
         /// <para>
-        /// For T3 instances with <code>host</code> tenancy, only <code>standard</code> is supported.
+        /// For T3 instances with <c>host</c> tenancy, only <c>standard</c> is supported.
         /// </para>
         /// </summary>
         public CreditSpecificationRequest CreditSpecification
@@ -320,15 +319,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If you set this parameter to <code>true</code>, you can't terminate the instance using
-        /// the Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute
-        /// after launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
-        /// Alternatively, if you set <code>InstanceInitiatedShutdownBehavior</code> to <code>terminate</code>,
+        /// If you set this parameter to <c>true</c>, you can't terminate the instance using the
+        /// Amazon EC2 console, CLI, or API; otherwise, you can. To change this attribute after
+        /// launch, use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyInstanceAttribute.html">ModifyInstanceAttribute</a>.
+        /// Alternatively, if you set <c>InstanceInitiatedShutdownBehavior</c> to <c>terminate</c>,
         /// you can terminate the instance by running the shutdown command from the instance.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -353,7 +352,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -548,7 +547,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>stop</code> 
+        /// Default: <c>stop</c> 
         /// </para>
         /// </summary>
         public ShutdownBehavior InstanceInitiatedShutdownBehavior
@@ -571,7 +570,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// For <a>RunInstances</a>, persistent Spot Instance requests are only supported when
-        /// <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or <code>stop</code>.
+        /// <b>InstanceInterruptionBehavior</b> is set to either <c>hibernate</c> or <c>stop</c>.
         /// </para>
         /// </summary>
         public InstanceMarketOptionsRequest InstanceMarketOptions
@@ -766,7 +765,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of instances to launch. If you specify more instances than Amazon
         /// EC2 can launch in the target Availability Zone, Amazon EC2 launches the largest possible
-        /// number of instances above <code>MinCount</code>.
+        /// number of instances above <c>MinCount</c>.
         /// </para>
         ///  
         /// <para>

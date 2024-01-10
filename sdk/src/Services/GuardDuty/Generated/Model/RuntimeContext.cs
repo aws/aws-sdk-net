@@ -58,7 +58,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AddressFamily. 
         /// <para>
         /// Represents the communication protocol associated with the address. For example, the
-        /// address family <code>AF_INET</code> is used for IP version of 4 protocol.
+        /// address family <c>AF_INET</c> is used for IP version of 4 protocol.
         /// </para>
         /// </summary>
         public string AddressFamily
@@ -114,8 +114,8 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property IanaProtocolNumber. 
         /// <para>
         /// Specifies a particular protocol within the address family. Usually there is a single
-        /// protocol in address families. For example, the address family <code>AF_INET</code>
-        /// only has the IP protocol.
+        /// protocol in address families. For example, the address family <c>AF_INET</c> only
+        /// has the IP protocol.
         /// </para>
         /// </summary>
         public int IanaProtocolNumber
@@ -261,7 +261,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property ModuleSha256. 
         /// <para>
-        /// The <code>SHA256</code> hash of the module.
+        /// The <c>SHA256</c> hash of the module.
         /// </para>
         /// </summary>
         public string ModuleSha256
@@ -333,7 +333,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RuncBinaryPath. 
         /// <para>
-        /// The path to the leveraged <code>runc</code> implementation.
+        /// The path to the leveraged <c>runc</c> implementation.
         /// </para>
         /// </summary>
         public string RuncBinaryPath

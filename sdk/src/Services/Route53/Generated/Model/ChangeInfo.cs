@@ -80,8 +80,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the request. <code>PENDING</code> indicates that this request
-        /// has not yet been applied to all Amazon Route 53 DNS servers.
+        /// The current state of the request. <c>PENDING</c> indicates that this request has not
+        /// yet been applied to all Amazon Route 53 DNS servers.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property SubmittedAt. 
         /// <para>
         /// The date and time that the change request was submitted in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-        /// 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <code>2017-03-27T17:48:16.751Z</code>
+        /// 8601 format</a> and Coordinated Universal Time (UTC). For example, the value <c>2017-03-27T17:48:16.751Z</c>
         /// represents March 27, 2017 at 17:48:16.751 UTC.
         /// </para>
         /// </summary>

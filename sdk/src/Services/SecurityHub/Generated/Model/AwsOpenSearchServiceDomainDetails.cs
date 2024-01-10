@@ -165,8 +165,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// This is a map of key-value pairs. The key is always <code>vpc</code>. The value is
-        /// the endpoint.
+        /// This is a map of key-value pairs. The key is always <c>vpc</c>. The value is the endpoint.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DomainEndpoints
@@ -310,8 +309,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VpcOptions. 
         /// <para>
-        /// Information that OpenSearch Service derives based on <code>VPCOptions</code> for the
-        /// domain.
+        /// Information that OpenSearch Service derives based on <c>VPCOptions</c> for the domain.
         /// </para>
         /// </summary>
         public AwsOpenSearchServiceDomainVpcOptionsDetails VpcOptions

@@ -34,8 +34,8 @@ namespace Amazon.WorkSpaces.Model
     /// 
     ///  
     /// <para>
-    /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
-    /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+    /// You cannot restore a WorkSpace unless its state is <c> AVAILABLE</c>, <c>ERROR</c>,
+    /// <c>UNHEALTHY</c>, or <c>STOPPED</c>.
     /// </para>
     ///  
     /// <para>

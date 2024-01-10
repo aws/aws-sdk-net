@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents a request to perform a <code>PutItem</code> operation.
+    /// Represents a request to perform a <c>PutItem</c> operation.
     /// </summary>
     public partial class Put
     {
@@ -98,10 +98,10 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property Item. 
         /// <para>
         /// A map of attribute name to attribute values, representing the primary key of the item
-        /// to be written by <code>PutItem</code>. All of the table's primary key attributes must
-        /// be specified, and their data types must match those of the table's key schema. If
-        /// any attributes are present in the item that are part of an index key schema for the
-        /// table, their types must match the index key schema. 
+        /// to be written by <c>PutItem</c>. All of the table's primary key attributes must be
+        /// specified, and their data types must match those of the table's key schema. If any
+        /// attributes are present in the item that are part of an index key schema for the table,
+        /// their types must match the index key schema. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,9 +120,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnValuesOnConditionCheckFailure. 
         /// <para>
-        /// Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if
-        /// the <code>Put</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>,
-        /// the valid values are: NONE and ALL_OLD.
+        /// Use <c>ReturnValuesOnConditionCheckFailure</c> to get the item attributes if the <c>Put</c>
+        /// condition fails. For <c>ReturnValuesOnConditionCheckFailure</c>, the valid values
+        /// are: NONE and ALL_OLD.
         /// </para>
         /// </summary>
         public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure

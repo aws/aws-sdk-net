@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Information about the demodulation <code>Config</code>.
+    /// Information about the demodulation <c>Config</c>.
     /// </summary>
     public partial class DemodulationConfig
     {
@@ -38,7 +38,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property UnvalidatedJSON. 
         /// <para>
-        /// Unvalidated JSON of a demodulation <code>Config</code>.
+        /// Unvalidated JSON of a demodulation <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=8192)]

@@ -44,12 +44,11 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>creationStartTime</code> – The time at which the generation request was created.
+        ///  <c>creationStartTime</c> – The time at which the generation request was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>lastUpdatedTime</code> – The time at which the generation request was last
-        /// updated.
+        ///  <c>lastUpdatedTime</c> – The time at which the generation request was last updated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

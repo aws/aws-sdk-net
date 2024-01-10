@@ -85,7 +85,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property DataTypeSpec. 
         /// <para>
         /// The data type of the structure for this property. This parameter exists on properties
-        /// that have the <code>STRUCT</code> data type.
+        /// that have the <c>STRUCT</c> data type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -196,7 +196,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit (such as <code>Newtons</code> or <code>RPM</code>) of the property.
+        /// The unit (such as <c>Newtons</c> or <c>RPM</c>) of the property.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

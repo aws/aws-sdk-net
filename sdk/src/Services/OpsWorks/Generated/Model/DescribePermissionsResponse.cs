@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribePermissions</code> request.
+    /// Contains the response to a <c>DescribePermissions</c> request.
     /// </summary>
     public partial class DescribePermissionsResponse : AmazonWebServiceResponse
     {
@@ -38,21 +38,21 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// An array of <code>Permission</code> objects that describe the stack permissions.
+        /// An array of <c>Permission</c> objects that describe the stack permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the request object contains only a stack ID, the array contains a <code>Permission</code>
+        /// If the request object contains only a stack ID, the array contains a <c>Permission</c>
         /// object with permissions for each of the stack IAM ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the request object contains only an IAM ARN, the array contains a <code>Permission</code>
+        /// If the request object contains only an IAM ARN, the array contains a <c>Permission</c>
         /// object with permissions for each of the user's stack IDs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the request contains a stack ID and an IAM ARN, the array contains a single <code>Permission</code>
+        /// If the request contains a stack ID and an IAM ARN, the array contains a single <c>Permission</c>
         /// object with permissions for the specified stack and IAM ARN.
         /// </para>
         ///  </li> </ul>

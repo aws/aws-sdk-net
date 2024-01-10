@@ -140,8 +140,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property TriggerType. 
         /// <para>
-        /// The type of trigger assigned to the SIP rule in <code>TriggerValue</code>, currently
-        /// <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.
+        /// The type of trigger assigned to the SIP rule in <c>TriggerValue</c>, currently <c>RequestUriHostname</c>
+        /// or <c>ToPhoneNumber</c>.
         /// </para>
         /// </summary>
         public SipRuleTriggerType TriggerType
@@ -159,11 +159,11 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property TriggerValue. 
         /// <para>
-        /// If <code>TriggerType</code> is <code>RequestUriHostname</code>, then the value can
-        /// be the outbound host name of the Amazon Chime Voice Connector. If <code>TriggerType</code>
-        /// is <code>ToPhoneNumber</code>, then the value can be a customer-owned phone number
-        /// in E164 format. <code>SipRule</code> is triggered when a SIP rule requests host name
-        /// or <code>ToPhoneNumber</code> matches in the incoming SIP request.
+        /// If <c>TriggerType</c> is <c>RequestUriHostname</c>, then the value can be the outbound
+        /// host name of the Amazon Chime Voice Connector. If <c>TriggerType</c> is <c>ToPhoneNumber</c>,
+        /// then the value can be a customer-owned phone number in E164 format. <c>SipRule</c>
+        /// is triggered when a SIP rule requests host name or <c>ToPhoneNumber</c> matches in
+        /// the incoming SIP request.
         /// </para>
         /// </summary>
         public string TriggerValue

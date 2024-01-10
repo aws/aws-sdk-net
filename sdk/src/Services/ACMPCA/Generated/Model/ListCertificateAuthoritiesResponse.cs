@@ -57,7 +57,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When the list is truncated, this value is present and should be used for the <code>NextToken</code>
+        /// When the list is truncated, this value is present and should be used for the <c>NextToken</c>
         /// parameter in a subsequent pagination request.
         /// </para>
         /// </summary>

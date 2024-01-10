@@ -41,7 +41,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// Example: <code>{"entityId":"<i>string</i>","entityType":"<i>string</i>"}</code> 
+    /// Example: <c>{"entityId":"<i>string</i>","entityType":"<i>string</i>"}</c> 
     /// </para>
     /// </summary>
     public partial class EntityIdentifier
@@ -56,7 +56,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"entityId":"<i>identifier</i>"</code> 
+        ///  <c>"entityId":"<i>identifier</i>"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
@@ -79,7 +79,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"entityType":"<i>typeName</i>"</code> 
+        /// Example: <c>"entityType":"<i>typeName</i>"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]

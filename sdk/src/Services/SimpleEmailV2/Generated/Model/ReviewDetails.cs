@@ -61,23 +61,23 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – We have received your appeal and are in the process of reviewing
+        ///  <c>PENDING</c> – We have received your appeal and are in the process of reviewing
         /// it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GRANTED</code> – Your appeal has been reviewed and your production access has
-        /// been granted.
+        ///  <c>GRANTED</c> – Your appeal has been reviewed and your production access has been
+        /// granted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DENIED</code> – Your appeal has been reviewed and your production access has
-        /// been denied.
+        ///  <c>DENIED</c> – Your appeal has been reviewed and your production access has been
+        /// denied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – An internal error occurred and we didn't receive your appeal.
-        /// You can submit your appeal again.
+        ///  <c>FAILED</c> – An internal error occurred and we didn't receive your appeal. You
+        /// can submit your appeal again.
         /// </para>
         ///  </li> </ul>
         /// </summary>

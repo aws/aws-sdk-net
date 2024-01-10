@@ -107,8 +107,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>DropNullFields</code> transform removes custom null values only if both
-        /// the value of the null placeholder and the datatype match the data.
+        /// The <c>DropNullFields</c> transform removes custom null values only if both the value
+        /// of the null placeholder and the datatype match the data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

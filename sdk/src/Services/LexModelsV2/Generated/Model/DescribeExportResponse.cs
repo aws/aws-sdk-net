@@ -64,7 +64,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property DownloadUrl. 
         /// <para>
         /// A pre-signed S3 URL that points to the bot or bot locale archive. The URL is only
-        /// available for 5 minutes after calling the <code>DescribeExport</code> operation.
+        /// available for 5 minutes after calling the <c>DescribeExport</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -102,8 +102,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ExportStatus. 
         /// <para>
-        /// The status of the export. When the status is <code>Complete</code> the export archive
-        /// file is available for download.
+        /// The status of the export. When the status is <c>Complete</c> the export archive file
+        /// is available for download.
         /// </para>
         /// </summary>
         public ExportStatus ExportStatus
@@ -121,7 +121,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FailureReasons. 
         /// <para>
-        /// If the <code>exportStatus</code> is failed, contains one or more reasons why the export
+        /// If the <c>exportStatus</c> is failed, contains one or more reasons why the export
         /// could not be completed.
         /// </para>
         /// </summary>

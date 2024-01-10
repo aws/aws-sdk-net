@@ -43,12 +43,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LEAST_OUTSTANDING_REQUESTS</code>: The endpoint routes requests to the specific
-        /// instances that have more capacity to process them.
+        ///  <c>LEAST_OUTSTANDING_REQUESTS</c>: The endpoint routes requests to the specific instances
+        /// that have more capacity to process them.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RANDOM</code>: The endpoint routes each request to a randomly chosen instance.
+        ///  <c>RANDOM</c>: The endpoint routes each request to a randomly chosen instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

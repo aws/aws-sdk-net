@@ -60,11 +60,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property As2Id. 
         /// <para>
-        /// The <code>As2Id</code> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC
-        /// 4130</a>. For inbound transfers, this is the <code>AS2-From</code> header for the
-        /// AS2 messages sent from the partner. For outbound connectors, this is the <code>AS2-To</code>
-        /// header for the AS2 messages sent to the partner using the <code>StartFileTransfer</code>
-        /// API operation. This ID cannot include spaces.
+        /// The <c>As2Id</c> is the <i>AS2-name</i>, as defined in the <a href="https://datatracker.ietf.org/doc/html/rfc4130">RFC
+        /// 4130</a>. For inbound transfers, this is the <c>AS2-From</c> header for the AS2 messages
+        /// sent from the partner. For outbound connectors, this is the <c>AS2-To</c> header for
+        /// the AS2 messages sent to the partner using the <c>StartFileTransfer</c> API operation.
+        /// This ID cannot include spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -102,8 +102,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ProfileType. 
         /// <para>
-        /// Indicates whether to list only <code>LOCAL</code> type profiles or only <code>PARTNER</code>
-        /// type profiles. If not supplied in the request, the command lists all types of profiles.
+        /// Indicates whether to list only <c>LOCAL</c> type profiles or only <c>PARTNER</c> type
+        /// profiles. If not supplied in the request, the command lists all types of profiles.
         /// </para>
         /// </summary>
         public ProfileType ProfileType

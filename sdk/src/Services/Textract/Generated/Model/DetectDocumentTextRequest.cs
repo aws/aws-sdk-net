@@ -32,21 +32,20 @@ namespace Amazon.Textract.Model
     /// Container for the parameters to the DetectDocumentText operation.
     /// Detects text in the input document. Amazon Textract can detect lines of text and the
     /// words that make up a line of text. The input document must be in one of the following
-    /// image formats: JPEG, PNG, PDF, or TIFF. <code>DetectDocumentText</code> returns the
-    /// detected text in an array of <a>Block</a> objects. 
+    /// image formats: JPEG, PNG, PDF, or TIFF. <c>DetectDocumentText</c> returns the detected
+    /// text in an array of <a>Block</a> objects. 
     /// 
     ///  
     /// <para>
-    /// Each document page has as an associated <code>Block</code> of type PAGE. Each PAGE
-    /// <code>Block</code> object is the parent of LINE <code>Block</code> objects that represent
-    /// the lines of detected text on a page. A LINE <code>Block</code> object is a parent
-    /// for each word that makes up the line. Words are represented by <code>Block</code>
-    /// objects of type WORD.
+    /// Each document page has as an associated <c>Block</c> of type PAGE. Each PAGE <c>Block</c>
+    /// object is the parent of LINE <c>Block</c> objects that represent the lines of detected
+    /// text on a page. A LINE <c>Block</c> object is a parent for each word that makes up
+    /// the line. Words are represented by <c>Block</c> objects of type WORD.
     /// </para>
     ///  
     /// <para>
-    ///  <code>DetectDocumentText</code> is a synchronous operation. To analyze documents
-    /// asynchronously, use <a>StartDocumentTextDetection</a>.
+    ///  <c>DetectDocumentText</c> is a synchronous operation. To analyze documents asynchronously,
+    /// use <a>StartDocumentTextDetection</a>.
     /// </para>
     ///  
     /// <para>
@@ -68,7 +67,7 @@ namespace Amazon.Textract.Model
         ///  
         /// <para>
         /// If you're using an AWS SDK to call Amazon Textract, you might not need to base64-encode
-        /// image bytes that are passed using the <code>Bytes</code> field. 
+        /// image bytes that are passed using the <c>Bytes</c> field. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

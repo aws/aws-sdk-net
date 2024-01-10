@@ -44,9 +44,9 @@ namespace Amazon.WAF.Model
     /// <para>
     /// Specifies the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>,
     /// <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, and <a>SizeConstraintSet</a> objects that
-    /// you want to add to a <code>Rule</code> and, for each object, indicates whether you
-    /// want to negate the settings, for example, requests that do NOT originate from the
-    /// IP address 192.0.2.44. 
+    /// you want to add to a <c>Rule</c> and, for each object, indicates whether you want
+    /// to negate the settings, for example, requests that do NOT originate from the IP address
+    /// 192.0.2.44. 
     /// </para>
     /// </summary>
     public partial class Predicate
@@ -58,9 +58,9 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property DataId. 
         /// <para>
-        /// A unique identifier for a predicate in a <code>Rule</code>, such as <code>ByteMatchSetId</code>
-        /// or <code>IPSetId</code>. The ID is returned by the corresponding <code>Create</code>
-        /// or <code>List</code> command.
+        /// A unique identifier for a predicate in a <c>Rule</c>, such as <c>ByteMatchSetId</c>
+        /// or <c>IPSetId</c>. The ID is returned by the corresponding <c>Create</c> or <c>List</c>
+        /// command.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -79,21 +79,19 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Negated. 
         /// <para>
-        /// Set <code>Negated</code> to <code>False</code> if you want AWS WAF to allow, block,
-        /// or count requests based on the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>,
-        /// <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>,
-        /// or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-        /// address <code>192.0.2.44</code>, AWS WAF will allow or block requests based on that
-        /// IP address.
+        /// Set <c>Negated</c> to <c>False</c> if you want AWS WAF to allow, block, or count requests
+        /// based on the settings in the specified <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+        /// <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>.
+        /// For example, if an <c>IPSet</c> includes the IP address <c>192.0.2.44</c>, AWS WAF
+        /// will allow or block requests based on that IP address.
         /// </para>
         ///  
         /// <para>
-        /// Set <code>Negated</code> to <code>True</code> if you want AWS WAF to allow or block
-        /// a request based on the negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>,
-        /// <a>SqlInjectionMatchSet</a>, <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>,
-        /// or <a>SizeConstraintSet</a>. For example, if an <code>IPSet</code> includes the IP
-        /// address <code>192.0.2.44</code>, AWS WAF will allow, block, or count requests based
-        /// on all IP addresses <i>except</i> <code>192.0.2.44</code>.
+        /// Set <c>Negated</c> to <c>True</c> if you want AWS WAF to allow or block a request
+        /// based on the negation of the settings in the <a>ByteMatchSet</a>, <a>IPSet</a>, <a>SqlInjectionMatchSet</a>,
+        /// <a>XssMatchSet</a>, <a>RegexMatchSet</a>, <a>GeoMatchSet</a>, or <a>SizeConstraintSet</a>.
+        /// For example, if an <c>IPSet</c> includes the IP address <c>192.0.2.44</c>, AWS WAF
+        /// will allow, block, or count requests based on all IP addresses <i>except</i> <c>192.0.2.44</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,7 +110,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of predicate in a <code>Rule</code>, such as <code>ByteMatch</code> or <code>IPSet</code>.
+        /// The type of predicate in a <c>Rule</c>, such as <c>ByteMatch</c> or <c>IPSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,7 +40,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to retrieve per page. For example, <code>5</code> environments
+        /// The maximum number of results to retrieve per page. For example, <c>5</c> environments
         /// per page.
         /// </para>
         /// </summary>

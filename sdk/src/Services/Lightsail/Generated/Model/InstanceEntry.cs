@@ -30,7 +30,7 @@ namespace Amazon.Lightsail.Model
 {
     /// <summary>
     /// Describes the Amazon Elastic Compute Cloud instance and related resources to be created
-    /// using the <code>create cloud formation stack</code> operation.
+    /// using the <c>create cloud formation stack</c> operation.
     /// </summary>
     public partial class InstanceEntry
     {
@@ -62,7 +62,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type (<code>t2.micro</code>) to use for the new Amazon EC2 instance.
+        /// The instance type (<c>t2.micro</c>) to use for the new Amazon EC2 instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,13 +89,13 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DEFAULT</code> - Use the default firewall settings from the Lightsail instance
-        /// blueprint. If this is specified, then IPv4 and IPv6 will be configured for the new
-        /// instance that is created in Amazon EC2.
+        ///  <c>DEFAULT</c> - Use the default firewall settings from the Lightsail instance blueprint.
+        /// If this is specified, then IPv4 and IPv6 will be configured for the new instance that
+        /// is created in Amazon EC2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE</code> - Use the configured firewall settings from the source Lightsail
+        ///  <c>INSTANCE</c> - Use the configured firewall settings from the source Lightsail
         /// instance. If this is specified, the new instance that is created in Amazon EC2 will
         /// be configured to match the configuration of the source Lightsail instance. For example,
         /// if the source instance is configured for dual-stack (IPv4 and IPv6), then IPv4 and
@@ -105,20 +105,19 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code> - Use the default Amazon EC2 security group. If this is specified,
-        /// then only IPv4 will be configured for the new instance that is created in Amazon EC2.
+        ///  <c>NONE</c> - Use the default Amazon EC2 security group. If this is specified, then
+        /// only IPv4 will be configured for the new instance that is created in Amazon EC2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CLOSED</code> - All ports closed. If this is specified, then only IPv4 will
-        /// be configured for the new instance that is created in Amazon EC2.
+        ///  <c>CLOSED</c> - All ports closed. If this is specified, then only IPv4 will be configured
+        /// for the new instance that is created in Amazon EC2.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you configured <code>lightsail-connect</code> as a <code>cidrListAliases</code>
-        /// on your instance, or if you chose to allow the Lightsail browser-based SSH or RDP
-        /// clients to connect to your instance, that configuration is not carried over to your
-        /// new Amazon EC2 instance.
+        /// If you configured <c>lightsail-connect</c> as a <c>cidrListAliases</c> on your instance,
+        /// or if you chose to allow the Lightsail browser-based SSH or RDP clients to connect
+        /// to your instance, that configuration is not carried over to your new Amazon EC2 instance.
         /// </para>
         ///  </note>
         /// </summary>
@@ -143,8 +142,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>get export snapshot records</code> operation to get a list of export
-        /// snapshot records that you can use to create a CloudFormation stack.
+        /// Use the <c>get export snapshot records</c> operation to get a list of export snapshot
+        /// records that you can use to create a CloudFormation stack.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,13 +163,13 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property UserData. 
         /// <para>
         /// A launch script you can create that configures a server with additional user data.
-        /// For example, you might want to run <code>apt-get -y update</code>.
+        /// For example, you might want to run <c>apt-get -y update</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Depending on the machine image you choose, the command to get software on your instance
-        /// varies. Amazon Linux and CentOS use <code>yum</code>, Debian and Ubuntu use <code>apt-get</code>,
-        /// and FreeBSD uses <code>pkg</code>.
+        /// varies. Amazon Linux and CentOS use <c>yum</c>, Debian and Ubuntu use <c>apt-get</c>,
+        /// and FreeBSD uses <c>pkg</c>.
         /// </para>
         ///  </note>
         /// </summary>

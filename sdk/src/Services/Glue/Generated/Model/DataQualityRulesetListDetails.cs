@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Describes a data quality ruleset returned by <code>GetDataQualityRuleset</code>.
+    /// Describes a data quality ruleset returned by <c>GetDataQualityRuleset</c>.
     /// </summary>
     public partial class DataQualityRulesetListDetails
     {

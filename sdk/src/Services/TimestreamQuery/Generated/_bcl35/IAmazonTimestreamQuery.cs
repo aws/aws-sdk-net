@@ -50,7 +50,7 @@ namespace Amazon.TimestreamQuery
         /// <summary>
         /// Cancels a query that has been issued. Cancellation is provided only if the query
         /// has not completed running before the cancellation request was issued. Because cancellation
-        /// is an idempotent operation, subsequent cancellation requests will return a <code>CancellationMessage</code>,
+        /// is an idempotent operation, subsequent cancellation requests will return a <c>CancellationMessage</c>,
         /// indicating that the query has already been canceled. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.cancel-query.html">code
         /// sample</a> for details.
         /// </summary>
@@ -109,9 +109,9 @@ namespace Amazon.TimestreamQuery
 
         /// <summary>
         /// Create a scheduled query that will be run on your behalf at the configured schedule.
-        /// Timestream assumes the execution role provided as part of the <code>ScheduledQueryExecutionRoleArn</code>
-        /// parameter to run the query. You can use the <code>NotificationConfiguration</code>
-        /// parameter to configure notification for your scheduled query operations.
+        /// Timestream assumes the execution role provided as part of the <c>ScheduledQueryExecutionRoleArn</c>
+        /// parameter to run the query. You can use the <c>NotificationConfiguration</c> parameter
+        /// to configure notification for your scheduled query operations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScheduledQuery service method.</param>
         /// 
@@ -427,7 +427,7 @@ namespace Amazon.TimestreamQuery
 
 
         /// <summary>
-        /// Gets a list of all scheduled queries in the caller's Amazon account and Region. <code>ListScheduledQueries</code>
+        /// Gets a list of all scheduled queries in the caller's Amazon account and Region. <c>ListScheduledQueries</c>
         /// is eventually consistent.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListScheduledQueries service method.</param>
@@ -538,7 +538,7 @@ namespace Amazon.TimestreamQuery
         /// <summary>
         /// A synchronous operation that allows you to submit a query with parameters to be stored
         /// by Timestream for later running. Timestream only supports using this operation with
-        /// the <code>PrepareQueryRequest$ValidateOnly</code> set to <code>true</code>.
+        /// the <c>PrepareQueryRequest$ValidateOnly</c> set to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PrepareQuery service method.</param>
         /// 
@@ -594,10 +594,9 @@ namespace Amazon.TimestreamQuery
 
 
         /// <summary>
-        /// <code>Query</code> is a synchronous operation that enables you to run a query against
-        /// your Amazon Timestream data. <code>Query</code> will time out after 60 seconds. You
-        /// must update the default timeout in the SDK to support a timeout of 60 seconds. See
-        /// the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
+        /// <c>Query</c> is a synchronous operation that enables you to run a query against your
+        /// Amazon Timestream data. <c>Query</c> will time out after 60 seconds. You must update
+        /// the default timeout in the SDK to support a timeout of 60 seconds. See the <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.run-query.html">code
         /// sample</a> for details. 
         /// 
         ///  
@@ -606,13 +605,13 @@ namespace Amazon.TimestreamQuery
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  If you submit a <code>Query</code> request with the same client token outside of
-        /// the 5-minute idempotency window. 
+        ///  If you submit a <c>Query</c> request with the same client token outside of the 5-minute
+        /// idempotency window. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  If you submit a <code>Query</code> request with the same client token, but change
-        /// other parameters, within the 5-minute idempotency window. 
+        ///  If you submit a <c>Query</c> request with the same client token, but change other
+        /// parameters, within the 5-minute idempotency window. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -621,14 +620,14 @@ namespace Amazon.TimestreamQuery
         /// </para>
         ///  
         /// <para>
-        ///  <code>Query aborted as max page response size has been exceeded by the output result
-        /// row</code> 
+        ///  <c>Query aborted as max page response size has been exceeded by the output result
+        /// row</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  If the IAM principal of the query initiator and the result reader are not the same
         /// and/or the query initiator and the result reader do not have the same query string
-        /// in the query requests, the query will fail with an <code>Invalid pagination token</code>
+        /// in the query requests, the query will fail with an <c>Invalid pagination token</c>
         /// error. 
         /// </para>
         ///  </li> </ul>

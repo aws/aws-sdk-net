@@ -39,10 +39,10 @@ namespace Amazon.RDS.Model
     ///  <note> 
     /// <para>
     /// This operation only restores the DB cluster, not the DB instances for that DB cluster.
-    /// You must invoke the <code>CreateDBInstance</code> operation to create DB instances
-    /// for the restored DB cluster, specifying the identifier of the restored DB cluster
-    /// in <code>DBClusterIdentifier</code>. You can create DB instances only after the <code>RestoreDBClusterFromS3</code>
-    /// operation has completed and the DB cluster is available.
+    /// You must invoke the <c>CreateDBInstance</c> operation to create DB instances for the
+    /// restored DB cluster, specifying the identifier of the restored DB cluster in <c>DBClusterIdentifier</c>.
+    /// You can create DB instances only after the <c>RestoreDBClusterFromS3</c> operation
+    /// has completed and the DB cluster is available.
     /// </para>
     ///  </note> 
     /// <para>
@@ -261,7 +261,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster1</code> 
+        /// Example: <c>my-cluster1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -317,7 +317,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mydbsubnetgroup</code> 
+        /// Example: <c>mydbsubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -408,8 +408,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>audit</code>, <code>error</code>, <code>general</code>,
-        /// and <code>slowquery</code>.
+        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, and <c>slowquery</c>.
         /// </para>
         ///  
         /// <para>
@@ -460,7 +459,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora-mysql</code> (for Aurora MySQL)
+        /// Valid Values: <c>aurora-mysql</c> (for Aurora MySQL)
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -483,12 +482,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for <code>aurora-mysql</code> (Aurora
-        /// MySQL), use the following command:
+        /// To list all of the available engine versions for <c>aurora-mysql</c> (Aurora MySQL),
+        /// use the following command:
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -497,8 +496,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Examples: <code>5.7.mysql_aurora.2.12.0</code>, <code>8.0.mysql_aurora.3.04.0</code>
-        /// 
+        /// Examples: <c>5.7.mysql_aurora.2.12.0</c>, <c>8.0.mysql_aurora.3.04.0</c> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -527,9 +525,9 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// If the StorageEncrypted parameter is enabled, and you do not specify a value for the
-        /// <code>KmsKeyId</code> parameter, then Amazon RDS will use your default KMS key. There
-        /// is a default KMS key for your Amazon Web Services account. Your Amazon Web Services
-        /// account has a different default KMS key for each Amazon Web Services Region.
+        /// <c>KmsKeyId</c> parameter, then Amazon RDS will use your default KMS key. There is
+        /// a default KMS key for your Amazon Web Services account. Your Amazon Web Services account
+        /// has a different default KMS key for each Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -565,7 +563,7 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Can't manage the master user password with Amazon Web Services Secrets Manager if
-        /// <code>MasterUserPassword</code> is specified.
+        /// <c>MasterUserPassword</c> is specified.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -633,7 +631,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+        /// Can't be specified if <c>ManageMasterUserPassword</c> is turned on.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -668,10 +666,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>MasterUserSecretKmsKeyId</code>, then the <code>aws/secretsmanager</code>
+        /// If you don't specify <c>MasterUserSecretKmsKeyId</c>, then the <c>aws/secretsmanager</c>
         /// KMS key is used to encrypt the secret. If the secret is in a different Amazon Web
-        /// Services account, then you can't use the <code>aws/secretsmanager</code> KMS key to
-        /// encrypt the secret, and you must use a customer managed KMS key.
+        /// Services account, then you can't use the <c>aws/secretsmanager</c> KMS key to encrypt
+        /// the secret, and you must use a customer managed KMS key.
         /// </para>
         ///  
         /// <para>
@@ -702,17 +700,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IPV4</code> 
+        ///  <c>IPV4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DUAL</code> 
+        ///  <c>DUAL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -763,7 +761,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>3306</code> 
+        /// Default: <c>3306</c> 
         /// </para>
         /// </summary>
         public int Port
@@ -782,7 +780,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled using the <code>BackupRetentionPeriod</code> parameter.
+        /// are enabled using the <c>BackupRetentionPeriod</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -796,7 +794,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -832,7 +830,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>
@@ -945,7 +943,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>mysql</code> 
+        /// Valid Values: <c>mysql</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -972,7 +970,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.7.40</code>, <code>8.0.28</code> 
+        /// Example: <c>5.7.40</c>, <c>8.0.28</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -1013,11 +1011,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora</code>, <code>aurora-iopt1</code> 
+        /// Valid Values: <c>aurora</c>, <c>aurora-iopt1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>aurora</code> 
+        /// Default: <c>aurora</c> 
         /// </para>
         ///  
         /// <para>

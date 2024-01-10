@@ -46,8 +46,8 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot use <code>GetMembers</code> to retrieve information about member accounts
-        /// that were removed from the behavior graph.
+        /// You cannot use <c>GetMembers</c> to retrieve information about member accounts that
+        /// were removed from the behavior graph.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

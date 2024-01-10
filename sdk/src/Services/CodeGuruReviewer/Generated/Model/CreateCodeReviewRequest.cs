@@ -31,9 +31,9 @@ namespace Amazon.CodeGuruReviewer.Model
     /// <summary>
     /// Container for the parameters to the CreateCodeReview operation.
     /// Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a>
-    /// of <code>RepositoryAnalysis</code>. This type of code review analyzes all code under
-    /// a specified branch in an associated repository. <code>PullRequest</code> code reviews
-    /// are automatically triggered by a pull request.
+    /// of <c>RepositoryAnalysis</c>. This type of code review analyzes all code under a specified
+    /// branch in an associated repository. <c>PullRequest</c> code reviews are automatically
+    /// triggered by a pull request.
     /// </summary>
     public partial class CreateCodeReviewRequest : AmazonCodeGuruReviewerRequest
     {
@@ -111,7 +111,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of code review to create. This is specified using a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a>
-        /// object. You can create a code review only of type <code>RepositoryAnalysis</code>.
+        /// object. You can create a code review only of type <c>RepositoryAnalysis</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

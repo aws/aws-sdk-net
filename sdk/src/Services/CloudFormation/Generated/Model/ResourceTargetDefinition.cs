@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Attribute. 
         /// <para>
         /// Indicates which resource attribute is triggering this update, such as a change in
-        /// the resource attribute's <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.
+        /// the resource attribute's <c>Metadata</c>, <c>Properties</c>, or <c>Tags</c>.
         /// </para>
         /// </summary>
         public ResourceAttribute Attribute
@@ -60,8 +60,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// If the <code>Attribute</code> value is <code>Properties</code>, the name of the property.
-        /// For all other attributes, the value is null.
+        /// If the <c>Attribute</c> value is <c>Properties</c>, the name of the property. For
+        /// all other attributes, the value is null.
         /// </para>
         /// </summary>
         public string Name
@@ -79,10 +79,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RequiresRecreation. 
         /// <para>
-        /// If the <code>Attribute</code> value is <code>Properties</code>, indicates whether
-        /// a change to this property causes the resource to be recreated. The value can be <code>Never</code>,
-        /// <code>Always</code>, or <code>Conditionally</code>. To determine the conditions for
-        /// a <code>Conditionally</code> recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
+        /// If the <c>Attribute</c> value is <c>Properties</c>, indicates whether a change to
+        /// this property causes the resource to be recreated. The value can be <c>Never</c>,
+        /// <c>Always</c>, or <c>Conditionally</c>. To determine the conditions for a <c>Conditionally</c>
+        /// recreation, see the update behavior for that <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
         /// in the CloudFormation User Guide.
         /// </para>
         /// </summary>

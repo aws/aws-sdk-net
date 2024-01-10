@@ -65,12 +65,12 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If a page is not specified, it is set to <code>["1"]</code> by default.
+        /// If a page is not specified, it is set to <c>["1"]</c> by default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The following characters are allowed in the parameter's string: <code>0 1 2 3 4 5
-        /// 6 7 8 9 - *</code>. No whitespace is allowed.
+        /// The following characters are allowed in the parameter's string: <c>0 1 2 3 4 5 6 7
+        /// 8 9 - *</c>. No whitespace is allowed.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -78,8 +78,8 @@ namespace Amazon.Textract.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can use page intervals, such as <code>[“1-3”, “1-1”, “4-*”]</code>. Where <code>*</code>
-        /// indicates last page of document.
+        /// You can use page intervals, such as <c>[“1-3”, “1-1”, “4-*”]</c>. Where <c>*</c> indicates
+        /// last page of document.
         /// </para>
         ///  </li> <li> 
         /// <para>

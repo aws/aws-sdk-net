@@ -29,13 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Lists the origin access identities for CloudFront.Send a <code>GET</code> request
-    /// to the <code>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</code>
-    /// resource. The response includes a <code>CloudFrontOriginAccessIdentityList</code>
-    /// element with zero or more <code>CloudFrontOriginAccessIdentitySummary</code> child
-    /// elements. By default, your entire list of origin access identities is returned in
-    /// one single page. If the list is long, you can paginate it using the <code>MaxItems</code>
-    /// and <code>Marker</code> parameters.
+    /// Lists the origin access identities for CloudFront.Send a <c>GET</c> request to the
+    /// <c>/<i>CloudFront API version</i>/origin-access-identity/cloudfront</c> resource.
+    /// The response includes a <c>CloudFrontOriginAccessIdentityList</c> element with zero
+    /// or more <c>CloudFrontOriginAccessIdentitySummary</c> child elements. By default, your
+    /// entire list of origin access identities is returned in one single page. If the list
+    /// is long, you can paginate it using the <c>MaxItems</c> and <c>Marker</c> parameters.
     /// </summary>
     public partial class CloudFrontOriginAccessIdentityList
     {
@@ -56,7 +55,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// A flag that indicates whether more origin access identities remain to be listed. If
         /// your results were truncated, you can make a follow-up pagination request using the
-        /// <code>Marker</code> request parameter to retrieve more items in the list.
+        /// <c>Marker</c> request parameter to retrieve more items in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,9 +74,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains one <code>CloudFrontOriginAccessIdentitySummary</code>
-        /// element for each origin access identity that was created by the current Amazon Web
-        /// Services account.
+        /// A complex type that contains one <c>CloudFrontOriginAccessIdentitySummary</c> element
+        /// for each origin access identity that was created by the current Amazon Web Services
+        /// account.
         /// </para>
         /// </summary>
         public List<CloudFrontOriginAccessIdentitySummary> Items
@@ -97,9 +96,9 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Use this when paginating results to indicate where to begin in your list of origin
         /// access identities. The results include identities in the list that occur after the
-        /// marker. To get the next page of results, set the <code>Marker</code> to the value
-        /// of the <code>NextMarker</code> from the current page's response (which is also the
-        /// ID of the last identity on that page).
+        /// marker. To get the next page of results, set the <c>Marker</c> to the value of the
+        /// <c>NextMarker</c> from the current page's response (which is also the ID of the last
+        /// identity on that page).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,9 +136,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
-        /// the value you can use for the <code>Marker</code> request parameter to continue listing
-        /// your origin access identities where they left off.
+        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value
+        /// you can use for the <c>Marker</c> request parameter to continue listing your origin
+        /// access identities where they left off.
         /// </para>
         /// </summary>
         public string NextMarker

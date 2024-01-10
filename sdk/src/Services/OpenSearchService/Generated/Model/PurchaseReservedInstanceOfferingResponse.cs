@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Represents the output of a <code>PurchaseReservedInstanceOffering</code> operation.
+    /// Represents the output of a <c>PurchaseReservedInstanceOffering</c> operation.
     /// </summary>
     public partial class PurchaseReservedInstanceOfferingResponse : AmazonWebServiceResponse
     {

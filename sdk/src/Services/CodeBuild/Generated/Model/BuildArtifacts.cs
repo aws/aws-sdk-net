@@ -121,8 +121,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This value is available only if the build project's <code>packaging</code> value is
-        /// set to <code>ZIP</code>.
+        /// This value is available only if the build project's <c>packaging</c> value is set
+        /// to <c>ZIP</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -170,8 +170,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This value is available only if the build project's <code>packaging</code> value is
-        /// set to <code>ZIP</code>.
+        /// This value is available only if the build project's <c>packaging</c> value is set
+        /// to <c>ZIP</c>.
         /// </para>
         ///  </note>
         /// </summary>

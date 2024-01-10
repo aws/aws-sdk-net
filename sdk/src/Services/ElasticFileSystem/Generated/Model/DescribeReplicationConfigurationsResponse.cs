@@ -39,8 +39,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// You can use the <code>NextToken</code> from the previous response in a subsequent
-        /// request to fetch the additional descriptions.
+        /// You can use the <c>NextToken</c> from the previous response in a subsequent request
+        /// to fetch the additional descriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

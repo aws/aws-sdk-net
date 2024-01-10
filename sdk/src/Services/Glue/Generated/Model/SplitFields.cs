@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a transform that splits data property keys into two <code>DynamicFrames</code>.
-    /// The output is a collection of <code>DynamicFrames</code>: one with selected data property
+    /// Specifies a transform that splits data property keys into two <c>DynamicFrames</c>.
+    /// The output is a collection of <c>DynamicFrames</c>: one with selected data property
     /// keys, and one with the remaining data property keys.
     /// </summary>
     public partial class SplitFields

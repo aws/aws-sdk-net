@@ -30,8 +30,8 @@ namespace Amazon.WorkDocs.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResources operation.
-    /// Retrieves a collection of resources, including folders and documents. The only <code>CollectionType</code>
-    /// supported is <code>SHARED_WITH_ME</code>.
+    /// Retrieves a collection of resources, including folders and documents. The only <c>CollectionType</c>
+    /// supported is <c>SHARED_WITH_ME</c>.
     /// </summary>
     public partial class GetResourcesRequest : AmazonWorkDocsRequest
     {

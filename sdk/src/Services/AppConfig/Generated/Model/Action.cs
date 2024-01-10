@@ -30,39 +30,39 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// An action defines the tasks that the extension performs during the AppConfig workflow.
-    /// Each action includes an action point such as <code>ON_CREATE_HOSTED_CONFIGURATION</code>,
-    /// <code>PRE_DEPLOYMENT</code>, or <code>ON_DEPLOYMENT</code>. Each action also includes
-    /// a name, a URI to an Lambda function, and an Amazon Resource Name (ARN) for an Identity
-    /// and Access Management assume role. You specify the name, URI, and ARN for each <i>action
+    /// Each action includes an action point such as <c>ON_CREATE_HOSTED_CONFIGURATION</c>,
+    /// <c>PRE_DEPLOYMENT</c>, or <c>ON_DEPLOYMENT</c>. Each action also includes a name,
+    /// a URI to an Lambda function, and an Amazon Resource Name (ARN) for an Identity and
+    /// Access Management assume role. You specify the name, URI, and ARN for each <i>action
     /// point</i> defined in the extension. You can specify the following actions for an extension:
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PRE_CREATE_HOSTED_CONFIGURATION_VERSION</code> 
+    ///  <c>PRE_CREATE_HOSTED_CONFIGURATION_VERSION</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PRE_START_DEPLOYMENT</code> 
+    ///  <c>PRE_START_DEPLOYMENT</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ON_DEPLOYMENT_START</code> 
+    ///  <c>ON_DEPLOYMENT_START</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ON_DEPLOYMENT_STEP</code> 
+    ///  <c>ON_DEPLOYMENT_STEP</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ON_DEPLOYMENT_BAKING</code> 
+    ///  <c>ON_DEPLOYMENT_BAKING</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ON_DEPLOYMENT_COMPLETE</code> 
+    ///  <c>ON_DEPLOYMENT_COMPLETE</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ON_DEPLOYMENT_ROLLED_BACK</code> 
+    ///  <c>ON_DEPLOYMENT_ROLLED_BACK</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

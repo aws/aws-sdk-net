@@ -30,8 +30,8 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Information about a body part detected by <a>DetectProtectiveEquipment</a> that contains
-    /// PPE. An array of <code>ProtectiveEquipmentBodyPart</code> objects is returned for
-    /// each person detected by <code>DetectProtectiveEquipment</code>.
+    /// PPE. An array of <c>ProtectiveEquipmentBodyPart</c> objects is returned for each person
+    /// detected by <c>DetectProtectiveEquipment</c>.
     /// </summary>
     public partial class ProtectiveEquipmentBodyPart
     {

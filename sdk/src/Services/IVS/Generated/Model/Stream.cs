@@ -118,9 +118,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The stream’s state. Do not rely on the <code>OFFLINE</code> state, as the API may
-        /// not return it; instead, a "NotBroadcasting" error will indicate that the stream is
-        /// not live.
+        /// The stream’s state. Do not rely on the <c>OFFLINE</c> state, as the API may not return
+        /// it; instead, a "NotBroadcasting" error will indicate that the stream is not live.
         /// </para>
         /// </summary>
         public StreamState State
@@ -157,8 +156,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property ViewerCount. 
         /// <para>
-        /// A count of concurrent views of the stream. Typically, a new view appears in <code>viewerCount</code>
-        /// within 15 seconds of when video playback starts and a view is removed from <code>viewerCount</code>
+        /// A count of concurrent views of the stream. Typically, a new view appears in <c>viewerCount</c>
+        /// within 15 seconds of when video playback starts and a view is removed from <c>viewerCount</c>
         /// within 1 minute of when video playback ends. A value of -1 indicates that the request
         /// timed out; in this case, retry.
         /// </para>

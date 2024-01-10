@@ -252,8 +252,8 @@ namespace Amazon.PersonalizeRuntime
 
         /// <summary>
         /// Returns a list of recommended actions in sorted in descending order by prediction
-        /// score. Use the <code>GetActionRecommendations</code> API if you have a custom campaign
-        /// that deploys a solution version trained with a PERSONALIZED_ACTIONS recipe. 
+        /// score. Use the <c>GetActionRecommendations</c> API if you have a custom campaign that
+        /// deploys a solution version trained with a PERSONALIZED_ACTIONS recipe. 
         /// 
         ///  
         /// <para>
@@ -284,8 +284,8 @@ namespace Amazon.PersonalizeRuntime
 
         /// <summary>
         /// Returns a list of recommended actions in sorted in descending order by prediction
-        /// score. Use the <code>GetActionRecommendations</code> API if you have a custom campaign
-        /// that deploys a solution version trained with a PERSONALIZED_ACTIONS recipe. 
+        /// score. Use the <c>GetActionRecommendations</c> API if you have a custom campaign that
+        /// deploys a solution version trained with a PERSONALIZED_ACTIONS recipe. 
         /// 
         ///  
         /// <para>
@@ -395,11 +395,11 @@ namespace Amazon.PersonalizeRuntime
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// USER_PERSONALIZATION - <code>userId</code> required, <code>itemId</code> not used
+        /// USER_PERSONALIZATION - <c>userId</c> required, <c>itemId</c> not used
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used
+        /// RELATED_ITEMS - <c>itemId</c> required, <c>userId</c> not used
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -441,11 +441,11 @@ namespace Amazon.PersonalizeRuntime
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// USER_PERSONALIZATION - <code>userId</code> required, <code>itemId</code> not used
+        /// USER_PERSONALIZATION - <c>userId</c> required, <c>itemId</c> not used
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used
+        /// RELATED_ITEMS - <c>itemId</c> required, <c>userId</c> not used
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

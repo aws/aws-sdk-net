@@ -79,7 +79,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// Indicates the next page of continuous deployment policies. To get the next page of
-        /// the list, use this value in the <code>Marker</code> field of your request.
+        /// the list, use this value in the <c>Marker</c> field of your request.
         /// </para>
         /// </summary>
         public string NextMarker
@@ -98,7 +98,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The total number of continuous deployment policies in your Amazon Web Services account,
-        /// regardless of the <code>MaxItems</code> value.
+        /// regardless of the <c>MaxItems</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

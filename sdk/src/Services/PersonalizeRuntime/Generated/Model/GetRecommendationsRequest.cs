@@ -36,11 +36,11 @@ namespace Amazon.PersonalizeRuntime.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// USER_PERSONALIZATION - <code>userId</code> required, <code>itemId</code> not used
+    /// USER_PERSONALIZATION - <c>userId</c> required, <c>itemId</c> not used
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// RELATED_ITEMS - <code>itemId</code> required, <code>userId</code> not used
+    /// RELATED_ITEMS - <c>itemId</c> required, <c>userId</c> not used
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
+        /// When using this parameter, be sure the filter resource is <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -143,11 +143,11 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// For filter expressions that use an <code>INCLUDE</code> element to include items,
-        /// you must provide values for all parameters that are defined in the expression. For
-        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude items,
-        /// you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't
-        /// use that portion of the expression to filter recommendations.
+        /// For filter expressions that use an <c>INCLUDE</c> element to include items, you must
+        /// provide values for all parameters that are defined in the expression. For filters
+        /// with expressions that use an <c>EXCLUDE</c> element to exclude items, you can omit
+        /// the <c>filter-values</c>.In this case, Amazon Personalize doesn't use that portion
+        /// of the expression to filter recommendations.
         /// </para>
         ///  
         /// <para>
@@ -175,7 +175,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// Required for <code>RELATED_ITEMS</code> recipe type.
+        /// Required for <c>RELATED_ITEMS</c> recipe type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -196,9 +196,8 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <para>
         /// If you enabled metadata in recommendations when you created or updated the campaign
         /// or recommender, specify the metadata columns from your Items dataset to include in
-        /// item recommendations. The map key is <code>ITEMS</code> and the value is a list of
-        /// column names from your Items dataset. The maximum number of columns you can provide
-        /// is 10.
+        /// item recommendations. The map key is <c>ITEMS</c> and the value is a list of column
+        /// names from your Items dataset. The maximum number of columns you can provide is 10.
         /// </para>
         ///  
         /// <para>
@@ -289,7 +288,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// Required for <code>USER_PERSONALIZATION</code> recipe type.
+        /// Required for <c>USER_PERSONALIZATION</c> recipe type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

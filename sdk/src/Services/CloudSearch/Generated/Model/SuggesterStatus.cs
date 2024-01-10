@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The value of a <code>Suggester</code> and its current status.
+    /// The value of a <c>Suggester</c> and its current status.
     /// </summary>
     public partial class SuggesterStatus
     {

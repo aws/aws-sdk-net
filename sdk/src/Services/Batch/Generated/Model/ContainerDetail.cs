@@ -106,7 +106,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+        /// Environment variables cannot start with "<c>AWS_BATCH</c>". This naming convention
         /// is reserved for variables that Batch sets.
         /// </para>
         ///  </note>
@@ -285,9 +285,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter maps to <code>LogConfig</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// This parameter maps to <c>LogConfig</c> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
-        /// Remote API</a> and the <code>--log-driver</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// Remote API</a> and the <c>--log-driver</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. By default, containers use the same logging driver that the Docker daemon
         /// uses. However, the container might use a different logging driver than the Docker
         /// daemon by specifying a log driver with this parameter in the container definition.
@@ -307,14 +307,14 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
         /// instance. To check the Docker Remote API version on your container instance, log in
-        /// to your container instance and run the following command: <code>sudo docker version
-        /// | grep "Server API version"</code> 
+        /// to your container instance and run the following command: <c>sudo docker version |
+        /// grep "Server API version"</c> 
         /// </para>
         ///  <note> 
         /// <para>
         /// The Amazon ECS container agent running on a container instance must register the logging
-        /// drivers available on that instance with the <code>ECS_AVAILABLE_LOGGING_DRIVERS</code>
-        /// environment variable before containers placed on that instance can use these log configuration
+        /// drivers available on that instance with the <c>ECS_AVAILABLE_LOGGING_DRIVERS</c> environment
+        /// variable before containers placed on that instance can use these log configuration
         /// options. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
         /// ECS container agent configuration</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -337,8 +337,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property LogStreamName. 
         /// <para>
         /// The name of the Amazon CloudWatch Logs log stream that's associated with the container.
-        /// The log group for Batch jobs is <code>/aws/batch/job</code>. Each container attempt
-        /// receives a log stream name when they reach the <code>RUNNING</code> status.
+        /// The log group for Batch jobs is <c>/aws/batch/job</c>. Each container attempt receives
+        /// a log stream name when they reach the <c>RUNNING</c> status.
         /// </para>
         /// </summary>
         public string LogStreamName
@@ -356,9 +356,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// For jobs running on EC2 resources that didn't specify memory requirements using <code>resourceRequirements</code>,
+        /// For jobs running on EC2 resources that didn't specify memory requirements using <c>resourceRequirements</c>,
         /// the number of MiB of memory reserved for the job. For other jobs, including all run
-        /// on Fargate resources, see <code>resourceRequirements</code>.
+        /// on Fargate resources, see <c>resourceRequirements</c>.
         /// </para>
         /// </summary>
         public int Memory
@@ -432,12 +432,12 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Privileged. 
         /// <para>
         /// When this parameter is true, the container is given elevated permissions on the host
-        /// container instance (similar to the <code>root</code> user). The default value is <code>false</code>.
+        /// container instance (similar to the <c>root</c> user). The default value is <c>false</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// This parameter isn't applicable to jobs that are running on Fargate resources and
-        /// shouldn't be provided, or specified as <code>false</code>.
+        /// shouldn't be provided, or specified as <c>false</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -457,10 +457,10 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ReadonlyRootFilesystem. 
         /// <para>
         /// When this parameter is true, the container is given read-only access to its root file
-        /// system. This parameter maps to <code>ReadonlyRootfs</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// system. This parameter maps to <c>ReadonlyRootfs</c> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
-        /// Remote API</a> and the <code>--read-only</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
-        /// <code>docker run</code> </a>.
+        /// Remote API</a> and the <c>--read-only</c> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+        /// <c>docker run</c> </a>.
         /// </para>
         /// </summary>
         public bool ReadonlyRootFilesystem
@@ -498,7 +498,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
         /// The type and amount of resources to assign to a container. The supported resources
-        /// include <code>GPU</code>, <code>MEMORY</code>, and <code>VCPU</code>.
+        /// include <c>GPU</c>, <c>MEMORY</c>, and <c>VCPU</c>.
         /// </para>
         /// </summary>
         public List<ResourceRequirement> ResourceRequirements
@@ -551,7 +551,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property TaskArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon ECS task that's associated with the container
-        /// job. Each container attempt receives a task ARN when they reach the <code>STARTING</code>
+        /// job. Each container attempt receives a task ARN when they reach the <c>STARTING</c>
         /// status.
         /// </para>
         /// </summary>
@@ -570,10 +570,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Ulimits. 
         /// <para>
-        /// A list of <code>ulimit</code> values to set in the container. This parameter maps
-        /// to <code>Ulimits</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// A list of <c>ulimit</c> values to set in the container. This parameter maps to <c>Ulimits</c>
+        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
-        /// Remote API</a> and the <code>--ulimit</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// Remote API</a> and the <c>--ulimit</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
         ///  <note> 
@@ -597,10 +597,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// The user name to use inside the container. This parameter maps to <code>User</code>
-        /// in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
-        /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
-        /// Remote API</a> and the <code>--user</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// The user name to use inside the container. This parameter maps to <c>User</c> in the
+        /// <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create a container</a>
+        /// section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker Remote API</a>
+        /// and the <c>--user</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>.
         /// </para>
         /// </summary>
@@ -620,11 +620,11 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Vcpus. 
         /// <para>
         /// The number of vCPUs reserved for the container. For jobs that run on EC2 resources,
-        /// you can specify the vCPU requirement for the job using <code>resourceRequirements</code>,
-        /// but you can't specify the vCPU requirements in both the <code>vcpus</code> and <code>resourceRequirements</code>
-        /// object. This parameter maps to <code>CpuShares</code> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
+        /// you can specify the vCPU requirement for the job using <c>resourceRequirements</c>,
+        /// but you can't specify the vCPU requirements in both the <c>vcpus</c> and <c>resourceRequirements</c>
+        /// object. This parameter maps to <c>CpuShares</c> in the <a href="https://docs.docker.com/engine/api/v1.23/#create-a-container">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.23/">Docker
-        /// Remote API</a> and the <code>--cpu-shares</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
+        /// Remote API</a> and the <c>--cpu-shares</c> option to <a href="https://docs.docker.com/engine/reference/run/">docker
         /// run</a>. Each vCPU is equivalent to 1,024 CPU shares. You must specify at least one
         /// vCPU. This is required but can be specified in several places. It must be specified
         /// for each node at least once.
@@ -633,7 +633,7 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter isn't applicable to jobs that run on Fargate resources. For jobs that
         /// run on Fargate resources, you must specify the vCPU requirement for the job using
-        /// <code>resourceRequirements</code>.
+        /// <c>resourceRequirements</c>.
         /// </para>
         ///  </note>
         /// </summary>

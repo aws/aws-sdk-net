@@ -29,17 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateDataSourceFromRDS</code> operation, and is
-    /// an acknowledgement that Amazon ML received the request.
+    /// Represents the output of a <c>CreateDataSourceFromRDS</c> operation, and is an acknowledgement
+    /// that Amazon ML received the request.
     /// 
     ///  
     /// <para>
-    /// The <code>CreateDataSourceFromRDS</code>&gt; operation is asynchronous. You can poll
-    /// for updates by using the <code>GetBatchPrediction</code> operation and checking the
-    /// <code>Status</code> parameter. You can inspect the <code>Message</code> when <code>Status</code>
-    /// shows up as <code>FAILED</code>. You can also check the progress of the copy operation
-    /// by going to the <code>DataPipeline</code> console and looking up the pipeline using
-    /// the <code>pipelineId </code> from the describe call.
+    /// The <c>CreateDataSourceFromRDS</c>&gt; operation is asynchronous. You can poll for
+    /// updates by using the <c>GetBatchPrediction</c> operation and checking the <c>Status</c>
+    /// parameter. You can inspect the <c>Message</c> when <c>Status</c> shows up as <c>FAILED</c>.
+    /// You can also check the progress of the copy operation by going to the <c>DataPipeline</c>
+    /// console and looking up the pipeline using the <c>pipelineId </c> from the describe
+    /// call.
     /// </para>
     /// </summary>
     public partial class CreateDataSourceFromRDSResponse : AmazonWebServiceResponse
@@ -50,7 +50,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property DataSourceId. 
         /// <para>
         /// A user-supplied ID that uniquely identifies the datasource. This value should be identical
-        /// to the value of the <code>DataSourceID</code> in the request. 
+        /// to the value of the <c>DataSourceID</c> in the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

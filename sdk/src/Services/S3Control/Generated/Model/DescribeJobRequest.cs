@@ -36,8 +36,8 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use the <code>DescribeJob</code> operation, you must have permission to perform
-    /// the <code>s3:DescribeJob</code> action.
+    /// To use the <c>DescribeJob</c> operation, you must have permission to perform the <c>s3:DescribeJob</c>
+    /// action.
     /// </para>
     ///  </dd> </dl> 
     /// <para>

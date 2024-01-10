@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies how WAF should handle <code>Challenge</code> evaluations. This is available
-    /// at the web ACL level and in each rule.
+    /// Specifies how WAF should handle <c>Challenge</c> evaluations. This is available at
+    /// the web ACL level and in each rule.
     /// </summary>
     public partial class ChallengeConfig
     {

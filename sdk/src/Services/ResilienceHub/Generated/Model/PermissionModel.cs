@@ -53,8 +53,8 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// These roles must have a trust policy with <code>iam:AssumeRole</code> permission to
-        /// the invoker role in the primary account.
+        /// These roles must have a trust policy with <c>iam:AssumeRole</c> permission to the
+        /// invoker role in the primary account.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -80,13 +80,12 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// You must have <code>iam:passRole</code> permission for this role while creating or
-        /// updating the application.
+        /// You must have <c>iam:passRole</c> permission for this role while creating or updating
+        /// the application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Currently, <code>invokerRoleName</code> accepts only <code>[A-Za-z0-9_+=,.@-]</code>
-        /// characters.
+        /// Currently, <c>invokerRoleName</c> accepts only <c>[A-Za-z0-9_+=,.@-]</c> characters.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

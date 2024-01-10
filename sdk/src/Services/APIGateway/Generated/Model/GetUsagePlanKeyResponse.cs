@@ -77,7 +77,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of a usage plan key. Currently, the valid key type is <code>API_KEY</code>.
+        /// The type of a usage plan key. Currently, the valid key type is <c>API_KEY</c>.
         /// </para>
         /// </summary>
         public string Type

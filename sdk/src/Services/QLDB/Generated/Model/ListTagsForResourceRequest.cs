@@ -43,7 +43,7 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> 
+        ///  <c>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]

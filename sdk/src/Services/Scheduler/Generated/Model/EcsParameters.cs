@@ -30,7 +30,7 @@ namespace Amazon.Scheduler.Model
 {
     /// <summary>
     /// The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">
-    /// <code>RunTask</code> </a> API operation.
+    /// <c>RunTask</c> </a> API operation.
     /// </summary>
     public partial class EcsParameters
     {
@@ -132,8 +132,8 @@ namespace Amazon.Scheduler.Model
         /// <para>
         /// Specifies the launch type on which your task is running. The launch type that you
         /// specify here must match one of the launch type (compatibilities) of the target task.
-        /// The <code>FARGATE</code> value is supported only in the Regions where Fargate with
-        /// Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS
+        /// The <c>FARGATE</c> value is supported only in the Regions where Fargate with Amazon
+        /// ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS_Fargate.html">AWS
         /// Fargate on Amazon ECS</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -211,7 +211,7 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// Specifies the platform version for the task. Specify only the numeric portion of the
-        /// platform version, such as <code>1.1.0</code>.
+        /// platform version, such as <c>1.1.0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -234,7 +234,7 @@ namespace Amazon.Scheduler.Model
         /// value is specified, the tags are not propagated. Tags can only be propagated to the
         /// task during task creation. To add tags to a task after task creation, use Amazon ECS's
         /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">
-        /// <code>TagResource</code> </a> API action. 
+        /// <c>TagResource</c> </a> API action. 
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags
@@ -274,7 +274,7 @@ namespace Amazon.Scheduler.Model
         /// The metadata that you apply to the task to help you categorize and organize them.
         /// Each tag consists of a key and an optional value, both of which you define. For more
         /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">
-        /// <code>RunTask</code> </a> in the <i>Amazon ECS API Reference</i>.
+        /// <c>RunTask</c> </a> in the <i>Amazon ECS API Reference</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -293,8 +293,7 @@ namespace Amazon.Scheduler.Model
         /// <summary>
         /// Gets and sets the property TaskCount. 
         /// <para>
-        /// The number of tasks to create based on <code>TaskDefinition</code>. The default is
-        /// <code>1</code>.
+        /// The number of tasks to create based on <c>TaskDefinition</c>. The default is <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

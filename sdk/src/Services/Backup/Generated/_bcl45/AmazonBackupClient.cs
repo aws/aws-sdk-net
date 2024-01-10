@@ -355,8 +355,8 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// If you call <code>CreateBackupPlan</code> with a plan that already exists, you receive
-        /// an <code>AlreadyExistsException</code> exception.
+        /// If you call <c>CreateBackupPlan</c> with a plan that already exists, you receive an
+        /// <c>AlreadyExistsException</c> exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackupPlan service method.</param>
@@ -397,8 +397,8 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// If you call <code>CreateBackupPlan</code> with a plan that already exists, you receive
-        /// an <code>AlreadyExistsException</code> exception.
+        /// If you call <c>CreateBackupPlan</c> with a plan that already exists, you receive an
+        /// <c>AlreadyExistsException</c> exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackupPlan service method.</param>
@@ -519,9 +519,9 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Creates a logical container where backups are stored. A <code>CreateBackupVault</code>
-        /// request includes a name, optionally one or more resource tags, an encryption key,
-        /// and a request ID.
+        /// Creates a logical container where backups are stored. A <c>CreateBackupVault</c> request
+        /// includes a name, optionally one or more resource tags, an encryption key, and a request
+        /// ID.
         /// 
         ///  <note> 
         /// <para>
@@ -561,9 +561,9 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Creates a logical container where backups are stored. A <code>CreateBackupVault</code>
-        /// request includes a name, optionally one or more resource tags, an encryption key,
-        /// and a request ID.
+        /// Creates a logical container where backups are stored. A <c>CreateBackupVault</c> request
+        /// includes a name, optionally one or more resource tags, an encryption key, and a request
+        /// ID.
         /// 
         ///  <note> 
         /// <para>
@@ -878,8 +878,8 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// If you call <code>CreateReportPlan</code> with a plan that already exists, you receive
-        /// an <code>AlreadyExistsException</code> exception.
+        /// If you call <c>CreateReportPlan</c> with a plan that already exists, you receive an
+        /// <c>AlreadyExistsException</c> exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReportPlan service method.</param>
@@ -919,8 +919,8 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// If you call <code>CreateReportPlan</code> with a plan that already exists, you receive
-        /// an <code>AlreadyExistsException</code> exception.
+        /// If you call <c>CreateReportPlan</c> with a plan that already exists, you receive an
+        /// <c>AlreadyExistsException</c> exception.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateReportPlan service method.</param>
@@ -1065,16 +1065,16 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>,
+        /// This consists of <c>RestoreTestingSelectionName</c>, <c>ProtectedResourceType</c>,
         /// and one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ProtectedResourceArns</code> 
+        ///  <c>ProtectedResourceArns</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ProtectedResourceConditions</code> 
+        ///  <c>ProtectedResourceConditions</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1082,9 +1082,9 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        /// A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code>
-        /// along with <code>ProtectedResourceConditions</code>. Alternatively, you can include
-        /// up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.
+        /// A restore testing selection can include a wildcard value ("*") for <c>ProtectedResourceArns</c>
+        /// along with <c>ProtectedResourceConditions</c>. Alternatively, you can include up to
+        /// 30 specific protected resource ARNs in <c>ProtectedResourceArns</c>.
         /// </para>
         ///  
         /// <para>
@@ -1133,16 +1133,16 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>,
+        /// This consists of <c>RestoreTestingSelectionName</c>, <c>ProtectedResourceType</c>,
         /// and one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ProtectedResourceArns</code> 
+        ///  <c>ProtectedResourceArns</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ProtectedResourceConditions</code> 
+        ///  <c>ProtectedResourceConditions</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1150,9 +1150,9 @@ namespace Amazon.Backup
         /// </para>
         ///  
         /// <para>
-        /// A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code>
-        /// along with <code>ProtectedResourceConditions</code>. Alternatively, you can include
-        /// up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.
+        /// A restore testing selection can include a wildcard value ("*") for <c>ProtectedResourceArns</c>
+        /// along with <c>ProtectedResourceConditions</c>. Alternatively, you can include up to
+        /// 30 specific protected resource ARNs in <c>ProtectedResourceArns</c>.
         /// </para>
         ///  
         /// <para>
@@ -1282,7 +1282,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Deletes the resource selection associated with a backup plan that is specified by
-        /// the <code>SelectionId</code>.
+        /// the <c>SelectionId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackupSelection service method.</param>
         /// 
@@ -1313,7 +1313,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Deletes the resource selection associated with a backup plan that is specified by
-        /// the <code>SelectionId</code>.
+        /// the <c>SelectionId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackupSelection service method.</param>
         /// <param name="cancellationToken">
@@ -1499,8 +1499,8 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using
-        /// API operations, and you will receive an <code>InvalidRequestException</code> if you
-        /// attempt to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
+        /// API operations, and you will receive an <c>InvalidRequestException</c> if you attempt
+        /// to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
         /// Lock</a> in the <i>Backup Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1541,8 +1541,8 @@ namespace Amazon.Backup
         ///  
         /// <para>
         /// If the Vault Lock configuration is immutable, then you cannot delete Vault Lock using
-        /// API operations, and you will receive an <code>InvalidRequestException</code> if you
-        /// attempt to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
+        /// API operations, and you will receive an <c>InvalidRequestException</c> if you attempt
+        /// to do so. For more information, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/vault-lock.html">Vault
         /// Lock</a> in the <i>Backup Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1738,19 +1738,19 @@ namespace Amazon.Backup
         /// <para>
         /// When an IAM role's permissions are insufficient to call this API, the service sends
         /// back an HTTP 200 response with an empty HTTP body, but the recovery point is not deleted.
-        /// Instead, it enters an <code>EXPIRED</code> state.
+        /// Instead, it enters an <c>EXPIRED</c> state.
         /// </para>
         ///  
         /// <para>
-        ///  <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role
-        /// has the <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding
-        /// this role, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+        ///  <c>EXPIRED</c> recovery points can be deleted with this API once the IAM role has
+        /// the <c>iam:CreateServiceLinkedRole</c> action. To learn more about adding this role,
+        /// see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
         /// Troubleshooting manual deletions</a>.
         /// </para>
         ///  
         /// <para>
         /// If the user or role is deleted or the permission within the role is removed, the deletion
-        /// will not be successful and will enter an <code>EXPIRED</code> state.
+        /// will not be successful and will enter an <c>EXPIRED</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRecoveryPoint service method.</param>
@@ -1800,19 +1800,19 @@ namespace Amazon.Backup
         /// <para>
         /// When an IAM role's permissions are insufficient to call this API, the service sends
         /// back an HTTP 200 response with an empty HTTP body, but the recovery point is not deleted.
-        /// Instead, it enters an <code>EXPIRED</code> state.
+        /// Instead, it enters an <c>EXPIRED</c> state.
         /// </para>
         ///  
         /// <para>
-        ///  <code>EXPIRED</code> recovery points can be deleted with this API once the IAM role
-        /// has the <code>iam:CreateServiceLinkedRole</code> action. To learn more about adding
-        /// this role, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
+        ///  <c>EXPIRED</c> recovery points can be deleted with this API once the IAM role has
+        /// the <c>iam:CreateServiceLinkedRole</c> action. To learn more about adding this role,
+        /// see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/deleting-backups.html#deleting-backups-troubleshooting">
         /// Troubleshooting manual deletions</a>.
         /// </para>
         ///  
         /// <para>
         /// If the user or role is deleted or the permission within the role is removed, the deletion
-        /// will not be successful and will enter an <code>EXPIRED</code> state.
+        /// will not be successful and will enter an <c>EXPIRED</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRecoveryPoint service method.</param>
@@ -2065,7 +2065,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns backup job details for the specified <code>BackupJobId</code>.
+        /// Returns backup job details for the specified <c>BackupJobId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackupJob service method.</param>
         /// 
@@ -2099,7 +2099,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns backup job details for the specified <code>BackupJobId</code>.
+        /// Returns backup job details for the specified <c>BackupJobId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackupJob service method.</param>
         /// <param name="cancellationToken">
@@ -2274,7 +2274,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the framework details for the specified <code>FrameworkName</code>.
+        /// Returns the framework details for the specified <c>FrameworkName</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFramework service method.</param>
         /// 
@@ -2304,7 +2304,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the framework details for the specified <code>FrameworkName</code>.
+        /// Returns the framework details for the specified <c>FrameworkName</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFramework service method.</param>
         /// <param name="cancellationToken">
@@ -2343,7 +2343,7 @@ namespace Amazon.Backup
         /// <summary>
         /// Describes whether the Amazon Web Services account is opted in to cross-account backup.
         /// Returns an error if the account is not a member of an Organizations organization.
-        /// Example: <code>describe-global-settings --region us-west-2</code>
+        /// Example: <c>describe-global-settings --region us-west-2</c>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
         /// 
@@ -2369,7 +2369,7 @@ namespace Amazon.Backup
         /// <summary>
         /// Describes whether the Amazon Web Services account is opted in to cross-account backup.
         /// Returns an error if the account is not a member of an Organizations organization.
-        /// Example: <code>describe-global-settings --region us-west-2</code>
+        /// Example: <c>describe-global-settings --region us-west-2</c>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2593,7 +2593,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the details associated with creating a report as specified by its <code>ReportJobId</code>.
+        /// Returns the details associated with creating a report as specified by its <c>ReportJobId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReportJob service method.</param>
         /// 
@@ -2619,7 +2619,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the details associated with creating a report as specified by its <code>ReportJobId</code>.
+        /// Returns the details associated with creating a report as specified by its <c>ReportJobId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReportJob service method.</param>
         /// <param name="cancellationToken">
@@ -3039,8 +3039,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>.
-        /// The details are the body of a backup plan in JSON format, in addition to plan metadata.
+        /// Returns <c>BackupPlan</c> details for the specified <c>BackupPlanId</c>. The details
+        /// are the body of a backup plan in JSON format, in addition to plan metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackupPlan service method.</param>
         /// 
@@ -3070,8 +3070,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>.
-        /// The details are the body of a backup plan in JSON format, in addition to plan metadata.
+        /// Returns <c>BackupPlan</c> details for the specified <c>BackupPlanId</c>. The details
+        /// are the body of a backup plan in JSON format, in addition to plan metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackupPlan service method.</param>
         /// <param name="cancellationToken">
@@ -3185,7 +3185,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the template specified by its <code>templateId</code> as a backup plan.
+        /// Returns the template specified by its <c>templateId</c> as a backup plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackupPlanFromTemplate service method.</param>
         /// 
@@ -3215,7 +3215,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns the template specified by its <code>templateId</code> as a backup plan.
+        /// Returns the template specified by its <c>templateId</c> as a backup plan.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBackupPlanFromTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -3659,8 +3659,8 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This request returns the minimal required set of metadata needed to start a restore
-        /// job with secure default settings. <code>BackupVaultName</code> and <code>RecoveryPointArn</code>
-        /// are required parameters. <code>BackupVaultAccountId</code> is an optional parameter.
+        /// job with secure default settings. <c>BackupVaultName</c> and <c>RecoveryPointArn</c>
+        /// are required parameters. <c>BackupVaultAccountId</c> is an optional parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingInferredMetadata service method.</param>
         /// 
@@ -3691,8 +3691,8 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This request returns the minimal required set of metadata needed to start a restore
-        /// job with secure default settings. <code>BackupVaultName</code> and <code>RecoveryPointArn</code>
-        /// are required parameters. <code>BackupVaultAccountId</code> is an optional parameter.
+        /// job with secure default settings. <c>BackupVaultName</c> and <c>RecoveryPointArn</c>
+        /// are required parameters. <c>BackupVaultAccountId</c> is an optional parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRestoreTestingInferredMetadata service method.</param>
         /// <param name="cancellationToken">
@@ -3729,7 +3729,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns <code>RestoreTestingPlan</code> details for the specified <code>RestoreTestingPlanName</code>.
+        /// Returns <c>RestoreTestingPlan</c> details for the specified <c>RestoreTestingPlanName</c>.
         /// The details are the body of a restore testing plan in JSON format, in addition to
         /// plan metadata.
         /// </summary>
@@ -3754,7 +3754,7 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns <code>RestoreTestingPlan</code> details for the specified <code>RestoreTestingPlanName</code>.
+        /// Returns <c>RestoreTestingPlan</c> details for the specified <c>RestoreTestingPlanName</c>.
         /// The details are the body of a restore testing plan in JSON format, in addition to
         /// plan metadata.
         /// </summary>
@@ -4994,7 +4994,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Returns a list of your report plans. For detailed information about a single report
-        /// plan, use <code>DescribeReportPlan</code>.
+        /// plan, use <c>DescribeReportPlan</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReportPlans service method.</param>
         /// 
@@ -5019,7 +5019,7 @@ namespace Amazon.Backup
 
         /// <summary>
         /// Returns a list of your report plans. For detailed information about a single report
-        /// plan, use <code>DescribeReportPlan</code>.
+        /// plan, use <c>DescribeReportPlan</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReportPlans service method.</param>
         /// <param name="cancellationToken">
@@ -5123,9 +5123,9 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// You must include <code>ResourceArn</code>. You can optionally include <code>NextToken</code>,
-        /// <code>ByStatus</code>, <code>MaxResults</code>, <code>ByRecoveryPointCreationDateAfter</code>
-        /// , and <code>ByRecoveryPointCreationDateBefore</code>.
+        /// You must include <c>ResourceArn</c>. You can optionally include <c>NextToken</c>,
+        /// <c>ByStatus</c>, <c>MaxResults</c>, <c>ByRecoveryPointCreationDateAfter</c> , and
+        /// <c>ByRecoveryPointCreationDateBefore</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobsByProtectedResource service method.</param>
@@ -5160,9 +5160,9 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// You must include <code>ResourceArn</code>. You can optionally include <code>NextToken</code>,
-        /// <code>ByStatus</code>, <code>MaxResults</code>, <code>ByRecoveryPointCreationDateAfter</code>
-        /// , and <code>ByRecoveryPointCreationDateBefore</code>.
+        /// You must include <c>ResourceArn</c>. You can optionally include <c>NextToken</c>,
+        /// <c>ByStatus</c>, <c>MaxResults</c>, <c>ByRecoveryPointCreationDateAfter</c> , and
+        /// <c>ByRecoveryPointCreationDateBefore</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRestoreJobsByProtectedResource service method.</param>
@@ -5326,8 +5326,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns a list of restore testing selections. Can be filtered by <code>MaxResults</code>
-        /// and <code>RestoreTestingPlanName</code>.
+        /// Returns a list of restore testing selections. Can be filtered by <c>MaxResults</c>
+        /// and <c>RestoreTestingPlanName</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingSelections service method.</param>
         /// 
@@ -5354,8 +5354,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Returns a list of restore testing selections. Can be filtered by <code>MaxResults</code>
-        /// and <code>RestoreTestingPlanName</code>.
+        /// Returns a list of restore testing selections. Can be filtered by <c>MaxResults</c>
+        /// and <c>RestoreTestingPlanName</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRestoreTestingSelections service method.</param>
         /// <param name="cancellationToken">
@@ -5394,7 +5394,7 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        ///  <code>ListTags</code> only works for resource types that support full Backup management
+        ///  <c>ListTags</c> only works for resource types that support full Backup management
         /// of their backups. Those resource types are listed in the "Full Backup management"
         /// section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
         /// Feature availability by resource</a> table.
@@ -5433,7 +5433,7 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        ///  <code>ListTags</code> only works for resource types that support full Backup management
+        ///  <c>ListTags</c> only works for resource types that support full Backup management
         /// of their backups. Those resource types are listed in the "Full Backup management"
         /// section of the <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/whatisbackup.html#features-by-resource">
         /// Feature availability by resource</a> table.
@@ -5712,8 +5712,8 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This request allows you to send your independent self-run restore test validation
-        /// results. <code>RestoreJobId</code> and <code>ValidationStatus</code> are required.
-        /// Optionally, you can input a <code>ValidationStatusMessage</code>.
+        /// results. <c>RestoreJobId</c> and <c>ValidationStatus</c> are required. Optionally,
+        /// you can input a <c>ValidationStatusMessage</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRestoreValidationResult service method.</param>
         /// 
@@ -5748,8 +5748,8 @@ namespace Amazon.Backup
 
         /// <summary>
         /// This request allows you to send your independent self-run restore test validation
-        /// results. <code>RestoreJobId</code> and <code>ValidationStatus</code> are required.
-        /// Optionally, you can input a <code>ValidationStatusMessage</code>.
+        /// results. <c>RestoreJobId</c> and <c>ValidationStatus</c> are required. Optionally,
+        /// you can input a <c>ValidationStatusMessage</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRestoreValidationResult service method.</param>
         /// <param name="cancellationToken">
@@ -6343,8 +6343,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
-        /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
+        /// Updates an existing backup plan identified by its <c>backupPlanId</c> with the input
+        /// document in JSON format. The new version is uniquely identified by a <c>VersionId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackupPlan service method.</param>
         /// 
@@ -6374,8 +6374,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
-        /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
+        /// Updates an existing backup plan identified by its <c>backupPlanId</c> with the input
+        /// document in JSON format. The new version is uniquely identified by a <c>VersionId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateBackupPlan service method.</param>
         /// <param name="cancellationToken">
@@ -6412,8 +6412,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates an existing framework identified by its <code>FrameworkName</code> with the
-        /// input document in JSON format.
+        /// Updates an existing framework identified by its <c>FrameworkName</c> with the input
+        /// document in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFramework service method.</param>
         /// 
@@ -6454,8 +6454,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates an existing framework identified by its <code>FrameworkName</code> with the
-        /// input document in JSON format.
+        /// Updates an existing framework identified by its <c>FrameworkName</c> with the input
+        /// document in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFramework service method.</param>
         /// <param name="cancellationToken">
@@ -6505,7 +6505,7 @@ namespace Amazon.Backup
         /// <summary>
         /// Updates whether the Amazon Web Services account is opted in to cross-account backup.
         /// Returns an error if the account is not an Organizations management account. Use the
-        /// <code>DescribeGlobalSettings</code> API to determine the current settings.
+        /// <c>DescribeGlobalSettings</c> API to determine the current settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
         /// 
@@ -6538,7 +6538,7 @@ namespace Amazon.Backup
         /// <summary>
         /// Updates whether the Amazon Web Services account is opted in to cross-account backup.
         /// Returns an error if the account is not an Organizations management account. Use the
-        /// <code>DescribeGlobalSettings</code> API to determine the current settings.
+        /// <c>DescribeGlobalSettings</c> API to determine the current settings.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
         /// <param name="cancellationToken">
@@ -6705,8 +6705,8 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// Use the <code>DescribeRegionSettings</code> API to determine the resource types that
-        /// are supported.
+        /// Use the <c>DescribeRegionSettings</c> API to determine the resource types that are
+        /// supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
@@ -6738,8 +6738,8 @@ namespace Amazon.Backup
         /// 
         ///  
         /// <para>
-        /// Use the <code>DescribeRegionSettings</code> API to determine the resource types that
-        /// are supported.
+        /// Use the <c>DescribeRegionSettings</c> API to determine the resource types that are
+        /// supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRegionSettings service method.</param>
@@ -6774,8 +6774,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates an existing report plan identified by its <code>ReportPlanName</code> with
-        /// the input document in JSON format.
+        /// Updates an existing report plan identified by its <c>ReportPlanName</c> with the input
+        /// document in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateReportPlan service method.</param>
         /// 
@@ -6809,8 +6809,8 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Updates an existing report plan identified by its <code>ReportPlanName</code> with
-        /// the input document in JSON format.
+        /// Updates an existing report plan identified by its <c>ReportPlanName</c> with the input
+        /// document in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateReportPlan service method.</param>
         /// <param name="cancellationToken">
@@ -6851,32 +6851,32 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// This request will send changes to your specified restore testing plan. <code>RestoreTestingPlanName</code>
+        /// This request will send changes to your specified restore testing plan. <c>RestoreTestingPlanName</c>
         /// cannot be updated after it is created.
         /// 
         ///  
         /// <para>
-        ///  <code>RecoveryPointSelection</code> can contain:
+        ///  <c>RecoveryPointSelection</c> can contain:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Algorithm</code> 
+        ///  <c>Algorithm</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExcludeVaults</code> 
+        ///  <c>ExcludeVaults</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IncludeVaults</code> 
+        ///  <c>IncludeVaults</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RecoveryPointTypes</code> 
+        ///  <c>RecoveryPointTypes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SelectionWindowDays</code> 
+        ///  <c>SelectionWindowDays</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6912,32 +6912,32 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// This request will send changes to your specified restore testing plan. <code>RestoreTestingPlanName</code>
+        /// This request will send changes to your specified restore testing plan. <c>RestoreTestingPlanName</c>
         /// cannot be updated after it is created.
         /// 
         ///  
         /// <para>
-        ///  <code>RecoveryPointSelection</code> can contain:
+        ///  <c>RecoveryPointSelection</c> can contain:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Algorithm</code> 
+        ///  <c>Algorithm</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExcludeVaults</code> 
+        ///  <c>ExcludeVaults</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IncludeVaults</code> 
+        ///  <c>IncludeVaults</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RecoveryPointTypes</code> 
+        ///  <c>RecoveryPointTypes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SelectionWindowDays</code> 
+        ///  <c>SelectionWindowDays</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -6980,14 +6980,14 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Most elements except the <code>RestoreTestingSelectionName</code> can be updated with
-        /// this request.
+        /// Most elements except the <c>RestoreTestingSelectionName</c> can be updated with this
+        /// request.
         /// 
         ///  
         /// <para>
-        ///  <code>RestoreTestingSelection</code> can use either protected resource ARNs or conditions,
-        /// but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting
-        /// an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.
+        ///  <c>RestoreTestingSelection</c> can use either protected resource ARNs or conditions,
+        /// but not both. That is, if your selection has <c>ProtectedResourceArns</c>, requesting
+        /// an update with the parameter <c>ProtectedResourceConditions</c> will be unsuccessful.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingSelection service method.</param>
@@ -7022,14 +7022,14 @@ namespace Amazon.Backup
 
 
         /// <summary>
-        /// Most elements except the <code>RestoreTestingSelectionName</code> can be updated with
-        /// this request.
+        /// Most elements except the <c>RestoreTestingSelectionName</c> can be updated with this
+        /// request.
         /// 
         ///  
         /// <para>
-        ///  <code>RestoreTestingSelection</code> can use either protected resource ARNs or conditions,
-        /// but not both. That is, if your selection has <code>ProtectedResourceArns</code>, requesting
-        /// an update with the parameter <code>ProtectedResourceConditions</code> will be unsuccessful.
+        ///  <c>RestoreTestingSelection</c> can use either protected resource ARNs or conditions,
+        /// but not both. That is, if your selection has <c>ProtectedResourceArns</c>, requesting
+        /// an update with the parameter <c>ProtectedResourceConditions</c> will be unsuccessful.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRestoreTestingSelection service method.</param>

@@ -32,13 +32,13 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the CreateDiskFromSnapshot operation.
     /// Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting
     /// disk can be attached to an Amazon Lightsail instance in the same Availability Zone
-    /// (<code>us-east-2a</code>).
+    /// (<c>us-east-2a</c>).
     /// 
     ///  
     /// <para>
-    /// The <code>create disk from snapshot</code> operation supports tag-based access control
-    /// via request tags and resource tags applied to the resource identified by <code>disk
-    /// snapshot name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>create disk from snapshot</c> operation supports tag-based access control via
+    /// request tags and resource tags applied to the resource identified by <c>disk snapshot
+    /// name</c>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -75,9 +75,9 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone where you want to create the disk (<code>us-east-2a</code>).
-        /// Choose the same Availability Zone as the Lightsail instance where you want to create
-        /// the disk.
+        /// The Availability Zone where you want to create the disk (<c>us-east-2a</c>). Choose
+        /// the same Availability Zone as the Lightsail instance where you want to create the
+        /// disk.
         /// </para>
         ///  
         /// <para>
@@ -101,7 +101,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique Lightsail disk name (<code>my-disk</code>).
+        /// The unique Lightsail disk name (<c>my-disk</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,8 +120,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskSnapshotName. 
         /// <para>
-        /// The name of the disk snapshot (<code>my-snapshot</code>) from which to create the
-        /// new storage disk.
+        /// The name of the disk snapshot (<c>my-snapshot</c>) from which to create the new storage
+        /// disk.
         /// </para>
         ///  
         /// <para>
@@ -129,9 +129,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This parameter cannot be defined together with the <code>source disk name</code> parameter.
-        /// The <code>disk snapshot name</code> and <code>source disk name</code> parameters are
-        /// mutually exclusive.
+        /// This parameter cannot be defined together with the <c>source disk name</c> parameter.
+        /// The <c>disk snapshot name</c> and <c>source disk name</c> parameters are mutually
+        /// exclusive.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -150,8 +150,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RestoreDate. 
         /// <para>
-        /// The date of the automatic snapshot to use for the new disk. Use the <code>get auto
-        /// snapshots</code> operation to identify the dates of the available automatic snapshots.
+        /// The date of the automatic snapshot to use for the new disk. Use the <c>get auto snapshots</c>
+        /// operation to identify the dates of the available automatic snapshots.
         /// </para>
         ///  
         /// <para>
@@ -159,13 +159,13 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be specified in <code>YYYY-MM-DD</code> format.
+        /// Must be specified in <c>YYYY-MM-DD</c> format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.
+        /// This parameter cannot be defined together with the <c>use latest restorable auto snapshot</c>
+        /// parameter. The <c>restore date</c> and <c>use latest restorable auto snapshot</c>
+        /// parameters are mutually exclusive.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -190,7 +190,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SizeInGb. 
         /// <para>
-        /// The size of the disk in GB (<code>32</code>).
+        /// The size of the disk in GB (<c>32</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -217,9 +217,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This parameter cannot be defined together with the <code>disk snapshot name</code>
-        /// parameter. The <code>source disk name</code> and <code>disk snapshot name</code> parameters
-        /// are mutually exclusive.
+        /// This parameter cannot be defined together with the <c>disk snapshot name</c> parameter.
+        /// The <c>source disk name</c> and <c>disk snapshot name</c> parameters are mutually
+        /// exclusive.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -248,7 +248,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -274,9 +274,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This parameter cannot be defined together with the <code>restore date</code> parameter.
-        /// The <code>use latest restorable auto snapshot</code> and <code>restore date</code>
-        /// parameters are mutually exclusive.
+        /// This parameter cannot be defined together with the <c>restore date</c> parameter.
+        /// The <c>use latest restorable auto snapshot</c> and <c>restore date</c> parameters
+        /// are mutually exclusive.
         /// </para>
         ///  </li> <li> 
         /// <para>

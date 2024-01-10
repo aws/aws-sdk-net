@@ -30,9 +30,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// A list of the user attributes and their properties in your user pool. The attribute
-    /// schema contains standard attributes, custom attributes with a <code>custom:</code>
-    /// prefix, and developer attributes with a <code>dev:</code> prefix. For more information,
-    /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+    /// schema contains standard attributes, custom attributes with a <c>custom:</c> prefix,
+    /// and developer attributes with a <c>dev:</c> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
     /// pool attributes</a>.
     /// 
     ///  
@@ -55,10 +54,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeDataType. 
         /// <para>
-        /// The data format of the values for your attribute. When you choose an <code>AttributeDataType</code>,
+        /// The data format of the values for your attribute. When you choose an <c>AttributeDataType</c>,
         /// Amazon Cognito validates the input against the data type. A custom attribute value
-        /// in your user's ID token is always a string, for example <code>"custom:isMember" :
-        /// "true"</code> or <code>"custom:YearsAsMember" : "12"</code>. 
+        /// in your user's ID token is always a string, for example <c>"custom:isMember" : "true"</c>
+        /// or <c>"custom:YearsAsMember" : "12"</c>. 
         /// </para>
         /// </summary>
         public AttributeDataType AttributeDataType
@@ -78,14 +77,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// You should use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UserPoolClientType.html#CognitoUserPools-Type-UserPoolClientType-WriteAttributes">WriteAttributes</a>
         /// in the user pool client to control how attributes can be mutated for new use cases
-        /// instead of using <code>DeveloperOnlyAttribute</code>.
+        /// instead of using <c>DeveloperOnlyAttribute</c>.
         /// </para>
         ///  </note> 
         /// <para>
         /// Specifies whether the attribute type is developer only. This attribute can only be
         /// modified by an administrator. Users won't be able to modify this attribute using their
-        /// access token. For example, <code>DeveloperOnlyAttribute</code> can be modified using
-        /// AdminUpdateUserAttributes but can't be updated using UpdateUserAttributes.
+        /// access token. For example, <c>DeveloperOnlyAttribute</c> can be modified using AdminUpdateUserAttributes
+        /// but can't be updated using UpdateUserAttributes.
         /// </para>
         /// </summary>
         public bool DeveloperOnlyAttribute
@@ -108,10 +107,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// Any user pool attribute whose value you map from an IdP attribute must be mutable,
-        /// with a parameter value of <code>true</code>. Amazon Cognito updates mapped attributes
-        /// when users sign in to your application through an IdP. If an attribute is immutable,
-        /// Amazon Cognito throws an error when it attempts to update the attribute. For more
-        /// information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
+        /// with a parameter value of <c>true</c>. Amazon Cognito updates mapped attributes when
+        /// users sign in to your application through an IdP. If an attribute is immutable, Amazon
+        /// Cognito throws an error when it attempts to update the attribute. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-specifying-attribute-mapping.html">Specifying
         /// Identity Provider Attribute Mappings for Your User Pool</a>.
         /// </para>
         /// </summary>
@@ -132,12 +131,12 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The name of your user pool attribute. When you create or update a user pool, adding
         /// a schema attribute creates a custom or developer-only attribute. When you add an attribute
-        /// with a <code>Name</code> value of <code>MyAttribute</code>, Amazon Cognito creates
-        /// the custom attribute <code>custom:MyAttribute</code>. When <code>DeveloperOnlyAttribute</code>
-        /// is <code>true</code>, Amazon Cognito creates your attribute as <code>dev:MyAttribute</code>.
-        /// In an operation that describes a user pool, Amazon Cognito returns this value as <code>value</code>
-        /// for standard attributes, <code>custom:value</code> for custom attributes, and <code>dev:value</code>
-        /// for developer-only attributes..
+        /// with a <c>Name</c> value of <c>MyAttribute</c>, Amazon Cognito creates the custom
+        /// attribute <c>custom:MyAttribute</c>. When <c>DeveloperOnlyAttribute</c> is <c>true</c>,
+        /// Amazon Cognito creates your attribute as <c>dev:MyAttribute</c>. In an operation that
+        /// describes a user pool, Amazon Cognito returns this value as <c>value</c> for standard
+        /// attributes, <c>custom:value</c> for custom attributes, and <c>dev:value</c> for developer-only
+        /// attributes..
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

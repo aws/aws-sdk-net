@@ -39,8 +39,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Intents. 
         /// <para>
-        /// An array of <code>IntentMetadata</code> objects, one for each numbered version of
-        /// the intent plus one for the <code>$LATEST</code> version.
+        /// An array of <c>IntentMetadata</c> objects, one for each numbered version of the intent
+        /// plus one for the <c>$LATEST</c> version.
         /// </para>
         /// </summary>
         public List<IntentMetadata> Intents

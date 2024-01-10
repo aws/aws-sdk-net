@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateResolver operation.
-    /// Updates a <code>Resolver</code> object.
+    /// Updates a <c>Resolver</c> object.
     /// </summary>
     public partial class UpdateResolverRequest : AmazonAppSyncRequest
     {
@@ -88,9 +88,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The <code>resolver</code> code that contains the request and response functions. When
-        /// code is used, the <code>runtime</code> is required. The <code>runtime</code> value
-        /// must be <code>APPSYNC_JS</code>.
+        /// The <c>resolver</c> code that contains the request and response functions. When code
+        /// is used, the <c>runtime</c> is required. The <c>runtime</c> value must be <c>APPSYNC_JS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32768)]
@@ -157,8 +156,8 @@ namespace Amazon.AppSync.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>PIPELINE</b>: A PIPELINE resolver type. You can use a PIPELINE resolver to invoke
-        /// a series of <code>Function</code> objects in a serial manner. You can use a pipeline
-        /// resolver to run a GraphQL query against multiple data sources.
+        /// a series of <c>Function</c> objects in a serial manner. You can use a pipeline resolver
+        /// to run a GraphQL query against multiple data sources.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -196,7 +195,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property PipelineConfig. 
         /// <para>
-        /// The <code>PipelineConfig</code>.
+        /// The <c>PipelineConfig</c>.
         /// </para>
         /// </summary>
         public PipelineConfig PipelineConfig
@@ -278,7 +277,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property SyncConfig. 
         /// <para>
-        /// The <code>SyncConfig</code> for a resolver attached to a versioned data source.
+        /// The <c>SyncConfig</c> for a resolver attached to a versioned data source.
         /// </para>
         /// </summary>
         public SyncConfig SyncConfig

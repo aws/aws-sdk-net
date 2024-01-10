@@ -136,8 +136,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property TimeOffset. 
         /// <para>
         /// For clip generation or captions that do not start at the same time as the associated
-        /// video file, the <code>TimeOffset</code> tells Elastic Transcoder how much of the video
-        /// to encode before including captions.
+        /// video file, the <c>TimeOffset</c> tells Elastic Transcoder how much of the video to
+        /// encode before including captions.
         /// </para>
         ///  
         /// <para>

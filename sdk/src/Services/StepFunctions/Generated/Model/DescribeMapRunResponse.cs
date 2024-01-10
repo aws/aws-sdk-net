@@ -71,7 +71,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// A JSON object that contains information about the total number of child workflow executions
         /// for the Map Run, and the count of child workflow executions for each status, such
-        /// as <code>failed</code> and <code>succeeded</code>.
+        /// as <c>failed</c> and <c>succeeded</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,7 +91,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property ItemCounts. 
         /// <para>
         /// A JSON object that contains information about the total number of items, and the item
-        /// count for each processing status, such as <code>pending</code> and <code>failed</code>.
+        /// count for each processing status, such as <c>pending</c> and <c>failed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,7 +150,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RedriveCount. 
         /// <para>
         /// The number of times you've redriven a Map Run. If you have not yet redriven a Map
-        /// Run, the <code>redriveCount</code> is 0. This count is only updated if you successfully
+        /// Run, the <c>redriveCount</c> is 0. This count is only updated if you successfully
         /// redrive a Map Run.
         /// </para>
         /// </summary>
@@ -170,7 +170,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RedriveDate. 
         /// <para>
         /// The date a Map Run was last redriven. If you have not yet redriven a Map Run, the
-        /// <code>redriveDate</code> is null.
+        /// <c>redriveDate</c> is null.
         /// </para>
         /// </summary>
         public DateTime RedriveDate

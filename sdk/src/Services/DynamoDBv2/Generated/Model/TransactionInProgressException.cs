@@ -37,27 +37,27 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  This is a general recommendation for handling the <code>TransactionInProgressException</code>.
+    ///  This is a general recommendation for handling the <c>TransactionInProgressException</c>.
     /// These settings help ensure that the client retries will trigger completion of the
-    /// ongoing <code>TransactWriteItems</code> request. 
+    /// ongoing <c>TransactWriteItems</c> request. 
     /// </para>
     ///  </note> <ul> <li> 
     /// <para>
-    ///  Set <code>clientExecutionTimeout</code> to a value that allows at least one retry
-    /// to be processed after 5 seconds have elapsed since the first attempt for the <code>TransactWriteItems</code>
+    ///  Set <c>clientExecutionTimeout</c> to a value that allows at least one retry to be
+    /// processed after 5 seconds have elapsed since the first attempt for the <c>TransactWriteItems</c>
     /// operation. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  Set <code>socketTimeout</code> to a value a little lower than the <code>requestTimeout</code>
+    ///  Set <c>socketTimeout</c> to a value a little lower than the <c>requestTimeout</c>
     /// setting. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>requestTimeout</code> should be set based on the time taken for the individual
-    /// retries of a single HTTP request for your use case, but setting it to 1 second or
-    /// higher should work well to reduce chances of retries and <code>TransactionInProgressException</code>
-    /// errors. 
+    ///  <c>requestTimeout</c> should be set based on the time taken for the individual retries
+    /// of a single HTTP request for your use case, but setting it to 1 second or higher should
+    /// work well to reduce chances of retries and <c>TransactionInProgressException</c> errors.
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>

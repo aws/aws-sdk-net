@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to <code> <a>ListPackagesForDomain</a> </code>
-    /// operation.
+    /// Container for response parameters to <c> <a>ListPackagesForDomain</a> </c> operation.
     /// </summary>
     public partial class ListPackagesForDomainResponse : AmazonWebServiceResponse
     {
@@ -40,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DomainPackageDetailsList. 
         /// <para>
-        /// List of <code>DomainPackageDetails</code> objects.
+        /// List of <c>DomainPackageDetails</c> objects.
         /// </para>
         /// </summary>
         public List<DomainPackageDetails> DomainPackageDetailsList

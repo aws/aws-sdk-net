@@ -31,7 +31,7 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// High-level information about an <a>IPSet</a>, returned by operations like create and
     /// list. This provides information like the ID, that you can use to retrieve and manage
-    /// an <code>IPSet</code>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a>
+    /// an <c>IPSet</c>, and the ARN, that you provide to the <a>IPSetReferenceStatement</a>
     /// to use the address set in a <a>Rule</a>.
     /// </summary>
     public partial class IPSetSummary
@@ -103,14 +103,13 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LockToken. 
         /// <para>
-        /// A token used for optimistic locking. WAF returns a token to your <code>get</code>
-        /// and <code>list</code> requests, to mark the state of the entity at the time of the
-        /// request. To make changes to the entity associated with the token, you provide the
-        /// token to operations like <code>update</code> and <code>delete</code>. WAF uses the
-        /// token to ensure that no changes have been made to the entity since you last retrieved
-        /// it. If a change has been made, the update fails with a <code>WAFOptimisticLockException</code>.
-        /// If this happens, perform another <code>get</code>, and use the new token returned
-        /// by that operation. 
+        /// A token used for optimistic locking. WAF returns a token to your <c>get</c> and <c>list</c>
+        /// requests, to mark the state of the entity at the time of the request. To make changes
+        /// to the entity associated with the token, you provide the token to operations like
+        /// <c>update</c> and <c>delete</c>. WAF uses the token to ensure that no changes have
+        /// been made to the entity since you last retrieved it. If a change has been made, the
+        /// update fails with a <c>WAFOptimisticLockException</c>. If this happens, perform another
+        /// <c>get</c>, and use the new token returned by that operation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -129,8 +128,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the IP set. You cannot change the name of an <code>IPSet</code> after
-        /// you create it.
+        /// The name of the IP set. You cannot change the name of an <c>IPSet</c> after you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

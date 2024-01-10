@@ -115,16 +115,16 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>http-only</code> – CloudFront always uses HTTP to connect to the origin.
+        ///  <c>http-only</c> – CloudFront always uses HTTP to connect to the origin.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>match-viewer</code> – CloudFront connects to the origin using the same protocol
-        /// that the viewer used to connect to CloudFront.
+        ///  <c>match-viewer</c> – CloudFront connects to the origin using the same protocol that
+        /// the viewer used to connect to CloudFront.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>https-only</code> – CloudFront always uses HTTPS to connect to the origin.
+        ///  <c>https-only</c> – CloudFront always uses HTTPS to connect to the origin.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -171,8 +171,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property OriginSslProtocols. 
         /// <para>
         /// Specifies the minimum SSL/TLS protocol that CloudFront uses when connecting to your
-        /// origin over HTTPS. Valid values include <code>SSLv3</code>, <code>TLSv1</code>, <code>TLSv1.1</code>,
-        /// and <code>TLSv1.2</code>.
+        /// origin over HTTPS. Valid values include <c>SSLv3</c>, <c>TLSv1</c>, <c>TLSv1.1</c>,
+        /// and <c>TLSv1.2</c>.
         /// </para>
         ///  
         /// <para>

@@ -58,85 +58,84 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceHealthReason. 
         /// <para>
-        /// More information about the instance health. If the <code>instanceHealth</code> is
-        /// <code>healthy</code>, then an <code>instanceHealthReason</code> value is not provided.
+        /// More information about the instance health. If the <c>instanceHealth</c> is <c>healthy</c>,
+        /// then an <c>instanceHealthReason</c> value is not provided.
         /// </para>
         ///  
         /// <para>
-        /// If <b> <code>instanceHealth</code> </b> is <code>initial</code>, the <b> <code>instanceHealthReason</code>
+        /// If <b> <c>instanceHealth</c> </b> is <c>initial</c>, the <b> <c>instanceHealthReason</c>
         /// </b> value can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Lb.RegistrationInProgress</code> </b> - The target instance is in the process
+        ///  <b> <c>Lb.RegistrationInProgress</c> </b> - The target instance is in the process
         /// of being registered with the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Lb.InitialHealthChecking</code> </b> - The Lightsail load balancer is still
-        /// sending the target instance the minimum number of health checks required to determine
-        /// its health status.
+        ///  <b> <c>Lb.InitialHealthChecking</c> </b> - The Lightsail load balancer is still sending
+        /// the target instance the minimum number of health checks required to determine its
+        /// health status.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <b> <code>instanceHealth</code> </b> is <code>unhealthy</code>, the <b> <code>instanceHealthReason</code>
+        /// If <b> <c>instanceHealth</c> </b> is <c>unhealthy</c>, the <b> <c>instanceHealthReason</c>
         /// </b> value can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Instance.ResponseCodeMismatch</code> </b> - The health checks did not return
+        ///  <b> <c>Instance.ResponseCodeMismatch</c> </b> - The health checks did not return
         /// an expected HTTP code.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Instance.Timeout</code> </b> - The health check requests timed out.
+        ///  <b> <c>Instance.Timeout</c> </b> - The health check requests timed out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Instance.FailedHealthChecks</code> </b> - The health checks failed because
-        /// the connection to the target instance timed out, the target instance response was
-        /// malformed, or the target instance failed the health check for an unknown reason.
+        ///  <b> <c>Instance.FailedHealthChecks</c> </b> - The health checks failed because the
+        /// connection to the target instance timed out, the target instance response was malformed,
+        /// or the target instance failed the health check for an unknown reason.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Lb.InternalError</code> </b> - The health checks failed due to an internal
-        /// error.
+        ///  <b> <c>Lb.InternalError</c> </b> - The health checks failed due to an internal error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <b> <code>instanceHealth</code> </b> is <code>unused</code>, the <b> <code>instanceHealthReason</code>
+        /// If <b> <c>instanceHealth</c> </b> is <c>unused</c>, the <b> <c>instanceHealthReason</c>
         /// </b> value can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Instance.NotRegistered</code> </b> - The target instance is not registered
-        /// with the target group.
+        ///  <b> <c>Instance.NotRegistered</c> </b> - The target instance is not registered with
+        /// the target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Instance.NotInUse</code> </b> - The target group is not used by any load
-        /// balancer, or the target instance is in an Availability Zone that is not enabled for
-        /// its load balancer.
+        ///  <b> <c>Instance.NotInUse</c> </b> - The target group is not used by any load balancer,
+        /// or the target instance is in an Availability Zone that is not enabled for its load
+        /// balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Instance.IpUnusable</code> </b> - The target IP address is reserved for
-        /// use by a Lightsail load balancer.
+        ///  <b> <c>Instance.IpUnusable</c> </b> - The target IP address is reserved for use by
+        /// a Lightsail load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Instance.InvalidState</code> </b> - The target is in the stopped or terminated
+        ///  <b> <c>Instance.InvalidState</c> </b> - The target is in the stopped or terminated
         /// state.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <b> <code>instanceHealth</code> </b> is <code>draining</code>, the <b> <code>instanceHealthReason</code>
+        /// If <b> <c>instanceHealth</c> </b> is <c>draining</c>, the <b> <c>instanceHealthReason</c>
         /// </b> value can be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Instance.DeregistrationInProgress</code> </b> - The target instance is
-        /// in the process of being deregistered and the deregistration delay period has not expired.
+        ///  <b> <c>Instance.DeregistrationInProgress</c> </b> - The target instance is in the
+        /// process of being deregistered and the deregistration delay period has not expired.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -41,8 +41,8 @@ namespace Amazon.PinpointEmail.Model
         /// <para>
         /// Enables or disables the automatic warm-up feature for dedicated IP addresses that
         /// are associated with your Amazon Pinpoint account in the current AWS Region. Set to
-        /// <code>true</code> to enable the automatic warm-up feature, or set to <code>false</code>
-        /// to disable it.
+        /// <c>true</c> to enable the automatic warm-up feature, or set to <c>false</c> to disable
+        /// it.
         /// </para>
         /// </summary>
         public bool AutoWarmupEnabled

@@ -110,8 +110,8 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property ExternalIds. 
         /// <para>
-        /// A list of <code>ExternalId</code> objects that contains the identifiers issued to
-        /// this resource by an external identity provider.
+        /// A list of <c>ExternalId</c> objects that contains the identifiers issued to this resource
+        /// by an external identity provider.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -205,7 +205,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property PhoneNumbers. 
         /// <para>
-        /// A list of <code>PhoneNumber</code> objects associated with a user.
+        /// A list of <c>PhoneNumber</c> objects associated with a user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

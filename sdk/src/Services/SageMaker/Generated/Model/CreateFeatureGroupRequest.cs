@@ -30,29 +30,27 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFeatureGroup operation.
-    /// Create a new <code>FeatureGroup</code>. A <code>FeatureGroup</code> is a group of
-    /// <code>Features</code> defined in the <code>FeatureStore</code> to describe a <code>Record</code>.
-    /// 
+    /// Create a new <c>FeatureGroup</c>. A <c>FeatureGroup</c> is a group of <c>Features</c>
+    /// defined in the <c>FeatureStore</c> to describe a <c>Record</c>. 
     /// 
     ///  
     /// <para>
-    /// The <code>FeatureGroup</code> defines the schema and features contained in the <code>FeatureGroup</code>.
-    /// A <code>FeatureGroup</code> definition is composed of a list of <code>Features</code>,
-    /// a <code>RecordIdentifierFeatureName</code>, an <code>EventTimeFeatureName</code> and
-    /// configurations for its <code>OnlineStore</code> and <code>OfflineStore</code>. Check
-    /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
-    /// Web Services service quotas</a> to see the <code>FeatureGroup</code>s quota for your
-    /// Amazon Web Services account.
+    /// The <c>FeatureGroup</c> defines the schema and features contained in the <c>FeatureGroup</c>.
+    /// A <c>FeatureGroup</c> definition is composed of a list of <c>Features</c>, a <c>RecordIdentifierFeatureName</c>,
+    /// an <c>EventTimeFeatureName</c> and configurations for its <c>OnlineStore</c> and <c>OfflineStore</c>.
+    /// Check <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html">Amazon
+    /// Web Services service quotas</a> to see the <c>FeatureGroup</c>s quota for your Amazon
+    /// Web Services account.
     /// </para>
     ///  
     /// <para>
-    /// Note that it can take approximately 10-15 minutes to provision an <code>OnlineStore</code>
-    /// <code>FeatureGroup</code> with the <code>InMemory</code> <code>StorageType</code>.
+    /// Note that it can take approximately 10-15 minutes to provision an <c>OnlineStore</c>
+    /// <c>FeatureGroup</c> with the <c>InMemory</c> <c>StorageType</c>.
     /// </para>
     ///  <important> 
     /// <para>
-    /// You must include at least one of <code>OnlineStoreConfig</code> and <code>OfflineStoreConfig</code>
-    /// to create a <code>FeatureGroup</code>.
+    /// You must include at least one of <c>OnlineStoreConfig</c> and <c>OfflineStoreConfig</c>
+    /// to create a <c>FeatureGroup</c>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -72,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A free-form description of a <code>FeatureGroup</code>.
+        /// A free-form description of a <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -91,35 +89,29 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EventTimeFeatureName. 
         /// <para>
-        /// The name of the feature that stores the <code>EventTime</code> of a <code>Record</code>
-        /// in a <code>FeatureGroup</code>.
+        /// The name of the feature that stores the <c>EventTime</c> of a <c>Record</c> in a <c>FeatureGroup</c>.
         /// </para>
         ///  
         /// <para>
-        /// An <code>EventTime</code> is a point in time when a new event occurs that corresponds
-        /// to the creation or update of a <code>Record</code> in a <code>FeatureGroup</code>.
-        /// All <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding
-        /// <code>EventTime</code>.
+        /// An <c>EventTime</c> is a point in time when a new event occurs that corresponds to
+        /// the creation or update of a <c>Record</c> in a <c>FeatureGroup</c>. All <c>Records</c>
+        /// in the <c>FeatureGroup</c> must have a corresponding <c>EventTime</c>.
         /// </para>
         ///  
         /// <para>
-        /// An <code>EventTime</code> can be a <code>String</code> or <code>Fractional</code>.
-        /// 
+        /// An <c>EventTime</c> can be a <c>String</c> or <c>Fractional</c>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Fractional</code>: <code>EventTime</code> feature values must be a Unix timestamp
-        /// in seconds.
+        ///  <c>Fractional</c>: <c>EventTime</c> feature values must be a Unix timestamp in seconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>String</code>: <code>EventTime</code> feature values must be an ISO-8601 string
-        /// in the format. The following formats are supported <code>yyyy-MM-dd'T'HH:mm:ssZ</code>
-        /// and <code>yyyy-MM-dd'T'HH:mm:ss.SSSZ</code> where <code>yyyy</code>, <code>MM</code>,
-        /// and <code>dd</code> represent the year, month, and day respectively and <code>HH</code>,
-        /// <code>mm</code>, <code>ss</code>, and if applicable, <code>SSS</code> represent the
-        /// hour, month, second and milliseconds respsectively. <code>'T'</code> and <code>Z</code>
-        /// are constants.
+        ///  <c>String</c>: <c>EventTime</c> feature values must be an ISO-8601 string in the
+        /// format. The following formats are supported <c>yyyy-MM-dd'T'HH:mm:ssZ</c> and <c>yyyy-MM-dd'T'HH:mm:ss.SSSZ</c>
+        /// where <c>yyyy</c>, <c>MM</c>, and <c>dd</c> represent the year, month, and day respectively
+        /// and <c>HH</c>, <c>mm</c>, <c>ss</c>, and if applicable, <c>SSS</c> represent the hour,
+        /// month, second and milliseconds respsectively. <c>'T'</c> and <c>Z</c> are constants.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -139,22 +131,21 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureDefinitions. 
         /// <para>
-        /// A list of <code>Feature</code> names and types. <code>Name</code> and <code>Type</code>
-        /// is compulsory per <code>Feature</code>. 
+        /// A list of <c>Feature</c> names and types. <c>Name</c> and <c>Type</c> is compulsory
+        /// per <c>Feature</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Valid feature <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code>
-        /// and <code>String</code>.
+        /// Valid feature <c>FeatureType</c>s are <c>Integral</c>, <c>Fractional</c> and <c>String</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>,
-        /// <code>write_time</code>, <code>api_invocation_time</code> 
+        ///  <c>FeatureName</c>s cannot be any of the following: <c>is_deleted</c>, <c>write_time</c>,
+        /// <c>api_invocation_time</c> 
         /// </para>
         ///  
         /// <para>
-        /// You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.
+        /// You can create up to 2,500 <c>FeatureDefinition</c>s per <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2500)]
@@ -173,8 +164,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the <code>FeatureGroup</code>. The name must be unique within an Amazon
-        /// Web Services Region in an Amazon Web Services account. The name:
+        /// The name of the <c>FeatureGroup</c>. The name must be unique within an Amazon Web
+        /// Services Region in an Amazon Web Services account. The name:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -202,12 +193,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OfflineStoreConfig. 
         /// <para>
-        /// Use this to configure an <code>OfflineFeatureStore</code>. This parameter allows you
-        /// to specify:
+        /// Use this to configure an <c>OfflineFeatureStore</c>. This parameter allows you to
+        /// specify:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The Amazon Simple Storage Service (Amazon S3) location of an <code>OfflineStore</code>.
+        /// The Amazon Simple Storage Service (Amazon S3) location of an <c>OfflineStore</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -216,7 +207,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An KMS encryption key to encrypt the Amazon S3 location used for <code>OfflineStore</code>.
+        /// An KMS encryption key to encrypt the Amazon S3 location used for <c>OfflineStore</c>.
         /// If KMS encryption key is not specified, by default we encrypt all data at rest using
         /// Amazon Web Services KMS key. By defining your <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-key.html">bucket-level
         /// key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to 99
@@ -247,17 +238,17 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OnlineStoreConfig. 
         /// <para>
-        /// You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code>
-        /// for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.
+        /// You can turn the <c>OnlineStore</c> on or off by specifying <c>True</c> for the <c>EnableOnlineStore</c>
+        /// flag in <c>OnlineStoreConfig</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for
-        /// at-rest encryption of the <code>OnlineStore</code>.
+        /// You can also include an Amazon Web Services KMS key ID (<c>KMSKeyId</c>) for at-rest
+        /// encryption of the <c>OnlineStore</c>.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>False</code>.
+        /// The default value is <c>False</c>.
         /// </para>
         /// </summary>
         public OnlineStoreConfig OnlineStoreConfig
@@ -275,14 +266,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RecordIdentifierFeatureName. 
         /// <para>
-        /// The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code>
-        /// defined in the <code>FeatureStore</code>. Only the latest record per identifier value
-        /// will be stored in the <code>OnlineStore</code>. <code>RecordIdentifierFeatureName</code>
-        /// must be one of feature definitions' names.
+        /// The name of the <c>Feature</c> whose value uniquely identifies a <c>Record</c> defined
+        /// in the <c>FeatureStore</c>. Only the latest record per identifier value will be stored
+        /// in the <c>OnlineStore</c>. <c>RecordIdentifierFeatureName</c> must be one of feature
+        /// definitions' names.
         /// </para>
         ///  
         /// <para>
-        /// You use the <code>RecordIdentifierFeatureName</code> to access data in a <code>FeatureStore</code>.
+        /// You use the <c>RecordIdentifierFeatureName</c> to access data in a <c>FeatureStore</c>.
         /// </para>
         ///  
         /// <para>
@@ -316,7 +307,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM execution role used to persist data into
-        /// the <code>OfflineStore</code> if an <code>OfflineStoreConfig</code> is provided.
+        /// the <c>OfflineStore</c> if an <c>OfflineStoreConfig</c> is provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -335,7 +326,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags used to identify <code>Features</code> in each <code>FeatureGroup</code>.
+        /// Tags used to identify <c>Features</c> in each <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

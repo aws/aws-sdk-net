@@ -44,8 +44,8 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property ChangeRequests. 
         /// <para>
         /// A list of change request objects that are run in order. A change request object consists
-        /// of <code>changeType</code> , <code>s3Path</code>, and <code>dbPath</code>. A changeType
-        /// can has the following values: 
+        /// of <c>changeType</c> , <c>s3Path</c>, and <c>dbPath</c>. A changeType can has the
+        /// following values: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -57,12 +57,11 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// All the change requests require a mandatory <code>dbPath</code> attribute that defines
-        /// the path within the database directory. All database paths must start with a leading
-        /// / and end with a trailing /. The <code>s3Path</code> attribute defines the s3 source
-        /// file path and is required for a PUT change type. The <code>s3path</code> must end
-        /// with a trailing / if it is a directory and must end without a trailing / if it is
-        /// a file. 
+        /// All the change requests require a mandatory <c>dbPath</c> attribute that defines the
+        /// path within the database directory. All database paths must start with a leading /
+        /// and end with a trailing /. The <c>s3Path</c> attribute defines the s3 source file
+        /// path and is required for a PUT change type. The <c>s3path</c> must end with a trailing
+        /// / if it is a directory and must end without a trailing / if it is a file. 
         /// </para>
         ///  
         /// <para>
@@ -74,27 +73,26 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</code>
-        /// 
+        ///  <c>{ "changeType": "PUT", "s3Path":"s3://bucket/db/sym", "dbPath":"/"}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This request adds files in the given <code>s3Path</code> under the 2020.01.02 partition
+        /// This request adds files in the given <c>s3Path</c> under the 2020.01.02 partition
         /// of the database.
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</code>
+        ///  <c>{ "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/", "dbPath":"/2020.01.02/"}</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This request adds files in the given <code>s3Path</code> under the <i>taq</i> table
-        /// partition of the database.
+        /// This request adds files in the given <c>s3Path</c> under the <i>taq</i> table partition
+        /// of the database.
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code>
+        ///  <c>[ { "changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -103,7 +101,7 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</code> 
+        ///  <c>[{ "changeType": "DELETE", "dbPath": "/2020.01.02/"} ]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -112,8 +110,8 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT",
-        /// "s3Path":"s3://bucket/db/2020.01.02/taq/", "dbPath":"/2020.01.02/taq/"}]</code> 
+        ///  <c>[ {"changeType": "DELETE", "dbPath":"/2020.01.02/"}, {"changeType": "PUT", "s3Path":"s3://bucket/db/2020.01.02/taq/",
+        /// "dbPath":"/2020.01.02/taq/"}]</c> 
         /// </para>
         ///  </li> </ol>
         /// </summary>

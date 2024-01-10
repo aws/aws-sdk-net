@@ -47,8 +47,8 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-    /// and <code>my--namespace</code> are not valid.
+    /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+    /// <c>my--namespace</c> are not valid.
     /// </para>
     ///  </li> <li> 
     /// <para>

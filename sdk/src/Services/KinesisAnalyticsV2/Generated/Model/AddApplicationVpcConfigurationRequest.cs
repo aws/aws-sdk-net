@@ -79,10 +79,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConditionalToken. 
         /// <para>
         /// A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>ApplicationVersionID</code> or the <code>ConditionalToken</code>.
-        /// You get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>.
-        /// For better concurrency support, use the <code>ConditionalToken</code> parameter instead
-        /// of <code>CurrentApplicationVersionId</code>.
+        /// provide the <c>ApplicationVersionID</c> or the <c>ConditionalToken</c>. You get the
+        /// application's current <c>ConditionalToken</c> using <a>DescribeApplication</a>. For
+        /// better concurrency support, use the <c>ConditionalToken</c> parameter instead of <c>CurrentApplicationVersionId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -102,11 +101,11 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
         /// The version of the application to which you want to add the VPC configuration. You
-        /// must provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.
+        /// must provide the <c>CurrentApplicationVersionId</c> or the <c>ConditionalToken</c>.
         /// You can use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the <code>ConcurrentModificationException</code>
-        /// is returned. For better concurrency support, use the <code>ConditionalToken</code>
-        /// parameter instead of <code>CurrentApplicationVersionId</code>.
+        /// version. If the version specified is not the current version, the <c>ConcurrentModificationException</c>
+        /// is returned. For better concurrency support, use the <c>ConditionalToken</c> parameter
+        /// instead of <c>CurrentApplicationVersionId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

@@ -39,8 +39,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        /// The name of the monitor to delete. Use the <code>ListMonitors</code> action to get
-        /// a list of your current monitors. 
+        /// The name of the monitor to delete. Use the <c>ListMonitors</c> action to get a list
+        /// of your current monitors. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

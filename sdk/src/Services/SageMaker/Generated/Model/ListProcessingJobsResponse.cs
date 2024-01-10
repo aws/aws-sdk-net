@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProcessingJobSummaries. 
         /// <para>
-        /// An array of <code>ProcessingJobSummary</code> objects, each listing a processing job.
+        /// An array of <c>ProcessingJobSummary</c> objects, each listing a processing job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

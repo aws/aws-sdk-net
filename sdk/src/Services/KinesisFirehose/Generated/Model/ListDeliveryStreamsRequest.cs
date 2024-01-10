@@ -35,12 +35,12 @@ namespace Amazon.KinesisFirehose.Model
     ///  
     /// <para>
     /// The number of delivery streams might be too large to return using a single call to
-    /// <code>ListDeliveryStreams</code>. You can limit the number of delivery streams returned,
-    /// using the <code>Limit</code> parameter. To determine whether there are more delivery
-    /// streams to list, check the value of <code>HasMoreDeliveryStreams</code> in the output.
-    /// If there are more delivery streams to list, you can request them by calling this operation
-    /// again and setting the <code>ExclusiveStartDeliveryStreamName</code> parameter to the
-    /// name of the last delivery stream returned in the last call.
+    /// <c>ListDeliveryStreams</c>. You can limit the number of delivery streams returned,
+    /// using the <c>Limit</c> parameter. To determine whether there are more delivery streams
+    /// to list, check the value of <c>HasMoreDeliveryStreams</c> in the output. If there
+    /// are more delivery streams to list, you can request them by calling this operation
+    /// again and setting the <c>ExclusiveStartDeliveryStreamName</c> parameter to the name
+    /// of the last delivery stream returned in the last call.
     /// </para>
     /// </summary>
     public partial class ListDeliveryStreamsRequest : AmazonKinesisFirehoseRequest
@@ -56,12 +56,12 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DirectPut</code>: Provider applications access the delivery stream directly.
+        ///  <c>DirectPut</c>: Provider applications access the delivery stream directly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream
-        /// as a source.
+        ///  <c>KinesisStreamAsSource</c>: The delivery stream uses a Kinesis data stream as a
+        /// source.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -84,9 +84,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property ExclusiveStartDeliveryStreamName. 
         /// <para>
-        /// The list of delivery streams returned by this call to <code>ListDeliveryStreams</code>
-        /// will start with the delivery stream whose name comes alphabetically immediately after
-        /// the name you specify in <code>ExclusiveStartDeliveryStreamName</code>.
+        /// The list of delivery streams returned by this call to <c>ListDeliveryStreams</c> will
+        /// start with the delivery stream whose name comes alphabetically immediately after the
+        /// name you specify in <c>ExclusiveStartDeliveryStreamName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

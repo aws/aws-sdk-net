@@ -30,7 +30,7 @@ namespace Amazon.PI.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeDimensionKeys operation.
-    /// For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
+    /// For a specific time period, retrieve the top <c>N</c> dimension keys for a metric.
     /// 
     /// 
     ///  <note> 
@@ -58,11 +58,11 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property AdditionalMetrics. 
         /// <para>
-        /// Additional metrics for the top <code>N</code> dimension keys. If the specified dimension
-        /// group in the <code>GroupBy</code> parameter is <code>db.sql_tokenized</code>, you
-        /// can specify per-SQL metrics to get the values for the top <code>N</code> SQL digests.
-        /// The response syntax is as follows: <code>"AdditionalMetrics" : { "<i>string</i>" :
-        /// "<i>string</i>" }</code>. 
+        /// Additional metrics for the top <c>N</c> dimension keys. If the specified dimension
+        /// group in the <c>GroupBy</c> parameter is <c>db.sql_tokenized</c>, you can specify
+        /// per-SQL metrics to get the values for the top <c>N</c> SQL digests. The response syntax
+        /// is as follows: <c>"AdditionalMetrics" : { "<i>string</i>" : "<i>string</i>" }</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=30)]
@@ -83,11 +83,11 @@ namespace Amazon.PI.Model
         /// <para>
         /// The date and time specifying the end of the requested time series data. The value
         /// specified is <i>exclusive</i>, which means that data points less than (but not equal
-        /// to) <code>EndTime</code> are returned.
+        /// to) <c>EndTime</c> are returned.
         /// </para>
         ///  
         /// <para>
-        /// The value for <code>EndTime</code> must be later than the value for <code>StartTime</code>.
+        /// The value for <c>EndTime</c> must be later than the value for <c>StartTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,8 +110,8 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any number of filters by the same dimension, as specified in the <code>GroupBy</code>
-        /// or <code>Partition</code> parameters.
+        /// Any number of filters by the same dimension, as specified in the <c>GroupBy</c> or
+        /// <c>Partition</c> parameters.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -162,8 +162,8 @@ namespace Amazon.PI.Model
         /// </para>
         ///  
         /// <para>
-        /// To use an Amazon RDS instance as a data source, you specify its <code>DbiResourceId</code>
-        /// value. For example, specify <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code>. 
+        /// To use an Amazon RDS instance as a data source, you specify its <c>DbiResourceId</c>
+        /// value. For example, specify <c>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -183,7 +183,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of items to return in the response. If more items exist than the
-        /// specified <code>MaxRecords</code> value, a pagination token is included in the response
+        /// specified <c>MaxRecords</c> value, a pagination token is included in the response
         /// so that the remaining results can be retrieved. 
         /// </para>
         /// </summary>
@@ -207,27 +207,26 @@ namespace Amazon.PI.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>Metric</code> are:
+        /// Valid values for <c>Metric</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.load.avg</code> - A scaled representation of the number of active sessions
-        /// for the database engine. 
+        ///  <c>db.load.avg</c> - A scaled representation of the number of active sessions for
+        /// the database engine. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sampledload.avg</code> - The raw number of active sessions for the database
-        /// engine. 
+        ///  <c>db.sampledload.avg</c> - The raw number of active sessions for the database engine.
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the number of active sessions is less than an internal Performance Insights threshold,
-        /// <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If
-        /// the number of active sessions is greater than the internal threshold, Performance
-        /// Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled
-        /// values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code>
-        /// less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code>
-        /// only. 
+        /// <c>db.load.avg</c> and <c>db.sampledload.avg</c> are the same value. If the number
+        /// of active sessions is greater than the internal threshold, Performance Insights samples
+        /// the active sessions, with <c>db.load.avg</c> showing the scaled values, <c>db.sampledload.avg</c>
+        /// showing the raw values, and <c>db.sampledload.avg</c> less than <c>db.load.avg</c>.
+        /// For most use cases, you can query <c>db.load.avg</c> only. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -248,7 +247,7 @@ namespace Amazon.PI.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the token, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -267,8 +266,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property PartitionBy. 
         /// <para>
-        /// For each dimension specified in <code>GroupBy</code>, specify a secondary dimension
-        /// to further subdivide the partition keys in the response. 
+        /// For each dimension specified in <c>GroupBy</c>, specify a secondary dimension to further
+        /// subdivide the partition keys in the response. 
         /// </para>
         /// </summary>
         public DimensionGroup PartitionBy
@@ -292,29 +291,28 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>1</code> (one second)
+        ///  <c>1</c> (one second)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>60</code> (one minute)
+        ///  <c>60</c> (one minute)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>300</code> (five minutes)
+        ///  <c>300</c> (five minutes)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>3600</code> (one hour)
+        ///  <c>3600</c> (one hour)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>86400</code> (twenty-four hours)
+        ///  <c>86400</c> (twenty-four hours)
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify <code>PeriodInSeconds</code>, then Performance Insights chooses
-        /// a value for you, with a goal of returning roughly 100-200 data points in the response.
-        /// 
+        /// If you don't specify <c>PeriodInSeconds</c>, then Performance Insights chooses a value
+        /// for you, with a goal of returning roughly 100-200 data points in the response. 
         /// </para>
         /// </summary>
         public int PeriodInSeconds
@@ -337,11 +335,11 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RDS</code> 
+        ///  <c>RDS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DOCDB</code> 
+        ///  <c>DOCDB</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -362,13 +360,13 @@ namespace Amazon.PI.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The date and time specifying the beginning of the requested time series data. You
-        /// must specify a <code>StartTime</code> within the past 7 days. The value specified
-        /// is <i>inclusive</i>, which means that data points equal to or greater than <code>StartTime</code>
-        /// are returned. 
+        /// must specify a <c>StartTime</c> within the past 7 days. The value specified is <i>inclusive</i>,
+        /// which means that data points equal to or greater than <c>StartTime</c> are returned.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The value for <code>StartTime</code> must be earlier than the value for <code>EndTime</code>.
+        /// The value for <c>StartTime</c> must be earlier than the value for <c>EndTime</c>.
         /// 
         /// </para>
         /// </summary>

@@ -39,8 +39,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Crawls. 
         /// <para>
-        /// A list of <code>CrawlerHistory</code> objects representing the crawl runs that meet
-        /// your criteria.
+        /// A list of <c>CrawlerHistory</c> objects representing the crawl runs that meet your
+        /// criteria.
         /// </para>
         /// </summary>
         public List<CrawlerHistory> Crawls

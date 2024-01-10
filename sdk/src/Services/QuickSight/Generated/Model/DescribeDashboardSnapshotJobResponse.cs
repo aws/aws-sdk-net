@@ -49,7 +49,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the snapshot job. The job ARN is generated when
-        /// you start a new job with a <code>StartDashboardSnapshotJob</code> API call.
+        /// you start a new job with a <c>StartDashboardSnapshotJob</c> API call.
         /// </para>
         /// </summary>
         public string Arn
@@ -129,19 +129,19 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The job was completed successfully.
+        ///  <c>COMPLETED</c> - The job was completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The job failed to execute.
+        ///  <c>FAILED</c> - The job failed to execute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUEUED</code> - The job is queued and hasn't started yet.
+        ///  <c>QUEUED</c> - The job is queued and hasn't started yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code> - The job is still running.
+        ///  <c>RUNNING</c> - The job is still running.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -197,7 +197,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SnapshotConfiguration. 
         /// <para>
         /// The snapshot configuration of the job. This information is provided when you make
-        /// a <code>StartDashboardSnapshotJob</code> API call.
+        /// a <c>StartDashboardSnapshotJob</c> API call.
         /// </para>
         /// </summary>
         public SnapshotConfiguration SnapshotConfiguration
@@ -216,7 +216,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SnapshotJobId. 
         /// <para>
         /// The ID of the job to be described. The job ID is set when you start a new job with
-        /// a <code>StartDashboardSnapshotJob</code> API call.
+        /// a <c>StartDashboardSnapshotJob</c> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -254,7 +254,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property UserConfiguration. 
         /// <para>
         /// The user configuration for the snapshot job. This information is provided when you
-        /// make a <code>StartDashboardSnapshotJob</code> API call.
+        /// make a <c>StartDashboardSnapshotJob</c> API call.
         /// </para>
         /// </summary>
         public SnapshotUserConfigurationRedacted UserConfiguration

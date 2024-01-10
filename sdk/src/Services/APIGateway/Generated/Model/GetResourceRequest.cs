@@ -42,10 +42,10 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Embed. 
         /// <para>
         /// A query parameter to retrieve the specified resources embedded in the returned Resource
-        /// representation in the response. This <code>embed</code> parameter value is a list
-        /// of comma-separated strings. Currently, the request supports only retrieval of the
-        /// embedded Method resources this way. The query parameter value must be a single-valued
-        /// list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</code>.
+        /// representation in the response. This <c>embed</c> parameter value is a list of comma-separated
+        /// strings. Currently, the request supports only retrieval of the embedded Method resources
+        /// this way. The query parameter value must be a single-valued list and contain the <c>"methods"</c>
+        /// string. For example, <c>GET /restapis/{restapi_id}/resources/{resource_id}?embed=methods</c>.
         /// </para>
         /// </summary>
         public List<string> Embed

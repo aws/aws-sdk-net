@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Information about a <code>Complaint</code> event.
+    /// Information about a <c>Complaint</c> event.
     /// </summary>
     public partial class Complaint
     {
@@ -39,8 +39,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ComplaintFeedbackType. 
         /// <para>
-        ///  The value of the <code>Feedback-Type</code> field from the feedback report received
-        /// from the ISP. 
+        ///  The value of the <c>Feedback-Type</c> field from the feedback report received from
+        /// the ISP. 
         /// </para>
         /// </summary>
         public string ComplaintFeedbackType
@@ -58,9 +58,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ComplaintSubType. 
         /// <para>
-        ///  Can either be <code>null</code> or <code>OnAccountSuppressionList</code>. If the
-        /// value is <code>OnAccountSuppressionList</code>, SES accepted the message, but didn't
-        /// attempt to send it because it was on the account-level suppression list. 
+        ///  Can either be <c>null</c> or <c>OnAccountSuppressionList</c>. If the value is <c>OnAccountSuppressionList</c>,
+        /// SES accepted the message, but didn't attempt to send it because it was on the account-level
+        /// suppression list. 
         /// </para>
         /// </summary>
         public string ComplaintSubType

@@ -36,48 +36,48 @@ namespace Amazon.Kendra.Model
     /// You can filter results using attributes for your particular documents. The attributes
     /// must exist in your index. For example, if your documents include the custom attribute
     /// "Department", you can filter documents that belong to the "HR" department. You would
-    /// use the <code>EqualsTo</code> operation to filter results or documents with "Department"
+    /// use the <c>EqualsTo</c> operation to filter results or documents with "Department"
     /// equals to "HR".
     /// </para>
     ///  
     /// <para>
-    /// You can use <code>AndAllFilters</code> and <code>AndOrFilters</code> in combination
-    /// with each other or with other operations such as <code>EqualsTo</code>. For example:
+    /// You can use <c>AndAllFilters</c> and <c>AndOrFilters</c> in combination with each
+    /// other or with other operations such as <c>EqualsTo</c>. For example:
     /// </para>
     ///  
     /// <para>
-    ///  <code>AndAllFilters</code> 
+    ///  <c>AndAllFilters</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>EqualsTo</code>: "Department", "HR"
+    ///  <c>EqualsTo</c>: "Department", "HR"
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AndOrFilters</code> 
+    ///  <c>AndOrFilters</c> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ContainsAny</code>: "Project Name", ["new hires", "new hiring"]
+    ///  <c>ContainsAny</c>: "Project Name", ["new hires", "new hiring"]
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// This example filters results or documents that belong to the HR department <i>and</i>
     /// belong to projects that contain "new hires" <i>or</i> "new hiring" in the project
-    /// name (must use <code>ContainAny</code> with <code>StringListValue</code>). This example
-    /// is filtering with a depth of 2.
+    /// name (must use <c>ContainAny</c> with <c>StringListValue</c>). This example is filtering
+    /// with a depth of 2.
     /// </para>
     ///  
     /// <para>
-    /// You cannot filter more than a depth of 2, otherwise you receive a <code>ValidationException</code>
+    /// You cannot filter more than a depth of 2, otherwise you receive a <c>ValidationException</c>
     /// exception with the message "AttributeFilter cannot have a depth of more than 2." Also,
-    /// if you use more than 10 attribute filters in a given list for <code>AndAllFilters</code>
-    /// or <code>OrAllFilters</code>, you receive a <code>ValidationException</code> with
-    /// the message "AttributeFilter cannot have a length of more than 10".
+    /// if you use more than 10 attribute filters in a given list for <c>AndAllFilters</c>
+    /// or <c>OrAllFilters</c>, you receive a <c>ValidationException</c> with the message
+    /// "AttributeFilter cannot have a length of more than 10".
     /// </para>
     ///  
     /// <para>
-    /// For examples of using <code>AttributeFilter</code>, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using
+    /// For examples of using <c>AttributeFilter</c>, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/filtering.html#search-filtering">Using
     /// document attributes to filter search results</a>.
     /// </para>
     /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AndAllFilters. 
         /// <para>
-        /// Performs a logical <code>AND</code> operation on all filters that you specify.
+        /// Performs a logical <c>AND</c> operation on all filters that you specify.
         /// </para>
         /// </summary>
         public List<AttributeFilter> AndAllFilters
@@ -173,7 +173,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Performs a greater than operation on document attributes/fields and their values.
         /// Use with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
-        /// attribute type</a> <code>Date</code> or <code>Long</code>.
+        /// attribute type</a> <c>Date</c> or <c>Long</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThan
@@ -193,7 +193,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Performs a greater or equals than operation on document attributes/fields and their
         /// values. Use with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
-        /// attribute type</a> <code>Date</code> or <code>Long</code>.
+        /// attribute type</a> <c>Date</c> or <c>Long</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThanOrEquals
@@ -213,7 +213,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Performs a less than operation on document attributes/fields and their values. Use
         /// with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
-        /// attribute type</a> <code>Date</code> or <code>Long</code>.
+        /// attribute type</a> <c>Date</c> or <c>Long</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThan
@@ -233,7 +233,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Performs a less than or equals operation on document attributes/fields and their values.
         /// Use with the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_DocumentAttributeValue.html">document
-        /// attribute type</a> <code>Date</code> or <code>Long</code>.
+        /// attribute type</a> <c>Date</c> or <c>Long</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThanOrEquals
@@ -251,7 +251,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property NotFilter. 
         /// <para>
-        /// Performs a logical <code>NOT</code> operation on all filters that you specify.
+        /// Performs a logical <c>NOT</c> operation on all filters that you specify.
         /// </para>
         /// </summary>
         public AttributeFilter NotFilter
@@ -269,7 +269,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OrAllFilters. 
         /// <para>
-        /// Performs a logical <code>OR</code> operation on all filters that you specify.
+        /// Performs a logical <c>OR</c> operation on all filters that you specify.
         /// </para>
         /// </summary>
         public List<AttributeFilter> OrAllFilters

@@ -90,13 +90,13 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property KMSKeyDetails. 
         /// <para>
-        /// A <code>KMSKeyDetails</code> object that contains:
+        /// A <c>KMSKeyDetails</c> object that contains:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The encryption option for this repository association. It is either owned by Amazon
-        /// Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer
-        /// managed (<code>CUSTOMER_MANAGED_CMK</code>).
+        /// Web Services Key Management Service (KMS) (<c>AWS_OWNED_CMK</c>) or customer managed
+        /// (<c>CUSTOMER_MANAGED_CMK</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,14 +144,14 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A <i>tag key</i> (for example, <code>CostCenter</code>, <code>Environment</code>,
-        /// <code>Project</code>, or <code>Secret</code>). Tag keys are case sensitive.
+        /// A <i>tag key</i> (for example, <c>CostCenter</c>, <c>Environment</c>, <c>Project</c>,
+        /// or <c>Secret</c>). Tag keys are case sensitive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An optional field known as a <i>tag value</i> (for example, <code>111122223333</code>,
-        /// <code>Production</code>, or a team name). Omitting the tag value is the same as using
-        /// an empty string. Like tag keys, tag values are case sensitive.
+        /// An optional field known as a <i>tag value</i> (for example, <c>111122223333</c>, <c>Production</c>,
+        /// or a team name). Omitting the tag value is the same as using an empty string. Like
+        /// tag keys, tag values are case sensitive.
         /// </para>
         ///  </li> </ul>
         /// </summary>

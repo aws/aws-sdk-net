@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEndpointConfig operation.
-    /// Returns the description of an endpoint configuration created using the <code>CreateEndpointConfig</code>
+    /// Returns the description of an endpoint configuration created using the <c>CreateEndpointConfig</c>
     /// API.
     /// </summary>
     public partial class DescribeEndpointConfigRequest : AmazonSageMakerRequest

@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <code>LaunchTemplateId</code> or the <code>LaunchTemplateName</code>,
+        /// You must specify either the <c>LaunchTemplateId</c> or the <c>LaunchTemplateName</c>,
         /// but not both.
         /// </para>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>,
+        /// You must specify either the <c>LaunchTemplateName</c> or the <c>LaunchTemplateId</c>,
         /// but not both.
         /// </para>
         /// </summary>

@@ -51,11 +51,11 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To default to crash consistent snapshot if the pre script fails, specify <code>true</code>.
+        /// To default to crash consistent snapshot if the pre script fails, specify <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To skip the instance for snapshot creation if the pre script fails, specify <code>false</code>.
+        /// To skip the instance for snapshot creation if the pre script fails, specify <c>false</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -86,14 +86,14 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are automating VSS backups, specify <code>AWS_VSS_BACKUP</code>. In this case,
-        /// Amazon Data Lifecycle Manager automatically uses the <code>AWSEC2-CreateVssSnapshot</code>
-        /// SSM document.
+        /// If you are automating VSS backups, specify <c>AWS_VSS_BACKUP</c>. In this case, Amazon
+        /// Data Lifecycle Manager automatically uses the <c>AWSEC2-CreateVssSnapshot</c> SSM
+        /// document.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you are automating application-consistent snapshots for SAP HANA workloads, specify
-        /// <code>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</code>.
+        /// <c>AWSSystemsManagerSAP-CreateDLMSnapshotForSAPHANA</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -124,7 +124,7 @@ namespace Amazon.DLM.Model
         ///  <ul> <li> 
         /// <para>
         /// If you are using custom SSM documents or automating application-consistent snapshots
-        /// of SAP HANA workloads, specify <code>AWS_SYSTEMS_MANAGER</code>.
+        /// of SAP HANA workloads, specify <c>AWS_SYSTEMS_MANAGER</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -197,7 +197,7 @@ namespace Amazon.DLM.Model
         ///  </li> </ul> 
         /// <para>
         /// If you do not want Amazon Data Lifecycle Manager to retry failed scripts, specify
-        /// <code>0</code>.
+        /// <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -226,22 +226,22 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To run a pre script only, specify <code>PRE</code>. In this case, Amazon Data Lifecycle
-        /// Manager calls the SSM document with the <code>pre-script</code> parameter before initiating
+        /// To run a pre script only, specify <c>PRE</c>. In this case, Amazon Data Lifecycle
+        /// Manager calls the SSM document with the <c>pre-script</c> parameter before initiating
         /// snapshot creation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To run a post script only, specify <code>POST</code>. In this case, Amazon Data Lifecycle
-        /// Manager calls the SSM document with the <code>post-script</code> parameter after initiating
+        /// To run a post script only, specify <c>POST</c>. In this case, Amazon Data Lifecycle
+        /// Manager calls the SSM document with the <c>post-script</c> parameter after initiating
         /// snapshot creation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To run both pre and post scripts, specify both <code>PRE</code> and <code>POST</code>.
-        /// In this case, Amazon Data Lifecycle Manager calls the SSM document with the <code>pre-script</code>
+        /// To run both pre and post scripts, specify both <c>PRE</c> and <c>POST</c>. In this
+        /// case, Amazon Data Lifecycle Manager calls the SSM document with the <c>pre-script</c>
         /// parameter before initiating snapshot creation, and then it calls the SSM document
-        /// again with the <code>post-script</code> parameter after initiating snapshot creation.
+        /// again with the <c>post-script</c> parameter after initiating snapshot creation.
         /// </para>
         ///  </li> </ul> 
         /// <para>

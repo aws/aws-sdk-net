@@ -38,8 +38,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for the celebrity recognition analysis job. Use <code>JobId</code>
-        /// to identify the job in a subsequent call to <code>GetCelebrityRecognition</code>.
+        /// The identifier for the celebrity recognition analysis job. Use <c>JobId</c> to identify
+        /// the job in a subsequent call to <c>GetCelebrityRecognition</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

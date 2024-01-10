@@ -175,8 +175,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>DeploymentStrategy</code> document type is an internal-use-only document
-        /// type reserved for AppConfig.
+        /// The <c>DeploymentStrategy</c> document type is an internal-use-only document type
+        /// reserved for AppConfig.
         /// </para>
         ///  </note>
         /// </summary>
@@ -204,15 +204,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aws</code> 
+        ///  <c>aws</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>amazon</code> 
+        ///  <c>amazon</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>amzn</code> 
+        ///  <c>amzn</c> 
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>
@@ -235,7 +235,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// A list of SSM documents required by a document. This parameter is used exclusively
         /// by AppConfig. When a user creates an AppConfig configuration in an SSM document, the
         /// user must also specify a required document for validation purposes. In this case,
-        /// an <code>ApplicationConfiguration</code> document requires an <code>ApplicationConfigurationSchema</code>
+        /// an <c>ApplicationConfiguration</c> document requires an <c>ApplicationConfigurationSchema</c>
         /// document for validation purposes. For more information, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/what-is-appconfig.html">What
         /// is AppConfig?</a> in the <i>AppConfig User Guide</i>.
         /// </para>
@@ -263,11 +263,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Key=OS,Value=Windows</code> 
+        ///  <c>Key=OS,Value=Windows</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=Environment,Value=Production</code> 
+        ///  <c>Key=Environment,Value=Production</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -292,7 +292,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// Specify a target type to define the kinds of resources the document can run on. For
-        /// example, to run a document on EC2 instances, specify the following value: <code>/AWS::EC2::Instance</code>.
+        /// example, to run a document on EC2 instances, specify the following value: <c>/AWS::EC2::Instance</c>.
         /// If you specify a value of '/' the document can run on all types of resources. If you
         /// don't specify a value, the document can't run on any resources. For a list of valid
         /// resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
@@ -317,7 +317,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property VersionName. 
         /// <para>
         /// An optional field specifying the version of the artifact you are creating with the
-        /// document. For example, <code>Release12.1</code>. This value is unique across all versions
+        /// document. For example, <c>Release12.1</c>. This value is unique across all versions
         /// of a document, and can't be changed.
         /// </para>
         /// </summary>

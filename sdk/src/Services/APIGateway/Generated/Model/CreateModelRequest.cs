@@ -118,8 +118,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
-        /// The schema for the model. For <code>application/json</code> models, this should be
-        /// JSON schema draft 4 model.
+        /// The schema for the model. For <c>application/json</c> models, this should be JSON
+        /// schema draft 4 model.
         /// </para>
         /// </summary>
         public string Schema

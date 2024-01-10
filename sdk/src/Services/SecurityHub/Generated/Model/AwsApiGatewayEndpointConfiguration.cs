@@ -42,9 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For an edge-optimized API, the endpoint type is <code>EDGE</code>. For a Regional
-        /// API, the endpoint type is <code>REGIONAL</code>. For a private API, the endpoint type
-        /// is <code>PRIVATE</code>.
+        /// For an edge-optimized API, the endpoint type is <c>EDGE</c>. For a Regional API, the
+        /// endpoint type is <c>REGIONAL</c>. For a private API, the endpoint type is <c>PRIVATE</c>.
         /// </para>
         /// </summary>
         public List<string> Types

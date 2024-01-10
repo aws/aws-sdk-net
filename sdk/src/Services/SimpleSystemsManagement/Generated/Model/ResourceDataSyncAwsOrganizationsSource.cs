@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Information about the <code>AwsOrganizationsSource</code> resource data sync source.
-    /// A sync source of this type can synchronize data from Organizations or, if an Amazon
-    /// Web Services organization isn't present, from multiple Amazon Web Services Regions.
+    /// Information about the <c>AwsOrganizationsSource</c> resource data sync source. A sync
+    /// source of this type can synchronize data from Organizations or, if an Amazon Web Services
+    /// organization isn't present, from multiple Amazon Web Services Regions.
     /// </summary>
     public partial class ResourceDataSyncAwsOrganizationsSource
     {
@@ -60,10 +60,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OrganizationSourceType. 
         /// <para>
-        /// If an Amazon Web Services organization is present, this is either <code>OrganizationalUnits</code>
-        /// or <code>EntireOrganization</code>. For <code>OrganizationalUnits</code>, the data
-        /// is aggregated from a set of organization units. For <code>EntireOrganization</code>,
-        /// the data is aggregated from the entire Amazon Web Services organization.
+        /// If an Amazon Web Services organization is present, this is either <c>OrganizationalUnits</c>
+        /// or <c>EntireOrganization</c>. For <c>OrganizationalUnits</c>, the data is aggregated
+        /// from a set of organization units. For <c>EntireOrganization</c>, the data is aggregated
+        /// from the entire Amazon Web Services organization.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

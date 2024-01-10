@@ -98,7 +98,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Interactive. 
         /// <para>
         /// Determines whether the execute command session is running in interactive mode. Amazon
-        /// ECS only supports initiating interactive sessions, so you must specify <code>true</code>
+        /// ECS only supports initiating interactive sessions, so you must specify <c>true</c>
         /// for this value.
         /// </para>
         /// </summary>

@@ -43,22 +43,22 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the status of a <code>ChangeToken</code> that you got by calling <a>GetChangeToken</a>.
-    /// <code>ChangeTokenStatus</code> is one of the following values:
+    /// Returns the status of a <c>ChangeToken</c> that you got by calling <a>GetChangeToken</a>.
+    /// <c>ChangeTokenStatus</c> is one of the following values:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PROVISIONED</code>: You requested the change token by calling <code>GetChangeToken</code>,
+    ///  <c>PROVISIONED</c>: You requested the change token by calling <c>GetChangeToken</c>,
     /// but you haven't used it yet in a call to create, update, or delete an AWS WAF object.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PENDING</code>: AWS WAF is propagating the create, update, or delete request
-    /// to all AWS WAF servers.
+    ///  <c>PENDING</c>: AWS WAF is propagating the create, update, or delete request to all
+    /// AWS WAF servers.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>INSYNC</code>: Propagation is complete.
+    ///  <c>INSYNC</c>: Propagation is complete.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -70,7 +70,7 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property ChangeToken. 
         /// <para>
         /// The change token for which you want to get the status. This change token was previously
-        /// returned in the <code>GetChangeToken</code> response.
+        /// returned in the <c>GetChangeToken</c> response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

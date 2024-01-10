@@ -34,7 +34,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// 
     ///  
     /// <para>
-    /// These settings are set with the <code>SetSMSAttributes</code> action.
+    /// These settings are set with the <c>SetSMSAttributes</c> action.
     /// </para>
     /// </summary>
     public partial class GetSMSAttributesRequest : AmazonSimpleNotificationServiceRequest
@@ -44,8 +44,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A list of the individual attribute names, such as <code>MonthlySpendLimit</code>,
-        /// for which you want values.
+        /// A list of the individual attribute names, such as <c>MonthlySpendLimit</c>, for which
+        /// you want values.
         /// </para>
         ///  
         /// <para>

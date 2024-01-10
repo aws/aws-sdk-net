@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// Manual DB snapshot attributes are used to authorize other Amazon Web Services accounts
-    /// to restore a manual DB snapshot. For more information, see the <code>ModifyDBSnapshotAttribute</code>
+    /// to restore a manual DB snapshot. For more information, see the <c>ModifyDBSnapshotAttribute</c>
     /// API.
     /// </para>
     /// </summary>
@@ -50,9 +50,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The attribute named <code>restore</code> refers to the list of Amazon Web Services
-        /// accounts that have permission to copy or restore the manual DB cluster snapshot. For
-        /// more information, see the <code>ModifyDBSnapshotAttribute</code> API action.
+        /// The attribute named <c>restore</c> refers to the list of Amazon Web Services accounts
+        /// that have permission to copy or restore the manual DB cluster snapshot. For more information,
+        /// see the <c>ModifyDBSnapshotAttribute</c> API action.
         /// </para>
         /// </summary>
         public string AttributeName
@@ -74,11 +74,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>AttributeName</code> field is set to <code>restore</code>, then this
-        /// element returns a list of IDs of the Amazon Web Services accounts that are authorized
-        /// to copy or restore the manual DB snapshot. If a value of <code>all</code> is in the
-        /// list, then the manual DB snapshot is public and available for any Amazon Web Services
-        /// account to copy or restore.
+        /// If the <c>AttributeName</c> field is set to <c>restore</c>, then this element returns
+        /// a list of IDs of the Amazon Web Services accounts that are authorized to copy or restore
+        /// the manual DB snapshot. If a value of <c>all</c> is in the list, then the manual DB
+        /// snapshot is public and available for any Amazon Web Services account to copy or restore.
         /// </para>
         /// </summary>
         public List<string> AttributeValues

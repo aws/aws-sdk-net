@@ -156,8 +156,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>,
-        /// <code>Categorical</code>, and <code>FreeText</code>.
+        /// The type of this hyperparameter. The valid types are <c>Integer</c>, <c>Continuous</c>,
+        /// <c>Categorical</c>, and <c>FreeText</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

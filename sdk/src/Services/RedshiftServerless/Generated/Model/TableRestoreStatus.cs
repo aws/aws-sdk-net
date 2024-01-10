@@ -54,7 +54,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// A message that explains the returned status. For example, if the status of the operation
-        /// is <code>FAILED</code>, the message explains why the operation failed.
+        /// is <c>FAILED</c>, the message explains why the operation failed.
         /// </para>
         /// </summary>
         public string Message
@@ -235,8 +235,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// A value that describes the current state of the table restore request. Possible values
-        /// are <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>,
-        /// and <code>IN_PROGRESS</code>.
+        /// are <c>SUCCEEDED</c>, <c>FAILED</c>, <c>CANCELED</c>, <c>PENDING</c>, and <c>IN_PROGRESS</c>.
         /// </para>
         /// </summary>
         public string Status

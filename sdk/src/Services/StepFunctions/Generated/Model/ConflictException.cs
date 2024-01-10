@@ -31,7 +31,7 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Updating or deleting a resource can cause an inconsistent state. This error occurs
     /// when there're concurrent requests for <a>DeleteStateMachineVersion</a>, <a>PublishStateMachineVersion</a>,
-    /// or <a>UpdateStateMachine</a> with the <code>publish</code> parameter set to <code>true</code>.
+    /// or <a>UpdateStateMachine</a> with the <c>publish</c> parameter set to <c>true</c>.
     /// 
     ///  
     /// <para>

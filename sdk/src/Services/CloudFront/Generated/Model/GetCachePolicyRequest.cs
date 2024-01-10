@@ -44,8 +44,8 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// To get a cache policy, you must provide the policy's identifier. If the cache policy
     /// is attached to a distribution's cache behavior, you can get the policy's identifier
-    /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-    /// policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.
+    /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache policy is not
+    /// attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
     /// </para>
     /// </summary>
     public partial class GetCachePolicyRequest : AmazonCloudFrontRequest
@@ -56,9 +56,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier for the cache policy. If the cache policy is attached to a distribution's
-        /// cache behavior, you can get the policy's identifier using <code>ListDistributions</code>
-        /// or <code>GetDistribution</code>. If the cache policy is not attached to a cache behavior,
-        /// you can get the identifier using <code>ListCachePolicies</code>.
+        /// cache behavior, you can get the policy's identifier using <c>ListDistributions</c>
+        /// or <c>GetDistribution</c>. If the cache policy is not attached to a cache behavior,
+        /// you can get the identifier using <c>ListCachePolicies</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

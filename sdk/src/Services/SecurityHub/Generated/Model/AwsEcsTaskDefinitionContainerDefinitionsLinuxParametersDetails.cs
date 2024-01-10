@@ -82,8 +82,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InitProcessEnabled. 
         /// <para>
-        /// Whether to run an <code>init</code> process inside the container that forwards signals
-        /// and reaps processes. 
+        /// Whether to run an <c>init</c> process inside the container that forwards signals and
+        /// reaps processes. 
         /// </para>
         /// </summary>
         public bool InitProcessEnabled

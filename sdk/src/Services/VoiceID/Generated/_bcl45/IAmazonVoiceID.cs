@@ -57,15 +57,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -98,15 +98,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -141,15 +141,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -184,15 +184,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -225,15 +225,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -266,15 +266,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -307,15 +307,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -344,15 +344,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -382,15 +382,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -420,15 +420,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -457,15 +457,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -494,15 +494,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -534,15 +534,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -574,15 +574,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -614,8 +614,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -647,8 +647,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -680,8 +680,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -713,8 +713,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -746,8 +746,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -779,8 +779,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -812,8 +812,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -845,8 +845,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -878,8 +878,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -911,8 +911,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -944,8 +944,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -977,8 +977,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -999,7 +999,7 @@ namespace Amazon.VoiceID
         /// <summary>
         /// Disassociates the fraudsters from the watchlist specified. Voice ID always expects
         /// a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster
-        /// from its only watchlist, a <code>ValidationException</code> is thrown.
+        /// from its only watchlist, a <c>ValidationException</c> is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFraudster service method.</param>
         /// 
@@ -1009,15 +1009,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1035,7 +1035,7 @@ namespace Amazon.VoiceID
         /// <summary>
         /// Disassociates the fraudsters from the watchlist specified. Voice ID always expects
         /// a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster
-        /// from its only watchlist, a <code>ValidationException</code> is thrown.
+        /// from its only watchlist, a <c>ValidationException</c> is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFraudster service method.</param>
         /// <param name="cancellationToken">
@@ -1048,15 +1048,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1086,15 +1086,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1124,15 +1124,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1209,9 +1209,9 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Lists all the fraudster registration jobs in the domain with the given <code>JobStatus</code>.
-        /// If <code>JobStatus</code> is not provided, this lists all fraudster registration jobs
-        /// in the given domain.
+        /// Lists all the fraudster registration jobs in the domain with the given <c>JobStatus</c>.
+        /// If <c>JobStatus</c> is not provided, this lists all fraudster registration jobs in
+        /// the given domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFraudsterRegistrationJobs service method.</param>
         /// 
@@ -1224,8 +1224,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1241,9 +1241,9 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Lists all the fraudster registration jobs in the domain with the given <code>JobStatus</code>.
-        /// If <code>JobStatus</code> is not provided, this lists all fraudster registration jobs
-        /// in the given domain.
+        /// Lists all the fraudster registration jobs in the domain with the given <c>JobStatus</c>.
+        /// If <c>JobStatus</c> is not provided, this lists all fraudster registration jobs in
+        /// the given domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFraudsterRegistrationJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1259,8 +1259,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1292,8 +1292,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1325,8 +1325,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1345,8 +1345,8 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>.
-        /// If <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker
+        /// Lists all the speaker enrollment jobs in the domain with the specified <c>JobStatus</c>.
+        /// If <c>JobStatus</c> is not provided, this lists all jobs with all possible speaker
         /// enrollment job statuses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSpeakerEnrollmentJobs service method.</param>
@@ -1360,8 +1360,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1377,8 +1377,8 @@ namespace Amazon.VoiceID
 
 
         /// <summary>
-        /// Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>.
-        /// If <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker
+        /// Lists all the speaker enrollment jobs in the domain with the specified <c>JobStatus</c>.
+        /// If <c>JobStatus</c> is not provided, this lists all jobs with all possible speaker
         /// enrollment job statuses.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSpeakerEnrollmentJobs service method.</param>
@@ -1395,8 +1395,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1428,8 +1428,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1461,8 +1461,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1494,8 +1494,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1527,8 +1527,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1560,8 +1560,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1593,8 +1593,8 @@ namespace Amazon.VoiceID
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1628,15 +1628,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -1674,15 +1674,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -1715,15 +1715,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -1756,15 +1756,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -1797,15 +1797,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -1838,15 +1838,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ServiceQuotaExceededException">
         /// The request exceeded the service quota. Refer to <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#voiceid-quotas">Voice
@@ -1879,15 +1879,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1916,15 +1916,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1953,15 +1953,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -1990,15 +1990,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -2029,15 +2029,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -2068,15 +2068,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -2106,15 +2106,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.
@@ -2144,15 +2144,15 @@ namespace Amazon.VoiceID
         /// and try again.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ConflictException">
-        /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-        /// message for more details.
+        /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.InternalServerException">
         /// The request failed due to an unknown error on the server side.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ResourceNotFoundException">
-        /// The specified resource cannot be found. Check the <code>ResourceType</code> and error
-        /// message for more details.
+        /// The specified resource cannot be found. Check the <c>ResourceType</c> and error message
+        /// for more details.
         /// </exception>
         /// <exception cref="Amazon.VoiceID.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please slow down your request rate.

@@ -31,9 +31,8 @@ namespace Amazon.StorageGateway.Model
     /// <summary>
     /// Container for the parameters to the DescribeTapes operation.
     /// Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes.
-    /// If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes
-    /// associated with the specified gateway. This operation is only supported in the tape
-    /// gateway type.
+    /// If a <c>TapeARN</c> is not specified, returns a description of all virtual tapes associated
+    /// with the specified gateway. This operation is only supported in the tape gateway type.
     /// </summary>
     public partial class DescribeTapesRequest : AmazonStorageGatewayRequest
     {
@@ -85,8 +84,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A marker value, obtained in a previous call to <code>DescribeTapes</code>. This marker
-        /// indicates which page of results to retrieve.
+        /// A marker value, obtained in a previous call to <c>DescribeTapes</c>. This marker indicates
+        /// which page of results to retrieve.
         /// </para>
         ///  
         /// <para>

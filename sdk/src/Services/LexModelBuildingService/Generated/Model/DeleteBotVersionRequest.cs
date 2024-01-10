@@ -35,7 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.
+    /// This operation requires permissions for the <c>lex:DeleteBotVersion</c> action.
     /// </para>
     /// </summary>
     public partial class DeleteBotVersionRequest : AmazonLexModelBuildingServiceRequest
@@ -65,8 +65,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the bot to delete. You cannot delete the <code>$LATEST</code> version
-        /// of the bot. To delete the <code>$LATEST</code> version, use the <a>DeleteBot</a> operation.
+        /// The version of the bot to delete. You cannot delete the <c>$LATEST</c> version of
+        /// the bot. To delete the <c>$LATEST</c> version, use the <a>DeleteBot</a> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -39,9 +39,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CapacityReservationPreference. 
         /// <para>
-        ///  Indicates the instance's Capacity Reservation preferences. If equal to <code>open</code>,
+        ///  Indicates the instance's Capacity Reservation preferences. If equal to <c>open</c>,
         /// the instance can run in any open Capacity Reservation that has matching attributes
-        /// (instance type, platform, Availability Zone). If equal to <code>none</code>, the instance
+        /// (instance type, platform, Availability Zone). If equal to <c>none</c>, the instance
         /// avoids running in a Capacity Reservation even if one is available. The instance runs
         /// in On-Demand capacity. 
         /// </para>

@@ -43,10 +43,10 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AdvancedOptions. 
         /// <para>
-        /// Only supports the <code>override_main_response_version</code> parameter and not other
-        /// advanced options. You can only include this option when upgrading to an OpenSearch
-        /// version. Specifies whether the domain reports its version as 7.10 so that it continues
-        /// to work with Elasticsearch OSS clients and plugins.
+        /// Only supports the <c>override_main_response_version</c> parameter and not other advanced
+        /// options. You can only include this option when upgrading to an OpenSearch version.
+        /// Specifies whether the domain reports its version as 7.10 so that it continues to work
+        /// with Elasticsearch OSS clients and plugins.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdvancedOptions

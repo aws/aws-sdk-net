@@ -72,7 +72,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>128</code>, <code>192</code>, or <code>256</code>. 
+        ///  <c>128</c>, <c>192</c>, or <c>256</c>. 
         /// </para>
         ///  
         /// <para>
@@ -126,7 +126,7 @@ namespace Amazon.ElasticTranscoder.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>s3-aws-kms:</b> Amazon S3 calls the Amazon Key Management Service, which creates
-        /// and manages the keys that are used for encrypting your files. If you specify <code>s3-aws-kms</code>
+        /// and manages the keys that are used for encrypting your files. If you specify <c>s3-aws-kms</c>
         /// and you don't want to use the default key, you must add the AWS-KMS key that you want
         /// to use to your pipeline.
         /// </para>

@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describe details about a Windows image with Windows fast launch enabled that meets
-    /// the requested criteria. Criteria are defined by the <code>DescribeFastLaunchImages</code>
+    /// the requested criteria. Criteria are defined by the <c>DescribeFastLaunchImages</c>
     /// action filters.
     /// </summary>
     public partial class DescribeFastLaunchImagesSuccessItem
@@ -123,7 +123,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type that Amazon EC2 uses for pre-provisioning the Windows AMI. Supported
-        /// values include: <code>snapshot</code>.
+        /// values include: <c>snapshot</c>.
         /// </para>
         /// </summary>
         public FastLaunchResourceType ResourceType

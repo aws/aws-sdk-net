@@ -38,7 +38,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property AuthorizationData. 
         /// <para>
-        /// A list of authorization token data objects that correspond to the <code>registryIds</code>
+        /// A list of authorization token data objects that correspond to the <c>registryIds</c>
         /// values in the request.
         /// </para>
         /// </summary>

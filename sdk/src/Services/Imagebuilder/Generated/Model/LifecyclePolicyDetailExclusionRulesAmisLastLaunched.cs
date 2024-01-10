@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The integer number of units for the time period. For example <code>6</code> (months).
+        /// The integer number of units for the time period. For example <c>6</c> (months).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=365)]

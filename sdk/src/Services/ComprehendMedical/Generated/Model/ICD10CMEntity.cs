@@ -90,7 +90,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        ///  The category of the entity. InferICD10CM detects entities in the <code>MEDICAL_CONDITION</code>
+        ///  The category of the entity. InferICD10CM detects entities in the <c>MEDICAL_CONDITION</c>
         /// category. 
         /// </para>
         /// </summary>
@@ -205,8 +205,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Traits. 
         /// <para>
         /// Provides Contextual information for the entity. The traits recognized by InferICD10CM
-        /// are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION.</code>
-        /// 
+        /// are <c>DIAGNOSIS</c>, <c>SIGN</c>, <c>SYMPTOM</c>, and <c>NEGATION.</c> 
         /// </para>
         /// </summary>
         public List<ICD10CMTrait> Traits
@@ -225,7 +224,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Describes the specific type of entity with category of entities. InferICD10CM detects
-        /// entities of the type <code>DX_NAME</code> and <code>TIME_EXPRESSION</code>.
+        /// entities of the type <c>DX_NAME</c> and <c>TIME_EXPRESSION</c>.
         /// </para>
         /// </summary>
         public ICD10CMEntityType Type

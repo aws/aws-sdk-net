@@ -41,8 +41,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property EmptyDir. 
         /// <para>
-        /// Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. For more
-        /// information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a>
+        /// Specifies the configuration of a Kubernetes <c>emptyDir</c> volume. For more information,
+        /// see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a>
         /// in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -61,8 +61,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property HostPath. 
         /// <para>
-        /// Specifies the configuration of a Kubernetes <code>hostPath</code> volume. For more
-        /// information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a>
+        /// Specifies the configuration of a Kubernetes <c>hostPath</c> volume. For more information,
+        /// see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a>
         /// in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Secret. 
         /// <para>
-        /// Specifies the configuration of a Kubernetes <code>secret</code> volume. For more information,
+        /// Specifies the configuration of a Kubernetes <c>secret</c> volume. For more information,
         /// see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a>
         /// in the <i>Kubernetes documentation</i>.
         /// </para>

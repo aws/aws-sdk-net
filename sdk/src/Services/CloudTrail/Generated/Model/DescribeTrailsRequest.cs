@@ -68,7 +68,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        ///  <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c> 
         /// </para>
         ///  
         /// <para>
@@ -77,8 +77,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If an empty list is specified and <code>IncludeShadowTrails</code> is false, then
-        /// information for all trails in the current Region is returned.
+        /// If an empty list is specified and <c>IncludeShadowTrails</c> is false, then information
+        /// for all trails in the current Region is returned.
         /// </para>
         ///  </li> <li> 
         /// <para>

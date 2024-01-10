@@ -31,13 +31,13 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListVPCAssociationAuthorizations operation.
     /// Gets a list of the VPCs that were created by other accounts and that can be associated
-    /// with a specified hosted zone because you've submitted one or more <code>CreateVPCAssociationAuthorization</code>
+    /// with a specified hosted zone because you've submitted one or more <c>CreateVPCAssociationAuthorization</c>
     /// requests. 
     /// 
     ///  
     /// <para>
-    /// The response includes a <code>VPCs</code> element with a <code>VPC</code> child element
-    /// for each VPC that can be associated with the hosted zone.
+    /// The response includes a <c>VPCs</c> element with a <c>VPC</c> child element for each
+    /// VPC that can be associated with the hosted zone.
     /// </para>
     /// </summary>
     public partial class ListVPCAssociationAuthorizationsRequest : AmazonRoute53Request
@@ -69,10 +69,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  <i>Optional</i>: If a response includes a <code>NextToken</code> element, there are
-        /// more VPCs that can be associated with the specified hosted zone. To get the next page
-        /// of results, submit another request, and include the value of <code>NextToken</code>
-        /// from the response in the <code>nexttoken</code> parameter in another <code>ListVPCAssociationAuthorizations</code>
+        ///  <i>Optional</i>: If a response includes a <c>NextToken</c> element, there are more
+        /// VPCs that can be associated with the specified hosted zone. To get the next page of
+        /// results, submit another request, and include the value of <c>NextToken</c> from the
+        /// response in the <c>nexttoken</c> parameter in another <c>ListVPCAssociationAuthorizations</c>
         /// request.
         /// </para>
         /// </summary>
@@ -93,8 +93,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         ///  <i>Optional</i>: An integer that specifies the maximum number of VPCs that you want
-        /// Amazon Route 53 to return. If you don't specify a value for <code>MaxResults</code>,
-        /// Route 53 returns up to 50 VPCs per page.
+        /// Amazon Route 53 to return. If you don't specify a value for <c>MaxResults</c>, Route
+        /// 53 returns up to 50 VPCs per page.
         /// </para>
         /// </summary>
         public string MaxResults

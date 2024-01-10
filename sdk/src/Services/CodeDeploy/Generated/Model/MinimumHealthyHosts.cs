@@ -43,12 +43,12 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HOST_COUNT</code>: The minimum number of healthy instances as an absolute value.
+        ///  <c>HOST_COUNT</c>: The minimum number of healthy instances as an absolute value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FLEET_PERCENT</code>: The minimum number of healthy instances as a percentage
-        /// of the total number of instances in the deployment.
+        ///  <c>FLEET_PERCENT</c>: The minimum number of healthy instances as a percentage of
+        /// the total number of instances in the deployment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In a call to the <code>GetDeploymentConfig</code>, CodeDeployDefault.OneAtATime returns
+        /// In a call to the <c>GetDeploymentConfig</c>, CodeDeployDefault.OneAtATime returns
         /// a minimum healthy instance type of MOST_CONCURRENCY and a value of 1. This means a
         /// deployment to only one instance at a time. (You cannot set the type to MOST_CONCURRENCY,
         /// only to HOST_COUNT or FLEET_PERCENT.) In addition, with CodeDeployDefault.OneAtATime,

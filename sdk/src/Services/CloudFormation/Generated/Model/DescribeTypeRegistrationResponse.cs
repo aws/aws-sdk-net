@@ -82,8 +82,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>,
-        /// this will be <code>null</code>.
+        /// For registration requests with a <c>ProgressStatus</c> of other than <c>COMPLETE</c>,
+        /// this will be <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -106,8 +106,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For registration requests with a <code>ProgressStatus</code> of other than <code>COMPLETE</code>,
-        /// this will be <code>null</code>.
+        /// For registration requests with a <c>ProgressStatus</c> of other than <c>COMPLETE</c>,
+        /// this will be <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

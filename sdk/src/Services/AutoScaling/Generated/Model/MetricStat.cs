@@ -74,8 +74,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The most commonly used metrics for predictive scaling are <code>Average</code> and
-        /// <code>Sum</code>.
+        /// The most commonly used metrics for predictive scaling are <c>Average</c> and <c>Sum</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

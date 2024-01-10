@@ -30,8 +30,8 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEventSourceMappings operation.
-    /// Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event
-    /// source mappings for a single event source.
+    /// Lists event source mappings. Specify an <c>EventSourceArn</c> to show only event source
+    /// mappings for a single event source.
     /// </summary>
     public partial class ListEventSourceMappingsRequest : AmazonLambdaRequest
     {
@@ -94,19 +94,19 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> – <code>MyFunction</code>.
+        ///  <b>Function name</b> – <c>MyFunction</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.
+        ///  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.
+        ///  <b>Version or Alias ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.
+        ///  <b>Partial ARN</b> – <c>123456789012:function:MyFunction</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

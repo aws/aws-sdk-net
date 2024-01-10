@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeIndexFields</code> request. Contains the index fields
-    /// configured for the domain specified in the request.
+    /// The result of a <c>DescribeIndexFields</c> request. Contains the index fields configured
+    /// for the domain specified in the request.
     /// </summary>
     public partial class DescribeIndexFieldsResponse : AmazonWebServiceResponse
     {

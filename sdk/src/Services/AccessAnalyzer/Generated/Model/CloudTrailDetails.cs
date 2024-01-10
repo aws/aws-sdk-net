@@ -102,7 +102,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Trails. 
         /// <para>
-        /// A <code>Trail</code> object that contains settings for a trail.
+        /// A <c>Trail</c> object that contains settings for a trail.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

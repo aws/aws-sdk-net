@@ -44,8 +44,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <para>
         /// The key type encrypted using DUKPT from a Base Derivation Key (BDK) and Key Serial
         /// Number (KSN). This must be less than or equal to the strength of the BDK. For example,
-        /// you can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code>
-        /// or <code>TDES_2KEY</code> 
+        /// you can't use <c>AES_128</c> as a derivation type for a BDK of <c>AES_128</c> or <c>TDES_2KEY</c>
+        /// 
         /// </para>
         /// </summary>
         public DukptDerivationType DukptKeyDerivationType
@@ -83,7 +83,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// Gets and sets the property InitializationVector. 
         /// <para>
         /// An input to cryptographic primitive used to provide the intial state. Typically the
-        /// <code>InitializationVector</code> must have a random or psuedo-random value, but sometimes
+        /// <c>InitializationVector</c> must have a random or psuedo-random value, but sometimes
         /// it only needs to be unpredictable or unique. If you don't provide a value, Amazon
         /// Web Services Payment Cryptography generates a random value.
         /// </para>

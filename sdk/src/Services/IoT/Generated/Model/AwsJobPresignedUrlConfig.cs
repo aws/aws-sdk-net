@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Configuration information for pre-signed URLs. Valid when <code>protocols</code> contains
+    /// Configuration information for pre-signed URLs. Valid when <c>protocols</c> contains
     /// HTTP.
     /// </summary>
     public partial class AwsJobPresignedUrlConfig

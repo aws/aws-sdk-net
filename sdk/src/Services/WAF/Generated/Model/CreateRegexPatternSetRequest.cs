@@ -43,28 +43,27 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Creates a <code>RegexPatternSet</code>. You then use <a>UpdateRegexPatternSet</a>
-    /// to specify the regular expression (regex) pattern that you want AWS WAF to search
-    /// for, such as <code>B[a@]dB[o0]t</code>. You can then configure AWS WAF to reject those
-    /// requests.
+    /// Creates a <c>RegexPatternSet</c>. You then use <a>UpdateRegexPatternSet</a> to specify
+    /// the regular expression (regex) pattern that you want AWS WAF to search for, such as
+    /// <c>B[a@]dB[o0]t</c>. You can then configure AWS WAF to reject those requests.
     /// </para>
     ///  
     /// <para>
-    /// To create and configure a <code>RegexPatternSet</code>, perform the following steps:
+    /// To create and configure a <c>RegexPatternSet</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of a <code>CreateRegexPatternSet</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of a <c>CreateRegexPatternSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit a <code>CreateRegexPatternSet</code> request.
+    /// Submit a <c>CreateRegexPatternSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of an <code>UpdateRegexPatternSet</code> request.
+    /// Use <c>GetChangeToken</c> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of an <c>UpdateRegexPatternSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -105,8 +104,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code>
-        /// after you create a <code>RegexPatternSet</code>.
+        /// A friendly name or description of the <a>RegexPatternSet</a>. You can't change <c>Name</c>
+        /// after you create a <c>RegexPatternSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

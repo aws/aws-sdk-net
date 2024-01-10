@@ -31,7 +31,7 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the CreateScheduledAction operation.
     /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
-    /// API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code>
+    /// API action. For example, you can create a schedule of when to run the <c>ResizeCluster</c>
     /// API operation.
     /// </summary>
     public partial class CreateScheduledActionRequest : AmazonRedshiftRequest
@@ -49,7 +49,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Enable. 
         /// <para>
         /// If true, the schedule is enabled. If false, the scheduled action does not trigger.
-        /// For more information about <code>state</code> of the scheduled action, see <a>ScheduledAction</a>.
+        /// For more information about <c>state</c> of the scheduled action, see <a>ScheduledAction</a>.
         /// 
         /// </para>
         /// </summary>
@@ -108,8 +108,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule in <code>at( )</code> or <code>cron( )</code> format. For more information
-        /// about this parameter, see <a>ScheduledAction</a>.
+        /// The schedule in <c>at( )</c> or <c>cron( )</c> format. For more information about
+        /// this parameter, see <a>ScheduledAction</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

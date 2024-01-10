@@ -68,7 +68,7 @@ namespace Amazon.Private5G.Model
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+        /// If you include <c>commitmentConfiguration</c> in the <c>ActivateNetworkSiteRequest</c>
         /// action, you must specify the following:
         /// </para>
         ///  <ul> <li> 
@@ -88,7 +88,7 @@ namespace Amazon.Private5G.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not include <code>commitmentConfiguration</code> in the <code>ActivateNetworkSiteRequest</code>
+        /// If you do not include <c>commitmentConfiguration</c> in the <c>ActivateNetworkSiteRequest</c>
         /// action, the commitment period is set to 60-days.
         /// </para>
         /// </summary>

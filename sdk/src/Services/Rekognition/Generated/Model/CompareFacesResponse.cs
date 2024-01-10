@@ -42,7 +42,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceMatches. 
         /// <para>
-        /// An array of faces in the target image that match the source image face. Each <code>CompareFacesMatch</code>
+        /// An array of faces in the target image that match the source image face. Each <c>CompareFacesMatch</c>
         /// object provides the bounding box, the confidence level that the bounding box contains
         /// a face, and the similarity score for the face in the bounding box and the face in
         /// the source image.
@@ -81,7 +81,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SourceImageOrientationCorrection. 
         /// <para>
-        /// The value of <code>SourceImageOrientationCorrection</code> is always null.
+        /// The value of <c>SourceImageOrientationCorrection</c> is always null.
         /// </para>
         ///  
         /// <para>
@@ -115,7 +115,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property TargetImageOrientationCorrection. 
         /// <para>
-        /// The value of <code>TargetImageOrientationCorrection</code> is always null.
+        /// The value of <c>TargetImageOrientationCorrection</c> is always null.
         /// </para>
         ///  
         /// <para>

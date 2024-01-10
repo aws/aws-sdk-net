@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The exclude period of <code>TimeRangeFilter</code> or <code>RelativeDatesFilter</code>.
+    /// The exclude period of <c>TimeRangeFilter</c> or <c>RelativeDatesFilter</c>.
     /// </summary>
     public partial class ExcludePeriodConfiguration
     {
@@ -82,11 +82,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> 
+        ///  <c>ENABLED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> 
+        ///  <c>DISABLED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

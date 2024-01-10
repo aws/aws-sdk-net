@@ -80,7 +80,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If there are more elements to be listed, this element is present and contains the
-        /// value that you can use for the <code>Marker</code> request parameter to continue listing
+        /// value that you can use for the <c>Marker</c> request parameter to continue listing
         /// your profiles where you left off.
         /// </para>
         /// </summary>

@@ -50,9 +50,8 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>applicationName</code> is specified, then <code>deploymentGroupName</code>
-        /// must be specified. If it is not specified, then <code>deploymentGroupName</code> must
-        /// not be specified. 
+        /// If <c>applicationName</c> is specified, then <c>deploymentGroupName</c> must be specified.
+        /// If it is not specified, then <c>deploymentGroupName</c> must not be specified. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -94,9 +93,8 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>deploymentGroupName</code> is specified, then <code>applicationName</code>
-        /// must be specified. If it is not specified, then <code>applicationName</code> must
-        /// not be specified. 
+        /// If <c>deploymentGroupName</c> is specified, then <c>applicationName</c> must be specified.
+        /// If it is not specified, then <c>applicationName</c> must not be specified. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -139,27 +137,27 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Created</code>: Include created deployments in the resulting list.
+        ///  <c>Created</c>: Include created deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Queued</code>: Include queued deployments in the resulting list.
+        ///  <c>Queued</c>: Include queued deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>In Progress</code>: Include in-progress deployments in the resulting list.
+        ///  <c>In Progress</c>: Include in-progress deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Succeeded</code>: Include successful deployments in the resulting list.
+        ///  <c>Succeeded</c>: Include successful deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: Include failed deployments in the resulting list.
+        ///  <c>Failed</c>: Include failed deployments in the resulting list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopped</code>: Include stopped deployments in the resulting list.
+        ///  <c>Stopped</c>: Include stopped deployments in the resulting list.
         /// </para>
         ///  </li> </ul>
         /// </summary>

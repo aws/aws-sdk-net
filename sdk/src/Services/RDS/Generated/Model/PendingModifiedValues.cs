@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <code>ModifyDBInstance</code>
-    /// operation and contains changes that will be applied during the next maintenance window.
+    /// This data type is used as a response element in the <c>ModifyDBInstance</c> operation
+    /// and contains changes that will be applied during the next maintenance window.
     /// </summary>
     public partial class PendingModifiedValues
     {
@@ -83,10 +83,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutomationMode. 
         /// <para>
-        /// The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all-paused</code>.
-        /// If <code>full</code>, the DB instance automates monitoring and instance recovery.
-        /// If <code>all-paused</code>, the instance pauses automation for the duration set by
-        /// <code>--resume-full-automation-mode-minutes</code>.
+        /// The automation mode of the RDS Custom DB instance: <c>full</c> or <c>all-paused</c>.
+        /// If <c>full</c>, the DB instance automates monitoring and instance recovery. If <c>all-paused</c>,
+        /// the instance pauses automation for the duration set by <c>--resume-full-automation-mode-minutes</c>.
         /// </para>
         /// </summary>
         public AutomationMode AutomationMode
@@ -297,8 +296,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>license-included</code> | <code>bring-your-own-license</code>
-        /// | <code>general-public-license</code> 
+        /// Valid values: <c>license-included</c> | <c>bring-your-own-license</c> | <c>general-public-license</c>
+        /// 
         /// </para>
         /// </summary>
         public string LicenseModel

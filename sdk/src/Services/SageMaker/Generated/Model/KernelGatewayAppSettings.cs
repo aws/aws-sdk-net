@@ -91,8 +91,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// To remove a Lifecycle Config, you must set <code>LifecycleConfigArns</code> to an
-        /// empty list.
+        /// To remove a Lifecycle Config, you must set <c>LifecycleConfigArns</c> to an empty
+        /// list.
         /// </para>
         ///  </note>
         /// </summary>

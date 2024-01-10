@@ -32,12 +32,12 @@ namespace Amazon.CostExplorer.Model
     /// Container for the parameters to the GetSavingsPlansUtilization operation.
     /// Retrieves the Savings Plans utilization for your account across date ranges with daily
     /// or monthly granularity. Management account in an organization have access to member
-    /// accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
-    /// to determine the possible dimension values.
+    /// accounts. You can use <c>GetDimensionValues</c> in <c>SAVINGS_PLANS</c> to determine
+    /// the possible dimension values.
     /// 
     ///  <note> 
     /// <para>
-    /// You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+    /// You can't group by any dimension values for <c>GetSavingsPlansUtilization</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -56,33 +56,32 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LINKED_ACCOUNT</code> 
+        ///  <c>LINKED_ACCOUNT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAVINGS_PLAN_ARN</code> 
+        ///  <c>SAVINGS_PLAN_ARN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAVINGS_PLANS_TYPE</code> 
+        ///  <c>SAVINGS_PLANS_TYPE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGION</code> 
+        ///  <c>REGION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAYMENT_OPTION</code> 
+        ///  <c>PAYMENT_OPTION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE_TYPE_FAMILY</code> 
+        ///  <c>INSTANCE_TYPE_FAMILY</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetSavingsPlansUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// object as the other operations, but only <code>AND</code> is supported among each
-        /// dimension.
+        ///  <c>GetSavingsPlansUtilization</c> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object as the other operations, but only <c>AND</c> is supported among each dimension.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -104,8 +103,8 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetSavingsPlansUtilization</code> operation supports only <code>DAILY</code>
-        /// and <code>MONTHLY</code> granularities.
+        /// The <c>GetSavingsPlansUtilization</c> operation supports only <c>DAILY</c> and <c>MONTHLY</c>
+        /// granularities.
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -127,31 +126,31 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// The following values are supported for <code>Key</code>:
+        /// The following values are supported for <c>Key</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UtilizationPercentage</code> 
+        ///  <c>UtilizationPercentage</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TotalCommitment</code> 
+        ///  <c>TotalCommitment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UsedCommitment</code> 
+        ///  <c>UsedCommitment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnusedCommitment</code> 
+        ///  <c>UnusedCommitment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetSavings</code> 
+        ///  <c>NetSavings</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
+        /// The supported values for <c>SortOrder</c> are <c>ASCENDING</c> and <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public SortDefinition SortBy
@@ -169,10 +168,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The time period that you want the usage and costs for. The <code>Start</code> date
-        /// must be within 13 months. The <code>End</code> date must be after the <code>Start</code>
-        /// date, and before the current date. Future dates can't be used as an <code>End</code>
-        /// date.
+        /// The time period that you want the usage and costs for. The <c>Start</c> date must
+        /// be within 13 months. The <c>End</c> date must be after the <c>Start</c> date, and
+        /// before the current date. Future dates can't be used as an <c>End</c> date.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

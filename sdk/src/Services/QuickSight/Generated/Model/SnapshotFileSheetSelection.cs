@@ -46,12 +46,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_VISUALS</code> - Selects all visuals that are on the sheet. This value
-        /// is required if the snapshot is a PDF.
+        ///  <c>ALL_VISUALS</c> - Selects all visuals that are on the sheet. This value is required
+        /// if the snapshot is a PDF.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SELECTED_VISUALS</code> - Select the visual that you want to add to the snapshot.
+        ///  <c>SELECTED_VISUALS</c> - Select the visual that you want to add to the snapshot.
         /// This value is required if the snapshot is a CSV or Excel workbook.
         /// </para>
         ///  </li> </ul>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of an <code>IndexDocuments</code> request. Contains the status of the indexing
+    /// The result of an <c>IndexDocuments</c> request. Contains the status of the indexing
     /// operation, including the fields being indexed.
     /// </summary>
     public partial class IndexDocumentsResponse : AmazonWebServiceResponse

@@ -45,7 +45,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property AwsAccountNumber. 
         /// <para>
-        /// The AWS account number specified in the <code>AccountSettings</code> container.
+        /// The AWS account number specified in the <c>AccountSettings</c> container.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=16)]
@@ -102,8 +102,8 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property MaxSlots. 
         /// <para>
         /// The maximum number of device slots that the AWS account can purchase. Each maximum
-        /// is expressed as an <code>offering-id:number</code> pair, where the <code>offering-id</code>
-        /// represents one of the IDs returned by the <code>ListOfferings</code> command.
+        /// is expressed as an <c>offering-id:number</c> pair, where the <c>offering-id</c> represents
+        /// one of the IDs returned by the <c>ListOfferings</c> command.
         /// </para>
         /// </summary>
         public Dictionary<string, int> MaxSlots
@@ -121,8 +121,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SkipAppResign. 
         /// <para>
-        /// When set to <code>true</code>, for private devices, Device Farm does not sign your
-        /// app again. For public devices, Device Farm always signs your apps again.
+        /// When set to <c>true</c>, for private devices, Device Farm does not sign your app again.
+        /// For public devices, Device Farm always signs your apps again.
         /// </para>
         ///  
         /// <para>

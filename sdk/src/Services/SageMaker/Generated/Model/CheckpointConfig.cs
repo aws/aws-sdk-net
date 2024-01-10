@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LocalPath. 
         /// <para>
         /// (Optional) The local directory where checkpoints are written. The default directory
-        /// is <code>/opt/ml/checkpoints/</code>. 
+        /// is <c>/opt/ml/checkpoints/</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3Uri. 
         /// <para>
         /// Identifies the S3 path where you want SageMaker to store checkpoints. For example,
-        /// <code>s3://bucket-name/key-name-prefix</code>.
+        /// <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

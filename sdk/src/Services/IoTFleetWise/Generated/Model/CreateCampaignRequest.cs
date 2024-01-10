@@ -86,12 +86,12 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property Compression. 
         /// <para>
         ///  (Optional) Whether to compress signals before transmitting data to Amazon Web Services
-        /// IoT FleetWise. If you don't want to compress the signals, use <code>OFF</code>. If
-        /// it's not specified, <code>SNAPPY</code> is used. 
+        /// IoT FleetWise. If you don't want to compress the signals, use <c>OFF</c>. If it's
+        /// not specified, <c>SNAPPY</c> is used. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>SNAPPY</code> 
+        /// Default: <c>SNAPPY</c> 
         /// </para>
         /// </summary>
         public Compression Compression
@@ -146,10 +146,10 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  
         /// <para>
-        /// Enrich the data with specified vehicle attributes. For example, add <code>make</code>
-        /// and <code>model</code> to the campaign, and Amazon Web Services IoT FleetWise will
-        /// associate the data with those attributes as dimensions in Amazon Timestream. You can
-        /// then query the data against <code>make</code> and <code>model</code>.
+        /// Enrich the data with specified vehicle attributes. For example, add <c>make</c> and
+        /// <c>model</c> to the campaign, and Amazon Web Services IoT FleetWise will associate
+        /// the data with those attributes as dimensions in Amazon Timestream. You can then query
+        /// the data against <c>make</c> and <c>model</c>.
         /// </para>
         ///  
         /// <para>
@@ -192,12 +192,12 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property DiagnosticsMode. 
         /// <para>
         ///  (Optional) Option for a vehicle to send diagnostic trouble codes to Amazon Web Services
-        /// IoT FleetWise. If you want to send diagnostic trouble codes, use <code>SEND_ACTIVE_DTCS</code>.
-        /// If it's not specified, <code>OFF</code> is used.
+        /// IoT FleetWise. If you want to send diagnostic trouble codes, use <c>SEND_ACTIVE_DTCS</c>.
+        /// If it's not specified, <c>OFF</c> is used.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>OFF</code> 
+        /// Default: <c>OFF</c> 
         /// </para>
         /// </summary>
         public DiagnosticsMode DiagnosticsMode
@@ -258,11 +258,11 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property PostTriggerCollectionDuration. 
         /// <para>
         ///  (Optional) How long (in milliseconds) to collect raw data after a triggering event
-        /// initiates the collection. If it's not specified, <code>0</code> is used.
+        /// initiates the collection. If it's not specified, <c>0</c> is used.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]
@@ -283,11 +283,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// (Optional) A number indicating the priority of one campaign over another campaign
         /// for a certain vehicle or fleet. A campaign with the lowest value is deployed to vehicles
-        /// before any other campaigns. If it's not specified, <code>0</code> is used. 
+        /// before any other campaigns. If it's not specified, <c>0</c> is used. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -348,12 +348,12 @@ namespace Amazon.IoTFleetWise.Model
         /// (Optional) Whether to store collected data after a vehicle lost a connection with
         /// the cloud. After a connection is re-established, the data is automatically forwarded
         /// to Amazon Web Services IoT FleetWise. If you want to store collected data when a vehicle
-        /// loses connection with the cloud, use <code>TO_DISK</code>. If it's not specified,
-        /// <code>OFF</code> is used.
+        /// loses connection with the cloud, use <c>TO_DISK</c>. If it's not specified, <c>OFF</c>
+        /// is used.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>OFF</code> 
+        /// Default: <c>OFF</c> 
         /// </para>
         /// </summary>
         public SpoolingMode SpoolingMode
@@ -372,11 +372,11 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// (Optional) The time, in milliseconds, to deliver a campaign after it was approved.
-        /// If it's not specified, <code>0</code> is used.
+        /// If it's not specified, <c>0</c> is used.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         /// </summary>
         public DateTime StartTime

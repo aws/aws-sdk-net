@@ -42,8 +42,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property DynamicScalingInSuspended. 
         /// <para>
         /// Whether scale in by a target tracking scaling policy or a step scaling policy is suspended.
-        /// Set the value to <code>true</code> if you don't want Application Auto Scaling to remove
-        /// capacity when a scaling policy is triggered. The default is <code>false</code>. 
+        /// Set the value to <c>true</c> if you don't want Application Auto Scaling to remove
+        /// capacity when a scaling policy is triggered. The default is <c>false</c>. 
         /// </para>
         /// </summary>
         public bool DynamicScalingInSuspended
@@ -62,9 +62,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property DynamicScalingOutSuspended. 
         /// <para>
         /// Whether scale out by a target tracking scaling policy or a step scaling policy is
-        /// suspended. Set the value to <code>true</code> if you don't want Application Auto Scaling
-        /// to add capacity when a scaling policy is triggered. The default is <code>false</code>.
-        /// 
+        /// suspended. Set the value to <c>true</c> if you don't want Application Auto Scaling
+        /// to add capacity when a scaling policy is triggered. The default is <c>false</c>. 
         /// </para>
         /// </summary>
         public bool DynamicScalingOutSuspended
@@ -82,9 +81,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property ScheduledScalingSuspended. 
         /// <para>
-        /// Whether scheduled scaling is suspended. Set the value to <code>true</code> if you
-        /// don't want Application Auto Scaling to add or remove capacity by initiating scheduled
-        /// actions. The default is <code>false</code>. 
+        /// Whether scheduled scaling is suspended. Set the value to <c>true</c> if you don't
+        /// want Application Auto Scaling to add or remove capacity by initiating scheduled actions.
+        /// The default is <c>false</c>. 
         /// </para>
         /// </summary>
         public bool ScheduledScalingSuspended

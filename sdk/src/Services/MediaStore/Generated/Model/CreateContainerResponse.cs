@@ -54,9 +54,9 @@ namespace Amazon.MediaStore.Model
         ///  
         /// <para>
         /// Status: The status of container creation or deletion. The status is one of the following:
-        /// <code>CREATING</code>, <code>ACTIVE</code>, or <code>DELETING</code>. While the service
-        /// is creating the container, the status is <code>CREATING</code>. When an endpoint is
-        /// available, the status changes to <code>ACTIVE</code>.
+        /// <c>CREATING</c>, <c>ACTIVE</c>, or <c>DELETING</c>. While the service is creating
+        /// the container, the status is <c>CREATING</c>. When an endpoint is available, the status
+        /// changes to <c>ACTIVE</c>.
         /// </para>
         ///  
         /// <para>

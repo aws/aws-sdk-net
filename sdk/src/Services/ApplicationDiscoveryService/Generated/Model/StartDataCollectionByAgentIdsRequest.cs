@@ -44,8 +44,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Services account, the service does not throw an exception. Instead, it returns the
         /// error in the <i>Description</i> field. If you send a request to multiple agents and
         /// you do not have permission to contact some of those agents, the system does not throw
-        /// an exception. Instead, the system shows <code>Failed</code> in the <i>Description</i>
-        /// field.
+        /// an exception. Instead, the system shows <c>Failed</c> in the <i>Description</i> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

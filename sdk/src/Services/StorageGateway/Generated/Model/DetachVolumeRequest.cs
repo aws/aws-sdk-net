@@ -44,14 +44,13 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ForceDetach. 
         /// <para>
-        /// Set to <code>true</code> to forcibly remove the iSCSI connection of the target volume
-        /// and detach the volume. The default is <code>false</code>. If this value is set to
-        /// <code>false</code>, you must manually disconnect the iSCSI connection from the target
-        /// volume.
+        /// Set to <c>true</c> to forcibly remove the iSCSI connection of the target volume and
+        /// detach the volume. The default is <c>false</c>. If this value is set to <c>false</c>,
+        /// you must manually disconnect the iSCSI connection from the target volume.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool ForceDetach

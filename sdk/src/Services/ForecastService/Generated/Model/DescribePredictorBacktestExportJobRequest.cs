@@ -35,24 +35,24 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to listing the properties provided by the user in the <code>CreatePredictorBacktestExportJob</code>
+    /// In addition to listing the properties provided by the user in the <c>CreatePredictorBacktestExportJob</c>
     /// request, this operation lists the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CreationTime</code> 
+    ///  <c>CreationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastModificationTime</code> 
+    ///  <c>LastModificationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Status</code> 
+    ///  <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Message</code> (if an error occurred)
+    ///  <c>Message</c> (if an error occurred)
     /// </para>
     ///  </li> </ul>
     /// </summary>

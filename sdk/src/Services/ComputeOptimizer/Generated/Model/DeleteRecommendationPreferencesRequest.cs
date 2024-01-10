@@ -70,13 +70,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Ec2Instance</code> option encompasses standalone instances and instances
-        /// that are part of Auto Scaling groups. The <code>AutoScalingGroup</code> option encompasses
-        /// only instances that are part of an Auto Scaling group.
+        /// The <c>Ec2Instance</c> option encompasses standalone instances and instances that
+        /// are part of Auto Scaling groups. The <c>AutoScalingGroup</c> option encompasses only
+        /// instances that are part of an Auto Scaling group.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The valid values for this parameter are <code>Ec2Instance</code> and <code>AutoScalingGroup</code>.
+        /// The valid values for this parameter are <c>Ec2Instance</c> and <c>AutoScalingGroup</c>.
         /// </para>
         ///  </note>
         /// </summary>

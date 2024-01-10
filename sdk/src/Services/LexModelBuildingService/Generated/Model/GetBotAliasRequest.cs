@@ -35,7 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>lex:GetBotAlias</code> action.
+    /// This operation requires permissions for the <c>lex:GetBotAlias</c> action.
     /// </para>
     /// </summary>
     public partial class GetBotAliasRequest : AmazonLexModelBuildingServiceRequest

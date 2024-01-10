@@ -31,7 +31,7 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Container for the parameters to the UpgradePublishedSchema operation.
     /// Upgrades a published schema under a new minor version revision using the current contents
-    /// of <code>DevelopmentSchemaArn</code>.
+    /// of <c>DevelopmentSchemaArn</c>.
     /// </summary>
     public partial class UpgradePublishedSchemaRequest : AmazonCloudDirectoryRequest
     {

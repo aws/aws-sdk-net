@@ -48,9 +48,9 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:DescribeApplication</code>
-    /// action. You can use <code>DescribeApplication</code> to get the current application
-    /// versionId, which you need to call other operations such as <code>Update</code>. 
+    /// This operation requires permissions to perform the <c>kinesisanalytics:DescribeApplication</c>
+    /// action. You can use <c>DescribeApplication</c> to get the current application versionId,
+    /// which you need to call other operations such as <c>Update</c>. 
     /// </para>
     /// </summary>
     public partial class DescribeApplicationRequest : AmazonKinesisAnalyticsRequest

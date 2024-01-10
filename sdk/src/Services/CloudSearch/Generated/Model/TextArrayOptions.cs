@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Options for a field that contains an array of text strings. Present if <code>IndexFieldType</code>
-    /// specifies the field is of type <code>text-array</code>. A <code>text-array</code>
-    /// field is always searchable. All options are enabled by default.
+    /// Options for a field that contains an array of text strings. Present if <c>IndexFieldType</c>
+    /// specifies the field is of type <c>text-array</c>. A <c>text-array</c> field is always
+    /// searchable. All options are enabled by default.
     /// </summary>
     public partial class TextArrayOptions
     {
@@ -44,7 +44,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property AnalysisScheme. 
         /// <para>
-        /// The name of an analysis scheme for a <code>text-array</code> field.
+        /// The name of an analysis scheme for a <c>text-array</c> field.
         /// </para>
         /// </summary>
         public string AnalysisScheme

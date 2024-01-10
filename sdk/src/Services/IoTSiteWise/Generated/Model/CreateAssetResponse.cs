@@ -45,7 +45,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> 
+        ///  <c>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -84,7 +84,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetStatus. 
         /// <para>
-        /// The status of the asset, which contains a state (<code>CREATING</code> after successfully
+        /// The status of the asset, which contains a state (<c>CREATING</c> after successfully
         /// calling this operation) and any error message.
         /// </para>
         /// </summary>

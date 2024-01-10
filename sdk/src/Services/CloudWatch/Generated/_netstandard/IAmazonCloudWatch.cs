@@ -75,7 +75,7 @@ namespace Amazon.CloudWatch
         ///  If you specify an incorrect alarm name or make any other error in the operation,
         /// no alarms are deleted. To confirm that alarms were deleted successfully, you can use
         /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
-        /// operation after using <code>DeleteAlarms</code>.
+        /// operation after using <c>DeleteAlarms</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -89,8 +89,8 @@ namespace Amazon.CloudWatch
         /// <para>
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
-        /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>false</code>. 
+        /// The simplest change to make to break a cycle is to change the <c>AlarmRule</c> of
+        /// one of the alarms to <c>false</c>. 
         /// </para>
         ///  
         /// <para>
@@ -248,9 +248,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// To use this operation and return information about a composite alarm, you must be
-        /// signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is
-        /// scoped to <code>*</code>. You can't return information about composite alarms if your
-        /// <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.
+        /// signed on with the <c>cloudwatch:DescribeAlarmHistory</c> permission that is scoped
+        /// to <c>*</c>. You can't return information about composite alarms if your <c>cloudwatch:DescribeAlarmHistory</c>
+        /// permission has a narrower scope.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -278,9 +278,9 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// To use this operation and return information about a composite alarm, you must be
-        /// signed on with the <code>cloudwatch:DescribeAlarmHistory</code> permission that is
-        /// scoped to <code>*</code>. You can't return information about composite alarms if your
-        /// <code>cloudwatch:DescribeAlarmHistory</code> permission has a narrower scope.
+        /// signed on with the <c>cloudwatch:DescribeAlarmHistory</c> permission that is scoped
+        /// to <c>*</c>. You can't return information about composite alarms if your <c>cloudwatch:DescribeAlarmHistory</c>
+        /// permission has a narrower scope.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmHistory service method.</param>
@@ -307,8 +307,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// To use this operation and return information about composite alarms, you must be signed
-        /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
-        /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+        /// on with the <c>cloudwatch:DescribeAlarms</c> permission that is scoped to <c>*</c>.
+        /// You can't return information about composite alarms if your <c>cloudwatch:DescribeAlarms</c>
         /// permission has a narrower scope.
         /// </para>
         /// </summary>
@@ -332,8 +332,8 @@ namespace Amazon.CloudWatch
         ///  
         /// <para>
         /// To use this operation and return information about composite alarms, you must be signed
-        /// on with the <code>cloudwatch:DescribeAlarms</code> permission that is scoped to <code>*</code>.
-        /// You can't return information about composite alarms if your <code>cloudwatch:DescribeAlarms</code>
+        /// on with the <c>cloudwatch:DescribeAlarms</c> permission that is scoped to <c>*</c>.
+        /// You can't return information about composite alarms if your <c>cloudwatch:DescribeAlarms</c>
         /// permission has a narrower scope.
         /// </para>
         /// </summary>
@@ -386,8 +386,8 @@ namespace Amazon.CloudWatch
         /// metric anomaly detectors, you can list all of the models in your account or filter
         /// the results to only the models that are related to a certain namespace, metric name,
         /// or metric dimension. For metric math anomaly detectors, you can list them by adding
-        /// <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will
-        /// return all metric math anomaly detectors in your account.
+        /// <c>METRIC_MATH</c> to the <c>AnomalyDetectorTypes</c> array. This will return all
+        /// metric math anomaly detectors in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAnomalyDetectors service method.</param>
         /// <param name="cancellationToken">
@@ -538,9 +538,9 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// To copy an existing dashboard, use <code>GetDashboard</code>, and then use the data
-        /// returned within <code>DashboardBody</code> as the template for the new dashboard when
-        /// you call <code>PutDashboard</code> to create the copy.
+        /// To copy an existing dashboard, use <c>GetDashboard</c>, and then use the data returned
+        /// within <c>DashboardBody</c> as the template for the new dashboard when you call <c>PutDashboard</c>
+        /// to create the copy.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDashboard service method.</param>
@@ -578,43 +578,42 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UniqueContributors</code> -- the number of unique contributors for each data
-        /// point.
+        ///  <c>UniqueContributors</c> -- the number of unique contributors for each data point.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaxContributorValue</code> -- the value of the top contributor for each data
-        /// point. The identity of the contributor might change for each data point in the graph.
+        ///  <c>MaxContributorValue</c> -- the value of the top contributor for each data point.
+        /// The identity of the contributor might change for each data point in the graph.
         /// </para>
         ///  
         /// <para>
         /// If this rule aggregates by COUNT, the top contributor for each data point is the contributor
         /// with the most occurrences in that period. If the rule aggregates by SUM, the top contributor
-        /// is the contributor with the highest sum in the log field specified by the rule's <code>Value</code>,
+        /// is the contributor with the highest sum in the log field specified by the rule's <c>Value</c>,
         /// during that period.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SampleCount</code> -- the number of data points matched by the rule.
+        ///  <c>SampleCount</c> -- the number of data points matched by the rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Sum</code> -- the sum of the values from all contributors during the time period
+        ///  <c>Sum</c> -- the sum of the values from all contributors during the time period
         /// represented by that data point.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Minimum</code> -- the minimum value from a single observation during the time
-        /// period represented by that data point.
+        ///  <c>Minimum</c> -- the minimum value from a single observation during the time period
+        /// represented by that data point.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Maximum</code> -- the maximum value from a single observation during the time
-        /// period represented by that data point.
+        ///  <c>Maximum</c> -- the maximum value from a single observation during the time period
+        /// represented by that data point.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> -- the average value from all contributors during the time period
+        ///  <c>Average</c> -- the average value from all contributors during the time period
         /// represented by that data point.
         /// </para>
         ///  </li> </ul>
@@ -644,34 +643,34 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric values.
-        /// The operation can also include a CloudWatch Metrics Insights query, and one or more
-        /// metric math functions.
+        /// You can use the <c>GetMetricData</c> API to retrieve CloudWatch metric values. The
+        /// operation can also include a CloudWatch Metrics Insights query, and one or more metric
+        /// math functions.
         /// 
         ///  
         /// <para>
-        /// A <code>GetMetricData</code> operation that does not include a query can retrieve
-        /// as many as 500 different metrics in a single request, with a total of as many as 100,800
-        /// data points. You can also optionally perform metric math expressions on the values
-        /// of the returned statistics, to create new time series that represent new insights
-        /// into your data. For example, using Lambda metrics, you could divide the Errors metric
-        /// by the Invocations metric to get an error rate time series. For more information about
-        /// metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+        /// A <c>GetMetricData</c> operation that does not include a query can retrieve as many
+        /// as 500 different metrics in a single request, with a total of as many as 100,800 data
+        /// points. You can also optionally perform metric math expressions on the values of the
+        /// returned statistics, to create new time series that represent new insights into your
+        /// data. For example, using Lambda metrics, you could divide the Errors metric by the
+        /// Invocations metric to get an error rate time series. For more information about metric
+        /// math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
         /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you include a Metrics Insights query, each <code>GetMetricData</code> operation
-        /// can include only one query. But the same <code>GetMetricData</code> operation can
-        /// also retrieve other metrics. Metrics Insights queries can query only the most recent
-        /// three hours of metric data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+        /// If you include a Metrics Insights query, each <c>GetMetricData</c> operation can include
+        /// only one query. But the same <c>GetMetricData</c> operation can also retrieve other
+        /// metrics. Metrics Insights queries can query only the most recent three hours of metric
+        /// data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
         /// your metrics with CloudWatch Metrics Insights</a>.
         /// </para>
         ///  
         /// <para>
-        /// Calls to the <code>GetMetricData</code> API have a different pricing structure than
-        /// calls to <code>GetMetricStatistics</code>. For more information about pricing, see
-        /// <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+        /// Calls to the <c>GetMetricData</c> API have a different pricing structure than calls
+        /// to <c>GetMetricStatistics</c>. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// CloudWatch Pricing</a>.
         /// </para>
         ///  
         /// <para>
@@ -681,7 +680,7 @@ namespace Amazon.CloudWatch
         /// <para>
         /// Data points with a period of less than 60 seconds are available for 3 hours. These
         /// data points are high-resolution metrics and are available only for custom metrics
-        /// that have been defined with a <code>StorageResolution</code> of 1.
+        /// that have been defined with a <c>StorageResolution</c> of 1.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -707,12 +706,12 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// If you omit <code>Unit</code> in your request, all data that was collected with any
-        /// unit is returned, along with the corresponding units that were specified when the
-        /// data was reported to CloudWatch. If you specify a unit, the operation returns only
-        /// data that was collected with that unit specified. If you specify a unit that does
-        /// not match the data collected, the results of the operation are null. CloudWatch does
-        /// not perform unit conversions.
+        /// If you omit <c>Unit</c> in your request, all data that was collected with any unit
+        /// is returned, along with the corresponding units that were specified when the data
+        /// was reported to CloudWatch. If you specify a unit, the operation returns only data
+        /// that was collected with that unit specified. If you specify a unit that does not match
+        /// the data collected, the results of the operation are null. CloudWatch does not perform
+        /// unit conversions.
         /// </para>
         ///  
         /// <para>
@@ -793,7 +792,7 @@ namespace Amazon.CloudWatch
         /// <para>
         /// Data points with a period of less than 60 seconds are available for 3 hours. These
         /// data points are high-resolution metrics and are available only for custom metrics
-        /// that have been defined with a <code>StorageResolution</code> of 1.
+        /// that have been defined with a <c>StorageResolution</c> of 1.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -889,11 +888,11 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph
-        /// of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this
-        /// image into your services and products, such as wiki pages, reports, and documents.
-        /// You could also retrieve images regularly, such as every minute, and create your own
-        /// custom live dashboard.
+        /// You can use the <c>GetMetricWidgetImage</c> API to retrieve a snapshot graph of one
+        /// or more Amazon CloudWatch metrics as a bitmap image. You can then embed this image
+        /// into your services and products, such as wiki pages, reports, and documents. You could
+        /// also retrieve images regularly, such as every minute, and create your own custom live
+        /// dashboard.
         /// 
         ///  
         /// <para>
@@ -902,7 +901,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// There is a limit of 20 transactions per second for this API. Each <code>GetMetricWidgetImage</code>
+        /// There is a limit of 20 transactions per second for this API. Each <c>GetMetricWidgetImage</c>
         /// action has the following limits:
         /// </para>
         ///  <ul> <li> 
@@ -931,16 +930,15 @@ namespace Amazon.CloudWatch
 
 
         /// <summary>
-        /// Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>,
+        /// Returns a list of the dashboards for your account. If you include <c>DashboardNamePrefix</c>,
         /// only those dashboards with names starting with the prefix are listed. Otherwise, all
         /// dashboards in your account are listed. 
         /// 
         ///  
         /// <para>
-        ///  <code>ListDashboards</code> returns up to 1000 results on one page. If there are
-        /// more than 1000 dashboards, you can call <code>ListDashboards</code> again and include
-        /// the value you received for <code>NextToken</code> in the first call, to receive the
-        /// next 1000 results.
+        ///  <c>ListDashboards</c> returns up to 1000 results on one page. If there are more than
+        /// 1000 dashboards, you can call <c>ListDashboards</c> again and include the value you
+        /// received for <c>NextToken</c> in the first call, to receive the next 1000 results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDashboards service method.</param>
@@ -1016,8 +1014,8 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        ///  <code>ListMetrics</code> doesn't return information about metrics if those metrics
-        /// haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        ///  <c>ListMetrics</c> doesn't return information about metrics if those metrics haven't
+        /// reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         /// </summary>
@@ -1062,8 +1060,8 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        ///  <code>ListMetrics</code> doesn't return information about metrics if those metrics
-        /// haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+        ///  <c>ListMetrics</c> doesn't return information about metrics if those metrics haven't
+        /// reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
         /// </para>
         /// </summary>
@@ -1223,8 +1221,8 @@ namespace Amazon.CloudWatch
         /// <para>
         /// To get out of such a situation, you must break the cycle by changing the rule of one
         /// of the composite alarms in the cycle to remove a dependency that creates the cycle.
-        /// The simplest change to make to break a cycle is to change the <code>AlarmRule</code>
-        /// of one of the alarms to <code>false</code>. 
+        /// The simplest change to make to break a cycle is to change the <c>AlarmRule</c> of
+        /// one of the alarms to <c>false</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1233,11 +1231,10 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  </note> 
         /// <para>
-        /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+        /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
         /// The alarm is then evaluated and its state is set appropriately. Any actions associated
         /// with the new state are then executed. For a composite alarm, this initial time after
-        /// creation is the only time that the alarm can be in <code>INSUFFICIENT_DATA</code>
-        /// state.
+        /// creation is the only time that the alarm can be in <c>INSUFFICIENT_DATA</c> state.
         /// </para>
         ///  
         /// <para>
@@ -1246,14 +1243,14 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// To use this operation, you must be signed on with the <code>cloudwatch:PutCompositeAlarm</code>
-        /// permission that is scoped to <code>*</code>. You can't create a composite alarms if
-        /// your <code>cloudwatch:PutCompositeAlarm</code> permission has a narrower scope.
+        /// To use this operation, you must be signed on with the <c>cloudwatch:PutCompositeAlarm</c>
+        /// permission that is scoped to <c>*</c>. You can't create a composite alarms if your
+        /// <c>cloudwatch:PutCompositeAlarm</c> permission has a narrower scope.
         /// </para>
         ///  
         /// <para>
-        /// If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to
-        /// create a composite alarm that has Systems Manager OpsItem actions.
+        /// If you are an IAM user, you must have <c>iam:CreateServiceLinkedRole</c> to create
+        /// a composite alarm that has Systems Manager OpsItem actions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutCompositeAlarm service method.</param>
@@ -1285,20 +1282,20 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// A simple way to create a dashboard using <code>PutDashboard</code> is to copy an existing
+        /// A simple way to create a dashboard using <c>PutDashboard</c> is to copy an existing
         /// dashboard. To copy an existing dashboard using the console, you can load the dashboard
         /// and then use the View/edit source command in the Actions menu to display the JSON
-        /// block for that dashboard. Another way to copy a dashboard is to use <code>GetDashboard</code>,
-        /// and then use the data returned within <code>DashboardBody</code> as the template for
-        /// the new dashboard when you call <code>PutDashboard</code>.
+        /// block for that dashboard. Another way to copy a dashboard is to use <c>GetDashboard</c>,
+        /// and then use the data returned within <c>DashboardBody</c> as the template for the
+        /// new dashboard when you call <c>PutDashboard</c>.
         /// </para>
         ///  
         /// <para>
-        /// When you create a dashboard with <code>PutDashboard</code>, a good practice is to
-        /// add a text widget at the top of the dashboard with a message that the dashboard was
-        /// created by script and should not be changed in the console. This message could also
-        /// point console users to the location of the <code>DashboardBody</code> script or the
-        /// CloudFormation template used to create the dashboard.
+        /// When you create a dashboard with <c>PutDashboard</c>, a good practice is to add a
+        /// text widget at the top of the dashboard with a message that the dashboard was created
+        /// by script and should not be changed in the console. This message could also point
+        /// console users to the location of the <c>DashboardBody</c> script or the CloudFormation
+        /// template used to create the dashboard.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDashboard service method.</param>
@@ -1361,11 +1358,11 @@ namespace Amazon.CloudWatch
         /// <summary>
         /// Creates a managed Contributor Insights rule for a specified Amazon Web Services resource.
         /// When you enable a managed rule, you create a Contributor Insights rule that collects
-        /// data from Amazon Web Services services. You cannot edit these rules with <code>PutInsightRule</code>.
-        /// The rules can be enabled, disabled, and deleted using <code>EnableInsightRules</code>,
-        /// <code>DisableInsightRules</code>, and <code>DeleteInsightRules</code>. If a previously
-        /// created managed rule is currently disabled, a subsequent call to this API will re-enable
-        /// it. Use <code>ListManagedInsightRules</code> to describe all available rules.
+        /// data from Amazon Web Services services. You cannot edit these rules with <c>PutInsightRule</c>.
+        /// The rules can be enabled, disabled, and deleted using <c>EnableInsightRules</c>, <c>DisableInsightRules</c>,
+        /// and <c>DeleteInsightRules</c>. If a previously created managed rule is currently disabled,
+        /// a subsequent call to this API will re-enable it. Use <c>ListManagedInsightRules</c>
+        /// to describe all available rules.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutManagedInsightRules service method.</param>
         /// <param name="cancellationToken">
@@ -1400,7 +1397,7 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// When this operation creates an alarm, the alarm state is immediately set to <code>INSUFFICIENT_DATA</code>.
+        /// When this operation creates an alarm, the alarm state is immediately set to <c>INSUFFICIENT_DATA</c>.
         /// The alarm is then evaluated and its state is set appropriately. Any actions associated
         /// with the new state are then executed.
         /// </para>
@@ -1415,26 +1412,25 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> permission for all alarms with EC2 actions
+        /// The <c>iam:CreateServiceLinkedRole</c> permission for all alarms with EC2 actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> permissions to create an alarm with Systems
+        /// The <c>iam:CreateServiceLinkedRole</c> permissions to create an alarm with Systems
         /// Manager OpsItem or response plan actions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The first time you create an alarm in the Amazon Web Services Management Console,
         /// the CLI, or by using the PutMetricAlarm API, CloudWatch creates the necessary service-linked
-        /// role for you. The service-linked roles are called <code>AWSServiceRoleForCloudWatchEvents</code>
-        /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
+        /// role for you. The service-linked roles are called <c>AWSServiceRoleForCloudWatchEvents</c>
+        /// and <c>AWSServiceRoleForCloudWatchAlarms_ActionSSM</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
         /// Web Services service-linked role</a>.
         /// </para>
         ///  
         /// <para>
-        /// Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120
-        /// KB.
+        /// Each <c>PutMetricAlarm</c> action has a maximum uncompressed payload of 120 KB.
         /// </para>
         ///  
         /// <para>
@@ -1492,25 +1488,25 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        /// You can publish either individual data points in the <code>Value</code> field, or
-        /// arrays of values and the number of times each value occurred during the period by
-        /// using the <code>Values</code> and <code>Counts</code> fields in the <code>MetricDatum</code>
-        /// structure. Using the <code>Values</code> and <code>Counts</code> method enables you
-        /// to publish up to 150 values per metric with one <code>PutMetricData</code> request,
-        /// and supports retrieving percentile statistics on this data.
+        /// You can publish either individual data points in the <c>Value</c> field, or arrays
+        /// of values and the number of times each value occurred during the period by using the
+        /// <c>Values</c> and <c>Counts</c> fields in the <c>MetricDatum</c> structure. Using
+        /// the <c>Values</c> and <c>Counts</c> method enables you to publish up to 150 values
+        /// per metric with one <c>PutMetricData</c> request, and supports retrieving percentile
+        /// statistics on this data.
         /// </para>
         ///  
         /// <para>
-        /// Each <code>PutMetricData</code> request is limited to 1 MB in size for HTTP POST requests.
+        /// Each <c>PutMetricData</c> request is limited to 1 MB in size for HTTP POST requests.
         /// You can send a payload compressed by gzip. Each request is also limited to no more
         /// than 1000 different metrics.
         /// </para>
         ///  
         /// <para>
-        /// Although the <code>Value</code> parameter accepts numbers of type <code>Double</code>,
-        /// CloudWatch rejects values that are either too small or too large. Values must be in
-        /// the range of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity,
-        /// -Infinity) are not supported.
+        /// Although the <c>Value</c> parameter accepts numbers of type <c>Double</c>, CloudWatch
+        /// rejects values that are either too small or too large. Values must be in the range
+        /// of -2^360 to 2^360. In addition, special values (for example, NaN, +Infinity, -Infinity)
+        /// are not supported.
         /// </para>
         ///  
         /// <para>
@@ -1542,13 +1538,13 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>SampleCount</code> value of the statistic set is 1 and <code>Min</code>,
-        /// <code>Max</code>, and <code>Sum</code> are all equal.
+        /// The <c>SampleCount</c> value of the statistic set is 1 and <c>Min</c>, <c>Max</c>,
+        /// and <c>Sum</c> are all equal.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Min</code> and <code>Max</code> are equal, and <code>Sum</code> is equal
-        /// to <code>Min</code> multiplied by <code>SampleCount</code>.
+        /// The <c>Min</c> and <c>Max</c> are equal, and <c>Sum</c> is equal to <c>Min</c> multiplied
+        /// by <c>SampleCount</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1591,8 +1587,8 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code>
-        /// permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
+        /// To create a metric stream, you must be signed in to an account that has the <c>iam:PassRole</c>
+        /// permission and either the <c>CloudWatchFullAccess</c> policy or the <c>cloudwatch:PutMetricStream</c>
         /// permission.
         /// </para>
         ///  
@@ -1606,26 +1602,25 @@ namespace Amazon.CloudWatch
         ///  </li> <li> 
         /// <para>
         /// Stream metrics from all metric namespaces in the account, except for the namespaces
-        /// that you list in <code>ExcludeFilters</code>.
+        /// that you list in <c>ExcludeFilters</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.
+        /// Stream metrics from only the metric namespaces that you list in <c>IncludeFilters</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
-        /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
-        /// use the <code>StatisticsConfigurations</code> parameter to have the metric stream
-        /// send additional statistics in the stream. Streaming additional statistics incurs additional
-        /// costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+        /// By default, a metric stream always sends the <c>MAX</c>, <c>MIN</c>, <c>SUM</c>, and
+        /// <c>SAMPLECOUNT</c> statistics for each metric that is streamed. You can use the <c>StatisticsConfigurations</c>
+        /// parameter to have the metric stream send additional statistics in the stream. Streaming
+        /// additional statistics incurs additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
         /// CloudWatch Pricing</a>. 
         /// </para>
         ///  
         /// <para>
-        /// When you use <code>PutMetricStream</code> to create a new metric stream, the stream
-        /// is created in the <code>running</code> state. If you use it to update an existing
-        /// stream, the state of the stream is not changed.
+        /// When you use <c>PutMetricStream</c> to create a new metric stream, the stream is created
+        /// in the <c>running</c> state. If you use it to update an existing stream, the state
+        /// of the stream is not changed.
         /// </para>
         ///  
         /// <para>
@@ -1669,8 +1664,8 @@ namespace Amazon.CloudWatch
         /// Temporarily sets the state of an alarm for testing purposes. When the updated state
         /// differs from the previous value, the action configured for the appropriate state is
         /// invoked. For example, if your alarm is configured to send an Amazon SNS message when
-        /// an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code>
-        /// sends an SNS message.
+        /// an alarm is triggered, temporarily changing the alarm state to <c>ALARM</c> sends
+        /// an SNS message.
         /// 
         ///  
         /// <para>
@@ -1680,16 +1675,15 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is
-        /// not guaranteed to return to its actual state. It returns to its actual state only
-        /// once any of its children alarms change state. It is also reevaluated if you update
-        /// its configuration.
+        /// If you use <c>SetAlarmState</c> on a composite alarm, the composite alarm is not guaranteed
+        /// to return to its actual state. It returns to its actual state only once any of its
+        /// children alarms change state. It is also reevaluated if you update its configuration.
         /// </para>
         ///  
         /// <para>
         /// If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies,
-        /// you must include information in the <code>StateReasonData</code> parameter to enable
-        /// the policy to take the correct action.
+        /// you must include information in the <c>StateReasonData</c> parameter to enable the
+        /// policy to take the correct action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetAlarmState service method.</param>
@@ -1785,8 +1779,8 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with an alarm that already has tags.
-        /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+        /// You can use the <c>TagResource</c> action with an alarm that already has tags. If
+        /// you specify a new tag key for the alarm, this tag is appended to the list of tags
         /// associated with the alarm. If you specify a tag key that is already associated with
         /// the alarm, the new tag value that you specify replaces the previous value for that
         /// tag.

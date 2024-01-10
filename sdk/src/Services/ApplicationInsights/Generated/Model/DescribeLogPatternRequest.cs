@@ -30,7 +30,7 @@ namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLogPattern operation.
-    /// Describe a specific log pattern from a <code>LogPatternSet</code>.
+    /// Describe a specific log pattern from a <c>LogPatternSet</c>.
     /// </summary>
     public partial class DescribeLogPatternRequest : AmazonApplicationInsightsRequest
     {

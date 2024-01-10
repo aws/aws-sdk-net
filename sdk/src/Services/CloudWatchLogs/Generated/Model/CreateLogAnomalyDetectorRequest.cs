@@ -43,15 +43,15 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// The anomaly detector uses pattern recognition to find <code>anomalies</code>, which
-    /// are unusual log events. It uses the <code>evaluationFrequency</code> to compare current
-    /// log events and patterns with trained baselines. 
+    /// The anomaly detector uses pattern recognition to find <c>anomalies</c>, which are
+    /// unusual log events. It uses the <c>evaluationFrequency</c> to compare current log
+    /// events and patterns with trained baselines. 
     /// </para>
     ///  
     /// <para>
     /// Fields within a pattern are called <i>tokens</i>. Fields that vary within a pattern,
     /// such as a request ID or timestamp, are referred to as <i>dynamic tokens</i> and represented
-    /// by <code>&lt;*&gt;</code>. 
+    /// by <c>&lt;*&gt;</c>. 
     /// </para>
     ///  
     /// <para>
@@ -59,14 +59,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>[INFO] Request time: &lt;*&gt; ms</code> 
+    ///  <c>[INFO] Request time: &lt;*&gt; ms</c> 
     /// </para>
     ///  
     /// <para>
-    /// This pattern represents log events like <code>[INFO] Request time: 327 ms</code> and
-    /// other similar log events that differ only by the number, in this csse 327. When the
-    /// pattern is displayed, the different numbers are replaced by <code>&lt;*&gt;</code>
-    /// 
+    /// This pattern represents log events like <c>[INFO] Request time: 327 ms</c> and other
+    /// similar log events that differ only by the number, in this csse 327. When the pattern
+    /// is displayed, the different numbers are replaced by <c>&lt;*&gt;</c> 
     /// </para>
     ///  <note> 
     /// <para>
@@ -92,7 +91,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// The number of days to have visibility on an anomaly. After this time period has elapsed
         /// for an anomaly, it will be automatically baselined and the anomaly detector will treat
         /// new occurrences of a similar anomaly as normal. Therefore, if you do not correct the
-        /// cause of an anomaly during the time period specified in <code>anomalyVisibilityTime</code>,
+        /// cause of an anomaly during the time period specified in <c>anomalyVisibilityTime</c>,
         /// it will be considered normal going forward and will not be detected as an anomaly.
         /// </para>
         /// </summary>
@@ -134,7 +133,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Specifies how often the anomaly detector is to run and look for anomalies. Set this
         /// value according to the frequency that the log group receives new logs. For example,
         /// if the log group receives new log events every 10 minutes, then 15 minutes might be
-        /// a good setting for <code>evaluationFrequency</code> .
+        /// a good setting for <c>evaluationFrequency</c> .
         /// </para>
         /// </summary>
         public EvaluationFrequency EvaluationFrequency

@@ -39,9 +39,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Created. 
         /// <para>
-        /// Information about associations that are successfully created: <code>DataSetId</code>,
-        /// <code>TargetAccountId</code>, <code>ResourceShareId</code>, <code>ResourceShareArn</code>.
-        /// 
+        /// Information about associations that are successfully created: <c>DataSetId</c>, <c>TargetAccountId</c>,
+        /// <c>ResourceShareId</c>, <c>ResourceShareArn</c>. 
         /// </para>
         /// </summary>
         public List<AnalyticsDataAssociationResult> Created

@@ -84,11 +84,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Command</code>: Receive notification when the status of a command changes.
+        ///  <c>Command</c>: Receive notification when the status of a command changes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invocation</code>: For commands sent to multiple managed nodes, receive notification
+        ///  <c>Invocation</c>: For commands sent to multiple managed nodes, receive notification
         /// on a per-node basis when the status of a command changes. 
         /// </para>
         ///  </li> </ul>

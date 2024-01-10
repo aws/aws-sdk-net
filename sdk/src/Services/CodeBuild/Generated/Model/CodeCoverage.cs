@@ -39,7 +39,7 @@ namespace Amazon.CodeBuild.Model
     ///  
     /// <para>
     /// Branch coverage determines if your tests cover every possible branch of a control
-    /// structure, such as an <code>if</code> or <code>case</code> statement.
+    /// structure, such as an <c>if</c> or <c>case</c> statement.
     /// </para>
     /// </summary>
     public partial class CodeCoverage

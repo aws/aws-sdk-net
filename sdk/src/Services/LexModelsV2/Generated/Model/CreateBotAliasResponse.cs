@@ -105,10 +105,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotAliasStatus. 
         /// <para>
-        /// The current status of the alias. The alias is first put into the <code>Creating</code>
-        /// state. When the alias is ready to be used, it is put into the <code>Available</code>
-        /// state. You can use the <code>DescribeBotAlias</code> operation to get the current
-        /// state of an alias.
+        /// The current status of the alias. The alias is first put into the <c>Creating</c> state.
+        /// When the alias is ready to be used, it is put into the <c>Available</c> state. You
+        /// can use the <c>DescribeBotAlias</c> operation to get the current state of an alias.
         /// </para>
         /// </summary>
         public BotAliasStatus BotAliasStatus

@@ -96,8 +96,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property CoveredNodes. 
         /// <para>
-        /// Represents the nodes within the EKS cluster that have a <code>HEALTHY</code> coverage
-        /// status.
+        /// Represents the nodes within the EKS cluster that have a <c>HEALTHY</c> coverage status.
         /// </para>
         /// </summary>
         public long CoveredNodes
@@ -119,13 +118,12 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AUTO_MANAGED</code> indicates GuardDuty deploys and manages updates for this
-        /// resource.
+        ///  <c>AUTO_MANAGED</c> indicates GuardDuty deploys and manages updates for this resource.
         /// </para>
         ///  
         /// <para>
-        ///  <code>MANUAL</code> indicates that you are responsible to deploy, update, and manage
-        /// the Amazon EKS add-on GuardDuty agent for this resource.
+        ///  <c>MANUAL</c> indicates that you are responsible to deploy, update, and manage the
+        /// Amazon EKS add-on GuardDuty agent for this resource.
         /// </para>
         /// </summary>
         public ManagementType ManagementType

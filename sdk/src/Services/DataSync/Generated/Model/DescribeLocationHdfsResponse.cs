@@ -124,7 +124,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property KerberosPrincipal. 
         /// <para>
         /// The Kerberos principal with access to the files and folders on the HDFS cluster. This
-        /// parameter is used if the <code>AuthenticationType</code> is defined as <code>KERBEROS</code>.
+        /// parameter is used if the <c>AuthenticationType</c> is defined as <c>KERBEROS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -260,7 +260,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property SimpleUser. 
         /// <para>
         /// The user name used to identify the client on the host operating system. This parameter
-        /// is used if the <code>AuthenticationType</code> is defined as <code>SIMPLE</code>.
+        /// is used if the <c>AuthenticationType</c> is defined as <c>SIMPLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -85,7 +85,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property CaptchaConfig. 
         /// <para>
         ///  Specifies how WAF should handle CAPTCHA evaluations for rules that don't have their
-        /// own <code>CaptchaConfig</code> settings. 
+        /// own <c>CaptchaConfig</c> settings. 
         /// </para>
         /// </summary>
         public AwsWafv2WebAclCaptchaConfigDetails CaptchaConfig

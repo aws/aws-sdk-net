@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The response from the <code>ListPhoneNumbersOptedOut</code> action.
+    /// The response from the <c>ListPhoneNumbersOptedOut</c> action.
     /// </summary>
     public partial class ListPhoneNumbersOptedOutResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A <code>NextToken</code> string is returned when you call the <code>ListPhoneNumbersOptedOut</code>
+        /// A <c>NextToken</c> string is returned when you call the <c>ListPhoneNumbersOptedOut</c>
         /// action if additional records are available after the first page of results.
         /// </para>
         /// </summary>

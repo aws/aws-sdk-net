@@ -30,8 +30,8 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCommunications operation.
-    /// Returns communications and attachments for one or more support cases. Use the <code>afterTime</code>
-    /// and <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code>
+    /// Returns communications and attachments for one or more support cases. Use the <c>afterTime</c>
+    /// and <c>beforeTime</c> parameters to filter by date. You can use the <c>caseId</c>
     /// parameter to restrict the results to a specific case.
     /// 
     ///  
@@ -41,10 +41,9 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>maxResults</code> and <code>nextToken</code> parameters to control
-    /// the pagination of the results. Set <code>maxResults</code> to the number of cases
-    /// that you want to display on each page, and use <code>nextToken</code> to specify the
-    /// resumption of pagination.
+    /// You can use the <c>maxResults</c> and <c>nextToken</c> parameters to control the pagination
+    /// of the results. Set <c>maxResults</c> to the number of cases that you want to display
+    /// on each page, and use <c>nextToken</c> to specify the resumption of pagination.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
@@ -54,7 +53,7 @@ namespace Amazon.AWSSupport.Model
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>

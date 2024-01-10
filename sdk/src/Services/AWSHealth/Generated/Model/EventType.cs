@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// Contains the metadata about a type of event that is reported by Health. The <code>EventType</code>
+    /// Contains the metadata about a type of event that is reported by Health. The <c>EventType</c>
     /// shows the category, service, and the event type code of the event. For example, an
-    /// <code>issue</code> might be the category, <code>EC2</code> the service, and <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>
+    /// <c>issue</c> might be the category, <c>EC2</c> the service, and <c>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</c>
     /// the event type code.
     /// 
     ///  
@@ -56,9 +56,9 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// A list of event type category codes. Possible values are <code>issue</code>, <code>accountNotification</code>,
-        /// or <code>scheduledChange</code>. Currently, the <code>investigation</code> value isn't
-        /// supported at this time.
+        /// A list of event type category codes. Possible values are <c>issue</c>, <c>accountNotification</c>,
+        /// or <c>scheduledChange</c>. Currently, the <c>investigation</c> value isn't supported
+        /// at this time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -77,8 +77,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The unique identifier for the event type. The format is <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
-        /// </code>; for example, <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.
+        /// The unique identifier for the event type. The format is <c>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i>
+        /// </c>; for example, <c>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=100)]
@@ -97,8 +97,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The Amazon Web Service that is affected by the event. For example, <code>EC2</code>,
-        /// <code>RDS</code>.
+        /// The Amazon Web Service that is affected by the event. For example, <c>EC2</c>, <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=30)]

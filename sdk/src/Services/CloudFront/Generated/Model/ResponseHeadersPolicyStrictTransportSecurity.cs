@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Determines whether CloudFront includes the <code>Strict-Transport-Security</code>
-    /// HTTP response header and the header's value.
+    /// Determines whether CloudFront includes the <c>Strict-Transport-Security</c> HTTP response
+    /// header and the header's value.
     /// 
     ///  
     /// <para>
-    /// For more information about the <code>Strict-Transport-Security</code> HTTP response
-    /// header, see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
+    /// For more information about the <c>Strict-Transport-Security</c> HTTP response header,
+    /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
     /// in the MDN Web Docs.
     /// </para>
     /// </summary>
@@ -49,8 +49,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property AccessControlMaxAgeSec. 
         /// <para>
-        /// A number that CloudFront uses as the value for the <code>max-age</code> directive
-        /// in the <code>Strict-Transport-Security</code> HTTP response header.
+        /// A number that CloudFront uses as the value for the <c>max-age</c> directive in the
+        /// <c>Strict-Transport-Security</c> HTTP response header.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,8 +69,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IncludeSubdomains. 
         /// <para>
-        /// A Boolean that determines whether CloudFront includes the <code>includeSubDomains</code>
-        /// directive in the <code>Strict-Transport-Security</code> HTTP response header.
+        /// A Boolean that determines whether CloudFront includes the <c>includeSubDomains</c>
+        /// directive in the <c>Strict-Transport-Security</c> HTTP response header.
         /// </para>
         /// </summary>
         public bool IncludeSubdomains
@@ -88,7 +88,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Override. 
         /// <para>
-        /// A Boolean that determines whether CloudFront overrides the <code>Strict-Transport-Security</code>
+        /// A Boolean that determines whether CloudFront overrides the <c>Strict-Transport-Security</c>
         /// HTTP response header received from the origin with the one specified in this response
         /// headers policy.
         /// </para>
@@ -109,8 +109,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Preload. 
         /// <para>
-        /// A Boolean that determines whether CloudFront includes the <code>preload</code> directive
-        /// in the <code>Strict-Transport-Security</code> HTTP response header.
+        /// A Boolean that determines whether CloudFront includes the <c>preload</c> directive
+        /// in the <c>Strict-Transport-Security</c> HTTP response header.
         /// </para>
         /// </summary>
         public bool Preload

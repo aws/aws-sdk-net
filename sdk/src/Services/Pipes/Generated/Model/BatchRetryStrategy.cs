@@ -39,9 +39,9 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property Attempts. 
         /// <para>
-        /// The number of times to move a job to the <code>RUNNABLE</code> status. If the value
-        /// of <code>attempts</code> is greater than one, the job is retried on failure the same
-        /// number of attempts as the value.
+        /// The number of times to move a job to the <c>RUNNABLE</c> status. If the value of <c>attempts</c>
+        /// is greater than one, the job is retried on failure the same number of attempts as
+        /// the value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

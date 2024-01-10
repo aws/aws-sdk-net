@@ -35,10 +35,9 @@ namespace Amazon.OpsWorksCM.Model
     /// 
     ///  
     /// <para>
-    ///  A <code>ResourceNotFoundException</code> is thrown when no recent association or
-    /// disassociation request with the specified token is found, or when the server does
-    /// not exist. A <code>ValidationException</code> is raised when parameters of the request
-    /// are not valid. 
+    ///  A <c>ResourceNotFoundException</c> is thrown when no recent association or disassociation
+    /// request with the specified token is found, or when the server does not exist. A <c>ValidationException</c>
+    /// is raised when parameters of the request are not valid. 
     /// </para>
     /// </summary>
     public partial class DescribeNodeAssociationStatusRequest : AmazonOpsWorksCMRequest

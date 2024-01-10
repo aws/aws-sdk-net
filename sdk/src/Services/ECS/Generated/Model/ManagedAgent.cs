@@ -78,7 +78,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the managed agent. When the execute command feature is turned on, the
-        /// managed agent name is <code>ExecuteCommandAgent</code>.
+        /// managed agent name is <c>ExecuteCommandAgent</c>.
         /// </para>
         /// </summary>
         public ManagedAgentName Name

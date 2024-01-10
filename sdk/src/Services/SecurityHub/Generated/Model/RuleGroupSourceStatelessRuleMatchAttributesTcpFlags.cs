@@ -39,9 +39,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Flags. 
         /// <para>
-        /// Defines the flags from the <code>Masks</code> setting that must be set in order for
-        /// the packet to match. Flags that are listed must be set. Flags that are not listed
-        /// must not be set.
+        /// Defines the flags from the <c>Masks</c> setting that must be set in order for the
+        /// packet to match. Flags that are listed must be set. Flags that are not listed must
+        /// not be set.
         /// </para>
         /// </summary>
         public List<string> Flags

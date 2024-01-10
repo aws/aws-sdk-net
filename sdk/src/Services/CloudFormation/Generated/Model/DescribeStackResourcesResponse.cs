@@ -38,7 +38,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackResources. 
         /// <para>
-        /// A list of <code>StackResource</code> structures.
+        /// A list of <c>StackResource</c> structures.
         /// </para>
         /// </summary>
         public List<StackResource> StackResources

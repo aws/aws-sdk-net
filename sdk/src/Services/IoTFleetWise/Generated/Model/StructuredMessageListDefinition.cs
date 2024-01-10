@@ -41,8 +41,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
-        /// The capacity of the structured message list definition when the list type is <code>FIXED_CAPACITY</code>
-        /// or <code>DYNAMIC_BOUNDED_CAPACITY</code>.
+        /// The capacity of the structured message list definition when the list type is <c>FIXED_CAPACITY</c>
+        /// or <c>DYNAMIC_BOUNDED_CAPACITY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

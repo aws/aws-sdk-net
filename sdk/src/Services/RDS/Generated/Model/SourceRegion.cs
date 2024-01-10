@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Contains an Amazon Web Services Region name as the result of a successful call to
-    /// the <code>DescribeSourceRegions</code> action.
+    /// the <c>DescribeSourceRegions</c> action.
     /// </summary>
     public partial class SourceRegion
     {

@@ -102,28 +102,27 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Mode. 
         /// <para>
         /// The method that Autopilot uses to train the data. You can either specify the mode
-        /// manually or let Autopilot choose for you based on the dataset size by selecting <code>AUTO</code>.
-        /// In <code>AUTO</code> mode, Autopilot chooses <code>ENSEMBLING</code> for datasets
-        /// smaller than 100 MB, and <code>HYPERPARAMETER_TUNING</code> for larger ones.
+        /// manually or let Autopilot choose for you based on the dataset size by selecting <c>AUTO</c>.
+        /// In <c>AUTO</c> mode, Autopilot chooses <c>ENSEMBLING</c> for datasets smaller than
+        /// 100 MB, and <c>HYPERPARAMETER_TUNING</c> for larger ones.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ENSEMBLING</code> mode uses a multi-stack ensemble model to predict classification
+        /// The <c>ENSEMBLING</c> mode uses a multi-stack ensemble model to predict classification
         /// and regression tasks directly from your dataset. This machine learning mode combines
         /// several base models to produce an optimal predictive model. It then uses a stacking
         /// ensemble method to combine predictions from contributing members. A multi-stack ensemble
         /// model can provide better performance over a single model by combining the predictive
         /// capabilities of multiple models. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
-        /// algorithm support</a> for a list of algorithms supported by <code>ENSEMBLING</code>
-        /// mode.
+        /// algorithm support</a> for a list of algorithms supported by <c>ENSEMBLING</c> mode.
         /// </para>
         ///  
         /// <para>
-        /// The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to
-        /// train the best version of a model. HPO automatically selects an algorithm for the
-        /// type of problem you want to solve. Then HPO finds the best hyperparameters according
-        /// to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
-        /// algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code>
+        /// The <c>HYPERPARAMETER_TUNING</c> (HPO) mode uses the best hyperparameters to train
+        /// the best version of a model. HPO automatically selects an algorithm for the type of
+        /// problem you want to solve. Then HPO finds the best hyperparameters according to your
+        /// objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Autopilot
+        /// algorithm support</a> for a list of algorithms supported by <c>HYPERPARAMETER_TUNING</c>
         /// mode.
         /// </para>
         /// </summary>

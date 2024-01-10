@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// The value of the <code>Type</code> parameter is invalid.
+    /// The value of the <c>Type</c> parameter is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -101,8 +101,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property VersionIds. 
         /// <para>
-        /// A list of the IDs of versions to be deleted. A <code>VersionId</code> is a string
-        /// representation of an integer. Each version is incremented by 1.
+        /// A list of the IDs of versions to be deleted. A <c>VersionId</c> is a string representation
+        /// of an integer. Each version is incremented by 1.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

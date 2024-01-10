@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBClusterParameterGroupName</code> doesn't refer to an existing cluster parameter
+    /// <c>DBClusterParameterGroupName</c> doesn't refer to an existing cluster parameter
     /// group.
     /// </summary>
     #if !NETSTANDARD

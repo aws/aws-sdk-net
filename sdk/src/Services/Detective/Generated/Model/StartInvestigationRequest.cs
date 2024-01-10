@@ -81,7 +81,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property ScopeEndTime. 
         /// <para>
         /// The data and time when the investigation began. The value is an UTC ISO8601 formatted
-        /// string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property ScopeStartTime. 
         /// <para>
         /// The data and time when the investigation began. The value is an UTC ISO8601 formatted
-        /// string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

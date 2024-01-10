@@ -39,13 +39,13 @@ namespace Amazon.SecretsManager.Model
     /// 
     ///  
     /// <para>
-    /// When rotation is successful, the <code>AWSPENDING</code> staging label might be attached
-    /// to the same version as the <code>AWSCURRENT</code> version, or it might not be attached
-    /// to any version. If the <code>AWSPENDING</code> staging label is present but not attached
-    /// to the same version as <code>AWSCURRENT</code>, then any later invocation of <code>RotateSecret</code>
+    /// When rotation is successful, the <c>AWSPENDING</c> staging label might be attached
+    /// to the same version as the <c>AWSCURRENT</c> version, or it might not be attached
+    /// to any version. If the <c>AWSPENDING</c> staging label is present but not attached
+    /// to the same version as <c>AWSCURRENT</c>, then any later invocation of <c>RotateSecret</c>
     /// assumes that a previous rotation request is still in progress and returns an error.
-    /// When rotation is unsuccessful, the <code>AWSPENDING</code> staging label might be
-    /// attached to an empty secret version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot_rotation.html">Troubleshoot
+    /// When rotation is unsuccessful, the <c>AWSPENDING</c> staging label might be attached
+    /// to an empty secret version. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/troubleshoot_rotation.html">Troubleshoot
     /// rotation</a> in the <i>Secrets Manager User Guide</i>.
     /// </para>
     ///  
@@ -57,10 +57,10 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>secretsmanager:RotateSecret</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
+    ///  <b>Required permissions: </b> <c>secretsmanager:RotateSecret</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
     /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
-    /// and access control in Secrets Manager</a>. You also need <code>lambda:InvokeFunction</code>
+    /// and access control in Secrets Manager</a>. You also need <c>lambda:InvokeFunction</c>
     /// permissions on the rotation function. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets-required-permissions-function.html">
     /// Permissions for rotation</a>.
     /// </para>
@@ -90,7 +90,7 @@ namespace Amazon.SecretsManager.Model
         ///  </note> 
         /// <para>
         /// If you generate a raw HTTP request to the Secrets Manager service endpoint, then you
-        /// must generate a <code>ClientRequestToken</code> and include it in the request.
+        /// must generate a <c>ClientRequestToken</c> and include it in the request.
         /// </para>
         ///  
         /// <para>
@@ -124,8 +124,8 @@ namespace Amazon.SecretsManager.Model
         /// For secrets that use a Lambda rotation function to rotate, if you don't immediately
         /// rotate the secret, Secrets Manager tests the rotation configuration by running the
         /// <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotate-secrets_how.html">
-        /// <code>testSecret</code> step</a> of the Lambda rotation function. The test creates
-        /// an <code>AWSPENDING</code> version of the secret and then removes it.
+        /// <c>testSecret</c> step</a> of the Lambda rotation function. The test creates an <c>AWSPENDING</c>
+        /// version of the secret and then removes it.
         /// </para>
         ///  
         /// <para>

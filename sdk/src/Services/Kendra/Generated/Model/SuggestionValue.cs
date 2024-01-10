@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// The <code>SuggestionTextWithHighlights</code> structure information.
+    /// The <c>SuggestionTextWithHighlights</c> structure information.
     /// </summary>
     public partial class SuggestionValue
     {
@@ -38,7 +38,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Text. 
         /// <para>
-        /// The <code>SuggestionTextWithHighlights</code> structure that contains the query suggestion
+        /// The <c>SuggestionTextWithHighlights</c> structure that contains the query suggestion
         /// text and highlights.
         /// </para>
         /// </summary>

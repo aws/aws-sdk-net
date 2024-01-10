@@ -58,7 +58,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyIdentifier. 
         /// <para>
-        /// The <code>KeyARN</code> of the key that will decrypt or unwrap a TR-31 key block during
+        /// The <c>KeyARN</c> of the key that will decrypt or unwrap a TR-31 key block during
         /// import.
         /// </para>
         /// </summary>

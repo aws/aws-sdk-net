@@ -67,8 +67,8 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Service Catalog does not support template validation for the <code>TERRAFORM_OS</code>
-        /// product type. 
+        /// Service Catalog does not support template validation for the <c>TERRAFORM_OS</c> product
+        /// type. 
         /// </para>
         /// </summary>
         public bool DisableTemplateValidation
@@ -87,7 +87,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property Info. 
         /// <para>
         /// Specify the template source with one of the following options, but not both. Keys
-        /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ]
+        /// accepted: [ <c>LoadTemplateFromURL</c>, <c>ImportFromPhysicalId</c> ]
         /// </para>
         ///  
         /// <para>
@@ -96,14 +96,14 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</code>
+        ///  <c>"LoadTemplateFromURL": "https://s3.amazonaws.com/cf-templates-ozkq9d3hgiq2-us-east-1/..."</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>ImportFromPhysicalId</code>: The physical id of the resource that contains
-        /// the template. Currently only supports CloudFormation stack arn. Specify the physical
-        /// id in JSON format as follows: <code>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
+        ///  <c>ImportFromPhysicalId</c>: The physical id of the resource that contains the template.
+        /// Currently only supports CloudFormation stack arn. Specify the physical id in JSON
+        /// format as follows: <c>ImportFromPhysicalId: “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</c>
         /// 
         /// </para>
         /// </summary>
@@ -146,19 +146,19 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
+        ///  <c>CLOUD_FORMATION_TEMPLATE</c> - CloudFormation template
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+        ///  <c>TERRAFORM_OPEN_SOURCE</c> - Terraform Open Source configuration file
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+        ///  <c>TERRAFORM_CLOUD</c> - Terraform Cloud configuration file
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXTERNAL</code> - External configuration file
+        ///  <c>EXTERNAL</c> - External configuration file
         /// </para>
         ///  </li> </ul>
         /// </summary>

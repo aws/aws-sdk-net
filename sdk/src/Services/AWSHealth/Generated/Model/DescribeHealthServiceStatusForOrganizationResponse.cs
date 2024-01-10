@@ -43,7 +43,7 @@ namespace Amazon.AWSHealth.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are <code>ENABLED | DISABLED | PENDING</code>. 
+        /// Valid values are <c>ENABLED | DISABLED | PENDING</c>. 
         /// </para>
         /// </summary>
         public string HealthServiceAccessStatusForOrganization

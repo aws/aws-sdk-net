@@ -31,9 +31,9 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the CreatePlayerSessions operation.
     /// Reserves open slots in a game session for a group of players. New player sessions
-    /// can be created in any game session with an open slot that is in <code>ACTIVE</code>
-    /// status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single
-    /// player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
+    /// can be created in any game session with an open slot that is in <c>ACTIVE</c> status
+    /// and has a player creation policy of <c>ACCEPT_ALL</c>. To add a single player to a
+    /// game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
     /// 
     /// 
     ///  
@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code>
+    /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
     /// objects are returned with player session IDs. Each player references their player
     /// session ID when sending a connection request to the game session, and the game server
     /// can use it to validate the player reservation with the Amazon GameLift service. Player
@@ -94,7 +94,7 @@ namespace Amazon.GameLift.Model
         /// Map of string pairs, each specifying a player ID and a set of developer-defined information
         /// related to the player. Amazon GameLift does not use this data, so it can be formatted
         /// as needed for use in the game. Any player data strings for player IDs that are not
-        /// included in the <code>PlayerIds</code> parameter are ignored. 
+        /// included in the <c>PlayerIds</c> parameter are ignored. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> PlayerDataMap

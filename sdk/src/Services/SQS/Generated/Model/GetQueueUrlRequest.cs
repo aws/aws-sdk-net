@@ -34,10 +34,10 @@ namespace Amazon.SQS.Model
     /// 
     ///  
     /// <para>
-    /// To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
+    /// To access a queue that belongs to another AWS account, use the <c>QueueOwnerAWSAccountId</c>
     /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
     /// you permission to access the queue. For more information about shared queue access,
-    /// see <code> <a>AddPermission</a> </code> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
+    /// see <c> <a>AddPermission</a> </c> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
     /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer
     /// Guide</i>. 
     /// </para>
@@ -65,7 +65,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property QueueName. 
         /// <para>
         /// The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values:
-        /// alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>).
+        /// alphanumeric characters, hyphens (<c>-</c>), and underscores (<c>_</c>).
         /// </para>
         ///  
         /// <para>

@@ -76,7 +76,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// Summary information for the types of PPE specified in the <code>SummarizationAttributes</code>
+        /// Summary information for the types of PPE specified in the <c>SummarizationAttributes</c>
         /// input parameter.
         /// </para>
         /// </summary>

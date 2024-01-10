@@ -35,7 +35,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
+    /// For Amazon CloudFront, don't use this call. Instead, use the CloudFront call <c>ListDistributionsByWebACLId</c>.
     /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
     /// in the <i>Amazon CloudFront API Reference</i>. 
     /// </para>
@@ -65,12 +65,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you don't provide a resource type, the call uses the resource type <code>APPLICATION_LOAD_BALANCER</code>.
+        /// If you don't provide a resource type, the call uses the resource type <c>APPLICATION_LOAD_BALANCER</c>.
         /// 
         /// </para>
         ///  </note> 
         /// <para>
-        /// Default: <code>APPLICATION_LOAD_BALANCER</code> 
+        /// Default: <c>APPLICATION_LOAD_BALANCER</c> 
         /// </para>
         /// </summary>
         public ResourceType ResourceType

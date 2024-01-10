@@ -53,14 +53,13 @@ namespace Amazon.DevOpsGuru.Model
         ///  <important> 
         /// <para>
         /// The string used for a <i>key</i> in a tag that you use to define your resource coverage
-        /// must begin with the prefix <code>Devops-guru-</code>. The tag <i>key</i> might be
-        /// <code>DevOps-Guru-deployment-application</code> or <code>devops-guru-rds-application</code>.
-        /// When you create a <i>key</i>, the case of characters in the <i>key</i> can be whatever
-        /// you choose. After you create a <i>key</i>, it is case-sensitive. For example, DevOps
-        /// Guru works with a <i>key</i> named <code>devops-guru-rds</code> and a <i>key</i> named
-        /// <code>DevOps-Guru-RDS</code>, and these act as two different <i>keys</i>. Possible
-        /// <i>key</i>/<i>value</i> pairs in your application might be <code>Devops-Guru-production-application/RDS</code>
-        /// or <code>Devops-Guru-production-application/containers</code>.
+        /// must begin with the prefix <c>Devops-guru-</c>. The tag <i>key</i> might be <c>DevOps-Guru-deployment-application</c>
+        /// or <c>devops-guru-rds-application</c>. When you create a <i>key</i>, the case of characters
+        /// in the <i>key</i> can be whatever you choose. After you create a <i>key</i>, it is
+        /// case-sensitive. For example, DevOps Guru works with a <i>key</i> named <c>devops-guru-rds</c>
+        /// and a <i>key</i> named <c>DevOps-Guru-RDS</c>, and these act as two different <i>keys</i>.
+        /// Possible <i>key</i>/<i>value</i> pairs in your application might be <c>Devops-Guru-production-application/RDS</c>
+        /// or <c>Devops-Guru-production-application/containers</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -85,11 +84,10 @@ namespace Amazon.DevOpsGuru.Model
         ///  
         /// <para>
         /// The tag's <i>value</i> is an optional field used to associate a string with the tag
-        /// <i>key</i> (for example, <code>111122223333</code>, <code>Production</code>, or a
-        /// team name). The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting
-        /// the tag <i>value</i> is the same as using an empty string. Like tag <i>keys</i>, tag
-        /// <i>values</i> are case-sensitive. You can specify a maximum of 256 characters for
-        /// a tag value.
+        /// <i>key</i> (for example, <c>111122223333</c>, <c>Production</c>, or a team name).
+        /// The <i>key</i> and <i>value</i> are the tag's <i>key</i> pair. Omitting the tag <i>value</i>
+        /// is the same as using an empty string. Like tag <i>keys</i>, tag <i>values</i> are
+        /// case-sensitive. You can specify a maximum of 256 characters for a tag value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

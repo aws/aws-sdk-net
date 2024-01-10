@@ -99,7 +99,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Indicates the current state of the recording configuration. When the state is <code>ACTIVE</code>,
+        /// Indicates the current state of the recording configuration. When the state is <c>ACTIVE</c>,
         /// the configuration is ready for recording a channel stream.
         /// </para>
         /// </summary>
@@ -119,8 +119,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags attached to the resource. Array of 1-50 maps, each of the form <code>string:string
-        /// (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Tags attached to the resource. Array of 1-50 maps, each of the form <c>string:string
+        /// (key:value)</c>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services Resources</a> for more information, including restrictions that
         /// apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
         /// constraints beyond what is documented there.

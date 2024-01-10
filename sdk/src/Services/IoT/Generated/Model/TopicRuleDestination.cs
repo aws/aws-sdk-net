@@ -120,28 +120,26 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <dl> <dt>IN_PROGRESS</dt> <dd> 
         /// <para>
-        /// A topic rule destination was created but has not been confirmed. You can set <code>status</code>
-        /// to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>. Calling
-        /// <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge to be
-        /// sent to your confirmation endpoint.
+        /// A topic rule destination was created but has not been confirmed. You can set <c>status</c>
+        /// to <c>IN_PROGRESS</c> by calling <c>UpdateTopicRuleDestination</c>. Calling <c>UpdateTopicRuleDestination</c>
+        /// causes a new confirmation challenge to be sent to your confirmation endpoint.
         /// </para>
         ///  </dd> <dt>ENABLED</dt> <dd> 
         /// <para>
         /// Confirmation was completed, and traffic to this destination is allowed. You can set
-        /// <code>status</code> to <code>DISABLED</code> by calling <code>UpdateTopicRuleDestination</code>.
+        /// <c>status</c> to <c>DISABLED</c> by calling <c>UpdateTopicRuleDestination</c>.
         /// </para>
         ///  </dd> <dt>DISABLED</dt> <dd> 
         /// <para>
         /// Confirmation was completed, and traffic to this destination is not allowed. You can
-        /// set <code>status</code> to <code>ENABLED</code> by calling <code>UpdateTopicRuleDestination</code>.
+        /// set <c>status</c> to <c>ENABLED</c> by calling <c>UpdateTopicRuleDestination</c>.
         /// </para>
         ///  </dd> <dt>ERROR</dt> <dd> 
         /// <para>
         /// Confirmation could not be completed, for example if the confirmation timed out. You
-        /// can call <code>GetTopicRuleDestination</code> for details about the error. You can
-        /// set <code>status</code> to <code>IN_PROGRESS</code> by calling <code>UpdateTopicRuleDestination</code>.
-        /// Calling <code>UpdateTopicRuleDestination</code> causes a new confirmation challenge
-        /// to be sent to your confirmation endpoint.
+        /// can call <c>GetTopicRuleDestination</c> for details about the error. You can set <c>status</c>
+        /// to <c>IN_PROGRESS</c> by calling <c>UpdateTopicRuleDestination</c>. Calling <c>UpdateTopicRuleDestination</c>
+        /// causes a new confirmation challenge to be sent to your confirmation endpoint.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.Scheduler.Model
 {
     /// <summary>
     /// The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html">
-    /// <code>StartPipelineExecution</code> </a> API operation.
+    /// <c>StartPipelineExecution</c> </a> API operation.
     /// </summary>
     public partial class SageMakerPipelineParameters
     {

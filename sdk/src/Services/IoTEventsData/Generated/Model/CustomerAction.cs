@@ -65,24 +65,23 @@ namespace Amazon.IoTEventsData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SNOOZE</code> - When you snooze the alarm, the alarm state changes to <code>SNOOZE_DISABLED</code>.
+        ///  <c>SNOOZE</c> - When you snooze the alarm, the alarm state changes to <c>SNOOZE_DISABLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLE</code> - When you enable the alarm, the alarm state changes to <code>NORMAL</code>.
+        ///  <c>ENABLE</c> - When you enable the alarm, the alarm state changes to <c>NORMAL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLE</code> - When you disable the alarm, the alarm state changes to <code>DISABLED</code>.
+        ///  <c>DISABLE</c> - When you disable the alarm, the alarm state changes to <c>DISABLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACKNOWLEDGE</code> - When you acknowledge the alarm, the alarm state changes
-        /// to <code>ACKNOWLEDGED</code>.
+        ///  <c>ACKNOWLEDGE</c> - When you acknowledge the alarm, the alarm state changes to <c>ACKNOWLEDGED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESET</code> - When you reset the alarm, the alarm state changes to <code>NORMAL</code>.
+        ///  <c>RESET</c> - When you reset the alarm, the alarm state changes to <c>NORMAL</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

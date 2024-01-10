@@ -84,7 +84,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Language. 
         /// <para>
         /// The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP
-        /// 47</a> language tag, for example, <code>en</code> for English.
+        /// 47</a> language tag, for example, <c>en</c> for English.
         /// </para>
         ///  
         /// <para>
@@ -95,13 +95,13 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// For an example, we'll use the Greek language. You search for a location around Athens,
-        /// Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code>
-        /// in the results will most likely be returned as <code>Athens</code>.
+        /// Greece, with the <c>language</c> parameter set to <c>en</c>. The <c>city</c> in the
+        /// results will most likely be returned as <c>Athens</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you set the <code>language</code> parameter to <code>el</code>, for Greek, then
-        /// the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.
+        /// If you set the <c>language</c> parameter to <c>el</c>, for Greek, then the <c>city</c>
+        /// in the results will more likely be returned as <c>Αθήνα</c>.
         /// </para>
         ///  
         /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: <code>50</code> 
+        /// Default value: <c>50</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -157,8 +157,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>[-123.1174, 49.2847]</code> represents a position with longitude
-        /// <code>-123.1174</code> and latitude <code>49.2847</code>.
+        /// For example, <c>[-123.1174, 49.2847]</c> represents a position with longitude <c>-123.1174</c>
+        /// and latitude <c>49.2847</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]

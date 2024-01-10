@@ -53,7 +53,7 @@ namespace Amazon.SimpleDB.Model
 
         /// <summary>
         /// Gets and sets the property NextToken. An opaque token indicating that there are more
-        /// domains than the specified <code>MaxNumberOfDomains</code> still available.
+        /// domains than the specified <c>MaxNumberOfDomains</c> still available.
         /// </summary>
         public string NextToken
         {

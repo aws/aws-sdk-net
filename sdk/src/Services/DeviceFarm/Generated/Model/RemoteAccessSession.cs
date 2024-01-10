@@ -78,8 +78,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property BillingMethod. 
         /// <para>
-        /// The billing method of the remote access session. Possible values include <code>METERED</code>
-        /// or <code>UNMETERED</code>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
+        /// The billing method of the remote access session. Possible values include <c>METERED</c>
+        /// or <c>UNMETERED</c>. For more information about metered devices, see <a href="https://docs.aws.amazon.com/devicefarm/latest/developerguide/welcome.html#welcome-terminology">AWS
         /// Device Farm terminology</a>.
         /// </para>
         /// </summary>
@@ -338,8 +338,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property RemoteDebugEnabled. 
         /// <para>
-        /// This flag is set to <code>true</code> if remote debugging is enabled for the remote
-        /// access session.
+        /// This flag is set to <c>true</c> if remote debugging is enabled for the remote access
+        /// session.
         /// </para>
         ///  
         /// <para>
@@ -381,8 +381,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property RemoteRecordEnabled. 
         /// <para>
-        /// This flag is set to <code>true</code> if remote recording is enabled for the remote
-        /// access session.
+        /// This flag is set to <c>true</c> if remote recording is enabled for the remote access
+        /// session.
         /// </para>
         /// </summary>
         public bool RemoteRecordEnabled
@@ -447,8 +447,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SkipAppResign. 
         /// <para>
-        /// When set to <code>true</code>, for private devices, Device Farm does not sign your
-        /// app again. For public devices, Device Farm always signs your apps again.
+        /// When set to <c>true</c>, for private devices, Device Farm does not sign your app again.
+        /// For public devices, Device Farm always signs your apps again.
         /// </para>
         ///  
         /// <para>

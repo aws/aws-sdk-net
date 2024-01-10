@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
-    /// Error generated from a failed <code>BatchGetTokenBalance</code> request.
+    /// Error generated from a failed <c>BatchGetTokenBalance</c> request.
     /// </summary>
     public partial class BatchGetTokenBalanceErrorItem
     {

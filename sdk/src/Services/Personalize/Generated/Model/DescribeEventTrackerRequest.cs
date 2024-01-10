@@ -30,9 +30,8 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEventTracker operation.
-    /// Describes an event tracker. The response includes the <code>trackingId</code> and
-    /// <code>status</code> of the event tracker. For more information on event trackers,
-    /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
+    /// Describes an event tracker. The response includes the <c>trackingId</c> and <c>status</c>
+    /// of the event tracker. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
     /// </summary>
     public partial class DescribeEventTrackerRequest : AmazonPersonalizeRequest
     {

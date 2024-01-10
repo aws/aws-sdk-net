@@ -47,11 +47,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SkipTunnelReplacement. 
         /// <para>
         /// Choose whether or not to trigger immediate tunnel replacement. This is only applicable
-        /// when turning on or off <code>EnableTunnelLifecycleControl</code>.
+        /// when turning on or off <c>EnableTunnelLifecycleControl</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>True</code> | <code>False</code> 
+        /// Valid values: <c>True</c> | <c>False</c> 
         /// </para>
         /// </summary>
         public bool SkipTunnelReplacement

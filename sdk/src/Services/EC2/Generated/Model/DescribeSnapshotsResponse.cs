@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to include in another request to return the next page of snapshots. This
-        /// value is <code>null</code> when there are no more snapshots to return.
+        /// value is <c>null</c> when there are no more snapshots to return.
         /// </para>
         /// </summary>
         public string NextToken

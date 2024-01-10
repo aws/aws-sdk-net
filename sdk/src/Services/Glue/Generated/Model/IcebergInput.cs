@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MetadataOperation. 
         /// <para>
-        /// A required metadata operation. Can only be set to <code>CREATE</code>.
+        /// A required metadata operation. Can only be set to <c>CREATE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

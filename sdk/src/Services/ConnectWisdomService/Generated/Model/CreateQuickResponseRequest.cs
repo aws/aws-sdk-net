@@ -113,13 +113,13 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code>application/x.quickresponse;format=plain</code> for a quick response written
-        /// in plain text.
+        /// Use <c>application/x.quickresponse;format=plain</c> for a quick response written in
+        /// plain text.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>application/x.quickresponse;format=markdown</code> for a quick response
-        /// written in richtext.
+        /// Use <c>application/x.quickresponse;format=markdown</c> for a quick response written
+        /// in richtext.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -216,9 +216,9 @@ namespace Amazon.ConnectWisdomService.Model
         /// Gets and sets the property Language. 
         /// <para>
         /// The language code value for the language in which the quick response is written. The
-        /// supported language codes include <code>de_DE</code>, <code>en_US</code>, <code>es_ES</code>,
-        /// <code>fr_FR</code>, <code>id_ID</code>, <code>it_IT</code>, <code>ja_JP</code>, <code>ko_KR</code>,
-        /// <code>pt_BR</code>, <code>zh_CN</code>, <code>zh_TW</code> 
+        /// supported language codes include <c>de_DE</c>, <c>en_US</c>, <c>es_ES</c>, <c>fr_FR</c>,
+        /// <c>id_ID</c>, <c>it_IT</c>, <c>ja_JP</c>, <c>ko_KR</c>, <c>pt_BR</c>, <c>zh_CN</c>,
+        /// <c>zh_TW</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=5)]

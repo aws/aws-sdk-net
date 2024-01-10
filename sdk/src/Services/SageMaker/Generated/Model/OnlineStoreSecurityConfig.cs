@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The security configuration for <code>OnlineStore</code>.
+    /// The security configuration for <c>OnlineStore</c>.
     /// </summary>
     public partial class OnlineStoreSecurityConfig
     {
@@ -43,62 +43,62 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// The caller (either user or IAM role) of <code>CreateFeatureGroup</code> must have
-        /// below permissions to the <code>OnlineStore</code> <code>KmsKeyId</code>:
+        /// The caller (either user or IAM role) of <c>CreateFeatureGroup</c> must have below
+        /// permissions to the <c>OnlineStore</c> <c>KmsKeyId</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"kms:Encrypt"</code> 
+        ///  <c>"kms:Encrypt"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:Decrypt"</code> 
+        ///  <c>"kms:Decrypt"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:DescribeKey"</code> 
+        ///  <c>"kms:DescribeKey"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:CreateGrant"</code> 
+        ///  <c>"kms:CreateGrant"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:RetireGrant"</code> 
+        ///  <c>"kms:RetireGrant"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:ReEncryptFrom"</code> 
+        ///  <c>"kms:ReEncryptFrom"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:ReEncryptTo"</code> 
+        ///  <c>"kms:ReEncryptTo"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:GenerateDataKey"</code> 
+        ///  <c>"kms:GenerateDataKey"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:ListAliases"</code> 
+        ///  <c>"kms:ListAliases"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:ListGrants"</code> 
+        ///  <c>"kms:ListGrants"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"kms:RevokeGrant"</code> 
+        ///  <c>"kms:RevokeGrant"</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The caller (either user or IAM role) to all DataPlane operations (<code>PutRecord</code>,
-        /// <code>GetRecord</code>, <code>DeleteRecord</code>) must have the following permissions
-        /// to the <code>KmsKeyId</code>:
+        /// The caller (either user or IAM role) to all DataPlane operations (<c>PutRecord</c>,
+        /// <c>GetRecord</c>, <c>DeleteRecord</c>) must have the following permissions to the
+        /// <c>KmsKeyId</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"kms:Decrypt"</code> 
+        ///  <c>"kms:Decrypt"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

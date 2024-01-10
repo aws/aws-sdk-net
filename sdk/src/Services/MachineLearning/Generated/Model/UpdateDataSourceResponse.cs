@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <code>UpdateDataSource</code> operation.
+    /// Represents the output of an <c>UpdateDataSource</c> operation.
     /// 
     ///  
     /// <para>
-    /// You can see the updated content by using the <code>GetBatchPrediction</code> operation.
+    /// You can see the updated content by using the <c>GetBatchPrediction</c> operation.
     /// </para>
     /// </summary>
     public partial class UpdateDataSourceResponse : AmazonWebServiceResponse
@@ -43,8 +43,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The ID assigned to the <code>DataSource</code> during creation. This value should
-        /// be identical to the value of the <code>DataSourceID</code> in the request.
+        /// The ID assigned to the <c>DataSource</c> during creation. This value should be identical
+        /// to the value of the <c>DataSourceID</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

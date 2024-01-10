@@ -30,8 +30,7 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateImageGenerationConfiguration operation.
-    /// Updates the <code>StreamInfo</code> and <code>ImageProcessingConfiguration</code>
-    /// fields.
+    /// Updates the <c>StreamInfo</c> and <c>ImageProcessingConfiguration</c> fields.
     /// </summary>
     public partial class UpdateImageGenerationConfigurationRequest : AmazonKinesisVideoRequest
     {
@@ -62,8 +61,8 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property StreamARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to
-        /// update the image generation configuration. You must specify either the <code>StreamName</code>
-        /// or the <code>StreamARN</code>.
+        /// update the image generation configuration. You must specify either the <c>StreamName</c>
+        /// or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -83,7 +82,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream from which to update the image generation configuration. You
-        /// must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

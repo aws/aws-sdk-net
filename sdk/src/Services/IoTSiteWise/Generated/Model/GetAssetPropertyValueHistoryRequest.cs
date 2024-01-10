@@ -39,11 +39,11 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+    /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+    /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
     /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
     /// </para>
     ///  </li> </ul>
@@ -110,8 +110,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The number of data points in the result set is equal to the value of <code>maxResults</code>.
-        /// The maximum value of <code>maxResults</code> is 20000.
+        /// The number of data points in the result set is equal to the value of <c>maxResults</c>.
+        /// The maximum value of <c>maxResults</c> is 20000.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -151,7 +151,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property PropertyAlias. 
         /// <para>
         /// The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
+        /// (for example, <c>/company/windfarm/3/turbine/7/temperature</c>). For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
         /// industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
@@ -233,7 +233,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ASCENDING</code> 
+        /// Default: <c>ASCENDING</c> 
         /// </para>
         /// </summary>
         public TimeOrdering TimeOrdering

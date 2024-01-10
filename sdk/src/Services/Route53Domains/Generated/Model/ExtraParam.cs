@@ -45,11 +45,11 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <dl> <dt>.com.au and .net.au</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>AU_ID_NUMBER</code> 
+        ///  <c>AU_ID_NUMBER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AU_ID_TYPE</code> 
+        ///  <c>AU_ID_TYPE</c> 
         /// </para>
         ///  
         /// <para>
@@ -57,23 +57,23 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ABN</code> (Australian business number)
+        ///  <c>ABN</c> (Australian business number)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACN</code> (Australian company number)
+        ///  <c>ACN</c> (Australian company number)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TM</code> (Trademark number)
+        ///  <c>TM</c> (Trademark number)
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>.ca</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>BRAND_NUMBER</code> 
+        ///  <c>BRAND_NUMBER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CA_BUSINESS_ENTITY_TYPE</code> 
+        ///  <c>CA_BUSINESS_ENTITY_TYPE</c> 
         /// </para>
         ///  
         /// <para>
@@ -81,205 +81,204 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BANK</code> (Bank)
+        ///  <c>BANK</c> (Bank)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMMERCIAL_COMPANY</code> (Commercial company)
+        ///  <c>COMMERCIAL_COMPANY</c> (Commercial company)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPANY</code> (Company)
+        ///  <c>COMPANY</c> (Company)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COOPERATION</code> (Cooperation)
+        ///  <c>COOPERATION</c> (Cooperation)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COOPERATIVE</code> (Cooperative)
+        ///  <c>COOPERATIVE</c> (Cooperative)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COOPRIX</code> (Cooprix)
+        ///  <c>COOPRIX</c> (Cooprix)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CORP</code> (Corporation)
+        ///  <c>CORP</c> (Corporation)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREDIT_UNION</code> (Credit union)
+        ///  <c>CREDIT_UNION</c> (Credit union)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FOMIA</code> (Federation of mutual insurance associations)
+        ///  <c>FOMIA</c> (Federation of mutual insurance associations)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INC</code> (Incorporated)
+        ///  <c>INC</c> (Incorporated)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LTD</code> (Limited)
+        ///  <c>LTD</c> (Limited)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LTEE</code> (Limitée)
+        ///  <c>LTEE</c> (Limitée)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LLC</code> (Limited liability corporation)
+        ///  <c>LLC</c> (Limited liability corporation)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LLP</code> (Limited liability partnership)
+        ///  <c>LLP</c> (Limited liability partnership)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LTE</code> (Lte.)
+        ///  <c>LTE</c> (Lte.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MBA</code> (Mutual benefit association)
+        ///  <c>MBA</c> (Mutual benefit association)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MIC</code> (Mutual insurance company)
+        ///  <c>MIC</c> (Mutual insurance company)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NFP</code> (Not-for-profit corporation)
+        ///  <c>NFP</c> (Not-for-profit corporation)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SA</code> (S.A.)
+        ///  <c>SA</c> (S.A.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAVINGS_COMPANY</code> (Savings company)
+        ///  <c>SAVINGS_COMPANY</c> (Savings company)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAVINGS_UNION</code> (Savings union)
+        ///  <c>SAVINGS_UNION</c> (Savings union)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SARL</code> (Société à responsabilité limitée)
+        ///  <c>SARL</c> (Société à responsabilité limitée)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRUST</code> (Trust)
+        ///  <c>TRUST</c> (Trust)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ULC</code> (Unlimited liability corporation)
+        ///  <c>ULC</c> (Unlimited liability corporation)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>CA_LEGAL_TYPE</code> 
+        ///  <c>CA_LEGAL_TYPE</c> 
         /// </para>
         ///  
         /// <para>
-        /// When <code>ContactType</code> is <code>PERSON</code>, valid values include the following:
+        /// When <c>ContactType</c> is <c>PERSON</c>, valid values include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ABO</code> (Aboriginal Peoples indigenous to Canada)
+        ///  <c>ABO</c> (Aboriginal Peoples indigenous to Canada)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CCT</code> (Canadian citizen)
+        ///  <c>CCT</c> (Canadian citizen)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LGR</code> (Legal Representative of a Canadian Citizen or Permanent Resident)
+        ///  <c>LGR</c> (Legal Representative of a Canadian Citizen or Permanent Resident)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RES</code> (Permanent resident of Canada)
+        ///  <c>RES</c> (Permanent resident of Canada)
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <code>ContactType</code> is a value other than <code>PERSON</code>, valid values
-        /// include the following:
+        /// When <c>ContactType</c> is a value other than <c>PERSON</c>, valid values include
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASS</code> (Canadian unincorporated association)
+        ///  <c>ASS</c> (Canadian unincorporated association)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CCO</code> (Canadian corporation)
+        ///  <c>CCO</c> (Canadian corporation)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EDU</code> (Canadian educational institution)
+        ///  <c>EDU</c> (Canadian educational institution)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GOV</code> (Government or government entity in Canada)
+        ///  <c>GOV</c> (Government or government entity in Canada)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HOP</code> (Canadian Hospital)
+        ///  <c>HOP</c> (Canadian Hospital)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INB</code> (Indian Band recognized by the Indian Act of Canada)
+        ///  <c>INB</c> (Indian Band recognized by the Indian Act of Canada)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LAM</code> (Canadian Library, Archive, or Museum)
+        ///  <c>LAM</c> (Canadian Library, Archive, or Museum)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MAJ</code> (Her/His Majesty the Queen/King)
+        ///  <c>MAJ</c> (Her/His Majesty the Queen/King)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OMK</code> (Official mark registered in Canada)
+        ///  <c>OMK</c> (Official mark registered in Canada)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PLT</code> (Canadian Political Party)
+        ///  <c>PLT</c> (Canadian Political Party)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PRT</code> (Partnership Registered in Canada)
+        ///  <c>PRT</c> (Partnership Registered in Canada)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TDM</code> (Trademark registered in Canada)
+        ///  <c>TDM</c> (Trademark registered in Canada)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRD</code> (Canadian Trade Union)
+        ///  <c>TRD</c> (Canadian Trade Union)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRS</code> (Trust established in Canada)
+        ///  <c>TRS</c> (Trust established in Canada)
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>.es</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>ES_IDENTIFICATION</code> 
+        ///  <c>ES_IDENTIFICATION</c> 
         /// </para>
         ///  
         /// <para>
-        /// The value of <code>ES_IDENTIFICATION</code> depends on the following values:
+        /// The value of <c>ES_IDENTIFICATION</c> depends on the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value of <code>ES_LEGAL_FORM</code> 
+        /// The value of <c>ES_LEGAL_FORM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>ES_IDENTIFICATION_TYPE</code> 
+        /// The value of <c>ES_IDENTIFICATION_TYPE</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>If <code>ES_LEGAL_FORM</code> is any value other than <code>INDIVIDUAL</code>:</b>
-        /// 
+        ///  <b>If <c>ES_LEGAL_FORM</c> is any value other than <c>INDIVIDUAL</c>:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -291,13 +290,12 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>If <code>ES_LEGAL_FORM</code> is <code>INDIVIDUAL</code>, the value that you specify
-        /// for <code>ES_IDENTIFICATION</code> depends on the value of <code>ES_IDENTIFICATION_TYPE</code>:</b>
-        /// 
+        ///  <b>If <c>ES_LEGAL_FORM</c> is <c>INDIVIDUAL</c>, the value that you specify for <c>ES_IDENTIFICATION</c>
+        /// depends on the value of <c>ES_IDENTIFICATION_TYPE</c>:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>ES_IDENTIFICATION_TYPE</code> is <code>DNI_AND_NIF</code> (for Spanish contacts):
+        /// If <c>ES_IDENTIFICATION_TYPE</c> is <c>DNI_AND_NIF</c> (for Spanish contacts):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -310,8 +308,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// If <code>ES_IDENTIFICATION_TYPE</code> is <code>NIE</code> (for foreigners with legal
-        /// residence):
+        /// If <c>ES_IDENTIFICATION_TYPE</c> is <c>NIE</c> (for foreigners with legal residence):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -323,8 +320,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// If <code>ES_IDENTIFICATION_TYPE</code> is <code>OTHER</code> (for contacts outside
-        /// of Spain):
+        /// If <c>ES_IDENTIFICATION_TYPE</c> is <c>OTHER</c> (for contacts outside of Spain):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -332,7 +328,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>ES_IDENTIFICATION_TYPE</code> 
+        ///  <c>ES_IDENTIFICATION_TYPE</c> 
         /// </para>
         ///  
         /// <para>
@@ -340,19 +336,19 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DNI_AND_NIF</code> (For Spanish contacts)
+        ///  <c>DNI_AND_NIF</c> (For Spanish contacts)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NIE</code> (For foreigners with legal residence)
+        ///  <c>NIE</c> (For foreigners with legal residence)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OTHER</code> (For contacts outside of Spain)
+        ///  <c>OTHER</c> (For contacts outside of Spain)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>ES_LEGAL_FORM</code> 
+        ///  <c>ES_LEGAL_FORM</c> 
         /// </para>
         ///  
         /// <para>
@@ -360,175 +356,175 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASSOCIATION</code> 
+        ///  <c>ASSOCIATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CENTRAL_GOVERNMENT_BODY</code> 
+        ///  <c>CENTRAL_GOVERNMENT_BODY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CIVIL_SOCIETY</code> 
+        ///  <c>CIVIL_SOCIETY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMMUNITY_OF_OWNERS</code> 
+        ///  <c>COMMUNITY_OF_OWNERS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMMUNITY_PROPERTY</code> 
+        ///  <c>COMMUNITY_PROPERTY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CONSULATE</code> 
+        ///  <c>CONSULATE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COOPERATIVE</code> 
+        ///  <c>COOPERATIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</code> 
+        ///  <c>DESIGNATION_OF_ORIGIN_SUPERVISORY_COUNCIL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ECONOMIC_INTEREST_GROUP</code> 
+        ///  <c>ECONOMIC_INTEREST_GROUP</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EMBASSY</code> 
+        ///  <c>EMBASSY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENTITY_MANAGING_NATURAL_AREAS</code> 
+        ///  <c>ENTITY_MANAGING_NATURAL_AREAS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FARM_PARTNERSHIP</code> 
+        ///  <c>FARM_PARTNERSHIP</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FOUNDATION</code> 
+        ///  <c>FOUNDATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GENERAL_AND_LIMITED_PARTNERSHIP</code> 
+        ///  <c>GENERAL_AND_LIMITED_PARTNERSHIP</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GENERAL_PARTNERSHIP</code> 
+        ///  <c>GENERAL_PARTNERSHIP</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INDIVIDUAL</code> 
+        ///  <c>INDIVIDUAL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LIMITED_COMPANY</code> 
+        ///  <c>LIMITED_COMPANY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOCAL_AUTHORITY</code> 
+        ///  <c>LOCAL_AUTHORITY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOCAL_PUBLIC_ENTITY</code> 
+        ///  <c>LOCAL_PUBLIC_ENTITY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MUTUAL_INSURANCE_COMPANY</code> 
+        ///  <c>MUTUAL_INSURANCE_COMPANY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NATIONAL_PUBLIC_ENTITY</code> 
+        ///  <c>NATIONAL_PUBLIC_ENTITY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ORDER_OR_RELIGIOUS_INSTITUTION</code> 
+        ///  <c>ORDER_OR_RELIGIOUS_INSTITUTION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OTHERS (Only for contacts outside of Spain)</code> 
+        ///  <c>OTHERS (Only for contacts outside of Spain)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>POLITICAL_PARTY</code> 
+        ///  <c>POLITICAL_PARTY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PROFESSIONAL_ASSOCIATION</code> 
+        ///  <c>PROFESSIONAL_ASSOCIATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC_LAW_ASSOCIATION</code> 
+        ///  <c>PUBLIC_LAW_ASSOCIATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC_LIMITED_COMPANY</code> 
+        ///  <c>PUBLIC_LIMITED_COMPANY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGIONAL_GOVERNMENT_BODY</code> 
+        ///  <c>REGIONAL_GOVERNMENT_BODY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGIONAL_PUBLIC_ENTITY</code> 
+        ///  <c>REGIONAL_PUBLIC_ENTITY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAVINGS_BANK</code> 
+        ///  <c>SAVINGS_BANK</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPANISH_OFFICE</code> 
+        ///  <c>SPANISH_OFFICE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPORTS_ASSOCIATION</code> 
+        ///  <c>SPORTS_ASSOCIATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPORTS_FEDERATION</code> 
+        ///  <c>SPORTS_FEDERATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPORTS_LIMITED_COMPANY</code> 
+        ///  <c>SPORTS_LIMITED_COMPANY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEMPORARY_ALLIANCE_OF_ENTERPRISES</code> 
+        ///  <c>TEMPORARY_ALLIANCE_OF_ENTERPRISES</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRADE_UNION</code> 
+        ///  <c>TRADE_UNION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WORKER_OWNED_COMPANY</code> 
+        ///  <c>WORKER_OWNED_COMPANY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WORKER_OWNED_LIMITED_COMPANY</code> 
+        ///  <c>WORKER_OWNED_LIMITED_COMPANY</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>.eu</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code> EU_COUNTRY_OF_CITIZENSHIP</code> 
+        ///  <c> EU_COUNTRY_OF_CITIZENSHIP</c> 
         /// </para>
         ///  </li> </ul> </dd> <dt>.fi</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>BIRTH_DATE_IN_YYYY_MM_DD</code> 
+        ///  <c>BIRTH_DATE_IN_YYYY_MM_DD</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FI_BUSINESS_NUMBER</code> 
+        ///  <c>FI_BUSINESS_NUMBER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FI_ID_NUMBER</code> 
+        ///  <c>FI_ID_NUMBER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FI_NATIONALITY</code> 
+        ///  <c>FI_NATIONALITY</c> 
         /// </para>
         ///  
         /// <para>
@@ -536,15 +532,15 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FINNISH</code> 
+        ///  <c>FINNISH</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_FINNISH</code> 
+        ///  <c>NOT_FINNISH</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>FI_ORGANIZATION_TYPE</code> 
+        ///  <c>FI_ORGANIZATION_TYPE</c> 
         /// </para>
         ///  
         /// <para>
@@ -552,43 +548,43 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COMPANY</code> 
+        ///  <c>COMPANY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CORPORATION</code> 
+        ///  <c>CORPORATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GOVERNMENT</code> 
+        ///  <c>GOVERNMENT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTITUTION</code> 
+        ///  <c>INSTITUTION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>POLITICAL_PARTY</code> 
+        ///  <c>POLITICAL_PARTY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC_COMMUNITY</code> 
+        ///  <c>PUBLIC_COMMUNITY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TOWNSHIP</code> 
+        ///  <c>TOWNSHIP</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>.it</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>IT_NATIONALITY</code> 
+        ///  <c>IT_NATIONALITY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IT_PIN</code> 
+        ///  <c>IT_PIN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IT_REGISTRANT_ENTITY_TYPE</code> 
+        ///  <c>IT_REGISTRANT_ENTITY_TYPE</c> 
         /// </para>
         ///  
         /// <para>
@@ -596,51 +592,51 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FOREIGNERS</code> 
+        ///  <c>FOREIGNERS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FREELANCE_WORKERS</code> (Freelance workers and professionals)
+        ///  <c>FREELANCE_WORKERS</c> (Freelance workers and professionals)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ITALIAN_COMPANIES</code> (Italian companies and one-person companies)
+        ///  <c>ITALIAN_COMPANIES</c> (Italian companies and one-person companies)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_PROFIT_ORGANIZATIONS</code> 
+        ///  <c>NON_PROFIT_ORGANIZATIONS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OTHER_SUBJECTS</code> 
+        ///  <c>OTHER_SUBJECTS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUBLIC_ORGANIZATIONS</code> 
+        ///  <c>PUBLIC_ORGANIZATIONS</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> </dd> <dt>.ru</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>BIRTH_DATE_IN_YYYY_MM_DD</code> 
+        ///  <c>BIRTH_DATE_IN_YYYY_MM_DD</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RU_PASSPORT_DATA</code> 
+        ///  <c>RU_PASSPORT_DATA</c> 
         /// </para>
         ///  </li> </ul> </dd> <dt>.se</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>BIRTH_COUNTRY</code> 
+        ///  <c>BIRTH_COUNTRY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SE_ID_NUMBER</code> 
+        ///  <c>SE_ID_NUMBER</c> 
         /// </para>
         ///  </li> </ul> </dd> <dt>.sg</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>SG_ID_NUMBER</code> 
+        ///  <c>SG_ID_NUMBER</c> 
         /// </para>
         ///  </li> </ul> </dd> <dt>.uk, .co.uk, .me.uk, and .org.uk</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>UK_CONTACT_TYPE</code> 
+        ///  <c>UK_CONTACT_TYPE</c> 
         /// </para>
         ///  
         /// <para>
@@ -648,75 +644,75 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CRC</code> (UK Corporation by Royal Charter)
+        ///  <c>CRC</c> (UK Corporation by Royal Charter)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FCORP</code> (Non-UK Corporation)
+        ///  <c>FCORP</c> (Non-UK Corporation)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FIND</code> (Non-UK Individual, representing self)
+        ///  <c>FIND</c> (Non-UK Individual, representing self)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FOTHER</code> (Non-UK Entity that does not fit into any other category)
+        ///  <c>FOTHER</c> (Non-UK Entity that does not fit into any other category)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GOV</code> (UK Government Body)
+        ///  <c>GOV</c> (UK Government Body)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IND</code> (UK Individual (representing self))
+        ///  <c>IND</c> (UK Individual (representing self))
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IP</code> (UK Industrial/Provident Registered Company)
+        ///  <c>IP</c> (UK Industrial/Provident Registered Company)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LLP</code> (UK Limited Liability Partnership)
+        ///  <c>LLP</c> (UK Limited Liability Partnership)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LTD</code> (UK Limited Company)
+        ///  <c>LTD</c> (UK Limited Company)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OTHER</code> (UK Entity that does not fit into any other category)
+        ///  <c>OTHER</c> (UK Entity that does not fit into any other category)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PLC</code> (UK Public Limited Company)
+        ///  <c>PLC</c> (UK Public Limited Company)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PTNR</code> (UK Partnership)
+        ///  <c>PTNR</c> (UK Partnership)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RCHAR</code> (UK Registered Charity)
+        ///  <c>RCHAR</c> (UK Registered Charity)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SCH</code> (UK School)
+        ///  <c>SCH</c> (UK School)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STAT</code> (UK Statutory Body)
+        ///  <c>STAT</c> (UK Statutory Body)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STRA</code> (UK Sole Trader)
+        ///  <c>STRA</c> (UK Sole Trader)
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>UK_COMPANY_NUMBER</code> 
+        ///  <c>UK_COMPANY_NUMBER</c> 
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
-        /// In addition, many TLDs require a <code>VAT_NUMBER</code>.
+        /// In addition, many TLDs require a <c>VAT_NUMBER</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

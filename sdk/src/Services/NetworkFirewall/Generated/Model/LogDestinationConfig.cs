@@ -38,7 +38,7 @@ namespace Amazon.NetworkFirewall.Model
     /// Network Firewall generates logs for stateful rule groups. You can save alert and flow
     /// log types. The stateful rules engine records flow logs for all network traffic that
     /// it receives. It records alert logs for traffic that matches stateful rules that have
-    /// the rule action set to <code>DROP</code> or <code>ALERT</code>. 
+    /// the rule action set to <c>DROP</c> or <c>ALERT</c>. 
     /// </para>
     /// </summary>
     public partial class LogDestinationConfig
@@ -55,35 +55,35 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For an Amazon S3 bucket, provide the name of the bucket, with key <code>bucketName</code>,
-        /// and optionally provide a prefix, with key <code>prefix</code>. The following example
-        /// specifies an Amazon S3 bucket named <code>DOC-EXAMPLE-BUCKET</code> and the prefix
-        /// <code>alerts</code>: 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>"LogDestination": { "bucketName": "DOC-EXAMPLE-BUCKET", "prefix": "alerts"
-        /// }</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For a CloudWatch log group, provide the name of the CloudWatch log group, with key
-        /// <code>logGroup</code>. The following example specifies a log group named <code>alert-log-group</code>:
+        /// For an Amazon S3 bucket, provide the name of the bucket, with key <c>bucketName</c>,
+        /// and optionally provide a prefix, with key <c>prefix</c>. The following example specifies
+        /// an Amazon S3 bucket named <c>DOC-EXAMPLE-BUCKET</c> and the prefix <c>alerts</c>:
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"LogDestination": { "logGroup": "alert-log-group" }</code> 
+        ///  <c>"LogDestination": { "bucketName": "DOC-EXAMPLE-BUCKET", "prefix": "alerts" }</c>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For a CloudWatch log group, provide the name of the CloudWatch log group, with key
+        /// <c>logGroup</c>. The following example specifies a log group named <c>alert-log-group</c>:
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>"LogDestination": { "logGroup": "alert-log-group" }</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For a Kinesis Data Firehose delivery stream, provide the name of the delivery stream,
-        /// with key <code>deliveryStream</code>. The following example specifies a delivery stream
-        /// named <code>alert-delivery-stream</code>: 
+        /// with key <c>deliveryStream</c>. The following example specifies a delivery stream
+        /// named <c>alert-delivery-stream</c>: 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</code> 
+        ///  <c>"LogDestination": { "deliveryStream": "alert-delivery-stream" }</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

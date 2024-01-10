@@ -40,9 +40,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters define the criteria for the group. The <code>matchingCount</code> field displays
-        /// the number of resources that match the criteria. The <code>notMatchingCount</code>
-        /// field displays the number of resources that don't match the criteria. 
+        /// Filters define the criteria for the group. The <c>matchingCount</c> field displays
+        /// the number of resources that match the criteria. The <c>notMatchingCount</c> field
+        /// displays the number of resources that don't match the criteria. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

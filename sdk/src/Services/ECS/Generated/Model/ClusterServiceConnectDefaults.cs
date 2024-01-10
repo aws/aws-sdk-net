@@ -32,10 +32,9 @@ namespace Amazon.ECS.Model
     /// Use this parameter to set a default Service Connect namespace. After you set a default
     /// Service Connect namespace, any new services with Service Connect turned on that are
     /// created in the cluster are added as client services in the namespace. This setting
-    /// only applies to new services that set the <code>enabled</code> parameter to <code>true</code>
-    /// in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each
-    /// service individually in the <code>ServiceConnectConfiguration</code> to override this
-    /// default parameter.
+    /// only applies to new services that set the <c>enabled</c> parameter to <c>true</c>
+    /// in the <c>ServiceConnectConfiguration</c>. You can set the namespace of each service
+    /// individually in the <c>ServiceConnectConfiguration</c> to override this default parameter.
     /// 
     ///  
     /// <para>

@@ -37,27 +37,27 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CreateDBInstance</code> 
+    ///  <c>CreateDBInstance</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateDBInstanceReadReplica</code> 
+    ///  <c>CreateDBInstanceReadReplica</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteDBInstance</code> 
+    ///  <c>DeleteDBInstance</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ModifyDBInstance</code> 
+    ///  <c>ModifyDBInstance</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RebootDBInstance</code> 
+    ///  <c>RebootDBInstance</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RestoreDBInstanceFromDBSnapshot</code> 
+    ///  <c>RestoreDBInstanceFromDBSnapshot</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

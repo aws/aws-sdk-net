@@ -34,7 +34,7 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+    /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <c>SourceDBClusterSnapshotIdentifier</c>
     /// must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.
     /// </para>
     /// </summary>
@@ -76,14 +76,14 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify
-        /// a value for <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key.
-        /// If you don't specify a value for <code>KmsKeyId</code>, then the copy of the DB cluster
-        /// snapshot is encrypted with the same KMS key as the source DB cluster snapshot.
+        /// a value for <c>KmsKeyId</c> to encrypt the copy with a new KMS encryption key. If
+        /// you don't specify a value for <c>KmsKeyId</c>, then the copy of the DB cluster snapshot
+        /// is encrypted with the same KMS key as the source DB cluster snapshot.
         /// </para>
         ///  
         /// <para>
         /// If you copy an encrypted DB cluster snapshot that is shared from another Amazon account,
-        /// then you must specify a value for <code>KmsKeyId</code>.
+        /// then you must specify a value for <c>KmsKeyId</c>.
         /// </para>
         ///  
         /// <para>
@@ -146,7 +146,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster-snapshot1</code> 
+        /// Example: <c>my-cluster-snapshot1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -204,7 +204,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster-snapshot2</code> 
+        /// Example: <c>my-cluster-snapshot2</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

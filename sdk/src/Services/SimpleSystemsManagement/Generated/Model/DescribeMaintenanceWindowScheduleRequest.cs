@@ -103,7 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource you want to retrieve information about. For example, <code>INSTANCE</code>.
+        /// The type of resource you want to retrieve information about. For example, <c>INSTANCE</c>.
         /// </para>
         /// </summary>
         public MaintenanceWindowResourceType ResourceType

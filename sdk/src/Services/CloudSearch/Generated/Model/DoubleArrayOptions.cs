@@ -30,7 +30,7 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Options for a field that contains an array of double-precision 64-bit floating point
-    /// values. Present if <code>IndexFieldType</code> specifies the field is of type <code>double-array</code>.
+    /// values. Present if <c>IndexFieldType</c> specifies the field is of type <c>double-array</c>.
     /// All options are enabled by default.
     /// </summary>
     public partial class DoubleArrayOptions

@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property CustomLineItems. 
         /// <para>
-        ///  A list of <code>FreeFormLineItemListElements</code> received. 
+        ///  A list of <c>FreeFormLineItemListElements</c> received. 
         /// </para>
         /// </summary>
         public List<CustomLineItemListElement> CustomLineItems

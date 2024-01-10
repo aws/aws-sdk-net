@@ -50,7 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Criteria for restricting the resulting list of platform versions. The filter is interpreted
-        /// as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.
+        /// as a logical conjunction (AND) of the separate <c>PlatformFilter</c> terms.
         /// </para>
         /// </summary>
         public List<PlatformFilter> Filters
@@ -93,7 +93,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// If no <code>NextToken</code> is specified, the first page is retrieved.
+        /// If no <c>NextToken</c> is specified, the first page is retrieved.
         /// </para>
         /// </summary>
         public string NextToken

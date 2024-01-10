@@ -40,7 +40,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) used by the service to access the IAM role. The role
-        /// must allow the <code>iam:PassRole</code> action.
+        /// must allow the <c>iam:PassRole</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

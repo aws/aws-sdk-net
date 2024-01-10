@@ -58,7 +58,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property StatusReason. 
         /// <para>
         /// The reason for the enrollment status of the account. For example, an account might
-        /// show a status of <code>Pending</code> because member accounts of an organization require
+        /// show a status of <c>Pending</c> because member accounts of an organization require
         /// more time to be enrolled in the service.
         /// </para>
         /// </summary>

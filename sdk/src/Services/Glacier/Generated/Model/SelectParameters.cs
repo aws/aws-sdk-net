@@ -59,7 +59,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property ExpressionType. 
         /// <para>
-        /// The type of the provided expression, for example <code>SQL</code>.
+        /// The type of the provided expression, for example <c>SQL</c>.
         /// </para>
         /// </summary>
         public ExpressionType ExpressionType

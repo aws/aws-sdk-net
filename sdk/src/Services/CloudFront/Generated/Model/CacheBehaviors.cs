@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains zero or more <code>CacheBehavior</code> elements.
+    /// A complex type that contains zero or more <c>CacheBehavior</c> elements.
     /// </summary>
     public partial class CacheBehaviors
     {
@@ -39,8 +39,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Optional: A complex type that contains cache behaviors for this distribution. If <code>Quantity</code>
-        /// is <code>0</code>, you can omit <code>Items</code>.
+        /// Optional: A complex type that contains cache behaviors for this distribution. If <c>Quantity</c>
+        /// is <c>0</c>, you can omit <c>Items</c>.
         /// </para>
         /// </summary>
         public List<CacheBehavior> Items

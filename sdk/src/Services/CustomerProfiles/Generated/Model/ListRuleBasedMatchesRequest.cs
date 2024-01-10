@@ -30,7 +30,7 @@ namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
     /// Container for the parameters to the ListRuleBasedMatches operation.
-    /// Returns a set of <code>MatchIds</code> that belong to the given domain.
+    /// Returns a set of <c>MatchIds</c> that belong to the given domain.
     /// </summary>
     public partial class ListRuleBasedMatchesRequest : AmazonCustomerProfilesRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of <code>MatchIds</code> returned per page.
+        /// The maximum number of <c>MatchIds</c> returned per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token from the previous <code>ListRuleBasedMatches</code> API call.
+        /// The pagination token from the previous <c>ListRuleBasedMatches</c> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

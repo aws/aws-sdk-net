@@ -30,14 +30,14 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DetectModerationLabels operation.
-    /// Detects unsafe content in a specified JPEG or PNG format image. Use <code>DetectModerationLabels</code>
+    /// Detects unsafe content in a specified JPEG or PNG format image. Use <c>DetectModerationLabels</c>
     /// to moderate images depending on your requirements. For example, you might want to
     /// filter images that contain nudity, but not images containing suggestive content.
     /// 
     ///  
     /// <para>
-    /// To filter images, use the labels returned by <code>DetectModerationLabels</code> to
-    /// determine which types of content are appropriate.
+    /// To filter images, use the labels returned by <c>DetectModerationLabels</c> to determine
+    /// which types of content are appropriate.
     /// </para>
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// You can specify an adapter to use when retrieving label predictions by providing a
-    /// <code>ProjectVersionArn</code> to the <code>ProjectVersion</code> argument.
+    /// <c>ProjectVersionArn</c> to the <c>ProjectVersion</c> argument.
     /// </para>
     /// </summary>
     public partial class DetectModerationLabelsRequest : AmazonRekognitionRequest
@@ -93,7 +93,7 @@ namespace Amazon.Rekognition.Model
         ///  
         /// <para>
         /// If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. For more information, see Images
+        /// image bytes passed using the <c>Bytes</c> field. For more information, see Images
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
@@ -118,8 +118,8 @@ namespace Amazon.Rekognition.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>MinConfidence</code>, the operation returns labels with
-        /// confidence values greater than or equal to 50 percent.
+        /// If you don't specify <c>MinConfidence</c>, the operation returns labels with confidence
+        /// values greater than or equal to 50 percent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

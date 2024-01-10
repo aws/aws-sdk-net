@@ -55,13 +55,13 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites
+        /// If tags have already been assigned to the stream, <c>AddTagsToStream</c> overwrites
         /// any existing tags that correspond to the specified tag keys.
         /// </para>
         ///  
@@ -85,7 +85,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -101,13 +101,13 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// If tags have already been assigned to the stream, <code>AddTagsToStream</code> overwrites
+        /// If tags have already been assigned to the stream, <c>AddTagsToStream</c> overwrites
         /// any existing tags that correspond to the specified tag keys.
         /// </para>
         ///  
@@ -134,7 +134,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -175,20 +175,19 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        ///  <code>CreateStream</code> is an asynchronous operation. Upon receiving a <code>CreateStream</code>
-        /// request, Kinesis Data Streams immediately returns and sets the stream status to <code>CREATING</code>.
-        /// After the stream is created, Kinesis Data Streams sets the stream status to <code>ACTIVE</code>.
-        /// You should perform read and write operations only on an <code>ACTIVE</code> stream.
-        /// 
+        ///  <c>CreateStream</c> is an asynchronous operation. Upon receiving a <c>CreateStream</c>
+        /// request, Kinesis Data Streams immediately returns and sets the stream status to <c>CREATING</c>.
+        /// After the stream is created, Kinesis Data Streams sets the stream status to <c>ACTIVE</c>.
+        /// You should perform read and write operations only on an <c>ACTIVE</c> stream. 
         /// </para>
         ///  
         /// <para>
-        /// You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code>
-        /// request when you try to do one of the following:
+        /// You receive a <c>LimitExceededException</c> when making a <c>CreateStream</c> request
+        /// when you try to do one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Have more than five streams in the <code>CREATING</code> state at any point in time.
+        /// Have more than five streams in the <c>CREATING</c> state at any point in time.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -204,7 +203,7 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> to check the stream status, which is returned
-        /// in <code>StreamStatus</code>.
+        /// in <c>StreamStatus</c>.
         /// </para>
         ///  
         /// <para>
@@ -224,7 +223,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         CreateStreamResponse CreateStream(CreateStreamRequest request);
@@ -259,20 +258,19 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        ///  <code>CreateStream</code> is an asynchronous operation. Upon receiving a <code>CreateStream</code>
-        /// request, Kinesis Data Streams immediately returns and sets the stream status to <code>CREATING</code>.
-        /// After the stream is created, Kinesis Data Streams sets the stream status to <code>ACTIVE</code>.
-        /// You should perform read and write operations only on an <code>ACTIVE</code> stream.
-        /// 
+        ///  <c>CreateStream</c> is an asynchronous operation. Upon receiving a <c>CreateStream</c>
+        /// request, Kinesis Data Streams immediately returns and sets the stream status to <c>CREATING</c>.
+        /// After the stream is created, Kinesis Data Streams sets the stream status to <c>ACTIVE</c>.
+        /// You should perform read and write operations only on an <c>ACTIVE</c> stream. 
         /// </para>
         ///  
         /// <para>
-        /// You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code>
-        /// request when you try to do one of the following:
+        /// You receive a <c>LimitExceededException</c> when making a <c>CreateStream</c> request
+        /// when you try to do one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Have more than five streams in the <code>CREATING</code> state at any point in time.
+        /// Have more than five streams in the <c>CREATING</c> state at any point in time.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -288,7 +286,7 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> to check the stream status, which is returned
-        /// in <code>StreamStatus</code>.
+        /// in <c>StreamStatus</c>.
         /// </para>
         ///  
         /// <para>
@@ -311,7 +309,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-2013-12-02/CreateStream">REST API Reference for CreateStream Operation</seealso>
         Task<CreateStreamResponse> CreateStreamAsync(CreateStreamRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -328,9 +326,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -356,7 +354,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -371,9 +369,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -398,7 +396,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -414,9 +412,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -445,7 +443,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -461,9 +459,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -491,7 +489,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -510,11 +508,11 @@ namespace Amazon.Kinesis
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// Data stream pattern: <c>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -535,7 +533,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -551,11 +549,11 @@ namespace Amazon.Kinesis
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// Data stream pattern: <c>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -579,7 +577,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -595,25 +593,25 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Deletes a Kinesis data stream and all its shards and data. You must shut down any
         /// applications that are operating on the stream before you delete the stream. If an
-        /// application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.
+        /// application attempts to operate on a deleted stream, it receives the exception <c>ResourceNotFoundException</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
-        /// request, the specified stream is in the <code>DELETING</code> state until Kinesis
-        /// Data Streams completes the deletion.
+        /// If the stream is in the <c>ACTIVE</c> state, you can delete it. After a <c>DeleteStream</c>
+        /// request, the specified stream is in the <c>DELETING</c> state until Kinesis Data Streams
+        /// completes the deletion.
         /// </para>
         ///  
         /// <para>
         ///  <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations,
         /// such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
-        /// the <code>DELETING</code> state until the stream deletion is complete.
+        /// the <c>DELETING</c> state until the stream deletion is complete.
         /// </para>
         ///  
         /// <para>
@@ -623,7 +621,7 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can use the <a>DescribeStreamSummary</a> operation to check the state of the stream,
-        /// which is returned in <code>StreamStatus</code>.
+        /// which is returned in <c>StreamStatus</c>.
         /// </para>
         ///  
         /// <para>
@@ -646,7 +644,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -659,25 +657,25 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Deletes a Kinesis data stream and all its shards and data. You must shut down any
         /// applications that are operating on the stream before you delete the stream. If an
-        /// application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.
+        /// application attempts to operate on a deleted stream, it receives the exception <c>ResourceNotFoundException</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
-        /// request, the specified stream is in the <code>DELETING</code> state until Kinesis
-        /// Data Streams completes the deletion.
+        /// If the stream is in the <c>ACTIVE</c> state, you can delete it. After a <c>DeleteStream</c>
+        /// request, the specified stream is in the <c>DELETING</c> state until Kinesis Data Streams
+        /// completes the deletion.
         /// </para>
         ///  
         /// <para>
         ///  <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations,
         /// such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
-        /// the <code>DELETING</code> state until the stream deletion is complete.
+        /// the <c>DELETING</c> state until the stream deletion is complete.
         /// </para>
         ///  
         /// <para>
@@ -687,7 +685,7 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can use the <a>DescribeStreamSummary</a> operation to check the state of the stream,
-        /// which is returned in <code>StreamStatus</code>.
+        /// which is returned in <c>StreamStatus</c>.
         /// </para>
         ///  
         /// <para>
@@ -713,7 +711,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -864,9 +862,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -928,9 +926,9 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1001,8 +999,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  <note> 
         /// <para>
-        /// When making a cross-account call with <code>DescribeStreamConsumer</code>, make sure
-        /// to provide the ARN of the consumer. 
+        /// When making a cross-account call with <c>DescribeStreamConsumer</c>, make sure to
+        /// provide the ARN of the consumer. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -1040,8 +1038,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  <note> 
         /// <para>
-        /// When making a cross-account call with <code>DescribeStreamConsumer</code>, make sure
-        /// to provide the ARN of the consumer. 
+        /// When making a cross-account call with <c>DescribeStreamConsumer</c>, make sure to
+        /// provide the ARN of the consumer. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -1076,9 +1074,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1119,9 +1117,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1167,9 +1165,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1189,7 +1187,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1204,9 +1202,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1229,7 +1227,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1247,9 +1245,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1269,7 +1267,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1284,9 +1282,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1309,7 +1307,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1327,17 +1325,17 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
-        /// iterator specifies the position in the shard from which you want to start reading
-        /// data records sequentially. If there are no records available in the portion of the
-        /// shard that the iterator points to, <a>GetRecords</a> returns an empty list. It might
-        /// take multiple calls to get to a portion of the shard that contains records.
+        /// Specify a shard iterator using the <c>ShardIterator</c> parameter. The shard iterator
+        /// specifies the position in the shard from which you want to start reading data records
+        /// sequentially. If there are no records available in the portion of the shard that the
+        /// iterator points to, <a>GetRecords</a> returns an empty list. It might take multiple
+        /// calls to get to a portion of the shard that contains records.
         /// </para>
         ///  
         /// <para>
@@ -1347,11 +1345,11 @@ namespace Amazon.Kinesis
         /// Your application should have one thread per shard, each reading continuously from
         /// its stream. To read from a stream continually, call <a>GetRecords</a> in a loop. Use
         /// <a>GetShardIterator</a> to get the shard iterator to specify in the first <a>GetRecords</a>
-        /// call. <a>GetRecords</a> returns a new shard iterator in <code>NextShardIterator</code>.
-        /// Specify the shard iterator returned in <code>NextShardIterator</code> in subsequent
-        /// calls to <a>GetRecords</a>. If the shard has been closed, the shard iterator can't
-        /// return more data and <a>GetRecords</a> returns <code>null</code> in <code>NextShardIterator</code>.
-        /// You can terminate the loop when the shard is closed, or when the shard iterator reaches
+        /// call. <a>GetRecords</a> returns a new shard iterator in <c>NextShardIterator</c>.
+        /// Specify the shard iterator returned in <c>NextShardIterator</c> in subsequent calls
+        /// to <a>GetRecords</a>. If the shard has been closed, the shard iterator can't return
+        /// more data and <a>GetRecords</a> returns <c>null</c> in <c>NextShardIterator</c>. You
+        /// can terminate the loop when the shard is closed, or when the shard iterator reaches
         /// the record with the sequence number or other attribute that marks it as the last record
         /// to process.
         /// </para>
@@ -1359,42 +1357,41 @@ namespace Amazon.Kinesis
         /// <para>
         /// Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB per
         /// second. You can ensure that your calls don't exceed the maximum supported size or
-        /// throughput by using the <code>Limit</code> parameter to specify the maximum number
-        /// of records that <a>GetRecords</a> can return. Consider your average record size when
-        /// determining this limit. The maximum number of records that can be returned per call
-        /// is 10,000.
+        /// throughput by using the <c>Limit</c> parameter to specify the maximum number of records
+        /// that <a>GetRecords</a> can return. Consider your average record size when determining
+        /// this limit. The maximum number of records that can be returned per call is 10,000.
         /// </para>
         ///  
         /// <para>
         /// The size of the data returned by <a>GetRecords</a> varies depending on the utilization
         /// of the shard. It is recommended that consumer applications retrieve records via the
-        /// <code>GetRecords</code> command using the 5 TPS limit to remain caught up. Retrieving
-        /// records less frequently can lead to consumer applications falling behind. The maximum
-        /// size of data that <a>GetRecords</a> can return is 10 MiB. If a call returns this amount
-        /// of data, subsequent calls made within the next 5 seconds throw <code>ProvisionedThroughputExceededException</code>.
+        /// <c>GetRecords</c> command using the 5 TPS limit to remain caught up. Retrieving records
+        /// less frequently can lead to consumer applications falling behind. The maximum size
+        /// of data that <a>GetRecords</a> can return is 10 MiB. If a call returns this amount
+        /// of data, subsequent calls made within the next 5 seconds throw <c>ProvisionedThroughputExceededException</c>.
         /// If there is insufficient provisioned throughput on the stream, subsequent calls made
-        /// within the next 1 second throw <code>ProvisionedThroughputExceededException</code>.
-        /// <a>GetRecords</a> doesn't return any data when it throws an exception. For this reason,
-        /// we recommend that you wait 1 second between calls to <a>GetRecords</a>. However, it's
-        /// possible that the application will get exceptions for longer than 1 second.
+        /// within the next 1 second throw <c>ProvisionedThroughputExceededException</c>. <a>GetRecords</a>
+        /// doesn't return any data when it throws an exception. For this reason, we recommend
+        /// that you wait 1 second between calls to <a>GetRecords</a>. However, it's possible
+        /// that the application will get exceptions for longer than 1 second.
         /// </para>
         ///  
         /// <para>
         /// To detect whether the application is falling behind in processing, you can use the
-        /// <code>MillisBehindLatest</code> response attribute. You can also monitor the stream
-        /// using CloudWatch metrics and other mechanisms (see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
+        /// <c>MillisBehindLatest</c> response attribute. You can also monitor the stream using
+        /// CloudWatch metrics and other mechanisms (see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
         /// in the <i>Amazon Kinesis Data Streams Developer Guide</i>).
         /// </para>
         ///  
         /// <para>
-        /// Each Amazon Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>,
-        /// that is set when a stream successfully receives and stores a record. This is commonly
-        /// referred to as a server-side time stamp, whereas a client-side time stamp is set when
-        /// a data producer creates or sends the record to a stream (a data producer is any data
-        /// source putting data records into a stream, for example with <a>PutRecords</a>). The
-        /// time stamp has millisecond precision. There are no guarantees about the time stamp
-        /// accuracy, or that the time stamp is always increasing. For example, records in a shard
-        /// or across a stream might have time stamps that are out of order.
+        /// Each Amazon Kinesis record includes a value, <c>ApproximateArrivalTimestamp</c>, that
+        /// is set when a stream successfully receives and stores a record. This is commonly referred
+        /// to as a server-side time stamp, whereas a client-side time stamp is set when a data
+        /// producer creates or sends the record to a stream (a data producer is any data source
+        /// putting data records into a stream, for example with <a>PutRecords</a>). The time
+        /// stamp has millisecond precision. There are no guarantees about the time stamp accuracy,
+        /// or that the time stamp is always increasing. For example, records in a shard or across
+        /// a stream might have time stamps that are out of order.
         /// </para>
         ///  
         /// <para>
@@ -1458,17 +1455,17 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Specify a shard iterator using the <code>ShardIterator</code> parameter. The shard
-        /// iterator specifies the position in the shard from which you want to start reading
-        /// data records sequentially. If there are no records available in the portion of the
-        /// shard that the iterator points to, <a>GetRecords</a> returns an empty list. It might
-        /// take multiple calls to get to a portion of the shard that contains records.
+        /// Specify a shard iterator using the <c>ShardIterator</c> parameter. The shard iterator
+        /// specifies the position in the shard from which you want to start reading data records
+        /// sequentially. If there are no records available in the portion of the shard that the
+        /// iterator points to, <a>GetRecords</a> returns an empty list. It might take multiple
+        /// calls to get to a portion of the shard that contains records.
         /// </para>
         ///  
         /// <para>
@@ -1478,11 +1475,11 @@ namespace Amazon.Kinesis
         /// Your application should have one thread per shard, each reading continuously from
         /// its stream. To read from a stream continually, call <a>GetRecords</a> in a loop. Use
         /// <a>GetShardIterator</a> to get the shard iterator to specify in the first <a>GetRecords</a>
-        /// call. <a>GetRecords</a> returns a new shard iterator in <code>NextShardIterator</code>.
-        /// Specify the shard iterator returned in <code>NextShardIterator</code> in subsequent
-        /// calls to <a>GetRecords</a>. If the shard has been closed, the shard iterator can't
-        /// return more data and <a>GetRecords</a> returns <code>null</code> in <code>NextShardIterator</code>.
-        /// You can terminate the loop when the shard is closed, or when the shard iterator reaches
+        /// call. <a>GetRecords</a> returns a new shard iterator in <c>NextShardIterator</c>.
+        /// Specify the shard iterator returned in <c>NextShardIterator</c> in subsequent calls
+        /// to <a>GetRecords</a>. If the shard has been closed, the shard iterator can't return
+        /// more data and <a>GetRecords</a> returns <c>null</c> in <c>NextShardIterator</c>. You
+        /// can terminate the loop when the shard is closed, or when the shard iterator reaches
         /// the record with the sequence number or other attribute that marks it as the last record
         /// to process.
         /// </para>
@@ -1490,42 +1487,41 @@ namespace Amazon.Kinesis
         /// <para>
         /// Each data record can be up to 1 MiB in size, and each shard can read up to 2 MiB per
         /// second. You can ensure that your calls don't exceed the maximum supported size or
-        /// throughput by using the <code>Limit</code> parameter to specify the maximum number
-        /// of records that <a>GetRecords</a> can return. Consider your average record size when
-        /// determining this limit. The maximum number of records that can be returned per call
-        /// is 10,000.
+        /// throughput by using the <c>Limit</c> parameter to specify the maximum number of records
+        /// that <a>GetRecords</a> can return. Consider your average record size when determining
+        /// this limit. The maximum number of records that can be returned per call is 10,000.
         /// </para>
         ///  
         /// <para>
         /// The size of the data returned by <a>GetRecords</a> varies depending on the utilization
         /// of the shard. It is recommended that consumer applications retrieve records via the
-        /// <code>GetRecords</code> command using the 5 TPS limit to remain caught up. Retrieving
-        /// records less frequently can lead to consumer applications falling behind. The maximum
-        /// size of data that <a>GetRecords</a> can return is 10 MiB. If a call returns this amount
-        /// of data, subsequent calls made within the next 5 seconds throw <code>ProvisionedThroughputExceededException</code>.
+        /// <c>GetRecords</c> command using the 5 TPS limit to remain caught up. Retrieving records
+        /// less frequently can lead to consumer applications falling behind. The maximum size
+        /// of data that <a>GetRecords</a> can return is 10 MiB. If a call returns this amount
+        /// of data, subsequent calls made within the next 5 seconds throw <c>ProvisionedThroughputExceededException</c>.
         /// If there is insufficient provisioned throughput on the stream, subsequent calls made
-        /// within the next 1 second throw <code>ProvisionedThroughputExceededException</code>.
-        /// <a>GetRecords</a> doesn't return any data when it throws an exception. For this reason,
-        /// we recommend that you wait 1 second between calls to <a>GetRecords</a>. However, it's
-        /// possible that the application will get exceptions for longer than 1 second.
+        /// within the next 1 second throw <c>ProvisionedThroughputExceededException</c>. <a>GetRecords</a>
+        /// doesn't return any data when it throws an exception. For this reason, we recommend
+        /// that you wait 1 second between calls to <a>GetRecords</a>. However, it's possible
+        /// that the application will get exceptions for longer than 1 second.
         /// </para>
         ///  
         /// <para>
         /// To detect whether the application is falling behind in processing, you can use the
-        /// <code>MillisBehindLatest</code> response attribute. You can also monitor the stream
-        /// using CloudWatch metrics and other mechanisms (see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
+        /// <c>MillisBehindLatest</c> response attribute. You can also monitor the stream using
+        /// CloudWatch metrics and other mechanisms (see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/monitoring.html">Monitoring</a>
         /// in the <i>Amazon Kinesis Data Streams Developer Guide</i>).
         /// </para>
         ///  
         /// <para>
-        /// Each Amazon Kinesis record includes a value, <code>ApproximateArrivalTimestamp</code>,
-        /// that is set when a stream successfully receives and stores a record. This is commonly
-        /// referred to as a server-side time stamp, whereas a client-side time stamp is set when
-        /// a data producer creates or sends the record to a stream (a data producer is any data
-        /// source putting data records into a stream, for example with <a>PutRecords</a>). The
-        /// time stamp has millisecond precision. There are no guarantees about the time stamp
-        /// accuracy, or that the time stamp is always increasing. For example, records in a shard
-        /// or across a stream might have time stamps that are out of order.
+        /// Each Amazon Kinesis record includes a value, <c>ApproximateArrivalTimestamp</c>, that
+        /// is set when a stream successfully receives and stores a record. This is commonly referred
+        /// to as a server-side time stamp, whereas a client-side time stamp is set when a data
+        /// producer creates or sends the record to a stream (a data producer is any data source
+        /// putting data records into a stream, for example with <a>PutRecords</a>). The time
+        /// stamp has millisecond precision. There are no guarantees about the time stamp accuracy,
+        /// or that the time stamp is always increasing. For example, records in a shard or across
+        /// a stream might have time stamps that are out of order.
         /// </para>
         ///  
         /// <para>
@@ -1596,11 +1592,11 @@ namespace Amazon.Kinesis
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// Data stream pattern: <c>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        ///  Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1633,11 +1629,11 @@ namespace Amazon.Kinesis
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// Data stream pattern: <c>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        ///  Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -1676,9 +1672,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1690,30 +1686,29 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You must specify the shard iterator type. For example, you can set the <code>ShardIteratorType</code>
+        /// You must specify the shard iterator type. For example, you can set the <c>ShardIteratorType</c>
         /// parameter to read exactly from the position denoted by a specific sequence number
-        /// by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type. Alternatively, the
-        /// parameter can read right after the sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code>
+        /// by using the <c>AT_SEQUENCE_NUMBER</c> shard iterator type. Alternatively, the parameter
+        /// can read right after the sequence number by using the <c>AFTER_SEQUENCE_NUMBER</c>
         /// shard iterator type, using sequence numbers returned by earlier calls to <a>PutRecord</a>,
         /// <a>PutRecords</a>, <a>GetRecords</a>, or <a>DescribeStream</a>. In the request, you
-        /// can specify the shard iterator type <code>AT_TIMESTAMP</code> to read records from
-        /// an arbitrary point in time, <code>TRIM_HORIZON</code> to cause <code>ShardIterator</code>
-        /// to point to the last untrimmed record in the shard in the system (the oldest data
-        /// record in the shard), or <code>LATEST</code> so that you always read the most recent
-        /// data in the shard. 
+        /// can specify the shard iterator type <c>AT_TIMESTAMP</c> to read records from an arbitrary
+        /// point in time, <c>TRIM_HORIZON</c> to cause <c>ShardIterator</c> to point to the last
+        /// untrimmed record in the shard in the system (the oldest data record in the shard),
+        /// or <c>LATEST</c> so that you always read the most recent data in the shard. 
         /// </para>
         ///  
         /// <para>
         /// When you read repeatedly from a stream, use a <a>GetShardIterator</a> request to get
         /// the first shard iterator for use in your first <a>GetRecords</a> request and for subsequent
-        /// reads use the shard iterator returned by the <a>GetRecords</a> request in <code>NextShardIterator</code>.
-        /// A new shard iterator is returned by every <a>GetRecords</a> request in <code>NextShardIterator</code>,
-        /// which you use in the <code>ShardIterator</code> parameter of the next <a>GetRecords</a>
+        /// reads use the shard iterator returned by the <a>GetRecords</a> request in <c>NextShardIterator</c>.
+        /// A new shard iterator is returned by every <a>GetRecords</a> request in <c>NextShardIterator</c>,
+        /// which you use in the <c>ShardIterator</c> parameter of the next <a>GetRecords</a>
         /// request. 
         /// </para>
         ///  
         /// <para>
-        /// If a <a>GetShardIterator</a> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
+        /// If a <a>GetShardIterator</a> request is made too often, you receive a <c>ProvisionedThroughputExceededException</c>.
         /// For more information about throughput limits, see <a>GetRecords</a>, and <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// </para>
@@ -1761,9 +1756,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1775,30 +1770,29 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// You must specify the shard iterator type. For example, you can set the <code>ShardIteratorType</code>
+        /// You must specify the shard iterator type. For example, you can set the <c>ShardIteratorType</c>
         /// parameter to read exactly from the position denoted by a specific sequence number
-        /// by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type. Alternatively, the
-        /// parameter can read right after the sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code>
+        /// by using the <c>AT_SEQUENCE_NUMBER</c> shard iterator type. Alternatively, the parameter
+        /// can read right after the sequence number by using the <c>AFTER_SEQUENCE_NUMBER</c>
         /// shard iterator type, using sequence numbers returned by earlier calls to <a>PutRecord</a>,
         /// <a>PutRecords</a>, <a>GetRecords</a>, or <a>DescribeStream</a>. In the request, you
-        /// can specify the shard iterator type <code>AT_TIMESTAMP</code> to read records from
-        /// an arbitrary point in time, <code>TRIM_HORIZON</code> to cause <code>ShardIterator</code>
-        /// to point to the last untrimmed record in the shard in the system (the oldest data
-        /// record in the shard), or <code>LATEST</code> so that you always read the most recent
-        /// data in the shard. 
+        /// can specify the shard iterator type <c>AT_TIMESTAMP</c> to read records from an arbitrary
+        /// point in time, <c>TRIM_HORIZON</c> to cause <c>ShardIterator</c> to point to the last
+        /// untrimmed record in the shard in the system (the oldest data record in the shard),
+        /// or <c>LATEST</c> so that you always read the most recent data in the shard. 
         /// </para>
         ///  
         /// <para>
         /// When you read repeatedly from a stream, use a <a>GetShardIterator</a> request to get
         /// the first shard iterator for use in your first <a>GetRecords</a> request and for subsequent
-        /// reads use the shard iterator returned by the <a>GetRecords</a> request in <code>NextShardIterator</code>.
-        /// A new shard iterator is returned by every <a>GetRecords</a> request in <code>NextShardIterator</code>,
-        /// which you use in the <code>ShardIterator</code> parameter of the next <a>GetRecords</a>
+        /// reads use the shard iterator returned by the <a>GetRecords</a> request in <c>NextShardIterator</c>.
+        /// A new shard iterator is returned by every <a>GetRecords</a> request in <c>NextShardIterator</c>,
+        /// which you use in the <c>ShardIterator</c> parameter of the next <a>GetRecords</a>
         /// request. 
         /// </para>
         ///  
         /// <para>
-        /// If a <a>GetShardIterator</a> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
+        /// If a <a>GetShardIterator</a> request is made too often, you receive a <c>ProvisionedThroughputExceededException</c>.
         /// For more information about throughput limits, see <a>GetRecords</a>, and <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
         /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// </para>
@@ -1853,9 +1847,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1884,7 +1878,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1899,9 +1893,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1929,7 +1923,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1945,9 +1939,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1979,7 +1973,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -1995,9 +1989,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2028,7 +2022,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2047,9 +2041,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2085,7 +2079,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2101,9 +2095,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2142,7 +2136,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2180,7 +2174,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2218,7 +2212,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2236,20 +2230,20 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
-        /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
-        /// uses the default limit, which is currently 100.
+        /// The number of streams may be too large to return from a single call to <c>ListStreams</c>.
+        /// You can limit the number of returned streams using the <c>Limit</c> parameter. If
+        /// you do not specify a value for the <c>Limit</c> parameter, Kinesis Data Streams uses
+        /// the default limit, which is currently 100.
         /// </para>
         ///  
         /// <para>
-        /// You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+        /// You can detect if there are more streams available to list by using the <c>HasMoreStreams</c>
         /// flag from the returned output. If there are more streams available, you can request
-        /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
-        /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
-        /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
-        /// request is then added to the list. You can continue this process until all the stream
-        /// names have been collected in the list. 
+        /// more streams by using the name of the last stream returned by the <c>ListStreams</c>
+        /// request in the <c>ExclusiveStartStreamName</c> parameter in a subsequent request to
+        /// <c>ListStreams</c>. The group of stream names returned by the subsequent request is
+        /// then added to the list. You can continue this process until all the stream names have
+        /// been collected in the list. 
         /// </para>
         ///  
         /// <para>
@@ -2278,20 +2272,20 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
-        /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
-        /// uses the default limit, which is currently 100.
+        /// The number of streams may be too large to return from a single call to <c>ListStreams</c>.
+        /// You can limit the number of returned streams using the <c>Limit</c> parameter. If
+        /// you do not specify a value for the <c>Limit</c> parameter, Kinesis Data Streams uses
+        /// the default limit, which is currently 100.
         /// </para>
         ///  
         /// <para>
-        /// You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+        /// You can detect if there are more streams available to list by using the <c>HasMoreStreams</c>
         /// flag from the returned output. If there are more streams available, you can request
-        /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
-        /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
-        /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
-        /// request is then added to the list. You can continue this process until all the stream
-        /// names have been collected in the list. 
+        /// more streams by using the name of the last stream returned by the <c>ListStreams</c>
+        /// request in the <c>ExclusiveStartStreamName</c> parameter in a subsequent request to
+        /// <c>ListStreams</c>. The group of stream names returned by the subsequent request is
+        /// then added to the list. You can continue this process until all the stream names have
+        /// been collected in the list. 
         /// </para>
         ///  
         /// <para>
@@ -2321,20 +2315,20 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
-        /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
-        /// uses the default limit, which is currently 100.
+        /// The number of streams may be too large to return from a single call to <c>ListStreams</c>.
+        /// You can limit the number of returned streams using the <c>Limit</c> parameter. If
+        /// you do not specify a value for the <c>Limit</c> parameter, Kinesis Data Streams uses
+        /// the default limit, which is currently 100.
         /// </para>
         ///  
         /// <para>
-        /// You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+        /// You can detect if there are more streams available to list by using the <c>HasMoreStreams</c>
         /// flag from the returned output. If there are more streams available, you can request
-        /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
-        /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
-        /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
-        /// request is then added to the list. You can continue this process until all the stream
-        /// names have been collected in the list. 
+        /// more streams by using the name of the last stream returned by the <c>ListStreams</c>
+        /// request in the <c>ExclusiveStartStreamName</c> parameter in a subsequent request to
+        /// <c>ListStreams</c>. The group of stream names returned by the subsequent request is
+        /// then added to the list. You can continue this process until all the stream names have
+        /// been collected in the list. 
         /// </para>
         ///  
         /// <para>
@@ -2367,20 +2361,20 @@ namespace Amazon.Kinesis
         /// 
         ///  
         /// <para>
-        /// The number of streams may be too large to return from a single call to <code>ListStreams</code>.
-        /// You can limit the number of returned streams using the <code>Limit</code> parameter.
-        /// If you do not specify a value for the <code>Limit</code> parameter, Kinesis Data Streams
-        /// uses the default limit, which is currently 100.
+        /// The number of streams may be too large to return from a single call to <c>ListStreams</c>.
+        /// You can limit the number of returned streams using the <c>Limit</c> parameter. If
+        /// you do not specify a value for the <c>Limit</c> parameter, Kinesis Data Streams uses
+        /// the default limit, which is currently 100.
         /// </para>
         ///  
         /// <para>
-        /// You can detect if there are more streams available to list by using the <code>HasMoreStreams</code>
+        /// You can detect if there are more streams available to list by using the <c>HasMoreStreams</c>
         /// flag from the returned output. If there are more streams available, you can request
-        /// more streams by using the name of the last stream returned by the <code>ListStreams</code>
-        /// request in the <code>ExclusiveStartStreamName</code> parameter in a subsequent request
-        /// to <code>ListStreams</code>. The group of stream names returned by the subsequent
-        /// request is then added to the list. You can continue this process until all the stream
-        /// names have been collected in the list. 
+        /// more streams by using the name of the last stream returned by the <c>ListStreams</c>
+        /// request in the <c>ExclusiveStartStreamName</c> parameter in a subsequent request to
+        /// <c>ListStreams</c>. The group of stream names returned by the subsequent request is
+        /// then added to the list. You can continue this process until all the stream names have
+        /// been collected in the list. 
         /// </para>
         ///  
         /// <para>
@@ -2418,9 +2412,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2452,9 +2446,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2499,13 +2493,13 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <code>MergeShards</code> is called when there is a need to reduce the overall capacity
+        ///  <c>MergeShards</c> is called when there is a need to reduce the overall capacity
         /// of a stream because of excess capacity that is not being used. You must specify the
         /// shard to be merged and the adjacent shard for a stream. For more information about
         /// merging shards, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
@@ -2513,39 +2507,38 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// If the stream is in the <code>ACTIVE</code> state, you can call <code>MergeShards</code>.
-        /// If a stream is in the <code>CREATING</code>, <code>UPDATING</code>, or <code>DELETING</code>
-        /// state, <code>MergeShards</code> returns a <code>ResourceInUseException</code>. If
-        /// the specified stream does not exist, <code>MergeShards</code> returns a <code>ResourceNotFoundException</code>.
-        /// 
+        /// If the stream is in the <c>ACTIVE</c> state, you can call <c>MergeShards</c>. If a
+        /// stream is in the <c>CREATING</c>, <c>UPDATING</c>, or <c>DELETING</c> state, <c>MergeShards</c>
+        /// returns a <c>ResourceInUseException</c>. If the specified stream does not exist, <c>MergeShards</c>
+        /// returns a <c>ResourceNotFoundException</c>. 
         /// </para>
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> to check the state of the stream, which is
-        /// returned in <code>StreamStatus</code>.
+        /// returned in <c>StreamStatus</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>MergeShards</code> is an asynchronous operation. Upon receiving a <code>MergeShards</code>
-        /// request, Amazon Kinesis Data Streams immediately returns a response and sets the <code>StreamStatus</code>
-        /// to <code>UPDATING</code>. After the operation is completed, Kinesis Data Streams sets
-        /// the <code>StreamStatus</code> to <code>ACTIVE</code>. Read and write operations continue
-        /// to work while the stream is in the <code>UPDATING</code> state. 
+        ///  <c>MergeShards</c> is an asynchronous operation. Upon receiving a <c>MergeShards</c>
+        /// request, Amazon Kinesis Data Streams immediately returns a response and sets the <c>StreamStatus</c>
+        /// to <c>UPDATING</c>. After the operation is completed, Kinesis Data Streams sets the
+        /// <c>StreamStatus</c> to <c>ACTIVE</c>. Read and write operations continue to work while
+        /// the stream is in the <c>UPDATING</c> state. 
         /// </para>
         ///  
         /// <para>
         /// You use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine the
-        /// shard IDs that are specified in the <code>MergeShards</code> request. 
+        /// shard IDs that are specified in the <c>MergeShards</c> request. 
         /// </para>
         ///  
         /// <para>
         /// If you try to operate on too many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
-        /// <code>MergeShards</code>, or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>.
+        /// <c>MergeShards</c>, or <a>SplitShard</a>, you receive a <c>LimitExceededException</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>MergeShards</code> has a limit of five transactions per second per account.
+        ///  <c>MergeShards</c> has a limit of five transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergeShards service method.</param>
@@ -2564,7 +2557,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2591,13 +2584,13 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <code>MergeShards</code> is called when there is a need to reduce the overall capacity
+        ///  <c>MergeShards</c> is called when there is a need to reduce the overall capacity
         /// of a stream because of excess capacity that is not being used. You must specify the
         /// shard to be merged and the adjacent shard for a stream. For more information about
         /// merging shards, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-resharding-merge.html">Merge
@@ -2605,39 +2598,38 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// If the stream is in the <code>ACTIVE</code> state, you can call <code>MergeShards</code>.
-        /// If a stream is in the <code>CREATING</code>, <code>UPDATING</code>, or <code>DELETING</code>
-        /// state, <code>MergeShards</code> returns a <code>ResourceInUseException</code>. If
-        /// the specified stream does not exist, <code>MergeShards</code> returns a <code>ResourceNotFoundException</code>.
-        /// 
+        /// If the stream is in the <c>ACTIVE</c> state, you can call <c>MergeShards</c>. If a
+        /// stream is in the <c>CREATING</c>, <c>UPDATING</c>, or <c>DELETING</c> state, <c>MergeShards</c>
+        /// returns a <c>ResourceInUseException</c>. If the specified stream does not exist, <c>MergeShards</c>
+        /// returns a <c>ResourceNotFoundException</c>. 
         /// </para>
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> to check the state of the stream, which is
-        /// returned in <code>StreamStatus</code>.
+        /// returned in <c>StreamStatus</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>MergeShards</code> is an asynchronous operation. Upon receiving a <code>MergeShards</code>
-        /// request, Amazon Kinesis Data Streams immediately returns a response and sets the <code>StreamStatus</code>
-        /// to <code>UPDATING</code>. After the operation is completed, Kinesis Data Streams sets
-        /// the <code>StreamStatus</code> to <code>ACTIVE</code>. Read and write operations continue
-        /// to work while the stream is in the <code>UPDATING</code> state. 
+        ///  <c>MergeShards</c> is an asynchronous operation. Upon receiving a <c>MergeShards</c>
+        /// request, Amazon Kinesis Data Streams immediately returns a response and sets the <c>StreamStatus</c>
+        /// to <c>UPDATING</c>. After the operation is completed, Kinesis Data Streams sets the
+        /// <c>StreamStatus</c> to <c>ACTIVE</c>. Read and write operations continue to work while
+        /// the stream is in the <c>UPDATING</c> state. 
         /// </para>
         ///  
         /// <para>
         /// You use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine the
-        /// shard IDs that are specified in the <code>MergeShards</code> request. 
+        /// shard IDs that are specified in the <c>MergeShards</c> request. 
         /// </para>
         ///  
         /// <para>
         /// If you try to operate on too many streams in parallel using <a>CreateStream</a>, <a>DeleteStream</a>,
-        /// <code>MergeShards</code>, or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>.
+        /// <c>MergeShards</c>, or <a>SplitShard</a>, you receive a <c>LimitExceededException</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>MergeShards</code> has a limit of five transactions per second per account.
+        ///  <c>MergeShards</c> has a limit of five transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the MergeShards service method.</param>
@@ -2659,7 +2651,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -2677,16 +2669,16 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Writes a single data record into an Amazon Kinesis data stream. Call <code>PutRecord</code>
+        /// Writes a single data record into an Amazon Kinesis data stream. Call <c>PutRecord</c>
         /// to send data into the stream for real-time ingestion and subsequent processing, one
         /// record at a time. Each shard can support writes up to 1,000 records per second, up
         /// to a maximum data write total of 1 MiB per second.
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2711,21 +2703,21 @@ namespace Amazon.Kinesis
         /// for each key. An MD5 hash function is used to map partition keys to 128-bit integer
         /// values and to map associated data records to shards using the hash key ranges of the
         /// shards. You can override hashing the partition key to determine the shard by explicitly
-        /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+        /// specifying a hash value using the <c>ExplicitHashKey</c> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
         /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutRecord</code> returns the shard ID of where the data record was placed and
-        /// the sequence number that was assigned to the data record.
+        ///  <c>PutRecord</c> returns the shard ID of where the data record was placed and the
+        /// sequence number that was assigned to the data record.
         /// </para>
         ///  
         /// <para>
         /// Sequence numbers increase over time and are specific to a shard within a stream, not
         /// across all shards within a stream. To guarantee strictly increasing ordering, write
-        /// serially to a shard and use the <code>SequenceNumberForOrdering</code> parameter.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+        /// serially to a shard and use the <c>SequenceNumberForOrdering</c> parameter. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
         /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// </para>
         ///  <important> 
@@ -2735,8 +2727,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </important> 
         /// <para>
-        /// If a <code>PutRecord</code> request cannot be processed because of insufficient provisioned
-        /// throughput on the shard involved in the request, <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code>.
+        /// If a <c>PutRecord</c> request cannot be processed because of insufficient provisioned
+        /// throughput on the shard involved in the request, <c>PutRecord</c> throws <c>ProvisionedThroughputExceededException</c>.
         /// 
         /// </para>
         ///  
@@ -2796,16 +2788,16 @@ namespace Amazon.Kinesis
 
 
         /// <summary>
-        /// Writes a single data record into an Amazon Kinesis data stream. Call <code>PutRecord</code>
+        /// Writes a single data record into an Amazon Kinesis data stream. Call <c>PutRecord</c>
         /// to send data into the stream for real-time ingestion and subsequent processing, one
         /// record at a time. Each shard can support writes up to 1,000 records per second, up
         /// to a maximum data write total of 1 MiB per second.
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2830,21 +2822,21 @@ namespace Amazon.Kinesis
         /// for each key. An MD5 hash function is used to map partition keys to 128-bit integer
         /// values and to map associated data records to shards using the hash key ranges of the
         /// shards. You can override hashing the partition key to determine the shard by explicitly
-        /// specifying a hash value using the <code>ExplicitHashKey</code> parameter. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+        /// specifying a hash value using the <c>ExplicitHashKey</c> parameter. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
         /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>PutRecord</code> returns the shard ID of where the data record was placed and
-        /// the sequence number that was assigned to the data record.
+        ///  <c>PutRecord</c> returns the shard ID of where the data record was placed and the
+        /// sequence number that was assigned to the data record.
         /// </para>
         ///  
         /// <para>
         /// Sequence numbers increase over time and are specific to a shard within a stream, not
         /// across all shards within a stream. To guarantee strictly increasing ordering, write
-        /// serially to a shard and use the <code>SequenceNumberForOrdering</code> parameter.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
+        /// serially to a shard and use the <c>SequenceNumberForOrdering</c> parameter. For more
+        /// information, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-add-data-to-stream">Adding
         /// Data to a Stream</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
         /// </para>
         ///  <important> 
@@ -2854,8 +2846,8 @@ namespace Amazon.Kinesis
         /// </para>
         ///  </important> 
         /// <para>
-        /// If a <code>PutRecord</code> request cannot be processed because of insufficient provisioned
-        /// throughput on the shard involved in the request, <code>PutRecord</code> throws <code>ProvisionedThroughputExceededException</code>.
+        /// If a <c>PutRecord</c> request cannot be processed because of insufficient provisioned
+        /// throughput on the shard involved in the request, <c>PutRecord</c> throws <c>ProvisionedThroughputExceededException</c>.
         /// 
         /// </para>
         ///  
@@ -2922,28 +2914,28 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Writes multiple data records into a Kinesis data stream in a single call (also referred
-        /// to as a <code>PutRecords</code> request). Use this operation to send data into the
-        /// stream for data ingestion and processing. 
+        /// to as a <c>PutRecords</c> request). Use this operation to send data into the stream
+        /// for data ingestion and processing. 
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each <code>PutRecords</code> request can support up to 500 records. Each record in
-        /// the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,
-        /// including partition keys. Each shard can support writes up to 1,000 records per second,
-        /// up to a maximum data write total of 1 MiB per second.
+        /// Each <c>PutRecords</c> request can support up to 500 records. Each record in the request
+        /// can be as large as 1 MiB, up to a limit of 5 MiB for the entire request, including
+        /// partition keys. Each shard can support writes up to 1,000 records per second, up to
+        /// a maximum data write total of 1 MiB per second.
         /// </para>
         ///  
         /// <para>
         /// You must specify the name of the stream that captures, stores, and transports the
-        /// data; and an array of request <code>Records</code>, with each record in the array
-        /// requiring a partition key and data blob. The record size limit applies to the total
-        /// size of the partition key and data blob.
+        /// data; and an array of request <c>Records</c>, with each record in the array requiring
+        /// a partition key and data blob. The record size limit applies to the total size of
+        /// the partition key and data blob.
         /// </para>
         ///  
         /// <para>
@@ -2962,7 +2954,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Each record in the <code>Records</code> array may include an optional parameter, <code>ExplicitHashKey</code>,
+        /// Each record in the <c>Records</c> array may include an optional parameter, <c>ExplicitHashKey</c>,
         /// which overrides the partition key to shard mapping. This parameter allows a data producer
         /// to determine explicitly the shard where the record is stored. For more information,
         /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
@@ -2971,34 +2963,34 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// The <code>PutRecords</code> response includes an array of response <code>Records</code>.
-        /// Each record in the response array directly correlates with a record in the request
-        /// array using natural ordering, from the top to the bottom of the request and response.
-        /// The response <code>Records</code> array always includes the same number of records
-        /// as the request array.
+        /// The <c>PutRecords</c> response includes an array of response <c>Records</c>. Each
+        /// record in the response array directly correlates with a record in the request array
+        /// using natural ordering, from the top to the bottom of the request and response. The
+        /// response <c>Records</c> array always includes the same number of records as the request
+        /// array.
         /// </para>
         ///  
         /// <para>
-        /// The response <code>Records</code> array includes both successfully and unsuccessfully
-        /// processed records. Kinesis Data Streams attempts to process all records in each <code>PutRecords</code>
+        /// The response <c>Records</c> array includes both successfully and unsuccessfully processed
+        /// records. Kinesis Data Streams attempts to process all records in each <c>PutRecords</c>
         /// request. A single record failure does not stop the processing of subsequent records.
         /// As a result, PutRecords doesn't guarantee the ordering of records. If you need to
         /// read records in the same order they are written to the stream, use <a>PutRecord</a>
-        /// instead of <code>PutRecords</code>, and write to the same shard.
+        /// instead of <c>PutRecords</c>, and write to the same shard.
         /// </para>
         ///  
         /// <para>
-        /// A successfully processed record includes <code>ShardId</code> and <code>SequenceNumber</code>
-        /// values. The <code>ShardId</code> parameter identifies the shard in the stream where
-        /// the record is stored. The <code>SequenceNumber</code> parameter is an identifier assigned
-        /// to the put record, unique to all records in the stream.
+        /// A successfully processed record includes <c>ShardId</c> and <c>SequenceNumber</c>
+        /// values. The <c>ShardId</c> parameter identifies the shard in the stream where the
+        /// record is stored. The <c>SequenceNumber</c> parameter is an identifier assigned to
+        /// the put record, unique to all records in the stream.
         /// </para>
         ///  
         /// <para>
-        /// An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code>
-        /// values. <code>ErrorCode</code> reflects the type of error and can be one of the following
-        /// values: <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
-        /// <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>
+        /// An unsuccessfully processed record includes <c>ErrorCode</c> and <c>ErrorMessage</c>
+        /// values. <c>ErrorCode</c> reflects the type of error and can be one of the following
+        /// values: <c>ProvisionedThroughputExceededException</c> or <c>InternalFailure</c>. <c>ErrorMessage</c>
+        /// provides more detailed information about the <c>ProvisionedThroughputExceededException</c>
         /// exception including the account ID, stream name, and shard ID of the record that was
         /// throttled. For more information about partially successful responses, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
         /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams Developer
@@ -3067,28 +3059,28 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Writes multiple data records into a Kinesis data stream in a single call (also referred
-        /// to as a <code>PutRecords</code> request). Use this operation to send data into the
-        /// stream for data ingestion and processing. 
+        /// to as a <c>PutRecords</c> request). Use this operation to send data into the stream
+        /// for data ingestion and processing. 
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each <code>PutRecords</code> request can support up to 500 records. Each record in
-        /// the request can be as large as 1 MiB, up to a limit of 5 MiB for the entire request,
-        /// including partition keys. Each shard can support writes up to 1,000 records per second,
-        /// up to a maximum data write total of 1 MiB per second.
+        /// Each <c>PutRecords</c> request can support up to 500 records. Each record in the request
+        /// can be as large as 1 MiB, up to a limit of 5 MiB for the entire request, including
+        /// partition keys. Each shard can support writes up to 1,000 records per second, up to
+        /// a maximum data write total of 1 MiB per second.
         /// </para>
         ///  
         /// <para>
         /// You must specify the name of the stream that captures, stores, and transports the
-        /// data; and an array of request <code>Records</code>, with each record in the array
-        /// requiring a partition key and data blob. The record size limit applies to the total
-        /// size of the partition key and data blob.
+        /// data; and an array of request <c>Records</c>, with each record in the array requiring
+        /// a partition key and data blob. The record size limit applies to the total size of
+        /// the partition key and data blob.
         /// </para>
         ///  
         /// <para>
@@ -3107,7 +3099,7 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Each record in the <code>Records</code> array may include an optional parameter, <code>ExplicitHashKey</code>,
+        /// Each record in the <c>Records</c> array may include an optional parameter, <c>ExplicitHashKey</c>,
         /// which overrides the partition key to shard mapping. This parameter allows a data producer
         /// to determine explicitly the shard where the record is stored. For more information,
         /// see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/developing-producers-with-sdk.html#kinesis-using-sdk-java-putrecords">Adding
@@ -3116,34 +3108,34 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// The <code>PutRecords</code> response includes an array of response <code>Records</code>.
-        /// Each record in the response array directly correlates with a record in the request
-        /// array using natural ordering, from the top to the bottom of the request and response.
-        /// The response <code>Records</code> array always includes the same number of records
-        /// as the request array.
+        /// The <c>PutRecords</c> response includes an array of response <c>Records</c>. Each
+        /// record in the response array directly correlates with a record in the request array
+        /// using natural ordering, from the top to the bottom of the request and response. The
+        /// response <c>Records</c> array always includes the same number of records as the request
+        /// array.
         /// </para>
         ///  
         /// <para>
-        /// The response <code>Records</code> array includes both successfully and unsuccessfully
-        /// processed records. Kinesis Data Streams attempts to process all records in each <code>PutRecords</code>
+        /// The response <c>Records</c> array includes both successfully and unsuccessfully processed
+        /// records. Kinesis Data Streams attempts to process all records in each <c>PutRecords</c>
         /// request. A single record failure does not stop the processing of subsequent records.
         /// As a result, PutRecords doesn't guarantee the ordering of records. If you need to
         /// read records in the same order they are written to the stream, use <a>PutRecord</a>
-        /// instead of <code>PutRecords</code>, and write to the same shard.
+        /// instead of <c>PutRecords</c>, and write to the same shard.
         /// </para>
         ///  
         /// <para>
-        /// A successfully processed record includes <code>ShardId</code> and <code>SequenceNumber</code>
-        /// values. The <code>ShardId</code> parameter identifies the shard in the stream where
-        /// the record is stored. The <code>SequenceNumber</code> parameter is an identifier assigned
-        /// to the put record, unique to all records in the stream.
+        /// A successfully processed record includes <c>ShardId</c> and <c>SequenceNumber</c>
+        /// values. The <c>ShardId</c> parameter identifies the shard in the stream where the
+        /// record is stored. The <c>SequenceNumber</c> parameter is an identifier assigned to
+        /// the put record, unique to all records in the stream.
         /// </para>
         ///  
         /// <para>
-        /// An unsuccessfully processed record includes <code>ErrorCode</code> and <code>ErrorMessage</code>
-        /// values. <code>ErrorCode</code> reflects the type of error and can be one of the following
-        /// values: <code>ProvisionedThroughputExceededException</code> or <code>InternalFailure</code>.
-        /// <code>ErrorMessage</code> provides more detailed information about the <code>ProvisionedThroughputExceededException</code>
+        /// An unsuccessfully processed record includes <c>ErrorCode</c> and <c>ErrorMessage</c>
+        /// values. <c>ErrorCode</c> reflects the type of error and can be one of the following
+        /// values: <c>ProvisionedThroughputExceededException</c> or <c>InternalFailure</c>. <c>ErrorMessage</c>
+        /// provides more detailed information about the <c>ProvisionedThroughputExceededException</c>
         /// exception including the account ID, stream name, and shard ID of the record that was
         /// throttled. For more information about partially successful responses, see <a href="https://docs.aws.amazon.com/kinesis/latest/dev/kinesis-using-sdk-java-add-data-to-stream.html#kinesis-using-sdk-java-putrecords">Adding
         /// Multiple Records with PutRecords</a> in the <i>Amazon Kinesis Data Streams Developer
@@ -3219,12 +3211,12 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Attaches a resource-based policy to a data stream or registered consumer. If you are
         /// using an identity other than the root user of the Amazon Web Services account that
-        /// owns the resource, the calling identity must have the <code>PutResourcePolicy</code>
-        /// permissions on the specified Kinesis Data Streams resource and belong to the owner's
-        /// account in order to use this operation. If you don't have <code>PutResourcePolicy</code>
-        /// permissions, Amazon Kinesis Data Streams returns a <code>403 Access Denied error</code>.
-        /// If you receive a <code>ResourceNotFoundException</code>, check to see if you passed
-        /// a valid stream or consumer resource. 
+        /// owns the resource, the calling identity must have the <c>PutResourcePolicy</c> permissions
+        /// on the specified Kinesis Data Streams resource and belong to the owner's account in
+        /// order to use this operation. If you don't have <c>PutResourcePolicy</c> permissions,
+        /// Amazon Kinesis Data Streams returns a <c>403 Access Denied error</c>. If you receive
+        /// a <c>ResourceNotFoundException</c>, check to see if you passed a valid stream or consumer
+        /// resource. 
         /// 
         ///  
         /// <para>
@@ -3232,11 +3224,11 @@ namespace Amazon.Kinesis
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// Data stream pattern: <c>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -3261,7 +3253,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3274,12 +3266,12 @@ namespace Amazon.Kinesis
         /// <summary>
         /// Attaches a resource-based policy to a data stream or registered consumer. If you are
         /// using an identity other than the root user of the Amazon Web Services account that
-        /// owns the resource, the calling identity must have the <code>PutResourcePolicy</code>
-        /// permissions on the specified Kinesis Data Streams resource and belong to the owner's
-        /// account in order to use this operation. If you don't have <code>PutResourcePolicy</code>
-        /// permissions, Amazon Kinesis Data Streams returns a <code>403 Access Denied error</code>.
-        /// If you receive a <code>ResourceNotFoundException</code>, check to see if you passed
-        /// a valid stream or consumer resource. 
+        /// owns the resource, the calling identity must have the <c>PutResourcePolicy</c> permissions
+        /// on the specified Kinesis Data Streams resource and belong to the owner's account in
+        /// order to use this operation. If you don't have <c>PutResourcePolicy</c> permissions,
+        /// Amazon Kinesis Data Streams returns a <c>403 Access Denied error</c>. If you receive
+        /// a <c>ResourceNotFoundException</c>, check to see if you passed a valid stream or consumer
+        /// resource. 
         /// 
         ///  
         /// <para>
@@ -3287,11 +3279,11 @@ namespace Amazon.Kinesis
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Data stream pattern: <code>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</code> 
+        /// Data stream pattern: <c>arn:aws.*:kinesis:.*:\d{12}:.*stream/\S+</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Consumer pattern: <code>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</code>
+        /// Consumer pattern: <c>^(arn):aws.*:kinesis:.*:\d{12}:.*stream\/[a-zA-Z0-9_.-]+\/consumer\/[a-zA-Z0-9_.-]+:[0-9]+</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -3319,7 +3311,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3353,8 +3345,8 @@ namespace Amazon.Kinesis
         /// <para>
         /// The use of this operation has a limit of five transactions per second per account.
         /// Also, only 5 consumers can be created simultaneously. In other words, you cannot have
-        /// more than 5 consumers in a <code>CREATING</code> status at the same time. Registering
-        /// a 6th consumer while there are 5 in a <code>CREATING</code> status results in a <code>LimitExceededException</code>.
+        /// more than 5 consumers in a <c>CREATING</c> status at the same time. Registering a
+        /// 6th consumer while there are 5 in a <c>CREATING</c> status results in a <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterStreamConsumer service method.</param>
@@ -3370,7 +3362,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3401,8 +3393,8 @@ namespace Amazon.Kinesis
         /// <para>
         /// The use of this operation has a limit of five transactions per second per account.
         /// Also, only 5 consumers can be created simultaneously. In other words, you cannot have
-        /// more than 5 consumers in a <code>CREATING</code> status at the same time. Registering
-        /// a 6th consumer while there are 5 in a <code>CREATING</code> status results in a <code>LimitExceededException</code>.
+        /// more than 5 consumers in a <c>CREATING</c> status at the same time. Registering a
+        /// 6th consumer while there are 5 in a <c>CREATING</c> status results in a <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterStreamConsumer service method.</param>
@@ -3421,7 +3413,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3440,9 +3432,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3469,7 +3461,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3485,9 +3477,9 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3517,7 +3509,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3532,23 +3524,23 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Splits a shard into two new shards in the Kinesis data stream, to increase the stream's
-        /// capacity to ingest and transport data. <code>SplitShard</code> is called when there
-        /// is a need to increase the overall capacity of a stream because of an expected increase
+        /// capacity to ingest and transport data. <c>SplitShard</c> is called when there is a
+        /// need to increase the overall capacity of a stream because of an expected increase
         /// in the volume of data records being ingested. This API is only supported for the data
         /// streams with the provisioned capacity mode.
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can also use <code>SplitShard</code> when a shard appears to be approaching its
-        /// maximum utilization; for example, the producers sending data into the specific shard
-        /// are suddenly sending more than previously anticipated. You can also call <code>SplitShard</code>
-        /// to increase stream capacity, so that more Kinesis Data Streams applications can simultaneously
+        /// You can also use <c>SplitShard</c> when a shard appears to be approaching its maximum
+        /// utilization; for example, the producers sending data into the specific shard are suddenly
+        /// sending more than previously anticipated. You can also call <c>SplitShard</c> to increase
+        /// stream capacity, so that more Kinesis Data Streams applications can simultaneously
         /// read data from the stream for real-time processing. 
         /// </para>
         ///  
@@ -3562,28 +3554,28 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine
-        /// the shard ID and hash key values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code>
-        /// parameters that are specified in the <code>SplitShard</code> request.
+        /// the shard ID and hash key values for the <c>ShardToSplit</c> and <c>NewStartingHashKey</c>
+        /// parameters that are specified in the <c>SplitShard</c> request.
         /// </para>
         ///  
         /// <para>
-        ///  <code>SplitShard</code> is an asynchronous operation. Upon receiving a <code>SplitShard</code>
+        ///  <c>SplitShard</c> is an asynchronous operation. Upon receiving a <c>SplitShard</c>
         /// request, Kinesis Data Streams immediately returns a response and sets the stream status
-        /// to <code>UPDATING</code>. After the operation is completed, Kinesis Data Streams sets
-        /// the stream status to <code>ACTIVE</code>. Read and write operations continue to work
-        /// while the stream is in the <code>UPDATING</code> state. 
+        /// to <c>UPDATING</c>. After the operation is completed, Kinesis Data Streams sets the
+        /// stream status to <c>ACTIVE</c>. Read and write operations continue to work while the
+        /// stream is in the <c>UPDATING</c> state. 
         /// </para>
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> to check the status of the stream, which
-        /// is returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
-        /// state, you can call <code>SplitShard</code>. 
+        /// is returned in <c>StreamStatus</c>. If the stream is in the <c>ACTIVE</c> state, you
+        /// can call <c>SplitShard</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If the specified stream does not exist, <a>DescribeStreamSummary</a> returns a <code>ResourceNotFoundException</code>.
+        /// If the specified stream does not exist, <a>DescribeStreamSummary</a> returns a <c>ResourceNotFoundException</c>.
         /// If you try to create more shards than are authorized for your account, you receive
-        /// a <code>LimitExceededException</code>. 
+        /// a <c>LimitExceededException</c>. 
         /// </para>
         ///  
         /// <para>
@@ -3595,12 +3587,12 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// If you try to operate on too many streams simultaneously using <a>CreateStream</a>,
-        /// <a>DeleteStream</a>, <a>MergeShards</a>, and/or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>.
+        /// <a>DeleteStream</a>, <a>MergeShards</a>, and/or <a>SplitShard</a>, you receive a <c>LimitExceededException</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>SplitShard</code> has a limit of five transactions per second per account.
+        ///  <c>SplitShard</c> has a limit of five transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SplitShard service method.</param>
@@ -3619,7 +3611,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3635,23 +3627,23 @@ namespace Amazon.Kinesis
 
         /// <summary>
         /// Splits a shard into two new shards in the Kinesis data stream, to increase the stream's
-        /// capacity to ingest and transport data. <code>SplitShard</code> is called when there
-        /// is a need to increase the overall capacity of a stream because of an expected increase
+        /// capacity to ingest and transport data. <c>SplitShard</c> is called when there is a
+        /// need to increase the overall capacity of a stream because of an expected increase
         /// in the volume of data records being ingested. This API is only supported for the data
         /// streams with the provisioned capacity mode.
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
-        /// You can also use <code>SplitShard</code> when a shard appears to be approaching its
-        /// maximum utilization; for example, the producers sending data into the specific shard
-        /// are suddenly sending more than previously anticipated. You can also call <code>SplitShard</code>
-        /// to increase stream capacity, so that more Kinesis Data Streams applications can simultaneously
+        /// You can also use <c>SplitShard</c> when a shard appears to be approaching its maximum
+        /// utilization; for example, the producers sending data into the specific shard are suddenly
+        /// sending more than previously anticipated. You can also call <c>SplitShard</c> to increase
+        /// stream capacity, so that more Kinesis Data Streams applications can simultaneously
         /// read data from the stream for real-time processing. 
         /// </para>
         ///  
@@ -3665,28 +3657,28 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> and the <a>ListShards</a> APIs to determine
-        /// the shard ID and hash key values for the <code>ShardToSplit</code> and <code>NewStartingHashKey</code>
-        /// parameters that are specified in the <code>SplitShard</code> request.
+        /// the shard ID and hash key values for the <c>ShardToSplit</c> and <c>NewStartingHashKey</c>
+        /// parameters that are specified in the <c>SplitShard</c> request.
         /// </para>
         ///  
         /// <para>
-        ///  <code>SplitShard</code> is an asynchronous operation. Upon receiving a <code>SplitShard</code>
+        ///  <c>SplitShard</c> is an asynchronous operation. Upon receiving a <c>SplitShard</c>
         /// request, Kinesis Data Streams immediately returns a response and sets the stream status
-        /// to <code>UPDATING</code>. After the operation is completed, Kinesis Data Streams sets
-        /// the stream status to <code>ACTIVE</code>. Read and write operations continue to work
-        /// while the stream is in the <code>UPDATING</code> state. 
+        /// to <c>UPDATING</c>. After the operation is completed, Kinesis Data Streams sets the
+        /// stream status to <c>ACTIVE</c>. Read and write operations continue to work while the
+        /// stream is in the <c>UPDATING</c> state. 
         /// </para>
         ///  
         /// <para>
         /// You can use <a>DescribeStreamSummary</a> to check the status of the stream, which
-        /// is returned in <code>StreamStatus</code>. If the stream is in the <code>ACTIVE</code>
-        /// state, you can call <code>SplitShard</code>. 
+        /// is returned in <c>StreamStatus</c>. If the stream is in the <c>ACTIVE</c> state, you
+        /// can call <c>SplitShard</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If the specified stream does not exist, <a>DescribeStreamSummary</a> returns a <code>ResourceNotFoundException</code>.
+        /// If the specified stream does not exist, <a>DescribeStreamSummary</a> returns a <c>ResourceNotFoundException</c>.
         /// If you try to create more shards than are authorized for your account, you receive
-        /// a <code>LimitExceededException</code>. 
+        /// a <c>LimitExceededException</c>. 
         /// </para>
         ///  
         /// <para>
@@ -3698,12 +3690,12 @@ namespace Amazon.Kinesis
         ///  
         /// <para>
         /// If you try to operate on too many streams simultaneously using <a>CreateStream</a>,
-        /// <a>DeleteStream</a>, <a>MergeShards</a>, and/or <a>SplitShard</a>, you receive a <code>LimitExceededException</code>.
+        /// <a>DeleteStream</a>, <a>MergeShards</a>, and/or <a>SplitShard</a>, you receive a <c>LimitExceededException</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>SplitShard</code> has a limit of five transactions per second per account.
+        ///  <c>SplitShard</c> has a limit of five transactions per second per account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SplitShard service method.</param>
@@ -3725,7 +3717,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3748,19 +3740,19 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
         /// Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis
-        /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
         /// After the update is complete, Kinesis Data Streams sets the status of the stream back
-        /// to <code>ACTIVE</code>. Updating or applying encryption normally takes a few seconds
-        /// to complete, but it can take minutes. You can continue to read and write data to your
-        /// stream while its status is <code>UPDATING</code>. Once the status of the stream is
-        /// <code>ACTIVE</code>, encryption begins for records written to the stream. 
+        /// to <c>ACTIVE</c>. Updating or applying encryption normally takes a few seconds to
+        /// complete, but it can take minutes. You can continue to read and write data to your
+        /// stream while its status is <c>UPDATING</c>. Once the status of the stream is <c>ACTIVE</c>,
+        /// encryption begins for records written to the stream. 
         /// </para>
         ///  
         /// <para>
@@ -3769,10 +3761,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
-        /// before all records written to the stream are encrypted. After you enable encryption,
-        /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
-        /// or <code>PutRecords</code>.
+        /// Note: It can take up to 5 seconds after the stream is in an <c>ACTIVE</c> status before
+        /// all records written to the stream are encrypted. After you enable encryption, you
+        /// can verify that encryption is applied by inspecting the API response from <c>PutRecord</c>
+        /// or <c>PutRecords</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption service method.</param>
@@ -3814,7 +3806,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3830,19 +3822,19 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
         /// Starting encryption is an asynchronous operation. Upon receiving the request, Kinesis
-        /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
         /// After the update is complete, Kinesis Data Streams sets the status of the stream back
-        /// to <code>ACTIVE</code>. Updating or applying encryption normally takes a few seconds
-        /// to complete, but it can take minutes. You can continue to read and write data to your
-        /// stream while its status is <code>UPDATING</code>. Once the status of the stream is
-        /// <code>ACTIVE</code>, encryption begins for records written to the stream. 
+        /// to <c>ACTIVE</c>. Updating or applying encryption normally takes a few seconds to
+        /// complete, but it can take minutes. You can continue to read and write data to your
+        /// stream while its status is <c>UPDATING</c>. Once the status of the stream is <c>ACTIVE</c>,
+        /// encryption begins for records written to the stream. 
         /// </para>
         ///  
         /// <para>
@@ -3851,10 +3843,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
-        /// before all records written to the stream are encrypted. After you enable encryption,
-        /// you can verify that encryption is applied by inspecting the API response from <code>PutRecord</code>
-        /// or <code>PutRecords</code>.
+        /// Note: It can take up to 5 seconds after the stream is in an <c>ACTIVE</c> status before
+        /// all records written to the stream are encrypted. After you enable encryption, you
+        /// can verify that encryption is applied by inspecting the API response from <c>PutRecord</c>
+        /// or <c>PutRecords</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamEncryption service method.</param>
@@ -3899,7 +3891,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3917,19 +3909,19 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
         /// Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis
-        /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
         /// After the update is complete, Kinesis Data Streams sets the status of the stream back
-        /// to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete,
-        /// but it can take minutes. You can continue to read and write data to your stream while
-        /// its status is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>,
-        /// records written to the stream are no longer encrypted by Kinesis Data Streams. 
+        /// to <c>ACTIVE</c>. Stopping encryption normally takes a few seconds to complete, but
+        /// it can take minutes. You can continue to read and write data to your stream while
+        /// its status is <c>UPDATING</c>. Once the status of the stream is <c>ACTIVE</c>, records
+        /// written to the stream are no longer encrypted by Kinesis Data Streams. 
         /// </para>
         ///  
         /// <para>
@@ -3938,10 +3930,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
-        /// before all records written to the stream are no longer subject to encryption. After
-        /// you disabled encryption, you can verify that encryption is not applied by inspecting
-        /// the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+        /// Note: It can take up to 5 seconds after the stream is in an <c>ACTIVE</c> status before
+        /// all records written to the stream are no longer subject to encryption. After you disabled
+        /// encryption, you can verify that encryption is not applied by inspecting the API response
+        /// from <c>PutRecord</c> or <c>PutRecords</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopStreamEncryption service method.</param>
@@ -3960,7 +3952,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -3975,19 +3967,19 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
         /// Stopping encryption is an asynchronous operation. Upon receiving the request, Kinesis
-        /// Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
         /// After the update is complete, Kinesis Data Streams sets the status of the stream back
-        /// to <code>ACTIVE</code>. Stopping encryption normally takes a few seconds to complete,
-        /// but it can take minutes. You can continue to read and write data to your stream while
-        /// its status is <code>UPDATING</code>. Once the status of the stream is <code>ACTIVE</code>,
-        /// records written to the stream are no longer encrypted by Kinesis Data Streams. 
+        /// to <c>ACTIVE</c>. Stopping encryption normally takes a few seconds to complete, but
+        /// it can take minutes. You can continue to read and write data to your stream while
+        /// its status is <c>UPDATING</c>. Once the status of the stream is <c>ACTIVE</c>, records
+        /// written to the stream are no longer encrypted by Kinesis Data Streams. 
         /// </para>
         ///  
         /// <para>
@@ -3996,10 +3988,10 @@ namespace Amazon.Kinesis
         /// </para>
         ///  
         /// <para>
-        /// Note: It can take up to 5 seconds after the stream is in an <code>ACTIVE</code> status
-        /// before all records written to the stream are no longer subject to encryption. After
-        /// you disabled encryption, you can verify that encryption is not applied by inspecting
-        /// the API response from <code>PutRecord</code> or <code>PutRecords</code>.
+        /// Note: It can take up to 5 seconds after the stream is in an <c>ACTIVE</c> status before
+        /// all records written to the stream are no longer subject to encryption. After you disabled
+        /// encryption, you can verify that encryption is not applied by inspecting the API response
+        /// from <c>PutRecord</c> or <c>PutRecords</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopStreamEncryption service method.</param>
@@ -4021,7 +4013,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -4040,18 +4032,18 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
         /// Updating the shard count is an asynchronous operation. Upon receiving the request,
-        /// Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// Kinesis Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
         /// After the update is complete, Kinesis Data Streams sets the status of the stream back
-        /// to <code>ACTIVE</code>. Depending on the size of the stream, the scaling action could
-        /// take a few minutes to complete. You can continue to read and write data to your stream
-        /// while its status is <code>UPDATING</code>.
+        /// to <c>ACTIVE</c>. Depending on the size of the stream, the scaling action could take
+        /// a few minutes to complete. You can continue to read and write data to your stream
+        /// while its status is <c>UPDATING</c>.
         /// </para>
         ///  
         /// <para>
@@ -4125,7 +4117,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -4145,18 +4137,18 @@ namespace Amazon.Kinesis
         /// 
         ///  <note> 
         /// <para>
-        /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-        /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-        /// parameter when you invoke this API.
+        /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+        /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+        /// when you invoke this API.
         /// </para>
         ///  </note> 
         /// <para>
         /// Updating the shard count is an asynchronous operation. Upon receiving the request,
-        /// Kinesis Data Streams returns immediately and sets the status of the stream to <code>UPDATING</code>.
+        /// Kinesis Data Streams returns immediately and sets the status of the stream to <c>UPDATING</c>.
         /// After the update is complete, Kinesis Data Streams sets the status of the stream back
-        /// to <code>ACTIVE</code>. Depending on the size of the stream, the scaling action could
-        /// take a few minutes to complete. You can continue to read and write data to your stream
-        /// while its status is <code>UPDATING</code>.
+        /// to <c>ACTIVE</c>. Depending on the size of the stream, the scaling action could take
+        /// a few minutes to complete. You can continue to read and write data to your stream
+        /// while its status is <c>UPDATING</c>.
         /// </para>
         ///  
         /// <para>
@@ -4233,7 +4225,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -4268,7 +4260,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.
@@ -4299,7 +4291,7 @@ namespace Amazon.Kinesis
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceInUseException">
         /// The resource is not available for this operation. For successful operation, the resource
-        /// must be in the <code>ACTIVE</code> state.
+        /// must be in the <c>ACTIVE</c> state.
         /// </exception>
         /// <exception cref="Amazon.Kinesis.Model.ResourceNotFoundException">
         /// The requested resource could not be found. The stream might not be specified correctly.

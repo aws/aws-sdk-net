@@ -32,8 +32,8 @@ namespace Amazon.IoTSiteWise.Model
     /// Contains an asset transform property. A transform is a one-to-one mapping of a property's
     /// data points from one form to another. For example, you can use a transform to convert
     /// a Celsius data stream to Fahrenheit by applying the transformation expression to each
-    /// data point of the Celsius stream. A transform can only have a data type of <code>DOUBLE</code>
-    /// and consume properties with data types of <code>INTEGER</code> or <code>DOUBLE</code>.
+    /// data point of the Celsius stream. A transform can only have a data type of <c>DOUBLE</c>
+    /// and consume properties with data types of <c>INTEGER</c> or <c>DOUBLE</c>.
     /// 
     ///  
     /// <para>

@@ -58,7 +58,7 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the number of endpoints associated with the specified Outpost exceeds <code>MaxResults</code>,
+        /// If the number of endpoints associated with the specified Outpost exceeds <c>MaxResults</c>,
         /// you can include this value in subsequent calls to this operation to retrieve more
         /// results.
         /// </para>

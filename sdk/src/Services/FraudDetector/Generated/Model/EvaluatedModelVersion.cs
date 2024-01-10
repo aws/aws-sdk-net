@@ -81,8 +81,7 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> | <code>TRANSACTION_FRAUD_INSIGHTS</code>
-        /// 
+        /// Valid values: <c>ONLINE_FRAUD_INSIGHTS</c> | <c>TRANSACTION_FRAUD_INSIGHTS</c> 
         /// </para>
         /// </summary>
         public string ModelType

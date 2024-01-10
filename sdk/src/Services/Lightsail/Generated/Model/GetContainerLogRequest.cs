@@ -95,7 +95,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you wish to use an end time of October 1, 2018, at 9 PM UTC, specify
-        /// <code>1538427600</code> as the end time.
+        /// <c>1538427600</c> as the end time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -126,27 +126,27 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To return all log events, specify a filter pattern of <code>""</code>.
+        /// To return all log events, specify a filter pattern of <c>""</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To exclude log events that contain the <code>ERROR</code> term, and return all other
-        /// log events, specify a filter pattern of <code>"-ERROR"</code>.
+        /// To exclude log events that contain the <c>ERROR</c> term, and return all other log
+        /// events, specify a filter pattern of <c>"-ERROR"</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To return log events that contain the <code>ERROR</code> term, specify a filter pattern
-        /// of <code>"ERROR"</code>.
+        /// To return log events that contain the <c>ERROR</c> term, specify a filter pattern
+        /// of <c>"ERROR"</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To return log events that contain both the <code>ERROR</code> and <code>Exception</code>
-        /// terms, specify a filter pattern of <code>"ERROR Exception"</code>.
+        /// To return log events that contain both the <c>ERROR</c> and <c>Exception</c> terms,
+        /// specify a filter pattern of <c>"ERROR Exception"</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To return log events that contain the <code>ERROR</code> <i>or</i> the <code>Exception</code>
-        /// term, specify a filter pattern of <code>"?ERROR ?Exception"</code>.
+        /// To return log events that contain the <c>ERROR</c> <i>or</i> the <c>Exception</c>
+        /// term, specify a filter pattern of <c>"?ERROR ?Exception"</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -169,9 +169,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a page token, perform an initial <code>GetContainerLog</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.
+        /// To get a page token, perform an initial <c>GetContainerLog</c> request. If your results
+        /// are paginated, the response will return a next page token that you can specify as
+        /// the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken
@@ -225,7 +225,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, specify
-        /// <code>1538424000</code> as the start time.
+        /// <c>1538424000</c> as the start time.
         /// </para>
         ///  </li> </ul> 
         /// <para>

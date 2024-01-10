@@ -48,8 +48,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>.
-        /// If both are passed, only <code>TemplateBody</code> is used.
+        /// Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are
+        /// passed, only <c>TemplateBody</c> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -75,8 +75,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>.
-        /// If both are passed, only <code>TemplateBody</code> is used.
+        /// Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are
+        /// passed, only <c>TemplateBody</c> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

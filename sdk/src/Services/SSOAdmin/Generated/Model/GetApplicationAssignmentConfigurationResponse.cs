@@ -38,9 +38,9 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AssignmentRequired. 
         /// <para>
-        /// If <code>AssignmentsRequired</code> is <code>true</code> (default value), users don’t
-        /// have access to the application unless an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
-        /// API</a>. If <code>false</code>, all users have access to the application. 
+        /// If <c>AssignmentsRequired</c> is <c>true</c> (default value), users don’t have access
+        /// to the application unless an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
+        /// API</a>. If <c>false</c>, all users have access to the application. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

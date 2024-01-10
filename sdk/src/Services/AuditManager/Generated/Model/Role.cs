@@ -63,17 +63,15 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In <code>CreateAssessment</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.
-        /// 
+        /// In <c>CreateAssessment</c>, <c>roleType</c> can only be <c>PROCESS_OWNER</c>. 
         /// </para>
         ///  
         /// <para>
-        /// In <code>UpdateSettings</code>, <code>roleType</code> can only be <code>PROCESS_OWNER</code>.
+        /// In <c>UpdateSettings</c>, <c>roleType</c> can only be <c>PROCESS_OWNER</c>.
         /// </para>
         ///  
         /// <para>
-        /// In <code>BatchCreateDelegationByAssessment</code>, <code>roleType</code> can only
-        /// be <code>RESOURCE_OWNER</code>.
+        /// In <c>BatchCreateDelegationByAssessment</c>, <c>roleType</c> can only be <c>RESOURCE_OWNER</c>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -1081,7 +1081,7 @@ namespace Amazon.SSMIncidents
 
 
         /// <summary>
-        /// Updates a timeline event. You can update events of type <code>Custom Event</code>.
+        /// Updates a timeline event. You can update events of type <c>Custom Event</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTimelineEvent service method.</param>
         /// <param name="cancellationToken">

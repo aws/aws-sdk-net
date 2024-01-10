@@ -35,7 +35,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:UntagResource</code>
+    /// This operation requires permissions for the <c>elasticfilesystem:UntagResource</c>
     /// action.
     /// </para>
     /// </summary>

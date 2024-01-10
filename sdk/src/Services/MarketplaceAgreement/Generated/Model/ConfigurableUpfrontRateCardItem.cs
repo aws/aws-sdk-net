@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// Within the prepaid payment model defined under <code>ConfigurableUpfrontPricingTerm</code>,
-    /// the <code>RateCardItem</code> defines all the various rate cards (including pricing
-    /// and dimensions) that have been proposed.
+    /// Within the prepaid payment model defined under <c>ConfigurableUpfrontPricingTerm</c>,
+    /// the <c>RateCardItem</c> defines all the various rate cards (including pricing and
+    /// dimensions) that have been proposed.
     /// </summary>
     public partial class ConfigurableUpfrontRateCardItem
     {

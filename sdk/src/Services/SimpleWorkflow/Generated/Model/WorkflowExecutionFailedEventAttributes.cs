@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>WorkflowExecutionFailed</code> event.
+    /// Provides the details of the <c>WorkflowExecutionFailed</c> event.
     /// </summary>
     public partial class WorkflowExecutionFailedEventAttributes
     {
@@ -40,10 +40,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>FailWorkflowExecution</code> decision to fail this
-        /// execution. This information can be useful for diagnosing problems by tracing back
-        /// the chain of events leading up to this event.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>FailWorkflowExecution</c> decision to fail this execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

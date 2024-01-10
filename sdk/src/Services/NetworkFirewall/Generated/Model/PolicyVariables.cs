@@ -39,11 +39,11 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property RuleVariables. 
         /// <para>
-        /// The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <code>HOME_NET</code>
+        /// The IPv4 or IPv6 addresses in CIDR notation to use for the Suricata <c>HOME_NET</c>
         /// variable. If your firewall uses an inspection VPC, you might want to override the
-        /// <code>HOME_NET</code> variable with the CIDRs of your home networks. If you don't
-        /// override <code>HOME_NET</code> with your own CIDRs, Network Firewall by default uses
-        /// the CIDR of your inspection VPC.
+        /// <c>HOME_NET</c> variable with the CIDRs of your home networks. If you don't override
+        /// <c>HOME_NET</c> with your own CIDRs, Network Firewall by default uses the CIDR of
+        /// your inspection VPC.
         /// </para>
         /// </summary>
         public Dictionary<string, IPSet> RuleVariables

@@ -40,14 +40,14 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If a response includes the last of the Resolver configurations that are associated
-        /// with the current Amazon Web Services account, <code>NextToken</code> doesn't appear
-        /// in the response.
+        /// with the current Amazon Web Services account, <c>NextToken</c> doesn't appear in the
+        /// response.
         /// </para>
         ///  
         /// <para>
         /// If a response doesn't include the last of the configurations, you can get more configurations
-        /// by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code>
-        /// that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code>
+        /// by submitting another <c>ListResolverConfigs</c> request. Get the value of <c>NextToken</c>
+        /// that Amazon Route 53 returned in the previous response and include it in <c>NextToken</c>
         /// in the next request.
         /// </para>
         /// </summary>
@@ -66,8 +66,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverConfigs. 
         /// <para>
-        /// An array that contains one <code>ResolverConfigs</code> element for each Resolver
-        /// configuration that is associated with the current Amazon Web Services account.
+        /// An array that contains one <c>ResolverConfigs</c> element for each Resolver configuration
+        /// that is associated with the current Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<ResolverConfig> ResolverConfigs

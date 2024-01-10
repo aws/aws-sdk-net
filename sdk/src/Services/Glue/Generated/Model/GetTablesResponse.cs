@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableList. 
         /// <para>
-        /// A list of the requested <code>Table</code> objects.
+        /// A list of the requested <c>Table</c> objects.
         /// </para>
         /// </summary>
         public List<Table> TableList

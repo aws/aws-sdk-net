@@ -48,18 +48,17 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property AspectRatio. 
         /// <para>
         ///  The aspect ratio of the input file. If you want Elastic Transcoder to automatically
-        /// detect the aspect ratio of the input file, specify <code>auto</code>. If you want
-        /// to specify the aspect ratio for the output file, enter one of the following values:
-        /// 
+        /// detect the aspect ratio of the input file, specify <c>auto</c>. If you want to specify
+        /// the aspect ratio for the output file, enter one of the following values: 
         /// </para>
         ///  
         /// <para>
-        ///  <code>1:1</code>, <code>4:3</code>, <code>3:2</code>, <code>16:9</code> 
+        ///  <c>1:1</c>, <c>4:3</c>, <c>3:2</c>, <c>16:9</c> 
         /// </para>
         ///  
         /// <para>
-        ///  If you specify a value other than <code>auto</code>, Elastic Transcoder disables
-        /// automatic detection of the aspect ratio. 
+        ///  If you specify a value other than <c>auto</c>, Elastic Transcoder disables automatic
+        /// detection of the aspect ratio. 
         /// </para>
         /// </summary>
         public string AspectRatio
@@ -78,16 +77,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Container. 
         /// <para>
         /// The container type for the input file. If you want Elastic Transcoder to automatically
-        /// detect the container type of the input file, specify <code>auto</code>. If you want
-        /// to specify the container type for the input file, enter one of the following values:
-        /// 
+        /// detect the container type of the input file, specify <c>auto</c>. If you want to specify
+        /// the container type for the input file, enter one of the following values: 
         /// </para>
         ///  
         /// <para>
-        ///  <code>3gp</code>, <code>aac</code>, <code>asf</code>, <code>avi</code>, <code>divx</code>,
-        /// <code>flv</code>, <code>m4a</code>, <code>mkv</code>, <code>mov</code>, <code>mp3</code>,
-        /// <code>mp4</code>, <code>mpeg</code>, <code>mpeg-ps</code>, <code>mpeg-ts</code>, <code>mxf</code>,
-        /// <code>ogg</code>, <code>vob</code>, <code>wav</code>, <code>webm</code> 
+        ///  <c>3gp</c>, <c>aac</c>, <c>asf</c>, <c>avi</c>, <c>divx</c>, <c>flv</c>, <c>m4a</c>,
+        /// <c>mkv</c>, <c>mov</c>, <c>mp3</c>, <c>mp4</c>, <c>mpeg</c>, <c>mpeg-ps</c>, <c>mpeg-ts</c>,
+        /// <c>mxf</c>, <c>ogg</c>, <c>vob</c>, <c>wav</c>, <c>webm</c> 
         /// </para>
         /// </summary>
         public string Container
@@ -144,17 +141,17 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property FrameRate. 
         /// <para>
         /// The frame rate of the input file. If you want Elastic Transcoder to automatically
-        /// detect the frame rate of the input file, specify <code>auto</code>. If you want to
-        /// specify the frame rate for the input file, enter one of the following values: 
+        /// detect the frame rate of the input file, specify <c>auto</c>. If you want to specify
+        /// the frame rate for the input file, enter one of the following values: 
         /// </para>
         ///  
         /// <para>
-        ///  <code>10</code>, <code>15</code>, <code>23.97</code>, <code>24</code>, <code>25</code>,
-        /// <code>29.97</code>, <code>30</code>, <code>60</code> 
+        ///  <c>10</c>, <c>15</c>, <c>23.97</c>, <c>24</c>, <c>25</c>, <c>29.97</c>, <c>30</c>,
+        /// <c>60</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic
+        /// If you specify a value other than <c>auto</c>, Elastic Transcoder disables automatic
         /// detection of the frame rate.
         /// </para>
         /// </summary>
@@ -185,13 +182,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel
-        /// only), <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
-        /// 
+        /// Valid input values include: <c>CEA-608 (EIA-608</c>, first non-empty channel only),
+        /// <c>CEA-708 (EIA-708</c>, first non-empty channel only), and <c>mov-text</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid outputs include: <code>mov-text</code> 
+        /// Valid outputs include: <c>mov-text</c> 
         /// </para>
         ///  
         /// <para>
@@ -206,14 +202,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
-        /// <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div
-        /// element only), and <code>webvtt</code> 
+        /// Valid input values include: <c>dfxp</c> (first div element only), <c>ebu-tt</c>, <c>scc</c>,
+        /// <c>smpt</c>, <c>srt</c>, <c>ttml</c> (first div element only), and <c>webvtt</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
-        /// <code>srt</code>, and <code>webvtt</code>.
+        /// Valid outputs include: <c>dfxp</c> (first div element only), <c>scc</c>, <c>srt</c>,
+        /// and <c>webvtt</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -228,9 +223,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove captions or leave the captions empty, set <code>Captions</code> to null.
-        /// To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>,
-        /// and pass in a null <code>CaptionSources</code> array.
+        /// To remove captions or leave the captions empty, set <c>Captions</c> to null. To pass
+        /// through existing captions unchanged, set the <c>MergePolicy</c> to <c>MergeRetain</c>,
+        /// and pass in a null <c>CaptionSources</c> array.
         /// </para>
         ///  
         /// <para>
@@ -258,16 +253,16 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Interlaced. 
         /// <para>
         /// Whether the input file is interlaced. If you want Elastic Transcoder to automatically
-        /// detect whether the input file is interlaced, specify <code>auto</code>. If you want
-        /// to specify whether the input file is interlaced, enter one of the following values:
+        /// detect whether the input file is interlaced, specify <c>auto</c>. If you want to specify
+        /// whether the input file is interlaced, enter one of the following values:
         /// </para>
         ///  
         /// <para>
-        ///  <code>true</code>, <code>false</code> 
+        ///  <c>true</c>, <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value other than <code>auto</code>, Elastic Transcoder disables automatic
+        /// If you specify a value other than <c>auto</c>, Elastic Transcoder disables automatic
         /// detection of interlacing.
         /// </para>
         /// </summary>
@@ -287,15 +282,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Key. 
         /// <para>
         ///  The name of the file to transcode. Elsewhere in the body of the JSON block is the
-        /// the ID of the pipeline to use for processing the job. The <code>InputBucket</code>
-        /// object in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the
-        /// file from. 
+        /// the ID of the pipeline to use for processing the job. The <c>InputBucket</c> object
+        /// in that pipeline tells Elastic Transcoder which Amazon S3 bucket to get the file from.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// If the file name includes a prefix, such as <code>cooking/lasagna.mpg</code>, include
-        /// the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder
-        /// returns an error.
+        /// If the file name includes a prefix, such as <c>cooking/lasagna.mpg</c>, include the
+        /// prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns
+        /// an error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -314,8 +309,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Resolution. 
         /// <para>
-        /// This value must be <code>auto</code>, which causes Elastic Transcoder to automatically
-        /// detect the resolution of the input file.
+        /// This value must be <c>auto</c>, which causes Elastic Transcoder to automatically detect
+        /// the resolution of the input file.
         /// </para>
         /// </summary>
         public string Resolution

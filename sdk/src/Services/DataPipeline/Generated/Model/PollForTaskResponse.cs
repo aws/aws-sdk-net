@@ -39,9 +39,9 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property TaskObject. 
         /// <para>
         /// The information needed to complete the task that is being assigned to the task runner.
-        /// One of the fields returned in this object is <code>taskId</code>, which contains an
-        /// identifier for the task being assigned. The calling task runner uses <code>taskId</code>
-        /// in subsequent calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
+        /// One of the fields returned in this object is <c>taskId</c>, which contains an identifier
+        /// for the task being assigned. The calling task runner uses <c>taskId</c> in subsequent
+        /// calls to <a>ReportTaskProgress</a> and <a>SetTaskStatus</a>.
         /// </para>
         /// </summary>
         public TaskObject TaskObject

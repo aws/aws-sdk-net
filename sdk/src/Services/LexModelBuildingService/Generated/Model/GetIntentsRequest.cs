@@ -34,17 +34,17 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code>
-    /// version of all intents that contain the specified string.
+    /// If you specify the <c>nameContains</c> field, returns the <c>$LATEST</c> version of
+    /// all intents that contain the specified string.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  If you don't specify the <code>nameContains</code> field, returns information about
-    /// the <code>$LATEST</code> version of all intents. 
+    ///  If you don't specify the <c>nameContains</c> field, returns information about the
+    /// <c>$LATEST</c> version of all intents. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  The operation requires permission for the <code>lex:GetIntents</code> action. 
+    ///  The operation requires permission for the <c>lex:GetIntents</c> action. 
     /// </para>
     /// </summary>
     public partial class GetIntentsRequest : AmazonLexModelBuildingServiceRequest

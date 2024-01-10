@@ -75,8 +75,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from
-    /// the response to a previous call of the operation.
+    /// INVALID_PAGINATION_TOKEN: Get the value for the <c>NextToken</c> parameter from the
+    /// response to a previous call of the operation.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin
-    /// with the reserved prefix <code>AWSServiceRoleFor</code>.
+    /// with the reserved prefix <c>AWSServiceRoleFor</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

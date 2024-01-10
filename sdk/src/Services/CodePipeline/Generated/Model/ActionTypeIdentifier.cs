@@ -45,27 +45,27 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Source</code> 
+        ///  <c>Source</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Build</code> 
+        ///  <c>Build</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Test</code> 
+        ///  <c>Test</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deploy</code> 
+        ///  <c>Deploy</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Approval</code> 
+        ///  <c>Approval</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invoke</code> 
+        ///  <c>Invoke</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The creator of the action type being called: <code>AWS</code> or <code>ThirdParty</code>.
+        /// The creator of the action type being called: <c>AWS</c> or <c>ThirdParty</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

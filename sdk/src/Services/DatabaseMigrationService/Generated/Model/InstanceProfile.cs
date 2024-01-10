@@ -145,8 +145,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyArn</code> parameter, then DMS uses
-        /// your default encryption key.
+        /// If you don't specify a value for the <c>KmsKeyArn</c> parameter, then DMS uses your
+        /// default encryption key.
         /// </para>
         ///  
         /// <para>
@@ -170,11 +170,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// Specifies the network type for the instance profile. A value of <code>IPV4</code>
-        /// represents an instance profile with IPv4 network type and only supports IPv4 addressing.
-        /// A value of <code>IPV6</code> represents an instance profile with IPv6 network type
-        /// and only supports IPv6 addressing. A value of <code>DUAL</code> represents an instance
-        /// profile with dual network type that supports IPv4 and IPv6 addressing.
+        /// Specifies the network type for the instance profile. A value of <c>IPV4</c> represents
+        /// an instance profile with IPv4 network type and only supports IPv4 addressing. A value
+        /// of <c>IPV6</c> represents an instance profile with IPv6 network type and only supports
+        /// IPv6 addressing. A value of <c>DUAL</c> represents an instance profile with dual network
+        /// type that supports IPv4 and IPv6 addressing.
         /// </para>
         /// </summary>
         public string NetworkType
@@ -192,9 +192,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Specifies the accessibility options for the instance profile. A value of <code>true</code>
-        /// represents an instance profile with a public IP address. A value of <code>false</code>
-        /// represents an instance profile with a private IP address. The default value is <code>true</code>.
+        /// Specifies the accessibility options for the instance profile. A value of <c>true</c>
+        /// represents an instance profile with a public IP address. A value of <c>false</c> represents
+        /// an instance profile with a private IP address. The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

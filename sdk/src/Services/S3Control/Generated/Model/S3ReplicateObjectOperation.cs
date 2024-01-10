@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Directs the specified job to invoke <code>ReplicateObject</code> on every object in
-    /// the job's manifest.
+    /// Directs the specified job to invoke <c>ReplicateObject</c> on every object in the
+    /// job's manifest.
     /// </summary>
     public partial class S3ReplicateObjectOperation
     {

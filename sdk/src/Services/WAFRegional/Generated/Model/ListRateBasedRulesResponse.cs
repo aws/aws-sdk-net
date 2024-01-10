@@ -39,11 +39,10 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If you have more <code>Rules</code> than the number that you specified for <code>Limit</code>
-        /// in the request, the response includes a <code>NextMarker</code> value. To list more
-        /// <code>Rules</code>, submit another <code>ListRateBasedRules</code> request, and specify
-        /// the <code>NextMarker</code> value from the response in the <code>NextMarker</code>
-        /// value in the next request.
+        /// If you have more <c>Rules</c> than the number that you specified for <c>Limit</c>
+        /// in the request, the response includes a <c>NextMarker</c> value. To list more <c>Rules</c>,
+        /// submit another <c>ListRateBasedRules</c> request, and specify the <c>NextMarker</c>
+        /// value from the response in the <c>NextMarker</c> value in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]

@@ -44,7 +44,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property AdditionalDetails. 
         /// <para>
-        /// This attribute can be used to return any additional details of <code>PrincipalResourcePermissions</code>.
+        /// This attribute can be used to return any additional details of <c>PrincipalResourcePermissions</c>.
         /// Currently returns only as a RAM resource share ARN.
         /// </para>
         /// </summary>

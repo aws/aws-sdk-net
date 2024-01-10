@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchVocabularies operation.
-    /// Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>,
-    /// <code>NameStartsWith</code>, and <code>LanguageCode</code>.
+    /// Searches for vocabularies within a specific Amazon Connect instance using <c>State</c>,
+    /// <c>NameStartsWith</c>, and <c>LanguageCode</c>.
     /// </summary>
     public partial class SearchVocabulariesRequest : AmazonConnectRequest
     {

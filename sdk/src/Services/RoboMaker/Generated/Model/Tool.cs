@@ -61,9 +61,9 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property ExitBehavior. 
         /// <para>
-        /// Exit behavior determines what happens when your tool quits running. <code>RESTART</code>
-        /// will cause your tool to be restarted. <code>FAIL</code> will cause your job to exit.
-        /// The default is <code>RESTART</code>. 
+        /// Exit behavior determines what happens when your tool quits running. <c>RESTART</c>
+        /// will cause your tool to be restarted. <c>FAIL</c> will cause your job to exit. The
+        /// default is <c>RESTART</c>. 
         /// </para>
         /// </summary>
         public ExitBehavior ExitBehavior
@@ -101,7 +101,7 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property StreamOutputToCloudWatch. 
         /// <para>
         /// Boolean indicating whether logs will be recorded in CloudWatch for the tool. The default
-        /// is <code>False</code>. 
+        /// is <c>False</c>. 
         /// </para>
         /// </summary>
         public bool StreamOutputToCloudWatch
@@ -120,9 +120,9 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property StreamUI. 
         /// <para>
         /// Boolean indicating whether a streaming session will be configured for the tool. If
-        /// <code>True</code>, AWS RoboMaker will configure a connection so you can interact with
-        /// the tool as it is running in the simulation. It must have a graphical user interface.
-        /// The default is <code>False</code>. 
+        /// <c>True</c>, AWS RoboMaker will configure a connection so you can interact with the
+        /// tool as it is running in the simulation. It must have a graphical user interface.
+        /// The default is <c>False</c>. 
         /// </para>
         /// </summary>
         public bool StreamUI

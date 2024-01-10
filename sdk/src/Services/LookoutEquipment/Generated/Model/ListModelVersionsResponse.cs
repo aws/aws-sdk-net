@@ -60,8 +60,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <para>
         /// If the total number of results exceeds the limit that the response can display, the
         /// response returns an opaque pagination token indicating where to continue the listing
-        /// of machine learning model versions. Use this token in the <code>NextToken</code> field
-        /// in the request to list the next page of results.
+        /// of machine learning model versions. Use this token in the <c>NextToken</c> field in
+        /// the request to list the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

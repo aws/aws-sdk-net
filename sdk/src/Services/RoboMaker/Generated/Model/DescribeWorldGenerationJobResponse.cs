@@ -198,8 +198,7 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  </dd> <dt>Failed</dt> <dd> 
         /// <para>
-        /// The world generation job failed. See <code>failureCode</code> for more information.
-        /// 
+        /// The world generation job failed. See <c>failureCode</c> for more information. 
         /// </para>
         ///  </dd> <dt>PartialFailed</dt> <dd> 
         /// <para>

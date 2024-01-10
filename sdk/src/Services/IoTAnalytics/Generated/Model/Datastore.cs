@@ -133,8 +133,7 @@ namespace Amazon.IoTAnalytics.Model
         ///  
         /// <para>
         /// IoT Analytics updates this value at most once per minute for Amazon Simple Storage
-        /// Service one data store. Hence, the <code>lastMessageArrivalTime</code> value is an
-        /// approximation.
+        /// Service one data store. Hence, the <c>lastMessageArrivalTime</c> value is an approximation.
         /// </para>
         ///  
         /// <para>
@@ -194,7 +193,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// How long, in days, message data is kept for the data store. When <code>customerManagedS3</code>
+        /// How long, in days, message data is kept for the data store. When <c>customerManagedS3</c>
         /// storage is selected, this parameter is ignored.
         /// </para>
         /// </summary>
@@ -244,10 +243,10 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Storage. 
         /// <para>
-        /// Where data in a data store is stored.. You can choose <code>serviceManagedS3</code>
-        /// storage, <code>customerManagedS3</code> storage, or <code>iotSiteWiseMultiLayerStorage</code>
-        /// storage. The default is <code>serviceManagedS3</code>. You can't change the choice
-        /// of Amazon S3 storage after your data store is created. 
+        /// Where data in a data store is stored.. You can choose <c>serviceManagedS3</c> storage,
+        /// <c>customerManagedS3</c> storage, or <c>iotSiteWiseMultiLayerStorage</c> storage.
+        /// The default is <c>serviceManagedS3</c>. You can't change the choice of Amazon S3 storage
+        /// after your data store is created. 
         /// </para>
         /// </summary>
         public DatastoreStorage Storage

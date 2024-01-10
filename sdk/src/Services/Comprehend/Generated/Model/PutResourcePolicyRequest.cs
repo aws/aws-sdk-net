@@ -91,7 +91,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</code> 
+        ///  <c>"{\"attribute\": \"value\", \"attribute\": [\"value\"]}"</c> 
         /// </para>
         ///  
         /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>'{"attribute": "value", "attribute": ["value"]}'</code> 
+        ///  <c>'{"attribute": "value", "attribute": ["value"]}'</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20000)]

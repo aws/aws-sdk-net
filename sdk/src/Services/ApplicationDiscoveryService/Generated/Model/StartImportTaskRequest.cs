@@ -58,7 +58,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the console or the <code>StartImportTask</code> command with the Amazon Web Services
+    /// Use the console or the <c>StartImportTask</c> command with the Amazon Web Services
     /// CLI or one of the Amazon Web Services SDKs to import the records from your file.
     /// </para>
     ///  </li> </ol> 
@@ -89,7 +89,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  
         /// <para>
-        /// Sending more than one <code>StartImportTask</code> request with the same client request
+        /// Sending more than one <c>StartImportTask</c> request with the same client request
         /// token will return information about the original import task with that client request
         /// token.
         /// </para>
@@ -114,7 +114,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you're using the Amazon Web Services CLI, this URL is structured as follows: <code>s3://BucketName/ImportFileName.CSV</code>
+        /// If you're using the Amazon Web Services CLI, this URL is structured as follows: <c>s3://BucketName/ImportFileName.CSV</c>
         /// 
         /// </para>
         ///  </note>

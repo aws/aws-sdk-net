@@ -305,7 +305,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// Each tag consists of a key and an optional value. If a tag with the same key is already
-        /// associated with the load balancer, <code>AddTags</code> updates its value.
+        /// associated with the load balancer, <c>AddTags</c> updates its value.
         /// </para>
         ///  
         /// <para>
@@ -590,7 +590,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
-        /// except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>,
+        /// except that the lifetime of the special Elastic Load Balancing cookie, <c>AWSELB</c>,
         /// follows the lifetime of the application-generated cookie specified in the policy configuration.
         /// The load balancer only inserts a new stickiness cookie when the application response
         /// includes a new application cookie.
@@ -1040,7 +1040,7 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code>
+        /// If the load balancer does not exist or has already been deleted, the call to <c>DeleteLoadBalancer</c>
         /// still succeeds.
         /// </para>
         /// </summary>
@@ -1479,7 +1479,7 @@ namespace Amazon.ElasticLoadBalancing
         /// balancer, the action returns the description of that policy. If you don't specify
         /// a load balancer name, the action returns descriptions of the specified sample policies,
         /// or descriptions of all sample policies. The names of the sample policies have the
-        /// <code>ELBSample-</code> prefix.
+        /// <c>ELBSample-</c> prefix.
         /// </para>
         /// </summary>
         /// 
@@ -1506,7 +1506,7 @@ namespace Amazon.ElasticLoadBalancing
         /// balancer, the action returns the description of that policy. If you don't specify
         /// a load balancer name, the action returns descriptions of the specified sample policies,
         /// or descriptions of all sample policies. The names of the sample policies have the
-        /// <code>ELBSample-</code> prefix.
+        /// <c>ELBSample-</c> prefix.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLoadBalancerPolicies service method.</param>
@@ -1807,7 +1807,7 @@ namespace Amazon.ElasticLoadBalancing
         ///  
         /// <para>
         /// After a subnet is removed, all EC2 instances registered with the load balancer in
-        /// the removed subnet go into the <code>OutOfService</code> state. Then, the load balancer
+        /// the removed subnet go into the <c>OutOfService</c> state. Then, the load balancer
         /// balances the traffic among the remaining routable subnets.
         /// </para>
         /// </summary>
@@ -1880,7 +1880,7 @@ namespace Amazon.ElasticLoadBalancing
         /// <para>
         /// There must be at least one Availability Zone registered with a load balancer at all
         /// times. After an Availability Zone is removed, all instances registered with the load
-        /// balancer that are in the removed Availability Zone go into the <code>OutOfService</code>
+        /// balancer that are in the removed Availability Zone go into the <c>OutOfService</c>
         /// state. Then, the load balancer attempts to equally balance the traffic among its remaining
         /// Availability Zones.
         /// </para>
@@ -2021,10 +2021,10 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         ///  
         /// <para>
-        /// You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>,
-        /// and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or,
-        /// you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying
-        /// an idle connection timeout value for your load balancer.
+        /// You can modify the load balancer attributes, such as <c>AccessLogs</c>, <c>ConnectionDraining</c>,
+        /// and <c>CrossZoneLoadBalancing</c> by either enabling or disabling them. Or, you can
+        /// modify the load balancer attribute <c>ConnectionSettings</c> by specifying an idle
+        /// connection timeout value for your load balancer.
         /// </para>
         ///  
         /// <para>
@@ -2124,17 +2124,17 @@ namespace Amazon.ElasticLoadBalancing
         /// </para>
         ///  
         /// <para>
-        /// Note that <code>RegisterInstanceWithLoadBalancer</code> completes when the request
-        /// has been registered. Instance registration takes a little time to complete. To check
-        /// the state of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
+        /// Note that <c>RegisterInstanceWithLoadBalancer</c> completes when the request has been
+        /// registered. Instance registration takes a little time to complete. To check the state
+        /// of the registered instances, use <a>DescribeLoadBalancers</a> or <a>DescribeInstanceHealth</a>.
         /// </para>
         ///  
         /// <para>
         /// After the instance is registered, it starts receiving traffic and requests from the
         /// load balancer. Any instance that is not in one of the Availability Zones registered
-        /// for the load balancer is moved to the <code>OutOfService</code> state. If an Availability
+        /// for the load balancer is moved to the <c>OutOfService</c> state. If an Availability
         /// Zone is added to the load balancer later, any instances registered with the load balancer
-        /// move to the <code>InService</code> state.
+        /// move to the <c>InService</c> state.
         /// </para>
         ///  
         /// <para>
@@ -2348,9 +2348,8 @@ namespace Amazon.ElasticLoadBalancing
         /// 
         ///  
         /// <para>
-        /// Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the
-        /// policies, use the <code>PolicyNames</code> parameter to list the policies that you
-        /// want to enable.
+        /// Each time you use <c>SetLoadBalancerPoliciesForBackendServer</c> to enable the policies,
+        /// use the <c>PolicyNames</c> parameter to list the policies that you want to enable.
         /// </para>
         ///  
         /// <para>

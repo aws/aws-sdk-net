@@ -76,9 +76,9 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID of the message that caused the error. (See the value of the <code>"messageId"</code>
+        /// The ID of the message that caused the error. (See the value of the <c>"messageId"</c>
         /// in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_BatchDeleteDetector.html#iotevents-iotevents-data_BatchDeleteDetector-request-detectors">detectors</a>
-        /// object of the <code>DeleteDetectorRequest</code>.)
+        /// object of the <c>DeleteDetectorRequest</c>.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

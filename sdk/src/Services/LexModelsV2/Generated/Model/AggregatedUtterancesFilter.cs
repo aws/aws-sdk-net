@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Filters responses returned by the <code>ListAggregatedUtterances</code> operation.
+    /// Filters responses returned by the <c>ListAggregatedUtterances</c> operation.
     /// </summary>
     public partial class AggregatedUtterancesFilter
     {
@@ -59,10 +59,10 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to use for the filter. Specify <code>EQ</code> when the <code>ListAggregatedUtterances</code>
-        /// operation should return only utterances that equal the specified value. Specify <code>CO</code>
-        /// when the <code>ListAggregatedUtterances</code> operation should return utterances
-        /// that contain the specified value.
+        /// The operator to use for the filter. Specify <c>EQ</c> when the <c>ListAggregatedUtterances</c>
+        /// operation should return only utterances that equal the specified value. Specify <c>CO</c>
+        /// when the <c>ListAggregatedUtterances</c> operation should return utterances that contain
+        /// the specified value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

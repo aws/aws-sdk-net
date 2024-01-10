@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides a consistent format for Security Hub findings. <code>AwsSecurityFinding</code>
+    /// Provides a consistent format for Security Hub findings. <c>AwsSecurityFinding</c>
     /// format allows you to share findings between Amazon Web Services security services
     /// and third-party solutions.
     /// 
@@ -150,8 +150,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
-        /// The exception to this is a custom integration.
+        /// this attribute with <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>. The
+        /// exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
@@ -223,9 +223,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -271,7 +271,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In this release, <code>Description</code> is a required property.
+        /// In this release, <c>Description</c> is a required property.
         /// </para>
         ///  </note>
         /// </summary>
@@ -291,7 +291,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FindingProviderFields. 
         /// <para>
-        /// In a <code>BatchImportFindings</code> request, finding providers use <code>FindingProviderFields</code>
+        /// In a <c>BatchImportFindings</c> request, finding providers use <c>FindingProviderFields</c>
         /// to provide and update their own values for confidence, criticality, related findings,
         /// severity, and types.
         /// </para>
@@ -316,9 +316,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string FirstObservedAt
@@ -403,9 +403,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string LastObservedAt
@@ -460,7 +460,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property NetworkPath. 
         /// <para>
         /// Provides information about a network path that is relevant to a finding. Each entry
-        /// under <code>NetworkPath</code> represents a component of that path.
+        /// under <c>NetworkPath</c> represents a component of that path.
         /// </para>
         /// </summary>
         public List<NetworkPathComponent> NetworkPath
@@ -538,10 +538,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public string ProcessedAt
@@ -581,7 +581,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ProductFields. 
         /// <para>
         /// A data type where security findings providers can include additional solution-specific
-        /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
+        /// details that aren't part of the defined <c>AwsSecurityFinding</c> format.
         /// </para>
         ///  
         /// <para>
@@ -609,8 +609,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// this attribute with <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
-        /// The exception to this is a custom integration.
+        /// this attribute with <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>. The
+        /// exception to this is a custom integration.
         /// </para>
         ///  
         /// <para>
@@ -656,7 +656,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Security Hub populates this attribute automatically for each finding. You cannot update
-        /// it using <code>BatchImportFindings</code> or <code>BatchUpdateFindings</code>.
+        /// it using <c>BatchImportFindings</c> or <c>BatchUpdateFindings</c>.
         /// </para>
         /// </summary>
         public string Region
@@ -844,7 +844,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In this release, <code>Title</code> is a required property.
+        /// In this release, <c>Title</c> is a required property.
         /// </para>
         ///  </note>
         /// </summary>
@@ -864,8 +864,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// One or more finding types in the format of <code>namespace/category/classifier</code>
-        /// that classify a finding.
+        /// One or more finding types in the format of <c>namespace/category/classifier</c> that
+        /// classify a finding.
         /// </para>
         ///  
         /// <para>
@@ -892,9 +892,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A list of one or more <code>RenderingError</code> objects if any were encountered
-        /// while rendering the template. If there were no errors, the list is empty.
+        /// A list of one or more <c>RenderingError</c> objects if any were encountered while
+        /// rendering the template. If there were no errors, the list is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

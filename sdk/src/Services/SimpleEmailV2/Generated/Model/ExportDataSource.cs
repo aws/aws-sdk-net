@@ -30,8 +30,7 @@ namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
     /// An object that contains details about the data source of the export job. It can only
-    /// contain one of <code>MetricsDataSource</code> or <code>MessageInsightsDataSource</code>
-    /// object.
+    /// contain one of <c>MetricsDataSource</c> or <c>MessageInsightsDataSource</c> object.
     /// </summary>
     public partial class ExportDataSource
     {

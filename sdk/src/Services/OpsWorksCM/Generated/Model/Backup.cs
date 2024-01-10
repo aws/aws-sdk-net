@@ -80,8 +80,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property BackupId. 
         /// <para>
-        ///  The generated ID of the backup. Example: <code>myServerName-yyyyMMddHHmmssSSS</code>
-        /// 
+        ///  The generated ID of the backup. Example: <c>myServerName-yyyyMMddHHmmssSSS</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=79)]
@@ -100,8 +99,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property BackupType. 
         /// <para>
-        ///  The backup type. Valid values are <code>automated</code> or <code>manual</code>.
-        /// 
+        ///  The backup type. Valid values are <c>automated</c> or <c>manual</c>. 
         /// </para>
         /// </summary>
         public BackupType BackupType
@@ -119,7 +117,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        ///  The time stamp when the backup was created in the database. Example: <code>2016-07-29T13:38:47.520Z</code>
+        ///  The time stamp when the backup was created in the database. Example: <c>2016-07-29T13:38:47.520Z</c>
         /// 
         /// </para>
         /// </summary>

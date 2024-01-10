@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the DescribeAssetCompositeModel operation.
     /// Retrieves information about an asset composite model (also known as an asset component).
-    /// An <code>AssetCompositeModel</code> is an instance of an <code>AssetModelCompositeModel</code>.
+    /// An <c>AssetCompositeModel</c> is an instance of an <c>AssetModelCompositeModel</c>.
     /// If you want to see information about the model this is based on, call <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeAssetModelCompositeModel.html">DescribeAssetModelCompositeModel</a>.
     /// </summary>
     public partial class DescribeAssetCompositeModelRequest : AmazonIoTSiteWiseRequest
@@ -43,8 +43,8 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AssetCompositeModelId. 
         /// <para>
         /// The ID of a composite model on this asset. This can be either the actual ID in UUID
-        /// format, or else <code>externalId:</code> followed by the external ID, if it has one.
-        /// For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// format, or else <c>externalId:</c> followed by the external ID, if it has one. For
+        /// more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+        /// The ID of the asset. This can be either the actual ID in UUID format, or else <c>externalId:</c>
         /// followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>

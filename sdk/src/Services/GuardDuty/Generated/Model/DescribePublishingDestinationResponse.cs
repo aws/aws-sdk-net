@@ -61,8 +61,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property DestinationProperties. 
         /// <para>
-        /// A <code>DestinationProperties</code> object that includes the <code>DestinationArn</code>
-        /// and <code>KmsKeyArn</code> of the publishing destination.
+        /// A <c>DestinationProperties</c> object that includes the <c>DestinationArn</c> and
+        /// <c>KmsKeyArn</c> of the publishing destination.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

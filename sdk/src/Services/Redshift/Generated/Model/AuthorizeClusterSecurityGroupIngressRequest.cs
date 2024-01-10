@@ -129,7 +129,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>111122223333</code> 
+        /// Example: <c>111122223333</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

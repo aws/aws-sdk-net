@@ -58,8 +58,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// Indicates that the column is sorted in ascending order (<code>== 1</code>), or in
-        /// descending order (<code>==0</code>).
+        /// Indicates that the column is sorted in ascending order (<c>== 1</c>), or in descending
+        /// order (<c>==0</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]

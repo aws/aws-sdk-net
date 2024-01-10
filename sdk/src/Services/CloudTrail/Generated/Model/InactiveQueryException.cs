@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// The specified query cannot be canceled because it is in the <code>FINISHED</code>,
-    /// <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code> state.
+    /// The specified query cannot be canceled because it is in the <c>FINISHED</c>, <c>FAILED</c>,
+    /// <c>TIMED_OUT</c>, or <c>CANCELLED</c> state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

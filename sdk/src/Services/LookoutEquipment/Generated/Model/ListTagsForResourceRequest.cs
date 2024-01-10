@@ -40,7 +40,7 @@ namespace Amazon.LookoutEquipment.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource (such as the dataset or model) that
-        /// is the focus of the <code>ListTagsForResource</code> operation. 
+        /// is the focus of the <c>ListTagsForResource</c> operation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

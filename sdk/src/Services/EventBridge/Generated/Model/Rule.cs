@@ -169,7 +169,7 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// If you're setting an event bus in another account as the target and that account granted
         /// permission to your account through an organization instead of directly by the account
-        /// ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+        /// ID, you must specify a <c>RoleArn</c> with proper permissions in the <c>Target</c>
         /// structure, instead of here in this parameter.
         /// </para>
         /// </summary>
@@ -218,18 +218,18 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events
-        /// against the rule.
+        ///  <c>DISABLED</c>: The rule is disabled. EventBridge does not match any events against
+        /// the rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the
-        /// rule, <i>except</i> for Amazon Web Services management events delivered through CloudTrail.
+        ///  <c>ENABLED</c>: The rule is enabled. EventBridge matches events against the rule,
+        /// <i>except</i> for Amazon Web Services management events delivered through CloudTrail.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for
-        /// all events, including Amazon Web Services management events delivered through CloudTrail.
+        ///  <c>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</c>: The rule is enabled for all
+        /// events, including Amazon Web Services management events delivered through CloudTrail.
         /// </para>
         ///  
         /// <para>

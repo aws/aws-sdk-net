@@ -30,9 +30,9 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportNotebook operation.
-    /// Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum
-    /// file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with
-    /// the same name already exists in the workgroup, throws an error.
+    /// Imports a single <c>ipynb</c> file to a Spark enabled workgroup. The maximum file
+    /// size that can be imported is 10 megabytes. If an <c>ipynb</c> file with the same name
+    /// already exists in the workgroup, throws an error.
     /// </summary>
     public partial class ImportNotebookRequest : AmazonAthenaRequest
     {
@@ -111,7 +111,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The notebook content type. Currently, the only valid type is <code>IPYNB</code>.
+        /// The notebook content type. Currently, the only valid type is <c>IPYNB</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

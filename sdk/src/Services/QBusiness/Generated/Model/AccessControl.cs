@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// A list of principals. Each principal can be either a <code>USER</code> or a <code>GROUP</code>
-    /// and can be designated document access permissions of either <code>ALLOW</code> or
-    /// <code>DENY</code>.
+    /// A list of principals. Each principal can be either a <c>USER</c> or a <c>GROUP</c>
+    /// and can be designated document access permissions of either <c>ALLOW</c> or <c>DENY</c>.
     /// </summary>
     public partial class AccessControl
     {
@@ -59,9 +58,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// Contains a list of principals, where a principal can be either a <code>USER</code>
-        /// or a <code>GROUP</code>. Each principal can be have the following type of document
-        /// access: <code>ALLOW</code> or <code>DENY</code>.
+        /// Contains a list of principals, where a principal can be either a <c>USER</c> or a
+        /// <c>GROUP</c>. Each principal can be have the following type of document access: <c>ALLOW</c>
+        /// or <c>DENY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

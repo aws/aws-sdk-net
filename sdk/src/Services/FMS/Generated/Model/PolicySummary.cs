@@ -137,13 +137,13 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The administrator can manage and delete the policy.
+        ///  <c>ACTIVE</c> - The administrator can manage and delete the policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they
-        /// can't edit or delete the policy. Existing policy protections stay in place. Any new
-        /// resources that come into scope of the policy won't be protected.
+        ///  <c>OUT_OF_ADMIN_SCOPE</c> - The administrator can view the policy, but they can't
+        /// edit or delete the policy. Existing policy protections stay in place. Any new resources
+        /// that come into scope of the policy won't be protected.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -183,13 +183,12 @@ namespace Amazon.FMS.Model
         /// The type of resource protected by or in scope of the policy. This is in the format
         /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
         /// Web Services Resource Types Reference</a>. For WAF and Shield Advanced, examples include
-        /// <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> and <code>AWS::CloudFront::Distribution</code>.
-        /// For a security group common policy, valid values are <code>AWS::EC2::NetworkInterface</code>
-        /// and <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid
-        /// values are <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-        /// and <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the
-        /// value is <code>AWS::EC2::SecurityGroup</code>. For an Network Firewall policy or DNS
-        /// Firewall policy, the value is <code>AWS::EC2::VPC</code>.
+        /// <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c> and <c>AWS::CloudFront::Distribution</c>.
+        /// For a security group common policy, valid values are <c>AWS::EC2::NetworkInterface</c>
+        /// and <c>AWS::EC2::Instance</c>. For a security group content audit policy, valid values
+        /// are <c>AWS::EC2::SecurityGroup</c>, <c>AWS::EC2::NetworkInterface</c>, and <c>AWS::EC2::Instance</c>.
+        /// For a security group usage audit policy, the value is <c>AWS::EC2::SecurityGroup</c>.
+        /// For an Network Firewall policy or DNS Firewall policy, the value is <c>AWS::EC2::VPC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

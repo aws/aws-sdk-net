@@ -34,15 +34,15 @@ namespace Amazon.LexModelsV2.Model
     /// 
     ///  
     /// <para>
-    /// The <code>ListBotVersions</code> operation returns a summary of each version of a
-    /// bot. For example, if a bot has three numbered versions, the <code>ListBotVersions</code>
-    /// operation returns for summaries, one for each numbered version and one for the <code>DRAFT</code>
+    /// The <c>ListBotVersions</c> operation returns a summary of each version of a bot. For
+    /// example, if a bot has three numbered versions, the <c>ListBotVersions</c> operation
+    /// returns for summaries, one for each numbered version and one for the <c>DRAFT</c>
     /// version.
     /// </para>
     ///  
     /// <para>
-    /// The <code>ListBotVersions</code> operation always returns at least one version, the
-    /// <code>DRAFT</code> version.
+    /// The <c>ListBotVersions</c> operation always returns at least one version, the <c>DRAFT</c>
+    /// version.
     /// </para>
     /// </summary>
     public partial class ListBotVersionsRequest : AmazonLexModelsV2Request
@@ -94,10 +94,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response to the <code>ListBotVersion</code> operation contains more results
-        /// than specified in the <code>maxResults</code> parameter, a token is returned in the
-        /// response. Use that token in the <code>nextToken</code> parameter to return the next
-        /// page of results.
+        /// If the response to the <c>ListBotVersion</c> operation contains more results than
+        /// specified in the <c>maxResults</c> parameter, a token is returned in the response.
+        /// Use that token in the <c>nextToken</c> parameter to return the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

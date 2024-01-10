@@ -31,17 +31,17 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// Container for the parameters to the ListHostedZonesByName operation.
     /// Retrieves a list of your hosted zones in lexicographic order. The response includes
-    /// a <code>HostedZones</code> child element for each hosted zone created by the current
-    /// Amazon Web Services account. 
+    /// a <c>HostedZones</c> child element for each hosted zone created by the current Amazon
+    /// Web Services account. 
     /// 
     ///  
     /// <para>
-    ///  <code>ListHostedZonesByName</code> sorts hosted zones by name with the labels reversed.
+    ///  <c>ListHostedZonesByName</c> sorts hosted zones by name with the labels reversed.
     /// For example:
     /// </para>
     ///  
     /// <para>
-    ///  <code>com.example.www.</code> 
+    ///  <c>com.example.www.</c> 
     /// </para>
     ///  
     /// <para>
@@ -49,15 +49,15 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// If the domain name includes escape characters or Punycode, <code>ListHostedZonesByName</code>
+    /// If the domain name includes escape characters or Punycode, <c>ListHostedZonesByName</c>
     /// alphabetizes the domain name using the escaped or Punycoded value, which is the format
     /// that Amazon Route 53 saves in its database. For example, to create a hosted zone for
-    /// exämple.com, you specify ex\344mple.com for the domain name. <code>ListHostedZonesByName</code>
+    /// exämple.com, you specify ex\344mple.com for the domain name. <c>ListHostedZonesByName</c>
     /// alphabetizes it as:
     /// </para>
     ///  
     /// <para>
-    ///  <code>com.ex\344mple.</code> 
+    ///  <c>com.ex\344mple.</c> 
     /// </para>
     ///  
     /// <para>
@@ -69,41 +69,40 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// Route 53 returns up to 100 items in each response. If you have a lot of hosted zones,
-    /// use the <code>MaxItems</code> parameter to list them in groups of up to 100. The response
-    /// includes values that help navigate from one group of <code>MaxItems</code> hosted
-    /// zones to the next:
+    /// use the <c>MaxItems</c> parameter to list them in groups of up to 100. The response
+    /// includes values that help navigate from one group of <c>MaxItems</c> hosted zones
+    /// to the next:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The <code>DNSName</code> and <code>HostedZoneId</code> elements in the response contain
-    /// the values, if any, specified for the <code>dnsname</code> and <code>hostedzoneid</code>
-    /// parameters in the request that produced the current response.
+    /// The <c>DNSName</c> and <c>HostedZoneId</c> elements in the response contain the values,
+    /// if any, specified for the <c>dnsname</c> and <c>hostedzoneid</c> parameters in the
+    /// request that produced the current response.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>MaxItems</code> element in the response contains the value, if any, that
-    /// you specified for the <code>maxitems</code> parameter in the request that produced
-    /// the current response.
+    /// The <c>MaxItems</c> element in the response contains the value, if any, that you specified
+    /// for the <c>maxitems</c> parameter in the request that produced the current response.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the value of <code>IsTruncated</code> in the response is true, there are more hosted
+    /// If the value of <c>IsTruncated</c> in the response is true, there are more hosted
     /// zones associated with the current Amazon Web Services account. 
     /// </para>
     ///  
     /// <para>
-    /// If <code>IsTruncated</code> is false, this response includes the last hosted zone
-    /// that is associated with the current account. The <code>NextDNSName</code> element
-    /// and <code>NextHostedZoneId</code> elements are omitted from the response.
+    /// If <c>IsTruncated</c> is false, this response includes the last hosted zone that is
+    /// associated with the current account. The <c>NextDNSName</c> element and <c>NextHostedZoneId</c>
+    /// elements are omitted from the response.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>NextDNSName</code> and <code>NextHostedZoneId</code> elements in the response
-    /// contain the domain name and the hosted zone ID of the next hosted zone that is associated
+    /// The <c>NextDNSName</c> and <c>NextHostedZoneId</c> elements in the response contain
+    /// the domain name and the hosted zone ID of the next hosted zone that is associated
     /// with the current Amazon Web Services account. If you want to list more hosted zones,
-    /// make another call to <code>ListHostedZonesByName</code>, and specify the value of
-    /// <code>NextDNSName</code> and <code>NextHostedZoneId</code> in the <code>dnsname</code>
-    /// and <code>hostedzoneid</code> parameters, respectively.
+    /// make another call to <c>ListHostedZonesByName</c>, and specify the value of <c>NextDNSName</c>
+    /// and <c>NextHostedZoneId</c> in the <c>dnsname</c> and <c>hostedzoneid</c> parameters,
+    /// respectively.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -116,13 +115,13 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property DNSName. 
         /// <para>
-        /// (Optional) For your first request to <code>ListHostedZonesByName</code>, include the
-        /// <code>dnsname</code> parameter only if you want to specify the name of the first hosted
-        /// zone in the response. If you don't include the <code>dnsname</code> parameter, Amazon
-        /// Route 53 returns all of the hosted zones that were created by the current Amazon Web
-        /// Services account, in ASCII order. For subsequent requests, include both <code>dnsname</code>
-        /// and <code>hostedzoneid</code> parameters. For <code>dnsname</code>, specify the value
-        /// of <code>NextDNSName</code> from the previous response.
+        /// (Optional) For your first request to <c>ListHostedZonesByName</c>, include the <c>dnsname</c>
+        /// parameter only if you want to specify the name of the first hosted zone in the response.
+        /// If you don't include the <c>dnsname</c> parameter, Amazon Route 53 returns all of
+        /// the hosted zones that were created by the current Amazon Web Services account, in
+        /// ASCII order. For subsequent requests, include both <c>dnsname</c> and <c>hostedzoneid</c>
+        /// parameters. For <c>dnsname</c>, specify the value of <c>NextDNSName</c> from the previous
+        /// response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -141,17 +140,16 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
-        /// (Optional) For your first request to <code>ListHostedZonesByName</code>, do not include
-        /// the <code>hostedzoneid</code> parameter.
+        /// (Optional) For your first request to <c>ListHostedZonesByName</c>, do not include
+        /// the <c>hostedzoneid</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// If you have more hosted zones than the value of <code>maxitems</code>, <code>ListHostedZonesByName</code>
-        /// returns only the first <code>maxitems</code> hosted zones. To get the next group of
-        /// <code>maxitems</code> hosted zones, submit another request to <code>ListHostedZonesByName</code>
-        /// and include both <code>dnsname</code> and <code>hostedzoneid</code> parameters. For
-        /// the value of <code>hostedzoneid</code>, specify the value of the <code>NextHostedZoneId</code>
-        /// element from the previous response.
+        /// If you have more hosted zones than the value of <c>maxitems</c>, <c>ListHostedZonesByName</c>
+        /// returns only the first <c>maxitems</c> hosted zones. To get the next group of <c>maxitems</c>
+        /// hosted zones, submit another request to <c>ListHostedZonesByName</c> and include both
+        /// <c>dnsname</c> and <c>hostedzoneid</c> parameters. For the value of <c>hostedzoneid</c>,
+        /// specify the value of the <c>NextHostedZoneId</c> element from the previous response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -171,10 +169,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// The maximum number of hosted zones to be included in the response body for this request.
-        /// If you have more than <code>maxitems</code> hosted zones, then the value of the <code>IsTruncated</code>
-        /// element in the response is true, and the values of <code>NextDNSName</code> and <code>NextHostedZoneId</code>
-        /// specify the first hosted zone in the next group of <code>maxitems</code> hosted zones.
-        /// 
+        /// If you have more than <c>maxitems</c> hosted zones, then the value of the <c>IsTruncated</c>
+        /// element in the response is true, and the values of <c>NextDNSName</c> and <c>NextHostedZoneId</c>
+        /// specify the first hosted zone in the next group of <c>maxitems</c> hosted zones. 
         /// </para>
         /// </summary>
         public string MaxItems

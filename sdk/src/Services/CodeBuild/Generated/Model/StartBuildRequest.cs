@@ -94,11 +94,11 @@ namespace Amazon.CodeBuild.Model
         ///  
         /// <para>
         ///  If this value is set, it can be either an inline buildspec definition, the path to
-        /// an alternate buildspec file relative to the value of the built-in <code>CODEBUILD_SRC_DIR</code>
+        /// an alternate buildspec file relative to the value of the built-in <c>CODEBUILD_SRC_DIR</c>
         /// environment variable, or the path to an S3 bucket. The bucket must be in the same
         /// Amazon Web Services Region as the build project. Specify the buildspec file using
-        /// its ARN (for example, <code>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</code>).
-        /// If this value is not provided or is set to an empty string, the source code must contain
+        /// its ARN (for example, <c>arn:aws:s3:::my-codebuild-sample2/buildspec.yml</c>). If
+        /// this value is not provided or is set to an empty string, the source code must contain
         /// a buildspec file in its root directory. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec-ref-name-storage">Buildspec
         /// File Name and Storage Location</a>. 
         /// </para>
@@ -119,8 +119,8 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property BuildStatusConfigOverride. 
         /// <para>
         /// Contains information that defines how the build project reports the build status to
-        /// the source provider. This option is only used when the source provider is <code>GITHUB</code>,
-        /// <code>GITHUB_ENTERPRISE</code>, or <code>BITBUCKET</code>.
+        /// the source provider. This option is only used when the source provider is <c>GITHUB</c>,
+        /// <c>GITHUB_ENTERPRISE</c>, or <c>BITBUCKET</c>.
         /// </para>
         /// </summary>
         public BuildStatusConfig BuildStatusConfigOverride
@@ -226,7 +226,7 @@ namespace Amazon.CodeBuild.Model
         ///  </note> 
         /// <para>
         /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
-        /// the CMK's alias (using the format <code>alias/&lt;alias-name&gt;</code>).
+        /// the CMK's alias (using the format <c>alias/&lt;alias-name&gt;</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -376,8 +376,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </dd> </dl> 
         /// <para>
-        /// When using a cross-account or private registry image, you must use <code>SERVICE_ROLE</code>
-        /// credentials. When using an CodeBuild curated image, you must use <code>CODEBUILD</code>
+        /// When using a cross-account or private registry image, you must use <c>SERVICE_ROLE</c>
+        /// credentials. When using an CodeBuild curated image, you must use <c>CODEBUILD</c>
         /// credentials. 
         /// </para>
         /// </summary>
@@ -512,7 +512,7 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         ///  Set to true to report to your source provider the status of a build's start and completion.
         /// If you use this option with a source provider other than GitHub, GitHub Enterprise,
-        /// or Bitbucket, an <code>invalidInputException</code> is thrown. 
+        /// or Bitbucket, an <c>invalidInputException</c> is thrown. 
         /// </para>
         ///  
         /// <para>
@@ -544,7 +544,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondaryArtifactsOverride. 
         /// <para>
-        ///  An array of <code>ProjectArtifacts</code> objects. 
+        ///  An array of <c>ProjectArtifacts</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
@@ -563,7 +563,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondarySourcesOverride. 
         /// <para>
-        ///  An array of <code>ProjectSource</code> objects. 
+        ///  An array of <c>ProjectSource</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
@@ -582,7 +582,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondarySourcesVersionOverride. 
         /// <para>
-        ///  An array of <code>ProjectSourceVersion</code> objects that specify one or more versions
+        ///  An array of <c>ProjectSourceVersion</c> objects that specify one or more versions
         /// of the project's secondary sources to be used for this build only. 
         /// </para>
         /// </summary>
@@ -690,9 +690,9 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// The commit ID, pull request ID, branch name, or tag name that corresponds to the version
         /// of the source code you want to build. If a pull request ID is specified, it must use
-        /// the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>). If a
-        /// branch name is specified, the branch's HEAD commit ID is used. If not specified, the
-        /// default branch's HEAD commit ID is used.
+        /// the format <c>pr/pull-request-ID</c> (for example <c>pr/25</c>). If a branch name
+        /// is specified, the branch's HEAD commit ID is used. If not specified, the default branch's
+        /// HEAD commit ID is used.
         /// </para>
         ///  </dd> <dt>Bitbucket</dt> <dd> 
         /// <para>
@@ -706,7 +706,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </dd> </dl> 
         /// <para>
-        /// If <code>sourceVersion</code> is specified at the project level, then this <code>sourceVersion</code>
+        /// If <c>sourceVersion</c> is specified at the project level, then this <c>sourceVersion</c>
         /// (at the build level) takes precedence. 
         /// </para>
         ///  

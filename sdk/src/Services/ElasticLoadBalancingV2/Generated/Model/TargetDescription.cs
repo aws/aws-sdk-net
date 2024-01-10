@@ -40,37 +40,37 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// An Availability Zone or <code>all</code>. This determines whether the target receives
-        /// traffic from the load balancer nodes in the specified Availability Zone or from all
-        /// enabled Availability Zones for the load balancer.
+        /// An Availability Zone or <c>all</c>. This determines whether the target receives traffic
+        /// from the load balancer nodes in the specified Availability Zone or from all enabled
+        /// Availability Zones for the load balancer.
         /// </para>
         ///  
         /// <para>
         /// For Application Load Balancer target groups, the specified Availability Zone value
         /// is only applicable when cross-zone load balancing is off. Otherwise the parameter
-        /// is ignored and treated as <code>all</code>.
+        /// is ignored and treated as <c>all</c>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not supported if the target type of the target group is <code>instance</code>
-        /// or <code>alb</code>.
+        /// This parameter is not supported if the target type of the target group is <c>instance</c>
+        /// or <c>alb</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the target type is <code>ip</code> and the IP address is in a subnet of the VPC
-        /// for the target group, the Availability Zone is automatically detected and this parameter
-        /// is optional. If the IP address is outside the VPC, this parameter is required.
+        /// If the target type is <c>ip</c> and the IP address is in a subnet of the VPC for the
+        /// target group, the Availability Zone is automatically detected and this parameter is
+        /// optional. If the IP address is outside the VPC, this parameter is required.
         /// </para>
         ///  
         /// <para>
         /// For Application Load Balancer target groups with cross-zone load balancing off, if
-        /// the target type is <code>ip</code> and the IP address is outside of the VPC for the
-        /// target group, this should be an Availability Zone inside the VPC for the target group.
+        /// the target type is <c>ip</c> and the IP address is outside of the VPC for the target
+        /// group, this should be an Availability Zone inside the VPC for the target group.
         /// </para>
         ///  
         /// <para>
-        /// If the target type is <code>lambda</code>, this parameter is optional and the only
-        /// supported value is <code>all</code>.
+        /// If the target type is <c>lambda</c>, this parameter is optional and the only supported
+        /// value is <c>all</c>.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -88,11 +88,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target. If the target type of the target group is <code>instance</code>,
-        /// specify an instance ID. If the target type is <code>ip</code>, specify an IP address.
-        /// If the target type is <code>lambda</code>, specify the ARN of the Lambda function.
-        /// If the target type is <code>alb</code>, specify the ARN of the Application Load Balancer
-        /// target. 
+        /// The ID of the target. If the target type of the target group is <c>instance</c>, specify
+        /// an instance ID. If the target type is <c>ip</c>, specify an IP address. If the target
+        /// type is <c>lambda</c>, specify the ARN of the Lambda function. If the target type
+        /// is <c>alb</c>, specify the ARN of the Application Load Balancer target. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,7 +111,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property Port. 
         /// <para>
         /// The port on which the target is listening. If the target group protocol is GENEVE,
-        /// the supported port is 6081. If the target type is <code>alb</code>, the targeted Application
+        /// the supported port is 6081. If the target type is <c>alb</c>, the targeted Application
         /// Load Balancer must have at least one listener whose port matches the target group
         /// port. This parameter is not used if the target is a Lambda function.
         /// </para>

@@ -47,17 +47,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-id</code> - The ID of the resource.
+        ///  <c>resource-id</c> - The ID of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-type</code> - The resource type. Valid values are <code>vpc</code>
-        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> |
-        /// <code>connect</code>.
+        ///  <c>resource-type</c> - The resource type. Valid values are <c>vpc</c> | <c>vpn</c>
+        /// | <c>direct-connect-gateway</c> | <c>peering</c> | <c>connect</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+        ///  <c>transit-gateway-attachment-id</c> - The ID of the attachment.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -77,7 +76,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

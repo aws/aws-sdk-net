@@ -31,8 +31,8 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// The Lustre logging configuration used when creating or updating an Amazon FSx for
     /// Lustre file system. An Amazon File Cache is created with Lustre logging enabled by
-    /// default, with a setting of <code>WARN_ERROR</code> for the logging events. which can't
-    /// be changed.
+    /// default, with a setting of <c>WARN_ERROR</c> for the logging events. which can't be
+    /// changed.
     /// 
     ///  
     /// <para>
@@ -63,24 +63,23 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code>
+        /// The name of the Amazon CloudWatch Logs log group must begin with the <c>/aws/fsx</c>
         /// prefix.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you do not provide a destination, Amazon FSx will create and use a log stream in
-        /// the CloudWatch Logs <code>/aws/fsx/lustre</code> log group (for Amazon FSx for Lustre)
-        /// or <code>/aws/fsx/filecache</code> (for Amazon File Cache).
+        /// the CloudWatch Logs <c>/aws/fsx/lustre</c> log group (for Amazon FSx for Lustre) or
+        /// <c>/aws/fsx/filecache</c> (for Amazon File Cache).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>Destination</code> is provided and the resource does not exist, the request
-        /// will fail with a <code>BadRequest</code> error.
+        /// If <c>Destination</c> is provided and the resource does not exist, the request will
+        /// fail with a <c>BadRequest</c> error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>Level</code> is set to <code>DISABLED</code>, you cannot specify a destination
-        /// in <code>Destination</code>.
+        /// If <c>Level</c> is set to <c>DISABLED</c>, you cannot specify a destination in <c>Destination</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -104,19 +103,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>WARN_ONLY</code> - only warning events are logged.
+        ///  <c>WARN_ONLY</c> - only warning events are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ERROR_ONLY</code> - only error events are logged.
+        ///  <c>ERROR_ONLY</c> - only error events are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARN_ERROR</code> - both warning events and error events are logged.
+        ///  <c>WARN_ERROR</c> - both warning events and error events are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - logging of data repository events is turned off.
+        ///  <c>DISABLED</c> - logging of data repository events is turned off.
         /// </para>
         ///  </li> </ul>
         /// </summary>

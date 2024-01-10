@@ -33,20 +33,20 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The <code>KeyUsage</code> value of the KMS key is incompatible with the API operation.
+    /// The <c>KeyUsage</c> value of the KMS key is incompatible with the API operation.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-    /// with the type of key material in the KMS key <code>(KeySpec</code>).
+    /// with the type of key material in the KMS key <c>(KeySpec</c>).
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For encrypting, decrypting, re-encrypting, and generating data keys, the <code>KeyUsage</code>
-    /// must be <code>ENCRYPT_DECRYPT</code>. For signing and verifying messages, the <code>KeyUsage</code>
-    /// must be <code>SIGN_VERIFY</code>. For generating and verifying message authentication
-    /// codes (MACs), the <code>KeyUsage</code> must be <code>GENERATE_VERIFY_MAC</code>.
-    /// To find the <code>KeyUsage</code> of a KMS key, use the <a>DescribeKey</a> operation.
+    /// For encrypting, decrypting, re-encrypting, and generating data keys, the <c>KeyUsage</c>
+    /// must be <c>ENCRYPT_DECRYPT</c>. For signing and verifying messages, the <c>KeyUsage</c>
+    /// must be <c>SIGN_VERIFY</c>. For generating and verifying message authentication codes
+    /// (MACs), the <c>KeyUsage</c> must be <c>GENERATE_VERIFY_MAC</c>. To find the <c>KeyUsage</c>
+    /// of a KMS key, use the <a>DescribeKey</a> operation.
     /// </para>
     ///  
     /// <para>

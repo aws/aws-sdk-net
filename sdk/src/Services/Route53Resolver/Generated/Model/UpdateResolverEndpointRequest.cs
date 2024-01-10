@@ -165,7 +165,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        /// Updating to <code>IPV6</code> type isn't currently supported.
+        /// Updating to <c>IPV6</c> type isn't currently supported.
         /// </para>
         /// </summary>
         public ResolverEndpointType ResolverEndpointType

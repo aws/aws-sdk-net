@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true | false</code> 
+        /// Valid values: <c>true | false</c> 
         /// </para>
         /// </summary>
         public bool Enabled

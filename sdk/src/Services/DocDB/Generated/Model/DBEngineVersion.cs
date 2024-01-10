@@ -200,7 +200,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property SupportsLogExportsToCloudwatchLogs. 
         /// <para>
         /// A value that indicates whether the engine version supports exporting the log types
-        /// specified by <code>ExportableLogTypes</code> to CloudWatch Logs.
+        /// specified by <c>ExportableLogTypes</c> to CloudWatch Logs.
         /// </para>
         /// </summary>
         public bool SupportsLogExportsToCloudwatchLogs

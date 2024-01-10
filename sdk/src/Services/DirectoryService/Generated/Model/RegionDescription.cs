@@ -120,7 +120,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the Region. For example, <code>us-east-1</code>.
+        /// The name of the Region. For example, <c>us-east-1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=32)]

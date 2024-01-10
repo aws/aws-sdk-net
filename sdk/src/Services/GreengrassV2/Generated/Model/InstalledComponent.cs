@@ -104,7 +104,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The most recent deployment source that brought the component to the Greengrass core
         /// device. For a thing group deployment or thing deployment, the source will be the The
-        /// ID of the deployment. and for local deployments it will be <code>LOCAL</code>.
+        /// ID of the deployment. and for local deployments it will be <c>LOCAL</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -214,12 +214,12 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property LifecycleStatusCodes. 
         /// <para>
-        /// The status codes that indicate the reason for failure whenever the <code>lifecycleState</code>
+        /// The status codes that indicate the reason for failure whenever the <c>lifecycleState</c>
         /// has an error or is in a broken state.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lifecycleStatusCodes</code>
+        /// Greengrass nucleus v2.8.0 or later is required to get an accurate <c>lifecycleStatusCodes</c>
         /// response. This response can be inaccurate in earlier Greengrass nucleus versions.
         /// </para>
         ///  </note>

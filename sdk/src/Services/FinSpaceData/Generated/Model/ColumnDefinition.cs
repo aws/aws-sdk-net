@@ -82,51 +82,51 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>STRING</code> – A String data type.
+        ///  <c>STRING</c> – A String data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>CHAR</code> – A char data type.
+        ///  <c>CHAR</c> – A char data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>INTEGER</code> – An integer data type.
+        ///  <c>INTEGER</c> – An integer data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>TINYINT</code> – A tinyint data type.
+        ///  <c>TINYINT</c> – A tinyint data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>SMALLINT</code> – A smallint data type.
+        ///  <c>SMALLINT</c> – A smallint data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>BIGINT</code> – A bigint data type.
+        ///  <c>BIGINT</c> – A bigint data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>FLOAT</code> – A float data type.
+        ///  <c>FLOAT</c> – A float data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DOUBLE</code> – A double data type.
+        ///  <c>DOUBLE</c> – A double data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DATE</code> – A date data type.
+        ///  <c>DATE</c> – A date data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DATETIME</code> – A datetime data type.
+        ///  <c>DATETIME</c> – A datetime data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>BOOLEAN</code> – A boolean data type.
+        ///  <c>BOOLEAN</c> – A boolean data type.
         /// </para>
         ///  
         /// <para>
-        ///  <code>BINARY</code> – A binary data type.
+        ///  <c>BINARY</c> – A binary data type.
         /// </para>
         ///  </li> </ul>
         /// </summary>

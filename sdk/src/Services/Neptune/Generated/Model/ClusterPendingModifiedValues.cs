@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptune.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <code>ModifyDBCluster</code> operation
+    /// This data type is used as a response element in the <c>ModifyDBCluster</c> operation
     /// and contains changes that will be applied during the next maintenance window.
     /// </summary>
     public partial class ClusterPendingModifiedValues
@@ -46,7 +46,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// The allocated storage size in gibibytes (GiB) for database engines. For Neptune, <code>AllocatedStorage</code>
+        /// The allocated storage size in gibibytes (GiB) for database engines. For Neptune, <c>AllocatedStorage</c>
         /// always returns 1, because Neptune DB cluster storage size isn't fixed, but instead
         /// automatically adjusts as needed.
         /// </para>
@@ -158,8 +158,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PendingCloudwatchLogsExports. 
         /// <para>
-        /// This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes
-        /// to which CloudWatch logs are enabled and which are disabled.
+        /// This <c>PendingCloudwatchLogsExports</c> structure specifies pending changes to which
+        /// CloudWatch logs are enabled and which are disabled.
         /// </para>
         /// </summary>
         public PendingCloudwatchLogsExports PendingCloudwatchLogsExports

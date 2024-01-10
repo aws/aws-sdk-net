@@ -49,41 +49,41 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// A map of the attributes requested in <code> <a>ReceiveMessage</a> </code> to their
-        /// respective values. Supported attributes:
+        /// A map of the attributes requested in <c> <a>ReceiveMessage</a> </c> to their respective
+        /// values. Supported attributes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ApproximateReceiveCount</code> 
+        ///  <c>ApproximateReceiveCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ApproximateFirstReceiveTimestamp</code> 
+        ///  <c>ApproximateFirstReceiveTimestamp</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MessageDeduplicationId</code> 
+        ///  <c>MessageDeduplicationId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MessageGroupId</code> 
+        ///  <c>MessageGroupId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SenderId</code> 
+        ///  <c>SenderId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SentTimestamp</code> 
+        ///  <c>SentTimestamp</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SequenceNumber</code> 
+        ///  <c>SequenceNumber</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>ApproximateFirstReceiveTimestamp</code> and <code>SentTimestamp</code> are
-        /// each returned as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch
+        ///  <c>ApproximateFirstReceiveTimestamp</c> and <c>SentTimestamp</c> are each returned
+        /// as an integer representing the <a href="http://en.wikipedia.org/wiki/Unix_time">epoch
         /// time</a> in milliseconds.
         /// </para>
         /// </summary>
@@ -158,8 +158,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
+        /// Each message attribute consists of a <c>Name</c>, <c>Type</c>, and <c>Value</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes">Amazon
         /// SQS message attributes</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -178,8 +178,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// A unique identifier for the message. A <code>MessageId</code>is considered unique
-        /// across all Amazon Web Services accounts for an extended period of time.
+        /// A unique identifier for the message. A <c>MessageId</c>is considered unique across
+        /// all Amazon Web Services accounts for an extended period of time.
         /// </para>
         /// </summary>
         public string MessageId

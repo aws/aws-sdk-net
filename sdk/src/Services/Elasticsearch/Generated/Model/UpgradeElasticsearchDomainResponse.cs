@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>UpgradeElasticsearchDomain</a> </code>
-    /// operation.
+    /// Container for response returned by <c> <a>UpgradeElasticsearchDomain</a> </c> operation.
     /// </summary>
     public partial class UpgradeElasticsearchDomainResponse : AmazonWebServiceResponse
     {

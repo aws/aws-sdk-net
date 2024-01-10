@@ -70,8 +70,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A description of the status of the table restore request. Status values include <code>SUCCEEDED</code>,
-        /// <code>FAILED</code>, <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code>.
+        /// A description of the status of the table restore request. Status values include <c>SUCCEEDED</c>,
+        /// <c>FAILED</c>, <c>CANCELED</c>, <c>PENDING</c>, <c>IN_PROGRESS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -225,8 +225,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
-        /// <code>PENDING</code>, <code>IN_PROGRESS</code> 
+        /// Valid Values: <c>SUCCEEDED</c>, <c>FAILED</c>, <c>CANCELED</c>, <c>PENDING</c>, <c>IN_PROGRESS</c>
+        /// 
         /// </para>
         /// </summary>
         public TableRestoreStatusType Status

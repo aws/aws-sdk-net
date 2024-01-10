@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A token to resume pagination of <code>ListResourceCatalogs</code> results. 
+        ///  A token to resume pagination of <c>ListResourceCatalogs</c> results. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceCatalogs. 
         /// <para>
-        ///  A list of the requested <code>ResourceCatalog</code>s. 
+        ///  A list of the requested <c>ResourceCatalog</c>s. 
         /// </para>
         /// </summary>
         public List<ResourceCatalog> ResourceCatalogs

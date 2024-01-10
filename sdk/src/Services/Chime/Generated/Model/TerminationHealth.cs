@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// The termination health details, including the source IP address and timestamp of the
-    /// last successful SIP <code>OPTIONS</code> message from your SIP infrastructure.
+    /// last successful SIP <c>OPTIONS</c> message from your SIP infrastructure.
     /// </summary>
     public partial class TerminationHealth
     {

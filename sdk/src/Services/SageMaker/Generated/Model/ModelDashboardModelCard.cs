@@ -226,7 +226,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityConfig. 
         /// <para>
-        /// The KMS Key ID (<code>KMSKeyId</code>) for encryption of model card information.
+        /// The KMS Key ID (<c>KMSKeyId</c>) for encryption of model card information.
         /// </para>
         /// </summary>
         public ModelCardSecurityConfig SecurityConfig

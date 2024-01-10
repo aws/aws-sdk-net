@@ -68,7 +68,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CurrencySymbol. 
         /// <para>
-        /// The currency symbol, such as <code>USD</code>.
+        /// The currency symbol, such as <c>USD</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -87,7 +87,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DateFormat. 
         /// <para>
-        /// Determines the <code>DateTime</code> format.
+        /// Determines the <c>DateTime</c> format.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -217,8 +217,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UnitScaler. 
         /// <para>
-        /// The unit scaler. Valid values for this structure are: <code>NONE</code>, <code>AUTO</code>,
-        /// <code>THOUSANDS</code>, <code>MILLIONS</code>, <code>BILLIONS</code>, and <code>TRILLIONS</code>.
+        /// The unit scaler. Valid values for this structure are: <c>NONE</c>, <c>AUTO</c>, <c>THOUSANDS</c>,
+        /// <c>MILLIONS</c>, <c>BILLIONS</c>, and <c>TRILLIONS</c>.
         /// </para>
         /// </summary>
         public NumberScale UnitScaler

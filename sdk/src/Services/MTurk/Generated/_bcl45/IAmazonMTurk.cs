@@ -46,8 +46,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>AcceptQualificationRequest</code> operation approves a Worker's request
-        /// for a Qualification. 
+        /// The <c>AcceptQualificationRequest</c> operation approves a Worker's request for a
+        /// Qualification. 
         /// 
         ///  
         /// <para>
@@ -56,7 +56,7 @@ namespace Amazon.MTurk
         /// </para>
         ///  
         /// <para>
-        ///  A successful request for the <code>AcceptQualificationRequest</code> operation returns
+        ///  A successful request for the <c>AcceptQualificationRequest</c> operation returns
         /// with no errors and an empty body. 
         /// </para>
         /// </summary>
@@ -76,8 +76,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>AcceptQualificationRequest</code> operation approves a Worker's request
-        /// for a Qualification. 
+        /// The <c>AcceptQualificationRequest</c> operation approves a Worker's request for a
+        /// Qualification. 
         /// 
         ///  
         /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.MTurk
         /// </para>
         ///  
         /// <para>
-        ///  A successful request for the <code>AcceptQualificationRequest</code> operation returns
+        ///  A successful request for the <c>AcceptQualificationRequest</c> operation returns
         /// with no errors and an empty body. 
         /// </para>
         /// </summary>
@@ -112,8 +112,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ApproveAssignment</code> operation approves the results of a completed
-        /// assignment. 
+        /// The <c>ApproveAssignment</c> operation approves the results of a completed assignment.
+        /// 
         /// 
         ///  
         /// <para>
@@ -159,8 +159,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ApproveAssignment</code> operation approves the results of a completed
-        /// assignment. 
+        /// The <c>ApproveAssignment</c> operation approves the results of a completed assignment.
+        /// 
         /// 
         ///  
         /// <para>
@@ -212,22 +212,22 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>AssociateQualificationWithWorker</code> operation gives a Worker a Qualification.
-        /// <code>AssociateQualificationWithWorker</code> does not require that the Worker submit
-        /// a Qualification request. It gives the Qualification directly to the Worker. 
+        /// The <c>AssociateQualificationWithWorker</c> operation gives a Worker a Qualification.
+        /// <c>AssociateQualificationWithWorker</c> does not require that the Worker submit a
+        /// Qualification request. It gives the Qualification directly to the Worker. 
         /// 
         ///  
         /// <para>
         ///  You can only assign a Qualification of a Qualification type that you created (using
-        /// the <code>CreateQualificationType</code> operation). 
+        /// the <c>CreateQualificationType</c> operation). 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Note: <code>AssociateQualificationWithWorker</code> does not affect any pending Qualification
+        ///  Note: <c>AssociateQualificationWithWorker</c> does not affect any pending Qualification
         /// requests for the Qualification by the Worker. If you assign a Qualification to a Worker,
         /// then later grant a Qualification request made by the Worker, the granting of the request
         /// may modify the Qualification score. To resolve a pending Qualification request without
-        /// affecting the Qualification the Worker already has, reject the request with the <code>RejectQualificationRequest</code>
+        /// affecting the Qualification the Worker already has, reject the request with the <c>RejectQualificationRequest</c>
         /// operation. 
         /// </para>
         ///  </note>
@@ -248,22 +248,22 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>AssociateQualificationWithWorker</code> operation gives a Worker a Qualification.
-        /// <code>AssociateQualificationWithWorker</code> does not require that the Worker submit
-        /// a Qualification request. It gives the Qualification directly to the Worker. 
+        /// The <c>AssociateQualificationWithWorker</c> operation gives a Worker a Qualification.
+        /// <c>AssociateQualificationWithWorker</c> does not require that the Worker submit a
+        /// Qualification request. It gives the Qualification directly to the Worker. 
         /// 
         ///  
         /// <para>
         ///  You can only assign a Qualification of a Qualification type that you created (using
-        /// the <code>CreateQualificationType</code> operation). 
+        /// the <c>CreateQualificationType</c> operation). 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  Note: <code>AssociateQualificationWithWorker</code> does not affect any pending Qualification
+        ///  Note: <c>AssociateQualificationWithWorker</c> does not affect any pending Qualification
         /// requests for the Qualification by the Worker. If you assign a Qualification to a Worker,
         /// then later grant a Qualification request made by the Worker, the granting of the request
         /// may modify the Qualification score. To resolve a pending Qualification request without
-        /// affecting the Qualification the Worker already has, reject the request with the <code>RejectQualificationRequest</code>
+        /// affecting the Qualification the Worker already has, reject the request with the <c>RejectQualificationRequest</c>
         /// operation. 
         /// </para>
         ///  </note>
@@ -290,8 +290,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the maximum
-        /// number of assignments of an existing HIT. 
+        /// The <c>CreateAdditionalAssignmentsForHIT</c> operation increases the maximum number
+        /// of assignments of an existing HIT. 
         /// 
         ///  
         /// <para>
@@ -302,12 +302,12 @@ namespace Amazon.MTurk
         /// HITs created with fewer than 10 assignments cannot be extended to have 10 or more
         /// assignments. Attempting to add assignments in a way that brings the total number of
         /// assignments for a HIT from fewer than 10 assignments to 10 or more assignments will
-        /// result in an <code>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</code> exception.
+        /// result in an <c>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</c> exception.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// HITs that were created before July 22, 2015 cannot be extended. Attempting to extend
-        /// HITs that were created before July 22, 2015 will result in an <code>AWS.MechanicalTurk.HITTooOldForExtension</code>
+        /// HITs that were created before July 22, 2015 will result in an <c>AWS.MechanicalTurk.HITTooOldForExtension</c>
         /// exception. 
         /// </para>
         ///  </li> </ul> </note>
@@ -328,8 +328,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateAdditionalAssignmentsForHIT</code> operation increases the maximum
-        /// number of assignments of an existing HIT. 
+        /// The <c>CreateAdditionalAssignmentsForHIT</c> operation increases the maximum number
+        /// of assignments of an existing HIT. 
         /// 
         ///  
         /// <para>
@@ -340,12 +340,12 @@ namespace Amazon.MTurk
         /// HITs created with fewer than 10 assignments cannot be extended to have 10 or more
         /// assignments. Attempting to add assignments in a way that brings the total number of
         /// assignments for a HIT from fewer than 10 assignments to 10 or more assignments will
-        /// result in an <code>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</code> exception.
+        /// result in an <c>AWS.MechanicalTurk.InvalidMaximumAssignmentsIncrease</c> exception.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// HITs that were created before July 22, 2015 cannot be extended. Attempting to extend
-        /// HITs that were created before July 22, 2015 will result in an <code>AWS.MechanicalTurk.HITTooOldForExtension</code>
+        /// HITs that were created before July 22, 2015 will result in an <c>AWS.MechanicalTurk.HITTooOldForExtension</c>
         /// exception. 
         /// </para>
         ///  </li> </ul> </note>
@@ -372,31 +372,30 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateHIT</code> operation creates a new Human Intelligence Task (HIT).
-        /// The new HIT is made available for Workers to find and accept on the Amazon Mechanical
-        /// Turk website. 
+        /// The <c>CreateHIT</c> operation creates a new Human Intelligence Task (HIT). The new
+        /// HIT is made available for Workers to find and accept on the Amazon Mechanical Turk
+        /// website. 
         /// 
         ///  
         /// <para>
         ///  This operation allows you to specify a new HIT by passing in values for the properties
         /// of the HIT, such as its title, reward amount and number of assignments. When you pass
-        /// these values to <code>CreateHIT</code>, a new HIT is created for you, with a new <code>HITTypeID</code>.
+        /// these values to <c>CreateHIT</c>, a new HIT is created for you, with a new <c>HITTypeID</c>.
         /// The HITTypeID can be used to create additional HITs in the future without needing
         /// to specify common parameters such as the title, description and reward amount each
         /// time.
         /// </para>
         ///  
         /// <para>
-        ///  An alternative way to create HITs is to first generate a HITTypeID using the <code>CreateHITType</code>
-        /// operation and then call the <code>CreateHITWithHITType</code> operation. This is the
-        /// recommended best practice for Requesters who are creating large numbers of HITs. 
+        ///  An alternative way to create HITs is to first generate a HITTypeID using the <c>CreateHITType</c>
+        /// operation and then call the <c>CreateHITWithHITType</c> operation. This is the recommended
+        /// best practice for Requesters who are creating large numbers of HITs. 
         /// </para>
         ///  
         /// <para>
         /// CreateHIT also supports several ways to provide question data: by providing a value
-        /// for the <code>Question</code> parameter that fully specifies the contents of the HIT,
-        /// or by providing a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>.
-        /// 
+        /// for the <c>Question</c> parameter that fully specifies the contents of the HIT, or
+        /// by providing a <c>HitLayoutId</c> and associated <c>HitLayoutParameters</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -422,31 +421,30 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateHIT</code> operation creates a new Human Intelligence Task (HIT).
-        /// The new HIT is made available for Workers to find and accept on the Amazon Mechanical
-        /// Turk website. 
+        /// The <c>CreateHIT</c> operation creates a new Human Intelligence Task (HIT). The new
+        /// HIT is made available for Workers to find and accept on the Amazon Mechanical Turk
+        /// website. 
         /// 
         ///  
         /// <para>
         ///  This operation allows you to specify a new HIT by passing in values for the properties
         /// of the HIT, such as its title, reward amount and number of assignments. When you pass
-        /// these values to <code>CreateHIT</code>, a new HIT is created for you, with a new <code>HITTypeID</code>.
+        /// these values to <c>CreateHIT</c>, a new HIT is created for you, with a new <c>HITTypeID</c>.
         /// The HITTypeID can be used to create additional HITs in the future without needing
         /// to specify common parameters such as the title, description and reward amount each
         /// time.
         /// </para>
         ///  
         /// <para>
-        ///  An alternative way to create HITs is to first generate a HITTypeID using the <code>CreateHITType</code>
-        /// operation and then call the <code>CreateHITWithHITType</code> operation. This is the
-        /// recommended best practice for Requesters who are creating large numbers of HITs. 
+        ///  An alternative way to create HITs is to first generate a HITTypeID using the <c>CreateHITType</c>
+        /// operation and then call the <c>CreateHITWithHITType</c> operation. This is the recommended
+        /// best practice for Requesters who are creating large numbers of HITs. 
         /// </para>
         ///  
         /// <para>
         /// CreateHIT also supports several ways to provide question data: by providing a value
-        /// for the <code>Question</code> parameter that fully specifies the contents of the HIT,
-        /// or by providing a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>.
-        /// 
+        /// for the <c>Question</c> parameter that fully specifies the contents of the HIT, or
+        /// by providing a <c>HitLayoutId</c> and associated <c>HitLayoutParameters</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -478,7 +476,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateHITType</code> operation creates a new HIT type. This operation allows
+        /// The <c>CreateHITType</c> operation creates a new HIT type. This operation allows
         /// you to define a standard set of HIT properties to use when creating HITs. If you register
         /// a HIT type with values that match an existing HIT type, the HIT type ID of the existing
         /// type will be returned.
@@ -499,7 +497,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateHITType</code> operation creates a new HIT type. This operation allows
+        /// The <c>CreateHITType</c> operation creates a new HIT type. This operation allows
         /// you to define a standard set of HIT properties to use when creating HITs. If you register
         /// a HIT type with values that match an existing HIT type, the HIT type ID of the existing
         /// type will be returned.
@@ -526,21 +524,20 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateHITWithHITType</code> operation creates a new Human Intelligence
-        /// Task (HIT) using an existing HITTypeID generated by the <code>CreateHITType</code>
-        /// operation. 
+        /// The <c>CreateHITWithHITType</c> operation creates a new Human Intelligence Task (HIT)
+        /// using an existing HITTypeID generated by the <c>CreateHITType</c> operation. 
         /// 
         ///  
         /// <para>
-        ///  This is an alternative way to create HITs from the <code>CreateHIT</code> operation.
-        /// This is the recommended best practice for Requesters who are creating large numbers
-        /// of HITs. 
+        ///  This is an alternative way to create HITs from the <c>CreateHIT</c> operation. This
+        /// is the recommended best practice for Requesters who are creating large numbers of
+        /// HITs. 
         /// </para>
         ///  
         /// <para>
         /// CreateHITWithHITType also supports several ways to provide question data: by providing
-        /// a value for the <code>Question</code> parameter that fully specifies the contents
-        /// of the HIT, or by providing a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>.
+        /// a value for the <c>Question</c> parameter that fully specifies the contents of the
+        /// HIT, or by providing a <c>HitLayoutId</c> and associated <c>HitLayoutParameters</c>.
         /// 
         /// </para>
         ///  <note> 
@@ -567,21 +564,20 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateHITWithHITType</code> operation creates a new Human Intelligence
-        /// Task (HIT) using an existing HITTypeID generated by the <code>CreateHITType</code>
-        /// operation. 
+        /// The <c>CreateHITWithHITType</c> operation creates a new Human Intelligence Task (HIT)
+        /// using an existing HITTypeID generated by the <c>CreateHITType</c> operation. 
         /// 
         ///  
         /// <para>
-        ///  This is an alternative way to create HITs from the <code>CreateHIT</code> operation.
-        /// This is the recommended best practice for Requesters who are creating large numbers
-        /// of HITs. 
+        ///  This is an alternative way to create HITs from the <c>CreateHIT</c> operation. This
+        /// is the recommended best practice for Requesters who are creating large numbers of
+        /// HITs. 
         /// </para>
         ///  
         /// <para>
         /// CreateHITWithHITType also supports several ways to provide question data: by providing
-        /// a value for the <code>Question</code> parameter that fully specifies the contents
-        /// of the HIT, or by providing a <code>HitLayoutId</code> and associated <code>HitLayoutParameters</code>.
+        /// a value for the <c>Question</c> parameter that fully specifies the contents of the
+        /// HIT, or by providing a <c>HitLayoutId</c> and associated <c>HitLayoutParameters</c>.
         /// 
         /// </para>
         ///  <note> 
@@ -614,8 +610,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateQualificationType</code> operation creates a new Qualification type,
-        /// which is represented by a <code>QualificationType</code> data structure.
+        /// The <c>CreateQualificationType</c> operation creates a new Qualification type, which
+        /// is represented by a <c>QualificationType</c> data structure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQualificationType service method.</param>
         /// 
@@ -633,8 +629,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateQualificationType</code> operation creates a new Qualification type,
-        /// which is represented by a <code>QualificationType</code> data structure.
+        /// The <c>CreateQualificationType</c> operation creates a new Qualification type, which
+        /// is represented by a <c>QualificationType</c> data structure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateQualificationType service method.</param>
         /// <param name="cancellationToken">
@@ -658,7 +654,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateWorkerBlock</code> operation allows you to prevent a Worker from working
+        /// The <c>CreateWorkerBlock</c> operation allows you to prevent a Worker from working
         /// on your HITs. For example, you can block a Worker who is producing poor quality work.
         /// You can block up to 100,000 Workers.
         /// </summary>
@@ -678,7 +674,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>CreateWorkerBlock</code> operation allows you to prevent a Worker from working
+        /// The <c>CreateWorkerBlock</c> operation allows you to prevent a Worker from working
         /// on your HITs. For example, you can block a Worker who is producing poor quality work.
         /// You can block up to 100,000 Workers.
         /// </summary>
@@ -704,17 +700,17 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DeleteHIT</code> operation is used to delete HIT that is no longer needed.
-        /// Only the Requester who created the HIT can delete it. 
+        /// The <c>DeleteHIT</c> operation is used to delete HIT that is no longer needed. Only
+        /// the Requester who created the HIT can delete it. 
         /// 
         ///  
         /// <para>
-        ///  You can only dispose of HITs that are in the <code>Reviewable</code> state, with
-        /// all of their submitted assignments already either approved or rejected. If you call
-        /// the DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
-        /// (for example, that has not expired, or still has active assignments), or on a HIT
-        /// that is Reviewable but without all of its submitted assignments already approved or
-        /// rejected, the service will return an error. 
+        ///  You can only dispose of HITs that are in the <c>Reviewable</c> state, with all of
+        /// their submitted assignments already either approved or rejected. If you call the DeleteHIT
+        /// operation on a HIT that is not in the <c>Reviewable</c> state (for example, that has
+        /// not expired, or still has active assignments), or on a HIT that is Reviewable but
+        /// without all of its submitted assignments already approved or rejected, the service
+        /// will return an error. 
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
@@ -752,17 +748,17 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DeleteHIT</code> operation is used to delete HIT that is no longer needed.
-        /// Only the Requester who created the HIT can delete it. 
+        /// The <c>DeleteHIT</c> operation is used to delete HIT that is no longer needed. Only
+        /// the Requester who created the HIT can delete it. 
         /// 
         ///  
         /// <para>
-        ///  You can only dispose of HITs that are in the <code>Reviewable</code> state, with
-        /// all of their submitted assignments already either approved or rejected. If you call
-        /// the DeleteHIT operation on a HIT that is not in the <code>Reviewable</code> state
-        /// (for example, that has not expired, or still has active assignments), or on a HIT
-        /// that is Reviewable but without all of its submitted assignments already approved or
-        /// rejected, the service will return an error. 
+        ///  You can only dispose of HITs that are in the <c>Reviewable</c> state, with all of
+        /// their submitted assignments already either approved or rejected. If you call the DeleteHIT
+        /// operation on a HIT that is not in the <c>Reviewable</c> state (for example, that has
+        /// not expired, or still has active assignments), or on a HIT that is Reviewable but
+        /// without all of its submitted assignments already approved or rejected, the service
+        /// will return an error. 
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
@@ -806,8 +802,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DeleteQualificationType</code> deletes a Qualification type and deletes
-        /// any HIT types that are associated with the Qualification type. 
+        /// The <c>DeleteQualificationType</c> deletes a Qualification type and deletes any HIT
+        /// types that are associated with the Qualification type. 
         /// 
         ///  
         /// <para>
@@ -841,8 +837,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DeleteQualificationType</code> deletes a Qualification type and deletes
-        /// any HIT types that are associated with the Qualification type. 
+        /// The <c>DeleteQualificationType</c> deletes a Qualification type and deletes any HIT
+        /// types that are associated with the Qualification type. 
         /// 
         ///  
         /// <para>
@@ -882,11 +878,11 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DeleteWorkerBlock</code> operation allows you to reinstate a blocked Worker
-        /// to work on your HITs. This operation reverses the effects of the CreateWorkerBlock
-        /// operation. You need the Worker ID to use this operation. If the Worker ID is missing
-        /// or invalid, this operation fails and returns the message “WorkerId is invalid.” If
-        /// the specified Worker is not blocked, this operation returns successfully.
+        /// The <c>DeleteWorkerBlock</c> operation allows you to reinstate a blocked Worker to
+        /// work on your HITs. This operation reverses the effects of the CreateWorkerBlock operation.
+        /// You need the Worker ID to use this operation. If the Worker ID is missing or invalid,
+        /// this operation fails and returns the message “WorkerId is invalid.” If the specified
+        /// Worker is not blocked, this operation returns successfully.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkerBlock service method.</param>
         /// 
@@ -904,11 +900,11 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DeleteWorkerBlock</code> operation allows you to reinstate a blocked Worker
-        /// to work on your HITs. This operation reverses the effects of the CreateWorkerBlock
-        /// operation. You need the Worker ID to use this operation. If the Worker ID is missing
-        /// or invalid, this operation fails and returns the message “WorkerId is invalid.” If
-        /// the specified Worker is not blocked, this operation returns successfully.
+        /// The <c>DeleteWorkerBlock</c> operation allows you to reinstate a blocked Worker to
+        /// work on your HITs. This operation reverses the effects of the CreateWorkerBlock operation.
+        /// You need the Worker ID to use this operation. If the Worker ID is missing or invalid,
+        /// this operation fails and returns the message “WorkerId is invalid.” If the specified
+        /// Worker is not blocked, this operation returns successfully.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteWorkerBlock service method.</param>
         /// <param name="cancellationToken">
@@ -932,8 +928,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DisassociateQualificationFromWorker</code> revokes a previously granted
-        /// Qualification from a user. 
+        /// The <c>DisassociateQualificationFromWorker</c> revokes a previously granted Qualification
+        /// from a user. 
         /// 
         ///  
         /// <para>
@@ -957,8 +953,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>DisassociateQualificationFromWorker</code> revokes a previously granted
-        /// Qualification from a user. 
+        /// The <c>DisassociateQualificationFromWorker</c> revokes a previously granted Qualification
+        /// from a user. 
         /// 
         ///  
         /// <para>
@@ -988,12 +984,11 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs balance in
-        /// your Amazon Mechanical Turk account if you are a Prepaid Requester. Alternatively,
-        /// this operation will retrieve the remaining available AWS Billing usage if you have
-        /// enabled AWS Billing. Note: If you have enabled AWS Billing and still have a remaining
-        /// Prepaid HITs balance, this balance can be viewed on the My Account page in the Requester
-        /// console.
+        /// The <c>GetAccountBalance</c> operation retrieves the Prepaid HITs balance in your
+        /// Amazon Mechanical Turk account if you are a Prepaid Requester. Alternatively, this
+        /// operation will retrieve the remaining available AWS Billing usage if you have enabled
+        /// AWS Billing. Note: If you have enabled AWS Billing and still have a remaining Prepaid
+        /// HITs balance, this balance can be viewed on the My Account page in the Requester console.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountBalance service method.</param>
         /// 
@@ -1011,12 +1006,11 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs balance in
-        /// your Amazon Mechanical Turk account if you are a Prepaid Requester. Alternatively,
-        /// this operation will retrieve the remaining available AWS Billing usage if you have
-        /// enabled AWS Billing. Note: If you have enabled AWS Billing and still have a remaining
-        /// Prepaid HITs balance, this balance can be viewed on the My Account page in the Requester
-        /// console.
+        /// The <c>GetAccountBalance</c> operation retrieves the Prepaid HITs balance in your
+        /// Amazon Mechanical Turk account if you are a Prepaid Requester. Alternatively, this
+        /// operation will retrieve the remaining available AWS Billing usage if you have enabled
+        /// AWS Billing. Note: If you have enabled AWS Billing and still have a remaining Prepaid
+        /// HITs balance, this balance can be viewed on the My Account page in the Requester console.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountBalance service method.</param>
         /// <param name="cancellationToken">
@@ -1040,7 +1034,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetAssignment</code> operation retrieves the details of the specified Assignment.
+        /// The <c>GetAssignment</c> operation retrieves the details of the specified Assignment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssignment service method.</param>
         /// 
@@ -1058,7 +1052,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetAssignment</code> operation retrieves the details of the specified Assignment.
+        /// The <c>GetAssignment</c> operation retrieves the details of the specified Assignment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -1082,13 +1076,13 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetFileUploadURL</code> operation generates and returns a temporary URL.
-        /// You use the temporary URL to retrieve a file uploaded by a Worker as an answer to
-        /// a FileUploadAnswer question for a HIT. The temporary URL is generated the instant
-        /// the GetFileUploadURL operation is called, and is valid for 60 seconds. You can get
-        /// a temporary file upload URL any time until the HIT is disposed. After the HIT is disposed,
-        /// any uploaded files are deleted, and cannot be retrieved. Pending Deprecation on December
-        /// 12, 2017. The Answer Specification structure will no longer support the <code>FileUploadAnswer</code>
+        /// The <c>GetFileUploadURL</c> operation generates and returns a temporary URL. You
+        /// use the temporary URL to retrieve a file uploaded by a Worker as an answer to a FileUploadAnswer
+        /// question for a HIT. The temporary URL is generated the instant the GetFileUploadURL
+        /// operation is called, and is valid for 60 seconds. You can get a temporary file upload
+        /// URL any time until the HIT is disposed. After the HIT is disposed, any uploaded files
+        /// are deleted, and cannot be retrieved. Pending Deprecation on December 12, 2017. The
+        /// Answer Specification structure will no longer support the <c>FileUploadAnswer</c>
         /// element to be used for the QuestionForm data structure. Instead, we recommend that
         /// Requesters who want to create HITs asking Workers to upload files to use Amazon S3.
         /// </summary>
@@ -1108,13 +1102,13 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetFileUploadURL</code> operation generates and returns a temporary URL.
-        /// You use the temporary URL to retrieve a file uploaded by a Worker as an answer to
-        /// a FileUploadAnswer question for a HIT. The temporary URL is generated the instant
-        /// the GetFileUploadURL operation is called, and is valid for 60 seconds. You can get
-        /// a temporary file upload URL any time until the HIT is disposed. After the HIT is disposed,
-        /// any uploaded files are deleted, and cannot be retrieved. Pending Deprecation on December
-        /// 12, 2017. The Answer Specification structure will no longer support the <code>FileUploadAnswer</code>
+        /// The <c>GetFileUploadURL</c> operation generates and returns a temporary URL. You
+        /// use the temporary URL to retrieve a file uploaded by a Worker as an answer to a FileUploadAnswer
+        /// question for a HIT. The temporary URL is generated the instant the GetFileUploadURL
+        /// operation is called, and is valid for 60 seconds. You can get a temporary file upload
+        /// URL any time until the HIT is disposed. After the HIT is disposed, any uploaded files
+        /// are deleted, and cannot be retrieved. Pending Deprecation on December 12, 2017. The
+        /// Answer Specification structure will no longer support the <c>FileUploadAnswer</c>
         /// element to be used for the QuestionForm data structure. Instead, we recommend that
         /// Requesters who want to create HITs asking Workers to upload files to use Amazon S3.
         /// </summary>
@@ -1140,7 +1134,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetHIT</code> operation retrieves the details of the specified HIT.
+        /// The <c>GetHIT</c> operation retrieves the details of the specified HIT.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHIT service method.</param>
         /// 
@@ -1158,7 +1152,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetHIT</code> operation retrieves the details of the specified HIT.
+        /// The <c>GetHIT</c> operation retrieves the details of the specified HIT.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetHIT service method.</param>
         /// <param name="cancellationToken">
@@ -1182,14 +1176,14 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetQualificationScore</code> operation returns the value of a Worker's
-        /// Qualification for a given Qualification type. 
+        /// The <c>GetQualificationScore</c> operation returns the value of a Worker's Qualification
+        /// for a given Qualification type. 
         /// 
         ///  
         /// <para>
         ///  To get a Worker's Qualification, you must know the Worker's ID. The Worker's ID is
-        /// included in the assignment data returned by the <code>ListAssignmentsForHIT</code>
-        /// operation. 
+        /// included in the assignment data returned by the <c>ListAssignmentsForHIT</c> operation.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1213,14 +1207,14 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetQualificationScore</code> operation returns the value of a Worker's
-        /// Qualification for a given Qualification type. 
+        /// The <c>GetQualificationScore</c> operation returns the value of a Worker's Qualification
+        /// for a given Qualification type. 
         /// 
         ///  
         /// <para>
         ///  To get a Worker's Qualification, you must know the Worker's ID. The Worker's ID is
-        /// included in the assignment data returned by the <code>ListAssignmentsForHIT</code>
-        /// operation. 
+        /// included in the assignment data returned by the <c>ListAssignmentsForHIT</c> operation.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -1250,7 +1244,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetQualificationType</code>operation retrieves information about a Qualification
+        /// The <c>GetQualificationType</c>operation retrieves information about a Qualification
         /// type using its ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQualificationType service method.</param>
@@ -1269,7 +1263,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>GetQualificationType</code>operation retrieves information about a Qualification
+        /// The <c>GetQualificationType</c>operation retrieves information about a Qualification
         /// type using its ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQualificationType service method.</param>
@@ -1294,8 +1288,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListAssignmentsForHIT</code> operation retrieves completed assignments
-        /// for a HIT. You can use this operation to retrieve the results for a HIT. 
+        /// The <c>ListAssignmentsForHIT</c> operation retrieves completed assignments for a
+        /// HIT. You can use this operation to retrieve the results for a HIT. 
         /// 
         ///  
         /// <para>
@@ -1340,8 +1334,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListAssignmentsForHIT</code> operation retrieves completed assignments
-        /// for a HIT. You can use this operation to retrieve the results for a HIT. 
+        /// The <c>ListAssignmentsForHIT</c> operation retrieves completed assignments for a
+        /// HIT. You can use this operation to retrieve the results for a HIT. 
         /// 
         ///  
         /// <para>
@@ -1392,8 +1386,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListBonusPayments</code> operation retrieves the amounts of bonuses you
-        /// have paid to Workers for a given HIT or assignment.
+        /// The <c>ListBonusPayments</c> operation retrieves the amounts of bonuses you have
+        /// paid to Workers for a given HIT or assignment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBonusPayments service method.</param>
         /// 
@@ -1411,8 +1405,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListBonusPayments</code> operation retrieves the amounts of bonuses you
-        /// have paid to Workers for a given HIT or assignment.
+        /// The <c>ListBonusPayments</c> operation retrieves the amounts of bonuses you have
+        /// paid to Workers for a given HIT or assignment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListBonusPayments service method.</param>
         /// <param name="cancellationToken">
@@ -1436,9 +1430,9 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListHITs</code> operation returns all of a Requester's HITs. The operation
-        /// returns HITs of any status, except for HITs that have been deleted of with the DeleteHIT
-        /// operation or that have been auto-deleted.
+        /// The <c>ListHITs</c> operation returns all of a Requester's HITs. The operation returns
+        /// HITs of any status, except for HITs that have been deleted of with the DeleteHIT operation
+        /// or that have been auto-deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHITs service method.</param>
         /// 
@@ -1456,9 +1450,9 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListHITs</code> operation returns all of a Requester's HITs. The operation
-        /// returns HITs of any status, except for HITs that have been deleted of with the DeleteHIT
-        /// operation or that have been auto-deleted.
+        /// The <c>ListHITs</c> operation returns all of a Requester's HITs. The operation returns
+        /// HITs of any status, except for HITs that have been deleted of with the DeleteHIT operation
+        /// or that have been auto-deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHITs service method.</param>
         /// <param name="cancellationToken">
@@ -1482,10 +1476,10 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListHITsForQualificationType</code> operation returns the HITs that use
-        /// the given Qualification type for a Qualification requirement. The operation returns
-        /// HITs of any status, except for HITs that have been deleted with the <code>DeleteHIT</code>
-        /// operation or that have been auto-deleted.
+        /// The <c>ListHITsForQualificationType</c> operation returns the HITs that use the given
+        /// Qualification type for a Qualification requirement. The operation returns HITs of
+        /// any status, except for HITs that have been deleted with the <c>DeleteHIT</c> operation
+        /// or that have been auto-deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHITsForQualificationType service method.</param>
         /// 
@@ -1503,10 +1497,10 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListHITsForQualificationType</code> operation returns the HITs that use
-        /// the given Qualification type for a Qualification requirement. The operation returns
-        /// HITs of any status, except for HITs that have been deleted with the <code>DeleteHIT</code>
-        /// operation or that have been auto-deleted.
+        /// The <c>ListHITsForQualificationType</c> operation returns the HITs that use the given
+        /// Qualification type for a Qualification requirement. The operation returns HITs of
+        /// any status, except for HITs that have been deleted with the <c>DeleteHIT</c> operation
+        /// or that have been auto-deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHITsForQualificationType service method.</param>
         /// <param name="cancellationToken">
@@ -1530,7 +1524,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListQualificationRequests</code> operation retrieves requests for Qualifications
+        /// The <c>ListQualificationRequests</c> operation retrieves requests for Qualifications
         /// of a particular Qualification type. The owner of the Qualification type calls this
         /// operation to poll for pending requests, and accepts them using the AcceptQualification
         /// operation.
@@ -1551,7 +1545,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListQualificationRequests</code> operation retrieves requests for Qualifications
+        /// The <c>ListQualificationRequests</c> operation retrieves requests for Qualifications
         /// of a particular Qualification type. The owner of the Qualification type calls this
         /// operation to poll for pending requests, and accepts them using the AcceptQualification
         /// operation.
@@ -1578,8 +1572,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListQualificationTypes</code> operation returns a list of Qualification
-        /// types, filtered by an optional search term.
+        /// The <c>ListQualificationTypes</c> operation returns a list of Qualification types,
+        /// filtered by an optional search term.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQualificationTypes service method.</param>
         /// 
@@ -1597,8 +1591,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListQualificationTypes</code> operation returns a list of Qualification
-        /// types, filtered by an optional search term.
+        /// The <c>ListQualificationTypes</c> operation returns a list of Qualification types,
+        /// filtered by an optional search term.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListQualificationTypes service method.</param>
         /// <param name="cancellationToken">
@@ -1622,9 +1616,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal
-        /// to Reviewable or Status equal to Reviewing that belong to the Requester calling the
-        /// operation.
+        /// The <c>ListReviewableHITs</c> operation retrieves the HITs with Status equal to Reviewable
+        /// or Status equal to Reviewing that belong to the Requester calling the operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReviewableHITs service method.</param>
         /// 
@@ -1642,9 +1635,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal
-        /// to Reviewable or Status equal to Reviewing that belong to the Requester calling the
-        /// operation.
+        /// The <c>ListReviewableHITs</c> operation retrieves the HITs with Status equal to Reviewable
+        /// or Status equal to Reviewing that belong to the Requester calling the operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReviewableHITs service method.</param>
         /// <param name="cancellationToken">
@@ -1668,7 +1660,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListReviewPolicyResultsForHIT</code> operation retrieves the computed results
+        /// The <c>ListReviewPolicyResultsForHIT</c> operation retrieves the computed results
         /// and the actions taken in the course of executing your Review Policies for a given
         /// HIT. For information about how to specify Review Policies when you call CreateHIT,
         /// see Review Policies. The ListReviewPolicyResultsForHIT operation can return results
@@ -1690,7 +1682,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListReviewPolicyResultsForHIT</code> operation retrieves the computed results
+        /// The <c>ListReviewPolicyResultsForHIT</c> operation retrieves the computed results
         /// and the actions taken in the course of executing your Review Policies for a given
         /// HIT. For information about how to specify Review Policies when you call CreateHIT,
         /// see Review Policies. The ListReviewPolicyResultsForHIT operation can return results
@@ -1718,7 +1710,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListWorkersBlocks</code> operation retrieves a list of Workers who are blocked
+        /// The <c>ListWorkersBlocks</c> operation retrieves a list of Workers who are blocked
         /// from working on your HITs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkerBlocks service method.</param>
@@ -1737,7 +1729,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListWorkersBlocks</code> operation retrieves a list of Workers who are blocked
+        /// The <c>ListWorkersBlocks</c> operation retrieves a list of Workers who are blocked
         /// from working on your HITs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkerBlocks service method.</param>
@@ -1762,7 +1754,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers
+        /// The <c>ListWorkersWithQualificationType</c> operation returns all of the Workers
         /// that have been associated with a given Qualification type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkersWithQualificationType service method.</param>
@@ -1781,7 +1773,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers
+        /// The <c>ListWorkersWithQualificationType</c> operation returns all of the Workers
         /// that have been associated with a given Qualification type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkersWithQualificationType service method.</param>
@@ -1806,8 +1798,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>NotifyWorkers</code> operation sends an email to one or more Workers that
-        /// you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same
+        /// The <c>NotifyWorkers</c> operation sends an email to one or more Workers that you
+        /// specify with the Worker ID. You can specify up to 100 Worker IDs to send the same
         /// message with a single call to the NotifyWorkers operation. The NotifyWorkers operation
         /// will send a notification email to a Worker only if you have previously approved or
         /// rejected work from the Worker.
@@ -1828,8 +1820,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>NotifyWorkers</code> operation sends an email to one or more Workers that
-        /// you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same
+        /// The <c>NotifyWorkers</c> operation sends an email to one or more Workers that you
+        /// specify with the Worker ID. You can specify up to 100 Worker IDs to send the same
         /// message with a single call to the NotifyWorkers operation. The NotifyWorkers operation
         /// will send a notification email to a Worker only if you have previously approved or
         /// rejected work from the Worker.
@@ -1856,7 +1848,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>RejectAssignment</code> operation rejects the results of a completed assignment.
+        /// The <c>RejectAssignment</c> operation rejects the results of a completed assignment.
         /// 
         /// 
         ///  
@@ -1887,7 +1879,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>RejectAssignment</code> operation rejects the results of a completed assignment.
+        /// The <c>RejectAssignment</c> operation rejects the results of a completed assignment.
         /// 
         /// 
         ///  
@@ -1924,8 +1916,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>RejectQualificationRequest</code> operation rejects a user's request for
-        /// a Qualification. 
+        /// The <c>RejectQualificationRequest</c> operation rejects a user's request for a Qualification.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1949,8 +1941,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>RejectQualificationRequest</code> operation rejects a user's request for
-        /// a Qualification. 
+        /// The <c>RejectQualificationRequest</c> operation rejects a user's request for a Qualification.
+        /// 
         /// 
         ///  
         /// <para>
@@ -1980,14 +1972,14 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>SendBonus</code> operation issues a payment of money from your account
-        /// to a Worker. This payment happens separately from the reward you pay to the Worker
-        /// when you approve the Worker's assignment. The SendBonus operation requires the Worker's
-        /// ID and the assignment ID as parameters to initiate payment of the bonus. You must
-        /// include a message that explains the reason for the bonus payment, as the Worker may
-        /// not be expecting the payment. Amazon Mechanical Turk collects a fee for bonus payments,
-        /// similar to the HIT listing fee. This operation fails if your account does not have
-        /// enough funds to pay for both the bonus and the fees.
+        /// The <c>SendBonus</c> operation issues a payment of money from your account to a Worker.
+        /// This payment happens separately from the reward you pay to the Worker when you approve
+        /// the Worker's assignment. The SendBonus operation requires the Worker's ID and the
+        /// assignment ID as parameters to initiate payment of the bonus. You must include a message
+        /// that explains the reason for the bonus payment, as the Worker may not be expecting
+        /// the payment. Amazon Mechanical Turk collects a fee for bonus payments, similar to
+        /// the HIT listing fee. This operation fails if your account does not have enough funds
+        /// to pay for both the bonus and the fees.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendBonus service method.</param>
         /// 
@@ -2005,14 +1997,14 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>SendBonus</code> operation issues a payment of money from your account
-        /// to a Worker. This payment happens separately from the reward you pay to the Worker
-        /// when you approve the Worker's assignment. The SendBonus operation requires the Worker's
-        /// ID and the assignment ID as parameters to initiate payment of the bonus. You must
-        /// include a message that explains the reason for the bonus payment, as the Worker may
-        /// not be expecting the payment. Amazon Mechanical Turk collects a fee for bonus payments,
-        /// similar to the HIT listing fee. This operation fails if your account does not have
-        /// enough funds to pay for both the bonus and the fees.
+        /// The <c>SendBonus</c> operation issues a payment of money from your account to a Worker.
+        /// This payment happens separately from the reward you pay to the Worker when you approve
+        /// the Worker's assignment. The SendBonus operation requires the Worker's ID and the
+        /// assignment ID as parameters to initiate payment of the bonus. You must include a message
+        /// that explains the reason for the bonus payment, as the Worker may not be expecting
+        /// the payment. Amazon Mechanical Turk collects a fee for bonus payments, similar to
+        /// the HIT listing fee. This operation fails if your account does not have enough funds
+        /// to pay for both the bonus and the fees.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendBonus service method.</param>
         /// <param name="cancellationToken">
@@ -2036,11 +2028,11 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>SendTestEventNotification</code> operation causes Amazon Mechanical Turk
-        /// to send a notification message as if a HIT event occurred, according to the provided
-        /// notification specification. This allows you to test notifications without setting
-        /// up notifications for a real HIT type and trying to trigger them using the website.
-        /// When you call this operation, the service attempts to send the test notification immediately.
+        /// The <c>SendTestEventNotification</c> operation causes Amazon Mechanical Turk to send
+        /// a notification message as if a HIT event occurred, according to the provided notification
+        /// specification. This allows you to test notifications without setting up notifications
+        /// for a real HIT type and trying to trigger them using the website. When you call this
+        /// operation, the service attempts to send the test notification immediately.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTestEventNotification service method.</param>
         /// 
@@ -2058,11 +2050,11 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>SendTestEventNotification</code> operation causes Amazon Mechanical Turk
-        /// to send a notification message as if a HIT event occurred, according to the provided
-        /// notification specification. This allows you to test notifications without setting
-        /// up notifications for a real HIT type and trying to trigger them using the website.
-        /// When you call this operation, the service attempts to send the test notification immediately.
+        /// The <c>SendTestEventNotification</c> operation causes Amazon Mechanical Turk to send
+        /// a notification message as if a HIT event occurred, according to the provided notification
+        /// specification. This allows you to test notifications without setting up notifications
+        /// for a real HIT type and trying to trigger them using the website. When you call this
+        /// operation, the service attempts to send the test notification immediately.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendTestEventNotification service method.</param>
         /// <param name="cancellationToken">
@@ -2086,9 +2078,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateExpirationForHIT</code> operation allows you update the expiration
-        /// time of a HIT. If you update it to a time in the past, the HIT will be immediately
-        /// expired.
+        /// The <c>UpdateExpirationForHIT</c> operation allows you update the expiration time
+        /// of a HIT. If you update it to a time in the past, the HIT will be immediately expired.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateExpirationForHIT service method.</param>
         /// 
@@ -2106,9 +2097,8 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateExpirationForHIT</code> operation allows you update the expiration
-        /// time of a HIT. If you update it to a time in the past, the HIT will be immediately
-        /// expired.
+        /// The <c>UpdateExpirationForHIT</c> operation allows you update the expiration time
+        /// of a HIT. If you update it to a time in the past, the HIT will be immediately expired.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateExpirationForHIT service method.</param>
         /// <param name="cancellationToken">
@@ -2132,9 +2122,9 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateHITReviewStatus</code> operation updates the status of a HIT. If
-        /// the status is Reviewable, this operation can update the status to Reviewing, or it
-        /// can revert a Reviewing HIT back to the Reviewable status.
+        /// The <c>UpdateHITReviewStatus</c> operation updates the status of a HIT. If the status
+        /// is Reviewable, this operation can update the status to Reviewing, or it can revert
+        /// a Reviewing HIT back to the Reviewable status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHITReviewStatus service method.</param>
         /// 
@@ -2152,9 +2142,9 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateHITReviewStatus</code> operation updates the status of a HIT. If
-        /// the status is Reviewable, this operation can update the status to Reviewing, or it
-        /// can revert a Reviewing HIT back to the Reviewable status.
+        /// The <c>UpdateHITReviewStatus</c> operation updates the status of a HIT. If the status
+        /// is Reviewable, this operation can update the status to Reviewing, or it can revert
+        /// a Reviewing HIT back to the Reviewable status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateHITReviewStatus service method.</param>
         /// <param name="cancellationToken">
@@ -2178,7 +2168,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateHITTypeOfHIT</code> operation allows you to change the HITType properties
+        /// The <c>UpdateHITTypeOfHIT</c> operation allows you to change the HITType properties
         /// of a HIT. This operation disassociates the HIT from its old HITType properties and
         /// associates it with the new HITType properties. The HIT takes on the properties of
         /// the new HITType in place of the old ones.
@@ -2199,7 +2189,7 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateHITTypeOfHIT</code> operation allows you to change the HITType properties
+        /// The <c>UpdateHITTypeOfHIT</c> operation allows you to change the HITType properties
         /// of a HIT. This operation disassociates the HIT from its old HITType properties and
         /// associates it with the new HITType properties. The HIT takes on the properties of
         /// the new HITType in place of the old ones.
@@ -2226,15 +2216,15 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateNotificationSettings</code> operation creates, updates, disables
-        /// or re-enables notifications for a HIT type. If you call the UpdateNotificationSettings
-        /// operation for a HIT type that already has a notification specification, the operation
-        /// replaces the old specification with a new one. You can call the UpdateNotificationSettings
+        /// The <c>UpdateNotificationSettings</c> operation creates, updates, disables or re-enables
+        /// notifications for a HIT type. If you call the UpdateNotificationSettings operation
+        /// for a HIT type that already has a notification specification, the operation replaces
+        /// the old specification with a new one. You can call the UpdateNotificationSettings
         /// operation to enable or disable notifications for the HIT type, without having to modify
         /// the notification specification itself by providing updates to the Active status without
         /// specifying a new notification specification. To change the Active status of a HIT
         /// type's notifications, the HIT type must already have a notification specification,
-        /// or one must be provided in the same call to <code>UpdateNotificationSettings</code>.
+        /// or one must be provided in the same call to <c>UpdateNotificationSettings</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationSettings service method.</param>
         /// 
@@ -2252,15 +2242,15 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateNotificationSettings</code> operation creates, updates, disables
-        /// or re-enables notifications for a HIT type. If you call the UpdateNotificationSettings
-        /// operation for a HIT type that already has a notification specification, the operation
-        /// replaces the old specification with a new one. You can call the UpdateNotificationSettings
+        /// The <c>UpdateNotificationSettings</c> operation creates, updates, disables or re-enables
+        /// notifications for a HIT type. If you call the UpdateNotificationSettings operation
+        /// for a HIT type that already has a notification specification, the operation replaces
+        /// the old specification with a new one. You can call the UpdateNotificationSettings
         /// operation to enable or disable notifications for the HIT type, without having to modify
         /// the notification specification itself by providing updates to the Active status without
         /// specifying a new notification specification. To change the Active status of a HIT
         /// type's notifications, the HIT type must already have a notification specification,
-        /// or one must be provided in the same call to <code>UpdateNotificationSettings</code>.
+        /// or one must be provided in the same call to <c>UpdateNotificationSettings</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotificationSettings service method.</param>
         /// <param name="cancellationToken">
@@ -2284,9 +2274,9 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateQualificationType</code> operation modifies the attributes of an
-        /// existing Qualification type, which is represented by a QualificationType data structure.
-        /// Only the owner of a Qualification type can modify its attributes. 
+        /// The <c>UpdateQualificationType</c> operation modifies the attributes of an existing
+        /// Qualification type, which is represented by a QualificationType data structure. Only
+        /// the owner of a Qualification type can modify its attributes. 
         /// 
         ///  
         /// <para>
@@ -2345,9 +2335,9 @@ namespace Amazon.MTurk
 
 
         /// <summary>
-        /// The <code>UpdateQualificationType</code> operation modifies the attributes of an
-        /// existing Qualification type, which is represented by a QualificationType data structure.
-        /// Only the owner of a Qualification type can modify its attributes. 
+        /// The <c>UpdateQualificationType</c> operation modifies the attributes of an existing
+        /// Qualification type, which is represented by a QualificationType data structure. Only
+        /// the owner of a Qualification type can modify its attributes. 
         /// 
         ///  
         /// <para>

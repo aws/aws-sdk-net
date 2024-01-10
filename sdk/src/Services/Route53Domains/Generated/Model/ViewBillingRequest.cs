@@ -64,16 +64,15 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// For an initial request for a list of billing records, omit this element. If the number
         /// of billing records that are associated with the current Amazon Web Services account
-        /// during the specified period is greater than the value that you specified for <code>MaxItems</code>,
-        /// you can use <code>Marker</code> to return additional billing records. Get the value
-        /// of <code>NextPageMarker</code> from the previous response, and submit another request
-        /// that includes the value of <code>NextPageMarker</code> in the <code>Marker</code>
-        /// element. 
+        /// during the specified period is greater than the value that you specified for <c>MaxItems</c>,
+        /// you can use <c>Marker</c> to return additional billing records. Get the value of <c>NextPageMarker</c>
+        /// from the previous response, and submit another request that includes the value of
+        /// <c>NextPageMarker</c> in the <c>Marker</c> element. 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: The marker must match the value of <code>NextPageMarker</code> that was
-        /// returned in the previous response.
+        /// Constraints: The marker must match the value of <c>NextPageMarker</c> that was returned
+        /// in the previous response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

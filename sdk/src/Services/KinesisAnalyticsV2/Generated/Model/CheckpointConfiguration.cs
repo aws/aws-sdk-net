@@ -50,9 +50,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-        /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>,
-        /// even if this value is set to another value using this API or in application code.
+        /// If <c>CheckpointConfiguration.ConfigurationType</c> is <c>DEFAULT</c>, the application
+        /// will use a <c>CheckpointingEnabled</c> value of <c>true</c>, even if this value is
+        /// set to another value using this API or in application code.
         /// </para>
         ///  </note>
         /// </summary>
@@ -75,9 +75,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-        /// the application will use a <code>CheckpointInterval</code> value of 60000, even if
-        /// this value is set to another value using this API or in application code.
+        /// If <c>CheckpointConfiguration.ConfigurationType</c> is <c>DEFAULT</c>, the application
+        /// will use a <c>CheckpointInterval</c> value of 60000, even if this value is set to
+        /// another value using this API or in application code.
         /// </para>
         ///  </note>
         /// </summary>
@@ -98,13 +98,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConfigurationType. 
         /// <para>
         /// Describes whether the application uses Kinesis Data Analytics' default checkpointing
-        /// behavior. You must set this property to <code>CUSTOM</code> in order to set the <code>CheckpointingEnabled</code>,
-        /// <code>CheckpointInterval</code>, or <code>MinPauseBetweenCheckpoints</code> parameters.
+        /// behavior. You must set this property to <c>CUSTOM</c> in order to set the <c>CheckpointingEnabled</c>,
+        /// <c>CheckpointInterval</c>, or <c>MinPauseBetweenCheckpoints</c> parameters.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If this value is set to <code>DEFAULT</code>, the application will use the following
-        /// values, even if they are set to other values using APIs or application code:
+        /// If this value is set to <c>DEFAULT</c>, the application will use the following values,
+        /// even if they are set to other values using APIs or application code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -138,16 +138,16 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// Describes the minimum time in milliseconds after a checkpoint operation completes
         /// that a new checkpoint operation can start. If a checkpoint operation takes longer
-        /// than the <code>CheckpointInterval</code>, the application otherwise performs continual
-        /// checkpoint operations. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing">
+        /// than the <c>CheckpointInterval</c>, the application otherwise performs continual checkpoint
+        /// operations. For more information, see <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/ops/state/large_state_tuning.html#tuning-checkpointing">
         /// Tuning Checkpointing</a> in the <a href="https://ci.apache.org/projects/flink/flink-docs-release-1.8/">Apache
         /// Flink Documentation</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-        /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000,
-        /// even if this value is set using this API or in application code.
+        /// If <c>CheckpointConfiguration.ConfigurationType</c> is <c>DEFAULT</c>, the application
+        /// will use a <c>MinPauseBetweenCheckpoints</c> value of 5000, even if this value is
+        /// set using this API or in application code.
         /// </para>
         ///  </note>
         /// </summary>

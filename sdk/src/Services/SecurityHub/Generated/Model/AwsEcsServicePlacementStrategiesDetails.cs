@@ -43,18 +43,17 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For the <code>spread</code> placement strategy, valid values are <code>instanceId</code>
-        /// (or <code>host</code>, which has the same effect), or any platform or custom attribute
-        /// that is applied to a container instance, such as <code>attribute:ecs.availability-zone</code>.
+        /// For the <c>spread</c> placement strategy, valid values are <c>instanceId</c> (or <c>host</c>,
+        /// which has the same effect), or any platform or custom attribute that is applied to
+        /// a container instance, such as <c>attribute:ecs.availability-zone</c>.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>binpack</code> placement strategy, valid values are <code>cpu</code>
-        /// and <code>memory</code>.
+        /// For the <c>binpack</c> placement strategy, valid values are <c>cpu</c> and <c>memory</c>.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>random</code> placement strategy, this attribute is not used.
+        /// For the <c>random</c> placement strategy, this attribute is not used.
         /// </para>
         /// </summary>
         public string Field
@@ -76,21 +75,21 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>random</code> placement strategy randomly places tasks on available candidates.
+        /// The <c>random</c> placement strategy randomly places tasks on available candidates.
         /// </para>
         ///  
         /// <para>
-        /// The <code>spread</code> placement strategy spreads placement across available candidates
-        /// evenly based on the value of <code>Field</code>.
+        /// The <c>spread</c> placement strategy spreads placement across available candidates
+        /// evenly based on the value of <c>Field</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>binpack</code> strategy places tasks on available candidates that have the
-        /// least available amount of the resource that is specified in <code>Field</code>.
+        /// The <c>binpack</c> strategy places tasks on available candidates that have the least
+        /// available amount of the resource that is specified in <c>Field</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>random</code> | <code>spread</code> | <code>binpack</code> 
+        /// Valid values: <c>random</c> | <c>spread</c> | <c>binpack</c> 
         /// </para>
         /// </summary>
         public string Type

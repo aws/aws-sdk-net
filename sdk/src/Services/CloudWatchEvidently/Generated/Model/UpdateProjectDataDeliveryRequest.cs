@@ -37,8 +37,8 @@ namespace Amazon.CloudWatchEvidently.Model
     /// 
     ///  
     /// <para>
-    /// You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code>
-    /// in the same operation.
+    /// You can't specify both <c>cloudWatchLogs</c> and <c>s3Destination</c> in the same
+    /// operation.
     /// </para>
     /// </summary>
     public partial class UpdateProjectDataDeliveryRequest : AmazonCloudWatchEvidentlyRequest

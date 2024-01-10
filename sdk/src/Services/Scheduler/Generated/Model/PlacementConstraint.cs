@@ -40,7 +40,7 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property Expression. 
         /// <para>
         /// A cluster query language expression to apply to the constraint. You cannot specify
-        /// an expression if the constraint type is <code>distinctInstance</code>. For more information,
+        /// an expression if the constraint type is <c>distinctInstance</c>. For more information,
         /// see <a href="https://docs.aws.amazon.com/latest/developerguide/cluster-query-language.html">Cluster
         /// query language</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
@@ -61,8 +61,8 @@ namespace Amazon.Scheduler.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of constraint. Use <code>distinctInstance</code> to ensure that each task
-        /// in a particular group is running on a different container instance. Use <code>memberOf</code>
+        /// The type of constraint. Use <c>distinctInstance</c> to ensure that each task in a
+        /// particular group is running on a different container instance. Use <c>memberOf</c>
         /// to restrict the selection to a group of valid candidates.
         /// </para>
         /// </summary>

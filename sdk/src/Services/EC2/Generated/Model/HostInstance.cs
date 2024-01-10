@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type (for example, <code>m3.medium</code>) of the running instance.
+        /// The instance type (for example, <c>m3.medium</c>) of the running instance.
         /// </para>
         /// </summary>
         public string InstanceType

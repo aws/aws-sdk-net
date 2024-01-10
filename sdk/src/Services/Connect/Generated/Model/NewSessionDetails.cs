@@ -96,16 +96,16 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property SupportedMessagingContentTypes. 
         /// <para>
-        ///  The supported chat message content types. Supported types are <code>text/plain</code>,
-        /// <code>text/markdown</code>, <code>application/json</code>, <code>application/vnd.amazonaws.connect.message.interactive</code>,
-        /// and <code>application/vnd.amazonaws.connect.message.interactive.response</code>. 
+        ///  The supported chat message content types. Supported types are <c>text/plain</c>,
+        /// <c>text/markdown</c>, <c>application/json</c>, <c>application/vnd.amazonaws.connect.message.interactive</c>,
+        /// and <c>application/vnd.amazonaws.connect.message.interactive.response</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Content types must always contain <code> text/plain</code>. You can then put any other
-        /// supported type in the list. For example, all the following lists are valid because
-        /// they contain <code>text/plain</code>: <code>[text/plain, text/markdown, application/json]</code>,
-        /// <code> [text/markdown, text/plain]</code>, <code>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</code>.
+        /// Content types must always contain <c> text/plain</c>. You can then put any other supported
+        /// type in the list. For example, all the following lists are valid because they contain
+        /// <c>text/plain</c>: <c>[text/plain, text/markdown, application/json]</c>, <c> [text/markdown,
+        /// text/plain]</c>, <c>[text/plain, application/json, application/vnd.amazonaws.connect.message.interactive.response]</c>.
         /// 
         /// </para>
         /// </summary>

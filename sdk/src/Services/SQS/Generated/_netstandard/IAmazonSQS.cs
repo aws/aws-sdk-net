@@ -131,8 +131,8 @@ namespace Amazon.SQS
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  <code>AddPermission</code> generates a policy for you. You can use <code> <a>SetQueueAttributes</a>
-        /// </code> to upload your policy. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
+        ///  <c>AddPermission</c> generates a policy for you. You can use <c> <a>SetQueueAttributes</a>
+        /// </c> to upload your policy. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
         /// Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon SQS
         /// Developer Guide</i>.
         /// </para>
@@ -143,12 +143,12 @@ namespace Amazon.SQS
         ///  </li> <li> 
         /// <para>
         /// To remove the ability to change queue permissions, you must deny permission to the
-        /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-        /// actions in your IAM policy.
+        /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+        /// in your IAM policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+        /// Amazon SQS <c>AddPermission</c> does not support adding a non-account principal.
         /// </para>
         ///  </li> </ul> </note> <note> 
         /// <para>
@@ -169,14 +169,14 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// The specified action violates a limit. For example, <c>ReceiveMessage</c> returns
+        /// this error if the maximum number of in flight messages is reached and <c>AddPermission</c>
         /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -225,8 +225,8 @@ namespace Amazon.SQS
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        ///  <code>AddPermission</code> generates a policy for you. You can use <code> <a>SetQueueAttributes</a>
-        /// </code> to upload your policy. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
+        ///  <c>AddPermission</c> generates a policy for you. You can use <c> <a>SetQueueAttributes</a>
+        /// </c> to upload your policy. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
         /// Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon SQS
         /// Developer Guide</i>.
         /// </para>
@@ -237,12 +237,12 @@ namespace Amazon.SQS
         ///  </li> <li> 
         /// <para>
         /// To remove the ability to change queue permissions, you must deny permission to the
-        /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-        /// actions in your IAM policy.
+        /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+        /// in your IAM policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+        /// Amazon SQS <c>AddPermission</c> does not support adding a non-account principal.
         /// </para>
         ///  </li> </ul> </note> <note> 
         /// <para>
@@ -260,14 +260,14 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// The specified action violates a limit. For example, <c>ReceiveMessage</c> returns
+        /// this error if the maximum number of in flight messages is reached and <c>AddPermission</c>
         /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -337,7 +337,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the CancelMessageMoveTask service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -387,8 +387,8 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed
-        /// since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code>
-        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code>
+        /// since you received the message, and you send a ChangeMessageVisibility call with <c>VisibilityTimeout</c>
+        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <c>ChangeMessageVisibility</c>
         /// call. Thus, any attempt to change the visibility timeout or to delete that message
         /// 10 seconds after you initially change the visibility timeout (a total of 25 seconds)
         /// might result in an error.
@@ -428,10 +428,10 @@ namespace Amazon.SQS
         /// For most standard queues (depending on queue traffic and message backlog), there can
         /// be a maximum of approximately 120,000 in flight messages (received from a queue by
         /// a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS
-        /// returns the <code>OverLimit</code> error message. To avoid reaching the limit, you
-        /// should delete messages from the queue after they're processed. You can also increase
-        /// the number of queues you use to process your messages. To request a limit increase,
-        /// <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
+        /// returns the <c>OverLimit</c> error message. To avoid reaching the limit, you should
+        /// delete messages from the queue after they're processed. You can also increase the
+        /// number of queues you use to process your messages. To request a limit increase, <a
+        /// href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
         /// a support request</a>.
         /// </para>
         ///  
@@ -442,8 +442,8 @@ namespace Amazon.SQS
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you attempt to set the <code>VisibilityTimeout</code> to a value greater than the
-        /// maximum time left, Amazon SQS returns an error. Amazon SQS doesn't automatically recalculate
+        /// If you attempt to set the <c>VisibilityTimeout</c> to a value greater than the maximum
+        /// time left, Amazon SQS returns an error. Amazon SQS doesn't automatically recalculate
         /// and increase the timeout to the maximum remaining time.
         /// </para>
         ///  
@@ -452,7 +452,7 @@ namespace Amazon.SQS
         /// the timeout value is applied immediately but isn't saved in memory for that message.
         /// If you don't delete a message after it is received, the visibility timeout for the
         /// message reverts to the original timeout value (not to the value you set using the
-        /// <code>ChangeMessageVisibility</code> action) the next time the message is received.
+        /// <c>ChangeMessageVisibility</c> action) the next time the message is received.
         /// </para>
         ///  </important>
         /// </summary>
@@ -465,7 +465,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ChangeMessageVisibility service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -517,8 +517,8 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed
-        /// since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code>
-        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code>
+        /// since you received the message, and you send a ChangeMessageVisibility call with <c>VisibilityTimeout</c>
+        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <c>ChangeMessageVisibility</c>
         /// call. Thus, any attempt to change the visibility timeout or to delete that message
         /// 10 seconds after you initially change the visibility timeout (a total of 25 seconds)
         /// might result in an error.
@@ -558,10 +558,10 @@ namespace Amazon.SQS
         /// For most standard queues (depending on queue traffic and message backlog), there can
         /// be a maximum of approximately 120,000 in flight messages (received from a queue by
         /// a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS
-        /// returns the <code>OverLimit</code> error message. To avoid reaching the limit, you
-        /// should delete messages from the queue after they're processed. You can also increase
-        /// the number of queues you use to process your messages. To request a limit increase,
-        /// <a href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
+        /// returns the <c>OverLimit</c> error message. To avoid reaching the limit, you should
+        /// delete messages from the queue after they're processed. You can also increase the
+        /// number of queues you use to process your messages. To request a limit increase, <a
+        /// href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase&amp;limitType=service-code-sqs">file
         /// a support request</a>.
         /// </para>
         ///  
@@ -572,8 +572,8 @@ namespace Amazon.SQS
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you attempt to set the <code>VisibilityTimeout</code> to a value greater than the
-        /// maximum time left, Amazon SQS returns an error. Amazon SQS doesn't automatically recalculate
+        /// If you attempt to set the <c>VisibilityTimeout</c> to a value greater than the maximum
+        /// time left, Amazon SQS returns an error. Amazon SQS doesn't automatically recalculate
         /// and increase the timeout to the maximum remaining time.
         /// </para>
         ///  
@@ -582,7 +582,7 @@ namespace Amazon.SQS
         /// the timeout value is applied immediately but isn't saved in memory for that message.
         /// If you don't delete a message after it is received, the visibility timeout for the
         /// message reverts to the original timeout value (not to the value you set using the
-        /// <code>ChangeMessageVisibility</code> action) the next time the message is received.
+        /// <c>ChangeMessageVisibility</c> action) the next time the message is received.
         /// </para>
         ///  </important>
         /// </summary>
@@ -593,7 +593,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ChangeMessageVisibility service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -641,16 +641,16 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Changes the visibility timeout of multiple messages. This is a batch version of <code>
-        /// <a>ChangeMessageVisibility</a>.</code> The result of the action on each message is
-        /// reported individually in the response. You can send up to 10 <code> <a>ChangeMessageVisibility</a>
-        /// </code> requests with each <code>ChangeMessageVisibilityBatch</code> action.
+        /// Changes the visibility timeout of multiple messages. This is a batch version of <c>
+        /// <a>ChangeMessageVisibility</a>.</c> The result of the action on each message is reported
+        /// individually in the response. You can send up to 10 <c> <a>ChangeMessageVisibility</a>
+        /// </c> requests with each <c>ChangeMessageVisibilityBatch</c> action.
         /// 
         ///  <important> 
         /// <para>
         /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of <code>200</code>.
+        /// code of <c>200</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -662,16 +662,16 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ChangeMessageVisibilityBatch service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
-        /// Two or more batch entries in the request have the same <code>Id</code>.
+        /// Two or more batch entries in the request have the same <c>Id</c>.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// The batch request doesn't contain any entries.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+        /// The <c>Id</c> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -712,16 +712,16 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Changes the visibility timeout of multiple messages. This is a batch version of <code>
-        /// <a>ChangeMessageVisibility</a>.</code> The result of the action on each message is
-        /// reported individually in the response. You can send up to 10 <code> <a>ChangeMessageVisibility</a>
-        /// </code> requests with each <code>ChangeMessageVisibilityBatch</code> action.
+        /// Changes the visibility timeout of multiple messages. This is a batch version of <c>
+        /// <a>ChangeMessageVisibility</a>.</c> The result of the action on each message is reported
+        /// individually in the response. You can send up to 10 <c> <a>ChangeMessageVisibility</a>
+        /// </c> requests with each <c>ChangeMessageVisibilityBatch</c> action.
         /// 
         ///  <important> 
         /// <para>
         /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of <code>200</code>.
+        /// code of <c>200</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -732,16 +732,16 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ChangeMessageVisibilityBatch service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
-        /// Two or more batch entries in the request have the same <code>Id</code>.
+        /// Two or more batch entries in the request have the same <c>Id</c>.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// The batch request doesn't contain any entries.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+        /// The <c>Id</c> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -791,7 +791,7 @@ namespace Amazon.SQS
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
+        /// If you don't specify the <c>FifoQueue</c> attribute, Amazon SQS creates a standard
         /// queue.
         /// </para>
         ///  <note> 
@@ -826,20 +826,19 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// To get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a>
-        /// </code> requires only the <code>QueueName</code> parameter. be aware of existing queue
-        /// names:
+        /// To get the queue URL, use the <c> <a>GetQueueUrl</a> </c> action. <c> <a>GetQueueUrl</a>
+        /// </c> requires only the <c>QueueName</c> parameter. be aware of existing queue names:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If you provide the name of an existing queue along with the exact names and values
-        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
-        /// the existing queue.
+        /// of all the queue's attributes, <c>CreateQueue</c> returns the queue URL for the existing
+        /// queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the queue name, attribute names, or attribute values don't match an existing queue,
-        /// <code>CreateQueue</code> returns an error.
+        /// <c>CreateQueue</c> returns an error.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -857,7 +856,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
@@ -911,7 +910,7 @@ namespace Amazon.SQS
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// If you don't specify the <code>FifoQueue</code> attribute, Amazon SQS creates a standard
+        /// If you don't specify the <c>FifoQueue</c> attribute, Amazon SQS creates a standard
         /// queue.
         /// </para>
         ///  <note> 
@@ -946,20 +945,19 @@ namespace Amazon.SQS
         /// </para>
         ///  </note> 
         /// <para>
-        /// To get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a>
-        /// </code> requires only the <code>QueueName</code> parameter. be aware of existing queue
-        /// names:
+        /// To get the queue URL, use the <c> <a>GetQueueUrl</a> </c> action. <c> <a>GetQueueUrl</a>
+        /// </c> requires only the <c>QueueName</c> parameter. be aware of existing queue names:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If you provide the name of an existing queue along with the exact names and values
-        /// of all the queue's attributes, <code>CreateQueue</code> returns the queue URL for
-        /// the existing queue.
+        /// of all the queue's attributes, <c>CreateQueue</c> returns the queue URL for the existing
+        /// queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the queue name, attribute names, or attribute values don't match an existing queue,
-        /// <code>CreateQueue</code> returns an error.
+        /// <c>CreateQueue</c> returns an error.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -977,7 +975,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
@@ -1031,19 +1029,19 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Deletes the specified message from the specified queue. To select the message to delete,
-        /// use the <code>ReceiptHandle</code> of the message (<i>not</i> the <code>MessageId</code>
-        /// which you receive when you send the message). Amazon SQS can delete a message from
-        /// a queue even if a visibility timeout setting causes the message to be locked by another
-        /// consumer. Amazon SQS automatically deletes messages left in a queue longer than the
-        /// retention period configured for the queue. 
+        /// use the <c>ReceiptHandle</c> of the message (<i>not</i> the <c>MessageId</c> which
+        /// you receive when you send the message). Amazon SQS can delete a message from a queue
+        /// even if a visibility timeout setting causes the message to be locked by another consumer.
+        /// Amazon SQS automatically deletes messages left in a queue longer than the retention
+        /// period configured for the queue. 
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>ReceiptHandle</code> is associated with a <i>specific instance</i> of receiving
-        /// a message. If you receive a message more than once, the <code>ReceiptHandle</code>
-        /// is different each time you receive a message. When you use the <code>DeleteMessage</code>
-        /// action, you must provide the most recently received <code>ReceiptHandle</code> for
-        /// the message (otherwise, the request succeeds, but the message will not be deleted).
+        /// The <c>ReceiptHandle</c> is associated with a <i>specific instance</i> of receiving
+        /// a message. If you receive a message more than once, the <c>ReceiptHandle</c> is different
+        /// each time you receive a message. When you use the <c>DeleteMessage</c> action, you
+        /// must provide the most recently received <c>ReceiptHandle</c> for the message (otherwise,
+        /// the request succeeds, but the message will not be deleted).
         /// </para>
         ///  
         /// <para>
@@ -1064,7 +1062,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The specified receipt handle isn't valid for the current version.
@@ -1109,19 +1107,19 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Deletes the specified message from the specified queue. To select the message to delete,
-        /// use the <code>ReceiptHandle</code> of the message (<i>not</i> the <code>MessageId</code>
-        /// which you receive when you send the message). Amazon SQS can delete a message from
-        /// a queue even if a visibility timeout setting causes the message to be locked by another
-        /// consumer. Amazon SQS automatically deletes messages left in a queue longer than the
-        /// retention period configured for the queue. 
+        /// use the <c>ReceiptHandle</c> of the message (<i>not</i> the <c>MessageId</c> which
+        /// you receive when you send the message). Amazon SQS can delete a message from a queue
+        /// even if a visibility timeout setting causes the message to be locked by another consumer.
+        /// Amazon SQS automatically deletes messages left in a queue longer than the retention
+        /// period configured for the queue. 
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>ReceiptHandle</code> is associated with a <i>specific instance</i> of receiving
-        /// a message. If you receive a message more than once, the <code>ReceiptHandle</code>
-        /// is different each time you receive a message. When you use the <code>DeleteMessage</code>
-        /// action, you must provide the most recently received <code>ReceiptHandle</code> for
-        /// the message (otherwise, the request succeeds, but the message will not be deleted).
+        /// The <c>ReceiptHandle</c> is associated with a <i>specific instance</i> of receiving
+        /// a message. If you receive a message more than once, the <c>ReceiptHandle</c> is different
+        /// each time you receive a message. When you use the <c>DeleteMessage</c> action, you
+        /// must provide the most recently received <c>ReceiptHandle</c> for the message (otherwise,
+        /// the request succeeds, but the message will not be deleted).
         /// </para>
         ///  
         /// <para>
@@ -1141,7 +1139,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The specified receipt handle isn't valid for the current version.
@@ -1189,15 +1187,15 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Deletes up to ten messages from the specified queue. This is a batch version of <code>
-        /// <a>DeleteMessage</a>.</code> The result of the action on each message is reported
-        /// individually in the response.
+        /// Deletes up to ten messages from the specified queue. This is a batch version of <c>
+        /// <a>DeleteMessage</a>.</c> The result of the action on each message is reported individually
+        /// in the response.
         /// 
         ///  <important> 
         /// <para>
         /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of <code>200</code>.
+        /// code of <c>200</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1209,16 +1207,16 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteMessageBatch service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
-        /// Two or more batch entries in the request have the same <code>Id</code>.
+        /// Two or more batch entries in the request have the same <c>Id</c>.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// The batch request doesn't contain any entries.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+        /// The <c>Id</c> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1259,15 +1257,15 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Deletes up to ten messages from the specified queue. This is a batch version of <code>
-        /// <a>DeleteMessage</a>.</code> The result of the action on each message is reported
-        /// individually in the response.
+        /// Deletes up to ten messages from the specified queue. This is a batch version of <c>
+        /// <a>DeleteMessage</a>.</c> The result of the action on each message is reported individually
+        /// in the response.
         /// 
         ///  <important> 
         /// <para>
         /// Because the batch request can result in a combination of successful and unsuccessful
         /// actions, you should check for batch errors even when the call returns an HTTP status
-        /// code of <code>200</code>.
+        /// code of <c>200</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1278,16 +1276,16 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteMessageBatch service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
-        /// Two or more batch entries in the request have the same <code>Id</code>.
+        /// Two or more batch entries in the request have the same <c>Id</c>.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.EmptyBatchRequestException">
         /// The batch request doesn't contain any entries.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+        /// The <c>Id</c> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1332,19 +1330,18 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's
-        /// contents.
+        /// Deletes the queue specified by the <c>QueueUrl</c>, regardless of the queue's contents.
         /// 
         ///  <important> 
         /// <para>
-        /// Be careful with the <code>DeleteQueue</code> action: When you delete a queue, any
-        /// messages in the queue are no longer available. 
+        /// Be careful with the <c>DeleteQueue</c> action: When you delete a queue, any messages
+        /// in the queue are no longer available. 
         /// </para>
         ///  </important> 
         /// <para>
         /// When you delete a queue, the deletion process takes up to 60 seconds. Requests you
-        /// send involving that queue during the 60 seconds might succeed. For example, a <code>
-        /// <a>SendMessage</a> </code> request might succeed, but after 60 seconds the queue and
+        /// send involving that queue during the 60 seconds might succeed. For example, a <c>
+        /// <a>SendMessage</a> </c> request might succeed, but after 60 seconds the queue and
         /// the message you sent no longer exist.
         /// </para>
         ///  
@@ -1361,7 +1358,7 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// The delete operation uses the HTTP <code>GET</code> verb.
+        /// The delete operation uses the HTTP <c>GET</c> verb.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1372,7 +1369,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1410,19 +1407,18 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's
-        /// contents.
+        /// Deletes the queue specified by the <c>QueueUrl</c>, regardless of the queue's contents.
         /// 
         ///  <important> 
         /// <para>
-        /// Be careful with the <code>DeleteQueue</code> action: When you delete a queue, any
-        /// messages in the queue are no longer available. 
+        /// Be careful with the <c>DeleteQueue</c> action: When you delete a queue, any messages
+        /// in the queue are no longer available. 
         /// </para>
         ///  </important> 
         /// <para>
         /// When you delete a queue, the deletion process takes up to 60 seconds. Requests you
-        /// send involving that queue during the 60 seconds might succeed. For example, a <code>
-        /// <a>SendMessage</a> </code> request might succeed, but after 60 seconds the queue and
+        /// send involving that queue during the 60 seconds might succeed. For example, a <c>
+        /// <a>SendMessage</a> </c> request might succeed, but after 60 seconds the queue and
         /// the message you sent no longer exist.
         /// </para>
         ///  
@@ -1439,7 +1435,7 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// The delete operation uses the HTTP <code>GET</code> verb.
+        /// The delete operation uses the HTTP <c>GET</c> verb.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1450,7 +1446,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1497,7 +1493,7 @@ namespace Amazon.SQS
         ///  <note> 
         /// <para>
         /// To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
-        /// you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+        /// you can check whether <c>QueueName</c> ends with the <c>.fifo</c> suffix.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1509,7 +1505,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
@@ -1555,7 +1551,7 @@ namespace Amazon.SQS
         ///  <note> 
         /// <para>
         /// To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>,
-        /// you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
+        /// you can check whether <c>QueueName</c> ends with the <c>.fifo</c> suffix.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1566,7 +1562,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
@@ -1615,10 +1611,10 @@ namespace Amazon.SQS
         /// 
         ///  
         /// <para>
-        /// To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
+        /// To access a queue that belongs to another AWS account, use the <c>QueueOwnerAWSAccountId</c>
         /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
         /// you permission to access the queue. For more information about shared queue access,
-        /// see <code> <a>AddPermission</a> </code> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
+        /// see <c> <a>AddPermission</a> </c> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
         /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer
         /// Guide</i>. 
         /// </para>
@@ -1630,7 +1626,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1672,10 +1668,10 @@ namespace Amazon.SQS
         /// 
         ///  
         /// <para>
-        /// To access a queue that belongs to another AWS account, use the <code>QueueOwnerAWSAccountId</code>
+        /// To access a queue that belongs to another AWS account, use the <c>QueueOwnerAWSAccountId</c>
         /// parameter to specify the account ID of the queue's owner. The queue's owner must grant
         /// you permission to access the queue. For more information about shared queue access,
-        /// see <code> <a>AddPermission</a> </code> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
+        /// see <c> <a>AddPermission</a> </c> or see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-writing-an-sqs-policy.html#write-messages-to-shared-queue">Allow
         /// Developers to Write Messages to a Shared Queue</a> in the <i>Amazon SQS Developer
         /// Guide</i>. 
         /// </para>
@@ -1687,7 +1683,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1730,18 +1726,18 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute
-        /// configured with a dead-letter queue.
+        /// Returns a list of your queues that have the <c>RedrivePolicy</c> queue attribute configured
+        /// with a dead-letter queue.
         /// 
         ///  
         /// <para>
-        ///  The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter
-        /// <code>MaxResults</code> in the request to specify the maximum number of results to
-        /// be returned in the response. If you do not set <code>MaxResults</code>, the response
-        /// includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there
-        /// are additional results to display, the response includes a value for <code>NextToken</code>.
-        /// Use <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code>
-        /// to receive the next page of results. 
+        ///  The <c>ListDeadLetterSourceQueues</c> methods supports pagination. Set parameter
+        /// <c>MaxResults</c> in the request to specify the maximum number of results to be returned
+        /// in the response. If you do not set <c>MaxResults</c>, the response includes a maximum
+        /// of 1,000 results. If you set <c>MaxResults</c> and there are additional results to
+        /// display, the response includes a value for <c>NextToken</c>. Use <c>NextToken</c>
+        /// as a parameter in your next request to <c>ListDeadLetterSourceQueues</c> to receive
+        /// the next page of results. 
         /// </para>
         ///  
         /// <para>
@@ -1756,7 +1752,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListDeadLetterSourceQueues service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1825,7 +1821,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListMessageMoveTasks service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1868,18 +1864,17 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Returns a list of your queues in the current region. The response includes a maximum
-        /// of 1,000 results. If you specify a value for the optional <code>QueueNamePrefix</code>
-        /// parameter, only queues with a name that begins with the specified value are returned.
+        /// of 1,000 results. If you specify a value for the optional <c>QueueNamePrefix</c> parameter,
+        /// only queues with a name that begins with the specified value are returned.
         /// 
         ///  
         /// <para>
-        ///  The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code>
+        ///  The <c>listQueues</c> methods supports pagination. Set parameter <c>MaxResults</c>
         /// in the request to specify the maximum number of results to be returned in the response.
-        /// If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000
-        /// results. If you set <code>MaxResults</code> and there are additional results to display,
-        /// the response includes a value for <code>NextToken</code>. Use <code>NextToken</code>
-        /// as a parameter in your next request to <code>listQueues</code> to receive the next
-        /// page of results. 
+        /// If you do not set <c>MaxResults</c>, the response includes a maximum of 1,000 results.
+        /// If you set <c>MaxResults</c> and there are additional results to display, the response
+        /// includes a value for <c>NextToken</c>. Use <c>NextToken</c> as a parameter in your
+        /// next request to <c>listQueues</c> to receive the next page of results. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1897,7 +1892,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -1933,18 +1928,17 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Returns a list of your queues in the current region. The response includes a maximum
-        /// of 1,000 results. If you specify a value for the optional <code>QueueNamePrefix</code>
-        /// parameter, only queues with a name that begins with the specified value are returned.
+        /// of 1,000 results. If you specify a value for the optional <c>QueueNamePrefix</c> parameter,
+        /// only queues with a name that begins with the specified value are returned.
         /// 
         ///  
         /// <para>
-        ///  The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code>
+        ///  The <c>listQueues</c> methods supports pagination. Set parameter <c>MaxResults</c>
         /// in the request to specify the maximum number of results to be returned in the response.
-        /// If you do not set <code>MaxResults</code>, the response includes a maximum of 1,000
-        /// results. If you set <code>MaxResults</code> and there are additional results to display,
-        /// the response includes a value for <code>NextToken</code>. Use <code>NextToken</code>
-        /// as a parameter in your next request to <code>listQueues</code> to receive the next
-        /// page of results. 
+        /// If you do not set <c>MaxResults</c>, the response includes a maximum of 1,000 results.
+        /// If you set <c>MaxResults</c> and there are additional results to display, the response
+        /// includes a value for <c>NextToken</c>. Use <c>NextToken</c> as a parameter in your
+        /// next request to <c>listQueues</c> to receive the next page of results. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -1962,7 +1956,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -2022,7 +2016,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ListQueueTags service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -2065,11 +2059,11 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Deletes available messages in a queue (including in-flight messages) specified by
-        /// the <code>QueueURL</code> parameter.
+        /// the <c>QueueURL</c> parameter.
         /// 
         ///  <important> 
         /// <para>
-        /// When you use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted
+        /// When you use the <c>PurgeQueue</c> action, you can't retrieve any messages deleted
         /// from a queue.
         /// </para>
         ///  
@@ -2079,13 +2073,13 @@ namespace Amazon.SQS
         /// </para>
         ///  </important> 
         /// <para>
-        /// Messages sent to the queue <i>before</i> you call <code>PurgeQueue</code> might be
-        /// received but are deleted within the next minute.
+        /// Messages sent to the queue <i>before</i> you call <c>PurgeQueue</c> might be received
+        /// but are deleted within the next minute.
         /// </para>
         ///  
         /// <para>
-        /// Messages sent to the queue <i>after</i> you call <code>PurgeQueue</code> might be
-        /// deleted while the queue is being purged.
+        /// Messages sent to the queue <i>after</i> you call <c>PurgeQueue</c> might be deleted
+        /// while the queue is being purged.
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the queue from which the <code>PurgeQueue</code> action deletes messages. Queue URLs and names are case-sensitive.</param>
@@ -2095,13 +2089,13 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the PurgeQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.PurgeQueueInProgressException">
-        /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
+        /// Indicates that the specified queue previously received a <c>PurgeQueue</c> request
         /// within the last 60 seconds (the time it can take to delete the messages in the queue).
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -2138,11 +2132,11 @@ namespace Amazon.SQS
 
         /// <summary>
         /// Deletes available messages in a queue (including in-flight messages) specified by
-        /// the <code>QueueURL</code> parameter.
+        /// the <c>QueueURL</c> parameter.
         /// 
         ///  <important> 
         /// <para>
-        /// When you use the <code>PurgeQueue</code> action, you can't retrieve any messages deleted
+        /// When you use the <c>PurgeQueue</c> action, you can't retrieve any messages deleted
         /// from a queue.
         /// </para>
         ///  
@@ -2152,13 +2146,13 @@ namespace Amazon.SQS
         /// </para>
         ///  </important> 
         /// <para>
-        /// Messages sent to the queue <i>before</i> you call <code>PurgeQueue</code> might be
-        /// received but are deleted within the next minute.
+        /// Messages sent to the queue <i>before</i> you call <c>PurgeQueue</c> might be received
+        /// but are deleted within the next minute.
         /// </para>
         ///  
         /// <para>
-        /// Messages sent to the queue <i>after</i> you call <code>PurgeQueue</code> might be
-        /// deleted while the queue is being purged.
+        /// Messages sent to the queue <i>after</i> you call <c>PurgeQueue</c> might be deleted
+        /// while the queue is being purged.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurgeQueue service method.</param>
@@ -2168,13 +2162,13 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the PurgeQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.PurgeQueueInProgressException">
-        /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
+        /// Indicates that the specified queue previously received a <c>PurgeQueue</c> request
         /// within the last 60 seconds (the time it can take to delete the messages in the queue).
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -2214,19 +2208,19 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
+        /// Retrieves one or more messages (up to 10), from the specified queue. Using the <c>WaitTimeSeconds</c>
         /// parameter enables long-poll support. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
         /// SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// 
         ///  
         /// <para>
         /// Short poll is the default behavior where a weighted random set of machines is sampled
-        /// on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled machines
-        /// are returned. If the number of messages in the queue is small (fewer than 1,000),
-        /// you most likely get fewer messages than you requested per <code>ReceiveMessage</code>
-        /// call. If the number of messages in the queue is extremely small, you might not receive
-        /// any messages in a particular <code>ReceiveMessage</code> response. If this happens,
-        /// repeat the request. 
+        /// on a <c>ReceiveMessage</c> call. Thus, only the messages on the sampled machines are
+        /// returned. If the number of messages in the queue is small (fewer than 1,000), you
+        /// most likely get fewer messages than you requested per <c>ReceiveMessage</c> call.
+        /// If the number of messages in the queue is extremely small, you might not receive any
+        /// messages in a particular <c>ReceiveMessage</c> response. If this happens, repeat the
+        /// request. 
         /// </para>
         ///  
         /// <para>
@@ -2242,7 +2236,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>MessageId</code> you received when you sent the message to the queue.
+        /// The <c>MessageId</c> you received when you sent the message to the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2264,10 +2258,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// You can provide the <code>VisibilityTimeout</code> parameter in your request. The
-        /// parameter is applied to the messages that Amazon SQS returns in the response. If you
-        /// don't include the parameter, the overall visibility timeout for the queue is used
-        /// for the returned messages. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+        /// You can provide the <c>VisibilityTimeout</c> parameter in your request. The parameter
+        /// is applied to the messages that Amazon SQS returns in the response. If you don't include
+        /// the parameter, the overall visibility timeout for the queue is used for the returned
+        /// messages. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
         /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         ///  
@@ -2290,7 +2284,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -2330,8 +2324,8 @@ namespace Amazon.SQS
         /// Amazon Web Services KMS throttles requests for the following conditions.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// The specified action violates a limit. For example, <c>ReceiveMessage</c> returns
+        /// this error if the maximum number of in flight messages is reached and <c>AddPermission</c>
         /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -2367,19 +2361,19 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code>
+        /// Retrieves one or more messages (up to 10), from the specified queue. Using the <c>WaitTimeSeconds</c>
         /// parameter enables long-poll support. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon
         /// SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// 
         ///  
         /// <para>
         /// Short poll is the default behavior where a weighted random set of machines is sampled
-        /// on a <code>ReceiveMessage</code> call. Thus, only the messages on the sampled machines
-        /// are returned. If the number of messages in the queue is small (fewer than 1,000),
-        /// you most likely get fewer messages than you requested per <code>ReceiveMessage</code>
-        /// call. If the number of messages in the queue is extremely small, you might not receive
-        /// any messages in a particular <code>ReceiveMessage</code> response. If this happens,
-        /// repeat the request. 
+        /// on a <c>ReceiveMessage</c> call. Thus, only the messages on the sampled machines are
+        /// returned. If the number of messages in the queue is small (fewer than 1,000), you
+        /// most likely get fewer messages than you requested per <c>ReceiveMessage</c> call.
+        /// If the number of messages in the queue is extremely small, you might not receive any
+        /// messages in a particular <c>ReceiveMessage</c> response. If this happens, repeat the
+        /// request. 
         /// </para>
         ///  
         /// <para>
@@ -2395,7 +2389,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>MessageId</code> you received when you sent the message to the queue.
+        /// The <c>MessageId</c> you received when you sent the message to the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2417,10 +2411,10 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// You can provide the <code>VisibilityTimeout</code> parameter in your request. The
-        /// parameter is applied to the messages that Amazon SQS returns in the response. If you
-        /// don't include the parameter, the overall visibility timeout for the queue is used
-        /// for the returned messages. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+        /// You can provide the <c>VisibilityTimeout</c> parameter in your request. The parameter
+        /// is applied to the messages that Amazon SQS returns in the response. If you don't include
+        /// the parameter, the overall visibility timeout for the queue is used for the returned
+        /// messages. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
         /// Timeout</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         ///  
@@ -2443,7 +2437,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -2483,8 +2477,8 @@ namespace Amazon.SQS
         /// Amazon Web Services KMS throttles requests for the following conditions.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// The specified action violates a limit. For example, <c>ReceiveMessage</c> returns
+        /// this error if the maximum number of in flight messages is reached and <c>AddPermission</c>
         /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -2524,7 +2518,7 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
+        /// Revokes any permissions in the queue policy that matches the specified <c>Label</c>
         /// parameter.
         /// 
         ///  <note> <ul> <li> 
@@ -2541,8 +2535,8 @@ namespace Amazon.SQS
         ///  </li> <li> 
         /// <para>
         /// To remove the ability to change queue permissions, you must deny permission to the
-        /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-        /// actions in your IAM policy.
+        /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+        /// in your IAM policy.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -2554,7 +2548,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -2592,7 +2586,7 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
+        /// Revokes any permissions in the queue policy that matches the specified <c>Label</c>
         /// parameter.
         /// 
         ///  <note> <ul> <li> 
@@ -2609,8 +2603,8 @@ namespace Amazon.SQS
         ///  </li> <li> 
         /// <para>
         /// To remove the ability to change queue permissions, you must deny permission to the
-        /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-        /// actions in your IAM policy.
+        /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+        /// in your IAM policy.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -2621,7 +2615,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -2672,9 +2666,8 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
-        /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-        /// 
+        ///  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c>
+        /// to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c> 
         /// </para>
         ///  
         /// <para>
@@ -2691,7 +2684,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
@@ -2775,9 +2768,8 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
-        /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-        /// 
+        ///  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c>
+        /// to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c> 
         /// </para>
         ///  
         /// <para>
@@ -2793,7 +2785,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
@@ -2872,18 +2864,18 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified
-        /// queue by assigning either identical or different values to each message (or by not
-        /// assigning values at all). This is a batch version of <code> <a>SendMessage</a>.</code>
-        /// For a FIFO queue, multiple messages within a single batch are enqueued in the order
-        /// they are sent.
+        /// You can use <c>SendMessageBatch</c> to send up to 10 messages to the specified queue
+        /// by assigning either identical or different values to each message (or by not assigning
+        /// values at all). This is a batch version of <c> <a>SendMessage</a>.</c> For a FIFO
+        /// queue, multiple messages within a single batch are enqueued in the order they are
+        /// sent.
         /// 
         ///  
         /// <para>
         /// The result of sending each message is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
-        /// <code>200</code>.
+        /// <c>200</c>.
         /// </para>
         ///  
         /// <para>
@@ -2898,9 +2890,8 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
-        /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-        /// 
+        ///  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c>
+        /// to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c> 
         /// </para>
         ///  
         /// <para>
@@ -2909,8 +2900,8 @@ namespace Amazon.SQS
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
-        /// SQS uses the default value for the queue.
+        /// If you don't specify the <c>DelaySeconds</c> parameter for an entry, Amazon SQS uses
+        /// the default value for the queue.
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs and names are case-sensitive.</param>
@@ -2921,7 +2912,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the SendMessageBatch service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
-        /// Two or more batch entries in the request have the same <code>Id</code>.
+        /// Two or more batch entries in the request have the same <c>Id</c>.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.BatchRequestTooLongException">
         /// The length of all the messages put together is more than the limit.
@@ -2930,10 +2921,10 @@ namespace Amazon.SQS
         /// The batch request doesn't contain any entries.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+        /// The <c>Id</c> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -3008,18 +2999,18 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified
-        /// queue by assigning either identical or different values to each message (or by not
-        /// assigning values at all). This is a batch version of <code> <a>SendMessage</a>.</code>
-        /// For a FIFO queue, multiple messages within a single batch are enqueued in the order
-        /// they are sent.
+        /// You can use <c>SendMessageBatch</c> to send up to 10 messages to the specified queue
+        /// by assigning either identical or different values to each message (or by not assigning
+        /// values at all). This is a batch version of <c> <a>SendMessage</a>.</c> For a FIFO
+        /// queue, multiple messages within a single batch are enqueued in the order they are
+        /// sent.
         /// 
         ///  
         /// <para>
         /// The result of sending each message is reported individually in the response. Because
         /// the batch request can result in a combination of successful and unsuccessful actions,
         /// you should check for batch errors even when the call returns an HTTP status code of
-        /// <code>200</code>.
+        /// <c>200</c>.
         /// </para>
         ///  
         /// <para>
@@ -3034,9 +3025,8 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
-        /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-        /// 
+        ///  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c>
+        /// to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c> 
         /// </para>
         ///  
         /// <para>
@@ -3045,8 +3035,8 @@ namespace Amazon.SQS
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
-        /// SQS uses the default value for the queue.
+        /// If you don't specify the <c>DelaySeconds</c> parameter for an entry, Amazon SQS uses
+        /// the default value for the queue.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch service method.</param>
@@ -3056,7 +3046,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the SendMessageBatch service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.BatchEntryIdsNotDistinctException">
-        /// Two or more batch entries in the request have the same <code>Id</code>.
+        /// Two or more batch entries in the request have the same <c>Id</c>.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.BatchRequestTooLongException">
         /// The length of all the messages put together is more than the limit.
@@ -3065,10 +3055,10 @@ namespace Amazon.SQS
         /// The batch request doesn't contain any entries.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
-        /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
+        /// The <c>Id</c> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -3149,10 +3139,10 @@ namespace Amazon.SQS
         /// <summary>
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,
         /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
+        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
         /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <code>MessageRetentionPeriod</code>
-        /// is reduced below the age of existing messages.
+        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
+        /// below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -3169,8 +3159,8 @@ namespace Amazon.SQS
         ///  </li> <li> 
         /// <para>
         /// To remove the ability to change queue permissions, you must deny permission to the
-        /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-        /// actions in your IAM policy.
+        /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+        /// in your IAM policy.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -3182,7 +3172,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
@@ -3194,8 +3184,8 @@ namespace Amazon.SQS
         /// When the request to a queue is not HTTPS and SigV4.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// The specified action violates a limit. For example, <c>ReceiveMessage</c> returns
+        /// this error if the maximum number of in flight messages is reached and <c>AddPermission</c>
         /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -3233,10 +3223,10 @@ namespace Amazon.SQS
         /// <summary>
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,
         /// the change can take up to 60 seconds for most of the attributes to propagate throughout
-        /// the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
+        /// the Amazon SQS system. Changes made to the <c>MessageRetentionPeriod</c> attribute
         /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <code>MessageRetentionPeriod</code>
-        /// is reduced below the age of existing messages.
+        /// causing them to be expired and deleted if the <c>MessageRetentionPeriod</c> is reduced
+        /// below the age of existing messages.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -3253,8 +3243,8 @@ namespace Amazon.SQS
         ///  </li> <li> 
         /// <para>
         /// To remove the ability to change queue permissions, you must deny permission to the
-        /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-        /// actions in your IAM policy.
+        /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+        /// in your IAM policy.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -3265,7 +3255,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
@@ -3277,8 +3267,8 @@ namespace Amazon.SQS
         /// When the request to a queue is not HTTPS and SigV4.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// The specified action violates a limit. For example, <c>ReceiveMessage</c> returns
+        /// this error if the maximum number of in flight messages is reached and <c>AddPermission</c>
         /// returns this error if the maximum number of permissions for the queue is reached.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
@@ -3331,7 +3321,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In dead-letter queues redrive context, the <code>StartMessageMoveTask</code> the source
+        /// In dead-letter queues redrive context, the <c>StartMessageMoveTask</c> the source
         /// queue is the DLQ, while the destination queue can be the original source queue (from
         /// which the messages were driven to the dead-letter-queue), or a custom destination
         /// queue.
@@ -3353,7 +3343,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the StartMessageMoveTask service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -3442,7 +3432,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the TagQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.
@@ -3505,7 +3495,7 @@ namespace Amazon.SQS
         /// 
         /// <returns>The response from the UntagQueue service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
+        /// The <c>accountId</c> is invalid.
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
         /// When the request to a queue is not HTTPS and SigV4.

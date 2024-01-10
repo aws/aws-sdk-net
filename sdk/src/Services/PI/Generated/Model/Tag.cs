@@ -40,9 +40,9 @@ namespace Amazon.PI.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// A key is the required name of the tag. The string value can be from 1 to 128 Unicode
-        /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
-        /// The string can only contain only the set of Unicode letters, digits, white-space,
-        /// '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: <code>"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"</code>).
+        /// characters in length and can't be prefixed with <c>aws:</c> or <c>rds:</c>. The string
+        /// can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':',
+        /// '/', '=', '+', '-', '@' (Java regex: <c>"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -62,9 +62,9 @@ namespace Amazon.PI.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// A value is the optional value of the tag. The string value can be from 1 to 256 Unicode
-        /// characters in length and can't be prefixed with <code>aws:</code> or <code>rds:</code>.
-        /// The string can only contain only the set of Unicode letters, digits, white-space,
-        /// '_', '.', ':', '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").
+        /// characters in length and can't be prefixed with <c>aws:</c> or <c>rds:</c>. The string
+        /// can only contain only the set of Unicode letters, digits, white-space, '_', '.', ':',
+        /// '/', '=', '+', '-', '@' (Java regex: "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$").
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

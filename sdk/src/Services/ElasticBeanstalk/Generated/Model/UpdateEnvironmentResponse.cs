@@ -63,11 +63,11 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>true:</code> There is an update in progress. 
+        ///  <c>true:</c> There is an update in progress. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>false:</code> There are no updates currently in progress. 
+        ///  <c>false:</c> There are no updates currently in progress. 
         /// </para>
         /// </summary>
         public bool AbortableOperationInProgress
@@ -276,27 +276,27 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Red</code>: Indicates the environment is not responsive. Occurs when three
-        /// or more consecutive failures occur for an environment.
+        ///  <c>Red</c>: Indicates the environment is not responsive. Occurs when three or more
+        /// consecutive failures occur for an environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Yellow</code>: Indicates that something is wrong. Occurs when two consecutive
-        /// failures occur for an environment.
+        ///  <c>Yellow</c>: Indicates that something is wrong. Occurs when two consecutive failures
+        /// occur for an environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Green</code>: Indicates the environment is healthy and fully functional.
+        ///  <c>Green</c>: Indicates the environment is healthy and fully functional.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Grey</code>: Default health for a new environment. The environment is not fully
-        /// launched and health checks have not started or health checks are suspended during
-        /// an <code>UpdateEnvironment</code> or <code>RestartEnvironment</code> request.
+        ///  <c>Grey</c>: Default health for a new environment. The environment is not fully launched
+        /// and health checks have not started or health checks are suspended during an <c>UpdateEnvironment</c>
+        /// or <c>RestartEnvironment</c> request.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Default: <code>Grey</code> 
+        ///  Default: <c>Grey</c> 
         /// </para>
         /// </summary>
         public EnvironmentHealth Health
@@ -391,7 +391,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property SolutionStackName. 
         /// <para>
-        ///  The name of the <code>SolutionStack</code> deployed with this environment. 
+        ///  The name of the <c>SolutionStack</c> deployed with this environment. 
         /// </para>
         /// </summary>
         public string SolutionStackName
@@ -413,25 +413,25 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Launching</code>: Environment is in the process of initial deployment.
+        ///  <c>Launching</c>: Environment is in the process of initial deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code>: Environment is in the process of updating its configuration
-        /// settings or application version.
+        ///  <c>Updating</c>: Environment is in the process of updating its configuration settings
+        /// or application version.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Ready</code>: Environment is available to have an action performed on it, such
-        /// as update or terminate.
+        ///  <c>Ready</c>: Environment is available to have an action performed on it, such as
+        /// update or terminate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Terminating</code>: Environment is in the shut-down process.
+        ///  <c>Terminating</c>: Environment is in the shut-down process.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Terminated</code>: Environment is not running.
+        ///  <c>Terminated</c>: Environment is not running.
         /// </para>
         ///  </li> </ul>
         /// </summary>

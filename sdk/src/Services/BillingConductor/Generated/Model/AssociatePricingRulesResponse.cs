@@ -38,8 +38,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated
-        /// with. 
+        ///  The <c>PricingPlanArn</c> that the <c>PricingRuleArns</c> are associated with. 
         /// </para>
         /// </summary>
         public string Arn

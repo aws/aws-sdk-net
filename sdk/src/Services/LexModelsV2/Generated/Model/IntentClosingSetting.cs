@@ -43,8 +43,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Active. 
         /// <para>
         /// Specifies whether an intent's closing response is used. When this field is false,
-        /// the closing response isn't sent to the user. If the <code>active</code> field isn't
-        /// specified, the default is true.
+        /// the closing response isn't sent to the user. If the <c>active</c> field isn't specified,
+        /// the default is true.
         /// </para>
         /// </summary>
         public bool Active
@@ -81,7 +81,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Conditional. 
         /// <para>
         /// A list of conditional branches associated with the intent's closing response. These
-        /// branches are executed when the <code>nextStep</code> attribute is set to <code>EvalutateConditional</code>.
+        /// branches are executed when the <c>nextStep</c> attribute is set to <c>EvalutateConditional</c>.
         /// </para>
         /// </summary>
         public ConditionalSpecification Conditional

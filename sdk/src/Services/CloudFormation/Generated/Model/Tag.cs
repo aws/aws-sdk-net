@@ -42,7 +42,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         ///  <i>Required</i>. A string used to identify this tag. You can specify a maximum of
         /// 128 characters for a tag key. Tags owned by Amazon Web Services (Amazon Web Services)
-        /// have the reserved prefix: <code>aws:</code>.
+        /// have the reserved prefix: <c>aws:</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

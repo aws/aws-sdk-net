@@ -46,11 +46,11 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>name</code> 
+        ///  <c>name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code> 
+        ///  <c>version</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

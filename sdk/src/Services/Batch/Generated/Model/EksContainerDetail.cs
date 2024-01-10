@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// The details for container properties that are returned by <code>DescribeJobs</code>
-    /// for jobs that use Amazon EKS.
+    /// The details for container properties that are returned by <c>DescribeJobs</c> for
+    /// jobs that use Amazon EKS.
     /// </summary>
     public partial class EksContainerDetail
     {
@@ -49,9 +49,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Args. 
         /// <para>
-        /// An array of arguments to the entrypoint. If this isn't specified, the <code>CMD</code>
-        /// of the container image is used. This corresponds to the <code>args</code> member in
-        /// the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a>
+        /// An array of arguments to the entrypoint. If this isn't specified, the <c>CMD</c> of
+        /// the container image is used. This corresponds to the <c>args</c> member in the <a
+        /// href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/#entrypoint">Entrypoint</a>
         /// portion of the <a href="https://kubernetes.io/docs/reference/kubernetes-api/workload-resources/pod-v1/">Pod</a>
         /// in Kubernetes. Environment variable references are expanded using the container's
         /// environment.
@@ -59,13 +59,12 @@ namespace Amazon.Batch.Model
         ///  
         /// <para>
         /// If the referenced environment variable doesn't exist, the reference in the command
-        /// isn't changed. For example, if the reference is to "<code>$(NAME1)</code>" and the
-        /// <code>NAME1</code> environment variable doesn't exist, the command string will remain
-        /// "<code>$(NAME1)</code>". <code>$$</code> is replaced with <code>$</code> and the resulting
-        /// string isn't expanded. For example, <code>$$(VAR_NAME)</code> is passed as <code>$(VAR_NAME)</code>
-        /// whether or not the <code>VAR_NAME</code> environment variable exists. For more information,
-        /// see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a> in the
-        /// <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
+        /// isn't changed. For example, if the reference is to "<c>$(NAME1)</c>" and the <c>NAME1</c>
+        /// environment variable doesn't exist, the command string will remain "<c>$(NAME1)</c>".
+        /// <c>$$</c> is replaced with <c>$</c> and the resulting string isn't expanded. For example,
+        /// <c>$$(VAR_NAME)</c> is passed as <c>$(VAR_NAME)</c> whether or not the <c>VAR_NAME</c>
+        /// environment variable exists. For more information, see <a href="https://docs.docker.com/engine/reference/builder/#cmd">CMD</a>
+        /// in the <i>Dockerfile reference</i> and <a href="https://kubernetes.io/docs/tasks/inject-data-application/define-command-argument-container/">Define
         /// a command and arguments for a pod</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -107,7 +106,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+        /// Environment variables cannot start with "<c>AWS_BATCH</c>". This naming convention
         /// is reserved for variables that Batch sets.
         /// </para>
         ///  </note>
@@ -163,10 +162,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ImagePullPolicy. 
         /// <para>
-        /// The image pull policy for the container. Supported values are <code>Always</code>,
-        /// <code>IfNotPresent</code>, and <code>Never</code>. This parameter defaults to <code>Always</code>
-        /// if the <code>:latest</code> tag is specified, <code>IfNotPresent</code> otherwise.
-        /// For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating
+        /// The image pull policy for the container. Supported values are <c>Always</c>, <c>IfNotPresent</c>,
+        /// and <c>Never</c>. This parameter defaults to <c>Always</c> if the <c>:latest</c> tag
+        /// is specified, <c>IfNotPresent</c> otherwise. For more information, see <a href="https://kubernetes.io/docs/concepts/containers/images/#updating-images">Updating
         /// images</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -185,7 +183,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the container. If the name isn't specified, the default name "<code>Default</code>"
+        /// The name of the container. If the name isn't specified, the default name "<c>Default</c>"
         /// is used. Each container in a pod must have a unique name.
         /// </para>
         /// </summary>
@@ -224,8 +222,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Resources. 
         /// <para>
         /// The type and amount of resources to assign to a container. The supported resources
-        /// include <code>memory</code>, <code>cpu</code>, and <code>nvidia.com/gpu</code>. For
-        /// more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource
+        /// include <c>memory</c>, <c>cpu</c>, and <c>nvidia.com/gpu</c>. For more information,
+        /// see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource
         /// management for pods and containers</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>
@@ -263,9 +261,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property VolumeMounts. 
         /// <para>
-        /// The volume mounts for the container. Batch supports <code>emptyDir</code>, <code>hostPath</code>,
-        /// and <code>secret</code> volume types. For more information about volumes and volume
-        /// mounts in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a>
+        /// The volume mounts for the container. Batch supports <c>emptyDir</c>, <c>hostPath</c>,
+        /// and <c>secret</c> volume types. For more information about volumes and volume mounts
+        /// in Kubernetes, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/">Volumes</a>
         /// in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>

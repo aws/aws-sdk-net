@@ -30,8 +30,8 @@ namespace Amazon.EventBridge.Model
 {
     /// <summary>
     /// Container for the parameters to the PutPermission operation.
-    /// Running <code>PutPermission</code> permits the specified Amazon Web Services account
-    /// or Amazon Web Services organization to put events to the specified <i>event bus</i>.
+    /// Running <c>PutPermission</c> permits the specified Amazon Web Services account or
+    /// Amazon Web Services organization to put events to the specified <i>event bus</i>.
     /// Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
     /// events arriving to an event bus in your account. 
     /// 
@@ -43,16 +43,15 @@ namespace Amazon.EventBridge.Model
     ///  
     /// <para>
     /// To enable multiple Amazon Web Services accounts to put events to your event bus, run
-    /// <code>PutPermission</code> once for each of these accounts. Or, if all the accounts
-    /// are members of the same Amazon Web Services organization, you can run <code>PutPermission</code>
-    /// once specifying <code>Principal</code> as "*" and specifying the Amazon Web Services
-    /// organization ID in <code>Condition</code>, to grant permissions to all accounts in
-    /// that organization.
+    /// <c>PutPermission</c> once for each of these accounts. Or, if all the accounts are
+    /// members of the same Amazon Web Services organization, you can run <c>PutPermission</c>
+    /// once specifying <c>Principal</c> as "*" and specifying the Amazon Web Services organization
+    /// ID in <c>Condition</c>, to grant permissions to all accounts in that organization.
     /// </para>
     ///  
     /// <para>
     /// If you grant permissions using an organization, then accounts in that organization
-    /// must specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code>
+    /// must specify a <c>RoleArn</c> with proper permissions when they use <c>PutTarget</c>
     /// to add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
     /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
     /// User Guide</i>.
@@ -101,14 +100,14 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>Condition</code> with an Amazon Web Services organization ID,
-        /// and specify "*" as the value for <code>Principal</code>, you grant permission to all
-        /// the accounts in the named organization.
+        /// If you specify <c>Condition</c> with an Amazon Web Services organization ID, and specify
+        /// "*" as the value for <c>Principal</c>, you grant permission to all the accounts in
+        /// the named organization.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Condition</code> is a JSON string which must contain <code>Type</code>,
-        /// <code>Key</code>, and <code>Value</code> fields.
+        /// The <c>Condition</c> is a JSON string which must contain <c>Type</c>, <c>Key</c>,
+        /// and <c>Value</c> fields.
         /// </para>
         /// </summary>
         public Condition Condition
@@ -146,9 +145,9 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Policy. 
         /// <para>
-        /// A JSON string that describes the permission policy statement. You can include a <code>Policy</code>
-        /// parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>,
-        /// <code>Principal</code>, or <code>Condition</code> parameters.
+        /// A JSON string that describes the permission policy statement. You can include a <c>Policy</c>
+        /// parameter in the request instead of using the <c>StatementId</c>, <c>Action</c>, <c>Principal</c>,
+        /// or <c>Condition</c> parameters.
         /// </para>
         /// </summary>
         public string Policy
@@ -172,11 +171,11 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify "*" without specifying <code>Condition</code>, avoid creating rules
-        /// that may match undesirable events. To create more secure rules, make sure that the
-        /// event pattern for each rule contains an <code>account</code> field with a specific
-        /// account ID from which to receive events. Rules with an account field do not match
-        /// any events sent from other accounts.
+        /// If you specify "*" without specifying <c>Condition</c>, avoid creating rules that
+        /// may match undesirable events. To create more secure rules, make sure that the event
+        /// pattern for each rule contains an <c>account</c> field with a specific account ID
+        /// from which to receive events. Rules with an account field do not match any events
+        /// sent from other accounts.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=12)]
@@ -197,11 +196,11 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// An identifier string for the external account that you are granting permissions to.
         /// If you later want to revoke the permission for this external account, specify this
-        /// <code>StatementId</code> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.
+        /// <c>StatementId</c> when you run <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_RemovePermission.html">RemovePermission</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Each <code>StatementId</code> must be unique.
+        /// Each <c>StatementId</c> must be unique.
         /// </para>
         ///  </note>
         /// </summary>

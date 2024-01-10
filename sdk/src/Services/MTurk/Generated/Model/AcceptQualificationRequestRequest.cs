@@ -30,8 +30,8 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the AcceptQualificationRequest operation.
-    /// The <code>AcceptQualificationRequest</code> operation approves a Worker's request
-    /// for a Qualification. 
+    /// The <c>AcceptQualificationRequest</c> operation approves a Worker's request for a
+    /// Qualification. 
     /// 
     ///  
     /// <para>
@@ -40,7 +40,7 @@ namespace Amazon.MTurk.Model
     /// </para>
     ///  
     /// <para>
-    ///  A successful request for the <code>AcceptQualificationRequest</code> operation returns
+    ///  A successful request for the <c>AcceptQualificationRequest</c> operation returns
     /// with no errors and an empty body. 
     /// </para>
     /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property QualificationRequestId. 
         /// <para>
-        /// The ID of the Qualification request, as returned by the <code>GetQualificationRequests</code>
+        /// The ID of the Qualification request, as returned by the <c>GetQualificationRequests</c>
         /// operation.
         /// </para>
         /// </summary>

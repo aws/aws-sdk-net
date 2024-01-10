@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Each step type has its own <code>StepDetails</code> structure.
+    /// Each step type has its own <c>StepDetails</c> structure.
     /// </summary>
     public partial class CopyStepDetails
     {
@@ -41,26 +41,25 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property DestinationFileLocation. 
         /// <para>
-        /// Specifies the location for the file being copied. Use <code>${Transfer:UserName}</code>
-        /// or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination
-        /// prefix by username or uploaded date.
+        /// Specifies the location for the file being copied. Use <c>${Transfer:UserName}</c>
+        /// or <c>${Transfer:UploadDate}</c> in this field to parametrize the destination prefix
+        /// by username or uploaded date.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code>
-        /// to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the
-        /// Transfer Family user that uploaded the file.
+        /// Set the value of <c>DestinationFileLocation</c> to <c>${Transfer:UserName}</c> to
+        /// copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the Transfer
+        /// Family user that uploaded the file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code>
-        /// to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the
-        /// upload.
+        /// Set the value of <c>DestinationFileLocation</c> to <c>${Transfer:UploadDate}</c> to
+        /// copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the upload.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>,
-        /// based on the date the file is uploaded in UTC.
+        /// The system resolves <c>UploadDate</c> to a date format of <i>YYYY-MM-DD</i>, based
+        /// on the date the file is uploaded in UTC.
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
@@ -99,7 +98,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property OverwriteExisting. 
         /// <para>
         /// A flag that indicates whether to overwrite an existing file of the same name. The
-        /// default is <code>FALSE</code>.
+        /// default is <c>FALSE</c>.
         /// </para>
         ///  
         /// <para>
@@ -108,13 +107,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced
-        /// with the file being processed.
+        /// If <c>OverwriteExisting</c> is <c>TRUE</c>, the existing file is replaced with the
+        /// file being processed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
-        /// workflow processing stops.
+        /// If <c>OverwriteExisting</c> is <c>FALSE</c>, nothing happens, and the workflow processing
+        /// stops.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -138,13 +137,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To use the previous file as the input, enter <code>${previous.file}</code>. In this
-        /// case, this workflow step uses the output file from the previous workflow step as input.
+        /// To use the previous file as the input, enter <c>${previous.file}</c>. In this case,
+        /// this workflow step uses the output file from the previous workflow step as input.
         /// This is the default value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
+        /// To use the originally uploaded file location as input for this step, enter <c>${original.file}</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -79,7 +79,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1 | 3 | 31536000 | 94608000</code> 
+        /// Valid Values: <c>1 | 3 | 31536000 | 94608000</c> 
         /// </para>
         /// </summary>
         public string Duration
@@ -142,7 +142,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -160,7 +160,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
+        /// The maximum number of records to include in the response. If more than the <c>MaxRecords</c>
         /// value is available, a pagination token called a marker is included in the response
         /// so you can retrieve the remaining results.
         /// </para>
@@ -211,7 +211,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>"Partial Upfront" | "All Upfront" | "No Upfront" </code> 
+        /// Valid Values: <c>"Partial Upfront" | "All Upfront" | "No Upfront" </c> 
         /// </para>
         /// </summary>
         public string OfferingType

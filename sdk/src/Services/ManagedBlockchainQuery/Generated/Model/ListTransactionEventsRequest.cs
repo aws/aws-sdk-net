@@ -30,8 +30,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTransactionEvents operation.
-    /// An array of <code>TransactionEvent</code> objects. Each object contains details about
-    /// the transaction event.
+    /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
+    /// transaction event.
     /// </summary>
     public partial class ListTransactionEventsRequest : AmazonManagedBlockchainQueryRequest
     {
@@ -48,13 +48,13 @@ namespace Amazon.ManagedBlockchainQuery.Model
         ///  <note> 
         /// <para>
         /// Even if additional results can be retrieved, the request can return less results than
-        /// <code>maxResults</code> or an empty array of results.
+        /// <c>maxResults</c> or an empty array of results.
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the next set of results, make another request with the returned <code>nextToken</code>
-        /// value. The value of <code>nextToken</code> is <code>null</code> when there are no
-        /// more results to return
+        /// To retrieve the next set of results, make another request with the returned <c>nextToken</c>
+        /// value. The value of <c>nextToken</c> is <c>null</c> when there are no more results
+        /// to return
         /// </para>
         ///  </note>
         /// </summary>

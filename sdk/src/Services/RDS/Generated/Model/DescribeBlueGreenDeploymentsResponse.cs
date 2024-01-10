@@ -57,7 +57,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that can be used in a later <code>DescribeBlueGreenDeployments</code>
+        /// A pagination token that can be used in a later <c>DescribeBlueGreenDeployments</c>
         /// request.
         /// </para>
         /// </summary>

@@ -128,7 +128,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The notebook content type. Currently, the only valid type is <code>IPYNB</code>.
+        /// The notebook content type. Currently, the only valid type is <c>IPYNB</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

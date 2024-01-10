@@ -112,8 +112,7 @@ namespace Amazon.IoTFleetHub.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The name of the role must be in the form <code>AWSIotFleetHub_<i>random_string</i>
-        /// </code>.
+        /// The name of the role must be in the form <c>AWSIotFleetHub_<i>random_string</i> </c>.
         /// </para>
         ///  </note>
         /// </summary>

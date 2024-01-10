@@ -30,8 +30,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppInstanceAdmin operation.
-    /// Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
-    /// promoted user can perform the following actions. 
+    /// Promotes an <c>AppInstanceUser</c> to an <c>AppInstanceAdmin</c>. The promoted user
+    /// can perform the following actions. 
     /// 
     ///  <important> 
     /// <para>
@@ -47,16 +47,15 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  </important> <ul> <li> 
     /// <para>
-    ///  <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
+    ///  <c>ChannelModerator</c> actions across all channels in the <c>AppInstance</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DeleteChannelMessage</code> actions.
+    ///  <c>DeleteChannelMessage</c> actions.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
-    /// role.
+    /// Only an <c>AppInstanceUser</c> can be promoted to an <c>AppInstanceAdmin</c> role.
     /// </para>
     /// </summary>
     public partial class CreateAppInstanceAdminRequest : AmazonChimeRequest
@@ -67,7 +66,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdminArn. 
         /// <para>
-        /// The ARN of the administrator of the current <code>AppInstance</code>.
+        /// The ARN of the administrator of the current <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -86,7 +85,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

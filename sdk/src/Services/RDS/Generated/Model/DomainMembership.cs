@@ -154,8 +154,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the Active Directory Domain membership for the DB instance or cluster.
-        /// Values include <code>joined</code>, <code>pending-join</code>, <code>failed</code>,
-        /// and so on.
+        /// Values include <c>joined</c>, <c>pending-join</c>, <c>failed</c>, and so on.
         /// </para>
         /// </summary>
         public string Status

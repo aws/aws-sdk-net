@@ -149,9 +149,8 @@ namespace Amazon.PcaConnectorAd.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type, which can be one of <code>Connector</code>, <code>Template</code>,
-        /// <code>TemplateGroupAccessControlEntry</code>, <code>ServicePrincipalName</code>, or
-        /// <code>DirectoryRegistration</code>.
+        /// The resource type, which can be one of <c>Connector</c>, <c>Template</c>, <c>TemplateGroupAccessControlEntry</c>,
+        /// <c>ServicePrincipalName</c>, or <c>DirectoryRegistration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

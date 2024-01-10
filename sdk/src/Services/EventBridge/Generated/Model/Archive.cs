@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// An <code>Archive</code> object that contains details about an archive.
+    /// An <c>Archive</c> object that contains details about an archive.
     /// </summary>
     public partial class Archive
     {

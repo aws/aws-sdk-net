@@ -30,28 +30,27 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTable operation.
-    /// The <code>CreateTable</code> operation adds a new table to your account. In an Amazon
-    /// Web Services account, table names must be unique within each Region. That is, you
-    /// can have two tables with same name if you create the tables in different Regions.
+    /// The <c>CreateTable</c> operation adds a new table to your account. In an Amazon Web
+    /// Services account, table names must be unique within each Region. That is, you can
+    /// have two tables with same name if you create the tables in different Regions.
     /// 
     ///  
     /// <para>
-    ///  <code>CreateTable</code> is an asynchronous operation. Upon receiving a <code>CreateTable</code>
-    /// request, DynamoDB immediately returns a response with a <code>TableStatus</code> of
-    /// <code>CREATING</code>. After the table is created, DynamoDB sets the <code>TableStatus</code>
-    /// to <code>ACTIVE</code>. You can perform read and write operations only on an <code>ACTIVE</code>
-    /// table. 
+    ///  <c>CreateTable</c> is an asynchronous operation. Upon receiving a <c>CreateTable</c>
+    /// request, DynamoDB immediately returns a response with a <c>TableStatus</c> of <c>CREATING</c>.
+    /// After the table is created, DynamoDB sets the <c>TableStatus</c> to <c>ACTIVE</c>.
+    /// You can perform read and write operations only on an <c>ACTIVE</c> table. 
     /// </para>
     ///  
     /// <para>
-    /// You can optionally define secondary indexes on the new table, as part of the <code>CreateTable</code>
+    /// You can optionally define secondary indexes on the new table, as part of the <c>CreateTable</c>
     /// operation. If you want to create multiple tables with secondary indexes on them, you
     /// must create the tables sequentially. Only one table with secondary indexes can be
-    /// in the <code>CREATING</code> state at any given time.
+    /// in the <c>CREATING</c> state at any given time.
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>DescribeTable</code> action to check the table status.
+    /// You can use the <c>DescribeTable</c> action to check the table status.
     /// </para>
     /// </summary>
     public partial class CreateTableRequest : AmazonDynamoDBRequest
@@ -127,15 +126,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
-        /// workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+        ///  <c>PROVISIONED</c> - We recommend using <c>PROVISIONED</c> for predictable workloads.
+        /// <c>PROVISIONED</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
         /// Mode</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
-        /// unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-        /// href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+        ///  <c>PAY_PER_REQUEST</c> - We recommend using <c>PAY_PER_REQUEST</c> for unpredictable
+        /// workloads. <c>PAY_PER_REQUEST</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
         /// Mode</a>. 
         /// </para>
         ///  </li> </ul>
@@ -179,49 +177,49 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IndexName</code> - The name of the global secondary index. Must be unique only
-        /// for this table.
+        ///  <c>IndexName</c> - The name of the global secondary index. Must be unique only for
+        /// this table.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>KeySchema</code> - Specifies the key schema for the global secondary index.
+        ///  <c>KeySchema</c> - Specifies the key schema for the global secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Projection</code> - Specifies attributes that are copied (projected) from the
-        /// table into the index. These are in addition to the primary key attributes and index
-        /// key attributes, which are automatically projected. Each attribute specification is
-        /// composed of:
+        ///  <c>Projection</c> - Specifies attributes that are copied (projected) from the table
+        /// into the index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each attribute specification is composed
+        /// of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ProjectionType</code> - One of the following:
+        ///  <c>ProjectionType</c> - One of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+        ///  <c>KEYS_ONLY</c> - Only the index and primary keys are projected into the index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        /// index. The list of projected attributes is in <code>NonKeyAttributes</code>.
+        ///  <c>INCLUDE</c> - Only the specified table attributes are projected into the index.
+        /// The list of projected attributes is in <c>NonKeyAttributes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> - All of the table attributes are projected into the index.
+        ///  <c>ALL</c> - All of the table attributes are projected into the index.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
-        /// are projected into the secondary index. The total count of attributes provided in
-        /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 100. If you project the same attribute into two different indexes, this counts
-        /// as two distinct attributes when determining the total.
+        ///  <c>NonKeyAttributes</c> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <c>NonKeyAttributes</c>,
+        /// summed across all of the secondary indexes, must not exceed 100. If you project the
+        /// same attribute into two different indexes, this counts as two distinct attributes
+        /// when determining the total.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>ProvisionedThroughput</code> - The provisioned throughput settings for the
-        /// global secondary index, consisting of read and write capacity units.
+        ///  <c>ProvisionedThroughput</c> - The provisioned throughput settings for the global
+        /// secondary index, consisting of read and write capacity units.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -241,29 +239,29 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property KeySchema. 
         /// <para>
         /// Specifies the attributes that make up the primary key for a table or an index. The
-        /// attributes in <code>KeySchema</code> must also be defined in the <code>AttributeDefinitions</code>
+        /// attributes in <c>KeySchema</c> must also be defined in the <c>AttributeDefinitions</c>
         /// array. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/DataModel.html">Data
         /// Model</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Each <code>KeySchemaElement</code> in the array is composed of:
+        /// Each <c>KeySchemaElement</c> in the array is composed of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AttributeName</code> - The name of this key attribute.
+        ///  <c>AttributeName</c> - The name of this key attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyType</code> - The role that the key attribute will assume:
+        ///  <c>KeyType</c> - The role that the key attribute will assume:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HASH</code> - partition key
+        ///  <c>HASH</c> - partition key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RANGE</code> - sort key
+        ///  <c>RANGE</c> - sort key
         /// </para>
         ///  </li> </ul> </li> </ul> <note> 
         /// <para>
@@ -280,13 +278,13 @@ namespace Amazon.DynamoDBv2.Model
         ///  </note> 
         /// <para>
         /// For a simple primary key (partition key), you must provide exactly one element with
-        /// a <code>KeyType</code> of <code>HASH</code>.
+        /// a <c>KeyType</c> of <c>HASH</c>.
         /// </para>
         ///  
         /// <para>
         /// For a composite primary key (partition key and sort key), you must provide exactly
-        /// two elements, in this order: The first element must have a <code>KeyType</code> of
-        /// <code>HASH</code>, and the second element must have a <code>KeyType</code> of <code>RANGE</code>.
+        /// two elements, in this order: The first element must have a <c>KeyType</c> of <c>HASH</c>,
+        /// and the second element must have a <c>KeyType</c> of <c>RANGE</c>.
         /// </para>
         ///  
         /// <para>
@@ -320,45 +318,45 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IndexName</code> - The name of the local secondary index. Must be unique only
-        /// for this table.
+        ///  <c>IndexName</c> - The name of the local secondary index. Must be unique only for
+        /// this table.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>KeySchema</code> - Specifies the key schema for the local secondary index.
-        /// The key schema must begin with the same partition key as the table.
+        ///  <c>KeySchema</c> - Specifies the key schema for the local secondary index. The key
+        /// schema must begin with the same partition key as the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Projection</code> - Specifies attributes that are copied (projected) from the
-        /// table into the index. These are in addition to the primary key attributes and index
-        /// key attributes, which are automatically projected. Each attribute specification is
-        /// composed of:
+        ///  <c>Projection</c> - Specifies attributes that are copied (projected) from the table
+        /// into the index. These are in addition to the primary key attributes and index key
+        /// attributes, which are automatically projected. Each attribute specification is composed
+        /// of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ProjectionType</code> - One of the following:
+        ///  <c>ProjectionType</c> - One of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KEYS_ONLY</code> - Only the index and primary keys are projected into the index.
+        ///  <c>KEYS_ONLY</c> - Only the index and primary keys are projected into the index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INCLUDE</code> - Only the specified table attributes are projected into the
-        /// index. The list of projected attributes is in <code>NonKeyAttributes</code>.
+        ///  <c>INCLUDE</c> - Only the specified table attributes are projected into the index.
+        /// The list of projected attributes is in <c>NonKeyAttributes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> - All of the table attributes are projected into the index.
+        ///  <c>ALL</c> - All of the table attributes are projected into the index.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>NonKeyAttributes</code> - A list of one or more non-key attribute names that
-        /// are projected into the secondary index. The total count of attributes provided in
-        /// <code>NonKeyAttributes</code>, summed across all of the secondary indexes, must not
-        /// exceed 100. If you project the same attribute into two different indexes, this counts
-        /// as two distinct attributes when determining the total.
+        ///  <c>NonKeyAttributes</c> - A list of one or more non-key attribute names that are
+        /// projected into the secondary index. The total count of attributes provided in <c>NonKeyAttributes</c>,
+        /// summed across all of the secondary indexes, must not exceed 100. If you project the
+        /// same attribute into two different indexes, this counts as two distinct attributes
+        /// when determining the total.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -378,12 +376,12 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ProvisionedThroughput. 
         /// <para>
         /// Represents the provisioned throughput settings for a specified table or index. The
-        /// settings can be modified using the <code>UpdateTable</code> operation.
+        /// settings can be modified using the <c>UpdateTable</c> operation.
         /// </para>
         ///  
         /// <para>
-        ///  If you set BillingMode as <code>PROVISIONED</code>, you must specify this property.
-        /// If you set BillingMode as <code>PAY_PER_REQUEST</code>, you cannot specify this property.
+        ///  If you set BillingMode as <c>PROVISIONED</c>, you must specify this property. If
+        /// you set BillingMode as <c>PAY_PER_REQUEST</c>, you cannot specify this property.
         /// </para>
         ///  
         /// <para>
@@ -428,34 +426,34 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>StreamEnabled</code> - Indicates whether DynamoDB Streams is to be enabled
-        /// (true) or disabled (false).
+        ///  <c>StreamEnabled</c> - Indicates whether DynamoDB Streams is to be enabled (true)
+        /// or disabled (false).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StreamViewType</code> - When an item in the table is modified, <code>StreamViewType</code>
-        /// determines what information is written to the table's stream. Valid values for <code>StreamViewType</code>
+        ///  <c>StreamViewType</c> - When an item in the table is modified, <c>StreamViewType</c>
+        /// determines what information is written to the table's stream. Valid values for <c>StreamViewType</c>
         /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KEYS_ONLY</code> - Only the key attributes of the modified item are written
+        ///  <c>KEYS_ONLY</c> - Only the key attributes of the modified item are written to the
+        /// stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NEW_IMAGE</c> - The entire item, as it appears after it was modified, is written
         /// to the stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_IMAGE</code> - The entire item, as it appears after it was modified, is
+        ///  <c>OLD_IMAGE</c> - The entire item, as it appeared before it was modified, is written
+        /// to the stream.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>NEW_AND_OLD_IMAGES</c> - Both the new and the old item images of the item are
         /// written to the stream.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>OLD_IMAGE</code> - The entire item, as it appeared before it was modified,
-        /// is written to the stream.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the item
-        /// are written to the stream.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -474,7 +472,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableClass. 
         /// <para>
-        /// The table class of the new table. Valid values are <code>STANDARD</code> and <code>STANDARD_INFREQUENT_ACCESS</code>.
+        /// The table class of the new table. Valid values are <c>STANDARD</c> and <c>STANDARD_INFREQUENT_ACCESS</c>.
         /// </para>
         /// </summary>
         public TableClass TableClass

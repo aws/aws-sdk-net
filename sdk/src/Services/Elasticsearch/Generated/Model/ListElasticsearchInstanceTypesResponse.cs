@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for the parameters returned by <code> <a>ListElasticsearchInstanceTypes</a>
-    /// </code> operation.
+    /// Container for the parameters returned by <c> <a>ListElasticsearchInstanceTypes</a>
+    /// </c> operation.
     /// </summary>
     public partial class ListElasticsearchInstanceTypesResponse : AmazonWebServiceResponse
     {
@@ -40,8 +40,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property ElasticsearchInstanceTypes. 
         /// <para>
-        ///  List of instance types supported by Amazon Elasticsearch service for given <code>
-        /// <a>ElasticsearchVersion</a> </code> 
+        ///  List of instance types supported by Amazon Elasticsearch service for given <c> <a>ElasticsearchVersion</a>
+        /// </c> 
         /// </para>
         /// </summary>
         public List<string> ElasticsearchInstanceTypes

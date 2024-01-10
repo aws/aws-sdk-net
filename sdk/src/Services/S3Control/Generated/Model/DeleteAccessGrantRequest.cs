@@ -35,8 +35,7 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:DeleteAccessGrant</code> permission to use this operation.
-    /// 
+    /// You must have the <c>s3:DeleteAccessGrant</c> permission to use this operation. 
     /// </para>
     ///  </dd> </dl>
     /// </summary>

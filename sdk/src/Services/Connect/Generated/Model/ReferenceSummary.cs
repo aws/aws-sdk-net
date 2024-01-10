@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Contains summary information about a reference. <code>ReferenceSummary</code> contains
-    /// only one non null field between the URL and attachment based on the reference type.
+    /// Contains summary information about a reference. <c>ReferenceSummary</c> contains only
+    /// one non null field between the URL and attachment based on the reference type.
     /// </summary>
     public partial class ReferenceSummary
     {
@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Attachment. 
         /// <para>
-        /// Information about the reference when the <code>referenceType</code> is <code>ATTACHMENT</code>.
+        /// Information about the reference when the <c>referenceType</c> is <c>ATTACHMENT</c>.
         /// Otherwise, null.
         /// </para>
         /// </summary>
@@ -63,8 +63,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Date. 
         /// <para>
-        /// Information about a reference when the <code>referenceType</code> is <code>DATE</code>.
-        /// Otherwise, null.
+        /// Information about a reference when the <c>referenceType</c> is <c>DATE</c>. Otherwise,
+        /// null.
         /// </para>
         /// </summary>
         public DateReference Date
@@ -82,8 +82,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Email. 
         /// <para>
-        /// Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>.
-        /// Otherwise, null.
+        /// Information about a reference when the <c>referenceType</c> is <c>EMAIL</c>. Otherwise,
+        /// null.
         /// </para>
         /// </summary>
         public EmailReference Email
@@ -101,8 +101,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Number. 
         /// <para>
-        /// Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>.
-        /// Otherwise, null.
+        /// Information about a reference when the <c>referenceType</c> is <c>NUMBER</c>. Otherwise,
+        /// null.
         /// </para>
         /// </summary>
         public NumberReference Number
@@ -120,8 +120,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property String. 
         /// <para>
-        /// Information about a reference when the <code>referenceType</code> is <code>STRING</code>.
-        /// Otherwise, null.
+        /// Information about a reference when the <c>referenceType</c> is <c>STRING</c>. Otherwise,
+        /// null.
         /// </para>
         /// </summary>
         public StringReference String
@@ -139,8 +139,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// Information about the reference when the <code>referenceType</code> is <code>URL</code>.
-        /// Otherwise, null.
+        /// Information about the reference when the <c>referenceType</c> is <c>URL</c>. Otherwise,
+        /// null.
         /// </para>
         /// </summary>
         public UrlReference Url

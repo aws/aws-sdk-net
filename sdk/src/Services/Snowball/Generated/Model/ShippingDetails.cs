@@ -41,8 +41,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property InboundShipment. 
         /// <para>
-        /// The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
-        /// returned to Amazon Web Services for a particular job.
+        /// The <c>Status</c> and <c>TrackingNumber</c> values for a Snow device being returned
+        /// to Amazon Web Services for a particular job.
         /// </para>
         /// </summary>
         public Shipment InboundShipment
@@ -60,8 +60,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property OutboundShipment. 
         /// <para>
-        /// The <code>Status</code> and <code>TrackingNumber</code> values for a Snow device being
-        /// delivered to the address that you specified for a particular job.
+        /// The <c>Status</c> and <c>TrackingNumber</c> values for a Snow device being delivered
+        /// to the address that you specified for a particular job.
         /// </para>
         /// </summary>
         public Shipment OutboundShipment

@@ -34,15 +34,15 @@ namespace Amazon.ServiceDiscovery.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Update the TTL setting for existing <code>DnsRecords</code> configurations
+    /// Update the TTL setting for existing <c>DnsRecords</c> configurations
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Add, update, or delete <code>HealthCheckConfig</code> for a specified service
+    /// Add, update, or delete <c>HealthCheckConfig</c> for a specified service
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration.
+    /// You can't add, update, or delete a <c>HealthCheckCustomConfig</c> configuration.
     /// </para>
     ///  </note> </li> </ul> 
     /// <para>
@@ -50,14 +50,13 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If you omit any existing <code>DnsRecords</code> or <code>HealthCheckConfig</code>
-    /// configurations from an <code>UpdateService</code> request, the configurations are
-    /// deleted from the service.
+    /// If you omit any existing <c>DnsRecords</c> or <c>HealthCheckConfig</c> configurations
+    /// from an <c>UpdateService</c> request, the configurations are deleted from the service.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you omit an existing <code>HealthCheckCustomConfig</code> configuration from an
-    /// <code>UpdateService</code> request, the configuration isn't deleted from the service.
+    /// If you omit an existing <c>HealthCheckCustomConfig</c> configuration from an <c>UpdateService</c>
+    /// request, the configuration isn't deleted from the service.
     /// </para>
     ///  </li> </ul> 
     /// <para>

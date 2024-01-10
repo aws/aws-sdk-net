@@ -31,9 +31,8 @@ namespace Amazon.EntityResolution.Model
     /// <summary>
     /// Container for the parameters to the CreateSchemaMapping operation.
     /// Creates a schema mapping, which defines the schema of the input customer records table.
-    /// The <code>SchemaMapping</code> also provides Entity Resolution with some metadata
-    /// about the table, such as the attribute types of the columns and which columns to match
-    /// on.
+    /// The <c>SchemaMapping</c> also provides Entity Resolution with some metadata about
+    /// the table, such as the attribute types of the columns and which columns to match on.
     /// </summary>
     public partial class CreateSchemaMappingRequest : AmazonEntityResolutionRequest
     {
@@ -64,8 +63,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property MappedInputFields. 
         /// <para>
-        /// A list of <code>MappedInputFields</code>. Each <code>MappedInputField</code> corresponds
-        /// to a column the source data table, and contains column name plus additional information
+        /// A list of <c>MappedInputFields</c>. Each <c>MappedInputField</c> corresponds to a
+        /// column the source data table, and contains column name plus additional information
         /// that Entity Resolution uses for matching.
         /// </para>
         /// </summary>
@@ -85,8 +84,8 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property SchemaName. 
         /// <para>
-        /// The name of the schema. There can't be multiple <code>SchemaMappings</code> with the
-        /// same name.
+        /// The name of the schema. There can't be multiple <c>SchemaMappings</c> with the same
+        /// name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

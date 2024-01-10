@@ -34,7 +34,7 @@ namespace Amazon.GameLift.Model
     /// the current capacity (number of EC2 instances) and some scaling settings for the requested
     /// fleet location. Use this operation to retrieve capacity information for a fleet's
     /// remote location or home Region (you can also retrieve home Region capacity by calling
-    /// <code>DescribeFleetCapacity</code>).
+    /// <c>DescribeFleetCapacity</c>).
     /// 
     ///  
     /// <para>
@@ -42,8 +42,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <code>FleetCapacity</code> object is returned for the requested fleet
-    /// location. 
+    /// If successful, a <c>FleetCapacity</c> object is returned for the requested fleet location.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The fleet location to retrieve capacity information for. Specify a location in the
-        /// form of an Amazon Web Services Region code, such as <code>us-west-2</code>.
+        /// form of an Amazon Web Services Region code, such as <c>us-west-2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find a root with the <code>RootId</code> that you specified.
+    /// We can't find a root with the <c>RootId</c> that you specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

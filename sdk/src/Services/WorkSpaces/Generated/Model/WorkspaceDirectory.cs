@@ -279,9 +279,9 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the directory's registration with Amazon WorkSpaces. After a directory
-        /// is deregistered, the <code>DEREGISTERED</code> state is returned very briefly before
-        /// the directory metadata is cleaned up, so this state is rarely returned. To confirm
-        /// that a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
+        /// is deregistered, the <c>DEREGISTERED</c> state is returned very briefly before the
+        /// directory metadata is cleaned up, so this state is rarely returned. To confirm that
+        /// a directory is deregistered, check for the directory ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaceDirectories.html">
         /// DescribeWorkspaceDirectories</a>. If the directory ID isn't returned, then the directory
         /// has been successfully deregistered.
         /// </para>
@@ -321,8 +321,7 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property Tenancy. 
         /// <para>
         /// Specifies whether the directory is dedicated or shared. To use Bring Your Own License
-        /// (BYOL), this value must be set to <code>DEDICATED</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
+        /// (BYOL), this value must be set to <c>DEDICATED</c>. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">Bring
         /// Your Own Windows Desktop Images</a>.
         /// </para>
         /// </summary>

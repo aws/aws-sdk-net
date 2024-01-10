@@ -199,9 +199,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code>
-        /// field contains a description of the error that caused the data source connector to
-        /// fail.
+        /// When the <c>Status</c> field value is <c>FAILED</c>, the <c>ErrorMessage</c> field
+        /// contains a description of the error that caused the data source connector to fail.
         /// </para>
         /// </summary>
         public ErrorDetail Error
@@ -258,9 +257,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the data source connector. When the <code>Status</code> field
-        /// value is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a description
-        /// of the error that caused the data source connector to fail.
+        /// The current status of the data source connector. When the <c>Status</c> field value
+        /// is <c>FAILED</c>, the <c>ErrorMessage</c> field contains a description of the error
+        /// that caused the data source connector to fail.
         /// </para>
         /// </summary>
         public DataSourceStatus Status
@@ -297,7 +296,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the data source connector. For example, <code>S3</code>.
+        /// The type of the data source connector. For example, <c>S3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

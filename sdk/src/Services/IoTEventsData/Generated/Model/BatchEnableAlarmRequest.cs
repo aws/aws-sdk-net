@@ -30,8 +30,8 @@ namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchEnableAlarm operation.
-    /// Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after
-    /// you enable them.
+    /// Enables one or more alarms. The alarms change to the <c>NORMAL</c> state after you
+    /// enable them.
     /// </summary>
     public partial class BatchEnableAlarmRequest : AmazonIoTEventsDataRequest
     {

@@ -40,7 +40,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// Specifies the descriptive message that corresponds to the <code>ErrorType</code>.
+        /// Specifies the descriptive message that corresponds to the <c>ErrorType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,47 +63,46 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALREADY_EXISTS</code>: occurs for a copy step, if the overwrite option is not
-        /// selected and a file with the same name already exists in the target location.
+        ///  <c>ALREADY_EXISTS</c>: occurs for a copy step, if the overwrite option is not selected
+        /// and a file with the same name already exists in the target location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BAD_REQUEST</code>: a general bad request: for example, a step that attempts
-        /// to tag an EFS file returns <code>BAD_REQUEST</code>, as only S3 files can be tagged.
+        ///  <c>BAD_REQUEST</c>: a general bad request: for example, a step that attempts to tag
+        /// an EFS file returns <c>BAD_REQUEST</c>, as only S3 files can be tagged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CUSTOM_STEP_FAILED</code>: occurs when the custom step provided a callback
-        /// that indicates failure.
+        ///  <c>CUSTOM_STEP_FAILED</c>: occurs when the custom step provided a callback that indicates
+        /// failure.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INTERNAL_SERVER_ERROR</code>: a catch-all error that can occur for a variety
-        /// of reasons.
+        ///  <c>INTERNAL_SERVER_ERROR</c>: a catch-all error that can occur for a variety of reasons.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_FOUND</code>: occurs when a requested entity, for example a source file
-        /// for a copy step, does not exist.
+        ///  <c>NOT_FOUND</c>: occurs when a requested entity, for example a source file for a
+        /// copy step, does not exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PERMISSION_DENIED</code>: occurs if your policy does not contain the correct
-        /// permissions to complete one or more of the steps in the workflow.
+        ///  <c>PERMISSION_DENIED</c>: occurs if your policy does not contain the correct permissions
+        /// to complete one or more of the steps in the workflow.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIMEOUT</code>: occurs when the execution times out.
+        ///  <c>TIMEOUT</c>: occurs when the execution times out.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  You can set the <code>TimeoutSeconds</code> for a custom step, anywhere from 1 second
-        /// to 1800 seconds (30 minutes). 
+        ///  You can set the <c>TimeoutSeconds</c> for a custom step, anywhere from 1 second to
+        /// 1800 seconds (30 minutes). 
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>THROTTLED</code>: occurs if you exceed the new execution refill rate of one
-        /// workflow per second.
+        ///  <c>THROTTLED</c>: occurs if you exceed the new execution refill rate of one workflow
+        /// per second.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetEvaluation</code> operation and describes an <code>Evaluation</code>.
+    /// Represents the output of a <c>GetEvaluation</c> operation and describes an <c>Evaluation</c>.
     /// </summary>
     public partial class GetEvaluationResponse : AmazonWebServiceResponse
     {
@@ -53,9 +53,8 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property ComputeTime. 
         /// <para>
         /// The approximate CPU time in milliseconds that Amazon Machine Learning spent processing
-        /// the <code>Evaluation</code>, normalized and scaled on computation resources. <code>ComputeTime</code>
-        /// is only available if the <code>Evaluation</code> is in the <code>COMPLETED</code>
-        /// state.
+        /// the <c>Evaluation</c>, normalized and scaled on computation resources. <c>ComputeTime</c>
+        /// is only available if the <c>Evaluation</c> is in the <c>COMPLETED</c> state.
         /// </para>
         /// </summary>
         public long ComputeTime
@@ -73,8 +72,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time that the <code>Evaluation</code> was created. The time is expressed in epoch
-        /// time.
+        /// The time that the <c>Evaluation</c> was created. The time is expressed in epoch time.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -111,7 +109,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationDataSourceId. 
         /// <para>
-        /// The <code>DataSource</code> used for this evaluation.
+        /// The <c>DataSource</c> used for this evaluation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -130,7 +128,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationId. 
         /// <para>
-        /// The evaluation ID which is same as the <code>EvaluationId</code> in the request.
+        /// The evaluation ID which is same as the <c>EvaluationId</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -149,10 +147,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property FinishedAt. 
         /// <para>
-        /// The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as
-        /// <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only available
-        /// when the <code>Evaluation</code> is in the <code>COMPLETED</code> or <code>FAILED</code>
-        /// state.
+        /// The epoch time when Amazon Machine Learning marked the <c>Evaluation</c> as <c>COMPLETED</c>
+        /// or <c>FAILED</c>. <c>FinishedAt</c> is only available when the <c>Evaluation</c> is
+        /// in the <c>COMPLETED</c> or <c>FAILED</c> state.
         /// </para>
         /// </summary>
         public DateTime FinishedAt
@@ -190,8 +187,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time of the most recent edit to the <code>Evaluation</code>. The time is expressed
-        /// in epoch time.
+        /// The time of the most recent edit to the <c>Evaluation</c>. The time is expressed in
+        /// epoch time.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -209,7 +206,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// A link to the file that contains logs of the <code>CreateEvaluation</code> operation.
+        /// A link to the file that contains logs of the <c>CreateEvaluation</c> operation.
         /// </para>
         /// </summary>
         public string LogUri
@@ -227,7 +224,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A description of the most recent details about evaluating the <code>MLModel</code>.
+        /// A description of the most recent details about evaluating the <c>MLModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10240)]
@@ -246,7 +243,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID of the <code>MLModel</code> that was the focus of the evaluation.
+        /// The ID of the <c>MLModel</c> that was the focus of the evaluation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -265,7 +262,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user-supplied name or description of the <code>Evaluation</code>. 
+        /// A user-supplied name or description of the <c>Evaluation</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -284,25 +281,25 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property PerformanceMetrics. 
         /// <para>
-        /// Measurements of how well the <code>MLModel</code> performed using observations referenced
-        /// by the <code>DataSource</code>. One of the following metric is returned based on the
-        /// type of the <code>MLModel</code>: 
+        /// Measurements of how well the <c>MLModel</c> performed using observations referenced
+        /// by the <c>DataSource</c>. One of the following metric is returned based on the type
+        /// of the <c>MLModel</c>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// BinaryAUC: A binary <code>MLModel</code> uses the Area Under the Curve (AUC) technique
-        /// to measure performance. 
+        /// BinaryAUC: A binary <c>MLModel</c> uses the Area Under the Curve (AUC) technique to
+        /// measure performance. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RegressionRMSE: A regression <code>MLModel</code> uses the Root Mean Square Error
-        /// (RMSE) technique to measure performance. RMSE measures the difference between predicted
-        /// and actual values for a single variable.
+        /// RegressionRMSE: A regression <c>MLModel</c> uses the Root Mean Square Error (RMSE)
+        /// technique to measure performance. RMSE measures the difference between predicted and
+        /// actual values for a single variable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// MulticlassAvgFScore: A multiclass <code>MLModel</code> uses the F1 score technique
-        /// to measure performance. 
+        /// MulticlassAvgFScore: A multiclass <c>MLModel</c> uses the F1 score technique to measure
+        /// performance. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -325,9 +322,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The epoch time when Amazon Machine Learning marked the <code>Evaluation</code> as
-        /// <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>Evaluation</code>
-        /// is in the <code>PENDING</code> state.
+        /// The epoch time when Amazon Machine Learning marked the <c>Evaluation</c> as <c>INPROGRESS</c>.
+        /// <c>StartedAt</c> isn't available if the <c>Evaluation</c> is in the <c>PENDING</c>
+        /// state.
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -349,26 +346,25 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon Machine Language (Amazon ML) submitted a request to
-        /// evaluate an <code>MLModel</code>.
+        ///  <c>PENDING</c> - Amazon Machine Language (Amazon ML) submitted a request to evaluate
+        /// an <c>MLModel</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INPROGRESS</code> - The evaluation is underway.
+        ///  <c>INPROGRESS</c> - The evaluation is underway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The request to evaluate an <code>MLModel</code> did not run
-        /// to completion. It is not usable.
+        ///  <c>FAILED</c> - The request to evaluate an <c>MLModel</c> did not run to completion.
+        /// It is not usable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The evaluation process completed successfully.
+        ///  <c>COMPLETED</c> - The evaluation process completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The <code>Evaluation</code> is marked as deleted. It is not
-        /// usable.
+        ///  <c>DELETED</c> - The <c>Evaluation</c> is marked as deleted. It is not usable.
         /// </para>
         ///  </li> </ul>
         /// </summary>

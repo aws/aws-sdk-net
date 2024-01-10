@@ -54,10 +54,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <code>LocationAttributes</code> object is returned for each requested
-    /// location. If the fleet does not have a requested location, no information is returned.
-    /// This operation does not return the home Region. To get information on a fleet's home
-    /// Region, call <code>DescribeFleetAttributes</code>.
+    /// If successful, a <c>LocationAttributes</c> object is returned for each requested location.
+    /// If the fleet does not have a requested location, no information is returned. This
+    /// operation does not return the home Region. To get information on a fleet's home Region,
+    /// call <c>DescribeFleetAttributes</c>.
     /// </para>
     ///  
     /// <para>
@@ -99,7 +99,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages. This limit is not currently enforced.
         /// </para>
         /// </summary>
@@ -120,7 +120,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Locations. 
         /// <para>
         /// A list of fleet locations to retrieve information for. Specify locations in the form
-        /// of an Amazon Web Services Region code, such as <code>us-west-2</code>.
+        /// of an Amazon Web Services Region code, such as <c>us-west-2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

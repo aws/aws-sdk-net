@@ -48,9 +48,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of the VPN connection. <code>VPN</code> indicates an Amazon Web Services
-        /// VPN connection. <code>VPN-Classic</code> indicates an Amazon Web Services Classic
-        /// VPN connection.
+        /// The category of the VPN connection. <c>VPN</c> indicates an Amazon Web Services VPN
+        /// connection. <c>VPN-Classic</c> indicates an Amazon Web Services Classic VPN connection.
         /// </para>
         /// </summary>
         public string Category
@@ -145,19 +144,19 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>available</code> 
+        ///  <c>available</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code> 
+        ///  <c>deleted</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code> 
+        ///  <c>deleting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code> 
+        ///  <c>pending</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the FlushApiCache operation.
-    /// Flushes an <code>ApiCache</code> object.
+    /// Flushes an <c>ApiCache</c> object.
     /// </summary>
     public partial class FlushApiCacheRequest : AmazonAppSyncRequest
     {

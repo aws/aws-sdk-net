@@ -96,7 +96,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PluginProperties. 
         /// <para>
-        /// Additional information about plugin properties if the package is a <code>ZIP-PLUGIN</code>
+        /// Additional information about plugin properties if the package is a <c>ZIP-PLUGIN</c>
         /// package.
         /// </para>
         /// </summary>

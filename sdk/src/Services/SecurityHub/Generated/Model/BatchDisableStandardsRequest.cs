@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDisableStandards operation.
-    /// Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.
+    /// Disables the standards specified by the provided <c>StandardsSubscriptionArns</c>.
     /// 
     ///  
     /// <para>

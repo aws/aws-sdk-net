@@ -74,7 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mysecuritygroup</code> 
+        /// Example: <c>mysecuritygroup</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

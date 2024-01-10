@@ -105,8 +105,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The date and time at which the Capacity Reservation expires. When a Capacity Reservation
         /// expires, the reserved capacity is released and you can no longer launch instances
-        /// into it. The Capacity Reservation's state changes to <code>expired</code> when it
-        /// reaches its end date and time.
+        /// into it. The Capacity Reservation's state changes to <c>expired</c> when it reaches
+        /// its end date and time.
         /// </para>
         ///  
         /// <para>
@@ -116,8 +116,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>.
-        /// Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.
+        /// You must provide an <c>EndDate</c> value if <c>EndDateType</c> is <c>limited</c>.
+        /// Omit <c>EndDate</c> if <c>EndDateType</c> is <c>unlimited</c>.
         /// </para>
         /// </summary>
         public DateTime EndDate
@@ -140,15 +140,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>unlimited</code> - The Capacity Reservation remains active until you explicitly
-        /// cancel it. Do not provide an <code>EndDate</code> value if <code>EndDateType</code>
-        /// is <code>unlimited</code>.
+        ///  <c>unlimited</c> - The Capacity Reservation remains active until you explicitly cancel
+        /// it. Do not provide an <c>EndDate</c> value if <c>EndDateType</c> is <c>unlimited</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>limited</code> - The Capacity Reservation expires automatically at a specified
-        /// date and time. You must provide an <code>EndDate</code> value if <code>EndDateType</code>
-        /// is <code>limited</code>.
+        ///  <c>limited</c> - The Capacity Reservation expires automatically at a specified date
+        /// and time. You must provide an <c>EndDate</c> value if <c>EndDateType</c> is <c>limited</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -168,7 +166,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InstanceCount. 
         /// <para>
         /// The number of instances for which to reserve capacity. The number of instances can't
-        /// be increased or decreased by more than <code>1000</code> in a single request.
+        /// be increased or decreased by more than <c>1000</c> in a single request.
         /// </para>
         /// </summary>
         public int InstanceCount

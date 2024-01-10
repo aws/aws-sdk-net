@@ -58,8 +58,8 @@ namespace Amazon.Account.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The management account can't specify its own <code>AccountId</code>. It must call
-        /// the operation in standalone context by not including the <code>AccountId</code> parameter.
+        /// The management account can't specify its own <c>AccountId</c>. It must call the operation
+        /// in standalone context by not including the <c>AccountId</c> parameter.
         /// </para>
         ///  </note> 
         /// <para>

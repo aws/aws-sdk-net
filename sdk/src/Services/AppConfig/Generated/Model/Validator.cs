@@ -62,8 +62,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// AppConfig supports validators of type <code>JSON_SCHEMA</code> and <code>LAMBDA</code>
-        /// 
+        /// AppConfig supports validators of type <c>JSON_SCHEMA</c> and <c>LAMBDA</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

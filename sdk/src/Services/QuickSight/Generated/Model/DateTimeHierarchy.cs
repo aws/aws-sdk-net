@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The option that determines the hierarchy of any <code>DateTime</code> fields.
+    /// The option that determines the hierarchy of any <c>DateTime</c> fields.
     /// </summary>
     public partial class DateTimeHierarchy
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DrillDownFilters. 
         /// <para>
-        /// The option that determines the drill down filters for the <code>DateTime</code> hierarchy.
+        /// The option that determines the drill down filters for the <c>DateTime</c> hierarchy.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property HierarchyId. 
         /// <para>
-        /// The hierarchy ID of the <code>DateTime</code> hierarchy.
+        /// The hierarchy ID of the <c>DateTime</c> hierarchy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

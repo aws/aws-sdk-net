@@ -32,8 +32,8 @@ namespace Amazon.CloudWatch.Model
     /// A dimension is a name/value pair that is part of the identity of a metric. Because
     /// dimensions are part of the unique identifier for a metric, whenever you add a unique
     /// name/value pair to one of your metrics, you are creating a new variation of that metric.
-    /// For example, many Amazon EC2 metrics publish <code>InstanceId</code> as a dimension
-    /// name, and the actual instance ID as the value for that dimension.
+    /// For example, many Amazon EC2 metrics publish <c>InstanceId</c> as a dimension name,
+    /// and the actual instance ID as the value for that dimension.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the dimension. Dimension names must contain only ASCII characters, must
-        /// include at least one non-whitespace character, and cannot start with a colon (<code>:</code>).
+        /// include at least one non-whitespace character, and cannot start with a colon (<c>:</c>).
         /// ASCII control characters are not supported as part of dimension names.
         /// </para>
         /// </summary>

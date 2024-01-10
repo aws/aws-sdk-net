@@ -251,7 +251,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ServiceAccountRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <code>ServiceAccount</code>
+        /// The Amazon Resource Name (ARN) of the IAM role that's bound to the Kubernetes <c>ServiceAccount</c>
         /// object that the add-on uses.
         /// </para>
         /// </summary>

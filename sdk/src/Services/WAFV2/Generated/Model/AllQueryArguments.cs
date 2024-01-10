@@ -38,7 +38,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// JSON specification: <code>"AllQueryArguments": {}</code> 
+    /// JSON specification: <c>"AllQueryArguments": {}</c> 
     /// </para>
     /// </summary>
     public partial class AllQueryArguments

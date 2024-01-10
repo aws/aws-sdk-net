@@ -91,7 +91,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property NetRISavings. 
         /// <para>
         /// How much you saved due to purchasing and utilizing reservation. Amazon Web Services
-        /// calculates this by subtracting <code>TotalAmortizedFee</code> from <code>OnDemandCostOfRIHoursUsed</code>.
+        /// calculates this by subtracting <c>TotalAmortizedFee</c> from <c>OnDemandCostOfRIHoursUsed</c>.
         /// </para>
         /// </summary>
         public string NetRISavings

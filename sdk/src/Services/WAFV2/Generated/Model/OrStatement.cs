@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// A logical rule statement used to combine other rule statements with OR logic. You
-    /// provide more than one <a>Statement</a> within the <code>OrStatement</code>.
+    /// provide more than one <a>Statement</a> within the <c>OrStatement</c>.
     /// </summary>
     public partial class OrStatement
     {

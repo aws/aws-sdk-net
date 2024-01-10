@@ -126,8 +126,8 @@ namespace Amazon.ManagedGrafana
         /// 
         ///  
         /// <para>
-        /// Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead, use
-        /// <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.
+        /// Don't use <c>CreateWorkspace</c> to modify an existing workspace. Instead, use <a
+        /// href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspace service method.</param>
@@ -163,8 +163,8 @@ namespace Amazon.ManagedGrafana
         /// 
         ///  
         /// <para>
-        /// Don't use <code>CreateWorkspace</code> to modify an existing workspace. Instead, use
-        /// <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.
+        /// Don't use <c>CreateWorkspace</c> to modify an existing workspace. Instead, use <a
+        /// href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdateWorkspace.html">UpdateWorkspace</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWorkspace service method.</param>
@@ -630,12 +630,11 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Lists the users and groups who have the Grafana <code>Admin</code> and <code>Editor</code>
-        /// roles in this workspace. If you use this operation without specifying <code>userId</code>
-        /// or <code>groupId</code>, the operation returns the roles of all users and groups.
-        /// If you specify a <code>userId</code> or a <code>groupId</code>, only the roles for
-        /// that user or group are returned. If you do this, you can specify only one <code>userId</code>
-        /// or one <code>groupId</code>.
+        /// Lists the users and groups who have the Grafana <c>Admin</c> and <c>Editor</c> roles
+        /// in this workspace. If you use this operation without specifying <c>userId</c> or <c>groupId</c>,
+        /// the operation returns the roles of all users and groups. If you specify a <c>userId</c>
+        /// or a <c>groupId</c>, only the roles for that user or group are returned. If you do
+        /// this, you can specify only one <c>userId</c> or one <c>groupId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
         /// 
@@ -661,12 +660,11 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Lists the users and groups who have the Grafana <code>Admin</code> and <code>Editor</code>
-        /// roles in this workspace. If you use this operation without specifying <code>userId</code>
-        /// or <code>groupId</code>, the operation returns the roles of all users and groups.
-        /// If you specify a <code>userId</code> or a <code>groupId</code>, only the roles for
-        /// that user or group are returned. If you do this, you can specify only one <code>userId</code>
-        /// or one <code>groupId</code>.
+        /// Lists the users and groups who have the Grafana <c>Admin</c> and <c>Editor</c> roles
+        /// in this workspace. If you use this operation without specifying <c>userId</c> or <c>groupId</c>,
+        /// the operation returns the roles of all users and groups. If you specify a <c>userId</c>
+        /// or a <c>groupId</c>, only the roles for that user or group are returned. If you do
+        /// this, you can specify only one <c>userId</c> or one <c>groupId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPermissions service method.</param>
         /// <param name="cancellationToken">
@@ -698,8 +696,8 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// The <code>ListTagsForResource</code> operation returns the tags that are associated
-        /// with the Amazon Managed Service for Grafana resource specified by the <code>resourceArn</code>.
+        /// The <c>ListTagsForResource</c> operation returns the tags that are associated with
+        /// the Amazon Managed Service for Grafana resource specified by the <c>resourceArn</c>.
         /// Currently, the only resource that can be tagged is a workspace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -726,8 +724,8 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// The <code>ListTagsForResource</code> operation returns the tags that are associated
-        /// with the Amazon Managed Service for Grafana resource specified by the <code>resourceArn</code>.
+        /// The <c>ListTagsForResource</c> operation returns the tags that are associated with
+        /// the Amazon Managed Service for Grafana resource specified by the <c>resourceArn</c>.
         /// Currently, the only resource that can be tagged is a workspace.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -760,7 +758,7 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>.
+        /// Lists available versions of Grafana. These are available when calling <c>CreateWorkspace</c>.
         /// Optionally, include a workspace to list the versions to which it can be upgraded.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
@@ -787,7 +785,7 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>.
+        /// Lists available versions of Grafana. These are available when calling <c>CreateWorkspace</c>.
         /// Optionally, include a workspace to list the versions to which it can be upgraded.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVersions service method.</param>
@@ -868,8 +866,8 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// The <code>TagResource</code> operation associates tags with an Amazon Managed Grafana
-        /// resource. Currently, the only resource that can be tagged is workspaces. 
+        /// The <c>TagResource</c> operation associates tags with an Amazon Managed Grafana resource.
+        /// Currently, the only resource that can be tagged is workspaces. 
         /// 
         ///  
         /// <para>
@@ -903,8 +901,8 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// The <code>TagResource</code> operation associates tags with an Amazon Managed Grafana
-        /// resource. Currently, the only resource that can be tagged is workspaces. 
+        /// The <c>TagResource</c> operation associates tags with an Amazon Managed Grafana resource.
+        /// Currently, the only resource that can be tagged is workspaces. 
         /// 
         ///  
         /// <para>
@@ -944,8 +942,8 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// The <code>UntagResource</code> operation removes the association of the tag with the
-        /// Amazon Managed Grafana resource.
+        /// The <c>UntagResource</c> operation removes the association of the tag with the Amazon
+        /// Managed Grafana resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -971,8 +969,8 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// The <code>UntagResource</code> operation removes the association of the tag with the
-        /// Amazon Managed Grafana resource.
+        /// The <c>UntagResource</c> operation removes the association of the tag with the Amazon
+        /// Managed Grafana resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">
@@ -1004,7 +1002,7 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Updates which users in a workspace have the Grafana <code>Admin</code> or <code>Editor</code>
+        /// Updates which users in a workspace have the Grafana <c>Admin</c> or <c>Editor</c>
         /// roles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePermissions service method.</param>
@@ -1031,7 +1029,7 @@ namespace Amazon.ManagedGrafana
 
 
         /// <summary>
-        /// Updates which users in a workspace have the Grafana <code>Admin</code> or <code>Editor</code>
+        /// Updates which users in a workspace have the Grafana <c>Admin</c> or <c>Editor</c>
         /// roles.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePermissions service method.</param>
@@ -1074,8 +1072,8 @@ namespace Amazon.ManagedGrafana
         /// </para>
         ///  
         /// <para>
-        /// To modify which users in the workspace have the <code>Admin</code> and <code>Editor</code>
-        /// Grafana roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.
+        /// To modify which users in the workspace have the <c>Admin</c> and <c>Editor</c> Grafana
+        /// roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspace service method.</param>
@@ -1115,8 +1113,8 @@ namespace Amazon.ManagedGrafana
         /// </para>
         ///  
         /// <para>
-        /// To modify which users in the workspace have the <code>Admin</code> and <code>Editor</code>
-        /// Grafana roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.
+        /// To modify which users in the workspace have the <c>Admin</c> and <c>Editor</c> Grafana
+        /// roles, use <a href="https://docs.aws.amazon.com/grafana/latest/APIReference/API_UpdatePermissions.html">UpdatePermissions</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkspace service method.</param>
@@ -1154,8 +1152,8 @@ namespace Amazon.ManagedGrafana
         /// <summary>
         /// Use this operation to define the identity provider (IdP) that this workspace authenticates
         /// users from, using SAML. You can also map SAML assertion attributes to workspace user
-        /// information and define which groups in the assertion attribute are to have the <code>Admin</code>
-        /// and <code>Editor</code> roles in the workspace.
+        /// information and define which groups in the assertion attribute are to have the <c>Admin</c>
+        /// and <c>Editor</c> roles in the workspace.
         /// 
         ///  <note> 
         /// <para>
@@ -1193,8 +1191,8 @@ namespace Amazon.ManagedGrafana
         /// <summary>
         /// Use this operation to define the identity provider (IdP) that this workspace authenticates
         /// users from, using SAML. You can also map SAML assertion attributes to workspace user
-        /// information and define which groups in the assertion attribute are to have the <code>Admin</code>
-        /// and <code>Editor</code> roles in the workspace.
+        /// information and define which groups in the assertion attribute are to have the <c>Admin</c>
+        /// and <c>Editor</c> roles in the workspace.
         /// 
         ///  <note> 
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Each step type has its own <code>StepDetails</code> structure.
+    /// Each step type has its own <c>StepDetails</c> structure.
     /// </summary>
     public partial class CustomStepDetails
     {
@@ -65,13 +65,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To use the previous file as the input, enter <code>${previous.file}</code>. In this
-        /// case, this workflow step uses the output file from the previous workflow step as input.
+        /// To use the previous file as the input, enter <c>${previous.file}</c>. In this case,
+        /// this workflow step uses the output file from the previous workflow step as input.
         /// This is the default value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
+        /// To use the originally uploaded file location as input for this step, enter <c>${original.file}</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

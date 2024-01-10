@@ -78,8 +78,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ReadOnly. 
         /// <para>
-        /// If this value is <code>true</code>, the container has read-only access to the volume.
-        /// Otherwise, the container can write to the volume. The default value is <code>false</code>.
+        /// If this value is <c>true</c>, the container has read-only access to the volume. Otherwise,
+        /// the container can write to the volume. The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool ReadOnly

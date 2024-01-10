@@ -45,8 +45,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter that specifies the maximum number of results to return. You
-        /// can use use <code>nextToken</code> to get the next page of results. The default is
-        /// 10.
+        /// can use use <c>nextToken</c> to get the next page of results. The default is 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -65,8 +64,8 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListLifecyclePolicies</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListLifecyclePolicies</code>
+        /// If your initial <c>ListLifecyclePolicies</c> operation returns a <c>nextToken</c>,
+        /// you can include the returned <c>nextToken</c> in subsequent <c>ListLifecyclePolicies</c>
         /// operations, which returns results in the next page.
         /// </para>
         /// </summary>
@@ -86,7 +85,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property Resources. 
         /// <para>
         /// Resource filters that policies can apply to. Currently, the only supported resource
-        /// type is <code>index</code>.
+        /// type is <c>index</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

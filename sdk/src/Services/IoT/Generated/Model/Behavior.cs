@@ -43,7 +43,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Criteria. 
         /// <para>
-        /// The criteria that determine if a device is behaving normally in regard to the <code>metric</code>.
+        /// The criteria that determine if a device is behaving normally in regard to the <c>metric</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -103,7 +103,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property MetricDimension. 
         /// <para>
-        /// The dimension for a metric in your behavior. For example, using a <code>TOPIC_FILTER</code>
+        /// The dimension for a metric in your behavior. For example, using a <c>TOPIC_FILTER</c>
         /// dimension, you can narrow down the scope of the metric to only MQTT topics where the
         /// name matches the pattern specified in the dimension. This can't be used with custom
         /// metrics.

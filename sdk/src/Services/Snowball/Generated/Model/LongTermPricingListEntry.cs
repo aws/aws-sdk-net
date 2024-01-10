@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Each <code>LongTermPricingListEntry</code> object contains information about a long-term
+    /// Each <c>LongTermPricingListEntry</c> object contains information about a long-term
     /// pricing type.
     /// </summary>
     public partial class LongTermPricingListEntry
@@ -67,8 +67,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property IsLongTermPricingAutoRenew. 
         /// <para>
-        /// If set to <code>true</code>, specifies that the current long-term pricing type for
-        /// the device should be automatically renewed before the long-term pricing contract expires.
+        /// If set to <c>true</c>, specifies that the current long-term pricing type for the device
+        /// should be automatically renewed before the long-term pricing contract expires.
         /// </para>
         /// </summary>
         public bool IsLongTermPricingAutoRenew

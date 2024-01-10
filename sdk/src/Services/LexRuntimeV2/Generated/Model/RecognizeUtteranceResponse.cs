@@ -49,8 +49,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// <para>
         /// The prompt or statement to send to the user. This is based on the bot configuration
         /// and context. For example, if Amazon Lex V2 did not understand the user intent, it
-        /// sends the <code>clarificationPrompt</code> configured for the bot. If the intent requires
-        /// confirmation before taking the fulfillment action, it sends the <code>confirmationPrompt</code>.
+        /// sends the <c>clarificationPrompt</c> configured for the bot. If the intent requires
+        /// confirmation before taking the fulfillment action, it sends the <c>confirmationPrompt</c>.
         /// Another example: Suppose that the Lambda function successfully fulfilled the intent,
         /// and sent a message to convey to the user. Then Amazon Lex V2 sends that message in
         /// the response.
@@ -71,7 +71,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// Content type as specified in the <code>responseContentType</code> in the request.
+        /// Content type as specified in the <c>responseContentType</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -114,14 +114,14 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the input was an audio stream, the <code>inputTranscript</code> field contains
-        /// the text extracted from the audio stream. This is the text that is actually processed
-        /// to recognize intents and slot values. You can use this information to determine if
-        /// Amazon Lex V2 is correctly processing the audio that you send.
+        /// If the input was an audio stream, the <c>inputTranscript</c> field contains the text
+        /// extracted from the audio stream. This is the text that is actually processed to recognize
+        /// intents and slot values. You can use this information to determine if Amazon Lex V2
+        /// is correctly processing the audio that you send.
         /// </para>
         ///  
         /// <para>
-        /// The <code>inputTranscript</code> field is compressed with gzip and then base64 encoded.
+        /// The <c>inputTranscript</c> field is compressed with gzip and then base64 encoded.
         /// Before you can use the contents of the field, you must decode and decompress the contents.
         /// See the example for a simple function to decode and decompress the contents.
         /// </para>
@@ -152,7 +152,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>interpretations</code> field is compressed with gzip and then base64 encoded.
+        /// The <c>interpretations</c> field is compressed with gzip and then base64 encoded.
         /// Before you can use the contents of the field, you must decode and decompress the contents.
         /// See the example for a simple function to decode and decompress the contents.
         /// </para>
@@ -179,7 +179,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>messages</code> field is compressed with gzip and then base64 encoded. Before
+        /// The <c>messages</c> field is compressed with gzip and then base64 encoded. Before
         /// you can use the contents of the field, you must decode and decompress the contents.
         /// See the example for a simple function to decode and decompress the contents.
         /// </para>
@@ -223,7 +223,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>requestAttributes</code> field is compressed with gzip and then base64 encoded.
+        /// The <c>requestAttributes</c> field is compressed with gzip and then base64 encoded.
         /// Before you can use the contents of the field, you must decode and decompress the contents.
         /// </para>
         /// </summary>
@@ -271,8 +271,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>sessionState</code> field is compressed with gzip and then base64 encoded.
-        /// Before you can use the contents of the field, you must decode and decompress the contents.
+        /// The <c>sessionState</c> field is compressed with gzip and then base64 encoded. Before
+        /// you can use the contents of the field, you must decode and decompress the contents.
         /// See the example for a simple function to decode and decompress the contents.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The options that determine the presentation of the <code>GaugeChartVisual</code>.
+    /// The options that determine the presentation of the <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class GaugeChartOptions
     {
@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arc. 
         /// <para>
-        /// The arc configuration of a <code>GaugeChartVisual</code>.
+        /// The arc configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public ArcConfiguration Arc
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ArcAxis. 
         /// <para>
-        /// The arc axis configuration of a <code>GaugeChartVisual</code>.
+        /// The arc axis configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public ArcAxisConfiguration ArcAxis
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Comparison. 
         /// <para>
-        /// The comparison configuration of a <code>GaugeChartVisual</code>.
+        /// The comparison configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public ComparisonConfiguration Comparison

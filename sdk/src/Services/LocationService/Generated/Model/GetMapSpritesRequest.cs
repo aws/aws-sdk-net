@@ -47,11 +47,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>sprites.png</code> 
+        ///  <c>sprites.png</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sprites@2x.png</code> for high pixel density displays
+        ///  <c>sprites@2x.png</c> for high pixel density displays
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -59,11 +59,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>sprites.json</code> 
+        ///  <c>sprites.json</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sprites@2x.json</code> for high pixel density displays
+        ///  <c>sprites@2x.json</c> for high pixel density displays
         /// </para>
         ///  </li> </ul>
         /// </summary>

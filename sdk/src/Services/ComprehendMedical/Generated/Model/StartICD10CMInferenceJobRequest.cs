@@ -31,8 +31,8 @@ namespace Amazon.ComprehendMedical.Model
     /// <summary>
     /// Container for the parameters to the StartICD10CMInferenceJob operation.
     /// Starts an asynchronous job to detect medical conditions and link them to the ICD-10-CM
-    /// ontology. Use the <code>DescribeICD10CMInferenceJob</code> operation to track the
-    /// status of a job.
+    /// ontology. Use the <c>DescribeICD10CMInferenceJob</c> operation to track the status
+    /// of a job.
     /// </summary>
     public partial class StartICD10CMInferenceJobRequest : AmazonComprehendMedicalRequest
     {

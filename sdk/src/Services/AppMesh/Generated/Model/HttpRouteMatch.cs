@@ -119,11 +119,11 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// Specifies the path to match requests with. This parameter must always start with <code>/</code>,
+        /// Specifies the path to match requests with. This parameter must always start with <c>/</c>,
         /// which by itself matches all requests to the virtual service name. You can also match
-        /// for path-based routing of requests. For example, if your virtual service name is <code>my-service.local</code>
-        /// and you want the route to match requests to <code>my-service.local/metrics</code>,
-        /// your prefix should be <code>/metrics</code>.
+        /// for path-based routing of requests. For example, if your virtual service name is <c>my-service.local</c>
+        /// and you want the route to match requests to <c>my-service.local/metrics</c>, your
+        /// prefix should be <c>/metrics</c>.
         /// </para>
         /// </summary>
         public string Prefix

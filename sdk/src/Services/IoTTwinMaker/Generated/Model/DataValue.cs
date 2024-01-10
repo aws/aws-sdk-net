@@ -156,7 +156,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property MapValue. 
         /// <para>
-        /// An object that maps strings to multiple <code>DataValue</code> objects.
+        /// An object that maps strings to multiple <c>DataValue</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

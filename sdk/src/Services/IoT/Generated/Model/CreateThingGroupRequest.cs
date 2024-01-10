@@ -39,8 +39,8 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    /// If the <code>ThingGroup</code> that you create has the exact same attributes as an
-    /// existing <code>ThingGroup</code>, you will get a 200 success response. 
+    /// If the <c>ThingGroup</c> that you create has the exact same attributes as an existing
+    /// <c>ThingGroup</c>, you will get a 200 success response. 
     /// </para>
     ///  </note> 
     /// <para>

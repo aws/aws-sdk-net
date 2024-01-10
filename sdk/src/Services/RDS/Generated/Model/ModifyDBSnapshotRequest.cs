@@ -91,23 +91,23 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>19.0.0.0.ru-2022-01.rur-2022-01.r1</code> (supported for 12.2.0.1 DB snapshots)
+        ///  <c>19.0.0.0.ru-2022-01.rur-2022-01.r1</c> (supported for 12.2.0.1 DB snapshots)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>19.0.0.0.ru-2022-07.rur-2022-07.r1</code> (supported for 12.1.0.2 DB snapshots)
+        ///  <c>19.0.0.0.ru-2022-07.rur-2022-07.r1</c> (supported for 12.1.0.2 DB snapshots)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>12.1.0.2.v8</code> (supported for 12.1.0.1 DB snapshots)
+        ///  <c>12.1.0.2.v8</c> (supported for 12.1.0.1 DB snapshots)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>11.2.0.4.v12</code> (supported for 11.2.0.2 DB snapshots)
+        ///  <c>11.2.0.4.v12</c> (supported for 11.2.0.2 DB snapshots)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>11.2.0.4.v11</code> (supported for 11.2.0.3 DB snapshots)
+        ///  <c>11.2.0.4.v11</c> (supported for 11.2.0.3 DB snapshots)
         /// </para>
         ///  </li> </ul> 
         /// <para>

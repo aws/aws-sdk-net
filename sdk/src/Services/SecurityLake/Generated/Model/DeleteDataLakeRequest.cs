@@ -39,9 +39,9 @@ namespace Amazon.SecurityLake.Model
     /// 
     ///  
     /// <para>
-    /// The <code>DeleteDataLake</code> operation does not delete the data that is stored
-    /// in your Amazon S3 bucket, which is owned by your Amazon Web Services account. For
-    /// more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
+    /// The <c>DeleteDataLake</c> operation does not delete the data that is stored in your
+    /// Amazon S3 bucket, which is owned by your Amazon Web Services account. For more information,
+    /// see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
     /// Security Lake User Guide</a>.
     /// </para>
     /// </summary>

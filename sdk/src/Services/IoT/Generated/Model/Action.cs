@@ -155,8 +155,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Elasticsearch</code> action can only be used by existing rule actions. To
-        /// create a new rule action or to update an existing rule action, use the <code>OpenSearch</code>
+        /// The <c>Elasticsearch</c> action can only be used by existing rule actions. To create
+        /// a new rule action or to update an existing rule action, use the <c>OpenSearch</c>
         /// rule action instead. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_OpenSearchAction.html">OpenSearchAction</a>.
         /// </para>
         ///  </note>

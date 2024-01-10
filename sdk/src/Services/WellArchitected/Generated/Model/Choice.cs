@@ -47,8 +47,8 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         ///  
         /// <para>
-        /// A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
-        /// one of type <code>IMPROVEMENT_PLAN</code>, or both.
+        /// A choice can have up to two additional resources: one of type <c>HELPFUL_RESOURCE</c>,
+        /// one of type <c>IMPROVEMENT_PLAN</c>, or both.
         /// </para>
         /// </summary>
         public List<AdditionalResources> AdditionalResources

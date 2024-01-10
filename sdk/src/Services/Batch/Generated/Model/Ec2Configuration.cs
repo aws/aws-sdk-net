@@ -30,8 +30,8 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Provides information used to select Amazon Machine Images (AMIs) for instances in
-    /// the compute environment. If <code>Ec2Configuration</code> isn't specified, the default
-    /// is <code>ECS_AL2</code> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+    /// the compute environment. If <c>Ec2Configuration</c> isn't specified, the default is
+    /// <c>ECS_AL2</c> (<a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
     /// Linux 2</a>).
     /// 
     ///  <note> 
@@ -50,7 +50,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ImageIdOverride. 
         /// <para>
         /// The AMI ID used for instances launched in the compute environment that match the image
-        /// type. This setting overrides the <code>imageId</code> set in the <code>computeResource</code>
+        /// type. This setting overrides the <c>imageId</c> set in the <c>computeResource</c>
         /// object.
         /// </para>
         ///  <note> 
@@ -102,13 +102,13 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property ImageType. 
         /// <para>
         /// The image type to match with the instance type to select an AMI. The supported values
-        /// are different for <code>ECS</code> and <code>EKS</code> resources.
+        /// are different for <c>ECS</c> and <c>EKS</c> resources.
         /// </para>
         ///  <dl> <dt>ECS</dt> <dd> 
         /// <para>
-        /// If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
-        /// ECS-optimized Amazon Linux 2 AMI</a> (<code>ECS_AL2</code>) is used. If a new image
-        /// type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code>
+        /// If the <c>imageIdOverride</c> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#al2ami">Amazon
+        /// ECS-optimized Amazon Linux 2 AMI</a> (<c>ECS_AL2</c>) is used. If a new image type
+        /// is specified in an update, but neither an <c>imageId</c> nor a <c>imageIdOverride</c>
         /// parameter is specified, then the latest Amazon ECS optimized AMI for that image type
         /// that's supported by Batch is used.
         /// </para>
@@ -120,9 +120,9 @@ namespace Amazon.Batch.Model
         ///  </dd> <dt>ECS_AL2_NVIDIA</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#gpuami">Amazon
-        /// Linux 2 (GPU)</a>: Default for all GPU instance families (for example <code>P4</code>
-        /// and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based
-        /// instance types.
+        /// Linux 2 (GPU)</a>: Default for all GPU instance families (for example <c>P4</c> and
+        /// <c>G4</c>) and can be used for all non Amazon Web Services Graviton-based instance
+        /// types.
         /// </para>
         ///  </dd> <dt>ECS_AL1</dt> <dd> 
         /// <para>
@@ -132,9 +132,9 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </dd> </dl> </dd> <dt>EKS</dt> <dd> 
         /// <para>
-        /// If the <code>imageIdOverride</code> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
-        /// EKS-optimized Amazon Linux AMI</a> (<code>EKS_AL2</code>) is used. If a new image
-        /// type is specified in an update, but neither an <code>imageId</code> nor a <code>imageIdOverride</code>
+        /// If the <c>imageIdOverride</c> parameter isn't specified, then a recent <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
+        /// EKS-optimized Amazon Linux AMI</a> (<c>EKS_AL2</c>) is used. If a new image type is
+        /// specified in an update, but neither an <c>imageId</c> nor a <c>imageIdOverride</c>
         /// parameter is specified, then the latest Amazon EKS optimized AMI for that image type
         /// that Batch supports is used.
         /// </para>
@@ -146,9 +146,9 @@ namespace Amazon.Batch.Model
         ///  </dd> <dt>EKS_AL2_NVIDIA</dt> <dd> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-optimized-ami.html">Amazon
-        /// Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <code>P4</code>
-        /// and <code>G4</code>) and can be used for all non Amazon Web Services Graviton-based
-        /// instance types.
+        /// Linux 2 (accelerated)</a>: Default for all GPU instance families (for example, <c>P4</c>
+        /// and <c>G4</c>) and can be used for all non Amazon Web Services Graviton-based instance
+        /// types.
         /// </para>
         ///  </dd> </dl> </dd> </dl>
         /// </summary>

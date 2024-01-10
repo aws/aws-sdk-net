@@ -91,12 +91,12 @@ namespace Amazon.CloudFront.Model
         ///  
         /// <para>
         /// If you want end users to be able to access objects using either the CloudFront URL
-        /// or the Amazon S3 URL, specify an empty <code>OriginAccessIdentity</code> element.
+        /// or the Amazon S3 URL, specify an empty <c>OriginAccessIdentity</c> element.
         /// </para>
         ///  
         /// <para>
         /// To delete the origin access identity from an existing distribution, update the distribution
-        /// configuration and include an empty <code>OriginAccessIdentity</code> element.
+        /// configuration and include an empty <c>OriginAccessIdentity</c> element.
         /// </para>
         ///  
         /// <para>

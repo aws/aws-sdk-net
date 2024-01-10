@@ -96,7 +96,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If a configuration hasn't been set for a specified extension, CloudFormation returns
-        /// <code>{}</code>.
+        /// <c>{}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=204800)]
@@ -138,7 +138,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If a configuration hasn't been set for a specified extension, CloudFormation returns
-        /// <code>null</code>.
+        /// <c>null</c>.
         /// </para>
         /// </summary>
         public DateTime LastUpdated

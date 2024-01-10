@@ -92,8 +92,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property JunctionPath. 
         /// <para>
         /// Specifies the location in the SVM's namespace where the volume is mounted. This parameter
-        /// is required. The <code>JunctionPath</code> must have a leading forward slash, such
-        /// as <code>/vol3</code>.
+        /// is required. The <c>JunctionPath</c> must have a leading forward slash, such as <c>/vol3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -116,12 +115,12 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RW</code> specifies a read/write volume. <code>RW</code> is the default.
+        ///  <c>RW</c> specifies a read/write volume. <c>RW</c> is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DP</code> specifies a data-protection volume. A <code>DP</code> volume is read-only
-        /// and can be used as the destination of a NetApp SnapMirror relationship.
+        ///  <c>DP</c> specifies a data-protection volume. A <c>DP</c> volume is read-only and
+        /// can be used as the destination of a NetApp SnapMirror relationship.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -153,19 +152,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority
-        /// of users are NFS clients, and an application accessing the data uses a UNIX user as
-        /// the service account. 
+        ///  <c>UNIX</c> if the file system is managed by a UNIX administrator, the majority of
+        /// users are NFS clients, and an application accessing the data uses a UNIX user as the
+        /// service account. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NTFS</code> if the file system is managed by a Windows administrator, the majority
+        ///  <c>NTFS</c> if the file system is managed by a Windows administrator, the majority
         /// of users are SMB clients, and an application accessing the data uses a Windows user
         /// as the service account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators
+        ///  <c>MIXED</c> if the file system is managed by both UNIX and Windows administrators
         /// and users consist of both NFS and SMB clients.
         /// </para>
         ///  </li> </ul>
@@ -246,19 +245,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>default</code>: This is the default policy. A maximum of six hourly snapshots
-        /// taken five minutes past the hour. A maximum of two daily snapshots taken Monday through
+        ///  <c>default</c>: This is the default policy. A maximum of six hourly snapshots taken
+        /// five minutes past the hour. A maximum of two daily snapshots taken Monday through
         /// Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every
         /// Sunday at 15 minutes after midnight.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>default-1weekly</code>: This policy is the same as the <code>default</code>
-        /// policy except that it only retains one snapshot from the weekly schedule.
+        ///  <c>default-1weekly</c>: This policy is the same as the <c>default</c> policy except
+        /// that it only retains one snapshot from the weekly schedule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code>: This policy does not take any snapshots. This policy can be assigned
+        ///  <c>none</c>: This policy does not take any snapshots. This policy can be assigned
         /// to volumes to prevent automatic snapshots from being taken.
         /// </para>
         ///  </li> </ul> 

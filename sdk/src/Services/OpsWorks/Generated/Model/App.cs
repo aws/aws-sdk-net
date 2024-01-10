@@ -69,7 +69,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AppSource. 
         /// <para>
-        /// A <code>Source</code> object that describes the app repository.
+        /// A <c>Source</c> object that describes the app repository.
         /// </para>
         /// </summary>
         public Source AppSource
@@ -159,8 +159,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Domains. 
         /// <para>
-        /// The app vhost settings with multiple domains separated by commas. For example: <code>'www.example.com,
-        /// example.com'</code> 
+        /// The app vhost settings with multiple domains separated by commas. For example: <c>'www.example.com,
+        /// example.com'</c> 
         /// </para>
         /// </summary>
         public List<string> Domains
@@ -196,7 +196,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Environment. 
         /// <para>
-        /// An array of <code>EnvironmentVariable</code> objects that specify environment variables
+        /// An array of <c>EnvironmentVariable</c> objects that specify environment variables
         /// to be associated with the app. After you deploy the app, these variables are defined
         /// on the associated app server instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
         /// Environment Variables</a>. 
@@ -262,7 +262,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property SslConfiguration. 
         /// <para>
-        /// An <code>SslConfiguration</code> object with the SSL configuration.
+        /// An <c>SslConfiguration</c> object with the SSL configuration.
         /// </para>
         /// </summary>
         public SslConfiguration SslConfiguration

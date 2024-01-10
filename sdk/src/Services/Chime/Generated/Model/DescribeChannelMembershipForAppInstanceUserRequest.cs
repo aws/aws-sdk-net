@@ -30,11 +30,11 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeChannelMembershipForAppInstanceUser operation.
-    /// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+    /// Returns the details of a channel based on the membership of the specified <c>AppInstanceUser</c>.
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
     /// of the user that makes the API call as the value in the header.
     /// </para>
     ///  </note> <important> 
@@ -98,7 +98,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The <c>AppInstanceUserArn</c> of the user that makes the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

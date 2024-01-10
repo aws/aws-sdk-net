@@ -43,24 +43,24 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The groups that have access to the Amazon EBS volume snapshot. If the value <code>all</code>
+        /// The groups that have access to the Amazon EBS volume snapshot. If the value <c>all</c>
         /// is specified, then the Amazon EBS volume snapshot is public.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// If the configuration is for an existing Amazon EBS volume snapshot and you do not
-        /// specify the <code>groups</code>, then the access preview uses the existing shared
-        /// <code>groups</code> for the snapshot.
+        /// specify the <c>groups</c>, then the access preview uses the existing shared <c>groups</c>
+        /// for the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the access preview is for a new resource and you do not specify the <code>groups</code>,
-        /// then the access preview considers the snapshot without any <code>groups</code>.
+        /// If the access preview is for a new resource and you do not specify the <c>groups</c>,
+        /// then the access preview considers the snapshot without any <c>groups</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To propose deletion of existing shared <code>groups</code>, you can specify an empty
-        /// list for <code>groups</code>.
+        /// To propose deletion of existing shared <c>groups</c>, you can specify an empty list
+        /// for <c>groups</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -85,12 +85,12 @@ namespace Amazon.AccessAnalyzer.Model
         ///  <ul> <li> 
         /// <para>
         /// If the configuration is for an existing Amazon EBS volume snapshot and you do not
-        /// specify the <code>kmsKeyId</code>, or you specify an empty string, then the access
-        /// preview uses the existing <code>kmsKeyId</code> of the snapshot.
+        /// specify the <c>kmsKeyId</c>, or you specify an empty string, then the access preview
+        /// uses the existing <c>kmsKeyId</c> of the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the access preview is for a new resource and you do not specify the <code>kmsKeyId</code>,
+        /// If the access preview is for a new resource and you do not specify the <c>kmsKeyId</c>,
         /// the access preview considers the snapshot as unencrypted.
         /// </para>
         ///  </li> </ul>
@@ -116,18 +116,18 @@ namespace Amazon.AccessAnalyzer.Model
         ///  <ul> <li> 
         /// <para>
         /// If the configuration is for an existing Amazon EBS volume snapshot and you do not
-        /// specify the <code>userIds</code>, then the access preview uses the existing shared
-        /// <code>userIds</code> for the snapshot.
+        /// specify the <c>userIds</c>, then the access preview uses the existing shared <c>userIds</c>
+        /// for the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the access preview is for a new resource and you do not specify the <code>userIds</code>,
-        /// then the access preview considers the snapshot without any <code>userIds</code>.
+        /// If the access preview is for a new resource and you do not specify the <c>userIds</c>,
+        /// then the access preview considers the snapshot without any <c>userIds</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To propose deletion of existing shared <code>accountIds</code>, you can specify an
-        /// empty list for <code>userIds</code>.
+        /// To propose deletion of existing shared <c>accountIds</c>, you can specify an empty
+        /// list for <c>userIds</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

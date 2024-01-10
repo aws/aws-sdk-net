@@ -58,8 +58,8 @@ namespace Amazon.IoT.Model
         ///  
         /// <para>
         /// A list of metrics whose data is retained (stored). By default, data is retained for
-        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.
+        /// any metric used in the profile's <c>behaviors</c>, but it is also retained for any
+        /// metric specified here. Can be used with custom metrics; cannot be used with dimensions.
         /// </para>
         /// </summary>
         [Obsolete("Use additionalMetricsToRetainV2.")]
@@ -79,8 +79,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AdditionalMetricsToRetainV2. 
         /// <para>
         /// A list of metrics whose data is retained (stored). By default, data is retained for
-        /// any metric used in the profile's <code>behaviors</code>, but it is also retained for
-        /// any metric specified here. Can be used with custom metrics; cannot be used with dimensions.
+        /// any metric used in the profile's <c>behaviors</c>, but it is also retained for any
+        /// metric specified here. Can be used with custom metrics; cannot be used with dimensions.
         /// </para>
         /// </summary>
         public List<MetricToRetain> AdditionalMetricsToRetainV2

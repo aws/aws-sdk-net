@@ -33,10 +33,10 @@ namespace Amazon.AutoScaling.Model
     /// <note> 
     /// <para>
     /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
-    /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
-    /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancerTargetGroups</code>.
-    /// You can use both the original <code>DescribeLoadBalancerTargetGroups</code> API operation
-    /// and <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+    /// multiple traffic sources types. We recommend using <c>DetachTrafficSources</c> to
+    /// simplify how you manage traffic sources. However, we continue to support <c>DescribeLoadBalancerTargetGroups</c>.
+    /// You can use both the original <c>DescribeLoadBalancerTargetGroups</c> API operation
+    /// and <c>DescribeTrafficSources</c> on the same Auto Scaling group.
     /// </para>
     ///  </note> 
     /// <para>
@@ -45,23 +45,22 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// To determine the attachment status of the target group, use the <code>State</code>
-    /// element in the response. When you attach a target group to an Auto Scaling group,
-    /// the initial <code>State</code> value is <code>Adding</code>. The state transitions
-    /// to <code>Added</code> after all Auto Scaling instances are registered with the target
-    /// group. If Elastic Load Balancing health checks are enabled for the Auto Scaling group,
-    /// the state transitions to <code>InService</code> after at least one Auto Scaling instance
-    /// passes the health check. When the target group is in the <code>InService</code> state,
-    /// Amazon EC2 Auto Scaling can terminate and replace any instances that are reported
-    /// as unhealthy. If no registered instances pass the health checks, the target group
-    /// doesn't enter the <code>InService</code> state. 
+    /// To determine the attachment status of the target group, use the <c>State</c> element
+    /// in the response. When you attach a target group to an Auto Scaling group, the initial
+    /// <c>State</c> value is <c>Adding</c>. The state transitions to <c>Added</c> after all
+    /// Auto Scaling instances are registered with the target group. If Elastic Load Balancing
+    /// health checks are enabled for the Auto Scaling group, the state transitions to <c>InService</c>
+    /// after at least one Auto Scaling instance passes the health check. When the target
+    /// group is in the <c>InService</c> state, Amazon EC2 Auto Scaling can terminate and
+    /// replace any instances that are reported as unhealthy. If no registered instances pass
+    /// the health checks, the target group doesn't enter the <c>InService</c> state. 
     /// </para>
     ///  
     /// <para>
-    /// Target groups also have an <code>InService</code> state if you attach them in the
-    /// <a>CreateAutoScalingGroup</a> API call. If your target group state is <code>InService</code>,
-    /// but it is not working properly, check the scaling activities by calling <a>DescribeScalingActivities</a>
-    /// and take any corrective actions necessary.
+    /// Target groups also have an <c>InService</c> state if you attach them in the <a>CreateAutoScalingGroup</a>
+    /// API call. If your target group state is <c>InService</c>, but it is not working properly,
+    /// check the scaling activities by calling <a>DescribeScalingActivities</a> and take
+    /// any corrective actions necessary.
     /// </para>
     ///  
     /// <para>
@@ -106,8 +105,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of items to return with this call. The default value is <code>100</code>
-        /// and the maximum value is <code>100</code>.
+        /// The maximum number of items to return with this call. The default value is <c>100</c>
+        /// and the maximum value is <c>100</c>.
         /// </para>
         /// </summary>
         public int MaxRecords

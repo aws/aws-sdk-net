@@ -49,36 +49,36 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use a <code>Resource</code> element with the domain name to limit the action to only
-    /// specified domains.
+    /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+    /// domains.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// Use an <c>Action</c> element to allow or deny permission to call this action.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.
+    /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+    /// keys.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+    ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+    ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+    ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+    /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -96,13 +96,12 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property CloseStatusFilter. 
         /// <para>
         /// If specified, only workflow executions that match this close status are counted. This
-        /// filter has an affect only if <code>executionStatus</code> is specified as <code>CLOSED</code>.
+        /// filter has an affect only if <c>executionStatus</c> is specified as <c>CLOSED</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code>
-        /// and <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-        /// these in a request.
+        ///  <c>closeStatusFilter</c>, <c>executionFilter</c>, <c>typeFilter</c> and <c>tagFilter</c>
+        /// are mutually exclusive. You can specify at most one of these in a request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -126,8 +125,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive.
-        /// You must specify one of these in a request but not both.
+        ///  <c>startTimeFilter</c> and <c>closeTimeFilter</c> are mutually exclusive. You must
+        /// specify one of these in a request but not both.
         /// </para>
         ///  </note>
         /// </summary>
@@ -165,14 +164,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ExecutionFilter. 
         /// <para>
-        /// If specified, only workflow executions matching the <code>WorkflowId</code> in the
-        /// filter are counted.
+        /// If specified, only workflow executions matching the <c>WorkflowId</c> in the filter
+        /// are counted.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code>
-        /// and <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-        /// these in a request.
+        ///  <c>closeStatusFilter</c>, <c>executionFilter</c>, <c>typeFilter</c> and <c>tagFilter</c>
+        /// are mutually exclusive. You can specify at most one of these in a request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -196,8 +194,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>startTimeFilter</code> and <code>closeTimeFilter</code> are mutually exclusive.
-        /// You must specify one of these in a request but not both.
+        ///  <c>startTimeFilter</c> and <c>closeTimeFilter</c> are mutually exclusive. You must
+        /// specify one of these in a request but not both.
         /// </para>
         ///  </note>
         /// </summary>
@@ -220,9 +218,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code>
-        /// and <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-        /// these in a request.
+        ///  <c>closeStatusFilter</c>, <c>executionFilter</c>, <c>typeFilter</c> and <c>tagFilter</c>
+        /// are mutually exclusive. You can specify at most one of these in a request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -245,9 +242,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>closeStatusFilter</code>, <code>executionFilter</code>, <code>typeFilter</code>
-        /// and <code>tagFilter</code> are mutually exclusive. You can specify at most one of
-        /// these in a request.
+        ///  <c>closeStatusFilter</c>, <c>executionFilter</c>, <c>typeFilter</c> and <c>tagFilter</c>
+        /// are mutually exclusive. You can specify at most one of these in a request.
         /// </para>
         ///  </note>
         /// </summary>

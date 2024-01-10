@@ -66,123 +66,120 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity
+        ///  <c>JDBC</c> - Designates a connection to a database through Java Database Connectivity
         /// (JDBC).
         /// </para>
         ///  
         /// <para>
-        ///  <code>JDBC</code> Connections use the following ConnectionParameters.
+        ///  <c>JDBC</c> Connections use the following ConnectionParameters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Required: All of (<code>HOST</code>, <code>PORT</code>, <code>JDBC_ENGINE</code>)
-        /// or <code>JDBC_CONNECTION_URL</code>.
+        /// Required: All of (<c>HOST</c>, <c>PORT</c>, <c>JDBC_ENGINE</c>) or <c>JDBC_CONNECTION_URL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.
+        /// Required: All of (<c>USERNAME</c>, <c>PASSWORD</c>) or <c>SECRET_ID</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optional: <code>JDBC_ENFORCE_SSL</code>, <code>CUSTOM_JDBC_CERT</code>, <code>CUSTOM_JDBC_CERT_STRING</code>,
-        /// <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code>. These parameters are used to configure
-        /// SSL with JDBC.
+        /// Optional: <c>JDBC_ENFORCE_SSL</c>, <c>CUSTOM_JDBC_CERT</c>, <c>CUSTOM_JDBC_CERT_STRING</c>,
+        /// <c>SKIP_CUSTOM_JDBC_CERT_VALIDATION</c>. These parameters are used to configure SSL
+        /// with JDBC.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.
+        ///  <c>KAFKA</c> - Designates a connection to an Apache Kafka streaming platform.
         /// </para>
         ///  
         /// <para>
-        ///  <code>KAFKA</code> Connections use the following ConnectionParameters.
+        ///  <c>KAFKA</c> Connections use the following ConnectionParameters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Required: <code>KAFKA_BOOTSTRAP_SERVERS</code>.
+        /// Required: <c>KAFKA_BOOTSTRAP_SERVERS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optional: <code>KAFKA_SSL_ENABLED</code>, <code>KAFKA_CUSTOM_CERT</code>, <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code>.
-        /// These parameters are used to configure SSL with <code>KAFKA</code>.
+        /// Optional: <c>KAFKA_SSL_ENABLED</c>, <c>KAFKA_CUSTOM_CERT</c>, <c>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</c>.
+        /// These parameters are used to configure SSL with <c>KAFKA</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optional: <code>KAFKA_CLIENT_KEYSTORE</code>, <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code>,
-        /// <code>KAFKA_CLIENT_KEY_PASSWORD</code>, <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code>,
-        /// <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code>. These parameters are used to configure
-        /// TLS client configuration with SSL in <code>KAFKA</code>.
+        /// Optional: <c>KAFKA_CLIENT_KEYSTORE</c>, <c>KAFKA_CLIENT_KEYSTORE_PASSWORD</c>, <c>KAFKA_CLIENT_KEY_PASSWORD</c>,
+        /// <c>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</c>, <c>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</c>.
+        /// These parameters are used to configure TLS client configuration with SSL in <c>KAFKA</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optional: <code>KAFKA_SASL_MECHANISM</code>. Can be specified as <code>SCRAM-SHA-512</code>,
-        /// <code>GSSAPI</code>, or <code>AWS_MSK_IAM</code>.
+        /// Optional: <c>KAFKA_SASL_MECHANISM</c>. Can be specified as <c>SCRAM-SHA-512</c>, <c>GSSAPI</c>,
+        /// or <c>AWS_MSK_IAM</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optional: <code>KAFKA_SASL_SCRAM_USERNAME</code>, <code>KAFKA_SASL_SCRAM_PASSWORD</code>,
-        /// <code>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</code>. These parameters are used to configure
-        /// SASL/SCRAM-SHA-512 authentication with <code>KAFKA</code>.
+        /// Optional: <c>KAFKA_SASL_SCRAM_USERNAME</c>, <c>KAFKA_SASL_SCRAM_PASSWORD</c>, <c>ENCRYPTED_KAFKA_SASL_SCRAM_PASSWORD</c>.
+        /// These parameters are used to configure SASL/SCRAM-SHA-512 authentication with <c>KAFKA</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optional: <code>KAFKA_SASL_GSSAPI_KEYTAB</code>, <code>KAFKA_SASL_GSSAPI_KRB5_CONF</code>,
-        /// <code>KAFKA_SASL_GSSAPI_SERVICE</code>, <code>KAFKA_SASL_GSSAPI_PRINCIPAL</code>.
-        /// These parameters are used to configure SASL/GSSAPI authentication with <code>KAFKA</code>.
+        /// Optional: <c>KAFKA_SASL_GSSAPI_KEYTAB</c>, <c>KAFKA_SASL_GSSAPI_KRB5_CONF</c>, <c>KAFKA_SASL_GSSAPI_SERVICE</c>,
+        /// <c>KAFKA_SASL_GSSAPI_PRINCIPAL</c>. These parameters are used to configure SASL/GSSAPI
+        /// authentication with <c>KAFKA</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+        ///  <c>MONGODB</c> - Designates a connection to a MongoDB document database.
         /// </para>
         ///  
         /// <para>
-        ///  <code>MONGODB</code> Connections use the following ConnectionParameters.
+        ///  <c>MONGODB</c> Connections use the following ConnectionParameters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Required: <code>CONNECTION_URL</code>.
+        /// Required: <c>CONNECTION_URL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Required: All of (<code>USERNAME</code>, <code>PASSWORD</code>) or <code>SECRET_ID</code>.
+        /// Required: All of (<c>USERNAME</c>, <c>PASSWORD</c>) or <c>SECRET_ID</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>NETWORK</code> - Designates a network connection to a data source within an
-        /// Amazon Virtual Private Cloud environment (Amazon VPC).
+        ///  <c>NETWORK</c> - Designates a network connection to a data source within an Amazon
+        /// Virtual Private Cloud environment (Amazon VPC).
         /// </para>
         ///  
         /// <para>
-        ///  <code>NETWORK</code> Connections do not require ConnectionParameters. Instead, provide
+        ///  <c>NETWORK</c> Connections do not require ConnectionParameters. Instead, provide
         /// a PhysicalConnectionRequirements.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased
+        ///  <c>MARKETPLACE</c> - Uses configuration settings contained in a connector purchased
         /// from Amazon Web Services Marketplace to read from and write to data stores that are
         /// not natively supported by Glue.
         /// </para>
         ///  
         /// <para>
-        ///  <code>MARKETPLACE</code> Connections use the following ConnectionParameters.
+        ///  <c>MARKETPLACE</c> Connections use the following ConnectionParameters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Required: <code>CONNECTOR_TYPE</code>, <code>CONNECTOR_URL</code>, <code>CONNECTOR_CLASS_NAME</code>,
-        /// <code>CONNECTION_URL</code>.
+        /// Required: <c>CONNECTOR_TYPE</c>, <c>CONNECTOR_URL</c>, <c>CONNECTOR_CLASS_NAME</c>,
+        /// <c>CONNECTION_URL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Required for <code>JDBC</code> <code>CONNECTOR_TYPE</code> connections: All of (<code>USERNAME</code>,
-        /// <code>PASSWORD</code>) or <code>SECRET_ID</code>.
+        /// Required for <c>JDBC</c> <c>CONNECTOR_TYPE</c> connections: All of (<c>USERNAME</c>,
+        /// <c>PASSWORD</c>) or <c>SECRET_ID</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>CUSTOM</code> - Uses configuration settings contained in a custom connector
-        /// to read from and write to data stores that are not natively supported by Glue.
+        ///  <c>CUSTOM</c> - Uses configuration settings contained in a custom connector to read
+        /// from and write to data stores that are not natively supported by Glue.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>SFTP</code> is not supported.
+        ///  <c>SFTP</c> is not supported.
         /// </para>
         ///  
         /// <para>
@@ -271,7 +268,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property PhysicalConnectionRequirements. 
         /// <para>
         /// A map of physical connection requirements, such as virtual private cloud (VPC) and
-        /// <code>SecurityGroup</code>, that are needed to successfully make this connection.
+        /// <c>SecurityGroup</c>, that are needed to successfully make this connection.
         /// </para>
         /// </summary>
         public PhysicalConnectionRequirements PhysicalConnectionRequirements

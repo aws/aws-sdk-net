@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the specified <code>FileSystemId</code> value doesn't exist in the requester's
+    /// Returned if the specified <c>FileSystemId</c> value doesn't exist in the requester's
     /// Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD

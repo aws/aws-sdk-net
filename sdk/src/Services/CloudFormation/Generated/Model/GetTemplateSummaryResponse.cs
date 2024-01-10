@@ -48,9 +48,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Capabilities. 
         /// <para>
         /// The capabilities found within the template. If your template contains IAM resources,
-        /// you must specify the <code>CAPABILITY_IAM</code> or <code>CAPABILITY_NAMED_IAM</code>
-        /// value for this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a>
-        /// actions with your template; otherwise, those actions return an <code>InsufficientCapabilities</code>
+        /// you must specify the <c>CAPABILITY_IAM</c> or <c>CAPABILITY_NAMED_IAM</c> value for
+        /// this parameter when you use the <a>CreateStack</a> or <a>UpdateStack</a> actions with
+        /// your template; otherwise, those actions return an <c>InsufficientCapabilities</c>
         /// error.
         /// </para>
         ///  
@@ -74,7 +74,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CapabilitiesReason. 
         /// <para>
-        /// The list of resources that generated the values in the <code>Capabilities</code> response
+        /// The list of resources that generated the values in the <c>Capabilities</c> response
         /// element.
         /// </para>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The value that's defined in the <code>Description</code> property of the template.
+        /// The value that's defined in the <c>Description</c> property of the template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -130,7 +130,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The value that's defined for the <code>Metadata</code> property of the template.
+        /// The value that's defined for the <c>Metadata</c> property of the template.
         /// </para>
         /// </summary>
         public string Metadata
@@ -168,8 +168,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// A list of resource identifier summaries that describe the target resources of an import
         /// operation and the properties you can provide during the import to identify the target
-        /// resources. For example, <code>BucketName</code> is a possible identifier property
-        /// for an <code>AWS::S3::Bucket</code> resource.
+        /// resources. For example, <c>BucketName</c> is a possible identifier property for an
+        /// <c>AWS::S3::Bucket</c> resource.
         /// </para>
         /// </summary>
         public List<ResourceIdentifierSummary> ResourceIdentifierSummaries
@@ -188,7 +188,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// A list of all the template resource types that are defined in the template, such as
-        /// <code>AWS::EC2::Instance</code>, <code>AWS::Dynamo::Table</code>, and <code>Custom::MyCustomInstance</code>.
+        /// <c>AWS::EC2::Instance</c>, <c>AWS::Dynamo::Table</c>, and <c>Custom::MyCustomInstance</c>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypes

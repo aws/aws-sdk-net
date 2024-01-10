@@ -33,22 +33,22 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  
     /// <para>
-    ///  <code>OrganizationNotExists</code> (Your organization doesn't exist)
+    ///  <c>OrganizationNotExists</c> (Your organization doesn't exist)
     /// </para>
     ///  
     /// <para>
-    ///  <code>NoPermissions</code> (The system can't locate the service-linked role. This
-    /// role is automatically created when a user creates a resource data sync in Amazon Web
-    /// Services Systems Manager Explorer.)
+    ///  <c>NoPermissions</c> (The system can't locate the service-linked role. This role
+    /// is automatically created when a user creates a resource data sync in Amazon Web Services
+    /// Systems Manager Explorer.)
     /// </para>
     ///  
     /// <para>
-    ///  <code>InvalidOrganizationalUnit</code> (You specified or selected an invalid unit
-    /// in the resource data sync configuration.)
+    ///  <c>InvalidOrganizationalUnit</c> (You specified or selected an invalid unit in the
+    /// resource data sync configuration.)
     /// </para>
     ///  
     /// <para>
-    ///  <code>TrustedAccessDisabled</code> (You disabled Systems Manager access in the organization
+    ///  <c>TrustedAccessDisabled</c> (You disabled Systems Manager access in the organization
     /// in Organizations.)
     /// </para>
     /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AwsOrganizationsSource. 
         /// <para>
-        /// The field name in <code>SyncSource</code> for the <code>ResourceDataSyncAwsOrganizationsSource</code>
+        /// The field name in <c>SyncSource</c> for the <c>ResourceDataSyncAwsOrganizationsSource</c>
         /// type.
         /// </para>
         /// </summary>
@@ -125,8 +125,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SourceRegions. 
         /// <para>
-        /// The <code>SyncSource</code> Amazon Web Services Regions included in the resource data
-        /// sync.
+        /// The <c>SyncSource</c> Amazon Web Services Regions included in the resource data sync.
         /// </para>
         /// </summary>
         public List<string> SourceRegions
@@ -144,9 +143,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The type of data source for the resource data sync. <code>SourceType</code> is either
-        /// <code>AwsOrganizations</code> (if an organization is present in Organizations) or
-        /// <code>singleAccountMultiRegions</code>.
+        /// The type of data source for the resource data sync. <c>SourceType</c> is either <c>AwsOrganizations</c>
+        /// (if an organization is present in Organizations) or <c>singleAccountMultiRegions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -169,21 +167,21 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>OrganizationNotExists</code>: Your organization doesn't exist.
+        ///  <c>OrganizationNotExists</c>: Your organization doesn't exist.
         /// </para>
         ///  
         /// <para>
-        ///  <code>NoPermissions</code>: The system can't locate the service-linked role. This
-        /// role is automatically created when a user creates a resource data sync in Explorer.
+        ///  <c>NoPermissions</c>: The system can't locate the service-linked role. This role
+        /// is automatically created when a user creates a resource data sync in Explorer.
         /// </para>
         ///  
         /// <para>
-        ///  <code>InvalidOrganizationalUnit</code>: You specified or selected an invalid unit
-        /// in the resource data sync configuration.
+        ///  <c>InvalidOrganizationalUnit</c>: You specified or selected an invalid unit in the
+        /// resource data sync configuration.
         /// </para>
         ///  
         /// <para>
-        ///  <code>TrustedAccessDisabled</code>: You disabled Systems Manager access in the organization
+        ///  <c>TrustedAccessDisabled</c>: You disabled Systems Manager access in the organization
         /// in Organizations.
         /// </para>
         /// </summary>

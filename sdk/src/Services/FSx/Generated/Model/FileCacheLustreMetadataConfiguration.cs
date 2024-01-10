@@ -41,7 +41,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property StorageCapacity. 
         /// <para>
         /// The storage capacity of the Lustre MDT (Metadata Target) storage volume in gibibytes
-        /// (GiB). The only supported value is <code>2400</code> GiB.
+        /// (GiB). The only supported value is <c>2400</c> GiB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]

@@ -919,7 +919,7 @@ namespace Amazon.Inspector2
 
         /// <summary>
         /// Creates a filter resource using specified filter criteria. When the filter action
-        /// is set to <code>SUPPRESS</code> this action creates a suppression rule.
+        /// is set to <c>SUPPRESS</c> this action creates a suppression rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// 
@@ -957,7 +957,7 @@ namespace Amazon.Inspector2
 
         /// <summary>
         /// Creates a filter resource using specified filter criteria. When the filter action
-        /// is set to <code>SUPPRESS</code> this action creates a suppression rule.
+        /// is set to <c>SUPPRESS</c> this action creates a suppression rule.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFilter service method.</param>
         /// <param name="cancellationToken">
@@ -1001,9 +1001,9 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Creates a finding report. By default only <code>ACTIVE</code> findings are returned
-        /// in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must
-        /// specify a value for the <code>findingStatus</code> filter criteria.
+        /// Creates a finding report. By default only <c>ACTIVE</c> findings are returned in the
+        /// report. To see <c>SUPRESSED</c> or <c>CLOSED</c> findings you must specify a value
+        /// for the <c>findingStatus</c> filter criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFindingsReport service method.</param>
         /// 
@@ -1037,9 +1037,9 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Creates a finding report. By default only <code>ACTIVE</code> findings are returned
-        /// in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must
-        /// specify a value for the <code>findingStatus</code> filter criteria.
+        /// Creates a finding report. By default only <c>ACTIVE</c> findings are returned in the
+        /// report. To see <c>SUPRESSED</c> or <c>CLOSED</c> findings you must specify a value
+        /// for the <c>findingStatus</c> filter criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFindingsReport service method.</param>
         /// <param name="cancellationToken">
@@ -3263,8 +3263,8 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Updates an encryption key. A <code>ResourceNotFoundException</code> means that an
-        /// AWS owned key is being used for encryption.
+        /// Updates an encryption key. A <c>ResourceNotFoundException</c> means that an AWS owned
+        /// key is being used for encryption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey service method.</param>
         /// 
@@ -3298,8 +3298,8 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Updates an encryption key. A <code>ResourceNotFoundException</code> means that an
-        /// AWS owned key is being used for encryption.
+        /// Updates an encryption key. A <c>ResourceNotFoundException</c> means that an AWS owned
+        /// key is being used for encryption.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEncryptionKey service method.</param>
         /// <param name="cancellationToken">

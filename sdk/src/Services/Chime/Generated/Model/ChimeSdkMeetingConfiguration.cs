@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// The configuration object of the Amazon Chime SDK meeting for a specified media capture
-    /// pipeline. <code>SourceType</code> must be <code>ChimeSdkMeeting</code>.
+    /// pipeline. <c>SourceType</c> must be <c>ChimeSdkMeeting</c>.
     /// </summary>
     public partial class ChimeSdkMeetingConfiguration
     {

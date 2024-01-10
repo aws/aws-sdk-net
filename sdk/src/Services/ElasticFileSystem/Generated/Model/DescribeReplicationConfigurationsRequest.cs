@@ -64,7 +64,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// (Optional) To limit the number of objects returned in a response, you can specify
-        /// the <code>MaxItems</code> parameter. The default value is 100. 
+        /// the <c>MaxItems</c> parameter. The default value is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -83,7 +83,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  <code>NextToken</code> is present if the response is paginated. You can use <code>NextToken</code>
+        ///  <c>NextToken</c> is present if the response is paginated. You can use <c>NextToken</c>
         /// in a subsequent request to fetch the next page of output.
         /// </para>
         /// </summary>

@@ -75,7 +75,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property CompressionType. 
         /// <para>
         /// Specifies how the data is compressed. This is generally not necessary if the data
-        /// has a standard file extension. Possible values are <code>"gzip"</code> and <code>"bzip"</code>).
+        /// has a standard file extension. Possible values are <c>"gzip"</c> and <c>"bzip"</c>).
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -94,9 +94,9 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Escaper. 
         /// <para>
         /// Specifies a character to use for escaping. This option is used only when reading CSV
-        /// files. The default value is <code>none</code>. If enabled, the character which immediately
-        /// follows is used as-is, except for a small set of well-known escapes (<code>\n</code>,
-        /// <code>\r</code>, <code>\t</code>, and <code>\0</code>).
+        /// files. The default value is <c>none</c>. If enabled, the character which immediately
+        /// follows is used as-is, except for a small set of well-known escapes (<c>\n</c>, <c>\r</c>,
+        /// <c>\t</c>, and <c>\0</c>).
         /// </para>
         /// </summary>
         public string Escaper
@@ -135,7 +135,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// Grouping files is turned on by default when the input contains more than 50,000 files.
         /// To turn on grouping with fewer than 50,000 files, set this parameter to "inPartition".
-        /// To disable grouping when there are more than 50,000 files, set this parameter to <code>"none"</code>.
+        /// To disable grouping when there are more than 50,000 files, set this parameter to <c>"none"</c>.
         /// </para>
         /// </summary>
         public string GroupFiles
@@ -154,8 +154,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property GroupSize. 
         /// <para>
         /// The target group size in bytes. The default is computed based on the input data size
-        /// and the size of your cluster. When there are fewer than 50,000 input files, <code>"groupFiles"</code>
-        /// must be set to <code>"inPartition"</code> for this to take effect.
+        /// and the size of your cluster. When there are fewer than 50,000 input files, <c>"groupFiles"</c>
+        /// must be set to <c>"inPartition"</c> for this to take effect.
         /// </para>
         /// </summary>
         public string GroupSize
@@ -219,8 +219,8 @@ namespace Amazon.Glue.Model
         /// <para>
         /// A Boolean value that specifies whether a single record can span multiple lines. This
         /// can occur when a field contains a quoted new-line character. You must set this option
-        /// to True if any record spans multiple lines. The default value is <code>False</code>,
-        /// which allows for more aggressive file-splitting during parsing.
+        /// to True if any record spans multiple lines. The default value is <c>False</c>, which
+        /// allows for more aggressive file-splitting during parsing.
         /// </para>
         /// </summary>
         public bool Multiline
@@ -313,8 +313,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property QuoteChar. 
         /// <para>
-        /// Specifies the character to use for quoting. The default is a double quote: <code>'"'</code>.
-        /// Set this to <code>-1</code> to turn off quoting entirely.
+        /// Specifies the character to use for quoting. The default is a double quote: <c>'"'</c>.
+        /// Set this to <c>-1</c> to turn off quoting entirely.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -373,7 +373,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property SkipFirst. 
         /// <para>
         /// A Boolean value that specifies whether to skip the first data line. The default value
-        /// is <code>False</code>.
+        /// is <c>False</c>.
         /// </para>
         /// </summary>
         public bool SkipFirst
@@ -392,7 +392,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property WithHeader. 
         /// <para>
         /// A Boolean value that specifies whether to treat the first line as a header. The default
-        /// value is <code>False</code>.
+        /// value is <c>False</c>.
         /// </para>
         /// </summary>
         public bool WithHeader
@@ -411,7 +411,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property WriteHeader. 
         /// <para>
         /// A Boolean value that specifies whether to write the header to output. The default
-        /// value is <code>True</code>. 
+        /// value is <c>True</c>. 
         /// </para>
         /// </summary>
         public bool WriteHeader

@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseList. 
         /// <para>
-        /// A list of <code>Database</code> objects from the specified catalog.
+        /// A list of <c>Database</c> objects from the specified catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

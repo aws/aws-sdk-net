@@ -103,7 +103,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Parameters. 
         /// <para>
         /// The blueprint parameters as a string. You will have to provide a value for each key
-        /// that is required from the parameter spec that is defined in the <code>Blueprint$ParameterSpec</code>.
+        /// that is required from the parameter spec that is defined in the <c>Blueprint$ParameterSpec</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]

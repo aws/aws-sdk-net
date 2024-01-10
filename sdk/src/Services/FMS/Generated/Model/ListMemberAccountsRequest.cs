@@ -30,8 +30,8 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListMemberAccounts operation.
-    /// Returns a <code>MemberAccounts</code> object that lists the member accounts in the
-    /// administrator's Amazon Web Services organization.
+    /// Returns a <c>MemberAccounts</c> object that lists the member accounts in the administrator's
+    /// Amazon Web Services organization.
     /// 
     ///  
     /// <para>
@@ -48,9 +48,9 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Specifies the number of member account IDs that you want Firewall Manager to return
-        /// for this request. If you have more IDs than the number that you specify for <code>MaxResults</code>,
-        /// the response includes a <code>NextToken</code> value that you can use to get another
-        /// batch of member account IDs.
+        /// for this request. If you have more IDs than the number that you specify for <c>MaxResults</c>,
+        /// the response includes a <c>NextToken</c> value that you can use to get another batch
+        /// of member account IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -69,12 +69,12 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify a value for <code>MaxResults</code> and you have more account IDs than
-        /// the number that you specify for <code>MaxResults</code>, Firewall Manager returns
-        /// a <code>NextToken</code> value in the response that allows you to list another group
-        /// of IDs. For the second and subsequent <code>ListMemberAccountsRequest</code> requests,
-        /// specify the value of <code>NextToken</code> from the previous response to get information
-        /// about another batch of member account IDs.
+        /// If you specify a value for <c>MaxResults</c> and you have more account IDs than the
+        /// number that you specify for <c>MaxResults</c>, Firewall Manager returns a <c>NextToken</c>
+        /// value in the response that allows you to list another group of IDs. For the second
+        /// and subsequent <c>ListMemberAccountsRequest</c> requests, specify the value of <c>NextToken</c>
+        /// from the previous response to get information about another batch of member account
+        /// IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

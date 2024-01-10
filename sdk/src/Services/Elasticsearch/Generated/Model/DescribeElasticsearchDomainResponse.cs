@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeElasticsearchDomain</code> request. Contains the status
-    /// of the domain specified in the request.
+    /// The result of a <c>DescribeElasticsearchDomain</c> request. Contains the status of
+    /// the domain specified in the request.
     /// </summary>
     public partial class DescribeElasticsearchDomainResponse : AmazonWebServiceResponse
     {

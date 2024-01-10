@@ -48,8 +48,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// For SSH host keys, the algorithm may be <code>ssh-rsa</code>, <code>ecdsa-sha2-nistp256</code>,
-        /// <code>ssh-ed25519</code>, etc. For RDP certificates, the algorithm is always <code>x509-cert</code>.
+        /// For SSH host keys, the algorithm may be <c>ssh-rsa</c>, <c>ecdsa-sha2-nistp256</c>,
+        /// <c>ssh-ed25519</c>, etc. For RDP certificates, the algorithm is always <c>x509-cert</c>.
         /// </para>
         /// </summary>
         public string Algorithm
@@ -75,7 +75,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</code> 
+        ///  <c>SHA1:1CHH6FaAaXjtFOsR/t83vf91SR0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</code> 
+        ///  <c>af:34:51:fe:09:f0:e0:da:b8:4e:56:ca:60:c2:10:ff:38:06:db:45</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</code> 
+        ///  <c>SHA256:KTsMnRBh1IhD17HpdfsbzeGA4jOijm5tyXsMjKVbB8o</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -118,7 +118,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</code>
+        ///  <c>03:9b:36:9f:4b:de:4e:61:70:fc:7c:c9:78:e7:d2:1a:1c:25:a8:0c:91:f6:7c:e4:d6:a0:85:c8:b4:53:99:68</c>
         /// 
         /// </para>
         ///  </li> </ul>

@@ -171,11 +171,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InterfaceType. 
         /// <para>
-        /// The type of network interface. The default is <code>interface</code>.
+        /// The type of network interface. The default is <c>interface</c>.
         /// </para>
         ///  
         /// <para>
-        /// The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
+        /// The only supported values are <c>interface</c>, <c>efa</c>, and <c>trunk</c>.
         /// </para>
         /// </summary>
         public NetworkInterfaceCreationType InterfaceType
@@ -252,8 +252,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If your subnet has the <code>AssignIpv6AddressOnCreation</code> attribute set, you
-        /// can override that setting by specifying 0 as the IPv6 address count.
+        /// If your subnet has the <c>AssignIpv6AddressOnCreation</c> attribute set, you can override
+        /// that setting by specifying 0 as the IPv6 address count.
         /// </para>
         /// </summary>
         public int Ipv6AddressCount
@@ -343,7 +343,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The primary private IPv4 address of the network interface. If you don't specify an
         /// IPv4 address, Amazon EC2 selects one for you from the subnet's IPv4 CIDR range. If
-        /// you specify an IP address, you cannot indicate any IP addresses specified in <code>privateIpAddresses</code>
+        /// you specify an IP address, you cannot indicate any IP addresses specified in <c>privateIpAddresses</c>
         /// as primary (only one IP address can be designated as primary).
         /// </para>
         /// </summary>
@@ -388,7 +388,7 @@ namespace Amazon.EC2.Model
         /// The number of secondary private IPv4 addresses to assign to a network interface. When
         /// you specify a number of secondary IPv4 addresses, Amazon EC2 selects these IP addresses
         /// within the subnet's IPv4 CIDR range. You can't specify this option and specify more
-        /// than one private IP address using <code>privateIpAddresses</code>.
+        /// than one private IP address using <c>privateIpAddresses</c>.
         /// </para>
         ///  
         /// <para>

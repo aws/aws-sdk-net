@@ -44,7 +44,7 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property HomeRegion. 
         /// <para>
         /// The primary Region of the endpoint you want to get information about. For example
-        /// <code>"HomeRegion": "us-east-1"</code>.
+        /// <c>"HomeRegion": "us-east-1"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=9, Max=20)]
@@ -63,7 +63,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the endpoint you want to get information about. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.
+        /// The name of the endpoint you want to get information about. For example, <c>"Name":"us-east-2-custom_bus_A-endpoint"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

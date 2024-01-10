@@ -64,13 +64,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If <code>true</code>, the event destination is enabled. When the event destination
-        /// is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.
+        /// If <c>true</c>, the event destination is enabled. When the event destination is enabled,
+        /// the specified event types are sent to the destinations in this <c>EventDestinationDefinition</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>false</code>, the event destination is disabled. When the event destination
-        /// is disabled, events aren't sent to the specified destinations.
+        /// If <c>false</c>, the event destination is disabled. When the event destination is
+        /// disabled, events aren't sent to the specified destinations.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -109,7 +109,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property MatchingEventTypes. 
         /// <para>
         /// An array that specifies which events the Amazon SES API v2 should send to the destinations
-        /// in this <code>EventDestinationDefinition</code>.
+        /// in this <c>EventDestinationDefinition</c>.
         /// </para>
         /// </summary>
         public List<string> MatchingEventTypes

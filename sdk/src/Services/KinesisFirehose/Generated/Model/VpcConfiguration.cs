@@ -47,35 +47,35 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ec2:DescribeVpcs</code> 
+        ///  <c>ec2:DescribeVpcs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeVpcAttribute</code> 
+        ///  <c>ec2:DescribeVpcAttribute</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeSubnets</code> 
+        ///  <c>ec2:DescribeSubnets</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeSecurityGroups</code> 
+        ///  <c>ec2:DescribeSecurityGroups</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DescribeNetworkInterfaces</code> 
+        ///  <c>ec2:DescribeNetworkInterfaces</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:CreateNetworkInterface</code> 
+        ///  <c>ec2:CreateNetworkInterface</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:CreateNetworkInterfacePermission</code> 
+        ///  <c>ec2:CreateNetworkInterfacePermission</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:DeleteNetworkInterface</code> 
+        ///  <c>ec2:DeleteNetworkInterface</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

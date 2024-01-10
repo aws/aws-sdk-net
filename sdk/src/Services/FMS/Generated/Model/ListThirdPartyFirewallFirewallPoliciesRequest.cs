@@ -44,10 +44,9 @@ namespace Amazon.FMS.Model
         /// <para>
         /// The maximum number of third-party firewall policies that you want Firewall Manager
         /// to return. If the specified third-party firewall vendor is associated with more than
-        /// <code>MaxResults</code> firewall policies, the response includes a <code>NextToken</code>
-        /// element. <code>NextToken</code> contains an encrypted token that identifies the first
-        /// third-party firewall policies that Firewall Manager will return if you submit another
-        /// request.
+        /// <c>MaxResults</c> firewall policies, the response includes a <c>NextToken</c> element.
+        /// <c>NextToken</c> contains an encrypted token that identifies the first third-party
+        /// firewall policies that Firewall Manager will return if you submit another request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -66,16 +65,16 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous response included a <code>NextToken</code> element, the specified
-        /// third-party firewall vendor is associated with more third-party firewall policies.
-        /// To get more third-party firewall policies, submit another <code>ListThirdPartyFirewallFirewallPoliciesRequest</code>
+        /// If the previous response included a <c>NextToken</c> element, the specified third-party
+        /// firewall vendor is associated with more third-party firewall policies. To get more
+        /// third-party firewall policies, submit another <c>ListThirdPartyFirewallFirewallPoliciesRequest</c>
         /// request.
         /// </para>
         ///  
         /// <para>
-        ///  For the value of <code>NextToken</code>, specify the value of <code>NextToken</code>
-        /// from the previous response. If the previous response didn't include a <code>NextToken</code>
-        /// element, there are no more third-party firewall policies to get. 
+        ///  For the value of <c>NextToken</c>, specify the value of <c>NextToken</c> from the
+        /// previous response. If the previous response didn't include a <c>NextToken</c> element,
+        /// there are no more third-party firewall policies to get. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

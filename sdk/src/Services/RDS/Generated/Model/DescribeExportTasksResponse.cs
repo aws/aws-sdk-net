@@ -57,9 +57,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that can be used in a later <code>DescribeExportTasks</code> request.
+        /// A pagination token that can be used in a later <c>DescribeExportTasks</c> request.
         /// A marker is used for pagination to identify the location to begin output for the next
-        /// response of <code>DescribeExportTasks</code>.
+        /// response of <c>DescribeExportTasks</c>.
         /// </para>
         /// </summary>
         public string Marker

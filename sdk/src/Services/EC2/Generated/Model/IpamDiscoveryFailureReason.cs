@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>assume-role-failure</code> - IPAM could not assume the Amazon Web Services
-        /// IAM service-linked role. This could be because of any of the following:
+        ///  <c>assume-role-failure</c> - IPAM could not assume the Amazon Web Services IAM service-linked
+        /// role. This could be because of any of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -60,14 +60,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>throttling-failure</code> - IPAM account is already using the allotted transactions
+        ///  <c>throttling-failure</c> - IPAM account is already using the allotted transactions
         /// per second and IPAM is receiving a throttling error when assuming the Amazon Web Services
         /// IAM SLR.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unauthorized-failure</code> - Amazon Web Services account making the request
-        /// is not authorized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">AuthFailure</a>
+        ///  <c>unauthorized-failure</c> - Amazon Web Services account making the request is not
+        /// authorized. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">AuthFailure</a>
         /// in the <i>Amazon Elastic Compute Cloud API Reference</i>.
         /// </para>
         ///  </li> </ul>

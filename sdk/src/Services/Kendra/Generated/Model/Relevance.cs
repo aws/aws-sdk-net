@@ -54,7 +54,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// Only applies to <code>DATE</code> fields.
+        /// Only applies to <c>DATE</c> fields.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -75,8 +75,8 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Indicates that this field determines how "fresh" a document is. For example, if document
         /// 1 was created on November 5, and document 2 was created on October 31, document 1
-        /// is "fresher" than document 2. You can only set the <code>Freshness</code> field on
-        /// one <code>DATE</code> type field. Only applies to <code>DATE</code> fields.
+        /// is "fresher" than document 2. You can only set the <c>Freshness</c> field on one <c>DATE</c>
+        /// type field. Only applies to <c>DATE</c> fields.
         /// </para>
         /// </summary>
         public bool Freshness
@@ -118,19 +118,19 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// When the <code>RankOrder</code> field is <code>ASCENDING</code>, higher numbers are
-        /// better. For example, a document with a rating score of 10 is higher ranking than a
-        /// document with a rating score of 1.
+        /// When the <c>RankOrder</c> field is <c>ASCENDING</c>, higher numbers are better. For
+        /// example, a document with a rating score of 10 is higher ranking than a document with
+        /// a rating score of 1.
         /// </para>
         ///  
         /// <para>
-        /// When the <code>RankOrder</code> field is <code>DESCENDING</code>, lower numbers are
-        /// better. For example, in a task tracking application, a priority 1 task is more important
-        /// than a priority 5 task.
+        /// When the <c>RankOrder</c> field is <c>DESCENDING</c>, lower numbers are better. For
+        /// example, in a task tracking application, a priority 1 task is more important than
+        /// a priority 5 task.
         /// </para>
         ///  
         /// <para>
-        /// Only applies to <code>LONG</code> and <code>DOUBLE</code> fields.
+        /// Only applies to <c>LONG</c> and <c>DOUBLE</c> fields.
         /// </para>
         /// </summary>
         public Order RankOrder

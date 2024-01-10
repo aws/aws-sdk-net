@@ -59,10 +59,10 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property AnalyzeRuleGroup. 
         /// <para>
         /// Indicates whether you want Network Firewall to analyze the stateless rules in the
-        /// rule group for rule behavior such as asymmetric routing. If set to <code>TRUE</code>,
-        /// Network Firewall runs the analysis and then updates the rule group for you. To run
-        /// the stateless rule group analyzer without updating the rule group, set <code>DryRun</code>
-        /// to <code>TRUE</code>. 
+        /// rule group for rule behavior such as asymmetric routing. If set to <c>TRUE</c>, Network
+        /// Firewall runs the analysis and then updates the rule group for you. To run the stateless
+        /// rule group analyzer without updating the rule group, set <c>DryRun</c> to <c>TRUE</c>.
+        /// 
         /// </para>
         /// </summary>
         public bool AnalyzeRuleGroup
@@ -104,17 +104,17 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+        /// If set to <c>TRUE</c>, Network Firewall checks whether the request can run successfully,
         /// but doesn't actually make the requested changes. The call returns the value that the
-        /// request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't
-        /// make additions or changes to your resources. This option allows you to make sure that
-        /// you have the required permissions to run the request and that your request parameters
+        /// request would return if you ran it with dry run set to <c>FALSE</c>, but doesn't make
+        /// additions or changes to your resources. This option allows you to make sure that you
+        /// have the required permissions to run the request and that your request parameters
         /// are valid. 
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>FALSE</code>, Network Firewall makes the requested changes to your
-        /// resources. 
+        /// If set to <c>FALSE</c>, Network Firewall makes the requested changes to your resources.
+        /// 
         /// </para>
         /// </summary>
         public bool DryRun
@@ -154,8 +154,8 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must provide either this rule group setting or a <code>Rules</code> setting, but
-        /// not both. 
+        /// You must provide either this rule group setting or a <c>Rules</c> setting, but not
+        /// both. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -227,7 +227,7 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must provide either this rules setting or a populated <code>RuleGroup</code> setting,
+        /// You must provide either this rules setting or a populated <c>RuleGroup</c> setting,
         /// but not both. 
         /// </para>
         ///  </note> 
@@ -278,7 +278,7 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This setting is required for requests that do not include the <code>RuleGroupARN</code>.
+        /// This setting is required for requests that do not include the <c>RuleGroupARN</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -305,7 +305,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To make changes to the rule group, you provide the token in your request. Network
         /// Firewall uses the token to ensure that the rule group hasn't changed since you last
-        /// retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+        /// retrieved it. If it has changed, the operation fails with an <c>InvalidTokenException</c>.
         /// If this happens, retrieve the rule group again to get a current copy of it with a
         /// current token. Reapply your changes as needed, then try the operation again using
         /// the new token. 

@@ -49,7 +49,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>IPv4</code> | <code>IPv6</code> 
+        /// Valid Values: <c>IPv4</c> | <c>IPv6</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -134,7 +134,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Up to 255 characters in length. The name cannot start with <code>com.amazonaws</code>.
+        /// Constraints: Up to 255 characters in length. The name cannot start with <c>com.amazonaws</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

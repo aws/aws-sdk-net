@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>DescribeInboundCrossClusterSearchConnections</a></code> request.
+    /// The result of a <c><a>DescribeInboundCrossClusterSearchConnections</a></c> request.
     /// Contains the list of connections matching the filter criteria.
     /// </summary>
     public partial class DescribeInboundCrossClusterSearchConnectionsResponse : AmazonWebServiceResponse
@@ -40,8 +40,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CrossClusterSearchConnections. 
         /// <para>
-        /// Consists of list of <code><a>InboundCrossClusterSearchConnection</a></code> matching
-        /// the specified filter criteria.
+        /// Consists of list of <c><a>InboundCrossClusterSearchConnection</a></c> matching the
+        /// specified filter criteria.
         /// </para>
         /// </summary>
         public List<InboundCrossClusterSearchConnection> CrossClusterSearchConnections

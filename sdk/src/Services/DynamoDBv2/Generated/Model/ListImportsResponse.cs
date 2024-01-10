@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ImportSummaryList. 
         /// <para>
-        ///  A list of <code>ImportSummary</code> objects. 
+        ///  A list of <c>ImportSummary</c> objects. 
         /// </para>
         /// </summary>
         public List<ImportSummary> ImportSummaryList
@@ -58,8 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  If this value is returned, there are additional results to be displayed. To retrieve
-        /// them, call <code>ListImports</code> again, with <code>NextToken</code> set to this
-        /// value. 
+        /// them, call <c>ListImports</c> again, with <c>NextToken</c> set to this value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=112, Max=1024)]

@@ -89,30 +89,29 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code>!{iotanalytics:scheduleTime}</code> to insert the time of a scheduled SQL
-        /// query run.
+        /// Use <c>!{iotanalytics:scheduleTime}</c> to insert the time of a scheduled SQL query
+        /// run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>!{iotanalytics:versionId}</code> to insert a unique hash that identifies
-        /// a dataset content.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Use <code>!{iotanalytics:creationTime}</code> to insert the creation time of a dataset
+        /// Use <c>!{iotanalytics:versionId}</c> to insert a unique hash that identifies a dataset
         /// content.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use <c>!{iotanalytics:creationTime}</c> to insert the creation time of a dataset content.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The following example creates a unique key for a CSV file: <code>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</code>
+        /// The following example creates a unique key for a CSV file: <c>dataset/mydataset/!{iotanalytics:scheduleTime}/!{iotanalytics:versionId}.csv</c>
         /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you don't use <code>!{iotanalytics:versionId}</code> to specify the key, you might
-        /// get duplicate keys. For example, you might have two dataset contents with the same
-        /// <code>scheduleTime</code> but different <code>versionId</code>s. This means that one
-        /// dataset content overwrites the other. 
+        /// If you don't use <c>!{iotanalytics:versionId}</c> to specify the key, you might get
+        /// duplicate keys. For example, you might have two dataset contents with the same <c>scheduleTime</c>
+        /// but different <c>versionId</c>s. This means that one dataset content overwrites the
+        /// other. 
         /// </para>
         ///  </note>
         /// </summary>

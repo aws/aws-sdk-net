@@ -64,18 +64,18 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>)
-        /// or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// The IP protocol name (<c>tcp</c>, <c>udp</c>, <c>icmp</c>, <c>icmpv6</c>) or number
+        /// (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
         /// Numbers</a>).
         /// </para>
         ///  
         /// <para>
-        /// Use <code>-1</code> to specify all protocols. When authorizing security group rules,
-        /// specifying <code>-1</code> or a protocol number other than <code>tcp</code>, <code>udp</code>,
-        /// <code>icmp</code>, or <code>icmpv6</code> allows traffic on all ports, regardless
-        /// of any port range you specify. For <code>tcp</code>, <code>udp</code>, and <code>icmp</code>,
-        /// you must specify a port range. For <code>icmpv6</code>, the port range is optional;
-        /// if you omit the port range, traffic for all types and codes is allowed.
+        /// Use <c>-1</c> to specify all protocols. When authorizing security group rules, specifying
+        /// <c>-1</c> or a protocol number other than <c>tcp</c>, <c>udp</c>, <c>icmp</c>, or
+        /// <c>icmpv6</c> allows traffic on all ports, regardless of any port range you specify.
+        /// For <c>tcp</c>, <c>udp</c>, and <c>icmp</c>, you must specify a port range. For <c>icmpv6</c>,
+        /// the port range is optional; if you omit the port range, traffic for all types and
+        /// codes is allowed.
         /// </para>
         /// </summary>
         public string IpProtocol

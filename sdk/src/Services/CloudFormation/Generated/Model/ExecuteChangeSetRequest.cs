@@ -47,8 +47,8 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a change set for the entire stack hierarchy, <code>IncludeNestedStacks</code>
-    /// must have been set to <code>True</code>.
+    /// To create a change set for the entire stack hierarchy, <c>IncludeNestedStacks</c>
+    /// must have been set to <c>True</c>.
     /// </para>
     /// </summary>
     public partial class ExecuteChangeSetRequest : AmazonCloudFormationRequest
@@ -82,9 +82,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for this <code>ExecuteChangeSet</code> request. Specify this token
-        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
-        /// to execute a change set to update a stack with the same name. You might retry <code>ExecuteChangeSet</code>
+        /// A unique identifier for this <c>ExecuteChangeSet</c> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to execute a change set to update a stack with the same name. You might retry <c>ExecuteChangeSet</c>
         /// requests to ensure that CloudFormation successfully received them.
         /// </para>
         /// </summary>
@@ -105,27 +105,24 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DisableRollback. 
         /// <para>
         /// Preserves the state of previously provisioned resources when an operation fails. This
-        /// parameter can't be specified when the <code>OnStackFailure</code> parameter to the
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+        /// parameter can't be specified when the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
         /// API operation was specified.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>True</code> - if the stack creation fails, do nothing. This is equivalent to
-        /// specifying <code>DO_NOTHING</code> for the <code>OnStackFailure</code> parameter to
-        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+        ///  <c>True</c> - if the stack creation fails, do nothing. This is equivalent to specifying
+        /// <c>DO_NOTHING</c> for the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
         /// API operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>False</code> - if the stack creation fails, roll back the stack. This is equivalent
-        /// to specifying <code>ROLLBACK</code> for the <code>OnStackFailure</code> parameter
-        /// to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
+        ///  <c>False</c> - if the stack creation fails, roll back the stack. This is equivalent
+        /// to specifying <c>ROLLBACK</c> for the <c>OnStackFailure</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_CreateChangeSet.html">CreateChangeSet</a>
         /// API operation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>True</code> 
+        /// Default: <c>True</c> 
         /// </para>
         /// </summary>
         public bool DisableRollback
@@ -143,13 +140,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RetainExceptOnCreate. 
         /// <para>
-        /// When set to <code>true</code>, newly created resources are deleted when the operation
-        /// rolls back. This includes newly created resources marked with a deletion policy of
-        /// <code>Retain</code>.
+        /// When set to <c>true</c>, newly created resources are deleted when the operation rolls
+        /// back. This includes newly created resources marked with a deletion policy of <c>Retain</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool RetainExceptOnCreate

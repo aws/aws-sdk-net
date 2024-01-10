@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the GetResolver operation.
-    /// Retrieves a <code>Resolver</code> object.
+    /// Retrieves a <c>Resolver</c> object.
     /// </summary>
     public partial class GetResolverRequest : AmazonAppSyncRequest
     {

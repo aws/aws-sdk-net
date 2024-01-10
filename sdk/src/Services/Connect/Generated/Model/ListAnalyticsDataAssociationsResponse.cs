@@ -57,9 +57,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// An array of successful results: <code>DataSetId</code>, <code>TargetAccountId</code>,
-        /// <code>ResourceShareId</code>, <code>ResourceShareArn</code>. This is a paginated API,
-        /// so <code>nextToken</code> is given if there are more results to be returned.
+        /// An array of successful results: <c>DataSetId</c>, <c>TargetAccountId</c>, <c>ResourceShareId</c>,
+        /// <c>ResourceShareArn</c>. This is a paginated API, so <c>nextToken</c> is given if
+        /// there are more results to be returned.
         /// </para>
         /// </summary>
         public List<AnalyticsDataAssociationResult> Results

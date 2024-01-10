@@ -59,7 +59,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property LayerDigest. 
         /// <para>
-        /// The <code>sha256</code> digest of the image layer.
+        /// The <c>sha256</c> digest of the image layer.
         /// </para>
         /// </summary>
         public string LayerDigest
@@ -95,8 +95,8 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property MediaType. 
         /// <para>
-        /// The media type of the layer, such as <code>application/vnd.docker.image.rootfs.diff.tar.gzip</code>
-        /// or <code>application/vnd.oci.image.layer.v1.tar+gzip</code>.
+        /// The media type of the layer, such as <c>application/vnd.docker.image.rootfs.diff.tar.gzip</c>
+        /// or <c>application/vnd.oci.image.layer.v1.tar+gzip</c>.
         /// </para>
         /// </summary>
         public string MediaType

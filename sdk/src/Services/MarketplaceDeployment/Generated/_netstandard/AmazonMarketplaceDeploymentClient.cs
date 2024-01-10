@@ -317,8 +317,7 @@ namespace Amazon.MarketplaceDeployment
 
 
         /// <summary>
-        /// Creates or updates a deployment parameter and is targeted by <code>catalog</code>
-        /// and <code>agreementId</code>.
+        /// Creates or updates a deployment parameter and is targeted by <c>catalog</c> and <c>agreementId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDeploymentParameter service method.</param>
         /// <param name="cancellationToken">

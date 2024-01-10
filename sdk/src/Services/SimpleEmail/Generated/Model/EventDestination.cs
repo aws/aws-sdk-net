@@ -78,9 +78,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Sets whether Amazon SES publishes events to this destination when you send an email
-        /// with the associated configuration set. Set to <code>true</code> to enable publishing
-        /// to this destination; set to <code>false</code> to prevent publishing to this destination.
-        /// The default value is <code>false</code>.
+        /// with the associated configuration set. Set to <c>true</c> to enable publishing to
+        /// this destination; set to <c>false</c> to prevent publishing to this destination. The
+        /// default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -121,40 +121,39 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>send</code> - The call was successful and Amazon SES is attempting to deliver
-        /// the email.
+        ///  <c>send</c> - The call was successful and Amazon SES is attempting to deliver the
+        /// email.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>reject</code> - Amazon SES determined that the email contained a virus and
-        /// rejected it.
+        ///  <c>reject</c> - Amazon SES determined that the email contained a virus and rejected
+        /// it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bounce</code> - The recipient's mail server permanently rejected the email.
-        /// This corresponds to a hard bounce.
+        ///  <c>bounce</c> - The recipient's mail server permanently rejected the email. This
+        /// corresponds to a hard bounce.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>complaint</code> - The recipient marked the email as spam.
+        ///  <c>complaint</c> - The recipient marked the email as spam.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>delivery</code> - Amazon SES successfully delivered the email to the recipient's
+        ///  <c>delivery</c> - Amazon SES successfully delivered the email to the recipient's
         /// mail server.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>open</code> - The recipient received the email and opened it in their email
-        /// client.
+        ///  <c>open</c> - The recipient received the email and opened it in their email client.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>click</code> - The recipient clicked one or more links in the email.
+        ///  <c>click</c> - The recipient clicked one or more links in the email.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>renderingFailure</code> - Amazon SES did not send the email because of a template
+        ///  <c>renderingFailure</c> - Amazon SES did not send the email because of a template
         /// rendering issue.
         /// </para>
         ///  </li> </ul>

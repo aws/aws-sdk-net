@@ -47,7 +47,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The third-party provider for the token. The only valid value is <code>figma</code>.
+        /// The third-party provider for the token. The only valid value is <c>figma</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -85,7 +85,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
+        /// The JSON specified in <c>policyDocument</c> can be up to 30,720 characters.
         /// </para>
         /// </summary>
         public string PolicyDocument

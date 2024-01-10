@@ -35,11 +35,11 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>PutAggregationAuthorization</code> is an idempotent API. Subsequent requests
-    /// won’t create a duplicate resource if one was already created. If a following request
-    /// has different <code>tags</code> values, Config will ignore these differences and treat
-    /// it as an idempotent request of the previous. In this case, <code>tags</code> will
-    /// not be updated, even if they are different.
+    ///  <c>PutAggregationAuthorization</c> is an idempotent API. Subsequent requests won’t
+    /// create a duplicate resource if one was already created. If a following request has
+    /// different <c>tags</c> values, Config will ignore these differences and treat it as
+    /// an idempotent request of the previous. In this case, <c>tags</c> will not be updated,
+    /// even if they are different.
     /// </para>
     ///  </note>
     /// </summary>

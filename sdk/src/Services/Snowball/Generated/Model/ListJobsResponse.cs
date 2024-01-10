@@ -39,8 +39,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobListEntries. 
         /// <para>
-        /// Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-        /// that indicates whether the job is a job part, in the case of export jobs. 
+        /// Each <c>JobListEntry</c> object contains a job's state, a job's ID, and a value that
+        /// indicates whether the job is a job part, in the case of export jobs. 
         /// </para>
         /// </summary>
         public List<JobListEntry> JobListEntries
@@ -58,9 +58,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. If you use this automatically generated <code>NextToken</code>
-        /// value in your next <code>ListJobs</code> call, your returned <code>JobListEntry</code>
-        /// objects will start from this point in the array.
+        /// HTTP requests are stateless. If you use this automatically generated <c>NextToken</c>
+        /// value in your next <c>ListJobs</c> call, your returned <c>JobListEntry</c> objects
+        /// will start from this point in the array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -40,7 +40,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Pipeline. 
         /// <para>
-        /// The pipeline updated by this <code>UpdatePipelineResponse</code> call.
+        /// The pipeline updated by this <c>UpdatePipelineResponse</c> call.
         /// </para>
         /// </summary>
         public Pipeline Pipeline

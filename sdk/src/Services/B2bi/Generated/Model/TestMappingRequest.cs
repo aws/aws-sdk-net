@@ -32,7 +32,7 @@ namespace Amazon.B2bi.Model
     /// Container for the parameters to the TestMapping operation.
     /// Maps the input file according to the provided template file. The API call downloads
     /// the file contents from the Amazon S3 location, and passes the contents in as a string,
-    /// to the <code>inputFileContent</code> parameter.
+    /// to the <c>inputFileContent</c> parameter.
     /// </summary>
     public partial class TestMappingRequest : AmazonB2biRequest
     {
@@ -43,8 +43,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// Specifies that the currently supported file formats for EDI transformations are <code>JSON</code>
-        /// and <code>XML</code>.
+        /// Specifies that the currently supported file formats for EDI transformations are <c>JSON</c>
+        /// and <c>XML</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

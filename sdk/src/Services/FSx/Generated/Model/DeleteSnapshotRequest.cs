@@ -36,8 +36,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears
-    /// with the lifecycle status of <code>DELETING</code> until the deletion is complete.
+    /// The <c>DeleteSnapshot</c> operation returns instantly. The snapshot appears with the
+    /// lifecycle status of <c>DELETING</c> until the deletion is complete.
     /// </para>
     /// </summary>
     public partial class DeleteSnapshotRequest : AmazonFSxRequest

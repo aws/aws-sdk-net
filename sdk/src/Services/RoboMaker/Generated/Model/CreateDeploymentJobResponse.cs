@@ -127,7 +127,7 @@ namespace Amazon.RoboMaker.Model
         /// <para>
         /// AWS Greengrass requires a service-level role permission to access other services.
         /// The role must include the <a href="https://console.aws.amazon.com/iam/home?#/policies/arn:aws:iam::aws:policy/service-role/AWSGreengrassResourceAccessRolePolicy$jsonEditor">
-        /// <code>AWSGreengrassResourceAccessRolePolicy</code> managed policy</a>. 
+        /// <c>AWSGreengrassResourceAccessRolePolicy</c> managed policy</a>. 
         /// </para>
         ///  </dd> <dt>ExtractingBundleFailure</dt> <dd> 
         /// <para>

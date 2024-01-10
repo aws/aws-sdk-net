@@ -45,7 +45,7 @@ namespace Amazon.SSOOIDC
     /// 
     ///  <note> 
     /// <para>
-    /// IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
+    /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces.
     /// </para>
     ///  </note> 
     /// <para>
@@ -303,7 +303,7 @@ namespace Amazon.SSOOIDC
         /// <summary>
         /// Creates and returns access and refresh tokens for clients that are authenticated using
         /// client secrets. The access token can be used to fetch short-term credentials for the
-        /// assigned AWS accounts or to access application APIs using <code>bearer</code> authentication.
+        /// assigned AWS accounts or to access application APIs using <c>bearer</c> authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateToken service method.</param>
         /// 
@@ -322,9 +322,9 @@ namespace Amazon.SSOOIDC
         /// Indicates that an error from the service occurred while trying to process a request.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidClientException">
-        /// Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request
-        /// is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code>
-        /// or an expired <code>clientSecret</code>.
+        /// Indicates that the <c>clientId</c> or <c>clientSecret</c> in the request is invalid.
+        /// For example, this can occur when a client sends an incorrect <c>clientId</c> or an
+        /// expired <c>clientSecret</c>.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidGrantException">
         /// Indicates that a request contains an invalid grant. This can occur if a client makes
@@ -343,7 +343,7 @@ namespace Amazon.SSOOIDC
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnauthorizedClientException">
         /// Indicates that the client is not currently authorized to make the request. This can
-        /// happen when a <code>clientId</code> is not issued for a public client.
+        /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
@@ -362,7 +362,7 @@ namespace Amazon.SSOOIDC
         /// <summary>
         /// Creates and returns access and refresh tokens for clients that are authenticated using
         /// client secrets. The access token can be used to fetch short-term credentials for the
-        /// assigned AWS accounts or to access application APIs using <code>bearer</code> authentication.
+        /// assigned AWS accounts or to access application APIs using <c>bearer</c> authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateToken service method.</param>
         /// <param name="cancellationToken">
@@ -384,9 +384,9 @@ namespace Amazon.SSOOIDC
         /// Indicates that an error from the service occurred while trying to process a request.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidClientException">
-        /// Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request
-        /// is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code>
-        /// or an expired <code>clientSecret</code>.
+        /// Indicates that the <c>clientId</c> or <c>clientSecret</c> in the request is invalid.
+        /// For example, this can occur when a client sends an incorrect <c>clientId</c> or an
+        /// expired <c>clientSecret</c>.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidGrantException">
         /// Indicates that a request contains an invalid grant. This can occur if a client makes
@@ -405,7 +405,7 @@ namespace Amazon.SSOOIDC
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnauthorizedClientException">
         /// Indicates that the client is not currently authorized to make the request. This can
-        /// happen when a <code>clientId</code> is not issued for a public client.
+        /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
@@ -428,7 +428,7 @@ namespace Amazon.SSOOIDC
         /// <summary>
         /// Creates and returns access and refresh tokens for clients and applications that are
         /// authenticated using IAM entities. The access token can be used to fetch short-term
-        /// credentials for the assigned AWS accounts or to access application APIs using <code>bearer</code>
+        /// credentials for the assigned AWS accounts or to access application APIs using <c>bearer</c>
         /// authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTokenWithIAM service method.</param>
@@ -448,9 +448,9 @@ namespace Amazon.SSOOIDC
         /// Indicates that an error from the service occurred while trying to process a request.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidClientException">
-        /// Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request
-        /// is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code>
-        /// or an expired <code>clientSecret</code>.
+        /// Indicates that the <c>clientId</c> or <c>clientSecret</c> in the request is invalid.
+        /// For example, this can occur when a client sends an incorrect <c>clientId</c> or an
+        /// expired <c>clientSecret</c>.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidGrantException">
         /// Indicates that a request contains an invalid grant. This can occur if a client makes
@@ -473,7 +473,7 @@ namespace Amazon.SSOOIDC
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnauthorizedClientException">
         /// Indicates that the client is not currently authorized to make the request. This can
-        /// happen when a <code>clientId</code> is not issued for a public client.
+        /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
@@ -492,7 +492,7 @@ namespace Amazon.SSOOIDC
         /// <summary>
         /// Creates and returns access and refresh tokens for clients and applications that are
         /// authenticated using IAM entities. The access token can be used to fetch short-term
-        /// credentials for the assigned AWS accounts or to access application APIs using <code>bearer</code>
+        /// credentials for the assigned AWS accounts or to access application APIs using <c>bearer</c>
         /// authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTokenWithIAM service method.</param>
@@ -515,9 +515,9 @@ namespace Amazon.SSOOIDC
         /// Indicates that an error from the service occurred while trying to process a request.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidClientException">
-        /// Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request
-        /// is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code>
-        /// or an expired <code>clientSecret</code>.
+        /// Indicates that the <c>clientId</c> or <c>clientSecret</c> in the request is invalid.
+        /// For example, this can occur when a client sends an incorrect <c>clientId</c> or an
+        /// expired <c>clientSecret</c>.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidGrantException">
         /// Indicates that a request contains an invalid grant. This can occur if a client makes
@@ -540,7 +540,7 @@ namespace Amazon.SSOOIDC
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnauthorizedClientException">
         /// Indicates that the client is not currently authorized to make the request. This can
-        /// happen when a <code>clientId</code> is not issued for a public client.
+        /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnsupportedGrantTypeException">
         /// Indicates that the grant type in the request is not supported by the service.
@@ -642,9 +642,9 @@ namespace Amazon.SSOOIDC
         /// Indicates that an error from the service occurred while trying to process a request.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidClientException">
-        /// Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request
-        /// is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code>
-        /// or an expired <code>clientSecret</code>.
+        /// Indicates that the <c>clientId</c> or <c>clientSecret</c> in the request is invalid.
+        /// For example, this can occur when a client sends an incorrect <c>clientId</c> or an
+        /// expired <c>clientSecret</c>.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidRequestException">
         /// Indicates that something is wrong with the input to the request. For example, a required
@@ -656,7 +656,7 @@ namespace Amazon.SSOOIDC
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnauthorizedClientException">
         /// Indicates that the client is not currently authorized to make the request. This can
-        /// happen when a <code>clientId</code> is not issued for a public client.
+        /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         public virtual StartDeviceAuthorizationResponse StartDeviceAuthorization(StartDeviceAuthorizationRequest request)
@@ -683,9 +683,9 @@ namespace Amazon.SSOOIDC
         /// Indicates that an error from the service occurred while trying to process a request.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidClientException">
-        /// Indicates that the <code>clientId</code> or <code>clientSecret</code> in the request
-        /// is invalid. For example, this can occur when a client sends an incorrect <code>clientId</code>
-        /// or an expired <code>clientSecret</code>.
+        /// Indicates that the <c>clientId</c> or <c>clientSecret</c> in the request is invalid.
+        /// For example, this can occur when a client sends an incorrect <c>clientId</c> or an
+        /// expired <c>clientSecret</c>.
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.InvalidRequestException">
         /// Indicates that something is wrong with the input to the request. For example, a required
@@ -697,7 +697,7 @@ namespace Amazon.SSOOIDC
         /// </exception>
         /// <exception cref="Amazon.SSOOIDC.Model.UnauthorizedClientException">
         /// Indicates that the client is not currently authorized to make the request. This can
-        /// happen when a <code>clientId</code> is not issued for a public client.
+        /// happen when a <c>clientId</c> is not issued for a public client.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sso-oidc-2019-06-10/StartDeviceAuthorization">REST API Reference for StartDeviceAuthorization Operation</seealso>
         public virtual Task<StartDeviceAuthorizationResponse> StartDeviceAuthorizationAsync(StartDeviceAuthorizationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

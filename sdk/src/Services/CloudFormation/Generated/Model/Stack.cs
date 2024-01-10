@@ -157,11 +157,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code>: disable rollback.
+        ///  <c>true</c>: disable rollback.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code>: enable rollback.
+        ///  <c>false</c>: enable rollback.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -282,7 +282,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of <code>Parameter</code> structures.
+        /// A list of <c>Parameter</c> structures.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -325,13 +325,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RetainExceptOnCreate. 
         /// <para>
-        /// When set to <code>true</code>, newly created resources are deleted when the operation
-        /// rolls back. This includes newly created resources marked with a deletion policy of
-        /// <code>Retain</code>.
+        /// When set to <c>true</c>, newly created resources are deleted when the operation rolls
+        /// back. This includes newly created resources marked with a deletion policy of <c>Retain</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool RetainExceptOnCreate
@@ -487,7 +486,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <code>Tag</code>s that specify information about the stack.
+        /// A list of <c>Tag</c>s that specify information about the stack.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

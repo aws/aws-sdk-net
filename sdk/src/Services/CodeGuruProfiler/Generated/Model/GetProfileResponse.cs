@@ -58,8 +58,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type of the profile in the payload. It is either <code>application/json</code>
-        /// or the default <code>application/x-amzn-ion</code>.
+        /// The content type of the profile in the payload. It is either <c>application/json</c>
+        /// or the default <c>application/x-amzn-ion</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

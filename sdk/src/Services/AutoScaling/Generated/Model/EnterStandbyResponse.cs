@@ -38,7 +38,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Activities. 
         /// <para>
-        /// The activities related to moving instances into <code>Standby</code> mode.
+        /// The activities related to moving instances into <c>Standby</c> mode.
         /// </para>
         /// </summary>
         public List<Activity> Activities

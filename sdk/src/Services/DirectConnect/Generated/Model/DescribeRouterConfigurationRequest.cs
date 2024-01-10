@@ -41,7 +41,7 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property RouterTypeIdentifier. 
         /// <para>
         /// Identifies the router by a combination of vendor, platform, and software version.
-        /// For example, <code>CiscoSystemsInc-2900SeriesRouters-IOS124</code>.
+        /// For example, <c>CiscoSystemsInc-2900SeriesRouters-IOS124</c>.
         /// </para>
         /// </summary>
         public string RouterTypeIdentifier

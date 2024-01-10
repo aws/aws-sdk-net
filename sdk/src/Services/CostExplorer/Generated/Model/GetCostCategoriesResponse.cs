@@ -64,7 +64,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>CostCategoryName</code> key isn't specified in the request, the <code>CostCategoryValues</code>
+        /// If the <c>CostCategoryName</c> key isn't specified in the request, the <c>CostCategoryValues</c>
         /// fields aren't returned. 
         /// </para>
         /// </summary>

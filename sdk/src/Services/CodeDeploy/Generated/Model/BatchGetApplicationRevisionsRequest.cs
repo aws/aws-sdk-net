@@ -60,9 +60,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Revisions. 
         /// <para>
-        /// An array of <code>RevisionLocation</code> objects that specify information to get
-        /// about the application revisions, including type and location. The maximum number of
-        /// <code>RevisionLocation</code> objects you can specify is 25.
+        /// An array of <c>RevisionLocation</c> objects that specify information to get about
+        /// the application revisions, including type and location. The maximum number of <c>RevisionLocation</c>
+        /// objects you can specify is 25.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

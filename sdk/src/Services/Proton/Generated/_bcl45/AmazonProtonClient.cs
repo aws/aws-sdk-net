@@ -132,7 +132,7 @@ namespace Amazon.Proton
     ///  
     /// <para>
     /// If you retry the request using the same client token, but one or more of the parameters
-    /// are different, the retry throws a <code>ValidationException</code> with an <code>IdempotentParameterMismatch</code>
+    /// are different, the retry throws a <c>ValidationException</c> with an <c>IdempotentParameterMismatch</c>
     /// error.
     /// </para>
     ///  
@@ -176,12 +176,12 @@ namespace Amazon.Proton
     /// </para>
     ///  
     /// <para>
-    /// If the original resource has been modified, the retry throws a <code>ConflictException</code>.
+    /// If the original resource has been modified, the retry throws a <c>ConflictException</c>.
     /// </para>
     ///  
     /// <para>
-    /// If you retry with different input parameters, the retry throws a <code>ValidationException</code>
-    /// with an <code>IdempotentParameterMismatch</code> error.
+    /// If you retry with different input parameters, the retry throws a <c>ValidationException</c>
+    /// with an <c>IdempotentParameterMismatch</c> error.
     /// </para>
     ///  
     /// <para>
@@ -259,8 +259,8 @@ namespace Amazon.Proton
     ///  
     /// <para>
     /// If you retry the request with an API from this group, if the original request delete
-    /// operation status is <code>DELETE_IN_PROGRESS</code>, the retry returns the resource
-    /// detail data in the response without performing any further actions.
+    /// operation status is <c>DELETE_IN_PROGRESS</c>, the retry returns the resource detail
+    /// data in the response without performing any further actions.
     /// </para>
     ///  
     /// <para>
@@ -602,7 +602,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code>
+        /// Attempts to cancel a component deployment (for a component that is in the <c>IN_PROGRESS</c>
         /// deployment status).
         /// 
         ///  
@@ -644,7 +644,7 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code>
+        /// Attempts to cancel a component deployment (for a component that is in the <c>IN_PROGRESS</c>
         /// deployment status).
         /// 
         ///  
@@ -694,7 +694,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action,
-        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+        /// if the deployment is <c>IN_PROGRESS</c>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
         /// an environment</a> in the <i>Proton User guide</i>.
         /// 
         ///  
@@ -703,17 +703,17 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.
+        /// If the cancellation attempt succeeds, the resulting deployment state is <c>CANCELLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.
+        /// If the cancellation attempt fails, the resulting deployment state is <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the current <a>UpdateEnvironment</a> action succeeds before the cancellation attempt
-        /// starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation
-        /// attempt has no effect.
+        /// starts, the resulting deployment state is <c>SUCCEEDED</c> and the cancellation attempt
+        /// has no effect.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -751,7 +751,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel an environment deployment on an <a>UpdateEnvironment</a> action,
-        /// if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
+        /// if the deployment is <c>IN_PROGRESS</c>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update
         /// an environment</a> in the <i>Proton User guide</i>.
         /// 
         ///  
@@ -760,17 +760,17 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.
+        /// If the cancellation attempt succeeds, the resulting deployment state is <c>CANCELLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.
+        /// If the cancellation attempt fails, the resulting deployment state is <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the current <a>UpdateEnvironment</a> action succeeds before the cancellation attempt
-        /// starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation
-        /// attempt has no effect.
+        /// starts, the resulting deployment state is <c>SUCCEEDED</c> and the cancellation attempt
+        /// has no effect.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -815,8 +815,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
+        /// action, if the deployment is <c>IN_PROGRESS</c>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
         /// a service instance</a> in the <i>Proton User guide</i>.
         /// 
         ///  
@@ -825,16 +824,16 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.
+        /// If the cancellation attempt succeeds, the resulting deployment state is <c>CANCELLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.
+        /// If the cancellation attempt fails, the resulting deployment state is <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the current <a>UpdateServiceInstance</a> action succeeds before the cancellation
-        /// attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation
+        /// attempt starts, the resulting deployment state is <c>SUCCEEDED</c> and the cancellation
         /// attempt has no effect.
         /// </para>
         ///  </li> </ul>
@@ -873,8 +872,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service instance deployment on an <a>UpdateServiceInstance</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
+        /// action, if the deployment is <c>IN_PROGRESS</c>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-instance-update.html">Update
         /// a service instance</a> in the <i>Proton User guide</i>.
         /// 
         ///  
@@ -883,16 +881,16 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.
+        /// If the cancellation attempt succeeds, the resulting deployment state is <c>CANCELLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.
+        /// If the cancellation attempt fails, the resulting deployment state is <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the current <a>UpdateServiceInstance</a> action succeeds before the cancellation
-        /// attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation
+        /// attempt starts, the resulting deployment state is <c>SUCCEEDED</c> and the cancellation
         /// attempt has no effect.
         /// </para>
         ///  </li> </ul>
@@ -938,8 +936,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
+        /// action, if the deployment is <c>IN_PROGRESS</c>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
         /// a service pipeline</a> in the <i>Proton User guide</i>.
         /// 
         ///  
@@ -948,16 +945,16 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.
+        /// If the cancellation attempt succeeds, the resulting deployment state is <c>CANCELLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.
+        /// If the cancellation attempt fails, the resulting deployment state is <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the current <a>UpdateServicePipeline</a> action succeeds before the cancellation
-        /// attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation
+        /// attempt starts, the resulting deployment state is <c>SUCCEEDED</c> and the cancellation
         /// attempt has no effect.
         /// </para>
         ///  </li> </ul>
@@ -996,8 +993,7 @@ namespace Amazon.Proton
 
         /// <summary>
         /// Attempts to cancel a service pipeline deployment on an <a>UpdateServicePipeline</a>
-        /// action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a
-        /// href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
+        /// action, if the deployment is <c>IN_PROGRESS</c>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update
         /// a service pipeline</a> in the <i>Proton User guide</i>.
         /// 
         ///  
@@ -1006,16 +1002,16 @@ namespace Amazon.Proton
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the cancellation attempt succeeds, the resulting deployment state is <code>CANCELLED</code>.
+        /// If the cancellation attempt succeeds, the resulting deployment state is <c>CANCELLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the cancellation attempt fails, the resulting deployment state is <code>FAILED</code>.
+        /// If the cancellation attempt fails, the resulting deployment state is <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the current <a>UpdateServicePipeline</a> action succeeds before the cancellation
-        /// attempt starts, the resulting deployment state is <code>SUCCEEDED</code> and the cancellation
+        /// attempt starts, the resulting deployment state is <c>SUCCEEDED</c> and the cancellation
         /// attempt has no effect.
         /// </para>
         ///  </li> </ul>
@@ -1406,9 +1402,9 @@ namespace Amazon.Proton
         /// Register and publish a <i>customer managed</i> environment template that connects
         /// Proton to your existing provisioned infrastructure that you manage. Proton <i>doesn't</i>
         /// manage your existing provisioned infrastructure. To create an environment template
-        /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
-        /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+        /// for customer provisioned and managed infrastructure, include the <c>provisioning</c>
+        /// parameter and set the value to <c>CUSTOMER_MANAGED</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
         /// and publish an environment template</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -1464,9 +1460,9 @@ namespace Amazon.Proton
         /// Register and publish a <i>customer managed</i> environment template that connects
         /// Proton to your existing provisioned infrastructure that you manage. Proton <i>doesn't</i>
         /// manage your existing provisioned infrastructure. To create an environment template
-        /// for customer provisioned and managed infrastructure, include the <code>provisioning</code>
-        /// parameter and set the value to <code>CUSTOMER_MANAGED</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
+        /// for customer provisioned and managed infrastructure, include the <c>provisioning</c>
+        /// parameter and set the value to <c>CUSTOMER_MANAGED</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/proton/latest/userguide/template-create.html">Register
         /// and publish an environment template</a> in the <i>Proton User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -2658,17 +2654,17 @@ namespace Amazon.Proton
 
         /// <summary>
         /// If no other minor versions of an environment template exist, delete a major version
-        /// of the environment template if it's not the <code>Recommended</code> version. Delete
-        /// the <code>Recommended</code> version of the environment template if no other major
-        /// versions or minor versions of the environment template exist. A major version of an
-        /// environment template is a version that's not backward compatible.
+        /// of the environment template if it's not the <c>Recommended</c> version. Delete the
+        /// <c>Recommended</c> version of the environment template if no other major versions
+        /// or minor versions of the environment template exist. A major version of an environment
+        /// template is a version that's not backward compatible.
         /// 
         ///  
         /// <para>
-        /// Delete a minor version of an environment template if it <i>isn't</i> the <code>Recommended</code>
-        /// version. Delete a <code>Recommended</code> minor version of the environment template
-        /// if no other minor versions of the environment template exist. A minor version of an
-        /// environment template is a version that's backward compatible.
+        /// Delete a minor version of an environment template if it <i>isn't</i> the <c>Recommended</c>
+        /// version. Delete a <c>Recommended</c> minor version of the environment template if
+        /// no other minor versions of the environment template exist. A minor version of an environment
+        /// template is a version that's backward compatible.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentTemplateVersion service method.</param>
@@ -2705,17 +2701,17 @@ namespace Amazon.Proton
 
         /// <summary>
         /// If no other minor versions of an environment template exist, delete a major version
-        /// of the environment template if it's not the <code>Recommended</code> version. Delete
-        /// the <code>Recommended</code> version of the environment template if no other major
-        /// versions or minor versions of the environment template exist. A major version of an
-        /// environment template is a version that's not backward compatible.
+        /// of the environment template if it's not the <c>Recommended</c> version. Delete the
+        /// <c>Recommended</c> version of the environment template if no other major versions
+        /// or minor versions of the environment template exist. A major version of an environment
+        /// template is a version that's not backward compatible.
         /// 
         ///  
         /// <para>
-        /// Delete a minor version of an environment template if it <i>isn't</i> the <code>Recommended</code>
-        /// version. Delete a <code>Recommended</code> minor version of the environment template
-        /// if no other minor versions of the environment template exist. A minor version of an
-        /// environment template is a version that's backward compatible.
+        /// Delete a minor version of an environment template if it <i>isn't</i> the <c>Recommended</c>
+        /// version. Delete a <c>Recommended</c> minor version of the environment template if
+        /// no other minor versions of the environment template exist. A minor version of an environment
+        /// template is a version that's backward compatible.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEnvironmentTemplateVersion service method.</param>
@@ -3093,17 +3089,17 @@ namespace Amazon.Proton
 
         /// <summary>
         /// If no other minor versions of a service template exist, delete a major version of
-        /// the service template if it's not the <code>Recommended</code> version. Delete the
-        /// <code>Recommended</code> version of the service template if no other major versions
-        /// or minor versions of the service template exist. A major version of a service template
-        /// is a version that <i>isn't</i> backwards compatible.
+        /// the service template if it's not the <c>Recommended</c> version. Delete the <c>Recommended</c>
+        /// version of the service template if no other major versions or minor versions of the
+        /// service template exist. A major version of a service template is a version that <i>isn't</i>
+        /// backwards compatible.
         /// 
         ///  
         /// <para>
-        /// Delete a minor version of a service template if it's not the <code>Recommended</code>
-        /// version. Delete a <code>Recommended</code> minor version of the service template if
-        /// no other minor versions of the service template exist. A minor version of a service
-        /// template is a version that's backwards compatible.
+        /// Delete a minor version of a service template if it's not the <c>Recommended</c> version.
+        /// Delete a <c>Recommended</c> minor version of the service template if no other minor
+        /// versions of the service template exist. A minor version of a service template is a
+        /// version that's backwards compatible.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceTemplateVersion service method.</param>
@@ -3140,17 +3136,17 @@ namespace Amazon.Proton
 
         /// <summary>
         /// If no other minor versions of a service template exist, delete a major version of
-        /// the service template if it's not the <code>Recommended</code> version. Delete the
-        /// <code>Recommended</code> version of the service template if no other major versions
-        /// or minor versions of the service template exist. A major version of a service template
-        /// is a version that <i>isn't</i> backwards compatible.
+        /// the service template if it's not the <c>Recommended</c> version. Delete the <c>Recommended</c>
+        /// version of the service template if no other major versions or minor versions of the
+        /// service template exist. A major version of a service template is a version that <i>isn't</i>
+        /// backwards compatible.
         /// 
         ///  
         /// <para>
-        /// Delete a minor version of a service template if it's not the <code>Recommended</code>
-        /// version. Delete a <code>Recommended</code> minor version of the service template if
-        /// no other minor versions of the service template exist. A minor version of a service
-        /// template is a version that's backwards compatible.
+        /// Delete a minor version of a service template if it's not the <c>Recommended</c> version.
+        /// Delete a <c>Recommended</c> minor version of the service template if no other minor
+        /// versions of the service template exist. A minor version of a service template is a
+        /// version that's backwards compatible.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteServiceTemplateVersion service method.</param>
@@ -3978,8 +3974,7 @@ namespace Amazon.Proton
         /// a template major version, or behind a template minor version), the total number of
         /// resources, and the number of resources that are in a failed state, grouped by resource
         /// type. Components, environments, and service templates return less information - see
-        /// the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code>
-        /// field descriptions.
+        /// the <c>components</c>, <c>environments</c>, and <c>serviceTemplates</c> field descriptions.
         /// </para>
         ///  
         /// <para>
@@ -4034,8 +4029,7 @@ namespace Amazon.Proton
         /// a template major version, or behind a template minor version), the total number of
         /// resources, and the number of resources that are in a failed state, grouped by resource
         /// type. Components, environments, and service templates return less information - see
-        /// the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code>
-        /// field descriptions.
+        /// the <c>components</c>, <c>environments</c>, and <c>serviceTemplates</c> field descriptions.
         /// </para>
         ///  
         /// <para>
@@ -6701,13 +6695,13 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are a few modes for updating a component. The <code>deploymentType</code> field
-        /// defines the mode.
+        /// There are a few modes for updating a component. The <c>deploymentType</c> field defines
+        /// the mode.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can't update a component while its deployment status, or the deployment status
-        /// of a service instance attached to it, is <code>IN_PROGRESS</code>.
+        /// of a service instance attached to it, is <c>IN_PROGRESS</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6756,13 +6750,13 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are a few modes for updating a component. The <code>deploymentType</code> field
-        /// defines the mode.
+        /// There are a few modes for updating a component. The <c>deploymentType</c> field defines
+        /// the mode.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can't update a component while its deployment status, or the deployment status
-        /// of a service instance attached to it, is <code>IN_PROGRESS</code>.
+        /// of a service instance attached to it, is <c>IN_PROGRESS</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6819,7 +6813,7 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// If the environment is associated with an environment account connection, <i>don't</i>
-        /// update or include the <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
+        /// update or include the <c>protonServiceRoleArn</c> and <c>provisioningRepository</c>
         /// parameter to update or connect to an environment account connection.
         /// </para>
         ///  
@@ -6831,24 +6825,24 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// If the environment <i>isn't</i> associated with an environment account connection,
-        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter.
+        /// <i>don't</i> update or include the <c>environmentAccountConnectionId</c> parameter.
         /// You <i>can't</i> update or connect the environment to an environment account connection
         /// if it <i>isn't</i> already associated with an environment connection.
         /// </para>
         ///  
         /// <para>
-        /// You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+        /// You can update either the <c>environmentAccountConnectionId</c> or <c>protonServiceRoleArn</c>
         /// parameter and value. You can’t update both.
         /// </para>
         ///  
         /// <para>
         /// If the environment was configured for Amazon Web Services-managed provisioning, omit
-        /// the <code>provisioningRepository</code> parameter.
+        /// the <c>provisioningRepository</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
-        /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
+        /// If the environment was configured for self-managed provisioning, specify the <c>provisioningRepository</c>
+        /// parameter and omit the <c>protonServiceRoleArn</c> and <c>environmentAccountConnectionId</c>
         /// parameters.
         /// </para>
         ///  
@@ -6859,12 +6853,12 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// There are four modes for updating an environment. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are four modes for updating an environment. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
-        ///  <code>NONE</code> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  
         /// <para>
@@ -6873,17 +6867,17 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>CURRENT_VERSION</code> 
+        ///  <c>CURRENT_VERSION</c> 
         /// </para>
         ///  
         /// <para>
         /// In this mode, the environment is deployed and updated with the new spec that you provide.
         /// Only requested parameters are updated. <i>Don’t</i> include minor or major version
-        /// parameters when you use this <code>deployment-type</code>.
+        /// parameters when you use this <c>deployment-type</c>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MINOR_VERSION</code> 
+        ///  <c>MINOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -6893,7 +6887,7 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MAJOR_VERSION</code> 
+        ///  <c>MAJOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -6942,7 +6936,7 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// If the environment is associated with an environment account connection, <i>don't</i>
-        /// update or include the <code>protonServiceRoleArn</code> and <code>provisioningRepository</code>
+        /// update or include the <c>protonServiceRoleArn</c> and <c>provisioningRepository</c>
         /// parameter to update or connect to an environment account connection.
         /// </para>
         ///  
@@ -6954,24 +6948,24 @@ namespace Amazon.Proton
         ///  
         /// <para>
         /// If the environment <i>isn't</i> associated with an environment account connection,
-        /// <i>don't</i> update or include the <code>environmentAccountConnectionId</code> parameter.
+        /// <i>don't</i> update or include the <c>environmentAccountConnectionId</c> parameter.
         /// You <i>can't</i> update or connect the environment to an environment account connection
         /// if it <i>isn't</i> already associated with an environment connection.
         /// </para>
         ///  
         /// <para>
-        /// You can update either the <code>environmentAccountConnectionId</code> or <code>protonServiceRoleArn</code>
+        /// You can update either the <c>environmentAccountConnectionId</c> or <c>protonServiceRoleArn</c>
         /// parameter and value. You can’t update both.
         /// </para>
         ///  
         /// <para>
         /// If the environment was configured for Amazon Web Services-managed provisioning, omit
-        /// the <code>provisioningRepository</code> parameter.
+        /// the <c>provisioningRepository</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// If the environment was configured for self-managed provisioning, specify the <code>provisioningRepository</code>
-        /// parameter and omit the <code>protonServiceRoleArn</code> and <code>environmentAccountConnectionId</code>
+        /// If the environment was configured for self-managed provisioning, specify the <c>provisioningRepository</c>
+        /// parameter and omit the <c>protonServiceRoleArn</c> and <c>environmentAccountConnectionId</c>
         /// parameters.
         /// </para>
         ///  
@@ -6982,12 +6976,12 @@ namespace Amazon.Proton
         /// </para>
         ///  
         /// <para>
-        /// There are four modes for updating an environment. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are four modes for updating an environment. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
-        ///  <code>NONE</code> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  
         /// <para>
@@ -6996,17 +6990,17 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>CURRENT_VERSION</code> 
+        ///  <c>CURRENT_VERSION</c> 
         /// </para>
         ///  
         /// <para>
         /// In this mode, the environment is deployed and updated with the new spec that you provide.
         /// Only requested parameters are updated. <i>Don’t</i> include minor or major version
-        /// parameters when you use this <code>deployment-type</code>.
+        /// parameters when you use this <c>deployment-type</c>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MINOR_VERSION</code> 
+        ///  <c>MINOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -7016,7 +7010,7 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MAJOR_VERSION</code> 
+        ///  <c>MAJOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -7321,11 +7315,11 @@ namespace Amazon.Proton
         /// </para>
         ///  </note> 
         /// <para>
-        /// Use the <code>description</code> parameter to modify the description.
+        /// Use the <c>description</c> parameter to modify the description.
         /// </para>
         ///  
         /// <para>
-        /// Edit the <code>spec</code> parameter to add or delete instances.
+        /// Edit the <c>spec</c> parameter to add or delete instances.
         /// </para>
         ///  <note> 
         /// <para>
@@ -7385,11 +7379,11 @@ namespace Amazon.Proton
         /// </para>
         ///  </note> 
         /// <para>
-        /// Use the <code>description</code> parameter to modify the description.
+        /// Use the <c>description</c> parameter to modify the description.
         /// </para>
         ///  
         /// <para>
-        /// Edit the <code>spec</code> parameter to add or delete instances.
+        /// Edit the <c>spec</c> parameter to add or delete instances.
         /// </para>
         ///  <note> 
         /// <para>
@@ -7451,13 +7445,13 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are a few modes for updating a service instance. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are a few modes for updating a service instance. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can't update a service instance while its deployment status, or the deployment
-        /// status of a component attached to it, is <code>IN_PROGRESS</code>.
+        /// status of a component attached to it, is <c>IN_PROGRESS</c>.
         /// </para>
         ///  
         /// <para>
@@ -7503,13 +7497,13 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are a few modes for updating a service instance. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are a few modes for updating a service instance. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can't update a service instance while its deployment status, or the deployment
-        /// status of a component attached to it, is <code>IN_PROGRESS</code>.
+        /// status of a component attached to it, is <c>IN_PROGRESS</c>.
         /// </para>
         ///  
         /// <para>
@@ -7562,12 +7556,12 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service pipeline. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are four modes for updating a service pipeline. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
-        ///  <code>NONE</code> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  
         /// <para>
@@ -7576,17 +7570,17 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>CURRENT_VERSION</code> 
+        ///  <c>CURRENT_VERSION</c> 
         /// </para>
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the new spec that
         /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
-        /// minor version parameters when you use this <code>deployment-type</code>.
+        /// minor version parameters when you use this <c>deployment-type</c>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MINOR_VERSION</code> 
+        ///  <c>MINOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -7596,7 +7590,7 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MAJOR_VERSION</code> 
+        ///  <c>MAJOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -7644,12 +7638,12 @@ namespace Amazon.Proton
         /// 
         ///  
         /// <para>
-        /// There are four modes for updating a service pipeline. The <code>deploymentType</code>
-        /// field defines the mode.
+        /// There are four modes for updating a service pipeline. The <c>deploymentType</c> field
+        /// defines the mode.
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
-        ///  <code>NONE</code> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  
         /// <para>
@@ -7658,17 +7652,17 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>CURRENT_VERSION</code> 
+        ///  <c>CURRENT_VERSION</c> 
         /// </para>
         ///  
         /// <para>
         /// In this mode, the service pipeline is deployed and updated with the new spec that
         /// you provide. Only requested parameters are updated. <i>Don’t</i> include major or
-        /// minor version parameters when you use this <code>deployment-type</code>.
+        /// minor version parameters when you use this <c>deployment-type</c>.
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MINOR_VERSION</code> 
+        ///  <c>MINOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -7678,7 +7672,7 @@ namespace Amazon.Proton
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MAJOR_VERSION</code> 
+        ///  <c>MAJOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -8037,9 +8031,9 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Update template sync configuration parameters, except for the <code>templateName</code>
-        /// and <code>templateType</code>. Repository details (branch, name, and provider) should
-        /// be of a linked repository. A linked repository is a repository that has been registered
+        /// Update template sync configuration parameters, except for the <c>templateName</c>
+        /// and <c>templateType</c>. Repository details (branch, name, and provider) should be
+        /// of a linked repository. A linked repository is a repository that has been registered
         /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateSyncConfig service method.</param>
@@ -8075,9 +8069,9 @@ namespace Amazon.Proton
 
 
         /// <summary>
-        /// Update template sync configuration parameters, except for the <code>templateName</code>
-        /// and <code>templateType</code>. Repository details (branch, name, and provider) should
-        /// be of a linked repository. A linked repository is a repository that has been registered
+        /// Update template sync configuration parameters, except for the <c>templateName</c>
+        /// and <c>templateType</c>. Repository details (branch, name, and provider) should be
+        /// of a linked repository. A linked repository is a repository that has been registered
         /// with Proton. For more information, see <a>CreateRepository</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTemplateSyncConfig service method.</param>

@@ -41,10 +41,10 @@ namespace Amazon.ECS.Model
     /// latest version, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html">Updating
     /// the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container Service Developer
     /// Guide</i>. If you're using an Amazon ECS-optimized Linux AMI, your instance needs
-    /// at least version 1.26.0-1 of the <code>ecs-init</code> package. If your container
-    /// instances are launched from version <code>20190301</code> or later, then they contain
-    /// the required versions of the container agent and <code>ecs-init</code>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
+    /// at least version 1.26.0-1 of the <c>ecs-init</c> package. If your container instances
+    /// are launched from version <c>20190301</c> or later, then they contain the required
+    /// versions of the container agent and <c>ecs-init</c>. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
     /// ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  <note> 
@@ -54,11 +54,11 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Linux platform version <code>1.3.0</code> or later.
+    /// Linux platform version <c>1.3.0</c> or later.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Windows platform version <code>1.0.0</code> or later.
+    /// Windows platform version <c>1.0.0</c> or later.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -75,28 +75,28 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>START</code> - This condition emulates the behavior of links and volumes today.
-        /// It validates that a dependent container is started before permitting other containers
+        ///  <c>START</c> - This condition emulates the behavior of links and volumes today. It
+        /// validates that a dependent container is started before permitting other containers
         /// to start.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETE</code> - This condition validates that a dependent container runs
-        /// to completion (exits) before permitting other containers to start. This can be useful
-        /// for nonessential containers that run a script and then exit. This condition can't
-        /// be set on an essential container.
+        ///  <c>COMPLETE</c> - This condition validates that a dependent container runs to completion
+        /// (exits) before permitting other containers to start. This can be useful for nonessential
+        /// containers that run a script and then exit. This condition can't be set on an essential
+        /// container.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but it
-        /// also requires that the container exits with a <code>zero</code> status. This condition
-        /// can't be set on an essential container.
+        ///  <c>SUCCESS</c> - This condition is the same as <c>COMPLETE</c>, but it also requires
+        /// that the container exits with a <c>zero</c> status. This condition can't be set on
+        /// an essential container.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HEALTHY</code> - This condition validates that the dependent container passes
-        /// its Docker health check before permitting other containers to start. This requires
-        /// that the dependent container has health checks configured. This condition is confirmed
+        ///  <c>HEALTHY</c> - This condition validates that the dependent container passes its
+        /// Docker health check before permitting other containers to start. This requires that
+        /// the dependent container has health checks configured. This condition is confirmed
         /// only at task startup.
         /// </para>
         ///  </li> </ul>

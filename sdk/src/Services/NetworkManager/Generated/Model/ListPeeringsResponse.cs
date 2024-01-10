@@ -58,7 +58,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Peerings. 
         /// <para>
-        /// Lists the transit gateway peerings for the <code>ListPeerings</code> request.
+        /// Lists the transit gateway peerings for the <c>ListPeerings</c> request.
         /// </para>
         /// </summary>
         public List<Peering> Peerings

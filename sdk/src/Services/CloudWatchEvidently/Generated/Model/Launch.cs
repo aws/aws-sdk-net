@@ -225,7 +225,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <para>
         /// This value is used when Evidently assigns a particular user session to the launch,
         /// to help create a randomization ID to determine which variation the user session is
-        /// served. This randomization ID is a combination of the entity ID and <code>randomizationSalt</code>.
+        /// served. This randomization ID is a combination of the entity ID and <c>randomizationSalt</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=127)]

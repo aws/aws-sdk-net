@@ -44,11 +44,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NO_CACHE</code> or <code>LOCAL</code>: This value is ignored.
+        ///  <c>NO_CACHE</c> or <c>LOCAL</c>: This value is ignored.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code>: This is the S3 bucket name/prefix.
+        ///  <c>S3</c>: This is the S3 bucket name/prefix.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -68,7 +68,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Modes. 
         /// <para>
         /// An array of strings that specify the local cache modes. You can use one or more local
-        /// cache modes at the same time. This is only used for <code>LOCAL</code> cache types.
+        /// cache modes at the same time. This is only used for <c>LOCAL</c> cache types.
         /// </para>
         ///  
         /// <para>
@@ -94,8 +94,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>privileged</code> flag must be set so that your project has the required
-        /// Docker permissions. 
+        /// The <c>privileged</c> flag must be set so that your project has the required Docker
+        /// permissions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,16 +144,16 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NO_CACHE</code>: The build project does not use any cache.
+        ///  <c>NO_CACHE</c>: The build project does not use any cache.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code>: The build project reads and writes from and to S3.
+        ///  <c>S3</c>: The build project reads and writes from and to S3.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOCAL</code>: The build project stores a cache locally on a build host that
-        /// is only available to that build host.
+        ///  <c>LOCAL</c>: The build project stores a cache locally on a build host that is only
+        /// available to that build host.
         /// </para>
         ///  </li> </ul>
         /// </summary>

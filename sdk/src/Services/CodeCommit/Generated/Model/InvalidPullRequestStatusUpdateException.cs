@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeCommit.Model
 {
     /// <summary>
-    /// The pull request status update is not valid. The only valid update is from <code>OPEN</code>
-    /// to <code>CLOSED</code>.
+    /// The pull request status update is not valid. The only valid update is from <c>OPEN</c>
+    /// to <c>CLOSED</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

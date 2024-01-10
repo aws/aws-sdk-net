@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code>
-    /// element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code>
-    /// element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
-    /// element's <code>Status</code> child element must be set to <code>Disabled</code>,
-    /// because S3 on Outposts does not support replicating delete markers for tag-based rules.
+    /// Specifies whether S3 on Outposts replicates delete markers. If you specify a <c>Filter</c>
+    /// element in your replication configuration, you must also include a <c>DeleteMarkerReplication</c>
+    /// element. If your <c>Filter</c> includes a <c>Tag</c> element, the <c>DeleteMarkerReplication</c>
+    /// element's <c>Status</c> child element must be set to <c>Disabled</c>, because S3 on
+    /// Outposts does not support replicating delete markers for tag-based rules.
     /// 
     ///  
     /// <para>

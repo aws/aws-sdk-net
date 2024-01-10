@@ -148,7 +148,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason for the <code>ValidationException</code>.
+        /// The reason for the <c>ValidationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

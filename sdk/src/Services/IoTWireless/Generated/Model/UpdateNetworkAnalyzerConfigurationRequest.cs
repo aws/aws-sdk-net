@@ -80,7 +80,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property MulticastGroupsToAdd. 
         /// <para>
         /// Multicast group resources to add to the network analyzer configuration. Provide the
-        /// <code>MulticastGroupId</code> of the resource to add in the input array.
+        /// <c>MulticastGroupId</c> of the resource to add in the input array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -100,7 +100,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property MulticastGroupsToRemove. 
         /// <para>
         /// Multicast group resources to remove from the network analyzer configuration. Provide
-        /// the <code>MulticastGroupId</code> of the resources to remove in the input array.
+        /// the <c>MulticastGroupId</c> of the resources to remove in the input array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -135,7 +135,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property WirelessDevicesToAdd. 
         /// <para>
         /// Wireless device resources to add to the network analyzer configuration. Provide the
-        /// <code>WirelessDeviceId</code> of the resource to add in the input array.
+        /// <c>WirelessDeviceId</c> of the resource to add in the input array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
@@ -155,7 +155,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property WirelessDevicesToRemove. 
         /// <para>
         /// Wireless device resources to remove from the network analyzer configuration. Provide
-        /// the <code>WirelessDeviceId</code> of the resources to remove in the input array.
+        /// the <c>WirelessDeviceId</c> of the resources to remove in the input array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=250)]
@@ -175,7 +175,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property WirelessGatewaysToAdd. 
         /// <para>
         /// Wireless gateway resources to add to the network analyzer configuration. Provide the
-        /// <code>WirelessGatewayId</code> of the resource to add in the input array.
+        /// <c>WirelessGatewayId</c> of the resource to add in the input array.
         /// </para>
         /// </summary>
         public List<string> WirelessGatewaysToAdd
@@ -194,7 +194,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property WirelessGatewaysToRemove. 
         /// <para>
         /// Wireless gateway resources to remove from the network analyzer configuration. Provide
-        /// the <code>WirelessGatewayId</code> of the resources to remove in the input array.
+        /// the <c>WirelessGatewayId</c> of the resources to remove in the input array.
         /// </para>
         /// </summary>
         public List<string> WirelessGatewaysToRemove

@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -59,8 +59,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetGroups. 
         /// <para>
-        /// An arbitrary number of <code>DBProxyTargetGroup</code> objects, containing details
-        /// of the corresponding target groups.
+        /// An arbitrary number of <c>DBProxyTargetGroup</c> objects, containing details of the
+        /// corresponding target groups.
         /// </para>
         /// </summary>
         public List<DBProxyTargetGroup> TargetGroups

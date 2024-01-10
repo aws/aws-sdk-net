@@ -62,8 +62,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IpProtocol. 
         /// <para>
-        /// The IP protocol name (for <code>tcp</code>, <code>udp</code>, and <code>icmp</code>)
-        /// or number (see <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
+        /// The IP protocol name (for <c>tcp</c>, <c>udp</c>, and <c>icmp</c>) or number (see
+        /// <a href="http://www.iana.org/assignments/protocol-numbers/protocol-numbers.xhtml">Protocol
         /// Numbers)</a>.
         /// </para>
         /// </summary>
@@ -119,7 +119,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ToPort. 
         /// <para>
         /// The end of the port range for the TCP and UDP protocols, or an ICMP type number. A
-        /// value of <code>-1</code> indicates all ICMP types. 
+        /// value of <c>-1</c> indicates all ICMP types. 
         /// </para>
         /// </summary>
         public int ToPort

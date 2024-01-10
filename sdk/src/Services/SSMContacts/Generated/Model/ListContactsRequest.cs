@@ -99,8 +99,8 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of contact. A contact is type <code>PERSONAL</code> and an escalation plan
-        /// is type <code>ESCALATION</code>.
+        /// The type of contact. A contact is type <c>PERSONAL</c> and an escalation plan is type
+        /// <c>ESCALATION</c>.
         /// </para>
         /// </summary>
         public ContactType Type

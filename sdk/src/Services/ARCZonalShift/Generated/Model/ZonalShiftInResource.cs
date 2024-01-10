@@ -46,13 +46,13 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property AppliedStatus. 
         /// <para>
-        /// The <code>appliedStatus</code> field specifies which application traffic shift is
-        /// in effect for a resource when there is more than one traffic shift active. There can
-        /// be more than one application traffic shift in progress at the same time - that is,
-        /// practice run zonal shifts, customer-started zonal shifts, or an autoshift. The <code>appliedStatus</code>
-        /// field for an autoshift for a resource can have one of two values: <code>APPLIED</code>
-        /// or <code>NOT_APPLIED</code>. The zonal shift or autoshift that is currently in effect
-        /// for the resource has an applied status set to <code>APPLIED</code>.
+        /// The <c>appliedStatus</c> field specifies which application traffic shift is in effect
+        /// for a resource when there is more than one traffic shift active. There can be more
+        /// than one application traffic shift in progress at the same time - that is, practice
+        /// run zonal shifts, customer-started zonal shifts, or an autoshift. The <c>appliedStatus</c>
+        /// field for an autoshift for a resource can have one of two values: <c>APPLIED</c> or
+        /// <c>NOT_APPLIED</c>. The zonal shift or autoshift that is currently in effect for the
+        /// resource has an applied status set to <c>APPLIED</c>.
         /// </para>
         ///  
         /// <para>
@@ -165,9 +165,9 @@ namespace Amazon.ARCZonalShift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>SUCCEEDED:</b> Outcome value when the outcome alarm specified for the practice
-        /// run configuration does not go into an <code>ALARM</code> state during the practice
-        /// run, and the practice run was not interrupted before it completed the expected 30
-        /// minute zonal shift.
+        /// run configuration does not go into an <c>ALARM</c> state during the practice run,
+        /// and the practice run was not interrupted before it completed the expected 30 minute
+        /// zonal shift.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -178,8 +178,8 @@ namespace Amazon.ARCZonalShift.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>FAILED:</b> Outcome value when the outcome alarm specified for the practice run
-        /// configuration goes into an <code>ALARM</code> state during the practice run, and the
-        /// practice run was not interrupted before it completed.
+        /// configuration goes into an <c>ALARM</c> state during the practice run, and the practice
+        /// run was not interrupted before it completed.
         /// </para>
         ///  </li> </ul> 
         /// <para>

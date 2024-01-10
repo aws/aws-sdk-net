@@ -64,7 +64,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Stack status to use as a filter. Specify one or more stack status codes to list only
         /// stacks with the specified status codes. For a complete list of stack status codes,
-        /// see the <code>StackStatus</code> parameter of the <a>Stack</a> data type.
+        /// see the <c>StackStatus</c> parameter of the <a>Stack</a> data type.
         /// </para>
         /// </summary>
         public List<string> StackStatusFilter

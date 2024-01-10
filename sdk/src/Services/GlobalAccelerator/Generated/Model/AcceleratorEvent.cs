@@ -29,11 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// A complex type that contains a <code>Timestamp</code> value and <code>Message</code>
-    /// for changes that you make to an accelerator in Global Accelerator. Messages stored
-    /// here provide progress or error information when you update an accelerator from IPv4
-    /// to dual-stack, or from dual-stack to IPv4. Global Accelerator stores a maximum of
-    /// ten event messages.
+    /// A complex type that contains a <c>Timestamp</c> value and <c>Message</c> for changes
+    /// that you make to an accelerator in Global Accelerator. Messages stored here provide
+    /// progress or error information when you update an accelerator from IPv4 to dual-stack,
+    /// or from dual-stack to IPv4. Global Accelerator stores a maximum of ten event messages.
     /// </summary>
     public partial class AcceleratorEvent
     {
@@ -43,8 +42,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A string that contains an <code>Event</code> message describing changes or errors
-        /// when you update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack
+        /// A string that contains an <c>Event</c> message describing changes or errors when you
+        /// update an accelerator in Global Accelerator from IPv4 to dual-stack, or dual-stack
         /// to IPv4.
         /// </para>
         /// </summary>

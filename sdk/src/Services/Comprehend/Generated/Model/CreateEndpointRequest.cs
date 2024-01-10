@@ -48,7 +48,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// An idempotency token provided by the customer. If this token matches a previous endpoint
-        /// creation request, Amazon Comprehend will not return a <code>ResourceInUseException</code>.
+        /// creation request, Amazon Comprehend will not return a <c>ResourceInUseException</c>.
         /// 
         /// </para>
         /// </summary>
@@ -108,8 +108,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// This is the descriptive suffix that becomes part of the <code>EndpointArn</code> used
-        /// for all subsequent requests to this resource. 
+        /// This is the descriptive suffix that becomes part of the <c>EndpointArn</c> used for
+        /// all subsequent requests to this resource. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=40)]

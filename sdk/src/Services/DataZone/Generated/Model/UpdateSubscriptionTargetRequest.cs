@@ -47,7 +47,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property ApplicableAssetTypes. 
         /// <para>
-        /// The applicable asset types to be updated as part of the <code>UpdateSubscriptionTarget</code>
+        /// The applicable asset types to be updated as part of the <c>UpdateSubscriptionTarget</c>
         /// action.
         /// </para>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property AuthorizedPrincipals. 
         /// <para>
-        /// The authorized principals to be updated as part of the <code>UpdateSubscriptionTarget</code>
+        /// The authorized principals to be updated as part of the <c>UpdateSubscriptionTarget</c>
         /// action.
         /// </para>
         /// </summary>
@@ -144,7 +144,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property ManageAccessRole. 
         /// <para>
-        /// The manage access role to be updated as part of the <code>UpdateSubscriptionTarget</code>
+        /// The manage access role to be updated as part of the <c>UpdateSubscriptionTarget</c>
         /// action.
         /// </para>
         /// </summary>
@@ -163,7 +163,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to be updated as part of the <code>UpdateSubscriptionTarget</code> action.
+        /// The name to be updated as part of the <c>UpdateSubscriptionTarget</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
@@ -182,7 +182,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The provider to be updated as part of the <code>UpdateSubscriptionTarget</code> action.
+        /// The provider to be updated as part of the <c>UpdateSubscriptionTarget</c> action.
         /// </para>
         /// </summary>
         public string Provider
@@ -200,8 +200,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property SubscriptionTargetConfig. 
         /// <para>
-        /// The configuration to be updated as part of the <code>UpdateSubscriptionTarget</code>
-        /// action.
+        /// The configuration to be updated as part of the <c>UpdateSubscriptionTarget</c> action.
         /// </para>
         /// </summary>
         public List<SubscriptionTargetForm> SubscriptionTargetConfig

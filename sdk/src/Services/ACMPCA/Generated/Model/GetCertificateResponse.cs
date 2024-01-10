@@ -39,7 +39,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Certificate. 
         /// <para>
-        /// The base64 PEM-encoded certificate specified by the <code>CertificateArn</code> parameter.
+        /// The base64 PEM-encoded certificate specified by the <c>CertificateArn</c> parameter.
         /// </para>
         /// </summary>
         public string Certificate

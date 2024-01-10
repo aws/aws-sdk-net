@@ -33,10 +33,10 @@ namespace Amazon.Backup.Model
     /// 
     ///  
     /// <para>
-    /// Specifying your desired <code>Conditions</code>, <code>ListOfTags</code>, <code>NotResources</code>,
-    /// and/or <code>Resources</code> is recommended. If none of these are specified, Backup
-    /// will attempt to select all supported and opted-in storage resources, which could have
-    /// unintended cost implications.
+    /// Specifying your desired <c>Conditions</c>, <c>ListOfTags</c>, <c>NotResources</c>,
+    /// and/or <c>Resources</c> is recommended. If none of these are specified, Backup will
+    /// attempt to select all supported and opted-in storage resources, which could have unintended
+    /// cost implications.
     /// </para>
     /// </summary>
     public partial class BackupSelection
@@ -52,12 +52,12 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Conditions. 
         /// <para>
         /// A list of conditions that you define to assign resources to your backup plans using
-        /// tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo",
-        /// "Value": "true" },</code>. Condition operators are case sensitive.
+        /// tags. For example, <c>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
+        /// "true" },</c>. Condition operators are case sensitive.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Conditions</code> differs from <code>ListOfTags</code> as follows:
+        ///  <c>Conditions</c> differs from <c>ListOfTags</c> as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -66,9 +66,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Conditions</code> supports <code>StringEquals</code>, <code>StringLike</code>,
-        /// <code>StringNotEquals</code>, and <code>StringNotLike</code>. <code>ListOfTags</code>
-        /// only supports <code>StringEquals</code>.
+        ///  <c>Conditions</c> supports <c>StringEquals</c>, <c>StringLike</c>, <c>StringNotEquals</c>,
+        /// and <c>StringNotLike</c>. <c>ListOfTags</c> only supports <c>StringEquals</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,7 +87,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The ARN of the IAM role that Backup uses to authenticate when backing up the target
-        /// resource; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// resource; for example, <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -108,12 +107,12 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ListOfTags. 
         /// <para>
         /// A list of conditions that you define to assign resources to your backup plans using
-        /// tags. For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo",
-        /// "Value": "true" },</code>. Condition operators are case sensitive.
+        /// tags. For example, <c>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
+        /// "true" },</c>. Condition operators are case sensitive.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ListOfTags</code> differs from <code>Conditions</code> as follows:
+        ///  <c>ListOfTags</c> differs from <c>Conditions</c> as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -122,9 +121,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ListOfTags</code> only supports <code>StringEquals</code>. <code>Conditions</code>
-        /// supports <code>StringEquals</code>, <code>StringLike</code>, <code>StringNotEquals</code>,
-        /// and <code>StringNotLike</code>. 
+        ///  <c>ListOfTags</c> only supports <c>StringEquals</c>. <c>Conditions</c> supports <c>StringEquals</c>,
+        /// <c>StringLike</c>, <c>StringNotEquals</c>, and <c>StringNotLike</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

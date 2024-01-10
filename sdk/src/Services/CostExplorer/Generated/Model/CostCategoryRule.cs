@@ -62,16 +62,14 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object used to categorize costs. This supports dimensions, tags, and nested expressions.
-        /// Currently the only dimensions supported are <code>LINKED_ACCOUNT</code>, <code>SERVICE_CODE</code>,
-        /// <code>RECORD_TYPE</code>, <code>LINKED_ACCOUNT_NAME</code>, <code>REGION</code>, and
-        /// <code>USAGE_TYPE</code>.
+        /// Currently the only dimensions supported are <c>LINKED_ACCOUNT</c>, <c>SERVICE_CODE</c>,
+        /// <c>RECORD_TYPE</c>, <c>LINKED_ACCOUNT_NAME</c>, <c>REGION</c>, and <c>USAGE_TYPE</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>RECORD_TYPE</code> is a dimension used for Cost Explorer APIs, and is also
-        /// supported for Cost Category expressions. This dimension uses different terms, depending
-        /// on whether you're using the console or API/JSON editor. For a detailed comparison,
-        /// see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
+        ///  <c>RECORD_TYPE</c> is a dimension used for Cost Explorer APIs, and is also supported
+        /// for Cost Category expressions. This dimension uses different terms, depending on whether
+        /// you're using the console or API/JSON editor. For a detailed comparison, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/manage-cost-categories.html#cost-categories-terms">Term
         /// Comparisons</a> in the <i>Billing and Cost Management User Guide</i>.
         /// </para>
         /// </summary>
@@ -90,13 +88,13 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// You can define the <code>CostCategoryRule</code> rule type as either <code>REGULAR</code>
-        /// or <code>INHERITED_VALUE</code>. The <code>INHERITED_VALUE</code> rule type adds the
-        /// flexibility to define a rule that dynamically inherits the cost category value. This
-        /// value is from the dimension value that's defined by <code>CostCategoryInheritedValueDimension</code>.
-        /// For example, suppose that you want to costs to be dynamically grouped based on the
-        /// value of a specific tag key. First, choose an inherited value rule type, and then
-        /// choose the tag dimension and specify the tag key to use.
+        /// You can define the <c>CostCategoryRule</c> rule type as either <c>REGULAR</c> or <c>INHERITED_VALUE</c>.
+        /// The <c>INHERITED_VALUE</c> rule type adds the flexibility to define a rule that dynamically
+        /// inherits the cost category value. This value is from the dimension value that's defined
+        /// by <c>CostCategoryInheritedValueDimension</c>. For example, suppose that you want
+        /// to costs to be dynamically grouped based on the value of a specific tag key. First,
+        /// choose an inherited value rule type, and then choose the tag dimension and specify
+        /// the tag key to use.
         /// </para>
         /// </summary>
         public CostCategoryRuleType Type

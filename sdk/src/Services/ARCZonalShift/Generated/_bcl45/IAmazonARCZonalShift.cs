@@ -521,12 +521,12 @@ namespace Amazon.ARCZonalShift
         /// <summary>
         /// Lists all active and completed zonal shifts in Amazon Route 53 Application Recovery
         /// Controller in your Amazon Web Services account in this Amazon Web Services Region.
-        /// <code>ListZonalShifts</code> returns customer-started zonal shifts, as well as practice
+        /// <c>ListZonalShifts</c> returns customer-started zonal shifts, as well as practice
         /// run zonal shifts that Route 53 ARC started on your behalf for zonal autoshift.
         /// 
         ///  
         /// <para>
-        /// The <code>ListZonalShifts</code> operation does not list autoshifts. For more information
+        /// The <c>ListZonalShifts</c> operation does not list autoshifts. For more information
         /// about listing autoshifts, see <a href="https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html">"&gt;ListAutoshifts</a>.
         /// </para>
         /// </summary>
@@ -553,12 +553,12 @@ namespace Amazon.ARCZonalShift
         /// <summary>
         /// Lists all active and completed zonal shifts in Amazon Route 53 Application Recovery
         /// Controller in your Amazon Web Services account in this Amazon Web Services Region.
-        /// <code>ListZonalShifts</code> returns customer-started zonal shifts, as well as practice
+        /// <c>ListZonalShifts</c> returns customer-started zonal shifts, as well as practice
         /// run zonal shifts that Route 53 ARC started on your behalf for zonal autoshift.
         /// 
         ///  
         /// <para>
-        /// The <code>ListZonalShifts</code> operation does not list autoshifts. For more information
+        /// The <c>ListZonalShifts</c> operation does not list autoshifts. For more information
         /// about listing autoshifts, see <a href="https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html">"&gt;ListAutoshifts</a>.
         /// </para>
         /// </summary>
@@ -774,8 +774,8 @@ namespace Amazon.ARCZonalShift
 
         /// <summary>
         /// You can update the zonal autoshift status for a resource, to enable or disable zonal
-        /// autoshift. When zonal autoshift is <code>ENABLED</code>, Amazon Web Services shifts
-        /// away resource traffic from an Availability Zone, on your behalf, when Amazon Web Services
+        /// autoshift. When zonal autoshift is <c>ENABLED</c>, Amazon Web Services shifts away
+        /// resource traffic from an Availability Zone, on your behalf, when Amazon Web Services
         /// determines that there's an issue in the Availability Zone that could potentially affect
         /// customers.
         /// </summary>
@@ -808,8 +808,8 @@ namespace Amazon.ARCZonalShift
 
         /// <summary>
         /// You can update the zonal autoshift status for a resource, to enable or disable zonal
-        /// autoshift. When zonal autoshift is <code>ENABLED</code>, Amazon Web Services shifts
-        /// away resource traffic from an Availability Zone, on your behalf, when Amazon Web Services
+        /// autoshift. When zonal autoshift is <c>ENABLED</c>, Amazon Web Services shifts away
+        /// resource traffic from an Availability Zone, on your behalf, when Amazon Web Services
         /// determines that there's an issue in the Availability Zone that could potentially affect
         /// customers.
         /// </summary>

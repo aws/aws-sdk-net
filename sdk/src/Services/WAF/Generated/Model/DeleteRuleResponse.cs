@@ -38,8 +38,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used to submit the <code>DeleteRule</code> request.
-        /// You can also use this value to query the status of the request. For more information,
+        /// The <c>ChangeToken</c> that you used to submit the <c>DeleteRule</c> request. You
+        /// can also use this value to query the status of the request. For more information,
         /// see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>

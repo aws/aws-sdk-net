@@ -46,7 +46,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>GetMultiRegionAccessPointPolicy</code>:
+    /// The following actions are related to <c>GetMultiRegionAccessPointPolicy</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

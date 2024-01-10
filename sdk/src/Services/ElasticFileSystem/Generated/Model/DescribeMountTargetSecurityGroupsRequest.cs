@@ -32,7 +32,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// Container for the parameters to the DescribeMountTargetSecurityGroups operation.
     /// Returns the security groups currently in effect for a mount target. This operation
     /// requires that the network interface of the mount target has been created and the lifecycle
-    /// state of the mount target is not <code>deleted</code>.
+    /// state of the mount target is not <c>deleted</c>.
     /// 
     ///  
     /// <para>
@@ -40,12 +40,12 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>elasticfilesystem:DescribeMountTargetSecurityGroups</code> action on the mount
-    /// target's file system. 
+    ///  <c>elasticfilesystem:DescribeMountTargetSecurityGroups</c> action on the mount target's
+    /// file system. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ec2:DescribeNetworkInterfaceAttribute</code> action on the mount target's network
+    ///  <c>ec2:DescribeNetworkInterfaceAttribute</c> action on the mount target's network
     /// interface. 
     /// </para>
     ///  </li> </ul>

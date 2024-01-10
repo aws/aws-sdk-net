@@ -59,7 +59,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property JobStatus. 
         /// <para>
         /// The status of the designated job. Upon successful completion, the job's status will
-        /// be <code>STOPPED</code>.
+        /// be <c>STOPPED</c>.
         /// </para>
         /// </summary>
         public JobStatus JobStatus

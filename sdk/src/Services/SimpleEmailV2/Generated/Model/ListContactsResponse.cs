@@ -58,8 +58,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A string token indicating that there might be additional contacts available to be
-        /// listed. Copy this token to a subsequent call to <code>ListContacts</code> with the
-        /// same parameters to retrieve the next page of contacts.
+        /// listed. Copy this token to a subsequent call to <c>ListContacts</c> with the same
+        /// parameters to retrieve the next page of contacts.
         /// </para>
         /// </summary>
         public string NextToken

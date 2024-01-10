@@ -39,8 +39,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property Devices. 
         /// <para>
-        /// An array of <code>DeviceSummary</code> objects for devices that match the specified
-        /// filter values.
+        /// An array of <c>DeviceSummary</c> objects for devices that match the specified filter
+        /// values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

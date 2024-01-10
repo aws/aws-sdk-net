@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:GetAccessGrantsInstance</code> permission to use this operation.
+    /// You must have the <c>s3:GetAccessGrantsInstance</c> permission to use this operation.
     /// 
     /// </para>
     ///  </dd> </dl>

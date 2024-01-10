@@ -62,9 +62,9 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// With the date/time keys (<code>*At{Before,After}</code>), the value is a valid <a
-        /// href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC 3339</a> string with
-        /// no UTC offset and with an optional fractional precision (for example, <code>1985-04-12T23:20:50.52Z</code>).
+        /// With the date/time keys (<c>*At{Before,After}</c>), the value is a valid <a href="https://datatracker.ietf.org/doc/html/rfc3339.html">RFC
+        /// 3339</a> string with no UTC offset and with an optional fractional precision (for
+        /// example, <c>1985-04-12T23:20:50.52Z</c>).
         /// </para>
         /// </summary>
         public string Value

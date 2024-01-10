@@ -40,8 +40,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Actions. 
         /// <para>
         /// The actions to take on a packet that matches one of the stateless rule definition's
-        /// match attributes. You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>,
-        /// or <code>aws:forward_to_sfe</code>). You can then add custom actions.
+        /// match attributes. You must specify a standard action (<c>aws:pass</c>, <c>aws:drop</c>,
+        /// or <c>aws:forward_to_sfe</c>). You can then add custom actions.
         /// </para>
         /// </summary>
         public List<string> Actions

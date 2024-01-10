@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
-    /// your file system again, using a valid value.
+    /// An invalid value for <c>PerUnitStorageThroughput</c> was provided. Please create your
+    /// file system again, using a valid value.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

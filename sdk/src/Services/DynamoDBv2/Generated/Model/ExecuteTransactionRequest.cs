@@ -38,7 +38,7 @@ namespace Amazon.DynamoDBv2.Model
     /// The entire transaction must consist of either read statements or write statements,
     /// you cannot mix both in one transaction. The EXISTS function is an exception and can
     /// be used to check the condition of specific attributes of the item in a similar manner
-    /// to <code>ConditionCheck</code> in the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
+    /// to <c>ConditionCheck</c> in the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
     /// API.
     /// </para>
     ///  </note>
@@ -52,8 +52,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// Set this value to get remaining results, if <code>NextToken</code> was returned in
-        /// the statement response.
+        /// Set this value to get remaining results, if <c>NextToken</c> was returned in the statement
+        /// response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

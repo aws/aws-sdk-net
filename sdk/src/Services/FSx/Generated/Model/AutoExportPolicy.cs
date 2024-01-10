@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes a data repository association's automatic export policy. The <code>AutoExportPolicy</code>
+    /// Describes a data repository association's automatic export policy. The <c>AutoExportPolicy</c>
     /// defines the types of updated objects on the file system that will be automatically
     /// exported to the data repository. As you create, modify, or delete files, Amazon FSx
     /// for Lustre automatically exports the defined changes asynchronously once your application
@@ -37,8 +37,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// The <code>AutoExportPolicy</code> is only supported on Amazon FSx for Lustre file
-    /// systems with a data repository association.
+    /// The <c>AutoExportPolicy</c> is only supported on Amazon FSx for Lustre file systems
+    /// with a data repository association.
     /// </para>
     /// </summary>
     public partial class AutoExportPolicy
@@ -48,26 +48,26 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// The <code>AutoExportPolicy</code> can have the following event values:
+        /// The <c>AutoExportPolicy</c> can have the following event values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code> - New files and directories are automatically exported to the data
-        /// repository as they are added to the file system.
+        ///  <c>NEW</c> - New files and directories are automatically exported to the data repository
+        /// as they are added to the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CHANGED</code> - Changes to files and directories on the file system are automatically
+        ///  <c>CHANGED</c> - Changes to files and directories on the file system are automatically
         /// exported to the data repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Files and directories are automatically deleted on the data
-        /// repository when they are deleted on the file system.
+        ///  <c>DELETED</c> - Files and directories are automatically deleted on the data repository
+        /// when they are deleted on the file system.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can define any combination of event types for your <code>AutoExportPolicy</code>.
+        /// You can define any combination of event types for your <c>AutoExportPolicy</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]

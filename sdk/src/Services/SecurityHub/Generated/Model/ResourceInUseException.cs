@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// The request was rejected because it conflicts with the resource's availability. For
-    /// example, you tried to update a security control that's currently in the <code>UPDATING</code>
+    /// example, you tried to update a security control that's currently in the <c>UPDATING</c>
     /// state.
     /// </summary>
     #if !NETSTANDARD

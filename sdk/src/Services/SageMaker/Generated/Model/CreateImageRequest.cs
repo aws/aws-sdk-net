@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The display name of the image. If not provided, <code>ImageName</code> is displayed.
+        /// The display name of the image. If not provided, <c>ImageName</c> is displayed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

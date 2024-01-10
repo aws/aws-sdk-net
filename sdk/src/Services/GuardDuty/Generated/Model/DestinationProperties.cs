@@ -44,7 +44,7 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  
         /// <para>
-        /// To specify an S3 bucket folder use the following format: <code>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</code>
+        /// To specify an S3 bucket folder use the following format: <c>arn:aws:s3:::DOC-EXAMPLE-BUCKET/myFolder/</c>
         /// 
         /// </para>
         /// </summary>

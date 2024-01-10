@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A parameter declaration for the <code>Integer</code> data type.
+    /// A parameter declaration for the <c>Integer</c> data type.
     /// 
     ///  
     /// <para>
@@ -68,11 +68,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RECOMMENDED</code>: The recommended value.
+        ///  <c>RECOMMENDED</c>: The recommended value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NULL</code>: The <code>NULL</code> value.
+        ///  <c>NULL</c>: The <c>NULL</c> value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -48,7 +48,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+        /// The IPv4 network range to allow or deny, in CIDR notation (for example <c>172.16.0.0/24</c>).
         /// </para>
         /// </summary>
         public string CidrBlock
@@ -108,7 +108,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6CidrBlock. 
         /// <para>
-        /// The IPv6 network range to allow or deny, in CIDR notation (for example <code>2001:bd8:1234:1a00::/64</code>).
+        /// The IPv6 network range to allow or deny, in CIDR notation (for example <c>2001:bd8:1234:1a00::/64</c>).
         /// </para>
         /// </summary>
         public string Ipv6CidrBlock

@@ -106,28 +106,28 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>associating</code>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.
+        ///  <c>associating</c>: The initial state after calling <a>CreateDirectConnectGatewayAssociation</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>associated</code>: The Direct Connect gateway and virtual private gateway or
-        /// transit gateway are successfully associated and ready to pass traffic.
+        ///  <c>associated</c>: The Direct Connect gateway and virtual private gateway or transit
+        /// gateway are successfully associated and ready to pass traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociating</code>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.
+        ///  <c>disassociating</c>: The initial state after calling <a>DeleteDirectConnectGatewayAssociation</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociated</code>: The virtual private gateway or transit gateway is disassociated
+        ///  <c>disassociated</c>: The virtual private gateway or transit gateway is disassociated
         /// from the Direct Connect gateway. Traffic flow between the Direct Connect gateway and
         /// virtual private gateway or transit gateway is stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>updating</code>: The CIDR blocks for the virtual private gateway or transit
-        /// gateway are currently being updated. This could be new CIDR blocks added or current
-        /// CIDR blocks removed.
+        ///  <c>updating</c>: The CIDR blocks for the virtual private gateway or transit gateway
+        /// are currently being updated. This could be new CIDR blocks added or current CIDR blocks
+        /// removed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

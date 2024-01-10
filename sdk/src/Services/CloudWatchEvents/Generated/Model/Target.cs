@@ -36,8 +36,8 @@ namespace Amazon.CloudWatchEvents.Model
     /// <para>
     /// If you are setting the event bus of another account as the target, and that account
     /// granted permission to your account through an organization instead of directly by
-    /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
-    /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
+    /// the account ID, then you must specify a <c>RoleArn</c> with proper permissions in
+    /// the <c>Target</c> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
     /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
     /// User Guide</i>.
     /// </para>
@@ -103,8 +103,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property DeadLetterConfig. 
         /// <para>
-        /// The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter
-        /// queue events to.
+        /// The <c>DeadLetterConfig</c> that defines the target queue to send dead-letter queue
+        /// events to.
         /// </para>
         /// </summary>
         public DeadLetterConfig DeadLetterConfig
@@ -252,7 +252,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <para>
         /// The custom parameter you can use to control the shard assignment, when the target
         /// is a Kinesis data stream. If you do not include this parameter, the default is to
-        /// use the <code>eventId</code> as the partition key.
+        /// use the <c>eventId</c> as the partition key.
         /// </para>
         /// </summary>
         public KinesisParameters KinesisParameters
@@ -295,8 +295,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property RetryPolicy. 
         /// <para>
-        /// The <code>RetryPolicy</code> object that contains the retry policy configuration to
-        /// use for the dead-letter queue.
+        /// The <c>RetryPolicy</c> object that contains the retry policy configuration to use
+        /// for the dead-letter queue.
         /// </para>
         /// </summary>
         public RetryPolicy RetryPolicy

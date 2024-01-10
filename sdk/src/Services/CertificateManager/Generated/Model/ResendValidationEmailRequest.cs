@@ -57,7 +57,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:acm:us-east-1:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         /// </summary>
@@ -97,11 +97,11 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property ValidationDomain. 
         /// <para>
         /// The base validation domain that will act as the suffix of the email addresses that
-        /// are used to send the emails. This must be the same as the <code>Domain</code> value
-        /// or a superdomain of the <code>Domain</code> value. For example, if you requested a
-        /// certificate for <code>site.subdomain.example.com</code> and specify a <b>ValidationDomain</b>
-        /// of <code>subdomain.example.com</code>, ACM sends email to the domain registrant, technical
-        /// contact, and administrative contact in WHOIS and the following five addresses:
+        /// are used to send the emails. This must be the same as the <c>Domain</c> value or a
+        /// superdomain of the <c>Domain</c> value. For example, if you requested a certificate
+        /// for <c>site.subdomain.example.com</c> and specify a <b>ValidationDomain</b> of <c>subdomain.example.com</c>,
+        /// ACM sends email to the domain registrant, technical contact, and administrative contact
+        /// in WHOIS and the following five addresses:
         /// </para>
         ///  <ul> <li> 
         /// <para>

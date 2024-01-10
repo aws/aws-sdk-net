@@ -40,7 +40,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Center. 
         /// <para>
         /// A single point geometry, specifying the center of the circle, using <a href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS
-        /// 84</a> coordinates, in the form <code>[longitude, latitude]</code>.
+        /// 84</a> coordinates, in the form <c>[longitude, latitude]</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]

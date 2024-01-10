@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the OpenZFS volume. OpenZFS root volumes are automatically named <code>FSX</code>.
+        /// The name of the OpenZFS volume. OpenZFS root volumes are automatically named <c>FSX</c>.
         /// Child volume names must be unique among their parent volume's children. The name of
         /// the volume is part of the mount string for the OpenZFS volume. 
         /// </para>
@@ -117,7 +117,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property VolumeId. 
         /// <para>
-        /// The ID of the volume that you want to update, in the format <code>fsvol-0123456789abcdef0</code>.
+        /// The ID of the volume that you want to update, in the format <c>fsvol-0123456789abcdef0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=23, Max=23)]

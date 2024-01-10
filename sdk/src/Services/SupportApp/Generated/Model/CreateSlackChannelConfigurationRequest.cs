@@ -154,40 +154,40 @@ namespace Amazon.SupportApp.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>high</code> or <code>all</code>, you must specify <code>true</code>
-        /// for at least one of the following parameters:
+        /// If you specify <c>high</c> or <c>all</c>, you must specify <c>true</c> for at least
+        /// one of the following parameters:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>notifyOnAddCorrespondenceToCase</code> 
+        ///  <c>notifyOnAddCorrespondenceToCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnCreateOrReopenCase</code> 
+        ///  <c>notifyOnCreateOrReopenCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnResolveCase</code> 
+        ///  <c>notifyOnResolveCase</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify <code>none</code>, the following parameters must be null or <code>false</code>:
+        /// If you specify <c>none</c>, the following parameters must be null or <c>false</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>notifyOnAddCorrespondenceToCase</code> 
+        ///  <c>notifyOnAddCorrespondenceToCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnCreateOrReopenCase</code> 
+        ///  <c>notifyOnCreateOrReopenCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnResolveCase</code> 
+        ///  <c>notifyOnResolveCase</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you don't specify these parameters in your request, they default to <code>false</code>.
+        /// If you don't specify these parameters in your request, they default to <c>false</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -243,7 +243,7 @@ namespace Amazon.SupportApp.Model
         /// <summary>
         /// Gets and sets the property TeamId. 
         /// <para>
-        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
+        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <c>T012ABCDEFG</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

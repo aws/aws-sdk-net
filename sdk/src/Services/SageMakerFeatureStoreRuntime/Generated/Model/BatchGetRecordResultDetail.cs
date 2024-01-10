@@ -41,7 +41,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property ExpiresAt. 
         /// <para>
-        /// The <code>ExpiresAt</code> ISO string of the requested record.
+        /// The <c>ExpiresAt</c> ISO string of the requested record.
         /// </para>
         /// </summary>
         public string ExpiresAt
@@ -59,7 +59,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The <code>FeatureGroupName</code> containing Records you retrieved in a batch.
+        /// The <c>FeatureGroupName</c> containing Records you retrieved in a batch.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=358400)]
@@ -78,7 +78,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property Record. 
         /// <para>
-        /// The <code>Record</code> retrieved.
+        /// The <c>Record</c> retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Response object for the <code>DescribeBackups</code> operation.
+    /// Response object for the <c>DescribeBackups</c> operation.
     /// </summary>
     public partial class DescribeBackupsResponse : AmazonWebServiceResponse
     {
@@ -58,9 +58,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A <code>NextToken</code> value is present if there are more backups than returned
-        /// in the response. You can use the <code>NextToken</code> value in the subsequent request
-        /// to fetch the backups. 
+        /// A <c>NextToken</c> value is present if there are more backups than returned in the
+        /// response. You can use the <c>NextToken</c> value in the subsequent request to fetch
+        /// the backups. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

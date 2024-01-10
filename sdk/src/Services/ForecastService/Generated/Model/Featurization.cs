@@ -45,32 +45,32 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>{</code> 
+    ///  <c>{</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"AttributeName": "demand",</code> 
+    ///  <c>"AttributeName": "demand",</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>FeaturizationPipeline [ {</code> 
+    ///  <c>FeaturizationPipeline [ {</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"FeaturizationMethodName": "filling",</code> 
+    ///  <c>"FeaturizationMethodName": "filling",</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</code>
+    ///  <c>"FeaturizationMethodParameters": {"aggregation": "avg", "backfill": "nan"}</c>
     /// 
     /// </para>
     ///  
     /// <para>
-    ///  <code>} ]</code> 
+    ///  <c>} ]</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>}</code> 
+    ///  <c>}</c> 
     /// </para>
     /// </summary>
     public partial class Featurization
@@ -82,10 +82,10 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property AttributeName. 
         /// <para>
         /// The name of the schema attribute that specifies the data field to be featurized. Amazon
-        /// Forecast supports the target field of the <code>TARGET_TIME_SERIES</code> and the
-        /// <code>RELATED_TIME_SERIES</code> datasets. For example, for the <code>RETAIL</code>
-        /// domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain,
-        /// the target is <code>target_value</code>. For more information, see <a>howitworks-missing-values</a>.
+        /// Forecast supports the target field of the <c>TARGET_TIME_SERIES</c> and the <c>RELATED_TIME_SERIES</c>
+        /// datasets. For example, for the <c>RETAIL</c> domain, the target is <c>demand</c>,
+        /// and for the <c>CUSTOM</c> domain, the target is <c>target_value</c>. For more information,
+        /// see <a>howitworks-missing-values</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]
@@ -104,8 +104,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property FeaturizationPipeline. 
         /// <para>
-        /// An array of one <code>FeaturizationMethod</code> object that specifies the feature
-        /// transformation method.
+        /// An array of one <c>FeaturizationMethod</c> object that specifies the feature transformation
+        /// method.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

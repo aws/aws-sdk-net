@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Comprehend.Model
 {
     /// <summary>
-    /// Specifies the format and location of the input data. You must provide either the <code>Annotations</code>
-    /// parameter or the <code>EntityList</code> parameter.
+    /// Specifies the format and location of the input data. You must provide either the <c>Annotations</c>
+    /// parameter or the <c>EntityList</c> parameter.
     /// </summary>
     public partial class DatasetEntityRecognizerInputDataConfig
     {

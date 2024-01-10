@@ -40,9 +40,9 @@ namespace Amazon.Glue.Model
     /// </para>
     ///  
     /// <para>
-    /// To ensure the immediate deletion of all related resources, before calling <code>BatchDeleteTable</code>,
-    /// use <code>DeleteTableVersion</code> or <code>BatchDeleteTableVersion</code>, and <code>DeletePartition</code>
-    /// or <code>BatchDeletePartition</code>, to delete any resources that belong to the table.
+    /// To ensure the immediate deletion of all related resources, before calling <c>BatchDeleteTable</c>,
+    /// use <c>DeleteTableVersion</c> or <c>BatchDeleteTableVersion</c>, and <c>DeletePartition</c>
+    /// or <c>BatchDeletePartition</c>, to delete any resources that belong to the table.
     /// </para>
     ///  </note>
     /// </summary>

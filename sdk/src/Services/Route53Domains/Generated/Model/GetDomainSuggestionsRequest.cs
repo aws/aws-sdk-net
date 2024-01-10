@@ -65,7 +65,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.
+        /// Period (.) to separate the labels in the name, such as the <c>.</c> in <c>example.com</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -91,11 +91,10 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property OnlyAvailable. 
         /// <para>
-        /// If <code>OnlyAvailable</code> is <code>true</code>, Route 53 returns only domain names
-        /// that are available. If <code>OnlyAvailable</code> is <code>false</code>, Route 53
-        /// returns domain names without checking whether they're available to be registered.
-        /// To determine whether the domain is available, you can call <code>checkDomainAvailability</code>
-        /// for each suggestion.
+        /// If <c>OnlyAvailable</c> is <c>true</c>, Route 53 returns only domain names that are
+        /// available. If <c>OnlyAvailable</c> is <c>false</c>, Route 53 returns domain names
+        /// without checking whether they're available to be registered. To determine whether
+        /// the domain is available, you can call <c>checkDomainAvailability</c> for each suggestion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

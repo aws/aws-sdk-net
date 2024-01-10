@@ -49,9 +49,9 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Configuration. 
         /// <para>
         /// Shows the configuration information for your Amazon Kendra experience. This includes
-        /// <code>ContentSourceConfiguration</code>, which specifies the data source IDs and/or
-        /// FAQ IDs, and <code>UserIdentityConfiguration</code>, which specifies the user or group
-        /// information to grant access to your Amazon Kendra experience.
+        /// <c>ContentSourceConfiguration</c>, which specifies the data source IDs and/or FAQ
+        /// IDs, and <c>UserIdentityConfiguration</c>, which specifies the user or group information
+        /// to grant access to your Amazon Kendra experience.
         /// </para>
         /// </summary>
         public ExperienceConfiguration Configuration
@@ -202,9 +202,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Shows the Amazon Resource Name (ARN) of a role with permission to access <code>Query</code>
-        /// API, <code>QuerySuggestions</code> API, <code>SubmitFeedback</code> API, and IAM Identity
-        /// Center that stores your user and group information.
+        /// Shows the Amazon Resource Name (ARN) of a role with permission to access <c>Query</c>
+        /// API, <c>QuerySuggestions</c> API, <c>SubmitFeedback</c> API, and IAM Identity Center
+        /// that stores your user and group information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -224,9 +224,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current processing status of your Amazon Kendra experience. When the status is
-        /// <code>ACTIVE</code>, your Amazon Kendra experience is ready to use. When the status
-        /// is <code>FAILED</code>, the <code>ErrorMessage</code> field contains the reason that
-        /// this failed.
+        /// <c>ACTIVE</c>, your Amazon Kendra experience is ready to use. When the status is <c>FAILED</c>,
+        /// the <c>ErrorMessage</c> field contains the reason that this failed.
         /// </para>
         /// </summary>
         public ExperienceStatus Status

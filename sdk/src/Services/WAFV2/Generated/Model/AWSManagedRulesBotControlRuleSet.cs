@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Details for your use of the Bot Control managed rule group, <code>AWSManagedRulesBotControlRuleSet</code>.
-    /// This configuration is used in <code>ManagedRuleGroupConfig</code>.
+    /// Details for your use of the Bot Control managed rule group, <c>AWSManagedRulesBotControlRuleSet</c>.
+    /// This configuration is used in <c>ManagedRuleGroupConfig</c>.
     /// </summary>
     public partial class AWSManagedRulesBotControlRuleSet
     {
@@ -45,8 +45,8 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// Determines whether to use machine learning (ML) to analyze your web traffic for bot-related
-        /// activity. Machine learning is required for the Bot Control rules <code>TGT_ML_CoordinatedActivityLow</code>
-        /// and <code>TGT_ML_CoordinatedActivityMedium</code>, which inspect for anomalous behavior
+        /// activity. Machine learning is required for the Bot Control rules <c>TGT_ML_CoordinatedActivityLow</c>
+        /// and <c>TGT_ML_CoordinatedActivityMedium</c>, which inspect for anomalous behavior
         /// that might indicate distributed, coordinated bot activity.
         /// </para>
         ///  
@@ -57,7 +57,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>TRUE</code> 
+        /// Default: <c>TRUE</c> 
         /// </para>
         /// </summary>
         public bool EnableMachineLearning

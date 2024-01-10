@@ -38,8 +38,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A series of <code>Allow</code> or <code>Deny</code> decisions for each request, and
-        /// the policies that produced them.
+        /// A series of <c>Allow</c> or <c>Deny</c> decisions for each request, and the policies
+        /// that produced them.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

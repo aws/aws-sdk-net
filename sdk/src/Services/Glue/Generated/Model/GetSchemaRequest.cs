@@ -43,13 +43,13 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code>
-        /// or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.
+        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <c>SchemaArn</c>
+        /// or <c>SchemaName</c> and <c>RegistryName</c> has to be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code>
-        /// and <code>RegistryName</code> has to be provided.
+        /// SchemaId$SchemaName: The name of the schema. Either <c>SchemaArn</c> or <c>SchemaName</c>
+        /// and <c>RegistryName</c> has to be provided.
         /// </para>
         ///  </li> </ul>
         /// </summary>

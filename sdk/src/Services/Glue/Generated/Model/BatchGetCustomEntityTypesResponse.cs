@@ -39,8 +39,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CustomEntityTypes. 
         /// <para>
-        /// A list of <code>CustomEntityType</code> objects representing the custom patterns that
-        /// have been created.
+        /// A list of <c>CustomEntityType</c> objects representing the custom patterns that have
+        /// been created.
         /// </para>
         /// </summary>
         public List<CustomEntityType> CustomEntityTypes

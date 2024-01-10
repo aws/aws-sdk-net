@@ -97,17 +97,17 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        /// The stage that the function is in, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+        /// The stage that the function is in, either <c>DEVELOPMENT</c> or <c>LIVE</c>.
         /// </para>
         ///  
         /// <para>
-        /// When a function is in the <code>DEVELOPMENT</code> stage, you can test the function
-        /// with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+        /// When a function is in the <c>DEVELOPMENT</c> stage, you can test the function with
+        /// <c>TestFunction</c>, and update it with <c>UpdateFunction</c>.
         /// </para>
         ///  
         /// <para>
-        /// When a function is in the <code>LIVE</code> stage, you can attach the function to
-        /// a distribution's cache behavior, using the function's ARN.
+        /// When a function is in the <c>LIVE</c> stage, you can attach the function to a distribution's
+        /// cache behavior, using the function's ARN.
         /// </para>
         /// </summary>
         public FunctionStage Stage

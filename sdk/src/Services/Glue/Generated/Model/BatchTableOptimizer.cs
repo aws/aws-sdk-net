@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Contains details for one of the table optimizers returned by the <code>BatchGetTableOptimizer</code>
+    /// Contains details for one of the table optimizers returned by the <c>BatchGetTableOptimizer</c>
     /// operation.
     /// </summary>
     public partial class BatchTableOptimizer
@@ -99,8 +99,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableOptimizer. 
         /// <para>
-        /// A <code>TableOptimizer</code> object that contains details on the configuration and
-        /// last run of a table optimzer.
+        /// A <c>TableOptimizer</c> object that contains details on the configuration and last
+        /// run of a table optimzer.
         /// </para>
         /// </summary>
         public TableOptimizer TableOptimizer

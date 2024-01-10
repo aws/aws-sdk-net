@@ -30,8 +30,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateUser operation.
-    /// Updates user details for a specified user ID. Currently, only <code>LicenseType</code>
-    /// updates are supported for this action.
+    /// Updates user details for a specified user ID. Currently, only <c>LicenseType</c> updates
+    /// are supported for this action.
     /// </summary>
     public partial class UpdateUserRequest : AmazonChimeRequest
     {

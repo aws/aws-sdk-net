@@ -46,13 +46,13 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>pushDownPredicate</code>: to filter on partitions without having to list and
-        /// read all the files in your dataset.
+        ///  <c>pushDownPredicate</c>: to filter on partitions without having to list and read
+        /// all the files in your dataset.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>catalogPartitionPredicate</code>: to use server-side partition pruning using
-        /// partition indexes in the Glue Data Catalog.
+        ///  <c>catalogPartitionPredicate</c>: to use server-side partition pruning using partition
+        /// indexes in the Glue Data Catalog.
         /// </para>
         ///  </li> </ul>
         /// </summary>

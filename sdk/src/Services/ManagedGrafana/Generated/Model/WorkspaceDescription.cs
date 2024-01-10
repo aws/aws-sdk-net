@@ -64,9 +64,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// Specifies whether the workspace can access Amazon Web Services resources in this Amazon
         /// Web Services account only, or whether it can also access Amazon Web Services resources
-        /// in other accounts in the same organization. If this is <code>ORGANIZATION</code>,
-        /// the <code>workspaceOrganizationalUnits</code> parameter specifies which organizational
-        /// units the workspace can access.
+        /// in other accounts in the same organization. If this is <c>ORGANIZATION</c>, the <c>workspaceOrganizationalUnits</c>
+        /// parameter specifies which organizational units the workspace can access.
         /// </para>
         /// </summary>
         public AccountAccessType AccountAccessType
@@ -130,7 +129,7 @@ namespace Amazon.ManagedGrafana.Model
         ///  
         /// <para>
         /// This list is only used when the workspace was created through the Amazon Web Services
-        /// console, and the <code>permissionType</code> is <code>SERVICE_MANAGED</code>.
+        /// console, and the <c>permissionType</c> is <c>SERVICE_MANAGED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -416,22 +415,21 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property PermissionType. 
         /// <para>
-        /// If this is <code>SERVICE_MANAGED</code>, and the workplace was created through the
-        /// Amazon Managed Grafana console, then Amazon Managed Grafana automatically creates
-        /// the IAM roles and provisions the permissions that the workspace needs to use Amazon
-        /// Web Services data sources and notification channels.
+        /// If this is <c>SERVICE_MANAGED</c>, and the workplace was created through the Amazon
+        /// Managed Grafana console, then Amazon Managed Grafana automatically creates the IAM
+        /// roles and provisions the permissions that the workspace needs to use Amazon Web Services
+        /// data sources and notification channels.
         /// </para>
         ///  
         /// <para>
-        /// If this is <code>CUSTOMER_MANAGED</code>, you must manage those roles and permissions
-        /// yourself.
+        /// If this is <c>CUSTOMER_MANAGED</c>, you must manage those roles and permissions yourself.
         /// </para>
         ///  
         /// <para>
         /// If you are working with a workspace in a member account of an organization and that
         /// account is not a delegated administrator account, and you want the workspace to access
         /// data sources in other Amazon Web Services accounts in the organization, this parameter
-        /// must be set to <code>CUSTOMER_MANAGED</code>.
+        /// must be set to <c>CUSTOMER_MANAGED</c>.
         /// </para>
         ///  
         /// <para>

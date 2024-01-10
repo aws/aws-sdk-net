@@ -58,7 +58,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property SemanticVersion. 
         /// <para>
-        /// The version of the Image Builder recipe specified by the <code>name</code> field.
+        /// The version of the Image Builder recipe specified by the <c>name</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

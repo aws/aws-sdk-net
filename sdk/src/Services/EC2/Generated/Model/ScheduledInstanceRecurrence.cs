@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Frequency. 
         /// <para>
-        /// The frequency (<code>Daily</code>, <code>Weekly</code>, or <code>Monthly</code>).
+        /// The frequency (<c>Daily</c>, <c>Weekly</c>, or <c>Monthly</c>).
         /// </para>
         /// </summary>
         public string Frequency
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Interval. 
         /// <para>
-        /// The interval quantity. The interval unit depends on the value of <code>frequency</code>.
+        /// The interval quantity. The interval unit depends on the value of <c>frequency</c>.
         /// For example, every 2 weeks or every 2 months.
         /// </para>
         /// </summary>
@@ -116,7 +116,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OccurrenceUnit. 
         /// <para>
-        /// The unit for <code>occurrenceDaySet</code> (<code>DayOfWeek</code> or <code>DayOfMonth</code>).
+        /// The unit for <c>occurrenceDaySet</c> (<c>DayOfWeek</c> or <c>DayOfMonth</c>).
         /// </para>
         /// </summary>
         public string OccurrenceUnit

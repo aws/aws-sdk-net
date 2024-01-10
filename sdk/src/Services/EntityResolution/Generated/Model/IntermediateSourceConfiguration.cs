@@ -39,7 +39,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property IntermediateS3Path. 
         /// <para>
-        /// The Amazon S3 location (bucket and prefix). For example: <code>s3://provider_bucket/DOC-EXAMPLE-BUCKET</code>
+        /// The Amazon S3 location (bucket and prefix). For example: <c>s3://provider_bucket/DOC-EXAMPLE-BUCKET</c>
         /// 
         /// </para>
         /// </summary>

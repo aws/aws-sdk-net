@@ -165,10 +165,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response from the <code>ListSlots</code> operation contains more results than
-        /// specified in the <code>maxResults</code> parameter, a token is returned in the response.
-        /// Use that token in the <code>nextToken</code> parameter to return the next page of
-        /// results.
+        /// If the response from the <c>ListSlots</c> operation contains more results than specified
+        /// in the <c>maxResults</c> parameter, a token is returned in the response. Use that
+        /// token in the <c>nextToken</c> parameter to return the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -186,9 +185,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Determines the sort order for the response from the <code>ListSlots</code> operation.
-        /// You can choose to sort by the slot name or last updated date in either ascending or
-        /// descending order.
+        /// Determines the sort order for the response from the <c>ListSlots</c> operation. You
+        /// can choose to sort by the slot name or last updated date in either ascending or descending
+        /// order.
         /// </para>
         /// </summary>
         public SlotSortBy SortBy

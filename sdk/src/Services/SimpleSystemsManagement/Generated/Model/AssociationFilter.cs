@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>InstanceId</code> has been deprecated.
+        ///  <c>InstanceId</c> has been deprecated.
         /// </para>
         ///  </note>
         /// </summary>

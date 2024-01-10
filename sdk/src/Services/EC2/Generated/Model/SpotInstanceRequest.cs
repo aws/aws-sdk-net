@@ -398,14 +398,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a persistent request, the request remains active until the <code>validUntil</code>
-        /// date and time is reached. Otherwise, the request remains active until you cancel it.
-        /// 
+        /// For a persistent request, the request remains active until the <c>validUntil</c> date
+        /// and time is reached. Otherwise, the request remains active until you cancel it. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For a one-time request, the request remains active until all instances launch, the
-        /// request is canceled, or the <code>validUntil</code> date and time is reached. By default,
+        /// request is canceled, or the <c>validUntil</c> date and time is reached. By default,
         /// the request is valid for 7 days from the date the request was created.
         /// </para>
         ///  </li> </ul>

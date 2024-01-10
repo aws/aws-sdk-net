@@ -119,8 +119,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ScanState. 
         /// <para>
-        /// The state of the scan. A scan can be <code>In Progress</code>, <code>Complete</code>,
-        /// or <code>Failed</code>. 
+        /// The state of the scan. A scan can be <c>In Progress</c>, <c>Complete</c>, or <c>Failed</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

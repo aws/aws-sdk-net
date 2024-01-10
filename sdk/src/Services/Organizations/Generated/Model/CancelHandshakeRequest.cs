@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelHandshake operation.
-    /// Cancels a handshake. Canceling a handshake sets the handshake state to <code>CANCELED</code>.
+    /// Cancels a handshake. Canceling a handshake sets the handshake state to <c>CANCELED</c>.
     /// 
     ///  
     /// <para>

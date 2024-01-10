@@ -30,7 +30,7 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Contains the S3 Object Lock retention mode to be applied to all objects in the S3
-    /// Batch Operations job. If you don't provide <code>Mode</code> and <code>RetainUntilDate</code>
+    /// Batch Operations job. If you don't provide <c>Mode</c> and <c>RetainUntilDate</c>
     /// data types in your operation, you will remove the retention from your objects. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using
     /// S3 Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.

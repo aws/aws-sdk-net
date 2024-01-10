@@ -30,16 +30,16 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the PutChannelMembershipPreferences operation.
-    /// Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+    /// Sets the membership preferences of an <c>AppInstanceUser</c> or <c>AppInstanceBot</c>
     /// for the specified channel. The user or bot must be a member of the channel. Only the
-    /// user or bot who owns the membership can set preferences. Users or bots in the <code>AppInstanceAdmin</code>
+    /// user or bot who owns the membership can set preferences. Users or bots in the <c>AppInstanceAdmin</c>
     /// and channel moderator roles can't set preferences for other users. Banned users or
     /// bots can't set membership preferences for the channel from which they are banned.
     /// 
     ///  <note> 
     /// <para>
-    /// The x-amz-chime-bearer request header is mandatory. Use the ARN of an <code>AppInstanceUser</code>
-    /// or <code>AppInstanceBot</code> that makes the API call as the value in the header.
+    /// The x-amz-chime-bearer request header is mandatory. Use the ARN of an <c>AppInstanceUser</c>
+    /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -72,8 +72,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
-        /// the API call.
+        /// The ARN of the <c>AppInstanceUser</c> or <c>AppInstanceBot</c> that makes the API
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -111,7 +111,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Preferences. 
         /// <para>
-        /// The channel membership preferences of an <code>AppInstanceUser</code> .
+        /// The channel membership preferences of an <c>AppInstanceUser</c> .
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

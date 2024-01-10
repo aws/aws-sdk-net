@@ -62,10 +62,9 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property Secure. 
         /// <para>
         /// (Optional) Whether the variable's value will be returned by the <a>DescribeApps</a>
-        /// action. To conceal an environment variable's value, set <code>Secure</code> to <code>true</code>.
-        /// <code>DescribeApps</code> then returns <code>*****FILTERED*****</code> instead of
-        /// the actual value. The default value for <code>Secure</code> is <code>false</code>.
-        /// 
+        /// action. To conceal an environment variable's value, set <c>Secure</c> to <c>true</c>.
+        /// <c>DescribeApps</c> then returns <c>*****FILTERED*****</c> instead of the actual value.
+        /// The default value for <c>Secure</c> is <c>false</c>. 
         /// </para>
         /// </summary>
         public bool Secure

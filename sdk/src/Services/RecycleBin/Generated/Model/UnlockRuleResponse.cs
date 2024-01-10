@@ -124,24 +124,24 @@ namespace Amazon.RecycleBin.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>locked</code> - The retention rule is locked and can't be modified or deleted.
+        ///  <c>locked</c> - The retention rule is locked and can't be modified or deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending_unlock</code> - The retention rule has been unlocked but it is still
-        /// within the unlock delay period. The retention rule can be modified or deleted only
-        /// after the unlock delay period has expired.
+        ///  <c>pending_unlock</c> - The retention rule has been unlocked but it is still within
+        /// the unlock delay period. The retention rule can be modified or deleted only after
+        /// the unlock delay period has expired.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unlocked</code> - The retention rule is unlocked and it can be modified or
-        /// deleted by any user with the required permissions.
+        ///  <c>unlocked</c> - The retention rule is unlocked and it can be modified or deleted
+        /// by any user with the required permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>null</code> - The retention rule has never been locked. Once a retention rule
-        /// has been locked, it can transition between the <code>locked</code> and <code>unlocked</code>
-        /// states only; it can never transition back to <code>null</code>.
+        ///  <c>null</c> - The retention rule has never been locked. Once a retention rule has
+        /// been locked, it can transition between the <c>locked</c> and <c>unlocked</c> states
+        /// only; it can never transition back to <c>null</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -232,7 +232,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The state of the retention rule. Only retention rules that are in the <code>available</code>
+        /// The state of the retention rule. Only retention rules that are in the <c>available</c>
         /// state retain resources.
         /// </para>
         /// </summary>

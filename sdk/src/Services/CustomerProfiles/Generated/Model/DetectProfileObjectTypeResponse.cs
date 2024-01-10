@@ -38,8 +38,8 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property DetectedProfileObjectTypes. 
         /// <para>
-        /// Detected <code>ProfileObjectType</code> mappings from given objects. A maximum of
-        /// one mapping is supported.
+        /// Detected <c>ProfileObjectType</c> mappings from given objects. A maximum of one mapping
+        /// is supported.
         /// </para>
         /// </summary>
         public List<DetectedProfileObjectType> DetectedProfileObjectTypes

@@ -48,8 +48,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// Determines how the metric specified by <code>MetricName</code> is compared to the
-        /// value specified by <code>Threshold</code>.
+        /// Determines how the metric specified by <c>MetricName</c> is compared to the value
+        /// specified by <c>Threshold</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,7 +88,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The number of periods, in five-minute increments, during which the alarm condition
         /// must exist before the alarm triggers automatic scaling activity. The default value
-        /// is <code>1</code>.
+        /// is <c>1</c>.
         /// </para>
         /// </summary>
         public int EvaluationPeriods
@@ -125,7 +125,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace for the CloudWatch metric. The default is <code>AWS/ElasticMapReduce</code>.
+        /// The namespace for the CloudWatch metric. The default is <c>AWS/ElasticMapReduce</c>.
         /// </para>
         /// </summary>
         public string Namespace
@@ -145,7 +145,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The period, in seconds, over which the statistic is applied. CloudWatch metrics for
         /// Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch
-        /// metric, specify <code>300</code>.
+        /// metric, specify <c>300</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,7 +164,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Statistic. 
         /// <para>
-        /// The statistic to apply to the metric associated with the alarm. The default is <code>AVERAGE</code>.
+        /// The statistic to apply to the metric associated with the alarm. The default is <c>AVERAGE</c>.
         /// </para>
         /// </summary>
         public Statistic Statistic
@@ -202,7 +202,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// The unit of measure associated with the CloudWatch metric being watched. The value
-        /// specified for <code>Unit</code> must correspond to the units specified in the CloudWatch
+        /// specified for <c>Unit</c> must correspond to the units specified in the CloudWatch
         /// metric.
         /// </para>
         /// </summary>

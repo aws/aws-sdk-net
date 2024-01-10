@@ -32,7 +32,7 @@ namespace Amazon.ConfigService.Model
     /// Provides the source and the message types that trigger Config to evaluate your Amazon
     /// Web Services resources against a rule. It also provides the frequency with which you
     /// want Config to run evaluations for the rule if the trigger type is periodic. You can
-    /// specify the parameter values for <code>SourceDetail</code> only for custom rules.
+    /// specify the parameter values for <c>SourceDetail</c> only for custom rules.
     /// </summary>
     public partial class SourceDetail
     {
@@ -63,21 +63,19 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property MaximumExecutionFrequency. 
         /// <para>
         /// The frequency at which you want Config to run evaluations for a custom rule with a
-        /// periodic trigger. If you specify a value for <code>MaximumExecutionFrequency</code>,
-        /// then <code>MessageType</code> must use the <code>ScheduledNotification</code> value.
+        /// periodic trigger. If you specify a value for <c>MaximumExecutionFrequency</c>, then
+        /// <c>MessageType</c> must use the <c>ScheduledNotification</c> value.
         /// </para>
         ///  <note> 
         /// <para>
         /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
-        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-        /// parameter.
+        /// the frequency, specify a valid value for the <c>MaximumExecutionFrequency</c> parameter.
         /// </para>
         ///  
         /// <para>
         /// Based on the valid value you choose, Config runs evaluations once for each valid value.
-        /// For example, if you choose <code>Three_Hours</code>, Config runs evaluations once
-        /// every three hours. In this case, <code>Three_Hours</code> is the frequency of this
-        /// rule. 
+        /// For example, if you choose <c>Three_Hours</c>, Config runs evaluations once every
+        /// three hours. In this case, <c>Three_Hours</c> is the frequency of this rule. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -101,31 +99,31 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ConfigurationItemChangeNotification</code> - Triggers an evaluation when Config
-        /// delivers a configuration item as a result of a resource change.
+        ///  <c>ConfigurationItemChangeNotification</c> - Triggers an evaluation when Config delivers
+        /// a configuration item as a result of a resource change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OversizedConfigurationItemChangeNotification</code> - Triggers an evaluation
-        /// when Config delivers an oversized configuration item. Config may generate this notification
+        ///  <c>OversizedConfigurationItemChangeNotification</c> - Triggers an evaluation when
+        /// Config delivers an oversized configuration item. Config may generate this notification
         /// type when a resource changes and the notification exceeds the maximum size allowed
         /// by Amazon SNS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ScheduledNotification</code> - Triggers a periodic evaluation at the frequency
-        /// specified for <code>MaximumExecutionFrequency</code>.
+        ///  <c>ScheduledNotification</c> - Triggers a periodic evaluation at the frequency specified
+        /// for <c>MaximumExecutionFrequency</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConfigurationSnapshotDeliveryCompleted</code> - Triggers a periodic evaluation
-        /// when Config delivers a configuration snapshot.
+        ///  <c>ConfigurationSnapshotDeliveryCompleted</c> - Triggers a periodic evaluation when
+        /// Config delivers a configuration snapshot.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you want your custom rule to be triggered by configuration changes, specify two
-        /// SourceDetail objects, one for <code>ConfigurationItemChangeNotification</code> and
-        /// one for <code>OversizedConfigurationItemChangeNotification</code>.
+        /// SourceDetail objects, one for <c>ConfigurationItemChangeNotification</c> and one for
+        /// <c>OversizedConfigurationItemChangeNotification</c>.
         /// </para>
         /// </summary>
         public MessageType MessageType

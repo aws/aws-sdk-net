@@ -40,8 +40,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property ExportsInfo. 
         /// <para>
         /// Contains one or more sets of export request details. When the status of a request
-        /// is <code>SUCCEEDED</code>, the response includes a URL for an Amazon S3 bucket where
-        /// you can view the data in a CSV file.
+        /// is <c>SUCCEEDED</c>, the response includes a URL for an Amazon S3 bucket where you
+        /// can view the data in a CSV file.
         /// </para>
         /// </summary>
         public List<ExportInfo> ExportsInfo
@@ -59,8 +59,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>DescribeExportTasks</code>
-        /// request. When the results of a <code>DescribeExportTasks</code> request exceed <code>maxResults</code>,
+        /// The <c>nextToken</c> value to include in a future <c>DescribeExportTasks</c> request.
+        /// When the results of a <c>DescribeExportTasks</c> request exceed <c>maxResults</c>,
         /// this value can be used to retrieve the next page of results. This value is null when
         /// there are no more results to return.
         /// </para>

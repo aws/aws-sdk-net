@@ -30,8 +30,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeGroup operation.
-    /// Retrieves the group metadata and attributes from <code>GroupId</code> in an identity
-    /// store.
+    /// Retrieves the group metadata and attributes from <c>GroupId</c> in an identity store.
     /// 
     ///  <note> 
     /// <para>
@@ -68,10 +67,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property IdentityStoreId. 
         /// <para>
-        /// The globally unique identifier for the identity store, such as <code>d-1234567890</code>.
-        /// In this example, <code>d-</code> is a fixed prefix, and <code>1234567890</code> is
-        /// a randomly generated string that contains numbers and lower case letters. This value
-        /// is generated at the time that a new identity store is created.
+        /// The globally unique identifier for the identity store, such as <c>d-1234567890</c>.
+        /// In this example, <c>d-</c> is a fixed prefix, and <c>1234567890</c> is a randomly
+        /// generated string that contains numbers and lower case letters. This value is generated
+        /// at the time that a new identity store is created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

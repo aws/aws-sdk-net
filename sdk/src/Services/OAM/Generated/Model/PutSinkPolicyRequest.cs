@@ -41,19 +41,19 @@ namespace Amazon.OAM.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Metrics</b> - Specify with <code>AWS::CloudWatch::Metric</code> 
+    ///  <b>Metrics</b> - Specify with <c>AWS::CloudWatch::Metric</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Log groups</b> - Specify with <code>AWS::Logs::LogGroup</code> 
+    ///  <b>Log groups</b> - Specify with <c>AWS::Logs::LogGroup</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> 
+    ///  <b>Traces</b> - Specify with <c>AWS::XRay::Trace</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Application Insights - Applications</b> - Specify with <code>AWS::ApplicationInsights::Application</code>
+    ///  <b>Application Insights - Applications</b> - Specify with <c>AWS::ApplicationInsights::Application</c>
     /// 
     /// </para>
     ///  </li> </ul> 

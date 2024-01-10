@@ -42,8 +42,8 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property ErrorCode. 
         /// <para>
         /// The error Secrets Manager encountered while retrieving an individual secret as part
-        /// of <a>BatchGetSecretValue</a>, for example <code>ResourceNotFoundException</code>,<code>InvalidParameterException</code>,
-        /// <code>InvalidRequestException</code>, <code>DecryptionFailure</code>, or <code>AccessDeniedException</code>.
+        /// of <a>BatchGetSecretValue</a>, for example <c>ResourceNotFoundException</c>,<c>InvalidParameterException</c>,
+        /// <c>InvalidRequestException</c>, <c>DecryptionFailure</c>, or <c>AccessDeniedException</c>.
         /// </para>
         /// </summary>
         public string ErrorCode

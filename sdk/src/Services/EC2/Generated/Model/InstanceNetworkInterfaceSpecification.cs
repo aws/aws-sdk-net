@@ -87,7 +87,7 @@ namespace Amazon.EC2.Model
         /// The public IP address can only be assigned to a network interface for eth0, and can
         /// only be assigned to a new network interface, not an existing one. You cannot specify
         /// more than one network interface in the request. If launching into a default subnet,
-        /// the default value is <code>true</code>.
+        /// the default value is <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -133,9 +133,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeleteOnTermination. 
         /// <para>
-        /// If set to <code>true</code>, the interface is deleted when the instance is terminated.
-        /// You can specify <code>true</code> only if creating a new network interface when launching
-        /// an instance.
+        /// If set to <c>true</c>, the interface is deleted when the instance is terminated. You
+        /// can specify <c>true</c> only if creating a new network interface when launching an
+        /// instance.
         /// </para>
         /// </summary>
         public bool DeleteOnTermination
@@ -238,7 +238,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>interface</code> | <code>efa</code> 
+        /// Valid values: <c>interface</c> | <c>efa</c> 
         /// </para>
         /// </summary>
         public string InterfaceType
@@ -257,7 +257,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
         /// The number of IPv4 delegated prefixes to be automatically assigned to the network
-        /// interface. You cannot use this option if you use the <code>Ipv4Prefix</code> option.
+        /// interface. You cannot use this option if you use the <c>Ipv4Prefix</c> option.
         /// </para>
         /// </summary>
         public int Ipv4PrefixCount
@@ -276,7 +276,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
         /// The IPv4 delegated prefixes to be assigned to the network interface. You cannot use
-        /// this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// this option if you use the <c>Ipv4PrefixCount</c> option.
         /// </para>
         /// </summary>
         public List<Ipv4PrefixSpecificationRequest> Ipv4Prefixes
@@ -336,7 +336,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
         /// The number of IPv6 delegated prefixes to be automatically assigned to the network
-        /// interface. You cannot use this option if you use the <code>Ipv6Prefix</code> option.
+        /// interface. You cannot use this option if you use the <c>Ipv6Prefix</c> option.
         /// </para>
         /// </summary>
         public int Ipv6PrefixCount
@@ -355,7 +355,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
         /// The IPv6 delegated prefixes to be assigned to the network interface. You cannot use
-        /// this option if you use the <code>Ipv6PrefixCount</code> option.
+        /// this option if you use the <c>Ipv6PrefixCount</c> option.
         /// </para>
         /// </summary>
         public List<Ipv6PrefixSpecificationRequest> Ipv6Prefixes

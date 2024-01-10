@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>.
+        /// The bid price for each Amazon EC2 Spot Instance type as defined by <c>InstanceType</c>.
         /// Expressed in USD.
         /// </para>
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property BidPriceAsPercentageOfOnDemandPrice. 
         /// <para>
         /// The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance
-        /// as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies
+        /// as defined by <c>InstanceType</c>. Expressed as a number (for example, 20 specifies
         /// 20%).
         /// </para>
         /// </summary>
@@ -132,7 +132,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property EbsBlockDevices. 
         /// <para>
         /// The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
-        /// as defined by <code>InstanceType</code>.
+        /// as defined by <c>InstanceType</c>.
         /// </para>
         /// </summary>
         public List<EbsBlockDevice> EbsBlockDevices
@@ -150,7 +150,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code> is EBS-optimized.
+        /// Evaluates to <c>TRUE</c> when the specified <c>InstanceType</c> is EBS-optimized.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -168,7 +168,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
+        /// The Amazon EC2 instance type, for example <c>m3.xlarge</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

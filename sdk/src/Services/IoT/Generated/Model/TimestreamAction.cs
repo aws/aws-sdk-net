@@ -122,7 +122,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// Specifies an application-defined value to replace the default value assigned to the
-        /// Timestream record's timestamp in the <code>time</code> column.
+        /// Timestream record's timestamp in the <c>time</c> column.
         /// </para>
         ///  
         /// <para>

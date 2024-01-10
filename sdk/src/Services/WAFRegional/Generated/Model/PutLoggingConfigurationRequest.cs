@@ -62,18 +62,17 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Do not create the data firehose using a <code>Kinesis stream</code> as your source.
+    /// Do not create the data firehose using a <c>Kinesis stream</c> as your source.
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    /// Associate that firehose to your web ACL using a <code>PutLoggingConfiguration</code>
-    /// request.
+    /// Associate that firehose to your web ACL using a <c>PutLoggingConfiguration</c> request.
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-    /// request, AWS WAF will create a service linked role with the necessary permissions
-    /// to write logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
+    /// When you successfully enable logging using a <c>PutLoggingConfiguration</c> request,
+    /// AWS WAF will create a service linked role with the necessary permissions to write
+    /// logs to the Amazon Kinesis Data Firehose. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/logging.html">Logging
     /// Web ACL Traffic Information</a> in the <i>AWS WAF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -90,9 +89,8 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When specifying <code>Type</code> in <code>RedactedFields</code>, you must use one
-        /// of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>,
-        /// or <code>METHOD</code>.
+        /// When specifying <c>Type</c> in <c>RedactedFields</c>, you must use one of the following
+        /// values: <c>URI</c>, <c>QUERY_STRING</c>, <c>HEADER</c>, or <c>METHOD</c>.
         /// </para>
         ///  </note>
         /// </summary>

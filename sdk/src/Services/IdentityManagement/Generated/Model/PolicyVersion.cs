@@ -83,9 +83,8 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The policy document returned in this structure is URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
         /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-        /// text. For example, if you use Java, you can use the <code>decode</code> method of
-        /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-        /// and SDKs provide similar functionality.
+        /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+        /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]
@@ -126,8 +125,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Policy version identifiers always begin with <code>v</code> (always lowercase). When
-        /// a policy is created, the first policy version is <code>v1</code>. 
+        /// Policy version identifiers always begin with <c>v</c> (always lowercase). When a policy
+        /// is created, the first policy version is <c>v1</c>. 
         /// </para>
         /// </summary>
         public string VersionId

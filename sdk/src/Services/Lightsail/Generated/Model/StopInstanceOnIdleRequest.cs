@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes a request to create or edit the <code>StopInstanceOnIdle</code> add-on.
+    /// Describes a request to create or edit the <c>StopInstanceOnIdle</c> add-on.
     /// 
     ///  <important> 
     /// <para>

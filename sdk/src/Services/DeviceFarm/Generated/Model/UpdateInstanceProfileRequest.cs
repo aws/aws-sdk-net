@@ -87,8 +87,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  
         /// <para>
-        /// The list of packages is only considered if you set <code>packageCleanup</code> to
-        /// <code>true</code>.
+        /// The list of packages is only considered if you set <c>packageCleanup</c> to <c>true</c>.
         /// </para>
         /// </summary>
         public List<string> ExcludeAppPackagesFromCleanup
@@ -126,7 +125,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property PackageCleanup. 
         /// <para>
         /// The updated choice for whether you want to specify package cleanup. The default value
-        /// is <code>false</code> for private devices.
+        /// is <c>false</c> for private devices.
         /// </para>
         /// </summary>
         public bool PackageCleanup
@@ -145,7 +144,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property RebootAfterUse. 
         /// <para>
         /// The updated choice for whether you want to reboot the device after use. The default
-        /// value is <code>true</code>.
+        /// value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool RebootAfterUse

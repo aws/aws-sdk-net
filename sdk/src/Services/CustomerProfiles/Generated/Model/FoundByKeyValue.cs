@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// A data type pair that consists of a <code>KeyName</code> and <code>Values</code> list
-    /// that were used to find a profile returned in response to a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
+    /// A data type pair that consists of a <c>KeyName</c> and <c>Values</c> list that were
+    /// used to find a profile returned in response to a <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_SearchProfiles.html">SearchProfiles</a>
     /// request.
     /// </summary>
     public partial class FoundByKeyValue

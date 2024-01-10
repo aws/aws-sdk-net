@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DeleteSuggester</code> request. Contains the status of the deleted
+    /// The result of a <c>DeleteSuggester</c> request. Contains the status of the deleted
     /// suggester.
     /// </summary>
     public partial class DeleteSuggesterResponse : AmazonWebServiceResponse

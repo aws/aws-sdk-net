@@ -39,8 +39,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property CloudWatchMetrics. 
         /// <para>
-        /// An array of <code>CloudWatchMetricsDetail</code> objects that contain information
-        /// about analyzed CloudWatch metrics that show anomalous behavior. 
+        /// An array of <c>CloudWatchMetricsDetail</c> objects that contain information about
+        /// analyzed CloudWatch metrics that show anomalous behavior. 
         /// </para>
         /// </summary>
         public List<CloudWatchMetricsDetail> CloudWatchMetrics
@@ -58,7 +58,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsMetrics. 
         /// <para>
-        /// An array of <code>PerformanceInsightsMetricsDetail</code> objects that contain information
+        /// An array of <c>PerformanceInsightsMetricsDetail</c> objects that contain information
         /// about analyzed Performance Insights metrics that show anomalous behavior.
         /// </para>
         /// </summary>

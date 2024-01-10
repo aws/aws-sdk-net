@@ -62,8 +62,8 @@ namespace Amazon.SimpleDB.Model
         /// Gets and sets the property Exists. 
         /// <para>
         /// A value specifying whether or not the specified attribute must exist with the specified
-        /// value in order for the update condition to be satisfied. Specify <code>true</code>
-        /// if the attribute must exist for the update condition to be satisfied. Specify <code>false</code>
+        /// value in order for the update condition to be satisfied. Specify <c>true</c> if the
+        /// attribute must exist for the update condition to be satisfied. Specify <c>false</c>
         /// if the attribute should not exist in order for the update condition to be satisfied.
         /// </para>
         /// </summary>
@@ -100,8 +100,8 @@ namespace Amazon.SimpleDB.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of an attribute. This value can only be specified when the <code>Exists</code>
-        /// parameter is equal to <code>true</code>.
+        /// The value of an attribute. This value can only be specified when the <c>Exists</c>
+        /// parameter is equal to <c>true</c>.
         /// </para>
         /// </summary>
         public string Value

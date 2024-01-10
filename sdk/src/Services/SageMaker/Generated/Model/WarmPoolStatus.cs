@@ -45,10 +45,10 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Multiply <code>ResourceRetainedBillableTimeInSeconds</code> by the number of instances
-        /// (<code>InstanceCount</code>) in your training cluster to get the total compute time
-        /// SageMaker bills you if you run warm pool training. The formula is as follows: <code>ResourceRetainedBillableTimeInSeconds
-        /// * InstanceCount</code>.
+        /// Multiply <c>ResourceRetainedBillableTimeInSeconds</c> by the number of instances (<c>InstanceCount</c>)
+        /// in your training cluster to get the total compute time SageMaker bills you if you
+        /// run warm pool training. The formula is as follows: <c>ResourceRetainedBillableTimeInSeconds
+        /// * InstanceCount</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -90,22 +90,21 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>InUse</code>: The warm pool is in use for the training job.
+        ///  <c>InUse</c>: The warm pool is in use for the training job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Available</code>: The warm pool is available to reuse for a matching training
-        /// job.
+        ///  <c>Available</c>: The warm pool is available to reuse for a matching training job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Reused</code>: The warm pool moved to a matching training job for reuse.
+        ///  <c>Reused</c>: The warm pool moved to a matching training job for reuse.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Terminated</code>: The warm pool is no longer available. Warm pools are unavailable
+        ///  <c>Terminated</c>: The warm pool is no longer available. Warm pools are unavailable
         /// if they are terminated by a user, terminated for a patch update, or terminated for
-        /// exceeding the specified <code>KeepAlivePeriodInSeconds</code>.
+        /// exceeding the specified <c>KeepAlivePeriodInSeconds</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

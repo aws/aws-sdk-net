@@ -295,14 +295,14 @@ namespace Amazon.EBS
 
         /// <summary>
         /// Seals and completes the snapshot after all of the required blocks of data have been
-        /// written to it. Completing the snapshot changes the status to <code>completed</code>.
-        /// You cannot write new blocks to a snapshot after it has been completed.
+        /// written to it. Completing the snapshot changes the status to <c>completed</c>. You
+        /// cannot write new blocks to a snapshot after it has been completed.
         /// 
         ///  <note> 
         /// <para>
-        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+        /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
         /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -384,9 +384,9 @@ namespace Amazon.EBS
         /// 
         ///  <note> 
         /// <para>
-        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+        /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
         /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -469,9 +469,9 @@ namespace Amazon.EBS
         /// 
         ///  <note> 
         /// <para>
-        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+        /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
         /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -553,9 +553,9 @@ namespace Amazon.EBS
         /// 
         ///  <note> 
         /// <para>
-        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+        /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
         /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -634,7 +634,7 @@ namespace Amazon.EBS
 
         /// <summary>
         /// Writes a block of data to a snapshot. If the specified block contains data, the existing
-        /// data is overwritten. The target snapshot must be in the <code>pending</code> state.
+        /// data is overwritten. The target snapshot must be in the <c>pending</c> state.
         /// 
         ///  
         /// <para>
@@ -642,9 +642,9 @@ namespace Amazon.EBS
         /// </para>
         ///  <note> 
         /// <para>
-        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+        /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
         /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>
@@ -722,8 +722,8 @@ namespace Amazon.EBS
         #region  StartSnapshot
 
         /// <summary>
-        /// Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code>
-        /// state after the request completes. 
+        /// Creates a new Amazon EBS snapshot. The new snapshot enters the <c>pending</c> state
+        /// after the request completes. 
         /// 
         ///  
         /// <para>
@@ -732,9 +732,9 @@ namespace Amazon.EBS
         /// </para>
         ///  <note> 
         /// <para>
-        /// You should always retry requests that receive server (<code>5xx</code>) error responses,
-        /// and <code>ThrottlingException</code> and <code>RequestThrottledException</code> client
-        /// error responses. For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
+        /// You should always retry requests that receive server (<c>5xx</c>) error responses,
+        /// and <c>ThrottlingException</c> and <c>RequestThrottledException</c> client error responses.
+        /// For more information see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/error-retries.html">Error
         /// retries</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </note>

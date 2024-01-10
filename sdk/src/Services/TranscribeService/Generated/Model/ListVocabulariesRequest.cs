@@ -89,11 +89,10 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your <code>ListVocabularies</code> request returns more results than can be displayed,
-        /// <code>NextToken</code> is displayed in the response with an associated string. To
-        /// get the next page of results, copy this string and repeat your request, including
-        /// <code>NextToken</code> with the value of the copied string. Repeat as needed to view
-        /// all your results.
+        /// If your <c>ListVocabularies</c> request returns more results than can be displayed,
+        /// <c>NextToken</c> is displayed in the response with an associated string. To get the
+        /// next page of results, copy this string and repeat your request, including <c>NextToken</c>
+        /// with the value of the copied string. Repeat as needed to view all your results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -113,7 +112,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property StateEquals. 
         /// <para>
         /// Returns only custom vocabularies with the specified state. Vocabularies are ordered
-        /// by creation date, with the newest vocabulary first. If you do not include <code>StateEquals</code>,
+        /// by creation date, with the newest vocabulary first. If you do not include <c>StateEquals</c>,
         /// all custom medical vocabularies are returned.
         /// </para>
         /// </summary>

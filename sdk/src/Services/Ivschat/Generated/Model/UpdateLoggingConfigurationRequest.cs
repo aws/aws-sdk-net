@@ -42,8 +42,8 @@ namespace Amazon.Ivschat.Model
         /// Gets and sets the property DestinationConfiguration. 
         /// <para>
         /// A complex type that contains a destination configuration for where chat content will
-        /// be logged. There can be only one type of destination (<code>cloudWatchLogs</code>,
-        /// <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.
+        /// be logged. There can be only one type of destination (<c>cloudWatchLogs</c>, <c>firehose</c>,
+        /// or <c>s3</c>) in a <c>destinationConfiguration</c>.
         /// </para>
         /// </summary>
         public DestinationConfiguration DestinationConfiguration

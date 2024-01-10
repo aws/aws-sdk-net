@@ -46,7 +46,7 @@ namespace Amazon.CloudControlApi.Model
         /// </para>
         ///  
         /// <para>
-        /// Request tokens are included in the <code>ProgressEvent</code> type returned by a resource
+        /// Request tokens are included in the <c>ProgressEvent</c> type returned by a resource
         /// operation request.
         /// </para>
         /// </summary>

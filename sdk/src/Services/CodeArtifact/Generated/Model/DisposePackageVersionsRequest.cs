@@ -30,7 +30,7 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the DisposePackageVersions operation.
-    /// Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>.
+    /// Deletes the assets in package versions and sets the package versions' status to <c>Disposed</c>.
     /// A disposed package version cannot be restored in your repository because its assets
     /// are deleted. 
     /// 
@@ -38,7 +38,7 @@ namespace Amazon.CodeArtifact.Model
     /// <para>
     ///  To view all disposed package versions in a repository, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>
     /// and set the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html#API_ListPackageVersions_RequestSyntax">status</a>
-    /// parameter to <code>Disposed</code>. 
+    /// parameter to <c>Disposed</c>. 
     /// </para>
     ///  
     /// <para>
@@ -142,11 +142,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. 
+        ///  The namespace of a Maven package version is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -155,7 +155,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

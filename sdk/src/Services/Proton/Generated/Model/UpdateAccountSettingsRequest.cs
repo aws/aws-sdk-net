@@ -43,8 +43,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property DeletePipelineProvisioningRepository. 
         /// <para>
-        /// Set to <code>true</code> to remove a configured pipeline repository from the account
-        /// settings. Don't set this field if you are updating the configured pipeline repository.
+        /// Set to <c>true</c> to remove a configured pipeline repository from the account settings.
+        /// Don't set this field if you are updating the configured pipeline repository.
         /// </para>
         /// </summary>
         public bool DeletePipelineProvisioningRepository
@@ -89,8 +89,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove a previously configured repository, set <code>deletePipelineProvisioningRepository</code>
-        /// to <code>true</code>, and don't set <code>pipelineProvisioningRepository</code>.
+        /// To remove a previously configured repository, set <c>deletePipelineProvisioningRepository</c>
+        /// to <c>true</c>, and don't set <c>pipelineProvisioningRepository</c>.
         /// </para>
         /// </summary>
         public RepositoryBranchInput PipelineProvisioningRepository

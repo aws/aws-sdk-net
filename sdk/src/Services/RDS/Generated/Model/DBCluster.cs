@@ -34,17 +34,17 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For an Amazon Aurora DB cluster, this data type is used as a response element in the
-    /// operations <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
-    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>PromoteReadReplicaDBCluster</code>,
-    /// <code>RestoreDBClusterFromS3</code>, <code>RestoreDBClusterFromSnapshot</code>, <code>RestoreDBClusterToPointInTime</code>,
-    /// <code>StartDBCluster</code>, and <code>StopDBCluster</code>.
+    /// operations <c>CreateDBCluster</c>, <c>DeleteDBCluster</c>, <c>DescribeDBClusters</c>,
+    /// <c>FailoverDBCluster</c>, <c>ModifyDBCluster</c>, <c>PromoteReadReplicaDBCluster</c>,
+    /// <c>RestoreDBClusterFromS3</c>, <c>RestoreDBClusterFromSnapshot</c>, <c>RestoreDBClusterToPointInTime</c>,
+    /// <c>StartDBCluster</c>, and <c>StopDBCluster</c>.
     /// </para>
     ///  
     /// <para>
     /// For a Multi-AZ DB cluster, this data type is used as a response element in the operations
-    /// <code>CreateDBCluster</code>, <code>DeleteDBCluster</code>, <code>DescribeDBClusters</code>,
-    /// <code>FailoverDBCluster</code>, <code>ModifyDBCluster</code>, <code>RebootDBCluster</code>,
-    /// <code>RestoreDBClusterFromSnapshot</code>, and <code>RestoreDBClusterToPointInTime</code>.
+    /// <c>CreateDBCluster</c>, <c>DeleteDBCluster</c>, <c>DescribeDBClusters</c>, <c>FailoverDBCluster</c>,
+    /// <c>ModifyDBCluster</c>, <c>RebootDBCluster</c>, <c>RestoreDBClusterFromSnapshot</c>,
+    /// and <c>RestoreDBClusterToPointInTime</c>.
     /// </para>
     ///  
     /// <para>
@@ -220,10 +220,10 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        /// For all database engines except Amazon Aurora, <code>AllocatedStorage</code> specifies
-        /// the allocated storage size in gibibytes (GiB). For Aurora, <code>AllocatedStorage</code>
-        /// always returns 1, because Aurora DB cluster storage size isn't fixed, but instead
-        /// automatically adjusts as needed.
+        /// For all database engines except Amazon Aurora, <c>AllocatedStorage</c> specifies the
+        /// allocated storage size in gibibytes (GiB). For Aurora, <c>AllocatedStorage</c> always
+        /// returns 1, because Aurora DB cluster storage size isn't fixed, but instead automatically
+        /// adjusts as needed.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -355,7 +355,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property BacktrackWindow. 
         /// <para>
-        /// The target backtrack window, in seconds. If this value is set to <code>0</code>, backtracking
+        /// The target backtrack window, in seconds. If this value is set to <c>0</c>, backtracking
         /// is disabled for the DB cluster. Otherwise, backtracking is enabled.
         /// </para>
         /// </summary>
@@ -392,7 +392,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Capacity. 
         /// <para>
-        /// The current capacity of an Aurora Serverless v1 DB cluster. The capacity is <code>0</code>
+        /// The current capacity of an Aurora Serverless v1 DB cluster. The capacity is <c>0</c>
         /// (zero) when the cluster is paused.
         /// </para>
         ///  
@@ -848,7 +848,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// The DB engine mode of the DB cluster, either <c>provisioned</c> or <c>serverless</c>.
         /// </para>
         ///  
         /// <para>
@@ -891,8 +891,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// Indicates whether write forwarding is enabled for a secondary cluster in an Aurora
         /// global database. Because write forwarding takes time to enable, check the value of
-        /// <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed
-        /// before using the write forwarding feature for this cluster.
+        /// <c>GlobalWriteForwardingStatus</c> to confirm that the request has completed before
+        /// using the write forwarding feature for this cluster.
         /// </para>
         /// </summary>
         public bool GlobalWriteForwardingRequested
@@ -994,7 +994,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IOOptimizedNextAllowedModificationTime. 
         /// <para>
-        /// The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage
+        /// The next time you can modify the DB cluster to use the <c>aurora-iopt1</c> storage
         /// type.
         /// </para>
         ///  
@@ -1039,7 +1039,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier
+        /// If <c>StorageEncrypted</c> is enabled, the Amazon Web Services KMS key identifier
         /// for the encrypted DB cluster.
         /// </para>
         ///  
@@ -1213,9 +1213,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -1228,7 +1228,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>IPV4 | DUAL</code> 
+        /// Valid Values: <c>IPV4 | DUAL</c> 
         /// </para>
         /// </summary>
         public string NetworkType
@@ -1345,21 +1345,20 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>7</code> 
+        ///  <c>7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
-        /// <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code>
-        /// (19 months * 31)
+        /// <c>93</c> (3 months * 31), <c>341</c> (11 months * 31), <c>589</c> (19 months * 31)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>731</code> 
+        ///  <c>731</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>7</code> days
+        /// Default: <c>7</c> days
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -1396,7 +1395,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, as determined by the <code>BackupRetentionPeriod</code>.
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow

@@ -34,15 +34,15 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-    /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.
+    /// You can use the <c>ReplicationSourceIdentifier</c> parameter to create the DB cluster
+    /// as a Read Replica of another DB cluster or Amazon Neptune DB instance.
     /// </para>
     ///  
     /// <para>
-    /// Note that when you create a new cluster using <code>CreateDBCluster</code> directly,
-    /// deletion protection is disabled by default (when you create a new production cluster
-    /// in the console, deletion protection is enabled by default). You can only delete a
-    /// DB cluster if its <code>DeletionProtection</code> field is set to <code>false</code>.
+    /// Note that when you create a new cluster using <c>CreateDBCluster</c> directly, deletion
+    /// protection is disabled by default (when you create a new production cluster in the
+    /// console, deletion protection is enabled by default). You can only delete a DB cluster
+    /// if its <c>DeletionProtection</c> field is set to <c>false</c>.
     /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonNeptuneRequest
@@ -147,8 +147,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        ///  <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster
-        /// that is created.</i> 
+        ///  <i>If set to <c>true</c>, tags are copied to any snapshot of the DB cluster that
+        /// is created.</i> 
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -205,7 +205,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster1</code> 
+        /// Example: <c>my-cluster1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -260,7 +260,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <c>mySubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -299,8 +299,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property EnableCloudwatchLogsExports. 
         /// <para>
         /// A list of the log types that this DB cluster should export to CloudWatch Logs. Valid
-        /// log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code>
-        /// (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+        /// log types are: <c>audit</c> (to publish audit logs) and <c>slowquery</c> (to publish
+        /// slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
         /// Neptune logs to Amazon CloudWatch logs</a>.
         /// </para>
         /// </summary>
@@ -319,12 +319,12 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EnableIAMDatabaseAuthentication. 
         /// <para>
-        /// If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication
+        /// If set to <c>true</c>, enables Amazon Identity and Access Management (IAM) authentication
         /// for the entire DB cluster (this cannot be set at an instance level).
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code>.
+        /// Default: <c>false</c>.
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -346,7 +346,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>neptune</code> 
+        /// Valid Values: <c>neptune</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -369,7 +369,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>1.0.2.1</code> 
+        /// Example: <c>1.0.2.1</c> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -417,17 +417,17 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// If an encryption key is not specified in <code>KmsKeyId</code>:
+        /// If an encryption key is not specified in <c>KmsKeyId</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon
+        /// If <c>ReplicationSourceIdentifier</c> identifies an encrypted source, then Amazon
         /// Neptune will use the encryption key used to encrypt the source. Otherwise, Amazon
         /// Neptune will use your default encryption key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>StorageEncrypted</code> parameter is true and <code>ReplicationSourceIdentifier</code>
+        /// If the <c>StorageEncrypted</c> parameter is true and <c>ReplicationSourceIdentifier</c>
         /// is not specified, then Amazon Neptune will use your default encryption key.
         /// </para>
         ///  </li> </ul> 
@@ -438,8 +438,8 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// If you create a Read Replica of an encrypted DB cluster in another Amazon Region,
-        /// you must set <code>KmsKeyId</code> to a KMS key ID that is valid in the destination
-        /// Amazon Region. This key is used to encrypt the Read Replica in that Amazon Region.
+        /// you must set <c>KmsKeyId</c> to a KMS key ID that is valid in the destination Amazon
+        /// Region. This key is used to encrypt the Read Replica in that Amazon Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -515,7 +515,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>8182</code> 
+        ///  Default: <c>8182</c> 
         /// </para>
         /// </summary>
         public int Port
@@ -534,7 +534,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled using the <code>BackupRetentionPeriod</code> parameter.
+        /// are enabled using the <c>BackupRetentionPeriod</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -548,7 +548,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -584,7 +584,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>
@@ -703,7 +703,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>standard | iopt1</code> 
+        ///  <c>standard | iopt1</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -711,13 +711,13 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>standard</code> 
+        ///  <c>standard</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// When you create a Neptune cluster with the storage type set to <code>iopt1</code>,
-        /// the storage type is returned in the response. The storage type isn't returned when
-        /// you set it to <code>standard</code>.
+        /// When you create a Neptune cluster with the storage type set to <c>iopt1</c>, the storage
+        /// type is returned in the response. The storage type isn't returned when you set it
+        /// to <c>standard</c>.
         /// </para>
         ///  </note>
         /// </summary>

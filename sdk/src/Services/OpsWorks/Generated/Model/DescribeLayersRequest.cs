@@ -53,8 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property LayerIds. 
         /// <para>
         /// An array of layer IDs that specify the layers to be described. If you omit this parameter,
-        /// <code>DescribeLayers</code> returns a description of every layer in the specified
-        /// stack.
+        /// <c>DescribeLayers</c> returns a description of every layer in the specified stack.
         /// </para>
         /// </summary>
         public List<string> LayerIds

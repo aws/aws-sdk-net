@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// A message returned by the <code>GetMetricData</code>API, including a code and a description.
+    /// A message returned by the <c>GetMetricData</c>API, including a code and a description.
     /// 
     ///  
     /// <para>
-    /// If a cross-Region <code>GetMetricData</code> operation fails with a code of <code>Forbidden</code>
-    /// and a value of <code>Authentication too complex to retrieve cross region data</code>,
-    /// you can correct the problem by running the <code>GetMetricData</code> operation in
-    /// the same Region where the metric data is.
+    /// If a cross-Region <c>GetMetricData</c> operation fails with a code of <c>Forbidden</c>
+    /// and a value of <c>Authentication too complex to retrieve cross region data</c>, you
+    /// can correct the problem by running the <c>GetMetricData</c> operation in the same
+    /// Region where the metric data is.
     /// </para>
     /// </summary>
     public partial class MessageData

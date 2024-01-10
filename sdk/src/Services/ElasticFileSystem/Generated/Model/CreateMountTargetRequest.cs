@@ -45,10 +45,9 @@ namespace Amazon.ElasticFileSystem.Model
     /// <para>
     /// You can create only one mount target for a One Zone file system. You must create that
     /// mount target in the same Availability Zone in which the file system is located. Use
-    /// the <code>AvailabilityZoneName</code> and <code>AvailabiltyZoneId</code> properties
-    /// in the <a>DescribeFileSystems</a> response object to get this information. Use the
-    /// <code>subnetId</code> associated with the file system's Availability Zone when creating
-    /// the mount target.
+    /// the <c>AvailabilityZoneName</c> and <c>AvailabiltyZoneId</c> properties in the <a>DescribeFileSystems</a>
+    /// response object to get this information. Use the <c>subnetId</c> associated with the
+    /// file system's Availability Zone when creating the mount target.
     /// </para>
     ///  
     /// <para>
@@ -58,7 +57,7 @@ namespace Amazon.ElasticFileSystem.Model
     ///  
     /// <para>
     /// To create a mount target for a file system, the file system's lifecycle state must
-    /// be <code>available</code>. For more information, see <a>DescribeFileSystems</a>.
+    /// be <c>available</c>. For more information, see <a>DescribeFileSystems</a>.
     /// </para>
     ///  
     /// <para>
@@ -87,12 +86,12 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// After creating the mount target, Amazon EFS returns a response that includes, a <code>MountTargetId</code>
-    /// and an <code>IpAddress</code>. You use this IP address when mounting the file system
-    /// in an EC2 instance. You can also use the mount target's DNS name when mounting the
-    /// file system. The EC2 instance on which you mount the file system by using the mount
-    /// target can resolve the mount target's DNS name to its IP address. For more information,
-    /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
+    /// After creating the mount target, Amazon EFS returns a response that includes, a <c>MountTargetId</c>
+    /// and an <c>IpAddress</c>. You use this IP address when mounting the file system in
+    /// an EC2 instance. You can also use the mount target's DNS name when mounting the file
+    /// system. The EC2 instance on which you mount the file system by using the mount target
+    /// can resolve the mount target's DNS name to its IP address. For more information, see
+    /// <a href="https://docs.aws.amazon.com/efs/latest/ug/how-it-works.html#how-it-works-implementation">How
     /// it Works: Implementation Overview</a>. 
     /// </para>
     ///  
@@ -125,42 +124,42 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// If the request provides an <code>IpAddress</code>, Amazon EFS assigns that IP address
-    /// to the network interface. Otherwise, Amazon EFS assigns a free address in the subnet
-    /// (in the same way that the Amazon EC2 <code>CreateNetworkInterface</code> call does
-    /// when a request does not specify a primary private IP address).
+    /// If the request provides an <c>IpAddress</c>, Amazon EFS assigns that IP address to
+    /// the network interface. Otherwise, Amazon EFS assigns a free address in the subnet
+    /// (in the same way that the Amazon EC2 <c>CreateNetworkInterface</c> call does when
+    /// a request does not specify a primary private IP address).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the request provides <code>SecurityGroups</code>, this network interface is associated
+    /// If the request provides <c>SecurityGroups</c>, this network interface is associated
     /// with those security groups. Otherwise, it belongs to the default security group for
     /// the subnet's VPC.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Assigns the description <code>Mount target <i>fsmt-id</i> for file system <i>fs-id</i>
-    /// </code> where <code> <i>fsmt-id</i> </code> is the mount target ID, and <code> <i>fs-id</i>
-    /// </code> is the <code>FileSystemId</code>.
+    /// Assigns the description <c>Mount target <i>fsmt-id</i> for file system <i>fs-id</i>
+    /// </c> where <c> <i>fsmt-id</i> </c> is the mount target ID, and <c> <i>fs-id</i> </c>
+    /// is the <c>FileSystemId</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Sets the <code>requesterManaged</code> property of the network interface to <code>true</code>,
-    /// and the <code>requesterId</code> value to <code>EFS</code>.
+    /// Sets the <c>requesterManaged</c> property of the network interface to <c>true</c>,
+    /// and the <c>requesterId</c> value to <c>EFS</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// Each Amazon EFS mount target has one corresponding requester-managed EC2 network interface.
-    /// After the network interface is created, Amazon EFS sets the <code>NetworkInterfaceId</code>
-    /// field in the mount target's description to the network interface ID, and the <code>IpAddress</code>
-    /// field to its address. If network interface creation fails, the entire <code>CreateMountTarget</code>
+    /// After the network interface is created, Amazon EFS sets the <c>NetworkInterfaceId</c>
+    /// field in the mount target's description to the network interface ID, and the <c>IpAddress</c>
+    /// field to its address. If network interface creation fails, the entire <c>CreateMountTarget</c>
     /// operation fails.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <code>CreateMountTarget</code> call returns only after creating the network interface,
-    /// but while the mount target state is still <code>creating</code>, you can check the
-    /// mount target creation status by calling the <a>DescribeMountTargets</a> operation,
-    /// which among other things returns the mount target state.
+    /// The <c>CreateMountTarget</c> call returns only after creating the network interface,
+    /// but while the mount target state is still <c>creating</c>, you can check the mount
+    /// target creation status by calling the <a>DescribeMountTargets</a> operation, which
+    /// among other things returns the mount target state.
     /// </para>
     ///  </note> 
     /// <para>
@@ -178,7 +177,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>elasticfilesystem:CreateMountTarget</code> 
+    ///  <c>elasticfilesystem:CreateMountTarget</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -186,15 +185,15 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ec2:DescribeSubnets</code> 
+    ///  <c>ec2:DescribeSubnets</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ec2:DescribeNetworkInterfaces</code> 
+    ///  <c>ec2:DescribeNetworkInterfaces</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ec2:CreateNetworkInterface</code> 
+    ///  <c>ec2:CreateNetworkInterface</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -246,8 +245,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>. These must
-        /// be for the same VPC as subnet specified.
+        /// Up to five VPC security group IDs, of the form <c>sg-xxxxxxxx</c>. These must be for
+        /// the same VPC as subnet specified.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

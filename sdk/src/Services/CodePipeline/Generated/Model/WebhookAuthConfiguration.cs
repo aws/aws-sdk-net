@@ -40,8 +40,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property AllowedIPRange. 
         /// <para>
         /// The property used to configure acceptance of webhooks in an IP address range. For
-        /// IP, only the <code>AllowedIPRange</code> property must be set. This property must
-        /// be set to a valid CIDR range.
+        /// IP, only the <c>AllowedIPRange</c> property must be set. This property must be set
+        /// to a valid CIDR range.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property SecretToken. 
         /// <para>
-        /// The property used to configure GitHub authentication. For GITHUB_HMAC, only the <code>SecretToken</code>
+        /// The property used to configure GitHub authentication. For GITHUB_HMAC, only the <c>SecretToken</c>
         /// property must be set.
         /// </para>
         /// </summary>

@@ -30,12 +30,12 @@ namespace Amazon.SimpleDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDomains operation.
-    /// The <code>ListDomains</code> operation lists all domains associated with the Access
-    /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
-    /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
-    /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
-    /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
-    /// names with each successive operation call.
+    /// The <c>ListDomains</c> operation lists all domains associated with the Access Key
+    /// ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+    /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c>
+    /// domains. Calling <c>ListDomains</c> successive times with the <c>NextToken</c> provided
+    /// by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each
+    /// successive operation call.
     /// </summary>
     public partial class ListDomainsRequest : AmazonSimpleDBRequest
     {

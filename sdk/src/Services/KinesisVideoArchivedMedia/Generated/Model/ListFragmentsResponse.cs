@@ -59,7 +59,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the returned list is truncated, the operation returns this token to use to retrieve
-        /// the next page of results. This value is <code>null</code> when there are no more results
+        /// the next page of results. This value is <c>null</c> when there are no more results
         /// to return.
         /// </para>
         /// </summary>

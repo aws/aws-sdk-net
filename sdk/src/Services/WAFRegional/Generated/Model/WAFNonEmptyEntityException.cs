@@ -33,22 +33,21 @@ namespace Amazon.WAFRegional.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You tried to delete a <code>WebACL</code> that still contains one or more <code>Rule</code>
-    /// objects.
+    /// You tried to delete a <c>WebACL</c> that still contains one or more <c>Rule</c> objects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to delete a <code>Rule</code> that still contains one or more <code>ByteMatchSet</code>
+    /// You tried to delete a <c>Rule</c> that still contains one or more <c>ByteMatchSet</c>
     /// objects or other predicates.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to delete a <code>ByteMatchSet</code> that contains one or more <code>ByteMatchTuple</code>
+    /// You tried to delete a <c>ByteMatchSet</c> that contains one or more <c>ByteMatchTuple</c>
     /// objects.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to delete an <code>IPSet</code> that references one or more IP addresses.
+    /// You tried to delete an <c>IPSet</c> that references one or more IP addresses.
     /// </para>
     ///  </li> </ul>
     /// </summary>

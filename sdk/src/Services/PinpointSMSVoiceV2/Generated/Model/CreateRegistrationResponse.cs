@@ -144,38 +144,38 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code>: Your registration is created but not submitted.
+        ///  <c>CREATED</c>: Your registration is created but not submitted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBMITTED</code>: Your registration has been submitted and is awaiting review.
+        ///  <c>SUBMITTED</c>: Your registration has been submitted and is awaiting review.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.
+        ///  <c>REVIEWING</c>: Your registration has been accepted and is being reviewed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PROVISIONING</code>: Your registration has been approved and your origination
-        /// identity is being created.
+        ///  <c>PROVISIONING</c>: Your registration has been approved and your origination identity
+        /// is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETE</code>: Your registration has been approved and and your origination
-        /// identity has been created.
+        ///  <c>COMPLETE</c>: Your registration has been approved and and your origination identity
+        /// has been created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REQUIRES_UPDATES</code>: You must fix your registration and resubmit it.
+        ///  <c>REQUIRES_UPDATES</c>: You must fix your registration and resubmit it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CLOSED</code>: The phone number or sender ID has been deleted and you must
-        /// also delete the registration for the number.
+        ///  <c>CLOSED</c>: The phone number or sender ID has been deleted and you must also delete
+        /// the registration for the number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code>: The registration has been deleted.
+        ///  <c>DELETED</c>: The registration has been deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -68,8 +68,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property CloudTrailDetails. 
         /// <para>
-        /// A <code>CloudTrailDetails</code> object that contains details about a <code>Trail</code>
-        /// that you want to analyze to generate policies.
+        /// A <c>CloudTrailDetails</c> object that contains details about a <c>Trail</c> that
+        /// you want to analyze to generate policies.
         /// </para>
         /// </summary>
         public CloudTrailDetails CloudTrailDetails

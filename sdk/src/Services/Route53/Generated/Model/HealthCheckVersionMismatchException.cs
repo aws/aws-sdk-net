@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The value of <code>HealthCheckVersion</code> in the request doesn't match the value
-    /// of <code>HealthCheckVersion</code> in the health check.
+    /// The value of <c>HealthCheckVersion</c> in the request doesn't match the value of <c>HealthCheckVersion</c>
+    /// in the health check.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

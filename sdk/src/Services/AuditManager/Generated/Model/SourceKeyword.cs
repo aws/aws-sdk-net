@@ -79,29 +79,29 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SELECT_FROM_LIST</code> is used when mapping a data source for automated evidence.
+        ///  <c>SELECT_FROM_LIST</c> is used when mapping a data source for automated evidence.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When <code>keywordInputType</code> is <code>SELECT_FROM_LIST</code>, a keyword must
-        /// be selected to collect automated evidence. For example, this keyword can be a CloudTrail
-        /// event name, a rule name for Config, a Security Hub control, or the name of an Amazon
-        /// Web Services API call.
+        /// When <c>keywordInputType</c> is <c>SELECT_FROM_LIST</c>, a keyword must be selected
+        /// to collect automated evidence. For example, this keyword can be a CloudTrail event
+        /// name, a rule name for Config, a Security Hub control, or the name of an Amazon Web
+        /// Services API call.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>UPLOAD_FILE</code> and <code>INPUT_TEXT</code> are only used when mapping a
-        /// data source for manual evidence.
+        ///  <c>UPLOAD_FILE</c> and <c>INPUT_TEXT</c> are only used when mapping a data source
+        /// for manual evidence.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When <code>keywordInputType</code> is <code>UPLOAD_FILE</code>, a file must be uploaded
-        /// as manual evidence.
+        /// When <c>keywordInputType</c> is <c>UPLOAD_FILE</c>, a file must be uploaded as manual
+        /// evidence.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When <code>keywordInputType</code> is <code>INPUT_TEXT</code>, text must be entered
-        /// as manual evidence.
+        /// When <c>keywordInputType</c> is <c>INPUT_TEXT</c>, text must be entered as manual
+        /// evidence.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -126,17 +126,17 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  
         /// <para>
-        /// If you’re mapping a data source to a rule in Config, the <code>keywordValue</code>
-        /// that you specify depends on the type of rule:
+        /// If you’re mapping a data source to a rule in Config, the <c>keywordValue</c> that
+        /// you specify depends on the type of rule:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">managed
-        /// rules</a>, you can use the rule identifier as the <code>keywordValue</code>. You can
-        /// find the rule identifier from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list
+        /// rules</a>, you can use the rule identifier as the <c>keywordValue</c>. You can find
+        /// the rule identifier from the <a href="https://docs.aws.amazon.com/config/latest/developerguide/managed-rules-by-aws-config.html">list
         /// of Config managed rules</a>. For some rules, the rule identifier is different from
-        /// the rule name. For example, the rule name <code>restricted-ssh</code> has the following
-        /// rule identifier: <code>INCOMING_SSH_DISABLED</code>. Make sure to use the rule identifier,
+        /// the rule name. For example, the rule name <c>restricted-ssh</c> has the following
+        /// rule identifier: <c>INCOMING_SSH_DISABLED</c>. Make sure to use the rule identifier,
         /// not the rule name. 
         /// </para>
         ///  
@@ -150,14 +150,13 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>keywordValue</code>: <code>S3_BUCKET_ACL_PROHIBITED</code> 
+        ///  <c>keywordValue</c>: <c>S3_BUCKET_ACL_PROHIBITED</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_develop-rules.html">custom
-        /// rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code>
-        /// prefix to the rule name. This prefix distinguishes the custom rule from a managed
-        /// rule. 
+        /// rules</a>, you form the <c>keywordValue</c> by adding the <c>Custom_</c> prefix to
+        /// the rule name. This prefix distinguishes the custom rule from a managed rule. 
         /// </para>
         ///  
         /// <para>
@@ -169,14 +168,14 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>keywordValue</code>: <code>Custom_my-custom-config-rule</code> 
+        ///  <c>keywordValue</c>: <c>Custom_my-custom-config-rule</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
         /// For <a href="https://docs.aws.amazon.com/config/latest/developerguide/service-linked-awsconfig-rules.html">service-linked
-        /// rules</a>, you form the <code>keywordValue</code> by adding the <code>Custom_</code>
-        /// prefix to the rule name. In addition, you remove the suffix ID that appears at the
-        /// end of the rule name. 
+        /// rules</a>, you form the <c>keywordValue</c> by adding the <c>Custom_</c> prefix to
+        /// the rule name. In addition, you remove the suffix ID that appears at the end of the
+        /// rule name. 
         /// </para>
         ///  
         /// <para>
@@ -188,8 +187,7 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>keywordValue</code>: <code>Custom_CustomRuleForAccount-conformance-pack</code>
-        /// 
+        ///  <c>keywordValue</c>: <c>Custom_CustomRuleForAccount-conformance-pack</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -197,14 +195,13 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>keywordValue</code>: <code>Custom_OrgConfigRule-s3-bucket-versioning-enabled</code>
-        /// 
+        ///  <c>keywordValue</c>: <c>Custom_OrgConfigRule-s3-bucket-versioning-enabled</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> <important> 
         /// <para>
-        /// The <code>keywordValue</code> is case sensitive. If you enter a value incorrectly,
-        /// Audit Manager might not recognize the data source mapping. As a result, you might
-        /// not successfully collect evidence from that data source as intended. 
+        /// The <c>keywordValue</c> is case sensitive. If you enter a value incorrectly, Audit
+        /// Manager might not recognize the data source mapping. As a result, you might not successfully
+        /// collect evidence from that data source as intended. 
         /// </para>
         ///  
         /// <para>
@@ -217,16 +214,16 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For managed rules, make sure that the <code>keywordValue</code> is the rule identifier
-        /// in <code>ALL_CAPS_WITH_UNDERSCORES</code>. For example, <code>CLOUDWATCH_LOG_GROUP_ENCRYPTED</code>.
+        /// For managed rules, make sure that the <c>keywordValue</c> is the rule identifier in
+        /// <c>ALL_CAPS_WITH_UNDERSCORES</c>. For example, <c>CLOUDWATCH_LOG_GROUP_ENCRYPTED</c>.
         /// For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-config.html">supported
         /// Config managed rules</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For custom rules, make sure that the <code>keywordValue</code> has the <code>Custom_</code>
-        /// prefix followed by the custom rule name. The format of the custom rule name itself
-        /// may vary. For accuracy, we recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config
+        /// For custom rules, make sure that the <c>keywordValue</c> has the <c>Custom_</c> prefix
+        /// followed by the custom rule name. The format of the custom rule name itself may vary.
+        /// For accuracy, we recommend that you visit the <a href="https://console.aws.amazon.com/config/">Config
         /// console</a> to verify your custom rule name.
         /// </para>
         ///  </li> </ul> </li> <li> 
@@ -237,16 +234,16 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For Amazon Web Services API calls: Make sure that the <code>keywordValue</code> is
-        /// written as <code>serviceprefix_ActionName</code>. For example, <code>iam_ListGroups</code>.
-        /// For accuracy, we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported
+        /// For Amazon Web Services API calls: Make sure that the <c>keywordValue</c> is written
+        /// as <c>serviceprefix_ActionName</c>. For example, <c>iam_ListGroups</c>. For accuracy,
+        /// we recommend that you reference the list of <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/control-data-sources-api.html">supported
         /// API calls</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For CloudTrail: Make sure that the <code>keywordValue</code> is written as <code>serviceprefix_ActionName</code>.
-        /// For example, <code>cloudtrail_StartLogging</code>. For accuracy, we recommend that
-        /// you review the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service
+        /// For CloudTrail: Make sure that the <c>keywordValue</c> is written as <c>serviceprefix_ActionName</c>.
+        /// For example, <c>cloudtrail_StartLogging</c>. For accuracy, we recommend that you review
+        /// the Amazon Web Service prefix and action names in the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Service
         /// Authorization Reference</a>.
         /// </para>
         ///  </li> </ol> </important>

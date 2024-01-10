@@ -46,7 +46,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ChangeSet. 
         /// <para>
-        /// An array of <code>ChangeSummary</code> objects.
+        /// An array of <c>ChangeSummary</c> objects.
         /// </para>
         /// </summary>
         public List<ChangeSummary> ChangeSet
@@ -103,8 +103,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ChangeSetName. 
         /// <para>
-        /// The optional name provided in the <code>StartChangeSet</code> request. If you do not
-        /// provide a name, one is set by default.
+        /// The optional name provided in the <c>StartChangeSet</c> request. If you do not provide
+        /// a name, one is set by default.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -144,10 +144,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property FailureCode. 
         /// <para>
-        /// Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
-        /// which means that there are issues with the request (see the <code>ErrorDetailList</code>),
-        /// or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and
-        /// you should retry your request.
+        /// Returned if the change set is in <c>FAILED</c> status. Can be either <c>CLIENT_ERROR</c>,
+        /// which means that there are issues with the request (see the <c>ErrorDetailList</c>),
+        /// or <c>SERVER_FAULT</c>, which means that there is a problem in the system, and you
+        /// should retry your request.
         /// </para>
         /// </summary>
         public FailureCode FailureCode

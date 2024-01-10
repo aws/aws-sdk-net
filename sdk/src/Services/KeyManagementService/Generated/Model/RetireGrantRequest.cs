@@ -38,10 +38,10 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// This operation can be called by the <i>retiring principal</i> for a grant, by the
-    /// <i>grantee principal</i> if the grant allows the <code>RetireGrant</code> operation,
-    /// and by the Amazon Web Services account in which the grant is created. It can also
-    /// be called by principals to whom permission for retiring a grant is delegated. For
-    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
+    /// <i>grantee principal</i> if the grant allows the <c>RetireGrant</c> operation, and
+    /// by the Amazon Web Services account in which the grant is created. It can also be called
+    /// by principals to whom permission for retiring a grant is delegated. For details, see
+    /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#grant-delete">Retiring
     /// and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
     /// </para>
     ///  
@@ -99,8 +99,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
-        /// 
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter. 
         /// </para>
         ///  
         /// <para>
@@ -179,7 +178,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// For example: <c>arn:aws:kms:us-east-2:444455556666:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         /// </summary>

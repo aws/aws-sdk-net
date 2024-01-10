@@ -80,7 +80,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property PrincipalTags. 
         /// <para>
-        /// You can use this operation to add principal tags. The <code>PrincipalTags</code>operation
+        /// You can use this operation to add principal tags. The <c>PrincipalTags</c>operation
         /// enables you to reference user attributes in your IAM permissions policy.
         /// </para>
         /// </summary>

@@ -82,8 +82,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The total number of items to return. If the total number of available items is more
-        /// than the value specified in <code>MaxResults</code>, then a <code>NextToken</code>
-        /// will be provided in the output that you can use to resume pagination.
+        /// than the value specified in <c>MaxResults</c>, then a <c>NextToken</c> will be provided
+        /// in the output that you can use to resume pagination.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -121,8 +121,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// An optional value that specifies whether you want the results sorted in <code>Ascending</code>
-        /// or <code>Descending</code> order.
+        /// An optional value that specifies whether you want the results sorted in <c>Ascending</c>
+        /// or <c>Descending</c> order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

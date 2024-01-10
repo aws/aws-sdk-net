@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDataSource operation.
-    /// Deletes a <code>DataSource</code> object.
+    /// Deletes a <c>DataSource</c> object.
     /// </summary>
     public partial class DeleteDataSourceRequest : AmazonAppSyncRequest
     {

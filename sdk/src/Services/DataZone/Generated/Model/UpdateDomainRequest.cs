@@ -63,7 +63,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description to be updated as part of the <code>UpdateDomain</code> action.
+        /// The description to be updated as part of the <c>UpdateDomain</c> action.
         /// </para>
         /// </summary>
         public string Description
@@ -81,7 +81,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainExecutionRole. 
         /// <para>
-        /// The domain execution role to be updated as part of the <code>UpdateDomain</code> action.
+        /// The domain execution role to be updated as part of the <c>UpdateDomain</c> action.
         /// </para>
         /// </summary>
         public string DomainExecutionRole
@@ -118,7 +118,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to be updated as part of the <code>UpdateDomain</code> action.
+        /// The name to be updated as part of the <c>UpdateDomain</c> action.
         /// </para>
         /// </summary>
         public string Name
@@ -136,7 +136,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property SingleSignOn. 
         /// <para>
-        /// The single sign-on option to be updated as part of the <code>UpdateDomain</code> action.
+        /// The single sign-on option to be updated as part of the <c>UpdateDomain</c> action.
         /// </para>
         /// </summary>
         public SingleSignOn SingleSignOn

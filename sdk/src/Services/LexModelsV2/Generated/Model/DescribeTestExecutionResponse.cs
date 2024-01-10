@@ -48,9 +48,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ApiMode. 
         /// <para>
         /// Indicates whether we use streaming or non-streaming APIs are used for the test set
-        /// execution. For streaming, <code>StartConversation</code> Amazon Lex Runtime API is
-        /// used. Whereas for non-streaming, <code>RecognizeUtterance</code> and <code>RecognizeText</code>
-        /// Amazon Lex Runtime API is used.
+        /// execution. For streaming, <c>StartConversation</c> Amazon Lex Runtime API is used.
+        /// Whereas for non-streaming, <c>RecognizeUtterance</c> and <c>RecognizeText</c> Amazon
+        /// Lex Runtime API is used.
         /// </para>
         /// </summary>
         public TestExecutionApiMode ApiMode

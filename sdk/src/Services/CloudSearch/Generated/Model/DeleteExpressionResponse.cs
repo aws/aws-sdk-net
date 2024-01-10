@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>DeleteExpression</a></code> request. Specifies the expression
-    /// being deleted.
+    /// The result of a <c><a>DeleteExpression</a></c> request. Specifies the expression being
+    /// deleted.
     /// </summary>
     public partial class DeleteExpressionResponse : AmazonWebServiceResponse
     {

@@ -30,8 +30,8 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Provides information about types of supported endpoints in response to a request by
-    /// the <code>DescribeEndpointTypes</code> operation. This information includes the type
-    /// of endpoint, the database engine name, and whether change data capture (CDC) is supported.
+    /// the <c>DescribeEndpointTypes</c> operation. This information includes the type of
+    /// endpoint, the database engine name, and whether change data capture (CDC) is supported.
     /// </summary>
     public partial class SupportedEndpointType
     {
@@ -44,7 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
+        /// The type of endpoint. Valid values are <c>source</c> and <c>target</c>.
         /// </para>
         /// </summary>
         public ReplicationEndpointTypeValue EndpointType
@@ -62,8 +62,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineDisplayName. 
         /// <para>
-        /// The expanded name for the engine name. For example, if the <code>EngineName</code>
-        /// parameter is "aurora", this value would be "Amazon Aurora MySQL".
+        /// The expanded name for the engine name. For example, if the <c>EngineName</c> parameter
+        /// is "aurora", this value would be "Amazon Aurora MySQL".
         /// </para>
         /// </summary>
         public string EngineDisplayName
@@ -81,12 +81,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
-        /// <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
-        /// <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
-        /// <code>"db2-zos"</code>, <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>,
-        /// <code>"mongodb"</code>, <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>,
-        /// <code>"documentdb"</code>, <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
+        /// The database engine name. Valid values, depending on the EndpointType, include <c>"mysql"</c>,
+        /// <c>"oracle"</c>, <c>"postgres"</c>, <c>"mariadb"</c>, <c>"aurora"</c>, <c>"aurora-postgresql"</c>,
+        /// <c>"redshift"</c>, <c>"s3"</c>, <c>"db2"</c>, <c>"db2-zos"</c>, <c>"azuredb"</c>,
+        /// <c>"sybase"</c>, <c>"dynamodb"</c>, <c>"mongodb"</c>, <c>"kinesis"</c>, <c>"kafka"</c>,
+        /// <c>"elasticsearch"</c>, <c>"documentdb"</c>, <c>"sqlserver"</c>, <c>"neptune"</c>,
+        /// and <c>"babelfish"</c>.
         /// </para>
         /// </summary>
         public string EngineName

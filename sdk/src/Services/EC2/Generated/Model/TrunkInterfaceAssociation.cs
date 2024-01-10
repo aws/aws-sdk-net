@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InterfaceProtocol. 
         /// <para>
-        /// The interface protocol. Valid values are <code>VLAN</code> and <code>GRE</code>.
+        /// The interface protocol. Valid values are <c>VLAN</c> and <c>GRE</c>.
         /// </para>
         /// </summary>
         public InterfaceProtocolType InterfaceProtocol

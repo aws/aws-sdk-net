@@ -41,7 +41,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Optional filters to limit results. You can use <code>status</code> and <code>templateId</code>.
+        /// Optional filters to limit results. You can use <c>status</c> and <c>templateId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -60,12 +60,12 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code>
-        /// request with the returned <code>nextToken</code> value. This value can be between
-        /// 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable. 
+        /// When this parameter is used, <c>ListWorldGeneratorJobs</c> only returns <c>maxResults</c>
+        /// results in a single page along with a <c>nextToken</c> response element. The remaining
+        /// results of the initial request can be seen by sending another <c>ListWorldGeneratorJobs</c>
+        /// request with the returned <c>nextToken</c> value. This value can be between 1 and
+        /// 100. If this parameter is not used, then <c>ListWorldGeneratorJobs</c> returns up
+        /// to 100 results and a <c>nextToken</c> value if applicable. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -84,11 +84,10 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve
-        /// the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and
-        /// assign that token to the request object's <code>nextToken</code> parameter. If there
-        /// are no remaining results, the previous response object's NextToken parameter is set
-        /// to null. 
+        /// response object's <c>nextToken</c> parameter value is set to a token. To retrieve
+        /// the next set of results, call <c>ListWorldGenerationJobsRequest</c> again and assign
+        /// that token to the request object's <c>nextToken</c> parameter. If there are no remaining
+        /// results, the previous response object's NextToken parameter is set to null. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

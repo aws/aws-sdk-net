@@ -34,13 +34,13 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
-    /// which logs will be exported (or not exported) to CloudWatch Logs.
+    /// The <c>EnableLogTypes</c> and <c>DisableLogTypes</c> arrays determine which logs will
+    /// be exported (or not exported) to CloudWatch Logs.
     /// </para>
     ///  
     /// <para>
-    /// Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code>
-    /// (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+    /// Valid log types are: <c>audit</c> (to publish audit logs) and <c>slowquery</c> (to
+    /// publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
     /// Neptune logs to Amazon CloudWatch logs</a>.
     /// </para>
     /// </summary>

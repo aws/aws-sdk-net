@@ -59,7 +59,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UnprocessedAssociations. 
         /// <para>
-        ///  A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>,
+        ///  A security control (identified with <c>SecurityControlId</c>, <c>SecurityControlArn</c>,
         /// or a mix of both parameters) whose enablement status in a specified standard cannot
         /// be returned. 
         /// </para>

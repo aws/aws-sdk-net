@@ -1149,9 +1149,9 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code>
-        /// and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account
-        /// from all partner accounts.
+        /// Disassociates your AWS account from a partner account. If <c>PartnerAccountId</c>
+        /// and <c>PartnerType</c> are <c>null</c>, disassociates your AWS account from all partner
+        /// accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAwsAccountFromPartnerAccount service method.</param>
         /// <param name="cancellationToken">
@@ -1647,8 +1647,8 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code>
-        /// are <code>null</code>, returns all partner accounts.
+        /// Gets information about a partner account. If <c>PartnerAccountId</c> and <c>PartnerType</c>
+        /// are <c>null</c>, returns all partner accounts.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPartnerAccount service method.</param>
         /// <param name="cancellationToken">
@@ -3260,7 +3260,7 @@ namespace Amazon.IoTWireless
 
 
         /// <summary>
-        /// Simulates a provisioned device by sending an uplink data payload of <code>Hello</code>.
+        /// Simulates a provisioned device by sending an uplink data payload of <c>Hello</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestWirelessDevice service method.</param>
         /// <param name="cancellationToken">

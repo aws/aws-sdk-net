@@ -126,7 +126,7 @@ namespace Amazon.GameLift.Model
         /// zip file name (the "key"), and a role ARN that allows Amazon GameLift to access the
         /// Amazon S3 storage location. The S3 bucket must be in the same Region where you want
         /// to create a new script. By default, Amazon GameLift uploads the latest version of
-        /// the zip file; if you have S3 object versioning turned on, you can use the <code>ObjectVersion</code>
+        /// the zip file; if you have S3 object versioning turned on, you can use the <c>ObjectVersion</c>
         /// parameter to specify an earlier version. 
         /// </para>
         /// </summary>
@@ -172,7 +172,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// When using the Amazon Web Services CLI tool to create a script, this parameter is
         /// set to the zip file name. It must be prepended with the string "fileb://" to indicate
-        /// that the file data is a binary object. For example: <code>--zip-file fileb://myRealtimeScript.zip</code>.
+        /// that the file data is a binary object. For example: <c>--zip-file fileb://myRealtimeScript.zip</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5000000)]

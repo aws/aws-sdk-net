@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>DescribeOutboundCrossClusterSearchConnections</a></code>
-    /// request. Contains the list of connections matching the filter criteria.
+    /// The result of a <c><a>DescribeOutboundCrossClusterSearchConnections</a></c> request.
+    /// Contains the list of connections matching the filter criteria.
     /// </summary>
     public partial class DescribeOutboundCrossClusterSearchConnectionsResponse : AmazonWebServiceResponse
     {
@@ -40,8 +40,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CrossClusterSearchConnections. 
         /// <para>
-        /// Consists of list of <code><a>OutboundCrossClusterSearchConnection</a></code> matching
-        /// the specified filter criteria.
+        /// Consists of list of <c><a>OutboundCrossClusterSearchConnection</a></c> matching the
+        /// specified filter criteria.
         /// </para>
         /// </summary>
         public List<OutboundCrossClusterSearchConnection> CrossClusterSearchConnections

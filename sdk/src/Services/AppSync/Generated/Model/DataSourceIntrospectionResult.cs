@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DataSourceIntrospectionResult</code>. This is the
-    /// populated result of a <code>GetDataSourceIntrospection</code> operation.
+    /// Represents the output of a <c>DataSourceIntrospectionResult</c>. This is the populated
+    /// result of a <c>GetDataSourceIntrospection</c> operation.
     /// </summary>
     public partial class DataSourceIntrospectionResult
     {
@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Models. 
         /// <para>
-        /// The array of <code>DataSourceIntrospectionModel</code> objects.
+        /// The array of <c>DataSourceIntrospectionModel</c> objects.
         /// </para>
         /// </summary>
         public List<DataSourceIntrospectionModel> Models
@@ -59,8 +59,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Determines the number of types to be returned in a single response before paginating.
-        /// This value is typically taken from <code>nextToken</code> value from the previous
-        /// response.
+        /// This value is typically taken from <c>nextToken</c> value from the previous response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]

@@ -31,8 +31,8 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Container for the parameters to the StartBotResourceGeneration operation.
     /// Starts a request for the descriptive bot builder to generate a bot locale configuration
-    /// based on the prompt you provide it. After you make this call, use the <code>DescribeBotResourceGeneration</code>
-    /// operation to check on the status of the generation and for the <code>generatedBotLocaleUrl</code>
+    /// based on the prompt you provide it. After you make this call, use the <c>DescribeBotResourceGeneration</c>
+    /// operation to check on the status of the generation and for the <c>generatedBotLocaleUrl</c>
     /// when the generation is complete. Use that value to retrieve the Amazon S3 object containing
     /// the bot locale configuration. You can then modify and import this configuration.
     /// </summary>

@@ -96,8 +96,8 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>DestinationAddresses</code> is required if <code>AllowAllTrafficToEndpoint</code>
-        /// is <code>FALSE</code> or is not specified.
+        ///  <c>DestinationAddresses</c> is required if <c>AllowAllTrafficToEndpoint</c> is <c>FALSE</c>
+        /// or is not specified.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

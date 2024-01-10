@@ -130,14 +130,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not want to mirror the entire packet, use the <code>PacketLength</code>
-        /// parameter to specify the number of bytes in each packet to mirror.
+        /// If you do not want to mirror the entire packet, use the <c>PacketLength</c> parameter
+        /// to specify the number of bytes in each packet to mirror.
         /// </para>
         ///  
         /// <para>
-        /// For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <code>PacketLength</code>
-        /// will be set to 8500. Valid values are 1-8500. Setting a <code>PacketLength</code>
-        /// greater than 8500 will result in an error response.
+        /// For sessions with Network Load Balancer (NLB) Traffic Mirror targets the default <c>PacketLength</c>
+        /// will be set to 8500. Valid values are 1-8500. Setting a <c>PacketLength</c> greater
+        /// than 8500 will result in an error response.
         /// </para>
         /// </summary>
         public int PacketLength
@@ -238,8 +238,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The VXLAN ID for the Traffic Mirror session. For more information about the VXLAN
         /// protocol, see <a href="https://tools.ietf.org/html/rfc7348">RFC 7348</a>. If you do
-        /// not specify a <code>VirtualNetworkId</code>, an account-wide unique id is chosen at
-        /// random.
+        /// not specify a <c>VirtualNetworkId</c>, an account-wide unique id is chosen at random.
         /// </para>
         /// </summary>
         public int VirtualNetworkId

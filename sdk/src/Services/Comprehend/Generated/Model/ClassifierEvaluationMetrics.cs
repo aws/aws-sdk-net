@@ -66,9 +66,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property F1Score. 
         /// <para>
         /// A measure of how accurate the classifier results are for the test data. It is derived
-        /// from the <code>Precision</code> and <code>Recall</code> values. The <code>F1Score</code>
-        /// is the harmonic average of the two scores. The highest score is 1, and the worst score
-        /// is 0. 
+        /// from the <c>Precision</c> and <c>Recall</c> values. The <c>F1Score</c> is the harmonic
+        /// average of the two scores. The highest score is 1, and the worst score is 0. 
         /// </para>
         /// </summary>
         public double F1Score
@@ -107,9 +106,9 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property MicroF1Score. 
         /// <para>
         /// A measure of how accurate the classifier results are for the test data. It is a combination
-        /// of the <code>Micro Precision</code> and <code>Micro Recall</code> values. The <code>Micro
-        /// F1Score</code> is the harmonic mean of the two scores. The highest score is 1, and
-        /// the worst score is 0.
+        /// of the <c>Micro Precision</c> and <c>Micro Recall</c> values. The <c>Micro F1Score</c>
+        /// is the harmonic mean of the two scores. The highest score is 1, and the worst score
+        /// is 0.
         /// </para>
         /// </summary>
         public double MicroF1Score

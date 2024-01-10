@@ -109,12 +109,12 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. The namespace is required
+        ///  The namespace of a Maven package is its <c>groupId</c>. The namespace is required
         /// when deleting Maven package versions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>.
+        ///  The namespace of an npm package is its <c>scope</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -123,7 +123,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

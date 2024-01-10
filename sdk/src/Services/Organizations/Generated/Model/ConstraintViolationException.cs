@@ -244,7 +244,7 @@ namespace Amazon.Organizations.Model
     ///  </li> <li> 
     /// <para>
     /// SERVICE_ACCESS_NOT_ENABLED: You attempted to register a delegated administrator before
-    /// you enabled service access. Call the <code>EnableAWSServiceAccess</code> API first.
+    /// you enabled service access. Call the <c>EnableAWSServiceAccess</c> API first.
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -384,7 +384,7 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// Each tag consists of a key and an optional value. If a resource already has a tag
-        /// with the same key, <code>AddTags</code> updates its value.
+        /// with the same key, <c>AddTags</c> updates its value.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
@@ -1294,8 +1294,8 @@ namespace Amazon.ElasticLoadBalancingV2
         ///  
         /// <para>
         /// If the default certificate is also in the certificate list, it appears twice in the
-        /// results (once with <code>IsDefault</code> set to true and once with <code>IsDefault</code>
-        /// set to false).
+        /// results (once with <c>IsDefault</c> set to true and once with <c>IsDefault</c> set
+        /// to false).
         /// </para>
         ///  
         /// <para>
@@ -2328,8 +2328,8 @@ namespace Amazon.ElasticLoadBalancingV2
         /// 
         ///  
         /// <para>
-        /// If the target is an EC2 instance, it must be in the <code>running</code> state when
-        /// you register it.
+        /// If the target is an EC2 instance, it must be in the <c>running</c> state when you
+        /// register it.
         /// </para>
         ///  
         /// <para>

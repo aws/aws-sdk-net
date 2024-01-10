@@ -124,7 +124,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <para>
         /// If true, the export of agent information exceeded the size limit for a single export
         /// and the exported data is incomplete for the requested time range. To address this,
-        /// select a smaller time range for the export by using <code>startDate</code> and <code>endDate</code>.
+        /// select a smaller time range for the export by using <c>startDate</c> and <c>endDate</c>.
         /// </para>
         /// </summary>
         public bool IsTruncated
@@ -142,8 +142,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property RequestedEndTime. 
         /// <para>
-        /// The <code>endTime</code> used in the <code>StartExportTask</code> request. If no <code>endTime</code>
-        /// was requested, this result does not appear in <code>ExportInfo</code>.
+        /// The <c>endTime</c> used in the <c>StartExportTask</c> request. If no <c>endTime</c>
+        /// was requested, this result does not appear in <c>ExportInfo</c>.
         /// </para>
         /// </summary>
         public DateTime RequestedEndTime
@@ -161,9 +161,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property RequestedStartTime. 
         /// <para>
-        /// The value of <code>startTime</code> parameter in the <code>StartExportTask</code>
-        /// request. If no <code>startTime</code> was requested, this result does not appear in
-        /// <code>ExportInfo</code>.
+        /// The value of <c>startTime</c> parameter in the <c>StartExportTask</c> request. If
+        /// no <c>startTime</c> was requested, this result does not appear in <c>ExportInfo</c>.
         /// </para>
         /// </summary>
         public DateTime RequestedStartTime

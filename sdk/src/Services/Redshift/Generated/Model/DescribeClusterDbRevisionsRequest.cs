@@ -30,7 +30,7 @@ namespace Amazon.Redshift.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeClusterDbRevisions operation.
-    /// Returns an array of <code>ClusterDbRevision</code> objects.
+    /// Returns an array of <c>ClusterDbRevision</c> objects.
     /// </summary>
     public partial class DescribeClusterDbRevisionsRequest : AmazonRedshiftRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterIdentifier. 
         /// <para>
-        /// A unique identifier for a cluster whose <code>ClusterDbRevisions</code> you are requesting.
+        /// A unique identifier for a cluster whose <c>ClusterDbRevisions</c> you are requesting.
         /// This parameter is case sensitive. All clusters defined for an account are returned
         /// by default.
         /// </para>
@@ -63,16 +63,16 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional parameter that specifies the starting point for returning a set of response
-        /// records. When the results of a <code>DescribeClusterDbRevisions</code> request exceed
-        /// the value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in
-        /// the <code>marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned <code>marker</code> value in the <code>marker</code>
-        /// parameter and retrying the request. 
+        /// records. When the results of a <c>DescribeClusterDbRevisions</c> request exceed the
+        /// value specified in <c>MaxRecords</c>, Amazon Redshift returns a value in the <c>marker</c>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned <c>marker</c> value in the <c>marker</c> parameter and retrying the request.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: You can specify either the <code>ClusterIdentifier</code> parameter,
-        /// or the <code>marker</code> parameter, but not both.
+        /// Constraints: You can specify either the <c>ClusterIdentifier</c> parameter, or the
+        /// <c>marker</c> parameter, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -93,9 +93,9 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The maximum number of response records to return in each call. If the number of remaining
         /// response records exceeds the specified MaxRecords value, a value is returned in the
-        /// <code>marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned <code>marker</code> value in the <code>marker</code>
-        /// parameter and retrying the request. 
+        /// <c>marker</c> field of the response. You can retrieve the next set of response records
+        /// by providing the returned <c>marker</c> value in the <c>marker</c> parameter and retrying
+        /// the request. 
         /// </para>
         ///  
         /// <para>

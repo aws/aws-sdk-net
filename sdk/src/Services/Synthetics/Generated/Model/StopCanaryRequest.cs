@@ -36,7 +36,7 @@ namespace Amazon.Synthetics.Model
     /// 
     ///  
     /// <para>
-    /// You can use <code>StartCanary</code> to start it running again with the canary’s current
+    /// You can use <c>StartCanary</c> to start it running again with the canary’s current
     /// schedule at any point in the future. 
     /// </para>
     /// </summary>

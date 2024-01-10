@@ -39,7 +39,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property ResolverQueryLogConfigAssociation. 
         /// <para>
         /// Information about the Resolver query logging configuration association that you specified
-        /// in a <code>GetQueryLogConfigAssociation</code> request.
+        /// in a <c>GetQueryLogConfigAssociation</c> request.
         /// </para>
         /// </summary>
         public ResolverQueryLogConfigAssociation ResolverQueryLogConfigAssociation

@@ -36,7 +36,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// This policy is similar to the policy created by <a>CreateLBCookieStickinessPolicy</a>,
-    /// except that the lifetime of the special Elastic Load Balancing cookie, <code>AWSELB</code>,
+    /// except that the lifetime of the special Elastic Load Balancing cookie, <c>AWSELB</c>,
     /// follows the lifetime of the application-generated cookie specified in the policy configuration.
     /// The load balancer only inserts a new stickiness cookie when the application response
     /// includes a new application cookie.

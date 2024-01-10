@@ -57,10 +57,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>ListAttributes</code>
-        /// request. When the results of a <code>ListAttributes</code> request exceed <code>maxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// The <c>nextToken</c> value to include in a future <c>ListAttributes</c> request. When
+        /// the results of a <c>ListAttributes</c> request exceed <c>maxResults</c>, this value
+        /// can be used to retrieve the next page of results. This value is <c>null</c> when there
+        /// are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

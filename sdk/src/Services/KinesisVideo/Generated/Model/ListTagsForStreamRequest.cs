@@ -34,7 +34,7 @@ namespace Amazon.KinesisVideo.Model
     /// 
     ///  
     /// <para>
-    /// In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+    /// In the request, you must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
     /// 
     /// </para>
     /// </summary>
@@ -47,9 +47,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify this parameter and the result of a <code>ListTagsForStream</code> call
-        /// is truncated, the response includes a token that you can use in the next request to
-        /// fetch the next batch of tags.
+        /// If you specify this parameter and the result of a <c>ListTagsForStream</c> call is
+        /// truncated, the response includes a token that you can use in the next request to fetch
+        /// the next batch of tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

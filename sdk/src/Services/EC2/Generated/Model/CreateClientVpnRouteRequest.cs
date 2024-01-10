@@ -106,7 +106,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To add a route for Internet access, enter <code>0.0.0.0/0</code> 
+        /// To add a route for Internet access, enter <c>0.0.0.0/0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, if you're adding a route for the local network, specify <code>local</code>.
+        /// Alternatively, if you're adding a route for the local network, specify <c>local</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

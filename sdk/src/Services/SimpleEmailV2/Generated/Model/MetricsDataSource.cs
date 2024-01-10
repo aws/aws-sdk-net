@@ -42,7 +42,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// An object that contains a mapping between a <code>MetricDimensionName</code> and <code>MetricDimensionValue</code>
+        /// An object that contains a mapping between a <c>MetricDimensionName</c> and <c>MetricDimensionValue</c>
         /// to filter metrics by. Must contain a least 1 dimension but no more than 3 unique ones.
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// A list of <code>ExportMetric</code> objects to export.
+        /// A list of <c>ExportMetric</c> objects to export.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -100,7 +100,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The metrics namespace - e.g., <code>VDM</code>.
+        /// The metrics namespace - e.g., <c>VDM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -66,7 +66,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of authentication events to return. Returns 60 events if you set
-        /// <code>MaxResults</code> to 0, or if you don't include a <code>MaxResults</code> parameter.
+        /// <c>MaxResults</c> to 0, or if you don't include a <c>MaxResults</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
@@ -106,8 +106,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

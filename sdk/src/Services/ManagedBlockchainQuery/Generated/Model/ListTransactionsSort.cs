@@ -39,7 +39,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Defaults to the value <code>TRANSACTION_TIMESTAMP</code>.
+        /// Defaults to the value <c>TRANSACTION_TIMESTAMP</c>.
         /// </para>
         /// </summary>
         public ListTransactionsSortBy SortBy
@@ -57,9 +57,9 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The container for the <i>sort order</i> for <code>ListTransactions</code>. The <code>SortOrder</code>
-        /// field only accepts the values <code>ASCENDING</code> and <code>DESCENDING</code>.
-        /// Not providing <code>SortOrder</code> will default to <code>ASCENDING</code>.
+        /// The container for the <i>sort order</i> for <c>ListTransactions</c>. The <c>SortOrder</c>
+        /// field only accepts the values <c>ASCENDING</c> and <c>DESCENDING</c>. Not providing
+        /// <c>SortOrder</c> will default to <c>ASCENDING</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

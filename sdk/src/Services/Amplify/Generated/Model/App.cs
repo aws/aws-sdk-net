@@ -137,7 +137,7 @@ namespace Amazon.Amplify.Model
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
         /// The basic authorization credentials for branches for the Amplify app. You must base64-encode
-        /// the authorization credentials and provide them in the format <code>user:password</code>.
+        /// the authorization credentials and provide them in the format <c>user:password</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=2000)]
@@ -409,10 +409,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>.
-        /// For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>.
+        /// The platform for the Amplify app. For a static app, set the platform type to <c>WEB</c>.
+        /// For a dynamic server-side rendered (SSR) app, set the platform type to <c>WEB_COMPUTE</c>.
         /// For an app requiring Amplify Hosting's original SSR support only, set the platform
-        /// type to <code>WEB_DYNAMIC</code>.
+        /// type to <c>WEB_DYNAMIC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -473,9 +473,9 @@ namespace Amazon.Amplify.Model
         ///  </note> 
         /// <para>
         /// The Amplify service uses this parameter to specify the authentication protocol to
-        /// use to access the Git repository for an Amplify app. Amplify specifies <code>TOKEN</code>
-        /// for a GitHub repository, <code>SIGV4</code> for an Amazon Web Services CodeCommit
-        /// repository, and <code>SSH</code> for GitLab and Bitbucket repositories.
+        /// use to access the Git repository for an Amplify app. Amplify specifies <c>TOKEN</c>
+        /// for a GitHub repository, <c>SIGV4</c> for an Amazon Web Services CodeCommit repository,
+        /// and <c>SSH</c> for GitLab and Bitbucket repositories.
         /// </para>
         /// </summary>
         public RepositoryCloneMethod RepositoryCloneMethod

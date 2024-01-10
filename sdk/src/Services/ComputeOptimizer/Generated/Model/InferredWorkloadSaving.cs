@@ -30,7 +30,7 @@ namespace Amazon.ComputeOptimizer.Model
 {
     /// <summary>
     /// The estimated monthly savings after you adjust the configurations of your instances
-    /// running on the inferred workload types to the recommended configurations. If the <code>inferredWorkloadTypes</code>
+    /// running on the inferred workload types to the recommended configurations. If the <c>inferredWorkloadTypes</c>
     /// list contains multiple entries, then the savings are the sum of the monthly savings
     /// from instances that run the exact combination of the inferred workload types.
     /// </summary>
@@ -71,40 +71,39 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.
+        ///  <c>AmazonEmr</c> - Infers that Amazon EMR might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the
-        /// instance.
+        ///  <c>ApacheCassandra</c> - Infers that Apache Cassandra might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.
+        ///  <c>ApacheHadoop</c> - Infers that Apache Hadoop might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Memcached</code> - Infers that Memcached might be running on the instance.
+        ///  <c>Memcached</c> - Infers that Memcached might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NGINX</code> - Infers that NGINX might be running on the instance.
+        ///  <c>NGINX</c> - Infers that NGINX might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.
+        ///  <c>PostgreSql</c> - Infers that PostgreSQL might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Redis</code> - Infers that Redis might be running on the instance.
+        ///  <c>Redis</c> - Infers that Redis might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Kafka</code> - Infers that Kafka might be running on the instance.
+        ///  <c>Kafka</c> - Infers that Kafka might be running on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+        ///  <c>SQLServer</c> - Infers that SQLServer might be running on the instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>

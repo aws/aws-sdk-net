@@ -79,7 +79,7 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property VersionId. 
         /// <para>
         /// If Secrets Manager created a new version of the secret during this operation, then
-        /// <code>VersionId</code> contains the unique identifier of the new version.
+        /// <c>VersionId</c> contains the unique identifier of the new version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=32, Max=64)]

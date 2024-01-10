@@ -68,8 +68,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be the name of an existing snapshot that is in the <code>available</code>,
-        /// <code>failed</code>, or <code>cancelled</code> state.
+        /// Constraints: Must be the name of an existing snapshot that is in the <c>available</c>,
+        /// <c>failed</c>, or <c>cancelled</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

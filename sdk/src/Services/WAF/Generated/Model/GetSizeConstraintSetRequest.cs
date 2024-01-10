@@ -43,7 +43,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>SizeConstraintSet</a> specified by <code>SizeConstraintSetId</code>.
+    /// Returns the <a>SizeConstraintSet</a> specified by <c>SizeConstraintSetId</c>.
     /// </para>
     /// </summary>
     public partial class GetSizeConstraintSetRequest : AmazonWAFRequest
@@ -53,9 +53,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property SizeConstraintSetId. 
         /// <para>
-        /// The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you want
-        /// to get. <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a>
-        /// and by <a>ListSizeConstraintSets</a>.
+        /// The <c>SizeConstraintSetId</c> of the <a>SizeConstraintSet</a> that you want to get.
+        /// <c>SizeConstraintSetId</c> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

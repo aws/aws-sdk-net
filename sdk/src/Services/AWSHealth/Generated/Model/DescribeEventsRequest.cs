@@ -40,22 +40,22 @@ namespace Amazon.AWSHealth.Model
     ///  
     /// <para>
     /// If no filter criteria are specified, all events are returned. Results are sorted by
-    /// <code>lastModifiedTime</code>, starting with the most recent event.
+    /// <c>lastModifiedTime</c>, starting with the most recent event.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// When you call the <code>DescribeEvents</code> operation and specify an entity for
-    /// the <code>entityValues</code> parameter, Health might return public events that aren't
-    /// specific to that resource. For example, if you call <code>DescribeEvents</code> and
-    /// specify an ID for an Amazon Elastic Compute Cloud (Amazon EC2) instance, Health might
-    /// return events that aren't specific to that resource or service. To get events that
-    /// are specific to a service, use the <code>services</code> parameter in the <code>filter</code>
-    /// object. For more information, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
+    /// When you call the <c>DescribeEvents</c> operation and specify an entity for the <c>entityValues</c>
+    /// parameter, Health might return public events that aren't specific to that resource.
+    /// For example, if you call <c>DescribeEvents</c> and specify an ID for an Amazon Elastic
+    /// Compute Cloud (Amazon EC2) instance, Health might return events that aren't specific
+    /// to that resource or service. To get events that are specific to a service, use the
+    /// <c>services</c> parameter in the <c>filter</c> object. For more information, see <a
+    /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-    /// the next request to return more results.
+    /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+    /// next request to return more results.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -127,8 +127,8 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the results of a search are large, only a portion of the results are returned,
-        /// and a <code>nextToken</code> pagination token is returned in the response. To retrieve
-        /// the next batch of results, reissue the search request and include the returned token.
+        /// and a <c>nextToken</c> pagination token is returned in the response. To retrieve the
+        /// next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token
         /// value.
         /// </para>

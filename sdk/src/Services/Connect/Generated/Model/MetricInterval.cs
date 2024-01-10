@@ -41,11 +41,10 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The timestamp, in UNIX Epoch time format. End time is based on the interval period
-        /// selected. For example, If <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>,
-        /// <code>StartTime</code> and <code>EndTime</code> in the API request differs by 1 day,
-        /// then 48 results are returned in the response. Each result is aggregated by the 30
-        /// minutes period, with each <code>StartTime</code> and <code>EndTime</code> differing
-        /// by 30 minutes. 
+        /// selected. For example, If <c>IntervalPeriod</c> is selected <c>THIRTY_MIN</c>, <c>StartTime</c>
+        /// and <c>EndTime</c> in the API request differs by 1 day, then 48 results are returned
+        /// in the response. Each result is aggregated by the 30 minutes period, with each <c>StartTime</c>
+        /// and <c>EndTime</c> differing by 30 minutes. 
         /// </para>
         /// </summary>
         public DateTime EndTime

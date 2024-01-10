@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An <code>OrganizationResourceDetailedStatusFilters</code> object.
+        /// An <c>OrganizationResourceDetailedStatusFilters</c> object.
         /// </para>
         /// </summary>
         public OrganizationResourceDetailedStatusFilters Filters
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of <code>OrganizationConformancePackDetailedStatuses</code> returned
+        /// The maximum number of <c>OrganizationConformancePackDetailedStatuses</c> returned
         /// on each page. If you do not specify a number, Config uses the default. The default
         /// is 100. 
         /// </para>

@@ -47,8 +47,8 @@ namespace Amazon.SageMakerRuntime.Model
     /// </para>
     ///  
     /// <para>
-    /// Calls to <code>InvokeEndpoint</code> are authenticated by using Amazon Web Services
-    /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+    /// Calls to <c>InvokeEndpoint</c> are authenticated by using Amazon Web Services Signature
+    /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
     /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
     /// </para>
     ///  
@@ -102,8 +102,8 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// Provides input data, in the format specified in the <code>ContentType</code> request
-        /// header. Amazon SageMaker passes all of the data in the body to the model. 
+        /// Provides input data, in the format specified in the <c>ContentType</c> request header.
+        /// Amazon SageMaker passes all of the data in the body to the model. 
         /// </para>
         ///  
         /// <para>
@@ -159,8 +159,8 @@ namespace Amazon.SageMakerRuntime.Model
         /// The code in your model is responsible for setting or updating any custom attributes
         /// in the response. If your code does not set this value in the response, an empty value
         /// is returned. For example, if a custom attribute represents the trace ID, your model
-        /// can prepend the custom attribute with <code>Trace ID:</code> in your post-processing
-        /// function. 
+        /// can prepend the custom attribute with <c>Trace ID:</c> in your post-processing function.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -184,8 +184,8 @@ namespace Amazon.SageMakerRuntime.Model
         /// <summary>
         /// Gets and sets the property EnableExplanations. 
         /// <para>
-        /// An optional JMESPath expression used to override the <code>EnableExplanations</code>
-        /// parameter of the <code>ClarifyExplainerConfig</code> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
+        /// An optional JMESPath expression used to override the <c>EnableExplanations</c> parameter
+        /// of the <c>ClarifyExplainerConfig</c> API. See the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-online-explainability-create-endpoint.html#clarify-online-explainability-create-endpoint-enable">EnableExplanations</a>
         /// section in the developer guide for more information. 
         /// </para>
         /// </summary>

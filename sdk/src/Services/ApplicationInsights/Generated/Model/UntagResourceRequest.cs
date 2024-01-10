@@ -65,9 +65,8 @@ namespace Amazon.ApplicationInsights.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove more than one tag from the application, append the <code>TagKeys</code>
-        /// parameter and argument for each additional tag to remove, separated by an ampersand.
-        /// 
+        /// To remove more than one tag from the application, append the <c>TagKeys</c> parameter
+        /// and argument for each additional tag to remove, separated by an ampersand. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

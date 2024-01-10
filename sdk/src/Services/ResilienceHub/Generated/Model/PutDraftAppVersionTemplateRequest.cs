@@ -41,7 +41,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property AppArn. 
         /// <para>
         /// Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
-        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// ARN is: arn:<c>partition</c>:resiliencehub:<c>region</c>:<c>account</c>:app/<c>app-id</c>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>
         /// guide.
@@ -64,16 +64,16 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property AppTemplateBody. 
         /// <para>
         /// A JSON string that provides information about your application structure. To learn
-        /// more about the <code>appTemplateBody</code> template, see the sample template provided
-        /// in the <i>Examples</i> section.
+        /// more about the <c>appTemplateBody</c> template, see the sample template provided in
+        /// the <i>Examples</i> section.
         /// </para>
         ///  
         /// <para>
-        /// The <code>appTemplateBody</code> JSON string has the following structure:
+        /// The <c>appTemplateBody</c> JSON string has the following structure:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>resources</code> </b> 
+        ///  <b> <c>resources</c> </b> 
         /// </para>
         ///  
         /// <para>
@@ -89,11 +89,11 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each <code>resources</code> array item includes the following fields:
+        /// Each <c>resources</c> array item includes the following fields:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i> <code>logicalResourceId</code> </i> 
+        ///  <i> <c>logicalResourceId</c> </i> 
         /// </para>
         ///  
         /// <para>
@@ -105,11 +105,11 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Each <code>logicalResourceId</code> object includes the following fields:
+        /// Each <c>logicalResourceId</c> object includes the following fields:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>identifier</code> 
+        ///  <c>identifier</c> 
         /// </para>
         ///  
         /// <para>
@@ -121,7 +121,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logicalStackName</code> 
+        ///  <c>logicalStackName</c> 
         /// </para>
         ///  
         /// <para>
@@ -133,7 +133,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resourceGroupName</code> 
+        ///  <c>resourceGroupName</c> 
         /// </para>
         ///  
         /// <para>
@@ -145,7 +145,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>terraformSourceName</code> 
+        ///  <c>terraformSourceName</c> 
         /// </para>
         ///  
         /// <para>
@@ -157,7 +157,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>eksSourceName</code> 
+        ///  <c>eksSourceName</c> 
         /// </para>
         ///  
         /// <para>
@@ -174,7 +174,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <i> <code>type</code> </i> 
+        ///  <i> <c>type</c> </i> 
         /// </para>
         ///  
         /// <para>
@@ -186,7 +186,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i> <code>name</code> </i> 
+        ///  <i> <c>name</c> </i> 
         /// </para>
         ///  
         /// <para>
@@ -198,13 +198,13 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>additionalInfo</code> 
+        ///  <c>additionalInfo</c> 
         /// </para>
         ///  
         /// <para>
         /// Additional configuration parameters for an Resilience Hub application. If you want
-        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
-        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// to implement <c>additionalInfo</c> through the Resilience Hub console rather than
+        /// using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
         /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
@@ -214,16 +214,16 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Key: <code>"failover-regions"</code> 
+        /// Key: <c>"failover-regions"</c> 
         /// </para>
         ///  
         /// <para>
-        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// Value: <c>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</c>
         /// 
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
-        ///  <b> <code>appComponents</code> </b> 
+        ///  <b> <c>appComponents</c> </b> 
         /// </para>
         ///  
         /// <para>
@@ -236,11 +236,11 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Each <code>appComponents</code> array item includes the following fields:
+        /// Each <c>appComponents</c> array item includes the following fields:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>name</code> 
+        ///  <c>name</c> 
         /// </para>
         ///  
         /// <para>
@@ -252,7 +252,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type</code> 
+        ///  <c>type</c> 
         /// </para>
         ///  
         /// <para>
@@ -266,7 +266,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resourceNames</code> 
+        ///  <c>resourceNames</c> 
         /// </para>
         ///  
         /// <para>
@@ -278,13 +278,13 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>additionalInfo</code> 
+        ///  <c>additionalInfo</c> 
         /// </para>
         ///  
         /// <para>
         /// Additional configuration parameters for an Resilience Hub application. If you want
-        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
-        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// to implement <c>additionalInfo</c> through the Resilience Hub console rather than
+        /// using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
         /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
@@ -294,16 +294,16 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Key: <code>"failover-regions"</code> 
+        /// Key: <c>"failover-regions"</c> 
         /// </para>
         ///  
         /// <para>
-        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// Value: <c>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</c>
         /// 
         /// </para>
         ///  </note> </li> </ul> </li> <li> 
         /// <para>
-        ///  <b> <code>excludedResources</code> </b> 
+        ///  <b> <c>excludedResources</c> </b> 
         /// </para>
         ///  
         /// <para>
@@ -319,11 +319,11 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Each <code>excludedResources</code> array item includes the following fields:
+        /// Each <c>excludedResources</c> array item includes the following fields:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i> <code>logicalResourceIds</code> </i> 
+        ///  <i> <c>logicalResourceIds</c> </i> 
         /// </para>
         ///  
         /// <para>
@@ -339,27 +339,27 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>logicalStackName</code> 
+        ///  <c>logicalStackName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resourceGroupName</code> 
+        ///  <c>resourceGroupName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>terraformSourceName</code> 
+        ///  <c>terraformSourceName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>eksSourceName</code> 
+        ///  <c>eksSourceName</c> 
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
-        /// Each <code>logicalResourceIds</code> object includes the following fields:
+        /// Each <c>logicalResourceIds</c> object includes the following fields:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>identifier</code> 
+        ///  <c>identifier</c> 
         /// </para>
         ///  
         /// <para>
@@ -371,7 +371,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logicalStackName</code> 
+        ///  <c>logicalStackName</c> 
         /// </para>
         ///  
         /// <para>
@@ -383,7 +383,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resourceGroupName</code> 
+        ///  <c>resourceGroupName</c> 
         /// </para>
         ///  
         /// <para>
@@ -395,7 +395,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>terraformSourceName</code> 
+        ///  <c>terraformSourceName</c> 
         /// </para>
         ///  
         /// <para>
@@ -407,7 +407,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>eksSourceName</code> 
+        ///  <c>eksSourceName</c> 
         /// </para>
         ///  
         /// <para>
@@ -424,7 +424,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> </ul> </li> </ul> </li> <li> 
         /// <para>
-        ///  <b> <code>version</code> </b> 
+        ///  <b> <c>version</c> </b> 
         /// </para>
         ///  
         /// <para>
@@ -432,13 +432,13 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>additionalInfo</code> 
+        ///  <c>additionalInfo</c> 
         /// </para>
         ///  
         /// <para>
         /// Additional configuration parameters for an Resilience Hub application. If you want
-        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
-        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// to implement <c>additionalInfo</c> through the Resilience Hub console rather than
+        /// using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
         /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
@@ -448,11 +448,11 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Key: <code>"failover-regions"</code> 
+        /// Key: <c>"failover-regions"</c> 
         /// </para>
         ///  
         /// <para>
-        /// Value: <code>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code>
+        /// Value: <c>"[{"region":"&lt;REGION&gt;", "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</c>
         /// 
         /// </para>
         ///  </note> </li> </ul>

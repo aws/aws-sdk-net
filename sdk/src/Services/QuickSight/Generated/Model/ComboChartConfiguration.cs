@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>ComboChartVisual</code>.
+    /// The configuration of a <c>ComboChartVisual</c>.
     /// </summary>
     public partial class ComboChartConfiguration
     {
@@ -81,15 +81,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLUSTERED</code>: For clustered bar combo charts.
+        ///  <c>CLUSTERED</c>: For clustered bar combo charts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STACKED</code>: For stacked bar combo charts.
+        ///  <c>STACKED</c>: For stacked bar combo charts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STACKED_PERCENT</code>: Do not use. If you use this value, the operation returns
+        ///  <c>STACKED_PERCENT</c>: Do not use. If you use this value, the operation returns
         /// a validation error.
         /// </para>
         ///  </li> </ul>
@@ -333,7 +333,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration of a <code>ComboChartVisual</code>.
+        /// The sort configuration of a <c>ComboChartVisual</c>.
         /// </para>
         /// </summary>
         public ComboChartSortConfiguration SortConfiguration

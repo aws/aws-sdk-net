@@ -31,8 +31,8 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Information about a resource property whose actual value differs from its expected
     /// value, as defined in the stack template and any values specified as template parameters.
-    /// These will be present only for resources whose <code>StackResourceDriftStatus</code>
-    /// is <code>MODIFIED</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+    /// These will be present only for resources whose <c>StackResourceDriftStatus</c> is
+    /// <c>MODIFIED</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
     /// Unregulated Configuration Changes to Stacks and Resources</a>.
     /// </summary>
     public partial class PropertyDifference
@@ -68,17 +68,17 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADD</code>: A value has been added to a resource property that's an array or
-        /// list data type.
+        ///  <c>ADD</c>: A value has been added to a resource property that's an array or list
+        /// data type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REMOVE</code>: The property has been removed from the current resource configuration.
+        ///  <c>REMOVE</c>: The property has been removed from the current resource configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_EQUAL</code>: The current property value differs from its expected value
-        /// (as defined in the stack template and any values specified as template parameters).
+        ///  <c>NOT_EQUAL</c>: The current property value differs from its expected value (as
+        /// defined in the stack template and any values specified as template parameters).
         /// </para>
         ///  </li> </ul>
         /// </summary>

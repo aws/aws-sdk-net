@@ -60,8 +60,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates that there are additional dedicated IP addresses to list. To
-        /// view additional addresses, issue another request to <code>GetDedicatedIps</code>,
-        /// passing this token in the <code>NextToken</code> parameter.
+        /// view additional addresses, issue another request to <c>GetDedicatedIps</c>, passing
+        /// this token in the <c>NextToken</c> parameter.
         /// </para>
         /// </summary>
         public string NextToken

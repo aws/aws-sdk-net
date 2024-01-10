@@ -63,8 +63,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property DeviceId. 
         /// <para>
-        /// The mobile device for which you create the override. <code>DeviceId</code> is case
-        /// insensitive.
+        /// The mobile device for which you create the override. <c>DeviceId</c> is case insensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -83,7 +82,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Effect. 
         /// <para>
-        /// The effect of the override, <code>ALLOW</code> or <code>DENY</code>.
+        /// The effect of the override, <c>ALLOW</c> or <c>DENY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,16 +125,16 @@ namespace Amazon.WorkMail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// User ID: <code>12345678-1234-1234-1234-123456789012</code> or <code>S-1-1-12-1234567890-123456789-123456789-1234</code>
+        /// User ID: <c>12345678-1234-1234-1234-123456789012</c> or <c>S-1-1-12-1234567890-123456789-123456789-1234</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Email address: <code>user@domain.tld</code> 
+        /// Email address: <c>user@domain.tld</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// User name: <code>user</code> 
+        /// User name: <c>user</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

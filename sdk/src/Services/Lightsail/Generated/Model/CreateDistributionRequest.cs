@@ -63,7 +63,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetDistributionBundles</code> action to get a list of distribution bundle
+        /// Use the <c>GetDistributionBundles</c> action to get a list of distribution bundle
         /// IDs that you can specify.
         /// </para>
         /// </summary>
@@ -161,12 +161,12 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
-        /// for IPv4 and IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
+        /// IPv6.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>dualstack</code>.
+        /// The default value is <c>dualstack</c>.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -212,7 +212,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
         /// </summary>
         public List<Tag> Tags

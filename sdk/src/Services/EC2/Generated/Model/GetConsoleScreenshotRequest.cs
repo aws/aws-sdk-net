@@ -64,8 +64,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property WakeUp. 
         /// <para>
-        /// When set to <code>true</code>, acts as keystroke input and wakes up an instance that's
-        /// in standby or "sleep" mode.
+        /// When set to <c>true</c>, acts as keystroke input and wakes up an instance that's in
+        /// standby or "sleep" mode.
         /// </para>
         /// </summary>
         public bool WakeUp

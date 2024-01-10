@@ -121,8 +121,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// To be able to associate tags with a rule, you must have the <code>cloudwatch:TagResource</code>
-        /// permission in addition to the <code>cloudwatch:PutInsightRule</code> permission.
+        /// To be able to associate tags with a rule, you must have the <c>cloudwatch:TagResource</c>
+        /// permission in addition to the <c>cloudwatch:PutInsightRule</c> permission.
         /// </para>
         ///  
         /// <para>

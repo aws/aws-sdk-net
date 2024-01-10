@@ -46,8 +46,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property AcmCertificateArn. 
         /// <para>
         /// The ARN of the ACM certificate. Used if the certificate is stored in ACM. If you provide
-        /// an ACM certificate ARN, you must also provide <code>MinimumCertificateVersion</code>
-        /// and <code>SslSupportMethod</code>.
+        /// an ACM certificate ARN, you must also provide <c>MinimumCertificateVersion</c> and
+        /// <c>SslSupportMethod</c>.
         /// </para>
         /// </summary>
         public string AcmCertificateArn
@@ -83,8 +83,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CertificateSource. 
         /// <para>
-        /// The source of the certificate identified by <code>Certificate</code>. Note that in
-        /// CloudFront, this attribute is deprecated.
+        /// The source of the certificate identified by <c>Certificate</c>. Note that in CloudFront,
+        /// this attribute is deprecated.
         /// </para>
         /// </summary>
         public string CertificateSource
@@ -102,8 +102,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CloudFrontDefaultCertificate. 
         /// <para>
-        /// Whether the distribution uses the CloudFront domain name. If set to <code>false</code>,
-        /// then you provide either <code>AcmCertificateArn</code> or <code>IamCertificateId</code>.
+        /// Whether the distribution uses the CloudFront domain name. If set to <c>false</c>,
+        /// then you provide either <c>AcmCertificateArn</c> or <c>IamCertificateId</c>.
         /// </para>
         /// </summary>
         public bool CloudFrontDefaultCertificate
@@ -122,8 +122,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property IamCertificateId. 
         /// <para>
         /// The identifier of the IAM certificate. Used if the certificate is stored in IAM. If
-        /// you provide <code>IamCertificateId</code>, then you also must provide <code>MinimumProtocolVersion</code>
-        /// and <code>SslSupportMethod</code>.
+        /// you provide <c>IamCertificateId</c>, then you also must provide <c>MinimumProtocolVersion</c>
+        /// and <c>SslSupportMethod</c>.
         /// </para>
         /// </summary>
         public string IamCertificateId
@@ -141,9 +141,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MinimumProtocolVersion. 
         /// <para>
-        /// The security policy that CloudFront uses for HTTPS connections with viewers. If <code>SslSupportMethod</code>
-        /// is <code>sni-only</code>, then <code>MinimumProtocolVersion</code> must be <code>TLSv1</code>
-        /// or higher.
+        /// The security policy that CloudFront uses for HTTPS connections with viewers. If <c>SslSupportMethod</c>
+        /// is <c>sni-only</c>, then <c>MinimumProtocolVersion</c> must be <c>TLSv1</c> or higher.
         /// </para>
         /// </summary>
         public string MinimumProtocolVersion

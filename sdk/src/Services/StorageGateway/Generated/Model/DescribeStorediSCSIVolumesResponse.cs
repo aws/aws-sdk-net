@@ -43,79 +43,78 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ChapEnabled</code>: Indicates whether mutual CHAP is enabled for the iSCSI
-        /// target.
+        ///  <c>ChapEnabled</c>: Indicates whether mutual CHAP is enabled for the iSCSI target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LunNumber</code>: The logical disk number.
+        ///  <c>LunNumber</c>: The logical disk number.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetworkInterfaceId</code>: The network interface ID of the stored volume that
-        /// initiator use to map the stored volume as an iSCSI target.
+        ///  <c>NetworkInterfaceId</c>: The network interface ID of the stored volume that initiator
+        /// use to map the stored volume as an iSCSI target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetworkInterfacePort</code>: The port used to communicate with iSCSI targets.
+        ///  <c>NetworkInterfacePort</c>: The port used to communicate with iSCSI targets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PreservedExistingData</code>: Indicates when the stored volume was created,
-        /// existing data on the underlying local disk was preserved.
+        ///  <c>PreservedExistingData</c>: Indicates when the stored volume was created, existing
+        /// data on the underlying local disk was preserved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SourceSnapshotId</code>: If the stored volume was created from a snapshot,
-        /// this field contains the snapshot ID used, e.g. <code>snap-1122aabb</code>. Otherwise,
-        /// this field is not included.
+        ///  <c>SourceSnapshotId</c>: If the stored volume was created from a snapshot, this field
+        /// contains the snapshot ID used, e.g. <c>snap-1122aabb</c>. Otherwise, this field is
+        /// not included.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StorediSCSIVolumes</code>: An array of StorediSCSIVolume objects where each
-        /// object contains metadata about one stored volume.
+        ///  <c>StorediSCSIVolumes</c>: An array of StorediSCSIVolume objects where each object
+        /// contains metadata about one stored volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TargetARN</code>: The Amazon Resource Name (ARN) of the volume target.
+        ///  <c>TargetARN</c>: The Amazon Resource Name (ARN) of the volume target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeARN</code>: The Amazon Resource Name (ARN) of the stored volume.
+        ///  <c>VolumeARN</c>: The Amazon Resource Name (ARN) of the stored volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeDiskId</code>: The disk ID of the local disk that was specified in the
-        /// <a>CreateStorediSCSIVolume</a> operation.
+        ///  <c>VolumeDiskId</c>: The disk ID of the local disk that was specified in the <a>CreateStorediSCSIVolume</a>
+        /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeId</code>: The unique identifier of the storage volume, e.g. <code>vol-1122AABB</code>.
+        ///  <c>VolumeId</c>: The unique identifier of the storage volume, e.g. <c>vol-1122AABB</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeiSCSIAttributes</code>: An <a>VolumeiSCSIAttributes</a> object that represents
+        ///  <c>VolumeiSCSIAttributes</c>: An <a>VolumeiSCSIAttributes</a> object that represents
         /// a collection of iSCSI attributes for one stored volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeProgress</code>: Represents the percentage complete if the volume is
-        /// restoring or bootstrapping that represents the percent of data transferred. This field
-        /// does not appear in the response if the stored volume is not restoring or bootstrapping.
+        ///  <c>VolumeProgress</c>: Represents the percentage complete if the volume is restoring
+        /// or bootstrapping that represents the percent of data transferred. This field does
+        /// not appear in the response if the stored volume is not restoring or bootstrapping.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeSizeInBytes</code>: The size of the volume in bytes.
+        ///  <c>VolumeSizeInBytes</c>: The size of the volume in bytes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeStatus</code>: One of the <code>VolumeStatus</code> values that indicates
-        /// the state of the volume.
+        ///  <c>VolumeStatus</c>: One of the <c>VolumeStatus</c> values that indicates the state
+        /// of the volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VolumeType</code>: One of the enumeration values describing the type of the
-        /// volume. Currently, only <code>STORED</code> volumes are supported.
+        ///  <c>VolumeType</c>: One of the enumeration values describing the type of the volume.
+        /// Currently, only <c>STORED</c> volumes are supported.
         /// </para>
         ///  </li> </ul>
         /// </summary>

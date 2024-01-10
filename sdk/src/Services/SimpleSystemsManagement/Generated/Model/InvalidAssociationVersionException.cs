@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The version you specified isn't valid. Use ListAssociationVersions to view all versions
-    /// of an association according to the association ID. Or, use the <code>$LATEST</code>
-    /// parameter to view the latest version of the association.
+    /// of an association according to the association ID. Or, use the <c>$LATEST</c> parameter
+    /// to view the latest version of the association.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

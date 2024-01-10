@@ -38,8 +38,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Metadata is currently only available for some <code>ERC-20</code> contracts. Metadata
-    /// will be available for additional contracts in the future.
+    /// Metadata is currently only available for some <c>ERC-20</c> contracts. Metadata will
+    /// be available for additional contracts in the future.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>

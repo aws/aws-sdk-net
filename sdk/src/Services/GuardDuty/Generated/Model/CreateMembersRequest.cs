@@ -36,8 +36,8 @@ namespace Amazon.GuardDuty.Model
     /// 
     ///  
     /// <para>
-    /// As a delegated administrator, using <code>CreateMembers</code> will enable GuardDuty
-    /// in the added member accounts, with the exception of the organization delegated administrator
+    /// As a delegated administrator, using <c>CreateMembers</c> will enable GuardDuty in
+    /// the added member accounts, with the exception of the organization delegated administrator
     /// account. A delegated administrator must enable GuardDuty prior to being added as a
     /// member.
     /// </para>
@@ -51,8 +51,7 @@ namespace Amazon.GuardDuty.Model
     ///  
     /// <para>
     /// If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
-    /// use <code>CreateMembers</code> after GuardDuty has been enabled in potential member
-    /// accounts.
+    /// use <c>CreateMembers</c> after GuardDuty has been enabled in potential member accounts.
     /// </para>
     ///  
     /// <para>

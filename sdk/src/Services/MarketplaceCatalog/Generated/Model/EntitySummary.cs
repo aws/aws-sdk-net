@@ -254,10 +254,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The visibility status of the entity to buyers. This value can be <code>Public</code>
-        /// (everyone can view the entity), <code>Limited</code> (the entity is visible to limited
-        /// accounts only), or <code>Restricted</code> (the entity was published and then unpublished
-        /// and only existing buyers can view it). 
+        /// The visibility status of the entity to buyers. This value can be <c>Public</c> (everyone
+        /// can view the entity), <c>Limited</c> (the entity is visible to limited accounts only),
+        /// or <c>Restricted</c> (the entity was published and then unpublished and only existing
+        /// buyers can view it). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

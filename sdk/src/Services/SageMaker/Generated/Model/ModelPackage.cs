@@ -294,15 +294,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>APPROVED</code> - The model is approved
+        ///  <c>APPROVED</c> - The model is approved
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECTED</code> - The model is rejected.
+        ///  <c>REJECTED</c> - The model is rejected.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_MANUAL_APPROVAL</code> - The model is waiting for manual approval.
+        ///  <c>PENDING_MANUAL_APPROVAL</c> - The model is waiting for manual approval.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -419,23 +419,23 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The model package is pending being created.
+        ///  <c>PENDING</c> - The model package is pending being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - The model package is in the process of being created.
+        ///  <c>IN_PROGRESS</c> - The model package is in the process of being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The model package was successfully created.
+        ///  <c>COMPLETED</c> - The model package was successfully created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The model package failed.
+        ///  <c>FAILED</c> - The model package failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The model package is in the process of being deleted.
+        ///  <c>DELETING</c> - The model package is in the process of being deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

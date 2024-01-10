@@ -496,9 +496,9 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code>
-        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code>
-        /// call and the associated <code>Job</code> will fail.
+        /// The maximum duration between the <c>CreateDeployment</c> call and the <c>StartDeployment</c>
+        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <c>StartDeployment</c>
+        /// call and the associated <c>Job</c> will fail.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
@@ -533,9 +533,9 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code>
-        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code>
-        /// call and the associated <code>Job</code> will fail.
+        /// The maximum duration between the <c>CreateDeployment</c> call and the <c>StartDeployment</c>
+        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <c>StartDeployment</c>
+        /// call and the associated <c>Job</c> will fail.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeployment service method.</param>
@@ -2187,9 +2187,9 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code>
-        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code>
-        /// call and the associated <code>Job</code> will fail.
+        /// The maximum duration between the <c>CreateDeployment</c> call and the <c>StartDeployment</c>
+        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <c>StartDeployment</c>
+        /// call and the associated <c>Job</c> will fail.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>
@@ -2227,9 +2227,9 @@ namespace Amazon.Amplify
         /// 
         ///  
         /// <para>
-        /// The maximum duration between the <code>CreateDeployment</code> call and the <code>StartDeployment</code>
-        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <code>StartDeployment</code>
-        /// call and the associated <code>Job</code> will fail.
+        /// The maximum duration between the <c>CreateDeployment</c> call and the <c>StartDeployment</c>
+        /// call cannot exceed 8 hours. If the duration exceeds 8 hours, the <c>StartDeployment</c>
+        /// call and the associated <c>Job</c> will fail.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDeployment service method.</param>

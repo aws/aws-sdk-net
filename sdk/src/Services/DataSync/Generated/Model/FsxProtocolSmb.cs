@@ -122,16 +122,16 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SE_TCB_NAME</code>: Required to set object ownership and file metadata. With
-        /// this privilege, you also can copy NTFS discretionary access lists (DACLs).
+        ///  <c>SE_TCB_NAME</c>: Required to set object ownership and file metadata. With this
+        /// privilege, you also can copy NTFS discretionary access lists (DACLs).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SE_SECURITY_NAME</code>: May be needed to copy NTFS system access control lists
-        /// (SACLs). This operation specifically requires the Windows privilege, which is granted
-        /// to members of the Domain Admins group. If you configure your task to copy SACLs, make
-        /// sure that the user has the required privileges. For information about copying SACLs,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership
+        ///  <c>SE_SECURITY_NAME</c>: May be needed to copy NTFS system access control lists (SACLs).
+        /// This operation specifically requires the Windows privilege, which is granted to members
+        /// of the Domain Admins group. If you configure your task to copy SACLs, make sure that
+        /// the user has the required privileges. For information about copying SACLs, see <a
+        /// href="https://docs.aws.amazon.com/datasync/latest/userguide/create-task.html#configure-ownership-and-permissions">Ownership
         /// and permissions-related options</a>.
         /// </para>
         ///  </li> </ul>

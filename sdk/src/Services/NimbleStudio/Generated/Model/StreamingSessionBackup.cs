@@ -138,7 +138,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The streaming session ID for the <code>StreamingSessionBackup</code>.
+        /// The streaming session ID for the <c>StreamingSessionBackup</c>.
         /// </para>
         /// </summary>
         public string SessionId

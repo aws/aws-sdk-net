@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Status information returned by the <code>DeleteInventory</code> operation.
+    /// Status information returned by the <c>DeleteInventory</c> operation.
     /// </summary>
     public partial class InventoryDeletionStatusItem
     {
@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DeletionId. 
         /// <para>
-        /// The deletion ID returned by the <code>DeleteInventory</code> operation.
+        /// The deletion ID returned by the <c>DeleteInventory</c> operation.
         /// </para>
         /// </summary>
         public string DeletionId

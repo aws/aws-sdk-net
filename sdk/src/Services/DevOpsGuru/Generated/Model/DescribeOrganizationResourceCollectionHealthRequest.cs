@@ -31,8 +31,7 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Container for the parameters to the DescribeOrganizationResourceCollectionHealth operation.
     /// Provides an overview of your system's health. If additional member accounts are part
-    /// of your organization, you can filter those accounts using the <code>AccountIds</code>
-    /// field.
+    /// of your organization, you can filter those accounts using the <c>AccountIds</c> field.
     /// </summary>
     public partial class DescribeOrganizationResourceCollectionHealthRequest : AmazonDevOpsGuruRequest
     {
@@ -65,7 +64,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

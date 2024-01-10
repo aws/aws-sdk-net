@@ -49,7 +49,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:Tag</code> 
+    ///  <c>resource-groups:Tag</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

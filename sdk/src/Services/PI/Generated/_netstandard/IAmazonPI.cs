@@ -140,7 +140,7 @@ namespace Amazon.PI
 
 
         /// <summary>
-        /// For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
+        /// For a specific time period, retrieve the top <c>N</c> dimension keys for a metric.
         /// 
         /// 
         ///  <note> 
@@ -176,10 +176,10 @@ namespace Amazon.PI
 
         /// <summary>
         /// Get the attributes of the specified dimension group for a DB instance or data source.
-        /// For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves
-        /// the full text of the dimension <code>db.sql.statement</code> associated with this
-        /// ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code>
-        /// don't support retrieval of large SQL statement text.
+        /// For example, if you specify a SQL ID, <c>GetDimensionKeyDetails</c> retrieves the
+        /// full text of the dimension <c>db.sql.statement</c> associated with this ID. This operation
+        /// is useful because <c>GetResourceMetrics</c> and <c>DescribeDimensionKeys</c> don't
+        /// support retrieval of large SQL statement text.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDimensionKeyDetails service method.</param>
         /// <param name="cancellationToken">
@@ -207,8 +207,8 @@ namespace Amazon.PI
 
         /// <summary>
         /// Retrieves the report including the report ID, status, time details, and the insights
-        /// with recommendations. The report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>,
-        /// or <code>FAILED</code>. The insights include the <code>description</code> and <code>recommendation</code>
+        /// with recommendations. The report status can be <c>RUNNING</c>, <c>SUCCEEDED</c>, or
+        /// <c>FAILED</c>. The insights include the <c>description</c> and <c>recommendation</c>
         /// fields.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPerformanceAnalysisReport service method.</param>

@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
-    /// Creates a <code>Domain</code>. A domain consists of an associated Amazon Elastic File
-    /// System (EFS) volume, a list of authorized users, and a variety of security, application,
+    /// Creates a <c>Domain</c>. A domain consists of an associated Amazon Elastic File System
+    /// (EFS) volume, a list of authorized users, and a variety of security, application,
     /// policy, and Amazon Virtual Private Cloud (VPC) configurations. Users within a domain
     /// can share notebook files and other artifacts with each other.
     /// 
@@ -60,19 +60,19 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// All traffic between the domain and the EFS volume is through the specified VPC and
-    /// subnets. For other traffic, you can specify the <code>AppNetworkAccessType</code>
-    /// parameter. <code>AppNetworkAccessType</code> corresponds to the network access type
-    /// that you choose when you onboard to the domain. The following options are available:
+    /// subnets. For other traffic, you can specify the <c>AppNetworkAccessType</c> parameter.
+    /// <c>AppNetworkAccessType</c> corresponds to the network access type that you choose
+    /// when you onboard to the domain. The following options are available:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PublicInternetOnly</code> - Non-EFS traffic goes through a VPC managed by Amazon
+    ///  <c>PublicInternetOnly</c> - Non-EFS traffic goes through a VPC managed by Amazon
     /// SageMaker, which allows internet access. This is the default value.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets. Internet
-    /// access is disabled by default. To allow internet access, you must specify a NAT gateway.
+    ///  <c>VpcOnly</c> - All traffic is through the specified VPC and subnets. Internet access
+    /// is disabled by default. To allow internet access, you must specify a NAT gateway.
     /// </para>
     ///  
     /// <para>
@@ -110,16 +110,16 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AppNetworkAccessType. 
         /// <para>
-        /// Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+        /// Specifies the VPC used for non-EFS traffic. The default value is <c>PublicInternetOnly</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon
-        /// SageMaker, which allows direct internet access
+        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker,
+        /// which allows direct internet access
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
+        ///  <c>VpcOnly</c> - All traffic is through the specified VPC and subnets
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -139,10 +139,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AppSecurityGroupManagement. 
         /// <para>
         /// The entity that creates and manages the required security groups for inter-app communication
-        /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
-        /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// in <c>VPCOnly</c> mode. Required when <c>CreateDomain.AppNetworkAccessType</c> is
+        /// <c>VPCOnly</c> and <c>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</c>
         /// is provided. If setting up the domain for use with RStudio, this value must be set
-        /// to <code>Service</code>.
+        /// to <c>Service</c>.
         /// </para>
         /// </summary>
         public AppSecurityGroupManagement AppSecurityGroupManagement
@@ -197,14 +197,14 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultUserSettings. 
         /// <para>
-        /// The default settings to use to create a user profile when <code>UserSettings</code>
-        /// isn't specified in the call to the <code>CreateUserProfile</code> API.
+        /// The default settings to use to create a user profile when <c>UserSettings</c> isn't
+        /// specified in the call to the <c>CreateUserProfile</c> API.
         /// </para>
         ///  
         /// <para>
-        ///  <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
-        /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
-        /// take precedence over those specified in <code>CreateDomain</code>.
+        ///  <c>SecurityGroups</c> is aggregated when specified in both calls. For all other settings
+        /// in <c>UserSettings</c>, the values specified in <c>CreateUserProfile</c> take precedence
+        /// over those specified in <c>CreateDomain</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -242,7 +242,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainSettings. 
         /// <para>
-        /// A collection of <code>Domain</code> settings.
+        /// A collection of <c>Domain</c> settings.
         /// </para>
         /// </summary>
         public DomainSettings DomainSettings
@@ -260,7 +260,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// Use <code>KmsKeyId</code>.
+        /// Use <c>KmsKeyId</c>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use KmsKeyId instead.")]
@@ -321,7 +321,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to associated with the Domain. Each tag consists of a key and an optional value.
-        /// Tag keys must be unique per resource. Tags are searchable using the <code>Search</code>
+        /// Tag keys must be unique per resource. Tags are searchable using the <c>Search</c>
         /// API.
         /// </para>
         ///  

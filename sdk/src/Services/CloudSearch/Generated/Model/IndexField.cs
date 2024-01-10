@@ -30,7 +30,7 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Configuration information for a field in the index, including its name, type, and
-    /// options. The supported options depend on the <code><a>IndexFieldType</a></code>.
+    /// options. The supported options depend on the <c><a>IndexFieldType</a></c>.
     /// </summary>
     public partial class IndexField
     {
@@ -126,8 +126,8 @@ namespace Amazon.CloudSearch.Model
         /// </para>
         ///  
         /// <para>
-        /// The name <code>score</code> is reserved and cannot be used as a field name. To reference
-        /// a document's ID, you can use the name <code>_id</code>. 
+        /// The name <c>score</c> is reserved and cannot be used as a field name. To reference
+        /// a document's ID, you can use the name <c>_id</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -112,7 +112,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ClassicLinkVpcSecurityGroups. 
         /// <para>
-        /// The identifiers of one or more security groups for the VPC that is specified in <code>ClassicLinkVPCId</code>.
+        /// The identifiers of one or more security groups for the VPC that is specified in <c>ClassicLinkVPCId</c>.
         /// </para>
         /// </summary>
         public List<string> ClassicLinkVpcSecurityGroups
@@ -134,9 +134,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string CreatedTime
@@ -317,8 +317,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PlacementTenancy. 
         /// <para>
-        /// The tenancy of the instance. An instance with <code>dedicated</code> tenancy runs
-        /// on isolated, single-tenant hardware and can only be launched into a VPC.
+        /// The tenancy of the instance. An instance with <c>dedicated</c> tenancy runs on isolated,
+        /// single-tenant hardware and can only be launched into a VPC.
         /// </para>
         /// </summary>
         public string PlacementTenancy

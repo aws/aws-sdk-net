@@ -43,7 +43,7 @@ namespace Amazon.MWAA
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>api.airflow.{region}.amazonaws.com</code> - This endpoint is used for environment
+    ///  <c>api.airflow.{region}.amazonaws.com</c> - This endpoint is used for environment
     /// management.
     /// </para>
     ///  <ul> <li> 
@@ -88,8 +88,8 @@ namespace Amazon.MWAA
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
-    ///  <code>env.airflow.{region}.amazonaws.com</code> - This endpoint is used to operate
-    /// the Airflow environment.
+    ///  <c>env.airflow.{region}.amazonaws.com</c> - This endpoint is used to operate the
+    /// Airflow environment.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -285,7 +285,7 @@ namespace Amazon.MWAA
 
         /// <summary>
         /// Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache
-        /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
+        /// Airflow (MWAA) environment. For example, <c>"Environment": "Staging"</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -366,7 +366,7 @@ namespace Amazon.MWAA
 
         /// <summary>
         /// Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache
-        /// Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
+        /// Airflow (MWAA) environment. For example, <c>"Environment": "Staging"</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

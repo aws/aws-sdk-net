@@ -30,16 +30,15 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Contains fields describing a condition by which to filter the paths. The expression
-    /// may be understood as <code>name</code> <code>operator</code> <code>values</code>.
-    /// For example:
+    /// may be understood as <c>name</c> <c>operator</c> <c>values</c>. For example:
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>LocaleId EQ en</code> – The locale is "en".
+    ///  <c>LocaleId EQ en</c> – The locale is "en".
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>BotVersion EQ 2</code> – The bot version is equal to two.
+    ///  <c>BotVersion EQ 2</c> – The bot version is equal to two.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -47,23 +46,23 @@ namespace Amazon.LexModelsV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>BotAlias</code> – <code>EQ</code>.
+    ///  <c>BotAlias</c> – <c>EQ</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>BotVersion</code> – <code>EQ</code>.
+    ///  <c>BotVersion</c> – <c>EQ</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LocaleId</code> – <code>EQ</code>.
+    ///  <c>LocaleId</c> – <c>EQ</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Modality</code> – <code>EQ</code>.
+    ///  <c>Modality</c> – <c>EQ</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Channel</code> – <code>EQ</code>.
+    ///  <c>Channel</c> – <c>EQ</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -81,24 +80,23 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BotAlias</code> – The name of the bot alias.
+        ///  <c>BotAlias</c> – The name of the bot alias.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BotVersion</code> – The version of the bot.
+        ///  <c>BotVersion</c> – The version of the bot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LocaleId</code> – The locale of the bot.
+        ///  <c>LocaleId</c> – The locale of the bot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Modality</code> – The modality of the session with the bot (audio, DTMF, or
-        /// text).
+        ///  <c>Modality</c> – The modality of the session with the bot (audio, DTMF, or text).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Channel</code> – The channel that the bot is integrated with.
+        ///  <c>Channel</c> – The channel that the bot is integrated with.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -122,19 +120,19 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CO</code> – Contains
+        ///  <c>CO</c> – Contains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EQ</code> – Equals
+        ///  <c>EQ</c> – Equals
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GT</code> – Greater than
+        ///  <c>GT</c> – Greater than
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LT</code> – Less than
+        ///  <c>LT</c> – Less than
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -142,23 +140,23 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BotAlias</code> – <code>EQ</code>.
+        ///  <c>BotAlias</c> – <c>EQ</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BotVersion</code> – <code>EQ</code>.
+        ///  <c>BotVersion</c> – <c>EQ</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LocaleId</code> – <code>EQ</code>.
+        ///  <c>LocaleId</c> – <c>EQ</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Modality</code> – <code>EQ</code>.
+        ///  <c>Modality</c> – <c>EQ</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Channel</code> – <code>EQ</code>.
+        ///  <c>Channel</c> – <c>EQ</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -179,12 +177,11 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// An array containing the values of the category by which to apply the operator to filter
-        /// the results. You can provide multiple values if the operator is <code>EQ</code> or
-        /// <code>CO</code>. If you provide multiple values, you filter for results that equal/contain
-        /// any of the values. For example, if the <code>name</code>, <code>operator</code>, and
-        /// <code>values</code> fields are <code>Modality</code>, <code>EQ</code>, and <code>[Speech,
-        /// Text]</code>, the operation filters for results where the modality was either <code>Speech</code>
-        /// or <code>Text</code>.
+        /// the results. You can provide multiple values if the operator is <c>EQ</c> or <c>CO</c>.
+        /// If you provide multiple values, you filter for results that equal/contain any of the
+        /// values. For example, if the <c>name</c>, <c>operator</c>, and <c>values</c> fields
+        /// are <c>Modality</c>, <c>EQ</c>, and <c>[Speech, Text]</c>, the operation filters for
+        /// results where the modality was either <c>Speech</c> or <c>Text</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

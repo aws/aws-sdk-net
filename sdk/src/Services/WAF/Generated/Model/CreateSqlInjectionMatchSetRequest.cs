@@ -49,21 +49,20 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  
     /// <para>
-    /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
-    /// steps:
+    /// To create and configure a <c>SqlInjectionMatchSet</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of a <code>CreateSqlInjectionMatchSet</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of a <c>CreateSqlInjectionMatchSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit a <code>CreateSqlInjectionMatchSet</code> request.
+    /// Submit a <c>CreateSqlInjectionMatchSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+    /// Use <c>GetChangeToken</c> to get the change token that you provide in the <c>ChangeToken</c>
     /// parameter of an <a>UpdateSqlInjectionMatchSet</a> request.
     /// </para>
     ///  </li> <li> 
@@ -106,7 +105,7 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A friendly name or description for the <a>SqlInjectionMatchSet</a> that you're creating.
-        /// You can't change <code>Name</code> after you create the <code>SqlInjectionMatchSet</code>.
+        /// You can't change <c>Name</c> after you create the <c>SqlInjectionMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

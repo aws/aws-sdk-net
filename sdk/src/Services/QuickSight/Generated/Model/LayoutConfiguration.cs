@@ -68,7 +68,7 @@ namespace Amazon.QuickSight.Model
         /// A type of layout that can be used on a sheet. In a grid layout, visuals snap to a
         /// grid with standard spacing and alignment. Dashboards are displayed as designed, with
         /// options to fit to screen or view at actual size. A grid layout can be configured to
-        /// behave in one of two ways when the viewport is resized: <code>FIXED</code> or <code>RESPONSIVE</code>.
+        /// behave in one of two ways when the viewport is resized: <c>FIXED</c> or <c>RESPONSIVE</c>.
         /// </para>
         /// </summary>
         public GridLayoutConfiguration GridLayout

@@ -36,7 +36,7 @@ namespace Amazon.Route53Domains.Model
     /// 
     ///  
     /// <para>
-    /// If you want us to resend the email, use the <code>ResendContactReachabilityEmail</code>
+    /// If you want us to resend the email, use the <c>ResendContactReachabilityEmail</c>
     /// operation.
     /// </para>
     /// </summary>

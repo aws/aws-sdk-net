@@ -56,9 +56,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property AgentConnected. 
         /// <para>
-        /// This parameter returns <code>true</code> if the agent is connected to Amazon ECS.
-        /// An instance with an agent that may be unhealthy or stopped return <code>false</code>.
-        /// Only instances connected to an agent can accept task placement requests.
+        /// This parameter returns <c>true</c> if the agent is connected to Amazon ECS. An instance
+        /// with an agent that may be unhealthy or stopped return <c>false</c>. Only instances
+        /// connected to an agent can accept task placement requests.
         /// </para>
         /// </summary>
         public bool AgentConnected
@@ -77,7 +77,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property AgentUpdateStatus. 
         /// <para>
         /// The status of the most recent agent update. If an update wasn't ever requested, this
-        /// value is <code>NULL</code>.
+        /// value is <c>NULL</c>.
         /// </para>
         /// </summary>
         public AgentUpdateStatus AgentUpdateStatus
@@ -208,8 +208,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PendingTasksCount. 
         /// <para>
-        /// The number of tasks on the container instance that are in the <code>PENDING</code>
-        /// status.
+        /// The number of tasks on the container instance that are in the <c>PENDING</c> status.
         /// </para>
         /// </summary>
         public int PendingTasksCount
@@ -272,7 +271,7 @@ namespace Amazon.ECS.Model
         /// memory that wasn't already allocated to tasks and is therefore available for new tasks.
         /// For port resource types, this parameter describes the ports that were reserved by
         /// the Amazon ECS container agent (at instance registration time) and any task containers
-        /// that have reserved port mappings on the host (with the <code>host</code> or <code>bridge</code>
+        /// that have reserved port mappings on the host (with the <c>host</c> or <c>bridge</c>
         /// network mode). Any port that's not specified here is available for new tasks.
         /// </para>
         /// </summary>
@@ -291,8 +290,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RunningTasksCount. 
         /// <para>
-        /// The number of tasks on the container instance that have a desired status (<code>desiredStatus</code>)
-        /// of <code>RUNNING</code>.
+        /// The number of tasks on the container instance that have a desired status (<c>desiredStatus</c>)
+        /// of <c>RUNNING</c>.
         /// </para>
         /// </summary>
         public int RunningTasksCount
@@ -310,28 +309,26 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the container instance. The valid values are <code>REGISTERING</code>,
-        /// <code>REGISTRATION_FAILED</code>, <code>ACTIVE</code>, <code>INACTIVE</code>, <code>DEREGISTERING</code>,
-        /// or <code>DRAINING</code>.
+        /// The status of the container instance. The valid values are <c>REGISTERING</c>, <c>REGISTRATION_FAILED</c>,
+        /// <c>ACTIVE</c>, <c>INACTIVE</c>, <c>DEREGISTERING</c>, or <c>DRAINING</c>.
         /// </para>
         ///  
         /// <para>
-        /// If your account has opted in to the <code>awsvpcTrunking</code> account setting, then
-        /// any newly registered container instance will transition to a <code>REGISTERING</code>
-        /// status while the trunk elastic network interface is provisioned for the instance.
-        /// If the registration fails, the instance will transition to a <code>REGISTRATION_FAILED</code>
-        /// status. You can describe the container instance and see the reason for failure in
-        /// the <code>statusReason</code> parameter. Once the container instance is terminated,
-        /// the instance transitions to a <code>DEREGISTERING</code> status while the trunk elastic
-        /// network interface is deprovisioned. The instance then transitions to an <code>INACTIVE</code>
-        /// status.
+        /// If your account has opted in to the <c>awsvpcTrunking</c> account setting, then any
+        /// newly registered container instance will transition to a <c>REGISTERING</c> status
+        /// while the trunk elastic network interface is provisioned for the instance. If the
+        /// registration fails, the instance will transition to a <c>REGISTRATION_FAILED</c> status.
+        /// You can describe the container instance and see the reason for failure in the <c>statusReason</c>
+        /// parameter. Once the container instance is terminated, the instance transitions to
+        /// a <c>DEREGISTERING</c> status while the trunk elastic network interface is deprovisioned.
+        /// The instance then transitions to an <c>INACTIVE</c> status.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ACTIVE</code> status indicates that the container instance can accept tasks.
-        /// The <code>DRAINING</code> indicates that new tasks aren't placed on the container
-        /// instance and any service tasks running on the container instance are removed if possible.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
+        /// The <c>ACTIVE</c> status indicates that the container instance can accept tasks. The
+        /// <c>DRAINING</c> indicates that new tasks aren't placed on the container instance and
+        /// any service tasks running on the container instance are removed if possible. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-draining.html">Container
         /// instance draining</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -405,10 +402,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -433,8 +430,7 @@ namespace Amazon.ECS.Model
         /// you're replicating your Amazon ECS container instance state with CloudWatch Events,
         /// you can compare the version of a container instance reported by the Amazon ECS APIs
         /// with the version reported in CloudWatch Events for the container instance (inside
-        /// the <code>detail</code> object) to verify that the version in your event stream is
-        /// current.
+        /// the <c>detail</c> object) to verify that the version in your event stream is current.
         /// </para>
         /// </summary>
         public long Version

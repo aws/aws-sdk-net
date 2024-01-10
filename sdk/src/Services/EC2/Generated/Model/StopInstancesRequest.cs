@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Force
@@ -135,7 +135,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  Default: <code>false</code> 
+        ///  Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Hibernate

@@ -48,7 +48,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Architecture. 
         /// <para>
-        /// The CPU architecture, for example <code>X86_64</code> or <code>AARCH64</code>.
+        /// The CPU architecture, for example <c>X86_64</c> or <c>AARCH64</c>.
         /// </para>
         /// </summary>
         public string Architecture
@@ -66,7 +66,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsOptimizedAvailable. 
         /// <para>
-        /// Indicates whether the <code>SupportedInstanceType</code> supports Amazon EBS optimization.
+        /// Indicates whether the <c>SupportedInstanceType</c> supports Amazon EBS optimization.
         /// </para>
         /// </summary>
         public bool EbsOptimizedAvailable
@@ -84,8 +84,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsOptimizedByDefault. 
         /// <para>
-        /// Indicates whether the <code>SupportedInstanceType</code> uses Amazon EBS optimization
-        /// by default.
+        /// Indicates whether the <c>SupportedInstanceType</c> uses Amazon EBS optimization by
+        /// default.
         /// </para>
         /// </summary>
         public bool EbsOptimizedByDefault
@@ -103,7 +103,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsStorageOnly. 
         /// <para>
-        /// Indicates whether the <code>SupportedInstanceType</code> only supports Amazon EBS.
+        /// Indicates whether the <c>SupportedInstanceType</c> only supports Amazon EBS.
         /// </para>
         /// </summary>
         public bool EbsStorageOnly
@@ -121,7 +121,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceFamilyId. 
         /// <para>
-        /// The Amazon EC2 family and generation for the <code>SupportedInstanceType</code>.
+        /// The Amazon EC2 family and generation for the <c>SupportedInstanceType</c>.
         /// </para>
         /// </summary>
         public string InstanceFamilyId
@@ -139,7 +139,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Is64BitsOnly. 
         /// <para>
-        /// Indicates whether the <code>SupportedInstanceType</code> only supports 64-bit architecture.
+        /// Indicates whether the <c>SupportedInstanceType</c> only supports 64-bit architecture.
         /// </para>
         /// </summary>
         public bool Is64BitsOnly
@@ -157,7 +157,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MemoryGB. 
         /// <para>
-        /// The amount of memory that is available to Amazon EMR from the <code>SupportedInstanceType</code>.
+        /// The amount of memory that is available to Amazon EMR from the <c>SupportedInstanceType</c>.
         /// The kernel and hypervisor software consume some memory, so this value might be lower
         /// than the overall memory for the instance type.
         /// </para>
@@ -177,8 +177,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NumberOfDisks. 
         /// <para>
-        /// Number of disks for the <code>SupportedInstanceType</code>. This value is <code>0</code>
-        /// for Amazon EBS-only instance types.
+        /// Number of disks for the <c>SupportedInstanceType</c>. This value is <c>0</c> for Amazon
+        /// EBS-only instance types.
         /// </para>
         /// </summary>
         public int NumberOfDisks
@@ -196,8 +196,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property StorageGB. 
         /// <para>
-        ///  <code>StorageGB</code> represents the storage capacity of the <code>SupportedInstanceType</code>.
-        /// This value is <code>0</code> for Amazon EBS-only instance types.
+        ///  <c>StorageGB</c> represents the storage capacity of the <c>SupportedInstanceType</c>.
+        /// This value is <c>0</c> for Amazon EBS-only instance types.
         /// </para>
         /// </summary>
         public int StorageGB
@@ -216,7 +216,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 instance type</a>,
-        /// for example <code>m5.xlarge</code>, of the <code>SupportedInstanceType</code>.
+        /// for example <c>m5.xlarge</c>, of the <c>SupportedInstanceType</c>.
         /// </para>
         /// </summary>
         public string Type
@@ -234,7 +234,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property VCPU. 
         /// <para>
-        /// The number of vCPUs available for the <code>SupportedInstanceType</code>.
+        /// The number of vCPUs available for the <c>SupportedInstanceType</c>.
         /// </para>
         /// </summary>
         public int VCPU

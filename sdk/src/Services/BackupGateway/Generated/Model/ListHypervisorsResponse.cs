@@ -39,8 +39,7 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property Hypervisors. 
         /// <para>
-        /// A list of your <code>Hypervisor</code> objects, ordered by their Amazon Resource Names
-        /// (ARNs).
+        /// A list of your <c>Hypervisor</c> objects, ordered by their Amazon Resource Names (ARNs).
         /// </para>
         /// </summary>
         public List<Hypervisor> Hypervisors
@@ -59,9 +58,9 @@ namespace Amazon.BackupGateway.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The next item following a partial list of returned resources. For example, if a request
-        /// is made to return <code>maxResults</code> number of resources, <code>NextToken</code>
-        /// allows you to return more items in your list starting at the location pointed to by
-        /// the next token.
+        /// is made to return <c>maxResults</c> number of resources, <c>NextToken</c> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

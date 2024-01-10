@@ -52,9 +52,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
-        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:33:13.922000-07:00</c> represents a transcription job that started
+        /// processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -96,9 +96,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.761000-07:00</c> represents a transcription job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -116,8 +116,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// If <c>TranscriptionJobStatus</c> is <c>FAILED</c>, <c>FailureReason</c> contains information
+        /// about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
         /// Errors</a>.
         /// </para>
         /// </summary>
@@ -136,7 +136,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code used to create your medical transcription. US English (<code>en-US</code>)
+        /// The language code used to create your medical transcription. US English (<c>en-US</c>)
         /// is the only supported language for medical transcriptions.
         /// </para>
         /// </summary>
@@ -179,16 +179,16 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>CUSTOMER_BUCKET</code>, the location is the Amazon S3 bucket
-        /// you specified using the <code>OutputBucketName</code> parameter in your request. If
-        /// you also included <code>OutputKey</code> in your request, your output is located in
-        /// the path you specified in your request.
+        /// If the value is <c>CUSTOMER_BUCKET</c>, the location is the Amazon S3 bucket you specified
+        /// using the <c>OutputBucketName</c> parameter in your request. If you also included
+        /// <c>OutputKey</c> in your request, your output is located in the path you specified
+        /// in your request.
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>SERVICE_BUCKET</code>, the location is a service-managed Amazon
-        /// S3 bucket. To access a transcript stored in a service-managed bucket, use the URI
-        /// shown in the <code>TranscriptFileUri</code> field.
+        /// If the value is <c>SERVICE_BUCKET</c>, the location is a service-managed Amazon S3
+        /// bucket. To access a transcript stored in a service-managed bucket, use the URI shown
+        /// in the <c>TranscriptFileUri</c> field.
         /// </para>
         /// </summary>
         public OutputLocationType OutputLocationType
@@ -228,9 +228,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.789000-07:00</c> represents a transcription job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -252,10 +252,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
-        /// results at the location specified in <code>TranscriptFileUri</code>. If the status
-        /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
-        /// job failed.
+        /// If the status is <c>COMPLETED</c>, the job is finished and you can find the results
+        /// at the location specified in <c>TranscriptFileUri</c>. If the status is <c>FAILED</c>,
+        /// <c>FailureReason</c> provides details on why your transcription job failed.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus TranscriptionJobStatus
@@ -274,7 +273,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Indicates whether the input media is a dictation or a conversation, as specified in
-        /// the <code>StartMedicalTranscriptionJob</code> request.
+        /// the <c>StartMedicalTranscriptionJob</c> request.
         /// </para>
         /// </summary>
         public Type Type

@@ -38,8 +38,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        ///  A <code>RepositoryDescription</code> object that contains the requested repository
-        /// information. 
+        ///  A <c>RepositoryDescription</c> object that contains the requested repository information.
+        /// 
         /// </para>
         /// </summary>
         public RepositoryDescription Repository

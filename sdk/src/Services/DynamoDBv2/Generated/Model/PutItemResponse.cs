@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <code>PutItem</code> operation.
+    /// Represents the output of a <c>PutItem</c> operation.
     /// </summary>
     public partial class PutItemResponse : AmazonWebServiceResponse
     {
@@ -40,9 +40,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attribute values as they appeared before the <code>PutItem</code> operation, but
-        /// only if <code>ReturnValues</code> is specified as <code>ALL_OLD</code> in the request.
-        /// Each element consists of an attribute name and an attribute value.
+        /// The attribute values as they appeared before the <c>PutItem</c> operation, but only
+        /// if <c>ReturnValues</c> is specified as <c>ALL_OLD</c> in the request. Each element
+        /// consists of an attribute name and an attribute value.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Attributes
@@ -60,11 +60,11 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
         /// <para>
-        /// The capacity units consumed by the <code>PutItem</code> operation. The data returned
-        /// includes the total provisioned throughput consumed, along with statistics for the
-        /// table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
-        /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
+        /// The capacity units consumed by the <c>PutItem</c> operation. The data returned includes
+        /// the total provisioned throughput consumed, along with statistics for the table and
+        /// any indexes involved in the operation. <c>ConsumedCapacity</c> is only returned if
+        /// the <c>ReturnConsumedCapacity</c> parameter was specified. For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Provisioned
         /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -83,28 +83,27 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ItemCollectionMetrics. 
         /// <para>
-        /// Information about item collections, if any, that were affected by the <code>PutItem</code>
-        /// operation. <code>ItemCollectionMetrics</code> is only returned if the <code>ReturnItemCollectionMetrics</code>
+        /// Information about item collections, if any, that were affected by the <c>PutItem</c>
+        /// operation. <c>ItemCollectionMetrics</c> is only returned if the <c>ReturnItemCollectionMetrics</c>
         /// parameter was specified. If the table does not have any local secondary indexes, this
         /// information is not returned in the response.
         /// </para>
         ///  
         /// <para>
-        /// Each <code>ItemCollectionMetrics</code> element consists of:
+        /// Each <c>ItemCollectionMetrics</c> element consists of:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ItemCollectionKey</code> - The partition key value of the item collection.
-        /// This is the same as the partition key value of the item itself.
+        ///  <c>ItemCollectionKey</c> - The partition key value of the item collection. This is
+        /// the same as the partition key value of the item itself.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SizeEstimateRangeGB</code> - An estimate of item collection size, in gigabytes.
-        /// This value is a two-element array containing a lower bound and an upper bound for
-        /// the estimate. The estimate includes the size of all the items in the table, plus the
-        /// size of all attributes projected into all of the local secondary indexes on that table.
-        /// Use this estimate to measure whether a local secondary index is approaching its size
-        /// limit.
+        ///  <c>SizeEstimateRangeGB</c> - An estimate of item collection size, in gigabytes. This
+        /// value is a two-element array containing a lower bound and an upper bound for the estimate.
+        /// The estimate includes the size of all the items in the table, plus the size of all
+        /// attributes projected into all of the local secondary indexes on that table. Use this
+        /// estimate to measure whether a local secondary index is approaching its size limit.
         /// </para>
         ///  
         /// <para>

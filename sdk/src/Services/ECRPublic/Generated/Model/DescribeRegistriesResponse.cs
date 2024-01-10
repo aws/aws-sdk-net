@@ -39,10 +39,10 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>DescribeRepositories</code>
-        /// request. If the results of a <code>DescribeRepositories</code> request exceed <code>maxResults</code>,
+        /// The <c>nextToken</c> value to include in a future <c>DescribeRepositories</c> request.
+        /// If the results of a <c>DescribeRepositories</c> request exceed <c>maxResults</c>,
         /// you can use this value to retrieve the next page of results. If there are no more
-        /// results, this value is <code>null</code>.
+        /// results, this value is <c>null</c>.
         /// </para>
         /// </summary>
         public string NextToken

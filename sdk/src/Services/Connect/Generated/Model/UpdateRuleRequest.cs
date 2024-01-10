@@ -108,9 +108,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule. You can change the name only if <code>TriggerEventSource</code>
-        /// is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code>
-        /// | <code>OnSalesforceCaseCreate</code> 
+        /// The name of the rule. You can change the name only if <c>TriggerEventSource</c> is
+        /// one of the following values: <c>OnZendeskTicketCreate</c> | <c>OnZendeskTicketStatusUpdate</c>
+        /// | <c>OnSalesforceCaseCreate</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

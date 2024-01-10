@@ -123,7 +123,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PrimaryClusterId. 
         /// <para>
-        /// The primary cluster ID that is applied immediately (if <code>--apply-immediately</code>
+        /// The primary cluster ID that is applied immediately (if <c>--apply-immediately</c>
         /// was specified), or during the next maintenance window.
         /// </para>
         /// </summary>

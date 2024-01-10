@@ -72,9 +72,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>option</code> parameter is true, then your distribution forwards all
-        /// query strings, regardless of what you specify using the <code>queryStringsAllowList</code>
-        /// parameter.
+        /// If the <c>option</c> parameter is true, then your distribution forwards all query
+        /// strings, regardless of what you specify using the <c>queryStringsAllowList</c> parameter.
         /// </para>
         /// </summary>
         public List<string> QueryStringsAllowList

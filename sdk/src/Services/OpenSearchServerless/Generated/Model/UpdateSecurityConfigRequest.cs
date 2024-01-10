@@ -65,7 +65,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property ConfigVersion. 
         /// <para>
         /// The version of the security configuration to be updated. You can find the most recent
-        /// version of a security configuration using the <code>GetSecurityPolicy</code> command.
+        /// version of a security configuration using the <c>GetSecurityPolicy</c> command.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=36)]
@@ -103,8 +103,8 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The security configuration identifier. For SAML the ID will be <code>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</code>.
-        /// For example, <code>saml/123456789123/OKTADev</code>.
+        /// The security configuration identifier. For SAML the ID will be <c>saml/&lt;accountId&gt;/&lt;idpProviderName&gt;</c>.
+        /// For example, <c>saml/123456789123/OKTADev</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

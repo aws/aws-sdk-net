@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// Connections used for creating federated resources require the IAM <code>glue:PassConnection</code>
+    /// Connections used for creating federated resources require the IAM <c>glue:PassConnection</c>
     /// permission.
     /// </para>
     /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionInput. 
         /// <para>
-        /// A <code>ConnectionInput</code> object defining the connection to create.
+        /// A <c>ConnectionInput</c> object defining the connection to create.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

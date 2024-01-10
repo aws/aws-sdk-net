@@ -81,7 +81,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ProvisionedReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
-        /// returns a <code>ThrottlingException</code>.
+        /// returns a <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

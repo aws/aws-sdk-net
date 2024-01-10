@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The meta data of the Glue table which serves as data catalog for the <code>OfflineStore</code>.
+    /// The meta data of the Glue table which serves as data catalog for the <c>OfflineStore</c>.
     /// </summary>
     public partial class DataCatalogConfig
     {

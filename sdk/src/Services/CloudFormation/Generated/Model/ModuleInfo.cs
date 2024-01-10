@@ -48,16 +48,16 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property LogicalIdHierarchy. 
         /// <para>
         /// A concatenated list of the logical IDs of the module or modules containing the resource.
-        /// Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.
+        /// Modules are listed starting with the inner-most nested module, and separated by <c>/</c>.
         /// </para>
         ///  
         /// <para>
-        /// In the following example, the resource was created from a module, <code>moduleA</code>,
-        /// that's nested inside a parent module, <code>moduleB</code>.
+        /// In the following example, the resource was created from a module, <c>moduleA</c>,
+        /// that's nested inside a parent module, <c>moduleB</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>moduleA/moduleB</code> 
+        ///  <c>moduleA/moduleB</c> 
         /// </para>
         ///  
         /// <para>
@@ -81,16 +81,16 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property TypeHierarchy. 
         /// <para>
         /// A concatenated list of the module type or types containing the resource. Module types
-        /// are listed starting with the inner-most nested module, and separated by <code>/</code>.
+        /// are listed starting with the inner-most nested module, and separated by <c>/</c>.
         /// </para>
         ///  
         /// <para>
-        /// In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>,
-        /// that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.
+        /// In the following example, the resource was created from a module of type <c>AWS::First::Example::MODULE</c>,
+        /// that's nested inside a parent module of type <c>AWS::Second::Example::MODULE</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> 
+        ///  <c>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</c> 
         /// </para>
         /// </summary>
         public string TypeHierarchy

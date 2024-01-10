@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing the <code>JobId</code>, <code>Status</code>, <code>StartTime</code>,
-    /// and <code>EndTime</code> of a job.
+    /// An object containing the <c>JobId</c>, <c>Status</c>, <c>StartTime</c>, and <c>EndTime</c>
+    /// of a job.
     /// </summary>
     public partial class JobSummary
     {

@@ -32,8 +32,8 @@ namespace Amazon.CostExplorer.Model
     /// Container for the parameters to the GetReservationUtilization operation.
     /// Retrieves the reservation utilization for your account. Management account in an organization
     /// have access to member accounts. You can filter data by dimensions in a time period.
-    /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
-    /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+    /// You can use <c>GetDimensionValues</c> to determine the possible dimension values.
+    /// Currently, you can group only by <c>SUBSCRIPTION_ID</c>.
     /// </summary>
     public partial class GetReservationUtilizationRequest : AmazonCostExplorerRequest
     {
@@ -96,10 +96,10 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetReservationUtilization</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// object as the other operations, but only <code>AND</code> is supported among each
-        /// dimension, and nesting is supported up to only one level deep. If there are multiple
-        /// values for a dimension, they are OR'd together.
+        ///  <c>GetReservationUtilization</c> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object as the other operations, but only <c>AND</c> is supported among each dimension,
+        /// and nesting is supported up to only one level deep. If there are multiple values for
+        /// a dimension, they are OR'd together.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -117,15 +117,15 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// If <code>GroupBy</code> is set, <code>Granularity</code> can't be set. If <code>Granularity</code>
-        /// isn't set, the response object doesn't include <code>Granularity</code>, either <code>MONTHLY</code>
-        /// or <code>DAILY</code>. If both <code>GroupBy</code> and <code>Granularity</code> aren't
-        /// set, <code>GetReservationUtilization</code> defaults to <code>DAILY</code>.
+        /// If <c>GroupBy</c> is set, <c>Granularity</c> can't be set. If <c>Granularity</c> isn't
+        /// set, the response object doesn't include <c>Granularity</c>, either <c>MONTHLY</c>
+        /// or <c>DAILY</c>. If both <c>GroupBy</c> and <c>Granularity</c> aren't set, <c>GetReservationUtilization</c>
+        /// defaults to <c>DAILY</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetReservationUtilization</code> operation supports only <code>DAILY</code>
-        /// and <code>MONTHLY</code> granularities.
+        /// The <c>GetReservationUtilization</c> operation supports only <c>DAILY</c> and <c>MONTHLY</c>
+        /// granularities.
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -143,7 +143,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// Groups only by <code>SUBSCRIPTION_ID</code>. Metadata is included.
+        /// Groups only by <c>SUBSCRIPTION_ID</c>. Metadata is included.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy
@@ -206,79 +206,79 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// The following values are supported for <code>Key</code>:
+        /// The following values are supported for <c>Key</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UtilizationPercentage</code> 
+        ///  <c>UtilizationPercentage</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UtilizationPercentageInUnits</code> 
+        ///  <c>UtilizationPercentageInUnits</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PurchasedHours</code> 
+        ///  <c>PurchasedHours</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PurchasedUnits</code> 
+        ///  <c>PurchasedUnits</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TotalActualHours</code> 
+        ///  <c>TotalActualHours</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TotalActualUnits</code> 
+        ///  <c>TotalActualUnits</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnusedHours</code> 
+        ///  <c>UnusedHours</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnusedUnits</code> 
+        ///  <c>UnusedUnits</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OnDemandCostOfRIHoursUsed</code> 
+        ///  <c>OnDemandCostOfRIHoursUsed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetRISavings</code> 
+        ///  <c>NetRISavings</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TotalPotentialRISavings</code> 
+        ///  <c>TotalPotentialRISavings</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AmortizedUpfrontFee</code> 
+        ///  <c>AmortizedUpfrontFee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AmortizedRecurringFee</code> 
+        ///  <c>AmortizedRecurringFee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TotalAmortizedFee</code> 
+        ///  <c>TotalAmortizedFee</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RICostForUnusedHours</code> 
+        ///  <c>RICostForUnusedHours</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RealizedSavings</code> 
+        ///  <c>RealizedSavings</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnrealizedSavings</code> 
+        ///  <c>UnrealizedSavings</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
+        /// The supported values for <c>SortOrder</c> are <c>ASCENDING</c> and <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public SortDefinition SortBy
@@ -297,10 +297,10 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property TimePeriod. 
         /// <para>
         /// Sets the start and end dates for retrieving Reserved Instance (RI) utilization. The
-        /// start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
-        /// is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
-        /// cost and usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>. 
+        /// start date is inclusive, but the end date is exclusive. For example, if <c>start</c>
+        /// is <c>2017-01-01</c> and <c>end</c> is <c>2017-05-01</c>, then the cost and usage
+        /// data is retrieved from <c>2017-01-01</c> up to and including <c>2017-04-30</c> but
+        /// not including <c>2017-05-01</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

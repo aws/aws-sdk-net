@@ -60,7 +60,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies a list of filter rules that determines which files to exclude from a task.
         /// The list contains a single filter string that consists of the patterns to exclude.
-        /// The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+        /// The patterns are delimited by "|" (that is, a pipe), for example, <c>"/folder1|/folder2"</c>.
         /// 
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies a list of filter rules that determines which files to include when running
         /// a task. The pattern should contain a single filter string that consists of the patterns
-        /// to include. The patterns are delimited by "|" (that is, a pipe), for example, <code>"/folder1|/folder2"</code>.
+        /// to include. The patterns are delimited by "|" (that is, a pipe), for example, <c>"/folder1|/folder2"</c>.
         /// 
         /// </para>
         /// </summary>

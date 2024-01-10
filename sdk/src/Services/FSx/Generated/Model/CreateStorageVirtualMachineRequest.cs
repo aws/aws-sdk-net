@@ -120,19 +120,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UNIX</code> if the file system is managed by a UNIX administrator, the majority
-        /// of users are NFS clients, and an application accessing the data uses a UNIX user as
-        /// the service account.
+        ///  <c>UNIX</c> if the file system is managed by a UNIX administrator, the majority of
+        /// users are NFS clients, and an application accessing the data uses a UNIX user as the
+        /// service account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NTFS</code> if the file system is managed by a Windows administrator, the majority
+        ///  <c>NTFS</c> if the file system is managed by a Windows administrator, the majority
         /// of users are SMB clients, and an application accessing the data uses a Windows user
         /// as the service account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MIXED</code> if the file system is managed by both UNIX and Windows administrators
+        ///  <c>MIXED</c> if the file system is managed by both UNIX and Windows administrators
         /// and users consist of both NFS and SMB clients.
         /// </para>
         ///  </li> </ul>
@@ -153,7 +153,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property SvmAdminPassword. 
         /// <para>
         /// The password to use when managing the SVM using the NetApp ONTAP CLI or REST API.
-        /// If you do not specify a password, you can still use the file system's <code>fsxadmin</code>
+        /// If you do not specify a password, you can still use the file system's <c>fsxadmin</c>
         /// user to manage the SVM.
         /// </para>
         /// </summary>

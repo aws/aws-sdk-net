@@ -74,11 +74,11 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For Tape Gateway and Volume Gateway, the minimum value is <code>51200</code>.
+        /// For Tape Gateway and Volume Gateway, the minimum value is <c>51200</c>.
         /// </para>
         ///  
         /// <para>
-        /// For S3 File Gateway and FSx File Gateway, the minimum value is <code>104857600</code>.
+        /// For S3 File Gateway and FSx File Gateway, the minimum value is <c>104857600</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -143,7 +143,7 @@ namespace Amazon.StorageGateway.Model
         ///  <important> 
         /// <para>
         ///  The bandwidth rate limit interval ends at the end of the minute. To end an interval
-        /// at the end of an hour, use the value <code>59</code>. 
+        /// at the end of an hour, use the value <c>59</c>. 
         /// </para>
         ///  </important>
         /// </summary>
@@ -184,7 +184,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         ///  The minute of the hour to start the bandwidth rate limit interval. The interval begins
         /// at the start of that minute. To begin an interval exactly at the start of the hour,
-        /// use the value <code>0</code>. 
+        /// use the value <c>0</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=59)]

@@ -43,27 +43,27 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALREADY_EXISTS</code> 
+        ///  <c>ALREADY_EXISTS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISMATCHED_REVISION</code> 
+        ///  <c>MISMATCHED_REVISION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISMATCHED_STATUS</code> 
+        ///  <c>MISMATCHED_STATUS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_ALLOWED</code> 
+        ///  <c>NOT_ALLOWED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_FOUND</code> 
+        ///  <c>NOT_FOUND</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SKIPPED</code> 
+        ///  <c>SKIPPED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

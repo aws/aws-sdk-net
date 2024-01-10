@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>BoxPlotVisual</code>.
+    /// The configuration of a <c>BoxPlotVisual</c>.
     /// </summary>
     public partial class BoxPlotChartConfiguration
     {
@@ -192,7 +192,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration of a <code>BoxPlotVisual</code>.
+        /// The sort configuration of a <c>BoxPlotVisual</c>.
         /// </para>
         /// </summary>
         public BoxPlotSortConfiguration SortConfiguration

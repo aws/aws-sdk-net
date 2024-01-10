@@ -83,27 +83,27 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>performance efficiency</code> 
+        ///  <c>performance efficiency</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>security</code> 
+        ///  <c>security</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>reliability</code> 
+        ///  <c>reliability</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cost optimization</code> 
+        ///  <c>cost optimization</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>operational excellence</code> 
+        ///  <c>operational excellence</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sustainability</code> 
+        ///  <c>sustainability</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property CreatedTime. 
         /// <para>
-        /// The time when the recommendation was created. For example, <code>2023-09-28T01:13:53.931000+00:00</code>.
+        /// The time when the recommendation was created. For example, <c>2023-09-28T01:13:53.931000+00:00</c>.
         /// </para>
         /// </summary>
         public DateTime CreatedTime
@@ -331,19 +331,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>high</code> 
+        ///  <c>high</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>medium</code> 
+        ///  <c>medium</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>low</code> 
+        ///  <c>low</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>informational</code> 
+        ///  <c>informational</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -388,19 +388,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - The recommendations which are ready for you to apply.
+        ///  <c>active</c> - The recommendations which are ready for you to apply.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code> - The applied or scheduled recommendations which are in progress.
+        ///  <c>pending</c> - The applied or scheduled recommendations which are in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolved</code> - The recommendations which are completed.
+        ///  <c>resolved</c> - The recommendations which are completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dismissed</code> - The recommendations that you dismissed.
+        ///  <c>dismissed</c> - The recommendations that you dismissed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

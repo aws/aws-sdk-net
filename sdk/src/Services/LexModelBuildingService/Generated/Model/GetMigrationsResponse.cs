@@ -40,8 +40,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property MigrationSummaries. 
         /// <para>
         /// An array of summaries for migrations from Amazon Lex V1 to Amazon Lex V2. To see details
-        /// of the migration, use the <code>migrationId</code> from the summary in a call to the
-        /// operation.
+        /// of the migration, use the <c>migrationId</c> from the summary in a call to the operation.
         /// </para>
         /// </summary>
         public List<MigrationSummary> MigrationSummaries

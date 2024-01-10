@@ -63,16 +63,16 @@ namespace Amazon.GroundStation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
-        /// to 650 MHz.
+        /// For <c>AntennaDownlinkDemodDecodeconfig</c>, valid values are between 125 kHz to 650
+        /// MHz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+        /// For <c>AntennaDownlinkconfig</c>, valid values are between 10 kHz to 54 MHz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+        /// For <c>AntennaUplinkConfig</c>, valid values are between 10 kHz to 54 MHz.
         /// </para>
         ///  </li> </ul>
         /// </summary>

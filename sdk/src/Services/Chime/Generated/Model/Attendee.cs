@@ -29,15 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// An Amazon Chime SDK meeting attendee. Includes a unique <code>AttendeeId</code> and
-    /// <code>JoinToken</code> . The <code>JoinToken</code> allows a client to authenticate
-    /// and join as the specified attendee. The <code>JoinToken</code> expires when the meeting
-    /// ends or when <a>DeleteAttendee</a> is called. After that, the attendee is unable to
-    /// join the meeting. 
+    /// An Amazon Chime SDK meeting attendee. Includes a unique <c>AttendeeId</c> and <c>JoinToken</c>
+    /// . The <c>JoinToken</c> allows a client to authenticate and join as the specified attendee.
+    /// The <c>JoinToken</c> expires when the meeting ends or when <a>DeleteAttendee</a> is
+    /// called. After that, the attendee is unable to join the meeting. 
     /// 
     ///  
     /// <para>
-    /// We recommend securely transferring each <code>JoinToken</code> from your server application
+    /// We recommend securely transferring each <c>JoinToken</c> from your server application
     /// to the client so that no other client has access to the token except for the one authorized
     /// to represent the attendee.
     /// </para>

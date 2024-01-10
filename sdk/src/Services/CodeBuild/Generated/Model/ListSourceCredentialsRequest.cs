@@ -30,7 +30,7 @@ namespace Amazon.CodeBuild.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSourceCredentials operation.
-    /// Returns a list of <code>SourceCredentialsInfo</code> objects.
+    /// Returns a list of <c>SourceCredentialsInfo</c> objects.
     /// </summary>
     public partial class ListSourceCredentialsRequest : AmazonCodeBuildRequest
     {

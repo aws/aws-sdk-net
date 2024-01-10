@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// For more information about <code>RuntimePlatform</code>, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a>
+    /// For more information about <c>RuntimePlatform</c>, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#runtime-platform">RuntimePlatform</a>
     /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can run your Linux tasks on an ARM-based platform by setting the value to <code>ARM64</code>.
+        /// You can run your Linux tasks on an ARM-based platform by setting the value to <c>ARM64</c>.
         /// This option is available for tasks that run on Linux Amazon EC2 instance or Linux
         /// containers on Fargate.
         /// </para>

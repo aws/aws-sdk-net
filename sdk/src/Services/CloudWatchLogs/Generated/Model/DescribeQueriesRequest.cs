@@ -99,8 +99,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Limits the returned queries to only those that have the specified status. Valid values
-        /// are <code>Cancelled</code>, <code>Complete</code>, <code>Failed</code>, <code>Running</code>,
-        /// and <code>Scheduled</code>.
+        /// are <c>Cancelled</c>, <c>Complete</c>, <c>Failed</c>, <c>Running</c>, and <c>Scheduled</c>.
         /// </para>
         /// </summary>
         public QueryStatus Status

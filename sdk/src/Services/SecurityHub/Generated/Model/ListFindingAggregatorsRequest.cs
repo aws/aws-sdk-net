@@ -30,8 +30,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFindingAggregators operation.
-    /// If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns
-    /// the ARN of the finding aggregator. You can run this operation from any Region.
+    /// If finding aggregation is enabled, then <c>ListFindingAggregators</c> returns the
+    /// ARN of the finding aggregator. You can run this operation from any Region.
     /// </summary>
     public partial class ListFindingAggregatorsRequest : AmazonSecurityHubRequest
     {

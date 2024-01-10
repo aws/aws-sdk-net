@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Contains <code>GenerateAbstractiveSummary</code>, which is a required parameter if
-    /// you want to enable Generative call summarization in your Call Analytics request.
+    /// Contains <c>GenerateAbstractiveSummary</c>, which is a required parameter if you want
+    /// to enable Generative call summarization in your Call Analytics request.
     /// </summary>
     public partial class Summarization
     {

@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</code>
+        ///  <c>arn:${Partition}:iotsitewise:${Region}:${Account}:dashboard/${DashboardId}</c>
         /// 
         /// </para>
         /// </summary>

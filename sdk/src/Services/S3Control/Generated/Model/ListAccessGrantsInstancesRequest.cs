@@ -36,8 +36,8 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:ListAccessGrantsInstances</code> permission to use this
-    /// operation. 
+    /// You must have the <c>s3:ListAccessGrantsInstances</c> permission to use this operation.
+    /// 
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -69,10 +69,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of access grants that you would like returned in the <code>List
-        /// Access Grants</code> response. If the results include the pagination token <code>NextToken</code>,
-        /// make another call using the <code>NextToken</code> to determine if there are more
-        /// results.
+        /// The maximum number of access grants that you would like returned in the <c>List Access
+        /// Grants</c> response. If the results include the pagination token <c>NextToken</c>,
+        /// make another call using the <c>NextToken</c> to determine if there are more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -92,8 +91,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token to request the next page of results. Pass this value into a subsequent
-        /// <code>List Access Grants Instances</code> request in order to retrieve the next page
-        /// of results.
+        /// <c>List Access Grants Instances</c> request in order to retrieve the next page of
+        /// results.
         /// </para>
         /// </summary>
         public string NextToken

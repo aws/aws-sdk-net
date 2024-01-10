@@ -52,8 +52,8 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a component from a recipe, specify <code>inlineRecipe</code> when you call
-    /// this operation.
+    /// To create a component from a recipe, specify <c>inlineRecipe</c> when you call this
+    /// operation.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -72,44 +72,44 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Python 2.7 – <code>python2.7</code> 
+    /// Python 2.7 – <c>python2.7</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Python 3.7 – <code>python3.7</code> 
+    /// Python 3.7 – <c>python3.7</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Python 3.8 – <code>python3.8</code> 
+    /// Python 3.8 – <c>python3.8</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Python 3.9 – <code>python3.9</code> 
+    /// Python 3.9 – <c>python3.9</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Java 8 – <code>java8</code> 
+    /// Java 8 – <c>java8</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Java 11 – <code>java11</code> 
+    /// Java 11 – <c>java11</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Node.js 10 – <code>nodejs10.x</code> 
+    /// Node.js 10 – <c>nodejs10.x</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Node.js 12 – <code>nodejs12.x</code> 
+    /// Node.js 12 – <c>nodejs12.x</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Node.js 14 – <code>nodejs14.x</code> 
+    /// Node.js 14 – <c>nodejs14.x</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To create a component from a Lambda function, specify <code>lambdaFunction</code>
-    /// when you call this operation.
+    /// To create a component from a Lambda function, specify <c>lambdaFunction</c> when you
+    /// call this operation.
     /// </para>
     ///  <note> 
     /// <para>
@@ -156,7 +156,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.
+        /// You must specify either <c>inlineRecipe</c> or <c>lambdaFunction</c>.
         /// </para>
         /// </summary>
         public MemoryStream InlineRecipe
@@ -178,7 +178,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.
+        /// You must specify either <c>inlineRecipe</c> or <c>lambdaFunction</c>.
         /// </para>
         /// </summary>
         public LambdaFunctionRecipeSource LambdaFunction

@@ -185,10 +185,10 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property ManageResourcePolicies. 
         /// <para>
-        /// When <code>TRUE</code>, indicates that the resource policy for the configured audience
-        /// model resource being associated is configured for Clean Rooms to manage permissions
-        /// related to the given collaboration. When <code>FALSE</code>, indicates that the configured
-        /// audience model resource owner will manage permissions related to the given collaboration.
+        /// When <c>TRUE</c>, indicates that the resource policy for the configured audience model
+        /// resource being associated is configured for Clean Rooms to manage permissions related
+        /// to the given collaboration. When <c>FALSE</c>, indicates that the configured audience
+        /// model resource owner will manage permissions related to the given collaboration.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

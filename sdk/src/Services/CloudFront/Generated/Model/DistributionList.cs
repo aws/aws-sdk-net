@@ -49,7 +49,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether more distributions remain to be listed. If your results
-        /// were truncated, you can make a follow-up pagination request using the <code>Marker</code>
+        /// were truncated, you can make a follow-up pagination request using the <c>Marker</c>
         /// request parameter to retrieve more distributions in the list.
         /// </para>
         /// </summary>
@@ -69,8 +69,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains one <code>DistributionSummary</code> element for each
-        /// distribution that was created by the current Amazon Web Services account.
+        /// A complex type that contains one <c>DistributionSummary</c> element for each distribution
+        /// that was created by the current Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<DistributionSummary> Items
@@ -88,7 +88,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The value you provided for the <code>Marker</code> request parameter.
+        /// The value you provided for the <c>Marker</c> request parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -107,7 +107,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value you provided for the <code>MaxItems</code> request parameter.
+        /// The value you provided for the <c>MaxItems</c> request parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,9 +126,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, this element is present and contains
-        /// the value you can use for the <code>Marker</code> request parameter to continue listing
-        /// your distributions where they left off.
+        /// If <c>IsTruncated</c> is <c>true</c>, this element is present and contains the value
+        /// you can use for the <c>Marker</c> request parameter to continue listing your distributions
+        /// where they left off.
         /// </para>
         /// </summary>
         public string NextMarker

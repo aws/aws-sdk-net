@@ -43,8 +43,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EnableInterContainerTrafficEncryption. 
         /// <para>
         /// Whether to encrypt all communications between distributed processing jobs. Choose
-        /// <code>True</code> to encrypt communications. Encryption provides greater security
-        /// for distributed processing jobs, but the processing might take longer.
+        /// <c>True</c> to encrypt communications. Encryption provides greater security for distributed
+        /// processing jobs, but the processing might take longer.
         /// </para>
         /// </summary>
         public bool EnableInterContainerTrafficEncryption

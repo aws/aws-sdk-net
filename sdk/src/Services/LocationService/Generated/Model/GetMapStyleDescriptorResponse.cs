@@ -76,7 +76,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The style descriptor's content type. For example, <code>application/json</code>.
+        /// The style descriptor's content type. For example, <c>application/json</c>.
         /// </para>
         /// </summary>
         public string ContentType

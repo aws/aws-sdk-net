@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// Provides details about the configured <code>SourceConnection</code>.
+    /// Provides details about the configured <c>SourceConnection</c>.
     /// </summary>
     public partial class SourceConnectionDetail
     {
@@ -40,7 +40,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ConnectionParameters. 
         /// <para>
-        /// The connection details based on the connection <code>Type</code>.
+        /// The connection details based on the connection <c>Type</c>.
         /// </para>
         /// </summary>
         public SourceConnectionParameters ConnectionParameters
@@ -63,23 +63,23 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LastSyncTime</code> 
+        ///  <c>LastSyncTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LastSyncStatus</code> 
+        ///  <c>LastSyncStatus</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LastSyncStatusMessage</code> 
+        ///  <c>LastSyncStatusMessage</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LastSuccessfulSyncTime</code> 
+        ///  <c>LastSuccessfulSyncTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LastSuccessfulSyncProvisioningArtifactID</code> 
+        ///  <c>LastSuccessfulSyncProvisioningArtifactID</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The only supported <code>SourceConnection</code> type is Codestar.
+        /// The only supported <c>SourceConnection</c> type is Codestar.
         /// </para>
         /// </summary>
         public SourceType Type

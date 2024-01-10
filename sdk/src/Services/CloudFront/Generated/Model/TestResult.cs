@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Contains the result of testing a CloudFront function with <code>TestFunction</code>.
+    /// Contains the result of testing a CloudFront function with <c>TestFunction</c>.
     /// </summary>
     public partial class TestResult
     {

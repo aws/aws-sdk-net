@@ -57,9 +57,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the <code>List Jobs</code> request produced more than the maximum number of results,
-        /// you can pass this value into a subsequent <code>List Jobs</code> request in order
-        /// to retrieve the next page of results.
+        /// If the <c>List Jobs</c> request produced more than the maximum number of results,
+        /// you can pass this value into a subsequent <c>List Jobs</c> request in order to retrieve
+        /// the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

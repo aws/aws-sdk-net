@@ -50,7 +50,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property BundleId. 
         /// <para>
-        /// The bundle ID (<code>micro_1_0</code>).
+        /// The bundle ID (<c>micro_1_0</c>).
         /// </para>
         /// </summary>
         public string BundleId
@@ -68,7 +68,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CpuCount. 
         /// <para>
-        /// The number of vCPUs included in the bundle (<code>2</code>).
+        /// The number of vCPUs included in the bundle (<c>2</c>).
         /// </para>
         /// </summary>
         public int CpuCount
@@ -86,7 +86,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskSizeInGb. 
         /// <para>
-        /// The size of the SSD (<code>30</code>).
+        /// The size of the SSD (<c>30</c>).
         /// </para>
         /// </summary>
         public int DiskSizeInGb
@@ -104,7 +104,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The Amazon EC2 instance type (<code>t2.micro</code>).
+        /// The Amazon EC2 instance type (<c>t2.micro</c>).
         /// </para>
         /// </summary>
         public string InstanceType
@@ -140,7 +140,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name for the bundle (<code>Micro</code>).
+        /// A friendly name for the bundle (<c>Micro</c>).
         /// </para>
         /// </summary>
         public string Name
@@ -158,11 +158,11 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Power. 
         /// <para>
-        /// A numeric value that represents the power of the bundle (<code>500</code>). You can
-        /// use the bundle's power value in conjunction with a blueprint's minimum power value
-        /// to determine whether the blueprint will run on the bundle. For example, you need a
-        /// bundle with a power value of 500 or more to create an instance that uses a blueprint
-        /// with a minimum power value of 500.
+        /// A numeric value that represents the power of the bundle (<c>500</c>). You can use
+        /// the bundle's power value in conjunction with a blueprint's minimum power value to
+        /// determine whether the blueprint will run on the bundle. For example, you need a bundle
+        /// with a power value of 500 or more to create an instance that uses a blueprint with
+        /// a minimum power value of 500.
         /// </para>
         /// </summary>
         public int Power
@@ -180,7 +180,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Price. 
         /// <para>
-        /// The price in US dollars (<code>5.0</code>) of the bundle.
+        /// The price in US dollars (<c>5.0</c>) of the bundle.
         /// </para>
         /// </summary>
         public float Price
@@ -198,7 +198,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RamSizeInGb. 
         /// <para>
-        /// The amount of RAM in GB (<code>2.0</code>).
+        /// The amount of RAM in GB (<c>2.0</c>).
         /// </para>
         /// </summary>
         public float RamSizeInGb
@@ -240,9 +240,9 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property SupportedPlatforms. 
         /// <para>
         /// The operating system platform (Linux/Unix-based or Windows Server-based) that the
-        /// bundle supports. You can only launch a <code>WINDOWS</code> bundle on a blueprint
-        /// that supports the <code>WINDOWS</code> platform. <code>LINUX_UNIX</code> blueprints
-        /// require a <code>LINUX_UNIX</code> bundle.
+        /// bundle supports. You can only launch a <c>WINDOWS</c> bundle on a blueprint that supports
+        /// the <c>WINDOWS</c> platform. <c>LINUX_UNIX</c> blueprints require a <c>LINUX_UNIX</c>
+        /// bundle.
         /// </para>
         /// </summary>
         public List<string> SupportedPlatforms
@@ -260,7 +260,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property TransferPerMonthInGb. 
         /// <para>
-        /// The data transfer rate per month in GB (<code>2000</code>).
+        /// The data transfer rate per month in GB (<c>2000</c>).
         /// </para>
         /// </summary>
         public int TransferPerMonthInGb

@@ -54,7 +54,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    ///  This operation requires permissions to perform the <code>kinesisanalytics:DiscoverInputSchema</code>
+    ///  This operation requires permissions to perform the <c>kinesisanalytics:DiscoverInputSchema</c>
     /// action. 
     /// </para>
     /// </summary>

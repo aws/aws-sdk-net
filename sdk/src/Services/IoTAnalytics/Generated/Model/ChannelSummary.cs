@@ -103,7 +103,7 @@ namespace Amazon.IoTAnalytics.Model
         ///  
         /// <para>
         /// IoT Analytics updates this value at most once per minute for one channel. Hence, the
-        /// <code>lastMessageArrivalTime</code> value is an approximation.
+        /// <c>lastMessageArrivalTime</c> value is an approximation.
         /// </para>
         ///  
         /// <para>

@@ -31,8 +31,8 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Container for the parameters to the DeleteMedicalTranscriptionJob operation.
     /// Deletes a medical transcription job. To use this operation, specify the name of the
-    /// job you want to delete using <code>MedicalTranscriptionJobName</code>. Job names are
-    /// case sensitive.
+    /// job you want to delete using <c>MedicalTranscriptionJobName</c>. Job names are case
+    /// sensitive.
     /// </summary>
     public partial class DeleteMedicalTranscriptionJobRequest : AmazonTranscribeServiceRequest
     {

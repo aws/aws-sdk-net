@@ -43,7 +43,7 @@ namespace Amazon.LakeFormation.Model
         /// Gets and sets the property Config. 
         /// <para>
         /// A map of the storage optimizer configuration. Currently contains only one key-value
-        /// pair: <code>is_enabled</code> indicates true or false for acceleration.
+        /// pair: <c>is_enabled</c> indicates true or false for acceleration.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Config
@@ -107,7 +107,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property StorageOptimizerType. 
         /// <para>
-        /// The specific type of storage optimizer. The supported value is <code>compaction</code>.
+        /// The specific type of storage optimizer. The supported value is <c>compaction</c>.
         /// </para>
         /// </summary>
         public OptimizerType StorageOptimizerType

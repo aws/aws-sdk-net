@@ -40,8 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
-        /// The model output compression type. Select <code>None</code> to output an uncompressed
-        /// model, recommended for large model outputs. Defaults to gzip.
+        /// The model output compression type. Select <c>None</c> to output an uncompressed model,
+        /// recommended for large model outputs. Defaults to gzip.
         /// </para>
         /// </summary>
         public OutputCompressionType CompressionType
@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
         /// SageMaker uses to encrypt the model artifacts at rest using Amazon S3 server-side
-        /// encryption. The <code>KmsKeyId</code> can be any of the following formats: 
+        /// encryption. The <c>KmsKeyId</c> can be any of the following formats: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        ///  <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        ///  <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"alias/ExampleAlias"</code> 
+        ///  <c>"alias/ExampleAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -94,14 +94,14 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> 
+        ///  <c>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role
-        /// must include permissions to call <code>kms:Encrypt</code>. If you don't provide a
-        /// KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
+        /// must include permissions to call <c>kms:Encrypt</c>. If you don't provide a KMS key
+        /// ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">KMS-Managed
         /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide</i>. If
         /// the output data is stored in Amazon S3 Express One Zone, it is encrypted with server-side
         /// encryption with Amazon S3 managed keys (SSE-S3). KMS key is not supported for Amazon
@@ -110,7 +110,7 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// The KMS key policy must grant permission to the IAM role that you specify in your
-        /// <code>CreateTrainingJob</code>, <code>CreateTransformJob</code>, or <code>CreateHyperParameterTuningJob</code>
+        /// <c>CreateTrainingJob</c>, <c>CreateTransformJob</c>, or <c>CreateHyperParameterTuningJob</c>
         /// requests. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
         /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
         /// Service Developer Guide</i>.
@@ -133,7 +133,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3OutputPath. 
         /// <para>
         /// Identifies the S3 path where you want SageMaker to store the model artifacts. For
-        /// example, <code>s3://bucket-name/key-name-prefix</code>. 
+        /// example, <c>s3://bucket-name/key-name-prefix</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

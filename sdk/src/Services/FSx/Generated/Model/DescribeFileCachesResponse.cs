@@ -39,7 +39,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileCaches. 
         /// <para>
-        /// The response object for the <code>DescribeFileCaches</code> operation.
+        /// The response object for the <c>DescribeFileCaches</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

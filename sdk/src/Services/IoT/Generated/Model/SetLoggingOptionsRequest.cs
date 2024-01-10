@@ -34,8 +34,7 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    /// NOTE: use of this command is not recommended. Use <code>SetV2LoggingOptions</code>
-    /// instead.
+    /// NOTE: use of this command is not recommended. Use <c>SetV2LoggingOptions</c> instead.
     /// </para>
     ///  
     /// <para>

@@ -67,7 +67,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts from all accounts within the authenticated
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts from all accounts within the authenticated
         /// organization, then returns the sum.
         /// </para>
         /// </summary>
@@ -94,15 +94,15 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ONE_DAY</code> for daily job count for the prior 14 days.
+        ///  <c>ONE_DAY</c> for daily job count for the prior 14 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SEVEN_DAYS</code> for the aggregated job count for the prior 7 days.
+        ///  <c>SEVEN_DAYS</c> for the aggregated job count for the prior 7 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FOURTEEN_DAYS</code> for aggregated job count for prior 14 days.
+        ///  <c>FOURTEEN_DAYS</c> for aggregated job count for prior 14 days.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -148,8 +148,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Example accepted strings include <code>AccessDenied</code>, <code>Success</code>,
-        /// and <code>InvalidParameters</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+        /// Example accepted strings include <c>AccessDenied</c>, <c>Success</c>, and <c>InvalidParameters</c>.
+        /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
         /// for a list of accepted MessageCategory strings.
         /// </para>
         ///  
@@ -158,7 +158,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts for all message categories and returns
         /// the sum.
         /// </para>
         /// </summary>
@@ -178,9 +178,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The next item following a partial list of returned resources. For example, if a request
-        /// is made to return <code>MaxResults</code> number of resources, <code>NextToken</code>
-        /// allows you to return more items in your list starting at the location pointed to by
-        /// the next token.
+        /// is made to return <c>MaxResults</c> number of resources, <c>NextToken</c> allows you
+        /// to return more items in your list starting at the location pointed to by the next
+        /// token.
         /// </para>
         /// </summary>
         public string NextToken
@@ -198,7 +198,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Returns the job count for the specified resource type. Use request <code>GetSupportedResourceTypes</code>
+        /// Returns the job count for the specified resource type. Use request <c>GetSupportedResourceTypes</c>
         /// to obtain strings for supported resource types.
         /// </para>
         ///  
@@ -207,8 +207,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all resource types and returns
-        /// the sum.
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts for all resource types and returns the
+        /// sum.
         /// </para>
         ///  
         /// <para>
@@ -240,7 +240,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all states and returns the sum.
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts for all states and returns the sum.
         /// </para>
         /// </summary>
         public BackupJobStatus State

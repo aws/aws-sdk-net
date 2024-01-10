@@ -44,34 +44,33 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        ///  Specify <code>Finding</code> to return recommendations with a specific finding classification.
+        ///  Specify <c>Finding</c> to return recommendations with a specific finding classification.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  Specify <code>FindingReasonCode</code> to return recommendations with a specific
-        /// finding reason code. 
+        ///  Specify <c>FindingReasonCode</c> to return recommendations with a specific finding
+        /// reason code. 
         /// </para>
         ///  
         /// <para>
-        /// You can filter your Amazon ECS service recommendations by <code>tag:key</code> and
-        /// <code>tag-key</code> tags.
+        /// You can filter your Amazon ECS service recommendations by <c>tag:key</c> and <c>tag-key</c>
+        /// tags.
         /// </para>
         ///  
         /// <para>
-        /// A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon
-        /// ECS service recommendations. Use the tag key in the filter name and the tag value
-        /// as the filter value. For example, to find all Amazon ECS service recommendations that
-        /// have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>,
-        /// specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the
-        /// filter value.
+        /// A <c>tag:key</c> is a key and value combination of a tag assigned to your Amazon ECS
+        /// service recommendations. Use the tag key in the filter name and the tag value as the
+        /// filter value. For example, to find all Amazon ECS service recommendations that have
+        /// a tag with the key of <c>Owner</c> and the value of <c>TeamA</c>, specify <c>tag:Owner</c>
+        /// for the filter name and <c>TeamA</c> for the filter value.
         /// </para>
         ///  
         /// <para>
-        /// A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations.
+        /// A <c>tag-key</c> is the key of a tag assigned to your Amazon ECS service recommendations.
         /// Use this filter to find all of your Amazon ECS service recommendations that have a
         /// tag with a specific key. This doesn’t consider the tag value. For example, you can
-        /// find your Amazon ECS service recommendations with a tag key value of <code>Owner</code>
+        /// find your Amazon ECS service recommendations with a tag key value of <c>Owner</c>
         /// or without any tag keys assigned.
         /// </para>
         /// </summary>
@@ -98,14 +97,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>Finding</code>, specify <code>Optimized</code>,
-        /// <code>NotOptimized</code>, or <code>Unavailable</code>.
+        /// If you specify the <c>name</c> parameter as <c>Finding</c>, specify <c>Optimized</c>,
+        /// <c>NotOptimized</c>, or <c>Unavailable</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify the <code>name</code> parameter as <code>FindingReasonCode</code>,
-        /// specify <code>CPUUnderprovisioned</code>, <code>CPUOverprovisioned</code>, <code>MemoryUnderprovisioned</code>,
-        /// or <code>MemoryOverprovisioned</code>.
+        /// If you specify the <c>name</c> parameter as <c>FindingReasonCode</c>, specify <c>CPUUnderprovisioned</c>,
+        /// <c>CPUOverprovisioned</c>, <c>MemoryUnderprovisioned</c>, or <c>MemoryOverprovisioned</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

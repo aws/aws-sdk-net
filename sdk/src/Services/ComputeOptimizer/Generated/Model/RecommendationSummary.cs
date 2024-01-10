@@ -80,9 +80,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// Gets and sets the property InferredWorkloadSavings. 
         /// <para>
         ///  An array of objects that describes the estimated monthly saving amounts for the instances
-        /// running on the specified <code>inferredWorkloadTypes</code>. The array contains the
-        /// top five savings opportunites for the instances that run inferred workload types.
-        /// 
+        /// running on the specified <c>inferredWorkloadTypes</c>. The array contains the top
+        /// five savings opportunites for the instances that run inferred workload types. 
         /// </para>
         /// </summary>
         public List<InferredWorkloadSaving> InferredWorkloadSavings

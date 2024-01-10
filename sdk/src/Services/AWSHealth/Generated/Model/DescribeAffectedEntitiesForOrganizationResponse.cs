@@ -40,9 +40,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property Entities. 
         /// <para>
-        /// A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-        /// <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>,
-        /// and <code>statusCode</code>.
+        /// A JSON set of elements including the <c>awsAccountId</c> and its <c>entityArn</c>,
+        /// <c>entityValue</c> and its <c>entityArn</c>, <c>lastUpdatedTime</c>, and <c>statusCode</c>.
         /// </para>
         /// </summary>
         public List<AffectedEntity> Entities
@@ -60,8 +59,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property FailedSet. 
         /// <para>
-        /// A JSON set of elements of the failed response, including the <code>awsAccountId</code>,
-        /// <code>errorMessage</code>, <code>errorName</code>, and <code>eventArn</code>.
+        /// A JSON set of elements of the failed response, including the <c>awsAccountId</c>,
+        /// <c>errorMessage</c>, <c>errorName</c>, and <c>eventArn</c>.
         /// </para>
         /// </summary>
         public List<OrganizationAffectedEntitiesErrorItem> FailedSet
@@ -80,8 +79,8 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the results of a search are large, only a portion of the results are returned,
-        /// and a <code>nextToken</code> pagination token is returned in the response. To retrieve
-        /// the next batch of results, reissue the search request and include the returned token.
+        /// and a <c>nextToken</c> pagination token is returned in the response. To retrieve the
+        /// next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token
         /// value.
         /// </para>

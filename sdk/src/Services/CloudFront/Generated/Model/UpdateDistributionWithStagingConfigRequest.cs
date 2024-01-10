@@ -31,9 +31,9 @@ namespace Amazon.CloudFront.Model
     /// <summary>
     /// Container for the parameters to the UpdateDistributionWithStagingConfig operation.
     /// Copies the staging distribution's configuration to its corresponding primary distribution.
-    /// The primary distribution retains its <code>Aliases</code> (also known as alternate
-    /// domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise
-    /// its configuration is overwritten to match the staging distribution.
+    /// The primary distribution retains its <c>Aliases</c> (also known as alternate domain
+    /// names or CNAMEs) and <c>ContinuousDeploymentPolicyId</c> value, but otherwise its
+    /// configuration is overwritten to match the staging distribution.
     /// 
     ///  
     /// <para>
@@ -90,12 +90,12 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The current versions (<code>ETag</code> values) of both primary and staging distributions.
+        /// The current versions (<c>ETag</c> values) of both primary and staging distributions.
         /// Provide these in the following format:
         /// </para>
         ///  
         /// <para>
-        ///  <code>&lt;primary ETag&gt;, &lt;staging ETag&gt;</code> 
+        ///  <c>&lt;primary ETag&gt;, &lt;staging ETag&gt;</c> 
         /// </para>
         /// </summary>
         public string IfMatch

@@ -39,11 +39,11 @@ namespace Amazon.KinesisVideo.Model
     /// 
     ///  
     /// <para>
-    /// You must provide either the <code>StreamName</code> or the <code>StreamARN</code>.
+    /// You must provide either the <c>StreamName</c> or the <c>StreamARN</c>.
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permission for the <code>KinesisVideo:TagStream</code> action.
+    /// This operation requires permission for the <c>KinesisVideo:TagStream</c> action.
     /// </para>
     ///  
     /// <para>

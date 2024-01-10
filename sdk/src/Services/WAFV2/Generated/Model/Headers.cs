@@ -40,13 +40,13 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you want to inspect just the value of a single header, use the <code>SingleHeader</code>
-    /// <code>FieldToMatch</code> setting instead.
+    /// If you want to inspect just the value of a single header, use the <c>SingleHeader</c>
+    /// <c>FieldToMatch</c> setting instead.
     /// </para>
     ///  
     /// <para>
-    /// Example JSON: <code>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY",
-    /// "OversizeHandling": "MATCH" }</code> 
+    /// Example JSON: <c>"Headers": { "MatchPattern": { "All": {} }, "MatchScope": "KEY",
+    /// "OversizeHandling": "MATCH" }</c> 
     /// </para>
     /// </summary>
     public partial class Headers
@@ -62,13 +62,13 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>,
-        /// or <code>ExcludedHeaders</code>.
+        /// You must specify exactly one setting: either <c>All</c>, <c>IncludedHeaders</c>, or
+        /// <c>ExcludedHeaders</c>.
         /// </para>
         ///  
         /// <para>
-        /// Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2"
-        /// ] }</code> 
+        /// Example JSON: <c>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2"
+        /// ] }</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,15 +88,15 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property MatchScope. 
         /// <para>
         /// The parts of the headers to match with the rule inspection criteria. If you specify
-        /// <code>ALL</code>, WAF inspects both keys and values. 
+        /// <c>ALL</c>, WAF inspects both keys and values. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>All</code> does not require a match to be found in the keys and a match to
-        /// be found in the values. It requires a match to be found in the keys or the values
-        /// or both. To require a match in the keys and in the values, use a logical <code>AND</code>
-        /// statement to combine two match rules, one that inspects the keys and another that
-        /// inspects the values. 
+        ///  <c>All</c> does not require a match to be found in the keys and a match to be found
+        /// in the values. It requires a match to be found in the keys or the values or both.
+        /// To require a match in the keys and in the values, use a logical <c>AND</c> statement
+        /// to combine two match rules, one that inspects the keys and another that inspects the
+        /// values. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,17 +126,17 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Inspect the available headers normally, according to the
-        /// rule inspection criteria. 
+        ///  <c>CONTINUE</c> - Inspect the available headers normally, according to the rule inspection
+        /// criteria. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        ///  <c>MATCH</c> - Treat the web request as matching the rule statement. WAF applies
         /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
+        ///  <c>NO_MATCH</c> - Treat the web request as not matching the rule statement.
         /// </para>
         ///  </li> </ul>
         /// </summary>

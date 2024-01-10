@@ -57,9 +57,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ErrorCachingMinTTL. 
         /// <para>
         /// The minimum amount of time, in seconds, that you want CloudFront to cache the HTTP
-        /// status code specified in <code>ErrorCode</code>. When this time period has elapsed,
-        /// CloudFront queries your origin to see whether the problem that caused the error has
-        /// been resolved and the requested object is now available.
+        /// status code specified in <c>ErrorCode</c>. When this time period has elapsed, CloudFront
+        /// queries your origin to see whether the problem that caused the error has been resolved
+        /// and the requested object is now available.
         /// </para>
         ///  
         /// <para>
@@ -111,23 +111,23 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Some Internet devices (some firewalls and corporate proxies, for example) intercept
         /// HTTP 4xx and 5xx and prevent the response from being returned to the viewer. If you
-        /// substitute <code>200</code>, the response typically won't be intercepted.
+        /// substitute <c>200</c>, the response typically won't be intercepted.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you don't care about distinguishing among different client errors or server errors,
-        /// you can specify <code>400</code> or <code>500</code> as the <code>ResponseCode</code>
-        /// for all 4xx or 5xx errors.
+        /// you can specify <c>400</c> or <c>500</c> as the <c>ResponseCode</c> for all 4xx or
+        /// 5xx errors.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You might want to return a <code>200</code> status code (OK) and static website so
-        /// your customers don't know that your website is down.
+        /// You might want to return a <c>200</c> status code (OK) and static website so your
+        /// customers don't know that your website is down.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify a value for <code>ResponseCode</code>, you must also specify a value
-        /// for <code>ResponsePagePath</code>.
+        /// If you specify a value for <c>ResponseCode</c>, you must also specify a value for
+        /// <c>ResponsePagePath</c>.
         /// </para>
         /// </summary>
         public string ResponseCode
@@ -146,28 +146,28 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ResponsePagePath. 
         /// <para>
         /// The path to the custom error page that you want CloudFront to return to a viewer when
-        /// your origin returns the HTTP status code specified by <code>ErrorCode</code>, for
-        /// example, <code>/4xx-errors/403-forbidden.html</code>. If you want to store your objects
-        /// and your custom error pages in different locations, your distribution must include
-        /// a cache behavior for which the following is true:
+        /// your origin returns the HTTP status code specified by <c>ErrorCode</c>, for example,
+        /// <c>/4xx-errors/403-forbidden.html</c>. If you want to store your objects and your
+        /// custom error pages in different locations, your distribution must include a cache
+        /// behavior for which the following is true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value of <code>PathPattern</code> matches the path to your custom error messages.
-        /// For example, suppose you saved custom error pages for 4xx errors in an Amazon S3 bucket
-        /// in a directory named <code>/4xx-errors</code>. Your distribution must include a cache
-        /// behavior for which the path pattern routes requests for your custom error pages to
-        /// that location, for example, <code>/4xx-errors/*</code>.
+        /// The value of <c>PathPattern</c> matches the path to your custom error messages. For
+        /// example, suppose you saved custom error pages for 4xx errors in an Amazon S3 bucket
+        /// in a directory named <c>/4xx-errors</c>. Your distribution must include a cache behavior
+        /// for which the path pattern routes requests for your custom error pages to that location,
+        /// for example, <c>/4xx-errors/*</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>TargetOriginId</code> specifies the value of the <code>ID</code>
-        /// element for the origin that contains your custom error pages.
+        /// The value of <c>TargetOriginId</c> specifies the value of the <c>ID</c> element for
+        /// the origin that contains your custom error pages.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify a value for <code>ResponsePagePath</code>, you must also specify a
-        /// value for <code>ResponseCode</code>.
+        /// If you specify a value for <c>ResponsePagePath</c>, you must also specify a value
+        /// for <c>ResponseCode</c>.
         /// </para>
         ///  
         /// <para>

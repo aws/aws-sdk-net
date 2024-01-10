@@ -31,8 +31,8 @@ namespace Amazon.TranscribeService.Model
     /// <summary>
     /// Container for the parameters to the DeleteVocabularyFilter operation.
     /// Deletes a custom vocabulary filter. To use this operation, specify the name of the
-    /// custom vocabulary filter you want to delete using <code>VocabularyFilterName</code>.
-    /// Custom vocabulary filter names are case sensitive.
+    /// custom vocabulary filter you want to delete using <c>VocabularyFilterName</c>. Custom
+    /// vocabulary filter names are case sensitive.
     /// </summary>
     public partial class DeleteVocabularyFilterRequest : AmazonTranscribeServiceRequest
     {

@@ -95,10 +95,9 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ValidationResult. 
         /// <para>
-        /// Number indicating the result of address validation. <code>0</code> means the address
-        /// was perfect as is and successfully validated. <code>1</code> means the address was
-        /// corrected. <code>2</code> means the address sent was not close enough and was not
-        /// validated.
+        /// Number indicating the result of address validation. <c>0</c> means the address was
+        /// perfect as is and successfully validated. <c>1</c> means the address was corrected.
+        /// <c>2</c> means the address sent was not close enough and was not validated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]

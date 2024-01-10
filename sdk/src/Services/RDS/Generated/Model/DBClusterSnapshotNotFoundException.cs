@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBClusterSnapshotIdentifier</code> doesn't refer to an existing DB cluster
-    /// snapshot.
+    /// <c>DBClusterSnapshotIdentifier</c> doesn't refer to an existing DB cluster snapshot.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

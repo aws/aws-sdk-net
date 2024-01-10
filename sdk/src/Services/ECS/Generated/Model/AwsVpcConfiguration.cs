@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property AssignPublicIp. 
         /// <para>
         /// Whether the task's elastic network interface receives a public IP address. The default
-        /// value is <code>DISABLED</code>.
+        /// value is <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public AssignPublicIp AssignPublicIp
@@ -61,7 +61,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The IDs of the security groups associated with the task or service. If you don't specify
         /// a security group, the default security group for the VPC is used. There's a limit
-        /// of 5 security groups that can be specified per <code>AwsVpcConfiguration</code>.
+        /// of 5 security groups that can be specified per <c>AwsVpcConfiguration</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The IDs of the subnets associated with the task or service. There's a limit of 16
-        /// subnets that can be specified per <code>AwsVpcConfiguration</code>.
+        /// subnets that can be specified per <c>AwsVpcConfiguration</c>.
         /// </para>
         ///  <note> 
         /// <para>

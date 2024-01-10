@@ -56,7 +56,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -83,7 +83,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-1d</code> 
+        /// Example: <c>us-east-1d</c> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -163,7 +163,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        /// The compute and memory capacity of the instance; for example, <code>db.r5.large</code>.
+        /// The compute and memory capacity of the instance; for example, <c>db.r5.large</c>.
         /// 
         /// </para>
         /// </summary>
@@ -203,7 +203,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mydbinstance</code> 
+        /// Example: <c>mydbinstance</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -246,7 +246,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid value: <code>docdb</code> 
+        /// Valid value: <c>docdb</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -300,7 +300,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        ///  Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        ///  Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>

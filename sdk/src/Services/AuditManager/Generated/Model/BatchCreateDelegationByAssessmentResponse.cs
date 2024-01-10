@@ -57,7 +57,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        ///  A list of errors that the <code>BatchCreateDelegationByAssessment</code> API returned.
+        ///  A list of errors that the <c>BatchCreateDelegationByAssessment</c> API returned.
         /// 
         /// </para>
         /// </summary>

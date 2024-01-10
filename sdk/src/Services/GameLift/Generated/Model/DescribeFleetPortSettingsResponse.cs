@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
-        /// are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// </para>
         /// </summary>
         public string FleetArn
@@ -100,7 +100,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The requested fleet location, expressed as an Amazon Web Services Region code, such
-        /// as <code>us-west-2</code>. 
+        /// as <c>us-west-2</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -120,7 +120,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         /// The current status of updates to the fleet's port settings in the requested fleet
-        /// location. A status of <code>PENDING_UPDATE</code> indicates that an update was requested
+        /// location. A status of <c>PENDING_UPDATE</c> indicates that an update was requested
         /// for the fleet but has not yet been completed for the location.
         /// </para>
         /// </summary>

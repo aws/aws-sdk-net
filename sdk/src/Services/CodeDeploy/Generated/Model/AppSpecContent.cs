@@ -31,7 +31,7 @@ namespace Amazon.CodeDeploy.Model
     /// <summary>
     /// A revision for an Lambda or Amazon ECS deployment that is a YAML-formatted or JSON-formatted
     /// string. For Lambda and Amazon ECS deployments, the revision is the same as the AppSpec
-    /// file. This method replaces the deprecated <code>RawString</code> data type.
+    /// file. This method replaces the deprecated <c>RawString</c> data type.
     /// </summary>
     public partial class AppSpecContent
     {
@@ -58,7 +58,7 @@ namespace Amazon.CodeDeploy.Model
         ///  
         /// <para>
         ///  For both types of deployments, the content can specify Lambda functions that run
-        /// at specified hooks, such as <code>BeforeInstall</code>, during a deployment. 
+        /// at specified hooks, such as <c>BeforeInstall</c>, during a deployment. 
         /// </para>
         /// </summary>
         public string Content

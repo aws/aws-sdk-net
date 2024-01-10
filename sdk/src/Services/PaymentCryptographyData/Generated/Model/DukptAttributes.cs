@@ -42,8 +42,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <para>
         /// The key type derived using DUKPT from a Base Derivation Key (BDK) and Key Serial Number
         /// (KSN). This must be less than or equal to the strength of the BDK. For example, you
-        /// can't use <code>AES_128</code> as a derivation type for a BDK of <code>AES_128</code>
-        /// or <code>TDES_2KEY</code>.
+        /// can't use <c>AES_128</c> as a derivation type for a BDK of <c>AES_128</c> or <c>TDES_2KEY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

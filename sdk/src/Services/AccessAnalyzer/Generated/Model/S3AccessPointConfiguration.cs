@@ -65,12 +65,11 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property NetworkOrigin. 
         /// <para>
-        /// The proposed <code>Internet</code> and <code>VpcConfiguration</code> to apply to this
-        /// Amazon S3 access point. <code>VpcConfiguration</code> does not apply to multi-region
-        /// access points. If the access preview is for a new resource and neither is specified,
-        /// the access preview uses <code>Internet</code> for the network origin. If the access
-        /// preview is for an existing resource and neither is specified, the access preview uses
-        /// the exiting network origin.
+        /// The proposed <c>Internet</c> and <c>VpcConfiguration</c> to apply to this Amazon S3
+        /// access point. <c>VpcConfiguration</c> does not apply to multi-region access points.
+        /// If the access preview is for a new resource and neither is specified, the access preview
+        /// uses <c>Internet</c> for the network origin. If the access preview is for an existing
+        /// resource and neither is specified, the access preview uses the exiting network origin.
         /// </para>
         /// </summary>
         public NetworkOriginConfiguration NetworkOrigin
@@ -88,8 +87,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property PublicAccessBlock. 
         /// <para>
-        /// The proposed <code>S3PublicAccessBlock</code> configuration to apply to this Amazon
-        /// S3 access point or multi-region access point.
+        /// The proposed <c>S3PublicAccessBlock</c> configuration to apply to this Amazon S3 access
+        /// point or multi-region access point.
         /// </para>
         /// </summary>
         public S3PublicAccessBlockConfiguration PublicAccessBlock

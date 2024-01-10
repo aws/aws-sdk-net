@@ -29,16 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// <code>GetImages</code> will throw this error when Kinesis Video Streams can't find
-    /// the stream that you specified.
+    /// <c>GetImages</c> will throw this error when Kinesis Video Streams can't find the
+    /// stream that you specified.
     /// 
     ///  
     /// <para>
-    ///  <code>GetHLSStreamingSessionURL</code> and <code>GetDASHStreamingSessionURL</code>
-    /// throw this error if a session with a <code>PlaybackMode</code> of <code>ON_DEMAND</code>
-    /// or <code>LIVE_REPLAY</code>is requested for a stream that has no fragments within
-    /// the requested time range, or if a session with a <code>PlaybackMode</code> of <code>LIVE</code>
-    /// is requested for a stream that has no fragments within the last 30 seconds.
+    ///  <c>GetHLSStreamingSessionURL</c> and <c>GetDASHStreamingSessionURL</c> throw this
+    /// error if a session with a <c>PlaybackMode</c> of <c>ON_DEMAND</c> or <c>LIVE_REPLAY</c>is
+    /// requested for a stream that has no fragments within the requested time range, or if
+    /// a session with a <c>PlaybackMode</c> of <c>LIVE</c> is requested for a stream that
+    /// has no fragments within the last 30 seconds.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

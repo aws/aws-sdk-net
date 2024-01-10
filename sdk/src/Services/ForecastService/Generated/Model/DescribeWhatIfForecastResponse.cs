@@ -86,7 +86,7 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// The quantiles at which probabilistic forecasts are generated. You can specify up to
         /// five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a> operation.
-        /// If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
+        /// If you didn't specify quantiles, the default values are <c>["0.1", "0.5", "0.9"]</c>.
         /// 
         /// </para>
         /// </summary>
@@ -111,23 +111,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+        ///  <c>CREATE_PENDING</c> - The <c>CreationTime</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+        ///  <c>CREATE_IN_PROGRESS</c> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPING</code> - The current timestamp.
+        ///  <c>CREATE_STOPPING</c> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPED</code> - When the job stopped.
+        ///  <c>CREATE_STOPPED</c> - When the job stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+        ///  <c>ACTIVE</c> or <c>CREATE_FAILED</c> - When the job finished or failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -168,26 +168,24 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> 
+        ///  <c>ACTIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
-        /// 
+        ///  <c>CREATE_PENDING</c>, <c>CREATE_IN_PROGRESS</c>, <c>CREATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> 
+        ///  <c>CREATE_STOPPING</c>, <c>CREATE_STOPPED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
-        /// 
+        ///  <c>DELETE_PENDING</c>, <c>DELETE_IN_PROGRESS</c>, <c>DELETE_FAILED</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>Status</code> of the what-if forecast must be <code>ACTIVE</code> before
-        /// you can access the forecast.
+        /// The <c>Status</c> of the what-if forecast must be <c>ACTIVE</c> before you can access
+        /// the forecast.
         /// </para>
         ///  </note>
         /// </summary>
@@ -207,8 +205,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TimeSeriesReplacementsDataSource. 
         /// <para>
-        /// An array of <code>S3Config</code>, <code>Schema</code>, and <code>Format</code> elements
-        /// that describe the replacement time series.
+        /// An array of <c>S3Config</c>, <c>Schema</c>, and <c>Format</c> elements that describe
+        /// the replacement time series.
         /// </para>
         /// </summary>
         public TimeSeriesReplacementsDataSource TimeSeriesReplacementsDataSource
@@ -226,8 +224,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TimeSeriesTransformations. 
         /// <para>
-        /// An array of <code>Action</code> and <code>TimeSeriesConditions</code> elements that
-        /// describe what transformations were applied to which time series.
+        /// An array of <c>Action</c> and <c>TimeSeriesConditions</c> elements that describe what
+        /// transformations were applied to which time series.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]

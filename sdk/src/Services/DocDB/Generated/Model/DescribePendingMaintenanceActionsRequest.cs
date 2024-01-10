@@ -52,15 +52,15 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db-cluster-id</code> - Accepts cluster identifiers and cluster Amazon Resource
-        /// Names (ARNs). The results list includes only pending maintenance actions for the clusters
+        ///  <c>db-cluster-id</c> - Accepts cluster identifiers and cluster Amazon Resource Names
+        /// (ARNs). The results list includes only pending maintenance actions for the clusters
         /// identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-instance-id</code> - Accepts instance identifiers and instance ARNs. The
-        /// results list includes only pending maintenance actions for the DB instances identified
-        /// by these ARNs.
+        ///  <c>db-instance-id</c> - Accepts instance identifiers and instance ARNs. The results
+        /// list includes only pending maintenance actions for the DB instances identified by
+        /// these ARNs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -100,8 +100,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token (marker) is included
-        /// in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token (marker) is included in
+        /// the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>

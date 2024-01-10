@@ -45,7 +45,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The creation time of the subscription filter, expressed as the number of milliseconds
-        /// after <code>Jan 1, 1970 00:00:00 UTC</code>.
+        /// after <c>Jan 1, 1970 00:00:00 UTC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

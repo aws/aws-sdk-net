@@ -40,7 +40,7 @@ namespace Amazon.Account.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If there is more data to be returned, this will be populated. It should be passed
-        /// into the <code>next-token</code> request parameter of <code>list-regions</code>.
+        /// into the <c>next-token</c> request parameter of <c>list-regions</c>.
         /// </para>
         /// </summary>
         public string NextToken
@@ -59,7 +59,7 @@ namespace Amazon.Account.Model
         /// Gets and sets the property Regions. 
         /// <para>
         /// This is a list of Regions for a given account, or if the filtered parameter was used,
-        /// a list of Regions that match the filter criteria set in the <code>filter</code> parameter.
+        /// a list of Regions that match the filter criteria set in the <c>filter</c> parameter.
         /// </para>
         /// </summary>
         public List<Region> Regions

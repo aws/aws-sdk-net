@@ -46,7 +46,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Boolean. 
         /// <para>
         ///  The options for customizing a security control parameter that is a boolean. For a
-        /// boolean parameter, the options are <code>true</code> and <code>false</code>. 
+        /// boolean parameter, the options are <c>true</c> and <c>false</c>. 
         /// </para>
         /// </summary>
         public BooleanConfigurationOptions Boolean

@@ -42,12 +42,12 @@ namespace Amazon.SimpleEmailV2.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>FromEmailAddress</code>, <code>Destination</code>, and <code>Subject</code>
-    /// filters support partial match. A partial match is performed by using the <code>*</code>
-    /// wildcard character placed at the beginning (suffix match), the end (prefix match)
-    /// or both ends of the string (contains match). In order to match the literal characters
-    /// <code>*</code> or <code>\</code>, they must be escaped using the <code>\</code> character.
-    /// If no wildcard character is present, an exact match is performed. 
+    ///  <c>FromEmailAddress</c>, <c>Destination</c>, and <c>Subject</c> filters support partial
+    /// match. A partial match is performed by using the <c>*</c> wildcard character placed
+    /// at the beginning (suffix match), the end (prefix match) or both ends of the string
+    /// (contains match). In order to match the literal characters <c>*</c> or <c>\</c>, they
+    /// must be escaped using the <c>\</c> character. If no wildcard character is present,
+    /// an exact match is performed. 
     /// </para>
     /// </summary>
     public partial class MessageInsightsFilters
@@ -100,7 +100,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Isp. 
         /// <para>
-        /// The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).
+        /// The recipient's ISP (e.g., <c>Gmail</c>, <c>Yahoo</c>, etc.).
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -120,8 +120,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property LastDeliveryEvent. 
         /// <para>
         ///  The last delivery-related event for the email, where the ordering is as follows:
-        /// <code>SEND</code> &lt; <code>BOUNCE</code> &lt; <code>DELIVERY</code> &lt; <code>COMPLAINT</code>.
-        /// 
+        /// <c>SEND</c> &lt; <c>BOUNCE</c> &lt; <c>DELIVERY</c> &lt; <c>COMPLAINT</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -141,7 +140,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property LastEngagementEvent. 
         /// <para>
         ///  The last engagement-related event for the email, where the ordering is as follows:
-        /// <code>OPEN</code> &lt; <code>CLICK</code>. 
+        /// <c>OPEN</c> &lt; <c>CLICK</c>. 
         /// </para>
         ///  
         /// <para>

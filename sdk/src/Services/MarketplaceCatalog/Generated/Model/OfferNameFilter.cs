@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>Name</code> of an offer.
+    /// Allows filtering on the <c>Name</c> of an offer.
     /// </summary>
     public partial class OfferNameFilter
     {
@@ -39,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ValueList. 
         /// <para>
-        /// Allows filtering on the <code>Name</code> of an offer with list input.
+        /// Allows filtering on the <c>Name</c> of an offer with list input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -58,7 +58,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property WildCardValue. 
         /// <para>
-        /// Allows filtering on the <code>Name</code> of an offer with wild card input.
+        /// Allows filtering on the <c>Name</c> of an offer with wild card input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=150)]

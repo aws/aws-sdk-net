@@ -85,8 +85,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// Specifies that the currently supported file formats for EDI transformations are <code>JSON</code>
-        /// and <code>XML</code>.
+        /// Specifies that the currently supported file formats for EDI transformations are <c>JSON</c>
+        /// and <c>XML</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

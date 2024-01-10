@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The default values of the <code>IntegerParameterDeclaration</code>.
+    /// The default values of the <c>IntegerParameterDeclaration</c>.
     /// </summary>
     public partial class IntegerDefaultValues
     {
@@ -39,8 +39,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DynamicValue. 
         /// <para>
-        /// The dynamic value of the <code>IntegerDefaultValues</code>. Different defaults are
-        /// displayed according to users, groups, and values mapping.
+        /// The dynamic value of the <c>IntegerDefaultValues</c>. Different defaults are displayed
+        /// according to users, groups, and values mapping.
         /// </para>
         /// </summary>
         public DynamicDefaultValue DynamicValue
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property StaticValues. 
         /// <para>
-        /// The static values of the <code>IntegerDefaultValues</code>.
+        /// The static values of the <c>IntegerDefaultValues</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50000)]

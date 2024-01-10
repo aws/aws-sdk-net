@@ -42,8 +42,8 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returned by <a>ListRegexMatchSets</a>. Each <code>RegexMatchSetSummary</code> object
-    /// includes the <code>Name</code> and <code>RegexMatchSetId</code> for one <a>RegexMatchSet</a>.
+    /// Returned by <a>ListRegexMatchSets</a>. Each <c>RegexMatchSetSummary</c> object includes
+    /// the <c>Name</c> and <c>RegexMatchSetId</c> for one <a>RegexMatchSet</a>.
     /// </para>
     /// </summary>
     public partial class RegexMatchSetSummary
@@ -54,8 +54,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>RegexMatchSet</a>. You can't change <code>Name</code>
-        /// after you create a <code>RegexMatchSet</code>.
+        /// A friendly name or description of the <a>RegexMatchSet</a>. You can't change <c>Name</c>
+        /// after you create a <c>RegexMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -74,14 +74,14 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RegexMatchSetId. 
         /// <para>
-        /// The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use <code>RegexMatchSetId</code>
-        /// to get information about a <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>,
-        /// remove a <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a <code>RegexMatchSet</code>
-        /// from AWS WAF.
+        /// The <c>RegexMatchSetId</c> for a <c>RegexMatchSet</c>. You use <c>RegexMatchSetId</c>
+        /// to get information about a <c>RegexMatchSet</c>, update a <c>RegexMatchSet</c>, remove
+        /// a <c>RegexMatchSet</c> from a <c>Rule</c>, and delete a <c>RegexMatchSet</c> from
+        /// AWS WAF.
         /// </para>
         ///  
         /// <para>
-        ///  <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.
+        ///  <c>RegexMatchSetId</c> is returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

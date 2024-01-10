@@ -437,7 +437,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Accepts a transit gateway peering attachment request. The peering attachment must
-        /// be in the <code>pendingAcceptance</code> state.
+        /// be in the <c>pendingAcceptance</c> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptTransitGatewayPeeringAttachment service method.</param>
         /// <param name="cancellationToken">
@@ -475,7 +475,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
+        /// The VPC attachment must be in the <c>pendingAcceptance</c> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
         /// to view your pending VPC attachment requests. Use <a>RejectTransitGatewayVpcAttachment</a>
         /// to reject a VPC attachment request.
         /// </para>
@@ -547,9 +547,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Accept a VPC peering connection request. To accept a request, the VPC peering connection
-        /// must be in the <code>pending-acceptance</code> state, and you must be the owner of
-        /// the peer VPC. Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC
-        /// peering connection requests.
+        /// must be in the <c>pending-acceptance</c> state, and you must be the owner of the peer
+        /// VPC. Use <a>DescribeVpcPeeringConnections</a> to view your outstanding VPC peering
+        /// connection requests.
         /// 
         ///  
         /// <para>
@@ -955,7 +955,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Remapping an IP address is an asynchronous operation. When you move an IP address
-        /// from one network interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code>
+        /// from one network interface to another, check <c>network/interfaces/macs/mac/local-ipv4s</c>
         /// in the instance metadata to confirm that the remapping is complete.
         /// </para>
         ///  
@@ -1210,10 +1210,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To enable the IAM role to access the Amazon S3 object, you must grant it permission
-        /// to call <code>s3:GetObject</code> on the Amazon S3 bucket returned by the command.
-        /// To enable the IAM role to access the KMS key, you must grant it permission to call
-        /// <code>kms:Decrypt</code> on the KMS key returned by the command. For more information,
-        /// see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
+        /// to call <c>s3:GetObject</c> on the Amazon S3 bucket returned by the command. To enable
+        /// the IAM role to access the KMS key, you must grant it permission to call <c>kms:Decrypt</c>
+        /// on the KMS key returned by the command. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html#add-policy">
         /// Grant the role permission to access the certificate and encryption key</a> in the
         /// <i>Amazon Web Services Nitro Enclaves User Guide</i>.
         /// </para>
@@ -1657,9 +1656,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Before you create the association, run the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateNetworkInterface.html">create-network-interface</a>
-        /// command and set <code>--interface-type</code> to <code>trunk</code>. You must also
-        /// create a network interface for each branch network interface that you want to associate
-        /// with the trunk network interface.
+        /// command and set <c>--interface-type</c> to <c>trunk</c>. You must also create a network
+        /// interface for each branch network interface that you want to associate with the trunk
+        /// network interface.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrunkInterface service method.</param>
@@ -1751,9 +1750,9 @@ namespace Amazon.EC2
         /// <para>
         /// Links an EC2-Classic instance to a ClassicLink-enabled VPC through one or more of
         /// the VPC security groups. You cannot link an EC2-Classic instance to more than one
-        /// VPC at a time. You can only link an instance that's in the <code>running</code> state.
-        /// An instance is automatically unlinked from a VPC when it's stopped - you can link
-        /// it to the VPC again when you restart it.
+        /// VPC at a time. You can only link an instance that's in the <c>running</c> state. An
+        /// instance is automatically unlinked from a VPC when it's stopped - you can link it
+        /// to the VPC again when you restart it.
         /// </para>
         ///  
         /// <para>
@@ -2065,7 +2064,7 @@ namespace Amazon.EC2
         /// An outbound rule permits instances to send traffic to the specified IPv4 or IPv6 CIDR
         /// address ranges, or to the instances that are associated with the specified source
         /// security groups. When specifying an outbound rule for your security group in a VPC,
-        /// the <code>IpPermissions</code> must include a destination for the traffic.
+        /// the <c>IpPermissions</c> must include a destination for the traffic.
         /// </para>
         ///  
         /// <para>
@@ -2132,7 +2131,7 @@ namespace Amazon.EC2
         /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
         /// CIDR address range, or from the instances that are associated with the specified destination
         /// security groups. When specifying an inbound rule for your security group in a VPC,
-        /// the <code>IpPermissions</code> must include a source for the traffic.
+        /// the <c>IpPermissions</c> must include a source for the traffic.
         /// </para>
         ///  
         /// <para>
@@ -2264,7 +2263,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Cancels the specified Capacity Reservation, releases the reserved capacity, and changes
-        /// the Capacity Reservation's state to <code>cancelled</code>.
+        /// the Capacity Reservation's state to <c>cancelled</c>.
         /// 
         ///  
         /// <para>
@@ -2312,7 +2311,7 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// The Capacity Reservation Fleet's status changes to <code>cancelled</code>.
+        /// The Capacity Reservation Fleet's status changes to <c>cancelled</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2557,10 +2556,10 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must also specify whether a canceled Spot Fleet request should terminate its instances.
-        /// If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code>
-        /// state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code>
-        /// state and the instances continue to run until they are interrupted or you terminate
-        /// them manually.
+        /// If you choose to terminate the instances, the Spot Fleet request enters the <c>cancelled_terminating</c>
+        /// state. Otherwise, the Spot Fleet request enters the <c>cancelled_running</c> state
+        /// and the instances continue to run until they are interrupted or you terminate them
+        /// manually.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSpotFleetRequests service method.</param>
@@ -2716,8 +2715,8 @@ namespace Amazon.EC2
         /// To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b>
         /// parameter, and specify the destination Region using its endpoint. Copies of encrypted
         /// backing snapshots for the AMI are encrypted. Copies of unencrypted backing snapshots
-        /// remain unencrypted, unless you set <code>Encrypted</code> during the copy operation.
-        /// You cannot create an unencrypted copy of an encrypted backing snapshot.
+        /// remain unencrypted, unless you set <c>Encrypted</c> during the copy operation. You
+        /// cannot create an unencrypted copy of an encrypted backing snapshot.
         /// </para>
         ///  
         /// <para>
@@ -3164,9 +3163,9 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified
-        /// Availability Zone in your default VPC. You can have only one default subnet per Availability
-        /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
+        /// Creates a default subnet with a size <c>/20</c> IPv4 CIDR block in the specified Availability
+        /// Zone in your default VPC. You can have only one default subnet per Availability Zone.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
         /// a default subnet</a> in the <i>Amazon VPC User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDefaultSubnet service method.</param>
@@ -3201,7 +3200,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet
+        /// Creates a default VPC with a size <c>/16</c> IPv4 CIDR block and a default subnet
         /// in each Availability Zone. For more information about the components of a default
         /// VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default
         /// VPCs</a> in the <i>Amazon VPC User Guide</i>. You cannot specify the components of
@@ -3253,48 +3252,46 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>domain-name-servers</code> - The IP addresses of up to four domain name servers,
+        ///  <c>domain-name-servers</c> - The IP addresses of up to four domain name servers,
         /// or AmazonProvidedDNS. The default DHCP option set specifies AmazonProvidedDNS. If
         /// specifying more than one domain name server, specify the IP addresses in a single
         /// parameter, separated by commas. To have your instance receive a custom DNS hostname
-        /// as specified in <code>domain-name</code>, you must set <code>domain-name-servers</code>
-        /// to a custom DNS server.
+        /// as specified in <c>domain-name</c>, you must set <c>domain-name-servers</c> to a custom
+        /// DNS server.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>domain-name</code> - If you're using AmazonProvidedDNS in <code>us-east-1</code>,
-        /// specify <code>ec2.internal</code>. If you're using AmazonProvidedDNS in another Region,
-        /// specify <code>region.compute.internal</code> (for example, <code>ap-northeast-1.compute.internal</code>).
-        /// Otherwise, specify a domain name (for example, <code>ExampleCompany.com</code>). This
-        /// value is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux
-        /// operating systems accept multiple domain names separated by spaces. However, Windows
-        /// and other Linux operating systems treat the value as a single domain, which results
-        /// in unexpected behavior. If your DHCP options set is associated with a VPC that has
-        /// instances with multiple operating systems, specify only one domain name.
+        ///  <c>domain-name</c> - If you're using AmazonProvidedDNS in <c>us-east-1</c>, specify
+        /// <c>ec2.internal</c>. If you're using AmazonProvidedDNS in another Region, specify
+        /// <c>region.compute.internal</c> (for example, <c>ap-northeast-1.compute.internal</c>).
+        /// Otherwise, specify a domain name (for example, <c>ExampleCompany.com</c>). This value
+        /// is used to complete unqualified DNS hostnames. <b>Important</b>: Some Linux operating
+        /// systems accept multiple domain names separated by spaces. However, Windows and other
+        /// Linux operating systems treat the value as a single domain, which results in unexpected
+        /// behavior. If your DHCP options set is associated with a VPC that has instances with
+        /// multiple operating systems, specify only one domain name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ntp-servers</code> - The IP addresses of up to four Network Time Protocol (NTP)
-        /// servers.
+        ///  <c>ntp-servers</c> - The IP addresses of up to four Network Time Protocol (NTP) servers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>netbios-name-servers</code> - The IP addresses of up to four NetBIOS name servers.
+        ///  <c>netbios-name-servers</c> - The IP addresses of up to four NetBIOS name servers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>netbios-node-type</code> - The NetBIOS node type (1, 2, 4, or 8). We recommend
-        /// that you specify 2 (broadcast and multicast are not currently supported). For more
-        /// information about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC
-        /// 2132</a>.
+        ///  <c>netbios-node-type</c> - The NetBIOS node type (1, 2, 4, or 8). We recommend that
+        /// you specify 2 (broadcast and multicast are not currently supported). For more information
+        /// about these node types, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Your VPC automatically starts out with a set of DHCP options that includes only a
         /// DNS server that we provide (AmazonProvidedDNS). If you create a set of options, and
-        /// if your VPC has an internet gateway, make sure to set the <code>domain-name-servers</code>
-        /// option either to <code>AmazonProvidedDNS</code> or to a domain name server of your
-        /// choice. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
+        /// if your VPC has an internet gateway, make sure to set the <c>domain-name-servers</c>
+        /// option either to <c>AmazonProvidedDNS</c> or to a domain name server of your choice.
+        /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_DHCP_Options.html">DHCP
         /// options sets</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
@@ -4117,11 +4114,11 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LocalGatewayVirtualInterfaceGroupId</code> 
+        ///  <c>LocalGatewayVirtualInterfaceGroupId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetworkInterfaceId</code> 
+        ///  <c>NetworkInterfaceId</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4635,9 +4632,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// A <code>cluster</code> placement group is a logical grouping of instances within a
-        /// single Availability Zone that benefit from low network latency, high network throughput.
-        /// A <code>spread</code> placement group places instances on distinct hardware. A <code>partition</code>
+        /// A <c>cluster</c> placement group is a logical grouping of instances within a single
+        /// Availability Zone that benefit from low network latency, high network throughput.
+        /// A <c>spread</c> placement group places instances on distinct hardware. A <c>partition</c>
         /// placement group places groups of instances in different partitions, where instances
         /// in one partition do not share the same hardware with instances in another partition.
         /// </para>
@@ -4716,10 +4713,10 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Replaces the EBS-backed root volume for a <code>running</code> instance with a new
-        /// volume that is restored to the original root volume's launch state, that is restored
-        /// to a specific snapshot taken from the original root volume, or that is restored from
-        /// an AMI that has the same key characteristics as that of the instance.
+        /// Replaces the EBS-backed root volume for a <c>running</c> instance with a new volume
+        /// that is restored to the original root volume's launch state, that is restored to a
+        /// specific snapshot taken from the original root volume, or that is restored from an
+        /// AMI that has the same key characteristics as that of the instance.
         /// 
         ///  
         /// <para>
@@ -4881,22 +4878,22 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// When determining how to route traffic, we use the route with the most specific match.
-        /// For example, traffic is destined for the IPv4 address <code>192.0.2.3</code>, and
-        /// the route table includes the following two IPv4 routes:
+        /// For example, traffic is destined for the IPv4 address <c>192.0.2.3</c>, and the route
+        /// table includes the following two IPv4 routes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>192.0.2.0/24</code> (goes to some target A)
+        ///  <c>192.0.2.0/24</c> (goes to some target A)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>192.0.2.0/28</code> (goes to some target B)
+        ///  <c>192.0.2.0/28</c> (goes to some target B)
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Both routes apply to the traffic destined for <code>192.0.2.3</code>. However, the
-        /// second route in the list covers a smaller number of IP addresses and is therefore
-        /// more specific, so we use that route to determine where to target the traffic.
+        /// Both routes apply to the traffic destined for <c>192.0.2.3</c>. However, the second
+        /// route in the list covers a smaller number of IP addresses and is therefore more specific,
+        /// so we use that route to determine where to target the traffic.
         /// </para>
         ///  
         /// <para>
@@ -5068,7 +5065,7 @@ namespace Amazon.EC2
         /// all file writes to the volume, you should unmount the volume from within the instance,
         /// issue the snapshot command, and then remount the volume to ensure a consistent and
         /// complete snapshot. You may remount and use your volume while the snapshot status is
-        /// <code>pending</code>.
+        /// <c>pending</c>.
         /// </para>
         ///  
         /// <para>
@@ -5610,8 +5607,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can use a transit gateway to interconnect your virtual private clouds (VPC) and
-        /// on-premises networks. After the transit gateway enters the <code>available</code>
-        /// state, you can attach your VPCs and VPN connections to the transit gateway.
+        /// on-premises networks. After the transit gateway enters the <c>available</c> state,
+        /// you can attach your VPCs and VPN connections to the transit gateway.
         /// </para>
         ///  
         /// <para>
@@ -6475,7 +6472,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you create a VPC peering connection request between VPCs with overlapping CIDR
-        /// blocks, the VPC peering connection has a status of <code>failed</code>.
+        /// blocks, the VPC peering connection has a status of <c>failed</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVpcPeeringConnection service method.</param>
@@ -6511,7 +6508,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates a VPN connection between an existing virtual private gateway or transit gateway
-        /// and a customer gateway. The supported connection type is <code>ipsec.1</code>.
+        /// and a customer gateway. The supported connection type is <c>ipsec.1</c>.
         /// 
         ///  
         /// <para>
@@ -6955,14 +6952,14 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You must also specify whether a deleted EC2 Fleet should terminate its instances.
-        /// If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code>
-        /// state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and
-        /// the instances continue to run until they are interrupted or you terminate them manually.
+        /// If you choose to terminate the instances, the EC2 Fleet enters the <c>deleted_terminating</c>
+        /// state. Otherwise, the EC2 Fleet enters the <c>deleted_running</c> state, and the instances
+        /// continue to run until they are interrupted or you terminate them manually.
         /// </para>
         ///  
         /// <para>
-        /// For <code>instant</code> fleets, EC2 Fleet must terminate the instances when the fleet
-        /// is deleted. A deleted <code>instant</code> fleet with running instances is not supported.
+        /// For <c>instant</c> fleets, EC2 Fleet must terminate the instances when the fleet is
+        /// deleted. A deleted <c>instant</c> fleet with running instances is not supported.
         /// </para>
         ///  
         /// <para>
@@ -6970,14 +6967,14 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can delete up to 25 <code>instant</code> fleets in a single request. If you exceed
-        /// this number, no <code>instant</code> fleets are deleted and an error is returned.
-        /// There is no restriction on the number of fleets of type <code>maintain</code> or <code>request</code>
-        /// that can be deleted in a single request.
+        /// You can delete up to 25 <c>instant</c> fleets in a single request. If you exceed this
+        /// number, no <c>instant</c> fleets are deleted and an error is returned. There is no
+        /// restriction on the number of fleets of type <c>maintain</c> or <c>request</c> that
+        /// can be deleted in a single request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Up to 1000 instances can be terminated in a single request to delete <code>instant</code>
+        /// Up to 1000 instances can be terminated in a single request to delete <c>instant</c>
         /// fleets.
         /// </para>
         ///  </li> </ul> 
@@ -8140,7 +8137,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you attempt to delete a security group that is associated with an instance or network
-        /// interface or is referenced by another security group, the operation fails with <code>DependencyViolation</code>.
+        /// interface or is referenced by another security group, the operation fails with <c>DependencyViolation</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSecurityGroup service method.</param>
@@ -9050,12 +9047,12 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified EBS volume. The volume must be in the <code>available</code>
-        /// state (not attached to an instance).
+        /// Deletes the specified EBS volume. The volume must be in the <c>available</c> state
+        /// (not attached to an instance).
         /// 
         ///  
         /// <para>
-        /// The volume can remain in the <code>deleting</code> state for several minutes.
+        /// The volume can remain in the <c>deleting</c> state for several minutes.
         /// </para>
         ///  
         /// <para>
@@ -9219,7 +9216,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes the specified VPC endpoint service configurations. Before you can delete an
-        /// endpoint service configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code>
+        /// endpoint service configuration, you must reject any <c>Available</c> or <c>PendingAcceptance</c>
         /// interface endpoint connections that are attached to the service.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcEndpointServiceConfigurations service method.</param>
@@ -9255,10 +9252,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes a VPC peering connection. Either the owner of the requester VPC or the owner
-        /// of the accepter VPC can delete the VPC peering connection if it's in the <code>active</code>
-        /// state. The owner of the requester VPC can delete a VPC peering connection in the <code>pending-acceptance</code>
-        /// state. You cannot delete a VPC peering connection that's in the <code>failed</code>
-        /// or <code>rejected</code> state.
+        /// of the accepter VPC can delete the VPC peering connection if it's in the <c>active</c>
+        /// state. The owner of the requester VPC can delete a VPC peering connection in the <c>pending-acceptance</c>
+        /// state. You cannot delete a VPC peering connection that's in the <c>failed</c> or <c>rejected</c>
+        /// state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVpcPeeringConnection service method.</param>
         /// <param name="cancellationToken">
@@ -9735,33 +9732,32 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        ///  <c>default-vpc</c>: The ID of the default VPC for your account, or <c>none</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-instances</code>: This attribute is no longer supported. The returned value
-        /// does not reflect your actual vCPU limit for running On-Demand Instances. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits">On-Demand
+        ///  <c>max-instances</c>: This attribute is no longer supported. The returned value does
+        /// not reflect your actual vCPU limit for running On-Demand Instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits">On-Demand
         /// Instance Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate.
+        ///  <c>max-elastic-ips</c>: The maximum number of Elastic IP addresses that you can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: This attribute is deprecated.
+        ///  <c>supported-platforms</c>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate.
+        ///  <c>vpc-max-elastic-ips</c>: The maximum number of Elastic IP addresses that you can
+        /// allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <c>vpc-max-security-groups-per-interface</c>: The maximum number of security groups
+        /// that you can assign to a network interface.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9784,33 +9780,32 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
+        ///  <c>default-vpc</c>: The ID of the default VPC for your account, or <c>none</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-instances</code>: This attribute is no longer supported. The returned value
-        /// does not reflect your actual vCPU limit for running On-Demand Instances. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits">On-Demand
+        ///  <c>max-instances</c>: This attribute is no longer supported. The returned value does
+        /// not reflect your actual vCPU limit for running On-Demand Instances. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-on-demand-instances.html#ec2-on-demand-instances-limits">On-Demand
         /// Instance Limits</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate.
+        ///  <c>max-elastic-ips</c>: The maximum number of Elastic IP addresses that you can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: This attribute is deprecated.
+        ///  <c>supported-platforms</c>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate.
+        ///  <c>vpc-max-elastic-ips</c>: The maximum number of Elastic IP addresses that you can
+        /// allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <c>vpc-max-security-groups-per-interface</c>: The maximum number of security groups
+        /// that you can assign to a network interface.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -9991,17 +9986,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
-        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
-        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
-        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
-        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
-        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
-        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
-        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
-        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
-        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
-        /// | <code>vpn-gateway</code>.
+        /// The following resource types support longer IDs: <c>bundle</c> | <c>conversion-task</c>
+        /// | <c>customer-gateway</c> | <c>dhcp-options</c> | <c>elastic-ip-allocation</c> | <c>elastic-ip-association</c>
+        /// | <c>export-task</c> | <c>flow-log</c> | <c>image</c> | <c>import-task</c> | <c>instance</c>
+        /// | <c>internet-gateway</c> | <c>network-acl</c> | <c>network-acl-association</c> |
+        /// <c>network-interface</c> | <c>network-interface-attachment</c> | <c>prefix-list</c>
+        /// | <c>reservation</c> | <c>route-table</c> | <c>route-table-association</c> | <c>security-group</c>
+        /// | <c>snapshot</c> | <c>subnet</c> | <c>subnet-cidr-block-association</c> | <c>volume</c>
+        /// | <c>vpc</c> | <c>vpc-cidr-block-association</c> | <c>vpc-endpoint</c> | <c>vpc-peering-connection</c>
+        /// | <c>vpn-connection</c> | <c>vpn-gateway</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAggregateIdFormat service method.</param>
@@ -10149,7 +10142,7 @@ namespace Amazon.EC2
         ///  <note> 
         /// <para>
         /// Completed bundle tasks are listed for only a limited time. If your bundle task is
-        /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
+        /// no longer in the list, you can still register an AMI from it. Just use <c>RegisterImage</c>
         /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
         /// task.
         /// </para>
@@ -10174,7 +10167,7 @@ namespace Amazon.EC2
         ///  <note> 
         /// <para>
         /// Completed bundle tasks are listed for only a limited time. If your bundle task is
-        /// no longer in the list, you can still register an AMI from it. Just use <code>RegisterImage</code>
+        /// no longer in the list, you can still register an AMI from it. Just use <c>RegisterImage</c>
         /// with the Amazon S3 bucket name and image manifest name you provided to the bundle
         /// task.
         /// </para>
@@ -11386,7 +11379,7 @@ namespace Amazon.EC2
         /// <para>
         /// The results describe only the Dedicated Hosts in the Region you're currently using.
         /// All listed instances consume capacity on your Dedicated Host. Dedicated Hosts that
-        /// have recently been released are listed with the state <code>released</code>.
+        /// have recently been released are listed with the state <c>released</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHosts service method.</param>
@@ -11464,17 +11457,15 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
-        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
-        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
-        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
-        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
-        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
-        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
-        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
-        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
-        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
-        /// | <code>vpn-gateway</code>. 
+        /// The following resource types support longer IDs: <c>bundle</c> | <c>conversion-task</c>
+        /// | <c>customer-gateway</c> | <c>dhcp-options</c> | <c>elastic-ip-allocation</c> | <c>elastic-ip-association</c>
+        /// | <c>export-task</c> | <c>flow-log</c> | <c>image</c> | <c>import-task</c> | <c>instance</c>
+        /// | <c>internet-gateway</c> | <c>network-acl</c> | <c>network-acl-association</c> |
+        /// <c>network-interface</c> | <c>network-interface-attachment</c> | <c>prefix-list</c>
+        /// | <c>reservation</c> | <c>route-table</c> | <c>route-table-association</c> | <c>security-group</c>
+        /// | <c>snapshot</c> | <c>subnet</c> | <c>subnet-cidr-block-association</c> | <c>volume</c>
+        /// | <c>vpc</c> | <c>vpc-cidr-block-association</c> | <c>vpc-endpoint</c> | <c>vpc-peering-connection</c>
+        /// | <c>vpn-connection</c> | <c>vpn-gateway</c>. 
         /// </para>
         ///  
         /// <para>
@@ -11521,17 +11512,15 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
-        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
-        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
-        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
-        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
-        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
-        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
-        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
-        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
-        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
-        /// | <code>vpn-gateway</code>. 
+        /// The following resource types support longer IDs: <c>bundle</c> | <c>conversion-task</c>
+        /// | <c>customer-gateway</c> | <c>dhcp-options</c> | <c>elastic-ip-allocation</c> | <c>elastic-ip-association</c>
+        /// | <c>export-task</c> | <c>flow-log</c> | <c>image</c> | <c>import-task</c> | <c>instance</c>
+        /// | <c>internet-gateway</c> | <c>network-acl</c> | <c>network-acl-association</c> |
+        /// <c>network-interface</c> | <c>network-interface-attachment</c> | <c>prefix-list</c>
+        /// | <c>reservation</c> | <c>route-table</c> | <c>route-table-association</c> | <c>security-group</c>
+        /// | <c>snapshot</c> | <c>subnet</c> | <c>subnet-cidr-block-association</c> | <c>volume</c>
+        /// | <c>vpc</c> | <c>vpc-cidr-block-association</c> | <c>vpc-endpoint</c> | <c>vpc-peering-connection</c>
+        /// | <c>vpn-connection</c> | <c>vpn-gateway</c>. 
         /// </para>
         ///  
         /// <para>
@@ -11539,7 +11528,7 @@ namespace Amazon.EC2
         /// entire Amazon Web Services account. By default, an IAM user defaults to the same settings
         /// as the root user, unless they explicitly override the settings by running the <a>ModifyIdFormat</a>
         /// command. Resources created with longer IDs are visible to all IAM users, regardless
-        /// of these settings and provided that they have permission to use the relevant <code>Describe</code>
+        /// of these settings and provided that they have permission to use the relevant <c>Describe</c>
         /// command for the resource type.
         /// </para>
         /// </summary>
@@ -11763,11 +11752,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the specified attribute of the specified instance. You can specify only
-        /// one attribute at a time. Valid attribute values are: <code>instanceType</code> | <code>kernel</code>
-        /// | <code>ramdisk</code> | <code>userData</code> | <code>disableApiTermination</code>
-        /// | <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> | <code>blockDeviceMapping</code>
-        /// | <code>productCodes</code> | <code>sourceDestCheck</code> | <code>groupSet</code>
-        /// | <code>ebsOptimized</code> | <code>sriovNetSupport</code>
+        /// one attribute at a time. Valid attribute values are: <c>instanceType</c> | <c>kernel</c>
+        /// | <c>ramdisk</c> | <c>userData</c> | <c>disableApiTermination</c> | <c>instanceInitiatedShutdownBehavior</c>
+        /// | <c>rootDeviceName</c> | <c>blockDeviceMapping</c> | <c>productCodes</c> | <c>sourceDestCheck</c>
+        /// | <c>groupSet</c> | <c>ebsOptimized</c> | <c>sriovNetSupport</c>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeInstanceAttribute service method.</param>
         /// <param name="cancellationToken">
@@ -11837,22 +11825,22 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes the credit option for CPU usage of the specified burstable performance instances.
-        /// The credit options are <code>standard</code> and <code>unlimited</code>.
+        /// The credit options are <c>standard</c> and <c>unlimited</c>.
         /// 
         ///  
         /// <para>
         /// If you do not specify an instance ID, Amazon EC2 returns burstable performance instances
-        /// with the <code>unlimited</code> credit option, as well as instances that were previously
-        /// configured as T2, T3, and T3a with the <code>unlimited</code> credit option. For example,
-        /// if you resize a T2 instance, while it is configured as <code>unlimited</code>, to
-        /// an M4 instance, Amazon EC2 returns the M4 instance.
+        /// with the <c>unlimited</c> credit option, as well as instances that were previously
+        /// configured as T2, T3, and T3a with the <c>unlimited</c> credit option. For example,
+        /// if you resize a T2 instance, while it is configured as <c>unlimited</c>, to an M4
+        /// instance, Amazon EC2 returns the M4 instance.
         /// </para>
         ///  
         /// <para>
-        /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<code>standard</code>
-        /// or <code>unlimited</code>) of those instances. If you specify an instance ID that
-        /// is not valid, such as an instance that is not a burstable performance instance, an
-        /// error is returned.
+        /// If you specify one or more instance IDs, Amazon EC2 returns the credit option (<c>standard</c>
+        /// or <c>unlimited</c>) of those instances. If you specify an instance ID that is not
+        /// valid, such as an instance that is not a burstable performance instance, an error
+        /// is returned.
         /// </para>
         ///  
         /// <para>
@@ -12230,20 +12218,18 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>hpc6a.48xlarge</code> | <code>hpc6id.32xlarge</code> | <code>hpc7a.12xlarge</code>
-        /// | <code>hpc7a.24xlarge</code> | <code>hpc7a.48xlarge</code> | <code>hpc7a.96xlarge</code>
-        /// | <code>hpc7g.4xlarge</code> | <code>hpc7g.8xlarge</code> | <code>hpc7g.16xlarge</code>
+        ///  <c>hpc6a.48xlarge</c> | <c>hpc6id.32xlarge</c> | <c>hpc7a.12xlarge</c> | <c>hpc7a.24xlarge</c>
+        /// | <c>hpc7a.48xlarge</c> | <c>hpc7a.96xlarge</c> | <c>hpc7g.4xlarge</c> | <c>hpc7g.8xlarge</c>
+        /// | <c>hpc7g.16xlarge</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>p3dn.24xlarge</c> | <c>p4d.24xlarge</c> | <c>p4de.24xlarge</c> | <c>p5.48xlarge</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>p3dn.24xlarge</code> | <code>p4d.24xlarge</code> | <code>p4de.24xlarge</code>
-        /// | <code>p5.48xlarge</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>trn1.2xlarge</code> | <code>trn1.32xlarge</code> | <code>trn1n.32xlarge</code>
-        /// 
+        ///  <c>trn1.2xlarge</c> | <c>trn1.32xlarge</c> | <c>trn1n.32xlarge</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -13424,9 +13410,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
-        /// pagination or one of the following filters: <code>group-id</code>, <code>mac-address</code>,
-        /// <code>private-dns-name</code>, <code>private-ip-address</code>, <code>private-dns-name</code>,
-        /// <code>subnet-id</code>, or <code>vpc-id</code>.
+        /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
+        /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -13448,9 +13433,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you have a large number of network interfaces, the operation fails unless you use
-        /// pagination or one of the following filters: <code>group-id</code>, <code>mac-address</code>,
-        /// <code>private-dns-name</code>, <code>private-ip-address</code>, <code>private-dns-name</code>,
-        /// <code>subnet-id</code>, or <code>vpc-id</code>.
+        /// pagination or one of the following filters: <c>group-id</c>, <c>mac-address</c>, <c>private-dns-name</c>,
+        /// <c>private-ip-address</c>, <c>private-dns-name</c>, <c>subnet-id</c>, or <c>vpc-id</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNetworkInterfaces service method.</param>
@@ -13594,17 +13578,15 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// The following resource types support longer IDs: <code>bundle</code> | <code>conversion-task</code>
-        /// | <code>customer-gateway</code> | <code>dhcp-options</code> | <code>elastic-ip-allocation</code>
-        /// | <code>elastic-ip-association</code> | <code>export-task</code> | <code>flow-log</code>
-        /// | <code>image</code> | <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
-        /// | <code>network-acl</code> | <code>network-acl-association</code> | <code>network-interface</code>
-        /// | <code>network-interface-attachment</code> | <code>prefix-list</code> | <code>reservation</code>
-        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
-        /// | <code>snapshot</code> | <code>subnet</code> | <code>subnet-cidr-block-association</code>
-        /// | <code>volume</code> | <code>vpc</code> | <code>vpc-cidr-block-association</code>
-        /// | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> | <code>vpn-connection</code>
-        /// | <code>vpn-gateway</code>. 
+        /// The following resource types support longer IDs: <c>bundle</c> | <c>conversion-task</c>
+        /// | <c>customer-gateway</c> | <c>dhcp-options</c> | <c>elastic-ip-allocation</c> | <c>elastic-ip-association</c>
+        /// | <c>export-task</c> | <c>flow-log</c> | <c>image</c> | <c>import-task</c> | <c>instance</c>
+        /// | <c>internet-gateway</c> | <c>network-acl</c> | <c>network-acl-association</c> |
+        /// <c>network-interface</c> | <c>network-interface-attachment</c> | <c>prefix-list</c>
+        /// | <c>reservation</c> | <c>route-table</c> | <c>route-table-association</c> | <c>security-group</c>
+        /// | <c>snapshot</c> | <c>subnet</c> | <c>subnet-cidr-block-association</c> | <c>volume</c>
+        /// | <c>vpc</c> | <c>vpc-cidr-block-association</c> | <c>vpc-endpoint</c> | <c>vpc-peering-connection</c>
+        /// | <c>vpn-connection</c> | <c>vpn-gateway</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePrincipalIdFormat service method.</param>
@@ -14450,8 +14432,8 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
-        /// volume permissions for these snapshots.
+        /// snapshot to the <c>all</c> group. All Amazon Web Services accounts have create volume
+        /// permissions for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14478,18 +14460,17 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
-        /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the Amazon Web Services account IDs of the specified owners,
-        /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
-        /// that you own.
+        /// If you specify one or more snapshot owners using the <c>OwnerIds</c> option, only
+        /// snapshots from the specified owners and for which you have access are returned. The
+        /// results can include the Amazon Web Services account IDs of the specified owners, <c>amazon</c>
+        /// for snapshots owned by Amazon, or <c>self</c> for snapshots that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
         /// for those users are returned. You can specify Amazon Web Services account IDs (if
-        /// you own the snapshots), <code>self</code> for snapshots for which you own or have
-        /// explicit permissions, or <code>all</code> for public snapshots.
+        /// you own the snapshots), <c>self</c> for snapshots for which you own or have explicit
+        /// permissions, or <c>all</c> for public snapshots.
         /// </para>
         ///  
         /// <para>
@@ -14536,8 +14517,8 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         ///  <i>public</i>: The owner of the snapshot granted create volume permissions for the
-        /// snapshot to the <code>all</code> group. All Amazon Web Services accounts have create
-        /// volume permissions for these snapshots.
+        /// snapshot to the <c>all</c> group. All Amazon Web Services accounts have create volume
+        /// permissions for these snapshots.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -14564,18 +14545,17 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you specify one or more snapshot owners using the <code>OwnerIds</code> option,
-        /// only snapshots from the specified owners and for which you have access are returned.
-        /// The results can include the Amazon Web Services account IDs of the specified owners,
-        /// <code>amazon</code> for snapshots owned by Amazon, or <code>self</code> for snapshots
-        /// that you own.
+        /// If you specify one or more snapshot owners using the <c>OwnerIds</c> option, only
+        /// snapshots from the specified owners and for which you have access are returned. The
+        /// results can include the Amazon Web Services account IDs of the specified owners, <c>amazon</c>
+        /// for snapshots owned by Amazon, or <c>self</c> for snapshots that you own.
         /// </para>
         ///  
         /// <para>
         /// If you specify a list of restorable users, only snapshots with create snapshot permissions
         /// for those users are returned. You can specify Amazon Web Services account IDs (if
-        /// you own the snapshots), <code>self</code> for snapshots for which you own or have
-        /// explicit permissions, or <code>all</code> for public snapshots.
+        /// you own the snapshots), <c>self</c> for snapshots for which you own or have explicit
+        /// permissions, or <c>all</c> for public snapshots.
         /// </para>
         ///  
         /// <para>
@@ -14840,20 +14820,20 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
-        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
-        /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
-        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
+        /// You can use <c>DescribeSpotInstanceRequests</c> to find a running Spot Instance by
+        /// examining the response. If the status of the Spot Instance is <c>fulfilled</c>, the
+        /// instance ID appears in the response and contains the identifier of the instance. Alternatively,
+        /// you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <c>spot</c>.
         /// </para>
         ///  
         /// <para>
-        /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
-        /// limit the number of items returned. This paginates the output, which makes the list
-        /// more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code>
-        /// value, then that number of items is returned along with a <code>NextToken</code> value
-        /// that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
-        /// to retrieve the remaining items.
+        /// We recommend that you set <c>MaxResults</c> to a value between 5 and 1000 to limit
+        /// the number of items returned. This paginates the output, which makes the list more
+        /// manageable and returns the items faster. If the list of items exceeds your <c>MaxResults</c>
+        /// value, then that number of items is returned along with a <c>NextToken</c> value that
+        /// can be passed to a subsequent <c>DescribeSpotInstanceRequests</c> request to retrieve
+        /// the remaining items.
         /// </para>
         ///  
         /// <para>
@@ -14879,20 +14859,20 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can use <code>DescribeSpotInstanceRequests</code> to find a running Spot Instance
-        /// by examining the response. If the status of the Spot Instance is <code>fulfilled</code>,
-        /// the instance ID appears in the response and contains the identifier of the instance.
-        /// Alternatively, you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
-        /// with a filter to look for instances where the instance lifecycle is <code>spot</code>.
+        /// You can use <c>DescribeSpotInstanceRequests</c> to find a running Spot Instance by
+        /// examining the response. If the status of the Spot Instance is <c>fulfilled</c>, the
+        /// instance ID appears in the response and contains the identifier of the instance. Alternatively,
+        /// you can use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances">DescribeInstances</a>
+        /// with a filter to look for instances where the instance lifecycle is <c>spot</c>.
         /// </para>
         ///  
         /// <para>
-        /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
-        /// limit the number of items returned. This paginates the output, which makes the list
-        /// more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code>
-        /// value, then that number of items is returned along with a <code>NextToken</code> value
-        /// that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
-        /// to retrieve the remaining items.
+        /// We recommend that you set <c>MaxResults</c> to a value between 5 and 1000 to limit
+        /// the number of items returned. This paginates the output, which makes the list more
+        /// manageable and returns the items faster. If the list of items exceeds your <c>MaxResults</c>
+        /// value, then that number of items is returned along with a <c>NextToken</c> value that
+        /// can be passed to a subsequent <c>DescribeSpotInstanceRequests</c> request to retrieve
+        /// the remaining items.
         /// </para>
         ///  
         /// <para>
@@ -15047,9 +15027,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// For each AMI task, the response indicates if the task is <code>InProgress</code>,
-        /// <code>Completed</code>, or <code>Failed</code>. For tasks <code>InProgress</code>,
-        /// the response shows the estimated progress as a percentage.
+        /// For each AMI task, the response indicates if the task is <c>InProgress</c>, <c>Completed</c>,
+        /// or <c>Failed</c>. For tasks <c>InProgress</c>, the response shows the estimated progress
+        /// as a percentage.
         /// </para>
         ///  
         /// <para>
@@ -16060,40 +16040,40 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The <code>DescribeVolumeStatus</code> operation provides the following information
-        /// about the specified volumes:
+        /// The <c>DescribeVolumeStatus</c> operation provides the following information about
+        /// the specified volumes:
         /// </para>
         ///  
         /// <para>
         ///  <i>Status</i>: Reflects the current status of the volume. The possible values are
-        /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
-        /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
-        /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
-        /// then the checks might still be taking place on your volume at the time. We recommend
-        /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
+        /// <c>ok</c>, <c>impaired</c> , <c>warning</c>, or <c>insufficient-data</c>. If all checks
+        /// pass, the overall status of the volume is <c>ok</c>. If the check fails, the overall
+        /// status is <c>impaired</c>. If the status is <c>insufficient-data</c>, then the checks
+        /// might still be taking place on your volume at the time. We recommend that you retry
+        /// the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
         /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         ///  <i>Events</i>: Reflect the cause of a volume status and might require you to take
-        /// action. For example, if your volume returns an <code>impaired</code> status, then
-        /// the volume event might be <code>potential-data-inconsistency</code>. This means that
-        /// your volume has been affected by an issue with the underlying host, has all I/O operations
-        /// disabled, and might have inconsistent data.
+        /// action. For example, if your volume returns an <c>impaired</c> status, then the volume
+        /// event might be <c>potential-data-inconsistency</c>. This means that your volume has
+        /// been affected by an issue with the underlying host, has all I/O operations disabled,
+        /// and might have inconsistent data.
         /// </para>
         ///  
         /// <para>
         ///  <i>Actions</i>: Reflect the actions you might have to take in response to an event.
-        /// For example, if the status of the volume is <code>impaired</code> and the volume event
-        /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
+        /// For example, if the status of the volume is <c>impaired</c> and the volume event shows
+        /// <c>potential-data-inconsistency</c>, then the action shows <c>enable-volume-io</c>.
         /// This means that you may want to enable the I/O operations for the volume by calling
         /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
         /// </para>
         ///  
         /// <para>
         /// Volume status is based on the volume status checks, and does not reflect the volume
-        /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
-        /// state (for example, when a volume is incapable of accepting I/O.)
+        /// state. Therefore, volume status does not indicate volumes in the <c>error</c> state
+        /// (for example, when a volume is incapable of accepting I/O.)
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -16120,40 +16100,40 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The <code>DescribeVolumeStatus</code> operation provides the following information
-        /// about the specified volumes:
+        /// The <c>DescribeVolumeStatus</c> operation provides the following information about
+        /// the specified volumes:
         /// </para>
         ///  
         /// <para>
         ///  <i>Status</i>: Reflects the current status of the volume. The possible values are
-        /// <code>ok</code>, <code>impaired</code> , <code>warning</code>, or <code>insufficient-data</code>.
-        /// If all checks pass, the overall status of the volume is <code>ok</code>. If the check
-        /// fails, the overall status is <code>impaired</code>. If the status is <code>insufficient-data</code>,
-        /// then the checks might still be taking place on your volume at the time. We recommend
-        /// that you retry the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
+        /// <c>ok</c>, <c>impaired</c> , <c>warning</c>, or <c>insufficient-data</c>. If all checks
+        /// pass, the overall status of the volume is <c>ok</c>. If the check fails, the overall
+        /// status is <c>impaired</c>. If the status is <c>insufficient-data</c>, then the checks
+        /// might still be taking place on your volume at the time. We recommend that you retry
+        /// the request. For more information about volume status, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitoring-volume-status.html">Monitor
         /// the status of your volumes</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
         ///  <i>Events</i>: Reflect the cause of a volume status and might require you to take
-        /// action. For example, if your volume returns an <code>impaired</code> status, then
-        /// the volume event might be <code>potential-data-inconsistency</code>. This means that
-        /// your volume has been affected by an issue with the underlying host, has all I/O operations
-        /// disabled, and might have inconsistent data.
+        /// action. For example, if your volume returns an <c>impaired</c> status, then the volume
+        /// event might be <c>potential-data-inconsistency</c>. This means that your volume has
+        /// been affected by an issue with the underlying host, has all I/O operations disabled,
+        /// and might have inconsistent data.
         /// </para>
         ///  
         /// <para>
         ///  <i>Actions</i>: Reflect the actions you might have to take in response to an event.
-        /// For example, if the status of the volume is <code>impaired</code> and the volume event
-        /// shows <code>potential-data-inconsistency</code>, then the action shows <code>enable-volume-io</code>.
+        /// For example, if the status of the volume is <c>impaired</c> and the volume event shows
+        /// <c>potential-data-inconsistency</c>, then the action shows <c>enable-volume-io</c>.
         /// This means that you may want to enable the I/O operations for the volume by calling
         /// the <a>EnableVolumeIO</a> action and then check the volume for data consistency.
         /// </para>
         ///  
         /// <para>
         /// Volume status is based on the volume status checks, and does not reflect the volume
-        /// state. Therefore, volume status does not indicate volumes in the <code>error</code>
-        /// state (for example, when a volume is incapable of accepting I/O.)
+        /// state. Therefore, volume status does not indicate volumes in the <c>error</c> state
+        /// (for example, when a volume is incapable of accepting I/O.)
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVolumeStatus service method.</param>
@@ -16488,9 +16468,9 @@ namespace Amazon.EC2
         /// When the service provider and the consumer have different accounts in multiple Availability
         /// Zones, and the consumer views the VPC endpoint service information, the response only
         /// includes the common Availability Zones. For example, when the service provider account
-        /// uses <code>us-east-1a</code> and <code>us-east-1c</code> and the consumer uses <code>us-east-1a</code>
-        /// and <code>us-east-1b</code>, the response includes the VPC endpoint services in the
-        /// common Availability Zone, <code>us-east-1a</code>.
+        /// uses <c>us-east-1a</c> and <c>us-east-1c</c> and the consumer uses <c>us-east-1a</c>
+        /// and <c>us-east-1b</c>, the response includes the VPC endpoint services in the common
+        /// Availability Zone, <c>us-east-1a</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVpcEndpointServices service method.</param>
@@ -16915,7 +16895,7 @@ namespace Amazon.EC2
         /// <summary>
         /// Detaches an EBS volume from an instance. Make sure to unmount any file systems on
         /// the device within your operating system before detaching the volume. Failure to do
-        /// so can result in the volume becoming stuck in the <code>busy</code> state while detaching.
+        /// so can result in the volume becoming stuck in the <c>busy</c> state while detaching.
         /// If this happens, detachment can be delayed indefinitely until you unmount the volume,
         /// force detachment, reboot the instance, or all three. If an EBS volume is the root
         /// device of an instance, it can't be detached while the instance is running. To detach
@@ -16971,8 +16951,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You must wait for the attachment's state to switch to <code>detached</code> before
-        /// you can delete the VPC or attach a different VPC to the virtual private gateway.
+        /// You must wait for the attachment's state to switch to <c>detached</c> before you can
+        /// delete the VPC or attach a different VPC to the virtual private gateway.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVpnGateway service method.</param>
@@ -17205,8 +17185,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Sets the AMI state to <code>disabled</code> and removes all launch permissions from
-        /// the AMI. A disabled AMI can't be used for instance launches.
+        /// Sets the AMI state to <c>disabled</c> and removes all launch permissions from the
+        /// AMI. A disabled AMI can't be used for instance launches.
         /// 
         ///  
         /// <para>
@@ -17274,8 +17254,8 @@ namespace Amazon.EC2
         /// <para>
         /// The API can take up to 10 minutes to configure this setting. During this time, if
         /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
-        /// the response will be <code>block-new-sharing</code>. When the API has completed the
-        /// configuration, the response will be <code>unblocked</code>.
+        /// the response will be <c>block-new-sharing</c>. When the API has completed the configuration,
+        /// the response will be <c>unblocked</c>.
         /// </para>
         ///  
         /// <para>
@@ -17433,9 +17413,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
-        /// disable block public access, all snapshots that were previously publicly shared are
-        /// no longer treated as private and they become publicly accessible again.
+        /// If block public access is enabled in <c>block-all-sharing</c> mode, and you disable
+        /// block public access, all snapshots that were previously publicly shared are no longer
+        /// treated as private and they become publicly accessible again.
         /// </para>
         ///  
         /// <para>
@@ -17693,7 +17673,7 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The Client VPN endpoint's status changes to <code>pending-associate</code> 
+        /// The Client VPN endpoint's status changes to <c>pending-associate</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -18405,7 +18385,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You get the full benefit of fast snapshot restores after they enter the <code>enabled</code>
+        /// You get the full benefit of fast snapshot restores after they enter the <c>enabled</c>
         /// state. To get the current state of fast snapshot restores, use <a>DescribeFastSnapshotRestores</a>.
         /// To disable fast snapshot restores, use <a>DisableFastSnapshotRestores</a>.
         /// </para>
@@ -18447,11 +18427,11 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Re-enables a disabled AMI. The re-enabled AMI is marked as <code>available</code>
-        /// and can be used for instance launches, appears in describe operations, and can be
-        /// shared. Amazon Web Services accounts, organizations, and Organizational Units that
-        /// lost access to the AMI when it was disabled do not regain access automatically. Once
-        /// the AMI is available, it can be shared with them again.
+        /// Re-enables a disabled AMI. The re-enabled AMI is marked as <c>available</c> and can
+        /// be used for instance launches, appears in describe operations, and can be shared.
+        /// Amazon Web Services accounts, organizations, and Organizational Units that lost access
+        /// to the AMI when it was disabled do not regain access automatically. Once the AMI is
+        /// available, it can be shared with them again.
         /// 
         ///  
         /// <para>
@@ -18503,8 +18483,8 @@ namespace Amazon.EC2
         /// <para>
         /// The API can take up to 10 minutes to configure this setting. During this time, if
         /// you run <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetImageBlockPublicAccessState.html">GetImageBlockPublicAccessState</a>,
-        /// the response will be <code>unblocked</code>. When the API has completed the configuration,
-        /// the response will be <code>block-new-sharing</code>.
+        /// the response will be <c>unblocked</c>. When the API has completed the configuration,
+        /// the response will be <c>block-new-sharing</c>.
         /// </para>
         ///  
         /// <para>
@@ -18708,10 +18688,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
-        /// change the mode to <code>block-new-sharing</code>, all snapshots that were previously
-        /// publicly shared are no longer treated as private and they become publicly accessible
-        /// again.
+        /// If block public access is enabled in <c>block-all-sharing</c> mode, and you change
+        /// the mode to <c>block-new-sharing</c>, all snapshots that were previously publicly
+        /// shared are no longer treated as private and they become publicly accessible again.
         /// </para>
         ///  
         /// <para>
@@ -18866,8 +18845,8 @@ namespace Amazon.EC2
         /// Enables a VPC for ClassicLink. You can then link EC2-Classic instances to your ClassicLink-enabled
         /// VPC to allow communication over private IP addresses. You cannot enable your VPC for
         /// ClassicLink if any of your VPC route tables have existing routes for address ranges
-        /// within the <code>10.0.0.0/8</code> IP address range, excluding local routes for VPCs
-        /// in the <code>10.0.0.0/16</code> and <code>10.1.0.0/16</code> IP address ranges.
+        /// within the <c>10.0.0.0/8</c> IP address range, excluding local routes for VPCs in
+        /// the <c>10.0.0.0/16</c> and <c>10.1.0.0/16</c> IP address ranges.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableVpcClassicLink service method.</param>
@@ -19521,8 +19500,8 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        ///  <code>GetFlowLogsIntegrationTemplate</code> does not support integration between
-        /// Amazon Web Services Transit Gateway Flow Logs and Amazon Athena.
+        ///  <c>GetFlowLogsIntegrationTemplate</c> does not support integration between Amazon
+        /// Web Services Transit Gateway Flow Logs and Amazon Athena.
         /// </para>
         ///  </note>
         /// </summary>
@@ -19735,8 +19714,8 @@ namespace Amazon.EC2
         /// <para>
         /// When you use <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/register-image.html">register-image</a>
         /// to create an AMI, you can create an exact copy of your variable store by passing the
-        /// UEFI data in the <code>UefiData</code> parameter. You can modify the UEFI data by
-        /// using the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a>
+        /// UEFI data in the <c>UefiData</c> parameter. You can modify the UEFI data by using
+        /// the <a href="https://github.com/awslabs/python-uefivars">python-uefivars tool</a>
         /// on GitHub. You can use the tool to convert the UEFI data into a human-readable format
         /// (JSON), which you can inspect and modify, and then convert back into the binary format
         /// to use with register-image.
@@ -20045,9 +20024,9 @@ namespace Amazon.EC2
         /// <para>
         /// This action calls on other describe actions to get instance information. Depending
         /// on your instance configuration, you may need to allow the following actions in your
-        /// IAM policy: <code>DescribeSpotInstanceRequests</code>, <code>DescribeInstanceCreditSpecifications</code>,
-        /// <code>DescribeVolumes</code>, <code>DescribeInstanceAttribute</code>, and <code>DescribeElasticGpus</code>.
-        /// Or, you can allow <code>describe*</code> depending on your instance requirements.
+        /// IAM policy: <c>DescribeSpotInstanceRequests</c>, <c>DescribeInstanceCreditSpecifications</c>,
+        /// <c>DescribeVolumes</c>, <c>DescribeInstanceAttribute</c>, and <c>DescribeElasticGpus</c>.
+        /// Or, you can allow <c>describe*</c> depending on your instance requirements.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetLaunchTemplateData service method.</param>
@@ -20223,16 +20202,16 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The Windows password is generated at boot by the <code>EC2Config</code> service or
-        /// <code>EC2Launch</code> scripts (Windows Server 2016 and later). This usually only
-        /// happens the first time an instance is launched. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
+        /// The Windows password is generated at boot by the <c>EC2Config</c> service or <c>EC2Launch</c>
+        /// scripts (Windows Server 2016 and later). This usually only happens the first time
+        /// an instance is launched. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/UsingConfig_WinAMI.html">EC2Config</a>
         /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/ec2launch.html">EC2Launch</a>
         /// in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// For the <code>EC2Config</code> service, the password is not generated for rebundled
-        /// AMIs unless <code>Ec2SetPassword</code> is enabled before bundling.
+        /// For the <c>EC2Config</c> service, the password is not generated for rebundled AMIs
+        /// unless <c>Ec2SetPassword</c> is enabled before bundling.
         /// </para>
         ///  
         /// <para>
@@ -20435,9 +20414,9 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can specify your compute requirements either by using <code>InstanceRequirementsWithMetadata</code>
+        /// You can specify your compute requirements either by using <c>InstanceRequirementsWithMetadata</c>
         /// and letting Amazon EC2 choose the optimal instance types to fulfill your Spot request,
-        /// or you can specify the instance types by using <code>InstanceTypes</code>.
+        /// or you can specify the instance types by using <c>InstanceTypes</c>.
         /// </para>
         ///  
         /// <para>
@@ -20982,9 +20961,9 @@ namespace Amazon.EC2
         ///  <important> 
         /// <para>
         /// Amazon Web Services VM Import/Export strongly recommends specifying a value for either
-        /// the <code>--license-type</code> or <code>--usage-operation</code> parameter when you
-        /// create a new VM Import task. This ensures your operating system is licensed appropriately
-        /// and your billing is optimized.
+        /// the <c>--license-type</c> or <c>--usage-operation</c> parameter when you create a
+        /// new VM Import task. This ensures your operating system is licensed appropriately and
+        /// your billing is optimized.
         /// </para>
         ///  </important> 
         /// <para>
@@ -21027,7 +21006,7 @@ namespace Amazon.EC2
         /// <note> 
         /// <para>
         /// We recommend that you use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">
-        /// <code>ImportImage</code> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+        /// <c>ImportImage</c> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
         /// a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
         /// </para>
         ///  </note> 
@@ -21387,7 +21366,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
-        /// DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.
+        /// DescribeAvailabilityZones</a> to view the value for <c>GroupName</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyAvailabilityZoneGroup service method.</param>
@@ -21545,12 +21524,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
-        /// works at an Amazon Web Services Region level and modifies the credit option for each
-        /// Availability Zone. All zones in a Region are updated within five minutes. But if instances
-        /// are launched during this operation, they might not get the new credit option until
-        /// the zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
-        /// and check <code>DefaultCreditSpecification</code> for updates.
+        ///  <c>ModifyDefaultCreditSpecification</c> is an asynchronous operation, which works
+        /// at an Amazon Web Services Region level and modifies the credit option for each Availability
+        /// Zone. All zones in a Region are updated within five minutes. But if instances are
+        /// launched during this operation, they might not get the new credit option until the
+        /// zone is updated. To verify whether the update has occurred, you can call <c>GetDefaultCreditSpecification</c>
+        /// and check <c>DefaultCreditSpecification</c> for updates.
         /// </para>
         ///  
         /// <para>
@@ -21648,36 +21627,36 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can only modify an EC2 Fleet request of type <code>maintain</code>.
+        /// You can only modify an EC2 Fleet request of type <c>maintain</c>.
         /// </para>
         ///  
         /// <para>
-        /// While the EC2 Fleet is being modified, it is in the <code>modifying</code> state.
+        /// While the EC2 Fleet is being modified, it is in the <c>modifying</c> state.
         /// </para>
         ///  
         /// <para>
         /// To scale up your EC2 Fleet, increase its target capacity. The EC2 Fleet launches the
         /// additional Spot Instances according to the allocation strategy for the EC2 Fleet request.
-        /// If the allocation strategy is <code>lowest-price</code>, the EC2 Fleet launches instances
+        /// If the allocation strategy is <c>lowest-price</c>, the EC2 Fleet launches instances
         /// using the Spot Instance pool with the lowest price. If the allocation strategy is
-        /// <code>diversified</code>, the EC2 Fleet distributes the instances across the Spot
-        /// Instance pools. If the allocation strategy is <code>capacity-optimized</code>, EC2
-        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
-        /// of instances that are launching.
+        /// <c>diversified</c>, the EC2 Fleet distributes the instances across the Spot Instance
+        /// pools. If the allocation strategy is <c>capacity-optimized</c>, EC2 Fleet launches
+        /// instances from Spot Instance pools with optimal capacity for the number of instances
+        /// that are launching.
         /// </para>
         ///  
         /// <para>
         /// To scale down your EC2 Fleet, decrease its target capacity. First, the EC2 Fleet cancels
         /// any open requests that exceed the new target capacity. You can request that the EC2
         /// Fleet terminate Spot Instances until the size of the fleet no longer exceeds the new
-        /// target capacity. If the allocation strategy is <code>lowest-price</code>, the EC2
-        /// Fleet terminates the instances with the highest price per unit. If the allocation
-        /// strategy is <code>capacity-optimized</code>, the EC2 Fleet terminates the instances
-        /// in the Spot Instance pools that have the least available Spot Instance capacity. If
-        /// the allocation strategy is <code>diversified</code>, the EC2 Fleet terminates instances
-        /// across the Spot Instance pools. Alternatively, you can request that the EC2 Fleet
-        /// keep the fleet at its current size, but not replace any Spot Instances that are interrupted
-        /// or that you terminate manually.
+        /// target capacity. If the allocation strategy is <c>lowest-price</c>, the EC2 Fleet
+        /// terminates the instances with the highest price per unit. If the allocation strategy
+        /// is <c>capacity-optimized</c>, the EC2 Fleet terminates the instances in the Spot Instance
+        /// pools that have the least available Spot Instance capacity. If the allocation strategy
+        /// is <c>diversified</c>, the EC2 Fleet terminates instances across the Spot Instance
+        /// pools. Alternatively, you can request that the EC2 Fleet keep the fleet at its current
+        /// size, but not replace any Spot Instances that are interrupted or that you terminate
+        /// manually.
         /// </para>
         ///  
         /// <para>
@@ -21752,7 +21731,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modify the auto-placement setting of a Dedicated Host. When auto-placement is enabled,
-        /// any instances that you launch with a tenancy of <code>host</code> but without a specific
+        /// any instances that you launch with a tenancy of <c>host</c> but without a specific
         /// host ID are placed onto any available Dedicated Host in your account that has auto-placement
         /// enabled. When auto-placement is disabled, you need to provide a host ID to have the
         /// instance launch onto a specific host. If no host ID is provided, the instance is launched
@@ -21805,15 +21784,14 @@ namespace Amazon.EC2
         /// <para>
         /// This request can only be used to modify longer ID settings for resource types that
         /// are within the opt-in period. Resources currently in their opt-in period include:
-        /// <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code>
-        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
-        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
-        /// | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code>
-        /// | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code>
-        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
-        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
-        /// | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code>
-        /// | <code>vpn-connection</code> | <code>vpn-gateway</code>. 
+        /// <c>bundle</c> | <c>conversion-task</c> | <c>customer-gateway</c> | <c>dhcp-options</c>
+        /// | <c>elastic-ip-allocation</c> | <c>elastic-ip-association</c> | <c>export-task</c>
+        /// | <c>flow-log</c> | <c>image</c> | <c>import-task</c> | <c>internet-gateway</c> |
+        /// <c>network-acl</c> | <c>network-acl-association</c> | <c>network-interface</c> | <c>network-interface-attachment</c>
+        /// | <c>prefix-list</c> | <c>route-table</c> | <c>route-table-association</c> | <c>security-group</c>
+        /// | <c>subnet</c> | <c>subnet-cidr-block-association</c> | <c>vpc</c> | <c>vpc-cidr-block-association</c>
+        /// | <c>vpc-endpoint</c> | <c>vpc-peering-connection</c> | <c>vpn-connection</c> | <c>vpn-gateway</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -21828,7 +21806,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Resources created with longer IDs are visible to all IAM roles and users, regardless
-        /// of these settings and provided that they have permission to use the relevant <code>Describe</code>
+        /// of these settings and provided that they have permission to use the relevant <c>Describe</c>
         /// command for the resource type.
         /// </para>
         /// </summary>
@@ -21871,15 +21849,13 @@ namespace Amazon.EC2
         /// <para>
         /// This request can only be used to modify longer ID settings for resource types that
         /// are within the opt-in period. Resources currently in their opt-in period include:
-        /// <code>bundle</code> | <code>conversion-task</code> | <code>customer-gateway</code>
-        /// | <code>dhcp-options</code> | <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code>
-        /// | <code>export-task</code> | <code>flow-log</code> | <code>image</code> | <code>import-task</code>
-        /// | <code>internet-gateway</code> | <code>network-acl</code> | <code>network-acl-association</code>
-        /// | <code>network-interface</code> | <code>network-interface-attachment</code> | <code>prefix-list</code>
-        /// | <code>route-table</code> | <code>route-table-association</code> | <code>security-group</code>
-        /// | <code>subnet</code> | <code>subnet-cidr-block-association</code> | <code>vpc</code>
-        /// | <code>vpc-cidr-block-association</code> | <code>vpc-endpoint</code> | <code>vpc-peering-connection</code>
-        /// | <code>vpn-connection</code> | <code>vpn-gateway</code>.
+        /// <c>bundle</c> | <c>conversion-task</c> | <c>customer-gateway</c> | <c>dhcp-options</c>
+        /// | <c>elastic-ip-allocation</c> | <c>elastic-ip-association</c> | <c>export-task</c>
+        /// | <c>flow-log</c> | <c>image</c> | <c>import-task</c> | <c>internet-gateway</c> |
+        /// <c>network-acl</c> | <c>network-acl-association</c> | <c>network-interface</c> | <c>network-interface-attachment</c>
+        /// | <c>prefix-list</c> | <c>route-table</c> | <c>route-table-association</c> | <c>security-group</c>
+        /// | <c>subnet</c> | <c>subnet-cidr-block-association</c> | <c>vpc</c> | <c>vpc-cidr-block-association</c>
+        /// | <c>vpc-endpoint</c> | <c>vpc-peering-connection</c> | <c>vpn-connection</c> | <c>vpn-gateway</c>.
         /// </para>
         ///  
         /// <para>
@@ -21893,7 +21869,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Resources created with longer IDs are visible to all IAM roles and users, regardless
-        /// of these settings and provided that they have permission to use the relevant <code>Describe</code>
+        /// of these settings and provided that they have permission to use the relevant <c>Describe</c>
         /// command for the resource type.
         /// </para>
         /// </summary>
@@ -21934,9 +21910,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// To specify the attribute, you can use the <code>Attribute</code> parameter, or one
-        /// of the following parameters: <code>Description</code>, <code>ImdsSupport</code>, or
-        /// <code>LaunchPermission</code>.
+        /// To specify the attribute, you can use the <c>Attribute</c> parameter, or one of the
+        /// following parameters: <c>Description</c>, <c>ImdsSupport</c>, or <c>LaunchPermission</c>.
         /// </para>
         ///  
         /// <para>
@@ -22031,7 +22006,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the Capacity Reservation settings for a stopped instance. Use this action
-        /// to configure an instance to target a specific Capacity Reservation, run in any <code>open</code>
+        /// to configure an instance to target a specific Capacity Reservation, run in any <c>open</c>
         /// Capacity Reservation with matching attributes, or run On-Demand Instance capacity.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstanceCapacityReservationAttributes service method.</param>
@@ -22067,7 +22042,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the credit option for CPU usage on a running or stopped burstable performance
-        /// instance. The credit options are <code>standard</code> and <code>unlimited</code>.
+        /// instance. The credit options are <c>standard</c> and <c>unlimited</c>.
         /// 
         ///  
         /// <para>
@@ -22279,8 +22254,8 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         /// Modify the affinity between an instance and a <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-overview.html">Dedicated
-        /// Host</a>. When affinity is set to <code>host</code> and the instance is not associated
-        /// with a specific Dedicated Host, the next time the instance is launched, it is automatically
+        /// Host</a>. When affinity is set to <c>host</c> and the instance is not associated with
+        /// a specific Dedicated Host, the next time the instance is launched, it is automatically
         /// associated with the host on which it lands. If the instance is restarted or rebooted,
         /// this relationship persists.
         /// </para>
@@ -22305,7 +22280,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// To modify the host ID, tenancy, placement group, or partition for an instance, the
-        /// instance must be in the <code>stopped</code> state.
+        /// instance must be in the <c>stopped</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyInstancePlacement service method.</param>
@@ -22880,37 +22855,36 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// You can only modify a Spot Fleet request of type <code>maintain</code>.
+        /// You can only modify a Spot Fleet request of type <c>maintain</c>.
         /// </para>
         ///  
         /// <para>
-        /// While the Spot Fleet request is being modified, it is in the <code>modifying</code>
-        /// state.
+        /// While the Spot Fleet request is being modified, it is in the <c>modifying</c> state.
         /// </para>
         ///  
         /// <para>
         /// To scale up your Spot Fleet, increase its target capacity. The Spot Fleet launches
         /// the additional Spot Instances according to the allocation strategy for the Spot Fleet
-        /// request. If the allocation strategy is <code>lowestPrice</code>, the Spot Fleet launches
+        /// request. If the allocation strategy is <c>lowestPrice</c>, the Spot Fleet launches
         /// instances using the Spot Instance pool with the lowest price. If the allocation strategy
-        /// is <code>diversified</code>, the Spot Fleet distributes the instances across the Spot
-        /// Instance pools. If the allocation strategy is <code>capacityOptimized</code>, Spot
-        /// Fleet launches instances from Spot Instance pools with optimal capacity for the number
-        /// of instances that are launching.
+        /// is <c>diversified</c>, the Spot Fleet distributes the instances across the Spot Instance
+        /// pools. If the allocation strategy is <c>capacityOptimized</c>, Spot Fleet launches
+        /// instances from Spot Instance pools with optimal capacity for the number of instances
+        /// that are launching.
         /// </para>
         ///  
         /// <para>
         /// To scale down your Spot Fleet, decrease its target capacity. First, the Spot Fleet
         /// cancels any open requests that exceed the new target capacity. You can request that
         /// the Spot Fleet terminate Spot Instances until the size of the fleet no longer exceeds
-        /// the new target capacity. If the allocation strategy is <code>lowestPrice</code>, the
-        /// Spot Fleet terminates the instances with the highest price per unit. If the allocation
-        /// strategy is <code>capacityOptimized</code>, the Spot Fleet terminates the instances
-        /// in the Spot Instance pools that have the least available Spot Instance capacity. If
-        /// the allocation strategy is <code>diversified</code>, the Spot Fleet terminates instances
-        /// across the Spot Instance pools. Alternatively, you can request that the Spot Fleet
-        /// keep the fleet at its current size, but not replace any Spot Instances that are interrupted
-        /// or that you terminate manually.
+        /// the new target capacity. If the allocation strategy is <c>lowestPrice</c>, the Spot
+        /// Fleet terminates the instances with the highest price per unit. If the allocation
+        /// strategy is <c>capacityOptimized</c>, the Spot Fleet terminates the instances in the
+        /// Spot Instance pools that have the least available Spot Instance capacity. If the allocation
+        /// strategy is <c>diversified</c>, the Spot Fleet terminates instances across the Spot
+        /// Instance pools. Alternatively, you can request that the Spot Fleet keep the fleet
+        /// at its current size, but not replace any Spot Instances that are interrupted or that
+        /// you terminate manually.
         /// </para>
         ///  
         /// <para>
@@ -22958,13 +22932,13 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To modify a subnet on an Outpost rack, set both <code>MapCustomerOwnedIpOnLaunch</code>
-        /// and <code>CustomerOwnedIpv4Pool</code>. These two parameters act as a single attribute.
+        /// To modify a subnet on an Outpost rack, set both <c>MapCustomerOwnedIpOnLaunch</c>
+        /// and <c>CustomerOwnedIpv4Pool</c>. These two parameters act as a single attribute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To modify a subnet on an Outpost server, set either <code>EnableLniAtDeviceIndex</code>
-        /// or <code>DisableLniAtDeviceIndex</code>.
+        /// To modify a subnet on an Outpost server, set either <c>EnableLniAtDeviceIndex</c>
+        /// or <c>DisableLniAtDeviceIndex</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -23019,11 +22993,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         ///  By default, Amazon DNS network services are not eligible for Traffic Mirror. Use
-        /// <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter.
-        /// When a network service is added to the Traffic Mirror filter, all traffic related
-        /// to that network service will be mirrored. When you no longer want to mirror network
-        /// services, use <code>RemoveNetworkServices</code> to remove the network services from
-        /// the Traffic Mirror filter. 
+        /// <c>AddNetworkServices</c> to add network services to a Traffic Mirror filter. When
+        /// a network service is added to the Traffic Mirror filter, all traffic related to that
+        /// network service will be mirrored. When you no longer want to mirror network services,
+        /// use <c>RemoveNetworkServices</c> to remove the network services from the Traffic Mirror
+        /// filter. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorFilterNetworkServices service method.</param>
@@ -23062,8 +23036,8 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        ///  <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an
-        /// IPv4 range or an IPv6 range.
+        ///  <c>DestinationCidrBlock</c> and <c>SourceCidrBlock</c> must both be an IPv4 range
+        /// or an IPv6 range.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyTrafficMirrorFilterRule service method.</param>
@@ -23510,8 +23484,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// After modifying a volume, you must wait at least six hours and ensure that the volume
-        /// is in the <code>in-use</code> or <code>available</code> state before you can modify
-        /// the same volume. This is sometimes referred to as a cooldown period.
+        /// is in the <c>in-use</c> or <c>available</c> state before you can modify the same volume.
+        /// This is sometimes referred to as a cooldown period.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVolume service method.</param>
@@ -23869,13 +23843,13 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the instance tenancy attribute of the specified VPC. You can change the instance
-        /// tenancy attribute of a VPC to <code>default</code> only. You cannot change the instance
-        /// tenancy attribute to <code>dedicated</code>.
+        /// tenancy attribute of a VPC to <c>default</c> only. You cannot change the instance
+        /// tenancy attribute to <c>dedicated</c>.
         /// 
         ///  
         /// <para>
         /// After you modify the tenancy of the VPC, any new instances that you launch into the
-        /// VPC have a tenancy of <code>default</code>, unless you specify otherwise during launch.
+        /// VPC have a tenancy of <c>default</c>, unless you specify otherwise during launch.
         /// The tenancy of any existing instances in the VPC is not affected.
         /// </para>
         ///  
@@ -24273,8 +24247,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Provisioning an address range is an asynchronous operation, so the call returns immediately,
-        /// but the address range is not ready to use until its status changes from <code>pending-provision</code>
-        /// to <code>provisioned</code>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
+        /// but the address range is not ready to use until its status changes from <c>pending-provision</c>
+        /// to <c>provisioned</c>. To monitor the status of an address range, use <a>DescribeByoipCidrs</a>.
         /// To allocate an Elastic IP address from your IPv4 address pool, use <a>AllocateAddress</a>
         /// with either the specific address from the address pool or the ID of the address pool.
         /// </para>
@@ -24680,11 +24654,11 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You can use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from
-        /// a snapshot of a root device volume. You specify the snapshot using a block device
-        /// mapping. You can't set the encryption state of the volume using the block device mapping.
-        /// If the snapshot is encrypted, or encryption by default is enabled, the root volume
-        /// of an instance launched from the AMI is encrypted.
+        /// You can use <c>RegisterImage</c> to create an Amazon EBS-backed Linux AMI from a snapshot
+        /// of a root device volume. You specify the snapshot using a block device mapping. You
+        /// can't set the encryption state of the volume using the block device mapping. If the
+        /// snapshot is encrypted, or encryption by default is enabled, the root volume of an
+        /// instance launched from the AMI is encrypted.
         /// </para>
         ///  
         /// <para>
@@ -24968,7 +24942,7 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// The VPC attachment must be in the <code>pendingAcceptance</code> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
+        /// The VPC attachment must be in the <c>pendingAcceptance</c> state. Use <a>DescribeTransitGatewayVpcAttachments</a>
         /// to view your pending VPC attachment requests. Use <a>AcceptTransitGatewayVpcAttachment</a>
         /// to accept a VPC attachment request.
         /// </para>
@@ -25040,9 +25014,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Rejects a VPC peering connection request. The VPC peering connection must be in the
-        /// <code>pending-acceptance</code> state. Use the <a>DescribeVpcPeeringConnections</a>
-        /// request to view your outstanding VPC peering connection requests. To delete an active
-        /// VPC peering connection, or to delete a VPC peering connection request that you initiated,
+        /// <c>pending-acceptance</c> state. Use the <a>DescribeVpcPeeringConnections</a> request
+        /// to view your outstanding VPC peering connection requests. To delete an active VPC
+        /// peering connection, or to delete a VPC peering connection request that you initiated,
         /// use <a>DeleteVpcPeeringConnection</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectVpcPeeringConnection service method.</param>
@@ -25088,15 +25062,15 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// [Nondefault VPC] You must use <a>DisassociateAddress</a> to disassociate the Elastic
-        /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<code>InvalidIPAddress.InUse</code>).
+        /// IP address before you can release it. Otherwise, Amazon EC2 returns an error (<c>InvalidIPAddress.InUse</c>).
         /// </para>
         ///  
         /// <para>
         /// After releasing an Elastic IP address, it is released to the IP address pool. Be sure
         /// to update your DNS records and any servers or devices that communicate with the address.
         /// If you attempt to release an Elastic IP address that you already released, you'll
-        /// get an <code>AuthFailure</code> error if the address is already allocated to another
-        /// Amazon Web Services account.
+        /// get an <c>AuthFailure</c> error if the address is already allocated to another Amazon
+        /// Web Services account.
         /// </para>
         ///  
         /// <para>
@@ -25137,10 +25111,10 @@ namespace Amazon.EC2
 
         /// <summary>
         /// When you no longer want to use an On-Demand Dedicated Host it can be released. On-Demand
-        /// billing is stopped and the host goes into <code>released</code> state. The host ID
-        /// of Dedicated Hosts that have been released can no longer be specified in another request,
-        /// for example, to modify the host. You must stop or terminate all instances on a host
-        /// before it can be released.
+        /// billing is stopped and the host goes into <c>released</c> state. The host ID of Dedicated
+        /// Hosts that have been released can no longer be specified in another request, for example,
+        /// to modify the host. You must stop or terminate all instances on a host before it can
+        /// be released.
         /// 
         ///  
         /// <para>
@@ -25509,7 +25483,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Submits feedback about the status of an instance. The instance must be in the <code>running</code>
+        /// Submits feedback about the status of an instance. The instance must be in the <c>running</c>
         /// state. If your experience with the instance differs from the instance status returned
         /// by <a>DescribeInstanceStatus</a>, use <a>ReportInstanceStatus</a> to report your experience
         /// with the instance. Amazon EC2 collects this information to improve the accuracy of
@@ -25581,8 +25555,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// You can specify tags for the Spot Fleet request and instances launched by the fleet.
-        /// You cannot tag other resource types in a Spot Fleet request because only the <code>spot-fleet-request</code>
-        /// and <code>instance</code> resource types are supported.
+        /// You cannot tag other resource types in a Spot Fleet request because only the <c>spot-fleet-request</c>
+        /// and <c>instance</c> resource types are supported.
         /// </para>
         ///  
         /// <para>
@@ -25824,16 +25798,16 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Resets an attribute of an instance to its default value. To reset the <code>kernel</code>
-        /// or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>sourceDestCheck</code>,
+        /// Resets an attribute of an instance to its default value. To reset the <c>kernel</c>
+        /// or <c>ramdisk</c>, the instance must be in a stopped state. To reset the <c>sourceDestCheck</c>,
         /// the instance can be either running or stopped.
         /// 
         ///  
         /// <para>
-        /// The <code>sourceDestCheck</code> attribute controls whether source/destination checking
-        /// is enabled. The default value is <code>true</code>, which means checking is enabled.
-        /// This value must be <code>false</code> for a NAT instance to perform NAT. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
+        /// The <c>sourceDestCheck</c> attribute controls whether source/destination checking
+        /// is enabled. The default value is <c>true</c>, which means checking is enabled. This
+        /// value must be <c>false</c> for a NAT instance to perform NAT. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_NAT_Instance.html">NAT
         /// Instances</a> in the <i>Amazon VPC User Guide</i>.
         /// </para>
         /// </summary>
@@ -26252,8 +26226,8 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// For a non-default VPC, if the values you specify do not match the existing rule's
-        /// values, an <code>InvalidPermission.NotFound</code> client error is returned, and no
-        /// rules are revoked.
+        /// values, an <c>InvalidPermission.NotFound</c> client error is returned, and no rules
+        /// are revoked.
         /// </para>
         ///  
         /// <para>
@@ -26346,8 +26320,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// An instance is ready for you to use when it's in the <code>running</code> state. You
-        /// can check the state of your instance using <a>DescribeInstances</a>. You can tag instances
+        /// An instance is ready for you to use when it's in the <c>running</c> state. You can
+        /// check the state of your instance using <a>DescribeInstances</a>. You can tag instances
         /// and EBS volumes during launch, after launch, or both. For more information, see <a>CreateTags</a>
         /// and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">Tagging
         /// your Amazon EC2 resources</a>.
@@ -26630,11 +26604,10 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// If you attempt to start a T3 instance with <code>host</code> tenancy and the <code>unlimted</code>
-        /// CPU credit option, the request fails. The <code>unlimited</code> CPU credit option
-        /// is not supported on Dedicated Hosts. Before you start the instance, either change
-        /// its CPU credit option to <code>standard</code>, or change its tenancy to <code>default</code>
-        /// or <code>dedicated</code>.
+        /// If you attempt to start a T3 instance with <c>host</c> tenancy and the <c>unlimted</c>
+        /// CPU credit option, the request fails. The <c>unlimited</c> CPU credit option is not
+        /// supported on Dedicated Hosts. Before you start the instance, either change its CPU
+        /// credit option to <c>standard</c>, or change its tenancy to <c>default</c> or <c>dedicated</c>.
         /// </para>
         ///  
         /// <para>
@@ -26937,19 +26910,19 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Instance A: <code>us-east-1a</code>; Not protected
+        /// Instance A: <c>us-east-1a</c>; Not protected
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Instance B: <code>us-east-1a</code>; Not protected
+        /// Instance B: <c>us-east-1a</c>; Not protected
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Instance C: <code>us-east-1b</code>; Protected
+        /// Instance C: <c>us-east-1b</c>; Protected
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Instance D: <code>us-east-1b</code>; not protected
+        /// Instance D: <c>us-east-1b</c>; not protected
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -26959,12 +26932,12 @@ namespace Amazon.EC2
         ///  <ul> <li> 
         /// <para>
         /// Instance A and Instance B are successfully terminated because none of the specified
-        /// instances in <code>us-east-1a</code> are enabled for termination protection.
+        /// instances in <c>us-east-1a</c> are enabled for termination protection.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Instance C and Instance D fail to terminate because at least one of the specified
-        /// instances in <code>us-east-1b</code> (Instance C) is enabled for termination protection.
+        /// instances in <c>us-east-1b</c> (Instance C) is enabled for termination protection.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -26981,8 +26954,8 @@ namespace Amazon.EC2
         /// store-backed instances. What happens to an instance differs if you stop it or terminate
         /// it. For example, when you stop an instance, the root device and any other devices
         /// attached to the instance persist. When you terminate an instance, any attached EBS
-        /// volumes with the <code>DeleteOnTermination</code> block device mapping parameter set
-        /// to <code>true</code> are automatically deleted. For more information about the differences
+        /// volumes with the <c>DeleteOnTermination</c> block device mapping parameter set to
+        /// <c>true</c> are automatically deleted. For more information about the differences
         /// between stopping and terminating instances, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-lifecycle.html">Instance
         /// lifecycle</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>

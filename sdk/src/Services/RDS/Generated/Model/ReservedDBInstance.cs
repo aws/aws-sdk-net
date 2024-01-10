@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <code>DescribeReservedDBInstances</code>
-    /// and <code>PurchaseReservedDBInstancesOffering</code> actions.
+    /// This data type is used as a response element in the <c>DescribeReservedDBInstances</c>
+    /// and <c>PurchaseReservedDBInstancesOffering</c> actions.
     /// </summary>
     public partial class ReservedDBInstance
     {

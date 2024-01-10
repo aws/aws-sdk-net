@@ -30,9 +30,9 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCollection operation.
-    /// Describes the specified collection. You can use <code>DescribeCollection</code> to
-    /// get information, such as the number of faces indexed into a collection and the version
-    /// of the model used by the collection for face detection.
+    /// Describes the specified collection. You can use <c>DescribeCollection</c> to get information,
+    /// such as the number of faces indexed into a collection and the version of the model
+    /// used by the collection for face detection.
     /// 
     ///  
     /// <para>

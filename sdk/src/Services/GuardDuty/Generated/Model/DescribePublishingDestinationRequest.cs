@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribePublishingDestination operation.
-    /// Returns information about the publishing destination specified by the provided <code>destinationId</code>.
+    /// Returns information about the publishing destination specified by the provided <c>destinationId</c>.
     /// </summary>
     public partial class DescribePublishingDestinationRequest : AmazonGuardDutyRequest
     {

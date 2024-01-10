@@ -38,7 +38,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Volume. 
         /// <para>
-        /// A description of the volume just updated. Returned after a successful <code>UpdateVolume</code>
+        /// A description of the volume just updated. Returned after a successful <c>UpdateVolume</c>
         /// API operation.
         /// </para>
         /// </summary>

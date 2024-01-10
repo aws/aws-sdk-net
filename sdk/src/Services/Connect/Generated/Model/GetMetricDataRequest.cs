@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
     /// <para>
     /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a>
     /// API. It provides more flexibility, features, and the ability to query longer time
-    /// ranges than <code>GetMetricData</code>. Use it to retrieve historical agent and contact
+    /// ranges than <c>GetMetricData</c>. Use it to retrieve historical agent and contact
     /// metrics for the last 3 months, at varying intervals. You can also use it to build
     /// custom dashboards to measure historical queue and agent performance. For example,
     /// you can track the number of incoming contacts for the last 7 days, with data split
@@ -95,7 +95,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+        /// To filter by <c>Queues</c>, enter the queue ID/ARN, not the name of the queue.
         /// </para>
         ///  </note>
         /// </summary>
@@ -356,9 +356,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
-        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
-        /// (for "Less than"). 
+        /// Threshold: For <c>ThresholdValue</c>, enter any whole number from 1 to 604800 (inclusive),
+        /// in seconds. For <c>Comparison</c>, you must enter <c>LT</c> (for "Less than"). 
         /// </para>
         ///  </dd> </dl>
         /// </summary>

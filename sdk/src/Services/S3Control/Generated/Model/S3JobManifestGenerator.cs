@@ -126,7 +126,7 @@ namespace Amazon.S3Control.Model
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - Directory buckets aren't supported as the source buckets
-        /// used by <code>S3JobManifestGenerator</code> to generate the job manifest.
+        /// used by <c>S3JobManifestGenerator</c> to generate the job manifest.
         /// </para>
         ///  </note>
         /// </summary>

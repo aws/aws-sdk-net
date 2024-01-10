@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBParameterGroupName</code> doesn't refer to an existing DB parameter group.
+    /// <c>DBParameterGroupName</c> doesn't refer to an existing DB parameter group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

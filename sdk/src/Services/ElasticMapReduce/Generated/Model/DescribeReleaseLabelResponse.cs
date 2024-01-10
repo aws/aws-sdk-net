@@ -41,9 +41,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Applications. 
         /// <para>
-        /// The list of applications available for the target release label. <code>Name</code>
-        /// is the name of the application. <code>Version</code> is the concise version of the
-        /// application.
+        /// The list of applications available for the target release label. <c>Name</c> is the
+        /// name of the application. <c>Version</c> is the concise version of the application.
         /// </para>
         /// </summary>
         public List<SimplifiedApplication> Applications

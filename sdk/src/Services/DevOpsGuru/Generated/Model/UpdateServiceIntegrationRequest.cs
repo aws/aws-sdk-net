@@ -41,8 +41,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ServiceIntegration. 
         /// <para>
-        ///  An <code>IntegratedServiceConfig</code> object used to specify the integrated service
-        /// you want to update, and whether you want to update it to enabled or disabled. 
+        ///  An <c>IntegratedServiceConfig</c> object used to specify the integrated service you
+        /// want to update, and whether you want to update it to enabled or disabled. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

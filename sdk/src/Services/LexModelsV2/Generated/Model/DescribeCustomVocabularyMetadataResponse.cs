@@ -99,8 +99,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property CustomVocabularyStatus. 
         /// <para>
-        /// The status of the custom vocabulary. If the status is <code>Ready</code> the custom
-        /// vocabulary is ready to use.
+        /// The status of the custom vocabulary. If the status is <c>Ready</c> the custom vocabulary
+        /// is ready to use.
         /// </para>
         /// </summary>
         public CustomVocabularyStatus CustomVocabularyStatus

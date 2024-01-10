@@ -41,8 +41,7 @@ namespace Amazon.CodeDeploy.Model
         ///  A deployment target that contains information about a deployment such as its status,
         /// lifecycle events, and when it was last updated. It also contains metadata about the
         /// deployment target. The deployment target metadata depends on the deployment target's
-        /// type (<code>instanceTarget</code>, <code>lambdaTarget</code>, or <code>ecsTarget</code>).
-        /// 
+        /// type (<c>instanceTarget</c>, <c>lambdaTarget</c>, or <c>ecsTarget</c>). 
         /// </para>
         /// </summary>
         public DeploymentTarget DeploymentTarget

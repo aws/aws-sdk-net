@@ -30,7 +30,7 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInstancesHealthStatus operation.
-    /// Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>, or <code>Unknown</code>)
+    /// Gets the current health status (<c>Healthy</c>, <c>Unhealthy</c>, or <c>Unknown</c>)
     /// of one or more instances that are associated with a specified service.
     /// 
     ///  <note> 
@@ -55,8 +55,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you omit <code>Instances</code>, Cloud Map returns the health status for all the
-        /// instances that are associated with the specified service.
+        /// If you omit <c>Instances</c>, Cloud Map returns the health status for all the instances
+        /// that are associated with the specified service.
         /// </para>
         ///  <note> 
         /// <para>
@@ -83,8 +83,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of instances that you want Cloud Map to return in the response
-        /// to a <code>GetInstancesHealthStatus</code> request. If you don't specify a value for
-        /// <code>MaxResults</code>, Cloud Map returns up to 100 instances.
+        /// to a <c>GetInstancesHealthStatus</c> request. If you don't specify a value for <c>MaxResults</c>,
+        /// Cloud Map returns up to 100 instances.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -103,14 +103,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For the first <code>GetInstancesHealthStatus</code> request, omit this value.
+        /// For the first <c>GetInstancesHealthStatus</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// If more than <code>MaxResults</code> instances match the specified criteria, you can
-        /// submit another <code>GetInstancesHealthStatus</code> request to get the next group
-        /// of results. Specify the value of <code>NextToken</code> from the previous response
-        /// in the next request.
+        /// If more than <c>MaxResults</c> instances match the specified criteria, you can submit
+        /// another <c>GetInstancesHealthStatus</c> request to get the next group of results.
+        /// Specify the value of <c>NextToken</c> from the previous response in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

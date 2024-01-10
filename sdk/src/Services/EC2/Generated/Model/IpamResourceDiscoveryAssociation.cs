@@ -200,13 +200,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - Connection or permissions required to read the results of the
-        /// resource discovery are intact.
+        ///  <c>active</c> - Connection or permissions required to read the results of the resource
+        /// discovery are intact.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>not-found</code> - Connection or permissions required to read the results of
-        /// the resource discovery are broken. This may happen if the owner of the resource discovery
+        ///  <c>not-found</c> - Connection or permissions required to read the results of the
+        /// resource discovery are broken. This may happen if the owner of the resource discovery
         /// stopped sharing it or deleted the resource discovery. Verify the resource discovery
         /// still exists and the Amazon Web Services RAM resource share is still intact.
         /// </para>
@@ -232,41 +232,41 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>associate-in-progress</code> - Resource discovery is being associated.
+        ///  <c>associate-in-progress</c> - Resource discovery is being associated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>associate-complete</code> - Resource discovery association is complete.
+        ///  <c>associate-complete</c> - Resource discovery association is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>associate-failed</code> - Resource discovery association has failed.
+        ///  <c>associate-failed</c> - Resource discovery association has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociate-in-progress</code> - Resource discovery is being disassociated.
+        ///  <c>disassociate-in-progress</c> - Resource discovery is being disassociated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociate-complete</code> - Resource discovery disassociation is complete.
+        ///  <c>disassociate-complete</c> - Resource discovery disassociation is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociate-failed </code> - Resource discovery disassociation has failed.
+        ///  <c>disassociate-failed </c> - Resource discovery disassociation has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>isolate-in-progress</code> - Amazon Web Services account that created the resource
+        ///  <c>isolate-in-progress</c> - Amazon Web Services account that created the resource
         /// discovery association has been removed and the resource discovery associatation is
         /// being isolated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>isolate-complete</code> - Resource discovery isolation is complete..
+        ///  <c>isolate-complete</c> - Resource discovery isolation is complete..
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>restore-in-progress</code> - Resource discovery is being restored.
+        ///  <c>restore-in-progress</c> - Resource discovery is being restored.
         /// </para>
         ///  </li> </ul>
         /// </summary>

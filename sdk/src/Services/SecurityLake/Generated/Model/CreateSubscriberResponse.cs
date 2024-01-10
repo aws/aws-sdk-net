@@ -38,7 +38,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Subscriber. 
         /// <para>
-        /// Retrieve information about the subscriber created using the <code>CreateSubscriber</code>
+        /// Retrieve information about the subscriber created using the <c>CreateSubscriber</c>
         /// API.
         /// </para>
         /// </summary>

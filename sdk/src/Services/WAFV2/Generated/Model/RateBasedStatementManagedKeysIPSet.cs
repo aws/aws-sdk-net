@@ -31,7 +31,7 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// The set of IP addresses that are currently blocked for a <a>RateBasedStatement</a>.
     /// This is only available for rate-based rules that aggregate on just the IP address,
-    /// with the <code>AggregateKeyType</code> set to <code>IP</code> or <code>FORWARDED_IP</code>.
+    /// with the <c>AggregateKeyType</c> set to <c>IP</c> or <c>FORWARDED_IP</c>.
     /// 
     ///  
     /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property IPAddressVersion. 
         /// <para>
-        /// The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. 
+        /// The version of the IP addresses, either <c>IPV4</c> or <c>IPV6</c>. 
         /// </para>
         /// </summary>
         public IPAddressVersion IPAddressVersion

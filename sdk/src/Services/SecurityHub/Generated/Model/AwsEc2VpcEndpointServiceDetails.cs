@@ -215,23 +215,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Available</code> 
+        ///  <c>Available</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleted</code> 
+        ///  <c>Deleted</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code> 
+        ///  <c>Deleting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> 
+        ///  <c>Failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Pending</code> 
+        ///  <c>Pending</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

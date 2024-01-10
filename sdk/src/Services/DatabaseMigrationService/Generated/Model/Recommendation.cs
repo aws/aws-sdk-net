@@ -113,9 +113,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The name of the target engine. Valid values include <code>"rds-aurora-mysql"</code>,
-        /// <code>"rds-aurora-postgresql"</code>, <code>"rds-mysql"</code>, <code>"rds-oracle"</code>,
-        /// <code>"rds-sql-server"</code>, and <code>"rds-postgresql"</code>.
+        /// The name of the target engine. Valid values include <c>"rds-aurora-mysql"</c>, <c>"rds-aurora-postgresql"</c>,
+        /// <c>"rds-mysql"</c>, <c>"rds-oracle"</c>, <c>"rds-sql-server"</c>, and <c>"rds-postgresql"</c>.
         /// </para>
         /// </summary>
         public string EngineName
@@ -171,8 +170,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the target engine recommendation. Valid values include <code>"alternate"</code>,
-        /// <code>"in-progress"</code>, <code>"not-viable"</code>, and <code>"recommended"</code>.
+        /// The status of the target engine recommendation. Valid values include <c>"alternate"</c>,
+        /// <c>"in-progress"</c>, <c>"not-viable"</c>, and <c>"recommended"</c>.
         /// </para>
         /// </summary>
         public string Status

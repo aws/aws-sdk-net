@@ -41,7 +41,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:GetCelebrityInfo</code>
+    /// This operation requires permissions to perform the <c>rekognition:GetCelebrityInfo</c>
     /// action. 
     /// </para>
     /// </summary>

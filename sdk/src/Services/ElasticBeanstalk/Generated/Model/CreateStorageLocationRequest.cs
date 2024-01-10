@@ -33,8 +33,8 @@ namespace Amazon.ElasticBeanstalk.Model
     /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
     /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
     /// this API the first time you create an environment in a region. If the storage location
-    /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
-    /// does not create a new bucket.
+    /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+    /// not create a new bucket.
     /// </summary>
     public partial class CreateStorageLocationRequest : AmazonElasticBeanstalkRequest
     {

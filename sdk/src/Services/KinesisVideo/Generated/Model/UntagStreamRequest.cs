@@ -36,7 +36,7 @@ namespace Amazon.KinesisVideo.Model
     /// 
     ///  
     /// <para>
-    /// In the request, you must provide the <code>StreamName</code> or <code>StreamARN</code>.
+    /// In the request, you must provide the <c>StreamName</c> or <c>StreamARN</c>.
     /// </para>
     /// </summary>
     public partial class UntagStreamRequest : AmazonKinesisVideoRequest

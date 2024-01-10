@@ -80,7 +80,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>128</code>, <code>192</code>, or <code>256</code>. 
+        ///  <c>128</c>, <c>192</c>, or <c>256</c>. 
         /// </para>
         /// </summary>
         public string Key
@@ -124,7 +124,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property KeyStoragePolicy. 
         /// <para>
         /// Specify whether you want Elastic Transcoder to write your HLS license key to an Amazon
-        /// S3 bucket. If you choose <code>WithVariantPlaylists</code>, <code>LicenseAcquisitionUrl</code>
+        /// S3 bucket. If you choose <c>WithVariantPlaylists</c>, <c>LicenseAcquisitionUrl</c>
         /// must be left blank and Elastic Transcoder writes your data key into the same bucket
         /// as the associated playlist.
         /// </para>
@@ -165,12 +165,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Method. 
         /// <para>
-        /// The content protection method for your output. The only valid value is: <code>aes-128</code>.
+        /// The content protection method for your output. The only valid value is: <c>aes-128</c>.
         /// </para>
         ///  
         /// <para>
-        /// This value is written into the method attribute of the <code>EXT-X-KEY</code> metadata
-        /// tag in the output playlist.
+        /// This value is written into the method attribute of the <c>EXT-X-KEY</c> metadata tag
+        /// in the output playlist.
         /// </para>
         /// </summary>
         public string Method

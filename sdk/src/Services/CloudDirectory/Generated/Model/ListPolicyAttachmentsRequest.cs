@@ -30,7 +30,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPolicyAttachments operation.
-    /// Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
+    /// Returns all of the <c>ObjectIdentifiers</c> to which a given policy is attached.
     /// </summary>
     public partial class ListPolicyAttachmentsRequest : AmazonCloudDirectoryRequest
     {

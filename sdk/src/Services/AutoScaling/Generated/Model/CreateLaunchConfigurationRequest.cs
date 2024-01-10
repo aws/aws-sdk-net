@@ -89,13 +89,13 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>true</code>, each instance in the Auto Scaling group receives
-        /// a unique public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
+        /// If you specify <c>true</c>, each instance in the Auto Scaling group receives a unique
+        /// public IPv4 address. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-in-vpc.html">Launching
         /// Auto Scaling instances in a VPC</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify this property, you must specify at least one subnet for <code>VPCZoneIdentifier</code>
+        /// If you specify this property, you must specify at least one subnet for <c>VPCZoneIdentifier</c>
         /// when you create your group.
         /// </para>
         /// </summary>
@@ -172,17 +172,17 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>)
-        /// or not (<code>false</code>). The optimization provides dedicated throughput to Amazon
-        /// EBS and an optimized configuration stack to provide optimal I/O performance. This
-        /// optimization is not available with all instance types. Additional fees are incurred
-        /// when you enable EBS optimization for an instance type that is not EBS-optimized by
-        /// default. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
+        /// Specifies whether the launch configuration is optimized for EBS I/O (<c>true</c>)
+        /// or not (<c>false</c>). The optimization provides dedicated throughput to Amazon EBS
+        /// and an optimized configuration stack to provide optimal I/O performance. This optimization
+        /// is not available with all instance types. Additional fees are incurred when you enable
+        /// EBS optimization for an instance type that is not EBS-optimized by default. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
         /// EBS-optimized instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>false</code>.
+        /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -229,7 +229,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceId</code>, an <code>ImageId</code> is not required.
+        /// If you specify <c>InstanceId</c>, an <c>ImageId</c> is not required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -279,12 +279,12 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
-        /// Controls whether instances in this group are launched with detailed (<code>true</code>)
-        /// or basic (<code>false</code>) monitoring.
+        /// Controls whether instances in this group are launched with detailed (<c>true</c>)
+        /// or basic (<c>false</c>) monitoring.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>true</code> (enabled).
+        /// The default value is <c>true</c> (enabled).
         /// </para>
         ///  <important> 
         /// <para>
@@ -316,7 +316,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceId</code>, an <code>InstanceType</code> is not required.
+        /// If you specify <c>InstanceId</c>, an <c>InstanceType</c> is not required.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -419,23 +419,22 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementTenancy. 
         /// <para>
-        /// The tenancy of the instance, either <code>default</code> or <code>dedicated</code>.
-        /// An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware
-        /// and can only be launched into a VPC. To launch dedicated instances into a shared tenancy
-        /// VPC (a VPC with the instance placement tenancy attribute set to <code>default</code>),
-        /// you must set the value of this property to <code>dedicated</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
+        /// The tenancy of the instance, either <c>default</c> or <c>dedicated</c>. An instance
+        /// with <c>dedicated</c> tenancy runs on isolated, single-tenant hardware and can only
+        /// be launched into a VPC. To launch dedicated instances into a shared tenancy VPC (a
+        /// VPC with the instance placement tenancy attribute set to <c>default</c>), you must
+        /// set the value of this property to <c>dedicated</c>. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/auto-scaling-dedicated-instances.html">Configuring
         /// instance tenancy with Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling
         /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>PlacementTenancy</code>, you must specify at least one subnet
-        /// for <code>VPCZoneIdentifier</code> when you create your group.
+        /// If you specify <c>PlacementTenancy</c>, you must specify at least one subnet for <c>VPCZoneIdentifier</c>
+        /// when you create your group.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>default</code> | <code>dedicated</code> 
+        /// Valid values: <c>default</c> | <c>dedicated</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

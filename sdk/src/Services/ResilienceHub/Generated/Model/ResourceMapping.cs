@@ -112,22 +112,22 @@ namespace Amazon.ResilienceHub.Model
         ///  <dl> <dt>AppRegistryApp</dt> <dd> 
         /// <para>
         /// The resource is mapped to another application. The name of the application is contained
-        /// in the <code>appRegistryAppName</code> property.
+        /// in the <c>appRegistryAppName</c> property.
         /// </para>
         ///  </dd> <dt>CfnStack</dt> <dd> 
         /// <para>
         /// The resource is mapped to a CloudFormation stack. The name of the CloudFormation stack
-        /// is contained in the <code>logicalStackName</code> property.
+        /// is contained in the <c>logicalStackName</c> property.
         /// </para>
         ///  </dd> <dt>Resource</dt> <dd> 
         /// <para>
         /// The resource is mapped to another resource. The name of the resource is contained
-        /// in the <code>resourceName</code> property.
+        /// in the <c>resourceName</c> property.
         /// </para>
         ///  </dd> <dt>ResourceGroup</dt> <dd> 
         /// <para>
         /// The resource is mapped to Resource Groups. The name of the resource group is contained
-        /// in the <code>resourceGroupName</code> property.
+        /// in the <c>resourceGroupName</c> property.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

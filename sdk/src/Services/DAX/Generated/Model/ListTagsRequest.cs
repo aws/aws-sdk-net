@@ -30,8 +30,8 @@ namespace Amazon.DAX.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTags operation.
-    /// List all of the tags for a DAX cluster. You can call <code>ListTags</code> up to 10
-    /// times per second, per account.
+    /// List all of the tags for a DAX cluster. You can call <c>ListTags</c> up to 10 times
+    /// per second, per account.
     /// </summary>
     public partial class ListTagsRequest : AmazonDAXRequest
     {

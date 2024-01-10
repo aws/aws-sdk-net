@@ -110,12 +110,11 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The only Valid value for <code>ParticipantRole</code> is <code>CUSTOM_BOT</code>.
-        /// 
+        /// The only Valid value for <c>ParticipantRole</c> is <c>CUSTOM_BOT</c>. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>DisplayName</code> is <b>Required</b>.
+        ///  <c>DisplayName</c> is <b>Required</b>.
         /// </para>
         ///  </important>
         /// </summary>

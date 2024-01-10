@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
         /// SageMaker uses to encrypt the core dump data at rest using Amazon S3 server-side encryption.
-        /// The <code>KmsKeyId</code> can be any of the following formats: 
+        /// The <c>KmsKeyId</c> can be any of the following formats: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        ///  <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        ///  <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"alias/ExampleAlias"</code> 
+        ///  <c>"alias/ExampleAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -94,24 +94,24 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code> 
+        ///  <c>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you use a KMS key ID or an alias of your KMS key, the SageMaker execution role
-        /// must include permissions to call <code>kms:Encrypt</code>. If you don't provide a
-        /// KMS key ID, SageMaker uses the default KMS key for Amazon S3 for your role's account.
-        /// SageMaker uses server-side encryption with KMS-managed keys for <code>OutputDataConfig</code>.
-        /// If you use a bucket policy with an <code>s3:PutObject</code> permission that only
-        /// allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-        /// to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+        /// must include permissions to call <c>kms:Encrypt</c>. If you don't provide a KMS key
+        /// ID, SageMaker uses the default KMS key for Amazon S3 for your role's account. SageMaker
+        /// uses server-side encryption with KMS-managed keys for <c>OutputDataConfig</c>. If
+        /// you use a bucket policy with an <c>s3:PutObject</c> permission that only allows objects
+        /// with server-side encryption, set the condition key of <c>s3:x-amz-server-side-encryption</c>
+        /// to <c>"aws:kms"</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
         /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
         ///  
         /// <para>
         /// The KMS key policy must grant permission to the IAM role that you specify in your
-        /// <code>CreateEndpoint</code> and <code>UpdateEndpoint</code> requests. For more information,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
+        /// <c>CreateEndpoint</c> and <c>UpdateEndpoint</c> requests. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Using
         /// Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
         /// Service Developer Guide</i>.
         /// </para>

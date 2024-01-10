@@ -30,9 +30,9 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the VoteOnProposal operation.
-    /// Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member
-    /// to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web
-    /// Services account as the principal that calls the action.
+    /// Casts a vote for a specified <c>ProposalId</c> on behalf of a member. The member to
+    /// vote as, specified by <c>VoterMemberId</c>, must be in the same Amazon Web Services
+    /// account as the principal that calls the action.
     /// 
     ///  
     /// <para>

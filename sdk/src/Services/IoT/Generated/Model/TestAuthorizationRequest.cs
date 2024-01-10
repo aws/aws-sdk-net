@@ -53,7 +53,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AuthInfos. 
         /// <para>
         /// A list of authorization info objects. Simulating authorization will create a response
-        /// for each <code>authInfo</code> object in the list.
+        /// for each <c>authInfo</c> object in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

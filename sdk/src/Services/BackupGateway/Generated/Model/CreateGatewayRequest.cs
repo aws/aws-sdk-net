@@ -31,7 +31,7 @@ namespace Amazon.BackupGateway.Model
     /// <summary>
     /// Container for the parameters to the CreateGateway operation.
     /// Creates a backup gateway. After you create a gateway, you can associate it with a
-    /// server using the <code>AssociateGatewayToServer</code> operation.
+    /// server using the <c>AssociateGatewayToServer</c> operation.
     /// </summary>
     public partial class CreateGatewayRequest : AmazonBackupGatewayRequest
     {

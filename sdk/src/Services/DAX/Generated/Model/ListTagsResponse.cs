@@ -40,7 +40,7 @@ namespace Amazon.DAX.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If this value is present, there are additional results to be displayed. To retrieve
-        /// them, call <code>ListTags</code> again, with <code>NextToken</code> set to this value.
+        /// them, call <c>ListTags</c> again, with <c>NextToken</c> set to this value.
         /// </para>
         /// </summary>
         public string NextToken

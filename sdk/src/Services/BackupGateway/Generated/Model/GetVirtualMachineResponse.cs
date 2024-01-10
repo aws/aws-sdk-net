@@ -38,8 +38,8 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property VirtualMachine. 
         /// <para>
-        /// This object contains the basic attributes of <code>VirtualMachine</code> contained
-        /// by the output of <code>GetVirtualMachine</code> 
+        /// This object contains the basic attributes of <c>VirtualMachine</c> contained by the
+        /// output of <c>GetVirtualMachine</c> 
         /// </para>
         /// </summary>
         public VirtualMachineDetails VirtualMachine

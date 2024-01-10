@@ -61,8 +61,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// A timestamp that indicates when the first alert transition occurred in an alert history.
-        /// An alert transition can be from status <code>InAlert</code> to <code>OK</code>, or
-        /// from <code>OK</code> to <code>InAlert</code>.
+        /// An alert transition can be from status <c>InAlert</c> to <c>OK</c>, or from <c>OK</c>
+        /// to <c>InAlert</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

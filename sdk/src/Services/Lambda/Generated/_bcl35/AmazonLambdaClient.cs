@@ -387,8 +387,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -461,14 +461,14 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// To grant permission to another account, specify the account ID as the <code>Principal</code>.
+        /// To grant permission to another account, specify the account ID as the <c>Principal</c>.
         /// To grant permission to an organization defined in Organizations, specify the organization
-        /// ID as the <code>PrincipalOrgID</code>. For Amazon Web Services, the principal is a
-        /// domain-style identifier that the service defines, such as <code>s3.amazonaws.com</code>
-        /// or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify the
-        /// ARN of the associated resource as the <code>SourceArn</code>. If you grant permission
-        /// to a service principal without specifying the source, other accounts could potentially
-        /// configure resources in their account to invoke your Lambda function.
+        /// ID as the <c>PrincipalOrgID</c>. For Amazon Web Services, the principal is a domain-style
+        /// identifier that the service defines, such as <c>s3.amazonaws.com</c> or <c>sns.amazonaws.com</c>.
+        /// For Amazon Web Services, you can also specify the ARN of the associated resource as
+        /// the <c>SourceArn</c>. If you grant permission to a service principal without specifying
+        /// the source, other accounts could potentially configure resources in their account
+        /// to invoke your Lambda function.
         /// </para>
         ///  
         /// <para>
@@ -490,8 +490,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -562,8 +562,8 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// You can also map an alias to split invocation requests between two versions. Use the
-        /// <code>RoutingConfig</code> parameter to specify a second version and the percentage
-        /// of invocation requests that it receives.
+        /// <c>RoutingConfig</c> parameter to specify a second version and the percentage of invocation
+        /// requests that it receives.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAlias service method.</param>
@@ -747,29 +747,29 @@ namespace Amazon.Lambda
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
-        /// the batch in two and retry.
+        ///  <c>BisectBatchOnFunctionError</c> – If the function returns an error, split the batch
+        /// in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
-        /// Amazon SNS topic.
+        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue or Amazon
+        /// SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
-        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
-        /// are retried until the record expires
+        ///  <c>MaximumRecordAgeInSeconds</c> – Discard records older than the specified age.
+        /// The default value is infinite (-1). When set to infinite (-1), failed records are
+        /// retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
-        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
-        /// are retried until the record expires.
+        ///  <c>MaximumRetryAttempts</c> – Discard records after the specified number of retries.
+        /// The default value is infinite (-1). When set to infinite (-1), failed records are
+        /// retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -891,28 +891,26 @@ namespace Amazon.Lambda
         ///  
         /// <para>
         /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
-        /// image</a>, then you set the package type to <code>Image</code>. For a container image,
-        /// the code property must include the URI of a container image in the Amazon ECR registry.
+        /// image</a>, then you set the package type to <c>Image</c>. For a container image, the
+        /// code property must include the URI of a container image in the Amazon ECR registry.
         /// You do not need to specify the handler and runtime properties.
         /// </para>
         ///  
         /// <para>
         /// If the deployment package is a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
-        /// file archive</a>, then you set the package type to <code>Zip</code>. For a .zip file
-        /// archive, the code property specifies the location of the .zip file. You must also
-        /// specify the handler and runtime properties. The code in the deployment package must
-        /// be compatible with the target instruction set architecture of the function (<code>x86-64</code>
-        /// or <code>arm64</code>). If you do not specify the architecture, then the default value
-        /// is <code>x86-64</code>.
+        /// file archive</a>, then you set the package type to <c>Zip</c>. For a .zip file archive,
+        /// the code property specifies the location of the .zip file. You must also specify the
+        /// handler and runtime properties. The code in the deployment package must be compatible
+        /// with the target instruction set architecture of the function (<c>x86-64</c> or <c>arm64</c>).
+        /// If you do not specify the architecture, then the default value is <c>x86-64</c>.
         /// </para>
         ///  
         /// <para>
         /// When you create a function, Lambda provisions an instance of the function and its
         /// supporting resources. If your function connects to a VPC, this process can take a
-        /// minute or so. During this time, you can't invoke or modify the function. The <code>State</code>,
-        /// <code>StateReason</code>, and <code>StateReasonCode</code> fields in the response
-        /// from <a>GetFunctionConfiguration</a> indicate when the function is ready to invoke.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
+        /// minute or so. During this time, you can't invoke or modify the function. The <c>State</c>,
+        /// <c>StateReason</c>, and <c>StateReasonCode</c> fields in the response from <a>GetFunctionConfiguration</a>
+        /// indicate when the function is ready to invoke. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
         /// function states</a>.
         /// </para>
         ///  
@@ -921,8 +919,8 @@ namespace Amazon.Lambda
         /// The unpublished version changes when you update your function's code and configuration.
         /// A published version is a snapshot of your function code and configuration that can't
         /// be changed. An alias is a named resource that maps to a version, and can be changed
-        /// to map to a different version. Use the <code>Publish</code> parameter to create version
-        /// <code>1</code> of your function from its initial configuration.
+        /// to map to a different version. Use the <c>Publish</c> parameter to create version
+        /// <c>1</c> of your function from its initial configuration.
         /// </para>
         ///  
         /// <para>
@@ -1251,8 +1249,8 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// When you delete an event source mapping, it enters a <code>Deleting</code> state and
-        /// might not be completely deleted for several seconds.
+        /// When you delete an event source mapping, it enters a <c>Deleting</c> state and might
+        /// not be completely deleted for several seconds.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteEventSourceMapping service method.</param>
@@ -1328,7 +1326,7 @@ namespace Amazon.Lambda
         #region  DeleteFunction
 
         /// <summary>
-        /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
+        /// Deletes a Lambda function. To delete a specific function version, use the <c>Qualifier</c>
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
@@ -1368,7 +1366,7 @@ namespace Amazon.Lambda
 
 
         /// <summary>
-        /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
+        /// Deletes a Lambda function. To delete a specific function version, use the <c>Qualifier</c>
         /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
         /// user to have explicit permissions for <a>DeleteAlias</a>.
         /// 
@@ -2956,8 +2954,8 @@ namespace Amazon.Lambda
         /// Retrieves the runtime management configuration for a function's version. If the runtime
         /// update mode is <b>Manual</b>, this includes the ARN of the runtime version and the
         /// runtime update mode. If the runtime update mode is <b>Auto</b> or <b>Function update</b>,
-        /// this includes the runtime update mode and <code>null</code> is returned for the ARN.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
+        /// this includes the runtime update mode and <c>null</c> is returned for the ARN. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime
         /// updates</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRuntimeManagementConfig service method.</param>
@@ -3027,10 +3025,9 @@ namespace Amazon.Lambda
         /// <summary>
         /// Invokes a Lambda function. You can invoke a function synchronously (and wait for the
         /// response), or asynchronously. By default, Lambda invokes your function synchronously
-        /// (i.e. the<code>InvocationType</code> is <code>RequestResponse</code>). To invoke a
-        /// function asynchronously, set <code>InvocationType</code> to <code>Event</code>. Lambda
-        /// passes the <code>ClientContext</code> object to your function for synchronous invocations
-        /// only.
+        /// (i.e. the<c>InvocationType</c> is <c>RequestResponse</c>). To invoke a function asynchronously,
+        /// set <c>InvocationType</c> to <c>Event</c>. Lambda passes the <c>ClientContext</c>
+        /// object to your function for synchronous invocations only.
         /// 
         ///  
         /// <para>
@@ -3064,9 +3061,9 @@ namespace Amazon.Lambda
         /// reserved for errors that prevent your function from executing, such as permissions
         /// errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a>
         /// errors, or issues with your function's code and configuration. For example, Lambda
-        /// returns <code>TooManyRequestsException</code> if running the function would cause
-        /// you to exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>)
-        /// or function level (<code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).
+        /// returns <c>TooManyRequestsException</c> if running the function would cause you to
+        /// exceed a concurrency limit at either the account level (<c>ConcurrentInvocationLimitExceeded</c>)
+        /// or function level (<c>ReservedFunctionConcurrentInvocationLimitExceeded</c>).
         /// </para>
         ///  
         /// <para>
@@ -3156,8 +3153,8 @@ namespace Amazon.Lambda
         /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
-        /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// The request payload exceeded the <c>Invoke</c> request body JSON input quota. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
         /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
@@ -3174,12 +3171,12 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartException">
-        /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+        /// The <c>afterRestore()</c> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
         /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
         /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
-        /// state</a> becomes <code>Active</code>.
+        /// state</a> becomes <c>Active</c>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
         /// Lambda couldn't restore the snapshot within the timeout limit.
@@ -3193,7 +3190,7 @@ namespace Amazon.Lambda
         /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
-        /// The content type of the <code>Invoke</code> request body is not JSON.
+        /// The content type of the <c>Invoke</c> request body is not JSON.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/Invoke">REST API Reference for Invoke Operation</seealso>
         public virtual InvokeResponse Invoke(InvokeRequest request)
@@ -3408,8 +3405,8 @@ namespace Amazon.Lambda
         /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
-        /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
+        /// The request payload exceeded the <c>Invoke</c> request body JSON input quota. For
+        /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
         /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
@@ -3426,12 +3423,12 @@ namespace Amazon.Lambda
         /// The Lambda service encountered an internal error.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartException">
-        /// The <code>afterRestore()</code> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
+        /// The <c>afterRestore()</c> <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-runtime-hooks.html">runtime
         /// hook</a> encountered an error. For more information, check the Amazon CloudWatch logs.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartNotReadyException">
         /// Lambda is initializing your function. You can invoke the function when the <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">function
-        /// state</a> becomes <code>Active</code>.
+        /// state</a> becomes <c>Active</c>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.SnapStartTimeoutException">
         /// Lambda couldn't restore the snapshot within the timeout limit.
@@ -3445,7 +3442,7 @@ namespace Amazon.Lambda
         /// quotas</a>.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.UnsupportedMediaTypeException">
-        /// The content type of the <code>Invoke</code> request body is not JSON.
+        /// The content type of the <c>Invoke</c> request body is not JSON.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeWithResponseStream">REST API Reference for InvokeWithResponseStream Operation</seealso>
         public virtual InvokeWithResponseStreamResponse InvokeWithResponseStream(InvokeWithResponseStreamRequest request)
@@ -3566,8 +3563,7 @@ namespace Amazon.Lambda
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
         /// signing configurations</a>. A request returns up to 10,000 configurations per call.
-        /// You can use the <code>MaxItems</code> parameter to return fewer configurations per
-        /// call.
+        /// You can use the <c>MaxItems</c> parameter to return fewer configurations per call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCodeSigningConfigs service method.</param>
         /// 
@@ -3627,8 +3623,8 @@ namespace Amazon.Lambda
         #region  ListEventSourceMappings
 
         /// <summary>
-        /// Lists event source mappings. Specify an <code>EventSourceArn</code> to show only event
-        /// source mappings for a single event source.
+        /// Lists event source mappings. Specify an <c>EventSourceArn</c> to show only event source
+        /// mappings for a single event source.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventSourceMappings service method.</param>
         /// 
@@ -3772,12 +3768,12 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version.
+        /// Set <c>FunctionVersion</c> to <c>ALL</c> to include all published versions of each
+        /// function in addition to the unpublished version.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a>
+        /// The <c>ListFunctions</c> operation returns a subset of the <a>FunctionConfiguration</a>
         /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
         /// LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function
         /// or version, use <a>GetFunction</a>.
@@ -3810,12 +3806,12 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions
-        /// of each function in addition to the unpublished version.
+        /// Set <c>FunctionVersion</c> to <c>ALL</c> to include all published versions of each
+        /// function in addition to the unpublished version.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ListFunctions</code> operation returns a subset of the <a>FunctionConfiguration</a>
+        /// The <c>ListFunctions</c> operation returns a subset of the <a>FunctionConfiguration</a>
         /// fields. To get the additional fields (State, StateReasonCode, StateReason, LastUpdateStatus,
         /// LastUpdateStatusReason, LastUpdateStatusReasonCode, RuntimeVersionConfig) for a function
         /// or version, use <a>GetFunction</a>.
@@ -4361,8 +4357,8 @@ namespace Amazon.Lambda
 
         /// <summary>
         /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-        /// layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
-        /// with the same layer name, a new version is created.
+        /// layer</a> from a ZIP archive. Each time you call <c>PublishLayerVersion</c> with the
+        /// same layer name, a new version is created.
         /// 
         ///  
         /// <para>
@@ -4467,8 +4463,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -4938,8 +4934,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -5011,8 +5007,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceNotFoundException">
         /// The resource specified in the request does not exist.
@@ -5225,8 +5221,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -5404,29 +5400,29 @@ namespace Amazon.Lambda
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BisectBatchOnFunctionError</code> – If the function returns an error, split
-        /// the batch in two and retry.
+        ///  <c>BisectBatchOnFunctionError</c> – If the function returns an error, split the batch
+        /// in two and retry.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue or
-        /// Amazon SNS topic.
+        ///  <c>DestinationConfig</c> – Send discarded records to an Amazon SQS queue or Amazon
+        /// SNS topic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRecordAgeInSeconds</code> – Discard records older than the specified
-        /// age. The default value is infinite (-1). When set to infinite (-1), failed records
-        /// are retried until the record expires
+        ///  <c>MaximumRecordAgeInSeconds</c> – Discard records older than the specified age.
+        /// The default value is infinite (-1). When set to infinite (-1), failed records are
+        /// retried until the record expires
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumRetryAttempts</code> – Discard records after the specified number of
-        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
-        /// are retried until the record expires.
+        ///  <c>MaximumRetryAttempts</c> – Discard records after the specified number of retries.
+        /// The default value is infinite (-1). When set to infinite (-1), failed records are
+        /// retried until the record expires.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParallelizationFactor</code> – Process multiple batches from each shard concurrently.
+        ///  <c>ParallelizationFactor</c> – Process multiple batches from each shard concurrently.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -5549,21 +5545,21 @@ namespace Amazon.Lambda
         /// 
         ///  
         /// <para>
-        /// If the function's package type is <code>Image</code>, then you must specify the code
-        /// package in <code>ImageUri</code> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
+        /// If the function's package type is <c>Image</c>, then you must specify the code package
+        /// in <c>ImageUri</c> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container
         /// image</a> in the Amazon ECR registry.
         /// </para>
         ///  
         /// <para>
-        /// If the function's package type is <code>Zip</code>, then you must specify the deployment
+        /// If the function's package type is <c>Zip</c>, then you must specify the deployment
         /// package as a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip
         /// file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location.
-        /// You can also provide the function code inline using the <code>ZipFile</code> field.
+        /// You can also provide the function code inline using the <c>ZipFile</c> field.
         /// </para>
         ///  
         /// <para>
         /// The code in the deployment package must be compatible with the target instruction
-        /// set architecture of the function (<code>x86-64</code> or <code>arm64</code>).
+        /// set architecture of the function (<c>x86-64</c> or <c>arm64</c>).
         /// </para>
         ///  
         /// <para>
@@ -5602,8 +5598,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.
@@ -5674,7 +5670,7 @@ namespace Amazon.Lambda
         /// When you update a function, Lambda provisions an instance of the function and its
         /// supporting resources. If your function connects to a VPC, this process can take a
         /// minute. During this time, you can't modify the function, but you can still invoke
-        /// it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
+        /// it. The <c>LastUpdateStatus</c>, <c>LastUpdateStatusReason</c>, and <c>LastUpdateStatusReasonCode</c>
         /// fields in the response from <a>GetFunctionConfiguration</a> indicate when the update
         /// is complete and the function is processing events with the new configuration. For
         /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
@@ -5711,8 +5707,8 @@ namespace Amazon.Lambda
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.PreconditionFailedException">
         /// The RevisionId provided does not match the latest RevisionId for the Lambda function
-        /// or alias. Call the <code>GetFunction</code> or the <code>GetAlias</code> API operation
-        /// to retrieve the latest RevisionId for your resource.
+        /// or alias. Call the <c>GetFunction</c> or the <c>GetAlias</c> API operation to retrieve
+        /// the latest RevisionId for your resource.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.ResourceConflictException">
         /// The resource already exists, or another operation is in progress.

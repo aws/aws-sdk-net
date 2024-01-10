@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The sort configuration of a <code>ComboChartVisual</code>.
+    /// The sort configuration of a <c>ComboChartVisual</c>.
     /// </summary>
     public partial class ComboChartSortConfiguration
     {

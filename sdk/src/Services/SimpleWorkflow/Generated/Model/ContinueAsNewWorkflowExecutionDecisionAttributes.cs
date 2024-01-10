@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>ContinueAsNewWorkflowExecution</code> decision.
+    /// Provides the details of the <c>ContinueAsNewWorkflowExecution</c> decision.
     /// 
     ///  
     /// <para>
@@ -42,36 +42,36 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use a <code>Resource</code> element with the domain name to limit the action to only
-    /// specified domains.
+    /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+    /// domains.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// Use an <c>Action</c> element to allow or deny permission to call this action.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.
+    /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+    /// keys.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>tag</code> – A tag used to identify the workflow execution
+    ///  <c>tag</c> – A tag used to identify the workflow execution
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>taskList</code> – String constraint. The key is <code>swf:taskList.name</code>.
+    ///  <c>taskList</c> – String constraint. The key is <c>swf:taskList.name</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>workflowType.version</code> – String constraint. The key is <code>swf:workflowType.version</code>.
+    ///  <c>workflowType.version</c> – String constraint. The key is <c>swf:workflowType.version</c>.
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+    /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -101,18 +101,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE</code> – The child executions are terminated.
+        ///  <c>TERMINATE</c> – The child executions are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
-        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
-        /// It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.
+        ///  <c>REQUEST_CANCEL</c> – A request to cancel is attempted for each child execution
+        /// by recording a <c>WorkflowExecutionCancelRequested</c> event in its history. It is
+        /// up to the decider to take appropriate actions when it receives an execution history
+        /// with this event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        ///  <c>ABANDON</c> – No action is taken. The child executions continue to run.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -138,13 +138,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property ExecutionStartToCloseTimeout. 
         /// <para>
         /// If set, specifies the total duration for this workflow execution. This overrides the
-        /// <code>defaultExecutionStartToCloseTimeout</code> specified when registering the workflow
+        /// <c>defaultExecutionStartToCloseTimeout</c> specified when registering the workflow
         /// type.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         ///  <note> 
         /// <para>
@@ -251,9 +251,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         ///  The task priority that, if set, specifies the priority for the decision tasks for
         /// this workflow execution. This overrides the defaultTaskPriority specified when registering
-        /// the workflow type. Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
-        /// (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate
-        /// higher priority.
+        /// the workflow type. Valid values are integers that range from Java's <c>Integer.MIN_VALUE</c>
+        /// (-2147483648) to <c>Integer.MAX_VALUE</c> (2147483647). Higher numbers indicate higher
+        /// priority.
         /// </para>
         ///  
         /// <para>
@@ -277,13 +277,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TaskStartToCloseTimeout. 
         /// <para>
         /// Specifies the maximum duration of decision tasks for the new workflow execution. This
-        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when
-        /// registering the workflow type using <a>RegisterWorkflowType</a>.
+        /// parameter overrides the <c>defaultTaskStartToCloseTimout</c> specified when registering
+        /// the workflow type using <a>RegisterWorkflowType</a>.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         ///  <note> 
         /// <para>

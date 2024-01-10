@@ -104,7 +104,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// A list of up to 50 tags assigned to the snapshot schedule, sorted alphabetically by
         /// key name. Each tag is a key-value pair. For a gateway with more than 10 tags assigned,
-        /// you can view all tags using the <code>ListTagsForResource</code> API operation.
+        /// you can view all tags using the <c>ListTagsForResource</c> API operation.
         /// </para>
         /// </summary>
         public List<Tag> Tags

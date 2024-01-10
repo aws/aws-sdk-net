@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Returns information that was submitted during the <code>SetupInstanceHttps</code>
-    /// request. Email information is redacted for privacy.
+    /// Returns information that was submitted during the <c>SetupInstanceHttps</c> request.
+    /// Email information is redacted for privacy.
     /// </summary>
     public partial class SetupRequest
     {

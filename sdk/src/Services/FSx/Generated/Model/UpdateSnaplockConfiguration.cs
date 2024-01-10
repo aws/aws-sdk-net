@@ -43,9 +43,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property AuditLogVolume. 
         /// <para>
         /// Enables or disables the audit log volume for an FSx for ONTAP SnapLock volume. The
-        /// default value is <code>false</code>. If you set <code>AuditLogVolume</code> to <code>true</code>,
-        /// the SnapLock volume is created as an audit log volume. The minimum retention period
-        /// for an audit log volume is six months. 
+        /// default value is <c>false</c>. If you set <c>AuditLogVolume</c> to <c>true</c>, the
+        /// SnapLock volume is created as an audit log volume. The minimum retention period for
+        /// an audit log volume is six months. 
         /// </para>
         ///  
         /// <para>
@@ -89,9 +89,9 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Enables, disables, or permanently disables privileged delete on an FSx for ONTAP SnapLock
         /// Enterprise volume. Enabling privileged delete allows SnapLock administrators to delete
-        /// write once, read many (WORM) files even if they have active retention periods. <code>PERMANENTLY_DISABLED</code>
+        /// write once, read many (WORM) files even if they have active retention periods. <c>PERMANENTLY_DISABLED</c>
         /// is a terminal state. If privileged delete is permanently disabled on a SnapLock volume,
-        /// you can't re-enable it. The default value is <code>DISABLED</code>. 
+        /// you can't re-enable it. The default value is <c>DISABLED</c>. 
         /// </para>
         ///  
         /// <para>
@@ -134,7 +134,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Enables or disables volume-append mode on an FSx for ONTAP SnapLock volume. Volume-append
         /// mode allows you to create WORM-appendable files and write data to them incrementally.
-        /// The default value is <code>false</code>. 
+        /// The default value is <c>false</c>. 
         /// </para>
         ///  
         /// <para>

@@ -48,18 +48,18 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AllowedInstanceTypes</code> - The instance types to include in the list. All
-    /// other instance types are ignored, even if they match your specified attributes.
+    ///  <c>AllowedInstanceTypes</c> - The instance types to include in the list. All other
+    /// instance types are ignored, even if they match your specified attributes.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ExcludedInstanceTypes</code> - The instance types to exclude from the list,
-    /// even if they match your specified attributes.
+    ///  <c>ExcludedInstanceTypes</c> - The instance types to exclude from the list, even
+    /// if they match your specified attributes.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// You must specify <code>VCpuCount</code> and <code>MemoryMiB</code>. All other attributes
-    /// are optional. Any unspecified optional attribute is set to its default.
+    /// You must specify <c>VCpuCount</c> and <c>MemoryMiB</c>. All other attributes are optional.
+    /// Any unspecified optional attribute is set to its default.
     /// </para>
     ///  </note> 
     /// <para>
@@ -105,7 +105,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// To exclude accelerator-enabled instance types, set <code>Max</code> to <code>0</code>.
+        /// To exclude accelerator-enabled instance types, set <c>Max</c> to <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -131,19 +131,19 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with NVIDIA devices, specify <code>nvidia</code>.
+        /// For instance types with NVIDIA devices, specify <c>nvidia</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with AMD devices, specify <code>amd</code>.
+        /// For instance types with AMD devices, specify <c>amd</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Amazon Web Services devices, specify <code>amazon-web-services</code>.
+        /// For instance types with Amazon Web Services devices, specify <c>amazon-web-services</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Xilinx devices, specify <code>xilinx</code>.
+        /// For instance types with Xilinx devices, specify <c>xilinx</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -169,31 +169,31 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with NVIDIA A100 GPUs, specify <code>a100</code>.
+        /// For instance types with NVIDIA A100 GPUs, specify <c>a100</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.
+        /// For instance types with NVIDIA V100 GPUs, specify <c>v100</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with NVIDIA K80 GPUs, specify <code>k80</code>.
+        /// For instance types with NVIDIA K80 GPUs, specify <c>k80</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with NVIDIA T4 GPUs, specify <code>t4</code>.
+        /// For instance types with NVIDIA T4 GPUs, specify <c>t4</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with NVIDIA M60 GPUs, specify <code>m60</code>.
+        /// For instance types with NVIDIA M60 GPUs, specify <c>m60</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with AMD Radeon Pro V520 GPUs, specify <code>radeon-pro-v520</code>.
+        /// For instance types with AMD Radeon Pro V520 GPUs, specify <c>radeon-pro-v520</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Xilinx VU9P FPGAs, specify <code>vu9p</code>.
+        /// For instance types with Xilinx VU9P FPGAs, specify <c>vu9p</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -242,15 +242,15 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with GPU accelerators, specify <code>gpu</code>.
+        /// For instance types with GPU accelerators, specify <c>gpu</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with FPGA accelerators, specify <code>fpga</code>.
+        /// For instance types with FPGA accelerators, specify <c>fpga</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with inference accelerators, specify <code>inference</code>.
+        /// For instance types with inference accelerators, specify <c>inference</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -277,20 +277,20 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// You can use strings with one or more wild cards, represented by an asterisk (<code>*</code>),
-        /// to allow an instance type, size, or generation. The following are examples: <code>m5.8xlarge</code>,
-        /// <code>c5*.*</code>, <code>m5a.*</code>, <code>r*</code>, <code>*3*</code>.
+        /// You can use strings with one or more wild cards, represented by an asterisk (<c>*</c>),
+        /// to allow an instance type, size, or generation. The following are examples: <c>m5.8xlarge</c>,
+        /// <c>c5*.*</c>, <c>m5a.*</c>, <c>r*</c>, <c>*3*</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>c5*</code>, Amazon EC2 Auto Scaling will allow the
-        /// entire C5 instance family, which includes all C5a and C5n instance types. If you specify
-        /// <code>m5a.*</code>, Amazon EC2 Auto Scaling will allow all the M5a instance types,
-        /// but not the M5n instance types.
+        /// For example, if you specify <c>c5*</c>, Amazon EC2 Auto Scaling will allow the entire
+        /// C5 instance family, which includes all C5a and C5n instance types. If you specify
+        /// <c>m5a.*</c>, Amazon EC2 Auto Scaling will allow all the M5a instance types, but not
+        /// the M5n instance types.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>AllowedInstanceTypes</code>, you can't specify <code>ExcludedInstanceTypes</code>.
+        /// If you specify <c>AllowedInstanceTypes</c>, you can't specify <c>ExcludedInstanceTypes</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -317,7 +317,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>excluded</code> 
+        /// Default: <c>excluded</c> 
         /// </para>
         /// </summary>
         public BareMetal BareMetal
@@ -365,7 +365,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>excluded</code> 
+        /// Default: <c>excluded</c> 
         /// </para>
         /// </summary>
         public BurstablePerformance BurstablePerformance
@@ -387,15 +387,15 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with Intel CPUs, specify <code>intel</code>.
+        /// For instance types with Intel CPUs, specify <c>intel</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with AMD CPUs, specify <code>amd</code>.
+        /// For instance types with AMD CPUs, specify <c>amd</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with Amazon Web Services CPUs, specify <code>amazon-web-services</code>.
+        /// For instance types with Amazon Web Services CPUs, specify <c>amazon-web-services</c>.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -424,20 +424,20 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ExcludedInstanceTypes. 
         /// <para>
         /// The instance types to exclude. You can use strings with one or more wild cards, represented
-        /// by an asterisk (<code>*</code>), to exclude an instance family, type, size, or generation.
-        /// The following are examples: <code>m5.8xlarge</code>, <code>c5*.*</code>, <code>m5a.*</code>,
-        /// <code>r*</code>, <code>*3*</code>. 
+        /// by an asterisk (<c>*</c>), to exclude an instance family, type, size, or generation.
+        /// The following are examples: <c>m5.8xlarge</c>, <c>c5*.*</c>, <c>m5a.*</c>, <c>r*</c>,
+        /// <c>*3*</c>. 
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>c5*</code>, you are excluding the entire C5 instance
-        /// family, which includes all C5a and C5n instance types. If you specify <code>m5a.*</code>,
-        /// Amazon EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance
+        /// For example, if you specify <c>c5*</c>, you are excluding the entire C5 instance family,
+        /// which includes all C5a and C5n instance types. If you specify <c>m5a.*</c>, Amazon
+        /// EC2 Auto Scaling will exclude all the M5a instance types, but not the M5n instance
         /// types.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>ExcludedInstanceTypes</code>, you can't specify <code>AllowedInstanceTypes</code>.
+        /// If you specify <c>ExcludedInstanceTypes</c>, you can't specify <c>AllowedInstanceTypes</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -464,7 +464,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For current generation instance types, specify <code>current</code>. The current generation
+        /// For current generation instance types, specify <c>current</c>. The current generation
         /// includes EC2 instance types currently recommended for use. This typically includes
         /// the latest two to three generations in each instance family. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
@@ -472,7 +472,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For previous generation instance types, specify <code>previous</code>.
+        /// For previous generation instance types, specify <c>previous</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -500,7 +500,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>included</code> 
+        /// Default: <c>included</c> 
         /// </para>
         /// </summary>
         public LocalStorage LocalStorage
@@ -522,11 +522,11 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For instance types with hard disk drive (HDD) storage, specify <code>hdd</code>.
+        /// For instance types with hard disk drive (HDD) storage, specify <c>hdd</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For instance types with solid state drive (SSD) storage, specify <code>ssd</code>.
+        /// For instance types with solid state drive (SSD) storage, specify <c>ssd</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -639,17 +639,17 @@ namespace Amazon.AutoScaling.Model
         /// EC2 Auto Scaling selects instance types with your attributes, we will exclude instance
         /// types whose price is higher than your threshold. The parameter accepts an integer,
         /// which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection,
-        /// specify a high value, such as <code>999999</code>. 
+        /// specify a high value, such as <c>999999</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>,
-        /// the price protection threshold is applied based on the per vCPU or per memory price
-        /// instead of the per instance price. 
+        /// If you set <c>DesiredCapacityType</c> to <c>vcpu</c> or <c>memory-mib</c>, the price
+        /// protection threshold is applied based on the per vCPU or per memory price instead
+        /// of the per instance price. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>20</code> 
+        /// Default: <c>20</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -672,7 +672,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool RequireHibernateSupport
@@ -696,17 +696,17 @@ namespace Amazon.AutoScaling.Model
         /// Auto Scaling selects instance types with your attributes, we will exclude instance
         /// types whose price is higher than your threshold. The parameter accepts an integer,
         /// which Amazon EC2 Auto Scaling interprets as a percentage. To turn off price protection,
-        /// specify a high value, such as <code>999999</code>. 
+        /// specify a high value, such as <c>999999</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>DesiredCapacityType</code> to <code>vcpu</code> or <code>memory-mib</code>,
-        /// the price protection threshold is applied based on the per vCPU or per memory price
-        /// instead of the per instance price. 
+        /// If you set <c>DesiredCapacityType</c> to <c>vcpu</c> or <c>memory-mib</c>, the price
+        /// protection threshold is applied based on the per vCPU or per memory price instead
+        /// of the per instance price. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code> 
+        /// Default: <c>100</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

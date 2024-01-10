@@ -52,8 +52,8 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>DetectProtectiveEquipment</code> detects PPE worn by up to 15 persons detected
-    /// in an image.
+    ///  <c>DetectProtectiveEquipment</c> detects PPE worn by up to 15 persons detected in
+    /// an image.
     /// </para>
     ///  
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// You can optionally request a summary of detected PPE items with the <code>SummarizationAttributes</code>
+    /// You can optionally request a summary of detected PPE items with the <c>SummarizationAttributes</c>
     /// input parameter. The summary provides the following information. 
     /// </para>
     ///  <ul> <li> 
@@ -87,7 +87,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DetectProtectiveEquipment</code>
+    /// This operation requires permissions to perform the <c>rekognition:DetectProtectiveEquipment</c>
     /// action. 
     /// </para>
     /// </summary>

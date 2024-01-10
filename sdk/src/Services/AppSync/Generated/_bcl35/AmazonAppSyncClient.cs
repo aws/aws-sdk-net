@@ -551,7 +551,7 @@ namespace Amazon.AppSync
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
         /// The API key expiration must be set to a value between 1 and 365 days from creation
-        /// (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).
+        /// (for <c>CreateApiKey</c>) or from update (for <c>UpdateApiKey</c>).
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -619,7 +619,7 @@ namespace Amazon.AppSync
         #region  CreateDataSource
 
         /// <summary>
-        /// Creates a <code>DataSource</code> object.
+        /// Creates a <c>DataSource</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
         /// 
@@ -691,7 +691,7 @@ namespace Amazon.AppSync
         #region  CreateDomainName
 
         /// <summary>
-        /// Creates a custom <code>DomainName</code> object.
+        /// Creates a custom <c>DomainName</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDomainName service method.</param>
         /// 
@@ -755,7 +755,7 @@ namespace Amazon.AppSync
         #region  CreateFunction
 
         /// <summary>
-        /// Creates a <code>Function</code> object.
+        /// Creates a <c>Function</c> object.
         /// 
         ///  
         /// <para>
@@ -829,7 +829,7 @@ namespace Amazon.AppSync
         #region  CreateGraphqlApi
 
         /// <summary>
-        /// Creates a <code>GraphqlApi</code> object.
+        /// Creates a <c>GraphqlApi</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGraphqlApi service method.</param>
         /// 
@@ -903,7 +903,7 @@ namespace Amazon.AppSync
         #region  CreateResolver
 
         /// <summary>
-        /// Creates a <code>Resolver</code> object.
+        /// Creates a <c>Resolver</c> object.
         /// 
         ///  
         /// <para>
@@ -981,7 +981,7 @@ namespace Amazon.AppSync
         #region  CreateType
 
         /// <summary>
-        /// Creates a <code>Type</code> object.
+        /// Creates a <c>Type</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateType service method.</param>
         /// 
@@ -1053,7 +1053,7 @@ namespace Amazon.AppSync
         #region  DeleteApiCache
 
         /// <summary>
-        /// Deletes an <code>ApiCache</code> object.
+        /// Deletes an <c>ApiCache</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApiCache service method.</param>
         /// 
@@ -1193,7 +1193,7 @@ namespace Amazon.AppSync
         #region  DeleteDataSource
 
         /// <summary>
-        /// Deletes a <code>DataSource</code> object.
+        /// Deletes a <c>DataSource</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// 
@@ -1265,7 +1265,7 @@ namespace Amazon.AppSync
         #region  DeleteDomainName
 
         /// <summary>
-        /// Deletes a custom <code>DomainName</code> object.
+        /// Deletes a custom <c>DomainName</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomainName service method.</param>
         /// 
@@ -1337,7 +1337,7 @@ namespace Amazon.AppSync
         #region  DeleteFunction
 
         /// <summary>
-        /// Deletes a <code>Function</code>.
+        /// Deletes a <c>Function</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
         /// 
@@ -1405,7 +1405,7 @@ namespace Amazon.AppSync
         #region  DeleteGraphqlApi
 
         /// <summary>
-        /// Deletes a <code>GraphqlApi</code> object.
+        /// Deletes a <c>GraphqlApi</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGraphqlApi service method.</param>
         /// 
@@ -1480,7 +1480,7 @@ namespace Amazon.AppSync
         #region  DeleteResolver
 
         /// <summary>
-        /// Deletes a <code>Resolver</code> object.
+        /// Deletes a <c>Resolver</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResolver service method.</param>
         /// 
@@ -1552,7 +1552,7 @@ namespace Amazon.AppSync
         #region  DeleteType
 
         /// <summary>
-        /// Deletes a <code>Type</code> object.
+        /// Deletes a <c>Type</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteType service method.</param>
         /// 
@@ -1624,7 +1624,7 @@ namespace Amazon.AppSync
         #region  DisassociateApi
 
         /// <summary>
-        /// Removes an <code>ApiAssociation</code> object from a custom domain.
+        /// Removes an <c>ApiAssociation</c> object from a custom domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateApi service method.</param>
         /// 
@@ -1843,7 +1843,7 @@ namespace Amazon.AppSync
 
         /// <summary>
         /// Evaluates the given code and returns the response. The code definition requirements
-        /// depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines
+        /// depend on the specified runtime. For <c>APPSYNC_JS</c> runtimes, the code defines
         /// the request and response functions. The request function takes the incoming request
         /// after a GraphQL operation is parsed and converts it into a request configuration for
         /// the selected data source operation. The response function interprets responses from
@@ -1988,7 +1988,7 @@ namespace Amazon.AppSync
         #region  FlushApiCache
 
         /// <summary>
-        /// Flushes an <code>ApiCache</code> object.
+        /// Flushes an <c>ApiCache</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the FlushApiCache service method.</param>
         /// 
@@ -2060,7 +2060,7 @@ namespace Amazon.AppSync
         #region  GetApiAssociation
 
         /// <summary>
-        /// Retrieves an <code>ApiAssociation</code> object.
+        /// Retrieves an <c>ApiAssociation</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiAssociation service method.</param>
         /// 
@@ -2128,7 +2128,7 @@ namespace Amazon.AppSync
         #region  GetApiCache
 
         /// <summary>
-        /// Retrieves an <code>ApiCache</code> object.
+        /// Retrieves an <c>ApiCache</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetApiCache service method.</param>
         /// 
@@ -2200,7 +2200,7 @@ namespace Amazon.AppSync
         #region  GetDataSource
 
         /// <summary>
-        /// Retrieves a <code>DataSource</code> object.
+        /// Retrieves a <c>DataSource</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDataSource service method.</param>
         /// 
@@ -2339,7 +2339,7 @@ namespace Amazon.AppSync
         #region  GetDomainName
 
         /// <summary>
-        /// Retrieves a custom <code>DomainName</code> object.
+        /// Retrieves a custom <c>DomainName</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDomainName service method.</param>
         /// 
@@ -2407,7 +2407,7 @@ namespace Amazon.AppSync
         #region  GetFunction
 
         /// <summary>
-        /// Get a <code>Function</code>.
+        /// Get a <c>Function</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
         /// 
@@ -2472,7 +2472,7 @@ namespace Amazon.AppSync
         #region  GetGraphqlApi
 
         /// <summary>
-        /// Retrieves a <code>GraphqlApi</code> object.
+        /// Retrieves a <c>GraphqlApi</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetGraphqlApi service method.</param>
         /// 
@@ -2610,7 +2610,7 @@ namespace Amazon.AppSync
         #region  GetResolver
 
         /// <summary>
-        /// Retrieves a <code>Resolver</code> object.
+        /// Retrieves a <c>Resolver</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResolver service method.</param>
         /// 
@@ -2743,7 +2743,7 @@ namespace Amazon.AppSync
         #region  GetSourceApiAssociation
 
         /// <summary>
-        /// Retrieves a <code>SourceApiAssociation</code> object.
+        /// Retrieves a <c>SourceApiAssociation</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSourceApiAssociation service method.</param>
         /// 
@@ -2811,7 +2811,7 @@ namespace Amazon.AppSync
         #region  GetType
 
         /// <summary>
-        /// Retrieves a <code>Type</code> object.
+        /// Retrieves a <c>Type</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetType service method.</param>
         /// 
@@ -2889,8 +2889,7 @@ namespace Amazon.AppSync
         /// <para>
         /// API keys are deleted automatically 60 days after they expire. However, they may still
         /// be included in the response until they have actually been deleted. You can safely
-        /// call <code>DeleteApiKey</code> to manually delete a key before it's automatically
-        /// deleted.
+        /// call <c>DeleteApiKey</c> to manually delete a key before it's automatically deleted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3360,7 +3359,7 @@ namespace Amazon.AppSync
         #region  ListSourceApiAssociations
 
         /// <summary>
-        /// Lists the <code>SourceApiAssociationSummary</code> data.
+        /// Lists the <c>SourceApiAssociationSummary</c> data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSourceApiAssociations service method.</param>
         /// 
@@ -3574,7 +3573,7 @@ namespace Amazon.AppSync
         #region  ListTypesByAssociation
 
         /// <summary>
-        /// Lists <code>Type</code> objects by the source API association ID.
+        /// Lists <c>Type</c> objects by the source API association ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTypesByAssociation service method.</param>
         /// 
@@ -3646,7 +3645,7 @@ namespace Amazon.AppSync
         #region  StartDataSourceIntrospection
 
         /// <summary>
-        /// Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection
+        /// Creates a new introspection. Returns the <c>introspectionId</c> of the new introspection
         /// after its creation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataSourceIntrospection service method.</param>
@@ -4091,7 +4090,7 @@ namespace Amazon.AppSync
         /// <returns>The response from the UpdateApiKey service method, as returned by AppSync.</returns>
         /// <exception cref="Amazon.AppSync.Model.ApiKeyValidityOutOfBoundsException">
         /// The API key expiration must be set to a value between 1 and 365 days from creation
-        /// (for <code>CreateApiKey</code>) or from update (for <code>UpdateApiKey</code>).
+        /// (for <c>CreateApiKey</c>) or from update (for <c>UpdateApiKey</c>).
         /// </exception>
         /// <exception cref="Amazon.AppSync.Model.BadRequestException">
         /// The request is not well formed. For example, a value is invalid or a required field
@@ -4159,7 +4158,7 @@ namespace Amazon.AppSync
         #region  UpdateDataSource
 
         /// <summary>
-        /// Updates a <code>DataSource</code> object.
+        /// Updates a <c>DataSource</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSource service method.</param>
         /// 
@@ -4231,7 +4230,7 @@ namespace Amazon.AppSync
         #region  UpdateDomainName
 
         /// <summary>
-        /// Updates a custom <code>DomainName</code> object.
+        /// Updates a custom <c>DomainName</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainName service method.</param>
         /// 
@@ -4303,7 +4302,7 @@ namespace Amazon.AppSync
         #region  UpdateFunction
 
         /// <summary>
-        /// Updates a <code>Function</code> object.
+        /// Updates a <c>Function</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
         /// 
@@ -4371,7 +4370,7 @@ namespace Amazon.AppSync
         #region  UpdateGraphqlApi
 
         /// <summary>
-        /// Updates a <code>GraphqlApi</code> object.
+        /// Updates a <c>GraphqlApi</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGraphqlApi service method.</param>
         /// 
@@ -4446,7 +4445,7 @@ namespace Amazon.AppSync
         #region  UpdateResolver
 
         /// <summary>
-        /// Updates a <code>Resolver</code> object.
+        /// Updates a <c>Resolver</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateResolver service method.</param>
         /// 
@@ -4590,7 +4589,7 @@ namespace Amazon.AppSync
         #region  UpdateType
 
         /// <summary>
-        /// Updates a <code>Type</code> object.
+        /// Updates a <c>Type</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateType service method.</param>
         /// 

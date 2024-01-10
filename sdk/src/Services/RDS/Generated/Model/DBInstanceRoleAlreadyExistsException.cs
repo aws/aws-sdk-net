@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The specified <code>RoleArn</code> or <code>FeatureName</code> value is already associated
-    /// with the DB instance.
+    /// The specified <c>RoleArn</c> or <c>FeatureName</c> value is already associated with
+    /// the DB instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

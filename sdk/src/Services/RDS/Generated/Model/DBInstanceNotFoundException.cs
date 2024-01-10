@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+    /// <c>DBInstanceIdentifier</c> doesn't refer to an existing DB instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

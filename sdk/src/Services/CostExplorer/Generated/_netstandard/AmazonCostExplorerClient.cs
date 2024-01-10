@@ -53,7 +53,7 @@ namespace Amazon.CostExplorer
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>https://ce.us-east-1.amazonaws.com</code> 
+    ///  <c>https://ce.us-east-1.amazonaws.com</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -549,10 +549,10 @@ namespace Amazon.CostExplorer
         /// 
         ///  
         /// <para>
-        /// You have the option to use <code>EffectiveOn</code> to return a Cost Category that's
-        /// active on a specific date. If there's no <code>EffectiveOn</code> specified, you see
-        /// a Cost Category that's effective on the current date. If Cost Category is still effective,
-        /// <code>EffectiveEnd</code> is omitted in the response. 
+        /// You have the option to use <c>EffectiveOn</c> to return a Cost Category that's active
+        /// on a specific date. If there's no <c>EffectiveOn</c> specified, you see a Cost Category
+        /// that's effective on the current date. If Cost Category is still effective, <c>EffectiveEnd</c>
+        /// is omitted in the response. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCostCategoryDefinition service method.</param>
@@ -594,8 +594,8 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves all of the cost anomalies detected on your account during the time period
-        /// that's specified by the <code>DateInterval</code> object. Anomalies are available
-        /// for up to 90 days.
+        /// that's specified by the <c>DateInterval</c> object. Anomalies are available for up
+        /// to 90 days.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAnomalies service method.</param>
         /// <param name="cancellationToken">
@@ -725,9 +725,9 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves cost and usage metrics for your account. You can specify which cost and
         /// usage-related metric that you want the request to return. For example, you can specify
-        /// <code>BlendedCosts</code> or <code>UsageQuantity</code>. You can also filter and group
-        /// your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>,
-        /// in a specific time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// <c>BlendedCosts</c> or <c>UsageQuantity</c>. You can also filter and group your data
+        /// by various dimensions, such as <c>SERVICE</c> or <c>AZ</c>, in a specific time range.
+        /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Management account in an organization in Organizations have access to all
         /// member accounts.
         /// 
@@ -786,10 +786,10 @@ namespace Amazon.CostExplorer
 
         /// <summary>
         /// Retrieves cost and usage metrics with resources for your account. You can specify
-        /// which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
+        /// which cost and usage-related metric, such as <c>BlendedCosts</c> or <c>UsageQuantity</c>,
         /// that you want the request to return. You can also filter and group your data by various
-        /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-        /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+        /// dimensions, such as <c>SERVICE</c> or <c>AZ</c>, in a specific time range. For a complete
+        /// list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
         /// operation. Management account in an organization in Organizations have access to all
         /// member accounts. This API is currently available for the Amazon Elastic Compute Cloud
         /// – Compute service only.
@@ -1056,8 +1056,8 @@ namespace Amazon.CostExplorer
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
-        /// operation. 
+        /// To determine valid values for a dimension, use the <c>GetDimensionValues</c> operation.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationCoverage service method.</param>
@@ -1122,7 +1122,7 @@ namespace Amazon.CostExplorer
         /// Services recommends the smallest size instance in an instance family. This makes it
         /// easier to purchase a size-flexible Reserved Instance (RI). Amazon Web Services also
         /// shows the equal number of normalized units. This way, you can purchase any instance
-        /// size that you want. For this example, your RI recommendation is for <code>c4.large</code>
+        /// size that you want. For this example, your RI recommendation is for <c>c4.large</c>
         /// because that is the smallest size instance in the c4 instance family.
         /// </para>
         /// </summary>
@@ -1169,8 +1169,8 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves the reservation utilization for your account. Management account in an organization
         /// have access to member accounts. You can filter data by dimensions in a time period.
-        /// You can use <code>GetDimensionValues</code> to determine the possible dimension values.
-        /// Currently, you can group only by <code>SUBSCRIPTION_ID</code>.
+        /// You can use <c>GetDimensionValues</c> to determine the possible dimension values.
+        /// Currently, you can group only by <c>SUBSCRIPTION_ID</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetReservationUtilization service method.</param>
         /// <param name="cancellationToken">
@@ -1312,24 +1312,23 @@ namespace Amazon.CostExplorer
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LINKED_ACCOUNT</code> 
+        ///  <c>LINKED_ACCOUNT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGION</code> 
+        ///  <c>REGION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SERVICE</code> 
+        ///  <c>SERVICE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE_FAMILY</code> 
+        ///  <c>INSTANCE_FAMILY</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
-        /// operation.
+        /// To determine valid values for a dimension, use the <c>GetDimensionValues</c> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansCoverage service method.</param>
@@ -1373,8 +1372,8 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Retrieves the Savings Plans recommendations for your account. First use <code>StartSavingsPlansPurchaseRecommendationGeneration</code>
-        /// to generate a new set of recommendations, and then use <code>GetSavingsPlansPurchaseRecommendation</code>
+        /// Retrieves the Savings Plans recommendations for your account. First use <c>StartSavingsPlansPurchaseRecommendationGeneration</c>
+        /// to generate a new set of recommendations, and then use <c>GetSavingsPlansPurchaseRecommendation</c>
         /// to retrieve them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSavingsPlansPurchaseRecommendation service method.</param>
@@ -1417,12 +1416,12 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves the Savings Plans utilization for your account across date ranges with daily
         /// or monthly granularity. Management account in an organization have access to member
-        /// accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
-        /// to determine the possible dimension values.
+        /// accounts. You can use <c>GetDimensionValues</c> in <c>SAVINGS_PLANS</c> to determine
+        /// the possible dimension values.
         /// 
         ///  <note> 
         /// <para>
-        /// You can't group by any dimension values for <code>GetSavingsPlansUtilization</code>.
+        /// You can't group by any dimension values for <c>GetSavingsPlansUtilization</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1466,14 +1465,14 @@ namespace Amazon.CostExplorer
         /// <summary>
         /// Retrieves attribute data along with aggregate utilization and savings data for a given
         /// time period. This doesn't support granular or grouped data (daily/monthly) in response.
-        /// You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>,
-        /// but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
-        /// by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+        /// You can't retrieve data by dates in a single response similar to <c>GetSavingsPlanUtilization</c>,
+        /// but you have the option to make multiple calls to <c>GetSavingsPlanUtilizationDetails</c>
+        /// by providing individual dates. You can use <c>GetDimensionValues</c> in <c>SAVINGS_PLANS</c>
         /// to determine the possible dimension values.
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
+        ///  <c>GetSavingsPlanUtilizationDetails</c> internally groups data by <c>SavingsPlansArn</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1585,8 +1584,8 @@ namespace Amazon.CostExplorer
         /// You made too many calls in a short period of time. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostExplorer.Model.UnresolvableUsageUnitException">
-        /// Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code>
-        /// filter selections that contain matching units, for example: <code>hours</code>.
+        /// Cost Explorer was unable to identify the usage unit. Provide <c>UsageType/UsageTypeGroup</c>
+        /// filter selections that contain matching units, for example: <c>hours</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetUsageForecast">REST API Reference for GetUsageForecast Operation</seealso>
         public virtual Task<GetUsageForecastResponse> GetUsageForecastAsync(GetUsageForecastRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1655,13 +1654,13 @@ namespace Amazon.CostExplorer
 
 
         /// <summary>
-        /// Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective
-        /// dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+        /// Returns the name, Amazon Resource Name (ARN), <c>NumberOfRules</c> and effective dates
+        /// of all Cost Categories defined in the account. You have the option to use <c>EffectiveOn</c>
         /// to return a list of Cost Categories that were active on a specific date. If there
-        /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
-        /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
-        /// is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination.
-        /// The request can have a <code>MaxResults</code> range up to 100.
+        /// is no <c>EffectiveOn</c> specified, you’ll see Cost Categories that are effective
+        /// on the current date. If Cost Category is still effective, <c>EffectiveEnd</c> is omitted
+        /// in the response. <c>ListCostCategoryDefinitions</c> supports pagination. The request
+        /// can have a <c>MaxResults</c> range up to 100.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCostCategoryDefinitions service method.</param>
         /// <param name="cancellationToken">
@@ -1827,8 +1826,8 @@ namespace Amazon.CostExplorer
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax
-        /// because no input parameters are needed to support this operation.
+        ///  <c>StartSavingsPlansPurchaseRecommendationGeneration</c> has no request syntax because
+        /// no input parameters are needed to support this operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1881,9 +1880,9 @@ namespace Amazon.CostExplorer
         /// 
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> operation with a resource that already has
-        /// tags. If you specify a new tag key for the resource, this tag is appended to the list
-        /// of tags associated with the resource. If you specify a tag key that is already associated
+        /// You can use the <c>TagResource</c> operation with a resource that already has tags.
+        /// If you specify a new tag key for the resource, this tag is appended to the list of
+        /// tags associated with the resource. If you specify a tag key that is already associated
         /// with the resource, the new tag value you specify replaces the previous value for that
         /// tag.
         /// </para>
@@ -2023,7 +2022,7 @@ namespace Amazon.CostExplorer
         ///  <note> 
         /// <para>
         /// The JSON below describes the generic construct for each type. See <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_UpdateAnomalySubscription.html#API_UpdateAnomalySubscription_RequestParameters">Request
-        /// Parameters</a> for possible values as they apply to <code>AnomalySubscription</code>.
+        /// Parameters</a> for possible values as they apply to <c>AnomalySubscription</c>.
         /// </para>
         ///  </note>
         /// </summary>

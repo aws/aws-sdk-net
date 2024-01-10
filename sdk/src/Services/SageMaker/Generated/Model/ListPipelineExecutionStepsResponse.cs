@@ -39,9 +39,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListPipelineExecutionSteps</code> request was
-        /// truncated, the response includes a <code>NextToken</code>. To retrieve the next set
-        /// of pipeline execution steps, use the token in the next request.
+        /// If the result of the previous <c>ListPipelineExecutionSteps</c> request was truncated,
+        /// the response includes a <c>NextToken</c>. To retrieve the next set of pipeline execution
+        /// steps, use the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PipelineExecutionSteps. 
         /// <para>
-        /// A list of <code>PipeLineExecutionStep</code> objects. Each <code>PipeLineExecutionStep</code>
+        /// A list of <c>PipeLineExecutionStep</c> objects. Each <c>PipeLineExecutionStep</c>
         /// consists of StepName, StartTime, EndTime, StepStatus, and Metadata. Metadata is an
         /// object with properties for each job that contains relevant information about the job
         /// created by the step.

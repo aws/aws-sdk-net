@@ -39,7 +39,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property TaskHandle. 
         /// <para>
         /// An identifier associated with a message movement task. You can use this identifier
-        /// to cancel a specified message movement task using the <code>CancelMessageMoveTask</code>
+        /// to cancel a specified message movement task using the <c>CancelMessageMoveTask</c>
         /// action.
         /// </para>
         /// </summary>

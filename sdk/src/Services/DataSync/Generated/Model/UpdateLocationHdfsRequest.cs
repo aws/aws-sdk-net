@@ -130,9 +130,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property KerberosKrb5Conf. 
         /// <para>
-        /// The <code>krb5.conf</code> file that contains the Kerberos configuration information.
-        /// You can load the <code>krb5.conf</code> file by providing the file's address. If you're
-        /// using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+        /// The <c>krb5.conf</c> file that contains the Kerberos configuration information. You
+        /// can load the <c>krb5.conf</c> file by providing the file's address. If you're using
+        /// the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
         /// text.
         /// </para>
         /// </summary>

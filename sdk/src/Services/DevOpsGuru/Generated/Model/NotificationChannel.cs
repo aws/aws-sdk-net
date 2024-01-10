@@ -57,7 +57,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        ///  A <code>NotificationChannelConfig</code> object that contains information about configured
+        ///  A <c>NotificationChannelConfig</c> object that contains information about configured
         /// notification channels. 
         /// </para>
         /// </summary>

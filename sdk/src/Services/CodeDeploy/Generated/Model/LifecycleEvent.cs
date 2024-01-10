@@ -78,8 +78,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LifecycleEventName. 
         /// <para>
-        /// The deployment lifecycle event name, such as <code>ApplicationStop</code>, <code>BeforeInstall</code>,
-        /// <code>AfterInstall</code>, <code>ApplicationStart</code>, or <code>ValidateService</code>.
+        /// The deployment lifecycle event name, such as <c>ApplicationStop</c>, <c>BeforeInstall</c>,
+        /// <c>AfterInstall</c>, <c>ApplicationStart</c>, or <c>ValidateService</c>.
         /// </para>
         /// </summary>
         public string LifecycleEventName

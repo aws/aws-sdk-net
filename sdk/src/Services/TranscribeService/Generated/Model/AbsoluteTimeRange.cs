@@ -33,21 +33,20 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// You can use <code>StartTime</code> and <code>EndTime</code> to search a custom segment.
-    /// For example, setting <code>StartTime</code> to 10000 and <code>EndTime</code> to 50000
-    /// only searches for your specified criteria in the audio contained between the 10,000
-    /// millisecond mark and the 50,000 millisecond mark of your media file. You must use
-    /// <code>StartTime</code> and <code>EndTime</code> as a set; that is, if you include
-    /// one, you must include both.
+    /// You can use <c>StartTime</c> and <c>EndTime</c> to search a custom segment. For example,
+    /// setting <c>StartTime</c> to 10000 and <c>EndTime</c> to 50000 only searches for your
+    /// specified criteria in the audio contained between the 10,000 millisecond mark and
+    /// the 50,000 millisecond mark of your media file. You must use <c>StartTime</c> and
+    /// <c>EndTime</c> as a set; that is, if you include one, you must include both.
     /// </para>
     ///  
     /// <para>
-    /// You can use also <code>First</code> to search from the start of the audio until the
-    /// time that you specify, or <code>Last</code> to search from the time that you specify
-    /// until the end of the audio. For example, setting <code>First</code> to 50000 only
-    /// searches for your specified criteria in the audio contained between the start of the
-    /// media file to the 50,000 millisecond mark. You can use <code>First</code> and <code>Last</code>
-    /// independently of each other.
+    /// You can use also <c>First</c> to search from the start of the audio until the time
+    /// that you specify, or <c>Last</c> to search from the time that you specify until the
+    /// end of the audio. For example, setting <c>First</c> to 50000 only searches for your
+    /// specified criteria in the audio contained between the start of the media file to the
+    /// 50,000 millisecond mark. You can use <c>First</c> and <c>Last</c> independently of
+    /// each other.
     /// </para>
     ///  
     /// <para>
@@ -65,8 +64,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The time, in milliseconds, when Amazon Transcribe stops searching for the specified
-        /// criteria in your audio. If you include <code>EndTime</code> in your request, you must
-        /// also include <code>StartTime</code>.
+        /// criteria in your audio. If you include <c>EndTime</c> in your request, you must also
+        /// include <c>StartTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]
@@ -126,8 +125,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The time, in milliseconds, when Amazon Transcribe starts searching for the specified
-        /// criteria in your audio. If you include <code>StartTime</code> in your request, you
-        /// must also include <code>EndTime</code>.
+        /// criteria in your audio. If you include <c>StartTime</c> in your request, you must
+        /// also include <c>EndTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=14400000)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Associates a complex object with a display value. Use <code>ValueMapping</code> to
-    /// store how to represent complex objects when they are displayed.
+    /// Associates a complex object with a display value. Use <c>ValueMapping</c> to store
+    /// how to represent complex objects when they are displayed.
     /// </summary>
     public partial class ValueMapping
     {

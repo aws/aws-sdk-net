@@ -34,8 +34,8 @@ namespace Amazon.Backup.Model
     /// 
     ///  
     /// <para>
-    /// Use the <code>DescribeRegionSettings</code> API to determine the resource types that
-    /// are supported.
+    /// Use the <c>DescribeRegionSettings</c> API to determine the resource types that are
+    /// supported.
     /// </para>
     /// </summary>
     public partial class UpdateRegionSettingsRequest : AmazonBackupRequest

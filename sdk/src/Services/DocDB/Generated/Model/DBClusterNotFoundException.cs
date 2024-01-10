@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBClusterIdentifier</code> doesn't refer to an existing cluster.
+    /// <c>DBClusterIdentifier</c> doesn't refer to an existing cluster.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

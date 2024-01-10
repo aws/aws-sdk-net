@@ -58,7 +58,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates the status of the <code>StartDataIngestionJob</code> operation. 
+        /// Indicates the status of the <c>StartDataIngestionJob</c> operation. 
         /// </para>
         /// </summary>
         public IngestionJobStatus Status

@@ -39,79 +39,76 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ProductInformationFilterList. 
         /// <para>
-        /// A Product information filter consists of a <code>ProductInformationFilterComparator</code>
-        /// which is a logical operator, a <code>ProductInformationFilterName</code> which specifies
-        /// the type of filter being declared, and a <code>ProductInformationFilterValue</code>
-        /// that specifies the value to filter on. 
+        /// A Product information filter consists of a <c>ProductInformationFilterComparator</c>
+        /// which is a logical operator, a <c>ProductInformationFilterName</c> which specifies
+        /// the type of filter being declared, and a <c>ProductInformationFilterValue</c> that
+        /// specifies the value to filter on. 
         /// </para>
         ///  
         /// <para>
-        /// Accepted values for <code>ProductInformationFilterName</code> are listed here along
-        /// with descriptions and valid options for <code>ProductInformationFilterComparator</code>.
-        /// 
+        /// Accepted values for <c>ProductInformationFilterName</c> are listed here along with
+        /// descriptions and valid options for <c>ProductInformationFilterComparator</c>. 
         /// </para>
         ///  
         /// <para>
-        /// The following filters and are supported when the resource type is <code>SSM_MANAGED</code>:
+        /// The following filters and are supported when the resource type is <c>SSM_MANAGED</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Application Name</code> - The name of the application. Logical operator is
-        /// <code>EQUALS</code>.
+        ///  <c>Application Name</c> - The name of the application. Logical operator is <c>EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Application Publisher</code> - The publisher of the application. Logical operator
-        /// is <code>EQUALS</code>.
+        ///  <c>Application Publisher</c> - The publisher of the application. Logical operator
+        /// is <c>EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Application Version</code> - The version of the application. Logical operator
-        /// is <code>EQUALS</code>.
+        ///  <c>Application Version</c> - The version of the application. Logical operator is
+        /// <c>EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Platform Name</code> - The name of the platform. Logical operator is <code>EQUALS</code>.
+        ///  <c>Platform Name</c> - The name of the platform. Logical operator is <c>EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Platform Type</code> - The platform type. Logical operator is <code>EQUALS</code>.
+        ///  <c>Platform Type</c> - The platform type. Logical operator is <c>EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Tag:key</code> - The key of a tag attached to an Amazon Web Services resource
-        /// you wish to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.
-        /// The key for your tag must be appended to <code>Tag:</code> following the example:
-        /// <code>Tag:name-of-your-key</code>. <code>ProductInformationFilterValue</code> is optional
-        /// if you are not using values for the key. 
+        ///  <c>Tag:key</c> - The key of a tag attached to an Amazon Web Services resource you
+        /// wish to exclude from automated discovery. Logical operator is <c>NOT_EQUALS</c>. The
+        /// key for your tag must be appended to <c>Tag:</c> following the example: <c>Tag:name-of-your-key</c>.
+        /// <c>ProductInformationFilterValue</c> is optional if you are not using values for the
+        /// key. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountId</code> - The 12-digit ID of an Amazon Web Services account you wish
-        /// to exclude from automated discovery. Logical operator is <code>NOT_EQUALS</code>.
+        ///  <c>AccountId</c> - The 12-digit ID of an Amazon Web Services account you wish to
+        /// exclude from automated discovery. Logical operator is <c>NOT_EQUALS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>License Included</code> - The type of license included. Logical operators are
-        /// <code>EQUALS</code> and <code>NOT_EQUALS</code>. Possible values are: <code>sql-server-enterprise</code>
-        /// | <code>sql-server-standard</code> | <code>sql-server-web</code> | <code>windows-server-datacenter</code>.
+        ///  <c>License Included</c> - The type of license included. Logical operators are <c>EQUALS</c>
+        /// and <c>NOT_EQUALS</c>. Possible values are: <c>sql-server-enterprise</c> | <c>sql-server-standard</c>
+        /// | <c>sql-server-web</c> | <c>windows-server-datacenter</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The following filters and logical operators are supported when the resource type is
-        /// <code>RDS</code>:
+        /// <c>RDS</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Engine Edition</code> - The edition of the database engine. Logical operator
-        /// is <code>EQUALS</code>. Possible values are: <code>oracle-ee</code> | <code>oracle-se</code>
-        /// | <code>oracle-se1</code> | <code>oracle-se2</code>.
+        ///  <c>Engine Edition</c> - The edition of the database engine. Logical operator is <c>EQUALS</c>.
+        /// Possible values are: <c>oracle-ee</c> | <c>oracle-se</c> | <c>oracle-se1</c> | <c>oracle-se2</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>License Pack</code> - The license pack. Logical operator is <code>EQUALS</code>.
-        /// Possible values are: <code>data guard</code> | <code>diagnostic pack sqlt</code> |
-        /// <code>tuning pack sqlt</code> | <code>ols</code> | <code>olap</code>.
+        ///  <c>License Pack</c> - The license pack. Logical operator is <c>EQUALS</c>. Possible
+        /// values are: <c>data guard</c> | <c>diagnostic pack sqlt</c> | <c>tuning pack sqlt</c>
+        /// | <c>ols</c> | <c>olap</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -131,7 +128,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// Resource type. The possible values are <code>SSM_MANAGED</code> | <code>RDS</code>.
+        /// Resource type. The possible values are <c>SSM_MANAGED</c> | <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

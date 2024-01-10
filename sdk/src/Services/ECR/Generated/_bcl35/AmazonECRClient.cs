@@ -290,8 +290,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -358,7 +358,7 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Deletes a list of specified images within a repository. Images are specified with
-        /// either an <code>imageTag</code> or <code>imageDigest</code>.
+        /// either an <c>imageTag</c> or <c>imageDigest</c>.
         /// 
         ///  
         /// <para>
@@ -433,8 +433,8 @@ namespace Amazon.ECR
         #region  BatchGetImage
 
         /// <summary>
-        /// Gets detailed information for an image. Images are specified with either an <code>imageTag</code>
-        /// or <code>imageDigest</code>.
+        /// Gets detailed information for an image. Images are specified with either an <c>imageTag</c>
+        /// or <c>imageDigest</c>.
         /// 
         ///  
         /// <para>
@@ -582,7 +582,7 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Informs Amazon ECR that the image layer upload has completed for a specified registry,
-        /// repository name, and upload ID. You can optionally provide a <code>sha256</code> digest
+        /// repository name, and upload ID. You can optionally provide a <c>sha256</c> digest
         /// of the image layer for data validation purposes.
         /// 
         ///  
@@ -593,8 +593,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1052,8 +1052,8 @@ namespace Amazon.ECR
 
         /// <summary>
         /// Deletes a repository. If the repository isn't empty, you must either delete the contents
-        /// of the repository or use the <code>force</code> option to delete the repository and
-        /// have Amazon ECR delete all of its contents on your behalf.
+        /// of the repository or use the <c>force</c> option to delete the repository and have
+        /// Amazon ECR delete all of its contents on your behalf.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRepository service method.</param>
         /// 
@@ -1066,7 +1066,7 @@ namespace Amazon.ECR
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotEmptyException">
         /// The specified repository contains images. To delete a repository that contains images,
-        /// you must force the deletion with the <code>force</code> parameter.
+        /// you must force the deletion with the <c>force</c> parameter.
         /// </exception>
         /// <exception cref="Amazon.ECR.Model.RepositoryNotFoundException">
         /// The specified repository could not be found. Check the spelling of the specified repository
@@ -1267,9 +1267,9 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// Beginning with Docker version 1.9, the Docker client compresses image layers before
-        /// pushing them to a V2 Docker registry. The output of the <code>docker images</code>
-        /// command shows the uncompressed image size, so it may return a larger image size than
-        /// the image sizes returned by <a>DescribeImages</a>.
+        /// pushing them to a V2 Docker registry. The output of the <c>docker images</c> command
+        /// shows the uncompressed image size, so it may return a larger image size than the image
+        /// sizes returned by <a>DescribeImages</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1613,10 +1613,10 @@ namespace Amazon.ECR
         /// 
         ///  
         /// <para>
-        /// The <code>authorizationToken</code> returned is a base64 encoded string that can be
-        /// decoded and used in a <code>docker login</code> command to authenticate to a registry.
-        /// The CLI offers an <code>get-login-password</code> command that simplifies the login
-        /// process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
+        /// The <c>authorizationToken</c> returned is a base64 encoded string that can be decoded
+        /// and used in a <c>docker login</c> command to authenticate to a registry. The CLI offers
+        /// an <c>get-login-password</c> command that simplifies the login process. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/Registries.html#registry_auth">Registry
         /// authentication</a> in the <i>Amazon Elastic Container Registry User Guide</i>.
         /// </para>
         /// </summary>
@@ -1689,8 +1689,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2115,8 +2115,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2189,12 +2189,11 @@ namespace Amazon.ECR
         /// 
         ///  
         /// <para>
-        /// You can filter images based on whether or not they are tagged by using the <code>tagStatus</code>
-        /// filter and specifying either <code>TAGGED</code>, <code>UNTAGGED</code> or <code>ANY</code>.
-        /// For example, you can filter your results to return only <code>UNTAGGED</code> images
-        /// and then pipe that result to a <a>BatchDeleteImage</a> operation to delete them. Or,
-        /// you can filter your results to return only <code>TAGGED</code> images to list all
-        /// of the tags in your repository.
+        /// You can filter images based on whether or not they are tagged by using the <c>tagStatus</c>
+        /// filter and specifying either <c>TAGGED</c>, <c>UNTAGGED</c> or <c>ANY</c>. For example,
+        /// you can filter your results to return only <c>UNTAGGED</c> images and then pipe that
+        /// result to a <a>BatchDeleteImage</a> operation to delete them. Or, you can filter your
+        /// results to return only <c>TAGGED</c> images to list all of the tags in your repository.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImages service method.</param>
@@ -2334,8 +2333,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2430,9 +2429,9 @@ namespace Amazon.ECR
         /// <summary>
         /// <important> 
         /// <para>
-        /// The <code>PutImageScanningConfiguration</code> API is being deprecated, in favor of
-        /// specifying the image scanning configuration at the registry level. For more information,
-        /// see <a>PutRegistryScanningConfiguration</a>.
+        /// The <c>PutImageScanningConfiguration</c> API is being deprecated, in favor of specifying
+        /// the image scanning configuration at the registry level. For more information, see
+        /// <a>PutRegistryScanningConfiguration</a>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3306,8 +3305,8 @@ namespace Amazon.ECR
         ///  <note> 
         /// <para>
         /// This operation is used by the Amazon ECR proxy and is not generally used by customers
-        /// for pulling and pushing images. In most cases, you should use the <code>docker</code>
-        /// CLI to pull, tag, and push images.
+        /// for pulling and pushing images. In most cases, you should use the <c>docker</c> CLI
+        /// to pull, tag, and push images.
         /// </para>
         ///  </note>
         /// </summary>

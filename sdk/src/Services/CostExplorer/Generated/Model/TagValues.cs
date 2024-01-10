@@ -33,15 +33,14 @@ namespace Amazon.CostExplorer.Model
     /// 
     ///  
     /// <para>
-    /// If <code>Values</code> and <code>Key</code> aren't specified, the <code>ABSENT</code>
-    /// <code>MatchOption</code> is applied to all tags. That is, it's filtered on resources
-    /// with no tags.
+    /// If <c>Values</c> and <c>Key</c> aren't specified, the <c>ABSENT</c> <c>MatchOption</c>
+    /// is applied to all tags. That is, it's filtered on resources with no tags.
     /// </para>
     ///  
     /// <para>
-    /// If <code>Key</code> is provided and <code>Values</code> isn't specified, the <code>ABSENT</code>
-    /// <code>MatchOption</code> is applied to the tag <code>Key</code> only. That is, it's
-    /// filtered on resources without the given tag key.
+    /// If <c>Key</c> is provided and <c>Values</c> isn't specified, the <c>ABSENT</c> <c>MatchOption</c>
+    /// is applied to the tag <c>Key</c> only. That is, it's filtered on resources without
+    /// the given tag key.
     /// </para>
     /// </summary>
     public partial class TagValues
@@ -72,9 +71,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MatchOptions. 
         /// <para>
-        /// The match options that you can use to filter your results. <code>MatchOptions</code>
-        /// is only applicable for actions related to Cost Category. The default values for <code>MatchOptions</code>
-        /// are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// The match options that you can use to filter your results. <c>MatchOptions</c> is
+        /// only applicable for actions related to Cost Category. The default values for <c>MatchOptions</c>
+        /// are <c>EQUALS</c> and <c>CASE_SENSITIVE</c>.
         /// </para>
         /// </summary>
         public List<string> MatchOptions

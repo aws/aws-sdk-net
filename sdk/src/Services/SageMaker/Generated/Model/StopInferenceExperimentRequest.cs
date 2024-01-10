@@ -43,8 +43,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredModelVariants. 
         /// <para>
-        ///  An array of <code>ModelVariantConfig</code> objects. There is one for each variant
-        /// that you want to deploy after the inference experiment stops. Each <code>ModelVariantConfig</code>
+        ///  An array of <c>ModelVariantConfig</c> objects. There is one for each variant that
+        /// you want to deploy after the inference experiment stops. Each <c>ModelVariantConfig</c>
         /// describes the infrastructure configuration for deploying the corresponding variant.
         /// 
         /// </para>
@@ -70,11 +70,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Completed</code>: The experiment completed successfully
+        ///  <c>Completed</c>: The experiment completed successfully
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code>: The experiment was canceled
+        ///  <c>Cancelled</c>: The experiment was canceled
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -98,15 +98,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Promote</code> - Promote the shadow variant to a production variant
+        ///  <c>Promote</c> - Promote the shadow variant to a production variant
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Remove</code> - Delete the variant
+        ///  <c>Remove</c> - Delete the variant
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Retain</code> - Keep the variant as it is
+        ///  <c>Retain</c> - Keep the variant as it is
         /// </para>
         ///  </li> </ul>
         /// </summary>

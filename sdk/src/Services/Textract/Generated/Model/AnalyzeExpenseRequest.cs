@@ -30,23 +30,22 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// Container for the parameters to the AnalyzeExpense operation.
-    /// <code>AnalyzeExpense</code> synchronously analyzes an input document for financially
-    /// related relationships between text.
+    /// <c>AnalyzeExpense</c> synchronously analyzes an input document for financially related
+    /// relationships between text.
     /// 
     ///  
     /// <para>
-    /// Information is returned as <code>ExpenseDocuments</code> and seperated as follows:
+    /// Information is returned as <c>ExpenseDocuments</c> and seperated as follows:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>LineItemGroups</code>- A data set containing <code>LineItems</code> which store
-    /// information about the lines of text, such as an item purchased and its price on a
-    /// receipt.
+    ///  <c>LineItemGroups</c>- A data set containing <c>LineItems</c> which store information
+    /// about the lines of text, such as an item purchased and its price on a receipt.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SummaryFields</code>- Contains all other information a receipt, such as header
-    /// information or the vendors name.
+    ///  <c>SummaryFields</c>- Contains all other information a receipt, such as header information
+    /// or the vendors name.
     /// </para>
     ///  </li> </ul>
     /// </summary>

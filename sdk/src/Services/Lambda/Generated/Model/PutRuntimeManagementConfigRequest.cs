@@ -52,15 +52,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> – <code>my-function</code>.
+        ///  <b>Function name</b> – <c>my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -84,9 +84,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Qualifier. 
         /// <para>
-        /// Specify a version of the function. This can be <code>$LATEST</code> or a published
-        /// version number. If no value is specified, the configuration for the <code>$LATEST</code>
-        /// version is returned.
+        /// Specify a version of the function. This can be <c>$LATEST</c> or a published version
+        /// number. If no value is specified, the configuration for the <c>$LATEST</c> version
+        /// is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

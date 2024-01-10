@@ -43,13 +43,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-        /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>,
-        /// the first fragment ingested with a producer timestamp within the specified <a>FragmentSelector$TimestampRange</a>
-        /// is included in the media playlist. In addition, the fragments with producer timestamps
-        /// within the <code>TimestampRange</code> ingested immediately following the first fragment
-        /// (up to the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a> value)
-        /// are included. 
+        /// When <c>FragmentSelectorType</c> is set to <c>PRODUCER_TIMESTAMP</c> and <a>GetHLSStreamingSessionURLInput$PlaybackMode</a>
+        /// is <c>ON_DEMAND</c> or <c>LIVE_REPLAY</c>, the first fragment ingested with a producer
+        /// timestamp within the specified <a>FragmentSelector$TimestampRange</a> is included
+        /// in the media playlist. In addition, the fragments with producer timestamps within
+        /// the <c>TimestampRange</c> ingested immediately following the first fragment (up to
+        /// the <a>GetHLSStreamingSessionURLInput$MaxMediaPlaylistFragmentResults</a> value) are
+        /// included. 
         /// </para>
         ///  
         /// <para>
@@ -62,16 +62,15 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When <code>FragmentSelectorType</code> is set to <code>PRODUCER_TIMESTAMP</code> and
-        /// <a>GetHLSStreamingSessionURLInput$PlaybackMode</a> is <code>LIVE</code>, the producer
-        /// timestamps are used in the MP4 fragments and for deduplication. But the most recently
-        /// ingested fragments based on server timestamps are included in the HLS media playlist.
-        /// This means that even if fragments ingested in the past have producer timestamps with
-        /// values now, they are not included in the HLS media playlist.
+        /// When <c>FragmentSelectorType</c> is set to <c>PRODUCER_TIMESTAMP</c> and <a>GetHLSStreamingSessionURLInput$PlaybackMode</a>
+        /// is <c>LIVE</c>, the producer timestamps are used in the MP4 fragments and for deduplication.
+        /// But the most recently ingested fragments based on server timestamps are included in
+        /// the HLS media playlist. This means that even if fragments ingested in the past have
+        /// producer timestamps with values now, they are not included in the HLS media playlist.
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>SERVER_TIMESTAMP</code>.
+        /// The default is <c>SERVER_TIMESTAMP</c>.
         /// </para>
         /// </summary>
         public HLSFragmentSelectorType FragmentSelectorType
@@ -93,7 +92,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
+        /// This value should not be present if <c>PlaybackType</c> is <c>LIVE</c>.
         /// </para>
         /// </summary>
         public HLSTimestampRange TimestampRange

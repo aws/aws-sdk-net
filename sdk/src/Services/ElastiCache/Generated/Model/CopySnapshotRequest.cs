@@ -38,9 +38,9 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  </note> <important> 
     /// <para>
-    /// Users or groups that have permissions to use the <code>CopySnapshot</code> operation
-    /// can create their own Amazon S3 buckets and copy snapshots to it. To control access
-    /// to your snapshots, use an IAM policy to control who has the ability to use the <code>CopySnapshot</code>
+    /// Users or groups that have permissions to use the <c>CopySnapshot</c> operation can
+    /// create their own Amazon S3 buckets and copy snapshots to it. To control access to
+    /// your snapshots, use an IAM policy to control who has the ability to use the <c>CopySnapshot</c>
     /// operation. For more information about using IAM to control the use of ElastiCache
     /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
     /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
@@ -99,9 +99,9 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Solution:</b> Give the <code>TargetSnapshotName</code> a new and unique value.
-    /// If exporting a snapshot, you could alternatively create a new Amazon S3 bucket and
-    /// use this same value for <code>TargetSnapshotName</code>.
+    ///  <b>Solution:</b> Give the <c>TargetSnapshotName</c> a new and unique value. If exporting
+    /// a snapshot, you could alternatively create a new Amazon S3 bucket and use this same
+    /// value for <c>TargetSnapshotName</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

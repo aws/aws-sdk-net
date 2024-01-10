@@ -92,7 +92,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to disassociate from the Aurora DB
-        /// cluster, for example <code>arn:aws:iam::123456789012:role/AuroraAccessRole</code>.
+        /// cluster, for example <c>arn:aws:iam::123456789012:role/AuroraAccessRole</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

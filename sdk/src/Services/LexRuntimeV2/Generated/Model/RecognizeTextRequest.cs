@@ -142,8 +142,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create
-        /// any request attributes with the prefix <code>x-amz-lex:</code>.
+        /// The namespace <c>x-amz-lex:</c> is reserved for special attributes. Don't create any
+        /// request attributes with the prefix <c>x-amz-lex:</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestAttributes

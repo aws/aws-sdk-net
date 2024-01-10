@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:DeleteTrustAnchor</c>. 
     /// </para>
     /// </summary>
     public partial class DeleteTrustAnchorRequest : AmazonIAMRolesAnywhereRequest

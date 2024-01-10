@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:UntagResource</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:UntagResource</c>. 
     /// </para>
     /// </summary>
     public partial class UntagResourceRequest : AmazonIAMRolesAnywhereRequest

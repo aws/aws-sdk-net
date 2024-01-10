@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The result of the exchange and whether it was <code>successful</code>.
+    /// The result of the exchange and whether it was <c>successful</c>.
     /// </summary>
     public partial class AcceptReservedInstancesExchangeQuoteResponse : AmazonWebServiceResponse
     {

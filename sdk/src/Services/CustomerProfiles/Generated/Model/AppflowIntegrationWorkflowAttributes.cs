@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Structure holding all <code>APPFLOW_INTEGRATION</code> specific workflow attributes.
+    /// Structure holding all <c>APPFLOW_INTEGRATION</c> specific workflow attributes.
     /// </summary>
     public partial class AppflowIntegrationWorkflowAttributes
     {

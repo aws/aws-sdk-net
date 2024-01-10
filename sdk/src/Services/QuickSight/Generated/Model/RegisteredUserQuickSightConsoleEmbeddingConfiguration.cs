@@ -57,8 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property InitialPath. 
         /// <para>
-        /// The initial URL path for the Amazon QuickSight console. <code>InitialPath</code> is
-        /// required.
+        /// The initial URL path for the Amazon QuickSight console. <c>InitialPath</c> is required.
         /// </para>
         ///  
         /// <para>
@@ -66,29 +65,29 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>/start</code> 
+        ///  <c>/start</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/start/analyses</code> 
+        ///  <c>/start/analyses</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/start/dashboards</code> 
+        ///  <c>/start/dashboards</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/start/favorites</code> 
+        ///  <c>/start/favorites</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/dashboards/DashboardId</code>. <i>DashboardId</i> is the actual ID key from
-        /// the Amazon QuickSight console URL of the dashboard.
+        ///  <c>/dashboards/DashboardId</c>. <i>DashboardId</i> is the actual ID key from the
+        /// Amazon QuickSight console URL of the dashboard.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/analyses/AnalysisId</code>. <i>AnalysisId</i> is the actual ID key from the
-        /// Amazon QuickSight console URL of the analysis.
+        ///  <c>/analyses/AnalysisId</c>. <i>AnalysisId</i> is the actual ID key from the Amazon
+        /// QuickSight console URL of the analysis.
         /// </para>
         ///  </li> </ul>
         /// </summary>

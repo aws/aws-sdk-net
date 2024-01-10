@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// The reference rule that partially matches the <code>ViolationTarget</code> rule and
-    /// violation reason.
+    /// The reference rule that partially matches the <c>ViolationTarget</c> rule and violation
+    /// reason.
     /// </summary>
     public partial class PartialMatch
     {

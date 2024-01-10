@@ -30,8 +30,8 @@ namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchResetAlarm operation.
-    /// Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after
-    /// you reset them.
+    /// Resets one or more alarms. The alarms return to the <c>NORMAL</c> state after you
+    /// reset them.
     /// </summary>
     public partial class BatchResetAlarmRequest : AmazonIoTEventsDataRequest
     {

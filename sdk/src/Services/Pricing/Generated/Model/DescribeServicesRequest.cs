@@ -32,10 +32,10 @@ namespace Amazon.Pricing.Model
     /// Container for the parameters to the DescribeServices operation.
     /// Returns the metadata for one service or a list of the metadata for all services. Use
     /// this without a service code to get the service codes for all services. Use it with
-    /// a service code, such as <code>AmazonEC2</code>, to get information specific to that
-    /// service, such as the attribute names available for that service. For example, some
-    /// of the attribute names available for EC2 are <code>volumeType</code>, <code>maxIopsVolume</code>,
-    /// <code>operation</code>, <code>locationType</code>, and <code>instanceCapacity10xlarge</code>.
+    /// a service code, such as <c>AmazonEC2</c>, to get information specific to that service,
+    /// such as the attribute names available for that service. For example, some of the attribute
+    /// names available for EC2 are <c>volumeType</c>, <c>maxIopsVolume</c>, <c>operation</c>,
+    /// <c>locationType</c>, and <c>instanceCapacity10xlarge</c>.
     /// </summary>
     public partial class DescribeServicesRequest : AmazonPricingRequest
     {
@@ -51,7 +51,7 @@ namespace Amazon.Pricing.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are: <code>aws_v1</code> 
+        /// Valid values are: <c>aws_v1</c> 
         /// </para>
         /// </summary>
         public string FormatVersion
@@ -106,9 +106,9 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// The code for the service whose information you want to retrieve, such as <code>AmazonEC2</code>.
-        /// You can use the <code>ServiceCode</code> to filter the results in a <code>GetProducts</code>
-        /// call. To retrieve a list of all services, leave this blank.
+        /// The code for the service whose information you want to retrieve, such as <c>AmazonEC2</c>.
+        /// You can use the <c>ServiceCode</c> to filter the results in a <c>GetProducts</c> call.
+        /// To retrieve a list of all services, leave this blank.
         /// </para>
         /// </summary>
         public string ServiceCode

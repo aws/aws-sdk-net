@@ -50,12 +50,11 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Amazon S3 bundles, set <code>Password</code> to the appropriate IAM secret access
-        /// key.
+        /// For Amazon S3 bundles, set <c>Password</c> to the appropriate IAM secret access key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For HTTP bundles and Subversion repositories, set <code>Password</code> to the password.
+        /// For HTTP bundles and Subversion repositories, set <c>Password</c> to the password.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -63,8 +62,8 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
-        /// of the actual value.
+        /// In responses, AWS OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the
+        /// actual value.
         /// </para>
         /// </summary>
         public string Password
@@ -106,8 +105,8 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        /// In responses, AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead
-        /// of the actual value.
+        /// In responses, AWS OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the
+        /// actual value.
         /// </para>
         /// </summary>
         public string SshKey
@@ -143,7 +142,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// The source URL. The following is an example of an Amazon S3 source URL: <code>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</code>.
+        /// The source URL. The following is an example of an Amazon S3 source URL: <c>https://s3.amazonaws.com/opsworks-demo-bucket/opsworks_cookbook_demo.tar.gz</c>.
         /// </para>
         /// </summary>
         public string Url
@@ -165,12 +164,11 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For Amazon S3 bundles, set <code>Username</code> to the appropriate IAM access key
-        /// ID.
+        /// For Amazon S3 bundles, set <c>Username</c> to the appropriate IAM access key ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For HTTP bundles, Git repositories, and Subversion repositories, set <code>Username</code>
+        /// For HTTP bundles, Git repositories, and Subversion repositories, set <c>Username</c>
         /// to the user name.
         /// </para>
         ///  </li> </ul>

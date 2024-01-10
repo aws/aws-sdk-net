@@ -98,7 +98,7 @@ namespace Amazon.AppRegistry.Model
         /// Gets and sets the property Name. <important> 
         /// <para>
         ///  This field is no longer supported. We recommend you don't use the field when using
-        /// <code>ListAttributeGroupsForApplication</code>. 
+        /// <c>ListAttributeGroupsForApplication</c>. 
         /// </para>
         ///  </important> 
         /// <para>

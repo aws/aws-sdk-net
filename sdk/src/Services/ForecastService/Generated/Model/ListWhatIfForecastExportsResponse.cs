@@ -59,7 +59,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property WhatIfForecastExports. 
         /// <para>
-        /// An array of <code>WhatIfForecastExports</code> objects that describe the matched forecast
+        /// An array of <c>WhatIfForecastExports</c> objects that describe the matched forecast
         /// exports.
         /// </para>
         /// </summary>

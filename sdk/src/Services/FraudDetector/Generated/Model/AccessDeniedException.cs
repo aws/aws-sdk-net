@@ -30,8 +30,8 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// An exception indicating Amazon Fraud Detector does not have the needed permissions.
-    /// This can occur if you submit a request, such as <code>PutExternalModel</code>, that
-    /// specifies a role that is not in your account.
+    /// This can occur if you submit a request, such as <c>PutExternalModel</c>, that specifies
+    /// a role that is not in your account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

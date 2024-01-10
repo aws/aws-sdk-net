@@ -84,9 +84,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SkipArchive. 
         /// <para>
-        /// By default, <code>UpdateTable</code> always creates an archived version of the table
-        /// before updating it. However, if <code>skipArchive</code> is set to true, <code>UpdateTable</code>
-        /// does not create the archived version.
+        /// By default, <c>UpdateTable</c> always creates an archived version of the table before
+        /// updating it. However, if <c>skipArchive</c> is set to true, <c>UpdateTable</c> does
+        /// not create the archived version.
         /// </para>
         /// </summary>
         public bool SkipArchive
@@ -104,7 +104,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableInput. 
         /// <para>
-        /// An updated <code>TableInput</code> object to define the metadata table in the catalog.
+        /// An updated <c>TableInput</c> object to define the metadata table in the catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

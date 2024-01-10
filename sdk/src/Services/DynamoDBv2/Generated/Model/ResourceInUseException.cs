@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// The operation conflicts with the resource's availability. For example, you attempted
-    /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+    /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
     /// state.
     /// </summary>
     #if !NETSTANDARD

@@ -44,9 +44,9 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You will need to use the <code>sourceBackupID</code> returned in this operation to
-        /// use the <a>DescribeBackups</a> operation on the backup that will be copied to the
-        /// destination region.
+        /// You will need to use the <c>sourceBackupID</c> returned in this operation to use the
+        /// <a>DescribeBackups</a> operation on the backup that will be copied to the destination
+        /// region.
         /// </para>
         /// </summary>
         public DestinationBackup DestinationBackup

@@ -43,9 +43,9 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  
         /// <para>
-        /// In the previous response syntax, the value for the <code>data</code> parameter appears
-        /// as <code>blob</code>, which is represented as a base64-encoded string. The value for
-        /// <code>fileName</code> is the name of the attachment, such as <code>troubleshoot-screenshot.png</code>.
+        /// In the previous response syntax, the value for the <c>data</c> parameter appears as
+        /// <c>blob</c>, which is represented as a base64-encoded string. The value for <c>fileName</c>
+        /// is the name of the attachment, such as <c>troubleshoot-screenshot.png</c>.
         /// </para>
         /// </summary>
         public Attachment Attachment

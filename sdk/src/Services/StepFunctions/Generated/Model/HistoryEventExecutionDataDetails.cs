@@ -38,7 +38,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Truncated. 
         /// <para>
-        /// Indicates whether input or output was truncated in the response. Always <code>false</code>
+        /// Indicates whether input or output was truncated in the response. Always <c>false</c>
         /// for API calls.
         /// </para>
         /// </summary>

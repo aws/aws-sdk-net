@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FreeTier.Model
 {
     /// <summary>
-    /// Use <code>Expression</code> to filter in the <code>GetFreeTierUsage</code> API operation.
+    /// Use <c>Expression</c> to filter in the <c>GetFreeTierUsage</c> API operation.
     /// 
     ///  
     /// <para>
@@ -37,12 +37,12 @@ namespace Amazon.FreeTier.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Simple dimension values (<code>Dimensions</code> root operator)
+    /// Simple dimension values (<c>Dimensions</c> root operator)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Complex expressions with logical operators (<code>AND</code>, <code>NOT</code>, and
-    /// <code>OR</code> root operators).
+    /// Complex expressions with logical operators (<c>AND</c>, <c>NOT</c>, and <c>OR</c>
+    /// root operators).
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -55,17 +55,17 @@ namespace Amazon.FreeTier.Model
     /// </para>
     ///  
     /// <para>
-    /// You can filter to match exactly for <code>REGION==us-east-1 OR REGION==us-west-1</code>.
+    /// You can filter to match exactly for <c>REGION==us-east-1 OR REGION==us-west-1</c>.
     /// </para>
     ///  
     /// <para>
-    /// The corresponding <code>Expression</code> appears like the following: <code>{ "Dimensions":
+    /// The corresponding <c>Expression</c> appears like the following: <c>{ "Dimensions":
     /// { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ], "MatchOptions": ["EQUALS"]
-    /// } }</code> 
+    /// } }</c> 
     /// </para>
     ///  
     /// <para>
-    /// As shown in the previous example, lists of dimension values are combined with <code>OR</code>
+    /// As shown in the previous example, lists of dimension values are combined with <c>OR</c>
     /// when you apply the filter.
     /// </para>
     ///  
@@ -79,16 +79,16 @@ namespace Amazon.FreeTier.Model
     /// </para>
     ///  
     /// <para>
-    /// You can filter by <code>((REGION == us-east-1 OR REGION == us-west-1) OR (SERVICE
-    /// CONTAINS AWSLambda)) AND (USAGE_TYPE !CONTAINS DataTransfer)</code>.
+    /// You can filter by <c>((REGION == us-east-1 OR REGION == us-west-1) OR (SERVICE CONTAINS
+    /// AWSLambda)) AND (USAGE_TYPE !CONTAINS DataTransfer)</c>.
     /// </para>
     ///  
     /// <para>
-    /// The corresponding <code>Expression</code> appears like the following: <code>{ "And":
-    /// [ {"Or": [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1"
-    /// ], "MatchOptions": ["EQUALS"] }}, {"Dimensions": { "Key": "SERVICE", "Values": ["AWSLambda"],
-    /// "MatchOptions": ["CONTAINS"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE",
-    /// "Values": ["DataTransfer"], "MatchOptions": ["CONTAINS"] }}} ] }</code> 
+    /// The corresponding <c>Expression</c> appears like the following: <c>{ "And": [ {"Or":
+    /// [ {"Dimensions": { "Key": "REGION", "Values": [ "us-east-1", "us-west-1" ], "MatchOptions":
+    /// ["EQUALS"] }}, {"Dimensions": { "Key": "SERVICE", "Values": ["AWSLambda"], "MatchOptions":
+    /// ["CONTAINS"] } } ]}, {"Not": {"Dimensions": { "Key": "USAGE_TYPE", "Values": ["DataTransfer"],
+    /// "MatchOptions": ["CONTAINS"] }}} ] }</c> 
     /// </para>
     ///  
     /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property And. 
         /// <para>
-        /// Return results that match all <code>Expressions</code> that you specified in the array.
+        /// Return results that match all <c>Expressions</c> that you specified in the array.
         /// </para>
         /// </summary>
         public List<Expression> And
@@ -142,7 +142,7 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property Not. 
         /// <para>
-        /// Return results that don’t match the <code>Expression</code> that you specified.
+        /// Return results that don’t match the <c>Expression</c> that you specified.
         /// </para>
         /// </summary>
         public Expression Not
@@ -160,8 +160,8 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property Or. 
         /// <para>
-        /// Return results that match any of the <code>Expressions</code> that you specified.
-        /// in the array.
+        /// Return results that match any of the <c>Expressions</c> that you specified. in the
+        /// array.
         /// </para>
         /// </summary>
         public List<Expression> Or

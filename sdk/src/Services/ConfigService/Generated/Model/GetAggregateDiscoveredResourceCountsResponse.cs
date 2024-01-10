@@ -41,8 +41,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property GroupByKey. 
         /// <para>
-        /// The key passed into the request object. If <code>GroupByKey</code> is not provided,
-        /// the result will be empty.
+        /// The key passed into the request object. If <c>GroupByKey</c> is not provided, the
+        /// result will be empty.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -79,8 +79,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response.
+        /// The <c>nextToken</c> string returned on a previous page that you use to get the next
+        /// page of results in a paginated response.
         /// </para>
         /// </summary>
         public string NextToken

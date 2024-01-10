@@ -72,11 +72,11 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// A friendly name or description for the metrics for this <code>RuleGroup</code>. The
-        /// name can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length
-        /// 128 and minimum length one. It can't contain whitespace or metric names reserved for
-        /// AWS WAF, including "All" and "Default_Action." You can't change the name of the metric
-        /// after you create the <code>RuleGroup</code>.
+        /// A friendly name or description for the metrics for this <c>RuleGroup</c>. The name
+        /// can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128
+        /// and minimum length one. It can't contain whitespace or metric names reserved for AWS
+        /// WAF, including "All" and "Default_Action." You can't change the name of the metric
+        /// after you create the <c>RuleGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -95,8 +95,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The friendly name or description for the <code>RuleGroup</code>. You can't change
-        /// the name of a <code>RuleGroup</code> after you create it.
+        /// The friendly name or description for the <c>RuleGroup</c>. You can't change the name
+        /// of a <c>RuleGroup</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -115,15 +115,15 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RuleGroupId. 
         /// <para>
-        /// A unique identifier for a <code>RuleGroup</code>. You use <code>RuleGroupId</code>
-        /// to get more information about a <code>RuleGroup</code> (see <a>GetRuleGroup</a>),
-        /// update a <code>RuleGroup</code> (see <a>UpdateRuleGroup</a>), insert a <code>RuleGroup</code>
-        /// into a <code>WebACL</code> or delete a one from a <code>WebACL</code> (see <a>UpdateWebACL</a>),
-        /// or delete a <code>RuleGroup</code> from AWS WAF (see <a>DeleteRuleGroup</a>).
+        /// A unique identifier for a <c>RuleGroup</c>. You use <c>RuleGroupId</c> to get more
+        /// information about a <c>RuleGroup</c> (see <a>GetRuleGroup</a>), update a <c>RuleGroup</c>
+        /// (see <a>UpdateRuleGroup</a>), insert a <c>RuleGroup</c> into a <c>WebACL</c> or delete
+        /// a one from a <c>WebACL</c> (see <a>UpdateWebACL</a>), or delete a <c>RuleGroup</c>
+        /// from AWS WAF (see <a>DeleteRuleGroup</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.
+        ///  <c>RuleGroupId</c> is returned by <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

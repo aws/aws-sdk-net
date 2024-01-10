@@ -85,19 +85,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon FSx hasn't started creating the snapshot.
+        ///  <c>PENDING</c> - Amazon FSx hasn't started creating the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Amazon FSx is creating the snapshot.
+        ///  <c>CREATING</c> - Amazon FSx is creating the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - Amazon FSx is deleting the snapshot.
+        ///  <c>DELETING</c> - Amazon FSx is deleting the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The snapshot is fully available.
+        ///  <c>AVAILABLE</c> - The snapshot is fully available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,9 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Describes weight and capacities for a production variant associated with an endpoint.
-    /// If you sent a request to the <code>UpdateEndpointWeightsAndCapacities</code> API and
-    /// the endpoint status is <code>Updating</code>, you get different desired and current
-    /// values.
+    /// If you sent a request to the <c>UpdateEndpointWeightsAndCapacities</c> API and the
+    /// endpoint status is <c>Updating</c>, you get different desired and current values.
     /// </summary>
     public partial class ProductionVariantSummary
     {
@@ -107,8 +106,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DeployedImages. 
         /// <para>
-        /// An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container
-        /// Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.
+        /// An array of <c>DeployedImage</c> objects that specify the Amazon EC2 Container Registry
+        /// paths of the inference images deployed on instances of this <c>ProductionVariant</c>.
         /// </para>
         /// </summary>
         public List<DeployedImage> DeployedImages
@@ -126,7 +125,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredInstanceCount. 
         /// <para>
-        /// The number of instances requested in the <code>UpdateEndpointWeightsAndCapacities</code>
+        /// The number of instances requested in the <c>UpdateEndpointWeightsAndCapacities</c>
         /// request. 
         /// </para>
         /// </summary>
@@ -164,7 +163,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DesiredWeight. 
         /// <para>
-        /// The requested weight, as specified in the <code>UpdateEndpointWeightsAndCapacities</code>
+        /// The requested weight, as specified in the <c>UpdateEndpointWeightsAndCapacities</c>
         /// request. 
         /// </para>
         /// </summary>

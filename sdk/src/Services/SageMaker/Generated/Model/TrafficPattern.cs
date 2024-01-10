@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrafficType. 
         /// <para>
-        /// Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.
+        /// Defines the traffic patterns. Choose either <c>PHASES</c> or <c>STAIRS</c>.
         /// </para>
         /// </summary>
         public TrafficType TrafficType

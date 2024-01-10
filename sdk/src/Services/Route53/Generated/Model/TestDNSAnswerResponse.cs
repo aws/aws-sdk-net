@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response to a <code>TestDNSAnswer</code> request.
+    /// A complex type that contains the response to a <c>TestDNSAnswer</c> request.
     /// </summary>
     public partial class TestDNSAnswerResponse : AmazonWebServiceResponse
     {
@@ -121,9 +121,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property ResponseCode. 
         /// <para>
         /// A code that indicates whether the request is valid or not. The most common response
-        /// code is <code>NOERROR</code>, meaning that the request is valid. If the response is
-        /// not valid, Amazon Route 53 returns a response code that describes the error. For a
-        /// list of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS
+        /// code is <c>NOERROR</c>, meaning that the request is valid. If the response is not
+        /// valid, Amazon Route 53 returns a response code that describes the error. For a list
+        /// of possible response codes, see <a href="http://www.iana.org/assignments/dns-parameters/dns-parameters.xhtml#dns-parameters-6">DNS
         /// RCODES</a> on the IANA website. 
         /// </para>
         /// </summary>
@@ -143,8 +143,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol that Amazon Route 53 used to respond to the request, either <code>UDP</code>
-        /// or <code>TCP</code>. 
+        /// The protocol that Amazon Route 53 used to respond to the request, either <c>UDP</c>
+        /// or <c>TCP</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

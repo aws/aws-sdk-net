@@ -77,7 +77,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Version of the application to which you want to add the input processing configuration.
         /// You can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation to get the current application version. If the version specified is not
-        /// the current version, the <code>ConcurrentModificationException</code> is returned.
+        /// the current version, the <c>ConcurrentModificationException</c> is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]

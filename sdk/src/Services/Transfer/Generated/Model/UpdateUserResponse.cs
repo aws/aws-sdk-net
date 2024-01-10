@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// <code>UpdateUserResponse</code> returns the user name and identifier for the request
-    /// to update a user's properties.
+    /// <c>UpdateUserResponse</c> returns the user name and identifier for the request to
+    /// update a user's properties.
     /// </summary>
     public partial class UpdateUserResponse : AmazonWebServiceResponse
     {

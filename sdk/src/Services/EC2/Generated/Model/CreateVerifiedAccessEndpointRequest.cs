@@ -188,7 +188,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LoadBalancerOptions. 
         /// <para>
-        /// The load balancer details. This parameter is required if the endpoint type is <code>load-balancer</code>.
+        /// The load balancer details. This parameter is required if the endpoint type is <c>load-balancer</c>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessEndpointLoadBalancerOptions LoadBalancerOptions
@@ -207,7 +207,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NetworkInterfaceOptions. 
         /// <para>
         /// The network interface details. This parameter is required if the endpoint type is
-        /// <code>network-interface</code>.
+        /// <c>network-interface</c>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessEndpointEniOptions NetworkInterfaceOptions
@@ -244,7 +244,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
         /// The IDs of the security groups to associate with the Verified Access endpoint. Required
-        /// if <code>AttachmentType</code> is set to <code>vpc</code>.
+        /// if <c>AttachmentType</c> is set to <c>vpc</c>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds

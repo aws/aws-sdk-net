@@ -39,9 +39,9 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If <code>nextToken</code> is returned, there are more results available. The value
-        /// of <code>nextToken</code> is a unique pagination token for each page. To retrieve
-        /// the next page, make the call again using the returned token.
+        ///  If <c>nextToken</c> is returned, there are more results available. The value of <c>nextToken</c>
+        /// is a unique pagination token for each page. To retrieve the next page, make the call
+        /// again using the returned token.
         /// </para>
         /// </summary>
         public string NextToken

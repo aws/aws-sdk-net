@@ -34,10 +34,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  <important> 
     /// <para>
-    /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
-    /// actions are always accepted and never return <code>InvalidSequenceTokenException</code>
-    /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
-    /// You can use parallel <code>PutLogEvents</code> actions on the same log stream. 
+    /// The sequence token is now ignored in <c>PutLogEvents</c> actions. <c>PutLogEvents</c>
+    /// actions are always accepted and never return <c>InvalidSequenceTokenException</c>
+    /// or <c>DataAlreadyAcceptedException</c> even if the sequence token is not valid. You
+    /// can use parallel <c>PutLogEvents</c> actions on the same log stream. 
     /// </para>
     ///  </important> 
     /// <para>
@@ -61,10 +61,9 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// The log events in the batch must be in chronological order by their timestamp. The
     /// timestamp is the time that the event occurred, expressed as the number of milliseconds
-    /// after <code>Jan 1, 1970 00:00:00 UTC</code>. (In Amazon Web Services Tools for PowerShell
+    /// after <c>Jan 1, 1970 00:00:00 UTC</c>. (In Amazon Web Services Tools for PowerShell
     /// and the Amazon Web Services SDK for .NET, the timestamp is specified in .NET format:
-    /// <code>yyyy-mm-ddThh:mm:ss</code>. For example, <code>2017-09-15T13:45:30</code>.)
-    /// 
+    /// <c>yyyy-mm-ddThh:mm:ss</c>. For example, <c>2017-09-15T13:45:30</c>.) 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -81,14 +80,14 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> <important> 
     /// <para>
-    /// The quota of five requests per second per log stream has been removed. Instead, <code>PutLogEvents</code>
+    /// The quota of five requests per second per log stream has been removed. Instead, <c>PutLogEvents</c>
     /// actions are throttled based on a per-second per-account quota. You can request an
     /// increase to the per-second throttling quota by using the Service Quotas service.
     /// </para>
     ///  </important> </li> </ul> 
     /// <para>
-    /// If a call to <code>PutLogEvents</code> returns "UnrecognizedClientException" the most
-    /// likely cause is a non-valid Amazon Web Services access key ID or secret key. 
+    /// If a call to <c>PutLogEvents</c> returns "UnrecognizedClientException" the most likely
+    /// cause is a non-valid Amazon Web Services access key ID or secret key. 
     /// </para>
     /// </summary>
     public partial class PutLogEventsRequest : AmazonCloudWatchLogsRequest
@@ -176,14 +175,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property SequenceToken. 
         /// <para>
-        /// The sequence token obtained from the response of the previous <code>PutLogEvents</code>
+        /// The sequence token obtained from the response of the previous <c>PutLogEvents</c>
         /// call.
         /// </para>
         ///  <important> 
         /// <para>
-        /// The <code>sequenceToken</code> parameter is now ignored in <code>PutLogEvents</code>
-        /// actions. <code>PutLogEvents</code> actions are now accepted and never return <code>InvalidSequenceTokenException</code>
-        /// or <code>DataAlreadyAcceptedException</code> even if the sequence token is not valid.
+        /// The <c>sequenceToken</c> parameter is now ignored in <c>PutLogEvents</c> actions.
+        /// <c>PutLogEvents</c> actions are now accepted and never return <c>InvalidSequenceTokenException</c>
+        /// or <c>DataAlreadyAcceptedException</c> even if the sequence token is not valid.
         /// </para>
         ///  </important>
         /// </summary>

@@ -40,7 +40,7 @@ namespace Amazon.CloudSearch.Model
         /// <summary>
         /// Gets and sets the property DesiredInstanceType. 
         /// <para>
-        /// The instance type that you want to preconfigure for your domain. For example, <code>search.m1.small</code>.
+        /// The instance type that you want to preconfigure for your domain. For example, <c>search.m1.small</c>.
         /// </para>
         /// </summary>
         public PartitionInstanceType DesiredInstanceType
@@ -59,7 +59,7 @@ namespace Amazon.CloudSearch.Model
         /// Gets and sets the property DesiredPartitionCount. 
         /// <para>
         /// The number of partitions you want to preconfigure for your domain. Only valid when
-        /// you select <code>m2.2xlarge</code> as the desired instance type.
+        /// you select <c>m2.2xlarge</c> as the desired instance type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

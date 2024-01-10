@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The inputs for a processing job. The processing input must specify exactly one of
-    /// either <code>S3Input</code> or <code>DatasetDefinition</code> types.
+    /// either <c>S3Input</c> or <c>DatasetDefinition</c> types.
     /// </summary>
     public partial class ProcessingInput
     {
@@ -42,9 +42,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AppManaged. 
         /// <para>
-        /// When <code>True</code>, input operations such as data download are managed natively
-        /// by the processing job application. When <code>False</code> (default), input operations
-        /// are managed by Amazon SageMaker.
+        /// When <c>True</c>, input operations such as data download are managed natively by the
+        /// processing job application. When <c>False</c> (default), input operations are managed
+        /// by Amazon SageMaker.
         /// </para>
         /// </summary>
         public bool AppManaged

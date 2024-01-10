@@ -39,8 +39,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The identifier of query used for the search. You also use <code>QueryId</code> to
-        /// identify the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a>
+        /// The identifier of query used for the search. You also use <c>QueryId</c> to identify
+        /// the search when using the <a href="https://docs.aws.amazon.com/kendra/latest/APIReference/API_SubmitFeedback.html">Submitfeedback</a>
         /// API.
         /// </para>
         /// </summary>

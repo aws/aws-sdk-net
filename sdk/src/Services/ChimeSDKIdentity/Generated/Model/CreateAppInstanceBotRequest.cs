@@ -30,8 +30,8 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppInstanceBot operation.
-    /// Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists
-    /// of a unique <code>Configuration</code> and <code>Name</code> for that bot.
+    /// Creates a bot under an Amazon Chime <c>AppInstance</c>. The request consists of a
+    /// unique <c>Configuration</c> and <c>Name</c> for that bot.
     /// </summary>
     public partial class CreateAppInstanceBotRequest : AmazonChimeSDKIdentityRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code> request.
+        /// The ARN of the <c>AppInstance</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -65,7 +65,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// The unique ID for the client making the request. Use different tokens for different
-        /// <code>AppInstanceBots</code>.
+        /// <c>AppInstanceBots</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
@@ -141,7 +141,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the <code>AppInstanceBot</code>.
+        /// The tags assigned to the <c>AppInstanceBot</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

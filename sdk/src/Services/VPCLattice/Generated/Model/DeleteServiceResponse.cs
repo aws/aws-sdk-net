@@ -98,9 +98,9 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status. You can retry the operation if the status is <code>DELETE_FAILED</code>.
-        /// However, if you retry it while the status is <code>DELETE_IN_PROGRESS</code>, the
-        /// status doesn't change.
+        /// The status. You can retry the operation if the status is <c>DELETE_FAILED</c>. However,
+        /// if you retry it while the status is <c>DELETE_IN_PROGRESS</c>, the status doesn't
+        /// change.
         /// </para>
         /// </summary>
         public ServiceStatus Status

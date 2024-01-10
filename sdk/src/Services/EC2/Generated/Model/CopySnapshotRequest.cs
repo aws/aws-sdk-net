@@ -128,16 +128,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationRegion. 
         /// <para>
-        /// The destination Region to use in the <code>PresignedUrl</code> parameter of a snapshot
-        /// copy operation. This parameter is only valid for specifying the destination Region
-        /// in a <code>PresignedUrl</code> parameter, where it is required.
+        /// The destination Region to use in the <c>PresignedUrl</c> parameter of a snapshot copy
+        /// operation. This parameter is only valid for specifying the destination Region in a
+        /// <c>PresignedUrl</c> parameter, where it is required.
         /// </para>
         ///  
         /// <para>
         /// The snapshot copy is sent to the regional endpoint that you sent the HTTP request
-        /// to (for example, <code>ec2.us-east-1.amazonaws.com</code>). With the CLI, this is
-        /// specified using the <code>--region</code> parameter or the default Region in your
-        /// Amazon Web Services configuration file.
+        /// to (for example, <c>ec2.us-east-1.amazonaws.com</c>). With the CLI, this is specified
+        /// using the <c>--region</c> parameter or the default Region in your Amazon Web Services
+        /// configuration file.
         /// </para>
         /// </summary>
         public string DestinationRegion
@@ -179,8 +179,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
-        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <code>KmsKeyId</code>
-        /// is specified, the encrypted state must be <code>true</code>.
+        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <c>KmsKeyId</c>
+        /// is specified, the encrypted state must be <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -231,16 +231,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>PresignedUrl</code> should use the snapshot source endpoint, the <code>CopySnapshot</code>
-        /// action, and include the <code>SourceRegion</code>, <code>SourceSnapshotId</code>,
-        /// and <code>DestinationRegion</code> parameters. The <code>PresignedUrl</code> must
-        /// be signed using Amazon Web Services Signature Version 4. Because EBS snapshots are
-        /// stored in Amazon S3, the signing algorithm for this parameter uses the same logic
-        /// that is described in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
+        /// The <c>PresignedUrl</c> should use the snapshot source endpoint, the <c>CopySnapshot</c>
+        /// action, and include the <c>SourceRegion</c>, <c>SourceSnapshotId</c>, and <c>DestinationRegion</c>
+        /// parameters. The <c>PresignedUrl</c> must be signed using Amazon Web Services Signature
+        /// Version 4. Because EBS snapshots are stored in Amazon S3, the signing algorithm for
+        /// this parameter uses the same logic that is described in <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html">Authenticating
         /// Requests: Using Query Parameters (Amazon Web Services Signature Version 4)</a> in
         /// the <i>Amazon Simple Storage Service API Reference</i>. An invalid or improperly signed
-        /// <code>PresignedUrl</code> will cause the copy operation to fail asynchronously, and
-        /// the snapshot will move to an <code>error</code> state.
+        /// <c>PresignedUrl</c> will cause the copy operation to fail asynchronously, and the
+        /// snapshot will move to an <c>error</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

@@ -61,7 +61,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property IncludeHidden. 
         /// <para>
-        /// Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.
+        /// Boolean to indicate if hidden integration should be returned. Defaults to <c>False</c>.
         /// </para>
         /// </summary>
         public bool IncludeHidden

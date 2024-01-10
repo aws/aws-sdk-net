@@ -50,7 +50,7 @@ namespace Amazon.WorkDocs.Model
         /// Gets and sets the property Endpoint. 
         /// <para>
         /// The endpoint to receive the notifications. If the protocol is HTTPS, the endpoint
-        /// is a URL that begins with <code>https</code>.
+        /// is a URL that begins with <c>https</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

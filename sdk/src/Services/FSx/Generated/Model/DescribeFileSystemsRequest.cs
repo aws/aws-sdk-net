@@ -30,26 +30,25 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFileSystems operation.
-    /// Returns the description of specific Amazon FSx file systems, if a <code>FileSystemIds</code>
+    /// Returns the description of specific Amazon FSx file systems, if a <c>FileSystemIds</c>
     /// value is provided for that file system. Otherwise, it returns descriptions of all
     /// file systems owned by your Amazon Web Services account in the Amazon Web Services
     /// Region of the endpoint that you're calling.
     /// 
     ///  
     /// <para>
-    /// When retrieving all file system descriptions, you can optionally specify the <code>MaxResults</code>
+    /// When retrieving all file system descriptions, you can optionally specify the <c>MaxResults</c>
     /// parameter to limit the number of descriptions in a response. If more file system descriptions
-    /// remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this
-    /// case, send a later request with the <code>NextToken</code> request parameter set to
-    /// the value of <code>NextToken</code> from the last response.
+    /// remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this case,
+    /// send a later request with the <c>NextToken</c> request parameter set to the value
+    /// of <c>NextToken</c> from the last response.
     /// </para>
     ///  
     /// <para>
     /// This operation is used in an iterative process to retrieve a list of your file system
-    /// descriptions. <code>DescribeFileSystems</code> is called first without a <code>NextToken</code>value.
-    /// Then the operation continues to be called with the <code>NextToken</code> parameter
-    /// set to the value of the last <code>NextToken</code> value until a response has no
-    /// <code>NextToken</code>.
+    /// descriptions. <c>DescribeFileSystems</c> is called first without a <c>NextToken</c>value.
+    /// Then the operation continues to be called with the <c>NextToken</c> parameter set
+    /// to the value of the last <c>NextToken</c> value until a response has no <c>NextToken</c>.
     /// </para>
     ///  
     /// <para>
@@ -57,12 +56,12 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The implementation might return fewer than <code>MaxResults</code> file system descriptions
-    /// while still including a <code>NextToken</code> value.
+    /// The implementation might return fewer than <c>MaxResults</c> file system descriptions
+    /// while still including a <c>NextToken</c> value.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The order of file systems returned in the response of one <code>DescribeFileSystems</code>
+    /// The order of file systems returned in the response of one <c>DescribeFileSystems</c>
     /// call and the order of file systems returned across the responses of a multicall iteration
     /// is unspecified.
     /// </para>
@@ -98,8 +97,8 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Maximum number of file systems to return in the response (integer). This parameter
         /// value must be greater than 0. The number of items that Amazon FSx returns is the minimum
-        /// of the <code>MaxResults</code> parameter specified in the request and the service's
-        /// internal maximum number of items per page.
+        /// of the <c>MaxResults</c> parameter specified in the request and the service's internal
+        /// maximum number of items per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]
@@ -118,9 +117,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Opaque pagination token returned from a previous <code>DescribeFileSystems</code>
-        /// operation (String). If a token present, the operation continues the list from where
-        /// the returning call left off.
+        /// Opaque pagination token returned from a previous <c>DescribeFileSystems</c> operation
+        /// (String). If a token present, the operation continues the list from where the returning
+        /// call left off.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

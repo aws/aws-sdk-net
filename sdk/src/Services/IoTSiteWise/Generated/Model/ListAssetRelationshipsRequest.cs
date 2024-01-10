@@ -44,7 +44,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetId. 
         /// <para>
-        /// The ID of the asset. This can be either the actual ID in UUID format, or else <code>externalId:</code>
+        /// The ID of the asset. This can be either the actual ID in UUID format, or else <c>externalId:</c>
         /// followed by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
@@ -108,9 +108,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PATH_TO_ROOT</code> – Identify the asset's parent assets up to the root asset.
-        /// The asset that you specify in <code>assetId</code> is the first result in the list
-        /// of <code>assetRelationshipSummaries</code>, and the root asset is the last result.
+        ///  <c>PATH_TO_ROOT</c> – Identify the asset's parent assets up to the root asset. The
+        /// asset that you specify in <c>assetId</c> is the first result in the list of <c>assetRelationshipSummaries</c>,
+        /// and the root asset is the last result.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The list of Amazon Web Services <code>AccountIds</code>.
+        /// The list of Amazon Web Services <c>AccountIds</c>.
         /// </para>
         /// </summary>
         public List<string> AccountIds

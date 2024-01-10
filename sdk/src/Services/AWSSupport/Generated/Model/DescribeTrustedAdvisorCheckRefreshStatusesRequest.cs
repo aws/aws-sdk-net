@@ -37,9 +37,8 @@ namespace Amazon.AWSSupport.Model
     ///  
     /// <para>
     /// Some checks are refreshed automatically, and you can't return their refresh statuses
-    /// by using the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If
-    /// you call this operation for these checks, you might see an <code>InvalidParameterValue</code>
-    /// error.
+    /// by using the <c>DescribeTrustedAdvisorCheckRefreshStatuses</c> operation. If you call
+    /// this operation for these checks, you might see an <c>InvalidParameterValue</c> error.
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
@@ -49,7 +48,7 @@ namespace Amazon.AWSSupport.Model
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -75,7 +74,7 @@ namespace Amazon.AWSSupport.Model
         ///  <note> 
         /// <para>
         /// If you specify the check ID of a check that is automatically refreshed, you might
-        /// see an <code>InvalidParameterValue</code> error.
+        /// see an <c>InvalidParameterValue</c> error.
         /// </para>
         ///  </note>
         /// </summary>

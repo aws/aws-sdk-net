@@ -39,34 +39,34 @@ namespace Amazon.AppRegistry.Model
     /// </para>
     ///  
     /// <para>
-    ///  You must have the following permissions to associate a resource using the <code>OPTIONS</code>
-    /// parameter set to <code>APPLY_APPLICATION_TAG</code>. 
+    ///  You must have the following permissions to associate a resource using the <c>OPTIONS</c>
+    /// parameter set to <c>APPLY_APPLICATION_TAG</c>. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>tag:GetResources</code> 
+    ///  <c>tag:GetResources</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>tag:TagResources</code> 
+    ///  <c>tag:TagResources</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  You must also have these additional permissions if you don't use the <code>AWSServiceCatalogAppRegistryFullAccess</code>
+    ///  You must also have these additional permissions if you don't use the <c>AWSServiceCatalogAppRegistryFullAccess</c>
     /// policy. For more information, see <a href="https://docs.aws.amazon.com/servicecatalog/latest/arguide/full.html">AWSServiceCatalogAppRegistryFullAccess</a>
     /// in the AppRegistry Administrator Guide. 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:AssociateResource</code> 
+    ///  <c>resource-groups:AssociateResource</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>cloudformation:UpdateStack</code> 
+    ///  <c>cloudformation:UpdateStack</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>cloudformation:DescribeStacks</code> 
+    ///  <c>cloudformation:DescribeStacks</c> 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>

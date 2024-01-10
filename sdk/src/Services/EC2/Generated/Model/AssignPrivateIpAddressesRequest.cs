@@ -50,7 +50,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// Remapping an IP address is an asynchronous operation. When you move an IP address
-    /// from one network interface to another, check <code>network/interfaces/macs/mac/local-ipv4s</code>
+    /// from one network interface to another, check <c>network/interfaces/macs/mac/local-ipv4s</c>
     /// in the instance metadata to confirm that the remapping is complete.
     /// </para>
     ///  
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
         /// The number of IPv4 prefixes that Amazon Web Services automatically assigns to the
-        /// network interface. You cannot use this option if you use the <code>Ipv4 Prefixes</code>
+        /// network interface. You cannot use this option if you use the <c>Ipv4 Prefixes</c>
         /// option.
         /// </para>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
         /// One or more IPv4 prefixes assigned to the network interface. You cannot use this option
-        /// if you use the <code>Ipv4PrefixCount</code> option.
+        /// if you use the <c>Ipv4PrefixCount</c> option.
         /// </para>
         /// </summary>
         public List<string> Ipv4Prefixes

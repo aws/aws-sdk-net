@@ -45,7 +45,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The value that you provided for the <code>Marker</code> request parameter.
+        /// The value that you provided for the <c>Marker</c> request parameter.
         /// </para>
         /// </summary>
         public string Marker
@@ -63,7 +63,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you provided for the <code>MaxItems</code> request parameter.
+        /// The value that you provided for the <c>MaxItems</c> request parameter.
         /// </para>
         /// </summary>
         public string MaxItems

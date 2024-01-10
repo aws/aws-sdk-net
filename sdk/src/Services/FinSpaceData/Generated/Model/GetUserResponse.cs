@@ -50,17 +50,17 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ApiAccess. 
         /// <para>
-        /// Indicates whether the user can use the <code>GetProgrammaticAccessCredentials</code>
-        /// API to obtain credentials that can then be used to access other FinSpace Data API
-        /// operations. 
+        /// Indicates whether the user can use the <c>GetProgrammaticAccessCredentials</c> API
+        /// to obtain credentials that can then be used to access other FinSpace Data API operations.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The user has permissions to use the APIs.
+        ///  <c>ENABLED</c> – The user has permissions to use the APIs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The user does not have permissions to use any APIs.
+        ///  <c>DISABLED</c> – The user does not have permissions to use any APIs.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property ApiAccessPrincipalArn. 
         /// <para>
-        /// The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code>
+        /// The ARN identifier of an AWS user or role that is allowed to call the <c>GetProgrammaticAccessCredentials</c>
         /// API to obtain a credentials token for a specific FinSpace user. This must be an IAM
         /// role within your FinSpace account.
         /// </para>
@@ -256,15 +256,15 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> – The creation is in progress.
+        ///  <c>CREATING</c> – The creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – The user is created and is currently active.
+        ///  <c>ENABLED</c> – The user is created and is currently active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – The user is currently inactive.
+        ///  <c>DISABLED</c> – The user is currently inactive.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -287,13 +287,12 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUPER_USER</code> – A user with permission to all the functionality and data
-        /// in FinSpace.
+        ///  <c>SUPER_USER</c> – A user with permission to all the functionality and data in FinSpace.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>APP_USER</code> – A user with specific permissions in FinSpace. The users are
-        /// assigned permissions by adding them to a permission group.
+        ///  <c>APP_USER</c> – A user with specific permissions in FinSpace. The users are assigned
+        /// permissions by adding them to a permission group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

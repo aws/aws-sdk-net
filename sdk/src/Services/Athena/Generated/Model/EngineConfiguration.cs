@@ -43,11 +43,11 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property AdditionalConfigs. 
         /// <para>
-        /// Contains additional notebook engine <code>MAP&lt;string, string&gt;</code> parameter
-        /// mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter
-        /// server will download and serve, specify a value for the <a>StartSessionRequest$NotebookVersion</a>
-        /// field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code>
-        /// that has the value of the Athena notebook ID.
+        /// Contains additional notebook engine <c>MAP&lt;string, string&gt;</c> parameter mappings
+        /// in the form of key-value pairs. To specify an Athena notebook that the Jupyter server
+        /// will download and serve, specify a value for the <a>StartSessionRequest$NotebookVersion</a>
+        /// field, and then add a key named <c>NotebookId</c> to <c>AdditionalConfigs</c> that
+        /// has the value of the Athena notebook ID.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalConfigs

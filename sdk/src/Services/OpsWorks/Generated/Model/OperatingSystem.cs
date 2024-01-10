@@ -63,7 +63,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of a supported operating system, such as <code>Amazon Linux 2018.03</code>.
+        /// The ID of a supported operating system, such as <c>Amazon Linux 2018.03</c>.
         /// </para>
         /// </summary>
         public string Id
@@ -81,7 +81,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the operating system, such as <code>Amazon Linux 2018.03</code>.
+        /// The name of the operating system, such as <c>Amazon Linux 2018.03</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -153,7 +153,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of a supported operating system, either <code>Linux</code> or <code>Windows</code>.
+        /// The type of a supported operating system, either <c>Linux</c> or <c>Windows</c>.
         /// </para>
         /// </summary>
         public string Type

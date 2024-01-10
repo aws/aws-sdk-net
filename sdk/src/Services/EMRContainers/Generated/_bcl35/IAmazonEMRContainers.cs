@@ -38,23 +38,23 @@ namespace Amazon.EMRContainers
     /// 
     ///  
     /// <para>
-    ///  <i>Amazon EMR containers</i> is the API name for Amazon EMR on EKS. The <code>emr-containers</code>
+    ///  <i>Amazon EMR containers</i> is the API name for Amazon EMR on EKS. The <c>emr-containers</c>
     /// prefix is used in the following scenarios: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// It is the prefix in the CLI commands for Amazon EMR on EKS. For example, <code>aws
-    /// emr-containers start-job-run</code>.
+    /// It is the prefix in the CLI commands for Amazon EMR on EKS. For example, <c>aws emr-containers
+    /// start-job-run</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// It is the prefix before IAM policy actions for Amazon EMR on EKS. For example, <code>"Action":
-    /// [ "emr-containers:StartJobRun"]</code>. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions">Policy
+    /// It is the prefix before IAM policy actions for Amazon EMR on EKS. For example, <c>"Action":
+    /// [ "emr-containers:StartJobRun"]</c>. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions">Policy
     /// actions for Amazon EMR on EKS</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// It is the prefix used in Amazon EMR on EKS service endpoints. For example, <code>emr-containers.us-east-2.amazonaws.com</code>.
+    /// It is the prefix used in Amazon EMR on EKS service endpoints. For example, <c>emr-containers.us-east-2.amazonaws.com</c>.
     /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-on-EKS-DevelopmentGuide/service-quotas.html#service-endpoints">Amazon
     /// EMR on EKSService Endpoints</a>.
     /// </para>

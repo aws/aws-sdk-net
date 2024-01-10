@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// A list of <code>MatchingWorkflowSummary</code> objects, each of which contain the
-    /// fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>,
-    /// <code>UpdatedAt</code>.
+    /// A list of <c>MatchingWorkflowSummary</c> objects, each of which contain the fields
+    /// <c>WorkflowName</c>, <c>WorkflowArn</c>, <c>CreatedAt</c>, <c>UpdatedAt</c>.
     /// </summary>
     public partial class MatchingWorkflowSummary
     {
@@ -102,7 +101,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property WorkflowArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>MatchingWorkflow</code>.
+        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <c>MatchingWorkflow</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

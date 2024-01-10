@@ -47,11 +47,11 @@ namespace Amazon.Pricing.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values include: <code>ServiceCode</code>, and all attribute names
+        /// Valid values include: <c>ServiceCode</c>, and all attribute names
         /// </para>
         ///  
         /// <para>
-        /// For example, you can filter by the <code>AmazonEC2</code> service code and the <code>volumeType</code>
+        /// For example, you can filter by the <c>AmazonEC2</c> service code and the <c>volumeType</c>
         /// attribute name to get the prices for only Amazon EC2 volumes.
         /// </para>
         /// </summary>
@@ -75,8 +75,8 @@ namespace Amazon.Pricing.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are: <code>TERM_MATCH</code>. <code>TERM_MATCH</code> returns only products
-        /// that match both the given filter field and the given value.
+        /// Valid values are: <c>TERM_MATCH</c>. <c>TERM_MATCH</c> returns only products that
+        /// match both the given filter field and the given value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,9 +96,9 @@ namespace Amazon.Pricing.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The service code or attribute value that you want to filter by. If you're filtering
-        /// by service code this is the actual service code, such as <code>AmazonEC2</code>. If
-        /// you're filtering by attribute name, this is the attribute value that you want the
-        /// returned products to match, such as a <code>Provisioned IOPS</code> volume.
+        /// by service code this is the actual service code, such as <c>AmazonEC2</c>. If you're
+        /// filtering by attribute name, this is the attribute value that you want the returned
+        /// products to match, such as a <c>Provisioned IOPS</c> volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

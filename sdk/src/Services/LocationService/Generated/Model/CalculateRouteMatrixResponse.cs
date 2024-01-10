@@ -41,10 +41,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property RouteMatrix. 
         /// <para>
-        /// The calculated route matrix containing the results for all pairs of <code>DeparturePositions</code>
-        /// to <code>DestinationPositions</code>. Each row corresponds to one entry in <code>DeparturePositions</code>.
-        /// Each entry in the row corresponds to the route from that entry in <code>DeparturePositions</code>
-        /// to an entry in <code>DestinationPositions</code>. 
+        /// The calculated route matrix containing the results for all pairs of <c>DeparturePositions</c>
+        /// to <c>DestinationPositions</c>. Each row corresponds to one entry in <c>DeparturePositions</c>.
+        /// Each entry in the row corresponds to the route from that entry in <c>DeparturePositions</c>
+        /// to an entry in <c>DestinationPositions</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// For routes calculated using an Esri route calculator resource, departure positions
         /// are snapped to the closest road. For Esri route calculator resources, this returns
-        /// the list of departure/origin positions used for calculation of the <code>RouteMatrix</code>.
+        /// the list of departure/origin positions used for calculation of the <c>RouteMatrix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=350)]
@@ -85,7 +85,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property SnappedDestinationPositions. 
         /// <para>
         /// The list of destination positions for the route matrix used for calculation of the
-        /// <code>RouteMatrix</code>.
+        /// <c>RouteMatrix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=350)]
@@ -104,8 +104,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// Contains information about the route matrix, <code>DataSource</code>, <code>DistanceUnit</code>,
-        /// <code>RouteCount</code> and <code>ErrorCount</code>.
+        /// Contains information about the route matrix, <c>DataSource</c>, <c>DistanceUnit</c>,
+        /// <c>RouteCount</c> and <c>ErrorCount</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

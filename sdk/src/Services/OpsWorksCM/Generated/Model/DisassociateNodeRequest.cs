@@ -37,10 +37,10 @@ namespace Amazon.OpsWorksCM.Model
     /// 
     ///  
     /// <para>
-    /// A node can can only be disassociated from a server that is in a <code>HEALTHY</code>
-    /// state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
-    /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-    /// when parameters of the request are not valid. 
+    /// A node can can only be disassociated from a server that is in a <c>HEALTHY</c> state.
+    /// Otherwise, an <c>InvalidStateException</c> is thrown. A <c>ResourceNotFoundException</c>
+    /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
+    /// parameters of the request are not valid. 
     /// </para>
     /// </summary>
     public partial class DisassociateNodeRequest : AmazonOpsWorksCMRequest
@@ -61,8 +61,8 @@ namespace Amazon.OpsWorksCM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node was associated.
-        /// By default only one organization named <code>default</code> can exist. 
+        ///  <c>CHEF_ORGANIZATION</c>: The Chef organization with which the node was associated.
+        /// By default only one organization named <c>default</c> can exist. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

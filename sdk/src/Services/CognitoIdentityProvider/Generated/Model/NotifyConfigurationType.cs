@@ -140,7 +140,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the identity that is associated with the sending
         /// authorization policy. This identity permits Amazon Cognito to send for the email address
-        /// specified in the <code>From</code> parameter.
+        /// specified in the <c>From</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

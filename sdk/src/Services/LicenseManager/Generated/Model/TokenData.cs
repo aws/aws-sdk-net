@@ -99,7 +99,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Token status. The possible values are <code>AVAILABLE</code> and <code>DELETED</code>.
+        /// Token status. The possible values are <c>AVAILABLE</c> and <c>DELETED</c>.
         /// </para>
         /// </summary>
         public string Status
@@ -154,7 +154,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property TokenType. 
         /// <para>
-        /// Type of token generated. The supported value is <code>REFRESH_TOKEN</code>.
+        /// Type of token generated. The supported value is <c>REFRESH_TOKEN</c>.
         /// </para>
         /// </summary>
         public string TokenType

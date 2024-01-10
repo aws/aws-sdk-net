@@ -38,7 +38,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property ModelMetadata. 
         /// <para>
-        /// The response from a call to <code>CreateModel</code>.
+        /// The response from a call to <c>CreateModel</c>.
         /// </para>
         /// </summary>
         public ModelMetadata ModelMetadata

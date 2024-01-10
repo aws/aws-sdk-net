@@ -59,9 +59,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token to retrieve the next set of results. For example, if your call to ListConfigurations
-        /// returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code>
-        /// to 10, you received a set of 10 results along with this token. Use this token in the
-        /// next query to retrieve the next set of 10.
+        /// returned 100 items, but you set <c>ListConfigurationsRequest$maxResults</c> to 10,
+        /// you received a set of 10 results along with this token. Use this token in the next
+        /// query to retrieve the next set of 10.
         /// </para>
         /// </summary>
         public string NextToken

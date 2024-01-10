@@ -67,10 +67,10 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// Defines the destination to send the metrics to. Valid values are <code>CloudWatch</code>
-        /// and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify
-        /// the ARN of the CloudWatchEvidently experiment that is to be the destination and an
-        /// IAM role that has permission to write to the experiment.
+        /// Defines the destination to send the metrics to. Valid values are <c>CloudWatch</c>
+        /// and <c>Evidently</c>. If you specify <c>Evidently</c>, you must also specify the ARN
+        /// of the CloudWatchEvidently experiment that is to be the destination and an IAM role
+        /// that has permission to write to the experiment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,9 +89,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// Use this parameter only if <code>Destination</code> is <code>Evidently</code>. This
-        /// parameter specifies the ARN of the Evidently experiment that will receive the extended
-        /// metrics.
+        /// Use this parameter only if <c>Destination</c> is <c>Evidently</c>. This parameter
+        /// specifies the ARN of the Evidently experiment that will receive the extended metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -110,8 +109,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// This parameter is required if <code>Destination</code> is <code>Evidently</code>.
-        /// If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.
+        /// This parameter is required if <c>Destination</c> is <c>Evidently</c>. If <c>Destination</c>
+        /// is <c>CloudWatch</c>, do not use this parameter.
         /// </para>
         ///  
         /// <para>

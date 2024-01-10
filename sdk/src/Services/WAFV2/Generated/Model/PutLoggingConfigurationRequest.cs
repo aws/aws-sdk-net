@@ -71,9 +71,9 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// The name that you give the destination must start with <code>aws-waf-logs-</code>.
-    /// Depending on the type of destination, you might need to configure additional settings
-    /// or permissions. 
+    /// The name that you give the destination must start with <c>aws-waf-logs-</c>. Depending
+    /// on the type of destination, you might need to configure additional settings or permissions.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -83,16 +83,16 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Associate your logging destination to your web ACL using a <code>PutLoggingConfiguration</code>
+    /// Associate your logging destination to your web ACL using a <c>PutLoggingConfiguration</c>
     /// request.
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// When you successfully enable logging using a <code>PutLoggingConfiguration</code>
-    /// request, WAF creates an additional role or policy that is required to write logs to
-    /// the logging destination. For an Amazon CloudWatch Logs log group, WAF creates a resource
-    /// policy on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For
-    /// an Amazon Kinesis Data Firehose, WAF creates a service-linked role.
+    /// When you successfully enable logging using a <c>PutLoggingConfiguration</c> request,
+    /// WAF creates an additional role or policy that is required to write logs to the logging
+    /// destination. For an Amazon CloudWatch Logs log group, WAF creates a resource policy
+    /// on the log group. For an Amazon S3 bucket, WAF creates a bucket policy. For an Amazon
+    /// Kinesis Data Firehose, WAF creates a service-linked role.
     /// </para>
     ///  
     /// <para>

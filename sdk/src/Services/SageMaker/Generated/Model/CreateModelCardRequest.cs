@@ -93,20 +93,20 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Draft</code>: The model card is a work in progress.
+        ///  <c>Draft</c>: The model card is a work in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PendingReview</code>: The model card is pending review.
+        ///  <c>PendingReview</c>: The model card is pending review.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Approved</code>: The model card is approved.
+        ///  <c>Approved</c>: The model card is approved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Archived</code>: The model card is archived. No more updates should be made
-        /// to the model card, but it can still be exported.
+        ///  <c>Archived</c>: The model card is archived. No more updates should be made to the
+        /// model card, but it can still be exported.
         /// </para>
         ///  </li> </ul>
         /// </summary>

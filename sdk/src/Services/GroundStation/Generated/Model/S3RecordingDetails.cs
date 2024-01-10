@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Details about an S3 recording <code>Config</code> used in a contact.
+    /// Details about an S3 recording <c>Config</c> used in a contact.
     /// </summary>
     public partial class S3RecordingDetails
     {

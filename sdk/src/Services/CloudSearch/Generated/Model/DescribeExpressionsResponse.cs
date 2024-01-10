@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeExpressions</code> request. Contains the expressions
-    /// configured for the domain specified in the request.
+    /// The result of a <c>DescribeExpressions</c> request. Contains the expressions configured
+    /// for the domain specified in the request.
     /// </summary>
     public partial class DescribeExpressionsResponse : AmazonWebServiceResponse
     {

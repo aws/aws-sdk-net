@@ -33,7 +33,7 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// For the data structure that represents Amazon Neptune DB cluster endpoints, see <code>DBClusterEndpoint</code>.
+    /// For the data structure that represents Amazon Neptune DB cluster endpoints, see <c>DBClusterEndpoint</c>.
     /// </para>
     /// </summary>
     public partial class Endpoint

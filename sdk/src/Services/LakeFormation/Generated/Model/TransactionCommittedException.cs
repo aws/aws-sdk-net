@@ -30,7 +30,7 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Contains details about an error where the specified transaction has already been committed
-    /// and cannot be used for <code>UpdateTableObjects</code>.
+    /// and cannot be used for <c>UpdateTableObjects</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

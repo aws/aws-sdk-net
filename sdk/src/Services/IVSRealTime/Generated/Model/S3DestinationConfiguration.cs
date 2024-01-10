@@ -60,9 +60,9 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property RecordingConfiguration. 
         /// <para>
-        /// Array of maps, each of the form <code>string:string (key:value)</code>. This is an
-        /// optional customer specification, currently used only to specify the recording format
-        /// for storing a recording in Amazon S3.
+        /// Array of maps, each of the form <c>string:string (key:value)</c>. This is an optional
+        /// customer specification, currently used only to specify the recording format for storing
+        /// a recording in Amazon S3.
         /// </para>
         /// </summary>
         public RecordingConfiguration RecordingConfiguration

@@ -334,7 +334,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:CreateGroup</code> 
+        ///  <c>resource-groups:CreateGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -386,7 +386,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:CreateGroup</code> 
+        ///  <c>resource-groups:CreateGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -440,7 +440,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:DeleteGroup</code> 
+        ///  <c>resource-groups:DeleteGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -490,7 +490,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:DeleteGroup</code> 
+        ///  <c>resource-groups:DeleteGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -617,7 +617,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetGroup</code> 
+        ///  <c>resource-groups:GetGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -666,7 +666,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetGroup</code> 
+        ///  <c>resource-groups:GetGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -724,7 +724,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetGroupConfiguration</code> 
+        ///  <c>resource-groups:GetGroupConfiguration</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -775,7 +775,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetGroupConfiguration</code> 
+        ///  <c>resource-groups:GetGroupConfiguration</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -833,7 +833,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetGroupQuery</code> 
+        ///  <c>resource-groups:GetGroupQuery</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -884,7 +884,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetGroupQuery</code> 
+        ///  <c>resource-groups:GetGroupQuery</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -941,7 +941,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetTags</code> 
+        ///  <c>resource-groups:GetTags</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -991,7 +991,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GetTags</code> 
+        ///  <c>resource-groups:GetTags</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1044,11 +1044,11 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::EC2::HostManagement</code> 
+        ///  <c>AWS::EC2::HostManagement</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EC2::CapacityReservationPool</code> 
+        ///  <c>AWS::EC2::CapacityReservationPool</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1064,7 +1064,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GroupResources</code> 
+        ///  <c>resource-groups:GroupResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1110,11 +1110,11 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::EC2::HostManagement</code> 
+        ///  <c>AWS::EC2::HostManagement</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EC2::CapacityReservationPool</code> 
+        ///  <c>AWS::EC2::CapacityReservationPool</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1130,7 +1130,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:GroupResources</code> 
+        ///  <c>resource-groups:GroupResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1186,19 +1186,19 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:ListGroupResources</code> 
+        ///  <c>resource-groups:ListGroupResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:DescribeStacks</code> 
+        ///  <c>cloudformation:DescribeStacks</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:ListStackResources</code> 
+        ///  <c>cloudformation:ListStackResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag:GetResources</code> 
+        ///  <c>tag:GetResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1251,19 +1251,19 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:ListGroupResources</code> 
+        ///  <c>resource-groups:ListGroupResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:DescribeStacks</code> 
+        ///  <c>cloudformation:DescribeStacks</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:ListStackResources</code> 
+        ///  <c>cloudformation:ListStackResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag:GetResources</code> 
+        ///  <c>tag:GetResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1323,7 +1323,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:ListGroups</code> 
+        ///  <c>resource-groups:ListGroups</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1369,7 +1369,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:ListGroups</code> 
+        ///  <c>resource-groups:ListGroups</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1424,7 +1424,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:PutGroupConfiguration</code> 
+        ///  <c>resource-groups:PutGroupConfiguration</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1475,7 +1475,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:PutGroupConfiguration</code> 
+        ///  <c>resource-groups:PutGroupConfiguration</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1533,19 +1533,19 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:SearchResources</code> 
+        ///  <c>resource-groups:SearchResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:DescribeStacks</code> 
+        ///  <c>cloudformation:DescribeStacks</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:ListStackResources</code> 
+        ///  <c>cloudformation:ListStackResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag:GetResources</code> 
+        ///  <c>tag:GetResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1597,19 +1597,19 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:SearchResources</code> 
+        ///  <c>resource-groups:SearchResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:DescribeStacks</code> 
+        ///  <c>cloudformation:DescribeStacks</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudformation:ListStackResources</code> 
+        ///  <c>cloudformation:ListStackResources</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag:GetResources</code> 
+        ///  <c>tag:GetResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1673,7 +1673,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:Tag</code> 
+        ///  <c>resource-groups:Tag</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1729,7 +1729,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:Tag</code> 
+        ///  <c>resource-groups:Tag</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1788,7 +1788,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:UngroupResources</code> 
+        ///  <c>resource-groups:UngroupResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1840,7 +1840,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:UngroupResources</code> 
+        ///  <c>resource-groups:UngroupResources</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1896,7 +1896,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:Untag</code> 
+        ///  <c>resource-groups:Untag</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1945,7 +1945,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:Untag</code> 
+        ///  <c>resource-groups:Untag</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1994,9 +1994,8 @@ namespace Amazon.ResourceGroups
         ///  
         /// <para>
         /// The preceding example shows that the request to turn on group lifecycle events is
-        /// <code>IN_PROGRESS</code>. You can call the <a>GetAccountSettings</a> operation to
-        /// check for completion by looking for <code>GroupLifecycleEventsStatus</code> to change
-        /// to <code>ACTIVE</code>.
+        /// <c>IN_PROGRESS</c>. You can call the <a>GetAccountSettings</a> operation to check
+        /// for completion by looking for <c>GroupLifecycleEventsStatus</c> to change to <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
@@ -2034,9 +2033,8 @@ namespace Amazon.ResourceGroups
         ///  
         /// <para>
         /// The preceding example shows that the request to turn on group lifecycle events is
-        /// <code>IN_PROGRESS</code>. You can call the <a>GetAccountSettings</a> operation to
-        /// check for completion by looking for <code>GroupLifecycleEventsStatus</code> to change
-        /// to <code>ACTIVE</code>.
+        /// <c>IN_PROGRESS</c>. You can call the <a>GetAccountSettings</a> operation to check
+        /// for completion by looking for <c>GroupLifecycleEventsStatus</c> to change to <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAccountSettings service method.</param>
@@ -2089,7 +2087,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:UpdateGroup</code> 
+        ///  <c>resource-groups:UpdateGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2139,7 +2137,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:UpdateGroup</code> 
+        ///  <c>resource-groups:UpdateGroup</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2197,7 +2195,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:UpdateGroupQuery</code> 
+        ///  <c>resource-groups:UpdateGroupQuery</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2248,7 +2246,7 @@ namespace Amazon.ResourceGroups
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-groups:UpdateGroupQuery</code> 
+        ///  <c>resource-groups:UpdateGroupQuery</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

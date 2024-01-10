@@ -357,10 +357,9 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates Amazon QuickSight customizations for the current Amazon Web Services Region.
-        /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
-        /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
-        /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+        /// Currently, you can add a custom default theme by using the <c>CreateAccountCustomization</c>
+        /// or <c>UpdateAccountCustomization</c> API operation. To further customize Amazon QuickSight
+        /// by removing Amazon QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
         /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
         /// 
         ///  
@@ -368,19 +367,17 @@ namespace Amazon.QuickSight
         /// You can create customizations for your Amazon Web Services account or, if you specify
         /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
         /// always override customizations that apply to an Amazon Web Services account. To find
-        /// out which customizations apply, use the <code>DescribeAccountCustomization</code>
-        /// API operation.
+        /// out which customizations apply, use the <c>DescribeAccountCustomization</c> API operation.
         /// </para>
         ///  
         /// <para>
-        /// Before you use the <code>CreateAccountCustomization</code> API operation to add a
-        /// theme as the namespace default, make sure that you first share the theme with the
-        /// namespace. If you don't share it with the namespace, the theme isn't visible to your
-        /// users even if you make it the default theme. To check if the theme is shared, view
-        /// the current permissions by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a>
-        /// </code> API operation. To share the theme, grant permissions by using the <code> <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
-        /// </code> API operation. 
+        /// Before you use the <c>CreateAccountCustomization</c> API operation to add a theme
+        /// as the namespace default, make sure that you first share the theme with the namespace.
+        /// If you don't share it with the namespace, the theme isn't visible to your users even
+        /// if you make it the default theme. To check if the theme is shared, view the current
+        /// permissions by using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a>
+        /// </c> API operation. To share the theme, grant permissions by using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
+        /// </c> API operation. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountCustomization service method.</param>
@@ -426,10 +423,9 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates Amazon QuickSight customizations for the current Amazon Web Services Region.
-        /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
-        /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
-        /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
-        /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+        /// Currently, you can add a custom default theme by using the <c>CreateAccountCustomization</c>
+        /// or <c>UpdateAccountCustomization</c> API operation. To further customize Amazon QuickSight
+        /// by removing Amazon QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
         /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
         /// 
         ///  
@@ -437,19 +433,17 @@ namespace Amazon.QuickSight
         /// You can create customizations for your Amazon Web Services account or, if you specify
         /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
         /// always override customizations that apply to an Amazon Web Services account. To find
-        /// out which customizations apply, use the <code>DescribeAccountCustomization</code>
-        /// API operation.
+        /// out which customizations apply, use the <c>DescribeAccountCustomization</c> API operation.
         /// </para>
         ///  
         /// <para>
-        /// Before you use the <code>CreateAccountCustomization</code> API operation to add a
-        /// theme as the namespace default, make sure that you first share the theme with the
-        /// namespace. If you don't share it with the namespace, the theme isn't visible to your
-        /// users even if you make it the default theme. To check if the theme is shared, view
-        /// the current permissions by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a>
-        /// </code> API operation. To share the theme, grant permissions by using the <code> <a
-        /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
-        /// </code> API operation. 
+        /// Before you use the <c>CreateAccountCustomization</c> API operation to add a theme
+        /// as the namespace default, make sure that you first share the theme with the namespace.
+        /// If you don't share it with the namespace, the theme isn't visible to your users even
+        /// if you make it the default theme. To check if the theme is shared, view the current
+        /// permissions by using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a>
+        /// </c> API operation. To share the theme, grant permissions by using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
+        /// </c> API operation. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountCustomization service method.</param>
@@ -519,10 +513,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code>
-        /// actions, make sure that both actions are set to <code>Allow</code>. If either action
-        /// is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call
-        /// fails.
+        /// If your IAM policy includes both the <c>Subscribe</c> and <c>CreateAccountSubscription</c>
+        /// actions, make sure that both actions are set to <c>Allow</c>. If either action is
+        /// set to <c>Deny</c>, the <c>Deny</c> action prevails and your API call fails.
         /// </para>
         ///  
         /// <para>
@@ -603,10 +596,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code>
-        /// actions, make sure that both actions are set to <code>Allow</code>. If either action
-        /// is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call
-        /// fails.
+        /// If your IAM policy includes both the <c>Subscribe</c> and <c>CreateAccountSubscription</c>
+        /// actions, make sure that both actions are set to <c>Allow</c>. If either action is
+        /// set to <c>Deny</c>, the <c>Deny</c> action prevails and your API call fails.
         /// </para>
         ///  
         /// <para>
@@ -677,7 +669,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
-        /// or from an <code>AnalysisDefinition</code>.
+        /// or from an <c>AnalysisDefinition</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalysis service method.</param>
         /// 
@@ -722,7 +714,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
-        /// or from an <code>AnalysisDefinition</code>.
+        /// or from an <c>AnalysisDefinition</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAnalysis service method.</param>
         /// <param name="cancellationToken">
@@ -773,9 +765,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>.
-        /// To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-        /// </code> API operation.
+        /// Creates a dashboard from either a template or directly with a <c>DashboardDefinition</c>.
+        /// To first create a template, see the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </c> API operation.
         /// 
         ///  
         /// <para>
@@ -828,9 +820,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>.
-        /// To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-        /// </code> API operation.
+        /// Creates a dashboard from either a template or directly with a <c>DashboardDefinition</c>.
+        /// To first create a template, see the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </c> API operation.
         /// 
         ///  
         /// <para>
@@ -1302,14 +1294,14 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight.
-        /// You can create up to 10,000 groups in a namespace. If you want to create more than
-        /// 10,000 groups in a namespace, contact Amazon Web Services Support.
+        /// Use the <c>CreateGroup</c> operation to create a group in Amazon QuickSight. You can
+        /// create up to 10,000 groups in a namespace. If you want to create more than 10,000
+        /// groups in a namespace, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
+        /// The permissions resource is <c>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
+        /// </c>.
         /// </para>
         ///  
         /// <para>
@@ -1361,14 +1353,14 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>CreateGroup</code> operation to create a group in Amazon QuickSight.
-        /// You can create up to 10,000 groups in a namespace. If you want to create more than
-        /// 10,000 groups in a namespace, contact Amazon Web Services Support.
+        /// Use the <c>CreateGroup</c> operation to create a group in Amazon QuickSight. You can
+        /// create up to 10,000 groups in a namespace. If you want to create more than 10,000
+        /// groups in a namespace, contact Amazon Web Services Support.
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
-        /// </code>.
+        /// The permissions resource is <c>arn:aws:quicksight:&lt;your-region&gt;:<i>&lt;relevant-aws-account-id&gt;</i>:group/default/<i>&lt;group-name&gt;</i>
+        /// </c>.
         /// </para>
         ///  
         /// <para>
@@ -1954,8 +1946,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to
-        /// an existing role.
+        /// Use <c>CreateRoleMembership</c> to add an existing Amazon QuickSight group to an existing
+        /// role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleMembership service method.</param>
         /// 
@@ -1996,8 +1988,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use <code>CreateRoleMembership</code> to add an existing Amazon QuickSight group to
-        /// an existing role.
+        /// Use <c>CreateRoleMembership</c> to add an existing Amazon QuickSight group to an existing
+        /// role.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRoleMembership service method.</param>
         /// <param name="cancellationToken">
@@ -2045,9 +2037,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a template either from a <code>TemplateDefinition</code> or from an existing
-        /// Amazon QuickSight analysis or template. You can use the resulting template to create
-        /// additional dashboards, templates, or analyses.
+        /// Creates a template either from a <c>TemplateDefinition</c> or from an existing Amazon
+        /// QuickSight analysis or template. You can use the resulting template to create additional
+        /// dashboards, templates, or analyses.
         /// 
         ///  
         /// <para>
@@ -2107,9 +2099,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Creates a template either from a <code>TemplateDefinition</code> or from an existing
-        /// Amazon QuickSight analysis or template. You can use the resulting template to create
-        /// additional dashboards, templates, or analyses.
+        /// Creates a template either from a <c>TemplateDefinition</c> or from an existing Amazon
+        /// QuickSight analysis or template. You can use the resulting template to create additional
+        /// dashboards, templates, or analyses.
         /// 
         ///  
         /// <para>
@@ -2869,12 +2861,12 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight
+        /// Use the <c>DeleteAccountSubscription</c> operation to delete an Amazon QuickSight
         /// account. This operation will result in an error message if you have configured your
-        /// account termination protection settings to <code>True</code>. To change this setting
-        /// and delete your account, call the <code>UpdateAccountSettings</code> API and set the
-        /// value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>,
-        /// then make another call to the <code>DeleteAccountSubscription</code> API.
+        /// account termination protection settings to <c>True</c>. To change this setting and
+        /// delete your account, call the <c>UpdateAccountSettings</c> API and set the value of
+        /// the <c>TerminationProtectionEnabled</c> parameter to <c>False</c>, then make another
+        /// call to the <c>DeleteAccountSubscription</c> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSubscription service method.</param>
         /// 
@@ -2915,12 +2907,12 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight
+        /// Use the <c>DeleteAccountSubscription</c> operation to delete an Amazon QuickSight
         /// account. This operation will result in an error message if you have configured your
-        /// account termination protection settings to <code>True</code>. To change this setting
-        /// and delete your account, call the <code>UpdateAccountSettings</code> API and set the
-        /// value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>,
-        /// then make another call to the <code>DeleteAccountSubscription</code> API.
+        /// account termination protection settings to <c>True</c>. To change this setting and
+        /// delete your account, call the <c>UpdateAccountSettings</c> API and set the value of
+        /// the <c>TerminationProtectionEnabled</c> parameter to <c>False</c>, then make another
+        /// call to the <c>DeleteAccountSubscription</c> API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountSubscription service method.</param>
         /// <param name="cancellationToken">
@@ -2970,16 +2962,16 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Deletes an analysis from Amazon QuickSight. You can optionally include a recovery
         /// window during which you can restore the analysis. If you don't specify a recovery
-        /// window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code>
+        /// window value, the operation defaults to 30 days. Amazon QuickSight attaches a <c>DeletionTime</c>
         /// stamp to the response that specifies the end of the recovery window. At the end of
         /// the recovery window, Amazon QuickSight deletes the analysis permanently.
         /// 
         ///  
         /// <para>
-        /// At any time before recovery window ends, you can use the <code>RestoreAnalysis</code>
-        /// API operation to remove the <code>DeletionTime</code> stamp and cancel the deletion
-        /// of the analysis. The analysis remains visible in the API until it's deleted, so you
-        /// can describe it but you can't make a template from it.
+        /// At any time before recovery window ends, you can use the <c>RestoreAnalysis</c> API
+        /// operation to remove the <c>DeletionTime</c> stamp and cancel the deletion of the analysis.
+        /// The analysis remains visible in the API until it's deleted, so you can describe it
+        /// but you can't make a template from it.
         /// </para>
         ///  
         /// <para>
@@ -3026,16 +3018,16 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Deletes an analysis from Amazon QuickSight. You can optionally include a recovery
         /// window during which you can restore the analysis. If you don't specify a recovery
-        /// window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code>
+        /// window value, the operation defaults to 30 days. Amazon QuickSight attaches a <c>DeletionTime</c>
         /// stamp to the response that specifies the end of the recovery window. At the end of
         /// the recovery window, Amazon QuickSight deletes the analysis permanently.
         /// 
         ///  
         /// <para>
-        /// At any time before recovery window ends, you can use the <code>RestoreAnalysis</code>
-        /// API operation to remove the <code>DeletionTime</code> stamp and cancel the deletion
-        /// of the analysis. The analysis remains visible in the API until it's deleted, so you
-        /// can describe it but you can't make a template from it.
+        /// At any time before recovery window ends, you can use the <c>RestoreAnalysis</c> API
+        /// operation to remove the <c>DeletionTime</c> stamp and cancel the deletion of the analysis.
+        /// The analysis remains visible in the API until it's deleted, so you can describe it
+        /// but you can't make a template from it.
         /// </para>
         ///  
         /// <para>
@@ -5129,7 +5121,7 @@ namespace Amazon.QuickSight
         /// Describes the customizations associated with the provided Amazon Web Services account
         /// and Amazon Amazon QuickSight namespace in an Amazon Web Services Region. The Amazon
         /// QuickSight console evaluates which customizations to apply by running this API operation
-        /// with the <code>Resolved</code> flag included. 
+        /// with the <c>Resolved</c> flag included. 
         /// 
         ///  
         /// <para>
@@ -5138,21 +5130,21 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Amazon Web Services account</code> - The Amazon Web Services account exists
-        /// at the top of the hierarchy. It has the potential to use all of the Amazon Web Services
-        /// Regions and Amazon Web Services Services. When you subscribe to Amazon QuickSight,
-        /// you choose one Amazon Web Services Region to use as your home Region. That's where
-        /// your free SPICE capacity is located. You can use Amazon QuickSight in any supported
-        /// Amazon Web Services Region. 
+        ///  <c>Amazon Web Services account</c> - The Amazon Web Services account exists at the
+        /// top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions
+        /// and Amazon Web Services Services. When you subscribe to Amazon QuickSight, you choose
+        /// one Amazon Web Services Region to use as your home Region. That's where your free
+        /// SPICE capacity is located. You can use Amazon QuickSight in any supported Amazon Web
+        /// Services Region. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Amazon Web Services Region</code> - In each Amazon Web Services Region where
-        /// you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate
-        /// instance of the same service. If you have a user directory, it resides in us-east-1,
-        /// which is the US East (N. Virginia). Generally speaking, these users have access to
-        /// Amazon QuickSight in any Amazon Web Services Region, unless they are constrained to
-        /// a namespace. 
+        ///  <c>Amazon Web Services Region</c> - In each Amazon Web Services Region where you
+        /// sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate instance
+        /// of the same service. If you have a user directory, it resides in us-east-1, which
+        /// is the US East (N. Virginia). Generally speaking, these users have access to Amazon
+        /// QuickSight in any Amazon Web Services Region, unless they are constrained to a namespace.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -5171,26 +5163,26 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Run <code>aws configure</code> to change your default Amazon Web Services Region.
-        /// Use Enter to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
+        /// Run <c>aws configure</c> to change your default Amazon Web Services Region. Use Enter
+        /// to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
         /// the CLI</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>Namespace</code> - A QuickSight namespace is a partition that contains users
-        /// and assets (data sources, datasets, dashboards, and so on). To access assets that
-        /// are in a specific namespace, users and groups must also be part of the same namespace.
+        ///  <c>Namespace</c> - A QuickSight namespace is a partition that contains users and
+        /// assets (data sources, datasets, dashboards, and so on). To access assets that are
+        /// in a specific namespace, users and groups must also be part of the same namespace.
         /// People who share a namespace are completely isolated from users and assets in other
         /// namespaces, even if they are in the same Amazon Web Services account and Amazon Web
         /// Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Applied customizations</code> - Within an Amazon Web Services Region, a set
-        /// of Amazon QuickSight customizations can apply to an Amazon Web Services account or
-        /// to a namespace. Settings that you apply to a namespace override settings that you
-        /// apply to an Amazon Web Services account. All settings are isolated to a single Amazon
-        /// Web Services Region. To apply them in other Amazon Web Services Regions, run the <code>CreateAccountCustomization</code>
+        ///  <c>Applied customizations</c> - Within an Amazon Web Services Region, a set of Amazon
+        /// QuickSight customizations can apply to an Amazon Web Services account or to a namespace.
+        /// Settings that you apply to a namespace override settings that you apply to an Amazon
+        /// Web Services account. All settings are isolated to a single Amazon Web Services Region.
+        /// To apply them in other Amazon Web Services Regions, run the <c>CreateAccountCustomization</c>
         /// command in each Amazon Web Services Region where you want to apply the same customizations.
         /// 
         /// </para>
@@ -5235,7 +5227,7 @@ namespace Amazon.QuickSight
         /// Describes the customizations associated with the provided Amazon Web Services account
         /// and Amazon Amazon QuickSight namespace in an Amazon Web Services Region. The Amazon
         /// QuickSight console evaluates which customizations to apply by running this API operation
-        /// with the <code>Resolved</code> flag included. 
+        /// with the <c>Resolved</c> flag included. 
         /// 
         ///  
         /// <para>
@@ -5244,21 +5236,21 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Amazon Web Services account</code> - The Amazon Web Services account exists
-        /// at the top of the hierarchy. It has the potential to use all of the Amazon Web Services
-        /// Regions and Amazon Web Services Services. When you subscribe to Amazon QuickSight,
-        /// you choose one Amazon Web Services Region to use as your home Region. That's where
-        /// your free SPICE capacity is located. You can use Amazon QuickSight in any supported
-        /// Amazon Web Services Region. 
+        ///  <c>Amazon Web Services account</c> - The Amazon Web Services account exists at the
+        /// top of the hierarchy. It has the potential to use all of the Amazon Web Services Regions
+        /// and Amazon Web Services Services. When you subscribe to Amazon QuickSight, you choose
+        /// one Amazon Web Services Region to use as your home Region. That's where your free
+        /// SPICE capacity is located. You can use Amazon QuickSight in any supported Amazon Web
+        /// Services Region. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Amazon Web Services Region</code> - In each Amazon Web Services Region where
-        /// you sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate
-        /// instance of the same service. If you have a user directory, it resides in us-east-1,
-        /// which is the US East (N. Virginia). Generally speaking, these users have access to
-        /// Amazon QuickSight in any Amazon Web Services Region, unless they are constrained to
-        /// a namespace. 
+        ///  <c>Amazon Web Services Region</c> - In each Amazon Web Services Region where you
+        /// sign in to Amazon QuickSight at least once, Amazon QuickSight acts as a separate instance
+        /// of the same service. If you have a user directory, it resides in us-east-1, which
+        /// is the US East (N. Virginia). Generally speaking, these users have access to Amazon
+        /// QuickSight in any Amazon Web Services Region, unless they are constrained to a namespace.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -5277,26 +5269,26 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Run <code>aws configure</code> to change your default Amazon Web Services Region.
-        /// Use Enter to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
+        /// Run <c>aws configure</c> to change your default Amazon Web Services Region. Use Enter
+        /// to key the same settings for your keys. For more information, see <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring
         /// the CLI</a>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>Namespace</code> - A QuickSight namespace is a partition that contains users
-        /// and assets (data sources, datasets, dashboards, and so on). To access assets that
-        /// are in a specific namespace, users and groups must also be part of the same namespace.
+        ///  <c>Namespace</c> - A QuickSight namespace is a partition that contains users and
+        /// assets (data sources, datasets, dashboards, and so on). To access assets that are
+        /// in a specific namespace, users and groups must also be part of the same namespace.
         /// People who share a namespace are completely isolated from users and assets in other
         /// namespaces, even if they are in the same Amazon Web Services account and Amazon Web
         /// Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Applied customizations</code> - Within an Amazon Web Services Region, a set
-        /// of Amazon QuickSight customizations can apply to an Amazon Web Services account or
-        /// to a namespace. Settings that you apply to a namespace override settings that you
-        /// apply to an Amazon Web Services account. All settings are isolated to a single Amazon
-        /// Web Services Region. To apply them in other Amazon Web Services Regions, run the <code>CreateAccountCustomization</code>
+        ///  <c>Applied customizations</c> - Within an Amazon Web Services Region, a set of Amazon
+        /// QuickSight customizations can apply to an Amazon Web Services account or to a namespace.
+        /// Settings that you apply to a namespace override settings that you apply to an Amazon
+        /// Web Services account. All settings are isolated to a single Amazon Web Services Region.
+        /// To apply them in other Amazon Web Services Regions, run the <c>CreateAccountCustomization</c>
         /// command in each Amazon Web Services Region where you want to apply the same customizations.
         /// 
         /// </para>
@@ -5431,7 +5423,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Use the DescribeAccountSubscription operation to receive a description of an Amazon
-        /// QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code>
+        /// QuickSight account's subscription. A successful API call returns an <c>AccountInfo</c>
         /// object that includes an account's name, subscription status, authentication type,
         /// edition, and notification email address.
         /// </summary>
@@ -5472,7 +5464,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Use the DescribeAccountSubscription operation to receive a description of an Amazon
-        /// QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code>
+        /// QuickSight account's subscription. A successful API call returns an <c>AccountInfo</c>
         /// object that includes an account's name, subscription status, authentication type,
         /// edition, and notification email address.
         /// </summary>
@@ -5615,7 +5607,7 @@ namespace Amazon.QuickSight
         /// If you do not need to know details about the content of an Analysis, for instance
         /// if you are trying to check the status of a recently created or updated Analysis, use
         /// the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
-        /// <code>DescribeAnalysis</code> </a> instead. 
+        /// <c>DescribeAnalysis</c> </a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5671,7 +5663,7 @@ namespace Amazon.QuickSight
         /// If you do not need to know details about the content of an Analysis, for instance
         /// if you are trying to check the status of a recently created or updated Analysis, use
         /// the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
-        /// <code>DescribeAnalysis</code> </a> instead. 
+        /// <c>DescribeAnalysis</c> </a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -5810,7 +5802,7 @@ namespace Amazon.QuickSight
         /// <para>
         /// Poll job descriptions after a job starts to know the status of the job. When a job
         /// succeeds, a URL is provided to download the exported assets' data from. Download URLs
-        /// are valid for five minutes after they are generated. You can call the <code>DescribeAssetBundleExportJob</code>
+        /// are valid for five minutes after they are generated. You can call the <c>DescribeAssetBundleExportJob</c>
         /// API for a new download URL as needed.
         /// </para>
         ///  
@@ -5851,7 +5843,7 @@ namespace Amazon.QuickSight
         /// <para>
         /// Poll job descriptions after a job starts to know the status of the job. When a job
         /// succeeds, a URL is provided to download the exported assets' data from. Download URLs
-        /// are valid for five minutes after they are generated. You can call the <code>DescribeAssetBundleExportJob</code>
+        /// are valid for five minutes after they are generated. You can call the <c>DescribeAssetBundleExportJob</c>
         /// API for a new download URL as needed.
         /// </para>
         ///  
@@ -6066,7 +6058,7 @@ namespace Amazon.QuickSight
         /// If you do not need to know details about the content of a dashboard, for instance
         /// if you are trying to check the status of a recently created or updated dashboard,
         /// use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html">
-        /// <code>DescribeDashboard</code> </a> instead. 
+        /// <c>DescribeDashboard</c> </a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -6122,7 +6114,7 @@ namespace Amazon.QuickSight
         /// If you do not need to know details about the content of a dashboard, for instance
         /// if you are trying to check the status of a recently created or updated dashboard,
         /// use the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeDashboard.html">
-        /// <code>DescribeDashboard</code> </a> instead. 
+        /// <c>DescribeDashboard</c> </a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -6260,7 +6252,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// Poll job descriptions after a job starts to know the status of the job. For information
-        /// on available status codes, see <code>JobStatus</code>.
+        /// on available status codes, see <c>JobStatus</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJob service method.</param>
@@ -6304,7 +6296,7 @@ namespace Amazon.QuickSight
         ///  
         /// <para>
         /// Poll job descriptions after a job starts to know the status of the job. For information
-        /// on available status codes, see <code>JobStatus</code>.
+        /// on available status codes, see <c>JobStatus</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJob service method.</param>
@@ -6354,14 +6346,13 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code>
-        /// status when you poll the job with a <code>DescribeDashboardSnapshotJob</code> API
-        /// call.
+        /// A finished snapshot job will return a <c>COMPLETED</c> or <c>FAILED</c> status when
+        /// you poll the job with a <c>DescribeDashboardSnapshotJob</c> API call.
         /// </para>
         ///  
         /// <para>
-        /// If the job has not finished running, this operation returns a message that says <code>Dashboard
-        /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.
+        /// If the job has not finished running, this operation returns a message that says <c>Dashboard
+        /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJobResult service method.</param>
@@ -6410,14 +6401,13 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// A finished snapshot job will return a <code>COMPLETED</code> or <code>FAILED</code>
-        /// status when you poll the job with a <code>DescribeDashboardSnapshotJob</code> API
-        /// call.
+        /// A finished snapshot job will return a <c>COMPLETED</c> or <c>FAILED</c> status when
+        /// you poll the job with a <c>DescribeDashboardSnapshotJob</c> API call.
         /// </para>
         ///  
         /// <para>
-        /// If the job has not finished running, this operation returns a message that says <code>Dashboard
-        /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</code>.
+        /// If the job has not finished running, this operation returns a message that says <c>Dashboard
+        /// Snapshot Job with id &lt;SnapshotjobId&gt; has not reached a terminal state.</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDashboardSnapshotJobResult service method.</param>
@@ -6552,7 +6542,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
+        /// The permissions resource is <c>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSetPermissions service method.</param>
@@ -6592,7 +6582,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
+        /// The permissions resource is <c>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataSetPermissions service method.</param>
@@ -6982,7 +6972,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -7029,7 +7019,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -7078,7 +7068,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -7126,7 +7116,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -7248,9 +7238,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>DescribeGroupMembership</code> operation to determine if a user is a
-        /// member of the specified group. If the user exists and is a member of the specified
-        /// group, an associated <code>GroupMember</code> object is returned.
+        /// Use the <c>DescribeGroupMembership</c> operation to determine if a user is a member
+        /// of the specified group. If the user exists and is a member of the specified group,
+        /// an associated <c>GroupMember</c> object is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
         /// 
@@ -7291,9 +7281,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>DescribeGroupMembership</code> operation to determine if a user is a
-        /// member of the specified group. If the user exists and is a member of the specified
-        /// group, an associated <code>GroupMember</code> object is returned.
+        /// Use the <c>DescribeGroupMembership</c> operation to determine if a user is a member
+        /// of the specified group. If the user exists and is a member of the specified group,
+        /// an associated <c>GroupMember</c> object is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGroupMembership service method.</param>
         /// <param name="cancellationToken">
@@ -7356,7 +7346,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -7397,7 +7387,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -8018,7 +8008,7 @@ namespace Amazon.QuickSight
         /// If you do not need to know details about the content of a template, for instance if
         /// you are trying to check the status of a recently created or updated template, use
         /// the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html">
-        /// <code>DescribeTemplate</code> </a> instead. 
+        /// <c>DescribeTemplate</c> </a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -8074,7 +8064,7 @@ namespace Amazon.QuickSight
         /// If you do not need to know details about the content of a template, for instance if
         /// you are trying to check the status of a recently created or updated template, use
         /// the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeTemplate.html">
-        /// <code>DescribeTemplate</code> </a> instead. 
+        /// <c>DescribeTemplate</c> </a> instead. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -9000,9 +8990,9 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         /// The URL validity period should not be confused with the actual session lifetime that
-        /// can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-        /// </code> parameter. The resulting user session is valid for 15 minutes (minimum) to
-        /// 10 hours (maximum). The default session duration is 10 hours.
+        /// can be customized using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
+        /// </c> parameter. The resulting user session is valid for 15 minutes (minimum) to 10
+        /// hours (maximum). The default session duration is 10 hours.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9054,8 +9044,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -9092,9 +9082,9 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         /// The URL validity period should not be confused with the actual session lifetime that
-        /// can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-        /// </code> parameter. The resulting user session is valid for 15 minutes (minimum) to
-        /// 10 hours (maximum). The default session duration is 10 hours.
+        /// can be customized using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForAnonymousUser.html#QS-GenerateEmbedUrlForAnonymousUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
+        /// </c> parameter. The resulting user session is valid for 15 minutes (minimum) to 10
+        /// hours (maximum). The default session duration is 10 hours.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9149,8 +9139,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -9192,8 +9182,8 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         /// The URL validity period should not be confused with the actual session lifetime that
-        /// can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-        /// </code> parameter.
+        /// can be customized using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
+        /// </c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -9233,8 +9223,8 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
         /// The user with the provided name isn't found. This error can happen in any operation
-        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
-        /// <code>DescribeUser</code>, and so on.
+        /// that requires finding a user based on a provided user name, such as <c>DeleteUser</c>,
+        /// <c>DescribeUser</c>, and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -9255,8 +9245,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -9294,8 +9284,8 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         /// The URL validity period should not be confused with the actual session lifetime that
-        /// can be customized using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
-        /// </code> parameter.
+        /// can be customized using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GenerateEmbedUrlForRegisteredUser.html#QS-GenerateEmbedUrlForRegisteredUser-request-SessionLifetimeInMinutes">SessionLifetimeInMinutes</a>
+        /// </c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -9338,8 +9328,8 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
         /// The user with the provided name isn't found. This error can happen in any operation
-        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
-        /// <code>DescribeUser</code>, and so on.
+        /// that requires finding a user based on a provided user name, such as <c>DeleteUser</c>,
+        /// <c>DescribeUser</c>, and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -9360,8 +9350,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -9393,8 +9383,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-        /// from the user's browser. The following rules apply to the generated URL:
+        /// Currently, you can use <c>GetDashboardEmbedURL</c> only from the server, not from
+        /// the user's browser. The following rules apply to the generated URL:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -9415,8 +9405,8 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         /// The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum).
-        /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize
-        /// session duration.
+        /// You can use the optional <c>SessionLifetimeInMinutes</c> parameter to customize session
+        /// duration.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9444,8 +9434,8 @@ namespace Amazon.QuickSight
         /// must be added to the approved list by an Amazon QuickSight admin.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.IdentityTypeNotSupportedException">
-        /// The identity type specified isn't supported. Supported identity types include <code>IAM</code>
-        /// and <code>QUICKSIGHT</code>.
+        /// The identity type specified isn't supported. Supported identity types include <c>IAM</c>
+        /// and <c>QUICKSIGHT</c>.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9455,8 +9445,8 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
         /// The user with the provided name isn't found. This error can happen in any operation
-        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
-        /// <code>DescribeUser</code>, and so on.
+        /// that requires finding a user based on a provided user name, such as <c>DeleteUser</c>,
+        /// <c>DescribeUser</c>, and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -9480,8 +9470,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -9509,8 +9499,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-        /// from the user's browser. The following rules apply to the generated URL:
+        /// Currently, you can use <c>GetDashboardEmbedURL</c> only from the server, not from
+        /// the user's browser. The following rules apply to the generated URL:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -9531,8 +9521,8 @@ namespace Amazon.QuickSight
         ///  </li> <li> 
         /// <para>
         /// The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum).
-        /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize
-        /// session duration.
+        /// You can use the optional <c>SessionLifetimeInMinutes</c> parameter to customize session
+        /// duration.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -9563,8 +9553,8 @@ namespace Amazon.QuickSight
         /// must be added to the approved list by an Amazon QuickSight admin.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.IdentityTypeNotSupportedException">
-        /// The identity type specified isn't supported. Supported identity types include <code>IAM</code>
-        /// and <code>QUICKSIGHT</code>.
+        /// The identity type specified isn't supported. Supported identity types include <c>IAM</c>
+        /// and <c>QUICKSIGHT</c>.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9574,8 +9564,8 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
         /// The user with the provided name isn't found. This error can happen in any operation
-        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
-        /// <code>DescribeUser</code>, and so on.
+        /// that requires finding a user based on a provided user name, such as <c>DeleteUser</c>,
+        /// <c>DescribeUser</c>, and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -9599,8 +9589,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -9626,16 +9616,15 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Generates a session URL and authorization code that you can use to embed the Amazon
-        /// Amazon QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code>
-        /// where you want to provide an authoring portal that allows users to create data sources,
+        /// Amazon QuickSight console in your web server code. Use <c>GetSessionEmbedUrl</c> where
+        /// you want to provide an authoring portal that allows users to create data sources,
         /// datasets, analyses, and dashboards. The users who access an embedded Amazon QuickSight
         /// console need belong to the author or admin security cohort. If you want to restrict
         /// permissions to some of these features, add a custom permissions profile to the user
-        /// with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
-        /// </code> API operation to add a new user with a custom permission profile attached.
-        /// For more information, see the following sections in the <i>Amazon QuickSight User
-        /// Guide</i>:
+        /// with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+        /// </c> API operation. Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
+        /// </c> API operation to add a new user with a custom permission profile attached. For
+        /// more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -9666,8 +9655,8 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
         /// The user with the provided name isn't found. This error can happen in any operation
-        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
-        /// <code>DescribeUser</code>, and so on.
+        /// that requires finding a user based on a provided user name, such as <c>DeleteUser</c>,
+        /// <c>DescribeUser</c>, and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -9701,16 +9690,15 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Generates a session URL and authorization code that you can use to embed the Amazon
-        /// Amazon QuickSight console in your web server code. Use <code>GetSessionEmbedUrl</code>
-        /// where you want to provide an authoring portal that allows users to create data sources,
+        /// Amazon QuickSight console in your web server code. Use <c>GetSessionEmbedUrl</c> where
+        /// you want to provide an authoring portal that allows users to create data sources,
         /// datasets, analyses, and dashboards. The users who access an embedded Amazon QuickSight
         /// console need belong to the author or admin security cohort. If you want to restrict
         /// permissions to some of these features, add a custom permissions profile to the user
-        /// with the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
-        /// </code> API operation. Use <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
-        /// </code> API operation to add a new user with a custom permission profile attached.
-        /// For more information, see the following sections in the <i>Amazon QuickSight User
-        /// Guide</i>:
+        /// with the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateUser.html">UpdateUser</a>
+        /// </c> API operation. Use <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_RegisterUser.html">RegisterUser</a>
+        /// </c> API operation to add a new user with a custom permission profile attached. For
+        /// more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -9744,8 +9732,8 @@ namespace Amazon.QuickSight
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.QuickSightUserNotFoundException">
         /// The user with the provided name isn't found. This error can happen in any operation
-        /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
-        /// <code>DescribeUser</code>, and so on.
+        /// that requires finding a user based on a provided user name, such as <c>DeleteUser</c>,
+        /// <c>DescribeUser</c>, and so on.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
         /// The resource specified already exists.
@@ -9791,7 +9779,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
@@ -9826,7 +9814,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
@@ -9855,8 +9843,8 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Lists all asset bundle export jobs that have been taken place in the last 14 days.
         /// Jobs created more than 14 days ago are deleted forever and are not returned. If you
-        /// are using the same job ID for multiple jobs, <code>ListAssetBundleExportJobs</code>
-        /// only returns the most recent job that uses the repeated job ID.
+        /// are using the same job ID for multiple jobs, <c>ListAssetBundleExportJobs</c> only
+        /// returns the most recent job that uses the repeated job ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleExportJobs service method.</param>
         /// 
@@ -9868,7 +9856,7 @@ namespace Amazon.QuickSight
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -9896,8 +9884,8 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Lists all asset bundle export jobs that have been taken place in the last 14 days.
         /// Jobs created more than 14 days ago are deleted forever and are not returned. If you
-        /// are using the same job ID for multiple jobs, <code>ListAssetBundleExportJobs</code>
-        /// only returns the most recent job that uses the repeated job ID.
+        /// are using the same job ID for multiple jobs, <c>ListAssetBundleExportJobs</c> only
+        /// returns the most recent job that uses the repeated job ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleExportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -9912,7 +9900,7 @@ namespace Amazon.QuickSight
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -9944,8 +9932,8 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs
         /// created more than 14 days ago are deleted forever and are not returned. If you are
-        /// using the same job ID for multiple jobs, <code>ListAssetBundleImportJobs</code> only
-        /// returns the most recent job that uses the repeated job ID.
+        /// using the same job ID for multiple jobs, <c>ListAssetBundleImportJobs</c> only returns
+        /// the most recent job that uses the repeated job ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleImportJobs service method.</param>
         /// 
@@ -9957,7 +9945,7 @@ namespace Amazon.QuickSight
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -9985,8 +9973,8 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs
         /// created more than 14 days ago are deleted forever and are not returned. If you are
-        /// using the same job ID for multiple jobs, <code>ListAssetBundleImportJobs</code> only
-        /// returns the most recent job that uses the repeated job ID.
+        /// using the same job ID for multiple jobs, <c>ListAssetBundleImportJobs</c> only returns
+        /// the most recent job that uses the repeated job ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleImportJobs service method.</param>
         /// <param name="cancellationToken">
@@ -10001,7 +9989,7 @@ namespace Amazon.QuickSight
         /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -10040,7 +10028,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
@@ -10075,7 +10063,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
         /// Access is throttled.
@@ -10111,7 +10099,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10152,7 +10140,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10190,7 +10178,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
+        /// The permissions resource is <c>arn:aws:quicksight:region:aws-account-id:dataset/*</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
@@ -10206,7 +10194,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10231,7 +10219,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/*</code>.
+        /// The permissions resource is <c>arn:aws:quicksight:region:aws-account-id:dataset/*</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataSets service method.</param>
@@ -10250,7 +10238,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10290,7 +10278,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10329,7 +10317,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10353,8 +10341,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>)
-        /// in a folder.
+        /// List all assets (<c>DASHBOARD</c>, <c>ANALYSIS</c>, and <c>DATASET</c>) in a folder.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFolderMembers service method.</param>
         /// 
@@ -10369,7 +10356,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10398,8 +10385,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// List all assets (<code>DASHBOARD</code>, <code>ANALYSIS</code>, and <code>DATASET</code>)
-        /// in a folder.
+        /// List all assets (<c>DASHBOARD</c>, <c>ANALYSIS</c>, and <c>DATASET</c>) in a folder.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFolderMembers service method.</param>
         /// <param name="cancellationToken">
@@ -10417,7 +10403,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10465,7 +10451,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10512,7 +10498,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10560,7 +10546,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10607,7 +10593,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10655,7 +10641,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10702,7 +10688,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10750,7 +10736,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -10791,7 +10777,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11019,7 +11005,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11063,7 +11049,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11109,7 +11095,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11157,7 +11143,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11288,7 +11274,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11338,7 +11324,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11460,7 +11446,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -11498,7 +11484,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
         /// One or more resources can't be found.
@@ -11537,7 +11523,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11578,7 +11564,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11620,7 +11606,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11661,7 +11647,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11706,7 +11692,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11750,7 +11736,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11798,7 +11784,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11845,7 +11831,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11893,7 +11879,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -11940,7 +11926,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12083,7 +12069,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12121,7 +12107,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12249,7 +12235,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12296,7 +12282,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12345,7 +12331,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12390,7 +12376,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12731,7 +12717,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12779,7 +12765,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12828,7 +12814,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12876,7 +12862,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12909,8 +12895,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>SearchDataSets</code> operation to search for datasets that belong to
-        /// an account.
+        /// Use the <c>SearchDataSets</c> operation to search for datasets that belong to an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDataSets service method.</param>
         /// 
@@ -12925,7 +12910,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12948,8 +12933,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>SearchDataSets</code> operation to search for datasets that belong to
-        /// an account.
+        /// Use the <c>SearchDataSets</c> operation to search for datasets that belong to an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDataSets service method.</param>
         /// <param name="cancellationToken">
@@ -12967,7 +12951,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -12994,7 +12978,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>SearchDataSources</code> operation to search for data sources that belong
+        /// Use the <c>SearchDataSources</c> operation to search for data sources that belong
         /// to an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDataSources service method.</param>
@@ -13010,7 +12994,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -13033,7 +13017,7 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>SearchDataSources</code> operation to search for data sources that belong
+        /// Use the <c>SearchDataSources</c> operation to search for data sources that belong
         /// to an account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDataSources service method.</param>
@@ -13052,7 +13036,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -13094,7 +13078,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -13145,7 +13129,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -13182,8 +13166,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>SearchGroups</code> operation to search groups in a specified Amazon
-        /// QuickSight namespace using the supplied filters.
+        /// Use the <c>SearchGroups</c> operation to search groups in a specified Amazon QuickSight
+        /// namespace using the supplied filters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchGroups service method.</param>
         /// 
@@ -13198,7 +13182,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -13227,8 +13211,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>SearchGroups</code> operation to search groups in a specified Amazon
-        /// QuickSight namespace using the supplied filters.
+        /// Use the <c>SearchGroups</c> operation to search groups in a specified Amazon QuickSight
+        /// namespace using the supplied filters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchGroups service method.</param>
         /// <param name="cancellationToken">
@@ -13246,7 +13230,7 @@ namespace Amazon.QuickSight
         /// An internal failure occurred.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value isn't valid.
+        /// The <c>NextToken</c> value isn't valid.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
         /// One or more parameters has a value that isn't valid.
@@ -13285,9 +13269,9 @@ namespace Amazon.QuickSight
         /// <para>
         /// An Asset Bundle export job exports specified Amazon QuickSight assets. You can also
         /// choose to export any asset dependencies in the same job. Export jobs run asynchronously
-        /// and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When
-        /// a job is successfully completed, a download URL that contains the exported assets
-        /// is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code>
+        /// and can be polled with a <c>DescribeAssetBundleExportJob</c> API call. When a job
+        /// is successfully completed, a download URL that contains the exported assets is returned.
+        /// The URL is valid for 5 minutes and can be refreshed with a <c>DescribeAssetBundleExportJob</c>
         /// API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently.
         /// </para>
         ///  
@@ -13344,9 +13328,9 @@ namespace Amazon.QuickSight
         /// <para>
         /// An Asset Bundle export job exports specified Amazon QuickSight assets. You can also
         /// choose to export any asset dependencies in the same job. Export jobs run asynchronously
-        /// and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When
-        /// a job is successfully completed, a download URL that contains the exported assets
-        /// is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code>
+        /// and can be polled with a <c>DescribeAssetBundleExportJob</c> API call. When a job
+        /// is successfully completed, a download URL that contains the exported assets is returned.
+        /// The URL is valid for 5 minutes and can be refreshed with a <c>DescribeAssetBundleExportJob</c>
         /// API call. Each Amazon QuickSight account can run up to 5 export jobs concurrently.
         /// </para>
         ///  
@@ -13416,9 +13400,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>,
-        /// and <code>"update"</code> permissions in their IAM role to access each resource type
-        /// that is contained in the bundle file before the resources can be imported.
+        /// The API caller must have the necessary <c>"create"</c>, <c>"describe"</c>, and <c>"update"</c>
+        /// permissions in their IAM role to access each resource type that is contained in the
+        /// bundle file before the resources can be imported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAssetBundleImportJob service method.</param>
@@ -13475,9 +13459,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  
         /// <para>
-        /// The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>,
-        /// and <code>"update"</code> permissions in their IAM role to access each resource type
-        /// that is contained in the bundle file before the resources can be imported.
+        /// The API caller must have the necessary <c>"create"</c>, <c>"describe"</c>, and <c>"update"</c>
+        /// permissions in their IAM role to access each resource type that is contained in the
+        /// bundle file before the resources can be imported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartAssetBundleImportJob service method.</param>
@@ -13546,9 +13530,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once
-        /// the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain
-        /// the download URIs that the job generates.
+        /// Poll job descriptions with a <c>DescribeDashboardSnapshotJob</c> API call. Once the
+        /// job succeeds, use the <c>DescribeDashboardSnapshotJobResult</c> API to obtain the
+        /// download URIs that the job generates.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDashboardSnapshotJob service method.</param>
@@ -13587,8 +13571,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -13626,9 +13610,9 @@ namespace Amazon.QuickSight
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once
-        /// the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain
-        /// the download URIs that the job generates.
+        /// Poll job descriptions with a <c>DescribeDashboardSnapshotJob</c> API call. Once the
+        /// job succeeds, use the <c>DescribeDashboardSnapshotJobResult</c> API to obtain the
+        /// download URIs that the job generates.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDashboardSnapshotJob service method.</param>
@@ -13670,8 +13654,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
@@ -13703,11 +13687,11 @@ namespace Amazon.QuickSight
         /// <para>
         /// Tags can help you organize and categorize your resources. You can also use them to
         /// scope user permissions, by granting a user permission to access or change only resources
-        /// with certain tag values. You can use the <code>TagResource</code> operation with a
-        /// resource that already has tags. If you specify a new tag key for the resource, this
-        /// tag is appended to the list of tags associated with the resource. If you specify a
-        /// tag key that is already associated with the resource, the new tag value that you specify
-        /// replaces the previous value for that tag.
+        /// with certain tag values. You can use the <c>TagResource</c> operation with a resource
+        /// that already has tags. If you specify a new tag key for the resource, this tag is
+        /// appended to the list of tags associated with the resource. If you specify a tag key
+        /// that is already associated with the resource, the new tag value that you specify replaces
+        /// the previous value for that tag.
         /// </para>
         ///  
         /// <para>
@@ -13774,11 +13758,11 @@ namespace Amazon.QuickSight
         /// <para>
         /// Tags can help you organize and categorize your resources. You can also use them to
         /// scope user permissions, by granting a user permission to access or change only resources
-        /// with certain tag values. You can use the <code>TagResource</code> operation with a
-        /// resource that already has tags. If you specify a new tag key for the resource, this
-        /// tag is appended to the list of tags associated with the resource. If you specify a
-        /// tag key that is already associated with the resource, the new tag value that you specify
-        /// replaces the previous value for that tag.
+        /// with certain tag values. You can use the <c>TagResource</c> operation with a resource
+        /// that already has tags. If you specify a new tag key for the resource, this tag is
+        /// appended to the list of tags associated with the resource. If you specify a tag key
+        /// that is already associated with the resource, the new tag value that you specify replaces
+        /// the previous value for that tag.
         /// </para>
         ///  
         /// <para>
@@ -13930,7 +13914,7 @@ namespace Amazon.QuickSight
         /// You can use customizations for your Amazon Web Services account or, if you specify
         /// a namespace, for a Amazon QuickSight namespace instead. Customizations that apply
         /// to a namespace override customizations that apply to an Amazon Web Services account.
-        /// To find out which customizations apply, use the <code>DescribeAccountCustomization</code>
+        /// To find out which customizations apply, use the <c>DescribeAccountCustomization</c>
         /// API operation. 
         /// </para>
         /// </summary>
@@ -13981,7 +13965,7 @@ namespace Amazon.QuickSight
         /// You can use customizations for your Amazon Web Services account or, if you specify
         /// a namespace, for a Amazon QuickSight namespace instead. Customizations that apply
         /// to a namespace override customizations that apply to an Amazon Web Services account.
-        /// To find out which customizations apply, use the <code>DescribeAccountCustomization</code>
+        /// To find out which customizations apply, use the <c>DescribeAccountCustomization</c>
         /// API operation. 
         /// </para>
         /// </summary>
@@ -14298,8 +14282,8 @@ namespace Amazon.QuickSight
         /// <para>
         /// Updating a Dashboard creates a new dashboard version but does not immediately publish
         /// the new version. You can update the published version of a dashboard by using the
-        /// <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
-        /// </code> API operation.
+        /// <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
+        /// </c> API operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -14348,8 +14332,8 @@ namespace Amazon.QuickSight
         /// <para>
         /// Updating a Dashboard creates a new dashboard version but does not immediately publish
         /// the new version. You can update the published version of a dashboard by using the
-        /// <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
-        /// </code> API operation.
+        /// <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
+        /// </c> API operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -14773,7 +14757,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
+        /// The permissions resource is <c>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSetPermissions service method.</param>
@@ -14816,7 +14800,7 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// The permissions resource is <code>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</code>.
+        /// The permissions resource is <c>arn:aws:quicksight:region:aws-account-id:dataset/data-set-id</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataSetPermissions service method.</param>
@@ -15315,7 +15299,7 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Updates an existing IAM policy assignment. This operation updates only the optional
         /// parameter or parameters that are specified in the request. This overwrites all of
-        /// the users included in <code>Identities</code>.
+        /// the users included in <c>Identities</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIAMPolicyAssignment service method.</param>
         /// 
@@ -15359,7 +15343,7 @@ namespace Amazon.QuickSight
         /// <summary>
         /// Updates an existing IAM policy assignment. This operation updates only the optional
         /// parameter or parameters that are specified in the request. This overwrites all of
-        /// the users included in <code>Identities</code>.
+        /// the users included in <c>Identities</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIAMPolicyAssignment service method.</param>
         /// <param name="cancellationToken">
@@ -15500,8 +15484,8 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the content and status of IP rules. To use this operation, you must provide
-        /// the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation
-        /// to get the current rule map.
+        /// the entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to
+        /// get the current rule map.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIpRestriction service method.</param>
         /// 
@@ -15540,8 +15524,8 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the content and status of IP rules. To use this operation, you must provide
-        /// the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation
-        /// to get the current rule map.
+        /// the entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to
+        /// get the current rule map.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateIpRestriction service method.</param>
         /// <param name="cancellationToken">
@@ -15586,8 +15570,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off
-        /// the public sharing settings of an Amazon QuickSight dashboard.
+        /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
+        /// sharing settings of an Amazon QuickSight dashboard.
         /// 
         ///  
         /// <para>
@@ -15632,8 +15616,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">REST API Reference for UpdatePublicSharingSettings Operation</seealso>
@@ -15648,8 +15632,8 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off
-        /// the public sharing settings of an Amazon QuickSight dashboard.
+        /// Use the <c>UpdatePublicSharingSettings</c> operation to turn on or turn off the public
+        /// sharing settings of an Amazon QuickSight dashboard.
         /// 
         ///  
         /// <para>
@@ -15697,8 +15681,8 @@ namespace Amazon.QuickSight
         /// 
         ///  
         /// <para>
-        /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-        /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+        /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+        /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
         /// </para>
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdatePublicSharingSettings">REST API Reference for UpdatePublicSharingSettings Operation</seealso>
@@ -16347,7 +16331,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the resource permissions for a theme. Permissions apply to the action to grant
-        /// or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.
+        /// or revoke permissions on, for example <c>"quicksight:DescribeTheme"</c>.
         /// 
         ///  
         /// <para>
@@ -16360,19 +16344,19 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeTheme"</code> 
+        ///  <c>"quicksight:DescribeTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        ///  <c>"quicksight:DescribeThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeAliases"</code> 
+        ///  <c>"quicksight:ListThemeAliases"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeVersions"</code> 
+        ///  <c>"quicksight:ListThemeVersions"</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -16380,47 +16364,47 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeTheme"</code> 
+        ///  <c>"quicksight:DescribeTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        ///  <c>"quicksight:DescribeThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeAliases"</code> 
+        ///  <c>"quicksight:ListThemeAliases"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeVersions"</code> 
+        ///  <c>"quicksight:ListThemeVersions"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DeleteTheme"</code> 
+        ///  <c>"quicksight:DeleteTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:UpdateTheme"</code> 
+        ///  <c>"quicksight:UpdateTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:CreateThemeAlias"</code> 
+        ///  <c>"quicksight:CreateThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DeleteThemeAlias"</code> 
+        ///  <c>"quicksight:DeleteThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:UpdateThemeAlias"</code> 
+        ///  <c>"quicksight:UpdateThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:UpdateThemePermissions"</code> 
+        ///  <c>"quicksight:UpdateThemePermissions"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeThemePermissions"</code> 
+        ///  <c>"quicksight:DescribeThemePermissions"</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -16471,7 +16455,7 @@ namespace Amazon.QuickSight
 
         /// <summary>
         /// Updates the resource permissions for a theme. Permissions apply to the action to grant
-        /// or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.
+        /// or revoke permissions on, for example <c>"quicksight:DescribeTheme"</c>.
         /// 
         ///  
         /// <para>
@@ -16484,19 +16468,19 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeTheme"</code> 
+        ///  <c>"quicksight:DescribeTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        ///  <c>"quicksight:DescribeThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeAliases"</code> 
+        ///  <c>"quicksight:ListThemeAliases"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeVersions"</code> 
+        ///  <c>"quicksight:ListThemeVersions"</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -16504,47 +16488,47 @@ namespace Amazon.QuickSight
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeTheme"</code> 
+        ///  <c>"quicksight:DescribeTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeThemeAlias"</code> 
+        ///  <c>"quicksight:DescribeThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeAliases"</code> 
+        ///  <c>"quicksight:ListThemeAliases"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:ListThemeVersions"</code> 
+        ///  <c>"quicksight:ListThemeVersions"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DeleteTheme"</code> 
+        ///  <c>"quicksight:DeleteTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:UpdateTheme"</code> 
+        ///  <c>"quicksight:UpdateTheme"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:CreateThemeAlias"</code> 
+        ///  <c>"quicksight:CreateThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DeleteThemeAlias"</code> 
+        ///  <c>"quicksight:DeleteThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:UpdateThemeAlias"</code> 
+        ///  <c>"quicksight:UpdateThemeAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:UpdateThemePermissions"</code> 
+        ///  <c>"quicksight:UpdateThemePermissions"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"quicksight:DescribeThemePermissions"</code> 
+        ///  <c>"quicksight:DescribeThemePermissions"</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

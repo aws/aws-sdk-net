@@ -105,8 +105,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TargetName. 
         /// <para>
         /// The name of the iSCSI target used by an initiator to connect to a volume and used
-        /// as a suffix for the target ARN. For example, specifying <code>TargetName</code> as
-        /// <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+        /// as a suffix for the target ARN. For example, specifying <c>TargetName</c> as <i>myvolume</i>
+        /// results in the target ARN of <c>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</c>.
         /// The target name must be unique across all volumes on a gateway.
         /// </para>
         ///  
@@ -288,8 +288,8 @@ namespace Amazon.StorageGateway.Model
         /// The size of the data stored on the volume in bytes. This value is calculated based
         /// on the number of blocks that are touched, instead of the actual amount of data written.
         /// This value can be useful for sequential write patterns but less accurate for random
-        /// write patterns. <code>VolumeUsedInBytes</code> is different from the compressed size
-        /// of the volume, which is the value that is used to calculate your bill.
+        /// write patterns. <c>VolumeUsedInBytes</c> is different from the compressed size of
+        /// the volume, which is the value that is used to calculate your bill.
         /// </para>
         ///  <note> 
         /// <para>

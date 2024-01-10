@@ -39,7 +39,7 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property Field. 
         /// <para>
-        /// Represents the <code>Field</code> attribute to sort investigations.
+        /// Represents the <c>Field</c> attribute to sort investigations.
         /// </para>
         /// </summary>
         public Field Field

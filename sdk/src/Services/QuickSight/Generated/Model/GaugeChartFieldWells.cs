@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The field well configuration of a <code>GaugeChartVisual</code>.
+    /// The field well configuration of a <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class GaugeChartFieldWells
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TargetValues. 
         /// <para>
-        /// The target value field wells of a <code>GaugeChartVisual</code>.
+        /// The target value field wells of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -58,7 +58,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The value field wells of a <code>GaugeChartVisual</code>.
+        /// The value field wells of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

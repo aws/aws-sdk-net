@@ -122,11 +122,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImdsSupport. 
         /// <para>
-        /// If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances
-        /// launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code>
-        /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
-        /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+        /// If <c>v2.0</c>, it indicates that IMDSv2 is specified in the AMI. Instances launched
+        /// from this AMI will have <c>HttpTokens</c> automatically set to <c>required</c> so
+        /// that, by default, the instance requires that IMDSv2 is used when requesting instance
+        /// metadata. In addition, <c>HttpPutResponseHopLimit</c> is set to <c>2</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
         /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -169,7 +169,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>lastLaunchedTime</code> data is available starting April 2017.
+        ///  <c>lastLaunchedTime</c> data is available starting April 2017.
         /// </para>
         ///  </note>
         /// </summary>
@@ -261,7 +261,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TpmSupport. 
         /// <para>
-        /// If the image is configured for NitroTPM support, the value is <code>v2.0</code>.
+        /// If the image is configured for NitroTPM support, the value is <c>v2.0</c>.
         /// </para>
         /// </summary>
         public string TpmSupport

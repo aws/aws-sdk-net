@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateType operation.
-    /// Updates a <code>Type</code> object.
+    /// Updates a <c>Type</c> object.
     /// </summary>
     public partial class UpdateTypeRequest : AmazonAppSyncRequest
     {

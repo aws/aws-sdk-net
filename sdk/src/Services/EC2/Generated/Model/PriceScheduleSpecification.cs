@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CurrencyCode. 
         /// <para>
         /// The currency for transacting the Reserved Instance resale. At this time, the only
-        /// supported currency is <code>USD</code>.
+        /// supported currency is <c>USD</c>.
         /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode

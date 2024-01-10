@@ -297,9 +297,8 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Grants one or more permissions on a private CA to the Certificate Manager (ACM) service
-        /// principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to issue and
-        /// renew ACM certificates that reside in the same Amazon Web Services account as the
-        /// CA.
+        /// principal (<c>acm.amazonaws.com</c>). These permissions allow ACM to issue and renew
+        /// ACM certificates that reside in the same Amazon Web Services account as the CA.
         /// 
         ///  
         /// <para>
@@ -314,8 +313,8 @@ namespace Amazon.ACMPCA
         ///  <ul> <li> 
         /// <para>
         /// If the private CA and the certificates it issues reside in the same account, you can
-        /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-        /// certificate renewals.
+        /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+        /// renewals.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -362,9 +361,8 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Grants one or more permissions on a private CA to the Certificate Manager (ACM) service
-        /// principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to issue and
-        /// renew ACM certificates that reside in the same Amazon Web Services account as the
-        /// CA.
+        /// principal (<c>acm.amazonaws.com</c>). These permissions allow ACM to issue and renew
+        /// ACM certificates that reside in the same Amazon Web Services account as the CA.
         /// 
         ///  
         /// <para>
@@ -379,8 +377,8 @@ namespace Amazon.ACMPCA
         ///  <ul> <li> 
         /// <para>
         /// If the private CA and the certificates it issues reside in the same account, you can
-        /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-        /// certificate renewals.
+        /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+        /// renewals.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -445,25 +443,25 @@ namespace Amazon.ACMPCA
         /// <para>
         /// Before you can delete a CA that you have created and activated, you must disable it.
         /// To do this, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// action and set the <b>CertificateAuthorityStatus</b> parameter to <code>DISABLED</code>.
+        /// action and set the <b>CertificateAuthorityStatus</b> parameter to <c>DISABLED</c>.
         /// 
         /// </para>
         ///  
         /// <para>
         /// Additionally, you can delete a CA if you are waiting for it to be created (that is,
-        /// the status of the CA is <code>CREATING</code>). You can also delete it if the CA has
-        /// been created but you haven't yet imported the signed certificate into Amazon Web Services
-        /// Private CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). 
+        /// the status of the CA is <c>CREATING</c>). You can also delete it if the CA has been
+        /// created but you haven't yet imported the signed certificate into Amazon Web Services
+        /// Private CA (that is, the status of the CA is <c>PENDING_CERTIFICATE</c>). 
         /// </para>
         ///  
         /// <para>
         /// When you successfully call <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>,
-        /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permanently
-        /// deleted until the restoration period has passed. By default, if you do not set the
-        /// <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable for
-        /// 30 days. You can set the parameter from 7 to 30 days. The <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
+        /// the CA's status changes to <c>DELETED</c>. However, the CA won't be permanently deleted
+        /// until the restoration period has passed. By default, if you do not set the <c>PermanentDeletionTimeInDays</c>
+        /// parameter, the CA remains restorable for 30 days. You can set the parameter from 7
+        /// to 30 days. The <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
         /// action returns the time remaining in the restoration window of a private CA in the
-        /// <code>DELETED</code> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
+        /// <c>DELETED</c> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
         /// action.
         /// </para>
         /// </summary>
@@ -502,25 +500,25 @@ namespace Amazon.ACMPCA
         /// <para>
         /// Before you can delete a CA that you have created and activated, you must disable it.
         /// To do this, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// action and set the <b>CertificateAuthorityStatus</b> parameter to <code>DISABLED</code>.
+        /// action and set the <b>CertificateAuthorityStatus</b> parameter to <c>DISABLED</c>.
         /// 
         /// </para>
         ///  
         /// <para>
         /// Additionally, you can delete a CA if you are waiting for it to be created (that is,
-        /// the status of the CA is <code>CREATING</code>). You can also delete it if the CA has
-        /// been created but you haven't yet imported the signed certificate into Amazon Web Services
-        /// Private CA (that is, the status of the CA is <code>PENDING_CERTIFICATE</code>). 
+        /// the status of the CA is <c>CREATING</c>). You can also delete it if the CA has been
+        /// created but you haven't yet imported the signed certificate into Amazon Web Services
+        /// Private CA (that is, the status of the CA is <c>PENDING_CERTIFICATE</c>). 
         /// </para>
         ///  
         /// <para>
         /// When you successfully call <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>,
-        /// the CA's status changes to <code>DELETED</code>. However, the CA won't be permanently
-        /// deleted until the restoration period has passed. By default, if you do not set the
-        /// <code>PermanentDeletionTimeInDays</code> parameter, the CA remains restorable for
-        /// 30 days. You can set the parameter from 7 to 30 days. The <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
+        /// the CA's status changes to <c>DELETED</c>. However, the CA won't be permanently deleted
+        /// until the restoration period has passed. By default, if you do not set the <c>PermanentDeletionTimeInDays</c>
+        /// parameter, the CA remains restorable for 30 days. You can set the parameter from 7
+        /// to 30 days. The <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
         /// action returns the time remaining in the restoration window of a private CA in the
-        /// <code>DELETED</code> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
+        /// <c>DELETED</c> state. To restore an eligible CA, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RestoreCertificateAuthority.html">RestoreCertificateAuthority</a>
         /// action.
         /// </para>
         /// </summary>
@@ -574,8 +572,8 @@ namespace Amazon.ACMPCA
         ///  <ul> <li> 
         /// <para>
         /// If the private CA and the certificates it issues reside in the same account, you can
-        /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-        /// certificate renewals.
+        /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+        /// renewals.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -636,8 +634,8 @@ namespace Amazon.ACMPCA
         ///  <ul> <li> 
         /// <para>
         /// If the private CA and the certificates it issues reside in the same account, you can
-        /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-        /// certificate renewals.
+        /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+        /// renewals.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -858,37 +856,37 @@ namespace Amazon.ACMPCA
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Amazon Web Services Private CA is creating your private certificate
+        ///  <c>CREATING</c> - Amazon Web Services Private CA is creating your private certificate
         /// authority.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-        /// Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to sign
-        /// your private CA CSR and then import it into Amazon Web Services Private CA. 
+        ///  <c>PENDING_CERTIFICATE</c> - The certificate is pending. You must use your Amazon
+        /// Web Services Private CA-hosted or on-premises root or subordinate CA to sign your
+        /// private CA CSR and then import it into Amazon Web Services Private CA. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - Your private CA is active.
+        ///  <c>ACTIVE</c> - Your private CA is active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - Your private CA has been disabled.
+        ///  <c>DISABLED</c> - Your private CA has been disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code> - Your private CA certificate has expired.
+        ///  <c>EXPIRED</c> - Your private CA certificate has expired.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems
+        ///  <c>FAILED</c> - Your private CA has failed. Your CA can fail because of problems
         /// such a network outage or back-end Amazon Web Services failure or other errors. A failed
         /// CA can never return to the pending state. You must create a new CA. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Your private CA is within the restoration period, after which
-        /// it is permanently deleted. The length of time remaining in the CA's restoration period
+        ///  <c>DELETED</c> - Your private CA is within the restoration period, after which it
+        /// is permanently deleted. The length of time remaining in the CA's restoration period
         /// is also included in this action's output.
         /// </para>
         ///  </li> </ul>
@@ -915,37 +913,37 @@ namespace Amazon.ACMPCA
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Amazon Web Services Private CA is creating your private certificate
+        ///  <c>CREATING</c> - Amazon Web Services Private CA is creating your private certificate
         /// authority.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-        /// Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to sign
-        /// your private CA CSR and then import it into Amazon Web Services Private CA. 
+        ///  <c>PENDING_CERTIFICATE</c> - The certificate is pending. You must use your Amazon
+        /// Web Services Private CA-hosted or on-premises root or subordinate CA to sign your
+        /// private CA CSR and then import it into Amazon Web Services Private CA. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - Your private CA is active.
+        ///  <c>ACTIVE</c> - Your private CA is active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - Your private CA has been disabled.
+        ///  <c>DISABLED</c> - Your private CA has been disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code> - Your private CA certificate has expired.
+        ///  <c>EXPIRED</c> - Your private CA certificate has expired.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems
+        ///  <c>FAILED</c> - Your private CA has failed. Your CA can fail because of problems
         /// such a network outage or back-end Amazon Web Services failure or other errors. A failed
         /// CA can never return to the pending state. You must create a new CA. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Your private CA is within the restoration period, after which
-        /// it is permanently deleted. The length of time remaining in the CA's restoration period
+        ///  <c>DELETED</c> - Your private CA is within the restoration period, after which it
+        /// is permanently deleted. The length of time remaining in the CA's restoration period
         /// is also included in this action's output.
         /// </para>
         ///  </li> </ul>
@@ -1225,7 +1223,7 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Retrieves the resource-based policy attached to a private CA. If either the private
-        /// CA resource or the policy cannot be found, this action returns a <code>ResourceNotFoundException</code>.
+        /// CA resource or the policy cannot be found, this action returns a <c>ResourceNotFoundException</c>.
         /// 
         /// 
         ///  
@@ -1289,7 +1287,7 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Retrieves the resource-based policy attached to a private CA. If either the private
-        /// CA resource or the policy cannot be found, this action returns a <code>ResourceNotFoundException</code>.
+        /// CA resource or the policy cannot be found, this action returns a <c>ResourceNotFoundException</c>.
         /// 
         /// 
         ///  
@@ -1865,8 +1863,8 @@ namespace Amazon.ACMPCA
         /// 
         /// <returns>The response from the ListCertificateAuthorities service method, as returned by ACMPCA.</returns>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidNextTokenException">
-        /// The token specified in the <code>NextToken</code> argument is not valid. Use the token
-        /// returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
+        /// The token specified in the <c>NextToken</c> argument is not valid. Use the token returned
+        /// from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListCertificateAuthorities">REST API Reference for ListCertificateAuthorities Operation</seealso>
         ListCertificateAuthoritiesResponse ListCertificateAuthorities(ListCertificateAuthoritiesRequest request);
@@ -1884,8 +1882,8 @@ namespace Amazon.ACMPCA
         /// 
         /// <returns>The response from the ListCertificateAuthorities service method, as returned by ACMPCA.</returns>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidNextTokenException">
-        /// The token specified in the <code>NextToken</code> argument is not valid. Use the token
-        /// returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
+        /// The token specified in the <c>NextToken</c> argument is not valid. Use the token returned
+        /// from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/ListCertificateAuthorities">REST API Reference for ListCertificateAuthorities Operation</seealso>
         Task<ListCertificateAuthoritiesResponse> ListCertificateAuthoritiesAsync(ListCertificateAuthoritiesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1917,8 +1915,8 @@ namespace Amazon.ACMPCA
         ///  <ul> <li> 
         /// <para>
         /// If the private CA and the certificates it issues reside in the same account, you can
-        /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-        /// certificate renewals.
+        /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+        /// renewals.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1942,8 +1940,8 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidNextTokenException">
-        /// The token specified in the <code>NextToken</code> argument is not valid. Use the token
-        /// returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
+        /// The token specified in the <c>NextToken</c> argument is not valid. Use the token returned
+        /// from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
         /// The state of the private CA does not allow this action to occur.
@@ -1982,8 +1980,8 @@ namespace Amazon.ACMPCA
         ///  <ul> <li> 
         /// <para>
         /// If the private CA and the certificates it issues reside in the same account, you can
-        /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-        /// certificate renewals.
+        /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+        /// renewals.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2010,8 +2008,8 @@ namespace Amazon.ACMPCA
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidNextTokenException">
-        /// The token specified in the <code>NextToken</code> argument is not valid. Use the token
-        /// returned from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
+        /// The token specified in the <c>NextToken</c> argument is not valid. Use the token returned
+        /// from your previous call to <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>.
         /// </exception>
         /// <exception cref="Amazon.ACMPCA.Model.InvalidStateException">
         /// The state of the private CA does not allow this action to occur.
@@ -2256,17 +2254,17 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Restores a certificate authority (CA) that is in the <code>DELETED</code> state. You
-        /// can restore a CA during the period that you defined in the <b>PermanentDeletionTimeInDays</b>
+        /// Restores a certificate authority (CA) that is in the <c>DELETED</c> state. You can
+        /// restore a CA during the period that you defined in the <b>PermanentDeletionTimeInDays</b>
         /// parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>
         /// action. Currently, you can specify 7 to 30 days. If you did not specify a <b>PermanentDeletionTimeInDays</b>
         /// value, by default you can restore the CA at any time in a 30 day period. You can check
-        /// the time remaining in the restoration period of a private CA in the <code>DELETED</code>
+        /// the time remaining in the restoration period of a private CA in the <c>DELETED</c>
         /// state by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
         /// or <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// actions. The status of a restored CA is set to its pre-deletion status when the <b>RestoreCertificateAuthority</b>
-        /// action returns. To change its status to <code>ACTIVE</code>, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// action. If the private CA was in the <code>PENDING_CERTIFICATE</code> state at deletion,
+        /// action returns. To change its status to <c>ACTIVE</c>, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+        /// action. If the private CA was in the <c>PENDING_CERTIFICATE</c> state at deletion,
         /// you must use the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
         /// action to import a certificate authority into the private CA before it can be activated.
         /// You cannot restore a CA after the restoration period has ended.
@@ -2290,17 +2288,17 @@ namespace Amazon.ACMPCA
 
 
         /// <summary>
-        /// Restores a certificate authority (CA) that is in the <code>DELETED</code> state. You
-        /// can restore a CA during the period that you defined in the <b>PermanentDeletionTimeInDays</b>
+        /// Restores a certificate authority (CA) that is in the <c>DELETED</c> state. You can
+        /// restore a CA during the period that you defined in the <b>PermanentDeletionTimeInDays</b>
         /// parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthority.html">DeleteCertificateAuthority</a>
         /// action. Currently, you can specify 7 to 30 days. If you did not specify a <b>PermanentDeletionTimeInDays</b>
         /// value, by default you can restore the CA at any time in a 30 day period. You can check
-        /// the time remaining in the restoration period of a private CA in the <code>DELETED</code>
+        /// the time remaining in the restoration period of a private CA in the <c>DELETED</c>
         /// state by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DescribeCertificateAuthority.html">DescribeCertificateAuthority</a>
         /// or <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// actions. The status of a restored CA is set to its pre-deletion status when the <b>RestoreCertificateAuthority</b>
-        /// action returns. To change its status to <code>ACTIVE</code>, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
-        /// action. If the private CA was in the <code>PENDING_CERTIFICATE</code> state at deletion,
+        /// action returns. To change its status to <c>ACTIVE</c>, call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UpdateCertificateAuthority.html">UpdateCertificateAuthority</a>
+        /// action. If the private CA was in the <c>PENDING_CERTIFICATE</c> state at deletion,
         /// you must use the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a>
         /// action to import a certificate authority into the private CA before it can be activated.
         /// You cannot restore a CA after the restoration period has ended.
@@ -2337,8 +2335,8 @@ namespace Amazon.ACMPCA
         /// typically updated approximately 30 minutes after a certificate is revoked. If for
         /// any reason the CRL update fails, Amazon Web Services Private CA attempts makes further
         /// attempts every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics
-        /// <code>CRLGenerated</code> and <code>MisconfiguredCRLBucket</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html">Supported
+        /// <c>CRLGenerated</c> and <c>MisconfiguredCRLBucket</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html">Supported
         /// CloudWatch Metrics</a>.
         /// 
         ///  <note> 
@@ -2405,8 +2403,8 @@ namespace Amazon.ACMPCA
         /// typically updated approximately 30 minutes after a certificate is revoked. If for
         /// any reason the CRL update fails, Amazon Web Services Private CA attempts makes further
         /// attempts every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics
-        /// <code>CRLGenerated</code> and <code>MisconfiguredCRLBucket</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html">Supported
+        /// <c>CRLGenerated</c> and <c>MisconfiguredCRLBucket</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html">Supported
         /// CloudWatch Metrics</a>.
         /// 
         ///  <note> 
@@ -2485,8 +2483,8 @@ namespace Amazon.ACMPCA
         ///  <note> 
         /// <para>
         /// To attach tags to a private CA during the creation procedure, a CA administrator must
-        /// first associate an inline IAM policy with the <code>CreateCertificateAuthority</code>
-        /// action and explicitly allow tagging. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/auth-InlinePolicies.html#policy-tag-ca">Attaching
+        /// first associate an inline IAM policy with the <c>CreateCertificateAuthority</c> action
+        /// and explicitly allow tagging. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/auth-InlinePolicies.html#policy-tag-ca">Attaching
         /// tags to a CA at the time of creation</a>.
         /// </para>
         ///  </note>
@@ -2531,8 +2529,8 @@ namespace Amazon.ACMPCA
         ///  <note> 
         /// <para>
         /// To attach tags to a private CA during the creation procedure, a CA administrator must
-        /// first associate an inline IAM policy with the <code>CreateCertificateAuthority</code>
-        /// action and explicitly allow tagging. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/auth-InlinePolicies.html#policy-tag-ca">Attaching
+        /// first associate an inline IAM policy with the <c>CreateCertificateAuthority</c> action
+        /// and explicitly allow tagging. For more information, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/auth-InlinePolicies.html#policy-tag-ca">Attaching
         /// tags to a CA at the time of creation</a>.
         /// </para>
         ///  </note>
@@ -2639,9 +2637,9 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Updates the status or configuration of a private certificate authority (CA). Your
-        /// private CA must be in the <code>ACTIVE</code> or <code>DISABLED</code> state before
-        /// you can update it. You can disable a private CA that is in the <code>ACTIVE</code>
-        /// state or make a CA that is in the <code>DISABLED</code> state active again.
+        /// private CA must be in the <c>ACTIVE</c> or <c>DISABLED</c> state before you can update
+        /// it. You can disable a private CA that is in the <c>ACTIVE</c> state or make a CA that
+        /// is in the <c>DISABLED</c> state active again.
         /// 
         ///  <note> 
         /// <para>
@@ -2684,9 +2682,9 @@ namespace Amazon.ACMPCA
 
         /// <summary>
         /// Updates the status or configuration of a private certificate authority (CA). Your
-        /// private CA must be in the <code>ACTIVE</code> or <code>DISABLED</code> state before
-        /// you can update it. You can disable a private CA that is in the <code>ACTIVE</code>
-        /// state or make a CA that is in the <code>DISABLED</code> state active again.
+        /// private CA must be in the <c>ACTIVE</c> or <c>DISABLED</c> state before you can update
+        /// it. You can disable a private CA that is in the <c>ACTIVE</c> state or make a CA that
+        /// is in the <c>DISABLED</c> state active again.
         /// 
         ///  <note> 
         /// <para>

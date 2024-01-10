@@ -42,7 +42,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The <code>Id</code> and <code>Name</code> of an <code>XssMatchSet</code>.
+    /// The <c>Id</c> and <c>Name</c> of an <c>XssMatchSet</c>.
     /// </para>
     /// </summary>
     public partial class XssMatchSetSummary
@@ -53,7 +53,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>XssMatchSet</code>, if any, specified by <code>Id</code>.
+        /// The name of the <c>XssMatchSet</c>, if any, specified by <c>Id</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -72,15 +72,15 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property XssMatchSetId. 
         /// <para>
-        /// A unique identifier for an <code>XssMatchSet</code>. You use <code>XssMatchSetId</code>
-        /// to get information about a <code>XssMatchSet</code> (see <a>GetXssMatchSet</a>), update
-        /// an <code>XssMatchSet</code> (see <a>UpdateXssMatchSet</a>), insert an <code>XssMatchSet</code>
-        /// into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>),
-        /// and delete an <code>XssMatchSet</code> from AWS WAF (see <a>DeleteXssMatchSet</a>).
+        /// A unique identifier for an <c>XssMatchSet</c>. You use <c>XssMatchSetId</c> to get
+        /// information about a <c>XssMatchSet</c> (see <a>GetXssMatchSet</a>), update an <c>XssMatchSet</c>
+        /// (see <a>UpdateXssMatchSet</a>), insert an <c>XssMatchSet</c> into a <c>Rule</c> or
+        /// delete one from a <c>Rule</c> (see <a>UpdateRule</a>), and delete an <c>XssMatchSet</c>
+        /// from AWS WAF (see <a>DeleteXssMatchSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>XssMatchSetId</code> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
+        ///  <c>XssMatchSetId</c> is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

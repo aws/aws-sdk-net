@@ -42,7 +42,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// The <code>DataSourceIntrospectionModelField</code> object data.
+        /// The <c>DataSourceIntrospectionModelField</c> object data.
         /// </para>
         /// </summary>
         public List<DataSourceIntrospectionModelField> Fields
@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Indexes. 
         /// <para>
-        /// The array of <code>DataSourceIntrospectionModelIndex</code> objects.
+        /// The array of <c>DataSourceIntrospectionModelIndex</c> objects.
         /// </para>
         /// </summary>
         public List<DataSourceIntrospectionModelIndex> Indexes
@@ -97,7 +97,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property PrimaryKey. 
         /// <para>
-        /// The primary key stored as a <code>DataSourceIntrospectionModelIndex</code> object.
+        /// The primary key stored as a <c>DataSourceIntrospectionModelIndex</c> object.
         /// </para>
         /// </summary>
         public DataSourceIntrospectionModelIndex PrimaryKey
@@ -116,7 +116,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property Sdl. 
         /// <para>
         /// Contains the output of the SDL that was generated from the introspected types. This
-        /// is controlled by the <code>includeModelsSDL</code> parameter of the <code>GetDataSourceIntrospection</code>
+        /// is controlled by the <c>includeModelsSDL</c> parameter of the <c>GetDataSourceIntrospection</c>
         /// operation.
         /// </para>
         /// </summary>

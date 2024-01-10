@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Contains the configuration settings for a <code>Form</code> user interface (UI) element
+    /// Contains the configuration settings for a <c>Form</c> user interface (UI) element
     /// for an Amplify app. A form is a component you can add to your project by specifying
     /// a data source as the default configuration for the form.
     /// </summary>

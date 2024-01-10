@@ -58,7 +58,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property ServiceSummaryList. 
         /// <para>
-        ///  The list of <code>ServiceSummary</code> objects. 
+        ///  The list of <c>ServiceSummary</c> objects. 
         /// </para>
         /// </summary>
         public List<ServiceSummary> ServiceSummaryList

@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CronExpression. 
         /// <para>
-        /// The cron expression for the event window, for example, <code>* 0-4,20-23 * * 1,5</code>.
+        /// The cron expression for the event window, for example, <c>* 0-4,20-23 * * 1,5</c>.
         /// If you specify a cron expression, you can't specify a time range.
         /// </para>
         ///  
@@ -95,20 +95,20 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For day of the week values, you can specify either integers <code>0</code> through
-        /// <code>6</code>, or alternative single values <code>SUN</code> through <code>SAT</code>.
+        /// For day of the week values, you can specify either integers <c>0</c> through <c>6</c>,
+        /// or alternative single values <c>SUN</c> through <c>SAT</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The minute, month, and year must be specified by <code>*</code>.
+        /// The minute, month, and year must be specified by <c>*</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The hour value must be one or a multiple range, for example, <code>0-4</code> or <code>0-4,20-23</code>.
+        /// The hour value must be one or a multiple range, for example, <c>0-4</c> or <c>0-4,20-23</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each hour range must be &gt;= 2 hours, for example, <code>0-2</code> or <code>20-23</code>.
+        /// Each hour range must be &gt;= 2 hours, for example, <c>0-2</c> or <c>20-23</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

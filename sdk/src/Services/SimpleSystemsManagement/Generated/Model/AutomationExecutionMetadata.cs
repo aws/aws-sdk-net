@@ -140,7 +140,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AutomationSubtype. 
         /// <para>
-        /// The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+        /// The subtype of the Automation operation. Currently, the only supported value is <c>ChangeRequest</c>.
         /// </para>
         /// </summary>
         public AutomationSubtype AutomationSubtype
@@ -362,7 +362,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The <code>MaxConcurrency</code> value specified by the user when starting the automation.
+        /// The <c>MaxConcurrency</c> value specified by the user when starting the automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -381,7 +381,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxErrors. 
         /// <para>
-        /// The <code>MaxErrors</code> value specified by the user when starting the automation.
+        /// The <c>MaxErrors</c> value specified by the user when starting the automation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]

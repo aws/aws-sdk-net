@@ -36,7 +36,7 @@ namespace Amazon.VerifiedPermissions.Model
     ///  
     /// <para>
     /// This data type is used as a request parameter for the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a>
-    /// operation. This structure must always have either an <code>static</code> or a <code>templateLinked</code>
+    /// operation. This structure must always have either an <c>static</c> or a <c>templateLinked</c>
     /// element.
     /// </para>
     /// </summary>
@@ -68,8 +68,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property TemplateLinked. 
         /// <para>
         /// A structure that describes a policy that was instantiated from a template. The template
-        /// can specify placeholders for <code>principal</code> and <code>resource</code>. When
-        /// you use <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a>
+        /// can specify placeholders for <c>principal</c> and <c>resource</c>. When you use <a
+        /// href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_CreatePolicy.html">CreatePolicy</a>
         /// to create a policy from a template, you specify the exact principal and resource to
         /// use for the instantiated policy.
         /// </para>

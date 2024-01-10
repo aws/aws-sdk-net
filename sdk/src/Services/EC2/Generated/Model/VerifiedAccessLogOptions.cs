@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ocsf-0.1</code> | <code>ocsf-1.0.0-rc.2</code> 
+        /// Valid values: <c>ocsf-0.1</c> | <c>ocsf-1.0.0-rc.2</c> 
         /// </para>
         /// </summary>
         public string LogVersion

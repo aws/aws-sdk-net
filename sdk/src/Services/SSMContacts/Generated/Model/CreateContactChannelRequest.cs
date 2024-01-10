@@ -158,15 +158,15 @@ namespace Amazon.SSMContacts.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SMS</code> 
+        ///  <c>SMS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VOICE</code> 
+        ///  <c>VOICE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EMAIL</code> 
+        ///  <c>EMAIL</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -83,8 +83,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The engine version used by the session (for example, <code>PySpark engine version
-        /// 3</code>). You can get a list of engine versions by calling <a>ListEngineVersions</a>.
+        /// The engine version used by the session (for example, <c>PySpark engine version 3</c>).
+        /// You can get a list of engine versions by calling <a>ListEngineVersions</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -39,7 +39,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Intents. 
         /// <para>
-        /// An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.
+        /// An array of <c>Intent</c> objects. For more information, see <a>PutBot</a>.
         /// </para>
         /// </summary>
         public List<IntentMetadata> Intents

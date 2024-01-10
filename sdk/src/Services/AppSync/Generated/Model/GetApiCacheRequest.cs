@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the GetApiCache operation.
-    /// Retrieves an <code>ApiCache</code> object.
+    /// Retrieves an <c>ApiCache</c> object.
     /// </summary>
     public partial class GetApiCacheRequest : AmazonAppSyncRequest
     {

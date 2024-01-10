@@ -32,7 +32,7 @@ namespace Amazon.Backup.Model
     /// Container for the parameters to the DescribeGlobalSettings operation.
     /// Describes whether the Amazon Web Services account is opted in to cross-account backup.
     /// Returns an error if the account is not a member of an Organizations organization.
-    /// Example: <code>describe-global-settings --region us-west-2</code>
+    /// Example: <c>describe-global-settings --region us-west-2</c>
     /// </summary>
     public partial class DescribeGlobalSettingsRequest : AmazonBackupRequest
     {

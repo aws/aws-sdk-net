@@ -41,8 +41,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ArtifactType. 
         /// <para>
-        ///  <code>UDF</code> stands for user-defined functions. This type of artifact must be
-        /// in an S3 bucket. A <code>DEPENDENCY_JAR</code> can be in either Maven or an S3 bucket.
+        ///  <c>UDF</c> stands for user-defined functions. This type of artifact must be in an
+        /// S3 bucket. A <c>DEPENDENCY_JAR</c> can be in either Maven or an S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

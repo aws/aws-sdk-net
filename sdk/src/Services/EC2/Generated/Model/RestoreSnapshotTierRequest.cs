@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PermanentRestore. 
         /// <para>
         /// Indicates whether to permanently restore an archived snapshot. To permanently restore
-        /// an archived snapshot, specify <code>true</code> and omit the <b>RestoreSnapshotTierRequest$TemporaryRestoreDays</b>
+        /// an archived snapshot, specify <c>true</c> and omit the <b>RestoreSnapshotTierRequest$TemporaryRestoreDays</b>
         /// parameter.
         /// </para>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// To temporarily restore an archived snapshot, specify the number of days and omit the
-        /// <b>PermanentRestore</b> parameter or set it to <code>false</code>.
+        /// <b>PermanentRestore</b> parameter or set it to <c>false</c>.
         /// </para>
         /// </summary>
         public int TemporaryRestoreDays

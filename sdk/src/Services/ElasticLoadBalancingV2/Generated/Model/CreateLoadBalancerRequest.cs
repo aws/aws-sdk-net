@@ -93,8 +93,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property IpAddressType. 
         /// <para>
         /// The type of IP addresses used by the subnets for your load balancer. The possible
-        /// values are <code>ipv4</code> (for IPv4 addresses) and <code>dualstack</code> (for
-        /// IPv4 and IPv6 addresses). 
+        /// values are <c>ipv4</c> (for IPv4 addresses) and <c>dualstack</c> (for IPv4 and IPv6
+        /// addresses). 
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -299,7 +299,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of load balancer. The default is <code>application</code>.
+        /// The type of load balancer. The default is <c>application</c>.
         /// </para>
         /// </summary>
         public LoadBalancerTypeEnum Type

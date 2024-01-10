@@ -142,17 +142,17 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NluIntentConfidenceThreshold. 
         /// <para>
-        /// Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents.
-        /// <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are
-        /// only inserted if they are configured for the bot.
+        /// Determines the threshold where Amazon Lex will insert the <c>AMAZON.FallbackIntent</c>,
+        /// <c>AMAZON.KendraSearchIntent</c>, or both when returning alternative intents. <c>AMAZON.FallbackIntent</c>
+        /// and <c>AMAZON.KendraSearchIntent</c> are only inserted if they are configured for
+        /// the bot.
         /// </para>
         ///  
         /// <para>
         /// For example, suppose a bot is configured with the confidence threshold of 0.80 and
-        /// the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
-        /// with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50).
-        /// The response from the <code>RecognizeText</code> operation would be:
+        /// the <c>AMAZON.FallbackIntent</c>. Amazon Lex returns three alternative intents with
+        /// the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The
+        /// response from the <c>RecognizeText</c> operation would be:
         /// </para>
         ///  <ul> <li> 
         /// <para>

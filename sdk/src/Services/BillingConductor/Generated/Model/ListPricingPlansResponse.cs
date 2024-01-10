@@ -76,7 +76,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property PricingPlans. 
         /// <para>
-        /// A list of <code>PricingPlanListElement</code> retrieved. 
+        /// A list of <c>PricingPlanListElement</c> retrieved. 
         /// </para>
         /// </summary>
         public List<PricingPlanListElement> PricingPlans

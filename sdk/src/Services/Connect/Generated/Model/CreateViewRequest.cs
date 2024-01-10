@@ -30,7 +30,7 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateView operation.
-    /// Creates a new view with the possible status of <code>SAVED</code> or <code>PUBLISHED</code>.
+    /// Creates a new view with the possible status of <c>SAVED</c> or <c>PUBLISHED</c>.
     /// 
     ///  
     /// <para>
@@ -38,11 +38,11 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    /// It performs basic content validation if the status is <code>SAVED</code> or full content
-    /// validation if the status is set to <code>PUBLISHED</code>. An error is returned if
-    /// validation fails. It associates either the <code>$SAVED</code> qualifier or both of
-    /// the <code>$SAVED</code> and <code>$LATEST</code> qualifiers with the provided view
-    /// content based on the status. The view is idempotent if ClientToken is provided.
+    /// It performs basic content validation if the status is <c>SAVED</c> or full content
+    /// validation if the status is set to <c>PUBLISHED</c>. An error is returned if validation
+    /// fails. It associates either the <c>$SAVED</c> qualifier or both of the <c>$SAVED</c>
+    /// and <c>$LATEST</c> qualifiers with the provided view content based on the status.
+    /// The view is idempotent if ClientToken is provided.
     /// </para>
     /// </summary>
     public partial class CreateViewRequest : AmazonConnectRequest
@@ -160,8 +160,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates the view status as either <code>SAVED</code> or <code>PUBLISHED</code>.
-        /// The <code>PUBLISHED</code> status will initiate validation on the content.
+        /// Indicates the view status as either <c>SAVED</c> or <c>PUBLISHED</c>. The <c>PUBLISHED</c>
+        /// status will initiate validation on the content.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

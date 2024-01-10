@@ -119,7 +119,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LogDestinationType. 
         /// <para>
-        /// The log destination type. An enum with possible values of <code>s3</code> and <code>cloudwatch</code>.
+        /// The log destination type. An enum with possible values of <c>s3</c> and <c>cloudwatch</c>.
         /// </para>
         /// </summary>
         public LogDestinationType LogDestinationType
@@ -137,8 +137,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LogExports. 
         /// <para>
-        /// The collection of exported log types. Possible values are <code>connectionlog</code>,
-        /// <code>useractivitylog</code>, and <code>userlog</code>.
+        /// The collection of exported log types. Possible values are <c>connectionlog</c>, <c>useractivitylog</c>,
+        /// and <c>userlog</c>.
         /// </para>
         /// </summary>
         public List<string> LogExports
@@ -156,7 +156,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LoggingEnabled. 
         /// <para>
-        ///  <code>true</code> if logging is on, <code>false</code> if logging is off.
+        ///  <c>true</c> if logging is on, <c>false</c> if logging is off.
         /// </para>
         /// </summary>
         public bool LoggingEnabled

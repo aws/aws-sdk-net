@@ -163,7 +163,7 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Status</code> for a zonal shift can have one of the following values:
+        /// The <c>Status</c> for a zonal shift can have one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

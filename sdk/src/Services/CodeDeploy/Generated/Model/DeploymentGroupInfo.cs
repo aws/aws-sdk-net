@@ -152,8 +152,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        /// The destination platform type for the deployment (<code>Lambda</code>, <code>Server</code>,
-        /// or <code>ECS</code>).
+        /// The destination platform type for the deployment (<c>Lambda</c>, <c>Server</c>, or
+        /// <c>ECS</c>).
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform
@@ -287,7 +287,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         ///  The target Amazon ECS services in the deployment group. This applies only to deployment
         /// groups that use the Amazon ECS compute platform. A target Amazon ECS service is specified
-        /// as an Amazon ECS cluster and service name pair using the format <code>&lt;clustername&gt;:&lt;servicename&gt;</code>.
+        /// as an Amazon ECS cluster and service name pair using the format <c>&lt;clustername&gt;:&lt;servicename&gt;</c>.
         /// 
         /// </para>
         /// </summary>
@@ -404,13 +404,13 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  
         /// <para>
-        /// If this option is set to <code>UPDATE</code> or is unspecified, CodeDeploy initiates
-        /// one or more 'auto-update outdated instances' deployments to apply the deployed application
+        /// If this option is set to <c>UPDATE</c> or is unspecified, CodeDeploy initiates one
+        /// or more 'auto-update outdated instances' deployments to apply the deployed application
         /// revision to the new Amazon EC2 instances.
         /// </para>
         ///  
         /// <para>
-        /// If this option is set to <code>IGNORE</code>, CodeDeploy does not initiate a deployment
+        /// If this option is set to <c>IGNORE</c>, CodeDeploy does not initiate a deployment
         /// to update the new Amazon EC2 instances. This may result in instances having different
         /// revisions.
         /// </para>

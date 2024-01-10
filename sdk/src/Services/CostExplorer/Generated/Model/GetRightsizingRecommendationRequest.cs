@@ -128,8 +128,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// The specific service that you want recommendations for. The only valid value for <code>GetRightsizingRecommendation</code>
-        /// is "<code>AmazonEC2</code>".
+        /// The specific service that you want recommendations for. The only valid value for <c>GetRightsizingRecommendation</c>
+        /// is "<c>AmazonEC2</c>".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

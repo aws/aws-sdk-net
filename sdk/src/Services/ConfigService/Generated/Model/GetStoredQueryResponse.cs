@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property StoredQuery. 
         /// <para>
-        /// Returns a <code>StoredQuery</code> object.
+        /// Returns a <c>StoredQuery</c> object.
         /// </para>
         /// </summary>
         public StoredQuery StoredQuery

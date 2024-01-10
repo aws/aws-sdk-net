@@ -80,9 +80,8 @@ namespace Amazon.CodePipeline.Model
         /// <para>
         /// Properties that configure the authentication applied to incoming webhook trigger requests.
         /// The required properties depend on the authentication type. For GITHUB_HMAC, only the
-        /// <code>SecretToken </code>property must be set. For IP, only the <code>AllowedIPRange
-        /// </code>property must be set to a valid CIDR range. For UNAUTHENTICATED, no properties
-        /// can be set.
+        /// <c>SecretToken </c>property must be set. For IP, only the <c>AllowedIPRange </c>property
+        /// must be set to a valid CIDR range. For UNAUTHENTICATED, no properties can be set.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

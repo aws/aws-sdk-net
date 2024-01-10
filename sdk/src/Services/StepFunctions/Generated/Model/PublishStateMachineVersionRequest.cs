@@ -42,13 +42,12 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>PublishStateMachineVersion</code> is an idempotent API. It doesn't create a
-    /// duplicate state machine version if it already exists for the current revision. Step
-    /// Functions bases <code>PublishStateMachineVersion</code>'s idempotency check on the
-    /// <code>stateMachineArn</code>, <code>name</code>, and <code>revisionId</code> parameters.
-    /// Requests with the same parameters return a successful idempotent response. If you
-    /// don't specify a <code>revisionId</code>, Step Functions checks for a previously published
-    /// version of the state machine's current revision.
+    ///  <c>PublishStateMachineVersion</c> is an idempotent API. It doesn't create a duplicate
+    /// state machine version if it already exists for the current revision. Step Functions
+    /// bases <c>PublishStateMachineVersion</c>'s idempotency check on the <c>stateMachineArn</c>,
+    /// <c>name</c>, and <c>revisionId</c> parameters. Requests with the same parameters return
+    /// a successful idempotent response. If you don't specify a <c>revisionId</c>, Step Functions
+    /// checks for a previously published version of the state machine's current revision.
     /// </para>
     ///  
     /// <para>
@@ -99,14 +98,14 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// Use this option to avoid publishing a version if the state machine changed since you
         /// last updated it. If the specified revision ID doesn't match the state machine's current
-        /// revision ID, the API returns <code>ConflictException</code>.
+        /// revision ID, the API returns <c>ConflictException</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// To specify an initial revision ID for a state machine with no revision ID assigned,
-        /// specify the string <code>INITIAL</code> for the <code>revisionId</code> parameter.
-        /// For example, you can specify a <code>revisionID</code> of <code>INITIAL</code> when
-        /// you create a state machine using the <a>CreateStateMachine</a> API action.
+        /// specify the string <c>INITIAL</c> for the <c>revisionId</c> parameter. For example,
+        /// you can specify a <c>revisionID</c> of <c>INITIAL</c> when you create a state machine
+        /// using the <a>CreateStateMachine</a> API action.
         /// </para>
         ///  </note>
         /// </summary>

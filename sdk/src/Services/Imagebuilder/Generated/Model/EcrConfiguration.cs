@@ -62,8 +62,8 @@ namespace Amazon.Imagebuilder.Model
         /// The name of the container repository that Amazon Inspector scans to identify findings
         /// for your container images. The name includes the path for the repository location.
         /// If you don’t provide this information, Image Builder creates a repository in your
-        /// account named <code>image-builder-image-scanning-repository</code> for vulnerability
-        /// scans of your output container images.
+        /// account named <c>image-builder-image-scanning-repository</c> for vulnerability scans
+        /// of your output container images.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

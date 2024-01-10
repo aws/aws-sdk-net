@@ -38,7 +38,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property Stream. 
         /// <para>
-        /// Information about the QLDB journal stream returned by a <code>DescribeJournalS3Export</code>
+        /// Information about the QLDB journal stream returned by a <c>DescribeJournalS3Export</c>
         /// request.
         /// </para>
         /// </summary>

@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property SentimentType. 
         /// <para>
-        /// The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or <code>NEUTRAL</code>.
+        /// The type of sentiment, <c>POSITIVE</c>, <c>NEGATIVE</c>, or <c>NEUTRAL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

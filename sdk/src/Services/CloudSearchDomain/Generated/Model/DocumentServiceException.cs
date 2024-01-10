@@ -126,7 +126,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The return status of a document upload request, <code>error</code> or <code>success</code>.
+        /// The return status of a document upload request, <c>error</c> or <c>success</c>.
         /// </para>
         /// </summary>
         public string Status

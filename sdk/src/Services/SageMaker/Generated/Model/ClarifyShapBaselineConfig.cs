@@ -42,8 +42,8 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ShapBaseline</code> and <code>ShapBaselineUri</code> are mutually exclusive
-    /// parameters. One or the either is required to configure a SHAP baseline. 
+    ///  <c>ShapBaseline</c> and <c>ShapBaselineUri</c> are mutually exclusive parameters.
+    /// One or the either is required to configure a SHAP baseline. 
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -56,8 +56,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MimeType. 
         /// <para>
-        /// The MIME type of the baseline data. Choose from <code>'text/csv'</code> or <code>'application/jsonlines'</code>.
-        /// Defaults to <code>'text/csv'</code>.
+        /// The MIME type of the baseline data. Choose from <c>'text/csv'</c> or <c>'application/jsonlines'</c>.
+        /// Defaults to <c>'text/csv'</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -76,16 +76,16 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShapBaseline. 
         /// <para>
-        /// The inline SHAP baseline data in string format. <code>ShapBaseline</code> can have
-        /// one or multiple records to be used as the baseline dataset. The format of the SHAP
-        /// baseline file should be the same format as the training dataset. For example, if the
-        /// training dataset is in CSV format and each record contains four features, and all
-        /// features are numerical, then the format of the baseline data should also share these
-        /// characteristics. For natural language processing (NLP) of text columns, the baseline
-        /// value should be the value used to replace the unit of text specified by the <code>Granularity</code>
-        /// of the <code>TextConfig</code> parameter. The size limit for <code>ShapBasline</code>
-        /// is 4 KB. Use the <code>ShapBaselineUri</code> parameter if you want to provide more
-        /// than 4 KB of baseline data.
+        /// The inline SHAP baseline data in string format. <c>ShapBaseline</c> can have one or
+        /// multiple records to be used as the baseline dataset. The format of the SHAP baseline
+        /// file should be the same format as the training dataset. For example, if the training
+        /// dataset is in CSV format and each record contains four features, and all features
+        /// are numerical, then the format of the baseline data should also share these characteristics.
+        /// For natural language processing (NLP) of text columns, the baseline value should be
+        /// the value used to replace the unit of text specified by the <c>Granularity</c> of
+        /// the <c>TextConfig</c> parameter. The size limit for <c>ShapBasline</c> is 4 KB. Use
+        /// the <c>ShapBaselineUri</c> parameter if you want to provide more than 4 KB of baseline
+        /// data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -109,7 +109,7 @@ namespace Amazon.SageMaker.Model
         /// of the training dataset. For example, if the training dataset is in CSV format, and
         /// each record in the training dataset has four features, and all features are numerical,
         /// then the baseline file should also have this same format. Each record should contain
-        /// only the features. If you are using a virtual private cloud (VPC), the <code>ShapBaselineUri</code>
+        /// only the features. If you are using a virtual private cloud (VPC), the <c>ShapBaselineUri</c>
         /// should be accessible to the VPC. For more information about setting up endpoints with
         /// Amazon Virtual Private Cloud, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/infrastructure-give-access.html">Give
         /// SageMaker access to Resources in your Amazon Virtual Private Cloud</a>.

@@ -30,7 +30,7 @@ namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTableRestoreStatus operation.
-    /// Returns information about an array of <code>TableRestoreStatus</code> objects.
+    /// Returns information about an array of <c>TableRestoreStatus</c> objects.
     /// </summary>
     public partial class ListTableRestoreStatusRequest : AmazonRedshiftServerlessRequest
     {
@@ -62,7 +62,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The namespace from which to list all of the statuses of <code>RestoreTableFromSnapshot</code>
+        /// The namespace from which to list all of the statuses of <c>RestoreTableFromSnapshot</c>
         /// operations .
         /// </para>
         /// </summary>
@@ -81,9 +81,9 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListTableRestoreStatus</code> operation returns a nextToken,
-        /// you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code>
-        /// operations. This will return results on the next page.
+        /// If your initial <c>ListTableRestoreStatus</c> operation returns a nextToken, you can
+        /// include the returned <c>nextToken</c> in following <c>ListTableRestoreStatus</c> operations.
+        /// This will return results on the next page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=1024)]
@@ -102,7 +102,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property WorkgroupName. 
         /// <para>
-        /// The workgroup from which to list all of the statuses of <code>RestoreTableFromSnapshot</code>
+        /// The workgroup from which to list all of the statuses of <c>RestoreTableFromSnapshot</c>
         /// operations.
         /// </para>
         /// </summary>

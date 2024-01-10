@@ -122,7 +122,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify a <code>userPoolArn</code>, and optionally, a <code>ClientId</code>.
+        /// You must specify a <c>userPoolArn</c>, and optionally, a <c>ClientId</c>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -37,17 +37,17 @@ namespace Amazon.QLDB.Model
     /// 
     ///  
     /// <para>
-    /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+    /// If the ledger with the given <c>Name</c> doesn't exist, then throws <c>ResourceNotFoundException</c>.
     /// </para>
     ///  
     /// <para>
-    /// If the ledger with the given <code>Name</code> is in <code>CREATING</code> status,
-    /// then throws <code>ResourcePreconditionNotMetException</code>.
+    /// If the ledger with the given <c>Name</c> is in <c>CREATING</c> status, then throws
+    /// <c>ResourcePreconditionNotMetException</c>.
     /// </para>
     ///  
     /// <para>
     /// You can initiate up to two concurrent journal export requests for each ledger. Beyond
-    /// this limit, journal export requests throw <code>LimitExceededException</code>.
+    /// this limit, journal export requests throw <c>LimitExceededException</c>.
     /// </para>
     /// </summary>
     public partial class ExportJournalToS3Request : AmazonQLDBRequest
@@ -66,13 +66,13 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format
-        /// and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
+        /// The <c>ExclusiveEndTime</c> must be in <c>ISO 8601</c> date and time format and in
+        /// Universal Coordinated Time (UTC). For example: <c>2019-06-13T21:36:34Z</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ExclusiveEndTime</code> must be less than or equal to the current UTC date
-        /// and time.
+        /// The <c>ExclusiveEndTime</c> must be less than or equal to the current UTC date and
+        /// time.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -95,17 +95,17 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>InclusiveStartTime</code> must be in <code>ISO 8601</code> date and time
-        /// format and in Universal Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
+        /// The <c>InclusiveStartTime</c> must be in <c>ISO 8601</c> date and time format and
+        /// in Universal Coordinated Time (UTC). For example: <c>2019-06-13T21:36:34Z</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>InclusiveStartTime</code> must be before <code>ExclusiveEndTime</code>.
+        /// The <c>InclusiveStartTime</c> must be before <c>ExclusiveEndTime</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an <code>InclusiveStartTime</code> that is before the ledger's <code>CreationDateTime</code>,
-        /// Amazon QLDB defaults it to the ledger's <code>CreationDateTime</code>.
+        /// If you provide an <c>InclusiveStartTime</c> that is before the ledger's <c>CreationDateTime</c>,
+        /// Amazon QLDB defaults it to the ledger's <c>CreationDateTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -149,7 +149,7 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ION_TEXT</code> 
+        /// Default: <c>ION_TEXT</c> 
         /// </para>
         ///  
         /// <para>
@@ -189,8 +189,8 @@ namespace Amazon.QLDB.Model
         ///  </li> </ul> 
         /// <para>
         /// To pass a role to QLDB when requesting a journal export, you must have permissions
-        /// to perform the <code>iam:PassRole</code> action on the IAM role resource. This is
-        /// required for all journal export requests.
+        /// to perform the <c>iam:PassRole</c> action on the IAM role resource. This is required
+        /// for all journal export requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1600)]

@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property URLTarget. 
         /// <para>
-        /// The target of the <code>CustomActionURLOperation</code>.
+        /// The target of the <c>CustomActionURLOperation</c>.
         /// </para>
         ///  
         /// <para>
@@ -47,15 +47,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW_TAB</code>: Opens the target URL in a new browser tab.
+        ///  <c>NEW_TAB</c>: Opens the target URL in a new browser tab.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_WINDOW</code>: Opens the target URL in a new browser window.
+        ///  <c>NEW_WINDOW</c>: Opens the target URL in a new browser window.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAME_TAB</code>: Opens the target URL in the same browser tab.
+        ///  <c>SAME_TAB</c>: Opens the target URL in the same browser tab.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property URLTemplate. 
         /// <para>
-        /// THe URL link of the <code>CustomActionURLOperation</code>.
+        /// THe URL link of the <c>CustomActionURLOperation</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

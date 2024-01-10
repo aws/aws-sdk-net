@@ -31,7 +31,7 @@ namespace Amazon.SageMakerMetrics.Model
     /// <summary>
     /// Container for the parameters to the BatchPutMetrics operation.
     /// Used to ingest training metrics into SageMaker. These metrics can be visualized in
-    /// SageMaker Studio and retrieved with the <code>GetMetrics</code> API.
+    /// SageMaker Studio and retrieved with the <c>GetMetrics</c> API.
     /// </summary>
     public partial class BatchPutMetricsRequest : AmazonSageMakerMetricsRequest
     {

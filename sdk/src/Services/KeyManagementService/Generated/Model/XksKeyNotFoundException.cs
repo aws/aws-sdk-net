@@ -30,16 +30,15 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// The request was rejected because the external key store proxy could not find the external
-    /// key. This exception is thrown when the value of the <code>XksKeyId</code> parameter
-    /// doesn't identify a key in the external key manager associated with the external key
-    /// proxy.
+    /// key. This exception is thrown when the value of the <c>XksKeyId</c> parameter doesn't
+    /// identify a key in the external key manager associated with the external key proxy.
     /// 
     ///  
     /// <para>
-    /// Verify that the <code>XksKeyId</code> represents an existing key in the external key
-    /// manager. Use the key identifier that the external key store proxy uses to identify
-    /// the key. For details, see the documentation provided with your external key store
-    /// proxy or key manager.
+    /// Verify that the <c>XksKeyId</c> represents an existing key in the external key manager.
+    /// Use the key identifier that the external key store proxy uses to identify the key.
+    /// For details, see the documentation provided with your external key store proxy or
+    /// key manager.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

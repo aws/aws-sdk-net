@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A collection of settings that apply to an <code>RSessionGateway</code> app.
+    /// A collection of settings that apply to an <c>RSessionGateway</c> app.
     /// </summary>
     public partial class RSessionAppSettings
     {

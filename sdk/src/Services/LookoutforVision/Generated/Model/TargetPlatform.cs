@@ -42,20 +42,19 @@ namespace Amazon.LookoutforVision.Model
         /// <para>
         /// The target accelerator for the model. Currently, Amazon Lookout for Vision only supports
         /// NVIDIA (Nvidia graphics processing unit) and CPU accelerators. If you specify NVIDIA
-        /// as an accelerator, you must also specify the <code>gpu-code</code>, <code>trt-ver</code>,
-        /// and <code>cuda-ver</code> compiler options. If you don't specify an accelerator, Lookout
-        /// for Vision uses the CPU for compilation and we highly recommend that you use the <a>GreengrassConfiguration$CompilerOptions</a>
+        /// as an accelerator, you must also specify the <c>gpu-code</c>, <c>trt-ver</c>, and
+        /// <c>cuda-ver</c> compiler options. If you don't specify an accelerator, Lookout for
+        /// Vision uses the CPU for compilation and we highly recommend that you use the <a>GreengrassConfiguration$CompilerOptions</a>
         /// field. For example, you can use the following compiler options for CPU: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+        ///  <c>mcpu</c>: CPU micro-architecture. For example, <c>{'mcpu': 'skylake-avx512'}</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code>
-        /// 
+        ///  <c>mattr</c>: CPU flags. For example, <c>{'mattr': ['+neon', '+vfpv4']}</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

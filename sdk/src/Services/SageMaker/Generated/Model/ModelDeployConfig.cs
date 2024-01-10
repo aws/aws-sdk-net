@@ -40,14 +40,13 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoGenerateEndpointName. 
         /// <para>
-        /// Set to <code>True</code> to automatically generate an endpoint name for a one-click
-        /// Autopilot model deployment; set to <code>False</code> otherwise. The default value
-        /// is <code>False</code>.
+        /// Set to <c>True</c> to automatically generate an endpoint name for a one-click Autopilot
+        /// model deployment; set to <c>False</c> otherwise. The default value is <c>False</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you set <code>AutoGenerateEndpointName</code> to <code>True</code>, do not specify
-        /// the <code>EndpointName</code>; otherwise a 400 error is thrown.
+        /// If you set <c>AutoGenerateEndpointName</c> to <c>True</c>, do not specify the <c>EndpointName</c>;
+        /// otherwise a 400 error is thrown.
         /// </para>
         ///  </note>
         /// </summary>
@@ -71,8 +70,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Specify the <code>EndpointName</code> if and only if you set <code>AutoGenerateEndpointName</code>
-        /// to <code>False</code>; otherwise a 400 error is thrown.
+        /// Specify the <c>EndpointName</c> if and only if you set <c>AutoGenerateEndpointName</c>
+        /// to <c>False</c>; otherwise a 400 error is thrown.
         /// </para>
         ///  </note>
         /// </summary>

@@ -39,11 +39,10 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsumedCapacity. 
         /// <para>
-        /// If the <i>ReturnConsumedCapacity</i> value was <code>TOTAL</code>, this is an array
-        /// of <code>ConsumedCapacity</code> objects, one for each table addressed by <code>TransactGetItem</code>
-        /// objects in the <i>TransactItems</i> parameter. These <code>ConsumedCapacity</code>
-        /// objects report the read-capacity units consumed by the <code>TransactGetItems</code>
-        /// call in that table.
+        /// If the <i>ReturnConsumedCapacity</i> value was <c>TOTAL</c>, this is an array of <c>ConsumedCapacity</c>
+        /// objects, one for each table addressed by <c>TransactGetItem</c> objects in the <i>TransactItems</i>
+        /// parameter. These <c>ConsumedCapacity</c> objects report the read-capacity units consumed
+        /// by the <c>TransactGetItems</c> call in that table.
         /// </para>
         /// </summary>
         public List<ConsumedCapacity> ConsumedCapacity
@@ -61,16 +60,16 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Responses. 
         /// <para>
-        /// An ordered array of up to 100 <code>ItemResponse</code> objects, each of which corresponds
-        /// to the <code>TransactGetItem</code> object in the same position in the <i>TransactItems</i>
-        /// array. Each <code>ItemResponse</code> object contains a Map of the name-value pairs
-        /// that are the projected attributes of the requested item.
+        /// An ordered array of up to 100 <c>ItemResponse</c> objects, each of which corresponds
+        /// to the <c>TransactGetItem</c> object in the same position in the <i>TransactItems</i>
+        /// array. Each <c>ItemResponse</c> object contains a Map of the name-value pairs that
+        /// are the projected attributes of the requested item.
         /// </para>
         ///  
         /// <para>
-        /// If a requested item could not be retrieved, the corresponding <code>ItemResponse</code>
+        /// If a requested item could not be retrieved, the corresponding <c>ItemResponse</c>
         /// object is Null, or if the requested item has no projected attributes, the corresponding
-        /// <code>ItemResponse</code> object is an empty Map. 
+        /// <c>ItemResponse</c> object is an empty Map. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

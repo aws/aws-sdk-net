@@ -30,7 +30,7 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIdMappingWorkflow operation.
-    /// Returns the <code>IdMappingWorkflow</code> with a given name, if it exists.
+    /// Returns the <c>IdMappingWorkflow</c> with a given name, if it exists.
     /// </summary>
     public partial class GetIdMappingWorkflowRequest : AmazonEntityResolutionRequest
     {

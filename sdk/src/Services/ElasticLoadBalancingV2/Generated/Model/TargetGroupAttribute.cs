@@ -47,34 +47,31 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>deregistration_delay.timeout_seconds</code> - The amount of time, in seconds,
-        /// for Elastic Load Balancing to wait before changing the state of a deregistering target
-        /// from <code>draining</code> to <code>unused</code>. The range is 0-3600 seconds. The
-        /// default value is 300 seconds. If the target is a Lambda function, this attribute is
-        /// not supported.
+        ///  <c>deregistration_delay.timeout_seconds</c> - The amount of time, in seconds, for
+        /// Elastic Load Balancing to wait before changing the state of a deregistering target
+        /// from <c>draining</c> to <c>unused</c>. The range is 0-3600 seconds. The default value
+        /// is 300 seconds. If the target is a Lambda function, this attribute is not supported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.enabled</code> - Indicates whether target stickiness is enabled.
-        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        ///  <c>stickiness.enabled</c> - Indicates whether target stickiness is enabled. The value
+        /// is <c>true</c> or <c>false</c>. The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.type</code> - Indicates the type of stickiness. The possible values
-        /// are:
+        ///  <c>stickiness.type</c> - Indicates the type of stickiness. The possible values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>lb_cookie</code> and <code>app_cookie</code> for Application Load Balancers.
+        ///  <c>lb_cookie</c> and <c>app_cookie</c> for Application Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source_ip</code> for Network Load Balancers.
+        ///  <c>source_ip</c> for Network Load Balancers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source_ip_dest_ip</code> and <code>source_ip_dest_ip_proto</code> for Gateway
-        /// Load Balancers.
+        ///  <c>source_ip_dest_ip</c> and <c>source_ip_dest_ip_proto</c> for Gateway Load Balancers.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -83,40 +80,39 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross zone load
-        /// balancing is enabled. The value is <code>true</code>, <code>false</code> or <code>use_load_balancer_configuration</code>.
-        /// The default is <code>use_load_balancer_configuration</code>.
+        ///  <c>load_balancing.cross_zone.enabled</c> - Indicates whether cross zone load balancing
+        /// is enabled. The value is <c>true</c>, <c>false</c> or <c>use_load_balancer_configuration</c>.
+        /// The default is <c>use_load_balancer_configuration</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>target_group_health.dns_failover.minimum_healthy_targets.count</code> - The
-        /// minimum number of targets that must be healthy. If the number of healthy targets is
-        /// below this value, mark the zone as unhealthy in DNS, so that traffic is routed only
-        /// to healthy zones. The possible values are <code>off</code> or an integer from 1 to
-        /// the maximum number of targets. The default is <code>off</code>.
+        ///  <c>target_group_health.dns_failover.minimum_healthy_targets.count</c> - The minimum
+        /// number of targets that must be healthy. If the number of healthy targets is below
+        /// this value, mark the zone as unhealthy in DNS, so that traffic is routed only to healthy
+        /// zones. The possible values are <c>off</c> or an integer from 1 to the maximum number
+        /// of targets. The default is <c>off</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>target_group_health.dns_failover.minimum_healthy_targets.percentage</code>
-        /// - The minimum percentage of targets that must be healthy. If the percentage of healthy
-        /// targets is below this value, mark the zone as unhealthy in DNS, so that traffic is
-        /// routed only to healthy zones. The possible values are <code>off</code> or an integer
-        /// from 1 to 100. The default is <code>off</code>.
+        ///  <c>target_group_health.dns_failover.minimum_healthy_targets.percentage</c> - The
+        /// minimum percentage of targets that must be healthy. If the percentage of healthy targets
+        /// is below this value, mark the zone as unhealthy in DNS, so that traffic is routed
+        /// only to healthy zones. The possible values are <c>off</c> or an integer from 1 to
+        /// 100. The default is <c>off</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</code>
+        ///  <c>target_group_health.unhealthy_state_routing.minimum_healthy_targets.count</c>
         /// - The minimum number of targets that must be healthy. If the number of healthy targets
         /// is below this value, send traffic to all targets, including unhealthy targets. The
         /// possible values are 1 to the maximum number of targets. The default is 1.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</code>
+        ///  <c>target_group_health.unhealthy_state_routing.minimum_healthy_targets.percentage</c>
         /// - The minimum percentage of targets that must be healthy. If the percentage of healthy
         /// targets is below this value, send traffic to all targets, including unhealthy targets.
-        /// The possible values are <code>off</code> or an integer from 1 to 100. The default
-        /// is <code>off</code>.
+        /// The possible values are <c>off</c> or an integer from 1 to 100. The default is <c>off</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -125,43 +121,41 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>load_balancing.algorithm.type</code> - The load balancing algorithm determines
-        /// how the load balancer selects targets when routing requests. The value is <code>round_robin</code>,
-        /// <code>least_outstanding_requests</code>, or <code>weighted_random</code>. The default
-        /// is <code>round_robin</code>.
+        ///  <c>load_balancing.algorithm.type</c> - The load balancing algorithm determines how
+        /// the load balancer selects targets when routing requests. The value is <c>round_robin</c>,
+        /// <c>least_outstanding_requests</c>, or <c>weighted_random</c>. The default is <c>round_robin</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>load_balancing.algorithm.anomaly_mitigation</code> - Only available when <code>load_balancing.algorithm.type</code>
-        /// is <code>weighted_random</code>. Indicates whether anomaly mitigation is enabled.
-        /// The value is <code>on</code> or <code>off</code>. The default is <code>off</code>.
+        ///  <c>load_balancing.algorithm.anomaly_mitigation</c> - Only available when <c>load_balancing.algorithm.type</c>
+        /// is <c>weighted_random</c>. Indicates whether anomaly mitigation is enabled. The value
+        /// is <c>on</c> or <c>off</c>. The default is <c>off</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>slow_start.duration_seconds</code> - The time period, in seconds, during which
-        /// a newly registered target receives an increasing share of the traffic to the target
+        ///  <c>slow_start.duration_seconds</c> - The time period, in seconds, during which a
+        /// newly registered target receives an increasing share of the traffic to the target
         /// group. After this time period ends, the target receives its full share of traffic.
         /// The range is 30-900 seconds (15 minutes). The default is 0 seconds (disabled).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.app_cookie.cookie_name</code> - Indicates the name of the application-based
-        /// cookie. Names that start with the following prefixes are not allowed: <code>AWSALB</code>,
-        /// <code>AWSALBAPP</code>, and <code>AWSALBTG</code>; they're reserved for use by the
-        /// load balancer.
+        ///  <c>stickiness.app_cookie.cookie_name</c> - Indicates the name of the application-based
+        /// cookie. Names that start with the following prefixes are not allowed: <c>AWSALB</c>,
+        /// <c>AWSALBAPP</c>, and <c>AWSALBTG</c>; they're reserved for use by the load balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.app_cookie.duration_seconds</code> - The time period, in seconds,
-        /// during which requests from a client should be routed to the same target. After this
-        /// time period expires, the application-based cookie is considered stale. The range is
-        /// 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
+        ///  <c>stickiness.app_cookie.duration_seconds</c> - The time period, in seconds, during
+        /// which requests from a client should be routed to the same target. After this time
+        /// period expires, the application-based cookie is considered stale. The range is 1 second
+        /// to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stickiness.lb_cookie.duration_seconds</code> - The time period, in seconds,
-        /// during which requests from a client should be routed to the same target. After this
-        /// time period expires, the load balancer-generated cookie is considered stale. The range
+        ///  <c>stickiness.lb_cookie.duration_seconds</c> - The time period, in seconds, during
+        /// which requests from a client should be routed to the same target. After this time
+        /// period expires, the load balancer-generated cookie is considered stale. The range
         /// is 1 second to 1 week (604800 seconds). The default value is 1 day (86400 seconds).
         /// 
         /// </para>
@@ -172,12 +166,12 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>lambda.multi_value_headers.enabled</code> - Indicates whether the request and
-        /// response headers that are exchanged between the load balancer and the Lambda function
-        /// include arrays of values or strings. The value is <code>true</code> or <code>false</code>.
-        /// The default is <code>false</code>. If the value is <code>false</code> and the request
-        /// contains a duplicate header field name or query parameter key, the load balancer uses
-        /// the last value sent by the client.
+        ///  <c>lambda.multi_value_headers.enabled</c> - Indicates whether the request and response
+        /// headers that are exchanged between the load balancer and the Lambda function include
+        /// arrays of values or strings. The value is <c>true</c> or <c>false</c>. The default
+        /// is <c>false</c>. If the value is <c>false</c> and the request contains a duplicate
+        /// header field name or query parameter key, the load balancer uses the last value sent
+        /// by the client.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -185,30 +179,28 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>deregistration_delay.connection_termination.enabled</code> - Indicates whether
-        /// the load balancer terminates connections at the end of the deregistration timeout.
-        /// The value is <code>true</code> or <code>false</code>. For new UDP/TCP_UDP target groups
-        /// the default is <code>true</code>. Otherwise, the default is <code>false</code>.
+        ///  <c>deregistration_delay.connection_termination.enabled</c> - Indicates whether the
+        /// load balancer terminates connections at the end of the deregistration timeout. The
+        /// value is <c>true</c> or <c>false</c>. For new UDP/TCP_UDP target groups the default
+        /// is <c>true</c>. Otherwise, the default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>preserve_client_ip.enabled</code> - Indicates whether client IP preservation
-        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is disabled
-        /// if the target group type is IP address and the target group protocol is TCP or TLS.
-        /// Otherwise, the default is enabled. Client IP preservation cannot be disabled for UDP
-        /// and TCP_UDP target groups.
+        ///  <c>preserve_client_ip.enabled</c> - Indicates whether client IP preservation is enabled.
+        /// The value is <c>true</c> or <c>false</c>. The default is disabled if the target group
+        /// type is IP address and the target group protocol is TCP or TLS. Otherwise, the default
+        /// is enabled. Client IP preservation cannot be disabled for UDP and TCP_UDP target groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>proxy_protocol_v2.enabled</code> - Indicates whether Proxy Protocol version
-        /// 2 is enabled. The value is <code>true</code> or <code>false</code>. The default is
-        /// <code>false</code>. 
+        ///  <c>proxy_protocol_v2.enabled</c> - Indicates whether Proxy Protocol version 2 is
+        /// enabled. The value is <c>true</c> or <c>false</c>. The default is <c>false</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>target_health_state.unhealthy.connection_termination.enabled</code> - Indicates
-        /// whether the load balancer terminates connections to unhealthy targets. The value is
-        /// <code>true</code> or <code>false</code>. The default is <code>true</code>.
+        ///  <c>target_health_state.unhealthy.connection_termination.enabled</c> - Indicates whether
+        /// the load balancer terminates connections to unhealthy targets. The value is <c>true</c>
+        /// or <c>false</c>. The default is <c>true</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -216,21 +208,19 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>target_failover.on_deregistration</code> - Indicates how the Gateway Load Balancer
-        /// handles existing flows when a target is deregistered. The possible values are <code>rebalance</code>
-        /// and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes
-        /// (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>)
-        /// can't be set independently. The value you set for both attributes must be the same.
-        /// 
+        ///  <c>target_failover.on_deregistration</c> - Indicates how the Gateway Load Balancer
+        /// handles existing flows when a target is deregistered. The possible values are <c>rebalance</c>
+        /// and <c>no_rebalance</c>. The default is <c>no_rebalance</c>. The two attributes (<c>target_failover.on_deregistration</c>
+        /// and <c>target_failover.on_unhealthy</c>) can't be set independently. The value you
+        /// set for both attributes must be the same. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>target_failover.on_unhealthy</code> - Indicates how the Gateway Load Balancer
-        /// handles existing flows when a target is unhealthy. The possible values are <code>rebalance</code>
-        /// and <code>no_rebalance</code>. The default is <code>no_rebalance</code>. The two attributes
-        /// (<code>target_failover.on_deregistration</code> and <code>target_failover.on_unhealthy</code>)
-        /// cannot be set independently. The value you set for both attributes must be the same.
-        /// 
+        ///  <c>target_failover.on_unhealthy</c> - Indicates how the Gateway Load Balancer handles
+        /// existing flows when a target is unhealthy. The possible values are <c>rebalance</c>
+        /// and <c>no_rebalance</c>. The default is <c>no_rebalance</c>. The two attributes (<c>target_failover.on_deregistration</c>
+        /// and <c>target_failover.on_unhealthy</c>) cannot be set independently. The value you
+        /// set for both attributes must be the same. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

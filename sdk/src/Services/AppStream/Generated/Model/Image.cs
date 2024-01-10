@@ -314,8 +314,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The image starts in the <code>PENDING</code> state. If image creation succeeds, the
-        /// state is <code>AVAILABLE</code>. If image creation fails, the state is <code>FAILED</code>.
+        /// The image starts in the <c>PENDING</c> state. If image creation succeeds, the state
+        /// is <c>AVAILABLE</c>. If image creation fails, the state is <c>FAILED</c>.
         /// </para>
         /// </summary>
         public ImageState State

@@ -178,8 +178,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property SyncSource. 
         /// <para>
-        /// The <code>syncSource</code> of the sync job, if this entity was created by a sync
-        /// job.
+        /// The <c>syncSource</c> of the sync job, if this entity was created by a sync job.
         /// </para>
         /// </summary>
         public string SyncSource

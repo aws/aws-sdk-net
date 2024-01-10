@@ -30,8 +30,8 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// In a response to a <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DiscoverInstances.html">DiscoverInstances</a>
-    /// request, <code>HttpInstanceSummary</code> contains information about one instance
-    /// that matches the values that you specified in the request.
+    /// request, <c>HttpInstanceSummary</c> contains information about one instance that matches
+    /// the values that you specified in the request.
     /// </summary>
     public partial class HttpInstanceSummary
     {
@@ -105,8 +105,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code>
-        /// member of the <code>Properties</code> member of the namespace.
+        /// The <c>HttpName</c> name of the namespace. It's found in the <c>HttpProperties</c>
+        /// member of the <c>Properties</c> member of the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

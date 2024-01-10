@@ -58,7 +58,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property WorkflowSummaries. 
         /// <para>
-        /// A list of <code>IdMappingWorkflowSummary</code> objects.
+        /// A list of <c>IdMappingWorkflowSummary</c> objects.
         /// </para>
         /// </summary>
         public List<IdMappingWorkflowSummary> WorkflowSummaries

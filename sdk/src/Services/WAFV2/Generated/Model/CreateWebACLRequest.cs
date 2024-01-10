@@ -96,9 +96,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CaptchaConfig. 
         /// <para>
-        /// Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't
-        /// have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF
-        /// uses its default settings for <code>CaptchaConfig</code>. 
+        /// Specifies how WAF should handle <c>CAPTCHA</c> evaluations for rules that don't have
+        /// their own <c>CaptchaConfig</c> settings. If you don't specify this, WAF uses its default
+        /// settings for <c>CaptchaConfig</c>. 
         /// </para>
         /// </summary>
         public CaptchaConfig CaptchaConfig
@@ -117,8 +117,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property ChallengeConfig. 
         /// <para>
         /// Specifies how WAF should handle challenge evaluations for rules that don't have their
-        /// own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its
-        /// default settings for <code>ChallengeConfig</code>. 
+        /// own <c>ChallengeConfig</c> settings. If you don't specify this, WAF uses its default
+        /// settings for <c>ChallengeConfig</c>. 
         /// </para>
         /// </summary>
         public ChallengeConfig ChallengeConfig
@@ -169,8 +169,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property DefaultAction. 
         /// <para>
-        /// The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code>
-        /// match. 
+        /// The action to perform if none of the <c>Rules</c> contained in the <c>WebACL</c> match.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -260,8 +260,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-        /// --region=us-east-1</code>. 
+        /// CLI - Specify the Region when you use the CloudFront scope: <c>--scope=CLOUDFRONT
+        /// --region=us-east-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -313,13 +313,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Example JSON: <code>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</code>
-        /// 
+        /// Example JSON: <c>"TokenDomains": { "mywebsite.com", "myotherwebsite.com" }</c> 
         /// </para>
         ///  
         /// <para>
-        /// Public suffixes aren't allowed. For example, you can't use <code>usa.gov</code> or
-        /// <code>co.uk</code> as token domains.
+        /// Public suffixes aren't allowed. For example, you can't use <c>usa.gov</c> or <c>co.uk</c>
+        /// as token domains.
         /// </para>
         /// </summary>
         public List<string> TokenDomains

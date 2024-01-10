@@ -145,7 +145,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ByDestinationVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a source backup vault to copy
-        /// from; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// from; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// 
         /// </para>
         /// </summary>
@@ -169,8 +169,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
-        /// and <code>INVALIDPARAMETERS</code>.
+        /// Example strings may include <c>AccessDenied</c>, <c>SUCCESS</c>, <c>AGGREGATE_ALL</c>,
+        /// and <c>INVALIDPARAMETERS</c>.
         /// </para>
         ///  
         /// <para>
@@ -183,7 +183,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts for all message categories and returns
         /// the sum.
         /// </para>
         /// </summary>
@@ -243,67 +243,67 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Aurora</code> for Amazon Aurora
+        ///  <c>Aurora</c> for Amazon Aurora
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CloudFormation</code> for CloudFormation
+        ///  <c>CloudFormation</c> for CloudFormation
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        ///  <c>DocumentDB</c> for Amazon DocumentDB (with MongoDB compatibility)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DynamoDB</code> for Amazon DynamoDB
+        ///  <c>DynamoDB</c> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS</code> for Amazon Elastic Block Store
+        ///  <c>EBS</c> for Amazon Elastic Block Store
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EC2</code> for Amazon Elastic Compute Cloud
+        ///  <c>EC2</c> for Amazon Elastic Compute Cloud
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EFS</code> for Amazon Elastic File System
+        ///  <c>EFS</c> for Amazon Elastic File System
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FSx</code> for Amazon FSx
+        ///  <c>FSx</c> for Amazon FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Neptune</code> for Amazon Neptune
+        ///  <c>Neptune</c> for Amazon Neptune
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Redshift</code> for Amazon Redshift
+        ///  <c>Redshift</c> for Amazon Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RDS</code> for Amazon Relational Database Service
+        ///  <c>RDS</c> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAP HANA on Amazon EC2</code> for SAP HANA databases
+        ///  <c>SAP HANA on Amazon EC2</c> for SAP HANA databases
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage Gateway</code> for Storage Gateway
+        ///  <c>Storage Gateway</c> for Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code> for Amazon S3
+        ///  <c>S3</c> for Amazon S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Timestream</code> for Amazon Timestream
+        ///  <c>Timestream</c> for Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VirtualMachine</code> for virtual machines
+        ///  <c>VirtualMachine</c> for virtual machines
         /// </para>
         ///  </li> </ul>
         /// </summary>

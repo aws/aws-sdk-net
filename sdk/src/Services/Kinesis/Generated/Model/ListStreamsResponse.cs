@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>ListStreams</code>.
+    /// Represents the output for <c>ListStreams</c>.
     /// </summary>
     public partial class ListStreamsResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property HasMoreStreams. 
         /// <para>
-        /// If set to <code>true</code>, there are more streams available to list.
+        /// If set to <c>true</c>, there are more streams available to list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -77,7 +77,7 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property StreamNames. 
         /// <para>
         /// The names of the streams that are associated with the Amazon Web Services account
-        /// making the <code>ListStreams</code> request.
+        /// making the <c>ListStreams</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

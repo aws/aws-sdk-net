@@ -42,12 +42,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
         /// This parameter enables or disables the HTTP metadata endpoint on your instances. If
-        /// the parameter is not specified, the default state is <code>enabled</code>.
+        /// the parameter is not specified, the default state is <c>enabled</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify a value of <code>disabled</code>, you will not be able to access your
-        /// instance metadata. 
+        /// If you specify a value of <c>disabled</c>, you will not be able to access your instance
+        /// metadata. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -91,21 +91,21 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property HttpTokens. 
         /// <para>
         /// The state of token usage for your instance metadata requests. If the parameter is
-        /// not specified in the request, the default state is <code>optional</code>.
+        /// not specified in the request, the default state is <c>optional</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>optional</code>, you can choose to retrieve instance metadata
-        /// with or without a signed token header on your request. If you retrieve the IAM role
-        /// credentials without a token, the version 1.0 role credentials are returned. If you
-        /// retrieve the IAM role credentials using a valid signed token, the version 2.0 role
-        /// credentials are returned.
+        /// If the state is <c>optional</c>, you can choose to retrieve instance metadata with
+        /// or without a signed token header on your request. If you retrieve the IAM role credentials
+        /// without a token, the version 1.0 role credentials are returned. If you retrieve the
+        /// IAM role credentials using a valid signed token, the version 2.0 role credentials
+        /// are returned.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>required</code>, you must send a signed token header with any
-        /// instance metadata retrieval requests. In this state, retrieving the IAM role credentials
-        /// always returns the version 2.0 credentials; the version 1.0 credentials are not available.
+        /// If the state is <c>required</c>, you must send a signed token header with any instance
+        /// metadata retrieval requests. In this state, retrieving the IAM role credentials always
+        /// returns the version 2.0 credentials; the version 1.0 credentials are not available.
         /// </para>
         /// </summary>
         public InstanceMetadataHttpTokensState HttpTokens

@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <code>UpdateEvaluation</code> operation.
+    /// Represents the output of an <c>UpdateEvaluation</c> operation.
     /// 
     ///  
     /// <para>
-    /// You can see the updated content by using the <code>GetEvaluation</code> operation.
+    /// You can see the updated content by using the <c>GetEvaluation</c> operation.
     /// </para>
     /// </summary>
     public partial class UpdateEvaluationResponse : AmazonWebServiceResponse
@@ -43,8 +43,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationId. 
         /// <para>
-        /// The ID assigned to the <code>Evaluation</code> during creation. This value should
-        /// be identical to the value of the <code>Evaluation</code> in the request.
+        /// The ID assigned to the <c>Evaluation</c> during creation. This value should be identical
+        /// to the value of the <c>Evaluation</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

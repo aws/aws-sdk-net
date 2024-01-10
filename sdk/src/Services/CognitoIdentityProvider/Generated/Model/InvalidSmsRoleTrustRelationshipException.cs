@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// This exception is thrown when the trust relationship is not valid for the role provided
-    /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+    /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
     /// or the external ID provided in the role does not match what is provided in the SMS
     /// configuration for the user pool.
     /// </summary>

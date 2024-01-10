@@ -38,9 +38,9 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property BatchDeleteDetectorErrorEntries. 
         /// <para>
-        /// A list of errors associated with the request, or an empty array (<code>[]</code>)
-        /// if there are no errors. Each error entry contains a <code>messageId</code> that helps
-        /// you identify the entry that failed.
+        /// A list of errors associated with the request, or an empty array (<c>[]</c>) if there
+        /// are no errors. Each error entry contains a <c>messageId</c> that helps you identify
+        /// the entry that failed.
         /// </para>
         /// </summary>
         public List<BatchDeleteDetectorErrorEntry> BatchDeleteDetectorErrorEntries

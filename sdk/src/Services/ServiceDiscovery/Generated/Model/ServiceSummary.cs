@@ -125,7 +125,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         ///  <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check.
         /// If you specify settings for a health check, Cloud Map associates the health check
-        /// with the records that you specify in <code>DnsConfig</code>.
+        /// with the records that you specify in <c>DnsConfig</c>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig
@@ -149,10 +149,10 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You can't use a health check that's defined by <code>HealthCheckConfig</code> because
-        /// the resource isn't available over the internet. For example, you can use a custom
-        /// health check when the instance is in an Amazon VPC. (To check the health of resources
-        /// in a VPC, the health checker must also be in the VPC.)
+        /// You can't use a health check that's defined by <c>HealthCheckConfig</c> because the
+        /// resource isn't available over the internet. For example, you can use a custom health
+        /// check when the instance is in an Amazon VPC. (To check the health of resources in
+        /// a VPC, the health checker must also be in the VPC.)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -161,8 +161,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
-        /// or <code>HealthCheckConfig</code> but not both.
+        /// If you specify a health check configuration, you can specify either <c>HealthCheckCustomConfig</c>
+        /// or <c>HealthCheckConfig</c> but not both.
         /// </para>
         ///  </important>
         /// </summary>
@@ -242,13 +242,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <dl> <dt>DNS_HTTP</dt> <dd> 
         /// <para>
-        /// The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code>
+        /// The service instances can be discovered using either DNS queries or the <c>DiscoverInstances</c>
         /// API operation.
         /// </para>
         ///  </dd> <dt>HTTP</dt> <dd> 
         /// <para>
-        /// The service instances can only be discovered using the <code>DiscoverInstances</code>
-        /// API operation.
+        /// The service instances can only be discovered using the <c>DiscoverInstances</c> API
+        /// operation.
         /// </para>
         ///  </dd> <dt>DNS</dt> <dd> 
         /// <para>

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The <code>resourceArn</code>, <code>secretArn</code>, or <code>transactionId</code>
-    /// value can't be found.
+    /// The <c>resourceArn</c>, <c>secretArn</c>, or <c>transactionId</c> value can't be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

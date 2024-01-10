@@ -30,7 +30,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Identifies the name and value of a filter object. This filter is used to limit the
-    /// number and type of DMS objects that are returned for a particular <code>Describe*</code>
+    /// number and type of DMS objects that are returned for a particular <c>Describe*</c>
     /// call or similar operation. Filters are used as an optional parameter for certain API
     /// operations.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the filter as specified for a <code>Describe*</code> or similar operation.
+        /// The name of the filter as specified for a <c>Describe*</c> or similar operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

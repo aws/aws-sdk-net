@@ -30,14 +30,14 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFileSystemPolicy operation.
-    /// Deletes the <code>FileSystemPolicy</code> for the specified file system. The default
-    /// <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted.
-    /// For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
+    /// Deletes the <c>FileSystemPolicy</c> for the specified file system. The default <c>FileSystemPolicy</c>
+    /// goes into effect once the existing policy is deleted. For more information about the
+    /// default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using
     /// Resource-based Policies with EFS</a>.
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:DeleteFileSystemPolicy</code>
+    /// This operation requires permissions for the <c>elasticfilesystem:DeleteFileSystemPolicy</c>
     /// action.
     /// </para>
     /// </summary>
@@ -48,7 +48,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// Specifies the EFS file system for which to delete the <code>FileSystemPolicy</code>.
+        /// Specifies the EFS file system for which to delete the <c>FileSystemPolicy</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

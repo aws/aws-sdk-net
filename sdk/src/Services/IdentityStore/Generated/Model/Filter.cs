@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
-    /// A query filter used by <code>ListUsers</code> and <code>ListGroups</code>. This filter
-    /// object provides the attribute name and attribute value to search users or groups.
+    /// A query filter used by <c>ListUsers</c> and <c>ListGroups</c>. This filter object
+    /// provides the attribute name and attribute value to search users or groups.
     /// </summary>
     public partial class Filter
     {
@@ -41,9 +41,9 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property AttributePath. 
         /// <para>
         /// The attribute path that is used to specify which attribute name to search. Length
-        /// limit is 255 characters. For example, <code>UserName</code> is a valid attribute path
-        /// for the <code>ListUsers</code> API, and <code>DisplayName</code> is a valid attribute
-        /// path for the <code>ListGroups</code> API.
+        /// limit is 255 characters. For example, <c>UserName</c> is a valid attribute path for
+        /// the <c>ListUsers</c> API, and <c>DisplayName</c> is a valid attribute path for the
+        /// <c>ListGroups</c> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

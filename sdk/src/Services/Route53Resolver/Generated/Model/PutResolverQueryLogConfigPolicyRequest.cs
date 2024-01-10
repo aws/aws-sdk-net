@@ -64,25 +64,25 @@ namespace Amazon.Route53Resolver.Model
         /// An Identity and Access Management policy statement that lists the query logging configurations
         /// that you want to share with another Amazon Web Services account and the operations
         /// that you want the account to be able to perform. You can specify the following operations
-        /// in the <code>Actions</code> section of the statement:
+        /// in the <c>Actions</c> section of the statement:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>route53resolver:AssociateResolverQueryLogConfig</code> 
+        ///  <c>route53resolver:AssociateResolverQueryLogConfig</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route53resolver:DisassociateResolverQueryLogConfig</code> 
+        ///  <c>route53resolver:DisassociateResolverQueryLogConfig</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>route53resolver:ListResolverQueryLogConfigs</code> 
+        ///  <c>route53resolver:ListResolverQueryLogConfigs</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In the <code>Resource</code> section of the statement, you specify the ARNs for the
-        /// query logging configurations that you want to share with the account that you specified
-        /// in <code>Arn</code>. 
+        /// In the <c>Resource</c> section of the statement, you specify the ARNs for the query
+        /// logging configurations that you want to share with the account that you specified
+        /// in <c>Arn</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=30000)]

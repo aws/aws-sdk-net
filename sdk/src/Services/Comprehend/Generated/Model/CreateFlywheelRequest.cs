@@ -73,8 +73,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property ActiveModelArn. 
         /// <para>
         /// To associate an existing model with the flywheel, specify the Amazon Resource Number
-        /// (ARN) of the model version. Do not set <code>TaskConfig</code> or <code>ModelType</code>
-        /// if you specify an <code>ActiveModelArn</code>.
+        /// (ARN) of the model version. Do not set <c>TaskConfig</c> or <c>ModelType</c> if you
+        /// specify an <c>ActiveModelArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -190,8 +190,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ModelType. 
         /// <para>
-        /// The model type. You need to set <code>ModelType</code> if you are creating a flywheel
-        /// for a new model.
+        /// The model type. You need to set <c>ModelType</c> if you are creating a flywheel for
+        /// a new model.
         /// </para>
         /// </summary>
         public ModelType ModelType
@@ -227,7 +227,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property TaskConfig. 
         /// <para>
-        /// Configuration about the model associated with the flywheel. You need to set <code>TaskConfig</code>
+        /// Configuration about the model associated with the flywheel. You need to set <c>TaskConfig</c>
         /// if you are creating a flywheel for a new model.
         /// </para>
         /// </summary>

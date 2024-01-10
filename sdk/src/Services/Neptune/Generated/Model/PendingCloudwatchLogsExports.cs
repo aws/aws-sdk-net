@@ -34,8 +34,8 @@ namespace Amazon.Neptune.Model
     /// 
     ///  
     /// <para>
-    /// Valid log types are: <code>audit</code> (to publish audit logs) and <code>slowquery</code>
-    /// (to publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
+    /// Valid log types are: <c>audit</c> (to publish audit logs) and <c>slowquery</c> (to
+    /// publish slow-query logs). See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/cloudwatch-logs.html">Publishing
     /// Neptune logs to Amazon CloudWatch logs</a>.
     /// </para>
     /// </summary>

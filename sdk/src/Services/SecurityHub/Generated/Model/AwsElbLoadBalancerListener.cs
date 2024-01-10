@@ -64,8 +64,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code>
-        /// 
+        /// Valid values: <c>HTTP</c> | <c>HTTPS</c> | <c>TCP</c> | <c>SSL</c> 
         /// </para>
         /// </summary>
         public string InstanceProtocol
@@ -114,8 +113,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>HTTP</code> | <code>HTTPS</code> | <code>TCP</code> | <code>SSL</code>
-        /// 
+        /// Valid values: <c>HTTP</c> | <c>HTTPS</c> | <c>TCP</c> | <c>SSL</c> 
         /// </para>
         /// </summary>
         public string Protocol

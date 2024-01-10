@@ -62,8 +62,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
-    /// queue ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
+    /// If successful, a new <c>GameSessionQueue</c> object is returned with an assigned queue
+    /// ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
     /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html">StartMatchmaking</a>,
     /// reference a queue's name or ARN. 
     /// </para>
@@ -150,7 +150,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FilterConfiguration. 
         /// <para>
         /// A list of locations where a queue is allowed to place new game sessions. Locations
-        /// are specified in the form of Amazon Web Services Region codes, such as <code>us-west-2</code>.
+        /// are specified in the form of Amazon Web Services Region codes, such as <c>us-west-2</c>.
         /// If this parameter is not set, game sessions can be placed in any queue location. 
         /// </para>
         /// </summary>
@@ -277,7 +277,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The maximum time, in seconds, that a new game session placement request remains in
         /// the queue. When a request exceeds this time, the game session placement changes to
-        /// a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.
+        /// a <c>TIMED_OUT</c> status. By default, this property is set to <c>600</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

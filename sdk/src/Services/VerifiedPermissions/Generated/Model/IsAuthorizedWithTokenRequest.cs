@@ -36,19 +36,19 @@ namespace Amazon.VerifiedPermissions.Model
     /// web token (JWT)</a>. The information in the parameters can also define additional
     /// context that Verified Permissions can include in the evaluation. The request is evaluated
     /// against all matching policies in the specified policy store. The result of the decision
-    /// is either <code>Allow</code> or <code>Deny</code>, along with a list of the policies
-    /// that resulted in the decision.
+    /// is either <c>Allow</c> or <c>Deny</c>, along with a list of the policies that resulted
+    /// in the decision.
     /// 
     ///  <important> 
     /// <para>
-    /// If you specify the <code>identityToken</code> parameter, then this operation derives
-    /// the principal from that token. You must not also include that principal in the <code>entities</code>
+    /// If you specify the <c>identityToken</c> parameter, then this operation derives the
+    /// principal from that token. You must not also include that principal in the <c>entities</c>
     /// parameter or the operation fails and reports a conflict between the two entity sources.
     /// </para>
     ///  
     /// <para>
-    /// If you provide only an <code>accessToken</code>, then you can include the entity as
-    /// part of the <code>entities</code> parameter to provide additional attributes.
+    /// If you provide only an <c>accessToken</c>, then you can include the entity as part
+    /// of the <c>entities</c> parameter to provide additional attributes.
     /// </para>
     ///  </important> 
     /// <para>
@@ -81,8 +81,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies an access token for the principal to be authorized. This token is provided
         /// to you by the identity provider (IdP) associated with the specified identity source.
-        /// You must specify either an <code>AccessToken</code>, or an <code>IdentityToken</code>,
-        /// or both.
+        /// You must specify either an <c>AccessToken</c>, or an <c>IdentityToken</c>, or both.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=131072)]
@@ -149,13 +148,12 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>IsAuthorizedWithToken</code> operation takes principal attributes from <b>
-        /// <i>only</i> </b> the <code>identityToken</code> or <code>accessToken</code> passed
-        /// to the operation.
+        /// The <c>IsAuthorizedWithToken</c> operation takes principal attributes from <b> <i>only</i>
+        /// </b> the <c>identityToken</c> or <c>accessToken</c> passed to the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For action entities, you can include only their <code>Identifier</code> and <code>EntityType</code>.
+        /// For action entities, you can include only their <c>Identifier</c> and <c>EntityType</c>.
         /// 
         /// </para>
         ///  </li> </ul> </note>
@@ -177,8 +175,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// <para>
         /// Specifies an identity token for the principal to be authorized. This token is provided
         /// to you by the identity provider (IdP) associated with the specified identity source.
-        /// You must specify either an <code>AccessToken</code> or an <code>IdentityToken</code>,
-        /// or both.
+        /// You must specify either an <c>AccessToken</c> or an <c>IdentityToken</c>, or both.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=131072)]

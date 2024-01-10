@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Environment. 
         /// <para>
         /// The environment variables to set in the Docker container. Each key and value in the
-        /// <code>Environment</code> string to string map can have length of up to 1024. We support
+        /// <c>Environment</c> string to string map can have length of up to 1024. We support
         /// up to 16 entries in the map.
         /// </para>
         /// </summary>
@@ -149,8 +149,8 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// If you are using your own custom algorithm instead of an algorithm provided by SageMaker,
-        /// the inference code must meet SageMaker requirements. SageMaker supports both <code>registry/repository[:tag]</code>
-        /// and <code>registry/repository[@digest]</code> image path formats. For more information,
+        /// the inference code must meet SageMaker requirements. SageMaker supports both <c>registry/repository[:tag]</c>
+        /// and <c>registry/repository[@digest]</c> image path formats. For more information,
         /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
         /// Your Own Algorithms with Amazon SageMaker</a>.
         /// </para>
@@ -191,8 +191,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ModelDataUrl. 
         /// <para>
         /// The Amazon S3 path where the model artifacts, which result from model training, are
-        /// stored. This path must point to a single <code>gzip</code> compressed tar archive
-        /// (<code>.tar.gz</code> suffix).
+        /// stored. This path must point to a single <c>gzip</c> compressed tar archive (<c>.tar.gz</c>
+        /// suffix).
         /// </para>
         ///  <note> 
         /// <para>
@@ -237,7 +237,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The name of a pre-trained machine learning benchmarked by Amazon SageMaker Inference
         /// Recommender model that matches your model. You can find a list of benchmarked models
-        /// by calling <code>ListModelMetadata</code>.
+        /// by calling <c>ListModelMetadata</c>.
         /// </para>
         /// </summary>
         public string NearestModelName

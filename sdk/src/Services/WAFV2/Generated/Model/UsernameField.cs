@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code>
+    /// This data type is used in the <c>RequestInspection</c> and <c>RequestInspectionACFP</c>
     /// data types. 
     /// </para>
     /// </summary>
@@ -60,8 +60,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>,
-        /// the username field specification is <code>/form/username</code>. 
+        /// For example, for the JSON payload <c>{ "form": { "username": "THE_USERNAME" } }</c>,
+        /// the username field specification is <c>/form/username</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,8 +69,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>username1</code>,
-        /// the username field specification is <code>username1</code> 
+        /// For example, for an HTML form with the input element named <c>username1</c>, the username
+        /// field specification is <c>username1</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

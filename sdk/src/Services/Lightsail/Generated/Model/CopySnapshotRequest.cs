@@ -37,15 +37,14 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// When copying a <i>manual snapshot</i>, be sure to define the <code>source region</code>,
-    /// <code>source snapshot name</code>, and <code>target snapshot name</code> parameters.
+    /// When copying a <i>manual snapshot</i>, be sure to define the <c>source region</c>,
+    /// <c>source snapshot name</c>, and <c>target snapshot name</c> parameters.
     /// </para>
     ///  
     /// <para>
-    /// When copying an <i>automatic snapshot</i>, be sure to define the <code>source region</code>,
-    /// <code>source resource name</code>, <code>target snapshot name</code>, and either the
-    /// <code>restore date</code> or the <code>use latest restorable auto snapshot</code>
-    /// parameters.
+    /// When copying an <i>automatic snapshot</i>, be sure to define the <c>source region</c>,
+    /// <c>source resource name</c>, <c>target snapshot name</c>, and either the <c>restore
+    /// date</c> or the <c>use latest restorable auto snapshot</c> parameters.
     /// </para>
     /// </summary>
     public partial class CopySnapshotRequest : AmazonLightsailRequest
@@ -60,7 +59,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RestoreDate. 
         /// <para>
-        /// The date of the source automatic snapshot to copy. Use the <code>get auto snapshots</code>
+        /// The date of the source automatic snapshot to copy. Use the <c>get auto snapshots</c>
         /// operation to identify the dates of the available automatic snapshots.
         /// </para>
         ///  
@@ -69,13 +68,13 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be specified in <code>YYYY-MM-DD</code> format.
+        /// Must be specified in <c>YYYY-MM-DD</c> format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// This parameter cannot be defined together with the <code>use latest restorable auto
-        /// snapshot</code> parameter. The <code>restore date</code> and <code>use latest restorable
-        /// auto snapshot</code> parameters are mutually exclusive.
+        /// This parameter cannot be defined together with the <c>use latest restorable auto snapshot</c>
+        /// parameter. The <c>restore date</c> and <c>use latest restorable auto snapshot</c>
+        /// parameters are mutually exclusive.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -204,9 +203,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// This parameter cannot be defined together with the <code>restore date</code> parameter.
-        /// The <code>use latest restorable auto snapshot</code> and <code>restore date</code>
-        /// parameters are mutually exclusive.
+        /// This parameter cannot be defined together with the <c>restore date</c> parameter.
+        /// The <c>use latest restorable auto snapshot</c> and <c>restore date</c> parameters
+        /// are mutually exclusive.
         /// </para>
         ///  </li> <li> 
         /// <para>

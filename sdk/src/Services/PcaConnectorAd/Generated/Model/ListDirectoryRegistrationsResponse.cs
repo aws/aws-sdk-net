@@ -58,8 +58,8 @@ namespace Amazon.PcaConnectorAd.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Use this parameter when paginating results in a subsequent request after you receive
-        /// a response with truncated results. Set it to the value of the <code>NextToken</code>
-        /// parameter from the response you just received.
+        /// a response with truncated results. Set it to the value of the <c>NextToken</c> parameter
+        /// from the response you just received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

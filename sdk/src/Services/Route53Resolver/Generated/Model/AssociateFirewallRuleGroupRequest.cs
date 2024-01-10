@@ -47,8 +47,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and that allows failed requests to be
-        /// retried without the risk of running the operation twice. <code>CreatorRequestId</code>
-        /// can be any unique string, for example, a date/time stamp. 
+        /// retried without the risk of running the operation twice. <c>CreatorRequestId</c> can
+        /// be any unique string, for example, a date/time stamp. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -88,7 +88,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// If enabled, this setting disallows modification or removal of the association, to
         /// help prevent against accidentally altering DNS firewall protections. When you create
-        /// the association, the default setting is <code>DISABLED</code>. 
+        /// the association, the default setting is <c>DISABLED</c>. 
         /// </para>
         /// </summary>
         public MutationProtectionStatus MutationProtection
@@ -138,7 +138,7 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  
         /// <para>
-        /// The allowed values for <code>Priority</code> are between 100 and 9900.
+        /// The allowed values for <c>Priority</c> are between 100 and 9900.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

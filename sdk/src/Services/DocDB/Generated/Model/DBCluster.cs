@@ -275,10 +275,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Specifies whether this cluster can be deleted. If <code>DeletionProtection</code>
-        /// is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code>
-        /// is disabled. <code>DeletionProtection</code> protects clusters from being accidentally
-        /// deleted.
+        /// Specifies whether this cluster can be deleted. If <c>DeletionProtection</c> is enabled,
+        /// the cluster cannot be deleted unless it is modified and <c>DeletionProtection</c>
+        /// is disabled. <c>DeletionProtection</c> protects clusters from being accidentally deleted.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -405,8 +404,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-        /// the encrypted cluster.
+        /// If <c>StorageEncrypted</c> is <c>true</c>, the KMS key identifier for the encrypted
+        /// cluster.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -515,7 +514,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. 
+        /// backups are enabled, as determined by the <c>BackupRetentionPeriod</c>. 
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -668,11 +667,11 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for storage type - <code>standard | iopt1</code> 
+        /// Valid values for storage type - <c>standard | iopt1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default value is <code>standard </code> 
+        /// Default value is <c>standard </c> 
         /// </para>
         /// </summary>
         public string StorageType

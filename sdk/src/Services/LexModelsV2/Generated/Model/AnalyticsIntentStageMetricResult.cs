@@ -44,24 +44,24 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Count</code> – The number of times the intent stage occurred.
+        ///  <c>Count</c> – The number of times the intent stage occurred.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Success</code> – The number of times the intent stage succeeded.
+        ///  <c>Success</c> – The number of times the intent stage succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failure</code> – The number of times the intent stage failed.
+        ///  <c>Failure</c> – The number of times the intent stage failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Dropped</code> – The number of times the user dropped the intent stage.
+        ///  <c>Dropped</c> – The number of times the user dropped the intent stage.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Retry</code> – The number of times the bot tried to elicit a response from
-        /// the user at this stage.
+        ///  <c>Retry</c> – The number of times the bot tried to elicit a response from the user
+        /// at this stage.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -84,16 +84,16 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Sum</code> – The total count for the category you provide in <code>name</code>.
+        ///  <c>Sum</c> – The total count for the category you provide in <c>name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> – The total count divided by the number of intent stages in
-        /// the category you provide in <code>name</code>.
+        ///  <c>Average</c> – The total count divided by the number of intent stages in the category
+        /// you provide in <c>name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Max</code> – The highest count in the category you provide in <code>name</code>.
+        ///  <c>Max</c> – The highest count in the category you provide in <c>name</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -38,7 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        /// The value of the <code>serverName</code> key in a TLS authorization request.
+        /// The value of the <c>serverName</c> key in a TLS authorization request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=253)]

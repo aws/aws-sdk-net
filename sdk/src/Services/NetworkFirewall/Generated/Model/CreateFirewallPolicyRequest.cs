@@ -75,17 +75,17 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+        /// If set to <c>TRUE</c>, Network Firewall checks whether the request can run successfully,
         /// but doesn't actually make the requested changes. The call returns the value that the
-        /// request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't
-        /// make additions or changes to your resources. This option allows you to make sure that
-        /// you have the required permissions to run the request and that your request parameters
+        /// request would return if you ran it with dry run set to <c>FALSE</c>, but doesn't make
+        /// additions or changes to your resources. This option allows you to make sure that you
+        /// have the required permissions to run the request and that your request parameters
         /// are valid. 
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>FALSE</code>, Network Firewall makes the requested changes to your
-        /// resources. 
+        /// If set to <c>FALSE</c>, Network Firewall makes the requested changes to your resources.
+        /// 
         /// </para>
         /// </summary>
         public bool DryRun

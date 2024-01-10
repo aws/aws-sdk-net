@@ -115,8 +115,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if the destination type is <code>cloud-watch-logs</code>
-        /// and unsupported otherwise.
+        /// This parameter is required if the destination type is <c>cloud-watch-logs</c> and
+        /// unsupported otherwise.
         /// </para>
         /// </summary>
         public string DeliverLogsPermissionArn
@@ -157,7 +157,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the destination type is <code>cloud-watch-logs</code>, specify the ARN of a CloudWatch
+        /// If the destination type is <c>cloud-watch-logs</c>, specify the ARN of a CloudWatch
         /// Logs log group. For example:
         /// </para>
         ///  
@@ -166,11 +166,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, use the <code>LogGroupName</code> parameter.
+        /// Alternatively, use the <c>LogGroupName</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination type is <code>s3</code>, specify the ARN of an S3 bucket. For example:
+        /// If the destination type is <c>s3</c>, specify the ARN of an S3 bucket. For example:
         /// </para>
         ///  
         /// <para>
@@ -178,13 +178,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The subfolder is optional. Note that you can't use <code>AWSLogs</code> as a subfolder
-        /// name.
+        /// The subfolder is optional. Note that you can't use <c>AWSLogs</c> as a subfolder name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the destination type is <code>kinesis-data-firehose</code>, specify the ARN of
-        /// a Kinesis Data Firehose delivery stream. For example:
+        /// If the destination type is <c>kinesis-data-firehose</c>, specify the ARN of a Kinesis
+        /// Data Firehose delivery stream. For example:
         /// </para>
         ///  
         /// <para>
@@ -211,7 +210,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>cloud-watch-logs</code> 
+        /// Default: <c>cloud-watch-logs</c> 
         /// </para>
         /// </summary>
         public LogDestinationType LogDestinationType
@@ -238,7 +237,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the fields using the <code>${field-id}</code> format, separated by spaces.
+        /// Specify the fields using the <c>${field-id}</c> format, separated by spaces.
         /// </para>
         /// </summary>
         public string LogFormat
@@ -261,7 +260,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is valid only if the destination type is <code>cloud-watch-logs</code>.
+        /// This parameter is valid only if the destination type is <c>cloud-watch-logs</c>.
         /// </para>
         /// </summary>
         public string LogGroupName
@@ -309,7 +308,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// The IDs of the resources to monitor. For example, if the resource type is <code>VPC</code>,
+        /// The IDs of the resources to monitor. For example, if the resource type is <c>VPC</c>,
         /// specify the IDs of the VPCs.
         /// </para>
         ///  

@@ -70,16 +70,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>include</code>: List revisions that are target revisions of a deployment group.
+        ///  <c>include</c>: List revisions that are target revisions of a deployment group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>exclude</code>: Do not list revisions that are target revisions of a deployment
-        /// group.
+        ///  <c>exclude</c>: Do not list revisions that are target revisions of a deployment group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ignore</code>: List all revisions.
+        ///  <c>ignore</c>: List all revisions.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -98,8 +97,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier returned from the previous <code>ListApplicationRevisions</code> call.
-        /// It can be used to return the next set of applications in the list.
+        /// An identifier returned from the previous <c>ListApplicationRevisions</c> call. It
+        /// can be used to return the next set of applications in the list.
         /// </para>
         /// </summary>
         public string NextToken
@@ -162,15 +161,15 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>registerTime</code>: Sort by the time the revisions were registered with CodeDeploy.
+        ///  <c>registerTime</c>: Sort by the time the revisions were registered with CodeDeploy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>firstUsedTime</code>: Sort by the time the revisions were first used in a deployment.
+        ///  <c>firstUsedTime</c>: Sort by the time the revisions were first used in a deployment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>lastUsedTime</code>: Sort by the time the revisions were last used in a deployment.
+        ///  <c>lastUsedTime</c>: Sort by the time the revisions were last used in a deployment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -197,11 +196,11 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ascending</code>: ascending order.
+        ///  <c>ascending</c>: ascending order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>descending</code>: descending order.
+        ///  <c>descending</c>: descending order.
         /// </para>
         ///  </li> </ul> 
         /// <para>

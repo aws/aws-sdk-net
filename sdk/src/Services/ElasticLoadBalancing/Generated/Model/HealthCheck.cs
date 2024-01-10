@@ -65,7 +65,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property HealthyThreshold. 
         /// <para>
         /// The number of consecutive health checks successes required before moving the instance
-        /// to the <code>Healthy</code> state.
+        /// to the <c>Healthy</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]
@@ -149,7 +149,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// This value must be less than the <code>Interval</code> value.
+        /// This value must be less than the <c>Interval</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=60)]
@@ -169,7 +169,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property UnhealthyThreshold. 
         /// <para>
         /// The number of consecutive health check failures required before moving the instance
-        /// to the <code>Unhealthy</code> state.
+        /// to the <c>Unhealthy</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=10)]

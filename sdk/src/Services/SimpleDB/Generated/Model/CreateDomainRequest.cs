@@ -30,9 +30,9 @@ namespace Amazon.SimpleDB.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
-    /// The <code>CreateDomain</code> operation creates a new domain. The domain name should
-    /// be unique among the domains associated with the Access Key ID provided in the request.
-    /// The <code>CreateDomain</code> operation may take 10 or more seconds to complete. 
+    /// The <c>CreateDomain</c> operation creates a new domain. The domain name should be
+    /// unique among the domains associated with the Access Key ID provided in the request.
+    /// The <c>CreateDomain</c> operation may take 10 or more seconds to complete. 
     /// 
     ///  
     /// <para>

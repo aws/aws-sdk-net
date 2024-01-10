@@ -53,8 +53,8 @@ namespace Amazon.Account.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The management account can't specify its own <code>AccountId</code>. It must call
-        /// the operation in standalone context by not including the <code>AccountId</code> parameter.
+        /// The management account can't specify its own <c>AccountId</c>. It must call the operation
+        /// in standalone context by not including the <c>AccountId</c> parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.Account.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>).
+        /// Specifies the Region-code for a given Region name (for example, <c>af-south-1</c>).
         /// When you disable a Region, Amazon Web Services performs actions to deactivate that
         /// Region in your account, such as destroying IAM resources in the Region. This process
         /// takes a few minutes for most accounts, but this can take several hours. You cannot

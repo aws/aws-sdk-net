@@ -63,8 +63,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property InstanceLabel. 
         /// <para>
-        ///  A label that identifies whether the instance is an original target (<code>BLUE</code>)
-        /// or a replacement target (<code>GREEN</code>). 
+        ///  A label that identifies whether the instance is an original target (<c>BLUE</c>)
+        /// or a replacement target (<c>GREEN</c>). 
         /// </para>
         /// </summary>
         public TargetLabel InstanceLabel
@@ -154,8 +154,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        ///  The unique ID of a deployment target that has a type of <code>instanceTarget</code>.
-        /// 
+        ///  The unique ID of a deployment target that has a type of <c>instanceTarget</c>. 
         /// </para>
         /// </summary>
         public string TargetId

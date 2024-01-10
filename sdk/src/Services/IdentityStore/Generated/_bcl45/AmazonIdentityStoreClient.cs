@@ -50,7 +50,7 @@ namespace Amazon.IdentityStore
     /// </para>
     ///  <note> 
     /// <para>
-    /// IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
+    /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces.
     /// </para>
     ///  </note>
     /// </summary>
@@ -391,7 +391,7 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// Creates a relationship between a member and a group. The following identifiers must
-        /// be specified: <code>GroupId</code>, <code>IdentityStoreId</code>, and <code>MemberId</code>.
+        /// be specified: <c>GroupId</c>, <c>IdentityStoreId</c>, and <c>MemberId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroupMembership service method.</param>
         /// 
@@ -443,7 +443,7 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// Creates a relationship between a member and a group. The following identifiers must
-        /// be specified: <code>GroupId</code>, <code>IdentityStoreId</code>, and <code>MemberId</code>.
+        /// be specified: <c>GroupId</c>, <c>IdentityStoreId</c>, and <c>MemberId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGroupMembership service method.</param>
         /// <param name="cancellationToken">
@@ -610,7 +610,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Delete a group within an identity store given <code>GroupId</code>.
+        /// Delete a group within an identity store given <c>GroupId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// 
@@ -657,7 +657,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Delete a group within an identity store given <code>GroupId</code>.
+        /// Delete a group within an identity store given <c>GroupId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
         /// <param name="cancellationToken">
@@ -711,7 +711,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Delete a membership within a group given <code>MembershipId</code>.
+        /// Delete a membership within a group given <c>MembershipId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupMembership service method.</param>
         /// 
@@ -758,7 +758,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Delete a membership within a group given <code>MembershipId</code>.
+        /// Delete a membership within a group given <c>MembershipId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroupMembership service method.</param>
         /// <param name="cancellationToken">
@@ -812,7 +812,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Deletes a user within an identity store given <code>UserId</code>.
+        /// Deletes a user within an identity store given <c>UserId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -859,7 +859,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Deletes a user within an identity store given <code>UserId</code>.
+        /// Deletes a user within an identity store given <c>UserId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// <param name="cancellationToken">
@@ -913,8 +913,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the group metadata and attributes from <code>GroupId</code> in an identity
-        /// store.
+        /// Retrieves the group metadata and attributes from <c>GroupId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -955,8 +954,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the group metadata and attributes from <code>GroupId</code> in an identity
-        /// store.
+        /// Retrieves the group metadata and attributes from <c>GroupId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1004,8 +1002,8 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves membership metadata and attributes from <code>MembershipId</code> in an
-        /// identity store.
+        /// Retrieves membership metadata and attributes from <c>MembershipId</c> in an identity
+        /// store.
         /// 
         ///  <note> 
         /// <para>
@@ -1046,8 +1044,8 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves membership metadata and attributes from <code>MembershipId</code> in an
-        /// identity store.
+        /// Retrieves membership metadata and attributes from <c>MembershipId</c> in an identity
+        /// store.
         /// 
         ///  <note> 
         /// <para>
@@ -1095,8 +1093,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the user metadata and attributes from the <code>UserId</code> in an identity
-        /// store.
+        /// Retrieves the user metadata and attributes from the <c>UserId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1137,8 +1134,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the user metadata and attributes from the <code>UserId</code> in an identity
-        /// store.
+        /// Retrieves the user metadata and attributes from the <c>UserId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1186,7 +1182,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves <code>GroupId</code> in an identity store.
+        /// Retrieves <c>GroupId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1227,7 +1223,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves <code>GroupId</code> in an identity store.
+        /// Retrieves <c>GroupId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1275,7 +1271,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the <code>MembershipId</code> in an identity store.
+        /// Retrieves the <c>MembershipId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1316,7 +1312,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the <code>MembershipId</code> in an identity store.
+        /// Retrieves the <c>MembershipId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1364,7 +1360,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the <code>UserId</code> in an identity store.
+        /// Retrieves the <c>UserId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1405,7 +1401,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Retrieves the <code>UserId</code> in an identity store.
+        /// Retrieves the <c>UserId</c> in an identity store.
         /// 
         ///  <note> 
         /// <para>
@@ -1544,7 +1540,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code>
+        /// For the specified group in the specified identity store, returns the list of all <c>GroupMembership</c>
         /// objects and returns results in paginated form.
         /// 
         ///  <note> 
@@ -1586,7 +1582,7 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// For the specified group in the specified identity store, returns the list of all <code>GroupMembership</code>
+        /// For the specified group in the specified identity store, returns the list of all <c>GroupMembership</c>
         /// objects and returns results in paginated form.
         /// 
         ///  <note> 
@@ -1636,7 +1632,7 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// For the specified member in the specified identity store, returns the list of all
-        /// <code>GroupMembership</code> objects and returns results in paginated form.
+        /// <c>GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
@@ -1678,7 +1674,7 @@ namespace Amazon.IdentityStore
 
         /// <summary>
         /// For the specified member in the specified identity store, returns the list of all
-        /// <code>GroupMembership</code> objects and returns results in paginated form.
+        /// <c>GroupMembership</c> objects and returns results in paginated form.
         /// 
         ///  <note> 
         /// <para>
@@ -1726,9 +1722,9 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code>
-        /// objects. Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute
-        /// is deprecated. Instead, use the <code>GetGroupId</code> API action.
+        /// Lists all groups in the identity store. Returns a paginated list of complete <c>Group</c>
+        /// objects. Filtering for a <c>Group</c> by the <c>DisplayName</c> attribute is deprecated.
+        /// Instead, use the <c>GetGroupId</c> API action.
         /// 
         ///  <note> 
         /// <para>
@@ -1769,9 +1765,9 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Lists all groups in the identity store. Returns a paginated list of complete <code>Group</code>
-        /// objects. Filtering for a <code>Group</code> by the <code>DisplayName</code> attribute
-        /// is deprecated. Instead, use the <code>GetGroupId</code> API action.
+        /// Lists all groups in the identity store. Returns a paginated list of complete <c>Group</c>
+        /// objects. Filtering for a <c>Group</c> by the <c>DisplayName</c> attribute is deprecated.
+        /// Instead, use the <c>GetGroupId</c> API action.
         /// 
         ///  <note> 
         /// <para>
@@ -1819,9 +1815,9 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Lists all users in the identity store. Returns a paginated list of complete <code>User</code>
-        /// objects. Filtering for a <code>User</code> by the <code>UserName</code> attribute
-        /// is deprecated. Instead, use the <code>GetUserId</code> API action.
+        /// Lists all users in the identity store. Returns a paginated list of complete <c>User</c>
+        /// objects. Filtering for a <c>User</c> by the <c>UserName</c> attribute is deprecated.
+        /// Instead, use the <c>GetUserId</c> API action.
         /// 
         ///  <note> 
         /// <para>
@@ -1862,9 +1858,9 @@ namespace Amazon.IdentityStore
 
 
         /// <summary>
-        /// Lists all users in the identity store. Returns a paginated list of complete <code>User</code>
-        /// objects. Filtering for a <code>User</code> by the <code>UserName</code> attribute
-        /// is deprecated. Instead, use the <code>GetUserId</code> API action.
+        /// Lists all users in the identity store. Returns a paginated list of complete <c>User</c>
+        /// objects. Filtering for a <c>User</c> by the <c>UserName</c> attribute is deprecated.
+        /// Instead, use the <c>GetUserId</c> API action.
         /// 
         ///  <note> 
         /// <para>

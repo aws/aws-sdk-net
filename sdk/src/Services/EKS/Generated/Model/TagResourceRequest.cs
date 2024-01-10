@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associates the specified tags to an Amazon EKS resource with the specified <code>resourceArn</code>.
+    /// Associates the specified tags to an Amazon EKS resource with the specified <c>resourceArn</c>.
     /// If existing tags on a resource are not specified in the request parameters, they aren't
     /// changed. When a resource is deleted, the tags associated with that resource are also
     /// deleted. Tags that you create for Amazon EKS resources don't propagate to any other

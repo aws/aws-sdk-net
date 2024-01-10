@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Dimension</code>: The number of elements in your vector.
+        ///  <c>Dimension</c>: The number of elements in your vector.
         /// </para>
         ///  </li> </ul>
         /// </summary>

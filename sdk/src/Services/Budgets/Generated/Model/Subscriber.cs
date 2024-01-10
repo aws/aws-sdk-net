@@ -38,11 +38,11 @@ namespace Amazon.Budgets.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A <code>subscriptionType</code> of <code>EMAIL</code> 
+    /// A <c>subscriptionType</c> of <c>EMAIL</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An <code>address</code> of <code>example@example.com</code> 
+    /// An <c>address</c> of <c>example@example.com</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -59,8 +59,7 @@ namespace Amazon.Budgets.Model
         /// </para>
         ///  
         /// <para>
-        /// When you create a subscriber, the value of <code>Address</code> can't contain line
-        /// breaks.
+        /// When you create a subscriber, the value of <c>Address</c> can't contain line breaks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2147483647)]

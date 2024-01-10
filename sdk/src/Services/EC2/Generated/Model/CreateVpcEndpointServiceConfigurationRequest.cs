@@ -167,7 +167,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SupportedIpAddressTypes. 
         /// <para>
-        /// The supported IP address types. The possible values are <code>ipv4</code> and <code>ipv6</code>.
+        /// The supported IP address types. The possible values are <c>ipv4</c> and <c>ipv6</c>.
         /// </para>
         /// </summary>
         public List<string> SupportedIpAddressTypes

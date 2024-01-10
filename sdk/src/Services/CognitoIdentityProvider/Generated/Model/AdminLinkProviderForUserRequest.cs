@@ -30,12 +30,12 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the AdminLinkProviderForUser operation.
-    /// Links an existing user account in a user pool (<code>DestinationUser</code>) to an
-    /// identity from an external IdP (<code>SourceUser</code>) based on a specified attribute
-    /// name and value from the external IdP. This allows you to create a link from the existing
-    /// user account to an external federated user identity that has not yet been used to
-    /// sign in. You can then use the federated user identity to sign in as the existing user
-    /// account. 
+    /// Links an existing user account in a user pool (<c>DestinationUser</c>) to an identity
+    /// from an external IdP (<c>SourceUser</c>) based on a specified attribute name and value
+    /// from the external IdP. This allows you to create a link from the existing user account
+    /// to an external federated user identity that has not yet been used to sign in. You
+    /// can then use the federated user identity to sign in as the existing user account.
+    /// 
     /// 
     ///  
     /// <para>
@@ -92,18 +92,18 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For a native username + password user, the <code>ProviderAttributeValue</code> for
-        /// the <code>DestinationUser</code> should be the username in the user pool. For a federated
-        /// user, it should be the provider-specific <code>user_id</code>.
+        /// For a native username + password user, the <c>ProviderAttributeValue</c> for the <c>DestinationUser</c>
+        /// should be the username in the user pool. For a federated user, it should be the provider-specific
+        /// <c>user_id</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ProviderAttributeName</code> of the <code>DestinationUser</code> is ignored.
+        /// The <c>ProviderAttributeName</c> of the <c>DestinationUser</c> is ignored.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ProviderName</code> should be set to <code>Cognito</code> for users in Cognito
-        /// user pools.
+        /// The <c>ProviderName</c> should be set to <c>Cognito</c> for users in Cognito user
+        /// pools.
         /// </para>
         ///  <important> 
         /// <para>
@@ -134,35 +134,32 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>SourceUser</code> is using a federated social IdP, such as Facebook,
-        /// Google, or Login with Amazon, you must set the <code>ProviderAttributeName</code>
-        /// to <code>Cognito_Subject</code>. For social IdPs, the <code>ProviderName</code> will
-        /// be <code>Facebook</code>, <code>Google</code>, or <code>LoginWithAmazon</code>, and
-        /// Amazon Cognito will automatically parse the Facebook, Google, and Login with Amazon
-        /// tokens for <code>id</code>, <code>sub</code>, and <code>user_id</code>, respectively.
-        /// The <code>ProviderAttributeValue</code> for the user must be the same value as the
-        /// <code>id</code>, <code>sub</code>, or <code>user_id</code> value found in the social
-        /// IdP token.
+        /// If the <c>SourceUser</c> is using a federated social IdP, such as Facebook, Google,
+        /// or Login with Amazon, you must set the <c>ProviderAttributeName</c> to <c>Cognito_Subject</c>.
+        /// For social IdPs, the <c>ProviderName</c> will be <c>Facebook</c>, <c>Google</c>, or
+        /// <c>LoginWithAmazon</c>, and Amazon Cognito will automatically parse the Facebook,
+        /// Google, and Login with Amazon tokens for <c>id</c>, <c>sub</c>, and <c>user_id</c>,
+        /// respectively. The <c>ProviderAttributeValue</c> for the user must be the same value
+        /// as the <c>id</c>, <c>sub</c>, or <c>user_id</c> value found in the social IdP token.
         /// </para>
         ///   
         /// <para>
-        /// For OIDC, the <code>ProviderAttributeName</code> can be any value that matches a claim
-        /// in the ID token, or that your app retrieves from the <code>userInfo</code> endpoint.
-        /// You must map the claim to a user pool attribute in your IdP configuration, and set
-        /// the user pool attribute name as the value of <code>ProviderAttributeName</code> in
-        /// your <code>AdminLinkProviderForUser</code> request.
-        /// </para>
-        ///  
-        /// <para>
-        /// For SAML, the <code>ProviderAttributeName</code> can be any value that matches a claim
-        /// in the SAML assertion. To link SAML users based on the subject of the SAML assertion,
-        /// map the subject to a claim through the SAML IdP and set that claim name as the value
-        /// of <code>ProviderAttributeName</code> in your <code>AdminLinkProviderForUser</code>
+        /// For OIDC, the <c>ProviderAttributeName</c> can be any value that matches a claim in
+        /// the ID token, or that your app retrieves from the <c>userInfo</c> endpoint. You must
+        /// map the claim to a user pool attribute in your IdP configuration, and set the user
+        /// pool attribute name as the value of <c>ProviderAttributeName</c> in your <c>AdminLinkProviderForUser</c>
         /// request.
         /// </para>
         ///  
         /// <para>
-        /// For both OIDC and SAML users, when you set <code>ProviderAttributeName</code> to <code>Cognito_Subject</code>,
+        /// For SAML, the <c>ProviderAttributeName</c> can be any value that matches a claim in
+        /// the SAML assertion. To link SAML users based on the subject of the SAML assertion,
+        /// map the subject to a claim through the SAML IdP and set that claim name as the value
+        /// of <c>ProviderAttributeName</c> in your <c>AdminLinkProviderForUser</c> request.
+        /// </para>
+        ///  
+        /// <para>
+        /// For both OIDC and SAML users, when you set <c>ProviderAttributeName</c> to <c>Cognito_Subject</c>,
         /// Amazon Cognito will automatically parse the default unique identifier found in the
         /// subject from the IdP token.
         /// </para>

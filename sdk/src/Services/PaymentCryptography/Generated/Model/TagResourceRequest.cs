@@ -72,7 +72,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The <code>KeyARN</code> of the key whose tags are being updated.
+        /// The <c>KeyARN</c> of the key whose tags are being updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

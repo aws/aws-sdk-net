@@ -38,7 +38,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property SuggestionsList. 
         /// <para>
-        /// A list of possible domain names. If you specified <code>true</code> for <code>OnlyAvailable</code>
+        /// A list of possible domain names. If you specified <c>true</c> for <c>OnlyAvailable</c>
         /// in the request, the list contains only domains that are available for registration.
         /// </para>
         /// </summary>

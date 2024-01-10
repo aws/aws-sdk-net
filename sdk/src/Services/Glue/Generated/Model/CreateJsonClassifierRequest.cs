@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a JSON classifier for <code>CreateClassifier</code> to create.
+    /// Specifies a JSON classifier for <c>CreateClassifier</c> to create.
     /// </summary>
     public partial class CreateJsonClassifierRequest
     {
@@ -39,8 +39,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JsonPath. 
         /// <para>
-        /// A <code>JsonPath</code> string defining the JSON data for the classifier to classify.
-        /// Glue supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
+        /// A <c>JsonPath</c> string defining the JSON data for the classifier to classify. Glue
+        /// supports a subset of JsonPath, as described in <a href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
         /// JsonPath Custom Classifiers</a>.
         /// </para>
         /// </summary>

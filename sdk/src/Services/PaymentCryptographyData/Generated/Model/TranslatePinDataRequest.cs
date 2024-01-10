@@ -41,10 +41,10 @@ namespace Amazon.PaymentCryptographyData.Model
     /// PIN block data leaving Amazon Web Services Payment Cryptography. The encryption key
     /// transformation can be from PEK (Pin Encryption Key) to BDK (Base Derivation Key) for
     /// DUKPT or from BDK for DUKPT to PEK. Amazon Web Services Payment Cryptography supports
-    /// <code>TDES</code> and <code>AES</code> key derivation type for DUKPT tranlations.
-    /// You can use this operation for P2PE (Point to Point Encryption) use cases where the
-    /// encryption keys should change but the processing system either does not need to, or
-    /// is not permitted to, decrypt the data.
+    /// <c>TDES</c> and <c>AES</c> key derivation type for DUKPT tranlations. You can use
+    /// this operation for P2PE (Point to Point Encryption) use cases where the encryption
+    /// keys should change but the processing system either does not need to, or is not permitted
+    /// to, decrypt the data.
     /// </para>
     ///  
     /// <para>
@@ -135,8 +135,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property IncomingKeyIdentifier. 
         /// <para>
-        /// The <code>keyARN</code> of the encryption key under which incoming PIN block data
-        /// is encrypted. This key type can be PEK or BDK.
+        /// The <c>keyARN</c> of the encryption key under which incoming PIN block data is encrypted.
+        /// This key type can be PEK or BDK.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]
@@ -194,8 +194,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property OutgoingKeyIdentifier. 
         /// <para>
-        /// The <code>keyARN</code> of the encryption key for encrypting outgoing PIN block data.
-        /// This key type can be PEK or BDK.
+        /// The <c>keyARN</c> of the encryption key for encrypting outgoing PIN block data. This
+        /// key type can be PEK or BDK.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]

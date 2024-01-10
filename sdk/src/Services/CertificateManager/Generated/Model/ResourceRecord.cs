@@ -60,7 +60,7 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of DNS record. Currently this can be <code>CNAME</code>.
+        /// The type of DNS record. Currently this can be <c>CNAME</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

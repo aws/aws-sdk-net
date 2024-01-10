@@ -155,7 +155,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Single error code. For this exception the value will be <code>invalid_request</code>.
+        /// Single error code. For this exception the value will be <c>invalid_request</c>.
         /// </para>
         /// </summary>
         public string Error

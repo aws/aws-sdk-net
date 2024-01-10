@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The tags to be used for row-level security (RLS). Make sure that the relevant datasets
         /// have RLS tags configured before you start a snapshot export job. You can configure
-        /// the RLS tags of a dataset with a <code>DataSet$RowLevelPermissionTagConfiguration</code>
+        /// the RLS tags of a dataset with a <c>DataSet$RowLevelPermissionTagConfiguration</c>
         /// API call.
         /// </para>
         ///  

@@ -374,7 +374,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property WorkerType. 
         /// <para>
-        /// The type of workers being used for generating stats. The default is <code>g.1x</code>.
+        /// The type of workers being used for generating stats. The default is <c>g.1x</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

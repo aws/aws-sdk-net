@@ -42,7 +42,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// Use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetDNSSEC.html">GetDNSSEC</a>
-    /// to verify that the KSK is in an <code>INACTIVE</code> status.
+    /// to verify that the KSK is in an <c>INACTIVE</c> status.
     /// </para>
     /// </summary>
     public partial class DeleteKeySigningKeyRequest : AmazonRoute53Request

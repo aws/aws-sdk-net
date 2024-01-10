@@ -33,8 +33,7 @@ namespace Amazon.B2bi.Model
     /// to search for and group a resource for various purposes. You can apply tags to capabilities,
     /// partnerships, profiles and transformers. A tag key can take more than one value. For
     /// example, to group capabilities for accounting purposes, you might create a tag called
-    /// <code>Group</code> and assign the values <code>Research</code> and <code>Accounting</code>
-    /// to that group.
+    /// <c>Group</c> and assign the values <c>Research</c> and <c>Accounting</c> to that group.
     /// </summary>
     public partial class Tag
     {

@@ -34,7 +34,7 @@ namespace Amazon.Connect.Model
     /// 
     ///  <important> 
     /// <para>
-    /// We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>.
+    /// We strongly recommend limiting who has the ability to invoke <c>UpdateUserIdentityInfo</c>.
     /// Someone with that ability can change the login credentials of other users by changing
     /// their email address. This poses a security risk to your organization. They can change
     /// the email address of a user to the attacker's email address, and then reset the password

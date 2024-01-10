@@ -126,7 +126,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// This response includes this object for normal asset properties. If you describe an
         /// asset property in a composite model, this response includes the asset property information
-        /// in <code>compositeModel</code>.
+        /// in <c>compositeModel</c>.
         /// </para>
         /// </summary>
         public Property AssetProperty

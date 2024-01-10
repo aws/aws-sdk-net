@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>RelativeDatesFilter</code> filters relative dates values.
+    /// A <c>RelativeDatesFilter</c> filters relative dates values.
     /// </summary>
     public partial class RelativeDatesFilter
     {
@@ -144,15 +144,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_VALUES</code>: Include null values in filtered results.
+        ///  <c>ALL_VALUES</c>: Include null values in filtered results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NULLS_ONLY</code>: Only include null values in filtered results.
+        ///  <c>NULLS_ONLY</c>: Only include null values in filtered results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+        ///  <c>NON_NULLS_ONLY</c>: Exclude null values from filtered results.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -195,23 +195,23 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PREVIOUS</code> 
+        ///  <c>PREVIOUS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>THIS</code> 
+        ///  <c>THIS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LAST</code> 
+        ///  <c>LAST</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOW</code> 
+        ///  <c>NOW</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEXT</code> 
+        ///  <c>NEXT</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -249,7 +249,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TimeGranularity. 
         /// <para>
-        /// The level of time precision that is used to aggregate <code>DateTime</code> values.
+        /// The level of time precision that is used to aggregate <c>DateTime</c> values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

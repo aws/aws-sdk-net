@@ -39,8 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageSummaryList. 
         /// <para>
-        /// An array of <code>ModelPackageSummary</code> objects, each of which lists a model
-        /// package.
+        /// An array of <c>ModelPackageSummary</c> objects, each of which lists a model package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

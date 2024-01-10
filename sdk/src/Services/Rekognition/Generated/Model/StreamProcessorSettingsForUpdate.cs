@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// The stream processor settings that you want to update. <code>ConnectedHome</code>
-    /// settings can be updated to detect different labels with a different minimum confidence.
+    /// The stream processor settings that you want to update. <c>ConnectedHome</c> settings
+    /// can be updated to detect different labels with a different minimum confidence.
     /// </summary>
     public partial class StreamProcessorSettingsForUpdate
     {

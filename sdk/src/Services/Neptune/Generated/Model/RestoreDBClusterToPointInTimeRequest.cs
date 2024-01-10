@@ -31,7 +31,7 @@ namespace Amazon.Neptune.Model
     /// <summary>
     /// Container for the parameters to the RestoreDBClusterToPointInTime operation.
     /// Restores a DB cluster to an arbitrary point in time. Users can restore to any point
-    /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
+    /// in time before <c>LatestRestorableTime</c> for up to <c>BackupRetentionPeriod</c>
     /// days. The target DB cluster is created from the source DB cluster with the same configuration
     /// as the original DB cluster, except that the new DB cluster is created with the default
     /// DB security group.
@@ -40,9 +40,9 @@ namespace Amazon.Neptune.Model
     /// <para>
     /// This action only restores the DB cluster, not the DB instances for that DB cluster.
     /// You must invoke the <a>CreateDBInstance</a> action to create DB instances for the
-    /// restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
-    /// You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code>
-    /// action has completed and the DB cluster is available.
+    /// restored DB cluster, specifying the identifier of the restored DB cluster in <c>DBClusterIdentifier</c>.
+    /// You can create DB instances only after the <c>RestoreDBClusterToPointInTime</c> action
+    /// has completed and the DB cluster is available.
     /// </para>
     ///  </note>
     /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <c>mySubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -201,7 +201,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -233,11 +233,11 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// You can restore to a new DB cluster and encrypt the new DB cluster with a KMS key
         /// that is different than the KMS key used to encrypt the source DB cluster. The new
-        /// DB cluster is encrypted with the KMS key identified by the <code>KmsKeyId</code> parameter.
+        /// DB cluster is encrypted with the KMS key identified by the <c>KmsKeyId</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
+        /// If you do not specify a value for the <c>KmsKeyId</c> parameter, then the following
         /// will occur:
         /// </para>
         ///  <ul> <li> 
@@ -251,8 +251,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>DBClusterIdentifier</code> refers to a DB cluster that is not encrypted,
-        /// then the restore request is rejected.
+        /// If <c>DBClusterIdentifier</c> refers to a DB cluster that is not encrypted, then the
+        /// restore request is rejected.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -292,7 +292,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code> 
+        /// Constraints: Value must be <c>1150-65535</c> 
         /// </para>
         ///  
         /// <para>
@@ -330,20 +330,19 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+        /// Must be specified if <c>UseLatestRestorableTime</c> parameter is not provided
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+        /// Cannot be specified if <c>UseLatestRestorableTime</c> parameter is true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
-        /// 
+        /// Cannot be specified if <c>RestoreType</c> parameter is <c>copy-on-write</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>2015-03-07T23:45:00Z</code> 
+        /// Example: <c>2015-03-07T23:45:00Z</c> 
         /// </para>
         /// </summary>
         public DateTime RestoreToTimeUtc
@@ -365,18 +364,18 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>full-copy</code> - The new DB cluster is restored as a full copy of the source
-        /// DB cluster.
+        ///  <c>full-copy</c> - The new DB cluster is restored as a full copy of the source DB
+        /// cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>copy-on-write</code> - The new DB cluster is restored as a clone of the source
-        /// DB cluster.
+        ///  <c>copy-on-write</c> - The new DB cluster is restored as a clone of the source DB
+        /// cluster.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
-        /// restored as a full copy of the source DB cluster.
+        /// If you don't specify a <c>RestoreType</c> value, then the new DB cluster is restored
+        /// as a full copy of the source DB cluster.
         /// </para>
         /// </summary>
         public string RestoreType
@@ -449,11 +448,11 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard</code>, <code>iopt1</code> 
+        /// Valid values: <c>standard</c>, <c>iopt1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> 
+        /// Default: <c>standard</c> 
         /// </para>
         /// </summary>
         public string StorageType
@@ -489,16 +488,16 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        /// A value that is set to <code>true</code> to restore the DB cluster to the latest restorable
-        /// backup time, and <code>false</code> otherwise.
+        /// A value that is set to <c>true</c> to restore the DB cluster to the latest restorable
+        /// backup time, and <c>false</c> otherwise.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Cannot be specified if <code>RestoreToTime</code> parameter is provided.
+        /// Constraints: Cannot be specified if <c>RestoreToTime</c> parameter is provided.
         /// </para>
         /// </summary>
         public bool UseLatestRestorableTime
@@ -562,20 +561,19 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Must be specified if <code>UseLatestRestorableTime</code> parameter is not provided
+        /// Must be specified if <c>UseLatestRestorableTime</c> parameter is not provided
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be specified if <code>UseLatestRestorableTime</code> parameter is true
+        /// Cannot be specified if <c>UseLatestRestorableTime</c> parameter is true
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be specified if <code>RestoreType</code> parameter is <code>copy-on-write</code>
-        /// 
+        /// Cannot be specified if <c>RestoreType</c> parameter is <c>copy-on-write</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>2015-03-07T23:45:00Z</code> 
+        /// Example: <c>2015-03-07T23:45:00Z</c> 
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

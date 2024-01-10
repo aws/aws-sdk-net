@@ -142,7 +142,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        ///  The type of engine for the endpoint, depending on the <code>EndpointType</code> value.
+        ///  The type of engine for the endpoint, depending on the <c>EndpointType</c> value.
         /// 
         /// </para>
         /// </summary>
@@ -198,9 +198,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         ///  An DMS key identifier that is used to encrypt the connection parameters for the endpoint.
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
-        /// your default encryption key. KMS creates the default encryption key for your Amazon
-        /// Web Services account. Your Amazon Web Services account has a different default encryption
+        /// If you don't specify a value for the <c>KmsKeyId</c> parameter, then DMS uses your
+        /// default encryption key. KMS creates the default encryption key for your Amazon Web
+        /// Services account. Your Amazon Web Services account has a different default encryption
         /// key for each Amazon Web Services Region.
         /// </para>
         /// </summary>

@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// Provides summaries of all notebook executions. You can filter the list based on multiple
     /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
     /// executions and a marker to track the paging of a longer notebook execution list across
-    /// multiple <code>ListNotebookExecutions</code> calls.
+    /// multiple <c>ListNotebookExecutions</c> calls.
     /// </summary>
     public partial class ListNotebookExecutionsRequest : AmazonElasticMapReduceRequest
     {
@@ -104,9 +104,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The pagination token, returned by a previous <code>ListNotebookExecutions</code> call,
-        /// that indicates the start of the list for this <code>ListNotebookExecutions</code>
-        /// call.
+        /// The pagination token, returned by a previous <c>ListNotebookExecutions</c> call, that
+        /// indicates the start of the list for this <c>ListNotebookExecutions</c> call.
         /// </para>
         /// </summary>
         public string Marker
@@ -128,47 +127,46 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>START_PENDING</code> indicates that the cluster has received the execution
-        /// request but execution has not begun.
+        ///  <c>START_PENDING</c> indicates that the cluster has received the execution request
+        /// but execution has not begun.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STARTING</code> indicates that the execution is starting on the cluster.
+        ///  <c>STARTING</c> indicates that the execution is starting on the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code> indicates that the execution is being processed by the cluster.
+        ///  <c>RUNNING</c> indicates that the execution is being processed by the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FINISHING</code> indicates that execution processing is in the final stages.
+        ///  <c>FINISHING</c> indicates that execution processing is in the final stages.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FINISHED</code> indicates that the execution has completed without error.
+        ///  <c>FINISHED</c> indicates that the execution has completed without error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILING</code> indicates that the execution is failing and will not finish
-        /// successfully.
+        ///  <c>FAILING</c> indicates that the execution is failing and will not finish successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> indicates that the execution failed.
+        ///  <c>FAILED</c> indicates that the execution failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOP_PENDING</code> indicates that the cluster has received a <code>StopNotebookExecution</code>
+        ///  <c>STOP_PENDING</c> indicates that the cluster has received a <c>StopNotebookExecution</c>
         /// request and the stop is pending.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPING</code> indicates that the cluster is in the process of stopping the
-        /// execution as a result of a <code>StopNotebookExecution</code> request.
+        ///  <c>STOPPING</c> indicates that the cluster is in the process of stopping the execution
+        /// as a result of a <c>StopNotebookExecution</c> request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code> indicates that the execution stopped because of a <code>StopNotebookExecution</code>
+        ///  <c>STOPPED</c> indicates that the execution stopped because of a <c>StopNotebookExecution</c>
         /// request.
         /// </para>
         ///  </li> </ul>

@@ -38,7 +38,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property WebACLSummary. 
         /// <para>
-        /// Information about the web ACL that you specified in the <code>GetWebACLForResource</code>
+        /// Information about the web ACL that you specified in the <c>GetWebACLForResource</c>
         /// request. If there is no associated resource, a null WebACLSummary is returned.
         /// </para>
         /// </summary>

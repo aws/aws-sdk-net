@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Used to paginate the next page of results if specified in the next <code>ListReleaseLabels</code>
+        /// Used to paginate the next page of results if specified in the next <c>ListReleaseLabels</c>
         /// request.
         /// </para>
         /// </summary>

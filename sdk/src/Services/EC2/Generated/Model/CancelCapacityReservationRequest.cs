@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the CancelCapacityReservation operation.
     /// Cancels the specified Capacity Reservation, releases the reserved capacity, and changes
-    /// the Capacity Reservation's state to <code>cancelled</code>.
+    /// the Capacity Reservation's state to <c>cancelled</c>.
     /// 
     ///  
     /// <para>

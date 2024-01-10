@@ -43,11 +43,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ActivityStatus. 
         /// <para>
-        /// The progress of the Spot Fleet request. If there is an error, the status is <code>error</code>.
-        /// After all requests are placed, the status is <code>pending_fulfillment</code>. If
-        /// the size of the fleet is equal to or greater than its target capacity, the status
-        /// is <code>fulfilled</code>. If the size of the fleet is decreased, the status is <code>pending_termination</code>
-        /// while Spot Instances are terminating.
+        /// The progress of the Spot Fleet request. If there is an error, the status is <c>error</c>.
+        /// After all requests are placed, the status is <c>pending_fulfillment</c>. If the size
+        /// of the fleet is equal to or greater than its target capacity, the status is <c>fulfilled</c>.
+        /// If the size of the fleet is decreased, the status is <c>pending_termination</c> while
+        /// Spot Instances are terminating.
         /// </para>
         /// </summary>
         public ActivityStatus ActivityStatus

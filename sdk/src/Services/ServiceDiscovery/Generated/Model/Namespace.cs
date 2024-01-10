@@ -67,9 +67,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property CreateDate. 
         /// <para>
         /// The date that the namespace was created, in Unix date/time format and Coordinated
-        /// Universal Time (UTC). The value of <code>CreateDate</code> is accurate to milliseconds.
-        /// For example, the value <code>1516925490.087</code> represents Friday, January 26,
-        /// 2018 12:11:30.087 AM.
+        /// Universal Time (UTC). The value of <c>CreateDate</c> is accurate to milliseconds.
+        /// For example, the value <c>1516925490.087</c> represents Friday, January 26, 2018 12:11:30.087
+        /// AM.
         /// </para>
         /// </summary>
         public DateTime CreateDate
@@ -145,7 +145,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the namespace, such as <code>example.com</code>.
+        /// The name of the namespace, such as <c>example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -205,17 +205,17 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <dl> <dt>HTTP</dt> <dd> 
         /// <para>
-        /// Instances can be discovered only programmatically, using the Cloud Map <code>DiscoverInstances</code>
+        /// Instances can be discovered only programmatically, using the Cloud Map <c>DiscoverInstances</c>
         /// API.
         /// </para>
         ///  </dd> <dt>DNS_PUBLIC</dt> <dd> 
         /// <para>
-        /// Instances can be discovered using public DNS queries and using the <code>DiscoverInstances</code>
+        /// Instances can be discovered using public DNS queries and using the <c>DiscoverInstances</c>
         /// API.
         /// </para>
         ///  </dd> <dt>DNS_PRIVATE</dt> <dd> 
         /// <para>
-        /// Instances can be discovered using DNS queries in VPCs and using the <code>DiscoverInstances</code>
+        /// Instances can be discovered using DNS queries in VPCs and using the <c>DiscoverInstances</c>
         /// API.
         /// </para>
         ///  </dd> </dl>

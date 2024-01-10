@@ -31,10 +31,10 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the DeleteRegistry operation.
     /// Delete the entire registry including schema and all of its versions. To get the status
-    /// of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous
+    /// of the delete operation, you can call the <c>GetRegistry</c> API after the asynchronous
     /// call. Deleting a registry will deactivate all online operations for the registry such
-    /// as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>,
-    /// and <code>RegisterSchemaVersion</code> APIs.
+    /// as the <c>UpdateRegistry</c>, <c>CreateSchema</c>, <c>UpdateSchema</c>, and <c>RegisterSchemaVersion</c>
+    /// APIs.
     /// </summary>
     public partial class DeleteRegistryRequest : AmazonGlueRequest
     {

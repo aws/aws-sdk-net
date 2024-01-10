@@ -30,18 +30,17 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutStoredQuery operation.
-    /// Saves a new query or updates an existing saved query. The <code>QueryName</code> must
-    /// be unique for a single Amazon Web Services account and a single Amazon Web Services
-    /// Region. You can create upto 300 queries in a single Amazon Web Services account and
-    /// a single Amazon Web Services Region.
+    /// Saves a new query or updates an existing saved query. The <c>QueryName</c> must be
+    /// unique for a single Amazon Web Services account and a single Amazon Web Services Region.
+    /// You can create upto 300 queries in a single Amazon Web Services account and a single
+    /// Amazon Web Services Region.
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>PutStoredQuery</code> is an idempotent API. Subsequent requests won’t create
-    /// a duplicate resource if one was already created. If a following request has different
-    /// <code>tags</code> values, Config will ignore these differences and treat it as an
-    /// idempotent request of the previous. In this case, <code>tags</code> will not be updated,
-    /// even if they are different.
+    ///  <c>PutStoredQuery</c> is an idempotent API. Subsequent requests won’t create a duplicate
+    /// resource if one was already created. If a following request has different <c>tags</c>
+    /// values, Config will ignore these differences and treat it as an idempotent request
+    /// of the previous. In this case, <c>tags</c> will not be updated, even if they are different.
     /// </para>
     ///  </note>
     /// </summary>
@@ -53,8 +52,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property StoredQuery. 
         /// <para>
-        /// A list of <code>StoredQuery</code> objects. The mandatory fields are <code>QueryName</code>
-        /// and <code>Expression</code>.
+        /// A list of <c>StoredQuery</c> objects. The mandatory fields are <c>QueryName</c> and
+        /// <c>Expression</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -80,7 +79,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <code>Tags</code> object.
+        /// A list of <c>Tags</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

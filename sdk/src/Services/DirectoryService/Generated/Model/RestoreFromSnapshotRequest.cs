@@ -42,7 +42,7 @@ namespace Amazon.DirectoryService.Model
     /// This action returns as soon as the restore operation is initiated. You can monitor
     /// the progress of the restore operation by calling the <a>DescribeDirectories</a> operation
     /// with the directory identifier. When the <b>DirectoryDescription.Stage</b> value changes
-    /// to <code>Active</code>, the restore operation is complete.
+    /// to <c>Active</c>, the restore operation is complete.
     /// </para>
     /// </summary>
     public partial class RestoreFromSnapshotRequest : AmazonDirectoryServiceRequest

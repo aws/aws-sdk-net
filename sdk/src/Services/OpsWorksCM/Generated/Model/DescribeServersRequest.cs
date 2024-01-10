@@ -40,9 +40,8 @@ namespace Amazon.OpsWorksCM.Model
     /// </para>
     ///  
     /// <para>
-    ///  A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-    /// A <code>ValidationException</code> is raised when parameters of the request are not
-    /// valid. 
+    ///  A <c>ResourceNotFoundException</c> is thrown when the server does not exist. A <c>ValidationException</c>
+    /// is raised when parameters of the request are not valid. 
     /// </para>
     /// </summary>
     public partial class DescribeServersRequest : AmazonOpsWorksCMRequest
@@ -54,7 +53,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// This is not currently implemented for <code>DescribeServers</code> requests. 
+        /// This is not currently implemented for <c>DescribeServers</c> requests. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -73,7 +72,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// This is not currently implemented for <code>DescribeServers</code> requests. 
+        /// This is not currently implemented for <c>DescribeServers</c> requests. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

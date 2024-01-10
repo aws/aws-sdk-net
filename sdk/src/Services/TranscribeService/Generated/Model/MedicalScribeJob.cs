@@ -33,11 +33,11 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// To view the status of the specified Medical Scribe job, check the <code>MedicalScribeJobStatus</code>
-    /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
-    /// the results at the locations specified in <code>MedicalScribeOutput</code>. If the
-    /// status is <code>FAILED</code>, <code>FailureReason</code> provides details on why
-    /// your Medical Scribe job failed.
+    /// To view the status of the specified Medical Scribe job, check the <c>MedicalScribeJobStatus</c>
+    /// field. If the status is <c>COMPLETED</c>, the job is finished and you can find the
+    /// results at the locations specified in <c>MedicalScribeOutput</c>. If the status is
+    /// <c>FAILED</c>, <c>FailureReason</c> provides details on why your Medical Scribe job
+    /// failed.
     /// </para>
     /// </summary>
     public partial class MedicalScribeJob
@@ -60,13 +60,12 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property ChannelDefinitions. 
         /// <para>
         /// Makes it possible to specify which speaker is on which channel. For example, if the
-        /// clinician is the first participant to speak, you would set <code>ChannelId</code>
-        /// of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate
-        /// the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to
-        /// indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code>
-        /// of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate
-        /// the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate
-        /// that it's the patient speaking). 
+        /// clinician is the first participant to speak, you would set <c>ChannelId</c> of the
+        /// first <c>ChannelDefinition</c> in the list to <c>0</c> (to indicate the first channel)
+        /// and <c>ParticipantRole</c> to <c>CLINICIAN</c> (to indicate that it's the clinician
+        /// speaking). Then you would set the <c>ChannelId</c> of the second <c>ChannelDefinition</c>
+        /// in the list to <c>1</c> (to indicate the second channel) and <c>ParticipantRole</c>
+        /// to <c>PATIENT</c> (to indicate that it's the patient speaking). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -89,9 +88,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that
-        /// finished processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.761000-07:00</c> represents a Medical Scribe job that finished
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -113,9 +112,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a Medical Scribe job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.761000-07:00</c> represents a Medical Scribe job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -140,8 +139,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>.
         /// </para>
         ///  
         /// <para>
@@ -165,8 +164,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If <code>MedicalScribeJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// If <c>MedicalScribeJobStatus</c> is <c>FAILED</c>, <c>FailureReason</c> contains information
+        /// about why the transcription job failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
         /// Errors</a>.
         /// </para>
         /// </summary>
@@ -185,7 +184,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code used to create your Medical Scribe job. US English (<code>en-US</code>)
+        /// The language code used to create your Medical Scribe job. US English (<c>en-US</c>)
         /// is the only supported language for Medical Scribe jobs. 
         /// </para>
         /// </summary>
@@ -243,10 +242,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
-        /// results at the location specified in <code>MedicalScribeOutput</code> If the status
-        /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your Medical
-        /// Scribe job failed.
+        /// If the status is <c>COMPLETED</c>, the job is finished and you can find the results
+        /// at the location specified in <c>MedicalScribeOutput</c> If the status is <c>FAILED</c>,
+        /// <c>FailureReason</c> provides details on why your Medical Scribe job failed.
         /// </para>
         /// </summary>
         public MedicalScribeJobStatus MedicalScribeJobStatus
@@ -264,9 +262,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property MedicalScribeOutput. 
         /// <para>
-        /// The location of the output of your Medical Scribe job. <code>ClinicalDocumentUri</code>
-        /// holds the Amazon S3 URI for the Clinical Document and <code>TranscriptFileUri</code>
-        /// holds the Amazon S3 URI for the Transcript.
+        /// The location of the output of your Medical Scribe job. <c>ClinicalDocumentUri</c>
+        /// holds the Amazon S3 URI for the Clinical Document and <c>TranscriptFileUri</c> holds
+        /// the Amazon S3 URI for the Transcript.
         /// </para>
         /// </summary>
         public MedicalScribeOutput MedicalScribeOutput
@@ -284,15 +282,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Makes it possible to control how your Medical Scribe job is processed using a <code>MedicalScribeSettings</code>
-        /// object. Specify <code>ChannelIdentification</code> if <code>ChannelDefinitions</code>
-        /// are set. Enabled <code>ShowSpeakerLabels</code> if <code>ChannelIdentification</code>
-        /// and <code>ChannelDefinitions</code> are not set. One and only one of <code>ChannelIdentification</code>
-        /// and <code>ShowSpeakerLabels</code> must be set. If <code>ShowSpeakerLabels</code>
-        /// is set, <code>MaxSpeakerLabels</code> must also be set. Use <code>Settings</code>
-        /// to specify a vocabulary or vocabulary filter or both using <code>VocabularyName</code>,
-        /// <code>VocabularyFilterName</code>. <code>VocabularyFilterMethod</code> must be specified
-        /// if <code>VocabularyFilterName</code> is set. 
+        /// Makes it possible to control how your Medical Scribe job is processed using a <c>MedicalScribeSettings</c>
+        /// object. Specify <c>ChannelIdentification</c> if <c>ChannelDefinitions</c> are set.
+        /// Enabled <c>ShowSpeakerLabels</c> if <c>ChannelIdentification</c> and <c>ChannelDefinitions</c>
+        /// are not set. One and only one of <c>ChannelIdentification</c> and <c>ShowSpeakerLabels</c>
+        /// must be set. If <c>ShowSpeakerLabels</c> is set, <c>MaxSpeakerLabels</c> must also
+        /// be set. Use <c>Settings</c> to specify a vocabulary or vocabulary filter or both using
+        /// <c>VocabularyName</c>, <c>VocabularyFilterName</c>. <c>VocabularyFilterMethod</c>
+        /// must be specified if <c>VocabularyFilterName</c> is set. 
         /// </para>
         /// </summary>
         public MedicalScribeSettings Settings
@@ -314,9 +311,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a Medical Scribe job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.789000-07:00</c> represents a Medical Scribe job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime

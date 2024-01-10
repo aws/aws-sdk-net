@@ -225,11 +225,11 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Inline, using the <code>data</code> property in the request body.
+        /// Inline, using the <c>data</c> property in the request body.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+        /// A URL that points to a YAML document file stored in Amazon S3, using the <c>uri</c>
         /// property in the request body.
         /// </para>
         ///  </li> </ul>
@@ -289,11 +289,11 @@ namespace Amazon.Imagebuilder
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Inline, using the <code>data</code> property in the request body.
+        /// Inline, using the <c>data</c> property in the request body.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A URL that points to a YAML document file stored in Amazon S3, using the <code>uri</code>
+        /// A URL that points to a YAML document file stored in Amazon S3, using the <c>uri</c>
         /// property in the request body.
         /// </para>
         ///  </li> </ul>
@@ -3264,8 +3264,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Returns the list of components that can be filtered by name, or by using the listed
-        /// <code>filters</code> to streamline results. Newly created components can take up to
-        /// two minutes to appear in the ListComponents API Results.
+        /// <c>filters</c> to streamline results. Newly created components can take up to two
+        /// minutes to appear in the ListComponents API Results.
         /// 
         ///  <note> 
         /// <para>
@@ -3314,8 +3314,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Returns the list of components that can be filtered by name, or by using the listed
-        /// <code>filters</code> to streamline results. Newly created components can take up to
-        /// two minutes to appear in the ListComponents API Results.
+        /// <c>filters</c> to streamline results. Newly created components can take up to two
+        /// minutes to appear in the ListComponents API Results.
         /// 
         ///  <note> 
         /// <para>
@@ -3980,8 +3980,8 @@ namespace Amazon.Imagebuilder
         /// Returns a list of image scan aggregations for your account. You can filter by the
         /// type of key that Image Builder uses to group results. For example, if you want to
         /// get a list of findings by severity level for one of your pipelines, you might specify
-        /// your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify
-        /// a filter, Image Builder returns an aggregation for your account.
+        /// your pipeline with the <c>imagePipelineArn</c> filter. If you don't specify a filter,
+        /// Image Builder returns an aggregation for your account.
         /// 
         ///  
         /// <para>
@@ -3989,19 +3989,19 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>accountId</code> 
+        ///  <c>accountId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>imageBuildVersionArn</code> 
+        ///  <c>imageBuildVersionArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>imagePipelineArn</code> 
+        ///  <c>imagePipelineArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vulnerabilityId</code> 
+        ///  <c>vulnerabilityId</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4040,8 +4040,8 @@ namespace Amazon.Imagebuilder
         /// Returns a list of image scan aggregations for your account. You can filter by the
         /// type of key that Image Builder uses to group results. For example, if you want to
         /// get a list of findings by severity level for one of your pipelines, you might specify
-        /// your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify
-        /// a filter, Image Builder returns an aggregation for your account.
+        /// your pipeline with the <c>imagePipelineArn</c> filter. If you don't specify a filter,
+        /// Image Builder returns an aggregation for your account.
         /// 
         ///  
         /// <para>
@@ -4049,19 +4049,19 @@ namespace Amazon.Imagebuilder
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>accountId</code> 
+        ///  <c>accountId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>imageBuildVersionArn</code> 
+        ///  <c>imageBuildVersionArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>imagePipelineArn</code> 
+        ///  <c>imagePipelineArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vulnerabilityId</code> 
+        ///  <c>vulnerabilityId</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4898,8 +4898,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>,
-        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// to share resources. If you call the Image Builder API <c>PutComponentPolicy</c>, you
+        /// must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
         /// </summary>
@@ -4939,8 +4939,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>,
-        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// to share resources. If you call the Image Builder API <c>PutComponentPolicy</c>, you
+        /// must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
         /// </summary>
@@ -4987,7 +4987,7 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
         /// (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
-        /// to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>,
+        /// to share resources. If you call the Image Builder API <c>PutContainerImagePolicy</c>,
         /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
@@ -5029,7 +5029,7 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare
         /// (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html)
-        /// to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>,
+        /// to share resources. If you call the Image Builder API <c>PutContainerImagePolicy</c>,
         /// you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html)
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
@@ -5076,8 +5076,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <code>PutImagePolicy</code>,
-        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// to share resources. If you call the Image Builder API <c>PutImagePolicy</c>, you must
+        /// also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
         /// </summary>
@@ -5117,8 +5117,8 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to an image. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <code>PutImagePolicy</code>,
-        /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
+        /// to share resources. If you call the Image Builder API <c>PutImagePolicy</c>, you must
+        /// also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
         /// </summary>
@@ -5164,7 +5164,7 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>,
+        /// to share resources. If you call the Image Builder API <c>PutImageRecipePolicy</c>,
         /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
@@ -5205,7 +5205,7 @@ namespace Amazon.Imagebuilder
 
         /// <summary>
         /// Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-        /// to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>,
+        /// to share resources. If you call the Image Builder API <c>PutImageRecipePolicy</c>,
         /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
         /// in order for the resource to be visible to all principals with whom the resource is
         /// shared.
@@ -5251,7 +5251,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code>
+        /// Pauses or resumes image creation when the associated workflow runs a <c>WaitForAction</c>
         /// step.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendWorkflowStepAction service method.</param>
@@ -5297,7 +5297,7 @@ namespace Amazon.Imagebuilder
 
 
         /// <summary>
-        /// Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code>
+        /// Pauses or resumes image creation when the associated workflow runs a <c>WaitForAction</c>
         /// step.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendWorkflowStepAction service method.</param>
@@ -5719,7 +5719,7 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Updates an image pipeline. Image pipelines enable you to automate the creation and
         /// distribution of images. You must specify exactly one recipe for your image, using
-        /// either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>.
+        /// either a <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -5768,7 +5768,7 @@ namespace Amazon.Imagebuilder
         /// <summary>
         /// Updates an image pipeline. Image pipelines enable you to automate the creation and
         /// distribution of images. You must specify exactly one recipe for your image, using
-        /// either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>.
+        /// either a <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
         /// 
         ///  <note> 
         /// <para>

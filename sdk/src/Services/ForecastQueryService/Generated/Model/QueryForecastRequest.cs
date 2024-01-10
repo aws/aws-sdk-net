@@ -34,14 +34,13 @@ namespace Amazon.ForecastQueryService.Model
     /// 
     ///  
     /// <para>
-    /// The criteria is a key-value pair. The key is either <code>item_id</code> (or the equivalent
-    /// non-timestamp, non-target field) from the <code>TARGET_TIME_SERIES</code> dataset,
-    /// or one of the forecast dimensions specified as part of the <code>FeaturizationConfig</code>
-    /// object.
+    /// The criteria is a key-value pair. The key is either <c>item_id</c> (or the equivalent
+    /// non-timestamp, non-target field) from the <c>TARGET_TIME_SERIES</c> dataset, or one
+    /// of the forecast dimensions specified as part of the <c>FeaturizationConfig</c> object.
     /// </para>
     ///  
     /// <para>
-    /// By default, <code>QueryForecast</code> returns the complete date range for the filtered
+    /// By default, <c>QueryForecast</c> returns the complete date range for the filtered
     /// forecast. You can request a specific date range.
     /// </para>
     ///  
@@ -87,12 +86,11 @@ namespace Amazon.ForecastQueryService.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// The filtering criteria to apply when retrieving the forecast. For example, to get
-        /// the forecast for <code>client_21</code> in the electricity usage dataset, specify
-        /// the following:
+        /// the forecast for <c>client_21</c> in the electricity usage dataset, specify the following:
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"item_id" : "client_21"}</code> 
+        ///  <c>{"item_id" : "client_21"}</c> 
         /// </para>
         ///  
         /// <para>
@@ -135,7 +133,7 @@ namespace Amazon.ForecastQueryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous request was truncated, the response includes a <code>NextToken</code>.
+        /// If the result of the previous request was truncated, the response includes a <c>NextToken</c>.
         /// To retrieve the next set of results, use the token in the next request. Tokens expire
         /// after 24 hours.
         /// </para>

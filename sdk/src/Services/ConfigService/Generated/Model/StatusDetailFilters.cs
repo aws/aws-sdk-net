@@ -59,12 +59,11 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property MemberAccountRuleStatus. 
         /// <para>
         /// Indicates deployment status for Config rule in the member account. When management
-        /// account calls <code>PutOrganizationConfigRule</code> action for the first time, Config
-        /// rule status is created in the member account. When management account calls <code>PutOrganizationConfigRule</code>
+        /// account calls <c>PutOrganizationConfigRule</c> action for the first time, Config rule
+        /// status is created in the member account. When management account calls <c>PutOrganizationConfigRule</c>
         /// action for the second time, Config rule status is updated in the member account. Config
-        /// rule status is deleted when the management account deletes <code>OrganizationConfigRule</code>
-        /// and disables service access for <code>config-multiaccountsetup.amazonaws.com</code>.
-        /// 
+        /// rule status is deleted when the management account deletes <c>OrganizationConfigRule</c>
+        /// and disables service access for <c>config-multiaccountsetup.amazonaws.com</c>. 
         /// </para>
         ///  
         /// <para>
@@ -72,39 +71,39 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_SUCCESSFUL</code> when Config rule has been created in the member account.
+        ///  <c>CREATE_SUCCESSFUL</c> when Config rule has been created in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> when Config rule is being created in the member account.
+        ///  <c>CREATE_IN_PROGRESS</c> when Config rule is being created in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> when Config rule creation has failed in the member account.
+        ///  <c>CREATE_FAILED</c> when Config rule creation has failed in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_FAILED</code> when Config rule deletion has failed in the member account.
+        ///  <c>DELETE_FAILED</c> when Config rule deletion has failed in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_IN_PROGRESS</code> when Config rule is being deleted in the member account.
+        ///  <c>DELETE_IN_PROGRESS</c> when Config rule is being deleted in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_SUCCESSFUL</code> when Config rule has been deleted in the member account.
+        ///  <c>DELETE_SUCCESSFUL</c> when Config rule has been deleted in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_SUCCESSFUL</code> when Config rule has been updated in the member account.
+        ///  <c>UPDATE_SUCCESSFUL</c> when Config rule has been updated in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_IN_PROGRESS</code> when Config rule is being updated in the member account.
+        ///  <c>UPDATE_IN_PROGRESS</c> when Config rule is being updated in the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_FAILED</code> when Config rule deletion has failed in the member account.
+        ///  <c>UPDATE_FAILED</c> when Config rule deletion has failed in the member account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

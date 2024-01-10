@@ -101,7 +101,7 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property PipelineId. 
         /// <para>
         /// The pipeline identifier that was assigned by AWS Data Pipeline. This is a string of
-        /// the form <code>df-297EG78HU43EEXAMPLE</code>.
+        /// the form <c>df-297EG78HU43EEXAMPLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

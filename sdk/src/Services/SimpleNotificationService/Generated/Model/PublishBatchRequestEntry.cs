@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// Contains the details of a single Amazon SNS message along with an <code>Id</code>
-    /// that identifies a message within the batch.
+    /// Contains the details of a single Amazon SNS message along with an <c>Id</c> that identifies
+    /// a message within the batch.
     /// </summary>
     public partial class PublishBatchRequestEntry
     {
@@ -49,7 +49,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Ids</code> of a batch request must be unique within a request. 
+        /// The <c>Ids</c> of a batch request must be unique within a request. 
         /// </para>
         ///  
         /// <para>
@@ -93,8 +93,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon
+        /// Each message attribute consists of a <c>Name</c>, <c>Type</c>, and <c>Value</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-message-attributes.html">Amazon
         /// SNS message attributes</a> in the Amazon SNS Developer Guide.
         /// </para>
         /// </summary>
@@ -118,58 +118,57 @@ namespace Amazon.SimpleNotificationService.Model
         ///  
         /// <para>
         /// The token used for deduplication of messages within a 5-minute minimum deduplication
-        /// interval. If a message with a particular <code>MessageDeduplicationId</code> is sent
-        /// successfully, subsequent messages with the same <code>MessageDeduplicationId</code>
-        /// are accepted successfully but aren't delivered.
+        /// interval. If a message with a particular <c>MessageDeduplicationId</c> is sent successfully,
+        /// subsequent messages with the same <c>MessageDeduplicationId</c> are accepted successfully
+        /// but aren't delivered.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Every message must have a unique <code>MessageDeduplicationId</code>.
+        /// Every message must have a unique <c>MessageDeduplicationId</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You may provide a <code>MessageDeduplicationId</code> explicitly.
+        /// You may provide a <c>MessageDeduplicationId</c> explicitly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable
-        /// <code>ContentBasedDeduplication</code> for your topic, Amazon SNS uses a SHA-256 hash
-        /// to generate the <code>MessageDeduplicationId</code> using the body of the message
-        /// (but not the attributes of the message).
+        /// If you aren't able to provide a <c>MessageDeduplicationId</c> and you enable <c>ContentBasedDeduplication</c>
+        /// for your topic, Amazon SNS uses a SHA-256 hash to generate the <c>MessageDeduplicationId</c>
+        /// using the body of the message (but not the attributes of the message).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't provide a <code>MessageDeduplicationId</code> and the topic doesn't have
-        /// <code>ContentBasedDeduplication</code> set, the action fails with an error.
+        /// If you don't provide a <c>MessageDeduplicationId</c> and the topic doesn't have <c>ContentBasedDeduplication</c>
+        /// set, the action fails with an error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the topic has a <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code>
+        /// If the topic has a <c>ContentBasedDeduplication</c> set, your <c>MessageDeduplicationId</c>
         /// overrides the generated one. 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// When <code>ContentBasedDeduplication</code> is in effect, messages with identical
-        /// content sent within the deduplication interval are treated as duplicates and only
-        /// one copy of the message is delivered.
+        /// When <c>ContentBasedDeduplication</c> is in effect, messages with identical content
+        /// sent within the deduplication interval are treated as duplicates and only one copy
+        /// of the message is delivered.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you send one message with <code>ContentBasedDeduplication</code> enabled, and then
-        /// another message with a <code>MessageDeduplicationId</code> that is the same as the
-        /// one generated for the first <code>MessageDeduplicationId</code>, the two messages
-        /// are treated as duplicates and only one copy of the message is delivered. 
+        /// If you send one message with <c>ContentBasedDeduplication</c> enabled, and then another
+        /// message with a <c>MessageDeduplicationId</c> that is the same as the one generated
+        /// for the first <c>MessageDeduplicationId</c>, the two messages are treated as duplicates
+        /// and only one copy of the message is delivered. 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>MessageDeduplicationId</code> is available to the consumer of the message
-        /// (this can be useful for troubleshooting delivery issues).
+        /// The <c>MessageDeduplicationId</c> is available to the consumer of the message (this
+        /// can be useful for troubleshooting delivery issues).
         /// </para>
         ///  
         /// <para>
         /// If a message is sent successfully but the acknowledgement is lost and the message
-        /// is resent with the same <code>MessageDeduplicationId</code> after the deduplication
-        /// interval, Amazon SNS can't detect duplicate messages. 
+        /// is resent with the same <c>MessageDeduplicationId</c> after the deduplication interval,
+        /// Amazon SNS can't detect duplicate messages. 
         /// </para>
         ///  
         /// <para>
@@ -178,12 +177,12 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The length of <code>MessageDeduplicationId</code> is 128 characters.
+        /// The length of <c>MessageDeduplicationId</c> is 128 characters.
         /// </para>
         ///  
         /// <para>
-        ///  <code>MessageDeduplicationId</code> can contain alphanumeric characters <code>(a-z,
-        /// A-Z, 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        ///  <c>MessageDeduplicationId</c> can contain alphanumeric characters <c>(a-z, A-Z, 0-9)</c>
+        /// and punctuation <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
         /// </para>
         /// </summary>
         public string MessageDeduplicationId
@@ -208,28 +207,27 @@ namespace Amazon.SimpleNotificationService.Model
         /// The tag that specifies that a message belongs to a specific message group. Messages
         /// that belong to the same message group are processed in a FIFO manner (however, messages
         /// in different message groups might be processed out of order). To interleave multiple
-        /// ordered streams within a single topic, use <code>MessageGroupId</code> values (for
-        /// example, session data for multiple users). In this scenario, multiple consumers can
-        /// process the topic, but the session data of each user is processed in a FIFO fashion.
-        /// 
+        /// ordered streams within a single topic, use <c>MessageGroupId</c> values (for example,
+        /// session data for multiple users). In this scenario, multiple consumers can process
+        /// the topic, but the session data of each user is processed in a FIFO fashion. 
         /// </para>
         ///  
         /// <para>
-        /// You must associate a non-empty <code>MessageGroupId</code> with a message. If you
-        /// don't provide a <code>MessageGroupId</code>, the action fails. 
+        /// You must associate a non-empty <c>MessageGroupId</c> with a message. If you don't
+        /// provide a <c>MessageGroupId</c>, the action fails. 
         /// </para>
         ///  
         /// <para>
-        /// The length of <code>MessageGroupId</code> is 128 characters.
+        /// The length of <c>MessageGroupId</c> is 128 characters.
         /// </para>
         ///  
         /// <para>
-        ///  <code>MessageGroupId</code> can contain alphanumeric characters <code>(a-z, A-Z,
-        /// 0-9)</code> and punctuation <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        ///  <c>MessageGroupId</c> can contain alphanumeric characters <c>(a-z, A-Z, 0-9)</c>
+        /// and punctuation <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
         /// </para>
         ///  <important> 
         /// <para>
-        ///  <code>MessageGroupId</code> is required for FIFO topics. You can't use it for standard
+        ///  <c>MessageGroupId</c> is required for FIFO topics. You can't use it for standard
         /// topics. 
         /// </para>
         ///  </important>
@@ -249,11 +247,11 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property MessageStructure. 
         /// <para>
-        /// Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
-        /// message for each protocol. For example, using one publish action, you can send a short
-        /// message to your SMS subscribers and a longer message to your email subscribers. If
-        /// you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code>
-        /// parameter must: 
+        /// Set <c>MessageStructure</c> to <c>json</c> if you want to send a different message
+        /// for each protocol. For example, using one publish action, you can send a short message
+        /// to your SMS subscribers and a longer message to your email subscribers. If you set
+        /// <c>MessageStructure</c> to <c>json</c>, the value of the <c>Message</c> parameter
+        /// must: 
         /// </para>
         ///  <ul> <li> 
         /// <para>

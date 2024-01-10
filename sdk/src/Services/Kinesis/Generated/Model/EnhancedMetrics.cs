@@ -42,40 +42,40 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  
         /// <para>
-        /// The following are the valid shard-level metrics. The value "<code>ALL</code>" enhances
-        /// every metric.
+        /// The following are the valid shard-level metrics. The value "<c>ALL</c>" enhances every
+        /// metric.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IncomingBytes</code> 
+        ///  <c>IncomingBytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IncomingRecords</code> 
+        ///  <c>IncomingRecords</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OutgoingBytes</code> 
+        ///  <c>OutgoingBytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OutgoingRecords</code> 
+        ///  <c>OutgoingRecords</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WriteProvisionedThroughputExceeded</code> 
+        ///  <c>WriteProvisionedThroughputExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReadProvisionedThroughputExceeded</code> 
+        ///  <c>ReadProvisionedThroughputExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IteratorAgeMilliseconds</code> 
+        ///  <c>IteratorAgeMilliseconds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> 
+        ///  <c>ALL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

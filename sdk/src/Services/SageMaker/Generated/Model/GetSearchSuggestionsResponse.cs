@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PropertyNameSuggestions. 
         /// <para>
-        /// A list of property names for a <code>Resource</code> that match a <code>SuggestionQuery</code>.
+        /// A list of property names for a <c>Resource</c> that match a <c>SuggestionQuery</c>.
         /// </para>
         /// </summary>
         public List<PropertyNameSuggestion> PropertyNameSuggestions

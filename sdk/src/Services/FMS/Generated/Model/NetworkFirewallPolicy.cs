@@ -43,7 +43,7 @@ namespace Amazon.FMS.Model
         /// <para>
         /// Defines the deployment model to use for the firewall policy. To use a distributed
         /// model, set <a href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
-        /// to <code>NULL</code>.
+        /// to <c>NULL</c>.
         /// </para>
         /// </summary>
         public FirewallDeploymentModel FirewallDeploymentModel

@@ -55,8 +55,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property AppendSourcePath. 
         /// <para>
-        /// If set to <code>true</code>, this option appends the source path to the service URL
-        /// endpoint.
+        /// If set to <c>true</c>, this option appends the source path to the service URL endpoint.
         /// </para>
         /// </summary>
         public bool AppendSourcePath
@@ -187,7 +186,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Gets and sets the property IncludeChildPaths. 
         /// <para>
         /// Indicates whether to match all subpaths of the given source path. If this value is
-        /// <code>false</code>, requests must match the source path exactly before they are forwarded
+        /// <c>false</c>, requests must match the source path exactly before they are forwarded
         /// to this route's service. 
         /// </para>
         /// </summary>
@@ -348,9 +347,9 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Gets and sets the property SourcePath. 
         /// <para>
         /// This is the path that Refactor Spaces uses to match traffic. Paths must start with
-        /// <code>/</code> and are relative to the base of the application. To use path parameters
-        /// in the source path, add a variable in curly braces. For example, the resource path
-        /// {user} represents a path parameter called 'user'.
+        /// <c>/</c> and are relative to the base of the application. To use path parameters in
+        /// the source path, add a variable in curly braces. For example, the resource path {user}
+        /// represents a path parameter called 'user'.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -62,8 +62,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency in which the <code>totalUpfrontPrice</code> and <code>totalHourlyPrice</code>
-        /// amounts are specified. At this time, the only supported currency is <code>USD</code>.
+        /// The currency in which the <c>totalUpfrontPrice</c> and <c>totalHourlyPrice</c> amounts
+        /// are specified. At this time, the only supported currency is <c>USD</c>.
         /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode

@@ -42,12 +42,12 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property ForceDelete. 
         /// <para>
         /// ForceDelete bypasses an API key's expiry conditions and deletes the key. Set the parameter
-        /// <code>true</code> to delete the key or to <code>false</code> to not preemptively delete
-        /// the API key.
+        /// <c>true</c> to delete the key or to <c>false</c> to not preemptively delete the API
+        /// key.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code>, or <code>false</code>.
+        /// Valid values: <c>true</c>, or <c>false</c>.
         /// </para>
         ///  
         /// <para>

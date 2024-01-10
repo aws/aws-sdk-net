@@ -43,13 +43,13 @@ namespace Amazon.OAM.Model
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a sink is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i>
-        /// </code> 
+        /// The ARN format of a sink is <c>arn:aws:oam:<i>Region</i>:<i>account-id</i>:sink/<i>sink-id</i>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a link is <code>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i>
-        /// </code> 
+        /// The ARN format of a link is <c>arn:aws:oam:<i>Region</i>:<i>account-id</i>:link/<i>link-id</i>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
@@ -59,9 +59,9 @@ namespace Amazon.OAM.Model
         ///  <important> 
         /// <para>
         /// Unlike tagging permissions in other Amazon Web Services services, to retrieve the
-        /// list of tags for links or sinks you must have the <code>oam:RequestTag</code> permission.
-        /// The <code>aws:ReguestTag</code> permission does not allow you to tag and untag links
-        /// and sinks.
+        /// list of tags for links or sinks you must have the <c>oam:RequestTag</c> permission.
+        /// The <c>aws:ReguestTag</c> permission does not allow you to tag and untag links and
+        /// sinks.
         /// </para>
         ///  </important>
         /// </summary>

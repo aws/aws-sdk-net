@@ -228,9 +228,9 @@ namespace Amazon.CodeBuild.Model
         ///  </note> 
         /// <para>
         /// You can specify either the Amazon Resource Name (ARN) of the CMK or, if available,
-        /// the CMK's alias (using the format <code>alias/&lt;alias-name&gt;</code>). If you don't
-        /// specify a value, CodeBuild uses the managed CMK for Amazon Simple Storage Service
-        /// (Amazon S3). 
+        /// the CMK's alias (using the format <c>alias/&lt;alias-name&gt;</c>). If you don't specify
+        /// a value, CodeBuild uses the managed CMK for Amazon Simple Storage Service (Amazon
+        /// S3). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -267,10 +267,10 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property FileSystemLocations. 
         /// <para>
-        ///  An array of <code>ProjectFileSystemLocation</code> objects for a CodeBuild build
-        /// project. A <code>ProjectFileSystemLocation</code> object specifies the <code>identifier</code>,
-        /// <code>location</code>, <code>mountOptions</code>, <code>mountPoint</code>, and <code>type</code>
-        /// of a file system created using Amazon Elastic File System. 
+        ///  An array of <c>ProjectFileSystemLocation</c> objects for a CodeBuild build project.
+        /// A <c>ProjectFileSystemLocation</c> object specifies the <c>identifier</c>, <c>location</c>,
+        /// <c>mountOptions</c>, <c>mountPoint</c>, and <c>type</c> of a file system created using
+        /// Amazon Elastic File System. 
         /// </para>
         /// </summary>
         public List<ProjectFileSystemLocation> FileSystemLocations
@@ -417,7 +417,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondaryArtifacts. 
         /// <para>
-        /// An array of <code>ProjectArtifacts</code> objects. 
+        /// An array of <c>ProjectArtifacts</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
@@ -436,7 +436,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondarySources. 
         /// <para>
-        /// An array of <code>ProjectSource</code> objects. 
+        /// An array of <c>ProjectSource</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=12)]
@@ -455,8 +455,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondarySourceVersions. 
         /// <para>
-        /// An array of <code>ProjectSourceVersion</code> objects. If <code>secondarySourceVersions</code>
-        /// is specified at the build level, then they take over these <code>secondarySourceVersions</code>
+        /// An array of <c>ProjectSourceVersion</c> objects. If <c>secondarySourceVersions</c>
+        /// is specified at the build level, then they take over these <c>secondarySourceVersions</c>
         /// (at the project level). 
         /// </para>
         /// </summary>
@@ -525,9 +525,9 @@ namespace Amazon.CodeBuild.Model
         /// <para>
         /// For GitHub: the commit ID, pull request ID, branch name, or tag name that corresponds
         /// to the version of the source code you want to build. If a pull request ID is specified,
-        /// it must use the format <code>pr/pull-request-ID</code> (for example <code>pr/25</code>).
-        /// If a branch name is specified, the branch's HEAD commit ID is used. If not specified,
-        /// the default branch's HEAD commit ID is used.
+        /// it must use the format <c>pr/pull-request-ID</c> (for example <c>pr/25</c>). If a
+        /// branch name is specified, the branch's HEAD commit ID is used. If not specified, the
+        /// default branch's HEAD commit ID is used.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -542,8 +542,8 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>sourceVersion</code> is specified at the build level, then that version takes
-        /// precedence over this <code>sourceVersion</code> (at the project level). 
+        /// If <c>sourceVersion</c> is specified at the build level, then that version takes precedence
+        /// over this <c>sourceVersion</c> (at the project level). 
         /// </para>
         ///  
         /// <para>

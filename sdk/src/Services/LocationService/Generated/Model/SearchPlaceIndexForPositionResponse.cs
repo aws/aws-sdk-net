@@ -59,9 +59,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// Contains a summary of the request. Echoes the input values for <code>Position</code>,
-        /// <code>Language</code>, <code>MaxResults</code>, and the <code>DataSource</code> of
-        /// the place index. 
+        /// Contains a summary of the request. Echoes the input values for <c>Position</c>, <c>Language</c>,
+        /// <c>MaxResults</c>, and the <c>DataSource</c> of the place index. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

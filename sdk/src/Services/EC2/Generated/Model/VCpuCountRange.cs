@@ -58,7 +58,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Min. 
         /// <para>
-        /// The minimum number of vCPUs. If the value is <code>0</code>, there is no minimum limit.
+        /// The minimum number of vCPUs. If the value is <c>0</c>, there is no minimum limit.
         /// </para>
         /// </summary>
         public int Min

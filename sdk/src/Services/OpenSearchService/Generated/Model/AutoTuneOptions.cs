@@ -84,9 +84,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property RollbackOnDisable. 
         /// <para>
-        /// When disabling Auto-Tune, specify <code>NO_ROLLBACK</code> to retain all prior Auto-Tune
-        /// settings or <code>DEFAULT_ROLLBACK</code> to revert to the OpenSearch Service defaults.
-        /// If you specify <code>DEFAULT_ROLLBACK</code>, you must include a <code>MaintenanceSchedule</code>
+        /// When disabling Auto-Tune, specify <c>NO_ROLLBACK</c> to retain all prior Auto-Tune
+        /// settings or <c>DEFAULT_ROLLBACK</c> to revert to the OpenSearch Service defaults.
+        /// If you specify <c>DEFAULT_ROLLBACK</c>, you must include a <c>MaintenanceSchedule</c>
         /// in the request. Otherwise, OpenSearch Service is unable to perform the rollback.
         /// </para>
         /// </summary>

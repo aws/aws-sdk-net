@@ -131,18 +131,17 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded
+        ///  <c>REPLACE</c> – Changeset is considered as a replacement to all prior loaded Changesets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>APPEND</c> – Changeset is considered as an addition to the end of all prior loaded
         /// Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPEND</code> – Changeset is considered as an addition to the end of all prior
-        /// loaded Changesets.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior
-        /// ingested Changeset.
+        ///  <c>MODIFY</c> – Changeset is considered as a replacement to a specific prior ingested
+        /// Changeset.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -258,23 +257,23 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – Changeset is pending creation.
+        ///  <c>PENDING</c> – Changeset is pending creation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – Changeset creation has failed.
+        ///  <c>FAILED</c> – Changeset creation has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> – Changeset creation has succeeded.
+        ///  <c>SUCCESS</c> – Changeset creation has succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code> – Changeset creation is running.
+        ///  <c>RUNNING</c> – Changeset creation is running.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOP_REQUESTED</code> – User requested Changeset creation to stop.
+        ///  <c>STOP_REQUESTED</c> – User requested Changeset creation to stop.
         /// </para>
         ///  </li> </ul>
         /// </summary>

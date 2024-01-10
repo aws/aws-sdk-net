@@ -38,8 +38,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The <code>KeyARN</code> of the Amazon Web Services Payment Cryptography key activated
-        /// for use.
+        /// The <c>KeyARN</c> of the Amazon Web Services Payment Cryptography key activated for
+        /// use.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

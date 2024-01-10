@@ -30,8 +30,7 @@ namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProbe operation.
-    /// Returns the details about a probe. You'll need both the <code>monitorName</code> and
-    /// <code>probeId</code>.
+    /// Returns the details about a probe. You'll need both the <c>monitorName</c> and <c>probeId</c>.
     /// </summary>
     public partial class GetProbeRequest : AmazonNetworkMonitorRequest
     {
@@ -41,8 +40,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        /// The name of the monitor associated with the probe. Run <code>ListMonitors</code> to
-        /// get a list of monitor names.
+        /// The name of the monitor associated with the probe. Run <c>ListMonitors</c> to get
+        /// a list of monitor names.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -61,8 +60,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property ProbeId. 
         /// <para>
-        /// The ID of the probe to get information about. Run <code>GetMonitor</code> action to
-        /// get a list of probes and probe IDs for the monitor.
+        /// The ID of the probe to get information about. Run <c>GetMonitor</c> action to get
+        /// a list of probes and probe IDs for the monitor.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

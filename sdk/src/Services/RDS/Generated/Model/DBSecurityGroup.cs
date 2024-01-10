@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBSecurityGroups</code>
+    /// This data type is used as a response element in the <c>DescribeDBSecurityGroups</c>
     /// action.
     /// </para>
     /// </summary>
@@ -104,7 +104,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroups. 
         /// <para>
-        /// Contains a list of <code>EC2SecurityGroup</code> elements.
+        /// Contains a list of <c>EC2SecurityGroup</c> elements.
         /// </para>
         /// </summary>
         public List<EC2SecurityGroup> EC2SecurityGroups
@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property IPRanges. 
         /// <para>
-        /// Contains a list of <code>IPRange</code> elements.
+        /// Contains a list of <c>IPRange</c> elements.
         /// </para>
         /// </summary>
         public List<IPRange> IPRanges

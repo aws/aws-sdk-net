@@ -55,16 +55,16 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALLOW</code> - Permit the request to go through.
+        ///  <c>ALLOW</c> - Permit the request to go through.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALERT</code> - Permit the request and send metrics and logs to Cloud Watch.
+        ///  <c>ALERT</c> - Permit the request and send metrics and logs to Cloud Watch.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BLOCK</code> - Disallow the request. This option requires additional details
-        /// in the rule's <code>BlockResponse</code>. 
+        ///  <c>BLOCK</c> - Disallow the request. This option requires additional details in the
+        /// rule's <c>BlockResponse</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -85,12 +85,12 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property BlockOverrideDnsType. 
         /// <para>
         /// The DNS record's type. This determines the format of the record value that you provided
-        /// in <code>BlockOverrideDomain</code>. Used for the rule action <code>BLOCK</code> with
-        /// a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.
+        /// in <c>BlockOverrideDomain</c>. Used for the rule action <c>BLOCK</c> with a <c>BlockResponse</c>
+        /// setting of <c>OVERRIDE</c>.
         /// </para>
         ///  
         /// <para>
-        /// This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.
+        /// This setting is required if the <c>BlockResponse</c> setting is <c>OVERRIDE</c>.
         /// </para>
         /// </summary>
         public BlockOverrideDnsType BlockOverrideDnsType
@@ -109,11 +109,11 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property BlockOverrideDomain. 
         /// <para>
         /// The custom DNS record to send back in response to the query. Used for the rule action
-        /// <code>BLOCK</code> with a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.
+        /// <c>BLOCK</c> with a <c>BlockResponse</c> setting of <c>OVERRIDE</c>.
         /// </para>
         ///  
         /// <para>
-        /// This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.
+        /// This setting is required if the <c>BlockResponse</c> setting is <c>OVERRIDE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -133,12 +133,12 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property BlockOverrideTtl. 
         /// <para>
         /// The recommended amount of time, in seconds, for the DNS resolver or web browser to
-        /// cache the provided override record. Used for the rule action <code>BLOCK</code> with
-        /// a <code>BlockResponse</code> setting of <code>OVERRIDE</code>.
+        /// cache the provided override record. Used for the rule action <c>BLOCK</c> with a <c>BlockResponse</c>
+        /// setting of <c>OVERRIDE</c>.
         /// </para>
         ///  
         /// <para>
-        /// This setting is required if the <code>BlockResponse</code> setting is <code>OVERRIDE</code>.
+        /// This setting is required if the <c>BlockResponse</c> setting is <c>OVERRIDE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=604800)]
@@ -158,26 +158,26 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property BlockResponse. 
         /// <para>
         /// The way that you want DNS Firewall to block the request, used with the rule action
-        /// setting <code>BLOCK</code>. 
+        /// setting <c>BLOCK</c>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NODATA</code> - Respond indicating that the query was successful, but no response
+        ///  <c>NODATA</c> - Respond indicating that the query was successful, but no response
         /// is available for it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NXDOMAIN</code> - Respond indicating that the domain name that's in the query
-        /// doesn't exist.
+        ///  <c>NXDOMAIN</c> - Respond indicating that the domain name that's in the query doesn't
+        /// exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OVERRIDE</code> - Provide a custom override in the response. This option requires
-        /// custom handling details in the rule's <code>BlockOverride*</code> settings. 
+        ///  <c>OVERRIDE</c> - Provide a custom override in the response. This option requires
+        /// custom handling details in the rule's <c>BlockOverride*</c> settings. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This setting is required if the rule action setting is <code>BLOCK</code>.
+        /// This setting is required if the rule action setting is <c>BLOCK</c>.
         /// </para>
         /// </summary>
         public BlockResponse BlockResponse
@@ -196,8 +196,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// A unique string that identifies the request and that allows you to retry failed requests
-        /// without the risk of running the operation twice. <code>CreatorRequestId</code> can
-        /// be any unique string, for example, a date/time stamp. 
+        /// without the risk of running the operation twice. <c>CreatorRequestId</c> can be any
+        /// unique string, for example, a date/time stamp. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

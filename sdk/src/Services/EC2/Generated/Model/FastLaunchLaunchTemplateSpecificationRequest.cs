@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Note - You can specify either the <code>LaunchTemplateName</code> or the <code>LaunchTemplateId</code>,
+    /// Note - You can specify either the <c>LaunchTemplateName</c> or the <c>LaunchTemplateId</c>,
     /// but not both.
     /// </para>
     ///  </note>

@@ -59,7 +59,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The list of tags to associate with the resource. Tag key names cannot start with "<code>aws</code>".
+        /// The list of tags to associate with the resource. Tag key names cannot start with "<c>aws</c>".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

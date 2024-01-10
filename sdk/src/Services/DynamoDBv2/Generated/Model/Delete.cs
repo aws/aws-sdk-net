@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents a request to perform a <code>DeleteItem</code> operation.
+    /// Represents a request to perform a <c>DeleteItem</c> operation.
     /// </summary>
     public partial class Delete
     {
@@ -117,9 +117,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnValuesOnConditionCheckFailure. 
         /// <para>
-        /// Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if
-        /// the <code>Delete</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>,
-        /// the valid values are: NONE and ALL_OLD.
+        /// Use <c>ReturnValuesOnConditionCheckFailure</c> to get the item attributes if the <c>Delete</c>
+        /// condition fails. For <c>ReturnValuesOnConditionCheckFailure</c>, the valid values
+        /// are: NONE and ALL_OLD.
         /// </para>
         /// </summary>
         public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure

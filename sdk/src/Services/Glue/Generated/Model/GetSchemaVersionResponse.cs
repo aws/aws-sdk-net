@@ -62,8 +62,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DataFormat. 
         /// <para>
-        /// The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code>
-        /// and <code>PROTOBUF</code> are supported.
+        /// The data format of the schema definition. Currently <c>AVRO</c>, <c>JSON</c> and <c>PROTOBUF</c>
+        /// are supported.
         /// </para>
         /// </summary>
         public DataFormat DataFormat
@@ -119,7 +119,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaVersionId. 
         /// <para>
-        /// The <code>SchemaVersionId</code> of the schema version.
+        /// The <c>SchemaVersionId</c> of the schema version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

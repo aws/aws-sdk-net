@@ -87,7 +87,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// The specified part of the web request must include the value of <code>TargetString</code>,
+        /// The specified part of the web request must include the value of <c>TargetString</c>,
         /// but the location doesn't matter.
         /// </para>
         ///  
@@ -96,33 +96,33 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// The specified part of the web request must include the value of <code>TargetString</code>,
-        /// and <code>TargetString</code> must contain only alphanumeric characters or underscore
-        /// (A-Z, a-z, 0-9, or _). In addition, <code>TargetString</code> must be a word, which
-        /// means one of the following:
+        /// The specified part of the web request must include the value of <c>TargetString</c>,
+        /// and <c>TargetString</c> must contain only alphanumeric characters or underscore (A-Z,
+        /// a-z, 0-9, or _). In addition, <c>TargetString</c> must be a word, which means one
+        /// of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TargetString</code> exactly matches the value of the specified part of the
-        /// web request, such as the value of a header.
+        ///  <c>TargetString</c> exactly matches the value of the specified part of the web request,
+        /// such as the value of a header.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TargetString</code> is at the beginning of the specified part of the web request
+        ///  <c>TargetString</c> is at the beginning of the specified part of the web request
         /// and is followed by a character other than an alphanumeric character or underscore
-        /// (_), for example, <code>BadBot;</code>.
+        /// (_), for example, <c>BadBot;</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TargetString</code> is at the end of the specified part of the web request
-        /// and is preceded by a character other than an alphanumeric character or underscore
-        /// (_), for example, <code>;BadBot</code>.
+        ///  <c>TargetString</c> is at the end of the specified part of the web request and is
+        /// preceded by a character other than an alphanumeric character or underscore (_), for
+        /// example, <c>;BadBot</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TargetString</code> is in the middle of the specified part of the web request
-        /// and is preceded and followed by characters other than alphanumeric characters or underscore
-        /// (_), for example, <code>-BadBot;</code>.
+        ///  <c>TargetString</c> is in the middle of the specified part of the web request and
+        /// is preceded and followed by characters other than alphanumeric characters or underscore
+        /// (_), for example, <c>-BadBot;</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -131,7 +131,7 @@ namespace Amazon.WAF.Model
         ///  
         /// <para>
         /// The value of the specified part of the web request must exactly match the value of
-        /// <code>TargetString</code>.
+        /// <c>TargetString</c>.
         /// </para>
         ///  
         /// <para>
@@ -139,8 +139,8 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// The value of <code>TargetString</code> must appear at the beginning of the specified
-        /// part of the web request.
+        /// The value of <c>TargetString</c> must appear at the beginning of the specified part
+        /// of the web request.
         /// </para>
         ///  
         /// <para>
@@ -148,8 +148,8 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// The value of <code>TargetString</code> must appear at the end of the specified part
-        /// of the web request.
+        /// The value of <c>TargetString</c> must appear at the end of the specified part of the
+        /// web request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -169,61 +169,60 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property TargetStream. 
         /// <para>
         /// The value that you want AWS WAF to search for. AWS WAF searches for the specified
-        /// string in the part of web requests that you specified in <code>FieldToMatch</code>.
-        /// The maximum length of the value is 50 bytes.
+        /// string in the part of web requests that you specified in <c>FieldToMatch</c>. The
+        /// maximum length of the value is 50 bytes.
         /// </para>
         ///  
         /// <para>
-        /// Valid values depend on the values that you specified for <code>FieldToMatch</code>:
+        /// Valid values depend on the values that you specified for <c>FieldToMatch</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HEADER</code>: The value that you want AWS WAF to search for in the request
-        /// header that you specified in <a>FieldToMatch</a>, for example, the value of the <code>User-Agent</code>
-        /// or <code>Referer</code> header.
+        ///  <c>HEADER</c>: The value that you want AWS WAF to search for in the request header
+        /// that you specified in <a>FieldToMatch</a>, for example, the value of the <c>User-Agent</c>
+        /// or <c>Referer</c> header.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>METHOD</code>: The HTTP method, which indicates the type of operation specified
-        /// in the request. CloudFront supports the following methods: <code>DELETE</code>, <code>GET</code>,
-        /// <code>HEAD</code>, <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
-        /// <code>PUT</code>.
+        ///  <c>METHOD</c>: The HTTP method, which indicates the type of operation specified in
+        /// the request. CloudFront supports the following methods: <c>DELETE</c>, <c>GET</c>,
+        /// <c>HEAD</c>, <c>OPTIONS</c>, <c>PATCH</c>, <c>POST</c>, and <c>PUT</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUERY_STRING</code>: The value that you want AWS WAF to search for in the query
-        /// string, which is the part of a URL that appears after a <code>?</code> character.
+        ///  <c>QUERY_STRING</c>: The value that you want AWS WAF to search for in the query string,
+        /// which is the part of a URL that appears after a <c>?</c> character.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>URI</code>: The value that you want AWS WAF to search for in the part of a
-        /// URL that identifies a resource, for example, <code>/images/daily-ad.jpg</code>.
+        ///  <c>URI</c>: The value that you want AWS WAF to search for in the part of a URL that
+        /// identifies a resource, for example, <c>/images/daily-ad.jpg</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BODY</code>: The part of a request that contains any additional data that you
-        /// want to send to your web server as the HTTP request body, such as data from a form.
-        /// The request body immediately follows the request headers. Note that only the first
-        /// <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection.
-        /// To allow or block requests based on the length of the body, you can create a size
-        /// constraint set. For more information, see <a>CreateSizeConstraintSet</a>. 
+        ///  <c>BODY</c>: The part of a request that contains any additional data that you want
+        /// to send to your web server as the HTTP request body, such as data from a form. The
+        /// request body immediately follows the request headers. Note that only the first <c>8192</c>
+        /// bytes of the request body are forwarded to AWS WAF for inspection. To allow or block
+        /// requests based on the length of the body, you can create a size constraint set. For
+        /// more information, see <a>CreateSizeConstraintSet</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect,
-        /// such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code>
+        ///  <c>SINGLE_QUERY_ARG</c>: The parameter in the query string that you will inspect,
+        /// such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <c>SINGLE_QUERY_ARG</c>
         /// is 30 characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but instead
-        /// of inspecting a single parameter, AWS WAF inspects all parameters within the query
-        /// string for the value or regex pattern that you specify in <code>TargetString</code>.
+        ///  <c>ALL_QUERY_ARGS</c>: Similar to <c>SINGLE_QUERY_ARG</c>, but instead of inspecting
+        /// a single parameter, AWS WAF inspects all parameters within the query string for the
+        /// value or regex pattern that you specify in <c>TargetString</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>TargetString</code> includes alphabetic characters A-Z and a-z, note that
-        /// the value is case sensitive.
+        /// If <c>TargetString</c> includes alphabetic characters A-Z and a-z, note that the value
+        /// is case sensitive.
         /// </para>
         ///  
         /// <para>
@@ -236,11 +235,10 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, suppose the value of <code>Type</code> is <code>HEADER</code> and the
-        /// value of <code>Data</code> is <code>User-Agent</code>. If you want to search the <code>User-Agent</code>
-        /// header for the value <code>BadBot</code>, you base64-encode <code>BadBot</code> using
-        /// MIME base64-encoding and include the resulting value, <code>QmFkQm90</code>, in the
-        /// value of <code>TargetString</code>.
+        /// For example, suppose the value of <c>Type</c> is <c>HEADER</c> and the value of <c>Data</c>
+        /// is <c>User-Agent</c>. If you want to search the <c>User-Agent</c> header for the value
+        /// <c>BadBot</c>, you base64-encode <c>BadBot</c> using MIME base64-encoding and include
+        /// the resulting value, <c>QmFkQm90</c>, in the value of <c>TargetString</c>.
         /// </para>
         ///  
         /// <para>
@@ -269,8 +267,8 @@ namespace Amazon.WAF.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS
-        /// WAF performs the transformation on <code>FieldToMatch</code> before inspecting it
-        /// for a match.
+        /// WAF performs the transformation on <c>FieldToMatch</c> before inspecting it for a
+        /// match.
         /// </para>
         ///  
         /// <para>
@@ -341,7 +339,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
+        ///  <c>COMPRESS_WHITE_SPACE</c> also replaces multiple spaces with one space.
         /// </para>
         ///  
         /// <para>
@@ -349,33 +347,33 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+        /// Use this option to replace HTML-encoded characters with unencoded characters. <c>HTML_ENTITY_DECODE</c>
         /// performs the following operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)quot;</code> with <code>"</code> 
+        /// Replaces <c>(ampersand)quot;</c> with <c>"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+        /// Replaces <c>(ampersand)nbsp;</c> with a non-breaking space, decimal 160
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+        /// Replaces <c>(ampersand)lt;</c> with a "less than" symbol
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> 
+        /// Replaces <c>(ampersand)gt;</c> with <c>&gt;</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>,
+        /// Replaces characters that are represented in hexadecimal format, <c>(ampersand)#xhhhh;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
+        /// Replaces characters that are represented in decimal format, <c>(ampersand)#nnnn;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> </ul> 
@@ -400,7 +398,7 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>NONE</code> if you don't want to perform any text transformations.
+        /// Specify <c>NONE</c> if you don't want to perform any text transformations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

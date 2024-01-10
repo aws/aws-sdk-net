@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the <code>XksProxyUriEndpoint</code> is already associated
+    /// The request was rejected because the <c>XksProxyUriEndpoint</c> is already associated
     /// with another external key store in this Amazon Web Services Region. To identify the
     /// cause, see the error message that accompanies the exception.
     /// </summary>

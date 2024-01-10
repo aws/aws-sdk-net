@@ -131,18 +131,17 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLACE</code> – Changeset is considered as a replacement to all prior loaded
+        ///  <c>REPLACE</c> – Changeset is considered as a replacement to all prior loaded Changesets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>APPEND</c> – Changeset is considered as an addition to the end of all prior loaded
         /// Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPEND</code> – Changeset is considered as an addition to the end of all prior
-        /// loaded Changesets.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior
-        /// ingested Changeset.
+        ///  <c>MODIFY</c> – Changeset is considered as a replacement to a specific prior ingested
+        /// Changeset.
         /// </para>
         ///  </li> </ul>
         /// </summary>

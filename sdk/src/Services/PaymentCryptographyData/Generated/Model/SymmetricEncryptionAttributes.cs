@@ -40,7 +40,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property InitializationVector. 
         /// <para>
-        /// An input to cryptographic primitive used to provide the intial state. The <code>InitializationVector</code>
+        /// An input to cryptographic primitive used to provide the intial state. The <c>InitializationVector</c>
         /// is typically required have a random or psuedo-random value, but sometimes it only
         /// needs to be unpredictable or unique. If a value is not provided, Amazon Web Services
         /// Payment Cryptography generates a random value.

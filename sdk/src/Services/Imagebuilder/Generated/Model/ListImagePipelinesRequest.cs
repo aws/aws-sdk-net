@@ -45,27 +45,27 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>description</code> 
+        ///  <c>description</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>distributionConfigurationArn</code> 
+        ///  <c>distributionConfigurationArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>imageRecipeArn</code> 
+        ///  <c>imageRecipeArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>infrastructureConfigurationArn</code> 
+        ///  <c>infrastructureConfigurationArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code> 
+        ///  <c>name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> 
+        ///  <c>status</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

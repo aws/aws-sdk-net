@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// When exiting this state, perform these <code>actions</code> if the specified <code>condition</code>
-    /// is <code>TRUE</code>.
+    /// When exiting this state, perform these <c>actions</c> if the specified <c>condition</c>
+    /// is <c>TRUE</c>.
     /// </summary>
     public partial class OnExitLifecycle
     {
@@ -39,8 +39,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// Specifies the <code>actions</code> that are performed when the state is exited and
-        /// the <code>condition</code> is <code>TRUE</code>.
+        /// Specifies the <c>actions</c> that are performed when the state is exited and the <c>condition</c>
+        /// is <c>TRUE</c>.
         /// </para>
         /// </summary>
         public List<Event> Events

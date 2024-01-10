@@ -90,8 +90,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify at least one of the following properties: <code>MaxSize</code>, <code>MinSize</code>,
-        /// or <code>DesiredCapacity</code>. 
+        /// You must specify at least one of the following properties: <c>MaxSize</c>, <c>MinSize</c>,
+        /// or <c>DesiredCapacity</c>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EndTimeUtc. 
         /// <para>
-        /// The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
+        /// The date and time for the recurring schedule to end, in UTC. For example, <c>"2021-06-01T00:00:00Z"</c>.
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -166,13 +166,13 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The recurring schedule for this action. This format consists of five fields separated
         /// by white spaces: [Minute] [Hour] [Day_of_Month] [Month_of_Year] [Day_of_Week]. The
-        /// value must be in quotes (for example, <code>"30 0 1 1,6,12 *"</code>). For more information
+        /// value must be in quotes (for example, <c>"30 0 1 1,6,12 *"</c>). For more information
         /// about this format, see <a href="http://crontab.org">Crontab</a>.
         /// </para>
         ///  
         /// <para>
-        /// When <code>StartTime</code> and <code>EndTime</code> are specified with <code>Recurrence</code>,
-        /// they form the boundaries of when the recurring action starts and stops.
+        /// When <c>StartTime</c> and <c>EndTime</c> are specified with <c>Recurrence</c>, they
+        /// form the boundaries of when the recurring action starts and stops.
         /// </para>
         ///  
         /// <para>
@@ -215,13 +215,12 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property StartTimeUtc. 
         /// <para>
         /// The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-        /// only and in quotes (for example, <code>"2021-06-01T00:00:00Z"</code>).
+        /// only and in quotes (for example, <c>"2021-06-01T00:00:00Z"</c>).
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-        /// Scaling performs the action at this time, and then performs the action based on the
-        /// specified recurrence.
+        /// If you specify <c>Recurrence</c> and <c>StartTime</c>, Amazon EC2 Auto Scaling performs
+        /// the action at this time, and then performs the action based on the specified recurrence.
         /// </para>
         /// </summary>
         public DateTime StartTimeUtc
@@ -263,8 +262,8 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// Valid values are the canonical names of the IANA time zones, derived from the IANA
-        /// Time Zone Database (such as <code>Etc/GMT+9</code> or <code>Pacific/Tahiti</code>).
-        /// For more information, see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
+        /// Time Zone Database (such as <c>Etc/GMT+9</c> or <c>Pacific/Tahiti</c>). For more information,
+        /// see <a href="https://en.wikipedia.org/wiki/List_of_tz_database_time_zones">https://en.wikipedia.org/wiki/List_of_tz_database_time_zones</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -297,7 +296,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The date and time for the recurring schedule to end, in UTC. For example, <code>"2021-06-01T00:00:00Z"</code>.
+        /// The date and time for the recurring schedule to end, in UTC. For example, <c>"2021-06-01T00:00:00Z"</c>.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -327,13 +326,12 @@ namespace Amazon.AutoScaling.Model
         ///  
         /// <para>
         /// The date and time for this action to start, in YYYY-MM-DDThh:mm:ssZ format in UTC/GMT
-        /// only and in quotes (for example, <code>"2021-06-01T00:00:00Z"</code>).
+        /// only and in quotes (for example, <c>"2021-06-01T00:00:00Z"</c>).
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>Recurrence</code> and <code>StartTime</code>, Amazon EC2 Auto
-        /// Scaling performs the action at this time, and then performs the action based on the
-        /// specified recurrence.
+        /// If you specify <c>Recurrence</c> and <c>StartTime</c>, Amazon EC2 Auto Scaling performs
+        /// the action at this time, and then performs the action based on the specified recurrence.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

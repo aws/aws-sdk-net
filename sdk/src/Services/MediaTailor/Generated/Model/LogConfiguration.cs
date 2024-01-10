@@ -39,8 +39,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property PercentEnabled. 
         /// <para>
         /// The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.
-        /// For example, if your playback configuration has 1000 sessions and <code>percentEnabled</code>
-        /// is set to <code>60</code>, MediaTailor sends logs for 600 of the sessions to CloudWatch
+        /// For example, if your playback configuration has 1000 sessions and <c>percentEnabled</c>
+        /// is set to <c>60</c>, MediaTailor sends logs for 600 of the sessions to CloudWatch
         /// Logs. MediaTailor decides at random which of the playback configuration sessions to
         /// send logs for. If you want to view logs for a specific session, you can use the <a
         /// href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug
@@ -48,7 +48,7 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>0</code> - <code>100</code> 
+        /// Valid values: <c>0</c> - <c>100</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

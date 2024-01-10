@@ -42,18 +42,17 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you run an aggregation query (i.e., using <code>GROUP BY</code> or using aggregate
-    /// functions such as <code>COUNT</code>; e.g., <code>SELECT resourceId, COUNT(*) WHERE
-    /// resourceType = 'AWS::IAM::Role' GROUP BY resourceId</code>) and do not specify the
-    /// <code>MaxResults</code> or the <code>Limit</code> query parameters, the default page
-    /// size is set to 500.
+    /// If you run an aggregation query (i.e., using <c>GROUP BY</c> or using aggregate functions
+    /// such as <c>COUNT</c>; e.g., <c>SELECT resourceId, COUNT(*) WHERE resourceType = 'AWS::IAM::Role'
+    /// GROUP BY resourceId</c>) and do not specify the <c>MaxResults</c> or the <c>Limit</c>
+    /// query parameters, the default page size is set to 500.
     /// </para>
     ///  
     /// <para>
-    /// If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate
-    /// function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>) and do
-    /// not specify the <code>MaxResults</code> or the <code>Limit</code> query parameters,
-    /// the default page size is set to 25.
+    /// If you run a non-aggregation query (i.e., not using <c>GROUP BY</c> or aggregate function;
+    /// e.g., <c>SELECT * WHERE resourceType = 'AWS::IAM::Role'</c>) and do not specify the
+    /// <c>MaxResults</c> or the <c>Limit</c> query parameters, the default page size is set
+    /// to 25.
     /// </para>
     ///  </note>
     /// </summary>

@@ -101,14 +101,14 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text
-        /// that is encoded in UTF-8.
+        ///  <c>PLAIN_TEXT_DOCUMENT</c> A document type that represents any unicode text that
+        /// is encoded in UTF-8.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SEMI_STRUCTURED_DOCUMENT</code> A document type with positional and structural
-        /// context, like a PDF. For training with Amazon Comprehend, only PDFs are supported.
-        /// For inference, Amazon Comprehend support PDFs, DOCX and TXT.
+        ///  <c>SEMI_STRUCTURED_DOCUMENT</c> A document type with positional and structural context,
+        /// like a PDF. For training with Amazon Comprehend, only PDFs are supported. For inference,
+        /// Amazon Comprehend support PDFs, DOCX and TXT.
         /// </para>
         ///  </li> </ul>
         /// </summary>

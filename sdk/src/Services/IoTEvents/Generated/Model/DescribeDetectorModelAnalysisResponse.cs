@@ -42,17 +42,16 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RUNNING</code> - AWS IoT Events is analyzing your detector model. This process
-        /// can take several minutes to complete.
+        ///  <c>RUNNING</c> - AWS IoT Events is analyzing your detector model. This process can
+        /// take several minutes to complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETE</code> - AWS IoT Events finished analyzing your detector model.
+        ///  <c>COMPLETE</c> - AWS IoT Events finished analyzing your detector model.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - AWS IoT Events couldn't analyze your detector model. Try again
-        /// later.
+        ///  <c>FAILED</c> - AWS IoT Events couldn't analyze your detector model. Try again later.
         /// </para>
         ///  </li> </ul>
         /// </summary>

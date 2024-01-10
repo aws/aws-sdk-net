@@ -177,7 +177,7 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <i>Example</i>: <code>my-cluster</code> 
+        ///  <i>Example</i>: <c>my-cluster</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -231,7 +231,7 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        ///  <i>Format</i>: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>

@@ -83,7 +83,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note:</b> If you don't provide a version number, you're using this call to <code>DeleteTheme</code>
+        ///  <b>Note:</b> If you don't provide a version number, you're using this call to <c>DeleteTheme</c>
         /// to delete all versions of the theme.
         /// </para>
         /// </summary>

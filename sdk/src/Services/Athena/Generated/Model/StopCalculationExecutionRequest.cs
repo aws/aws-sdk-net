@@ -30,9 +30,9 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the StopCalculationExecution operation.
-    /// Requests the cancellation of a calculation. A <code>StopCalculationExecution</code>
-    /// call on a calculation that is already in a terminal state (for example, <code>STOPPED</code>,
-    /// <code>FAILED</code>, or <code>COMPLETED</code>) succeeds but has no effect.
+    /// Requests the cancellation of a calculation. A <c>StopCalculationExecution</c> call
+    /// on a calculation that is already in a terminal state (for example, <c>STOPPED</c>,
+    /// <c>FAILED</c>, or <c>COMPLETED</c>) succeeds but has no effect.
     /// 
     ///  <note> 
     /// <para>

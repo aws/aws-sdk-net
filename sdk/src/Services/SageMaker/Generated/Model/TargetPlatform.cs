@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Contains information about a target platform that you want your model to run on, such
-    /// as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>.
+    /// as OS, architecture, and accelerators. It is an alternative of <c>TargetDevice</c>.
     /// </summary>
     public partial class TargetPlatform
     {
@@ -45,16 +45,16 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NVIDIA</code>: Nvidia graphics processing unit. It also requires <code>gpu-code</code>,
-        /// <code>trt-ver</code>, <code>cuda-ver</code> compiler options
+        ///  <c>NVIDIA</c>: Nvidia graphics processing unit. It also requires <c>gpu-code</c>,
+        /// <c>trt-ver</c>, <c>cuda-ver</c> compiler options
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MALI</code>: ARM Mali graphics processor
+        ///  <c>MALI</c>: ARM Mali graphics processor
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INTEL_GRAPHICS</code>: Integrated Intel graphics
+        ///  <c>INTEL_GRAPHICS</c>: Integrated Intel graphics
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -77,23 +77,23 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>X86_64</code>: 64-bit version of the x86 instruction set.
+        ///  <c>X86_64</c>: 64-bit version of the x86 instruction set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>X86</code>: 32-bit version of the x86 instruction set.
+        ///  <c>X86</c>: 32-bit version of the x86 instruction set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ARM64</code>: ARMv8 64-bit CPU.
+        ///  <c>ARM64</c>: ARMv8 64-bit CPU.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ARM_EABIHF</code>: ARMv7 32-bit, Hard Float.
+        ///  <c>ARM_EABIHF</c>: ARMv7 32-bit, Hard Float.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ARM_EABI</code>: ARMv7 32-bit, Soft Float. Used by Android 32-bit ARM platform.
+        ///  <c>ARM_EABI</c>: ARMv7 32-bit, Soft Float. Used by Android 32-bit ARM platform.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -117,13 +117,13 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LINUX</code>: Linux-based operating systems.
+        ///  <c>LINUX</c>: Linux-based operating systems.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ANDROID</code>: Android operating systems. Android API level can be specified
-        /// using the <code>ANDROID_PLATFORM</code> compiler option. For example, <code>"CompilerOptions":
-        /// {'ANDROID_PLATFORM': 28}</code> 
+        ///  <c>ANDROID</c>: Android operating systems. Android API level can be specified using
+        /// the <c>ANDROID_PLATFORM</c> compiler option. For example, <c>"CompilerOptions": {'ANDROID_PLATFORM':
+        /// 28}</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

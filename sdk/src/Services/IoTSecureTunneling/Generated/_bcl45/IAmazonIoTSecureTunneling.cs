@@ -54,9 +54,9 @@ namespace Amazon.IoTSecureTunneling
 
 
         /// <summary>
-        /// Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code>
-        /// request is received, we close the WebSocket connections between the client and proxy
-        /// server so no data can be transmitted.
+        /// Closes a tunnel identified by the unique tunnel id. When a <c>CloseTunnel</c> request
+        /// is received, we close the WebSocket connections between the client and proxy server
+        /// so no data can be transmitted.
         /// 
         ///  
         /// <para>
@@ -76,9 +76,9 @@ namespace Amazon.IoTSecureTunneling
 
 
         /// <summary>
-        /// Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code>
-        /// request is received, we close the WebSocket connections between the client and proxy
-        /// server so no data can be transmitted.
+        /// Closes a tunnel identified by the unique tunnel id. When a <c>CloseTunnel</c> request
+        /// is received, we close the WebSocket connections between the client and proxy server
+        /// so no data can be transmitted.
         /// 
         ///  
         /// <para>

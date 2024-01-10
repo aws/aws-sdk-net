@@ -39,8 +39,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DisplayFormat. 
         /// <para>
-        /// The display format. Valid values for this structure are <code>AUTO</code>, <code>PERCENT</code>,
-        /// <code>CURRENCY</code>, <code>NUMBER</code>, <code>DATE</code>, and <code>STRING</code>.
+        /// The display format. Valid values for this structure are <c>AUTO</c>, <c>PERCENT</c>,
+        /// <c>CURRENCY</c>, <c>NUMBER</c>, <c>DATE</c>, and <c>STRING</c>.
         /// </para>
         /// </summary>
         public DisplayFormat DisplayFormat

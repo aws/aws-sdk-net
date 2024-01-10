@@ -46,23 +46,23 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ProductSKU</code> 
+        ///  <c>ProductSKU</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code> 
+        ///  <c>Status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fingerprint</code> 
+        ///  <c>Fingerprint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IssuerName</code> 
+        ///  <c>IssuerName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Beneficiary</code> 
+        ///  <c>Beneficiary</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

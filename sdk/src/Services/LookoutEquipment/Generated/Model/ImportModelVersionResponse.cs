@@ -118,7 +118,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the <code>ImportModelVersion</code> operation. 
+        /// The status of the <c>ImportModelVersion</c> operation. 
         /// </para>
         /// </summary>
         public ModelVersionStatus Status

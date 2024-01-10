@@ -102,7 +102,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property NoEcho. 
         /// <para>
-        /// Whether to omit the field value entered by the customer in the log. If <code>true</code>,
+        /// Whether to omit the field value entered by the customer in the log. If <c>true</c>,
         /// the value is not saved in CloudTrail logs for the action execution.
         /// </para>
         /// </summary>

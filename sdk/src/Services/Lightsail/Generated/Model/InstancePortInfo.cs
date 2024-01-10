@@ -47,11 +47,11 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AccessDirection. 
         /// <para>
-        /// The access direction (<code>inbound</code> or <code>outbound</code>).
+        /// The access direction (<c>inbound</c> or <c>outbound</c>).
         /// </para>
         ///  <note> 
         /// <para>
-        /// Lightsail currently supports only <code>inbound</code> access direction.
+        /// Lightsail currently supports only <c>inbound</c> access direction.
         /// </para>
         ///  </note>
         /// </summary>
@@ -70,8 +70,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AccessFrom. 
         /// <para>
-        /// The location from which access is allowed. For example, <code>Anywhere (0.0.0.0/0)</code>,
-        /// or <code>Custom</code> if a specific IP address or range of IP addresses is allowed.
+        /// The location from which access is allowed. For example, <c>Anywhere (0.0.0.0/0)</c>,
+        /// or <c>Custom</c> if a specific IP address or range of IP addresses is allowed.
         /// </para>
         /// </summary>
         public string AccessFrom
@@ -89,7 +89,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AccessType. 
         /// <para>
-        /// The type of access (<code>Public</code> or <code>Private</code>).
+        /// The type of access (<c>Public</c> or <c>Private</c>).
         /// </para>
         /// </summary>
         public PortAccessType AccessType
@@ -111,9 +111,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The only alias currently supported is <code>lightsail-connect</code>, which allows
-        /// IP addresses of the browser-based RDP/SSH client in the Lightsail console to connect
-        /// to your instance.
+        /// The only alias currently supported is <c>lightsail-connect</c>, which allows IP addresses
+        /// of the browser-based RDP/SSH client in the Lightsail console to connect to your instance.
         /// </para>
         /// </summary>
         public List<string> CidrListAliases
@@ -136,8 +135,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>ipv6Cidrs</code> parameter lists the IPv6 addresses that are allowed to
-        /// connect to an instance.
+        /// The <c>ipv6Cidrs</c> parameter lists the IPv6 addresses that are allowed to connect
+        /// to an instance.
         /// </para>
         ///  </note> 
         /// <para>
@@ -186,20 +185,20 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// TCP and UDP - <code>0</code> to <code>65535</code> 
+        /// TCP and UDP - <c>0</c> to <c>65535</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ICMP - The ICMP type for IPv4 addresses. For example, specify <code>8</code> as the
-        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code>
-        /// (ICMP code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+        /// ICMP - The ICMP type for IPv4 addresses. For example, specify <c>8</c> as the <c>fromPort</c>
+        /// (ICMP type), and <c>-1</c> as the <c>toPort</c> (ICMP code), to enable ICMP Ping.
+        /// For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
         /// Messages</a> on <i>Wikipedia</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <code>128</code> as
-        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
-        /// (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// ICMPv6 - The ICMP type for IPv6 addresses. For example, specify <c>128</c> as the
+        /// <c>fromPort</c> (ICMPv6 type), and <c>0</c> as <c>toPort</c> (ICMPv6 code). For more
+        /// information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
         /// Control Message Protocol for IPv6</a>.
         /// </para>
         ///  </li> </ul>
@@ -226,8 +225,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>cidrs</code> parameter lists the IPv4 addresses that are allowed to connect
-        /// to an instance.
+        /// The <c>cidrs</c> parameter lists the IPv4 addresses that are allowed to connect to
+        /// an instance.
         /// </para>
         ///  </note> 
         /// <para>
@@ -258,34 +257,32 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tcp</code> - Transmission Control Protocol (TCP) provides reliable, ordered,
-        /// and error-checked delivery of streamed data between applications running on hosts
-        /// communicating by an IP network. If you have an application that doesn't require reliable
-        /// data stream service, use UDP instead.
+        ///  <c>tcp</c> - Transmission Control Protocol (TCP) provides reliable, ordered, and
+        /// error-checked delivery of streamed data between applications running on hosts communicating
+        /// by an IP network. If you have an application that doesn't require reliable data stream
+        /// service, use UDP instead.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>all</code> - All transport layer protocol types. For more general information,
-        /// see <a href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on
-        /// <i>Wikipedia</i>.
+        ///  <c>all</c> - All transport layer protocol types. For more general information, see
+        /// <a href="https://en.wikipedia.org/wiki/Transport_layer">Transport layer</a> on <i>Wikipedia</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>udp</code> - With User Datagram Protocol (UDP), computer applications can send
-        /// messages (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior
-        /// communications are not required to set up transmission channels or data paths. Applications
-        /// that don't require reliable data stream service can use UDP, which provides a connectionless
+        ///  <c>udp</c> - With User Datagram Protocol (UDP), computer applications can send messages
+        /// (or datagrams) to other hosts on an Internet Protocol (IP) network. Prior communications
+        /// are not required to set up transmission channels or data paths. Applications that
+        /// don't require reliable data stream service can use UDP, which provides a connectionless
         /// datagram service that emphasizes reduced latency over reliability. If you do require
         /// reliable data stream service, use TCP instead.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>icmp</code> - Internet Control Message Protocol (ICMP) is used to send error
-        /// messages and operational information indicating success or failure when communicating
-        /// with an instance. For example, an error is indicated when an instance could not be
-        /// reached. When you specify <code>icmp</code> as the <code>protocol</code>, you must
-        /// specify the ICMP type using the <code>fromPort</code> parameter, and ICMP code using
-        /// the <code>toPort</code> parameter.
+        ///  <c>icmp</c> - Internet Control Message Protocol (ICMP) is used to send error messages
+        /// and operational information indicating success or failure when communicating with
+        /// an instance. For example, an error is indicated when an instance could not be reached.
+        /// When you specify <c>icmp</c> as the <c>protocol</c>, you must specify the ICMP type
+        /// using the <c>fromPort</c> parameter, and ICMP code using the <c>toPort</c> parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -312,20 +309,20 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// TCP and UDP - <code>0</code> to <code>65535</code> 
+        /// TCP and UDP - <c>0</c> to <c>65535</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ICMP - The ICMP code for IPv4 addresses. For example, specify <code>8</code> as the
-        /// <code>fromPort</code> (ICMP type), and <code>-1</code> as the <code>toPort</code>
-        /// (ICMP code), to enable ICMP Ping. For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
+        /// ICMP - The ICMP code for IPv4 addresses. For example, specify <c>8</c> as the <c>fromPort</c>
+        /// (ICMP type), and <c>-1</c> as the <c>toPort</c> (ICMP code), to enable ICMP Ping.
+        /// For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol#Control_messages">Control
         /// Messages</a> on <i>Wikipedia</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <code>128</code> as
-        /// the <code>fromPort</code> (ICMPv6 type), and <code>0</code> as <code>toPort</code>
-        /// (ICMPv6 code). For more information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
+        /// ICMPv6 - The ICMP code for IPv6 addresses. For example, specify <c>128</c> as the
+        /// <c>fromPort</c> (ICMPv6 type), and <c>0</c> as <c>toPort</c> (ICMPv6 code). For more
+        /// information, see <a href="https://en.wikipedia.org/wiki/Internet_Control_Message_Protocol_for_IPv6">Internet
         /// Control Message Protocol for IPv6</a>.
         /// </para>
         ///  </li> </ul>

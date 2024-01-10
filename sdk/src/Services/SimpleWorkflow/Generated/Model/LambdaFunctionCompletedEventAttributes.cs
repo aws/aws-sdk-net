@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>LambdaFunctionCompleted</code> event. It isn't set
-    /// for other event types.
+    /// Provides the details of the <c>LambdaFunctionCompleted</c> event. It isn't set for
+    /// other event types.
     /// </summary>
     public partial class LambdaFunctionCompletedEventAttributes
     {
@@ -60,9 +60,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        /// The ID of the <code>LambdaFunctionScheduled</code> event that was recorded when this
-        /// Lambda task was scheduled. To help diagnose issues, use this information to trace
-        /// back the chain of events leading up to this event.
+        /// The ID of the <c>LambdaFunctionScheduled</c> event that was recorded when this Lambda
+        /// task was scheduled. To help diagnose issues, use this information to trace back the
+        /// chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,9 +81,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The ID of the <code>LambdaFunctionStarted</code> event recorded when this activity
-        /// task started. To help diagnose issues, use this information to trace back the chain
-        /// of events leading up to this event.
+        /// The ID of the <c>LambdaFunctionStarted</c> event recorded when this activity task
+        /// started. To help diagnose issues, use this information to trace back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,25 +31,24 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the UpdateStateMachineAlias operation.
     /// Updates the configuration of an existing state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>
-    /// by modifying its <code>description</code> or <code>routingConfiguration</code>.
+    /// by modifying its <c>description</c> or <c>routingConfiguration</c>.
     /// 
     ///  
     /// <para>
-    /// You must specify at least one of the <code>description</code> or <code>routingConfiguration</code>
+    /// You must specify at least one of the <c>description</c> or <c>routingConfiguration</c>
     /// parameters to update a state machine alias.
     /// </para>
     ///  <note> 
     /// <para>
-    ///  <code>UpdateStateMachineAlias</code> is an idempotent API. Step Functions bases the
-    /// idempotency check on the <code>stateMachineAliasArn</code>, <code>description</code>,
-    /// and <code>routingConfiguration</code> parameters. Requests with the same parameters
-    /// return an idempotent response.
+    ///  <c>UpdateStateMachineAlias</c> is an idempotent API. Step Functions bases the idempotency
+    /// check on the <c>stateMachineAliasArn</c>, <c>description</c>, and <c>routingConfiguration</c>
+    /// parameters. Requests with the same parameters return an idempotent response.
     /// </para>
     ///  </note> <note> 
     /// <para>
     /// This operation is eventually consistent. All <a>StartExecution</a> requests made within
     /// a few seconds use the latest alias configuration. Executions started immediately after
-    /// calling <code>UpdateStateMachineAlias</code> may use the previous routing configuration.
+    /// calling <c>UpdateStateMachineAlias</c> may use the previous routing configuration.
     /// </para>
     ///  </note> 
     /// <para>
@@ -105,8 +104,8 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        /// An array of <code>RoutingConfig</code> objects that specifies up to two state machine
-        /// versions that the alias starts executions for.
+        /// An array of <c>RoutingConfig</c> objects that specifies up to two state machine versions
+        /// that the alias starts executions for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

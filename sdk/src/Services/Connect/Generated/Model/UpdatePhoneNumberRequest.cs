@@ -84,7 +84,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the Amazon Connect instance that phone numbers are claimed to. You
         /// can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
         /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You must enter
-        /// <code>InstanceId</code> or <code>TargetArn</code>. 
+        /// <c>InstanceId</c> or <c>TargetArn</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -123,8 +123,8 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
-        /// groups that phone number inbound traffic is routed through. You must enter <code>InstanceId</code>
-        /// or <code>TargetArn</code>. 
+        /// groups that phone number inbound traffic is routed through. You must enter <c>InstanceId</c>
+        /// or <c>TargetArn</c>. 
         /// </para>
         /// </summary>
         public string TargetArn

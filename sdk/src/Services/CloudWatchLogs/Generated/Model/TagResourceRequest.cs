@@ -47,8 +47,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>TagResource</code> action with a resource that already has tags.
-    /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+    /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+    /// you specify a new tag key for the alarm, this tag is appended to the list of tags
     /// associated with the alarm. If you specify a tag key that is already associated with
     /// the alarm, the new tag value that you specify replaces the previous value for that
     /// tag.
@@ -70,13 +70,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a log group is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
-        /// </code> 
+        /// The ARN format of a log group is <c>arn:aws:logs:<i>Region</i>:<i>account-id</i>:log-group:<i>log-group-name</i>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a destination is <code>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
-        /// </code> 
+        /// The ARN format of a destination is <c>arn:aws:logs:<i>Region</i>:<i>account-id</i>:destination:<i>destination-name</i>
+        /// </c> 
         /// </para>
         ///  
         /// <para>

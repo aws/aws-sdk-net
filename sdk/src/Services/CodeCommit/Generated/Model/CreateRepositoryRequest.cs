@@ -49,8 +49,8 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  
         /// <para>
-        /// If no key is specified, the default <code>aws/codecommit</code> Amazon Web Services
-        /// managed key is used.
+        /// If no key is specified, the default <c>aws/codecommit</c> Amazon Web Services managed
+        /// key is used.
         /// </para>
         /// </summary>
         public string KmsKeyId

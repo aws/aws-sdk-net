@@ -61,8 +61,8 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property Requester. 
         /// <para>
         /// An identifier, such as a name or account ID, that is associated with the requester.
-        /// The <code>Requester</code> is used to capture the <code>author/actor</code> name of
-        /// the event request.
+        /// The <c>Requester</c> is used to capture the <c>author/actor</c> name of the event
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -103,9 +103,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// The name of the repository vendor used to upload code to an S3 bucket for a CI/CD
         /// code review. For example, if code and artifacts are uploaded to an S3 bucket for a
         /// CI/CD code review by GitHub scripts from a GitHub repository, then the repository
-        /// association's <code>ProviderType</code> is <code>S3Bucket</code> and the CI/CD repository
-        /// vendor name is GitHub. For more information, see the definition for <code>ProviderType</code>
-        /// in <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
+        /// association's <c>ProviderType</c> is <c>S3Bucket</c> and the CI/CD repository vendor
+        /// name is GitHub. For more information, see the definition for <c>ProviderType</c> in
+        /// <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a>.
         /// </para>
         /// </summary>
         public VendorName VendorName

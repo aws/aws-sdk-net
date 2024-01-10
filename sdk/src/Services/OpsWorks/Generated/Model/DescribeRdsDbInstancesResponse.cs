@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeRdsDbInstances</code> request.
+    /// Contains the response to a <c>DescribeRdsDbInstances</c> request.
     /// </summary>
     public partial class DescribeRdsDbInstancesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RdsDbInstances. 
         /// <para>
-        /// An a array of <code>RdsDbInstance</code> objects that describe the instances.
+        /// An a array of <c>RdsDbInstance</c> objects that describe the instances.
         /// </para>
         /// </summary>
         public List<RdsDbInstance> RdsDbInstances

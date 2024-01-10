@@ -39,8 +39,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSetIds. 
         /// <para>
-        /// A list of dataset IDs that you want to apply overrides to. You can use <code>*</code>
-        /// to override all datasets in this asset bundle.
+        /// A list of dataset IDs that you want to apply overrides to. You can use <c>*</c> to
+        /// override all datasets in this asset bundle.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

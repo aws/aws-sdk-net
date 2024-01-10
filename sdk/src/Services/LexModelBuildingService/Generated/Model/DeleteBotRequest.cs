@@ -30,8 +30,8 @@ namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteBot operation.
-    /// Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete
-    /// a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code>
+    /// Deletes all versions of the bot, including the <c>$LATEST</c> version. To delete a
+    /// specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <c>DeleteBot</c>
     /// operation doesn't immediately remove the bot schema. Instead, it is marked for deletion
     /// and removed later.
     /// 
@@ -43,15 +43,15 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    /// If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation
-    /// returns a <code>ResourceInUseException</code> exception that includes a reference
-    /// to the alias that refers to the bot. To remove the reference to the bot, delete the
-    /// alias. If you get the same exception again, delete the referring alias until the <code>DeleteBot</code>
+    /// If a bot has an alias, you can't delete it. Instead, the <c>DeleteBot</c> operation
+    /// returns a <c>ResourceInUseException</c> exception that includes a reference to the
+    /// alias that refers to the bot. To remove the reference to the bot, delete the alias.
+    /// If you get the same exception again, delete the referring alias until the <c>DeleteBot</c>
     /// operation is successful.
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>lex:DeleteBot</code> action.
+    /// This operation requires permissions for the <c>lex:DeleteBot</c> action.
     /// </para>
     /// </summary>
     public partial class DeleteBotRequest : AmazonLexModelBuildingServiceRequest

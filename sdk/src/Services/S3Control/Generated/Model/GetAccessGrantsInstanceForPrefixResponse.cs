@@ -58,8 +58,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccessGrantsInstanceId. 
         /// <para>
-        /// The ID of the S3 Access Grants instance. The ID is <code>default</code>. You can have
-        /// one S3 Access Grants instance per Region per account. 
+        /// The ID of the S3 Access Grants instance. The ID is <c>default</c>. You can have one
+        /// S3 Access Grants instance per Region per account. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -41,9 +41,9 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  
     /// <para>
-    /// In the <code>CreateSnapshotFromVolumeRecoveryPoint</code> request, you identify the
-    /// volume by providing its Amazon Resource Name (ARN). You must also provide a description
-    /// for the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
+    /// In the <c>CreateSnapshotFromVolumeRecoveryPoint</c> request, you identify the volume
+    /// by providing its Amazon Resource Name (ARN). You must also provide a description for
+    /// the snapshot. When the gateway takes a snapshot of the specified volume, the snapshot
     /// and its description appear in the Storage Gateway console. In response, the gateway
     /// returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress
     /// or later use it when you want to create a volume from a snapshot.

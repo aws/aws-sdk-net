@@ -30,8 +30,8 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// A complex type that identifies a hosted zone that a specified Amazon VPC is associated
-    /// with and the owner of the hosted zone. If there is a value for <code>OwningAccount</code>,
-    /// there is no value for <code>OwningService</code>, and vice versa.
+    /// with and the owner of the hosted zone. If there is a value for <c>OwningAccount</c>,
+    /// there is no value for <c>OwningService</c>, and vice versa.
     /// </summary>
     public partial class HostedZoneOwner
     {
@@ -43,9 +43,9 @@ namespace Amazon.Route53.Model
         /// <para>
         /// If the hosted zone was created by an Amazon Web Services account, or was created by
         /// an Amazon Web Services service that creates hosted zones using the current account,
-        /// <code>OwningAccount</code> contains the account ID of that account. For example, when
-        /// you use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using
-        /// the current Amazon Web Services account. 
+        /// <c>OwningAccount</c> contains the account ID of that account. For example, when you
+        /// use Cloud Map to create a hosted zone, Cloud Map creates the hosted zone using the
+        /// current Amazon Web Services account. 
         /// </para>
         /// </summary>
         public string OwningAccount
@@ -64,10 +64,10 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property OwningService. 
         /// <para>
         /// If an Amazon Web Services service uses its own account to create a hosted zone and
-        /// associate the specified VPC with that hosted zone, <code>OwningService</code> contains
-        /// an abbreviation that identifies the service. For example, if Amazon Elastic File System
+        /// associate the specified VPC with that hosted zone, <c>OwningService</c> contains an
+        /// abbreviation that identifies the service. For example, if Amazon Elastic File System
         /// (Amazon EFS) created a hosted zone and associated a VPC with the hosted zone, the
-        /// value of <code>OwningService</code> is <code>efs.amazonaws.com</code>.
+        /// value of <c>OwningService</c> is <c>efs.amazonaws.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

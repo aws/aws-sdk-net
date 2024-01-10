@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleNotificationService.Model
 {
     /// <summary>
-    /// The response from the <code>GetSMSAttributes</code> request.
+    /// The response from the <c>GetSMSAttributes</c> request.
     /// </summary>
     public partial class GetSMSAttributesResponse : AmazonWebServiceResponse
     {

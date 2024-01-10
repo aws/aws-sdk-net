@@ -41,10 +41,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AccessToken. 
         /// <para>
-        ///  A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
-        /// <code>days</code> for the value that you set in the <code>AccessTokenValidity</code>
-        /// parameter. The default <code>AccessTokenValidity</code> time unit is hours. <code>AccessTokenValidity</code>
-        /// duration can range from five minutes to one day.
+        ///  A time unit of <c>seconds</c>, <c>minutes</c>, <c>hours</c>, or <c>days</c> for the
+        /// value that you set in the <c>AccessTokenValidity</c> parameter. The default <c>AccessTokenValidity</c>
+        /// time unit is hours. <c>AccessTokenValidity</c> duration can range from five minutes
+        /// to one day.
         /// </para>
         /// </summary>
         public TimeUnitsType AccessToken
@@ -62,10 +62,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property IdToken. 
         /// <para>
-        /// A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
-        /// <code>days</code> for the value that you set in the <code>IdTokenValidity</code> parameter.
-        /// The default <code>IdTokenValidity</code> time unit is hours. <code>IdTokenValidity</code>
-        /// duration can range from five minutes to one day.
+        /// A time unit of <c>seconds</c>, <c>minutes</c>, <c>hours</c>, or <c>days</c> for the
+        /// value that you set in the <c>IdTokenValidity</c> parameter. The default <c>IdTokenValidity</c>
+        /// time unit is hours. <c>IdTokenValidity</c> duration can range from five minutes to
+        /// one day.
         /// </para>
         /// </summary>
         public TimeUnitsType IdToken
@@ -83,10 +83,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RefreshToken. 
         /// <para>
-        /// A time unit of <code>seconds</code>, <code>minutes</code>, <code>hours</code>, or
-        /// <code>days</code> for the value that you set in the <code>RefreshTokenValidity</code>
-        /// parameter. The default <code>RefreshTokenValidity</code> time unit is days. <code>RefreshTokenValidity</code>
-        /// duration can range from 60 minutes to 10 years.
+        /// A time unit of <c>seconds</c>, <c>minutes</c>, <c>hours</c>, or <c>days</c> for the
+        /// value that you set in the <c>RefreshTokenValidity</c> parameter. The default <c>RefreshTokenValidity</c>
+        /// time unit is days. <c>RefreshTokenValidity</c> duration can range from 60 minutes
+        /// to 10 years.
         /// </para>
         /// </summary>
         public TimeUnitsType RefreshToken

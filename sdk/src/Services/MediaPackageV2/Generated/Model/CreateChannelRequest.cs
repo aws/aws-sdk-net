@@ -132,11 +132,11 @@ namespace Amazon.MediaPackageV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"Key1": "Value1",</code> 
+        ///  <c>"Key1": "Value1",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"Key2": "Value2"</code> 
+        ///  <c>"Key2": "Value2"</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

@@ -31,8 +31,8 @@ namespace Amazon.NetworkFirewall.Model
     /// <summary>
     /// A single Suricata rules specification, for use in a stateful rule group. Use this
     /// option to specify a simple Suricata rule with protocol, source and destination, ports,
-    /// direction, and rule options. For information about the Suricata <code>Rules</code>
-    /// format, see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
+    /// direction, and rule options. For information about the Suricata <c>Rules</c> format,
+    /// see <a href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
     /// Format</a>.
     /// </summary>
     public partial class StatefulRule
@@ -70,8 +70,8 @@ namespace Amazon.NetworkFirewall.Model
         ///  
         /// <para>
         /// You can use this action to test a rule that you intend to use to drop traffic. You
-        /// can enable the rule with <code>ALERT</code> action, verify in the logs that the rule
-        /// is filtering as you want, then change the action to <code>DROP</code>.
+        /// can enable the rule with <c>ALERT</c> action, verify in the logs that the rule is
+        /// filtering as you want, then change the action to <c>DROP</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property RuleOptions. 
         /// <para>
-        /// Additional options for the rule. These are the Suricata <code>RuleOptions</code> settings.
+        /// Additional options for the rule. These are the Suricata <c>RuleOptions</c> settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

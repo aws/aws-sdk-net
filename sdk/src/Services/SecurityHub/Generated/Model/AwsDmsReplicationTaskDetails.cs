@@ -51,9 +51,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CdcStartPosition. 
         /// <para>
-        ///  Indicates when you want a change data capture (CDC) operation to start. <code>CCdcStartPosition</code>
-        /// or <code>CCdcStartTime</code> specifies when you want a CDC operation to start. Only
-        /// a value for one of these fields is included.
+        ///  Indicates when you want a change data capture (CDC) operation to start. <c>CCdcStartPosition</c>
+        /// or <c>CCdcStartTime</c> specifies when you want a CDC operation to start. Only a value
+        /// for one of these fields is included.
         /// </para>
         /// </summary>
         public string CdcStartPosition
@@ -71,7 +71,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CdcStartTime. 
         /// <para>
-        ///  Indicates the start time for a CDC operation. <code>CdcStartPosition</code> or <code>CCdcStartTime</code>
+        ///  Indicates the start time for a CDC operation. <c>CdcStartPosition</c> or <c>CCdcStartTime</c>
         /// specifies when you want a CDC operation to start. Only a value for one of these fields
         /// is included.
         /// </para>
@@ -200,9 +200,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        ///  A display name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter. If you don't specify a <code>ResourceIdentifier</code> value,
-        /// DMS generates a default identifier value for the end of <code>EndpointArn</code>.
+        ///  A display name for the resource identifier at the end of the <c>EndpointArn</c> response
+        /// parameter. If you don't specify a <c>ResourceIdentifier</c> value, DMS generates a
+        /// default identifier value for the end of <c>EndpointArn</c>.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

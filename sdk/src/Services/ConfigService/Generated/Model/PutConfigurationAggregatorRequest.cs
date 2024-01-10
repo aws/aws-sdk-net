@@ -35,8 +35,8 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    ///  <code>accountIds</code> that are passed will be replaced with existing accounts.
-    /// If you want to add additional accounts into the aggregator, call <code>DescribeConfigurationAggregators</code>
+    ///  <c>accountIds</c> that are passed will be replaced with existing accounts. If you
+    /// want to add additional accounts into the aggregator, call <c>DescribeConfigurationAggregators</c>
     /// to get the previous accounts and then append new ones.
     /// </para>
     ///  <note> 
@@ -47,10 +47,10 @@ namespace Amazon.ConfigService.Model
     /// <para>
     /// If your source type is an organization, you must be signed in to the management account
     /// or a registered delegated administrator and all the features must be enabled in your
-    /// organization. If the caller is a management account, Config calls <code>EnableAwsServiceAccess</code>
+    /// organization. If the caller is a management account, Config calls <c>EnableAwsServiceAccess</c>
     /// API to enable integration between Config and Organizations. If the caller is a registered
-    /// delegated administrator, Config calls <code>ListDelegatedAdministrators</code> API
-    /// to verify whether the caller is a valid delegated administrator.
+    /// delegated administrator, Config calls <c>ListDelegatedAdministrators</c> API to verify
+    /// whether the caller is a valid delegated administrator.
     /// </para>
     ///  
     /// <para>
@@ -59,11 +59,11 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  </note> <note> 
     /// <para>
-    ///  <code>PutConfigurationAggregator</code> is an idempotent API. Subsequent requests
-    /// won’t create a duplicate resource if one was already created. If a following request
-    /// has different <code>tags</code> values, Config will ignore these differences and treat
-    /// it as an idempotent request of the previous. In this case, <code>tags</code> will
-    /// not be updated, even if they are different.
+    ///  <c>PutConfigurationAggregator</c> is an idempotent API. Subsequent requests won’t
+    /// create a duplicate resource if one was already created. If a following request has
+    /// different <c>tags</c> values, Config will ignore these differences and treat it as
+    /// an idempotent request of the previous. In this case, <c>tags</c> will not be updated,
+    /// even if they are different.
     /// </para>
     ///  </note>
     /// </summary>

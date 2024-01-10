@@ -386,8 +386,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Interactive. 
         /// <para>
-        /// If set to true, then containerized applications can be deployed that require <code>stdin</code>
-        /// or a <code>tty</code> to be allocated.
+        /// If set to true, then containerized applications can be deployed that require <c>stdin</c>
+        /// or a <c>tty</c> to be allocated.
         /// </para>
         /// </summary>
         public bool Interactive
@@ -405,9 +405,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Links. 
         /// <para>
-        /// A list of links for the container in the form <code> <i>container_name</i>:<i>alias</i>
-        /// </code>. Allows containers to communicate with each other without the need for port
-        /// mappings.
+        /// A list of links for the container in the form <c> <i>container_name</i>:<i>alias</i>
+        /// </c>. Allows containers to communicate with each other without the need for port mappings.
         /// </para>
         /// </summary>
         public List<string> Links
@@ -747,27 +746,27 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code> <i>user</i> </code> 
+        ///  <c> <i>user</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> <i>user</i> </code>:<code> <i>group</i> </code> 
+        ///  <c> <i>user</i> </c>:<c> <i>group</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> <i>uid</i> </code> 
+        ///  <c> <i>uid</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> <i>uid</i> </code>:<code> <i>gid</i> </code> 
+        ///  <c> <i>uid</i> </c>:<c> <i>gid</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> <i>user</i> </code>:<code> <i>gid</i> </code> 
+        ///  <c> <i>user</i> </c>:<c> <i>gid</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> <i>uid</i> </code>:<code> <i>group</i> </code> 
+        ///  <c> <i>uid</i> </c>:<c> <i>group</i> </c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

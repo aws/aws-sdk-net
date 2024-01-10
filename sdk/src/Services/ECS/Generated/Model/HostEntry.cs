@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Hostnames and IP address entries that are added to the <code>/etc/hosts</code> file
-    /// of a container via the <code>extraHosts</code> parameter of its <a>ContainerDefinition</a>.
+    /// Hostnames and IP address entries that are added to the <c>/etc/hosts</c> file of a
+    /// container via the <c>extraHosts</c> parameter of its <a>ContainerDefinition</a>.
     /// </summary>
     public partial class HostEntry
     {
@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Hostname. 
         /// <para>
-        /// The hostname to use in the <code>/etc/hosts</code> entry.
+        /// The hostname to use in the <c>/etc/hosts</c> entry.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address to use in the <code>/etc/hosts</code> entry.
+        /// The IP address to use in the <c>/etc/hosts</c> entry.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

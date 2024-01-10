@@ -50,7 +50,7 @@ namespace Amazon.WAFV2.Model
         /// Contains an array of strings that specifies zero or more IP addresses or blocks of
         /// IP addresses that you want WAF to inspect for in incoming requests. All addresses
         /// must be specified using Classless Inter-Domain Routing (CIDR) notation. WAF supports
-        /// all IPv4 and IPv6 CIDR ranges except for <code>/0</code>. 
+        /// all IPv4 and IPv6 CIDR ranges except for <c>/0</c>. 
         /// </para>
         ///  
         /// <para>
@@ -58,22 +58,22 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For requests that originated from the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
+        /// For requests that originated from the IP address 192.0.2.44, specify <c>192.0.2.44/32</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For requests that originated from IP addresses from 192.0.2.0 to 192.0.2.255, specify
-        /// <code>192.0.2.0/24</code>.
+        /// <c>192.0.2.0/24</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For requests that originated from the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
-        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// specify <c>1111:0000:0000:0000:0000:0000:0000:0111/128</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For requests that originated from IP addresses 1111:0000:0000:0000:0000:0000:0000:0000
-        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <c>1111:0000:0000:0000:0000:0000:0000:0000/64</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -82,24 +82,24 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Example JSON <code>Addresses</code> specifications: 
+        /// Example JSON <c>Addresses</c> specifications: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Empty array: <code>"Addresses": []</code> 
+        /// Empty array: <c>"Addresses": []</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Array with one address: <code>"Addresses": ["192.0.2.44/32"]</code> 
+        /// Array with one address: <c>"Addresses": ["192.0.2.44/32"]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Array with three addresses: <code>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</code>
+        /// Array with three addresses: <c>"Addresses": ["192.0.2.44/32", "192.0.2.0/24", "192.0.0.0/16"]</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INVALID specification: <code>"Addresses": [""]</code> INVALID 
+        /// INVALID specification: <c>"Addresses": [""]</c> INVALID 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -138,7 +138,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property IPAddressVersion. 
         /// <para>
-        /// The version of the IP addresses, either <code>IPV4</code> or <code>IPV6</code>. 
+        /// The version of the IP addresses, either <c>IPV4</c> or <c>IPV6</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -157,8 +157,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the IP set. You cannot change the name of an <code>IPSet</code> after
-        /// you create it.
+        /// The name of the IP set. You cannot change the name of an <c>IPSet</c> after you create
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -189,8 +189,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-        /// --region=us-east-1</code>. 
+        /// CLI - Specify the Region when you use the CloudFront scope: <c>--scope=CLOUDFRONT
+        /// --region=us-east-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

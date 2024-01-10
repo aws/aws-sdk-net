@@ -139,8 +139,8 @@ namespace Amazon.AppConfig.Model
         /// <para>
         /// The identifier for an Key Management Service key to encrypt new configuration data
         /// versions in the AppConfig hosted configuration store. This attribute is only used
-        /// for <code>hosted</code> configuration types. The identifier can be an KMS key ID,
-        /// alias, or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed
+        /// for <c>hosted</c> configuration types. The identifier can be an KMS key ID, alias,
+        /// or the Amazon Resource Name (ARN) of the key ID or alias. To encrypt data managed
         /// in other configuration stores, see the documentation for how to specify an KMS key
         /// for that particular service.
         /// </para>
@@ -165,34 +165,33 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the AppConfig hosted configuration store and for feature flags, specify <code>hosted</code>.
+        /// For the AppConfig hosted configuration store and for feature flags, specify <c>hosted</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For an Amazon Web Services Systems Manager Parameter Store parameter, specify either
-        /// the parameter name in the format <code>ssm-parameter://&lt;parameter name&gt;</code>
-        /// or the ARN.
+        /// the parameter name in the format <c>ssm-parameter://&lt;parameter name&gt;</c> or
+        /// the ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For an Amazon Web Services CodePipeline pipeline, specify the URI in the following
-        /// format: <code>codepipeline</code>://&lt;pipeline name&gt;.
+        /// format: <c>codepipeline</c>://&lt;pipeline name&gt;.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Secrets Manager secret, specify the URI in the following format: <code>secretsmanager</code>://&lt;secret
+        /// For an Secrets Manager secret, specify the URI in the following format: <c>secretsmanager</c>://&lt;secret
         /// name&gt;.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an Amazon S3 object, specify the URI in the following format: <code>s3://&lt;bucket&gt;/&lt;objectKey&gt;
-        /// </code>. Here is an example: <code>s3://my-bucket/my-app/us-east-1/my-config.json</code>
-        /// 
+        /// For an Amazon S3 object, specify the URI in the following format: <c>s3://&lt;bucket&gt;/&lt;objectKey&gt;
+        /// </c>. Here is an example: <c>s3://my-bucket/my-app/us-east-1/my-config.json</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For an SSM document, specify either the document name in the format <code>ssm-document://&lt;document
-        /// name&gt;</code> or the Amazon Resource Name (ARN).
+        /// For an SSM document, specify either the document name in the format <c>ssm-document://&lt;document
+        /// name&gt;</c> or the Amazon Resource Name (ARN).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -232,7 +231,7 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property RetrievalRoleArn. 
         /// <para>
         /// The ARN of an IAM role with permission to access the configuration at the specified
-        /// <code>LocationUri</code>.
+        /// <c>LocationUri</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -279,19 +278,19 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of configurations contained in the profile. AppConfig supports <code>feature
-        /// flags</code> and <code>freeform</code> configurations. We recommend you create feature
-        /// flag configurations to enable or disable new features and freeform configurations
-        /// to distribute configurations to an application. When calling this API, enter one of
-        /// the following values for <code>Type</code>:
+        /// The type of configurations contained in the profile. AppConfig supports <c>feature
+        /// flags</c> and <c>freeform</c> configurations. We recommend you create feature flag
+        /// configurations to enable or disable new features and freeform configurations to distribute
+        /// configurations to an application. When calling this API, enter one of the following
+        /// values for <c>Type</c>:
         /// </para>
         ///  
         /// <para>
-        ///  <code>AWS.AppConfig.FeatureFlags</code> 
+        ///  <c>AWS.AppConfig.FeatureFlags</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AWS.Freeform</code> 
+        ///  <c>AWS.Freeform</c> 
         /// </para>
         /// </summary>
         public string Type

@@ -45,8 +45,8 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Example JSON: <code>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL"
-    /// }</code> 
+    /// Example JSON: <c>"JsonBody": { "MatchPattern": { "All": {} }, "MatchScope": "ALL"
+    /// }</c> 
     /// </para>
     /// </summary>
     public partial class JsonBody
@@ -64,18 +64,18 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EVALUATE_AS_STRING</code> - Inspect the body as plain text. WAF applies the
-        /// text transformations and inspection criteria that you defined for the JSON inspection
-        /// to the body text string.
+        ///  <c>EVALUATE_AS_STRING</c> - Inspect the body as plain text. WAF applies the text
+        /// transformations and inspection criteria that you defined for the JSON inspection to
+        /// the body text string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        ///  <c>MATCH</c> - Treat the web request as matching the rule statement. WAF applies
         /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
+        ///  <c>NO_MATCH</c> - Treat the web request as not matching the rule statement.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -94,15 +94,15 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Missing comma: <code>{"key1":"value1""key2":"value2"}</code> 
+        /// Missing comma: <c>{"key1":"value1""key2":"value2"}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Missing colon: <code>{"key1":"value1","key2""value2"}</code> 
+        /// Missing colon: <c>{"key1":"value1","key2""value2"}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Extra colons: <code>{"key1"::"value1","key2""value2"}</code> 
+        /// Extra colons: <c>{"key1"::"value1","key2""value2"}</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -141,16 +141,16 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property MatchScope. 
         /// <para>
-        /// The parts of the JSON to match against using the <code>MatchPattern</code>. If you
-        /// specify <code>ALL</code>, WAF matches against keys and values. 
+        /// The parts of the JSON to match against using the <c>MatchPattern</c>. If you specify
+        /// <c>ALL</c>, WAF matches against keys and values. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>All</code> does not require a match to be found in the keys and a match to
-        /// be found in the values. It requires a match to be found in the keys or the values
-        /// or both. To require a match in the keys and in the values, use a logical <code>AND</code>
-        /// statement to combine two match rules, one that inspects the keys and another that
-        /// inspects the values. 
+        ///  <c>All</c> does not require a match to be found in the keys and a match to be found
+        /// in the values. It requires a match to be found in the keys or the values or both.
+        /// To require a match in the keys and in the values, use a logical <c>AND</c> statement
+        /// to combine two match rules, one that inspects the keys and another that inspects the
+        /// values. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -178,7 +178,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The default limit is 8 KB (8,192 bytes) for regional resources and 16 KB (16,384 bytes)
         /// for CloudFront distributions. For CloudFront distributions, you can increase the limit
-        /// in the web ACL <code>AssociationConfig</code>, for additional processing fees. 
+        /// in the web ACL <c>AssociationConfig</c>, for additional processing fees. 
         /// </para>
         ///  
         /// <para>
@@ -186,27 +186,27 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Inspect the available body contents normally, according to
-        /// the rule inspection criteria. 
+        ///  <c>CONTINUE</c> - Inspect the available body contents normally, according to the
+        /// rule inspection criteria. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        ///  <c>MATCH</c> - Treat the web request as matching the rule statement. WAF applies
         /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
+        ///  <c>NO_MATCH</c> - Treat the web request as not matching the rule statement.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize
-        /// handling with your rule and web ACL action settings, so that you block any request
-        /// whose body is over the limit. 
+        /// You can combine the <c>MATCH</c> or <c>NO_MATCH</c> settings for oversize handling
+        /// with your rule and web ACL action settings, so that you block any request whose body
+        /// is over the limit. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>CONTINUE</code> 
+        /// Default: <c>CONTINUE</c> 
         /// </para>
         /// </summary>
         public OversizeHandling OversizeHandling

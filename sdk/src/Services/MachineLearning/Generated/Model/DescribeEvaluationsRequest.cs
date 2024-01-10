@@ -30,8 +30,8 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEvaluations operation.
-    /// Returns a list of <code>DescribeEvaluations</code> that match the search criteria
-    /// in the request.
+    /// Returns a list of <c>DescribeEvaluations</c> that match the search criteria in the
+    /// request.
     /// </summary>
     public partial class DescribeEvaluationsRequest : AmazonMachineLearningRequest
     {
@@ -50,8 +50,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EQ. 
         /// <para>
-        /// The equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
-        /// values that exactly match the value specified with <code>EQ</code>.
+        /// The equal to operator. The <c>Evaluation</c> results will have <c>FilterVariable</c>
+        /// values that exactly match the value specified with <c>EQ</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -70,40 +70,36 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property FilterVariable. 
         /// <para>
-        /// Use one of the following variable to filter a list of <code>Evaluation</code> objects:
+        /// Use one of the following variable to filter a list of <c>Evaluation</c> objects:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CreatedAt</code> - Sets the search criteria to the <code>Evaluation</code>
-        /// creation date.
+        ///  <c>CreatedAt</c> - Sets the search criteria to the <c>Evaluation</c> creation date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code> - Sets the search criteria to the <code>Evaluation</code> status.
+        ///  <c>Status</c> - Sets the search criteria to the <c>Evaluation</c> status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Name</code> - Sets the search criteria to the contents of <code>Evaluation</code>
-        /// <b> </b> <code>Name</code>.
+        ///  <c>Name</c> - Sets the search criteria to the contents of <c>Evaluation</c> <b> </b>
+        /// <c>Name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-        /// an <code>Evaluation</code>.
+        ///  <c>IAMUser</c> - Sets the search criteria to the user account that invoked an <c>Evaluation</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MLModelId</code> - Sets the search criteria to the <code>MLModel</code> that
-        /// was evaluated.
+        ///  <c>MLModelId</c> - Sets the search criteria to the <c>MLModel</c> that was evaluated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DataSourceId</code> - Sets the search criteria to the <code>DataSource</code>
-        /// used in <code>Evaluation</code>.
+        ///  <c>DataSourceId</c> - Sets the search criteria to the <c>DataSource</c> used in <c>Evaluation</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DataUri</code> - Sets the search criteria to the data file(s) used in <code>Evaluation</code>.
+        ///  <c>DataUri</c> - Sets the search criteria to the data file(s) used in <c>Evaluation</c>.
         /// The URL can identify either a file or an Amazon Simple Storage Solution (Amazon S3)
         /// bucket or directory.
         /// </para>
@@ -124,9 +120,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property GE. 
         /// <para>
-        /// The greater than or equal to operator. The <code>Evaluation</code> results will have
-        /// <code>FilterVariable</code> values that are greater than or equal to the value specified
-        /// with <code>GE</code>. 
+        /// The greater than or equal to operator. The <c>Evaluation</c> results will have <c>FilterVariable</c>
+        /// values that are greater than or equal to the value specified with <c>GE</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -145,8 +140,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property GT. 
         /// <para>
-        /// The greater than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
-        /// values that are greater than the value specified with <code>GT</code>.
+        /// The greater than operator. The <c>Evaluation</c> results will have <c>FilterVariable</c>
+        /// values that are greater than the value specified with <c>GT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -165,9 +160,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LE. 
         /// <para>
-        /// The less than or equal to operator. The <code>Evaluation</code> results will have
-        /// <code>FilterVariable</code> values that are less than or equal to the value specified
-        /// with <code>LE</code>.
+        /// The less than or equal to operator. The <c>Evaluation</c> results will have <c>FilterVariable</c>
+        /// values that are less than or equal to the value specified with <c>LE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -186,7 +180,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        ///  The maximum number of <code>Evaluation</code> to include in the result.
+        ///  The maximum number of <c>Evaluation</c> to include in the result.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -205,8 +199,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LT. 
         /// <para>
-        /// The less than operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
-        /// values that are less than the value specified with <code>LT</code>.
+        /// The less than operator. The <c>Evaluation</c> results will have <c>FilterVariable</c>
+        /// values that are less than the value specified with <c>LT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -225,8 +219,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property NE. 
         /// <para>
-        /// The not equal to operator. The <code>Evaluation</code> results will have <code>FilterVariable</code>
-        /// values not equal to the value specified with <code>NE</code>.
+        /// The not equal to operator. The <c>Evaluation</c> results will have <c>FilterVariable</c>
+        /// values not equal to the value specified with <c>NE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -263,14 +257,13 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// A string that is found at the beginning of a variable, such as <code>Name</code> or
-        /// <code>Id</code>.
+        /// A string that is found at the beginning of a variable, such as <c>Name</c> or <c>Id</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, an <code>Evaluation</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>.
-        /// To search for this <code>Evaluation</code>, select <code>Name</code> for the <code>FilterVariable</code>
-        /// and any of the following strings for the <code>Prefix</code>: 
+        /// For example, an <c>Evaluation</c> could have the <c>Name</c> <c>2014-09-09-HolidayGiftMailer</c>.
+        /// To search for this <c>Evaluation</c>, select <c>Name</c> for the <c>FilterVariable</c>
+        /// and any of the following strings for the <c>Prefix</c>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -302,19 +295,19 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// A two-value parameter that determines the sequence of the resulting list of <code>Evaluation</code>.
+        /// A two-value parameter that determines the sequence of the resulting list of <c>Evaluation</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+        ///  <c>asc</c> - Arranges the list in ascending order (A-Z, 0-9).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+        ///  <c>dsc</c> - Arranges the list in descending order (Z-A, 9-0).
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Results are sorted by <code>FilterVariable</code>.
+        /// Results are sorted by <c>FilterVariable</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

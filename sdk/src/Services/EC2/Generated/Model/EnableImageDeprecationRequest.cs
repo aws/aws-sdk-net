@@ -51,9 +51,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can’t specify a date in the past. The upper limit for <code>DeprecateAt</code>
-        /// is 10 years from now, except for public AMIs, where the upper limit is 2 years from
-        /// the creation date.
+        /// You can’t specify a date in the past. The upper limit for <c>DeprecateAt</c> is 10
+        /// years from now, except for public AMIs, where the upper limit is 2 years from the
+        /// creation date.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// For each message in the batch, the response contains a <code> <a>DeleteMessageBatchResultEntry</a>
-    /// </code> tag if the message is deleted or a <code> <a>BatchResultErrorEntry</a> </code>
-    /// tag if the message can't be deleted.
+    /// For each message in the batch, the response contains a <c> <a>DeleteMessageBatchResultEntry</a>
+    /// </c> tag if the message is deleted or a <c> <a>BatchResultErrorEntry</a> </c> tag
+    /// if the message can't be deleted.
     /// </summary>
     public partial class DeleteMessageBatchResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// A list of <code> <a>BatchResultErrorEntry</a> </code> items.
+        /// A list of <c> <a>BatchResultErrorEntry</a> </c> items.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Successful. 
         /// <para>
-        /// A list of <code> <a>DeleteMessageBatchResultEntry</a> </code> items.
+        /// A list of <c> <a>DeleteMessageBatchResultEntry</a> </c> items.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

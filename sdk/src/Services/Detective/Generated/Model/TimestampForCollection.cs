@@ -39,7 +39,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// The data and time when data collection began for a source package. The value is an
-        /// ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime Timestamp

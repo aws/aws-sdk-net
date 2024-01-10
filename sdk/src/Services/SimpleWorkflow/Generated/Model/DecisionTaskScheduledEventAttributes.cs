@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides details about the <code>DecisionTaskScheduled</code> event.
+    /// Provides details about the <c>DecisionTaskScheduled</c> event.
     /// </summary>
     public partial class DecisionTaskScheduledEventAttributes
     {
@@ -65,8 +65,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]
@@ -105,8 +105,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TaskPriority. 
         /// <para>
         ///  A task priority that, if set, specifies the priority for this decision task. Valid
-        /// values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-        /// to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
+        /// values are integers that range from Java's <c>Integer.MIN_VALUE</c> (-2147483648)
+        /// to <c>Integer.MAX_VALUE</c> (2147483647). Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>

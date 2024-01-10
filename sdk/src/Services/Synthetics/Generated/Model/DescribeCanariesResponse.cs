@@ -58,7 +58,7 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates that there is more data available. You can use this token in
-        /// a subsequent <code>DescribeCanaries</code> operation to retrieve the next set of results.
+        /// a subsequent <c>DescribeCanaries</c> operation to retrieve the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=252)]

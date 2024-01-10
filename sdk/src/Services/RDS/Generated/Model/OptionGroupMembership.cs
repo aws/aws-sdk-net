@@ -57,10 +57,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-        /// <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-        /// <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>,
-        /// and <code>failed</code>.
+        /// The status of the DB instance's option group membership. Valid values are: <c>in-sync</c>,
+        /// <c>pending-apply</c>, <c>pending-removal</c>, <c>pending-maintenance-apply</c>, <c>pending-maintenance-removal</c>,
+        /// <c>applying</c>, <c>removing</c>, and <c>failed</c>.
         /// </para>
         /// </summary>
         public string Status

@@ -34,9 +34,9 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Domain and distribution APIs are only available in the N. Virginia (<code>us-east-1</code>)
+    /// Domain and distribution APIs are only available in the N. Virginia (<c>us-east-1</c>)
     /// Amazon Web Services Region. Please set your Amazon Web Services Region configuration
-    /// to <code>us-east-1</code> to create, view, or edit these resources.
+    /// to <c>us-east-1</c> to create, view, or edit these resources.
     /// </para>
     ///  </note>
     /// </summary>

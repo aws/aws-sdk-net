@@ -42,8 +42,8 @@ namespace Amazon.Ivschat.Model
         /// Gets and sets the property DestinationConfiguration. 
         /// <para>
         /// A complex type that contains a destination configuration for where chat content will
-        /// be logged. There can be only one type of destination (<code>cloudWatchLogs</code>,
-        /// <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.
+        /// be logged. There can be only one type of destination (<c>cloudWatchLogs</c>, <c>firehose</c>,
+        /// or <c>s3</c>) in a <c>destinationConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,8 +81,8 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to attach to the resource. Array of maps, each of the form <code>string:string
-        /// (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Tags to attach to the resource. Array of maps, each of the form <c>string:string (key:value)</c>.
+        /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
         /// naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond
         /// what is documented there.

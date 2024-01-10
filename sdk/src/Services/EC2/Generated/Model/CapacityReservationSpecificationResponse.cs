@@ -30,12 +30,11 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes the instance's Capacity Reservation targeting preferences. The action returns
-    /// the <code>capacityReservationPreference</code> response element if the instance is
-    /// configured to run in On-Demand capacity, or if it is configured in run in any <code>open</code>
-    /// Capacity Reservation that has matching attributes (instance type, platform, Availability
-    /// Zone). The action returns the <code>capacityReservationTarget</code> response element
-    /// if the instance explicily targets a specific Capacity Reservation or Capacity Reservation
-    /// group.
+    /// the <c>capacityReservationPreference</c> response element if the instance is configured
+    /// to run in On-Demand capacity, or if it is configured in run in any <c>open</c> Capacity
+    /// Reservation that has matching attributes (instance type, platform, Availability Zone).
+    /// The action returns the <c>capacityReservationTarget</c> response element if the instance
+    /// explicily targets a specific Capacity Reservation or Capacity Reservation group.
     /// </summary>
     public partial class CapacityReservationSpecificationResponse
     {
@@ -49,13 +48,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>open</code> - The instance can run in any <code>open</code> Capacity Reservation
-        /// that has matching attributes (instance type, platform, Availability Zone).
+        ///  <c>open</c> - The instance can run in any <c>open</c> Capacity Reservation that has
+        /// matching attributes (instance type, platform, Availability Zone).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code> - The instance avoids running in a Capacity Reservation even if
-        /// one is available. The instance runs in On-Demand capacity.
+        ///  <c>none</c> - The instance avoids running in a Capacity Reservation even if one is
+        /// available. The instance runs in On-Demand capacity.
         /// </para>
         ///  </li> </ul>
         /// </summary>

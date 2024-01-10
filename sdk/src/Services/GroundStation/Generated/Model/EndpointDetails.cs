@@ -78,7 +78,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property HealthReasons. 
         /// <para>
-        /// Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        /// Health reasons for a dataflow endpoint. This field is ignored when calling <c>CreateDataflowEndpointGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=500)]
@@ -97,7 +97,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        /// A dataflow endpoint health status. This field is ignored when calling <c>CreateDataflowEndpointGroup</c>.
         /// </para>
         /// </summary>
         public CapabilityHealth HealthStatus

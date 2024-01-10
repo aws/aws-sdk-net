@@ -104,7 +104,7 @@ namespace Amazon.VoiceID.Model
         /// The configuration, containing the KMS key identifier, to be used by Voice ID for the
         /// server-side encryption of your data. Changing the domain's associated KMS key immediately
         /// triggers an asynchronous process to remove dependency on the old KMS key, such that
-        /// the domain's data can only be accessed using the new KMS key. The domain's <code>ServerSideEncryptionUpdateDetails</code>
+        /// the domain's data can only be accessed using the new KMS key. The domain's <c>ServerSideEncryptionUpdateDetails</c>
         /// contains the details for this process.
         /// </para>
         /// </summary>

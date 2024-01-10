@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to the <code><a>ListVpcEndpointAccess</a></code>
-    /// operation. Returns a list of accounts id and account type authorized to manage VPC
-    /// endpoints.
+    /// Container for response parameters to the <c><a>ListVpcEndpointAccess</a></c> operation.
+    /// Returns a list of accounts id and account type authorized to manage VPC endpoints.
     /// </summary>
     public partial class ListVpcEndpointAccessResponse : AmazonWebServiceResponse
     {
@@ -41,8 +40,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property AuthorizedPrincipalList. 
         /// <para>
-        /// List of <code>AuthorizedPrincipal</code> describing the details of the permissions
-        /// to manage VPC endpoints against the specified domain.
+        /// List of <c>AuthorizedPrincipal</c> describing the details of the permissions to manage
+        /// VPC endpoints against the specified domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

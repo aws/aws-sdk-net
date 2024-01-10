@@ -33,11 +33,11 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// 
     ///  
     /// <para>
-    /// This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
+    /// This value should not be present if <c>PlaybackType</c> is <c>LIVE</c>.
     /// </para>
     ///  
     /// <para>
-    /// The values in <code>DASHimestampRange</code> are inclusive. Fragments that start exactly
+    /// The values in <c>DASHimestampRange</c> are inclusive. Fragments that start exactly
     /// at or after the start time are included in the session. Fragments that start before
     /// the start time and continue past it are not included in the session.
     /// </para>
@@ -51,26 +51,26 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property EndTimestamp. 
         /// <para>
         /// The end of the timestamp range for the requested media. This value must be within
-        /// 24 hours of the specified <code>StartTimestamp</code>, and it must be later than the
-        /// <code>StartTimestamp</code> value.
+        /// 24 hours of the specified <c>StartTimestamp</c>, and it must be later than the <c>StartTimestamp</c>
+        /// value.
         /// </para>
         ///  
         /// <para>
-        /// If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>,
-        /// this value must be in the past.
+        /// If <c>FragmentSelectorType</c> for the request is <c>SERVER_TIMESTAMP</c>, this value
+        /// must be in the past.
         /// </para>
         ///  
         /// <para>
-        /// The <code>EndTimestamp</code> value is required for <code>ON_DEMAND</code> mode, but
-        /// optional for <code>LIVE_REPLAY</code> mode. If the <code>EndTimestamp</code> is not
-        /// set for <code>LIVE_REPLAY</code> mode then the session will continue to include newly
-        /// ingested fragments until the session expires.
+        /// The <c>EndTimestamp</c> value is required for <c>ON_DEMAND</c> mode, but optional
+        /// for <c>LIVE_REPLAY</c> mode. If the <c>EndTimestamp</c> is not set for <c>LIVE_REPLAY</c>
+        /// mode then the session will continue to include newly ingested fragments until the
+        /// session expires.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This value is inclusive. The <code>EndTimestamp</code> is compared to the (starting)
-        /// timestamp of the fragment. Fragments that start before the <code>EndTimestamp</code>
-        /// value and continue past it are included in the session.
+        /// This value is inclusive. The <c>EndTimestamp</c> is compared to the (starting) timestamp
+        /// of the fragment. Fragments that start before the <c>EndTimestamp</c> value and continue
+        /// past it are included in the session.
         /// </para>
         ///  </note>
         /// </summary>
@@ -93,15 +93,15 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>DASHTimestampRange</code> value is specified, the <code>StartTimestamp</code>
-        /// value is required.
+        /// If the <c>DASHTimestampRange</c> value is specified, the <c>StartTimestamp</c> value
+        /// is required.
         /// </para>
         ///  
         /// <para>
-        /// Only fragments that start exactly at or after <code>StartTimestamp</code> are included
-        /// in the session. Fragments that start before <code>StartTimestamp</code> and continue
-        /// past it aren't included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>,
-        /// the <code>StartTimestamp</code> must be later than the stream head. 
+        /// Only fragments that start exactly at or after <c>StartTimestamp</c> are included in
+        /// the session. Fragments that start before <c>StartTimestamp</c> and continue past it
+        /// aren't included in the session. If <c>FragmentSelectorType</c> is <c>SERVER_TIMESTAMP</c>,
+        /// the <c>StartTimestamp</c> must be later than the stream head. 
         /// </para>
         /// </summary>
         public DateTime StartTimestamp

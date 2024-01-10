@@ -116,8 +116,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property VerificationUri. 
         /// <para>
-        /// The URI of the verification page that takes the <code>userCode</code> to authorize
-        /// the device.
+        /// The URI of the verification page that takes the <c>userCode</c> to authorize the device.
         /// </para>
         /// </summary>
         public string VerificationUri

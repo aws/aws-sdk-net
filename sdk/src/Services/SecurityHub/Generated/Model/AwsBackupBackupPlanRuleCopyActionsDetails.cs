@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// An array of <code>CopyAction</code> objects, each of which contains details of the
-    /// copy operation.
+    /// An array of <c>CopyAction</c> objects, each of which contains details of the copy
+    /// operation.
     /// </summary>
     public partial class AwsBackupBackupPlanRuleCopyActionsDetails
     {

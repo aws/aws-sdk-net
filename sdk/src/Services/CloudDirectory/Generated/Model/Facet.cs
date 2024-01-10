@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// A structure that contains <code>Name</code>, <code>ARN</code>, <code>Attributes</code>,
-    /// <code> <a>Rule</a>s</code>, and <code>ObjectTypes</code>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a>
+    /// A structure that contains <c>Name</c>, <c>ARN</c>, <c>Attributes</c>, <c> <a>Rule</a>s</c>,
+    /// and <c>ObjectTypes</c>. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_whatarefacets.html">Facets</a>
     /// for more information.
     /// </summary>
     public partial class Facet
@@ -42,9 +42,9 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property FacetStyle. 
         /// <para>
-        /// There are two different styles that you can define on any given facet, <code>Static</code>
-        /// and <code>Dynamic</code>. For static facets, all attributes must be defined in the
-        /// schema. For dynamic facets, attributes can be defined during data plane operations.
+        /// There are two different styles that you can define on any given facet, <c>Static</c>
+        /// and <c>Dynamic</c>. For static facets, all attributes must be defined in the schema.
+        /// For dynamic facets, attributes can be defined during data plane operations.
         /// </para>
         /// </summary>
         public FacetStyle FacetStyle

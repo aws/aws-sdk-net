@@ -32,12 +32,11 @@ namespace Amazon.CodeDeploy.Model
     /// Container for the parameters to the PutLifecycleEventHookExecutionStatus operation.
     /// Sets the result of a Lambda validation function. The function validates lifecycle
     /// hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For
-    /// Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code>
-    /// and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle
-    /// hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>,
-    /// <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation
-    /// functions return <code>Succeeded</code> or <code>Failed</code>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
+    /// Lambda deployments, the available lifecycle hooks are <c>BeforeAllowTraffic</c> and
+    /// <c>AfterAllowTraffic</c>. For Amazon ECS deployments, the available lifecycle hooks
+    /// are <c>BeforeInstall</c>, <c>AfterInstall</c>, <c>AfterAllowTestTraffic</c>, <c>BeforeAllowTraffic</c>,
+    /// and <c>AfterAllowTraffic</c>. Lambda validation functions return <c>Succeeded</c>
+    /// or <c>Failed</c>. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec
     /// 'hooks' Section for an Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec
     /// 'hooks' Section for an Amazon ECS Deployment</a>.
     /// </summary>
@@ -70,7 +69,7 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property LifecycleEventHookExecutionId. 
         /// <para>
         ///  The execution ID of a deployment's lifecycle hook. A deployment lifecycle hook is
-        /// specified in the <code>hooks</code> section of the AppSpec file. 
+        /// specified in the <c>hooks</c> section of the AppSpec file. 
         /// </para>
         /// </summary>
         public string LifecycleEventHookExecutionId
@@ -90,8 +89,7 @@ namespace Amazon.CodeDeploy.Model
         /// <para>
         /// The result of a Lambda function that validates a deployment lifecycle event. The values
         /// listed in <b>Valid Values</b> are valid for lifecycle statuses in general; however,
-        /// only <code>Succeeded</code> and <code>Failed</code> can be passed successfully in
-        /// your API call.
+        /// only <c>Succeeded</c> and <c>Failed</c> can be passed successfully in your API call.
         /// </para>
         /// </summary>
         public LifecycleEventStatus Status

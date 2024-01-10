@@ -63,7 +63,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code>
+        /// Internal ID of the package to dissociate from the domain. Use <c>ListPackagesForDomain</c>
         /// to find this value.
         /// </para>
         /// </summary>

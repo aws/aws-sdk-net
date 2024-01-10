@@ -46,8 +46,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Analyses. 
         /// <para>
-        /// An optional list of structures that control how <code>Analysis</code> resources are
-        /// parameterized in the returned CloudFormation template.
+        /// An optional list of structures that control how <c>Analysis</c> resources are parameterized
+        /// in the returned CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -66,8 +66,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Dashboards. 
         /// <para>
-        /// An optional list of structures that control how <code>Dashboard</code> resources are
-        /// parameterized in the returned CloudFormation template.
+        /// An optional list of structures that control how <c>Dashboard</c> resources are parameterized
+        /// in the returned CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -86,8 +86,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSets. 
         /// <para>
-        /// An optional list of structures that control how <code>DataSet</code> resources are
-        /// parameterized in the returned CloudFormation template.
+        /// An optional list of structures that control how <c>DataSet</c> resources are parameterized
+        /// in the returned CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -106,8 +106,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// An optional list of structures that control how <code>DataSource</code> resources
-        /// are parameterized in the returned CloudFormation template.
+        /// An optional list of structures that control how <c>DataSource</c> resources are parameterized
+        /// in the returned CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -126,8 +126,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RefreshSchedules. 
         /// <para>
-        /// An optional list of structures that control how <code>RefreshSchedule</code> resources
-        /// are parameterized in the returned CloudFormation template.
+        /// An optional list of structures that control how <c>RefreshSchedule</c> resources are
+        /// parameterized in the returned CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -165,7 +165,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Themes. 
         /// <para>
-        /// An optional list of structures that control how <code>Theme</code> resources are parameterized
+        /// An optional list of structures that control how <c>Theme</c> resources are parameterized
         /// in the returned CloudFormation template.
         /// </para>
         /// </summary>
@@ -185,8 +185,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VPCConnections. 
         /// <para>
-        /// An optional list of structures that control how <code>VPCConnection</code> resources
-        /// are parameterized in the returned CloudFormation template.
+        /// An optional list of structures that control how <c>VPCConnection</c> resources are
+        /// parameterized in the returned CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

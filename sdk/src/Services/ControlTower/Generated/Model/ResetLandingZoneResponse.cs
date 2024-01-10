@@ -38,9 +38,9 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property OperationIdentifier. 
         /// <para>
-        /// A unique identifier assigned to a <code>ResetLandingZone</code> operation. You can
-        /// use this identifier as an input parameter of <code>GetLandingZoneOperation</code>
-        /// to check the operation's status.
+        /// A unique identifier assigned to a <c>ResetLandingZone</c> operation. You can use this
+        /// identifier as an input parameter of <c>GetLandingZoneOperation</c> to check the operation's
+        /// status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

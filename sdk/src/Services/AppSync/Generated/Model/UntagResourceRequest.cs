@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The <code>GraphqlApi</code> Amazon Resource Name (ARN).
+        /// The <c>GraphqlApi</c> Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=75)]
@@ -59,7 +59,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A list of <code>TagKey</code> objects.
+        /// A list of <c>TagKey</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

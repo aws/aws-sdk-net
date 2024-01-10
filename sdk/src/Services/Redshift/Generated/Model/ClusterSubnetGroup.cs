@@ -82,8 +82,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SubnetGroupStatus. 
         /// <para>
-        /// The status of the cluster subnet group. Possible values are <code>Complete</code>,
-        /// <code>Incomplete</code> and <code>Invalid</code>. 
+        /// The status of the cluster subnet group. Possible values are <c>Complete</c>, <c>Incomplete</c>
+        /// and <c>Invalid</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -120,8 +120,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property SupportedClusterIpAddressTypes. 
         /// <para>
-        /// The IP address types supported by this cluster subnet group. Possible values are <code>ipv4</code>
-        /// and <code>dualstack</code>.
+        /// The IP address types supported by this cluster subnet group. Possible values are <c>ipv4</c>
+        /// and <c>dualstack</c>.
         /// </para>
         /// </summary>
         public List<string> SupportedClusterIpAddressTypes

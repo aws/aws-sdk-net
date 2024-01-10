@@ -57,8 +57,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The pagination token for the next page of data. If <code>nextToken=null</code>, this
-        /// means that all records have been fetched. 
+        ///  The pagination token for the next page of data. If <c>nextToken=null</c>, this means
+        /// that all records have been fetched. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

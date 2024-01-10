@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityManagement.Model
 {
     /// <summary>
-    /// Contains the row and column of a location of a <code>Statement</code> element in a
-    /// policy document.
+    /// Contains the row and column of a location of a <c>Statement</c> element in a policy
+    /// document.
     /// 
     ///  
     /// <para>
-    /// This data type is used as a member of the <code> <a>Statement</a> </code> type.
+    /// This data type is used as a member of the <c> <a>Statement</a> </c> type.
     /// </para>
     /// </summary>
     public partial class Position

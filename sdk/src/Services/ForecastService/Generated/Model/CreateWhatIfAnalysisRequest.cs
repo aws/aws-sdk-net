@@ -112,24 +112,24 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property TimeSeriesSelector. 
         /// <para>
-        /// Defines the set of time series that are used in the what-if analysis with a <code>TimeSeriesIdentifiers</code>
+        /// Defines the set of time series that are used in the what-if analysis with a <c>TimeSeriesIdentifiers</c>
         /// object. What-if analyses are performed only for the time series in this object.
         /// </para>
         ///  
         /// <para>
-        /// The <code>TimeSeriesIdentifiers</code> object needs the following information:
+        /// The <c>TimeSeriesIdentifiers</c> object needs the following information:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DataSource</code> 
+        ///  <c>DataSource</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Format</code> 
+        ///  <c>Format</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Schema</code> 
+        ///  <c>Schema</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

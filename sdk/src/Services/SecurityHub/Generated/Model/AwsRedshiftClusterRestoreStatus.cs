@@ -161,8 +161,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>starting</code> | <code>restoring</code> | <code>completed</code>
-        /// | <code>failed</code> 
+        /// Valid values: <c>starting</c> | <c>restoring</c> | <c>completed</c> | <c>failed</c>
+        /// 
         /// </para>
         /// </summary>
         public string Status

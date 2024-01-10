@@ -80,8 +80,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Iops. 
         /// <para>
-        /// The number of I/O operations per second (IOPS) to provision for a <code>gp3</code>,
-        /// <code>io1</code>, or <code>io2</code> volume.
+        /// The number of I/O operations per second (IOPS) to provision for a <c>gp3</c>, <c>io1</c>,
+        /// or <c>io2</c> volume.
         /// </para>
         /// </summary>
         public int Iops
@@ -144,7 +144,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>gp2</code> 
+        /// Default: <c>gp2</c> 
         /// </para>
         /// </summary>
         public string VolumeType

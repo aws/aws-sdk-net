@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request.
+    /// The result of a <c><a>CreateOutboundCrossClusterSearchConnection</a></c> request.
     /// Contains the details of the newly created cross-cluster search connection.
     /// </summary>
     public partial class CreateOutboundCrossClusterSearchConnectionResponse : AmazonWebServiceResponse
@@ -62,8 +62,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property ConnectionStatus. 
         /// <para>
-        /// Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the
-        /// newly created connection.
+        /// Specifies the <c><a>OutboundCrossClusterSearchConnectionStatus</a></c> for the newly
+        /// created connection.
         /// </para>
         /// </summary>
         public OutboundCrossClusterSearchConnectionStatus ConnectionStatus
@@ -100,8 +100,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DestinationDomainInfo. 
         /// <para>
-        /// Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch
-        /// domain.
+        /// Specifies the <c><a>DomainInformation</a></c> for the destination Elasticsearch domain.
         /// </para>
         /// </summary>
         public DomainInformation DestinationDomainInfo
@@ -119,7 +118,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property SourceDomainInfo. 
         /// <para>
-        /// Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.
+        /// Specifies the <c><a>DomainInformation</a></c> for the source Elasticsearch domain.
         /// </para>
         /// </summary>
         public DomainInformation SourceDomainInfo

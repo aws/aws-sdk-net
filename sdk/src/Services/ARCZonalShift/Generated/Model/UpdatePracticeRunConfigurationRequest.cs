@@ -57,7 +57,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// For example, if you have an application update scheduled to launch on May 1, 2024,
         /// and you don't want practice runs to shift traffic away at that time, you could set
-        /// a blocked date for <code>2024-05-01</code>.
+        /// a blocked date for <c>2024-05-01</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
@@ -90,7 +90,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// For example, say you run business report summaries three days a week. For this scenario,
         /// you might set the following recurring days and times as blocked windows, for example:
-        /// <code>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</code>.
+        /// <c>MON-20:30-21:30 WED-20:30-21:30 FRI-20:30-21:30</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]

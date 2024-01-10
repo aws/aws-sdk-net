@@ -65,18 +65,17 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributesToGet. 
         /// <para>
-        /// A JSON array of user attribute names, for example <code>given_name</code>, that you
-        /// want Amazon Cognito to include in the response for each user. When you don't provide
-        /// an <code>AttributesToGet</code> parameter, Amazon Cognito returns all attributes for
-        /// each user.
+        /// A JSON array of user attribute names, for example <c>given_name</c>, that you want
+        /// Amazon Cognito to include in the response for each user. When you don't provide an
+        /// <c>AttributesToGet</c> parameter, Amazon Cognito returns all attributes for each user.
         /// </para>
         ///  
         /// <para>
-        /// Use <code>AttributesToGet</code> with required attributes in your user pool, or in
-        /// conjunction with <code>Filter</code>. Amazon Cognito returns an error if not all users
-        /// in the results have set a value for the attribute you request. Attributes that you
-        /// can't filter on, including custom attributes, must have a value set in every user
-        /// profile before an <code>AttributesToGet</code> parameter returns results.
+        /// Use <c>AttributesToGet</c> with required attributes in your user pool, or in conjunction
+        /// with <c>Filter</c>. Amazon Cognito returns an error if not all users in the results
+        /// have set a value for the attribute you request. Attributes that you can't filter on,
+        /// including custom attributes, must have a value set in every user profile before an
+        /// <c>AttributesToGet</c> parameter returns results.
         /// </para>
         /// </summary>
         public List<string> AttributesToGet
@@ -96,7 +95,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// A filter string of the form "<i>AttributeName</i> <i>Filter-Type</i> "<i>AttributeValue</i>"".
         /// Quotation marks within the filter string must be escaped using the backslash (\) character.
-        /// For example, "<code>family_name</code> = \"Reddy\"".
+        /// For example, "<c>family_name</c> = \"Reddy\"".
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -105,8 +104,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>Filter-Type</i>: For an exact match, use =, for example, "<code>given_name</code>
-        /// = \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<code>given_name</code>
+        ///  <i>Filter-Type</i>: For an exact match, use =, for example, "<c>given_name</c> =
+        /// \"Jon\"". For a prefix ("starts with") match, use ^=, for example, "<c>given_name</c>
         /// ^= \"Jon\"". 
         /// </para>
         ///  </li> <li> 
@@ -115,8 +114,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the filter string is empty, <code>ListUsers</code> returns all users in the user
-        /// pool.
+        /// If the filter string is empty, <c>ListUsers</c> returns all users in the user pool.
         /// </para>
         ///  
         /// <para>
@@ -124,43 +122,43 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>username</code> (case-sensitive)
+        ///  <c>username</c> (case-sensitive)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>email</code> 
+        ///  <c>email</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>phone_number</code> 
+        ///  <c>phone_number</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code> 
+        ///  <c>name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>given_name</code> 
+        ///  <c>given_name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>family_name</code> 
+        ///  <c>family_name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>preferred_username</code> 
+        ///  <c>preferred_username</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cognito:user_status</code> (called <b>Status</b> in the Console) (case-insensitive)
+        ///  <c>cognito:user_status</c> (called <b>Status</b> in the Console) (case-insensitive)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status (called <b>Enabled</b> in the Console) (case-sensitive)</code> 
+        ///  <c>status (called <b>Enabled</b> in the Console) (case-sensitive)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sub</code> 
+        ///  <c>sub</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -170,11 +168,11 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// You can also list users with a client-side filter. The server-side filter matches
         /// no more than one attribute. For an advanced search, use a client-side filter with
-        /// the <code>--query</code> parameter of the <code>list-users</code> action in the CLI.
-        /// When you use a client-side filter, ListUsers returns a paginated list of zero or more
-        /// users. You can receive multiple pages in a row with zero results. Repeat the query
-        /// with each pagination token that is returned until you receive a null pagination token
-        /// value, and then review the combined result. 
+        /// the <c>--query</c> parameter of the <c>list-users</c> action in the CLI. When you
+        /// use a client-side filter, ListUsers returns a paginated list of zero or more users.
+        /// You can receive multiple pages in a row with zero results. Repeat the query with each
+        /// pagination token that is returned until you receive a null pagination token value,
+        /// and then review the combined result. 
         /// </para>
         ///  
         /// <para>

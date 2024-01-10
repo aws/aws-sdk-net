@@ -39,7 +39,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property IpId. 
         /// <para>
-        ///  The ID of the IP address, specified by the <code>ResolverEndpointId</code>. 
+        ///  The ID of the IP address, specified by the <c>ResolverEndpointId</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

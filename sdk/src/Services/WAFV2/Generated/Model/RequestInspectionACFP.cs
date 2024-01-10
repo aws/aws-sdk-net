@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This is part of the <code>AWSManagedRulesACFPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.
+    /// This is part of the <c>AWSManagedRulesACFPRuleSet</c> configuration in <c>ManagedRuleGroupConfig</c>.
     /// </para>
     ///  
     /// <para>
@@ -77,10 +77,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1",
-        /// "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>,
-        /// the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>,
-        /// and <code>/form/primaryaddressline3</code>.
+        /// For example, for the JSON payload <c>{ "form": { "primaryaddressline1": "THE_ADDRESS1",
+        /// "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</c>,
+        /// the address field idenfiers are <c>/form/primaryaddressline1</c>, <c>/form/primaryaddressline2</c>,
+        /// and <c>/form/primaryaddressline3</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -88,10 +88,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with input elements named <code>primaryaddressline1</code>,
-        /// <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address
-        /// fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>,
-        /// and <code>primaryaddressline3</code>. 
+        /// For example, for an HTML form with input elements named <c>primaryaddressline1</c>,
+        /// <c>primaryaddressline2</c>, and <c>primaryaddressline3</c>, the address fields identifiers
+        /// are <c>primaryaddressline1</c>, <c>primaryaddressline2</c>, and <c>primaryaddressline3</c>.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -126,8 +126,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "email": "THE_EMAIL" } }</code>,
-        /// the email field specification is <code>/form/email</code>.
+        /// For example, for the JSON payload <c>{ "form": { "email": "THE_EMAIL" } }</c>, the
+        /// email field specification is <c>/form/email</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -135,8 +135,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>email1</code>, the
-        /// email field specification is <code>email1</code>.
+        /// For example, for an HTML form with the input element named <c>email1</c>, the email
+        /// field specification is <c>email1</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -171,8 +171,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>,
-        /// the password field specification is <code>/form/password</code>.
+        /// For example, for the JSON payload <c>{ "form": { "password": "THE_PASSWORD" } }</c>,
+        /// the password field specification is <c>/form/password</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -180,8 +180,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>password1</code>,
-        /// the password field specification is <code>password1</code>.
+        /// For example, for an HTML form with the input element named <c>password1</c>, the password
+        /// field specification is <c>password1</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -241,10 +241,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "primaryphoneline1": "THE_PHONE1",
-        /// "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</code>, the
-        /// phone number field identifiers are <code>/form/primaryphoneline1</code>, <code>/form/primaryphoneline2</code>,
-        /// and <code>/form/primaryphoneline3</code>.
+        /// For example, for the JSON payload <c>{ "form": { "primaryphoneline1": "THE_PHONE1",
+        /// "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</c>, the
+        /// phone number field identifiers are <c>/form/primaryphoneline1</c>, <c>/form/primaryphoneline2</c>,
+        /// and <c>/form/primaryphoneline3</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -252,10 +252,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with input elements named <code>primaryphoneline1</code>,
-        /// <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number
-        /// field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>,
-        /// and <code>primaryphoneline3</code>. 
+        /// For example, for an HTML form with input elements named <c>primaryphoneline1</c>,
+        /// <c>primaryphoneline2</c>, and <c>primaryphoneline3</c>, the phone number field identifiers
+        /// are <c>primaryphoneline1</c>, <c>primaryphoneline2</c>, and <c>primaryphoneline3</c>.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -290,8 +290,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>,
-        /// the username field specification is <code>/form/username</code>. 
+        /// For example, for the JSON payload <c>{ "form": { "username": "THE_USERNAME" } }</c>,
+        /// the username field specification is <c>/form/username</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -299,8 +299,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>username1</code>,
-        /// the username field specification is <code>username1</code> 
+        /// For example, for an HTML form with the input element named <c>username1</c>, the username
+        /// field specification is <c>username1</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

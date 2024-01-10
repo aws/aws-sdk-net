@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
+    /// We can't find an OU with the <c>OrganizationalUnitId</c> that you specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

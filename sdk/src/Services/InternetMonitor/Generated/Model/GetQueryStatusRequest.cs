@@ -32,27 +32,27 @@ namespace Amazon.InternetMonitor.Model
     /// Container for the parameters to the GetQueryStatus operation.
     /// Returns the current status of a query for the Amazon CloudWatch Internet Monitor query
     /// interface, for a specified query ID and monitor. When you run a query, check the status
-    /// to make sure that the query has <code>SUCCEEDED</code> before you review the results.
+    /// to make sure that the query has <c>SUCCEEDED</c> before you review the results.
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>QUEUED</code>: The query is scheduled to run.
+    ///  <c>QUEUED</c>: The query is scheduled to run.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RUNNING</code>: The query is in progress but not complete.
+    ///  <c>RUNNING</c>: The query is in progress but not complete.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SUCCEEDED</code>: The query completed sucessfully.
+    ///  <c>SUCCEEDED</c>: The query completed sucessfully.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>FAILED</code>: The query failed due to an error.
+    ///  <c>FAILED</c>: The query failed due to an error.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CANCELED</code>: The query was canceled.
+    ///  <c>CANCELED</c>: The query was canceled.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -83,8 +83,8 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The ID of the query that you want to return the status for. A <code>QueryId</code>
-        /// is an internally-generated dentifier for a specific query.
+        /// The ID of the query that you want to return the status for. A <c>QueryId</c> is an
+        /// internally-generated dentifier for a specific query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

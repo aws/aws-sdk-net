@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// Rules using <code>TranscriptFilter</code> are designed to match:
+    /// Rules using <c>TranscriptFilter</c> are designed to match:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -86,9 +86,9 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// Set to <code>TRUE</code> to flag the absence of the phrase that you specified in your
-        /// request. Set to <code>FALSE</code> to flag the presence of the phrase that you specified
-        /// in your request.
+        /// Set to <c>TRUE</c> to flag the absence of the phrase that you specified in your request.
+        /// Set to <c>FALSE</c> to flag the presence of the phrase that you specified in your
+        /// request.
         /// </para>
         /// </summary>
         public bool Negate
@@ -164,8 +164,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property TranscriptFilterType. 
         /// <para>
         /// Flag the presence or absence of an exact match to the phrases that you specify. For
-        /// example, if you specify the phrase "speak to a manager" as your <code>Targets</code>
-        /// value, only that exact phrase is flagged.
+        /// example, if you specify the phrase "speak to a manager" as your <c>Targets</c> value,
+        /// only that exact phrase is flagged.
         /// </para>
         ///  
         /// <para>

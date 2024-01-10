@@ -30,8 +30,8 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// A parameter that has a different value for each cache node type it is applied to.
-    /// For example, in a Redis cluster, a <code>cache.m1.large</code> cache node type would
-    /// have a larger <code>maxmemory</code> value than a <code>cache.m1.small</code> type.
+    /// For example, in a Redis cluster, a <c>cache.m1.large</c> cache node type would have
+    /// a larger <c>maxmemory</c> value than a <c>cache.m1.small</c> type.
     /// </summary>
     public partial class CacheNodeTypeSpecificParameter
     {
@@ -146,9 +146,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property IsModifiable. 
         /// <para>
-        /// Indicates whether (<code>true</code>) or not (<code>false</code>) the parameter can
-        /// be modified. Some parameters have security or operational implications that prevent
-        /// them from being changed.
+        /// Indicates whether (<c>true</c>) or not (<c>false</c>) the parameter can be modified.
+        /// Some parameters have security or operational implications that prevent them from being
+        /// changed.
         /// </para>
         /// </summary>
         public bool IsModifiable

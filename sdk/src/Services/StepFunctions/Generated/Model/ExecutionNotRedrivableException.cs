@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// The execution Amazon Resource Name (ARN) that you specified for <code>executionArn</code>
+    /// The execution Amazon Resource Name (ARN) that you specified for <c>executionArn</c>
     /// cannot be redriven.
     /// </summary>
     #if !NETSTANDARD

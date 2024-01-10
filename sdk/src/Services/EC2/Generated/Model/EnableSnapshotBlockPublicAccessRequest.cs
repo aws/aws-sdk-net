@@ -38,10 +38,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
-    /// change the mode to <code>block-new-sharing</code>, all snapshots that were previously
-    /// publicly shared are no longer treated as private and they become publicly accessible
-    /// again.
+    /// If block public access is enabled in <c>block-all-sharing</c> mode, and you change
+    /// the mode to <c>block-new-sharing</c>, all snapshots that were previously publicly
+    /// shared are no longer treated as private and they become publicly accessible again.
     /// </para>
     ///  
     /// <para>
@@ -62,24 +61,24 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>block-all-sharing</code> - Prevents all public sharing of snapshots in the
-        /// Region. Users in the account will no longer be able to request new public sharing.
-        /// Additionally, snapshots that are already publicly shared are treated as private and
-        /// they are no longer publicly available.
+        ///  <c>block-all-sharing</c> - Prevents all public sharing of snapshots in the Region.
+        /// Users in the account will no longer be able to request new public sharing. Additionally,
+        /// snapshots that are already publicly shared are treated as private and they are no
+        /// longer publicly available.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you enable block public access for snapshots in <code>block-all-sharing</code>
-        /// mode, it does not change the permissions for snapshots that are already publicly shared.
+        /// If you enable block public access for snapshots in <c>block-all-sharing</c> mode,
+        /// it does not change the permissions for snapshots that are already publicly shared.
         /// Instead, it prevents these snapshots from be publicly visible and publicly accessible.
         /// Therefore, the attributes for these snapshots still indicate that they are publicly
         /// shared, even though they are not publicly available.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>block-new-sharing</code> - Prevents only new public sharing of snapshots in
-        /// the Region. Users in the account will no longer be able to request new public sharing.
-        /// However, snapshots that are already publicly shared, remain publicly available.
+        ///  <c>block-new-sharing</c> - Prevents only new public sharing of snapshots in the Region.
+        /// Users in the account will no longer be able to request new public sharing. However,
+        /// snapshots that are already publicly shared, remain publicly available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

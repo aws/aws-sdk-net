@@ -40,16 +40,15 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// Use the <code>CreateCertificate</code> action to create a certificate that you can
-    /// attach to your distribution.
+    /// Use the <c>CreateCertificate</c> action to create a certificate that you can attach
+    /// to your distribution.
     /// </para>
     ///  <important> 
     /// <para>
-    /// Only certificates created in the <code>us-east-1</code> Amazon Web Services Region
-    /// can be attached to Lightsail distributions. Lightsail distributions are global resources
+    /// Only certificates created in the <c>us-east-1</c> Amazon Web Services Region can be
+    /// attached to Lightsail distributions. Lightsail distributions are global resources
     /// that can reference an origin in any Amazon Web Services Region, and distribute its
-    /// content globally. However, all distributions are located in the <code>us-east-1</code>
-    /// Region.
+    /// content globally. However, all distributions are located in the <c>us-east-1</c> Region.
     /// </para>
     ///  </important>
     /// </summary>
@@ -65,19 +64,19 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Only certificates with a status of <code>ISSUED</code> can be attached to a distribution.
+        /// Only certificates with a status of <c>ISSUED</c> can be attached to a distribution.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetCertificates</code> action to get a list of certificate names that
-        /// you can specify.
+        /// Use the <c>GetCertificates</c> action to get a list of certificate names that you
+        /// can specify.
         /// </para>
         ///  <note> 
         /// <para>
         /// This is the name of the certificate resource type and is used only to reference the
         /// certificate in other API actions. It can be different than the domain name of the
-        /// certificate. For example, your certificate name might be <code>WordPress-Blog-Certificate</code>
-        /// and the domain name of the certificate might be <code>example.com</code>.
+        /// certificate. For example, your certificate name might be <c>WordPress-Blog-Certificate</c>
+        /// and the domain name of the certificate might be <c>example.com</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -101,8 +100,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetDistributions</code> action to get a list of distribution names that
-        /// you can specify.
+        /// Use the <c>GetDistributions</c> action to get a list of distribution names that you
+        /// can specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

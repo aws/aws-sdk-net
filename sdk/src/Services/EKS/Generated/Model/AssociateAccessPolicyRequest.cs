@@ -45,7 +45,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AccessScope. 
         /// <para>
-        /// The scope for the <code>AccessPolicy</code>. You can scope access policies to an entire
+        /// The scope for the <c>AccessPolicy</c>. You can scope access policies to an entire
         /// cluster or to specific Kubernetes namespaces.
         /// </para>
         /// </summary>
@@ -84,8 +84,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN of the <code>AccessPolicy</code> that you're associating. For a list of ARNs,
-        /// use <code>ListAccessPolicies</code>.
+        /// The ARN of the <c>AccessPolicy</c> that you're associating. For a list of ARNs, use
+        /// <c>ListAccessPolicies</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM user or role for the <code>AccessEntry</code>
+        /// The Amazon Resource Name (ARN) of the IAM user or role for the <c>AccessEntry</c>
         /// that you're associating the access policy to. 
         /// </para>
         /// </summary>

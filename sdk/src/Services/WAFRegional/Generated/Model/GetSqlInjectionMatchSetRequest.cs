@@ -43,7 +43,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>SqlInjectionMatchSet</a> that is specified by <code>SqlInjectionMatchSetId</code>.
+    /// Returns the <a>SqlInjectionMatchSet</a> that is specified by <c>SqlInjectionMatchSetId</c>.
     /// </para>
     /// </summary>
     public partial class GetSqlInjectionMatchSetRequest : AmazonWAFRegionalRequest
@@ -53,8 +53,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property SqlInjectionMatchSetId. 
         /// <para>
-        /// The <code>SqlInjectionMatchSetId</code> of the <a>SqlInjectionMatchSet</a> that you
-        /// want to get. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a>
+        /// The <c>SqlInjectionMatchSetId</c> of the <a>SqlInjectionMatchSet</a> that you want
+        /// to get. <c>SqlInjectionMatchSetId</c> is returned by <a>CreateSqlInjectionMatchSet</a>
         /// and by <a>ListSqlInjectionMatchSets</a>.
         /// </para>
         /// </summary>

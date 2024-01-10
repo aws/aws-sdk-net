@@ -172,9 +172,9 @@ namespace Amazon.OpsWorks
     ///  
     /// <para>
     /// When you call <a>CreateStack</a>, <a>CloneStack</a>, or <a>UpdateStack</a> we recommend
-    /// you use the <code>ConfigurationManager</code> parameter to specify the Chef version.
-    /// The recommended and default value for Linux stacks is currently 12. Windows stacks
-    /// use Chef 12.2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
+    /// you use the <c>ConfigurationManager</c> parameter to specify the Chef version. The
+    /// recommended and default value for Linux stacks is currently 12. Windows stacks use
+    /// Chef 12.2. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-chef11.html">Chef
     /// Versions</a>.
     /// </para>
     ///  <note> 
@@ -489,7 +489,7 @@ namespace Amazon.OpsWorks
         /// Assigns one of the stack's registered Amazon EBS volumes to a specified instance.
         /// The volume must first be registered with the stack by calling <a>RegisterVolume</a>.
         /// After you register the volume, you must call <a>UpdateVolume</a> to specify a mount
-        /// point before calling <code>AssignVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
+        /// point before calling <c>AssignVolume</c>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource
         /// Management</a>.
         /// 
         ///  
@@ -1489,8 +1489,8 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack
-        /// ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of
-        /// available agent versions for the specified stack or configuration manager.
+        /// ID or a configuration manager. <c>DescribeAgentVersions</c> returns a list of available
+        /// agent versions for the specified stack or configuration manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAgentVersions service method.</param>
         /// <param name="cancellationToken">
@@ -1687,9 +1687,9 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Describes Amazon ECS clusters that are registered with a stack. If you specify only
-        /// a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters
-        /// to paginate the response. However, AWS OpsWorks Stacks currently supports only one
-        /// cluster per layer, so the result set has a maximum of one element.
+        /// a stack ID, you can use the <c>MaxResults</c> and <c>NextToken</c> parameters to paginate
+        /// the response. However, AWS OpsWorks Stacks currently supports only one cluster per
+        /// layer, so the result set has a maximum of one element.
         /// 
         ///  
         /// <para>
@@ -2513,7 +2513,7 @@ namespace Amazon.OpsWorks
 
         /// <summary>
         /// Describes the number of layers and apps in a specified stack, and the number of instances
-        /// in each state, such as <code>running_setup</code> or <code>online</code>.
+        /// in each state, such as <c>running_setup</c> or <c>online</c>.
         /// 
         ///  
         /// <para>
@@ -3136,9 +3136,9 @@ namespace Amazon.OpsWorks
         /// <para>
         /// We do not recommend using this action to register instances. The complete registration
         /// operation includes two tasks: installing the AWS OpsWorks Stacks agent on the instance,
-        /// and registering the instance with the stack. <code>RegisterInstance</code> handles
-        /// only the second step. You should instead use the AWS CLI <code>register</code> command,
-        /// which performs the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
+        /// and registering the instance with the stack. <c>RegisterInstance</c> handles only
+        /// the second step. You should instead use the AWS CLI <c>register</c> command, which
+        /// performs the entire registration operation. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/registered-instances-register.html">
         /// Registering an Instance with an AWS OpsWorks Stacks Stack</a>.
         /// </para>
         ///  </note> 

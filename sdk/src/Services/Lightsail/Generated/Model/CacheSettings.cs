@@ -34,8 +34,8 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// These settings apply only to your distribution's <code>cacheBehaviors</code> (including
-    /// the <code>defaultCacheBehavior</code>) that have a <code>behavior</code> of <code>cache</code>.
+    /// These settings apply only to your distribution's <c>cacheBehaviors</c> (including
+    /// the <c>defaultCacheBehavior</c>) that have a <c>behavior</c> of <c>cache</c>.
     /// </para>
     /// </summary>
     public partial class CacheSettings
@@ -60,19 +60,18 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GET,HEAD</code> - The distribution forwards the <code>GET</code> and <code>HEAD</code>
+        ///  <c>GET,HEAD</c> - The distribution forwards the <c>GET</c> and <c>HEAD</c> methods.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GET,HEAD,OPTIONS</c> - The distribution forwards the <c>GET</c>, <c>HEAD</c>,
+        /// and <c>OPTIONS</c> methods.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</c> - The distribution forwards the <c>GET</c>,
+        /// <c>HEAD</c>, <c>OPTIONS</c>, <c>PUT</c>, <c>PATCH</c>, <c>POST</c>, and <c>DELETE</c>
         /// methods.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>GET,HEAD,OPTIONS</code> - The distribution forwards the <code>GET</code>, <code>HEAD</code>,
-        /// and <code>OPTIONS</code> methods.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>GET,HEAD,OPTIONS,PUT,PATCH,POST,DELETE</code> - The distribution forwards the
-        /// <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>, <code>PUT</code>, <code>PATCH</code>,
-        /// <code>POST</code>, and <code>DELETE</code> methods.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -104,13 +103,13 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GET,HEAD</code> - The distribution caches responses to the <code>GET</code>
-        /// and <code>HEAD</code> methods.
+        ///  <c>GET,HEAD</c> - The distribution caches responses to the <c>GET</c> and <c>HEAD</c>
+        /// methods.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GET,HEAD,OPTIONS</code> - The distribution caches responses to the <code>GET</code>,
-        /// <code>HEAD</code>, and <code>OPTIONS</code> methods.
+        ///  <c>GET,HEAD,OPTIONS</c> - The distribution caches responses to the <c>GET</c>, <c>HEAD</c>,
+        /// and <c>OPTIONS</c> methods.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -136,8 +135,8 @@ namespace Amazon.Lightsail.Model
         ///  <note> 
         /// <para>
         /// The value specified applies only when the origin does not add HTTP headers such as
-        /// <code>Cache-Control max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code>
-        /// to objects.
+        /// <c>Cache-Control max-age</c>, <c>Cache-Control s-maxage</c>, and <c>Expires</c> to
+        /// objects.
         /// </para>
         ///  </note>
         /// </summary>
@@ -219,8 +218,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The value specified applies only when the origin adds HTTP headers such as <code>Cache-Control
-        /// max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.
+        /// The value specified applies only when the origin adds HTTP headers such as <c>Cache-Control
+        /// max-age</c>, <c>Cache-Control s-maxage</c>, and <c>Expires</c> to objects.
         /// </para>
         /// </summary>
         public long MaximumTTL
@@ -244,8 +243,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>0</code> must be specified for <code>minimumTTL</code> if the distribution
-        /// is configured to forward all headers to the origin.
+        /// A value of <c>0</c> must be specified for <c>minimumTTL</c> if the distribution is
+        /// configured to forward all headers to the origin.
         /// </para>
         /// </summary>
         public long MinimumTTL

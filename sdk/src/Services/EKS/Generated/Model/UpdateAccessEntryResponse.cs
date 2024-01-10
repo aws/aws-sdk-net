@@ -38,7 +38,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AccessEntry. 
         /// <para>
-        /// The ARN of the IAM principal for the <code>AccessEntry</code>.
+        /// The ARN of the IAM principal for the <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         public AccessEntry AccessEntry

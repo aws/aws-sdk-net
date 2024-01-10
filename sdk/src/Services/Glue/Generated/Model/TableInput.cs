@@ -167,13 +167,12 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// When you create a table used by Amazon Athena, and you do not specify any <code>partitionKeys</code>,
-        /// you must at least set the value of <code>partitionKeys</code> to an empty list. For
-        /// example:
+        /// When you create a table used by Amazon Athena, and you do not specify any <c>partitionKeys</c>,
+        /// you must at least set the value of <c>partitionKeys</c> to an empty list. For example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>"PartitionKeys": []</code> 
+        ///  <c>"PartitionKeys": []</c> 
         /// </para>
         /// </summary>
         public List<Column> PartitionKeys
@@ -228,9 +227,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableType. 
         /// <para>
-        /// The type of this table. Glue will create tables with the <code>EXTERNAL_TABLE</code>
-        /// type. Other services, such as Athena, may create tables with additional table types.
-        /// 
+        /// The type of this table. Glue will create tables with the <c>EXTERNAL_TABLE</c> type.
+        /// Other services, such as Athena, may create tables with additional table types. 
         /// </para>
         ///  
         /// <para>
@@ -242,7 +240,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  </dd> <dt>GOVERNED</dt> <dd> 
         /// <para>
-        /// Used by Lake Formation. The Glue Data Catalog understands <code>GOVERNED</code>.
+        /// Used by Lake Formation. The Glue Data Catalog understands <c>GOVERNED</c>.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -262,8 +260,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TargetTable. 
         /// <para>
-        /// A <code>TableIdentifier</code> structure that describes a target table for resource
-        /// linking.
+        /// A <c>TableIdentifier</c> structure that describes a target table for resource linking.
         /// </para>
         /// </summary>
         public TableIdentifier TargetTable
@@ -301,8 +298,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ViewOriginalText. 
         /// <para>
         /// Included for Apache Hive compatibility. Not used in the normal course of Glue operations.
-        /// If the table is a <code>VIRTUAL_VIEW</code>, certain Athena configuration encoded
-        /// in base64.
+        /// If the table is a <c>VIRTUAL_VIEW</c>, certain Athena configuration encoded in base64.
         /// </para>
         /// </summary>
         [AWSProperty(Max=409600)]

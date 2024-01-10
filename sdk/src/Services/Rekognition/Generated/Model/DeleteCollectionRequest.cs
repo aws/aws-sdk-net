@@ -36,7 +36,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DeleteCollection</code>
+    /// This operation requires permissions to perform the <c>rekognition:DeleteCollection</c>
     /// action.
     /// </para>
     /// </summary>

@@ -77,8 +77,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property IsClusterWriter. 
         /// <para>
-        /// Value that is <code>true</code> if the cluster member is the primary instance for
-        /// the DB cluster and <code>false</code> otherwise.
+        /// Value that is <c>true</c> if the cluster member is the primary instance for the DB
+        /// cluster and <c>false</c> otherwise.
         /// </para>
         /// </summary>
         public bool IsClusterWriter

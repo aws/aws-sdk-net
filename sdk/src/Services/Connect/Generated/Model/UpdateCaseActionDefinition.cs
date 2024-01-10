@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The <code>UpdateCase</code> action definition.
+    /// The <c>UpdateCase</c> action definition.
     /// </summary>
     public partial class UpdateCaseActionDefinition
     {
@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// An array of objects with <code>Field ID</code> and Value data.
+        /// An array of objects with <c>Field ID</c> and Value data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

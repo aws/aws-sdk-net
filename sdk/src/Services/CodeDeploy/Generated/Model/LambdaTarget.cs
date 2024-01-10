@@ -62,8 +62,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LambdaFunctionInfo. 
         /// <para>
-        ///  A <code>LambdaFunctionInfo</code> object that describes a target Lambda function.
-        /// 
+        ///  A <c>LambdaFunctionInfo</c> object that describes a target Lambda function. 
         /// </para>
         /// </summary>
         public LambdaFunctionInfo LambdaFunctionInfo
@@ -153,8 +152,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        ///  The unique ID of a deployment target that has a type of <code>lambdaTarget</code>.
-        /// 
+        ///  The unique ID of a deployment target that has a type of <c>lambdaTarget</c>. 
         /// </para>
         /// </summary>
         public string TargetId

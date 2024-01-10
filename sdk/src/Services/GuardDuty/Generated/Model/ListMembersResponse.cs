@@ -43,8 +43,8 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The values for <code>email</code> and <code>invitedAt</code> are available only if
-        /// the member accounts are added by invitation.
+        /// The values for <c>email</c> and <c>invitedAt</c> are available only if the member
+        /// accounts are added by invitation.
         /// </para>
         ///  </note>
         /// </summary>

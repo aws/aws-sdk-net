@@ -146,8 +146,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The impersonation role's type. The available impersonation role types are <code>READ_ONLY</code>
-        /// or <code>FULL_ACCESS</code>.
+        /// The impersonation role's type. The available impersonation role types are <c>READ_ONLY</c>
+        /// or <c>FULL_ACCESS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

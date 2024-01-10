@@ -64,17 +64,17 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AUTO_MANAGED</code> indicates that GuardDuty deploys and manages updates for
-        /// this resource.
+        ///  <c>AUTO_MANAGED</c> indicates that GuardDuty deploys and manages updates for this
+        /// resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> indicates that the deployment of the GuardDuty security agent
-        /// is disabled for this resource.
+        ///  <c>DISABLED</c> indicates that the deployment of the GuardDuty security agent is
+        /// disabled for this resource.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>MANUAL</code> status doesn't apply to the Amazon Web Services Fargate (Amazon
+        /// The <c>MANUAL</c> status doesn't apply to the Amazon Web Services Fargate (Amazon
         /// ECS only) woprkloads.
         /// </para>
         ///  </note>

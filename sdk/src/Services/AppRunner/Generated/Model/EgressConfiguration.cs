@@ -44,11 +44,11 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>DEFAULT</code> for access to resources hosted on public networks.
+        /// Set to <c>DEFAULT</c> for access to resources hosted on public networks.
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>VPC</code> to associate your service to a custom VPC specified by <code>VpcConnectorArn</code>.
+        /// Set to <c>VPC</c> to associate your service to a custom VPC specified by <c>VpcConnectorArn</c>.
         /// </para>
         /// </summary>
         public EgressType EgressType
@@ -67,7 +67,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property VpcConnectorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the App Runner VPC connector that you want to associate
-        /// with your App Runner service. Only valid when <code>EgressType = VPC</code>.
+        /// with your App Runner service. Only valid when <c>EgressType = VPC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]

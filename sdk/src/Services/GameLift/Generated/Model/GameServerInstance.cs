@@ -36,12 +36,12 @@ namespace Amazon.GameLift.Model
     /// <para>
     ///  Additional properties, including status, that describe an EC2 instance in a game
     /// server group. Instance configurations are set with game server group properties (see
-    /// <code>DescribeGameServerGroup</code> and with the EC2 launch template that was used
-    /// when creating the game server group. 
+    /// <c>DescribeGameServerGroup</c> and with the EC2 launch template that was used when
+    /// creating the game server group. 
     /// </para>
     ///  
     /// <para>
-    /// Retrieve game server instances for a game server group by calling <code>DescribeGameServerInstances</code>.
+    /// Retrieve game server instances for a game server group by calling <c>DescribeGameServerInstances</c>.
     /// 
     /// </para>
     /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The unique identifier for the instance where the game server is running. This ID is
         /// available in the instance metadata. EC2 instance IDs use a 17-character format, for
-        /// example: <code>i-1234567890abcdef0</code>.
+        /// example: <c>i-1234567890abcdef0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=19, Max=19)]

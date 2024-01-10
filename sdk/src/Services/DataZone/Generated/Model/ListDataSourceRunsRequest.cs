@@ -62,7 +62,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which to invoke the <code>ListDataSourceRuns</code>
+        /// The identifier of the Amazon DataZone domain in which to invoke the <c>ListDataSourceRuns</c>
         /// action.
         /// </para>
         /// </summary>
@@ -82,10 +82,10 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of runs to return in a single call to <code>ListDataSourceRuns</code>.
-        /// When the number of runs to be listed is greater than the value of <code>MaxResults</code>,
-        /// the response contains a <code>NextToken</code> value that you can use in a subsequent
-        /// call to <code>ListDataSourceRuns</code> to list the next set of runs.
+        /// The maximum number of runs to return in a single call to <c>ListDataSourceRuns</c>.
+        /// When the number of runs to be listed is greater than the value of <c>MaxResults</c>,
+        /// the response contains a <c>NextToken</c> value that you can use in a subsequent call
+        /// to <c>ListDataSourceRuns</c> to list the next set of runs.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -104,10 +104,10 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When the number of runs is greater than the default value for the <code>MaxResults</code>
-        /// parameter, or if you explicitly specify a value for <code>MaxResults</code> that is
-        /// less than the number of runs, the response includes a pagination token named <code>NextToken</code>.
-        /// You can specify this <code>NextToken</code> value in a subsequent call to <code>ListDataSourceRuns</code>
+        /// When the number of runs is greater than the default value for the <c>MaxResults</c>
+        /// parameter, or if you explicitly specify a value for <c>MaxResults</c> that is less
+        /// than the number of runs, the response includes a pagination token named <c>NextToken</c>.
+        /// You can specify this <c>NextToken</c> value in a subsequent call to <c>ListDataSourceRuns</c>
         /// to list the next set of runs.
         /// </para>
         /// </summary>

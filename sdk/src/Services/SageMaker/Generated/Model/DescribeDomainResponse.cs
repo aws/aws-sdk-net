@@ -59,16 +59,16 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AppNetworkAccessType. 
         /// <para>
-        /// Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+        /// Specifies the VPC used for non-EFS traffic. The default value is <c>PublicInternetOnly</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon
-        /// SageMaker, which allows direct internet access
+        ///  <c>PublicInternetOnly</c> - Non-EFS traffic is through a VPC managed by Amazon SageMaker,
+        /// which allows direct internet access
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VpcOnly</code> - All traffic is through the specified VPC and subnets
+        ///  <c>VpcOnly</c> - All traffic is through the specified VPC and subnets
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -88,8 +88,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AppSecurityGroupManagement. 
         /// <para>
         /// The entity that creates and manages the required security groups for inter-app communication
-        /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
-        /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
+        /// in <c>VPCOnly</c> mode. Required when <c>CreateDomain.AppNetworkAccessType</c> is
+        /// <c>VPCOnly</c> and <c>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</c>
         /// is provided.
         /// </para>
         /// </summary>
@@ -238,7 +238,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DomainSettings. 
         /// <para>
-        /// A collection of <code>Domain</code> settings.
+        /// A collection of <c>Domain</c> settings.
         /// </para>
         /// </summary>
         public DomainSettings DomainSettings
@@ -294,7 +294,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystemKmsKeyId. 
         /// <para>
-        /// Use <code>KmsKeyId</code>.
+        /// Use <c>KmsKeyId</c>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use KmsKeyId instead.")]
@@ -352,8 +352,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIdForDomainBoundary. 
         /// <para>
-        /// The ID of the security group that authorizes traffic between the <code>RSessionGateway</code>
-        /// apps and the <code>RStudioServerPro</code> app.
+        /// The ID of the security group that authorizes traffic between the <c>RSessionGateway</c>
+        /// apps and the <c>RStudioServerPro</c> app.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]

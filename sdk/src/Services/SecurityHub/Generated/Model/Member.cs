@@ -117,7 +117,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MasterId. 
         /// <para>
-        /// This is replaced by <code>AdministratorID</code>.
+        /// This is replaced by <c>AdministratorID</c>.
         /// </para>
         ///  
         /// <para>
@@ -150,39 +150,38 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Created</code> - Indicates that the administrator account added the member
-        /// account, but has not yet invited the member account.
+        ///  <c>Created</c> - Indicates that the administrator account added the member account,
+        /// but has not yet invited the member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invited</code> - Indicates that the administrator account invited the member
-        /// account. The member account has not yet responded to the invitation.
+        ///  <c>Invited</c> - Indicates that the administrator account invited the member account.
+        /// The member account has not yet responded to the invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Enabled</code> - Indicates that the member account is currently active. For
-        /// manually invited member accounts, indicates that the member account accepted the invitation.
+        ///  <c>Enabled</c> - Indicates that the member account is currently active. For manually
+        /// invited member accounts, indicates that the member account accepted the invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Removed</code> - Indicates that the administrator account disassociated the
-        /// member account.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Resigned</code> - Indicates that the member account disassociated themselves
-        /// from the administrator account.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Deleted</code> - Indicates that the administrator account deleted the member
+        ///  <c>Removed</c> - Indicates that the administrator account disassociated the member
         /// account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountSuspended</code> - Indicates that an organization account was suspended
-        /// from Amazon Web Services at the same time that the administrator account tried to
-        /// enable the organization account as a member account.
+        ///  <c>Resigned</c> - Indicates that the member account disassociated themselves from
+        /// the administrator account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Deleted</c> - Indicates that the administrator account deleted the member account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AccountSuspended</c> - Indicates that an organization account was suspended from
+        /// Amazon Web Services at the same time that the administrator account tried to enable
+        /// the organization account as a member account.
         /// </para>
         ///  </li> </ul>
         /// </summary>

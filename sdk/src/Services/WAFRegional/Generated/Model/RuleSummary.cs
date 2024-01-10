@@ -42,7 +42,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Contains the identifier and the friendly name or description of the <code>Rule</code>.
+    /// Contains the identifier and the friendly name or description of the <c>Rule</c>.
     /// </para>
     /// </summary>
     public partial class RuleSummary
@@ -54,7 +54,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A friendly name or description of the <a>Rule</a>. You can't change the name of a
-        /// <code>Rule</code> after you create it.
+        /// <c>Rule</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -73,15 +73,14 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to get more
-        /// information about a <code>Rule</code> (see <a>GetRule</a>), update a <code>Rule</code>
-        /// (see <a>UpdateRule</a>), insert a <code>Rule</code> into a <code>WebACL</code> or
-        /// delete one from a <code>WebACL</code> (see <a>UpdateWebACL</a>), or delete a <code>Rule</code>
-        /// from AWS WAF (see <a>DeleteRule</a>).
+        /// A unique identifier for a <c>Rule</c>. You use <c>RuleId</c> to get more information
+        /// about a <c>Rule</c> (see <a>GetRule</a>), update a <c>Rule</c> (see <a>UpdateRule</a>),
+        /// insert a <c>Rule</c> into a <c>WebACL</c> or delete one from a <c>WebACL</c> (see
+        /// <a>UpdateWebACL</a>), or delete a <c>Rule</c> from AWS WAF (see <a>DeleteRule</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>RuleId</code> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
+        ///  <c>RuleId</c> is returned by <a>CreateRule</a> and by <a>ListRules</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

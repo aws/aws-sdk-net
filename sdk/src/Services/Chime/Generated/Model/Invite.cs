@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Invitation object returned after emailing users to invite them to join the Amazon
-    /// Chime <code>Team</code> account.
+    /// Chime <c>Team</c> account.
     /// </summary>
     public partial class Invite
     {

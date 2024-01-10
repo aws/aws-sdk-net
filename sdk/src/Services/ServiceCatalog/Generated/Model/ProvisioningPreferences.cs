@@ -39,17 +39,17 @@ namespace Amazon.ServiceCatalog.Model
     /// </para>
     ///  
     /// <para>
-    /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+    /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
     /// </para>
     ///  
     /// <para>
     /// The Amazon Web Services accounts specified should be within the list of accounts in
-    /// the <code>STACKSET</code> constraint. To get the list of accounts in the <code>STACKSET</code>
-    /// constraint, use the <code>DescribeProvisioningParameters</code> operation.
+    /// the <c>STACKSET</c> constraint. To get the list of accounts in the <c>STACKSET</c>
+    /// constraint, use the <c>DescribeProvisioningParameters</c> operation.
     /// </para>
     ///  
     /// <para>
-    /// If no values are specified, the default value is all accounts from the <code>STACKSET</code>
+    /// If no values are specified, the default value is all accounts from the <c>STACKSET</c>
     /// constraint.
     /// </para>
     /// </summary>
@@ -69,17 +69,17 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         ///  
         /// <para>
-        /// The specified accounts should be within the list of accounts from the <code>STACKSET</code>
-        /// constraint. To get the list of accounts in the <code>STACKSET</code> constraint, use
-        /// the <code>DescribeProvisioningParameters</code> operation.
+        /// The specified accounts should be within the list of accounts from the <c>STACKSET</c>
+        /// constraint. To get the list of accounts in the <c>STACKSET</c> constraint, use the
+        /// <c>DescribeProvisioningParameters</c> operation.
         /// </para>
         ///  
         /// <para>
-        /// If no values are specified, the default value is all acounts from the <code>STACKSET</code>
+        /// If no values are specified, the default value is all acounts from the <c>STACKSET</c>
         /// constraint.
         /// </para>
         /// </summary>
@@ -104,16 +104,16 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or
-        /// <code>StackSetFailureTolerancePercentage</code>, but not both.
+        /// Conditional: You must specify either <c>StackSetFailureToleranceCount</c> or <c>StackSetFailureTolerancePercentage</c>,
+        /// but not both.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>0</code> if no value is specified.
+        /// The default value is <c>0</c> if no value is specified.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -143,12 +143,12 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>StackSetFailureToleranceCount</code> or
-        /// <code>StackSetFailureTolerancePercentage</code>, but not both.
+        /// Conditional: You must specify either <c>StackSetFailureToleranceCount</c> or <c>StackSetFailureTolerancePercentage</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -168,8 +168,8 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property StackSetMaxConcurrencyCount. 
         /// <para>
         /// The maximum number of accounts in which to perform this operation at one time. This
-        /// is dependent on the value of <code>StackSetFailureToleranceCount</code>. <code>StackSetMaxConcurrentCount</code>
-        /// is at most one more than the <code>StackSetFailureToleranceCount</code>.
+        /// is dependent on the value of <c>StackSetFailureToleranceCount</c>. <c>StackSetMaxConcurrentCount</c>
+        /// is at most one more than the <c>StackSetFailureToleranceCount</c>.
         /// </para>
         ///  
         /// <para>
@@ -179,11 +179,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>,
+        /// Conditional: You must specify either <c>StackSetMaxConcurrentCount</c> or <c>StackSetMaxConcurrentPercentage</c>,
         /// but not both.
         /// </para>
         /// </summary>
@@ -209,7 +209,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// When calculating the number of accounts based on the specified percentage, Service
         /// Catalog rounds down to the next whole number. This is true except in cases where rounding
-        /// down would result is zero. In this case, Service Catalog sets the number as <code>1</code>
+        /// down would result is zero. In this case, Service Catalog sets the number as <c>1</c>
         /// instead.
         /// </para>
         ///  
@@ -220,11 +220,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>StackSetMaxConcurrentCount</code> or <code>StackSetMaxConcurrentPercentage</code>,
+        /// Conditional: You must specify either <c>StackSetMaxConcurrentCount</c> or <c>StackSetMaxConcurrentPercentage</c>,
         /// but not both.
         /// </para>
         /// </summary>
@@ -248,17 +248,17 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         ///  
         /// <para>
-        /// The specified Regions should be within the list of Regions from the <code>STACKSET</code>
-        /// constraint. To get the list of Regions in the <code>STACKSET</code> constraint, use
-        /// the <code>DescribeProvisioningParameters</code> operation.
+        /// The specified Regions should be within the list of Regions from the <c>STACKSET</c>
+        /// constraint. To get the list of Regions in the <c>STACKSET</c> constraint, use the
+        /// <c>DescribeProvisioningParameters</c> operation.
         /// </para>
         ///  
         /// <para>
-        /// If no values are specified, the default value is all Regions from the <code>STACKSET</code>
+        /// If no values are specified, the default value is all Regions from the <c>STACKSET</c>
         /// constraint.
         /// </para>
         /// </summary>

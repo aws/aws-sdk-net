@@ -33,8 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBProxies</code>
-    /// action.
+    /// This data type is used as a response element in the <c>DescribeDBProxies</c> action.
     /// </para>
     /// </summary>
     public partial class DBProxy
@@ -176,10 +175,9 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The kinds of databases that the proxy can connect to. This value determines which
         /// database network protocol the proxy recognizes when it interprets network traffic
-        /// to and from the database. <code>MYSQL</code> supports Aurora MySQL, RDS for MariaDB,
-        /// and RDS for MySQL databases. <code>POSTGRESQL</code> supports Aurora PostgreSQL and
-        /// RDS for PostgreSQL databases. <code>SQLSERVER</code> supports RDS for Microsoft SQL
-        /// Server databases.
+        /// to and from the database. <c>MYSQL</c> supports Aurora MySQL, RDS for MariaDB, and
+        /// RDS for MySQL databases. <c>POSTGRESQL</c> supports Aurora PostgreSQL and RDS for
+        /// PostgreSQL databases. <c>SQLSERVER</c> supports RDS for Microsoft SQL Server databases.
         /// </para>
         /// </summary>
         public string EngineFamily
@@ -263,9 +261,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of this proxy. A status of <code>available</code> means the proxy
-        /// is ready to handle requests. Other values indicate that you must wait for the proxy
-        /// to be ready, or take some action to resolve an issue.
+        /// The current status of this proxy. A status of <c>available</c> means the proxy is
+        /// ready to handle requests. Other values indicate that you must wait for the proxy to
+        /// be ready, or take some action to resolve an issue.
         /// </para>
         /// </summary>
         public DBProxyStatus Status

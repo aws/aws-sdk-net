@@ -40,8 +40,8 @@ namespace Amazon.EC2.Model
     /// To copy an AMI from one Region to another, specify the source Region using the <b>SourceRegion</b>
     /// parameter, and specify the destination Region using its endpoint. Copies of encrypted
     /// backing snapshots for the AMI are encrypted. Copies of unencrypted backing snapshots
-    /// remain unencrypted, unless you set <code>Encrypted</code> during the copy operation.
-    /// You cannot create an unencrypted copy of an encrypted backing snapshot.
+    /// remain unencrypted, unless you set <c>Encrypted</c> during the copy operation. You
+    /// cannot create an unencrypted copy of an encrypted backing snapshot.
     /// </para>
     ///  
     /// <para>
@@ -103,7 +103,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// System tags (prefixed with <code>aws:</code>)
+        /// System tags (prefixed with <c>aws:</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -178,7 +178,7 @@ namespace Amazon.EC2.Model
         /// Specifies whether the destination snapshots of the copied image should be encrypted.
         /// You can encrypt a copy of an unencrypted snapshot, but you cannot create an unencrypted
         /// copy of an encrypted snapshot. The default KMS key for Amazon EBS is used unless you
-        /// specify a non-default Key Management Service (KMS) KMS key using <code>KmsKeyId</code>.
+        /// specify a non-default Key Management Service (KMS) KMS key using <c>KmsKeyId</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSEncryption.html">Amazon
         /// EBS encryption</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
@@ -201,7 +201,7 @@ namespace Amazon.EC2.Model
         /// The identifier of the symmetric Key Management Service (KMS) KMS key to use when creating
         /// encrypted volumes. If this parameter is not specified, your Amazon Web Services managed
         /// KMS key for Amazon EBS is used. If you specify a KMS key, you must also set the encrypted
-        /// state to <code>true</code>.
+        /// state to <c>true</c>.
         /// </para>
         ///  
         /// <para>

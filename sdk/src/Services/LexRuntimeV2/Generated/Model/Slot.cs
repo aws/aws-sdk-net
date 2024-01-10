@@ -41,9 +41,9 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property Shape. 
         /// <para>
-        /// When the <code>shape</code> value is <code>List</code>, it indicates that the <code>values</code>
-        /// field contains a list of slot values. When the value is <code>Scalar</code>, it indicates
-        /// that the <code>value</code> field contains a single value.
+        /// When the <c>shape</c> value is <c>List</c>, it indicates that the <c>values</c> field
+        /// contains a list of slot values. When the value is <c>Scalar</c>, it indicates that
+        /// the <c>value</c> field contains a single value.
         /// </para>
         /// </summary>
         public Shape Shape

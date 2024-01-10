@@ -42,7 +42,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// An array of name-value pairs that you provide to filter the results for the <code>DescribeImportTask</code>
+        /// An array of name-value pairs that you provide to filter the results for the <c>DescribeImportTask</c>
         /// request to a specific subset of results. Currently, wildcard values aren't supported
         /// for filters.
         /// </para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a <code>BatchRead</code> response operation.
+    /// Represents the output of a <c>BatchRead</c> response operation.
     /// </summary>
     public partial class BatchReadOperationResponse
     {

@@ -42,13 +42,13 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// To create a change set for a stack that doesn't exist, for the <code>ChangeSetType</code>
-    /// parameter, specify <code>CREATE</code>. To create a change set for an existing stack,
-    /// specify <code>UPDATE</code> for the <code>ChangeSetType</code> parameter. To create
-    /// a change set for an import operation, specify <code>IMPORT</code> for the <code>ChangeSetType</code>
-    /// parameter. After the <code>CreateChangeSet</code> call successfully completes, CloudFormation
-    /// starts creating the change set. To check the status of the change set or to review
-    /// it, use the <a>DescribeChangeSet</a> action.
+    /// To create a change set for a stack that doesn't exist, for the <c>ChangeSetType</c>
+    /// parameter, specify <c>CREATE</c>. To create a change set for an existing stack, specify
+    /// <c>UPDATE</c> for the <c>ChangeSetType</c> parameter. To create a change set for an
+    /// import operation, specify <c>IMPORT</c> for the <c>ChangeSetType</c> parameter. After
+    /// the <c>CreateChangeSet</c> call successfully completes, CloudFormation starts creating
+    /// the change set. To check the status of the change set or to review it, use the <a>DescribeChangeSet</a>
+    /// action.
     /// </para>
     ///  
     /// <para>
@@ -58,8 +58,8 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a change set for the entire stack hierarchy, set <code>IncludeNestedStacks</code>
-    /// to <code>True</code>.
+    /// To create a change set for the entire stack hierarchy, set <c>IncludeNestedStacks</c>
+    /// to <c>True</c>.
     /// </para>
     /// </summary>
     public partial class CreateChangeSetRequest : AmazonCloudFormationRequest
@@ -92,7 +92,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> 
+        ///  <c>CAPABILITY_IAM</c> and <c>CAPABILITY_NAMED_IAM</c> 
         /// </para>
         ///  
         /// <para>
@@ -103,8 +103,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code>
-        /// or <code>CAPABILITY_NAMED_IAM</code> capability.
+        /// The following IAM resources require you to specify either the <c>CAPABILITY_IAM</c>
+        /// or <c>CAPABILITY_NAMED_IAM</c> capability.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -112,11 +112,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
+        /// If you have IAM resources with custom names, you <i>must</i> specify <c>CAPABILITY_NAMED_IAM</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify either of these capabilities, CloudFormation returns an <code>InsufficientCapabilities</code>
+        /// If you don't specify either of these capabilities, CloudFormation returns an <c>InsufficientCapabilities</c>
         /// error.
         /// </para>
         ///  </li> </ul> 
@@ -166,7 +166,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CAPABILITY_AUTO_EXPAND</code> 
+        ///  <c>CAPABILITY_AUTO_EXPAND</c> 
         /// </para>
         ///  
         /// <para>
@@ -199,8 +199,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters
-        /// can be specified.
+        /// Only one of the <c>Capabilities</c> and <c>ResourceType</c> parameters can be specified.
         /// </para>
         ///  </note>
         /// </summary>
@@ -245,8 +244,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ChangeSetType. 
         /// <para>
         /// The type of change set operation. To create a change set for a new stack, specify
-        /// <code>CREATE</code>. To create a change set for an existing stack, specify <code>UPDATE</code>.
-        /// To create a change set for an import operation, specify <code>IMPORT</code>.
+        /// <c>CREATE</c>. To create a change set for an existing stack, specify <c>UPDATE</c>.
+        /// To create a change set for an import operation, specify <c>IMPORT</c>.
         /// </para>
         ///  
         /// <para>
@@ -256,9 +255,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, CloudFormation specifies <code>UPDATE</code>. You can't use the <code>UPDATE</code>
-        /// type to create a change set for a new stack or the <code>CREATE</code> type to create
-        /// a change set for an existing stack.
+        /// By default, CloudFormation specifies <c>UPDATE</c>. You can't use the <c>UPDATE</c>
+        /// type to create a change set for a new stack or the <c>CREATE</c> type to create a
+        /// change set for an existing stack.
         /// </para>
         /// </summary>
         public ChangeSetType ChangeSetType
@@ -276,9 +275,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A unique identifier for this <code>CreateChangeSet</code> request. Specify this token
-        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
-        /// to create another change set with the same name. You might retry <code>CreateChangeSet</code>
+        /// A unique identifier for this <c>CreateChangeSet</c> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to create another change set with the same name. You might retry <c>CreateChangeSet</c>
         /// requests to ensure that CloudFormation successfully received them.
         /// </para>
         /// </summary>
@@ -347,8 +346,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property IncludeNestedStacks. 
         /// <para>
         /// Creates a change set for the all nested stacks specified in the template. The default
-        /// behavior of this action is set to <code>False</code>. To include nested sets in a
-        /// change set, specify <code>True</code>.
+        /// behavior of this action is set to <c>False</c>. To include nested sets in a change
+        /// set, specify <c>True</c>.
         /// </para>
         /// </summary>
         public bool IncludeNestedStacks
@@ -388,32 +387,30 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property OnStackFailure. 
         /// <para>
         /// Determines what action will be taken if stack creation fails. If this parameter is
-        /// specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// specified, the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
         /// API operation must not be specified. This must be one of these values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETE</code> - Deletes the change set if the stack creation fails. This is
-        /// only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>.
-        /// If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.
+        ///  <c>DELETE</c> - Deletes the change set if the stack creation fails. This is only
+        /// valid when the <c>ChangeSetType</c> parameter is set to <c>CREATE</c>. If the deletion
+        /// of the stack fails, the status of the stack is <c>DELETE_FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent
-        /// to specifying <code>true</code> for the <code>DisableRollback</code> parameter to
-        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        ///  <c>DO_NOTHING</c> - if the stack creation fails, do nothing. This is equivalent to
+        /// specifying <c>true</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
         /// API operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is
-        /// equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter
-        /// to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        ///  <c>ROLLBACK</c> - if the stack creation fails, roll back the stack. This is equivalent
+        /// to specifying <c>false</c> for the <c>DisableRollback</c> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
         /// API operation.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code>
+        /// For nested stacks, when the <c>OnStackFailure</c> parameter is set to <c>DELETE</c>
         /// for the change set for the parent stack, any failure in a child stack will cause the
         /// parent stack creation to fail and all stacks to be deleted.
         /// </para>
@@ -433,8 +430,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of <code>Parameter</code> structures that specify input parameters for the
-        /// change set. For more information, see the <a>Parameter</a> data type.
+        /// A list of <c>Parameter</c> structures that specify input parameters for the change
+        /// set. For more information, see the <a>Parameter</a> data type.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -472,8 +469,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// The template resource types that you have permissions to work with if you execute
-        /// this change set, such as <code>AWS::EC2::Instance</code>, <code>AWS::EC2::*</code>,
-        /// or <code>Custom::MyCustomInstance</code>.
+        /// this change set, such as <c>AWS::EC2::Instance</c>, <c>AWS::EC2::*</c>, or <c>Custom::MyCustomInstance</c>.
         /// </para>
         ///  
         /// <para>
@@ -485,8 +481,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Only one of the <code>Capabilities</code> and <code>ResourceType</code> parameters
-        /// can be specified.
+        /// Only one of the <c>Capabilities</c> and <c>ResourceType</c> parameters can be specified.
         /// </para>
         ///  </note>
         /// </summary>
@@ -601,7 +596,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
+        /// Conditional: You must specify only <c>TemplateBody</c> or <c>TemplateURL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -627,7 +622,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify only <code>TemplateBody</code> or <code>TemplateURL</code>.
+        /// Conditional: You must specify only <c>TemplateBody</c> or <c>TemplateURL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

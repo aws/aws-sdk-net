@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeMyUserProfile</code> request.
+    /// Contains the response to a <c>DescribeMyUserProfile</c> request.
     /// </summary>
     public partial class DescribeMyUserProfileResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property UserProfile. 
         /// <para>
-        /// A <code>UserProfile</code> object that describes the user's SSH information.
+        /// A <c>UserProfile</c> object that describes the user's SSH information.
         /// </para>
         /// </summary>
         public SelfUserProfile UserProfile

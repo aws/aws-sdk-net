@@ -44,18 +44,17 @@ namespace Amazon.WAF.Model
     ///  </note> 
     /// <para>
     /// Inserts or deletes <a>RegexMatchTuple</a> objects (filters) in a <a>RegexMatchSet</a>.
-    /// For each <code>RegexMatchSetUpdate</code> object, you specify the following values:
-    /// 
+    /// For each <c>RegexMatchSetUpdate</c> object, you specify the following values: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Whether to insert or delete the object from the array. If you want to change a <code>RegexMatchSetUpdate</code>
+    /// Whether to insert or delete the object from the array. If you want to change a <c>RegexMatchSetUpdate</c>
     /// object, you delete the existing object and add a new one.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The part of a web request that you want AWS WAF to inspectupdate, such as a query
-    /// string or the value of the <code>User-Agent</code> header. 
+    /// string or the value of the <c>User-Agent</c> header. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -69,29 +68,29 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  For example, you can create a <code>RegexPatternSet</code> that matches any requests
-    /// with <code>User-Agent</code> headers that contain the string <code>B[a@]dB[o0]t</code>.
-    /// You can then configure AWS WAF to reject those requests.
+    ///  For example, you can create a <c>RegexPatternSet</c> that matches any requests with
+    /// <c>User-Agent</c> headers that contain the string <c>B[a@]dB[o0]t</c>. You can then
+    /// configure AWS WAF to reject those requests.
     /// </para>
     ///  
     /// <para>
-    /// To create and configure a <code>RegexMatchSet</code>, perform the following steps:
+    /// To create and configure a <c>RegexMatchSet</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create a <code>RegexMatchSet.</code> For more information, see <a>CreateRegexMatchSet</a>.
+    /// Create a <c>RegexMatchSet.</c> For more information, see <a>CreateRegexMatchSet</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of an <code>UpdateRegexMatchSet</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of an <c>UpdateRegexMatchSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit an <code>UpdateRegexMatchSet</code> request to specify the part of the request
-    /// that you want AWS WAF to inspect (for example, the header or the URI) and the identifier
-    /// of the <code>RegexPatternSet</code> that contain the regular expression patters you
-    /// want AWS WAF to watch for.
+    /// Submit an <c>UpdateRegexMatchSet</c> request to specify the part of the request that
+    /// you want AWS WAF to inspect (for example, the header or the URI) and the identifier
+    /// of the <c>RegexPatternSet</c> that contain the regular expression patters you want
+    /// AWS WAF to watch for.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -128,8 +127,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RegexMatchSetId. 
         /// <para>
-        /// The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to update.
-        /// <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.
+        /// The <c>RegexMatchSetId</c> of the <a>RegexMatchSet</a> that you want to update. <c>RegexMatchSetId</c>
+        /// is returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -148,8 +147,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Updates. 
         /// <para>
-        /// An array of <code>RegexMatchSetUpdate</code> objects that you want to insert into
-        /// or delete from a <a>RegexMatchSet</a>. For more information, see <a>RegexMatchTuple</a>.
+        /// An array of <c>RegexMatchSetUpdate</c> objects that you want to insert into or delete
+        /// from a <a>RegexMatchSet</a>. For more information, see <a>RegexMatchTuple</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

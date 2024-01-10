@@ -33,7 +33,7 @@ namespace Amazon.Comprehend.Model
     /// 
     ///  
     /// <para>
-    /// The <code>ErrorCode</code> contains one of the following values:
+    /// The <c>ErrorCode</c> contains one of the following values:
     /// </para>
     ///  <ul> <li> 
     /// <para>

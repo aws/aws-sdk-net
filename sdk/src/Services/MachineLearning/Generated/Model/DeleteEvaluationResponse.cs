@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteEvaluation</code> operation. The output indicates
+    /// Represents the output of a <c>DeleteEvaluation</c> operation. The output indicates
     /// that Amazon Machine Learning (Amazon ML) received the request.
     /// 
     ///  
     /// <para>
-    /// You can use the <code>GetEvaluation</code> operation and check the value of the <code>Status</code>
-    /// parameter to see whether an <code>Evaluation</code> is marked as <code>DELETED</code>.
+    /// You can use the <c>GetEvaluation</c> operation and check the value of the <c>Status</c>
+    /// parameter to see whether an <c>Evaluation</c> is marked as <c>DELETED</c>.
     /// </para>
     /// </summary>
     public partial class DeleteEvaluationResponse : AmazonWebServiceResponse
@@ -45,8 +45,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value
-        /// should be identical to the value of the <code>EvaluationId</code> in the request.
+        /// A user-supplied ID that uniquely identifies the <c>Evaluation</c>. This value should
+        /// be identical to the value of the <c>EvaluationId</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

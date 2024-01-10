@@ -80,10 +80,10 @@ namespace Amazon.TimestreamWrite.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If Timestream rejects data for this case, the <code>ExistingVersion</code> field in
-        /// the <code>RejectedRecords</code> response will indicate the current record’s version.
-        /// To force an update, you can resend the request with a version for the record set to
-        /// a value greater than the <code>ExistingVersion</code>.
+        /// If Timestream rejects data for this case, the <c>ExistingVersion</c> field in the
+        /// <c>RejectedRecords</c> response will indicate the current record’s version. To force
+        /// an update, you can resend the request with a version for the record set to a value
+        /// greater than the <c>ExistingVersion</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -92,10 +92,10 @@ namespace Amazon.TimestreamWrite.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When the retention window is updated, you will receive a <code>RejectedRecords</code>
-        /// exception if you immediately try to ingest data within the new window. To avoid a
-        /// <code>RejectedRecords</code> exception, wait until the duration of the new window
-        /// to ingest new data. For further information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
+        /// When the retention window is updated, you will receive a <c>RejectedRecords</c> exception
+        /// if you immediately try to ingest data within the new window. To avoid a <c>RejectedRecords</c>
+        /// exception, wait until the duration of the new window to ingest new data. For further
+        /// information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/best-practices.html#configuration">
         /// Best Practices for Configuring Timestream</a> and <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/storage.html">the
         /// explanation of how storage works in Timestream</a>.
         /// </para>

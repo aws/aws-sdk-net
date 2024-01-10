@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code>
+    /// This data type is used in the <c>RequestInspection</c> and <c>RequestInspectionACFP</c>
     /// data types. 
     /// </para>
     /// </summary>
@@ -60,8 +60,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>,
-        /// the password field specification is <code>/form/password</code>.
+        /// For example, for the JSON payload <c>{ "form": { "password": "THE_PASSWORD" } }</c>,
+        /// the password field specification is <c>/form/password</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,8 +69,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>password1</code>,
-        /// the password field specification is <code>password1</code>.
+        /// For example, for an HTML form with the input element named <c>password1</c>, the password
+        /// field specification is <c>password1</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

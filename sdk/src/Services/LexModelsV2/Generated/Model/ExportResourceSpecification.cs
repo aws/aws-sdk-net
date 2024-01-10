@@ -30,7 +30,7 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Provides information about the bot or bot locale that you want to export. You can
-    /// specify the <code>botExportSpecification</code> or the <code>botLocaleExportSpecification</code>,
+    /// specify the <c>botExportSpecification</c> or the <c>botLocaleExportSpecification</c>,
     /// but not both.
     /// </summary>
     public partial class ExportResourceSpecification

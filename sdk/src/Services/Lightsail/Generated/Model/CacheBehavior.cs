@@ -47,19 +47,19 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>cache</code> </b> - This option is best for static sites. When specified,
-        /// your distribution caches and serves your entire website as static content. This behavior
+        ///  <b> <c>cache</c> </b> - This option is best for static sites. When specified, your
+        /// distribution caches and serves your entire website as static content. This behavior
         /// is ideal for websites with static content that doesn't change depending on who views
         /// it, or for websites that don't use cookies, headers, or query strings to personalize
         /// content.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>dont-cache</code> </b> - This option is best for sites that serve a mix
-        /// of static and dynamic content. When specified, your distribution caches and serve
-        /// only the content that is specified in the distribution's <code>CacheBehaviorPerPath</code>
-        /// parameter. This behavior is ideal for websites or web applications that use cookies,
-        /// headers, and query strings to personalize content for individual users.
+        ///  <b> <c>dont-cache</c> </b> - This option is best for sites that serve a mix of static
+        /// and dynamic content. When specified, your distribution caches and serve only the content
+        /// that is specified in the distribution's <c>CacheBehaviorPerPath</c> parameter. This
+        /// behavior is ideal for websites or web applications that use cookies, headers, and
+        /// query strings to personalize content for individual users.
         /// </para>
         ///  </li> </ul>
         /// </summary>

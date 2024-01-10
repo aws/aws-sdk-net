@@ -48,7 +48,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property AndAllFilters. 
         /// <para>
-        /// Performs a logical <code>AND</code> operation on all supplied filters.
+        /// Performs a logical <c>AND</c> operation on all supplied filters.
         /// </para>
         /// </summary>
         public List<AttributeFilter> AndAllFilters
@@ -66,7 +66,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ContainsAll. 
         /// <para>
-        /// Returns <code>true</code> when a document contains all the specified document attributes
+        /// Returns <c>true</c> when a document contains all the specified document attributes
         /// or metadata fields.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ContainsAny. 
         /// <para>
-        /// Returns <code>true</code> when a document contains any of the specified document attributes
+        /// Returns <c>true</c> when a document contains any of the specified document attributes
         /// or metadata fields.
         /// </para>
         /// </summary>
@@ -123,7 +123,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property GreaterThan. 
         /// <para>
         /// Performs a greater than operation on two document attributes or metadata fields. Use
-        /// with a document attribute of type <code>Date</code> or <code>Long</code>.
+        /// with a document attribute of type <c>Date</c> or <c>Long</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThan
@@ -142,8 +142,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property GreaterThanOrEquals. 
         /// <para>
         /// Performs a greater or equals than operation on two document attributes or metadata
-        /// fields. Use with a document attribute of type <code>Date</code> or <code>Long</code>.
-        /// 
+        /// fields. Use with a document attribute of type <c>Date</c> or <c>Long</c>. 
         /// </para>
         /// </summary>
         public DocumentAttribute GreaterThanOrEquals
@@ -162,7 +161,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property LessThan. 
         /// <para>
         /// Performs a less than operation on two document attributes or metadata fields. Use
-        /// with a document attribute of type <code>Date</code> or <code>Long</code>.
+        /// with a document attribute of type <c>Date</c> or <c>Long</c>.
         /// </para>
         /// </summary>
         public DocumentAttribute LessThan
@@ -181,7 +180,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property LessThanOrEquals. 
         /// <para>
         /// Performs a less than or equals operation on two document attributes or metadata fields.
-        /// Use with a document attribute of type <code>Date</code> or <code>Long</code>. 
+        /// Use with a document attribute of type <c>Date</c> or <c>Long</c>. 
         /// </para>
         /// </summary>
         public DocumentAttribute LessThanOrEquals
@@ -199,7 +198,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property NotFilter. 
         /// <para>
-        /// Performs a logical <code>NOT</code> operation on all supplied filters. 
+        /// Performs a logical <c>NOT</c> operation on all supplied filters. 
         /// </para>
         /// </summary>
         public AttributeFilter NotFilter
@@ -217,7 +216,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property OrAllFilters. 
         /// <para>
-        ///  Performs a logical <code>OR</code> operation on all supplied filters. 
+        ///  Performs a logical <c>OR</c> operation on all supplied filters. 
         /// </para>
         /// </summary>
         public List<AttributeFilter> OrAllFilters

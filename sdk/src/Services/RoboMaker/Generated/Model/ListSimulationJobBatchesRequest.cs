@@ -61,10 +61,10 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code>
-        /// results in a single page along with a <code>nextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code>
-        /// request with the returned <code>nextToken</code> value. 
+        /// When this parameter is used, <c>ListSimulationJobBatches</c> only returns <c>maxResults</c>
+        /// results in a single page along with a <c>nextToken</c> response element. The remaining
+        /// results of the initial request can be seen by sending another <c>ListSimulationJobBatches</c>
+        /// request with the returned <c>nextToken</c> value. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -83,11 +83,10 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve
-        /// the next set of results, call <code>ListSimulationJobBatches</code> again and assign
-        /// that token to the request object's <code>nextToken</code> parameter. If there are
-        /// no remaining results, the previous response object's NextToken parameter is set to
-        /// null. 
+        /// response object's <c>nextToken</c> parameter value is set to a token. To retrieve
+        /// the next set of results, call <c>ListSimulationJobBatches</c> again and assign that
+        /// token to the request object's <c>nextToken</c> parameter. If there are no remaining
+        /// results, the previous response object's NextToken parameter is set to null. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

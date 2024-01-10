@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTEvents.Model
 {
     /// <summary>
-    /// Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+    /// Specifies the actions performed when the <c>condition</c> evaluates to TRUE.
     /// </summary>
     public partial class OnInputLifecycle
     {
@@ -39,7 +39,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// Specifies the actions performed when the <code>condition</code> evaluates to TRUE.
+        /// Specifies the actions performed when the <c>condition</c> evaluates to TRUE.
         /// </para>
         /// </summary>
         public List<Event> Events
@@ -57,7 +57,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property TransitionEvents. 
         /// <para>
-        /// Specifies the actions performed, and the next state entered, when a <code>condition</code>
+        /// Specifies the actions performed, and the next state entered, when a <c>condition</c>
         /// evaluates to TRUE.
         /// </para>
         /// </summary>

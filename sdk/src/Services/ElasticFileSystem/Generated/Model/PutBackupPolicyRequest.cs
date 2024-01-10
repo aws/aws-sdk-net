@@ -41,7 +41,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property BackupPolicy. 
         /// <para>
-        /// The backup policy included in the <code>PutBackupPolicy</code> request.
+        /// The backup policy included in the <c>PutBackupPolicy</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

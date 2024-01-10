@@ -37,9 +37,9 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// Each route contains the Amazon S3 bucket name and the Amazon Web Services Region that
-    /// the bucket is located in. The route also includes the <code>TrafficDialPercentage</code>
+    /// the bucket is located in. The route also includes the <c>TrafficDialPercentage</c>
     /// value, which shows whether the bucket and Region are active (indicated by a value
-    /// of <code>100</code>) or passive (indicated by a value of <code>0</code>).
+    /// of <c>100</c>) or passive (indicated by a value of <c>0</c>).
     /// </para>
     /// </summary>
     public partial class MultiRegionAccessPointRoute
@@ -52,8 +52,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Bucket. 
         /// <para>
         /// The name of the Amazon S3 bucket for which you'll submit a routing configuration change.
-        /// Either the <code>Bucket</code> or the <code>Region</code> value must be provided.
-        /// If both are provided, the bucket must be in the specified Region.
+        /// Either the <c>Bucket</c> or the <c>Region</c> value must be provided. If both are
+        /// provided, the bucket must be in the specified Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -73,8 +73,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// The Amazon Web Services Region to which you'll be submitting a routing configuration
-        /// change. Either the <code>Bucket</code> or the <code>Region</code> value must be provided.
-        /// If both are provided, the bucket must be in the specified Region.
+        /// change. Either the <c>Bucket</c> or the <c>Region</c> value must be provided. If both
+        /// are provided, the bucket must be in the specified Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -97,13 +97,13 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>0</code> indicates a passive state, which means that no new traffic
-        /// will be routed to the Region. 
+        /// A value of <c>0</c> indicates a passive state, which means that no new traffic will
+        /// be routed to the Region. 
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>100</code> indicates an active state, which means that traffic will
-        /// be routed to the specified Region. 
+        /// A value of <c>100</c> indicates an active state, which means that traffic will be
+        /// routed to the specified Region. 
         /// </para>
         ///  
         /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// If all Regions in the routing configuration are designated as passive, you'll receive
-        /// an <code>InvalidRequest</code> error.
+        /// an <c>InvalidRequest</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

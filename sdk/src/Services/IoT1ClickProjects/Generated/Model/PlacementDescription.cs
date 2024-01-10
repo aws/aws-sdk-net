@@ -119,8 +119,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// Gets and sets the property UpdatedDate. 
         /// <para>
         /// The date when the placement was last updated, in UNIX epoch time format. If the placement
-        /// was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the
-        /// same.
+        /// was not updated, then <c>createdDate</c> and <c>updatedDate</c> are the same.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

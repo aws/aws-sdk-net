@@ -30,8 +30,8 @@ namespace Amazon.DocDB.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDBCluster operation.
-    /// Restarts the stopped cluster that is specified by <code>DBClusterIdentifier</code>.
-    /// For more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
+    /// Restarts the stopped cluster that is specified by <c>DBClusterIdentifier</c>. For
+    /// more information, see <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/db-cluster-stop-start.html">Stopping
     /// and Starting an Amazon DocumentDB Cluster</a>.
     /// </summary>
     public partial class StartDBClusterRequest : AmazonDocDBRequest
@@ -41,7 +41,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
-        /// The identifier of the cluster to restart. Example: <code>docdb-2019-05-28-15-24-52</code>
+        /// The identifier of the cluster to restart. Example: <c>docdb-2019-05-28-15-24-52</c>
         /// 
         /// </para>
         /// </summary>

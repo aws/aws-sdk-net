@@ -51,13 +51,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>.
-        /// We recommend using <code>PROVISIONED</code> for predictable workloads.
+        ///  <c>PROVISIONED</c> - Sets the read/write capacity mode to <c>PROVISIONED</c>. We
+        /// recommend using <c>PROVISIONED</c> for predictable workloads.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>.
-        /// We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. 
+        ///  <c>PAY_PER_REQUEST</c> - Sets the read/write capacity mode to <c>PAY_PER_REQUEST</c>.
+        /// We recommend using <c>PAY_PER_REQUEST</c> for unpredictable workloads. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
-    /// High-level information about a TLS inspection configuration, returned by <code>ListTLSInspectionConfigurations</code>.
+    /// High-level information about a TLS inspection configuration, returned by <c>ListTLSInspectionConfigurations</c>.
     /// You can use the information provided in the metadata to retrieve and manage a TLS
     /// configuration.
     /// </summary>

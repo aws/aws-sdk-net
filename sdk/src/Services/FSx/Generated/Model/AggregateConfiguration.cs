@@ -50,12 +50,12 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The strings in the value of <code>Aggregates</code> are not are not formatted as <code>aggrX</code>,
+        /// The strings in the value of <c>Aggregates</c> are not are not formatted as <c>aggrX</c>,
         /// where X is a number between 1 and 6.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>Aggregates</code> contains aggregates that are not present.
+        /// The value of <c>Aggregates</c> contains aggregates that are not present.
         /// </para>
         ///  </li> <li> 
         /// <para>

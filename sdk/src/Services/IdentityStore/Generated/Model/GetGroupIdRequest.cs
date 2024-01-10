@@ -30,7 +30,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGroupId operation.
-    /// Retrieves <code>GroupId</code> in an identity store.
+    /// Retrieves <c>GroupId</c> in an identity store.
     /// 
     ///  <note> 
     /// <para>
@@ -51,7 +51,7 @@ namespace Amazon.IdentityStore.Model
         /// A unique identifier for a user or group that is not the primary identifier. This value
         /// can be an identifier from an external identity provider (IdP) that is associated with
         /// the user, the group, or a unique attribute. For the unique attribute, the only valid
-        /// path is <code>displayName</code>.
+        /// path is <c>displayName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

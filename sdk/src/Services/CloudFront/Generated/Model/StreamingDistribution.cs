@@ -51,17 +51,17 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property ActiveTrustedSigners. 
         /// <para>
         /// A complex type that lists the Amazon Web Services accounts, if any, that you included
-        /// in the <code>TrustedSigners</code> complex type for this distribution. These are the
-        /// accounts that you want to allow to create signed URLs for private content.
+        /// in the <c>TrustedSigners</c> complex type for this distribution. These are the accounts
+        /// that you want to allow to create signed URLs for private content.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Signer</code> complex type lists the Amazon Web Services account number
-        /// of the trusted signer or <code>self</code> if the signer is the Amazon Web Services
-        /// account that created the distribution. The <code>Signer</code> element also includes
-        /// the IDs of any active CloudFront key pairs that are associated with the trusted signer's
-        /// Amazon Web Services account. If no <code>KeyPairId</code> element appears for a <code>Signer</code>,
-        /// that signer can't create signed URLs.
+        /// The <c>Signer</c> complex type lists the Amazon Web Services account number of the
+        /// trusted signer or <c>self</c> if the signer is the Amazon Web Services account that
+        /// created the distribution. The <c>Signer</c> element also includes the IDs of any active
+        /// CloudFront key pairs that are associated with the trusted signer's Amazon Web Services
+        /// account. If no <c>KeyPairId</c> element appears for a <c>Signer</c>, that signer can't
+        /// create signed URLs.
         /// </para>
         ///  
         /// <para>
@@ -85,8 +85,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN (Amazon Resource Name) for the distribution. For example: <code>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</code>,
-        /// where <code>123456789012</code> is your Amazon Web Services account ID.
+        /// The ARN (Amazon Resource Name) for the distribution. For example: <c>arn:aws:cloudfront::123456789012:distribution/EDFDVBD632BHDS5</c>,
+        /// where <c>123456789012</c> is your Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +105,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name that corresponds to the streaming distribution, for example, <code>s5c39gqb8ow64r.cloudfront.net</code>.
+        /// The domain name that corresponds to the streaming distribution, for example, <c>s5c39gqb8ow64r.cloudfront.net</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,7 +124,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the RTMP distribution. For example: <code>EGTXBD79EXAMPLE</code>.
+        /// The identifier for the RTMP distribution. For example: <c>EGTXBD79EXAMPLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,8 +161,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the RTMP distribution. When the status is <code>Deployed</code>,
-        /// the distribution's information is propagated to all CloudFront edge locations.
+        /// The current status of the RTMP distribution. When the status is <c>Deployed</c>, the
+        /// distribution's information is propagated to all CloudFront edge locations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

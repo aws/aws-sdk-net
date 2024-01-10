@@ -66,8 +66,8 @@ namespace Amazon.Pipes.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Environment variables cannot start with "<code>Batch</code>". This naming convention
-        /// is reserved for variables that Batch sets.
+        /// Environment variables cannot start with "<c>Batch</c>". This naming convention is
+        /// reserved for variables that Batch sets.
         /// </para>
         ///  </note>
         /// </summary>
@@ -111,8 +111,8 @@ namespace Amazon.Pipes.Model
         /// Gets and sets the property ResourceRequirements. 
         /// <para>
         /// The type and amount of resources to assign to a container. This overrides the settings
-        /// in the job definition. The supported resources include <code>GPU</code>, <code>MEMORY</code>,
-        /// and <code>VCPU</code>.
+        /// in the job definition. The supported resources include <c>GPU</c>, <c>MEMORY</c>,
+        /// and <c>VCPU</c>.
         /// </para>
         /// </summary>
         public List<BatchResourceRequirement> ResourceRequirements

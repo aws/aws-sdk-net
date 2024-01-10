@@ -63,8 +63,8 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// Where <code>IdentityType</code> is the string that you provide to the <code>PrincipalEntityType</code>
-    /// parameter for this operation. The <code>CognitoUserPoolId</code> and <code>CognitoClientId</code>
+    /// Where <c>IdentityType</c> is the string that you provide to the <c>PrincipalEntityType</c>
+    /// parameter for this operation. The <c>CognitoUserPoolId</c> and <c>CognitoClientId</c>
     /// are defined by the Amazon Cognito user pool.
     /// </para>
     ///  </note> <note> 
@@ -100,8 +100,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -130,7 +130,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify a <code>UserPoolArn</code>, and optionally, a <code>ClientId</code>.
+        /// You must specify a <c>UserPoolArn</c>, and optionally, a <c>ClientId</c>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -31,9 +31,8 @@ namespace Amazon.MarketplaceCatalog.Model
     /// <summary>
     /// Container for the parameters to the CancelChangeSet operation.
     /// Used to cancel an open change request. Must be sent before the status of the request
-    /// changes to <code>APPLYING</code>, the final stage of completing your change request.
-    /// You can describe a change during the 60-day request history retention period for API
-    /// calls.
+    /// changes to <c>APPLYING</c>, the final stage of completing your change request. You
+    /// can describe a change during the 60-day request history retention period for API calls.
     /// </summary>
     public partial class CancelChangeSetRequest : AmazonMarketplaceCatalogRequest
     {
@@ -43,7 +42,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        /// Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.
+        /// Required. The catalog related to the request. Fixed value: <c>AWSMarketplace</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -62,8 +61,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ChangeSetId. 
         /// <para>
-        /// Required. The unique identifier of the <code>StartChangeSet</code> request that you
-        /// want to cancel.
+        /// Required. The unique identifier of the <c>StartChangeSet</c> request that you want
+        /// to cancel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

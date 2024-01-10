@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Models. 
         /// <para>
-        /// An array of <code>ModelSummary</code> objects, each of which lists a model.
+        /// An array of <c>ModelSummary</c> objects, each of which lists a model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -60,7 +60,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The <code>Id</code> of an entry in a batch request.
+        /// The <c>Id</c> of an entry in a batch request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -179,8 +179,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OwnerAlias. 
         /// <para>
-        /// The alias of the AFI owner. Possible values include <code>self</code>, <code>amazon</code>,
-        /// and <code>aws-marketplace</code>.
+        /// The alias of the AFI owner. Possible values include <c>self</c>, <c>amazon</c>, and
+        /// <c>aws-marketplace</c>.
         /// </para>
         /// </summary>
         public string OwnerAlias

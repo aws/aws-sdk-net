@@ -55,8 +55,7 @@ namespace Amazon.AppMesh
     /// their components. For more information about service discovery on Amazon ECS, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
     /// Discovery</a> in the <i>Amazon Elastic Container Service Developer Guide</i>. Kubernetes
-    /// <code>kube-dns</code> and <code>coredns</code> are supported. For more information,
-    /// see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
+    /// <c>kube-dns</c> and <c>coredns</c> are supported. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/">DNS
     /// for Services and Pods</a> in the Kubernetes documentation.
     /// </para>
     ///  </note>
@@ -607,33 +606,31 @@ namespace Amazon.AppMesh
         /// </para>
         ///  
         /// <para>
-        /// You define a <code>listener</code> for any inbound traffic that your virtual node
-        /// expects. Any virtual service that your virtual node expects to communicate to is specified
-        /// as a <code>backend</code>.
+        /// You define a <c>listener</c> for any inbound traffic that your virtual node expects.
+        /// Any virtual service that your virtual node expects to communicate to is specified
+        /// as a <c>backend</c>.
         /// </para>
         ///  
         /// <para>
-        /// The response metadata for your new virtual node contains the <code>arn</code> that
-        /// is associated with the virtual node. Set this value to the full ARN; for example,
-        /// <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>)
-        /// as the <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's
-        /// Envoy proxy container in your task definition or pod spec. This is then mapped to
-        /// the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.
+        /// The response metadata for your new virtual node contains the <c>arn</c> that is associated
+        /// with the virtual node. Set this value to the full ARN; for example, <c>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</c>)
+        /// as the <c>APPMESH_RESOURCE_ARN</c> environment variable for your task group's Envoy
+        /// proxy container in your task definition or pod spec. This is then mapped to the <c>node.id</c>
+        /// and <c>node.cluster</c> Envoy parameters.
         /// </para>
         ///  <note> 
         /// <para>
-        /// By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code>
+        /// By default, App Mesh uses the name of the resource you specified in <c>APPMESH_RESOURCE_ARN</c>
         /// when Envoy is referring to itself in metrics and traces. You can override this behavior
-        /// by setting the <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your
-        /// own name.
+        /// by setting the <c>APPMESH_RESOURCE_CLUSTER</c> environment variable with your own
+        /// name.
         /// </para>
         ///  </note> 
         /// <para>
         /// For more information about virtual nodes, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual
-        /// nodes</a>. You must be using <code>1.15.0</code> or later of the Envoy image when
-        /// setting these variables. For more information aboutApp Mesh Envoy variables, see <a
-        /// href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy image</a>
-        /// in the App Mesh User Guide.
+        /// nodes</a>. You must be using <c>1.15.0</c> or later of the Envoy image when setting
+        /// these variables. For more information aboutApp Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
+        /// image</a> in the App Mesh User Guide.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVirtualNode service method.</param>
@@ -699,7 +696,7 @@ namespace Amazon.AppMesh
         /// 
         ///  
         /// <para>
-        /// Specify a <code>listener</code> for any inbound traffic that your virtual router receives.
+        /// Specify a <c>listener</c> for any inbound traffic that your virtual router receives.
         /// Create a virtual router for each protocol and port that you need to route. Virtual
         /// routers handle traffic for one or more virtual services within your mesh. After you
         /// create your virtual router, create and associate routes for your virtual router that
@@ -776,9 +773,9 @@ namespace Amazon.AppMesh
         /// <para>
         /// A virtual service is an abstraction of a real service that is provided by a virtual
         /// node directly or indirectly by means of a virtual router. Dependent services call
-        /// your virtual service by its <code>virtualServiceName</code>, and those requests are
-        /// routed to the virtual node or virtual router that is specified as the provider for
-        /// the virtual service.
+        /// your virtual service by its <c>virtualServiceName</c>, and those requests are routed
+        /// to the virtual node or virtual router that is specified as the provider for the virtual
+        /// service.
         /// </para>
         ///  
         /// <para>
@@ -2058,7 +2055,7 @@ namespace Amazon.AppMesh
 
 
         /// <summary>
-        /// Associates the specified tags to a resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to a resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource aren't specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags associated with that resource are also
         /// deleted.

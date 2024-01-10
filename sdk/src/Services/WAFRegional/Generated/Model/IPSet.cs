@@ -50,9 +50,9 @@ namespace Amazon.WAFRegional.Model
     ///  
     /// <para>
     /// To specify an individual IP address, you specify the four-part IP address followed
-    /// by a <code>/32</code>, for example, 192.0.2.0/32. To block a range of IP addresses,
-    /// you can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48,
-    /// /56, /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia
+    /// by a <c>/32</c>, for example, 192.0.2.0/32. To block a range of IP addresses, you
+    /// can specify /8 or any range between /16 through /32 (for IPv4) or /24, /32, /48, /56,
+    /// /64, or /128 (for IPv6). For more information about CIDR notation, see the Wikipedia
     /// entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
     /// Inter-Domain Routing</a>. 
     /// </para>
@@ -66,11 +66,11 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property IPSetDescriptors. 
         /// <para>
-        /// The IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP address range
-        /// (in CIDR notation) that web requests originate from. If the <code>WebACL</code> is
-        /// associated with a CloudFront distribution and the viewer did not use an HTTP proxy
-        /// or a load balancer to send the request, this is the value of the c-ip field in the
-        /// CloudFront access logs.
+        /// The IP address type (<c>IPV4</c> or <c>IPV6</c>) and the IP address range (in CIDR
+        /// notation) that web requests originate from. If the <c>WebACL</c> is associated with
+        /// a CloudFront distribution and the viewer did not use an HTTP proxy or a load balancer
+        /// to send the request, this is the value of the c-ip field in the CloudFront access
+        /// logs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,15 +89,14 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property IPSetId. 
         /// <para>
-        /// The <code>IPSetId</code> for an <code>IPSet</code>. You use <code>IPSetId</code> to
-        /// get information about an <code>IPSet</code> (see <a>GetIPSet</a>), update an <code>IPSet</code>
-        /// (see <a>UpdateIPSet</a>), insert an <code>IPSet</code> into a <code>Rule</code> or
-        /// delete one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete an <code>IPSet</code>
-        /// from AWS WAF (see <a>DeleteIPSet</a>).
+        /// The <c>IPSetId</c> for an <c>IPSet</c>. You use <c>IPSetId</c> to get information
+        /// about an <c>IPSet</c> (see <a>GetIPSet</a>), update an <c>IPSet</c> (see <a>UpdateIPSet</a>),
+        /// insert an <c>IPSet</c> into a <c>Rule</c> or delete one from a <c>Rule</c> (see <a>UpdateRule</a>),
+        /// and delete an <c>IPSet</c> from AWS WAF (see <a>DeleteIPSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
+        ///  <c>IPSetId</c> is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -117,7 +116,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A friendly name or description of the <a>IPSet</a>. You can't change the name of an
-        /// <code>IPSet</code> after you create it.
+        /// <c>IPSet</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

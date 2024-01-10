@@ -58,23 +58,23 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IndexName </code> 
+        ///  <c>IndexName </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeySchema </code> 
+        ///  <c>KeySchema </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AttributeDefinitions </code> 
+        ///  <c>AttributeDefinitions </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Projection </code> 
+        ///  <c>Projection </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ProvisionedThroughput </code> 
+        ///  <c>ProvisionedThroughput </c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

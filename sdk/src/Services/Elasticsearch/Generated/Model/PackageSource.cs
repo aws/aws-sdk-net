@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The S3 location for importing the package specified as <code>S3BucketName</code> and
-    /// <code>S3Key</code>
+    /// The S3 location for importing the package specified as <c>S3BucketName</c> and <c>S3Key</c>
     /// </summary>
     public partial class PackageSource
     {

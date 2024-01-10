@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CustomValuesConfiguration. 
         /// <para>
-        /// The configuration of custom values for destination parameter in <code>DestinationParameterValueConfiguration</code>.
+        /// The configuration of custom values for destination parameter in <c>DestinationParameterValueConfiguration</c>.
         /// </para>
         /// </summary>
         public CustomValuesConfiguration CustomValuesConfiguration

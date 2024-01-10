@@ -46,20 +46,19 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If you've specified the <code>type</code> of the data source as an <code>Archive</code>,
-        /// you must provide an Amazon S3 object key to your archive. The object key must point
-        /// to either a <code>.zip</code> or <code>.tar.gz</code> file.
+        /// If you've specified the <c>type</c> of the data source as an <c>Archive</c>, you must
+        /// provide an Amazon S3 object key to your archive. The object key must point to either
+        /// a <c>.zip</c> or <c>.tar.gz</c> file.
         /// </para>
         ///  
         /// <para>
-        /// If you've specified the <code>type</code> of the data source as a <code>Prefix</code>,
-        /// you provide the Amazon S3 prefix that points to the files that you are using for your
-        /// data source.
+        /// If you've specified the <c>type</c> of the data source as a <c>Prefix</c>, you provide
+        /// the Amazon S3 prefix that points to the files that you are using for your data source.
         /// </para>
         ///  
         /// <para>
-        /// If you've specified the <code>type</code> of the data source as a <code>File</code>,
-        /// you provide the Amazon S3 path to the file that you're using as your data source.
+        /// If you've specified the <c>type</c> of the data source as a <c>File</c>, you provide
+        /// the Amazon S3 path to the file that you're using as your data source.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -141,7 +140,7 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a field, the default value is <code>File</code>.
+        /// If you don't specify a field, the default value is <c>File</c>.
         /// </para>
         /// </summary>
         public DataSourceType Type

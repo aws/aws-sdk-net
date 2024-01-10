@@ -58,8 +58,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EngineType. 
         /// <para>
-        /// The type of search engine that the domain is running.<code>OpenSearch</code> for an
-        /// OpenSearch engine, or <code>Elasticsearch</code> for a legacy Elasticsearch OSS engine.
+        /// The type of search engine that the domain is running.<c>OpenSearch</c> for an OpenSearch
+        /// engine, or <c>Elasticsearch</c> for a legacy Elasticsearch OSS engine.
         /// </para>
         /// </summary>
         public EngineType EngineType

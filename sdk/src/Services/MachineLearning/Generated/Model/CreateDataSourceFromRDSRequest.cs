@@ -30,26 +30,25 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSourceFromRDS operation.
-    /// Creates a <code>DataSource</code> object from an <a href="http://aws.amazon.com/rds/">
-    /// Amazon Relational Database Service</a> (Amazon RDS). A <code>DataSource</code> references
-    /// data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>,
-    /// or <code>CreateBatchPrediction</code> operations.
+    /// Creates a <c>DataSource</c> object from an <a href="http://aws.amazon.com/rds/"> Amazon
+    /// Relational Database Service</a> (Amazon RDS). A <c>DataSource</c> references data
+    /// that can be used to perform <c>CreateMLModel</c>, <c>CreateEvaluation</c>, or <c>CreateBatchPrediction</c>
+    /// operations.
     /// 
     ///  
     /// <para>
-    ///  <code>CreateDataSourceFromRDS</code> is an asynchronous operation. In response to
-    /// <code>CreateDataSourceFromRDS</code>, Amazon Machine Learning (Amazon ML) immediately
-    /// returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
-    /// the <code>DataSource</code> is created and ready for use, Amazon ML sets the <code>Status</code>
-    /// parameter to <code>COMPLETED</code>. <code>DataSource</code> in the <code>COMPLETED</code>
-    /// or <code>PENDING</code> state can be used only to perform <code>&gt;CreateMLModel</code>&gt;,
-    /// <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations. 
+    ///  <c>CreateDataSourceFromRDS</c> is an asynchronous operation. In response to <c>CreateDataSourceFromRDS</c>,
+    /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <c>DataSource</c>
+    /// status to <c>PENDING</c>. After the <c>DataSource</c> is created and ready for use,
+    /// Amazon ML sets the <c>Status</c> parameter to <c>COMPLETED</c>. <c>DataSource</c>
+    /// in the <c>COMPLETED</c> or <c>PENDING</c> state can be used only to perform <c>&gt;CreateMLModel</c>&gt;,
+    /// <c>CreateEvaluation</c>, or <c>CreateBatchPrediction</c> operations. 
     /// </para>
     ///  
     /// <para>
-    ///  If Amazon ML cannot accept the input source, it sets the <code>Status</code> parameter
-    /// to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
-    /// of the <code>GetDataSource</code> operation response. 
+    ///  If Amazon ML cannot accept the input source, it sets the <c>Status</c> parameter
+    /// to <c>FAILED</c> and includes an error message in the <c>Message</c> attribute of
+    /// the <c>GetDataSource</c> operation response. 
     /// </para>
     /// </summary>
     public partial class CreateDataSourceFromRDSRequest : AmazonMachineLearningRequest
@@ -63,11 +62,10 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ComputeStatistics. 
         /// <para>
-        /// The compute statistics for a <code>DataSource</code>. The statistics are generated
-        /// from the observation data referenced by a <code>DataSource</code>. Amazon ML uses
-        /// the statistics internally during <code>MLModel</code> training. This parameter must
-        /// be set to <code>true</code> if the <code/>DataSource<code/> needs to be used for <code>MLModel</code>
-        /// training. 
+        /// The compute statistics for a <c>DataSource</c>. The statistics are generated from
+        /// the observation data referenced by a <c>DataSource</c>. Amazon ML uses the statistics
+        /// internally during <c>MLModel</c> training. This parameter must be set to <c>true</c>
+        /// if the <code/>DataSource<code/> needs to be used for <c>MLModel</c> training. 
         /// </para>
         /// </summary>
         public bool ComputeStatistics
@@ -85,8 +83,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>DataSource</code>. Typically,
-        /// an Amazon Resource Number (ARN) becomes the ID for a <code>DataSource</code>.
+        /// A user-supplied ID that uniquely identifies the <c>DataSource</c>. Typically, an Amazon
+        /// Resource Number (ARN) becomes the ID for a <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -105,7 +103,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSourceName. 
         /// <para>
-        /// A user-supplied name or description of the <code>DataSource</code>.
+        /// A user-supplied name or description of the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -124,7 +122,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property RDSData. 
         /// <para>
-        /// The data specification of an Amazon RDS <code>DataSource</code>:
+        /// The data specification of an Amazon RDS <c>DataSource</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -132,12 +130,11 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DatabaseName</code> - The name of the Amazon RDS database.
+        ///  <c>DatabaseName</c> - The name of the Amazon RDS database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database
-        /// instance.
+        ///  <c>InstanceIdentifier </c> - A unique identifier for the Amazon RDS database instance.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -162,36 +159,35 @@ namespace Amazon.MachineLearning.Model
         /// <para>
         /// SecurityInfo - The security information to use to access an RDS DB instance. You need
         /// to set up appropriate ingress rules for the security entity IDs provided to allow
-        /// access to the Amazon RDS instance. Specify a [<code>SubnetId</code>, <code>SecurityGroupIds</code>]
+        /// access to the Amazon RDS instance. Specify a [<c>SubnetId</c>, <c>SecurityGroupIds</c>]
         /// pair for a VPC-based RDS DB instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SelectSqlQuery - A query that is used to retrieve the observation data for the <code>Datasource</code>.
+        /// SelectSqlQuery - A query that is used to retrieve the observation data for the <c>Datasource</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// S3StagingLocation - The Amazon S3 location for staging Amazon RDS data. The data retrieved
-        /// from Amazon RDS using <code>SelectSqlQuery</code> is stored in this location.
+        /// from Amazon RDS using <c>SelectSqlQuery</c> is stored in this location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DataSchemaUri - The Amazon S3 location of the <code>DataSchema</code>.
+        /// DataSchemaUri - The Amazon S3 location of the <c>DataSchema</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code>
+        /// DataSchema - A JSON string representing the schema. This is not required if <c>DataSchemaUri</c>
         /// is specified. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// DataRearrangement - A JSON string that represents the splitting and rearrangement
-        /// requirements for the <code>Datasource</code>. 
+        /// requirements for the <c>Datasource</c>. 
         /// </para>
         ///  
         /// <para>
-        ///  Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// 
+        ///  Sample - <c> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -212,8 +208,8 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property RoleARN. 
         /// <para>
         /// The role that Amazon ML assumes on behalf of the user to create and activate a data
-        /// pipeline in the user's account and copy data using the <code>SelectSqlQuery</code>
-        /// query from Amazon RDS to Amazon S3.
+        /// pipeline in the user's account and copy data using the <c>SelectSqlQuery</c> query
+        /// from Amazon RDS to Amazon S3.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=110)]

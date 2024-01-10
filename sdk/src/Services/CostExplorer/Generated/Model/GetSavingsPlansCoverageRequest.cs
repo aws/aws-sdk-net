@@ -38,24 +38,23 @@ namespace Amazon.CostExplorer.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>LINKED_ACCOUNT</code> 
+    ///  <c>LINKED_ACCOUNT</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>REGION</code> 
+    ///  <c>REGION</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SERVICE</code> 
+    ///  <c>SERVICE</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>INSTANCE_FAMILY</code> 
+    ///  <c>INSTANCE_FAMILY</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To determine valid values for a dimension, use the <code>GetDimensionValues</code>
-    /// operation.
+    /// To determine valid values for a dimension, use the <c>GetDimensionValues</c> operation.
     /// </para>
     /// </summary>
     public partial class GetSavingsPlansCoverageRequest : AmazonCostExplorerRequest
@@ -77,25 +76,25 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LINKED_ACCOUNT</code> 
+        ///  <c>LINKED_ACCOUNT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGION</code> 
+        ///  <c>REGION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SERVICE</code> 
+        ///  <c>SERVICE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE_FAMILY</code> 
+        ///  <c>INSTANCE_FAMILY</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetSavingsPlansCoverage</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// object as the other operations, but only <code>AND</code> is supported among each
-        /// dimension. If there are multiple values for a dimension, they are OR'd together.
+        ///  <c>GetSavingsPlansCoverage</c> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object as the other operations, but only <c>AND</c> is supported among each dimension.
+        /// If there are multiple values for a dimension, they are OR'd together.
         /// </para>
         ///  
         /// <para>
@@ -117,13 +116,13 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// The granularity of the Amazon Web Services cost data for your Savings Plans. <code>Granularity</code>
-        /// can't be set if <code>GroupBy</code> is set.
+        /// The granularity of the Amazon Web Services cost data for your Savings Plans. <c>Granularity</c>
+        /// can't be set if <c>GroupBy</c> is set.
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetSavingsPlansCoverage</code> operation supports only <code>DAILY</code>
-        /// and <code>MONTHLY</code> granularities.
+        /// The <c>GetSavingsPlansCoverage</c> operation supports only <c>DAILY</c> and <c>MONTHLY</c>
+        /// granularities.
         /// </para>
         /// </summary>
         public Granularity Granularity
@@ -141,8 +140,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// You can group the data using the attributes <code>INSTANCE_FAMILY</code>, <code>REGION</code>,
-        /// or <code>SERVICE</code>.
+        /// You can group the data using the attributes <c>INSTANCE_FAMILY</c>, <c>REGION</c>,
+        /// or <c>SERVICE</c>.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy
@@ -160,8 +159,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of items to be returned in a response. The default is <code>20</code>,
-        /// with a minimum value of <code>1</code>.
+        /// The number of items to be returned in a response. The default is <c>20</c>, with a
+        /// minimum value of <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -181,7 +180,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Metrics. 
         /// <para>
         /// The measurement that you want your Savings Plans coverage reported in. The only valid
-        /// value is <code>SpendCoveredBySavingsPlans</code>.
+        /// value is <c>SpendCoveredBySavingsPlans</c>.
         /// </para>
         /// </summary>
         public List<string> Metrics
@@ -223,39 +222,39 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// The following values are supported for <code>Key</code>:
+        /// The following values are supported for <c>Key</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SpendCoveredBySavingsPlan</code> 
+        ///  <c>SpendCoveredBySavingsPlan</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OnDemandCost</code> 
+        ///  <c>OnDemandCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CoveragePercentage</code> 
+        ///  <c>CoveragePercentage</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TotalCost</code> 
+        ///  <c>TotalCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InstanceFamily</code> 
+        ///  <c>InstanceFamily</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Region</code> 
+        ///  <c>Region</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Service</code> 
+        ///  <c>Service</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
+        /// The supported values for <c>SortOrder</c> are <c>ASCENDING</c> and <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public SortDefinition SortBy
@@ -273,10 +272,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The time period that you want the usage and costs for. The <code>Start</code> date
-        /// must be within 13 months. The <code>End</code> date must be after the <code>Start</code>
-        /// date, and before the current date. Future dates can't be used as an <code>End</code>
-        /// date.
+        /// The time period that you want the usage and costs for. The <c>Start</c> date must
+        /// be within 13 months. The <c>End</c> date must be after the <c>Start</c> date, and
+        /// before the current date. Future dates can't be used as an <c>End</c> date.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

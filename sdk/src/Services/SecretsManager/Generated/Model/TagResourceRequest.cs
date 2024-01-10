@@ -55,7 +55,7 @@ namespace Amazon.SecretsManager.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>secretsmanager:TagResource</code>. For more information,
+    ///  <b>Required permissions: </b> <c>secretsmanager:TagResource</c>. For more information,
     /// see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_iam-permissions.html#reference_iam-permissions_actions">
     /// IAM policy actions for Secrets Manager</a> and <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access.html">Authentication
     /// and access control in Secrets Manager</a>. 
@@ -96,7 +96,7 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The tags to attach to the secret as a JSON text string argument. Each element in the
-        /// list consists of a <code>Key</code> and a <code>Value</code>.
+        /// list consists of a <c>Key</c> and a <c>Value</c>.
         /// </para>
         ///  
         /// <para>

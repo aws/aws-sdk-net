@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You must not update a project that is in use. If you update the <code>ServiceCatalogProvisioningUpdateDetails</code>
+    /// You must not update a project that is in use. If you update the <c>ServiceCatalogProvisioningUpdateDetails</c>
     /// of a project that is active or being created, or updated, you may lose resources already
     /// created by the project.
     /// </para>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Metadata for the composition relationship established by using <code>composedAssetModelId</code>
+    /// Metadata for the composition relationship established by using <c>composedAssetModelId</c>
     /// in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">
-    /// <code>CreateAssetModelCompositeModel</code> </a>.
+    /// <c>CreateAssetModelCompositeModel</c> </a>.
     /// </summary>
     public partial class CompositionDetails
     {

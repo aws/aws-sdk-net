@@ -106,8 +106,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PropertyDifferences. 
         /// <para>
         /// Status of the actual configuration of the resource compared to its expected configuration.
-        /// These will be present only for resources whose <code>StackInstanceResourceDriftStatus</code>
-        /// is <code>MODIFIED</code>. 
+        /// These will be present only for resources whose <c>StackInstanceResourceDriftStatus</c>
+        /// is <c>MODIFIED</c>. 
         /// </para>
         /// </summary>
         public List<PropertyDifference> PropertyDifferences
@@ -168,22 +168,22 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETED</code>: The resource differs from its expected template configuration
-        /// in that the resource has been deleted.
+        ///  <c>DELETED</c>: The resource differs from its expected template configuration in
+        /// that the resource has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODIFIED</code>: One or more resource properties differ from their expected
-        /// template values.
+        ///  <c>MODIFIED</c>: One or more resource properties differ from their expected template
+        /// values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected template
+        ///  <c>IN_SYNC</c>: The resource's actual configuration matches its expected template
         /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation doesn't currently return this value.
+        ///  <c>NOT_CHECKED</c>: CloudFormation doesn't currently return this value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DeviceOptions. 
         /// <para>
         /// The options for a device-based trust provider. This parameter is required when the
-        /// provider type is <code>device</code>.
+        /// provider type is <c>device</c>.
         /// </para>
         /// </summary>
         public ModifyVerifiedAccessTrustProviderDeviceOptions DeviceOptions

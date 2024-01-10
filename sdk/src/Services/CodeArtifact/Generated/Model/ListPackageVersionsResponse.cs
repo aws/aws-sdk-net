@@ -51,9 +51,8 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  For npm packages, it's the version referenced by the <code>latest</code> tag. If
-        /// the <code>latest</code> tag is not set, it's the most recently published package version.
-        /// 
+        ///  For npm packages, it's the version referenced by the <c>latest</c> tag. If the <c>latest</c>
+        /// tag is not set, it's the most recently published package version. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -96,11 +95,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of a Maven package is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
+        ///  The namespace of an npm package is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

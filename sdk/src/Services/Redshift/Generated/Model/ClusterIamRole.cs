@@ -49,16 +49,15 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>in-sync</code>: The role is available for use by the cluster.
+        ///  <c>in-sync</c>: The role is available for use by the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>adding</code>: The role is in the process of being associated with the cluster.
+        ///  <c>adding</c>: The role is in the process of being associated with the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>removing</code>: The role is in the process of being disassociated with the
-        /// cluster.
+        ///  <c>removing</c>: The role is in the process of being disassociated with the cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -78,7 +77,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role, for example, <code>arn:aws:iam::123456789012:role/RedshiftCopyUnload</code>.
+        /// The Amazon Resource Name (ARN) of the IAM role, for example, <c>arn:aws:iam::123456789012:role/RedshiftCopyUnload</c>.
         /// 
         /// </para>
         /// </summary>

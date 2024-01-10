@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The Client VPN endpoint's status changes to <code>pending-associate</code> 
+    /// The Client VPN endpoint's status changes to <c>pending-associate</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

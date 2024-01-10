@@ -31,12 +31,12 @@ namespace Amazon.CloudWatchEvidently.Model
     /// <summary>
     /// Container for the parameters to the BatchEvaluateFeature operation.
     /// This operation assigns feature variation to user sessions. For each user session,
-    /// you pass in an <code>entityID</code> that represents the user. Evidently then checks
-    /// the evaluation rules and assigns the variation.
+    /// you pass in an <c>entityID</c> that represents the user. Evidently then checks the
+    /// evaluation rules and assigns the variation.
     /// 
     ///  
     /// <para>
-    /// The first rules that are evaluated are the override rules. If the user's <code>entityID</code>
+    /// The first rules that are evaluated are the override rules. If the user's <c>entityID</c>
     /// matches an override rule, the user is served the variation specified by that rule.
     /// </para>
     ///  

@@ -191,7 +191,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property ExecutionTimeoutMinutes. 
         /// <para>
-        /// Returns the job run timeout value from the <code>StartJobRun</code> call. If no timeout
+        /// Returns the job run timeout value from the <c>StartJobRun</c> call. If no timeout
         /// was specified, then it returns the default timeout of 720 minutes.
         /// </para>
         /// </summary>
@@ -360,8 +360,7 @@ namespace Amazon.EMRServerless.Model
         /// Gets and sets the property TotalExecutionDurationSeconds. 
         /// <para>
         /// The job run total execution duration in seconds. This field is only available for
-        /// job runs in a <code>COMPLETED</code>, <code>FAILED</code>, or <code>CANCELLED</code>
-        /// state.
+        /// job runs in a <c>COMPLETED</c>, <c>FAILED</c>, or <c>CANCELLED</c> state.
         /// </para>
         /// </summary>
         public int TotalExecutionDurationSeconds

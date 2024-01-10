@@ -45,7 +45,7 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The name of the attribute that you want to retrieve the values for, such as <code>volumeType</code>.
+        /// The name of the attribute that you want to retrieve the values for, such as <c>volumeType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.Pricing.Model
         /// Gets and sets the property ServiceCode. 
         /// <para>
         /// The service code for the service whose attributes you want to retrieve. For example,
-        /// if you want the retrieve an EC2 attribute, use <code>AmazonEC2</code>.
+        /// if you want the retrieve an EC2 attribute, use <c>AmazonEC2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

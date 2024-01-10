@@ -37,8 +37,8 @@ namespace Amazon.CostExplorer.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>StartSavingsPlansPurchaseRecommendationGeneration</code> has no request syntax
-    /// because no input parameters are needed to support this operation.
+    ///  <c>StartSavingsPlansPurchaseRecommendationGeneration</c> has no request syntax because
+    /// no input parameters are needed to support this operation.
     /// </para>
     ///  </note>
     /// </summary>

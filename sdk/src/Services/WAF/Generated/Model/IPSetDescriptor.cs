@@ -42,8 +42,8 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Specifies the IP address type (<code>IPV4</code> or <code>IPV6</code>) and the IP
-    /// address range (in CIDR format) that web requests originate from.
+    /// Specifies the IP address type (<c>IPV4</c> or <c>IPV6</c>) and the IP address range
+    /// (in CIDR format) that web requests originate from.
     /// </para>
     /// </summary>
     public partial class IPSetDescriptor
@@ -54,7 +54,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specify <code>IPV4</code> or <code>IPV6</code>.
+        /// Specify <c>IPV4</c> or <c>IPV6</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,12 +78,12 @@ namespace Amazon.WAF.Model
         ///  <ul> <li> 
         /// <para>
         /// To configure AWS WAF to allow, block, or count requests that originated from the IP
-        /// address 192.0.2.44, specify <code>192.0.2.44/32</code>.
+        /// address 192.0.2.44, specify <c>192.0.2.44/32</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure AWS WAF to allow, block, or count requests that originated from IP addresses
-        /// from 192.0.2.0 to 192.0.2.255, specify <code>192.0.2.0/24</code>.
+        /// from 192.0.2.0 to 192.0.2.255, specify <c>192.0.2.0/24</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -97,13 +97,13 @@ namespace Amazon.WAF.Model
         ///  <ul> <li> 
         /// <para>
         /// To configure AWS WAF to allow, block, or count requests that originated from the IP
-        /// address 1111:0000:0000:0000:0000:0000:0000:0111, specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// address 1111:0000:0000:0000:0000:0000:0000:0111, specify <c>1111:0000:0000:0000:0000:0000:0000:0111/128</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure AWS WAF to allow, block, or count requests that originated from IP addresses
         /// 1111:0000:0000:0000:0000:0000:0000:0000 to 1111:0000:0000:0000:ffff:ffff:ffff:ffff,
-        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+        /// specify <c>1111:0000:0000:0000:0000:0000:0000:0000/64</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

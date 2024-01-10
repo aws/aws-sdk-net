@@ -30,10 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Specifies options for sharing Amazon SageMaker Studio notebooks. These settings are
-    /// specified as part of <code>DefaultUserSettings</code> when the <code>CreateDomain</code>
-    /// API is called, and as part of <code>UserSettings</code> when the <code>CreateUserProfile</code>
-    /// API is called. When <code>SharingSettings</code> is not specified, notebook sharing
-    /// isn't allowed.
+    /// specified as part of <c>DefaultUserSettings</c> when the <c>CreateDomain</c> API is
+    /// called, and as part of <c>UserSettings</c> when the <c>CreateUserProfile</c> API is
+    /// called. When <c>SharingSettings</c> is not specified, notebook sharing isn't allowed.
     /// </summary>
     public partial class SharingSettings
     {
@@ -45,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NotebookOutputOption. 
         /// <para>
         /// Whether to include the notebook cell output when sharing the notebook. The default
-        /// is <code>Disabled</code>.
+        /// is <c>Disabled</c>.
         /// </para>
         /// </summary>
         public NotebookOutputOption NotebookOutputOption
@@ -63,9 +62,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3KmsKeyId. 
         /// <para>
-        /// When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon Web Services
-        /// Key Management Service (KMS) encryption key ID used to encrypt the notebook cell output
-        /// in the Amazon S3 bucket.
+        /// When <c>NotebookOutputOption</c> is <c>Allowed</c>, the Amazon Web Services Key Management
+        /// Service (KMS) encryption key ID used to encrypt the notebook cell output in the Amazon
+        /// S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -84,8 +83,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3OutputPath. 
         /// <para>
-        /// When <code>NotebookOutputOption</code> is <code>Allowed</code>, the Amazon S3 bucket
-        /// used to store the shared notebook snapshots.
+        /// When <c>NotebookOutputOption</c> is <c>Allowed</c>, the Amazon S3 bucket used to store
+        /// the shared notebook snapshots.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

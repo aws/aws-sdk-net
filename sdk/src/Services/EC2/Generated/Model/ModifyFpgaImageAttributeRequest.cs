@@ -157,7 +157,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ProductCodes. 
         /// <para>
         /// The product codes. After you add a product code to an AFI, it can't be removed. This
-        /// parameter is valid only when modifying the <code>productCodes</code> attribute.
+        /// parameter is valid only when modifying the <c>productCodes</c> attribute.
         /// </para>
         /// </summary>
         public List<string> ProductCodes
@@ -175,7 +175,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserGroups. 
         /// <para>
-        /// The user groups. This parameter is valid only when modifying the <code>loadPermission</code>
+        /// The user groups. This parameter is valid only when modifying the <c>loadPermission</c>
         /// attribute.
         /// </para>
         /// </summary>
@@ -195,7 +195,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property UserIds. 
         /// <para>
         /// The Amazon Web Services account IDs. This parameter is valid only when modifying the
-        /// <code>loadPermission</code> attribute.
+        /// <c>loadPermission</c> attribute.
         /// </para>
         /// </summary>
         public List<string> UserIds

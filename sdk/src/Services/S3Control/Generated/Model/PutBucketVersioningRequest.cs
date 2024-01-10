@@ -54,7 +54,7 @@ namespace Amazon.S3Control.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Suspended</b> - Suspends versioning for the objects in the bucket. All objects
-    /// added to the bucket receive the version ID <code>null</code>.
+    /// added to the bucket receive the version ID <c>null</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -83,17 +83,16 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
-    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// parameter of <c>x-amz-outpost-id</c> to be passed with the request. In addition, you
+    /// must use an S3 on Outposts endpoint hostname prefix instead of <c>s3-control</c>.
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html#API_control_PutBucketVersioning_Examples">Examples</a>
+    /// Outposts endpoint hostname prefix and the <c>x-amz-outpost-id</c> derived by using
+    /// the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutBucketVersioning.html#API_control_PutBucketVersioning_Examples">Examples</a>
     /// section.
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>PutBucketVersioning</code> for S3 on
-    /// Outposts.
+    /// The following operations are related to <c>PutBucketVersioning</c> for S3 on Outposts.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -179,7 +178,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property VersioningConfiguration. 
         /// <para>
-        /// The root-level tag for the <code>VersioningConfiguration</code> parameters.
+        /// The root-level tag for the <c>VersioningConfiguration</c> parameters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

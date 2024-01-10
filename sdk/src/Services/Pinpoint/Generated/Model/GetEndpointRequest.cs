@@ -62,7 +62,7 @@ namespace Amazon.Pinpoint.Model
         /// Gets and sets the property EndpointId. 
         /// <para>
         /// The case insensitive unique identifier for the endpoint. The identifier can't contain
-        /// <code>$</code>, <code>{</code> or <code>}</code>.
+        /// <c>$</c>, <c>{</c> or <c>}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

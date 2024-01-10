@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-    /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+    /// The specified action violates a limit. For example, <c>ReceiveMessage</c> returns
+    /// this error if the maximum number of in flight messages is reached and <c>AddPermission</c>
     /// returns this error if the maximum number of permissions for the queue is reached.
     /// </summary>
     #if !NETSTANDARD

@@ -59,8 +59,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Principals. 
         /// <para>
-        /// The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated
-        /// with the portfolio.
+        /// The <c>PrincipalARN</c>s and corresponding <c>PrincipalType</c>s associated with the
+        /// portfolio.
         /// </para>
         /// </summary>
         public List<Principal> Principals

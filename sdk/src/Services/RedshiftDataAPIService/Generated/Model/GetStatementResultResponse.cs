@@ -101,7 +101,7 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// Gets and sets the property TotalNumRows. 
         /// <para>
         /// The total number of rows in the result set returned from a query. You can use this
-        /// number to estimate the number of calls to the <code>GetStatementResult</code> operation
+        /// number to estimate the number of calls to the <c>GetStatementResult</c> operation
         /// needed to page through the results. 
         /// </para>
         /// </summary>

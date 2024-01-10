@@ -45,8 +45,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        ///  A <code>MessageId</code> is a unique identifier for a message, and is returned when
-        /// sending emails through Amazon SES. 
+        ///  A <c>MessageId</c> is a unique identifier for a message, and is returned when sending
+        /// emails through Amazon SES. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

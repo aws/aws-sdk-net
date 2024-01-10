@@ -46,19 +46,19 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>imageBuildVersionArn</code> 
+        ///  <c>imageBuildVersionArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>imagePipelineArn</code> 
+        ///  <c>imagePipelineArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vulnerabilityId</code> 
+        ///  <c>vulnerabilityId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>severity</code> 
+        ///  <c>severity</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -316,8 +316,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property TriggerType. 
         /// <para>
-        ///  Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>,
-        /// or <code>Event</code>. 
+        ///  Specifies the type of flow trigger. This can be <c>OnDemand</c>, <c>Scheduled</c>,
+        /// or <c>Event</c>. 
         /// </para>
         /// </summary>
         public TriggerType TriggerType

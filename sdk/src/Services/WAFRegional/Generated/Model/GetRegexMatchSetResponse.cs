@@ -38,7 +38,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RegexMatchSet. 
         /// <para>
-        /// Information about the <a>RegexMatchSet</a> that you specified in the <code>GetRegexMatchSet</code>
+        /// Information about the <a>RegexMatchSet</a> that you specified in the <c>GetRegexMatchSet</c>
         /// request. For more information, see <a>RegexMatchTuple</a>.
         /// </para>
         /// </summary>

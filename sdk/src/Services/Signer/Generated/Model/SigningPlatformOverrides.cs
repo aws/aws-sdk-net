@@ -59,11 +59,10 @@ namespace Amazon.Signer.Model
         /// Gets and sets the property SigningImageFormat. 
         /// <para>
         /// A signed image is a JSON object. When overriding the default signing platform configuration,
-        /// a customer can select either of two signing formats, <code>JSONEmbedded</code> or
-        /// <code>JSONDetached</code>. (A third format value, <code>JSON</code>, is reserved for
-        /// future use.) With <code>JSONEmbedded</code>, the signing image has the payload embedded
-        /// in it. With <code>JSONDetached</code>, the payload is not be embedded in the signing
-        /// image.
+        /// a customer can select either of two signing formats, <c>JSONEmbedded</c> or <c>JSONDetached</c>.
+        /// (A third format value, <c>JSON</c>, is reserved for future use.) With <c>JSONEmbedded</c>,
+        /// the signing image has the payload embedded in it. With <c>JSONDetached</c>, the payload
+        /// is not be embedded in the signing image.
         /// </para>
         /// </summary>
         public ImageFormat SigningImageFormat

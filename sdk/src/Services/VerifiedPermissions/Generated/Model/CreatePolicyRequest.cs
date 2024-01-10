@@ -35,15 +35,15 @@ namespace Amazon.VerifiedPermissions.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// To create a static policy, provide the Cedar policy text in the <code>StaticPolicy</code>
-    /// section of the <code>PolicyDefinition</code>.
+    /// To create a static policy, provide the Cedar policy text in the <c>StaticPolicy</c>
+    /// section of the <c>PolicyDefinition</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To create a policy that is dynamically linked to a policy template, specify the policy
-    /// template ID and the principal and resource to associate with this policy in the <code>templateLinked</code>
-    /// section of the <code>PolicyDefinition</code>. If the policy template is ever updated,
-    /// any policies linked to the policy template automatically use the updated template.
+    /// template ID and the principal and resource to associate with this policy in the <c>templateLinked</c>
+    /// section of the <c>PolicyDefinition</c>. If the policy template is ever updated, any
+    /// policies linked to the policy template automatically use the updated template.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -82,8 +82,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -123,8 +123,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// <summary>
         /// Gets and sets the property PolicyStoreId. 
         /// <para>
-        /// Specifies the <code>PolicyStoreId</code> of the policy store you want to store the
-        /// policy in.
+        /// Specifies the <c>PolicyStoreId</c> of the policy store you want to store the policy
+        /// in.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

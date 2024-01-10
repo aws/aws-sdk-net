@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// A filter to apply to the <code>DescribePackage</code> response.
+    /// A filter to apply to the <c>DescribePackage</c> response.
     /// </summary>
     public partial class DescribePackagesFilter
     {
@@ -39,7 +39,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Any field from <code>PackageDetails</code>.
+        /// Any field from <c>PackageDetails</c>.
         /// </para>
         /// </summary>
         public DescribePackagesFilterName Name

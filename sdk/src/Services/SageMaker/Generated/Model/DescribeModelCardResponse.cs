@@ -173,33 +173,32 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelCardProcessingStatus. 
         /// <para>
-        /// The processing status of model card deletion. The <code>ModelCardProcessingStatus</code>
+        /// The processing status of model card deletion. The <c>ModelCardProcessingStatus</c>
         /// updates throughout the different deletion steps.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DeletePending</code>: Model card deletion request received.
+        ///  <c>DeletePending</c>: Model card deletion request received.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeleteInProgress</code>: Model card deletion is in progress.
+        ///  <c>DeleteInProgress</c>: Model card deletion is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ContentDeleted</code>: Deleted model card content.
+        ///  <c>ContentDeleted</c>: Deleted model card content.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExportJobsDeleted</code>: Deleted all export jobs associated with the model
-        /// card.
+        ///  <c>ExportJobsDeleted</c>: Deleted all export jobs associated with the model card.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeleteCompleted</code>: Successfully deleted the model card.
+        ///  <c>DeleteCompleted</c>: Successfully deleted the model card.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeleteFailed</code>: The model card failed to delete.
+        ///  <c>DeleteFailed</c>: The model card failed to delete.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -223,20 +222,20 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Draft</code>: The model card is a work in progress.
+        ///  <c>Draft</c>: The model card is a work in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PendingReview</code>: The model card is pending review.
+        ///  <c>PendingReview</c>: The model card is pending review.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Approved</code>: The model card is approved.
+        ///  <c>Approved</c>: The model card is approved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Archived</code>: The model card is archived. No more updates should be made
-        /// to the model card, but it can still be exported.
+        ///  <c>Archived</c>: The model card is archived. No more updates should be made to the
+        /// model card, but it can still be exported.
         /// </para>
         ///  </li> </ul>
         /// </summary>

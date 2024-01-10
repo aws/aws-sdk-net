@@ -43,7 +43,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property FilterConditions. 
         /// <para>
-        /// A complex type that contains information about the filters applied during the <code>ListDomains</code>
+        /// A complex type that contains information about the filters applied during the <c>ListDomains</c>
         /// request. The filter conditions can include domain name and domain expiration.
         /// </para>
         /// </summary>
@@ -64,10 +64,10 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         /// For an initial request for a list of domains, omit this element. If the number of
         /// domains that are associated with the current Amazon Web Services account is greater
-        /// than the value that you specified for <code>MaxItems</code>, you can use <code>Marker</code>
-        /// to return additional domains. Get the value of <code>NextPageMarker</code> from the
-        /// previous response, and submit another request that includes the value of <code>NextPageMarker</code>
-        /// in the <code>Marker</code> element.
+        /// than the value that you specified for <c>MaxItems</c>, you can use <c>Marker</c> to
+        /// return additional domains. Get the value of <c>NextPageMarker</c> from the previous
+        /// response, and submit another request that includes the value of <c>NextPageMarker</c>
+        /// in the <c>Marker</c> element.
         /// </para>
         ///  
         /// <para>

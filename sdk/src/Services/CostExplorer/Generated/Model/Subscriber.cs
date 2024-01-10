@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The recipient of <code>AnomalySubscription</code> notifications.
+    /// The recipient of <c>AnomalySubscription</c> notifications.
     /// </summary>
     public partial class Subscriber
     {
@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// The email address or SNS Amazon Resource Name (ARN). This depends on the <code>Type</code>.
+        /// The email address or SNS Amazon Resource Name (ARN). This depends on the <c>Type</c>.
         /// 
         /// </para>
         /// </summary>

@@ -31,8 +31,8 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Details and path tracking information for a single time a person's path is tracked
     /// in a video. Amazon Rekognition operations that track people's paths return an array
-    /// of <code>PersonDetection</code> objects with elements for each time a person's path
-    /// is tracked in a video. 
+    /// of <c>PersonDetection</c> objects with elements for each time a person's path is tracked
+    /// in a video. 
     /// 
     ///  
     /// <para>
@@ -67,8 +67,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Timestamp. 
         /// <para>
         /// The time, in milliseconds from the start of the video, that the person's path was
-        /// tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate to the
-        /// individual frame where the person's path first appears.
+        /// tracked. Note that <c>Timestamp</c> is not guaranteed to be accurate to the individual
+        /// frame where the person's path first appears.
         /// </para>
         /// </summary>
         public long Timestamp

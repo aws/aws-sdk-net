@@ -30,8 +30,8 @@ namespace Amazon.Budgets.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeBudgetPerformanceHistory operation.
-    /// Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code>
-    /// budgets. Budget history isn't available for <code>ANNUAL</code> budgets.
+    /// Describes the history for <c>DAILY</c>, <c>MONTHLY</c>, and <c>QUARTERLY</c> budgets.
+    /// Budget history isn't available for <c>ANNUAL</c> budgets.
     /// </summary>
     public partial class DescribeBudgetPerformanceHistoryRequest : AmazonBudgetsRequest
     {
@@ -108,8 +108,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// Retrieves how often the budget went into an <code>ALARM</code> state for the specified
-        /// time period.
+        /// Retrieves how often the budget went into an <c>ALARM</c> state for the specified time
+        /// period.
         /// </para>
         /// </summary>
         public TimePeriod TimePeriod

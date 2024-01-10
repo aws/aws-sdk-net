@@ -31,11 +31,10 @@ namespace Amazon.Redshift.Model
     /// <summary>
     /// Container for the parameters to the DescribeTableRestoreStatus operation.
     /// Lists the status of one or more table restore requests made using the <a>RestoreTableFromClusterSnapshot</a>
-    /// API action. If you don't specify a value for the <code>TableRestoreRequestId</code>
-    /// parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all
-    /// table restore requests ordered by the date and time of the request in ascending order.
-    /// Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table
-    /// specified by <code>TableRestoreRequestId</code>.
+    /// API action. If you don't specify a value for the <c>TableRestoreRequestId</c> parameter,
+    /// then <c>DescribeTableRestoreStatus</c> returns the status of all table restore requests
+    /// ordered by the date and time of the request in ascending order. Otherwise <c>DescribeTableRestoreStatus</c>
+    /// returns the status of the table specified by <c>TableRestoreRequestId</c>.
     /// </summary>
     public partial class DescribeTableRestoreStatusRequest : AmazonRedshiftRequest
     {
@@ -66,9 +65,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeTableRestoreStatus</code>
+        /// An optional pagination token provided by a previous <c>DescribeTableRestoreStatus</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+        /// the marker, up to the value specified by the <c>MaxRecords</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -88,8 +87,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -108,8 +107,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property TableRestoreRequestId. 
         /// <para>
         /// The identifier of the table restore request to return status for. If you don't specify
-        /// a <code>TableRestoreRequestId</code> value, then <code>DescribeTableRestoreStatus</code>
-        /// returns the status of all in-progress table restore requests.
+        /// a <c>TableRestoreRequestId</c> value, then <c>DescribeTableRestoreStatus</c> returns
+        /// the status of all in-progress table restore requests.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

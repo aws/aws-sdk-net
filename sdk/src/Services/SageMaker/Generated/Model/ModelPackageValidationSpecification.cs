@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ValidationProfiles. 
         /// <para>
-        /// An array of <code>ModelPackageValidationProfile</code> objects, each of which specifies
+        /// An array of <c>ModelPackageValidationProfile</c> objects, each of which specifies
         /// a batch transform job that SageMaker runs to validate your model package.
         /// </para>
         /// </summary>

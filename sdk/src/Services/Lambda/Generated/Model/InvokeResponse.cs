@@ -118,10 +118,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The HTTP status code is in the 200 range for a successful request. For the <code>RequestResponse</code>
-        /// invocation type, this status code is 200. For the <code>Event</code> invocation type,
-        /// this status code is 202. For the <code>DryRun</code> invocation type, the status code
-        /// is 204.
+        /// The HTTP status code is in the 200 range for a successful request. For the <c>RequestResponse</c>
+        /// invocation type, this status code is 200. For the <c>Event</c> invocation type, this
+        /// status code is 202. For the <c>DryRun</c> invocation type, the status code is 204.
         /// </para>
         /// </summary>
         public int StatusCode

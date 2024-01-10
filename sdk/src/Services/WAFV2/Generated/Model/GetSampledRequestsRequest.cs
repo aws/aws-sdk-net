@@ -37,9 +37,9 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    ///  <code>GetSampledRequests</code> returns a time range, which is usually the time range
-    /// that you specified. However, if your resource (such as a CloudFront distribution)
-    /// received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code>
+    ///  <c>GetSampledRequests</c> returns a time range, which is usually the time range that
+    /// you specified. However, if your resource (such as a CloudFront distribution) received
+    /// 5,000 requests before the specified time range elapsed, <c>GetSampledRequests</c>
     /// returns an updated time range. This new time range indicates the actual period during
     /// which WAF selected the requests in the sample.
     /// </para>
@@ -57,7 +57,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The number of requests that you want WAF to return from among the first 5,000 requests
         /// that your Amazon Web Services resource received during the time range. If your resource
-        /// received fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
+        /// received fewer requests than the value of <c>MaxItems</c>, <c>GetSampledRequests</c>
         /// returns information about all of them. 
         /// </para>
         /// </summary>
@@ -77,8 +77,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RuleMetricName. 
         /// <para>
-        /// The metric name assigned to the <code>Rule</code> or <code>RuleGroup</code> dimension
-        /// for which you want a sample of requests.
+        /// The metric name assigned to the <c>Rule</c> or <c>RuleGroup</c> dimension for which
+        /// you want a sample of requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -109,8 +109,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-        /// --region=us-east-1</code>. 
+        /// CLI - Specify the Region when you use the CloudFront scope: <c>--scope=CLOUDFRONT
+        /// --region=us-east-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -135,11 +135,11 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property TimeWindow. 
         /// <para>
         /// The start date and time and the end date and time of the range for which you want
-        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
-        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
-        /// specify any time range in the previous three hours. If you specify a start time that's
-        /// earlier than three hours ago, WAF sets it to three hours ago.
+        /// <c>GetSampledRequests</c> to return a sample of requests. You must specify the times
+        /// in Coordinated Universal Time (UTC) format. UTC format includes the special designator,
+        /// <c>Z</c>. For example, <c>"2016-09-27T14:50Z"</c>. You can specify any time range
+        /// in the previous three hours. If you specify a start time that's earlier than three
+        /// hours ago, WAF sets it to three hours ago.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,8 +158,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property WebAclArn. 
         /// <para>
-        /// The Amazon resource name (ARN) of the <code>WebACL</code> for which you want a sample
-        /// of requests.
+        /// The Amazon resource name (ARN) of the <c>WebACL</c> for which you want a sample of
+        /// requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

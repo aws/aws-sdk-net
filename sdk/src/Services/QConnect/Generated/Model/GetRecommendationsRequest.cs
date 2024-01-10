@@ -32,7 +32,7 @@ namespace Amazon.QConnect.Model
     /// Container for the parameters to the GetRecommendations operation.
     /// Retrieves recommendations for the specified session. To avoid retrieving the same
     /// recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>.
-    /// This API supports long-polling behavior with the <code>waitTimeSeconds</code> parameter.
+    /// This API supports long-polling behavior with the <c>waitTimeSeconds</c> parameter.
     /// Short poll is the default behavior and only returns recommendations already available.
     /// To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
     /// </summary>
@@ -107,8 +107,8 @@ namespace Amazon.QConnect.Model
         /// <para>
         /// The duration (in seconds) for which the call waits for a recommendation to be made
         /// available before returning. If a recommendation is available, the call returns sooner
-        /// than <code>WaitTimeSeconds</code>. If no messages are available and the wait time
-        /// expires, the call returns successfully with an empty list.
+        /// than <c>WaitTimeSeconds</c>. If no messages are available and the wait time expires,
+        /// the call returns successfully with an empty list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

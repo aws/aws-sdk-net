@@ -30,19 +30,18 @@ namespace Amazon.OpsWorksCM.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreServer operation.
-    /// Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
-    /// <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When
-    /// you run RestoreServer, the server's EC2 instance is deleted, and a new EC2 instance
-    /// is configured. RestoreServer maintains the existing server endpoint, so configuration
-    /// management of the server's client devices (nodes) should continue to work. 
+    /// Restores a backup to a server that is in a <c>CONNECTION_LOST</c>, <c>HEALTHY</c>,
+    /// <c>RUNNING</c>, <c>UNHEALTHY</c>, or <c>TERMINATED</c> state. When you run RestoreServer,
+    /// the server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer
+    /// maintains the existing server endpoint, so configuration management of the server's
+    /// client devices (nodes) should continue to work. 
     /// 
     ///  
     /// <para>
     /// Restoring from a backup is performed by creating a new EC2 instance. If restoration
-    /// is successful, and the server is in a <code>HEALTHY</code> state, AWS OpsWorks CM
-    /// switches traffic over to the new instance. After restoration is finished, the old
-    /// EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code> state,
-    /// but is eventually terminated.
+    /// is successful, and the server is in a <c>HEALTHY</c> state, AWS OpsWorks CM switches
+    /// traffic over to the new instance. After restoration is finished, the old EC2 instance
+    /// is maintained in a <c>Running</c> or <c>Stopped</c> state, but is eventually terminated.
     /// </para>
     ///  
     /// <para>
@@ -50,10 +49,9 @@ namespace Amazon.OpsWorksCM.Model
     /// </para>
     ///  
     /// <para>
-    ///  An <code>InvalidStateException</code> is thrown when the server is not in a valid
-    /// state. A <code>ResourceNotFoundException</code> is thrown when the server does not
-    /// exist. A <code>ValidationException</code> is raised when parameters of the request
-    /// are not valid. 
+    ///  An <c>InvalidStateException</c> is thrown when the server is not in a valid state.
+    /// A <c>ResourceNotFoundException</c> is thrown when the server does not exist. A <c>ValidationException</c>
+    /// is raised when parameters of the request are not valid. 
     /// </para>
     /// </summary>
     public partial class RestoreServerRequest : AmazonOpsWorksCMRequest
@@ -86,10 +84,9 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         ///  The type of instance to restore. Valid values must be specified in the following
-        /// format: <code>^([cm][34]|t2).*</code> For example, <code>m5.large</code>. Valid values
-        /// are <code>m5.large</code>, <code>r5.xlarge</code>, and <code>r5.2xlarge</code>. If
-        /// you do not specify this parameter, RestoreServer uses the instance type from the specified
-        /// backup. 
+        /// format: <c>^([cm][34]|t2).*</c> For example, <c>m5.large</c>. Valid values are <c>m5.large</c>,
+        /// <c>r5.xlarge</c>, and <c>r5.2xlarge</c>. If you do not specify this parameter, RestoreServer
+        /// uses the instance type from the specified backup. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

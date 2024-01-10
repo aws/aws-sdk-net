@@ -79,7 +79,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
-        /// An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// An ARN that uniquely identifies a backup vault; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -117,7 +117,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CalculatedLifecycle. 
         /// <para>
-        /// A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code>
+        /// A <c>CalculatedLifecycle</c> object containing <c>DeleteAt</c> and <c>MoveToColdStorageAt</c>
         /// timestamps.
         /// </para>
         /// </summary>
@@ -137,9 +137,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time that a job to create a recovery point is completed, in Unix format
-        /// and Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is
-        /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-        /// January 26, 2018 12:11:30.087 AM.
+        /// and Coordinated Universal Time (UTC). The value of <c>CompletionDate</c> is accurate
+        /// to milliseconds. For example, the value 1516925490.087 represents Friday, January
+        /// 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CompletionDate
@@ -179,8 +179,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatedBy. 
         /// <para>
         /// Contains identifying information about the creation of a recovery point, including
-        /// the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
-        /// and <code>BackupRuleId</code> of the backup plan used to create it.
+        /// the <c>BackupPlanArn</c>, <c>BackupPlanId</c>, <c>BackupPlanVersion</c>, and <c>BackupRuleId</c>
+        /// of the backup plan used to create it.
         /// </para>
         /// </summary>
         public RecoveryPointCreator CreatedBy
@@ -199,7 +199,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time that a recovery point is created, in Unix format and Coordinated
-        /// Universal Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds.
+        /// Universal Time (UTC). The value of <c>CreationDate</c> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.
         /// </para>
@@ -219,7 +219,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
-        /// The server-side encryption key used to protect your backups; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// The server-side encryption key used to protect your backups; for example, <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         /// </summary>
         public string EncryptionKeyArn
@@ -238,7 +238,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -256,8 +256,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IsEncrypted. 
         /// <para>
-        /// A Boolean value that is returned as <code>TRUE</code> if the specified recovery point
-        /// is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.
+        /// A Boolean value that is returned as <c>TRUE</c> if the specified recovery point is
+        /// encrypted, or <c>FALSE</c> if the recovery point is not encrypted.
         /// </para>
         /// </summary>
         public bool IsEncrypted
@@ -294,7 +294,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property LastRestoreTime. 
         /// <para>
         /// The date and time that a recovery point was last restored, in Unix format and Coordinated
-        /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds.
+        /// Universal Time (UTC). The value of <c>LastRestoreTime</c> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.
         /// </para>
@@ -349,7 +349,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ParentRecoveryPointArn. 
         /// <para>
         /// This is an ARN that uniquely identifies a parent (composite) recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string ParentRecoveryPointArn
@@ -367,7 +367,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
-        /// An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// An ARN that uniquely identifies a recovery point; for example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string RecoveryPointArn
@@ -443,9 +443,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SourceBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies the source vault where the
-        /// resource was originally backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>.
+        /// resource was originally backed up in; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</c>.
         /// If the recovery is restored to the same Amazon Web Services account or Region, this
-        /// value will be <code>null</code>.
+        /// value will be <c>null</c>.
         /// </para>
         /// </summary>
         public string SourceBackupVaultArn
@@ -467,15 +467,15 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>PARTIAL</code> status indicates Backup could not create the recovery point
-        /// before the backup window closed. To increase your backup plan window using the API,
-        /// see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
+        ///  <c>PARTIAL</c> status indicates Backup could not create the recovery point before
+        /// the backup window closed. To increase your backup plan window using the API, see <a
+        /// href="https://docs.aws.amazon.com/aws-backup/latest/devguide/API_UpdateBackupPlan.html">UpdateBackupPlan</a>.
         /// You can also increase your backup plan window using the Console by choosing and editing
         /// your backup plan.
         /// </para>
         ///  
         /// <para>
-        ///  <code>EXPIRED</code> status indicates that the recovery point has exceeded its retention
+        ///  <c>EXPIRED</c> status indicates that the recovery point has exceeded its retention
         /// period, but Backup lacks permission or is otherwise unable to delete it. To manually
         /// delete these recovery points, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/gs-cleanup-resources.html#cleanup-backups">
         /// Step 3: Delete the recovery points</a> in the <i>Clean up resources</i> section of
@@ -483,23 +483,23 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>STOPPED</code> status occurs on a continuous backup where a user has taken
-        /// some action that causes the continuous backup to be disabled. This can be caused by
-        /// the removal of permissions, turning off versioning, turning off events being sent
-        /// to EventBridge, or disabling the EventBridge rules that are put in place by Backup.
+        ///  <c>STOPPED</c> status occurs on a continuous backup where a user has taken some action
+        /// that causes the continuous backup to be disabled. This can be caused by the removal
+        /// of permissions, turning off versioning, turning off events being sent to EventBridge,
+        /// or disabling the EventBridge rules that are put in place by Backup.
         /// </para>
         ///  
         /// <para>
-        /// To resolve <code>STOPPED</code> status, ensure that all requested permissions are
-        /// in place and that versioning is enabled on the S3 bucket. Once these conditions are
-        /// met, the next instance of a backup rule running will result in a new continuous recovery
-        /// point being created. The recovery points with STOPPED status do not need to be deleted.
+        /// To resolve <c>STOPPED</c> status, ensure that all requested permissions are in place
+        /// and that versioning is enabled on the S3 bucket. Once these conditions are met, the
+        /// next instance of a backup rule running will result in a new continuous recovery point
+        /// being created. The recovery points with STOPPED status do not need to be deleted.
         /// </para>
         ///  
         /// <para>
-        /// For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action,
-        /// application misconfiguration, or backup failure. To ensure that future continuous
-        /// backups succeed, refer to the recovery point status and check SAP HANA for details.
+        /// For SAP HANA on Amazon EC2 <c>STOPPED</c> status occurs due to user action, application
+        /// misconfiguration, or backup failure. To ensure that future continuous backups succeed,
+        /// refer to the recovery point status and check SAP HANA for details.
         /// </para>
         /// </summary>
         public RecoveryPointStatus Status
@@ -535,8 +535,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        /// Specifies the storage class of the recovery point. Valid values are <code>WARM</code>
-        /// or <code>COLD</code>.
+        /// Specifies the storage class of the recovery point. Valid values are <c>WARM</c> or
+        /// <c>COLD</c>.
         /// </para>
         /// </summary>
         public StorageClass StorageClass

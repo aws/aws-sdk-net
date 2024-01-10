@@ -62,8 +62,8 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Structure containing the stack policy body. For more information, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/protect-stack-resources.html">
         /// Prevent updates to stack resources</a> in the <i>CloudFormation User Guide</i>. You
-        /// can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
-        /// parameter, but not both.
+        /// can specify either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c> parameter,
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16384)]
@@ -84,7 +84,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Location of a file containing the stack policy. The URL must point to a policy (maximum
         /// size: 16 KB) located in an Amazon S3 bucket in the same Amazon Web Services Region
-        /// as the stack. You can specify either the <code>StackPolicyBody</code> or the <code>StackPolicyURL</code>
+        /// as the stack. You can specify either the <c>StackPolicyBody</c> or the <c>StackPolicyURL</c>
         /// parameter, but not both.
         /// </para>
         /// </summary>

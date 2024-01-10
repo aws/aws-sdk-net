@@ -37,8 +37,8 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not
-    /// from the user's browser. The following rules apply to the generated URL:
+    /// Currently, you can use <c>GetDashboardEmbedURL</c> only from the server, not from
+    /// the user's browser. The following rules apply to the generated URL:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -59,8 +59,8 @@ namespace Amazon.QuickSight.Model
     ///  </li> <li> 
     /// <para>
     /// The resulting user session is valid for 15 minutes (default) up to 10 hours (maximum).
-    /// You can use the optional <code>SessionLifetimeInMinutes</code> parameter to customize
-    /// session duration.
+    /// You can use the optional <c>SessionLifetimeInMinutes</c> parameter to customize session
+    /// duration.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -91,10 +91,10 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AdditionalDashboardIds. 
         /// <para>
         /// A list of one or more dashboard IDs that you want anonymous users to have tempporary
-        /// access to. Currently, the <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code>
+        /// access to. Currently, the <c>IdentityType</c> parameter must be set to <c>ANONYMOUS</c>
         /// because other identity types authenticate as Amazon QuickSight or IAM users. For example,
-        /// if you set "<code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
-        /// ANONYMOUS</code>", the session can access all three dashboards.
+        /// if you set "<c>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type
+        /// ANONYMOUS</c>", the session can access all three dashboards.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -172,7 +172,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Namespace. 
         /// <para>
         /// The Amazon QuickSight namespace that contains the dashboard IDs in this request. If
-        /// you're not using a custom namespace, set <code>Namespace = default</code>.
+        /// you're not using a custom namespace, set <c>Namespace = default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -232,10 +232,10 @@ namespace Amazon.QuickSight.Model
         /// Adds persistence of state for the user session in an embedded dashboard. Persistence
         /// applies to the sheet and the parameter settings. These are control settings that the
         /// dashboard subscriber (Amazon QuickSight reader) chooses while viewing the dashboard.
-        /// If this is set to <code>TRUE</code>, the settings are the same when the subscriber
-        /// reopens the same dashboard URL. The state is stored in Amazon QuickSight, not in a
-        /// browser cookie. If this is set to FALSE, the state of the user session is not persisted.
-        /// The default is <code>FALSE</code>.
+        /// If this is set to <c>TRUE</c>, the settings are the same when the subscriber reopens
+        /// the same dashboard URL. The state is stored in Amazon QuickSight, not in a browser
+        /// cookie. If this is set to FALSE, the state of the user session is not persisted. The
+        /// default is <c>FALSE</c>.
         /// </para>
         /// </summary>
         public bool StatePersistenceEnabled
@@ -272,7 +272,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UserArn. 
         /// <para>
-        /// The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code>
+        /// The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <c>QUICKSIGHT</c>
         /// identity type. You can use this for any Amazon QuickSight users in your account (readers,
         /// authors, or admins) authenticated as one of the following:
         /// </para>

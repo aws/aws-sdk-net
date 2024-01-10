@@ -95,7 +95,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslMode. 
         /// <para>
-        /// The SSL mode used to connect to the MySQL data provider. The default value is <code>none</code>.
+        /// The SSL mode used to connect to the MySQL data provider. The default value is <c>none</c>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

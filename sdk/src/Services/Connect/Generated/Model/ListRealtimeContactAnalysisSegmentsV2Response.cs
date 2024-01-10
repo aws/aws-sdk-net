@@ -41,7 +41,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Channel. 
         /// <para>
-        /// The channel of the contact. <code>Voice</code> will not be returned. 
+        /// The channel of the contact. <c>Voice</c> will not be returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

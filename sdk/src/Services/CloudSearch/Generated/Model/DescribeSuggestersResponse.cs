@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeSuggesters</code> request.
+    /// The result of a <c>DescribeSuggesters</c> request.
     /// </summary>
     public partial class DescribeSuggestersResponse : AmazonWebServiceResponse
     {

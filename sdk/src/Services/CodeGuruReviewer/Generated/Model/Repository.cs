@@ -31,8 +31,8 @@ namespace Amazon.CodeGuruReviewer.Model
     /// <summary>
     /// Information about an associated Amazon Web Services CodeCommit repository or an associated
     /// repository that is managed by Amazon Web Services CodeStar Connections (for example,
-    /// Bitbucket). This <code>Repository</code> object is not used if your source code is
-    /// in an associated GitHub repository.
+    /// Bitbucket). This <c>Repository</c> object is not used if your source code is in an
+    /// associated GitHub repository.
     /// </summary>
     public partial class Repository
     {

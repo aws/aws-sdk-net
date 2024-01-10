@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>ActivityTaskTimedOut</code> event.
+    /// Provides the details of the <c>ActivityTaskTimedOut</c> event.
     /// </summary>
     public partial class ActivityTaskTimedOutEventAttributes
     {
@@ -41,8 +41,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// Contains the content of the <code>details</code> parameter for the last call made
-        /// by the activity to <code>RecordActivityTaskHeartbeat</code>.
+        /// Contains the content of the <c>details</c> parameter for the last call made by the
+        /// activity to <c>RecordActivityTaskHeartbeat</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -61,9 +61,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        /// The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this
-        /// activity task was scheduled. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event.
+        /// The ID of the <c>ActivityTaskScheduled</c> event that was recorded when this activity
+        /// task was scheduled. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,9 +82,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The ID of the <code>ActivityTaskStarted</code> event recorded when this activity task
-        /// was started. This information can be useful for diagnosing problems by tracing back
-        /// the chain of events leading up to this event.
+        /// The ID of the <c>ActivityTaskStarted</c> event recorded when this activity task was
+        /// started. This information can be useful for diagnosing problems by tracing back the
+        /// chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

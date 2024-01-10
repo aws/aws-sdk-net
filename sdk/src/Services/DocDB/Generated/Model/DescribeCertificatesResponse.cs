@@ -58,9 +58,9 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional pagination token provided if the number of records retrieved is greater
-        /// than <code>MaxRecords</code>. If this parameter is specified, the marker specifies
-        /// the next record in the list. Including the value of <code>Marker</code> in the next
-        /// call to <code>DescribeCertificates</code> results in the next page of certificates.
+        /// than <c>MaxRecords</c>. If this parameter is specified, the marker specifies the next
+        /// record in the list. Including the value of <c>Marker</c> in the next call to <c>DescribeCertificates</c>
+        /// results in the next page of certificates.
         /// </para>
         /// </summary>
         public string Marker

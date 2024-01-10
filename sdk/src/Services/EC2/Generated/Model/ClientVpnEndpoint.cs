@@ -337,11 +337,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>8 | 10 | 12 | 24</code> 
+        /// Valid values: <c>8 | 10 | 12 | 24</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default value: <code>24</code> 
+        /// Default value: <c>24</c> 
         /// </para>
         /// </summary>
         public int SessionTimeoutHours

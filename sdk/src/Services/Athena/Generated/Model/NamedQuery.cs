@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// A query, where <code>QueryString</code> contains the SQL statements that make up the
-    /// query.
+    /// A query, where <c>QueryString</c> contains the SQL statements that make up the query.
     /// </summary>
     public partial class NamedQuery
     {

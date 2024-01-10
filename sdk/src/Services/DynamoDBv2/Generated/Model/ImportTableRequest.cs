@@ -44,9 +44,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// Providing a <code>ClientToken</code> makes the call to <code>ImportTableInput</code>
-        /// idempotent, meaning that multiple identical calls have the same effect as one single
-        /// call.
+        /// Providing a <c>ClientToken</c> makes the call to <c>ImportTableInput</c> idempotent,
+        /// meaning that multiple identical calls have the same effect as one single call.
         /// </para>
         ///  
         /// <para>
@@ -58,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// If you submit a request with the same client token but a change in other parameters
-        /// within the 8-hour idempotency window, DynamoDB returns an <code>IdempotentParameterMismatch</code>
+        /// within the 8-hour idempotency window, DynamoDB returns an <c>IdempotentParameterMismatch</c>
         /// exception.
         /// </para>
         /// </summary>
@@ -95,8 +94,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property InputFormat. 
         /// <para>
-        ///  The format of the source data. Valid values for <code>ImportFormat</code> are <code>CSV</code>,
-        /// <code>DYNAMODB_JSON</code> or <code>ION</code>. 
+        ///  The format of the source data. Valid values for <c>ImportFormat</c> are <c>CSV</c>,
+        /// <c>DYNAMODB_JSON</c> or <c>ION</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

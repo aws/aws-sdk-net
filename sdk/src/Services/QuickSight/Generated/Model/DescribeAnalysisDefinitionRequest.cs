@@ -37,7 +37,7 @@ namespace Amazon.QuickSight.Model
     /// If you do not need to know details about the content of an Analysis, for instance
     /// if you are trying to check the status of a recently created or updated Analysis, use
     /// the <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeAnalysis.html">
-    /// <code>DescribeAnalysis</code> </a> instead. 
+    /// <c>DescribeAnalysis</c> </a> instead. 
     /// </para>
     ///  </note>
     /// </summary>

@@ -39,8 +39,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LimitName. 
         /// <para>
-        ///  Name of storage limits that are applicable for the given storage type. If <code>StorageType</code>
-        /// is <code>ebs</code>, the following options are available:
+        ///  Name of storage limits that are applicable for the given storage type. If <c>StorageType</c>
+        /// is <c>ebs</c>, the following options are available:
         /// </para>
         ///  <ul> <li> 
         /// <para>

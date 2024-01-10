@@ -54,11 +54,11 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>throughputMode:PAY_PER_REQUEST</code> 
+        ///  <c>throughputMode:PAY_PER_REQUEST</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>throughputMode:PROVISIONED</code> 
+        ///  <c>throughputMode:PROVISIONED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -35,7 +35,7 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// The <code>XksProxyAuthenticationCredential</code> includes two required elements.
+    /// The <c>XksProxyAuthenticationCredential</c> includes two required elements.
     /// </para>
     /// </summary>
     public partial class XksProxyAuthenticationCredentialType

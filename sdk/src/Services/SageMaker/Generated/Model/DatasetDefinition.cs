@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Configuration for Dataset Definition inputs. The Dataset Definition input must specify
-    /// exactly one of either <code>AthenaDatasetDefinition</code> or <code>RedshiftDatasetDefinition</code>
+    /// exactly one of either <c>AthenaDatasetDefinition</c> or <c>RedshiftDatasetDefinition</c>
     /// types.
     /// </summary>
     public partial class DatasetDefinition
@@ -59,8 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DataDistributionType. 
         /// <para>
-        /// Whether the generated dataset is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>
-        /// (default).
+        /// Whether the generated dataset is <c>FullyReplicated</c> or <c>ShardedByS3Key</c> (default).
         /// </para>
         /// </summary>
         public DataDistributionType DataDistributionType
@@ -78,12 +77,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputMode. 
         /// <para>
-        /// Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code>
-        /// (default) mode, Amazon SageMaker copies the data from the input source onto the local
-        /// Amazon Elastic Block Store (Amazon EBS) volumes before starting your training algorithm.
-        /// This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker
-        /// streams input data from the source directly to your algorithm without using the EBS
-        /// volume.
+        /// Whether to use <c>File</c> or <c>Pipe</c> input mode. In <c>File</c> (default) mode,
+        /// Amazon SageMaker copies the data from the input source onto the local Amazon Elastic
+        /// Block Store (Amazon EBS) volumes before starting your training algorithm. This is
+        /// the most commonly used input mode. In <c>Pipe</c> mode, Amazon SageMaker streams input
+        /// data from the source directly to your algorithm without using the EBS volume.
         /// </para>
         /// </summary>
         public InputMode InputMode
@@ -102,9 +100,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LocalPath. 
         /// <para>
         /// The local path where you want Amazon SageMaker to download the Dataset Definition
-        /// inputs to run a processing job. <code>LocalPath</code> is an absolute path to the
-        /// input data. This is a required parameter when <code>AppManaged</code> is <code>False</code>
-        /// (default).
+        /// inputs to run a processing job. <c>LocalPath</c> is an absolute path to the input
+        /// data. This is a required parameter when <c>AppManaged</c> is <c>False</c> (default).
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

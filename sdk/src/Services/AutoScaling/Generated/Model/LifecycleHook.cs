@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>CONTINUE</code> | <code>ABANDON</code> 
+        /// Valid values: <c>CONTINUE</c> | <c>ABANDON</c> 
         /// </para>
         /// </summary>
         public string DefaultResult
@@ -91,8 +91,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property GlobalTimeout. 
         /// <para>
         /// The maximum time, in seconds, that an instance can remain in a wait state. The maximum
-        /// is 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
-        /// is smaller.
+        /// is 172800 seconds (48 hours) or 100 times <c>HeartbeatTimeout</c>, whichever is smaller.
         /// </para>
         /// </summary>
         public int GlobalTimeout
@@ -112,7 +111,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// The maximum time, in seconds, that can elapse before the lifecycle hook times out.
         /// If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the action that
-        /// you specified in the <code>DefaultResult</code> property.
+        /// you specified in the <c>DefaultResult</c> property.
         /// </para>
         /// </summary>
         public int HeartbeatTimeout
@@ -153,7 +152,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>autoscaling:EC2_INSTANCE_LAUNCHING</code> | <code>autoscaling:EC2_INSTANCE_TERMINATING</code>
+        /// Valid values: <c>autoscaling:EC2_INSTANCE_LAUNCHING</c> | <c>autoscaling:EC2_INSTANCE_TERMINATING</c>
         /// 
         /// </para>
         /// </summary>

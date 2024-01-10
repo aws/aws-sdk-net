@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// One or more aggregators for viewing counts of OpsData using different dimensions such
-    /// as <code>Source</code>, <code>CreatedTime</code>, or <code>Source and CreatedTime</code>,
-    /// to name a few.
+    /// as <c>Source</c>, <c>CreatedTime</c>, or <c>Source and CreatedTime</c>, to name a
+    /// few.
     /// </summary>
     public partial class OpsAggregator
     {
@@ -64,8 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AggregatorType. 
         /// <para>
-        /// Either a <code>Range</code> or <code>Count</code> aggregator for limiting an OpsData
-        /// summary.
+        /// Either a <c>Range</c> or <c>Count</c> aggregator for limiting an OpsData summary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

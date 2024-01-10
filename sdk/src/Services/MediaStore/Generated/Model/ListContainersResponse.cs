@@ -58,9 +58,9 @@ namespace Amazon.MediaStore.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  <code>NextToken</code> is the token to use in the next call to <code>ListContainers</code>.
-        /// This token is returned only if you included the <code>MaxResults</code> tag in the
-        /// original command, and only if there are still containers to return. 
+        ///  <c>NextToken</c> is the token to use in the next call to <c>ListContainers</c>. This
+        /// token is returned only if you included the <c>MaxResults</c> tag in the original command,
+        /// and only if there are still containers to return. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

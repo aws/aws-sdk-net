@@ -45,24 +45,24 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Add. 
         /// <para>
         /// The Linux capabilities for the container that have been added to the default configuration
-        /// provided by Docker. This parameter maps to <code>CapAdd</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// provided by Docker. This parameter maps to <c>CapAdd</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>--cap-add</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// Remote API</a> and the <c>--cap-add</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Tasks launched on Fargate only support adding the <code>SYS_PTRACE</code> kernel capability.
+        /// Tasks launched on Fargate only support adding the <c>SYS_PTRACE</c> kernel capability.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN"
+        /// Valid values: <c>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN"
         /// | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER"
         /// | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" |
         /// "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID"
         /// | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" |
         /// "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME"
-        /// | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code> 
+        /// | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</c> 
         /// </para>
         /// </summary>
         public List<string> Add
@@ -81,20 +81,20 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Drop. 
         /// <para>
         /// The Linux capabilities for the container that have been removed from the default configuration
-        /// provided by Docker. This parameter maps to <code>CapDrop</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+        /// provided by Docker. This parameter maps to <c>CapDrop</c> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
-        /// Remote API</a> and the <code>--cap-drop</code> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
+        /// Remote API</a> and the <c>--cap-drop</c> option to <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker
         /// run</a>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN"
+        /// Valid values: <c>"ALL" | "AUDIT_CONTROL" | "AUDIT_WRITE" | "BLOCK_SUSPEND" | "CHOWN"
         /// | "DAC_OVERRIDE" | "DAC_READ_SEARCH" | "FOWNER" | "FSETID" | "IPC_LOCK" | "IPC_OWNER"
         /// | "KILL" | "LEASE" | "LINUX_IMMUTABLE" | "MAC_ADMIN" | "MAC_OVERRIDE" | "MKNOD" |
         /// "NET_ADMIN" | "NET_BIND_SERVICE" | "NET_BROADCAST" | "NET_RAW" | "SETFCAP" | "SETGID"
         /// | "SETPCAP" | "SETUID" | "SYS_ADMIN" | "SYS_BOOT" | "SYS_CHROOT" | "SYS_MODULE" |
         /// "SYS_NICE" | "SYS_PACCT" | "SYS_PTRACE" | "SYS_RAWIO" | "SYS_RESOURCE" | "SYS_TIME"
-        /// | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</code> 
+        /// | "SYS_TTY_CONFIG" | "SYSLOG" | "WAKE_ALARM"</c> 
         /// </para>
         /// </summary>
         public List<string> Drop

@@ -35,8 +35,7 @@ namespace Amazon.LexModelsV2.Model
     ///  
     /// <para>
     /// To define the interaction between the user and your bot, you define one or more intents.
-    /// For example, for a pizza ordering bot you would create an <code>OrderPizza</code>
-    /// intent.
+    /// For example, for a pizza ordering bot you would create an <c>OrderPizza</c> intent.
     /// </para>
     ///  
     /// <para>
@@ -163,8 +162,8 @@ namespace Amazon.LexModelsV2.Model
         /// For example, suppose that your bot determines that the user's name is John. You Lambda
         /// function might retrieve John's information from a backend database and prepopulate
         /// some of the values. For example, if you find that John is gluten intolerant, you might
-        /// set the corresponding intent slot, <code>glutenIntolerant</code> to <code>true</code>.
-        /// You might find John's phone number and set the corresponding session attribute.
+        /// set the corresponding intent slot, <c>glutenIntolerant</c> to <c>true</c>. You might
+        /// find John's phone number and set the corresponding session attribute.
         /// </para>
         /// </summary>
         public DialogCodeHookSettings DialogCodeHook
@@ -239,7 +238,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  
         /// <para>
-        /// A context can be automatically activated using the <code>outputContexts</code> property
+        /// A context can be automatically activated using the <c>outputContexts</c> property
         /// or it can be set at runtime.
         /// </para>
         ///  
@@ -327,9 +326,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property KendraConfiguration. 
         /// <para>
-        /// Configuration information required to use the <code>AMAZON.KendraSearchIntent</code>
-        /// intent to connect to an Amazon Kendra index. The <code>AMAZON.KendraSearchIntent</code>
-        /// intent is called when Amazon Lex can't determine another intent to invoke.
+        /// Configuration information required to use the <c>AMAZON.KendraSearchIntent</c> intent
+        /// to connect to an Amazon Kendra index. The <c>AMAZON.KendraSearchIntent</c> intent
+        /// is called when Amazon Lex can't determine another intent to invoke.
         /// </para>
         /// </summary>
         public KendraConfiguration KendraConfiguration
@@ -378,7 +377,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  
         /// <para>
-        /// When you use the <code>outputContextsList</code> property, all of the contexts specified
+        /// When you use the <c>outputContextsList</c> property, all of the contexts specified
         /// in the list are activated when the intent is fulfilled. You can set up to 10 output
         /// contexts. You can also set the number of conversation turns that the context should
         /// be active, or the length of time that the context should be active.

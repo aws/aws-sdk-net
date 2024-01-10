@@ -30,8 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations
-    /// passes every object to the underlying <code>CopyObject</code> API operation. For more
-    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">CopyObject</a>.
+    /// passes every object to the underlying <c>CopyObject</c> API operation. For more information
+    /// about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">CopyObject</a>.
     /// </summary>
     public partial class S3CopyObjectOperation
     {
@@ -78,8 +78,8 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with
         /// server-side encryption using Amazon Web Services KMS (SSE-KMS). Setting this header
-        /// to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object encryption
-        /// with SSE-KMS.
+        /// to <c>true</c> causes Amazon S3 to use an S3 Bucket Key for object encryption with
+        /// SSE-KMS.
         /// </para>
         ///  
         /// <para>
@@ -197,14 +197,14 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property NewObjectTagging. 
         /// <para>
         /// Specifies a list of tags to add to the destination objects after they are copied.
-        /// If <code>NewObjectTagging</code> is not specified, the tags of the source objects
-        /// are copied to destination objects by default.
+        /// If <c>NewObjectTagging</c> is not specified, the tags of the source objects are copied
+        /// to destination objects by default.
         /// </para>
         ///  <note> 
         /// <para>
         ///  <b>Directory buckets</b> - Tags aren't supported by directory buckets. If your source
         /// objects have tags and your destination bucket is a directory bucket, specify an empty
-        /// tag set in the <code>NewObjectTagging</code> field to prevent copying the source object
+        /// tag set in the <c>NewObjectTagging</c> field to prevent copying the source object
         /// tags to the directory bucket.
         /// </para>
         ///  </note>
@@ -295,8 +295,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property RedirectLocation. 
         /// <para>
         /// If the destination bucket is configured as a website, specifies an optional metadata
-        /// property for website redirects, <code>x-amz-website-redirect-location</code>. Allows
-        /// webpage redirects if the object copy is accessed through a website endpoint.
+        /// property for website redirects, <c>x-amz-website-redirect-location</c>. Allows webpage
+        /// redirects if the object copy is accessed through a website endpoint.
         /// </para>
         ///  <note> 
         /// <para>
@@ -359,7 +359,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        /// Specify the storage class for the destination objects in a <code>Copy</code> operation.
+        /// Specify the storage class for the destination objects in a <c>Copy</c> operation.
         /// </para>
         ///  <note> 
         /// <para>
@@ -384,8 +384,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property TargetKeyPrefix. 
         /// <para>
         /// Specifies the folder prefix that you want the objects to be copied into. For example,
-        /// to copy objects into a folder named <code>Folder1</code> in the destination bucket,
-        /// set the <code>TargetKeyPrefix</code> property to <code>Folder1</code>.
+        /// to copy objects into a folder named <c>Folder1</c> in the destination bucket, set
+        /// the <c>TargetKeyPrefix</c> property to <c>Folder1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -409,14 +409,13 @@ namespace Amazon.S3Control.Model
         ///  <ul> <li> 
         /// <para>
         ///  <b>General purpose buckets</b> - For example, to copy objects to a general purpose
-        /// bucket named <code>destinationBucket</code>, set the <code>TargetResource</code> property
-        /// to <code>arn:aws:s3:::destinationBucket</code>.
+        /// bucket named <c>destinationBucket</c>, set the <c>TargetResource</c> property to <c>arn:aws:s3:::destinationBucket</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Directory buckets</b> - For example, to copy objects to a directory bucket named
-        /// <code>destinationBucket</code> in the Availability Zone; identified by the AZ ID <code>usw2-az2</code>,
-        /// set the <code>TargetResource</code> property to <code>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</code>.
+        /// <c>destinationBucket</c> in the Availability Zone; identified by the AZ ID <c>usw2-az2</c>,
+        /// set the <c>TargetResource</c> property to <c>arn:aws:s3express:<i>region</i>:<i>account_id</i>:/bucket/<i>destination_bucket_base_name</i>--<i>usw2-az2</i>--x-s3</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

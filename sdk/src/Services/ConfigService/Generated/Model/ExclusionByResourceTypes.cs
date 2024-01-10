@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Specifies whether the configuration recorder excludes certain resource types from
-    /// being recorded. Use the <code>resourceTypes</code> field to enter a comma-separated
-    /// list of resource types you want to exclude from recording.
+    /// being recorded. Use the <c>resourceTypes</c> field to enter a comma-separated list
+    /// of resource types you want to exclude from recording.
     /// 
     ///  
     /// <para>
@@ -45,8 +45,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// To use this option, you must set the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
-    /// to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+    /// To use this option, you must set the <c>useOnly</c> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+    /// to <c>EXCLUSION_BY_RESOURCE_TYPES</c>.
     /// </para>
     ///  
     /// <para>
@@ -59,9 +59,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// Unless specifically listed as exclusions, <code>AWS::RDS::GlobalCluster</code> will
-    /// be recorded automatically in all supported Config Regions were the configuration recorder
-    /// is enabled.
+    /// Unless specifically listed as exclusions, <c>AWS::RDS::GlobalCluster</c> will be recorded
+    /// automatically in all supported Config Regions were the configuration recorder is enabled.
     /// </para>
     ///  
     /// <para>

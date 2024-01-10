@@ -219,7 +219,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3DataDistributionType. 
         /// <para>
         /// Whether input data distributed in Amazon S3 is fully replicated or sharded by an S3
-        /// key. Defaults to <code>FullyReplicated</code> 
+        /// key. Defaults to <c>FullyReplicated</c> 
         /// </para>
         /// </summary>
         public ProcessingS3DataDistributionType S3DataDistributionType
@@ -237,9 +237,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3InputMode. 
         /// <para>
-        /// Whether the <code>Pipe</code> or <code>File</code> is used as the input mode for transferring
-        /// data for the monitoring job. <code>Pipe</code> mode is recommended for large datasets.
-        /// <code>File</code> mode is useful for small files that fit in memory. Defaults to <code>File</code>.
+        /// Whether the <c>Pipe</c> or <c>File</c> is used as the input mode for transferring
+        /// data for the monitoring job. <c>Pipe</c> mode is recommended for large datasets. <c>File</c>
+        /// mode is useful for small files that fit in memory. Defaults to <c>File</c>.
         /// </para>
         /// </summary>
         public ProcessingS3InputMode S3InputMode

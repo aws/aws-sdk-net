@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Returned in response to a successful <code>DeleteIdentities</code> operation.
+    /// Returned in response to a successful <c>DeleteIdentities</c> operation.
     /// </summary>
     public partial class DeleteIdentitiesResponse : AmazonWebServiceResponse
     {

@@ -62,8 +62,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
-        /// the API call.
+        /// The ARN of the <c>AppInstanceUser</c> or <c>AppInstanceBot</c> that makes the API
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -82,8 +82,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArns. 
         /// <para>
-        /// The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code>
-        /// and <code>AppInstanceBots</code> can be added as a channel member.
+        /// The ARNs of the members you want to add to the channel. Only <c>AppInstanceUsers</c>
+        /// and <c>AppInstanceBots</c> can be added as a channel member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -127,11 +127,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden
-        /// members are only returned if the type filter in <code>ListChannelMemberships</code>
-        /// equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only
-        /// supported by moderators.
+        /// The membership type of a user, <c>DEFAULT</c> or <c>HIDDEN</c>. Default members are
+        /// always returned as part of <c>ListChannelMemberships</c>. Hidden members are only
+        /// returned if the type filter in <c>ListChannelMemberships</c> equals <c>HIDDEN</c>.
+        /// Otherwise hidden members are not returned. This is only supported by moderators.
         /// </para>
         /// </summary>
         public ChannelMembershipType Type

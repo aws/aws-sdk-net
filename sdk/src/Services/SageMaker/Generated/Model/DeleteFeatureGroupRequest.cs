@@ -30,20 +30,20 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFeatureGroup operation.
-    /// Delete the <code>FeatureGroup</code> and any data that was written to the <code>OnlineStore</code>
-    /// of the <code>FeatureGroup</code>. Data cannot be accessed from the <code>OnlineStore</code>
-    /// immediately after <code>DeleteFeatureGroup</code> is called. 
+    /// Delete the <c>FeatureGroup</c> and any data that was written to the <c>OnlineStore</c>
+    /// of the <c>FeatureGroup</c>. Data cannot be accessed from the <c>OnlineStore</c> immediately
+    /// after <c>DeleteFeatureGroup</c> is called. 
     /// 
     ///  
     /// <para>
-    /// Data written into the <code>OfflineStore</code> will not be deleted. The Amazon Web
-    /// Services Glue database and tables that are automatically created for your <code>OfflineStore</code>
+    /// Data written into the <c>OfflineStore</c> will not be deleted. The Amazon Web Services
+    /// Glue database and tables that are automatically created for your <c>OfflineStore</c>
     /// are not deleted. 
     /// </para>
     ///  
     /// <para>
-    /// Note that it can take approximately 10-15 minutes to delete an <code>OnlineStore</code>
-    /// <code>FeatureGroup</code> with the <code>InMemory</code> <code>StorageType</code>.
+    /// Note that it can take approximately 10-15 minutes to delete an <c>OnlineStore</c>
+    /// <c>FeatureGroup</c> with the <c>InMemory</c> <c>StorageType</c>.
     /// </para>
     /// </summary>
     public partial class DeleteFeatureGroupRequest : AmazonSageMakerRequest
@@ -53,8 +53,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the <code>FeatureGroup</code> you want to delete. The name must be unique
-        /// within an Amazon Web Services Region in an Amazon Web Services account. 
+        /// The name of the <c>FeatureGroup</c> you want to delete. The name must be unique within
+        /// an Amazon Web Services Region in an Amazon Web Services account. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

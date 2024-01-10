@@ -29,24 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// For <code>PutInsightSelectors</code>, this exception is thrown when the formatting
-    /// or syntax of the <code>InsightSelectors</code> JSON statement is not valid, or the
-    /// specified <code>InsightType</code> in the <code>InsightSelectors</code> statement
-    /// is not valid. Valid values for <code>InsightType</code> are <code>ApiCallRateInsight</code>
-    /// and <code>ApiErrorRateInsight</code>. To enable Insights on an event data store, the
-    /// destination event data store specified by the <code>InsightsDestination</code> parameter
-    /// must log Insights events and the source event data store specified by the <code>EventDataStore</code>
-    /// parameter must log management events.
+    /// For <c>PutInsightSelectors</c>, this exception is thrown when the formatting or syntax
+    /// of the <c>InsightSelectors</c> JSON statement is not valid, or the specified <c>InsightType</c>
+    /// in the <c>InsightSelectors</c> statement is not valid. Valid values for <c>InsightType</c>
+    /// are <c>ApiCallRateInsight</c> and <c>ApiErrorRateInsight</c>. To enable Insights on
+    /// an event data store, the destination event data store specified by the <c>InsightsDestination</c>
+    /// parameter must log Insights events and the source event data store specified by the
+    /// <c>EventDataStore</c> parameter must log management events.
     /// 
     ///  
     /// <para>
-    /// For <code>UpdateEventDataStore</code>, this exception is thrown if Insights are enabled
+    /// For <c>UpdateEventDataStore</c>, this exception is thrown if Insights are enabled
     /// on the event data store and the updated advanced event selectors are not compatible
-    /// with the configured <code>InsightSelectors</code>. If the <code>InsightSelectors</code>
-    /// includes an <code>InsightType</code> of <code>ApiCallRateInsight</code>, the source
-    /// event data store must log <code>write</code> management events. If the <code>InsightSelectors</code>
-    /// includes an <code>InsightType</code> of <code>ApiErrorRateInsight</code>, the source
-    /// event data store must log management events.
+    /// with the configured <c>InsightSelectors</c>. If the <c>InsightSelectors</c> includes
+    /// an <c>InsightType</c> of <c>ApiCallRateInsight</c>, the source event data store must
+    /// log <c>write</c> management events. If the <c>InsightSelectors</c> includes an <c>InsightType</c>
+    /// of <c>ApiErrorRateInsight</c>, the source event data store must log management events.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

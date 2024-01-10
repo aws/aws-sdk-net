@@ -31,7 +31,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// <summary>
     /// The proposed access control configuration for an Amazon RDS DB cluster snapshot. You
     /// can propose a configuration for a new Amazon RDS DB cluster snapshot or an Amazon
-    /// RDS DB cluster snapshot that you own by specifying the <code>RdsDbClusterSnapshotAttributeValue</code>
+    /// RDS DB cluster snapshot that you own by specifying the <c>RdsDbClusterSnapshotAttributeValue</c>
     /// and optional KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_ModifyDBClusterSnapshotAttribute.html">ModifyDBClusterSnapshotAttribute</a>.
     /// </summary>
     public partial class RdsDbClusterSnapshotConfiguration
@@ -44,8 +44,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <para>
         /// The names and values of manual DB cluster snapshot attributes. Manual DB cluster snapshot
         /// attributes are used to authorize other Amazon Web Services accounts to restore a manual
-        /// DB cluster snapshot. The only valid value for <code>AttributeName</code> for the attribute
-        /// map is <code>restore</code> 
+        /// DB cluster snapshot. The only valid value for <c>AttributeName</c> for the attribute
+        /// map is <c>restore</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, RdsDbClusterSnapshotAttributeValue> Attributes
@@ -69,13 +69,13 @@ namespace Amazon.AccessAnalyzer.Model
         ///  <ul> <li> 
         /// <para>
         /// If the configuration is for an existing Amazon RDS DB cluster snapshot and you do
-        /// not specify the <code>kmsKeyId</code>, or you specify an empty string, then the access
-        /// preview uses the existing <code>kmsKeyId</code> of the snapshot.
+        /// not specify the <c>kmsKeyId</c>, or you specify an empty string, then the access preview
+        /// uses the existing <c>kmsKeyId</c> of the snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the access preview is for a new resource and you do not specify the specify the
-        /// <code>kmsKeyId</code>, then the access preview considers the snapshot as unencrypted.
+        /// <c>kmsKeyId</c>, then the access preview considers the snapshot as unencrypted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

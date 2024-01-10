@@ -30,10 +30,10 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// If Amazon Route 53 can't process a request before the next request arrives, it will
-    /// reject subsequent requests for the same hosted zone and return an <code>HTTP 400 error</code>
-    /// (<code>Bad request</code>). If Route 53 returns this error repeatedly for the same
-    /// request, we recommend that you wait, in intervals of increasing duration, before you
-    /// try the request again.
+    /// reject subsequent requests for the same hosted zone and return an <c>HTTP 400 error</c>
+    /// (<c>Bad request</c>). If Route 53 returns this error repeatedly for the same request,
+    /// we recommend that you wait, in intervals of increasing duration, before you try the
+    /// request again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

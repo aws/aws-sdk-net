@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DevEndpoint. 
         /// <para>
-        /// A <code>DevEndpoint</code> definition.
+        /// A <c>DevEndpoint</c> definition.
         /// </para>
         /// </summary>
         public DevEndpoint DevEndpoint

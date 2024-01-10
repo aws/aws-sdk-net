@@ -34,10 +34,10 @@ namespace Amazon.ServiceCatalog.Model
     /// 
     ///  
     /// <para>
-    /// The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code>
-    /// call request details. For example, to disassociate an association created with a <code>PrincipalARN</code>
-    /// of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM
-    /// when calling <code>DisassociatePrincipalFromPortfolio</code>. 
+    /// The <c>PrincipalType</c> and <c>PrincipalARN</c> must match the <c>AssociatePrincipalWithPortfolio</c>
+    /// call request details. For example, to disassociate an association created with a <c>PrincipalARN</c>
+    /// of <c>PrincipalType</c> IAM you must use the <c>PrincipalType</c> IAM when calling
+    /// <c>DisassociatePrincipalFromPortfolio</c>. 
     /// </para>
     ///  
     /// <para>
@@ -52,12 +52,12 @@ namespace Amazon.ServiceCatalog.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>,
+    /// If you disassociate a principal from a portfolio, with PrincipalType as <c>IAM</c>,
     /// the same principal will still have access to the portfolio if it matches one of the
-    /// associated principals of type <code>IAM_PATTERN</code>. To fully remove access for
-    /// a principal, verify all the associated Principals of type <code>IAM_PATTERN</code>,
-    /// and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match
-    /// the principal whose access you are removing.
+    /// associated principals of type <c>IAM_PATTERN</c>. To fully remove access for a principal,
+    /// verify all the associated Principals of type <c>IAM_PATTERN</c>, and then ensure you
+    /// disassociate any <c>IAM_PATTERN</c> principals that match the principal whose access
+    /// you are removing.
     /// </para>
     ///  </note>
     /// </summary>
@@ -75,11 +75,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -119,8 +119,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property PrincipalARN. 
         /// <para>
         /// The ARN of the principal (user, role, or group). This field allows an ARN with no
-        /// <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code>
-        /// is <code>IAM_PATTERN</code>.
+        /// <c>accountID</c> with or without wildcard characters if <c>PrincipalType</c> is <c>IAM_PATTERN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -139,9 +138,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalType. 
         /// <para>
-        /// The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code>
-        /// if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard
-        /// characters. 
+        /// The supported value is <c>IAM</c> if you use a fully defined ARN, or <c>IAM_PATTERN</c>
+        /// if you specify an <c>IAM</c> ARN with no AccountId, with or without wildcard characters.
+        /// 
         /// </para>
         /// </summary>
         public PrincipalType PrincipalType

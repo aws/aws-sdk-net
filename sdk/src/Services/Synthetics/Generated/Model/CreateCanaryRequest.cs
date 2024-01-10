@@ -37,15 +37,15 @@ namespace Amazon.Synthetics.Model
     /// 
     ///  
     /// <para>
-    /// Do not use <code>CreateCanary</code> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+    /// Do not use <c>CreateCanary</c> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
     /// instead.
     /// </para>
     ///  
     /// <para>
-    /// To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code>
-    /// policy. If you are creating a new IAM role for the canary, you also need the <code>iam:CreateRole</code>,
-    /// <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
+    /// To create canaries, you must have the <c>CloudWatchSyntheticsFullAccess</c> policy.
+    /// If you are creating a new IAM role for the canary, you also need the <c>iam:CreateRole</c>,
+    /// <c>iam:CreatePolicy</c> and <c>iam:AttachRolePolicy</c> permissions. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
     /// Roles and Permissions</a>.
     /// </para>
     ///  
@@ -136,36 +136,36 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The ARN of the IAM role to be used to run the canary. This role must already exist,
-        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy.
-        /// The role must also have the following permissions:
+        /// and must include <c>lambda.amazonaws.com</c> as a principal in the trust policy. The
+        /// role must also have the following permissions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>s3:PutObject</code> 
+        ///  <c>s3:PutObject</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3:GetBucketLocation</code> 
+        ///  <c>s3:GetBucketLocation</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3:ListAllMyBuckets</code> 
+        ///  <c>s3:ListAllMyBuckets</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudwatch:PutMetricData</code> 
+        ///  <c>cloudwatch:PutMetricData</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logs:CreateLogGroup</code> 
+        ///  <c>logs:CreateLogGroup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logs:CreateLogStream</code> 
+        ///  <c>logs:CreateLogStream</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logs:PutLogEvents</code> 
+        ///  <c>logs:PutLogEvents</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

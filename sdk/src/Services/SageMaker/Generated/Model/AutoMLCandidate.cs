@@ -198,8 +198,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The mapping of all supported processing unit (CPU, GPU, etc...) to inference container
         /// definitions for the candidate. This field is populated for the AutoML jobs V2 (for
-        /// example, for jobs created by calling <code>CreateAutoMLJobV2</code>) related to image
-        /// or text classification problem types only.
+        /// example, for jobs created by calling <c>CreateAutoMLJobV2</c>) related to image or
+        /// text classification problem types only.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]

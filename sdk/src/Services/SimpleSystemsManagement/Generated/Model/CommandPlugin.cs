@@ -49,10 +49,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the plugin. Must be one of the following: <code>aws:updateAgent</code>,
-        /// <code>aws:domainjoin</code>, <code>aws:applications</code>, <code>aws:runPowerShellScript</code>,
-        /// <code>aws:psmodule</code>, <code>aws:cloudWatch</code>, <code>aws:runShellScript</code>,
-        /// or <code>aws:updateSSMAgent</code>. 
+        /// The name of the plugin. Must be one of the following: <c>aws:updateAgent</c>, <c>aws:domainjoin</c>,
+        /// <c>aws:applications</c>, <c>aws:runPowerShellScript</c>, <c>aws:psmodule</c>, <c>aws:cloudWatch</c>,
+        /// <c>aws:runShellScript</c>, or <c>aws:updateSSMAgent</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=4)]
@@ -95,24 +94,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+        ///  <c>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>doc-example-bucket</code> is the name of the S3 bucket;
+        ///  <c>doc-example-bucket</c> is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        ///  <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+        ///  <c>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</c> is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>
-        ///  <code>i-02573cafcfEXAMPLE</code> is the managed node ID;
+        ///  <c>i-02573cafcfEXAMPLE</c> is the managed node ID;
         /// </para>
         ///  
         /// <para>
-        ///  <code>awsrunShellScript</code> is the name of the plugin.
+        ///  <c>awsrunShellScript</c> is the name of the plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -137,24 +136,24 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</code>
+        ///  <c>doc-example-bucket/ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix/i-02573cafcfEXAMPLE/awsrunShellScript</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>doc-example-bucket</code> is the name of the S3 bucket;
+        ///  <c>doc-example-bucket</c> is the name of the S3 bucket;
         /// </para>
         ///  
         /// <para>
-        ///  <code>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</code> is the name of the S3 prefix;
+        ///  <c>ab19cb99-a030-46dd-9dfc-8eSAMPLEPre-Fix</c> is the name of the S3 prefix;
         /// </para>
         ///  
         /// <para>
-        ///  <code>i-02573cafcfEXAMPLE</code> is the managed node ID;
+        ///  <c>i-02573cafcfEXAMPLE</c> is the managed node ID;
         /// </para>
         ///  
         /// <para>
-        ///  <code>awsrunShellScript</code> is the name of the plugin.
+        ///  <c>awsrunShellScript</c> is the name of the plugin.
         /// </para>
         /// </summary>
         [AWSProperty(Max=500)]
@@ -304,10 +303,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusDetails. 
         /// <para>
-        /// A detailed status of the plugin execution. <code>StatusDetails</code> includes more
-        /// information than Status because it includes states resulting from error and concurrency
-        /// control parameters. StatusDetails can show different results than Status. For more
-        /// information about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+        /// A detailed status of the plugin execution. <c>StatusDetails</c> includes more information
+        /// than Status because it includes states resulting from error and concurrency control
+        /// parameters. StatusDetails can show different results than Status. For more information
+        /// about these statuses, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
         /// command statuses</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// StatusDetails can be one of the following values:
         /// </para>
@@ -328,7 +327,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
-        /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
+        /// timeout expired. Delivery timeouts don't count against the parent command's <c>MaxErrors</c>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
@@ -336,7 +335,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Execution Timed Out: Command execution started on the managed node, but the execution
         /// wasn't complete before the execution timeout expired. Execution timeouts count against
-        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// the <c>MaxErrors</c> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

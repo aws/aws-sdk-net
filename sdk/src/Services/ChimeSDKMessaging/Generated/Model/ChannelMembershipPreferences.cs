@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// The channel membership preferences for an <code>AppInstanceUser</code>.
+    /// The channel membership preferences for an <c>AppInstanceUser</c>.
     /// </summary>
     public partial class ChannelMembershipPreferences
     {

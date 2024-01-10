@@ -68,7 +68,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property KeyMaterialType. 
         /// <para>
         /// The method to use for key material import. Import token is only required for TR-34
-        /// WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>).
+        /// WrappedKeyBlock (<c>TR34_KEY_BLOCK</c>).
         /// </para>
         ///  
         /// <para>
@@ -97,8 +97,8 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         ///  
         /// <para>
-        /// At this time, <code>RSA_2048</code>, <code>RSA_3072</code>, <code>RSA_4096</code>
-        /// are the only allowed algorithms for TR-34 WrappedKeyBlock import.
+        /// At this time, <c>RSA_2048</c>, <c>RSA_3072</c>, <c>RSA_4096</c> are the only allowed
+        /// algorithms for TR-34 WrappedKeyBlock import.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

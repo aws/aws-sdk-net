@@ -34,8 +34,8 @@ namespace Amazon.CertificateManager.Model
     /// 
     ///  
     /// <para>
-    /// The supported configuration option is <code>DaysBeforeExpiry</code>. This option specifies
-    /// the number of days prior to certificate expiration when ACM starts generating <code>EventBridge</code>
+    /// The supported configuration option is <c>DaysBeforeExpiry</c>. This option specifies
+    /// the number of days prior to certificate expiration when ACM starts generating <c>EventBridge</c>
     /// events. ACM sends one event per day per certificate until the certificate expires.
     /// By default, accounts receive events starting 45 days before certificate expiration.
     /// </para>
@@ -66,8 +66,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
-        /// Customer-chosen string used to distinguish between calls to <code>PutAccountConfiguration</code>.
-        /// Idempotency tokens time out after one hour. If you call <code>PutAccountConfiguration</code>
+        /// Customer-chosen string used to distinguish between calls to <c>PutAccountConfiguration</c>.
+        /// Idempotency tokens time out after one hour. If you call <c>PutAccountConfiguration</c>
         /// multiple times with the same unexpired idempotency token, ACM treats it as the same
         /// request and returns the original result. If you change the idempotency token for each
         /// call, ACM treats each call as a new request.

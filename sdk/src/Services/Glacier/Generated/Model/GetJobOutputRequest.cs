@@ -53,7 +53,7 @@ namespace Amazon.Glacier.Model
     /// <para>
     /// For archive retrieval jobs, you should also verify that the size is what you expected.
     /// If you download a portion of the output, the expected size is based on the range of
-    /// bytes you specified. For example, if you specify a range of <code>bytes=0-1048575</code>,
+    /// bytes you specified. For example, if you specify a range of <c>bytes=0-1048575</c>,
     /// you should verify your download size is 1,048,576 bytes. If you download an entire
     /// archive, the expected size is the size of the archive when you uploaded it to Amazon
     /// S3 Glacier The expected size is also returned in the headers from the <b>Get Job Output</b>
@@ -131,11 +131,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
-        /// the credentials used to sign the request. If you use an account ID, do not include
-        /// any hyphens ('-') in the ID.
+        /// The <c>AccountId</c> value is the AWS account ID of the account that owns the vault.
+        /// You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen),
+        /// in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
+        /// used to sign the request. If you use an account ID, do not include any hyphens ('-')
+        /// in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -174,7 +174,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property Range. 
         /// <para>
         /// The range of bytes to retrieve from the output. For example, if you want to download
-        /// the first 1,048,576 bytes, specify the range as <code>bytes=0-1048575</code>. By default,
+        /// the first 1,048,576 bytes, specify the range as <c>bytes=0-1048575</c>. By default,
         /// this operation downloads the entire output.
         /// </para>
         ///  

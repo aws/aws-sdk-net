@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a <code>ClusterDbRevision</code>.
+    /// Describes a <c>ClusterDbRevision</c>.
     /// </summary>
     public partial class ClusterDbRevision
     {
@@ -97,7 +97,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property RevisionTargets. 
         /// <para>
-        /// A list of <code>RevisionTarget</code> objects, where each object describes the database
+        /// A list of <c>RevisionTarget</c> objects, where each object describes the database
         /// revision that a cluster can be updated to.
         /// </para>
         /// </summary>

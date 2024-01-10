@@ -49,11 +49,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccessLevelFilter. 
         /// <para>
-        /// The access level to use to obtain results. The default is <code>User</code>.
+        /// The access level to use to obtain results. The default is <c>User</c>.
         /// </para>
         /// </summary>
         public AccessLevelFilter AccessLevelFilter
@@ -95,16 +95,15 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// When the key is <code>SearchQuery</code>, the searchable fields are <code>arn</code>,
-        /// <code>createdTime</code>, <code>id</code>, <code>lastRecordId</code>, <code>idempotencyToken</code>,
-        /// <code>name</code>, <code>physicalId</code>, <code>productId</code>, <code>provisioningArtifactId</code>,
-        /// <code>type</code>, <code>status</code>, <code>tags</code>, <code>userArn</code>, <code>userArnSession</code>,
-        /// <code>lastProvisioningRecordId</code>, <code>lastSuccessfulProvisioningRecordId</code>,
-        /// <code>productName</code>, and <code>provisioningArtifactName</code>.
+        /// When the key is <c>SearchQuery</c>, the searchable fields are <c>arn</c>, <c>createdTime</c>,
+        /// <c>id</c>, <c>lastRecordId</c>, <c>idempotencyToken</c>, <c>name</c>, <c>physicalId</c>,
+        /// <c>productId</c>, <c>provisioningArtifactId</c>, <c>type</c>, <c>status</c>, <c>tags</c>,
+        /// <c>userArn</c>, <c>userArnSession</c>, <c>lastProvisioningRecordId</c>, <c>lastSuccessfulProvisioningRecordId</c>,
+        /// <c>productName</c>, and <c>provisioningArtifactName</c>.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"SearchQuery":["status:AVAILABLE"]</code> 
+        /// Example: <c>"SearchQuery":["status:AVAILABLE"]</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Filters
@@ -162,7 +161,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property SortBy. 
         /// <para>
         /// The sort field. If no value is specified, the results are not sorted. The valid values
-        /// are <code>arn</code>, <code>id</code>, <code>name</code>, and <code>lastRecordId</code>.
+        /// are <c>arn</c>, <c>id</c>, <c>name</c>, and <c>lastRecordId</c>.
         /// </para>
         /// </summary>
         public string SortBy

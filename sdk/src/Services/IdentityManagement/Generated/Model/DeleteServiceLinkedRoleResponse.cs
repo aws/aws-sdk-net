@@ -39,7 +39,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property DeletionTaskId. 
         /// <para>
         /// The deletion task identifier that you can use to check the status of the deletion.
-        /// This identifier is returned in the format <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.
+        /// This identifier is returned in the format <c>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

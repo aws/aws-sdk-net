@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnableDnsHostnames. 
         /// <para>
         /// Indicates whether the instances launched in the VPC get DNS hostnames. If this attribute
-        /// is <code>true</code>, instances in the VPC get DNS hostnames; otherwise, they do not.
+        /// is <c>true</c>, instances in the VPC get DNS hostnames; otherwise, they do not.
         /// </para>
         /// </summary>
         public bool EnableDnsHostnames
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnableDnsSupport. 
         /// <para>
-        /// Indicates whether DNS resolution is enabled for the VPC. If this attribute is <code>true</code>,
+        /// Indicates whether DNS resolution is enabled for the VPC. If this attribute is <c>true</c>,
         /// the Amazon DNS server resolves DNS hostnames for your instances to their corresponding
         /// IP addresses; otherwise, it does not.
         /// </para>

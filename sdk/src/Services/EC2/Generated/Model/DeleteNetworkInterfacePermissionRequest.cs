@@ -42,8 +42,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Specify <code>true</code> to remove the permission even if the network interface is
-        /// attached to an instance.
+        /// Specify <c>true</c> to remove the permission even if the network interface is attached
+        /// to an instance.
         /// </para>
         /// </summary>
         public bool Force

@@ -45,13 +45,13 @@ namespace Amazon.LexRuntimeV2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you specify a bot or alias ID that doesn't exist, you receive a <code>BadRequestException.</code>
+    /// If you specify a bot or alias ID that doesn't exist, you receive a <c>BadRequestException.</c>
     /// 
     /// </para>
     ///  
     /// <para>
     /// If the locale doesn't exist in the bot, or if the locale hasn't been enables for the
-    /// alias, you receive a <code>BadRequestException</code>.
+    /// alias, you receive a <c>BadRequestException</c>.
     /// </para>
     /// </summary>
     public partial class DeleteSessionRequest : AmazonLexRuntimeV2Request

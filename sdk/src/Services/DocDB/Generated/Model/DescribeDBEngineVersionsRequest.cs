@@ -55,7 +55,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If provided, must match an existing <code>DBParameterGroupFamily</code>.
+        /// If provided, must match an existing <c>DBParameterGroupFamily</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -115,7 +115,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>3.6.0</code> 
+        /// Example: <c>3.6.0</c> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -151,9 +151,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ListSupportedCharacterSets. 
         /// <para>
-        /// If this parameter is specified and the requested engine supports the <code>CharacterSetName</code>
-        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// character sets for each engine version. 
+        /// If this parameter is specified and the requested engine supports the <c>CharacterSetName</c>
+        /// parameter for <c>CreateDBInstance</c>, the response includes a list of supported character
+        /// sets for each engine version. 
         /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets
@@ -171,9 +171,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property ListSupportedTimezones. 
         /// <para>
-        /// If this parameter is specified and the requested engine supports the <code>TimeZone</code>
-        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// time zones for each engine version. 
+        /// If this parameter is specified and the requested engine supports the <c>TimeZone</c>
+        /// parameter for <c>CreateDBInstance</c>, the response includes a list of supported time
+        /// zones for each engine version. 
         /// </para>
         /// </summary>
         public bool ListSupportedTimezones
@@ -193,7 +193,7 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -212,8 +212,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token (marker) is included
-        /// in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token (marker) is included in
+        /// the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>

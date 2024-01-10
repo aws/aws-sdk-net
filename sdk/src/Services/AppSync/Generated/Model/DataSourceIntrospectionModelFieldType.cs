@@ -42,8 +42,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property Kind. 
         /// <para>
         /// Specifies the classification of data. For example, this could be set to values like
-        /// <code>Scalar</code> or <code>NonNull</code> to indicate a fundamental property of
-        /// the field.
+        /// <c>Scalar</c> or <c>NonNull</c> to indicate a fundamental property of the field.
         /// </para>
         ///  
         /// <para>
@@ -51,15 +50,15 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Scalar</code>: Indicates the value is a primitive type (scalar).
+        ///  <c>Scalar</c>: Indicates the value is a primitive type (scalar).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NonNull</code>: Indicates the field cannot be <code>null</code>.
+        ///  <c>NonNull</c>: Indicates the field cannot be <c>null</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>List</code>: Indicates the field contains a list.
+        ///  <c>List</c>: Indicates the field contains a list.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -78,8 +77,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the data type that represents the field. For example, <code>String</code>
-        /// is a valid <code>name</code> value.
+        /// The name of the data type that represents the field. For example, <c>String</c> is
+        /// a valid <c>name</c> value.
         /// </para>
         /// </summary>
         public string Name
@@ -97,17 +96,16 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The <code>DataSourceIntrospectionModelFieldType</code> object data. The <code>type</code>
-        /// is only present if <code>DataSourceIntrospectionModelFieldType.kind</code> is set
-        /// to <code>NonNull</code> or <code>List</code>. 
+        /// The <c>DataSourceIntrospectionModelFieldType</c> object data. The <c>type</c> is only
+        /// present if <c>DataSourceIntrospectionModelFieldType.kind</c> is set to <c>NonNull</c>
+        /// or <c>List</c>. 
         /// </para>
         ///  
         /// <para>
-        /// The <code>type</code> typically contains its own <code>kind</code> and <code>name</code>
-        /// fields to represent the actual type data. For instance, <code>type</code> could contain
-        /// a <code>kind</code> value of <code>Scalar</code> with a <code>name</code> value of
-        /// <code>String</code>. The values <code>Scalar</code> and <code>String</code> will be
-        /// collectively stored in the <code>values</code> field.
+        /// The <c>type</c> typically contains its own <c>kind</c> and <c>name</c> fields to represent
+        /// the actual type data. For instance, <c>type</c> could contain a <c>kind</c> value
+        /// of <c>Scalar</c> with a <c>name</c> value of <c>String</c>. The values <c>Scalar</c>
+        /// and <c>String</c> will be collectively stored in the <c>values</c> field.
         /// </para>
         /// </summary>
         public DataSourceIntrospectionModelFieldType Type
@@ -125,8 +123,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values of the <code>type</code> field. This field represents the AppSync data
-        /// type equivalent of the introspected field.
+        /// The values of the <c>type</c> field. This field represents the AppSync data type equivalent
+        /// of the introspected field.
         /// </para>
         /// </summary>
         public List<string> Values

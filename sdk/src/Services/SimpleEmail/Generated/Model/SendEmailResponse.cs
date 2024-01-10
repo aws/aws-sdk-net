@@ -38,7 +38,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The unique message identifier returned from the <code>SendEmail</code> action. 
+        /// The unique message identifier returned from the <c>SendEmail</c> action. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

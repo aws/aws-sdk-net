@@ -35,8 +35,8 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// Results are returned from oldest to newest, up to a maximum of 200. Results can be
-    /// paged by making each subsequent call to <code>GetOperations</code> use the maximum
-    /// (last) <code>statusChangedAt</code> value from the previous request.
+    /// paged by making each subsequent call to <c>GetOperations</c> use the maximum (last)
+    /// <c>statusChangedAt</c> value from the previous request.
     /// </para>
     /// </summary>
     public partial class GetOperationsRequest : AmazonLightsailRequest
@@ -50,9 +50,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a page token, perform an initial <code>GetOperations</code> request. If your
-        /// results are paginated, the response will return a next page token that you can specify
-        /// as the page token in a subsequent request.
+        /// To get a page token, perform an initial <c>GetOperations</c> request. If your results
+        /// are paginated, the response will return a next page token that you can specify as
+        /// the page token in a subsequent request.
         /// </para>
         /// </summary>
         public string PageToken

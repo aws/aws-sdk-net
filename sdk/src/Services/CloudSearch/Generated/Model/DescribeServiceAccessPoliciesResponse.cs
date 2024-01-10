@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeServiceAccessPolicies</code> request.
+    /// The result of a <c>DescribeServiceAccessPolicies</c> request.
     /// </summary>
     public partial class DescribeServiceAccessPoliciesResponse : AmazonWebServiceResponse
     {

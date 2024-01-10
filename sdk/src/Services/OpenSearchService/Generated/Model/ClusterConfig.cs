@@ -88,9 +88,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DedicatedMasterEnabled. 
         /// <para>
-        /// Indicates whether dedicated master nodes are enabled for the cluster.<code>True</code>
-        /// if the cluster will use a dedicated master node.<code>False</code> if the cluster
-        /// will not.
+        /// Indicates whether dedicated master nodes are enabled for the cluster.<c>True</c> if
+        /// the cluster will use a dedicated master node.<c>False</c> if the cluster will not.
         /// </para>
         /// </summary>
         public bool DedicatedMasterEnabled
@@ -237,8 +236,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ZoneAwarenessConfig. 
         /// <para>
-        /// Container for zone awareness configuration options. Only required if <code>ZoneAwarenessEnabled</code>
-        /// is <code>true</code>.
+        /// Container for zone awareness configuration options. Only required if <c>ZoneAwarenessEnabled</c>
+        /// is <c>true</c>.
         /// </para>
         /// </summary>
         public ZoneAwarenessConfig ZoneAwarenessConfig

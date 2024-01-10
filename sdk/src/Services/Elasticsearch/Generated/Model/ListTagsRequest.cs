@@ -39,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        ///  Specify the <code>ARN</code> for the Elasticsearch domain to which the tags are attached
+        ///  Specify the <c>ARN</c> for the Elasticsearch domain to which the tags are attached
         /// that you want to view.
         /// </para>
         /// </summary>

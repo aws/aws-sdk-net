@@ -38,8 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Shutdown. 
         /// <para>
-        /// A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown event
-        /// configuration.
+        /// A <c>ShutdownEventConfiguration</c> object that specifies the Shutdown event configuration.
         /// </para>
         /// </summary>
         public ShutdownEventConfiguration Shutdown

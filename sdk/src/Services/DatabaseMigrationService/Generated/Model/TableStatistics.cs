@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// Provides a collection of table statistics in response to a request by the <code>DescribeTableStatistics</code>
+    /// Provides a collection of table statistics in response to a request by the <c>DescribeTableStatistics</c>
     /// operation.
     /// </summary>
     public partial class TableStatistics
@@ -227,8 +227,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property FullLoadReloaded. 
         /// <para>
-        /// A value that indicates if the table was reloaded (<code>true</code>) or loaded as
-        /// part of a new full load operation (<code>false</code>).
+        /// A value that indicates if the table was reloaded (<c>true</c>) or loaded as part of
+        /// a new full load operation (<c>false</c>).
         /// </para>
         /// </summary>
         public bool FullLoadReloaded

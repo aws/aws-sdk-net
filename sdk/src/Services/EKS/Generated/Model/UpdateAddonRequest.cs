@@ -46,7 +46,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property AddonName. 
         /// <para>
         /// The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
-        /// <code>ListAddons</code> </a>.
+        /// <c>ListAddons</c> </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,7 +67,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// The version of the add-on. The version must match one of the versions returned by
         /// <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
-        /// <code>DescribeAddonVersions</code> </a>.
+        /// <c>DescribeAddonVersions</c> </a>.
         /// </para>
         /// </summary>
         public string AddonVersion
@@ -124,7 +124,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property ConfigurationValues. 
         /// <para>
         /// The set of configuration values for the add-on that's created. The values that you
-        /// provide are validated against the schema returned by <code>DescribeAddonConfiguration</code>.
+        /// provide are validated against the schema returned by <c>DescribeAddonConfiguration</c>.
         /// </para>
         /// </summary>
         public string ConfigurationValues

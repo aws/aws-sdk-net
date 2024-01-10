@@ -29,39 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// This structure is used in both <code>GetMetricData</code> and <code>PutMetricAlarm</code>.
-    /// The supported use of this structure is different for those two operations.
+    /// This structure is used in both <c>GetMetricData</c> and <c>PutMetricAlarm</c>. The
+    /// supported use of this structure is different for those two operations.
     /// 
     ///  
     /// <para>
-    /// When used in <code>GetMetricData</code>, it indicates the metric data to return, and
-    /// whether this call is just retrieving a batch set of data for one metric, or is performing
-    /// a Metrics Insights query or a math expression. A single <code>GetMetricData</code>
-    /// call can include up to 500 <code>MetricDataQuery</code> structures.
+    /// When used in <c>GetMetricData</c>, it indicates the metric data to return, and whether
+    /// this call is just retrieving a batch set of data for one metric, or is performing
+    /// a Metrics Insights query or a math expression. A single <c>GetMetricData</c> call
+    /// can include up to 500 <c>MetricDataQuery</c> structures.
     /// </para>
     ///  
     /// <para>
-    /// When used in <code>PutMetricAlarm</code>, it enables you to create an alarm based
-    /// on a metric math expression. Each <code>MetricDataQuery</code> in the array specifies
-    /// either a metric to retrieve, or a math expression to be performed on retrieved metrics.
-    /// A single <code>PutMetricAlarm</code> call can include up to 20 <code>MetricDataQuery</code>
-    /// structures in the array. The 20 structures can include as many as 10 structures that
-    /// contain a <code>MetricStat</code> parameter to retrieve a metric, and as many as 10
-    /// structures that contain the <code>Expression</code> parameter to perform a math expression.
-    /// Of those <code>Expression</code> structures, one must have <code>true</code> as the
-    /// value for <code>ReturnData</code>. The result of this expression is the value the
-    /// alarm watches.
+    /// When used in <c>PutMetricAlarm</c>, it enables you to create an alarm based on a metric
+    /// math expression. Each <c>MetricDataQuery</c> in the array specifies either a metric
+    /// to retrieve, or a math expression to be performed on retrieved metrics. A single <c>PutMetricAlarm</c>
+    /// call can include up to 20 <c>MetricDataQuery</c> structures in the array. The 20 structures
+    /// can include as many as 10 structures that contain a <c>MetricStat</c> parameter to
+    /// retrieve a metric, and as many as 10 structures that contain the <c>Expression</c>
+    /// parameter to perform a math expression. Of those <c>Expression</c> structures, one
+    /// must have <c>true</c> as the value for <c>ReturnData</c>. The result of this expression
+    /// is the value the alarm watches.
     /// </para>
     ///  
     /// <para>
-    /// Any expression used in a <code>PutMetricAlarm</code> operation must return a single
-    /// time series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+    /// Any expression used in a <c>PutMetricAlarm</c> operation must return a single time
+    /// series. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
     /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// Some of the parameters of this structure also have different uses whether you are
-    /// using this structure in a <code>GetMetricData</code> operation or a <code>PutMetricAlarm</code>
+    /// using this structure in a <c>GetMetricData</c> operation or a <c>PutMetricAlarm</c>
     /// operation. These differences are explained in the following parameter list.
     /// </para>
     /// </summary>
@@ -82,13 +81,13 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are performing a <code>GetMetricData</code> operation in a monitoring account,
-        /// use this to specify which account to retrieve this metric from.
+        /// If you are performing a <c>GetMetricData</c> operation in a monitoring account, use
+        /// this to specify which account to retrieve this metric from.
         /// </para>
         ///  
         /// <para>
-        /// If you are performing a <code>PutMetricAlarm</code> operation, use this to specify
-        /// which account contains the metric that the alarm is watching.
+        /// If you are performing a <c>PutMetricAlarm</c> operation, use this to specify which
+        /// account contains the metric that the alarm is watching.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -114,16 +113,15 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// A math expression can use the <code>Id</code> of the other metrics or queries to refer
-        /// to those metrics, and can also use the <code>Id</code> of other expressions to use
-        /// the result of those expressions. For more information about metric math expressions,
-        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+        /// A math expression can use the <c>Id</c> of the other metrics or queries to refer to
+        /// those metrics, and can also use the <c>Id</c> of other expressions to use the result
+        /// of those expressions. For more information about metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
         /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Within each MetricDataQuery object, you must specify either <code>Expression</code>
-        /// or <code>MetricStat</code> but not both.
+        /// Within each MetricDataQuery object, you must specify either <c>Expression</c> or <c>MetricStat</c>
+        /// but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -143,9 +141,9 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// A short name used to tie this object to the results in the response. This name must
-        /// be unique within a single call to <code>GetMetricData</code>. If you are performing
-        /// math expressions on this set of data, this name represents that data and can serve
-        /// as a variable in the mathematical expression. The valid characters are letters, numbers,
+        /// be unique within a single call to <c>GetMetricData</c>. If you are performing math
+        /// expressions on this set of data, this name represents that data and can serve as a
+        /// variable in the mathematical expression. The valid characters are letters, numbers,
         /// and underscore. The first character must be a lowercase letter.
         /// </para>
         /// </summary>
@@ -198,8 +196,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// Within one MetricDataQuery object, you must specify either <code>Expression</code>
-        /// or <code>MetricStat</code> but not both.
+        /// Within one MetricDataQuery object, you must specify either <c>Expression</c> or <c>MetricStat</c>
+        /// but not both.
         /// </para>
         /// </summary>
         public MetricStat MetricStat
@@ -221,8 +219,8 @@ namespace Amazon.CloudWatch.Model
         /// resolution, a period can be as short as one minute (60 seconds) and must be a multiple
         /// of 60. For high-resolution metrics that are collected at intervals of less than one
         /// minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
-        /// metrics are those metrics stored by a <code>PutMetricData</code> operation that includes
-        /// a <code>StorageResolution of 1 second</code>.
+        /// metrics are those metrics stored by a <c>PutMetricData</c> operation that includes
+        /// a <c>StorageResolution of 1 second</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -241,16 +239,16 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ReturnData. 
         /// <para>
-        /// When used in <code>GetMetricData</code>, this option indicates whether to return the
-        /// timestamps and raw data values of this metric. If you are performing this call just
-        /// to do math expressions and do not also need the raw data returned, you can specify
-        /// <code>false</code>. If you omit this, the default of <code>true</code> is used.
+        /// When used in <c>GetMetricData</c>, this option indicates whether to return the timestamps
+        /// and raw data values of this metric. If you are performing this call just to do math
+        /// expressions and do not also need the raw data returned, you can specify <c>false</c>.
+        /// If you omit this, the default of <c>true</c> is used.
         /// </para>
         ///  
         /// <para>
-        /// When used in <code>PutMetricAlarm</code>, specify <code>true</code> for the one expression
-        /// result to use as the alarm. For all other metrics and expressions in the same <code>PutMetricAlarm</code>
-        /// operation, specify <code>ReturnData</code> as False.
+        /// When used in <c>PutMetricAlarm</c>, specify <c>true</c> for the one expression result
+        /// to use as the alarm. For all other metrics and expressions in the same <c>PutMetricAlarm</c>
+        /// operation, specify <c>ReturnData</c> as False.
         /// </para>
         /// </summary>
         public bool ReturnData

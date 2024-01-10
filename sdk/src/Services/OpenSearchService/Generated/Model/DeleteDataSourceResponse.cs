@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>GetDataSource</code> operation.
+    /// The result of a <c>GetDataSource</c> operation.
     /// </summary>
     public partial class DeleteDataSourceResponse : AmazonWebServiceResponse
     {

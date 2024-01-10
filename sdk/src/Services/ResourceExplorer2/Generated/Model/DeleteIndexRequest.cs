@@ -35,7 +35,7 @@ namespace Amazon.ResourceExplorer2.Model
     /// stops discovering and indexing resources in that Region. Resource Explorer also deletes
     /// all views in that Region. These actions occur as asynchronous background tasks. You
     /// can check to see when the actions are complete by using the <a>GetIndex</a> operation
-    /// and checking the <code>Status</code> response value.
+    /// and checking the <c>Status</c> response value.
     /// 
     ///  <note> 
     /// <para>

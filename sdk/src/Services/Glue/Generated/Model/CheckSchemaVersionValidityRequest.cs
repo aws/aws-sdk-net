@@ -31,8 +31,8 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the CheckSchemaVersionValidity operation.
     /// Validates the supplied schema. This call has no side effects, it simply validates
-    /// using the supplied schema using <code>DataFormat</code> as the format. Since it does
-    /// not take a schema set name, no compatibility checks are performed.
+    /// using the supplied schema using <c>DataFormat</c> as the format. Since it does not
+    /// take a schema set name, no compatibility checks are performed.
     /// </summary>
     public partial class CheckSchemaVersionValidityRequest : AmazonGlueRequest
     {
@@ -42,8 +42,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DataFormat. 
         /// <para>
-        /// The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code>
-        /// and <code>PROTOBUF</code> are supported.
+        /// The data format of the schema definition. Currently <c>AVRO</c>, <c>JSON</c> and <c>PROTOBUF</c>
+        /// are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

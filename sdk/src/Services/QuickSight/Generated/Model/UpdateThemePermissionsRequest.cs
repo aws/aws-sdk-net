@@ -31,7 +31,7 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateThemePermissions operation.
     /// Updates the resource permissions for a theme. Permissions apply to the action to grant
-    /// or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.
+    /// or revoke permissions on, for example <c>"quicksight:DescribeTheme"</c>.
     /// 
     ///  
     /// <para>
@@ -44,19 +44,19 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>"quicksight:DescribeTheme"</code> 
+    ///  <c>"quicksight:DescribeTheme"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:DescribeThemeAlias"</code> 
+    ///  <c>"quicksight:DescribeThemeAlias"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:ListThemeAliases"</code> 
+    ///  <c>"quicksight:ListThemeAliases"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:ListThemeVersions"</code> 
+    ///  <c>"quicksight:ListThemeVersions"</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -64,47 +64,47 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>"quicksight:DescribeTheme"</code> 
+    ///  <c>"quicksight:DescribeTheme"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:DescribeThemeAlias"</code> 
+    ///  <c>"quicksight:DescribeThemeAlias"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:ListThemeAliases"</code> 
+    ///  <c>"quicksight:ListThemeAliases"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:ListThemeVersions"</code> 
+    ///  <c>"quicksight:ListThemeVersions"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:DeleteTheme"</code> 
+    ///  <c>"quicksight:DeleteTheme"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:UpdateTheme"</code> 
+    ///  <c>"quicksight:UpdateTheme"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:CreateThemeAlias"</code> 
+    ///  <c>"quicksight:CreateThemeAlias"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:DeleteThemeAlias"</code> 
+    ///  <c>"quicksight:DeleteThemeAlias"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:UpdateThemeAlias"</code> 
+    ///  <c>"quicksight:UpdateThemeAlias"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:UpdateThemePermissions"</code> 
+    ///  <c>"quicksight:UpdateThemePermissions"</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>"quicksight:DescribeThemePermissions"</code> 
+    ///  <c>"quicksight:DescribeThemePermissions"</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>

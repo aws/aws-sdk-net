@@ -141,7 +141,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the logging configuration. When this is <code>ACTIVE</code>, the configuration
+        /// The state of the logging configuration. When this is <c>ACTIVE</c>, the configuration
         /// is ready for logging chat content.
         /// </para>
         /// </summary>
@@ -160,8 +160,8 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to attach to the resource. Array of maps, each of the form <code>string:string
-        /// (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Tags to attach to the resource. Array of maps, each of the form <c>string:string (key:value)</c>.
+        /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
         /// naming limits and requirements"; Amazon IVS Chat has no constraints on tags beyond
         /// what is documented there.

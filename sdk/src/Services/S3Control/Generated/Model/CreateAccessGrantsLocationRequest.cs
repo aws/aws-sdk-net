@@ -36,15 +36,15 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The default S3 location <code>s3://</code> 
+    /// The default S3 location <c>s3://</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A bucket - <code>S3://&lt;bucket-name&gt;</code> 
+    /// A bucket - <c>S3://&lt;bucket-name&gt;</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A bucket and prefix - <code>S3://&lt;bucket-name&gt;/&lt;prefix&gt;</code> 
+    /// A bucket and prefix - <c>S3://&lt;bucket-name&gt;/&lt;prefix&gt;</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -56,12 +56,12 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:CreateAccessGrantsLocation</code> permission to use this
-    /// operation. 
+    /// You must have the <c>s3:CreateAccessGrantsLocation</c> permission to use this operation.
+    /// 
     /// </para>
     ///  </dd> <dt>Additional Permissions</dt> <dd> 
     /// <para>
-    /// You must also have the following permission for the specified IAM role: <code>iam:PassRole</code>
+    /// You must also have the following permission for the specified IAM role: <c>iam:PassRole</c>
     /// 
     /// </para>
     ///  </dd> </dl>
@@ -116,12 +116,12 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property LocationScope. 
         /// <para>
         /// The S3 path to the location that you are registering. The location scope can be the
-        /// default S3 location <code>s3://</code>, the S3 path to a bucket <code>s3://&lt;bucket&gt;</code>,
-        /// or the S3 path to a bucket and prefix <code>s3://&lt;bucket&gt;/&lt;prefix&gt;</code>.
-        /// A prefix in S3 is a string of characters at the beginning of an object key name used
+        /// default S3 location <c>s3://</c>, the S3 path to a bucket <c>s3://&lt;bucket&gt;</c>,
+        /// or the S3 path to a bucket and prefix <c>s3://&lt;bucket&gt;/&lt;prefix&gt;</c>. A
+        /// prefix in S3 is a string of characters at the beginning of an object key name used
         /// to organize the objects that you store in your S3 buckets. For example, object key
-        /// names that start with the <code>engineering/</code> prefix or object key names that
-        /// start with the <code>marketing/campaigns/</code> prefix.
+        /// names that start with the <c>engineering/</c> prefix or object key names that start
+        /// with the <c>marketing/campaigns/</c> prefix.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000)]

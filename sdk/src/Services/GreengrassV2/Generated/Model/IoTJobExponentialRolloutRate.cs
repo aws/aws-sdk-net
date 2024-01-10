@@ -66,7 +66,7 @@ namespace Amazon.GreengrassV2.Model
         ///  
         /// <para>
         /// This parameter supports up to one digit after the decimal (for example, you can specify
-        /// <code>1.5</code>, but not <code>1.55</code>).
+        /// <c>1.5</c>, but not <c>1.55</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

@@ -33,15 +33,15 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// The <code>DetectedText</code> field contains the text that Amazon Rekognition detected
-    /// in the image. 
+    /// The <c>DetectedText</c> field contains the text that Amazon Rekognition detected in
+    /// the image. 
     /// </para>
     ///  
     /// <para>
-    /// Every word and line has an identifier (<code>Id</code>). Each word belongs to a line
-    /// and has a parent identifier (<code>ParentId</code>) that identifies the line of text
-    /// in which the word appears. The word <code>Id</code> is also an index for the word
-    /// within a line of words. 
+    /// Every word and line has an identifier (<c>Id</c>). Each word belongs to a line and
+    /// has a parent identifier (<c>ParentId</c>) that identifies the line of text in which
+    /// the word appears. The word <c>Id</c> is also an index for the word within a line of
+    /// words. 
     /// </para>
     ///  
     /// <para>
@@ -118,7 +118,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier for the detected text. The identifier is only unique for a single call
-        /// to <code>DetectText</code>. 
+        /// to <c>DetectText</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -137,9 +137,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property ParentId. 
         /// <para>
-        /// The Parent identifier for the detected text identified by the value of <code>ID</code>.
-        /// If the type of detected text is <code>LINE</code>, the value of <code>ParentId</code>
-        /// is <code>Null</code>. 
+        /// The Parent identifier for the detected text identified by the value of <c>ID</c>.
+        /// If the type of detected text is <c>LINE</c>, the value of <c>ParentId</c> is <c>Null</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -239,7 +239,7 @@ namespace Amazon.DirectoryService
         /// Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema
         /// extension has started replicating to all domain controllers, the task can no longer
         /// be canceled. A schema extension can be canceled during any of the following states;
-        /// <code>Initializing</code>, <code>CreatingSnapshot</code>, and <code>UpdatingSchema</code>.
+        /// <c>Initializing</c>, <c>CreatingSnapshot</c>, and <c>UpdatingSchema</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelSchemaExtension service method.</param>
         /// <param name="cancellationToken">
@@ -270,9 +270,9 @@ namespace Amazon.DirectoryService
         /// 
         ///  
         /// <para>
-        /// Before you call <code>ConnectDirectory</code>, ensure that all of the required permissions
+        /// Before you call <c>ConnectDirectory</c>, ensure that all of the required permissions
         /// have been explicitly granted through a policy. For details about what permissions
-        /// are required to run the <code>ConnectDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// are required to run the <c>ConnectDirectory</c> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
         /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
@@ -306,7 +306,7 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Creates an alias for a directory and assigns the alias to the directory. The alias
-        /// is used to construct the access URL for the directory, such as <code>http://&lt;alias&gt;.awsapps.com</code>.
+        /// is used to construct the access URL for the directory, such as <c>http://&lt;alias&gt;.awsapps.com</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -434,9 +434,9 @@ namespace Amazon.DirectoryService
         /// 
         ///  
         /// <para>
-        /// Before you call <code>CreateDirectory</code>, ensure that all of the required permissions
+        /// Before you call <c>CreateDirectory</c>, ensure that all of the required permissions
         /// have been explicitly granted through a policy. For details about what permissions
-        /// are required to run the <code>CreateDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// are required to run the <c>CreateDirectory</c> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
         /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
@@ -680,9 +680,9 @@ namespace Amazon.DirectoryService
         /// 
         ///  
         /// <para>
-        /// Before you call <code>DeleteDirectory</code>, ensure that all of the required permissions
+        /// Before you call <c>DeleteDirectory</c>, ensure that all of the required permissions
         /// have been explicitly granted through a policy. For details about what permissions
-        /// are required to run the <code>DeleteDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+        /// are required to run the <c>DeleteDirectory</c> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
         /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
         /// </para>
         /// </summary>
@@ -919,7 +919,7 @@ namespace Amazon.DirectoryService
         /// Retrieves information about the type of client authentication for the specified directory,
         /// if the type is specified. If no type is specified, information about all client authentication
         /// types that are supported for the specified directory is retrieved. Currently, only
-        /// <code>SmartCard</code> is supported.
+        /// <c>SmartCard</c> is supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeClientAuthenticationSettings service method.</param>
         /// <param name="cancellationToken">
@@ -1001,20 +1001,19 @@ namespace Amazon.DirectoryService
         ///  
         /// <para>
         /// You can retrieve information about specific directories by passing the directory identifiers
-        /// in the <code>DirectoryIds</code> parameter. Otherwise, all directories that belong
-        /// to the current account are returned.
+        /// in the <c>DirectoryIds</c> parameter. Otherwise, all directories that belong to the
+        /// current account are returned.
         /// </para>
         ///  
         /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>DescribeDirectoriesResult.NextToken</code>
+        /// This operation supports pagination with the use of the <c>NextToken</c> request and
+        /// response parameters. If more results are available, the <c>DescribeDirectoriesResult.NextToken</c>
         /// member contains a token that you pass in the next call to <a>DescribeDirectories</a>
         /// to retrieve the next set of items.
         /// </para>
         ///  
         /// <para>
-        /// You can also specify a maximum number of return results with the <code>Limit</code>
-        /// parameter.
+        /// You can also specify a maximum number of return results with the <c>Limit</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="cancellationToken">
@@ -1029,7 +1028,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1048,20 +1047,19 @@ namespace Amazon.DirectoryService
         ///  
         /// <para>
         /// You can retrieve information about specific directories by passing the directory identifiers
-        /// in the <code>DirectoryIds</code> parameter. Otherwise, all directories that belong
-        /// to the current account are returned.
+        /// in the <c>DirectoryIds</c> parameter. Otherwise, all directories that belong to the
+        /// current account are returned.
         /// </para>
         ///  
         /// <para>
-        /// This operation supports pagination with the use of the <code>NextToken</code> request
-        /// and response parameters. If more results are available, the <code>DescribeDirectoriesResult.NextToken</code>
+        /// This operation supports pagination with the use of the <c>NextToken</c> request and
+        /// response parameters. If more results are available, the <c>DescribeDirectoriesResult.NextToken</c>
         /// member contains a token that you pass in the next call to <a>DescribeDirectories</a>
         /// to retrieve the next set of items.
         /// </para>
         ///  
         /// <para>
-        /// You can also specify a maximum number of return results with the <code>Limit</code>
-        /// parameter.
+        /// You can also specify a maximum number of return results with the <c>Limit</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDirectories service method.</param>
@@ -1077,7 +1075,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1110,7 +1108,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1183,7 +1181,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1222,7 +1220,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1258,7 +1256,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1294,7 +1292,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1342,7 +1340,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1381,7 +1379,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1420,7 +1418,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1817,7 +1815,7 @@ namespace Amazon.DirectoryService
         /// The specified directory does not exist in the system.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1853,7 +1851,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -1886,7 +1884,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
         /// An exception has occurred in Directory Service.
@@ -1916,7 +1914,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.ServiceException">
         /// An exception has occurred in Directory Service.
@@ -1946,7 +1944,7 @@ namespace Amazon.DirectoryService
         /// The specified entity could not be found.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidNextTokenException">
-        /// The <code>NextToken</code> value is not valid.
+        /// The <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.DirectoryService.Model.InvalidParameterException">
         /// One or more parameters are not valid.
@@ -2110,7 +2108,7 @@ namespace Amazon.DirectoryService
 
         /// <summary>
         /// Stops all replication and removes the domain controllers from the specified Region.
-        /// You cannot remove the primary Region with this operation. Instead, use the <code>DeleteDirectory</code>
+        /// You cannot remove the primary Region with this operation. Instead, use the <c>DeleteDirectory</c>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveRegion service method.</param>
@@ -2250,7 +2248,7 @@ namespace Amazon.DirectoryService
         /// This action returns as soon as the restore operation is initiated. You can monitor
         /// the progress of the restore operation by calling the <a>DescribeDirectories</a> operation
         /// with the directory identifier. When the <b>DirectoryDescription.Stage</b> value changes
-        /// to <code>Active</code>, the restore operation is complete.
+        /// to <c>Active</c>, the restore operation is complete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreFromSnapshot service method.</param>
@@ -2281,10 +2279,10 @@ namespace Amazon.DirectoryService
 
 
         /// <summary>
-        /// Shares a specified directory (<code>DirectoryId</code>) in your Amazon Web Services
-        /// account (directory owner) with another Amazon Web Services account (directory consumer).
-        /// With this operation you can use your directory from any Amazon Web Services account
-        /// and from any Amazon VPC within an Amazon Web Services Region.
+        /// Shares a specified directory (<c>DirectoryId</c>) in your Amazon Web Services account
+        /// (directory owner) with another Amazon Web Services account (directory consumer). With
+        /// this operation you can use your directory from any Amazon Web Services account and
+        /// from any Amazon VPC within an Amazon Web Services Region.
         /// 
         ///  
         /// <para>
@@ -2295,16 +2293,16 @@ namespace Amazon.DirectoryService
         /// </para>
         ///  
         /// <para>
-        /// The <code>ShareMethod</code> parameter determines whether the specified directory
-        /// can be shared between Amazon Web Services accounts inside the same Amazon Web Services
-        /// organization (<code>ORGANIZATIONS</code>). It also determines whether you can share
-        /// the directory with any other Amazon Web Services account either inside or outside
-        /// of the organization (<code>HANDSHAKE</code>).
+        /// The <c>ShareMethod</c> parameter determines whether the specified directory can be
+        /// shared between Amazon Web Services accounts inside the same Amazon Web Services organization
+        /// (<c>ORGANIZATIONS</c>). It also determines whether you can share the directory with
+        /// any other Amazon Web Services account either inside or outside of the organization
+        /// (<c>HANDSHAKE</c>).
         /// </para>
         ///  
         /// <para>
-        /// The <code>ShareNotes</code> parameter is only used when <code>HANDSHAKE</code> is
-        /// called, which sends a directory sharing request to the directory consumer. 
+        /// The <c>ShareNotes</c> parameter is only used when <c>HANDSHAKE</c> is called, which
+        /// sends a directory sharing request to the directory consumer. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ShareDirectory service method.</param>

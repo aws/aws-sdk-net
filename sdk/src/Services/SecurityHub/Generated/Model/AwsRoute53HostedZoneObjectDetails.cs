@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        ///  An object that includes the <code>Comment</code> element.
+        ///  An object that includes the <c>Comment</c> element.
         /// </para>
         /// </summary>
         public AwsRoute53HostedZoneConfigDetails Config

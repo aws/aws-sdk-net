@@ -49,7 +49,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property ColdStorageOptions. 
         /// <para>
-        /// Specifies the <code>ColdStorageOptions</code> config for Elasticsearch Domain
+        /// Specifies the <c>ColdStorageOptions</c> config for Elasticsearch Domain
         /// </para>
         /// </summary>
         public ColdStorageOptions ColdStorageOptions

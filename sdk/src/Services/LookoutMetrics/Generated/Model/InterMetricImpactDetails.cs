@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property ContributionPercentage. 
         /// <para>
-        /// For potential causes (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>), the percentage contribution
+        /// For potential causes (<c>CAUSE_OF_INPUT_ANOMALY_GROUP</c>), the percentage contribution
         /// the measure has in causing the anomalies.
         /// </para>
         /// </summary>
@@ -100,8 +100,8 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property RelationshipType. 
         /// <para>
-        /// Whether a measure is a potential cause of the anomaly group (<code>CAUSE_OF_INPUT_ANOMALY_GROUP</code>),
-        /// or whether the measure is impacted by the anomaly group (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>).
+        /// Whether a measure is a potential cause of the anomaly group (<c>CAUSE_OF_INPUT_ANOMALY_GROUP</c>),
+        /// or whether the measure is impacted by the anomaly group (<c>EFFECT_OF_INPUT_ANOMALY_GROUP</c>).
         /// </para>
         /// </summary>
         public RelationshipType RelationshipType

@@ -152,8 +152,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The time period that the amount applies to. A <code>weekly</code> period begins on
-        /// Sunday. The default is <code>monthly</code>. 
+        /// The time period that the amount applies to. A <c>weekly</c> period begins on Sunday.
+        /// The default is <c>monthly</c>. 
         /// </para>
         /// </summary>
         public UsageLimitPeriod Period

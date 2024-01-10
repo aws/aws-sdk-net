@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find the destination container (a root or OU) with the <code>ParentId</code>
-    /// that you specified.
+    /// We can't find the destination container (a root or OU) with the <c>ParentId</c> that
+    /// you specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

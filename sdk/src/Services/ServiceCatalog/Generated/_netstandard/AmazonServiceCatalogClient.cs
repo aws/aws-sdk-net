@@ -383,18 +383,18 @@ namespace Amazon.ServiceCatalog
         /// 
         ///  
         /// <para>
-        /// If you share the portfolio with principal name sharing enabled, the <code>PrincipalARN</code>
+        /// If you share the portfolio with principal name sharing enabled, the <c>PrincipalARN</c>
         /// association is included in the share. 
         /// </para>
         ///  
         /// <para>
-        /// The <code>PortfolioID</code>, <code>PrincipalARN</code>, and <code>PrincipalType</code>
-        /// parameters are required. 
+        /// The <c>PortfolioID</c>, <c>PrincipalARN</c>, and <c>PrincipalType</c> parameters are
+        /// required. 
         /// </para>
         ///  
         /// <para>
-        /// You can associate a maximum of 10 Principals with a portfolio using <code>PrincipalType</code>
-        /// as <code>IAM_PATTERN</code>. 
+        /// You can associate a maximum of 10 Principals with a portfolio using <c>PrincipalType</c>
+        /// as <c>IAM_PATTERN</c>. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -405,9 +405,8 @@ namespace Amazon.ServiceCatalog
         /// a principal name association for the portfolio. Although this user may not know which
         /// principal names are associated through Service Catalog, they may be able to guess
         /// the user. If this potential escalation path is a concern, then Service Catalog recommends
-        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
-        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
-        /// be associated. 
+        /// using <c>PrincipalType</c> as <c>IAM</c>. With this configuration, the <c>PrincipalARN</c>
+        /// must already exist in the recipient account before it can be associated. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -846,8 +845,8 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        ///  <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio
-        /// share to an organization node.
+        ///  <c>AWSOrganizationsAccess</c> must be enabled in order to create a portfolio share
+        /// to an organization node.
         /// </para>
         ///  
         /// <para>
@@ -857,7 +856,7 @@ namespace Amazon.ServiceCatalog
         /// <para>
         /// If the portfolio share with the specified account or organization node already exists,
         /// this action will have no effect and will not return an error. To update an existing
-        /// share, you must use the <code> UpdatePortfolioShare</code> API instead. 
+        /// share, you must use the <c> UpdatePortfolioShare</c> API instead. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -868,9 +867,8 @@ namespace Amazon.ServiceCatalog
         /// a principal name association for the portfolio. Although this user may not know which
         /// principal names are associated through Service Catalog, they may be able to guess
         /// the user. If this potential escalation path is a concern, then Service Catalog recommends
-        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
-        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
-        /// be associated. 
+        /// using <c>PrincipalType</c> as <c>IAM</c>. With this configuration, the <c>PrincipalARN</c>
+        /// must already exist in the recipient account before it can be associated. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -931,8 +929,8 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-        /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+        /// The user or role that performs this operation must have the <c>cloudformation:GetTemplate</c>
+        /// IAM policy permission. This policy permission is required when using the <c>ImportFromPhysicalId</c>
         /// template source in the information data section.
         /// </para>
         /// </summary>
@@ -1048,8 +1046,8 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-        /// IAM policy permission. This policy permission is required when using the <code>ImportFromPhysicalId</code>
+        /// The user or role that performs this operation must have the <c>cloudformation:GetTemplate</c>
+        /// IAM policy permission. This policy permission is required when using the <c>ImportFromPhysicalId</c>
         /// template source in the information data section.
         /// </para>
         /// </summary>
@@ -1710,7 +1708,7 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// The <code>PortfolioId</code> and <code>Type</code> parameters are both required.
+        /// The <c>PortfolioId</c> and <c>Type</c> parameters are both required.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePortfolioShares service method.</param>
@@ -2054,7 +2052,7 @@ namespace Amazon.ServiceCatalog
         /// is not blocked. In subsequent calls to <a>ProvisionProduct</a>, do not include conflicted
         /// TagOption keys as tags, or this causes the error "Parameter validation failed: Missing
         /// required parameter in Tags[<i>N</i>]:<i>Value</i>". Tag the provisioned product with
-        /// the value <code>sc-tagoption-conflict-portfolioId-productId</code>.
+        /// the value <c>sc-tagoption-conflict-portfolioId-productId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeProvisioningParameters service method.</param>
@@ -2278,7 +2276,7 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  
         /// <para>
-        /// Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.
+        /// Note that a delegated administrator is not authorized to invoke <c>DisableAWSOrganizationsAccess</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2373,10 +2371,10 @@ namespace Amazon.ServiceCatalog
         /// 
         ///  
         /// <para>
-        /// The <code>PrincipalType</code> and <code>PrincipalARN</code> must match the <code>AssociatePrincipalWithPortfolio</code>
-        /// call request details. For example, to disassociate an association created with a <code>PrincipalARN</code>
-        /// of <code>PrincipalType</code> IAM you must use the <code>PrincipalType</code> IAM
-        /// when calling <code>DisassociatePrincipalFromPortfolio</code>. 
+        /// The <c>PrincipalType</c> and <c>PrincipalARN</c> must match the <c>AssociatePrincipalWithPortfolio</c>
+        /// call request details. For example, to disassociate an association created with a <c>PrincipalARN</c>
+        /// of <c>PrincipalType</c> IAM you must use the <c>PrincipalType</c> IAM when calling
+        /// <c>DisassociatePrincipalFromPortfolio</c>. 
         /// </para>
         ///  
         /// <para>
@@ -2391,12 +2389,12 @@ namespace Amazon.ServiceCatalog
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>,
+        /// If you disassociate a principal from a portfolio, with PrincipalType as <c>IAM</c>,
         /// the same principal will still have access to the portfolio if it matches one of the
-        /// associated principals of type <code>IAM_PATTERN</code>. To fully remove access for
-        /// a principal, verify all the associated Principals of type <code>IAM_PATTERN</code>,
-        /// and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match
-        /// the principal whose access you are removing.
+        /// associated principals of type <c>IAM_PATTERN</c>. To fully remove access for a principal,
+        /// verify all the associated Principals of type <c>IAM_PATTERN</c>, and then ensure you
+        /// disassociate any <c>IAM_PATTERN</c> principals that match the principal whose access
+        /// you are removing.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2574,13 +2572,13 @@ namespace Amazon.ServiceCatalog
         /// 
         ///  
         /// <para>
-        /// When you call this API, Service Catalog calls <code>organizations:EnableAWSServiceAccess</code>
+        /// When you call this API, Service Catalog calls <c>organizations:EnableAWSServiceAccess</c>
         /// on your behalf so that your shares stay in sync with any changes in your Organizations
         /// structure.
         /// </para>
         ///  
         /// <para>
-        /// Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.
+        /// Note that a delegated administrator is not authorized to invoke <c>EnableAWSOrganizationsAccess</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -2766,7 +2764,7 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>,
+        /// This API takes either a <c>ProvisonedProductId</c> or a <c>ProvisionedProductName</c>,
         /// along with a list of one or more output keys, and responds with the key/value pairs
         /// of those outputs.
         /// </summary>
@@ -2820,8 +2818,8 @@ namespace Amazon.ServiceCatalog
         ///  
         /// <para>
         ///  The CloudFormation stack must have one of the following statuses to be imported:
-        /// <code>CREATE_COMPLETE</code>, <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>,
-        /// <code>IMPORT_COMPLETE</code>, and <code>IMPORT_ROLLBACK_COMPLETE</code>. 
+        /// <c>CREATE_COMPLETE</c>, <c>UPDATE_COMPLETE</c>, <c>UPDATE_ROLLBACK_COMPLETE</c>, <c>IMPORT_COMPLETE</c>,
+        /// and <c>IMPORT_ROLLBACK_COMPLETE</c>. 
         /// </para>
         ///  
         /// <para>
@@ -2832,19 +2830,18 @@ namespace Amazon.ServiceCatalog
         /// <para>
         ///  When you import an existing CloudFormation stack into a portfolio, Service Catalog
         /// does not apply the product's associated constraints during the import process. Service
-        /// Catalog applies the constraints after you call <code>UpdateProvisionedProduct</code>
-        /// for the provisioned product. 
+        /// Catalog applies the constraints after you call <c>UpdateProvisionedProduct</c> for
+        /// the provisioned product. 
         /// </para>
         ///  </note> 
         /// <para>
-        ///  The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code>
-        /// and <code>cloudformation:DescribeStacks</code> IAM policy permissions. 
+        ///  The user or role that performs this operation must have the <c>cloudformation:GetTemplate</c>
+        /// and <c>cloudformation:DescribeStacks</c> IAM policy permissions. 
         /// </para>
         ///  
         /// <para>
         /// You can only import one provisioned product at a time. The product's CloudFormation
-        /// stack must have the <code>IMPORT_COMPLETE</code> status before you import another.
-        /// 
+        /// stack must have the <c>IMPORT_COMPLETE</c> status before you import another. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportAsProvisionedProduct service method.</param>
@@ -2893,7 +2890,7 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Lists all imported portfolios for which account-to-account shares were accepted by
-        /// this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios
+        /// this account. By specifying the <c>PortfolioShareType</c>, you can list portfolios
         /// for which organizational shares were accepted by this account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAcceptedPortfolioShares service method.</param>
@@ -3238,8 +3235,8 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
-        /// associated with the specified portfolio.
+        /// Lists all <c>PrincipalARN</c>s and corresponding <c>PrincipalType</c>s associated
+        /// with the specified portfolio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPrincipalsForPortfolio service method.</param>
         /// <param name="cancellationToken">
@@ -3562,8 +3559,8 @@ namespace Amazon.ServiceCatalog
 
         /// <summary>
         /// Returns summary information about stack instances that are associated with the specified
-        /// <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances
-        /// that are associated with a specific Amazon Web Services account name or Region.
+        /// <c>CFN_STACKSET</c> type provisioned product. You can filter for stack instances that
+        /// are associated with a specific Amazon Web Services account name or Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStackInstancesForProvisionedProduct service method.</param>
         /// <param name="cancellationToken">
@@ -4163,29 +4160,28 @@ namespace Amazon.ServiceCatalog
 
 
         /// <summary>
-        /// Updates the specified portfolio share. You can use this API to enable or disable <code>TagOptions</code>
+        /// Updates the specified portfolio share. You can use this API to enable or disable <c>TagOptions</c>
         /// sharing or Principal sharing for an existing portfolio share. 
         /// 
         ///  
         /// <para>
-        /// The portfolio share cannot be updated if the <code>CreatePortfolioShare</code> operation
-        /// is <code>IN_PROGRESS</code>, as the share is not available to recipient entities.
-        /// In this case, you must wait for the portfolio share to be completed.
+        /// The portfolio share cannot be updated if the <c>CreatePortfolioShare</c> operation
+        /// is <c>IN_PROGRESS</c>, as the share is not available to recipient entities. In this
+        /// case, you must wait for the portfolio share to be completed.
         /// </para>
         ///  
         /// <para>
-        /// You must provide the <code>accountId</code> or organization node in the input, but
-        /// not both.
+        /// You must provide the <c>accountId</c> or organization node in the input, but not both.
         /// </para>
         ///  
         /// <para>
         /// If the portfolio is shared to both an external account and an organization node, and
-        /// both shares need to be updated, you must invoke <code>UpdatePortfolioShare</code>
-        /// separately for each share type. 
+        /// both shares need to be updated, you must invoke <c>UpdatePortfolioShare</c> separately
+        /// for each share type. 
         /// </para>
         ///  
         /// <para>
-        /// This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code>
+        /// This API cannot be used for removing the portfolio share. You must use <c>DeletePortfolioShare</c>
         /// API for that action. 
         /// </para>
         ///  <note> 
@@ -4197,9 +4193,8 @@ namespace Amazon.ServiceCatalog
         /// a principal name association for the portfolio. Although this user may not know which
         /// principal names are associated through Service Catalog, they may be able to guess
         /// the user. If this potential escalation path is a concern, then Service Catalog recommends
-        /// using <code>PrincipalType</code> as <code>IAM</code>. With this configuration, the
-        /// <code>PrincipalARN</code> must already exist in the recipient account before it can
-        /// be associated. 
+        /// using <c>PrincipalType</c> as <c>IAM</c>. With this configuration, the <c>PrincipalARN</c>
+        /// must already exist in the recipient account before it can be associated. 
         /// </para>
         ///  </note>
         /// </summary>

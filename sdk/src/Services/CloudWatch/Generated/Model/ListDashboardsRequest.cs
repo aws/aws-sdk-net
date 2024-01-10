@@ -30,16 +30,15 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDashboards operation.
-    /// Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>,
+    /// Returns a list of the dashboards for your account. If you include <c>DashboardNamePrefix</c>,
     /// only those dashboards with names starting with the prefix are listed. Otherwise, all
     /// dashboards in your account are listed. 
     /// 
     ///  
     /// <para>
-    ///  <code>ListDashboards</code> returns up to 1000 results on one page. If there are
-    /// more than 1000 dashboards, you can call <code>ListDashboards</code> again and include
-    /// the value you received for <code>NextToken</code> in the first call, to receive the
-    /// next 1000 results.
+    ///  <c>ListDashboards</c> returns up to 1000 results on one page. If there are more than
+    /// 1000 dashboards, you can call <c>ListDashboards</c> again and include the value you
+    /// received for <c>NextToken</c> in the first call, to receive the next 1000 results.
     /// </para>
     /// </summary>
     public partial class ListDashboardsRequest : AmazonCloudWatchRequest

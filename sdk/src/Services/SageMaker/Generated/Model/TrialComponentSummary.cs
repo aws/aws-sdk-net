@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// A summary of the properties of a trial component. To get all the properties, call
     /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html">DescribeTrialComponent</a>
-    /// API and provide the <code>TrialComponentName</code>.
+    /// API and provide the <c>TrialComponentName</c>.
     /// </summary>
     public partial class TrialComponentSummary
     {
@@ -86,8 +86,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the component as displayed. If <code>DisplayName</code> isn't specified,
-        /// <code>TrialComponentName</code> is displayed.
+        /// The name of the component as displayed. If <c>DisplayName</c> isn't specified, <c>TrialComponentName</c>
+        /// is displayed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]

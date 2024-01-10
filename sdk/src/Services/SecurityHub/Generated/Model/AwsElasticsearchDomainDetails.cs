@@ -284,7 +284,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VPCOptions. 
         /// <para>
-        /// Information that OpenSearch derives based on <code>VPCOptions</code> for the domain.
+        /// Information that OpenSearch derives based on <c>VPCOptions</c> for the domain.
         /// </para>
         /// </summary>
         public AwsElasticsearchDomainVPCOptions VPCOptions

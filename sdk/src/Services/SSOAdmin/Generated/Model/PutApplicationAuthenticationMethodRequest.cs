@@ -61,8 +61,7 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property AuthenticationMethod. 
         /// <para>
         /// Specifies a structure that describes the authentication method to add or update. The
-        /// structure type you provide is determined by the <code>AuthenticationMethodType</code>
-        /// parameter.
+        /// structure type you provide is determined by the <c>AuthenticationMethodType</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

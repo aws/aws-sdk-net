@@ -73,8 +73,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ARN. 
         /// <para>
-        /// The ARN (Amazon Resource Name) for the streaming distribution. For example: <code>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</code>,
-        /// where <code>123456789012</code> is your Amazon Web Services account ID.
+        /// The ARN (Amazon Resource Name) for the streaming distribution. For example: <c>arn:aws:cloudfront::123456789012:streaming-distribution/EDFDVBD632BHDS5</c>,
+        /// where <c>123456789012</c> is your Amazon Web Services account ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,7 +112,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The domain name corresponding to the distribution, for example, <code>d111111abcdef8.cloudfront.net</code>.
+        /// The domain name corresponding to the distribution, for example, <c>d111111abcdef8.cloudfront.net</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,7 +150,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the distribution, for example, <code>EDFDVBD632BHDS5</code>.
+        /// The identifier for the distribution, for example, <c>EDFDVBD632BHDS5</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -227,7 +227,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates the current status of the distribution. When the status is <code>Deployed</code>,
+        /// Indicates the current status of the distribution. When the status is <c>Deployed</c>,
         /// the distribution's information is fully propagated throughout the Amazon CloudFront
         /// system.
         /// </para>
@@ -250,15 +250,14 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// A complex type that specifies the Amazon Web Services accounts, if any, that you want
         /// to allow to create signed URLs for private content. If you want to require signed
-        /// URLs in requests for objects in the target origin that match the <code>PathPattern</code>
-        /// for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify
-        /// the applicable values for <code>Quantity</code> and <code>Items</code>.If you don't
-        /// want to require signed URLs in requests for objects that match <code>PathPattern</code>,
-        /// specify <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>.
-        /// Omit <code>Items</code>. To add, change, or remove one or more trusted signers, change
-        /// <code>Enabled</code> to <code>true</code> (if it's currently <code>false</code>),
-        /// change <code>Quantity</code> as applicable, and specify all of the trusted signers
-        /// that you want to include in the updated distribution.
+        /// URLs in requests for objects in the target origin that match the <c>PathPattern</c>
+        /// for this cache behavior, specify <c>true</c> for <c>Enabled</c>, and specify the applicable
+        /// values for <c>Quantity</c> and <c>Items</c>.If you don't want to require signed URLs
+        /// in requests for objects that match <c>PathPattern</c>, specify <c>false</c> for <c>Enabled</c>
+        /// and <c>0</c> for <c>Quantity</c>. Omit <c>Items</c>. To add, change, or remove one
+        /// or more trusted signers, change <c>Enabled</c> to <c>true</c> (if it's currently <c>false</c>),
+        /// change <c>Quantity</c> as applicable, and specify all of the trusted signers that
+        /// you want to include in the updated distribution.
         /// </para>
         ///  
         /// <para>

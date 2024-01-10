@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Information about valid modifications that you can make to your DB instance. Contains
-    /// the result of a successful call to the <code>DescribeValidDBInstanceModifications</code>
+    /// the result of a successful call to the <c>DescribeValidDBInstanceModifications</c>
     /// action.
     /// </summary>
     public partial class ValidStorageOptions

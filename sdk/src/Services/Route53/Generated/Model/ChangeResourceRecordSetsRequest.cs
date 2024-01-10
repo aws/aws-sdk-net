@@ -32,8 +32,8 @@ namespace Amazon.Route53.Model
     /// Container for the parameters to the ChangeResourceRecordSets operation.
     /// Creates, changes, or deletes a resource record set, which contains authoritative DNS
     /// information for a specified domain name or subdomain name. For example, you can use
-    /// <code>ChangeResourceRecordSets</code> to create a resource record set that routes
-    /// traffic for test.example.com to a web server that has an IP address of 192.0.2.44.
+    /// <c>ChangeResourceRecordSets</c> to create a resource record set that routes traffic
+    /// for test.example.com to a web server that has an IP address of 192.0.2.44.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// The request body must include a document with a <code>ChangeResourceRecordSetsRequest</code>
+    /// The request body must include a document with a <c>ChangeResourceRecordSetsRequest</c>
     /// element. The request body contains a list of change items, known as a change batch.
     /// Change batches are considered transactional changes. Route 53 validates the changes
     /// in the request and then either makes all or none of the changes in the change batch
@@ -59,18 +59,17 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// For example, suppose a change batch request contains two changes: it deletes the <code>CNAME</code>
+    /// For example, suppose a change batch request contains two changes: it deletes the <c>CNAME</c>
     /// resource record set for www.example.com and creates an alias resource record set for
     /// www.example.com. If validation for both records succeeds, Route 53 deletes the first
     /// resource record set and creates the second resource record set in a single operation.
-    /// If validation for either the <code>DELETE</code> or the <code>CREATE</code> action
-    /// fails, then the request is canceled, and the original <code>CNAME</code> record continues
-    /// to exist.
+    /// If validation for either the <c>DELETE</c> or the <c>CREATE</c> action fails, then
+    /// the request is canceled, and the original <c>CNAME</c> record continues to exist.
     /// </para>
     ///  <note> 
     /// <para>
     /// If you try to delete the same resource record set more than once in a single change
-    /// batch, Route 53 returns an <code>InvalidChangeBatch</code> error.
+    /// batch, Route 53 returns an <c>InvalidChangeBatch</c> error.
     /// </para>
     ///  </note> 
     /// <para>
@@ -93,20 +92,19 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// Use <code>ChangeResourceRecordsSetsRequest</code> to perform the following actions:
+    /// Use <c>ChangeResourceRecordsSetsRequest</c> to perform the following actions:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CREATE</code>: Creates a resource record set that has the specified values.
+    ///  <c>CREATE</c>: Creates a resource record set that has the specified values.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DELETE</code>: Deletes an existing resource record set that has the specified
-    /// values.
+    ///  <c>DELETE</c>: Deletes an existing resource record set that has the specified values.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UPSERT</code>: If a resource set doesn't exist, Route 53 creates it. If a resource
+    ///  <c>UPSERT</c>: If a resource set doesn't exist, Route 53 creates it. If a resource
     /// set exists Route 53 updates it with the values in the request. 
     /// </para>
     ///  </li> </ul> 
@@ -127,7 +125,7 @@ namespace Amazon.Route53.Model
     /// <para>
     /// Don't refer to the syntax in the "Parameter Syntax" section, which includes all of
     /// the elements for every kind of resource record set that you can create, delete, or
-    /// update by using <code>ChangeResourceRecordSets</code>. 
+    /// update by using <c>ChangeResourceRecordSets</c>. 
     /// </para>
     ///  
     /// <para>
@@ -135,12 +133,12 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// When you submit a <code>ChangeResourceRecordSets</code> request, Route 53 propagates
-    /// your changes to all of the Route 53 authoritative DNS servers managing the hosted
-    /// zone. While your changes are propagating, <code>GetChange</code> returns a status
-    /// of <code>PENDING</code>. When propagation is complete, <code>GetChange</code> returns
-    /// a status of <code>INSYNC</code>. Changes generally propagate to all Route 53 name
-    /// servers managing the hosted zone within 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
+    /// When you submit a <c>ChangeResourceRecordSets</c> request, Route 53 propagates your
+    /// changes to all of the Route 53 authoritative DNS servers managing the hosted zone.
+    /// While your changes are propagating, <c>GetChange</c> returns a status of <c>PENDING</c>.
+    /// When propagation is complete, <c>GetChange</c> returns a status of <c>INSYNC</c>.
+    /// Changes generally propagate to all Route 53 name servers managing the hosted zone
+    /// within 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetChange.html">GetChange</a>.
     /// </para>
     ///  
     /// <para>
@@ -148,8 +146,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about the limits on a <code>ChangeResourceRecordSets</code> request,
-    /// see <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
+    /// For information about the limits on a <c>ChangeResourceRecordSets</c> request, see
+    /// <a href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/DNSLimitations.html">Limits</a>
     /// in the <i>Amazon Route 53 Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -197,7 +195,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property ChangeBatch. 
         /// <para>
-        /// A complex type that contains an optional comment and the <code>Changes</code> element.
+        /// A complex type that contains an optional comment and the <c>Changes</c> element.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

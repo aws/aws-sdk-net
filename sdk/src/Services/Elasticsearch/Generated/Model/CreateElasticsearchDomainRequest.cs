@@ -74,8 +74,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property AdvancedOptions. 
         /// <para>
-        ///  Option to allow references to indices in an HTTP request body. Must be <code>false</code>
-        /// when configuring access to individual sub-resources. By default, the value is <code>true</code>.
+        ///  Option to allow references to indices in an HTTP request body. Must be <c>false</c>
+        /// when configuring access to individual sub-resources. By default, the value is <c>true</c>.
         /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
         /// target="_blank">Configuration Advanced Options</a> for more information.
         /// </para>
@@ -267,8 +267,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
-        /// Map of <code>LogType</code> and <code>LogPublishingOption</code>, each containing
-        /// options to publish a given type of Elasticsearch log.
+        /// Map of <c>LogType</c> and <c>LogPublishingOption</c>, each containing options to publish
+        /// a given type of Elasticsearch log.
         /// </para>
         /// </summary>
         public Dictionary<string, LogPublishingOption> LogPublishingOptions
@@ -323,7 +323,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property TagList. 
         /// <para>
-        /// A list of <code>Tag</code> added during domain creation.
+        /// A list of <c>Tag</c> added during domain creation.
         /// </para>
         /// </summary>
         public List<Tag> TagList

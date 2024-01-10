@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>DBSnapshotIdentifier</code> is already used by an existing snapshot.
+    /// <c>DBSnapshotIdentifier</c> is already used by an existing snapshot.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -62,8 +62,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Static information about a vehicle in a key-value pair. For example: <code>"engine
-        /// Type"</code> : <code>"v6"</code> 
+        /// Static information about a vehicle in a key-value pair. For example: <c>"engine Type"</c>
+        /// : <c>"v6"</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

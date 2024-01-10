@@ -82,9 +82,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ResponseCard. 
         /// <para>
-        /// A response card. Amazon Lex uses this prompt at runtime, in the <code>PostText</code>
-        /// API response. It substitutes session attributes and slot values for placeholders in
-        /// the response card. For more information, see <a>ex-resp-card</a>. 
+        /// A response card. Amazon Lex uses this prompt at runtime, in the <c>PostText</c> API
+        /// response. It substitutes session attributes and slot values for placeholders in the
+        /// response card. For more information, see <a>ex-resp-card</a>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50000)]

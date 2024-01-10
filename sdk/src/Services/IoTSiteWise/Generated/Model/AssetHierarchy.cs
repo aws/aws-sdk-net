@@ -63,7 +63,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the hierarchy. This ID is a <code>hierarchyId</code>.
+        /// The ID of the hierarchy. This ID is a <c>hierarchyId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

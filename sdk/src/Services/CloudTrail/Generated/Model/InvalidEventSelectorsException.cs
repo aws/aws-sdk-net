@@ -29,14 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when the <code>PutEventSelectors</code> operation is called
-    /// with a number of event selectors, advanced event selectors, or data resources that
-    /// is not valid. The combination of event selectors or advanced event selectors and data
-    /// resources is not valid. A trail can have up to 5 event selectors. If a trail uses
-    /// advanced event selectors, a maximum of 500 total values for all conditions in all
-    /// advanced event selectors is allowed. A trail is limited to 250 data resources. These
-    /// data resources can be distributed across event selectors, but the overall total cannot
-    /// exceed 250.
+    /// This exception is thrown when the <c>PutEventSelectors</c> operation is called with
+    /// a number of event selectors, advanced event selectors, or data resources that is not
+    /// valid. The combination of event selectors or advanced event selectors and data resources
+    /// is not valid. A trail can have up to 5 event selectors. If a trail uses advanced event
+    /// selectors, a maximum of 500 total values for all conditions in all advanced event
+    /// selectors is allowed. A trail is limited to 250 data resources. These data resources
+    /// can be distributed across event selectors, but the overall total cannot exceed 250.
     /// 
     ///  
     /// <para>
@@ -60,8 +59,8 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code>
-    /// parameter with a value of <code>read-only</code> is not valid.
+    /// Specify a valid value for a parameter. For example, specifying the <c>ReadWriteType</c>
+    /// parameter with a value of <c>read-only</c> is not valid.
     /// </para>
     ///  </li> </ul>
     /// </summary>

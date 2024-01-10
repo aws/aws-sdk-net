@@ -60,7 +60,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Id</code>s of a batch request need to be unique within a request.
+        /// The <c>Id</c>s of a batch request need to be unique within a request.
         /// </para>
         ///  
         /// <para>

@@ -31,11 +31,11 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Represents a player session. Player sessions are created either for a specific game
     /// session, or as part of a game session placement or matchmaking request. A player session
-    /// can represents a reserved player slot in a game session (when status is <code>RESERVED</code>)
-    /// or actual player activity in a game session (when status is <code>ACTIVE</code>).
-    /// A player session object, including player data, is automatically passed to a game
-    /// session when the player connects to the game session and is validated. After the game
-    /// session ends, player sessions information is retained for 30 days and then removed.
+    /// can represents a reserved player slot in a game session (when status is <c>RESERVED</c>)
+    /// or actual player activity in a game session (when status is <c>ACTIVE</c>). A player
+    /// session object, including player data, is automatically passed to a game session when
+    /// the player connects to the game session and is validated. After the game session ends,
+    /// player sessions information is retained for 30 days and then removed.
     /// 
     ///  
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// A time stamp indicating when this data object was created. Format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -89,11 +89,11 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// TLS-enabled fleets: <code>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</code>.
+        /// TLS-enabled fleets: <c>&lt;unique identifier&gt;.&lt;region identifier&gt;.amazongamelift.com</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Non-TLS-enabled fleets: <code>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</code>.
+        /// Non-TLS-enabled fleets: <c>ec2-&lt;unique identifier&gt;.compute.amazonaws.com</c>.
         /// (See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">Amazon
         /// EC2 Instance IP Addressing</a>.)
         /// </para>
@@ -314,7 +314,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property TerminationTime. 
         /// <para>
         /// A time stamp indicating when this data object was terminated. Format is a number expressed
-        /// in Unix time as milliseconds (for example <code>"1469498468.057"</code>).
+        /// in Unix time as milliseconds (for example <c>"1469498468.057"</c>).
         /// </para>
         /// </summary>
         public DateTime TerminationTime

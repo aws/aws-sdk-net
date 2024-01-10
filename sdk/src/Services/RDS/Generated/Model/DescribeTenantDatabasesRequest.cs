@@ -71,17 +71,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tenant-db-name</code> - Tenant database names. The results list only includes
-        /// information about the tenant databases that match these tenant DB names.
+        ///  <c>tenant-db-name</c> - Tenant database names. The results list only includes information
+        /// about the tenant databases that match these tenant DB names.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tenant-database-resource-id</code> - Tenant database resource identifiers.
+        ///  <c>tenant-database-resource-id</c> - Tenant database resource identifiers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dbi-resource-id</code> - DB instance resource identifiers. The results list
-        /// only includes information about the tenants contained within the DB instances identified
+        ///  <c>dbi-resource-id</c> - DB instance resource identifiers. The results list only
+        /// includes information about the tenants contained within the DB instances identified
         /// by these resource identifiers.
         /// </para>
         ///  </li> </ul>
@@ -101,9 +101,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeTenantDatabases</code>
+        /// An optional pagination token provided by a previous <c>DescribeTenantDatabases</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -122,8 +122,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
         public int MaxRecords

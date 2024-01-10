@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Information about the compliance as defined by the resource type. For example, for
-    /// a patch resource type, <code>Items</code> includes information about the PatchSeverity,
+    /// a patch resource type, <c>Items</c> includes information about the PatchSeverity,
     /// Classification, and so on.
     /// </summary>
     public partial class ComplianceItem
@@ -49,7 +49,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ComplianceType. 
         /// <para>
         /// The compliance type. For example, Association (for a State Manager association), Patch,
-        /// or Custom:<code>string</code> are all valid compliance types.
+        /// or Custom:<c>string</c> are all valid compliance types.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -143,8 +143,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource. <code>ManagedInstance</code> is currently the only supported
-        /// resource type.
+        /// The type of resource. <c>ManagedInstance</c> is currently the only supported resource
+        /// type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

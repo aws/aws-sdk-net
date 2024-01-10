@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The conditional formatting of a <code>GaugeChartVisual</code>.
+    /// The conditional formatting of a <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class GaugeChartConditionalFormatting
     {
@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ConditionalFormattingOptions. 
         /// <para>
-        /// Conditional formatting options of a <code>GaugeChartVisual</code>.
+        /// Conditional formatting options of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

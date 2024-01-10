@@ -45,23 +45,21 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EQ</code>: When you specify <code>EQ</code> for the condition, you can specify
-        /// only one value. <code>EQ</code> is supported for <code>NAMESPACE_ID</code>, <code>SERVICE_ID</code>,
-        /// <code>STATUS</code>, and <code>TYPE</code>. <code>EQ</code> is the default condition
-        /// and can be omitted.
+        ///  <c>EQ</c>: When you specify <c>EQ</c> for the condition, you can specify only one
+        /// value. <c>EQ</c> is supported for <c>NAMESPACE_ID</c>, <c>SERVICE_ID</c>, <c>STATUS</c>,
+        /// and <c>TYPE</c>. <c>EQ</c> is the default condition and can be omitted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN</code>: When you specify <code>IN</code> for the condition, you can specify
-        /// a list of one or more values. <code>IN</code> is supported for <code>STATUS</code>
-        /// and <code>TYPE</code>. An operation must match one of the specified values to be returned
-        /// in the response.
+        ///  <c>IN</c>: When you specify <c>IN</c> for the condition, you can specify a list of
+        /// one or more values. <c>IN</c> is supported for <c>STATUS</c> and <c>TYPE</c>. An operation
+        /// must match one of the specified values to be returned in the response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BETWEEN</code>: Specify a start date and an end date in Unix date/time format
-        /// and Coordinated Universal Time (UTC). The start date must be the first value. <code>BETWEEN</code>
-        /// is supported for <code>UPDATE_DATE</code>. 
+        ///  <c>BETWEEN</c>: Specify a start date and an end date in Unix date/time format and
+        /// Coordinated Universal Time (UTC). The start date must be the first value. <c>BETWEEN</c>
+        /// is supported for <c>UPDATE_DATE</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -92,8 +90,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>STATUS</b>: Gets operations based on the status of the operations: <code>SUBMITTED</code>,
-        /// <code>PENDING</code>, <code>SUCCEED</code>, or <code>FAIL</code>.
+        ///  <b>STATUS</b>: Gets operations based on the status of the operations: <c>SUBMITTED</c>,
+        /// <c>PENDING</c>, <c>SUCCEED</c>, or <c>FAIL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -122,7 +120,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// Specify values that are applicable to the value that you specify for <code>Name</code>:
+        /// Specify values that are applicable to the value that you specify for <c>Name</c>:
         /// 
         /// </para>
         ///  <ul> <li> 
@@ -135,14 +133,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>STATUS</b>: Specify one or more statuses: <code>SUBMITTED</code>, <code>PENDING</code>,
-        /// <code>SUCCEED</code>, or <code>FAIL</code>.
+        ///  <b>STATUS</b>: Specify one or more statuses: <c>SUBMITTED</c>, <c>PENDING</c>, <c>SUCCEED</c>,
+        /// or <c>FAIL</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>TYPE</b>: Specify one or more of the following types: <code>CREATE_NAMESPACE</code>,
-        /// <code>DELETE_NAMESPACE</code>, <code>UPDATE_SERVICE</code>, <code>REGISTER_INSTANCE</code>,
-        /// or <code>DEREGISTER_INSTANCE</code>.
+        ///  <b>TYPE</b>: Specify one or more of the following types: <c>CREATE_NAMESPACE</c>,
+        /// <c>DELETE_NAMESPACE</c>, <c>UPDATE_SERVICE</c>, <c>REGISTER_INSTANCE</c>, or <c>DEREGISTER_INSTANCE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

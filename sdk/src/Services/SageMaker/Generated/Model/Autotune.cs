@@ -75,7 +75,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.
+        /// Set <c>Mode</c> to <c>Enabled</c> if you want to use Autotune.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

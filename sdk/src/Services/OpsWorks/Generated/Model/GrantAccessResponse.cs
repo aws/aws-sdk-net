@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>GrantAccess</code> request.
+    /// Contains the response to a <c>GrantAccess</c> request.
     /// </summary>
     public partial class GrantAccessResponse : AmazonWebServiceResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property TemporaryCredential. 
         /// <para>
-        /// A <code>TemporaryCredential</code> object that contains the data needed to log in
-        /// to the instance by RDP clients, such as the Microsoft Remote Desktop Connection.
+        /// A <c>TemporaryCredential</c> object that contains the data needed to log in to the
+        /// instance by RDP clients, such as the Microsoft Remote Desktop Connection.
         /// </para>
         /// </summary>
         public TemporaryCredential TemporaryCredential

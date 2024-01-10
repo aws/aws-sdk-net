@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DisableProfiler. 
         /// <para>
         /// To turn off Amazon SageMaker Debugger monitoring and profiling while a training job
-        /// is in progress, set to <code>True</code>.
+        /// is in progress, set to <c>True</c>.
         /// </para>
         /// </summary>
         public bool DisableProfiler
@@ -82,10 +82,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ProfilingParameters. 
         /// <para>
         /// Configuration information for capturing framework metrics. Available key strings for
-        /// different profiling options are <code>DetailedProfilingConfig</code>, <code>PythonProfilingConfig</code>,
-        /// and <code>DataLoaderProfilingConfig</code>. The following codes are configuration
-        /// structures for the <code>ProfilingParameters</code> parameter. To learn more about
-        /// how to configure the <code>ProfilingParameters</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+        /// different profiling options are <c>DetailedProfilingConfig</c>, <c>PythonProfilingConfig</c>,
+        /// and <c>DataLoaderProfilingConfig</c>. The following codes are configuration structures
+        /// for the <c>ProfilingParameters</c> parameter. To learn more about how to configure
+        /// the <c>ProfilingParameters</c> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
         /// the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug
         /// Your Training Job</a>. 
         /// </para>

@@ -203,11 +203,10 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property StatementType. 
         /// <para>
-        /// The type of query statement that was run. <code>DDL</code> indicates DDL query statements.
-        /// <code>DML</code> indicates DML (Data Manipulation Language) query statements, such
-        /// as <code>CREATE TABLE AS SELECT</code>. <code>UTILITY</code> indicates query statements
-        /// other than DDL and DML, such as <code>SHOW CREATE TABLE</code>, or <code>DESCRIBE
-        /// TABLE</code>.
+        /// The type of query statement that was run. <c>DDL</c> indicates DDL query statements.
+        /// <c>DML</c> indicates DML (Data Manipulation Language) query statements, such as <c>CREATE
+        /// TABLE AS SELECT</c>. <c>UTILITY</c> indicates query statements other than DDL and
+        /// DML, such as <c>SHOW CREATE TABLE</c>, or <c>DESCRIBE TABLE</c>.
         /// </para>
         /// </summary>
         public StatementType StatementType

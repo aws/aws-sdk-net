@@ -62,129 +62,126 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>error</code> events:
+        ///  <c>error</c> events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>iamFleetRoleInvalid</code> - The EC2 Fleet or Spot Fleet does not have the
-        /// required permissions either to launch or terminate an instance.
+        ///  <c>iamFleetRoleInvalid</c> - The EC2 Fleet or Spot Fleet does not have the required
+        /// permissions either to launch or terminate an instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>allLaunchSpecsTemporarilyBlacklisted</code> - None of the configurations are
-        /// valid, and several attempts to launch instances have failed. For more information,
-        /// see the description of the event.
+        ///  <c>allLaunchSpecsTemporarilyBlacklisted</c> - None of the configurations are valid,
+        /// and several attempts to launch instances have failed. For more information, see the
+        /// description of the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>spotInstanceCountLimitExceeded</code> - You've reached the limit on the number
-        /// of Spot Instances that you can launch.
+        ///  <c>spotInstanceCountLimitExceeded</c> - You've reached the limit on the number of
+        /// Spot Instances that you can launch.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>spotFleetRequestConfigurationInvalid</code> - The configuration is not valid.
-        /// For more information, see the description of the event.
+        ///  <c>spotFleetRequestConfigurationInvalid</c> - The configuration is not valid. For
+        /// more information, see the description of the event.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>fleetRequestChange</code> events:
+        ///  <c>fleetRequestChange</c> events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - The EC2 Fleet or Spot Fleet request has been validated and
-        /// Amazon EC2 is attempting to maintain the target number of running instances.
+        ///  <c>active</c> - The EC2 Fleet or Spot Fleet request has been validated and Amazon
+        /// EC2 is attempting to maintain the target number of running instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code> (EC2 Fleet) / <code>cancelled</code> (Spot Fleet) - The EC2
-        /// Fleet is deleted or the Spot Fleet request is canceled and has no running instances.
-        /// The EC2 Fleet or Spot Fleet will be deleted two days after its instances are terminated.
+        ///  <c>deleted</c> (EC2 Fleet) / <c>cancelled</c> (Spot Fleet) - The EC2 Fleet is deleted
+        /// or the Spot Fleet request is canceled and has no running instances. The EC2 Fleet
+        /// or Spot Fleet will be deleted two days after its instances are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted_running</code> (EC2 Fleet) / <code>cancelled_running</code> (Spot Fleet)
-        /// - The EC2 Fleet is deleted or the Spot Fleet request is canceled and does not launch
-        /// additional instances. Its existing instances continue to run until they are interrupted
-        /// or terminated. The request remains in this state until all instances are interrupted
-        /// or terminated.
+        ///  <c>deleted_running</c> (EC2 Fleet) / <c>cancelled_running</c> (Spot Fleet) - The
+        /// EC2 Fleet is deleted or the Spot Fleet request is canceled and does not launch additional
+        /// instances. Its existing instances continue to run until they are interrupted or terminated.
+        /// The request remains in this state until all instances are interrupted or terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted_terminating</code> (EC2 Fleet) / <code>cancelled_terminating</code>
-        /// (Spot Fleet) - The EC2 Fleet is deleted or the Spot Fleet request is canceled and
-        /// its instances are terminating. The request remains in this state until all instances
-        /// are terminated.
+        ///  <c>deleted_terminating</c> (EC2 Fleet) / <c>cancelled_terminating</c> (Spot Fleet)
+        /// - The EC2 Fleet is deleted or the Spot Fleet request is canceled and its instances
+        /// are terminating. The request remains in this state until all instances are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>expired</code> - The EC2 Fleet or Spot Fleet request has expired. If the request
-        /// was created with <code>TerminateInstancesWithExpiration</code> set, a subsequent <code>terminated</code>
+        ///  <c>expired</c> - The EC2 Fleet or Spot Fleet request has expired. If the request
+        /// was created with <c>TerminateInstancesWithExpiration</c> set, a subsequent <c>terminated</c>
         /// event indicates that the instances are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modify_in_progress</code> - The EC2 Fleet or Spot Fleet request is being modified.
+        ///  <c>modify_in_progress</c> - The EC2 Fleet or Spot Fleet request is being modified.
         /// The request remains in this state until the modification is fully processed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modify_succeeded</code> - The EC2 Fleet or Spot Fleet request was modified.
+        ///  <c>modify_succeeded</c> - The EC2 Fleet or Spot Fleet request was modified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>submitted</code> - The EC2 Fleet or Spot Fleet request is being evaluated and
-        /// Amazon EC2 is preparing to launch the target number of instances.
+        ///  <c>submitted</c> - The EC2 Fleet or Spot Fleet request is being evaluated and Amazon
+        /// EC2 is preparing to launch the target number of instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>progress</code> - The EC2 Fleet or Spot Fleet request is in the process of
-        /// being fulfilled.
+        ///  <c>progress</c> - The EC2 Fleet or Spot Fleet request is in the process of being
+        /// fulfilled.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>instanceChange</code> events:
+        ///  <c>instanceChange</c> events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>launched</code> - A new instance was launched.
+        ///  <c>launched</c> - A new instance was launched.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>terminated</code> - An instance was terminated by the user.
+        ///  <c>terminated</c> - An instance was terminated by the user.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>termination_notified</code> - An instance termination notification was sent
-        /// when a Spot Instance was terminated by Amazon EC2 during scale-down, when the target
-        /// capacity of the fleet was modified down, for example, from a target capacity of 4
-        /// to a target capacity of 3.
+        ///  <c>termination_notified</c> - An instance termination notification was sent when
+        /// a Spot Instance was terminated by Amazon EC2 during scale-down, when the target capacity
+        /// of the fleet was modified down, for example, from a target capacity of 4 to a target
+        /// capacity of 3.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>Information</code> events:
+        ///  <c>Information</c> events:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>fleetProgressHalted</code> - The price in every launch specification is not
-        /// valid because it is below the Spot price (all the launch specifications have produced
-        /// <code>launchSpecUnusable</code> events). A launch specification might become valid
-        /// if the Spot price changes.
+        ///  <c>fleetProgressHalted</c> - The price in every launch specification is not valid
+        /// because it is below the Spot price (all the launch specifications have produced <c>launchSpecUnusable</c>
+        /// events). A launch specification might become valid if the Spot price changes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launchSpecTemporarilyBlacklisted</code> - The configuration is not valid and
-        /// several attempts to launch instances have failed. For more information, see the description
+        ///  <c>launchSpecTemporarilyBlacklisted</c> - The configuration is not valid and several
+        /// attempts to launch instances have failed. For more information, see the description
         /// of the event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>launchSpecUnusable</code> - The price in a launch specification is not valid
-        /// because it is below the Spot price.
+        ///  <c>launchSpecUnusable</c> - The price in a launch specification is not valid because
+        /// it is below the Spot price.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>registerWithLoadBalancersFailed</code> - An attempt to register instances with
-        /// load balancers failed. For more information, see the description of the event.
+        ///  <c>registerWithLoadBalancersFailed</c> - An attempt to register instances with load
+        /// balancers failed. For more information, see the description of the event.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -203,7 +200,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The ID of the instance. This information is available only for <code>instanceChange</code>
+        /// The ID of the instance. This information is available only for <c>instanceChange</c>
         /// events.
         /// </para>
         /// </summary>

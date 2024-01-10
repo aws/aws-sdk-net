@@ -113,8 +113,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>manual</code> option, only newly copied manual snapshots
-        /// will have the new retention period. 
+        /// If you specify the <c>manual</c> option, only newly copied manual snapshots will have
+        /// the new retention period. 
         /// </para>
         ///  
         /// <para>

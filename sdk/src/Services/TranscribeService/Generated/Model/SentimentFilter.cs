@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// Rules using <code>SentimentFilter</code> are designed to match:
+    /// Rules using <c>SentimentFilter</c> are designed to match:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -92,8 +92,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// Set to <code>TRUE</code> to flag the sentiments that you didn't include in your request.
-        /// Set to <code>FALSE</code> to flag the sentiments that you specified in your request.
+        /// Set to <c>TRUE</c> to flag the sentiments that you didn't include in your request.
+        /// Set to <c>FALSE</c> to flag the sentiments that you specified in your request.
         /// </para>
         /// </summary>
         public bool Negate

@@ -39,8 +39,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token that a subsequent <code>ListNotebookExecutions</code> can use to
-        /// determine the next set of results to retrieve.
+        /// A pagination token that a subsequent <c>ListNotebookExecutions</c> can use to determine
+        /// the next set of results to retrieve.
         /// </para>
         /// </summary>
         public string Marker

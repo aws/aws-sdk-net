@@ -63,15 +63,15 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LE</code>: Less than, or equal to
+        ///  <c>LE</c>: Less than, or equal to
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GE</code>: Greater than, or equal to
+        ///  <c>GE</c>: Greater than, or equal to
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BEGINS_WITH</code>: Begins with
+        ///  <c>BEGINS_WITH</c>: Begins with
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -87,12 +87,12 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</code> 
+        ///  <c>STATELESS_RULE_FORWARDING_ASYMMETRICALLY</c> 
         /// </para>
         ///  
         /// <para>
-        /// Cause: One or more stateless rules with the action <code>pass</code> or <code>forward</code>
-        /// are forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses
+        /// Cause: One or more stateless rules with the action <c>pass</c> or <c>forward</c> are
+        /// forwarding traffic asymmetrically. Specifically, the rule's set of source IP addresses
         /// or their associated port numbers, don't match the set of destination IP addresses
         /// or their associated port numbers.
         /// </para>
@@ -104,12 +104,12 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STATELESS_RULE_CONTAINS_TCP_FLAGS</code> 
+        ///  <c>STATELESS_RULE_CONTAINS_TCP_FLAGS</c> 
         /// </para>
         ///  
         /// <para>
-        /// Cause: At least one stateless rule with the action <code>pass</code> or<code>forward</code>
-        /// contains TCP flags that are inconsistent in the forward and return directions.
+        /// Cause: At least one stateless rule with the action <c>pass</c> or<c>forward</c> contains
+        /// TCP flags that are inconsistent in the forward and return directions.
         /// </para>
         ///  
         /// <para>
@@ -123,8 +123,8 @@ namespace Amazon.NetworkFirewall.Model
         ///  </li> <li> 
         /// <para>
         /// If you need to inspect TCP flags, check that the rules correctly account for changes
-        /// in TCP flags throughout the TCP connection cycle, for example <code>SYN</code> and
-        /// <code>ACK</code> flags used in a 3-way TCP handshake.
+        /// in TCP flags throughout the TCP connection cycle, for example <c>SYN</c> and <c>ACK</c>
+        /// flags used in a 3-way TCP handshake.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

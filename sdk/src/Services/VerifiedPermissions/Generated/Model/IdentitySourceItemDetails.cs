@@ -74,7 +74,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</code>
+        ///  <c>https://cognito-idp.<i>&lt;region&gt;</i>.amazonaws.com/<i>&lt;user-pool-id&gt;</i>/.well-known/openid-configuration</c>
         /// 
         /// </para>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// At this time, the only valid value is <code>cognito</code>.
+        /// At this time, the only valid value is <c>cognito</c>.
         /// </para>
         /// </summary>
         public OpenIdIssuer OpenIdIssuer

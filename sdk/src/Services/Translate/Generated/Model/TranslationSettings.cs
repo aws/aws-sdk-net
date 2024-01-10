@@ -34,7 +34,7 @@ namespace Amazon.Translate.Model
     ///  <ul> <li> 
     /// <para>
     /// Brevity: reduces the length of the translation output for most translations. Available
-    /// for <code>TranslateText</code> only.
+    /// for <c>TranslateText</c> only.
     /// </para>
     ///  </li> <li> 
     /// <para>

@@ -69,11 +69,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COUNT</code>: Aggregate by the total number of values, including duplicates.
+        ///  <c>COUNT</c>: Aggregate by the total number of values, including duplicates.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.
+        ///  <c>DISTINCT_COUNT</c>: Aggregate by the total number of distinct values.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -96,19 +96,19 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COUNT</code>: Aggregate by the total number of values, including duplicates.
+        ///  <c>COUNT</c>: Aggregate by the total number of values, including duplicates.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct values.
+        ///  <c>DISTINCT_COUNT</c>: Aggregate by the total number of distinct values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MIN</code>: Select the smallest date value.
+        ///  <c>MIN</c>: Select the smallest date value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MAX</code>: Select the largest date value.
+        ///  <c>MAX</c>: Select the largest date value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

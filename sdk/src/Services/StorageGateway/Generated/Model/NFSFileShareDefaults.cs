@@ -45,9 +45,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property DirectoryMode. 
         /// <para>
-        /// The Unix directory mode in the form "nnnn". For example, <code>0666</code> represents
-        /// the default access mode for all directories inside the file share. The default value
-        /// is <code>0777</code>.
+        /// The Unix directory mode in the form "nnnn". For example, <c>0666</c> represents the
+        /// default access mode for all directories inside the file share. The default value is
+        /// <c>0777</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -66,8 +66,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileMode. 
         /// <para>
-        /// The Unix file mode in the form "nnnn". For example, <code>0666</code> represents the
-        /// default file mode inside the file share. The default value is <code>0666</code>.
+        /// The Unix file mode in the form "nnnn". For example, <c>0666</c> represents the default
+        /// file mode inside the file share. The default value is <c>0666</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -87,7 +87,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GroupId. 
         /// <para>
         /// The default group ID for the file share (unless the files have another group ID specified).
-        /// The default value is <code>nfsnobody</code>.
+        /// The default value is <c>nfsnobody</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967294)]
@@ -107,7 +107,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property OwnerId. 
         /// <para>
         /// The default owner ID for files in the file share (unless the files have another owner
-        /// ID specified). The default value is <code>nfsnobody</code>.
+        /// ID specified). The default value is <c>nfsnobody</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967294)]

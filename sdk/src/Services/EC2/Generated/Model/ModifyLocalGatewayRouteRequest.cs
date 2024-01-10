@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DestinationPrefixListId. 
         /// <para>
-        ///  The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>.
-        /// You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-        /// in the same request. 
+        ///  The ID of the prefix list. Use a prefix list in place of <c>DestinationCidrBlock</c>.
+        /// You cannot use <c>DestinationPrefixListId</c> and <c>DestinationCidrBlock</c> in the
+        /// same request. 
         /// </para>
         /// </summary>
         public string DestinationPrefixListId

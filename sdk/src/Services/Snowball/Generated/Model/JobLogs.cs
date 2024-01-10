@@ -31,11 +31,10 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Contains job logs. Whenever a Snow device is used to import data into or export data
     /// out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs
-    /// are returned as a part of the response syntax of the <code>DescribeJob</code> action
-    /// in the <code>JobMetadata</code> data type. The job logs can be accessed for up to
-    /// 60 minutes after this request has been made. To access any of the job logs after 60
-    /// minutes have passed, you'll have to make another call to the <code>DescribeJob</code>
-    /// action.
+    /// are returned as a part of the response syntax of the <c>DescribeJob</c> action in
+    /// the <c>JobMetadata</c> data type. The job logs can be accessed for up to 60 minutes
+    /// after this request has been made. To access any of the job logs after 60 minutes have
+    /// passed, you'll have to make another call to the <c>DescribeJob</c> action.
     /// 
     ///  
     /// <para>

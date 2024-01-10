@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SubscribedWorkteam. 
         /// <para>
-        /// A <code>Workteam</code> instance that contains information about the work team.
+        /// A <c>Workteam</c> instance that contains information about the work team.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

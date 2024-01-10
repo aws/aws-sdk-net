@@ -54,11 +54,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PAGINATED</code>: Creates a sheet for a paginated report.
+        ///  <c>PAGINATED</c>: Creates a sheet for a paginated report.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INTERACTIVE</code>: Creates a sheet for an interactive dashboard.
+        ///  <c>INTERACTIVE</c>: Creates a sheet for an interactive dashboard.
         /// </para>
         ///  </li> </ul>
         /// </summary>

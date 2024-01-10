@@ -40,21 +40,20 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:CreateAccessGrant</code> permission to use this operation.
-    /// 
+    /// You must have the <c>s3:CreateAccessGrant</c> permission to use this operation. 
     /// </para>
     ///  </dd> <dt>Additional Permissions</dt> <dd> 
     /// <para>
-    /// For any directory identity - <code>sso:DescribeInstance</code> and <code>sso:DescribeApplication</code>
+    /// For any directory identity - <c>sso:DescribeInstance</c> and <c>sso:DescribeApplication</c>
     /// 
     /// </para>
     ///  
     /// <para>
-    /// For directory users - <code>identitystore:DescribeUser</code> 
+    /// For directory users - <c>identitystore:DescribeUser</c> 
     /// </para>
     ///  
     /// <para>
-    /// For directory groups - <code>identitystore:DescribeGroup</code> 
+    /// For directory groups - <c>identitystore:DescribeGroup</c> 
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -73,9 +72,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property AccessGrantsLocationConfiguration. 
         /// <para>
         /// The configuration options of the grant location. The grant location is the S3 path
-        /// to the data to which you are granting access. It contains the <code>S3SubPrefix</code>
-        /// field. The grant scope is the result of appending the subprefix to the location scope
-        /// of the registered location.
+        /// to the data to which you are granting access. It contains the <c>S3SubPrefix</c> field.
+        /// The grant scope is the result of appending the subprefix to the location scope of
+        /// the registered location.
         /// </para>
         /// </summary>
         public AccessGrantsLocationConfiguration AccessGrantsLocationConfiguration
@@ -94,15 +93,15 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property AccessGrantsLocationId. 
         /// <para>
         /// The ID of the registered location to which you are granting access. S3 Access Grants
-        /// assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code>
-        /// to the default location <code>s3://</code> and assigns an auto-generated ID to other
-        /// locations that you register. 
+        /// assigns this ID when you register the location. S3 Access Grants assigns the ID <c>default</c>
+        /// to the default location <c>s3://</c> and assigns an auto-generated ID to other locations
+        /// that you register. 
         /// </para>
         ///  
         /// <para>
-        /// If you are passing the <code>default</code> location, you cannot create an access
-        /// grant for the entire default location. You must also specify a bucket or a bucket
-        /// and prefix in the <code>Subprefix</code> field. 
+        /// If you are passing the <c>default</c> location, you cannot create an access grant
+        /// for the entire default location. You must also specify a bucket or a bucket and prefix
+        /// in the <c>Subprefix</c> field. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -189,15 +188,15 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READ</code> – Grant read-only access to the S3 data.
+        ///  <c>READ</c> – Grant read-only access to the S3 data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WRITE</code> – Grant write-only access to the S3 data.
+        ///  <c>WRITE</c> – Grant write-only access to the S3 data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>READWRITE</code> – Grant both read and write access to the S3 data.
+        ///  <c>READWRITE</c> – Grant both read and write access to the S3 data.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -217,9 +216,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property S3PrefixType. 
         /// <para>
-        /// The type of <code>S3SubPrefix</code>. The only possible value is <code>Object</code>.
-        /// Pass this value if the access grant scope is an object. Do not pass this value if
-        /// the access grant scope is a bucket or a bucket and a prefix. 
+        /// The type of <c>S3SubPrefix</c>. The only possible value is <c>Object</c>. Pass this
+        /// value if the access grant scope is an object. Do not pass this value if the access
+        /// grant scope is a bucket or a bucket and a prefix. 
         /// </para>
         /// </summary>
         public S3PrefixType S3PrefixType

@@ -44,9 +44,9 @@ namespace Amazon.WAF.Model
     ///  </note> 
     /// <para>
     /// Returns an array of IP addresses currently being blocked by the <a>RateBasedRule</a>
-    /// that is specified by the <code>RuleId</code>. The maximum number of managed keys that
-    /// will be blocked is 10,000. If more than 10,000 addresses exceed the rate limit, the
-    /// 10,000 addresses with the highest rates will be blocked.
+    /// that is specified by the <c>RuleId</c>. The maximum number of managed keys that will
+    /// be blocked is 10,000. If more than 10,000 addresses exceed the rate limit, the 10,000
+    /// addresses with the highest rates will be blocked.
     /// </para>
     /// </summary>
     public partial class GetRateBasedRuleManagedKeysRequest : AmazonWAFRequest
@@ -76,9 +76,9 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        /// The <code>RuleId</code> of the <a>RateBasedRule</a> for which you want to get a list
-        /// of <code>ManagedKeys</code>. <code>RuleId</code> is returned by <a>CreateRateBasedRule</a>
-        /// and by <a>ListRateBasedRules</a>.
+        /// The <c>RuleId</c> of the <a>RateBasedRule</a> for which you want to get a list of
+        /// <c>ManagedKeys</c>. <c>RuleId</c> is returned by <a>CreateRateBasedRule</a> and by
+        /// <a>ListRateBasedRules</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

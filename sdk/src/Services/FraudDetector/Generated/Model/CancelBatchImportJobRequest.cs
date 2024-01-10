@@ -43,8 +43,8 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon Fraud Detector will throw an error if the batch import job is in <code>FAILED</code>,
-        /// <code>CANCELED</code>, or <code>COMPLETED</code> state.
+        /// Amazon Fraud Detector will throw an error if the batch import job is in <c>FAILED</c>,
+        /// <c>CANCELED</c>, or <c>COMPLETED</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

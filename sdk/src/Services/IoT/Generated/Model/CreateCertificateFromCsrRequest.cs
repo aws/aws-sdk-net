@@ -51,10 +51,10 @@ namespace Amazon.IoT.Model
     ///  </note> 
     /// <para>
     /// You can create multiple certificates in a batch by creating a directory, copying multiple
-    /// <code>.csr</code> files into that directory, and then specifying that directory on
-    /// the command line. The following commands show how to create a batch of certificates
-    /// given a batch of CSRs. In the following commands, we assume that a set of CSRs are
-    /// located inside of the directory my-csr-directory:
+    /// <c>.csr</c> files into that directory, and then specifying that directory on the command
+    /// line. The following commands show how to create a batch of certificates given a batch
+    /// of CSRs. In the following commands, we assume that a set of CSRs are located inside
+    /// of the directory my-csr-directory:
     /// </para>
     ///  
     /// <para>
@@ -62,24 +62,24 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
-    /// file://my-csr-directory/{}</code> 
+    ///  <c>$ ls my-csr-directory/ | xargs -I {} aws iot create-certificate-from-csr --certificate-signing-request
+    /// file://my-csr-directory/{}</c> 
     /// </para>
     ///  
     /// <para>
     /// This command lists all of the CSRs in my-csr-directory and pipes each CSR file name
-    /// to the <code>aws iot create-certificate-from-csr</code> Amazon Web Services CLI command
+    /// to the <c>aws iot create-certificate-from-csr</c> Amazon Web Services CLI command
     /// to create a certificate for the corresponding CSR. 
     /// </para>
     ///  
     /// <para>
-    /// You can also run the <code>aws iot create-certificate-from-csr</code> part of the
-    /// command in parallel to speed up the certificate creation process:
+    /// You can also run the <c>aws iot create-certificate-from-csr</c> part of the command
+    /// in parallel to speed up the certificate creation process:
     /// </para>
     ///  
     /// <para>
-    ///  <code>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr
-    /// --certificate-signing-request file://my-csr-directory/{} </code> 
+    ///  <c>$ ls my-csr-directory/ | xargs -P 10 -I {} aws iot create-certificate-from-csr
+    /// --certificate-signing-request file://my-csr-directory/{} </c> 
     /// </para>
     ///  
     /// <para>
@@ -88,8 +88,8 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
-    /// file://my-csr-directory/$_} </code> 
+    ///  <c>&gt; ls -Name my-csr-directory | %{aws iot create-certificate-from-csr --certificate-signing-request
+    /// file://my-csr-directory/$_} </c> 
     /// </para>
     ///  
     /// <para>
@@ -98,8 +98,8 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
-    /// --certificate-signing-request file://@path" </code> 
+    ///  <c>&gt; forfiles /p my-csr-directory /c "cmd /c aws iot create-certificate-from-csr
+    /// --certificate-signing-request file://@path" </c> 
     /// </para>
     /// </summary>
     public partial class CreateCertificateFromCsrRequest : AmazonIoTRequest

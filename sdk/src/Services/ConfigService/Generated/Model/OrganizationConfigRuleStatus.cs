@@ -124,7 +124,7 @@ namespace Amazon.ConfigService.Model
         /// Additionally, Config rule status is updated when one or more member accounts join
         /// or leave an organization. Config rule status is deleted when the management account
         /// deletes OrganizationConfigRule in all the member accounts and disables service access
-        /// for <code>config-multiaccountsetup.amazonaws.com</code>.
+        /// for <c>config-multiaccountsetup.amazonaws.com</c>.
         /// </para>
         ///  
         /// <para>
@@ -132,45 +132,45 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_SUCCESSFUL</code> when an organization Config rule has been successfully
-        /// created in all the member accounts. 
+        ///  <c>CREATE_SUCCESSFUL</c> when an organization Config rule has been successfully created
+        /// in all the member accounts. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> when an organization Config rule creation is in progress.
+        ///  <c>CREATE_IN_PROGRESS</c> when an organization Config rule creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> when an organization Config rule creation failed in one
-        /// or more member accounts within that organization.
+        ///  <c>CREATE_FAILED</c> when an organization Config rule creation failed in one or more
+        /// member accounts within that organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_FAILED</code> when an organization Config rule deletion failed in one
-        /// or more member accounts within that organization.
+        ///  <c>DELETE_FAILED</c> when an organization Config rule deletion failed in one or more
+        /// member accounts within that organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_IN_PROGRESS</code> when an organization Config rule deletion is in progress.
+        ///  <c>DELETE_IN_PROGRESS</c> when an organization Config rule deletion is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_SUCCESSFUL</code> when an organization Config rule has been successfully
-        /// deleted from all the member accounts.
+        ///  <c>DELETE_SUCCESSFUL</c> when an organization Config rule has been successfully deleted
+        /// from all the member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_SUCCESSFUL</code> when an organization Config rule has been successfully
-        /// updated in all the member accounts.
+        ///  <c>UPDATE_SUCCESSFUL</c> when an organization Config rule has been successfully updated
+        /// in all the member accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_IN_PROGRESS</code> when an organization Config rule update is in progress.
+        ///  <c>UPDATE_IN_PROGRESS</c> when an organization Config rule update is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_FAILED</code> when an organization Config rule update failed in one
-        /// or more member accounts within that organization.
+        ///  <c>UPDATE_FAILED</c> when an organization Config rule update failed in one or more
+        /// member accounts within that organization.
         /// </para>
         ///  </li> </ul>
         /// </summary>

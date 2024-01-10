@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code>
+    /// Specifies a transform that merges a <c>DynamicFrame</c> with a staging <c>DynamicFrame</c>
     /// based on the specified primary keys to identify records. Duplicate records (records
     /// with the same primary keys) are not de-duplicated.
     /// </summary>
@@ -101,7 +101,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source <code>DynamicFrame</code> that will be merged with a staging <code>DynamicFrame</code>.
+        /// The source <c>DynamicFrame</c> that will be merged with a staging <c>DynamicFrame</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

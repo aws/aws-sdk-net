@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>RegisterInstanceResult</code> request.
+    /// Contains the response to a <c>RegisterInstanceResult</c> request.
     /// </summary>
     public partial class RegisterInstanceResponse : AmazonWebServiceResponse
     {

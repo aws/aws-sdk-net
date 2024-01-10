@@ -30,7 +30,7 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// The result of a Lambda validation function that verifies a lifecycle event is invalid.
-    /// It should return <code>Succeeded</code> or <code>Failed</code>.
+    /// It should return <c>Succeeded</c> or <c>Failed</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

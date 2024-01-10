@@ -47,12 +47,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>block-new-sharing</code> - Any attempt to publicly share your AMIs in the specified
+        ///  <c>block-new-sharing</c> - Any attempt to publicly share your AMIs in the specified
         /// Region is blocked.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unblocked</code> - Your AMIs in the specified Region can be publicly shared.
+        ///  <c>unblocked</c> - Your AMIs in the specified Region can be publicly shared.
         /// </para>
         ///  </li> </ul>
         /// </summary>

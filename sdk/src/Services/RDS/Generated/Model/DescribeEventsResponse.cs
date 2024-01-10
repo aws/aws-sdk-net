@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <code>DescribeEvents</code>
-    /// action.
+    /// Contains the result of a successful invocation of the <c>DescribeEvents</c> action.
     /// </summary>
     public partial class DescribeEventsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// A list of <code>Event</code> instances.
+        /// A list of <c>Event</c> instances.
         /// </para>
         /// </summary>
         public List<Event> Events
@@ -60,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous Events request. If this parameter
         /// is specified, the response includes only records beyond the marker, up to the value
-        /// specified by <code>MaxRecords</code>.
+        /// specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker

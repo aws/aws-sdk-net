@@ -38,8 +38,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for the person detection job. Use <code>JobId</code> to identify the
-        /// job in a subsequent call to <code>GetPersonTracking</code>.
+        /// The identifier for the person detection job. Use <c>JobId</c> to identify the job
+        /// in a subsequent call to <c>GetPersonTracking</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -40,12 +40,12 @@ namespace Amazon.Route53Resolver.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// It can optionally start with <code>*</code> (asterisk).
+    /// It can optionally start with <c>*</c> (asterisk).
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// With the exception of the optional starting asterisk, it must only contain the following
-    /// characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).
+    /// characters: <c>A-Z</c>, <c>a-z</c>, <c>0-9</c>, <c>-</c> (hyphen).
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -107,8 +107,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property Operation. 
         /// <para>
         /// What you want DNS Firewall to do with the domains that are listed in the file. This
-        /// must be set to <code>REPLACE</code>, which updates the domain list to exactly match
-        /// the list in the file. 
+        /// must be set to <c>REPLACE</c>, which updates the domain list to exactly match the
+        /// list in the file. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

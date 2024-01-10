@@ -80,8 +80,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The Amazon S3 bucket for the destination image. The destination bucket must exist
         /// and have an access control list (ACL) attached that specifies the Region-specific
-        /// canonical account ID for the <code>Grantee</code>. For more information about the
-        /// ACL to your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
+        /// canonical account ID for the <c>Grantee</c>. For more information about the ACL to
+        /// your S3 bucket, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport.html#vmexport-prerequisites">Prerequisites</a>
         /// in the VM Import/Export User Guide.
         /// </para>
         /// </summary>

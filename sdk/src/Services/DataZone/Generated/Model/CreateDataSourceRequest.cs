@@ -90,8 +90,8 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Specifies the configuration of the data source. It can be set to either <code>glueRunConfiguration</code>
-        /// or <code>redshiftRunConfiguration</code>.
+        /// Specifies the configuration of the data source. It can be set to either <c>glueRunConfiguration</c>
+        /// or <c>redshiftRunConfiguration</c>.
         /// </para>
         /// </summary>
         public DataSourceConfigurationInput Configuration

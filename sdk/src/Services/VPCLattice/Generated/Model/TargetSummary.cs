@@ -41,10 +41,10 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target. If the target type of the target group is <code>INSTANCE</code>,
-        /// this is an instance ID. If the target type is <code>IP</code> , this is an IP address.
-        /// If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function.
-        /// If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.
+        /// The ID of the target. If the target type of the target group is <c>INSTANCE</c>, this
+        /// is an instance ID. If the target type is <c>IP</c> , this is an IP address. If the
+        /// target type is <c>LAMBDA</c>, this is the ARN of the Lambda function. If the target
+        /// type is <c>ALB</c>, this is the ARN of the Application Load Balancer.
         /// </para>
         /// </summary>
         public string Id
@@ -103,29 +103,29 @@ namespace Amazon.VPCLattice.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Draining</code>: The target is being deregistered. No new connections will
-        /// be sent to this target while current connections are being drained. Default draining
-        /// time is 5 minutes.
+        ///  <c>Draining</c>: The target is being deregistered. No new connections will be sent
+        /// to this target while current connections are being drained. Default draining time
+        /// is 5 minutes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unavailable</code>: Health checks are unavailable for the target group.
+        ///  <c>Unavailable</c>: Health checks are unavailable for the target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Healthy</code>: The target is healthy. 
+        ///  <c>Healthy</c>: The target is healthy. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unhealthy</code>: The target is unhealthy.
+        ///  <c>Unhealthy</c>: The target is unhealthy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Initial</code>: Initial health checks on the target are being performed.
+        ///  <c>Initial</c>: Initial health checks on the target are being performed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unused</code>: Target group is not used in a service.
+        ///  <c>Unused</c>: Target group is not used in a service.
         /// </para>
         ///  </li> </ul>
         /// </summary>

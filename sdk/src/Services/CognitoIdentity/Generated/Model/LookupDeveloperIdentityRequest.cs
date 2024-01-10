@@ -30,23 +30,22 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the LookupDeveloperIdentity operation.
-    /// Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code>
-    /// or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code>
-    /// for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code>
+    /// Retrieves the <c>IdentityID</c> associated with a <c>DeveloperUserIdentifier</c> or
+    /// the list of <c>DeveloperUserIdentifier</c> values associated with an <c>IdentityId</c>
+    /// for an existing identity. Either <c>IdentityID</c> or <c>DeveloperUserIdentifier</c>
     /// must not be null. If you supply only one of these values, the other value will be
     /// searched in the database and returned as a part of the response. If you supply both,
-    /// <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>.
-    /// If the values are verified against the database, the response returns both values
-    /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
-    /// is thrown.
+    /// <c>DeveloperUserIdentifier</c> will be matched against <c>IdentityID</c>. If the values
+    /// are verified against the database, the response returns both values and is the same
+    /// as the request. Otherwise a <c>ResourceConflictException</c> is thrown.
     /// 
     ///  
     /// <para>
-    ///  <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane
-    /// operations: for example, to enable customer service to locate an identity ID by username.
-    /// If you are using it for higher-volume operations such as user authentication, your
-    /// requests are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is
-    /// a better option for higher-volume operations for user authentication.
+    ///  <c>LookupDeveloperIdentity</c> is intended for low-throughput control plane operations:
+    /// for example, to enable customer service to locate an identity ID by username. If you
+    /// are using it for higher-volume operations such as user authentication, your requests
+    /// are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is a better
+    /// option for higher-volume operations for user authentication.
     /// </para>
     ///  
     /// <para>
@@ -142,12 +141,12 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token. The first call you make will have <code>NextToken</code> set to
-        /// null. After that the service will return <code>NextToken</code> values as needed.
-        /// For example, let's say you make a request with <code>MaxResults</code> set to 10,
-        /// and there are 20 matches in the database. The service will return a pagination token
-        /// as a part of the response. This token can be used to call the API again and get results
-        /// starting from the 11th match.
+        /// A pagination token. The first call you make will have <c>NextToken</c> set to null.
+        /// After that the service will return <c>NextToken</c> values as needed. For example,
+        /// let's say you make a request with <c>MaxResults</c> set to 10, and there are 20 matches
+        /// in the database. The service will return a pagination token as a part of the response.
+        /// This token can be used to call the API again and get results starting from the 11th
+        /// match.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

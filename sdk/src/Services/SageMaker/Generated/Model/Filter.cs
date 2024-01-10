@@ -36,8 +36,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// If you specify a <code>Value</code>, but not an <code>Operator</code>, SageMaker uses
-    /// the equals operator.
+    /// If you specify a <c>Value</c>, but not an <c>Operator</c>, SageMaker uses the equals
+    /// operator.
     /// </para>
     ///  
     /// <para>
@@ -45,62 +45,62 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <dl> <dt>Metrics</dt> <dd> 
     /// <para>
-    /// To define a metric filter, enter a value using the form <code>"Metrics.&lt;name&gt;"</code>,
-    /// where <code>&lt;name&gt;</code> is a metric name. For example, the following filter
-    /// searches for training jobs with an <code>"accuracy"</code> metric greater than <code>"0.9"</code>:
+    /// To define a metric filter, enter a value using the form <c>"Metrics.&lt;name&gt;"</c>,
+    /// where <c>&lt;name&gt;</c> is a metric name. For example, the following filter searches
+    /// for training jobs with an <c>"accuracy"</c> metric greater than <c>"0.9"</c>:
     /// </para>
     ///  
     /// <para>
-    ///  <code>{</code> 
+    ///  <c>{</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"Name": "Metrics.accuracy",</code> 
+    ///  <c>"Name": "Metrics.accuracy",</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"Operator": "GreaterThan",</code> 
+    ///  <c>"Operator": "GreaterThan",</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"Value": "0.9"</code> 
+    ///  <c>"Value": "0.9"</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>}</code> 
+    ///  <c>}</c> 
     /// </para>
     ///  </dd> <dt>HyperParameters</dt> <dd> 
     /// <para>
-    /// To define a hyperparameter filter, enter a value with the form <code>"HyperParameters.&lt;name&gt;"</code>.
+    /// To define a hyperparameter filter, enter a value with the form <c>"HyperParameters.&lt;name&gt;"</c>.
     /// Decimal hyperparameter values are treated as a decimal in a comparison if the specified
-    /// <code>Value</code> is also a decimal value. If the specified <code>Value</code> is
-    /// an integer, the decimal hyperparameter values are treated as integers. For example,
-    /// the following filter is satisfied by training jobs with a <code>"learning_rate"</code>
-    /// hyperparameter that is less than <code>"0.5"</code>:
+    /// <c>Value</c> is also a decimal value. If the specified <c>Value</c> is an integer,
+    /// the decimal hyperparameter values are treated as integers. For example, the following
+    /// filter is satisfied by training jobs with a <c>"learning_rate"</c> hyperparameter
+    /// that is less than <c>"0.5"</c>:
     /// </para>
     ///  
     /// <para>
-    ///  <code> {</code> 
+    ///  <c> {</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code> "Name": "HyperParameters.learning_rate",</code> 
+    ///  <c> "Name": "HyperParameters.learning_rate",</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code> "Operator": "LessThan",</code> 
+    ///  <c> "Operator": "LessThan",</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code> "Value": "0.5"</code> 
+    ///  <c> "Value": "0.5"</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code> }</code> 
+    ///  <c> }</c> 
     /// </para>
     ///  </dd> <dt>Tags</dt> <dd> 
     /// <para>
-    /// To define a tag filter, enter a value with the form <code>Tags.&lt;key&gt;</code>.
+    /// To define a tag filter, enter a value with the form <c>Tags.&lt;key&gt;</c>.
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A resource property name. For example, <code>TrainingJobName</code>. For valid property
+        /// A resource property name. For example, <c>TrainingJobName</c>. For valid property
         /// names, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>.
         /// You must specify a valid property for the resource.
         /// </para>
@@ -139,105 +139,103 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <dl> <dt>Equals</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> equals <code>Value</code>.
+        /// The value of <c>Name</c> equals <c>Value</c>.
         /// </para>
         ///  </dd> <dt>NotEquals</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> doesn't equal <code>Value</code>.
+        /// The value of <c>Name</c> doesn't equal <c>Value</c>.
         /// </para>
         ///  </dd> <dt>Exists</dt> <dd> 
         /// <para>
-        /// The <code>Name</code> property exists.
+        /// The <c>Name</c> property exists.
         /// </para>
         ///  </dd> <dt>NotExists</dt> <dd> 
         /// <para>
-        /// The <code>Name</code> property does not exist.
+        /// The <c>Name</c> property does not exist.
         /// </para>
         ///  </dd> <dt>GreaterThan</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> is greater than <code>Value</code>. Not supported for
-        /// text properties.
+        /// The value of <c>Name</c> is greater than <c>Value</c>. Not supported for text properties.
         /// </para>
         ///  </dd> <dt>GreaterThanOrEqualTo</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> is greater than or equal to <code>Value</code>. Not
-        /// supported for text properties.
+        /// The value of <c>Name</c> is greater than or equal to <c>Value</c>. Not supported for
+        /// text properties.
         /// </para>
         ///  </dd> <dt>LessThan</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> is less than <code>Value</code>. Not supported for
-        /// text properties.
+        /// The value of <c>Name</c> is less than <c>Value</c>. Not supported for text properties.
         /// </para>
         ///  </dd> <dt>LessThanOrEqualTo</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported
-        /// for text properties.
+        /// The value of <c>Name</c> is less than or equal to <c>Value</c>. Not supported for
+        /// text properties.
         /// </para>
         ///  </dd> <dt>In</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>.
-        /// Only supported for text properties.
+        /// The value of <c>Name</c> is one of the comma delimited strings in <c>Value</c>. Only
+        /// supported for text properties.
         /// </para>
         ///  </dd> <dt>Contains</dt> <dd> 
         /// <para>
-        /// The value of <code>Name</code> contains the string <code>Value</code>. Only supported
-        /// for text properties.
+        /// The value of <c>Name</c> contains the string <c>Value</c>. Only supported for text
+        /// properties.
         /// </para>
         ///  
         /// <para>
-        /// A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple
-        /// times when the value of <code>Name</code> is one of the following:
+        /// A <c>SearchExpression</c> can include the <c>Contains</c> operator multiple times
+        /// when the value of <c>Name</c> is one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Experiment.DisplayName</code> 
+        ///  <c>Experiment.DisplayName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Experiment.ExperimentName</code> 
+        ///  <c>Experiment.ExperimentName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Experiment.Tags</code> 
+        ///  <c>Experiment.Tags</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Trial.DisplayName</code> 
+        ///  <c>Trial.DisplayName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Trial.TrialName</code> 
+        ///  <c>Trial.TrialName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Trial.Tags</code> 
+        ///  <c>Trial.Tags</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TrialComponent.DisplayName</code> 
+        ///  <c>TrialComponent.DisplayName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TrialComponent.TrialComponentName</code> 
+        ///  <c>TrialComponent.TrialComponentName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TrialComponent.Tags</code> 
+        ///  <c>TrialComponent.Tags</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TrialComponent.InputArtifacts</code> 
+        ///  <c>TrialComponent.InputArtifacts</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TrialComponent.OutputArtifacts</code> 
+        ///  <c>TrialComponent.OutputArtifacts</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A <code>SearchExpression</code> can include only one <code>Contains</code> operator
-        /// for all other values of <code>Name</code>. In these cases, if you include multiple
-        /// <code>Contains</code> operators in the <code>SearchExpression</code>, the result is
-        /// the following error message: "<code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
+        /// A <c>SearchExpression</c> can include only one <c>Contains</c> operator for all other
+        /// values of <c>Name</c>. In these cases, if you include multiple <c>Contains</c> operators
+        /// in the <c>SearchExpression</c>, the result is the following error message: "<c>'CONTAINS'
+        /// operator usage limit of 1 exceeded.</c>"
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -256,10 +254,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A value used with <code>Name</code> and <code>Operator</code> to determine which resources
-        /// satisfy the filter's condition. For numerical properties, <code>Value</code> must
-        /// be an integer or floating-point decimal. For timestamp properties, <code>Value</code>
-        /// must be an ISO 8601 date-time string of the following format: <code>YYYY-mm-dd'T'HH:MM:SS</code>.
+        /// A value used with <c>Name</c> and <c>Operator</c> to determine which resources satisfy
+        /// the filter's condition. For numerical properties, <c>Value</c> must be an integer
+        /// or floating-point decimal. For timestamp properties, <c>Value</c> must be an ISO 8601
+        /// date-time string of the following format: <c>YYYY-mm-dd'T'HH:MM:SS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -41,9 +41,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Details. 
         /// <para>
-        /// An <code>S3RepositoryDetails</code> object that specifies the name of an S3 bucket
-        /// and a <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes
-        /// the S3 object keys for a source code .zip file and for a build artifacts .zip file.
+        /// An <c>S3RepositoryDetails</c> object that specifies the name of an S3 bucket and a
+        /// <c>CodeArtifacts</c> object. The <c>CodeArtifacts</c> object includes the S3 object
+        /// keys for a source code .zip file and for a build artifacts .zip file.
         /// </para>
         /// </summary>
         public S3RepositoryDetails Details
@@ -61,7 +61,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the repository when the <code>ProviderType</code> is <code>S3Bucket</code>.
+        /// The name of the repository when the <c>ProviderType</c> is <c>S3Bucket</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

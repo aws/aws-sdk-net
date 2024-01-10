@@ -59,7 +59,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of information added to a review request. Currently, only the value <code>Comment</code>
+        /// The type of information added to a review request. Currently, only the value <c>Comment</c>
         /// is supported.
         /// </para>
         /// </summary>

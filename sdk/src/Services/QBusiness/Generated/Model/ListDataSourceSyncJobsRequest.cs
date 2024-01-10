@@ -140,9 +140,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the <code>maxResults</code> response was incpmplete because there is more data
-        /// to retriever, Amazon Q returns a pagination token in the response. You can use this
-        /// pagination token to retrieve the next set of responses.
+        /// If the <c>maxResults</c> response was incpmplete because there is more data to retriever,
+        /// Amazon Q returns a pagination token in the response. You can use this pagination token
+        /// to retrieve the next set of responses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]
@@ -179,8 +179,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property StatusFilter. 
         /// <para>
-        /// Only returns synchronization jobs with the <code>Status</code> field equal to the
-        /// specified status.
+        /// Only returns synchronization jobs with the <c>Status</c> field equal to the specified
+        /// status.
         /// </para>
         /// </summary>
         public DataSourceSyncJobStatus StatusFilter

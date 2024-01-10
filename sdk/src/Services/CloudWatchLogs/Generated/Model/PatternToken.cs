@@ -49,7 +49,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// For a dynamic token, this indicates where in the pattern that this token appears,
         /// related to other dynamic tokens. The dynamic token that appears first has a value
-        /// of <code>1</code>, the one that appears second is <code>2</code>, and so on.
+        /// of <c>1</c>, the one that appears second is <c>2</c>, and so on.
         /// </para>
         /// </summary>
         public int DynamicTokenPosition
@@ -105,7 +105,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property TokenString. 
         /// <para>
         /// The string represented by this token. If this is a dynamic token, the value will be
-        /// <code>&lt;*&gt;</code> 
+        /// <c>&lt;*&gt;</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

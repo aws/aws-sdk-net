@@ -117,8 +117,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter
-        /// is required. 
+        /// If <c>KERBEROS</c> is specified for <c>AuthenticationType</c>, this parameter is required.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -138,15 +138,14 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property KerberosKrb5Conf. 
         /// <para>
-        /// The <code>krb5.conf</code> file that contains the Kerberos configuration information.
-        /// You can load the <code>krb5.conf</code> file by providing the file's address. If you're
-        /// using the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
+        /// The <c>krb5.conf</c> file that contains the Kerberos configuration information. You
+        /// can load the <c>krb5.conf</c> file by providing the file's address. If you're using
+        /// the CLI, it performs the base64 encoding for you. Otherwise, provide the base64-encoded
         /// text. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter
-        /// is required.
+        /// If <c>KERBEROS</c> is specified for <c>AuthenticationType</c>, this parameter is required.
         /// </para>
         ///  </note>
         /// </summary>
@@ -170,8 +169,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>KERBEROS</code> is specified for <code>AuthenticationType</code>, this parameter
-        /// is required.
+        /// If <c>KERBEROS</c> is specified for <c>AuthenticationType</c>, this parameter is required.
         /// </para>
         ///  </note>
         /// </summary>
@@ -233,10 +231,9 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// The Quality of Protection (QOP) configuration specifies the Remote Procedure Call
         /// (RPC) and data transfer protection settings configured on the Hadoop Distributed File
-        /// System (HDFS) cluster. If <code>QopConfiguration</code> isn't specified, <code>RpcProtection</code>
-        /// and <code>DataTransferProtection</code> default to <code>PRIVACY</code>. If you set
-        /// <code>RpcProtection</code> or <code>DataTransferProtection</code>, the other parameter
-        /// assumes the same value. 
+        /// System (HDFS) cluster. If <c>QopConfiguration</c> isn't specified, <c>RpcProtection</c>
+        /// and <c>DataTransferProtection</c> default to <c>PRIVACY</c>. If you set <c>RpcProtection</c>
+        /// or <c>DataTransferProtection</c>, the other parameter assumes the same value. 
         /// </para>
         /// </summary>
         public QopConfiguration QopConfiguration
@@ -278,8 +275,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>SIMPLE</code> is specified for <code>AuthenticationType</code>, this parameter
-        /// is required. 
+        /// If <c>SIMPLE</c> is specified for <c>AuthenticationType</c>, this parameter is required.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -301,7 +298,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// A subdirectory in the HDFS cluster. This subdirectory is used to read data from or
         /// write data to the HDFS cluster. If the subdirectory isn't specified, it will default
-        /// to <code>/</code>.
+        /// to <c>/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

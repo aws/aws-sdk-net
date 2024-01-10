@@ -31,9 +31,8 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Creates a subset of items within an attribute that are modified. For example, you
     /// can use this operation to create a subset of items that cost $5 or less. To do this,
-    /// you specify <code>"AttributeName": "price"</code>, <code>"AttributeValue": "5"</code>,
-    /// and <code>"Condition": "LESS_THAN"</code>. Pair this operation with the <a>Action</a>
-    /// operation within the <a>CreateWhatIfForecastRequest$TimeSeriesTransformations</a>
+    /// you specify <c>"AttributeName": "price"</c>, <c>"AttributeValue": "5"</c>, and <c>"Condition":
+    /// "LESS_THAN"</c>. Pair this operation with the <a>Action</a> operation within the <a>CreateWhatIfForecastRequest$TimeSeriesTransformations</a>
     /// operation to define how the attribute is modified.
     /// </summary>
     public partial class TimeSeriesCondition
@@ -64,7 +63,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property AttributeValue. 
         /// <para>
-        /// The value that is applied for the chosen <code>Condition</code>.
+        /// The value that is applied for the chosen <c>Condition</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -83,8 +82,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// The condition to apply. Valid values are <code>EQUALS</code>, <code>NOT_EQUALS</code>,
-        /// <code>LESS_THAN</code> and <code>GREATER_THAN</code>.
+        /// The condition to apply. Valid values are <c>EQUALS</c>, <c>NOT_EQUALS</c>, <c>LESS_THAN</c>
+        /// and <c>GREATER_THAN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

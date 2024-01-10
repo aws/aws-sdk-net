@@ -40,7 +40,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// An opaque string that indicates that the response contains only a subset of tags.
-        /// Use this value in a subsequent <code>ListTags</code> request to get more tags.
+        /// Use this value in a subsequent <c>ListTags</c> request to get more tags.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

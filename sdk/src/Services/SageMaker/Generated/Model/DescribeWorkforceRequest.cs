@@ -48,9 +48,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property WorkforceName. 
         /// <para>
-        /// The name of the private workforce whose access you want to restrict. <code>WorkforceName</code>
-        /// is automatically set to <code>default</code> when a workforce is created and cannot
-        /// be modified. 
+        /// The name of the private workforce whose access you want to restrict. <c>WorkforceName</c>
+        /// is automatically set to <c>default</c> when a workforce is created and cannot be modified.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

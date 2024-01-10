@@ -47,21 +47,20 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Context. 
         /// <para>
-        /// The context for the call to <code>GetDimensionValues</code>. This can be <code>RESERVATIONS</code>
-        /// or <code>COST_AND_USAGE</code>. The default value is <code>COST_AND_USAGE</code>.
-        /// If the context is set to <code>RESERVATIONS</code>, the resulting dimension values
-        /// can be used in the <code>GetReservationUtilization</code> operation. If the context
-        /// is set to <code>COST_AND_USAGE</code>, the resulting dimension values can be used
-        /// in the <code>GetCostAndUsage</code> operation.
+        /// The context for the call to <c>GetDimensionValues</c>. This can be <c>RESERVATIONS</c>
+        /// or <c>COST_AND_USAGE</c>. The default value is <c>COST_AND_USAGE</c>. If the context
+        /// is set to <c>RESERVATIONS</c>, the resulting dimension values can be used in the <c>GetReservationUtilization</c>
+        /// operation. If the context is set to <c>COST_AND_USAGE</c>, the resulting dimension
+        /// values can be used in the <c>GetCostAndUsage</c> operation.
         /// </para>
         ///  
         /// <para>
-        /// If you set the context to <code>COST_AND_USAGE</code>, you can use the following dimensions
+        /// If you set the context to <c>COST_AND_USAGE</c>, you can use the following dimensions
         /// for searching:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AZ - The Availability Zone. An example is <code>us-east-1a</code>.
+        /// AZ - The Availability Zone. An example is <c>us-east-1a</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -89,7 +88,7 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid
-        /// values are <code>SingleAZ</code> and <code>MultiAZ</code>.
+        /// values are <c>SingleAZ</c> and <c>MultiAZ</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -98,14 +97,14 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
+        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <c>m4.xlarge</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// INSTANCE_TYPE_FAMILY - A family of instance types optimized to fit different use cases.
-        /// Examples are <code>Compute Optimized</code> (for example, <code>C4</code>, <code>C5</code>,
-        /// <code>C6g</code>, and <code>C7g</code>), <code>Memory Optimization</code> (for example,
-        /// <code>R4</code>, <code>R5n</code>, <code>R5b</code>, and <code>R6g</code>).
+        /// Examples are <c>Compute Optimized</c> (for example, <c>C4</c>, <c>C5</c>, <c>C6g</c>,
+        /// and <c>C7g</c>), <c>Memory Optimization</c> (for example, <c>R4</c>, <c>R5n</c>, <c>R5b</c>,
+        /// and <c>R6g</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -128,7 +127,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// OPERATION - The action performed. Examples include <code>RunInstance</code> and <code>CreateBucket</code>.
+        /// OPERATION - The action performed. Examples include <c>RunInstance</c> and <c>CreateBucket</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -162,8 +161,8 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// USAGE_TYPE - The type of usage. An example is DataTransfer-In-Bytes. The response
-        /// for the <code>GetDimensionValues</code> operation includes a unit attribute. Examples
-        /// include GB and Hrs.
+        /// for the <c>GetDimensionValues</c> operation includes a unit attribute. Examples include
+        /// GB and Hrs.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -186,12 +185,12 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you set the context to <code>RESERVATIONS</code>, you can use the following dimensions
+        /// If you set the context to <c>RESERVATIONS</c>, you can use the following dimensions
         /// for searching:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AZ - The Availability Zone. An example is <code>us-east-1a</code>.
+        /// AZ - The Availability Zone. An example is <c>us-east-1a</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -200,11 +199,11 @@ namespace Amazon.CostExplorer.Model
         ///  </li> <li> 
         /// <para>
         /// DEPLOYMENT_OPTION - The scope of Amazon Relational Database Service deployments. Valid
-        /// values are <code>SingleAZ</code> and <code>MultiAZ</code>.
+        /// values are <c>SingleAZ</c> and <c>MultiAZ</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <code>m4.xlarge</code>.
+        /// INSTANCE_TYPE - The type of Amazon EC2 instance. An example is <c>m4.xlarge</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -235,7 +234,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you set the context to <code>SAVINGS_PLANS</code>, you can use the following dimensions
+        /// If you set the context to <c>SAVINGS_PLANS</c>, you can use the following dimensions
         /// for searching:
         /// </para>
         ///  <ul> <li> 
@@ -253,7 +252,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// INSTANCE_TYPE_FAMILY - The family of instances (For example, <code>m5</code>)
+        /// INSTANCE_TYPE_FAMILY - The family of instances (For example, <c>m5</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -282,9 +281,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Dimension. 
         /// <para>
-        /// The name of the dimension. Each <code>Dimension</code> is available for a different
-        /// <code>Context</code>. For more information, see <code>Context</code>. <code>LINK_ACCOUNT_NAME</code>
-        /// and <code>SERVICE_CODE</code> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
+        /// The name of the dimension. Each <c>Dimension</c> is available for a different <c>Context</c>.
+        /// For more information, see <c>Context</c>. <c>LINK_ACCOUNT_NAME</c> and <c>SERVICE_CODE</c>
+        /// can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/AAPI_CostCategoryRule.html">CostCategoryRule</a>.
         /// 
         /// </para>
         /// </summary>
@@ -325,7 +324,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+        /// For <c>GetDimensionValues</c>, MaxResults has an upper limit of 1000.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -391,42 +390,41 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BlendedCost</code> 
+        ///  <c>BlendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnblendedCost</code> 
+        ///  <c>UnblendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AmortizedCost</code> 
+        ///  <c>AmortizedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetAmortizedCost</code> 
+        ///  <c>NetAmortizedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetUnblendedCost</code> 
+        ///  <c>NetUnblendedCost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UsageQuantity</code> 
+        ///  <c>UsageQuantity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NormalizedUsageAmount</code> 
+        ///  <c>NormalizedUsageAmount</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The supported values for the <code>SortOrder</code> key are <code>ASCENDING</code>
-        /// or <code>DESCENDING</code>.
+        /// The supported values for the <c>SortOrder</c> key are <c>ASCENDING</c> or <c>DESCENDING</c>.
         /// </para>
         ///  
         /// <para>
-        /// When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
-        /// Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code>
-        /// aren't supported.
+        /// When you specify a <c>SortBy</c> paramater, the context must be <c>COST_AND_USAGE</c>.
+        /// Further, when using <c>SortBy</c>, <c>NextPageToken</c> and <c>SearchString</c> aren't
+        /// supported.
         /// </para>
         /// </summary>
         public List<SortDefinition> SortBy
@@ -445,10 +443,9 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property TimePeriod. 
         /// <para>
         /// The start date and end date for retrieving the dimension values. The start date is
-        /// inclusive, but the end date is exclusive. For example, if <code>start</code> is <code>2017-01-01</code>
-        /// and <code>end</code> is <code>2017-05-01</code>, then the cost and usage data is retrieved
-        /// from <code>2017-01-01</code> up to and including <code>2017-04-30</code> but not including
-        /// <code>2017-05-01</code>.
+        /// inclusive, but the end date is exclusive. For example, if <c>start</c> is <c>2017-01-01</c>
+        /// and <c>end</c> is <c>2017-05-01</c>, then the cost and usage data is retrieved from
+        /// <c>2017-01-01</c> up to and including <c>2017-04-30</c> but not including <c>2017-05-01</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

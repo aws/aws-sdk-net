@@ -79,8 +79,8 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property StateMachineVersionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the created state machine version.
-        /// If you do not set the <code>publish</code> parameter to <code>true</code>, this field
-        /// returns null value.
+        /// If you do not set the <c>publish</c> parameter to <c>true</c>, this field returns
+        /// null value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

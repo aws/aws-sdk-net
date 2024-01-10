@@ -34,8 +34,8 @@ namespace Amazon.LakeFormation.Model
     /// 
     ///  
     /// <para>
-    /// This object must take a value for at least one of <code>ColumnsNames</code>, <code>ColumnsIndexes</code>,
-    /// or <code>ColumnsWildcard</code>.
+    /// This object must take a value for at least one of <c>ColumnsNames</c>, <c>ColumnsIndexes</c>,
+    /// or <c>ColumnsWildcard</c>.
     /// </para>
     /// </summary>
     public partial class TableWithColumnsResource
@@ -68,8 +68,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ColumnNames. 
         /// <para>
-        /// The list of column names for the table. At least one of <code>ColumnNames</code> or
-        /// <code>ColumnWildcard</code> is required.
+        /// The list of column names for the table. At least one of <c>ColumnNames</c> or <c>ColumnWildcard</c>
+        /// is required.
         /// </para>
         /// </summary>
         public List<string> ColumnNames
@@ -87,8 +87,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ColumnWildcard. 
         /// <para>
-        /// A wildcard specified by a <code>ColumnWildcard</code> object. At least one of <code>ColumnNames</code>
-        /// or <code>ColumnWildcard</code> is required.
+        /// A wildcard specified by a <c>ColumnWildcard</c> object. At least one of <c>ColumnNames</c>
+        /// or <c>ColumnWildcard</c> is required.
         /// </para>
         /// </summary>
         public ColumnWildcard ColumnWildcard

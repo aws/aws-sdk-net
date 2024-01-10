@@ -60,7 +60,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>DescribeRegionsResult.NextToken</code> value from a previous call to <a>DescribeRegions</a>.
+        /// The <c>DescribeRegionsResult.NextToken</c> value from a previous call to <a>DescribeRegions</a>.
         /// Pass null if this is the first call.
         /// </para>
         /// </summary>
@@ -79,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// The name of the Region. For example, <code>us-east-1</code>.
+        /// The name of the Region. For example, <c>us-east-1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=8, Max=32)]

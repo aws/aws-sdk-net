@@ -34,10 +34,10 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// 
     ///  
     /// <para>
-    /// You can modify the load balancer attributes, such as <code>AccessLogs</code>, <code>ConnectionDraining</code>,
-    /// and <code>CrossZoneLoadBalancing</code> by either enabling or disabling them. Or,
-    /// you can modify the load balancer attribute <code>ConnectionSettings</code> by specifying
-    /// an idle connection timeout value for your load balancer.
+    /// You can modify the load balancer attributes, such as <c>AccessLogs</c>, <c>ConnectionDraining</c>,
+    /// and <c>CrossZoneLoadBalancing</c> by either enabling or disabling them. Or, you can
+    /// modify the load balancer attribute <c>ConnectionSettings</c> by specifying an idle
+    /// connection timeout value for your load balancer.
     /// </para>
     ///  
     /// <para>

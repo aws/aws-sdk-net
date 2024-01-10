@@ -77,8 +77,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// To retrieve the next set of results, the <code>nextToken</code> value from a previous
-        /// response; otherwise <code>null</code> to receive the first set of results.
+        /// To retrieve the next set of results, the <c>nextToken</c> value from a previous response;
+        /// otherwise <c>null</c> to receive the first set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

@@ -42,10 +42,10 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The response from a <a>GetSampledRequests</a> request includes an <code>HTTPHeader</code>
-    /// complex type that appears as <code>Headers</code> in the response syntax. <code>HTTPHeader</code>
+    /// The response from a <a>GetSampledRequests</a> request includes an <c>HTTPHeader</c>
+    /// complex type that appears as <c>Headers</c> in the response syntax. <c>HTTPHeader</c>
     /// contains the names and values of all of the headers that appear in one of the web
-    /// requests that were returned by <code>GetSampledRequests</code>. 
+    /// requests that were returned by <c>GetSampledRequests</c>. 
     /// </para>
     /// </summary>
     public partial class HTTPHeader

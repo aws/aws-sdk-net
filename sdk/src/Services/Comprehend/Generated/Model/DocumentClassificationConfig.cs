@@ -58,8 +58,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Classification mode indicates whether the documents are <code>MULTI_CLASS</code> or
-        /// <code>MULTI_LABEL</code>.
+        /// Classification mode indicates whether the documents are <c>MULTI_CLASS</c> or <c>MULTI_LABEL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Summary information about an intent returned by the <code>ListIntents</code> operation.
+    /// Summary information about an intent returned by the <c>ListIntents</c> operation.
     /// </summary>
     public partial class IntentSummary
     {
@@ -83,7 +83,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property IntentId. 
         /// <para>
         /// The unique identifier assigned to the intent. Use this ID to get detailed information
-        /// about the intent with the <code>DescribeIntent</code> operation.
+        /// about the intent with the <c>DescribeIntent</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=10)]

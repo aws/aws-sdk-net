@@ -30,9 +30,9 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the StopStreamingSession operation.
-    /// Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code>
-    /// state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the
-    /// <code>READY</code> and <code>STOPPED</code> states.
+    /// Transitions sessions from the <c>READY</c> state into the <c>STOPPED</c> state. The
+    /// <c>STOP_IN_PROGRESS</c> state is the intermediate state between the <c>READY</c> and
+    /// <c>STOPPED</c> states.
     /// </summary>
     public partial class StopStreamingSessionRequest : AmazonNimbleStudioRequest
     {
@@ -65,7 +65,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The streaming session ID for the <code>StopStreamingSessionRequest</code>.
+        /// The streaming session ID for the <c>StopStreamingSessionRequest</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,14 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Specifies the configuration of a Kubernetes <code>emptyDir</code> volume. An <code>emptyDir</code>
+    /// Specifies the configuration of a Kubernetes <c>emptyDir</c> volume. An <c>emptyDir</c>
     /// volume is first created when a pod is assigned to a node. It exists as long as that
-    /// pod is running on that node. The <code>emptyDir</code> volume is initially empty.
-    /// All containers in the pod can read and write the files in the <code>emptyDir</code>
-    /// volume. However, the <code>emptyDir</code> volume can be mounted at the same or different
-    /// paths in each container. When a pod is removed from a node for any reason, the data
-    /// in the <code>emptyDir</code> is deleted permanently. For more information, see <a
-    /// href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a>
+    /// pod is running on that node. The <c>emptyDir</c> volume is initially empty. All containers
+    /// in the pod can read and write the files in the <c>emptyDir</c> volume. However, the
+    /// <c>emptyDir</c> volume can be mounted at the same or different paths in each container.
+    /// When a pod is removed from a node for any reason, the data in the <c>emptyDir</c>
+    /// is deleted permanently. For more information, see <a href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a>
     /// in the <i>Kubernetes documentation</i>.
     /// </summary>
     public partial class EksEmptyDir
@@ -56,8 +55,8 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </dd> <dt>"Memory"</dt> <dd> 
         /// <para>
-        /// Use the <code>tmpfs</code> volume that's backed by the RAM of the node. Contents of
-        /// the volume are lost when the node reboots, and any storage on the volume counts against
+        /// Use the <c>tmpfs</c> volume that's backed by the RAM of the node. Contents of the
+        /// volume are lost when the node reboots, and any storage on the volume counts against
         /// the container's memory limit.
         /// </para>
         ///  </dd> </dl>

@@ -67,19 +67,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The global secondary index is being created.
+        ///  <c>CREATING</c> - The global secondary index is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The global secondary index is being updated.
+        ///  <c>UPDATING</c> - The global secondary index is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The global secondary index is being deleted.
+        ///  <c>DELETING</c> - The global secondary index is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The global secondary index is ready for use.
+        ///  <c>ACTIVE</c> - The global secondary index is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -117,7 +117,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ProvisionedReadCapacityUnits. 
         /// <para>
         /// The maximum number of strongly consistent reads consumed per second before DynamoDB
-        /// returns a <code>ThrottlingException</code>.
+        /// returns a <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -154,7 +154,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProvisionedWriteCapacityUnits. 
         /// <para>
-        /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException</code>.
+        /// The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

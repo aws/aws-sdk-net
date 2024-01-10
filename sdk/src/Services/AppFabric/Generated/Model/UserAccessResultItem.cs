@@ -95,19 +95,19 @@ namespace Amazon.AppFabric.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code>: The user access task is in progress.
+        ///  <c>IN_PROGRESS</c>: The user access task is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code>: The user access task completed successfully.
+        ///  <c>COMPLETED</c>: The user access task completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The user access task failed.
+        ///  <c>FAILED</c>: The user access task failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code>: The user access task expired.
+        ///  <c>EXPIRED</c>: The user access task expired.
         /// </para>
         ///  </li> </ul>
         /// </summary>

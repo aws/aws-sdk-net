@@ -78,7 +78,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Features. 
         /// <para>
         /// A list of features supported for the account. When usage plans are enabled, the features
-        /// list will include an entry of <code>"UsagePlans"</code>.
+        /// list will include an entry of <c>"UsagePlans"</c>.
         /// </para>
         /// </summary>
         public List<string> Features

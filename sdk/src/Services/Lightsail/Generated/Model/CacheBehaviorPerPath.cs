@@ -35,12 +35,11 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// A per-path cache behavior is used to override, or add an exception to, the default
-    /// cache behavior of a distribution. For example, if the <code>cacheBehavior</code> is
-    /// set to <code>cache</code>, then a per-path cache behavior can be used to specify a
-    /// directory, file, or file type that your distribution will cache. Alternately, if the
-    /// distribution's <code>cacheBehavior</code> is <code>dont-cache</code>, then a per-path
-    /// cache behavior can be used to specify a directory, file, or file type that your distribution
-    /// will not cache.
+    /// cache behavior of a distribution. For example, if the <c>cacheBehavior</c> is set
+    /// to <c>cache</c>, then a per-path cache behavior can be used to specify a directory,
+    /// file, or file type that your distribution will cache. Alternately, if the distribution's
+    /// <c>cacheBehavior</c> is <c>dont-cache</c>, then a per-path cache behavior can be used
+    /// to specify a directory, file, or file type that your distribution will not cache.
     /// </para>
     /// </summary>
     public partial class CacheBehaviorPerPath
@@ -59,12 +58,11 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>cache</code> </b> - This behavior caches the specified path. 
+        ///  <b> <c>cache</c> </b> - This behavior caches the specified path. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>dont-cache</code> </b> - This behavior doesn't cache the specified path.
-        /// 
+        ///  <b> <c>dont-cache</c> </b> - This behavior doesn't cache the specified path. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -84,8 +82,8 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Path. 
         /// <para>
         /// The path to a directory or file to cached, or not cache. Use an asterisk symbol to
-        /// specify wildcard directories (<code>path/to/assets/*</code>), and file types (<code>*.html,
-        /// *jpg, *js</code>). Directories and file paths are case-sensitive.
+        /// specify wildcard directories (<c>path/to/assets/*</c>), and file types (<c>*.html,
+        /// *jpg, *js</c>). Directories and file paths are case-sensitive.
         /// </para>
         ///  
         /// <para>
@@ -98,7 +96,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>var/www/html/</code> 
+        ///  <c>var/www/html/</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -107,7 +105,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>var/www/html/index.html</code> 
+        ///  <c>var/www/html/index.html</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -116,7 +114,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>var/www/html/*.html</code> 
+        ///  <c>var/www/html/*.html</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -125,15 +123,15 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>var/www/html/images/*.jpg</code> 
+        ///  <c>var/www/html/images/*.jpg</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>var/www/html/images/*.png</code> 
+        ///  <c>var/www/html/images/*.png</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>var/www/html/images/*.gif</code> 
+        ///  <c>var/www/html/images/*.gif</c> 
         /// </para>
         ///  
         /// <para>
@@ -142,7 +140,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>var/www/html/images/</code> 
+        ///  <c>var/www/html/images/</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -42,8 +42,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiType. 
         /// <para>
-        /// The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>)
-        /// or merged API (<code>MERGED</code>).
+        /// The value that indicates whether the GraphQL API is a standard API (<c>GRAPHQL</c>)
+        /// or merged API (<c>MERGED</c>).
         /// </para>
         /// </summary>
         public GraphQLApiType ApiType

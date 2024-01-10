@@ -173,7 +173,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property RamSizeInGb. 
         /// <para>
-        /// The amount of RAM in GB (for example, <code>2.0</code>) for the database bundle.
+        /// The amount of RAM in GB (for example, <c>2.0</c>) for the database bundle.
         /// </para>
         /// </summary>
         public float RamSizeInGb

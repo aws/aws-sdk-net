@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property RuleOrder. 
         /// <para>
-        /// Indicates how to manage the order of stateful rule evaluation for the policy. <code>DEFAULT_ACTION_ORDER</code>
+        /// Indicates how to manage the order of stateful rule evaluation for the policy. <c>DEFAULT_ACTION_ORDER</c>
         /// is the default behavior. Stateful rules are provided to the rule engine as Suricata
         /// compatible strings, and Suricata evaluates them based on certain settings. For more
         /// information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation

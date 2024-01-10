@@ -134,7 +134,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The ID of the Amazon EMR Studio Engine security group. The Engine security group allows
         /// inbound network traffic from the Workspace security group, and it must be in the same
-        /// VPC specified by <code>VpcId</code>.
+        /// VPC specified by <c>VpcId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -172,9 +172,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdcUserAssignment. 
         /// <para>
-        ///  Specifies whether IAM Identity Center user assignment is <code>REQUIRED</code> or
-        /// <code>OPTIONAL</code>. If the value is set to <code>REQUIRED</code>, users must be
-        /// explicitly assigned to the Studio application to access the Studio. 
+        ///  Specifies whether IAM Identity Center user assignment is <c>REQUIRED</c> or <c>OPTIONAL</c>.
+        /// If the value is set to <c>REQUIRED</c>, users must be explicitly assigned to the Studio
+        /// application to access the Studio. 
         /// </para>
         /// </summary>
         public IdcUserAssignment IdcUserAssignment
@@ -214,10 +214,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdpRelayStateParameterName. 
         /// <para>
-        /// The name that your identity provider (IdP) uses for its <code>RelayState</code> parameter.
-        /// For example, <code>RelayState</code> or <code>TargetSource</code>. Specify this value
-        /// when you use IAM authentication and want to let federated users log in to a Studio
-        /// using the Studio URL. The <code>RelayState</code> parameter differs by IdP.
+        /// The name that your identity provider (IdP) uses for its <c>RelayState</c> parameter.
+        /// For example, <c>RelayState</c> or <c>TargetSource</c>. Specify this value when you
+        /// use IAM authentication and want to let federated users log in to a Studio using the
+        /// Studio URL. The <c>RelayState</c> parameter differs by IdP.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -276,7 +276,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// A list of subnet IDs to associate with the Amazon EMR Studio. A Studio can have a
-        /// maximum of 5 subnets. The subnets must belong to the VPC specified by <code>VpcId</code>.
+        /// maximum of 5 subnets. The subnets must belong to the VPC specified by <c>VpcId</c>.
         /// Studio users can create a Workspace in any of the specified subnets.
         /// </para>
         /// </summary>
@@ -317,7 +317,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TrustedIdentityPropagationEnabled. 
         /// <para>
         ///  A Boolean indicating whether to enable Trusted identity propagation for the Studio.
-        /// The default value is <code>false</code>. 
+        /// The default value is <c>false</c>. 
         /// </para>
         /// </summary>
         public bool TrustedIdentityPropagationEnabled
@@ -336,9 +336,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property UserRole. 
         /// <para>
         /// The IAM user role that users and groups assume when logged in to an Amazon EMR Studio.
-        /// Only specify a <code>UserRole</code> when you use IAM Identity Center authentication.
-        /// The permissions attached to the <code>UserRole</code> can be scoped down for each
-        /// user or group using session policies.
+        /// Only specify a <c>UserRole</c> when you use IAM Identity Center authentication. The
+        /// permissions attached to the <c>UserRole</c> can be scoped down for each user or group
+        /// using session policies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -378,7 +378,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// The ID of the Amazon EMR Studio Workspace security group. The Workspace security group
         /// allows outbound network traffic to resources in the Engine security group, and it
-        /// must be in the same VPC specified by <code>VpcId</code>.
+        /// must be in the same VPC specified by <c>VpcId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

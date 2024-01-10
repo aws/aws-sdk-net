@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <code>ModifyDBParameterGroup</code>
-    /// or <code>ResetDBParameterGroup</code> operation.
+    /// Contains the result of a successful invocation of the <c>ModifyDBParameterGroup</c>
+    /// or <c>ResetDBParameterGroup</c> operation.
     /// </summary>
     public partial class ModifyDBParameterGroupResponse : AmazonWebServiceResponse
     {

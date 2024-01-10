@@ -39,8 +39,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property KeyArn. 
         /// <para>
-        /// The <code>keyARN</code> of the CVK encryption key that Amazon Web Services Payment
-        /// Cryptography uses to verify CVV or CSC.
+        /// The <c>keyARN</c> of the CVK encryption key that Amazon Web Services Payment Cryptography
+        /// uses to verify CVV or CSC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

@@ -34,15 +34,14 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This setting is used only in the <code>RateBasedStatementCustomKey</code> specification
+    /// This setting is used only in the <c>RateBasedStatementCustomKey</c> specification
     /// of a rate-based rule statement. To use this in the custom key settings, you must specify
     /// at least one other key to use, along with the IP address. To aggregate on only the
-    /// IP address, in your rate-based statement's <code>AggregateKeyType</code>, specify
-    /// <code>IP</code>.
+    /// IP address, in your rate-based statement's <c>AggregateKeyType</c>, specify <c>IP</c>.
     /// </para>
     ///  
     /// <para>
-    /// JSON specification: <code>"RateLimitIP": {}</code> 
+    /// JSON specification: <c>"RateLimitIP": {}</c> 
     /// </para>
     /// </summary>
     public partial class RateLimitIP

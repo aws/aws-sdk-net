@@ -39,9 +39,9 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When additional results are obtained from the command, a <code>NextToken</code> parameter
-        /// is returned in the output. You can then pass the <code>NextToken</code> parameter
-        /// in a subsequent command to continue listing additional resources.
+        /// When additional results are obtained from the command, a <c>NextToken</c> parameter
+        /// is returned in the output. You can then pass the <c>NextToken</c> parameter in a subsequent
+        /// command to continue listing additional resources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -64,7 +64,7 @@ namespace Amazon.B2bi.Model
         /// </para>
         ///  
         /// <para>
-        /// For each transformer, a <code>TransformerSummary</code> object is returned. The <code>TransformerSummary</code>
+        /// For each transformer, a <c>TransformerSummary</c> object is returned. The <c>TransformerSummary</c>
         /// contains all the details for a specific transformer.
         /// </para>
         /// </summary>

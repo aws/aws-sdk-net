@@ -358,9 +358,9 @@ namespace Amazon.LakeFormation
         ///  
         /// <para>
         ///  This decorated role is expected to access data in Amazon S3 by getting temporary
-        /// access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>.
-        /// Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code>
-        /// must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies.
+        /// access from Lake Formation which is authorized via the virtual API <c>GetDataAccess</c>.
+        /// Therefore, all SAML roles that can be assumed via <c>AssumeDecoratedRoleWithSAML</c>
+        /// must at a minimum include <c>lakeformation:GetDataAccess</c> in their role policies.
         /// A typical IAM policy attached to such a role would look as follows: 
         /// </para>
         /// </summary>
@@ -405,9 +405,9 @@ namespace Amazon.LakeFormation
         ///  
         /// <para>
         ///  This decorated role is expected to access data in Amazon S3 by getting temporary
-        /// access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>.
-        /// Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code>
-        /// must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies.
+        /// access from Lake Formation which is authorized via the virtual API <c>GetDataAccess</c>.
+        /// Therefore, all SAML roles that can be assumed via <c>AssumeDecoratedRoleWithSAML</c>
+        /// must at a minimum include <c>lakeformation:GetDataAccess</c> in their role policies.
         /// A typical IAM policy attached to such a role would look as follows: 
         /// </para>
         /// </summary>
@@ -580,7 +580,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CancelTransaction">REST API Reference for CancelTransaction Operation</seealso>
         public virtual CancelTransactionResponse CancelTransaction(CancelTransactionRequest request)
@@ -623,7 +623,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CancelTransaction">REST API Reference for CancelTransaction Operation</seealso>
         public virtual Task<CancelTransactionResponse> CancelTransactionAsync(CancelTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1269,9 +1269,9 @@ namespace Amazon.LakeFormation
         /// <summary>
         /// Deletes the specified LF-tag given a key name. If the input parameter tag key was
         /// not found, then the operation will throw an exception. When you delete an LF-tag,
-        /// the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If the deleted
-        /// LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag
-        /// will no longer be applied to the resource.
+        /// the <c>LFTagPolicy</c> attached to the LF-tag becomes invalid. If the deleted LF-tag
+        /// was still assigned to any resource, the tag policy attach to the deleted LF-tag will
+        /// no longer be applied to the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLFTag service method.</param>
         /// 
@@ -1305,9 +1305,9 @@ namespace Amazon.LakeFormation
         /// <summary>
         /// Deletes the specified LF-tag given a key name. If the input parameter tag key was
         /// not found, then the operation will throw an exception. When you delete an LF-tag,
-        /// the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If the deleted
-        /// LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag
-        /// will no longer be applied to the resource.
+        /// the <c>LFTagPolicy</c> attached to the LF-tag becomes invalid. If the deleted LF-tag
+        /// was still assigned to any resource, the tag policy attach to the deleted LF-tag will
+        /// no longer be applied to the resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLFTag service method.</param>
         /// <param name="cancellationToken">
@@ -1353,9 +1353,9 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        ///  The Glue ETL library function <code>write_dynamic_frame.from_catalog()</code> includes
-        /// an option to automatically call <code>DeleteObjectsOnCancel</code> before writes.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling
+        ///  The Glue ETL library function <c>write_dynamic_frame.from_catalog()</c> includes
+        /// an option to automatically call <c>DeleteObjectsOnCancel</c> before writes. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling
         /// Back Amazon S3 Writes</a>. 
         /// </para>
         /// </summary>
@@ -1385,7 +1385,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteObjectsOnCancel">REST API Reference for DeleteObjectsOnCancel Operation</seealso>
         public virtual DeleteObjectsOnCancelResponse DeleteObjectsOnCancel(DeleteObjectsOnCancelRequest request)
@@ -1406,9 +1406,9 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        ///  The Glue ETL library function <code>write_dynamic_frame.from_catalog()</code> includes
-        /// an option to automatically call <code>DeleteObjectsOnCancel</code> before writes.
-        /// For more information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling
+        ///  The Glue ETL library function <c>write_dynamic_frame.from_catalog()</c> includes
+        /// an option to automatically call <c>DeleteObjectsOnCancel</c> before writes. For more
+        /// information, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/transactions-data-operations.html#rolling-back-writes">Rolling
         /// Back Amazon S3 Writes</a>. 
         /// </para>
         /// </summary>
@@ -1441,7 +1441,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteObjectsOnCancel">REST API Reference for DeleteObjectsOnCancel Operation</seealso>
         public virtual Task<DeleteObjectsOnCancelResponse> DeleteObjectsOnCancelAsync(DeleteObjectsOnCancelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1769,7 +1769,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ExtendTransaction">REST API Reference for ExtendTransaction Operation</seealso>
         public virtual ExtendTransactionResponse ExtendTransaction(ExtendTransactionRequest request)
@@ -1818,7 +1818,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ExtendTransaction">REST API Reference for ExtendTransaction Operation</seealso>
         public virtual Task<ExtendTransactionResponse> ExtendTransactionAsync(ExtendTransactionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1969,8 +1969,8 @@ namespace Amazon.LakeFormation
 
         /// <summary>
         /// Returns the Lake Formation permissions for a specified table or database resource
-        /// located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not
-        /// return databases and tables if the catalog is encrypted.
+        /// located at a path in Amazon S3. <c>GetEffectivePermissionsForPath</c> will not return
+        /// databases and tables if the catalog is encrypted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePermissionsForPath service method.</param>
         /// 
@@ -2000,8 +2000,8 @@ namespace Amazon.LakeFormation
 
         /// <summary>
         /// Returns the Lake Formation permissions for a specified table or database resource
-        /// located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not
-        /// return databases and tables if the catalog is encrypted.
+        /// located at a path in Amazon S3. <c>GetEffectivePermissionsForPath</c> will not return
+        /// databases and tables if the catalog is encrypted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectivePermissionsForPath service method.</param>
         /// <param name="cancellationToken">
@@ -2108,9 +2108,9 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Returns the state of a query previously submitted. Clients are expected to poll <code>GetQueryState</code>
+        /// Returns the state of a query previously submitted. Clients are expected to poll <c>GetQueryState</c>
         /// to monitor the current state of the planning before retrieving the work units. A query
-        /// state is only visible to the principal that made the initial call to <code>StartQueryPlanning</code>.
+        /// state is only visible to the principal that made the initial call to <c>StartQueryPlanning</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryState service method.</param>
         /// 
@@ -2136,9 +2136,9 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Returns the state of a query previously submitted. Clients are expected to poll <code>GetQueryState</code>
+        /// Returns the state of a query previously submitted. Clients are expected to poll <c>GetQueryState</c>
         /// to monitor the current state of the planning before retrieving the work units. A query
-        /// state is only visible to the principal that made the initial call to <code>StartQueryPlanning</code>.
+        /// state is only visible to the principal that made the initial call to <c>StartQueryPlanning</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetQueryState service method.</param>
         /// <param name="cancellationToken">
@@ -2351,7 +2351,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTableObjects">REST API Reference for GetTableObjects Operation</seealso>
         public virtual GetTableObjectsResponse GetTableObjects(GetTableObjectsRequest request)
@@ -2394,7 +2394,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTableObjects">REST API Reference for GetTableObjects Operation</seealso>
         public virtual Task<GetTableObjectsResponse> GetTableObjectsAsync(GetTableObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2412,10 +2412,10 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// This API is identical to <code>GetTemporaryTableCredentials</code> except that this
-        /// is used when the target Data Catalog resource is of type Partition. Lake Formation
-        /// restricts the permission of the vended credentials with the same scope down policy
-        /// which restricts access to a single Amazon S3 prefix.
+        /// This API is identical to <c>GetTemporaryTableCredentials</c> except that this is used
+        /// when the target Data Catalog resource is of type Partition. Lake Formation restricts
+        /// the permission of the vended credentials with the same scope down policy which restricts
+        /// access to a single Amazon S3 prefix.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGluePartitionCredentials service method.</param>
         /// 
@@ -2437,9 +2437,9 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
         /// The engine does not support filtering data based on the enforced permissions. For
-        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
-        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
-        /// permissions exist on the table, this exception is thrown.
+        /// example, if you call the <c>GetTemporaryGlueTableCredentials</c> operation with <c>SupportedPermissionType</c>
+        /// equal to <c>ColumnPermission</c>, but cell-level permissions exist on the table, this
+        /// exception is thrown.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
         public virtual GetTemporaryGluePartitionCredentialsResponse GetTemporaryGluePartitionCredentials(GetTemporaryGluePartitionCredentialsRequest request)
@@ -2453,10 +2453,10 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// This API is identical to <code>GetTemporaryTableCredentials</code> except that this
-        /// is used when the target Data Catalog resource is of type Partition. Lake Formation
-        /// restricts the permission of the vended credentials with the same scope down policy
-        /// which restricts access to a single Amazon S3 prefix.
+        /// This API is identical to <c>GetTemporaryTableCredentials</c> except that this is used
+        /// when the target Data Catalog resource is of type Partition. Lake Formation restricts
+        /// the permission of the vended credentials with the same scope down policy which restricts
+        /// access to a single Amazon S3 prefix.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTemporaryGluePartitionCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -2481,9 +2481,9 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
         /// The engine does not support filtering data based on the enforced permissions. For
-        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
-        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
-        /// permissions exist on the table, this exception is thrown.
+        /// example, if you call the <c>GetTemporaryGlueTableCredentials</c> operation with <c>SupportedPermissionType</c>
+        /// equal to <c>ColumnPermission</c>, but cell-level permissions exist on the table, this
+        /// exception is thrown.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGluePartitionCredentials">REST API Reference for GetTemporaryGluePartitionCredentials Operation</seealso>
         public virtual Task<GetTemporaryGluePartitionCredentialsResponse> GetTemporaryGluePartitionCredentialsAsync(GetTemporaryGluePartitionCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2526,9 +2526,9 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
         /// The engine does not support filtering data based on the enforced permissions. For
-        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
-        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
-        /// permissions exist on the table, this exception is thrown.
+        /// example, if you call the <c>GetTemporaryGlueTableCredentials</c> operation with <c>SupportedPermissionType</c>
+        /// equal to <c>ColumnPermission</c>, but cell-level permissions exist on the table, this
+        /// exception is thrown.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
         public virtual GetTemporaryGlueTableCredentialsResponse GetTemporaryGlueTableCredentials(GetTemporaryGlueTableCredentialsRequest request)
@@ -2570,9 +2570,9 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.PermissionTypeMismatchException">
         /// The engine does not support filtering data based on the enforced permissions. For
-        /// example, if you call the <code>GetTemporaryGlueTableCredentials</code> operation with
-        /// <code>SupportedPermissionType</code> equal to <code>ColumnPermission</code>, but cell-level
-        /// permissions exist on the table, this exception is thrown.
+        /// example, if you call the <c>GetTemporaryGlueTableCredentials</c> operation with <c>SupportedPermissionType</c>
+        /// equal to <c>ColumnPermission</c>, but cell-level permissions exist on the table, this
+        /// exception is thrown.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetTemporaryGlueTableCredentials">REST API Reference for GetTemporaryGlueTableCredentials Operation</seealso>
         public virtual Task<GetTemporaryGlueTableCredentialsResponse> GetTemporaryGlueTableCredentialsAsync(GetTemporaryGlueTableCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2663,7 +2663,7 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Retrieves the work units generated by the <code>StartQueryPlanning</code> operation.
+        /// Retrieves the work units generated by the <c>StartQueryPlanning</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkUnits service method.</param>
         /// 
@@ -2695,7 +2695,7 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// Retrieves the work units generated by the <code>StartQueryPlanning</code> operation.
+        /// Retrieves the work units generated by the <c>StartQueryPlanning</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetWorkUnits service method.</param>
         /// <param name="cancellationToken">
@@ -3381,16 +3381,15 @@ namespace Amazon.LakeFormation
         /// </para>
         ///  
         /// <para>
-        ///  <code>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> 
+        ///  <c>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</c> 
         /// </para>
         ///  
         /// <para>
-        /// If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the
-        /// <code>RoleArn</code>:
+        /// If <c>UseServiceLinkedRole</c> is not set to true, you must provide or set the <c>RoleArn</c>:
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:iam::12345:role/my-data-access-role</code> 
+        ///  <c>arn:aws:iam::12345:role/my-data-access-role</c> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterResource service method.</param>
@@ -3447,16 +3446,15 @@ namespace Amazon.LakeFormation
         /// </para>
         ///  
         /// <para>
-        ///  <code>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code> 
+        ///  <c>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</c> 
         /// </para>
         ///  
         /// <para>
-        /// If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the
-        /// <code>RoleArn</code>:
+        /// If <c>UseServiceLinkedRole</c> is not set to true, you must provide or set the <c>RoleArn</c>:
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:iam::12345:role/my-data-access-role</code> 
+        ///  <c>arn:aws:iam::12345:role/my-data-access-role</c> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterResource service method.</param>
@@ -3503,7 +3501,7 @@ namespace Amazon.LakeFormation
 
         /// <summary>
         /// Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource
-        /// are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code>
+        /// are allowed. To tag columns, use the column inclusion list in <c>tableWithColumns</c>
         /// to specify column input.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveLFTagsFromResource service method.</param>
@@ -3543,7 +3541,7 @@ namespace Amazon.LakeFormation
 
         /// <summary>
         /// Removes an LF-tag from the resource. Only database, table, or tableWithColumns resource
-        /// are allowed. To tag columns, use the column inclusion list in <code>tableWithColumns</code>
+        /// are allowed. To tag columns, use the column inclusion list in <c>tableWithColumns</c>
         /// to specify column input.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveLFTagsFromResource service method.</param>
@@ -3650,11 +3648,11 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>.
-        /// This operation is used by admins who want to grant user permissions on certain <code>TagConditions</code>.
-        /// Before making a grant, the admin can use <code>SearchDatabasesByTags</code> to find
-        /// all resources where the given <code>TagConditions</code> are valid to verify whether
-        /// the returned resources can be shared.
+        /// This operation allows a search on <c>DATABASE</c> resources by <c>TagCondition</c>.
+        /// This operation is used by admins who want to grant user permissions on certain <c>TagConditions</c>.
+        /// Before making a grant, the admin can use <c>SearchDatabasesByTags</c> to find all
+        /// resources where the given <c>TagConditions</c> are valid to verify whether the returned
+        /// resources can be shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDatabasesByLFTags service method.</param>
         /// 
@@ -3689,11 +3687,11 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>.
-        /// This operation is used by admins who want to grant user permissions on certain <code>TagConditions</code>.
-        /// Before making a grant, the admin can use <code>SearchDatabasesByTags</code> to find
-        /// all resources where the given <code>TagConditions</code> are valid to verify whether
-        /// the returned resources can be shared.
+        /// This operation allows a search on <c>DATABASE</c> resources by <c>TagCondition</c>.
+        /// This operation is used by admins who want to grant user permissions on certain <c>TagConditions</c>.
+        /// Before making a grant, the admin can use <c>SearchDatabasesByTags</c> to find all
+        /// resources where the given <c>TagConditions</c> are valid to verify whether the returned
+        /// resources can be shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchDatabasesByLFTags service method.</param>
         /// <param name="cancellationToken">
@@ -3735,11 +3733,11 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s.
-        /// This will be used by admins who want to grant user permissions on certain LF-tags.
-        /// Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find
-        /// all resources where the given <code>LFTag</code>s are valid to verify whether the
-        /// returned resources can be shared.
+        /// This operation allows a search on <c>TABLE</c> resources by <c>LFTag</c>s. This will
+        /// be used by admins who want to grant user permissions on certain LF-tags. Before making
+        /// a grant, the admin can use <c>SearchTablesByLFTags</c> to find all resources where
+        /// the given <c>LFTag</c>s are valid to verify whether the returned resources can be
+        /// shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchTablesByLFTags service method.</param>
         /// 
@@ -3774,11 +3772,11 @@ namespace Amazon.LakeFormation
 
 
         /// <summary>
-        /// This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s.
-        /// This will be used by admins who want to grant user permissions on certain LF-tags.
-        /// Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find
-        /// all resources where the given <code>LFTag</code>s are valid to verify whether the
-        /// returned resources can be shared.
+        /// This operation allows a search on <c>TABLE</c> resources by <c>LFTag</c>s. This will
+        /// be used by admins who want to grant user permissions on certain LF-tags. Before making
+        /// a grant, the admin can use <c>SearchTablesByLFTags</c> to find all resources where
+        /// the given <c>LFTag</c>s are valid to verify whether the returned resources can be
+        /// shared.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchTablesByLFTags service method.</param>
         /// <param name="cancellationToken">
@@ -3824,7 +3822,7 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// This operation generates work units that can be retrieved with the <code>GetWorkUnits</code>
+        /// This operation generates work units that can be retrieved with the <c>GetWorkUnits</c>
         /// operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED.
         /// </para>
         /// </summary>
@@ -3859,7 +3857,7 @@ namespace Amazon.LakeFormation
         /// 
         ///  
         /// <para>
-        /// This operation generates work units that can be retrieved with the <code>GetWorkUnits</code>
+        /// This operation generates work units that can be retrieved with the <c>GetWorkUnits</c>
         /// operation as soon as the query state is WORKUNITS_AVAILABLE or FINISHED.
         /// </para>
         /// </summary>
@@ -4289,7 +4287,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateTableObjects">REST API Reference for UpdateTableObjects Operation</seealso>
         public virtual UpdateTableObjectsResponse UpdateTableObjects(UpdateTableObjectsRequest request)
@@ -4337,7 +4335,7 @@ namespace Amazon.LakeFormation
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.TransactionCommittedException">
         /// Contains details about an error where the specified transaction has already been committed
-        /// and cannot be used for <code>UpdateTableObjects</code>.
+        /// and cannot be used for <c>UpdateTableObjects</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateTableObjects">REST API Reference for UpdateTableObjects Operation</seealso>
         public virtual Task<UpdateTableObjectsResponse> UpdateTableObjectsAsync(UpdateTableObjectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

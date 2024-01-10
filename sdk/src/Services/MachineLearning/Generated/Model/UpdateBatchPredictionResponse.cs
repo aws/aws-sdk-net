@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <code>UpdateBatchPrediction</code> operation.
+    /// Represents the output of an <c>UpdateBatchPrediction</c> operation.
     /// 
     ///  
     /// <para>
-    /// You can see the updated content by using the <code>GetBatchPrediction</code> operation.
+    /// You can see the updated content by using the <c>GetBatchPrediction</c> operation.
     /// </para>
     /// </summary>
     public partial class UpdateBatchPredictionResponse : AmazonWebServiceResponse
@@ -43,8 +43,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// The ID assigned to the <code>BatchPrediction</code> during creation. This value should
-        /// be identical to the value of the <code>BatchPredictionId</code> in the request.
+        /// The ID assigned to the <c>BatchPrediction</c> during creation. This value should be
+        /// identical to the value of the <c>BatchPredictionId</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

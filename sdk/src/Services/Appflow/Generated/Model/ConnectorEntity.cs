@@ -43,7 +43,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property HasNestedEntities. 
         /// <para>
         ///  Specifies whether the connector entity is a parent or a category and has more entities
-        /// nested underneath it. If another call is made with <code>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</code>,
+        /// nested underneath it. If another call is made with <c>entitiesPath = "the_current_entity_name_with_hasNestedEntities_true"</c>,
         /// then it returns the nested entities underneath it. This provides a way to retrieve
         /// all supported entities in a recursive fashion. 
         /// </para>

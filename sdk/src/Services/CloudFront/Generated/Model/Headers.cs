@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// The number of header names in the <code>Items</code> list.
+        /// The number of header names in the <c>Items</c> list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

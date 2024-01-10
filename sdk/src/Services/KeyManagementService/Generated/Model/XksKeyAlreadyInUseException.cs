@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the (<code>XksKeyId</code>) is already associated
-    /// with another KMS key in this external key store. Each KMS key in an external key store
+    /// The request was rejected because the (<c>XksKeyId</c>) is already associated with
+    /// another KMS key in this external key store. Each KMS key in an external key store
     /// must be associated with a different external key.
     /// </summary>
     #if !NETSTANDARD

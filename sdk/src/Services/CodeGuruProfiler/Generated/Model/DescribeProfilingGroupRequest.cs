@@ -31,8 +31,8 @@ namespace Amazon.CodeGuruProfiler.Model
     /// <summary>
     /// Container for the parameters to the DescribeProfilingGroup operation.
     /// Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-    /// <code>ProfilingGroupDescription</code> </a> object that contains information about
-    /// the requested profiling group.
+    /// <c>ProfilingGroupDescription</c> </a> object that contains information about the requested
+    /// profiling group.
     /// </summary>
     public partial class DescribeProfilingGroupRequest : AmazonCodeGuruProfilerRequest
     {

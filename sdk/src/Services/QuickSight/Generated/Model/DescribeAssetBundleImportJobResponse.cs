@@ -70,7 +70,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssetBundleImportJobId. 
         /// <para>
-        /// The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code>
+        /// The ID of the job. The job ID is set when you start a new job with a <c>StartAssetBundleImportJob</c>
         /// API call.
         /// </para>
         /// </summary>
@@ -192,24 +192,24 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Poll the <code>DescribeAssetBundleImport</code> API until <code>JobStatus</code> returns
-        /// one of the following values:
+        /// Poll the <c>DescribeAssetBundleImport</c> API until <c>JobStatus</c> returns one of
+        /// the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCESSFUL</code> 
+        ///  <c>SUCCESSFUL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> 
+        ///  <c>FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED_ROLLBACK_COMPLETED</code> 
+        ///  <c>FAILED_ROLLBACK_COMPLETED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED_ROLLBACK_ERROR</code> 
+        ///  <c>FAILED_ROLLBACK_ERROR</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

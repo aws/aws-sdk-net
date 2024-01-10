@@ -39,8 +39,8 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdmin. 
         /// <para>
-        /// The ARN and name of the administrator, the ARN of the <code>AppInstance</code>, and
-        /// the created and last-updated timestamps. All timestamps use epoch milliseconds.
+        /// The ARN and name of the administrator, the ARN of the <c>AppInstance</c>, and the
+        /// created and last-updated timestamps. All timestamps use epoch milliseconds.
         /// </para>
         /// </summary>
         public Identity AppInstanceAdmin
@@ -58,7 +58,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the of the admin for the <code>AppInstance</code>.
+        /// The ARN of the of the admin for the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

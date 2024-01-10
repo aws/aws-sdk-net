@@ -62,8 +62,8 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property DatasetType. 
         /// <para>
-        /// The type of the dataset. The value <code>train</code> represents a training dataset
-        /// or single dataset project. The value <code>test</code> represents a test dataset.
+        /// The type of the dataset. The value <c>train</c> represents a training dataset or single
+        /// dataset project. The value <c>test</c> represents a test dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

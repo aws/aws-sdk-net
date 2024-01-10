@@ -75,13 +75,13 @@ namespace Amazon.VerifiedPermissions
     /// </para>
     ///  
     /// <para>
-    /// For example, if user <code>jane</code> leaves the company, and you later let someone
-    /// else use the name <code>jane</code>, then that new user automatically gets access
-    /// to everything granted by policies that still reference <code>User::"jane"</code>.
-    /// Cedar can’t distinguish between the new user and the old. This applies to both principal
-    /// and resource identifiers. Always use identifiers that are guaranteed unique and never
-    /// reused to ensure that you don’t unintentionally grant access because of the presence
-    /// of an old identifier in a policy.
+    /// For example, if user <c>jane</c> leaves the company, and you later let someone else
+    /// use the name <c>jane</c>, then that new user automatically gets access to everything
+    /// granted by policies that still reference <c>User::"jane"</c>. Cedar can’t distinguish
+    /// between the new user and the old. This applies to both principal and resource identifiers.
+    /// Always use identifiers that are guaranteed unique and never reused to ensure that
+    /// you don’t unintentionally grant access because of the presence of an old identifier
+    /// in a policy.
     /// </para>
     ///  
     /// <para>
@@ -106,13 +106,11 @@ namespace Amazon.VerifiedPermissions
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Parameter type structures that end in <code>Detail</code> are used in <code>Get</code>
-    /// operations.
+    /// Parameter type structures that end in <c>Detail</c> are used in <c>Get</c> operations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Parameter type structures that end in <code>Item</code> are used in <code>List</code>
-    /// operations.
+    /// Parameter type structures that end in <c>Item</c> are used in <c>List</c> operations.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -351,32 +349,31 @@ namespace Amazon.VerifiedPermissions
 
         /// <summary>
         /// Makes a series of decisions about multiple authorization requests for one principal
-        /// or resource. Each request contains the equivalent content of an <code>IsAuthorized</code>
-        /// request: principal, action, resource, and context. Either the <code>principal</code>
-        /// or the <code>resource</code> parameter must be identical across all requests. For
-        /// example, Verified Permissions won't evaluate a pair of requests where <code>bob</code>
-        /// views <code>photo1</code> and <code>alice</code> views <code>photo2</code>. Authorization
-        /// of <code>bob</code> to view <code>photo1</code> and <code>photo2</code>, or <code>bob</code>
-        /// and <code>alice</code> to view <code>photo1</code>, are valid batches. 
+        /// or resource. Each request contains the equivalent content of an <c>IsAuthorized</c>
+        /// request: principal, action, resource, and context. Either the <c>principal</c> or
+        /// the <c>resource</c> parameter must be identical across all requests. For example,
+        /// Verified Permissions won't evaluate a pair of requests where <c>bob</c> views <c>photo1</c>
+        /// and <c>alice</c> views <c>photo2</c>. Authorization of <c>bob</c> to view <c>photo1</c>
+        /// and <c>photo2</c>, or <c>bob</c> and <c>alice</c> to view <c>photo1</c>, are valid
+        /// batches. 
         /// 
         ///  
         /// <para>
         /// The request is evaluated against all policies in the specified policy store that match
-        /// the entities that you declare. The result of the decisions is a series of <code>Allow</code>
-        /// or <code>Deny</code> responses, along with the IDs of the policies that produced each
-        /// decision.
+        /// the entities that you declare. The result of the decisions is a series of <c>Allow</c>
+        /// or <c>Deny</c> responses, along with the IDs of the policies that produced each decision.
         /// </para>
         ///  
         /// <para>
-        /// The <code>entities</code> of a <code>BatchIsAuthorized</code> API request can contain
-        /// up to 100 principals and up to 100 resources. The <code>requests</code> of a <code>BatchIsAuthorized</code>
+        /// The <c>entities</c> of a <c>BatchIsAuthorized</c> API request can contain up to 100
+        /// principals and up to 100 resources. The <c>requests</c> of a <c>BatchIsAuthorized</c>
         /// API request can contain up to 30 requests.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>BatchIsAuthorized</code> operation doesn't have its own IAM permission.
-        /// To authorize this operation for Amazon Web Services principals, include the permission
-        /// <code>verifiedpermissions:IsAuthorized</code> in their IAM policies.
+        /// The <c>BatchIsAuthorized</c> operation doesn't have its own IAM permission. To authorize
+        /// this operation for Amazon Web Services principals, include the permission <c>verifiedpermissions:IsAuthorized</c>
+        /// in their IAM policies.
         /// </para>
         ///  </note>
         /// </summary>
@@ -443,8 +440,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -579,8 +576,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// Where <code>IdentityType</code> is the string that you provide to the <code>PrincipalEntityType</code>
-        /// parameter for this operation. The <code>CognitoUserPoolId</code> and <code>CognitoClientId</code>
+        /// Where <c>IdentityType</c> is the string that you provide to the <c>PrincipalEntityType</c>
+        /// parameter for this operation. The <c>CognitoUserPoolId</c> and <c>CognitoClientId</c>
         /// are defined by the Amazon Cognito user pool.
         /// </para>
         ///  </note> <note> 
@@ -661,8 +658,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -769,15 +766,15 @@ namespace Amazon.VerifiedPermissions
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// To create a static policy, provide the Cedar policy text in the <code>StaticPolicy</code>
-        /// section of the <code>PolicyDefinition</code>.
+        /// To create a static policy, provide the Cedar policy text in the <c>StaticPolicy</c>
+        /// section of the <c>PolicyDefinition</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To create a policy that is dynamically linked to a policy template, specify the policy
-        /// template ID and the principal and resource to associate with this policy in the <code>templateLinked</code>
-        /// section of the <code>PolicyDefinition</code>. If the policy template is ever updated,
-        /// any policies linked to the policy template automatically use the updated template.
+        /// template ID and the principal and resource to associate with this policy in the <c>templateLinked</c>
+        /// section of the <c>PolicyDefinition</c>. If the policy template is ever updated, any
+        /// policies linked to the policy template automatically use the updated template.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -862,8 +859,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1048,8 +1045,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1236,8 +1233,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1411,8 +1408,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1519,7 +1516,7 @@ namespace Amazon.VerifiedPermissions
         ///  
         /// <para>
         /// This operation is idempotent; if you specify a policy that doesn't exist, the request
-        /// response returns a successful <code>HTTP 200</code> status code.
+        /// response returns a successful <c>HTTP 200</c> status code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePolicy service method.</param>
@@ -1588,8 +1585,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1759,8 +1756,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1938,8 +1935,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2106,8 +2103,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2274,8 +2271,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2442,8 +2439,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2610,8 +2607,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2778,8 +2775,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2884,8 +2881,8 @@ namespace Amazon.VerifiedPermissions
         /// Makes an authorization decision about a service request described in the parameters.
         /// The information in the parameters can also define additional context that Verified
         /// Permissions can include in the evaluation. The request is evaluated against all matching
-        /// policies in the specified policy store. The result of the decision is either <code>Allow</code>
-        /// or <code>Deny</code>, along with a list of the policies that resulted in the decision.
+        /// policies in the specified policy store. The result of the decision is either <c>Allow</c>
+        /// or <c>Deny</c>, along with a list of the policies that resulted in the decision.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IsAuthorized service method.</param>
         /// 
@@ -2950,8 +2947,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3059,19 +3056,19 @@ namespace Amazon.VerifiedPermissions
         /// web token (JWT)</a>. The information in the parameters can also define additional
         /// context that Verified Permissions can include in the evaluation. The request is evaluated
         /// against all matching policies in the specified policy store. The result of the decision
-        /// is either <code>Allow</code> or <code>Deny</code>, along with a list of the policies
-        /// that resulted in the decision.
+        /// is either <c>Allow</c> or <c>Deny</c>, along with a list of the policies that resulted
+        /// in the decision.
         /// 
         ///  <important> 
         /// <para>
-        /// If you specify the <code>identityToken</code> parameter, then this operation derives
-        /// the principal from that token. You must not also include that principal in the <code>entities</code>
+        /// If you specify the <c>identityToken</c> parameter, then this operation derives the
+        /// principal from that token. You must not also include that principal in the <c>entities</c>
         /// parameter or the operation fails and reports a conflict between the two entity sources.
         /// </para>
         ///  
         /// <para>
-        /// If you provide only an <code>accessToken</code>, then you can include the entity as
-        /// part of the <code>entities</code> parameter to provide additional attributes.
+        /// If you provide only an <c>accessToken</c>, then you can include the entity as part
+        /// of the <c>entities</c> parameter to provide additional attributes.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3152,8 +3149,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3321,8 +3318,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3489,8 +3486,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3654,8 +3651,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3822,8 +3819,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4010,8 +4007,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4192,8 +4189,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4421,8 +4418,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4601,8 +4598,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4789,8 +4786,8 @@ namespace Amazon.VerifiedPermissions
         /// </para>
         ///  
         /// <para>
-        /// The types of elements included in a <code>set</code>, or the types of expressions
-        /// used in an <code>if...then...else</code> clause aren't compatible in this context.
+        /// The types of elements included in a <c>set</c>, or the types of expressions used in
+        /// an <c>if...then...else</c> clause aren't compatible in this context.
         /// </para>
         ///  </li> <li> 
         /// <para>

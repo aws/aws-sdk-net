@@ -39,7 +39,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property CodeErrors. 
         /// <para>
-        /// Contains the list of <code>CodeError</code> objects.
+        /// Contains the list of <c>CodeError</c> objects.
         /// </para>
         /// </summary>
         public List<CodeError> CodeErrors

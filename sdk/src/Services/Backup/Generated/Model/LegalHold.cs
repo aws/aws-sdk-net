@@ -104,7 +104,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property LegalHoldArn. 
         /// <para>
         /// This is an Amazon Resource Number (ARN) that uniquely identifies the legal hold; for
-        /// example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string LegalHoldArn
@@ -140,8 +140,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>,
-        /// <code>CANCELED</code>, and <code>CANCELING</code>.
+        /// This is the status of the legal hold. Statuses can be <c>ACTIVE</c>, <c>CREATING</c>,
+        /// <c>CANCELED</c>, and <c>CANCELING</c>.
         /// </para>
         /// </summary>
         public LegalHoldStatus Status

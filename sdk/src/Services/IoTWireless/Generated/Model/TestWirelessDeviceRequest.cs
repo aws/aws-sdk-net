@@ -30,7 +30,7 @@ namespace Amazon.IoTWireless.Model
 {
     /// <summary>
     /// Container for the parameters to the TestWirelessDevice operation.
-    /// Simulates a provisioned device by sending an uplink data payload of <code>Hello</code>.
+    /// Simulates a provisioned device by sending an uplink data payload of <c>Hello</c>.
     /// </summary>
     public partial class TestWirelessDeviceRequest : AmazonIoTWirelessRequest
     {

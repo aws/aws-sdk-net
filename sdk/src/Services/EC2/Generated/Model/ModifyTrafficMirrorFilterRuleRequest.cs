@@ -34,8 +34,8 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    ///  <code>DestinationCidrBlock</code> and <code>SourceCidrBlock</code> must both be an
-    /// IPv4 range or an IPv6 range.
+    ///  <c>DestinationCidrBlock</c> and <c>SourceCidrBlock</c> must both be an IPv4 range
+    /// or an IPv6 range.
     /// </para>
     /// </summary>
     public partial class ModifyTrafficMirrorFilterRuleRequest : AmazonEC2Request

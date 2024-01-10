@@ -74,7 +74,7 @@ namespace Amazon.CognitoIdentity.Model
         /// A set of optional name-value pairs that map provider names to provider tokens. When
         /// using graph.facebook.com and www.amazon.com, supply the access_token returned from
         /// the provider's authflow. For accounts.google.com, an Amazon Cognito user pool provider,
-        /// or any other OpenID Connect provider, always include the <code>id_token</code>.
+        /// or any other OpenID Connect provider, always include the <c>id_token</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10)]

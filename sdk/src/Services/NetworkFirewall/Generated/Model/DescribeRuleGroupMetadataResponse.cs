@@ -52,7 +52,7 @@ namespace Amazon.NetworkFirewall.Model
         ///  
         /// <para>
         /// You can retrieve the capacity that would be required for a rule group before you create
-        /// the rule group by calling <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>.
+        /// the rule group by calling <a>CreateRuleGroup</a> with <c>DryRun</c> set to <c>TRUE</c>.
         /// 
         /// </para>
         /// </summary>
@@ -176,7 +176,7 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This setting is required for requests that do not include the <code>RuleGroupARN</code>.
+        /// This setting is required for requests that do not include the <c>RuleGroupARN</c>.
         /// </para>
         ///  </note>
         /// </summary>

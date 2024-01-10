@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSourceApiAssociation operation.
-    /// Retrieves a <code>SourceApiAssociation</code> object.
+    /// Retrieves a <c>SourceApiAssociation</c> object.
     /// </summary>
     public partial class GetSourceApiAssociationRequest : AmazonAppSyncRequest
     {

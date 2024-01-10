@@ -61,7 +61,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// Internal ID of the package to associate with a domain. Use <code>DescribePackages</code>
+        /// Internal ID of the package to associate with a domain. Use <c>DescribePackages</c>
         /// to find this value. 
         /// </para>
         /// </summary>

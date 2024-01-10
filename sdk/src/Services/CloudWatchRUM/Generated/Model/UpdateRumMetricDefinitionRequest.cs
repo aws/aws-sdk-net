@@ -63,10 +63,10 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination to send the metrics to. Valid values are <code>CloudWatch</code> and
-        /// <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify
-        /// the ARN of the CloudWatchEvidently experiment that will receive the metrics and an
-        /// IAM role that has permission to write to the experiment.
+        /// The destination to send the metrics to. Valid values are <c>CloudWatch</c> and <c>Evidently</c>.
+        /// If you specify <c>Evidently</c>, you must also specify the ARN of the CloudWatchEvidently
+        /// experiment that will receive the metrics and an IAM role that has permission to write
+        /// to the experiment.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,8 +85,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// This parameter is required if <code>Destination</code> is <code>Evidently</code>.
-        /// If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.
+        /// This parameter is required if <c>Destination</c> is <c>Evidently</c>. If <c>Destination</c>
+        /// is <c>CloudWatch</c>, do not use this parameter.
         /// </para>
         ///  
         /// <para>

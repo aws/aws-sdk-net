@@ -39,7 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExportSummaries. 
         /// <para>
-        /// A list of <code>ExportSummary</code> objects.
+        /// A list of <c>ExportSummary</c> objects.
         /// </para>
         /// </summary>
         public List<ExportSummary> ExportSummaries
@@ -58,8 +58,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If this value is returned, there are additional results to be displayed. To retrieve
-        /// them, call <code>ListExports</code> again, with <code>NextToken</code> set to this
-        /// value.
+        /// them, call <c>ListExports</c> again, with <c>NextToken</c> set to this value.
         /// </para>
         /// </summary>
         public string NextToken

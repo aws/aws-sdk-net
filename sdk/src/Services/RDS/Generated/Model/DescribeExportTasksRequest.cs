@@ -73,46 +73,46 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>export-task-identifier</code> - An identifier for the snapshot or cluster export
+        ///  <c>export-task-identifier</c> - An identifier for the snapshot or cluster export
         /// task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3-bucket</code> - The Amazon S3 bucket the data is exported to.
+        ///  <c>s3-bucket</c> - The Amazon S3 bucket the data is exported to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source-arn</code> - The Amazon Resource Name (ARN) of the snapshot or cluster
-        /// exported to Amazon S3.
+        ///  <c>source-arn</c> - The Amazon Resource Name (ARN) of the snapshot or cluster exported
+        /// to Amazon S3.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> - The status of the export task. Must be lowercase. Valid statuses
+        ///  <c>status</c> - The status of the export task. Must be lowercase. Valid statuses
         /// are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>canceled</code> 
+        ///  <c>canceled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>canceling</code> 
+        ///  <c>canceling</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>complete</code> 
+        ///  <c>complete</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed</code> 
+        ///  <c>failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>in_progress</code> 
+        ///  <c>in_progress</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>starting</code> 
+        ///  <c>starting</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -131,9 +131,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeExportTasks</code>
-        /// request. If you specify this parameter, the response includes only records beyond
-        /// the marker, up to the value specified by the <code>MaxRecords</code> parameter.
+        /// An optional pagination token provided by a previous <c>DescribeExportTasks</c> request.
+        /// If you specify this parameter, the response includes only records beyond the marker,
+        /// up to the value specified by the <c>MaxRecords</c> parameter.
         /// </para>
         /// </summary>
         public string Marker
@@ -153,8 +153,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
         /// the specified value, a pagination token called a marker is included in the response.
-        /// You can use the marker in a later <code>DescribeExportTasks</code> request to retrieve
-        /// the remaining results.
+        /// You can use the marker in a later <c>DescribeExportTasks</c> request to retrieve the
+        /// remaining results.
         /// </para>
         ///  
         /// <para>

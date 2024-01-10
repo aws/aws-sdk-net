@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ConfigurationPolicyAssociationSummaries. 
         /// <para>
         ///  An object that contains the details of each configuration policy association that’s
-        /// returned in a <code>ListConfigurationPolicyAssociations</code> request. 
+        /// returned in a <c>ListConfigurationPolicyAssociations</c> request. 
         /// </para>
         /// </summary>
         public List<ConfigurationPolicyAssociationSummary> ConfigurationPolicyAssociationSummaries
@@ -58,11 +58,10 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The <code>NextToken</code> value to include in the next <code>ListConfigurationPolicyAssociations</code>
-        /// request. When the results of a <code>ListConfigurationPolicyAssociations</code> request
-        /// exceed <code>MaxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to return.
-        /// 
+        ///  The <c>NextToken</c> value to include in the next <c>ListConfigurationPolicyAssociations</c>
+        /// request. When the results of a <c>ListConfigurationPolicyAssociations</c> request
+        /// exceed <c>MaxResults</c>, this value can be used to retrieve the next page of results.
+        /// This value is <c>null</c> when there are no more results to return. 
         /// </para>
         /// </summary>
         public string NextToken

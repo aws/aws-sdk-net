@@ -63,7 +63,7 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// The starting point for the results to be returned. For the first call, this value
-        /// should be empty. As long as there are more results, continue to call <code>DescribeObjects</code>
+        /// should be empty. As long as there are more results, continue to call <c>DescribeObjects</c>
         /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property ObjectIds. 
         /// <para>
         /// The IDs of the pipeline objects that contain the definitions to be described. You
-        /// can pass as many as 25 identifiers in a single call to <code>DescribeObjects</code>.
+        /// can pass as many as 25 identifiers in a single call to <c>DescribeObjects</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

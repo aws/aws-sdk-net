@@ -109,7 +109,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// Specify the DB instance identifier for an Aurora Replica or a Multi-AZ readable standby
-        /// in the DB cluster, for example <code>mydbcluster-replica1</code>.
+        /// in the DB cluster, for example <c>mydbcluster-replica1</c>.
         /// </para>
         ///  
         /// <para>

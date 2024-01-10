@@ -33,8 +33,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used by the return parameter of <code> <a>SimulateCustomPolicy</a>
-    /// </code> and <code> <a>SimulatePrincipalPolicy</a> </code>.
+    /// This data type is used by the return parameter of <c> <a>SimulateCustomPolicy</a>
+    /// </c> and <c> <a>SimulatePrincipalPolicy</a> </c>.
     /// </para>
     /// </summary>
     public partial class EvaluationResult
@@ -98,15 +98,15 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// If the simulation evaluates policies within the same account and includes a resource
         /// ARN, then the parameter is present but the response is empty. If the simulation evaluates
-        /// policies within the same account and specifies all resources (<code>*</code>), then
-        /// the parameter is not returned.
+        /// policies within the same account and specifies all resources (<c>*</c>), then the
+        /// parameter is not returned.
         /// </para>
         ///  
         /// <para>
         /// When you make a cross-account request, Amazon Web Services evaluates the request in
         /// the trusting account and the trusted account. The request is allowed only if both
-        /// evaluations return <code>true</code>. For more information about how policies are
-        /// evaluated, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
+        /// evaluations return <c>true</c>. For more information about how policies are evaluated,
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics">Evaluating
         /// policies within a single account</a>.
         /// </para>
         ///  
@@ -173,9 +173,9 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// A list of context keys that are required by the included input policies but that were
         /// not provided by one of the input parameters. This list is used when the resource in
-        /// a simulation is "*", either explicitly, or when the <code>ResourceArns</code> parameter
+        /// a simulation is "*", either explicitly, or when the <c>ResourceArns</c> parameter
         /// blank. If you include a list of resources, then any missing context values are instead
-        /// included under the <code>ResourceSpecificResults</code> section. To discover the context
+        /// included under the <c>ResourceSpecificResults</c> section. To discover the context
         /// keys used by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a>
         /// or <a>GetContextKeysForPrincipalPolicy</a>.
         /// </para>

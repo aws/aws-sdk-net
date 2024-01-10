@@ -67,12 +67,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MATCH</code> - Treat the web request as matching the rule statement. WAF applies
+        ///  <c>MATCH</c> - Treat the web request as matching the rule statement. WAF applies
         /// the rule action to the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
+        ///  <c>NO_MATCH</c> - Treat the web request as not matching the rule statement.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -93,7 +93,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property HeaderName. 
         /// <para>
         /// The name of the HTTP header to use for the IP address. For example, to use the X-Forwarded-For
-        /// (XFF) header, set this to <code>X-Forwarded-For</code>.
+        /// (XFF) header, set this to <c>X-Forwarded-For</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -120,9 +120,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The position in the header to search for the IP address. The header can contain IP
         /// addresses of the original client and also of proxies. For example, the header value
-        /// could be <code>10.1.1.1, 127.0.0.0, 10.10.10.10</code> where the first IP address
-        /// identifies the original client and the rest identify proxies that the request went
-        /// through. 
+        /// could be <c>10.1.1.1, 127.0.0.0, 10.10.10.10</c> where the first IP address identifies
+        /// the original client and the rest identify proxies that the request went through. 
         /// </para>
         ///  
         /// <para>

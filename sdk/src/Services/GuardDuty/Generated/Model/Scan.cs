@@ -72,7 +72,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AdminDetectorId. 
         /// <para>
         /// The unique detector ID of the administrator account that the request is associated
-        /// with. Note that this value will be the same as the one used for <code>DetectorId</code>
+        /// with. Note that this value will be the same as the one used for <c>DetectorId</c>
         /// if the account is an administrator.
         /// </para>
         /// </summary>

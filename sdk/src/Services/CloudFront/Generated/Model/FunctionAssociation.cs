@@ -39,8 +39,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The event type of the function, either <code>viewer-request</code> or <code>viewer-response</code>.
-        /// You cannot use origin-facing event types (<code>origin-request</code> and <code>origin-response</code>)
+        /// The event type of the function, either <c>viewer-request</c> or <c>viewer-response</c>.
+        /// You cannot use origin-facing event types (<c>origin-request</c> and <c>origin-response</c>)
         /// with a CloudFront function.
         /// </para>
         /// </summary>

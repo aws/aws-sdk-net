@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A set of filters to narrow the set of lineage entities connected to the <code>StartArn</code>(s)
-    /// returned by the <code>QueryLineage</code> API action.
+    /// A set of filters to narrow the set of lineage entities connected to the <c>StartArn</c>(s)
+    /// returned by the <c>QueryLineage</c> API action.
     /// </summary>
     public partial class QueryFilters
     {
@@ -45,8 +45,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
         /// <para>
-        /// Filter the lineage entities connected to the <code>StartArn</code>(s) after the create
-        /// date.
+        /// Filter the lineage entities connected to the <c>StartArn</c>(s) after the create date.
         /// </para>
         /// </summary>
         public DateTime CreatedAfter
@@ -64,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreatedBefore. 
         /// <para>
-        /// Filter the lineage entities connected to the <code>StartArn</code>(s) by created date.
+        /// Filter the lineage entities connected to the <c>StartArn</c>(s) by created date.
         /// </para>
         /// </summary>
         public DateTime CreatedBefore
@@ -82,8 +81,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LineageTypes. 
         /// <para>
-        /// Filter the lineage entities connected to the <code>StartArn</code>(s) by the type
-        /// of the lineage entity.
+        /// Filter the lineage entities connected to the <c>StartArn</c>(s) by the type of the
+        /// lineage entity.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4)]
@@ -102,8 +101,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModifiedAfter. 
         /// <para>
-        /// Filter the lineage entities connected to the <code>StartArn</code>(s) after the last
-        /// modified date.
+        /// Filter the lineage entities connected to the <c>StartArn</c>(s) after the last modified
+        /// date.
         /// </para>
         /// </summary>
         public DateTime ModifiedAfter
@@ -121,8 +120,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModifiedBefore. 
         /// <para>
-        /// Filter the lineage entities connected to the <code>StartArn</code>(s) before the last
-        /// modified date.
+        /// Filter the lineage entities connected to the <c>StartArn</c>(s) before the last modified
+        /// date.
         /// </para>
         /// </summary>
         public DateTime ModifiedBefore
@@ -140,9 +139,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// Filter the lineage entities connected to the <code>StartArn</code>(s) by a set if
-        /// property key value pairs. If multiple pairs are provided, an entity is included in
-        /// the results if it matches any of the provided pairs.
+        /// Filter the lineage entities connected to the <c>StartArn</c>(s) by a set if property
+        /// key value pairs. If multiple pairs are provided, an entity is included in the results
+        /// if it matches any of the provided pairs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]
@@ -161,8 +160,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Types. 
         /// <para>
-        /// Filter the lineage entities connected to the <code>StartArn</code> by type. For example:
-        /// <code>DataSet</code>, <code>Model</code>, <code>Endpoint</code>, or <code>ModelDeployment</code>.
+        /// Filter the lineage entities connected to the <c>StartArn</c> by type. For example:
+        /// <c>DataSet</c>, <c>Model</c>, <c>Endpoint</c>, or <c>ModelDeployment</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

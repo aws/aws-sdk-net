@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Details about an antenna demod decode <code>Config</code> used in a contact.
+    /// Details about an antenna demod decode <c>Config</c> used in a contact.
     /// </summary>
     public partial class AntennaDemodDecodeDetails
     {

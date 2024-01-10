@@ -99,9 +99,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the VPC link. The valid values are <code>AVAILABLE</code>, <code>PENDING</code>,
-        /// <code>DELETING</code>, or <code>FAILED</code>. Deploying an API will wait if the status
-        /// is <code>PENDING</code> and will fail if the status is <code>DELETING</code>. 
+        /// The status of the VPC link. The valid values are <c>AVAILABLE</c>, <c>PENDING</c>,
+        /// <c>DELETING</c>, or <c>FAILED</c>. Deploying an API will wait if the status is <c>PENDING</c>
+        /// and will fail if the status is <c>DELETING</c>. 
         /// </para>
         /// </summary>
         public VpcLinkStatus Status

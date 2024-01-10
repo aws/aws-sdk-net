@@ -64,9 +64,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property IamAuthEnabled. 
         /// <para>
         /// If you want Identity and Access Management (IAM) authorization enabled for this endpoint,
-        /// set this parameter to <code>true</code>. Then attach the appropriate IAM policy document
-        /// to your service role specified by <code>ServiceAccessRoleArn</code>. The default is
-        /// <code>false</code>.
+        /// set this parameter to <c>true</c>. Then attach the appropriate IAM policy document
+        /// to your service role specified by <c>ServiceAccessRoleArn</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool IamAuthEnabled
@@ -125,7 +124,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property S3BucketFolder. 
         /// <para>
         /// A folder path where you want DMS to store migrated graph data in the S3 bucket specified
-        /// by <code>S3BucketName</code> 
+        /// by <c>S3BucketName</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -166,8 +165,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the service role that you created for the Neptune
-        /// target endpoint. The role must allow the <code>iam:PassRole</code> action. For more
-        /// information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating
+        /// target endpoint. The role must allow the <c>iam:PassRole</c> action. For more information,
+        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Neptune.html#CHAP_Target.Neptune.ServiceRole">Creating
         /// an IAM Service Role for Accessing Amazon Neptune as a Target</a> in the <i>Database
         /// Migration Service User Guide. </i> 
         /// </para>

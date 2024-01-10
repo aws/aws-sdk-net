@@ -127,7 +127,7 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  </dd> <dt>AllWorldGenerationFailed</dt> <dd> 
         /// <para>
-        /// All of the worlds in the world generation job failed. This can happen if your <code>worldCount</code>
+        /// All of the worlds in the world generation job failed. This can happen if your <c>worldCount</c>
         /// is greater than 50 or less than 1. 
         /// </para>
         ///  </dd> </dl> 
@@ -202,7 +202,7 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  </dd> <dt>Failed</dt> <dd> 
         /// <para>
-        /// The world export job failed. See <code>failureCode</code> for more information. 
+        /// The world export job failed. See <c>failureCode</c> for more information. 
         /// </para>
         ///  </dd> <dt>Canceled</dt> <dd> 
         /// <para>

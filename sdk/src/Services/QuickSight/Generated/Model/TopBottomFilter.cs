@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>TopBottomFilter</code> filters values that are at the top or the bottom.
+    /// A <c>TopBottomFilter</c> filters values that are at the top or the bottom.
     /// </summary>
     public partial class TopBottomFilter
     {
@@ -137,7 +137,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TimeGranularity. 
         /// <para>
-        /// The level of time precision that is used to aggregate <code>DateTime</code> values.
+        /// The level of time precision that is used to aggregate <c>DateTime</c> values.
         /// </para>
         /// </summary>
         public TimeGranularity TimeGranularity

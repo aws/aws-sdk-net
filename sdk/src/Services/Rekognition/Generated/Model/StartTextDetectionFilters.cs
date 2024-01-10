@@ -30,9 +30,9 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Set of optional parameters that let you set the criteria text must meet to be included
-    /// in your response. <code>WordFilter</code> looks at a word's height, width and minimum
-    /// confidence. <code>RegionOfInterest</code> lets you set a specific region of the screen
-    /// to look for text in.
+    /// in your response. <c>WordFilter</c> looks at a word's height, width and minimum confidence.
+    /// <c>RegionOfInterest</c> lets you set a specific region of the screen to look for text
+    /// in.
     /// </summary>
     public partial class StartTextDetectionFilters
     {
@@ -42,8 +42,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property RegionsOfInterest. 
         /// <para>
-        /// Filter focusing on a certain area of the frame. Uses a <code>BoundingBox</code> object
-        /// to set the region of the screen.
+        /// Filter focusing on a certain area of the frame. Uses a <c>BoundingBox</c> object to
+        /// set the region of the screen.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]

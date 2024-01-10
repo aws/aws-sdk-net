@@ -53,11 +53,11 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use <code>RegisterImage</code> to create an Amazon EBS-backed Linux AMI from
-    /// a snapshot of a root device volume. You specify the snapshot using a block device
-    /// mapping. You can't set the encryption state of the volume using the block device mapping.
-    /// If the snapshot is encrypted, or encryption by default is enabled, the root volume
-    /// of an instance launched from the AMI is encrypted.
+    /// You can use <c>RegisterImage</c> to create an Amazon EBS-backed Linux AMI from a snapshot
+    /// of a root device volume. You specify the snapshot using a block device mapping. You
+    /// can't set the encryption state of the volume using the block device mapping. If the
+    /// snapshot is encrypted, or encryption by default is enabled, the root volume of an
+    /// instance launched from the AMI is encrypted.
     /// </para>
     ///  
     /// <para>
@@ -146,8 +146,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: For Amazon EBS-backed AMIs, <code>i386</code>. For instance store-backed
-        /// AMIs, the architecture specified in the manifest file.
+        /// Default: For Amazon EBS-backed AMIs, <c>i386</c>. For instance store-backed AMIs,
+        /// the architecture specified in the manifest file.
         /// </para>
         /// </summary>
         public ArchitectureValues Architecture
@@ -224,8 +224,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BootMode. 
         /// <para>
-        /// The boot mode of the AMI. A value of <code>uefi-preferred</code> indicates that the
-        /// AMI supports both UEFI and Legacy BIOS.
+        /// The boot mode of the AMI. A value of <c>uefi-preferred</c> indicates that the AMI
+        /// supports both UEFI and Legacy BIOS.
         /// </para>
         ///  <note> 
         /// <para>
@@ -271,8 +271,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnaSupport. 
         /// <para>
-        /// Set to <code>true</code> to enable enhanced networking with ENA for the AMI and any
-        /// instances that you launch from the AMI.
+        /// Set to <c>true</c> to enable enhanced networking with ENA for the AMI and any instances
+        /// that you launch from the AMI.
         /// </para>
         ///  
         /// <para>
@@ -296,8 +296,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ImageLocation. 
         /// <para>
         /// The full path to your AMI manifest in Amazon S3 storage. The specified bucket must
-        /// have the <code>aws-exec-read</code> canned access control list (ACL) to ensure that
-        /// it can be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
+        /// have the <c>aws-exec-read</c> canned access control list (ACL) to ensure that it can
+        /// be accessed by Amazon EC2. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
         /// ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -316,16 +316,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImdsSupport. 
         /// <para>
-        /// Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances
-        /// launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code>
-        /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
-        /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+        /// Set to <c>v2.0</c> to indicate that IMDSv2 is specified in the AMI. Instances launched
+        /// from this AMI will have <c>HttpTokens</c> automatically set to <c>required</c> so
+        /// that, by default, the instance requires that IMDSv2 is used when requesting instance
+        /// metadata. In addition, <c>HttpPutResponseHopLimit</c> is set to <c>2</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
         /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you set the value to <code>v2.0</code>, make sure that your AMI software can support
+        /// If you set the value to <c>v2.0</c>, make sure that your AMI software can support
         /// IMDSv2.
         /// </para>
         ///  </note>
@@ -406,7 +406,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RootDeviceName. 
         /// <para>
-        /// The device name of the root device volume (for example, <code>/dev/sda1</code>).
+        /// The device name of the root device volume (for example, <c>/dev/sda1</c>).
         /// </para>
         /// </summary>
         public string RootDeviceName
@@ -424,12 +424,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SriovNetSupport. 
         /// <para>
-        /// Set to <code>simple</code> to enable enhanced networking with the Intel 82599 Virtual
-        /// Function interface for the AMI and any instances that you launch from the AMI.
+        /// Set to <c>simple</c> to enable enhanced networking with the Intel 82599 Virtual Function
+        /// interface for the AMI and any instances that you launch from the AMI.
         /// </para>
         ///  
         /// <para>
-        /// There is no way to disable <code>sriovNetSupport</code> at this time.
+        /// There is no way to disable <c>sriovNetSupport</c> at this time.
         /// </para>
         ///  
         /// <para>
@@ -452,8 +452,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TpmSupport. 
         /// <para>
-        /// Set to <code>v2.0</code> to enable Trusted Platform Module (TPM) support. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// Set to <c>v2.0</c> to enable Trusted Platform Module (TPM) support. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
         /// in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -495,11 +495,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VirtualizationType. 
         /// <para>
-        /// The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).
+        /// The type of virtualization (<c>hvm</c> | <c>paravirtual</c>).
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>paravirtual</code> 
+        /// Default: <c>paravirtual</c> 
         /// </para>
         /// </summary>
         public string VirtualizationType

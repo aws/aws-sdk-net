@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
-    /// Specifies the name of an S3 bucket and a <code>CodeArtifacts</code> object that contains
+    /// Specifies the name of an S3 bucket and a <c>CodeArtifacts</c> object that contains
     /// the S3 object keys for a source code .zip file and for a build artifacts .zip file
     /// that contains .jar or .class files.
     /// </summary>
@@ -42,7 +42,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property BucketName. 
         /// <para>
         /// The name of the S3 bucket used for associating a new S3 repository. It must begin
-        /// with <code>codeguru-reviewer-</code>. 
+        /// with <c>codeguru-reviewer-</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=63)]
@@ -61,9 +61,9 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property CodeArtifacts. 
         /// <para>
-        /// A <code>CodeArtifacts</code> object. The <code>CodeArtifacts</code> object includes
-        /// the S3 object key for a source code .zip file and for a build artifacts .zip file
-        /// that contains .jar or .class files.
+        /// A <c>CodeArtifacts</c> object. The <c>CodeArtifacts</c> object includes the S3 object
+        /// key for a source code .zip file and for a build artifacts .zip file that contains
+        /// .jar or .class files.
         /// </para>
         /// </summary>
         public CodeArtifacts CodeArtifacts

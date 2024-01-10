@@ -42,8 +42,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of the output playlist. Valid formats include <code>HLSv3</code>, <code>HLSv4</code>,
-        /// and <code>Smooth</code>.
+        /// The format of the output playlist. Valid formats include <c>HLSv3</c>, <c>HLSv4</c>,
+        /// and <c>Smooth</c>.
         /// </para>
         /// </summary>
         public string Format
@@ -81,17 +81,16 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name that you want Elastic Transcoder to assign to the master playlist, for example,
-        /// nyc-vacation.m3u8. If the name includes a <code>/</code> character, the section of
-        /// the name before the last <code>/</code> must be identical for all <code>Name</code>
-        /// objects. If you create more than one master playlist, the values of all <code>Name</code>
-        /// objects must be unique.
+        /// nyc-vacation.m3u8. If the name includes a <c>/</c> character, the section of the name
+        /// before the last <c>/</c> must be identical for all <c>Name</c> objects. If you create
+        /// more than one master playlist, the values of all <c>Name</c> objects must be unique.
         /// </para>
         ///  <note> 
         /// <para>
         ///  Elastic Transcoder automatically appends the relevant file extension to the file
-        /// name (<code>.m3u8</code> for <code>HLSv3</code> and <code>HLSv4</code> playlists,
-        /// and <code>.ism</code> and <code>.ismc</code> for <code>Smooth</code> playlists). If
-        /// you include a file extension in <code>Name</code>, the file name will have two extensions.
+        /// name (<c>.m3u8</c> for <c>HLSv3</c> and <c>HLSv4</c> playlists, and <c>.ism</c> and
+        /// <c>.ismc</c> for <c>Smooth</c> playlists). If you include a file extension in <c>Name</c>,
+        /// the file name will have two extensions.
         /// </para>
         ///  </note>
         /// </summary>
@@ -112,50 +111,50 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property OutputKeys. 
         /// <para>
         /// For each output in this job that you want to include in a master playlist, the value
-        /// of the <code>Outputs:Key</code> object. 
+        /// of the <c>Outputs:Key</c> object. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If your output is not <code>HLS</code> or does not have a segment duration set, the
-        /// name of the output file is a concatenation of <code>OutputKeyPrefix</code> and <code>Outputs:Key</code>:
+        /// If your output is not <c>HLS</c> or does not have a segment duration set, the name
+        /// of the output file is a concatenation of <c>OutputKeyPrefix</c> and <c>Outputs:Key</c>:
         /// </para>
         ///  
         /// <para>
-        /// OutputKeyPrefix<code>Outputs:Key</code> 
+        /// OutputKeyPrefix<c>Outputs:Key</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your output is <code>HLSv3</code> and has a segment duration set, or is not included
+        /// If your output is <c>HLSv3</c> and has a segment duration set, or is not included
         /// in a playlist, Elastic Transcoder creates an output playlist file with a file extension
-        /// of <code>.m3u8</code>, and a series of <code>.ts</code> files that include a five-digit
-        /// sequential counter beginning with 00000:
+        /// of <c>.m3u8</c>, and a series of <c>.ts</c> files that include a five-digit sequential
+        /// counter beginning with 00000:
         /// </para>
         ///  
         /// <para>
-        /// OutputKeyPrefix<code>Outputs:Key</code>.m3u8
+        /// OutputKeyPrefix<c>Outputs:Key</c>.m3u8
         /// </para>
         ///  
         /// <para>
-        /// OutputKeyPrefix<code>Outputs:Key</code>00000.ts
+        /// OutputKeyPrefix<c>Outputs:Key</c>00000.ts
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If your output is <code>HLSv4</code>, has a segment duration set, and is included
-        /// in an <code>HLSv4</code> playlist, Elastic Transcoder creates an output playlist file
-        /// with a file extension of <code>_v4.m3u8</code>. If the output is video, Elastic Transcoder
-        /// also creates an output file with an extension of <code>_iframe.m3u8</code>:
+        /// If your output is <c>HLSv4</c>, has a segment duration set, and is included in an
+        /// <c>HLSv4</c> playlist, Elastic Transcoder creates an output playlist file with a file
+        /// extension of <c>_v4.m3u8</c>. If the output is video, Elastic Transcoder also creates
+        /// an output file with an extension of <c>_iframe.m3u8</c>:
         /// </para>
         ///  
         /// <para>
-        /// OutputKeyPrefix<code>Outputs:Key</code>_v4.m3u8
+        /// OutputKeyPrefix<c>Outputs:Key</c>_v4.m3u8
         /// </para>
         ///  
         /// <para>
-        /// OutputKeyPrefix<code>Outputs:Key</code>_iframe.m3u8
+        /// OutputKeyPrefix<c>Outputs:Key</c>_iframe.m3u8
         /// </para>
         ///  
         /// <para>
-        /// OutputKeyPrefix<code>Outputs:Key</code>.ts
+        /// OutputKeyPrefix<c>Outputs:Key</c>.ts
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -166,9 +165,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// If you include more than one output in a playlist, any segment duration settings,
         /// clip settings, or caption settings must be the same for all outputs in the playlist.
-        /// For <code>Smooth</code> playlists, the <code>Audio:Profile</code>, <code>Video:Profile</code>,
-        /// and <code>Video:FrameRate</code> to <code>Video:KeyframesMaxDist</code> ratio must
-        /// be the same for all outputs.
+        /// For <c>Smooth</c> playlists, the <c>Audio:Profile</c>, <c>Video:Profile</c>, and <c>Video:FrameRate</c>
+        /// to <c>Video:KeyframesMaxDist</c> ratio must be the same for all outputs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=30)]

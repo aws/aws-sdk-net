@@ -31,8 +31,8 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the ListPhoneNumbersV2 operation.
     /// Lists phone numbers claimed to your Amazon Connect instance or traffic distribution
-    /// group. If the provided <code>TargetArn</code> is a traffic distribution group, you
-    /// can call this API in both Amazon Web Services Regions associated with traffic distribution
+    /// group. If the provided <c>TargetArn</c> is a traffic distribution group, you can call
+    /// this API in both Amazon Web Services Regions associated with traffic distribution
     /// group.
     /// 
     ///  
@@ -43,13 +43,13 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// When given an instance ARN, <code>ListPhoneNumbersV2</code> returns only the phone
-    /// numbers claimed to the instance.
+    /// When given an instance ARN, <c>ListPhoneNumbersV2</c> returns only the phone numbers
+    /// claimed to the instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// When given a traffic distribution group ARN <code>ListPhoneNumbersV2</code> returns
-    /// only the phone numbers claimed to the traffic distribution group.
+    /// When given a traffic distribution group ARN <c>ListPhoneNumbersV2</c> returns only
+    /// the phone numbers claimed to the traffic distribution group.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -68,10 +68,9 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The identifier of the Amazon Connect instance that phone numbers are claimed to. You
         /// can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both <code>TargetArn</code>
-        /// and <code>InstanceId</code> are not provided, this API lists numbers claimed to all
-        /// the Amazon Connect instances belonging to your account in the same AWS Region as the
-        /// request.
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance. If both <c>TargetArn</c>
+        /// and <c>InstanceId</c> are not provided, this API lists numbers claimed to all the
+        /// Amazon Connect instances belonging to your account in the same AWS Region as the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -148,8 +147,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PhoneNumberPrefix. 
         /// <para>
-        /// The prefix of the phone number. If provided, it must contain <code>+</code> as part
-        /// of the country code.
+        /// The prefix of the phone number. If provided, it must contain <c>+</c> as part of the
+        /// country code.
         /// </para>
         /// </summary>
         public string PhoneNumberPrefix
@@ -187,10 +186,10 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property TargetArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for Amazon Connect instances or traffic distribution
-        /// groups that phone number inbound traffic is routed through. If both <code>TargetArn</code>
-        /// and <code>InstanceId</code> input are not provided, this API lists numbers claimed
-        /// to all the Amazon Connect instances belonging to your account in the same Amazon Web
-        /// Services Region as the request.
+        /// groups that phone number inbound traffic is routed through. If both <c>TargetArn</c>
+        /// and <c>InstanceId</c> input are not provided, this API lists numbers claimed to all
+        /// the Amazon Connect instances belonging to your account in the same Amazon Web Services
+        /// Region as the request.
         /// </para>
         /// </summary>
         public string TargetArn

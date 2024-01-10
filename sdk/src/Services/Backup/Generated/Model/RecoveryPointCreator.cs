@@ -43,7 +43,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupPlanArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</c>.
         /// </para>
         /// </summary>
         public string BackupPlanArn

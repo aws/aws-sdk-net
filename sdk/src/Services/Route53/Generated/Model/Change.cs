@@ -59,26 +59,25 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE</code>: Creates a resource record set that has the specified values.
+        ///  <c>CREATE</c>: Creates a resource record set that has the specified values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE</code>: Deletes a existing resource record set.
+        ///  <c>DELETE</c>: Deletes a existing resource record set.
         /// </para>
         ///  <important> 
         /// <para>
         /// To delete the resource record set that is associated with a traffic policy instance,
         /// use <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicyInstance.html">DeleteTrafficPolicyInstance</a>.
         /// Amazon Route 53 will delete the resource record set automatically. If you delete the
-        /// resource record set by using <code>ChangeResourceRecordSets</code>, Route 53 doesn't
-        /// automatically delete the traffic policy instance, and you'll continue to be charged
-        /// for it even though it's no longer in use. 
+        /// resource record set by using <c>ChangeResourceRecordSets</c>, Route 53 doesn't automatically
+        /// delete the traffic policy instance, and you'll continue to be charged for it even
+        /// though it's no longer in use. 
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        ///  <code>UPSERT</code>: If a resource record set doesn't already exist, Route 53 creates
-        /// it. If a resource record set does exist, Route 53 updates it with the values in the
-        /// request.
+        ///  <c>UPSERT</c>: If a resource record set doesn't already exist, Route 53 creates it.
+        /// If a resource record set does exist, Route 53 updates it with the values in the request.
         /// </para>
         ///  </li> </ul>
         /// </summary>

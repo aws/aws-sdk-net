@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>DescribeStream</code>.
+    /// Represents the output for <c>DescribeStream</c>.
     /// </summary>
     public partial class DescribeStreamResponse : AmazonWebServiceResponse
     {

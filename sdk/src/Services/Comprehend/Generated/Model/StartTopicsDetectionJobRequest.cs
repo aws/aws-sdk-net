@@ -30,7 +30,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the StartTopicsDetectionJob operation.
-    /// Starts an asynchronous topic detection job. Use the <code>DescribeTopicDetectionJob</code>
+    /// Starts an asynchronous topic detection job. Use the <c>DescribeTopicDetectionJob</c>
     /// operation to track the status of a job.
     /// </summary>
     public partial class StartTopicsDetectionJobRequest : AmazonComprehendRequest
@@ -147,9 +147,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property OutputDataConfig. 
         /// <para>
         /// Specifies where to send the output files. The output is a compressed archive with
-        /// two files, <code>topic-terms.csv</code> that lists the terms associated with each
-        /// topic, and <code>doc-topics.csv</code> that lists the documents associated with each
-        /// topic
+        /// two files, <c>topic-terms.csv</c> that lists the terms associated with each topic,
+        /// and <c>doc-topics.csv</c> that lists the documents associated with each topic
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -194,11 +193,11 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// KMS Key ID: <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// Amazon Resource Name (ARN) of a KMS Key: <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> </ul>

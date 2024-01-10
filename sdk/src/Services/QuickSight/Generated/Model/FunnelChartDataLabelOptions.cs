@@ -84,8 +84,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// Only the <code>FontSize</code> attribute of the font configuration is used for data
-        /// labels.
+        /// Only the <c>FontSize</c> attribute of the font configuration is used for data labels.
         /// </para>
         /// </summary>
         public FontConfiguration LabelFontConfiguration

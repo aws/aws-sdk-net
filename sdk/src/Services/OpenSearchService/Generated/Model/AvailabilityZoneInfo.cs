@@ -135,20 +135,20 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ZoneStatus. 
         /// <para>
-        /// The current state of the Availability Zone. Current options are <code>Active</code>
-        /// and <code>StandBy</code>.
+        /// The current state of the Availability Zone. Current options are <c>Active</c> and
+        /// <c>StandBy</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Active</code> - Data nodes in the Availability Zone are in use.
+        ///  <c>Active</c> - Data nodes in the Availability Zone are in use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StandBy</code> - Data nodes in the Availability Zone are in a standby state.
+        ///  <c>StandBy</c> - Data nodes in the Availability Zone are in a standby state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NotAvailable</code> - Unable to retrieve information.
+        ///  <c>NotAvailable</c> - Unable to retrieve information.
         /// </para>
         ///  </li> </ul>
         /// </summary>

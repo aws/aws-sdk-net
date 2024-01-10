@@ -60,7 +60,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property Page. 
         /// <para>
         /// Page number in the input document. This field is present in the response only if your
-        /// request includes the <code>Byte</code> parameter. 
+        /// request includes the <c>Byte</c> parameter. 
         /// </para>
         /// </summary>
         public int Page

@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// To get attributes for a game server group, provide a group name or ARN value. If successful,
-    /// a <code>GameServerGroup</code> object is returned.
+    /// a <c>GameServerGroup</c> object is returned.
     /// </para>
     ///  
     /// <para>

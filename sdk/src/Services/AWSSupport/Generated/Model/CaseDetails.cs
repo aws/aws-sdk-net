@@ -41,7 +41,7 @@ namespace Amazon.AWSSupport.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>categoryCode</b> - The category of problem for the support case. Corresponds to
-    /// the <code>CategoryCode</code> values returned by a call to <a>DescribeServices</a>.
+    /// the <c>CategoryCode</c> values returned by a call to <a>DescribeServices</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.AWSSupport.Model
     /// <para>
     ///  <b>language</b> - The language in which Amazon Web Services Support handles the case.
     /// Amazon Web Services Support currently supports Chinese (“zh”), English ("en"), Japanese
-    /// ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <code>language</code>
+    /// ("ja") and Korean (“ko”). You must specify the ISO 639-1 code for the <c>language</c>
     /// parameter if you want support in that language.
     /// </para>
     ///  </li> <li> 
@@ -62,8 +62,8 @@ namespace Amazon.AWSSupport.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>recentCommunications</b> - One or more <a>Communication</a> objects. Fields of
-    /// these objects are <code>attachments</code>, <code>body</code>, <code>caseId</code>,
-    /// <code>submittedBy</code>, and <code>timeCreated</code>.
+    /// these objects are <c>attachments</c>, <c>body</c>, <c>caseId</c>, <c>submittedBy</c>,
+    /// and <c>timeCreated</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -74,8 +74,7 @@ namespace Amazon.AWSSupport.Model
     /// <para>
     ///  <b>severityCode</b> - The severity code assigned to the case. Contains one of the
     /// values returned by the call to <a>DescribeSeverityLevels</a>. The possible values
-    /// are: <code>low</code>, <code>normal</code>, <code>high</code>, <code>urgent</code>,
-    /// and <code>critical</code>.
+    /// are: <c>low</c>, <c>normal</c>, <c>high</c>, <c>urgent</c>, and <c>critical</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,27 +83,27 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>opened</code> 
+    ///  <c>opened</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>pending-customer-action</code> 
+    ///  <c>pending-customer-action</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>reopened</code> 
+    ///  <c>reopened</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>resolved</code> 
+    ///  <c>resolved</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>unassigned</code> 
+    ///  <c>unassigned</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>work-in-progress</code> 
+    ///  <c>work-in-progress</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -216,8 +215,8 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
         /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean
-        /// (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter
-        /// if you want support in that language.
+        /// (“ko”). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
+        /// want support in that language.
         /// </para>
         /// </summary>
         public string Language
@@ -236,7 +235,7 @@ namespace Amazon.AWSSupport.Model
         /// Gets and sets the property RecentCommunications. 
         /// <para>
         /// The five most recent communications between you and Amazon Web Services Support Center,
-        /// including the IDs of any attachments to the communications. Also includes a <code>nextToken</code>
+        /// including the IDs of any attachments to the communications. Also includes a <c>nextToken</c>
         /// that you can use to retrieve earlier communications.
         /// </para>
         /// </summary>
@@ -300,27 +299,27 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>opened</code> 
+        ///  <c>opened</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending-customer-action</code> 
+        ///  <c>pending-customer-action</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>reopened</code> 
+        ///  <c>reopened</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolved</code> 
+        ///  <c>resolved</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unassigned</code> 
+        ///  <c>unassigned</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>work-in-progress</code> 
+        ///  <c>work-in-progress</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

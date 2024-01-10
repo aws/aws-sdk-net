@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of row-level security tags. If enabled, the status is <code>ENABLED</code>.
-        /// If disabled, the status is <code>DISABLED</code>.
+        /// The status of row-level security tags. If enabled, the status is <c>ENABLED</c>. If
+        /// disabled, the status is <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public Status Status

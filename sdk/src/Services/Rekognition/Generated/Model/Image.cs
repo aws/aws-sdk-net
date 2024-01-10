@@ -33,11 +33,11 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// You pass image bytes to an Amazon Rekognition API operation by using the <code>Bytes</code>
-    /// property. For example, you would use the <code>Bytes</code> property to pass an image
-    /// loaded from a local file system. Image bytes passed by using the <code>Bytes</code>
-    /// property must be base64-encoded. Your code may not need to encode image bytes if you
-    /// are using an AWS SDK to call Amazon Rekognition API operations. 
+    /// You pass image bytes to an Amazon Rekognition API operation by using the <c>Bytes</c>
+    /// property. For example, you would use the <c>Bytes</c> property to pass an image loaded
+    /// from a local file system. Image bytes passed by using the <c>Bytes</c> property must
+    /// be base64-encoded. Your code may not need to encode image bytes if you are using an
+    /// AWS SDK to call Amazon Rekognition API operations. 
     /// </para>
     ///  
     /// <para>
@@ -47,8 +47,8 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     ///  You pass images stored in an S3 bucket to an Amazon Rekognition API operation by
-    /// using the <code>S3Object</code> property. Images stored in an S3 bucket do not need
-    /// to be base64-encoded.
+    /// using the <c>S3Object</c> property. Images stored in an S3 bucket do not need to be
+    /// base64-encoded.
     /// </para>
     ///  
     /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Bytes. 
         /// <para>
         /// Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to
-        /// <code>DetectCustomLabels</code> is 4MB. 
+        /// <c>DetectCustomLabels</c> is 4MB. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5242880)]

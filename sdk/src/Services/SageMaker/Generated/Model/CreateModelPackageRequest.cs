@@ -38,9 +38,9 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// To create a model package by specifying a Docker container that contains your inference
-    /// code and the Amazon S3 location of your model artifacts, provide values for <code>InferenceSpecification</code>.
+    /// code and the Amazon S3 location of your model artifacts, provide values for <c>InferenceSpecification</c>.
     /// To create a model from an algorithm resource that you created or subscribed to in
-    /// Amazon Web Services Marketplace, provide a value for <code>SourceAlgorithmSpecification</code>.
+    /// Amazon Web Services Marketplace, provide a value for <c>SourceAlgorithmSpecification</c>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -261,8 +261,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For versioned models, the value of this parameter must be set to <code>Approved</code>
-        /// to deploy the model.
+        /// For versioned models, the value of this parameter must be set to <c>Approved</c> to
+        /// deploy the model.
         /// </para>
         /// </summary>
         public ModelApprovalStatus ModelApprovalStatus
@@ -432,9 +432,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If you supply <code>ModelPackageGroupName</code>, your model package belongs to the
-        /// model group you specify and uses the tags associated with the model group. In this
-        /// case, you cannot supply a <code>tag</code> argument. 
+        /// If you supply <c>ModelPackageGroupName</c>, your model package belongs to the model
+        /// group you specify and uses the tags associated with the model group. In this case,
+        /// you cannot supply a <c>tag</c> argument. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -455,9 +455,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The machine learning task your model package accomplishes. Common machine learning
         /// tasks include object detection and image classification. The following tasks are supported
-        /// by Inference Recommender: <code>"IMAGE_CLASSIFICATION"</code> | <code>"OBJECT_DETECTION"</code>
-        /// | <code>"TEXT_GENERATION"</code> |<code>"IMAGE_SEGMENTATION"</code> | <code>"FILL_MASK"</code>
-        /// | <code>"CLASSIFICATION"</code> | <code>"REGRESSION"</code> | <code>"OTHER"</code>.
+        /// by Inference Recommender: <c>"IMAGE_CLASSIFICATION"</c> | <c>"OBJECT_DETECTION"</c>
+        /// | <c>"TEXT_GENERATION"</c> |<c>"IMAGE_SEGMENTATION"</c> | <c>"FILL_MASK"</c> | <c>"CLASSIFICATION"</c>
+        /// | <c>"REGRESSION"</c> | <c>"OTHER"</c>.
         /// </para>
         ///  
         /// <para>

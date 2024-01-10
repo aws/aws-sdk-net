@@ -30,14 +30,14 @@ namespace Amazon.Glacier.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVaultNotifications operation.
-    /// This operation retrieves the <code>notification-configuration</code> subresource of
-    /// the specified vault.
+    /// This operation retrieves the <c>notification-configuration</c> subresource of the
+    /// specified vault.
     /// 
     ///  
     /// <para>
     /// For information about setting a notification configuration on a vault, see <a>SetVaultNotifications</a>.
-    /// If a notification configuration for a vault is not set, the operation returns a <code>404
-    /// Not Found</code> error. For more information about vault notifications, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+    /// If a notification configuration for a vault is not set, the operation returns a <c>404
+    /// Not Found</c> error. For more information about vault notifications, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
     /// Vault Notifications in Amazon S3 Glacier</a>. 
     /// </para>
     ///  
@@ -89,11 +89,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
-        /// the credentials used to sign the request. If you use an account ID, do not include
-        /// any hyphens ('-') in the ID.
+        /// The <c>AccountId</c> value is the AWS account ID of the account that owns the vault.
+        /// You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen),
+        /// in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
+        /// used to sign the request. If you use an account ID, do not include any hyphens ('-')
+        /// in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

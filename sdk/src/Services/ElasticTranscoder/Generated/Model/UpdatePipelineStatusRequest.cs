@@ -72,11 +72,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Active</code>: The pipeline is processing jobs.
+        ///  <c>Active</c>: The pipeline is processing jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Paused</code>: The pipeline is not currently processing jobs.
+        ///  <c>Paused</c>: The pipeline is not currently processing jobs.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -99,7 +99,7 @@ namespace Amazon.NetworkManager.Model
         /// Gets and sets the property TransitGatewayRouteTableArn. 
         /// <para>
         /// The ARN of the transit gateway route table for the attachment request. For example,
-        /// <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.
+        /// <c>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=500)]

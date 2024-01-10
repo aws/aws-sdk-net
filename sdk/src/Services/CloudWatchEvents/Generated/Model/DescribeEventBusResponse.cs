@@ -59,7 +59,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the event bus. Currently, this is always <code>default</code>.
+        /// The name of the event bus. Currently, this is always <c>default</c>.
         /// </para>
         /// </summary>
         public string Name

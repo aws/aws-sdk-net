@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>GaugeChartVisual</code>.
+    /// The configuration of a <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class GaugeChartConfiguration
     {
@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataLabels. 
         /// <para>
-        /// The data label configuration of a <code>GaugeChartVisual</code>.
+        /// The data label configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public DataLabelOptions DataLabels
@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FieldWells. 
         /// <para>
-        /// The field well configuration of a <code>GaugeChartVisual</code>.
+        /// The field well configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public GaugeChartFieldWells FieldWells
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property GaugeChartOptions. 
         /// <para>
-        /// The options that determine the presentation of the <code>GaugeChartVisual</code>.
+        /// The options that determine the presentation of the <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public GaugeChartOptions GaugeChartOptions
@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TooltipOptions. 
         /// <para>
-        /// The tooltip configuration of a <code>GaugeChartVisual</code>.
+        /// The tooltip configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public TooltipOptions TooltipOptions
@@ -114,7 +114,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VisualPalette. 
         /// <para>
-        /// The visual palette configuration of a <code>GaugeChartVisual</code>.
+        /// The visual palette configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public VisualPalette VisualPalette

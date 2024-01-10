@@ -82,9 +82,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string CreatedAt
@@ -122,11 +122,11 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property DomainValidationOptions. 
         /// <para>
         /// Contains information about the initial validation of each domain name that occurs
-        /// as a result of the <code>RequestCertificate</code> request.
+        /// as a result of the <c>RequestCertificate</c> request.
         /// </para>
         ///  
         /// <para>
-        /// Only provided if the certificate type is <code>AMAZON_ISSUED</code>.
+        /// Only provided if the certificate type is <c>AMAZON_ISSUED</c>.
         /// </para>
         /// </summary>
         public List<AwsCertificateManagerCertificateDomainValidationOption> DomainValidationOptions
@@ -168,13 +168,12 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>NO_AVAILABLE_CONTACTS</code> | <code>ADDITIONAL_VERIFICATION_REQUIRED</code>
-        /// | <code>DOMAIN_NOT_ALLOWED</code> | <code>INVALID_PUBLIC_DOMAIN</code> | <code>DOMAIN_VALIDATION_DENIED</code>
-        /// | <code>CAA_ERROR</code> | <code>PCA_LIMIT_EXCEEDED</code> | <code>PCA_INVALID_ARN</code>
-        /// | <code>PCA_INVALID_STATE</code> | <code>PCA_REQUEST_FAILED</code> | <code>PCA_NAME_CONSTRAINTS_VALIDATION</code>
-        /// | <code>PCA_RESOURCE_NOT_FOUND</code> | <code>PCA_INVALID_ARGS</code> | <code>PCA_INVALID_DURATION</code>
-        /// | <code>PCA_ACCESS_DENIED</code> | <code>SLR_NOT_FOUND</code> | <code>OTHER</code>
-        /// 
+        /// Valid values: <c>NO_AVAILABLE_CONTACTS</c> | <c>ADDITIONAL_VERIFICATION_REQUIRED</c>
+        /// | <c>DOMAIN_NOT_ALLOWED</c> | <c>INVALID_PUBLIC_DOMAIN</c> | <c>DOMAIN_VALIDATION_DENIED</c>
+        /// | <c>CAA_ERROR</c> | <c>PCA_LIMIT_EXCEEDED</c> | <c>PCA_INVALID_ARN</c> | <c>PCA_INVALID_STATE</c>
+        /// | <c>PCA_REQUEST_FAILED</c> | <c>PCA_NAME_CONSTRAINTS_VALIDATION</c> | <c>PCA_RESOURCE_NOT_FOUND</c>
+        /// | <c>PCA_INVALID_ARGS</c> | <c>PCA_INVALID_DURATION</c> | <c>PCA_ACCESS_DENIED</c>
+        /// | <c>SLR_NOT_FOUND</c> | <c>OTHER</c> 
         /// </para>
         /// </summary>
         public string FailureReason
@@ -192,13 +191,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ImportedAt. 
         /// <para>
-        /// Indicates when the certificate was imported. Provided if the certificate type is <code>IMPORTED</code>.
+        /// Indicates when the certificate was imported. Provided if the certificate type is <c>IMPORTED</c>.
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string ImportedAt
@@ -234,13 +233,13 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property IssuedAt. 
         /// <para>
-        /// Indicates when the certificate was issued. Provided if the certificate type is <code>AMAZON_ISSUED</code>.
+        /// Indicates when the certificate was issued. Provided if the certificate type is <c>AMAZON_ISSUED</c>.
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string IssuedAt
@@ -280,9 +279,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>RSA_2048</code> | <code>RSA_1024</code> |<code> RSA_4096</code>
-        /// | <code>EC_prime256v1</code> | <code>EC_secp384r1</code> | <code>EC_secp521r1</code>
-        /// 
+        /// Valid values: <c>RSA_2048</c> | <c>RSA_1024</c> |<c> RSA_4096</c> | <c>EC_prime256v1</c>
+        /// | <c>EC_secp384r1</c> | <c>EC_secp521r1</c> 
         /// </para>
         /// </summary>
         public string KeyAlgorithm
@@ -322,9 +320,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string NotAfter
@@ -346,9 +344,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string NotBefore
@@ -388,7 +386,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ELIGIBLE</code> | <code>INELIGIBLE</code> 
+        /// Valid values: <c>ELIGIBLE</c> | <c>INELIGIBLE</c> 
         /// </para>
         /// </summary>
         public string RenewalEligibility
@@ -407,7 +405,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RenewalSummary. 
         /// <para>
         /// Information about the status of the Certificate Manager managed renewal for the certificate.
-        /// Provided only when the certificate type is <code>AMAZON_ISSUED</code>.
+        /// Provided only when the certificate type is <c>AMAZON_ISSUED</c>.
         /// </para>
         /// </summary>
         public AwsCertificateManagerCertificateRenewalSummary RenewalSummary
@@ -465,9 +463,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>PENDING_VALIDATION</code> | <code>ISSUED</code> | <code>INACTIVE</code>
-        /// | <code>EXPIRED</code> | <code>VALIDATION_TIMED_OUT</code> | <code>REVOKED</code>
-        /// | <code>FAILED</code> 
+        /// Valid values: <c>PENDING_VALIDATION</c> | <c>ISSUED</c> | <c>INACTIVE</c> | <c>EXPIRED</c>
+        /// | <c>VALIDATION_TIMED_OUT</c> | <c>REVOKED</c> | <c>FAILED</c> 
         /// </para>
         /// </summary>
         public string Status
@@ -529,13 +526,12 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The source of the certificate. For certificates that Certificate Manager provides,
-        /// <code>Type</code> is <code>AMAZON_ISSUED</code>. For certificates that are imported
-        /// with <code>ImportCertificate</code>, <code>Type</code> is <code>IMPORTED</code>.
+        /// <c>Type</c> is <c>AMAZON_ISSUED</c>. For certificates that are imported with <c>ImportCertificate</c>,
+        /// <c>Type</c> is <c>IMPORTED</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>IMPORTED</code> | <code>AMAZON_ISSUED</code> | <code>PRIVATE</code>
-        /// 
+        /// Valid values: <c>IMPORTED</c> | <c>AMAZON_ISSUED</c> | <c>PRIVATE</c> 
         /// </para>
         /// </summary>
         public string Type

@@ -33,19 +33,19 @@ namespace Amazon.AppRunner.Model
     /// 
     ///  
     /// <para>
-    /// A higher <code>MinSize</code> increases the spread of your App Runner service over
-    /// more Availability Zones in the Amazon Web Services Region. The tradeoff is a higher
-    /// minimal cost.
+    /// A higher <c>MinSize</c> increases the spread of your App Runner service over more
+    /// Availability Zones in the Amazon Web Services Region. The tradeoff is a higher minimal
+    /// cost.
     /// </para>
     ///  
     /// <para>
-    /// A lower <code>MaxSize</code> controls your cost. The tradeoff is lower responsiveness
-    /// during peak demand.
+    /// A lower <c>MaxSize</c> controls your cost. The tradeoff is lower responsiveness during
+    /// peak demand.
     /// </para>
     ///  
     /// <para>
-    /// Multiple revisions of a configuration might have the same <code>AutoScalingConfigurationName</code>
-    /// and different <code>AutoScalingConfigurationRevision</code> values.
+    /// Multiple revisions of a configuration might have the same <c>AutoScalingConfigurationName</c>
+    /// and different <c>AutoScalingConfigurationRevision</c> values.
     /// </para>
     /// </summary>
     public partial class AutoScalingConfiguration
@@ -106,7 +106,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property AutoScalingConfigurationRevision. 
         /// <para>
         /// The revision of this auto scaling configuration. It's unique among all the active
-        /// configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>AutoScalingConfigurationName</code>.
+        /// configurations (<c>"Status": "ACTIVE"</c>) that share the same <c>AutoScalingConfigurationName</c>.
         /// </para>
         /// </summary>
         public int AutoScalingConfigurationRevision
@@ -163,8 +163,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property HasAssociatedService. 
         /// <para>
         /// Indicates if this auto scaling configuration has an App Runner service associated
-        /// with it. A value of <code>true</code> indicates one or more services are associated.
-        /// A value of <code>false</code> indicates no services are associated.
+        /// with it. A value of <c>true</c> indicates one or more services are associated. A value
+        /// of <c>false</c> indicates no services are associated.
         /// </para>
         /// </summary>
         public bool HasAssociatedService
@@ -184,9 +184,9 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// Indicates if this auto scaling configuration should be used as the default for a new
         /// App Runner service that does not have an auto scaling configuration ARN specified
-        /// during creation. Each account can have only one default <code>AutoScalingConfiguration</code>
-        /// per region. The default <code>AutoScalingConfiguration</code> can be any revision
-        /// under the same <code>AutoScalingConfigurationName</code>.
+        /// during creation. Each account can have only one default <c>AutoScalingConfiguration</c>
+        /// per region. The default <c>AutoScalingConfiguration</c> can be any revision under
+        /// the same <c>AutoScalingConfigurationName</c>.
         /// </para>
         /// </summary>
         public bool IsDefault
@@ -204,9 +204,9 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property Latest. 
         /// <para>
-        /// It's set to <code>true</code> for the configuration with the highest <code>Revision</code>
-        /// among all configurations that share the same <code>AutoScalingConfigurationName</code>.
-        /// It's set to <code>false</code> otherwise.
+        /// It's set to <c>true</c> for the configuration with the highest <c>Revision</c> among
+        /// all configurations that share the same <c>AutoScalingConfigurationName</c>. It's set
+        /// to <c>false</c> otherwise.
         /// </para>
         /// </summary>
         public bool Latest
@@ -243,7 +243,7 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum number of instances that a service scales up to. At most <code>MaxSize</code>
+        /// The maximum number of instances that a service scales up to. At most <c>MaxSize</c>
         /// instances actively serve traffic for your service.
         /// </para>
         /// </summary>
@@ -263,8 +263,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property MinSize. 
         /// <para>
         /// The minimum number of instances that App Runner provisions for a service. The service
-        /// always has at least <code>MinSize</code> provisioned instances. Some of them actively
-        /// serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective
+        /// always has at least <c>MinSize</c> provisioned instances. Some of them actively serve
+        /// traffic. The rest of them (provisioned and inactive instances) are a cost-effective
         /// compute capacity reserve and are ready to be quickly activated. You pay for memory
         /// usage of all the provisioned instances. You pay for CPU usage of only the active subset.
         /// </para>
@@ -290,7 +290,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current state of the auto scaling configuration. If the status of a configuration
-        /// revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration
+        /// revision is <c>INACTIVE</c>, it was deleted and can't be used. Inactive configuration
         /// revisions are permanently removed some time after they are deleted.
         /// </para>
         /// </summary>

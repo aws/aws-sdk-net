@@ -80,10 +80,10 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token for requesting another page of certificates if the <code>NextToken</code>
-        /// response element indicates that more certificates are available. Use the value of
-        /// the returned <code>NextToken</code> element in your request until the token comes
-        /// back as <code>null</code>. Pass <code>null</code> if this is the first call.
+        /// A token for requesting another page of certificates if the <c>NextToken</c> response
+        /// element indicates that more certificates are available. Use the value of the returned
+        /// <c>NextToken</c> element in your request until the token comes back as <c>null</c>.
+        /// Pass <c>null</c> if this is the first call.
         /// </para>
         /// </summary>
         public string NextToken

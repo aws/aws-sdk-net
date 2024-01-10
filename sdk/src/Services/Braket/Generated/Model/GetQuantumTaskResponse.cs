@@ -237,8 +237,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property QueueInfo. 
         /// <para>
-        /// Queue information for the requested quantum task. Only returned if <code>QueueInfo</code>
-        /// is specified in the <code>additionalAttributeNames"</code> field in the <code>GetQuantumTask</code>
+        /// Queue information for the requested quantum task. Only returned if <c>QueueInfo</c>
+        /// is specified in the <c>additionalAttributeNames"</c> field in the <c>GetQuantumTask</c>
         /// API request.
         /// </para>
         /// </summary>

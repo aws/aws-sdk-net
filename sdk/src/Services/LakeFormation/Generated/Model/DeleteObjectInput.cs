@@ -40,7 +40,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The Amazon S3 ETag of the object. Returned by <code>GetTableObjects</code> for validation
+        /// The Amazon S3 ETag of the object. Returned by <c>GetTableObjects</c> for validation
         /// and used to identify changes to the underlying data.
         /// </para>
         /// </summary>

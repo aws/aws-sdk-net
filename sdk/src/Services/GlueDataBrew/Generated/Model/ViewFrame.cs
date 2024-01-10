@@ -61,8 +61,8 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property ColumnRange. 
         /// <para>
-        /// The number of columns to include in the view frame, beginning with the <code>StartColumnIndex</code>
-        /// value and ignoring any columns in the <code>HiddenColumns</code> list.
+        /// The number of columns to include in the view frame, beginning with the <c>StartColumnIndex</c>
+        /// value and ignoring any columns in the <c>HiddenColumns</c> list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]
@@ -99,7 +99,7 @@ namespace Amazon.GlueDataBrew.Model
         /// <summary>
         /// Gets and sets the property RowRange. 
         /// <para>
-        /// The number of rows to include in the view frame, beginning with the <code>StartRowIndex</code>
+        /// The number of rows to include in the view frame, beginning with the <c>StartRowIndex</c>
         /// value.
         /// </para>
         /// </summary>

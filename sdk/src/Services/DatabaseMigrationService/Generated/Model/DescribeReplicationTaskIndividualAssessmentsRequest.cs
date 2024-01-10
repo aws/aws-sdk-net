@@ -51,8 +51,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid filter names: <code>replication-task-assessment-run-arn</code>, <code>replication-task-arn</code>,
-        /// <code>status</code> 
+        /// Valid filter names: <c>replication-task-assessment-run-arn</c>, <c>replication-task-arn</c>,
+        /// <c>status</c> 
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -72,7 +72,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -91,8 +91,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that the remaining results can be retrieved.
         /// </para>
         /// </summary>
         public int MaxRecords

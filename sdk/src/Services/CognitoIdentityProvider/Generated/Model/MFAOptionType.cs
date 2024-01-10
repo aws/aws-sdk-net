@@ -41,7 +41,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// The attribute name of the MFA option type. The only valid value is <code>phone_number</code>.
+        /// The attribute name of the MFA option type. The only valid value is <c>phone_number</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -61,7 +61,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property DeliveryMedium. 
         /// <para>
         /// The delivery medium to send the MFA code. You can use this parameter to set only the
-        /// <code>SMS</code> delivery medium value.
+        /// <c>SMS</c> delivery medium value.
         /// </para>
         /// </summary>
         public DeliveryMediumType DeliveryMedium

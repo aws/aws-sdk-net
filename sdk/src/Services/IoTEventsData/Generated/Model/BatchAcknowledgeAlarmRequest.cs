@@ -30,8 +30,8 @@ namespace Amazon.IoTEventsData.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchAcknowledgeAlarm operation.
-    /// Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code>
-    /// state after you acknowledge them.
+    /// Acknowledges one or more alarms. The alarms change to the <c>ACKNOWLEDGED</c> state
+    /// after you acknowledge them.
     /// </summary>
     public partial class BatchAcknowledgeAlarmRequest : AmazonIoTEventsDataRequest
     {

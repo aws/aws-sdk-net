@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetBatchPrediction</code> operation and describes
-    /// a <code>BatchPrediction</code>.
+    /// Represents the output of a <c>GetBatchPrediction</c> operation and describes a <c>BatchPrediction</c>.
     /// </summary>
     public partial class GetBatchPredictionResponse : AmazonWebServiceResponse
     {
@@ -55,7 +54,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionDataSourceId. 
         /// <para>
-        /// The ID of the <code>DataSource</code> that was used to create the <code>BatchPrediction</code>.
+        /// The ID of the <c>DataSource</c> that was used to create the <c>BatchPrediction</c>.
         /// 
         /// </para>
         /// </summary>
@@ -75,8 +74,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// An ID assigned to the <code>BatchPrediction</code> at creation. This value should
-        /// be identical to the value of the <code>BatchPredictionID</code> in the request.
+        /// An ID assigned to the <c>BatchPrediction</c> at creation. This value should be identical
+        /// to the value of the <c>BatchPredictionID</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -96,9 +95,8 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property ComputeTime. 
         /// <para>
         /// The approximate CPU time in milliseconds that Amazon Machine Learning spent processing
-        /// the <code>BatchPrediction</code>, normalized and scaled on computation resources.
-        /// <code>ComputeTime</code> is only available if the <code>BatchPrediction</code> is
-        /// in the <code>COMPLETED</code> state.
+        /// the <c>BatchPrediction</c>, normalized and scaled on computation resources. <c>ComputeTime</c>
+        /// is only available if the <c>BatchPrediction</c> is in the <c>COMPLETED</c> state.
         /// </para>
         /// </summary>
         public long ComputeTime
@@ -116,8 +114,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time when the <code>BatchPrediction</code> was created. The time is expressed
-        /// in epoch time.
+        /// The time when the <c>BatchPrediction</c> was created. The time is expressed in epoch
+        /// time.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -135,8 +133,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedByIamUser. 
         /// <para>
-        /// The AWS user account that invoked the <code>BatchPrediction</code>. The account type
-        /// can be either an AWS root account or an AWS Identity and Access Management (IAM) user
+        /// The AWS user account that invoked the <c>BatchPrediction</c>. The account type can
+        /// be either an AWS root account or an AWS Identity and Access Management (IAM) user
         /// account.
         /// </para>
         /// </summary>
@@ -155,10 +153,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property FinishedAt. 
         /// <para>
-        /// The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code>
-        /// as <code>COMPLETED</code> or <code>FAILED</code>. <code>FinishedAt</code> is only
-        /// available when the <code>BatchPrediction</code> is in the <code>COMPLETED</code> or
-        /// <code>FAILED</code> state.
+        /// The epoch time when Amazon Machine Learning marked the <c>BatchPrediction</c> as <c>COMPLETED</c>
+        /// or <c>FAILED</c>. <c>FinishedAt</c> is only available when the <c>BatchPrediction</c>
+        /// is in the <c>COMPLETED</c> or <c>FAILED</c> state.
         /// </para>
         /// </summary>
         public DateTime FinishedAt
@@ -197,7 +194,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property InvalidRecordCount. 
         /// <para>
         /// The number of invalid records that Amazon Machine Learning saw while processing the
-        /// <code>BatchPrediction</code>.
+        /// <c>BatchPrediction</c>.
         /// </para>
         /// </summary>
         public long InvalidRecordCount
@@ -215,7 +212,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time of the most recent edit to <code>BatchPrediction</code>. The time is expressed
+        /// The time of the most recent edit to <c>BatchPrediction</c>. The time is expressed
         /// in epoch time.
         /// </para>
         /// </summary>
@@ -234,7 +231,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LogUri. 
         /// <para>
-        /// A link to the file that contains logs of the <code>CreateBatchPrediction</code> operation.
+        /// A link to the file that contains logs of the <c>CreateBatchPrediction</c> operation.
         /// </para>
         /// </summary>
         public string LogUri
@@ -271,7 +268,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID of the <code>MLModel</code> that generated predictions for the <code>BatchPrediction</code>
+        /// The ID of the <c>MLModel</c> that generated predictions for the <c>BatchPrediction</c>
         /// request.
         /// </para>
         /// </summary>
@@ -291,7 +288,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user-supplied name or description of the <code>BatchPrediction</code>.
+        /// A user-supplied name or description of the <c>BatchPrediction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -329,9 +326,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The epoch time when Amazon Machine Learning marked the <code>BatchPrediction</code>
-        /// as <code>INPROGRESS</code>. <code>StartedAt</code> isn't available if the <code>BatchPrediction</code>
-        /// is in the <code>PENDING</code> state.
+        /// The epoch time when Amazon Machine Learning marked the <c>BatchPrediction</c> as <c>INPROGRESS</c>.
+        /// <c>StartedAt</c> isn't available if the <c>BatchPrediction</c> is in the <c>PENDING</c>
+        /// state.
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -349,31 +346,29 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the <code>BatchPrediction</code>, which can be one of the following
-        /// values:
+        /// The status of the <c>BatchPrediction</c>, which can be one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to
-        /// generate batch predictions.
+        ///  <c>PENDING</c> - Amazon Machine Learning (Amazon ML) submitted a request to generate
+        /// batch predictions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INPROGRESS</code> - The batch predictions are in progress.
+        ///  <c>INPROGRESS</c> - The batch predictions are in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The request to perform a batch prediction did not run to completion.
+        ///  <c>FAILED</c> - The request to perform a batch prediction did not run to completion.
         /// It is not usable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The batch prediction process completed successfully.
+        ///  <c>COMPLETED</c> - The batch prediction process completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The <code>BatchPrediction</code> is marked as deleted. It
-        /// is not usable.
+        ///  <c>DELETED</c> - The <c>BatchPrediction</c> is marked as deleted. It is not usable.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -393,7 +388,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property TotalRecordCount. 
         /// <para>
         /// The number of total records that Amazon Machine Learning saw while processing the
-        /// <code>BatchPrediction</code>.
+        /// <c>BatchPrediction</c>.
         /// </para>
         /// </summary>
         public long TotalRecordCount

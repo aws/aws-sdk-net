@@ -31,7 +31,7 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// Container for the parameters to the TagResource operation.
     /// Adds a specified tag to a specified rescore execution plan. A rescore execution plan
-    /// is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code>
+    /// is an Amazon Kendra Intelligent Ranking resource used for provisioning the <c>Rescore</c>
     /// API. If the tag already exists, the existing value is replaced with the new value.
     /// </summary>
     public partial class TagResourceRequest : AmazonKendraRankingRequest

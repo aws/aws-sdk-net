@@ -47,7 +47,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// The log in credentials expire 12 hours after they are created, at which point you
-        /// will need to create a new set of log in credentials using the <code>CreateContainerServiceRegistryLogin</code>
+        /// will need to create a new set of log in credentials using the <c>CreateContainerServiceRegistryLogin</c>
         /// action.
         /// </para>
         /// </summary>

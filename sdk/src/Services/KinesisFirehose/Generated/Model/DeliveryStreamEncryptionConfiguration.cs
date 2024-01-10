@@ -31,7 +31,7 @@ namespace Amazon.KinesisFirehose.Model
     /// <summary>
     /// Contains information about the server-side encryption (SSE) status for the delivery
     /// stream, the type customer master key (CMK) in use, if any, and the ARN of the CMK.
-    /// You can get <code>DeliveryStreamEncryptionConfiguration</code> by invoking the <a>DescribeDeliveryStream</a>
+    /// You can get <c>DeliveryStreamEncryptionConfiguration</c> by invoking the <a>DescribeDeliveryStream</a>
     /// operation.
     /// </summary>
     public partial class DeliveryStreamEncryptionConfiguration
@@ -64,9 +64,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property KeyARN. 
         /// <para>
-        /// If <code>KeyType</code> is <code>CUSTOMER_MANAGED_CMK</code>, this field contains
-        /// the ARN of the customer managed CMK. If <code>KeyType</code> is <code>Amazon Web Services_OWNED_CMK</code>,
-        /// <code>DeliveryStreamEncryptionConfiguration</code> doesn't contain a value for <code>KeyARN</code>.
+        /// If <c>KeyType</c> is <c>CUSTOMER_MANAGED_CMK</c>, this field contains the ARN of the
+        /// customer managed CMK. If <c>KeyType</c> is <c>Amazon Web Services_OWNED_CMK</c>, <c>DeliveryStreamEncryptionConfiguration</c>
+        /// doesn't contain a value for <c>KeyARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -86,8 +86,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property KeyType. 
         /// <para>
         /// Indicates the type of customer master key (CMK) that is used for encryption. The default
-        /// setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about
-        /// CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// setting is <c>Amazon Web Services_OWNED_CMK</c>. For more information about CMKs,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
         /// Master Keys (CMKs)</a>.
         /// </para>
         /// </summary>
@@ -108,8 +108,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// This is the server-side encryption (SSE) status for the delivery stream. For a full
         /// description of the different values of this status, see <a>StartDeliveryStreamEncryption</a>
-        /// and <a>StopDeliveryStreamEncryption</a>. If this status is <code>ENABLING_FAILED</code>
-        /// or <code>DISABLING_FAILED</code>, it is the status of the most recent attempt to enable
+        /// and <a>StopDeliveryStreamEncryption</a>. If this status is <c>ENABLING_FAILED</c>
+        /// or <c>DISABLING_FAILED</c>, it is the status of the most recent attempt to enable
         /// or disable SSE, respectively.
         /// </para>
         /// </summary>

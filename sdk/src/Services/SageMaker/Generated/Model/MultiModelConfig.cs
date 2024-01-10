@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// invoked. Some use cases do not benefit from model caching. For example, if an endpoint
         /// hosts a large number of models that are each invoked infrequently, the endpoint might
         /// perform better if you disable model caching. To disable model caching, set the value
-        /// of this parameter to <code>Disabled</code>.
+        /// of this parameter to <c>Disabled</c>.
         /// </para>
         /// </summary>
         public ModelCacheSetting ModelCacheSetting

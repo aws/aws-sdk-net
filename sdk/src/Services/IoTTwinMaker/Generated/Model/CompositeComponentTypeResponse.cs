@@ -40,8 +40,8 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property ComponentTypeId. 
         /// <para>
-        /// This is the <code>componentTypeId</code> that this <code>compositeComponentType</code>
-        /// refers to.
+        /// This is the <c>componentTypeId</c> that this <c>compositeComponentType</c> refers
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -60,8 +60,8 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property IsInherited. 
         /// <para>
-        /// This boolean indicates whether this <code>compositeComponentType</code> is inherited
-        /// from its parent.
+        /// This boolean indicates whether this <c>compositeComponentType</c> is inherited from
+        /// its parent.
         /// </para>
         /// </summary>
         public bool IsInherited

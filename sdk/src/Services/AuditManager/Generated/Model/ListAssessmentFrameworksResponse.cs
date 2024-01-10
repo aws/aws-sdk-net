@@ -39,8 +39,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property FrameworkMetadataList. 
         /// <para>
-        ///  A list of metadata that the <code>ListAssessmentFrameworks</code> API returns for
-        /// each framework.
+        ///  A list of metadata that the <c>ListAssessmentFrameworks</c> API returns for each
+        /// framework.
         /// </para>
         /// </summary>
         public List<AssessmentFrameworkMetadata> FrameworkMetadataList

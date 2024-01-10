@@ -67,24 +67,24 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>WARN_ONLY</code> - only warning events are logged.
+        ///  <c>WARN_ONLY</c> - only warning events are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ERROR_ONLY</code> - only error events are logged.
+        ///  <c>ERROR_ONLY</c> - only error events are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARN_ERROR</code> - both warning events and error events are logged.
+        ///  <c>WARN_ERROR</c> - both warning events and error events are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - logging of data repository events is turned off.
+        ///  <c>DISABLED</c> - logging of data repository events is turned off.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note that Amazon File Cache uses a default setting of <code>WARN_ERROR</code>, which
-        /// can't be changed.
+        /// Note that Amazon File Cache uses a default setting of <c>WARN_ERROR</c>, which can't
+        /// be changed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

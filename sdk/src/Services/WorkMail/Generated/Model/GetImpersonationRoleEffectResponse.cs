@@ -41,7 +41,7 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property Effect. 
         /// <para>
         ///  <code/>Effect of the impersonation role on the target user based on its rules. Available
-        /// effects are <code>ALLOW</code> or <code>DENY</code>.
+        /// effects are <c>ALLOW</c> or <c>DENY</c>.
         /// </para>
         /// </summary>
         public AccessEffect Effect

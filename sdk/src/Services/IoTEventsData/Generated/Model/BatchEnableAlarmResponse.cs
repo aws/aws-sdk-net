@@ -38,9 +38,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property ErrorEntries. 
         /// <para>
-        /// A list of errors associated with the request, or <code>null</code> if there are no
-        /// errors. Each error entry contains an entry ID that helps you identify the entry that
-        /// failed.
+        /// A list of errors associated with the request, or <c>null</c> if there are no errors.
+        /// Each error entry contains an entry ID that helps you identify the entry that failed.
         /// </para>
         /// </summary>
         public List<BatchAlarmActionErrorEntry> ErrorEntries

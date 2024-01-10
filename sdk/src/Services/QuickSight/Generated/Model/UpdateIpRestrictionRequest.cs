@@ -31,8 +31,8 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the UpdateIpRestriction operation.
     /// Updates the content and status of IP rules. To use this operation, you must provide
-    /// the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation
-    /// to get the current rule map.
+    /// the entire map of rules. You can use the <c>DescribeIpRestriction</c> operation to
+    /// get the current rule map.
     /// </summary>
     public partial class UpdateIpRestrictionRequest : AmazonQuickSightRequest
     {

@@ -40,31 +40,31 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property FailedVersions. 
         /// <para>
         ///  A map of package versions that failed to copy and their error codes. The possible
-        /// error codes are in the <code>PackageVersionError</code> data type. They are: 
+        /// error codes are in the <c>PackageVersionError</c> data type. They are: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALREADY_EXISTS</code> 
+        ///  <c>ALREADY_EXISTS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISMATCHED_REVISION</code> 
+        ///  <c>MISMATCHED_REVISION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISMATCHED_STATUS</code> 
+        ///  <c>MISMATCHED_STATUS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_ALLOWED</code> 
+        ///  <c>NOT_ALLOWED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_FOUND</code> 
+        ///  <c>NOT_FOUND</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SKIPPED</code> 
+        ///  <c>SKIPPED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

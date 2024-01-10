@@ -35,31 +35,31 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Baseline</code> 
+    ///  <c>Baseline</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreationTime</code> 
+    ///  <c>CreationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastEvaluationTime</code> 
+    ///  <c>LastEvaluationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastEvaluationState</code> 
+    ///  <c>LastEvaluationState</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastModificationTime</code> 
+    ///  <c>LastModificationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Message</code> 
+    ///  <c>Message</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Status</code> 
+    ///  <c>Status</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about a reference when the <code>referenceType</code> is <code>EMAIL</code>.
-    /// Otherwise, null.
+    /// Information about a reference when the <c>referenceType</c> is <c>EMAIL</c>. Otherwise,
+    /// null.
     /// </summary>
     public partial class EmailReference
     {

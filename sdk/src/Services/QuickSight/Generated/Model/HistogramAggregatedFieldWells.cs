@@ -38,8 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The value field wells of a histogram. Values are aggregated by <code>COUNT</code>
-        /// or <code>DISTINCT_COUNT</code>.
+        /// The value field wells of a histogram. Values are aggregated by <c>COUNT</c> or <c>DISTINCT_COUNT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1)]

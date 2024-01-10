@@ -45,32 +45,31 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Count</code> – The number of sessions.
+        ///  <c>Count</c> – The number of sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Success</code> – The number of sessions that succeeded.
+        ///  <c>Success</c> – The number of sessions that succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failure</code> – The number of sessions that failed.
+        ///  <c>Failure</c> – The number of sessions that failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Dropped</code> – The number of sessions that the user dropped.
+        ///  <c>Dropped</c> – The number of sessions that the user dropped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Duration</code> – The duration of sessions.
+        ///  <c>Duration</c> – The duration of sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TurnsPerSession</code> – The number of turns in the sessions.
+        ///  <c>TurnsPerSession</c> – The number of turns in the sessions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Concurrency</code> – The number of sessions occurring in the same period of
-        /// time.
+        ///  <c>Concurrency</c> – The number of sessions occurring in the same period of time.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -112,16 +111,16 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Sum</code> – The total count for the category you provide in <code>name</code>.
+        ///  <c>Sum</c> – The total count for the category you provide in <c>name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> – The total count divided by the number of sessions in the category
-        /// you provide in <code>name</code>.
+        ///  <c>Average</c> – The total count divided by the number of sessions in the category
+        /// you provide in <c>name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Max</code> – The highest count in the category you provide in <code>name</code>.
+        ///  <c>Max</c> – The highest count in the category you provide in <c>name</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

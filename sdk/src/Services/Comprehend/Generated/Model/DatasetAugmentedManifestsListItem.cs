@@ -100,8 +100,8 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>PLAIN_TEXT_DOCUMENT</code> A document type that represents any unicode text
-        /// that is encoded in UTF-8.
+        ///  <c>PLAIN_TEXT_DOCUMENT</c> A document type that represents any unicode text that
+        /// is encoded in UTF-8.
         /// </para>
         /// </summary>
         public AugmentedManifestsDocumentTypeFormat DocumentType

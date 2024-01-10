@@ -60,7 +60,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property ObservabilityConfigurationSummaryList. 
         /// <para>
         /// A list of summary information records for observability configurations. In a paginated
-        /// request, the request returns up to <code>MaxResults</code> records for each call.
+        /// request, the request returns up to <c>MaxResults</c> records for each call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

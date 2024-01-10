@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property ProviderName. 
         /// <para>
-        /// The provider name for an Amazon Cognito user pool. For example, <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.
+        /// The provider name for an Amazon Cognito user pool. For example, <c>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -82,10 +82,10 @@ namespace Amazon.CognitoIdentity.Model
         /// </para>
         ///  
         /// <para>
-        /// Once you set <code>ServerSideTokenCheck</code> to TRUE for an identity pool, that
-        /// identity pool will check with the integrated user pools to make sure that the user
-        /// has not been globally signed out or deleted before the identity pool provides an OIDC
-        /// token or AWS credentials for the user.
+        /// Once you set <c>ServerSideTokenCheck</c> to TRUE for an identity pool, that identity
+        /// pool will check with the integrated user pools to make sure that the user has not
+        /// been globally signed out or deleted before the identity pool provides an OIDC token
+        /// or AWS credentials for the user.
         /// </para>
         ///  
         /// <para>

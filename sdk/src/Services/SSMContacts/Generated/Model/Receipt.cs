@@ -79,7 +79,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ReceiptTime. 
         /// <para>
-        /// The time receipt was <code>SENT</code>, <code>DELIVERED</code>, or <code>READ</code>.
+        /// The time receipt was <c>SENT</c>, <c>DELIVERED</c>, or <c>READ</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -98,8 +98,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ReceiptType. 
         /// <para>
-        /// The type follows the engagement cycle, <code>SENT</code>, <code>DELIVERED</code>,
-        /// and <code>READ</code>.
+        /// The type follows the engagement cycle, <c>SENT</c>, <c>DELIVERED</c>, and <c>READ</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

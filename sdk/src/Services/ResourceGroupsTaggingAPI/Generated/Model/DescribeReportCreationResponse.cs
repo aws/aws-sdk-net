@@ -84,21 +84,21 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RUNNING</code> - Report creation is in progress.
+        ///  <c>RUNNING</c> - Report creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code> - Report creation is complete. You can open the report from
-        /// the Amazon S3 bucket that you specified when you ran <code>StartReportCreation</code>.
+        ///  <c>SUCCEEDED</c> - Report creation is complete. You can open the report from the
+        /// Amazon S3 bucket that you specified when you ran <c>StartReportCreation</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Report creation timed out or the Amazon S3 bucket is not accessible.
+        ///  <c>FAILED</c> - Report creation timed out or the Amazon S3 bucket is not accessible.
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO REPORT</code> - No report was generated in the last 90 days.
+        ///  <c>NO REPORT</c> - No report was generated in the last 90 days.
         /// </para>
         ///  </li> </ul>
         /// </summary>

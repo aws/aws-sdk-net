@@ -288,7 +288,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Worm. 
         /// <para>
-        /// Set to <code>true</code> if the archived tape is stored as write-once-read-many (WORM).
+        /// Set to <c>true</c> if the archived tape is stored as write-once-read-many (WORM).
         /// </para>
         /// </summary>
         public bool Worm

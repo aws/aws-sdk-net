@@ -40,7 +40,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// High-level information about a <a>RegexPatternSet</a>, returned by operations like
         /// create and list. This provides information like the ID, that you can use to retrieve
-        /// and manage a <code>RegexPatternSet</code>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a>
+        /// and manage a <c>RegexPatternSet</c>, and the ARN, that you provide to the <a>RegexPatternSetReferenceStatement</a>
         /// to use the pattern set in a <a>Rule</a>.
         /// </para>
         /// </summary>

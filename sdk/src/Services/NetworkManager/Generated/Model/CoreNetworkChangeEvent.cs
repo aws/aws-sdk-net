@@ -80,8 +80,8 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property IdentifierPath. 
         /// <para>
-        /// Uniquely identifies the path for a change within the changeset. For example, the <code>IdentifierPath</code>
-        /// for a core network segment change might be <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.
+        /// Uniquely identifies the path for a change within the changeset. For example, the <c>IdentifierPath</c>
+        /// for a core network segment change might be <c>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

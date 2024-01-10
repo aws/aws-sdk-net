@@ -59,7 +59,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// A complex type that contains zero or more <code>Tag</code> key elements.
+        /// A complex type that contains zero or more <c>Tag</c> key elements.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -65,13 +65,13 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// This can be specified only for the <code>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</code> and
-        /// <code>CLIPBOARD_COPY_TO_LOCAL_DEVICE</code> actions.
+        /// This can be specified only for the <c>CLIPBOARD_COPY_FROM_LOCAL_DEVICE</c> and <c>CLIPBOARD_COPY_TO_LOCAL_DEVICE</c>
+        /// actions.
         /// </para>
         ///  
         /// <para>
-        /// This defaults to 20,971,520 (20 MB) when unspecified and the permission is <code>ENABLED</code>.
-        /// This can't be specified when the permission is <code>DISABLED</code>. 
+        /// This defaults to 20,971,520 (20 MB) when unspecified and the permission is <c>ENABLED</c>.
+        /// This can't be specified when the permission is <c>DISABLED</c>. 
         /// </para>
         ///  
         /// <para>

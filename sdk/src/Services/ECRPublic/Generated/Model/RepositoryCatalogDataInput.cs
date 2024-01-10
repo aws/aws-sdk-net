@@ -76,19 +76,19 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        ///  <code>ARM</code> 
+        ///  <c>ARM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ARM 64</code> 
+        ///  <c>ARM 64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x86</code> 
+        ///  <c>x86</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x86-64</code> 
+        ///  <c>x86-64</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -165,11 +165,11 @@ namespace Amazon.ECRPublic.Model
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        ///  <code>Linux</code> 
+        ///  <c>Linux</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Windows</code> 
+        ///  <c>Windows</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

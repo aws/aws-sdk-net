@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by <code>UpgradeDomain</code> operation.
+    /// Container for the response returned by <c>UpgradeDomain</c> operation.
     /// </summary>
     public partial class UpgradeDomainResponse : AmazonWebServiceResponse
     {

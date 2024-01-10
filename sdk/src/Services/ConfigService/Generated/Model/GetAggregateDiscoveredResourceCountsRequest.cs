@@ -71,7 +71,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters the results based on the <code>ResourceCountFilters</code> object.
+        /// Filters the results based on the <c>ResourceCountFilters</c> object.
         /// </para>
         /// </summary>
         public ResourceCountFilters Filters
@@ -128,8 +128,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response. 
+        /// The <c>nextToken</c> string returned on a previous page that you use to get the next
+        /// page of results in a paginated response. 
         /// </para>
         /// </summary>
         public string NextToken

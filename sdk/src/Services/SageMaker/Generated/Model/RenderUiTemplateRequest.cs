@@ -42,8 +42,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HumanTaskUiArn. 
         /// <para>
-        /// The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide
-        /// a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+        /// The <c>HumanTaskUiArn</c> of the worker UI that you want to render. Do not provide
+        /// a <c>HumanTaskUiArn</c> if you use the <c>UiTemplate</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Task. 
         /// <para>
-        /// A <code>RenderableTask</code> object containing a representative task to render.
+        /// A <c>RenderableTask</c> object containing a representative task to render.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property UiTemplate. 
         /// <para>
-        /// A <code>Template</code> object containing the worker UI template to render.
+        /// A <c>Template</c> object containing the worker UI template to render.
         /// </para>
         /// </summary>
         public UiTemplate UiTemplate

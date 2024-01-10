@@ -58,12 +58,11 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property AbleToUpdateBundle. 
         /// <para>
         /// Indicates whether the bundle that is currently applied to your distribution, specified
-        /// using the <code>distributionName</code> parameter, can be changed to another bundle.
+        /// using the <c>distributionName</c> parameter, can be changed to another bundle.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>UpdateDistributionBundle</code> action to change your distribution's
-        /// bundle.
+        /// Use the <c>UpdateDistributionBundle</c> action to change your distribution's bundle.
         /// </para>
         /// </summary>
         public bool AbleToUpdateBundle
@@ -247,8 +246,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
-        /// for IPv4 and IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
+        /// IPv6.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -291,7 +290,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// Lightsail distributions are global resources that can reference an origin in any Amazon
         /// Web Services Region, and distribute its content globally. However, all distributions
-        /// are located in the <code>us-east-1</code> Region.
+        /// are located in the <c>us-east-1</c> Region.
         /// </para>
         ///  </note>
         /// </summary>
@@ -369,7 +368,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (<code>Distribution</code>).
+        /// The Lightsail resource type (<c>Distribution</c>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

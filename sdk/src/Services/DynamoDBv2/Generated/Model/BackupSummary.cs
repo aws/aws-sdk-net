@@ -85,7 +85,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property BackupExpiryDateTime. 
         /// <para>
         /// Time at which the automatic on-demand backup created by DynamoDB will expire. This
-        /// <code>SYSTEM</code> on-demand backup expires automatically 35 days after its creation.
+        /// <c>SYSTEM</c> on-demand backup expires automatically 35 days after its creation.
         /// </para>
         /// </summary>
         public DateTime BackupExpiryDateTime
@@ -163,18 +163,18 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>USER</code> - You create and manage these using the on-demand backup feature.
+        ///  <c>USER</c> - You create and manage these using the on-demand backup feature.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SYSTEM</code> - If you delete a table with point-in-time recovery enabled,
-        /// a <code>SYSTEM</code> backup is automatically created and is retained for 35 days
-        /// (at no additional cost). System backups allow you to restore the deleted table to
-        /// the state it was in just before the point of deletion. 
+        ///  <c>SYSTEM</c> - If you delete a table with point-in-time recovery enabled, a <c>SYSTEM</c>
+        /// backup is automatically created and is retained for 35 days (at no additional cost).
+        /// System backups allow you to restore the deleted table to the state it was in just
+        /// before the point of deletion. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_BACKUP</code> - On-demand backup created by you from Backup service.
+        ///  <c>AWS_BACKUP</c> - On-demand backup created by you from Backup service.
         /// </para>
         ///  </li> </ul>
         /// </summary>

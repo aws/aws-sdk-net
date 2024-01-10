@@ -153,7 +153,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property TableType. 
         /// <para>
-        /// The type of table. In Athena, only <code>EXTERNAL_TABLE</code> is supported.
+        /// The type of table. In Athena, only <c>EXTERNAL_TABLE</c> is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

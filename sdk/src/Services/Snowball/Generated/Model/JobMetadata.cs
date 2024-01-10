@@ -31,7 +31,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Contains information about a specific job including shipping information, job status,
     /// and other important metadata. This information is returned as a part of the response
-    /// syntax of the <code>DescribeJob</code> action.
+    /// syntax of the <c>DescribeJob</c> action.
     /// </summary>
     public partial class JobMetadata
     {
@@ -83,7 +83,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        /// The 39-character ID for the cluster, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The 39-character ID for the cluster, for example <c>CID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -121,8 +121,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property DataTransferProgress. 
         /// <para>
         /// A value that defines the real-time status of a Snow device's data transfer while the
-        /// device is at Amazon Web Services. This data is only available while a job has a <code>JobState</code>
-        /// value of <code>InProgress</code>, for both import and export jobs.
+        /// device is at Amazon Web Services. This data is only available while a job has a <c>JobState</c>
+        /// value of <c>InProgress</c>, for both import and export jobs.
         /// </para>
         /// </summary>
         public DataTransfer DataTransferProgress
@@ -213,7 +213,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The automatically generated ID for a job, for example <c>JID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -330,9 +330,8 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property Notification. 
         /// <para>
         /// The Amazon Simple Notification Service (Amazon SNS) notification settings associated
-        /// with a specific job. The <code>Notification</code> object is returned as a part of
-        /// the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code>
-        /// data type.
+        /// with a specific job. The <c>Notification</c> object is returned as a part of the response
+        /// syntax of the <c>DescribeJob</c> action in the <c>JobMetadata</c> data type.
         /// </para>
         /// </summary>
         public Notification Notification
@@ -388,9 +387,9 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property RemoteManagement. 
         /// <para>
         /// Allows you to securely operate and manage Snowcone devices remotely from outside of
-        /// your internal network. When set to <code>INSTALLED_AUTOSTART</code>, remote management
-        /// will automatically be available when the device arrives at your location. Otherwise,
-        /// you need to use the Snowball Client to manage the device.
+        /// your internal network. When set to <c>INSTALLED_AUTOSTART</c>, remote management will
+        /// automatically be available when the device arrives at your location. Otherwise, you
+        /// need to use the Snowball Client to manage the device.
         /// </para>
         /// </summary>
         public RemoteManagement RemoteManagement
@@ -408,8 +407,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// An array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents
-        /// an Amazon S3 bucket that your transferred data will be exported from or imported into.
+        /// An array of <c>S3Resource</c> objects. Each <c>S3Resource</c> object represents an
+        /// Amazon S3 bucket that your transferred data will be exported from or imported into.
         /// </para>
         /// </summary>
         public JobResource Resources

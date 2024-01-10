@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
     /// included in requests that CloudFront sends to the origin. CloudFront sends a request
     /// when it can't find an object in its cache that matches the request's cache key. If
     /// you want to send values to the origin but <i>not</i> include them in the cache key,
-    /// use <code>OriginRequestPolicy</code>.
+    /// use <c>OriginRequestPolicy</c>.
     /// </para>
     /// </summary>
     public partial class ParametersInCacheKeyAndForwardedToOrigin
@@ -74,18 +74,18 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property EnableAcceptEncodingBrotli. 
         /// <para>
-        /// A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included
+        /// A flag that can affect whether the <c>Accept-Encoding</c> HTTP header is included
         /// in the cache key and included in requests that CloudFront sends to the origin.
         /// </para>
         ///  
         /// <para>
-        /// This field is related to the <code>EnableAcceptEncodingGzip</code> field. If one or
-        /// both of these fields is <code>true</code> <i>and</i> the viewer request includes the
-        /// <code>Accept-Encoding</code> header, then CloudFront does the following:
+        /// This field is related to the <c>EnableAcceptEncodingGzip</c> field. If one or both
+        /// of these fields is <c>true</c> <i>and</i> the viewer request includes the <c>Accept-Encoding</c>
+        /// header, then CloudFront does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Normalizes the value of the viewer's <code>Accept-Encoding</code> header
+        /// Normalizes the value of the viewer's <c>Accept-Encoding</c> header
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -102,19 +102,19 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set this value to <code>true</code>, and this cache behavior also has an origin
-        /// request policy attached, do not include the <code>Accept-Encoding</code> header in
-        /// the origin request policy. CloudFront always includes the <code>Accept-Encoding</code>
-        /// header in origin requests when the value of this field is <code>true</code>, so including
-        /// this header in an origin request policy has no effect.
+        /// If you set this value to <c>true</c>, and this cache behavior also has an origin request
+        /// policy attached, do not include the <c>Accept-Encoding</c> header in the origin request
+        /// policy. CloudFront always includes the <c>Accept-Encoding</c> header in origin requests
+        /// when the value of this field is <c>true</c>, so including this header in an origin
+        /// request policy has no effect.
         /// </para>
         ///  
         /// <para>
-        /// If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
+        /// If both of these fields are <c>false</c>, then CloudFront treats the <c>Accept-Encoding</c>
         /// header the same as any other HTTP header in the viewer request. By default, it's not
         /// included in the cache key and it's not included in origin requests. In this case,
-        /// you can manually add <code>Accept-Encoding</code> to the headers whitelist like any
-        /// other HTTP header.
+        /// you can manually add <c>Accept-Encoding</c> to the headers whitelist like any other
+        /// HTTP header.
         /// </para>
         /// </summary>
         public bool EnableAcceptEncodingBrotli
@@ -132,18 +132,18 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property EnableAcceptEncodingGzip. 
         /// <para>
-        /// A flag that can affect whether the <code>Accept-Encoding</code> HTTP header is included
+        /// A flag that can affect whether the <c>Accept-Encoding</c> HTTP header is included
         /// in the cache key and included in requests that CloudFront sends to the origin.
         /// </para>
         ///  
         /// <para>
-        /// This field is related to the <code>EnableAcceptEncodingBrotli</code> field. If one
-        /// or both of these fields is <code>true</code> <i>and</i> the viewer request includes
-        /// the <code>Accept-Encoding</code> header, then CloudFront does the following:
+        /// This field is related to the <c>EnableAcceptEncodingBrotli</c> field. If one or both
+        /// of these fields is <c>true</c> <i>and</i> the viewer request includes the <c>Accept-Encoding</c>
+        /// header, then CloudFront does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Normalizes the value of the viewer's <code>Accept-Encoding</code> header
+        /// Normalizes the value of the viewer's <c>Accept-Encoding</c> header
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -160,19 +160,19 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set this value to <code>true</code>, and this cache behavior also has an origin
-        /// request policy attached, do not include the <code>Accept-Encoding</code> header in
-        /// the origin request policy. CloudFront always includes the <code>Accept-Encoding</code>
-        /// header in origin requests when the value of this field is <code>true</code>, so including
-        /// this header in an origin request policy has no effect.
+        /// If you set this value to <c>true</c>, and this cache behavior also has an origin request
+        /// policy attached, do not include the <c>Accept-Encoding</c> header in the origin request
+        /// policy. CloudFront always includes the <c>Accept-Encoding</c> header in origin requests
+        /// when the value of this field is <c>true</c>, so including this header in an origin
+        /// request policy has no effect.
         /// </para>
         ///  
         /// <para>
-        /// If both of these fields are <code>false</code>, then CloudFront treats the <code>Accept-Encoding</code>
+        /// If both of these fields are <c>false</c>, then CloudFront treats the <c>Accept-Encoding</c>
         /// header the same as any other HTTP header in the viewer request. By default, it's not
         /// included in the cache key and it's not included in origin requests. In this case,
-        /// you can manually add <code>Accept-Encoding</code> to the headers whitelist like any
-        /// other HTTP header.
+        /// you can manually add <c>Accept-Encoding</c> to the headers whitelist like any other
+        /// HTTP header.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

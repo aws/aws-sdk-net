@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>State</code> of an offer.
+    /// Allows filtering on the <c>State</c> of an offer.
     /// </summary>
     public partial class OfferStateFilter
     {
@@ -38,7 +38,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ValueList. 
         /// <para>
-        /// Allows filtering on the <code>State</code> of an offer with list input.
+        /// Allows filtering on the <c>State</c> of an offer with list input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

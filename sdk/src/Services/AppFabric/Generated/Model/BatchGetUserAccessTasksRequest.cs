@@ -34,7 +34,7 @@ namespace Amazon.AppFabric.Model
     /// 
     ///  
     /// <para>
-    /// This action polls data from the tasks that are kicked off by the <code>StartUserAccessTasks</code>
+    /// This action polls data from the tasks that are kicked off by the <c>StartUserAccessTasks</c>
     /// action.
     /// </para>
     /// </summary>

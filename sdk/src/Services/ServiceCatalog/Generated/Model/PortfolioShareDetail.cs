@@ -98,8 +98,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property SharePrincipals. 
         /// <para>
-        /// Indicates if <code>Principal</code> sharing is enabled or disabled for the portfolio
-        /// share. 
+        /// Indicates if <c>Principal</c> sharing is enabled or disabled for the portfolio share.
+        /// 
         /// </para>
         /// </summary>
         public bool SharePrincipals

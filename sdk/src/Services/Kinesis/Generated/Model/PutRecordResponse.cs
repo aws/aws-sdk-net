@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>PutRecord</code>.
+    /// Represents the output for <c>PutRecord</c>.
     /// </summary>
     public partial class PutRecordResponse : AmazonWebServiceResponse
     {
@@ -45,12 +45,12 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: Do not encrypt the records in the stream.
+        ///  <c>NONE</c>: Do not encrypt the records in the stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KMS</code>: Use server-side encryption on the records in the stream using a
-        /// customer-managed Amazon Web Services KMS key.
+        ///  <c>KMS</c>: Use server-side encryption on the records in the stream using a customer-managed
+        /// Amazon Web Services KMS key.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -45,8 +45,8 @@ namespace Amazon.SimSpaceWeaver.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A value that you provide to ensure that repeated calls to this API operation using
-        /// the same parameters complete only once. A <code>ClientToken</code> is also known as
-        /// an <i>idempotency token</i>. A <code>ClientToken</code> expires after 24 hours.
+        /// the same parameters complete only once. A <c>ClientToken</c> is also known as an <i>idempotency
+        /// token</i>. A <c>ClientToken</c> expires after 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=32, Max=128)]

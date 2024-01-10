@@ -191,8 +191,8 @@ namespace Amazon.CleanRoomsML
 
         /// <summary>
         /// Defines the information necessary to create a training dataset, or seed audience.
-        /// In Clean Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue
-        /// table, which is read only during <code>AudienceModel</code> creation.
+        /// In Clean Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table,
+        /// which is read only during <c>AudienceModel</c> creation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrainingDataset service method.</param>
         /// 
@@ -213,8 +213,8 @@ namespace Amazon.CleanRoomsML
 
         /// <summary>
         /// Defines the information necessary to create a training dataset, or seed audience.
-        /// In Clean Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue
-        /// table, which is read only during <code>AudienceModel</code> creation.
+        /// In Clean Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table,
+        /// which is read only during <c>AudienceModel</c> creation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrainingDataset service method.</param>
         /// <param name="cancellationToken">
@@ -454,9 +454,8 @@ namespace Amazon.CleanRoomsML
         /// <summary>
         /// Specifies a training dataset that you want to delete. You can't delete a training
         /// dataset if there are any audience models that depend on the training dataset. In Clean
-        /// Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue table,
-        /// which is read only during <code>AudienceModel</code> creation. This action deletes
-        /// the metadata.
+        /// Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table, which
+        /// is read only during <c>AudienceModel</c> creation. This action deletes the metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingDataset service method.</param>
         /// 
@@ -481,9 +480,8 @@ namespace Amazon.CleanRoomsML
         /// <summary>
         /// Specifies a training dataset that you want to delete. You can't delete a training
         /// dataset if there are any audience models that depend on the training dataset. In Clean
-        /// Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue table,
-        /// which is read only during <code>AudienceModel</code> creation. This action deletes
-        /// the metadata.
+        /// Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table, which
+        /// is read only during <c>AudienceModel</c> creation. This action deletes the metadata.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrainingDataset service method.</param>
         /// <param name="cancellationToken">

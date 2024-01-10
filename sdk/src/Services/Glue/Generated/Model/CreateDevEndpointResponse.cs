@@ -56,7 +56,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// The map of arguments used to configure this <code>DevEndpoint</code>.
+        /// The map of arguments used to configure this <c>DevEndpoint</c>.
         /// </para>
         ///  
         /// <para>
@@ -64,12 +64,12 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"--enable-glue-datacatalog": ""</code> 
+        ///  <c>"--enable-glue-datacatalog": ""</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// You can specify a version of Python support for development endpoints by using the
-        /// <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code>
+        /// <c>Arguments</c> parameter in the <c>CreateDevEndpoint</c> or <c>UpdateDevEndpoint</c>
         /// APIs. If no arguments are provided, the version defaults to Python 2.
         /// </para>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Amazon Web Services Availability Zone where this <code>DevEndpoint</code> is located.
+        /// The Amazon Web Services Availability Zone where this <c>DevEndpoint</c> is located.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -107,7 +107,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The point in time at which this <code>DevEndpoint</code> was created.
+        /// The point in time at which this <c>DevEndpoint</c> was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -125,7 +125,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name assigned to the new <code>DevEndpoint</code>.
+        /// The name assigned to the new <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string EndpointName
@@ -143,8 +143,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraJarsS3Path. 
         /// <para>
-        /// Path to one or more Java <code>.jar</code> files in an S3 bucket that will be loaded
-        /// in your <code>DevEndpoint</code>.
+        /// Path to one or more Java <c>.jar</c> files in an S3 bucket that will be loaded in
+        /// your <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string ExtraJarsS3Path
@@ -163,7 +163,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
         /// The paths to one or more Python libraries in an S3 bucket that will be loaded in your
-        /// <code>DevEndpoint</code>.
+        /// <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string ExtraPythonLibsS3Path
@@ -181,7 +181,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason for a current failure in this <code>DevEndpoint</code>.
+        /// The reason for a current failure in this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -244,8 +244,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfWorkers. 
         /// <para>
-        /// The number of workers of a defined <code>workerType</code> that are allocated to the
-        /// development endpoint.
+        /// The number of workers of a defined <c>workerType</c> that are allocated to the development
+        /// endpoint.
         /// </para>
         /// </summary>
         public int NumberOfWorkers
@@ -263,7 +263,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the role assigned to the new <code>DevEndpoint</code>.
+        /// The Amazon Resource Name (ARN) of the role assigned to the new <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -281,8 +281,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the <code>SecurityConfiguration</code> structure being used with this
-        /// <code>DevEndpoint</code>.
+        /// The name of the <c>SecurityConfiguration</c> structure being used with this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -301,7 +300,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The security groups assigned to the new <code>DevEndpoint</code>.
+        /// The security groups assigned to the new <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -319,7 +318,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the new <code>DevEndpoint</code>.
+        /// The current status of the new <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string Status
@@ -337,7 +336,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet ID assigned to the new <code>DevEndpoint</code>.
+        /// The subnet ID assigned to the new <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -355,7 +354,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the virtual private cloud (VPC) used by this <code>DevEndpoint</code>.
+        /// The ID of the virtual private cloud (VPC) used by this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string VpcId
@@ -392,7 +391,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property YarnEndpointAddress. 
         /// <para>
-        /// The address of the YARN endpoint used by this <code>DevEndpoint</code>.
+        /// The address of the YARN endpoint used by this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string YarnEndpointAddress

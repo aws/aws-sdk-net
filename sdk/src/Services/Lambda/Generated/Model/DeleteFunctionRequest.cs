@@ -30,7 +30,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteFunction operation.
-    /// Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code>
+    /// Deletes a Lambda function. To delete a specific function version, use the <c>Qualifier</c>
     /// parameter. Otherwise, all versions and aliases are deleted. This doesn't require the
     /// user to have explicit permissions for <a>DeleteAlias</a>.
     /// 
@@ -57,16 +57,16 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code>
-        /// (with version).
+        ///  <b>Function name</b> – <c>my-function</c> (name-only), <c>my-function:1</c> (with
+        /// version).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

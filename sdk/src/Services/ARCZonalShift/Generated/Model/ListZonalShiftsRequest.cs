@@ -32,12 +32,12 @@ namespace Amazon.ARCZonalShift.Model
     /// Container for the parameters to the ListZonalShifts operation.
     /// Lists all active and completed zonal shifts in Amazon Route 53 Application Recovery
     /// Controller in your Amazon Web Services account in this Amazon Web Services Region.
-    /// <code>ListZonalShifts</code> returns customer-started zonal shifts, as well as practice
+    /// <c>ListZonalShifts</c> returns customer-started zonal shifts, as well as practice
     /// run zonal shifts that Route 53 ARC started on your behalf for zonal autoshift.
     /// 
     ///  
     /// <para>
-    /// The <code>ListZonalShifts</code> operation does not list autoshifts. For more information
+    /// The <c>ListZonalShifts</c> operation does not list autoshifts. For more information
     /// about listing autoshifts, see <a href="https://docs.aws.amazon.com/arc-zonal-shift/latest/api/API_ListAutoshifts.html">"&gt;ListAutoshifts</a>.
     /// </para>
     /// </summary>
@@ -71,9 +71,9 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Specifies that you want to receive the next page of results. Valid only if you received
-        /// a <code>NextToken</code> response in the previous request. If you did, it indicates
-        /// that more output is available. Set this parameter to the value provided by the previous
-        /// call's <code>NextToken</code> response to request the next page of results.
+        /// a <c>NextToken</c> response in the previous request. If you did, it indicates that
+        /// more output is available. Set this parameter to the value provided by the previous
+        /// call's <c>NextToken</c> response to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -115,7 +115,7 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Status</code> for a zonal shift can have one of the following values:
+        /// The <c>Status</c> for a zonal shift can have one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>

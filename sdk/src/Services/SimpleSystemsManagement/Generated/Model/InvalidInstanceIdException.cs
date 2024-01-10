@@ -46,9 +46,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The managed node isn't in valid state. Valid states are: <code>Running</code>, <code>Pending</code>,
-    /// <code>Stopped</code>, and <code>Stopping</code>. Invalid states are: <code>Shutting-down</code>
-    /// and <code>Terminated</code>.
+    /// The managed node isn't in valid state. Valid states are: <c>Running</c>, <c>Pending</c>,
+    /// <c>Stopped</c>, and <c>Stopping</c>. Invalid states are: <c>Shutting-down</c> and
+    /// <c>Terminated</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

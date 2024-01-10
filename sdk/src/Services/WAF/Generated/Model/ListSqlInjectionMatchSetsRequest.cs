@@ -55,9 +55,9 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// Specifies the number of <a>SqlInjectionMatchSet</a> objects that you want AWS WAF
-        /// to return for this request. If you have more <code>SqlInjectionMatchSet</code> objects
-        /// than the number you specify for <code>Limit</code>, the response includes a <code>NextMarker</code>
-        /// value that you can use to get another batch of <code>Rules</code>.
+        /// to return for this request. If you have more <c>SqlInjectionMatchSet</c> objects than
+        /// the number you specify for <c>Limit</c>, the response includes a <c>NextMarker</c>
+        /// value that you can use to get another batch of <c>Rules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -76,12 +76,12 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If you specify a value for <code>Limit</code> and you have more <a>SqlInjectionMatchSet</a>
-        /// objects than the value of <code>Limit</code>, AWS WAF returns a <code>NextMarker</code>
-        /// value in the response that allows you to list another group of <code>SqlInjectionMatchSets</code>.
-        /// For the second and subsequent <code>ListSqlInjectionMatchSets</code> requests, specify
-        /// the value of <code>NextMarker</code> from the previous response to get information
-        /// about another batch of <code>SqlInjectionMatchSets</code>.
+        /// If you specify a value for <c>Limit</c> and you have more <a>SqlInjectionMatchSet</a>
+        /// objects than the value of <c>Limit</c>, AWS WAF returns a <c>NextMarker</c> value
+        /// in the response that allows you to list another group of <c>SqlInjectionMatchSets</c>.
+        /// For the second and subsequent <c>ListSqlInjectionMatchSets</c> requests, specify the
+        /// value of <c>NextMarker</c> from the previous response to get information about another
+        /// batch of <c>SqlInjectionMatchSets</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]

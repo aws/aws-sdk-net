@@ -80,8 +80,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property AutoDeployment. 
         /// <para>
         /// Describes whether StackSets automatically deploys to Organizations accounts that are
-        /// added to the target organization or organizational unit (OU). Specify only if <code>PermissionModel</code>
-        /// is <code>SERVICE_MANAGED</code>.
+        /// added to the target organization or organizational unit (OU). Specify only if <c>PermissionModel</c>
+        /// is <c>SERVICE_MANAGED</c>.
         /// </para>
         /// </summary>
         public AutoDeployment AutoDeployment
@@ -105,18 +105,18 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// To create a stack set with service-managed permissions while signed in to the management
-        /// account, specify <code>SELF</code>.
+        /// account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To create a stack set with service-managed permissions while signed in to a delegated
-        /// administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>
@@ -151,7 +151,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CAPABILITY_IAM</code> and <code>CAPABILITY_NAMED_IAM</code> 
+        ///  <c>CAPABILITY_IAM</c> and <c>CAPABILITY_NAMED_IAM</c> 
         /// </para>
         ///  
         /// <para>
@@ -162,8 +162,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// The following IAM resources require you to specify either the <code>CAPABILITY_IAM</code>
-        /// or <code>CAPABILITY_NAMED_IAM</code> capability.
+        /// The following IAM resources require you to specify either the <c>CAPABILITY_IAM</c>
+        /// or <c>CAPABILITY_NAMED_IAM</c> capability.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -171,11 +171,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you have IAM resources with custom names, you <i>must</i> specify <code>CAPABILITY_NAMED_IAM</code>.
+        /// If you have IAM resources with custom names, you <i>must</i> specify <c>CAPABILITY_NAMED_IAM</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you don't specify either of these capabilities, CloudFormation returns an <code>InsufficientCapabilities</code>
+        /// If you don't specify either of these capabilities, CloudFormation returns an <c>InsufficientCapabilities</c>
         /// error.
         /// </para>
         ///  </li> </ul> 
@@ -225,7 +225,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CAPABILITY_AUTO_EXPAND</code> 
+        ///  <c>CAPABILITY_AUTO_EXPAND</c> 
         /// </para>
         ///  
         /// <para>
@@ -261,9 +261,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for this <code>CreateStackSet</code> request. Specify this token
-        /// if you plan to retry requests so that CloudFormation knows that you're not attempting
-        /// to create another stack set with the same name. You might retry <code>CreateStackSet</code>
+        /// A unique identifier for this <c>CreateStackSet</c> request. Specify this token if
+        /// you plan to retry requests so that CloudFormation knows that you're not attempting
+        /// to create another stack set with the same name. You might retry <c>CreateStackSet</c>
         /// requests to ensure that CloudFormation successfully received them.
         /// </para>
         ///  
@@ -308,7 +308,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
         /// The name of the IAM execution role to use to create the stack set. If you do not specify
-        /// an execution role, CloudFormation uses the <code>AWSCloudFormationStackSetExecutionRole</code>
+        /// an execution role, CloudFormation uses the <c>AWSCloudFormationStackSetExecutionRole</c>
         /// role for the stack set operation.
         /// </para>
         ///  
@@ -371,20 +371,19 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PermissionModel. 
         /// <para>
         /// Describes how the IAM roles required for stack set operations are created. By default,
-        /// <code>SELF-MANAGED</code> is specified.
+        /// <c>SELF-MANAGED</c> is specified.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// With <code>self-managed</code> permissions, you must create the administrator and
-        /// execution roles required to deploy to target accounts. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
+        /// With <c>self-managed</c> permissions, you must create the administrator and execution
+        /// roles required to deploy to target accounts. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-self-managed.html">Grant
         /// Self-Managed Stack Set Permissions</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// With <code>service-managed</code> permissions, StackSets automatically creates the
-        /// IAM roles required to deploy to accounts managed by Organizations. For more information,
-        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
+        /// With <c>service-managed</c> permissions, StackSets automatically creates the IAM roles
+        /// required to deploy to accounts managed by Organizations. For more information, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-prereqs-service-managed.html">Grant
         /// Service-Managed Stack Set Permissions</a>.
         /// </para>
         ///  </li> </ul>
@@ -455,10 +454,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify tags as part of a <code>CreateStackSet</code> action, CloudFormation
-        /// checks to see if you have the required IAM permission to tag resources. If you don't,
-        /// the entire <code>CreateStackSet</code> action fails with an <code>access denied</code>
-        /// error, and the stack set is not created.
+        /// If you specify tags as part of a <c>CreateStackSet</c> action, CloudFormation checks
+        /// to see if you have the required IAM permission to tag resources. If you don't, the
+        /// entire <c>CreateStackSet</c> action fails with an <c>access denied</c> error, and
+        /// the stack set is not created.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

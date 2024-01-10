@@ -30,8 +30,8 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeJobDefinitions operation.
-    /// Describes a list of job definitions. You can specify a <code>status</code> (such as
-    /// <code>ACTIVE</code>) to only return job definitions that match that status.
+    /// Describes a list of job definitions. You can specify a <c>status</c> (such as <c>ACTIVE</c>)
+    /// to only return job definitions that match that status.
     /// </summary>
     public partial class DescribeJobDefinitionsRequest : AmazonBatchRequest
     {
@@ -63,8 +63,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property JobDefinitions. 
         /// <para>
         /// A list of up to 100 job definitions. Each entry in the list can either be an ARN in
-        /// the format <code>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</code>
-        /// or a short version using the form <code>${JobDefinitionName}:${Revision}</code>.
+        /// the format <c>arn:aws:batch:${Region}:${Account}:job-definition/${JobDefinitionName}:${Revision}</c>
+        /// or a short version using the form <c>${JobDefinitionName}:${Revision}</c>.
         /// </para>
         /// </summary>
         public List<string> JobDefinitions
@@ -82,13 +82,13 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results returned by <code>DescribeJobDefinitions</code> in paginated
-        /// output. When this parameter is used, <code>DescribeJobDefinitions</code> only returns
-        /// <code>maxResults</code> results in a single page and a <code>nextToken</code> response
-        /// element. The remaining results of the initial request can be seen by sending another
-        /// <code>DescribeJobDefinitions</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeJobDefinitions</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable.
+        /// The maximum number of results returned by <c>DescribeJobDefinitions</c> in paginated
+        /// output. When this parameter is used, <c>DescribeJobDefinitions</c> only returns <c>maxResults</c>
+        /// results in a single page and a <c>nextToken</c> response element. The remaining results
+        /// of the initial request can be seen by sending another <c>DescribeJobDefinitions</c>
+        /// request with the returned <c>nextToken</c> value. This value can be between 1 and
+        /// 100. If this parameter isn't used, then <c>DescribeJobDefinitions</c> returns up to
+        /// 100 results and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -106,11 +106,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>DescribeJobDefinitions</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// The <c>nextToken</c> value returned from a previous paginated <c>DescribeJobDefinitions</c>
+        /// request where <c>maxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>nextToken</c> value. This value is <c>null</c> when there are no more results
+        /// to return.
         /// </para>
         ///  <note> 
         /// <para>

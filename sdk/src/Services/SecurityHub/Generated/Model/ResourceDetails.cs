@@ -34,18 +34,18 @@ namespace Amazon.SecurityHub.Model
     ///  
     /// <para>
     /// To provide the details, use the object that corresponds to the resource type. For
-    /// example, if the resource type is <code>AwsEc2Instance</code>, then you use the <code>AwsEc2Instance</code>
+    /// example, if the resource type is <c>AwsEc2Instance</c>, then you use the <c>AwsEc2Instance</c>
     /// object to provide the details.
     /// </para>
     ///  
     /// <para>
     /// If the type-specific object does not contain all of the fields you want to populate,
-    /// then you use the <code>Other</code> object to populate those additional fields.
+    /// then you use the <c>Other</c> object to populate those additional fields.
     /// </para>
     ///  
     /// <para>
-    /// You also use the <code>Other</code> object to populate the details when the selected
-    /// type does not have a corresponding object.
+    /// You also use the <c>Other</c> object to populate the details when the selected type
+    /// does not have a corresponding object.
     /// </para>
     /// </summary>
     public partial class ResourceDetails
@@ -1941,19 +1941,19 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Other. 
         /// <para>
         /// Details about a resource that are not available in a type-specific details object.
-        /// Use the <code>Other</code> object in the following cases.
+        /// Use the <c>Other</c> object in the following cases.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The type-specific object does not contain all of the fields that you want to populate.
         /// In this case, first use the type-specific object to populate those fields. Use the
-        /// <code>Other</code> object to populate the fields that are missing from the type-specific
+        /// <c>Other</c> object to populate the fields that are missing from the type-specific
         /// object.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The resource type does not have a corresponding object. This includes resources for
-        /// which the type is <code>Other</code>. 
+        /// which the type is <c>Other</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -33,8 +33,8 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The <code>ComboChartVisual</code> includes stacked bar combo charts and clustered
-    /// bar combo charts
+    /// The <c>ComboChartVisual</c> includes stacked bar combo charts and clustered bar combo
+    /// charts
     /// </para>
     ///  
     /// <para>

@@ -208,10 +208,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  If the previous call to the <code>ListNotebookInstances</code> is truncated, the
-        /// response includes a <code>NextToken</code>. You can use this token in your subsequent
-        /// <code>ListNotebookInstances</code> request to fetch the next set of notebook instances.
-        /// 
+        ///  If the previous call to the <c>ListNotebookInstances</c> is truncated, the response
+        /// includes a <c>NextToken</c>. You can use this token in your subsequent <c>ListNotebookInstances</c>
+        /// request to fetch the next set of notebook instances. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -257,7 +256,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field to sort results by. The default is <code>Name</code>.
+        /// The field to sort results by. The default is <c>Name</c>.
         /// </para>
         /// </summary>
         public NotebookInstanceSortKey SortBy

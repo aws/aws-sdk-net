@@ -47,7 +47,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// Room ARN, from the request (if <code>identifier</code> was an ARN).
+        /// Room ARN, from the request (if <c>identifier</c> was an ARN).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -202,8 +202,7 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags attached to the resource. Array of maps, each of the form <code>string:string
-        /// (key:value)</code>.
+        /// Tags attached to the resource. Array of maps, each of the form <c>string:string (key:value)</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

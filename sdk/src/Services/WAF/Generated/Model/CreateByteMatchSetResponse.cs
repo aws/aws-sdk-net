@@ -39,7 +39,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ByteMatchSet. 
         /// <para>
-        /// A <a>ByteMatchSet</a> that contains no <code>ByteMatchTuple</code> objects.
+        /// A <a>ByteMatchSet</a> that contains no <c>ByteMatchTuple</c> objects.
         /// </para>
         /// </summary>
         public ByteMatchSet ByteMatchSet
@@ -57,9 +57,9 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used to submit the <code>CreateByteMatchSet</code>
-        /// request. You can also use this value to query the status of the request. For more
-        /// information, see <a>GetChangeTokenStatus</a>.
+        /// The <c>ChangeToken</c> that you used to submit the <c>CreateByteMatchSet</c> request.
+        /// You can also use this value to query the status of the request. For more information,
+        /// see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

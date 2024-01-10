@@ -138,7 +138,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property SupportedValues. 
         /// <para>
-        ///  The list of values that a field can contain. For example, a Boolean <code>fieldType</code>
+        ///  The list of values that a field can contain. For example, a Boolean <c>fieldType</c>
         /// can have two values: "true" and "false". 
         /// </para>
         /// </summary>

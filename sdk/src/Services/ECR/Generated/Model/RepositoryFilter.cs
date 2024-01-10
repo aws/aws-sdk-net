@@ -42,7 +42,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The repository filter details. When the <code>PREFIX_MATCH</code> filter type is specified,
+        /// The repository filter details. When the <c>PREFIX_MATCH</c> filter type is specified,
         /// this value is required and should be the repository name prefix to configure replication
         /// for.
         /// </para>
@@ -63,8 +63,8 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property FilterType. 
         /// <para>
-        /// The repository filter type. The only supported value is <code>PREFIX_MATCH</code>,
-        /// which is a repository name prefix specified with the <code>filter</code> parameter.
+        /// The repository filter type. The only supported value is <c>PREFIX_MATCH</c>, which
+        /// is a repository name prefix specified with the <c>filter</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

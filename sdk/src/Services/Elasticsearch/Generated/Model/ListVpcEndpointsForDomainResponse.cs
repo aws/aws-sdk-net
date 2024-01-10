@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to the <code><a>ListVpcEndpointsForDomain</a></code>
-    /// operation. Returns a list containing summarized details of the VPC endpoints.
+    /// Container for response parameters to the <c><a>ListVpcEndpointsForDomain</a></c> operation.
+    /// Returns a list containing summarized details of the VPC endpoints.
     /// </summary>
     public partial class ListVpcEndpointsForDomainResponse : AmazonWebServiceResponse
     {
@@ -59,7 +59,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property VpcEndpointSummaryList. 
         /// <para>
-        /// Provides list of <code>VpcEndpointSummary</code> summarizing details of the VPC endpoints.
+        /// Provides list of <c>VpcEndpointSummary</c> summarizing details of the VPC endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

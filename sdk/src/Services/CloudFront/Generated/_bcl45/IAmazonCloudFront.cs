@@ -152,8 +152,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// After you create a staging distribution, you can use <code>UpdateDistribution</code>
-        /// to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
+        /// After you create a staging distribution, you can use <c>UpdateDistribution</c> to
+        /// modify the staging distribution's configuration. Then you can use <c>CreateContinuousDeploymentPolicy</c>
         /// to incrementally move traffic to the staging distribution.
         /// </para>
         ///  
@@ -195,7 +195,7 @@ namespace Amazon.CloudFront
         /// specified cache behavior.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -208,8 +208,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -221,7 +221,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
         /// The specified Lambda@Edge function association is invalid.
@@ -259,7 +259,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -273,11 +273,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -290,7 +290,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -302,7 +302,7 @@ namespace Amazon.CloudFront
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
         /// The specified real-time log configuration belongs to a different Amazon Web Services
@@ -428,8 +428,8 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// After you create a staging distribution, you can use <code>UpdateDistribution</code>
-        /// to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
+        /// After you create a staging distribution, you can use <c>UpdateDistribution</c> to
+        /// modify the staging distribution's configuration. Then you can use <c>CreateContinuousDeploymentPolicy</c>
         /// to incrementally move traffic to the staging distribution.
         /// </para>
         ///  
@@ -474,7 +474,7 @@ namespace Amazon.CloudFront
         /// specified cache behavior.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -487,8 +487,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -500,7 +500,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
         /// The specified Lambda@Edge function association is invalid.
@@ -538,7 +538,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -552,11 +552,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -569,7 +569,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -581,7 +581,7 @@ namespace Amazon.CloudFront
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
         /// The specified real-time log configuration belongs to a different Amazon Web Services
@@ -728,7 +728,7 @@ namespace Amazon.CloudFront
         /// included in requests that CloudFront sends to the origin. CloudFront sends a request
         /// when it can't find an object in its cache that matches the request's cache key. If
         /// you want to send values to the origin but <i>not</i> include them in the cache key,
-        /// use <code>OriginRequestPolicy</code>.
+        /// use <c>OriginRequestPolicy</c>.
         /// </para>
         ///  
         /// <para>
@@ -744,10 +744,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
         /// A cache policy with this name already exists. You must provide a unique name. To modify
-        /// an existing cache policy, use <code>UpdateCachePolicy</code>.
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -802,7 +802,7 @@ namespace Amazon.CloudFront
         /// included in requests that CloudFront sends to the origin. CloudFront sends a request
         /// when it can't find an object in its cache that matches the request's cache key. If
         /// you want to send values to the origin but <i>not</i> include them in the cache key,
-        /// use <code>OriginRequestPolicy</code>.
+        /// use <c>OriginRequestPolicy</c>.
         /// </para>
         ///  
         /// <para>
@@ -821,10 +821,10 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
         /// A cache policy with this name already exists. You must provide a unique name. To modify
-        /// an existing cache policy, use <code>UpdateCachePolicy</code>.
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -868,19 +868,19 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException">
-        /// If the <code>CallerReference</code> is a value you already sent in a previous request
-        /// to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code>
-        /// is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code>
+        /// If the <c>CallerReference</c> is a value you already sent in a previous request to
+        /// create an identity but the content of the <c>CloudFrontOriginAccessIdentityConfig</c>
+        /// is different from the original request, CloudFront returns a <c>CloudFrontOriginAccessIdentityAlreadyExists</c>
         /// error.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException">
@@ -906,19 +906,19 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the CreateCloudFrontOriginAccessIdentity service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.CloudFrontOriginAccessIdentityAlreadyExistsException">
-        /// If the <code>CallerReference</code> is a value you already sent in a previous request
-        /// to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code>
-        /// is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code>
+        /// If the <c>CallerReference</c> is a value you already sent in a previous request to
+        /// create an identity but the content of the <c>CloudFrontOriginAccessIdentityConfig</c>
+        /// is different from the original request, CloudFront returns a <c>CloudFrontOriginAccessIdentityAlreadyExists</c>
         /// error.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCloudFrontOriginAccessIdentitiesException">
@@ -939,9 +939,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To use a continuous deployment policy, first use <code>CopyDistribution</code> to
-        /// create a staging distribution, then use <code>UpdateDistribution</code> to modify
-        /// the staging distribution's configuration.
+        /// To use a continuous deployment policy, first use <c>CopyDistribution</c> to create
+        /// a staging distribution, then use <c>UpdateDistribution</c> to modify the staging distribution's
+        /// configuration.
         /// </para>
         ///  
         /// <para>
@@ -961,7 +961,7 @@ namespace Amazon.CloudFront
         /// A continuous deployment policy with this configuration already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -984,9 +984,9 @@ namespace Amazon.CloudFront
         /// 
         ///  
         /// <para>
-        /// To use a continuous deployment policy, first use <code>CopyDistribution</code> to
-        /// create a staging distribution, then use <code>UpdateDistribution</code> to modify
-        /// the staging distribution's configuration.
+        /// To use a continuous deployment policy, first use <c>CopyDistribution</c> to create
+        /// a staging distribution, then use <c>UpdateDistribution</c> to modify the staging distribution's
+        /// configuration.
         /// </para>
         ///  
         /// <para>
@@ -1009,7 +1009,7 @@ namespace Amazon.CloudFront
         /// A continuous deployment policy with this configuration already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -1058,7 +1058,7 @@ namespace Amazon.CloudFront
         /// identity (OAI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -1074,8 +1074,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -1122,7 +1122,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -1136,11 +1136,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -1153,7 +1153,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -1313,7 +1313,7 @@ namespace Amazon.CloudFront
         /// identity (OAI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -1329,8 +1329,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -1377,7 +1377,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -1391,11 +1391,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -1408,7 +1408,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -1581,7 +1581,7 @@ namespace Amazon.CloudFront
         /// identity (OAI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -1597,8 +1597,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -1645,7 +1645,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -1662,11 +1662,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -1679,7 +1679,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -1852,7 +1852,7 @@ namespace Amazon.CloudFront
         /// identity (OAI).
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -1868,8 +1868,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -1916,7 +1916,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -1933,11 +1933,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -1950,7 +1950,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -2091,7 +2091,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -2129,7 +2129,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -2170,7 +2170,7 @@ namespace Amazon.CloudFront
         /// The maximum size of a profile for field-level encryption was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -2208,7 +2208,7 @@ namespace Amazon.CloudFront
         /// The maximum size of a profile for field-level encryption was exceeded.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -2244,15 +2244,15 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage,
-        /// you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+        /// When you create a function, it's in the <c>DEVELOPMENT</c> stage. In this stage, you
+        /// can test the function with <c>TestFunction</c>, and update it with <c>UpdateFunction</c>.
         /// </para>
         ///  
         /// <para>
-        /// When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
-        /// to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>.
-        /// When it's live, you can attach the function to a distribution's cache behavior, using
-        /// the function's ARN.
+        /// When you're ready to use your function with a CloudFront distribution, use <c>PublishFunction</c>
+        /// to copy the function from the <c>DEVELOPMENT</c> stage to <c>LIVE</c>. When it's live,
+        /// you can attach the function to a distribution's cache behavior, using the function's
+        /// ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
@@ -2261,7 +2261,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
         /// A function with the same name already exists in this Amazon Web Services account.
         /// To create a function, you must provide a unique name. To update an existing function,
-        /// use <code>UpdateFunction</code>.
+        /// use <c>UpdateFunction</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
         /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -2294,15 +2294,15 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// When you create a function, it's in the <code>DEVELOPMENT</code> stage. In this stage,
-        /// you can test the function with <code>TestFunction</code>, and update it with <code>UpdateFunction</code>.
+        /// When you create a function, it's in the <c>DEVELOPMENT</c> stage. In this stage, you
+        /// can test the function with <c>TestFunction</c>, and update it with <c>UpdateFunction</c>.
         /// </para>
         ///  
         /// <para>
-        /// When you're ready to use your function with a CloudFront distribution, use <code>PublishFunction</code>
-        /// to copy the function from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>.
-        /// When it's live, you can attach the function to a distribution's cache behavior, using
-        /// the function's ARN.
+        /// When you're ready to use your function with a CloudFront distribution, use <c>PublishFunction</c>
+        /// to copy the function from the <c>DEVELOPMENT</c> stage to <c>LIVE</c>. When it's live,
+        /// you can attach the function to a distribution's cache behavior, using the function's
+        /// ARN.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFunction service method.</param>
@@ -2314,7 +2314,7 @@ namespace Amazon.CloudFront
         /// <exception cref="Amazon.CloudFront.Model.FunctionAlreadyExistsException">
         /// A function with the same name already exists in this Amazon Web Services account.
         /// To create a function, you must provide a unique name. To update an existing function,
-        /// use <code>UpdateFunction</code>.
+        /// use <c>UpdateFunction</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.FunctionSizeLimitExceededException">
         /// The function is too large. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/cloudfront-limits.html">Quotas</a>
@@ -2352,13 +2352,13 @@ namespace Amazon.CloudFront
         /// Invalidation batch specified is too large.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
@@ -2389,13 +2389,13 @@ namespace Amazon.CloudFront
         /// Invalidation batch specified is too large.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
@@ -2437,7 +2437,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
         /// A key group with this name already exists. You must provide a unique name. To modify
-        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
         /// You have reached the maximum number of key groups for this Amazon Web Services account.
@@ -2481,7 +2481,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
         /// A key group with this name already exists. You must provide a unique name. To modify
-        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyKeyGroupsException">
         /// You have reached the maximum number of key groups for this Amazon Web Services account.
@@ -2504,8 +2504,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Specifies the Key Value Store resource to add to your account. In your account, the
         /// Key Value Store names must be unique. You can also import Key Value Store data in
-        /// JSON format from an S3 bucket by providing a valid <code>ImportSource</code> that
-        /// you own.
+        /// JSON format from an S3 bucket by providing a valid <c>ImportSource</c> that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyValueStore service method.</param>
         /// 
@@ -2534,8 +2533,7 @@ namespace Amazon.CloudFront
         /// <summary>
         /// Specifies the Key Value Store resource to add to your account. In your account, the
         /// Key Value Store names must be unique. You can also import Key Value Store data in
-        /// JSON format from an S3 bucket by providing a valid <code>ImportSource</code> that
-        /// you own.
+        /// JSON format from an S3 bucket by providing a valid <c>ImportSource</c> that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateKeyValueStore service method.</param>
         /// <param name="cancellationToken">
@@ -2740,7 +2738,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// The headers that CloudFront automatically includes in every origin request, including
-        /// <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
+        /// <c>Host</c>, <c>User-Agent</c>, and <c>X-Amz-Cf-Id</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2752,7 +2750,7 @@ namespace Amazon.CloudFront
         /// <para>
         /// CloudFront sends a request when it can't find a valid object in its cache that matches
         /// the request. If you want to send values to the origin and also include them in the
-        /// cache key, use <code>CachePolicy</code>.
+        /// cache key, use <c>CachePolicy</c>.
         /// </para>
         ///  
         /// <para>
@@ -2767,14 +2765,14 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
         /// An origin request policy with this name already exists. You must provide a unique
-        /// name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
         /// The number of cookies in the origin request policy exceeds the maximum. For more information,
@@ -2818,7 +2816,7 @@ namespace Amazon.CloudFront
         ///  </li> <li> 
         /// <para>
         /// The headers that CloudFront automatically includes in every origin request, including
-        /// <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
+        /// <c>Host</c>, <c>User-Agent</c>, and <c>X-Amz-Cf-Id</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2830,7 +2828,7 @@ namespace Amazon.CloudFront
         /// <para>
         /// CloudFront sends a request when it can't find a valid object in its cache that matches
         /// the request. If you want to send values to the origin and also include them in the
-        /// cache key, use <code>CachePolicy</code>.
+        /// cache key, use <c>CachePolicy</c>.
         /// </para>
         ///  
         /// <para>
@@ -2848,14 +2846,14 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
         /// An origin request policy with this name already exists. You must provide a unique
-        /// name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
         /// The number of cookies in the origin request policy exceeds the maximum. For more information,
@@ -2962,7 +2960,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigAlreadyExistsException">
         /// A real-time log configuration with this name already exists. You must provide a unique
-        /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+        /// name. To modify an existing real-time log configuration, use <c>UpdateRealtimeLogConfig</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
         /// You have reached the maximum number of real-time log configurations for this Amazon
@@ -3002,7 +3000,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigAlreadyExistsException">
         /// A real-time log configuration with this name already exists. You must provide a unique
-        /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+        /// name. To modify an existing real-time log configuration, use <c>UpdateRealtimeLogConfig</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRealtimeLogConfigsException">
         /// You have reached the maximum number of real-time log configurations for this Amazon
@@ -3048,18 +3046,18 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
         /// A response headers policy with this name already exists. You must provide a unique
-        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
-        /// The length of the <code>Content-Security-Policy</code> header value in the response
-        /// headers policy exceeds the maximum.
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -3077,8 +3075,8 @@ namespace Amazon.CloudFront
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
-        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
-        /// policy exceeds the maximum.
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -3135,18 +3133,18 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
         /// A response headers policy with this name already exists. You must provide a unique
-        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
-        /// The length of the <code>Content-Security-Policy</code> header value in the response
-        /// headers policy exceeds the maximum.
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -3164,8 +3162,8 @@ namespace Amazon.CloudFront
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
-        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
-        /// policy exceeds the maximum.
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -3206,7 +3204,7 @@ namespace Amazon.CloudFront
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -3221,7 +3219,7 @@ namespace Amazon.CloudFront
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
@@ -3264,7 +3262,7 @@ namespace Amazon.CloudFront
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -3279,7 +3277,7 @@ namespace Amazon.CloudFront
         /// The Amazon S3 origin server specified does not refer to a valid Amazon S3 bucket.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
@@ -3322,7 +3320,7 @@ namespace Amazon.CloudFront
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -3340,7 +3338,7 @@ namespace Amazon.CloudFront
         /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
@@ -3383,7 +3381,7 @@ namespace Amazon.CloudFront
         /// The CNAME specified is already defined for CloudFront.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -3401,7 +3399,7 @@ namespace Amazon.CloudFront
         /// The tagging specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionAlreadyExistsException">
@@ -3441,7 +3439,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete a cache policy, you must provide the policy's identifier and version. To
-        /// get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
+        /// get these values, you can use <c>ListCachePolicies</c> or <c>GetCachePolicy</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCachePolicy service method.</param>
@@ -3457,13 +3455,13 @@ namespace Amazon.CloudFront
         /// You cannot delete a managed policy.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy">REST API Reference for DeleteCachePolicy Operation</seealso>
         DeleteCachePolicyResponse DeleteCachePolicy(DeleteCachePolicyRequest request);
@@ -3482,7 +3480,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete a cache policy, you must provide the policy's identifier and version. To
-        /// get these values, you can use <code>ListCachePolicies</code> or <code>GetCachePolicy</code>.
+        /// get these values, you can use <c>ListCachePolicies</c> or <c>GetCachePolicy</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCachePolicy service method.</param>
@@ -3501,13 +3499,13 @@ namespace Amazon.CloudFront
         /// You cannot delete a managed policy.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCachePolicy">REST API Reference for DeleteCachePolicy Operation</seealso>
         Task<DeleteCachePolicyResponse> DeleteCachePolicyAsync(DeleteCachePolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3529,13 +3527,13 @@ namespace Amazon.CloudFront
         /// The Origin Access Identity specified is already in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity();
@@ -3554,13 +3552,13 @@ namespace Amazon.CloudFront
         /// The Origin Access Identity specified is already in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         DeleteCloudFrontOriginAccessIdentityResponse DeleteCloudFrontOriginAccessIdentity(DeleteCloudFrontOriginAccessIdentityRequest request);
@@ -3581,13 +3579,13 @@ namespace Amazon.CloudFront
         /// The Origin Access Identity specified is already in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3610,13 +3608,13 @@ namespace Amazon.CloudFront
         /// The Origin Access Identity specified is already in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteCloudFrontOriginAccessIdentity">REST API Reference for DeleteCloudFrontOriginAccessIdentity Operation</seealso>
         Task<DeleteCloudFrontOriginAccessIdentityResponse> DeleteCloudFrontOriginAccessIdentityAsync(DeleteCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3650,13 +3648,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
         /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
         DeleteContinuousDeploymentPolicyResponse DeleteContinuousDeploymentPolicy(DeleteContinuousDeploymentPolicyRequest request);
@@ -3690,13 +3688,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
         /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteContinuousDeploymentPolicy">REST API Reference for DeleteContinuousDeploymentPolicy Operation</seealso>
         Task<DeleteContinuousDeploymentPolicyResponse> DeleteContinuousDeploymentPolicyAsync(DeleteContinuousDeploymentPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3719,13 +3717,13 @@ namespace Amazon.CloudFront
         /// before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution();
@@ -3745,13 +3743,13 @@ namespace Amazon.CloudFront
         /// before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         DeleteDistributionResponse DeleteDistribution(DeleteDistributionRequest request);
@@ -3773,13 +3771,13 @@ namespace Amazon.CloudFront
         /// before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3803,13 +3801,13 @@ namespace Amazon.CloudFront
         /// before you can delete it.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchDistributionException">
         /// The specified distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteDistribution">REST API Reference for DeleteDistribution Operation</seealso>
         Task<DeleteDistributionResponse> DeleteDistributionAsync(DeleteDistributionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3832,13 +3830,13 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption is in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         DeleteFieldLevelEncryptionConfigResponse DeleteFieldLevelEncryptionConfig(DeleteFieldLevelEncryptionConfigRequest request);
@@ -3861,13 +3859,13 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption is in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionConfig">REST API Reference for DeleteFieldLevelEncryptionConfig Operation</seealso>
         Task<DeleteFieldLevelEncryptionConfigResponse> DeleteFieldLevelEncryptionConfigAsync(DeleteFieldLevelEncryptionConfigRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3890,13 +3888,13 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption is in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         DeleteFieldLevelEncryptionProfileResponse DeleteFieldLevelEncryptionProfile(DeleteFieldLevelEncryptionProfileRequest request);
@@ -3919,13 +3917,13 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption is in use.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteFieldLevelEncryptionProfile">REST API Reference for DeleteFieldLevelEncryptionProfile Operation</seealso>
         Task<DeleteFieldLevelEncryptionProfileResponse> DeleteFieldLevelEncryptionProfileAsync(DeleteFieldLevelEncryptionProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3946,8 +3944,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To delete a function, you must provide the function's name and version (<code>ETag</code>
-        /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To delete a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
@@ -3957,13 +3955,13 @@ namespace Amazon.CloudFront
         /// Cannot delete the function because it's attached to one or more cache behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
@@ -3984,8 +3982,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To delete a function, you must provide the function's name and version (<code>ETag</code>
-        /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To delete a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFunction service method.</param>
@@ -3998,13 +3996,13 @@ namespace Amazon.CloudFront
         /// Cannot delete the function because it's attached to one or more cache behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
@@ -4029,21 +4027,20 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete a key group, you must provide the key group's identifier and version. To
-        /// get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code>
-        /// or <code>GetKeyGroupConfig</code>.
+        /// get these values, use <c>ListKeyGroups</c> followed by <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyGroup service method.</param>
         /// 
         /// <returns>The response from the DeleteKeyGroup service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// A resource that was specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
         /// Cannot delete this resource because it is in use.
@@ -4065,8 +4062,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete a key group, you must provide the key group's identifier and version. To
-        /// get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code>
-        /// or <code>GetKeyGroupConfig</code>.
+        /// get these values, use <c>ListKeyGroups</c> followed by <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyGroup service method.</param>
@@ -4076,13 +4072,13 @@ namespace Amazon.CloudFront
         /// 
         /// <returns>The response from the DeleteKeyGroup service method, as returned by CloudFront.</returns>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// A resource that was specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResourceInUseException">
         /// Cannot delete this resource because it is in use.
@@ -4111,10 +4107,10 @@ namespace Amazon.CloudFront
         /// The Key Value Store entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
         DeleteKeyValueStoreResponse DeleteKeyValueStore(DeleteKeyValueStoreRequest request);
@@ -4140,10 +4136,10 @@ namespace Amazon.CloudFront
         /// The Key Value Store entity was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteKeyValueStore">REST API Reference for DeleteKeyValueStore Operation</seealso>
         Task<DeleteKeyValueStoreResponse> DeleteKeyValueStoreAsync(DeleteKeyValueStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4222,7 +4218,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
         /// The origin access control does not exist.
@@ -4231,7 +4227,7 @@ namespace Amazon.CloudFront
         /// Cannot delete the origin access control because it's in use by one or more distributions.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
         DeleteOriginAccessControlResponse DeleteOriginAccessControl(DeleteOriginAccessControlRequest request);
@@ -4258,7 +4254,7 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
         /// The origin access control does not exist.
@@ -4267,7 +4263,7 @@ namespace Amazon.CloudFront
         /// Cannot delete the origin access control because it's in use by one or more distributions.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginAccessControl">REST API Reference for DeleteOriginAccessControl Operation</seealso>
         Task<DeleteOriginAccessControlResponse> DeleteOriginAccessControlAsync(DeleteOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4289,7 +4285,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete an origin request policy, you must provide the policy's identifier and version.
-        /// To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
+        /// To get the identifier, you can use <c>ListOriginRequestPolicies</c> or <c>GetOriginRequestPolicy</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOriginRequestPolicy service method.</param>
@@ -4302,7 +4298,7 @@ namespace Amazon.CloudFront
         /// You cannot delete a managed policy.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -4312,7 +4308,7 @@ namespace Amazon.CloudFront
         /// behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy">REST API Reference for DeleteOriginRequestPolicy Operation</seealso>
         DeleteOriginRequestPolicyResponse DeleteOriginRequestPolicy(DeleteOriginRequestPolicyRequest request);
@@ -4331,7 +4327,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete an origin request policy, you must provide the policy's identifier and version.
-        /// To get the identifier, you can use <code>ListOriginRequestPolicies</code> or <code>GetOriginRequestPolicy</code>.
+        /// To get the identifier, you can use <c>ListOriginRequestPolicies</c> or <c>GetOriginRequestPolicy</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteOriginRequestPolicy service method.</param>
@@ -4347,7 +4343,7 @@ namespace Amazon.CloudFront
         /// You cannot delete a managed policy.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -4357,7 +4353,7 @@ namespace Amazon.CloudFront
         /// behaviors.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/DeleteOriginRequestPolicy">REST API Reference for DeleteOriginRequestPolicy Operation</seealso>
         Task<DeleteOriginRequestPolicyResponse> DeleteOriginRequestPolicyAsync(DeleteOriginRequestPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4377,13 +4373,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
         /// The specified public key is in use.
@@ -4406,13 +4402,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PublicKeyInUseException">
         /// The specified public key is in use.
@@ -4517,8 +4513,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete a response headers policy, you must provide the policy's identifier and
-        /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
-        /// or <code>GetResponseHeadersPolicy</code>.
+        /// version. To get these values, you can use <c>ListResponseHeadersPolicies</c> or <c>GetResponseHeadersPolicy</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
@@ -4531,13 +4526,13 @@ namespace Amazon.CloudFront
         /// You cannot delete a managed policy.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyInUseException">
         /// Cannot delete the response headers policy because it is attached to one or more cache
@@ -4560,8 +4555,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// To delete a response headers policy, you must provide the policy's identifier and
-        /// version. To get these values, you can use <code>ListResponseHeadersPolicies</code>
-        /// or <code>GetResponseHeadersPolicy</code>.
+        /// version. To get these values, you can use <c>ListResponseHeadersPolicies</c> or <c>GetResponseHeadersPolicy</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResponseHeadersPolicy service method.</param>
@@ -4577,13 +4571,13 @@ namespace Amazon.CloudFront
         /// You cannot delete a managed policy.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyInUseException">
         /// Cannot delete the response headers policy because it is attached to one or more cache
@@ -4611,45 +4605,42 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
-        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Update the XML document that was returned in the response to your <code>GET Streaming
-        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
-        /// <code>false</code>.
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
         /// for your distribution. In the request body, include the XML document that you updated
-        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
-        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
-        /// Streaming Distribution Config</code> request in Step 2.
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
-        /// to confirm that the distribution was successfully disabled.
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
-        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
-        /// is <code>Deployed</code>.
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
-        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
-        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
-        /// request in Step 2.
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
-        /// confirm that the distribution was successfully deleted.
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -4664,13 +4655,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -4694,45 +4685,42 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
-        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Update the XML document that was returned in the response to your <code>GET Streaming
-        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
-        /// <code>false</code>.
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
         /// for your distribution. In the request body, include the XML document that you updated
-        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
-        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
-        /// Streaming Distribution Config</code> request in Step 2.
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
-        /// to confirm that the distribution was successfully disabled.
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
-        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
-        /// is <code>Deployed</code>.
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
-        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
-        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
-        /// request in Step 2.
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
-        /// confirm that the distribution was successfully deleted.
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -4748,13 +4736,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -4778,45 +4766,42 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
-        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Update the XML document that was returned in the response to your <code>GET Streaming
-        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
-        /// <code>false</code>.
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
         /// for your distribution. In the request body, include the XML document that you updated
-        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
-        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
-        /// Streaming Distribution Config</code> request in Step 2.
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
-        /// to confirm that the distribution was successfully disabled.
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
-        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
-        /// is <code>Deployed</code>.
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
-        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
-        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
-        /// request in Step 2.
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
-        /// confirm that the distribution was successfully deleted.
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -4834,13 +4819,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -4865,45 +4850,42 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to get the current
-        /// configuration and the <code>Etag</code> header for the distribution. 
+        /// Submit a <c>GET Streaming Distribution Config</c> request to get the current configuration
+        /// and the <c>Etag</c> header for the distribution. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Update the XML document that was returned in the response to your <code>GET Streaming
-        /// Distribution Config</code> request to change the value of <code>Enabled</code> to
-        /// <code>false</code>.
+        /// Update the XML document that was returned in the response to your <c>GET Streaming
+        /// Distribution Config</c> request to change the value of <c>Enabled</c> to <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>PUT Streaming Distribution Config</code> request to update the configuration
+        /// Submit a <c>PUT Streaming Distribution Config</c> request to update the configuration
         /// for your distribution. In the request body, include the XML document that you updated
-        /// in Step 3. Then set the value of the HTTP <code>If-Match</code> header to the value
-        /// of the <code>ETag</code> header that CloudFront returned when you submitted the <code>GET
-        /// Streaming Distribution Config</code> request in Step 2.
+        /// in Step 3. Then set the value of the HTTP <c>If-Match</c> header to the value of the
+        /// <c>ETag</c> header that CloudFront returned when you submitted the <c>GET Streaming
+        /// Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to the <code>PUT Streaming Distribution Config</code> request
-        /// to confirm that the distribution was successfully disabled.
+        /// Review the response to the <c>PUT Streaming Distribution Config</c> request to confirm
+        /// that the distribution was successfully disabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>GET Streaming Distribution Config</code> request to confirm that your
-        /// changes have propagated. When propagation is complete, the value of <code>Status</code>
-        /// is <code>Deployed</code>.
+        /// Submit a <c>GET Streaming Distribution Config</c> request to confirm that your changes
+        /// have propagated. When propagation is complete, the value of <c>Status</c> is <c>Deployed</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit a <code>DELETE Streaming Distribution</code> request. Set the value of the
-        /// HTTP <code>If-Match</code> header to the value of the <code>ETag</code> header that
-        /// CloudFront returned when you submitted the <code>GET Streaming Distribution Config</code>
-        /// request in Step 2.
+        /// Submit a <c>DELETE Streaming Distribution</c> request. Set the value of the HTTP <c>If-Match</c>
+        /// header to the value of the <c>ETag</c> header that CloudFront returned when you submitted
+        /// the <c>GET Streaming Distribution Config</c> request in Step 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Review the response to your <code>DELETE Streaming Distribution</code> request to
-        /// confirm that the distribution was successfully deleted.
+        /// Review the response to your <c>DELETE Streaming Distribution</c> request to confirm
+        /// that the distribution was successfully deleted.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -4922,13 +4904,13 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StreamingDistributionNotDisabledException">
         /// The specified CloudFront distribution is not disabled. You must disable the distribution
@@ -4944,12 +4926,12 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Gets configuration information and metadata about a CloudFront function, but not the
-        /// function's code. To get a function's code, use <code>GetFunction</code>.
+        /// function's code. To get a function's code, use <c>GetFunction</c>.
         /// 
         ///  
         /// <para>
         /// To get configuration information and metadata about a function, you must provide the
-        /// function's name and stage. To get these values, you can use <code>ListFunctions</code>.
+        /// function's name and stage. To get these values, you can use <c>ListFunctions</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFunction service method.</param>
@@ -4968,12 +4950,12 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Gets configuration information and metadata about a CloudFront function, but not the
-        /// function's code. To get a function's code, use <code>GetFunction</code>.
+        /// function's code. To get a function's code, use <c>GetFunction</c>.
         /// 
         ///  
         /// <para>
         /// To get configuration information and metadata about a function, you must provide the
-        /// function's name and stage. To get these values, you can use <code>ListFunctions</code>.
+        /// function's name and stage. To get these values, you can use <c>ListFunctions</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeFunction service method.</param>
@@ -5057,8 +5039,8 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a cache policy, you must provide the policy's identifier. If the cache policy
         /// is attached to a distribution's cache behavior, you can get the policy's identifier
-        /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-        /// policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache policy is not
+        /// attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCachePolicy service method.</param>
@@ -5090,8 +5072,8 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a cache policy, you must provide the policy's identifier. If the cache policy
         /// is attached to a distribution's cache behavior, you can get the policy's identifier
-        /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the cache
-        /// policy is not attached to a cache behavior, you can get the identifier using <code>ListCachePolicies</code>.
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache policy is not
+        /// attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCachePolicy service method.</param>
@@ -5121,9 +5103,8 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a cache policy configuration, you must provide the policy's identifier. If
         /// the cache policy is attached to a distribution's cache behavior, you can get the policy's
-        /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If
-        /// the cache policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.
+        /// identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache
+        /// policy is not attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCachePolicyConfig service method.</param>
@@ -5147,9 +5128,8 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a cache policy configuration, you must provide the policy's identifier. If
         /// the cache policy is attached to a distribution's cache behavior, you can get the policy's
-        /// identifier using <code>ListDistributions</code> or <code>GetDistribution</code>. If
-        /// the cache policy is not attached to a cache behavior, you can get the identifier using
-        /// <code>ListCachePolicies</code>.
+        /// identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the cache
+        /// policy is not attached to a cache behavior, you can get the identifier using <c>ListCachePolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCachePolicyConfig service method.</param>
@@ -5708,12 +5688,12 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Gets the code of a CloudFront function. To get configuration information and metadata
-        /// about a function, use <code>DescribeFunction</code>.
+        /// about a function, use <c>DescribeFunction</c>.
         /// 
         ///  
         /// <para>
         /// To get a function's code, you must provide the function's name and stage. To get these
-        /// values, you can use <code>ListFunctions</code>.
+        /// values, you can use <c>ListFunctions</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
@@ -5732,12 +5712,12 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Gets the code of a CloudFront function. To get configuration information and metadata
-        /// about a function, use <code>DescribeFunction</code>.
+        /// about a function, use <c>DescribeFunction</c>.
         /// 
         ///  
         /// <para>
         /// To get a function's code, you must provide the function's name and stage. To get these
-        /// values, you can use <code>ListFunctions</code>.
+        /// values, you can use <c>ListFunctions</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFunction service method.</param>
@@ -5813,8 +5793,8 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a key group, you must provide the key group's identifier. If the key group
         /// is referenced in a distribution's cache behavior, you can get the key group's identifier
-        /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
-        /// is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the key group is not
+        /// referenced in a cache behavior, you can get the identifier using <c>ListKeyGroups</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyGroup service method.</param>
@@ -5835,8 +5815,8 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a key group, you must provide the key group's identifier. If the key group
         /// is referenced in a distribution's cache behavior, you can get the key group's identifier
-        /// using <code>ListDistributions</code> or <code>GetDistribution</code>. If the key group
-        /// is not referenced in a cache behavior, you can get the identifier using <code>ListKeyGroups</code>.
+        /// using <c>ListDistributions</c> or <c>GetDistribution</c>. If the key group is not
+        /// referenced in a cache behavior, you can get the identifier using <c>ListKeyGroups</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyGroup service method.</param>
@@ -5863,9 +5843,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a key group configuration, you must provide the key group's identifier. If
         /// the key group is referenced in a distribution's cache behavior, you can get the key
-        /// group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
-        /// If the key group is not referenced in a cache behavior, you can get the identifier
-        /// using <code>ListKeyGroups</code>.
+        /// group's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the
+        /// key group is not referenced in a cache behavior, you can get the identifier using
+        /// <c>ListKeyGroups</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyGroupConfig service method.</param>
@@ -5886,9 +5866,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a key group configuration, you must provide the key group's identifier. If
         /// the key group is referenced in a distribution's cache behavior, you can get the key
-        /// group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
-        /// If the key group is not referenced in a cache behavior, you can get the identifier
-        /// using <code>ListKeyGroups</code>.
+        /// group's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the
+        /// key group is not referenced in a cache behavior, you can get the identifier using
+        /// <c>ListKeyGroups</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetKeyGroupConfig service method.</param>
@@ -6057,9 +6037,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get an origin request policy, you must provide the policy's identifier. If the
         /// origin request policy is attached to a distribution's cache behavior, you can get
-        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListOriginRequestPolicies</code>.
+        /// identifier using <c>ListOriginRequestPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicy service method.</param>
@@ -6091,9 +6071,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get an origin request policy, you must provide the policy's identifier. If the
         /// origin request policy is attached to a distribution's cache behavior, you can get
-        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListOriginRequestPolicies</code>.
+        /// identifier using <c>ListOriginRequestPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicy service method.</param>
@@ -6123,9 +6103,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get an origin request policy configuration, you must provide the policy's identifier.
         /// If the origin request policy is attached to a distribution's cache behavior, you can
-        /// get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListOriginRequestPolicies</code>.
+        /// identifier using <c>ListOriginRequestPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicyConfig service method.</param>
@@ -6149,9 +6129,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get an origin request policy configuration, you must provide the policy's identifier.
         /// If the origin request policy is attached to a distribution's cache behavior, you can
-        /// get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the origin request policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListOriginRequestPolicies</code>.
+        /// identifier using <c>ListOriginRequestPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOriginRequestPolicyConfig service method.</param>
@@ -6322,9 +6302,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a response headers policy, you must provide the policy's identifier. If the
         /// response headers policy is attached to a distribution's cache behavior, you can get
-        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy service method.</param>
@@ -6349,9 +6329,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a response headers policy, you must provide the policy's identifier. If the
         /// response headers policy is attached to a distribution's cache behavior, you can get
-        /// the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicy service method.</param>
@@ -6381,9 +6361,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a response headers policy configuration, you must provide the policy's identifier.
         /// If the response headers policy is attached to a distribution's cache behavior, you
-        /// can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// can get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig service method.</param>
@@ -6407,9 +6387,9 @@ namespace Amazon.CloudFront
         /// <para>
         /// To get a response headers policy configuration, you must provide the policy's identifier.
         /// If the response headers policy is attached to a distribution's cache behavior, you
-        /// can get the policy's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
+        /// can get the policy's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>.
         /// If the response headers policy is not attached to a cache behavior, you can get the
-        /// identifier using <code>ListResponseHeadersPolicies</code>.
+        /// identifier using <c>ListResponseHeadersPolicies</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResponseHeadersPolicyConfig service method.</param>
@@ -6591,8 +6571,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCachePolicies service method.</param>
@@ -6625,8 +6605,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCachePolicies service method.</param>
@@ -6724,12 +6704,12 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// Use this operation to find aliases that are in use in CloudFront that conflict or
-        /// overlap with the provided alias. For example, if you provide <code>www.example.com</code>
-        /// as input, the returned list can include <code>www.example.com</code> and the overlapping
-        /// wildcard alternate domain name (<code>*.example.com</code>), if they exist. If you
-        /// provide <code>*.example.com</code> as input, the returned list can include <code>*.example.com</code>
-        /// and any alternate domain names covered by that wildcard (for example, <code>www.example.com</code>,
-        /// <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they exist.
+        /// overlap with the provided alias. For example, if you provide <c>www.example.com</c>
+        /// as input, the returned list can include <c>www.example.com</c> and the overlapping
+        /// wildcard alternate domain name (<c>*.example.com</c>), if they exist. If you provide
+        /// <c>*.example.com</c> as input, the returned list can include <c>*.example.com</c>
+        /// and any alternate domain names covered by that wildcard (for example, <c>www.example.com</c>,
+        /// <c>test.example.com</c>, <c>dev.example.com</c>, and so on), if they exist.
         /// </para>
         ///  
         /// <para>
@@ -6745,8 +6725,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConflictingAliases service method.</param>
@@ -6774,12 +6754,12 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// Use this operation to find aliases that are in use in CloudFront that conflict or
-        /// overlap with the provided alias. For example, if you provide <code>www.example.com</code>
-        /// as input, the returned list can include <code>www.example.com</code> and the overlapping
-        /// wildcard alternate domain name (<code>*.example.com</code>), if they exist. If you
-        /// provide <code>*.example.com</code> as input, the returned list can include <code>*.example.com</code>
-        /// and any alternate domain names covered by that wildcard (for example, <code>www.example.com</code>,
-        /// <code>test.example.com</code>, <code>dev.example.com</code>, and so on), if they exist.
+        /// overlap with the provided alias. For example, if you provide <c>www.example.com</c>
+        /// as input, the returned list can include <c>www.example.com</c> and the overlapping
+        /// wildcard alternate domain name (<c>*.example.com</c>), if they exist. If you provide
+        /// <c>*.example.com</c> as input, the returned list can include <c>*.example.com</c>
+        /// and any alternate domain names covered by that wildcard (for example, <c>www.example.com</c>,
+        /// <c>test.example.com</c>, <c>dev.example.com</c>, and so on), if they exist.
         /// </para>
         ///  
         /// <para>
@@ -6795,8 +6775,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConflictingAliases service method.</param>
@@ -6827,8 +6807,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContinuousDeploymentPolicies service method.</param>
@@ -6856,8 +6836,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContinuousDeploymentPolicies service method.</param>
@@ -6953,8 +6933,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByCachePolicyId service method.</param>
@@ -6983,8 +6963,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByCachePolicyId service method.</param>
@@ -7019,8 +6999,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByKeyGroup service method.</param>
@@ -7046,8 +7026,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByKeyGroup service method.</param>
@@ -7079,8 +7059,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByOriginRequestPolicyId service method.</param>
@@ -7109,8 +7089,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByOriginRequestPolicyId service method.</param>
@@ -7151,8 +7131,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
@@ -7181,8 +7161,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByRealtimeLogConfig service method.</param>
@@ -7211,8 +7191,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId service method.</param>
@@ -7241,8 +7221,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDistributionsByResponseHeadersPolicyId service method.</param>
@@ -7279,8 +7259,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         ListDistributionsByWebACLIdResponse ListDistributionsByWebACLId(ListDistributionsByWebACLIdRequest request);
@@ -7301,8 +7281,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ListDistributionsByWebACLId">REST API Reference for ListDistributionsByWebACLId Operation</seealso>
         Task<ListDistributionsByWebACLIdResponse> ListDistributionsByWebACLIdAsync(ListDistributionsByWebACLIdRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -7390,15 +7370,15 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the functions that are in the specified
-        /// stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+        /// stage, either <c>DEVELOPMENT</c> or <c>LIVE</c>.
         /// </para>
         ///  
         /// <para>
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
@@ -7421,15 +7401,15 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// You can optionally apply a filter to return only the functions that are in the specified
-        /// stage, either <code>DEVELOPMENT</code> or <code>LIVE</code>.
+        /// stage, either <c>DEVELOPMENT</c> or <c>LIVE</c>.
         /// </para>
         ///  
         /// <para>
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFunctions service method.</param>
@@ -7506,8 +7486,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeyGroups service method.</param>
@@ -7529,8 +7509,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListKeyGroups service method.</param>
@@ -7598,8 +7578,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// another request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the next request.
+        /// another request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the next request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
@@ -7621,8 +7601,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// another request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the next request.
+        /// another request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the next request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginAccessControls service method.</param>
@@ -7655,8 +7635,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginRequestPolicies service method.</param>
@@ -7689,8 +7669,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListOriginRequestPolicies service method.</param>
@@ -7758,8 +7738,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
@@ -7787,8 +7767,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRealtimeLogConfigs service method.</param>
@@ -7827,8 +7807,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies service method.</param>
@@ -7861,8 +7841,8 @@ namespace Amazon.CloudFront
         /// You can optionally specify the maximum number of items to receive in the response.
         /// If the total number of items in the list exceeds the maximum that you specify, or
         /// the default maximum, the response is paginated. To get the next page of items, send
-        /// a subsequent request that specifies the <code>NextMarker</code> value from the current
-        /// response as the <code>Marker</code> value in the subsequent request.
+        /// a subsequent request that specifies the <c>NextMarker</c> value from the current response
+        /// as the <c>Marker</c> value in the subsequent request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListResponseHeadersPolicies service method.</param>
@@ -8002,19 +7982,19 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code>
-        /// stage to <code>LIVE</code>. This automatically updates all cache behaviors that are
-        /// using this function to use the newly published copy in the <code>LIVE</code> stage.
+        /// Publishes a CloudFront function by copying the function code from the <c>DEVELOPMENT</c>
+        /// stage to <c>LIVE</c>. This automatically updates all cache behaviors that are using
+        /// this function to use the newly published copy in the <c>LIVE</c> stage.
         /// 
         ///  
         /// <para>
-        /// When a function is published to the <code>LIVE</code> stage, you can attach the function
+        /// When a function is published to the <c>LIVE</c> stage, you can attach the function
         /// to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
-        /// To publish a function, you must provide the function's name and version (<code>ETag</code>
-        /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To publish a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishFunction service method.</param>
@@ -8024,13 +8004,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
@@ -8041,19 +8021,19 @@ namespace Amazon.CloudFront
 
 
         /// <summary>
-        /// Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code>
-        /// stage to <code>LIVE</code>. This automatically updates all cache behaviors that are
-        /// using this function to use the newly published copy in the <code>LIVE</code> stage.
+        /// Publishes a CloudFront function by copying the function code from the <c>DEVELOPMENT</c>
+        /// stage to <c>LIVE</c>. This automatically updates all cache behaviors that are using
+        /// this function to use the newly published copy in the <c>LIVE</c> stage.
         /// 
         ///  
         /// <para>
-        /// When a function is published to the <code>LIVE</code> stage, you can attach the function
+        /// When a function is published to the <c>LIVE</c> stage, you can attach the function
         /// to a distribution's cache behavior, using the function's Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
-        /// To publish a function, you must provide the function's name and version (<code>ETag</code>
-        /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To publish a function, you must provide the function's name and version (<c>ETag</c>
+        /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PublishFunction service method.</param>
@@ -8066,13 +8046,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
@@ -8152,9 +8132,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To test a function, you provide the function's name and version (<code>ETag</code>
-        /// value) along with the event object. To get the function's name and version, you can
-        /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To test a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the event object. To get the function's name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestFunction service method.</param>
@@ -8164,7 +8144,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
@@ -8195,9 +8175,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To test a function, you provide the function's name and version (<code>ETag</code>
-        /// value) along with the event object. To get the function's name and version, you can
-        /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To test a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the event object. To get the function's name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TestFunction service method.</param>
@@ -8210,7 +8190,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
@@ -8292,7 +8272,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetCachePolicyConfig</code> to get the current configuration.
+        /// Use <c>GetCachePolicyConfig</c> to get the current configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8300,7 +8280,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration,
+        /// Call <c>UpdateCachePolicy</c> by providing the entire cache policy configuration,
         /// including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
@@ -8313,25 +8293,25 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
         /// A cache policy with this name already exists. You must provide a unique name. To modify
-        /// an existing cache policy, use <code>UpdateCachePolicy</code>.
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
         /// The number of cookies in the cache policy exceeds the maximum. For more information,
@@ -8364,7 +8344,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetCachePolicyConfig</code> to get the current configuration.
+        /// Use <c>GetCachePolicyConfig</c> to get the current configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8372,7 +8352,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration,
+        /// Call <c>UpdateCachePolicy</c> by providing the entire cache policy configuration,
         /// including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
@@ -8388,25 +8368,25 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.CachePolicyAlreadyExistsException">
         /// A cache policy with this name already exists. You must provide a unique name. To modify
-        /// an existing cache policy, use <code>UpdateCachePolicy</code>.
+        /// an existing cache policy, use <c>UpdateCachePolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.IllegalUpdateException">
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
         /// The cache policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInCachePolicyException">
         /// The number of cookies in the cache policy exceeds the maximum. For more information,
@@ -8444,23 +8424,23 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         UpdateCloudFrontOriginAccessIdentityResponse UpdateCloudFrontOriginAccessIdentity(UpdateCloudFrontOriginAccessIdentityRequest request);
@@ -8483,23 +8463,23 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCloudFrontOriginAccessIdentityException">
         /// The specified origin access identity does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateCloudFrontOriginAccessIdentity">REST API Reference for UpdateCloudFrontOriginAccessIdentity Operation</seealso>
         Task<UpdateCloudFrontOriginAccessIdentityResponse> UpdateCloudFrontOriginAccessIdentityAsync(UpdateCloudFrontOriginAccessIdentityRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -8523,7 +8503,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetContinuousDeploymentPolicyConfig</code> to get the current configuration.
+        /// Use <c>GetContinuousDeploymentPolicyConfig</c> to get the current configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8532,9 +8512,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous
-        /// deployment policy configuration, including the fields that you modified and those
-        /// that you didn't.
+        /// Use <c>UpdateContinuousDeploymentPolicy</c>, providing the entire continuous deployment
+        /// policy configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -8545,19 +8524,19 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
         /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
         /// A continuous deployment policy for this staging distribution already exists.
@@ -8581,7 +8560,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetContinuousDeploymentPolicyConfig</code> to get the current configuration.
+        /// Use <c>GetContinuousDeploymentPolicyConfig</c> to get the current configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8590,9 +8569,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>UpdateContinuousDeploymentPolicy</code>, providing the entire continuous
-        /// deployment policy configuration, including the fields that you modified and those
-        /// that you didn't.
+        /// Use <c>UpdateContinuousDeploymentPolicy</c>, providing the entire continuous deployment
+        /// policy configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -8606,19 +8584,19 @@ namespace Amazon.CloudFront
         /// Access denied.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchContinuousDeploymentPolicyException">
         /// The continuous deployment policy doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.StagingDistributionInUseException">
         /// A continuous deployment policy for this staging distribution already exists.
@@ -8637,7 +8615,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// The update process includes getting the current distribution configuration, updating
-        /// it to make your changes, and then submitting an <code>UpdateDistribution</code> request
+        /// it to make your changes, and then submitting an <c>UpdateDistribution</c> request
         /// to make the updates.
         /// </para>
         ///  
@@ -8646,8 +8624,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetDistributionConfig</code> to get the current configuration, including
-        /// the version identifier (<code>ETag</code>).
+        /// Use <c>GetDistributionConfig</c> to get the current configuration, including the version
+        /// identifier (<c>ETag</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8656,19 +8634,19 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value
-        /// unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>,
-        /// then remove the <code>ETag</code> field.)
+        /// You must rename the <c>ETag</c> field to <c>IfMatch</c>, leaving the value unchanged.
+        /// (Set the value of <c>IfMatch</c> to the value of <c>ETag</c>, then remove the <c>ETag</c>
+        /// field.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't change the value of <code>CallerReference</code>.
+        /// You can't change the value of <c>CallerReference</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Submit an <code>UpdateDistribution</code> request, providing the distribution configuration.
+        /// Submit an <c>UpdateDistribution</c> request, providing the distribution configuration.
         /// The new configuration replaces the existing configuration. The values that you specify
-        /// in an <code>UpdateDistribution</code> request are not merged into your existing configuration.
+        /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
         /// Make sure to include all fields: the ones that you modified and also the ones that
         /// you didn't.
         /// </para>
@@ -8699,7 +8677,7 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -8715,8 +8693,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -8728,7 +8706,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
         /// The specified Lambda@Edge function association is invalid.
@@ -8759,7 +8737,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -8773,11 +8751,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -8793,7 +8771,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -8805,7 +8783,7 @@ namespace Amazon.CloudFront
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
         /// The specified real-time log configuration belongs to a different Amazon Web Services
@@ -8929,7 +8907,7 @@ namespace Amazon.CloudFront
         ///  
         /// <para>
         /// The update process includes getting the current distribution configuration, updating
-        /// it to make your changes, and then submitting an <code>UpdateDistribution</code> request
+        /// it to make your changes, and then submitting an <c>UpdateDistribution</c> request
         /// to make the updates.
         /// </para>
         ///  
@@ -8938,8 +8916,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetDistributionConfig</code> to get the current configuration, including
-        /// the version identifier (<code>ETag</code>).
+        /// Use <c>GetDistributionConfig</c> to get the current configuration, including the version
+        /// identifier (<c>ETag</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8948,19 +8926,19 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must rename the <code>ETag</code> field to <code>IfMatch</code>, leaving the value
-        /// unchanged. (Set the value of <code>IfMatch</code> to the value of <code>ETag</code>,
-        /// then remove the <code>ETag</code> field.)
+        /// You must rename the <c>ETag</c> field to <c>IfMatch</c>, leaving the value unchanged.
+        /// (Set the value of <c>IfMatch</c> to the value of <c>ETag</c>, then remove the <c>ETag</c>
+        /// field.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't change the value of <code>CallerReference</code>.
+        /// You can't change the value of <c>CallerReference</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Submit an <code>UpdateDistribution</code> request, providing the distribution configuration.
+        /// Submit an <c>UpdateDistribution</c> request, providing the distribution configuration.
         /// The new configuration replaces the existing configuration. The values that you specify
-        /// in an <code>UpdateDistribution</code> request are not merged into your existing configuration.
+        /// in an <c>UpdateDistribution</c> request are not merged into your existing configuration.
         /// Make sure to include all fields: the ones that you modified and also the ones that
         /// you didn't.
         /// </para>
@@ -8994,7 +8972,7 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -9010,8 +8988,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -9023,7 +9001,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
         /// The specified Lambda@Edge function association is invalid.
@@ -9054,7 +9032,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -9068,11 +9046,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -9088,7 +9066,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -9100,7 +9078,7 @@ namespace Amazon.CloudFront
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
         /// The specified real-time log configuration belongs to a different Amazon Web Services
@@ -9223,9 +9201,9 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Copies the staging distribution's configuration to its corresponding primary distribution.
-        /// The primary distribution retains its <code>Aliases</code> (also known as alternate
-        /// domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise
-        /// its configuration is overwritten to match the staging distribution.
+        /// The primary distribution retains its <c>Aliases</c> (also known as alternate domain
+        /// names or CNAMEs) and <c>ContinuousDeploymentPolicyId</c> value, but otherwise its
+        /// configuration is overwritten to match the staging distribution.
         /// 
         ///  
         /// <para>
@@ -9270,7 +9248,7 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -9283,8 +9261,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -9296,7 +9274,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
         /// The specified Lambda@Edge function association is invalid.
@@ -9327,7 +9305,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -9341,11 +9319,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -9358,7 +9336,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -9370,7 +9348,7 @@ namespace Amazon.CloudFront
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
         /// The specified real-time log configuration belongs to a different Amazon Web Services
@@ -9487,9 +9465,9 @@ namespace Amazon.CloudFront
 
         /// <summary>
         /// Copies the staging distribution's configuration to its corresponding primary distribution.
-        /// The primary distribution retains its <code>Aliases</code> (also known as alternate
-        /// domain names or CNAMEs) and <code>ContinuousDeploymentPolicyId</code> value, but otherwise
-        /// its configuration is overwritten to match the staging distribution.
+        /// The primary distribution retains its <c>Aliases</c> (also known as alternate domain
+        /// names or CNAMEs) and <c>ContinuousDeploymentPolicyId</c> value, but otherwise its
+        /// configuration is overwritten to match the staging distribution.
         /// 
         ///  
         /// <para>
@@ -9537,7 +9515,7 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
@@ -9550,8 +9528,8 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidForwardCookiesException">
         /// Your request contains forward cookies option which doesn't match with the expectation
-        /// for the <code>whitelisted</code> list of cookie names. Either list of cookie names
-        /// has been specified when not allowed or list of cookie names is missing when expected.
+        /// for the <c>whitelisted</c> list of cookie names. Either list of cookie names has been
+        /// specified when not allowed or list of cookie names is missing when expected.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidFunctionAssociationException">
         /// A CloudFront function association is invalid.
@@ -9563,7 +9541,7 @@ namespace Amazon.CloudFront
         /// The headers specified are not valid for an Amazon S3 origin.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidLambdaFunctionAssociationException">
         /// The specified Lambda@Edge function association is invalid.
@@ -9594,7 +9572,7 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidRequiredProtocolException">
         /// This operation requires the HTTPS protocol. Ensure that you specify the HTTPS protocol
-        /// in your request, or omit the <code>RequiredProtocols</code> element from your distribution
+        /// in your request, or omit the <c>RequiredProtocols</c> element from your distribution
         /// configuration.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidResponseCodeException">
@@ -9608,11 +9586,11 @@ namespace Amazon.CloudFront
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidWebACLIdException">
         /// A web ACL ID specified is not valid. To specify a web ACL created using the latest
-        /// version of WAF, use the ACL ARN, for example <code>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
-        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <code>473e64fd-f30b-4765-81a0-62ad96dd167a</code>.
+        /// version of WAF, use the ACL ARN, for example <c>arn:aws:wafv2:us-east-1:123456789012:global/webacl/ExampleWebACL/473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
+        /// To specify a web ACL created using WAF Classic, use the ACL ID, for example <c>473e64fd-f30b-4765-81a0-62ad96dd167a</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchCachePolicyException">
@@ -9625,7 +9603,7 @@ namespace Amazon.CloudFront
         /// The specified configuration for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginException">
-        /// No origin exists with the specified <code>Origin Id</code>.
+        /// No origin exists with the specified <c>Origin Id</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
@@ -9637,7 +9615,7 @@ namespace Amazon.CloudFront
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.RealtimeLogConfigOwnerMismatchException">
         /// The specified real-time log configuration belongs to a different Amazon Web Services
@@ -9768,13 +9746,13 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -9783,7 +9761,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
         /// No profile specified for the field-level encryption query argument.
@@ -9815,13 +9793,13 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionConfigException">
         /// The specified configuration for field-level encryption doesn't exist.
@@ -9830,7 +9808,7 @@ namespace Amazon.CloudFront
         /// The specified profile for field-level encryption doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.QueryArgProfileEmptyException">
         /// No profile specified for the field-level encryption query argument.
@@ -9868,13 +9846,13 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
         /// The specified profile for field-level encryption doesn't exist.
@@ -9883,7 +9861,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
         /// The maximum number of encryption entities for field-level encryption have been created.
@@ -9918,13 +9896,13 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFieldLevelEncryptionProfileException">
         /// The specified profile for field-level encryption doesn't exist.
@@ -9933,7 +9911,7 @@ namespace Amazon.CloudFront
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyFieldLevelEncryptionEncryptionEntitiesException">
         /// The maximum number of encryption entities for field-level encryption have been created.
@@ -9959,9 +9937,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To update a function, you provide the function's name and version (<code>ETag</code>
-        /// value) along with the updated function code. To get the name and version, you can
-        /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To update a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the updated function code. To get the name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
@@ -9975,13 +9953,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
@@ -10001,9 +9979,9 @@ namespace Amazon.CloudFront
         /// </para>
         ///  
         /// <para>
-        /// To update a function, you provide the function's name and version (<code>ETag</code>
-        /// value) along with the updated function code. To get the name and version, you can
-        /// use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+        /// To update a function, you provide the function's name and version (<c>ETag</c> value)
+        /// along with the updated function code. To get the name and version, you can use <c>ListFunctions</c>
+        /// and <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFunction service method.</param>
@@ -10020,13 +9998,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchFunctionExistsException">
         /// The function does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.UnsupportedOperationException">
         /// This operation is not supported in this region.
@@ -10050,7 +10028,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+        /// Get the current key group with <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10059,7 +10037,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields
+        /// Call <c>UpdateKeyGroup</c> with the entire key group object, including the fields
         /// that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
@@ -10071,17 +10049,17 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
         /// A key group with this name already exists. You must provide a unique name. To modify
-        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// A resource that was specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
         /// The number of public keys in this key group is more than the maximum allowed. For
@@ -10104,7 +10082,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+        /// Get the current key group with <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10113,7 +10091,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields
+        /// Call <c>UpdateKeyGroup</c> with the entire key group object, including the fields
         /// that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
@@ -10128,17 +10106,17 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.KeyGroupAlreadyExistsException">
         /// A key group with this name already exists. You must provide a unique name. To modify
-        /// an existing key group, use <code>UpdateKeyGroup</code>.
+        /// an existing key group, use <c>UpdateKeyGroup</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResourceException">
         /// A resource that was specified is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyPublicKeysInKeyGroupException">
         /// The number of public keys in this key group is more than the maximum allowed. For
@@ -10169,10 +10147,10 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
         UpdateKeyValueStoreResponse UpdateKeyValueStore(UpdateKeyValueStoreRequest request);
@@ -10198,10 +10176,10 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateKeyValueStore">REST API Reference for UpdateKeyValueStore Operation</seealso>
         Task<UpdateKeyValueStoreResponse> UpdateKeyValueStoreAsync(UpdateKeyValueStoreRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10227,7 +10205,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
         /// The origin access control does not exist.
@@ -10236,7 +10214,7 @@ namespace Amazon.CloudFront
         /// An origin access control with the specified parameters already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
         UpdateOriginAccessControlResponse UpdateOriginAccessControl(UpdateOriginAccessControlRequest request);
@@ -10262,7 +10240,7 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginAccessControlException">
         /// The origin access control does not exist.
@@ -10271,7 +10249,7 @@ namespace Amazon.CloudFront
         /// An origin access control with the specified parameters already exists.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdateOriginAccessControl">REST API Reference for UpdateOriginAccessControl Operation</seealso>
         Task<UpdateOriginAccessControlResponse> UpdateOriginAccessControlAsync(UpdateOriginAccessControlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10292,7 +10270,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.
+        /// Use <c>GetOriginRequestPolicyConfig</c> to get the current configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10301,8 +10279,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
-        /// policy configuration, including the fields that you modified and those that you didn't.
+        /// Call <c>UpdateOriginRequestPolicy</c> by providing the entire origin request policy
+        /// configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -10316,23 +10294,23 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
         /// An origin request policy with this name already exists. You must provide a unique
-        /// name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
         /// The number of cookies in the origin request policy exceeds the maximum. For more information,
@@ -10365,7 +10343,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.
+        /// Use <c>GetOriginRequestPolicyConfig</c> to get the current configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10374,8 +10352,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
-        /// policy configuration, including the fields that you modified and those that you didn't.
+        /// Call <c>UpdateOriginRequestPolicy</c> by providing the entire origin request policy
+        /// configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -10392,23 +10370,23 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchOriginRequestPolicyException">
         /// The origin request policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.OriginRequestPolicyAlreadyExistsException">
         /// An origin request policy with this name already exists. You must provide a unique
-        /// name. To modify an existing origin request policy, use <code>UpdateOriginRequestPolicy</code>.
+        /// name. To modify an existing origin request policy, use <c>UpdateOriginRequestPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyCookiesInOriginRequestPolicyException">
         /// The number of cookies in the origin request policy exceeds the maximum. For more information,
@@ -10452,13 +10430,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         UpdatePublicKeyResponse UpdatePublicKey(UpdatePublicKeyRequest request);
@@ -10487,13 +10465,13 @@ namespace Amazon.CloudFront
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchPublicKeyException">
         /// The specified public key doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/UpdatePublicKey">REST API Reference for UpdatePublicKey Operation</seealso>
         Task<UpdatePublicKeyResponse> UpdatePublicKeyAsync(UpdatePublicKeyRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -10514,7 +10492,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+        /// Call <c>GetRealtimeLogConfig</c> to get the current real-time log configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10523,12 +10501,12 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time
-        /// log configuration, including the parameters that you modified and those that you didn't.
+        /// Call this API (<c>UpdateRealtimeLogConfig</c>) by providing the entire real-time log
+        /// configuration, including the parameters that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.
+        /// You cannot update a real-time log configuration's <c>Name</c> or <c>ARN</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
@@ -10559,7 +10537,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Call <code>GetRealtimeLogConfig</code> to get the current real-time log configuration.
+        /// Call <c>GetRealtimeLogConfig</c> to get the current real-time log configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10568,12 +10546,12 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call this API (<code>UpdateRealtimeLogConfig</code>) by providing the entire real-time
-        /// log configuration, including the parameters that you modified and those that you didn't.
+        /// Call this API (<c>UpdateRealtimeLogConfig</c>) by providing the entire real-time log
+        /// configuration, including the parameters that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// You cannot update a real-time log configuration's <code>Name</code> or <code>ARN</code>.
+        /// You cannot update a real-time log configuration's <c>Name</c> or <c>ARN</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRealtimeLogConfig service method.</param>
@@ -10610,7 +10588,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.
+        /// Use <c>GetResponseHeadersPolicyConfig</c> to get the current policy's configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10618,8 +10596,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
-        /// policy configuration, including the fields that you modified and those that you didn't.
+        /// Call <c>UpdateResponseHeadersPolicy</c>, providing the entire response headers policy
+        /// configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -10633,27 +10611,27 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
         /// A response headers policy with this name already exists. You must provide a unique
-        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
-        /// The length of the <code>Content-Security-Policy</code> header value in the response
-        /// headers policy exceeds the maximum.
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -10671,8 +10649,8 @@ namespace Amazon.CloudFront
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
-        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
-        /// policy exceeds the maximum.
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -10696,7 +10674,7 @@ namespace Amazon.CloudFront
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use <code>GetResponseHeadersPolicyConfig</code> to get the current policy's configuration.
+        /// Use <c>GetResponseHeadersPolicyConfig</c> to get the current policy's configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -10704,8 +10682,8 @@ namespace Amazon.CloudFront
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>UpdateResponseHeadersPolicy</code>, providing the entire response headers
-        /// policy configuration, including the fields that you modified and those that you didn't.
+        /// Call <c>UpdateResponseHeadersPolicy</c>, providing the entire response headers policy
+        /// configuration, including the fields that you modified and those that you didn't.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -10722,27 +10700,27 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchResponseHeadersPolicyException">
         /// The response headers policy does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.ResponseHeadersPolicyAlreadyExistsException">
         /// A response headers policy with this name already exists. You must provide a unique
-        /// name. To modify an existing response headers policy, use <code>UpdateResponseHeadersPolicy</code>.
+        /// name. To modify an existing response headers policy, use <c>UpdateResponseHeadersPolicy</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooLongCSPInResponseHeadersPolicyException">
-        /// The length of the <code>Content-Security-Policy</code> header value in the response
-        /// headers policy exceeds the maximum.
+        /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+        /// policy exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -10760,8 +10738,8 @@ namespace Amazon.CloudFront
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyRemoveHeadersInResponseHeadersPolicyException">
-        /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
-        /// policy exceeds the maximum.
+        /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+        /// exceeds the maximum.
         /// 
         ///  
         /// <para>
@@ -10793,13 +10771,13 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
         /// The origin access control is not valid.
@@ -10808,14 +10786,14 @@ namespace Amazon.CloudFront
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.
@@ -10850,13 +10828,13 @@ namespace Amazon.CloudFront
         /// The update contains modifications that are not allowed.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InconsistentQuantitiesException">
-        /// The value of <code>Quantity</code> and the size of <code>Items</code> don't match.
+        /// The value of <c>Quantity</c> and the size of <c>Items</c> don't match.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidArgumentException">
         /// An argument is invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidIfMatchVersionException">
-        /// The <code>If-Match</code> version is missing or not valid.
+        /// The <c>If-Match</c> version is missing or not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.InvalidOriginAccessControlException">
         /// The origin access control is not valid.
@@ -10865,14 +10843,14 @@ namespace Amazon.CloudFront
         /// The origin access identity is not valid or doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.MissingBodyException">
-        /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+        /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
         /// header is set.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.NoSuchStreamingDistributionException">
         /// The specified streaming distribution does not exist.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.PreconditionFailedException">
-        /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+        /// The precondition in one or more of the request fields evaluated to <c>false</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudFront.Model.TooManyStreamingDistributionCNAMEsException">
         /// Your request contains more CNAMEs than are allowed per distribution.

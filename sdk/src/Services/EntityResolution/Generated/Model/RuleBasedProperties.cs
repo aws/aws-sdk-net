@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object which defines the list of matching rules to run and has a field <code>Rules</code>,
+    /// An object which defines the list of matching rules to run and has a field <c>Rules</c>,
     /// which is a list of rule objects.
     /// </summary>
     public partial class RuleBasedProperties
@@ -40,15 +40,15 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property AttributeMatchingModel. 
         /// <para>
-        /// The comparison type. You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code>
-        /// as the AttributeMatchingModel. When choosing <code>MANY_TO_MANY</code>, the system
-        /// can match attributes across the sub-types of an attribute type. For example, if the
-        /// value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code>
-        /// field of Profile B matches, the two profiles are matched on the <code>Email</code>
-        /// type. When choosing <code>ONE_TO_ONE</code> ,the system can only match if the sub-types
-        /// are exact matches. For example, only when the value of the <code>Email</code> field
-        /// of Profile A and the value of the <code>Email</code> field of Profile B matches, the
-        /// two profiles are matched on the <code>Email</code> type.
+        /// The comparison type. You can either choose <c>ONE_TO_ONE</c> or <c>MANY_TO_MANY</c>
+        /// as the AttributeMatchingModel. When choosing <c>MANY_TO_MANY</c>, the system can match
+        /// attributes across the sub-types of an attribute type. For example, if the value of
+        /// the <c>Email</c> field of Profile A and the value of <c>BusinessEmail</c> field of
+        /// Profile B matches, the two profiles are matched on the <c>Email</c> type. When choosing
+        /// <c>ONE_TO_ONE</c> ,the system can only match if the sub-types are exact matches. For
+        /// example, only when the value of the <c>Email</c> field of Profile A and the value
+        /// of the <c>Email</c> field of Profile B matches, the two profiles are matched on the
+        /// <c>Email</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -67,8 +67,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// A list of <code>Rule</code> objects, each of which have fields <code>RuleName</code>
-        /// and <code>MatchingKeys</code>.
+        /// A list of <c>Rule</c> objects, each of which have fields <c>RuleName</c> and <c>MatchingKeys</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]

@@ -73,8 +73,8 @@ namespace Amazon.VPCLattice.Model
         /// The action for the default rule. Each listener has a default rule. Each rule consists
         /// of a priority, one or more actions, and one or more conditions. The default rule is
         /// the rule that's used if no other rules match. Each rule must include exactly one of
-        /// the following types of actions: <code>forward </code>or <code>fixed-response</code>,
-        /// and it must be the last action to be performed. 
+        /// the following types of actions: <c>forward </c>or <c>fixed-response</c>, and it must
+        /// be the last action to be performed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,8 +114,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The listener port. You can specify a value from <code>1</code> to <code>65535</code>.
-        /// For HTTP, the default is <code>80</code>. For HTTPS, the default is <code>443</code>.
+        /// The listener port. You can specify a value from <c>1</c> to <c>65535</c>. For HTTP,
+        /// the default is <c>80</c>. For HTTPS, the default is <c>443</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

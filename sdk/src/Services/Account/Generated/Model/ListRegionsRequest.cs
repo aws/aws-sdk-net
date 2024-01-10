@@ -31,7 +31,7 @@ namespace Amazon.Account.Model
     /// <summary>
     /// Container for the parameters to the ListRegions operation.
     /// Lists all the Regions for a given account and their respective opt-in statuses. Optionally,
-    /// this list can be filtered by the <code>region-opt-status-contains</code> parameter.
+    /// this list can be filtered by the <c>region-opt-status-contains</c> parameter.
     /// </summary>
     public partial class ListRegionsRequest : AmazonAccountRequest
     {
@@ -56,8 +56,8 @@ namespace Amazon.Account.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The management account can't specify its own <code>AccountId</code>. It must call
-        /// the operation in standalone context by not including the <code>AccountId</code> parameter.
+        /// The management account can't specify its own <c>AccountId</c>. It must call the operation
+        /// in standalone context by not including the <c>AccountId</c> parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -82,11 +82,11 @@ namespace Amazon.Account.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The total number of items to return in the command’s output. If the total number of
-        /// items available is more than the value specified, a <code>NextToken</code> is provided
-        /// in the command’s output. To resume pagination, provide the <code>NextToken</code>
-        /// value in the <code>starting-token</code> argument of a subsequent command. Do not
-        /// use the <code>NextToken</code> response element directly outside of the Amazon Web
-        /// Services CLI. For usage examples, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a>
+        /// items available is more than the value specified, a <c>NextToken</c> is provided in
+        /// the command’s output. To resume pagination, provide the <c>NextToken</c> value in
+        /// the <c>starting-token</c> argument of a subsequent command. Do not use the <c>NextToken</c>
+        /// response element directly outside of the Amazon Web Services CLI. For usage examples,
+        /// see <a href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a>
         /// in the <i>Amazon Web Services Command Line Interface User Guide</i>. 
         /// </para>
         /// </summary>
@@ -106,8 +106,8 @@ namespace Amazon.Account.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token used to specify where to start paginating. This is the <code>NextToken</code>
-        /// from a previously truncated response. For usage examples, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a>
+        /// A token used to specify where to start paginating. This is the <c>NextToken</c> from
+        /// a previously truncated response. For usage examples, see <a href="http://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Pagination</a>
         /// in the <i>Amazon Web Services Command Line Interface User Guide</i>.
         /// </para>
         /// </summary>

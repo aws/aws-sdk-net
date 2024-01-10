@@ -31,7 +31,7 @@ namespace Amazon.VPCLattice.Model
     /// <summary>
     /// Container for the parameters to the UpdateRule operation.
     /// Updates a rule for the listener. You can't modify a default listener rule. To modify
-    /// a default listener rule, use <code>UpdateListener</code>.
+    /// a default listener rule, use <c>UpdateListener</c>.
     /// </summary>
     public partial class UpdateRuleRequest : AmazonVPCLatticeRequest
     {

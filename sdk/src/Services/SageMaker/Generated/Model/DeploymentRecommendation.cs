@@ -61,10 +61,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RecommendationStatus. 
         /// <para>
-        /// Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means
-        /// that SageMaker is unable to provide a default recommendation for the model using the
-        /// information provided. If the deployment status is <code>IN_PROGRESS</code>, retry
-        /// your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.
+        /// Status of the deployment recommendation. The status <c>NOT_APPLICABLE</c> means that
+        /// SageMaker is unable to provide a default recommendation for the model using the information
+        /// provided. If the deployment status is <c>IN_PROGRESS</c>, retry your API call after
+        /// a few seconds to get a <c>COMPLETED</c> deployment recommendation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

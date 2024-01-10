@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DateTimeFormatConfiguration. 
         /// <para>
-        /// Formatting configuration for <code>DateTime</code> fields.
+        /// Formatting configuration for <c>DateTime</c> fields.
         /// </para>
         /// </summary>
         public DateTimeFormatConfiguration DateTimeFormatConfiguration

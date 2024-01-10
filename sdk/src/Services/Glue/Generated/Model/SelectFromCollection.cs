@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies a transform that chooses one <code>DynamicFrame</code> from a collection
-    /// of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code>
+    /// Specifies a transform that chooses one <c>DynamicFrame</c> from a collection of <c>DynamicFrames</c>.
+    /// The output is the selected <c>DynamicFrame</c>
     /// </summary>
     public partial class SelectFromCollection
     {

@@ -39,10 +39,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> instances match the specified criteria, you can
-        /// submit another <code>GetInstancesHealthStatus</code> request to get the next group
-        /// of results. Specify the value of <code>NextToken</code> from the previous response
-        /// in the next request.
+        /// If more than <c>MaxResults</c> instances match the specified criteria, you can submit
+        /// another <c>GetInstancesHealthStatus</c> request to get the next group of results.
+        /// Specify the value of <c>NextToken</c> from the previous response in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -62,7 +61,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// A complex type that contains the IDs and the health status of the instances that you
-        /// specified in the <code>GetInstancesHealthStatus</code> request.
+        /// specified in the <c>GetInstancesHealthStatus</c> request.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Status

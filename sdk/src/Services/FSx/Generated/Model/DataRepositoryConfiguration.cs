@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The data repository configuration object for Lustre file systems returned in the response
-    /// of the <code>CreateFileSystem</code> operation.
+    /// of the <c>CreateFileSystem</c> operation.
     /// 
     ///  
     /// <para>
@@ -50,36 +50,34 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutoImportPolicy. 
         /// <para>
-        /// Describes the file system's linked S3 data repository's <code>AutoImportPolicy</code>.
-        /// The AutoImportPolicy configures how Amazon FSx keeps your file and directory listings
-        /// up to date as you add or modify objects in your linked S3 bucket. <code>AutoImportPolicy</code>
+        /// Describes the file system's linked S3 data repository's <c>AutoImportPolicy</c>. The
+        /// AutoImportPolicy configures how Amazon FSx keeps your file and directory listings
+        /// up to date as you add or modify objects in your linked S3 bucket. <c>AutoImportPolicy</c>
         /// can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and
-        /// directory listings from the linked S3 bucket when the file system is created. FSx
-        /// does not update file and directory listings for any new or changed objects after choosing
-        /// this option.
+        ///  <c>NONE</c> - (Default) AutoImport is off. Amazon FSx only updates file and directory
+        /// listings from the linked S3 bucket when the file system is created. FSx does not update
+        /// file and directory listings for any new or changed objects after choosing this option.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings
+        ///  <c>NEW</c> - AutoImport is on. Amazon FSx automatically imports directory listings
         /// of any new objects added to the linked S3 bucket that do not currently exist in the
         /// FSx file system. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file
-        /// and directory listings of any new objects added to the S3 bucket and any existing
-        /// objects that are changed in the S3 bucket after you choose this option.
+        ///  <c>NEW_CHANGED</c> - AutoImport is on. Amazon FSx automatically imports file and
+        /// directory listings of any new objects added to the S3 bucket and any existing objects
+        /// that are changed in the S3 bucket after you choose this option.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports
-        /// file and directory listings of any new objects added to the S3 bucket, any existing
-        /// objects that are changed in the S3 bucket, and any objects that were deleted in the
-        /// S3 bucket.
+        ///  <c>NEW_CHANGED_DELETED</c> - AutoImport is on. Amazon FSx automatically imports file
+        /// and directory listings of any new objects added to the S3 bucket, any existing objects
+        /// that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -161,7 +159,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property ImportPath. 
         /// <para>
         /// The import path to the Amazon S3 bucket (and optional prefix) that you're using as
-        /// the data repository for your FSx for Lustre file system, for example <code>s3://import-bucket/optional-prefix</code>.
+        /// the data repository for your FSx for Lustre file system, for example <c>s3://import-bucket/optional-prefix</c>.
         /// If a prefix is specified after the Amazon S3 bucket name, only object keys with that
         /// prefix are loaded into the file system.
         /// </para>
@@ -187,28 +185,28 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The data repository configuration between the FSx file system
-        /// and the linked S3 data repository is being created. The data repository is unavailable.
+        ///  <c>CREATING</c> - The data repository configuration between the FSx file system and
+        /// the linked S3 data repository is being created. The data repository is unavailable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The data repository is available for use.
+        ///  <c>AVAILABLE</c> - The data repository is available for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISCONFIGURED</code> - Amazon FSx cannot automatically import updates from
-        /// the S3 bucket until the data repository configuration is corrected. For more information,
+        ///  <c>MISCONFIGURED</c> - Amazon FSx cannot automatically import updates from the S3
+        /// bucket until the data repository configuration is corrected. For more information,
         /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/troubleshooting.html#troubleshooting-misconfigured-data-repository">Troubleshooting
         /// a Misconfigured linked S3 bucket</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The data repository is undergoing a customer initiated update
-        /// and availability may be impacted.
+        ///  <c>UPDATING</c> - The data repository is undergoing a customer initiated update and
+        /// availability may be impacted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The data repository is in a terminal state that cannot be recovered.
+        ///  <c>FAILED</c> - The data repository is in a terminal state that cannot be recovered.
         /// </para>
         ///  </li> </ul>
         /// </summary>

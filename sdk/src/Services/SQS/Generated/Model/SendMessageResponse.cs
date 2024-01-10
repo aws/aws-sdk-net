@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The <code>MD5OfMessageBody</code> and <code>MessageId</code> elements.
+    /// The <c>MD5OfMessageBody</c> and <c>MessageId</c> elements.
     /// </summary>
     public partial class SendMessageResponse : AmazonWebServiceResponse
     {
@@ -102,8 +102,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// An attribute containing the <code>MessageId</code> of the message sent to the queue.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
+        /// An attribute containing the <c>MessageId</c> of the message sent to the queue. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-message-identifiers.html">Queue
         /// and Message Identifiers</a> in the <i>Amazon SQS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -130,8 +130,8 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code>
-        /// continues to increase for a particular <code>MessageGroupId</code>.
+        /// The length of <c>SequenceNumber</c> is 128 bits. <c>SequenceNumber</c> continues to
+        /// increase for a particular <c>MessageGroupId</c>.
         /// </para>
         /// </summary>
         public string SequenceNumber

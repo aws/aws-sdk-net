@@ -82,8 +82,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DbPassword. 
         /// <para>
-        /// AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the actual
-        /// value.
+        /// AWS OpsWorks Stacks returns <c>*****FILTERED*****</c> instead of the actual value.
         /// </para>
         /// </summary>
         public string DbPassword
@@ -137,10 +136,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property MissingOnRds. 
         /// <para>
-        /// Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the Amazon RDS
-        /// instance. AWS OpsWorks Stacks attempts to discover the instance only once. If this
-        /// value is set to <code>true</code>, you must deregister the instance, and then register
-        /// it again.
+        /// Set to <c>true</c> if AWS OpsWorks Stacks is unable to discover the Amazon RDS instance.
+        /// AWS OpsWorks Stacks attempts to discover the instance only once. If this value is
+        /// set to <c>true</c>, you must deregister the instance, and then register it again.
         /// </para>
         /// </summary>
         public bool MissingOnRds

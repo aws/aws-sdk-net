@@ -38,8 +38,8 @@ namespace Amazon.Pricing.Model
     ///  
     /// <para>
     /// This returns the URL that you can retrieve your Price List file from. This URL is
-    /// based on the <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve
-    /// from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
+    /// based on the <c>PriceListArn</c> and <c>FileFormat</c> that you retrieve from the
+    /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
     /// response. 
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The format that you want to retrieve your Price List files in. The <code>FileFormat</code>
+        /// The format that you want to retrieve your Price List files in. The <c>FileFormat</c>
         /// can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
         /// response. 
         /// </para>
@@ -72,7 +72,7 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property PriceListArn. 
         /// <para>
-        /// The unique identifier that maps to where your Price List files are located. <code>PriceListArn</code>
+        /// The unique identifier that maps to where your Price List files are located. <c>PriceListArn</c>
         /// can be obtained from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">ListPriceLists</a>
         /// response. 
         /// </para>

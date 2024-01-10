@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation
+    /// For <c>StartConfigRulesEvaluation</c> API, this exception is thrown if an evaluation
     /// is in progress or if you call the <a>StartConfigRulesEvaluation</a> API more than
     /// once per minute.
     /// 
     ///  
     /// <para>
-    /// For <code>PutConfigurationAggregator</code> API, this exception is thrown if the number
+    /// For <c>PutConfigurationAggregator</c> API, this exception is thrown if the number
     /// of accounts and aggregators exceeds the limit.
     /// </para>
     /// </summary>

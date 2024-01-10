@@ -1121,8 +1121,7 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Provides an overview of your system's health. If additional member accounts are part
-        /// of your organization, you can filter those accounts using the <code>AccountIds</code>
-        /// field.
+        /// of your organization, you can filter those accounts using the <c>AccountIds</c> field.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationResourceCollectionHealth service method.</param>
         /// 
@@ -1156,8 +1155,7 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Provides an overview of your system's health. If additional member accounts are part
-        /// of your organization, you can filter those accounts using the <code>AccountIds</code>
-        /// field.
+        /// of your organization, you can filter those accounts using the <c>AccountIds</c> field.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationResourceCollectionHealth service method.</param>
         /// <param name="cancellationToken">
@@ -1785,8 +1783,8 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your Amazon Web Services account. You can specify which
-        /// insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>,
-        /// or <code>ANY</code>).
+        /// insights are returned by their start time and status (<c>ONGOING</c>, <c>CLOSED</c>,
+        /// or <c>ANY</c>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
         /// 
@@ -1820,8 +1818,8 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your Amazon Web Services account. You can specify which
-        /// insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>,
-        /// or <code>ANY</code>).
+        /// insights are returned by their start time and status (<c>ONGOING</c>, <c>CLOSED</c>,
+        /// or <c>ANY</c>).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInsights service method.</param>
         /// <param name="cancellationToken">
@@ -2338,16 +2336,15 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your Amazon Web Services account. You can specify which
-        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>
-        /// or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
-        /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-        /// 
+        /// insights are returned by their start time, one or more statuses (<c>ONGOING</c> or
+        /// <c>CLOSED</c>), one or more severities (<c>LOW</c>, <c>MEDIUM</c>, and <c>HIGH</c>),
+        /// and type (<c>REACTIVE</c> or <c>PROACTIVE</c>). 
         /// 
         ///  
         /// <para>
-        ///  Use the <code>Filters</code> parameter to specify status and severity search parameters.
-        /// Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
-        /// in your search. 
+        ///  Use the <c>Filters</c> parameter to specify status and severity search parameters.
+        /// Use the <c>Type</c> parameter to specify <c>REACTIVE</c> or <c>PROACTIVE</c> in your
+        /// search. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchInsights service method.</param>
@@ -2382,16 +2379,15 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your Amazon Web Services account. You can specify which
-        /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>
-        /// or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
-        /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-        /// 
+        /// insights are returned by their start time, one or more statuses (<c>ONGOING</c> or
+        /// <c>CLOSED</c>), one or more severities (<c>LOW</c>, <c>MEDIUM</c>, and <c>HIGH</c>),
+        /// and type (<c>REACTIVE</c> or <c>PROACTIVE</c>). 
         /// 
         ///  
         /// <para>
-        ///  Use the <code>Filters</code> parameter to specify status and severity search parameters.
-        /// Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
-        /// in your search. 
+        ///  Use the <c>Filters</c> parameter to specify status and severity search parameters.
+        /// Use the <c>Type</c> parameter to specify <c>REACTIVE</c> or <c>PROACTIVE</c> in your
+        /// search. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchInsights service method.</param>
@@ -2433,16 +2429,15 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your organization. You can specify which insights are
-        /// returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>,
-        /// and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
-        /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-        /// 
+        /// returned by their start time, one or more statuses (<c>ONGOING</c>, <c>CLOSED</c>,
+        /// and <c>CLOSED</c>), one or more severities (<c>LOW</c>, <c>MEDIUM</c>, and <c>HIGH</c>),
+        /// and type (<c>REACTIVE</c> or <c>PROACTIVE</c>). 
         /// 
         ///  
         /// <para>
-        ///  Use the <code>Filters</code> parameter to specify status and severity search parameters.
-        /// Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
-        /// in your search. 
+        ///  Use the <c>Filters</c> parameter to specify status and severity search parameters.
+        /// Use the <c>Type</c> parameter to specify <c>REACTIVE</c> or <c>PROACTIVE</c> in your
+        /// search. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchOrganizationInsights service method.</param>
@@ -2477,16 +2472,15 @@ namespace Amazon.DevOpsGuru
 
         /// <summary>
         /// Returns a list of insights in your organization. You can specify which insights are
-        /// returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>,
-        /// and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
-        /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-        /// 
+        /// returned by their start time, one or more statuses (<c>ONGOING</c>, <c>CLOSED</c>,
+        /// and <c>CLOSED</c>), one or more severities (<c>LOW</c>, <c>MEDIUM</c>, and <c>HIGH</c>),
+        /// and type (<c>REACTIVE</c> or <c>PROACTIVE</c>). 
         /// 
         ///  
         /// <para>
-        ///  Use the <code>Filters</code> parameter to specify status and severity search parameters.
-        /// Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
-        /// in your search. 
+        ///  Use the <c>Filters</c> parameter to specify status and severity search parameters.
+        /// Use the <c>Type</c> parameter to specify <c>REACTIVE</c> or <c>PROACTIVE</c> in your
+        /// search. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchOrganizationInsights service method.</param>

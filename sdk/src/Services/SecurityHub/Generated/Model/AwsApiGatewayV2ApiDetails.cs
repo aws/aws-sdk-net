@@ -51,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the format <code> <i>&lt;api-id&gt;</i>.execute-api.<i>&lt;region&gt;</i>.amazonaws.com</code>
+        /// Uses the format <c> <i>&lt;api-id&gt;</i>.execute-api.<i>&lt;region&gt;</i>.amazonaws.com</c>
         /// 
         /// </para>
         ///  
@@ -133,9 +133,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string CreatedDate
@@ -193,7 +193,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>WEBSOCKET</code> | <code>HTTP</code> 
+        /// Valid values: <c>WEBSOCKET</c> | <c>HTTP</c> 
         /// </para>
         /// </summary>
         public string ProtocolType
@@ -215,8 +215,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For HTTP APIs, must be <code>${request.method} ${request.path}</code>. This is the
-        /// default value for HTTP APIs.
+        /// For HTTP APIs, must be <c>${request.method} ${request.path}</c>. This is the default
+        /// value for HTTP APIs.
         /// </para>
         ///  
         /// <para>

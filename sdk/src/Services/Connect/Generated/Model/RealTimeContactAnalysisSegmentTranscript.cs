@@ -65,7 +65,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The type of content of the item. For example, <code>text/plain</code>.
+        /// The type of content of the item. For example, <c>text/plain</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

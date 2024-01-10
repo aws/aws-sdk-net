@@ -52,11 +52,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
+        /// For Local Zones, the name of the associated group, for example <c>us-west-2-lax-1</c>.
         /// </para>
         ///  
         /// <para>
-        /// For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
+        /// For Wavelength Zones, the name of the associated group, for example <c>us-east-1-wl1-bos-wlz-1</c>.
         /// </para>
         /// </summary>
         public string GroupName
@@ -110,12 +110,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OptInStatus. 
         /// <para>
-        /// For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
+        /// For Availability Zones, this parameter always has the value of <c>opt-in-not-required</c>.
         /// </para>
         ///  
         /// <para>
         /// For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible
-        /// values are <code>opted-in</code>, and <code>not-opted-in</code>.
+        /// values are <c>opted-in</c>, and <c>not-opted-in</c>.
         /// </para>
         /// </summary>
         public AvailabilityZoneOptInStatus OptInStatus
@@ -190,7 +190,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the Availability Zone, Local Zone, or Wavelength Zone. This value is
-        /// always <code>available</code>.
+        /// always <c>available</c>.
         /// </para>
         /// </summary>
         public AvailabilityZoneState State
@@ -244,8 +244,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ZoneType. 
         /// <para>
-        /// The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>,
-        /// and <code>wavelength-zone</code>.
+        /// The type of zone. The valid values are <c>availability-zone</c>, <c>local-zone</c>,
+        /// and <c>wavelength-zone</c>.
         /// </para>
         /// </summary>
         public string ZoneType

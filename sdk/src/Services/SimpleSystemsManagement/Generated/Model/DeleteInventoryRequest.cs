@@ -65,7 +65,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Use this option to view a summary of the deletion request without deleting any data
         /// or the data type. This option is useful when you only want to understand what will
         /// be deleted. Once you validate that the data to be deleted is what you intend to delete,
-        /// you can run the same command without specifying the <code>DryRun</code> option.
+        /// you can run the same command without specifying the <c>DryRun</c> option.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -83,15 +83,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SchemaDeleteOption. 
         /// <para>
-        /// Use the <code>SchemaDeleteOption</code> to delete a custom inventory type (schema).
-        /// If you don't choose this option, the system only deletes existing inventory data associated
+        /// Use the <c>SchemaDeleteOption</c> to delete a custom inventory type (schema). If you
+        /// don't choose this option, the system only deletes existing inventory data associated
         /// with the custom inventory type. Choose one of the following options:
         /// </para>
         ///  
         /// <para>
         /// DisableSchema: If you choose this option, the system ignores all inventory data for
         /// the specified version, and any earlier versions. To enable this schema again, you
-        /// must call the <code>PutInventory</code> operation for a version greater than the disabled
+        /// must call the <c>PutInventory</c> operation for a version greater than the disabled
         /// version.
         /// </para>
         ///  

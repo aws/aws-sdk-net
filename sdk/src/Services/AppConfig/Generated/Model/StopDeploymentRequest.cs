@@ -31,7 +31,7 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Container for the parameters to the StopDeployment operation.
     /// Stops a deployment. This API action works only on deployments that have a status of
-    /// <code>DEPLOYING</code>. This action moves the deployment to a status of <code>ROLLED_BACK</code>.
+    /// <c>DEPLOYING</c>. This action moves the deployment to a status of <c>ROLLED_BACK</c>.
     /// </summary>
     public partial class StopDeploymentRequest : AmazonAppConfigRequest
     {

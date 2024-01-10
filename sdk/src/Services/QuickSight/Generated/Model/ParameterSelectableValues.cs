@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values that are used in <code>ParameterSelectableValues</code>.
+        /// The values that are used in <c>ParameterSelectableValues</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50000)]

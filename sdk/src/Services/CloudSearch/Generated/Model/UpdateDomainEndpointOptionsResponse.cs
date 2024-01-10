@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>UpdateDomainEndpointOptions</code> request. Contains the configuration
+    /// The result of a <c>UpdateDomainEndpointOptions</c> request. Contains the configuration
     /// and status of the domain's endpoint options.
     /// </summary>
     public partial class UpdateDomainEndpointOptionsResponse : AmazonWebServiceResponse

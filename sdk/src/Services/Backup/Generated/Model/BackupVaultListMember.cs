@@ -48,7 +48,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -87,9 +87,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time a resource backup is created, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM.
+        /// Time (UTC). The value of <c>CreationDate</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -131,7 +130,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
         /// A server-side encryption key you can specify to encrypt your backups from services
-        /// that support full Backup management; for example, <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// that support full Backup management; for example, <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// If you specify a key, you must specify its ARN, not its alias. If you do not specify
         /// a key, Backup creates a KMS key for you by default.
         /// </para>
@@ -188,8 +187,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property Locked. 
         /// <para>
         /// A Boolean value that indicates whether Backup Vault Lock applies to the selected backup
-        /// vault. If <code>true</code>, Vault Lock prevents delete and update operations on the
-        /// recovery points in the selected vault.
+        /// vault. If <c>true</c>, Vault Lock prevents delete and update operations on the recovery
+        /// points in the selected vault.
         /// </para>
         /// </summary>
         public bool Locked

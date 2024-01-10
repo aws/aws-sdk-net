@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// A reference to a unique stage identified in the format <code>{restApiId}/{stage}</code>.
+    /// A reference to a unique stage identified in the format <c>{restApiId}/{stage}</c>.
     /// </summary>
     public partial class StageKey
     {

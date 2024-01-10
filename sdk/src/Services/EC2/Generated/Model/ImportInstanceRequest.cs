@@ -33,7 +33,7 @@ namespace Amazon.EC2.Model
     /// <note> 
     /// <para>
     /// We recommend that you use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">
-    /// <code>ImportImage</code> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
+    /// <c>ImportImage</c> </a> API. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmimport-image-import.html">Importing
     /// a VM as an image using VM Import/Export</a> in the <i>VM Import/Export User Guide</i>.
     /// </para>
     ///  </note> 

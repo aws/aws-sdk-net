@@ -41,9 +41,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BuiltInIntentSummaries. 
         /// <para>
         /// Summary information for the built-in intents that meet the filter criteria specified
-        /// in the request. The length of the list is specified in the <code>maxResults</code>
-        /// parameter of the request. If there are more intents available, the <code>nextToken</code>
-        /// field contains a token to get the next page of results.
+        /// in the request. The length of the list is specified in the <c>maxResults</c> parameter
+        /// of the request. If there are more intents available, the <c>nextToken</c> field contains
+        /// a token to get the next page of results.
         /// </para>
         /// </summary>
         public List<BuiltInIntentSummary> BuiltInIntentSummaries
@@ -80,9 +80,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates whether there are more results to return in a response to the
-        /// <code>ListBuiltInIntents</code> operation. If the <code>nextToken</code> field is
-        /// present, you send the contents as the <code>nextToken</code> parameter of a <code>ListBotAliases</code>
-        /// operation request to get the next page of results.
+        /// <c>ListBuiltInIntents</c> operation. If the <c>nextToken</c> field is present, you
+        /// send the contents as the <c>nextToken</c> parameter of a <c>ListBotAliases</c> operation
+        /// request to get the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

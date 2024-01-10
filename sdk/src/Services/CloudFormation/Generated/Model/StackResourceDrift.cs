@@ -68,8 +68,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>,
-        /// this structure will not be present.
+        /// For resources whose <c>StackResourceDriftStatus</c> is <c>DELETED</c>, this structure
+        /// will not be present.
         /// </para>
         /// </summary>
         public string ActualProperties
@@ -92,8 +92,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For resources whose <code>StackResourceDriftStatus</code> is <code>DELETED</code>,
-        /// this structure will not be present.
+        /// For resources whose <c>StackResourceDriftStatus</c> is <c>DELETED</c>, this structure
+        /// will not be present.
         /// </para>
         /// </summary>
         public string ExpectedProperties
@@ -191,8 +191,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property PropertyDifferences. 
         /// <para>
         /// A collection of the resource properties whose actual values differ from their expected
-        /// values. These will be present only for resources whose <code>StackResourceDriftStatus</code>
-        /// is <code>MODIFIED</code>.
+        /// values. These will be present only for resources whose <c>StackResourceDriftStatus</c>
+        /// is <c>MODIFIED</c>.
         /// </para>
         /// </summary>
         public List<PropertyDifference> PropertyDifferences
@@ -252,22 +252,22 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETED</code>: The resource differs from its expected template configuration
-        /// because the resource has been deleted.
+        ///  <c>DELETED</c>: The resource differs from its expected template configuration because
+        /// the resource has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODIFIED</code>: One or more resource properties differ from their expected
-        /// values (as defined in the stack template and any values specified as template parameters).
+        ///  <c>MODIFIED</c>: One or more resource properties differ from their expected values
+        /// (as defined in the stack template and any values specified as template parameters).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The resource's actual configuration matches its expected template
+        ///  <c>IN_SYNC</c>: The resource's actual configuration matches its expected template
         /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation does not currently return this value.
+        ///  <c>NOT_CHECKED</c>: CloudFormation does not currently return this value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

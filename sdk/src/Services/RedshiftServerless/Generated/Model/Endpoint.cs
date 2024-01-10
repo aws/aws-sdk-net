@@ -76,7 +76,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property VpcEndpoints. 
         /// <para>
-        /// An array of <code>VpcEndpoint</code> objects.
+        /// An array of <c>VpcEndpoint</c> objects.
         /// </para>
         /// </summary>
         public List<VpcEndpoint> VpcEndpoints

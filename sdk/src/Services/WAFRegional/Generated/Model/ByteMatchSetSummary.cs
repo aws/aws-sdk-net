@@ -42,8 +42,8 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returned by <a>ListByteMatchSets</a>. Each <code>ByteMatchSetSummary</code> object
-    /// includes the <code>Name</code> and <code>ByteMatchSetId</code> for one <a>ByteMatchSet</a>.
+    /// Returned by <a>ListByteMatchSets</a>. Each <c>ByteMatchSetSummary</c> object includes
+    /// the <c>Name</c> and <c>ByteMatchSetId</c> for one <a>ByteMatchSet</a>.
     /// </para>
     /// </summary>
     public partial class ByteMatchSetSummary
@@ -54,14 +54,14 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ByteMatchSetId. 
         /// <para>
-        /// The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code>
-        /// to get information about a <code>ByteMatchSet</code>, update a <code>ByteMatchSet</code>,
-        /// remove a <code>ByteMatchSet</code> from a <code>Rule</code>, and delete a <code>ByteMatchSet</code>
-        /// from AWS WAF.
+        /// The <c>ByteMatchSetId</c> for a <c>ByteMatchSet</c>. You use <c>ByteMatchSetId</c>
+        /// to get information about a <c>ByteMatchSet</c>, update a <c>ByteMatchSet</c>, remove
+        /// a <c>ByteMatchSet</c> from a <c>Rule</c>, and delete a <c>ByteMatchSet</c> from AWS
+        /// WAF.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
+        ///  <c>ByteMatchSetId</c> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -80,8 +80,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code>
-        /// after you create a <code>ByteMatchSet</code>.
+        /// A friendly name or description of the <a>ByteMatchSet</a>. You can't change <c>Name</c>
+        /// after you create a <c>ByteMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

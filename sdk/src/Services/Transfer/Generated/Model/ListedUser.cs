@@ -68,12 +68,12 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
+        /// A <c>HomeDirectory</c> example is <c>/bucket_name/home/mydirectory</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code>
-        /// is set to <code>PATH</code>.
+        /// The <c>HomeDirectory</c> parameter is only used if <c>HomeDirectoryType</c> is set
+        /// to <c>PATH</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -94,19 +94,18 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property HomeDirectoryType. 
         /// <para>
         /// The type of landing directory (folder) that you want your users' home directory to
-        /// be when they log in to the server. If you set it to <code>PATH</code>, the user will
-        /// see the absolute Amazon S3 bucket or Amazon EFS path as is in their file transfer
-        /// protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings
-        /// in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-        /// EFS paths visible to your users.
+        /// be when they log in to the server. If you set it to <c>PATH</c>, the user will see
+        /// the absolute Amazon S3 bucket or Amazon EFS path as is in their file transfer protocol
+        /// clients. If you set it to <c>LOGICAL</c>, you need to provide mappings in the <c>HomeDirectoryMappings</c>
+        /// for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings,
-        /// using the <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code>
-        /// is <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code>
-        /// parameter. You cannot have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code>
-        /// in your template.
+        /// If <c>HomeDirectoryType</c> is <c>LOGICAL</c>, you must provide mappings, using the
+        /// <c>HomeDirectoryMappings</c> parameter. If, on the other hand, <c>HomeDirectoryType</c>
+        /// is <c>PATH</c>, you provide an absolute path using the <c>HomeDirectory</c> parameter.
+        /// You cannot have both <c>HomeDirectory</c> and <c>HomeDirectoryMappings</c> in your
+        /// template.
         /// </para>
         ///  </note>
         /// </summary>
@@ -135,7 +134,7 @@ namespace Amazon.Transfer.Model
         ///  <note> 
         /// <para>
         /// The IAM role that controls your users' access to your Amazon S3 bucket for servers
-        /// with <code>Domain=S3</code>, or your EFS file system for servers with <code>Domain=EFS</code>.
+        /// with <c>Domain=S3</c>, or your EFS file system for servers with <c>Domain=EFS</c>.
         /// 
         /// </para>
         ///  

@@ -31,8 +31,7 @@ namespace Amazon.Comprehend.Model
     /// <summary>
     /// Container for the parameters to the BatchDetectSentiment operation.
     /// Inspects a batch of documents and returns an inference of the prevailing sentiment,
-    /// <code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>,
-    /// in each one.
+    /// <c>POSITIVE</c>, <c>NEUTRAL</c>, <c>MIXED</c>, or <c>NEGATIVE</c>, in each one.
     /// </summary>
     public partial class BatchDetectSentimentRequest : AmazonComprehendRequest
     {

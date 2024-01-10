@@ -42,19 +42,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Condition. 
         /// <para>
         /// Specify the operator that you want to use to determine whether a namespace matches
-        /// the specified value. Valid values for <code>Condition</code> are one of the following.
+        /// the specified value. Valid values for <c>Condition</c> are one of the following.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EQ</code>: When you specify <code>EQ</code> for <code>Condition</code>, you
-        /// can specify only one value. <code>EQ</code> is supported for <code>TYPE</code>, <code>NAME</code>,
-        /// and <code>HTTP_NAME</code>. <code>EQ</code> is the default condition and can be omitted.
+        ///  <c>EQ</c>: When you specify <c>EQ</c> for <c>Condition</c>, you can specify only
+        /// one value. <c>EQ</c> is supported for <c>TYPE</c>, <c>NAME</c>, and <c>HTTP_NAME</c>.
+        /// <c>EQ</c> is the default condition and can be omitted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BEGINS_WITH</code>: When you specify <code>BEGINS_WITH</code> for <code>Condition</code>,
-        /// you can specify only one value. <code>BEGINS_WITH</code> is supported for <code>TYPE</code>,
-        /// <code>NAME</code>, and <code>HTTP_NAME</code>.
+        ///  <c>BEGINS_WITH</c>: When you specify <c>BEGINS_WITH</c> for <c>Condition</c>, you
+        /// can specify only one value. <c>BEGINS_WITH</c> is supported for <c>TYPE</c>, <c>NAME</c>,
+        /// and <c>HTTP_NAME</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -77,15 +77,15 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TYPE</code>: Gets the namespaces of the specified type.
+        ///  <c>TYPE</c>: Gets the namespaces of the specified type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NAME</code>: Gets the namespaces with the specified name.
+        ///  <c>NAME</c>: Gets the namespaces with the specified name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HTTP_NAME</code>: Gets the namespaces with the specified HTTP name.
+        ///  <c>HTTP_NAME</c>: Gets the namespaces with the specified HTTP name.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -105,20 +105,19 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// Specify the values that are applicable to the value that you specify for <code>Name</code>.
+        /// Specify the values that are applicable to the value that you specify for <c>Name</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TYPE</code>: Specify <code>HTTP</code>, <code>DNS_PUBLIC</code>, or <code>DNS_PRIVATE</code>.
+        ///  <c>TYPE</c>: Specify <c>HTTP</c>, <c>DNS_PUBLIC</c>, or <c>DNS_PRIVATE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NAME</code>: Specify the name of the namespace, which is found in <code>Namespace.Name</code>.
+        ///  <c>NAME</c>: Specify the name of the namespace, which is found in <c>Namespace.Name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HTTP_NAME</code>: Specify the HTTP name of the namespace, which is found in
-        /// <code>Namespace.Properties.HttpProperties.HttpName</code>.
+        ///  <c>HTTP_NAME</c>: Specify the HTTP name of the namespace, which is found in <c>Namespace.Properties.HttpProperties.HttpName</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

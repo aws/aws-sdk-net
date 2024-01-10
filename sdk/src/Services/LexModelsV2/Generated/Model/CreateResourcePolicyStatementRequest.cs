@@ -184,9 +184,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property StatementId. 
         /// <para>
-        /// The name of the statement. The ID is the same as the <code>Sid</code> IAM property.
-        /// The statement name must be unique within the policy. For more information, see <a
-        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
+        /// The name of the statement. The ID is the same as the <c>Sid</c> IAM property. The
+        /// statement name must be unique within the policy. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_sid.html">IAM
         /// JSON policy elements: Sid</a>. 
         /// </para>
         /// </summary>

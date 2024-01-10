@@ -61,8 +61,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// An optional string that, if supplied, must be copied from the output of a previous
-        /// call to <code>ListExports</code>. When provided in this manner, the API fetches the
-        /// next page of results.
+        /// call to <c>ListExports</c>. When provided in this manner, the API fetches the next
+        /// page of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Represents the <code>key:value</code> pair to be matched against given resource property.
+    /// Represents the <c>key:value</c> pair to be matched against given resource property.
     /// </summary>
     public partial class ScanConditionPair
     {

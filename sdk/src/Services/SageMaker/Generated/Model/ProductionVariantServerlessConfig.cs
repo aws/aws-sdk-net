@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ProvisionedConcurrency. 
         /// <para>
         /// The amount of provisioned concurrency to allocate for the serverless endpoint. Should
-        /// be less than or equal to <code>MaxConcurrency</code>.
+        /// be less than or equal to <c>MaxConcurrency</c>.
         /// </para>
         ///  <note> 
         /// <para>

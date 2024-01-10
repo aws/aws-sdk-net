@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// For a resource with <code>Modify</code> as the action, the <code>ResourceChange</code>
-    /// structure describes the changes CloudFormation will make to that resource.
+    /// For a resource with <c>Modify</c> as the action, the <c>ResourceChange</c> structure
+    /// describes the changes CloudFormation will make to that resource.
     /// </summary>
     public partial class ResourceChangeDetail
     {
@@ -43,14 +43,14 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property CausingEntity. 
         /// <para>
         /// The identity of the entity that triggered this change. This entity is a member of
-        /// the group that's specified by the <code>ChangeSource</code> field. For example, if
-        /// you modified the value of the <code>KeyPairName</code> parameter, the <code>CausingEntity</code>
-        /// is the name of the parameter (<code>KeyPairName</code>).
+        /// the group that's specified by the <c>ChangeSource</c> field. For example, if you modified
+        /// the value of the <c>KeyPairName</c> parameter, the <c>CausingEntity</c> is the name
+        /// of the parameter (<c>KeyPairName</c>).
         /// </para>
         ///  
         /// <para>
-        /// If the <code>ChangeSource</code> value is <code>DirectModification</code>, no value
-        /// is given for <code>CausingEntity</code>.
+        /// If the <c>ChangeSource</c> value is <c>DirectModification</c>, no value is given for
+        /// <c>CausingEntity</c>.
         /// </para>
         /// </summary>
         public string CausingEntity
@@ -68,39 +68,35 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ChangeSource. 
         /// <para>
-        /// The group to which the <code>CausingEntity</code> value belongs. There are five entity
-        /// groups:
+        /// The group to which the <c>CausingEntity</c> value belongs. There are five entity groups:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ResourceReference</code> entities are <code>Ref</code> intrinsic functions
-        /// that refer to resources in the template, such as <code>{ "Ref" : "MyEC2InstanceResource"
-        /// }</code>.
+        ///  <c>ResourceReference</c> entities are <c>Ref</c> intrinsic functions that refer to
+        /// resources in the template, such as <c>{ "Ref" : "MyEC2InstanceResource" }</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ParameterReference</code> entities are <code>Ref</code> intrinsic functions
-        /// that get template parameter values, such as <code>{ "Ref" : "MyPasswordParameter"
-        /// }</code>.
+        ///  <c>ParameterReference</c> entities are <c>Ref</c> intrinsic functions that get template
+        /// parameter values, such as <c>{ "Ref" : "MyPasswordParameter" }</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ResourceAttribute</code> entities are <code>Fn::GetAtt</code> intrinsic functions
-        /// that get resource attribute values, such as <code>{ "Fn::GetAtt" : [ "MyEC2InstanceResource",
-        /// "PublicDnsName" ] }</code>.
+        ///  <c>ResourceAttribute</c> entities are <c>Fn::GetAtt</c> intrinsic functions that
+        /// get resource attribute values, such as <c>{ "Fn::GetAtt" : [ "MyEC2InstanceResource",
+        /// "PublicDnsName" ] }</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DirectModification</code> entities are changes that are made directly to the
-        /// template.
+        ///  <c>DirectModification</c> entities are changes that are made directly to the template.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Automatic</code> entities are <code>AWS::CloudFormation::Stack</code> resource
-        /// types, which are also known as nested stacks. If you made no changes to the <code>AWS::CloudFormation::Stack</code>
-        /// resource, CloudFormation sets the <code>ChangeSource</code> to <code>Automatic</code>
-        /// because the nested stack's template might have changed. Changes to a nested stack's
-        /// template aren't visible to CloudFormation until you run an update on the parent stack.
+        ///  <c>Automatic</c> entities are <c>AWS::CloudFormation::Stack</c> resource types, which
+        /// are also known as nested stacks. If you made no changes to the <c>AWS::CloudFormation::Stack</c>
+        /// resource, CloudFormation sets the <c>ChangeSource</c> to <c>Automatic</c> because
+        /// the nested stack's template might have changed. Changes to a nested stack's template
+        /// aren't visible to CloudFormation until you run an update on the parent stack.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -124,15 +120,15 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>Static</code> evaluations, CloudFormation can determine that the target
-        /// value will change, and its value. For example, if you directly modify the <code>InstanceType</code>
+        /// For <c>Static</c> evaluations, CloudFormation can determine that the target value
+        /// will change, and its value. For example, if you directly modify the <c>InstanceType</c>
         /// property of an EC2 instance, CloudFormation knows that this property value will change,
-        /// and its value, so this is a <code>Static</code> evaluation.
+        /// and its value, so this is a <c>Static</c> evaluation.
         /// </para>
         ///  
         /// <para>
-        /// For <code>Dynamic</code> evaluations, can't determine the target value because it
-        /// depends on the result of an intrinsic function, such as a <code>Ref</code> or <code>Fn::GetAtt</code>
+        /// For <c>Dynamic</c> evaluations, can't determine the target value because it depends
+        /// on the result of an intrinsic function, such as a <c>Ref</c> or <c>Fn::GetAtt</c>
         /// intrinsic function, when the stack is updated. For example, if your template includes
         /// a reference to a resource that's conditionally recreated, the value of the reference
         /// (the physical ID of the resource) might change, depending on if the resource is recreated.
@@ -155,7 +151,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// A <code>ResourceTargetDefinition</code> structure that describes the field that CloudFormation
+        /// A <c>ResourceTargetDefinition</c> structure that describes the field that CloudFormation
         /// will change and whether the resource will be recreated.
         /// </para>
         /// </summary>

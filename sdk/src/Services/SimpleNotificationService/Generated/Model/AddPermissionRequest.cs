@@ -36,8 +36,8 @@ namespace Amazon.SimpleNotificationService.Model
     ///  <note> 
     /// <para>
     /// To remove the ability to change topic permissions, you must deny permissions to the
-    /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetTopicAttributes</code>
-    /// actions in your IAM policy.
+    /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetTopicAttributes</c> actions
+    /// in your IAM policy.
     /// </para>
     ///  </note>
     /// </summary>
@@ -75,7 +75,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Any Amazon SNS action name, for example <code>Publish</code>.
+        /// Valid values: Any Amazon SNS action name, for example <c>Publish</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

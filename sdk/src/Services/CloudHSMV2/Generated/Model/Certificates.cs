@@ -82,7 +82,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property ClusterCsr. 
         /// <para>
         /// The cluster's certificate signing request (CSR). The CSR exists only when the cluster's
-        /// state is <code>UNINITIALIZED</code>.
+        /// state is <c>UNINITIALIZED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5000)]

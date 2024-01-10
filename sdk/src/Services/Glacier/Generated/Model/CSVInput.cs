@@ -80,8 +80,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property FileHeaderInfo. 
         /// <para>
-        /// Describes the first line of input. Valid values are <code>None</code>, <code>Ignore</code>,
-        /// and <code>Use</code>.
+        /// Describes the first line of input. Valid values are <c>None</c>, <c>Ignore</c>, and
+        /// <c>Use</c>.
         /// </para>
         /// </summary>
         public FileHeaderInfo FileHeaderInfo

@@ -63,10 +63,10 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of memberships to return in a single call to <code>ListProjectMemberships</code>.
-        /// When the number of memberships to be listed is greater than the value of <code>MaxResults</code>,
-        /// the response contains a <code>NextToken</code> value that you can use in a subsequent
-        /// call to <code>ListProjectMemberships</code> to list the next set of memberships.
+        /// The maximum number of memberships to return in a single call to <c>ListProjectMemberships</c>.
+        /// When the number of memberships to be listed is greater than the value of <c>MaxResults</c>,
+        /// the response contains a <c>NextToken</c> value that you can use in a subsequent call
+        /// to <c>ListProjectMemberships</c> to list the next set of memberships.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -85,11 +85,11 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When the number of memberships is greater than the default value for the <code>MaxResults</code>
-        /// parameter, or if you explicitly specify a value for <code>MaxResults</code> that is
-        /// less than the number of memberships, the response includes a pagination token named
-        /// <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent
-        /// call to <code>ListProjectMemberships</code> to list the next set of memberships.
+        /// When the number of memberships is greater than the default value for the <c>MaxResults</c>
+        /// parameter, or if you explicitly specify a value for <c>MaxResults</c> that is less
+        /// than the number of memberships, the response includes a pagination token named <c>NextToken</c>.
+        /// You can specify this <c>NextToken</c> value in a subsequent call to <c>ListProjectMemberships</c>
+        /// to list the next set of memberships.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

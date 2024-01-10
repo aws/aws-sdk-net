@@ -58,8 +58,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property AssociatedResources. 
         /// <para>
-        ///  A list of <code>ListResourcesAssociatedToCustomLineItemResponseElement</code> for
-        /// each resource association retrieved. 
+        ///  A list of <c>ListResourcesAssociatedToCustomLineItemResponseElement</c> for each
+        /// resource association retrieved. 
         /// </para>
         /// </summary>
         public List<ListResourcesAssociatedToCustomLineItemResponseElement> AssociatedResources

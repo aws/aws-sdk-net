@@ -80,7 +80,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A user name assigned to the <code>ServerID</code> value that you specified.
+        /// A user name assigned to the <c>ServerID</c> value that you specified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]

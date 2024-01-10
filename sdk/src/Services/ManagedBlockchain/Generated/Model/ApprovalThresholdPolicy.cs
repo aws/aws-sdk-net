@@ -31,8 +31,8 @@ namespace Amazon.ManagedBlockchain.Model
     /// <summary>
     /// A policy type that defines the voting rules for the network. The rules decide if a
     /// proposal is approved. Approval may be based on criteria such as the percentage of
-    /// <code>YES</code> votes and the duration of the proposal. The policy applies to all
-    /// proposals and is specified when the network is created.
+    /// <c>YES</c> votes and the duration of the proposal. The policy applies to all proposals
+    /// and is specified when the network is created.
     /// 
     ///  
     /// <para>
@@ -49,10 +49,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// Gets and sets the property ProposalDurationInHours. 
         /// <para>
         /// The duration from the time that a proposal is created until it expires. If members
-        /// cast neither the required number of <code>YES</code> votes to approve the proposal
-        /// nor the number of <code>NO</code> votes required to reject it before the duration
-        /// expires, the proposal is <code>EXPIRED</code> and <code>ProposalActions</code> aren't
-        /// carried out.
+        /// cast neither the required number of <c>YES</c> votes to approve the proposal nor the
+        /// number of <c>NO</c> votes required to reject it before the duration expires, the proposal
+        /// is <c>EXPIRED</c> and <c>ProposalActions</c> aren't carried out.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=168)]
@@ -71,8 +70,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ThresholdComparator. 
         /// <para>
-        /// Determines whether the vote percentage must be greater than the <code>ThresholdPercentage</code>
-        /// or must be greater than or equal to the <code>ThresholdPercentage</code> to be approved.
+        /// Determines whether the vote percentage must be greater than the <c>ThresholdPercentage</c>
+        /// or must be greater than or equal to the <c>ThresholdPercentage</c> to be approved.
         /// </para>
         /// </summary>
         public ThresholdComparator ThresholdComparator
@@ -90,12 +89,12 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ThresholdPercentage. 
         /// <para>
-        /// The percentage of votes among all members that must be <code>YES</code> for a proposal
-        /// to be approved. For example, a <code>ThresholdPercentage</code> value of <code>50</code>
-        /// indicates 50%. The <code>ThresholdComparator</code> determines the precise comparison.
-        /// If a <code>ThresholdPercentage</code> value of <code>50</code> is specified on a network
-        /// with 10 members, along with a <code>ThresholdComparator</code> value of <code>GREATER_THAN</code>,
-        /// this indicates that 6 <code>YES</code> votes are required for the proposal to be approved.
+        /// The percentage of votes among all members that must be <c>YES</c> for a proposal to
+        /// be approved. For example, a <c>ThresholdPercentage</c> value of <c>50</c> indicates
+        /// 50%. The <c>ThresholdComparator</c> determines the precise comparison. If a <c>ThresholdPercentage</c>
+        /// value of <c>50</c> is specified on a network with 10 members, along with a <c>ThresholdComparator</c>
+        /// value of <c>GREATER_THAN</c>, this indicates that 6 <c>YES</c> votes are required
+        /// for the proposal to be approved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

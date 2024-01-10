@@ -98,7 +98,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property ShouldDecrementDesiredCapacity. 
         /// <para>
         /// Indicates whether to decrement the desired capacity of the Auto Scaling group by the
-        /// number of instances moved to <code>Standby</code> mode.
+        /// number of instances moved to <c>Standby</c> mode.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

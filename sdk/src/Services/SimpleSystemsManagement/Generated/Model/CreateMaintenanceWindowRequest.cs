@@ -34,12 +34,12 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The value you specify for <code>Duration</code> determines the specific end time for
-    /// the maintenance window based on the time it begins. No maintenance window tasks are
-    /// permitted to start after the resulting endtime minus the number of hours you specify
-    /// for <code>Cutoff</code>. For example, if the maintenance window starts at 3 PM, the
-    /// duration is three hours, and the value you specify for <code>Cutoff</code> is one
-    /// hour, no maintenance window tasks can start after 5 PM.
+    /// The value you specify for <c>Duration</c> determines the specific end time for the
+    /// maintenance window based on the time it begins. No maintenance window tasks are permitted
+    /// to start after the resulting endtime minus the number of hours you specify for <c>Cutoff</c>.
+    /// For example, if the maintenance window starts at 3 PM, the duration is three hours,
+    /// and the value you specify for <c>Cutoff</c> is one hour, no maintenance window tasks
+    /// can start after 5 PM.
     /// </para>
     ///  </note>
     /// </summary>
@@ -166,8 +166,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property EndDate. 
         /// <para>
         /// The date and time, in ISO-8601 Extended format, for when you want the maintenance
-        /// window to become inactive. <code>EndDate</code> allows you to set a date and time
-        /// in the future when the maintenance window will no longer run.
+        /// window to become inactive. <c>EndDate</c> allows you to set a date and time in the
+        /// future when the maintenance window will no longer run.
         /// </para>
         /// </summary>
         public string EndDate
@@ -233,12 +233,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>cron(30 23 ? * TUE#3 *)</code> 
+        ///  <c>cron(30 23 ? * TUE#3 *)</c> 
         /// </para>
         ///  
         /// <para>
-        /// If the schedule offset is <code>2</code>, the maintenance window won't run until two
-        /// days later.
+        /// If the schedule offset is <c>2</c>, the maintenance window won't run until two days
+        /// later.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6)]
@@ -279,8 +279,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StartDate. 
         /// <para>
         /// The date and time, in ISO-8601 Extended format, for when you want the maintenance
-        /// window to become active. <code>StartDate</code> allows you to delay activation of
-        /// the maintenance window until the specified future date.
+        /// window to become active. <c>StartDate</c> allows you to delay activation of the maintenance
+        /// window until the specified future date.
         /// </para>
         /// </summary>
         public string StartDate
@@ -306,15 +306,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Key=TaskType,Value=AgentUpdate</code> 
+        ///  <c>Key=TaskType,Value=AgentUpdate</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=OS,Value=Windows</code> 
+        ///  <c>Key=OS,Value=Windows</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=Environment,Value=Production</code> 
+        ///  <c>Key=Environment,Value=Production</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

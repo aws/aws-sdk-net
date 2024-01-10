@@ -224,7 +224,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// Matches the <code>name</code> that the service uses to identify itself in segments.
+        /// Matches the <c>name</c> that the service uses to identify itself in segments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -243,7 +243,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property ServiceType. 
         /// <para>
-        /// Matches the <code>origin</code> that the service uses to identify its type in segments.
+        /// Matches the <c>origin</c> that the service uses to identify its type in segments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -281,7 +281,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the sampling rule format (<code>1</code>).
+        /// The version of the sampling rule format (<c>1</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

@@ -45,9 +45,9 @@ namespace Amazon.GuardDuty.Model
     /// </para>
     ///  
     /// <para>
-    /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
-    /// set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a
-    /// member account before removing them from your organization.
+    /// With <c>autoEnableOrganizationMembers</c> configuration for your organization set
+    /// to <c>ALL</c>, you'll receive an error if you attempt to disassociate a member account
+    /// before removing them from your organization.
     /// </para>
     /// </summary>
     public partial class DisassociateMembersRequest : AmazonGuardDutyRequest

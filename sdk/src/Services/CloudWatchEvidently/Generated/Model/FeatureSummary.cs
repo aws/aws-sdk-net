@@ -124,9 +124,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property EvaluationStrategy. 
         /// <para>
-        /// If this value is <code>ALL_RULES</code>, the traffic allocation specified by any ongoing
-        /// launches or experiments is being used. If this is <code>DEFAULT_VARIATION</code>,
-        /// the default variation is being served to all users.
+        /// If this value is <c>ALL_RULES</c>, the traffic allocation specified by any ongoing
+        /// launches or experiments is being used. If this is <c>DEFAULT_VARIATION</c>, the default
+        /// variation is being served to all users.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

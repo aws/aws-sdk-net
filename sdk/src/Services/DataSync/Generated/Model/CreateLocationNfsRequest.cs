@@ -40,7 +40,7 @@ namespace Amazon.DataSync.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you're copying data to or from an Snowcone device, you can also use <code>CreateLocationNfs</code>
+    /// If you're copying data to or from an Snowcone device, you can also use <c>CreateLocationNfs</c>
     /// to create your transfer location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
     /// transfers with Snowcone</a>.
     /// </para>

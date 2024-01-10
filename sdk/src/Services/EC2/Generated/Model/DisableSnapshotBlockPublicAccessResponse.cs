@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Returns <code>unblocked</code> if the request succeeds.
+        /// Returns <c>unblocked</c> if the request succeeds.
         /// </para>
         /// </summary>
         public SnapshotBlockPublicAccessState State

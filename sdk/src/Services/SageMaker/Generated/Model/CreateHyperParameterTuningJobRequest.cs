@@ -241,11 +241,11 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// All training jobs launched by the new hyperparameter tuning job are evaluated by using
-        /// the objective metric. If you specify <code>IDENTICAL_DATA_AND_ALGORITHM</code> as
-        /// the <code>WarmStartType</code> value for the warm start configuration, the training
-        /// job that performs the best in the new tuning job is compared to the best training
-        /// jobs from the parent tuning jobs. From these, the training job that performs the best
-        /// as measured by the objective metric is returned as the overall best training job.
+        /// the objective metric. If you specify <c>IDENTICAL_DATA_AND_ALGORITHM</c> as the <c>WarmStartType</c>
+        /// value for the warm start configuration, the training job that performs the best in
+        /// the new tuning job is compared to the best training jobs from the parent tuning jobs.
+        /// From these, the training job that performs the best as measured by the objective metric
+        /// is returned as the overall best training job.
         /// </para>
         ///  <note> 
         /// <para>

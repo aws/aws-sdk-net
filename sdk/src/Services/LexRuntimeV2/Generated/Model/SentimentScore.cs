@@ -42,7 +42,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property Mixed. 
         /// <para>
         /// The level of confidence that Amazon Comprehend has in the accuracy of its detection
-        /// of the <code>MIXED</code> sentiment.
+        /// of the <c>MIXED</c> sentiment.
         /// </para>
         /// </summary>
         public double Mixed
@@ -61,7 +61,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property Negative. 
         /// <para>
         /// The level of confidence that Amazon Comprehend has in the accuracy of its detection
-        /// of the <code>NEGATIVE</code> sentiment.
+        /// of the <c>NEGATIVE</c> sentiment.
         /// </para>
         /// </summary>
         public double Negative
@@ -80,7 +80,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property Neutral. 
         /// <para>
         /// The level of confidence that Amazon Comprehend has in the accuracy of its detection
-        /// of the <code>NEUTRAL</code> sentiment.
+        /// of the <c>NEUTRAL</c> sentiment.
         /// </para>
         /// </summary>
         public double Neutral
@@ -99,7 +99,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property Positive. 
         /// <para>
         /// The level of confidence that Amazon Comprehend has in the accuracy of its detection
-        /// of the <code>POSITIVE</code> sentiment.
+        /// of the <c>POSITIVE</c> sentiment.
         /// </para>
         /// </summary>
         public double Positive

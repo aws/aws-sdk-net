@@ -83,8 +83,8 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// If the result of the previous request to <code>DetectPHI</code> was truncated, include
-        /// the <code>PaginationToken</code> to fetch the next page of PHI entities. 
+        /// If the result of the previous request to <c>DetectPHI</c> was truncated, include the
+        /// <c>PaginationToken</c> to fetch the next page of PHI entities. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

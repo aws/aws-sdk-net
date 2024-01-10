@@ -42,8 +42,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property CostAllocationTagsStatus. 
         /// <para>
-        /// The list of <code>CostAllocationTagStatusEntry</code> objects that are used to update
-        /// cost allocation tags status for this request. 
+        /// The list of <c>CostAllocationTagStatusEntry</c> objects that are used to update cost
+        /// allocation tags status for this request. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

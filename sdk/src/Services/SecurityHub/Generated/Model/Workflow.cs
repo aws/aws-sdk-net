@@ -40,8 +40,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// The status of the investigation into the finding. The workflow status is specific
         /// to an individual finding. It does not affect the generation of new findings. For example,
-        /// setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does
-        /// not prevent a new finding for the same issue.
+        /// setting the workflow status to <c>SUPPRESSED</c> or <c>RESOLVED</c> does not prevent
+        /// a new finding for the same issue.
         /// </para>
         ///  
         /// <para>
@@ -49,37 +49,37 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code> - The initial state of a finding, before it is reviewed.
+        ///  <c>NEW</c> - The initial state of a finding, before it is reviewed.
         /// </para>
         ///  
         /// <para>
-        /// Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
-        /// to <code>NEW</code> in the following cases:
+        /// Security Hub also resets the workflow status from <c>NOTIFIED</c> or <c>RESOLVED</c>
+        /// to <c>NEW</c> in the following cases:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        ///  <c>RecordState</c> changes from <c>ARCHIVED</c> to <c>ACTIVE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ComplianceStatus</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
-        /// <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+        ///  <c>ComplianceStatus</c> changes from <c>PASSED</c> to either <c>WARNING</c>, <c>FAILED</c>,
+        /// or <c>NOT_AVAILABLE</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>NOTIFIED</code> - Indicates that you notified the resource owner about the
-        /// security issue. Used when the initial reviewer is not the resource owner, and needs
-        /// intervention from the resource owner.
+        ///  <c>NOTIFIED</c> - Indicates that you notified the resource owner about the security
+        /// issue. Used when the initial reviewer is not the resource owner, and needs intervention
+        /// from the resource owner.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe
-        /// that any action is needed. The finding is no longer updated.
+        ///  <c>SUPPRESSED</c> - Indicates that you reviewed the finding and do not believe that
+        /// any action is needed. The finding is no longer updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered
-        /// resolved. 
+        ///  <c>RESOLVED</c> - The finding was reviewed and remediated and is now considered resolved.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

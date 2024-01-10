@@ -34,19 +34,18 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
-    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
-    /// as the value in the header.
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the ARN of the <c>AppInstanceUser</c>
+    /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
     /// </para>
     ///  
     /// <para>
-    /// Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata.
-    /// Metadata is arbitrary, and you can use it in a variety of ways, such as containing
-    /// a link to an attachment.
+    /// Also, <c>STANDARD</c> messages can be up to 4KB in size and contain metadata. Metadata
+    /// is arbitrary, and you can use it in a variety of ways, such as containing a link to
+    /// an attachment.
     /// </para>
     ///  
     /// <para>
-    ///  <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
+    ///  <c>CONTROL</c> messages are limited to 30 bytes and do not contain metadata.
     /// </para>
     ///  </note>
     /// </summary>
@@ -87,8 +86,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
-        /// the API call.
+        /// The ARN of the <c>AppInstanceUser</c> or <c>AppInstanceBot</c> that makes the API
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -107,7 +106,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The <code>Idempotency</code> token for each client request.
+        /// The <c>Idempotency</c> token for each client request.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=64)]
@@ -164,8 +163,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MessageAttributes. 
         /// <para>
-        /// The attributes for the message, used for message filtering along with a <code>FilterRule</code>
-        /// defined in the <code>PushNotificationPreferences</code>.
+        /// The attributes for the message, used for message filtering along with a <c>FilterRule</c>
+        /// defined in the <c>PushNotificationPreferences</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, MessageAttributeValue> MessageAttributes
@@ -280,17 +279,17 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of message, <code>STANDARD</code> or <code>CONTROL</code>.
+        /// The type of message, <c>STANDARD</c> or <c>CONTROL</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata
+        ///  <c>STANDARD</c> messages can be up to 4KB in size and contain metadata. Metadata
         /// is arbitrary, and you can use it in a variety of ways, such as containing a link to
         /// an attachment.
         /// </para>
         ///  
         /// <para>
-        ///  <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.
+        ///  <c>CONTROL</c> messages are limited to 30 bytes and do not contain metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

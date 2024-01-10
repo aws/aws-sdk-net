@@ -48,8 +48,8 @@ namespace Amazon.EKS.Model
         ///  <important> 
         /// <para>
         /// If you use the Kubernetes <a href="https://github.com/kubernetes/autoscaler#kubernetes-autoscaler">Cluster
-        /// Autoscaler</a>, you shouldn't change the <code>desiredSize</code> value directly,
-        /// as this can cause the Cluster Autoscaler to suddenly scale up or scale down.
+        /// Autoscaler</a>, you shouldn't change the <c>desiredSize</c> value directly, as this
+        /// can cause the Cluster Autoscaler to suddenly scale up or scale down.
         /// </para>
         ///  </important> 
         /// <para>
@@ -61,13 +61,13 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter can be different from <code>minSize</code> in some cases, such as when
-        /// starting with extra hosts for testing. This parameter can also be different when you
-        /// want to start with an estimated number of needed hosts, but let the Cluster Autoscaler
-        /// reduce the number if there are too many. When the Cluster Autoscaler is used, the
-        /// <code>desiredSize</code> parameter is altered by the Cluster Autoscaler (but can be
-        /// out-of-date for short periods of time). the Cluster Autoscaler doesn't scale a managed
-        /// node group lower than <code>minSize</code> or higher than <code>maxSize</code>.
+        /// This parameter can be different from <c>minSize</c> in some cases, such as when starting
+        /// with extra hosts for testing. This parameter can also be different when you want to
+        /// start with an estimated number of needed hosts, but let the Cluster Autoscaler reduce
+        /// the number if there are too many. When the Cluster Autoscaler is used, the <c>desiredSize</c>
+        /// parameter is altered by the Cluster Autoscaler (but can be out-of-date for short periods
+        /// of time). the Cluster Autoscaler doesn't scale a managed node group lower than <c>minSize</c>
+        /// or higher than <c>maxSize</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

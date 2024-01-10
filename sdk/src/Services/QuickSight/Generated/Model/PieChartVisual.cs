@@ -33,8 +33,8 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The <code>PieChartVisual</code> structure describes a visual that is a member of the
-    /// pie chart family.
+    /// The <c>PieChartVisual</c> structure describes a visual that is a member of the pie
+    /// chart family.
     /// </para>
     ///  
     /// <para>

@@ -48,12 +48,12 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>Block</code> content for a Word input document does not include a <code>Geometry</code>
+        /// The <c>Block</c> content for a Word input document does not include a <c>Geometry</c>
         /// field.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Block</code> field is not present in the response for plain-text inputs.
+        /// The <c>Block</c> field is not present in the response for plain-text inputs.
         /// </para>
         /// </summary>
         public List<Block> Blocks
@@ -72,7 +72,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property DocumentMetadata. 
         /// <para>
         /// Information about the document, discovered during text extraction. This field is present
-        /// in the response only if your request used the <code>Byte</code> parameter. 
+        /// in the response only if your request used the <c>Byte</c> parameter. 
         /// </para>
         /// </summary>
         public DocumentMetadata DocumentMetadata
@@ -91,7 +91,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property DocumentType. 
         /// <para>
         /// The document type for each page in the input document. This field is present in the
-        /// response only if your request used the <code>Byte</code> parameter. 
+        /// response only if your request used the <c>Byte</c> parameter. 
         /// </para>
         /// </summary>
         public List<DocumentTypeListItem> DocumentType

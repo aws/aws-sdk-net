@@ -30,8 +30,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Configuration of blog settings for the Confluence data source. Blogs are always indexed
-    /// unless filtered from the index by the <code>ExclusionPatterns</code> or <code>InclusionPatterns</code>
-    /// fields in the <code>ConfluenceConfiguration</code> object.
+    /// unless filtered from the index by the <c>ExclusionPatterns</c> or <c>InclusionPatterns</c>
+    /// fields in the <c>ConfluenceConfiguration</c> object.
     /// </summary>
     public partial class ConfluenceBlogConfiguration
     {
@@ -41,15 +41,15 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property BlogFieldMappings. 
         /// <para>
         /// Maps attributes or field names of Confluence blogs to Amazon Kendra index field names.
-        /// To create custom fields, use the <code>UpdateIndex</code> API before you map to Confluence
+        /// To create custom fields, use the <c>UpdateIndex</c> API before you map to Confluence
         /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Confluence data source field names must exist in your
         /// Confluence custom metadata.
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>BlogFieldMappings</code> parameter, you must specify at least
-        /// one field mapping.
+        /// If you specify the <c>BlogFieldMappings</c> parameter, you must specify at least one
+        /// field mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9)]

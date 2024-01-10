@@ -66,7 +66,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property Acceptor. 
         /// <para>
         /// Details of the party accepting the agreement terms. This is commonly the buyer for
-        /// <code>PurchaseAgreement.</code> 
+        /// <c>PurchaseAgreement.</c> 
         /// </para>
         /// </summary>
         public Acceptor Acceptor
@@ -103,7 +103,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property AgreementType. 
         /// <para>
-        /// The type of agreement. Values are <code>PurchaseAgreement</code> or <code>VendorInsightsAgreement</code>.
+        /// The type of agreement. Values are <c>PurchaseAgreement</c> or <c>VendorInsightsAgreement</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -122,7 +122,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The date and time when the agreement ends. The field is <code>null</code> for pay-as-you-go
+        /// The date and time when the agreement ends. The field is <c>null</c> for pay-as-you-go
         /// agreements, which don’t have end dates.
         /// </para>
         /// </summary>
@@ -159,7 +159,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Proposer. 
         /// <para>
-        /// Details of the party proposing the agreement terms, most commonly the seller for <code>PurchaseAgreement</code>.
+        /// Details of the party proposing the agreement terms, most commonly the seller for <c>PurchaseAgreement</c>.
         /// </para>
         /// </summary>
         public Proposer Proposer

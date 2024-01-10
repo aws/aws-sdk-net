@@ -39,7 +39,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property BranchName. 
         /// <para>
-        /// The name of the branch in an associated repository. The <code>RepositoryHeadSourceCodeType</code>
+        /// The name of the branch in an associated repository. The <c>RepositoryHeadSourceCodeType</c>
         /// specifies the tip of this branch.
         /// </para>
         /// </summary>

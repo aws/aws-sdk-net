@@ -103,8 +103,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property PrimaryArtifact. 
         /// <para>
-        /// A <code>ResolvedArtifact</code> object that represents the primary build artifacts
-        /// for the build group.
+        /// A <c>ResolvedArtifact</c> object that represents the primary build artifacts for the
+        /// build group.
         /// </para>
         /// </summary>
         public ResolvedArtifact PrimaryArtifact
@@ -140,8 +140,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property SecondaryArtifacts. 
         /// <para>
-        /// An array of <code>ResolvedArtifact</code> objects that represents the secondary build
-        /// artifacts for the build group.
+        /// An array of <c>ResolvedArtifact</c> objects that represents the secondary build artifacts
+        /// for the build group.
         /// </para>
         /// </summary>
         public List<ResolvedArtifact> SecondaryArtifacts

@@ -34,7 +34,7 @@ namespace Amazon.ConnectParticipant.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>ParticipantToken</code> is used for invoking this API instead of <code>ConnectionToken</code>.
+    ///  <c>ParticipantToken</c> is used for invoking this API instead of <c>ConnectionToken</c>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -43,9 +43,9 @@ namespace Amazon.ConnectParticipant.Model
     /// </para>
     ///  
     /// <para>
-    /// The response URL for <code>WEBSOCKET</code> Type has a connect expiry timeout of 100s.
-    /// Clients must manually connect to the returned websocket URL and subscribe to the desired
-    /// topic. 
+    /// The response URL for <c>WEBSOCKET</c> Type has a connect expiry timeout of 100s. Clients
+    /// must manually connect to the returned websocket URL and subscribe to the desired topic.
+    /// 
     /// </para>
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.ConnectParticipant.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</code> 
+    ///  <c>{"topic":"aws/subscribe","content":{"topics":["aws/chat"]}}</c> 
     /// </para>
     ///  
     /// <para>
@@ -135,9 +135,9 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of connection information required. If you need <code>CONNECTION_CREDENTIALS</code>
-        /// along with marking participant as connected, pass <code>CONNECTION_CREDENTIALS</code>
-        /// in <code>Type</code>.
+        /// Type of connection information required. If you need <c>CONNECTION_CREDENTIALS</c>
+        /// along with marking participant as connected, pass <c>CONNECTION_CREDENTIALS</c> in
+        /// <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -31,8 +31,8 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Information about the tag keys to deregister for the current Region. You can either
     /// specify individual tag keys or deregister all tag keys in the current Region. You
-    /// must specify either <code>IncludeAllTagsOfInstance</code> or <code>InstanceTagKeys</code>
-    /// in the request
+    /// must specify either <c>IncludeAllTagsOfInstance</c> or <c>InstanceTagKeys</c> in the
+    /// request
     /// </summary>
     public partial class DeregisterInstanceTagAttributeRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IncludeAllTagsOfInstance. 
         /// <para>
-        /// Indicates whether to deregister all tag keys in the current Region. Specify <code>false</code>
+        /// Indicates whether to deregister all tag keys in the current Region. Specify <c>false</c>
         /// to deregister all tag keys.
         /// </para>
         /// </summary>

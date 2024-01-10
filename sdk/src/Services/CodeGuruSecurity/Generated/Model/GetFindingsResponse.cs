@@ -57,8 +57,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token. You can use this in future calls to <code>GetFindings</code> to
-        /// continue listing results after the current page. 
+        /// A pagination token. You can use this in future calls to <c>GetFindings</c> to continue
+        /// listing results after the current page. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

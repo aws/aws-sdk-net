@@ -32,13 +32,13 @@ namespace Amazon.EventBridge.Model
     /// A JSON string which you can use to limit the event bus permissions you are granting
     /// to only accounts that fulfill the condition. Currently, the only supported condition
     /// is membership in a certain Amazon Web Services organization. The string must contain
-    /// <code>Type</code>, <code>Key</code>, and <code>Value</code> fields. The <code>Value</code>
-    /// field specifies the ID of the Amazon Web Services organization. Following is an example
-    /// value for <code>Condition</code>:
+    /// <c>Type</c>, <c>Key</c>, and <c>Value</c> fields. The <c>Value</c> field specifies
+    /// the ID of the Amazon Web Services organization. Following is an example value for
+    /// <c>Condition</c>:
     /// 
     ///  
     /// <para>
-    ///  <code>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</code>
+    ///  <c>'{"Type" : "StringEquals", "Key": "aws:PrincipalOrgID", "Value": "o-1234567890"}'</c>
     /// 
     /// </para>
     /// </summary>
@@ -51,7 +51,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// Specifies the key for the condition. Currently the only supported key is <code>aws:PrincipalOrgID</code>.
+        /// Specifies the key for the condition. Currently the only supported key is <c>aws:PrincipalOrgID</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,7 +70,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the type of condition. Currently the only supported value is <code>StringEquals</code>.
+        /// Specifies the type of condition. Currently the only supported value is <c>StringEquals</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

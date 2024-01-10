@@ -41,7 +41,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property BatchMode. 
         /// <para>
         /// Indicates whether batches of log records will be extracted and uploaded into CloudWatch.
-        /// Values include <code>true</code> or <code>false</code> <i>(default)</i>.
+        /// Values include <c>true</c> or <c>false</c> <i>(default)</i>.
         /// </para>
         /// </summary>
         public bool BatchMode

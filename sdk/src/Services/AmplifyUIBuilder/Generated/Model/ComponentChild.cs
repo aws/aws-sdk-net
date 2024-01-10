@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// A nested UI configuration within a parent <code>Component</code>.
+    /// A nested UI configuration within a parent <c>Component</c>.
     /// </summary>
     public partial class ComponentChild
     {
@@ -43,7 +43,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Children. 
         /// <para>
-        /// The list of <code>ComponentChild</code> instances for this component.
+        /// The list of <c>ComponentChild</c> instances for this component.
         /// </para>
         /// </summary>
         public List<ComponentChild> Children
@@ -118,8 +118,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// Describes the properties of the child component. You can't specify <code>tags</code>
-        /// as a valid property for <code>properties</code>.
+        /// Describes the properties of the child component. You can't specify <c>tags</c> as
+        /// a valid property for <c>properties</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

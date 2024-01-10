@@ -43,12 +43,12 @@ namespace Amazon.CodeGuruSecurity.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>.
-        /// Tag keys are case sensitive.
+        /// A tag key. For example, <c>CostCenter</c>, <c>Environment</c>, or <c>Secret</c>. Tag
+        /// keys are case sensitive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>,
+        /// An optional tag value field. For example, <c>111122223333</c>, <c>Production</c>,
         /// or a team name. Omitting the tag value is the same as using an empty string. Tag values
         /// are case sensitive.
         /// </para>

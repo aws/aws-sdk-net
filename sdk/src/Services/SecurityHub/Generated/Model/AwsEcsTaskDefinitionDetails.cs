@@ -75,23 +75,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>256 (.25 vCPU)</code> 
+        ///  <c>256 (.25 vCPU)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>512 (.5 vCPU)</code> 
+        ///  <c>512 (.5 vCPU)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1024 (1 vCPU)</code> 
+        ///  <c>1024 (1 vCPU)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>2048 (2 vCPU)</code> 
+        ///  <c>2048 (2 vCPU)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>4096 (4 vCPU)</code> 
+        ///  <c>4096 (4 vCPU)</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -170,15 +170,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>host</code> 
+        ///  <c>host</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code> 
+        ///  <c>none</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>task</code> 
+        ///  <c>task</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -205,7 +205,7 @@ namespace Amazon.SecurityHub.Model
         /// or a container-level memory value. For tasks that are hosted on Fargate, you must
         /// use one of the <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_definition_parameters.html#task_size">specified
         /// values</a> in the <i> <i>Amazon Elastic Container Service Developer Guide</i> </i>,
-        /// which determines your range of supported values for the <code>Cpu</code> and <code>Memory</code>
+        /// which determines your range of supported values for the <c>Cpu</c> and <c>Memory</c>
         /// parameters.
         /// </para>
         /// </summary>
@@ -229,19 +229,19 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>awsvpc</code> 
+        ///  <c>awsvpc</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bridge</code> 
+        ///  <c>bridge</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>host</code> 
+        ///  <c>host</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code> 
+        ///  <c>none</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -260,8 +260,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PidMode. 
         /// <para>
-        /// The process namespace to use for the containers in the task. Valid values are <code>host</code>
-        /// or <code>task</code>.
+        /// The process namespace to use for the containers in the task. Valid values are <c>host</c>
+        /// or <c>task</c>.
         /// </para>
         /// </summary>
         public string PidMode

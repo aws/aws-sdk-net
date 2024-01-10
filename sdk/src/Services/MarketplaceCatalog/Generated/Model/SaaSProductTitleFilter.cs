@@ -58,8 +58,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property WildCardValue. 
         /// <para>
-        /// A string that will be the <code>wildCard</code> input for product tile filter. It
-        /// matches the provided value as a substring in the actual value.
+        /// A string that will be the <c>wildCard</c> input for product tile filter. It matches
+        /// the provided value as a substring in the actual value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

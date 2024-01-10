@@ -30,7 +30,7 @@ namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
     /// Container for the parameters to the DetectEntities operation.
-    /// The <code>DetectEntities</code> operation is deprecated. You should use the <a>DetectEntitiesV2</a>
+    /// The <c>DetectEntities</c> operation is deprecated. You should use the <a>DetectEntitiesV2</a>
     /// operation instead.
     /// 
     ///  

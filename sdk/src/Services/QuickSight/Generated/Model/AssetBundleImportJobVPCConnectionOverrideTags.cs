@@ -59,7 +59,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VPCConnectionIds. 
         /// <para>
-        /// A list of VPC connection IDs that you want to apply overrides to. You can use <code>*</code>
+        /// A list of VPC connection IDs that you want to apply overrides to. You can use <c>*</c>
         /// to override all VPC connections in this asset bundle.
         /// </para>
         /// </summary>

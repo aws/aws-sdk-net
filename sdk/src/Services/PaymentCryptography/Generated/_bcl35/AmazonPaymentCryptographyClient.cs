@@ -432,10 +432,10 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// When you create a key, you specify both immutable and mutable data about the key.
         /// The immutable data contains key attributes that define the scope and cryptographic
-        /// operations that you can perform using the key, for example key class (example: <code>SYMMETRIC_KEY</code>),
-        /// key algorithm (example: <code>TDES_2KEY</code>), key usage (example: <code>TR31_P0_PIN_ENCRYPTION_KEY</code>)
-        /// and key modes of use (example: <code>Encrypt</code>). For information about valid
-        /// combinations of key attributes, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+        /// operations that you can perform using the key, for example key class (example: <c>SYMMETRIC_KEY</c>),
+        /// key algorithm (example: <c>TDES_2KEY</c>), key usage (example: <c>TR31_P0_PIN_ENCRYPTION_KEY</c>)
+        /// and key modes of use (example: <c>Encrypt</c>). For information about valid combinations
+        /// of key attributes, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
         /// key attributes</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// The mutable data contained within a key includes usage timestamp and key deletion
         /// timestamp and can be modified after creation.
@@ -665,10 +665,9 @@ namespace Amazon.PaymentCryptography
         /// Because key deletion is destructive, Amazon Web Services Payment Cryptography has
         /// a safety mechanism to prevent accidental deletion of a key. When you call this operation,
         /// Amazon Web Services Payment Cryptography disables the specified key but doesn't delete
-        /// it until after a waiting period set using <code>DeleteKeyInDays</code>. The default
-        /// waiting period is 7 days. During the waiting period, the <code>KeyState</code> is
-        /// <code>DELETE_PENDING</code>. After the key is deleted, the <code>KeyState</code> is
-        /// <code>DELETE_COMPLETE</code>.
+        /// it until after a waiting period set using <c>DeleteKeyInDays</c>. The default waiting
+        /// period is 7 days. During the waiting period, the <c>KeyState</c> is <c>DELETE_PENDING</c>.
+        /// After the key is deleted, the <c>KeyState</c> is <c>DELETE_COMPLETE</c>.
         /// </para>
         ///  
         /// <para>
@@ -777,7 +776,7 @@ namespace Amazon.PaymentCryptography
         ///  
         /// <para>
         /// Amazon Web Services Payment Cryptography simplifies key exchange by replacing the
-        /// existing paper-based approach with a modern electronic approach. With <code>ExportKey</code>
+        /// existing paper-based approach with a modern electronic approach. With <c>ExportKey</c>
         /// you can export symmetric keys using either symmetric and asymmetric key exchange mechanisms.
         /// Using this operation, you can share your Amazon Web Services Payment Cryptography
         /// generated keys with other service partners to perform cryptographic operations outside
@@ -801,12 +800,12 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  
         /// <para>
-        /// You can also use <code>ExportKey</code> functionality to generate and export an IPEK
-        /// (Initial Pin Encryption Key) from Amazon Web Services Payment Cryptography using either
-        /// TR-31 or TR-34 export key exchange. IPEK is generated from BDK (Base Derivation Key)
-        /// and <code>ExportDukptInitialKey</code> attribute KSN (<code>KeySerialNumber</code>).
-        /// The generated IPEK does not persist within Amazon Web Services Payment Cryptography
-        /// and has to be re-generated each time during export.
+        /// You can also use <c>ExportKey</c> functionality to generate and export an IPEK (Initial
+        /// Pin Encryption Key) from Amazon Web Services Payment Cryptography using either TR-31
+        /// or TR-34 export key exchange. IPEK is generated from BDK (Base Derivation Key) and
+        /// <c>ExportDukptInitialKey</c> attribute KSN (<c>KeySerialNumber</c>). The generated
+        /// IPEK does not persist within Amazon Web Services Payment Cryptography and has to be
+        /// re-generated each time during export.
         /// </para>
         ///  
         /// <para>
@@ -837,8 +836,8 @@ namespace Amazon.PaymentCryptography
         /// Next the KRD generates a key pair for the the purpose of encrypting the KDH key and
         /// provides the public key cerificate (also known as KRD wrapping certificate) back to
         /// KDH. The KRD will also import the root cerificate chain into Amazon Web Services Payment
-        /// Cryptography by calling <a>ImportKey</a> for <code>RootCertificatePublicKey</code>.
-        /// The KDH, Amazon Web Services Payment Cryptography, will use the KRD wrapping cerificate
+        /// Cryptography by calling <a>ImportKey</a> for <c>RootCertificatePublicKey</c>. The
+        /// KDH, Amazon Web Services Payment Cryptography, will use the KRD wrapping cerificate
         /// to encrypt (wrap) the key under export and signs it with signing private key to generate
         /// a TR-34 WrappedKeyBlock. For more information on TR-34 key export, see section <a
         /// href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-export.html">Exporting
@@ -851,34 +850,34 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ExportAttributes</code>: Specify export attributes in case of IPEK export.
-        /// This parameter is optional for KEK export.
+        ///  <c>ExportAttributes</c>: Specify export attributes in case of IPEK export. This parameter
+        /// is optional for KEK export.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in case
-        /// of IPEK) under export.
+        ///  <c>ExportKeyIdentifier</c>: The <c>KeyARN</c> of the KEK or BDK (in case of IPEK)
+        /// under export.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyMaterial</code>: Use <code>Tr34KeyBlock</code> parameters.
+        ///  <c>KeyMaterial</c>: Use <c>Tr34KeyBlock</c> parameters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of
-        /// the certificate chain that signed the KRD wrapping key certificate.
+        ///  <c>CertificateAuthorityPublicKeyIdentifier</c>: The <c>KeyARN</c> of the certificate
+        /// chain that signed the KRD wrapping key certificate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExportToken</code>: Obtained from KDH by calling <a>GetParametersForImport</a>.
+        ///  <c>ExportToken</c>: Obtained from KDH by calling <a>GetParametersForImport</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WrappingKeyCertificate</code>: The public key certificate in PEM format (base64
-        /// encoded) of the KRD wrapping key Amazon Web Services Payment Cryptography uses for
-        /// encryption of the TR-34 export payload. This certificate must be signed by the root
-        /// certificate (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web Services
-        /// Payment Cryptography.
+        ///  <c>WrappingKeyCertificate</c>: The public key certificate in PEM format (base64 encoded)
+        /// of the KRD wrapping key Amazon Web Services Payment Cryptography uses for encryption
+        /// of the TR-34 export payload. This certificate must be signed by the root certificate
+        /// (CertificateAuthorityPublicKeyIdentifier) imported into Amazon Web Services Payment
+        /// Cryptography.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -902,17 +901,17 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ExportAttributes</code>: Specify export attributes in case of IPEK export.
-        /// This parameter is optional for KEK export.
+        ///  <c>ExportAttributes</c>: Specify export attributes in case of IPEK export. This parameter
+        /// is optional for KEK export.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ExportKeyIdentifier</code>: The <code>KeyARN</code> of the KEK or BDK (in case
-        /// of IPEK) under export.
+        ///  <c>ExportKeyIdentifier</c>: The <c>KeyARN</c> of the KEK or BDK (in case of IPEK)
+        /// under export.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.
+        ///  <c>KeyMaterial</c>: Use <c>Tr31KeyBlock</c> parameters.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1422,10 +1421,10 @@ namespace Amazon.PaymentCryptography
         ///  
         /// <para>
         /// Unlike the private key of an asymmetric key, which never leaves Amazon Web Services
-        /// Payment Cryptography unencrypted, callers with <code>GetPublicKeyCertificate</code>
-        /// permission can download the public key certificate of the asymmetric key. You can
-        /// share the public key certificate to allow others to encrypt messages and verify signatures
-        /// outside of Amazon Web Services Payment Cryptography
+        /// Payment Cryptography unencrypted, callers with <c>GetPublicKeyCertificate</c> permission
+        /// can download the public key certificate of the asymmetric key. You can share the public
+        /// key certificate to allow others to encrypt messages and verify signatures outside
+        /// of Amazon Web Services Payment Cryptography
         /// </para>
         ///  
         /// <para>
@@ -1509,7 +1508,7 @@ namespace Amazon.PaymentCryptography
         ///  
         /// <para>
         /// Amazon Web Services Payment Cryptography simplifies key exchange by replacing the
-        /// existing paper-based approach with a modern electronic approach. With <code>ImportKey</code>
+        /// existing paper-based approach with a modern electronic approach. With <c>ImportKey</c>
         /// you can import symmetric keys using either symmetric and asymmetric key exchange mechanisms.
         /// </para>
         ///  
@@ -1562,25 +1561,24 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KeyMaterial</code>: <code>RootCertificatePublicKey</code> 
+        ///  <c>KeyMaterial</c>: <c>RootCertificatePublicKey</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyClass</code>: <code>PUBLIC_KEY</code> 
+        ///  <c>KeyClass</c>: <c>PUBLIC_KEY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyModesOfUse</code>: <code>Verify</code> 
+        ///  <c>KeyModesOfUse</c>: <c>Verify</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyUsage</code>: <code>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</code>
-        /// 
+        ///  <c>KeyUsage</c>: <c>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PublicKeyCertificate</code>: The public key certificate in PEM format (base64
-        /// encoded) of the private root key under import.
+        ///  <c>PublicKeyCertificate</c>: The public key certificate in PEM format (base64 encoded)
+        /// of the private root key under import.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1593,23 +1591,22 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KeyMaterial</code>: <code>TrustedCertificatePublicKey</code> 
+        ///  <c>KeyMaterial</c>: <c>TrustedCertificatePublicKey</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CertificateAuthorityPublicKeyIdentifier</code>: <code>KeyArn</code> of the
-        /// <code>RootCertificatePublicKey</code>.
+        ///  <c>CertificateAuthorityPublicKeyIdentifier</c>: <c>KeyArn</c> of the <c>RootCertificatePublicKey</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KeyModesOfUse</code> and <code>KeyUsage</code>: Corresponding to the cryptographic
-        /// operations such as wrap, sign, or encrypt that you will allow the trusted public key
-        /// certificate to perform.
+        ///  <c>KeyModesOfUse</c> and <c>KeyUsage</c>: Corresponding to the cryptographic operations
+        /// such as wrap, sign, or encrypt that you will allow the trusted public key certificate
+        /// to perform.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PublicKeyCertificate</code>: The trusted public key certificate in PEM format
-        /// (base64 encoded) under import.
+        ///  <c>PublicKeyCertificate</c>: The trusted public key certificate in PEM format (base64
+        /// encoded) under import.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1638,7 +1635,7 @@ namespace Amazon.PaymentCryptography
         /// Next the KDH generates a key pair for the purpose of signing the encrypted KDH key
         /// and provides the public certificate of the signing key to Amazon Web Services Payment
         /// Cryptography. The KDH will also need to import the root certificate chain of the KDH
-        /// signing certificate by calling <code>ImportKey</code> for <code>RootCertificatePublicKey</code>.
+        /// signing certificate by calling <c>ImportKey</c> for <c>RootCertificatePublicKey</c>.
         /// For more information on TR-34 key import, see section <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-import.html">Importing
         /// symmetric keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
         /// </para>
@@ -1648,28 +1645,28 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KeyMaterial</code>: Use <code>Tr34KeyBlock</code> parameters.
+        ///  <c>KeyMaterial</c>: Use <c>Tr34KeyBlock</c> parameters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of
-        /// the certificate chain that signed the KDH signing key certificate.
+        ///  <c>CertificateAuthorityPublicKeyIdentifier</c>: The <c>KeyARN</c> of the certificate
+        /// chain that signed the KDH signing key certificate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ImportToken</code>: Obtained from KRD by calling <a>GetParametersForImport</a>.
+        ///  <c>ImportToken</c>: Obtained from KRD by calling <a>GetParametersForImport</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WrappedKeyBlock</code>: The TR-34 wrapped key material from KDH. It contains
-        /// the KDH key under import, wrapped with KRD wrapping certificate and signed by KDH
-        /// signing private key. This TR-34 key block is typically generated by the KDH Hardware
-        /// Security Module (HSM) outside of Amazon Web Services Payment Cryptography.
+        ///  <c>WrappedKeyBlock</c>: The TR-34 wrapped key material from KDH. It contains the
+        /// KDH key under import, wrapped with KRD wrapping certificate and signed by KDH signing
+        /// private key. This TR-34 key block is typically generated by the KDH Hardware Security
+        /// Module (HSM) outside of Amazon Web Services Payment Cryptography.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SigningKeyCertificate</code>: The public key certificate in PEM format (base64
-        /// encoded) of the KDH signing key generated under the root certificate (CertificateAuthorityPublicKeyIdentifier)
+        ///  <c>SigningKeyCertificate</c>: The public key certificate in PEM format (base64 encoded)
+        /// of the KDH signing key generated under the root certificate (CertificateAuthorityPublicKeyIdentifier)
         /// imported in Amazon Web Services Payment Cryptography.
         /// </para>
         ///  </li> </ul> 
@@ -1685,18 +1682,18 @@ namespace Amazon.PaymentCryptography
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.
+        ///  <c>KeyMaterial</c>: Use <c>Tr31KeyBlock</c> parameters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WrappedKeyBlock</code>: The TR-31 wrapped key material. It contains the key
-        /// under import, encrypted using KEK. The TR-31 key block is typically generated by a
-        /// HSM outside of Amazon Web Services Payment Cryptography. 
+        ///  <c>WrappedKeyBlock</c>: The TR-31 wrapped key material. It contains the key under
+        /// import, encrypted using KEK. The TR-31 key block is typically generated by a HSM outside
+        /// of Amazon Web Services Payment Cryptography. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WrappingKeyIdentifier</code>: The <code>KeyArn</code> of the KEK that Amazon
-        /// Web Services Payment Cryptography uses to decrypt or unwrap the key under import.
+        ///  <c>WrappingKeyIdentifier</c>: The <c>KeyArn</c> of the KEK that Amazon Web Services
+        /// Payment Cryptography uses to decrypt or unwrap the key under import.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1802,7 +1799,7 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// This is a paginated operation, which means that each response might contain only a
         /// subset of all the aliases. When the response contains only a subset of aliases, it
-        /// includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListAliases</code>
+        /// includes a <c>NextToken</c> value. Use this value in a subsequent <c>ListAliases</c>
         /// request to get more aliases. When you receive a response with no NextToken (or an
         /// empty or null value), that means there are no more aliases to get.
         /// </para>
@@ -1910,9 +1907,9 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// This is a paginated operation, which means that each response might contain only a
         /// subset of all the keys. When the response contains only a subset of keys, it includes
-        /// a <code>NextToken</code> value. Use this value in a subsequent <code>ListKeys</code>
-        /// request to get more keys. When you receive a response with no NextToken (or an empty
-        /// or null value), that means there are no more keys to get.
+        /// a <c>NextToken</c> value. Use this value in a subsequent <c>ListKeys</c> request to
+        /// get more keys. When you receive a response with no NextToken (or an empty or null
+        /// value), that means there are no more keys to get.
         /// </para>
         ///  
         /// <para>
@@ -2013,7 +2010,7 @@ namespace Amazon.PaymentCryptography
         /// <para>
         /// This is a paginated operation, which means that each response might contain only a
         /// subset of all the tags. When the response contains only a subset of tags, it includes
-        /// a <code>NextToken</code> value. Use this value in a subsequent <code>ListTagsForResource</code>
+        /// a <c>NextToken</c> value. Use this value in a subsequent <c>ListTagsForResource</c>
         /// request to get more tags. When you receive a response with no NextToken (or an empty
         /// or null value), that means there are no more tags to get.
         /// </para>
@@ -2107,14 +2104,13 @@ namespace Amazon.PaymentCryptography
 
         /// <summary>
         /// Cancels a scheduled key deletion during the waiting period. Use this operation to
-        /// restore a <code>Key</code> that is scheduled for deletion.
+        /// restore a <c>Key</c> that is scheduled for deletion.
         /// 
         ///  
         /// <para>
-        /// During the waiting period, the <code>KeyState</code> is <code>DELETE_PENDING</code>
-        /// and <code>deletePendingTimestamp</code> contains the date and time after which the
-        /// <code>Key</code> will be deleted. After <code>Key</code> is restored, the <code>KeyState</code>
-        /// is <code>CREATE_COMPLETE</code>, and the value for <code>deletePendingTimestamp</code>
+        /// During the waiting period, the <c>KeyState</c> is <c>DELETE_PENDING</c> and <c>deletePendingTimestamp</c>
+        /// contains the date and time after which the <c>Key</c> will be deleted. After <c>Key</c>
+        /// is restored, the <c>KeyState</c> is <c>CREATE_COMPLETE</c>, and the value for <c>deletePendingTimestamp</c>
         /// is removed.
         /// </para>
         ///  

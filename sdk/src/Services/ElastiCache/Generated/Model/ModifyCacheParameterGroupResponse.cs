@@ -33,11 +33,11 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ModifyCacheParameterGroup</code> 
+    ///  <c>ModifyCacheParameterGroup</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ResetCacheParameterGroup</code> 
+    ///  <c>ResetCacheParameterGroup</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

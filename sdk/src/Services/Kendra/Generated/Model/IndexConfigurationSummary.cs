@@ -82,8 +82,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// A identifier for the index. Use this to identify the index when you are using APIs
-        /// such as <code>Query</code>, <code>DescribeIndex</code>, <code>UpdateIndex</code>,
-        /// and <code>DeleteIndex</code>.
+        /// such as <c>Query</c>, <c>DescribeIndex</c>, <c>UpdateIndex</c>, and <c>DeleteIndex</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]
@@ -121,8 +120,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the index. When the status is <code>ACTIVE</code>, the index
-        /// is ready to search.
+        /// The current status of the index. When the status is <c>ACTIVE</c>, the index is ready
+        /// to search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// An exception thrown when the version of an entity specified with the <code>expectedVersion</code>
+    /// An exception thrown when the version of an entity specified with the <c>expectedVersion</c>
     /// parameter does not match the latest version in the system.
     /// </summary>
     #if !NETSTANDARD

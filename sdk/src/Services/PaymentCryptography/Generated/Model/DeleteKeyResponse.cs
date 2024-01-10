@@ -38,7 +38,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The <code>KeyARN</code> of the key that is scheduled for deletion.
+        /// The <c>KeyARN</c> of the key that is scheduled for deletion.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

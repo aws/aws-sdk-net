@@ -32,7 +32,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// Container for the parameters to the ListDeliverabilityTestReports operation.
     /// Show a list of the predictive inbox placement tests that you've performed, regardless
     /// of their statuses. For predictive inbox placement tests that are complete, you can
-    /// use the <code>GetDeliverabilityTestReport</code> operation to view the results.
+    /// use the <c>GetDeliverabilityTestReport</c> operation to view the results.
     /// </summary>
     public partial class ListDeliverabilityTestReportsRequest : AmazonSimpleEmailServiceV2Request
     {
@@ -42,8 +42,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token returned from a previous call to <code>ListDeliverabilityTestReports</code>
-        /// to indicate the position in the list of predictive inbox placement tests.
+        /// A token returned from a previous call to <c>ListDeliverabilityTestReports</c> to indicate
+        /// the position in the list of predictive inbox placement tests.
         /// </para>
         /// </summary>
         public string NextToken
@@ -61,10 +61,10 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The number of results to show in a single call to <code>ListDeliverabilityTestReports</code>.
+        /// The number of results to show in a single call to <c>ListDeliverabilityTestReports</c>.
         /// If the number of results is larger than the number you specified in this parameter,
-        /// then the response includes a <code>NextToken</code> element, which you can use to
-        /// obtain additional results.
+        /// then the response includes a <c>NextToken</c> element, which you can use to obtain
+        /// additional results.
         /// </para>
         ///  
         /// <para>

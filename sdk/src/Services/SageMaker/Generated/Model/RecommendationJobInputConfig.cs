@@ -48,7 +48,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ContainerConfig. 
         /// <para>
         /// Specifies mandatory fields for running an Inference Recommender job. The fields specified
-        /// in <code>ContainerConfig</code> override the corresponding fields in the model package.
+        /// in <c>ContainerConfig</c> override the corresponding fields in the model package.
         /// </para>
         /// </summary>
         public RecommendationJobContainerConfig ContainerConfig
@@ -205,15 +205,14 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// The SageMaker execution role must have <code>kms:CreateGrant</code> permission in
-        /// order to encrypt data on the storage volume of the endpoints created for inference
-        /// recommendation. The inference recommendation job will fail asynchronously during endpoint
-        /// configuration creation if the role passed does not have <code>kms:CreateGrant</code>
-        /// permission.
+        /// The SageMaker execution role must have <c>kms:CreateGrant</c> permission in order
+        /// to encrypt data on the storage volume of the endpoints created for inference recommendation.
+        /// The inference recommendation job will fail asynchronously during endpoint configuration
+        /// creation if the role passed does not have <c>kms:CreateGrant</c> permission.
         /// </para>
         ///  
         /// <para>
-        /// The <code>KmsKeyId</code> can be any of the following formats:
+        /// The <c>KmsKeyId</c> can be any of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -221,7 +220,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        ///  <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -229,7 +228,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+        ///  <c>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -238,7 +237,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"alias/ExampleAlias"</code> 
+        ///  <c>"alias/ExampleAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -246,8 +245,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
-        /// 
+        ///  <c>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -32,8 +32,8 @@ namespace Amazon.Kendra.Model
     /// Container for the parameters to the DeleteDataSource operation.
     /// Deletes an Amazon Kendra data source connector. An exception is not thrown if the
     /// data source is already being deleted. While the data source is being deleted, the
-    /// <code>Status</code> field returned by a call to the <code>DescribeDataSource</code>
-    /// API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
+    /// <c>Status</c> field returned by a call to the <c>DescribeDataSource</c> API is set
+    /// to <c>DELETING</c>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting
     /// Data Sources</a>.
     /// 
     ///  

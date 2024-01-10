@@ -88,7 +88,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The software of the database snapshot (for example, <code>MySQL</code>)
+        /// The software of the database snapshot (for example, <c>MySQL</c>)
         /// </para>
         /// </summary>
         public string Engine
@@ -106,7 +106,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The database engine version for the database snapshot (for example, <code>5.7.23</code>).
+        /// The database engine version for the database snapshot (for example, <c>5.7.23</c>).
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -252,7 +252,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SizeInGb. 
         /// <para>
-        /// The size of the disk in GB (for example, <code>32</code>) for the database snapshot.
+        /// The size of the disk in GB (for example, <c>32</c>) for the database snapshot.
         /// </para>
         /// </summary>
         public int SizeInGb

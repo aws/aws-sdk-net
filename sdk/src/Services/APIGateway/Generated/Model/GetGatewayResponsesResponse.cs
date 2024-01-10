@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.APIGateway.Model
 {
     /// <summary>
-    /// The collection of the GatewayResponse instances of a RestApi as a <code>responseType</code>-to-GatewayResponse
+    /// The collection of the GatewayResponse instances of a RestApi as a <c>responseType</c>-to-GatewayResponse
     /// object map of key-value pairs. As such, pagination is not supported for querying this
     /// collection.
     /// </summary>

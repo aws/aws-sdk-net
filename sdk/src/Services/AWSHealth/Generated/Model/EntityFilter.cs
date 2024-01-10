@@ -82,8 +82,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArns. 
         /// <para>
-        /// A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
-        /// "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+        /// A list of event ARNs (unique identifiers). For example: <c>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+        /// "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</c>
         /// 
         /// </para>
         /// </summary>
@@ -122,8 +122,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property StatusCodes. 
         /// <para>
-        /// A list of entity status codes (<code>IMPAIRED</code>, <code>UNIMPAIRED</code>, or
-        /// <code>UNKNOWN</code>).
+        /// A list of entity status codes (<c>IMPAIRED</c>, <c>UNIMPAIRED</c>, or <c>UNKNOWN</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -146,7 +145,7 @@ namespace Amazon.AWSHealth.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, the <code>tags</code> property isn't supported.
+        /// Currently, the <c>tags</c> property isn't supported.
         /// </para>
         ///  </note>
         /// </summary>

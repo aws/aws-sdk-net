@@ -67,7 +67,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitialContactId. 
         /// <para>
-        /// This is the contactId of the current contact that the <code>CreatePersistentContactAssociation</code>
+        /// This is the contactId of the current contact that the <c>CreatePersistentContactAssociation</c>
         /// API is being called from.
         /// </para>
         /// </summary>
@@ -111,16 +111,16 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated
-        /// past chat contact of the specified past ended chat session. To use this type, provide
-        /// the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code>
+        ///  <c>ENTIRE_PAST_SESSION</c>: Rehydrates a chat from the most recently terminated past
+        /// chat contact of the specified past ended chat session. To use this type, provide the
+        /// <c>initialContactId</c> of the past ended chat session in the <c>sourceContactId</c>
         /// field. In this type, Amazon Connect determines what the most recent chat contact on
         /// the past ended chat session and uses it to start a persistent chat. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FROM_SEGMENT</code>: Rehydrates a chat from the specified past chat contact
-        /// provided in the <code>sourceContactId</code> field. 
+        ///  <c>FROM_SEGMENT</c>: Rehydrates a chat from the specified past chat contact provided
+        /// in the <c>sourceContactId</c> field. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

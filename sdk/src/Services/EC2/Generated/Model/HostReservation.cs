@@ -69,8 +69,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency in which the <code>upfrontPrice</code> and <code>hourlyPrice</code> amounts
-        /// are specified. At this time, the only supported currency is <code>USD</code>.
+        /// The currency in which the <c>upfrontPrice</c> and <c>hourlyPrice</c> amounts are specified.
+        /// At this time, the only supported currency is <c>USD</c>.
         /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
@@ -88,8 +88,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// The length of the reservation's term, specified in seconds. Can be <code>31536000
-        /// (1 year)</code> | <code>94608000 (3 years)</code>.
+        /// The length of the reservation's term, specified in seconds. Can be <c>31536000 (1
+        /// year)</c> | <c>94608000 (3 years)</c>.
         /// </para>
         /// </summary>
         public int Duration

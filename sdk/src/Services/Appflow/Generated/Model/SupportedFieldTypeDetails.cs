@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// Contains details regarding all the supported <code>FieldTypes</code> and their corresponding
-    /// <code>filterOperators</code> and <code>supportedValues</code>.
+    /// Contains details regarding all the supported <c>FieldTypes</c> and their corresponding
+    /// <c>filterOperators</c> and <c>supportedValues</c>.
     /// </summary>
     public partial class SupportedFieldTypeDetails
     {
@@ -39,8 +39,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property V1. 
         /// <para>
-        ///  The initial supported version for <code>fieldType</code>. If this is later changed
-        /// to a different version, v2 will be introduced. 
+        ///  The initial supported version for <c>fieldType</c>. If this is later changed to a
+        /// different version, v2 will be introduced. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

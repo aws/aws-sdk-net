@@ -58,10 +58,10 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the CloudTrail channel. For service-linked channels, the name is <code>aws-service-channel/service-name/custom-suffix</code>
-        /// where <code>service-name</code> represents the name of the Amazon Web Services service
-        /// that created the channel and <code>custom-suffix</code> represents the suffix created
-        /// by the Amazon Web Services service. 
+        ///  The name of the CloudTrail channel. For service-linked channels, the name is <c>aws-service-channel/service-name/custom-suffix</c>
+        /// where <c>service-name</c> represents the name of the Amazon Web Services service that
+        /// created the channel and <c>custom-suffix</c> represents the suffix created by the
+        /// Amazon Web Services service. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]

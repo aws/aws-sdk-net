@@ -38,12 +38,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HomeEfsFileSystem. 
         /// <para>
-        /// The default is <code>Retain</code>, which specifies to keep the data stored on the
-        /// EFS volume.
+        /// The default is <c>Retain</c>, which specifies to keep the data stored on the EFS volume.
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Delete</code> to delete the data stored on the EFS volume.
+        /// Specify <c>Delete</c> to delete the data stored on the EFS volume.
         /// </para>
         /// </summary>
         public RetentionType HomeEfsFileSystem

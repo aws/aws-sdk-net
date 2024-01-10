@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// A summary of the request sent by using <code>SearchPlaceIndexForText</code>.
+    /// A summary of the request sent by using <c>SearchPlaceIndexForText</c>.
     /// </summary>
     public partial class SearchPlaceIndexForTextSummary
     {
@@ -55,8 +55,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>[-123.1174, 49.2847]</code> represents the position with longitude
-        /// <code>-123.1174</code> and latitude <code>49.2847</code>.
+        /// For example, <c>[-123.1174, 49.2847]</c> represents the position with longitude <c>-123.1174</c>
+        /// and latitude <c>49.2847</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=2)]
@@ -171,7 +171,7 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// The preferred language used to return results. Matches the language in the request.
         /// The value is a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language
-        /// tag, for example, <code>en</code> for English.
+        /// tag, for example, <c>en</c> for English.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=35)]
@@ -213,8 +213,8 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specified the optional <code>FilterBBox</code> parameter in the request, <code>ResultBBox</code>
-        /// is contained within <code>FilterBBox</code>.
+        /// If you specified the optional <c>FilterBBox</c> parameter in the request, <c>ResultBBox</c>
+        /// is contained within <c>FilterBBox</c>.
         /// </para>
         ///  </note>
         /// </summary>

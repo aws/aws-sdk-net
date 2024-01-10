@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The <code>DatasetTrigger</code> that specifies when the dataset is automatically updated.
+    /// The <c>DatasetTrigger</c> that specifies when the dataset is automatically updated.
     /// </summary>
     public partial class DatasetTrigger
     {

@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FindingAggregatorArn. 
         /// <para>
-        /// The ARN of the finding aggregator to return details for. To obtain the ARN, use <code>ListFindingAggregators</code>.
+        /// The ARN of the finding aggregator to return details for. To obtain the ARN, use <c>ListFindingAggregators</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

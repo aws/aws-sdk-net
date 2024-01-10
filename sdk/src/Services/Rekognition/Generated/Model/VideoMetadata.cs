@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Information about a video that Amazon Rekognition analyzed. <code>Videometadata</code>
-    /// is returned in every page of paginated responses from a Amazon Rekognition video operation.
+    /// Information about a video that Amazon Rekognition analyzed. <c>Videometadata</c> is
+    /// returned in every page of paginated responses from a Amazon Rekognition video operation.
     /// </summary>
     public partial class VideoMetadata
     {

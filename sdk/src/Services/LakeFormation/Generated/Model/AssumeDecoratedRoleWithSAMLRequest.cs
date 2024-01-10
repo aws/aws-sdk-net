@@ -41,9 +41,9 @@ namespace Amazon.LakeFormation.Model
     ///  
     /// <para>
     ///  This decorated role is expected to access data in Amazon S3 by getting temporary
-    /// access from Lake Formation which is authorized via the virtual API <code>GetDataAccess</code>.
-    /// Therefore, all SAML roles that can be assumed via <code>AssumeDecoratedRoleWithSAML</code>
-    /// must at a minimum include <code>lakeformation:GetDataAccess</code> in their role policies.
+    /// access from Lake Formation which is authorized via the virtual API <c>GetDataAccess</c>.
+    /// Therefore, all SAML roles that can be assumed via <c>AssumeDecoratedRoleWithSAML</c>
+    /// must at a minimum include <c>lakeformation:GetDataAccess</c> in their role policies.
     /// A typical IAM policy attached to such a role would look as follows: 
     /// </para>
     /// </summary>
@@ -97,8 +97,8 @@ namespace Amazon.LakeFormation.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The role that represents an IAM principal whose scope down policy allows it to call
-        /// credential vending APIs such as <code>GetTemporaryTableCredentials</code>. The caller
-        /// must also have iam:PassRole permission on this role. 
+        /// credential vending APIs such as <c>GetTemporaryTableCredentials</c>. The caller must
+        /// also have iam:PassRole permission on this role. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

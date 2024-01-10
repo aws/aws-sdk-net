@@ -56,7 +56,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// The time a <code>FeatureGroup</code> was created.
+        /// The time a <c>FeatureGroup</c> was created.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -74,7 +74,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A free form description of a <code>FeatureGroup</code>.
+        /// A free form description of a <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -93,13 +93,13 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EventTimeFeatureName. 
         /// <para>
-        /// The name of the feature that stores the <code>EventTime</code> of a Record in a <code>FeatureGroup</code>.
+        /// The name of the feature that stores the <c>EventTime</c> of a Record in a <c>FeatureGroup</c>.
         /// </para>
         ///  
         /// <para>
-        /// A <code>EventTime</code> is point in time when a new event occurs that corresponds
-        /// to the creation or update of a <code>Record</code> in <code>FeatureGroup</code>. All
-        /// <code>Records</code> in the <code>FeatureGroup</code> must have a corresponding <code>EventTime</code>.
+        /// A <c>EventTime</c> is point in time when a new event occurs that corresponds to the
+        /// creation or update of a <c>Record</c> in <c>FeatureGroup</c>. All <c>Records</c> in
+        /// the <c>FeatureGroup</c> must have a corresponding <c>EventTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -118,9 +118,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason that the <code>FeatureGroup</code> failed to be replicated in the <code>OfflineStore</code>.
-        /// This is failure may be due to a failure to create a <code>FeatureGroup</code> in or
-        /// delete a <code>FeatureGroup</code> from the <code>OfflineStore</code>.
+        /// The reason that the <c>FeatureGroup</c> failed to be replicated in the <c>OfflineStore</c>.
+        /// This is failure may be due to a failure to create a <c>FeatureGroup</c> in or delete
+        /// a <c>FeatureGroup</c> from the <c>OfflineStore</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -139,22 +139,22 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureDefinitions. 
         /// <para>
-        /// A list of <code>Feature</code>s. Each <code>Feature</code> must include a <code>FeatureName</code>
-        /// and a <code>FeatureType</code>. 
+        /// A list of <c>Feature</c>s. Each <c>Feature</c> must include a <c>FeatureName</c> and
+        /// a <c>FeatureType</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Valid <code>FeatureType</code>s are <code>Integral</code>, <code>Fractional</code>
-        /// and <code>String</code>. 
+        /// Valid <c>FeatureType</c>s are <c>Integral</c>, <c>Fractional</c> and <c>String</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>FeatureName</code>s cannot be any of the following: <code>is_deleted</code>,
-        /// <code>write_time</code>, <code>api_invocation_time</code>.
+        ///  <c>FeatureName</c>s cannot be any of the following: <c>is_deleted</c>, <c>write_time</c>,
+        /// <c>api_invocation_time</c>.
         /// </para>
         ///  
         /// <para>
-        /// You can create up to 2,500 <code>FeatureDefinition</code>s per <code>FeatureGroup</code>.
+        /// You can create up to 2,500 <c>FeatureDefinition</c>s per <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2500)]
@@ -173,7 +173,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a <code>FeatureGroup</code>.
+        /// The Amazon Resource Name (ARN) of a <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -192,7 +192,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of the <code>FeatureGroup</code>.
+        /// The name of the <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -211,7 +211,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupStatus. 
         /// <para>
-        /// A <code>FeatureGroup</code> status.
+        /// A <c>FeatureGroup</c> status.
         /// </para>
         /// </summary>
         public FeatureGroupStatus FeatureGroupStatus
@@ -310,8 +310,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RecordIdentifierFeatureName. 
         /// <para>
-        /// The name of the <code>Feature</code> whose value uniquely identifies a <code>Record</code>
-        /// defined in the <code>FeatureGroup</code> <code>FeatureDefinitions</code>.
+        /// The name of the <c>Feature</c> whose value uniquely identifies a <c>Record</c> defined
+        /// in the <c>FeatureGroup</c> <c>FeatureDefinitions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -350,7 +350,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags used to define a <code>FeatureGroup</code>.
+        /// Tags used to define a <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

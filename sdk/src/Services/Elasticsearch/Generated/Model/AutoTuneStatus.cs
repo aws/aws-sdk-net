@@ -98,7 +98,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.
+        /// Specifies the <c>AutoTuneState</c> for the Elasticsearch domain.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

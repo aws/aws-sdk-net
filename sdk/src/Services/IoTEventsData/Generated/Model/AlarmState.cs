@@ -81,37 +81,35 @@ namespace Amazon.IoTEventsData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - When the alarm is in the <code>DISABLED</code> state, it
-        /// isn't ready to evaluate data. To enable the alarm, you must change the alarm to the
-        /// <code>NORMAL</code> state.
+        ///  <c>DISABLED</c> - When the alarm is in the <c>DISABLED</c> state, it isn't ready
+        /// to evaluate data. To enable the alarm, you must change the alarm to the <c>NORMAL</c>
+        /// state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NORMAL</code> - When the alarm is in the <code>NORMAL</code> state, it's ready
-        /// to evaluate data.
+        ///  <c>NORMAL</c> - When the alarm is in the <c>NORMAL</c> state, it's ready to evaluate
+        /// data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - If the alarm is in the <code>ACTIVE</code> state, the alarm
-        /// is invoked.
+        ///  <c>ACTIVE</c> - If the alarm is in the <c>ACTIVE</c> state, the alarm is invoked.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACKNOWLEDGED</code> - When the alarm is in the <code>ACKNOWLEDGED</code> state,
-        /// the alarm was invoked and you acknowledged the alarm.
+        ///  <c>ACKNOWLEDGED</c> - When the alarm is in the <c>ACKNOWLEDGED</c> state, the alarm
+        /// was invoked and you acknowledged the alarm.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SNOOZE_DISABLED</code> - When the alarm is in the <code>SNOOZE_DISABLED</code>
-        /// state, the alarm is disabled for a specified period of time. After the snooze time,
-        /// the alarm automatically changes to the <code>NORMAL</code> state. 
+        ///  <c>SNOOZE_DISABLED</c> - When the alarm is in the <c>SNOOZE_DISABLED</c> state, the
+        /// alarm is disabled for a specified period of time. After the snooze time, the alarm
+        /// automatically changes to the <c>NORMAL</c> state. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LATCHED</code> - When the alarm is in the <code>LATCHED</code> state, the alarm
-        /// was invoked. However, the data that the alarm is currently evaluating is within the
-        /// specified range. To change the alarm to the <code>NORMAL</code> state, you must acknowledge
-        /// the alarm.
+        ///  <c>LATCHED</c> - When the alarm is in the <c>LATCHED</c> state, the alarm was invoked.
+        /// However, the data that the alarm is currently evaluating is within the specified range.
+        /// To change the alarm to the <c>NORMAL</c> state, you must acknowledge the alarm.
         /// </para>
         ///  </li> </ul>
         /// </summary>

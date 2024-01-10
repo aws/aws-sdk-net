@@ -62,8 +62,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property IncludeValues. 
         /// <para>
-        /// A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>)
-        /// the result contains key values.
+        /// A boolean flag to specify whether (<c>true</c>) or not (<c>false</c>) the result contains
+        /// key values.
         /// </para>
         /// </summary>
         public bool IncludeValues

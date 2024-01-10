@@ -72,8 +72,8 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property ExpireTime. 
         /// <para>
         /// The optional timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
-        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. One of <code>NoExpiry</code>
-        /// or <code>ExpireTime</code> must be set.
+        /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. One of <c>NoExpiry</c> or <c>ExpireTime</c>
+        /// must be set.
         /// </para>
         /// </summary>
         public DateTime ExpireTime
@@ -108,7 +108,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No spaces allowed. For example, <code>ExampleAPIKey</code>.
+        /// No spaces allowed. For example, <c>ExampleAPIKey</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -128,8 +128,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property NoExpiry. 
         /// <para>
-        /// Optionally set to <code>true</code> to set no expiration time for the API key. One
-        /// of <code>NoExpiry</code> or <code>ExpireTime</code> must be set.
+        /// Optionally set to <c>true</c> to set no expiration time for the API key. One of <c>NoExpiry</c>
+        /// or <c>ExpireTime</c> must be set.
         /// </para>
         /// </summary>
         public bool NoExpiry
@@ -171,7 +171,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         ///  
         /// <para>

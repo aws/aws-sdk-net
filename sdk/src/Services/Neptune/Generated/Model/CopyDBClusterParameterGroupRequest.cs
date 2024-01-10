@@ -57,13 +57,13 @@ namespace Amazon.Neptune.Model
         ///  </li> <li> 
         /// <para>
         /// If the source DB cluster parameter group is in the same Amazon Region as the copy,
-        /// specify a valid DB parameter group identifier, for example <code>my-db-cluster-param-group</code>,
+        /// specify a valid DB parameter group identifier, for example <c>my-db-cluster-param-group</c>,
         /// or a valid ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If the source DB parameter group is in a different Amazon Region than the copy, specify
-        /// a valid DB cluster parameter group ARN, for example <code>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</code>.
+        /// a valid DB cluster parameter group ARN, for example <c>arn:aws:rds:us-east-1:123456789012:cluster-pg:custom-cluster-group1</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -144,7 +144,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster-param-group1</code> 
+        /// Example: <c>my-cluster-param-group1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

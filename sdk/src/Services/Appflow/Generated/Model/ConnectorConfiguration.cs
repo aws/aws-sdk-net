@@ -176,8 +176,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ConnectorMetadata. 
         /// <para>
-        ///  Specifies connector-specific metadata such as <code>oAuthScopes</code>, <code>supportedRegions</code>,
-        /// <code>privateLinkServiceUrl</code>, and so on. 
+        ///  Specifies connector-specific metadata such as <c>oAuthScopes</c>, <c>supportedRegions</c>,
+        /// <c>privateLinkServiceUrl</c>, and so on. 
         /// </para>
         /// </summary>
         public ConnectorMetadata ConnectorMetadata

@@ -40,7 +40,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The list of <code>Certificate</code> objects for the Amazon Web Services account.
+        /// The list of <c>Certificate</c> objects for the Amazon Web Services account.
         /// </para>
         /// </summary>
         public List<Certificate> Certificates
@@ -61,7 +61,7 @@ namespace Amazon.RDS.Model
         /// The default root CA for new databases created by your Amazon Web Services account.
         /// This is either the root CA override set on your Amazon Web Services account or the
         /// system default CA for the Region if no override exists. To override the default CA,
-        /// use the <code>ModifyCertificates</code> operation.
+        /// use the <c>ModifyCertificates</c> operation.
         /// </para>
         /// </summary>
         public string DefaultCertificateForNewLaunches
@@ -79,9 +79,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeCertificates</code>
-        /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code> .
+        /// An optional pagination token provided by a previous <c>DescribeCertificates</c> request.
+        /// If this parameter is specified, the response includes only records beyond the marker,
+        /// up to the value specified by <c>MaxRecords</c> .
         /// </para>
         /// </summary>
         public string Marker

@@ -31,7 +31,7 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Container for the parameters to the GetEventPrediction operation.
     /// Evaluates an event against a detector version. If a version ID is not provided, the
-    /// detector’s (<code>ACTIVE</code>) version is used.
+    /// detector’s (<c>ACTIVE</c>) version is used.
     /// </summary>
     public partial class GetEventPredictionRequest : AmazonFraudDetectorRequest
     {

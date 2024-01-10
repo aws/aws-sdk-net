@@ -44,11 +44,11 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use local configuration, the Security Hub delegated administrator can set <code>AutoEnable</code>
-        /// to <code>true</code> and <code>AutoEnableStandards</code> to <code>DEFAULT</code>.
-        /// This automatically enables Security Hub and default security standards in new organization
-        /// accounts. These new account settings must be set separately in each Amazon Web Services
-        /// Region, and settings may be different in each Region. 
+        /// If you use local configuration, the Security Hub delegated administrator can set <c>AutoEnable</c>
+        /// to <c>true</c> and <c>AutoEnableStandards</c> to <c>DEFAULT</c>. This automatically
+        /// enables Security Hub and default security standards in new organization accounts.
+        /// These new account settings must be set separately in each Amazon Web Services Region,
+        /// and settings may be different in each Region. 
         /// </para>
         ///  
         /// <para>
@@ -75,9 +75,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Describes whether central configuration could be enabled as the <code>ConfigurationType</code>
-        /// for the organization. If your <code>ConfigurationType</code> is local configuration,
-        /// then the value of <code>Status</code> is always <code>ENABLED</code>. 
+        ///  Describes whether central configuration could be enabled as the <c>ConfigurationType</c>
+        /// for the organization. If your <c>ConfigurationType</c> is local configuration, then
+        /// the value of <c>Status</c> is always <c>ENABLED</c>. 
         /// </para>
         /// </summary>
         public OrganizationConfigurationStatus Status
@@ -95,8 +95,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        ///  Provides an explanation if the value of <code>Status</code> is equal to <code>FAILED</code>
-        /// when <code>ConfigurationType</code> is equal to <code>CENTRAL</code>. 
+        ///  Provides an explanation if the value of <c>Status</c> is equal to <c>FAILED</c> when
+        /// <c>ConfigurationType</c> is equal to <c>CENTRAL</c>. 
         /// </para>
         /// </summary>
         public string StatusMessage

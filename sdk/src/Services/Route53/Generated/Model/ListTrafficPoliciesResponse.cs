@@ -41,8 +41,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicySummaries. 
         /// <para>
-        /// A list that contains one <code>TrafficPolicySummary</code> element for each traffic
-        /// policy that was created by the current Amazon Web Services account.
+        /// A list that contains one <c>TrafficPolicySummary</c> element for each traffic policy
+        /// that was created by the current Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,8 +63,8 @@ namespace Amazon.Route53.Model
         /// <para>
         /// A flag that indicates whether there are more traffic policies to be listed. If the
         /// response was truncated, you can get the next group of traffic policies by submitting
-        /// another <code>ListTrafficPolicies</code> request and specifying the value of <code>TrafficPolicyIdMarker</code>
-        /// in the <code>TrafficPolicyIdMarker</code> request parameter.
+        /// another <c>ListTrafficPolicies</c> request and specifying the value of <c>TrafficPolicyIdMarker</c>
+        /// in the <c>TrafficPolicyIdMarker</c> request parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -83,9 +83,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyIdMarker. 
         /// <para>
-        /// If the value of <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyIdMarker</code>
-        /// is the ID of the first traffic policy in the next group of <code>MaxItems</code> traffic
-        /// policies.
+        /// If the value of <c>IsTruncated</c> is <c>true</c>, <c>TrafficPolicyIdMarker</c> is
+        /// the ID of the first traffic policy in the next group of <c>MaxItems</c> traffic policies.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -104,7 +103,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for the <code>MaxItems</code> parameter in the <code>ListTrafficPolicies</code>
+        /// The value that you specified for the <c>MaxItems</c> parameter in the <c>ListTrafficPolicies</c>
         /// request that produced the current response.
         /// </para>
         /// </summary>

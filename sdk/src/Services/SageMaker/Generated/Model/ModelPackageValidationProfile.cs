@@ -65,8 +65,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformJobDefinition. 
         /// <para>
-        /// The <code>TransformJobDefinition</code> object that describes the transform job used
-        /// for the validation of the model package.
+        /// The <c>TransformJobDefinition</c> object that describes the transform job used for
+        /// the validation of the model package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

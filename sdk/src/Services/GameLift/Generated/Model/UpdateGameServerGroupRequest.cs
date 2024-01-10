@@ -44,7 +44,7 @@ namespace Amazon.GameLift.Model
     /// To update the game server group, specify the game server group ID and provide the
     /// updated values. Before applying the updates, the new values are validated to ensure
     /// that Amazon GameLift FleetIQ can continue to perform instance balancing activity.
-    /// If successful, a <code>GameServerGroup</code> object is returned.
+    /// If successful, a <c>GameServerGroup</c> object is returned.
     /// </para>
     ///  
     /// <para>
@@ -72,15 +72,15 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SPOT_ONLY</code> - Only Spot Instances are used in the game server group. If
-        /// Spot Instances are unavailable or not viable for game hosting, the game server group
-        /// provides no hosting capacity until Spot Instances can again be used. Until then, no
-        /// new instances are started, and the existing nonviable Spot Instances are terminated
-        /// (after current gameplay ends) and are not replaced.
+        ///  <c>SPOT_ONLY</c> - Only Spot Instances are used in the game server group. If Spot
+        /// Instances are unavailable or not viable for game hosting, the game server group provides
+        /// no hosting capacity until Spot Instances can again be used. Until then, no new instances
+        /// are started, and the existing nonviable Spot Instances are terminated (after current
+        /// gameplay ends) and are not replaced.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPOT_PREFERRED</code> - (default value) Spot Instances are used whenever available
+        ///  <c>SPOT_PREFERRED</c> - (default value) Spot Instances are used whenever available
         /// in the game server group. If Spot Instances are unavailable, the game server group
         /// continues to provide hosting capacity by falling back to On-Demand Instances. Existing
         /// nonviable Spot Instances are terminated (after current gameplay ends) and are replaced
@@ -88,9 +88,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ON_DEMAND_ONLY</code> - Only On-Demand Instances are used in the game server
-        /// group. No Spot Instances are used, even when available, while this balancing strategy
-        /// is in force.
+        ///  <c>ON_DEMAND_ONLY</c> - Only On-Demand Instances are used in the game server group.
+        /// No Spot Instances are used, even when available, while this balancing strategy is
+        /// in force.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -134,7 +134,7 @@ namespace Amazon.GameLift.Model
         /// Protected instances cannot be terminated while there are active game servers running
         /// except in the event of a forced game server group deletion (see ). An exception to
         /// this is with Spot Instances, which can be terminated by Amazon Web Services regardless
-        /// of protection status. This property is set to <code>NO_PROTECTION</code> by default.
+        /// of protection status. This property is set to <c>NO_PROTECTION</c> by default.
         /// </para>
         /// </summary>
         public GameServerProtectionPolicy GameServerProtectionPolicy

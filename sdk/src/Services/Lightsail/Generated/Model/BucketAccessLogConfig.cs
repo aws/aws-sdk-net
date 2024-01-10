@@ -99,9 +99,9 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// The prefix is an optional addition to the object key that organizes your access log
-        /// files in the destination bucket. For example, if you specify a <code>logs/</code>
-        /// prefix, then each log object will begin with the <code>logs/</code> prefix in its
-        /// key (for example, <code>logs/2021-11-01-21-32-16-E568B2907131C0C0</code>).
+        /// files in the destination bucket. For example, if you specify a <c>logs/</c> prefix,
+        /// then each log object will begin with the <c>logs/</c> prefix in its key (for example,
+        /// <c>logs/2021-11-01-21-32-16-E568B2907131C0C0</c>).
         /// </para>
         ///  <note> 
         /// <para>

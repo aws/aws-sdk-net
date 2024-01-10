@@ -31,26 +31,25 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the CreateResourceDataSync operation.
     /// A resource data sync helps you view data from multiple sources in a single location.
-    /// Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code>
-    /// and <code>SyncFromSource</code>.
+    /// Amazon Web Services Systems Manager offers two types of resource data sync: <c>SyncToDestination</c>
+    /// and <c>SyncFromSource</c>.
     /// 
     ///  
     /// <para>
-    /// You can configure Systems Manager Inventory to use the <code>SyncToDestination</code>
-    /// type to synchronize Inventory data from multiple Amazon Web Services Regions to a
-    /// single Amazon Simple Storage Service (Amazon S3) bucket. For more information, see
-    /// <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+    /// You can configure Systems Manager Inventory to use the <c>SyncToDestination</c> type
+    /// to synchronize Inventory data from multiple Amazon Web Services Regions to a single
+    /// Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
     /// resource data sync for Inventory</a> in the <i>Amazon Web Services Systems Manager
     /// User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// You can configure Systems Manager Explorer to use the <code>SyncFromSource</code>
-    /// type to synchronize operational work items (OpsItems) and operational data (OpsData)
-    /// from multiple Amazon Web Services Regions to a single Amazon S3 bucket. This type
-    /// can synchronize OpsItems and OpsData from multiple Amazon Web Services accounts and
-    /// Amazon Web Services Regions or <code>EntireOrganization</code> by using Organizations.
-    /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
+    /// You can configure Systems Manager Explorer to use the <c>SyncFromSource</c> type to
+    /// synchronize operational work items (OpsItems) and operational data (OpsData) from
+    /// multiple Amazon Web Services Regions to a single Amazon S3 bucket. This type can synchronize
+    /// OpsItems and OpsData from multiple Amazon Web Services accounts and Amazon Web Services
+    /// Regions or <c>EntireOrganization</c> by using Organizations. For more information,
+    /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/Explorer-resource-data-sync.html">Setting
     /// up Systems Manager Explorer to display data from multiple accounts and Regions</a>
     /// in the <i>Amazon Web Services Systems Manager User Guide</i>.
     /// </para>
@@ -78,7 +77,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property S3Destination. 
         /// <para>
-        /// Amazon S3 configuration details for the sync. This parameter is required if the <code>SyncType</code>
+        /// Amazon S3 configuration details for the sync. This parameter is required if the <c>SyncType</c>
         /// value is SyncToDestination.
         /// </para>
         /// </summary>
@@ -117,7 +116,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property SyncSource. 
         /// <para>
         /// Specify information about the data sources to synchronize. This parameter is required
-        /// if the <code>SyncType</code> value is SyncFromSource.
+        /// if the <c>SyncType</c> value is SyncFromSource.
         /// </para>
         /// </summary>
         public ResourceDataSyncSource SyncSource
@@ -135,13 +134,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SyncType. 
         /// <para>
-        /// Specify <code>SyncToDestination</code> to create a resource data sync that synchronizes
-        /// data to an S3 bucket for Inventory. If you specify <code>SyncToDestination</code>,
-        /// you must provide a value for <code>S3Destination</code>. Specify <code>SyncFromSource</code>
-        /// to synchronize data from a single account and multiple Regions, or multiple Amazon
-        /// Web Services accounts and Amazon Web Services Regions, as listed in Organizations
-        /// for Explorer. If you specify <code>SyncFromSource</code>, you must provide a value
-        /// for <code>SyncSource</code>. The default value is <code>SyncToDestination</code>.
+        /// Specify <c>SyncToDestination</c> to create a resource data sync that synchronizes
+        /// data to an S3 bucket for Inventory. If you specify <c>SyncToDestination</c>, you must
+        /// provide a value for <c>S3Destination</c>. Specify <c>SyncFromSource</c> to synchronize
+        /// data from a single account and multiple Regions, or multiple Amazon Web Services accounts
+        /// and Amazon Web Services Regions, as listed in Organizations for Explorer. If you specify
+        /// <c>SyncFromSource</c>, you must provide a value for <c>SyncSource</c>. The default
+        /// value is <c>SyncToDestination</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

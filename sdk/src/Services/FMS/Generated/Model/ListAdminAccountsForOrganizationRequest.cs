@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAdminAccountsForOrganization operation.
-    /// Returns a <code>AdminAccounts</code> object that lists the Firewall Manager administrators
+    /// Returns a <c>AdminAccounts</c> object that lists the Firewall Manager administrators
     /// within the organization that are onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
     /// 
     ///  
@@ -47,7 +47,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects that you want Firewall Manager to return for this request.
-        /// If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code>
+        /// If more objects are available, in the response, Firewall Manager provides a <c>NextToken</c>
         /// value that you can use in a subsequent call to get the next batch of objects.
         /// </para>
         /// </summary>
@@ -67,10 +67,10 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you request a list of objects with a <code>MaxResults</code> setting, if the
-        /// number of objects that are still available for retrieval exceeds the maximum you requested,
-        /// Firewall Manager returns a <code>NextToken</code> value in the response. To retrieve
-        /// the next batch of objects, use the token returned from the prior request in your next
+        /// When you request a list of objects with a <c>MaxResults</c> setting, if the number
+        /// of objects that are still available for retrieval exceeds the maximum you requested,
+        /// Firewall Manager returns a <c>NextToken</c> value in the response. To retrieve the
+        /// next batch of objects, use the token returned from the prior request in your next
         /// request.
         /// </para>
         /// </summary>

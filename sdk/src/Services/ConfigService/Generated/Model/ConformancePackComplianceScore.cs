@@ -82,7 +82,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property Score. 
         /// <para>
         /// Compliance score for the conformance pack. Conformance packs with no evaluation results
-        /// will have a compliance score of <code>INSUFFICIENT_DATA</code>.
+        /// will have a compliance score of <c>INSUFFICIENT_DATA</c>.
         /// </para>
         /// </summary>
         public string Score

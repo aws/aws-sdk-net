@@ -235,11 +235,11 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// KMS Key ID: <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// Amazon Resource Name (ARN) of a KMS Key: <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -299,15 +299,15 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the document classifier. If the status is <code>TRAINED</code> the classifier
-        /// is ready to use. If the status is <code>TRAINED_WITH_WARNINGS</code> the classifier
-        /// training succeeded, but you should review the warnings returned in the <code>CreateDocumentClassifier</code>
+        /// The status of the document classifier. If the status is <c>TRAINED</c> the classifier
+        /// is ready to use. If the status is <c>TRAINED_WITH_WARNINGS</c> the classifier training
+        /// succeeded, but you should review the warnings returned in the <c>CreateDocumentClassifier</c>
         /// response.
         /// </para>
         ///  
         /// <para>
-        ///  If the status is <code>FAILED</code> you can see additional information about why
-        /// the classifier wasn't trained in the <code>Message</code> field.
+        ///  If the status is <c>FAILED</c> you can see additional information about why the classifier
+        /// wasn't trained in the <c>Message</c> field.
         /// </para>
         /// </summary>
         public ModelStatus Status
@@ -407,11 +407,11 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// KMS Key ID: <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// Amazon Resource Name (ARN) of a KMS Key: <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> </ul>

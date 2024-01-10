@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetOnPremisesInstance</code> operation.
+    /// Represents the output of a <c>GetOnPremisesInstance</c> operation.
     /// </summary>
     public partial class GetOnPremisesInstanceResponse : AmazonWebServiceResponse
     {

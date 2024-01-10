@@ -43,8 +43,8 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property AssignPublicIp. 
         /// <para>
         /// Specifies whether the task's elastic network interface receives a public IP address.
-        /// You can specify <code>ENABLED</code> only when <code>LaunchType</code> in <code>EcsParameters</code>
-        /// is set to <code>FARGATE</code>.
+        /// You can specify <c>ENABLED</c> only when <c>LaunchType</c> in <c>EcsParameters</c>
+        /// is set to <c>FARGATE</c>.
         /// </para>
         /// </summary>
         public AssignPublicIp AssignPublicIp

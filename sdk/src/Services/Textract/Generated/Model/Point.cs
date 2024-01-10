@@ -36,9 +36,9 @@ namespace Amazon.Textract.Model
     /// 
     ///  
     /// <para>
-    /// An array of <code>Point</code> objects, <code>Polygon</code>, is returned by <a>DetectDocumentText</a>.
-    /// <code>Polygon</code> represents a fine-grained polygon around detected text. For more
-    /// information, see Geometry in the Amazon Textract Developer Guide. 
+    /// An array of <c>Point</c> objects, <c>Polygon</c>, is returned by <a>DetectDocumentText</a>.
+    /// <c>Polygon</c> represents a fine-grained polygon around detected text. For more information,
+    /// see Geometry in the Amazon Textract Developer Guide. 
     /// </para>
     /// </summary>
     public partial class Point
@@ -49,7 +49,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property X. 
         /// <para>
-        /// The value of the X coordinate for a point on a <code>Polygon</code>.
+        /// The value of the X coordinate for a point on a <c>Polygon</c>.
         /// </para>
         /// </summary>
         public float X
@@ -67,7 +67,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Y. 
         /// <para>
-        /// The value of the Y coordinate for a point on a <code>Polygon</code>.
+        /// The value of the Y coordinate for a point on a <c>Polygon</c>.
         /// </para>
         /// </summary>
         public float Y

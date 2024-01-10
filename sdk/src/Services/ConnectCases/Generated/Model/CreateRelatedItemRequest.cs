@@ -35,17 +35,16 @@ namespace Amazon.ConnectCases.Model
     ///  <note> <ul> <li> 
     /// <para>
     /// A Related Item is a resource that is associated with a case. It may or may not have
-    /// an external identifier linking it to an external resource (for example, a <code>contactArn</code>).
-    /// All Related Items have their own internal identifier, the <code>relatedItemArn</code>.
-    /// Examples of related items include <code>comments</code> and <code>contacts</code>.
+    /// an external identifier linking it to an external resource (for example, a <c>contactArn</c>).
+    /// All Related Items have their own internal identifier, the <c>relatedItemArn</c>. Examples
+    /// of related items include <c>comments</c> and <c>contacts</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you provide a value for <code>performedBy.userArn</code> you must also have <a
-    /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+    /// If you provide a value for <c>performedBy.userArn</c> you must also have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
     /// permission on the ARN of the user that you provide.
     /// </para>
-    ///  </li> </ul> <pre><code> &lt;/note&gt; </code></pre>
+    ///  </li> </ul> <pre><c> &lt;/note&gt; </c></pre>
     /// </summary>
     public partial class CreateRelatedItemRequest : AmazonConnectCasesRequest
     {

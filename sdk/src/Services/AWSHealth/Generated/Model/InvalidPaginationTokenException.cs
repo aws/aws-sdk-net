@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSHealth.Model
 {
     /// <summary>
-    /// The specified pagination token (<code>nextToken</code>) is not valid.
+    /// The specified pagination token (<c>nextToken</c>) is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

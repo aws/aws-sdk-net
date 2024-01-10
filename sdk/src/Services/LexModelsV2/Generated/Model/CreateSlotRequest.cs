@@ -31,7 +31,7 @@ namespace Amazon.LexModelsV2.Model
     /// <summary>
     /// Container for the parameters to the CreateSlot operation.
     /// Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For
-    /// example, an <code>OrderPizza</code> intent might need slots for size, crust, and number
+    /// example, an <c>OrderPizza</c> intent might need slots for size, crust, and number
     /// of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to
     /// elicit a response from the user.
     /// </summary>
@@ -151,12 +151,12 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property MultipleValuesSetting. 
         /// <para>
         /// Indicates whether the slot returns multiple values in one response. Multi-value slots
-        /// are only available in the <code>en-US</code> locale. If you set this value to <code>true</code>
-        /// in any other locale, Amazon Lex throws a <code>ValidationException</code>. 
+        /// are only available in the <c>en-US</c> locale. If you set this value to <c>true</c>
+        /// in any other locale, Amazon Lex throws a <c>ValidationException</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+        /// If the <c>multipleValuesSetting</c> is not set, the default value is <c>false</c>.
         /// </para>
         /// </summary>
         public MultipleValuesSetting MultipleValuesSetting
@@ -175,9 +175,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ObfuscationSetting. 
         /// <para>
         /// Determines how slot values are used in Amazon CloudWatch logs. If the value of the
-        /// <code>obfuscationSetting</code> parameter is <code>DefaultObfuscation</code>, slot
-        /// values are obfuscated in the log output. If the value is <code>None</code>, the actual
-        /// value is present in the log output.
+        /// <c>obfuscationSetting</c> parameter is <c>DefaultObfuscation</c>, slot values are
+        /// obfuscated in the log output. If the value is <c>None</c>, the actual value is present
+        /// in the log output.
         /// </para>
         ///  
         /// <para>

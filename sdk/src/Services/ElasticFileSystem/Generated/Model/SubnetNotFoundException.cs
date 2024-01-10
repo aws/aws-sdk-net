@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if there is no subnet with ID <code>SubnetId</code> provided in the request.
+    /// Returned if there is no subnet with ID <c>SubnetId</c> provided in the request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

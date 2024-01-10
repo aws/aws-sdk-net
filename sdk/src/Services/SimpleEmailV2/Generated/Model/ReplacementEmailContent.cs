@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// The <code>ReplaceEmailContent</code> object to be used for a specific <code>BulkEmailEntry</code>.
-    /// The <code>ReplacementTemplate</code> can be specified within this object.
+    /// The <c>ReplaceEmailContent</c> object to be used for a specific <c>BulkEmailEntry</c>.
+    /// The <c>ReplacementTemplate</c> can be specified within this object.
     /// </summary>
     public partial class ReplacementEmailContent
     {
@@ -39,7 +39,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ReplacementTemplate. 
         /// <para>
-        /// The <code>ReplacementTemplate</code> associated with <code>ReplacementEmailContent</code>.
+        /// The <c>ReplacementTemplate</c> associated with <c>ReplacementEmailContent</c>.
         /// </para>
         /// </summary>
         public ReplacementTemplate ReplacementTemplate

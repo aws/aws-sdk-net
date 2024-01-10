@@ -31,10 +31,9 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the SearchAvailablePhoneNumbers operation.
     /// Searches for phone numbers that can be ordered. For US numbers, provide at least one
-    /// of the following search filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>,
-    /// or <code>TollFreePrefix</code>. If you provide <code>City</code>, you must also provide
-    /// <code>State</code>. Numbers outside the US only support the <code>PhoneNumberType</code>
-    /// filter, which you must use.
+    /// of the following search filters: <c>AreaCode</c>, <c>City</c>, <c>State</c>, or <c>TollFreePrefix</c>.
+    /// If you provide <c>City</c>, you must also provide <c>State</c>. Numbers outside the
+    /// US only support the <c>PhoneNumberType</c> filter, which you must use.
     /// </summary>
     public partial class SearchAvailablePhoneNumbersRequest : AmazonChimeRequest
     {
@@ -159,8 +158,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state used to filter results. Required only if you provide <code>City</code>.
-        /// Only applies to the US.
+        /// The state used to filter results. Required only if you provide <c>City</c>. Only applies
+        /// to the US.
         /// </para>
         /// </summary>
         public string State

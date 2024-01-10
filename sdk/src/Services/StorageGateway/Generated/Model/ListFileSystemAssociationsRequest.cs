@@ -30,8 +30,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFileSystemAssociations operation.
-    /// Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains
-    /// a summary of a file system association. This operation is only supported for FSx File
+    /// Gets a list of <c>FileSystemAssociationSummary</c> objects. Each object contains a
+    /// summary of a file system association. This operation is only supported for FSx File
     /// Gateways.
     /// </summary>
     public partial class ListFileSystemAssociationsRequest : AmazonStorageGatewayRequest
@@ -60,7 +60,7 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The maximum number of file system associations to return in the response. If present,
-        /// <code>Limit</code> must be an integer with a value greater than zero. Optional.
+        /// <c>Limit</c> must be an integer with a value greater than zero. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -79,9 +79,9 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// Opaque pagination token returned from a previous <code>ListFileSystemAssociations</code>
-        /// operation. If present, <code>Marker</code> specifies where to continue the list from
-        /// after a previous call to <code>ListFileSystemAssociations</code>. Optional.
+        /// Opaque pagination token returned from a previous <c>ListFileSystemAssociations</c>
+        /// operation. If present, <c>Marker</c> specifies where to continue the list from after
+        /// a previous call to <c>ListFileSystemAssociations</c>. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

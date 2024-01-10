@@ -105,11 +105,11 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>action</code> referenced by the policy.
+        /// The <c>action</c> referenced by the policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Any conditional clauses, such as <code>when</code> or <code>unless</code> clauses.
+        /// Any conditional clauses, such as <c>when</c> or <c>unless</c> clauses.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -117,19 +117,19 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Changing from <code>static</code> to <code>templateLinked</code>.
+        /// Changing from <c>static</c> to <c>templateLinked</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Changing the effect of the policy from <code>permit</code> or <code>forbid</code>.
+        /// Changing the effect of the policy from <c>permit</c> or <c>forbid</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>principal</code> referenced by the policy.
+        /// The <c>principal</c> referenced by the policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>resource</code> referenced by the policy.
+        /// The <c>resource</c> referenced by the policy.
         /// </para>
         ///  </li> </ul>
         /// </summary>

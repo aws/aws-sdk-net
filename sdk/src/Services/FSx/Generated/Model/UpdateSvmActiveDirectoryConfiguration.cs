@@ -41,8 +41,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NetBiosName. 
         /// <para>
-        /// Specifies an updated NetBIOS name of the AD computer object <code>NetBiosName</code>
-        /// to which an SVM is joined.
+        /// Specifies an updated NetBIOS name of the AD computer object <c>NetBiosName</c> to
+        /// which an SVM is joined.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]

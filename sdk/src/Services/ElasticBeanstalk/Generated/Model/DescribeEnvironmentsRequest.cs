@@ -109,7 +109,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property IncludedDeletedBackToUtc. 
         /// <para>
-        ///  If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments
+        ///  If specified when <c>IncludeDeleted</c> is set to <c>true</c>, then environments
         /// deleted after this date are displayed. 
         /// </para>
         /// </summary>
@@ -132,12 +132,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code>
+        ///  <c>true</c>: Environments that have been deleted after <c>IncludedDeletedBackTo</c>
         /// are displayed.
         /// </para>
         ///  
         /// <para>
-        ///  <code>false</code>: Do not include deleted environments.
+        ///  <c>false</c>: Do not include deleted environments.
         /// </para>
         /// </summary>
         public bool IncludeDeleted
@@ -160,8 +160,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// If no <code>MaxRecords</code> is specified, all available environments are retrieved
-        /// in a single response.
+        /// If no <c>MaxRecords</c> is specified, all available environments are retrieved in
+        /// a single response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -186,7 +186,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// If no <code>NextToken</code> is specified, the first page is retrieved.
+        /// If no <c>NextToken</c> is specified, the first page is retrieved.
         /// </para>
         /// </summary>
         public string NextToken
@@ -237,7 +237,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments
+        ///  If specified when <c>IncludeDeleted</c> is set to <c>true</c>, then environments
         /// deleted after this date are displayed. 
         /// </para>
         /// </summary>

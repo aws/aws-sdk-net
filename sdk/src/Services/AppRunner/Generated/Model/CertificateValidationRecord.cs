@@ -62,7 +62,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current state of the certificate CNAME record validation. It should change to
-        /// <code>SUCCESS</code> after App Runner completes validation with your DNS.
+        /// <c>SUCCESS</c> after App Runner completes validation with your DNS.
         /// </para>
         /// </summary>
         public CertificateValidationRecordStatus Status
@@ -80,7 +80,7 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The record type, always <code>CNAME</code>.
+        /// The record type, always <c>CNAME</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=51200)]

@@ -30,7 +30,7 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the ListConfigs operation.
-    /// Returns a list of <code>Config</code> objects.
+    /// Returns a list of <c>Config</c> objects.
     /// </summary>
     public partial class ListConfigsRequest : AmazonGroundStationRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Maximum number of <code>Configs</code> returned.
+        /// Maximum number of <c>Configs</c> returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -59,8 +59,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next token returned in the request of a previous <code>ListConfigs</code> call. Used
-        /// to get the next page of results.
+        /// Next token returned in the request of a previous <c>ListConfigs</c> call. Used to
+        /// get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=1000)]

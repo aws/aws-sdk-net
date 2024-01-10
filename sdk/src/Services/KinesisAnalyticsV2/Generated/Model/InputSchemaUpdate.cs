@@ -40,8 +40,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RecordColumnUpdates. 
         /// <para>
-        /// A list of <code>RecordColumn</code> objects. Each object describes the mapping of
-        /// the streaming source element to the corresponding column in the in-application stream.
+        /// A list of <c>RecordColumn</c> objects. Each object describes the mapping of the streaming
+        /// source element to the corresponding column in the in-application stream.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

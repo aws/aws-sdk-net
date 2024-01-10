@@ -40,10 +40,10 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If you have more <a>XssMatchSet</a> objects than the number that you specified for
-        /// <code>Limit</code> in the request, the response includes a <code>NextMarker</code>
-        /// value. To list more <code>XssMatchSet</code> objects, submit another <code>ListXssMatchSets</code>
-        /// request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code>
-        /// value in the next request.
+        /// <c>Limit</c> in the request, the response includes a <c>NextMarker</c> value. To list
+        /// more <c>XssMatchSet</c> objects, submit another <c>ListXssMatchSets</c> request, and
+        /// specify the <c>NextMarker</c> value from the response in the <c>NextMarker</c> value
+        /// in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]

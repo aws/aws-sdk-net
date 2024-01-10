@@ -67,9 +67,9 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        /// A user-defined or an auto-generated string that identifies a <code>Map</code> state.
-        /// This ﬁeld is returned only if the <code>executionArn</code> is a child workflow execution
-        /// that was started by a Distributed Map state.
+        /// A user-defined or an auto-generated string that identifies a <c>Map</c> state. This
+        /// ﬁeld is returned only if the <c>executionArn</c> is a child workflow execution that
+        /// was started by a Distributed Map state.
         /// </para>
         /// </summary>
         public string Label
@@ -103,7 +103,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property MapRunArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Map Run that started the child workflow execution.
-        /// This field is returned only if the <code>executionArn</code> is a child workflow execution
+        /// This field is returned only if the <c>executionArn</c> is a child workflow execution
         /// that was started by a Distributed Map state.
         /// </para>
         /// </summary>
@@ -147,9 +147,9 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the state machine <code>revisionId</code> parameter to compare the revision of
-        /// a state machine with the configuration of the state machine used for executions without
-        /// performing a diff of the properties, such as <code>definition</code> and <code>roleArn</code>.
+        /// Use the state machine <c>revisionId</c> parameter to compare the revision of a state
+        /// machine with the configuration of the state machine used for executions without performing
+        /// a diff of the properties, such as <c>definition</c> and <c>roleArn</c>.
         /// </para>
         /// </summary>
         public string RevisionId

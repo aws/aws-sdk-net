@@ -59,9 +59,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CollectionParameters. 
         /// <para>
-        /// Parameter values for the tensor collection. The allowed parameters are <code>"name"</code>,
-        /// <code>"include_regex"</code>, <code>"reduction_config"</code>, <code>"save_config"</code>,
-        /// <code>"tensor_names"</code>, and <code>"save_histogram"</code>.
+        /// Parameter values for the tensor collection. The allowed parameters are <c>"name"</c>,
+        /// <c>"include_regex"</c>, <c>"reduction_config"</c>, <c>"save_config"</c>, <c>"tensor_names"</c>,
+        /// and <c>"save_histogram"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

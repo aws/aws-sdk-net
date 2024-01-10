@@ -84,8 +84,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FilterClass. 
         /// <para>
-        /// The class of the filter. Valid values for this structure are <code>ENFORCED_VALUE_FILTER</code>,
-        /// <code>CONDITIONAL_VALUE_FILTER</code>, and <code>NAMED_VALUE_FILTER</code>.
+        /// The class of the filter. Valid values for this structure are <c>ENFORCED_VALUE_FILTER</c>,
+        /// <c>CONDITIONAL_VALUE_FILTER</c>, and <c>NAMED_VALUE_FILTER</c>.
         /// </para>
         /// </summary>
         public FilterClass FilterClass
@@ -159,9 +159,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FilterType. 
         /// <para>
-        /// The type of the filter. Valid values for this structure are <code>CATEGORY_FILTER</code>,
-        /// <code>NUMERIC_EQUALITY_FILTER</code>, <code>NUMERIC_RANGE_FILTER</code>, <code>DATE_RANGE_FILTER</code>,
-        /// and <code>RELATIVE_DATE_FILTER</code>.
+        /// The type of the filter. Valid values for this structure are <c>CATEGORY_FILTER</c>,
+        /// <c>NUMERIC_EQUALITY_FILTER</c>, <c>NUMERIC_RANGE_FILTER</c>, <c>DATE_RANGE_FILTER</c>,
+        /// and <c>RELATIVE_DATE_FILTER</c>.
         /// </para>
         /// </summary>
         public NamedFilterType FilterType

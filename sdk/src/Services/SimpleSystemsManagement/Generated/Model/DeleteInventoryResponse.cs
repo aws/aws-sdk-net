@@ -40,10 +40,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DeletionId. 
         /// <para>
-        /// Every <code>DeleteInventory</code> operation is assigned a unique ID. This option
-        /// returns a unique ID. You can use this ID to query the status of a delete operation.
-        /// This option is useful for ensuring that a delete operation has completed before you
-        /// begin other operations. 
+        /// Every <c>DeleteInventory</c> operation is assigned a unique ID. This option returns
+        /// a unique ID. You can use this ID to query the status of a delete operation. This option
+        /// is useful for ensuring that a delete operation has completed before you begin other
+        /// operations. 
         /// </para>
         /// </summary>
         public string DeletionId

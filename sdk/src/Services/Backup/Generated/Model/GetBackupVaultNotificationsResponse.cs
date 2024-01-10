@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -100,7 +100,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SNSTopicArn. 
         /// <para>
         /// An ARN that uniquely identifies an Amazon Simple Notification Service (Amazon SNS)
-        /// topic; for example, <code>arn:aws:sns:us-west-2:111122223333:MyTopic</code>.
+        /// topic; for example, <c>arn:aws:sns:us-west-2:111122223333:MyTopic</c>.
         /// </para>
         /// </summary>
         public string SNSTopicArn

@@ -38,11 +38,11 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If set to <code>true</code>, then instances in the group launch with detailed monitoring.
+        /// If set to <c>true</c>, then instances in the group launch with detailed monitoring.
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>false</code>, then instances in the group launch with basic monitoring.
+        /// If set to <c>false</c>, then instances in the group launch with basic monitoring.
         /// </para>
         /// </summary>
         public bool Enabled

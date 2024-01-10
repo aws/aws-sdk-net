@@ -31,13 +31,13 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyVpcTenancy operation.
     /// Modifies the instance tenancy attribute of the specified VPC. You can change the instance
-    /// tenancy attribute of a VPC to <code>default</code> only. You cannot change the instance
-    /// tenancy attribute to <code>dedicated</code>.
+    /// tenancy attribute of a VPC to <c>default</c> only. You cannot change the instance
+    /// tenancy attribute to <c>dedicated</c>.
     /// 
     ///  
     /// <para>
     /// After you modify the tenancy of the VPC, any new instances that you launch into the
-    /// VPC have a tenancy of <code>default</code>, unless you specify otherwise during launch.
+    /// VPC have a tenancy of <c>default</c>, unless you specify otherwise during launch.
     /// The tenancy of any existing instances in the VPC is not affected.
     /// </para>
     ///  

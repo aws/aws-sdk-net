@@ -87,17 +87,17 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MULTI_AZ_1</code> - (Default) A high availability file system configured for
-        /// Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability. 
+        ///  <c>MULTI_AZ_1</c> - (Default) A high availability file system configured for Multi-AZ
+        /// redundancy to tolerate temporary Availability Zone (AZ) unavailability. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_1</code> - A file system configured for Single-AZ redundancy.
+        ///  <c>SINGLE_AZ_1</c> - A file system configured for Single-AZ redundancy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_2</code> - A file system configured with multiple high-availability
-        /// (HA) pairs for Single-AZ redundancy.
+        ///  <c>SINGLE_AZ_2</c> - A file system configured with multiple high-availability (HA)
+        /// pairs for Single-AZ redundancy.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -164,9 +164,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Endpoints. 
         /// <para>
-        /// The <code>Management</code> and <code>Intercluster</code> endpoints that are used
-        /// to access data or to manage the file system using the NetApp ONTAP CLI, REST API,
-        /// or NetApp SnapMirror.
+        /// The <c>Management</c> and <c>Intercluster</c> endpoints that are used to access data
+        /// or to manage the file system using the NetApp ONTAP CLI, REST API, or NetApp SnapMirror.
         /// </para>
         /// </summary>
         public FileSystemEndpoints Endpoints
@@ -184,8 +183,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FsxAdminPassword. 
         /// <para>
-        /// You can use the <code>fsxadmin</code> user account to access the NetApp ONTAP CLI
-        /// and REST API. The password value is always redacted in the response.
+        /// You can use the <c>fsxadmin</c> user account to access the NetApp ONTAP CLI and REST
+        /// API. The password value is always redacted in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=8, Max=50)]
@@ -205,9 +204,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property HAPairs. 
         /// <para>
         /// Specifies how many high-availability (HA) file server pairs the file system will have.
-        /// The default value is 1. The value of this property affects the values of <code>StorageCapacity</code>,
-        /// <code>Iops</code>, and <code>ThroughputCapacity</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
+        /// The default value is 1. The value of this property affects the values of <c>StorageCapacity</c>,
+        /// <c>Iops</c>, and <c>ThroughputCapacity</c>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/HA-pairs.html">High-availability
         /// (HA) pairs</a> in the FSx for ONTAP user guide.
         /// </para>
         ///  
@@ -216,12 +214,12 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value of <code>HAPairs</code> is less than 1 or greater than 6.
+        /// The value of <c>HAPairs</c> is less than 1 or greater than 6.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>HAPairs</code> is greater than 1 and the value of <code>DeploymentType</code>
-        /// is <code>SINGLE_AZ_1</code> or <code>MULTI_AZ_1</code>.
+        /// The value of <c>HAPairs</c> is greater than 1 and the value of <c>DeploymentType</c>
+        /// is <c>SINGLE_AZ_1</c> or <c>MULTI_AZ_1</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -292,28 +290,28 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ThroughputCapacityPerHAPair. 
         /// <para>
-        /// Use to choose the throughput capacity per HA pair. When the value of <code>HAPairs</code>
-        /// is equal to 1, the value of <code>ThroughputCapacityPerHAPair</code> is the total
-        /// throughput for the file system.
+        /// Use to choose the throughput capacity per HA pair. When the value of <c>HAPairs</c>
+        /// is equal to 1, the value of <c>ThroughputCapacityPerHAPair</c> is the total throughput
+        /// for the file system.
         /// </para>
         ///  
         /// <para>
-        /// This field and <code>ThroughputCapacity</code> cannot be defined in the same API call,
-        /// but one is required.
+        /// This field and <c>ThroughputCapacity</c> cannot be defined in the same API call, but
+        /// one is required.
         /// </para>
         ///  
         /// <para>
-        /// This field and <code>ThroughputCapacity</code> are the same for file systems with
-        /// one HA pair.
+        /// This field and <c>ThroughputCapacity</c> are the same for file systems with one HA
+        /// pair.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>SINGLE_AZ_1</code> and <code>MULTI_AZ_1</code>, valid values are 128, 256,
-        /// 512, 1024, 2048, or 4096 MBps.
+        /// For <c>SINGLE_AZ_1</c> and <c>MULTI_AZ_1</c>, valid values are 128, 256, 512, 1024,
+        /// 2048, or 4096 MBps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>SINGLE_AZ_2</code>, valid values are 3072 or 6144 MBps.
+        /// For <c>SINGLE_AZ_2</c>, valid values are 3072 or 6144 MBps.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -321,18 +319,17 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The value of <code>ThroughputCapacity</code> and <code>ThroughputCapacityPerHAPair</code>
-        /// are not the same value.
+        /// The value of <c>ThroughputCapacity</c> and <c>ThroughputCapacityPerHAPair</c> are
+        /// not the same value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of deployment type is <code>SINGLE_AZ_2</code> and <code>ThroughputCapacity</code>
-        /// / <code>ThroughputCapacityPerHAPair</code> is a valid HA pair (a value between 2 and
-        /// 6).
+        /// The value of deployment type is <c>SINGLE_AZ_2</c> and <c>ThroughputCapacity</c> /
+        /// <c>ThroughputCapacityPerHAPair</c> is a valid HA pair (a value between 2 and 6).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The value of <code>ThroughputCapacityPerHAPair</code> is not a valid value.
+        /// The value of <c>ThroughputCapacityPerHAPair</c> is not a valid value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

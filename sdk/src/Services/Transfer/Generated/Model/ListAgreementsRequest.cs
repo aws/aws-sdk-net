@@ -30,11 +30,11 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAgreements operation.
-    /// Returns a list of the agreements for the server that's identified by the <code>ServerId</code>
+    /// Returns a list of the agreements for the server that's identified by the <c>ServerId</c>
     /// that you supply. If you want to limit the results to a certain number, supply a value
-    /// for the <code>MaxResults</code> parameter. If you ran the command previously and received
-    /// a value for <code>NextToken</code>, you can supply that value to continue listing
-    /// agreements from where you left off.
+    /// for the <c>MaxResults</c> parameter. If you ran the command previously and received
+    /// a value for <c>NextToken</c>, you can supply that value to continue listing agreements
+    /// from where you left off.
     /// </summary>
     public partial class ListAgreementsRequest : AmazonTransferRequest
     {
@@ -64,9 +64,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you can get additional results from the <code>ListAgreements</code> call, a <code>NextToken</code>
+        /// When you can get additional results from the <c>ListAgreements</c> call, a <c>NextToken</c>
         /// parameter is returned in the output. You can then pass in a subsequent command to
-        /// the <code>NextToken</code> parameter to continue listing additional agreements.
+        /// the <c>NextToken</c> parameter to continue listing additional agreements.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

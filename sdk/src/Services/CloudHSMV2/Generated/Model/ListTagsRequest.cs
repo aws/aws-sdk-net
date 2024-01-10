@@ -36,9 +36,9 @@ namespace Amazon.CloudHSMV2.Model
     /// <para>
     /// This is a paginated operation, which means that each response might contain only a
     /// subset of all the tags. When the response contains only a subset of tags, it includes
-    /// a <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code>
-    /// request to get more tags. When you receive a response with no <code>NextToken</code>
-    /// (or an empty or null value), that means there are no more tags to get.
+    /// a <c>NextToken</c> value. Use this value in a subsequent <c>ListTags</c> request to
+    /// get more tags. When you receive a response with no <c>NextToken</c> (or an empty or
+    /// null value), that means there are no more tags to get.
     /// </para>
     /// </summary>
     public partial class ListTagsRequest : AmazonCloudHSMV2Request
@@ -51,7 +51,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of tags to return in the response. When there are more tags than
-        /// the number you specify, the response contains a <code>NextToken</code> value.
+        /// the number you specify, the response contains a <c>NextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -70,8 +70,8 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more tags.
+        /// The <c>NextToken</c> value that you received in the previous response. Use this value
+        /// to get more tags.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

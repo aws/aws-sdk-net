@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of <code>BatchGetTableOptimizerEntry</code> objects specifying the table optimizers
+        /// A list of <c>BatchGetTableOptimizerEntry</c> objects specifying the table optimizers
         /// to retrieve.
         /// </para>
         /// </summary>

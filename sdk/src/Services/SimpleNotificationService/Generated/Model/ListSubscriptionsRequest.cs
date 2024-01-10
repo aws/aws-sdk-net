@@ -31,8 +31,8 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the ListSubscriptions operation.
     /// Returns a list of the requester's subscriptions. Each call returns a limited list
-    /// of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code>
-    /// is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptions</code>
+    /// of subscriptions, up to 100. If there are more subscriptions, a <c>NextToken</c> is
+    /// also returned. Use the <c>NextToken</c> parameter in a new <c>ListSubscriptions</c>
     /// call to get further results.
     /// 
     ///  
@@ -61,7 +61,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Token returned by the previous <code>ListSubscriptions</code> request.
+        /// Token returned by the previous <c>ListSubscriptions</c> request.
         /// </para>
         /// </summary>
         public string NextToken

@@ -67,9 +67,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public double CreationDate
@@ -164,23 +164,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Disabled</code> 
+        ///  <c>Disabled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Enabled</code> 
+        ///  <c>Enabled</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PendingDeletion</code> 
+        ///  <c>PendingDeletion</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PendingImport</code> 
+        ///  <c>PendingImport</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unavailable</code> 
+        ///  <c>Unavailable</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -203,17 +203,17 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// When this value is <code>AWS_KMS</code>, KMS created the key material.
+        /// When this value is <c>AWS_KMS</c>, KMS created the key material.
         /// </para>
         ///  
         /// <para>
-        /// When this value is <code>EXTERNAL</code>, the key material was imported from your
-        /// existing key management infrastructure or the KMS key lacks key material.
+        /// When this value is <c>EXTERNAL</c>, the key material was imported from your existing
+        /// key management infrastructure or the KMS key lacks key material.
         /// </para>
         ///  
         /// <para>
-        /// When this value is <code>AWS_CLOUDHSM</code>, the key material was created in the
-        /// CloudHSM cluster associated with a custom key store.
+        /// When this value is <c>AWS_CLOUDHSM</c>, the key material was created in the CloudHSM
+        /// cluster associated with a custom key store.
         /// </para>
         /// </summary>
         public string Origin

@@ -266,13 +266,13 @@ namespace Amazon.LexRuntimeV2
         /// </para>
         ///  
         /// <para>
-        /// If you specify a bot or alias ID that doesn't exist, you receive a <code>BadRequestException.</code>
+        /// If you specify a bot or alias ID that doesn't exist, you receive a <c>BadRequestException.</c>
         /// 
         /// </para>
         ///  
         /// <para>
         /// If the locale doesn't exist in the bot, or if the locale hasn't been enables for the
-        /// alias, you receive a <code>BadRequestException</code>.
+        /// alias, you receive a <c>BadRequestException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
@@ -323,13 +323,13 @@ namespace Amazon.LexRuntimeV2
         /// </para>
         ///  
         /// <para>
-        /// If you specify a bot or alias ID that doesn't exist, you receive a <code>BadRequestException.</code>
+        /// If you specify a bot or alias ID that doesn't exist, you receive a <c>BadRequestException.</c>
         /// 
         /// </para>
         ///  
         /// <para>
         /// If the locale doesn't exist in the bot, or if the locale hasn't been enables for the
-        /// alias, you receive a <code>BadRequestException</code>.
+        /// alias, you receive a <c>BadRequestException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSession service method.</param>
@@ -381,8 +381,8 @@ namespace Amazon.LexRuntimeV2
         /// </para>
         ///  
         /// <para>
-        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <code>BadRequestException</code>.
-        /// If the locale doesn't exist or is not enabled for the alias, you receive a <code>BadRequestException</code>.
+        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <c>BadRequestException</c>.
+        /// If the locale doesn't exist or is not enabled for the alias, you receive a <c>BadRequestException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>
@@ -424,8 +424,8 @@ namespace Amazon.LexRuntimeV2
         /// </para>
         ///  
         /// <para>
-        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <code>BadRequestException</code>.
-        /// If the locale doesn't exist or is not enabled for the alias, you receive a <code>BadRequestException</code>.
+        /// If the bot, alias, or session identifier doesn't exist, Amazon Lex V2 returns a <c>BadRequestException</c>.
+        /// If the locale doesn't exist or is not enabled for the alias, you receive a <c>BadRequestException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSession service method.</param>

@@ -67,7 +67,7 @@ namespace Amazon.ManagedGrafana.Model
         /// </para>
         ///  
         /// <para>
-        ///  Valid values: <code>VIEWER</code>|<code>EDITOR</code>|<code>ADMIN</code> 
+        ///  Valid values: <c>VIEWER</c>|<c>EDITOR</c>|<c>ADMIN</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

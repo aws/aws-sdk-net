@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property HostResourceGroupArn. 
         /// <para>
         /// The ARN of the host resource group in which to launch the instances. If you specify
-        /// a host resource group ARN, omit the <b>Tenancy</b> parameter or set it to <code>host</code>.
+        /// a host resource group ARN, omit the <b>Tenancy</b> parameter or set it to <c>host</c>.
         /// </para>
         /// </summary>
         public string HostResourceGroupArn
@@ -157,7 +157,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PartitionNumber. 
         /// <para>
         /// The number of the partition the instance should launch in. Valid only if the placement
-        /// group strategy is set to <code>partition</code>.
+        /// group strategy is set to <c>partition</c>.
         /// </para>
         /// </summary>
         public int PartitionNumber

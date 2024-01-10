@@ -30,7 +30,7 @@ namespace Amazon.DirectoryService.Model
 {
     /// <summary>
     /// Contains information about the client certificate authentication settings for the
-    /// <code>RegisterCertificate</code> and <code>DescribeCertificate</code> operations.
+    /// <c>RegisterCertificate</c> and <c>DescribeCertificate</c> operations.
     /// </summary>
     public partial class ClientCertAuthSettings
     {

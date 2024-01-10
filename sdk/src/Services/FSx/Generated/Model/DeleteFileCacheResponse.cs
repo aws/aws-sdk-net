@@ -58,8 +58,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The cache lifecycle for the deletion request. If the <code>DeleteFileCache</code>
-        /// operation is successful, this status is <code>DELETING</code>.
+        /// The cache lifecycle for the deletion request. If the <c>DeleteFileCache</c> operation
+        /// is successful, this status is <c>DELETING</c>.
         /// </para>
         /// </summary>
         public FileCacheLifecycle Lifecycle

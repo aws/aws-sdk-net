@@ -38,8 +38,8 @@ namespace Amazon.DLM.Model
     /// If you choose to exclude boot volumes and you specify tags that consequently exclude
     /// all of the additional data volumes attached to an instance, then Amazon Data Lifecycle
     /// Manager will not create any snapshots for the affected instance, and it will emit
-    /// a <code>SnapshotsCreateFailed</code> Amazon CloudWatch metric. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor
+    /// a <c>SnapshotsCreateFailed</c> Amazon CloudWatch metric. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/monitor-dlm-cw-metrics.html">Monitor
     /// your policies using Amazon CloudWatch</a>.
     /// </para>
     /// </summary>
@@ -53,9 +53,9 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property ExcludeBootVolume. 
         /// <para>
         ///  <b>[Custom snapshot policies that target instances only]</b> Indicates whether to
-        /// exclude the root volume from multi-volume snapshot sets. The default is <code>false</code>.
-        /// If you specify <code>true</code>, then the root volumes attached to targeted instances
-        /// will be excluded from the multi-volume snapshot sets created by the policy.
+        /// exclude the root volume from multi-volume snapshot sets. The default is <c>false</c>.
+        /// If you specify <c>true</c>, then the root volumes attached to targeted instances will
+        /// be excluded from the multi-volume snapshot sets created by the policy.
         /// </para>
         /// </summary>
         public bool ExcludeBootVolume
@@ -101,10 +101,9 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property NoReboot. 
         /// <para>
         ///  <b>[Custom AMI policies only]</b> Indicates whether targeted instances are rebooted
-        /// when the lifecycle policy runs. <code>true</code> indicates that targeted instances
-        /// are not rebooted when the policy runs. <code>false</code> indicates that target instances
-        /// are rebooted when the policy runs. The default is <code>true</code> (instances are
-        /// not rebooted).
+        /// when the lifecycle policy runs. <c>true</c> indicates that targeted instances are
+        /// not rebooted when the policy runs. <c>false</c> indicates that target instances are
+        /// rebooted when the policy runs. The default is <c>true</c> (instances are not rebooted).
         /// </para>
         /// </summary>
         public bool NoReboot

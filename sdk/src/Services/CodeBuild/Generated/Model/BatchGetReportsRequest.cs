@@ -39,7 +39,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ReportArns. 
         /// <para>
-        ///  An array of ARNs that identify the <code>Report</code> objects to return. 
+        ///  An array of ARNs that identify the <c>Report</c> objects to return. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

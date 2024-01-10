@@ -30,9 +30,9 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Specifies the condition that streams must satisfy to be returned when you list streams
-    /// (see the <code>ListStreams</code> API). A condition has a comparison operation and
-    /// a value. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which
-    /// finds streams whose names start with a given prefix.
+    /// (see the <c>ListStreams</c> API). A condition has a comparison operation and a value.
+    /// Currently, you can specify only the <c>BEGINS_WITH</c> operator, which finds streams
+    /// whose names start with a given prefix.
     /// </summary>
     public partial class StreamNameCondition
     {
@@ -42,8 +42,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code>
-        /// operator, which finds streams whose names start with a given prefix.
+        /// A comparison operator. Currently, you can specify only the <c>BEGINS_WITH</c> operator,
+        /// which finds streams whose names start with a given prefix.
         /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator

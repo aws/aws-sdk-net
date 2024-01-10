@@ -65,26 +65,25 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COMPLETED</code>: The drift detection operation completed without failing on
-        /// any stack instances.
+        ///  <c>COMPLETED</c>: The drift detection operation completed without failing on any
+        /// stack instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The drift detection operation exceeded the specified failure
-        /// tolerance.
+        ///  <c>FAILED</c>: The drift detection operation exceeded the specified failure tolerance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PARTIAL_SUCCESS</code>: The drift detection operation completed without exceeding
+        ///  <c>PARTIAL_SUCCESS</c>: The drift detection operation completed without exceeding
         /// the failure tolerance for the operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code>: The drift detection operation is currently being performed.
+        ///  <c>IN_PROGRESS</c>: The drift detection operation is currently being performed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code>: The user has canceled the drift detection operation.
+        ///  <c>STOPPED</c>: The user has canceled the drift detection operation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,19 +129,19 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DRIFTED</code>: One or more of the stack instances belonging to the stack set
-        /// stack differs from the expected template and parameter configuration. A stack instance
-        /// is considered to have drifted if one or more of the resources in the associated stack
+        ///  <c>DRIFTED</c>: One or more of the stack instances belonging to the stack set stack
+        /// differs from the expected template and parameter configuration. A stack instance is
+        /// considered to have drifted if one or more of the resources in the associated stack
         /// have drifted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked the stack set for drift.
+        ///  <c>NOT_CHECKED</c>: CloudFormation hasn't checked the stack set for drift.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: All of the stack instances belonging to the stack set stack
-        /// match from the expected template and parameter configuration.
+        ///  <c>IN_SYNC</c>: All of the stack instances belonging to the stack set stack match
+        /// from the expected template and parameter configuration.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -220,7 +219,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property LastDriftCheckTimestamp. 
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
-        /// stack set. This value will be <code>NULL</code> for any stack set on which drift detection
+        /// stack set. This value will be <c>NULL</c> for any stack set on which drift detection
         /// hasn't yet been performed.
         /// </para>
         /// </summary>

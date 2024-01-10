@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned if the request specified an <code>IpAddress</code> that is already in use
-    /// in the subnet.
+    /// Returned if the request specified an <c>IpAddress</c> that is already in use in the
+    /// subnet.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

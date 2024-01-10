@@ -45,8 +45,8 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This field is included in the response only when the <code>Recipient</code> parameter
-        /// in the request includes a valid attestation document from an Amazon Web Services Nitro
+        /// This field is included in the response only when the <c>Recipient</c> parameter in
+        /// the request includes a valid attestation document from an Amazon Web Services Nitro
         /// enclave. For information about the interaction between KMS and Amazon Web Services
         /// Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
         /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
@@ -112,7 +112,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the response includes the <code>CiphertextForRecipient</code> field, the <code>Plaintext</code>
+        /// If the response includes the <c>CiphertextForRecipient</c> field, the <c>Plaintext</c>
         /// field is null or empty.
         /// </para>
         /// </summary>

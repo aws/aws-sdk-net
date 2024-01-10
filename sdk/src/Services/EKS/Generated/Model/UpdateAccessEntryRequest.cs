@@ -81,28 +81,28 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property KubernetesGroups. 
         /// <para>
-        /// The value for <code>name</code> that you've specified for <code>kind: Group</code>
-        /// as a <code>subject</code> in a Kubernetes <code>RoleBinding</code> or <code>ClusterRoleBinding</code>
-        /// object. Amazon EKS doesn't confirm that the value for <code>name</code> exists in
-        /// any bindings on your cluster. You can specify one or more names.
+        /// The value for <c>name</c> that you've specified for <c>kind: Group</c> as a <c>subject</c>
+        /// in a Kubernetes <c>RoleBinding</c> or <c>ClusterRoleBinding</c> object. Amazon EKS
+        /// doesn't confirm that the value for <c>name</c> exists in any bindings on your cluster.
+        /// You can specify one or more names.
         /// </para>
         ///  
         /// <para>
-        /// Kubernetes authorizes the <code>principalArn</code> of the access entry to access
-        /// any cluster objects that you've specified in a Kubernetes <code>Role</code> or <code>ClusterRole</code>
-        /// object that is also specified in a binding's <code>roleRef</code>. For more information
-        /// about creating Kubernetes <code>RoleBinding</code>, <code>ClusterRoleBinding</code>,
-        /// <code>Role</code>, or <code>ClusterRole</code> objects, see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using
+        /// Kubernetes authorizes the <c>principalArn</c> of the access entry to access any cluster
+        /// objects that you've specified in a Kubernetes <c>Role</c> or <c>ClusterRole</c> object
+        /// that is also specified in a binding's <c>roleRef</c>. For more information about creating
+        /// Kubernetes <c>RoleBinding</c>, <c>ClusterRoleBinding</c>, <c>Role</c>, or <c>ClusterRole</c>
+        /// objects, see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using
         /// RBAC Authorization in the Kubernetes documentation</a>.
         /// </para>
         ///  
         /// <para>
-        /// If you want Amazon EKS to authorize the <code>principalArn</code> (instead of, or
-        /// in addition to Kubernetes authorizing the <code>principalArn</code>), you can associate
-        /// one or more access policies to the access entry using <code>AssociateAccessPolicy</code>.
-        /// If you associate any access policies, the <code>principalARN</code> has all permissions
-        /// assigned in the associated access policies and all permissions in any Kubernetes <code>Role</code>
-        /// or <code>ClusterRole</code> objects that the group names are bound to.
+        /// If you want Amazon EKS to authorize the <c>principalArn</c> (instead of, or in addition
+        /// to Kubernetes authorizing the <c>principalArn</c>), you can associate one or more
+        /// access policies to the access entry using <c>AssociateAccessPolicy</c>. If you associate
+        /// any access policies, the <c>principalARN</c> has all permissions assigned in the associated
+        /// access policies and all permissions in any Kubernetes <c>Role</c> or <c>ClusterRole</c>
+        /// objects that the group names are bound to.
         /// </para>
         /// </summary>
         public List<string> KubernetesGroups
@@ -120,7 +120,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The ARN of the IAM principal for the <code>AccessEntry</code>.
+        /// The ARN of the IAM principal for the <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -57,16 +57,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AllocationStrategy. 
         /// <para>
-        /// Specifies one of the following strategies to launch Spot Instance fleets: <code>price-capacity-optimized</code>,
-        /// <code>capacity-optimized</code>, <code>lowest-price</code>, or <code>diversified</code>.
-        /// For more information on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
+        /// Specifies one of the following strategies to launch Spot Instance fleets: <c>price-capacity-optimized</c>,
+        /// <c>capacity-optimized</c>, <c>lowest-price</c>, or <c>diversified</c>. For more information
+        /// on the provisioning strategies, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-allocation-strategy.html">Allocation
         /// strategies for Spot Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         ///  <note> 
         /// <para>
         /// When you launch a Spot Instance fleet with the old console, it automatically launches
-        /// with the <code>capacity-optimized</code> strategy. You can't change the allocation
-        /// strategy from the old console.
+        /// with the <c>capacity-optimized</c> strategy. You can't change the allocation strategy
+        /// from the old console.
         /// </para>
         ///  </note>
         /// </summary>
@@ -118,12 +118,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property TimeoutAction. 
         /// <para>
-        /// The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when
-        /// the <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances
-        /// could not be provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code>
-        /// and <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot
-        /// Instances are available, On-Demand Instances should be provisioned to fulfill any
-        /// remaining Spot capacity.
+        /// The action to take when <c>TargetSpotCapacity</c> has not been fulfilled when the
+        /// <c>TimeoutDurationMinutes</c> has expired; that is, when all Spot Instances could
+        /// not be provisioned within the Spot provisioning timeout. Valid values are <c>TERMINATE_CLUSTER</c>
+        /// and <c>SWITCH_TO_ON_DEMAND</c>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances
+        /// are available, On-Demand Instances should be provisioned to fulfill any remaining
+        /// Spot capacity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,9 +143,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TimeoutDurationMinutes. 
         /// <para>
         /// The Spot provisioning timeout period in minutes. If Spot Instances are not provisioned
-        /// within this time period, the <code>TimeOutAction</code> is taken. Minimum value is
-        /// 5 and maximum value is 1440. The timeout applies only during initial provisioning,
-        /// when the cluster is first created.
+        /// within this time period, the <c>TimeOutAction</c> is taken. Minimum value is 5 and
+        /// maximum value is 1440. The timeout applies only during initial provisioning, when
+        /// the cluster is first created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

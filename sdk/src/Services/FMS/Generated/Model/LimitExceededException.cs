@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+    /// The operation exceeds a resource limit, for example, the maximum number of <c>policy</c>
     /// objects that you can create for an Amazon Web Services account. For more information,
     /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
     /// Manager Limits</a> in the <i>WAF Developer Guide</i>.

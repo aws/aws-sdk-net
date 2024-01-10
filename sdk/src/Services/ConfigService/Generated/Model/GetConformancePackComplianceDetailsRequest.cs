@@ -62,7 +62,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A <code>ConformancePackEvaluationFilters</code> object.
+        /// A <c>ConformancePackEvaluationFilters</c> object.
         /// </para>
         /// </summary>
         public ConformancePackEvaluationFilters Filters
@@ -100,7 +100,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned in a previous request that you use to request
+        /// The <c>nextToken</c> string returned in a previous request that you use to request
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>

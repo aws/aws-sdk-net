@@ -31,20 +31,20 @@ namespace Amazon.StepFunctions.Model
     /// <summary>
     /// Container for the parameters to the GetExecutionHistory operation.
     /// Returns the history of the specified execution as a list of events. By default, the
-    /// results are returned in ascending order of the <code>timeStamp</code> of the events.
-    /// Use the <code>reverseOrder</code> parameter to get the latest events first.
+    /// results are returned in ascending order of the <c>timeStamp</c> of the events. Use
+    /// the <c>reverseOrder</c> parameter to get the latest events first.
     /// 
     ///  
     /// <para>
-    /// If <code>nextToken</code> is returned, there are more results available. The value
-    /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
-    /// again using the returned token to retrieve the next page. Keep all other arguments
-    /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
-    /// token will return an <i>HTTP 400 InvalidToken</i> error.
+    /// If <c>nextToken</c> is returned, there are more results available. The value of <c>nextToken</c>
+    /// is a unique pagination token for each page. Make the call again using the returned
+    /// token to retrieve the next page. Keep all other arguments unchanged. Each pagination
+    /// token expires after 24 hours. Using an expired pagination token will return an <i>HTTP
+    /// 400 InvalidToken</i> error.
     /// </para>
     ///  
     /// <para>
-    /// This API action is not supported by <code>EXPRESS</code> state machines.
+    /// This API action is not supported by <c>EXPRESS</c> state machines.
     /// </para>
     /// </summary>
     public partial class GetExecutionHistoryRequest : AmazonStepFunctionsRequest
@@ -78,7 +78,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property IncludeExecutionData. 
         /// <para>
         /// You can select whether execution data (input or output of a history event) is returned.
-        /// The default is <code>true</code>.
+        /// The default is <c>true</c>.
         /// </para>
         /// </summary>
         public bool IncludeExecutionData
@@ -96,7 +96,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that are returned per call. You can use <code>nextToken</code>
+        /// The maximum number of results that are returned per call. You can use <c>nextToken</c>
         /// to obtain further pages of results. The default is 100 and the maximum allowed page
         /// size is 1000. A value of 0 uses the default.
         /// </para>
@@ -122,11 +122,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <code>nextToken</code> is returned, there are more results available. The value
-        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
-        /// again using the returned token to retrieve the next page. Keep all other arguments
-        /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
-        /// token will return an <i>HTTP 400 InvalidToken</i> error.
+        /// If <c>nextToken</c> is returned, there are more results available. The value of <c>nextToken</c>
+        /// is a unique pagination token for each page. Make the call again using the returned
+        /// token to retrieve the next page. Keep all other arguments unchanged. Each pagination
+        /// token expires after 24 hours. Using an expired pagination token will return an <i>HTTP
+        /// 400 InvalidToken</i> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -145,7 +145,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ReverseOrder. 
         /// <para>
-        /// Lists events in descending order of their <code>timeStamp</code>.
+        /// Lists events in descending order of their <c>timeStamp</c>.
         /// </para>
         /// </summary>
         public bool ReverseOrder

@@ -63,27 +63,27 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't
-        /// yet detected the DKIM records in the DNS configuration for the domain.
+        ///  <c>PENDING</c> – The verification process was initiated, but Amazon SES hasn't yet
+        /// detected the DKIM records in the DNS configuration for the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> – The verification process completed successfully.
+        ///  <c>SUCCESS</c> – The verification process completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – The verification process failed. This typically occurs when
-        /// Amazon SES fails to find the DKIM records in the DNS configuration of the domain.
+        ///  <c>FAILED</c> – The verification process failed. This typically occurs when Amazon
+        /// SES fails to find the DKIM records in the DNS configuration of the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from
-        /// determining the DKIM authentication status of the domain.
+        ///  <c>TEMPORARY_FAILURE</c> – A temporary issue is preventing Amazon SES from determining
+        /// the DKIM authentication status of the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for
-        /// the domain.
+        ///  <c>NOT_STARTED</c> – The DKIM verification process hasn't been initiated for the
+        /// domain.
         /// </para>
         ///  </li> </ul>
         /// </summary>

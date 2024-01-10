@@ -39,15 +39,15 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property AdMarkerPassthrough. 
         /// <para>
-        /// For HLS, when set to <code>true</code>, MediaTailor passes through <code>EXT-X-CUE-IN</code>,
-        /// <code>EXT-X-CUE-OUT</code>, and <code>EXT-X-SPLICEPOINT-SCTE35</code> ad markers from
-        /// the origin manifest to the MediaTailor personalized manifest.
+        /// For HLS, when set to <c>true</c>, MediaTailor passes through <c>EXT-X-CUE-IN</c>,
+        /// <c>EXT-X-CUE-OUT</c>, and <c>EXT-X-SPLICEPOINT-SCTE35</c> ad markers from the origin
+        /// manifest to the MediaTailor personalized manifest.
         /// </para>
         ///  
         /// <para>
-        /// No logic is applied to these ad markers. For example, if <code>EXT-X-CUE-OUT</code>
-        /// has a value of <code>60</code>, but no ads are filled for that ad break, MediaTailor
-        /// will not set the value to <code>0</code>.
+        /// No logic is applied to these ad markers. For example, if <c>EXT-X-CUE-OUT</c> has
+        /// a value of <c>60</c>, but no ads are filled for that ad break, MediaTailor will not
+        /// set the value to <c>0</c>.
         /// </para>
         /// </summary>
         public AdMarkerPassthrough AdMarkerPassthrough

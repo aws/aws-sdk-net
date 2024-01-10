@@ -44,7 +44,7 @@ namespace Amazon.WAFRegional.Model
     /// <para>
     /// Specifies the part of a web request that you want to inspect for snippets of malicious
     /// SQL code and indicates whether you want to add the specification to a <a>SqlInjectionMatchSet</a>
-    /// or delete it from a <code>SqlInjectionMatchSet</code>.
+    /// or delete it from a <c>SqlInjectionMatchSet</c>.
     /// </para>
     /// </summary>
     public partial class SqlInjectionMatchSetUpdate
@@ -55,9 +55,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specify <code>INSERT</code> to add a <a>SqlInjectionMatchSetUpdate</a> to a <a>SqlInjectionMatchSet</a>.
-        /// Use <code>DELETE</code> to remove a <code>SqlInjectionMatchSetUpdate</code> from a
-        /// <code>SqlInjectionMatchSet</code>.
+        /// Specify <c>INSERT</c> to add a <a>SqlInjectionMatchSetUpdate</a> to a <a>SqlInjectionMatchSet</a>.
+        /// Use <c>DELETE</c> to remove a <c>SqlInjectionMatchSetUpdate</c> from a <c>SqlInjectionMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

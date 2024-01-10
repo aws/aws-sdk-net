@@ -53,9 +53,9 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  
     /// <para>
-    /// To make a <code>StartCallAnalyticsJob</code> request, you must first upload your media
-    /// file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the
-    /// file using the <code>Media</code> parameter.
+    /// To make a <c>StartCallAnalyticsJob</c> request, you must first upload your media file
+    /// into an Amazon S3 bucket; you can then specify the Amazon S3 location of the file
+    /// using the <c>Media</c> parameter.
     /// </para>
     ///  
     /// <para>
@@ -63,38 +63,36 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  
     /// <para>
-    /// You must include the following parameters in your <code>StartCallAnalyticsJob</code>
-    /// request:
+    /// You must include the following parameters in your <c>StartCallAnalyticsJob</c> request:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>region</code>: The Amazon Web Services Region where you are making your request.
+    ///  <c>region</c>: The Amazon Web Services Region where you are making your request.
     /// For a list of Amazon Web Services Regions supported with Amazon Transcribe, refer
     /// to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon
     /// Transcribe endpoints and quotas</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CallAnalyticsJobName</code>: A custom name that you create for your transcription
+    ///  <c>CallAnalyticsJobName</c>: A custom name that you create for your transcription
     /// job that's unique within your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DataAccessRoleArn</code>: The Amazon Resource Name (ARN) of an IAM role that
-    /// has permissions to access the Amazon S3 bucket that contains your input files.
+    ///  <c>DataAccessRoleArn</c>: The Amazon Resource Name (ARN) of an IAM role that has
+    /// permissions to access the Amazon S3 bucket that contains your input files.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Media</code> (<code>MediaFileUri</code> or <code>RedactedMediaFileUri</code>):
-    /// The Amazon S3 location of your media file.
+    ///  <c>Media</c> (<c>MediaFileUri</c> or <c>RedactedMediaFileUri</c>): The Amazon S3
+    /// location of your media file.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
     /// With Call Analytics, you can redact the audio contained in your media file by including
-    /// <code>RedactedMediaFileUri</code>, instead of <code>MediaFileUri</code>, to specify
-    /// the location of your input audio. If you choose to redact your audio, you can find
-    /// your redacted media at the location specified in the <code>RedactedMediaFileUri</code>
-    /// field of your response.
+    /// <c>RedactedMediaFileUri</c>, instead of <c>MediaFileUri</c>, to specify the location
+    /// of your input audio. If you choose to redact your audio, you can find your redacted
+    /// media at the location specified in the <c>RedactedMediaFileUri</c> field of your response.
     /// </para>
     ///  </note>
     /// </summary>
@@ -117,7 +115,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
         /// Web Services account. If you try to create a new job with the same name as an existing
-        /// job, you get a <code>ConflictException</code> error.
+        /// job, you get a <c>ConflictException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -137,9 +135,9 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property ChannelDefinitions. 
         /// <para>
         /// Makes it possible to specify which speaker is on which channel. For example, if your
-        /// agent is the first participant to speak, you would set <code>ChannelId</code> to <code>0</code>
-        /// (to indicate the first channel) and <code>ParticipantRole</code> to <code>AGENT</code>
-        /// (to indicate that it's the agent speaking).
+        /// agent is the first participant to speak, you would set <c>ChannelId</c> to <c>0</c>
+        /// (to indicate the first channel) and <c>ParticipantRole</c> to <c>AGENT</c> (to indicate
+        /// that it's the agent speaking).
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -165,8 +163,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>.
         /// </para>
         ///  
         /// <para>
@@ -219,19 +217,19 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the KMS key ID itself. For example, <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
+        /// Use an alias for the KMS key ID. For example, <c>alias/ExampleAlias</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -240,11 +238,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the ARN for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -254,7 +252,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// If you specify a KMS key to encrypt your output, you must also specify an output location
-        /// using the <code>OutputLocation</code> parameter.
+        /// using the <c>OutputLocation</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -296,19 +294,19 @@ namespace Amazon.TranscribeService.Model
         ///  </li> </ol> 
         /// <para>
         /// Unless you specify a file name (option 3), the name of your output file has a default
-        /// value that matches the name you specified for your transcription job using the <code>CallAnalyticsJobName</code>
+        /// value that matches the name you specified for your transcription job using the <c>CallAnalyticsJobName</c>
         /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// You can specify a KMS key to encrypt your output using the <code>OutputEncryptionKMSKeyId</code>
+        /// You can specify a KMS key to encrypt your output using the <c>OutputEncryptionKMSKeyId</c>
         /// parameter. If you do not specify a KMS key, Amazon Transcribe uses the default Amazon
         /// S3 key for server-side encryption.
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify <code>OutputLocation</code>, your transcript is placed in a
-        /// service-managed Amazon S3 bucket and you are provided with a URI to access your transcript.
+        /// If you do not specify <c>OutputLocation</c>, your transcript is placed in a service-managed
+        /// Amazon S3 bucket and you are provided with a URI to access your transcript.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

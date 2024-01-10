@@ -79,7 +79,7 @@ namespace Amazon.AppConfig.Model
         /// <para>
         /// A list of extensions that were processed as part of the deployment. The extensions
         /// that were previously associated to the configuration profile, environment, or the
-        /// application when <code>StartDeployment</code> was called.
+        /// application when <c>StartDeployment</c> was called.
         /// </para>
         /// </summary>
         public List<AppliedExtension> AppliedExtensions

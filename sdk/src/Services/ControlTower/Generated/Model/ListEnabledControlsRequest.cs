@@ -80,7 +80,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property TargetIdentifier. 
         /// <para>
-        /// The ARN of the organizational unit. For information on how to find the <code>targetIdentifier</code>,
+        /// The ARN of the organizational unit. For information on how to find the <c>targetIdentifier</c>,
         /// see <a href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
         /// overview page</a>.
         /// </para>

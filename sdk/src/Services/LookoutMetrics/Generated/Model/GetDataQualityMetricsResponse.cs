@@ -38,8 +38,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property AnomalyDetectorDataQualityMetricList. 
         /// <para>
-        /// A list of the data quality metrics for the <code>AnomalyDetectorArn</code> that you
-        /// requested.
+        /// A list of the data quality metrics for the <c>AnomalyDetectorArn</c> that you requested.
         /// </para>
         /// </summary>
         public List<AnomalyDetectorDataQualityMetric> AnomalyDetectorDataQualityMetricList

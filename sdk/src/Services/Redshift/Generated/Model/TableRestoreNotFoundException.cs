@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The specified <code>TableRestoreRequestId</code> value was not found.
+    /// The specified <c>TableRestoreRequestId</c> value was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

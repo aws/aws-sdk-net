@@ -58,7 +58,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token indicating that there are additional custom verification email templates available
-        /// to be listed. Pass this token to a subsequent call to <code>ListCustomVerificationEmailTemplates</code>
+        /// to be listed. Pass this token to a subsequent call to <c>ListCustomVerificationEmailTemplates</c>
         /// to retrieve the next 50 custom verification email templates.
         /// </para>
         /// </summary>

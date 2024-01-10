@@ -40,8 +40,8 @@ namespace Amazon.WAFV2.Model
     ///  
     /// <para>
     /// Vendors, you can use the managed rule set APIs to provide controlled rollout of your
-    /// versioned managed rule group offerings for your customers. The APIs are <code>ListManagedRuleSets</code>,
-    /// <code>GetManagedRuleSet</code>, <code>PutManagedRuleSetVersions</code>, and <code>UpdateManagedRuleSetVersionExpiryDate</code>.
+    /// versioned managed rule group offerings for your customers. The APIs are <c>ListManagedRuleSets</c>,
+    /// <c>GetManagedRuleSet</c>, <c>PutManagedRuleSetVersions</c>, and <c>UpdateManagedRuleSetVersionExpiryDate</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -55,8 +55,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// A unique identifier for the managed rule set. The ID is returned in the responses
-        /// to commands like <code>list</code>. You provide it to operations like <code>get</code>
-        /// and <code>update</code>.
+        /// to commands like <c>list</c>. You provide it to operations like <c>get</c> and <c>update</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -112,8 +111,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// CLI - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
-        /// --region=us-east-1</code>. 
+        /// CLI - Specify the Region when you use the CloudFront scope: <c>--scope=CLOUDFRONT
+        /// --region=us-east-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>

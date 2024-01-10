@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Specifies the minimum and maximum for the <code>BaselineEbsBandwidthMbps</code> object
-    /// when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    /// Specifies the minimum and maximum for the <c>BaselineEbsBandwidthMbps</c> object when
+    /// you specify <a>InstanceRequirements</a> for an Auto Scaling group.
     /// </summary>
     public partial class BaselineEbsBandwidthMbpsRequest
     {

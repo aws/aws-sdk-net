@@ -39,10 +39,10 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>DescribePullThroughCacheRulesRequest</code>
-        /// request. When the results of a <code>DescribePullThroughCacheRulesRequest</code> request
-        /// exceed <code>maxResults</code>, this value can be used to retrieve the next page of
-        /// results. This value is null when there are no more results to return.
+        /// The <c>nextToken</c> value to include in a future <c>DescribePullThroughCacheRulesRequest</c>
+        /// request. When the results of a <c>DescribePullThroughCacheRulesRequest</c> request
+        /// exceed <c>maxResults</c>, this value can be used to retrieve the next page of results.
+        /// This value is null when there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

@@ -42,8 +42,8 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  You can also call the <code>DetectFaces</code> operation and use the bounding boxes
-    /// in the response to make face crops, which then you can pass in to the <code>SearchFacesByImage</code>
+    ///  You can also call the <c>DetectFaces</c> operation and use the bounding boxes in
+    /// the response to make face crops, which then you can pass in to the <c>SearchFacesByImage</c>
     /// operation. 
     /// </para>
     ///  </note> 
@@ -57,15 +57,15 @@ namespace Amazon.Rekognition.Model
     /// <para>
     ///  The response returns an array of faces that match, ordered by similarity score with
     /// the highest similarity first. More specifically, it is an array of metadata for each
-    /// face match found. Along with the metadata, the response also includes a <code>similarity</code>
+    /// face match found. Along with the metadata, the response also includes a <c>similarity</c>
     /// indicating how similar the face is to the input face. In the response, the operation
     /// also returns the bounding box (and a confidence level that the bounding box contains
     /// a face) of the face that Amazon Rekognition used for the input image. 
     /// </para>
     ///  
     /// <para>
-    /// If no faces are detected in the input image, <code>SearchFacesByImage</code> returns
-    /// an <code>InvalidParameterException</code> error. 
+    /// If no faces are detected in the input image, <c>SearchFacesByImage</c> returns an
+    /// <c>InvalidParameterException</c> error. 
     /// </para>
     ///  
     /// <para>
@@ -74,12 +74,11 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>QualityFilter</code> input parameter allows you to filter out detected faces
-    /// that don’t meet a required quality bar. The quality bar is based on a variety of common
-    /// use cases. Use <code>QualityFilter</code> to set the quality bar for filtering by
-    /// specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do
-    /// not want to filter detected faces, specify <code>NONE</code>. The default value is
-    /// <code>NONE</code>.
+    /// The <c>QualityFilter</c> input parameter allows you to filter out detected faces that
+    /// don’t meet a required quality bar. The quality bar is based on a variety of common
+    /// use cases. Use <c>QualityFilter</c> to set the quality bar for filtering by specifying
+    /// <c>LOW</c>, <c>MEDIUM</c>, or <c>HIGH</c>. If you do not want to filter detected faces,
+    /// specify <c>NONE</c>. The default value is <c>NONE</c>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -89,7 +88,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:SearchFacesByImage</code>
+    /// This operation requires permissions to perform the <c>rekognition:SearchFacesByImage</c>
     /// action.
     /// </para>
     /// </summary>
@@ -151,7 +150,7 @@ namespace Amazon.Rekognition.Model
         ///  
         /// <para>
         /// If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. For more information, see Images
+        /// image bytes passed using the <c>Bytes</c> field. For more information, see Images
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>
@@ -192,14 +191,14 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property QualityFilter. 
         /// <para>
         /// A filter that specifies a quality bar for how much filtering is done to identify faces.
-        /// Filtered faces aren't searched for in the collection. If you specify <code>AUTO</code>,
-        /// Amazon Rekognition chooses the quality bar. If you specify <code>LOW</code>, <code>MEDIUM</code>,
-        /// or <code>HIGH</code>, filtering removes all faces that don’t meet the chosen quality
-        /// bar. The quality bar is based on a variety of common use cases. Low-quality detections
+        /// Filtered faces aren't searched for in the collection. If you specify <c>AUTO</c>,
+        /// Amazon Rekognition chooses the quality bar. If you specify <c>LOW</c>, <c>MEDIUM</c>,
+        /// or <c>HIGH</c>, filtering removes all faces that don’t meet the chosen quality bar.
+        /// The quality bar is based on a variety of common use cases. Low-quality detections
         /// can occur for a number of reasons. Some examples are an object that's misidentified
         /// as a face, a face that's too blurry, or a face with a pose that's too extreme to use.
-        /// If you specify <code>NONE</code>, no filtering is performed. The default value is
-        /// <code>NONE</code>. 
+        /// If you specify <c>NONE</c>, no filtering is performed. The default value is <c>NONE</c>.
+        /// 
         /// </para>
         ///  
         /// <para>

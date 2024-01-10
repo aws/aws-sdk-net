@@ -30,8 +30,7 @@ namespace Amazon.AWSSupport.Model
 {
     /// <summary>
     /// Returns an array of <a href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a>
-    /// objects and a <code>nextToken</code> that defines a point for pagination in the result
-    /// set.
+    /// objects and a <c>nextToken</c> that defines a point for pagination in the result set.
     /// </summary>
     public partial class DescribeCasesResponse : AmazonWebServiceResponse
     {

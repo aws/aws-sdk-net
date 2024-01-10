@@ -43,8 +43,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property GeoLocationDetailsList. 
         /// <para>
-        /// A complex type that contains one <code>GeoLocationDetails</code> element for each
-        /// location that Amazon Route 53 supports for geolocation.
+        /// A complex type that contains one <c>GeoLocationDetails</c> element for each location
+        /// that Amazon Route 53 supports for geolocation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,10 +64,10 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A value that indicates whether more locations remain to be listed after the last location
-        /// in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>.
-        /// To get more values, submit another request and include the values of <code>NextContinentCode</code>,
-        /// <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>,
-        /// <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.
+        /// in this response. If so, the value of <c>IsTruncated</c> is <c>true</c>. To get more
+        /// values, submit another request and include the values of <c>NextContinentCode</c>,
+        /// <c>NextCountryCode</c>, and <c>NextSubdivisionCode</c> in the <c>startcontinentcode</c>,
+        /// <c>startcountrycode</c>, and <c>startsubdivisioncode</c>, as applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -86,10 +86,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextContinentCode. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
-        /// to display more locations. Enter the value of <code>NextContinentCode</code> in the
-        /// <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code>
-        /// request.
+        /// If <c>IsTruncated</c> is <c>true</c>, you can make a follow-up request to display
+        /// more locations. Enter the value of <c>NextContinentCode</c> in the <c>startcontinentcode</c>
+        /// parameter in another <c>ListGeoLocations</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -108,9 +107,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextCountryCode. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
-        /// to display more locations. Enter the value of <code>NextCountryCode</code> in the
-        /// <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.
+        /// If <c>IsTruncated</c> is <c>true</c>, you can make a follow-up request to display
+        /// more locations. Enter the value of <c>NextCountryCode</c> in the <c>startcountrycode</c>
+        /// parameter in another <c>ListGeoLocations</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
@@ -129,10 +128,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextSubdivisionCode. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request
-        /// to display more locations. Enter the value of <code>NextSubdivisionCode</code> in
-        /// the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code>
-        /// request.
+        /// If <c>IsTruncated</c> is <c>true</c>, you can make a follow-up request to display
+        /// more locations. Enter the value of <c>NextSubdivisionCode</c> in the <c>startsubdivisioncode</c>
+        /// parameter in another <c>ListGeoLocations</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
@@ -151,7 +149,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for <code>MaxItems</code> in the request.
+        /// The value that you specified for <c>MaxItems</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

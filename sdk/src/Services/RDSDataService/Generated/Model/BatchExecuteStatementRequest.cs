@@ -40,7 +40,7 @@ namespace Amazon.RDSDataService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If a call isn't part of a transaction because it doesn't include the <code>transactionID</code>
+    /// If a call isn't part of a transaction because it doesn't include the <c>transactionID</c>
     /// parameter, changes that result from the call are committed automatically.
     /// </para>
     ///  
@@ -104,7 +104,7 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the <code>ExecuteStatement</code> operation instead of the <code>BatchExecuteStatement</code>
+        /// Use the <c>ExecuteStatement</c> operation instead of the <c>BatchExecuteStatement</c>
         /// operation.
         /// </para>
         ///  </li> </ul> <note> 
@@ -151,7 +151,7 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, the <code>schema</code> parameter isn't supported.
+        /// Currently, the <c>schema</c> parameter isn't supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -215,7 +215,7 @@ namespace Amazon.RDSDataService.Model
         /// <summary>
         /// Gets and sets the property TransactionId. 
         /// <para>
-        /// The identifier of a transaction that was started by using the <code>BeginTransaction</code>
+        /// The identifier of a transaction that was started by using the <c>BeginTransaction</c>
         /// operation. Specify the transaction ID of the transaction that you want to include
         /// the SQL statement in.
         /// </para>

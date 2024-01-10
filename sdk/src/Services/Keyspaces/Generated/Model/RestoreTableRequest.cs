@@ -30,7 +30,7 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreTable operation.
-    /// Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code>
+    /// Restores the specified table to the specified point in time within the <c>earliest_restorable_timestamp</c>
     /// and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
     /// Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
     /// 
@@ -42,17 +42,17 @@ namespace Amazon.Keyspaces.Model
     ///  
     /// <para>
     /// When you restore using point in time recovery, Amazon Keyspaces restores your source
-    /// table's schema and data to the state based on the selected timestamp <code>(day:hour:minute:second)</code>
+    /// table's schema and data to the state based on the selected timestamp <c>(day:hour:minute:second)</c>
     /// to a new table. The Time to Live (TTL) settings are also restored to the state based
     /// on the selected timestamp.
     /// </para>
     ///  
     /// <para>
-    /// In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code>
-    /// restores the capacity mode, encryption, and point-in-time recovery settings from the
-    /// source table. Unlike the table's schema data and TTL settings, which are restored
-    /// based on the selected timestamp, these settings are always restored based on the table's
-    /// settings as of the current time or when the table was deleted.
+    /// In addition to the table's schema, data, and TTL settings, <c>RestoreTable</c> restores
+    /// the capacity mode, encryption, and point-in-time recovery settings from the source
+    /// table. Unlike the table's schema data and TTL settings, which are restored based on
+    /// the selected timestamp, these settings are always restored based on the table's settings
+    /// as of the current time or when the table was deleted.
     /// </para>
     ///  
     /// <para>
@@ -118,16 +118,16 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>throughputMode:PAY_PER_REQUEST</code> 
+        ///  <c>throughputMode:PAY_PER_REQUEST</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
-        /// and <code>writeCapacityUnits</code> as input.
+        ///  <c>throughputMode:PROVISIONED</c> - Provisioned capacity mode requires <c>readCapacityUnits</c>
+        /// and <c>writeCapacityUnits</c> as input.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
+        /// The default is <c>throughput_mode:PAY_PER_REQUEST</c>.
         /// </para>
         ///  
         /// <para>
@@ -155,17 +155,17 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        ///  <c>type:AWS_OWNED_KMS_KEY</c> - This key is owned by Amazon Keyspaces. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and
-        /// is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        ///  <c>type:CUSTOMER_MANAGED_KMS_KEY</c> - This key is stored in your account and is
+        /// created, owned, and managed by you. This option requires the <c>kms_key_identifier</c>
         /// of the KMS key in Amazon Resource Name (ARN) format as input. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>type:AWS_OWNED_KMS_KEY</code>.
+        /// The default is <c>type:AWS_OWNED_KMS_KEY</c>.
         /// </para>
         ///  
         /// <para>
@@ -188,20 +188,20 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property PointInTimeRecoveryOverride. 
         /// <para>
-        /// Specifies the <code>pointInTimeRecovery</code> settings for the target table. The
-        /// options are:
+        /// Specifies the <c>pointInTimeRecovery</c> settings for the target table. The options
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>status=ENABLED</code> 
+        ///  <c>status=ENABLED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status=DISABLED</code> 
+        ///  <c>status=DISABLED</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If it's not specified, the default is <code>status=DISABLED</code>.
+        /// If it's not specified, the default is <c>status=DISABLED</c>.
         /// </para>
         ///  
         /// <para>

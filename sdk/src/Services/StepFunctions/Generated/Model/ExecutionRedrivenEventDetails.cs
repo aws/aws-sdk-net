@@ -39,8 +39,8 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property RedriveCount. 
         /// <para>
         /// The number of times you've redriven an execution. If you have not yet redriven an
-        /// execution, the <code>redriveCount</code> is 0. This count is not updated for redrives
-        /// that failed to start or are pending to be redriven.
+        /// execution, the <c>redriveCount</c> is 0. This count is not updated for redrives that
+        /// failed to start or are pending to be redriven.
         /// </para>
         /// </summary>
         public int RedriveCount

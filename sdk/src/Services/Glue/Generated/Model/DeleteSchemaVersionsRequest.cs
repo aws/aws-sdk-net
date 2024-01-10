@@ -32,21 +32,21 @@ namespace Amazon.Glue.Model
     /// Container for the parameters to the DeleteSchemaVersions operation.
     /// Remove versions from the specified schema. A version number or range may be supplied.
     /// If the compatibility mode forbids deleting of a version that is necessary, such as
-    /// BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API
-    /// after this call will list the status of the deleted versions.
+    /// BACKWARDS_FULL, an error is returned. Calling the <c>GetSchemaVersions</c> API after
+    /// this call will list the status of the deleted versions.
     /// 
     ///  
     /// <para>
     /// When the range of version numbers contain check pointed version, the API will return
     /// a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint
-    /// first using the <code>DeleteSchemaCheckpoint</code> API before using this API.
+    /// first using the <c>DeleteSchemaCheckpoint</c> API before using this API.
     /// </para>
     ///  
     /// <para>
-    /// You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema
-    /// version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code>
-    /// API. This operation will also delete the attached <code>SchemaVersionMetadata</code>
-    /// under the schema versions. Hard deletes will be enforced on the database.
+    /// You cannot use the <c>DeleteSchemaVersions</c> API to delete the first schema version
+    /// in the schema set. The first schema version can only be deleted by the <c>DeleteSchema</c>
+    /// API. This operation will also delete the attached <c>SchemaVersionMetadata</c> under
+    /// the schema versions. Hard deletes will be enforced on the database.
     /// </para>
     ///  
     /// <para>

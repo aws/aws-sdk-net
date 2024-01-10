@@ -63,10 +63,10 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For Agreements with <code>ConfigurableUpfrontPricingTerm</code>, the <code>RateCard</code>
-        /// section will define the prices and dimensions defined by the seller (proposer), whereas
-        /// the <code>Configuration</code> section will define the actual dimensions, prices,
-        /// and units the buyer has chosen to accept.
+        /// For Agreements with <c>ConfigurableUpfrontPricingTerm</c>, the <c>RateCard</c> section
+        /// will define the prices and dimensions defined by the seller (proposer), whereas the
+        /// <c>Configuration</c> section will define the actual dimensions, prices, and units
+        /// the buyer has chosen to accept.
         /// </para>
         ///  </note>
         /// </summary>

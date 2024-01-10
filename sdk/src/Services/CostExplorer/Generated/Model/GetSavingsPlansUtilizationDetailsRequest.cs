@@ -32,14 +32,14 @@ namespace Amazon.CostExplorer.Model
     /// Container for the parameters to the GetSavingsPlansUtilizationDetails operation.
     /// Retrieves attribute data along with aggregate utilization and savings data for a given
     /// time period. This doesn't support granular or grouped data (daily/monthly) in response.
-    /// You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>,
-    /// but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code>
-    /// by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code>
+    /// You can't retrieve data by dates in a single response similar to <c>GetSavingsPlanUtilization</c>,
+    /// but you have the option to make multiple calls to <c>GetSavingsPlanUtilizationDetails</c>
+    /// by providing individual dates. You can use <c>GetDimensionValues</c> in <c>SAVINGS_PLANS</c>
     /// to determine the possible dimension values.
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>GetSavingsPlanUtilizationDetails</code> internally groups data by <code>SavingsPlansArn</code>.
+    ///  <c>GetSavingsPlanUtilizationDetails</c> internally groups data by <c>SavingsPlansArn</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -78,29 +78,28 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LINKED_ACCOUNT</code> 
+        ///  <c>LINKED_ACCOUNT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAVINGS_PLAN_ARN</code> 
+        ///  <c>SAVINGS_PLAN_ARN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGION</code> 
+        ///  <c>REGION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAYMENT_OPTION</code> 
+        ///  <c>PAYMENT_OPTION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE_TYPE_FAMILY</code> 
+        ///  <c>INSTANCE_TYPE_FAMILY</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>GetSavingsPlansUtilizationDetails</code> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// object as the other operations, but only <code>AND</code> is supported among each
-        /// dimension.
+        ///  <c>GetSavingsPlansUtilizationDetails</c> uses the same <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// object as the other operations, but only <c>AND</c> is supported among each dimension.
         /// </para>
         /// </summary>
         public Expression Filter
@@ -118,8 +117,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of items to be returned in a response. The default is <code>20</code>,
-        /// with a minimum value of <code>1</code>.
+        /// The number of items to be returned in a response. The default is <c>20</c>, with a
+        /// minimum value of <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -162,39 +161,39 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// The following values are supported for <code>Key</code>:
+        /// The following values are supported for <c>Key</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UtilizationPercentage</code> 
+        ///  <c>UtilizationPercentage</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TotalCommitment</code> 
+        ///  <c>TotalCommitment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UsedCommitment</code> 
+        ///  <c>UsedCommitment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnusedCommitment</code> 
+        ///  <c>UnusedCommitment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NetSavings</code> 
+        ///  <c>NetSavings</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AmortizedRecurringCommitment</code> 
+        ///  <c>AmortizedRecurringCommitment</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AmortizedUpfrontCommitment</code> 
+        ///  <c>AmortizedUpfrontCommitment</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The supported values for <code>SortOrder</code> are <code>ASCENDING</code> and <code>DESCENDING</code>.
+        /// The supported values for <c>SortOrder</c> are <c>ASCENDING</c> and <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public SortDefinition SortBy
@@ -212,10 +211,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property TimePeriod. 
         /// <para>
-        /// The time period that you want the usage and costs for. The <code>Start</code> date
-        /// must be within 13 months. The <code>End</code> date must be after the <code>Start</code>
-        /// date, and before the current date. Future dates can't be used as an <code>End</code>
-        /// date.
+        /// The time period that you want the usage and costs for. The <c>Start</c> date must
+        /// be within 13 months. The <c>End</c> date must be after the <c>Start</c> date, and
+        /// before the current date. Future dates can't be used as an <c>End</c> date.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

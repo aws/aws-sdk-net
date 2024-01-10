@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a <code>RevisionTarget</code>.
+    /// Describes a <c>RevisionTarget</c>.
     /// </summary>
     public partial class RevisionTarget
     {

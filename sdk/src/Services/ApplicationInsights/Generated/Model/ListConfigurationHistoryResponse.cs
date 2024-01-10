@@ -57,10 +57,10 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value to include in a future <code>ListConfigurationHistory</code>
-        /// request. When the results of a <code>ListConfigurationHistory</code> request exceed
-        /// <code>MaxResults</code>, this value can be used to retrieve the next page of results.
-        /// This value is <code>null</code> when there are no more results to return.
+        /// The <c>NextToken</c> value to include in a future <c>ListConfigurationHistory</c>
+        /// request. When the results of a <c>ListConfigurationHistory</c> request exceed <c>MaxResults</c>,
+        /// this value can be used to retrieve the next page of results. This value is <c>null</c>
+        /// when there are no more results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

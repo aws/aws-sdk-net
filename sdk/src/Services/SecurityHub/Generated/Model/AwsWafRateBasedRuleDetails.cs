@@ -119,9 +119,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RateLimit. 
         /// <para>
         /// The maximum number of requests that have an identical value for the field specified
-        /// in <code>RateKey</code> that are allowed within a five-minute period. If the number
-        /// of requests exceeds <code>RateLimit</code> and the other predicates specified in the
-        /// rule are met, WAF triggers the action for the rule.
+        /// in <c>RateKey</c> that are allowed within a five-minute period. If the number of requests
+        /// exceeds <c>RateLimit</c> and the other predicates specified in the rule are met, WAF
+        /// triggers the action for the rule.
         /// </para>
         /// </summary>
         public long RateLimit

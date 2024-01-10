@@ -31,8 +31,8 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// A list of parameters for a control. A control can have zero, one, or more than one
     /// parameter. An example of a control with two parameters is: "backup plan frequency
-    /// is at least <code>daily</code> and the retention period is at least <code>1 year</code>".
-    /// The first parameter is <code>daily</code>. The second parameter is <code>1 year</code>.
+    /// is at least <c>daily</c> and the retention period is at least <c>1 year</c>". The
+    /// first parameter is <c>daily</c>. The second parameter is <c>1 year</c>.
     /// </summary>
     public partial class ControlInputParameter
     {
@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ParameterName. 
         /// <para>
-        /// The name of a parameter, for example, <code>BackupPlanFrequency</code>.
+        /// The name of a parameter, for example, <c>BackupPlanFrequency</c>.
         /// </para>
         /// </summary>
         public string ParameterName
@@ -60,7 +60,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ParameterValue. 
         /// <para>
-        /// The value of parameter, for example, <code>hourly</code>.
+        /// The value of parameter, for example, <c>hourly</c>.
         /// </para>
         /// </summary>
         public string ParameterValue

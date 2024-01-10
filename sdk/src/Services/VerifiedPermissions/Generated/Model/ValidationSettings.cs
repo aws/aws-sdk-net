@@ -62,9 +62,9 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// If <code>Mode=STRICT</code> and the policy store doesn't contain a schema, Verified
-        /// Permissions rejects all static policies and policy templates because there is no schema
-        /// to validate against. 
+        /// If <c>Mode=STRICT</c> and the policy store doesn't contain a schema, Verified Permissions
+        /// rejects all static policies and policy templates because there is no schema to validate
+        /// against. 
         /// </para>
         ///  
         /// <para>

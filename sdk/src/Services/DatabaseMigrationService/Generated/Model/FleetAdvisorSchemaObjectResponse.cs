@@ -101,19 +101,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>function</code> 
+        ///  <c>function</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>trigger</code> 
+        ///  <c>trigger</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SYSTEM_TABLE</code> 
+        ///  <c>SYSTEM_TABLE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUEUE</code> 
+        ///  <c>QUEUE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

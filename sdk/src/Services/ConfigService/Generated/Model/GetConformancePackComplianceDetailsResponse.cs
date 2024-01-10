@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackRuleEvaluationResults. 
         /// <para>
-        /// Returns a list of <code>ConformancePackEvaluationResult</code> objects.
+        /// Returns a list of <c>ConformancePackEvaluationResult</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -78,7 +78,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned in a previous request that you use to request
+        /// The <c>nextToken</c> string returned in a previous request that you use to request
         /// the next page of results in a paginated response.
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkerBlocks operation.
-    /// The <code>ListWorkersBlocks</code> operation retrieves a list of Workers who are blocked
+    /// The <c>ListWorkersBlocks</c> operation retrieves a list of Workers who are blocked
     /// from working on your HITs.
     /// </summary>
     public partial class ListWorkerBlocksRequest : AmazonMTurkRequest

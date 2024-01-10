@@ -77,7 +77,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobArtifacts. 
         /// <para>
-        /// Returns information on the job's artifacts found in <code>AutoMLJobArtifacts</code>.
+        /// Returns information on the job's artifacts found in <c>AutoMLJobArtifacts</c>.
         /// </para>
         /// </summary>
         public AutoMLJobArtifacts AutoMLJobArtifacts
@@ -413,7 +413,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResolvedAttributes. 
         /// <para>
-        /// Contains <code>ProblemType</code>, <code>AutoMLJobObjective</code>, and <code>CompletionCriteria</code>.
+        /// Contains <c>ProblemType</c>, <c>AutoMLJobObjective</c>, and <c>CompletionCriteria</c>.
         /// If you do not provide these values, they are inferred.
         /// </para>
         /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// To replicate object metadata modifications on replicas, you can specify this element
-    /// and set the <code>Status</code> of this element to <code>Enabled</code>.
+    /// and set the <c>Status</c> of this element to <c>Enabled</c>.
     /// </para>
     ///  <note> 
     /// <para>

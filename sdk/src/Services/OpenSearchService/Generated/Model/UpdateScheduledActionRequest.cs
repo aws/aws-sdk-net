@@ -67,9 +67,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ActionType. 
         /// <para>
-        /// The type of action to reschedule. Can be one of <code>SERVICE_SOFTWARE_UPDATE</code>,
-        /// <code>JVM_HEAP_SIZE_TUNING</code>, or <code>JVM_YOUNG_GEN_TUNING</code>. To retrieve
-        /// this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a>
+        /// The type of action to reschedule. Can be one of <c>SERVICE_SOFTWARE_UPDATE</c>, <c>JVM_HEAP_SIZE_TUNING</c>,
+        /// or <c>JVM_YOUNG_GEN_TUNING</c>. To retrieve this value, send a <a href="https://docs.aws.amazon.com/opensearch-service/latest/APIReference/API_ListScheduledActions.html">ListScheduledActions</a>
         /// request.
         /// </para>
         /// </summary>
@@ -90,7 +89,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property DesiredStartTime. 
         /// <para>
         /// The time to implement the change, in Coordinated Universal Time (UTC). Only specify
-        /// this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.
+        /// this parameter if you set <c>ScheduleAt</c> to <c>TIMESTAMP</c>.
         /// </para>
         /// </summary>
         public long DesiredStartTime
@@ -131,19 +130,19 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NOW</code> - Immediately schedules the update to happen in the current hour
-        /// if there's capacity available.
+        ///  <c>NOW</c> - Immediately schedules the update to happen in the current hour if there's
+        /// capacity available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update.
-        /// If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.
+        ///  <c>TIMESTAMP</c> - Lets you specify a custom date and time to apply the update. If
+        /// you specify this value, you must also provide a value for <c>DesiredStartTime</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OFF_PEAK_WINDOW</code> - Marks the action to be picked up during an upcoming
-        /// off-peak window. There's no guarantee that the change will be implemented during the
-        /// next immediate window. Depending on capacity, it might happen in subsequent days.
+        ///  <c>OFF_PEAK_WINDOW</c> - Marks the action to be picked up during an upcoming off-peak
+        /// window. There's no guarantee that the change will be implemented during the next immediate
+        /// window. Depending on capacity, it might happen in subsequent days.
         /// </para>
         ///  </li> </ul>
         /// </summary>

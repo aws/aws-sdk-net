@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LineStyleSettings. 
         /// <para>
-        /// Line styles options for a line series in <code>LineChartVisual</code>.
+        /// Line styles options for a line series in <c>LineChartVisual</c>.
         /// </para>
         /// </summary>
         public LineChartLineStyleSettings LineStyleSettings
@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property MarkerStyleSettings. 
         /// <para>
-        /// Marker styles options for a line series in <code>LineChartVisual</code>.
+        /// Marker styles options for a line series in <c>LineChartVisual</c>.
         /// </para>
         /// </summary>
         public LineChartMarkerStyleSettings MarkerStyleSettings

@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateEvaluation</code> operation, and is an acknowledgement
+    /// Represents the output of a <c>CreateEvaluation</c> operation, and is an acknowledgement
     /// that Amazon ML received the request.
     /// 
     ///  
     /// <para>
-    ///  <code>CreateEvaluation</code> operation is asynchronous. You can poll for status
-    /// updates by using the <code>GetEvcaluation</code> operation and checking the <code>Status</code>
-    /// parameter. 
+    ///  <c>CreateEvaluation</c> operation is asynchronous. You can poll for status updates
+    /// by using the <c>GetEvcaluation</c> operation and checking the <c>Status</c> parameter.
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateEvaluationResponse : AmazonWebServiceResponse
@@ -46,8 +46,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationId. 
         /// <para>
-        /// The user-supplied ID that uniquely identifies the <code>Evaluation</code>. This value
-        /// should be identical to the value of the <code>EvaluationId</code> in the request.
+        /// The user-supplied ID that uniquely identifies the <c>Evaluation</c>. This value should
+        /// be identical to the value of the <c>EvaluationId</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

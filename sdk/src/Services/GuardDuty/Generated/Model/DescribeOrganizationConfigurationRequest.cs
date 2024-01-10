@@ -91,8 +91,8 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// You can use this parameter when paginating results. Set the value of this parameter
         /// to null on your first call to the list action. For subsequent calls to the action,
-        /// fill <code>nextToken</code> in the request with the value of <code>NextToken</code>
-        /// from the previous response to continue listing data.
+        /// fill <c>nextToken</c> in the request with the value of <c>NextToken</c> from the previous
+        /// response to continue listing data.
         /// </para>
         /// </summary>
         public string NextToken

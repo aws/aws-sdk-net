@@ -55,8 +55,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageVirtualMachines. 
         /// <para>
-        /// Returned after a successful <code>DescribeStorageVirtualMachines</code> operation,
-        /// describing each SVM.
+        /// Returned after a successful <c>DescribeStorageVirtualMachines</c> operation, describing
+        /// each SVM.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

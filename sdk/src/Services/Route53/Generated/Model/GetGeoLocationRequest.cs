@@ -44,8 +44,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a
-    /// continent</i> </code> 
+    ///  <c>GET /2013-04-01/geolocation?continentcode=<i>two-letter abbreviation for a continent</i>
+    /// </c> 
     /// </para>
     ///  
     /// <para>
@@ -53,7 +53,7 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </code>
+    ///  <c>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i> </c>
     /// 
     /// </para>
     ///  
@@ -63,8 +63,8 @@ namespace Amazon.Route53.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision
-    /// code</i> </code> 
+    ///  <c>GET /2013-04-01/geolocation?countrycode=<i>two-character country code</i>&amp;subdivisioncode=<i>subdivision
+    /// code</i> </c> 
     /// </para>
     /// </summary>
     public partial class GetGeoLocationRequest : AmazonRoute53Request

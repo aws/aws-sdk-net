@@ -33,7 +33,7 @@ namespace Amazon.SecurityToken.Model
     /// Returns a set of temporary security credentials for users who have been authenticated
     /// via a SAML authentication response. This operation provides a mechanism for tying
     /// an enterprise identity store or directory to role-based Amazon Web Services access
-    /// without user-specific credentials or configuration. For a comparison of <code>AssumeRoleWithSAML</code>
+    /// without user-specific credentials or configuration. For a comparison of <c>AssumeRoleWithSAML</c>
     /// with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting
     /// Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing
     /// the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.
@@ -50,31 +50,31 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// By default, the temporary security credentials created by <code>AssumeRoleWithSAML</code>
-    /// last for one hour. However, you can use the optional <code>DurationSeconds</code>
-    /// parameter to specify the duration of your session. Your role session lasts for the
-    /// duration that you specify, or until the time specified in the SAML authentication
-    /// response's <code>SessionNotOnOrAfter</code> value, whichever is shorter. You can provide
-    /// a <code>DurationSeconds</code> value from 900 seconds (15 minutes) up to the maximum
-    /// session duration setting for the role. This setting can have a value from 1 hour to
-    /// 12 hours. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+    /// By default, the temporary security credentials created by <c>AssumeRoleWithSAML</c>
+    /// last for one hour. However, you can use the optional <c>DurationSeconds</c> parameter
+    /// to specify the duration of your session. Your role session lasts for the duration
+    /// that you specify, or until the time specified in the SAML authentication response's
+    /// <c>SessionNotOnOrAfter</c> value, whichever is shorter. You can provide a <c>DurationSeconds</c>
+    /// value from 900 seconds (15 minutes) up to the maximum session duration setting for
+    /// the role. This setting can have a value from 1 hour to 12 hours. To learn how to view
+    /// the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
     /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
-    /// The maximum session duration limit applies when you use the <code>AssumeRole*</code>
-    /// API operations or the <code>assume-role*</code> CLI commands. However the limit does
-    /// not apply when you use those operations to create a console URL. For more information,
-    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
-    /// IAM Roles</a> in the <i>IAM User Guide</i>.
+    /// The maximum session duration limit applies when you use the <c>AssumeRole*</c> API
+    /// operations or the <c>assume-role*</c> CLI commands. However the limit does not apply
+    /// when you use those operations to create a console URL. For more information, see <a
+    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM
+    /// Roles</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-role-chaining">Role
     /// chaining</a> limits your CLI or Amazon Web Services API role session to a maximum
-    /// of one hour. When you use the <code>AssumeRole</code> API operation to assume a role,
-    /// you can specify the duration of your role session with the <code>DurationSeconds</code>
-    /// parameter. You can specify a parameter value of up to 43200 seconds (12 hours), depending
-    /// on the maximum session duration setting for your role. However, if you assume a role
-    /// using role chaining and provide a <code>DurationSeconds</code> parameter value greater
-    /// than one hour, the operation fails.
+    /// of one hour. When you use the <c>AssumeRole</c> API operation to assume a role, you
+    /// can specify the duration of your role session with the <c>DurationSeconds</c> parameter.
+    /// You can specify a parameter value of up to 43200 seconds (12 hours), depending on
+    /// the maximum session duration setting for your role. However, if you assume a role
+    /// using role chaining and provide a <c>DurationSeconds</c> parameter value greater than
+    /// one hour, the operation fails.
     /// </para>
     ///  </note> 
     /// <para>
@@ -82,10 +82,9 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// The temporary security credentials created by <code>AssumeRoleWithSAML</code> can
-    /// be used to make API calls to any Amazon Web Services service with the following exception:
-    /// you cannot call the STS <code>GetFederationToken</code> or <code>GetSessionToken</code>
-    /// API operations.
+    /// The temporary security credentials created by <c>AssumeRoleWithSAML</c> can be used
+    /// to make API calls to any Amazon Web Services service with the following exception:
+    /// you cannot call the STS <c>GetFederationToken</c> or <c>GetSessionToken</c> API operations.
     /// </para>
     ///  
     /// <para>
@@ -104,18 +103,18 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// Calling <code>AssumeRoleWithSAML</code> does not require the use of Amazon Web Services
+    /// Calling <c>AssumeRoleWithSAML</c> does not require the use of Amazon Web Services
     /// security credentials. The identity of the caller is validated by using keys in the
     /// metadata document that is uploaded for the SAML provider entity for your identity
     /// provider. 
     /// </para>
     ///  <important> 
     /// <para>
-    /// Calling <code>AssumeRoleWithSAML</code> can result in an entry in your CloudTrail
-    /// logs. The entry includes the value in the <code>NameID</code> element of the SAML
-    /// assertion. We recommend that you use a <code>NameIDType</code> that is not associated
-    /// with any personally identifiable information (PII). For example, you could instead
-    /// use the persistent identifier (<code>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</code>).
+    /// Calling <c>AssumeRoleWithSAML</c> can result in an entry in your CloudTrail logs.
+    /// The entry includes the value in the <c>NameID</c> element of the SAML assertion. We
+    /// recommend that you use a <c>NameIDType</c> that is not associated with any personally
+    /// identifiable information (PII). For example, you could instead use the persistent
+    /// identifier (<c>urn:oasis:names:tc:SAML:2.0:nameid-format:persistent</c>).
     /// </para>
     ///  </important> 
     /// <para>
@@ -140,8 +139,8 @@ namespace Amazon.SecurityToken.Model
     /// An Amazon Web Services conversion compresses the passed inline session policy, managed
     /// policy ARNs, and session tags into a packed binary format that has a separate limit.
     /// Your request can fail for this limit even if your plaintext meets the other requirements.
-    /// The <code>PackedPolicySize</code> response element indicates by percentage how close
-    /// the policies and tags for your request are to the upper size limit.
+    /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
+    /// policies and tags for your request are to the upper size limit.
     /// </para>
     ///  </note> 
     /// <para>
@@ -167,8 +166,8 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// Before your application can call <code>AssumeRoleWithSAML</code>, you must configure
-    /// your SAML identity provider (IdP) to issue the claims required by Amazon Web Services.
+    /// Before your application can call <c>AssumeRoleWithSAML</c>, you must configure your
+    /// SAML identity provider (IdP) to issue the claims required by Amazon Web Services.
     /// Additionally, you must use Identity and Access Management (IAM) to create a SAML provider
     /// entity in your Amazon Web Services account that represents your identity provider.
     /// You must also create an IAM role that specifies this SAML provider in its trust policy.
@@ -213,27 +212,27 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property DurationSeconds. 
         /// <para>
         /// The duration, in seconds, of the role session. Your role session lasts for the duration
-        /// that you specify for the <code>DurationSeconds</code> parameter, or until the time
-        /// specified in the SAML authentication response's <code>SessionNotOnOrAfter</code> value,
-        /// whichever is shorter. You can provide a <code>DurationSeconds</code> value from 900
-        /// seconds (15 minutes) up to the maximum session duration setting for the role. This
-        /// setting can have a value from 1 hour to 12 hours. If you specify a value higher than
-        /// this setting, the operation fails. For example, if you specify a session duration
-        /// of 12 hours, but your administrator set the maximum session duration to 6 hours, your
-        /// operation fails. To learn how to view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
+        /// that you specify for the <c>DurationSeconds</c> parameter, or until the time specified
+        /// in the SAML authentication response's <c>SessionNotOnOrAfter</c> value, whichever
+        /// is shorter. You can provide a <c>DurationSeconds</c> value from 900 seconds (15 minutes)
+        /// up to the maximum session duration setting for the role. This setting can have a value
+        /// from 1 hour to 12 hours. If you specify a value higher than this setting, the operation
+        /// fails. For example, if you specify a session duration of 12 hours, but your administrator
+        /// set the maximum session duration to 6 hours, your operation fails. To learn how to
+        /// view the maximum value for your role, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
         /// the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, the value is set to <code>3600</code> seconds. 
+        /// By default, the value is set to <c>3600</c> seconds. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>DurationSeconds</code> parameter is separate from the duration of a console
-        /// session that you might request using the returned credentials. The request to the
-        /// federation endpoint for a console sign-in token takes a <code>SessionDuration</code>
-        /// parameter that specifies the maximum length of the console session. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
+        /// The <c>DurationSeconds</c> parameter is separate from the duration of a console session
+        /// that you might request using the returned credentials. The request to the federation
+        /// endpoint for a console sign-in token takes a <c>SessionDuration</c> parameter that
+        /// specifies the maximum length of the console session. For more information, see <a
+        /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_enable-console-custom-url.html">Creating
         /// a URL that Enables Federated Users to Access the Amazon Web Services Management Console</a>
         /// in the <i>IAM User Guide</i>.
         /// </para>
@@ -280,8 +279,8 @@ namespace Amazon.SecurityToken.Model
         /// An Amazon Web Services conversion compresses the passed inline session policy, managed
         /// policy ARNs, and session tags into a packed binary format that has a separate limit.
         /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
-        /// the policies and tags for your request are to the upper size limit.
+        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
+        /// policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note>
         /// </summary>
@@ -317,8 +316,8 @@ namespace Amazon.SecurityToken.Model
         /// An Amazon Web Services conversion compresses the passed inline session policy, managed
         /// policy ARNs, and session tags into a packed binary format that has a separate limit.
         /// Your request can fail for this limit even if your plaintext meets the other requirements.
-        /// The <code>PackedPolicySize</code> response element indicates by percentage how close
-        /// the policies and tags for your request are to the upper size limit.
+        /// The <c>PackedPolicySize</c> response element indicates by percentage how close the
+        /// policies and tags for your request are to the upper size limit.
         /// </para>
         ///  </note> 
         /// <para>

@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Any errors associated with a <code>Failed</code> update.
+        /// Any errors associated with a <c>Failed</c> update.
         /// </para>
         /// </summary>
         public List<ErrorDetail> Errors

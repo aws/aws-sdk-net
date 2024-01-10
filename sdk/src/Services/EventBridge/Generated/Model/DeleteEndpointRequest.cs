@@ -42,7 +42,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the endpoint you want to delete. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>..
+        /// The name of the endpoint you want to delete. For example, <c>"Name":"us-east-2-custom_bus_A-endpoint"</c>..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

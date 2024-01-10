@@ -46,23 +46,23 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>us-east-1</code> 
+    ///  <c>us-east-1</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>us-west-2</code> 
+    ///  <c>us-west-2</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ap-southeast-2</code> 
+    ///  <c>ap-southeast-2</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ap-northeast-1</code> 
+    ///  <c>ap-northeast-1</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>eu-west-1</code> 
+    ///  <c>eu-west-1</c> 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>

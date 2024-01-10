@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// A single label container. This is used as an element of a label array in multiple
-    /// contexts, for example, in <code>RuleLabels</code> inside a <a>Rule</a> and in <code>Labels</code>
+    /// contexts, for example, in <c>RuleLabels</c> inside a <a>Rule</a> and in <c>Labels</c>
     /// inside a <a>SampledHTTPRequest</a>.
     /// </summary>
     public partial class Label

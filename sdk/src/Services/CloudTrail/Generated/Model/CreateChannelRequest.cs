@@ -87,9 +87,9 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  A source can be either <code>Custom</code> for all valid non-Amazon Web Services
-        /// events, or the name of a partner event source. For information about the source names
-        /// for available partners, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html#cloudtrail-lake-partner-information">Additional
+        ///  A source can be either <c>Custom</c> for all valid non-Amazon Web Services events,
+        /// or the name of a partner event source. For information about the source names for
+        /// available partners, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store-integration.html#cloudtrail-lake-partner-information">Additional
         /// information about integration partners</a> in the CloudTrail User Guide. 
         /// </para>
         /// </summary>

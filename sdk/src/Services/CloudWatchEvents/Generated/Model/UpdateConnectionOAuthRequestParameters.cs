@@ -61,8 +61,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ClientParameters. 
         /// <para>
-        /// A <code>UpdateConnectionOAuthClientRequestParameters</code> object that contains the
-        /// client parameters to use for the connection when OAuth is specified as the authorization
+        /// A <c>UpdateConnectionOAuthClientRequestParameters</c> object that contains the client
+        /// parameters to use for the connection when OAuth is specified as the authorization
         /// type.
         /// </para>
         /// </summary>

@@ -39,8 +39,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property IPSets. 
         /// <para>
-        /// Array of IPSets. If you specified a <code>Limit</code> in your request, this might
-        /// not be the full list. 
+        /// Array of IPSets. If you specified a <c>Limit</c> in your request, this might not be
+        /// the full list. 
         /// </para>
         /// </summary>
         public List<IPSetSummary> IPSets
@@ -58,10 +58,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// When you request a list of objects with a <code>Limit</code> setting, if the number
-        /// of objects that are still available for retrieval exceeds the limit, WAF returns a
-        /// <code>NextMarker</code> value in the response. To retrieve the next batch of objects,
-        /// provide the marker from the prior call in your next request.
+        /// When you request a list of objects with a <c>Limit</c> setting, if the number of objects
+        /// that are still available for retrieval exceeds the limit, WAF returns a <c>NextMarker</c>
+        /// value in the response. To retrieve the next batch of objects, provide the marker from
+        /// the prior call in your next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

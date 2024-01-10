@@ -39,8 +39,8 @@ namespace Amazon.S3Outposts.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Returns a token that you can use to call <code>ListOutpostsWithS3</code> again and
-        /// receive additional results, if there are any.
+        /// Returns a token that you can use to call <c>ListOutpostsWithS3</c> again and receive
+        /// additional results, if there are any.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -67,7 +67,7 @@ namespace Amazon.S3Outposts.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// outposts that are <code>Active</code> (not pending any provisioning nor decommissioned)
+        /// outposts that are <c>Active</c> (not pending any provisioning nor decommissioned)
         /// </para>
         ///  </li> <li> 
         /// <para>

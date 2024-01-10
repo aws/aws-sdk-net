@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBInstanceAutomatedBackup operation.
-    /// Deletes automated backups using the <code>DbiResourceId</code> value of the source
-    /// DB instance or the Amazon Resource Name (ARN) of the automated backups.
+    /// Deletes automated backups using the <c>DbiResourceId</c> value of the source DB instance
+    /// or the Amazon Resource Name (ARN) of the automated backups.
     /// </summary>
     public partial class DeleteDBInstanceAutomatedBackupRequest : AmazonRDSRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBInstanceAutomatedBackupsArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the automated backups to delete, for example, <code>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</code>.
+        /// The Amazon Resource Name (ARN) of the automated backups to delete, for example, <c>arn:aws:rds:us-east-1:123456789012:auto-backup:ab-L2IJCEXJP7XQ7HOJ4SIEXAMPLE</c>.
         /// </para>
         ///  
         /// <para>

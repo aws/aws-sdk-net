@@ -77,7 +77,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier (ID) of the <code>SubResource</code>.
+        /// The unique identifier (ID) of the <c>SubResource</c>.
         /// </para>
         /// </summary>
         public string Id
@@ -95,7 +95,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The <code>SubResource</code> type.
+        /// The <c>SubResource</c> type.
         /// </para>
         /// </summary>
         public SubResourceType Type

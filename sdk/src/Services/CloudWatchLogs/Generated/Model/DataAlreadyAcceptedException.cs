@@ -33,7 +33,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  <important> 
     /// <para>
-    ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>DataAlreadyAcceptedException</code>
+    ///  <c>PutLogEvents</c> actions are now always accepted and never return <c>DataAlreadyAcceptedException</c>
     /// regardless of whether a given batch of log events has already been accepted. 
     /// </para>
     ///  </important>

@@ -83,8 +83,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// The ARN of the destination queue if it has been specified in the <code>StartMessageMoveTask</code>
-        /// request. If a <code>DestinationArn</code> has not been specified in the <code>StartMessageMoveTask</code>
+        /// The ARN of the destination queue if it has been specified in the <c>StartMessageMoveTask</c>
+        /// request. If a <c>DestinationArn</c> has not been specified in the <c>StartMessageMoveTask</c>
         /// request, this field value will be NULL.
         /// </para>
         /// </summary>
@@ -122,9 +122,9 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MaxNumberOfMessagesPerSecond. 
         /// <para>
         /// The number of messages to be moved per second (the message movement rate), if it has
-        /// been specified in the <code>StartMessageMoveTask</code> request. If a <code>MaxNumberOfMessagesPerSecond</code>
-        /// has not been specified in the <code>StartMessageMoveTask</code> request, this field
-        /// value will be NULL.
+        /// been specified in the <c>StartMessageMoveTask</c> request. If a <c>MaxNumberOfMessagesPerSecond</c>
+        /// has not been specified in the <c>StartMessageMoveTask</c> request, this field value
+        /// will be NULL.
         /// </para>
         /// </summary>
         public int MaxNumberOfMessagesPerSecond
@@ -198,8 +198,8 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property TaskHandle. 
         /// <para>
         /// An identifier associated with a message movement task. When this field is returned
-        /// in the response of the <code>ListMessageMoveTasks</code> action, it is only populated
-        /// for tasks that are in RUNNING status.
+        /// in the response of the <c>ListMessageMoveTasks</c> action, it is only populated for
+        /// tasks that are in RUNNING status.
         /// </para>
         /// </summary>
         public string TaskHandle

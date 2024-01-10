@@ -44,7 +44,7 @@ namespace Amazon.ConfigService.Model
     ///  </li> <li> 
     /// <para>
     /// For PutOrganizationConfigRule, organization Config rule cannot be created because
-    /// you do not have permissions to call IAM <code>GetRole</code> action or create a service-linked
+    /// you do not have permissions to call IAM <c>GetRole</c> action or create a service-linked
     /// role.
     /// </para>
     ///  </li> <li> 
@@ -54,7 +54,7 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You do not have permission to call IAM <code>GetRole</code> action or create a service-linked
+    /// You do not have permission to call IAM <c>GetRole</c> action or create a service-linked
     /// role.
     /// </para>
     ///  </li> <li> 

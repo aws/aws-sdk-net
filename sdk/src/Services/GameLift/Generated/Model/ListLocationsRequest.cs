@@ -41,7 +41,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters the list for <code>AWS</code> or <code>CUSTOM</code> locations.
+        /// Filters the list for <c>AWS</c> or <c>CUSTOM</c> locations.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]
@@ -60,7 +60,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>

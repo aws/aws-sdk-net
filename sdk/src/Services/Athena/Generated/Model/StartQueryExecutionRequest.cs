@@ -30,8 +30,8 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the StartQueryExecution operation.
-    /// Runs the SQL query statements contained in the <code>Query</code>. Requires you to
-    /// have access to the workgroup in which the query ran. Running queries against an external
+    /// Runs the SQL query statements contained in the <c>Query</c>. Requires you to have
+    /// access to the workgroup in which the query ran. Running queries against an external
     /// catalog requires <a>GetDataCatalog</a> permission to the catalog. For code samples
     /// using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples
     /// and Code Samples</a> in the <i>Amazon Athena User Guide</i>.
@@ -50,11 +50,11 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique case-sensitive string used to ensure the request to create the query is idempotent
-        /// (executes only once). If another <code>StartQueryExecution</code> request is received,
-        /// the same response is returned and another query is not created. An error is returned
-        /// if a parameter, such as <code>QueryString</code>, has changed. A call to <code>StartQueryExecution</code>
-        /// that uses a previous client request token returns the same <code>QueryExecutionId</code>
-        /// even if the requester doesn't have permission on the tables specified in <code>QueryString</code>.
+        /// (executes only once). If another <c>StartQueryExecution</c> request is received, the
+        /// same response is returned and another query is not created. An error is returned if
+        /// a parameter, such as <c>QueryString</c>, has changed. A call to <c>StartQueryExecution</c>
+        /// that uses a previous client request token returns the same <c>QueryExecutionId</c>
+        /// even if the requester doesn't have permission on the tables specified in <c>QueryString</c>.
         /// </para>
         ///  <important> 
         /// <para>

@@ -62,8 +62,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// An integer setting that indicates the order in which to run the stateful rule groups
         /// in a single <a>FirewallPolicy</a>. This setting only applies to firewall policies
-        /// that specify the <code>STRICT_ORDER</code> rule order in the stateful engine options
-        /// settings.
+        /// that specify the <c>STRICT_ORDER</c> rule order in the stateful engine options settings.
         /// </para>
         ///  
         /// <para>

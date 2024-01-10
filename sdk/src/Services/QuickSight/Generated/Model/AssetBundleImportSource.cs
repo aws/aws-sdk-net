@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The source of the asset bundle zip file that contains the data that you want to import.
-    /// The file must be in <code>QUICKSIGHT_JSON</code> format.
+    /// The file must be in <c>QUICKSIGHT_JSON</c> format.
     /// </summary>
     public partial class AssetBundleImportSource
     {

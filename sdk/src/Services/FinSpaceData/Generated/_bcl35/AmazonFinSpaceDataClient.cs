@@ -1339,7 +1339,7 @@ namespace Amazon.FinSpaceData
         ///  </li> <li> 
         /// <para>
         /// You must be a member of a FinSpace user group, where the dataset that you want to
-        /// access has <code>Read Dataset Data</code> permissions.
+        /// access has <c>Read Dataset Data</c> permissions.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2426,7 +2426,7 @@ namespace Amazon.FinSpaceData
         #region  UpdatePermissionGroup
 
         /// <summary>
-        /// Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.
+        /// Modifies the details of a permission group. You cannot modify a <c>permissionGroupID</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePermissionGroup service method.</param>
         /// 
@@ -2501,8 +2501,8 @@ namespace Amazon.FinSpaceData
         #region  UpdateUser
 
         /// <summary>
-        /// Modifies the details of the specified user. You cannot update the <code>userId</code>
-        /// for a user.
+        /// Modifies the details of the specified user. You cannot update the <c>userId</c> for
+        /// a user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// 

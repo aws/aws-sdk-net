@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// The contextual information for the entity. InferRxNorm recognizes the trait <code>NEGATION</code>,
+    /// The contextual information for the entity. InferRxNorm recognizes the trait <c>NEGATION</c>,
     /// which is any indication that the patient is not taking a medication.
     /// </summary>
     public partial class RxNormTrait

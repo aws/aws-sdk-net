@@ -30,30 +30,29 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// Provides information about the method that featurizes (transforms) a dataset field.
-    /// The method is part of the <code>FeaturizationPipeline</code> of the <a>Featurization</a>
+    /// The method is part of the <c>FeaturizationPipeline</c> of the <a>Featurization</a>
     /// object. 
     /// 
     ///  
     /// <para>
-    /// The following is an example of how you specify a <code>FeaturizationMethod</code>
-    /// object.
+    /// The following is an example of how you specify a <c>FeaturizationMethod</c> object.
     /// </para>
     ///  
     /// <para>
-    ///  <code>{</code> 
+    ///  <c>{</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"FeaturizationMethodName": "filling",</code> 
+    ///  <c>"FeaturizationMethodName": "filling",</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero",
-    /// "backfill": "zero"}</code> 
+    ///  <c>"FeaturizationMethodParameters": {"aggregation": "sum", "middlefill": "zero",
+    /// "backfill": "zero"}</c> 
     /// </para>
     ///  
     /// <para>
-    ///  <code>}</code> 
+    ///  <c>}</c> 
     /// </para>
     /// </summary>
     public partial class FeaturizationMethod
@@ -94,22 +93,22 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aggregation</code>: <b>sum</b>, <code>avg</code>, <code>first</code>, <code>min</code>,
-        /// <code>max</code> 
+        ///  <c>aggregation</c>: <b>sum</b>, <c>avg</c>, <c>first</c>, <c>min</c>, <c>max</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>frontfill</code>: <b>none</b> 
+        ///  <c>frontfill</c>: <b>none</b> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>middlefill</code>: <b>zero</b>, <code>nan</code> (not a number), <code>value</code>,
-        /// <code>median</code>, <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>middlefill</c>: <b>zero</b>, <c>nan</c> (not a number), <c>value</c>, <c>median</c>,
+        /// <c>mean</c>, <c>min</c>, <c>max</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>backfill</code>: <b>zero</b>, <code>nan</code>, <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>backfill</c>: <b>zero</b>, <c>nan</c>, <c>value</c>, <c>median</c>, <c>mean</c>,
+        /// <c>min</c>, <c>max</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -118,25 +117,25 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>middlefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>middlefill</c>: <c>zero</c>, <c>value</c>, <c>median</c>, <c>mean</c>, <c>min</c>,
+        /// <c>max</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>backfill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>backfill</c>: <c>zero</c>, <c>value</c>, <c>median</c>, <c>mean</c>, <c>min</c>,
+        /// <c>max</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>futurefill</code>: <code>zero</code>, <code>value</code>, <code>median</code>,
-        /// <code>mean</code>, <code>min</code>, <code>max</code> 
+        ///  <c>futurefill</c>: <c>zero</c>, <c>value</c>, <c>median</c>, <c>mean</c>, <c>min</c>,
+        /// <c>max</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To set a filling method to a specific value, set the fill parameter to <code>value</code>
-        /// and define the value in a corresponding <code>_value</code> parameter. For example,
-        /// to set backfilling to a value of 2, include the following: <code>"backfill": "value"</code>
-        /// and <code>"backfill_value":"2"</code>. 
+        /// To set a filling method to a specific value, set the fill parameter to <c>value</c>
+        /// and define the value in a corresponding <c>_value</c> parameter. For example, to set
+        /// backfilling to a value of 2, include the following: <c>"backfill": "value"</c> and
+        /// <c>"backfill_value":"2"</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

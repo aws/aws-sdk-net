@@ -37,15 +37,15 @@ namespace Amazon.StepFunctions.Model
     ///  
     /// <para>
     /// To list aliases that reference a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>,
-    /// you can specify the version ARN in the <code>stateMachineArn</code> parameter.
+    /// you can specify the version ARN in the <c>stateMachineArn</c> parameter.
     /// </para>
     ///  
     /// <para>
-    /// If <code>nextToken</code> is returned, there are more results available. The value
-    /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
-    /// again using the returned token to retrieve the next page. Keep all other arguments
-    /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
-    /// token will return an <i>HTTP 400 InvalidToken</i> error.
+    /// If <c>nextToken</c> is returned, there are more results available. The value of <c>nextToken</c>
+    /// is a unique pagination token for each page. Make the call again using the returned
+    /// token to retrieve the next page. Keep all other arguments unchanged. Each pagination
+    /// token expires after 24 hours. Using an expired pagination token will return an <i>HTTP
+    /// 400 InvalidToken</i> error.
     /// </para>
     ///  
     /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that are returned per call. You can use <code>nextToken</code>
+        /// The maximum number of results that are returned per call. You can use <c>nextToken</c>
         /// to obtain further pages of results. The default is 100 and the maximum allowed page
         /// size is 1000. A value of 0 uses the default.
         /// </para>
@@ -104,11 +104,11 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <code>nextToken</code> is returned, there are more results available. The value
-        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
-        /// again using the returned token to retrieve the next page. Keep all other arguments
-        /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
-        /// token will return an <i>HTTP 400 InvalidToken</i> error.
+        /// If <c>nextToken</c> is returned, there are more results available. The value of <c>nextToken</c>
+        /// is a unique pagination token for each page. Make the call again using the returned
+        /// token to retrieve the next page. Keep all other arguments unchanged. Each pagination
+        /// token expires after 24 hours. Using an expired pagination token will return an <i>HTTP
+        /// 400 InvalidToken</i> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

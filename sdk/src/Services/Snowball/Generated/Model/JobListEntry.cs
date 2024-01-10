@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value
-    /// that indicates whether the job is a job part, in the case of an export job.
+    /// Each <c>JobListEntry</c> object contains a job's state, a job's ID, and a value that
+    /// indicates whether the job is a job part, in the case of an export job.
     /// </summary>
     public partial class JobListEntry
     {
@@ -63,8 +63,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The optional description of this specific job, for example <code>Important Photos
-        /// 2016-08-11</code>.
+        /// The optional description of this specific job, for example <c>Important Photos 2016-08-11</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -105,7 +104,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The automatically generated ID for a job, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The automatically generated ID for a job, for example <c>JID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

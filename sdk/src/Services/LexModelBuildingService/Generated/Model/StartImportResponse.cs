@@ -80,8 +80,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property ImportStatus. 
         /// <para>
-        /// The status of the import job. If the status is <code>FAILED</code>, you can get the
-        /// reason for the failure using the <code>GetImport</code> operation.
+        /// The status of the import job. If the status is <c>FAILED</c>, you can get the reason
+        /// for the failure using the <c>GetImport</c> operation.
         /// </para>
         /// </summary>
         public ImportStatus ImportStatus

@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ActionOperations. 
         /// <para>
-        /// A list of <code>VisualCustomActionOperations</code>.
+        /// A list of <c>VisualCustomActionOperations</c>.
         /// </para>
         ///  
         /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CustomActionId. 
         /// <para>
-        /// The ID of the <code>VisualCustomAction</code>.
+        /// The ID of the <c>VisualCustomAction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -85,7 +85,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>VisualCustomAction</code>.
+        /// The name of the <c>VisualCustomAction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -104,7 +104,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the <code>VisualCustomAction</code>.
+        /// The status of the <c>VisualCustomAction</c>.
         /// </para>
         /// </summary>
         public WidgetStatus Status
@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Trigger. 
         /// <para>
-        /// The trigger of the <code>VisualCustomAction</code>.
+        /// The trigger of the <c>VisualCustomAction</c>.
         /// </para>
         ///  
         /// <para>
@@ -130,13 +130,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DATA_POINT_CLICK</code>: Initiates a custom action by a left pointer click
-        /// on a data point.
+        ///  <c>DATA_POINT_CLICK</c>: Initiates a custom action by a left pointer click on a data
+        /// point.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DATA_POINT_MENU</code>: Initiates a custom action by right pointer click from
-        /// the menu.
+        ///  <c>DATA_POINT_MENU</c>: Initiates a custom action by right pointer click from the
+        /// menu.
         /// </para>
         ///  </li> </ul>
         /// </summary>

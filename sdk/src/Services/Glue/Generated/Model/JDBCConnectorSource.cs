@@ -176,8 +176,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Query. 
         /// <para>
-        /// The table or SQL query to get the data from. You can specify either <code>ConnectionTable</code>
-        /// or <code>query</code>, but not both.
+        /// The table or SQL query to get the data from. You can specify either <c>ConnectionTable</c>
+        /// or <c>query</c>, but not both.
         /// </para>
         /// </summary>
         public string Query

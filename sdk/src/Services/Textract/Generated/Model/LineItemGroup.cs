@@ -30,7 +30,7 @@ namespace Amazon.Textract.Model
 {
     /// <summary>
     /// A grouping of tables which contain LineItems, with each table identified by the table's
-    /// <code>LineItemGroupIndex</code>.
+    /// <c>LineItemGroupIndex</c>.
     /// </summary>
     public partial class LineItemGroup
     {

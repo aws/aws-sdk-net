@@ -59,7 +59,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamInfoList. 
         /// <para>
-        /// An array of <code>StreamInfo</code> objects.
+        /// An array of <c>StreamInfo</c> objects.
         /// </para>
         /// </summary>
         public List<StreamInfo> StreamInfoList

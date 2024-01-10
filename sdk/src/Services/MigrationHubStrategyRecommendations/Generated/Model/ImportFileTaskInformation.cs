@@ -85,7 +85,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <summary>
         /// Gets and sets the property ImportName. 
         /// <para>
-        ///  The name of the import task given in <code>StartImportFileTask</code>. 
+        ///  The name of the import task given in <c>StartImportFileTask</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

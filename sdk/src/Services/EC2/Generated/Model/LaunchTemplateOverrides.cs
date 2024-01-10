@@ -69,7 +69,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+        /// If you specify <c>InstanceRequirements</c>, you can't specify <c>InstanceType</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -110,21 +110,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>OnDemandAllocationStrategy</code> is set to <code>prioritized</code>, Spot
-        /// Fleet uses priority to determine which launch template override to use first in fulfilling
-        /// On-Demand capacity.
+        /// If <c>OnDemandAllocationStrategy</c> is set to <c>prioritized</c>, Spot Fleet uses
+        /// priority to determine which launch template override to use first in fulfilling On-Demand
+        /// capacity.
         /// </para>
         ///  
         /// <para>
-        /// If the Spot <code>AllocationStrategy</code> is set to <code>capacityOptimizedPrioritized</code>,
+        /// If the Spot <c>AllocationStrategy</c> is set to <c>capacityOptimizedPrioritized</c>,
         /// Spot Fleet uses priority on a best-effort basis to determine which launch template
         /// override to use in fulfilling Spot capacity, but optimizes for capacity first.
         /// </para>
         ///  
         /// <para>
-        /// Valid values are whole numbers starting at <code>0</code>. The lower the number, the
-        /// higher the priority. If no number is set, the launch template override has the lowest
-        /// priority. You can set the same priority for different launch template overrides.
+        /// Valid values are whole numbers starting at <c>0</c>. The lower the number, the higher
+        /// the priority. If no number is set, the launch template override has the lowest priority.
+        /// You can set the same priority for different launch template overrides.
         /// </para>
         /// </summary>
         public double Priority

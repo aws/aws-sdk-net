@@ -117,36 +117,36 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The ARN of the IAM role to be used to run the canary. This role must already exist,
-        /// and must include <code>lambda.amazonaws.com</code> as a principal in the trust policy.
-        /// The role must also have the following permissions:
+        /// and must include <c>lambda.amazonaws.com</c> as a principal in the trust policy. The
+        /// role must also have the following permissions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>s3:PutObject</code> 
+        ///  <c>s3:PutObject</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3:GetBucketLocation</code> 
+        ///  <c>s3:GetBucketLocation</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3:ListAllMyBuckets</code> 
+        ///  <c>s3:ListAllMyBuckets</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cloudwatch:PutMetricData</code> 
+        ///  <c>cloudwatch:PutMetricData</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logs:CreateLogGroup</code> 
+        ///  <c>logs:CreateLogGroup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logs:CreateLogStream</code> 
+        ///  <c>logs:CreateLogStream</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logs:CreateLogStream</code> 
+        ///  <c>logs:CreateLogStream</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

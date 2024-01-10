@@ -33,8 +33,8 @@ namespace Amazon.Connect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>name</code> field support "contains" queries with a minimum of 2 characters
-    /// and maximum of 25 characters. Any queries with character lengths outside of this range
+    /// The <c>name</c> field support "contains" queries with a minimum of 2 characters and
+    /// maximum of 25 characters. Any queries with character lengths outside of this range
     /// will throw invalid results.
     /// </para>
     ///  </note>

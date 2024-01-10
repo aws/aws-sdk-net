@@ -183,10 +183,10 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property LastModificationTime. 
         /// <para>
-        /// When you create a dataset, <code>LastModificationTime</code> is the same as <code>CreationTime</code>.
-        /// While data is being imported to the dataset, <code>LastModificationTime</code> is
-        /// the current time of the <code>DescribeDataset</code> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
-        /// operation has finished, <code>LastModificationTime</code> is when the import job completed
+        /// When you create a dataset, <c>LastModificationTime</c> is the same as <c>CreationTime</c>.
+        /// While data is being imported to the dataset, <c>LastModificationTime</c> is the current
+        /// time of the <c>DescribeDataset</c> call. After a <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// operation has finished, <c>LastModificationTime</c> is when the import job completed
         /// or failed.
         /// </para>
         /// </summary>
@@ -205,8 +205,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Schema. 
         /// <para>
-        /// An array of <code>SchemaAttribute</code> objects that specify the dataset fields.
-        /// Each <code>SchemaAttribute</code> specifies the name and data type of a field.
+        /// An array of <c>SchemaAttribute</c> objects that specify the dataset fields. Each <c>SchemaAttribute</c>
+        /// specifies the name and data type of a field.
         /// </para>
         /// </summary>
         public Schema Schema
@@ -228,35 +228,31 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> 
+        ///  <c>ACTIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
-        /// 
+        ///  <c>CREATE_PENDING</c>, <c>CREATE_IN_PROGRESS</c>, <c>CREATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
-        /// 
+        ///  <c>DELETE_PENDING</c>, <c>DELETE_IN_PROGRESS</c>, <c>DELETE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
-        /// 
+        ///  <c>UPDATE_PENDING</c>, <c>UPDATE_IN_PROGRESS</c>, <c>UPDATE_FAILED</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>UPDATE</code> states apply while data is imported to the dataset from a
-        /// call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
+        /// The <c>UPDATE</c> states apply while data is imported to the dataset from a call to
+        /// the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a>
         /// operation and reflect the status of the dataset import job. For example, when the
-        /// import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-        /// <code>UPDATE_IN_PROGRESS</code>.
+        /// import job status is <c>CREATE_IN_PROGRESS</c>, the status of the dataset is <c>UPDATE_IN_PROGRESS</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Status</code> of the dataset must be <code>ACTIVE</code> before you can
-        /// import training data.
+        /// The <c>Status</c> of the dataset must be <c>ACTIVE</c> before you can import training
+        /// data.
         /// </para>
         ///  </note>
         /// </summary>

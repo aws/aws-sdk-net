@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// The specified aggregator isn't valid for inventory groups. Verify that the aggregator
-    /// uses a valid inventory type such as <code>AWS:Application</code> or <code>AWS:InstanceInformation</code>.
+    /// uses a valid inventory type such as <c>AWS:Application</c> or <c>AWS:InstanceInformation</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

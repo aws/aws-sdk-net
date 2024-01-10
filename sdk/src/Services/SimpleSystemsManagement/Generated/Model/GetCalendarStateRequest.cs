@@ -31,17 +31,17 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the GetCalendarState operation.
     /// Gets the state of a Amazon Web Services Systems Manager change calendar at the current
-    /// time or a specified time. If you specify a time, <code>GetCalendarState</code> returns
-    /// the state of the calendar at that specific time, and returns the next time that the
-    /// change calendar state will transition. If you don't specify a time, <code>GetCalendarState</code>
-    /// uses the current time. Change Calendar entries have two possible states: <code>OPEN</code>
-    /// or <code>CLOSED</code>.
+    /// time or a specified time. If you specify a time, <c>GetCalendarState</c> returns the
+    /// state of the calendar at that specific time, and returns the next time that the change
+    /// calendar state will transition. If you don't specify a time, <c>GetCalendarState</c>
+    /// uses the current time. Change Calendar entries have two possible states: <c>OPEN</c>
+    /// or <c>CLOSED</c>.
     /// 
     ///  
     /// <para>
     /// If you specify more than one calendar in a request, the command returns the status
-    /// of <code>OPEN</code> only if all calendars in the request are open. If one or more
-    /// calendars in the request are closed, the status returned is <code>CLOSED</code>.
+    /// of <c>OPEN</c> only if all calendars in the request are open. If one or more calendars
+    /// in the request are closed, the status returned is <c>CLOSED</c>.
     /// </para>
     ///  
     /// <para>
@@ -61,7 +61,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// (Optional) The specific time for which you want to get calendar state information,
         /// in <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a> format. If you don't
-        /// specify a value or <code>AtTime</code>, the current time is used.
+        /// specify a value or <c>AtTime</c>, the current time is used.
         /// </para>
         /// </summary>
         public string AtTime

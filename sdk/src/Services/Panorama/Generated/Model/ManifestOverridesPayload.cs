@@ -30,7 +30,7 @@ namespace Amazon.Panorama.Model
 {
     /// <summary>
     /// Parameter overrides for an application instance. This is a JSON document that has
-    /// a single key (<code>PayloadData</code>) where the value is an escaped string representation
+    /// a single key (<c>PayloadData</c>) where the value is an escaped string representation
     /// of the overrides document.
     /// </summary>
     public partial class ManifestOverridesPayload

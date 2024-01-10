@@ -100,8 +100,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property NodesToRemove. 
         /// <para>
-        ///  A list of <code>fullyQualifiedName</code> of nodes to remove from the signal catalog.
-        /// 
+        ///  A list of <c>fullyQualifiedName</c> of nodes to remove from the signal catalog. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

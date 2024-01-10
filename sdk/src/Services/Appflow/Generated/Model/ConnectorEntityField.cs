@@ -237,8 +237,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property SupportedFieldTypeDetails. 
         /// <para>
-        ///  Contains details regarding the supported <code>FieldType</code>, including the corresponding
-        /// <code>filterOperators</code> and <code>supportedValues</code>. 
+        ///  Contains details regarding the supported <c>FieldType</c>, including the corresponding
+        /// <c>filterOperators</c> and <c>supportedValues</c>. 
         /// </para>
         /// </summary>
         public SupportedFieldTypeDetails SupportedFieldTypeDetails

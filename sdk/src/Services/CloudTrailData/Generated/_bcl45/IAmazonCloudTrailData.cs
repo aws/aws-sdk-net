@@ -35,7 +35,7 @@ namespace Amazon.CloudTrailData
     /// in your hybrid environments, such as in-house or SaaS applications hosted on-premises
     /// or in the cloud, virtual machines, or containers. You can store, access, analyze,
     /// troubleshoot and take action on this data without maintaining multiple log aggregators
-    /// and reporting tools. After you run <code>PutAuditEvents</code> to ingest your application
+    /// and reporting tools. After you run <c>PutAuditEvents</c> to ingest your application
     /// activity into CloudTrail, you can use CloudTrail Lake to search, query, and analyze
     /// the data that is logged from your applications.
     /// </summary>
@@ -48,9 +48,9 @@ namespace Amazon.CloudTrailData
 
 
         /// <summary>
-        /// Ingests your application events into CloudTrail Lake. A required parameter, <code>auditEvents</code>,
+        /// Ingests your application events into CloudTrail Lake. A required parameter, <c>auditEvents</c>,
         /// accepts the JSON records (also called <i>payload</i>) of events that you want CloudTrail
-        /// to ingest. You can add up to 100 of these events (or up to 1 MB) per <code>PutAuditEvents</code>
+        /// to ingest. You can add up to 100 of these events (or up to 1 MB) per <c>PutAuditEvents</c>
         /// request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAuditEvents service method.</param>
@@ -80,9 +80,9 @@ namespace Amazon.CloudTrailData
 
 
         /// <summary>
-        /// Ingests your application events into CloudTrail Lake. A required parameter, <code>auditEvents</code>,
+        /// Ingests your application events into CloudTrail Lake. A required parameter, <c>auditEvents</c>,
         /// accepts the JSON records (also called <i>payload</i>) of events that you want CloudTrail
-        /// to ingest. You can add up to 100 of these events (or up to 1 MB) per <code>PutAuditEvents</code>
+        /// to ingest. You can add up to 100 of these events (or up to 1 MB) per <c>PutAuditEvents</c>
         /// request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAuditEvents service method.</param>

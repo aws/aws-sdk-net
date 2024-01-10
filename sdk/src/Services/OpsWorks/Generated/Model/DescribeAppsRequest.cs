@@ -52,7 +52,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AppIds. 
         /// <para>
-        /// An array of app IDs for the apps to be described. If you use this parameter, <code>DescribeApps</code>
+        /// An array of app IDs for the apps to be described. If you use this parameter, <c>DescribeApps</c>
         /// returns a description of the specified apps. Otherwise, it returns a description of
         /// every app.
         /// </para>
@@ -72,7 +72,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// The app stack ID. If you use this parameter, <code>DescribeApps</code> returns a description
+        /// The app stack ID. If you use this parameter, <c>DescribeApps</c> returns a description
         /// of the apps in the specified stack.
         /// </para>
         /// </summary>

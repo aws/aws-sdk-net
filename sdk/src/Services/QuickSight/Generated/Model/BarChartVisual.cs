@@ -33,8 +33,8 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The <code>BarChartVisual</code> structure describes a visual that is a member of the
-    /// bar chart family. The following charts can be described using this structure:
+    /// The <c>BarChartVisual</c> structure describes a visual that is a member of the bar
+    /// chart family. The following charts can be described using this structure:
     /// </para>
     ///  <ul> <li> 
     /// <para>

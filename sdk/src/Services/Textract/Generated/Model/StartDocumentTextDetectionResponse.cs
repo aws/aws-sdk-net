@@ -38,9 +38,9 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier of the text detection job for the document. Use <code>JobId</code>
-        /// to identify the job in a subsequent call to <code>GetDocumentTextDetection</code>.
-        /// A <code>JobId</code> value is only valid for 7 days.
+        /// The identifier of the text detection job for the document. Use <c>JobId</c> to identify
+        /// the job in a subsequent call to <c>GetDocumentTextDetection</c>. A <c>JobId</c> value
+        /// is only valid for 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

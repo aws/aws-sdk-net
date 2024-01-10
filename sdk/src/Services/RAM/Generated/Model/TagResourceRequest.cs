@@ -50,8 +50,8 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of the managed permission that you want to add tags to. You
-        /// must specify <i>either</i> <code>resourceArn</code>, or <code>resourceShareArn</code>,
-        /// but not both.
+        /// must specify <i>either</i> <c>resourceArn</c>, or <c>resourceShareArn</c>, but not
+        /// both.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -71,8 +71,7 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> of the resource share that you want to add tags to. You must
-        /// specify <i>either</i> <code>resourceShareArn</code>, or <code>resourceArn</code>,
-        /// but not both.
+        /// specify <i>either</i> <c>resourceShareArn</c>, or <c>resourceArn</c>, but not both.
         /// </para>
         /// </summary>
         public string ResourceShareArn

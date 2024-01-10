@@ -41,9 +41,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property AvailNum. 
         /// <para>
-        /// This is written to <code>splice_insert.avail_num</code>, as defined in section 9.7.3.1
-        /// of the SCTE-35 specification. The default value is <code>0</code>. Values must be
-        /// between <code>0</code> and <code>256</code>, inclusive.
+        /// This is written to <c>splice_insert.avail_num</c>, as defined in section 9.7.3.1 of
+        /// the SCTE-35 specification. The default value is <c>0</c>. Values must be between <c>0</c>
+        /// and <c>256</c>, inclusive.
         /// </para>
         /// </summary>
         public int AvailNum
@@ -61,9 +61,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property AvailsExpected. 
         /// <para>
-        /// This is written to <code>splice_insert.avails_expected</code>, as defined in section
-        /// 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values
-        /// must be between <code>0</code> and <code>256</code>, inclusive.
+        /// This is written to <c>splice_insert.avails_expected</c>, as defined in section 9.7.3.1
+        /// of the SCTE-35 specification. The default value is <c>0</c>. Values must be between
+        /// <c>0</c> and <c>256</c>, inclusive.
         /// </para>
         /// </summary>
         public int AvailsExpected
@@ -81,8 +81,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property SpliceEventId. 
         /// <para>
-        /// This is written to <code>splice_insert.splice_event_id</code>, as defined in section
-        /// 9.7.3.1 of the SCTE-35 specification. The default value is <code>1</code>.
+        /// This is written to <c>splice_insert.splice_event_id</c>, as defined in section 9.7.3.1
+        /// of the SCTE-35 specification. The default value is <c>1</c>.
         /// </para>
         /// </summary>
         public int SpliceEventId
@@ -100,9 +100,9 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property UniqueProgramId. 
         /// <para>
-        /// This is written to <code>splice_insert.unique_program_id</code>, as defined in section
-        /// 9.7.3.1 of the SCTE-35 specification. The default value is <code>0</code>. Values
-        /// must be between <code>0</code> and <code>256</code>, inclusive.
+        /// This is written to <c>splice_insert.unique_program_id</c>, as defined in section 9.7.3.1
+        /// of the SCTE-35 specification. The default value is <c>0</c>. Values must be between
+        /// <c>0</c> and <c>256</c>, inclusive.
         /// </para>
         /// </summary>
         public int UniqueProgramId

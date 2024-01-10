@@ -36,13 +36,13 @@ namespace Amazon.MigrationHub.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Migration tools can call the <code>AssociateCreatedArtifact</code> operation to indicate
+    /// Migration tools can call the <c>AssociateCreatedArtifact</c> operation to indicate
     /// which AWS artifact is associated with a migration task.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The created artifact name must be provided in ARN (Amazon Resource Name) format which
-    /// will contain information about type and region; for example: <code>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</code>.
+    /// will contain information about type and region; for example: <c>arn:aws:ec2:us-east-1:488216288981:image/ami-6d0ba87b</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

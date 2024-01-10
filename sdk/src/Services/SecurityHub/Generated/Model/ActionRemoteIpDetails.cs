@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// For <code>AwsApiAction</code>, <code>NetworkConnectionAction</code>, and <code>PortProbeAction</code>,
-    /// <code>RemoteIpDetails</code> provides information about the remote IP address that
-    /// was involved in the action.
+    /// For <c>AwsApiAction</c>, <c>NetworkConnectionAction</c>, and <c>PortProbeAction</c>,
+    /// <c>RemoteIpDetails</c> provides information about the remote IP address that was involved
+    /// in the action.
     /// </summary>
     public partial class ActionRemoteIpDetails
     {

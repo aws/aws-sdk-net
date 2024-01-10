@@ -32,10 +32,10 @@ namespace Amazon.Batch.Model
     /// The order that compute environments are tried in for job placement within a queue.
     /// Compute environments are tried in ascending order. For example, if two compute environments
     /// are associated with a job queue, the compute environment with a lower order integer
-    /// value is tried for job placement first. Compute environments must be in the <code>VALID</code>
+    /// value is tried for job placement first. Compute environments must be in the <c>VALID</c>
     /// state before you can associate them with a job queue. All of the compute environments
-    /// must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code>
-    /// or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
+    /// must be either EC2 (<c>EC2</c> or <c>SPOT</c>) or Fargate (<c>FARGATE</c> or <c>FARGATE_SPOT</c>);
+    /// EC2 and Fargate compute environments can't be mixed.
     /// 
     ///  <note> 
     /// <para>
@@ -74,8 +74,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The order of the compute environment. Compute environments are tried in ascending
         /// order. For example, if two compute environments are associated with a job queue, the
-        /// compute environment with a lower <code>order</code> integer value is tried for job
-        /// placement first.
+        /// compute environment with a lower <c>order</c> integer value is tried for job placement
+        /// first.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

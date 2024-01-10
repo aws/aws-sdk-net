@@ -62,7 +62,7 @@ namespace Amazon.MainframeModernization.Model
         /// <para>
         /// Identifies the batch job definition. This identifier can also point to any batch job
         /// definition that already exists in the application or to one of the batch job definitions
-        /// within the directory that is specified in <code>keyPrefix</code>.
+        /// within the directory that is specified in <c>keyPrefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

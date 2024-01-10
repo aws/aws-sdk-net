@@ -161,8 +161,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If set to <code>true</code>, indicates that the instance cannot be terminated using
-        /// the Amazon EC2 console, command line tool, or API.
+        /// If set to <c>true</c>, indicates that the instance cannot be terminated using the
+        /// Amazon EC2 console, command line tool, or API.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -320,14 +320,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code>
-        /// was configured as <code>true</code>, then this is the AMI ID that the parameter is
-        /// mapped to in the Parameter Store.
+        /// If a Systems Manager parameter was specified in the request, and <c>ResolveAlias</c>
+        /// was configured as <c>true</c>, then this is the AMI ID that the parameter is mapped
+        /// to in the Parameter Store.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a Systems Manager parameter was specified in the request, and <code>ResolveAlias</code>
-        /// was configured as <code>false</code>, then this is the parameter value.
+        /// If a Systems Manager parameter was specified in the request, and <c>ResolveAlias</c>
+        /// was configured as <c>false</c>, then this is the parameter value.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -393,7 +393,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceTypes</code>.
+        /// If you specify <c>InstanceRequirements</c>, you can't specify <c>InstanceTypes</c>.
         /// </para>
         /// </summary>
         public InstanceRequirements InstanceRequirements

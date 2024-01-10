@@ -41,9 +41,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters the results of the request. <code>Prefix</code> specifies the prefix of release
-        /// labels to return. <code>Application</code> specifies the application (with/without
-        /// version) of release labels to return.
+        /// Filters the results of the request. <c>Prefix</c> specifies the prefix of release
+        /// labels to return. <c>Application</c> specifies the application (with/without version)
+        /// of release labels to return.
         /// </para>
         /// </summary>
         public ReleaseLabelFilter Filters
@@ -62,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Defines the maximum number of release labels to return in a single response. The default
-        /// is <code>100</code>.
+        /// is <c>100</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -81,12 +81,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Specifies the next page of results. If <code>NextToken</code> is not specified, which
-        /// is usually the case for the first request of ListReleaseLabels, the first page of
-        /// results are determined by other filtering parameters or by the latest version. The
-        /// <code>ListReleaseLabels</code> request fails if the identity (Amazon Web Services
-        /// account ID) and all filtering parameters are different from the original request,
-        /// or if the <code>NextToken</code> is expired or tampered with.
+        /// Specifies the next page of results. If <c>NextToken</c> is not specified, which is
+        /// usually the case for the first request of ListReleaseLabels, the first page of results
+        /// are determined by other filtering parameters or by the latest version. The <c>ListReleaseLabels</c>
+        /// request fails if the identity (Amazon Web Services account ID) and all filtering parameters
+        /// are different from the original request, or if the <c>NextToken</c> is expired or
+        /// tampered with.
         /// </para>
         /// </summary>
         public string NextToken

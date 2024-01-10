@@ -60,7 +60,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies a state machine alias. The alias ARN
         /// is a combination of state machine ARN and the alias name separated by a colon (:).
-        /// For example, <code>stateMachineARN:PROD</code>.
+        /// For example, <c>stateMachineARN:PROD</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000)]

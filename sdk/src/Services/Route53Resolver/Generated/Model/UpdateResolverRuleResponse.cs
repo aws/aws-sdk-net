@@ -38,7 +38,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverRule. 
         /// <para>
-        /// The response to an <code>UpdateResolverRule</code> request.
+        /// The response to an <c>UpdateResolverRule</c> request.
         /// </para>
         /// </summary>
         public ResolverRule ResolverRule

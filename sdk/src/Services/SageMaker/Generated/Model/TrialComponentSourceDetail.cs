@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Detailed information about the source of a trial component. Either <code>ProcessingJob</code>
-    /// or <code>TrainingJob</code> is returned.
+    /// Detailed information about the source of a trial component. Either <c>ProcessingJob</c>
+    /// or <c>TrainingJob</c> is returned.
     /// </summary>
     public partial class TrialComponentSourceDetail
     {

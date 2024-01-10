@@ -62,7 +62,7 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property KmsKeyIdentifier. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the customer managed KMS key, for example <code>kms_key_identifier:ARN</code>.
+        /// The Amazon Resource Name (ARN) of the customer managed KMS key, for example <c>kms_key_identifier:ARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5096)]
@@ -86,17 +86,17 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        ///  <c>type:AWS_OWNED_KMS_KEY</c> - This key is owned by Amazon Keyspaces. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and
-        /// is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        ///  <c>type:CUSTOMER_MANAGED_KMS_KEY</c> - This key is stored in your account and is
+        /// created, owned, and managed by you. This option requires the <c>kms_key_identifier</c>
         /// of the KMS key in Amazon Resource Name (ARN) format as input. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>type:AWS_OWNED_KMS_KEY</code>. 
+        /// The default is <c>type:AWS_OWNED_KMS_KEY</c>. 
         /// </para>
         ///  
         /// <para>

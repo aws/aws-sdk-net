@@ -305,36 +305,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -380,36 +380,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -462,36 +462,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -537,36 +537,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -602,7 +602,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns the estimated number of activity tasks in the specified task list. The count
         /// returned is an approximation and isn't guaranteed to be exact. If you specify a task
-        /// list that no activity task was ever scheduled in then <code>0</code> is returned.
+        /// list that no activity task was ever scheduled in then <c>0</c> is returned.
         /// 
         ///  
         /// <para>
@@ -615,25 +615,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -662,7 +661,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns the estimated number of activity tasks in the specified task list. The count
         /// returned is an approximation and isn't guaranteed to be exact. If you specify a task
-        /// list that no activity task was ever scheduled in then <code>0</code> is returned.
+        /// list that no activity task was ever scheduled in then <c>0</c> is returned.
         /// 
         ///  
         /// <para>
@@ -675,25 +674,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -729,7 +727,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns the estimated number of decision tasks in the specified task list. The count
         /// returned is an approximation and isn't guaranteed to be exact. If you specify a task
-        /// list that no decision task was ever scheduled in then <code>0</code> is returned.
+        /// list that no decision task was ever scheduled in then <c>0</c> is returned.
         /// 
         ///  
         /// <para>
@@ -742,25 +740,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -789,7 +786,7 @@ namespace Amazon.SimpleWorkflow
         /// <summary>
         /// Returns the estimated number of decision tasks in the specified task list. The count
         /// returned is an approximation and isn't guaranteed to be exact. If you specify a task
-        /// list that no decision task was ever scheduled in then <code>0</code> is returned.
+        /// list that no decision task was ever scheduled in then <c>0</c> is returned.
         /// 
         ///  
         /// <para>
@@ -802,25 +799,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -874,32 +870,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+        ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+        ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -949,32 +945,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+        ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+        ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1033,12 +1029,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1048,8 +1044,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1101,12 +1097,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1116,8 +1112,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1175,32 +1171,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1251,32 +1247,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1328,32 +1324,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+        ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+        ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1395,32 +1391,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+        ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+        ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1467,12 +1463,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1482,8 +1478,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1523,12 +1519,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1538,8 +1534,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1592,12 +1588,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1607,8 +1603,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1654,12 +1650,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1669,8 +1665,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1719,32 +1715,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1786,32 +1782,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1846,7 +1842,7 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Returns the history of the specified workflow execution. The results may be split
-        /// into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code>
+        /// into multiple pages. To retrieve subsequent pages, make the call again using the <c>nextPageToken</c>
         /// returned by the initial call.
         /// 
         ///  <note> 
@@ -1865,12 +1861,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1880,8 +1876,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1909,7 +1905,7 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Returns the history of the specified workflow execution. The results may be split
-        /// into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code>
+        /// into multiple pages. To retrieve subsequent pages, make the call again using the <c>nextPageToken</c>
         /// returned by the initial call.
         /// 
         ///  <note> 
@@ -1928,12 +1924,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1943,8 +1939,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -1981,7 +1977,7 @@ namespace Amazon.SimpleWorkflow
         /// Returns information about all activities registered in the specified domain that match
         /// the specified name and registration status. The result includes information like creation
         /// date, current status of the activity, etc. The results may be split into multiple
-        /// pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code>
+        /// pages. To retrieve subsequent pages, make the call again using the <c>nextPageToken</c>
         /// returned by the initial call.
         /// 
         ///  
@@ -1995,12 +1991,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2010,8 +2006,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2041,7 +2037,7 @@ namespace Amazon.SimpleWorkflow
         /// Returns information about all activities registered in the specified domain that match
         /// the specified name and registration status. The result includes information like creation
         /// date, current status of the activity, etc. The results may be split into multiple
-        /// pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code>
+        /// pages. To retrieve subsequent pages, make the call again using the <c>nextPageToken</c>
         /// returned by the initial call.
         /// 
         ///  
@@ -2055,12 +2051,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2070,8 +2066,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2125,36 +2121,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2201,36 +2197,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2284,13 +2280,13 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*</code>,
-        /// where <i>AccountID</i> is the account ID, with no dashes.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains. The element must be set to <c>arn:aws:swf::AccountID:domain/*</c>, where
+        /// <i>AccountID</i> is the account ID, with no dashes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2300,8 +2296,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2343,13 +2339,13 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains. The element must be set to <code>arn:aws:swf::AccountID:domain/*</code>,
-        /// where <i>AccountID</i> is the account ID, with no dashes.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains. The element must be set to <c>arn:aws:swf::AccountID:domain/*</c>, where
+        /// <i>AccountID</i> is the account ID, with no dashes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2359,8 +2355,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2409,36 +2405,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2485,36 +2481,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagFilter.tag</code>: String constraint. The key is <code>swf:tagFilter.tag</code>.
+        ///  <c>tagFilter.tag</c>: String constraint. The key is <c>swf:tagFilter.tag</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.name</code>: String constraint. The key is <code>swf:typeFilter.name</code>.
+        ///  <c>typeFilter.name</c>: String constraint. The key is <c>swf:typeFilter.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>typeFilter.version</code>: String constraint. The key is <code>swf:typeFilter.version</code>.
+        ///  <c>typeFilter.version</c>: String constraint. The key is <c>swf:typeFilter.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2629,12 +2625,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2644,8 +2640,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2686,12 +2682,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2701,8 +2697,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2736,7 +2732,7 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Used by workers to get an <a>ActivityTask</a> from the specified activity <code>taskList</code>.
+        /// Used by workers to get an <a>ActivityTask</a> from the specified activity <c>taskList</c>.
         /// This initiates a long poll, where the service holds the HTTP connection open and responds
         /// as soon as a task becomes available. The maximum time the service holds on to the
         /// request before responding is 60 seconds. If no task is available within 60 seconds,
@@ -2760,25 +2756,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2810,7 +2805,7 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Used by workers to get an <a>ActivityTask</a> from the specified activity <code>taskList</code>.
+        /// Used by workers to get an <a>ActivityTask</a> from the specified activity <c>taskList</c>.
         /// This initiates a long poll, where the service holds the HTTP connection open and responds
         /// as soon as a task becomes available. The maximum time the service holds on to the
         /// request before responding is 60 seconds. If no task is available within 60 seconds,
@@ -2834,25 +2829,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2891,7 +2885,7 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Used by deciders to get a <a>DecisionTask</a> from the specified decision <code>taskList</code>.
+        /// Used by deciders to get a <a>DecisionTask</a> from the specified decision <c>taskList</c>.
         /// A decision task may be returned for any open workflow execution that is using the
         /// specified task list. The task includes a paginated view of the history of the workflow
         /// execution. The decider should use the workflow type and the history to determine how
@@ -2914,10 +2908,10 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// Because the number of workflow history events for a single workflow execution might
         /// be very large, the result returned might be split up across a number of pages. To
-        /// retrieve subsequent pages, make additional calls to <code>PollForDecisionTask</code>
-        /// using the <code>nextPageToken</code> returned by the initial call. Note that you do
-        /// <i>not</i> call <code>GetWorkflowExecutionHistory</code> with this <code>nextPageToken</code>.
-        /// Instead, call <code>PollForDecisionTask</code> again.
+        /// retrieve subsequent pages, make additional calls to <c>PollForDecisionTask</c> using
+        /// the <c>nextPageToken</c> returned by the initial call. Note that you do <i>not</i>
+        /// call <c>GetWorkflowExecutionHistory</c> with this <c>nextPageToken</c>. Instead, call
+        /// <c>PollForDecisionTask</c> again.
         /// </para>
         ///  </important> 
         /// <para>
@@ -2930,25 +2924,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -2980,7 +2973,7 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Used by deciders to get a <a>DecisionTask</a> from the specified decision <code>taskList</code>.
+        /// Used by deciders to get a <a>DecisionTask</a> from the specified decision <c>taskList</c>.
         /// A decision task may be returned for any open workflow execution that is using the
         /// specified task list. The task includes a paginated view of the history of the workflow
         /// execution. The decider should use the workflow type and the history to determine how
@@ -3003,10 +2996,10 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// Because the number of workflow history events for a single workflow execution might
         /// be very large, the result returned might be split up across a number of pages. To
-        /// retrieve subsequent pages, make additional calls to <code>PollForDecisionTask</code>
-        /// using the <code>nextPageToken</code> returned by the initial call. Note that you do
-        /// <i>not</i> call <code>GetWorkflowExecutionHistory</code> with this <code>nextPageToken</code>.
-        /// Instead, call <code>PollForDecisionTask</code> again.
+        /// retrieve subsequent pages, make additional calls to <c>PollForDecisionTask</c> using
+        /// the <c>nextPageToken</c> returned by the initial call. Note that you do <i>not</i>
+        /// call <c>GetWorkflowExecutionHistory</c> with this <c>nextPageToken</c>. Instead, call
+        /// <c>PollForDecisionTask</c> again.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3019,25 +3012,24 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the <code>taskList.name</code> parameter by using a <code>Condition</code>
-        /// element with the <code>swf:taskList.name</code> key to allow the action to access
-        /// only certain task lists.
+        /// Constrain the <c>taskList.name</c> parameter by using a <c>Condition</c> element with
+        /// the <c>swf:taskList.name</c> key to allow the action to access only certain task lists.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3077,30 +3069,30 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by activity workers to report to the service that the <a>ActivityTask</a> represented
-        /// by the specified <code>taskToken</code> is still making progress. The worker can also
-        /// specify details of the progress, for example percent complete, using the <code>details</code>
-        /// parameter. This action can also be used by the worker as a mechanism to check if cancellation
+        /// by the specified <c>taskToken</c> is still making progress. The worker can also specify
+        /// details of the progress, for example percent complete, using the <c>details</c> parameter.
+        /// This action can also be used by the worker as a mechanism to check if cancellation
         /// is being requested for the activity task. If a cancellation is being attempted for
-        /// the specified task, then the boolean <code>cancelRequested</code> flag returned by
-        /// the service is set to <code>true</code>.
+        /// the specified task, then the boolean <c>cancelRequested</c> flag returned by the service
+        /// is set to <c>true</c>.
         /// 
         ///  
         /// <para>
-        /// This action resets the <code>taskHeartbeatTimeout</code> clock. The <code>taskHeartbeatTimeout</code>
+        /// This action resets the <c>taskHeartbeatTimeout</c> clock. The <c>taskHeartbeatTimeout</c>
         /// is specified in <a>RegisterActivityType</a>.
         /// </para>
         ///  
         /// <para>
         /// This action doesn't in itself create an event in the workflow execution history. However,
-        /// if the task times out, the workflow execution history contains a <code>ActivityTaskTimedOut</code>
+        /// if the task times out, the workflow execution history contains a <c>ActivityTaskTimedOut</c>
         /// event that contains the information from the last heartbeat generated by the activity
         /// worker.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>taskStartToCloseTimeout</code> of an activity type is the maximum duration
-        /// of an activity task, regardless of the number of <a>RecordActivityTaskHeartbeat</a>
-        /// requests received. The <code>taskStartToCloseTimeout</code> is also specified in <a>RegisterActivityType</a>.
+        /// The <c>taskStartToCloseTimeout</c> of an activity type is the maximum duration of
+        /// an activity task, regardless of the number of <a>RecordActivityTaskHeartbeat</a> requests
+        /// received. The <c>taskStartToCloseTimeout</c> is also specified in <a>RegisterActivityType</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -3109,9 +3101,9 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// If the <code>cancelRequested</code> flag returns <code>true</code>, a cancellation
-        /// is being attempted. If the worker can cancel the activity, it should respond with
-        /// <a>RespondActivityTaskCanceled</a>. Otherwise, it should ignore the cancellation request.
+        /// If the <c>cancelRequested</c> flag returns <c>true</c>, a cancellation is being attempted.
+        /// If the worker can cancel the activity, it should respond with <a>RespondActivityTaskCanceled</a>.
+        /// Otherwise, it should ignore the cancellation request.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3124,12 +3116,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3139,8 +3131,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3168,30 +3160,30 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by activity workers to report to the service that the <a>ActivityTask</a> represented
-        /// by the specified <code>taskToken</code> is still making progress. The worker can also
-        /// specify details of the progress, for example percent complete, using the <code>details</code>
-        /// parameter. This action can also be used by the worker as a mechanism to check if cancellation
+        /// by the specified <c>taskToken</c> is still making progress. The worker can also specify
+        /// details of the progress, for example percent complete, using the <c>details</c> parameter.
+        /// This action can also be used by the worker as a mechanism to check if cancellation
         /// is being requested for the activity task. If a cancellation is being attempted for
-        /// the specified task, then the boolean <code>cancelRequested</code> flag returned by
-        /// the service is set to <code>true</code>.
+        /// the specified task, then the boolean <c>cancelRequested</c> flag returned by the service
+        /// is set to <c>true</c>.
         /// 
         ///  
         /// <para>
-        /// This action resets the <code>taskHeartbeatTimeout</code> clock. The <code>taskHeartbeatTimeout</code>
+        /// This action resets the <c>taskHeartbeatTimeout</c> clock. The <c>taskHeartbeatTimeout</c>
         /// is specified in <a>RegisterActivityType</a>.
         /// </para>
         ///  
         /// <para>
         /// This action doesn't in itself create an event in the workflow execution history. However,
-        /// if the task times out, the workflow execution history contains a <code>ActivityTaskTimedOut</code>
+        /// if the task times out, the workflow execution history contains a <c>ActivityTaskTimedOut</c>
         /// event that contains the information from the last heartbeat generated by the activity
         /// worker.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>taskStartToCloseTimeout</code> of an activity type is the maximum duration
-        /// of an activity task, regardless of the number of <a>RecordActivityTaskHeartbeat</a>
-        /// requests received. The <code>taskStartToCloseTimeout</code> is also specified in <a>RegisterActivityType</a>.
+        /// The <c>taskStartToCloseTimeout</c> of an activity type is the maximum duration of
+        /// an activity task, regardless of the number of <a>RecordActivityTaskHeartbeat</a> requests
+        /// received. The <c>taskStartToCloseTimeout</c> is also specified in <a>RegisterActivityType</a>.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -3200,9 +3192,9 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// If the <code>cancelRequested</code> flag returns <code>true</code>, a cancellation
-        /// is being attempted. If the worker can cancel the activity, it should respond with
-        /// <a>RespondActivityTaskCanceled</a>. Otherwise, it should ignore the cancellation request.
+        /// If the <c>cancelRequested</c> flag returns <c>true</c>, a cancellation is being attempted.
+        /// If the worker can cancel the activity, it should respond with <a>RespondActivityTaskCanceled</a>.
+        /// Otherwise, it should ignore the cancellation request.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3215,12 +3207,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3230,8 +3222,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3270,9 +3262,9 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  <important> 
         /// <para>
-        /// A <code>TypeAlreadyExists</code> fault is returned if the type already exists in the
-        /// domain. You cannot change any configuration settings of the type after its registration,
-        /// and it must be registered as a new version.
+        /// A <c>TypeAlreadyExists</c> fault is returned if the type already exists in the domain.
+        /// You cannot change any configuration settings of the type after its registration, and
+        /// it must be registered as a new version.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3285,36 +3277,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.
+        ///  <c>defaultTaskList.name</c>: String constraint. The key is <c>swf:defaultTaskList.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code>: String constraint. The key is <code>swf:name</code>.
+        ///  <c>name</c>: String constraint. The key is <c>swf:name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code>: String constraint. The key is <code>swf:version</code>.
+        ///  <c>version</c>: String constraint. The key is <c>swf:version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3356,9 +3348,9 @@ namespace Amazon.SimpleWorkflow
         /// 
         ///  <important> 
         /// <para>
-        /// A <code>TypeAlreadyExists</code> fault is returned if the type already exists in the
-        /// domain. You cannot change any configuration settings of the type after its registration,
-        /// and it must be registered as a new version.
+        /// A <c>TypeAlreadyExists</c> fault is returned if the type already exists in the domain.
+        /// You cannot change any configuration settings of the type after its registration, and
+        /// it must be registered as a new version.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3371,36 +3363,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.
+        ///  <c>defaultTaskList.name</c>: String constraint. The key is <c>swf:defaultTaskList.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code>: String constraint. The key is <code>swf:name</code>.
+        ///  <c>name</c>: String constraint. The key is <c>swf:name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code>: String constraint. The key is <code>swf:version</code>.
+        ///  <c>version</c>: String constraint. The key is <c>swf:version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3462,7 +3454,7 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3472,8 +3464,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3526,7 +3518,7 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3536,8 +3528,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3589,8 +3581,8 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <important> 
         /// <para>
-        /// If the type already exists, then a <code>TypeAlreadyExists</code> fault is returned.
-        /// You cannot change the configuration settings of a workflow type once it is registered
+        /// If the type already exists, then a <c>TypeAlreadyExists</c> fault is returned. You
+        /// cannot change the configuration settings of a workflow type once it is registered
         /// and it must be registered as a new version.
         /// </para>
         ///  </important> 
@@ -3604,36 +3596,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.
+        ///  <c>defaultTaskList.name</c>: String constraint. The key is <c>swf:defaultTaskList.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code>: String constraint. The key is <code>swf:name</code>.
+        ///  <c>name</c>: String constraint. The key is <c>swf:name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code>: String constraint. The key is <code>swf:version</code>.
+        ///  <c>version</c>: String constraint. The key is <c>swf:version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3680,8 +3672,8 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <important> 
         /// <para>
-        /// If the type already exists, then a <code>TypeAlreadyExists</code> fault is returned.
-        /// You cannot change the configuration settings of a workflow type once it is registered
+        /// If the type already exists, then a <c>TypeAlreadyExists</c> fault is returned. You
+        /// cannot change the configuration settings of a workflow type once it is registered
         /// and it must be registered as a new version.
         /// </para>
         ///  </important> 
@@ -3695,36 +3687,36 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>defaultTaskList.name</code>: String constraint. The key is <code>swf:defaultTaskList.name</code>.
+        ///  <c>defaultTaskList.name</c>: String constraint. The key is <c>swf:defaultTaskList.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code>: String constraint. The key is <code>swf:name</code>.
+        ///  <c>name</c>: String constraint. The key is <c>swf:name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code>: String constraint. The key is <code>swf:version</code>.
+        ///  <c>version</c>: String constraint. The key is <c>swf:version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3768,15 +3760,15 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running
-        /// workflow execution identified by the given domain, workflowId, and runId. This logically
-        /// requests the cancellation of the workflow execution as a whole. It is up to the decider
-        /// to take appropriate actions when it receives an execution history with this event.
+        /// Records a <c>WorkflowExecutionCancelRequested</c> event in the currently running workflow
+        /// execution identified by the given domain, workflowId, and runId. This logically requests
+        /// the cancellation of the workflow execution as a whole. It is up to the decider to
+        /// take appropriate actions when it receives an execution history with this event.
         /// 
         ///  <note> 
         /// <para>
-        /// If the runId isn't specified, the <code>WorkflowExecutionCancelRequested</code> event
-        /// is recorded in the history of the current open workflow execution with the specified
+        /// If the runId isn't specified, the <c>WorkflowExecutionCancelRequested</c> event is
+        /// recorded in the history of the current open workflow execution with the specified
         /// workflowId in the domain.
         /// </para>
         ///  </note> <note> 
@@ -3795,12 +3787,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3810,8 +3802,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3838,15 +3830,15 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running
-        /// workflow execution identified by the given domain, workflowId, and runId. This logically
-        /// requests the cancellation of the workflow execution as a whole. It is up to the decider
-        /// to take appropriate actions when it receives an execution history with this event.
+        /// Records a <c>WorkflowExecutionCancelRequested</c> event in the currently running workflow
+        /// execution identified by the given domain, workflowId, and runId. This logically requests
+        /// the cancellation of the workflow execution as a whole. It is up to the decider to
+        /// take appropriate actions when it receives an execution history with this event.
         /// 
         ///  <note> 
         /// <para>
-        /// If the runId isn't specified, the <code>WorkflowExecutionCancelRequested</code> event
-        /// is recorded in the history of the current open workflow execution with the specified
+        /// If the runId isn't specified, the <c>WorkflowExecutionCancelRequested</c> event is
+        /// recorded in the history of the current open workflow execution with the specified
         /// workflowId in the domain.
         /// </para>
         ///  </note> <note> 
@@ -3865,12 +3857,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3880,8 +3872,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3916,18 +3908,18 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
-        /// <code>taskToken</code> was successfully canceled. Additional <code>details</code>
-        /// can be provided using the <code>details</code> argument.
+        /// <c>taskToken</c> was successfully canceled. Additional <c>details</c> can be provided
+        /// using the <c>details</c> argument.
         /// 
         ///  
         /// <para>
-        /// These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code>
-        /// event added to the workflow history.
+        /// These <c>details</c> (if provided) appear in the <c>ActivityTaskCanceled</c> event
+        /// added to the workflow history.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Only use this operation if the <code>canceled</code> flag of a <a>RecordActivityTaskHeartbeat</a>
-        /// request returns <code>true</code> and if the activity can be safely undone or abandoned.
+        /// Only use this operation if the <c>canceled</c> flag of a <a>RecordActivityTaskHeartbeat</a>
+        /// request returns <c>true</c> and if the activity can be safely undone or abandoned.
         /// </para>
         ///  </important> 
         /// <para>
@@ -3948,12 +3940,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3963,8 +3955,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -3992,18 +3984,18 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
-        /// <code>taskToken</code> was successfully canceled. Additional <code>details</code>
-        /// can be provided using the <code>details</code> argument.
+        /// <c>taskToken</c> was successfully canceled. Additional <c>details</c> can be provided
+        /// using the <c>details</c> argument.
         /// 
         ///  
         /// <para>
-        /// These <code>details</code> (if provided) appear in the <code>ActivityTaskCanceled</code>
-        /// event added to the workflow history.
+        /// These <c>details</c> (if provided) appear in the <c>ActivityTaskCanceled</c> event
+        /// added to the workflow history.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Only use this operation if the <code>canceled</code> flag of a <a>RecordActivityTaskHeartbeat</a>
-        /// request returns <code>true</code> and if the activity can be safely undone or abandoned.
+        /// Only use this operation if the <c>canceled</c> flag of a <a>RecordActivityTaskHeartbeat</a>
+        /// request returns <c>true</c> and if the activity can be safely undone or abandoned.
         /// </para>
         ///  </important> 
         /// <para>
@@ -4024,12 +4016,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4039,8 +4031,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4075,14 +4067,13 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
-        /// <code>taskToken</code> completed successfully with a <code>result</code> (if provided).
-        /// The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in
-        /// the workflow history.
+        /// <c>taskToken</c> completed successfully with a <c>result</c> (if provided). The <c>result</c>
+        /// appears in the <c>ActivityTaskCompleted</c> event in the workflow history.
         /// 
         ///  <important> 
         /// <para>
         /// If the requested task doesn't complete successfully, use <a>RespondActivityTaskFailed</a>
-        /// instead. If the worker finds that the task is canceled through the <code>canceled</code>
+        /// instead. If the worker finds that the task is canceled through the <c>canceled</c>
         /// flag returned by <a>RecordActivityTaskHeartbeat</a>, it should cancel the task, clean
         /// up and then call <a>RespondActivityTaskCanceled</a>.
         /// </para>
@@ -4105,12 +4096,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4120,8 +4111,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4149,14 +4140,13 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
-        /// <code>taskToken</code> completed successfully with a <code>result</code> (if provided).
-        /// The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in
-        /// the workflow history.
+        /// <c>taskToken</c> completed successfully with a <c>result</c> (if provided). The <c>result</c>
+        /// appears in the <c>ActivityTaskCompleted</c> event in the workflow history.
         /// 
         ///  <important> 
         /// <para>
         /// If the requested task doesn't complete successfully, use <a>RespondActivityTaskFailed</a>
-        /// instead. If the worker finds that the task is canceled through the <code>canceled</code>
+        /// instead. If the worker finds that the task is canceled through the <c>canceled</c>
         /// flag returned by <a>RecordActivityTaskHeartbeat</a>, it should cancel the task, clean
         /// up and then call <a>RespondActivityTaskCanceled</a>.
         /// </para>
@@ -4179,12 +4169,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4194,8 +4184,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4230,9 +4220,9 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
-        /// <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code>
-        /// and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added
-        /// to the workflow history.
+        /// <c>taskToken</c> has failed with <c>reason</c> (if specified). The <c>reason</c> and
+        /// <c>details</c> appear in the <c>ActivityTaskFailed</c> event added to the workflow
+        /// history.
         /// 
         ///  
         /// <para>
@@ -4253,12 +4243,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4268,8 +4258,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4297,9 +4287,9 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by workers to tell the service that the <a>ActivityTask</a> identified by the
-        /// <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code>
-        /// and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added
-        /// to the workflow history.
+        /// <c>taskToken</c> has failed with <c>reason</c> (if specified). The <c>reason</c> and
+        /// <c>details</c> appear in the <c>ActivityTaskFailed</c> event added to the workflow
+        /// history.
         /// 
         ///  
         /// <para>
@@ -4320,12 +4310,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4335,8 +4325,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4371,12 +4361,12 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by deciders to tell the service that the <a>DecisionTask</a> identified by the
-        /// <code>taskToken</code> has successfully completed. The <code>decisions</code> argument
-        /// specifies the list of decisions made while processing the task.
+        /// <c>taskToken</c> has successfully completed. The <c>decisions</c> argument specifies
+        /// the list of decisions made while processing the task.
         /// 
         ///  
         /// <para>
-        /// A <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code>
+        /// A <c>DecisionTaskCompleted</c> event is added to the workflow history. The <c>executionContext</c>
         /// specified is attached to the event in the workflow execution history.
         /// </para>
         ///  
@@ -4385,12 +4375,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  
         /// <para>
-        /// If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code>,
-        /// it can express permissions for the list of decisions in the <code>decisions</code>
-        /// parameter. Each of the decisions has one or more parameters, much like a regular API
-        /// call. To allow for policies to be as readable as possible, you can express permissions
-        /// on decisions as if they were actual API calls, including applying conditions to some
-        /// parameters. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// If an IAM policy grants permission to use <c>RespondDecisionTaskCompleted</c>, it
+        /// can express permissions for the list of decisions in the <c>decisions</c> parameter.
+        /// Each of the decisions has one or more parameters, much like a regular API call. To
+        /// allow for policies to be as readable as possible, you can express permissions on decisions
+        /// as if they were actual API calls, including applying conditions to some parameters.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4418,12 +4408,12 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Used by deciders to tell the service that the <a>DecisionTask</a> identified by the
-        /// <code>taskToken</code> has successfully completed. The <code>decisions</code> argument
-        /// specifies the list of decisions made while processing the task.
+        /// <c>taskToken</c> has successfully completed. The <c>decisions</c> argument specifies
+        /// the list of decisions made while processing the task.
         /// 
         ///  
         /// <para>
-        /// A <code>DecisionTaskCompleted</code> event is added to the workflow history. The <code>executionContext</code>
+        /// A <c>DecisionTaskCompleted</c> event is added to the workflow history. The <c>executionContext</c>
         /// specified is attached to the event in the workflow execution history.
         /// </para>
         ///  
@@ -4432,12 +4422,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  
         /// <para>
-        /// If an IAM policy grants permission to use <code>RespondDecisionTaskCompleted</code>,
-        /// it can express permissions for the list of decisions in the <code>decisions</code>
-        /// parameter. Each of the decisions has one or more parameters, much like a regular API
-        /// call. To allow for policies to be as readable as possible, you can express permissions
-        /// on decisions as if they were actual API calls, including applying conditions to some
-        /// parameters. For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// If an IAM policy grants permission to use <c>RespondDecisionTaskCompleted</c>, it
+        /// can express permissions for the list of decisions in the <c>decisions</c> parameter.
+        /// Each of the decisions has one or more parameters, much like a regular API call. To
+        /// allow for policies to be as readable as possible, you can express permissions on decisions
+        /// as if they were actual API calls, including applying conditions to some parameters.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4471,20 +4461,19 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history
+        /// Records a <c>WorkflowExecutionSignaled</c> event in the workflow execution history
         /// and creates a decision task for the workflow execution identified by the given domain,
         /// workflowId and runId. The event is recorded with the specified user defined signalName
         /// and input (if provided).
         /// 
         ///  <note> 
         /// <para>
-        /// If a runId isn't specified, then the <code>WorkflowExecutionSignaled</code> event
-        /// is recorded in the history of the current open workflow with the matching workflowId
-        /// in the domain.
+        /// If a runId isn't specified, then the <c>WorkflowExecutionSignaled</c> event is recorded
+        /// in the history of the current open workflow with the matching workflowId in the domain.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// If the specified workflow execution isn't open, this method fails with <code>UnknownResource</code>.
+        /// If the specified workflow execution isn't open, this method fails with <c>UnknownResource</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4497,12 +4486,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4512,8 +4501,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4540,20 +4529,19 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history
+        /// Records a <c>WorkflowExecutionSignaled</c> event in the workflow execution history
         /// and creates a decision task for the workflow execution identified by the given domain,
         /// workflowId and runId. The event is recorded with the specified user defined signalName
         /// and input (if provided).
         /// 
         ///  <note> 
         /// <para>
-        /// If a runId isn't specified, then the <code>WorkflowExecutionSignaled</code> event
-        /// is recorded in the history of the current open workflow with the matching workflowId
-        /// in the domain.
+        /// If a runId isn't specified, then the <c>WorkflowExecutionSignaled</c> event is recorded
+        /// in the history of the current open workflow with the matching workflowId in the domain.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// If the specified workflow execution isn't open, this method fails with <code>UnknownResource</code>.
+        /// If the specified workflow execution isn't open, this method fails with <c>UnknownResource</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4566,12 +4554,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4581,8 +4569,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4617,7 +4605,7 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Starts an execution of the workflow type in the specified domain using the provided
-        /// <code>workflowId</code> and input data.
+        /// <c>workflowId</c> and input data.
         /// 
         ///  
         /// <para>
@@ -4634,56 +4622,56 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagList.member.0</code>: The key is <code>swf:tagList.member.0</code>.
+        ///  <c>tagList.member.0</c>: The key is <c>swf:tagList.member.0</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.1</code>: The key is <code>swf:tagList.member.1</code>.
+        ///  <c>tagList.member.1</c>: The key is <c>swf:tagList.member.1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.2</code>: The key is <code>swf:tagList.member.2</code>.
+        ///  <c>tagList.member.2</c>: The key is <c>swf:tagList.member.2</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.3</code>: The key is <code>swf:tagList.member.3</code>.
+        ///  <c>tagList.member.3</c>: The key is <c>swf:tagList.member.3</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.4</code>: The key is <code>swf:tagList.member.4</code>.
+        ///  <c>tagList.member.4</c>: The key is <c>swf:tagList.member.4</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.
+        ///  <c>taskList</c>: String constraint. The key is <c>swf:taskList.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4691,15 +4679,15 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>The response from the StartWorkflowExecution service method, as returned by SimpleWorkflow.</returns>
         /// <exception cref="Amazon.SimpleWorkflow.Model.DefaultUndefinedException">
-        /// The <code>StartWorkflowExecution</code> API action was called without the required
-        /// parameters set.
+        /// The <c>StartWorkflowExecution</c> API action was called without the required parameters
+        /// set.
         /// 
         ///  
         /// <para>
-        /// Some workflow execution parameters, such as the decision <code>taskList</code>, must
-        /// be set to start the execution. However, these parameters might have been set as defaults
+        /// Some workflow execution parameters, such as the decision <c>taskList</c>, must be
+        /// set to start the execution. However, these parameters might have been set as defaults
         /// when the workflow type was registered. In this case, you can omit these parameters
-        /// from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined
+        /// from the <c>StartWorkflowExecution</c> call and Amazon SWF uses the values defined
         /// in the workflow type.
         /// </para>
         ///  <note> 
@@ -4742,7 +4730,7 @@ namespace Amazon.SimpleWorkflow
 
         /// <summary>
         /// Starts an execution of the workflow type in the specified domain using the provided
-        /// <code>workflowId</code> and input data.
+        /// <c>workflowId</c> and input data.
         /// 
         ///  
         /// <para>
@@ -4759,56 +4747,56 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>tagList.member.0</code>: The key is <code>swf:tagList.member.0</code>.
+        ///  <c>tagList.member.0</c>: The key is <c>swf:tagList.member.0</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.1</code>: The key is <code>swf:tagList.member.1</code>.
+        ///  <c>tagList.member.1</c>: The key is <c>swf:tagList.member.1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.2</code>: The key is <code>swf:tagList.member.2</code>.
+        ///  <c>tagList.member.2</c>: The key is <c>swf:tagList.member.2</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.3</code>: The key is <code>swf:tagList.member.3</code>.
+        ///  <c>tagList.member.3</c>: The key is <c>swf:tagList.member.3</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tagList.member.4</code>: The key is <code>swf:tagList.member.4</code>.
+        ///  <c>tagList.member.4</c>: The key is <c>swf:tagList.member.4</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.
+        ///  <c>taskList</c>: String constraint. The key is <c>swf:taskList.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4819,15 +4807,15 @@ namespace Amazon.SimpleWorkflow
         /// 
         /// <returns>The response from the StartWorkflowExecution service method, as returned by SimpleWorkflow.</returns>
         /// <exception cref="Amazon.SimpleWorkflow.Model.DefaultUndefinedException">
-        /// The <code>StartWorkflowExecution</code> API action was called without the required
-        /// parameters set.
+        /// The <c>StartWorkflowExecution</c> API action was called without the required parameters
+        /// set.
         /// 
         ///  
         /// <para>
-        /// Some workflow execution parameters, such as the decision <code>taskList</code>, must
-        /// be set to start the execution. However, these parameters might have been set as defaults
+        /// Some workflow execution parameters, such as the decision <c>taskList</c>, must be
+        /// set to start the execution. However, these parameters might have been set as defaults
         /// when the workflow type was registered. In this case, you can omit these parameters
-        /// from the <code>StartWorkflowExecution</code> call and Amazon SWF uses the values defined
+        /// from the <c>StartWorkflowExecution</c> call and Amazon SWF uses the values defined
         /// in the workflow type.
         /// </para>
         ///  <note> 
@@ -4958,10 +4946,10 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the
-        /// workflow execution identified by the given domain, runId, and workflowId. The child
-        /// policy, registered with the workflow type or specified when starting this execution,
-        /// is applied to any open child workflow executions of this workflow execution.
+        /// Records a <c>WorkflowExecutionTerminated</c> event and forces closure of the workflow
+        /// execution identified by the given domain, runId, and workflowId. The child policy,
+        /// registered with the workflow type or specified when starting this execution, is applied
+        /// to any open child workflow executions of this workflow execution.
         /// 
         ///  <important> 
         /// <para>
@@ -4969,9 +4957,8 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If a runId isn't specified, then the <code>WorkflowExecutionTerminated</code> event
-        /// is recorded in the history of the current open workflow with the matching workflowId
-        /// in the domain.
+        /// If a runId isn't specified, then the <c>WorkflowExecutionTerminated</c> event is recorded
+        /// in the history of the current open workflow with the matching workflowId in the domain.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -4990,12 +4977,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5005,8 +4992,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5033,10 +5020,10 @@ namespace Amazon.SimpleWorkflow
 
 
         /// <summary>
-        /// Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the
-        /// workflow execution identified by the given domain, runId, and workflowId. The child
-        /// policy, registered with the workflow type or specified when starting this execution,
-        /// is applied to any open child workflow executions of this workflow execution.
+        /// Records a <c>WorkflowExecutionTerminated</c> event and forces closure of the workflow
+        /// execution identified by the given domain, runId, and workflowId. The child policy,
+        /// registered with the workflow type or specified when starting this execution, is applied
+        /// to any open child workflow executions of this workflow execution.
         /// 
         ///  <important> 
         /// <para>
@@ -5044,9 +5031,8 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If a runId isn't specified, then the <code>WorkflowExecutionTerminated</code> event
-        /// is recorded in the history of the current open workflow with the matching workflowId
-        /// in the domain.
+        /// If a runId isn't specified, then the <c>WorkflowExecutionTerminated</c> event is recorded
+        /// in the history of the current open workflow with the matching workflowId in the domain.
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -5065,12 +5051,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5080,8 +5066,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5134,32 +5120,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+        ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+        ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5210,32 +5196,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>activityType.name</code>: String constraint. The key is <code>swf:activityType.name</code>.
+        ///  <c>activityType.name</c>: String constraint. The key is <c>swf:activityType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>activityType.version</code>: String constraint. The key is <code>swf:activityType.version</code>.
+        ///  <c>activityType.version</c>: String constraint. The key is <c>swf:activityType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5293,12 +5279,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5308,8 +5294,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5360,12 +5346,12 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5375,8 +5361,8 @@ namespace Amazon.SimpleWorkflow
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5434,32 +5420,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -5510,32 +5496,32 @@ namespace Amazon.SimpleWorkflow
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use a <code>Resource</code> element with the domain name to limit the action to only
-        /// specified domains.
+        /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+        /// domains.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an <code>Action</code> element to allow or deny permission to call this action.
+        /// Use an <c>Action</c> element to allow or deny permission to call this action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Constrain the following parameters by using a <code>Condition</code> element with
-        /// the appropriate keys.
+        /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+        /// keys.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+        ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+        ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
         /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
         /// values fall outside the specified constraints, the action fails. The associated event
-        /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         /// </summary>

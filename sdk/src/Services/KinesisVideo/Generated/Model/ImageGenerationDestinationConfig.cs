@@ -40,7 +40,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property DestinationRegion. 
         /// <para>
         /// The Amazon Web Services Region of the S3 bucket where images will be delivered. This
-        /// <code>DestinationRegion</code> must match the Region where the stream is located.
+        /// <c>DestinationRegion</c> must match the Region where the stream is located.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=9, Max=14)]

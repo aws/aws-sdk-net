@@ -30,7 +30,7 @@ namespace Amazon.GreengrassV2.Model
 {
     /// <summary>
     /// Contains information about criteria to meet before a job increases its rollout rate.
-    /// Specify either <code>numberOfNotifiedThings</code> or <code>numberOfSucceededThings</code>.
+    /// Specify either <c>numberOfNotifiedThings</c> or <c>numberOfSucceededThings</c>.
     /// </summary>
     public partial class IoTJobRateIncreaseCriteria
     {

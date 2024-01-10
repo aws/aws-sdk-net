@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>ExternalWorkflowExecutionCancelRequested</code>
-    /// event.
+    /// Provides the details of the <c>ExternalWorkflowExecutionCancelRequested</c> event.
     /// </summary>
     public partial class ExternalWorkflowExecutionCancelRequestedEventAttributes
     {
@@ -40,10 +39,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property InitiatedEventId. 
         /// <para>
-        /// The ID of the <code>RequestCancelExternalWorkflowExecutionInitiated</code> event corresponding
-        /// to the <code>RequestCancelExternalWorkflowExecution</code> decision to cancel this
-        /// external workflow execution. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event.
+        /// The ID of the <c>RequestCancelExternalWorkflowExecutionInitiated</c> event corresponding
+        /// to the <c>RequestCancelExternalWorkflowExecution</c> decision to cancel this external
+        /// workflow execution. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

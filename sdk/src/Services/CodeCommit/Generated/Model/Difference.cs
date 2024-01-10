@@ -40,8 +40,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property AfterBlob. 
         /// <para>
-        /// Information about an <code>afterBlob</code> data type object, including the ID, the
-        /// file mode permission code, and the path.
+        /// Information about an <c>afterBlob</c> data type object, including the ID, the file
+        /// mode permission code, and the path.
         /// </para>
         /// </summary>
         public BlobMetadata AfterBlob
@@ -59,8 +59,8 @@ namespace Amazon.CodeCommit.Model
         /// <summary>
         /// Gets and sets the property BeforeBlob. 
         /// <para>
-        /// Information about a <code>beforeBlob</code> data type object, including the ID, the
-        /// file mode permission code, and the path.
+        /// Information about a <c>beforeBlob</c> data type object, including the ID, the file
+        /// mode permission code, and the path.
         /// </para>
         /// </summary>
         public BlobMetadata BeforeBlob

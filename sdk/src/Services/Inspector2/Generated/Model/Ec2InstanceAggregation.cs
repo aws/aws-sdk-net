@@ -101,7 +101,7 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property OperatingSystems. 
         /// <para>
         /// The operating system types to aggregate findings for. Valid values must be uppercase
-        /// and underscore separated, examples are <code>ORACLE_LINUX_7</code> and <code>ALPINE_LINUX_3_8</code>.
+        /// and underscore separated, examples are <c>ORACLE_LINUX_7</c> and <c>ALPINE_LINUX_3_8</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

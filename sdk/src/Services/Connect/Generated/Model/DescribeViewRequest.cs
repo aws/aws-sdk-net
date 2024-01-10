@@ -38,14 +38,14 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>$SAVED</code> needs to be supplied if a view is unpublished.
+    ///  <c>$SAVED</c> needs to be supplied if a view is unpublished.
     /// </para>
     ///  
     /// <para>
-    /// The view identifier can contain an optional qualifier, for example, <code>&lt;view-id&gt;:$SAVED</code>,
-    /// which is either an actual version number or an Amazon Connect managed qualifier <code>$SAVED
-    /// | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for
-    /// customer managed views and an error is returned if there is no published content available.
+    /// The view identifier can contain an optional qualifier, for example, <c>&lt;view-id&gt;:$SAVED</c>,
+    /// which is either an actual version number or an Amazon Connect managed qualifier <c>$SAVED
+    /// | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for customer
+    /// managed views and an error is returned if there is no published content available.
     /// Version 1 is assumed for Amazon Web Services managed views.
     /// </para>
     /// </summary>

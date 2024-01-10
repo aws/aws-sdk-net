@@ -158,8 +158,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property EbsOptimized. 
         /// <para>
-        /// Specifies whether the launch configuration is optimized for EBS I/O (<code>true</code>)
-        /// or not (<code>false</code>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
+        /// Specifies whether the launch configuration is optimized for EBS I/O (<c>true</c>)
+        /// or not (<c>false</c>). For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
         /// EBS-Optimized Instances</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
         /// </para>
         /// </summary>
@@ -222,8 +222,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property InstanceMonitoring. 
         /// <para>
-        /// Controls whether instances in this group are launched with detailed (<code>true</code>)
-        /// or basic (<code>false</code>) monitoring.
+        /// Controls whether instances in this group are launched with detailed (<c>true</c>)
+        /// or basic (<c>false</c>) monitoring.
         /// </para>
         ///  
         /// <para>
@@ -367,9 +367,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property PlacementTenancy. 
         /// <para>
-        /// The tenancy of the instance, either <code>default</code> or <code>dedicated</code>.
-        /// An instance with <code>dedicated</code> tenancy runs on isolated, single-tenant hardware
-        /// and can only be launched into a VPC.
+        /// The tenancy of the instance, either <c>default</c> or <c>dedicated</c>. An instance
+        /// with <c>dedicated</c> tenancy runs on isolated, single-tenant hardware and can only
+        /// be launched into a VPC.
         /// </para>
         ///  
         /// <para>

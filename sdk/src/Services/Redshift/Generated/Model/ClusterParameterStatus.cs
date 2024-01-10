@@ -68,36 +68,35 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>in-sync</code>: The parameter value is in sync with the database.
+        ///  <c>in-sync</c>: The parameter value is in sync with the database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending-reboot</code>: The parameter value will be applied after the cluster
-        /// reboots.
+        ///  <c>pending-reboot</c>: The parameter value will be applied after the cluster reboots.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>applying</code>: The parameter value is being applied to the database.
+        ///  <c>applying</c>: The parameter value is being applied to the database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>invalid-parameter</code>: Cannot apply the parameter value because it has an
-        /// invalid value or syntax.
+        ///  <c>invalid-parameter</c>: Cannot apply the parameter value because it has an invalid
+        /// value or syntax.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>apply-deferred</code>: The parameter contains static property changes. The
-        /// changes are deferred until the cluster reboots.
+        ///  <c>apply-deferred</c>: The parameter contains static property changes. The changes
+        /// are deferred until the cluster reboots.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>apply-error</code>: Cannot connect to the cluster. The parameter change will
+        ///  <c>apply-error</c>: Cannot connect to the cluster. The parameter change will be applied
+        /// after the cluster reboots.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>unknown-error</c>: Cannot apply the parameter change right now. The change will
         /// be applied after the cluster reboots.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>unknown-error</code>: Cannot apply the parameter change right now. The change
-        /// will be applied after the cluster reboots.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,8 +30,8 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAvailabilityConfiguration operation.
-    /// Creates an <code>AvailabilityConfiguration</code> for the given WorkMail organization
-    /// and domain.
+    /// Creates an <c>AvailabilityConfiguration</c> for the given WorkMail organization and
+    /// domain.
     /// </summary>
     public partial class CreateAvailabilityConfigurationRequest : AmazonWorkMailRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property EwsProvider. 
         /// <para>
         /// Exchange Web Services (EWS) availability provider definition. The request must contain
-        /// exactly one provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.
+        /// exactly one provider definition, either <c>EwsProvider</c> or <c>LambdaProvider</c>.
         /// </para>
         /// </summary>
         public EwsAvailabilityProvider EwsProvider
@@ -102,7 +102,7 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property LambdaProvider. 
         /// <para>
         /// Lambda availability provider definition. The request must contain exactly one provider
-        /// definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.
+        /// definition, either <c>EwsProvider</c> or <c>LambdaProvider</c>.
         /// </para>
         /// </summary>
         public LambdaAvailabilityProvider LambdaProvider
@@ -120,8 +120,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The WorkMail organization for which the <code>AvailabilityConfiguration</code> will
-        /// be created.
+        /// The WorkMail organization for which the <c>AvailabilityConfiguration</c> will be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

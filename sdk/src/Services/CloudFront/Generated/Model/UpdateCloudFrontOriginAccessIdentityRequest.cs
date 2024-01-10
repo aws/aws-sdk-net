@@ -97,8 +97,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The value of the <code>ETag</code> header that you received when retrieving the identity's
-        /// configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// The value of the <c>ETag</c> header that you received when retrieving the identity's
+        /// configuration. For example: <c>E2QWRUHAPOMQZL</c>.
         /// </para>
         /// </summary>
         public string IfMatch

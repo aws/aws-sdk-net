@@ -35,7 +35,7 @@ namespace Amazon.QBusiness.Model
     ///  
     /// <para>
     /// To apply advanced logic, to go beyond what you can do with basic logic, see <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_HookConfiguration.html">
-    /// <code>HookConfiguration</code> </a>.
+    /// <c>HookConfiguration</c> </a>.
     /// </para>
     ///  
     /// <para>
@@ -67,8 +67,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property DocumentContentOperator. 
         /// <para>
-        ///  <code>TRUE</code> to delete content if the condition used for the target attribute
-        /// is met.
+        ///  <c>TRUE</c> to delete content if the condition used for the target attribute is met.
         /// </para>
         /// </summary>
         public DocumentContentOperator DocumentContentOperator

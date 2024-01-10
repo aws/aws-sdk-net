@@ -83,7 +83,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>PRIVATE</code> 
+        /// Default: <c>PRIVATE</c> 
         /// </para>
         /// </summary>
         public ComponentVisibilityScope Scope

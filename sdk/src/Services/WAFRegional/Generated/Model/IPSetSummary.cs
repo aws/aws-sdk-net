@@ -42,7 +42,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Contains the identifier and the name of the <code>IPSet</code>.
+    /// Contains the identifier and the name of the <c>IPSet</c>.
     /// </para>
     /// </summary>
     public partial class IPSetSummary
@@ -53,8 +53,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property IPSetId. 
         /// <para>
-        /// The <code>IPSetId</code> for an <a>IPSet</a>. You can use <code>IPSetId</code> in
-        /// a <a>GetIPSet</a> request to get detailed information about an <a>IPSet</a>.
+        /// The <c>IPSetId</c> for an <a>IPSet</a>. You can use <c>IPSetId</c> in a <a>GetIPSet</a>
+        /// request to get detailed information about an <a>IPSet</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -74,7 +74,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A friendly name or description of the <a>IPSet</a>. You can't change the name of an
-        /// <code>IPSet</code> after you create it.
+        /// <c>IPSet</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -83,7 +83,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The Unix timestamp for the time when the task was created. More specifically, it's
-        /// for the time when the task entered the <code>PENDING</code> state. 
+        /// for the time when the task entered the <c>PENDING</c> state. 
         /// </para>
         /// </summary>
         public string CreatedAt
@@ -120,7 +120,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property StartedAt. 
         /// <para>
         /// The Unix timestamp for the time when the task started. More specifically, it's for
-        /// the time when the task transitioned from the <code>PENDING</code> state to the <code>RUNNING</code>
+        /// the time when the task transitioned from the <c>PENDING</c> state to the <c>RUNNING</c>
         /// state. 
         /// </para>
         /// </summary>
@@ -140,7 +140,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property StartedBy. 
         /// <para>
         /// The tag specified when a task is started. If an Amazon ECS service started the task,
-        /// the <code>startedBy</code> parameter contains the deployment ID of that service. 
+        /// the <c>startedBy</c> parameter contains the deployment ID of that service. 
         /// </para>
         /// </summary>
         public string StartedBy

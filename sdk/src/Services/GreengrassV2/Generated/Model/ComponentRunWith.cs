@@ -44,9 +44,9 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The POSIX system user and, optionally, group to use to run this component on Linux
         /// core devices. The user, and group if specified, must exist on each Linux core device.
-        /// Specify the user and group separated by a colon (<code>:</code>) in the following
-        /// format: <code>user:group</code>. The group is optional. If you don't specify a group,
-        /// the IoT Greengrass Core software uses the primary user for the group.
+        /// Specify the user and group separated by a colon (<c>:</c>) in the following format:
+        /// <c>user:group</c>. The group is optional. If you don't specify a group, the IoT Greengrass
+        /// Core software uses the primary user for the group.
         /// </para>
         ///  
         /// <para>

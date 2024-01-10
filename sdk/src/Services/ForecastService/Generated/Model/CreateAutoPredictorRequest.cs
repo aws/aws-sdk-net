@@ -48,25 +48,25 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PredictorName</code> - A unique name for the predictor.
+    ///  <c>PredictorName</c> - A unique name for the predictor.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DatasetGroupArn</code> - The ARN of the dataset group used to train the predictor.
+    ///  <c>DatasetGroupArn</c> - The ARN of the dataset group used to train the predictor.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ForecastFrequency</code> - The granularity of your forecasts (hourly, daily,
-    /// weekly, etc).
+    ///  <c>ForecastFrequency</c> - The granularity of your forecasts (hourly, daily, weekly,
+    /// etc).
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ForecastHorizon</code> - The number of time-steps that the model predicts.
-    /// The forecast horizon is also called the prediction length.
+    ///  <c>ForecastHorizon</c> - The number of time-steps that the model predicts. The forecast
+    /// horizon is also called the prediction length.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// When creating a new predictor, do not specify a value for <code>ReferencePredictorArn</code>.
+    /// When creating a new predictor, do not specify a value for <c>ReferencePredictorArn</c>.
     /// </para>
     ///  
     /// <para>
@@ -78,16 +78,16 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PredictorName</code> - A unique name for the predictor.
+    ///  <c>PredictorName</c> - A unique name for the predictor.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ReferencePredictorArn</code> - The ARN of the predictor to retrain or upgrade.
+    ///  <c>ReferencePredictorArn</c> - The ARN of the predictor to retrain or upgrade.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code>
-    /// and <code>PredictorName</code>. 
+    /// When upgrading or retraining a predictor, only specify values for the <c>ReferencePredictorArn</c>
+    /// and <c>PredictorName</c>. 
     /// </para>
     /// </summary>
     public partial class CreateAutoPredictorRequest : AmazonForecastServiceRequest
@@ -165,7 +165,7 @@ namespace Amazon.ForecastService.Model
         ///  
         /// <para>
         /// For example, if you are generating forecasts for item sales across all your stores,
-        /// and your dataset contains a <code>store_id</code> field, you would specify <code>store_id</code>
+        /// and your dataset contains a <c>store_id</c> field, you would specify <c>store_id</c>
         /// as a dimension to group sales forecasts for each store.
         /// </para>
         /// </summary>
@@ -285,7 +285,7 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// The forecast types used to train a predictor. You can specify up to five forecast
         /// types. Forecast types can be quantiles from 0.01 to 0.99, by increments of 0.01 or
-        /// higher. You can also specify the mean forecast with <code>mean</code>.
+        /// higher. You can also specify the mean forecast with <c>mean</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -372,9 +372,9 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// When upgrading or retraining a predictor, only specify values for the <code>ReferencePredictorArn</code>
-        /// and <code>PredictorName</code>. The value for <code>PredictorName</code> must be a
-        /// unique predictor name.
+        /// When upgrading or retraining a predictor, only specify values for the <c>ReferencePredictorArn</c>
+        /// and <c>PredictorName</c>. The value for <c>PredictorName</c> must be a unique predictor
+        /// name.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -425,12 +425,11 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key prefixes cannot include any upper or lowercase combination of <code>aws:</code>
-        /// or <code>AWS:</code>. Values can have this prefix. If a tag value has <code>aws</code>
-        /// as its prefix but the key does not, Forecast considers it to be a user tag and will
-        /// count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code>
-        /// do not count against your tags per resource limit. You cannot edit or delete tag keys
-        /// with this prefix.
+        /// Key prefixes cannot include any upper or lowercase combination of <c>aws:</c> or <c>AWS:</c>.
+        /// Values can have this prefix. If a tag value has <c>aws</c> as its prefix but the key
+        /// does not, Forecast considers it to be a user tag and will count against the limit
+        /// of 50 tags. Tags with only the key prefix of <c>aws</c> do not count against your
+        /// tags per resource limit. You cannot edit or delete tag keys with this prefix.
         /// </para>
         ///  </li> </ul>
         /// </summary>

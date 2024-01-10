@@ -34,9 +34,9 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  <note> 
     /// <para>
-    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-    /// parameter when you invoke this API.
+    /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+    /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+    /// when you invoke this API.
     /// </para>
     ///  </note>
     /// </summary>
@@ -53,40 +53,40 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  
         /// <para>
-        /// The following are the valid shard-level metrics. The value "<code>ALL</code>" disables
-        /// every metric.
+        /// The following are the valid shard-level metrics. The value "<c>ALL</c>" disables every
+        /// metric.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IncomingBytes</code> 
+        ///  <c>IncomingBytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IncomingRecords</code> 
+        ///  <c>IncomingRecords</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OutgoingBytes</code> 
+        ///  <c>OutgoingBytes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OutgoingRecords</code> 
+        ///  <c>OutgoingRecords</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WriteProvisionedThroughputExceeded</code> 
+        ///  <c>WriteProvisionedThroughputExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReadProvisionedThroughputExceeded</code> 
+        ///  <c>ReadProvisionedThroughputExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IteratorAgeMilliseconds</code> 
+        ///  <c>IteratorAgeMilliseconds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> 
+        ///  <c>ALL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

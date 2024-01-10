@@ -110,15 +110,14 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code>
-        /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
-        /// used.
+        /// If a <c>capacityProviderStrategy</c> is specified, the <c>launchType</c> parameter
+        /// must be omitted. If no <c>capacityProviderStrategy</c> or <c>launchType</c> is specified,
+        /// the <c>defaultCapacityProviderStrategy</c> for the cluster is used.
         /// </para>
         ///  
         /// <para>
-        /// When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
-        /// and not <code>launchType</code>. 
+        /// When you use cluster auto scaling, you must specify <c>capacityProviderStrategy</c>
+        /// and not <c>launchType</c>. 
         /// </para>
         ///  
         /// <para>
@@ -221,13 +220,13 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
         /// Determines whether to use the execute command functionality for the containers in
-        /// this task. If <code>true</code>, this enables execute command functionality on all
-        /// containers in the task.
+        /// this task. If <c>true</c>, this enables execute command functionality on all containers
+        /// in the task.
         /// </para>
         ///  
         /// <para>
-        /// If <code>true</code>, then the task definition must have a task role, or you must
-        /// provide one as an override.
+        /// If <c>true</c>, then the task definition must have a task role, or you must provide
+        /// one as an override.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -246,7 +245,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Group. 
         /// <para>
         /// The name of the task group to associate with the task. The default value is the family
-        /// name of the task definition (for example, <code>family:my-family-name</code>).
+        /// name of the task definition (for example, <c>family:my-family-name</c>).
         /// </para>
         /// </summary>
         public string Group
@@ -269,7 +268,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.
+        /// The <c>FARGATE</c> launch type runs your tasks on Fargate On-Demand infrastructure.
         /// </para>
         ///  <note> 
         /// <para>
@@ -279,23 +278,23 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered
-        /// to your cluster.
+        /// The <c>EC2</c> launch type runs your tasks on Amazon EC2 instances registered to your
+        /// cluster.
         /// </para>
         ///  
         /// <para>
-        /// The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
-        /// virtual machine (VM) capacity registered to your cluster.
+        /// The <c>EXTERNAL</c> launch type runs your tasks on your on-premises server or virtual
+        /// machine (VM) capacity registered to your cluster.
         /// </para>
         ///  
         /// <para>
-        /// A task can use either a launch type or a capacity provider strategy. If a <code>launchType</code>
-        /// is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+        /// A task can use either a launch type or a capacity provider strategy. If a <c>launchType</c>
+        /// is specified, the <c>capacityProviderStrategy</c> parameter must be omitted.
         /// </para>
         ///  
         /// <para>
-        /// When you use cluster auto scaling, you must specify <code>capacityProviderStrategy</code>
-        /// and not <code>launchType</code>. 
+        /// When you use cluster auto scaling, you must specify <c>capacityProviderStrategy</c>
+        /// and not <c>launchType</c>. 
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -314,9 +313,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for the task. This parameter is required for task definitions
-        /// that use the <code>awsvpc</code> network mode to receive their own elastic network
-        /// interface, and it isn't supported for other network modes. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// that use the <c>awsvpc</c> network mode to receive their own elastic network interface,
+        /// and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -338,9 +336,9 @@ namespace Amazon.ECS.Model
         /// A list of container overrides in JSON format that specify the name of a container
         /// in the specified task definition and the overrides it should receive. You can override
         /// the default command for a container (that's specified in the task definition or Docker
-        /// image) with a <code>command</code> override. You can also override existing environment
+        /// image) with a <c>command</c> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container
-        /// or add new environment variables to it with an <code>environment</code> override.
+        /// or add new environment variables to it with an <c>environment</c> override.
         /// </para>
         ///  
         /// <para>
@@ -403,8 +401,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// The platform version the task uses. A platform version is only specified for tasks
-        /// hosted on Fargate. If one isn't specified, the <code>LATEST</code> platform version
-        /// is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// hosted on Fargate. If one isn't specified, the <c>LATEST</c> platform version is used.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -430,8 +428,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// An error will be received if you specify the <code>SERVICE</code> option when running
-        /// a task.
+        /// An error will be received if you specify the <c>SERVICE</c> option when running a
+        /// task.
         /// </para>
         ///  </note>
         /// </summary>
@@ -471,14 +469,14 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An optional tag specified when a task is started. For example, if you automatically
         /// trigger a task to run a batch process job, you could apply a unique identifier for
-        /// that job to your task with the <code>startedBy</code> parameter. You can then identify
-        /// which tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value. Up to 128 letters (uppercase and lowercase),
-        /// numbers, hyphens (-), and underscores (_) are allowed.
+        /// that job to your task with the <c>startedBy</c> parameter. You can then identify which
+        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call with
+        /// the <c>startedBy</c> value. Up to 128 letters (uppercase and lowercase), numbers,
+        /// hyphens (-), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>
-        /// If a task is started by an Amazon ECS service, then the <code>startedBy</code> parameter
+        /// If a task is started by an Amazon ECS service, then the <c>startedBy</c> parameter
         /// contains the deployment ID of the service that starts it.
         /// </para>
         /// </summary>
@@ -534,10 +532,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -557,9 +555,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinition. 
         /// <para>
-        /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run. If a <code>revision</code> isn't specified,
-        /// the latest <code>ACTIVE</code> revision is used.
+        /// The <c>family</c> and <c>revision</c> (<c>family:revision</c>) or full ARN of the
+        /// task definition to run. If a <c>revision</c> isn't specified, the latest <c>ACTIVE</c>
+        /// revision is used.
         /// </para>
         ///  
         /// <para>
@@ -568,21 +566,21 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The full ARN value must match the value that you specified as the <code>Resource</code>
+        /// The full ARN value must match the value that you specified as the <c>Resource</c>
         /// of the principal's permissions policy.
         /// </para>
         ///  
         /// <para>
         /// When you specify the policy resource as the latest task definition version (by setting
-        /// the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>),
-        /// then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</code>.
+        /// the <c>Resource</c> in the policy to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</c>),
+        /// then set this value to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName</c>.
         /// </para>
         ///  
         /// <para>
         /// When you specify the policy resource as a specific task definition version (by setting
-        /// the <code>Resource</code> in the policy to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>
-        /// or <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</code>),
-        /// then set this value to <code>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</code>.
+        /// the <c>Resource</c> in the policy to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</c>
+        /// or <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:*</c>), then
+        /// set this value to <c>arn:aws:ecs:us-east-1:111122223333:task-definition/TaskFamilyName:1</c>.
         /// </para>
         ///  
         /// <para>

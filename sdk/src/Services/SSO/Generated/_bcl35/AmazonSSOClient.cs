@@ -42,8 +42,8 @@ namespace Amazon.SSO
     /// 
     ///  <note> 
     /// <para>
-    /// Although AWS Single Sign-On was renamed, the <code>sso</code> and <code>identitystore</code>
-    /// API namespaces will continue to retain their original name for backward compatibility
+    /// Although AWS Single Sign-On was renamed, the <c>sso</c> and <c>identitystore</c> API
+    /// namespaces will continue to retain their original name for backward compatibility
     /// purposes. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed">IAM
     /// Identity Center rename</a>.
     /// </para>

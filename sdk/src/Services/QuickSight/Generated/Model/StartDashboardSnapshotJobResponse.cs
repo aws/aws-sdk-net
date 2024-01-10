@@ -77,7 +77,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SnapshotJobId. 
         /// <para>
-        /// The ID of the job. The job ID is set when you start a new job with a <code>StartDashboardSnapshotJob</code>
+        /// The ID of the job. The job ID is set when you start a new job with a <c>StartDashboardSnapshotJob</c>
         /// API call.
         /// </para>
         /// </summary>

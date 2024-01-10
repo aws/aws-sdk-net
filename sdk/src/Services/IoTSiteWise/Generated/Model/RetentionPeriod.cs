@@ -44,8 +44,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specified a value for this parameter, the <code>unlimited</code> parameter
-        /// must be <code>false</code>.
+        /// If you specified a value for this parameter, the <c>unlimited</c> parameter must be
+        /// <c>false</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If configured to <code>true</code>, you must not specify a value for the <code>numberOfDays</code>
+        /// If configured to <c>true</c>, you must not specify a value for the <c>numberOfDays</c>
         /// parameter.
         /// </para>
         ///  </note>

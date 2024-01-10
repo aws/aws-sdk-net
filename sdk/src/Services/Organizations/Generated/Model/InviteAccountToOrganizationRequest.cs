@@ -54,7 +54,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> </ul> </important> 
     /// <para>
-    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
     /// permission.
     /// </para>
     ///  
@@ -93,7 +93,7 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// A list of tags that you want to attach to the account when it becomes a member of
         /// the organization. For each tag in the list, you must specify both a tag key and a
-        /// value. You can set the value to an empty string, but you can't set it to <code>null</code>.
+        /// value. You can set the value to an empty string, but you can't set it to <c>null</c>.
         /// For more information about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
         /// Organizations resources</a> in the Organizations User Guide.
         /// </para>
@@ -133,8 +133,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</code>
-        /// 
+        ///  <c>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;" }</c> 
         /// </para>
         ///  
         /// <para>
@@ -143,17 +142,17 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>--target Id=123456789012,Type=ACCOUNT</code> 
+        ///  <c>--target Id=123456789012,Type=ACCOUNT</c> 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>"Type": "ACCOUNT"</code>, you must provide the Amazon Web Services
-        /// account ID number as the <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>,
-        /// you must specify the email address that is associated with the account.
+        /// If you specify <c>"Type": "ACCOUNT"</c>, you must provide the Amazon Web Services
+        /// account ID number as the <c>Id</c>. If you specify <c>"Type": "EMAIL"</c>, you must
+        /// specify the email address that is associated with the account.
         /// </para>
         ///  
         /// <para>
-        ///  <code>--target Id=diego@example.com,Type=EMAIL</code> 
+        ///  <c>--target Id=diego@example.com,Type=EMAIL</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

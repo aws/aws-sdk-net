@@ -31,8 +31,8 @@ namespace Amazon.InternetMonitor.Model
     /// <summary>
     /// A filter that you use with the results of a Amazon CloudWatch Internet Monitor query
     /// that you created and ran. The query sets up a repository of data that is a subset
-    /// of your application's Internet Monitor data. <code>FilterParameter</code> is a string
-    /// that defines how you want to filter the repository of data to return a set of results,
+    /// of your application's Internet Monitor data. <c>FilterParameter</c> is a string that
+    /// defines how you want to filter the repository of data to return a set of results,
     /// based on your criteria.
     /// 
     ///  
@@ -43,9 +43,9 @@ namespace Amazon.InternetMonitor.Model
     /// </para>
     ///  
     /// <para>
-    /// For each filter, you specify a field (such as <code>city</code>), an operator (such
-    /// as <code>not_equals</code>, and a value or array of values (such as <code>["Seattle",
-    /// "Redmond"]</code>). Separate values in the array with commas.
+    /// For each filter, you specify a field (such as <c>city</c>), an operator (such as <c>not_equals</c>,
+    /// and a value or array of values (such as <c>["Seattle", "Redmond"]</c>). Separate values
+    /// in the array with commas.
     /// </para>
     ///  
     /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.InternetMonitor.Model
         /// <para>
         /// A data field that you want to filter, to further scope your application's Internet
         /// Monitor data in a repository that you created by running a query. A field might be
-        /// <code>city</code>, for example. The field must be one of the fields that was returned
-        /// by the specific query that you used to create the repository.
+        /// <c>city</c>, for example. The field must be one of the fields that was returned by
+        /// the specific query that you used to create the repository.
         /// </para>
         /// </summary>
         public string Field
@@ -84,7 +84,7 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator to use with the filter field and a value, such as <code>not_equals</code>.
+        /// The operator to use with the filter field and a value, such as <c>not_equals</c>.
         /// </para>
         /// </summary>
         public Operator Operator
@@ -103,8 +103,8 @@ namespace Amazon.InternetMonitor.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// One or more values to be used, together with the specified operator, to filter data
-        /// for a query. For example, you could specify an array of values such as <code>["Seattle",
-        /// "Redmond"]</code>. Values in the array are separated by commas.
+        /// for a query. For example, you could specify an array of values such as <c>["Seattle",
+        /// "Redmond"]</c>. Values in the array are separated by commas.
         /// </para>
         /// </summary>
         public List<string> Values

@@ -129,7 +129,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// The <code>CreatorRequestId</code> that was used to create the namespace.
+        /// The <c>CreatorRequestId</c> that was used to create the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]

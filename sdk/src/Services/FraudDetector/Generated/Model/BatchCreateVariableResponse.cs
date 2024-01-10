@@ -38,7 +38,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Provides the errors for the <code>BatchCreateVariable</code> request.
+        /// Provides the errors for the <c>BatchCreateVariable</c> request.
         /// </para>
         /// </summary>
         public List<BatchCreateVariableError> Errors

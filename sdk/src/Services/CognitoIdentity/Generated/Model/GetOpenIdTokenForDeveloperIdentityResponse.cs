@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Returned in response to a successful <code>GetOpenIdTokenForDeveloperIdentity</code>
-    /// request.
+    /// Returned in response to a successful <c>GetOpenIdTokenForDeveloperIdentity</c> request.
     /// </summary>
     public partial class GetOpenIdTokenForDeveloperIdentityResponse : AmazonWebServiceResponse
     {

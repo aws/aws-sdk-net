@@ -44,27 +44,25 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// The operator that relates the thing measured (<code>metric</code>) to the criteria
-        /// (containing a <code>value</code> or <code>statisticalThreshold</code>). Valid operators
-        /// include:
+        /// The operator that relates the thing measured (<c>metric</c>) to the criteria (containing
+        /// a <c>value</c> or <c>statisticalThreshold</c>). Valid operators include:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>string-list</code>: <code>in-set</code> and <code>not-in-set</code> 
+        ///  <c>string-list</c>: <c>in-set</c> and <c>not-in-set</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>number-list</code>: <code>in-set</code> and <code>not-in-set</code> 
+        ///  <c>number-list</c>: <c>in-set</c> and <c>not-in-set</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ip-address-list</code>: <code>in-cidr-set</code> and <code>not-in-cidr-set</code>
-        /// 
+        ///  <c>ip-address-list</c>: <c>in-cidr-set</c> and <c>not-in-cidr-set</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>number</code>: <code>less-than</code>, <code>less-than-equals</code>, <code>greater-than</code>,
-        /// and <code>greater-than-equals</code> 
+        ///  <c>number</c>: <c>less-than</c>, <c>less-than-equals</c>, <c>greater-than</c>, and
+        /// <c>greater-than-equals</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -125,10 +123,10 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DurationSeconds. 
         /// <para>
         /// Use this to specify the time duration over which the behavior is evaluated, for those
-        /// criteria that have a time dimension (for example, <code>NUM_MESSAGES_SENT</code>).
-        /// For a <code>statisticalThreshhold</code> metric comparison, measurements from all
-        /// devices are accumulated over this time duration before being used to calculate percentiles,
-        /// and later, measurements from an individual device are also accumulated over this time
+        /// criteria that have a time dimension (for example, <c>NUM_MESSAGES_SENT</c>). For a
+        /// <c>statisticalThreshhold</c> metric comparison, measurements from all devices are
+        /// accumulated over this time duration before being used to calculate percentiles, and
+        /// later, measurements from an individual device are also accumulated over this time
         /// duration before being given a percentile rank. Cannot be used with list-based metric
         /// datatypes.
         /// </para>
@@ -185,7 +183,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value to be compared with the <code>metric</code>.
+        /// The value to be compared with the <c>metric</c>.
         /// </para>
         /// </summary>
         public MetricValue Value

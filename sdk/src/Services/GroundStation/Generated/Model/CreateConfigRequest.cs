@@ -30,11 +30,11 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateConfig operation.
-    /// Creates a <code>Config</code> with the specified <code>configData</code> parameters.
+    /// Creates a <c>Config</c> with the specified <c>configData</c> parameters.
     /// 
     ///  
     /// <para>
-    /// Only one type of <code>configData</code> can be specified.
+    /// Only one type of <c>configData</c> can be specified.
     /// </para>
     /// </summary>
     public partial class CreateConfigRequest : AmazonGroundStationRequest
@@ -46,7 +46,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigData. 
         /// <para>
-        /// Parameters of a <code>Config</code>.
+        /// Parameters of a <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +65,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of a <code>Config</code>.
+        /// Name of a <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -84,7 +84,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags assigned to a <code>Config</code>.
+        /// Tags assigned to a <c>Config</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

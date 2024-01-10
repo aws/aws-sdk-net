@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// A static structure that contains the configuration data for a <code>VoiceEnhancementSinkConfiguration</code>
+    /// A static structure that contains the configuration data for a <c>VoiceEnhancementSinkConfiguration</c>
     /// element.
     /// </summary>
     public partial class VoiceEnhancementSinkConfiguration
@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Disabled. 
         /// <para>
-        /// Disables the <code>VoiceEnhancementSinkConfiguration</code> element.
+        /// Disables the <c>VoiceEnhancementSinkConfiguration</c> element.
         /// </para>
         /// </summary>
         public bool Disabled

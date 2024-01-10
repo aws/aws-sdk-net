@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// The composited video configuration object for a specified media pipeline. <code>SourceType</code>
-    /// must be <code>ChimeSdkMeeting</code>.
+    /// The composited video configuration object for a specified media pipeline. <c>SourceType</c>
+    /// must be <c>ChimeSdkMeeting</c>.
     /// </summary>
     public partial class CompositedVideoConcatenationConfiguration
     {

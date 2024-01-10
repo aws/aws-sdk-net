@@ -43,51 +43,50 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Creates a <code>WebACL</code>, which contains the <code>Rules</code> that identify
-    /// the CloudFront web requests that you want to allow, block, or count. AWS WAF evaluates
-    /// <code>Rules</code> in order based on the value of <code>Priority</code> for each <code>Rule</code>.
+    /// Creates a <c>WebACL</c>, which contains the <c>Rules</c> that identify the CloudFront
+    /// web requests that you want to allow, block, or count. AWS WAF evaluates <c>Rules</c>
+    /// in order based on the value of <c>Priority</c> for each <c>Rule</c>.
     /// </para>
     ///  
     /// <para>
-    /// You also specify a default action, either <code>ALLOW</code> or <code>BLOCK</code>.
-    /// If a web request doesn't match any of the <code>Rules</code> in a <code>WebACL</code>,
-    /// AWS WAF responds to the request with the default action. 
+    /// You also specify a default action, either <c>ALLOW</c> or <c>BLOCK</c>. If a web request
+    /// doesn't match any of the <c>Rules</c> in a <c>WebACL</c>, AWS WAF responds to the
+    /// request with the default action. 
     /// </para>
     ///  
     /// <para>
-    /// To create and configure a <code>WebACL</code>, perform the following steps:
+    /// To create and configure a <c>WebACL</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Create and update the <code>ByteMatchSet</code> objects and other predicates that
-    /// you want to include in <code>Rules</code>. For more information, see <a>CreateByteMatchSet</a>,
-    /// <a>UpdateByteMatchSet</a>, <a>CreateIPSet</a>, <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>,
-    /// and <a>UpdateSqlInjectionMatchSet</a>.
+    /// Create and update the <c>ByteMatchSet</c> objects and other predicates that you want
+    /// to include in <c>Rules</c>. For more information, see <a>CreateByteMatchSet</a>, <a>UpdateByteMatchSet</a>,
+    /// <a>CreateIPSet</a>, <a>UpdateIPSet</a>, <a>CreateSqlInjectionMatchSet</a>, and <a>UpdateSqlInjectionMatchSet</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Create and update the <code>Rules</code> that you want to include in the <code>WebACL</code>.
+    /// Create and update the <c>Rules</c> that you want to include in the <c>WebACL</c>.
     /// For more information, see <a>CreateRule</a> and <a>UpdateRule</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of a <code>CreateWebACL</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of a <c>CreateWebACL</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit a <code>CreateWebACL</code> request.
+    /// Submit a <c>CreateWebACL</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+    /// Use <c>GetChangeToken</c> to get the change token that you provide in the <c>ChangeToken</c>
     /// parameter of an <a>UpdateWebACL</a> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit an <a>UpdateWebACL</a> request to specify the <code>Rules</code> that you want
-    /// to include in the <code>WebACL</code>, to specify the default action, and to associate
-    /// the <code>WebACL</code> with a CloudFront distribution.
+    /// Submit an <a>UpdateWebACL</a> request to specify the <c>Rules</c> that you want to
+    /// include in the <c>WebACL</c>, to specify the default action, and to associate the
+    /// <c>WebACL</c> with a CloudFront distribution.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -126,7 +125,7 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property DefaultAction. 
         /// <para>
         /// The action that you want AWS WAF to take when a request doesn't match the criteria
-        /// specified in any of the <code>Rule</code> objects that are associated with the <code>WebACL</code>.
+        /// specified in any of the <c>Rule</c> objects that are associated with the <c>WebACL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,11 +144,11 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property MetricName. 
         /// <para>
-        /// A friendly name or description for the metrics for this <code>WebACL</code>.The name
-        /// can contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128
-        /// and minimum length one. It can't contain whitespace or metric names reserved for AWS
-        /// WAF, including "All" and "Default_Action." You can't change <code>MetricName</code>
-        /// after you create the <code>WebACL</code>.
+        /// A friendly name or description for the metrics for this <c>WebACL</c>.The name can
+        /// contain only alphanumeric characters (A-Z, a-z, 0-9), with maximum length 128 and
+        /// minimum length one. It can't contain whitespace or metric names reserved for AWS WAF,
+        /// including "All" and "Default_Action." You can't change <c>MetricName</c> after you
+        /// create the <c>WebACL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -168,8 +167,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>WebACL</a>. You can't change <code>Name</code>
-        /// after you create the <code>WebACL</code>.
+        /// A friendly name or description of the <a>WebACL</a>. You can't change <c>Name</c>
+        /// after you create the <c>WebACL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

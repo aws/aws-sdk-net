@@ -42,9 +42,9 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The <code>RegexPatternSet</code> specifies the regular expression (regex) pattern
-    /// that you want AWS WAF to search for, such as <code>B[a@]dB[o0]t</code>. You can then
-    /// configure AWS WAF to reject those requests.
+    /// The <c>RegexPatternSet</c> specifies the regular expression (regex) pattern that you
+    /// want AWS WAF to search for, such as <c>B[a@]dB[o0]t</c>. You can then configure AWS
+    /// WAF to reject those requests.
     /// </para>
     /// </summary>
     public partial class RegexPatternSet
@@ -56,8 +56,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code>
-        /// after you create a <code>RegexPatternSet</code>.
+        /// A friendly name or description of the <a>RegexPatternSet</a>. You can't change <c>Name</c>
+        /// after you create a <c>RegexPatternSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -76,14 +76,14 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RegexPatternSetId. 
         /// <para>
-        /// The identifier for the <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code>
-        /// to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>,
-        /// remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete
-        /// a <code>RegexPatternSet</code> from AWS WAF.
+        /// The identifier for the <c>RegexPatternSet</c>. You use <c>RegexPatternSetId</c> to
+        /// get information about a <c>RegexPatternSet</c>, update a <c>RegexPatternSet</c>, remove
+        /// a <c>RegexPatternSet</c> from a <c>RegexMatchSet</c>, and delete a <c>RegexPatternSet</c>
+        /// from AWS WAF.
         /// </para>
         ///  
         /// <para>
-        ///  <code>RegexMatchSetId</code> is returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.
+        ///  <c>RegexMatchSetId</c> is returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -103,7 +103,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property RegexPatternStrings. 
         /// <para>
         /// Specifies the regular expression (regex) patterns that you want AWS WAF to search
-        /// for, such as <code>B[a@]dB[o0]t</code>.
+        /// for, such as <c>B[a@]dB[o0]t</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

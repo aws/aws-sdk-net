@@ -38,7 +38,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneInformation. 
         /// <para>
-        ///  A list of <code>AvailabilityZoneInfo</code> for the domain.
+        ///  A list of <c>AvailabilityZoneInfo</c> for the domain.
         /// </para>
         /// </summary>
         public List<AvailabilityZoneInfo> AvailabilityZoneInformation

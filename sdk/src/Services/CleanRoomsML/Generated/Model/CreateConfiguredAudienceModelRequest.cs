@@ -69,10 +69,10 @@ namespace Amazon.CleanRoomsML.Model
         /// <para>
         /// Configure the list of output sizes of audiences that can be created using this configured
         /// audience model. A request to <a>StartAudienceGenerationJob</a> that uses this configured
-        /// audience model must have an <code>audienceSize</code> selected from this list. You
-        /// can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out audience sizes
-        /// using the count of identifiers in the output. You can use the <code>Percentage</code>
-        /// <a>AudienceSize</a> to configure sizes in the range 1-100 percent.
+        /// audience model must have an <c>audienceSize</c> selected from this list. You can use
+        /// the <c>ABSOLUTE</c> <a>AudienceSize</a> to configure out audience sizes using the
+        /// count of identifiers in the output. You can use the <c>Percentage</c> <a>AudienceSize</a>
+        /// to configure sizes in the range 1-100 percent.
         /// </para>
         /// </summary>
         public AudienceSizeConfig AudienceSizeConfig
@@ -91,8 +91,8 @@ namespace Amazon.CleanRoomsML.Model
         /// Gets and sets the property ChildResourceTagOnCreatePolicy. 
         /// <para>
         /// Configure how the service tags audience generation jobs created using this configured
-        /// audience model. If you specify <code>NONE</code>, the tags from the <a>StartAudienceGenerationJob</a>
-        /// request determine the tags of the audience generation job. If you specify <code>FROM_PARENT_RESOURCE</code>,
+        /// audience model. If you specify <c>NONE</c>, the tags from the <a>StartAudienceGenerationJob</a>
+        /// request determine the tags of the audience generation job. If you specify <c>FROM_PARENT_RESOURCE</c>,
         /// the audience generation job inherits the tags from the configured audience model,
         /// by default. Tags in the <a>StartAudienceGenerationJob</a> will override the default.
         /// </para>
@@ -177,9 +177,9 @@ namespace Amazon.CleanRoomsML.Model
         /// <para>
         /// Configure the Amazon S3 location and IAM Role for audiences created using this configured
         /// audience model. Each audience will have a unique location. The IAM Role must have
-        /// <code>s3:PutObject</code> permission on the destination Amazon S3 location. If the
-        /// destination is protected with Amazon S3 KMS-SSE, then the Role must also have the
-        /// required KMS permissions.
+        /// <c>s3:PutObject</c> permission on the destination Amazon S3 location. If the destination
+        /// is protected with Amazon S3 KMS-SSE, then the Role must also have the required KMS
+        /// permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

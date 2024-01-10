@@ -156,9 +156,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// This can be <code>gp2</code> for General Purpose SSD, <code>io1</code> or <code>io2</code>
-        /// for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code>
-        /// for Cold HDD, or <code>standard</code> for Magnetic volumes.
+        /// This can be <c>gp2</c> for General Purpose SSD, <c>io1</c> or <c>io2</c> for Provisioned
+        /// IOPS SSD, <c>st1</c> for Throughput Optimized HDD, <c>sc1</c> for Cold HDD, or <c>standard</c>
+        /// for Magnetic volumes.
         /// </para>
         /// </summary>
         public string VolumeType

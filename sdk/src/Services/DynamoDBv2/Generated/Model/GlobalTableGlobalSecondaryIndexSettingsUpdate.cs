@@ -79,7 +79,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ProvisionedWriteCapacityUnits. 
         /// <para>
-        /// The maximum number of writes consumed per second before DynamoDB returns a <code>ThrottlingException.</code>
+        /// The maximum number of writes consumed per second before DynamoDB returns a <c>ThrottlingException.</c>
         /// 
         /// </para>
         /// </summary>

@@ -362,15 +362,15 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// Do not use <code>CreateCanary</code> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
+        /// Do not use <c>CreateCanary</c> to modify an existing canary. Use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_UpdateCanary.html">UpdateCanary</a>
         /// instead.
         /// </para>
         ///  
         /// <para>
-        /// To create canaries, you must have the <code>CloudWatchSyntheticsFullAccess</code>
-        /// policy. If you are creating a new IAM role for the canary, you also need the <code>iam:CreateRole</code>,
-        /// <code>iam:CreatePolicy</code> and <code>iam:AttachRolePolicy</code> permissions. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
+        /// To create canaries, you must have the <c>CloudWatchSyntheticsFullAccess</c> policy.
+        /// If you are creating a new IAM role for the canary, you also need the <c>iam:CreateRole</c>,
+        /// <c>iam:CreatePolicy</c> and <c>iam:AttachRolePolicy</c> permissions. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Roles">Necessary
         /// Roles and Permissions</a>.
         /// </para>
         ///  
@@ -496,8 +496,8 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// If you specify <code>DeleteLambda</code> to <code>true</code>, CloudWatch Synthetics
-        /// also deletes the Lambda functions and layers that are used by the canary.
+        /// If you specify <c>DeleteLambda</c> to <c>true</c>, CloudWatch Synthetics also deletes
+        /// the Lambda functions and layers that are used by the canary.
         /// </para>
         ///  
         /// <para>
@@ -507,8 +507,8 @@ namespace Amazon.Synthetics
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The CloudWatch alarms created for this canary. These alarms have a name of <code>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
-        /// </code>.
+        /// The CloudWatch alarms created for this canary. These alarms have a name of <c>Synthetics-SharpDrop-Alarm-<i>MyCanaryName</i>
+        /// </c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -517,18 +517,17 @@ namespace Amazon.Synthetics
         ///  </li> <li> 
         /// <para>
         /// IAM roles created for the canary. If they were created in the console, these roles
-        /// have the name <code> role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i>
-        /// </code>.
+        /// have the name <c> role/service-role/CloudWatchSyntheticsRole-<i>MyCanaryName</i> </c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// CloudWatch Logs log groups created for the canary. These logs groups have the name
-        /// <code>/aws/lambda/cwsyn-<i>MyCanaryName</i> </code>. 
+        /// <c>/aws/lambda/cwsyn-<i>MyCanaryName</i> </c>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Before you delete a canary, you might want to use <code>GetCanary</code> to display
-        /// the information about this canary. Make note of the information returned by this operation
+        /// Before you delete a canary, you might want to use <c>GetCanary</c> to display the
+        /// information about this canary. Make note of the information returned by this operation
         /// so that you can delete these resources after you delete the canary.
         /// </para>
         /// </summary>
@@ -635,16 +634,16 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// This operation supports resource-level authorization using an IAM policy and the <code>Names</code>
-        /// parameter. If you specify the <code>Names</code> parameter, the operation is successful
+        /// This operation supports resource-level authorization using an IAM policy and the <c>Names</c>
+        /// parameter. If you specify the <c>Names</c> parameter, the operation is successful
         /// only if you have authorization to view all the canaries that you specify in your request.
         /// If you do not have permission to view any of the canaries, the request fails with
         /// a 403 response.
         /// </para>
         ///  
         /// <para>
-        /// You are required to use the <code>Names</code> parameter if you are logged on to a
-        /// user or role that has an IAM policy that restricts which canaries that you are allowed
+        /// You are required to use the <c>Names</c> parameter if you are logged on to a user
+        /// or role that has an IAM policy that restricts which canaries that you are allowed
         /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
         /// Limiting a user to viewing specific canaries</a>.
         /// </para>
@@ -692,16 +691,16 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// This operation supports resource-level authorization using an IAM policy and the <code>Names</code>
-        /// parameter. If you specify the <code>Names</code> parameter, the operation is successful
+        /// This operation supports resource-level authorization using an IAM policy and the <c>Names</c>
+        /// parameter. If you specify the <c>Names</c> parameter, the operation is successful
         /// only if you have authorization to view all the canaries that you specify in your request.
         /// If you do not have permission to view any of the canaries, the request fails with
         /// a 403 response.
         /// </para>
         ///  
         /// <para>
-        /// You are required to use the <code>Names</code> parameter if you are logged on to a
-        /// user or role that has an IAM policy that restricts which canaries that you are allowed
+        /// You are required to use the <c>Names</c> parameter if you are logged on to a user
+        /// or role that has an IAM policy that restricts which canaries that you are allowed
         /// to view. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Restricted.html">
         /// Limiting a user to viewing specific canaries</a>.
         /// </para>
@@ -1146,8 +1145,8 @@ namespace Amazon.Synthetics
 
         /// <summary>
         /// Use this operation to run a canary that has already been created. The frequency of
-        /// the canary runs is determined by the value of the canary's <code>Schedule</code>.
-        /// To see a canary's schedule, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html">GetCanary</a>.
+        /// the canary runs is determined by the value of the canary's <c>Schedule</c>. To see
+        /// a canary's schedule, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_GetCanary.html">GetCanary</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartCanary service method.</param>
         /// <param name="cancellationToken">
@@ -1199,7 +1198,7 @@ namespace Amazon.Synthetics
         /// 
         ///  
         /// <para>
-        /// You can use <code>StartCanary</code> to start it running again with the canary’s current
+        /// You can use <c>StartCanary</c> to start it running again with the canary’s current
         /// schedule at any point in the future. 
         /// </para>
         /// </summary>
@@ -1262,9 +1261,9 @@ namespace Amazon.Synthetics
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key for the resource, this tag is appended to the list of
-        /// tags associated with the resource. If you specify a tag key that is already associated
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key for the resource, this tag is appended to the list of tags
+        /// associated with the resource. If you specify a tag key that is already associated
         /// with the resource, the new tag value that you specify replaces the previous value
         /// for that tag.
         /// </para>

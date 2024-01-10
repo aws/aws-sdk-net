@@ -118,12 +118,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To tag the AMI, the value for <code>ResourceType</code> must be <code>image</code>.
+        /// To tag the AMI, the value for <c>ResourceType</c> must be <c>image</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To tag the snapshots, the value for <code>ResourceType</code> must be <code>snapshot</code>.
-        /// The same tag is applied to all of the snapshots that are created.
+        /// To tag the snapshots, the value for <c>ResourceType</c> must be <c>snapshot</c>. The
+        /// same tag is applied to all of the snapshots that are created.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -77,7 +77,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Isp. 
         /// <para>
-        /// The recipient's ISP (e.g., <code>Gmail</code>, <code>Yahoo</code>, etc.).
+        /// The recipient's ISP (e.g., <c>Gmail</c>, <c>Yahoo</c>, etc.).
         /// </para>
         /// </summary>
         public string Isp

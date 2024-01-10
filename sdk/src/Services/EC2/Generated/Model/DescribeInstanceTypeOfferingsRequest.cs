@@ -48,13 +48,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>location</code> - This depends on the location type. For example, if the location
-        /// type is <code>region</code> (default), the location is the Region code (for example,
-        /// <code>us-east-2</code>.)
+        ///  <c>location</c> - This depends on the location type. For example, if the location
+        /// type is <c>region</c> (default), the location is the Region code (for example, <c>us-east-2</c>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instance-type</code> - The instance type. For example, <code>c5.2xlarge</code>.
+        ///  <c>instance-type</c> - The instance type. For example, <c>c5.2xlarge</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

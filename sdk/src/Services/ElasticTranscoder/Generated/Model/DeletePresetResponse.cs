@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>DeletePresetResponse</code> structure.
+    /// The <c>DeletePresetResponse</c> structure.
     /// </summary>
     public partial class DeletePresetResponse : AmazonWebServiceResponse
     {

@@ -168,39 +168,39 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The Amazon Web Services account is in the process of creating
-        /// a member.
+        ///  <c>CREATING</c> - The Amazon Web Services account is in the process of creating a
+        /// member.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The member has been created and can participate in the network.
+        ///  <c>AVAILABLE</c> - The member has been created and can participate in the network.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create
-        /// a member and creation failed.
+        ///  <c>CREATE_FAILED</c> - The Amazon Web Services account attempted to create a member
+        /// and creation failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The member is in the process of being updated.
+        ///  <c>UPDATING</c> - The member is in the process of being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The member and all associated resources are in the process
-        /// of being deleted. Either the Amazon Web Services account that owns the member deleted
-        /// it, or the member is being deleted as the result of an <code>APPROVED</code> <code>PROPOSAL</code>
+        ///  <c>DELETING</c> - The member and all associated resources are in the process of being
+        /// deleted. Either the Amazon Web Services account that owns the member deleted it, or
+        /// the member is being deleted as the result of an <c>APPROVED</c> <c>PROPOSAL</c> to
+        /// remove the member.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>DELETED</c> - The member can no longer participate on the network and all associated
+        /// resources are deleted. Either the Amazon Web Services account that owns the member
+        /// deleted it, or the member is being deleted as the result of an <c>APPROVED</c> <c>PROPOSAL</c>
         /// to remove the member.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The member can no longer participate on the network and all
-        /// associated resources are deleted. Either the Amazon Web Services account that owns
-        /// the member deleted it, or the member is being deleted as the result of an <code>APPROVED</code>
-        /// <code>PROPOSAL</code> to remove the member.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The member is impaired and might not function
+        ///  <c>INACCESSIBLE_ENCRYPTION_KEY</c> - The member is impaired and might not function
         /// as expected because it cannot access the specified customer managed key in Key Management
         /// Service (KMS) for encryption at rest. Either the KMS key was disabled or deleted,
         /// or the grants on the key were revoked.

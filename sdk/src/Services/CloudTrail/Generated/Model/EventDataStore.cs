@@ -223,8 +223,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The timestamp showing when an event data store was updated, if applicable. <code>UpdatedTimestamp</code>
-        /// is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
+        /// The timestamp showing when an event data store was updated, if applicable. <c>UpdatedTimestamp</c>
+        /// is always either the same or newer than the time shown in <c>CreatedTimestamp</c>.
         /// </para>
         /// </summary>
         [Obsolete("UpdatedTimestamp is no longer returned by ListEventDataStores")]

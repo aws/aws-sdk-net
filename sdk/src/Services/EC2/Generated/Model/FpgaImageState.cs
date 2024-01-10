@@ -43,19 +43,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>pending</code> - AFI bitstream generation is in progress.
+        ///  <c>pending</c> - AFI bitstream generation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available</code> - The AFI is available for use.
+        ///  <c>available</c> - The AFI is available for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed</code> - AFI bitstream generation failed.
+        ///  <c>failed</c> - AFI bitstream generation failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unavailable</code> - The AFI is no longer available for use.
+        ///  <c>unavailable</c> - The AFI is no longer available for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// If the state is <code>failed</code>, this is the error message.
+        /// If the state is <c>failed</c>, this is the error message.
         /// </para>
         /// </summary>
         public string Message

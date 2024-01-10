@@ -30,7 +30,7 @@ namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
     /// The details of the party accepting the agreement terms. This is commonly the buyer
-    /// for <code>PurchaseAgreement</code>.
+    /// for <c>PurchaseAgreement</c>.
     /// </summary>
     public partial class Acceptor
     {

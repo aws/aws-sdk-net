@@ -88,15 +88,15 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code>
-        /// and <code>ManagedRuleGroupStatement</code>. 
+        /// You can only use this for rule statements that reference a rule group, like <c>RuleGroupReferenceStatement</c>
+        /// and <c>ManagedRuleGroupStatement</c>. 
         /// </para>
         ///  <note> 
         /// <para>
         /// This option is usually set to none. It does not affect how the rules in the rule group
         /// are evaluated. If you want the rules in the rule group to only count matches, do not
-        /// use this and instead use the rule action override option, with <code>Count</code>
-        /// action, in your rule group reference statement settings. 
+        /// use this and instead use the rule action override option, with <c>Count</c> action,
+        /// in your rule group reference statement settings. 
         /// </para>
         ///  </note>
         /// </summary>

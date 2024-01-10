@@ -221,10 +221,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxConcurrentTransforms. 
         /// <para>
         /// The maximum number of parallel requests that can be sent to each instance in a transform
-        /// job. If <code>MaxConcurrentTransforms</code> is set to 0 or left unset, SageMaker
-        /// checks the optional execution-parameters to determine the settings for your chosen
-        /// algorithm. If the execution-parameters endpoint is not enabled, the default value
-        /// is 1. For built-in algorithms, you don't need to set a value for <code>MaxConcurrentTransforms</code>.
+        /// job. If <c>MaxConcurrentTransforms</c> is set to 0 or left unset, SageMaker checks
+        /// the optional execution-parameters to determine the settings for your chosen algorithm.
+        /// If the execution-parameters endpoint is not enabled, the default value is 1. For built-in
+        /// algorithms, you don't need to set a value for <c>MaxConcurrentTransforms</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -244,9 +244,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxPayloadInMB. 
         /// <para>
         /// The maximum allowed size of the payload, in MB. A payload is the data portion of a
-        /// record (without metadata). The value in <code>MaxPayloadInMB</code> must be greater
-        /// than, or equal to, the size of a single record. To estimate the size of a record in
-        /// MB, divide the size of your dataset by the number of records. To ensure that the records
+        /// record (without metadata). The value in <c>MaxPayloadInMB</c> must be greater than,
+        /// or equal to, the size of a single record. To estimate the size of a record in MB,
+        /// divide the size of your dataset by the number of records. To ensure that the records
         /// fit within the maximum payload size, we recommend using a slightly larger value. The
         /// default value is 6 MB. For cases where the payload might be arbitrarily large and
         /// is transmitted using HTTP chunked encoding, set the value to 0. This feature works
@@ -324,7 +324,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TransformEndTime. 
         /// <para>
         /// Indicates when the transform job has been completed, or has stopped or failed. You
-        /// are billed for the time interval between this time and the value of <code>TransformStartTime</code>.
+        /// are billed for the time interval between this time and the value of <c>TransformStartTime</c>.
         /// </para>
         /// </summary>
         public DateTime TransformEndTime
@@ -403,25 +403,25 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>InProgress</code> - The job is in progress.
+        ///  <c>InProgress</c> - The job is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Completed</code> - The job has completed.
+        ///  <c>Completed</c> - The job has completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The transform job has failed. To see the reason for the failure,
-        /// see the <code>FailureReason</code> field in the response to a <code>DescribeTransformJob</code>
+        ///  <c>Failed</c> - The transform job has failed. To see the reason for the failure,
+        /// see the <c>FailureReason</c> field in the response to a <c>DescribeTransformJob</c>
         /// call.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopping</code> - The transform job is stopping.
+        ///  <c>Stopping</c> - The transform job is stopping.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopped</code> - The transform job has stopped.
+        ///  <c>Stopped</c> - The transform job has stopped.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -471,7 +471,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TransformStartTime. 
         /// <para>
         /// Indicates when the transform job starts on ML instances. You are billed for the time
-        /// interval between this time and the value of <code>TransformEndTime</code>.
+        /// interval between this time and the value of <c>TransformEndTime</c>.
         /// </para>
         /// </summary>
         public DateTime TransformStartTime

@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKVoice.Model
         /// Gets and sets the property ExpirationTimestamp. 
         /// <para>
         /// The time at which a voice profile expires unless you re-enroll the caller via the
-        /// <code>UpdateVoiceProfile</code> API.
+        /// <c>UpdateVoiceProfile</c> API.
         /// </para>
         /// </summary>
         public DateTime ExpirationTimestamp

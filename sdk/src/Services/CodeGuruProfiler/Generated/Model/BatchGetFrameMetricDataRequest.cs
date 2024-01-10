@@ -87,8 +87,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property Period. 
         /// <para>
         ///  The duration of the frame metrics used to return the time series values. Specify
-        /// using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code>
-        /// or <code>P1D</code>). 
+        /// using the ISO 8601 format. The maximum period duration is one day (<c>PT24H</c> or
+        /// <c>P1D</c>). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -154,15 +154,15 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>P1D</code> — 1 day 
+        ///  <c>P1D</c> — 1 day 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PT1H</code> — 1 hour 
+        ///  <c>PT1H</c> — 1 hour 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PT5M</code> — 5 minutes 
+        ///  <c>PT5M</c> — 5 minutes 
         /// </para>
         ///  </li> </ul>
         /// </summary>

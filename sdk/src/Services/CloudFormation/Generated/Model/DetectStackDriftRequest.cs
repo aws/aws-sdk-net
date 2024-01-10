@@ -42,8 +42,8 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// Use <code>DetectStackDrift</code> to detect drift on all supported resources for a
-    /// given stack, or <a>DetectStackResourceDrift</a> to detect drift on individual resources.
+    /// Use <c>DetectStackDrift</c> to detect drift on all supported resources for a given
+    /// stack, or <a>DetectStackResourceDrift</a> to detect drift on individual resources.
     /// </para>
     ///  
     /// <para>
@@ -52,8 +52,8 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>DetectStackDrift</code> can take up to several minutes, depending on the number
-    /// of resources contained within the stack. Use <a>DescribeStackDriftDetectionStatus</a>
+    ///  <c>DetectStackDrift</c> can take up to several minutes, depending on the number of
+    /// resources contained within the stack. Use <a>DescribeStackDriftDetectionStatus</a>
     /// to monitor the progress of a detect stack drift operation. Once the drift detection
     /// operation has completed, use <a>DescribeStackResourceDrifts</a> to return drift information
     /// about the stack and its resources.
@@ -61,8 +61,8 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     /// When detecting drift on a stack, CloudFormation doesn't detect drift on any nested
-    /// stacks belonging to that stack. Perform <code>DetectStackDrift</code> directly on
-    /// the nested stack itself.
+    /// stacks belonging to that stack. Perform <c>DetectStackDrift</c> directly on the nested
+    /// stack itself.
     /// </para>
     /// </summary>
     public partial class DetectStackDriftRequest : AmazonCloudFormationRequest

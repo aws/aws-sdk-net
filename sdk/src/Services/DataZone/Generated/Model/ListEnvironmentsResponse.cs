@@ -39,7 +39,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// The results of the <code>ListEnvironments</code> action.
+        /// The results of the <c>ListEnvironments</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,11 +58,11 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When the number of environments is greater than the default value for the <code>MaxResults</code>
-        /// parameter, or if you explicitly specify a value for <code>MaxResults</code> that is
-        /// less than the number of environments, the response includes a pagination token named
-        /// <code>NextToken</code>. You can specify this <code>NextToken</code> value in a subsequent
-        /// call to <code>ListEnvironments</code> to list the next set of environments.
+        /// When the number of environments is greater than the default value for the <c>MaxResults</c>
+        /// parameter, or if you explicitly specify a value for <c>MaxResults</c> that is less
+        /// than the number of environments, the response includes a pagination token named <c>NextToken</c>.
+        /// You can specify this <c>NextToken</c> value in a subsequent call to <c>ListEnvironments</c>
+        /// to list the next set of environments.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

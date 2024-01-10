@@ -33,7 +33,7 @@ namespace Amazon.Signer.Model
     /// 
     ///  
     /// <para>
-    /// This error supersedes the error <code>ThrottlingException</code>.
+    /// This error supersedes the error <c>ThrottlingException</c>.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

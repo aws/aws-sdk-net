@@ -46,7 +46,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The date and time that a framework is created, in ISO 8601 representation. The value
-        /// of <code>CreationTime</code> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00
+        /// of <c>CreationTime</c> is accurate to milliseconds. For example, 2020-07-10T15:00:00.000-08:00
         /// represents the 10th of July 2020 at 3:00 PM 8 hours behind UTC.
         /// </para>
         /// </summary>
@@ -69,8 +69,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED |
-        /// FAILED</code> 
+        ///  <c>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED | FAILED</c>
+        /// 
         /// </para>
         /// </summary>
         public string DeploymentStatus

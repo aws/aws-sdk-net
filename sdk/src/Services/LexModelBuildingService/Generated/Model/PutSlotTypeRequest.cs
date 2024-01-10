@@ -41,15 +41,15 @@ namespace Amazon.LexModelBuildingService.Model
     ///  
     /// <para>
     /// If you specify the name of an existing slot type, the fields in the request replace
-    /// the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex
-    /// removes the fields that you don't provide in the request. If you don't specify required
-    /// fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version
-    /// of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains
-    /// the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.
+    /// the existing values in the <c>$LATEST</c> version of the slot type. Amazon Lex removes
+    /// the fields that you don't provide in the request. If you don't specify required fields,
+    /// Amazon Lex throws an exception. When you update the <c>$LATEST</c> version of a slot
+    /// type, if a bot uses the <c>$LATEST</c> version of an intent that contains the slot
+    /// type, the bot's <c>status</c> field is set to <c>NOT_BUILT</c>.
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>lex:PutSlotType</code> action.
+    /// This operation requires permissions for the <c>lex:PutSlotType</c> action.
     /// </para>
     /// </summary>
     public partial class PutSlotTypeRequest : AmazonLexModelBuildingServiceRequest
@@ -66,19 +66,19 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// Identifies a specific revision of the <code>$LATEST</code> version.
+        /// Identifies a specific revision of the <c>$LATEST</c> version.
         /// </para>
         ///  
         /// <para>
-        /// When you create a new slot type, leave the <code>checksum</code> field blank. If you
-        /// specify a checksum you get a <code>BadRequestException</code> exception.
+        /// When you create a new slot type, leave the <c>checksum</c> field blank. If you specify
+        /// a checksum you get a <c>BadRequestException</c> exception.
         /// </para>
         ///  
         /// <para>
-        /// When you want to update a slot type, set the <code>checksum</code> field to the checksum
-        /// of the most recent revision of the <code>$LATEST</code> version. If you don't specify
-        /// the <code> checksum</code> field, or if the checksum does not match the <code>$LATEST</code>
-        /// version, you get a <code>PreconditionFailedException</code> exception.
+        /// When you want to update a slot type, set the <c>checksum</c> field to the checksum
+        /// of the most recent revision of the <c>$LATEST</c> version. If you don't specify the
+        /// <c> checksum</c> field, or if the checksum does not match the <c>$LATEST</c> version,
+        /// you get a <c>PreconditionFailedException</c> exception.
         /// </para>
         /// </summary>
         public string Checksum
@@ -96,9 +96,9 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property CreateVersion. 
         /// <para>
-        /// When set to <code>true</code> a new numbered version of the slot type is created.
-        /// This is the same as calling the <code>CreateSlotTypeVersion</code> operation. If you
-        /// do not specify <code>createVersion</code>, the default is <code>false</code>.
+        /// When set to <c>true</c> a new numbered version of the slot type is created. This is
+        /// the same as calling the <c>CreateSlotTypeVersion</c> operation. If you do not specify
+        /// <c>createVersion</c>, the default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool CreateVersion
@@ -135,10 +135,10 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property EnumerationValues. 
         /// <para>
-        /// A list of <code>EnumerationValue</code> objects that defines the values that the slot
-        /// type can take. Each value can have a list of <code>synonyms</code>, which are additional
-        /// values that help train the machine learning model about the values that it resolves
-        /// for a slot. 
+        /// A list of <c>EnumerationValue</c> objects that defines the values that the slot type
+        /// can take. Each value can have a list of <c>synonyms</c>, which are additional values
+        /// that help train the machine learning model about the values that it resolves for a
+        /// slot. 
         /// </para>
         ///  
         /// <para>
@@ -151,7 +151,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// up to five possible values for the slot. If you are using a Lambda function, this
         /// resolution list is passed to the function. If you are not using a Lambda function
         /// you can choose to return the value that the user entered or the first value in the
-        /// resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates
+        /// resolution list as the slot value. The <c>valueSelectionStrategy</c> field indicates
         /// the option to use. 
         /// </para>
         /// </summary>
@@ -176,8 +176,8 @@ namespace Amazon.LexModelBuildingService.Model
         ///  
         /// <para>
         /// The name can't match a built-in slot type name, or a built-in slot type name with
-        /// "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>,
-        /// you can't create a custom slot type called <code>DATE</code>.
+        /// "AMAZON." removed. For example, because there is a built-in slot type called <c>AMAZON.DATE</c>,
+        /// you can't create a custom slot type called <c>DATE</c>.
         /// </para>
         ///  
         /// <para>
@@ -206,7 +206,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  
         /// <para>
-        /// Only <code>AMAZON.AlphaNumeric</code> is supported.
+        /// Only <c>AMAZON.AlphaNumeric</c> is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -250,18 +250,18 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user
-        /// value is similar to the slot value.
+        ///  <c>ORIGINAL_VALUE</c> - Returns the value entered by the user, if the user value
+        /// is similar to the slot value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
-        /// the first value in the resolution list as the slot type value. If there is no resolution
-        /// list, null is returned.
+        ///  <c>TOP_RESOLUTION</c> - If there is a resolution list for the slot, return the first
+        /// value in the resolution list as the slot type value. If there is no resolution list,
+        /// null is returned.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
+        /// If you don't specify the <c>valueSelectionStrategy</c>, the default is <c>ORIGINAL_VALUE</c>.
         /// </para>
         /// </summary>
         public SlotValueSelectionStrategy ValueSelectionStrategy

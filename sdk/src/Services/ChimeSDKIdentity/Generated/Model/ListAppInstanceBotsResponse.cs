@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceBots. 
         /// <para>
-        /// The information for each requested <code>AppInstanceBot</code>.
+        /// The information for each requested <c>AppInstanceBot</c>.
         /// </para>
         /// </summary>
         public List<AppInstanceBotSummary> AppInstanceBots

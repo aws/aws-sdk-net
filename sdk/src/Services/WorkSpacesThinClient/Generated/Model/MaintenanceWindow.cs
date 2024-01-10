@@ -82,7 +82,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// <summary>
         /// Gets and sets the property EndTimeHour. 
         /// <para>
-        /// The hour for the maintenance window end (<code>00</code>-<code>23</code>).
+        /// The hour for the maintenance window end (<c>00</c>-<c>23</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
@@ -101,7 +101,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// <summary>
         /// Gets and sets the property EndTimeMinute. 
         /// <para>
-        /// The minutes for the maintenance window end (<code>00</code>-<code>59</code>).
+        /// The minutes for the maintenance window end (<c>00</c>-<c>59</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]
@@ -120,7 +120,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// <summary>
         /// Gets and sets the property StartTimeHour. 
         /// <para>
-        /// The hour for the maintenance window start (<code>00</code>-<code>23</code>).
+        /// The hour for the maintenance window start (<c>00</c>-<c>23</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]
@@ -139,7 +139,7 @@ namespace Amazon.WorkSpacesThinClient.Model
         /// <summary>
         /// Gets and sets the property StartTimeMinute. 
         /// <para>
-        /// The minutes past the hour for the maintenance window start (<code>00</code>-<code>59</code>).
+        /// The minutes past the hour for the maintenance window start (<c>00</c>-<c>59</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=59)]

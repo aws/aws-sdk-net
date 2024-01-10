@@ -45,7 +45,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:UngroupResources</code> 
+    ///  <c>resource-groups:UngroupResources</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

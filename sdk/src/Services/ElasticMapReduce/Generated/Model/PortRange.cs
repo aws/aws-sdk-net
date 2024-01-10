@@ -30,8 +30,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// A list of port ranges that are permitted to allow inbound traffic from all public
-    /// IP addresses. To specify a single port, use the same value for <code>MinRange</code>
-    /// and <code>MaxRange</code>.
+    /// IP addresses. To specify a single port, use the same value for <c>MinRange</c> and
+    /// <c>MaxRange</c>.
     /// </summary>
     public partial class PortRange
     {

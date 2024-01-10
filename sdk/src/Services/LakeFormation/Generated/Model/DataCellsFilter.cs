@@ -69,8 +69,7 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either a <code>ColumnNames</code> list or the <code>ColumnWildCard</code>.
-        /// 
+        /// You must specify either a <c>ColumnNames</c> list or the <c>ColumnWildCard</c>. 
         /// </para>
         /// </summary>
         public ColumnWildcard ColumnWildcard

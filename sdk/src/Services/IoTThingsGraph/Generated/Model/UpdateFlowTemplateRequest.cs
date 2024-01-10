@@ -48,7 +48,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// </para>
         ///  
         /// <para>
-        /// If no value is specified, the latest version is used by default. Use the <code>GetFlowTemplateRevisions</code>
+        /// If no value is specified, the latest version is used by default. Use the <c>GetFlowTemplateRevisions</c>
         /// if you want to find earlier revisions of the flow to update.
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The <code>DefinitionDocument</code> that contains the updated workflow definition.
+        /// The <c>DefinitionDocument</c> that contains the updated workflow definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,7 +94,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</code> 
+        ///  <c>urn:tdm:REGION/ACCOUNT ID/default:workflow:WORKFLOWNAME</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=160)]

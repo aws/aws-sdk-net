@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response to the previous <code>ListNotebookInstances</code> request was truncated,
+        /// If the response to the previous <c>ListNotebookInstances</c> request was truncated,
         /// SageMaker returns this token. To retrieve the next set of notebook instances, use
         /// the token in the next request.
         /// </para>
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NotebookInstances. 
         /// <para>
-        /// An array of <code>NotebookInstanceSummary</code> objects, one for each notebook instance.
+        /// An array of <c>NotebookInstanceSummary</c> objects, one for each notebook instance.
         /// </para>
         /// </summary>
         public List<NotebookInstanceSummary> NotebookInstances

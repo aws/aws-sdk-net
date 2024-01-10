@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard</code> | <code>unlimited</code> 
+        /// Valid values: <c>standard</c> | <c>unlimited</c> 
         /// </para>
         /// </summary>
         public string CpuCredits

@@ -58,14 +58,13 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property TargetNodes. 
         /// <para>
-        /// The range of nodes, using node index values. A range of <code>0:3</code> indicates
-        /// nodes with index values of <code>0</code> through <code>3</code>. If the starting
-        /// range value is omitted (<code>:n</code>), then <code>0</code> is used to start the
-        /// range. If the ending range value is omitted (<code>n:</code>), then the highest possible
-        /// node index is used to end the range. Your accumulative node ranges must account for
-        /// all nodes (<code>0:n</code>). You can nest node ranges (for example, <code>0:10</code>
-        /// and <code>4:5</code>). In this case, the <code>4:5</code> range properties override
-        /// the <code>0:10</code> properties.
+        /// The range of nodes, using node index values. A range of <c>0:3</c> indicates nodes
+        /// with index values of <c>0</c> through <c>3</c>. If the starting range value is omitted
+        /// (<c>:n</c>), then <c>0</c> is used to start the range. If the ending range value is
+        /// omitted (<c>n:</c>), then the highest possible node index is used to end the range.
+        /// Your accumulative node ranges must account for all nodes (<c>0:n</c>). You can nest
+        /// node ranges (for example, <c>0:10</c> and <c>4:5</c>). In this case, the <c>4:5</c>
+        /// range properties override the <c>0:10</c> properties.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

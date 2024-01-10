@@ -64,27 +64,25 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>ATTACHMENTS</code> is specified, the attachments for the container instances
-        /// or tasks within the cluster are included, for example the capacity providers.
+        /// If <c>ATTACHMENTS</c> is specified, the attachments for the container instances or
+        /// tasks within the cluster are included, for example the capacity providers.
         /// </para>
         ///  
         /// <para>
-        /// If <code>SETTINGS</code> is specified, the settings for the cluster are included.
+        /// If <c>SETTINGS</c> is specified, the settings for the cluster are included.
         /// </para>
         ///  
         /// <para>
-        /// If <code>CONFIGURATIONS</code> is specified, the configuration for the cluster is
-        /// included.
+        /// If <c>CONFIGURATIONS</c> is specified, the configuration for the cluster is included.
         /// </para>
         ///  
         /// <para>
-        /// If <code>STATISTICS</code> is specified, the task and service count is included, separated
+        /// If <c>STATISTICS</c> is specified, the task and service count is included, separated
         /// by launch type.
         /// </para>
         ///  
         /// <para>
-        /// If <code>TAGS</code> is specified, the metadata tags associated with the cluster are
-        /// included.
+        /// If <c>TAGS</c> is specified, the metadata tags associated with the cluster are included.
         /// </para>
         /// </summary>
         public List<string> Include

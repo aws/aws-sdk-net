@@ -35,8 +35,8 @@ namespace Amazon.Lambda.Model
     /// 
     ///  
     /// <para>
-    /// When you delete an event source mapping, it enters a <code>Deleting</code> state and
-    /// might not be completely deleted for several seconds.
+    /// When you delete an event source mapping, it enters a <c>Deleting</c> state and might
+    /// not be completely deleted for several seconds.
     /// </para>
     /// </summary>
     public partial class DeleteEventSourceMappingRequest : AmazonLambdaRequest

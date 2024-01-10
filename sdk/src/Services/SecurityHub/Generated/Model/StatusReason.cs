@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provides additional context for the value of <code>Compliance.Status</code>.
+    /// Provides additional context for the value of <c>Compliance.Status</c>.
     /// </summary>
     public partial class StatusReason
     {

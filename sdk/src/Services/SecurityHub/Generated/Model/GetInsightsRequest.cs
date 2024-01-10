@@ -42,8 +42,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property InsightArns. 
         /// <para>
         /// The ARNs of the insights to describe. If you do not provide any insight ARNs, then
-        /// <code>GetInsights</code> returns all of your custom insights. It does not return any
-        /// managed insights.
+        /// <c>GetInsights</c> returns all of your custom insights. It does not return any managed
+        /// insights.
         /// </para>
         /// </summary>
         public List<string> InsightArns
@@ -80,8 +80,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that is required for pagination. On your first call to the <code>GetInsights</code>
-        /// operation, set the value of this parameter to <code>NULL</code>.
+        /// The token that is required for pagination. On your first call to the <c>GetInsights</c>
+        /// operation, set the value of this parameter to <c>NULL</c>.
         /// </para>
         ///  
         /// <para>

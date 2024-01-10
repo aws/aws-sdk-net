@@ -48,9 +48,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The date and time that a restore testing selection was created, in Unix format and
-        /// Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate
-        /// to milliseconds. For example, the value 1516925490.087 represents Friday, January
-        /// 26, 201812:11:30.087 AM.
+        /// Coordinated Universal Time (UTC). The value of <c>CreationTime</c> is accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
+        /// 201812:11:30.087 AM.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,7 +70,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// This identifies the request and allows failed requests to be retried without the risk
-        /// of running the operation twice. If the request includes a <code>CreatorRequestId</code>
+        /// of running the operation twice. If the request includes a <c>CreatorRequestId</c>
         /// that matches an existing backup plan, that plan is returned. This parameter is optional.
         /// </para>
         ///  
@@ -94,7 +94,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target
-        /// resource; for example:<code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// resource; for example:<c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -113,9 +113,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ProtectedResourceArns. 
         /// <para>
-        /// You can include specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...",
-        /// "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns:
-        /// ["*"]</code>, but not both.
+        /// You can include specific ARNs, such as <c>ProtectedResourceArns: ["arn:aws:...", "arn:aws:..."]</c>
+        /// or you can include a wildcard: <c>ProtectedResourceArns: ["*"]</c>, but not both.
         /// </para>
         /// </summary>
         public List<string> ProtectedResourceArns
@@ -134,7 +133,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ProtectedResourceConditions. 
         /// <para>
         /// In a resource testing selection, this parameter filters by specific conditions such
-        /// as <code>StringEquals</code> or <code>StringNotEquals</code>.
+        /// as <c>StringEquals</c> or <c>StringNotEquals</c>.
         /// </para>
         /// </summary>
         public ProtectedResourceConditions ProtectedResourceConditions
@@ -172,8 +171,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreMetadataOverrides. 
         /// <para>
-        /// You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code>
-        /// in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.
+        /// You can override certain restore metadata keys by including the parameter <c>RestoreMetadataOverrides</c>
+        /// in the body of <c>RestoreTestingSelection</c>. Key values are not case sensitive.
         /// </para>
         ///  
         /// <para>

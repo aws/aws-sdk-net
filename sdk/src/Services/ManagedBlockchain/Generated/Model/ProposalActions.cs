@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// The actions to carry out if a proposal is <code>APPROVED</code>. 
+    /// The actions to carry out if a proposal is <c>APPROVED</c>. 
     /// 
     ///  
     /// <para>
@@ -44,8 +44,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Invitations. 
         /// <para>
-        ///  The actions to perform for an <code>APPROVED</code> proposal to invite an Amazon
-        /// Web Services account to create a member and join the network. 
+        ///  The actions to perform for an <c>APPROVED</c> proposal to invite an Amazon Web Services
+        /// account to create a member and join the network. 
         /// </para>
         /// </summary>
         public List<InviteAction> Invitations
@@ -63,9 +63,9 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Removals. 
         /// <para>
-        ///  The actions to perform for an <code>APPROVED</code> proposal to remove a member from
-        /// the network, which deletes the member and all associated member resources from the
-        /// network. 
+        ///  The actions to perform for an <c>APPROVED</c> proposal to remove a member from the
+        /// network, which deletes the member and all associated member resources from the network.
+        /// 
         /// </para>
         /// </summary>
         public List<RemoveAction> Removals

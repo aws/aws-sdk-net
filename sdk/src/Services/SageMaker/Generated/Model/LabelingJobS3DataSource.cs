@@ -43,19 +43,19 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// The input manifest file referenced in <code>ManifestS3Uri</code> must contain one
-        /// of the following keys: <code>source-ref</code> or <code>source</code>. The value of
-        /// the keys are interpreted as follows:
+        /// The input manifest file referenced in <c>ManifestS3Uri</c> must contain one of the
+        /// following keys: <c>source-ref</c> or <c>source</c>. The value of the keys are interpreted
+        /// as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>source-ref</code>: The source of the object is the Amazon S3 object specified
-        /// in the value. Use this value when the object is a binary object, such as an image.
+        ///  <c>source-ref</c>: The source of the object is the Amazon S3 object specified in
+        /// the value. Use this value when the object is a binary object, such as an image.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source</code>: The source of the object is the value. Use this value when the
-        /// object is a text value.
+        ///  <c>source</c>: The source of the object is the value. Use this value when the object
+        /// is a text value.
         /// </para>
         ///  </li> </ul> 
         /// <para>

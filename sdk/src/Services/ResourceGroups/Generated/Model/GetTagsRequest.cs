@@ -43,7 +43,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:GetTags</code> 
+    ///  <c>resource-groups:GetTags</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

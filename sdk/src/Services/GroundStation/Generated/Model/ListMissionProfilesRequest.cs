@@ -59,8 +59,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Next token returned in the request of a previous <code>ListMissionProfiles</code>
-        /// call. Used to get the next page of results.
+        /// Next token returned in the request of a previous <c>ListMissionProfiles</c> call.
+        /// Used to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=1000)]

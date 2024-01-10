@@ -65,7 +65,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BotVersion. 
         /// <para>
         /// The version of the bot that contains the locale to be updated. The version can only
-        /// be the <code>DRAFT</code> version.
+        /// be the <c>DRAFT</c> version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]
@@ -144,9 +144,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NluIntentConfidenceThreshold. 
         /// <para>
-        /// The new confidence threshold where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>
-        /// and <code>AMAZON.KendraSearchIntent</code> intents in the list of possible intents
-        /// for an utterance.
+        /// The new confidence threshold where Amazon Lex inserts the <c>AMAZON.FallbackIntent</c>
+        /// and <c>AMAZON.KendraSearchIntent</c> intents in the list of possible intents for an
+        /// utterance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1)]

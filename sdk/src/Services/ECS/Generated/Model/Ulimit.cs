@@ -29,19 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The <code>ulimit</code> settings to pass to the container.
+    /// The <c>ulimit</c> settings to pass to the container.
     /// 
     ///  
     /// <para>
     /// Amazon ECS tasks hosted on Fargate use the default resource limit values set by the
-    /// operating system with the exception of the <code>nofile</code> resource limit parameter
-    /// which Fargate overrides. The <code>nofile</code> resource limit sets a restriction
-    /// on the number of open files that a container can use. The default <code>nofile</code>
-    /// soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
+    /// operating system with the exception of the <c>nofile</c> resource limit parameter
+    /// which Fargate overrides. The <c>nofile</c> resource limit sets a restriction on the
+    /// number of open files that a container can use. The default <c>nofile</c> soft limit
+    /// is <c>1024</c> and the default hard limit is <c>4096</c>.
     /// </para>
     ///  
     /// <para>
-    /// You can specify the <code>ulimit</code> settings for a container in a task definition.
+    /// You can specify the <c>ulimit</c> settings for a container in a task definition.
     /// </para>
     /// </summary>
     public partial class Ulimit
@@ -53,7 +53,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property HardLimit. 
         /// <para>
-        /// The hard limit for the <code>ulimit</code> type.
+        /// The hard limit for the <c>ulimit</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The <code>type</code> of the <code>ulimit</code>.
+        /// The <c>type</c> of the <c>ulimit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,7 +91,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property SoftLimit. 
         /// <para>
-        /// The soft limit for the <code>ulimit</code> type.
+        /// The soft limit for the <c>ulimit</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

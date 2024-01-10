@@ -84,22 +84,22 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// If <code>true</code>, this parameter causes the modifications in this request and
-        /// any pending modifications to be applied, asynchronously and as soon as possible, regardless
-        /// of the <code>PreferredMaintenanceWindow</code> setting for the replication group.
+        /// If <c>true</c>, this parameter causes the modifications in this request and any pending
+        /// modifications to be applied, asynchronously and as soon as possible, regardless of
+        /// the <c>PreferredMaintenanceWindow</c> setting for the replication group.
         /// </para>
         ///  
         /// <para>
-        /// If <code>false</code>, changes to the nodes in the replication group are applied on
-        /// the next maintenance reboot, or the next failure reboot, whichever occurs first.
+        /// If <c>false</c>, changes to the nodes in the replication group are applied on the
+        /// next maintenance reboot, or the next failure reboot, whichever occurs first.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code> 
+        /// Valid values: <c>true</c> | <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -118,7 +118,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AuthToken. 
         /// <para>
         /// Reserved parameter. The password used to access a password protected server. This
-        /// parameter must be specified with the <code>auth-token-update-strategy </code> parameter.
+        /// parameter must be specified with the <c>auth-token-update-strategy </c> parameter.
         /// Password constraints:
         /// </para>
         ///  <ul> <li> 
@@ -154,7 +154,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AuthTokenUpdateStrategy. 
         /// <para>
         /// Specifies the strategy to use to update the AUTH token. This parameter must be specified
-        /// with the <code>auth-token</code> parameter. Possible values:
+        /// with the <c>auth-token</c> parameter. Possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -190,7 +190,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code> 
+        /// Valid values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool AutomaticFailoverEnabled
@@ -248,8 +248,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The name of the cache parameter group to apply to all of the clusters in this replication
         /// group. This change is asynchronously applied as soon as possible for parameters when
-        /// the <code>ApplyImmediately</code> parameter is specified as <code>true</code> for
-        /// this request.
+        /// the <c>ApplyImmediately</c> parameter is specified as <c>true</c> for this request.
         /// </para>
         /// </summary>
         public string CacheParameterGroupName
@@ -277,7 +276,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be <code>Default</code>.
+        /// Constraints: Must contain no more than 255 alphanumeric characters. Must not be <c>Default</c>.
         /// </para>
         /// </summary>
         public List<string> CacheSecurityGroupNames
@@ -343,7 +342,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property IpDiscovery. 
         /// <para>
-        /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
         /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
         /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
@@ -444,11 +443,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NotificationTopicStatus. 
         /// <para>
         /// The status of the Amazon SNS notification topic for the replication group. Notifications
-        /// are sent only if the status is <code>active</code>.
+        /// are sent only if the status is <c>active</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>active</code> | <code>inactive</code> 
+        /// Valid values: <c>active</c> | <c>inactive</c> 
         /// </para>
         /// </summary>
         public string NotificationTopicStatus
@@ -472,39 +471,39 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>ddd</code> are:
+        /// Valid values for <c>ddd</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>sun</code> 
+        ///  <c>sun</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mon</code> 
+        ///  <c>mon</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tue</code> 
+        ///  <c>tue</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>wed</code> 
+        ///  <c>wed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>thu</code> 
+        ///  <c>thu</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fri</code> 
+        ///  <c>fri</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sat</code> 
+        ///  <c>sat</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>sun:23:00-mon:01:30</code> 
+        /// Example: <c>sun:23:00-mon:01:30</c> 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -622,8 +621,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
         /// The number of days for which ElastiCache retains automatic node group (shard) snapshots
-        /// before deleting them. For example, if you set <code>SnapshotRetentionLimit</code>
-        /// to 5, a snapshot that was taken today is retained for 5 days before being deleted.
+        /// before deleting them. For example, if you set <c>SnapshotRetentionLimit</c> to 5,
+        /// a snapshot that was taken today is retained for 5 days before being deleted.
         /// </para>
         ///  
         /// <para>
@@ -666,11 +665,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotWindow. 
         /// <para>
         /// The daily time range (in UTC) during which ElastiCache begins taking a daily snapshot
-        /// of the node group (shard) specified by <code>SnapshottingClusterId</code>.
+        /// of the node group (shard) specified by <c>SnapshottingClusterId</c>.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>05:00-09:00</code> 
+        /// Example: <c>05:00-09:00</c> 
         /// </para>
         ///  
         /// <para>
@@ -694,8 +693,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property TransitEncryptionEnabled. 
         /// <para>
         /// A flag that enables in-transit encryption when set to true. If you are enabling in-transit
-        /// encryption for an existing cluster, you must also set <code>TransitEncryptionMode</code>
-        /// to <code>preferred</code>.
+        /// encryption for an existing cluster, you must also set <c>TransitEncryptionMode</c>
+        /// to <c>preferred</c>.
         /// </para>
         /// </summary>
         public bool TransitEncryptionEnabled
@@ -718,18 +717,17 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// You must set <code>TransitEncryptionEnabled</code> to <code>true</code>, for your
-        /// existing cluster, and set <code>TransitEncryptionMode</code> to <code>preferred</code>
-        /// in the same request to allow both encrypted and unencrypted connections at the same
-        /// time. Once you migrate all your Redis clients to use encrypted connections you can
-        /// set the value to <code>required</code> to allow encrypted connections only.
+        /// You must set <c>TransitEncryptionEnabled</c> to <c>true</c>, for your existing cluster,
+        /// and set <c>TransitEncryptionMode</c> to <c>preferred</c> in the same request to allow
+        /// both encrypted and unencrypted connections at the same time. Once you migrate all
+        /// your Redis clients to use encrypted connections you can set the value to <c>required</c>
+        /// to allow encrypted connections only.
         /// </para>
         ///  
         /// <para>
-        /// Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step
-        /// process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>,
-        /// after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.
-        /// 
+        /// Setting <c>TransitEncryptionMode</c> to <c>required</c> is a two-step process that
+        /// requires you to first set the <c>TransitEncryptionMode</c> to <c>preferred</c>, after
+        /// that you can set <c>TransitEncryptionMode</c> to <c>required</c>. 
         /// </para>
         /// </summary>
         public TransitEncryptionMode TransitEncryptionMode

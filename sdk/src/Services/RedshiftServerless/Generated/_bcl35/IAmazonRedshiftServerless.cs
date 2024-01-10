@@ -294,7 +294,7 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift
-        /// API action. For example, you can create a schedule of when to run the <code>CreateSnapshot</code>
+        /// API action. For example, you can create a schedule of when to run the <c>CreateSnapshot</c>
         /// API operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateScheduledAction service method.</param>
@@ -1060,11 +1060,11 @@ namespace Amazon.RedshiftServerless
         /// By default, the temporary credentials expire in 900 seconds. You can optionally specify
         /// a duration between 900 seconds (15 minutes) and 3600 seconds (60 minutes).
         /// </para>
-        ///  <pre><code> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs
+        ///  <pre><c> &lt;p&gt;The Identity and Access Management (IAM) user or role that runs
         /// GetCredentials must have an IAM policy attached that allows access to all necessary
         /// actions and resources.&lt;/p&gt; &lt;p&gt;If the &lt;code&gt;DbName&lt;/code&gt; parameter
         /// is specified, the IAM policy must allow access to the resource dbname for the specified
-        /// database name.&lt;/p&gt; </code></pre>
+        /// database name.&lt;/p&gt; </c></pre>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCredentials service method.</param>
         /// 
@@ -1471,7 +1471,7 @@ namespace Amazon.RedshiftServerless
 
 
         /// <summary>
-        /// Returns information about a <code>TableRestoreStatus</code> object.
+        /// Returns information about a <c>TableRestoreStatus</c> object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableRestoreStatus service method.</param>
         /// 
@@ -1673,7 +1673,7 @@ namespace Amazon.RedshiftServerless
 
 
         /// <summary>
-        /// Returns an array of <code>EndpointAccess</code> objects and relevant information.
+        /// Returns an array of <c>EndpointAccess</c> objects and relevant information.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEndpointAccess service method.</param>
         /// 
@@ -1974,7 +1974,7 @@ namespace Amazon.RedshiftServerless
 
 
         /// <summary>
-        /// Returns information about an array of <code>TableRestoreStatus</code> objects.
+        /// Returns information about an array of <c>TableRestoreStatus</c> objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTableRestoreStatus service method.</param>
         /// 
@@ -2667,9 +2667,9 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Updates a namespace with the specified settings. Unless required, you can't update
-        /// multiple parameters in one request. For example, you must specify both <code>adminUsername</code>
-        /// and <code>adminUserPassword</code> to update either field, but you can't update both
-        /// <code>kmsKeyId</code> and <code>logExports</code> in a single request.
+        /// multiple parameters in one request. For example, you must specify both <c>adminUsername</c>
+        /// and <c>adminUserPassword</c> to update either field, but you can't update both <c>kmsKeyId</c>
+        /// and <c>logExports</c> in a single request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNamespace service method.</param>
         /// 
@@ -2934,8 +2934,8 @@ namespace Amazon.RedshiftServerless
 
         /// <summary>
         /// Updates a workgroup with the specified configuration settings. You can't update multiple
-        /// parameters in one request. For example, you can update <code>baseCapacity</code> or
-        /// <code>port</code> in a single request, but you can't update both in the same request.
+        /// parameters in one request. For example, you can update <c>baseCapacity</c> or <c>port</c>
+        /// in a single request, but you can't update both in the same request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWorkgroup service method.</param>
         /// 

@@ -61,7 +61,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Because HTTP requests are stateless, this is the starting point of the next list of
-        /// returned <code>ListServiceVersionsResult</code> results.
+        /// returned <c>ListServiceVersionsResult</c> results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

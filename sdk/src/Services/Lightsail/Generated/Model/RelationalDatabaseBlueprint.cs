@@ -62,7 +62,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database software of the database blueprint (for example, <code>MySQL</code>).
+        /// The database software of the database blueprint (for example, <c>MySQL</c>).
         /// </para>
         /// </summary>
         public RelationalDatabaseEngine Engine
@@ -98,7 +98,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The database engine version for the database blueprint (for example, <code>5.7.23</code>).
+        /// The database engine version for the database blueprint (for example, <c>5.7.23</c>).
         /// </para>
         /// </summary>
         public string EngineVersion

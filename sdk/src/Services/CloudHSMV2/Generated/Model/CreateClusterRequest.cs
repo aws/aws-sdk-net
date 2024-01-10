@@ -61,7 +61,7 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property HsmType. 
         /// <para>
-        /// The type of HSM to use in the cluster. Currently the only allowed value is <code>hsm1.medium</code>.
+        /// The type of HSM to use in the cluster. Currently the only allowed value is <c>hsm1.medium</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

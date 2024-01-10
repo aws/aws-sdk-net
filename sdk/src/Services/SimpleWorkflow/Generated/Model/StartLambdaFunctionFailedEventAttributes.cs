@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>StartLambdaFunctionFailed</code> event. It isn't
-    /// set for other event types.
+    /// Provides the details of the <c>StartLambdaFunctionFailed</c> event. It isn't set for
+    /// other event types.
     /// </summary>
     public partial class StartLambdaFunctionFailedEventAttributes
     {
@@ -46,9 +46,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
-        /// failed because the IAM role attached to the execution lacked sufficient permissions.
-        /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
+        /// If <c>cause</c> is set to <c>OPERATION_NOT_PERMITTED</c>, the decision failed because
+        /// the IAM role attached to the execution lacked sufficient permissions. For details
+        /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">Lambda
         /// Tasks</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         ///  </note>
@@ -87,9 +87,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property ScheduledEventId. 
         /// <para>
-        /// The ID of the <code>ActivityTaskScheduled</code> event that was recorded when this
-        /// activity task was scheduled. To help diagnose issues, use this information to trace
-        /// back the chain of events leading up to this event.
+        /// The ID of the <c>ActivityTaskScheduled</c> event that was recorded when this activity
+        /// task was scheduled. To help diagnose issues, use this information to trace back the
+        /// chain of events leading up to this event.
         /// </para>
         /// </summary>
         public long ScheduledEventId

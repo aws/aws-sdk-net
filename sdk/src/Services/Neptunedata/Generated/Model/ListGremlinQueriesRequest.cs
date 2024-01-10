@@ -55,8 +55,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property IncludeWaiting. 
         /// <para>
-        /// If set to <code>TRUE</code>, the list returned includes waiting queries. The default
-        /// is <code>FALSE</code>;
+        /// If set to <c>TRUE</c>, the list returned includes waiting queries. The default is
+        /// <c>FALSE</c>;
         /// </para>
         /// </summary>
         public bool IncludeWaiting

@@ -129,7 +129,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Single error code. For this exception the value will be <code>server_error</code>.
+        /// Single error code. For this exception the value will be <c>server_error</c>.
         /// </para>
         /// </summary>
         public string Error

@@ -34,7 +34,7 @@ namespace Amazon.Lambda.Model
 {
     /// <summary>
     /// An object that includes a chunk of the response payload. When the stream has ended,
-    /// Lambda includes a <code>InvokeComplete</code> object.
+    /// Lambda includes a <c>InvokeComplete</c> object.
     /// </summary>
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "InvokeWithResponseStreamResponseEventCollection is not descriptive")]
     [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]

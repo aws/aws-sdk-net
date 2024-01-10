@@ -38,7 +38,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Analyzer. 
         /// <para>
-        /// An <code>AnalyzerSummary</code> object that contains information about the analyzer.
+        /// An <c>AnalyzerSummary</c> object that contains information about the analyzer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

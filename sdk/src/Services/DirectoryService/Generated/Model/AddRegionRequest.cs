@@ -61,7 +61,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property RegionName. 
         /// <para>
         /// The name of the Region where you want to add domain controllers for replication. For
-        /// example, <code>us-east-1</code>.
+        /// example, <c>us-east-1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=8, Max=32)]

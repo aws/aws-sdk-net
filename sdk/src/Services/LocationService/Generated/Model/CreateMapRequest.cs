@@ -53,9 +53,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Specifies the <code>MapConfiguration</code>, including the map style, for the map
-        /// resource that you create. The map style defines the look of maps and the data provider
-        /// for your map resource.
+        /// Specifies the <c>MapConfiguration</c>, including the map style, for the map resource
+        /// that you create. The map style defines the look of maps and the data provider for
+        /// your map resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -110,7 +110,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No spaces allowed. For example, <code>ExampleMap</code>.
+        /// No spaces allowed. For example, <c>ExampleMap</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
+        /// No longer used. If included, the only allowed value is <c>RequestBasedUsage</c>.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
@@ -154,7 +154,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         ///  
         /// <para>

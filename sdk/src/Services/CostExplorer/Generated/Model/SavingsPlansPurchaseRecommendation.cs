@@ -46,8 +46,8 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// The account scope that you want your recommendations for. Amazon Web Services calculates
         /// recommendations that include the management account and member accounts if the value
-        /// is set to <code>PAYER</code>. If the value is <code>LINKED</code>, recommendations
-        /// are calculated for individual member accounts only.
+        /// is set to <c>PAYER</c>. If the value is <c>LINKED</c>, recommendations are calculated
+        /// for individual member accounts only.
         /// </para>
         /// </summary>
         public AccountScope AccountScope

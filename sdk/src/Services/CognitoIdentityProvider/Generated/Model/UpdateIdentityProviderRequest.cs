@@ -102,7 +102,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ProviderDetails. 
         /// <para>
-        /// The IdP details to be updated, such as <code>MetadataURL</code> and <code>MetadataFile</code>.
+        /// The IdP details to be updated, such as <c>MetadataURL</c> and <c>MetadataFile</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ProviderDetails

@@ -30,8 +30,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateHostKey operation.
-    /// Updates the description for the host key that's specified by the <code>ServerId</code>
-    /// and <code>HostKeyId</code> parameters.
+    /// Updates the description for the host key that's specified by the <c>ServerId</c> and
+    /// <c>HostKeyId</c> parameters.
     /// </summary>
     public partial class UpdateHostKeyRequest : AmazonTransferRequest
     {

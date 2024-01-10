@@ -70,8 +70,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type for a <code>String</code> parameter. Supported data types include plain
-        /// text and Amazon Machine Image (AMI) IDs.
+        /// The data type for a <c>String</c> parameter. Supported data types include plain text
+        /// and Amazon Machine Image (AMI) IDs.
         /// </para>
         ///  
         /// <para>
@@ -79,35 +79,34 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>text</code> 
+        ///  <c>text</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws:ec2:image</code> 
+        ///  <c>aws:ec2:image</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>aws:ssm:integration</code> 
+        ///  <c>aws:ssm:integration</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you create a <code>String</code> parameter and specify <code>aws:ec2:image</code>,
-        /// Amazon Web Services Systems Manager validates the parameter value is in the required
-        /// format, such as <code>ami-12345abcdeEXAMPLE</code>, and that the specified AMI is
-        /// available in your Amazon Web Services account.
+        /// When you create a <c>String</c> parameter and specify <c>aws:ec2:image</c>, Amazon
+        /// Web Services Systems Manager validates the parameter value is in the required format,
+        /// such as <c>ami-12345abcdeEXAMPLE</c>, and that the specified AMI is available in your
+        /// Amazon Web Services account.
         /// </para>
         ///  <note> 
         /// <para>
         /// If the action is successful, the service sends back an HTTP 200 response which indicates
-        /// a successful <code>PutParameter</code> call for all cases except for data type <code>aws:ec2:image</code>.
-        /// If you call <code>PutParameter</code> with <code>aws:ec2:image</code> data type, a
-        /// successful HTTP 200 response does not guarantee that your parameter was successfully
-        /// created or updated. The <code>aws:ec2:image</code> value is validated asynchronously,
-        /// and the <code>PutParameter</code> call returns before the validation is complete.
-        /// If you submit an invalid AMI value, the PutParameter operation will return success,
-        /// but the asynchronous validation will fail and the parameter will not be created or
-        /// updated. To monitor whether your <code>aws:ec2:image</code> parameters are created
-        /// successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
+        /// a successful <c>PutParameter</c> call for all cases except for data type <c>aws:ec2:image</c>.
+        /// If you call <c>PutParameter</c> with <c>aws:ec2:image</c> data type, a successful
+        /// HTTP 200 response does not guarantee that your parameter was successfully created
+        /// or updated. The <c>aws:ec2:image</c> value is validated asynchronously, and the <c>PutParameter</c>
+        /// call returns before the validation is complete. If you submit an invalid AMI value,
+        /// the PutParameter operation will return success, but the asynchronous validation will
+        /// fail and the parameter will not be created or updated. To monitor whether your <c>aws:ec2:image</c>
+        /// parameters are created successfully, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-cwe.html">Setting
         /// up notifications or trigger actions based on Parameter Store events</a>. For more
         /// information about AMI format validation , see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
         /// parameter support for Amazon Machine Image (AMI) IDs</a>. 
@@ -155,7 +154,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// The Key Management Service (KMS) ID that you want to use to encrypt a parameter. Use
-        /// a custom key for better security. Required for parameters that use the <code>SecureString</code>
+        /// a custom key for better security. Required for parameters that use the <c>SecureString</c>
         /// data type.
         /// </para>
         ///  
@@ -165,8 +164,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To use a custom KMS key, choose the <code>SecureString</code> data type with the <code>Key
-        /// ID</code> parameter.
+        /// To use a custom KMS key, choose the <c>SecureString</c> data type with the <c>Key
+        /// ID</c> parameter.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -189,7 +188,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The fully qualified name of the parameter that you want to add to the system. The
         /// fully qualified name includes the complete hierarchy of the parameter path and name.
         /// For parameters in a hierarchy, you must include a leading forward slash character
-        /// (/) when you create or reference a parameter. For example: <code>/Dev/DBServer/MySQL/db-string13</code>
+        /// (/) when you create or reference a parameter. For example: <c>/Dev/DBServer/MySQL/db-string13</c>
         /// 
         /// </para>
         ///  
@@ -206,17 +205,17 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A parameter name can't be prefixed with "<code>aws</code>" or "<code>ssm</code>" (case-insensitive).
+        /// A parameter name can't be prefixed with "<c>aws</c>" or "<c>ssm</c>" (case-insensitive).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Parameter names can include only the following symbols and letters: <code>a-zA-Z0-9_.-</code>
+        /// Parameter names can include only the following symbols and letters: <c>a-zA-Z0-9_.-</c>
         /// 
         /// </para>
         ///  
         /// <para>
         /// In addition, the slash character ( / ) is used to delineate hierarchies in parameter
-        /// names. For example: <code>/Dev/Production/East/Project-ABC/MyParameter</code> 
+        /// names. For example: <c>/Dev/Production/East/Project-ABC/MyParameter</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -237,7 +236,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The maximum length constraint of 2048 characters listed below includes 1037 characters
         /// reserved for internal use by Systems Manager. The maximum length for a parameter name
         /// that you create is 1011 characters. This includes the characters in the ARN that precede
-        /// the name you specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.
+        /// the name you specify, such as <c>arn:aws:ssm:us-east-2:111122223333:parameter/</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -257,7 +256,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Overwrite. 
         /// <para>
-        /// Overwrite an existing parameter. The default value is <code>false</code>.
+        /// Overwrite an existing parameter. The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool Overwrite
@@ -330,15 +329,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Key=Resource,Value=S3bucket</code> 
+        ///  <c>Key=Resource,Value=S3bucket</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=OS,Value=Windows</code> 
+        ///  <c>Key=OS,Value=Windows</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=ParameterType,Value=LicenseKey</code> 
+        ///  <c>Key=ParameterType,Value=LicenseKey</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -403,7 +402,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// In <code>PutParameter</code> requests, you can specify the tier to create the parameter
+        /// In <c>PutParameter</c> requests, you can specify the tier to create the parameter
         /// in. Whenever you specify a tier in the request, Parameter Store creates or updates
         /// the parameter according to that request. However, if you don't specify a tier in a
         /// request, Parameter Store assigns the tier based on the current Parameter Store default
@@ -479,13 +478,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>SecureString</code> isn't currently supported for CloudFormation templates.
+        ///  <c>SecureString</c> isn't currently supported for CloudFormation templates.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Items in a <code>StringList</code> must be separated by a comma (,). You can't use
-        /// other punctuation or special character to escape items in the list. If you have a
-        /// parameter value that requires a comma, then use the <code>String</code> data type.
+        /// Items in a <c>StringList</c> must be separated by a comma (,). You can't use other
+        /// punctuation or special character to escape items in the list. If you have a parameter
+        /// value that requires a comma, then use the <c>String</c> data type.
         /// </para>
         ///  <important> 
         /// <para>
@@ -515,8 +514,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <note> 
         /// <para>
         /// Parameters can't be referenced or nested in the values of other parameters. You can't
-        /// include <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter
-        /// value.
+        /// include <c>{{}}</c> or <c>{{ssm:<i>parameter-name</i>}}</c> in a parameter value.
         /// </para>
         ///  </note>
         /// </summary>

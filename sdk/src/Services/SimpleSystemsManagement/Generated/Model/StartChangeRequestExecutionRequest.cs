@@ -56,16 +56,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>AutoApprovable</code> is enabled in a change template, then setting <code>AutoApprove</code>
-        /// to <code>true</code> in <code>StartChangeRequestExecution</code> creates a change
-        /// request that bypasses approver review.
+        /// If <c>AutoApprovable</c> is enabled in a change template, then setting <c>AutoApprove</c>
+        /// to <c>true</c> in <c>StartChangeRequestExecution</c> creates a change request that
+        /// bypasses approver review.
         /// </para>
         ///  <note> 
         /// <para>
         /// Change Calendar restrictions are not bypassed in this scenario. If the state of an
-        /// associated calendar is <code>CLOSED</code>, change freeze approvers must still grant
-        /// permission for this change request to run. If they don't, the change won't be processed
-        /// until the calendar state is again <code>OPEN</code>. 
+        /// associated calendar is <c>CLOSED</c>, change freeze approvers must still grant permission
+        /// for this change request to run. If they don't, the change won't be processed until
+        /// the calendar state is again <c>OPEN</c>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -276,11 +276,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Key=Environment,Value=Production</code> 
+        ///  <c>Key=Environment,Value=Production</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=Region,Value=us-east-2</code> 
+        ///  <c>Key=Region,Value=us-east-2</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

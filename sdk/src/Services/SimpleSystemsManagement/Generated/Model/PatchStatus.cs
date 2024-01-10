@@ -40,7 +40,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ApprovalDate. 
         /// <para>
-        /// The date the patch was approved (or will be approved if the status is <code>PENDING_APPROVAL</code>).
+        /// The date the patch was approved (or will be approved if the status is <c>PENDING_APPROVAL</c>).
         /// </para>
         /// </summary>
         public DateTime ApprovalDate

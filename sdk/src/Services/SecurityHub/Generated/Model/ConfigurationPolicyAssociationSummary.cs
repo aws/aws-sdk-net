@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// An object that contains the details of a configuration policy association that’s
-    /// returned in a <code>ListConfigurationPolicyAssociations</code> request.
+    /// returned in a <c>ListConfigurationPolicyAssociations</c> request.
     /// </summary>
     public partial class ConfigurationPolicyAssociationSummary
     {
@@ -64,8 +64,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AssociationStatusMessage. 
         /// <para>
-        ///  The explanation for a <code>FAILED</code> value for <code>AssociationStatus</code>.
-        /// 
+        ///  The explanation for a <c>FAILED</c> value for <c>AssociationStatus</c>. 
         /// </para>
         /// </summary>
         public string AssociationStatusMessage

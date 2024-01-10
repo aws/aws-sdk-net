@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBSnapshotIdentifier</code> doesn't refer to an existing snapshot.
+    /// <c>DBSnapshotIdentifier</c> doesn't refer to an existing snapshot.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

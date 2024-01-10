@@ -51,8 +51,8 @@ namespace Amazon.ACMPCA.Model
     ///  <ul> <li> 
     /// <para>
     /// If the private CA and the certificates it issues reside in the same account, you can
-    /// use <code>CreatePermission</code> to grant permissions for ACM to carry out automatic
-    /// certificate renewals.
+    /// use <c>CreatePermission</c> to grant permissions for ACM to carry out automatic certificate
+    /// renewals.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// The Amazon Resource Number (ARN) of the private CA to inspect. You can find the ARN
         /// by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
-        /// action. This must be of the form: <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+        /// action. This must be of the form: <c>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</c>
         /// You can get a private CA's ARN by running the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a>
         /// action.
         /// </para>

@@ -157,7 +157,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to associated with the space. Each tag consists of a key and an optional value.
-        /// Tag keys must be unique for each resource. Tags are searchable using the <code>Search</code>
+        /// Tag keys must be unique for each resource. Tags are searchable using the <c>Search</c>
         /// API.
         /// </para>
         /// </summary>

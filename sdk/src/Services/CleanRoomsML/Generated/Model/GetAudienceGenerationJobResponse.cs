@@ -149,10 +149,10 @@ namespace Amazon.CleanRoomsML.Model
         /// Gets and sets the property IncludeSeedInOutput. 
         /// <para>
         /// Configure whether the seed users are included in the output audience. By default,
-        /// Clean Rooms ML removes seed users from the output audience. If you specify <code>TRUE</code>,
+        /// Clean Rooms ML removes seed users from the output audience. If you specify <c>TRUE</c>,
         /// the seed users will appear first in the output. Clean Rooms ML does not explicitly
         /// reveal whether a user was in the seed, but the recipient of the audience will know
-        /// that the first <code>minimumSeedSize</code> count of users are from the seed.
+        /// that the first <c>minimumSeedSize</c> count of users are from the seed.
         /// </para>
         /// </summary>
         public bool IncludeSeedInOutput

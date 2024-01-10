@@ -77,7 +77,7 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A unique identifier for this <code>SimulationJob</code> request.
+        /// A unique identifier for this <c>SimulationJob</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -136,8 +136,8 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  <dl> <dt>Continue</dt> <dd> 
         /// <para>
-        /// Leaves the host running for its maximum timeout duration after a <code>4XX</code>
-        /// error code.
+        /// Leaves the host running for its maximum timeout duration after a <c>4XX</c> error
+        /// code.
         /// </para>
         ///  </dd> <dt>Fail</dt> <dd> 
         /// <para>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>DefineAnalysisScheme</a></code> request. Contains the status
-    /// of the newly-configured analysis scheme.
+    /// The result of a <c><a>DefineAnalysisScheme</a></c> request. Contains the status of
+    /// the newly-configured analysis scheme.
     /// </summary>
     public partial class DefineAnalysisSchemeResponse : AmazonWebServiceResponse
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The metadata that you can use to filter and group your results. You can use <code>GetDimensionValues</code>
+    /// The metadata that you can use to filter and group your results. You can use <c>GetDimensionValues</c>
     /// to find specific values.
     /// </summary>
     public partial class DimensionValues
@@ -42,7 +42,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The names of the metadata types that you can use to filter and group your results.
-        /// For example, <code>AZ</code> returns a list of Availability Zones.
+        /// For example, <c>AZ</c> returns a list of Availability Zones.
         /// </para>
         ///  
         /// <para>
@@ -51,13 +51,12 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>LINK_ACCOUNT_NAME</code> and <code>SERVICE_CODE</code> can only be used in
-        /// <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.
+        ///  <c>LINK_ACCOUNT_NAME</c> and <c>SERVICE_CODE</c> can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_CostCategoryRule.html">CostCategoryRule</a>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code> and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>
-        /// can only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.
+        ///  <c>ANOMALY_TOTAL_IMPACT_ABSOLUTE</c> and <c>ANOMALY_TOTAL_IMPACT_PERCENTAGE</c> can
+        /// only be used in <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalySubscription.html">AnomalySubscriptions</a>.
         /// </para>
         /// </summary>
         public Dimension Key
@@ -79,13 +78,12 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>MatchOptions</code> is only applicable for actions related to Cost Category
-        /// and Anomaly Subscriptions. Refer to the documentation for each specific API to see
-        /// what is supported.
+        ///  <c>MatchOptions</c> is only applicable for actions related to Cost Category and Anomaly
+        /// Subscriptions. Refer to the documentation for each specific API to see what is supported.
         /// </para>
         ///  
         /// <para>
-        /// The default values for <code>MatchOptions</code> are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// The default values for <c>MatchOptions</c> are <c>EQUALS</c> and <c>CASE_SENSITIVE</c>.
         /// </para>
         /// </summary>
         public List<string> MatchOptions
@@ -104,7 +102,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// The metadata values that you can use to filter and group your results. You can use
-        /// <code>GetDimensionValues</code> to find specific values.
+        /// <c>GetDimensionValues</c> to find specific values.
         /// </para>
         /// </summary>
         public List<string> Values

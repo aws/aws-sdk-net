@@ -68,32 +68,31 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Adding</code> - The Auto Scaling instances are being registered with the load
-        /// balancer or target group.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Added</code> - All Auto Scaling instances are registered with the load balancer
+        ///  <c>Adding</c> - The Auto Scaling instances are being registered with the load balancer
         /// or target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InService</code> - For an Elastic Load Balancing load balancer or target group,
-        /// at least one Auto Scaling instance passed an <code>ELB</code> health check. For VPC
-        /// Lattice, at least one Auto Scaling instance passed an <code>VPC_LATTICE</code> health
-        /// check.
+        ///  <c>Added</c> - All Auto Scaling instances are registered with the load balancer or
+        /// target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Removing</code> - The Auto Scaling instances are being deregistered from the
-        /// load balancer or target group. If connection draining (deregistration delay) is enabled,
+        ///  <c>InService</c> - For an Elastic Load Balancing load balancer or target group, at
+        /// least one Auto Scaling instance passed an <c>ELB</c> health check. For VPC Lattice,
+        /// at least one Auto Scaling instance passed an <c>VPC_LATTICE</c> health check.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Removing</c> - The Auto Scaling instances are being deregistered from the load
+        /// balancer or target group. If connection draining (deregistration delay) is enabled,
         /// Elastic Load Balancing or VPC Lattice waits for in-flight requests to complete before
         /// deregistering the instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Removed</code> - All Auto Scaling instances are deregistered from the load
-        /// balancer or target group.
+        ///  <c>Removed</c> - All Auto Scaling instances are deregistered from the load balancer
+        /// or target group.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -113,7 +112,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TrafficSource. 
         /// <para>
-        /// This is replaced by <code>Identifier</code>.
+        /// This is replaced by <c>Identifier</c>.
         /// </para>
         /// </summary>
         [Obsolete("TrafficSource has been replaced by Identifier")]
@@ -133,7 +132,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Provides additional context for the value of <code>Identifier</code>.
+        /// Provides additional context for the value of <c>Identifier</c>.
         /// </para>
         ///  
         /// <para>
@@ -141,17 +140,16 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>elb</code> if <code>Identifier</code> is the name of a Classic Load Balancer.
+        ///  <c>elb</c> if <c>Identifier</c> is the name of a Classic Load Balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>elbv2</code> if <code>Identifier</code> is the ARN of an Application Load Balancer,
-        /// Gateway Load Balancer, or Network Load Balancer target group.
+        ///  <c>elbv2</c> if <c>Identifier</c> is the ARN of an Application Load Balancer, Gateway
+        /// Load Balancer, or Network Load Balancer target group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-lattice</code> if <code>Identifier</code> is the ARN of a VPC Lattice target
-        /// group.
+        ///  <c>vpc-lattice</c> if <c>Identifier</c> is the ARN of a VPC Lattice target group.
         /// </para>
         ///  </li> </ul> 
         /// <para>

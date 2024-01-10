@@ -41,7 +41,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the number of security policies to return as a response to the <code>ListSecurityPolicies</code>
+        /// Specifies the number of security policies to return as a response to the <c>ListSecurityPolicies</c>
         /// query.
         /// </para>
         /// </summary>
@@ -61,10 +61,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When additional results are obtained from the <code>ListSecurityPolicies</code> command,
-        /// a <code>NextToken</code> parameter is returned in the output. You can then pass the
-        /// <code>NextToken</code> parameter in a subsequent command to continue listing additional
-        /// security policies.
+        /// When additional results are obtained from the <c>ListSecurityPolicies</c> command,
+        /// a <c>NextToken</c> parameter is returned in the output. You can then pass the <c>NextToken</c>
+        /// parameter in a subsequent command to continue listing additional security policies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

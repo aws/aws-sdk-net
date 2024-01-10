@@ -65,14 +65,14 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// For an initial request for a list of prices, omit this element. If the number of prices
-        /// that are not yet complete is greater than the value that you specified for <code>MaxItems</code>,
-        /// you can use <code>Marker</code> to return additional prices. Get the value of <code>NextPageMarker</code>
+        /// that are not yet complete is greater than the value that you specified for <c>MaxItems</c>,
+        /// you can use <c>Marker</c> to return additional prices. Get the value of <c>NextPageMarker</c>
         /// from the previous response, and submit another request that includes the value of
-        /// <code>NextPageMarker</code> in the <code>Marker</code> element. 
+        /// <c>NextPageMarker</c> in the <c>Marker</c> element. 
         /// </para>
         ///  
         /// <para>
-        /// Used only for all TLDs. If you specify a TLD, don't specify a <code>Marker</code>.
+        /// Used only for all TLDs. If you specify a TLD, don't specify a <c>Marker</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]
@@ -91,11 +91,11 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// Number of <code>Prices</code> to be returned.
+        /// Number of <c>Prices</c> to be returned.
         /// </para>
         ///  
         /// <para>
-        /// Used only for all TLDs. If you specify a TLD, don't specify a <code>MaxItems</code>.
+        /// Used only for all TLDs. If you specify a TLD, don't specify a <c>MaxItems</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1000)]
@@ -114,12 +114,12 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Tld. 
         /// <para>
-        /// The TLD for which you want to receive the pricing information. For example. <code>.net</code>.
+        /// The TLD for which you want to receive the pricing information. For example. <c>.net</c>.
         /// </para>
         ///  
         /// <para>
-        /// If a <code>Tld</code> value is not provided, a list of prices for all TLDs supported
-        /// by Route 53 is returned.
+        /// If a <c>Tld</c> value is not provided, a list of prices for all TLDs supported by
+        /// Route 53 is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]

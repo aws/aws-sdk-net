@@ -86,10 +86,9 @@ namespace Amazon.CloudTrail.Model
         /// An optional list of service event sources from which you do not want management events
         /// to be logged on your trail. In this release, the list can be empty (disables the filter),
         /// or it can filter out Key Management Service or Amazon RDS Data API events by containing
-        /// <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default,
-        /// <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API
-        /// events are logged to your trail. You can exclude management event sources only in
-        /// Regions that support the event source.
+        /// <c>kms.amazonaws.com</c> or <c>rdsdata.amazonaws.com</c>. By default, <c>ExcludeManagementEventSources</c>
+        /// is empty, and KMS and Amazon RDS Data API events are logged to your trail. You can
+        /// exclude management event sources only in Regions that support the event source.
         /// </para>
         /// </summary>
         public List<string> ExcludeManagementEventSources
@@ -116,7 +115,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, the value is <code>true</code>.
+        /// By default, the value is <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -142,12 +141,12 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property ReadWriteType. 
         /// <para>
         /// Specify if you want your trail to log read-only events, write-only events, or all.
-        /// For example, the EC2 <code>GetConsoleOutput</code> is a read-only API operation and
-        /// <code>RunInstances</code> is a write-only API operation.
+        /// For example, the EC2 <c>GetConsoleOutput</c> is a read-only API operation and <c>RunInstances</c>
+        /// is a write-only API operation.
         /// </para>
         ///  
         /// <para>
-        ///  By default, the value is <code>All</code>.
+        ///  By default, the value is <c>All</c>.
         /// </para>
         /// </summary>
         public ReadWriteType ReadWriteType

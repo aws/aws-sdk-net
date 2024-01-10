@@ -65,19 +65,19 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NETWORK_CONNECTION</code> 
+        ///  <c>NETWORK_CONNECTION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_API_CALL</code> 
+        ///  <c>AWS_API_CALL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DNS_REQUEST</code> 
+        ///  <c>DNS_REQUEST</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PORT_PROBE</code> 
+        ///  <c>PORT_PROBE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -96,8 +96,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AwsApiCallAction. 
         /// <para>
-        /// Included if <code>ActionType</code> is <code>AWS_API_CALL</code>. Provides details
-        /// about the API call that was detected. 
+        /// Included if <c>ActionType</c> is <c>AWS_API_CALL</c>. Provides details about the API
+        /// call that was detected. 
         /// </para>
         /// </summary>
         public AwsApiCallAction AwsApiCallAction
@@ -115,8 +115,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DnsRequestAction. 
         /// <para>
-        /// Included if <code>ActionType</code> is <code>DNS_REQUEST</code>. Provides details
-        /// about the DNS request that was detected. 
+        /// Included if <c>ActionType</c> is <c>DNS_REQUEST</c>. Provides details about the DNS
+        /// request that was detected. 
         /// </para>
         /// </summary>
         public DnsRequestAction DnsRequestAction
@@ -134,8 +134,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NetworkConnectionAction. 
         /// <para>
-        /// Included if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. Provides details
-        /// about the network connection that was detected.
+        /// Included if <c>ActionType</c> is <c>NETWORK_CONNECTION</c>. Provides details about
+        /// the network connection that was detected.
         /// </para>
         /// </summary>
         public NetworkConnectionAction NetworkConnectionAction
@@ -153,8 +153,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PortProbeAction. 
         /// <para>
-        /// Included if <code>ActionType</code> is <code>PORT_PROBE</code>. Provides details about
-        /// the port probe that was detected. 
+        /// Included if <c>ActionType</c> is <c>PORT_PROBE</c>. Provides details about the port
+        /// probe that was detected. 
         /// </para>
         /// </summary>
         public PortProbeAction PortProbeAction

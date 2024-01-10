@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code>
+    /// The stage has failed in a later run of the pipeline and the <c>pipelineExecutionId</c>
     /// associated with the request is out of date.
     /// </summary>
     #if !NETSTANDARD

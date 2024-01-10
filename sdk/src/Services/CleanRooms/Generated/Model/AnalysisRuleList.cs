@@ -41,7 +41,7 @@ namespace Amazon.CleanRooms.Model
         /// Gets and sets the property AllowedJoinOperators. 
         /// <para>
         /// The logical operators (if any) that are to be used in an INNER JOIN match condition.
-        /// Default is <code>AND</code>.
+        /// Default is <c>AND</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]

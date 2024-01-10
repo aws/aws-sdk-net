@@ -61,8 +61,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// Gets and sets the property MaxQuantity. 
         /// <para>
         /// Maximum amount of capacity that the buyer can be entitled to the given dimension of
-        /// the product. If <code>MaxQuantity</code> is not provided, the buyer will be able to
-        /// use an unlimited amount of the given dimension. 
+        /// the product. If <c>MaxQuantity</c> is not provided, the buyer will be able to use
+        /// an unlimited amount of the given dimension. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -51,7 +51,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property DeleteHistory. 
         /// <para>
-        ///  Set to <code>true</code> to remove the deleted import task from <a>DescribeImportTasks</a>.
+        ///  Set to <c>true</c> to remove the deleted import task from <a>DescribeImportTasks</a>.
         /// 
         /// </para>
         /// </summary>

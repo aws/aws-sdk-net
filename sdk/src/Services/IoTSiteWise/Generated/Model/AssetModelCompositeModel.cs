@@ -139,7 +139,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the composite model. For alarm composite models, this type is <code>AWS/ALARM</code>.
+        /// The type of the composite model. For alarm composite models, this type is <c>AWS/ALARM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

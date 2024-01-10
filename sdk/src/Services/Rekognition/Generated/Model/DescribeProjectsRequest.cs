@@ -34,7 +34,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DescribeProjects</code>
+    /// This operation requires permissions to perform the <c>rekognition:DescribeProjects</c>
     /// action.
     /// </para>
     /// </summary>

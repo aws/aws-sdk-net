@@ -30,8 +30,7 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Information about the type of a segment requested in a call to <a>StartSegmentDetection</a>.
-    /// An array of <code>SegmentTypeInfo</code> objects is returned by the response from
-    /// <a>GetSegmentDetection</a>.
+    /// An array of <c>SegmentTypeInfo</c> objects is returned by the response from <a>GetSegmentDetection</a>.
     /// </summary>
     public partial class SegmentTypeInfo
     {

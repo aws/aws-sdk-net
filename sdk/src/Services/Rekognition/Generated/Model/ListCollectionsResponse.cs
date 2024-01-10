@@ -59,8 +59,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property FaceModelVersions. 
         /// <para>
         /// Version numbers of the face detection models associated with the collections in the
-        /// array <code>CollectionIds</code>. For example, the value of <code>FaceModelVersions[2]</code>
-        /// is the version number for the face detection model used by the collection in <code>CollectionId[2]</code>.
+        /// array <c>CollectionIds</c>. For example, the value of <c>FaceModelVersions[2]</c>
+        /// is the version number for the face detection model used by the collection in <c>CollectionId[2]</c>.
         /// </para>
         /// </summary>
         public List<string> FaceModelVersions
@@ -78,8 +78,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result is truncated, the response provides a <code>NextToken</code> that you
-        /// can use in the subsequent request to fetch the next set of collection IDs.
+        /// If the result is truncated, the response provides a <c>NextToken</c> that you can
+        /// use in the subsequent request to fetch the next set of collection IDs.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

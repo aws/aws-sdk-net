@@ -48,7 +48,7 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property GroupIdentifier. 
         /// <para>
         /// Specifies the group. You can specify the group name, the ARN, or the group ID as the
-        /// <code>GroupIdentifier</code>.
+        /// <c>GroupIdentifier</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

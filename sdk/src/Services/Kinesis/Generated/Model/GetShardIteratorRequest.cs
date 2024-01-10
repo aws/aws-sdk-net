@@ -35,9 +35,9 @@ namespace Amazon.Kinesis.Model
     /// 
     ///  <note> 
     /// <para>
-    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-    /// parameter when you invoke this API.
+    /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+    /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+    /// when you invoke this API.
     /// </para>
     ///  </note> 
     /// <para>
@@ -49,30 +49,29 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify the shard iterator type. For example, you can set the <code>ShardIteratorType</code>
+    /// You must specify the shard iterator type. For example, you can set the <c>ShardIteratorType</c>
     /// parameter to read exactly from the position denoted by a specific sequence number
-    /// by using the <code>AT_SEQUENCE_NUMBER</code> shard iterator type. Alternatively, the
-    /// parameter can read right after the sequence number by using the <code>AFTER_SEQUENCE_NUMBER</code>
+    /// by using the <c>AT_SEQUENCE_NUMBER</c> shard iterator type. Alternatively, the parameter
+    /// can read right after the sequence number by using the <c>AFTER_SEQUENCE_NUMBER</c>
     /// shard iterator type, using sequence numbers returned by earlier calls to <a>PutRecord</a>,
     /// <a>PutRecords</a>, <a>GetRecords</a>, or <a>DescribeStream</a>. In the request, you
-    /// can specify the shard iterator type <code>AT_TIMESTAMP</code> to read records from
-    /// an arbitrary point in time, <code>TRIM_HORIZON</code> to cause <code>ShardIterator</code>
-    /// to point to the last untrimmed record in the shard in the system (the oldest data
-    /// record in the shard), or <code>LATEST</code> so that you always read the most recent
-    /// data in the shard. 
+    /// can specify the shard iterator type <c>AT_TIMESTAMP</c> to read records from an arbitrary
+    /// point in time, <c>TRIM_HORIZON</c> to cause <c>ShardIterator</c> to point to the last
+    /// untrimmed record in the shard in the system (the oldest data record in the shard),
+    /// or <c>LATEST</c> so that you always read the most recent data in the shard. 
     /// </para>
     ///  
     /// <para>
     /// When you read repeatedly from a stream, use a <a>GetShardIterator</a> request to get
     /// the first shard iterator for use in your first <a>GetRecords</a> request and for subsequent
-    /// reads use the shard iterator returned by the <a>GetRecords</a> request in <code>NextShardIterator</code>.
-    /// A new shard iterator is returned by every <a>GetRecords</a> request in <code>NextShardIterator</code>,
-    /// which you use in the <code>ShardIterator</code> parameter of the next <a>GetRecords</a>
+    /// reads use the shard iterator returned by the <a>GetRecords</a> request in <c>NextShardIterator</c>.
+    /// A new shard iterator is returned by every <a>GetRecords</a> request in <c>NextShardIterator</c>,
+    /// which you use in the <c>ShardIterator</c> parameter of the next <a>GetRecords</a>
     /// request. 
     /// </para>
     ///  
     /// <para>
-    /// If a <a>GetShardIterator</a> request is made too often, you receive a <code>ProvisionedThroughputExceededException</code>.
+    /// If a <a>GetShardIterator</a> request is made too often, you receive a <c>ProvisionedThroughputExceededException</c>.
     /// For more information about throughput limits, see <a>GetRecords</a>, and <a href="https://docs.aws.amazon.com/kinesis/latest/dev/service-sizes-and-limits.html">Streams
     /// Limits</a> in the <i>Amazon Kinesis Data Streams Developer Guide</i>.
     /// </para>
@@ -128,17 +127,17 @@ namespace Amazon.Kinesis.Model
         ///  <ul> <li> 
         /// <para>
         /// AT_SEQUENCE_NUMBER - Start reading from the position denoted by a specific sequence
-        /// number, provided in the value <code>StartingSequenceNumber</code>.
+        /// number, provided in the value <c>StartingSequenceNumber</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// AFTER_SEQUENCE_NUMBER - Start reading right after the position denoted by a specific
-        /// sequence number, provided in the value <code>StartingSequenceNumber</code>.
+        /// sequence number, provided in the value <c>StartingSequenceNumber</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// AT_TIMESTAMP - Start reading from the position denoted by a specific time stamp, provided
-        /// in the value <code>Timestamp</code>.
+        /// in the value <c>Timestamp</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -227,10 +226,10 @@ namespace Amazon.Kinesis.Model
         /// <para>
         /// The time stamp of the data record from which to start reading. Used with shard iterator
         /// type AT_TIMESTAMP. A time stamp is the Unix epoch date with precision in milliseconds.
-        /// For example, <code>2016-04-04T19:58:46.480-00:00</code> or <code>1459799926.480</code>.
-        /// If a record with this exact time stamp does not exist, the iterator returned is for
-        /// the next (later) record. If the time stamp is older than the current trim horizon,
-        /// the iterator returned is for the oldest untrimmed data record (TRIM_HORIZON).
+        /// For example, <c>2016-04-04T19:58:46.480-00:00</c> or <c>1459799926.480</c>. If a record
+        /// with this exact time stamp does not exist, the iterator returned is for the next (later)
+        /// record. If the time stamp is older than the current trim horizon, the iterator returned
+        /// is for the oldest untrimmed data record (TRIM_HORIZON).
         /// </para>
         /// </summary>
         public DateTime Timestamp

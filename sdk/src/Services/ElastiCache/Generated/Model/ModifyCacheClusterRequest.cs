@@ -74,27 +74,27 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// If <code>true</code>, this parameter causes the modifications in this request and
-        /// any pending modifications to be applied, asynchronously and as soon as possible, regardless
-        /// of the <code>PreferredMaintenanceWindow</code> setting for the cluster.
+        /// If <c>true</c>, this parameter causes the modifications in this request and any pending
+        /// modifications to be applied, asynchronously and as soon as possible, regardless of
+        /// the <c>PreferredMaintenanceWindow</c> setting for the cluster.
         /// </para>
         ///  
         /// <para>
-        /// If <code>false</code>, changes to the cluster are applied on the next maintenance
-        /// reboot, or the next failure reboot, whichever occurs first.
+        /// If <c>false</c>, changes to the cluster are applied on the next maintenance reboot,
+        /// or the next failure reboot, whichever occurs first.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you perform a <code>ModifyCacheCluster</code> before a pending modification is
-        /// applied, the pending modification is replaced by the newer modification.
+        /// If you perform a <c>ModifyCacheCluster</c> before a pending modification is applied,
+        /// the pending modification is replaced by the newer modification.
         /// </para>
         ///  </important> 
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code> 
+        /// Valid values: <c>true</c> | <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -113,7 +113,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AuthToken. 
         /// <para>
         /// Reserved parameter. The password used to access a password protected server. This
-        /// parameter must be specified with the <code>auth-token-update</code> parameter. Password
+        /// parameter must be specified with the <c>auth-token-update</c> parameter. Password
         /// constraints:
         /// </para>
         ///  <ul> <li> 
@@ -149,7 +149,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property AuthTokenUpdateStrategy. 
         /// <para>
         /// Specifies the strategy to use to update the AUTH token. This parameter must be specified
-        /// with the <code>auth-token</code> parameter. Possible values:
+        /// with the <c>auth-token</c> parameter. Possible values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -205,7 +205,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>single-az</code> | <code>cross-az</code>.
+        /// Valid values: <c>single-az</c> | <c>cross-az</c>.
         /// </para>
         ///  
         /// <para>
@@ -213,9 +213,9 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot specify <code>single-az</code> if the Memcached cluster already has cache
-        /// nodes in different Availability Zones. If <code>cross-az</code> is specified, existing
-        /// Memcached nodes remain in their current Availability Zone.
+        /// You cannot specify <c>single-az</c> if the Memcached cluster already has cache nodes
+        /// in different Availability Zones. If <c>cross-az</c> is specified, existing Memcached
+        /// nodes remain in their current Availability Zone.
         /// </para>
         ///  
         /// <para>
@@ -258,17 +258,17 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheNodeIdsToRemove. 
         /// <para>
         /// A list of cache node IDs to be removed. A node ID is a numeric identifier (0001, 0002,
-        /// etc.). This parameter is only valid when <code>NumCacheNodes</code> is less than the
-        /// existing number of cache nodes. The number of cache node IDs supplied in this parameter
-        /// must match the difference between the existing number of cache nodes in the cluster
-        /// or pending cache nodes, whichever is greater, and the value of <code>NumCacheNodes</code>
-        /// in the request.
+        /// etc.). This parameter is only valid when <c>NumCacheNodes</c> is less than the existing
+        /// number of cache nodes. The number of cache node IDs supplied in this parameter must
+        /// match the difference between the existing number of cache nodes in the cluster or
+        /// pending cache nodes, whichever is greater, and the value of <c>NumCacheNodes</c> in
+        /// the request.
         /// </para>
         ///  
         /// <para>
         /// For example: If you have 3 active cache nodes, 7 pending cache nodes, and the number
-        /// of cache nodes in this <code>ModifyCacheCluster</code> call is 5, you must list 2
-        /// (7 - 5) cache node IDs to remove.
+        /// of cache nodes in this <c>ModifyCacheCluster</c> call is 5, you must list 2 (7 - 5)
+        /// cache node IDs to remove.
         /// </para>
         /// </summary>
         public List<string> CacheNodeIdsToRemove
@@ -305,8 +305,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property CacheParameterGroupName. 
         /// <para>
         /// The name of the cache parameter group to apply to this cluster. This change is asynchronously
-        /// applied as soon as possible for parameters when the <code>ApplyImmediately</code>
-        /// parameter is specified as <code>true</code> for this request.
+        /// applied as soon as possible for parameters when the <c>ApplyImmediately</c> parameter
+        /// is specified as <c>true</c> for this request.
         /// </para>
         /// </summary>
         public string CacheParameterGroupName
@@ -377,7 +377,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property IpDiscovery. 
         /// <para>
-        /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
         /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
         /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
@@ -424,8 +424,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is only valid when <code>NumCacheNodes</code> in the request is greater
-        /// than the sum of the number of active cache nodes and the number of cache nodes pending
+        /// This parameter is only valid when <c>NumCacheNodes</c> in the request is greater than
+        /// the sum of the number of active cache nodes and the number of cache nodes pending
         /// creation (which may be zero). The number of Availability Zones supplied in this list
         /// must match the cache nodes being added in this request.
         /// </para>
@@ -435,29 +435,29 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <code>NumCacheNodes=5</code>
+        ///  <b>Scenario 1:</b> You have 3 active nodes and wish to add 2 nodes. Specify <c>NumCacheNodes=5</c>
         /// (3 + 2) and optionally specify two Availability Zones for the two new nodes.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Scenario 2:</b> You have 3 active nodes and 2 nodes pending creation (from the
-        /// scenario 1 call) and want to add 1 more node. Specify <code>NumCacheNodes=6</code>
-        /// ((3 + 2) + 1) and optionally specify an Availability Zone for the new node.
+        /// scenario 1 call) and want to add 1 more node. Specify <c>NumCacheNodes=6</c> ((3 +
+        /// 2) + 1) and optionally specify an Availability Zone for the new node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Scenario 3:</b> You want to cancel all pending operations. Specify <code>NumCacheNodes=3</code>
+        ///  <b>Scenario 3:</b> You want to cancel all pending operations. Specify <c>NumCacheNodes=3</c>
         /// to cancel all pending operations.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The Availability Zone placement of nodes pending creation cannot be modified. If you
-        /// wish to cancel any nodes pending creation, add 0 nodes by setting <code>NumCacheNodes</code>
+        /// wish to cancel any nodes pending creation, add 0 nodes by setting <c>NumCacheNodes</c>
         /// to the number of current nodes.
         /// </para>
         ///  
         /// <para>
-        /// If <code>cross-az</code> is specified, existing Memcached nodes remain in their current
+        /// If <c>cross-az</c> is specified, existing Memcached nodes remain in their current
         /// Availability Zone. Only newly created nodes can be located in different Availability
         /// Zones. For guidance on how to move existing Memcached nodes to different Availability
         /// Zones, see the <b>Availability Zone Considerations</b> section of <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/CacheNodes.SupportedTypes.html">Cache
@@ -579,11 +579,11 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NotificationTopicStatus. 
         /// <para>
         /// The status of the Amazon SNS notification topic. Notifications are sent only if the
-        /// status is <code>active</code>.
+        /// status is <c>active</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>active</code> | <code>inactive</code> 
+        /// Valid values: <c>active</c> | <c>inactive</c> 
         /// </para>
         /// </summary>
         public string NotificationTopicStatus
@@ -601,7 +601,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NumCacheNodes. 
         /// <para>
-        /// The number of cache nodes that the cluster should have. If the value for <code>NumCacheNodes</code>
+        /// The number of cache nodes that the cluster should have. If the value for <c>NumCacheNodes</c>
         /// is greater than the sum of the number of current cache nodes and the number of cache
         /// nodes pending creation (which may be zero), more nodes are added. If the value is
         /// less than the number of existing cache nodes, nodes are removed. If the value is equal
@@ -609,8 +609,8 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are removing cache nodes, you must use the <code>CacheNodeIdsToRemove</code>
-        /// parameter to provide the IDs of the specific cache nodes to remove.
+        /// If you are removing cache nodes, you must use the <c>CacheNodeIdsToRemove</c> parameter
+        /// to provide the IDs of the specific cache nodes to remove.
         /// </para>
         ///  
         /// <para>
@@ -620,7 +620,7 @@ namespace Amazon.ElastiCache.Model
         ///  <note> 
         /// <para>
         /// Adding or removing Memcached cache nodes can be applied immediately or as a pending
-        /// operation (see <code>ApplyImmediately</code>).
+        /// operation (see <c>ApplyImmediately</c>).
         /// </para>
         ///  
         /// <para>
@@ -635,8 +635,8 @@ namespace Amazon.ElastiCache.Model
         /// a request to add nodes does not automatically override a previous pending operation
         /// to add nodes. The customer can modify the previous pending operation to add more nodes
         /// or explicitly cancel the pending request and retry the new request. To cancel pending
-        /// operations to modify the number of cache nodes in a cluster, use the <code>ModifyCacheCluster</code>
-        /// request and set <code>NumCacheNodes</code> equal to the number of cache nodes currently
+        /// operations to modify the number of cache nodes in a cluster, use the <c>ModifyCacheCluster</c>
+        /// request and set <c>NumCacheNodes</c> equal to the number of cache nodes currently
         /// in the cluster.
         /// </para>
         ///  </note>
@@ -662,39 +662,39 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>ddd</code> are:
+        /// Valid values for <c>ddd</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>sun</code> 
+        ///  <c>sun</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mon</code> 
+        ///  <c>mon</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tue</code> 
+        ///  <c>tue</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>wed</code> 
+        ///  <c>wed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>thu</code> 
+        ///  <c>thu</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fri</code> 
+        ///  <c>fri</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sat</code> 
+        ///  <c>sat</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>sun:23:00-mon:01:30</code> 
+        /// Example: <c>sun:23:00-mon:01:30</c> 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -736,13 +736,13 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
         /// The number of days for which ElastiCache retains automatic cluster snapshots before
-        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
-        /// snapshot that was taken today is retained for 5 days before being deleted.
+        /// deleting them. For example, if you set <c>SnapshotRetentionLimit</c> to 5, a snapshot
+        /// that was taken today is retained for 5 days before being deleted.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are
-        /// turned off.
+        /// If the value of <c>SnapshotRetentionLimit</c> is set to zero (0), backups are turned
+        /// off.
         /// </para>
         ///  </note>
         /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that lists the name servers in a delegation set, as well as the <code>CallerReference</code>
-    /// and the <code>ID</code> for the delegation set.
+    /// A complex type that lists the name servers in a delegation set, as well as the <c>CallerReference</c>
+    /// and the <c>ID</c> for the delegation set.
     /// </summary>
     public partial class DelegationSet
     {
@@ -74,8 +74,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// The value that you specified for <code>CallerReference</code> when you created the
-        /// reusable delegation set.
+        /// The value that you specified for <c>CallerReference</c> when you created the reusable
+        /// delegation set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

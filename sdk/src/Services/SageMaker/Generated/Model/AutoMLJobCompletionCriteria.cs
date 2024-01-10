@@ -99,7 +99,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls
+        /// For job V2s (jobs created by calling <c>CreateAutoMLJobV2</c>), this field controls
         /// the runtime of the job candidate.
         /// </para>
         ///  

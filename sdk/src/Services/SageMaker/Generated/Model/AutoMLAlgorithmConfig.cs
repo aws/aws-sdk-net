@@ -46,12 +46,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Selected algorithms must belong to the list corresponding to the training mode set
         /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-        /// (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a minimum
-        /// of 1 algorithm. 
+        /// (<c>ENSEMBLING</c> or <c>HYPERPARAMETER_TUNING</c>). Choose a minimum of 1 algorithm.
+        /// 
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        /// In <code>ENSEMBLING</code> mode:
+        /// In <c>ENSEMBLING</c> mode:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -87,7 +87,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// In <code>HYPERPARAMETER_TUNING</code> mode:
+        /// In <c>HYPERPARAMETER_TUNING</c> mode:
         /// </para>
         ///  <ul> <li> 
         /// <para>

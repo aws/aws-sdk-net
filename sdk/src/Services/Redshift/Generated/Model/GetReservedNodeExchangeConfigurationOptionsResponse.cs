@@ -39,7 +39,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// A pagination token provided by a previous <code>GetReservedNodeExchangeConfigurationOptions</code>
+        /// A pagination token provided by a previous <c>GetReservedNodeExchangeConfigurationOptions</c>
         /// request.
         /// </para>
         /// </summary>

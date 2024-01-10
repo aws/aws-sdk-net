@@ -39,10 +39,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the request doesn't return all the remaining results, <code>NextToken</code> is
-        /// set to a token. To retrieve the next set of results, call <code>ListStackInstances</code>
-        /// again and assign that token to the request object's <code>NextToken</code> parameter.
-        /// If the request returns all results, <code>NextToken</code> is set to <code>null</code>.
+        /// If the request doesn't return all the remaining results, <c>NextToken</c> is set to
+        /// a token. To retrieve the next set of results, call <c>ListStackInstances</c> again
+        /// and assign that token to the request object's <c>NextToken</c> parameter. If the request
+        /// returns all results, <c>NextToken</c> is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -61,8 +61,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <code>StackInstanceSummary</code> structures that contain information about
-        /// the specified stack instances.
+        /// A list of <c>StackInstanceSummary</c> structures that contain information about the
+        /// specified stack instances.
         /// </para>
         /// </summary>
         public List<StackInstanceSummary> Summaries

@@ -60,7 +60,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The status code. This will contain the failure reason if the state is <code>VALIDATION_FAILED</code>.
+        /// The status code. This will contain the failure reason if the state is <c>VALIDATION_FAILED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

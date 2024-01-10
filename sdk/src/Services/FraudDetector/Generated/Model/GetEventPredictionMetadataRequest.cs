@@ -126,8 +126,8 @@ namespace Amazon.FraudDetector.Model
         ///  
         /// <para>
         /// We recommend calling <a href="https://docs.aws.amazon.com/frauddetector/latest/api/API_ListEventPredictions.html">ListEventPredictions</a>
-        /// first, and using the <code>predictionTimestamp</code> value in the response to provide
-        /// an accurate prediction timestamp value.
+        /// first, and using the <c>predictionTimestamp</c> value in the response to provide an
+        /// accurate prediction timestamp value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=11, Max=30)]

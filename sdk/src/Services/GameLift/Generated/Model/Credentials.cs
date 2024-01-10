@@ -45,7 +45,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To upload a game server build directly to Amazon GameLift S3 storage using <code>CreateBuild</code>.
+    /// To upload a game server build directly to Amazon GameLift S3 storage using <c>CreateBuild</c>.
     /// To get access for this task, call <a>RequestUploadCredentials</a>.
     /// </para>
     ///  </li> <li> 

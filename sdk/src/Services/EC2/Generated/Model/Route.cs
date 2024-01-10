@@ -273,16 +273,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CreateRouteTable</code> - The route was automatically created when the route
-        /// table was created.
+        ///  <c>CreateRouteTable</c> - The route was automatically created when the route table
+        /// was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreateRoute</code> - The route was manually added to the route table.
+        ///  <c>CreateRoute</c> - The route was manually added to the route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EnableVgwRoutePropagation</code> - The route was propagated by route propagation.
+        ///  <c>EnableVgwRoutePropagation</c> - The route was propagated by route propagation.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -301,9 +301,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the route. The <code>blackhole</code> state indicates that the route's
-        /// target isn't available (for example, the specified gateway isn't attached to the VPC,
-        /// or the specified NAT instance has been terminated).
+        /// The state of the route. The <c>blackhole</c> state indicates that the route's target
+        /// isn't available (for example, the specified gateway isn't attached to the VPC, or
+        /// the specified NAT instance has been terminated).
         /// </para>
         /// </summary>
         public RouteState State

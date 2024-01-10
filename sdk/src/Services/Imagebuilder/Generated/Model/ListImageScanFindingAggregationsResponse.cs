@@ -61,7 +61,7 @@ namespace Amazon.Imagebuilder.Model
         /// <para>
         /// The aggregation type specifies what type of key is used to group the image scan findings.
         /// Image Builder returns results based on the request filter. If you didn't specify a
-        /// filter in the request, the type defaults to <code>accountId</code>.
+        /// filter in the request, the type defaults to <c>accountId</c>.
         /// </para>
         ///  
         /// <para>

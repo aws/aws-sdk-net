@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>ListDataSources</code> operation.
+    /// The result of a <c>ListDataSources</c> operation.
     /// </summary>
     public partial class ListDataSourcesResponse : AmazonWebServiceResponse
     {

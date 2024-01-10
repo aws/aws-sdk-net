@@ -79,7 +79,7 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// App Runner provides you with the option to choose between <i>Internet Protocol version
         /// 4 (IPv4)</i> and <i>dual stack</i> (IPv4 and IPv6) for your incoming public network
-        /// configuration. This is an optional parameter. If you do not specify an <code>IpAddressType</code>,
+        /// configuration. This is an optional parameter. If you do not specify an <c>IpAddressType</c>,
         /// it defaults to select IPv4.
         /// </para>
         ///  <note> 

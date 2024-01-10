@@ -31,7 +31,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// <summary>
     /// An object that contains the deliverability data for a specific campaign. This data
     /// is available for a campaign only if the campaign sent email by using a domain that
-    /// the Deliverability dashboard is enabled for (<code>PutDeliverabilityDashboardOption</code>
+    /// the Deliverability dashboard is enabled for (<c>PutDeliverabilityDashboardOption</c>
     /// operation).
     /// </summary>
     public partial class DomainDeliverabilityCampaign

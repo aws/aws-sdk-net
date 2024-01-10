@@ -44,8 +44,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property ContentHandling. 
         /// <para>
         /// Specifies how to handle response payload content type conversions. Supported values
-        /// are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following
-        /// behaviors:
+        /// are <c>CONVERT_TO_BINARY</c> and <c>CONVERT_TO_TEXT</c>, with the following behaviors:
         /// </para>
         ///  
         /// <para>
@@ -72,11 +71,11 @@ namespace Amazon.APIGateway.Model
         /// from the back end. The key is a method response header parameter name and the mapped
         /// value is an integration response header value, a static value enclosed within a pair
         /// of single quotes, or a JSON expression from the integration response body. The mapping
-        /// key must match the pattern of <code>method.response.header.{name}</code>, where <code>name</code>
+        /// key must match the pattern of <c>method.response.header.{name}</c>, where <c>name</c>
         /// is a valid and unique header name. The mapped non-static value must match the pattern
-        /// of <code>integration.response.header.{name}</code> or <code>integration.response.body.{JSON-expression}</code>,
-        /// where <code>name</code> is a valid and unique response header name and <code>JSON-expression</code>
-        /// is a valid JSON expression without the <code>$</code> prefix.
+        /// of <c>integration.response.header.{name}</c> or <c>integration.response.body.{JSON-expression}</c>,
+        /// where <c>name</c> is a valid and unique response header name and <c>JSON-expression</c>
+        /// is a valid JSON expression without the <c>$</c> prefix.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ResponseParameters
@@ -116,11 +115,11 @@ namespace Amazon.APIGateway.Model
         /// <para>
         /// Specifies the regular expression (regex) pattern used to choose an integration response
         /// based on the response from the back end. For example, if the success response returns
-        /// nothing and the error response returns some string, you could use the <code>.+</code>
-        /// regex to match error response. However, make sure that the error response does not
-        /// contain any newline (<code>\n</code>) character in such cases. If the back end is
-        /// an Lambda function, the Lambda function error header is matched. For all other HTTP
-        /// and Amazon Web Services back ends, the HTTP status code is matched.
+        /// nothing and the error response returns some string, you could use the <c>.+</c> regex
+        /// to match error response. However, make sure that the error response does not contain
+        /// any newline (<c>\n</c>) character in such cases. If the back end is an Lambda function,
+        /// the Lambda function error header is matched. For all other HTTP and Amazon Web Services
+        /// back ends, the HTTP status code is matched.
         /// </para>
         /// </summary>
         public string SelectionPattern

@@ -87,8 +87,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyId. 
         /// <para>
-        /// The ID of the policy that you want to get the details for. <code>PolicyId</code> is
-        /// returned by <code>PutPolicy</code> and by <code>ListPolicies</code>.
+        /// The ID of the policy that you want to get the details for. <c>PolicyId</c> is returned
+        /// by <c>PutPolicy</c> and by <c>ListPolicies</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

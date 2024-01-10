@@ -34,8 +34,7 @@ namespace Amazon.ManagedGrafana.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Provided <code>securityGroupIds</code> and <code>subnetIds</code> must be part of
-    /// the same VPC.
+    /// Provided <c>securityGroupIds</c> and <c>subnetIds</c> must be part of the same VPC.
     /// </para>
     ///  
     /// <para>

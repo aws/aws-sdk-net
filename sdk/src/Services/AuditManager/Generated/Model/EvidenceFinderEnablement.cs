@@ -53,17 +53,17 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NOT_STARTED</code> means that the backfill hasn’t started yet. 
+        ///  <c>NOT_STARTED</c> means that the backfill hasn’t started yet. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> means that the backfill is in progress. This can take up
-        /// to 7 days to complete, depending on the amount of evidence data. 
+        ///  <c>IN_PROGRESS</c> means that the backfill is in progress. This can take up to 7
+        /// days to complete, depending on the amount of evidence data. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> means that the backfill is complete. All of your past evidence
-        /// is now queryable. 
+        ///  <c>COMPLETED</c> means that the backfill is complete. All of your past evidence is
+        /// now queryable. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -87,26 +87,26 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLE_IN_PROGRESS</code> means that you requested to enable evidence finder.
-        /// An event data store is currently being created to support evidence finder queries.
+        ///  <c>ENABLE_IN_PROGRESS</c> means that you requested to enable evidence finder. An
+        /// event data store is currently being created to support evidence finder queries.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> means that an event data store was successfully created and
-        /// evidence finder is enabled. We recommend that you wait 7 days until the event data
-        /// store is backfilled with your past two years’ worth of evidence data. You can use
-        /// evidence finder in the meantime, but not all data might be available until the backfill
-        /// is complete.
+        ///  <c>ENABLED</c> means that an event data store was successfully created and evidence
+        /// finder is enabled. We recommend that you wait 7 days until the event data store is
+        /// backfilled with your past two years’ worth of evidence data. You can use evidence
+        /// finder in the meantime, but not all data might be available until the backfill is
+        /// complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLE_IN_PROGRESS</code> means that you requested to disable evidence finder,
-        /// and your request is pending the deletion of the event data store.
+        ///  <c>DISABLE_IN_PROGRESS</c> means that you requested to disable evidence finder, and
+        /// your request is pending the deletion of the event data store.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> means that you have permanently disabled evidence finder and
-        /// the event data store has been deleted. You can't re-enable evidence finder after this
+        ///  <c>DISABLED</c> means that you have permanently disabled evidence finder and the
+        /// event data store has been deleted. You can't re-enable evidence finder after this
         /// point.
         /// </para>
         ///  </li> </ul>

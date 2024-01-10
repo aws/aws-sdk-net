@@ -161,7 +161,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property InputStream. 
         /// <para>
-        /// User input in PCM or Opus audio format or text format as described in the <code>requestContentType</code>
+        /// User input in PCM or Opus audio format or text format as described in the <c>requestContentType</c>
         /// parameter.
         /// </para>
         /// </summary>
@@ -204,13 +204,13 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create
-        /// any request attributes for prefix <code>x-amz-lex:</code>.
+        /// The namespace <c>x-amz-lex:</c> is reserved for special attributes. Don't create any
+        /// request attributes for prefix <c>x-amz-lex:</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>requestAttributes</code> field must be compressed using gzip and then base64
-        /// encoded before sending to Amazon Lex V2.
+        /// The <c>requestAttributes</c> field must be compressed using gzip and then base64 encoded
+        /// before sending to Amazon Lex V2.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -283,25 +283,24 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property ResponseContentType. 
         /// <para>
         /// The message that Amazon Lex V2 returns in the response can be either text or speech
-        /// based on the <code>responseContentType</code> value.
+        /// based on the <c>responseContentType</c> value.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the value is <code>text/plain;charset=utf-8</code>, Amazon Lex V2 returns text
-        /// in the response.
+        /// If the value is <c>text/plain;charset=utf-8</c>, Amazon Lex V2 returns text in the
+        /// response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value begins with <code>audio/</code>, Amazon Lex V2 returns speech in the
-        /// response. Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration
-        /// that you specified in the <code>responseContentType</code> parameter. For example,
-        /// if you specify <code>audio/mpeg</code> as the value, Amazon Lex V2 returns speech
-        /// in the MPEG format.
+        /// If the value begins with <c>audio/</c>, Amazon Lex V2 returns speech in the response.
+        /// Amazon Lex V2 uses Amazon Polly to generate the speech using the configuration that
+        /// you specified in the <c>responseContentType</c> parameter. For example, if you specify
+        /// <c>audio/mpeg</c> as the value, Amazon Lex V2 returns speech in the MPEG format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value is <code>audio/pcm</code>, the speech returned is <code>audio/pcm</code>
-        /// at 16 KHz in 16-bit, little-endian format.
+        /// If the value is <c>audio/pcm</c>, the speech returned is <c>audio/pcm</c> at 16 KHz
+        /// in 16-bit, little-endian format.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -370,8 +369,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>sessionState</code> field must be compressed using gzip and then base64
-        /// encoded before sending to Amazon Lex V2.
+        /// The <c>sessionState</c> field must be compressed using gzip and then base64 encoded
+        /// before sending to Amazon Lex V2.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

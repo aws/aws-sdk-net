@@ -36,8 +36,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     ///  
     /// <para>
     /// If the default certificate is also in the certificate list, it appears twice in the
-    /// results (once with <code>IsDefault</code> set to true and once with <code>IsDefault</code>
-    /// set to false).
+    /// results (once with <c>IsDefault</c> set to true and once with <c>IsDefault</c> set
+    /// to false).
     /// </para>
     ///  
     /// <para>

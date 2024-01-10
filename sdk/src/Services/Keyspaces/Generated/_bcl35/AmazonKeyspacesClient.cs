@@ -297,13 +297,13 @@ namespace Amazon.Keyspaces
         #region  CreateKeyspace
 
         /// <summary>
-        /// The <code>CreateKeyspace</code> operation adds a new keyspace to your account. In
-        /// an Amazon Web Services account, keyspace names must be unique within each Region.
+        /// The <c>CreateKeyspace</c> operation adds a new keyspace to your account. In an Amazon
+        /// Web Services account, keyspace names must be unique within each Region.
         /// 
         ///  
         /// <para>
-        ///  <code>CreateKeyspace</code> is an asynchronous operation. You can monitor the creation
-        /// status of the new keyspace by using the <code>GetKeyspace</code> operation.
+        ///  <c>CreateKeyspace</c> is an asynchronous operation. You can monitor the creation
+        /// status of the new keyspace by using the <c>GetKeyspace</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -383,16 +383,15 @@ namespace Amazon.Keyspaces
         #region  CreateTable
 
         /// <summary>
-        /// The <code>CreateTable</code> operation adds a new table to the specified keyspace.
-        /// Within a keyspace, table names must be unique.
+        /// The <c>CreateTable</c> operation adds a new table to the specified keyspace. Within
+        /// a keyspace, table names must be unique.
         /// 
         ///  
         /// <para>
-        ///  <code>CreateTable</code> is an asynchronous operation. When the request is received,
-        /// the status of the table is set to <code>CREATING</code>. You can monitor the creation
-        /// status of the new table by using the <code>GetTable</code> operation, which returns
-        /// the current <code>status</code> of the table. You can start using a table when the
-        /// status is <code>ACTIVE</code>.
+        ///  <c>CreateTable</c> is an asynchronous operation. When the request is received, the
+        /// status of the table is set to <c>CREATING</c>. You can monitor the creation status
+        /// of the new table by using the <c>GetTable</c> operation, which returns the current
+        /// <c>status</c> of the table. You can start using a table when the status is <c>ACTIVE</c>.
         /// </para>
         ///  
         /// <para>
@@ -417,7 +416,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -476,7 +475,7 @@ namespace Amazon.Keyspaces
         #region  DeleteKeyspace
 
         /// <summary>
-        /// The <code>DeleteKeyspace</code> operation deletes a keyspace and all of its tables.
+        /// The <c>DeleteKeyspace</c> operation deletes a keyspace and all of its tables.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteKeyspace service method.</param>
         /// 
@@ -495,7 +494,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -554,13 +553,13 @@ namespace Amazon.Keyspaces
         #region  DeleteTable
 
         /// <summary>
-        /// The <code>DeleteTable</code> operation deletes a table and all of its data. After
-        /// a <code>DeleteTable</code> request is received, the specified table is in the <code>DELETING</code>
-        /// state until Amazon Keyspaces completes the deletion. If the table is in the <code>ACTIVE</code>
-        /// state, you can delete it. If a table is either in the <code>CREATING</code> or <code>UPDATING</code>
-        /// states, then Amazon Keyspaces returns a <code>ResourceInUseException</code>. If the
-        /// specified table does not exist, Amazon Keyspaces returns a <code>ResourceNotFoundException</code>.
-        /// If the table is already in the <code>DELETING</code> state, no error is returned.
+        /// The <c>DeleteTable</c> operation deletes a table and all of its data. After a <c>DeleteTable</c>
+        /// request is received, the specified table is in the <c>DELETING</c> state until Amazon
+        /// Keyspaces completes the deletion. If the table is in the <c>ACTIVE</c> state, you
+        /// can delete it. If a table is either in the <c>CREATING</c> or <c>UPDATING</c> states,
+        /// then Amazon Keyspaces returns a <c>ResourceInUseException</c>. If the specified table
+        /// does not exist, Amazon Keyspaces returns a <c>ResourceNotFoundException</c>. If the
+        /// table is already in the <c>DELETING</c> state, no error is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
         /// 
@@ -579,7 +578,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -652,7 +651,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -716,8 +715,8 @@ namespace Amazon.Keyspaces
         /// 
         ///  
         /// <para>
-        /// To read table metadata using <code>GetTable</code>, <code>Select</code> action permissions
-        /// for the table and system tables are required to complete the operation.
+        /// To read table metadata using <c>GetTable</c>, <c>Select</c> action permissions for
+        /// the table and system tables are required to complete the operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTable service method.</param>
@@ -732,7 +731,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -805,7 +804,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -878,7 +877,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -951,7 +950,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -1010,7 +1009,7 @@ namespace Amazon.Keyspaces
         #region  RestoreTable
 
         /// <summary>
-        /// Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code>
+        /// Restores the specified table to the specified point in time within the <c>earliest_restorable_timestamp</c>
         /// and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
         /// Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// 
@@ -1022,17 +1021,17 @@ namespace Amazon.Keyspaces
         ///  
         /// <para>
         /// When you restore using point in time recovery, Amazon Keyspaces restores your source
-        /// table's schema and data to the state based on the selected timestamp <code>(day:hour:minute:second)</code>
+        /// table's schema and data to the state based on the selected timestamp <c>(day:hour:minute:second)</c>
         /// to a new table. The Time to Live (TTL) settings are also restored to the state based
         /// on the selected timestamp.
         /// </para>
         ///  
         /// <para>
-        /// In addition to the table's schema, data, and TTL settings, <code>RestoreTable</code>
-        /// restores the capacity mode, encryption, and point-in-time recovery settings from the
-        /// source table. Unlike the table's schema data and TTL settings, which are restored
-        /// based on the selected timestamp, these settings are always restored based on the table's
-        /// settings as of the current time or when the table was deleted.
+        /// In addition to the table's schema, data, and TTL settings, <c>RestoreTable</c> restores
+        /// the capacity mode, encryption, and point-in-time recovery settings from the source
+        /// table. Unlike the table's schema data and TTL settings, which are restored based on
+        /// the selected timestamp, these settings are always restored based on the table's settings
+        /// as of the current time or when the table was deleted.
         /// </para>
         ///  
         /// <para>
@@ -1095,7 +1094,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -1179,7 +1178,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -1257,7 +1256,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on
@@ -1337,7 +1336,7 @@ namespace Amazon.Keyspaces
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ResourceNotFoundException">
         /// The operation tried to access a keyspace or table that doesn't exist. The resource
-        /// might not be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// might not be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.Keyspaces.Model.ServiceQuotaExceededException">
         /// The operation exceeded the service quota for this resource. For more information on

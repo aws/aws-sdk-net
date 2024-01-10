@@ -39,8 +39,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to specify where to start paginating. This is the <code>NextToken</code> from
-        /// a previously truncated response.
+        /// A token to specify where to start paginating. This is the <c>NextToken</c> from a
+        /// previously truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

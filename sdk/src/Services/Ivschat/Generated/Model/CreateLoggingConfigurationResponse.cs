@@ -84,8 +84,8 @@ namespace Amazon.Ivschat.Model
         /// Gets and sets the property DestinationConfiguration. 
         /// <para>
         /// A complex type that contains a destination configuration for where chat content will
-        /// be logged, from the request. There is only one type of destination (<code>cloudWatchLogs</code>,
-        /// <code>firehose</code>, or <code>s3</code>) in a <code>destinationConfiguration</code>.
+        /// be logged, from the request. There is only one type of destination (<c>cloudWatchLogs</c>,
+        /// <c>firehose</c>, or <c>s3</c>) in a <c>destinationConfiguration</c>.
         /// </para>
         /// </summary>
         public DestinationConfiguration DestinationConfiguration
@@ -142,8 +142,8 @@ namespace Amazon.Ivschat.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the logging configuration. When the state is <code>ACTIVE</code>, the
-        /// configuration is ready to log chat content.
+        /// The state of the logging configuration. When the state is <c>ACTIVE</c>, the configuration
+        /// is ready to log chat content.
         /// </para>
         /// </summary>
         public CreateLoggingConfigurationState State
@@ -162,7 +162,7 @@ namespace Amazon.Ivschat.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags attached to the resource, from the request (if specified). Array of maps, each
-        /// of the form <code>string:string (key:value)</code>.
+        /// of the form <c>string:string (key:value)</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

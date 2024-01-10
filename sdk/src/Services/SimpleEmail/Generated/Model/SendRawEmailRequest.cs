@@ -34,15 +34,15 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  
     /// <para>
-    /// This operation is more flexible than the <code>SendEmail</code> operation. When you
-    /// use the <code>SendRawEmail</code> operation, you can specify the headers of the message
-    /// as well as its content. This flexibility is useful, for example, when you need to
-    /// send a multipart MIME email (such a message that contains both a text and an HTML
-    /// version). You can also use this operation to send messages that include attachments.
+    /// This operation is more flexible than the <c>SendEmail</c> operation. When you use
+    /// the <c>SendRawEmail</c> operation, you can specify the headers of the message as well
+    /// as its content. This flexibility is useful, for example, when you need to send a multipart
+    /// MIME email (such a message that contains both a text and an HTML version). You can
+    /// also use this operation to send messages that include attachments.
     /// </para>
     ///  
     /// <para>
-    /// The <code>SendRawEmail</code> operation has the following requirements:
+    /// The <c>SendRawEmail</c> operation has the following requirements:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -90,35 +90,35 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Additionally, keep the following considerations in mind when using the <code>SendRawEmail</code>
+    /// Additionally, keep the following considerations in mind when using the <c>SendRawEmail</c>
     /// operation:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Although you can customize the message headers when using the <code>SendRawEmail</code>
-    /// operation, Amazon SES automatically applies its own <code>Message-ID</code> and <code>Date</code>
+    /// Although you can customize the message headers when using the <c>SendRawEmail</c>
+    /// operation, Amazon SES automatically applies its own <c>Message-ID</c> and <c>Date</c>
     /// headers; if you passed these headers when creating the message, they are overwritten
     /// by the values that Amazon SES provides.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code>
+    /// If you are using sending authorization to send on behalf of another user, <c>SendRawEmail</c>
     /// enables you to specify the cross-account identity for the email's Source, From, and
-    /// Return-Path parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>,
-    /// <code>FromArn</code>, and/or <code>ReturnPathArn</code>, or you can include the following
-    /// X-headers in the header of your raw email:
+    /// Return-Path parameters in one of two ways: you can pass optional parameters <c>SourceArn</c>,
+    /// <c>FromArn</c>, and/or <c>ReturnPathArn</c>, or you can include the following X-headers
+    /// in the header of your raw email:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>X-SES-SOURCE-ARN</code> 
+    ///  <c>X-SES-SOURCE-ARN</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>X-SES-FROM-ARN</code> 
+    ///  <c>X-SES-FROM-ARN</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>X-SES-RETURN-PATH-ARN</code> 
+    ///  <c>X-SES-RETURN-PATH-ARN</c> 
     /// </para>
     ///  </li> </ul> <important> 
     /// <para>
@@ -127,8 +127,8 @@ namespace Amazon.SimpleEmail.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES sets
-    /// the From and Return-Path addresses to the same identity that you specified.
+    /// If you only specify the <c>SourceIdentityArn</c> parameter, Amazon SES sets the From
+    /// and Return-Path addresses to the same identity that you specified.
     /// </para>
     ///  
     /// <para>
@@ -174,7 +174,7 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property ConfigurationSetName. 
         /// <para>
-        /// The name of the configuration set to use when you send an email using <code>SendRawEmail</code>.
+        /// The name of the configuration set to use when you send an email using <c>SendRawEmail</c>.
         /// </para>
         /// </summary>
         public string ConfigurationSetName
@@ -216,14 +216,13 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  
         /// <para>
-        /// Instead of using this parameter, you can use the X-header <code>X-SES-FROM-ARN</code>
-        /// in the raw message of the email. If you use both the <code>FromArn</code> parameter
-        /// and the corresponding X-header, Amazon SES uses the value of the <code>FromArn</code>
-        /// parameter.
+        /// Instead of using this parameter, you can use the X-header <c>X-SES-FROM-ARN</c> in
+        /// the raw message of the email. If you use both the <c>FromArn</c> parameter and the
+        /// corresponding X-header, Amazon SES uses the value of the <c>FromArn</c> parameter.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For information about when to use this parameter, see the description of <code>SendRawEmail</code>
+        /// For information about when to use this parameter, see the description of <c>SendRawEmail</c>
         /// in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
@@ -301,25 +300,25 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// This parameter is used only for sending authorization. It is the ARN of the identity
         /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>ReturnPath</code> parameter.
+        /// email address specified in the <c>ReturnPath</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
-        /// attaches a policy to it that authorizes you to use <code>feedback@example.com</code>,
-        /// then you would specify the <code>ReturnPathArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
-        /// and the <code>ReturnPath</code> to be <code>feedback@example.com</code>.
+        /// For example, if the owner of <c>example.com</c> (which has ARN <c>arn:aws:ses:us-east-1:123456789012:identity/example.com</c>)
+        /// attaches a policy to it that authorizes you to use <c>feedback@example.com</c>, then
+        /// you would specify the <c>ReturnPathArn</c> to be <c>arn:aws:ses:us-east-1:123456789012:identity/example.com</c>,
+        /// and the <c>ReturnPath</c> to be <c>feedback@example.com</c>.
         /// </para>
         ///  
         /// <para>
-        /// Instead of using this parameter, you can use the X-header <code>X-SES-RETURN-PATH-ARN</code>
-        /// in the raw message of the email. If you use both the <code>ReturnPathArn</code> parameter
-        /// and the corresponding X-header, Amazon SES uses the value of the <code>ReturnPathArn</code>
+        /// Instead of using this parameter, you can use the X-header <c>X-SES-RETURN-PATH-ARN</c>
+        /// in the raw message of the email. If you use both the <c>ReturnPathArn</c> parameter
+        /// and the corresponding X-header, Amazon SES uses the value of the <c>ReturnPathArn</c>
         /// parameter.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For information about when to use this parameter, see the description of <code>SendRawEmail</code>
+        /// For information about when to use this parameter, see the description of <c>SendRawEmail</c>
         /// in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
@@ -359,9 +358,9 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// If you specify the <code>Source</code> parameter and have feedback forwarding enabled,
-        /// then bounces and complaints are sent to this email address. This takes precedence
-        /// over any Return-Path header that you might include in the raw text of the message.
+        /// If you specify the <c>Source</c> parameter and have feedback forwarding enabled, then
+        /// bounces and complaints are sent to this email address. This takes precedence over
+        /// any Return-Path header that you might include in the raw text of the message.
         /// </para>
         /// </summary>
         public string Source
@@ -381,25 +380,24 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// This parameter is used only for sending authorization. It is the ARN of the identity
         /// that is associated with the sending authorization policy that permits you to send
-        /// for the email address specified in the <code>Source</code> parameter.
+        /// for the email address specified in the <c>Source</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// For example, if the owner of <code>example.com</code> (which has ARN <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>)
-        /// attaches a policy to it that authorizes you to send from <code>user@example.com</code>,
-        /// then you would specify the <code>SourceArn</code> to be <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>,
-        /// and the <code>Source</code> to be <code>user@example.com</code>.
+        /// For example, if the owner of <c>example.com</c> (which has ARN <c>arn:aws:ses:us-east-1:123456789012:identity/example.com</c>)
+        /// attaches a policy to it that authorizes you to send from <c>user@example.com</c>,
+        /// then you would specify the <c>SourceArn</c> to be <c>arn:aws:ses:us-east-1:123456789012:identity/example.com</c>,
+        /// and the <c>Source</c> to be <c>user@example.com</c>.
         /// </para>
         ///  
         /// <para>
-        /// Instead of using this parameter, you can use the X-header <code>X-SES-SOURCE-ARN</code>
-        /// in the raw message of the email. If you use both the <code>SourceArn</code> parameter
-        /// and the corresponding X-header, Amazon SES uses the value of the <code>SourceArn</code>
-        /// parameter.
+        /// Instead of using this parameter, you can use the X-header <c>X-SES-SOURCE-ARN</c>
+        /// in the raw message of the email. If you use both the <c>SourceArn</c> parameter and
+        /// the corresponding X-header, Amazon SES uses the value of the <c>SourceArn</c> parameter.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For information about when to use this parameter, see the description of <code>SendRawEmail</code>
+        /// For information about when to use this parameter, see the description of <c>SendRawEmail</c>
         /// in this guide, or see the <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-authorization-delegate-sender-tasks-email.html">Amazon
         /// SES Developer Guide</a>.
         /// </para>
@@ -421,8 +419,8 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using <code>SendRawEmail</code>. Tags correspond to characteristics of the email that
-        /// you define, so that you can publish email sending events.
+        /// using <c>SendRawEmail</c>. Tags correspond to characteristics of the email that you
+        /// define, so that you can publish email sending events.
         /// </para>
         /// </summary>
         public List<MessageTag> Tags

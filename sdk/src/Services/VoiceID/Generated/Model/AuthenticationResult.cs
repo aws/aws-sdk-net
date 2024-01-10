@@ -85,7 +85,7 @@ namespace Amazon.VoiceID.Model
         /// The unique identifier for this authentication result. Because there can be multiple
         /// authentications for a given session, this field helps to identify if the returned
         /// result is from a previous streaming activity or a new result. Note that in absence
-        /// of any new streaming activity, <code>AcceptanceThreshold</code> changes, or <code>SpeakerId</code>
+        /// of any new streaming activity, <c>AcceptanceThreshold</c> changes, or <c>SpeakerId</c>
         /// changes, Voice ID always returns cached Authentication Result for this API.
         /// </para>
         /// </summary>
@@ -105,8 +105,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The <code>AuthenticationConfiguration</code> used to generate this authentication
-        /// result.
+        /// The <c>AuthenticationConfiguration</c> used to generate this authentication result.
         /// </para>
         /// </summary>
         public AuthenticationConfiguration Configuration
@@ -125,7 +124,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property CustomerSpeakerId. 
         /// <para>
         /// The client-provided identifier for the speaker whose authentication result is produced.
-        /// Only present if a <code>SpeakerId</code> is provided for the session.
+        /// Only present if a <c>SpeakerId</c> is provided for the session.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
@@ -183,8 +182,8 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property Score. 
         /// <para>
         /// The authentication score for the speaker whose authentication result is produced.
-        /// This value is only present if the authentication decision is either <code>ACCEPT</code>
-        /// or <code>REJECT</code>.
+        /// This value is only present if the authentication decision is either <c>ACCEPT</c>
+        /// or <c>REJECT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

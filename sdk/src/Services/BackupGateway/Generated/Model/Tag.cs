@@ -41,7 +41,7 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key part of a tag's key-value pair. The key can't start with <code>aws:</code>.
+        /// The key part of a tag's key-value pair. The key can't start with <c>aws:</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -60,7 +60,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        /// The <code>AppInstanceUser</code> who created the ban.
+        /// The <c>AppInstanceUser</c> who created the ban.
         /// </para>
         /// </summary>
         public Identity CreatedBy

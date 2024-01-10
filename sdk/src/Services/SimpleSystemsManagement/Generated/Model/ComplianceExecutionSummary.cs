@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// A summary of the call execution that includes an execution ID, the type of execution
-    /// (for example, <code>Command</code>), and the date/time of the execution using a datetime
+    /// (for example, <c>Command</c>), and the date/time of the execution using a datetime
     /// object that is saved in the following format: yyyy-MM-dd'T'HH:mm:ss'Z'.
     /// </summary>
     public partial class ComplianceExecutionSummary
@@ -42,9 +42,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionId. 
         /// <para>
-        /// An ID created by the system when <code>PutComplianceItems</code> was called. For example,
-        /// <code>CommandID</code> is a valid execution ID. You can use this ID in subsequent
-        /// calls.
+        /// An ID created by the system when <c>PutComplianceItems</c> was called. For example,
+        /// <c>CommandID</c> is a valid execution ID. You can use this ID in subsequent calls.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -83,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ExecutionType. 
         /// <para>
-        /// The type of execution. For example, <code>Command</code> is a valid execution type.
+        /// The type of execution. For example, <c>Command</c> is a valid execution type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

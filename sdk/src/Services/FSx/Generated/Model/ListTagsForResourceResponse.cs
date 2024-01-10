@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for <code>ListTagsForResource</code> operation.
+    /// The response object for <c>ListTagsForResource</c> operation.
     /// </summary>
     public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
     {
@@ -40,7 +40,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// This is present if there are more tags than returned in the response (String). You
-        /// can use the <code>NextToken</code> value in the later request to fetch the tags. 
+        /// can use the <c>NextToken</c> value in the later request to fetch the tags. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

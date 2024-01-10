@@ -33,29 +33,28 @@ namespace Amazon.Budgets.Model
     /// 
     ///  
     /// <para>
-    ///  <i>Cost example:</i> A <code>Spend</code> for <code>3 USD</code> of costs has the
-    /// following parameters:
+    ///  <i>Cost example:</i> A <c>Spend</c> for <c>3 USD</c> of costs has the following parameters:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// An <code>Amount</code> of <code>3</code> 
+    /// An <c>Amount</c> of <c>3</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>Unit</code> of <code>USD</code> 
+    /// A <c>Unit</c> of <c>USD</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <i>Usage example:</i> A <code>Spend</code> for <code>3 GB</code> of S3 usage has
-    /// the following parameters:
+    ///  <i>Usage example:</i> A <c>Spend</c> for <c>3 GB</c> of S3 usage has the following
+    /// parameters:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// An <code>Amount</code> of <code>3</code> 
+    /// An <c>Amount</c> of <c>3</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>Unit</code> of <code>GB</code> 
+    /// A <c>Unit</c> of <c>GB</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

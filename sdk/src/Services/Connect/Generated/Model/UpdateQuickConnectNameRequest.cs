@@ -31,8 +31,7 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the UpdateQuickConnectName operation.
     /// Updates the name and description of a quick connect. The request accepts the following
-    /// data in JSON format. At least <code>Name</code> or <code>Description</code> must be
-    /// provided.
+    /// data in JSON format. At least <c>Name</c> or <c>Description</c> must be provided.
     /// </summary>
     public partial class UpdateQuickConnectNameRequest : AmazonConnectRequest
     {

@@ -66,8 +66,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CopyActions. 
         /// <para>
-        /// An array of <code>CopyAction</code> objects, which contains the details of the copy
-        /// operation.
+        /// An array of <c>CopyAction</c> objects, which contains the details of the copy operation.
         /// </para>
         /// </summary>
         public List<CopyAction> CopyActions
@@ -229,13 +228,13 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// During the start window, the backup job status remains in <code>CREATED</code> status
-        /// until it has successfully begun or until the start window time has run out. If within
-        /// the start window time Backup receives an error that allows the job to be retried,
-        /// Backup will automatically retry to begin the job at least every 10 minutes until the
-        /// backup successfully begins (the job status changes to <code>RUNNING</code>) or until
-        /// the job status changes to <code>EXPIRED</code> (which is expected to occur when the
-        /// start window time is over).
+        /// During the start window, the backup job status remains in <c>CREATED</c> status until
+        /// it has successfully begun or until the start window time has run out. If within the
+        /// start window time Backup receives an error that allows the job to be retried, Backup
+        /// will automatically retry to begin the job at least every 10 minutes until the backup
+        /// successfully begins (the job status changes to <c>RUNNING</c>) or until the job status
+        /// changes to <c>EXPIRED</c> (which is expected to occur when the start window time is
+        /// over).
         /// </para>
         /// </summary>
         public long StartWindowMinutes

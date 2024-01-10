@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Describes the configuration for an input field on a form. Use <code>FormInputValueProperty</code>
+    /// Describes the configuration for an input field on a form. Use <c>FormInputValueProperty</c>
     /// to specify the values to render or bind by default.
     /// </summary>
     public partial class FormInputValueProperty

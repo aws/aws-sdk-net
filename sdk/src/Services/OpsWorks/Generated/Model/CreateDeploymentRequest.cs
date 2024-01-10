@@ -74,8 +74,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Command. 
         /// <para>
-        /// A <code>DeploymentCommand</code> object that specifies the deployment command and
-        /// any associated arguments.
+        /// A <c>DeploymentCommand</c> object that specifies the deployment command and any associated
+        /// arguments.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,7 +118,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> 
+        ///  <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c> 
         /// </para>
         ///  
         /// <para>

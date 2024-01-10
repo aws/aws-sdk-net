@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StepFunctions.Model
 {
     /// <summary>
-    /// Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code>
-    /// has not been set to <code>true</code> or <code>false</code>.
+    /// Your <c>tracingConfiguration</c> key does not match, or <c>enabled</c> has not been
+    /// set to <c>true</c> or <c>false</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

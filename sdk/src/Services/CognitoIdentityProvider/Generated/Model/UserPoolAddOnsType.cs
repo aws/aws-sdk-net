@@ -30,9 +30,8 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// User pool add-ons. Contains settings for activation of advanced security features.
-    /// To log user security information but take no action, set to <code>AUDIT</code>. To
-    /// configure automatic security responses to risky traffic to your user pool, set to
-    /// <code>ENFORCED</code>.
+    /// To log user security information but take no action, set to <c>AUDIT</c>. To configure
+    /// automatic security responses to risky traffic to your user pool, set to <c>ENFORCED</c>.
     /// 
     ///  
     /// <para>

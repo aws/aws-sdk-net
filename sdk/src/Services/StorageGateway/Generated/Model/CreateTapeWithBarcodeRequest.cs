@@ -77,12 +77,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property KMSEncrypted. 
         /// <para>
-        /// Set to <code>true</code> to use Amazon S3 server-side encryption with your own KMS
-        /// key, or <code>false</code> to use a key managed by Amazon S3. Optional.
+        /// Set to <c>true</c> to use Amazon S3 server-side encryption with your own KMS key,
+        /// or <c>false</c> to use a key managed by Amazon S3. Optional.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool KMSEncrypted
@@ -102,7 +102,7 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon
         /// S3 server-side encryption. Storage Gateway does not support asymmetric CMKs. This
-        /// value can only be set when <code>KMSEncrypted</code> is <code>true</code>. Optional.
+        /// value can only be set when <c>KMSEncrypted</c> is <c>true</c>. Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=7, Max=2048)]
@@ -218,7 +218,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Worm. 
         /// <para>
-        /// Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many
+        /// Set to <c>TRUE</c> if the tape you are creating is to be configured as a write-once-read-many
         /// (WORM) tape.
         /// </para>
         /// </summary>

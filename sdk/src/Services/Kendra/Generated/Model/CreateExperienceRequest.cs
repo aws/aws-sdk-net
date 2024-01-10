@@ -48,8 +48,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create your Amazon Kendra experience.
-        /// Multiple calls to the <code>CreateExperience</code> API with the same client token
-        /// creates only one Amazon Kendra experience.
+        /// Multiple calls to the <c>CreateExperience</c> API with the same client token creates
+        /// only one Amazon Kendra experience.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -68,8 +68,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// Configuration information for your Amazon Kendra experience. This includes <code>ContentSourceConfiguration</code>,
-        /// which specifies the data source IDs and/or FAQ IDs, and <code>UserIdentityConfiguration</code>,
+        /// Configuration information for your Amazon Kendra experience. This includes <c>ContentSourceConfiguration</c>,
+        /// which specifies the data source IDs and/or FAQ IDs, and <c>UserIdentityConfiguration</c>,
         /// which specifies the user or group information to grant access to your Amazon Kendra
         /// experience.
         /// </para>
@@ -146,10 +146,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an IAM role with permission to access <code>Query</code>
-        /// API, <code>GetQuerySuggestions</code> API, and other required APIs. The role also
-        /// must include permission to access IAM Identity Center that stores your user and group
-        /// information. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access <c>Query</c>
+        /// API, <c>GetQuerySuggestions</c> API, and other required APIs. The role also must include
+        /// permission to access IAM Identity Center that stores your user and group information.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
         /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>

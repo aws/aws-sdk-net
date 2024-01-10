@@ -70,13 +70,13 @@ namespace Amazon.OpsWorks.Model
         ///  </li> <li> 
         /// <para>
         /// The key can be a maximum of 127 characters, and can contain only Unicode letters,
-        /// numbers, or separators, or the following special characters: <code>+ - = . _ : /</code>
+        /// numbers, or separators, or the following special characters: <c>+ - = . _ : /</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The value can be a maximum 255 characters, and contain only Unicode letters, numbers,
-        /// or separators, or the following special characters: <code>+ - = . _ : /</code> 
+        /// or separators, or the following special characters: <c>+ - = . _ : /</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

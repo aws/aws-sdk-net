@@ -33,13 +33,13 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// You must specify exactly one setting: either <code>All</code>, <code>IncludedHeaders</code>,
-    /// or <code>ExcludedHeaders</code>.
+    /// You must specify exactly one setting: either <c>All</c>, <c>IncludedHeaders</c>, or
+    /// <c>ExcludedHeaders</c>.
     /// </para>
     ///  
     /// <para>
-    /// Example JSON: <code>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2"
-    /// ] }</code> 
+    /// Example JSON: <c>"MatchPattern": { "ExcludedHeaders": [ "KeyToExclude1", "KeyToExclude2"
+    /// ] }</c> 
     /// </para>
     /// </summary>
     public partial class HeaderMatchPattern

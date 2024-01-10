@@ -63,7 +63,7 @@ namespace Amazon.Backup.Model
         /// <para>
         /// Key-value pairs that are used to help organize your resources. You can assign your
         /// own metadata to the resources you create. For clarity, this is the structure to assign
-        /// tags: <code>[{"Key":"string","Value":"string"}]</code>.
+        /// tags: <c>[{"Key":"string","Value":"string"}]</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

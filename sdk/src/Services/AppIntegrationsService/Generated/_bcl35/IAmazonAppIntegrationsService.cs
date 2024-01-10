@@ -130,7 +130,7 @@ namespace Amazon.AppIntegrationsService
         /// <para>
         /// You cannot create a DataIntegration association for a DataIntegration that has been
         /// previously associated. Use a different DataIntegration, or recreate the DataIntegration
-        /// using the <code>CreateDataIntegration</code> API.
+        /// using the <c>CreateDataIntegration</c> API.
         /// </para>
         ///  </note>
         /// </summary>

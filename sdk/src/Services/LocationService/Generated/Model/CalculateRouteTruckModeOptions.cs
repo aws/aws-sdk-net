@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Contains details about additional route preferences for requests that specify <code>TravelMode</code>
-    /// as <code>Truck</code>.
+    /// Contains details about additional route preferences for requests that specify <c>TravelMode</c>
+    /// as <c>Truck</c>.
     /// </summary>
     public partial class CalculateRouteTruckModeOptions
     {
@@ -46,11 +46,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>false</code> 
+        /// Default Value: <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>false</code> | <code>true</code> 
+        /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
         public bool AvoidFerries
@@ -72,11 +72,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>false</code> 
+        /// Default Value: <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>false</code> | <code>true</code> 
+        /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
         public bool AvoidTolls

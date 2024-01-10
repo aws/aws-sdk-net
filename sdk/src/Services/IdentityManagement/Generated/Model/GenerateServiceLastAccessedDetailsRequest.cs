@@ -53,8 +53,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// The <code>GenerateServiceLastAccessedDetails</code> operation returns a <code>JobId</code>.
-    /// Use this parameter in the following operations to retrieve the following details from
+    /// The <c>GenerateServiceLastAccessedDetails</c> operation returns a <c>JobId</c>. Use
+    /// this parameter in the following operations to retrieve the following details from
     /// your report: 
     /// </para>
     ///  <ul> <li> 
@@ -66,9 +66,8 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>JobId</code> returned by <code>GenerateServiceLastAccessedDetail</code>
-    /// must be used by the same role within a session, or by the same user when used to call
-    /// <code>GetServiceLastAccessedDetail</code>.
+    /// The <c>JobId</c> returned by <c>GenerateServiceLastAccessedDetail</c> must be used
+    /// by the same role within a session, or by the same user when used to call <c>GetServiceLastAccessedDetail</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -78,9 +77,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// To check the status of the <code>GenerateServiceLastAccessedDetails</code> request,
-    /// use the <code>JobId</code> parameter in the same operations and test the <code>JobStatus</code>
-    /// response parameter.
+    /// To check the status of the <c>GenerateServiceLastAccessedDetails</c> request, use
+    /// the <c>JobId</c> parameter in the same operations and test the <c>JobStatus</c> response
+    /// parameter.
     /// </para>
     ///  
     /// <para>

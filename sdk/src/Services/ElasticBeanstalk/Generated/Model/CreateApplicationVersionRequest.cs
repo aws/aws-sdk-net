@@ -36,20 +36,20 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     ///  
     /// <para>
-    /// Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+    /// Specify a commit in an AWS CodeCommit repository with <c>SourceBuildInformation</c>.
     /// </para>
     ///  
     /// <para>
-    /// Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+    /// Specify a build in an AWS CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
     /// </para>
     ///  
     /// <para>
-    /// Specify a source bundle in S3 with <code>SourceBundle</code> 
+    /// Specify a source bundle in S3 with <c>SourceBundle</c> 
     /// </para>
     ///  
     /// <para>
-    /// Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use
-    /// the default sample application.
+    /// Omit both <c>SourceBuildInformation</c> and <c>SourceBundle</c> to use the default
+    /// sample application.
     /// </para>
     ///  <note> 
     /// <para>
@@ -91,8 +91,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        ///  The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code>
-        /// is <code>false</code>, returns an <code>InvalidParameterValue</code> error. 
+        ///  The name of the application. If no application is found with this name, and <c>AutoCreateApplication</c>
+        /// is <c>false</c>, returns an <c>InvalidParameterValue</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -111,7 +111,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property AutoCreateApplication. 
         /// <para>
-        /// Set to <code>true</code> to create an application with the specified name if it doesn't
+        /// Set to <c>true</c> to create an application with the specified name if it doesn't
         /// already exist.
         /// </para>
         /// </summary>
@@ -167,10 +167,10 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Process. 
         /// <para>
-        /// Pre-processes and validates the environment manifest (<code>env.yaml</code>) and configuration
-        /// files (<code>*.config</code> files in the <code>.ebextensions</code> folder) in the
-        /// source bundle. Validating configuration files can identify issues prior to deploying
-        /// the application version to an environment.
+        /// Pre-processes and validates the environment manifest (<c>env.yaml</c>) and configuration
+        /// files (<c>*.config</c> files in the <c>.ebextensions</c> folder) in the source bundle.
+        /// Validating configuration files can identify issues prior to deploying the application
+        /// version to an environment.
         /// </para>
         ///  
         /// <para>
@@ -180,9 +180,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Process</code> option validates Elastic Beanstalk configuration files. It
-        /// doesn't validate your application's configuration files, like proxy server or Docker
-        /// configuration.
+        /// The <c>Process</c> option validates Elastic Beanstalk configuration files. It doesn't
+        /// validate your application's configuration files, like proxy server or Docker configuration.
         /// </para>
         ///  </note>
         /// </summary>
@@ -229,9 +228,9 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>),
-        /// but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code>
-        /// are provided, Elastic Beanstalk uses a sample application.
+        /// Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <c>SourceBuildInformation</c>),
+        /// but not both. If neither <c>SourceBundle</c> nor <c>SourceBuildInformation</c> are
+        /// provided, Elastic Beanstalk uses a sample application.
         /// </para>
         /// </summary>
         public S3Location SourceBundle
@@ -277,7 +276,7 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         /// Constraint: Must be unique per application. If an application version already exists
-        /// with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code>
+        /// with this label for the specified application, AWS Elastic Beanstalk returns an <c>InvalidParameterValue</c>
         /// error. 
         /// </para>
         /// </summary>

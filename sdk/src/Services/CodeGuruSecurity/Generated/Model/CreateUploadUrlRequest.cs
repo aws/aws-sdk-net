@@ -47,8 +47,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <para>
         /// The name of the scan that will use the uploaded resource. CodeGuru Security uses the
         /// unique scan name to track revisions across multiple scans of the same resource. Use
-        /// this <code>scanName</code> when you call <code>CreateScan</code> on the code resource
-        /// you upload to this URL.
+        /// this <c>scanName</c> when you call <c>CreateScan</c> on the code resource you upload
+        /// to this URL.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=140)]

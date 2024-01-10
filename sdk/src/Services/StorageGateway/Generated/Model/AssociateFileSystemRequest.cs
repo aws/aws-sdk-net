@@ -108,7 +108,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+        /// If multiple file systems are associated with this gateway, this parameter's <c>IpAddresses</c>
         /// field is required.
         /// </para>
         ///  </note>

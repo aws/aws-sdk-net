@@ -167,7 +167,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of Amazon Q message, whether <code>HUMAN</code> or <code>AI</code> generated.
+        /// The type of Amazon Q message, whether <c>HUMAN</c> or <c>AI</c> generated.
         /// </para>
         /// </summary>
         public MessageType Type

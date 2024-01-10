@@ -62,7 +62,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property ResolverEndpointId. 
         /// <para>
         /// The ID of the new outbound Resolver endpoint that you want to use to route DNS queries
-        /// to the IP addresses that you specify in <code>TargetIps</code>.
+        /// to the IP addresses that you specify in <c>TargetIps</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

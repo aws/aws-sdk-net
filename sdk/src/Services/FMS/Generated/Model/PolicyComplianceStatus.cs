@@ -47,7 +47,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property EvaluationResults. 
         /// <para>
-        /// An array of <code>EvaluationResult</code> objects.
+        /// An array of <c>EvaluationResult</c> objects.
         /// </para>
         /// </summary>
         public List<EvaluationResult> EvaluationResults
@@ -84,7 +84,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property LastUpdated. 
         /// <para>
-        /// Timestamp of the last update to the <code>EvaluationResult</code> objects.
+        /// Timestamp of the last update to the <c>EvaluationResult</c> objects.
         /// </para>
         /// </summary>
         public DateTime LastUpdated

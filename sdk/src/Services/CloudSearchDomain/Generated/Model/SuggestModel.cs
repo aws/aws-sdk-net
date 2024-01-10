@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearchDomain.Model
 {
     /// <summary>
-    /// Container for the suggestion information returned in a <code>SuggestResponse</code>.
+    /// Container for the suggestion information returned in a <c>SuggestResponse</c>.
     /// </summary>
     public partial class SuggestModel
     {

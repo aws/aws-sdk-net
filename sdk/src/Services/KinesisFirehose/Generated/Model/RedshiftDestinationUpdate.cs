@@ -85,7 +85,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CopyCommand. 
         /// <para>
-        /// The <code>COPY</code> command.
+        /// The <c>COPY</c> command.
         /// </para>
         /// </summary>
         public CopyCommand CopyCommand
@@ -221,9 +221,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  
         /// <para>
-        /// The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified
-        /// in <code>RedshiftDestinationUpdate.S3Update</code> because the Amazon Redshift <code>COPY</code>
-        /// operation that reads from the S3 bucket doesn't support these compression formats.
+        /// The compression formats <c>SNAPPY</c> or <c>ZIP</c> cannot be specified in <c>RedshiftDestinationUpdate.S3Update</c>
+        /// because the Amazon Redshift <c>COPY</c> operation that reads from the S3 bucket doesn't
+        /// support these compression formats.
         /// </para>
         /// </summary>
         public S3DestinationUpdate S3Update

@@ -219,19 +219,18 @@ namespace Amazon.GlueDataBrew.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Numeric version (<code>X.Y</code>) - <code>X</code> and <code>Y</code> stand for major
-        /// and minor version numbers. The maximum length of each is 6 digits, and neither can
-        /// be negative values. Both <code>X</code> and <code>Y</code> are required, and "0.0"
-        /// isn't a valid version.
+        /// Numeric version (<c>X.Y</c>) - <c>X</c> and <c>Y</c> stand for major and minor version
+        /// numbers. The maximum length of each is 6 digits, and neither can be negative values.
+        /// Both <c>X</c> and <c>Y</c> are required, and "0.0" isn't a valid version.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LATEST_WORKING</code> - the most recent valid version being developed in a
-        /// DataBrew project.
+        ///  <c>LATEST_WORKING</c> - the most recent valid version being developed in a DataBrew
+        /// project.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LATEST_PUBLISHED</code> - the most recent published version.
+        ///  <c>LATEST_PUBLISHED</c> - the most recent published version.
         /// </para>
         ///  </li> </ul>
         /// </summary>

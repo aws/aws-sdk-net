@@ -62,7 +62,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>{"boolean": true}</code> 
+        /// Example: <c>{"boolean": true}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -85,8 +85,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"entityIdentifier": { "entityId": "&lt;id&gt;", "entityType": "&lt;entity
-        /// type&gt;"}</code> 
+        /// Example: <c>"entityIdentifier": { "entityId": "&lt;id&gt;", "entityType": "&lt;entity
+        /// type&gt;"}</c> 
         /// </para>
         /// </summary>
         public EntityIdentifier EntityIdentifier
@@ -109,7 +109,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>{"long": 0}</code> 
+        /// Example: <c>{"long": 0}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -133,7 +133,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>{"record": { "keyName": {} } }</code> 
+        /// Example: <c>{"record": { "keyName": {} } }</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Record
@@ -156,7 +156,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>{"set": [ {} ] }</code> 
+        /// Example: <c>{"set": [ {} ] }</c> 
         /// </para>
         /// </summary>
         public List<AttributeValue> Set
@@ -179,7 +179,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>{"string": "abc"}</code> 
+        /// Example: <c>{"string": "abc"}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

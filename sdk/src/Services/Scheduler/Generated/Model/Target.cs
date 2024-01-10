@@ -91,7 +91,7 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property EcsParameters. 
         /// <para>
         /// The templated target type for the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_RunTask.html">
-        /// <code>RunTask</code> </a> API operation.
+        /// <c>RunTask</c> </a> API operation.
         /// </para>
         /// </summary>
         public EcsParameters EcsParameters
@@ -110,7 +110,7 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property EventBridgeParameters. 
         /// <para>
         /// The templated target type for the EventBridge <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">
-        /// <code>PutEvents</code> </a> API operation.
+        /// <c>PutEvents</c> </a> API operation.
         /// </para>
         /// </summary>
         public EventBridgeParameters EventBridgeParameters
@@ -151,7 +151,7 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property KinesisParameters. 
         /// <para>
         /// The templated target type for the Amazon Kinesis <a href="kinesis/latest/APIReference/API_PutRecord.html">
-        /// <code>PutRecord</code> </a> API operation.
+        /// <c>PutRecord</c> </a> API operation.
         /// </para>
         /// </summary>
         public KinesisParameters KinesisParameters
@@ -169,8 +169,8 @@ namespace Amazon.Scheduler.Model
         /// <summary>
         /// Gets and sets the property RetryPolicy. 
         /// <para>
-        /// A <code>RetryPolicy</code> object that includes information about the retry policy
-        /// settings, including the maximum age of an event, and the maximum number of times EventBridge
+        /// A <c>RetryPolicy</c> object that includes information about the retry policy settings,
+        /// including the maximum age of an event, and the maximum number of times EventBridge
         /// Scheduler will try to deliver the event to a target.
         /// </para>
         /// </summary>
@@ -210,7 +210,7 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property SageMakerPipelineParameters. 
         /// <para>
         /// The templated target type for the Amazon SageMaker <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StartPipelineExecution.html">
-        /// <code>StartPipelineExecution</code> </a> API operation.
+        /// <c>StartPipelineExecution</c> </a> API operation.
         /// </para>
         /// </summary>
         public SageMakerPipelineParameters SageMakerPipelineParameters
@@ -229,10 +229,9 @@ namespace Amazon.Scheduler.Model
         /// Gets and sets the property SqsParameters. 
         /// <para>
         /// The templated target type for the Amazon SQS <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/APIReference/API_SendMessage.html">
-        /// <code>SendMessage</code> </a> API operation. Contains the message group ID to use
-        /// when the target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target,
-        /// the queue must have content-based deduplication enabled. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
+        /// <c>SendMessage</c> </a> API operation. Contains the message group ID to use when the
+        /// target is a FIFO queue. If you specify an Amazon SQS FIFO queue as a target, the queue
+        /// must have content-based deduplication enabled. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/using-messagededuplicationid-property.html">Using
         /// the Amazon SQS message deduplication ID</a> in the <i>Amazon SQS Developer Guide</i>.
         /// </para>
         /// </summary>

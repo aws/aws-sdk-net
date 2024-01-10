@@ -77,9 +77,9 @@ namespace Amazon.CloudFront.Model
         /// Use this parameter when paginating results to indicate where to begin in your list
         /// of invalidation batches. Because the results are returned in decreasing order from
         /// most recent to oldest, the most recent results are on the first page, the second page
-        /// will contain earlier results, and so on. To get the next page of results, set <code>Marker</code>
-        /// to the value of the <code>NextMarker</code> from the current page's response. This
-        /// value is the same as the ID of the last invalidation batch on that page.
+        /// will contain earlier results, and so on. To get the next page of results, set <c>Marker</c>
+        /// to the value of the <c>NextMarker</c> from the current page's response. This value
+        /// is the same as the ID of the last invalidation batch on that page.
         /// </para>
         /// </summary>
         public string Marker

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provided if <code>ActionType</code> is <code>DNS_REQUEST</code>. It provides details
-    /// about the DNS request that was detected.
+    /// Provided if <c>ActionType</c> is <c>DNS_REQUEST</c>. It provides details about the
+    /// DNS request that was detected.
     /// </summary>
     public partial class DnsRequestAction
     {

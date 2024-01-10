@@ -33,11 +33,11 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the operations <code>CreateDBInstance</code>,
-    /// <code>CreateDBInstanceReadReplica</code>, <code>DeleteDBInstance</code>, <code>DescribeDBInstances</code>,
-    /// <code>ModifyDBInstance</code>, <code>PromoteReadReplica</code>, <code>RebootDBInstance</code>,
-    /// <code>RestoreDBInstanceFromDBSnapshot</code>, <code>RestoreDBInstanceFromS3</code>,
-    /// <code>RestoreDBInstanceToPointInTime</code>, <code>StartDBInstance</code>, and <code>StopDBInstance</code>.
+    /// This data type is used as a response element in the operations <c>CreateDBInstance</c>,
+    /// <c>CreateDBInstanceReadReplica</c>, <c>DeleteDBInstance</c>, <c>DescribeDBInstances</c>,
+    /// <c>ModifyDBInstance</c>, <c>PromoteReadReplica</c>, <c>RebootDBInstance</c>, <c>RestoreDBInstanceFromDBSnapshot</c>,
+    /// <c>RestoreDBInstanceFromS3</c>, <c>RestoreDBInstanceToPointInTime</c>, <c>StartDBInstance</c>,
+    /// and <c>StopDBInstance</c>.
     /// </para>
     /// </summary>
     public partial class DBInstance
@@ -298,10 +298,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AutomationMode. 
         /// <para>
-        /// The automation mode of the RDS Custom DB instance: <code>full</code> or <code>all
-        /// paused</code>. If <code>full</code>, the DB instance automates monitoring and instance
-        /// recovery. If <code>all paused</code>, the instance pauses automation for the duration
-        /// set by <code>--resume-full-automation-mode-minutes</code>.
+        /// The automation mode of the RDS Custom DB instance: <c>full</c> or <c>all paused</c>.
+        /// If <c>full</c>, the DB instance automates monitoring and instance recovery. If <c>all
+        /// paused</c>, the instance pauses automation for the duration set by <c>--resume-full-automation-mode-minutes</c>.
         /// </para>
         /// </summary>
         public AutomationMode AutomationMode
@@ -479,7 +478,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// This setting doesn't apply to Amazon Aurora DB instances. Copying tags to snapshots
         /// is managed by the DB cluster. Setting this value for an Aurora DB instance has no
-        /// effect on the DB cluster setting. For more information, see <code>DBCluster</code>.
+        /// effect on the DB cluster setting. For more information, see <c>DBCluster</c>.
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -547,7 +546,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// The instance profile name and the associated IAM role name must start with the prefix
-        /// <code>AWSRDSCustom</code>.
+        /// <c>AWSRDSCustom</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -762,8 +761,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSecurityGroups. 
         /// <para>
-        /// A list of DB security group elements containing <code>DBSecurityGroup.Name</code>
-        /// and <code>DBSecurityGroup.Status</code> subelements.
+        /// A list of DB security group elements containing <c>DBSecurityGroup.Name</c> and <c>DBSecurityGroup.Status</c>
+        /// subelements.
         /// </para>
         /// </summary>
         public List<DBSecurityGroupMembership> DBSecurityGroups
@@ -903,7 +902,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The endpoint might not be shown for instances with the status of <code>creating</code>.
+        /// The endpoint might not be shown for instances with the status of <c>creating</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1060,7 +1059,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is enabled, the Amazon Web Services KMS key identifier
+        /// If <c>StorageEncrypted</c> is enabled, the Amazon Web Services KMS key identifier
         /// for the encrypted DB instance.
         /// </para>
         ///  
@@ -1302,9 +1301,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB instance. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB instance.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -1315,7 +1314,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>IPV4 | DUAL</code> 
+        /// Valid Values: <c>IPV4 | DUAL</c> 
         /// </para>
         /// </summary>
         public string NetworkType
@@ -1438,21 +1437,20 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>7</code> 
+        ///  <c>7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
-        /// <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code>
-        /// (19 months * 31)
+        /// <c>93</c> (3 months * 31), <c>341</c> (11 months * 31), <c>589</c> (19 months * 31)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>731</code> 
+        ///  <c>731</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>7</code> days
+        /// Default: <c>7</c> days
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -1471,7 +1469,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, as determined by the <code>BackupRetentionPeriod</code>.
+        /// are enabled, as determined by the <c>BackupRetentionPeriod</c>.
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -1663,8 +1661,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ReplicaMode. 
         /// <para>
-        /// The open mode of an Oracle read replica. The default is <code>open-read-only</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+        /// The open mode of an Oracle read replica. The default is <c>open-read-only</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
         /// with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  <note> 
@@ -1767,7 +1765,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// This setting applies only to the <code>gp3</code> storage type.
+        /// This setting applies only to the <c>gp3</c> storage type.
         /// </para>
         /// </summary>
         public int StorageThroughput
@@ -1836,9 +1834,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The time zone of the DB instance. In most cases, the <code>Timezone</code> element
-        /// is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
-        /// that were created with a time zone specified.
+        /// The time zone of the DB instance. In most cases, the <c>Timezone</c> element is empty.
+        /// <c>Timezone</c> content appears only for Microsoft SQL Server DB instances that were
+        /// created with a time zone specified.
         /// </para>
         /// </summary>
         public string Timezone

@@ -99,7 +99,7 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property SampleFailureReason. 
         /// <para>
         /// The sample reason why the world failed. World errors are aggregated. A sample is used
-        /// as the <code>sampleFailureReason</code>. 
+        /// as the <c>sampleFailureReason</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

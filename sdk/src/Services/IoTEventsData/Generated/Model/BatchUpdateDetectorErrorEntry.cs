@@ -76,8 +76,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The <code>"messageId"</code> of the update request that caused the error. (The value
-        /// of the <code>"messageId"</code> in the update request <code>"Detector"</code> object.)
+        /// The <c>"messageId"</c> of the update request that caused the error. (The value of
+        /// the <c>"messageId"</c> in the update request <c>"Detector"</c> object.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

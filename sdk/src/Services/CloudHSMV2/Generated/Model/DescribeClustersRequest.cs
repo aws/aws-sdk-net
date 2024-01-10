@@ -36,8 +36,8 @@ namespace Amazon.CloudHSMV2.Model
     /// <para>
     /// This is a paginated operation, which means that each response might contain only a
     /// subset of all the clusters. When the response contains only a subset of clusters,
-    /// it includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeClusters</code>
-    /// request to get more clusters. When you receive a response with no <code>NextToken</code>
+    /// it includes a <c>NextToken</c> value. Use this value in a subsequent <c>DescribeClusters</c>
+    /// request to get more clusters. When you receive a response with no <c>NextToken</c>
     /// (or an empty or null value), that means there are no more clusters to get.
     /// </para>
     /// </summary>
@@ -54,18 +54,17 @@ namespace Amazon.CloudHSMV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>clusterIds</code> filter to return only the specified clusters. Specify
-        /// clusters by their cluster identifier (ID).
+        /// Use the <c>clusterIds</c> filter to return only the specified clusters. Specify clusters
+        /// by their cluster identifier (ID).
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>vpcIds</code> filter to return only the clusters in the specified virtual
+        /// Use the <c>vpcIds</c> filter to return only the clusters in the specified virtual
         /// private clouds (VPCs). Specify VPCs by their VPC identifier (ID).
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>states</code> filter to return only clusters that match the specified
-        /// state.
+        /// Use the <c>states</c> filter to return only clusters that match the specified state.
         /// </para>
         /// </summary>
         public Dictionary<string, List<string>> Filters
@@ -84,7 +83,7 @@ namespace Amazon.CloudHSMV2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of clusters to return in the response. When there are more clusters
-        /// than the number you specify, the response contains a <code>NextToken</code> value.
+        /// than the number you specify, the response contains a <c>NextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -103,8 +102,8 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value that you received in the previous response. Use this
-        /// value to get more clusters.
+        /// The <c>NextToken</c> value that you received in the previous response. Use this value
+        /// to get more clusters.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

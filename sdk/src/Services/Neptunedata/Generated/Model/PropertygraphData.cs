@@ -43,8 +43,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property From. 
         /// <para>
-        /// If this is an edge (type = <code>e</code>), the ID of the corresponding <code>from</code>
-        /// vertex or source node.
+        /// If this is an edge (type = <c>e</c>), the ID of the corresponding <c>from</c> vertex
+        /// or source node.
         /// </para>
         /// </summary>
         public string From
@@ -81,7 +81,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The property name. For element labels, this is <code>label</code>.
+        /// The property name. For element labels, this is <c>label</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,8 +100,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property To. 
         /// <para>
-        /// If this is an edge (type = <code>e</code>), the ID of the corresponding <code>to</code>
-        /// vertex or target node.
+        /// If this is an edge (type = <c>e</c>), the ID of the corresponding <c>to</c> vertex
+        /// or target node.
         /// </para>
         /// </summary>
         public string To
@@ -123,21 +123,20 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>v1</code> </b>   -   Vertex label for Gremlin, or node label for openCypher.
+        ///  <b> <c>v1</c> </b>   -   Vertex label for Gremlin, or node label for openCypher.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>vp</code> </b>   -   Vertex properties for Gremlin, or node properties
-        /// for openCypher.
+        ///  <b> <c>vp</c> </b>   -   Vertex properties for Gremlin, or node properties for openCypher.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>e</code> </b>   -   Edge and edge label for Gremlin, or relationship and
-        /// relationship type for openCypher.
+        ///  <b> <c>e</c> </b>   -   Edge and edge label for Gremlin, or relationship and relationship
+        /// type for openCypher.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ep</code> </b>   -   Edge properties for Gremlin, or relationship properties
+        ///  <b> <c>ep</c> </b>   -   Edge properties for Gremlin, or relationship properties
         /// for openCypher.
         /// </para>
         ///  </li> </ul>

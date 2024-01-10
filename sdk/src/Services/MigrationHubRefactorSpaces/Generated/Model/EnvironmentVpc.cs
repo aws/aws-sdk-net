@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
-    /// Provides summary information for the <code>EnvironmentVpc</code> resource as a response
-    /// to <code>ListEnvironmentVpc</code>.
+    /// Provides summary information for the <c>EnvironmentVpc</c> resource as a response
+    /// to <c>ListEnvironmentVpc</c>.
     /// </summary>
     public partial class EnvironmentVpc
     {

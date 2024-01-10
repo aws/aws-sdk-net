@@ -41,7 +41,7 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// An expression that specifies the conditions that you want each <code>FreeTierUsage</code>
+        /// An expression that specifies the conditions that you want each <c>FreeTierUsage</c>
         /// object to meet.
         /// </para>
         /// </summary>
@@ -60,8 +60,8 @@ namespace Amazon.FreeTier.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in the response. <code>MaxResults</code> means
-        /// that there can be up to the specified number of values, but there might be fewer results
+        /// The maximum number of results to return in the response. <c>MaxResults</c> means that
+        /// there can be up to the specified number of values, but there might be fewer results
         /// based on your filters.
         /// </para>
         /// </summary>

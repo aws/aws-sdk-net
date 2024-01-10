@@ -30,7 +30,7 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the Predict operation.
-    /// Generates a prediction for the observation using the specified <code>ML Model</code>.
+    /// Generates a prediction for the observation using the specified <c>ML Model</c>.
     /// 
     ///  
     /// <para>
@@ -47,7 +47,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// A unique identifier of the <code>MLModel</code>.
+        /// A unique identifier of the <c>MLModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

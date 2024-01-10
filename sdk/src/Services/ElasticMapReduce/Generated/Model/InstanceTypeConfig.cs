@@ -57,9 +57,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>.
-        /// Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code>
-        /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. 
+        /// The bid price for each Amazon EC2 Spot Instance type as defined by <c>InstanceType</c>.
+        /// Expressed in USD. If neither <c>BidPrice</c> nor <c>BidPriceAsPercentageOfOnDemandPrice</c>
+        /// is provided, <c>BidPriceAsPercentageOfOnDemandPrice</c> defaults to 100%. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -79,9 +79,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property BidPriceAsPercentageOfOnDemandPrice. 
         /// <para>
         /// The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance
-        /// as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies
-        /// 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code>
-        /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
+        /// as defined by <c>InstanceType</c>. Expressed as a number (for example, 20 specifies
+        /// 20%). If neither <c>BidPrice</c> nor <c>BidPriceAsPercentageOfOnDemandPrice</c> is
+        /// provided, <c>BidPriceAsPercentageOfOnDemandPrice</c> defaults to 100%.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -139,7 +139,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property EbsConfiguration. 
         /// <para>
         /// The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each instance
-        /// as defined by <code>InstanceType</code>. 
+        /// as defined by <c>InstanceType</c>. 
         /// </para>
         /// </summary>
         public EbsConfiguration EbsConfiguration
@@ -157,7 +157,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// An Amazon EC2 instance type, such as <code>m3.xlarge</code>. 
+        /// An Amazon EC2 instance type, such as <c>m3.xlarge</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -60,7 +60,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Gets and sets the property BaseStat. 
         /// <para>
         /// The statistic used to calculate experiment results. Currently the only valid value
-        /// is <code>mean</code>, which uses the mean of the collected values as the statistic.
+        /// is <c>mean</c>, which uses the mean of the collected values as the statistic.
         /// </para>
         /// </summary>
         public ExperimentBaseStat BaseStat
@@ -174,7 +174,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property ReportNames. 
         /// <para>
-        /// The names of the report types that you want to see. Currently, <code>BayesianInference</code>
+        /// The names of the report types that you want to see. Currently, <c>BayesianInference</c>
         /// is the only valid value.
         /// </para>
         /// </summary>
@@ -198,30 +198,29 @@ namespace Amazon.CloudWatchEvidently.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PValue</code> specifies to use p-values for the results. A p-value is used
-        /// in hypothesis testing to measure how often you are willing to make a mistake in rejecting
-        /// the null hypothesis. A general practice is to reject the null hypothesis and declare
-        /// that the results are statistically significant when the p-value is less than 0.05.
+        ///  <c>PValue</c> specifies to use p-values for the results. A p-value is used in hypothesis
+        /// testing to measure how often you are willing to make a mistake in rejecting the null
+        /// hypothesis. A general practice is to reject the null hypothesis and declare that the
+        /// results are statistically significant when the p-value is less than 0.05.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConfidenceInterval</code> specifies a confidence interval for the results.
-        /// The confidence interval represents the range of values for the chosen metric that
-        /// is likely to contain the true difference between the <code>baseStat</code> of a variation
-        /// and the baseline. Evidently returns the 95% confidence interval. 
+        ///  <c>ConfidenceInterval</c> specifies a confidence interval for the results. The confidence
+        /// interval represents the range of values for the chosen metric that is likely to contain
+        /// the true difference between the <c>baseStat</c> of a variation and the baseline. Evidently
+        /// returns the 95% confidence interval. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TreatmentEffect</code> is the difference in the statistic specified by the
-        /// <code>baseStat</code> parameter between each variation and the default variation.
-        /// 
+        ///  <c>TreatmentEffect</c> is the difference in the statistic specified by the <c>baseStat</c>
+        /// parameter between each variation and the default variation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BaseStat</code> returns the statistical values collected for the metric for
-        /// each variation. The statistic uses the same statistic specified in the <code>baseStat</code>
-        /// parameter. Therefore, if <code>baseStat</code> is <code>mean</code>, this returns
-        /// the mean of the values collected for each variation.
+        ///  <c>BaseStat</c> returns the statistical values collected for the metric for each
+        /// variation. The statistic uses the same statistic specified in the <c>baseStat</c>
+        /// parameter. Therefore, if <c>baseStat</c> is <c>mean</c>, this returns the mean of
+        /// the values collected for each variation.
         /// </para>
         ///  </li> </ul>
         /// </summary>

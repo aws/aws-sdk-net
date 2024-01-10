@@ -50,7 +50,7 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property ControlsCountByNoncompliantEvidence. 
         /// <para>
         /// The number of controls in the control domain that collected non-compliant evidence
-        /// on the <code>lastUpdated</code> date. 
+        /// on the <c>lastUpdated</c> date. 
         /// </para>
         /// </summary>
         public int ControlsCountByNoncompliantEvidence

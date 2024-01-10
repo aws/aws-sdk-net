@@ -79,9 +79,8 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// If the number of global tables DynamoDB finds reaches this limit, it stops the operation
-        /// and returns the table names collected up to that point, with a table name in the <code>LastEvaluatedGlobalTableName</code>
-        /// to apply in a subsequent operation to the <code>ExclusiveStartGlobalTableName</code>
-        /// parameter.
+        /// and returns the table names collected up to that point, with a table name in the <c>LastEvaluatedGlobalTableName</c>
+        /// to apply in a subsequent operation to the <c>ExclusiveStartGlobalTableName</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

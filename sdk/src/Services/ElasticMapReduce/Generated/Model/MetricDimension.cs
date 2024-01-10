@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// A CloudWatch dimension, which is specified using a <code>Key</code> (known as a <code>Name</code>
-    /// in CloudWatch), <code>Value</code> pair. By default, Amazon EMR uses one dimension
-    /// whose <code>Key</code> is <code>JobFlowID</code> and <code>Value</code> is a variable
-    /// representing the cluster ID, which is <code>${emr.clusterId}</code>. This enables
-    /// the rule to bootstrap when the cluster ID becomes available.
+    /// A CloudWatch dimension, which is specified using a <c>Key</c> (known as a <c>Name</c>
+    /// in CloudWatch), <c>Value</c> pair. By default, Amazon EMR uses one dimension whose
+    /// <c>Key</c> is <c>JobFlowID</c> and <c>Value</c> is a variable representing the cluster
+    /// ID, which is <c>${emr.clusterId}</c>. This enables the rule to bootstrap when the
+    /// cluster ID becomes available.
     /// </summary>
     public partial class MetricDimension
     {

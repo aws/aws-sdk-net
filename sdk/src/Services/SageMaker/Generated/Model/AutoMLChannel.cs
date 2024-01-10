@@ -52,10 +52,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ChannelType. 
         /// <para>
-        /// The channel type (optional) is an <code>enum</code> string. The default value is <code>training</code>.
-        /// Channels for training and validation must share the same <code>ContentType</code>
-        /// and <code>TargetAttributeName</code>. For information on specifying training and validation
-        /// channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How
+        /// The channel type (optional) is an <c>enum</c> string. The default value is <c>training</c>.
+        /// Channels for training and validation must share the same <c>ContentType</c> and <c>TargetAttributeName</c>.
+        /// For information on specifying training and validation channel types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-data-sources-training-or-validation">How
         /// to specify training and validation datasets</a>.
         /// </para>
         /// </summary>
@@ -74,7 +73,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompressionType. 
         /// <para>
-        /// You can use <code>Gzip</code> or <code>None</code>. The default value is <code>None</code>.
+        /// You can use <c>Gzip</c> or <c>None</c>. The default value is <c>None</c>.
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -92,8 +91,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The content type of the data from the input source. You can use <code>text/csv;header=present</code>
-        /// or <code>x-application/vnd.amazon+parquet</code>. The default value is <code>text/csv;header=present</code>.
+        /// The content type of the data from the input source. You can use <c>text/csv;header=present</c>
+        /// or <c>x-application/vnd.amazon+parquet</c>. The default value is <c>text/csv;header=present</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

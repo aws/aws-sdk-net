@@ -187,8 +187,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of tags to add to the bot alias. You can only add tags when you create an alias,
-        /// you can't use the <code>UpdateBotAlias</code> operation to update the tags on a bot
-        /// alias. To update tags, use the <code>TagResource</code> operation.
+        /// you can't use the <c>UpdateBotAlias</c> operation to update the tags on a bot alias.
+        /// To update tags, use the <c>TagResource</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

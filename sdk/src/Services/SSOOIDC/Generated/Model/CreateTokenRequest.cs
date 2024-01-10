@@ -33,7 +33,7 @@ namespace Amazon.SSOOIDC.Model
     /// Container for the parameters to the CreateToken operation.
     /// Creates and returns access and refresh tokens for clients that are authenticated using
     /// client secrets. The access token can be used to fetch short-term credentials for the
-    /// assigned AWS accounts or to access application APIs using <code>bearer</code> authentication.
+    /// assigned AWS accounts or to access application APIs using <c>bearer</c> authentication.
     /// </summary>
     public partial class CreateTokenRequest : AmazonSSOOIDCRequest
     {
@@ -134,11 +134,11 @@ namespace Amazon.SSOOIDC.Model
         /// </para>
         ///  
         /// <para>
-        /// * Device Code - <code>urn:ietf:params:oauth:grant-type:device_code</code> 
+        /// * Device Code - <c>urn:ietf:params:oauth:grant-type:device_code</c> 
         /// </para>
         ///  
         /// <para>
-        /// * Refresh Token - <code>refresh_token</code> 
+        /// * Refresh Token - <c>refresh_token</c> 
         /// </para>
         ///  
         /// <para>

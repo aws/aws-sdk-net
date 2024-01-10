@@ -127,7 +127,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property SharedDocumentVersion. 
         /// <para>
         /// (Optional) The version of the document to share. If it isn't specified, the system
-        /// choose the <code>Default</code> version to share.
+        /// choose the <c>Default</c> version to share.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8)]

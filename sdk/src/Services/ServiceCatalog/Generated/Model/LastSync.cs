@@ -34,23 +34,23 @@ namespace Amazon.ServiceCatalog.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>LastSyncTime</code> 
+    ///  <c>LastSyncTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastSyncStatus</code> 
+    ///  <c>LastSyncStatus</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastSyncStatusMessage</code> 
+    ///  <c>LastSyncStatusMessage</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastSuccessfulSyncTime</code> 
+    ///  <c>LastSuccessfulSyncTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastSuccessfulSyncProvisioningArtifactID</code> 
+    ///  <c>LastSuccessfulSyncProvisioningArtifactID</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -104,7 +104,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property LastSyncStatus. 
         /// <para>
-        /// The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>.
+        /// The current status of the sync. Responses include <c>SUCCEEDED</c> or <c>FAILED</c>.
         /// 
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Contains <code>ProfileObjectType</code> mapping information from the model.
+    /// Contains <c>ProfileObjectType</c> mapping information from the model.
     /// </summary>
     public partial class DetectedProfileObjectType
     {
@@ -40,7 +40,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// A map of the name and the <code>ObjectType</code> field.
+        /// A map of the name and the <c>ObjectType</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -78,7 +78,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property SourceLastUpdatedTimestampFormat. 
         /// <para>
-        /// The format of <code>sourceLastUpdatedTimestamp</code> that was detected in fields.
+        /// The format of <c>sourceLastUpdatedTimestamp</c> that was detected in fields.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

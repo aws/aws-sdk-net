@@ -42,7 +42,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DatabaseEngine. 
         /// <para>
         /// The database engine of a database in a Fleet Advisor collector inventory, for example
-        /// <code>PostgreSQL</code>.
+        /// <c>PostgreSQL</c>.
         /// </para>
         /// </summary>
         public string DatabaseEngine

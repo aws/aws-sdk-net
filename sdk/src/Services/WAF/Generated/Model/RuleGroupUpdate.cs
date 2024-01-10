@@ -42,8 +42,8 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Specifies an <code>ActivatedRule</code> and indicates whether you want to add it to
-    /// a <code>RuleGroup</code> or delete it from a <code>RuleGroup</code>.
+    /// Specifies an <c>ActivatedRule</c> and indicates whether you want to add it to a <c>RuleGroup</c>
+    /// or delete it from a <c>RuleGroup</c>.
     /// </para>
     /// </summary>
     public partial class RuleGroupUpdate
@@ -54,8 +54,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specify <code>INSERT</code> to add an <code>ActivatedRule</code> to a <code>RuleGroup</code>.
-        /// Use <code>DELETE</code> to remove an <code>ActivatedRule</code> from a <code>RuleGroup</code>.
+        /// Specify <c>INSERT</c> to add an <c>ActivatedRule</c> to a <c>RuleGroup</c>. Use <c>DELETE</c>
+        /// to remove an <c>ActivatedRule</c> from a <c>RuleGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,10 +74,10 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ActivatedRule. 
         /// <para>
-        /// The <code>ActivatedRule</code> object specifies a <code>Rule</code> that you want
-        /// to insert or delete, the priority of the <code>Rule</code> in the <code>WebACL</code>,
-        /// and the action that you want AWS WAF to take when a web request matches the <code>Rule</code>
-        /// (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).
+        /// The <c>ActivatedRule</c> object specifies a <c>Rule</c> that you want to insert or
+        /// delete, the priority of the <c>Rule</c> in the <c>WebACL</c>, and the action that
+        /// you want AWS WAF to take when a web request matches the <c>Rule</c> (<c>ALLOW</c>,
+        /// <c>BLOCK</c>, or <c>COUNT</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

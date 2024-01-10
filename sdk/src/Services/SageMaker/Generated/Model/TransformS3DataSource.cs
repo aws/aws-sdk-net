@@ -39,24 +39,22 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataType. 
         /// <para>
-        /// If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix.
-        /// Amazon SageMaker uses all objects with the specified key name prefix for batch transform.
-        /// 
+        /// If you choose <c>S3Prefix</c>, <c>S3Uri</c> identifies a key name prefix. Amazon SageMaker
+        /// uses all objects with the specified key name prefix for batch transform. 
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that
-        /// is a manifest file containing a list of object keys that you want Amazon SageMaker
-        /// to use for batch transform. 
+        /// If you choose <c>ManifestFile</c>, <c>S3Uri</c> identifies an object that is a manifest
+        /// file containing a list of object keys that you want Amazon SageMaker to use for batch
+        /// transform. 
         /// </para>
         ///  
         /// <para>
-        /// The following values are compatible: <code>ManifestFile</code>, <code>S3Prefix</code>
-        /// 
+        /// The following values are compatible: <c>ManifestFile</c>, <c>S3Prefix</c> 
         /// </para>
         ///  
         /// <para>
-        /// The following value is not compatible: <code>AugmentedManifestFile</code> 
+        /// The following value is not compatible: <c>AugmentedManifestFile</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,17 +73,16 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// Depending on the value specified for the <code>S3DataType</code>, identifies either
-        /// a key name prefix or a manifest. For example:
+        /// Depending on the value specified for the <c>S3DataType</c>, identifies either a key
+        /// name prefix or a manifest. For example:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  A key name prefix might look like this: <code>s3://bucketname/exampleprefix</code>.
-        /// 
+        ///  A key name prefix might look like this: <c>s3://bucketname/exampleprefix</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  A manifest might look like this: <code>s3://bucketname/example.manifest</code> 
+        ///  A manifest might look like this: <c>s3://bucketname/example.manifest</c> 
         /// </para>
         ///  
         /// <para>
@@ -93,54 +90,53 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ {"prefix": "s3://customer_bucket/some/prefix/"},</code> 
+        ///  <c>[ {"prefix": "s3://customer_bucket/some/prefix/"},</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"relative/path/to/custdata-1",</code> 
+        ///  <c>"relative/path/to/custdata-1",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"relative/path/custdata-2",</code> 
+        ///  <c>"relative/path/custdata-2",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>...</code> 
+        ///  <c>...</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"relative/path/custdata-N"</code> 
+        ///  <c>"relative/path/custdata-N"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>]</code> 
+        ///  <c>]</c> 
         /// </para>
         ///  
         /// <para>
-        ///  The preceding JSON matches the following <code>S3Uris</code>: 
+        ///  The preceding JSON matches the following <c>S3Uris</c>: 
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code> 
+        ///  <c>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code> 
+        ///  <c>s3://customer_bucket/some/prefix/relative/path/custdata-2</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>...</code> 
+        ///  <c>...</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code> 
+        ///  <c>s3://customer_bucket/some/prefix/relative/path/custdata-N</c> 
         /// </para>
         ///  
         /// <para>
-        ///  The complete set of <code>S3Uris</code> in this manifest constitutes the input data
-        /// for the channel for this datasource. The object that each <code>S3Uris</code> points
-        /// to must be readable by the IAM role that Amazon SageMaker uses to perform tasks on
-        /// your behalf.
+        ///  The complete set of <c>S3Uris</c> in this manifest constitutes the input data for
+        /// the channel for this datasource. The object that each <c>S3Uris</c> points to must
+        /// be readable by the IAM role that Amazon SageMaker uses to perform tasks on your behalf.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -31,11 +31,11 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the ListQueries operation.
     /// Returns a list of queries and query statuses for the past seven days. You must specify
-    /// an ARN value for <code>EventDataStore</code>. Optionally, to shorten the list of results,
-    /// you can specify a time range, formatted as timestamps, by adding <code>StartTime</code>
-    /// and <code>EndTime</code> parameters, and a <code>QueryStatus</code> value. Valid values
-    /// for <code>QueryStatus</code> include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>,
-    /// <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>CANCELLED</code>.
+    /// an ARN value for <c>EventDataStore</c>. Optionally, to shorten the list of results,
+    /// you can specify a time range, formatted as timestamps, by adding <c>StartTime</c>
+    /// and <c>EndTime</c> parameters, and a <c>QueryStatus</c> value. Valid values for <c>QueryStatus</c>
+    /// include <c>QUEUED</c>, <c>RUNNING</c>, <c>FINISHED</c>, <c>FAILED</c>, <c>TIMED_OUT</c>,
+    /// or <c>CANCELLED</c>.
     /// </summary>
     public partial class ListQueriesRequest : AmazonCloudTrailRequest
     {
@@ -49,8 +49,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// Use with <code>StartTime</code> to bound a <code>ListQueries</code> request, and limit
-        /// its results to only those queries run within a specified time period.
+        /// Use with <c>StartTime</c> to bound a <c>ListQueries</c> request, and limit its results
+        /// to only those queries run within a specified time period.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -126,9 +126,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property QueryStatus. 
         /// <para>
-        /// The status of queries that you want to return in results. Valid values for <code>QueryStatus</code>
-        /// include <code>QUEUED</code>, <code>RUNNING</code>, <code>FINISHED</code>, <code>FAILED</code>,
-        /// <code>TIMED_OUT</code>, or <code>CANCELLED</code>.
+        /// The status of queries that you want to return in results. Valid values for <c>QueryStatus</c>
+        /// include <c>QUEUED</c>, <c>RUNNING</c>, <c>FINISHED</c>, <c>FAILED</c>, <c>TIMED_OUT</c>,
+        /// or <c>CANCELLED</c>.
         /// </para>
         /// </summary>
         public QueryStatus QueryStatus
@@ -146,8 +146,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// Use with <code>EndTime</code> to bound a <code>ListQueries</code> request, and limit
-        /// its results to only those queries run within a specified time period.
+        /// Use with <c>EndTime</c> to bound a <c>ListQueries</c> request, and limit its results
+        /// to only those queries run within a specified time period.
         /// </para>
         /// </summary>
         public DateTime StartTime

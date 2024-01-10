@@ -38,8 +38,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyTargets. 
         /// <para>
-        /// One or more <code>DBProxyTarget</code> objects that are created when you register
-        /// targets with a target group.
+        /// One or more <c>DBProxyTarget</c> objects that are created when you register targets
+        /// with a target group.
         /// </para>
         /// </summary>
         public List<DBProxyTarget> DBProxyTargets

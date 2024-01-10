@@ -58,13 +58,13 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// Once you've initiated testing on an extension using <code>TestType</code>, you can
-    /// pass the returned <code>TypeVersionArn</code> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
+    /// Once you've initiated testing on an extension using <c>TestType</c>, you can pass
+    /// the returned <c>TypeVersionArn</c> into <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>
     /// to monitor the current test status and test status description for the extension.
     /// </para>
     ///  
     /// <para>
-    /// An extension must have a test status of <code>PASSED</code> before it can be published.
+    /// An extension must have a test status of <c>PASSED</c> before it can be published.
     /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-publish.html">Publishing
     /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
     /// User Guide</i>.
@@ -85,7 +85,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
+        /// Conditional: You must specify <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -109,20 +109,20 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// CloudFormation delivers the logs by the time contract testing has completed and the
-        /// extension has been assigned a test type status of <code>PASSED</code> or <code>FAILED</code>.
+        /// extension has been assigned a test type status of <c>PASSED</c> or <c>FAILED</c>.
         /// </para>
         ///  
         /// <para>
-        /// The user calling <code>TestType</code> must be able to access items in the specified
-        /// S3 bucket. Specifically, the user needs the following permissions:
+        /// The user calling <c>TestType</c> must be able to access items in the specified S3
+        /// bucket. Specifically, the user needs the following permissions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GetObject</code> 
+        ///  <c>GetObject</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PutObject</code> 
+        ///  <c>PutObject</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -151,7 +151,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
+        /// Conditional: You must specify <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         public ThirdPartyType Type
@@ -173,7 +173,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>Arn</code>, or <code>TypeName</code> and <code>Type</code>.
+        /// Conditional: You must specify <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]
@@ -196,8 +196,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify the version id with either <code>Arn</code>, or with <code>TypeName</code>
-        /// and <code>Type</code>.
+        /// You can specify the version id with either <c>Arn</c>, or with <c>TypeName</c> and
+        /// <c>Type</c>.
         /// </para>
         ///  
         /// <para>

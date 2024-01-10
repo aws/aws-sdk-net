@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EventBridge.Model
 {
     /// <summary>
-    /// A <code>DeadLetterConfig</code> object that contains information about a dead-letter
-    /// queue configuration.
+    /// A <c>DeadLetterConfig</c> object that contains information about a dead-letter queue
+    /// configuration.
     /// </summary>
     public partial class DeadLetterConfig
     {

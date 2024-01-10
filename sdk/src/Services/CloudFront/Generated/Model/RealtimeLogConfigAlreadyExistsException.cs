@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A real-time log configuration with this name already exists. You must provide a unique
-    /// name. To modify an existing real-time log configuration, use <code>UpdateRealtimeLogConfig</code>.
+    /// name. To modify an existing real-time log configuration, use <c>UpdateRealtimeLogConfig</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

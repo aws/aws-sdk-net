@@ -53,8 +53,8 @@ namespace Amazon.Account.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The management account can't specify its own <code>AccountId</code>. It must call
-        /// the operation in standalone context by not including the <code>AccountId</code> parameter.
+        /// The management account can't specify its own <c>AccountId</c>. It must call the operation
+        /// in standalone context by not including the <c>AccountId</c> parameter.
         /// </para>
         ///  </note> 
         /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.Account.Model
         /// <summary>
         /// Gets and sets the property RegionName. 
         /// <para>
-        /// Specifies the Region-code for a given Region name (for example, <code>af-south-1</code>).
+        /// Specifies the Region-code for a given Region name (for example, <c>af-south-1</c>).
         /// This function will return the status of whatever Region you pass into this parameter.
         /// 
         /// </para>

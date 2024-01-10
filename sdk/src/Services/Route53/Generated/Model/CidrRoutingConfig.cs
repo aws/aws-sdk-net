@@ -34,8 +34,8 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// A <code>LocationName</code> with an asterisk “*” can be used to create a default CIDR
-    /// record. <code>CollectionId</code> is still required for default record.
+    /// A <c>LocationName</c> with an asterisk “*” can be used to create a default CIDR record.
+    /// <c>CollectionId</c> is still required for default record.
     /// </para>
     /// </summary>
     public partial class CidrRoutingConfig

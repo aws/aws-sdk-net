@@ -416,7 +416,7 @@ namespace Amazon.NetworkManager
         /// a transit gateway or core network, customer gateways that are connected to the transit
         /// gateway are automatically included in the global network. To list customer gateways
         /// that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a>
-        /// EC2 API and filter by <code>transit-gateway-id</code>.
+        /// EC2 API and filter by <c>transit-gateway-id</c>.
         /// </para>
         ///  
         /// <para>
@@ -1908,7 +1908,7 @@ namespace Amazon.NetworkManager
 
         /// <summary>
         /// Describes one or more global networks. By default, all global networks are described.
-        /// To describe the objects in your global network, you must use the appropriate <code>Get*</code>
+        /// To describe the objects in your global network, you must use the appropriate <c>Get*</c>
         /// action. For example, to list the transit gateways in your global network, use <a>GetTransitGatewayRegistrations</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeGlobalNetworks service method.</param>

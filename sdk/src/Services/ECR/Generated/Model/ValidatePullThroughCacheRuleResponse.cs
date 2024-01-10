@@ -102,10 +102,10 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property IsValid. 
         /// <para>
-        /// Whether or not the pull through cache rule was validated. If <code>true</code>, Amazon
-        /// ECR was able to reach the upstream registry and authentication was successful. If
-        /// <code>false</code>, there was an issue and validation failed. The <code>failure</code>
-        /// reason indicates the cause.
+        /// Whether or not the pull through cache rule was validated. If <c>true</c>, Amazon ECR
+        /// was able to reach the upstream registry and authentication was successful. If <c>false</c>,
+        /// there was an issue and validation failed. The <c>failure</c> reason indicates the
+        /// cause.
         /// </para>
         /// </summary>
         public bool IsValid

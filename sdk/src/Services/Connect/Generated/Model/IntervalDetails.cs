@@ -39,51 +39,51 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property IntervalPeriod. 
         /// <para>
-        ///  <code>IntervalPeriod</code>: An aggregated grouping applied to request metrics. Valid
-        /// <code>IntervalPeriod</code> values are: <code>FIFTEEN_MIN</code> | <code>THIRTY_MIN</code>
-        /// | <code>HOUR</code> | <code>DAY</code> | <code>WEEK</code> | <code>TOTAL</code>. 
+        ///  <c>IntervalPeriod</c>: An aggregated grouping applied to request metrics. Valid <c>IntervalPeriod</c>
+        /// values are: <c>FIFTEEN_MIN</c> | <c>THIRTY_MIN</c> | <c>HOUR</c> | <c>DAY</c> | <c>WEEK</c>
+        /// | <c>TOTAL</c>. 
         /// </para>
         ///  
         /// <para>
-        /// For example, if <code>IntervalPeriod</code> is selected <code>THIRTY_MIN</code>, <code>StartTime</code>
-        /// and <code>EndTime</code> differs by 1 day, then Amazon Connect returns 48 results
-        /// in the response. Each result is aggregated by the THIRTY_MIN period. By default Amazon
-        /// Connect aggregates results based on the <code>TOTAL</code> interval period. 
+        /// For example, if <c>IntervalPeriod</c> is selected <c>THIRTY_MIN</c>, <c>StartTime</c>
+        /// and <c>EndTime</c> differs by 1 day, then Amazon Connect returns 48 results in the
+        /// response. Each result is aggregated by the THIRTY_MIN period. By default Amazon Connect
+        /// aggregates results based on the <c>TOTAL</c> interval period. 
         /// </para>
         ///  
         /// <para>
-        /// The following list describes restrictions on <code>StartTime</code> and <code>EndTime</code>
-        /// based on what <code>IntervalPeriod</code> is requested. 
+        /// The following list describes restrictions on <c>StartTime</c> and <c>EndTime</c> based
+        /// on what <c>IntervalPeriod</c> is requested. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FIFTEEN_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 3 days.
+        ///  <c>FIFTEEN_MIN</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must
+        /// be less than 3 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>THIRTY_MIN</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 3 days.
+        ///  <c>THIRTY_MIN</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must
+        /// be less than 3 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HOUR</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 3 days.
+        ///  <c>HOUR</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be less
+        /// than 3 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DAY</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 35 days.
+        ///  <c>DAY</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be less
+        /// than 35 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WEEK</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 35 days.
+        ///  <c>WEEK</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be less
+        /// than 35 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TOTAL</code>: The difference between <code>StartTime</code> and <code>EndTime</code>
-        /// must be less than 35 days.
+        ///  <c>TOTAL</c>: The difference between <c>StartTime</c> and <c>EndTime</c> must be
+        /// less than 35 days.
         /// </para>
         ///  </li> </ul>
         /// </summary>

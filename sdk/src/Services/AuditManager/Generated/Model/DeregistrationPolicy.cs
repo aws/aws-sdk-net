@@ -63,15 +63,15 @@ namespace Amazon.AuditManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you set the value to <code>ALL</code>, all of your data is deleted within seven
-        /// days of deregistration.
+        /// If you set the value to <c>ALL</c>, all of your data is deleted within seven days
+        /// of deregistration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you set the value to <code>DEFAULT</code>, none of your data is deleted at the
-        /// time of deregistration. However, keep in mind that the Audit Manager data retention
-        /// policy still applies. As a result, any evidence data will be deleted two years after
-        /// its creation date. Your other Audit Manager resources will continue to exist indefinitely.
+        /// If you set the value to <c>DEFAULT</c>, none of your data is deleted at the time of
+        /// deregistration. However, keep in mind that the Audit Manager data retention policy
+        /// still applies. As a result, any evidence data will be deleted two years after its
+        /// creation date. Your other Audit Manager resources will continue to exist indefinitely.
         /// </para>
         ///  </li> </ul>
         /// </summary>

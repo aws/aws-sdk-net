@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetMLModel</code> operation. 
+    /// Represents the output of a <c>GetMLModel</c> operation. 
     /// 
     ///  
     /// <para>
-    /// The content consists of the detailed metadata and the current status of the <code>MLModel</code>.
+    /// The content consists of the detailed metadata and the current status of the <c>MLModel</c>.
     /// </para>
     /// </summary>
     public partial class MLModel
@@ -61,12 +61,12 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Algorithm. 
         /// <para>
-        /// The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
+        /// The algorithm used to train the <c>MLModel</c>. The following algorithm is supported:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is
-        /// to minimize the gradient of the loss function. 
+        ///  <c>SGD</c> -- Stochastic gradient descent. The goal of <c>SGD</c> is to minimize
+        /// the gradient of the loss function. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,8 +100,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time that the <code>MLModel</code> was created. The time is expressed in epoch
-        /// time.
+        /// The time that the <c>MLModel</c> was created. The time is expressed in epoch time.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -119,9 +118,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedByIamUser. 
         /// <para>
-        /// The AWS user account from which the <code>MLModel</code> was created. The account
-        /// type can be either an AWS root account or an AWS Identity and Access Management (IAM)
-        /// user account.
+        /// The AWS user account from which the <c>MLModel</c> was created. The account type can
+        /// be either an AWS root account or an AWS Identity and Access Management (IAM) user
+        /// account.
         /// </para>
         /// </summary>
         public string CreatedByIamUser
@@ -139,7 +138,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EndpointInfo. 
         /// <para>
-        /// The current endpoint of the <code>MLModel</code>.
+        /// The current endpoint of the <c>MLModel</c>.
         /// </para>
         /// </summary>
         public RealtimeEndpointInfo EndpointInfo
@@ -192,8 +191,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time of the most recent edit to the <code>MLModel</code>. The time is expressed
-        /// in epoch time.
+        /// The time of the most recent edit to the <c>MLModel</c>. The time is expressed in epoch
+        /// time.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -211,7 +210,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A description of the most recent details about accessing the <code>MLModel</code>.
+        /// A description of the most recent details about accessing the <c>MLModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10240)]
@@ -230,7 +229,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID assigned to the <code>MLModel</code> at creation.
+        /// The ID assigned to the <c>MLModel</c> at creation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -249,22 +248,22 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelType. 
         /// <para>
-        /// Identifies the <code>MLModel</code> category. The following are the available types:
+        /// Identifies the <c>MLModel</c> category. The following are the available types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REGRESSION</code> - Produces a numeric result. For example, "What price should
-        /// a house be listed at?"
+        ///  <c>REGRESSION</c> - Produces a numeric result. For example, "What price should a
+        /// house be listed at?"
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BINARY</code> - Produces one of two possible results. For example, "Is this
-        /// a child-friendly web site?".
+        ///  <c>BINARY</c> - Produces one of two possible results. For example, "Is this a child-friendly
+        /// web site?".
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MULTICLASS</code> - Produces one of several possible results. For example,
-        /// "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+        ///  <c>MULTICLASS</c> - Produces one of several possible results. For example, "Is this
+        /// a HIGH-, LOW-, or MEDIUM-risk trade?".
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -283,7 +282,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user-supplied name or description of the <code>MLModel</code>.
+        /// A user-supplied name or description of the <c>MLModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -317,7 +316,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ScoreThresholdLastUpdatedAt. 
         /// <para>
-        /// The time of the most recent edit to the <code>ScoreThreshold</code>. The time is expressed
+        /// The time of the most recent edit to the <c>ScoreThreshold</c>. The time is expressed
         /// in epoch time.
         /// </para>
         /// </summary>
@@ -366,30 +365,30 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of an <code>MLModel</code>. This element can have one of the following
+        /// The current status of an <c>MLModel</c>. This element can have one of the following
         /// values: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to
-        /// create an <code>MLModel</code>.
+        ///  <c>PENDING</c> - Amazon Machine Learning (Amazon ML) submitted a request to create
+        /// an <c>MLModel</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INPROGRESS</code> - The creation process is underway.
+        ///  <c>INPROGRESS</c> - The creation process is underway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to
-        /// completion. The model isn't usable.
+        ///  <c>FAILED</c> - The request to create an <c>MLModel</c> didn't run to completion.
+        /// The model isn't usable.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - The creation process completed successfully.
+        ///  <c>COMPLETED</c> - The creation process completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+        ///  <c>DELETED</c> - The <c>MLModel</c> is marked as deleted. It isn't usable.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -408,8 +407,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property TrainingDataSourceId. 
         /// <para>
-        /// The ID of the training <code>DataSource</code>. The <code>CreateMLModel</code> operation
-        /// uses the <code>TrainingDataSourceId</code>.
+        /// The ID of the training <c>DataSource</c>. The <c>CreateMLModel</c> operation uses
+        /// the <c>TrainingDataSourceId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -428,8 +427,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property TrainingParameters. 
         /// <para>
-        /// A list of the training parameters in the <code>MLModel</code>. The list is implemented
-        /// as a map of key-value pairs.
+        /// A list of the training parameters in the <c>MLModel</c>. The list is implemented as
+        /// a map of key-value pairs.
         /// </para>
         ///  
         /// <para>
@@ -437,52 +436,52 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>sgd.maxMLModelSizeInBytes</code> - The maximum allowed size of the model. Depending
+        ///  <c>sgd.maxMLModelSizeInBytes</c> - The maximum allowed size of the model. Depending
         /// on the input data, the size of the model might affect its performance.
         /// </para>
         ///  
         /// <para>
-        ///  The value is an integer that ranges from <code>100000</code> to <code>2147483648</code>.
-        /// The default value is <code>33554432</code>.
+        ///  The value is an integer that ranges from <c>100000</c> to <c>2147483648</c>. The
+        /// default value is <c>33554432</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sgd.maxPasses</code> - The number of times that the training process traverses
-        /// the observations to build the <code>MLModel</code>. The value is an integer that ranges
-        /// from <code>1</code> to <code>10000</code>. The default value is <code>10</code>.
+        ///  <c>sgd.maxPasses</c> - The number of times that the training process traverses the
+        /// observations to build the <c>MLModel</c>. The value is an integer that ranges from
+        /// <c>1</c> to <c>10000</c>. The default value is <c>10</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sgd.shuffleType</code> - Whether Amazon ML shuffles the training data. Shuffling
+        ///  <c>sgd.shuffleType</c> - Whether Amazon ML shuffles the training data. Shuffling
         /// the data improves a model's ability to find the optimal solution for a variety of
-        /// data types. The valid values are <code>auto</code> and <code>none</code>. The default
-        /// value is <code>none</code>.
+        /// data types. The valid values are <c>auto</c> and <c>none</c>. The default value is
+        /// <c>none</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sgd.l1RegularizationAmount</code> - The coefficient regularization L1 norm,
-        /// which controls overfitting the data by penalizing large coefficients. This parameter
-        /// tends to drive coefficients to zero, resulting in sparse feature set. If you use this
-        /// parameter, start by specifying a small value, such as <code>1.0E-08</code>.
+        ///  <c>sgd.l1RegularizationAmount</c> - The coefficient regularization L1 norm, which
+        /// controls overfitting the data by penalizing large coefficients. This parameter tends
+        /// to drive coefficients to zero, resulting in sparse feature set. If you use this parameter,
+        /// start by specifying a small value, such as <c>1.0E-08</c>.
         /// </para>
         ///  
         /// <para>
-        /// The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L1 normalization. This parameter can't be used when <code>L2</code>
-        /// is specified. Use this parameter sparingly.
+        /// The value is a double that ranges from <c>0</c> to <c>MAX_DOUBLE</c>. The default
+        /// is to not use L1 normalization. This parameter can't be used when <c>L2</c> is specified.
+        /// Use this parameter sparingly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sgd.l2RegularizationAmount</code> - The coefficient regularization L2 norm,
-        /// which controls overfitting the data by penalizing large coefficients. This tends to
-        /// drive coefficients to small, nonzero values. If you use this parameter, start by specifying
-        /// a small value, such as <code>1.0E-08</code>.
+        ///  <c>sgd.l2RegularizationAmount</c> - The coefficient regularization L2 norm, which
+        /// controls overfitting the data by penalizing large coefficients. This tends to drive
+        /// coefficients to small, nonzero values. If you use this parameter, start by specifying
+        /// a small value, such as <c>1.0E-08</c>.
         /// </para>
         ///  
         /// <para>
-        /// The value is a double that ranges from <code>0</code> to <code>MAX_DOUBLE</code>.
-        /// The default is to not use L2 normalization. This parameter can't be used when <code>L1</code>
-        /// is specified. Use this parameter sparingly.
+        /// The value is a double that ranges from <c>0</c> to <c>MAX_DOUBLE</c>. The default
+        /// is to not use L2 normalization. This parameter can't be used when <c>L1</c> is specified.
+        /// Use this parameter sparingly.
         /// </para>
         ///  </li> </ul>
         /// </summary>

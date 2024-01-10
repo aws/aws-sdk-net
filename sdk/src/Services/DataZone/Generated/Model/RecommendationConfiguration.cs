@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The recommendation to be updated as part of the <code>UpdateDataSource</code> action.
+    /// The recommendation to be updated as part of the <c>UpdateDataSource</c> action.
     /// </summary>
     public partial class RecommendationConfiguration
     {

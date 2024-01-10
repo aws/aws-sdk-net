@@ -37,8 +37,8 @@ namespace Amazon.Backup.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To set a control scope that includes all of a particular resource, leave the <code>ControlScope</code>
-    /// empty or do not pass it when calling <code>CreateFramework</code>.
+    /// To set a control scope that includes all of a particular resource, leave the <c>ControlScope</c>
+    /// empty or do not pass it when calling <c>CreateFramework</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -72,7 +72,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ComplianceResourceTypes. 
         /// <para>
         /// Describes whether the control scope includes one or more types of resources, such
-        /// as <code>EFS</code> or <code>RDS</code>.
+        /// as <c>EFS</c> or <c>RDS</c>.
         /// </para>
         /// </summary>
         public List<string> ComplianceResourceTypes
@@ -93,7 +93,7 @@ namespace Amazon.Backup.Model
         /// The tag key-value pair applied to those Amazon Web Services resources that you want
         /// to trigger an evaluation for a rule. A maximum of one key-value pair can be provided.
         /// The tag value is optional, but it cannot be an empty string. The structure to assign
-        /// a tag is: <code>[{"Key":"string","Value":"string"}]</code>.
+        /// a tag is: <c>[{"Key":"string","Value":"string"}]</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

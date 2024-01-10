@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You specified the <code>Safe</code> option for the DeregisterTargetFromMaintenanceWindow
+    /// You specified the <c>Safe</c> option for the DeregisterTargetFromMaintenanceWindow
     /// operation, but the target is still referenced in a task.
     /// </summary>
     #if !NETSTANDARD

@@ -80,10 +80,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AccessAlternateDirectly. 
         /// <para>
-        /// Set this attribute to <code>false</code> in order to use the Binary Reader to capture
-        /// change data for an Amazon RDS for Oracle as the source. This tells the DMS instance
-        /// to not access redo logs through any specified path prefix replacement using direct
-        /// file access.
+        /// Set this attribute to <c>false</c> in order to use the Binary Reader to capture change
+        /// data for an Amazon RDS for Oracle as the source. This tells the DMS instance to not
+        /// access redo logs through any specified path prefix replacement using direct file access.
         /// </para>
         /// </summary>
         public bool AccessAlternateDirectly
@@ -101,16 +100,16 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AdditionalArchivedLogDestId. 
         /// <para>
-        /// Set this attribute with <code>ArchivedLogDestId</code> in a primary/ standby setup.
-        /// This attribute is useful in the case of a switchover. In this case, DMS needs to know
-        /// which destination to get archive redo logs from to read changes. This need arises
-        /// because the previous primary instance is now a standby instance after switchover.
+        /// Set this attribute with <c>ArchivedLogDestId</c> in a primary/ standby setup. This
+        /// attribute is useful in the case of a switchover. In this case, DMS needs to know which
+        /// destination to get archive redo logs from to read changes. This need arises because
+        /// the previous primary instance is now a standby instance after switchover.
         /// </para>
         ///  
         /// <para>
-        /// Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open
-        /// the database, never use <code>RESETLOGS</code> unless necessary. For additional information
-        /// about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN
+        /// Although DMS supports the use of the Oracle <c>RESETLOGS</c> option to open the database,
+        /// never use <c>RESETLOGS</c> unless necessary. For additional information about <c>RESETLOGS</c>,
+        /// see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">RMAN
         /// Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's Guide</i>.
         /// </para>
         /// </summary>
@@ -153,7 +152,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AllowSelectNestedTables. 
         /// <para>
-        /// Set this attribute to <code>true</code> to enable replication of Oracle tables containing
+        /// Set this attribute to <c>true</c> to enable replication of Oracle tables containing
         /// columns that are nested tables or defined types.
         /// </para>
         /// </summary>
@@ -174,7 +173,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Specifies the ID of the destination for the archived redo logs. This value should
         /// be the same as a number in the dest_id column of the v$archived_log view. If you work
-        /// with an additional redo log destination, use the <code>AdditionalArchivedLogDestId</code>
+        /// with an additional redo log destination, use the <c>AdditionalArchivedLogDestId</c>
         /// option to specify the additional destination ID. Doing this improves performance by
         /// ensuring that the correct logs are accessed from the outset.
         /// </para>
@@ -194,9 +193,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ArchivedLogsOnly. 
         /// <para>
-        /// When this field is set to <code>Y</code>, DMS only accesses the archived redo logs.
-        /// If the archived redo logs are stored on Automatic Storage Management (ASM) only, the
-        /// DMS user account needs to be granted ASM privileges.
+        /// When this field is set to <c>Y</c>, DMS only accesses the archived redo logs. If the
+        /// archived redo logs are stored on Automatic Storage Management (ASM) only, the DMS
+        /// user account needs to be granted ASM privileges.
         /// </para>
         /// </summary>
         public bool ArchivedLogsOnly
@@ -215,10 +214,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AsmPassword. 
         /// <para>
         /// For an Oracle source endpoint, your Oracle Automatic Storage Management (ASM) password.
-        /// You can set this value from the <code> <i>asm_user_password</i> </code> value. You
-        /// set this value as part of the comma-separated value that you set to the <code>Password</code>
-        /// request parameter when you create the endpoint to access transaction logs using Binary
-        /// Reader. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
+        /// You can set this value from the <c> <i>asm_user_password</i> </c> value. You set this
+        /// value as part of the comma-separated value that you set to the <c>Password</c> request
+        /// parameter when you create the endpoint to access transaction logs using Binary Reader.
+        /// For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
         /// for change data capture (CDC) on an Oracle source database</a>.
         /// </para>
         /// </summary>
@@ -239,9 +238,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AsmServer. 
         /// <para>
         /// For an Oracle source endpoint, your ASM server address. You can set this value from
-        /// the <code>asm_server</code> value. You set <code>asm_server</code> as part of the
-        /// extra connection attribute string to access an Oracle server with Binary Reader that
-        /// uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
+        /// the <c>asm_server</c> value. You set <c>asm_server</c> as part of the extra connection
+        /// attribute string to access an Oracle server with Binary Reader that uses ASM. For
+        /// more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
         /// for change data capture (CDC) on an Oracle source database</a>.
         /// </para>
         /// </summary>
@@ -261,9 +260,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AsmUser. 
         /// <para>
         /// For an Oracle source endpoint, your ASM user name. You can set this value from the
-        /// <code>asm_user</code> value. You set <code>asm_user</code> as part of the extra connection
-        /// attribute string to access an Oracle server with Binary Reader that uses ASM. For
-        /// more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
+        /// <c>asm_user</c> value. You set <c>asm_user</c> as part of the extra connection attribute
+        /// string to access an Oracle server with Binary Reader that uses ASM. For more information,
+        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
         /// for change data capture (CDC) on an Oracle source database</a>.
         /// </para>
         /// </summary>
@@ -284,11 +283,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Specifies whether the length of a character column is in bytes or in characters. To
         /// indicate that the character column length is in characters, set this attribute to
-        /// <code>CHAR</code>. Otherwise, the character column length is in bytes.
+        /// <c>CHAR</c>. Otherwise, the character column length is in bytes.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>charLengthSemantics=CHAR;</code> 
+        /// Example: <c>charLengthSemantics=CHAR;</c> 
         /// </para>
         /// </summary>
         public CharLengthSemantics CharLengthSemantics
@@ -306,8 +305,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ConvertTimestampWithZoneToUTC. 
         /// <para>
-        /// When true, converts timestamps with the <code>timezone</code> datatype to their UTC
-        /// value.
+        /// When true, converts timestamps with the <c>timezone</c> datatype to their UTC value.
         /// </para>
         /// </summary>
         public bool ConvertTimestampWithZoneToUTC
@@ -343,9 +341,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DirectPathNoLog. 
         /// <para>
-        /// When set to <code>true</code>, this attribute helps to increase the commit rate on
-        /// the Oracle target database by writing directly to tables and not writing a trail to
-        /// database logs.
+        /// When set to <c>true</c>, this attribute helps to increase the commit rate on the Oracle
+        /// target database by writing directly to tables and not writing a trail to database
+        /// logs.
         /// </para>
         /// </summary>
         public bool DirectPathNoLog
@@ -363,8 +361,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DirectPathParallelLoad. 
         /// <para>
-        /// When set to <code>true</code>, this attribute specifies a parallel load when <code>useDirectPathFullLoad</code>
-        /// is set to <code>Y</code>. This attribute also only applies when you use the DMS parallel
+        /// When set to <c>true</c>, this attribute specifies a parallel load when <c>useDirectPathFullLoad</c>
+        /// is set to <c>Y</c>. This attribute also only applies when you use the DMS parallel
         /// load feature. Note that the target table cannot have any constraints or indexes.
         /// </para>
         /// </summary>
@@ -403,9 +401,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ExtraArchivedLogDestIds. 
         /// <para>
         /// Specifies the IDs of one more destinations for one or more archived redo logs. These
-        /// IDs are the values of the <code>dest_id</code> column in the <code>v$archived_log</code>
-        /// view. Use this setting with the <code>archivedLogDestId</code> extra connection attribute
-        /// in a primary-to-single setup or a primary-to-multiple-standby setup. 
+        /// IDs are the values of the <c>dest_id</c> column in the <c>v$archived_log</c> view.
+        /// Use this setting with the <c>archivedLogDestId</c> extra connection attribute in a
+        /// primary-to-single setup or a primary-to-multiple-standby setup. 
         /// </para>
         ///  
         /// <para>
@@ -417,7 +415,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</code> 
+        ///  <c>archivedLogDestId=1; ExtraArchivedLogDestIds=[2]</c> 
         /// </para>
         ///  
         /// <para>
@@ -425,13 +423,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</code> 
+        ///  <c>archivedLogDestId=1; ExtraArchivedLogDestIds=[2,3,4]</c> 
         /// </para>
         ///  
         /// <para>
-        /// Although DMS supports the use of the Oracle <code>RESETLOGS</code> option to open
-        /// the database, never use <code>RESETLOGS</code> unless it's necessary. For more information
-        /// about <code>RESETLOGS</code>, see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
+        /// Although DMS supports the use of the Oracle <c>RESETLOGS</c> option to open the database,
+        /// never use <c>RESETLOGS</c> unless it's necessary. For more information about <c>RESETLOGS</c>,
+        /// see <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/bradv/rman-data-repair-concepts.html#GUID-1805CCF7-4AF2-482D-B65A-998192F89C2B">
         /// RMAN Data Repair Concepts</a> in the <i>Oracle Database Backup and Recovery User's
         /// Guide</i>.
         /// </para>
@@ -451,13 +449,13 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property FailTasksOnLobTruncation. 
         /// <para>
-        /// When set to <code>true</code>, this attribute causes a task to fail if the actual
-        /// size of an LOB column is greater than the specified <code>LobMaxSize</code>.
+        /// When set to <c>true</c>, this attribute causes a task to fail if the actual size of
+        /// an LOB column is greater than the specified <c>LobMaxSize</c>.
         /// </para>
         ///  
         /// <para>
-        /// If a task is set to limited LOB mode and this option is set to <code>true</code>,
-        /// the task fails instead of truncating the LOB data.
+        /// If a task is set to limited LOB mode and this option is set to <c>true</c>, the task
+        /// fails instead of truncating the LOB data.
         /// </para>
         /// </summary>
         public bool FailTasksOnLobTruncation
@@ -480,7 +478,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>numberDataTypeScale=12</code> 
+        /// Example: <c>numberDataTypeScale=12</c> 
         /// </para>
         /// </summary>
         public int NumberDatatypeScale
@@ -507,7 +505,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  <note> 
         /// <para>
         /// This parameter is only valid in DMS version 3.5.0 and later. DMS supports a window
-        /// of up to 9.5 hours including the value for <code>OpenTransactionWindow</code>.
+        /// of up to 9.5 hours including the value for <c>OpenTransactionWindow</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -549,7 +547,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Set this attribute to change the number of threads that DMS configures to perform
         /// a change data capture (CDC) load using Oracle Automatic Storage Management (ASM).
         /// You can specify an integer value between 2 (the default) and 8 (the maximum). Use
-        /// this attribute together with the <code>readAheadBlocks</code> attribute.
+        /// this attribute together with the <c>readAheadBlocks</c> attribute.
         /// </para>
         /// </summary>
         public int ParallelAsmReadThreads
@@ -625,7 +623,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReadTableSpaceName. 
         /// <para>
-        /// When set to <code>true</code>, this attribute supports tablespace replication.
+        /// When set to <c>true</c>, this attribute supports tablespace replication.
         /// </para>
         /// </summary>
         public bool ReadTableSpaceName
@@ -645,7 +643,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Set this attribute to true in order to use the Binary Reader to capture change data
         /// for an Amazon RDS for Oracle as the source. This setting tells DMS instance to replace
-        /// the default Oracle root with the specified <code>usePathPrefix</code> setting to access
+        /// the default Oracle root with the specified <c>usePathPrefix</c> setting to access
         /// the redo logs.
         /// </para>
         /// </summary>
@@ -668,7 +666,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>retryInterval=6;</code> 
+        /// Example: <c>retryInterval=6;</c> 
         /// </para>
         /// </summary>
         public int RetryInterval
@@ -687,19 +685,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
-        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
-        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
-        /// to the Oracle endpoint.
+        /// entity and grants the required permissions to access the value in <c>SecretsManagerSecret</c>.
+        /// The role must allow the <c>iam:PassRole</c> action. <c>SecretsManagerSecret</c> has
+        /// the value of the Amazon Web Services Secrets Manager secret that allows access to
+        /// the Oracle endpoint.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
-        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
-        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
-        /// and <code>Port</code>. You can't specify both. For more information on creating this
-        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// values for this setting and <c>SecretsManagerSecretId</c>. Or you can specify clear-text
+        /// values for <c>UserName</c>, <c>Password</c>, <c>ServerName</c>, and <c>Port</c>. You
+        /// can't specify both. For more information on creating this <c>SecretsManagerSecret</c>
+        /// and the <c>SecretsManagerAccessRoleArn</c> and <c>SecretsManagerSecretId</c> required
+        /// to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
         /// Service User Guide</i>.
         /// </para>
@@ -722,17 +720,17 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The
         /// full ARN of the IAM role that specifies DMS as the trusted entity and grants the required
-        /// permissions to access the <code>SecretsManagerOracleAsmSecret</code>. This <code>SecretsManagerOracleAsmSecret</code>
+        /// permissions to access the <c>SecretsManagerOracleAsmSecret</c>. This <c>SecretsManagerOracleAsmSecret</c>
         /// has the secret value that allows access to the Oracle ASM of the endpoint.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
-        /// values for this setting and <code>SecretsManagerOracleAsmSecretId</code>. Or you can
-        /// specify clear-text values for <code>AsmUser</code>, <code>AsmPassword</code>, and
-        /// <code>AsmServerName</code>. You can't specify both. For more information on creating
-        /// this <code>SecretsManagerOracleAsmSecret</code> and the <code>SecretsManagerOracleAsmAccessRoleArn</code>
-        /// and <code>SecretsManagerOracleAsmSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// values for this setting and <c>SecretsManagerOracleAsmSecretId</c>. Or you can specify
+        /// clear-text values for <c>AsmUser</c>, <c>AsmPassword</c>, and <c>AsmServerName</c>.
+        /// You can't specify both. For more information on creating this <c>SecretsManagerOracleAsmSecret</c>
+        /// and the <c>SecretsManagerOracleAsmAccessRoleArn</c> and <c>SecretsManagerOracleAsmSecretId</c>
+        /// required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
         /// Service User Guide</i>.
         /// </para>
@@ -754,7 +752,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerOracleAsmSecretId. 
         /// <para>
         /// Required only if your Oracle endpoint uses Automatic Storage Management (ASM). The
-        /// full ARN, partial ARN, or friendly name of the <code>SecretsManagerOracleAsmSecret</code>
+        /// full ARN, partial ARN, or friendly name of the <c>SecretsManagerOracleAsmSecret</c>
         /// that contains the Oracle ASM connection details for the Oracle endpoint.
         /// </para>
         /// </summary>
@@ -773,8 +771,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerSecretId. 
         /// <para>
-        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
-        /// that contains the Oracle endpoint connection details.
+        /// The full ARN, partial ARN, or friendly name of the <c>SecretsManagerSecret</c> that
+        /// contains the Oracle endpoint connection details.
         /// </para>
         /// </summary>
         public string SecretsManagerSecretId
@@ -794,10 +792,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// For an Oracle source endpoint, the transparent data encryption (TDE) password required
         /// by AWM DMS to access Oracle redo logs encrypted by TDE using Binary Reader. It is
-        /// also the <code> <i>TDE_Password</i> </code> part of the comma-separated value you
-        /// set to the <code>Password</code> request parameter when you create the endpoint. The
-        /// <code>SecurityDbEncryptian</code> setting is related to this <code>SecurityDbEncryptionName</code>
-        /// setting. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
+        /// also the <c> <i>TDE_Password</i> </c> part of the comma-separated value you set to
+        /// the <c>Password</c> request parameter when you create the endpoint. The <c>SecurityDbEncryptian</c>
+        /// setting is related to this <c>SecurityDbEncryptionName</c> setting. For more information,
+        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
         /// Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database
         /// Migration Service User Guide</i>. 
         /// </para>
@@ -820,10 +818,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// For an Oracle source endpoint, the name of a key used for the transparent data encryption
         /// (TDE) of the columns and tablespaces in an Oracle source database that is encrypted
-        /// using TDE. The key value is the value of the <code>SecurityDbEncryption</code> setting.
-        /// For more information on setting the key name value of <code>SecurityDbEncryptionName</code>,
-        /// see the information and example for setting the <code>securityDbEncryptionName</code>
-        /// extra connection attribute in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
+        /// using TDE. The key value is the value of the <c>SecurityDbEncryption</c> setting.
+        /// For more information on setting the key name value of <c>SecurityDbEncryptionName</c>,
+        /// see the information and example for setting the <c>securityDbEncryptionName</c> extra
+        /// connection attribute in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.Encryption">
         /// Supported encryption methods for using Oracle as a source for DMS </a> in the <i>Database
         /// Migration Service User Guide</i>.
         /// </para>
@@ -848,7 +846,7 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
-        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// in the <c> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</c>
         /// field.
         /// </para>
         /// </summary>
@@ -867,11 +865,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SpatialDataOptionToGeoJsonFunctionName. 
         /// <para>
-        /// Use this attribute to convert <code>SDO_GEOMETRY</code> to <code>GEOJSON</code> format.
-        /// By default, DMS calls the <code>SDO2GEOJSON</code> custom function if present and
-        /// accessible. Or you can create your own custom function that mimics the operation of
-        /// <code>SDOGEOJSON</code> and set <code>SpatialDataOptionToGeoJsonFunctionName</code>
-        /// to call it instead. 
+        /// Use this attribute to convert <c>SDO_GEOMETRY</c> to <c>GEOJSON</c> format. By default,
+        /// DMS calls the <c>SDO2GEOJSON</c> custom function if present and accessible. Or you
+        /// can create your own custom function that mimics the operation of <c>SDOGEOJSON</c>
+        /// and set <c>SpatialDataOptionToGeoJsonFunctionName</c> to call it instead. 
         /// </para>
         /// </summary>
         public string SpatialDataOptionToGeoJsonFunctionName
@@ -915,8 +912,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TrimSpaceInChar. 
         /// <para>
-        /// Use the <code>TrimSpaceInChar</code> source endpoint setting to trim data on CHAR
-        /// and NCHAR data types during migration. The default value is <code>true</code>.
+        /// Use the <c>TrimSpaceInChar</c> source endpoint setting to trim data on CHAR and NCHAR
+        /// data types during migration. The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool TrimSpaceInChar
@@ -934,9 +931,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property UseAlternateFolderForOnline. 
         /// <para>
-        /// Set this attribute to <code>true</code> in order to use the Binary Reader to capture
-        /// change data for an Amazon RDS for Oracle as the source. This tells the DMS instance
-        /// to use any specified prefix replacement to access all online redo logs.
+        /// Set this attribute to <c>true</c> in order to use the Binary Reader to capture change
+        /// data for an Amazon RDS for Oracle as the source. This tells the DMS instance to use
+        /// any specified prefix replacement to access all online redo logs.
         /// </para>
         /// </summary>
         public bool UseAlternateFolderForOnline
@@ -955,10 +952,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property UseBFile. 
         /// <para>
         /// Set this attribute to Y to capture change data using the Binary Reader utility. Set
-        /// <code>UseLogminerReader</code> to N to set this attribute to Y. To use Binary Reader
-        /// with Amazon RDS for Oracle as the source, you set additional attributes. For more
-        /// information about using this setting with Oracle Automatic Storage Management (ASM),
-        /// see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+        /// <c>UseLogminerReader</c> to N to set this attribute to Y. To use Binary Reader with
+        /// Amazon RDS for Oracle as the source, you set additional attributes. For more information
+        /// about using this setting with Oracle Automatic Storage Management (ASM), see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
         /// Using Oracle LogMiner or DMS Binary Reader for CDC</a>.
         /// </para>
         /// </summary>
@@ -999,8 +995,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Set this attribute to Y to capture change data using the Oracle LogMiner utility (the
         /// default). Set this attribute to N if you want to access the redo logs as a binary
-        /// file. When you set <code>UseLogminerReader</code> to N, also set <code>UseBfile</code>
-        /// to Y. For more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
+        /// file. When you set <c>UseLogminerReader</c> to N, also set <c>UseBfile</c> to Y. For
+        /// more information on this setting and using Oracle ASM, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC">
         /// Using Oracle LogMiner or DMS Binary Reader for CDC</a> in the <i>DMS User Guide</i>.
         /// </para>
         /// </summary>

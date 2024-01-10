@@ -43,7 +43,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Enable or disable support for appliance mode. If enabled, a traffic flow between a
         /// source and destination uses the same Availability Zone for the VPC attachment for
-        /// the lifetime of that flow. The default is <code>disable</code>.
+        /// the lifetime of that flow. The default is <c>disable</c>.
         /// </para>
         /// </summary>
         public ApplianceModeSupportValue ApplianceModeSupport
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DnsSupport. 
         /// <para>
-        /// Enable or disable DNS support. The default is <code>enable</code>.
+        /// Enable or disable DNS support. The default is <c>enable</c>.
         /// </para>
         /// </summary>
         public DnsSupportValue DnsSupport
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6Support. 
         /// <para>
-        /// Enable or disable IPv6 support. The default is <code>enable</code>.
+        /// Enable or disable IPv6 support. The default is <c>enable</c>.
         /// </para>
         /// </summary>
         public Ipv6SupportValue Ipv6Support

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>DeleteAnalysisScheme</code> request. Contains the status of
-    /// the deleted analysis scheme.
+    /// The result of a <c>DeleteAnalysisScheme</c> request. Contains the status of the deleted
+    /// analysis scheme.
     /// </summary>
     public partial class DeleteAnalysisSchemeResponse : AmazonWebServiceResponse
     {

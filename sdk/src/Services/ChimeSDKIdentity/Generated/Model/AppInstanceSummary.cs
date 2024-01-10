@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// Summary of the data for an <code>AppInstance</code>.
+    /// Summary of the data for an <c>AppInstance</c>.
     /// </summary>
     public partial class AppInstanceSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The <code>AppInstance</code> ARN.
+        /// The <c>AppInstance</c> ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -59,7 +59,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the <code>AppInstance</code>.
+        /// The metadata of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1024)]
@@ -78,7 +78,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>AppInstance</code>.
+        /// The name of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]

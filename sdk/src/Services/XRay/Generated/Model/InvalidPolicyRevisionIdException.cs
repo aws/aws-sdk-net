@@ -30,7 +30,7 @@ namespace Amazon.XRay.Model
 {
     /// <summary>
     /// A policy revision id was provided which does not match the latest policy revision.
-    /// This exception is also if a policy revision id of 0 is provided via <code>PutResourcePolicy</code>
+    /// This exception is also if a policy revision id of 0 is provided via <c>PutResourcePolicy</c>
     /// and a policy with the same name already exists.
     /// </summary>
     #if !NETSTANDARD

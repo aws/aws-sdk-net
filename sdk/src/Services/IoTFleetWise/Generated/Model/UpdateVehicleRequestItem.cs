@@ -46,7 +46,7 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"engineType"</code> : <code>"1.3 L R2"</code> 
+        ///  <c>"engineType"</c> : <c>"1.3 L R2"</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -65,8 +65,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property AttributeUpdateMode. 
         /// <para>
         /// The method the specified attributes will update the existing attributes on the vehicle.
-        /// Use<code>Overwite</code> to replace the vehicle attributes with the specified attributes.
-        /// Or use <code>Merge</code> to combine all attributes.
+        /// Use<c>Overwite</c> to replace the vehicle attributes with the specified attributes.
+        /// Or use <c>Merge</c> to combine all attributes.
         /// </para>
         ///  
         /// <para>

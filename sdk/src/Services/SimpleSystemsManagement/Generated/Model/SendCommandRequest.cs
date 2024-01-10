@@ -185,7 +185,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  <note> 
         /// <para>
         /// If you specify a document name or ARN that hasn't been shared with your account, you
-        /// receive an <code>InvalidDocument</code> error. 
+        /// receive an <c>InvalidDocument</c> error. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -245,7 +245,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// To target a larger number of managed nodes, or if you prefer not to list individual
-        /// node IDs, we recommend using the <code>Targets</code> option instead. Using <code>Targets</code>,
+        /// node IDs, we recommend using the <c>Targets</c> option instead. Using <c>Targets</c>,
         /// which accepts tag key-value pairs to identify the managed nodes to send commands to,
         /// you can a send command to tens, hundreds, or thousands of nodes at once.
         /// </para>
@@ -274,7 +274,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// (Optional) The maximum number of managed nodes that are allowed to run the command
         /// at the same time. You can specify a number such as 10 or a percentage such as 10%.
-        /// The default value is <code>50</code>. For more information about how to use <code>MaxConcurrency</code>,
+        /// The default value is <c>50</c>. For more information about how to use <c>MaxConcurrency</c>,
         /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-velocity">Using
         /// concurrency controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
@@ -296,10 +296,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MaxErrors. 
         /// <para>
         /// The maximum number of errors allowed without the command failing. When the command
-        /// fails one more time beyond the value of <code>MaxErrors</code>, the systems stops
-        /// sending the command to additional targets. You can specify a number like 10 or a percentage
-        /// like 10%. The default value is <code>0</code>. For more information about how to use
-        /// <code>MaxErrors</code>, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
+        /// fails one more time beyond the value of <c>MaxErrors</c>, the systems stops sending
+        /// the command to additional targets. You can specify a number like 10 or a percentage
+        /// like 10%. The default value is <c>0</c>. For more information about how to use <c>MaxErrors</c>,
+        /// see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-maxerrors">Using
         /// error controls</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>
@@ -420,8 +420,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// This role must provide the <code>sns:Publish</code> permission for your notification
-        /// topic. For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
+        /// This role must provide the <c>sns:Publish</c> permission for your notification topic.
+        /// For information about creating and using this service role, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/monitoring-sns-notifications.html">Monitoring
         /// Systems Manager status changes using Amazon SNS notifications</a> in the <i>Amazon
         /// Web Services Systems Manager User Guide</i>.
         /// </para>
@@ -441,15 +441,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// An array of search criteria that targets managed nodes using a <code>Key,Value</code>
-        /// combination that you specify. Specifying targets is most useful when you want to send
-        /// a command to a large number of managed nodes at once. Using <code>Targets</code>,
-        /// which accepts tag key-value pairs to identify managed nodes, you can send a command
-        /// to tens, hundreds, or thousands of nodes at once.
+        /// An array of search criteria that targets managed nodes using a <c>Key,Value</c> combination
+        /// that you specify. Specifying targets is most useful when you want to send a command
+        /// to a large number of managed nodes at once. Using <c>Targets</c>, which accepts tag
+        /// key-value pairs to identify managed nodes, you can send a command to tens, hundreds,
+        /// or thousands of nodes at once.
         /// </para>
         ///  
         /// <para>
-        /// To send a command to a smaller number of managed nodes, you can use the <code>InstanceIds</code>
+        /// To send a command to a smaller number of managed nodes, you can use the <c>InstanceIds</c>
         /// option instead.
         /// </para>
         ///  

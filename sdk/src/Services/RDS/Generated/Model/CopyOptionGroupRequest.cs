@@ -128,7 +128,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-option-group</code> 
+        /// Example: <c>my-option-group</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

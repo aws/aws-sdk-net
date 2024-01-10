@@ -62,7 +62,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <code>GameSessionDetail</code> object is returned for each game session
+    /// If successful, a <c>GameSessionDetail</c> object is returned for each game session
     /// that matches the request.
     /// </para>
     ///  
@@ -150,7 +150,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>
@@ -171,7 +171,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// A fleet location to get game session details for. You can specify a fleet's home Region
-        /// or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
+        /// or a remote location. Use the Amazon Web Services Region code format, such as <c>us-west-2</c>.
         /// 
         /// </para>
         /// </summary>
@@ -212,9 +212,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property StatusFilter. 
         /// <para>
-        /// Game session status to filter results on. Possible game session statuses include <code>ACTIVE</code>,
-        /// <code>TERMINATED</code>, <code>ACTIVATING</code> and <code>TERMINATING</code> (the
-        /// last two are transitory). 
+        /// Game session status to filter results on. Possible game session statuses include <c>ACTIVE</c>,
+        /// <c>TERMINATED</c>, <c>ACTIVATING</c> and <c>TERMINATING</c> (the last two are transitory).
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

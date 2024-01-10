@@ -50,7 +50,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AutoScalingSchedule. 
         /// <para>
-        /// An <code>AutoScalingSchedule</code> with the instance schedule.
+        /// An <c>AutoScalingSchedule</c> with the instance schedule.
         /// </para>
         /// </summary>
         public WeeklyAutoScalingSchedule AutoScalingSchedule

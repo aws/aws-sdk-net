@@ -119,9 +119,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListProjects</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of projects,
-        /// use the token in the next request.
+        /// If the result of the previous <c>ListProjects</c> request was truncated, the response
+        /// includes a <c>NextToken</c>. To retrieve the next set of projects, use the token in
+        /// the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -140,7 +140,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field by which to sort results. The default is <code>CreationTime</code>.
+        /// The field by which to sort results. The default is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public ProjectSortBy SortBy
@@ -158,7 +158,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for results. The default is <code>Ascending</code>.
+        /// The sort order for results. The default is <c>Ascending</c>.
         /// </para>
         /// </summary>
         public ProjectSortOrder SortOrder

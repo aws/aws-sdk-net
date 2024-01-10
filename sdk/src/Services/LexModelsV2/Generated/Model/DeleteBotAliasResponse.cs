@@ -59,9 +59,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotAliasStatus. 
         /// <para>
-        /// The current status of the alias. The status is <code>Deleting</code> while the alias
-        /// is in the process of being deleted. Once the alias is deleted, it will no longer appear
-        /// in the list of aliases returned by the <code>ListBotAliases</code> operation.
+        /// The current status of the alias. The status is <c>Deleting</c> while the alias is
+        /// in the process of being deleted. Once the alias is deleted, it will no longer appear
+        /// in the list of aliases returned by the <c>ListBotAliases</c> operation.
         /// </para>
         /// </summary>
         public BotAliasStatus BotAliasStatus

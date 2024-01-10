@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeElasticsearchDomains</code> request. Contains the status
-    /// of the specified domains or all domains owned by the account.
+    /// The result of a <c>DescribeElasticsearchDomains</c> request. Contains the status of
+    /// the specified domains or all domains owned by the account.
     /// </summary>
     public partial class DescribeElasticsearchDomainsResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property DomainStatusList. 
         /// <para>
-        /// The status of the domains requested in the <code>DescribeElasticsearchDomains</code>
-        /// request.
+        /// The status of the domains requested in the <c>DescribeElasticsearchDomains</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

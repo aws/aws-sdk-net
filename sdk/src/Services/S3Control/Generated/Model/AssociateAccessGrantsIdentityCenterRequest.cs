@@ -38,14 +38,13 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:AssociateAccessGrantsIdentityCenter</code> permission to
-    /// use this operation. 
+    /// You must have the <c>s3:AssociateAccessGrantsIdentityCenter</c> permission to use
+    /// this operation. 
     /// </para>
     ///  </dd> <dt>Additional Permissions</dt> <dd> 
     /// <para>
-    /// You must also have the following permissions: <code>sso:CreateApplication</code>,
-    /// <code>sso:PutApplicationGrant</code>, and <code>sso:PutApplicationAuthenticationMethod</code>.
-    /// 
+    /// You must also have the following permissions: <c>sso:CreateApplication</c>, <c>sso:PutApplicationGrant</c>,
+    /// and <c>sso:PutApplicationAuthenticationMethod</c>. 
     /// </para>
     ///  </dd> </dl>
     /// </summary>

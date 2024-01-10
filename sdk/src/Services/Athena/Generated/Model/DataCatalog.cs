@@ -93,18 +93,17 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the <code>HIVE</code> data catalog type, use the following syntax. The <code>metadata-function</code>
-        /// parameter is required. <code>The sdk-version</code> parameter is optional and defaults
-        /// to the currently supported version.
+        /// For the <c>HIVE</c> data catalog type, use the following syntax. The <c>metadata-function</c>
+        /// parameter is required. <c>The sdk-version</c> parameter is optional and defaults to
+        /// the currently supported version.
         /// </para>
         ///  
         /// <para>
-        ///  <code>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </code>
-        /// 
+        ///  <c>metadata-function=<i>lambda_arn</i>, sdk-version=<i>version_number</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>LAMBDA</code> data catalog type, use one of the following sets of required
+        /// For the <c>LAMBDA</c> data catalog type, use one of the following sets of required
         /// parameters, but not both.
         /// </para>
         ///  <ul> <li> 
@@ -114,8 +113,7 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </code>
-        /// 
+        ///  <c>metadata-function=<i>lambda_arn</i>, record-function=<i>lambda_arn</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -124,21 +122,21 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>function=<i>lambda_arn</i> </code> 
+        ///  <c>function=<i>lambda_arn</i> </c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// The <code>GLUE</code> type takes a catalog ID parameter and is required. The <code>
-        /// <i>catalog_id</i> </code> is the account ID of the Amazon Web Services account to
-        /// which the Glue catalog belongs.
+        /// The <c>GLUE</c> type takes a catalog ID parameter and is required. The <c> <i>catalog_id</i>
+        /// </c> is the account ID of the Amazon Web Services account to which the Glue catalog
+        /// belongs.
         /// </para>
         ///  
         /// <para>
-        ///  <code>catalog-id=<i>catalog_id</i> </code> 
+        ///  <c>catalog-id=<i>catalog_id</i> </c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>GLUE</code> data catalog type also applies to the default <code>AwsDataCatalog</code>
+        /// The <c>GLUE</c> data catalog type also applies to the default <c>AwsDataCatalog</c>
         /// that already exists in your account, of which you can have only one and cannot modify.
         /// </para>
         ///  </li> </ul> </li> </ul>
@@ -158,8 +156,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data catalog to create: <code>LAMBDA</code> for a federated catalog, <code>HIVE</code>
-        /// for an external hive metastore, or <code>GLUE</code> for an Glue Data Catalog.
+        /// The type of data catalog to create: <c>LAMBDA</c> for a federated catalog, <c>HIVE</c>
+        /// for an external hive metastore, or <c>GLUE</c> for an Glue Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

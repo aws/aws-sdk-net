@@ -120,8 +120,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the service-specific credential. <code>Active</code> means that the
-        /// key is valid for API calls, while <code>Inactive</code> means it is not.
+        /// The status of the service-specific credential. <c>Active</c> means that the key is
+        /// valid for API calls, while <c>Inactive</c> means it is not.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

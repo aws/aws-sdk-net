@@ -67,9 +67,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TimerType. 
         /// <para>
-        /// The type of timer. <code>IDLE</code> indicates the timer applies for considering a
-        /// human chat participant as idle. <code>DISCONNECT_NONCUSTOMER</code> indicates the
-        /// timer applies to automatically disconnecting a chat participant due to idleness.
+        /// The type of timer. <c>IDLE</c> indicates the timer applies for considering a human
+        /// chat participant as idle. <c>DISCONNECT_NONCUSTOMER</c> indicates the timer applies
+        /// to automatically disconnecting a chat participant due to idleness.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

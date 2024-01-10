@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The Capacity Reservation Fleet's status changes to <code>cancelled</code>.
+    /// The Capacity Reservation Fleet's status changes to <c>cancelled</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

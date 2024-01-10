@@ -35,8 +35,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:TagResource</code>
-    /// action.
+    /// This operation requires permissions for the <c>elasticfilesystem:TagResource</c> action.
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonElasticFileSystemRequest
@@ -66,8 +65,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of <code>Tag</code> objects to add. Each <code>Tag</code> object is a key-value
-        /// pair.
+        /// An array of <c>Tag</c> objects to add. Each <c>Tag</c> object is a key-value pair.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

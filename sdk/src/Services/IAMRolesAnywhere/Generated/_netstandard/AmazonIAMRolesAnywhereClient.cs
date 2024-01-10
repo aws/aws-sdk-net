@@ -307,7 +307,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:CreateProfile</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:CreateProfile</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
@@ -356,7 +356,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:CreateTrustAnchor</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:CreateTrustAnchor</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrustAnchor service method.</param>
@@ -401,7 +401,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:DeleteCrl</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCrl service method.</param>
@@ -446,7 +446,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:DeleteProfile</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProfile service method.</param>
@@ -491,7 +491,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:DeleteTrustAnchor</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrustAnchor service method.</param>
@@ -536,7 +536,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:DisableCrl</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:DisableCrl</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableCrl service method.</param>
@@ -582,7 +582,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:DisableProfile</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableProfile service method.</param>
@@ -628,7 +628,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:DisableTrustAnchor</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableTrustAnchor service method.</param>
@@ -674,7 +674,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:EnableCrl</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:EnableCrl</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableCrl service method.</param>
@@ -719,7 +719,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:EnableProfile</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableProfile service method.</param>
@@ -765,7 +765,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:EnableTrustAnchor</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:EnableTrustAnchor</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the EnableTrustAnchor service method.</param>
@@ -810,7 +810,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:GetCrl</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetCrl service method.</param>
@@ -852,7 +852,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:GetProfile</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:GetProfile</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetProfile service method.</param>
@@ -900,7 +900,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:GetSubject</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSubject service method.</param>
@@ -945,7 +945,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:GetTrustAnchor</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:GetTrustAnchor</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrustAnchor service method.</param>
@@ -995,7 +995,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:ImportCrl</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:ImportCrl</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportCrl service method.</param>
@@ -1041,7 +1041,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:ListCrls</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:ListCrls</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCrls service method.</param>
@@ -1086,7 +1086,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:ListProfiles</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProfiles service method.</param>
@@ -1131,7 +1131,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:ListSubjects</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:ListSubjects</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListSubjects service method.</param>
@@ -1176,7 +1176,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:ListTagsForResource</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:ListTagsForResource</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -1224,7 +1224,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:ListTrustAnchors</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:ListTrustAnchors</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrustAnchors service method.</param>
@@ -1274,8 +1274,7 @@ namespace Amazon.IAMRolesAnywhere
         /// </para>
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:PutNotificationSettings</code>.
-        /// 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:PutNotificationSettings</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationSettings service method.</param>
@@ -1324,8 +1323,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:ResetNotificationSettings</code>.
-        /// 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:ResetNotificationSettings</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetNotificationSettings service method.</param>
@@ -1373,7 +1371,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:TagResource</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:TagResource</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
@@ -1424,7 +1422,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:UntagResource</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:UntagResource</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1474,7 +1472,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:UpdateCrl</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateCrl service method.</param>
@@ -1523,7 +1521,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:UpdateProfile</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:UpdateProfile</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateProfile service method.</param>
@@ -1575,7 +1573,7 @@ namespace Amazon.IAMRolesAnywhere
         /// 
         ///  
         /// <para>
-        ///  <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>. 
+        ///  <b>Required permissions: </b> <c>rolesanywhere:UpdateTrustAnchor</c>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrustAnchor service method.</param>

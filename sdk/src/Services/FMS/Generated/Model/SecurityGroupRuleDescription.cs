@@ -44,7 +44,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property FromPort. 
         /// <para>
         /// The start of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 type
-        /// number. A value of <code>-1</code> indicates all ICMP/ICMPv6 types.
+        /// number. A value of <c>-1</c> indicates all ICMP/ICMPv6 types.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
@@ -120,8 +120,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The IP protocol name (<code>tcp</code>, <code>udp</code>, <code>icmp</code>, <code>icmpv6</code>)
-        /// or number.
+        /// The IP protocol name (<c>tcp</c>, <c>udp</c>, <c>icmp</c>, <c>icmpv6</c>) or number.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -141,7 +140,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property ToPort. 
         /// <para>
         /// The end of the port range for the TCP and UDP protocols, or an ICMP/ICMPv6 code. A
-        /// value of <code>-1</code> indicates all ICMP/ICMPv6 codes.
+        /// value of <c>-1</c> indicates all ICMP/ICMPv6 codes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]

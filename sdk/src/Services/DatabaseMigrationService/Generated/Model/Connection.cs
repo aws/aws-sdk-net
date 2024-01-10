@@ -140,19 +140,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"successful"</code> 
+        ///  <c>"successful"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"testing"</code> 
+        ///  <c>"testing"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"failed"</code> 
+        ///  <c>"failed"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"deleting"</code> 
+        ///  <c>"deleting"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

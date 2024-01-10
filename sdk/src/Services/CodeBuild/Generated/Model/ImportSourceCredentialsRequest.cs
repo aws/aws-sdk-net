@@ -84,9 +84,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ShouldOverwrite. 
         /// <para>
-        ///  Set to <code>false</code> to prevent overwriting the repository source credentials.
-        /// Set to <code>true</code> to overwrite the repository source credentials. The default
-        /// value is <code>true</code>. 
+        ///  Set to <c>false</c> to prevent overwriting the repository source credentials. Set
+        /// to <c>true</c> to overwrite the repository source credentials. The default value is
+        /// <c>true</c>. 
         /// </para>
         /// </summary>
         public bool ShouldOverwrite
@@ -124,8 +124,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        ///  The Bitbucket username when the <code>authType</code> is BASIC_AUTH. This parameter
-        /// is not valid for other types of source providers or connections. 
+        ///  The Bitbucket username when the <c>authType</c> is BASIC_AUTH. This parameter is
+        /// not valid for other types of source providers or connections. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

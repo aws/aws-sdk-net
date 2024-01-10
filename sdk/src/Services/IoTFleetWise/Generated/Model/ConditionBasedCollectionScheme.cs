@@ -61,8 +61,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// The logical expression used to recognize what data to collect. For example, <code>$variable.Vehicle.OutsideAirTemperature
-        /// &gt;= 105.0</code>.
+        /// The logical expression used to recognize what data to collect. For example, <c>$variable.Vehicle.OutsideAirTemperature
+        /// &gt;= 105.0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -105,7 +105,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property TriggerMode. 
         /// <para>
-        /// Whether to collect data for all triggering events (<code>ALWAYS</code>). Specify (<code>RISING_EDGE</code>),
+        /// Whether to collect data for all triggering events (<c>ALWAYS</c>). Specify (<c>RISING_EDGE</c>),
         /// or specify only when the condition first evaluates to false. For example, triggering
         /// on "AirbagDeployed"; Users aren't interested on triggering when the airbag is already
         /// exploded; they only care about the change from not deployed =&gt; deployed.

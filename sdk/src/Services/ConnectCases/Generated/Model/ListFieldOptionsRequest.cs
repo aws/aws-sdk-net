@@ -120,7 +120,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// A list of <code>FieldOption</code> values to filter on for <code>ListFieldOptions</code>.
+        /// A list of <c>FieldOption</c> values to filter on for <c>ListFieldOptions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

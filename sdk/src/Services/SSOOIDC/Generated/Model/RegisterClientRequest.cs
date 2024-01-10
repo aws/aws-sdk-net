@@ -63,8 +63,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property ClientType. 
         /// <para>
-        /// The type of client. The service supports only <code>public</code> as a client type.
-        /// Anything other than public will be rejected by the service.
+        /// The type of client. The service supports only <c>public</c> as a client type. Anything
+        /// other than public will be rejected by the service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

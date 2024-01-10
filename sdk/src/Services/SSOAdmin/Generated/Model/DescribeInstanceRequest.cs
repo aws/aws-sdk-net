@@ -35,19 +35,19 @@ namespace Amazon.SSOAdmin.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CREATE_IN_PROGRESS</code> - The instance is in the process of being created.
-    /// When the instance is ready for use, DescribeInstance returns the status of <code>ACTIVE</code>.
-    /// While the instance is in the <code>CREATE_IN_PROGRESS</code> state, you can call only
-    /// DescribeInstance and DeleteInstance operations.
+    ///  <c>CREATE_IN_PROGRESS</c> - The instance is in the process of being created. When
+    /// the instance is ready for use, DescribeInstance returns the status of <c>ACTIVE</c>.
+    /// While the instance is in the <c>CREATE_IN_PROGRESS</c> state, you can call only DescribeInstance
+    /// and DeleteInstance operations.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns <code>AccessDeniedException</code>
+    ///  <c>DELETE_IN_PROGRESS</c> - The instance is being deleted. Returns <c>AccessDeniedException</c>
     /// after the delete operation completes. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ACTIVE</code> - The instance is active.
+    ///  <c>ACTIVE</c> - The instance is active.
     /// </para>
     ///  </li> </ul>
     /// </summary>

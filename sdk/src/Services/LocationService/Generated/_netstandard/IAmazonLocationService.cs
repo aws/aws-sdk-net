@@ -188,13 +188,13 @@ namespace Amazon.LocationService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENTER</code> if Amazon Location determines that the tracked device has entered
-        /// a geofenced area.
+        ///  <c>ENTER</c> if Amazon Location determines that the tracked device has entered a
+        /// geofenced area.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXIT</code> if Amazon Location determines that the tracked device has exited
-        /// a geofenced area.
+        ///  <c>EXIT</c> if Amazon Location determines that the tracked device has exited a geofenced
+        /// area.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -204,12 +204,12 @@ namespace Amazon.LocationService
         ///  </note> <note> 
         /// <para>
         /// Geofence evaluation uses the given device position. It does not account for the optional
-        /// <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.
+        /// <c>Accuracy</c> of a <c>DevicePositionUpdate</c>.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// The <code>DeviceID</code> is used as a string to represent the device. You do not
-        /// need to have a <code>Tracker</code> associated with the <code>DeviceID</code>.
+        /// The <c>DeviceID</c> is used as a string to represent the device. You do not need to
+        /// have a <c>Tracker</c> associated with the <c>DeviceID</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -325,28 +325,27 @@ namespace Amazon.LocationService
         /// 
         ///  <note> 
         /// <para>
-        /// Position updates are handled based on the <code>PositionFiltering</code> property
-        /// of the tracker. When <code>PositionFiltering</code> is set to <code>TimeBased</code>,
-        /// updates are evaluated against linked geofence collections, and location data is stored
-        /// at a maximum of one position per 30 second interval. If your update frequency is more
-        /// often than every 30 seconds, only one update per 30 seconds is stored for each unique
-        /// device ID.
+        /// Position updates are handled based on the <c>PositionFiltering</c> property of the
+        /// tracker. When <c>PositionFiltering</c> is set to <c>TimeBased</c>, updates are evaluated
+        /// against linked geofence collections, and location data is stored at a maximum of one
+        /// position per 30 second interval. If your update frequency is more often than every
+        /// 30 seconds, only one update per 30 seconds is stored for each unique device ID.
         /// </para>
         ///  
         /// <para>
-        /// When <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering,
-        /// location data is stored and evaluated against linked geofence collections only if
-        /// the device has moved more than 30 m (98.4 ft).
+        /// When <c>PositionFiltering</c> is set to <c>DistanceBased</c> filtering, location data
+        /// is stored and evaluated against linked geofence collections only if the device has
+        /// moved more than 30 m (98.4 ft).
         /// </para>
         ///  
         /// <para>
-        /// When <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering,
-        /// location data is stored and evaluated against linked geofence collections only if
-        /// the device has moved more than the measured accuracy. For example, if two consecutive
-        /// updates from a device have a horizontal accuracy of 5 m and 10 m, the second update
-        /// is neither stored or evaluated if the device has moved less than 15 m. If <code>PositionFiltering</code>
-        /// is set to <code>AccuracyBased</code> filtering, Amazon Location uses the default value
-        /// <code>{ "Horizontal": 0}</code> when accuracy is not provided on a <code>DevicePositionUpdate</code>.
+        /// When <c>PositionFiltering</c> is set to <c>AccuracyBased</c> filtering, location data
+        /// is stored and evaluated against linked geofence collections only if the device has
+        /// moved more than the measured accuracy. For example, if two consecutive updates from
+        /// a device have a horizontal accuracy of 5 m and 10 m, the second update is neither
+        /// stored or evaluated if the device has moved less than 15 m. If <c>PositionFiltering</c>
+        /// is set to <c>AccuracyBased</c> filtering, Amazon Location uses the default value <c>{
+        /// "Horizontal": 0}</c> when accuracy is not provided on a <c>DevicePositionUpdate</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -384,8 +383,8 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
-        /// a route</a> given the following required parameters: <code>DeparturePosition</code>
-        /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+        /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
+        /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
         /// a route calculator resource</a>.
         /// 
         ///  
@@ -400,26 +399,25 @@ namespace Amazon.LocationService
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
-        /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
-        /// This calculates a route based on predictive traffic data at the given time. 
+        /// a departure time</a> using either <c>DepartureTime</c> or <c>DepartNow</c>. This calculates
+        /// a route based on predictive traffic data at the given time. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a
-        /// single request. Specifying both parameters returns a validation error.
+        /// You can't specify both <c>DepartureTime</c> and <c>DepartNow</c> in a single request.
+        /// Specifying both parameters returns a validation error.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
         /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
-        /// the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code>
-        /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
-        /// <code>Truck</code>.
+        /// the routes. This also lets you specify additional route preferences in <c>CarModeOptions</c>
+        /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>walking</code> for the travel mode and your data provider is
-        /// Esri, the start and destination must be within 40km.
+        /// If you specify <c>walking</c> for the travel mode and your data provider is Esri,
+        /// the start and destination must be within 40km.
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
@@ -457,14 +455,14 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html">
-        /// Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code>
-        /// and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates
-        /// routes and returns the travel time and travel distance from each departure position
-        /// to each destination position in the request. For example, given departure positions
-        /// A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will
-        /// return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that
-        /// order). The number of results returned (and routes calculated) will be the number
-        /// of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.
+        /// Calculates a route matrix</a> given the following required parameters: <c>DeparturePositions</c>
+        /// and <c>DestinationPositions</c>. <c>CalculateRouteMatrix</c> calculates routes and
+        /// returns the travel time and travel distance from each departure position to each destination
+        /// position in the request. For example, given departure positions A and B, and destination
+        /// positions X and Y, <c>CalculateRouteMatrix</c> will return time and distance for routes
+        /// from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned
+        /// (and routes calculated) will be the number of <c>DeparturePositions</c> times the
+        /// number of <c>DestinationPositions</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -487,21 +485,20 @@ namespace Amazon.LocationService
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">
-        /// Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
+        /// Specifying a departure time</a> using either <c>DepartureTime</c> or <c>DepartNow</c>.
         /// This calculates routes based on predictive traffic data at the given time. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a
-        /// single request. Specifying both parameters returns a validation error.
+        /// You can't specify both <c>DepartureTime</c> and <c>DepartNow</c> in a single request.
+        /// Specifying both parameters returns a validation error.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
         /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
-        /// the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code>
-        /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
-        /// <code>Truck</code>.
+        /// the routes. This also lets you specify additional route preferences in <c>CarModeOptions</c>
+        /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -674,9 +671,9 @@ namespace Amazon.LocationService
 
         /// <summary>
         /// Creates a place index resource in your Amazon Web Services account. Use a place index
-        /// resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
-        /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
-        /// operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
+        /// resource to geocode addresses and other text queries by using the <c>SearchPlaceIndexForText</c>
+        /// operation, and reverse geocode coordinates by using the <c>SearchPlaceIndexForPosition</c>
+        /// operation, and enable autosuggestions by using the <c>SearchPlaceIndexForSuggestions</c>
         /// operation.
         /// 
         ///  <note> 
@@ -1592,13 +1589,12 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search
-        /// operations.
+        /// Finds a place by its unique ID. A <c>PlaceId</c> is returned by other search operations.
         /// 
         ///  <note> 
         /// <para>
         /// A PlaceId is valid only if all of the following are the same in the original search
-        /// request and the call to <code>GetPlace</code>.
+        /// request and the call to <c>GetPlace</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2062,10 +2058,10 @@ namespace Amazon.LocationService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can search for suggested place names near a specified position by using <code>BiasPosition</code>,
-        /// or filter results within a bounding box by using <code>FilterBBox</code>. These parameters
-        /// are mutually exclusive; using both <code>BiasPosition</code> and <code>FilterBBox</code>
-        /// in the same command returns an error.
+        /// You can search for suggested place names near a specified position by using <c>BiasPosition</c>,
+        /// or filter results within a bounding box by using <c>FilterBBox</c>. These parameters
+        /// are mutually exclusive; using both <c>BiasPosition</c> and <c>FilterBBox</c> in the
+        /// same command returns an error.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2112,9 +2108,9 @@ namespace Amazon.LocationService
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can search for places near a given position using <code>BiasPosition</code>, or
-        /// filter results within a bounding box using <code>FilterBBox</code>. Providing both
-        /// parameters simultaneously returns an error.
+        /// You can search for places near a given position using <c>BiasPosition</c>, or filter
+        /// results within a bounding box using <c>FilterBBox</c>. Providing both parameters simultaneously
+        /// returns an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -2165,11 +2161,11 @@ namespace Amazon.LocationService
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> operation with an Amazon Location Service
-        /// resource that already has tags. If you specify a new tag key for the resource, this
-        /// tag is appended to the tags already associated with the resource. If you specify a
-        /// tag key that's already associated with the resource, the new tag value that you specify
-        /// replaces the previous value for that tag. 
+        /// You can use the <c>TagResource</c> operation with an Amazon Location Service resource
+        /// that already has tags. If you specify a new tag key for the resource, this tag is
+        /// appended to the tags already associated with the resource. If you specify a tag key
+        /// that's already associated with the resource, the new tag value that you specify replaces
+        /// the previous value for that tag. 
         /// </para>
         ///  
         /// <para>

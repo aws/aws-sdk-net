@@ -30,20 +30,20 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the GetOpenIdTokenForDeveloperIdentity operation.
-    /// Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token
-    /// for a user authenticated by your backend authentication process. Supplying multiple
-    /// logins will create an implicit linked account. You can only specify one developer
-    /// provider as part of the <code>Logins</code> map, which is linked to the identity pool.
-    /// The developer provider is the "domain" by which Cognito will refer to your users.
+    /// Registers (or retrieves) a Cognito <c>IdentityId</c> and an OpenID Connect token for
+    /// a user authenticated by your backend authentication process. Supplying multiple logins
+    /// will create an implicit linked account. You can only specify one developer provider
+    /// as part of the <c>Logins</c> map, which is linked to the identity pool. The developer
+    /// provider is the "domain" by which Cognito will refer to your users.
     /// 
     ///  
     /// <para>
-    /// You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity
-    /// and to link new logins (that is, user credentials issued by a public provider or developer
-    /// provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code>
+    /// You can use <c>GetOpenIdTokenForDeveloperIdentity</c> to create a new identity and
+    /// to link new logins (that is, user credentials issued by a public provider or developer
+    /// provider) to an existing identity. When you want to create a new identity, the <c>IdentityId</c>
     /// should be null. When you want to associate a new login with an existing authenticated/unauthenticated
-    /// identity, you can do so by providing the existing <code>IdentityId</code>. This API
-    /// will create the identity in the specified <code>IdentityPoolId</code>.
+    /// identity, you can do so by providing the existing <c>IdentityId</c>. This API will
+    /// create the identity in the specified <c>IdentityPoolId</c>.
     /// </para>
     ///  
     /// <para>
@@ -102,11 +102,11 @@ namespace Amazon.CognitoIdentity.Model
         /// A set of optional name-value pairs that map provider names to provider tokens. Each
         /// name-value pair represents a user from a public provider or developer provider. If
         /// the user is from a developer provider, the name-value pair will follow the syntax
-        /// <code>"developer_provider_name": "developer_user_identifier"</code>. The developer
-        /// provider is the "domain" by which Cognito will refer to your users; you provided this
-        /// domain while creating/updating the identity pool. The developer user identifier is
-        /// an identifier from your backend that uniquely identifies a user. When you create an
-        /// identity pool, you can specify the supported logins.
+        /// <c>"developer_provider_name": "developer_user_identifier"</c>. The developer provider
+        /// is the "domain" by which Cognito will refer to your users; you provided this domain
+        /// while creating/updating the identity pool. The developer user identifier is an identifier
+        /// from your backend that uniquely identifies a user. When you create an identity pool,
+        /// you can specify the supported logins.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=10)]

@@ -47,8 +47,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property CIDRIP. 
         /// <para>
         /// The IP range for which to revoke access. This range must be a valid Classless Inter-Domain
-        /// Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>
-        /// and <code>EC2SecurityGroupOwnerId</code> cannot be provided. 
+        /// Routing (CIDR) block of IP addresses. If <c>CIDRIP</c> is specified, <c>EC2SecurityGroupName</c>
+        /// and <c>EC2SecurityGroupOwnerId</c> cannot be provided. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -86,8 +86,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property EC2SecurityGroupName. 
         /// <para>
-        /// The name of the EC2 Security Group whose access is to be revoked. If <code>EC2SecurityGroupName</code>
-        /// is specified, <code>EC2SecurityGroupOwnerId</code> must also be provided and <code>CIDRIP</code>
+        /// The name of the EC2 Security Group whose access is to be revoked. If <c>EC2SecurityGroupName</c>
+        /// is specified, <c>EC2SecurityGroupOwnerId</c> must also be provided and <c>CIDRIP</c>
         /// cannot be provided. 
         /// </para>
         /// </summary>
@@ -108,14 +108,13 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property EC2SecurityGroupOwnerId. 
         /// <para>
         /// The Amazon Web Services account number of the owner of the security group specified
-        /// in the <code>EC2SecurityGroupName</code> parameter. The Amazon Web Services access
-        /// key ID is not an acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified,
-        /// <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code> cannot
-        /// be provided. 
+        /// in the <c>EC2SecurityGroupName</c> parameter. The Amazon Web Services access key ID
+        /// is not an acceptable value. If <c>EC2SecurityGroupOwnerId</c> is specified, <c>EC2SecurityGroupName</c>
+        /// must also be provided. and <c>CIDRIP</c> cannot be provided. 
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>111122223333</code> 
+        /// Example: <c>111122223333</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

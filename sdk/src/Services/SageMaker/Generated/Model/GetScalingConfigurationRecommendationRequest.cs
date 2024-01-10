@@ -46,11 +46,11 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The name of an endpoint benchmarked during a previously completed inference recommendation
         /// job. This name should come from one of the recommendations returned by the job specified
-        /// in the <code>InferenceRecommendationsJobName</code> field.
+        /// in the <c>InferenceRecommendationsJobName</c> field.
         /// </para>
         ///  
         /// <para>
-        /// Specify either this field or the <code>RecommendationId</code> field.
+        /// Specify either this field or the <c>RecommendationId</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Max=63)]
@@ -89,12 +89,12 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RecommendationId. 
         /// <para>
         /// The recommendation ID of a previously completed inference recommendation. This ID
-        /// should come from one of the recommendations returned by the job specified in the <code>InferenceRecommendationsJobName</code>
+        /// should come from one of the recommendations returned by the job specified in the <c>InferenceRecommendationsJobName</c>
         /// field.
         /// </para>
         ///  
         /// <para>
-        /// Specify either this field or the <code>EndpointName</code> field.
+        /// Specify either this field or the <c>EndpointName</c> field.
         /// </para>
         /// </summary>
         public string RecommendationId

@@ -30,8 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchDataSets operation.
-    /// Use the <code>SearchDataSets</code> operation to search for datasets that belong to
-    /// an account.
+    /// Use the <c>SearchDataSets</c> operation to search for datasets that belong to an account.
     /// </summary>
     public partial class SearchDataSetsRequest : AmazonQuickSightRequest
     {

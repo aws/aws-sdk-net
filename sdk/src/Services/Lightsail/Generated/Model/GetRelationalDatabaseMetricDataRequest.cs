@@ -69,7 +69,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you wish to use an end time of October 1, 2018, at 8 PM UTC, then
-        /// you input <code>1538424000</code> as the end time.
+        /// you input <c>1538424000</c> as the end time.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -94,89 +94,86 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// Valid relational database metric names are listed below, along with the most useful
-        /// <code>statistics</code> to include in your request, and the published <code>unit</code>
-        /// value. All relational database metric data is available in 1-minute (60 seconds) granularity.
+        /// <c>statistics</c> to include in your request, and the published <c>unit</c> value.
+        /// All relational database metric data is available in 1-minute (60 seconds) granularity.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>CPUUtilization</code> </b> - The percentage of CPU utilization currently
-        /// in use on the database.
+        ///  <b> <c>CPUUtilization</c> </b> - The percentage of CPU utilization currently in use
+        /// on the database.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Average</code>.
+        ///  <c>Statistics</c>: The most useful statistics are <c>Maximum</c> and <c>Average</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Unit</code>: The published unit is <code>Percent</code>.
+        ///  <c>Unit</c>: The published unit is <c>Percent</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DatabaseConnections</code> </b> - The number of database connections in
-        /// use.
+        ///  <b> <c>DatabaseConnections</c> </b> - The number of database connections in use.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Statistics</code>: The most useful statistics are <code>Maximum</code> and
-        /// <code>Sum</code>.
+        ///  <c>Statistics</c>: The most useful statistics are <c>Maximum</c> and <c>Sum</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Unit</code>: The published unit is <code>Count</code>.
+        ///  <c>Unit</c>: The published unit is <c>Count</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DiskQueueDepth</code> </b> - The number of outstanding IOs (read/write
-        /// requests) that are waiting to access the disk.
+        ///  <b> <c>DiskQueueDepth</c> </b> - The number of outstanding IOs (read/write requests)
+        /// that are waiting to access the disk.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+        ///  <c>Statistics</c>: The most useful statistic is <c>Sum</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Unit</code>: The published unit is <code>Count</code>.
+        ///  <c>Unit</c>: The published unit is <c>Count</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>FreeStorageSpace</code> </b> - The amount of available storage space.
+        ///  <b> <c>FreeStorageSpace</c> </b> - The amount of available storage space.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Statistics</code>: The most useful statistic is <code>Sum</code>.
+        ///  <c>Statistics</c>: The most useful statistic is <c>Sum</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Unit</code>: The published unit is <code>Bytes</code>.
+        ///  <c>Unit</c>: The published unit is <c>Bytes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkReceiveThroughput</code> </b> - The incoming (Receive) network traffic
+        ///  <b> <c>NetworkReceiveThroughput</c> </b> - The incoming (Receive) network traffic
         /// on the database, including both customer database traffic and AWS traffic used for
         /// monitoring and replication.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Statistics</code>: The most useful statistic is <code>Average</code>.
+        ///  <c>Statistics</c>: The most useful statistic is <c>Average</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Unit</code>: The published unit is <code>Bytes/Second</code>.
+        ///  <c>Unit</c>: The published unit is <c>Bytes/Second</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkTransmitThroughput</code> </b> - The outgoing (Transmit) network
-        /// traffic on the database, including both customer database traffic and AWS traffic
-        /// used for monitoring and replication.
+        ///  <b> <c>NetworkTransmitThroughput</c> </b> - The outgoing (Transmit) network traffic
+        /// on the database, including both customer database traffic and AWS traffic used for
+        /// monitoring and replication.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Statistics</code>: The most useful statistic is <code>Average</code>.
+        ///  <c>Statistics</c>: The most useful statistic is <c>Average</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Unit</code>: The published unit is <code>Bytes/Second</code>.
+        ///  <c>Unit</c>: The published unit is <c>Bytes/Second</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -255,7 +252,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you wish to use a start time of October 1, 2018, at 8 PM UTC, then
-        /// you input <code>1538424000</code> as the start time.
+        /// you input <c>1538424000</c> as the start time.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -283,29 +280,29 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Minimum</code> - The lowest value observed during the specified period. Use
-        /// this value to determine low volumes of activity for your application.
+        ///  <c>Minimum</c> - The lowest value observed during the specified period. Use this
+        /// value to determine low volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.
+        ///  <c>Maximum</c> - The highest value observed during the specified period. Use this
+        /// value to determine high volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.
+        ///  <c>Sum</c> - All values submitted for the matching metric added together. You can
+        /// use this statistic to determine the total volume of a metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> - The value of Sum / SampleCount during the specified period.
-        /// By comparing this statistic with the Minimum and Maximum values, you can determine
-        /// the full scope of a metric and how close the average use is to the Minimum and Maximum
-        /// values. This comparison helps you to know when to increase or decrease your resources.
+        ///  <c>Average</c> - The value of Sum / SampleCount during the specified period. By comparing
+        /// this statistic with the Minimum and Maximum values, you can determine the full scope
+        /// of a metric and how close the average use is to the Minimum and Maximum values. This
+        /// comparison helps you to know when to increase or decrease your resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SampleCount</code> - The count, or number, of data points used for the statistical
+        ///  <c>SampleCount</c> - The count, or number, of data points used for the statistical
         /// calculation.
         /// </para>
         ///  </li> </ul>
@@ -327,7 +324,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Unit. 
         /// <para>
         /// The unit for the metric data request. Valid units depend on the metric data being
-        /// requested. For the valid units with each available metric, see the <code>metricName</code>
+        /// requested. For the valid units with each available metric, see the <c>metricName</c>
         /// parameter.
         /// </para>
         /// </summary>

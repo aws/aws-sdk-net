@@ -30,8 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// The container element for Amazon S3 Storage Lens detailed status code metrics. Detailed
-    /// status code metrics generate metrics for HTTP status codes, such as <code>200 OK</code>,
-    /// <code>403 Forbidden</code>, <code>503 Service Unavailable</code> and others. 
+    /// status code metrics generate metrics for HTTP status codes, such as <c>200 OK</c>,
+    /// <c>403 Forbidden</c>, <c>503 Service Unavailable</c> and others. 
     /// 
     ///  
     /// <para>

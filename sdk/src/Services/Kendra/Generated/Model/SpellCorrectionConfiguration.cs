@@ -50,7 +50,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IncludeQuerySpellCheckSuggestions. 
         /// <para>
-        ///  <code>TRUE</code> to suggest spell corrections for queries.
+        ///  <c>TRUE</c> to suggest spell corrections for queries.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

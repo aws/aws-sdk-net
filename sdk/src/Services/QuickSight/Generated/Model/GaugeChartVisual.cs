@@ -68,7 +68,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ChartConfiguration. 
         /// <para>
-        /// The configuration of a <code>GaugeChartVisual</code>.
+        /// The configuration of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public GaugeChartConfiguration ChartConfiguration
@@ -86,7 +86,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ConditionalFormatting. 
         /// <para>
-        /// The conditional formatting of a <code>GaugeChartVisual</code>.
+        /// The conditional formatting of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public GaugeChartConditionalFormatting ConditionalFormatting

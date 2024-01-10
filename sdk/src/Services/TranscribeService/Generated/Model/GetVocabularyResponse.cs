@@ -63,9 +63,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If <code>VocabularyState</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the custom vocabulary request failed. See also: <a
-        /// href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
+        /// If <c>VocabularyState</c> is <c>FAILED</c>, <c>FailureReason</c> contains information
+        /// about why the custom vocabulary request failed. See also: <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
         /// Errors</a>.
         /// </para>
         /// </summary>
@@ -106,9 +105,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May 4,
-        /// 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.761000-07:00</c> represents 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime LastModifiedTime
@@ -145,8 +143,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property VocabularyState. 
         /// <para>
-        /// The processing state of your custom vocabulary. If the state is <code>READY</code>,
-        /// you can use the custom vocabulary in a <code>StartTranscriptionJob</code> request.
+        /// The processing state of your custom vocabulary. If the state is <c>READY</c>, you
+        /// can use the custom vocabulary in a <c>StartTranscriptionJob</c> request.
         /// </para>
         /// </summary>
         public VocabularyState VocabularyState

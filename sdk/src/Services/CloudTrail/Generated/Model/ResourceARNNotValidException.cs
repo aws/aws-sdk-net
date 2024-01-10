@@ -31,7 +31,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// This exception is thrown when the provided resource does not exist, or the ARN format
     /// of the resource is not valid. The following is the valid format for a resource ARN:
-    /// <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>.
+    /// <c>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

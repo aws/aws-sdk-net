@@ -39,7 +39,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permission for the <code>lex:GetBuiltInSlotTypes</code> action.
+    /// This operation requires permission for the <c>lex:GetBuiltInSlotTypes</c> action.
     /// </para>
     /// </summary>
     public partial class GetBuiltinSlotTypesRequest : AmazonLexModelBuildingServiceRequest

@@ -53,7 +53,7 @@ namespace Amazon.CloudFormation.Model
     /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
     /// to update all stack instances with the updated template and parameter value specified
     /// in the stack set. Once a stack instance has been updated with the new parameter, you
-    /// can then override the parameter value using <code>UpdateStackInstances</code>.
+    /// can then override the parameter value using <c>UpdateStackInstances</c>.
     /// </para>
     /// </summary>
     public partial class UpdateStackInstancesRequest : AmazonCloudFormationRequest
@@ -77,7 +77,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+        /// You can specify <c>Accounts</c> or <c>DeploymentTargets</c>, but not both.
         /// </para>
         /// </summary>
         public List<string> Accounts
@@ -101,16 +101,16 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// If you are signed in to a delegated administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>
@@ -143,7 +143,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+        /// You can specify <c>Accounts</c> or <c>DeploymentTargets</c>, but not both.
         /// </para>
         /// </summary>
         public DeploymentTargets DeploymentTargets
@@ -227,8 +227,8 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// To leave an overridden parameter set to its present value, include the parameter and
-        /// specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both
-        /// a value and set <code>UsePreviousValue</code> to <code>true</code>.)
+        /// specify <c>UsePreviousValue</c> as <c>true</c>. (You can't specify both a value and
+        /// set <c>UsePreviousValue</c> to <c>true</c>.)
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -248,12 +248,12 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// You can only override the parameter <i>values</i> that are specified in the stack
-        /// set; to add or delete a parameter itself, use <code>UpdateStackSet</code> to update
-        /// the stack set template. If you add a parameter to a template, before you can override
+        /// set; to add or delete a parameter itself, use <c>UpdateStackSet</c> to update the
+        /// stack set template. If you add a parameter to a template, before you can override
         /// the parameter value specified in the stack set you must first use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_UpdateStackSet.html">UpdateStackSet</a>
         /// to update all stack instances with the updated template and parameter value specified
         /// in the stack set. Once a stack instance has been updated with the new parameter, you
-        /// can then override the parameter value using <code>UpdateStackInstances</code>.
+        /// can then override the parameter value using <c>UpdateStackInstances</c>.
         /// </para>
         /// </summary>
         public List<Parameter> ParameterOverrides

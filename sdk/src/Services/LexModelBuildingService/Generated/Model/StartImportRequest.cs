@@ -42,14 +42,14 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property MergeStrategy. 
         /// <para>
-        /// Specifies the action that the <code>StartImport</code> operation should take when
-        /// there is an existing resource with the same name.
+        /// Specifies the action that the <c>StartImport</c> operation should take when there
+        /// is an existing resource with the same name.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// FAIL_ON_CONFLICT - The import operation is stopped on the first conflict between a
         /// resource in the import file and an existing resource. The name of the resource causing
-        /// the conflict is in the <code>failureReason</code> field of the response to the <code>GetImport</code>
+        /// the conflict is in the <c>failureReason</c> field of the response to the <c>GetImport</c>
         /// operation.
         /// </para>
         ///  
@@ -77,7 +77,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Gets and sets the property Payload. 
         /// <para>
         /// A zip archive in binary format. The archive should contain one file, a JSON file containing
-        /// the resource to import. The resource should match the type specified in the <code>resourceType</code>
+        /// the resource to import. The resource should match the type specified in the <c>resourceType</c>
         /// field.
         /// </para>
         /// </summary>

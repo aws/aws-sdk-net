@@ -117,8 +117,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// The token to use to retrieve the next page of results. This value is <c>null</c> when
+        /// there are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken
@@ -141,29 +141,28 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - The Capacity Reservation is active and the capacity is available
+        ///  <c>active</c> - The Capacity Reservation is active and the capacity is available
         /// for your use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>expired</code> - The Capacity Reservation expired automatically at the date
-        /// and time specified in your request. The reserved capacity is no longer available for
-        /// your use.
+        ///  <c>expired</c> - The Capacity Reservation expired automatically at the date and time
+        /// specified in your request. The reserved capacity is no longer available for your use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity
+        ///  <c>cancelled</c> - The Capacity Reservation was cancelled. The reserved capacity
         /// is no longer available for your use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code> - The Capacity Reservation request was successful but the capacity
+        ///  <c>pending</c> - The Capacity Reservation request was successful but the capacity
         /// provisioning is still pending.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed</code> - The Capacity Reservation request has failed. A request might
-        /// fail due to invalid request parameters, capacity constraints, or instance limit constraints.
+        ///  <c>failed</c> - The Capacity Reservation request has failed. A request might fail
+        /// due to invalid request parameters, capacity constraints, or instance limit constraints.
         /// Failed requests are retained for 60 minutes.
         /// </para>
         ///  </li> </ul>

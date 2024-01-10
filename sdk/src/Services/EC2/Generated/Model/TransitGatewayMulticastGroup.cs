@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MemberType. 
         /// <para>
-        /// The member type (for example, <code>static</code>).
+        /// The member type (for example, <c>static</c>).
         /// </para>
         /// </summary>
         public MembershipType MemberType

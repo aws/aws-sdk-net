@@ -85,8 +85,8 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property ReportingMta. 
         /// <para>
         /// The reporting MTA that attempted to deliver the message, formatted as specified in
-        /// <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<code>mta-name-type; mta-name</code>).
-        /// The default value is <code>dns; inbound-smtp.[region].amazonaws.com</code>.
+        /// <a href="https://tools.ietf.org/html/rfc3464">RFC 3464</a> (<c>mta-name-type; mta-name</c>).
+        /// The default value is <c>dns; inbound-smtp.[region].amazonaws.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

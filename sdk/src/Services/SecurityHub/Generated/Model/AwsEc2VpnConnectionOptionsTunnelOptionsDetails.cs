@@ -270,7 +270,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RekeyFuzzPercentage. 
         /// <para>
-        /// The percentage of the rekey window, which is determined by <code>RekeyMarginTimeSeconds</code>
+        /// The percentage of the rekey window, which is determined by <c>RekeyMarginTimeSeconds</c>
         /// during which the rekey time is randomly selected.
         /// </para>
         /// </summary>

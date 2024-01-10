@@ -210,7 +210,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RdsLoginAttemptAction. 
         /// <para>
-        /// Information about <code>RDS_LOGIN_ATTEMPT</code> action described in this finding.
+        /// Information about <c>RDS_LOGIN_ATTEMPT</c> action described in this finding.
         /// </para>
         /// </summary>
         public RdsLoginAttemptAction RdsLoginAttemptAction

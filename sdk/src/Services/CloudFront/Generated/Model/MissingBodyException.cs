@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// This operation requires a body. Ensure that the body is present and the <code>Content-Type</code>
+    /// This operation requires a body. Ensure that the body is present and the <c>Content-Type</c>
     /// header is set.
     /// </summary>
     #if !NETSTANDARD

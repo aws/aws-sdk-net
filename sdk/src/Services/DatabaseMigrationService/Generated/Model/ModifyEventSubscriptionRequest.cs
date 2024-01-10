@@ -62,7 +62,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EventCategories. 
         /// <para>
         ///  A list of event categories for a source type that you want to subscribe to. Use the
-        /// <code>DescribeEventCategories</code> action to see a list of event categories. 
+        /// <c>DescribeEventCategories</c> action to see a list of event categories. 
         /// </para>
         /// </summary>
         public List<string> EventCategories

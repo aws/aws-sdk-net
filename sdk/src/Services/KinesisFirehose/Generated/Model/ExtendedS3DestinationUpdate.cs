@@ -106,7 +106,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CompressionFormat. 
         /// <para>
-        /// The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
+        /// The compression format. If no value is specified, the default is <c>UNCOMPRESSED</c>.
         /// 
         /// </para>
         /// </summary>

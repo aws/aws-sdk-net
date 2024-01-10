@@ -60,8 +60,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property RegistrationStatus. 
         /// <para>
-        /// The status of registering your IAM resource. The status can be one of <code>REGISTRATION_SUCCESS</code>,
-        /// <code>REGISTRATION_PENDING</code>, <code>REGISTRATION_FAILURE</code>.
+        /// The status of registering your IAM resource. The status can be one of <c>REGISTRATION_SUCCESS</c>,
+        /// <c>REGISTRATION_PENDING</c>, <c>REGISTRATION_FAILURE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

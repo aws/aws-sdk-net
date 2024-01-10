@@ -30,9 +30,9 @@ namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
     /// A single query to be processed. Use these parameters to query the Performance Insights
-    /// <code>GetResourceMetrics</code> API to retrieve the metrics for an anomaly. For more
-    /// information, see <code> <a href="https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_GetResourceMetrics.html">GetResourceMetrics</a>
-    /// </code> in the <i>Amazon RDS Performance Insights API Reference</i>.
+    /// <c>GetResourceMetrics</c> API to retrieve the metrics for an anomaly. For more information,
+    /// see <c> <a href="https://docs.aws.amazon.com/performance-insights/latest/APIReference/API_GetResourceMetrics.html">GetResourceMetrics</a>
+    /// </c> in the <i>Amazon RDS Performance Insights API Reference</i>.
     /// 
     ///  
     /// <para>
@@ -67,13 +67,12 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// One or more filters to apply to a Performance Insights <code>GetResourceMetrics</code>
-        /// API query. Restrictions:
+        /// One or more filters to apply to a Performance Insights <c>GetResourceMetrics</c> API
+        /// query. Restrictions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any number of filters by the same dimension, as specified in the <code>GroupBy</code>
-        /// parameter.
+        /// Any number of filters by the same dimension, as specified in the <c>GroupBy</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -97,10 +96,10 @@ namespace Amazon.DevOpsGuru.Model
         /// Gets and sets the property GroupBy. 
         /// <para>
         /// The specification for how to aggregate the data points from a Performance Insights
-        /// <code>GetResourceMetrics</code> API query. The Performance Insights query returns
-        /// all of the dimensions within that group, unless you provide the names of specific
-        /// dimensions within that group. You can also request that Performance Insights return
-        /// a limited number of values for a dimension.
+        /// <c>GetResourceMetrics</c> API query. The Performance Insights query returns all of
+        /// the dimensions within that group, unless you provide the names of specific dimensions
+        /// within that group. You can also request that Performance Insights return a limited
+        /// number of values for a dimension.
         /// </para>
         /// </summary>
         public PerformanceInsightsMetricDimensionGroup GroupBy
@@ -118,32 +117,30 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Metric. 
         /// <para>
-        /// The name of the meteric used used when querying an Performance Insights <code>GetResourceMetrics</code>
+        /// The name of the meteric used used when querying an Performance Insights <c>GetResourceMetrics</c>
         /// API for anomaly metrics.
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>Metric</code> are:
+        /// Valid values for <c>Metric</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.load.avg</code> - a scaled representation of the number of active sessions
-        /// for the database engine.
+        ///  <c>db.load.avg</c> - a scaled representation of the number of active sessions for
+        /// the database engine.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sampledload.avg</code> - the raw number of active sessions for the database
-        /// engine.
+        ///  <c>db.sampledload.avg</c> - the raw number of active sessions for the database engine.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If the number of active sessions is less than an internal Performance Insights threshold,
-        /// <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If
-        /// the number of active sessions is greater than the internal threshold, Performance
-        /// Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled
-        /// values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code>
-        /// less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code>
-        /// only. 
+        /// <c>db.load.avg</c> and <c>db.sampledload.avg</c> are the same value. If the number
+        /// of active sessions is greater than the internal threshold, Performance Insights samples
+        /// the active sessions, with <c>db.load.avg</c> showing the scaled values, <c>db.sampledload.avg</c>
+        /// showing the raw values, and <c>db.sampledload.avg</c> less than <c>db.load.avg</c>.
+        /// For most use cases, you can query <c>db.load.avg</c> only. 
         /// </para>
         /// </summary>
         public string Metric

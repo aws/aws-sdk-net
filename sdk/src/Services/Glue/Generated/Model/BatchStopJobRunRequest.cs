@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobRunIds. 
         /// <para>
-        /// A list of the <code>JobRunIds</code> that should be stopped for that job definition.
+        /// A list of the <c>JobRunIds</c> that should be stopped for that job definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

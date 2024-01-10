@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether the logging types that are listed in <code>Types</code> are enabled.
+        /// Whether the logging types that are listed in <c>Types</c> are enabled.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -61,23 +61,23 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>api</code> 
+        ///  <c>api</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>audit</code> 
+        ///  <c>audit</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>authenticator</code> 
+        ///  <c>authenticator</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>controllerManager</code> 
+        ///  <c>controllerManager</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>scheduler</code> 
+        ///  <c>scheduler</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -40,9 +40,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code>
-        /// operations, which returns results in the next page.
+        /// If your initial <c>ListVpcEndpoints</c> operation returns a <c>nextToken</c>, you
+        /// can include the returned <c>nextToken</c> in subsequent <c>ListVpcEndpoints</c> operations,
+        /// which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

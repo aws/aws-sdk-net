@@ -30,10 +30,9 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateJob operation.
-    /// While a job's <code>JobState</code> value is <code>New</code>, you can update some
-    /// of the information associated with a job. Once the job changes to a different job
-    /// state, usually within 60 minutes of the job being created, this action is no longer
-    /// available.
+    /// While a job's <c>JobState</c> value is <c>New</c>, you can update some of the information
+    /// associated with a job. Once the job changes to a different job state, usually within
+    /// 60 minutes of the job being created, this action is no longer available.
     /// </summary>
     public partial class UpdateJobRequest : AmazonSnowballRequest
     {
@@ -110,7 +109,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The job ID of the job that you want to update, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The job ID of the job that you want to update, for example <c>JID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=39, Max=39)]
@@ -183,8 +182,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The updated <code>JobResource</code> object, or the updated <a>JobResource</a> object.
-        /// 
+        /// The updated <c>JobResource</c> object, or the updated <a>JobResource</a> object. 
         /// </para>
         /// </summary>
         public JobResource Resources
@@ -241,8 +239,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property SnowballCapacityPreference. 
         /// <para>
-        /// The updated <code>SnowballCapacityPreference</code> of this job's <a>JobMetadata</a>
-        /// object. The 50 TB Snowballs are only available in the US regions.
+        /// The updated <c>SnowballCapacityPreference</c> of this job's <a>JobMetadata</a> object.
+        /// The 50 TB Snowballs are only available in the US regions.
         /// </para>
         ///  
         /// <para>

@@ -65,7 +65,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The Amazon Resource Name (ARN) of the runtime role for interactive workload submission
         /// on the cluster. The runtime role can be a cross-account IAM role. The runtime role
         /// ARN is a combination of account ID, role name, and role type using the following format:
-        /// <code>arn:partition:service:region:account:resource</code>.
+        /// <c>arn:partition:service:region:account:resource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

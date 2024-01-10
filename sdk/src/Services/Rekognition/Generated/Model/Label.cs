@@ -104,9 +104,9 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// If <code>Label</code> represents an object, <code>Instances</code> contains the bounding
-        /// boxes for each instance of the detected object. Bounding boxes are returned for common
-        /// object labels such as people, cars, furniture, apparel or pets.
+        /// If <c>Label</c> represents an object, <c>Instances</c> contains the bounding boxes
+        /// for each instance of the detected object. Bounding boxes are returned for common object
+        /// labels such as people, cars, furniture, apparel or pets.
         /// </para>
         /// </summary>
         public List<Instance> Instances

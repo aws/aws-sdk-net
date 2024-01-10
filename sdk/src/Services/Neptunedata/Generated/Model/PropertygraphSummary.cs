@@ -90,7 +90,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property EdgeStructures. 
         /// <para>
-        /// This field is only present when the requested mode is <code>DETAILED</code>. It contains
+        /// This field is only present when the requested mode is <c>DETAILED</c>. It contains
         /// a list of edge structures.
         /// </para>
         /// </summary>
@@ -145,7 +145,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property NodeStructures. 
         /// <para>
-        /// This field is only present when the requested mode is <code>DETAILED</code>. It contains
+        /// This field is only present when the requested mode is <c>DETAILED</c>. It contains
         /// a list of node structures.
         /// </para>
         /// </summary>

@@ -47,9 +47,9 @@ namespace Amazon.PaymentCryptography.Model
         /// </para>
         ///  
         /// <para>
-        /// For symmetric keys, Amazon Web Services Payment Cryptography supports <code>AES</code>
-        /// and <code>TDES</code> algorithms. For asymmetric keys, Amazon Web Services Payment
-        /// Cryptography supports <code>RSA</code> and <code>ECC_NIST</code> algorithms.
+        /// For symmetric keys, Amazon Web Services Payment Cryptography supports <c>AES</c> and
+        /// <c>TDES</c> algorithms. For asymmetric keys, Amazon Web Services Payment Cryptography
+        /// supports <c>RSA</c> and <c>ECC_NIST</c> algorithms.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

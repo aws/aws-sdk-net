@@ -64,7 +64,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ExecutionRoleName. 
         /// <para>
         /// The Automation execution role used by the currently running Automation. If not specified,
-        /// the default value is <code>AWS-SystemsManager-AutomationExecutionRole</code>.
+        /// the default value is <c>AWS-SystemsManager-AutomationExecutionRole</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

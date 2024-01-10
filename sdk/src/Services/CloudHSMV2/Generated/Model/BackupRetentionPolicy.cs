@@ -39,8 +39,8 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of backup retention policy. For the <code>DAYS</code> type, the value is
-        /// the number of days to retain backups.
+        /// The type of backup retention policy. For the <c>DAYS</c> type, the value is the number
+        /// of days to retain backups.
         /// </para>
         /// </summary>
         public BackupRetentionType Type

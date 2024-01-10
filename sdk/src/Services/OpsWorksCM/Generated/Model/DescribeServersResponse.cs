@@ -39,7 +39,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// This is not currently implemented for <code>DescribeServers</code> requests. 
+        /// This is not currently implemented for <c>DescribeServers</c> requests. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]
@@ -58,29 +58,28 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Servers. 
         /// <para>
-        /// Contains the response to a <code>DescribeServers</code> request.
+        /// Contains the response to a <c>DescribeServers</c> request.
         /// </para>
         ///  
         /// <para>
-        ///  <i>For Chef Automate servers:</i> If <code>DescribeServersResponse$Servers$EngineAttributes</code>
+        ///  <i>For Chef Automate servers:</i> If <c>DescribeServersResponse$Servers$EngineAttributes</c>
         /// includes CHEF_MAJOR_UPGRADE_AVAILABLE, you can upgrade the Chef Automate server to
         /// Chef Automate 2. To be eligible for upgrade, a server running Chef Automate 1 must
         /// have had at least one successful maintenance run after November 1, 2019.
         /// </para>
         ///  
         /// <para>
-        ///  <i>For Puppet servers:</i> <code>DescribeServersResponse$Servers$EngineAttributes</code>
+        ///  <i>For Puppet servers:</i> <c>DescribeServersResponse$Servers$EngineAttributes</c>
         /// contains the following two responses:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PUPPET_API_CA_CERT</code>, the PEM-encoded CA certificate that is used by the
-        /// Puppet API over TCP port number 8140. The CA certificate is also used to sign node
-        /// certificates.
+        ///  <c>PUPPET_API_CA_CERT</c>, the PEM-encoded CA certificate that is used by the Puppet
+        /// API over TCP port number 8140. The CA certificate is also used to sign node certificates.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PUPPET_API_CRL</code>, a certificate revocation list. The certificate revocation
+        ///  <c>PUPPET_API_CRL</c>, a certificate revocation list. The certificate revocation
         /// list is for internal maintenance purposes only. For more information about the Puppet
         /// certificate revocation list, see <a href="https://puppet.com/docs/puppet/5.5/man/certificate_revocation_list.html">Man
         /// Page: puppet certificate_revocation_list</a> in the Puppet documentation.

@@ -42,14 +42,14 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of repository results returned by <code>DescribeRepositories</code>
-        /// in paginated output. When this parameter is used, <code>DescribeRepositories</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeRepositories</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 1000. If this parameter is not used, then <code>DescribeRepositories</code>
-        /// returns up to 100 results and a <code>nextToken</code> value, if applicable. This
-        /// option cannot be used when you specify repositories with <code>repositoryNames</code>.
+        /// The maximum number of repository results returned by <c>DescribeRepositories</c> in
+        /// paginated output. When this parameter is used, <c>DescribeRepositories</c> only returns
+        /// <c>maxResults</c> results in a single page along with a <c>nextToken</c> response
+        /// element. The remaining results of the initial request can be seen by sending another
+        /// <c>DescribeRepositories</c> request with the returned <c>nextToken</c> value. This
+        /// value can be between 1 and 1000. If this parameter is not used, then <c>DescribeRepositories</c>
+        /// returns up to 100 results and a <c>nextToken</c> value, if applicable. This option
+        /// cannot be used when you specify repositories with <c>repositoryNames</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -68,12 +68,11 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>DescribeRepositories</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return. This option cannot be used when you specify repositories
-        /// with <code>repositoryNames</code>.
+        /// The <c>nextToken</c> value returned from a previous paginated <c>DescribeRepositories</c>
+        /// request where <c>maxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>nextToken</c> value. This value is <c>null</c> when there are no more results
+        /// to return. This option cannot be used when you specify repositories with <c>repositoryNames</c>.
         /// </para>
         ///  <note> 
         /// <para>

@@ -33,19 +33,19 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// You must specify at least one of the following: <code>S3DataSource</code> or <code>SnsDataSource</code>.
+    /// You must specify at least one of the following: <c>S3DataSource</c> or <c>SnsDataSource</c>.
     /// </para>
     ///  
     /// <para>
-    /// Use <code>SnsDataSource</code> to specify an SNS input topic for a streaming labeling
-    /// job. If you do not specify and SNS input topic ARN, Ground Truth will create a one-time
+    /// Use <c>SnsDataSource</c> to specify an SNS input topic for a streaming labeling job.
+    /// If you do not specify and SNS input topic ARN, Ground Truth will create a one-time
     /// labeling job.
     /// </para>
     ///  
     /// <para>
-    /// Use <code>S3DataSource</code> to specify an input manifest file for both streaming
-    /// and one-time labeling jobs. Adding an <code>S3DataSource</code> is optional if you
-    /// use <code>SnsDataSource</code> to create a streaming labeling job.
+    /// Use <c>S3DataSource</c> to specify an input manifest file for both streaming and one-time
+    /// labeling jobs. Adding an <c>S3DataSource</c> is optional if you use <c>SnsDataSource</c>
+    /// to create a streaming labeling job.
     /// </para>
     /// </summary>
     public partial class LabelingJobDataSource

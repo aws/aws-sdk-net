@@ -45,13 +45,13 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// The name used to access a file system created by Amazon EFS. CodeBuild creates an
-        /// environment variable by appending the <code>identifier</code> in all capital letters
-        /// to <code>CODEBUILD_</code>. For example, if you specify <code>my_efs</code> for <code>identifier</code>,
-        /// a new environment variable is create named <code>CODEBUILD_MY_EFS</code>. 
+        /// environment variable by appending the <c>identifier</c> in all capital letters to
+        /// <c>CODEBUILD_</c>. For example, if you specify <c>my_efs</c> for <c>identifier</c>,
+        /// a new environment variable is create named <c>CODEBUILD_MY_EFS</c>. 
         /// </para>
         ///  
         /// <para>
-        ///  The <code>identifier</code> is used to mount your file system. 
+        ///  The <c>identifier</c> is used to mount your file system. 
         /// </para>
         /// </summary>
         public string Identifier
@@ -70,16 +70,16 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// A string that specifies the location of the file system created by Amazon EFS. Its
-        /// format is <code>efs-dns-name:/directory-path</code>. You can find the DNS name of
-        /// file system when you view it in the Amazon EFS console. The directory path is a path
-        /// to a directory in the file system that CodeBuild mounts. For example, if the DNS name
-        /// of a file system is <code>fs-abcd1234.efs.us-west-2.amazonaws.com</code>, and its
-        /// mount directory is <code>my-efs-mount-directory</code>, then the <code>location</code>
-        /// is <code>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</code>. 
+        /// format is <c>efs-dns-name:/directory-path</c>. You can find the DNS name of file system
+        /// when you view it in the Amazon EFS console. The directory path is a path to a directory
+        /// in the file system that CodeBuild mounts. For example, if the DNS name of a file system
+        /// is <c>fs-abcd1234.efs.us-west-2.amazonaws.com</c>, and its mount directory is <c>my-efs-mount-directory</c>,
+        /// then the <c>location</c> is <c>fs-abcd1234.efs.us-west-2.amazonaws.com:/my-efs-mount-directory</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The directory path in the format <code>efs-dns-name:/directory-path</code> is optional.
+        /// The directory path in the format <c>efs-dns-name:/directory-path</c> is optional.
         /// If you do not specify a directory path, the location is only the DNS name and CodeBuild
         /// mounts the entire file system. 
         /// </para>
@@ -100,7 +100,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property MountOptions. 
         /// <para>
         ///  The mount options for a file system created by Amazon EFS. The default mount options
-        /// used by CodeBuild are <code>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</code>.
+        /// used by CodeBuild are <c>nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/mounting-fs-nfs-mount-settings.html">Recommended
         /// NFS Mount Options</a>. 
         /// </para>
@@ -138,7 +138,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the file system. The one supported type is <code>EFS</code>. 
+        ///  The type of the file system. The one supported type is <c>EFS</c>. 
         /// </para>
         /// </summary>
         public FileSystemType Type

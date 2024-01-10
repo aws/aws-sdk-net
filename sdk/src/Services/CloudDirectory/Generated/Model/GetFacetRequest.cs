@@ -31,8 +31,8 @@ namespace Amazon.CloudDirectory.Model
     /// <summary>
     /// Container for the parameters to the GetFacet operation.
     /// Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or
-    /// <code>ObjectType</code>. You can call this on all kinds of schema facets -- published,
-    /// development, or applied.
+    /// <c>ObjectType</c>. You can call this on all kinds of schema facets -- published, development,
+    /// or applied.
     /// </summary>
     public partial class GetFacetRequest : AmazonCloudDirectoryRequest
     {

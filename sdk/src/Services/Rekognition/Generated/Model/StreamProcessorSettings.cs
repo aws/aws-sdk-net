@@ -30,8 +30,8 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Input parameters used in a streaming video analyzed by a Amazon Rekognition stream
-    /// processor. You can use <code>FaceSearch</code> to recognize faces in a streaming video,
-    /// or you can use <code>ConnectedHome</code> to detect labels.
+    /// processor. You can use <c>FaceSearch</c> to recognize faces in a streaming video,
+    /// or you can use <c>ConnectedHome</c> to detect labels.
     /// </summary>
     public partial class StreamProcessorSettings
     {

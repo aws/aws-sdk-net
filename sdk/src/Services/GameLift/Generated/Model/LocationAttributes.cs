@@ -77,9 +77,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property UpdateStatus. 
         /// <para>
-        /// The status of fleet activity updates to the location. The status <code>PENDING_UPDATE</code>
-        /// indicates that <code>StopFleetActions</code> or <code>StartFleetActions</code> has
-        /// been requested but the update has not yet been completed for the location.
+        /// The status of fleet activity updates to the location. The status <c>PENDING_UPDATE</c>
+        /// indicates that <c>StopFleetActions</c> or <c>StartFleetActions</c> has been requested
+        /// but the update has not yet been completed for the location.
         /// </para>
         /// </summary>
         public LocationUpdateStatus UpdateStatus

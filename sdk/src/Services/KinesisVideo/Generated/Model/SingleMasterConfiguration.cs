@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel
-    /// type.
+    /// A structure that contains the configuration for the <c>SINGLE_MASTER</c> channel type.
     /// </summary>
     public partial class SingleMasterConfiguration
     {

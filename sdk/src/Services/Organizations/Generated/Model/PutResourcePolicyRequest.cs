@@ -69,8 +69,8 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// A list of tags that you want to attach to the newly created resource policy. For each
         /// tag in the list, you must specify both a tag key and a value. You can set the value
-        /// to an empty string, but you can't set it to <code>null</code>. For more information
-        /// about tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// to an empty string, but you can't set it to <c>null</c>. For more information about
+        /// tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
         /// Organizations resources</a> in the Organizations User Guide.
         /// </para>
         ///  <note> 

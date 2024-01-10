@@ -30,19 +30,18 @@ namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
     /// Container for the parameters to the PutLifecycleConfiguration operation.
-    /// Use this action to manage storage for your file system. A <code>LifecycleConfiguration</code>
-    /// consists of one or more <code>LifecyclePolicy</code> objects that define the following:
+    /// Use this action to manage storage for your file system. A <c>LifecycleConfiguration</c>
+    /// consists of one or more <c>LifecyclePolicy</c> objects that define the following:
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <b> <code>TransitionToIA</code> </b> – When to move files in the file system from
-    /// primary storage (Standard storage class) into the Infrequent Access (IA) storage.
+    ///  <b> <c>TransitionToIA</c> </b> – When to move files in the file system from primary
+    /// storage (Standard storage class) into the Infrequent Access (IA) storage.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b> <code>TransitionToArchive</code> </b> – When to move files in the file system
-    /// from their current storage class (either IA or Standard storage) into the Archive
-    /// storage.
+    ///  <b> <c>TransitionToArchive</c> </b> – When to move files in the file system from
+    /// their current storage class (either IA or Standard storage) into the Archive storage.
     /// </para>
     ///  
     /// <para>
@@ -56,9 +55,9 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  </note> </li> </ul> <ul> <li> 
     /// <para>
-    ///  <b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in
-    /// the file system back to primary storage (Standard storage class) after they are accessed
-    /// in IA or Archive storage.
+    ///  <b> <c>TransitionToPrimaryStorageClass</c> </b> – Whether to move files in the file
+    /// system back to primary storage (Standard storage class) after they are accessed in
+    /// IA or Archive storage.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -68,12 +67,11 @@ namespace Amazon.ElasticFileSystem.Model
     ///  
     /// <para>
     /// Each Amazon EFS file system supports one lifecycle configuration, which applies to
-    /// all files in the file system. If a <code>LifecycleConfiguration</code> object already
-    /// exists for the specified file system, a <code>PutLifecycleConfiguration</code> call
-    /// modifies the existing configuration. A <code>PutLifecycleConfiguration</code> call
-    /// with an empty <code>LifecyclePolicies</code> array in the request body deletes any
-    /// existing <code>LifecycleConfiguration</code>. In the request, specify the following:
-    /// 
+    /// all files in the file system. If a <c>LifecycleConfiguration</c> object already exists
+    /// for the specified file system, a <c>PutLifecycleConfiguration</c> call modifies the
+    /// existing configuration. A <c>PutLifecycleConfiguration</c> call with an empty <c>LifecyclePolicies</c>
+    /// array in the request body deletes any existing <c>LifecycleConfiguration</c>. In the
+    /// request, specify the following: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -82,26 +80,26 @@ namespace Amazon.ElasticFileSystem.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>LifecyclePolicies</code> array of <code>LifecyclePolicy</code> objects that
-    /// define when to move files to IA storage, to Archive storage, and back to primary storage.
+    /// A <c>LifecyclePolicies</c> array of <c>LifecyclePolicy</c> objects that define when
+    /// to move files to IA storage, to Archive storage, and back to primary storage.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Amazon EFS requires that each <code>LifecyclePolicy</code> object have only have a
-    /// single transition, so the <code>LifecyclePolicies</code> array needs to be structured
-    /// with separate <code>LifecyclePolicy</code> objects. See the example requests in the
-    /// following section for more information.
+    /// Amazon EFS requires that each <c>LifecyclePolicy</c> object have only have a single
+    /// transition, so the <c>LifecyclePolicies</c> array needs to be structured with separate
+    /// <c>LifecyclePolicy</c> objects. See the example requests in the following section
+    /// for more information.
     /// </para>
     ///  </note> </li> </ul> 
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:PutLifecycleConfiguration</code>
+    /// This operation requires permissions for the <c>elasticfilesystem:PutLifecycleConfiguration</c>
     /// operation.
     /// </para>
     ///  
     /// <para>
-    /// To apply a <code>LifecycleConfiguration</code> object to an encrypted file system,
-    /// you need the same Key Management Service permissions as when you created the encrypted
-    /// file system.
+    /// To apply a <c>LifecycleConfiguration</c> object to an encrypted file system, you need
+    /// the same Key Management Service permissions as when you created the encrypted file
+    /// system.
     /// </para>
     /// </summary>
     public partial class PutLifecycleConfigurationRequest : AmazonElasticFileSystemRequest
@@ -112,7 +110,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemId. 
         /// <para>
-        /// The ID of the file system for which you are creating the <code>LifecycleConfiguration</code>
+        /// The ID of the file system for which you are creating the <c>LifecycleConfiguration</c>
         /// object (String).
         /// </para>
         /// </summary>
@@ -132,20 +130,19 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property LifecyclePolicies. 
         /// <para>
-        /// An array of <code>LifecyclePolicy</code> objects that define the file system's <code>LifecycleConfiguration</code>
-        /// object. A <code>LifecycleConfiguration</code> object informs EFS Lifecycle management
-        /// of the following:
+        /// An array of <c>LifecyclePolicy</c> objects that define the file system's <c>LifecycleConfiguration</c>
+        /// object. A <c>LifecycleConfiguration</c> object informs EFS Lifecycle management of
+        /// the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>TransitionToIA</code> </b> – When to move files in the file system from
-        /// primary storage (Standard storage class) into the Infrequent Access (IA) storage.
+        ///  <b> <c>TransitionToIA</c> </b> – When to move files in the file system from primary
+        /// storage (Standard storage class) into the Infrequent Access (IA) storage.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>TransitionToArchive</code> </b> – When to move files in the file system
-        /// from their current storage class (either IA or Standard storage) into the Archive
-        /// storage.
+        ///  <b> <c>TransitionToArchive</c> </b> – When to move files in the file system from
+        /// their current storage class (either IA or Standard storage) into the Archive storage.
         /// </para>
         ///  
         /// <para>
@@ -159,18 +156,17 @@ namespace Amazon.ElasticFileSystem.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <b> <code>TransitionToPrimaryStorageClass</code> </b> – Whether to move files in
-        /// the file system back to primary storage (Standard storage class) after they are accessed
-        /// in IA or Archive storage.
+        ///  <b> <c>TransitionToPrimaryStorageClass</c> </b> – Whether to move files in the file
+        /// system back to primary storage (Standard storage class) after they are accessed in
+        /// IA or Archive storage.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// When using the <code>put-lifecycle-configuration</code> CLI command or the <code>PutLifecycleConfiguration</code>
-        /// API action, Amazon EFS requires that each <code>LifecyclePolicy</code> object have
-        /// only a single transition. This means that in a request body, <code>LifecyclePolicies</code>
-        /// must be structured as an array of <code>LifecyclePolicy</code> objects, one object
-        /// for each storage transition. See the example requests in the following section for
-        /// more information.
+        /// When using the <c>put-lifecycle-configuration</c> CLI command or the <c>PutLifecycleConfiguration</c>
+        /// API action, Amazon EFS requires that each <c>LifecyclePolicy</c> object have only
+        /// a single transition. This means that in a request body, <c>LifecyclePolicies</c> must
+        /// be structured as an array of <c>LifecyclePolicy</c> objects, one object for each storage
+        /// transition. See the example requests in the following section for more information.
         /// </para>
         ///  </note>
         /// </summary>

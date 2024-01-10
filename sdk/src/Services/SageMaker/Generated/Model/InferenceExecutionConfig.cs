@@ -42,11 +42,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SERIAL</code> - Containers run as a serial pipeline.
+        ///  <c>SERIAL</c> - Containers run as a serial pipeline.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIRECT</code> - Only the individual container that you specify is run.
+        ///  <c>DIRECT</c> - Only the individual container that you specify is run.
         /// </para>
         ///  </li> </ul>
         /// </summary>

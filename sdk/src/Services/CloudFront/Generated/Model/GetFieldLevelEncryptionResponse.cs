@@ -39,7 +39,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The current version of the field level encryption configuration. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// The current version of the field level encryption configuration. For example: <c>E2QWRUHAPOMQZL</c>.
         /// </para>
         /// </summary>
         public string ETag

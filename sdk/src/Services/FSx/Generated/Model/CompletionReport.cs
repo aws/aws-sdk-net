@@ -30,10 +30,10 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Provides a report detailing the data repository task results of the files processed
-    /// that match the criteria specified in the report <code>Scope</code> parameter. FSx
-    /// delivers the report to the file system's linked data repository in Amazon S3, using
-    /// the path specified in the report <code>Path</code> parameter. You can specify whether
-    /// or not a report gets generated for a task using the <code>Enabled</code> parameter.
+    /// that match the criteria specified in the report <c>Scope</c> parameter. FSx delivers
+    /// the report to the file system's linked data repository in Amazon S3, using the path
+    /// specified in the report <c>Path</c> parameter. You can specify whether or not a report
+    /// gets generated for a task using the <c>Enabled</c> parameter.
     /// </summary>
     public partial class CompletionReport
     {
@@ -45,11 +45,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Set <code>Enabled</code> to <code>True</code> to generate a <code>CompletionReport</code>
-        /// when the task completes. If set to <code>true</code>, then you need to provide a report
-        /// <code>Scope</code>, <code>Path</code>, and <code>Format</code>. Set <code>Enabled</code>
-        /// to <code>False</code> if you do not want a <code>CompletionReport</code> generated
-        /// when the task completes.
+        /// Set <c>Enabled</c> to <c>True</c> to generate a <c>CompletionReport</c> when the task
+        /// completes. If set to <c>true</c>, then you need to provide a report <c>Scope</c>,
+        /// <c>Path</c>, and <c>Format</c>. Set <c>Enabled</c> to <c>False</c> if you do not want
+        /// a <c>CompletionReport</c> generated when the task completes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -68,11 +67,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// Required if <code>Enabled</code> is set to <code>true</code>. Specifies the format
-        /// of the <code>CompletionReport</code>. <code>REPORT_CSV_20191124</code> is the only
-        /// format currently supported. When <code>Format</code> is set to <code>REPORT_CSV_20191124</code>,
-        /// the <code>CompletionReport</code> is provided in CSV format, and is delivered to <code>{path}/task-{id}/failures.csv</code>.
-        /// 
+        /// Required if <c>Enabled</c> is set to <c>true</c>. Specifies the format of the <c>CompletionReport</c>.
+        /// <c>REPORT_CSV_20191124</c> is the only format currently supported. When <c>Format</c>
+        /// is set to <c>REPORT_CSV_20191124</c>, the <c>CompletionReport</c> is provided in CSV
+        /// format, and is delivered to <c>{path}/task-{id}/failures.csv</c>. 
         /// </para>
         /// </summary>
         public ReportFormat Format
@@ -90,13 +88,12 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// Required if <code>Enabled</code> is set to <code>true</code>. Specifies the location
-        /// of the report on the file system's linked S3 data repository. An absolute path that
-        /// defines where the completion report will be stored in the destination location. The
-        /// <code>Path</code> you provide must be located within the file system’s ExportPath.
-        /// An example <code>Path</code> value is "s3://myBucket/myExportPath/optionalPrefix".
-        /// The report provides the following information for each file in the report: FilePath,
-        /// FileStatus, and ErrorCode.
+        /// Required if <c>Enabled</c> is set to <c>true</c>. Specifies the location of the report
+        /// on the file system's linked S3 data repository. An absolute path that defines where
+        /// the completion report will be stored in the destination location. The <c>Path</c>
+        /// you provide must be located within the file system’s ExportPath. An example <c>Path</c>
+        /// value is "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
+        /// information for each file in the report: FilePath, FileStatus, and ErrorCode.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=4357)]
@@ -115,11 +112,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Required if <code>Enabled</code> is set to <code>true</code>. Specifies the scope
-        /// of the <code>CompletionReport</code>; <code>FAILED_FILES_ONLY</code> is the only scope
-        /// currently supported. When <code>Scope</code> is set to <code>FAILED_FILES_ONLY</code>,
-        /// the <code>CompletionReport</code> only contains information about files that the data
-        /// repository task failed to process.
+        /// Required if <c>Enabled</c> is set to <c>true</c>. Specifies the scope of the <c>CompletionReport</c>;
+        /// <c>FAILED_FILES_ONLY</c> is the only scope currently supported. When <c>Scope</c>
+        /// is set to <c>FAILED_FILES_ONLY</c>, the <c>CompletionReport</c> only contains information
+        /// about files that the data repository task failed to process.
         /// </para>
         /// </summary>
         public ReportScope Scope

@@ -48,7 +48,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property AssetFormsInput. 
         /// <para>
-        /// The asset forms to be updated as part of the <code>UpdateDataSource</code> action.
+        /// The asset forms to be updated as part of the <c>UpdateDataSource</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=10)]
@@ -67,7 +67,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration to be updated as part of the <code>UpdateDataSource</code> action.
+        /// The configuration to be updated as part of the <c>UpdateDataSource</c> action.
         /// </para>
         /// </summary>
         public DataSourceConfigurationInput Configuration
@@ -85,7 +85,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description to be updated as part of the <code>UpdateDataSource</code> action.
+        /// The description to be updated as part of the <c>UpdateDataSource</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=2048)]
@@ -123,7 +123,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property EnableSetting. 
         /// <para>
-        /// The enable setting to be updated as part of the <code>UpdateDataSource</code> action.
+        /// The enable setting to be updated as part of the <c>UpdateDataSource</c> action.
         /// </para>
         /// </summary>
         public EnableSetting EnableSetting
@@ -160,7 +160,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to be updated as part of the <code>UpdateDataSource</code> action.
+        /// The name to be updated as part of the <c>UpdateDataSource</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=256)]
@@ -179,7 +179,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property PublishOnImport. 
         /// <para>
-        /// The publish on import setting to be updated as part of the <code>UpdateDataSource</code>
+        /// The publish on import setting to be updated as part of the <c>UpdateDataSource</c>
         /// action.
         /// </para>
         /// </summary>
@@ -198,7 +198,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Recommendation. 
         /// <para>
-        /// The recommendation to be updated as part of the <code>UpdateDataSource</code> action.
+        /// The recommendation to be updated as part of the <c>UpdateDataSource</c> action.
         /// </para>
         /// </summary>
         public RecommendationConfiguration Recommendation
@@ -216,7 +216,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// The schedule to be updated as part of the <code>UpdateDataSource</code> action.
+        /// The schedule to be updated as part of the <c>UpdateDataSource</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

@@ -42,7 +42,7 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// The unique identifiers for the Amazon Web Services accounts to retrieve Amazon Inspector
-        /// deep inspection activation status for. <pre><code> &lt;/p&gt; </code></pre>
+        /// deep inspection activation status for. <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<string> AccountIds

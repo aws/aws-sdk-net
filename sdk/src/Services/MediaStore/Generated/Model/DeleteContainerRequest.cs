@@ -30,7 +30,7 @@ namespace Amazon.MediaStore.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteContainer operation.
-    /// Deletes the specified container. Before you make a <code>DeleteContainer</code> request,
+    /// Deletes the specified container. Before you make a <c>DeleteContainer</c> request,
     /// delete any objects in the container or in any folders in the container. You can delete
     /// only empty containers.
     /// </summary>

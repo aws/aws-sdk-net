@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The status and configuration of an <code>AnalysisScheme</code>.
+    /// The status and configuration of an <c>AnalysisScheme</c>.
     /// </summary>
     public partial class AnalysisSchemeStatus
     {

@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteDBClusterAutomatedBackup operation.
-    /// Deletes automated backups using the <code>DbClusterResourceId</code> value of the
-    /// source DB cluster or the Amazon Resource Name (ARN) of the automated backups.
+    /// Deletes automated backups using the <c>DbClusterResourceId</c> value of the source
+    /// DB cluster or the Amazon Resource Name (ARN) of the automated backups.
     /// </summary>
     public partial class DeleteDBClusterAutomatedBackupRequest : AmazonRDSRequest
     {

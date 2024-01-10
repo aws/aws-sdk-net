@@ -30,7 +30,7 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateHITType operation.
-    /// The <code>CreateHITType</code> operation creates a new HIT type. This operation allows
+    /// The <c>CreateHITType</c> operation creates a new HIT type. This operation allows
     /// you to define a standard set of HIT properties to use when creating HITs. If you register
     /// a HIT type with values that match an existing HIT type, the HIT type ID of the existing
     /// type will be returned.
@@ -136,7 +136,7 @@ namespace Amazon.MTurk.Model
         ///  Conditions that a Worker's Qualifications must meet in order to accept the HIT. A
         /// HIT can have between zero and ten Qualification requirements. All requirements must
         /// be met in order for a Worker to accept the HIT. Additionally, other actions can be
-        /// restricted using the <code>ActionsGuarded</code> field on each <code>QualificationRequirement</code>
+        /// restricted using the <c>ActionsGuarded</c> field on each <c>QualificationRequirement</c>
         /// structure. 
         /// </para>
         /// </summary>

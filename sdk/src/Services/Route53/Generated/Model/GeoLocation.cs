@@ -76,8 +76,8 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Constraint: Specifying <code>ContinentCode</code> with either <code>CountryCode</code>
-        /// or <code>SubdivisionCode</code> returns an <code>InvalidInput</code> error.
+        /// Constraint: Specifying <c>ContinentCode</c> with either <c>CountryCode</c> or <c>SubdivisionCode</c>
+        /// returns an <c>InvalidInput</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -125,15 +125,15 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property SubdivisionCode. 
         /// <para>
         /// For geolocation resource record sets, the two-letter code for a state of the United
-        /// States. Route 53 doesn't support any other values for <code>SubdivisionCode</code>.
-        /// For a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix
+        /// States. Route 53 doesn't support any other values for <c>SubdivisionCode</c>. For
+        /// a list of state abbreviations, see <a href="https://pe.usps.com/text/pub28/28apb.htm">Appendix
         /// B: Two–Letter State and Possession Abbreviations</a> on the United States Postal Service
         /// website. 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>subdivisioncode</code>, you must also specify <code>US</code>
-        /// for <code>CountryCode</code>. 
+        /// If you specify <c>subdivisioncode</c>, you must also specify <c>US</c> for <c>CountryCode</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]

@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Configure the <code>ZonalConfig</code> object if you want CodeDeploy to deploy your
-    /// application to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
+    /// Configure the <c>ZonalConfig</c> object if you want CodeDeploy to deploy your application
+    /// to one <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-regions-availability-zones.html#concepts-availability-zones">Availability
     /// Zone</a> at a time, within an Amazon Web Services Region. By deploying to one Availability
     /// Zone at a time, you can expose your deployment to a progressively larger audience
     /// as confidence in the deployment's performance and viability grows. If you don't configure
-    /// the <code>ZonalConfig</code> object, CodeDeploy deploys your application to a random
-    /// selection of hosts across a Region.
+    /// the <c>ZonalConfig</c> object, CodeDeploy deploys your application to a random selection
+    /// of hosts across a Region.
     /// 
     ///  
     /// <para>
@@ -56,8 +56,8 @@ namespace Amazon.CodeDeploy.Model
         /// to the <i>first</i> Availability Zone. CodeDeploy will wait this amount of time before
         /// starting a deployment to the second Availability Zone. You might set this option if
         /// you want to allow extra bake time for the first Availability Zone. If you don't specify
-        /// a value for <code>firstZoneMonitorDurationInSeconds</code>, then CodeDeploy uses the
-        /// <code>monitorDurationInSeconds</code> value for the first Availability Zone.
+        /// a value for <c>firstZoneMonitorDurationInSeconds</c>, then CodeDeploy uses the <c>monitorDurationInSeconds</c>
+        /// value for the first Availability Zone.
         /// </para>
         ///  
         /// <para>
@@ -81,15 +81,15 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property MinimumHealthyHostsPerZone. 
         /// <para>
         /// The number or percentage of instances that must remain available per Availability
-        /// Zone during a deployment. This option works in conjunction with the <code>MinimumHealthyHosts</code>
+        /// Zone during a deployment. This option works in conjunction with the <c>MinimumHealthyHosts</c>
         /// option. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/instances-health.html#minimum-healthy-hosts-az">About
         /// the minimum number of healthy hosts per Availability Zone</a> in the <i>CodeDeploy
         /// User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify the <code>minimumHealthyHostsPerZone</code> option, then CodeDeploy
-        /// uses a default value of <code>0</code> percent.
+        /// If you don't specify the <c>minimumHealthyHostsPerZone</c> option, then CodeDeploy
+        /// uses a default value of <c>0</c> percent.
         /// </para>
         ///  
         /// <para>
@@ -116,7 +116,7 @@ namespace Amazon.CodeDeploy.Model
         /// to an Availability Zone. CodeDeploy will wait this amount of time before starting
         /// a deployment to the next Availability Zone. Consider adding a monitor duration to
         /// give the deployment some time to prove itself (or 'bake') in one Availability Zone
-        /// before it is released in the next zone. If you don't specify a <code>monitorDurationInSeconds</code>,
+        /// before it is released in the next zone. If you don't specify a <c>monitorDurationInSeconds</c>,
         /// CodeDeploy starts deploying to the next Availability Zone immediately.
         /// </para>
         ///  

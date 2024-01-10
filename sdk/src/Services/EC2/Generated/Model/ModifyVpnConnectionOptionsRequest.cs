@@ -54,7 +54,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0.0.0.0/0</code> 
+        /// Default: <c>0.0.0.0/0</c> 
         /// </para>
         /// </summary>
         public string LocalIpv4NetworkCidr
@@ -76,7 +76,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>::/0</code> 
+        /// Default: <c>::/0</c> 
         /// </para>
         /// </summary>
         public string LocalIpv6NetworkCidr
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0.0.0.0/0</code> 
+        /// Default: <c>0.0.0.0/0</c> 
         /// </para>
         /// </summary>
         public string RemoteIpv4NetworkCidr
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>::/0</code> 
+        /// Default: <c>::/0</c> 
         /// </para>
         /// </summary>
         public string RemoteIpv6NetworkCidr

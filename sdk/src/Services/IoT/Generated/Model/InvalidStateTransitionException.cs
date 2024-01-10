@@ -30,7 +30,7 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// An attempt was made to change to an invalid state, for example by deleting a job or
-    /// a job execution which is "IN_PROGRESS" without setting the <code>force</code> parameter.
+    /// a job execution which is "IN_PROGRESS" without setting the <c>force</c> parameter.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -59,7 +59,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property IdentifierType. 
         /// <para>
-        /// The type of identifier used in <code>identifier</code>.
+        /// The type of identifier used in <c>identifier</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

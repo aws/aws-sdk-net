@@ -31,7 +31,7 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the ListAcceptedPortfolioShares operation.
     /// Lists all imported portfolios for which account-to-account shares were accepted by
-    /// this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios
+    /// this account. By specifying the <c>PortfolioShareType</c>, you can list portfolios
     /// for which organizational shares were accepted by this account.
     /// </summary>
     public partial class ListAcceptedPortfolioSharesRequest : AmazonServiceCatalogRequest
@@ -48,11 +48,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -115,17 +115,17 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS_ORGANIZATIONS</code> - List portfolios accepted and shared via organizational
+        ///  <c>AWS_ORGANIZATIONS</c> - List portfolios accepted and shared via organizational
         /// sharing by the management account or delegated administrator of your organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS_SERVICECATALOG</code> - Deprecated type.
+        ///  <c>AWS_SERVICECATALOG</c> - Deprecated type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORTED</code> - List imported portfolios that have been accepted and shared
-        /// through account-to-account sharing.
+        ///  <c>IMPORTED</c> - List imported portfolios that have been accepted and shared through
+        /// account-to-account sharing.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// Metadata information about an audio stream. An array of <code>AudioMetadata</code>
-    /// objects for the audio streams found in a stored video is returned by <a>GetSegmentDetection</a>.
+    /// Metadata information about an audio stream. An array of <c>AudioMetadata</c> objects
+    /// for the audio streams found in a stored video is returned by <a>GetSegmentDetection</a>.
     /// </summary>
     public partial class AudioMetadata
     {

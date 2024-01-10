@@ -87,20 +87,20 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The <code>TestState</code> API assumes an IAM role which must contain the required
-    /// IAM permissions for the resources your state is accessing. For information about the
-    /// permissions a state might need, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM
+    /// The <c>TestState</c> API assumes an IAM role which must contain the required IAM permissions
+    /// for the resources your state is accessing. For information about the permissions a
+    /// state might need, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM
     /// permissions to test a state</a>.
     /// </para>
     ///  
     /// <para>
-    /// The <code>TestState</code> API can run for up to five minutes. If the execution of
-    /// a state exceeds this duration, it fails with the <code>States.Timeout</code> error.
+    /// The <c>TestState</c> API can run for up to five minutes. If the execution of a state
+    /// exceeds this duration, it fails with the <c>States.Timeout</c> error.
     /// </para>
     ///  
     /// <para>
-    ///  <code>TestState</code> doesn't support <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
-    /// tasks</a>, <code>.sync</code> or <code>.waitForTaskToken</code> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service
+    ///  <c>TestState</c> doesn't support <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-activities.html">Activity
+    /// tasks</a>, <c>.sync</c> or <c>.waitForTaskToken</c> <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html">service
     /// integration patterns</a>, <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-parallel-state.html">Parallel</a>,
     /// or <a href="https://docs.aws.amazon.com/step-functions/latest/dg/amazon-states-language-map-state.html">Map</a>
     /// states.
@@ -161,19 +161,18 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INFO</code>: Shows the final state output. By default, Step Functions sets
-        /// <code>inspectionLevel</code> to <code>INFO</code> if you don't specify a level.
+        ///  <c>INFO</c>: Shows the final state output. By default, Step Functions sets <c>inspectionLevel</c>
+        /// to <c>INFO</c> if you don't specify a level.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEBUG</code>: Shows the final state output along with the input and output
-        /// data processing result.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>TRACE</code>: Shows the HTTP request and response for an HTTP Task. This level
-        /// also shows the final state output along with the input and output data processing
+        ///  <c>DEBUG</c>: Shows the final state output along with the input and output data processing
         /// result.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>TRACE</c>: Shows the HTTP request and response for an HTTP Task. This level also
+        /// shows the final state output along with the input and output data processing result.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -203,16 +202,16 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>revealSecrets</code> to <code>true</code>, you must make sure that
-        /// the IAM user that calls the <code>TestState</code> API has permission for the <code>states:RevealSecrets</code>
-        /// action. For an example of IAM policy that sets the <code>states:RevealSecrets</code>
-        /// permission, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM
+        /// If you set <c>revealSecrets</c> to <c>true</c>, you must make sure that the IAM user
+        /// that calls the <c>TestState</c> API has permission for the <c>states:RevealSecrets</c>
+        /// action. For an example of IAM policy that sets the <c>states:RevealSecrets</c> permission,
+        /// see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/test-state-isolation.html#test-state-permissions">IAM
         /// permissions to test a state</a>. Without this permission, Step Functions throws an
         /// access denied error.
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>revealSecrets</code> is set to <code>false</code>.
+        /// By default, <c>revealSecrets</c> is set to <c>false</c>.
         /// </para>
         /// </summary>
         public bool RevealSecrets

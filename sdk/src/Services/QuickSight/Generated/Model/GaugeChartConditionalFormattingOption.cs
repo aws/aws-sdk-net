@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Conditional formatting options of a <code>GaugeChartVisual</code>.
+    /// Conditional formatting options of a <c>GaugeChartVisual</c>.
     /// </summary>
     public partial class GaugeChartConditionalFormattingOption
     {
@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arc. 
         /// <para>
-        /// The options that determine the presentation of the arc of a <code>GaugeChartVisual</code>.
+        /// The options that determine the presentation of the arc of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public GaugeChartArcConditionalFormatting Arc
@@ -57,7 +57,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PrimaryValue. 
         /// <para>
-        /// The conditional formatting for the primary value of a <code>GaugeChartVisual</code>.
+        /// The conditional formatting for the primary value of a <c>GaugeChartVisual</c>.
         /// </para>
         /// </summary>
         public GaugeChartPrimaryValueConditionalFormatting PrimaryValue

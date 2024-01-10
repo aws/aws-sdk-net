@@ -40,8 +40,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the health of the RDS Proxy target. If the <code>State</code> is
-        /// <code>AVAILABLE</code>, a description is not included.
+        /// A description of the health of the RDS Proxy target. If the <c>State</c> is <c>AVAILABLE</c>,
+        /// a description is not included.
         /// </para>
         /// </summary>
         public string Description
@@ -59,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason for the current health <code>State</code> of the RDS Proxy target.
+        /// The reason for the current health <c>State</c> of the RDS Proxy target.
         /// </para>
         /// </summary>
         public TargetHealthReason Reason
@@ -82,8 +82,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>registering</code> &gt; <code>unavailable</code> &gt; <code>available</code>
-        /// &gt; <code>unavailable</code> &gt; <code>available</code> 
+        ///  <c>registering</c> &gt; <c>unavailable</c> &gt; <c>available</c> &gt; <c>unavailable</c>
+        /// &gt; <c>available</c> 
         /// </para>
         /// </summary>
         public TargetState State

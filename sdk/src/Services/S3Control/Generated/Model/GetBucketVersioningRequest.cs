@@ -45,8 +45,7 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// If you've never set versioning on your bucket, it has no versioning state. In that
-    /// case, the <code>GetBucketVersioning</code> request does not return a versioning state
-    /// value.
+    /// case, the <c>GetBucketVersioning</c> request does not return a versioning state value.
     /// </para>
     ///  
     /// <para>
@@ -56,17 +55,16 @@ namespace Amazon.S3Control.Model
     ///  
     /// <para>
     /// All Amazon S3 on Outposts REST API requests for this action require an additional
-    /// parameter of <code>x-amz-outpost-id</code> to be passed with the request. In addition,
-    /// you must use an S3 on Outposts endpoint hostname prefix instead of <code>s3-control</code>.
+    /// parameter of <c>x-amz-outpost-id</c> to be passed with the request. In addition, you
+    /// must use an S3 on Outposts endpoint hostname prefix instead of <c>s3-control</c>.
     /// For an example of the request syntax for Amazon S3 on Outposts that uses the S3 on
-    /// Outposts endpoint hostname prefix and the <code>x-amz-outpost-id</code> derived by
-    /// using the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketVersioning.html#API_control_GetBucketVersioning_Examples">Examples</a>
+    /// Outposts endpoint hostname prefix and the <c>x-amz-outpost-id</c> derived by using
+    /// the access point ARN, see the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_GetBucketVersioning.html#API_control_GetBucketVersioning_Examples">Examples</a>
     /// section.
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>GetBucketVersioning</code> for S3 on
-    /// Outposts.
+    /// The following operations are related to <c>GetBucketVersioning</c> for S3 on Outposts.
     /// </para>
     ///  <ul> <li> 
     /// <para>

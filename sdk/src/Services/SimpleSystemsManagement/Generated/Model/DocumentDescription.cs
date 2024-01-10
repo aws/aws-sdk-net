@@ -312,7 +312,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property HashType. 
         /// <para>
-        /// The hash type of the document. Valid values include <code>Sha256</code> or <code>Sha1</code>.
+        /// The hash type of the document. Valid values include <c>Sha256</c> or <c>Sha1</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -443,8 +443,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Requires. 
         /// <para>
-        /// A list of SSM documents required by a document. For example, an <code>ApplicationConfiguration</code>
-        /// document requires an <code>ApplicationConfigurationSchema</code> document.
+        /// A list of SSM documents required by a document. For example, an <c>ApplicationConfiguration</c>
+        /// document requires an <c>ApplicationConfigurationSchema</c> document.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -554,8 +554,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property StatusInformation. 
         /// <para>
-        /// A message returned by Amazon Web Services Systems Manager that explains the <code>Status</code>
-        /// value. For example, a <code>Failed</code> status might be explained by the <code>StatusInformation</code>
+        /// A message returned by Amazon Web Services Systems Manager that explains the <c>Status</c>
+        /// value. For example, a <c>Failed</c> status might be explained by the <c>StatusInformation</c>
         /// message, "The specified S3 bucket doesn't exist. Verify that the URL of the S3 bucket
         /// is correct."
         /// </para>
@@ -595,8 +595,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The target type which defines the kinds of resources the document can run on. For
-        /// example, <code>/AWS::EC2::Instance</code>. For a list of valid resource types, see
-        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+        /// example, <c>/AWS::EC2::Instance</c>. For a list of valid resource types, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
         /// Web Services resource and property types reference</a> in the <i>CloudFormation User
         /// Guide</i>. 
         /// </para>

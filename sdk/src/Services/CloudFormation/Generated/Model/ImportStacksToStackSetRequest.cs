@@ -48,16 +48,16 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CallAs. 
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For service managed stack sets, specify <code>DELEGATED_ADMIN</code>.
+        /// For service managed stack sets, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -143,7 +143,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+        /// Specify either <c>StackIds</c> or <c>StackIdsUrl</c>.
         /// </para>
         /// </summary>
         public List<string> StackIds
@@ -165,7 +165,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify either <code>StackIds</code> or <code>StackIdsUrl</code>.
+        /// Specify either <c>StackIds</c> or <c>StackIdsUrl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]

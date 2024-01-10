@@ -47,8 +47,8 @@ namespace Amazon.AWSHealth.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-    /// the next request to return more results.
+    /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+    /// next request to return more results.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -109,8 +109,8 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the results of a search are large, only a portion of the results are returned,
-        /// and a <code>nextToken</code> pagination token is returned in the response. To retrieve
-        /// the next batch of results, reissue the search request and include the returned token.
+        /// and a <c>nextToken</c> pagination token is returned in the response. To retrieve the
+        /// next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token
         /// value.
         /// </para>
@@ -131,8 +131,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property OrganizationEntityAccountFilters. 
         /// <para>
-        /// A JSON set of elements including the <code>awsAccountId</code>, <code>eventArn</code>
-        /// and a set of <code>statusCodes</code>.
+        /// A JSON set of elements including the <c>awsAccountId</c>, <c>eventArn</c> and a set
+        /// of <c>statusCodes</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -151,7 +151,7 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property OrganizationEntityFilters. 
         /// <para>
-        /// A JSON set of elements including the <code>awsAccountId</code> and the <code>eventArn</code>.
+        /// A JSON set of elements including the <c>awsAccountId</c> and the <c>eventArn</c>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated, use organizationEntityAccountFilters instead.")]

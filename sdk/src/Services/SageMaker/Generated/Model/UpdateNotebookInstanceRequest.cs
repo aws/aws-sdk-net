@@ -186,7 +186,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DisassociateLifecycleConfig. 
         /// <para>
-        /// Set to <code>true</code> to remove the notebook instance lifecycle configuration currently
+        /// Set to <c>true</c> to remove the notebook instance lifecycle configuration currently
         /// associated with the notebook instance. This operation is idempotent. If you specify
         /// a lifecycle configuration that is not associated with the notebook instance when you
         /// call this method, it does not throw an error.
@@ -289,7 +289,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// To be able to pass this role to SageMaker, the caller of this API must have the <code>iam:PassRole</code>
+        /// To be able to pass this role to SageMaker, the caller of this API must have the <c>iam:PassRole</c>
         /// permission.
         /// </para>
         ///  </note>
@@ -311,12 +311,12 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RootAccess. 
         /// <para>
         /// Whether root access is enabled or disabled for users of the notebook instance. The
-        /// default value is <code>Enabled</code>.
+        /// default value is <c>Enabled</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you set this to <code>Disabled</code>, users don't have root access on the notebook
-        /// instance, but lifecycle configuration scripts still run with root permissions.
+        /// If you set this to <c>Disabled</c>, users don't have root access on the notebook instance,
+        /// but lifecycle configuration scripts still run with root permissions.
         /// </para>
         ///  </note>
         /// </summary>

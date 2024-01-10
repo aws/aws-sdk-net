@@ -47,9 +47,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This value defaults to <code>false</code>. If you update your application without
-        /// specifying this parameter, <code>AllowNonRestoredState</code> will be set to <code>false</code>,
-        /// even if it was previously set to <code>true</code>.
+        /// This value defaults to <c>false</c>. If you update your application without specifying
+        /// this parameter, <c>AllowNonRestoredState</c> will be set to <c>false</c>, even if
+        /// it was previously set to <c>true</c>.
         /// </para>
         ///  </note>
         /// </summary>

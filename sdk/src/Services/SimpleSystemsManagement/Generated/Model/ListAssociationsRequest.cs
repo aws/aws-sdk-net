@@ -62,10 +62,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Filtering associations using the <code>InstanceID</code> attribute only returns legacy
-        /// associations created using the <code>InstanceID</code> attribute. Associations targeting
-        /// the managed node that are part of the Target Attributes <code>ResourceGroup</code>
-        /// or <code>Tags</code> aren't returned.
+        /// Filtering associations using the <c>InstanceID</c> attribute only returns legacy associations
+        /// created using the <c>InstanceID</c> attribute. Associations targeting the managed
+        /// node that are part of the Target Attributes <c>ResourceGroup</c> or <c>Tags</c> aren't
+        /// returned.
         /// </para>
         ///  </note>
         /// </summary>

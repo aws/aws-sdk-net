@@ -310,7 +310,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
         /// The length of time, in minutes, that CloudFormation waits for the nested stack to
-        /// reach the <code>CREATE_COMPLETE</code> state. 
+        /// reach the <c>CREATE_COMPLETE</c> state. 
         /// </para>
         /// </summary>
         public int TimeoutInMinutes

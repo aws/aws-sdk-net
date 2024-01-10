@@ -87,7 +87,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DecisionComment. 
         /// <para>
-        /// The decision comment of the <code>UpdateSubscriptionRequest</code> action.
+        /// The decision comment of the <c>UpdateSubscriptionRequest</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=4096)]
@@ -145,7 +145,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property RequestReason. 
         /// <para>
-        /// The reason for the <code>UpdateSubscriptionRequest</code> action.
+        /// The reason for the <c>UpdateSubscriptionRequest</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]

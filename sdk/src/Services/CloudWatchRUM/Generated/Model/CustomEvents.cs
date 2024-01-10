@@ -39,7 +39,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Specifies whether this app monitor allows the web client to define and send custom
-        /// events. The default is for custom events to be <code>DISABLED</code>.
+        /// events. The default is for custom events to be <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public CustomEventsStatus Status

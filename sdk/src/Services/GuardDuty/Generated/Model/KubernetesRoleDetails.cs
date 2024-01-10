@@ -40,7 +40,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Kind. 
         /// <para>
-        /// The kind of role. For this API, the value of <code>kind</code> will be <code>Role</code>.
+        /// The kind of role. For this API, the value of <c>kind</c> will be <c>Role</c>.
         /// </para>
         /// </summary>
         public string Kind

@@ -39,14 +39,14 @@ namespace Amazon.RAM.Model
     ///  
     /// <para>
     /// You can use this operation to update all of your resource shares to use the current
-    /// default version of the permission by specifying the same value for the <code>fromPermissionArn</code>
-    /// and <code>toPermissionArn</code> parameters.
+    /// default version of the permission by specifying the same value for the <c>fromPermissionArn</c>
+    /// and <c>toPermissionArn</c> parameters.
     /// </para>
     ///  
     /// <para>
-    /// You can use the optional <code>fromPermissionVersion</code> parameter to update only
-    /// those resources that use a specified version of the managed permission to the new
-    /// managed permission.
+    /// You can use the optional <c>fromPermissionVersion</c> parameter to update only those
+    /// resources that use a specified version of the managed permission to the new managed
+    /// permission.
     /// </para>
     ///  <important> 
     /// <para>
@@ -79,8 +79,8 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -138,7 +138,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ToPermissionArn. 
         /// <para>
         /// Specifies the ARN of the managed permission that you want to associate with resource
-        /// shares in place of the one specified by <code>fromPerssionArn</code> and <code>fromPermissionVersion</code>.
+        /// shares in place of the one specified by <c>fromPerssionArn</c> and <c>fromPermissionVersion</c>.
         /// </para>
         ///  
         /// <para>

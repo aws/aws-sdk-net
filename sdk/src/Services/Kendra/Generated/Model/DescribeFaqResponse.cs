@@ -86,8 +86,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// If the <code>Status</code> field is <code>FAILED</code>, the <code>ErrorMessage</code>
-        /// field contains the reason why the FAQ failed.
+        /// If the <c>Status</c> field is <c>FAILED</c>, the <c>ErrorMessage</c> field contains
+        /// the reason why the FAQ failed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -238,7 +238,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the FAQ. It is ready to use when the status is <code>ACTIVE</code>.
+        /// The status of the FAQ. It is ready to use when the status is <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         public FaqStatus Status

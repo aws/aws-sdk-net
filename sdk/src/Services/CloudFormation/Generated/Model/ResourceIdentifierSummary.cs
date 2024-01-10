@@ -30,8 +30,8 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Describes the target resources of a specific type in your import template (for example,
-    /// all <code>AWS::S3::Bucket</code> resources) and the properties you can provide during
-    /// the import to identify resources of that type.
+    /// all <c>AWS::S3::Bucket</c> resources) and the properties you can provide during the
+    /// import to identify resources of that type.
     /// </summary>
     public partial class ResourceIdentifierSummary
     {
@@ -42,8 +42,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property LogicalResourceIds. 
         /// <para>
-        /// The logical IDs of the target resources of the specified <code>ResourceType</code>,
-        /// as defined in the import template.
+        /// The logical IDs of the target resources of the specified <c>ResourceType</c>, as defined
+        /// in the import template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -63,8 +63,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ResourceIdentifiers. 
         /// <para>
         /// The resource properties you can provide during the import to identify your target
-        /// resources. For example, <code>BucketName</code> is a possible identifier property
-        /// for <code>AWS::S3::Bucket</code> resources.
+        /// resources. For example, <c>BucketName</c> is a possible identifier property for <c>AWS::S3::Bucket</c>
+        /// resources.
         /// </para>
         /// </summary>
         public List<string> ResourceIdentifiers
@@ -82,7 +82,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The template resource type of the target resources, such as <code>AWS::S3::Bucket</code>.
+        /// The template resource type of the target resources, such as <c>AWS::S3::Bucket</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

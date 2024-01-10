@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Determines whether CloudFront includes the <code>Referrer-Policy</code> HTTP response
-    /// header and the header's value.
+    /// Determines whether CloudFront includes the <c>Referrer-Policy</c> HTTP response header
+    /// and the header's value.
     /// 
     ///  
     /// <para>
-    /// For more information about the <code>Referrer-Policy</code> HTTP response header,
-    /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
+    /// For more information about the <c>Referrer-Policy</c> HTTP response header, see <a
+    /// href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
     /// in the MDN Web Docs.
     /// </para>
     /// </summary>
@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Override. 
         /// <para>
-        /// A Boolean that determines whether CloudFront overrides the <code>Referrer-Policy</code>
+        /// A Boolean that determines whether CloudFront overrides the <c>Referrer-Policy</c>
         /// HTTP response header received from the origin with the one specified in this response
         /// headers policy.
         /// </para>
@@ -68,39 +68,39 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ReferrerPolicy. 
         /// <para>
-        /// The value of the <code>Referrer-Policy</code> HTTP response header. Valid values are:
+        /// The value of the <c>Referrer-Policy</c> HTTP response header. Valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>no-referrer</code> 
+        ///  <c>no-referrer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>no-referrer-when-downgrade</code> 
+        ///  <c>no-referrer-when-downgrade</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>origin</code> 
+        ///  <c>origin</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>origin-when-cross-origin</code> 
+        ///  <c>origin-when-cross-origin</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>same-origin</code> 
+        ///  <c>same-origin</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>strict-origin</code> 
+        ///  <c>strict-origin</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>strict-origin-when-cross-origin</code> 
+        ///  <c>strict-origin-when-cross-origin</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unsafe-url</code> 
+        ///  <c>unsafe-url</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

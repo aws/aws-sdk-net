@@ -90,7 +90,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The <code>MaxConcurrency</code> value specified by the user when the operation started,
+        /// The <c>MaxConcurrency</c> value specified by the user when the operation started,
         /// indicating the maximum number of resources that the runbook operation can run on at
         /// the same time.
         /// </para>
@@ -111,9 +111,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MaxErrors. 
         /// <para>
-        /// The <code>MaxErrors</code> value specified by the user when the execution started,
-        /// indicating the maximum number of errors that can occur during the operation before
-        /// the updates are stopped or rolled back.
+        /// The <c>MaxErrors</c> value specified by the user when the execution started, indicating
+        /// the maximum number of errors that can occur during the operation before the updates
+        /// are stopped or rolled back.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -132,7 +132,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The key-value map of execution parameters, which were supplied when calling <code>StartChangeRequestExecution</code>.
+        /// The key-value map of execution parameters, which were supplied when calling <c>StartChangeRequestExecution</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -192,7 +192,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property TargetParameterName. 
         /// <para>
         /// The name of the parameter used as the target resource for the rate-controlled runbook
-        /// workflow. Required if you specify <code>Targets</code>. 
+        /// workflow. Required if you specify <c>Targets</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -212,7 +212,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Targets. 
         /// <para>
         /// A key-value mapping to target resources that the runbook operation performs tasks
-        /// on. Required if you specify <code>TargetParameterName</code>.
+        /// on. Required if you specify <c>TargetParameterName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

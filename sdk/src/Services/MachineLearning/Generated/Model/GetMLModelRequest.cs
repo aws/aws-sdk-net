@@ -30,12 +30,12 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMLModel operation.
-    /// Returns an <code>MLModel</code> that includes detailed metadata, data source information,
-    /// and the current status of the <code>MLModel</code>.
+    /// Returns an <c>MLModel</c> that includes detailed metadata, data source information,
+    /// and the current status of the <c>MLModel</c>.
     /// 
     ///  
     /// <para>
-    ///  <code>GetMLModel</code> provides results in normal or verbose format. 
+    ///  <c>GetMLModel</c> provides results in normal or verbose format. 
     /// </para>
     /// </summary>
     public partial class GetMLModelRequest : AmazonMachineLearningRequest
@@ -46,7 +46,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID assigned to the <code>MLModel</code> at creation.
+        /// The ID assigned to the <c>MLModel</c> at creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -65,15 +65,15 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Verbose. 
         /// <para>
-        /// Specifies whether the <code>GetMLModel</code> operation should return <code>Recipe</code>.
+        /// Specifies whether the <c>GetMLModel</c> operation should return <c>Recipe</c>.
         /// </para>
         ///  
         /// <para>
-        /// If true, <code>Recipe</code> is returned.
+        /// If true, <c>Recipe</c> is returned.
         /// </para>
         ///  
         /// <para>
-        /// If false, <code>Recipe</code> is not returned.
+        /// If false, <c>Recipe</c> is not returned.
         /// </para>
         /// </summary>
         public bool Verbose

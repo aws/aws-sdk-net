@@ -85,7 +85,7 @@ namespace Amazon.DLM.Model
         /// <para>
         ///  <b>[Default policies only]</b> Indicates whether the policy should copy tags from
         /// the source resource to the snapshot or AMI. If you do not specify a value, the default
-        /// is <code>false</code>.
+        /// is <c>false</c>.
         /// </para>
         ///  
         /// <para>
@@ -158,12 +158,12 @@ namespace Amazon.DLM.Model
         ///  <ul> <li> 
         /// <para>
         /// To create a default policy for EBS snapshots, that creates snapshots of all volumes
-        /// in the Region that do not have recent backups, specify <code>VOLUME</code>.
+        /// in the Region that do not have recent backups, specify <c>VOLUME</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To create a default policy for EBS-backed AMIs, that creates EBS-backed AMIs from
-        /// all instances in the Region that do not have recent backups, specify <code>INSTANCE</code>.
+        /// all instances in the Region that do not have recent backups, specify <c>INSTANCE</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -254,14 +254,14 @@ namespace Amazon.DLM.Model
         /// If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete
         /// previously created snapshots or AMIs, up to but not including the last one, based
         /// on the specified retention period. If you want Amazon Data Lifecycle Manager to delete
-        /// all snapshots or AMIs, including the last one, specify <code>true</code>.
+        /// all snapshots or AMIs, including the last one, specify <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager
         /// stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue
         /// deleting snapshots or AMIs, including the last one, if the policy enters one of these
-        /// states, specify <code>true</code>.
+        /// states, specify <c>true</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -270,7 +270,7 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value, the default is <code>false</code>.
+        /// If you do not specify a value, the default is <c>false</c>.
         /// </para>
         ///  
         /// <para>

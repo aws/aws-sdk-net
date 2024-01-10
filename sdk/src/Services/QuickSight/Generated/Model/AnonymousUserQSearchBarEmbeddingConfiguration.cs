@@ -44,8 +44,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// The Amazon Resource Name (ARN) of this Q topic must be included in the <code>AuthorizedResourceArns</code>
-        /// parameter. Otherwise, the request will fail with <code>InvalidParameterValueException</code>.
+        /// The Amazon Resource Name (ARN) of this Q topic must be included in the <c>AuthorizedResourceArns</c>
+        /// parameter. Otherwise, the request will fail with <c>InvalidParameterValueException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

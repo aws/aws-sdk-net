@@ -64,9 +64,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You can also provide a <code>Tag</code> to track the model compilation job's resource
-    /// use and costs. The response body contains the <code>CompilationJobArn</code> for the
-    /// compiled job.
+    /// You can also provide a <c>Tag</c> to track the model compilation job's resource use
+    /// and costs. The response body contains the <c>CompilationJobArn</c> for the compiled
+    /// job.
     /// </para>
     ///  
     /// <para>
@@ -128,9 +128,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ModelPackageVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a versioned model package. Provide either a <code>ModelPackageVersionArn</code>
-        /// or an <code>InputConfig</code> object in the request syntax. The presence of both
-        /// objects in the <code>CreateCompilationJob</code> request will return an exception.
+        /// The Amazon Resource Name (ARN) of a versioned model package. Provide either a <c>ModelPackageVersionArn</c>
+        /// or an <c>InputConfig</c> object in the request syntax. The presence of both objects
+        /// in the <c>CreateCompilationJob</c> request will return an exception.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -195,7 +195,7 @@ namespace Amazon.SageMaker.Model
         ///  </li> </ul> 
         /// <para>
         /// You grant permissions for all of these tasks to an IAM role. To pass this role to
-        /// Amazon SageMaker, the caller of this API must have the <code>iam:PassRole</code> permission.
+        /// Amazon SageMaker, the caller of this API must have the <c>iam:PassRole</c> permission.
         /// For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-roles.html">Amazon
         /// SageMaker Roles.</a> 
         /// </para>

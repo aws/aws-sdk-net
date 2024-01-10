@@ -69,21 +69,21 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED_TIME</code>: List based on when each build project was created.
+        ///  <c>CREATED_TIME</c>: List based on when each build project was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LAST_MODIFIED_TIME</code>: List based on when information about each build
-        /// project was last changed.
+        ///  <c>LAST_MODIFIED_TIME</c>: List based on when information about each build project
+        /// was last changed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NAME</code>: List based on each build project's name.
+        ///  <c>NAME</c>: List based on each build project's name.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Use <code>sortOrder</code> to specify in what order to list the build project names
-        /// based on the preceding criteria.
+        /// Use <c>sortOrder</c> to specify in what order to list the build project names based
+        /// on the preceding criteria.
         /// </para>
         /// </summary>
         public ProjectSortByType SortBy
@@ -105,16 +105,15 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASCENDING</code>: List in ascending order.
+        ///  <c>ASCENDING</c>: List in ascending order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESCENDING</code>: List in descending order.
+        ///  <c>DESCENDING</c>: List in descending order.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Use <code>sortBy</code> to specify the criterion to be used to list build project
-        /// names.
+        /// Use <c>sortBy</c> to specify the criterion to be used to list build project names.
         /// </para>
         /// </summary>
         public SortOrderType SortOrder

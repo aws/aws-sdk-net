@@ -63,13 +63,13 @@ namespace Amazon.Amplify.Model
         /// </para>
         ///  
         /// <para>
-        /// Use <code>accessToken</code> for GitHub repositories only. To authorize access to
-        /// a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.
+        /// Use <c>accessToken</c> for GitHub repositories only. To authorize access to a repository
+        /// provider such as Bitbucket or CodeCommit, use <c>oauthToken</c>.
         /// </para>
         ///  
         /// <para>
-        /// You must specify either <code>accessToken</code> or <code>oauthToken</code> when you
-        /// update an app.
+        /// You must specify either <c>accessToken</c> or <c>oauthToken</c> when you update an
+        /// app.
         /// </para>
         ///  
         /// <para>
@@ -152,7 +152,7 @@ namespace Amazon.Amplify.Model
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
         /// The basic authorization credentials for an Amplify app. You must base64-encode the
-        /// authorization credentials and provide them in the format <code>user:password</code>.
+        /// authorization credentials and provide them in the format <c>user:password</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=2000)]
@@ -381,17 +381,17 @@ namespace Amazon.Amplify.Model
         /// </para>
         ///  
         /// <para>
-        /// Use <code>oauthToken</code> for repository providers other than GitHub, such as Bitbucket
+        /// Use <c>oauthToken</c> for repository providers other than GitHub, such as Bitbucket
         /// or CodeCommit.
         /// </para>
         ///  
         /// <para>
-        /// To authorize access to GitHub as your repository provider, use <code>accessToken</code>.
+        /// To authorize access to GitHub as your repository provider, use <c>accessToken</c>.
         /// </para>
         ///  
         /// <para>
-        /// You must specify either <code>oauthToken</code> or <code>accessToken</code> when you
-        /// update an app.
+        /// You must specify either <c>oauthToken</c> or <c>accessToken</c> when you update an
+        /// app.
         /// </para>
         ///  
         /// <para>
@@ -418,10 +418,10 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform for the Amplify app. For a static app, set the platform type to <code>WEB</code>.
-        /// For a dynamic server-side rendered (SSR) app, set the platform type to <code>WEB_COMPUTE</code>.
+        /// The platform for the Amplify app. For a static app, set the platform type to <c>WEB</c>.
+        /// For a dynamic server-side rendered (SSR) app, set the platform type to <c>WEB_COMPUTE</c>.
         /// For an app requiring Amplify Hosting's original SSR support only, set the platform
-        /// type to <code>WEB_DYNAMIC</code>.
+        /// type to <c>WEB_DYNAMIC</c>.
         /// </para>
         /// </summary>
         public Platform Platform

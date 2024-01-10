@@ -34,7 +34,7 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// Rules using <code>NonTalkTimeFilter</code> are designed to match:
+    /// Rules using <c>NonTalkTimeFilter</c> are designed to match:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -79,8 +79,8 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// Set to <code>TRUE</code> to flag periods of speech. Set to <code>FALSE</code> to flag
-        /// periods of silence
+        /// Set to <c>TRUE</c> to flag periods of speech. Set to <c>FALSE</c> to flag periods
+        /// of silence
         /// </para>
         /// </summary>
         public bool Negate

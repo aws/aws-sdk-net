@@ -149,7 +149,7 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property Statistic. 
         /// <para>
         /// The statistic for the metric, other than percentiles. For percentile statistics, use
-        /// <code>ExtendedStatistics</code>.
+        /// <c>ExtendedStatistics</c>.
         /// </para>
         /// </summary>
         public Statistic Statistic

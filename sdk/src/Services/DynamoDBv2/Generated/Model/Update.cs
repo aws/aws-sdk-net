@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents a request to perform an <code>UpdateItem</code> operation.
+    /// Represents a request to perform an <c>UpdateItem</c> operation.
     /// </summary>
     public partial class Update
     {
@@ -118,9 +118,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnValuesOnConditionCheckFailure. 
         /// <para>
-        /// Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if
-        /// the <code>Update</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>,
-        /// the valid values are: NONE and ALL_OLD.
+        /// Use <c>ReturnValuesOnConditionCheckFailure</c> to get the item attributes if the <c>Update</c>
+        /// condition fails. For <c>ReturnValuesOnConditionCheckFailure</c>, the valid values
+        /// are: NONE and ALL_OLD.
         /// </para>
         /// </summary>
         public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure
@@ -138,7 +138,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// Name of the table for the <code>UpdateItem</code> request.
+        /// Name of the table for the <c>UpdateItem</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=255)]

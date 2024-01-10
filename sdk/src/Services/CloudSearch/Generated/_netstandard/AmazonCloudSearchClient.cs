@@ -379,7 +379,7 @@ namespace Amazon.CloudSearch
 
 
         /// <summary>
-        /// Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code>
+        /// Configures an analysis scheme that can be applied to a <c>text</c> or <c>text-array</c>
         /// field to define language-specific text processing options. For more information, see
         /// <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
         /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer
@@ -438,9 +438,9 @@ namespace Amazon.CloudSearch
 
 
         /// <summary>
-        /// Configures an <code><a>Expression</a></code> for the search domain. Used to create
-        /// new expressions and modify existing ones. If the expression exists, the new configuration
-        /// replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
+        /// Configures an <c><a>Expression</a></c> for the search domain. Used to create new expressions
+        /// and modify existing ones. If the expression exists, the new configuration replaces
+        /// the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
         /// target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
         /// </summary>
@@ -497,13 +497,12 @@ namespace Amazon.CloudSearch
 
 
         /// <summary>
-        /// Configures an <code><a>IndexField</a></code> for the search domain. Used to create
-        /// new fields and modify existing ones. You must specify the name of the domain you are
-        /// configuring and an index field configuration. The index field configuration specifies
-        /// a unique name, the index field type, and the options you want to configure for the
-        /// field. The options you can specify depend on the <code><a>IndexFieldType</a></code>.
-        /// If the field exists, the new configuration replaces the old one. For more information,
-        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
+        /// Configures an <c><a>IndexField</a></c> for the search domain. Used to create new fields
+        /// and modify existing ones. You must specify the name of the domain you are configuring
+        /// and an index field configuration. The index field configuration specifies a unique
+        /// name, the index field type, and the options you want to configure for the field. The
+        /// options you can specify depend on the <c><a>IndexFieldType</a></c>. If the field exists,
+        /// the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
         /// target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
         /// </summary>
@@ -719,7 +718,7 @@ namespace Amazon.CloudSearch
 
 
         /// <summary>
-        /// Removes an <code><a>Expression</a></code> from the search domain. For more information,
+        /// Removes an <c><a>Expression</a></c> from the search domain. For more information,
         /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
         /// target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
@@ -774,7 +773,7 @@ namespace Amazon.CloudSearch
 
 
         /// <summary>
-        /// Removes an <code><a>IndexField</a></code> from the search domain. For more information,
+        /// Removes an <c><a>IndexField</a></c> from the search domain. For more information,
         /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html"
         /// target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
@@ -884,11 +883,10 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific
-        /// text processing options for a <code>text</code> field. Can be limited to specific
-        /// analysis schemes by name. By default, shows all analysis schemes and includes any
-        /// pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code>
-        /// to show the active configuration and exclude pending changes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
+        /// text processing options for a <c>text</c> field. Can be limited to specific analysis
+        /// schemes by name. By default, shows all analysis schemes and includes any pending changes
+        /// to the configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active
+        /// configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
         /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
         /// </summary>
@@ -937,9 +935,8 @@ namespace Amazon.CloudSearch
 
         /// <summary>
         /// Gets the availability options configured for a domain. By default, shows the configuration
-        /// with any pending changes. Set the <code>Deployed</code> option to <code>true</code>
-        /// to show the active configuration and exclude pending changes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
+        /// with any pending changes. Set the <c>Deployed</c> option to <c>true</c> to show the
+        /// active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html"
         /// target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i>.
         /// </summary>
@@ -1056,9 +1053,9 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Gets information about the search domains owned by this account. Can be limited to
         /// specific domains. Shows all domains by default. To get the number of searchable documents
-        /// in a domain, use the console or submit a <code>matchall</code> request to your domain's
-        /// search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// in a domain, use the console or submit a <c>matchall</c> request to your domain's
+        /// search endpoint: <c>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</c>. For
+        /// more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
         /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i>.
         /// </summary>
@@ -1086,9 +1083,9 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Gets information about the search domains owned by this account. Can be limited to
         /// specific domains. Shows all domains by default. To get the number of searchable documents
-        /// in a domain, use the console or submit a <code>matchall</code> request to your domain's
-        /// search endpoint: <code>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</code>.
-        /// For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// in a domain, use the console or submit a <c>matchall</c> request to your domain's
+        /// search endpoint: <c>q=matchall&amp;amp;q.parser=structured&amp;amp;size=0</c>. For
+        /// more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
         /// target="_blank">Getting Information about a Search Domain</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i>.
         /// </summary>
@@ -1134,9 +1131,8 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Gets the expressions configured for the search domain. Can be limited to specific
         /// expressions by name. By default, shows all expressions and includes any pending changes
-        /// to the configuration. Set the <code>Deployed</code> option to <code>true</code> to
-        /// show the active configuration and exclude pending changes. For more information, see
-        /// <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
+        /// to the configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active
+        /// configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html"
         /// target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
         /// </summary>
@@ -1186,9 +1182,9 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Gets information about the index fields configured for the search domain. Can be limited
         /// to specific fields by name. By default, shows all fields and includes any pending
-        /// changes to the configuration. Set the <code>Deployed</code> option to <code>true</code>
-        /// to show the active configuration and exclude pending changes. For more information,
-        /// see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
+        /// changes to the configuration. Set the <c>Deployed</c> option to <c>true</c> to show
+        /// the active configuration and exclude pending changes. For more information, see <a
+        /// href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html"
         /// target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
         /// </summary>
@@ -1288,8 +1284,8 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Gets information about the access policies that control access to the domain's document
         /// and search endpoints. By default, shows the configuration with any pending changes.
-        /// Set the <code>Deployed</code> option to <code>true</code> to show the active configuration
-        /// and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
+        /// Set the <c>Deployed</c> option to <c>true</c> to show the active configuration and
+        /// exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html"
         /// target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch
         /// Developer Guide</i>.
         /// </summary>
@@ -1340,8 +1336,8 @@ namespace Amazon.CloudSearch
         /// Gets the suggesters configured for a domain. A suggester enables you to display possible
         /// matches before users finish typing their queries. Can be limited to specific suggesters
         /// by name. By default, shows all suggesters and includes any pending changes to the
-        /// configuration. Set the <code>Deployed</code> option to <code>true</code> to show the
-        /// active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
+        /// configuration. Set the <c>Deployed</c> option to <c>true</c> to show the active configuration
+        /// and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html"
         /// target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer
         /// Guide</i>.
         /// </summary>
@@ -1391,7 +1387,7 @@ namespace Amazon.CloudSearch
         /// <summary>
         /// Tells the search domain to start indexing its documents using the latest indexing
         /// options. This operation must be invoked to activate options whose <a>OptionStatus</a>
-        /// is <code>RequiresIndexDocuments</code>.
+        /// is <c>RequiresIndexDocuments</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the IndexDocuments service method.</param>
         /// <param name="cancellationToken">

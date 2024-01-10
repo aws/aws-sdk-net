@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAppInstanceBot operation.
-    /// The <code>AppInstanceBot's</code> information.
+    /// The <c>AppInstanceBot's</c> information.
     /// </summary>
     public partial class DescribeAppInstanceBotRequest : AmazonChimeSDKIdentityRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceBotArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceBot</code>.
+        /// The ARN of the <c>AppInstanceBot</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

@@ -105,8 +105,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotAliasStatus. 
         /// <para>
-        /// The current status of the bot alias. When the status is <code>Available</code> the
-        /// alias is ready for use.
+        /// The current status of the bot alias. When the status is <c>Available</c> the alias
+        /// is ready for use.
         /// </para>
         /// </summary>
         public BotAliasStatus BotAliasStatus

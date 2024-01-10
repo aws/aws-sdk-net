@@ -45,27 +45,26 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// npm: <code>regular</code>, <code>dev</code>, <code>peer</code>, <code>optional</code>
-        /// 
+        /// npm: <c>regular</c>, <c>dev</c>, <c>peer</c>, <c>optional</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// maven: <code>optional</code>, <code>parent</code>, <code>compile</code>, <code>runtime</code>,
-        /// <code>test</code>, <code>system</code>, <code>provided</code>.
+        /// maven: <c>optional</c>, <c>parent</c>, <c>compile</c>, <c>runtime</c>, <c>test</c>,
+        /// <c>system</c>, <c>provided</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Note that <code>parent</code> is not a regular Maven dependency type; instead this
-        /// is extracted from the <code>&lt;parent&gt;</code> element if one is defined in the
-        /// package version's POM file.
+        /// Note that <c>parent</c> is not a regular Maven dependency type; instead this is extracted
+        /// from the <c>&lt;parent&gt;</c> element if one is defined in the package version's
+        /// POM file.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        /// nuget: The <code>dependencyType</code> field is never set for NuGet packages.
+        /// nuget: The <c>dependencyType</c> field is never set for NuGet packages.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// pypi: <code>Requires-Dist</code> 
+        /// pypi: <c>Requires-Dist</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -89,11 +88,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of a Maven package is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
+        ///  The namespace of an npm package is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -139,8 +138,8 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  The required version, or version range, of the package that this package depends
         /// on. The version format is specific to the package type. For example, the following
-        /// are possible valid required versions: <code>1.2.3</code>, <code>^2.3.4</code>, or
-        /// <code>4.x</code>. 
+        /// are possible valid required versions: <c>1.2.3</c>, <c>^2.3.4</c>, or <c>4.x</c>.
+        /// 
         /// </para>
         /// </summary>
         public string VersionRequirement

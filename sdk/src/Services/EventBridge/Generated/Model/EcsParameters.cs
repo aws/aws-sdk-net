@@ -55,10 +55,9 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  
         /// <para>
-        /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or launchType
-        /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
-        /// used. 
+        /// If a <c>capacityProviderStrategy</c> is specified, the <c>launchType</c> parameter
+        /// must be omitted. If no <c>capacityProviderStrategy</c> or launchType is specified,
+        /// the <c>defaultCapacityProviderStrategy</c> for the cluster is used. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=6)]
@@ -138,8 +137,8 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// Specifies the launch type on which your task is running. The launch type that you
         /// specify here must match one of the launch type (compatibilities) of the target task.
-        /// The <code>FARGATE</code> value is supported only in the Regions where Fargate with
-        /// Amazon ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
+        /// The <c>FARGATE</c> value is supported only in the Regions where Fargate with Amazon
+        /// ECS is supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/AWS-Fargate.html">Fargate
         /// on Amazon ECS</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -158,16 +157,15 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
-        /// Use this structure if the Amazon ECS task uses the <code>awsvpc</code> network mode.
-        /// This structure specifies the VPC subnets and security groups associated with the task,
-        /// and whether a public IP address is to be used. This structure is required if <code>LaunchType</code>
-        /// is <code>FARGATE</code> because the <code>awsvpc</code> mode is required for Fargate
-        /// tasks.
+        /// Use this structure if the Amazon ECS task uses the <c>awsvpc</c> network mode. This
+        /// structure specifies the VPC subnets and security groups associated with the task,
+        /// and whether a public IP address is to be used. This structure is required if <c>LaunchType</c>
+        /// is <c>FARGATE</c> because the <c>awsvpc</c> mode is required for Fargate tasks.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>NetworkConfiguration</code> when the target ECS task does not
-        /// use the <code>awsvpc</code> network mode, the task fails.
+        /// If you specify <c>NetworkConfiguration</c> when the target ECS task does not use the
+        /// <c>awsvpc</c> network mode, the task fails.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -227,12 +225,12 @@ namespace Amazon.EventBridge.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// Specifies the platform version for the task. Specify only the numeric portion of the
-        /// platform version, such as <code>1.1.0</code>.
+        /// platform version, such as <c>1.1.0</c>.
         /// </para>
         ///  
         /// <para>
-        /// This structure is used only if <code>LaunchType</code> is <code>FARGATE</code>. For
-        /// more information about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// This structure is used only if <c>LaunchType</c> is <c>FARGATE</c>. For more information
+        /// about valid platform versions, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -312,8 +310,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property TaskCount. 
         /// <para>
-        /// The number of tasks to create based on <code>TaskDefinition</code>. The default is
-        /// 1.
+        /// The number of tasks to create based on <c>TaskDefinition</c>. The default is 1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -37,7 +37,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// When you <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/initialize-cluster.html#sign-csr">initialize
     /// the CloudHSM cluster</a>, you create the trust anchor certificate and save it in the
-    /// <code>customerCA.crt</code> file.
+    /// <c>customerCA.crt</c> file.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

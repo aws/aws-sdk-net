@@ -145,7 +145,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> 
+        ///  <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c> 
         /// </para>
         ///  
         /// <para>

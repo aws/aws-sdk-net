@@ -32,7 +32,7 @@ namespace Amazon.Imagebuilder.Model
     /// Container for the parameters to the UpdateImagePipeline operation.
     /// Updates an image pipeline. Image pipelines enable you to automate the creation and
     /// distribution of images. You must specify exactly one recipe for your image, using
-    /// either a <code>containerRecipeArn</code> or an <code>imageRecipeArn</code>.
+    /// either a <c>containerRecipeArn</c> or an <c>imageRecipeArn</c>.
     /// 
     ///  <note> 
     /// <para>

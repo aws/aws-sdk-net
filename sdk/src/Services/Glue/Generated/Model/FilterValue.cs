@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Represents a single entry in the list of values for a <code>FilterExpression</code>.
+    /// Represents a single entry in the list of values for a <c>FilterExpression</c>.
     /// </summary>
     public partial class FilterValue
     {

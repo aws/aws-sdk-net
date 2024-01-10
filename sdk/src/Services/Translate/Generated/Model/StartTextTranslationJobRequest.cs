@@ -32,11 +32,11 @@ namespace Amazon.Translate.Model
     /// Container for the parameters to the StartTextTranslationJob operation.
     /// Starts an asynchronous batch translation job. Use batch translation jobs to translate
     /// large volumes of text across multiple documents at once. For batch translation, you
-    /// can input documents with different source languages (specify <code>auto</code> as
-    /// the source language). You can specify one or more target languages. Batch translation
-    /// translates each input document into each of the target languages. For more information,
-    /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
-    /// batch processing</a>.
+    /// can input documents with different source languages (specify <c>auto</c> as the source
+    /// language). You can specify one or more target languages. Batch translation translates
+    /// each input document into each of the target languages. For more information, see <a
+    /// href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch
+    /// processing</a>.
     /// 
     ///  
     /// <para>
@@ -238,9 +238,9 @@ namespace Amazon.Translate.Model
         /// <para>
         /// The language code of the input language. Specify the language if all input documents
         /// share the same language. If you don't know the language of the source files, or your
-        /// input documents contains different source languages, select <code>auto</code>. Amazon
-        /// Translate auto detects the source language for each input document. For a list of
-        /// supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// input documents contains different source languages, select <c>auto</c>. Amazon Translate
+        /// auto detects the source language for each input document. For a list of supported
+        /// language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
         /// languages</a>.
         /// </para>
         /// </summary>

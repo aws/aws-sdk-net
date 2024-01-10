@@ -30,11 +30,11 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJobs operation.
-    /// Returns an array of <code>JobListEntry</code> objects of the specified length. Each
-    /// <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that
-    /// indicates whether the job is a job part, in the case of export jobs. Calling this
-    /// API action in one of the US regions will return jobs from the list of all jobs associated
-    /// with this account in all US regions.
+    /// Returns an array of <c>JobListEntry</c> objects of the specified length. Each <c>JobListEntry</c>
+    /// object contains a job's state, a job's ID, and a value that indicates whether the
+    /// job is a job part, in the case of export jobs. Calling this API action in one of the
+    /// US regions will return jobs from the list of all jobs associated with this account
+    /// in all US regions.
     /// </summary>
     public partial class ListJobsRequest : AmazonSnowballRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of <code>JobListEntry</code> objects to return.
+        /// The number of <c>JobListEntry</c> objects to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -63,9 +63,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code>
-        /// objects, you have the option of specifying <code>NextToken</code> as the starting
-        /// point for your returned list.
+        /// HTTP requests are stateless. To identify what object comes "next" in the list of <c>JobListEntry</c>
+        /// objects, you have the option of specifying <c>NextToken</c> as the starting point
+        /// for your returned list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

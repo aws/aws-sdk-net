@@ -95,20 +95,20 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EXTENDABLE_RETENTION_PRICING</code> - This billing mode is generally recommended
+        ///  <c>EXTENDABLE_RETENTION_PRICING</c> - This billing mode is generally recommended
         /// if you want a flexible retention period of up to 3653 days (about 10 years). The default
         /// retention period for this billing mode is 366 days.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FIXED_RETENTION_PRICING</code> - This billing mode is recommended if you expect
-        /// to ingest more than 25 TB of event data per month and need a retention period of up
-        /// to 2557 days (about 7 years). The default retention period for this billing mode is
-        /// 2557 days.
+        ///  <c>FIXED_RETENTION_PRICING</c> - This billing mode is recommended if you expect to
+        /// ingest more than 25 TB of event data per month and need a retention period of up to
+        /// 2557 days (about 7 years). The default retention period for this billing mode is 2557
+        /// days.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default value is <code>EXTENDABLE_RETENTION_PRICING</code>.
+        /// The default value is <c>EXTENDABLE_RETENTION_PRICING</c>.
         /// </para>
         ///  
         /// <para>
@@ -133,8 +133,8 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specifies the KMS key ID to use to encrypt the events delivered by CloudTrail. The
-        /// value can be an alias name prefixed by <code>alias/</code>, a fully specified ARN
-        /// to an alias, a fully specified ARN to a key, or a globally unique identifier.
+        /// value can be an alias name prefixed by <c>alias/</c>, a fully specified ARN to an
+        /// alias, a fully specified ARN to a key, or a globally unique identifier.
         /// </para>
         ///  <important> 
         /// <para>
@@ -157,20 +157,20 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>alias/MyAliasName</code> 
+        ///  <c>alias/MyAliasName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> 
+        ///  <c>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>12345678-1234-1234-1234-123456789012</code> 
+        ///  <c>12345678-1234-1234-1234-123456789012</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -247,18 +247,17 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriod. 
         /// <para>
-        /// The retention period of the event data store, in days. If <code>BillingMode</code>
-        /// is set to <code>EXTENDABLE_RETENTION_PRICING</code>, you can set a retention period
-        /// of up to 3653 days, the equivalent of 10 years. If <code>BillingMode</code> is set
-        /// to <code>FIXED_RETENTION_PRICING</code>, you can set a retention period of up to 2557
-        /// days, the equivalent of seven years.
+        /// The retention period of the event data store, in days. If <c>BillingMode</c> is set
+        /// to <c>EXTENDABLE_RETENTION_PRICING</c>, you can set a retention period of up to 3653
+        /// days, the equivalent of 10 years. If <c>BillingMode</c> is set to <c>FIXED_RETENTION_PRICING</c>,
+        /// you can set a retention period of up to 2557 days, the equivalent of seven years.
         /// </para>
         ///  
         /// <para>
-        /// CloudTrail Lake determines whether to retain an event by checking if the <code>eventTime</code>
+        /// CloudTrail Lake determines whether to retain an event by checking if the <c>eventTime</c>
         /// of the event is within the specified retention period. For example, if you set a retention
-        /// period of 90 days, CloudTrail will remove events when the <code>eventTime</code> is
-        /// older than 90 days.
+        /// period of 90 days, CloudTrail will remove events when the <c>eventTime</c> is older
+        /// than 90 days.
         /// </para>
         ///  <note> 
         /// <para>

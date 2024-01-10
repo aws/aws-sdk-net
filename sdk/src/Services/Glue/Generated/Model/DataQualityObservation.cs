@@ -58,8 +58,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MetricBasedObservation. 
         /// <para>
-        /// An object of type <code>MetricBasedObservation</code> representing the observation
-        /// that is based on evaluated data quality metrics.
+        /// An object of type <c>MetricBasedObservation</c> representing the observation that
+        /// is based on evaluated data quality metrics.
         /// </para>
         /// </summary>
         public MetricBasedObservation MetricBasedObservation

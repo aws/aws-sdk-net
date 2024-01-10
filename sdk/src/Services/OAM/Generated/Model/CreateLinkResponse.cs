@@ -80,8 +80,8 @@ namespace Amazon.OAM.Model
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        /// The label that you assigned to this link. If the <code>labelTemplate</code> includes
-        /// variables, this field displays the variables resolved to their actual values.
+        /// The label that you assigned to this link. If the <c>labelTemplate</c> includes variables,
+        /// this field displays the variables resolved to their actual values.
         /// </para>
         /// </summary>
         public string Label

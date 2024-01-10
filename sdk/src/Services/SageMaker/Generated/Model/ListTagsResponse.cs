@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// An array of <code>Tag</code> objects, each with a tag key and a value.
+        /// An array of <c>Tag</c> objects, each with a tag key and a value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

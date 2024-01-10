@@ -121,7 +121,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The pre-provisioning resource type that must be cleaned after turning off Windows
-        /// fast launch for the Windows AMI. Supported values include: <code>snapshot</code>.
+        /// fast launch for the Windows AMI. Supported values include: <c>snapshot</c>.
         /// </para>
         /// </summary>
         public FastLaunchResourceType ResourceType

@@ -34,9 +34,9 @@ namespace Amazon.IoTAnalytics.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">
-    /// <code>DeltaTime</code> </a> specifies a time interval. You can use <code>DeltaTime</code>
-    /// to create dataset contents with data that has arrived in the data store since the
-    /// last execution. For an example of <code>DeltaTime</code>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6">
+    /// <c>DeltaTime</c> </a> specifies a time interval. You can use <c>DeltaTime</c> to create
+    /// dataset contents with data that has arrived in the data store since the last execution.
+    /// For an example of <c>DeltaTime</c>, see <a href="https://docs.aws.amazon.com/iotanalytics/latest/userguide/automate-create-dataset.html#automate-example6">
     /// Creating a SQL dataset with a delta window (CLI)</a> in the <i>IoT Analytics User
     /// Guide</i>.
     /// </para>
@@ -48,10 +48,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property TimeoutInMinutes. 
         /// <para>
-        /// A time interval. You can use <code>timeoutInMinutes</code> so that IoT Analytics can
-        /// batch up late data notifications that have been generated since the last execution.
-        /// IoT Analytics sends one batch of notifications to Amazon CloudWatch Events at one
-        /// time.
+        /// A time interval. You can use <c>timeoutInMinutes</c> so that IoT Analytics can batch
+        /// up late data notifications that have been generated since the last execution. IoT
+        /// Analytics sends one batch of notifications to Amazon CloudWatch Events at one time.
         /// </para>
         ///  
         /// <para>

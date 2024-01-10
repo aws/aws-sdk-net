@@ -140,22 +140,20 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB instance, then a <code>DBInstanceIdentifier</code> must
-        /// be supplied.
+        /// If the source type is a DB instance, then a <c>DBInstanceIdentifier</c> must be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB security group, a <code>DBSecurityGroupName</code> must
-        /// be supplied.
+        /// If the source type is a DB security group, a <c>DBSecurityGroupName</c> must be supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB parameter group, a <code>DBParameterGroupName</code> must
-        /// be supplied.
+        /// If the source type is a DB parameter group, a <c>DBParameterGroupName</c> must be
+        /// supplied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be supplied.
+        /// If the source type is a DB snapshot, a <c>DBSnapshotIdentifier</c> must be supplied.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -180,9 +178,8 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>db-instance</code> | <code>db-cluster</code> | <code>db-parameter-group</code>
-        /// | <code>db-security-group</code> | <code>db-snapshot</code> | <code>db-cluster-snapshot</code>
-        /// 
+        /// Valid values: <c>db-instance</c> | <c>db-cluster</c> | <c>db-parameter-group</c> |
+        /// <c>db-security-group</c> | <c>db-snapshot</c> | <c>db-cluster-snapshot</c> 
         /// </para>
         /// </summary>
         public string SourceType

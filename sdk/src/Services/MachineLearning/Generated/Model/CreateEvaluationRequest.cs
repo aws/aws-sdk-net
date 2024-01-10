@@ -30,26 +30,26 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateEvaluation operation.
-    /// Creates a new <code>Evaluation</code> of an <code>MLModel</code>. An <code>MLModel</code>
-    /// is evaluated on a set of observations associated to a <code>DataSource</code>. Like
-    /// a <code>DataSource</code> for an <code>MLModel</code>, the <code>DataSource</code>
-    /// for an <code>Evaluation</code> contains values for the <code>Target Variable</code>.
-    /// The <code>Evaluation</code> compares the predicted result for each observation to
-    /// the actual outcome and provides a summary so that you know how effective the <code>MLModel</code>
-    /// functions on the test data. Evaluation generates a relevant performance metric, such
-    /// as BinaryAUC, RegressionRMSE or MulticlassAvgFScore based on the corresponding <code>MLModelType</code>:
-    /// <code>BINARY</code>, <code>REGRESSION</code> or <code>MULTICLASS</code>. 
+    /// Creates a new <c>Evaluation</c> of an <c>MLModel</c>. An <c>MLModel</c> is evaluated
+    /// on a set of observations associated to a <c>DataSource</c>. Like a <c>DataSource</c>
+    /// for an <c>MLModel</c>, the <c>DataSource</c> for an <c>Evaluation</c> contains values
+    /// for the <c>Target Variable</c>. The <c>Evaluation</c> compares the predicted result
+    /// for each observation to the actual outcome and provides a summary so that you know
+    /// how effective the <c>MLModel</c> functions on the test data. Evaluation generates
+    /// a relevant performance metric, such as BinaryAUC, RegressionRMSE or MulticlassAvgFScore
+    /// based on the corresponding <c>MLModelType</c>: <c>BINARY</c>, <c>REGRESSION</c> or
+    /// <c>MULTICLASS</c>. 
     /// 
     ///  
     /// <para>
-    ///  <code>CreateEvaluation</code> is an asynchronous operation. In response to <code>CreateEvaluation</code>,
+    ///  <c>CreateEvaluation</c> is an asynchronous operation. In response to <c>CreateEvaluation</c>,
     /// Amazon Machine Learning (Amazon ML) immediately returns and sets the evaluation status
-    /// to <code>PENDING</code>. After the <code>Evaluation</code> is created and ready for
-    /// use, Amazon ML sets the status to <code>COMPLETED</code>. 
+    /// to <c>PENDING</c>. After the <c>Evaluation</c> is created and ready for use, Amazon
+    /// ML sets the status to <c>COMPLETED</c>. 
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>GetEvaluation</code> operation to check progress of the evaluation
+    /// You can use the <c>GetEvaluation</c> operation to check progress of the evaluation
     /// during the creation operation.
     /// </para>
     /// </summary>
@@ -63,8 +63,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationDataSourceId. 
         /// <para>
-        /// The ID of the <code>DataSource</code> for the evaluation. The schema of the <code>DataSource</code>
-        /// must match the schema used to create the <code>MLModel</code>.
+        /// The ID of the <c>DataSource</c> for the evaluation. The schema of the <c>DataSource</c>
+        /// must match the schema used to create the <c>MLModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -83,7 +83,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>Evaluation</code>.
+        /// A user-supplied ID that uniquely identifies the <c>Evaluation</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -102,7 +102,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationName. 
         /// <para>
-        /// A user-supplied name or description of the <code>Evaluation</code>.
+        /// A user-supplied name or description of the <c>Evaluation</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -121,12 +121,12 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID of the <code>MLModel</code> to evaluate.
+        /// The ID of the <c>MLModel</c> to evaluate.
         /// </para>
         ///  
         /// <para>
-        /// The schema used in creating the <code>MLModel</code> must match the schema of the
-        /// <code>DataSource</code> used in the <code>Evaluation</code>.
+        /// The schema used in creating the <c>MLModel</c> must match the schema of the <c>DataSource</c>
+        /// used in the <c>Evaluation</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

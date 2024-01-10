@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// The data specification of an Amazon Relational Database Service (Amazon RDS) <code>DataSource</code>.
+    /// The data specification of an Amazon Relational Database Service (Amazon RDS) <c>DataSource</c>.
     /// </summary>
     public partial class RDSDataSpec
     {
@@ -68,8 +68,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DatabaseInformation. 
         /// <para>
-        /// Describes the <code>DatabaseName</code> and <code>InstanceIdentifier</code> of an
-        /// Amazon RDS database.
+        /// Describes the <c>DatabaseName</c> and <c>InstanceIdentifier</c> of an Amazon RDS database.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,8 +88,8 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property DataRearrangement. 
         /// <para>
         /// A JSON string that represents the splitting and rearrangement processing to be applied
-        /// to a <code>DataSource</code>. If the <code>DataRearrangement</code> parameter is not
-        /// provided, all of the input data is used to create the <code>Datasource</code>.
+        /// to a <c>DataSource</c>. If the <c>DataRearrangement</c> parameter is not provided,
+        /// all of the input data is used to create the <c>Datasource</c>.
         /// </para>
         ///  
         /// <para>
@@ -98,36 +97,35 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>percentBegin</code> </b> 
+        ///  <b> <c>percentBegin</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Use <code>percentBegin</code> to indicate the beginning of the range of the data used
-        /// to create the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
+        /// Use <c>percentBegin</c> to indicate the beginning of the range of the data used to
+        /// create the Datasource. If you do not include <c>percentBegin</c> and <c>percentEnd</c>,
         /// Amazon ML includes all of the data when creating the datasource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>percentEnd</code> </b> 
+        ///  <b> <c>percentEnd</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Use <code>percentEnd</code> to indicate the end of the range of the data used to create
-        /// the Datasource. If you do not include <code>percentBegin</code> and <code>percentEnd</code>,
-        /// Amazon ML includes all of the data when creating the datasource.
+        /// Use <c>percentEnd</c> to indicate the end of the range of the data used to create
+        /// the Datasource. If you do not include <c>percentBegin</c> and <c>percentEnd</c>, Amazon
+        /// ML includes all of the data when creating the datasource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>complement</code> </b> 
+        ///  <b> <c>complement</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// The <code>complement</code> parameter instructs Amazon ML to use the data that is
-        /// not included in the range of <code>percentBegin</code> to <code>percentEnd</code>
-        /// to create a datasource. The <code>complement</code> parameter is useful if you need
-        /// to create complementary datasources for training and evaluation. To create a complementary
-        /// datasource, use the same values for <code>percentBegin</code> and <code>percentEnd</code>,
-        /// along with the <code>complement</code> parameter.
+        /// The <c>complement</c> parameter instructs Amazon ML to use the data that is not included
+        /// in the range of <c>percentBegin</c> to <c>percentEnd</c> to create a datasource. The
+        /// <c>complement</c> parameter is useful if you need to create complementary datasources
+        /// for training and evaluation. To create a complementary datasource, use the same values
+        /// for <c>percentBegin</c> and <c>percentEnd</c>, along with the <c>complement</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -137,76 +135,74 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  
         /// <para>
-        /// Datasource for evaluation: <code>{"splitting":{"percentBegin":0, "percentEnd":25}}</code>
+        /// Datasource for evaluation: <c>{"splitting":{"percentBegin":0, "percentEnd":25}}</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// Datasource for training: <code>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</code>
+        /// Datasource for training: <c>{"splitting":{"percentBegin":0, "percentEnd":25, "complement":"true"}}</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>strategy</code> </b> 
+        ///  <b> <c>strategy</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// To change how Amazon ML splits the data for a datasource, use the <code>strategy</code>
+        /// To change how Amazon ML splits the data for a datasource, use the <c>strategy</c>
         /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// The default value for the <code>strategy</code> parameter is <code>sequential</code>,
-        /// meaning that Amazon ML takes all of the data records between the <code>percentBegin</code>
-        /// and <code>percentEnd</code> parameters for the datasource, in the order that the records
-        /// appear in the input data.
+        /// The default value for the <c>strategy</c> parameter is <c>sequential</c>, meaning
+        /// that Amazon ML takes all of the data records between the <c>percentBegin</c> and <c>percentEnd</c>
+        /// parameters for the datasource, in the order that the records appear in the input data.
         /// </para>
         ///  
         /// <para>
-        /// The following two <code>DataRearrangement</code> lines are examples of sequentially
-        /// ordered training and evaluation datasources:
+        /// The following two <c>DataRearrangement</c> lines are examples of sequentially ordered
+        /// training and evaluation datasources:
         /// </para>
         ///  
         /// <para>
-        /// Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-        /// "strategy":"sequential"}}</code> 
+        /// Datasource for evaluation: <c>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential"}}</c>
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-        /// "strategy":"sequential", "complement":"true"}}</code> 
+        /// Datasource for training: <c>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"sequential",
+        /// "complement":"true"}}</c> 
         /// </para>
         ///  
         /// <para>
         /// To randomly split the input data into the proportions indicated by the percentBegin
-        /// and percentEnd parameters, set the <code>strategy</code> parameter to <code>random</code>
-        /// and provide a string that is used as the seed value for the random data splitting
-        /// (for example, you can use the S3 path to your data as the random seed string). If
-        /// you choose the random split strategy, Amazon ML assigns each row of data a pseudo-random
-        /// number between 0 and 100, and then selects the rows that have an assigned number between
-        /// <code>percentBegin</code> and <code>percentEnd</code>. Pseudo-random numbers are assigned
-        /// using both the input seed string value and the byte offset as a seed, so changing
-        /// the data results in a different split. Any existing ordering is preserved. The random
-        /// splitting strategy ensures that variables in the training and evaluation data are
-        /// distributed similarly. It is useful in the cases where the input data may have an
-        /// implicit sort order, which would otherwise result in training and evaluation datasources
-        /// containing non-similar data records.
+        /// and percentEnd parameters, set the <c>strategy</c> parameter to <c>random</c> and
+        /// provide a string that is used as the seed value for the random data splitting (for
+        /// example, you can use the S3 path to your data as the random seed string). If you choose
+        /// the random split strategy, Amazon ML assigns each row of data a pseudo-random number
+        /// between 0 and 100, and then selects the rows that have an assigned number between
+        /// <c>percentBegin</c> and <c>percentEnd</c>. Pseudo-random numbers are assigned using
+        /// both the input seed string value and the byte offset as a seed, so changing the data
+        /// results in a different split. Any existing ordering is preserved. The random splitting
+        /// strategy ensures that variables in the training and evaluation data are distributed
+        /// similarly. It is useful in the cases where the input data may have an implicit sort
+        /// order, which would otherwise result in training and evaluation datasources containing
+        /// non-similar data records.
         /// </para>
         ///  
         /// <para>
-        /// The following two <code>DataRearrangement</code> lines are examples of non-sequentially
+        /// The following two <c>DataRearrangement</c> lines are examples of non-sequentially
         /// ordered training and evaluation datasources:
         /// </para>
         ///  
         /// <para>
-        /// Datasource for evaluation: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-        /// "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</code> 
+        /// Datasource for evaluation: <c>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
+        /// "randomSeed"="s3://my_s3_path/bucket/file.csv"}}</c> 
         /// </para>
         ///  
         /// <para>
-        /// Datasource for training: <code>{"splitting":{"percentBegin":70, "percentEnd":100,
-        /// "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</code>
-        /// 
+        /// Datasource for training: <c>{"splitting":{"percentBegin":70, "percentEnd":100, "strategy":"random",
+        /// "randomSeed"="s3://my_s3_path/bucket/file.csv", "complement":"true"}}</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -225,20 +221,19 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSchema. 
         /// <para>
-        /// A JSON string that represents the schema for an Amazon RDS <code>DataSource</code>.
-        /// The <code>DataSchema</code> defines the structure of the observation data in the data
-        /// file(s) referenced in the <code>DataSource</code>.
+        /// A JSON string that represents the schema for an Amazon RDS <c>DataSource</c>. The
+        /// <c>DataSchema</c> defines the structure of the observation data in the data file(s)
+        /// referenced in the <c>DataSource</c>.
         /// </para>
         ///  
         /// <para>
-        /// A <code>DataSchema</code> is not required if you specify a <code>DataSchemaUri</code>
-        /// 
+        /// A <c>DataSchema</c> is not required if you specify a <c>DataSchemaUri</c> 
         /// </para>
         ///  
         /// <para>
-        /// Define your <code>DataSchema</code> as a series of key-value pairs. <code>attributes</code>
-        /// and <code>excludedVariableNames</code> have an array of key-value pairs for their
-        /// value. Use the following format to define your <code>DataSchema</code>.
+        /// Define your <c>DataSchema</c> as a series of key-value pairs. <c>attributes</c> and
+        /// <c>excludedVariableNames</c> have an array of key-value pairs for their value. Use
+        /// the following format to define your <c>DataSchema</c>.
         /// </para>
         ///  
         /// <para>
@@ -297,7 +292,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSchemaUri. 
         /// <para>
-        /// The Amazon S3 location of the <code>DataSchema</code>. 
+        /// The Amazon S3 location of the <c>DataSchema</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -339,7 +334,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property S3StagingLocation. 
         /// <para>
         /// The Amazon S3 location for staging Amazon RDS data. The data retrieved from Amazon
-        /// RDS using <code>SelectSqlQuery</code> is stored in this location.
+        /// RDS using <c>SelectSqlQuery</c> is stored in this location.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2048)]
@@ -380,7 +375,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property SelectSqlQuery. 
         /// <para>
-        /// The query that is used to retrieve the observation data for the <code>DataSource</code>.
+        /// The query that is used to retrieve the observation data for the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16777216)]

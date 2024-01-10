@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Permissions. 
         /// <para>
         /// The explicit permissions to provide to the container for the device. By default, the
-        /// container has permissions for read, write, and <code>mknod</code> for the device.
+        /// container has permissions for read, write, and <c>mknod</c> for the device.
         /// </para>
         /// </summary>
         public List<string> Permissions

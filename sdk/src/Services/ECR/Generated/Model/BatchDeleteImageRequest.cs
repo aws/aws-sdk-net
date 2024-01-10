@@ -31,7 +31,7 @@ namespace Amazon.ECR.Model
     /// <summary>
     /// Container for the parameters to the BatchDeleteImage operation.
     /// Deletes a list of specified images within a repository. Images are specified with
-    /// either an <code>imageTag</code> or <code>imageDigest</code>.
+    /// either an <c>imageTag</c> or <c>imageDigest</c>.
     /// 
     ///  
     /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property ImageIds. 
         /// <para>
         /// A list of image ID references that correspond to images to delete. The format of the
-        /// <code>imageIds</code> reference is <code>imageTag=tag</code> or <code>imageDigest=digest</code>.
+        /// <c>imageIds</c> reference is <c>imageTag=tag</c> or <c>imageDigest=digest</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

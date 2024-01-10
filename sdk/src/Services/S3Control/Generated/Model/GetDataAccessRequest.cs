@@ -37,15 +37,14 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:GetDataAccess</code> permission to use this operation.
-    /// 
+    /// You must have the <c>s3:GetDataAccess</c> permission to use this operation. 
     /// </para>
     ///  </dd> <dt>Additional Permissions</dt> <dd> 
     /// <para>
     /// The IAM role that S3 Access Grants assumes must have the following permissions specified
-    /// in the trust policy when registering the location: <code>sts:AssumeRole</code>, for
-    /// directory users or groups <code>sts:SetContext</code>, and for IAM users or roles
-    /// <code>sts:SourceIdentity</code>. 
+    /// in the trust policy when registering the location: <c>sts:AssumeRole</c>, for directory
+    /// users or groups <c>sts:SetContext</c>, and for IAM users or roles <c>sts:SourceIdentity</c>.
+    /// 
     /// </para>
     ///  </dd> </dl>
     /// </summary>
@@ -108,15 +107,15 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READ</code> – Grant read-only access to the S3 data.
+        ///  <c>READ</c> – Grant read-only access to the S3 data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WRITE</code> – Grant write-only access to the S3 data.
+        ///  <c>WRITE</c> – Grant write-only access to the S3 data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>READWRITE</code> – Grant both read and write access to the S3 data.
+        ///  <c>READWRITE</c> – Grant both read and write access to the S3 data.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -141,13 +140,13 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Default</code> – The scope of the returned temporary access token is the scope
-        /// of the grant that is closest to the target scope.
+        ///  <c>Default</c> – The scope of the returned temporary access token is the scope of
+        /// the grant that is closest to the target scope.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Minimal</code> – The scope of the returned temporary access token is the same
-        /// as the requested target scope as long as the requested scope is the same as or a subset
+        ///  <c>Minimal</c> – The scope of the returned temporary access token is the same as
+        /// the requested target scope as long as the requested scope is the same as or a subset
         /// of the grant scope. 
         /// </para>
         ///  </li> </ul>
@@ -188,9 +187,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The type of <code>Target</code>. The only possible value is <code>Object</code>. Pass
-        /// this value if the target data that you would like to access is a path to an object.
-        /// Do not pass this value if the target data is a bucket or a bucket and a prefix. 
+        /// The type of <c>Target</c>. The only possible value is <c>Object</c>. Pass this value
+        /// if the target data that you would like to access is a path to an object. Do not pass
+        /// this value if the target data is a bucket or a bucket and a prefix. 
         /// </para>
         /// </summary>
         public S3PrefixType TargetType

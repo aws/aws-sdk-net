@@ -74,15 +74,15 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  
         /// <para>
-        /// Ethereum public networks have the following <code>NetworkId</code>s:
+        /// Ethereum public networks have the following <c>NetworkId</c>s:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>n-ethereum-mainnet</code> 
+        ///  <c>n-ethereum-mainnet</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>n-ethereum-goerli</code> 
+        ///  <c>n-ethereum-goerli</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

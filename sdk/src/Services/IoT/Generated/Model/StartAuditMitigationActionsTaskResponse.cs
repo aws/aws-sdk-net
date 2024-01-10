@@ -38,7 +38,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TaskId. 
         /// <para>
-        /// The unique identifier for the audit mitigation task. This matches the <code>taskId</code>
+        /// The unique identifier for the audit mitigation task. This matches the <c>taskId</c>
         /// that you specified in the request.
         /// </para>
         /// </summary>

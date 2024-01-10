@@ -39,8 +39,8 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property AvailabilityZoneCount. 
         /// <para>
         /// If you enabled multiple Availability Zones, this value is the number of zones that
-        /// you want the domain to use. Valid values are <code>2</code> and <code>3</code>. If
-        /// your domain is provisioned within a VPC, this value be equal to number of subnets.
+        /// you want the domain to use. Valid values are <c>2</c> and <c>3</c>. If your domain
+        /// is provisioned within a VPC, this value be equal to number of subnets.
         /// </para>
         /// </summary>
         public int AvailabilityZoneCount

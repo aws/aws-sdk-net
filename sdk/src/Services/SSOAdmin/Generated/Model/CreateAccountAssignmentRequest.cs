@@ -40,16 +40,16 @@ namespace Amazon.SSOAdmin.Model
     /// </para>
     ///  </note> <note> 
     /// <para>
-    /// As part of a successful <code>CreateAccountAssignment</code> call, the specified permission
+    /// As part of a successful <c>CreateAccountAssignment</c> call, the specified permission
     /// set will automatically be provisioned to the account in the form of an IAM policy.
     /// That policy is attached to the IAM role created in IAM Identity Center. If the permission
     /// set is subsequently updated, the corresponding IAM policies attached to roles in your
-    /// accounts will not be updated automatically. In this case, you must call <code> <a>ProvisionPermissionSet</a>
-    /// </code> to make these updates.
+    /// accounts will not be updated automatically. In this case, you must call <c> <a>ProvisionPermissionSet</a>
+    /// </c> to make these updates.
     /// </para>
     ///  </note> <note> 
     /// <para>
-    ///  After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+    ///  After a successful response, call <c>DescribeAccountAssignmentCreationStatus</c>
     /// to describe the status of an assignment creation request. 
     /// </para>
     ///  </note>

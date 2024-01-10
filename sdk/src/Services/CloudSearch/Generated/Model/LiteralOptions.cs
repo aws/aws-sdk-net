@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// Options for literal field. Present if <code>IndexFieldType</code> specifies the field
-    /// is of type <code>literal</code>. All options are enabled by default.
+    /// Options for literal field. Present if <c>IndexFieldType</c> specifies the field is
+    /// of type <c>literal</c>. All options are enabled by default.
     /// </summary>
     public partial class LiteralOptions
     {

@@ -46,27 +46,27 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>network-interface-permission.network-interface-permission-id</code> - The ID
-        /// of the permission.
+        ///  <c>network-interface-permission.network-interface-permission-id</c> - The ID of the
+        /// permission.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-permission.network-interface-id</code> - The ID of the network
+        ///  <c>network-interface-permission.network-interface-id</c> - The ID of the network
         /// interface.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-permission.aws-account-id</code> - The Amazon Web Services
-        /// account ID.
+        ///  <c>network-interface-permission.aws-account-id</c> - The Amazon Web Services account
+        /// ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-permission.aws-service</code> - The Amazon Web Service.
+        ///  <c>network-interface-permission.aws-service</c> - The Amazon Web Service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-permission.permission</code> - The type of permission (<code>INSTANCE-ATTACH</code>
-        /// | <code>EIP-ASSOCIATE</code>).
+        ///  <c>network-interface-permission.permission</c> - The type of permission (<c>INSTANCE-ATTACH</c>
+        /// | <c>EIP-ASSOCIATE</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

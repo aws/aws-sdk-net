@@ -196,11 +196,11 @@ namespace Amazon.TimestreamWrite.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The table is being deleted.
+        ///  <c>DELETING</c> - The table is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The table is ready for use.
+        ///  <c>ACTIVE</c> - The table is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

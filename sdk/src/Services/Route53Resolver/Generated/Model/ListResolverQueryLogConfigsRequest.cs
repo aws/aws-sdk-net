@@ -49,9 +49,9 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request
-        /// and specify the <code>NextToken</code> parameter, you must use the same values for
-        /// <code>Filters</code>, if any, as in the previous request.
+        /// If you submit a second or subsequent <c>ListResolverQueryLogConfigs</c> request and
+        /// specify the <c>NextToken</c> parameter, you must use the same values for <c>Filters</c>,
+        /// if any, as in the previous request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -71,9 +71,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of query logging configurations that you want to return in the
-        /// response to a <code>ListResolverQueryLogConfigs</code> request. If you don't specify
-        /// a value for <code>MaxResults</code>, Resolver returns up to 100 query logging configurations.
-        /// 
+        /// response to a <c>ListResolverQueryLogConfigs</c> request. If you don't specify a value
+        /// for <c>MaxResults</c>, Resolver returns up to 100 query logging configurations. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -92,14 +91,14 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For the first <code>ListResolverQueryLogConfigs</code> request, omit this value.
+        /// For the first <c>ListResolverQueryLogConfigs</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// If there are more than <code>MaxResults</code> query logging configurations that match
-        /// the values that you specify for <code>Filters</code>, you can submit another <code>ListResolverQueryLogConfigs</code>
+        /// If there are more than <c>MaxResults</c> query logging configurations that match the
+        /// values that you specify for <c>Filters</c>, you can submit another <c>ListResolverQueryLogConfigs</c>
         /// request to get the next group of configurations. In the next request, specify the
-        /// value of <code>NextToken</code> from the previous response. 
+        /// value of <c>NextToken</c> from the previous response. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -121,9 +120,9 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request
-        /// and specify the <code>NextToken</code> parameter, you must use the same value for
-        /// <code>SortBy</code>, if any, as in the previous request.
+        /// If you submit a second or subsequent <c>ListResolverQueryLogConfigs</c> request and
+        /// specify the <c>NextToken</c> parameter, you must use the same value for <c>SortBy</c>,
+        /// if any, as in the previous request.
         /// </para>
         ///  </note> 
         /// <para>
@@ -131,68 +130,68 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Arn</code>: The ARN of the query logging configuration
+        ///  <c>Arn</c>: The ARN of the query logging configuration
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AssociationCount</code>: The number of VPCs that are associated with the specified
+        ///  <c>AssociationCount</c>: The number of VPCs that are associated with the specified
         /// configuration 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreationTime</code>: The date and time that Resolver returned when the configuration
+        ///  <c>CreationTime</c>: The date and time that Resolver returned when the configuration
         /// was created
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreatorRequestId</code>: The value that was specified for <code>CreatorRequestId</code>
+        ///  <c>CreatorRequestId</c>: The value that was specified for <c>CreatorRequestId</c>
         /// when the configuration was created
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DestinationArn</code>: The location that logs are sent to
+        ///  <c>DestinationArn</c>: The location that logs are sent to
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Id</code>: The ID of the configuration
+        ///  <c>Id</c>: The ID of the configuration
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Name</code>: The name of the configuration
+        ///  <c>Name</c>: The name of the configuration
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OwnerId</code>: The Amazon Web Services account number of the account that
-        /// created the configuration
+        ///  <c>OwnerId</c>: The Amazon Web Services account number of the account that created
+        /// the configuration
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ShareStatus</code>: Whether the configuration is shared with other Amazon Web
-        /// Services accounts or shared with the current account by another Amazon Web Services
-        /// account. Sharing is configured through Resource Access Manager (RAM).
+        ///  <c>ShareStatus</c>: Whether the configuration is shared with other Amazon Web Services
+        /// accounts or shared with the current account by another Amazon Web Services account.
+        /// Sharing is configured through Resource Access Manager (RAM).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code>: The current status of the configuration. Valid values include
-        /// the following:
+        ///  <c>Status</c>: The current status of the configuration. Valid values include the
+        /// following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code>: Resolver is creating the query logging configuration.
+        ///  <c>CREATING</c>: Resolver is creating the query logging configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATED</code>: The query logging configuration was successfully created. Resolver
+        ///  <c>CREATED</c>: The query logging configuration was successfully created. Resolver
         /// is logging queries that originate in the specified VPC.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code>: Resolver is deleting this query logging configuration.
+        ///  <c>DELETING</c>: Resolver is deleting this query logging configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: Resolver either couldn't create or couldn't delete the query
-        /// logging configuration. Here are two common causes:
+        ///  <c>FAILED</c>: Resolver either couldn't create or couldn't delete the query logging
+        /// configuration. Here are two common causes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -220,14 +219,14 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// If you specified a value for <code>SortBy</code>, the order that you want query logging
-        /// configurations to be listed in, <code>ASCENDING</code> or <code>DESCENDING</code>.
+        /// If you specified a value for <c>SortBy</c>, the order that you want query logging
+        /// configurations to be listed in, <c>ASCENDING</c> or <c>DESCENDING</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you submit a second or subsequent <code>ListResolverQueryLogConfigs</code> request
-        /// and specify the <code>NextToken</code> parameter, you must use the same value for
-        /// <code>SortOrder</code>, if any, as in the previous request.
+        /// If you submit a second or subsequent <c>ListResolverQueryLogConfigs</c> request and
+        /// specify the <c>NextToken</c> parameter, you must use the same value for <c>SortOrder</c>,
+        /// if any, as in the previous request.
         /// </para>
         ///  </note>
         /// </summary>

@@ -336,8 +336,8 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
-        /// using PartiQL. Each read statement in a <code>BatchExecuteStatement</code> must specify
-        /// an equality condition on all key attributes. This enforces that each <code>SELECT</code>
+        /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
+        /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
         /// statement in a batch returns at most a single item.
         /// 
         ///  <note> 
@@ -349,7 +349,7 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// A HTTP 200 response does not mean that all statements in the BatchExecuteStatement
         /// succeeded. Error details for individual statements can be found under the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error">Error</a>
-        /// field of the <code>BatchStatementResponse</code> for each statement.
+        /// field of the <c>BatchStatementResponse</c> for each statement.
         /// </para>
         ///  </important>
         /// </summary>
@@ -394,37 +394,37 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>BatchGetItem</code> operation returns the attributes of one or more items
-        /// from one or more tables. You identify requested items by primary key.
+        /// The <c>BatchGetItem</c> operation returns the attributes of one or more items from
+        /// one or more tables. You identify requested items by primary key.
         /// 
         ///  
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
-        /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
-        /// limit is exceeded, the table's provisioned throughput is exceeded, more than 1MB per
-        /// partition is requested, or an internal processing failure occurs. If a partial result
-        /// is returned, the operation returns a value for <code>UnprocessedKeys</code>. You can
-        /// use this value to retry the operation starting with the next item to get.
+        /// 100 items. <c>BatchGetItem</c> returns a partial result if the response size limit
+        /// is exceeded, the table's provisioned throughput is exceeded, more than 1MB per partition
+        /// is requested, or an internal processing failure occurs. If a partial result is returned,
+        /// the operation returns a value for <c>UnprocessedKeys</c>. You can use this value to
+        /// retry the operation starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you request more than 100 items, <code>BatchGetItem</code> returns a <code>ValidationException</code>
+        /// If you request more than 100 items, <c>BatchGetItem</c> returns a <c>ValidationException</c>
         /// with the message "Too many items requested for the BatchGetItem call."
         /// </para>
         ///  </important> 
         /// <para>
         /// For example, if you ask to retrieve 100 items, but each individual item is 300 KB
         /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
-        /// returns an appropriate <code>UnprocessedKeys</code> value so you can get the next
-        /// page of results. If desired, your application can include its own logic to assemble
-        /// the pages of results into one dataset.
+        /// returns an appropriate <c>UnprocessedKeys</c> value so you can get the next page of
+        /// results. If desired, your application can include its own logic to assemble the pages
+        /// of results into one dataset.
         /// </para>
         ///  
         /// <para>
         /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <code>BatchGetItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
-        /// If <i>at least one</i> of the items is successfully processed, then <code>BatchGetItem</code>
-        /// completes successfully, while returning the keys of the unread items in <code>UnprocessedKeys</code>.
+        /// on all of the tables in the request, then <c>BatchGetItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// If <i>at least one</i> of the items is successfully processed, then <c>BatchGetItem</c>
+        /// completes successfully, while returning the keys of the unread items in <c>UnprocessedKeys</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -442,20 +442,19 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> 
         /// <para>
-        /// By default, <code>BatchGetItem</code> performs eventually consistent reads on every
-        /// table in the request. If you want strongly consistent reads instead, you can set <code>ConsistentRead</code>
-        /// to <code>true</code> for any or all tables.
+        /// By default, <c>BatchGetItem</c> performs eventually consistent reads on every table
+        /// in the request. If you want strongly consistent reads instead, you can set <c>ConsistentRead</c>
+        /// to <c>true</c> for any or all tables.
         /// </para>
         ///  
         /// <para>
-        /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
-        /// in parallel.
+        /// In order to minimize response latency, <c>BatchGetItem</c> may retrieve items in parallel.
         /// </para>
         ///  
         /// <para>
         /// When designing your application, keep in mind that DynamoDB does not return items
         /// in any particular order. To help parse the response by item, include the primary key
-        /// values for the items in your request in the <code>ProjectionExpression</code> parameter.
+        /// values for the items in your request in the <c>ProjectionExpression</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -489,7 +488,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
         public virtual Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, ReturnConsumedCapacity returnConsumedCapacity, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -502,37 +501,37 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>BatchGetItem</code> operation returns the attributes of one or more items
-        /// from one or more tables. You identify requested items by primary key.
+        /// The <c>BatchGetItem</c> operation returns the attributes of one or more items from
+        /// one or more tables. You identify requested items by primary key.
         /// 
         ///  
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
-        /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
-        /// limit is exceeded, the table's provisioned throughput is exceeded, more than 1MB per
-        /// partition is requested, or an internal processing failure occurs. If a partial result
-        /// is returned, the operation returns a value for <code>UnprocessedKeys</code>. You can
-        /// use this value to retry the operation starting with the next item to get.
+        /// 100 items. <c>BatchGetItem</c> returns a partial result if the response size limit
+        /// is exceeded, the table's provisioned throughput is exceeded, more than 1MB per partition
+        /// is requested, or an internal processing failure occurs. If a partial result is returned,
+        /// the operation returns a value for <c>UnprocessedKeys</c>. You can use this value to
+        /// retry the operation starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you request more than 100 items, <code>BatchGetItem</code> returns a <code>ValidationException</code>
+        /// If you request more than 100 items, <c>BatchGetItem</c> returns a <c>ValidationException</c>
         /// with the message "Too many items requested for the BatchGetItem call."
         /// </para>
         ///  </important> 
         /// <para>
         /// For example, if you ask to retrieve 100 items, but each individual item is 300 KB
         /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
-        /// returns an appropriate <code>UnprocessedKeys</code> value so you can get the next
-        /// page of results. If desired, your application can include its own logic to assemble
-        /// the pages of results into one dataset.
+        /// returns an appropriate <c>UnprocessedKeys</c> value so you can get the next page of
+        /// results. If desired, your application can include its own logic to assemble the pages
+        /// of results into one dataset.
         /// </para>
         ///  
         /// <para>
         /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <code>BatchGetItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
-        /// If <i>at least one</i> of the items is successfully processed, then <code>BatchGetItem</code>
-        /// completes successfully, while returning the keys of the unread items in <code>UnprocessedKeys</code>.
+        /// on all of the tables in the request, then <c>BatchGetItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// If <i>at least one</i> of the items is successfully processed, then <c>BatchGetItem</c>
+        /// completes successfully, while returning the keys of the unread items in <c>UnprocessedKeys</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -550,20 +549,19 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> 
         /// <para>
-        /// By default, <code>BatchGetItem</code> performs eventually consistent reads on every
-        /// table in the request. If you want strongly consistent reads instead, you can set <code>ConsistentRead</code>
-        /// to <code>true</code> for any or all tables.
+        /// By default, <c>BatchGetItem</c> performs eventually consistent reads on every table
+        /// in the request. If you want strongly consistent reads instead, you can set <c>ConsistentRead</c>
+        /// to <c>true</c> for any or all tables.
         /// </para>
         ///  
         /// <para>
-        /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
-        /// in parallel.
+        /// In order to minimize response latency, <c>BatchGetItem</c> may retrieve items in parallel.
         /// </para>
         ///  
         /// <para>
         /// When designing your application, keep in mind that DynamoDB does not return items
         /// in any particular order. To help parse the response by item, include the primary key
-        /// values for the items in your request in the <code>ProjectionExpression</code> parameter.
+        /// values for the items in your request in the <c>ProjectionExpression</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -596,7 +594,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
         public virtual Task<BatchGetItemResponse> BatchGetItemAsync(Dictionary<string, KeysAndAttributes> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -609,37 +607,37 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>BatchGetItem</code> operation returns the attributes of one or more items
-        /// from one or more tables. You identify requested items by primary key.
+        /// The <c>BatchGetItem</c> operation returns the attributes of one or more items from
+        /// one or more tables. You identify requested items by primary key.
         /// 
         ///  
         /// <para>
         /// A single operation can retrieve up to 16 MB of data, which can contain as many as
-        /// 100 items. <code>BatchGetItem</code> returns a partial result if the response size
-        /// limit is exceeded, the table's provisioned throughput is exceeded, more than 1MB per
-        /// partition is requested, or an internal processing failure occurs. If a partial result
-        /// is returned, the operation returns a value for <code>UnprocessedKeys</code>. You can
-        /// use this value to retry the operation starting with the next item to get.
+        /// 100 items. <c>BatchGetItem</c> returns a partial result if the response size limit
+        /// is exceeded, the table's provisioned throughput is exceeded, more than 1MB per partition
+        /// is requested, or an internal processing failure occurs. If a partial result is returned,
+        /// the operation returns a value for <c>UnprocessedKeys</c>. You can use this value to
+        /// retry the operation starting with the next item to get.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you request more than 100 items, <code>BatchGetItem</code> returns a <code>ValidationException</code>
+        /// If you request more than 100 items, <c>BatchGetItem</c> returns a <c>ValidationException</c>
         /// with the message "Too many items requested for the BatchGetItem call."
         /// </para>
         ///  </important> 
         /// <para>
         /// For example, if you ask to retrieve 100 items, but each individual item is 300 KB
         /// in size, the system returns 52 items (so as not to exceed the 16 MB limit). It also
-        /// returns an appropriate <code>UnprocessedKeys</code> value so you can get the next
-        /// page of results. If desired, your application can include its own logic to assemble
-        /// the pages of results into one dataset.
+        /// returns an appropriate <c>UnprocessedKeys</c> value so you can get the next page of
+        /// results. If desired, your application can include its own logic to assemble the pages
+        /// of results into one dataset.
         /// </para>
         ///  
         /// <para>
         /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <code>BatchGetItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
-        /// If <i>at least one</i> of the items is successfully processed, then <code>BatchGetItem</code>
-        /// completes successfully, while returning the keys of the unread items in <code>UnprocessedKeys</code>.
+        /// on all of the tables in the request, then <c>BatchGetItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
+        /// If <i>at least one</i> of the items is successfully processed, then <c>BatchGetItem</c>
+        /// completes successfully, while returning the keys of the unread items in <c>UnprocessedKeys</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -657,20 +655,19 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> 
         /// <para>
-        /// By default, <code>BatchGetItem</code> performs eventually consistent reads on every
-        /// table in the request. If you want strongly consistent reads instead, you can set <code>ConsistentRead</code>
-        /// to <code>true</code> for any or all tables.
+        /// By default, <c>BatchGetItem</c> performs eventually consistent reads on every table
+        /// in the request. If you want strongly consistent reads instead, you can set <c>ConsistentRead</c>
+        /// to <c>true</c> for any or all tables.
         /// </para>
         ///  
         /// <para>
-        /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
-        /// in parallel.
+        /// In order to minimize response latency, <c>BatchGetItem</c> may retrieve items in parallel.
         /// </para>
         ///  
         /// <para>
         /// When designing your application, keep in mind that DynamoDB does not return items
         /// in any particular order. To help parse the response by item, include the primary key
-        /// values for the items in your request in the <code>ProjectionExpression</code> parameter.
+        /// values for the items in your request in the <c>ProjectionExpression</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -703,7 +700,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchGetItem">REST API Reference for BatchGetItem Operation</seealso>
         public virtual Task<BatchGetItemResponse> BatchGetItemAsync(BatchGetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -734,36 +731,36 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>BatchWriteItem</code> operation puts or deletes multiple items in one or
-        /// more tables. A single call to <code>BatchWriteItem</code> can transmit up to 16MB
-        /// of data over the network, consisting of up to 25 item put or delete operations. While
-        /// individual items can be up to 400 KB once stored, it's important to note that an item's
-        /// representation might be greater than 400KB while being sent in DynamoDB's JSON format
-        /// for the API call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
+        /// The <c>BatchWriteItem</c> operation puts or deletes multiple items in one or more
+        /// tables. A single call to <c>BatchWriteItem</c> can transmit up to 16MB of data over
+        /// the network, consisting of up to 25 item put or delete operations. While individual
+        /// items can be up to 400 KB once stored, it's important to note that an item's representation
+        /// might be greater than 400KB while being sent in DynamoDB's JSON format for the API
+        /// call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
         /// Rules and Data Types</a>.
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>BatchWriteItem</code> cannot update items. If you perform a <code>BatchWriteItem</code>
+        ///  <c>BatchWriteItem</c> cannot update items. If you perform a <c>BatchWriteItem</c>
         /// operation on an existing item, that item's values will be overwritten by the operation
         /// and it will appear like it was updated. To update items, we recommend you use the
-        /// <code>UpdateItem</code> action.
+        /// <c>UpdateItem</c> action.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The individual <code>PutItem</code> and <code>DeleteItem</code> operations specified
-        /// in <code>BatchWriteItem</code> are atomic; however <code>BatchWriteItem</code> as
-        /// a whole is not. If any requested operations fail because the table's provisioned throughput
-        /// is exceeded or an internal processing failure occurs, the failed operations are returned
-        /// in the <code>UnprocessedItems</code> response parameter. You can investigate and optionally
-        /// resend the requests. Typically, you would call <code>BatchWriteItem</code> in a loop.
-        /// Each iteration would check for unprocessed items and submit a new <code>BatchWriteItem</code>
-        /// request with those unprocessed items until all items have been processed.
+        /// The individual <c>PutItem</c> and <c>DeleteItem</c> operations specified in <c>BatchWriteItem</c>
+        /// are atomic; however <c>BatchWriteItem</c> as a whole is not. If any requested operations
+        /// fail because the table's provisioned throughput is exceeded or an internal processing
+        /// failure occurs, the failed operations are returned in the <c>UnprocessedItems</c>
+        /// response parameter. You can investigate and optionally resend the requests. Typically,
+        /// you would call <c>BatchWriteItem</c> in a loop. Each iteration would check for unprocessed
+        /// items and submit a new <c>BatchWriteItem</c> request with those unprocessed items
+        /// until all items have been processed.
         /// </para>
         ///  
         /// <para>
         /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <code>BatchWriteItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
+        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -781,21 +778,21 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> 
         /// <para>
-        /// With <code>BatchWriteItem</code>, you can efficiently write or delete large amounts
-        /// of data, such as from Amazon EMR, or copy data from another database into DynamoDB.
-        /// In order to improve performance with these large-scale operations, <code>BatchWriteItem</code>
-        /// does not behave in the same way as individual <code>PutItem</code> and <code>DeleteItem</code>
-        /// calls would. For example, you cannot specify conditions on individual put and delete
-        /// requests, and <code>BatchWriteItem</code> does not return deleted items in the response.
+        /// With <c>BatchWriteItem</c>, you can efficiently write or delete large amounts of data,
+        /// such as from Amazon EMR, or copy data from another database into DynamoDB. In order
+        /// to improve performance with these large-scale operations, <c>BatchWriteItem</c> does
+        /// not behave in the same way as individual <c>PutItem</c> and <c>DeleteItem</c> calls
+        /// would. For example, you cannot specify conditions on individual put and delete requests,
+        /// and <c>BatchWriteItem</c> does not return deleted items in the response.
         /// </para>
         ///  
         /// <para>
         /// If you use a programming language that supports concurrency, you can use threads to
         /// write items in parallel. Your application must include the necessary logic to manage
         /// the threads. With languages that don't support threading, you must update or delete
-        /// the specified items one at a time. In both situations, <code>BatchWriteItem</code>
-        /// performs the specified put and delete operations in parallel, giving you the power
-        /// of the thread pool approach without having to introduce complexity into your application.
+        /// the specified items one at a time. In both situations, <c>BatchWriteItem</c> performs
+        /// the specified put and delete operations in parallel, giving you the power of the thread
+        /// pool approach without having to introduce complexity into your application.
         /// </para>
         ///  
         /// <para>
@@ -809,7 +806,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// One or more tables specified in the <code>BatchWriteItem</code> request does not exist.
+        /// One or more tables specified in the <c>BatchWriteItem</c> request does not exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -818,8 +815,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You try to perform multiple operations on the same item in the same <code>BatchWriteItem</code>
-        /// request. For example, you cannot put and delete the same item in the same <code>BatchWriteItem</code>
+        /// You try to perform multiple operations on the same item in the same <c>BatchWriteItem</c>
+        /// request. For example, you cannot put and delete the same item in the same <c>BatchWriteItem</c>
         /// request. 
         /// </para>
         ///  </li> <li> 
@@ -868,7 +865,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
         public virtual Task<BatchWriteItemResponse> BatchWriteItemAsync(Dictionary<string, List<WriteRequest>> requestItems, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -881,36 +878,36 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>BatchWriteItem</code> operation puts or deletes multiple items in one or
-        /// more tables. A single call to <code>BatchWriteItem</code> can transmit up to 16MB
-        /// of data over the network, consisting of up to 25 item put or delete operations. While
-        /// individual items can be up to 400 KB once stored, it's important to note that an item's
-        /// representation might be greater than 400KB while being sent in DynamoDB's JSON format
-        /// for the API call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
+        /// The <c>BatchWriteItem</c> operation puts or deletes multiple items in one or more
+        /// tables. A single call to <c>BatchWriteItem</c> can transmit up to 16MB of data over
+        /// the network, consisting of up to 25 item put or delete operations. While individual
+        /// items can be up to 400 KB once stored, it's important to note that an item's representation
+        /// might be greater than 400KB while being sent in DynamoDB's JSON format for the API
+        /// call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming
         /// Rules and Data Types</a>.
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>BatchWriteItem</code> cannot update items. If you perform a <code>BatchWriteItem</code>
+        ///  <c>BatchWriteItem</c> cannot update items. If you perform a <c>BatchWriteItem</c>
         /// operation on an existing item, that item's values will be overwritten by the operation
         /// and it will appear like it was updated. To update items, we recommend you use the
-        /// <code>UpdateItem</code> action.
+        /// <c>UpdateItem</c> action.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The individual <code>PutItem</code> and <code>DeleteItem</code> operations specified
-        /// in <code>BatchWriteItem</code> are atomic; however <code>BatchWriteItem</code> as
-        /// a whole is not. If any requested operations fail because the table's provisioned throughput
-        /// is exceeded or an internal processing failure occurs, the failed operations are returned
-        /// in the <code>UnprocessedItems</code> response parameter. You can investigate and optionally
-        /// resend the requests. Typically, you would call <code>BatchWriteItem</code> in a loop.
-        /// Each iteration would check for unprocessed items and submit a new <code>BatchWriteItem</code>
-        /// request with those unprocessed items until all items have been processed.
+        /// The individual <c>PutItem</c> and <c>DeleteItem</c> operations specified in <c>BatchWriteItem</c>
+        /// are atomic; however <c>BatchWriteItem</c> as a whole is not. If any requested operations
+        /// fail because the table's provisioned throughput is exceeded or an internal processing
+        /// failure occurs, the failed operations are returned in the <c>UnprocessedItems</c>
+        /// response parameter. You can investigate and optionally resend the requests. Typically,
+        /// you would call <c>BatchWriteItem</c> in a loop. Each iteration would check for unprocessed
+        /// items and submit a new <c>BatchWriteItem</c> request with those unprocessed items
+        /// until all items have been processed.
         /// </para>
         ///  
         /// <para>
         /// If <i>none</i> of the items can be processed due to insufficient provisioned throughput
-        /// on all of the tables in the request, then <code>BatchWriteItem</code> returns a <code>ProvisionedThroughputExceededException</code>.
+        /// on all of the tables in the request, then <c>BatchWriteItem</c> returns a <c>ProvisionedThroughputExceededException</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -928,21 +925,21 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> 
         /// <para>
-        /// With <code>BatchWriteItem</code>, you can efficiently write or delete large amounts
-        /// of data, such as from Amazon EMR, or copy data from another database into DynamoDB.
-        /// In order to improve performance with these large-scale operations, <code>BatchWriteItem</code>
-        /// does not behave in the same way as individual <code>PutItem</code> and <code>DeleteItem</code>
-        /// calls would. For example, you cannot specify conditions on individual put and delete
-        /// requests, and <code>BatchWriteItem</code> does not return deleted items in the response.
+        /// With <c>BatchWriteItem</c>, you can efficiently write or delete large amounts of data,
+        /// such as from Amazon EMR, or copy data from another database into DynamoDB. In order
+        /// to improve performance with these large-scale operations, <c>BatchWriteItem</c> does
+        /// not behave in the same way as individual <c>PutItem</c> and <c>DeleteItem</c> calls
+        /// would. For example, you cannot specify conditions on individual put and delete requests,
+        /// and <c>BatchWriteItem</c> does not return deleted items in the response.
         /// </para>
         ///  
         /// <para>
         /// If you use a programming language that supports concurrency, you can use threads to
         /// write items in parallel. Your application must include the necessary logic to manage
         /// the threads. With languages that don't support threading, you must update or delete
-        /// the specified items one at a time. In both situations, <code>BatchWriteItem</code>
-        /// performs the specified put and delete operations in parallel, giving you the power
-        /// of the thread pool approach without having to introduce complexity into your application.
+        /// the specified items one at a time. In both situations, <c>BatchWriteItem</c> performs
+        /// the specified put and delete operations in parallel, giving you the power of the thread
+        /// pool approach without having to introduce complexity into your application.
         /// </para>
         ///  
         /// <para>
@@ -956,7 +953,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// One or more tables specified in the <code>BatchWriteItem</code> request does not exist.
+        /// One or more tables specified in the <c>BatchWriteItem</c> request does not exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -965,8 +962,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You try to perform multiple operations on the same item in the same <code>BatchWriteItem</code>
-        /// request. For example, you cannot put and delete the same item in the same <code>BatchWriteItem</code>
+        /// You try to perform multiple operations on the same item in the same <c>BatchWriteItem</c>
+        /// request. For example, you cannot put and delete the same item in the same <c>BatchWriteItem</c>
         /// request. 
         /// </para>
         ///  </li> <li> 
@@ -1015,7 +1012,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchWriteItem">REST API Reference for BatchWriteItem Operation</seealso>
         public virtual Task<BatchWriteItemResponse> BatchWriteItemAsync(BatchWriteItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1063,7 +1060,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// You can call <code>CreateBackup</code> at a maximum rate of 50 times per second.
+        /// You can call <c>CreateBackup</c> at a maximum rate of 50 times per second.
         /// </para>
         ///  
         /// <para>
@@ -1120,8 +1117,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1152,8 +1149,8 @@ namespace Amazon.DynamoDBv2
         /// A target table with the specified name is either being created or deleted.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A source table with the name <code>TableName</code> does not currently exist within
-        /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+        /// A source table with the name <c>TableName</c> does not currently exist within the
+        /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
         /// Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateBackup">REST API Reference for CreateBackup Operation</seealso>
@@ -1284,8 +1281,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1313,8 +1310,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A source table with the name <code>TableName</code> does not currently exist within
-        /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+        /// A source table with the name <c>TableName</c> does not currently exist within the
+        /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
         /// Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateGlobalTable">REST API Reference for CreateGlobalTable Operation</seealso>
@@ -1346,28 +1343,27 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>CreateTable</code> operation adds a new table to your account. In an Amazon
-        /// Web Services account, table names must be unique within each Region. That is, you
-        /// can have two tables with same name if you create the tables in different Regions.
+        /// The <c>CreateTable</c> operation adds a new table to your account. In an Amazon Web
+        /// Services account, table names must be unique within each Region. That is, you can
+        /// have two tables with same name if you create the tables in different Regions.
         /// 
         ///  
         /// <para>
-        ///  <code>CreateTable</code> is an asynchronous operation. Upon receiving a <code>CreateTable</code>
-        /// request, DynamoDB immediately returns a response with a <code>TableStatus</code> of
-        /// <code>CREATING</code>. After the table is created, DynamoDB sets the <code>TableStatus</code>
-        /// to <code>ACTIVE</code>. You can perform read and write operations only on an <code>ACTIVE</code>
-        /// table. 
+        ///  <c>CreateTable</c> is an asynchronous operation. Upon receiving a <c>CreateTable</c>
+        /// request, DynamoDB immediately returns a response with a <c>TableStatus</c> of <c>CREATING</c>.
+        /// After the table is created, DynamoDB sets the <c>TableStatus</c> to <c>ACTIVE</c>.
+        /// You can perform read and write operations only on an <c>ACTIVE</c> table. 
         /// </para>
         ///  
         /// <para>
-        /// You can optionally define secondary indexes on the new table, as part of the <code>CreateTable</code>
+        /// You can optionally define secondary indexes on the new table, as part of the <c>CreateTable</c>
         /// operation. If you want to create multiple tables with secondary indexes on them, you
         /// must create the tables sequentially. Only one table with secondary indexes can be
-        /// in the <code>CREATING</code> state at any given time.
+        /// in the <c>CREATING</c> state at any given time.
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>DescribeTable</code> action to check the table status.
+        /// You can use the <c>DescribeTable</c> action to check the table status.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to create.</param>
@@ -1388,8 +1384,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1418,7 +1414,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
@@ -1435,28 +1431,27 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>CreateTable</code> operation adds a new table to your account. In an Amazon
-        /// Web Services account, table names must be unique within each Region. That is, you
-        /// can have two tables with same name if you create the tables in different Regions.
+        /// The <c>CreateTable</c> operation adds a new table to your account. In an Amazon Web
+        /// Services account, table names must be unique within each Region. That is, you can
+        /// have two tables with same name if you create the tables in different Regions.
         /// 
         ///  
         /// <para>
-        ///  <code>CreateTable</code> is an asynchronous operation. Upon receiving a <code>CreateTable</code>
-        /// request, DynamoDB immediately returns a response with a <code>TableStatus</code> of
-        /// <code>CREATING</code>. After the table is created, DynamoDB sets the <code>TableStatus</code>
-        /// to <code>ACTIVE</code>. You can perform read and write operations only on an <code>ACTIVE</code>
-        /// table. 
+        ///  <c>CreateTable</c> is an asynchronous operation. Upon receiving a <c>CreateTable</c>
+        /// request, DynamoDB immediately returns a response with a <c>TableStatus</c> of <c>CREATING</c>.
+        /// After the table is created, DynamoDB sets the <c>TableStatus</c> to <c>ACTIVE</c>.
+        /// You can perform read and write operations only on an <c>ACTIVE</c> table. 
         /// </para>
         ///  
         /// <para>
-        /// You can optionally define secondary indexes on the new table, as part of the <code>CreateTable</code>
+        /// You can optionally define secondary indexes on the new table, as part of the <c>CreateTable</c>
         /// operation. If you want to create multiple tables with secondary indexes on them, you
         /// must create the tables sequentially. Only one table with secondary indexes can be
-        /// in the <code>CREATING</code> state at any given time.
+        /// in the <c>CREATING</c> state at any given time.
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>DescribeTable</code> action to check the table status.
+        /// You can use the <c>DescribeTable</c> action to check the table status.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTable service method.</param>
@@ -1474,8 +1469,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1504,7 +1499,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/CreateTable">REST API Reference for CreateTable Operation</seealso>
@@ -1541,7 +1536,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// You can call <code>DeleteBackup</code> at a maximum rate of 10 times per second.
+        /// You can call <c>DeleteBackup</c> at a maximum rate of 10 times per second.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
@@ -1566,8 +1561,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1629,13 +1624,13 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// In addition to deleting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// the same operation, using the <c>ReturnValues</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Unless you specify conditions, the <code>DeleteItem</code> is an idempotent operation;
-        /// running it multiple times on the same item or attribute does <i>not</i> result in
-        /// an error response.
+        /// Unless you specify conditions, the <c>DeleteItem</c> is an idempotent operation; running
+        /// it multiple times on the same item or attribute does <i>not</i> result in an error
+        /// response.
         /// </para>
         ///  
         /// <para>
@@ -1675,7 +1670,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -1697,13 +1692,13 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// In addition to deleting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// the same operation, using the <c>ReturnValues</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Unless you specify conditions, the <code>DeleteItem</code> is an idempotent operation;
-        /// running it multiple times on the same item or attribute does <i>not</i> result in
-        /// an error response.
+        /// Unless you specify conditions, the <c>DeleteItem</c> is an idempotent operation; running
+        /// it multiple times on the same item or attribute does <i>not</i> result in an error
+        /// response.
         /// </para>
         ///  
         /// <para>
@@ -1744,7 +1739,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -1768,13 +1763,13 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// In addition to deleting an item, you can also return the item's attribute values in
-        /// the same operation, using the <code>ReturnValues</code> parameter.
+        /// the same operation, using the <c>ReturnValues</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Unless you specify conditions, the <code>DeleteItem</code> is an idempotent operation;
-        /// running it multiple times on the same item or attribute does <i>not</i> result in
-        /// an error response.
+        /// Unless you specify conditions, the <c>DeleteItem</c> is an idempotent operation; running
+        /// it multiple times on the same item or attribute does <i>not</i> result in an error
+        /// response.
         /// </para>
         ///  
         /// <para>
@@ -1813,7 +1808,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -1847,13 +1842,12 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>DeleteTable</code> operation deletes a table and all of its items. After
-        /// a <code>DeleteTable</code> request, the specified table is in the <code>DELETING</code>
-        /// state until DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code>
-        /// state, you can delete it. If a table is in <code>CREATING</code> or <code>UPDATING</code>
-        /// states, then DynamoDB returns a <code>ResourceInUseException</code>. If the specified
-        /// table does not exist, DynamoDB returns a <code>ResourceNotFoundException</code>. If
-        /// table is already in the <code>DELETING</code> state, no error is returned. 
+        /// The <c>DeleteTable</c> operation deletes a table and all of its items. After a <c>DeleteTable</c>
+        /// request, the specified table is in the <c>DELETING</c> state until DynamoDB completes
+        /// the deletion. If the table is in the <c>ACTIVE</c> state, you can delete it. If a
+        /// table is in <c>CREATING</c> or <c>UPDATING</c> states, then DynamoDB returns a <c>ResourceInUseException</c>.
+        /// If the specified table does not exist, DynamoDB returns a <c>ResourceNotFoundException</c>.
+        /// If table is already in the <c>DELETING</c> state, no error is returned. 
         /// 
         ///  <important> 
         /// <para>
@@ -1862,9 +1856,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// DynamoDB might continue to accept data read and write operations, such as <code>GetItem</code>
-        /// and <code>PutItem</code>, on a table in the <code>DELETING</code> state until the
-        /// table deletion is complete.
+        /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
+        /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
+        /// is complete.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1873,12 +1867,12 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// If you have DynamoDB Streams enabled on the table, then the corresponding stream on
-        /// that table goes into the <code>DISABLED</code> state, and the stream is automatically
-        /// deleted after 24 hours.
+        /// that table goes into the <c>DISABLED</c> state, and the stream is automatically deleted
+        /// after 24 hours.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DescribeTable</code> action to check the status of the table. 
+        /// Use the <c>DescribeTable</c> action to check the status of the table. 
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to delete.</param>
@@ -1896,8 +1890,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -1926,12 +1920,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual Task<DeleteTableResponse> DeleteTableAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1944,13 +1938,12 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>DeleteTable</code> operation deletes a table and all of its items. After
-        /// a <code>DeleteTable</code> request, the specified table is in the <code>DELETING</code>
-        /// state until DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code>
-        /// state, you can delete it. If a table is in <code>CREATING</code> or <code>UPDATING</code>
-        /// states, then DynamoDB returns a <code>ResourceInUseException</code>. If the specified
-        /// table does not exist, DynamoDB returns a <code>ResourceNotFoundException</code>. If
-        /// table is already in the <code>DELETING</code> state, no error is returned. 
+        /// The <c>DeleteTable</c> operation deletes a table and all of its items. After a <c>DeleteTable</c>
+        /// request, the specified table is in the <c>DELETING</c> state until DynamoDB completes
+        /// the deletion. If the table is in the <c>ACTIVE</c> state, you can delete it. If a
+        /// table is in <c>CREATING</c> or <c>UPDATING</c> states, then DynamoDB returns a <c>ResourceInUseException</c>.
+        /// If the specified table does not exist, DynamoDB returns a <c>ResourceNotFoundException</c>.
+        /// If table is already in the <c>DELETING</c> state, no error is returned. 
         /// 
         ///  <important> 
         /// <para>
@@ -1959,9 +1952,9 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// DynamoDB might continue to accept data read and write operations, such as <code>GetItem</code>
-        /// and <code>PutItem</code>, on a table in the <code>DELETING</code> state until the
-        /// table deletion is complete.
+        /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
+        /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
+        /// is complete.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1970,12 +1963,12 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// If you have DynamoDB Streams enabled on the table, then the corresponding stream on
-        /// that table goes into the <code>DISABLED</code> state, and the stream is automatically
-        /// deleted after 24 hours.
+        /// that table goes into the <c>DISABLED</c> state, and the stream is automatically deleted
+        /// after 24 hours.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DescribeTable</code> action to check the status of the table. 
+        /// Use the <c>DescribeTable</c> action to check the status of the table. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
@@ -1993,8 +1986,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -2023,12 +2016,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DeleteTable">REST API Reference for DeleteTable Operation</seealso>
         public virtual Task<DeleteTableResponse> DeleteTableAsync(DeleteTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2064,7 +2057,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// You can call <code>DescribeBackup</code> at a maximum rate of 10 times per second.
+        /// You can call <c>DescribeBackup</c> at a maximum rate of 10 times per second.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackup service method.</param>
@@ -2110,25 +2103,23 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Checks the status of continuous backups and point in time recovery on the specified
-        /// table. Continuous backups are <code>ENABLED</code> on all tables at table creation.
-        /// If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code> will
-        /// be set to ENABLED.
+        /// table. Continuous backups are <c>ENABLED</c> on all tables at table creation. If point
+        /// in time recovery is enabled, <c>PointInTimeRecoveryStatus</c> will be set to ENABLED.
         /// 
         ///  
         /// <para>
         ///  After continuous backups and point in time recovery are enabled, you can restore
-        /// to any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
+        /// to any point in time within <c>EarliestRestorableDateTime</c> and <c>LatestRestorableDateTime</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
-        /// You can restore your table to any point in time during the last 35 days. 
+        ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
+        /// can restore your table to any point in time during the last 35 days. 
         /// </para>
         ///  
         /// <para>
-        /// You can call <code>DescribeContinuousBackups</code> at a maximum rate of 10 times
-        /// per second.
+        /// You can call <c>DescribeContinuousBackups</c> at a maximum rate of 10 times per second.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeContinuousBackups service method.</param>
@@ -2141,8 +2132,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A source table with the name <code>TableName</code> does not currently exist within
-        /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+        /// A source table with the name <c>TableName</c> does not currently exist within the
+        /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
         /// Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContinuousBackups">REST API Reference for DescribeContinuousBackups Operation</seealso>
@@ -2187,7 +2178,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeContributorInsights">REST API Reference for DescribeContributorInsights Operation</seealso>
         public virtual Task<DescribeContributorInsightsResponse> DescribeContributorInsightsAsync(DescribeContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2271,8 +2262,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -2491,7 +2482,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination">REST API Reference for DescribeKinesisStreamingDestination Operation</seealso>
         public virtual Task<DescribeKinesisStreamingDestinationResponse> DescribeKinesisStreamingDestinationAsync(DescribeKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2539,9 +2530,9 @@ namespace Amazon.DynamoDBv2
         /// <para>
         /// Although you can increase these quotas by filing a case at <a href="https://console.aws.amazon.com/support/home#/">Amazon
         /// Web Services Support Center</a>, obtaining the increase is not instantaneous. The
-        /// <code>DescribeLimits</code> action lets you write code to compare the capacity you
-        /// are currently using to those quotas imposed by your account so that you have enough
-        /// time to apply for an increase before you hit a quota.
+        /// <c>DescribeLimits</c> action lets you write code to compare the capacity you are currently
+        /// using to those quotas imposed by your account so that you have enough time to apply
+        /// for an increase before you hit a quota.
         /// </para>
         ///  
         /// <para>
@@ -2549,7 +2540,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Call <code>DescribeLimits</code> for a particular Region to obtain your current account
+        /// Call <c>DescribeLimits</c> for a particular Region to obtain your current account
         /// quotas on provisioned capacity there.
         /// </para>
         ///  </li> <li> 
@@ -2560,20 +2551,20 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call <code>ListTables</code> to obtain a list of all your DynamoDB tables.
+        /// Call <c>ListTables</c> to obtain a list of all your DynamoDB tables.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For each table name listed by <code>ListTables</code>, do the following:
+        /// For each table name listed by <c>ListTables</c>, do the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Call <code>DescribeTable</code> with the table name.
+        /// Call <c>DescribeTable</c> with the table name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the data returned by <code>DescribeTable</code> to add the read capacity units
-        /// and write capacity units provisioned for the table itself to your variables.
+        /// Use the data returned by <c>DescribeTable</c> to add the read capacity units and write
+        /// capacity units provisioned for the table itself to your variables.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2582,8 +2573,8 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        /// Report the account quotas for that Region returned by <code>DescribeLimits</code>,
-        /// along with the total current provisioned capacity levels you have calculated.
+        /// Report the account quotas for that Region returned by <c>DescribeLimits</c>, along
+        /// with the total current provisioned capacity levels you have calculated.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -2604,12 +2595,12 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>DescribeLimits</code> should only be called periodically. You can expect throttling
+        ///  <c>DescribeLimits</c> should only be called periodically. You can expect throttling
         /// errors if you call it more than once in a minute.
         /// </para>
         ///  </note> 
         /// <para>
-        /// The <code>DescribeLimits</code> Request element has no content.
+        /// The <c>DescribeLimits</c> Request element has no content.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeLimits service method.</param>
@@ -2660,11 +2651,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If you issue a <code>DescribeTable</code> request immediately after a <code>CreateTable</code>
-        /// request, DynamoDB might return a <code>ResourceNotFoundException</code>. This is because
-        /// <code>DescribeTable</code> uses an eventually consistent query, and the metadata for
-        /// your table might not be available at that moment. Wait for a few seconds, and then
-        /// try the <code>DescribeTable</code> request again.
+        /// If you issue a <c>DescribeTable</c> request immediately after a <c>CreateTable</c>
+        /// request, DynamoDB might return a <c>ResourceNotFoundException</c>. This is because
+        /// <c>DescribeTable</c> uses an eventually consistent query, and the metadata for your
+        /// table might not be available at that moment. Wait for a few seconds, and then try
+        /// the <c>DescribeTable</c> request again.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2679,7 +2670,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         public virtual Task<DescribeTableResponse> DescribeTableAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2702,11 +2693,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If you issue a <code>DescribeTable</code> request immediately after a <code>CreateTable</code>
-        /// request, DynamoDB might return a <code>ResourceNotFoundException</code>. This is because
-        /// <code>DescribeTable</code> uses an eventually consistent query, and the metadata for
-        /// your table might not be available at that moment. Wait for a few seconds, and then
-        /// try the <code>DescribeTable</code> request again.
+        /// If you issue a <c>DescribeTable</c> request immediately after a <c>CreateTable</c>
+        /// request, DynamoDB might return a <c>ResourceNotFoundException</c>. This is because
+        /// <c>DescribeTable</c> uses an eventually consistent query, and the metadata for your
+        /// table might not be available at that moment. Wait for a few seconds, and then try
+        /// the <c>DescribeTable</c> request again.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2721,7 +2712,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTable">REST API Reference for DescribeTable Operation</seealso>
         public virtual Task<DescribeTableResponse> DescribeTableAsync(DescribeTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2771,7 +2762,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTableReplicaAutoScaling">REST API Reference for DescribeTableReplicaAutoScaling Operation</seealso>
         public virtual Task<DescribeTableReplicaAutoScalingResponse> DescribeTableReplicaAutoScalingAsync(DescribeTableReplicaAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2813,7 +2804,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
         public virtual Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(string tableName, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2839,7 +2830,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeTimeToLive">REST API Reference for DescribeTimeToLive Operation</seealso>
         public virtual Task<DescribeTimeToLiveResponse> DescribeTimeToLiveAsync(DescribeTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2889,8 +2880,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -2919,12 +2910,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination">REST API Reference for DisableKinesisStreamingDestination Operation</seealso>
         public virtual Task<DisableKinesisStreamingDestinationResponse> DisableKinesisStreamingDestinationAsync(DisableKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2976,8 +2967,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -3006,12 +2997,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination">REST API Reference for EnableKinesisStreamingDestination Operation</seealso>
         public virtual Task<EnableKinesisStreamingDestinationResponse> EnableKinesisStreamingDestinationAsync(EnableKinesisStreamingDestinationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3046,19 +3037,19 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// For PartiQL reads (<code>SELECT</code> statement), if the total number of processed
-        /// items exceeds the maximum dataset size limit of 1 MB, the read stops and results are
-        /// returned to the user as a <code>LastEvaluatedKey</code> value to continue the read
-        /// in a subsequent operation. If the filter criteria in <code>WHERE</code> clause does
-        /// not match any data, the read will return an empty result set.
+        /// For PartiQL reads (<c>SELECT</c> statement), if the total number of processed items
+        /// exceeds the maximum dataset size limit of 1 MB, the read stops and results are returned
+        /// to the user as a <c>LastEvaluatedKey</c> value to continue the read in a subsequent
+        /// operation. If the filter criteria in <c>WHERE</c> clause does not match any data,
+        /// the read will return an empty result set.
         /// </para>
         ///  
         /// <para>
-        /// A single <code>SELECT</code> statement response can return up to the maximum number
-        /// of items (if using the Limit parameter) or a maximum of 1 MB of data (and then apply
-        /// any filtering to the results using <code>WHERE</code> clause). If <code>LastEvaluatedKey</code>
-        /// is present in the response, you need to paginate the result set. If <code>NextToken</code>
-        /// is present, you need to paginate the result set and include <code>NextToken</code>.
+        /// A single <c>SELECT</c> statement response can return up to the maximum number of items
+        /// (if using the Limit parameter) or a maximum of 1 MB of data (and then apply any filtering
+        /// to the results using <c>WHERE</c> clause). If <c>LastEvaluatedKey</c> is present in
+        /// the response, you need to paginate the result set. If <c>NextToken</c> is present,
+        /// you need to paginate the result set and include <c>NextToken</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExecuteStatement service method.</param>
@@ -3095,7 +3086,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -3134,7 +3125,7 @@ namespace Amazon.DynamoDBv2
         /// The entire transaction must consist of either read statements or write statements,
         /// you cannot mix both in one transaction. The EXISTS function is an exception and can
         /// be used to check the condition of specific attributes of the item in a similar manner
-        /// to <code>ConditionCheck</code> in the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
+        /// to <c>ConditionCheck</c> in the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/transaction-apis.html#transaction-apis-txwriteitems">TransactWriteItems</a>
         /// API.
         /// </para>
         ///  </note>
@@ -3166,14 +3157,14 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
         /// The entire transaction request was canceled.
         /// 
         ///  
         /// <para>
-        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <c>TransactWriteItems</c> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3181,13 +3172,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A table in the <code>TransactWriteItems</code> request is in a different account or
-        /// region.
+        /// A table in the <c>TransactWriteItems</c> request is in a different account or region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// More than one action in the <code>TransactWriteItems</code> operation targets the
-        /// same item.
+        /// More than one action in the <c>TransactWriteItems</c> operation targets the same item.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3205,25 +3194,23 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  There is an ongoing <code>TransactWriteItems</code> operation that conflicts with
-        /// a concurrent <code>TransactWriteItems</code> request. In this case the <code>TransactWriteItems</code>
-        /// operation fails with a <code>TransactionCanceledException</code>. 
+        ///  There is an ongoing <c>TransactWriteItems</c> operation that conflicts with a concurrent
+        /// <c>TransactWriteItems</c> request. In this case the <c>TransactWriteItems</c> operation
+        /// fails with a <c>TransactionCanceledException</c>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <c>TransactGetItems</c> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// There is an ongoing <code>TransactGetItems</code> operation that conflicts with a
-        /// concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code>
-        /// or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code>
-        /// operation fails with a <code>TransactionCanceledException</code>.
+        /// There is an ongoing <c>TransactGetItems</c> operation that conflicts with a concurrent
+        /// <c>PutItem</c>, <c>UpdateItem</c>, <c>DeleteItem</c> or <c>TransactWriteItems</c>
+        /// request. In this case the <c>TransactGetItems</c> operation fails with a <c>TransactionCanceledException</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A table in the <code>TransactGetItems</code> request is in a different account or
-        /// region.
+        /// A table in the <c>TransactGetItems</c> request is in a different account or region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3235,10 +3222,10 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
         /// property. This property is not set for other languages. Transaction cancellation reasons
         /// are ordered in the order of requested items, if an item has no error it will have
-        /// <code>None</code> code and <code>Null</code> message.
+        /// <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3250,11 +3237,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>None</code> 
+        /// Code: <c>None</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Message: <code>null</code> 
+        /// Message: <c>null</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -3262,7 +3249,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ConditionalCheckFailed</code> 
+        /// Code: <c>ConditionalCheckFailed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3274,7 +3261,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// Code: <c>ItemCollectionSizeLimitExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3286,7 +3273,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>TransactionConflict</code> 
+        /// Code: <c>TransactionConflict</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3298,7 +3285,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// Code: <c>ProvisionedThroughputExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3331,7 +3318,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ThrottlingError</code> 
+        /// Code: <c>ThrottlingError</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3364,7 +3351,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ValidationError</code> 
+        /// Code: <c>ValidationError</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3423,27 +3410,27 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This is a general recommendation for handling the <code>TransactionInProgressException</code>.
+        ///  This is a general recommendation for handling the <c>TransactionInProgressException</c>.
         /// These settings help ensure that the client retries will trigger completion of the
-        /// ongoing <code>TransactWriteItems</code> request. 
+        /// ongoing <c>TransactWriteItems</c> request. 
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        ///  Set <code>clientExecutionTimeout</code> to a value that allows at least one retry
-        /// to be processed after 5 seconds have elapsed since the first attempt for the <code>TransactWriteItems</code>
+        ///  Set <c>clientExecutionTimeout</c> to a value that allows at least one retry to be
+        /// processed after 5 seconds have elapsed since the first attempt for the <c>TransactWriteItems</c>
         /// operation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Set <code>socketTimeout</code> to a value a little lower than the <code>requestTimeout</code>
+        ///  Set <c>socketTimeout</c> to a value a little lower than the <c>requestTimeout</c>
         /// setting. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requestTimeout</code> should be set based on the time taken for the individual
-        /// retries of a single HTTP request for your use case, but setting it to 1 second or
-        /// higher should work well to reduce chances of retries and <code>TransactionInProgressException</code>
-        /// errors. 
+        ///  <c>requestTimeout</c> should be set based on the time taken for the individual retries
+        /// of a single HTTP request for your use case, but setting it to 1 second or higher should
+        /// work well to reduce chances of retries and <c>TransactionInProgressException</c> errors.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3533,7 +3520,7 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.InvalidExportTimeException">
-        /// The specified <code>ExportTime</code> is outside of the point in time recovery window.
+        /// The specified <c>ExportTime</c> is outside of the point in time recovery window.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.LimitExceededException">
         /// There is no limit to the number of daily on-demand backups that can be taken. 
@@ -3541,8 +3528,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -3573,8 +3560,8 @@ namespace Amazon.DynamoDBv2
         /// Point in time recovery has not yet been enabled for this source table.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A source table with the name <code>TableName</code> does not currently exist within
-        /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+        /// A source table with the name <c>TableName</c> does not currently exist within the
+        /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
         /// Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime">REST API Reference for ExportTableToPointInTime Operation</seealso>
@@ -3604,16 +3591,16 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>GetItem</code> operation returns a set of attributes for the item with the
-        /// given primary key. If there is no matching item, <code>GetItem</code> does not return
-        /// any data and there will be no <code>Item</code> element in the response.
+        /// The <c>GetItem</c> operation returns a set of attributes for the item with the given
+        /// primary key. If there is no matching item, <c>GetItem</c> does not return any data
+        /// and there will be no <c>Item</c> element in the response.
         /// 
         ///  
         /// <para>
-        ///  <code>GetItem</code> provides an eventually consistent read by default. If your application
-        /// requires a strongly consistent read, set <code>ConsistentRead</code> to <code>true</code>.
-        /// Although a strongly consistent read might take more time than an eventually consistent
-        /// read, it always returns the last updated value.
+        ///  <c>GetItem</c> provides an eventually consistent read by default. If your application
+        /// requires a strongly consistent read, set <c>ConsistentRead</c> to <c>true</c>. Although
+        /// a strongly consistent read might take more time than an eventually consistent read,
+        /// it always returns the last updated value.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
@@ -3640,7 +3627,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3653,16 +3640,16 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>GetItem</code> operation returns a set of attributes for the item with the
-        /// given primary key. If there is no matching item, <code>GetItem</code> does not return
-        /// any data and there will be no <code>Item</code> element in the response.
+        /// The <c>GetItem</c> operation returns a set of attributes for the item with the given
+        /// primary key. If there is no matching item, <c>GetItem</c> does not return any data
+        /// and there will be no <c>Item</c> element in the response.
         /// 
         ///  
         /// <para>
-        ///  <code>GetItem</code> provides an eventually consistent read by default. If your application
-        /// requires a strongly consistent read, set <code>ConsistentRead</code> to <code>true</code>.
-        /// Although a strongly consistent read might take more time than an eventually consistent
-        /// read, it always returns the last updated value.
+        ///  <c>GetItem</c> provides an eventually consistent read by default. If your application
+        /// requires a strongly consistent read, set <c>ConsistentRead</c> to <c>true</c>. Although
+        /// a strongly consistent read might take more time than an eventually consistent read,
+        /// it always returns the last updated value.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the requested item.</param>
@@ -3690,7 +3677,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         public virtual Task<GetItemResponse> GetItemAsync(string tableName, Dictionary<string, AttributeValue> key, bool consistentRead, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3705,16 +3692,16 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>GetItem</code> operation returns a set of attributes for the item with the
-        /// given primary key. If there is no matching item, <code>GetItem</code> does not return
-        /// any data and there will be no <code>Item</code> element in the response.
+        /// The <c>GetItem</c> operation returns a set of attributes for the item with the given
+        /// primary key. If there is no matching item, <c>GetItem</c> does not return any data
+        /// and there will be no <c>Item</c> element in the response.
         /// 
         ///  
         /// <para>
-        ///  <code>GetItem</code> provides an eventually consistent read by default. If your application
-        /// requires a strongly consistent read, set <code>ConsistentRead</code> to <code>true</code>.
-        /// Although a strongly consistent read might take more time than an eventually consistent
-        /// read, it always returns the last updated value.
+        ///  <c>GetItem</c> provides an eventually consistent read by default. If your application
+        /// requires a strongly consistent read, set <c>ConsistentRead</c> to <c>true</c>. Although
+        /// a strongly consistent read might take more time than an eventually consistent read,
+        /// it always returns the last updated value.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetItem service method.</param>
@@ -3740,7 +3727,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/GetItem">REST API Reference for GetItem Operation</seealso>
         public virtual Task<GetItemResponse> GetItemAsync(GetItemRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3789,8 +3776,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -3819,7 +3806,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ImportTable">REST API Reference for ImportTable Operation</seealso>
@@ -3852,9 +3839,9 @@ namespace Amazon.DynamoDBv2
         /// <summary>
         /// List DynamoDB backups that are associated with an Amazon Web Services account and
         /// weren't made with Amazon Web Services Backup. To list these backups for a given table,
-        /// specify <code>TableName</code>. <code>ListBackups</code> returns a paginated list
-        /// of results with at most 1 MB worth of items in a page. You can also specify a maximum
-        /// number of entries to be returned in a page.
+        /// specify <c>TableName</c>. <c>ListBackups</c> returns a paginated list of results with
+        /// at most 1 MB worth of items in a page. You can also specify a maximum number of entries
+        /// to be returned in a page.
         /// 
         ///  
         /// <para>
@@ -3863,7 +3850,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// You can call <code>ListBackups</code> a maximum of five times per second.
+        /// You can call <c>ListBackups</c> a maximum of five times per second.
         /// </para>
         ///  
         /// <para>
@@ -3923,7 +3910,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListContributorInsights">REST API Reference for ListContributorInsights Operation</seealso>
         public virtual Task<ListContributorInsightsResponse> ListContributorInsightsAsync(ListContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -3968,8 +3955,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -4090,8 +4077,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -4150,7 +4137,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
-        /// The output from <code>ListTables</code> is paginated, with each page returning a maximum
+        /// The output from <c>ListTables</c> is paginated, with each page returning a maximum
         /// of 100 table names.
         /// </summary>
         /// <param name="cancellationToken">
@@ -4170,7 +4157,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
-        /// The output from <code>ListTables</code> is paginated, with each page returning a maximum
+        /// The output from <c>ListTables</c> is paginated, with each page returning a maximum
         /// of 100 table names.
         /// </summary>
         /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</param>
@@ -4193,7 +4180,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
-        /// The output from <code>ListTables</code> is paginated, with each page returning a maximum
+        /// The output from <c>ListTables</c> is paginated, with each page returning a maximum
         /// of 100 table names.
         /// </summary>
         /// <param name="exclusiveStartTableName">The first table name that this operation will evaluate. Use the value that was returned for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain the next page of results.</param>
@@ -4218,7 +4205,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
-        /// The output from <code>ListTables</code> is paginated, with each page returning a maximum
+        /// The output from <c>ListTables</c> is paginated, with each page returning a maximum
         /// of 100 table names.
         /// </summary>
         /// <param name="limit">A maximum number of table names to return. If this parameter is not specified, the limit is 100.</param>
@@ -4242,7 +4229,7 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// Returns an array of table names associated with the current account and endpoint.
-        /// The output from <code>ListTables</code> is paginated, with each page returning a maximum
+        /// The output from <c>ListTables</c> is paginated, with each page returning a maximum
         /// of 100 table names.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
@@ -4304,7 +4291,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListTagsOfResource">REST API Reference for ListTagsOfResource Operation</seealso>
         public virtual Task<ListTagsOfResourceResponse> ListTagsOfResourceAsync(ListTagsOfResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4340,7 +4327,7 @@ namespace Amazon.DynamoDBv2
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
         /// existing item if it has certain attribute values. You can return the item's attribute
-        /// values in the same operation, using the <code>ReturnValues</code> parameter.
+        /// values in the same operation, using the <c>ReturnValues</c> parameter.
         /// 
         ///  
         /// <para>
@@ -4355,20 +4342,20 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// Invalid Requests with empty values will be rejected with a <c>ValidationException</c>
         /// exception.
         /// </para>
         ///  <note> 
         /// <para>
         /// To prevent a new item from replacing an existing item, use a conditional expression
-        /// that contains the <code>attribute_not_exists</code> function with the name of the
-        /// attribute being used as the partition key for the table. Since every record must contain
-        /// that attribute, the <code>attribute_not_exists</code> function will only succeed if
-        /// no matching item exists.
+        /// that contains the <c>attribute_not_exists</c> function with the name of the attribute
+        /// being used as the partition key for the table. Since every record must contain that
+        /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
+        /// item exists.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about <code>PutItem</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
+        /// For more information about <c>PutItem</c>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4403,7 +4390,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -4424,7 +4411,7 @@ namespace Amazon.DynamoDBv2
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
         /// existing item if it has certain attribute values. You can return the item's attribute
-        /// values in the same operation, using the <code>ReturnValues</code> parameter.
+        /// values in the same operation, using the <c>ReturnValues</c> parameter.
         /// 
         ///  
         /// <para>
@@ -4439,20 +4426,20 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// Invalid Requests with empty values will be rejected with a <c>ValidationException</c>
         /// exception.
         /// </para>
         ///  <note> 
         /// <para>
         /// To prevent a new item from replacing an existing item, use a conditional expression
-        /// that contains the <code>attribute_not_exists</code> function with the name of the
-        /// attribute being used as the partition key for the table. Since every record must contain
-        /// that attribute, the <code>attribute_not_exists</code> function will only succeed if
-        /// no matching item exists.
+        /// that contains the <c>attribute_not_exists</c> function with the name of the attribute
+        /// being used as the partition key for the table. Since every record must contain that
+        /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
+        /// item exists.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about <code>PutItem</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
+        /// For more information about <c>PutItem</c>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4488,7 +4475,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -4511,7 +4498,7 @@ namespace Amazon.DynamoDBv2
         /// completely replaces the existing item. You can perform a conditional put operation
         /// (add a new item if one with the specified primary key doesn't exist), or replace an
         /// existing item if it has certain attribute values. You can return the item's attribute
-        /// values in the same operation, using the <code>ReturnValues</code> parameter.
+        /// values in the same operation, using the <c>ReturnValues</c> parameter.
         /// 
         ///  
         /// <para>
@@ -4526,20 +4513,20 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        /// Invalid Requests with empty values will be rejected with a <code>ValidationException</code>
+        /// Invalid Requests with empty values will be rejected with a <c>ValidationException</c>
         /// exception.
         /// </para>
         ///  <note> 
         /// <para>
         /// To prevent a new item from replacing an existing item, use a conditional expression
-        /// that contains the <code>attribute_not_exists</code> function with the name of the
-        /// attribute being used as the partition key for the table. Since every record must contain
-        /// that attribute, the <code>attribute_not_exists</code> function will only succeed if
-        /// no matching item exists.
+        /// that contains the <c>attribute_not_exists</c> function with the name of the attribute
+        /// being used as the partition key for the table. Since every record must contain that
+        /// attribute, the <c>attribute_not_exists</c> function will only succeed if no matching
+        /// item exists.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For more information about <code>PutItem</code>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
+        /// For more information about <c>PutItem</c>, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithItems.html">Working
         /// with Items</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -4573,7 +4560,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -4609,26 +4596,26 @@ namespace Amazon.DynamoDBv2
 
         /// <summary>
         /// You must provide the name of the partition key attribute and a single value for that
-        /// attribute. <code>Query</code> returns all items with that partition key value. Optionally,
+        /// attribute. <c>Query</c> returns all items with that partition key value. Optionally,
         /// you can provide a sort key attribute and use a comparison operator to refine the search
         /// results.
         /// 
         ///  
         /// <para>
-        /// Use the <code>KeyConditionExpression</code> parameter to provide a specific value
-        /// for the partition key. The <code>Query</code> operation will return all of the items
-        /// from the table or index with that partition key value. You can optionally narrow the
-        /// scope of the <code>Query</code> operation by specifying a sort key value and a comparison
-        /// operator in <code>KeyConditionExpression</code>. To further refine the <code>Query</code>
-        /// results, you can optionally provide a <code>FilterExpression</code>. A <code>FilterExpression</code>
-        /// determines which items within the results should be returned to you. All of the other
-        /// results are discarded. 
+        /// Use the <c>KeyConditionExpression</c> parameter to provide a specific value for the
+        /// partition key. The <c>Query</c> operation will return all of the items from the table
+        /// or index with that partition key value. You can optionally narrow the scope of the
+        /// <c>Query</c> operation by specifying a sort key value and a comparison operator in
+        /// <c>KeyConditionExpression</c>. To further refine the <c>Query</c> results, you can
+        /// optionally provide a <c>FilterExpression</c>. A <c>FilterExpression</c> determines
+        /// which items within the results should be returned to you. All of the other results
+        /// are discarded. 
         /// </para>
         ///  
         /// <para>
-        ///  A <code>Query</code> operation always returns a result set. If no matching items
-        /// are found, the result set will be empty. Queries that do not return results consume
-        /// the minimum number of read capacity units for that type of read operation. 
+        ///  A <c>Query</c> operation always returns a result set. If no matching items are found,
+        /// the result set will be empty. Queries that do not return results consume the minimum
+        /// number of read capacity units for that type of read operation. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -4636,42 +4623,42 @@ namespace Amazon.DynamoDBv2
         /// not on the amount of data that is returned to an application. The number of capacity
         /// units consumed will be the same whether you request all of the attributes (the default
         /// behavior) or just some of them (using a projection expression). The number will also
-        /// be the same whether or not you use a <code>FilterExpression</code>. 
+        /// be the same whether or not you use a <c>FilterExpression</c>. 
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <code>Query</code> results are always sorted by the sort key value. If the data type
-        /// of the sort key is Number, the results are returned in numeric order; otherwise, the
+        ///  <c>Query</c> results are always sorted by the sort key value. If the data type of
+        /// the sort key is Number, the results are returned in numeric order; otherwise, the
         /// results are returned in order of UTF-8 bytes. By default, the sort order is ascending.
-        /// To reverse the order, set the <code>ScanIndexForward</code> parameter to false. 
+        /// To reverse the order, set the <c>ScanIndexForward</c> parameter to false. 
         /// </para>
         ///  
         /// <para>
-        ///  A single <code>Query</code> operation will read up to the maximum number of items
-        /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// apply any filtering to the results using <code>FilterExpression</code>. If <code>LastEvaluatedKey</code>
+        ///  A single <c>Query</c> operation will read up to the maximum number of items set (if
+        /// using the <c>Limit</c> parameter) or a maximum of 1 MB of data and then apply any
+        /// filtering to the results using <c>FilterExpression</c>. If <c>LastEvaluatedKey</c>
         /// is present in the response, you will need to paginate the result set. For more information,
         /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Query.html#Query.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>FilterExpression</code> is applied after a <code>Query</code> finishes, but
-        /// before the results are returned. A <code>FilterExpression</code> cannot contain partition
-        /// key or sort key attributes. You need to specify those attributes in the <code>KeyConditionExpression</code>.
+        ///  <c>FilterExpression</c> is applied after a <c>Query</c> finishes, but before the
+        /// results are returned. A <c>FilterExpression</c> cannot contain partition key or sort
+        /// key attributes. You need to specify those attributes in the <c>KeyConditionExpression</c>.
         /// 
         /// </para>
         ///  <note> 
         /// <para>
-        ///  A <code>Query</code> operation can return an empty result set and a <code>LastEvaluatedKey</code>
+        ///  A <c>Query</c> operation can return an empty result set and a <c>LastEvaluatedKey</c>
         /// if all the items read for the page of results are filtered out. 
         /// </para>
         ///  </note> 
         /// <para>
         /// You can query a table, a local secondary index, or a global secondary index. For a
-        /// query on a table or on a local secondary index, you can set the <code>ConsistentRead</code>
-        /// parameter to <code>true</code> and obtain a strongly consistent result. Global secondary
-        /// indexes support eventually consistent reads only, so do not specify <code>ConsistentRead</code>
+        /// query on a table or on a local secondary index, you can set the <c>ConsistentRead</c>
+        /// parameter to <c>true</c> and obtain a strongly consistent result. Global secondary
+        /// indexes support eventually consistent reads only, so do not specify <c>ConsistentRead</c>
         /// when querying a global secondary index.
         /// </para>
         /// </summary>
@@ -4698,7 +4685,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Query">REST API Reference for Query Operation</seealso>
         public virtual Task<QueryResponse> QueryAsync(QueryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4735,8 +4722,7 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10 times per
-        /// second.
+        /// You can call <c>RestoreTableFromBackup</c> at a maximum rate of 10 times per second.
         /// </para>
         ///  
         /// <para>
@@ -4790,8 +4776,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -4854,10 +4840,10 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code>
-        /// and <code>LatestRestorableDateTime</code>. You can restore your table to any point
-        /// in time during the last 35 days. Any number of users can execute up to 4 concurrent
-        /// restores (any type of restore) in a given account. 
+        /// Restores the specified table to the specified point in time within <c>EarliestRestorableDateTime</c>
+        /// and <c>LatestRestorableDateTime</c>. You can restore your table to any point in time
+        /// during the last 35 days. Any number of users can execute up to 4 concurrent restores
+        /// (any type of restore) in a given account. 
         /// 
         ///  
         /// <para>
@@ -4944,8 +4930,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -4982,8 +4968,8 @@ namespace Amazon.DynamoDBv2
         /// A target table with the specified name is either being created or deleted.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A source table with the name <code>TableName</code> does not currently exist within
-        /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+        /// A source table with the name <c>TableName</c> does not currently exist within the
+        /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
         /// Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/RestoreTableToPointInTime">REST API Reference for RestoreTableToPointInTime Operation</seealso>
@@ -5015,57 +5001,56 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>Scan</code> operation returns one or more items and item attributes by accessing
+        /// The <c>Scan</c> operation returns one or more items and item attributes by accessing
         /// every item in a table or a secondary index. To have DynamoDB return fewer items, you
-        /// can provide a <code>FilterExpression</code> operation.
+        /// can provide a <c>FilterExpression</c> operation.
         /// 
         ///  
         /// <para>
         /// If the total size of scanned items exceeds the maximum dataset size limit of 1 MB,
-        /// the scan completes and results are returned to the user. The <code>LastEvaluatedKey</code>
-        /// value is also returned and the requestor can use the <code>LastEvaluatedKey</code>
-        /// to continue the scan in a subsequent operation. Each scan response also includes number
-        /// of items that were scanned (ScannedCount) as part of the request. If using a <code>FilterExpression</code>,
-        /// a scan result can result in no items meeting the criteria and the <code>Count</code>
-        /// will result in zero. If you did not use a <code>FilterExpression</code> in the scan
-        /// request, then <code>Count</code> is the same as <code>ScannedCount</code>.
+        /// the scan completes and results are returned to the user. The <c>LastEvaluatedKey</c>
+        /// value is also returned and the requestor can use the <c>LastEvaluatedKey</c> to continue
+        /// the scan in a subsequent operation. Each scan response also includes number of items
+        /// that were scanned (ScannedCount) as part of the request. If using a <c>FilterExpression</c>,
+        /// a scan result can result in no items meeting the criteria and the <c>Count</c> will
+        /// result in zero. If you did not use a <c>FilterExpression</c> in the scan request,
+        /// then <c>Count</c> is the same as <c>ScannedCount</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Count</code> and <code>ScannedCount</code> only return the count of items specific
-        /// to a single scan request and, unless the table is less than 1MB, do not represent
-        /// the total number of items in the table. 
+        ///  <c>Count</c> and <c>ScannedCount</c> only return the count of items specific to a
+        /// single scan request and, unless the table is less than 1MB, do not represent the total
+        /// number of items in the table. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// A single <code>Scan</code> operation first reads up to the maximum number of items
-        /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// applies any filtering to the results if a <code>FilterExpression</code> is provided.
-        /// If <code>LastEvaluatedKey</code> is present in the response, pagination is required
-        /// to complete the full table scan. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// A single <c>Scan</c> operation first reads up to the maximum number of items set (if
+        /// using the <c>Limit</c> parameter) or a maximum of 1 MB of data and then applies any
+        /// filtering to the results if a <c>FilterExpression</c> is provided. If <c>LastEvaluatedKey</c>
+        /// is present in the response, pagination is required to complete the full table scan.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
-        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
-        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
+        ///  <c>Scan</c> operations proceed sequentially; however, for faster performance on a
+        /// large table or secondary index, applications can request a parallel <c>Scan</c> operation
+        /// by providing the <c>Segment</c> and <c>TotalSegments</c> parameters. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, a <code>Scan</code> uses eventually consistent reads when accessing the
-        /// items in a table. Therefore, the results from an eventually consistent <code>Scan</code>
-        /// may not include the latest item changes at the time the scan iterates through each
-        /// item in the table. If you require a strongly consistent read of each item as the scan
-        /// iterates through the items in the table, you can set the <code>ConsistentRead</code>
-        /// parameter to true. Strong consistency only relates to the consistency of the read
-        /// at the item level.
+        /// By default, a <c>Scan</c> uses eventually consistent reads when accessing the items
+        /// in a table. Therefore, the results from an eventually consistent <c>Scan</c> may not
+        /// include the latest item changes at the time the scan iterates through each item in
+        /// the table. If you require a strongly consistent read of each item as the scan iterates
+        /// through the items in the table, you can set the <c>ConsistentRead</c> parameter to
+        /// true. Strong consistency only relates to the consistency of the read at the item level.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <code>ConsistentRead</code>
+        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <c>ConsistentRead</c>
         /// parameter is set to true. Thus, a DynamoDB scan operation does not guarantee that
         /// all reads in a scan see a consistent snapshot of the table when the scan operation
         /// was requested. 
@@ -5096,7 +5081,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         public virtual Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5109,57 +5094,56 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>Scan</code> operation returns one or more items and item attributes by accessing
+        /// The <c>Scan</c> operation returns one or more items and item attributes by accessing
         /// every item in a table or a secondary index. To have DynamoDB return fewer items, you
-        /// can provide a <code>FilterExpression</code> operation.
+        /// can provide a <c>FilterExpression</c> operation.
         /// 
         ///  
         /// <para>
         /// If the total size of scanned items exceeds the maximum dataset size limit of 1 MB,
-        /// the scan completes and results are returned to the user. The <code>LastEvaluatedKey</code>
-        /// value is also returned and the requestor can use the <code>LastEvaluatedKey</code>
-        /// to continue the scan in a subsequent operation. Each scan response also includes number
-        /// of items that were scanned (ScannedCount) as part of the request. If using a <code>FilterExpression</code>,
-        /// a scan result can result in no items meeting the criteria and the <code>Count</code>
-        /// will result in zero. If you did not use a <code>FilterExpression</code> in the scan
-        /// request, then <code>Count</code> is the same as <code>ScannedCount</code>.
+        /// the scan completes and results are returned to the user. The <c>LastEvaluatedKey</c>
+        /// value is also returned and the requestor can use the <c>LastEvaluatedKey</c> to continue
+        /// the scan in a subsequent operation. Each scan response also includes number of items
+        /// that were scanned (ScannedCount) as part of the request. If using a <c>FilterExpression</c>,
+        /// a scan result can result in no items meeting the criteria and the <c>Count</c> will
+        /// result in zero. If you did not use a <c>FilterExpression</c> in the scan request,
+        /// then <c>Count</c> is the same as <c>ScannedCount</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Count</code> and <code>ScannedCount</code> only return the count of items specific
-        /// to a single scan request and, unless the table is less than 1MB, do not represent
-        /// the total number of items in the table. 
+        ///  <c>Count</c> and <c>ScannedCount</c> only return the count of items specific to a
+        /// single scan request and, unless the table is less than 1MB, do not represent the total
+        /// number of items in the table. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// A single <code>Scan</code> operation first reads up to the maximum number of items
-        /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// applies any filtering to the results if a <code>FilterExpression</code> is provided.
-        /// If <code>LastEvaluatedKey</code> is present in the response, pagination is required
-        /// to complete the full table scan. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// A single <c>Scan</c> operation first reads up to the maximum number of items set (if
+        /// using the <c>Limit</c> parameter) or a maximum of 1 MB of data and then applies any
+        /// filtering to the results if a <c>FilterExpression</c> is provided. If <c>LastEvaluatedKey</c>
+        /// is present in the response, pagination is required to complete the full table scan.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
-        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
-        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
+        ///  <c>Scan</c> operations proceed sequentially; however, for faster performance on a
+        /// large table or secondary index, applications can request a parallel <c>Scan</c> operation
+        /// by providing the <c>Segment</c> and <c>TotalSegments</c> parameters. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, a <code>Scan</code> uses eventually consistent reads when accessing the
-        /// items in a table. Therefore, the results from an eventually consistent <code>Scan</code>
-        /// may not include the latest item changes at the time the scan iterates through each
-        /// item in the table. If you require a strongly consistent read of each item as the scan
-        /// iterates through the items in the table, you can set the <code>ConsistentRead</code>
-        /// parameter to true. Strong consistency only relates to the consistency of the read
-        /// at the item level.
+        /// By default, a <c>Scan</c> uses eventually consistent reads when accessing the items
+        /// in a table. Therefore, the results from an eventually consistent <c>Scan</c> may not
+        /// include the latest item changes at the time the scan iterates through each item in
+        /// the table. If you require a strongly consistent read of each item as the scan iterates
+        /// through the items in the table, you can set the <c>ConsistentRead</c> parameter to
+        /// true. Strong consistency only relates to the consistency of the read at the item level.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <code>ConsistentRead</code>
+        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <c>ConsistentRead</c>
         /// parameter is set to true. Thus, a DynamoDB scan operation does not guarantee that
         /// all reads in a scan see a consistent snapshot of the table when the scan operation
         /// was requested. 
@@ -5190,7 +5174,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         public virtual Task<ScanResponse> ScanAsync(string tableName, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5203,57 +5187,56 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>Scan</code> operation returns one or more items and item attributes by accessing
+        /// The <c>Scan</c> operation returns one or more items and item attributes by accessing
         /// every item in a table or a secondary index. To have DynamoDB return fewer items, you
-        /// can provide a <code>FilterExpression</code> operation.
+        /// can provide a <c>FilterExpression</c> operation.
         /// 
         ///  
         /// <para>
         /// If the total size of scanned items exceeds the maximum dataset size limit of 1 MB,
-        /// the scan completes and results are returned to the user. The <code>LastEvaluatedKey</code>
-        /// value is also returned and the requestor can use the <code>LastEvaluatedKey</code>
-        /// to continue the scan in a subsequent operation. Each scan response also includes number
-        /// of items that were scanned (ScannedCount) as part of the request. If using a <code>FilterExpression</code>,
-        /// a scan result can result in no items meeting the criteria and the <code>Count</code>
-        /// will result in zero. If you did not use a <code>FilterExpression</code> in the scan
-        /// request, then <code>Count</code> is the same as <code>ScannedCount</code>.
+        /// the scan completes and results are returned to the user. The <c>LastEvaluatedKey</c>
+        /// value is also returned and the requestor can use the <c>LastEvaluatedKey</c> to continue
+        /// the scan in a subsequent operation. Each scan response also includes number of items
+        /// that were scanned (ScannedCount) as part of the request. If using a <c>FilterExpression</c>,
+        /// a scan result can result in no items meeting the criteria and the <c>Count</c> will
+        /// result in zero. If you did not use a <c>FilterExpression</c> in the scan request,
+        /// then <c>Count</c> is the same as <c>ScannedCount</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Count</code> and <code>ScannedCount</code> only return the count of items specific
-        /// to a single scan request and, unless the table is less than 1MB, do not represent
-        /// the total number of items in the table. 
+        ///  <c>Count</c> and <c>ScannedCount</c> only return the count of items specific to a
+        /// single scan request and, unless the table is less than 1MB, do not represent the total
+        /// number of items in the table. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// A single <code>Scan</code> operation first reads up to the maximum number of items
-        /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// applies any filtering to the results if a <code>FilterExpression</code> is provided.
-        /// If <code>LastEvaluatedKey</code> is present in the response, pagination is required
-        /// to complete the full table scan. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// A single <c>Scan</c> operation first reads up to the maximum number of items set (if
+        /// using the <c>Limit</c> parameter) or a maximum of 1 MB of data and then applies any
+        /// filtering to the results if a <c>FilterExpression</c> is provided. If <c>LastEvaluatedKey</c>
+        /// is present in the response, pagination is required to complete the full table scan.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
-        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
-        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
+        ///  <c>Scan</c> operations proceed sequentially; however, for faster performance on a
+        /// large table or secondary index, applications can request a parallel <c>Scan</c> operation
+        /// by providing the <c>Segment</c> and <c>TotalSegments</c> parameters. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, a <code>Scan</code> uses eventually consistent reads when accessing the
-        /// items in a table. Therefore, the results from an eventually consistent <code>Scan</code>
-        /// may not include the latest item changes at the time the scan iterates through each
-        /// item in the table. If you require a strongly consistent read of each item as the scan
-        /// iterates through the items in the table, you can set the <code>ConsistentRead</code>
-        /// parameter to true. Strong consistency only relates to the consistency of the read
-        /// at the item level.
+        /// By default, a <c>Scan</c> uses eventually consistent reads when accessing the items
+        /// in a table. Therefore, the results from an eventually consistent <c>Scan</c> may not
+        /// include the latest item changes at the time the scan iterates through each item in
+        /// the table. If you require a strongly consistent read of each item as the scan iterates
+        /// through the items in the table, you can set the <c>ConsistentRead</c> parameter to
+        /// true. Strong consistency only relates to the consistency of the read at the item level.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <code>ConsistentRead</code>
+        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <c>ConsistentRead</c>
         /// parameter is set to true. Thus, a DynamoDB scan operation does not guarantee that
         /// all reads in a scan see a consistent snapshot of the table when the scan operation
         /// was requested. 
@@ -5285,7 +5268,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         public virtual Task<ScanResponse> ScanAsync(string tableName, List<string> attributesToGet, Dictionary<string, Condition> scanFilter, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5300,57 +5283,56 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>Scan</code> operation returns one or more items and item attributes by accessing
+        /// The <c>Scan</c> operation returns one or more items and item attributes by accessing
         /// every item in a table or a secondary index. To have DynamoDB return fewer items, you
-        /// can provide a <code>FilterExpression</code> operation.
+        /// can provide a <c>FilterExpression</c> operation.
         /// 
         ///  
         /// <para>
         /// If the total size of scanned items exceeds the maximum dataset size limit of 1 MB,
-        /// the scan completes and results are returned to the user. The <code>LastEvaluatedKey</code>
-        /// value is also returned and the requestor can use the <code>LastEvaluatedKey</code>
-        /// to continue the scan in a subsequent operation. Each scan response also includes number
-        /// of items that were scanned (ScannedCount) as part of the request. If using a <code>FilterExpression</code>,
-        /// a scan result can result in no items meeting the criteria and the <code>Count</code>
-        /// will result in zero. If you did not use a <code>FilterExpression</code> in the scan
-        /// request, then <code>Count</code> is the same as <code>ScannedCount</code>.
+        /// the scan completes and results are returned to the user. The <c>LastEvaluatedKey</c>
+        /// value is also returned and the requestor can use the <c>LastEvaluatedKey</c> to continue
+        /// the scan in a subsequent operation. Each scan response also includes number of items
+        /// that were scanned (ScannedCount) as part of the request. If using a <c>FilterExpression</c>,
+        /// a scan result can result in no items meeting the criteria and the <c>Count</c> will
+        /// result in zero. If you did not use a <c>FilterExpression</c> in the scan request,
+        /// then <c>Count</c> is the same as <c>ScannedCount</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Count</code> and <code>ScannedCount</code> only return the count of items specific
-        /// to a single scan request and, unless the table is less than 1MB, do not represent
-        /// the total number of items in the table. 
+        ///  <c>Count</c> and <c>ScannedCount</c> only return the count of items specific to a
+        /// single scan request and, unless the table is less than 1MB, do not represent the total
+        /// number of items in the table. 
         /// </para>
         ///  </note> 
         /// <para>
-        /// A single <code>Scan</code> operation first reads up to the maximum number of items
-        /// set (if using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then
-        /// applies any filtering to the results if a <code>FilterExpression</code> is provided.
-        /// If <code>LastEvaluatedKey</code> is present in the response, pagination is required
-        /// to complete the full table scan. For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
+        /// A single <c>Scan</c> operation first reads up to the maximum number of items set (if
+        /// using the <c>Limit</c> parameter) or a maximum of 1 MB of data and then applies any
+        /// filtering to the results if a <c>FilterExpression</c> is provided. If <c>LastEvaluatedKey</c>
+        /// is present in the response, pagination is required to complete the full table scan.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination">Paginating
         /// the Results</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Scan</code> operations proceed sequentially; however, for faster performance
-        /// on a large table or secondary index, applications can request a parallel <code>Scan</code>
-        /// operation by providing the <code>Segment</code> and <code>TotalSegments</code> parameters.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
+        ///  <c>Scan</c> operations proceed sequentially; however, for faster performance on a
+        /// large table or secondary index, applications can request a parallel <c>Scan</c> operation
+        /// by providing the <c>Segment</c> and <c>TotalSegments</c> parameters. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan">Parallel
         /// Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// By default, a <code>Scan</code> uses eventually consistent reads when accessing the
-        /// items in a table. Therefore, the results from an eventually consistent <code>Scan</code>
-        /// may not include the latest item changes at the time the scan iterates through each
-        /// item in the table. If you require a strongly consistent read of each item as the scan
-        /// iterates through the items in the table, you can set the <code>ConsistentRead</code>
-        /// parameter to true. Strong consistency only relates to the consistency of the read
-        /// at the item level.
+        /// By default, a <c>Scan</c> uses eventually consistent reads when accessing the items
+        /// in a table. Therefore, the results from an eventually consistent <c>Scan</c> may not
+        /// include the latest item changes at the time the scan iterates through each item in
+        /// the table. If you require a strongly consistent read of each item as the scan iterates
+        /// through the items in the table, you can set the <c>ConsistentRead</c> parameter to
+        /// true. Strong consistency only relates to the consistency of the read at the item level.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <code>ConsistentRead</code>
+        ///  DynamoDB does not provide snapshot isolation for a scan operation when the <c>ConsistentRead</c>
         /// parameter is set to true. Thus, a DynamoDB scan operation does not guarantee that
         /// all reads in a scan see a consistent snapshot of the table when the scan operation
         /// was requested. 
@@ -5380,7 +5362,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/Scan">REST API Reference for Scan Operation</seealso>
         public virtual Task<ScanResponse> ScanAsync(ScanRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5438,8 +5420,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -5468,12 +5450,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -5505,17 +5487,17 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// <code>TransactGetItems</code> is a synchronous operation that atomically retrieves
-        /// multiple items from one or more tables (but not from indexes) in a single account
-        /// and Region. A <code>TransactGetItems</code> call can contain up to 100 <code>TransactGetItem</code>
-        /// objects, each of which contains a <code>Get</code> structure that specifies an item
-        /// to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code>
-        /// cannot retrieve items from tables in more than one Amazon Web Services account or
-        /// Region. The aggregate size of the items in the transaction cannot exceed 4 MB.
+        /// <c>TransactGetItems</c> is a synchronous operation that atomically retrieves multiple
+        /// items from one or more tables (but not from indexes) in a single account and Region.
+        /// A <c>TransactGetItems</c> call can contain up to 100 <c>TransactGetItem</c> objects,
+        /// each of which contains a <c>Get</c> structure that specifies an item to retrieve from
+        /// a table in the account and Region. A call to <c>TransactGetItems</c> cannot retrieve
+        /// items from tables in more than one Amazon Web Services account or Region. The aggregate
+        /// size of the items in the transaction cannot exceed 4 MB.
         /// 
         ///  
         /// <para>
-        /// DynamoDB rejects the entire <code>TransactGetItems</code> request if any of the following
+        /// DynamoDB rejects the entire <c>TransactGetItems</c> request if any of the following
         /// is true:
         /// </para>
         ///  <ul> <li> 
@@ -5559,14 +5541,14 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
         /// The entire transaction request was canceled.
         /// 
         ///  
         /// <para>
-        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <c>TransactWriteItems</c> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5574,13 +5556,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A table in the <code>TransactWriteItems</code> request is in a different account or
-        /// region.
+        /// A table in the <c>TransactWriteItems</c> request is in a different account or region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// More than one action in the <code>TransactWriteItems</code> operation targets the
-        /// same item.
+        /// More than one action in the <c>TransactWriteItems</c> operation targets the same item.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5598,25 +5578,23 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  There is an ongoing <code>TransactWriteItems</code> operation that conflicts with
-        /// a concurrent <code>TransactWriteItems</code> request. In this case the <code>TransactWriteItems</code>
-        /// operation fails with a <code>TransactionCanceledException</code>. 
+        ///  There is an ongoing <c>TransactWriteItems</c> operation that conflicts with a concurrent
+        /// <c>TransactWriteItems</c> request. In this case the <c>TransactWriteItems</c> operation
+        /// fails with a <c>TransactionCanceledException</c>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <c>TransactGetItems</c> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// There is an ongoing <code>TransactGetItems</code> operation that conflicts with a
-        /// concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code>
-        /// or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code>
-        /// operation fails with a <code>TransactionCanceledException</code>.
+        /// There is an ongoing <c>TransactGetItems</c> operation that conflicts with a concurrent
+        /// <c>PutItem</c>, <c>UpdateItem</c>, <c>DeleteItem</c> or <c>TransactWriteItems</c>
+        /// request. In this case the <c>TransactGetItems</c> operation fails with a <c>TransactionCanceledException</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A table in the <code>TransactGetItems</code> request is in a different account or
-        /// region.
+        /// A table in the <c>TransactGetItems</c> request is in a different account or region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5628,10 +5606,10 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
         /// property. This property is not set for other languages. Transaction cancellation reasons
         /// are ordered in the order of requested items, if an item has no error it will have
-        /// <code>None</code> code and <code>Null</code> message.
+        /// <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -5643,11 +5621,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>None</code> 
+        /// Code: <c>None</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Message: <code>null</code> 
+        /// Message: <c>null</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -5655,7 +5633,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ConditionalCheckFailed</code> 
+        /// Code: <c>ConditionalCheckFailed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5667,7 +5645,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// Code: <c>ItemCollectionSizeLimitExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5679,7 +5657,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>TransactionConflict</code> 
+        /// Code: <c>TransactionConflict</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5691,7 +5669,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// Code: <c>ProvisionedThroughputExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5724,7 +5702,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ThrottlingError</code> 
+        /// Code: <c>ThrottlingError</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5757,7 +5735,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ValidationError</code> 
+        /// Code: <c>ValidationError</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5837,12 +5815,11 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// <code>TransactWriteItems</code> is a synchronous write operation that groups up to
-        /// 100 action requests. These actions can target items in different tables, but not in
-        /// different Amazon Web Services accounts or Regions, and no two actions can target the
-        /// same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code>
-        /// the same item. The aggregate size of the items in the transaction cannot exceed 4
-        /// MB.
+        /// <c>TransactWriteItems</c> is a synchronous write operation that groups up to 100
+        /// action requests. These actions can target items in different tables, but not in different
+        /// Amazon Web Services accounts or Regions, and no two actions can target the same item.
+        /// For example, you cannot both <c>ConditionCheck</c> and <c>Update</c> the same item.
+        /// The aggregate size of the items in the transaction cannot exceed 4 MB.
         /// 
         ///  
         /// <para>
@@ -5851,41 +5828,41 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Put</code>  —   Initiates a <code>PutItem</code> operation to write a new item.
-        /// This structure specifies the primary key of the item to be written, the name of the
-        /// table to write it in, an optional condition expression that must be satisfied for
-        /// the write to succeed, a list of the item's attributes, and a field indicating whether
-        /// to retrieve the item's attributes if the condition is not met.
+        ///  <c>Put</c>  —   Initiates a <c>PutItem</c> operation to write a new item. This structure
+        /// specifies the primary key of the item to be written, the name of the table to write
+        /// it in, an optional condition expression that must be satisfied for the write to succeed,
+        /// a list of the item's attributes, and a field indicating whether to retrieve the item's
+        /// attributes if the condition is not met.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Update</code>  —   Initiates an <code>UpdateItem</code> operation to update
-        /// an existing item. This structure specifies the primary key of the item to be updated,
-        /// the name of the table where it resides, an optional condition expression that must
-        /// be satisfied for the update to succeed, an expression that defines one or more attributes
-        /// to be updated, and a field indicating whether to retrieve the item's attributes if
-        /// the condition is not met.
+        ///  <c>Update</c>  —   Initiates an <c>UpdateItem</c> operation to update an existing
+        /// item. This structure specifies the primary key of the item to be updated, the name
+        /// of the table where it resides, an optional condition expression that must be satisfied
+        /// for the update to succeed, an expression that defines one or more attributes to be
+        /// updated, and a field indicating whether to retrieve the item's attributes if the condition
+        /// is not met.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Delete</code>  —   Initiates a <code>DeleteItem</code> operation to delete
-        /// an existing item. This structure specifies the primary key of the item to be deleted,
-        /// the name of the table where it resides, an optional condition expression that must
-        /// be satisfied for the deletion to succeed, and a field indicating whether to retrieve
-        /// the item's attributes if the condition is not met.
+        ///  <c>Delete</c>  —   Initiates a <c>DeleteItem</c> operation to delete an existing
+        /// item. This structure specifies the primary key of the item to be deleted, the name
+        /// of the table where it resides, an optional condition expression that must be satisfied
+        /// for the deletion to succeed, and a field indicating whether to retrieve the item's
+        /// attributes if the condition is not met.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConditionCheck</code>  —   Applies a condition to an item that is not being
-        /// modified by the transaction. This structure specifies the primary key of the item
-        /// to be checked, the name of the table where it resides, a condition expression that
-        /// must be satisfied for the transaction to succeed, and a field indicating whether to
-        /// retrieve the item's attributes if the condition is not met.
+        ///  <c>ConditionCheck</c>  —   Applies a condition to an item that is not being modified
+        /// by the transaction. This structure specifies the primary key of the item to be checked,
+        /// the name of the table where it resides, a condition expression that must be satisfied
+        /// for the transaction to succeed, and a field indicating whether to retrieve the item's
+        /// attributes if the condition is not met.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB rejects the entire <code>TransactWriteItems</code> request if any of the
-        /// following is true:
+        /// DynamoDB rejects the entire <c>TransactWriteItems</c> request if any of the following
+        /// is true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5942,14 +5919,14 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionCanceledException">
         /// The entire transaction request was canceled.
         /// 
         ///  
         /// <para>
-        /// DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <c>TransactWriteItems</c> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5957,13 +5934,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A table in the <code>TransactWriteItems</code> request is in a different account or
-        /// region.
+        /// A table in the <c>TransactWriteItems</c> request is in a different account or region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// More than one action in the <code>TransactWriteItems</code> operation targets the
-        /// same item.
+        /// More than one action in the <c>TransactWriteItems</c> operation targets the same item.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5981,25 +5956,23 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  There is an ongoing <code>TransactWriteItems</code> operation that conflicts with
-        /// a concurrent <code>TransactWriteItems</code> request. In this case the <code>TransactWriteItems</code>
-        /// operation fails with a <code>TransactionCanceledException</code>. 
+        ///  There is an ongoing <c>TransactWriteItems</c> operation that conflicts with a concurrent
+        /// <c>TransactWriteItems</c> request. In this case the <c>TransactWriteItems</c> operation
+        /// fails with a <c>TransactionCanceledException</c>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
+        /// DynamoDB cancels a <c>TransactGetItems</c> request under the following circumstances:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// There is an ongoing <code>TransactGetItems</code> operation that conflicts with a
-        /// concurrent <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code>
-        /// or <code>TransactWriteItems</code> request. In this case the <code>TransactGetItems</code>
-        /// operation fails with a <code>TransactionCanceledException</code>.
+        /// There is an ongoing <c>TransactGetItems</c> operation that conflicts with a concurrent
+        /// <c>PutItem</c>, <c>UpdateItem</c>, <c>DeleteItem</c> or <c>TransactWriteItems</c>
+        /// request. In this case the <c>TransactGetItems</c> operation fails with a <c>TransactionCanceledException</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A table in the <code>TransactGetItems</code> request is in a different account or
-        /// region.
+        /// A table in the <c>TransactGetItems</c> request is in a different account or region.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6011,10 +5984,10 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code>
+        /// If using Java, DynamoDB lists the cancellation reasons on the <c>CancellationReasons</c>
         /// property. This property is not set for other languages. Transaction cancellation reasons
         /// are ordered in the order of requested items, if an item has no error it will have
-        /// <code>None</code> code and <code>Null</code> message.
+        /// <c>None</c> code and <c>Null</c> message.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6026,11 +5999,11 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>None</code> 
+        /// Code: <c>None</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Message: <code>null</code> 
+        /// Message: <c>null</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -6038,7 +6011,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ConditionalCheckFailed</code> 
+        /// Code: <c>ConditionalCheckFailed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6050,7 +6023,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ItemCollectionSizeLimitExceeded</code> 
+        /// Code: <c>ItemCollectionSizeLimitExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6062,7 +6035,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>TransactionConflict</code> 
+        /// Code: <c>TransactionConflict</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6074,7 +6047,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ProvisionedThroughputExceeded</code> 
+        /// Code: <c>ProvisionedThroughputExceeded</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6107,7 +6080,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ThrottlingError</code> 
+        /// Code: <c>ThrottlingError</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6140,7 +6113,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Code: <code>ValidationError</code> 
+        /// Code: <c>ValidationError</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6199,27 +6172,27 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  <note> 
         /// <para>
-        ///  This is a general recommendation for handling the <code>TransactionInProgressException</code>.
+        ///  This is a general recommendation for handling the <c>TransactionInProgressException</c>.
         /// These settings help ensure that the client retries will trigger completion of the
-        /// ongoing <code>TransactWriteItems</code> request. 
+        /// ongoing <c>TransactWriteItems</c> request. 
         /// </para>
         ///  </note> <ul> <li> 
         /// <para>
-        ///  Set <code>clientExecutionTimeout</code> to a value that allows at least one retry
-        /// to be processed after 5 seconds have elapsed since the first attempt for the <code>TransactWriteItems</code>
+        ///  Set <c>clientExecutionTimeout</c> to a value that allows at least one retry to be
+        /// processed after 5 seconds have elapsed since the first attempt for the <c>TransactWriteItems</c>
         /// operation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Set <code>socketTimeout</code> to a value a little lower than the <code>requestTimeout</code>
+        ///  Set <c>socketTimeout</c> to a value a little lower than the <c>requestTimeout</c>
         /// setting. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requestTimeout</code> should be set based on the time taken for the individual
-        /// retries of a single HTTP request for your use case, but setting it to 1 second or
-        /// higher should work well to reduce chances of retries and <code>TransactionInProgressException</code>
-        /// errors. 
+        ///  <c>requestTimeout</c> should be set based on the time taken for the individual retries
+        /// of a single HTTP request for your use case, but setting it to 1 second or higher should
+        /// work well to reduce chances of retries and <c>TransactionInProgressException</c> errors.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6297,7 +6270,7 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// Removes the association of tags from an Amazon DynamoDB resource. You can call <code>UntagResource</code>
+        /// Removes the association of tags from an Amazon DynamoDB resource. You can call <c>UntagResource</c>
         /// up to five times per second, per account. 
         /// 
         ///  
@@ -6321,8 +6294,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -6351,12 +6324,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6388,22 +6361,22 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// <code>UpdateContinuousBackups</code> enables or disables point in time recovery for
-        /// the specified table. A successful <code>UpdateContinuousBackups</code> call returns
-        /// the current <code>ContinuousBackupsDescription</code>. Continuous backups are <code>ENABLED</code>
-        /// on all tables at table creation. If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code>
+        /// <c>UpdateContinuousBackups</c> enables or disables point in time recovery for the
+        /// specified table. A successful <c>UpdateContinuousBackups</c> call returns the current
+        /// <c>ContinuousBackupsDescription</c>. Continuous backups are <c>ENABLED</c> on all
+        /// tables at table creation. If point in time recovery is enabled, <c>PointInTimeRecoveryStatus</c>
         /// will be set to ENABLED.
         /// 
         ///  
         /// <para>
         ///  Once continuous backups and point in time recovery are enabled, you can restore to
-        /// any point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>.
+        /// any point in time within <c>EarliestRestorableDateTime</c> and <c>LatestRestorableDateTime</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>LatestRestorableDateTime</code> is typically 5 minutes before the current time.
-        /// You can restore your table to any point in time during the last 35 days. 
+        ///  <c>LatestRestorableDateTime</c> is typically 5 minutes before the current time. You
+        /// can restore your table to any point in time during the last 35 days. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContinuousBackups service method.</param>
@@ -6419,8 +6392,8 @@ namespace Amazon.DynamoDBv2
         /// An error occurred on the server side.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A source table with the name <code>TableName</code> does not currently exist within
-        /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+        /// A source table with the name <c>TableName</c> does not currently exist within the
+        /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
         /// Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContinuousBackups">REST API Reference for UpdateContinuousBackups Operation</seealso>
@@ -6470,7 +6443,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateContributorInsights">REST API Reference for UpdateContributorInsights Operation</seealso>
         public virtual Task<UpdateContributorInsightsResponse> UpdateContributorInsightsAsync(UpdateContributorInsightsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -6525,7 +6498,7 @@ namespace Amazon.DynamoDBv2
         /// </para>
         ///  
         /// <para>
-        ///  Although you can use <code>UpdateGlobalTable</code> to add replicas and remove replicas
+        ///  Although you can use <c>UpdateGlobalTable</c> to add replicas and remove replicas
         /// in a single request, for simplicity we recommend that you issue separate requests
         /// for adding or removing replicas. 
         /// </para>
@@ -6569,8 +6542,8 @@ namespace Amazon.DynamoDBv2
         /// The specified replica is no longer part of the global table.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TableNotFoundException">
-        /// A source table with the name <code>TableName</code> does not currently exist within
-        /// the subscriber's account or the subscriber is operating in the wrong Amazon Web Services
+        /// A source table with the name <c>TableName</c> does not currently exist within the
+        /// subscriber's account or the subscriber is operating in the wrong Amazon Web Services
         /// Region.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTable">REST API Reference for UpdateGlobalTable Operation</seealso>
@@ -6639,8 +6612,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -6672,7 +6645,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateGlobalTableSettings">REST API Reference for UpdateGlobalTableSettings Operation</seealso>
@@ -6712,8 +6685,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// You can also return the item's attribute values in the same <code>UpdateItem</code>
-        /// operation using the <code>ReturnValues</code> parameter.
+        /// You can also return the item's attribute values in the same <c>UpdateItem</c> operation
+        /// using the <c>ReturnValues</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the item to update.</param>
@@ -6748,7 +6721,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -6773,8 +6746,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// You can also return the item's attribute values in the same <code>UpdateItem</code>
-        /// operation using the <code>ReturnValues</code> parameter.
+        /// You can also return the item's attribute values in the same <c>UpdateItem</c> operation
+        /// using the <c>ReturnValues</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table containing the item to update.</param>
@@ -6810,7 +6783,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -6837,8 +6810,8 @@ namespace Amazon.DynamoDBv2
         /// 
         ///  
         /// <para>
-        /// You can also return the item's attribute values in the same <code>UpdateItem</code>
-        /// operation using the <code>ReturnValues</code> parameter.
+        /// You can also return the item's attribute values in the same <c>UpdateItem</c> operation
+        /// using the <c>ReturnValues</c> parameter.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateItem service method.</param>
@@ -6871,7 +6844,7 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.TransactionConflictException">
         /// Operation was rejected because there is an ongoing transaction for the item.
@@ -6928,15 +6901,14 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// Create a new global secondary index on the table. After the index begins backfilling,
-        /// you can use <code>UpdateTable</code> to perform other operations.
+        /// you can use <c>UpdateTable</c> to perform other operations.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>UpdateTable</code> is an asynchronous operation; while it is executing, the
-        /// table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is
-        /// <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request.
-        /// When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code>
-        /// operation is complete.
+        ///  <c>UpdateTable</c> is an asynchronous operation; while it is executing, the table
+        /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it is <c>UPDATING</c>,
+        /// you cannot issue another <c>UpdateTable</c> request. When the table returns to the
+        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
         /// </para>
         /// </summary>
         /// <param name="tableName">The name of the table to be updated.</param>
@@ -6955,8 +6927,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -6985,12 +6957,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual Task<UpdateTableResponse> UpdateTableAsync(string tableName, ProvisionedThroughput provisionedThroughput, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7027,15 +6999,14 @@ namespace Amazon.DynamoDBv2
         ///  </li> <li> 
         /// <para>
         /// Create a new global secondary index on the table. After the index begins backfilling,
-        /// you can use <code>UpdateTable</code> to perform other operations.
+        /// you can use <c>UpdateTable</c> to perform other operations.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>UpdateTable</code> is an asynchronous operation; while it is executing, the
-        /// table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is
-        /// <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request.
-        /// When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code>
-        /// operation is complete.
+        ///  <c>UpdateTable</c> is an asynchronous operation; while it is executing, the table
+        /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it is <c>UPDATING</c>,
+        /// you cannot issue another <c>UpdateTable</c> request. When the table returns to the
+        /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTable service method.</param>
@@ -7053,8 +7024,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -7083,12 +7054,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTable">REST API Reference for UpdateTable Operation</seealso>
         public virtual Task<UpdateTableResponse> UpdateTableAsync(UpdateTableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7142,8 +7113,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -7172,12 +7143,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableReplicaAutoScaling">REST API Reference for UpdateTableReplicaAutoScaling Operation</seealso>
         public virtual Task<UpdateTableReplicaAutoScalingResponse> UpdateTableReplicaAutoScalingAsync(UpdateTableReplicaAutoScalingRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7207,11 +7178,11 @@ namespace Amazon.DynamoDBv2
 
 
         /// <summary>
-        /// The <code>UpdateTimeToLive</code> method enables or disables Time to Live (TTL) for
-        /// the specified table. A successful <code>UpdateTimeToLive</code> call returns the current
-        /// <code>TimeToLiveSpecification</code>. It can take up to one hour for the change to
-        /// fully process. Any additional <code>UpdateTimeToLive</code> calls for the same table
-        /// during this one hour duration result in a <code>ValidationException</code>. 
+        /// The <c>UpdateTimeToLive</c> method enables or disables Time to Live (TTL) for the
+        /// specified table. A successful <c>UpdateTimeToLive</c> call returns the current <c>TimeToLiveSpecification</c>.
+        /// It can take up to one hour for the change to fully process. Any additional <c>UpdateTimeToLive</c>
+        /// calls for the same table during this one hour duration result in a <c>ValidationException</c>.
+        /// 
         /// 
         ///  
         /// <para>
@@ -7262,8 +7233,8 @@ namespace Amazon.DynamoDBv2
         ///  
         /// <para>
         /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-        /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-        /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+        /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+        /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
         /// </para>
         ///  
         /// <para>
@@ -7292,12 +7263,12 @@ namespace Amazon.DynamoDBv2
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceInUseException">
         /// The operation conflicts with the resource's availability. For example, you attempted
-        /// to recreate an existing table, or tried to delete a table currently in the <code>CREATING</code>
+        /// to recreate an existing table, or tried to delete a table currently in the <c>CREATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.DynamoDBv2.Model.ResourceNotFoundException">
         /// The operation tried to access a nonexistent table or index. The resource might not
-        /// be specified correctly, or its status might not be <code>ACTIVE</code>.
+        /// be specified correctly, or its status might not be <c>ACTIVE</c>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTimeToLive">REST API Reference for UpdateTimeToLive Operation</seealso>
         public virtual Task<UpdateTimeToLiveResponse> UpdateTimeToLiveAsync(UpdateTimeToLiveRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

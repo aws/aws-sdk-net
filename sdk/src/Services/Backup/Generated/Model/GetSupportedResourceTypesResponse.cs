@@ -42,43 +42,43 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Aurora</code> for Amazon Aurora
+        ///  <c>Aurora</c> for Amazon Aurora
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DynamoDB</code> for Amazon DynamoDB
+        ///  <c>DynamoDB</c> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS</code> for Amazon Elastic Block Store
+        ///  <c>EBS</c> for Amazon Elastic Block Store
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EC2</code> for Amazon Elastic Compute Cloud
+        ///  <c>EC2</c> for Amazon Elastic Compute Cloud
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EFS</code> for Amazon Elastic File System
+        ///  <c>EFS</c> for Amazon Elastic File System
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FSX</code> for Amazon FSx
+        ///  <c>FSX</c> for Amazon FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RDS</code> for Amazon Relational Database Service
+        ///  <c>RDS</c> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage Gateway</code> for Storage Gateway
+        ///  <c>Storage Gateway</c> for Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DocDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        ///  <c>DocDB</c> for Amazon DocumentDB (with MongoDB compatibility)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Neptune</code> for Amazon Neptune
+        ///  <c>Neptune</c> for Amazon Neptune
         /// </para>
         ///  </li> </ul>
         /// </summary>

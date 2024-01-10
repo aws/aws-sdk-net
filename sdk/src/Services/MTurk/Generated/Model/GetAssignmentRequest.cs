@@ -30,7 +30,7 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAssignment operation.
-    /// The <code>GetAssignment</code> operation retrieves the details of the specified Assignment.
+    /// The <c>GetAssignment</c> operation retrieves the details of the specified Assignment.
     /// </summary>
     public partial class GetAssignmentRequest : AmazonMTurkRequest
     {

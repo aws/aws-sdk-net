@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetTable</code>.
+    /// For IAM authorization, the public IAM action associated with this API is <c>glue:GetTable</c>.
     /// </para>
     /// </summary>
     public partial class GetUnfilteredTableMetadataRequest : AmazonGlueRequest

@@ -97,8 +97,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property AllowVersionUpgrade. 
         /// <para>
-        /// A boolean value that, if <code>true</code>, indicates that major version upgrades
-        /// will be applied automatically to the cluster during the maintenance window. 
+        /// A boolean value that, if <c>true</c>, indicates that major version upgrades will be
+        /// applied automatically to the cluster during the maintenance window. 
         /// </para>
         /// </summary>
         public bool AllowVersionUpgrade
@@ -365,8 +365,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ClusterSecurityGroups. 
         /// <para>
         /// A list of cluster security group that are associated with the cluster. Each security
-        /// group is represented by an element that contains <code>ClusterSecurityGroup.Name</code>
-        /// and <code>ClusterSecurityGroup.Status</code> subelements. 
+        /// group is represented by an element that contains <c>ClusterSecurityGroup.Name</c>
+        /// and <c>ClusterSecurityGroup.Status</c> subelements. 
         /// </para>
         ///  
         /// <para>
@@ -413,83 +413,83 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>available</code> 
+        ///  <c>available</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available, prep-for-resize</code> 
+        ///  <c>available, prep-for-resize</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available, resize-cleanup</code> 
+        ///  <c>available, resize-cleanup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cancelling-resize</code> 
+        ///  <c>cancelling-resize</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>creating</code> 
+        ///  <c>creating</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code> 
+        ///  <c>deleting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>final-snapshot</code> 
+        ///  <c>final-snapshot</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>hardware-failure</code> 
+        ///  <c>hardware-failure</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>incompatible-hsm</code> 
+        ///  <c>incompatible-hsm</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>incompatible-network</code> 
+        ///  <c>incompatible-network</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>incompatible-parameters</code> 
+        ///  <c>incompatible-parameters</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>incompatible-restore</code> 
+        ///  <c>incompatible-restore</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modifying</code> 
+        ///  <c>modifying</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>paused</code> 
+        ///  <c>paused</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rebooting</code> 
+        ///  <c>rebooting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>renaming</code> 
+        ///  <c>renaming</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resizing</code> 
+        ///  <c>resizing</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rotating-keys</code> 
+        ///  <c>rotating-keys</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>storage-full</code> 
+        ///  <c>storage-full</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>updating-hsm</code> 
+        ///  <c>updating-hsm</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -621,7 +621,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// The name of the initial database that was created when the cluster was created. This
         /// same name is returned for the life of the cluster. If an initial database was not
-        /// specified, a database named <code>dev</code>dev was created by default. 
+        /// specified, a database named <c>dev</c>dev was created by default. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -659,7 +659,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property DeferredMaintenanceWindows. 
         /// <para>
-        /// Describes a group of <code>DeferredMaintenanceWindow</code> objects.
+        /// Describes a group of <c>DeferredMaintenanceWindow</c> objects.
         /// </para>
         /// </summary>
         public List<DeferredMaintenanceWindow> DeferredMaintenanceWindows
@@ -715,8 +715,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// A boolean value that, if <code>true</code>, indicates that data in the cluster is
-        /// encrypted at rest.
+        /// A boolean value that, if <c>true</c>, indicates that data in the cluster is encrypted
+        /// at rest.
         /// </para>
         /// </summary>
         public bool Encrypted
@@ -759,7 +759,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// If this option is <code>true</code>, enhanced VPC routing is enabled. 
+        /// If this option is <c>true</c>, enhanced VPC routing is enabled. 
         /// </para>
         ///  
         /// <para>
@@ -871,7 +871,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The IP address type for the cluster. Possible values are <code>ipv4</code> and <code>dualstack</code>.
+        /// The IP address type for the cluster. Possible values are <c>ipv4</c> and <c>dualstack</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -1181,8 +1181,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// A boolean value that, if <code>true</code>, indicates that the cluster can be accessed
-        /// from a public network.
+        /// A boolean value that, if <c>true</c>, indicates that the cluster can be accessed from
+        /// a public network.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

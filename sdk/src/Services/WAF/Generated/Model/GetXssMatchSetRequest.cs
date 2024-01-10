@@ -43,7 +43,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>XssMatchSet</a> that is specified by <code>XssMatchSetId</code>.
+    /// Returns the <a>XssMatchSet</a> that is specified by <c>XssMatchSetId</c>.
     /// </para>
     /// </summary>
     public partial class GetXssMatchSetRequest : AmazonWAFRequest
@@ -53,7 +53,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property XssMatchSetId. 
         /// <para>
-        /// The <code>XssMatchSetId</code> of the <a>XssMatchSet</a> that you want to get. <code>XssMatchSetId</code>
+        /// The <c>XssMatchSetId</c> of the <a>XssMatchSet</a> that you want to get. <c>XssMatchSetId</c>
         /// is returned by <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.
         /// </para>
         /// </summary>

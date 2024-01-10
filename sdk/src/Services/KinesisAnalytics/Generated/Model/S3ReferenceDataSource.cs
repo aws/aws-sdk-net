@@ -87,9 +87,8 @@ namespace Amazon.KinesisAnalytics.Model
         /// Gets and sets the property ReferenceRoleARN. 
         /// <para>
         /// ARN of the IAM role that the service can assume to read data on your behalf. This
-        /// role must have permission for the <code>s3:GetObject</code> action on the object and
-        /// trust policy that allows Amazon Kinesis Analytics service principal to assume this
-        /// role.
+        /// role must have permission for the <c>s3:GetObject</c> action on the object and trust
+        /// policy that allows Amazon Kinesis Analytics service principal to assume this role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

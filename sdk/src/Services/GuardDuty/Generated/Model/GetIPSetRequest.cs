@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIPSet operation.
-    /// Retrieves the IPSet specified by the <code>ipSetId</code>.
+    /// Retrieves the IPSet specified by the <c>ipSetId</c>.
     /// </summary>
     public partial class GetIPSetRequest : AmazonGuardDutyRequest
     {

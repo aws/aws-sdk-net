@@ -66,7 +66,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property CompatibleRuntime. 
         /// <para>
-        /// A runtime identifier. For example, <code>go1.x</code>.
+        /// A runtime identifier. For example, <c>go1.x</c>.
         /// </para>
         ///  
         /// <para>

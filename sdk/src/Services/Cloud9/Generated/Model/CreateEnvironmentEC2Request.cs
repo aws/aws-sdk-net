@@ -95,8 +95,8 @@ namespace Amazon.Cloud9.Model
         /// Gets and sets the property ConnectionType. 
         /// <para>
         /// The connection type used for connecting to an Amazon EC2 environment. Valid values
-        /// are <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through
-        /// Amazon EC2 Systems Manager).
+        /// are <c>CONNECT_SSH</c> (default) and <c>CONNECT_SSM</c> (connected through Amazon
+        /// EC2 Systems Manager).
         /// </para>
         ///  
         /// <para>
@@ -141,7 +141,7 @@ namespace Amazon.Cloud9.Model
         /// <para>
         /// Checks whether you have the required permissions for the action, without actually
         /// making the request, and provides an error response. If you have the required permissions,
-        /// the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -165,11 +165,11 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  
         /// <para>
-        /// From December 04, 2023, you will be required to include the <code>imageId</code> parameter
-        /// for the <code>CreateEnvironmentEC2</code> action. This change will be reflected across
-        /// all direct methods of communicating with the API, such as Amazon Web Services SDK,
-        /// Amazon Web Services CLI and Amazon Web Services CloudFormation. This change will only
-        /// affect direct API consumers, and not Cloud9 console users.
+        /// From December 04, 2023, you will be required to include the <c>imageId</c> parameter
+        /// for the <c>CreateEnvironmentEC2</c> action. This change will be reflected across all
+        /// direct methods of communicating with the API, such as Amazon Web Services SDK, Amazon
+        /// Web Services CLI and Amazon Web Services CloudFormation. This change will only affect
+        /// direct API consumers, and not Cloud9 console users.
         /// </para>
         ///  
         /// <para>
@@ -190,23 +190,23 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Linux: <code>amazonlinux-1-x86_64</code> 
+        /// Amazon Linux: <c>amazonlinux-1-x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Linux 2: <code>amazonlinux-2-x86_64</code> 
+        /// Amazon Linux 2: <c>amazonlinux-2-x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Linux 2023 (recommended): <code>amazonlinux-2023-x86_64</code> 
+        /// Amazon Linux 2023 (recommended): <c>amazonlinux-2023-x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code> 
+        /// Ubuntu 18.04: <c>ubuntu-18.04-x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Ubuntu 22.04: <code>ubuntu-22.04-x86_64</code> 
+        /// Ubuntu 22.04: <c>ubuntu-22.04-x86_64</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -214,28 +214,24 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Linux: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code>
+        /// Amazon Linux: <c>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Linux 2: <c>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Amazon Linux 2023 (recommended): <c>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
-        /// 
+        /// Ubuntu 18.04: <c>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Linux 2023 (recommended): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2023-x86_64</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Ubuntu 22.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</code>
-        /// 
+        /// Ubuntu 22.04: <c>resolve:ssm:/aws/service/cloud9/amis/ubuntu-22.04-x86_64</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -255,7 +251,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The type of instance to connect to the environment (for example, <code>t2.micro</code>).
+        /// The type of instance to connect to the environment (for example, <c>t2.micro</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=20)]

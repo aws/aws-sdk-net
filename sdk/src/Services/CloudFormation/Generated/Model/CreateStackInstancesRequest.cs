@@ -32,8 +32,8 @@ namespace Amazon.CloudFormation.Model
     /// Container for the parameters to the CreateStackInstances operation.
     /// Creates stack instances for the specified accounts, within the specified Amazon Web
     /// Services Regions. A stack instance refers to a stack in a specific account and Region.
-    /// You must specify at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>,
-    /// and you must specify at least one value for <code>Regions</code>.
+    /// You must specify at least one value for either <c>Accounts</c> or <c>DeploymentTargets</c>,
+    /// and you must specify at least one value for <c>Regions</c>.
     /// </summary>
     public partial class CreateStackInstancesRequest : AmazonCloudFormationRequest
     {
@@ -54,7 +54,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+        /// You can specify <c>Accounts</c> or <c>DeploymentTargets</c>, but not both.
         /// </para>
         /// </summary>
         public List<string> Accounts
@@ -78,16 +78,16 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// If you are signed in to a delegated administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+        /// You can specify <c>Accounts</c> or <c>DeploymentTargets</c>, but not both.
         /// </para>
         /// </summary>
         public DeploymentTargets DeploymentTargets
@@ -151,7 +151,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Repeating this stack set operation with a new operation ID retries all stack instances
-        /// whose status is <code>OUTDATED</code>.
+        /// whose status is <c>OUTDATED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -205,8 +205,8 @@ namespace Amazon.CloudFormation.Model
         ///  </li> <li> 
         /// <para>
         /// To leave an overridden parameter set to its present value, include the parameter and
-        /// specify <code>UsePreviousValue</code> as <code>true</code>. (You can't specify both
-        /// a value and set <code>UsePreviousValue</code> to <code>true</code>.)
+        /// specify <c>UsePreviousValue</c> as <c>true</c>. (You can't specify both a value and
+        /// set <c>UsePreviousValue</c> to <c>true</c>.)
         /// </para>
         ///  </li> <li> 
         /// <para>

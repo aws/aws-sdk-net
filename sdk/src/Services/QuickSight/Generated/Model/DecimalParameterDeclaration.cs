@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A parameter declaration for the <code>Decimal</code> data type.
+    /// A parameter declaration for the <c>Decimal</c> data type.
     /// </summary>
     public partial class DecimalParameterDeclaration
     {
@@ -115,8 +115,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ValueWhenUnset. 
         /// <para>
-        /// The configuration that defines the default value of a <code>Decimal</code> parameter
-        /// when a value has not been set.
+        /// The configuration that defines the default value of a <c>Decimal</c> parameter when
+        /// a value has not been set.
         /// </para>
         /// </summary>
         public DecimalValueWhenUnsetConfiguration ValueWhenUnset

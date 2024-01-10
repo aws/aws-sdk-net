@@ -31,7 +31,7 @@ namespace Amazon.LaunchWizard.Model
     /// <summary>
     /// Container for the parameters to the CreateDeployment operation.
     /// Creates a deployment for the given workload. Deployments created by this operation
-    /// are not available in the Launch Wizard console to use the <code>Clone deployment</code>
+    /// are not available in the Launch Wizard console to use the <c>Clone deployment</c>
     /// action on.
     /// </summary>
     public partial class CreateDeploymentRequest : AmazonLaunchWizardRequest
@@ -47,7 +47,7 @@ namespace Amazon.LaunchWizard.Model
         /// <para>
         /// The name of the deployment pattern supported by a given workload. You can use the
         /// <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-        /// <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values
+        /// <c>ListWorkloadDeploymentPatterns</c> </a> operation to discover supported values
         /// for this parameter. 
         /// </para>
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.LaunchWizard.Model
         /// <para>
         /// Checks whether you have the required permissions for the action, without actually
         /// making the request, and provides an error response. If you have the required permissions,
-        /// the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -128,7 +128,7 @@ namespace Amazon.LaunchWizard.Model
         /// Gets and sets the property WorkloadName. 
         /// <para>
         /// The name of the workload. You can use the <a href="https://docs.aws.amazon.com/launchwizard/latest/APIReference/API_ListWorkloadDeploymentPatterns.html">
-        /// <code>ListWorkloadDeploymentPatterns</code> </a> operation to discover supported values
+        /// <c>ListWorkloadDeploymentPatterns</c> </a> operation to discover supported values
         /// for this parameter.
         /// </para>
         /// </summary>

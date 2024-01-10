@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// The request failed due to a conflict. Check the <code>ConflictType</code> and error
-    /// message for more details.
+    /// The request failed due to a conflict. Check the <c>ConflictType</c> and error message
+    /// for more details.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -132,30 +132,29 @@ namespace Amazon.VoiceID.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DOMAIN_NOT_ACTIVE</code>: The domain is not active.
+        ///  <c>DOMAIN_NOT_ACTIVE</c>: The domain is not active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</code>: You cannot change the speaker
-        /// ID after an enrollment has been requested.
+        ///  <c>CANNOT_CHANGE_SPEAKER_AFTER_ENROLLMENT</c>: You cannot change the speaker ID after
+        /// an enrollment has been requested.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENROLLMENT_ALREADY_EXISTS</code>: There is already an enrollment for this session.
+        ///  <c>ENROLLMENT_ALREADY_EXISTS</c>: There is already an enrollment for this session.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPEAKER_NOT_SET</code>: You must set the speaker ID before requesting an enrollment.
+        ///  <c>SPEAKER_NOT_SET</c>: You must set the speaker ID before requesting an enrollment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SPEAKER_OPTED_OUT</code>: You cannot request an enrollment for an opted out
-        /// speaker.
+        ///  <c>SPEAKER_OPTED_OUT</c>: You cannot request an enrollment for an opted out speaker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CONCURRENT_CHANGES</code>: The request could not be processed as the resource
-        /// was modified by another request during execution.
+        ///  <c>CONCURRENT_CHANGES</c>: The request could not be processed as the resource was
+        /// modified by another request during execution.
         /// </para>
         ///  </li> </ul>
         /// </summary>

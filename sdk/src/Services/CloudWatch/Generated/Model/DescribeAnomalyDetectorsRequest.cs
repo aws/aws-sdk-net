@@ -34,8 +34,8 @@ namespace Amazon.CloudWatch.Model
     /// metric anomaly detectors, you can list all of the models in your account or filter
     /// the results to only the models that are related to a certain namespace, metric name,
     /// or metric dimension. For metric math anomaly detectors, you can list them by adding
-    /// <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will
-    /// return all metric math anomaly detectors in your account.
+    /// <c>METRIC_MATH</c> to the <c>AnomalyDetectorTypes</c> array. This will return all
+    /// metric math anomaly detectors in your account.
     /// </summary>
     public partial class DescribeAnomalyDetectorsRequest : AmazonCloudWatchRequest
     {
@@ -49,8 +49,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AnomalyDetectorTypes. 
         /// <para>
-        /// The anomaly detector types to request when using <code>DescribeAnomalyDetectorsInput</code>.
-        /// If empty, defaults to <code>SINGLE_METRIC</code>.
+        /// The anomaly detector types to request when using <c>DescribeAnomalyDetectorsInput</c>.
+        /// If empty, defaults to <c>SINGLE_METRIC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]
@@ -95,7 +95,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// To retrieve the remaining results, make another call with the returned <c>NextToken</c>
         /// value. 
         /// </para>
         /// </summary>

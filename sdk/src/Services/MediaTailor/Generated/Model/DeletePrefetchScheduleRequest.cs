@@ -30,7 +30,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePrefetchSchedule operation.
-    /// Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code>
+    /// Deletes a prefetch schedule for a specific playback configuration. If you call <c>DeletePrefetchSchedule</c>
     /// on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For
     /// more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using
     /// ad prefetching</a> in the <i>MediaTailor User Guide</i>.

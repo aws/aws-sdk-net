@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <code>ListTables</code> operation.
+    /// Represents the output of a <c>ListTables</c> operation.
     /// </summary>
     public partial class ListTablesResponse : AmazonWebServiceResponse
     {
@@ -39,14 +39,14 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property LastEvaluatedTableName. 
         /// <para>
-        /// The name of the last table in the current page of results. Use this value as the <code>ExclusiveStartTableName</code>
+        /// The name of the last table in the current page of results. Use this value as the <c>ExclusiveStartTableName</c>
         /// in a new request to obtain the next page of results, until all the table names are
         /// returned.
         /// </para>
         ///  
         /// <para>
-        /// If you do not receive a <code>LastEvaluatedTableName</code> value in the response,
-        /// this means that there are no more table names to be retrieved.
+        /// If you do not receive a <c>LastEvaluatedTableName</c> value in the response, this
+        /// means that there are no more table names to be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=255)]
@@ -70,8 +70,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>LastEvaluatedTableName</code> also appears in the output, you can use this
-        /// value as the <code>ExclusiveStartTableName</code> parameter in a subsequent <code>ListTables</code>
+        /// If <c>LastEvaluatedTableName</c> also appears in the output, you can use this value
+        /// as the <c>ExclusiveStartTableName</c> parameter in a subsequent <c>ListTables</c>
         /// request and obtain the next page of results.
         /// </para>
         /// </summary>

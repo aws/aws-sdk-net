@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchDataSources operation.
-    /// Use the <code>SearchDataSources</code> operation to search for data sources that belong
+    /// Use the <c>SearchDataSources</c> operation to search for data sources that belong
     /// to an account.
     /// </summary>
     public partial class SearchDataSourcesRequest : AmazonQuickSightRequest

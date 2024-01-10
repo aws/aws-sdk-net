@@ -60,8 +60,8 @@ namespace Amazon.StorageGateway.Model
         /// Your gateway activation key. You can obtain the activation key by sending an HTTP
         /// GET request with redirects enabled to the gateway IP address (port 80). The redirect
         /// URL returned in the response provides you the activation key for your gateway in the
-        /// query string parameter <code>activationKey</code>. It may also include other activation-related
-        /// parameters, however, these are merely defaults -- the arguments you pass to the <code>ActivateGateway</code>
+        /// query string parameter <c>activationKey</c>. It may also include other activation-related
+        /// parameters, however, these are merely defaults -- the arguments you pass to the <c>ActivateGateway</c>
         /// API call determine the actual configuration of your gateway.
         /// </para>
         ///  
@@ -107,9 +107,9 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// A value that indicates the Amazon Web Services Region where you want to store your
         /// data. The gateway Amazon Web Services Region specified must be the same Amazon Web
-        /// Services Region as the Amazon Web Services Region in your <code>Host</code> header
-        /// in the request. For more information about available Amazon Web Services Regions and
-        /// endpoints for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
+        /// Services Region as the Amazon Web Services Region in your <c>Host</c> header in the
+        /// request. For more information about available Amazon Web Services Regions and endpoints
+        /// for Storage Gateway, see <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">
         /// Storage Gateway endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         ///  
@@ -160,12 +160,12 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// A value that defines the type of gateway to activate. The type specified is critical
         /// to all later functions of the gateway and cannot be changed after activation. The
-        /// default value is <code>CACHED</code>.
+        /// default value is <c>CACHED</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>STORED</code> | <code>CACHED</code> | <code>VTL</code> | <code>VTL_SNOW</code>
-        /// | <code>FILE_S3</code> | <code>FILE_FSX_SMB</code> 
+        /// Valid Values: <c>STORED</c> | <c>CACHED</c> | <c>VTL</c> | <c>VTL_SNOW</c> | <c>FILE_S3</c>
+        /// | <c>FILE_FSX_SMB</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=20)]
@@ -189,7 +189,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
+        /// Valid Values: <c>STK-L700</c> | <c>AWS-Gateway-VTL</c> | <c>IBM-03584L32-0402</c>
         /// 
         /// </para>
         /// </summary>
@@ -241,7 +241,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>IBM-ULT3580-TD5</code> 
+        /// Valid Values: <c>IBM-ULT3580-TD5</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=50)]

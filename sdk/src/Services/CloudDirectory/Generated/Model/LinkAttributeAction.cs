@@ -40,7 +40,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AttributeActionType. 
         /// <para>
-        /// A type that can be either <code>UPDATE_OR_CREATE</code> or <code>DELETE</code>.
+        /// A type that can be either <c>UPDATE_OR_CREATE</c> or <c>DELETE</c>.
         /// </para>
         /// </summary>
         public UpdateActionType AttributeActionType

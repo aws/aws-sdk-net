@@ -32,9 +32,8 @@ namespace Amazon.CleanRoomsML.Model
     /// Container for the parameters to the DeleteTrainingDataset operation.
     /// Specifies a training dataset that you want to delete. You can't delete a training
     /// dataset if there are any audience models that depend on the training dataset. In Clean
-    /// Rooms ML, the <code>TrainingDataset</code> is metadata that points to a Glue table,
-    /// which is read only during <code>AudienceModel</code> creation. This action deletes
-    /// the metadata.
+    /// Rooms ML, the <c>TrainingDataset</c> is metadata that points to a Glue table, which
+    /// is read only during <c>AudienceModel</c> creation. This action deletes the metadata.
     /// </summary>
     public partial class DeleteTrainingDatasetRequest : AmazonCleanRoomsMLRequest
     {

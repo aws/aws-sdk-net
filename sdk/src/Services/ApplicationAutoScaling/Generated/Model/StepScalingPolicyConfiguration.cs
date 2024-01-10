@@ -48,15 +48,14 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property AdjustmentType. 
         /// <para>
-        /// Specifies how the <code>ScalingAdjustment</code> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a>
+        /// Specifies how the <c>ScalingAdjustment</c> value in a <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html">StepAdjustment</a>
         /// is interpreted (for example, an absolute number or a percentage). The valid values
-        /// are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+        /// are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>, and <c>PercentChangeInCapacity</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AdjustmentType</code> is required if you are adding a new step scaling policy
-        /// configuration.
+        ///  <c>AdjustmentType</c> is required if you are adding a new step scaling policy configuration.
         /// </para>
         /// </summary>
         public AdjustmentType AdjustmentType
@@ -94,9 +93,9 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetricAggregationType. 
         /// <para>
-        /// The aggregation type for the CloudWatch metrics. Valid values are <code>Minimum</code>,
-        /// <code>Maximum</code>, and <code>Average</code>. If the aggregation type is null, the
-        /// value is treated as <code>Average</code>.
+        /// The aggregation type for the CloudWatch metrics. Valid values are <c>Minimum</c>,
+        /// <c>Maximum</c>, and <c>Average</c>. If the aggregation type is null, the value is
+        /// treated as <c>Average</c>.
         /// </para>
         /// </summary>
         public MetricAggregationType MetricAggregationType
@@ -114,12 +113,12 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentMagnitude. 
         /// <para>
-        /// The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.
+        /// The minimum value to scale by when the adjustment type is <c>PercentChangeInCapacity</c>.
         /// For example, suppose that you create a step scaling policy to scale out an Amazon
-        /// ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-        /// 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4
-        /// is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application
-        /// Auto Scaling scales out the service by 2 tasks.
+        /// ECS service by 25 percent and you specify a <c>MinAdjustmentMagnitude</c> of 2. If
+        /// the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1.
+        /// However, because you specified a <c>MinAdjustmentMagnitude</c> of 2, Application Auto
+        /// Scaling scales out the service by 2 tasks.
         /// </para>
         /// </summary>
         public int MinAdjustmentMagnitude

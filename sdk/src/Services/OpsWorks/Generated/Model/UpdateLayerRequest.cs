@@ -180,7 +180,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CustomRecipes. 
         /// <para>
-        /// A <code>LayerCustomRecipes</code> object that specifies the layer's custom recipes.
+        /// A <c>LayerCustomRecipes</c> object that specifies the layer's custom recipes.
         /// </para>
         /// </summary>
         public Recipes CustomRecipes
@@ -235,16 +235,15 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>. To control when updates are installed, set this
-        /// value to <code>false</code>. You must then update your instances manually by using
-        /// <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack command
-        /// or manually running <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu)
-        /// on the instances. 
+        /// default value is <c>true</c>. To control when updates are installed, set this value
+        /// to <c>false</c>. You must then update your instances manually by using <a>CreateDeployment</a>
+        /// to run the <c>update_dependencies</c> stack command or manually running <c>yum</c>
+        /// (Amazon Linux) or <c>apt-get</c> (Ubuntu) on the instances. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your instances have the latest security updates.
+        /// We strongly recommend using the default value of <c>true</c>, to ensure that your
+        /// instances have the latest security updates.
         /// </para>
         ///  </note>
         /// </summary>
@@ -315,7 +314,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Packages. 
         /// <para>
-        /// An array of <code>Package</code> objects that describe the layer's packages.
+        /// An array of <c>Package</c> objects that describe the layer's packages.
         /// </para>
         /// </summary>
         public List<string> Packages
@@ -378,7 +377,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VolumeConfigurations. 
         /// <para>
-        /// A <code>VolumeConfigurations</code> object that describes the layer's Amazon EBS volumes.
+        /// A <c>VolumeConfigurations</c> object that describes the layer's Amazon EBS volumes.
         /// </para>
         /// </summary>
         public List<VolumeConfiguration> VolumeConfigurations

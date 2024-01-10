@@ -30,13 +30,13 @@ namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
     /// Container for the parameters to the SetRiskConfiguration operation.
-    /// Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code>
-    /// or <code>ClientId</code>, pass null values for all four configuration types.
+    /// Configures actions on detected risks. To delete the risk configuration for <c>UserPoolId</c>
+    /// or <c>ClientId</c>, pass null values for all four configuration types.
     /// 
     ///  
     /// <para>
     /// To activate Amazon Cognito advanced security features, update the user pool to include
-    /// the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+    /// the <c>UserPoolAddOns</c> key<c>AdvancedSecurityMode</c>.
     /// </para>
     /// </summary>
     public partial class SetRiskConfigurationRequest : AmazonCognitoIdentityProviderRequest
@@ -68,15 +68,15 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property ClientId. 
         /// <para>
-        /// The app client ID. If <code>ClientId</code> is null, then the risk configuration is
-        /// mapped to <code>userPoolId</code>. When the client ID is null, the same risk configuration
-        /// is applied to all the clients in the userPool.
+        /// The app client ID. If <c>ClientId</c> is null, then the risk configuration is mapped
+        /// to <c>userPoolId</c>. When the client ID is null, the same risk configuration is applied
+        /// to all the clients in the userPool.
         /// </para>
         ///  
         /// <para>
-        /// Otherwise, <code>ClientId</code> is mapped to the client. When the client ID isn't
-        /// null, the user pool configuration is overridden and the risk configuration for the
-        /// client is used instead.
+        /// Otherwise, <c>ClientId</c> is mapped to the client. When the client ID isn't null,
+        /// the user pool configuration is overridden and the risk configuration for the client
+        /// is used instead.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=128)]

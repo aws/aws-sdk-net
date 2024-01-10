@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Neptunedata.Model
 {
     /// <summary>
-    /// Statistics for <code>REFRESH</code> mode.
+    /// Statistics for <c>REFRESH</c> mode.
     /// </summary>
     public partial class RefreshStatisticsIdMap
     {

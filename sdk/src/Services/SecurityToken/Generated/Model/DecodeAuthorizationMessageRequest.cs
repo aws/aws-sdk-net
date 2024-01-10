@@ -36,9 +36,9 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// For example, if a user is not authorized to perform an operation that he or she has
-    /// requested, the request returns a <code>Client.UnauthorizedOperation</code> response
-    /// (an HTTP 403 response). Some Amazon Web Services operations additionally return an
-    /// encoded message that can provide details about this authorization failure. 
+    /// requested, the request returns a <c>Client.UnauthorizedOperation</c> response (an
+    /// HTTP 403 response). Some Amazon Web Services operations additionally return an encoded
+    /// message that can provide details about this authorization failure. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityToken.Model
     /// privileged information that the user who requested the operation should not see. To
     /// decode an authorization status message, a user must be granted permissions through
     /// an IAM <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html">policy</a>
-    /// to request the <code>DecodeAuthorizationMessage</code> (<code>sts:DecodeAuthorizationMessage</code>)
+    /// to request the <c>DecodeAuthorizationMessage</c> (<c>sts:DecodeAuthorizationMessage</c>)
     /// action. 
     /// </para>
     ///  

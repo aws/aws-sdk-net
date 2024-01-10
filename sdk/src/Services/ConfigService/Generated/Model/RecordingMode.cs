@@ -70,20 +70,20 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::Config::ResourceCompliance</code> 
+        ///  <c>AWS::Config::ResourceCompliance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Config::ConformancePackCompliance</code> 
+        ///  <c>AWS::Config::ConformancePackCompliance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Config::ConfigurationRecorder</code> 
+        ///  <c>AWS::Config::ConfigurationRecorder</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For the <b>allSupported</b> (<code>ALL_SUPPORTED_RESOURCE_TYPES</code>) recording
-        /// strategy, these resource types will be set to Continuous recording.
+        /// For the <b>allSupported</b> (<c>ALL_SUPPORTED_RESOURCE_TYPES</c>) recording strategy,
+        /// these resource types will be set to Continuous recording.
         /// </para>
         ///  </important>
         /// </summary>
@@ -103,10 +103,10 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property RecordingModeOverrides. 
         /// <para>
-        /// An array of <code>recordingModeOverride</code> objects for you to specify your overrides
-        /// for the recording mode. The <code>recordingModeOverride</code> object in the <code>recordingModeOverrides</code>
-        /// array consists of three fields: a <code>description</code>, the new <code>recordingFrequency</code>,
-        /// and an array of <code>resourceTypes</code> to override.
+        /// An array of <c>recordingModeOverride</c> objects for you to specify your overrides
+        /// for the recording mode. The <c>recordingModeOverride</c> object in the <c>recordingModeOverrides</c>
+        /// array consists of three fields: a <c>description</c>, the new <c>recordingFrequency</c>,
+        /// and an array of <c>resourceTypes</c> to override.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

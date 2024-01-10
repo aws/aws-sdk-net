@@ -62,7 +62,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property DataShareArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that references the datashare that is owned by a specific
-        /// namespace of the producer cluster. A datashare ARN is in the <code>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</code>
+        /// namespace of the producer cluster. A datashare ARN is in the <c>arn:aws:redshift:{region}:{account-id}:{datashare}:{namespace-guid}/{datashare-name}</c>
         /// format.
         /// </para>
         /// </summary>

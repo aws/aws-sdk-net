@@ -43,7 +43,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that this is the Amazon S3 location you specified in your request using the <code>OutputBucketName</code>
+        /// Note that this is the Amazon S3 location you specified in your request using the <c>OutputBucketName</c>
         /// parameter.
         /// </para>
         /// </summary>

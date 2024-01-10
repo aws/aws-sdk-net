@@ -44,8 +44,7 @@ namespace Amazon.VPCLattice.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The rule action. Each rule must include exactly one of the following types of actions:
-        /// <code>forward </code>or <code>fixed-response</code>, and it must be the last action
-        /// to be performed.
+        /// <c>forward </c>or <c>fixed-response</c>, and it must be the last action to be performed.
         /// </para>
         /// </summary>
         public RuleAction Action
@@ -101,9 +100,9 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Match. 
         /// <para>
-        /// The rule match. The <code>RuleMatch</code> must be an <code>HttpMatch</code>. This
-        /// means that the rule should be an exact match on HTTP constraints which are made up
-        /// of the HTTP method, path, and header.
+        /// The rule match. The <c>RuleMatch</c> must be an <c>HttpMatch</c>. This means that
+        /// the rule should be an exact match on HTTP constraints which are made up of the HTTP
+        /// method, path, and header.
         /// </para>
         /// </summary>
         public RuleMatch Match

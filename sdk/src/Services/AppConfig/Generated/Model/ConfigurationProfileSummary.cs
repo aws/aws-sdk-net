@@ -117,19 +117,19 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of configurations contained in the profile. AppConfig supports <code>feature
-        /// flags</code> and <code>freeform</code> configurations. We recommend you create feature
-        /// flag configurations to enable or disable new features and freeform configurations
-        /// to distribute configurations to an application. When calling this API, enter one of
-        /// the following values for <code>Type</code>:
+        /// The type of configurations contained in the profile. AppConfig supports <c>feature
+        /// flags</c> and <c>freeform</c> configurations. We recommend you create feature flag
+        /// configurations to enable or disable new features and freeform configurations to distribute
+        /// configurations to an application. When calling this API, enter one of the following
+        /// values for <c>Type</c>:
         /// </para>
         ///  
         /// <para>
-        ///  <code>AWS.AppConfig.FeatureFlags</code> 
+        ///  <c>AWS.AppConfig.FeatureFlags</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AWS.Freeform</code> 
+        ///  <c>AWS.Freeform</c> 
         /// </para>
         /// </summary>
         public string Type

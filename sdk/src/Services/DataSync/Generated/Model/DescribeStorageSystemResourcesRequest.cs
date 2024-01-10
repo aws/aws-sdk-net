@@ -126,7 +126,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Specifies the universally unique identifiers (UUIDs) of the storage system resources
         /// that you want information about. You can't use this parameter in combination with
-        /// the <code>Filter</code> parameter.
+        /// the <c>Filter</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

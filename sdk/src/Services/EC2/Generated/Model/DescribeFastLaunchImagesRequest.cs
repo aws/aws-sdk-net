@@ -46,15 +46,15 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>resource-type</code> - The resource type for pre-provisioning.
+        ///  <c>resource-type</c> - The resource type for pre-provisioning.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The owner ID for the pre-provisioning resource.
+        ///  <c>owner-id</c> - The owner ID for the pre-provisioning resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The current state of fast launching for the Windows AMI.
+        ///  <c>state</c> - The current state of fast launching for the Windows AMI.
         /// </para>
         ///  </li> </ul>
         /// </summary>

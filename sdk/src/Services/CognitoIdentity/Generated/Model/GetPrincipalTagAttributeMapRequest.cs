@@ -30,7 +30,7 @@ namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPrincipalTagAttributeMap operation.
-    /// Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code>
+    /// Use <c>GetPrincipalTagAttributeMap</c> to list all mappings between <c>PrincipalTags</c>
     /// and user attributes.
     /// </summary>
     public partial class GetPrincipalTagAttributeMapRequest : AmazonCognitoIdentityRequest

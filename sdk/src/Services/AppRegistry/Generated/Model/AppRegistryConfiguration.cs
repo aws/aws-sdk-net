@@ -38,7 +38,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property TagQueryConfiguration. 
         /// <para>
-        ///  Includes the definition of a <code>tagQuery</code>. 
+        ///  Includes the definition of a <c>tagQuery</c>. 
         /// </para>
         /// </summary>
         public TagQueryConfiguration TagQueryConfiguration

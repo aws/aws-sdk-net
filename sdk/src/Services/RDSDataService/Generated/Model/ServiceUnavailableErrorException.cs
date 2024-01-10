@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDSDataService.Model
 {
     /// <summary>
-    /// The service specified by the <code>resourceArn</code> parameter isn't available.
+    /// The service specified by the <c>resourceArn</c> parameter isn't available.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

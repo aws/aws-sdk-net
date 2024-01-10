@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of instances of the type specified by <code>InstanceType</code>.
+        /// The number of instances of the type specified by <c>InstanceType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

@@ -65,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>true</code>.
+        /// The default is <c>true</c>.
         /// </para>
         /// </summary>
         public bool AutoUpdate
@@ -126,7 +126,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>MajorVersion</code> or <code>VersionBump</code>, but not both.
+        /// You can specify <c>MajorVersion</c> or <c>VersionBump</c>, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
@@ -149,8 +149,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
-        /// <code>Type</code>, and <code>PublisherId</code>.
+        /// Conditional: You must specify <c>PublicTypeArn</c>, or <c>TypeName</c>, <c>Type</c>,
+        /// and <c>PublisherId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -173,8 +173,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
-        /// <code>Type</code>, and <code>PublisherId</code>.
+        /// Conditional: You must specify <c>PublicTypeArn</c>, or <c>TypeName</c>, <c>Type</c>,
+        /// and <c>PublisherId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=40)]
@@ -197,8 +197,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
-        /// <code>Type</code>, and <code>PublisherId</code>.
+        /// Conditional: You must specify <c>PublicTypeArn</c>, or <c>TypeName</c>, <c>Type</c>,
+        /// and <c>PublisherId</c>.
         /// </para>
         /// </summary>
         public ThirdPartyType Type
@@ -220,8 +220,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>PublicTypeArn</code>, or <code>TypeName</code>,
-        /// <code>Type</code>, and <code>PublisherId</code>.
+        /// Conditional: You must specify <c>PublicTypeArn</c>, or <c>TypeName</c>, <c>Type</c>,
+        /// and <c>PublisherId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]
@@ -269,17 +269,17 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property VersionBump. 
         /// <para>
         /// Manually updates a previously-activated type to a new major or minor version, if available.
-        /// You can also use this parameter to update the value of <code>AutoUpdate</code>.
+        /// You can also use this parameter to update the value of <c>AutoUpdate</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MAJOR</code>: CloudFormation updates the extension to the newest major version,
-        /// if one is available.
+        ///  <c>MAJOR</c>: CloudFormation updates the extension to the newest major version, if
+        /// one is available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MINOR</code>: CloudFormation updates the extension to the newest minor version,
-        /// if one is available.
+        ///  <c>MINOR</c>: CloudFormation updates the extension to the newest minor version, if
+        /// one is available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

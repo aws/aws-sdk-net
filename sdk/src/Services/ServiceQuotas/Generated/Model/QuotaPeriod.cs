@@ -57,7 +57,7 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property PeriodValue. 
         /// <para>
-        /// The value associated with the reported <code>PeriodUnit</code>.
+        /// The value associated with the reported <c>PeriodUnit</c>.
         /// </para>
         /// </summary>
         public int PeriodValue

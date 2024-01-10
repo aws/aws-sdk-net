@@ -39,9 +39,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Pagination token to include in the next request. Token value is <code>null</code>
-        /// if there are no additional results to request, or if you did not set <code>MaxResults</code>
-        /// in the request.
+        /// Pagination token to include in the next request. Token value is <c>null</c> if there
+        /// are no additional results to request, or if you did not set <c>MaxResults</c> in the
+        /// request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -59,8 +59,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property QueueUrls. 
         /// <para>
-        /// A list of source queue URLs that have the <code>RedrivePolicy</code> queue attribute
-        /// configured with a dead-letter queue.
+        /// A list of source queue URLs that have the <c>RedrivePolicy</c> queue attribute configured
+        /// with a dead-letter queue.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

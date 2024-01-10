@@ -38,9 +38,9 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// Cluster updates are asynchronous, and they should finish within a few minutes. During
-    /// an update, the cluster status moves to <code>UPDATING</code> (this status transition
-    /// is eventually consistent). When the update is complete (either <code>Failed</code>
-    /// or <code>Successful</code>), the cluster status moves to <code>Active</code>.
+    /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
+    /// eventually consistent). When the update is complete (either <c>Failed</c> or <c>Successful</c>),
+    /// the cluster status moves to <c>Active</c>.
     /// </para>
     ///  
     /// <para>

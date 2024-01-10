@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DestinationDataSharing. 
         /// <para>
-        /// Enables destination data sharing. By default, this field is <code>null</code>.
+        /// Enables destination data sharing. By default, this field is <c>null</c>.
         /// </para>
         /// </summary>
         public ResourceDataSyncDestinationDataSharing DestinationDataSharing

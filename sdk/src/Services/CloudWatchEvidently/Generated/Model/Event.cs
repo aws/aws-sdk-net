@@ -80,9 +80,9 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  <code>aws.evidently.evaluation</code> specifies an evaluation event, which determines
-        /// which feature variation that a user sees. <code>aws.evidently.custom</code> specifies
-        /// a custom event, which generates metrics from user actions such as clicks and checkouts.
+        ///  <c>aws.evidently.evaluation</c> specifies an evaluation event, which determines which
+        /// feature variation that a user sees. <c>aws.evidently.custom</c> specifies a custom
+        /// event, which generates metrics from user actions such as clicks and checkouts.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

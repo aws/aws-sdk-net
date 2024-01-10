@@ -30,7 +30,7 @@ namespace Amazon.RoboMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the StartSimulationJobBatch operation.
-    /// Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+    /// Starts a new simulation job batch. The batch is defined using one or more <c>SimulationJobRequest</c>
     /// objects.
     /// </summary>
     public partial class StartSimulationJobBatchRequest : AmazonRoboMakerRequest

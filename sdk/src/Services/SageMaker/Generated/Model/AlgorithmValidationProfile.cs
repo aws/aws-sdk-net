@@ -67,8 +67,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TrainingJobDefinition. 
         /// <para>
-        /// The <code>TrainingJobDefinition</code> object that describes the training job that
-        /// SageMaker runs to validate your algorithm.
+        /// The <c>TrainingJobDefinition</c> object that describes the training job that SageMaker
+        /// runs to validate your algorithm.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,8 +87,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformJobDefinition. 
         /// <para>
-        /// The <code>TransformJobDefinition</code> object that describes the transform job that
-        /// SageMaker runs to validate your algorithm.
+        /// The <c>TransformJobDefinition</c> object that describes the transform job that SageMaker
+        /// runs to validate your algorithm.
         /// </para>
         /// </summary>
         public TransformJobDefinition TransformJobDefinition

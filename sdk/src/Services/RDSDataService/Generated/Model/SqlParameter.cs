@@ -63,34 +63,34 @@ namespace Amazon.RDSDataService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DATE</code> - The corresponding <code>String</code> parameter value is sent
-        /// as an object of <code>DATE</code> type to the database. The accepted format is <code>YYYY-MM-DD</code>.
+        ///  <c>DATE</c> - The corresponding <c>String</c> parameter value is sent as an object
+        /// of <c>DATE</c> type to the database. The accepted format is <c>YYYY-MM-DD</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DECIMAL</code> - The corresponding <code>String</code> parameter value is sent
-        /// as an object of <code>DECIMAL</code> type to the database.
+        ///  <c>DECIMAL</c> - The corresponding <c>String</c> parameter value is sent as an object
+        /// of <c>DECIMAL</c> type to the database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JSON</code> - The corresponding <code>String</code> parameter value is sent
-        /// as an object of <code>JSON</code> type to the database.
+        ///  <c>JSON</c> - The corresponding <c>String</c> parameter value is sent as an object
+        /// of <c>JSON</c> type to the database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIME</code> - The corresponding <code>String</code> parameter value is sent
-        /// as an object of <code>TIME</code> type to the database. The accepted format is <code>HH:MM:SS[.FFF]</code>.
+        ///  <c>TIME</c> - The corresponding <c>String</c> parameter value is sent as an object
+        /// of <c>TIME</c> type to the database. The accepted format is <c>HH:MM:SS[.FFF]</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIMESTAMP</code> - The corresponding <code>String</code> parameter value is
-        /// sent as an object of <code>TIMESTAMP</code> type to the database. The accepted format
-        /// is <code>YYYY-MM-DD HH:MM:SS[.FFF]</code>.
+        ///  <c>TIMESTAMP</c> - The corresponding <c>String</c> parameter value is sent as an
+        /// object of <c>TIMESTAMP</c> type to the database. The accepted format is <c>YYYY-MM-DD
+        /// HH:MM:SS[.FFF]</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UUID</code> - The corresponding <code>String</code> parameter value is sent
-        /// as an object of <code>UUID</code> type to the database. 
+        ///  <c>UUID</c> - The corresponding <c>String</c> parameter value is sent as an object
+        /// of <c>UUID</c> type to the database. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

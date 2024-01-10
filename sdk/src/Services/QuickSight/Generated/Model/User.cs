@@ -129,11 +129,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+        ///  <c>COGNITO</c>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+        ///  <c>CUSTOM_OIDC</c>: Custom OpenID Connect (OIDC) provider.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -228,25 +228,24 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READER</code>: A user who has read-only access to dashboards.
+        ///  <c>READER</c>: A user who has read-only access to dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-        /// dashboards.
+        ///  <c>AUTHOR</c>: A user who can create data sources, datasets, analyses, and dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN</code>: A user who is an author, who can also manage Amazon Amazon QuickSight
+        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon Amazon QuickSight
         /// settings.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESTRICTED_READER</code>: This role isn't currently available for use.
+        ///  <c>RESTRICTED_READER</c>: This role isn't currently available for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESTRICTED_AUTHOR</code>: This role isn't currently available for use.
+        ///  <c>RESTRICTED_AUTHOR</c>: This role isn't currently available for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -266,9 +265,9 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property UserName. 
         /// <para>
         /// The user's user name. This value is required if you are registering a user that will
-        /// be managed in Amazon QuickSight. In the output, the value for <code>UserName</code>
-        /// is <code>N/A</code> when the value for <code>IdentityType</code> is <code>IAM</code>
-        /// and the corresponding IAM user is deleted.
+        /// be managed in Amazon QuickSight. In the output, the value for <c>UserName</c> is <c>N/A</c>
+        /// when the value for <c>IdentityType</c> is <c>IAM</c> and the corresponding IAM user
+        /// is deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

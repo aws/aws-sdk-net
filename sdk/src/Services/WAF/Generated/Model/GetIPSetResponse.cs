@@ -38,19 +38,17 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property IPSet. 
         /// <para>
-        /// Information about the <a>IPSet</a> that you specified in the <code>GetIPSet</code>
-        /// request. For more information, see the following topics:
+        /// Information about the <a>IPSet</a> that you specified in the <c>GetIPSet</c> request.
+        /// For more information, see the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>IPSet</a>: Contains <code>IPSetDescriptors</code>, <code>IPSetId</code>, and <code>Name</code>
-        /// 
+        ///  <a>IPSet</a>: Contains <c>IPSetDescriptors</c>, <c>IPSetId</c>, and <c>Name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IPSetDescriptors</code>: Contains an array of <a>IPSetDescriptor</a> objects.
-        /// Each <code>IPSetDescriptor</code> object contains <code>Type</code> and <code>Value</code>
-        /// 
+        ///  <c>IPSetDescriptors</c>: Contains an array of <a>IPSetDescriptor</a> objects. Each
+        /// <c>IPSetDescriptor</c> object contains <c>Type</c> and <c>Value</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

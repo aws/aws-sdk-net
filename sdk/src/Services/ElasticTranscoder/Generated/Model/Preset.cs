@@ -86,9 +86,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>,
-        /// <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>,
-        /// <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
+        /// The container type for the output file. Valid values include <c>flac</c>, <c>flv</c>,
+        /// <c>fmp4</c>, <c>gif</c>, <c>mp3</c>, <c>mp4</c>, <c>mpg</c>, <c>mxf</c>, <c>oga</c>,
+        /// <c>ogg</c>, <c>ts</c>, and <c>webm</c>.
         /// </para>
         /// </summary>
         public string Container
@@ -182,8 +182,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Whether the preset is a default preset provided by Elastic Transcoder (<code>System</code>)
-        /// or a preset that you have defined (<code>Custom</code>).
+        /// Whether the preset is a default preset provided by Elastic Transcoder (<c>System</c>)
+        /// or a preset that you have defined (<c>Custom</c>).
         /// </para>
         /// </summary>
         public string Type

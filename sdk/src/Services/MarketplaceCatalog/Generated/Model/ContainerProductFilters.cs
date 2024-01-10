@@ -30,7 +30,7 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// Object containing all the filter fields for container products. Client can add a maximum
-    /// of 8 filters in a single <code>ListEntities</code> request.
+    /// of 8 filters in a single <c>ListEntities</c> request.
     /// </summary>
     public partial class ContainerProductFilters
     {

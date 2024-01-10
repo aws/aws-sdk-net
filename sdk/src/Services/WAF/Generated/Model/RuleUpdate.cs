@@ -42,8 +42,8 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Specifies a <code>Predicate</code> (such as an <code>IPSet</code>) and indicates whether
-    /// you want to add it to a <code>Rule</code> or delete it from a <code>Rule</code>.
+    /// Specifies a <c>Predicate</c> (such as an <c>IPSet</c>) and indicates whether you want
+    /// to add it to a <c>Rule</c> or delete it from a <c>Rule</c>.
     /// </para>
     /// </summary>
     public partial class RuleUpdate
@@ -54,8 +54,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specify <code>INSERT</code> to add a <code>Predicate</code> to a <code>Rule</code>.
-        /// Use <code>DELETE</code> to remove a <code>Predicate</code> from a <code>Rule</code>.
+        /// Specify <c>INSERT</c> to add a <c>Predicate</c> to a <c>Rule</c>. Use <c>DELETE</c>
+        /// to remove a <c>Predicate</c> from a <c>Rule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,8 +74,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Predicate. 
         /// <para>
-        /// The ID of the <code>Predicate</code> (such as an <code>IPSet</code>) that you want
-        /// to add to a <code>Rule</code>.
+        /// The ID of the <c>Predicate</c> (such as an <c>IPSet</c>) that you want to add to a
+        /// <c>Rule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

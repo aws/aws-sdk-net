@@ -32,14 +32,14 @@ namespace Amazon.ResourceExplorer2.Model
     /// Container for the parameters to the CreateView operation.
     /// Creates a view that users can query by using the <a>Search</a> operation. Results
     /// from queries that you make using this view include only resources that match the view's
-    /// <code>Filters</code>. For more information about Amazon Web Services Resource Explorer
-    /// views, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views.html">Managing
+    /// <c>Filters</c>. For more information about Amazon Web Services Resource Explorer views,
+    /// see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views.html">Managing
     /// views</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// Only the principals with an IAM identity-based policy that grants <code>Allow</code>
-    /// to the <code>Search</code> action on a <code>Resource</code> with the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Only the principals with an IAM identity-based policy that grants <c>Allow</c> to
+    /// the <c>Search</c> action on a <c>Resource</c> with the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
     /// resource name (ARN)</a> of this view can <a>Search</a> using views you create with
     /// this operation.
     /// </para>
@@ -80,8 +80,8 @@ namespace Amazon.ResourceExplorer2.Model
         /// <para>
         /// An array of strings that specify which resources are included in the results of queries
         /// made using this view. When you use this view in a <a>Search</a> operation, the filter
-        /// string is combined with the search's <code>QueryString</code> parameter using a logical
-        /// <code>AND</code> operator.
+        /// string is combined with the search's <c>QueryString</c> parameter using a logical
+        /// <c>AND</c> operator.
         /// </para>
         ///  
         /// <para>
@@ -93,10 +93,10 @@ namespace Amazon.ResourceExplorer2.Model
         /// <para>
         /// This query string in the context of this operation supports only <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-filters">filter
         /// prefixes</a> with optional <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html#query-syntax-operators">operators</a>.
-        /// It doesn't support free-form text. For example, the string <code>region:us* service:ec2
-        /// -tag:stage=prod</code> includes all Amazon EC2 resources in any Amazon Web Services
-        /// Region that begins with the letters <code>us</code> and is <i>not</i> tagged with
-        /// a key <code>Stage</code> that has the value <code>prod</code>.
+        /// It doesn't support free-form text. For example, the string <c>region:us* service:ec2
+        /// -tag:stage=prod</c> includes all Amazon EC2 resources in any Amazon Web Services Region
+        /// that begins with the letters <c>us</c> and is <i>not</i> tagged with a key <c>Stage</c>
+        /// that has the value <c>prod</c>.
         /// </para>
         ///  </important>
         /// </summary>

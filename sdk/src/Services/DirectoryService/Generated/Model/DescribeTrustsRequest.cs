@@ -111,7 +111,7 @@ namespace Amazon.DirectoryService.Model
         /// </para>
         ///  
         /// <para>
-        /// An empty list results in an <code>InvalidParameterException</code> being thrown.
+        /// An empty list results in an <c>InvalidParameterException</c> being thrown.
         /// </para>
         /// </summary>
         public List<string> TrustIds

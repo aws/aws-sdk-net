@@ -38,7 +38,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// Information about the <a>RateBasedRule</a> that you specified in the <code>GetRateBasedRule</code>
+        /// Information about the <a>RateBasedRule</a> that you specified in the <c>GetRateBasedRule</c>
         /// request.
         /// </para>
         /// </summary>

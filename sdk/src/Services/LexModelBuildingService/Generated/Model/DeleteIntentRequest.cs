@@ -30,8 +30,8 @@ namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteIntent operation.
-    /// Deletes all versions of the intent, including the <code>$LATEST</code> version. To
-    /// delete a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
+    /// Deletes all versions of the intent, including the <c>$LATEST</c> version. To delete
+    /// a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.
     /// 
     ///  
     /// <para>
@@ -41,16 +41,15 @@ namespace Amazon.LexModelBuildingService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  If you get the <code>ResourceInUseException</code> exception, it provides an example
-    /// reference that shows where the intent is referenced. To remove the reference to the
-    /// intent, either update the bot or delete it. If you get the same exception when you
-    /// attempt to delete the intent again, repeat until the intent has no references and
-    /// the call to <code>DeleteIntent</code> is successful. 
+    ///  If you get the <c>ResourceInUseException</c> exception, it provides an example reference
+    /// that shows where the intent is referenced. To remove the reference to the intent,
+    /// either update the bot or delete it. If you get the same exception when you attempt
+    /// to delete the intent again, repeat until the intent has no references and the call
+    /// to <c>DeleteIntent</c> is successful. 
     /// </para>
     ///  </note> 
     /// <para>
-    ///  This operation requires permission for the <code>lex:DeleteIntent</code> action.
-    /// 
+    ///  This operation requires permission for the <c>lex:DeleteIntent</c> action. 
     /// </para>
     /// </summary>
     public partial class DeleteIntentRequest : AmazonLexModelBuildingServiceRequest

@@ -44,7 +44,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter that specifies the maximum number of results to return. You
-        /// can use <code>nextToken</code> to get the next page of results. The default is 20.
+        /// can use <c>nextToken</c> to get the next page of results. The default is 20.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -63,9 +63,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListVpcEndpoints</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpoints</code>
-        /// operations, which returns results in the next page. 
+        /// If your initial <c>ListVpcEndpoints</c> operation returns a <c>nextToken</c>, you
+        /// can include the returned <c>nextToken</c> in subsequent <c>ListVpcEndpoints</c> operations,
+        /// which returns results in the next page. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -84,8 +84,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property VpcEndpointFilters. 
         /// <para>
         /// Filter the results according to the current status of the VPC endpoint. Possible statuses
-        /// are <code>CREATING</code>, <code>DELETING</code>, <code>UPDATING</code>, <code>ACTIVE</code>,
-        /// and <code>FAILED</code>.
+        /// are <c>CREATING</c>, <c>DELETING</c>, <c>UPDATING</c>, <c>ACTIVE</c>, and <c>FAILED</c>.
         /// </para>
         /// </summary>
         public VpcEndpointFilters VpcEndpointFilters

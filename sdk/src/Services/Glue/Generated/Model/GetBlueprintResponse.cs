@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Blueprint. 
         /// <para>
-        /// Returns a <code>Blueprint</code> object.
+        /// Returns a <c>Blueprint</c> object.
         /// </para>
         /// </summary>
         public Blueprint Blueprint

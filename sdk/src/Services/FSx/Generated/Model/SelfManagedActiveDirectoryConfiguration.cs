@@ -69,7 +69,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The fully qualified domain name of the self-managed AD directory, such as <code>corp.example.com</code>.
+        /// The fully qualified domain name of the self-managed AD directory, such as <c>corp.example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -114,10 +114,10 @@ namespace Amazon.FSx.Model
         /// <para>
         /// (Optional) The fully qualified distinguished name of the organizational unit within
         /// your self-managed AD directory. Amazon FSx only accepts OU as the direct parent of
-        /// the file system. An example is <code>OU=FSx,DC=yourdomain,DC=corp,DC=com</code>. To
-        /// learn more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none
-        /// is provided, the FSx file system is created in the default location of your self-managed
-        /// AD directory. 
+        /// the file system. An example is <c>OU=FSx,DC=yourdomain,DC=corp,DC=com</c>. To learn
+        /// more, see <a href="https://tools.ietf.org/html/rfc2253">RFC 2253</a>. If none is provided,
+        /// the FSx file system is created in the default location of your self-managed AD directory.
+        /// 
         /// </para>
         ///  <important> 
         /// <para>
@@ -164,7 +164,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The user name for the service account on your self-managed AD domain that Amazon FSx
         /// will use to join to your AD domain. This account must have the permission to join
-        /// computers to the domain in the organizational unit provided in <code>OrganizationalUnitDistinguishedName</code>,
+        /// computers to the domain in the organizational unit provided in <c>OrganizationalUnitDistinguishedName</c>,
         /// or in the default location of your AD domain.
         /// </para>
         /// </summary>

@@ -39,8 +39,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// A <code>Destinations</code> object that includes information about each publishing
-        /// destination returned.
+        /// A <c>Destinations</c> object that includes information about each publishing destination
+        /// returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,8 +61,8 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// A token to use for paginating results that are returned in the response. Set the value
         /// of this parameter to null for the first request to a list action. For subsequent calls,
-        /// use the <code>NextToken</code> value returned from the previous request to continue
-        /// listing results after the first page.
+        /// use the <c>NextToken</c> value returned from the previous request to continue listing
+        /// results after the first page.
         /// </para>
         /// </summary>
         public string NextToken

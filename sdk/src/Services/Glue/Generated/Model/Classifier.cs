@@ -31,15 +31,15 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Classifiers are triggered during a crawl task. A classifier checks whether a given
     /// file is in a format it can handle. If it is, the classifier creates a schema in the
-    /// form of a <code>StructType</code> object that matches that data format.
+    /// form of a <c>StructType</c> object that matches that data format.
     /// 
     ///  
     /// <para>
     /// You can use the standard classifiers that Glue provides, or you can write your own
     /// classifiers to best categorize your data sources and specify the appropriate schemas
-    /// to use for them. A classifier can be a <code>grok</code> classifier, an <code>XML</code>
-    /// classifier, a <code>JSON</code> classifier, or a custom <code>CSV</code> classifier,
-    /// as specified in one of the fields in the <code>Classifier</code> object.
+    /// to use for them. A classifier can be a <c>grok</c> classifier, an <c>XML</c> classifier,
+    /// a <c>JSON</c> classifier, or a custom <c>CSV</c> classifier, as specified in one of
+    /// the fields in the <c>Classifier</c> object.
     /// </para>
     /// </summary>
     public partial class Classifier
@@ -70,7 +70,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GrokClassifier. 
         /// <para>
-        /// A classifier that uses <code>grok</code>.
+        /// A classifier that uses <c>grok</c>.
         /// </para>
         /// </summary>
         public GrokClassifier GrokClassifier

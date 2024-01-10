@@ -103,11 +103,11 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SINGLE</code> – Assigns one availability zone per cluster.
+        ///  <c>SINGLE</c> – Assigns one availability zone per cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MULTI</code> – Assigns all the availability zones per cluster.
+        ///  <c>MULTI</c> – Assigns all the availability zones per cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -216,7 +216,7 @@ namespace Amazon.Finspace.Model
         /// plant and stores it in memory until the end of day, after which it writes all of its
         /// data to a disk and reloads the HDB. This cluster type requires local storage for temporary
         /// storage of data during the savedown process. If you specify this field in your request,
-        /// you must provide the <code>savedownStorageConfiguration</code> parameter.
+        /// you must provide the <c>savedownStorageConfiguration</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -230,7 +230,7 @@ namespace Amazon.Finspace.Model
         /// by granting greater access to system commands and enabling a fast reload of custom
         /// code. This cluster type can optionally mount databases including cache and savedown
         /// storage. For this cluster type, the node count is fixed at 1. It does not support
-        /// autoscaling and supports only <code>SINGLE</code> AZ mode.
+        /// autoscaling and supports only <c>SINGLE</c> AZ mode.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -373,7 +373,7 @@ namespace Amazon.Finspace.Model
         /// <para>
         /// Specifies a Q program that will be run at launch of a cluster. It is a relative path
         /// within <i>.zip</i> file that contains the custom code, which will be loaded on the
-        /// cluster. It must include the file name itself. For example, <code>somedir/init.q</code>.
+        /// cluster. It must include the file name itself. For example, <c>somedir/init.q</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -432,8 +432,8 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property SavedownStorageConfiguration. 
         /// <para>
         /// The size and type of the temporary storage that is used to hold data during the savedown
-        /// process. This parameter is required when you choose <code>clusterType</code> as RDB.
-        /// All the data written to this storage space is lost when the cluster node is restarted.
+        /// process. This parameter is required when you choose <c>clusterType</c> as RDB. All
+        /// the data written to this storage space is lost when the cluster node is restarted.
         /// </para>
         /// </summary>
         public KxSavedownStorageConfiguration SavedownStorageConfiguration

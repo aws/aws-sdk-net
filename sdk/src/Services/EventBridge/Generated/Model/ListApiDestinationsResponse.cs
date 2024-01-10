@@ -39,8 +39,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ApiDestinations. 
         /// <para>
-        /// An array of <code>ApiDestination</code> objects that include information about an
-        /// API destination.
+        /// An array of <c>ApiDestination</c> objects that include information about an API destination.
         /// </para>
         /// </summary>
         public List<ApiDestination> ApiDestinations

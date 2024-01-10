@@ -30,12 +30,12 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Contains information about the output location for the compiled model and the target
-    /// device that the model runs on. <code>TargetDevice</code> and <code>TargetPlatform</code>
-    /// are mutually exclusive, so you need to choose one between the two to specify your
-    /// target device or platform. If you cannot find your device you want to use from the
-    /// <code>TargetDevice</code> list, use <code>TargetPlatform</code> to describe the platform
-    /// of your edge device and <code>CompilerOptions</code> if there are specific settings
-    /// that are required or recommended to use for particular TargetPlatform.
+    /// device that the model runs on. <c>TargetDevice</c> and <c>TargetPlatform</c> are mutually
+    /// exclusive, so you need to choose one between the two to specify your target device
+    /// or platform. If you cannot find your device you want to use from the <c>TargetDevice</c>
+    /// list, use <c>TargetPlatform</c> to describe the platform of your edge device and <c>CompilerOptions</c>
+    /// if there are specific settings that are required or recommended to use for particular
+    /// TargetPlatform.
     /// </summary>
     public partial class OutputConfig
     {
@@ -49,98 +49,96 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CompilerOptions. 
         /// <para>
         /// Specifies additional parameters for compiler options in JSON format. The compiler
-        /// options are <code>TargetPlatform</code> specific. It is required for NVIDIA accelerators
+        /// options are <c>TargetPlatform</c> specific. It is required for NVIDIA accelerators
         /// and highly recommended for CPU compilations. For any other cases, it is optional to
-        /// specify <code>CompilerOptions.</code> 
+        /// specify <c>CompilerOptions.</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DTYPE</code>: Specifies the data type for the input. When compiling for <code>ml_*</code>
-        /// (except for <code>ml_inf</code>) instances using PyTorch framework, provide the data
-        /// type (dtype) of the model's input. <code>"float32"</code> is used if <code>"DTYPE"</code>
-        /// is not specified. Options for data type are:
+        ///  <c>DTYPE</c>: Specifies the data type for the input. When compiling for <c>ml_*</c>
+        /// (except for <c>ml_inf</c>) instances using PyTorch framework, provide the data type
+        /// (dtype) of the model's input. <c>"float32"</c> is used if <c>"DTYPE"</c> is not specified.
+        /// Options for data type are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// float32: Use either <code>"float"</code> or <code>"float32"</code>.
+        /// float32: Use either <c>"float"</c> or <c>"float32"</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// int64: Use either <code>"int64"</code> or <code>"long"</code>.
+        /// int64: Use either <c>"int64"</c> or <c>"long"</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  For example, <code>{"dtype" : "float32"}</code>.
+        ///  For example, <c>{"dtype" : "float32"}</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CPU</code>: Compilation for CPU supports the following compiler options.
+        ///  <c>CPU</c>: Compilation for CPU supports the following compiler options.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>mcpu</code>: CPU micro-architecture. For example, <code>{'mcpu': 'skylake-avx512'}</code>
+        ///  <c>mcpu</c>: CPU micro-architecture. For example, <c>{'mcpu': 'skylake-avx512'}</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mattr</code>: CPU flags. For example, <code>{'mattr': ['+neon', '+vfpv4']}</code>
-        /// 
+        ///  <c>mattr</c>: CPU flags. For example, <c>{'mattr': ['+neon', '+vfpv4']}</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>ARM</code>: Details of ARM CPU compilations.
+        ///  <c>ARM</c>: Details of ARM CPU compilations.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEON</code>: NEON is an implementation of the Advanced SIMD extension used
-        /// in ARMv7 processors.
+        ///  <c>NEON</c>: NEON is an implementation of the Advanced SIMD extension used in ARMv7
+        /// processors.
         /// </para>
         ///  
         /// <para>
-        /// For example, add <code>{'mattr': ['+neon']}</code> to the compiler options if compiling
+        /// For example, add <c>{'mattr': ['+neon']}</c> to the compiler options if compiling
         /// for ARM 32-bit platform with the NEON support.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>NVIDIA</code>: Compilation for NVIDIA GPU supports the following compiler options.
+        ///  <c>NVIDIA</c>: Compilation for NVIDIA GPU supports the following compiler options.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gpu_code</code>: Specifies the targeted architecture.
+        ///  <c>gpu_code</c>: Specifies the targeted architecture.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>trt-ver</code>: Specifies the TensorRT versions in x.y.z. format.
+        ///  <c>trt-ver</c>: Specifies the TensorRT versions in x.y.z. format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cuda-ver</code>: Specifies the CUDA version in x.y format.
+        ///  <c>cuda-ver</c>: Specifies the CUDA version in x.y format.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, <code>{'gpu-code': 'sm_72', 'trt-ver': '6.0.1', 'cuda-ver': '10.1'}</code>
+        /// For example, <c>{'gpu-code': 'sm_72', 'trt-ver': '6.0.1', 'cuda-ver': '10.1'}</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ANDROID</code>: Compilation for the Android OS supports the following compiler
-        /// options:
+        ///  <c>ANDROID</c>: Compilation for the Android OS supports the following compiler options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ANDROID_PLATFORM</code>: Specifies the Android API levels. Available levels
-        /// range from 21 to 29. For example, <code>{'ANDROID_PLATFORM': 28}</code>.
+        ///  <c>ANDROID_PLATFORM</c>: Specifies the Android API levels. Available levels range
+        /// from 21 to 29. For example, <c>{'ANDROID_PLATFORM': 28}</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mattr</code>: Add <code>{'mattr': ['+neon']}</code> to compiler options if
-        /// compiling for ARM 32-bit platform with NEON support.
+        ///  <c>mattr</c>: Add <c>{'mattr': ['+neon']}</c> to compiler options if compiling for
+        /// ARM 32-bit platform with NEON support.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>INFERENTIA</code>: Compilation for target ml_inf1 uses compiler options passed
-        /// in as a JSON string. For example, <code>"CompilerOptions": "\"--verbose 1 --num-neuroncores
-        /// 2 -O2\""</code>. 
+        ///  <c>INFERENTIA</c>: Compilation for target ml_inf1 uses compiler options passed in
+        /// as a JSON string. For example, <c>"CompilerOptions": "\"--verbose 1 --num-neuroncores
+        /// 2 -O2\""</c>. 
         /// </para>
         ///  
         /// <para>
@@ -149,40 +147,38 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CoreML</code>: Compilation for the CoreML <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
-        /// <code>TargetDevice</code> supports the following compiler options:
+        ///  <c>CoreML</c>: Compilation for the CoreML <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+        /// <c>TargetDevice</c> supports the following compiler options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>class_labels</code>: Specifies the classification labels file name inside input
-        /// tar.gz file. For example, <code>{"class_labels": "imagenet_labels_1000.txt"}</code>.
-        /// Labels inside the txt file should be separated by newlines.
+        ///  <c>class_labels</c>: Specifies the classification labels file name inside input tar.gz
+        /// file. For example, <c>{"class_labels": "imagenet_labels_1000.txt"}</c>. Labels inside
+        /// the txt file should be separated by newlines.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-        /// following compiler options:
+        ///  <c>EIA</c>: Compilation for the Elastic Inference Accelerator supports the following
+        /// compiler options:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>precision_mode</code>: Specifies the precision of compiled artifacts. Supported
-        /// values are <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.
+        ///  <c>precision_mode</c>: Specifies the precision of compiled artifacts. Supported values
+        /// are <c>"FP16"</c> and <c>"FP32"</c>. Default is <c>"FP32"</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>signature_def_key</code>: Specifies the signature to use for models in SavedModel
+        ///  <c>signature_def_key</c>: Specifies the signature to use for models in SavedModel
         /// format. Defaults is TensorFlow's default signature def key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>output_names</code>: Specifies a list of output tensor names for models in
-        /// FrozenGraph format. Set at most one API field, either: <code>signature_def_key</code>
-        /// or <code>output_names</code>.
+        ///  <c>output_names</c>: Specifies a list of output tensor names for models in FrozenGraph
+        /// format. Set at most one API field, either: <c>signature_def_key</c> or <c>output_names</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example: <code>{"precision_mode": "FP32", "output_names": ["output:0"]}</code>
-        /// 
+        /// For example: <c>{"precision_mode": "FP32", "output_names": ["output:0"]}</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -215,21 +211,20 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
-        /// 
+        /// Alias name ARN: <c>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -250,7 +245,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3OutputLocation. 
         /// <para>
         /// Identifies the S3 bucket where you want Amazon SageMaker to store the model artifacts.
-        /// For example, <code>s3://bucket-name/key-name-prefix</code>.
+        /// For example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
@@ -272,12 +267,12 @@ namespace Amazon.SageMaker.Model
         /// Identifies the target device or the machine learning instance that you want to run
         /// your model on after the compilation has completed. Alternatively, you can specify
         /// OS, architecture, and accelerator using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
-        /// fields. It can be used instead of <code>TargetPlatform</code>.
+        /// fields. It can be used instead of <c>TargetPlatform</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently <code>ml_trn1</code> is available only in US East (N. Virginia) Region,
-        /// and <code>ml_inf2</code> is available only in US East (Ohio) Region.
+        /// Currently <c>ml_trn1</c> is available only in US East (N. Virginia) Region, and <c>ml_inf2</c>
+        /// is available only in US East (Ohio) Region.
         /// </para>
         ///  </note>
         /// </summary>
@@ -297,11 +292,11 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TargetPlatform. 
         /// <para>
         /// Contains information about a target platform that you want your model to run on, such
-        /// as OS, architecture, and accelerators. It is an alternative of <code>TargetDevice</code>.
+        /// as OS, architecture, and accelerators. It is an alternative of <c>TargetDevice</c>.
         /// </para>
         ///  
         /// <para>
-        /// The following examples show how to configure the <code>TargetPlatform</code> and <code>CompilerOptions</code>
+        /// The following examples show how to configure the <c>TargetPlatform</c> and <c>CompilerOptions</c>
         /// JSON strings for popular target platforms: 
         /// </para>
         ///  <ul> <li> 
@@ -310,11 +305,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM_EABIHF"},</code> 
+        ///  <c>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM_EABIHF"},</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "CompilerOptions": {'mattr': ['+neon']}</code> 
+        ///  <c> "CompilerOptions": {'mattr': ['+neon']}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -322,12 +317,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "NVIDIA"},</code>
+        ///  <c>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "NVIDIA"},</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "CompilerOptions": {'gpu-code': 'sm_62', 'trt-ver': '6.0.1', 'cuda-ver': '10.0'}</code>
+        ///  <c> "CompilerOptions": {'gpu-code': 'sm_62', 'trt-ver': '6.0.1', 'cuda-ver': '10.0'}</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -336,12 +331,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"TargetPlatform": {"Os": "LINUX", "Arch": "X86_64", "Accelerator": "NVIDIA"},</code>
+        ///  <c>"TargetPlatform": {"Os": "LINUX", "Arch": "X86_64", "Accelerator": "NVIDIA"},</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "CompilerOptions": {'mcpu': 'skylake-avx512'}</code> 
+        ///  <c> "CompilerOptions": {'mcpu': 'skylake-avx512'}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -349,7 +344,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "MALI"}</code>
+        ///  <c>"TargetPlatform": {"Os": "LINUX", "Arch": "ARM64", "Accelerator": "MALI"}</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -358,11 +353,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</code> 
+        ///  <c>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM_EABI"},</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</code> 
+        ///  <c> "CompilerOptions": {'ANDROID_PLATFORM': 25, 'mattr': ['+neon']}</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -370,11 +365,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</code> 
+        ///  <c>"TargetPlatform": {"Os": "ANDROID", "Arch": "ARM64"},</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code> "CompilerOptions": {'ANDROID_PLATFORM': 29}</code> 
+        ///  <c> "CompilerOptions": {'ANDROID_PLATFORM': 29}</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

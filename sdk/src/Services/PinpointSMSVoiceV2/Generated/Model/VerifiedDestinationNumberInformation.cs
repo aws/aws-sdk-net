@@ -85,11 +85,11 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code>: The phone number hasn't been verified yet.
+        ///  <c>PENDING</c>: The phone number hasn't been verified yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VERIFIED</code>: The phone number is verified and can receive messages.
+        ///  <c>VERIFIED</c>: The phone number is verified and can receive messages.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -31,8 +31,8 @@ namespace Amazon.SSMIncidents.Model
     /// <summary>
     /// A conditional statement with which to compare a value, after a timestamp, before a
     /// timestamp, or equal to a string or integer. If multiple conditions are specified,
-    /// the conditionals become an <code>AND</code>ed statement. If multiple values are specified
-    /// for a conditional, the values are <code>OR</code>d.
+    /// the conditionals become an <c>AND</c>ed statement. If multiple values are specified
+    /// for a conditional, the values are <c>OR</c>d.
     /// </summary>
     public partial class Condition
     {

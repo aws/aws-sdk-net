@@ -42,9 +42,8 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property DuplicateRegistrationAction. 
         /// <para>
         /// The action to take when a fraudster is identified as a duplicate. The default action
-        /// is <code>SKIP</code>, which skips registering the duplicate fraudster. Setting the
-        /// value to <code>REGISTER_AS_NEW</code> always registers a new fraudster into the specified
-        /// domain.
+        /// is <c>SKIP</c>, which skips registering the duplicate fraudster. Setting the value
+        /// to <c>REGISTER_AS_NEW</c> always registers a new fraudster into the specified domain.
         /// </para>
         /// </summary>
         public DuplicateRegistrationAction DuplicateRegistrationAction

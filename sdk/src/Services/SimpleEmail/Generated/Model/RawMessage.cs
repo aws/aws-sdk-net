@@ -64,9 +64,9 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  
         /// <para>
-        /// If you are using <code>SendRawEmail</code> with sending authorization, you can include
-        /// X-headers in the raw message to specify the "Source," "From," and "Return-Path" addresses.
-        /// For more information, see the documentation for <code>SendRawEmail</code>. 
+        /// If you are using <c>SendRawEmail</c> with sending authorization, you can include X-headers
+        /// in the raw message to specify the "Source," "From," and "Return-Path" addresses. For
+        /// more information, see the documentation for <c>SendRawEmail</c>. 
         /// </para>
         ///  <important> 
         /// <para>

@@ -488,7 +488,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <c>1150-65535</c> 
         /// </para>
         /// </summary>
         public int Port
@@ -546,16 +546,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - Automated backups for current instances.
+        ///  <c>active</c> - Automated backups for current instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>retained</code> - Automated backups for deleted instances.
+        ///  <c>retained</c> - Automated backups for deleted instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>creating</code> - Automated backups that are waiting for the first automated
-        /// snapshot to be available.
+        ///  <c>creating</c> - Automated backups that are waiting for the first automated snapshot
+        /// to be available.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -628,8 +628,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// The time zone of the automated backup. In most cases, the <code>Timezone</code> element
-        /// is empty. <code>Timezone</code> content appears only for Microsoft SQL Server DB instances
+        /// The time zone of the automated backup. In most cases, the <c>Timezone</c> element
+        /// is empty. <c>Timezone</c> content appears only for Microsoft SQL Server DB instances
         /// that were created with a time zone specified.
         /// </para>
         /// </summary>

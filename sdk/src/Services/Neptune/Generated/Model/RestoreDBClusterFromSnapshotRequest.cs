@@ -88,8 +88,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property CopyTagsToSnapshot. 
         /// <para>
-        ///  <i>If set to <code>true</code>, tags are copied to any snapshot of the restored DB
-        /// cluster that is created.</i> 
+        ///  <i>If set to <c>true</c>, tags are copied to any snapshot of the restored DB cluster
+        /// that is created.</i> 
         /// </para>
         /// </summary>
         public bool CopyTagsToSnapshot
@@ -146,7 +146,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code> 
+        /// Example: <c>my-snapshot-id</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -200,7 +200,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <c>mySubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -261,7 +261,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool EnableIAMDatabaseAuthentication
@@ -336,19 +336,19 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for the <code>KmsKeyId</code> parameter, then the following
+        /// If you do not specify a value for the <c>KmsKeyId</c> parameter, then the following
         /// will occur:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is encrypted,
+        /// If the DB snapshot or DB cluster snapshot in <c>SnapshotIdentifier</c> is encrypted,
         /// then the restored DB cluster is encrypted using the KMS key that was used to encrypt
         /// the DB snapshot or DB cluster snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the DB snapshot or DB cluster snapshot in <code>SnapshotIdentifier</code> is not
-        /// encrypted, then the restored DB cluster is not encrypted.
+        /// If the DB snapshot or DB cluster snapshot in <c>SnapshotIdentifier</c> is not encrypted,
+        /// then the restored DB cluster is not encrypted.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -389,7 +389,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Value must be <code>1150-65535</code> 
+        /// Constraints: Value must be <c>1150-65535</c> 
         /// </para>
         ///  
         /// <para>
@@ -471,11 +471,11 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>standard</code>, <code>iopt1</code> 
+        /// Valid values: <c>standard</c>, <c>iopt1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>standard</code> 
+        /// Default: <c>standard</c> 
         /// </para>
         /// </summary>
         public string StorageType

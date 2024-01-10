@@ -44,7 +44,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp for when the geofence was stored in a geofence collection in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> 
+        /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -87,7 +87,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=3)]
@@ -129,23 +129,23 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> — The geofence has been indexed by the system. 
+        ///  <c>ACTIVE</c> — The geofence has been indexed by the system. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> — The geofence is being processed by the system.
+        ///  <c>PENDING</c> — The geofence is being processed by the system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> — The geofence failed to be indexed by the system.
+        ///  <c>FAILED</c> — The geofence failed to be indexed by the system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> — The geofence has been deleted from the system index.
+        ///  <c>DELETED</c> — The geofence has been deleted from the system index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> — The geofence is being deleted from the system index.
+        ///  <c>DELETING</c> — The geofence is being deleted from the system index.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -166,7 +166,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property UpdateTime. 
         /// <para>
         /// The timestamp for when the geofence was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> 
+        /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

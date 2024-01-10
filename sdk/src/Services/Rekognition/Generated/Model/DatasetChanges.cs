@@ -31,8 +31,8 @@ namespace Amazon.Rekognition.Model
     /// <summary>
     /// Describes updates or additions to a dataset. A Single update or addition is an entry
     /// (JSON Line) that provides information about a single image. To update an existing
-    /// entry, you match the <code>source-ref</code> field of the update entry with the <code>source-ref</code>
-    /// filed of the entry that you want to update. If the <code>source-ref</code> field doesn't
+    /// entry, you match the <c>source-ref</c> field of the update entry with the <c>source-ref</c>
+    /// filed of the entry that you want to update. If the <c>source-ref</c> field doesn't
     /// match an existing entry, the entry is added to dataset as a new entry.
     /// </summary>
     public partial class DatasetChanges
@@ -44,8 +44,8 @@ namespace Amazon.Rekognition.Model
         /// <para>
         /// A Base64-encoded binary data object containing one or JSON lines that either update
         /// the dataset or are additions to the dataset. You change a dataset by calling <a>UpdateDatasetEntries</a>.
-        /// If you are using an AWS SDK to call <code>UpdateDatasetEntries</code>, you don't need
-        /// to encode <code>Changes</code> as the SDK encodes the data for you. 
+        /// If you are using an AWS SDK to call <c>UpdateDatasetEntries</c>, you don't need to
+        /// encode <c>Changes</c> as the SDK encodes the data for you. 
         /// </para>
         ///  
         /// <para>

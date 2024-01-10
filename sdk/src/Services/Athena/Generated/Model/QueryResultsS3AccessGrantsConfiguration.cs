@@ -40,7 +40,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication type used for Amazon S3 access grants. Currently, only <code>DIRECTORY_IDENTITY</code>
+        /// The authentication type used for Amazon S3 access grants. Currently, only <c>DIRECTORY_IDENTITY</c>
         /// is supported.
         /// </para>
         /// </summary>

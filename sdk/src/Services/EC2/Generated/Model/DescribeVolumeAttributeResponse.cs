@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AutoEnableIO. 
         /// <para>
-        /// The state of <code>autoEnableIO</code> attribute.
+        /// The state of <c>autoEnableIO</c> attribute.
         /// </para>
         /// </summary>
         public bool AutoEnableIO

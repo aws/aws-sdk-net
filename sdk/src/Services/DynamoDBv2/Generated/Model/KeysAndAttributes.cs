@@ -50,8 +50,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AttributesToGet. 
         /// <para>
-        /// This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
+        /// This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.html">Legacy
         /// Conditional Parameters</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -71,8 +71,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsistentRead. 
         /// <para>
-        /// The consistency of a read operation. If set to <code>true</code>, then a strongly
-        /// consistent read is used; otherwise, an eventually consistent read is used.
+        /// The consistency of a read operation. If set to <c>true</c>, then a strongly consistent
+        /// read is used; otherwise, an eventually consistent read is used.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -91,7 +91,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
         /// One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:
+        /// are some use cases for using <c>ExpressionAttributeNames</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -113,18 +113,18 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Percentile</code> 
+        ///  <c>Percentile</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
-        /// could specify the following for <code>ExpressionAttributeNames</code>:
+        /// could specify the following for <c>ExpressionAttributeNames</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>{"#P":"Percentile"}</code> 
+        ///  <c>{"#P":"Percentile"}</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -132,7 +132,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>#P = :val</code> 
+        ///  <c>#P = :val</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -182,7 +182,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// A string that identifies one or more attributes to retrieve from the table. These
         /// attributes can include scalars, sets, or elements of a JSON document. The attributes
-        /// in the <code>ProjectionExpression</code> must be separated by commas.
+        /// in the <c>ProjectionExpression</c> must be separated by commas.
         /// </para>
         ///  
         /// <para>

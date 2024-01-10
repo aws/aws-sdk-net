@@ -30,18 +30,18 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDeadLetterSourceQueues operation.
-    /// Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute
-    /// configured with a dead-letter queue.
+    /// Returns a list of your queues that have the <c>RedrivePolicy</c> queue attribute configured
+    /// with a dead-letter queue.
     /// 
     ///  
     /// <para>
-    ///  The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter
-    /// <code>MaxResults</code> in the request to specify the maximum number of results to
-    /// be returned in the response. If you do not set <code>MaxResults</code>, the response
-    /// includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there
-    /// are additional results to display, the response includes a value for <code>NextToken</code>.
-    /// Use <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code>
-    /// to receive the next page of results. 
+    ///  The <c>ListDeadLetterSourceQueues</c> methods supports pagination. Set parameter
+    /// <c>MaxResults</c> in the request to specify the maximum number of results to be returned
+    /// in the response. If you do not set <c>MaxResults</c>, the response includes a maximum
+    /// of 1,000 results. If you set <c>MaxResults</c> and there are additional results to
+    /// display, the response includes a value for <c>NextToken</c>. Use <c>NextToken</c>
+    /// as a parameter in your next request to <c>ListDeadLetterSourceQueues</c> to receive
+    /// the next page of results. 
     /// </para>
     ///  
     /// <para>
@@ -59,8 +59,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Maximum number of results to include in the response. Value range is 1 to 1000. You
-        /// must set <code>MaxResults</code> to receive a value for <code>NextToken</code> in
-        /// the response.
+        /// must set <c>MaxResults</c> to receive a value for <c>NextToken</c> in the response.
         /// </para>
         /// </summary>
         public int MaxResults

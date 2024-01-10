@@ -292,35 +292,35 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Aborting</code> 
+        ///  <c>Aborting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Launching</code> 
+        ///  <c>Launching</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LinkingFrom</code> 
+        ///  <c>LinkingFrom</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LinkingTo</code> 
+        ///  <c>LinkingTo</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Ready</code> 
+        ///  <c>Ready</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Terminated</code> 
+        ///  <c>Terminated</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Terminating</code> 
+        ///  <c>Terminating</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code> 
+        ///  <c>Updating</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

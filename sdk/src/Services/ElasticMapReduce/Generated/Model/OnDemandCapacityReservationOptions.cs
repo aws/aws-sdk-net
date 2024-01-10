@@ -45,13 +45,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>open</code> - The instance can run in any open Capacity Reservation that has
-        /// matching attributes (instance type, platform, Availability Zone).
+        ///  <c>open</c> - The instance can run in any open Capacity Reservation that has matching
+        /// attributes (instance type, platform, Availability Zone).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code> - The instance avoids running in a Capacity Reservation even if
-        /// one is available. The instance runs as an On-Demand Instance.
+        ///  <c>none</c> - The instance avoids running in a Capacity Reservation even if one is
+        /// available. The instance runs as an On-Demand Instance.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -93,12 +93,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>use-capacity-reservations-first</code>, the fleet uses unused
-        /// Capacity Reservations to fulfill On-Demand capacity up to the target On-Demand capacity.
-        /// If multiple instance pools have unused Capacity Reservations, the On-Demand allocation
-        /// strategy (<code>lowest-price</code>) is applied. If the number of unused Capacity
-        /// Reservations is less than the On-Demand target capacity, the remaining On-Demand target
-        /// capacity is launched according to the On-Demand allocation strategy (<code>lowest-price</code>).
+        /// If you specify <c>use-capacity-reservations-first</c>, the fleet uses unused Capacity
+        /// Reservations to fulfill On-Demand capacity up to the target On-Demand capacity. If
+        /// multiple instance pools have unused Capacity Reservations, the On-Demand allocation
+        /// strategy (<c>lowest-price</c>) is applied. If the number of unused Capacity Reservations
+        /// is less than the On-Demand target capacity, the remaining On-Demand target capacity
+        /// is launched according to the On-Demand allocation strategy (<c>lowest-price</c>).
         /// </para>
         ///  
         /// <para>

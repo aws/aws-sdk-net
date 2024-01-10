@@ -38,7 +38,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code>
+        /// The errors encountered when trying to update the requested partitions. A list of <c>BatchUpdatePartitionFailureEntry</c>
         /// objects.
         /// </para>
         /// </summary>

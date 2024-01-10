@@ -84,7 +84,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ROLLBACK</code> 
+        /// Default: <c>ROLLBACK</c> 
         /// </para>
         /// </summary>
         public DeploymentFailureHandlingPolicy FailureHandlingPolicy

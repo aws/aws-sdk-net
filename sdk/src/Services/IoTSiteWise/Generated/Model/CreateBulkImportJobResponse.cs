@@ -82,34 +82,33 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – IoT SiteWise is waiting for the current bulk import job to
-        /// finish.
+        ///  <c>PENDING</c> – IoT SiteWise is waiting for the current bulk import job to finish.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELLED</code> – The bulk import job has been canceled.
+        ///  <c>CANCELLED</c> – The bulk import job has been canceled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code> – IoT SiteWise is processing your request to import your data
+        ///  <c>RUNNING</c> – IoT SiteWise is processing your request to import your data from
+        /// Amazon S3.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>COMPLETED</c> – IoT SiteWise successfully completed your request to import data
         /// from Amazon S3.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> – IoT SiteWise successfully completed your request to import
-        /// data from Amazon S3.
+        ///  <c>FAILED</c> – IoT SiteWise couldn't process your request to import data from Amazon
+        /// S3. You can use logs saved in the specified error report location in Amazon S3 to
+        /// troubleshoot issues.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – IoT SiteWise couldn't process your request to import data from
-        /// Amazon S3. You can use logs saved in the specified error report location in Amazon
-        /// S3 to troubleshoot issues.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>COMPLETED_WITH_FAILURES</code> – IoT SiteWise completed your request to import
-        /// data from Amazon S3 with errors. You can use logs saved in the specified error report
-        /// location in Amazon S3 to troubleshoot issues.
+        ///  <c>COMPLETED_WITH_FAILURES</c> – IoT SiteWise completed your request to import data
+        /// from Amazon S3 with errors. You can use logs saved in the specified error report location
+        /// in Amazon S3 to troubleshoot issues.
         /// </para>
         ///  </li> </ul>
         /// </summary>

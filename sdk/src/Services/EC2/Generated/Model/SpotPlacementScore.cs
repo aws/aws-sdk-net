@@ -30,8 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// The Spot placement score for this Region or Availability Zone. The score is calculated
-    /// based on the assumption that the <code>capacity-optimized</code> allocation strategy
-    /// is used and that all of the Availability Zones in the Region can be used.
+    /// based on the assumption that the <c>capacity-optimized</c> allocation strategy is
+    /// used and that all of the Availability Zones in the Region can be used.
     /// </summary>
     public partial class SpotPlacementScore
     {
@@ -78,10 +78,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Score. 
         /// <para>
-        /// The placement score, on a scale from <code>1</code> to <code>10</code>. A score of
-        /// <code>10</code> indicates that your Spot request is highly likely to succeed in this
-        /// Region or Availability Zone. A score of <code>1</code> indicates that your Spot request
-        /// is not likely to succeed. 
+        /// The placement score, on a scale from <c>1</c> to <c>10</c>. A score of <c>10</c> indicates
+        /// that your Spot request is highly likely to succeed in this Region or Availability
+        /// Zone. A score of <c>1</c> indicates that your Spot request is not likely to succeed.
+        /// 
         /// </para>
         /// </summary>
         public int Score

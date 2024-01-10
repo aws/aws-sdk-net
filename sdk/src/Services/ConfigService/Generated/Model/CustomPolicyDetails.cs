@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property EnableDebugLogDelivery. 
         /// <para>
         /// The boolean expression for enabling debug logging for your Config Custom Policy rule.
-        /// The default value is <code>false</code>.
+        /// The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool EnableDebugLogDelivery

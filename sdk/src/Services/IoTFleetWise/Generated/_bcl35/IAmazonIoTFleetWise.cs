@@ -1816,8 +1816,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1875,8 +1875,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1937,8 +1937,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1996,8 +1996,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2058,8 +2058,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2120,8 +2120,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2182,8 +2182,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2247,8 +2247,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2306,8 +2306,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2375,8 +2375,8 @@ namespace Amazon.IoTFleetWise
         /// </para>
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2489,8 +2489,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2548,8 +2548,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  <note> 
         /// <para>
-        /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-        /// the request to return more results.
+        /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+        /// request to return more results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2998,8 +2998,8 @@ namespace Amazon.IoTFleetWise
         /// 
         ///  
         /// <para>
-        /// A decoder manifest can only be updated when the status is <code>DRAFT</code>. Only
-        /// <code>ACTIVE</code> decoder manifests can be associated with vehicles.
+        /// A decoder manifest can only be updated when the status is <c>DRAFT</c>. Only <c>ACTIVE</c>
+        /// decoder manifests can be associated with vehicles.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDecoderManifest service method.</param>

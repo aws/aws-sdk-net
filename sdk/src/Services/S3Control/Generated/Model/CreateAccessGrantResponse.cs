@@ -105,9 +105,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property AccessGrantsLocationId. 
         /// <para>
         /// The ID of the registered location to which you are granting access. S3 Access Grants
-        /// assigns this ID when you register the location. S3 Access Grants assigns the ID <code>default</code>
-        /// to the default location <code>s3://</code> and assigns an auto-generated ID to other
-        /// locations that you register. 
+        /// assigns this ID when you register the location. S3 Access Grants assigns the ID <c>default</c>
+        /// to the default location <c>s3://</c> and assigns an auto-generated ID to other locations
+        /// that you register. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -187,7 +187,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property GrantScope. 
         /// <para>
         /// The S3 path of the data to which you are granting access. It is the result of appending
-        /// the <code>Subprefix</code> to the location scope. 
+        /// the <c>Subprefix</c> to the location scope. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]
@@ -211,15 +211,15 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READ</code> – Grant read-only access to the S3 data.
+        ///  <c>READ</c> – Grant read-only access to the S3 data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WRITE</code> – Grant write-only access to the S3 data.
+        ///  <c>WRITE</c> – Grant write-only access to the S3 data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>READWRITE</code> – Grant both read and write access to the S3 data.
+        ///  <c>READWRITE</c> – Grant both read and write access to the S3 data.
         /// </para>
         ///  </li> </ul>
         /// </summary>

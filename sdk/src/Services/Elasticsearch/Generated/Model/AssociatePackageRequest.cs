@@ -59,7 +59,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// Internal ID of the package that you want to associate with a domain. Use <code>DescribePackages</code>
+        /// Internal ID of the package that you want to associate with a domain. Use <c>DescribePackages</c>
         /// to find this value.
         /// </para>
         /// </summary>

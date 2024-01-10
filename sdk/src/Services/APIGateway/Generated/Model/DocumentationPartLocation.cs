@@ -42,13 +42,13 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Method. 
         /// <para>
-        /// The HTTP verb of a method. It is a valid field for the API entity types of <code>METHOD</code>,
-        /// <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-        /// <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
-        /// <code>RESPONSE_BODY</code>. The default value is <code>*</code> for any method. When
-        /// an applicable child entity inherits the content of an entity of the same type with
-        /// more general specifications of the other <code>location</code> attributes, the child
-        /// entity's <code>method</code> attribute must match that of the parent entity exactly.
+        /// The HTTP verb of a method. It is a valid field for the API entity types of <c>METHOD</c>,
+        /// <c>PATH_PARAMETER</c>, <c>QUERY_PARAMETER</c>, <c>REQUEST_HEADER</c>, <c>REQUEST_BODY</c>,
+        /// <c>RESPONSE</c>, <c>RESPONSE_HEADER</c>, and <c>RESPONSE_BODY</c>. The default value
+        /// is <c>*</c> for any method. When an applicable child entity inherits the content of
+        /// an entity of the same type with more general specifications of the other <c>location</c>
+        /// attributes, the child entity's <c>method</c> attribute must match that of the parent
+        /// entity exactly.
         /// </para>
         /// </summary>
         public string Method
@@ -67,9 +67,9 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the targeted API entity. It is a valid and required field for the API
-        /// entity types of <code>AUTHORIZER</code>, <code>MODEL</code>, <code>PATH_PARAMETER</code>,
-        /// <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>, <code>REQUEST_BODY</code>
-        /// and <code>RESPONSE_HEADER</code>. It is an invalid field for any other entity type.
+        /// entity types of <c>AUTHORIZER</c>, <c>MODEL</c>, <c>PATH_PARAMETER</c>, <c>QUERY_PARAMETER</c>,
+        /// <c>REQUEST_HEADER</c>, <c>REQUEST_BODY</c> and <c>RESPONSE_HEADER</c>. It is an invalid
+        /// field for any other entity type.
         /// </para>
         /// </summary>
         public string Name
@@ -87,14 +87,13 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Path. 
         /// <para>
-        /// The URL path of the target. It is a valid field for the API entity types of <code>RESOURCE</code>,
-        /// <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-        /// <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
-        /// <code>RESPONSE_BODY</code>. The default value is <code>/</code> for the root resource.
-        /// When an applicable child entity inherits the content of another entity of the same
-        /// type with more general specifications of the other <code>location</code> attributes,
-        /// the child entity's <code>path</code> attribute must match that of the parent entity
-        /// as a prefix.
+        /// The URL path of the target. It is a valid field for the API entity types of <c>RESOURCE</c>,
+        /// <c>METHOD</c>, <c>PATH_PARAMETER</c>, <c>QUERY_PARAMETER</c>, <c>REQUEST_HEADER</c>,
+        /// <c>REQUEST_BODY</c>, <c>RESPONSE</c>, <c>RESPONSE_HEADER</c>, and <c>RESPONSE_BODY</c>.
+        /// The default value is <c>/</c> for the root resource. When an applicable child entity
+        /// inherits the content of another entity of the same type with more general specifications
+        /// of the other <c>location</c> attributes, the child entity's <c>path</c> attribute
+        /// must match that of the parent entity as a prefix.
         /// </para>
         /// </summary>
         public string Path
@@ -113,11 +112,11 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property StatusCode. 
         /// <para>
         /// The HTTP status code of a response. It is a valid field for the API entity types of
-        /// <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and <code>RESPONSE_BODY</code>.
-        /// The default value is <code>*</code> for any status code. When an applicable child
-        /// entity inherits the content of an entity of the same type with more general specifications
-        /// of the other <code>location</code> attributes, the child entity's <code>statusCode</code>
-        /// attribute must match that of the parent entity exactly.
+        /// <c>RESPONSE</c>, <c>RESPONSE_HEADER</c>, and <c>RESPONSE_BODY</c>. The default value
+        /// is <c>*</c> for any status code. When an applicable child entity inherits the content
+        /// of an entity of the same type with more general specifications of the other <c>location</c>
+        /// attributes, the child entity's <c>statusCode</c> attribute must match that of the
+        /// parent entity exactly.
         /// </para>
         /// </summary>
         public string StatusCode
@@ -136,12 +135,11 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The type of API entity to which the documentation content applies. Valid values are
-        /// <code>API</code>, <code>AUTHORIZER</code>, <code>MODEL</code>, <code>RESOURCE</code>,
-        /// <code>METHOD</code>, <code>PATH_PARAMETER</code>, <code>QUERY_PARAMETER</code>, <code>REQUEST_HEADER</code>,
-        /// <code>REQUEST_BODY</code>, <code>RESPONSE</code>, <code>RESPONSE_HEADER</code>, and
-        /// <code>RESPONSE_BODY</code>. Content inheritance does not apply to any entity of the
-        /// <code>API</code>, <code>AUTHORIZER</code>, <code>METHOD</code>, <code>MODEL</code>,
-        /// <code>REQUEST_BODY</code>, or <code>RESOURCE</code> type.
+        /// <c>API</c>, <c>AUTHORIZER</c>, <c>MODEL</c>, <c>RESOURCE</c>, <c>METHOD</c>, <c>PATH_PARAMETER</c>,
+        /// <c>QUERY_PARAMETER</c>, <c>REQUEST_HEADER</c>, <c>REQUEST_BODY</c>, <c>RESPONSE</c>,
+        /// <c>RESPONSE_HEADER</c>, and <c>RESPONSE_BODY</c>. Content inheritance does not apply
+        /// to any entity of the <c>API</c>, <c>AUTHORIZER</c>, <c>METHOD</c>, <c>MODEL</c>, <c>REQUEST_BODY</c>,
+        /// or <c>RESOURCE</c> type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

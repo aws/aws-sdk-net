@@ -80,8 +80,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ExportStatus. 
         /// <para>
-        /// The status of the export. When the status is <code>Completed</code> the export archive
-        /// is available for download.
+        /// The status of the export. When the status is <c>Completed</c> the export archive is
+        /// available for download.
         /// </para>
         /// </summary>
         public ExportStatus ExportStatus
@@ -99,9 +99,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// The file format used for the files that define the resource. The <code>TSV</code>
-        /// format is required to export a custom vocabulary only; otherwise use <code>LexJson</code>
-        /// format.
+        /// The file format used for the files that define the resource. The <c>TSV</c> format
+        /// is required to export a custom vocabulary only; otherwise use <c>LexJson</c> format.
         /// </para>
         /// </summary>
         public ImportExportFileFormat FileFormat

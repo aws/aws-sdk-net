@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
-    /// An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.
+    /// An object that contains the <c>SortBy</c> and <c>SortOrder</c> attributes.
     /// </summary>
     public partial class Sort
     {
@@ -39,8 +39,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The attribute on which the data is grouped, which can be by <code>StartTime</code>
-        /// and <code>EndTime</code>. The default value is <code>EndTime</code>.
+        /// The attribute on which the data is grouped, which can be by <c>StartTime</c> and <c>EndTime</c>.
+        /// The default value is <c>EndTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -59,8 +59,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sorting order, which can be <code>ASCENDING</code> or <code>DESCENDING</code>.
-        /// The default value is <code>DESCENDING</code>.
+        /// The sorting order, which can be <c>ASCENDING</c> or <c>DESCENDING</c>. The default
+        /// value is <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

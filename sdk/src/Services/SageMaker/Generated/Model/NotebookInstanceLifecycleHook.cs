@@ -37,13 +37,13 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// The value of the <code>$PATH</code> environment variable that is available to both
-    /// scripts is <code>/sbin:bin:/usr/sbin:/usr/bin</code>.
+    /// The value of the <c>$PATH</c> environment variable that is available to both scripts
+    /// is <c>/sbin:bin:/usr/sbin:/usr/bin</c>.
     /// </para>
     ///  
     /// <para>
-    /// View CloudWatch Logs for notebook instance lifecycle configurations in log group <code>/aws/sagemaker/NotebookInstances</code>
-    /// in log stream <code>[notebook-instance-name]/[LifecycleConfigHook]</code>.
+    /// View CloudWatch Logs for notebook instance lifecycle configurations in log group <c>/aws/sagemaker/NotebookInstances</c>
+    /// in log stream <c>[notebook-instance-name]/[LifecycleConfigHook]</c>.
     /// </para>
     ///  
     /// <para>

@@ -115,7 +115,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>5.1.49</code> 
+        /// Example: <c>5.1.49</c> 
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -151,9 +151,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ListSupportedCharacterSets. 
         /// <para>
-        /// If this parameter is specified and the requested engine supports the <code>CharacterSetName</code>
-        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// character sets for each engine version.
+        /// If this parameter is specified and the requested engine supports the <c>CharacterSetName</c>
+        /// parameter for <c>CreateDBInstance</c>, the response includes a list of supported character
+        /// sets for each engine version.
         /// </para>
         /// </summary>
         public bool ListSupportedCharacterSets
@@ -171,9 +171,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property ListSupportedTimezones. 
         /// <para>
-        /// If this parameter is specified and the requested engine supports the <code>TimeZone</code>
-        /// parameter for <code>CreateDBInstance</code>, the response includes a list of supported
-        /// time zones for each engine version.
+        /// If this parameter is specified and the requested engine supports the <c>TimeZone</c>
+        /// parameter for <c>CreateDBInstance</c>, the response includes a list of supported time
+        /// zones for each engine version.
         /// </para>
         /// </summary>
         public bool ListSupportedTimezones
@@ -193,7 +193,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -211,7 +211,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        ///  The maximum number of records to include in the response. If more than the <code>MaxRecords</code>
+        ///  The maximum number of records to include in the response. If more than the <c>MaxRecords</c>
         /// value is available, a pagination token called a marker is included in the response
         /// so that the following results can be retrieved.
         /// </para>

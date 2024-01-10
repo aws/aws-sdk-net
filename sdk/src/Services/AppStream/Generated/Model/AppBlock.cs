@@ -195,7 +195,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// This only applies to app blocks with PackagingType <code>APPSTREAM2</code>.
+        /// This only applies to app blocks with PackagingType <c>APPSTREAM2</c>.
         /// </para>
         /// </summary>
         public ScriptDetails PostSetupScriptDetails
@@ -217,7 +217,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// This only applies to app blocks with PackagingType <code>CUSTOM</code>.
+        /// This only applies to app blocks with PackagingType <c>CUSTOM</c>.
         /// </para>
         /// </summary>
         public ScriptDetails SetupScriptDetails
@@ -257,14 +257,13 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        /// An app block with AppStream 2.0 packaging will be in the <code>INACTIVE</code> state
-        /// if no application package (VHD) is assigned to it. After an application package (VHD)
-        /// is created by an app block builder for an app block, it becomes <code>ACTIVE</code>.
-        /// 
+        /// An app block with AppStream 2.0 packaging will be in the <c>INACTIVE</c> state if
+        /// no application package (VHD) is assigned to it. After an application package (VHD)
+        /// is created by an app block builder for an app block, it becomes <c>ACTIVE</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Custom app blocks are always in the <code>ACTIVE</code> state and no action is required
+        /// Custom app blocks are always in the <c>ACTIVE</c> state and no action is required
         /// to use them.
         /// </para>
         /// </summary>

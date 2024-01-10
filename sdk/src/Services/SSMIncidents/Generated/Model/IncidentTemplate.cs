@@ -51,9 +51,9 @@ namespace Amazon.SSMIncidents.Model
         /// <para>
         /// A deduplication string is a term or phrase the system uses to check for duplicate
         /// incidents. If you specify a deduplication string, Incident Manager searches for open
-        /// incidents that contain the same string in the <code>dedupeString</code> field when
-        /// it creates the incident. If a duplicate is detected, Incident Manager deduplicates
-        /// the newer incident into the existing incident.
+        /// incidents that contain the same string in the <c>dedupeString</c> field when it creates
+        /// the incident. If a duplicate is detected, Incident Manager deduplicates the newer
+        /// incident into the existing incident.
         /// </para>
         ///  <note> 
         /// <para>
@@ -87,23 +87,23 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>1</code> - Critical
+        ///  <c>1</c> - Critical
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>2</code> - High
+        ///  <c>2</c> - High
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>3</code> - Medium
+        ///  <c>3</c> - Medium
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>4</code> - Low
+        ///  <c>4</c> - Low
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>5</code> - No Impact
+        ///  <c>5</c> - No Impact
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -123,8 +123,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTags. 
         /// <para>
-        /// Tags to assign to the template. When the <code>StartIncident</code> API action is
-        /// called, Incident Manager assigns the tags specified in the template to the incident.
+        /// Tags to assign to the template. When the <c>StartIncident</c> API action is called,
+        /// Incident Manager assigns the tags specified in the template to the incident.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

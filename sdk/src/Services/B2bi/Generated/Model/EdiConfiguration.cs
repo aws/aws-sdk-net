@@ -42,7 +42,7 @@ namespace Amazon.B2bi.Model
         /// Gets and sets the property InputLocation. 
         /// <para>
         /// Contains the Amazon S3 bucket and prefix for the location of the input file, which
-        /// is contained in an <code>S3Location</code> object.
+        /// is contained in an <c>S3Location</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.B2bi.Model
         /// Gets and sets the property OutputLocation. 
         /// <para>
         /// Contains the Amazon S3 bucket and prefix for the location of the output file, which
-        /// is contained in an <code>S3Location</code> object.
+        /// is contained in an <c>S3Location</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Returns the type of the capability. Currently, only <code>edi</code> is supported.
+        /// Returns the type of the capability. Currently, only <c>edi</c> is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

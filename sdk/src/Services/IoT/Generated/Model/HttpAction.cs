@@ -103,7 +103,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Url. 
         /// <para>
         /// The endpoint URL. If substitution templates are used in the URL, you must also specify
-        /// a <code>confirmationUrl</code>. If this is a new destination, a new <code>TopicRuleDestination</code>
+        /// a <c>confirmationUrl</c>. If this is a new destination, a new <c>TopicRuleDestination</c>
         /// is created if possible.
         /// </para>
         /// </summary>

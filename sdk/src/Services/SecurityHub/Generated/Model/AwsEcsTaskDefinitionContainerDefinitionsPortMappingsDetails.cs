@@ -77,7 +77,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol used for the port mapping. The default is <code>tcp</code>.
+        /// The protocol used for the port mapping. The default is <c>tcp</c>.
         /// </para>
         /// </summary>
         public string Protocol

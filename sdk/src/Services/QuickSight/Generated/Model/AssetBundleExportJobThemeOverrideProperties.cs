@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Controls how a specific <code>Theme</code> resource is parameterized in the returned
-    /// CloudFormation template.
+    /// Controls how a specific <c>Theme</c> resource is parameterized in the returned CloudFormation
+    /// template.
     /// </summary>
     public partial class AssetBundleExportJobThemeOverrideProperties
     {
@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the specific <code>Theme</code> resource whose override properties are
-        /// configured in this structure.
+        /// The ARN of the specific <c>Theme</c> resource whose override properties are configured
+        /// in this structure.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +60,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// A list of <code>Theme</code> resource properties to generate variables for in the
-        /// returned CloudFormation template.
+        /// A list of <c>Theme</c> resource properties to generate variables for in the returned
+        /// CloudFormation template.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]

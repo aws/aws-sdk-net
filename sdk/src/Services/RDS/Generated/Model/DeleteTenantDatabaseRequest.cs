@@ -68,12 +68,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
-        /// The <code>DBSnapshotIdentifier</code> of the new <code>DBSnapshot</code> created when
-        /// the <code>SkipFinalSnapshot</code> parameter is disabled.
+        /// The <c>DBSnapshotIdentifier</c> of the new <c>DBSnapshot</c> created when the <c>SkipFinalSnapshot</c>
+        /// parameter is disabled.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you enable this parameter and also enable <code>SkipFinalShapshot</code>, the command
+        /// If you enable this parameter and also enable <c>SkipFinalShapshot</c>, the command
         /// results in an error.
         /// </para>
         ///  </note>
@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         /// tenant database from your DB instance. If you enable this parameter, RDS doesn't create
         /// a DB snapshot. If you don't enable this parameter, RDS creates a DB snapshot before
         /// it deletes the tenant database. By default, RDS doesn't skip the final snapshot. If
-        /// you don't enable this parameter, you must specify the <code>FinalDBSnapshotIdentifier</code>
+        /// you don't enable this parameter, you must specify the <c>FinalDBSnapshotIdentifier</c>
         /// parameter.
         /// </para>
         /// </summary>

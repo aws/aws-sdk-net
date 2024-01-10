@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// If the <code>CallerReference</code> is a value you already sent in a previous request
-    /// to create an identity but the content of the <code>CloudFrontOriginAccessIdentityConfig</code>
-    /// is different from the original request, CloudFront returns a <code>CloudFrontOriginAccessIdentityAlreadyExists</code>
+    /// If the <c>CallerReference</c> is a value you already sent in a previous request to
+    /// create an identity but the content of the <c>CloudFrontOriginAccessIdentityConfig</c>
+    /// is different from the original request, CloudFront returns a <c>CloudFrontOriginAccessIdentityAlreadyExists</c>
     /// error.
     /// </summary>
     #if !NETSTANDARD

@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:ListProfiles</c>. 
     /// </para>
     /// </summary>
     public partial class ListProfilesRequest : AmazonIAMRolesAnywhereRequest

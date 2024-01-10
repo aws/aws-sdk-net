@@ -104,7 +104,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Country. 
         /// <para>
         /// A country/region specified using <a href="https://www.iso.org/iso-3166-country-codes.html">ISO
-        /// 3166</a> 3-digit country/region code. For example, <code>CAN</code>.
+        /// 3166</a> 3-digit country/region code. For example, <c>CAN</c>.
         /// </para>
         /// </summary>
         public string Country
@@ -138,11 +138,11 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Interpolated. 
         /// <para>
-        ///  <code>True</code> if the result is interpolated from other known places.
+        ///  <c>True</c> if the result is interpolated from other known places.
         /// </para>
         ///  
         /// <para>
-        ///  <code>False</code> if the Place is a known place.
+        ///  <c>False</c> if the Place is a known place.
         /// </para>
         ///  
         /// <para>
@@ -150,10 +150,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, returns <code>False</code> for an address location that is found in the
-        /// partner data, but returns <code>True</code> if an address does not exist in the partner
-        /// data and its location is calculated by interpolating between other known addresses.
-        /// 
+        /// For example, returns <c>False</c> for an address location that is found in the partner
+        /// data, but returns <c>True</c> if an address does not exist in the partner data and
+        /// its location is calculated by interpolating between other known addresses. 
         /// </para>
         /// </summary>
         public bool Interpolated
@@ -172,7 +171,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Label. 
         /// <para>
         /// The full name and address of the point of interest such as a city, region, or country.
-        /// For example, <code>123 Any Street, Any Town, USA</code>.
+        /// For example, <c>123 Any Street, Any Town, USA</c>.
         /// </para>
         /// </summary>
         public string Label
@@ -190,7 +189,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Municipality. 
         /// <para>
-        /// A name for a local area, such as a city or town name. For example, <code>Toronto</code>.
+        /// A name for a local area, such as a city or town name. For example, <c>Toronto</c>.
         /// </para>
         /// </summary>
         public string Municipality
@@ -208,7 +207,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Neighborhood. 
         /// <para>
-        /// The name of a community district. For example, <code>Downtown</code>.
+        /// The name of a community district. For example, <c>Downtown</c>.
         /// </para>
         /// </summary>
         public string Neighborhood
@@ -246,7 +245,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Region. 
         /// <para>
         /// A name for an area or geographical division, such as a province or state name. For
-        /// example, <code>British Columbia</code>.
+        /// example, <c>British Columbia</c>.
         /// </para>
         /// </summary>
         public string Region
@@ -264,7 +263,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Street. 
         /// <para>
-        /// The name for a street or a road to identify a location. For example, <code>Main Street</code>.
+        /// The name for a street or a road to identify a location. For example, <c>Main Street</c>.
         /// </para>
         /// </summary>
         public string Street
@@ -282,13 +281,13 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SubMunicipality. 
         /// <para>
-        /// An area that's part of a larger municipality. For example, <code>Blissville </code>
-        /// is a submunicipality in the Queen County in New York.
+        /// An area that's part of a larger municipality. For example, <c>Blissville </c> is a
+        /// submunicipality in the Queen County in New York.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This property supported by Esri and OpenData. The Esri property is <code>district</code>,
-        /// and the OpenData property is <code>borough</code>.
+        /// This property supported by Esri and OpenData. The Esri property is <c>district</c>,
+        /// and the OpenData property is <c>borough</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -307,7 +306,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property SubRegion. 
         /// <para>
-        /// A county, or an area that's part of a larger region. For example, <code>Metro Vancouver</code>.
+        /// A county, or an area that's part of a larger region. For example, <c>Metro Vancouver</c>.
         /// </para>
         /// </summary>
         public string SubRegion
@@ -345,8 +344,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property TimeZone. 
         /// <para>
-        /// The time zone in which the <code>Place</code> is located. Returned only when using
-        /// HERE or Grab as the selected partner.
+        /// The time zone in which the <c>Place</c> is located. Returned only when using HERE
+        /// or Grab as the selected partner.
         /// </para>
         /// </summary>
         public TimeZone TimeZone
@@ -365,12 +364,12 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property UnitNumber. 
         /// <para>
         /// For addresses with multiple units, the unit identifier. Can include numbers and letters,
-        /// for example <code>3B</code> or <code>Unit 123</code>.
+        /// for example <c>3B</c> or <c>Unit 123</c>.
         /// </para>
         ///  <note> 
         /// <para>
         /// Returned only for a place index that uses Esri or Grab as a data provider. Is not
-        /// returned for <code>SearchPlaceIndexForPosition</code>.
+        /// returned for <c>SearchPlaceIndexForPosition</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -389,7 +388,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property UnitType. 
         /// <para>
-        /// For addresses with a <code>UnitNumber</code>, the type of unit. For example, <code>Apartment</code>.
+        /// For addresses with a <c>UnitNumber</c>, the type of unit. For example, <c>Apartment</c>.
         /// </para>
         ///  <note> 
         /// <para>

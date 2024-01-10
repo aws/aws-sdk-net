@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>PipelineOutputConfig</code> structure.
+    /// The <c>PipelineOutputConfig</c> structure.
     /// </summary>
     public partial class PipelineOutputConfig
     {
@@ -67,7 +67,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// If you want to save transcoded files and playlists in one bucket and thumbnails in
         /// another bucket, specify which users can access the transcoded files or the permissions
         /// the users have, or change the Amazon S3 storage class, omit OutputBucket and specify
-        /// values for <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. 
+        /// values for <c>ContentConfig</c> and <c>ThumbnailConfig</c> instead. 
         /// </para>
         /// </summary>
         public string Bucket
@@ -85,23 +85,23 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Permissions. 
         /// <para>
-        /// Optional. The <code>Permissions</code> object specifies which users and/or predefined
-        /// Amazon S3 groups you want to have access to transcoded files and playlists, and the
-        /// type of access you want them to have. You can grant permissions to a maximum of 30
-        /// users and/or predefined Amazon S3 groups.
+        /// Optional. The <c>Permissions</c> object specifies which users and/or predefined Amazon
+        /// S3 groups you want to have access to transcoded files and playlists, and the type
+        /// of access you want them to have. You can grant permissions to a maximum of 30 users
+        /// and/or predefined Amazon S3 groups.
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>Permissions</code>, Elastic Transcoder grants only the permissions
+        /// If you include <c>Permissions</c>, Elastic Transcoder grants only the permissions
         /// that you specify. It does not grant full permissions to the owner of the role specified
-        /// by <code>Role</code>. If you want that user to have full control, you must explicitly
-        /// grant full control to the user.
+        /// by <c>Role</c>. If you want that user to have full control, you must explicitly grant
+        /// full control to the user.
         /// </para>
         ///  
         /// <para>
-        ///  If you omit <code>Permissions</code>, Elastic Transcoder grants full control over
-        /// the transcoded files and playlists to the owner of the role specified by <code>Role</code>,
-        /// and grants no other permissions to any other user or group.
+        ///  If you omit <c>Permissions</c>, Elastic Transcoder grants full control over the transcoded
+        /// files and playlists to the owner of the role specified by <c>Role</c>, and grants
+        /// no other permissions to any other user or group.
         /// </para>
         /// </summary>
         [AWSProperty(Max=30)]
@@ -120,9 +120,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property StorageClass. 
         /// <para>
-        ///  The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>,
-        /// that you want Elastic Transcoder to assign to the video files and playlists that it
-        /// stores in your Amazon S3 bucket. 
+        ///  The Amazon S3 storage class, <c>Standard</c> or <c>ReducedRedundancy</c>, that you
+        /// want Elastic Transcoder to assign to the video files and playlists that it stores
+        /// in your Amazon S3 bucket. 
         /// </para>
         /// </summary>
         public string StorageClass

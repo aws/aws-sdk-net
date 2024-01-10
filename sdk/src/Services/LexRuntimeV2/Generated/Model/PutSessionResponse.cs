@@ -62,7 +62,7 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The type of response. Same as the type specified in the <code>responseContentType</code>
+        /// The type of response. Same as the type specified in the <c>responseContentType</c>
         /// field in the request.
         /// </para>
         /// </summary>
@@ -104,8 +104,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// Gets and sets the property RequestAttributes. 
         /// <para>
         /// A base-64-encoded gzipped field that provides request-specific information passed
-        /// between the client application and Amazon Lex V2. These are the same as the <code>requestAttribute</code>
-        /// parameter in the call to the <code>PutSession</code> operation.
+        /// between the client application and Amazon Lex V2. These are the same as the <c>requestAttribute</c>
+        /// parameter in the call to the <c>PutSession</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

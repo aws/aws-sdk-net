@@ -47,8 +47,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DeleteProtection. 
         /// <para>
-        /// Whether the firewall is protected from deletion. If set to <code>true</code>, then
-        /// the firewall cannot be deleted.
+        /// Whether the firewall is protected from deletion. If set to <c>true</c>, then the firewall
+        /// cannot be deleted.
         /// </para>
         /// </summary>
         public bool DeleteProtection
@@ -157,7 +157,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property FirewallPolicyChangeProtection. 
         /// <para>
         /// Whether the firewall is protected from a change to the firewall policy. If set to
-        /// <code>true</code>, you cannot associate a different policy with the firewall.
+        /// <c>true</c>, you cannot associate a different policy with the firewall.
         /// </para>
         /// </summary>
         public bool FirewallPolicyChangeProtection
@@ -176,7 +176,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property SubnetChangeProtection. 
         /// <para>
         /// Whether the firewall is protected from a change to the subnet associations. If set
-        /// to <code>true</code>, you cannot map different subnets to the firewall.
+        /// to <c>true</c>, you cannot map different subnets to the firewall.
         /// </para>
         /// </summary>
         public bool SubnetChangeProtection

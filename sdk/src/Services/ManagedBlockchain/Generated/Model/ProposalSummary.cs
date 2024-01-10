@@ -108,10 +108,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
-        ///  The date and time that the proposal expires. This is the <code>CreationDate</code>
-        /// plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.
+        ///  The date and time that the proposal expires. This is the <c>CreationDate</c> plus
+        /// the <c>ProposalDurationInHours</c> that is specified in the <c>ProposalThresholdPolicy</c>.
         /// After this date and time, if members haven't cast enough votes to determine the outcome
-        /// according to the voting policy, the proposal is <code>EXPIRED</code> and <code>Actions</code>
+        /// according to the voting policy, the proposal is <c>EXPIRED</c> and <c>Actions</c>
         /// aren't carried out. 
         /// </para>
         /// </summary>
@@ -191,30 +191,30 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - The proposal is active and open for member voting.
+        ///  <c>IN_PROGRESS</c> - The proposal is active and open for member voting.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPROVED</code> - The proposal was approved with sufficient <code>YES</code>
-        /// votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>.
-        /// The specified proposal actions are carried out.
+        ///  <c>APPROVED</c> - The proposal was approved with sufficient <c>YES</c> votes among
+        /// members according to the <c>VotingPolicy</c> specified for the <c>Network</c>. The
+        /// specified proposal actions are carried out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECTED</code> - The proposal was rejected with insufficient <code>YES</code>
-        /// votes among members according to the <code>VotingPolicy</code> specified for the <code>Network</code>.
-        /// The specified <code>ProposalActions</code> aren't carried out.
+        ///  <c>REJECTED</c> - The proposal was rejected with insufficient <c>YES</c> votes among
+        /// members according to the <c>VotingPolicy</c> specified for the <c>Network</c>. The
+        /// specified <c>ProposalActions</c> aren't carried out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code> - Members didn't cast the number of votes required to determine
-        /// the proposal outcome before the proposal expired. The specified <code>ProposalActions</code>
+        ///  <c>EXPIRED</c> - Members didn't cast the number of votes required to determine the
+        /// proposal outcome before the proposal expired. The specified <c>ProposalActions</c>
         /// aren't carried out.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTION_FAILED</code> - One or more of the specified <code>ProposalActions</code>
-        /// in a proposal that was approved couldn't be completed because of an error.
+        ///  <c>ACTION_FAILED</c> - One or more of the specified <c>ProposalActions</c> in a proposal
+        /// that was approved couldn't be completed because of an error.
         /// </para>
         ///  </li> </ul>
         /// </summary>

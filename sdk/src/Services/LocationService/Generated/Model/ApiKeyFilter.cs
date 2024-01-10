@@ -38,7 +38,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property KeyStatus. 
         /// <para>
-        /// Filter on <code>Active</code> or <code>Expired</code> API keys.
+        /// Filter on <c>Active</c> or <c>Expired</c> API keys.
         /// </para>
         /// </summary>
         public Status KeyStatus

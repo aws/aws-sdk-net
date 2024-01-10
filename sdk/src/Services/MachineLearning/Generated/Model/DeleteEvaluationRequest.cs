@@ -30,17 +30,16 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteEvaluation operation.
-    /// Assigns the <code>DELETED</code> status to an <code>Evaluation</code>, rendering it
-    /// unusable.
+    /// Assigns the <c>DELETED</c> status to an <c>Evaluation</c>, rendering it unusable.
     /// 
     ///  
     /// <para>
-    /// After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code>
-    /// operation to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
+    /// After invoking the <c>DeleteEvaluation</c> operation, you can use the <c>GetEvaluation</c>
+    /// operation to verify that the status of the <c>Evaluation</c> changed to <c>DELETED</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
+    ///  <b>Caution:</b> The results of the <c>DeleteEvaluation</c> operation are irreversible.
     /// </para>
     /// </summary>
     public partial class DeleteEvaluationRequest : AmazonMachineLearningRequest
@@ -50,7 +49,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EvaluationId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>Evaluation</code> to delete.
+        /// A user-supplied ID that uniquely identifies the <c>Evaluation</c> to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

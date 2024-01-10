@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// A set of criteria that CloudFormation uses to validate parameter values. Although
     /// other constraints might be defined in the stack template, CloudFormation returns only
-    /// the <code>AllowedValues</code> property.
+    /// the <c>AllowedValues</c> property.
     /// </summary>
     public partial class ParameterConstraints
     {

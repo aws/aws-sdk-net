@@ -55,8 +55,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Volumes. 
         /// <para>
-        /// Returned after a successful <code>DescribeVolumes</code> operation, describing each
-        /// volume.
+        /// Returned after a successful <c>DescribeVolumes</c> operation, describing each volume.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

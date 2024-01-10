@@ -30,9 +30,9 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the ListClusterJobs operation.
-    /// Returns an array of <code>JobListEntry</code> objects of the specified length. Each
-    /// <code>JobListEntry</code> object is for a job in the specified cluster and contains
-    /// a job's state, a job's ID, and other information.
+    /// Returns an array of <c>JobListEntry</c> objects of the specified length. Each <c>JobListEntry</c>
+    /// object is for a job in the specified cluster and contains a job's state, a job's ID,
+    /// and other information.
     /// </summary>
     public partial class ListClusterJobsRequest : AmazonSnowballRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        /// The 39-character ID for the cluster that you want to list, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The 39-character ID for the cluster that you want to list, for example <c>CID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=39, Max=39)]
@@ -62,7 +62,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of <code>JobListEntry</code> objects to return.
+        /// The number of <c>JobListEntry</c> objects to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -81,9 +81,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. To identify what object comes "next" in the list of <code>JobListEntry</code>
-        /// objects, you have the option of specifying <code>NextToken</code> as the starting
-        /// point for your returned list.
+        /// HTTP requests are stateless. To identify what object comes "next" in the list of <c>JobListEntry</c>
+        /// objects, you have the option of specifying <c>NextToken</c> as the starting point
+        /// for your returned list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBSecurityGroupName</code> doesn't refer to an existing security group.
+    /// <c>DBSecurityGroupName</c> doesn't refer to an existing security group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

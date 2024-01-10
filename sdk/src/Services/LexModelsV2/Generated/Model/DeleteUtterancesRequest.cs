@@ -41,11 +41,11 @@ namespace Amazon.LexModelsV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Use the <code>DeleteUtterances</code> operation to manually delete utterances for
-    /// a specific session. When you use the <code>DeleteUtterances</code> operation, utterances
-    /// stored for improving your bot's ability to respond to user input are deleted immediately.
-    /// Utterances stored for use with the <code>ListAggregatedUtterances</code> operation
-    /// are deleted after 15 days.
+    /// Use the <c>DeleteUtterances</c> operation to manually delete utterances for a specific
+    /// session. When you use the <c>DeleteUtterances</c> operation, utterances stored for
+    /// improving your bot's ability to respond to user input are deleted immediately. Utterances
+    /// stored for use with the <c>ListAggregatedUtterances</c> operation are deleted after
+    /// 15 days.
     /// </para>
     /// </summary>
     public partial class DeleteUtterancesRequest : AmazonLexModelsV2Request

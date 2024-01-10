@@ -69,8 +69,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property JunctionPath. 
         /// <para>
-        /// Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code>
-        /// must have a leading forward slash, such as <code>/vol3</code>.
+        /// Specifies the location in the SVM's namespace where the volume is mounted. The <c>JunctionPath</c>
+        /// must have a leading forward slash, such as <c>/vol3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -89,8 +89,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SecurityStyle. 
         /// <para>
-        /// The security style for the volume, which can be <code>UNIX</code>, <code>NTFS</code>,
-        /// or <code>MIXED</code>.
+        /// The security style for the volume, which can be <c>UNIX</c>, <c>NTFS</c>, or <c>MIXED</c>.
         /// </para>
         /// </summary>
         public SecurityStyle SecurityStyle
@@ -169,19 +168,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>default</code>: This is the default policy. A maximum of six hourly snapshots
-        /// taken five minutes past the hour. A maximum of two daily snapshots taken Monday through
+        ///  <c>default</c>: This is the default policy. A maximum of six hourly snapshots taken
+        /// five minutes past the hour. A maximum of two daily snapshots taken Monday through
         /// Saturday at 10 minutes after midnight. A maximum of two weekly snapshots taken every
         /// Sunday at 15 minutes after midnight.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>default-1weekly</code>: This policy is the same as the <code>default</code>
-        /// policy except that it only retains one snapshot from the weekly schedule.
+        ///  <c>default-1weekly</c>: This policy is the same as the <c>default</c> policy except
+        /// that it only retains one snapshot from the weekly schedule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>none</code>: This policy does not take any snapshots. This policy can be assigned
+        ///  <c>none</c>: This policy does not take any snapshots. This policy can be assigned
         /// to volumes to prevent automatic snapshots from being taken.
         /// </para>
         ///  </li> </ul> 
@@ -211,8 +210,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageEfficiencyEnabled. 
         /// <para>
-        /// Default is <code>false</code>. Set to true to enable the deduplication, compression,
-        /// and compaction storage efficiency features on the volume.
+        /// Default is <c>false</c>. Set to true to enable the deduplication, compression, and
+        /// compaction storage efficiency features on the volume.
         /// </para>
         /// </summary>
         public bool StorageEfficiencyEnabled

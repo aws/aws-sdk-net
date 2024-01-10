@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Another <code>UpdateResourceDataSync</code> request is being processed. Wait a few
-    /// minutes and try again.
+    /// Another <c>UpdateResourceDataSync</c> request is being processed. Wait a few minutes
+    /// and try again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

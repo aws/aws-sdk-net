@@ -41,7 +41,7 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  Filters to scope the results. Valid filters are <code>ResourceArns</code> and <code>Status</code>.
+        ///  Filters to scope the results. Valid filters are <c>ResourceArns</c> and <c>Status</c>.
         /// 
         /// </para>
         /// </summary>

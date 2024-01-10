@@ -67,13 +67,12 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property EventBridgeEnabled. 
         /// <para>
-        /// Whether to enable position <code>UPDATE</code> events from this tracker to be sent
-        /// to EventBridge.
+        /// Whether to enable position <c>UPDATE</c> events from this tracker to be sent to EventBridge.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You do not need enable this feature to get <code>ENTER</code> and <code>EXIT</code>
-        /// events for geofences with this tracker. Those events are always sent to EventBridge.
+        /// You do not need enable this feature to get <c>ENTER</c> and <c>EXIT</c> events for
+        /// geofences with this tracker. Those events are always sent to EventBridge.
         /// </para>
         ///  </note>
         /// </summary>
@@ -92,7 +91,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyEnableGeospatialQueries. 
         /// <para>
-        /// Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+        /// Enables <c>GeospatialQueries</c> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
         /// Web Services KMS customer managed key</a>.
         /// </para>
         ///  
@@ -110,8 +109,8 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by
-        /// setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating
-        /// or updating a Tracker.
+        /// setting the <c>KmsKeyEnableGeospatialQueries</c> parameter to true when creating or
+        /// updating a Tracker.
         /// </para>
         ///  </note>
         /// </summary>
@@ -159,13 +158,13 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TimeBased</code> - Location updates are evaluated against linked geofence collections,
+        ///  <c>TimeBased</c> - Location updates are evaluated against linked geofence collections,
         /// but not every location update is stored. If your update frequency is more often than
         /// 30 seconds, only one update per 30 seconds is stored for each unique device ID. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DistanceBased</code> - If the device has moved less than 30 m (98.4 ft), location
+        ///  <c>DistanceBased</c> - If the device has moved less than 30 m (98.4 ft), location
         /// updates are ignored. Location updates within this area are neither evaluated against
         /// linked geofence collections, nor stored. This helps control costs by reducing the
         /// number of geofence evaluations and historical device positions to paginate through.
@@ -174,17 +173,17 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccuracyBased</code> - If the device has moved less than the measured accuracy,
-        /// location updates are ignored. For example, if two consecutive updates from a device
-        /// have a horizontal accuracy of 5 m and 10 m, the second update is ignored if the device
-        /// has moved less than 15 m. Ignored location updates are neither evaluated against linked
+        ///  <c>AccuracyBased</c> - If the device has moved less than the measured accuracy, location
+        /// updates are ignored. For example, if two consecutive updates from a device have a
+        /// horizontal accuracy of 5 m and 10 m, the second update is ignored if the device has
+        /// moved less than 15 m. Ignored location updates are neither evaluated against linked
         /// geofence collections, nor stored. This can reduce the effects of GPS noise when displaying
         /// device trajectories on a map, and can help control your costs by reducing the number
         /// of geofence evaluations. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This field is optional. If not specified, the default value is <code>TimeBased</code>.
+        /// This field is optional. If not specified, the default value is <c>TimeBased</c>.
         /// </para>
         /// </summary>
         public PositionFiltering PositionFiltering
@@ -202,7 +201,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
+        /// No longer used. If included, the only allowed value is <c>RequestBasedUsage</c>.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
@@ -245,7 +244,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         ///  
         /// <para>
@@ -311,7 +310,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No spaces allowed. For example, <code>ExampleTracker</code>.
+        /// No spaces allowed. For example, <c>ExampleTracker</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

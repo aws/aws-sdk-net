@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration for a <code>CategoryFilter</code>.
+    /// The configuration for a <c>CategoryFilter</c>.
     /// 
     ///  
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
-    /// Represents action metadata added to an Action dataset using the <code>PutActions</code>
+    /// Represents action metadata added to an Action dataset using the <c>PutActions</c>
     /// API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-actions.html">Importing
     /// actions individually</a>.
     /// </summary>
@@ -61,15 +61,15 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property Properties. 
         /// <para>
         /// A string map of action-specific metadata. Each element in the map consists of a key-value
-        /// pair. For example, <code>{"value": "100"}</code>.
+        /// pair. For example, <c>{"value": "100"}</c>.
         /// </para>
         ///  
         /// <para>
         /// The keys use camel case names that match the fields in the schema for the Actions
-        /// dataset. In the previous example, the <code>value</code> matches the 'VALUE' field
-        /// defined in the Actions schema. For categorical string data, to include multiple categories
-        /// for a single action, separate each category with a pipe separator (<code>|</code>).
-        /// For example, <code>\"Deluxe|Premium\"</code>.
+        /// dataset. In the previous example, the <c>value</c> matches the 'VALUE' field defined
+        /// in the Actions schema. For categorical string data, to include multiple categories
+        /// for a single action, separate each category with a pipe separator (<c>|</c>). For
+        /// example, <c>\"Deluxe|Premium\"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=32000)]

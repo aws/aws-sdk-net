@@ -60,8 +60,8 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property AutoCreateTasks. 
         /// <para>
         /// Whether to automatically create tasks using this task definition for all gateways
-        /// with the specified current version. If <code>false</code>, the task must me created
-        /// by calling <code>CreateWirelessGatewayTask</code>.
+        /// with the specified current version. If <c>false</c>, the task must me created by calling
+        /// <c>CreateWirelessGatewayTask</c>.
         /// </para>
         /// </summary>
         public bool AutoCreateTasks

@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Contains the individual types of column statistics data. Only one data object should
-    /// be set and indicated by the <code>Type</code> attribute.
+    /// be set and indicated by the <c>Type</c> attribute.
     /// </summary>
     public partial class ColumnStatisticsData
     {

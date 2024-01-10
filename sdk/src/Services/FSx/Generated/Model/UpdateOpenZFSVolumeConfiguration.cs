@@ -45,22 +45,21 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DataCompressionType. 
         /// <para>
         /// Specifies the method used to compress the data on the volume. The compression type
-        /// is <code>NONE</code> by default.
+        /// is <c>NONE</c> by default.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - Doesn't compress the data on the volume. <code>NONE</code> is
-        /// the default.
+        ///  <c>NONE</c> - Doesn't compress the data on the volume. <c>NONE</c> is the default.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ZSTD</code> - Compresses the data in the volume using the Zstandard (ZSTD)
-        /// compression algorithm. Compared to LZ4, Z-Standard provides a better compression ratio
-        /// to minimize on-disk storage utilization.
+        ///  <c>ZSTD</c> - Compresses the data in the volume using the Zstandard (ZSTD) compression
+        /// algorithm. Compared to LZ4, Z-Standard provides a better compression ratio to minimize
+        /// on-disk storage utilization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LZ4</code> - Compresses the data in the volume using the LZ4 compression algorithm.
+        ///  <c>LZ4</c> - Compresses the data in the volume using the LZ4 compression algorithm.
         /// Compared to Z-Standard, LZ4 is less compute-intensive and delivers higher write throughput
         /// speeds.
         /// </para>
@@ -144,7 +143,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The maximum amount of storage in gibibytes (GiB) that the volume can use from its
         /// parent. You can specify a quota larger than the storage on the parent volume. You
-        /// can specify a value of <code>-1</code> to unset a volume's storage capacity quota.
+        /// can specify a value of <c>-1</c> to unset a volume's storage capacity quota.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]
@@ -165,7 +164,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// The amount of storage in gibibytes (GiB) to reserve from the parent volume. You can't
         /// reserve more storage than the parent volume has reserved. You can specify a value
-        /// of <code>-1</code> to unset a volume's storage capacity reservation.
+        /// of <c>-1</c> to unset a volume's storage capacity reservation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=2147483647)]

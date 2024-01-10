@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property UserInvitationUrl. 
         /// <para>
         /// The URL the user visits to complete registration and provide a password. This is returned
-        /// only for users with an identity type of <code>QUICKSIGHT</code>.
+        /// only for users with an identity type of <c>QUICKSIGHT</c>.
         /// </para>
         /// </summary>
         public string UserInvitationUrl

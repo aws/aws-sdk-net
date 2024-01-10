@@ -66,8 +66,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get the next page of results, perform another <code>GetDomains</code> request and
-        /// specify the next page token using the <code>pageToken</code> parameter.
+        /// To get the next page of results, perform another <c>GetDomains</c> request and specify
+        /// the next page token using the <c>pageToken</c> parameter.
         /// </para>
         /// </summary>
         public string NextPageToken

@@ -90,7 +90,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Environment variables cannot start with "<code>AWS_BATCH</code>". This naming convention
+        /// Environment variables cannot start with "<c>AWS_BATCH</c>". This naming convention
         /// is reserved for variables that Batch sets.
         /// </para>
         ///  </note>
@@ -129,8 +129,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property Resources. 
         /// <para>
         /// The type and amount of resources to assign to a container. These override the settings
-        /// in the job definition. The supported resources include <code>memory</code>, <code>cpu</code>,
-        /// and <code>nvidia.com/gpu</code>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource
+        /// in the job definition. The supported resources include <c>memory</c>, <c>cpu</c>,
+        /// and <c>nvidia.com/gpu</c>. For more information, see <a href="https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/">Resource
         /// management for pods and containers</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         /// </summary>

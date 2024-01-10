@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>ReleaseDate</code> of an offer with date range as input.
+    /// Allows filtering on the <c>ReleaseDate</c> of an offer with date range as input.
     /// </summary>
     public partial class OfferReleaseDateFilterDateRange
     {
@@ -39,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property AfterValue. 
         /// <para>
-        /// Allows filtering on the <code>ReleaseDate</code> of offers after a date.
+        /// Allows filtering on the <c>ReleaseDate</c> of offers after a date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]
@@ -58,7 +58,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property BeforeValue. 
         /// <para>
-        /// Allows filtering on the <code>ReleaseDate</code> of offers before a date.
+        /// Allows filtering on the <c>ReleaseDate</c> of offers before a date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

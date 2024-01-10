@@ -36,16 +36,16 @@ namespace Amazon.Glue.Model
     ///  
     /// <para>
     /// Call this operation as the first step in the process of using a machine learning transform
-    /// (such as the <code>FindMatches</code> transform) for deduplicating data. You can provide
-    /// an optional <code>Description</code>, in addition to the parameters that you want
-    /// to use for your algorithm.
+    /// (such as the <c>FindMatches</c> transform) for deduplicating data. You can provide
+    /// an optional <c>Description</c>, in addition to the parameters that you want to use
+    /// for your algorithm.
     /// </para>
     ///  
     /// <para>
     /// You must also specify certain parameters for the tasks that Glue runs on your behalf
     /// as part of learning from your data and creating a high-quality machine learning transform.
-    /// These parameters include <code>Role</code>, and optionally, <code>AllocatedCapacity</code>,
-    /// <code>Timeout</code>, and <code>MaxRetries</code>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.
+    /// These parameters include <c>Role</c>, and optionally, <c>AllocatedCapacity</c>, <c>Timeout</c>,
+    /// and <c>MaxRetries</c>. For more information, see <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-jobs-job.html">Jobs</a>.
     /// </para>
     /// </summary>
     public partial class CreateMLTransformRequest : AmazonGlueRequest
@@ -136,37 +136,36 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code>
-        /// and <code>WorkerType</code>.
+        ///  <c>MaxCapacity</c> is a mutually exclusive option with <c>NumberOfWorkers</c> and
+        /// <c>WorkerType</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+        /// If either <c>NumberOfWorkers</c> or <c>WorkerType</c> is set, then <c>MaxCapacity</c>
         /// cannot be set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+        /// If <c>MaxCapacity</c> is set then neither <c>NumberOfWorkers</c> or <c>WorkerType</c>
         /// can be set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and
-        /// vice versa).
+        /// If <c>WorkerType</c> is set, then <c>NumberOfWorkers</c> is required (and vice versa).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+        ///  <c>MaxCapacity</c> and <c>NumberOfWorkers</c> must both be at least 1.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>,
-        /// the <code>MaxCapacity</code> field is set automatically and becomes read-only.
+        /// When the <c>WorkerType</c> field is set to a value other than <c>Standard</c>, the
+        /// <c>MaxCapacity</c> field is set automatically and becomes read-only.
         /// </para>
         ///  
         /// <para>
-        /// When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>,
-        /// the <code>MaxCapacity</code> field is set automatically and becomes read-only.
+        /// When the <c>WorkerType</c> field is set to a value other than <c>Standard</c>, the
+        /// <c>MaxCapacity</c> field is set automatically and becomes read-only.
         /// </para>
         /// </summary>
         public double MaxCapacity
@@ -221,13 +220,12 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfWorkers. 
         /// <para>
-        /// The number of workers of a defined <code>workerType</code> that are allocated when
-        /// this task runs.
+        /// The number of workers of a defined <c>workerType</c> that are allocated when this
+        /// task runs.
         /// </para>
         ///  
         /// <para>
-        /// If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and
-        /// vice versa).
+        /// If <c>WorkerType</c> is set, then <c>NumberOfWorkers</c> is required (and vice versa).
         /// </para>
         /// </summary>
         public int NumberOfWorkers
@@ -323,7 +321,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The timeout of the task run for this transform in minutes. This is the maximum time
         /// that a task run for this transform can consume resources before it is terminated and
-        /// enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
+        /// enters <c>TIMEOUT</c> status. The default is 2,880 minutes (48 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -366,42 +364,41 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// For the <c>Standard</c> worker type, each worker provides 4 vCPU, 16 GB of memory
         /// and a 50GB disk, and 2 executors per worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-        /// and a 64GB disk, and 1 executor per worker.
+        /// For the <c>G.1X</c> worker type, each worker provides 4 vCPU, 16 GB of memory and
+        /// a 64GB disk, and 1 executor per worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory
-        /// and a 128GB disk, and 1 executor per worker.
+        /// For the <c>G.2X</c> worker type, each worker provides 8 vCPU, 32 GB of memory and
+        /// a 128GB disk, and 1 executor per worker.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>MaxCapacity</code> is a mutually exclusive option with <code>NumberOfWorkers</code>
-        /// and <code>WorkerType</code>.
+        ///  <c>MaxCapacity</c> is a mutually exclusive option with <c>NumberOfWorkers</c> and
+        /// <c>WorkerType</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If either <code>NumberOfWorkers</code> or <code>WorkerType</code> is set, then <code>MaxCapacity</code>
+        /// If either <c>NumberOfWorkers</c> or <c>WorkerType</c> is set, then <c>MaxCapacity</c>
         /// cannot be set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>MaxCapacity</code> is set then neither <code>NumberOfWorkers</code> or <code>WorkerType</code>
+        /// If <c>MaxCapacity</c> is set then neither <c>NumberOfWorkers</c> or <c>WorkerType</c>
         /// can be set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>WorkerType</code> is set, then <code>NumberOfWorkers</code> is required (and
-        /// vice versa).
+        /// If <c>WorkerType</c> is set, then <c>NumberOfWorkers</c> is required (and vice versa).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaxCapacity</code> and <code>NumberOfWorkers</code> must both be at least 1.
+        ///  <c>MaxCapacity</c> and <c>NumberOfWorkers</c> must both be at least 1.
         /// </para>
         ///  </li> </ul>
         /// </summary>

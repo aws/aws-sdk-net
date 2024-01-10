@@ -29,14 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies that WAF should run a <code>CAPTCHA</code> check against the request: 
+    /// Specifies that WAF should run a <c>CAPTCHA</c> check against the request: 
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// If the request includes a valid, unexpired <code>CAPTCHA</code> token, WAF applies
-    /// any custom request handling and labels that you've configured and then allows the
-    /// web request inspection to proceed to the next rule, similar to a <code>CountAction</code>.
-    /// 
+    /// If the request includes a valid, unexpired <c>CAPTCHA</c> token, WAF applies any custom
+    /// request handling and labels that you've configured and then allows the web request
+    /// inspection to proceed to the next rule, similar to a <c>CountAction</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -50,20 +49,20 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The header <code>x-amzn-waf-action</code> with a value of <code>captcha</code>. 
+    /// The header <c>x-amzn-waf-action</c> with a value of <c>captcha</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The HTTP status code <code>405 Method Not Allowed</code>. 
+    /// The HTTP status code <c>405 Method Not Allowed</c>. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If the request contains an <code>Accept</code> header with a value of <code>text/html</code>,
-    /// the response includes a <code>CAPTCHA</code> JavaScript page interstitial. 
+    /// If the request contains an <c>Accept</c> header with a value of <c>text/html</c>,
+    /// the response includes a <c>CAPTCHA</c> JavaScript page interstitial. 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// You can configure the expiration time in the <code>CaptchaConfig</code> <code>ImmunityTimeProperty</code>
+    /// You can configure the expiration time in the <c>CaptchaConfig</c> <c>ImmunityTimeProperty</c>
     /// setting at the rule and web ACL level. The rule setting overrides the web ACL setting.
     /// 
     /// </para>
@@ -80,7 +79,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CustomRequestHandling. 
         /// <para>
-        /// Defines custom handling for the web request, used when the <code>CAPTCHA</code> inspection
+        /// Defines custom handling for the web request, used when the <c>CAPTCHA</c> inspection
         /// determines that the request's token is valid and unexpired.
         /// </para>
         ///  

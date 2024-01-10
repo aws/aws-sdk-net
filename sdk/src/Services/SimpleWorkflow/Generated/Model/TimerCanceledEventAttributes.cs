@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>TimerCanceled</code> event.
+    /// Provides the details of the <c>TimerCanceled</c> event.
     /// </summary>
     public partial class TimerCanceledEventAttributes
     {
@@ -40,10 +40,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>CancelTimer</code> decision to cancel this timer.
-        /// This information can be useful for diagnosing problems by tracing back the chain of
-        /// events leading up to this event.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>CancelTimer</c> decision to cancel this timer. This information
+        /// can be useful for diagnosing problems by tracing back the chain of events leading
+        /// up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,9 +62,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property StartedEventId. 
         /// <para>
-        /// The ID of the <code>TimerStarted</code> event that was recorded when this timer was
-        /// started. This information can be useful for diagnosing problems by tracing back the
-        /// chain of events leading up to this event.
+        /// The ID of the <c>TimerStarted</c> event that was recorded when this timer was started.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

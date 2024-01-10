@@ -81,24 +81,24 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note the
-        /// use of a string rather than a boolean. Specifies whether explicit references to indexes
+        ///  <c>"rest.action.multi.allow_explicit_index": "true" | "false"</c> - Note the use
+        /// of a string rather than a boolean. Specifies whether explicit references to indexes
         /// are allowed inside the body of HTTP requests. If you want to configure access policies
         /// for domain sub-resources, such as specific indexes and domain APIs, you must disable
         /// this property. Default is true.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string rather
-        /// than a boolean. Specifies the percentage of heap space allocated to field data. Default
+        ///  <c>"indices.fielddata.cache.size": "80" </c> - Note the use of a string rather than
+        /// a boolean. Specifies the percentage of heap space allocated to field data. Default
         /// is unbounded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a string
-        /// rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene
-        /// boolean query. Default is 1,024. Queries with more than the permitted number of clauses
-        /// result in a <code>TooManyClauses</code> error.
+        ///  <c>"indices.query.bool.max_clause_count": "1024"</c> - Note the use of a string rather
+        /// than a boolean. Specifies the maximum number of clauses allowed in a Lucene boolean
+        /// query. Default is 1,024. Queries with more than the permitted number of clauses result
+        /// in a <c>TooManyClauses</c> error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -232,9 +232,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// This flag, when set to True, specifies whether the <code>UpdateDomain</code> request
-        /// should return the results of a dry run analysis without actually applying the change.
-        /// A dry run determines what type of deployment the update will cause.
+        /// This flag, when set to True, specifies whether the <c>UpdateDomain</c> request should
+        /// return the results of a dry run analysis without actually applying the change. A dry
+        /// run determines what type of deployment the update will cause.
         /// </para>
         /// </summary>
         public bool DryRun
@@ -256,13 +256,13 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Basic</code> only returns the type of deployment (blue/green or dynamic) that
-        /// the update will cause.
+        ///  <c>Basic</c> only returns the type of deployment (blue/green or dynamic) that the
+        /// update will cause.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Verbose</code> runs an additional check to validate the changes you're making.
-        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
+        ///  <c>Verbose</c> runs an additional check to validate the changes you're making. For
+        /// more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#validation-check">Validating
         /// a domain update</a>.
         /// </para>
         ///  </li> </ul>
@@ -394,7 +394,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property SnapshotOptions. 
         /// <para>
         /// Option to set the time, in UTC format, for the daily automated snapshot. Default value
-        /// is <code>0</code> hours. 
+        /// is <c>0</c> hours. 
         /// </para>
         /// </summary>
         public SnapshotOptions SnapshotOptions

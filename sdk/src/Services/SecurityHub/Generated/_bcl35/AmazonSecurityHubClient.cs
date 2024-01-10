@@ -55,9 +55,9 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  
     /// <para>
-    /// For example, if your Region is set to <code>us-west-2</code>, when you use <code>CreateMembers</code>
+    /// For example, if your Region is set to <c>us-west-2</c>, when you use <c>CreateMembers</c>
     /// to add a member account to Security Hub, the association of the member account with
-    /// the administrator account is created only in the <code>us-west-2</code> Region. Security
+    /// the administrator account is created only in the <c>us-west-2</c> Region. Security
     /// Hub must be enabled for the member account in the same Region that the invitation
     /// was sent from.
     /// </para>
@@ -67,32 +67,32 @@ namespace Amazon.SecurityHub
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>BatchEnableStandards</code> - <code>RateLimit</code> of 1 request per second.
-    /// <code>BurstLimit</code> of 1 request per second.
+    ///  <c>BatchEnableStandards</c> - <c>RateLimit</c> of 1 request per second. <c>BurstLimit</c>
+    /// of 1 request per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>GetFindings</code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code>
+    ///  <c>GetFindings</c> - <c>RateLimit</c> of 3 requests per second. <c>BurstLimit</c>
     /// of 6 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>BatchImportFindings</code> - <code>RateLimit</code> of 10 requests per second.
-    /// <code>BurstLimit</code> of 30 requests per second.
+    ///  <c>BatchImportFindings</c> - <c>RateLimit</c> of 10 requests per second. <c>BurstLimit</c>
+    /// of 30 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>BatchUpdateFindings</code> - <code>RateLimit</code> of 10 requests per second.
-    /// <code>BurstLimit</code> of 30 requests per second.
+    ///  <c>BatchUpdateFindings</c> - <c>RateLimit</c> of 10 requests per second. <c>BurstLimit</c>
+    /// of 30 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>UpdateStandardsControl</code> - <code>RateLimit</code> of 1 request per second.
-    /// <code>BurstLimit</code> of 5 requests per second.
+    ///  <c>UpdateStandardsControl</c> - <c>RateLimit</c> of 1 request per second. <c>BurstLimit</c>
+    /// of 5 requests per second.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// All other operations - <code>RateLimit</code> of 10 requests per second. <code>BurstLimit</code>
+    /// All other operations - <c>RateLimit</c> of 10 requests per second. <c>BurstLimit</c>
     /// of 30 requests per second.
     /// </para>
     ///  </li> </ul>
@@ -409,15 +409,15 @@ namespace Amazon.SecurityHub
         #region  AcceptInvitation
 
         /// <summary>
-        /// This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
+        /// This method is deprecated. Instead, use <c>AcceptAdministratorInvitation</c>.
         /// 
         ///  
         /// <para>
-        /// The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually
-        /// change to use <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically
-        /// control access to this function must continue to use <code>AcceptInvitation</code>.
-        /// You should also add <code>AcceptAdministratorInvitation</code> to your policies to
-        /// ensure that the correct permissions are in place after the console begins to use <code>AcceptAdministratorInvitation</code>.
+        /// The Security Hub console continues to use <c>AcceptInvitation</c>. It will eventually
+        /// change to use <c>AcceptAdministratorInvitation</c>. Any IAM policies that specifically
+        /// control access to this function must continue to use <c>AcceptInvitation</c>. You
+        /// should also add <c>AcceptAdministratorInvitation</c> to your policies to ensure that
+        /// the correct permissions are in place after the console begins to use <c>AcceptAdministratorInvitation</c>.
         /// </para>
         ///  
         /// <para>
@@ -579,7 +579,7 @@ namespace Amazon.SecurityHub
         #region  BatchDisableStandards
 
         /// <summary>
-        /// Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.
+        /// Disables the standards specified by the provided <c>StandardsSubscriptionArns</c>.
         /// 
         ///  
         /// <para>
@@ -657,8 +657,8 @@ namespace Amazon.SecurityHub
         #region  BatchEnableStandards
 
         /// <summary>
-        /// Enables the standards specified by the provided <code>StandardsArn</code>. To obtain
-        /// the ARN for a standard, use the <code>DescribeStandards</code> operation.
+        /// Enables the standards specified by the provided <c>StandardsArn</c>. To obtain the
+        /// ARN for a standard, use the <c>DescribeStandards</c> operation.
         /// 
         ///  
         /// <para>
@@ -1035,7 +1035,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        ///  <code>BatchImportFindings</code> must be called by one of the following:
+        ///  <c>BatchImportFindings</c> must be called by one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1043,15 +1043,15 @@ namespace Amazon.SecurityHub
         /// the <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-custom-providers.html#securityhub-custom-providers-bfi-reqs">default
         /// product ARN</a> or are a partner sending findings from within a customer's Amazon
         /// Web Services account. In these cases, the identifier of the account that you are calling
-        /// <code>BatchImportFindings</code> from needs to be the same as the <code>AwsAccountId</code>
-        /// attribute for the finding.
+        /// <c>BatchImportFindings</c> from needs to be the same as the <c>AwsAccountId</c> attribute
+        /// for the finding.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// An Amazon Web Services account that Security Hub has allow-listed for an official
-        /// partner integration. In this case, you can call <code>BatchImportFindings</code> from
-        /// the allow-listed account and send findings from different customer accounts in the
-        /// same batch.
+        /// partner integration. In this case, you can call <c>BatchImportFindings</c> from the
+        /// allow-listed account and send findings from different customer accounts in the same
+        /// batch.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1060,55 +1060,55 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// After a finding is created, <code>BatchImportFindings</code> cannot be used to update
-        /// the following finding fields and objects, which Security Hub customers use to manage
-        /// their investigation workflow.
+        /// After a finding is created, <c>BatchImportFindings</c> cannot be used to update the
+        /// following finding fields and objects, which Security Hub customers use to manage their
+        /// investigation workflow.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Note</code> 
+        ///  <c>Note</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UserDefinedFields</code> 
+        ///  <c>UserDefinedFields</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VerificationState</code> 
+        ///  <c>VerificationState</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Workflow</code> 
+        ///  <c>Workflow</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Finding providers also should not use <code>BatchImportFindings</code> to update the
-        /// following attributes.
+        /// Finding providers also should not use <c>BatchImportFindings</c> to update the following
+        /// attributes.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Confidence</code> 
+        ///  <c>Confidence</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Criticality</code> 
+        ///  <c>Criticality</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RelatedFindings</code> 
+        ///  <c>RelatedFindings</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Severity</code> 
+        ///  <c>Severity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Types</code> 
+        ///  <c>Types</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Instead, finding providers use <code>FindingProviderFields</code> to provide values
-        /// for these attributes.
+        /// Instead, finding providers use <c>FindingProviderFields</c> to provide values for
+        /// these attributes.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchImportFindings service method.</param>
@@ -1258,49 +1258,49 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code>
+        /// Updates from <c>BatchUpdateFindings</c> do not affect the value of <c>UpdatedAt</c>
         /// for a finding.
         /// </para>
         ///  
         /// <para>
-        /// Administrator and member accounts can use <code>BatchUpdateFindings</code> to update
-        /// the following finding fields and objects.
+        /// Administrator and member accounts can use <c>BatchUpdateFindings</c> to update the
+        /// following finding fields and objects.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Confidence</code> 
+        ///  <c>Confidence</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Criticality</code> 
+        ///  <c>Criticality</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Note</code> 
+        ///  <c>Note</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RelatedFindings</code> 
+        ///  <c>RelatedFindings</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Severity</code> 
+        ///  <c>Severity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Types</code> 
+        ///  <c>Types</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UserDefinedFields</code> 
+        ///  <c>UserDefinedFields</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VerificationState</code> 
+        ///  <c>VerificationState</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Workflow</code> 
+        ///  <c>Workflow</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1759,7 +1759,7 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// To group the related findings in the insight, use the <code>GroupByAttribute</code>.
+        /// To group the related findings in the insight, use the <c>GroupByAttribute</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateInsight service method.</param>
@@ -1839,13 +1839,12 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        ///  <code>CreateMembers</code> is always used to add accounts that are not organization
-        /// members.
+        ///  <c>CreateMembers</c> is always used to add accounts that are not organization members.
         /// </para>
         ///  
         /// <para>
-        /// For accounts that are managed using Organizations, <code>CreateMembers</code> is only
-        /// used in the following cases:
+        /// For accounts that are managed using Organizations, <c>CreateMembers</c> is only used
+        /// in the following cases:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -1858,14 +1857,14 @@ namespace Amazon.SecurityHub
         ///  </li> </ul> 
         /// <para>
         /// This action can only be used by an account that has Security Hub enabled. To enable
-        /// Security Hub, you can use the <code>EnableSecurityHub</code> operation.
+        /// Security Hub, you can use the <c>EnableSecurityHub</c> operation.
         /// </para>
         ///  
         /// <para>
         /// For accounts that are not organization members, you create the account association
         /// and then send an invitation to the member account. To send the invitation, you use
-        /// the <code>InviteMembers</code> operation. If the account owner accepts the invitation,
-        /// the account becomes a member account in Security Hub.
+        /// the <c>InviteMembers</c> operation. If the account owner accepts the invitation, the
+        /// account becomes a member account in Security Hub.
         /// </para>
         ///  
         /// <para>
@@ -1893,8 +1892,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// To remove the association between the administrator and member accounts, use the <code>DisassociateFromMasterAccount</code>
-        /// or <code>DisassociateMembers</code> operation.
+        /// To remove the association between the administrator and member accounts, use the <c>DisassociateFromMasterAccount</c>
+        /// or <c>DisassociateMembers</c> operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateMembers service method.</param>
@@ -2124,7 +2123,7 @@ namespace Amazon.SecurityHub
         /// Deletes a configuration policy. Only the Security Hub delegated administrator can
         /// invoke this operation from the home Region. For the deletion to succeed, you must
         /// first disassociate a configuration policy from target accounts, organizational units,
-        /// or the root by invoking the <code>StartConfigurationPolicyDisassociation</code> operation.
+        /// or the root by invoking the <c>StartConfigurationPolicyDisassociation</c> operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteConfigurationPolicy service method.</param>
         /// 
@@ -2285,7 +2284,7 @@ namespace Amazon.SecurityHub
         #region  DeleteInsight
 
         /// <summary>
-        /// Deletes the insight specified by the <code>InsightArn</code>.
+        /// Deletes the insight specified by the <c>InsightArn</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInsight service method.</param>
         /// 
@@ -2586,7 +2585,7 @@ namespace Amazon.SecurityHub
         #region  DescribeHub
 
         /// <summary>
-        /// Returns details about the Hub resource in your account, including the <code>HubArn</code>
+        /// Returns details about the Hub resource in your account, including the <c>HubArn</c>
         /// and the time when you enabled Security Hub.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHub service method.</param>
@@ -3267,16 +3266,15 @@ namespace Amazon.SecurityHub
         #region  DisassociateFromMasterAccount
 
         /// <summary>
-        /// This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
+        /// This method is deprecated. Instead, use <c>DisassociateFromAdministratorAccount</c>.
         /// 
         ///  
         /// <para>
-        /// The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>.
-        /// It will eventually change to use <code>DisassociateFromAdministratorAccount</code>.
-        /// Any IAM policies that specifically control access to this function must continue to
-        /// use <code>DisassociateFromMasterAccount</code>. You should also add <code>DisassociateFromAdministratorAccount</code>
-        /// to your policies to ensure that the correct permissions are in place after the console
-        /// begins to use <code>DisassociateFromAdministratorAccount</code>.
+        /// The Security Hub console continues to use <c>DisassociateFromMasterAccount</c>. It
+        /// will eventually change to use <c>DisassociateFromAdministratorAccount</c>. Any IAM
+        /// policies that specifically control access to this function must continue to use <c>DisassociateFromMasterAccount</c>.
+        /// You should also add <c>DisassociateFromAdministratorAccount</c> to your policies to
+        /// ensure that the correct permissions are in place after the console begins to use <c>DisassociateFromAdministratorAccount</c>.
         /// </para>
         ///  
         /// <para>
@@ -3605,8 +3603,8 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// When you use the <code>EnableSecurityHub</code> operation to enable Security Hub,
-        /// you also automatically enable the following standards:
+        /// When you use the <c>EnableSecurityHub</c> operation to enable Security Hub, you also
+        /// automatically enable the following standards:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -3622,13 +3620,13 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// To opt out of automatically enabled standards, set <code>EnableDefaultStandards</code>
-        /// to <code>false</code>.
+        /// To opt out of automatically enabled standards, set <c>EnableDefaultStandards</c> to
+        /// <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// After you enable Security Hub, to enable a standard, use the <code>BatchEnableStandards</code>
-        /// operation. To disable a standard, use the <code>BatchDisableStandards</code> operation.
+        /// After you enable Security Hub, to enable a standard, use the <c>BatchEnableStandards</c>
+        /// operation. To disable a standard, use the <c>BatchDisableStandards</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -4156,9 +4154,9 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// If finding aggregation is enabled, then when you call <code>GetFindings</code> from
-        /// the aggregation Region, the results include all of the matching findings from both
-        /// the aggregation Region and the linked Regions.
+        /// If finding aggregation is enabled, then when you call <c>GetFindings</c> from the
+        /// aggregation Region, the results include all of the matching findings from both the
+        /// aggregation Region and the linked Regions.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFindings service method.</param>
@@ -4442,15 +4440,15 @@ namespace Amazon.SecurityHub
         #region  GetMasterAccount
 
         /// <summary>
-        /// This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
+        /// This method is deprecated. Instead, use <c>GetAdministratorAccount</c>.
         /// 
         ///  
         /// <para>
-        /// The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually
-        /// change to use <code>GetAdministratorAccount</code>. Any IAM policies that specifically
-        /// control access to this function must continue to use <code>GetMasterAccount</code>.
-        /// You should also add <code>GetAdministratorAccount</code> to your policies to ensure
-        /// that the correct permissions are in place after the console begins to use <code>GetAdministratorAccount</code>.
+        /// The Security Hub console continues to use <c>GetMasterAccount</c>. It will eventually
+        /// change to use <c>GetAdministratorAccount</c>. Any IAM policies that specifically control
+        /// access to this function must continue to use <c>GetMasterAccount</c>. You should also
+        /// add <c>GetAdministratorAccount</c> to your policies to ensure that the correct permissions
+        /// are in place after the console begins to use <c>GetAdministratorAccount</c>.
         /// </para>
         ///  
         /// <para>
@@ -4703,7 +4701,7 @@ namespace Amazon.SecurityHub
         /// </para>
         ///  
         /// <para>
-        /// Before you can use this action to invite a member, you must first use the <code>CreateMembers</code>
+        /// Before you can use this action to invite a member, you must first use the <c>CreateMembers</c>
         /// action to create the member account in Security Hub.
         /// </para>
         ///  
@@ -5069,8 +5067,8 @@ namespace Amazon.SecurityHub
         #region  ListFindingAggregators
 
         /// <summary>
-        /// If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns
-        /// the ARN of the finding aggregator. You can run this operation from any Region.
+        /// If finding aggregation is enabled, then <c>ListFindingAggregators</c> returns the
+        /// ARN of the finding aggregator. You can run this operation from any Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListFindingAggregators service method.</param>
         /// 
@@ -6000,13 +5998,12 @@ namespace Amazon.SecurityHub
 
         /// <summary>
         /// Updates the finding aggregation configuration. Used to update the Region linking mode
-        /// and the list of included or excluded Regions. You cannot use <code>UpdateFindingAggregator</code>
+        /// and the list of included or excluded Regions. You cannot use <c>UpdateFindingAggregator</c>
         /// to change the aggregation Region.
         /// 
         ///  
         /// <para>
-        /// You must run <code>UpdateFindingAggregator</code> from the current aggregation Region.
-        /// 
+        /// You must run <c>UpdateFindingAggregator</c> from the current aggregation Region. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindingAggregator service method.</param>
@@ -6082,14 +6079,13 @@ namespace Amazon.SecurityHub
         #region  UpdateFindings
 
         /// <summary>
-        /// <code>UpdateFindings</code> is deprecated. Instead of <code>UpdateFindings</code>,
-        /// use <code>BatchUpdateFindings</code>.
+        /// <c>UpdateFindings</c> is deprecated. Instead of <c>UpdateFindings</c>, use <c>BatchUpdateFindings</c>.
         /// 
         ///  
         /// <para>
-        /// Updates the <code>Note</code> and <code>RecordState</code> of the Security Hub-aggregated
-        /// findings that the filter attributes specify. Any member account that can view the
-        /// finding also sees the update to the finding.
+        /// Updates the <c>Note</c> and <c>RecordState</c> of the Security Hub-aggregated findings
+        /// that the filter attributes specify. Any member account that can view the finding also
+        /// sees the update to the finding.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFindings service method.</param>
@@ -6338,7 +6334,7 @@ namespace Amazon.SecurityHub
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceInUseException">
         /// The request was rejected because it conflicts with the resource's availability. For
-        /// example, you tried to update a security control that's currently in the <code>UPDATING</code>
+        /// example, you tried to update a security control that's currently in the <c>UPDATING</c>
         /// state.
         /// </exception>
         /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">

@@ -36,7 +36,7 @@ namespace Amazon.Comprehend.Model
     ///  
     /// <para>
     /// This API can be used for either standard entity detection or custom entity recognition.
-    /// In order to be used for custom entity recognition, the optional <code>EntityRecognizerArn</code>
+    /// In order to be used for custom entity recognition, the optional <c>EntityRecognizerArn</c>
     /// must be used in order to provide access to the recognizer being used to detect the
     /// custom entity.
     /// </para>
@@ -100,8 +100,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property EntityRecognizerArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the specific entity recognizer to be
-        /// used by the <code>StartEntitiesDetectionJob</code>. This ARN is optional and is only
-        /// used for a custom entity recognition job.
+        /// used by the <c>StartEntitiesDetectionJob</c>. This ARN is optional and is only used
+        /// for a custom entity recognition job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -244,11 +244,11 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// KMS Key ID: <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// Amazon Resource Name (ARN) of a KMS Key: <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> </ul>

@@ -39,9 +39,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property FailedResourcesMap. 
         /// <para>
         /// A map containing a key-value pair for each failed item that couldn't be untagged.
-        /// The key is the ARN of the failed resource. The value is a <code>FailureInfo</code>
-        /// object that contains an error code, a status code, and an error message. If there
-        /// are no errors, the <code>FailedResourcesMap</code> is empty.
+        /// The key is the ARN of the failed resource. The value is a <c>FailureInfo</c> object
+        /// that contains an error code, a status code, and an error message. If there are no
+        /// errors, the <c>FailedResourcesMap</c> is empty.
         /// </para>
         /// </summary>
         public Dictionary<string, FailureInfo> FailedResourcesMap

@@ -38,8 +38,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyIdentifier. 
         /// <para>
-        /// The <code>KeyARN</code> of the the wrapping key. This key encrypts or wraps the key
-        /// under export for TR-31 key block generation.
+        /// The <c>KeyARN</c> of the the wrapping key. This key encrypts or wraps the key under
+        /// export for TR-31 key block generation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]

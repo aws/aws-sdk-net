@@ -33,9 +33,8 @@ namespace Amazon.OpsWorks.Model
     /// <b>deploy</b>, <b>undeploy</b>, and <b>shutdown</b>. For each layer, AWS OpsWorks
     /// Stacks runs a set of standard recipes for each event. In addition, you can provide
     /// custom recipes for any or all layers and events. AWS OpsWorks Stacks runs custom event
-    /// recipes after the standard recipes. <code>LayerCustomRecipes</code> specifies the
-    /// custom recipes for a particular layer to be run in response to each of the five events.
-    /// 
+    /// recipes after the standard recipes. <c>LayerCustomRecipes</c> specifies the custom
+    /// recipes for a particular layer to be run in response to each of the five events. 
     /// 
     ///  
     /// <para>
@@ -56,7 +55,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Configure. 
         /// <para>
-        /// An array of custom recipe names to be run following a <code>configure</code> event.
+        /// An array of custom recipe names to be run following a <c>configure</c> event.
         /// </para>
         /// </summary>
         public List<string> Configure
@@ -74,7 +73,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Deploy. 
         /// <para>
-        /// An array of custom recipe names to be run following a <code>deploy</code> event.
+        /// An array of custom recipe names to be run following a <c>deploy</c> event.
         /// </para>
         /// </summary>
         public List<string> Deploy
@@ -92,7 +91,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Setup. 
         /// <para>
-        /// An array of custom recipe names to be run following a <code>setup</code> event.
+        /// An array of custom recipe names to be run following a <c>setup</c> event.
         /// </para>
         /// </summary>
         public List<string> Setup
@@ -110,7 +109,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Shutdown. 
         /// <para>
-        /// An array of custom recipe names to be run following a <code>shutdown</code> event.
+        /// An array of custom recipe names to be run following a <c>shutdown</c> event.
         /// </para>
         /// </summary>
         public List<string> Shutdown
@@ -128,7 +127,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Undeploy. 
         /// <para>
-        /// An array of custom recipe names to be run following a <code>undeploy</code> event.
+        /// An array of custom recipe names to be run following a <c>undeploy</c> event.
         /// </para>
         /// </summary>
         public List<string> Undeploy

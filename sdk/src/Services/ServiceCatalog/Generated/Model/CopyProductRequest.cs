@@ -61,11 +61,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -85,8 +85,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CopyOptions. 
         /// <para>
-        /// The copy options. If the value is <code>CopyTags</code>, the tags from the source
-        /// product are copied to the target product.
+        /// The copy options. If the value is <c>CopyTags</c>, the tags from the source product
+        /// are copied to the target product.
         /// </para>
         /// </summary>
         public List<string> CopyOptions

@@ -49,8 +49,8 @@ namespace Amazon.SecurityToken.Model
         /// The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that
         /// you can use to refer to the resulting temporary security credentials. For example,
         /// you can reference these credentials as a principal in a resource-based policy by using
-        /// the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code>
-        /// that you specified when you called <code>AssumeRole</code>. 
+        /// the ARN or assumed role ID. The ARN and ID include the <c>RoleSessionName</c> that
+        /// you specified when you called <c>AssumeRole</c>. 
         /// </para>
         /// </summary>
         public AssumedRoleUser AssumedRoleUser
@@ -135,9 +135,9 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property Provider. 
         /// <para>
         ///  The issuing authority of the web identity token presented. For OpenID Connect ID
-        /// tokens, this contains the value of the <code>iss</code> field. For OAuth 2.0 access
-        /// tokens, this contains the value of the <code>ProviderId</code> parameter that was
-        /// passed in the <code>AssumeRoleWithWebIdentity</code> request.
+        /// tokens, this contains the value of the <c>iss</c> field. For OAuth 2.0 access tokens,
+        /// this contains the value of the <c>ProviderId</c> parameter that was passed in the
+        /// <c>AssumeRoleWithWebIdentity</c> request.
         /// </para>
         /// </summary>
         public string Provider
@@ -161,12 +161,12 @@ namespace Amazon.SecurityToken.Model
         ///  
         /// <para>
         /// You can require users to set a source identity value when they assume a role. You
-        /// do this by using the <code>sts:SourceIdentity</code> condition key in a role trust
-        /// policy. That way, actions that are taken with the role are associated with that user.
-        /// After the source identity is set, the value cannot be changed. It is present in the
-        /// request for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
+        /// do this by using the <c>sts:SourceIdentity</c> condition key in a role trust policy.
+        /// That way, actions that are taken with the role are associated with that user. After
+        /// the source identity is set, the value cannot be changed. It is present in the request
+        /// for all actions that are taken by the role and persists across <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts#iam-term-role-chaining">chained
         /// role</a> sessions. You can configure your identity provider to use an attribute associated
-        /// with your users, like user name or email, as the source identity when calling <code>AssumeRoleWithWebIdentity</code>.
+        /// with your users, like user name or email, as the source identity when calling <c>AssumeRoleWithWebIdentity</c>.
         /// You do this by adding a claim to the JSON web token. To learn more about OIDC tokens
         /// and claims, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-using-tokens-with-identity-providers.html">Using
         /// Tokens with User Pools</a> in the <i>Amazon Cognito Developer Guide</i>. For more
@@ -197,10 +197,10 @@ namespace Amazon.SecurityToken.Model
         /// Gets and sets the property SubjectFromWebIdentityToken. 
         /// <para>
         /// The unique user identifier that is returned by the identity provider. This identifier
-        /// is associated with the <code>WebIdentityToken</code> that was submitted with the <code>AssumeRoleWithWebIdentity</code>
+        /// is associated with the <c>WebIdentityToken</c> that was submitted with the <c>AssumeRoleWithWebIdentity</c>
         /// call. The identifier is typically unique to the user and the application that acquired
-        /// the <code>WebIdentityToken</code> (pairwise identifier). For OpenID Connect ID tokens,
-        /// this field contains the value returned by the identity provider as the token's <code>sub</code>
+        /// the <c>WebIdentityToken</c> (pairwise identifier). For OpenID Connect ID tokens, this
+        /// field contains the value returned by the identity provider as the token's <c>sub</c>
         /// (Subject) claim. 
         /// </para>
         /// </summary>

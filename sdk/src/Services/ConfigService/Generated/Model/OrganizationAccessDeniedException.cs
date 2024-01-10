@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// For <code>PutConfigurationAggregator</code> API, you can see this exception for the
-    /// following reasons:
+    /// For <c>PutConfigurationAggregator</c> API, you can see this exception for the following
+    /// reasons:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// No permission to call <code>EnableAWSServiceAccess</code> API
+    /// No permission to call <c>EnableAWSServiceAccess</c> API
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -51,15 +51,15 @@ namespace Amazon.ConfigService.Model
     ///  </li> <li> 
     /// <para>
     /// You are not a registered delegated administrator for Config with permissions to call
-    /// <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers
+    /// <c>ListDelegatedAdministrators</c> API. Ensure that the management account registers
     /// delagated administrator for Config service principle name before the delegated administrator
     /// creates an aggregator.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code>
-    /// APIs, Config throws an exception if APIs are called from member accounts. All APIs
-    /// must be called from organization management account.
+    /// For all <c>OrganizationConfigRule</c> and <c>OrganizationConformancePack</c> APIs,
+    /// Config throws an exception if APIs are called from member accounts. All APIs must
+    /// be called from organization management account.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

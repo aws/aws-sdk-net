@@ -30,7 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// A complex type that controls the countries in which your content is distributed. CloudFront
-    /// determines the location of your users using <code>MaxMind</code> GeoIP databases.
+    /// determines the location of your users using <c>MaxMind</c> GeoIP databases.
     /// </summary>
     public partial class GeoRestriction
     {
@@ -55,23 +55,23 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains a <code>Location</code> element for each country in which
-        /// you want CloudFront either to distribute your content (<code>whitelist</code>) or
-        /// not distribute your content (<code>blacklist</code>).
+        /// A complex type that contains a <c>Location</c> element for each country in which you
+        /// want CloudFront either to distribute your content (<c>whitelist</c>) or not distribute
+        /// your content (<c>blacklist</c>).
         /// </para>
         ///  
         /// <para>
-        /// The <code>Location</code> element is a two-letter, uppercase country code for a country
-        /// that you want to include in your <code>blacklist</code> or <code>whitelist</code>.
-        /// Include one <code>Location</code> element for each country.
+        /// The <c>Location</c> element is a two-letter, uppercase country code for a country
+        /// that you want to include in your <c>blacklist</c> or <c>whitelist</c>. Include one
+        /// <c>Location</c> element for each country.
         /// </para>
         ///  
         /// <para>
-        /// CloudFront and <code>MaxMind</code> both use <code>ISO 3166</code> country codes.
-        /// For the current list of countries and the corresponding codes, see <code>ISO 3166-1-alpha-2</code>
-        /// code on the <i>International Organization for Standardization</i> website. You can
-        /// also refer to the country list on the CloudFront console, which includes both country
-        /// names and codes.
+        /// CloudFront and <c>MaxMind</c> both use <c>ISO 3166</c> country codes. For the current
+        /// list of countries and the corresponding codes, see <c>ISO 3166-1-alpha-2</c> code
+        /// on the <i>International Organization for Standardization</i> website. You can also
+        /// refer to the country list on the CloudFront console, which includes both country names
+        /// and codes.
         /// </para>
         /// </summary>
         public List<string> Items
@@ -89,9 +89,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Quantity. 
         /// <para>
-        /// When geo restriction is <code>enabled</code>, this is the number of countries in your
-        /// <code>whitelist</code> or <code>blacklist</code>. Otherwise, when it is not enabled,
-        /// <code>Quantity</code> is <code>0</code>, and you can omit <code>Items</code>.
+        /// When geo restriction is <c>enabled</c>, this is the number of countries in your <c>whitelist</c>
+        /// or <c>blacklist</c>. Otherwise, when it is not enabled, <c>Quantity</c> is <c>0</c>,
+        /// and you can omit <c>Items</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,18 +114,18 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>none</code>: No geo restriction is enabled, meaning access to content is not
-        /// restricted by client geo location.
+        ///  <c>none</c>: No geo restriction is enabled, meaning access to content is not restricted
+        /// by client geo location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>blacklist</code>: The <code>Location</code> elements specify the countries
-        /// in which you don't want CloudFront to distribute your content.
+        ///  <c>blacklist</c>: The <c>Location</c> elements specify the countries in which you
+        /// don't want CloudFront to distribute your content.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>whitelist</code>: The <code>Location</code> elements specify the countries
-        /// in which you want CloudFront to distribute your content.
+        ///  <c>whitelist</c>: The <c>Location</c> elements specify the countries in which you
+        /// want CloudFront to distribute your content.
         /// </para>
         ///  </li> </ul>
         /// </summary>

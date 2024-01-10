@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the ListFeatureGroups operation.
-    /// List <code>FeatureGroup</code>s based on given filter and order.
+    /// List <c>FeatureGroup</c>s based on given filter and order.
     /// </summary>
     public partial class ListFeatureGroupsRequest : AmazonSageMakerRequest
     {
@@ -47,8 +47,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTimeAfter. 
         /// <para>
-        /// Use this parameter to search for <code>FeatureGroups</code>s created after a specific
-        /// date and time.
+        /// Use this parameter to search for <c>FeatureGroups</c>s created after a specific date
+        /// and time.
         /// </para>
         /// </summary>
         public DateTime CreationTimeAfter
@@ -66,8 +66,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTimeBefore. 
         /// <para>
-        /// Use this parameter to search for <code>FeatureGroups</code>s created before a specific
-        /// date and time.
+        /// Use this parameter to search for <c>FeatureGroups</c>s created before a specific date
+        /// and time.
         /// </para>
         /// </summary>
         public DateTime CreationTimeBefore
@@ -85,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupStatusEquals. 
         /// <para>
-        /// A <code>FeatureGroup</code> status. Filters by <code>FeatureGroup</code> status. 
+        /// A <c>FeatureGroup</c> status. Filters by <c>FeatureGroup</c> status. 
         /// </para>
         /// </summary>
         public FeatureGroupStatus FeatureGroupStatusEquals
@@ -103,7 +103,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results returned by <code>ListFeatureGroups</code>.
+        /// The maximum number of results returned by <c>ListFeatureGroups</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -122,8 +122,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NameContains. 
         /// <para>
-        /// A string that partially matches one or more <code>FeatureGroup</code>s names. Filters
-        /// <code>FeatureGroup</code>s by name. 
+        /// A string that partially matches one or more <c>FeatureGroup</c>s names. Filters <c>FeatureGroup</c>s
+        /// by name. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -142,7 +142,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to resume pagination of <code>ListFeatureGroups</code> results.
+        /// A token to resume pagination of <c>ListFeatureGroups</c> results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -161,8 +161,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OfflineStoreStatusEquals. 
         /// <para>
-        /// An <code>OfflineStore</code> status. Filters by <code>OfflineStore</code> status.
-        /// 
+        /// An <c>OfflineStore</c> status. Filters by <c>OfflineStore</c> status. 
         /// </para>
         /// </summary>
         public OfflineStoreStatusValue OfflineStoreStatusEquals

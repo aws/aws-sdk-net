@@ -41,8 +41,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// Example: <code>{ "actionId": "&lt;action name&gt;", "actionType": "Action" }</code>
-    /// 
+    /// Example: <c>{ "actionId": "&lt;action name&gt;", "actionType": "Action" }</c> 
     /// </para>
     /// </summary>
     public partial class ActionIdentifier

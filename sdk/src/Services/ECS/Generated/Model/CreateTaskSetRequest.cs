@@ -31,8 +31,8 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the CreateTaskSet operation.
     /// Create a task set in the specified cluster and service. This is used when a service
-    /// uses the <code>EXTERNAL</code> deployment controller type. For more information, see
-    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+    /// uses the <c>EXTERNAL</c> deployment controller type. For more information, see <a
+    /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// 
     ///  
@@ -64,18 +64,16 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// A capacity provider strategy consists of one or more capacity providers along with
-        /// the <code>base</code> and <code>weight</code> to assign to them. A capacity provider
-        /// must be associated with the cluster to be used in a capacity provider strategy. The
-        /// <a>PutClusterCapacityProviders</a> API is used to associate a capacity provider with
-        /// a cluster. Only capacity providers with an <code>ACTIVE</code> or <code>UPDATING</code>
-        /// status can be used.
+        /// the <c>base</c> and <c>weight</c> to assign to them. A capacity provider must be associated
+        /// with the cluster to be used in a capacity provider strategy. The <a>PutClusterCapacityProviders</a>
+        /// API is used to associate a capacity provider with a cluster. Only capacity providers
+        /// with an <c>ACTIVE</c> or <c>UPDATING</c> status can be used.
         /// </para>
         ///  
         /// <para>
-        /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code>
-        /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
-        /// used.
+        /// If a <c>capacityProviderStrategy</c> is specified, the <c>launchType</c> parameter
+        /// must be omitted. If no <c>capacityProviderStrategy</c> or <c>launchType</c> is specified,
+        /// the <c>defaultCapacityProviderStrategy</c> for the cluster is used.
         /// </para>
         ///  
         /// <para>
@@ -85,7 +83,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+        /// To use a Fargate capacity provider, specify either the <c>FARGATE</c> or <c>FARGATE_SPOT</c>
         /// capacity providers. The Fargate capacity providers are available to all accounts and
         /// only need to be associated with a cluster to be used.
         /// </para>
@@ -152,8 +150,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An optional non-unique tag that identifies this task set in external systems. If the
         /// task set is associated with a service discovery registry, the tasks in this task set
-        /// will have the <code>ECS_TASK_SET_EXTERNAL_ID</code> Cloud Map attribute set to the
-        /// provided value.
+        /// will have the <c>ECS_TASK_SET_EXTERNAL_ID</c> Cloud Map attribute set to the provided
+        /// value.
         /// </para>
         /// </summary>
         public string ExternalId
@@ -177,8 +175,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If a <code>launchType</code> is specified, the <code>capacityProviderStrategy</code>
-        /// parameter must be omitted.
+        /// If a <c>launchType</c> is specified, the <c>capacityProviderStrategy</c> parameter
+        /// must be omitted.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -235,7 +233,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property PlatformVersion. 
         /// <para>
         /// The platform version that the tasks in the task set uses. A platform version is specified
-        /// only for tasks using the Fargate launch type. If one isn't specified, the <code>LATEST</code>
+        /// only for tasks using the Fargate launch type. If one isn't specified, the <c>LATEST</c>
         /// platform version is used.
         /// </para>
         /// </summary>
@@ -351,10 +349,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -375,7 +373,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property TaskDefinition. 
         /// <para>
         /// The task definition for the tasks in the task set to use. If a revision isn't specified,
-        /// the latest <code>ACTIVE</code> revision is used.
+        /// the latest <c>ACTIVE</c> revision is used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

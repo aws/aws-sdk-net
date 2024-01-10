@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// An object that contains the details of an Security Hub configuration policy that’s
-    /// returned in a <code>ListConfigurationPolicies</code> request.
+    /// returned in a <c>ListConfigurationPolicies</c> request.
     /// </summary>
     public partial class ConfigurationPolicySummary
     {
@@ -99,7 +99,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Name. 
         /// <para>
         ///  The name of the configuration policy. Alphanumeric characters and the following ASCII
-        /// characters are permitted: <code>-, ., !, *, /</code>. 
+        /// characters are permitted: <c>-, ., !, *, /</c>. 
         /// </para>
         /// </summary>
         public string Name

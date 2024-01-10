@@ -63,24 +63,24 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Creating</code>: Creating inference resources for the production variant.
+        ///  <c>Creating</c>: Creating inference resources for the production variant.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code>: Terminating inference resources for the production variant.
+        ///  <c>Deleting</c>: Terminating inference resources for the production variant.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code>: Updating capacity for the production variant.
+        ///  <c>Updating</c>: Updating capacity for the production variant.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ActivatingTraffic</code>: Turning on traffic for the production variant.
+        ///  <c>ActivatingTraffic</c>: Turning on traffic for the production variant.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Baking</code>: Waiting period to monitor the CloudWatch alarms in the automatic
-        /// rollback configuration.
+        ///  <c>Baking</c>: Waiting period to monitor the CloudWatch alarms in the automatic rollback
+        /// configuration.
         /// </para>
         ///  </li> </ul>
         /// </summary>

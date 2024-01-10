@@ -45,34 +45,33 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Valid filter key values: ActivationIds | AgentVersion | AssociationStatus | IamRole
         /// | InstanceIds | PingStatus | PlatformTypes | ResourceType | SourceIds | SourceTypes
-        /// | "tag-key" | "tag:<code>{keyname}</code> 
+        /// | "tag-key" | "tag:<c>{keyname}</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Valid values for the <code>AssociationStatus</code> filter key: Success | Pending
-        /// | Failed
+        /// Valid values for the <c>AssociationStatus</c> filter key: Success | Pending | Failed
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for the <code>PingStatus</code> filter key: Online | ConnectionLost |
-        /// Inactive (deprecated)
+        /// Valid values for the <c>PingStatus</c> filter key: Online | ConnectionLost | Inactive
+        /// (deprecated)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for the <code>PlatformType</code> filter key: Windows | Linux | MacOS
+        /// Valid values for the <c>PlatformType</c> filter key: Windows | Linux | MacOS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for the <code>ResourceType</code> filter key: EC2Instance | ManagedInstance
+        /// Valid values for the <c>ResourceType</c> filter key: EC2Instance | ManagedInstance
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid values for the <code>SourceType</code> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance
+        /// Valid values for the <c>SourceType</c> filter key: AWS::EC2::Instance | AWS::SSM::ManagedInstance
         /// | AWS::IoT::Thing
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Valid tag examples: <code>Key=tag-key,Values=Purpose</code> | <code>Key=tag:Purpose,Values=Test</code>.
+        /// Valid tag examples: <c>Key=tag-key,Values=Purpose</c> | <c>Key=tag:Purpose,Values=Test</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

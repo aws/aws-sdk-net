@@ -112,19 +112,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The replica is being created.
+        ///  <c>CREATING</c> - The replica is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The replica is being updated.
+        ///  <c>UPDATING</c> - The replica is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The replica is being deleted.
+        ///  <c>DELETING</c> - The replica is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The replica is ready for use.
+        ///  <c>ACTIVE</c> - The replica is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

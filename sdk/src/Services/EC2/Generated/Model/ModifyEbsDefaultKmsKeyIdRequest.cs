@@ -60,8 +60,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The identifier of the Key Management Service (KMS) KMS key to use for Amazon EBS encryption.
-        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <code>KmsKeyId</code>
-        /// is specified, the encrypted state must be <code>true</code>.
+        /// If this parameter is not specified, your KMS key for Amazon EBS is used. If <c>KmsKeyId</c>
+        /// is specified, the encrypted state must be <c>true</c>.
         /// </para>
         ///  
         /// <para>

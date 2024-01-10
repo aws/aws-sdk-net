@@ -58,8 +58,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Member. 
         /// <para>
-        /// The <code>ChannelArn</code> and <code>BannedIdentity</code> of the member in the ban
-        /// response.
+        /// The <c>ChannelArn</c> and <c>BannedIdentity</c> of the member in the ban response.
         /// </para>
         /// </summary>
         public Identity Member

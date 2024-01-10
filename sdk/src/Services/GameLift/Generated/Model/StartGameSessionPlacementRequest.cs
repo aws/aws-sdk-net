@@ -86,10 +86,10 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
-    /// and check the request's status. If the status is <code>FULFILLED</code>, a new game
-    /// session has been created and a game session ARN and Region are referenced. If the
-    /// placement request times out, you can resubmit the request or retry it with a different
-    /// queue. 
+    /// and check the request's status. If the status is <c>FULFILLED</c>, a new game session
+    /// has been created and a game session ARN and Region are referenced. If the placement
+    /// request times out, you can resubmit the request or retry it with a different queue.
+    /// 
     /// </para>
     /// </summary>
     public partial class StartGameSessionPlacementRequest : AmazonGameLiftRequest
@@ -125,7 +125,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameProperties. 
         /// <para>
         /// A set of key-value pairs that can store custom data in a game session. For example:
-        /// <code>{"Key": "difficulty", "Value": "novice"}</code>.
+        /// <c>{"Key": "difficulty", "Value": "novice"}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=16)]
@@ -145,8 +145,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionData. 
         /// <para>
         /// A set of custom game session properties, formatted as a single string value. This
-        /// data is passed to a game server process in the <code>GameSession</code> object with
-        /// a request to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+        /// data is passed to a game server process in the <c>GameSession</c> object with a request
+        /// to start a new game session (see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
         /// a Game Session</a>).
         /// </para>
         /// </summary>

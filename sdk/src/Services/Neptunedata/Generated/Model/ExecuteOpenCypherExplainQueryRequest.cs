@@ -30,7 +30,7 @@ namespace Amazon.Neptunedata.Model
 {
     /// <summary>
     /// Container for the parameters to the ExecuteOpenCypherExplainQuery operation.
-    /// Executes an openCypher <code>explain</code> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html">The
+    /// Executes an openCypher <c>explain</c> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html">The
     /// openCypher explain feature</a> for more information.
     /// 
     ///  
@@ -57,8 +57,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property ExplainMode. 
         /// <para>
-        /// The openCypher <code>explain</code> mode. Can be one of: <code>static</code>, <code>dynamic</code>,
-        /// or <code>details</code>.
+        /// The openCypher <c>explain</c> mode. Can be one of: <c>static</c>, <c>dynamic</c>,
+        /// or <c>details</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,8 +30,8 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// For queries that originate in your VPC, detailed information about a Resolver rule,
-    /// which specifies how to route DNS queries out of the VPC. The <code>ResolverRule</code>
-    /// parameter appears in the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>,
+    /// which specifies how to route DNS queries out of the VPC. The <c>ResolverRule</c> parameter
+    /// appears in the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>,
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverRule.html">DeleteResolverRule</a>,
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverRule.html">GetResolverRule</a>,
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverRules.html">ListResolverRules</a>,
@@ -58,7 +58,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) for the Resolver rule specified by <code>Id</code>.
+        /// The ARN (Amazon Resource Name) for the Resolver rule specified by <c>Id</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -97,7 +97,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// A unique string that you specified when you created the Resolver rule. <code>CreatorRequestId</code>
+        /// A unique string that you specified when you created the Resolver rule. <c>CreatorRequestId</c>
         /// identifies the request and allows failed requests to be retried without the risk of
         /// running the operation twice. 
         /// </para>
@@ -119,9 +119,9 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property DomainName. 
         /// <para>
         /// DNS queries for this domain name are forwarded to the IP addresses that are specified
-        /// in <code>TargetIps</code>. If a query matches multiple Resolver rules (example.com
-        /// and www.example.com), the query is routed using the Resolver rule that contains the
-        /// most specific domain name (www.example.com).
+        /// in <c>TargetIps</c>. If a query matches multiple Resolver rules (example.com and www.example.com),
+        /// the query is routed using the Resolver rule that contains the most specific domain
+        /// name (www.example.com).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -239,24 +239,24 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property RuleType. 
         /// <para>
         /// When you want to forward DNS queries for specified domain name to resolvers on your
-        /// network, specify <code>FORWARD</code>.
+        /// network, specify <c>FORWARD</c>.
         /// </para>
         ///  
         /// <para>
         /// When you have a forwarding rule to forward DNS queries for a domain to your network
-        /// and you want Resolver to process queries for a subdomain of that domain, specify <code>SYSTEM</code>.
+        /// and you want Resolver to process queries for a subdomain of that domain, specify <c>SYSTEM</c>.
         /// </para>
         ///  
         /// <para>
         /// For example, to forward DNS queries for example.com to resolvers on your network,
-        /// you create a rule and specify <code>FORWARD</code> for <code>RuleType</code>. To then
-        /// have Resolver process queries for apex.example.com, you create a rule and specify
-        /// <code>SYSTEM</code> for <code>RuleType</code>.
+        /// you create a rule and specify <c>FORWARD</c> for <c>RuleType</c>. To then have Resolver
+        /// process queries for apex.example.com, you create a rule and specify <c>SYSTEM</c>
+        /// for <c>RuleType</c>.
         /// </para>
         ///  
         /// <para>
-        /// Currently, only Resolver can create rules that have a value of <code>RECURSIVE</code>
-        /// for <code>RuleType</code>.
+        /// Currently, only Resolver can create rules that have a value of <c>RECURSIVE</c> for
+        /// <c>RuleType</c>.
         /// </para>
         /// </summary>
         public RuleTypeOption RuleType

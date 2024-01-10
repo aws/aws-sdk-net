@@ -80,7 +80,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property PackageSource. 
         /// <para>
-        /// The customer S3 location <code>PackageSource</code> for importing the package.
+        /// The customer S3 location <c>PackageSource</c> for importing the package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

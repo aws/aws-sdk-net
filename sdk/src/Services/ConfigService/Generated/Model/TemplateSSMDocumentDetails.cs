@@ -32,12 +32,12 @@ namespace Amazon.ConfigService.Model
     /// This API allows you to create a conformance pack template with an Amazon Web Services
     /// Systems Manager document (SSM document). To deploy a conformance pack using an SSM
     /// document, first create an SSM document with conformance pack content, and then provide
-    /// the <code>DocumentName</code> in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack
-    /// API</a>. You can also provide the <code>DocumentVersion</code>.
+    /// the <c>DocumentName</c> in the <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_PutConformancePack.html">PutConformancePack
+    /// API</a>. You can also provide the <c>DocumentVersion</c>.
     /// 
     ///  
     /// <para>
-    /// The <code>TemplateSSMDocumentDetails</code> object contains the name of the SSM document
+    /// The <c>TemplateSSMDocumentDetails</c> object contains the name of the SSM document
     /// and the version of the SSM document.
     /// </para>
     /// </summary>

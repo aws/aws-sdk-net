@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-    /// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code>
-    /// value correctly.
+    /// The node group specified by the <c>NodeGroupId</c> parameter could not be found. Please
+    /// verify that the node group exists and that you spelled the <c>NodeGroupId</c> value
+    /// correctly.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the permission to perform the <code>s3:ListStorageLensGroups</code>
+    /// To use this operation, you must have the permission to perform the <c>s3:ListStorageLensGroups</c>
     /// action. For more information about the required Storage Lens Groups permissions, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
     /// account permissions to use S3 Storage Lens groups</a>.
@@ -72,7 +72,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results, or <code>null</code> if there are no more results.
+        /// The token for the next set of results, or <c>null</c> if there are no more results.
         /// 
         /// </para>
         /// </summary>

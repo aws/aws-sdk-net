@@ -59,10 +59,10 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeClusterParameters</a> request exceed the
-        /// value specified in <code>MaxRecords</code>, Amazon Web Services returns a value in
-        /// the <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter
-        /// and retrying the request. 
+        /// value specified in <c>MaxRecords</c>, Amazon Web Services returns a value in the <c>Marker</c>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <c>Marker</c> parameter and retrying the request.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -82,13 +82,13 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of response records to return in each call. If the number of remaining
-        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
-        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// response records exceeds the specified <c>MaxRecords</c> value, a value is returned
+        /// in a <c>marker</c> field of the response. You can retrieve the next set of records
         /// by retrying the command with the returned marker value. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code> 
+        /// Default: <c>100</c> 
         /// </para>
         ///  
         /// <para>
@@ -129,9 +129,9 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The parameter types to return. Specify <code>user</code> to show parameters that are
-        /// different form the default. Similarly, specify <code>engine-default</code> to show
-        /// parameters that are the same as the default parameter group. 
+        /// The parameter types to return. Specify <c>user</c> to show parameters that are different
+        /// form the default. Similarly, specify <c>engine-default</c> to show parameters that
+        /// are the same as the default parameter group. 
         /// </para>
         ///  
         /// <para>
@@ -139,7 +139,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>user</code> | <code>engine-default</code> 
+        /// Valid Values: <c>user</c> | <c>engine-default</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

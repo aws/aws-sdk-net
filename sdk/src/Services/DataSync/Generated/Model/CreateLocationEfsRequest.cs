@@ -131,8 +131,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify an access point using <code>AccessPointArn</code> or an IAM role using
-        /// <code>FileSystemAccessRoleArn</code>, you must set this parameter to <code>TLS1_2</code>.
+        /// If you specify an access point using <c>AccessPointArn</c> or an IAM role using <c>FileSystemAccessRoleArn</c>,
+        /// you must set this parameter to <c>TLS1_2</c>.
         /// </para>
         /// </summary>
         public EfsInTransitEncryption InTransitEncryption
@@ -156,7 +156,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify a value with forward slashes (for example, <code>/path/to/folder</code>).
+        /// You must specify a value with forward slashes (for example, <c>/path/to/folder</c>).
         /// </para>
         ///  </note>
         /// </summary>

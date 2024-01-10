@@ -181,7 +181,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Period (.) to separate the labels in the name, such as the <code>.</code> in <code>example.com</code>.
+        /// Period (.) to separate the labels in the name, such as the <c>.</c> in <c>example.com</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -263,7 +263,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectAdminContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries return contact information for the registrar,
+        /// <c>true</c>, WHOIS ("who is") queries return contact information for the registrar,
         /// the phrase "REDACTED FOR PRIVACY", or "On behalf of &lt;domain name&gt; owner.".
         /// </para>
         ///  <note> 
@@ -273,7 +273,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool PrivacyProtectAdminContact
@@ -292,10 +292,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectRegistrantContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-        /// the information that you entered for the registrant contact (domain owner).
+        /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
+        /// that you entered for the registrant contact (domain owner).
         /// </para>
         ///  <note> 
         /// <para>
@@ -304,7 +304,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool PrivacyProtectRegistrantContact
@@ -323,10 +323,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property PrivacyProtectTechContact. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-        /// the information that you entered for the technical contact.
+        /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
+        /// that you entered for the technical contact.
         /// </para>
         ///  <note> 
         /// <para>
@@ -335,7 +335,7 @@ namespace Amazon.Route53Domains.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool PrivacyProtectTechContact

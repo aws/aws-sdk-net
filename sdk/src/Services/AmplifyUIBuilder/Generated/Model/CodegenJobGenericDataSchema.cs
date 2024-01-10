@@ -42,7 +42,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property DataSourceType. 
         /// <para>
         /// The type of the data source for the schema. Currently, the only valid value is an
-        /// Amplify <code>DataStore</code>.
+        /// Amplify <c>DataStore</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Enums. 
         /// <para>
-        /// The name of a <code>CodegenGenericDataEnum</code>.
+        /// The name of a <c>CodegenGenericDataEnum</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Models. 
         /// <para>
-        /// The name of a <code>CodegenGenericDataModel</code>.
+        /// The name of a <c>CodegenGenericDataModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property NonModels. 
         /// <para>
-        /// The name of a <code>CodegenGenericDataNonModel</code>.
+        /// The name of a <c>CodegenGenericDataNonModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

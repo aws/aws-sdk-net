@@ -78,15 +78,15 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>S</code> - the attribute is of type String
+        ///  <c>S</c> - the attribute is of type String
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>N</code> - the attribute is of type Number
+        ///  <c>N</c> - the attribute is of type Number
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>B</code> - the attribute is of type Binary
+        ///  <c>B</c> - the attribute is of type Binary
         /// </para>
         ///  </li> </ul>
         /// </summary>

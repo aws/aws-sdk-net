@@ -31,8 +31,7 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// Container for the parameters to the DescribeRescoreExecutionPlan operation.
     /// Gets information about a rescore execution plan. A rescore execution plan is an Amazon
-    /// Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code>
-    /// API.
+    /// Kendra Intelligent Ranking resource used for provisioning the <c>Rescore</c> API.
     /// </summary>
     public partial class DescribeRescoreExecutionPlanRequest : AmazonKendraRankingRequest
     {

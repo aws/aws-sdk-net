@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response to the <code>UpdateHealthCheck</code> request.
+    /// A complex type that contains the response to the <c>UpdateHealthCheck</c> request.
     /// </summary>
     public partial class UpdateHealthCheckResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthCheck. 
         /// <para>
-        /// A complex type that contains the response to an <code>UpdateHealthCheck</code> request.
+        /// A complex type that contains the response to an <c>UpdateHealthCheck</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

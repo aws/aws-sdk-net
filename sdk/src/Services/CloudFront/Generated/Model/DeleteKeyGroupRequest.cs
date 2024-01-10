@@ -41,8 +41,7 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// To delete a key group, you must provide the key group's identifier and version. To
-    /// get these values, use <code>ListKeyGroups</code> followed by <code>GetKeyGroup</code>
-    /// or <code>GetKeyGroupConfig</code>.
+    /// get these values, use <c>ListKeyGroups</c> followed by <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
     /// </para>
     /// </summary>
     public partial class DeleteKeyGroupRequest : AmazonCloudFrontRequest
@@ -54,7 +53,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier of the key group that you are deleting. To get the identifier, use
-        /// <code>ListKeyGroups</code>.
+        /// <c>ListKeyGroups</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -74,8 +73,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IfMatch. 
         /// <para>
         /// The version of the key group that you are deleting. The version is the key group's
-        /// <code>ETag</code> value. To get the <code>ETag</code>, use <code>GetKeyGroup</code>
-        /// or <code>GetKeyGroupConfig</code>.
+        /// <c>ETag</c> value. To get the <c>ETag</c>, use <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
         /// </para>
         /// </summary>
         public string IfMatch

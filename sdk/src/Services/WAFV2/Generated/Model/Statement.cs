@@ -59,7 +59,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property AndStatement. 
         /// <para>
         /// A logical rule statement used to combine other rule statements with AND logic. You
-        /// provide more than one <a>Statement</a> within the <code>AndStatement</code>. 
+        /// provide more than one <a>Statement</a> within the <c>AndStatement</c>. 
         /// </para>
         /// </summary>
         public AndStatement AndStatement
@@ -106,8 +106,7 @@ namespace Amazon.WAFV2.Model
         ///  <ul> <li> 
         /// <para>
         /// To manage requests only by country, you can use this statement by itself and specify
-        /// the countries that you want to match against in the <code>CountryCodes</code> array.
-        /// 
+        /// the countries that you want to match against in the <c>CountryCodes</c> array. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -121,19 +120,19 @@ namespace Amazon.WAFV2.Model
         /// WAF labels requests using the alpha-2 country and region codes from the International
         /// Organization for Standardization (ISO) 3166 standard. WAF determines the codes using
         /// either the IP address in the web request origin or, if you specify it, the address
-        /// in the geo match <code>ForwardedIPConfig</code>. 
+        /// in the geo match <c>ForwardedIPConfig</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If you use the web request origin, the label formats are <code>awswaf:clientip:geo:region:&lt;ISO
-        /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:clientip:geo:country:&lt;ISO
-        /// country code&gt;</code>.
+        /// If you use the web request origin, the label formats are <c>awswaf:clientip:geo:region:&lt;ISO
+        /// country code&gt;-&lt;ISO region code&gt;</c> and <c>awswaf:clientip:geo:country:&lt;ISO
+        /// country code&gt;</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you use a forwarded IP address, the label formats are <code>awswaf:forwardedip:geo:region:&lt;ISO
-        /// country code&gt;-&lt;ISO region code&gt;</code> and <code>awswaf:forwardedip:geo:country:&lt;ISO
-        /// country code&gt;</code>.
+        /// If you use a forwarded IP address, the label formats are <c>awswaf:forwardedip:geo:region:&lt;ISO
+        /// country code&gt;-&lt;ISO region code&gt;</c> and <c>awswaf:forwardedip:geo:country:&lt;ISO
+        /// country code&gt;</c>.
         /// </para>
         ///  
         /// <para>
@@ -219,17 +218,17 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot nest a <code>ManagedRuleGroupStatement</code>, for example for use inside
-        /// a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a managed
-        /// rule group inside another rule group. You can only reference a managed rule group
-        /// as a top-level statement within a rule that you define in a web ACL.
+        /// You cannot nest a <c>ManagedRuleGroupStatement</c>, for example for use inside a <c>NotStatement</c>
+        /// or <c>OrStatement</c>. You cannot use a managed rule group inside another rule group.
+        /// You can only reference a managed rule group as a top-level statement within a rule
+        /// that you define in a web ACL.
         /// </para>
         ///  <note> 
         /// <para>
         /// You are charged additional fees when you use the WAF Bot Control managed rule group
-        /// <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover
-        /// prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the
-        /// WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.
+        /// <c>AWSManagedRulesBotControlRuleSet</c>, the WAF Fraud Control account takeover prevention
+        /// (ATP) managed rule group <c>AWSManagedRulesATPRuleSet</c>, or the WAF Fraud Control
+        /// account creation fraud prevention (ACFP) managed rule group <c>AWSManagedRulesACFPRuleSet</c>.
         /// For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
         /// </para>
         ///  </note>
@@ -250,7 +249,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property NotStatement. 
         /// <para>
         /// A logical rule statement used to negate the results of another rule statement. You
-        /// provide one <a>Statement</a> within the <code>NotStatement</code>.
+        /// provide one <a>Statement</a> within the <c>NotStatement</c>.
         /// </para>
         /// </summary>
         public NotStatement NotStatement
@@ -269,7 +268,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property OrStatement. 
         /// <para>
         /// A logical rule statement used to combine other rule statements with OR logic. You
-        /// provide more than one <a>Statement</a> within the <code>OrStatement</code>. 
+        /// provide more than one <a>Statement</a> within the <c>OrStatement</c>. 
         /// </para>
         /// </summary>
         public OrStatement OrStatement
@@ -394,8 +393,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot nest a <code>RateBasedStatement</code> inside another statement, for example
-        /// inside a <code>NotStatement</code> or <code>OrStatement</code>. You can define a <code>RateBasedStatement</code>
+        /// You cannot nest a <c>RateBasedStatement</c> inside another statement, for example
+        /// inside a <c>NotStatement</c> or <c>OrStatement</c>. You can define a <c>RateBasedStatement</c>
         /// inside a web ACL and inside a rule group. 
         /// </para>
         ///  
@@ -408,7 +407,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// If you only aggregate on the individual IP address or forwarded IP address, you can
         /// retrieve the list of IP addresses that WAF is currently rate limiting for a rule through
-        /// the API call <code>GetRateBasedStatementManagedKeys</code>. This option is not available
+        /// the API call <c>GetRateBasedStatementManagedKeys</c>. This option is not available
         /// for other aggregation configurations.
         /// </para>
         ///  
@@ -491,10 +490,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot nest a <code>RuleGroupReferenceStatement</code>, for example for use inside
-        /// a <code>NotStatement</code> or <code>OrStatement</code>. You cannot use a rule group
-        /// reference statement inside another rule group. You can only reference a rule group
-        /// as a top-level statement within a rule that you define in a web ACL.
+        /// You cannot nest a <c>RuleGroupReferenceStatement</c>, for example for use inside a
+        /// <c>NotStatement</c> or <c>OrStatement</c>. You cannot use a rule group reference statement
+        /// inside another rule group. You can only reference a rule group as a top-level statement
+        /// within a rule that you define in a web ACL.
         /// </para>
         /// </summary>
         public RuleGroupReferenceStatement RuleGroupReferenceStatement
@@ -523,15 +522,15 @@ namespace Amazon.WAFV2.Model
         /// bytes of the body up to the limit for the web ACL. By default, for regional web ACLs,
         /// this limit is 8 KB (8,192 bytes) and for CloudFront web ACLs, this limit is 16 KB
         /// (16,384 bytes). For CloudFront web ACLs, you can increase the limit in the web ACL
-        /// <code>AssociationConfig</code>, for additional fees. If you know that the request
-        /// body for your web requests should never exceed the inspection limit, you could use
-        /// a size constraint statement to block requests that have a larger request body size.
+        /// <c>AssociationConfig</c>, for additional fees. If you know that the request body for
+        /// your web requests should never exceed the inspection limit, you could use a size constraint
+        /// statement to block requests that have a larger request body size.
         /// </para>
         ///  
         /// <para>
         /// If you choose URI for the value of Part of the request to filter on, the slash (/)
-        /// in the URI counts as one character. For example, the URI <code>/logo.jpg</code> is
-        /// nine characters long.
+        /// in the URI counts as one character. For example, the URI <c>/logo.jpg</c> is nine
+        /// characters long.
         /// </para>
         /// </summary>
         public SizeConstraintStatement SizeConstraintStatement

@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used in the <code>RequestInspectionACFP</code> data type. 
+    /// This data type is used in the <c>RequestInspectionACFP</c> data type. 
     /// </para>
     /// </summary>
     public partial class AddressField
@@ -59,10 +59,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1",
-        /// "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>,
-        /// the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>,
-        /// and <code>/form/primaryaddressline3</code>.
+        /// For example, for the JSON payload <c>{ "form": { "primaryaddressline1": "THE_ADDRESS1",
+        /// "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</c>,
+        /// the address field idenfiers are <c>/form/primaryaddressline1</c>, <c>/form/primaryaddressline2</c>,
+        /// and <c>/form/primaryaddressline3</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,10 +70,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with input elements named <code>primaryaddressline1</code>,
-        /// <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address
-        /// fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>,
-        /// and <code>primaryaddressline3</code>. 
+        /// For example, for an HTML form with input elements named <c>primaryaddressline1</c>,
+        /// <c>primaryaddressline2</c>, and <c>primaryaddressline3</c>, the address fields identifiers
+        /// are <c>primaryaddressline1</c>, <c>primaryaddressline2</c>, and <c>primaryaddressline3</c>.
+        /// 
         /// </para>
         ///  </li> </ul>
         /// </summary>

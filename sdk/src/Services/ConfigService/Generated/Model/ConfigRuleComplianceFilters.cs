@@ -83,9 +83,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// For the <code>ConfigRuleComplianceFilters</code> data type, Config supports only <code>COMPLIANT</code>
-        /// and <code>NON_COMPLIANT</code>. Config does not support the <code>NOT_APPLICABLE</code>
-        /// and the <code>INSUFFICIENT_DATA</code> values.
+        /// For the <c>ConfigRuleComplianceFilters</c> data type, Config supports only <c>COMPLIANT</c>
+        /// and <c>NON_COMPLIANT</c>. Config does not support the <c>NOT_APPLICABLE</c> and the
+        /// <c>INSUFFICIENT_DATA</c> values.
         /// </para>
         /// </summary>
         public ComplianceType ComplianceType

@@ -36,29 +36,29 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// To share a manual DB cluster snapshot with other Amazon Web Services accounts, specify
-    /// <code>restore</code> as the <code>AttributeName</code> and use the <code>ValuesToAdd</code>
-    /// parameter to add a list of IDs of the Amazon Web Services accounts that are authorized
-    /// to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
-    /// the manual DB cluster snapshot public, which means that it can be copied or restored
-    /// by all Amazon Web Services accounts.
+    /// <c>restore</c> as the <c>AttributeName</c> and use the <c>ValuesToAdd</c> parameter
+    /// to add a list of IDs of the Amazon Web Services accounts that are authorized to restore
+    /// the manual DB cluster snapshot. Use the value <c>all</c> to make the manual DB cluster
+    /// snapshot public, which means that it can be copied or restored by all Amazon Web Services
+    /// accounts.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Don't add the <code>all</code> value for any manual DB cluster snapshots that contain
-    /// private information that you don't want available to all Amazon Web Services accounts.
+    /// Don't add the <c>all</c> value for any manual DB cluster snapshots that contain private
+    /// information that you don't want available to all Amazon Web Services accounts.
     /// </para>
     ///  </note> 
     /// <para>
     /// If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying
-    /// a list of authorized Amazon Web Services account IDs for the <code>ValuesToAdd</code>
-    /// parameter. You can't use <code>all</code> as a value for that parameter in this case.
+    /// a list of authorized Amazon Web Services account IDs for the <c>ValuesToAdd</c> parameter.
+    /// You can't use <c>all</c> as a value for that parameter in this case.
     /// </para>
     ///  
     /// <para>
     /// To view which Amazon Web Services accounts have access to copy or restore a manual
     /// DB cluster snapshot, or whether a manual DB cluster snapshot is public or private,
     /// use the <a>DescribeDBClusterSnapshotAttributes</a> API operation. The accounts are
-    /// returned as values for the <code>restore</code> attribute.
+    /// returned as values for the <c>restore</c> attribute.
     /// </para>
     /// </summary>
     public partial class ModifyDBClusterSnapshotAttributeRequest : AmazonRDSRequest
@@ -76,7 +76,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// To manage authorization for other Amazon Web Services accounts to copy or restore
-        /// a manual DB cluster snapshot, set this value to <code>restore</code>.
+        /// a manual DB cluster snapshot, set this value to <c>restore</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -120,16 +120,16 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ValuesToAdd. 
         /// <para>
-        /// A list of DB cluster snapshot attributes to add to the attribute specified by <code>AttributeName</code>.
+        /// A list of DB cluster snapshot attributes to add to the attribute specified by <c>AttributeName</c>.
         /// </para>
         ///  
         /// <para>
         /// To authorize other Amazon Web Services accounts to copy or restore a manual DB cluster
         /// snapshot, set this list to include one or more Amazon Web Services account IDs, or
-        /// <code>all</code> to make the manual DB cluster snapshot restorable by any Amazon Web
-        /// Services account. Do not add the <code>all</code> value for any manual DB cluster
-        /// snapshots that contain private information that you don't want available to all Amazon
-        /// Web Services accounts.
+        /// <c>all</c> to make the manual DB cluster snapshot restorable by any Amazon Web Services
+        /// account. Do not add the <c>all</c> value for any manual DB cluster snapshots that
+        /// contain private information that you don't want available to all Amazon Web Services
+        /// accounts.
         /// </para>
         /// </summary>
         public List<string> ValuesToAdd
@@ -148,15 +148,15 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ValuesToRemove. 
         /// <para>
         /// A list of DB cluster snapshot attributes to remove from the attribute specified by
-        /// <code>AttributeName</code>.
+        /// <c>AttributeName</c>.
         /// </para>
         ///  
         /// <para>
         /// To remove authorization for other Amazon Web Services accounts to copy or restore
         /// a manual DB cluster snapshot, set this list to include one or more Amazon Web Services
-        /// account identifiers, or <code>all</code> to remove authorization for any Amazon Web
-        /// Services account to copy or restore the DB cluster snapshot. If you specify <code>all</code>,
-        /// an Amazon Web Services account whose account ID is explicitly added to the <code>restore</code>
+        /// account identifiers, or <c>all</c> to remove authorization for any Amazon Web Services
+        /// account to copy or restore the DB cluster snapshot. If you specify <c>all</c>, an
+        /// Amazon Web Services account whose account ID is explicitly added to the <c>restore</c>
         /// attribute can still copy or restore a manual DB cluster snapshot.
         /// </para>
         /// </summary>

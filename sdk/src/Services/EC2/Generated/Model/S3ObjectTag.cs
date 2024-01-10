@@ -46,7 +46,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: Tag keys are case-sensitive and can be up to 128 Unicode characters in
-        /// length. May not begin with <code>aws</code>:.
+        /// length. May not begin with <c>aws</c>:.
         /// </para>
         /// </summary>
         public string Key

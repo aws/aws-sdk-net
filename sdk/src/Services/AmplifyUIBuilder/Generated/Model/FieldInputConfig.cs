@@ -144,7 +144,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// Gets and sets the property IsArray. 
         /// <para>
         /// Specifies whether to render the field as an array. This property is ignored if the
-        /// <code>dataSourceType</code> for the form is a Data Store.
+        /// <c>dataSourceType</c> for the form is a Data Store.
         /// </para>
         /// </summary>
         public bool IsArray

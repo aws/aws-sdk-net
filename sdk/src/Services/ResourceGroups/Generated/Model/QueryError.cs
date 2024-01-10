@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroups.Model
 {
     /// <summary>
-    /// A two-part error structure that can occur in <code>ListGroupResources</code> or <code>SearchResources</code>
+    /// A two-part error structure that can occur in <c>ListGroupResources</c> or <c>SearchResources</c>
     /// operations on CloudFront stack-based queries. The error occurs if the CloudFront stack
     /// on which the query is based either does not exist, or has a status that renders the
-    /// stack inactive. A <code>QueryError</code> occurrence does not necessarily mean that
-    /// Resource Groups could not complete the operation, but the resulting group might have
-    /// no member resources.
+    /// stack inactive. A <c>QueryError</c> occurrence does not necessarily mean that Resource
+    /// Groups could not complete the operation, but the resulting group might have no member
+    /// resources.
     /// </summary>
     public partial class QueryError
     {
@@ -62,10 +62,10 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A message that explains the <code>ErrorCode</code> value. Messages might state that
-        /// the specified CloudFront stack does not exist (or no longer exists). For <code>CLOUDFORMATION_STACK_INACTIVE</code>,
+        /// A message that explains the <c>ErrorCode</c> value. Messages might state that the
+        /// specified CloudFront stack does not exist (or no longer exists). For <c>CLOUDFORMATION_STACK_INACTIVE</c>,
         /// the message typically states that the CloudFront stack has a status that is not (or
-        /// no longer) active, such as <code>CREATE_FAILED</code>.
+        /// no longer) active, such as <c>CREATE_FAILED</c>.
         /// </para>
         /// </summary>
         public string Message

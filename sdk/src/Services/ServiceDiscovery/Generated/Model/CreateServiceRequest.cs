@@ -39,23 +39,23 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>A</code> 
+    ///  <c>A</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AAAA</code> 
+    ///  <c>AAAA</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>A</code> and <code>AAAA</code> 
+    ///  <c>A</c> and <c>AAAA</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SRV</code> 
+    ///  <c>SRV</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CNAME</code> 
+    ///  <c>CNAME</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -89,8 +89,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// A unique string that identifies the request and that allows failed <code>CreateService</code>
-        /// requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code>
+        /// A unique string that identifies the request and that allows failed <c>CreateService</c>
+        /// requests to be retried without the risk of running the operation twice. <c>CreatorRequestId</c>
         /// can be any unique string (for example, a date/timestamp).
         /// </para>
         /// </summary>
@@ -151,12 +151,12 @@ namespace Amazon.ServiceDiscovery.Model
         ///  <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
         /// for an optional Route 53 health check. If you specify settings for a health check,
         /// Cloud Map associates the health check with all the Route 53 DNS records that you specify
-        /// in <code>DnsConfig</code>.
+        /// in <c>DnsConfig</c>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
-        /// or <code>HealthCheckConfig</code> but not both.
+        /// If you specify a health check configuration, you can specify either <c>HealthCheckCustomConfig</c>
+        /// or <c>HealthCheckConfig</c> but not both.
         /// </para>
         ///  </important> 
         /// <para>
@@ -183,13 +183,13 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
-        /// or <code>HealthCheckConfig</code> but not both.
+        /// If you specify a health check configuration, you can specify either <c>HealthCheckCustomConfig</c>
+        /// or <c>HealthCheckConfig</c> but not both.
         /// </para>
         ///  </important> 
         /// <para>
-        /// You can't add, update, or delete a <code>HealthCheckCustomConfig</code> configuration
-        /// from an existing service.
+        /// You can't add, update, or delete a <c>HealthCheckCustomConfig</c> configuration from
+        /// an existing service.
         /// </para>
         /// </summary>
         public HealthCheckCustomConfig HealthCheckCustomConfig
@@ -216,27 +216,27 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// If you want Cloud Map to create an <code>SRV</code> record when you register an instance
-        /// and you're using a system that requires a specific <code>SRV</code> format, such as
-        /// <a href="http://www.haproxy.org/">HAProxy</a>, specify the following for <code>Name</code>:
+        /// If you want Cloud Map to create an <c>SRV</c> record when you register an instance
+        /// and you're using a system that requires a specific <c>SRV</c> format, such as <a href="http://www.haproxy.org/">HAProxy</a>,
+        /// specify the following for <c>Name</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Start the name with an underscore (_), such as <code>_exampleservice</code>.
+        /// Start the name with an underscore (_), such as <c>_exampleservice</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// End the name with <i>._protocol</i>, such as <code>._tcp</code>.
+        /// End the name with <i>._protocol</i>, such as <c>._tcp</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you register an instance, Cloud Map creates an <code>SRV</code> record and assigns
+        /// When you register an instance, Cloud Map creates an <c>SRV</c> record and assigns
         /// a name to the record by concatenating the service name and the namespace name (for
         /// example,
         /// </para>
         ///  
         /// <para>
-        ///  <code>_exampleservice._tcp.example.com</code>).
+        ///  <c>_exampleservice._tcp.example.com</c>).
         /// </para>
         ///  <note> 
         /// <para>
@@ -265,7 +265,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property NamespaceId. 
         /// <para>
         /// The ID of the namespace that you want to use to create the service. The namespace
-        /// ID must be specified, but it can be specified either here or in the <code>DnsConfig</code>
+        /// ID must be specified, but it can be specified either here or in the <c>DnsConfig</c>
         /// object.
         /// </para>
         /// </summary>
@@ -306,9 +306,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// If present, specifies that the service instances are only discoverable using the <code>DiscoverInstances</code>
+        /// If present, specifies that the service instances are only discoverable using the <c>DiscoverInstances</c>
         /// API operation. No DNS records is registered for the service instances. The only valid
-        /// value is <code>HTTP</code>.
+        /// value is <c>HTTP</c>.
         /// </para>
         /// </summary>
         public ServiceTypeOption Type

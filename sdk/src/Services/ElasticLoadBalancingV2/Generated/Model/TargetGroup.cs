@@ -188,9 +188,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address used for this target group. The possible values are <code>ipv4</code>
-        /// and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address
-        /// type defaults to <code>ipv4</code>.
+        /// The type of IP address used for this target group. The possible values are <c>ipv4</c>
+        /// and <c>ipv6</c>. This is an optional parameter. If not specified, the IP address type
+        /// defaults to <c>ipv4</c>.
         /// </para>
         /// </summary>
         public TargetGroupIpAddressTypeEnum IpAddressType
@@ -283,8 +283,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property ProtocolVersion. 
         /// <para>
-        /// [HTTP/HTTPS protocol] The protocol version. The possible values are <code>GRPC</code>,
-        /// <code>HTTP1</code>, and <code>HTTP2</code>.
+        /// [HTTP/HTTPS protocol] The protocol version. The possible values are <c>GRPC</c>, <c>HTTP1</c>,
+        /// and <c>HTTP2</c>.
         /// </para>
         /// </summary>
         public string ProtocolVersion
@@ -339,10 +339,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property TargetType. 
         /// <para>
         /// The type of target that you must specify when registering targets with this target
-        /// group. The possible values are <code>instance</code> (register targets by instance
-        /// ID), <code>ip</code> (register targets by IP address), <code>lambda</code> (register
-        /// a single Lambda function as a target), or <code>alb</code> (register a single Application
-        /// Load Balancer as a target).
+        /// group. The possible values are <c>instance</c> (register targets by instance ID),
+        /// <c>ip</c> (register targets by IP address), <c>lambda</c> (register a single Lambda
+        /// function as a target), or <c>alb</c> (register a single Application Load Balancer
+        /// as a target).
         /// </para>
         /// </summary>
         public TargetTypeEnum TargetType

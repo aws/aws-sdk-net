@@ -54,8 +54,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains a <code>CustomErrorResponse</code> element for each HTTP
-        /// status code for which you want to specify a custom error page and/or a caching duration.
+        /// A complex type that contains a <c>CustomErrorResponse</c> element for each HTTP status
+        /// code for which you want to specify a custom error page and/or a caching duration.
         /// 
         /// </para>
         /// </summary>
@@ -75,8 +75,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The number of HTTP status codes for which you want to specify a custom error page
-        /// and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you can omit
-        /// <code>Items</code>.
+        /// and/or a caching duration. If <c>Quantity</c> is <c>0</c>, you can omit <c>Items</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -83,8 +83,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code>
-        /// field indicates the reason the synchronization failed.
+        /// If the <c>Status</c> field is set to <c>FAILED</c>, the <c>ErrorCode</c> field indicates
+        /// the reason the synchronization failed.
         /// </para>
         /// </summary>
         public ErrorCode ErrorCode
@@ -102,8 +102,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code>
-        /// field contains a description of the error that caused the synchronization to fail.
+        /// If the <c>Status</c> field is set to <c>ERROR</c>, the <c>ErrorMessage</c> field contains
+        /// a description of the error that caused the synchronization to fail.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -178,10 +178,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The execution status of the synchronization job. When the <code>Status</code> field
-        /// is set to <code>SUCCEEDED</code>, the synchronization job is done. If the status code
-        /// is set to <code>FAILED</code>, the <code>ErrorCode</code> and <code>ErrorMessage</code>
-        /// fields give you the reason for the failure.
+        /// The execution status of the synchronization job. When the <c>Status</c> field is set
+        /// to <c>SUCCEEDED</c>, the synchronization job is done. If the status code is set to
+        /// <c>FAILED</c>, the <c>ErrorCode</c> and <c>ErrorMessage</c> fields give you the reason
+        /// for the failure.
         /// </para>
         /// </summary>
         public DataSourceSyncJobStatus Status

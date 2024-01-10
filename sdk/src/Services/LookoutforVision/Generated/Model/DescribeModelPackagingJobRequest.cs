@@ -34,7 +34,7 @@ namespace Amazon.LookoutforVision.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code>
+    /// This operation requires permissions to perform the <c>lookoutvision:DescribeModelPackagingJob</c>
     /// operation.
     /// </para>
     ///  

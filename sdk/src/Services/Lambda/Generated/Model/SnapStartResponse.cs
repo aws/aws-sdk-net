@@ -40,8 +40,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ApplyOn. 
         /// <para>
-        /// When set to <code>PublishedVersions</code>, Lambda creates a snapshot of the execution
-        /// environment when you publish a function version.
+        /// When set to <c>PublishedVersions</c>, Lambda creates a snapshot of the execution environment
+        /// when you publish a function version.
         /// </para>
         /// </summary>
         public SnapStartApplyOn ApplyOn

@@ -445,11 +445,11 @@ namespace Amazon.Connect
         /// If the number is claimed to a traffic distribution group, and you are calling this
         /// API using an instance in the Amazon Web Services Region where the traffic distribution
         /// group was created, you can use either a full phone number ARN or UUID value for the
-        /// <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed
-        /// to a traffic distribution group and you are calling this API using an instance in
-        /// the alternate Amazon Web Services Region associated with the traffic distribution
-        /// group, you must provide a full phone number ARN. If a UUID is provided in this scenario,
-        /// you will receive a <code>ResourceNotFoundException</code>.
+        /// <c>PhoneNumberId</c> URI request parameter. However, if the number is claimed to a
+        /// traffic distribution group and you are calling this API using an instance in the alternate
+        /// Amazon Web Services Region associated with the traffic distribution group, you must
+        /// provide a full phone number ARN. If a UUID is provided in this scenario, you will
+        /// receive a <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -1374,18 +1374,18 @@ namespace Amazon.Connect
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
         /// the same Region as the Amazon Connect instance where you are calling this API, then
-        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// you can use a full phone number ARN or a UUID for <c>OutboundCallerIdNumberId</c>.
         /// However, if the phone number is claimed to a traffic distribution group that is in
         /// one Region, and you are calling this API from an instance in another Amazon Web Services
         /// Region that is associated with the traffic distribution group, you must provide a
         /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
-        /// <code>ResourceNotFoundException</code>.
+        /// <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
-        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
-        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// Only use the phone number ARN format that doesn't contain <c>instance</c> in the path,
+        /// for example, <c>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</c>. This is
+        /// the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
         ///  </li> <li> 
@@ -1636,10 +1636,10 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
-        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
-        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
-        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// The <c>SignInConfig</c> distribution is available only on a default <c>TrafficDistributionGroup</c>
+        /// (see the <c>IsDefault</c> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <c>UpdateTrafficDistribution</c> with a modified <c>SignInConfig</c>
+        /// and a non-default <c>TrafficDistributionGroup</c>, an <c>InvalidRequestException</c>
         /// is returned.
         /// </para>
         ///  </note> 
@@ -1727,8 +1727,8 @@ namespace Amazon.Connect
         ///  <important> 
         /// <para>
         /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
-        /// parameters are required in some situations. For example, <code>Email</code> is required
-        /// if you are using SAML for identity management. <code>FirstName</code> and <code>LastName</code>
+        /// parameters are required in some situations. For example, <c>Email</c> is required
+        /// if you are using SAML for identity management. <c>FirstName</c> and <c>LastName</c>
         /// are required if you are using Amazon Connect or SAML for identity management.
         /// </para>
         ///  </important> 
@@ -1814,7 +1814,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Creates a new view with the possible status of <code>SAVED</code> or <code>PUBLISHED</code>.
+        /// Creates a new view with the possible status of <c>SAVED</c> or <c>PUBLISHED</c>.
         /// 
         ///  
         /// <para>
@@ -1822,11 +1822,11 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// It performs basic content validation if the status is <code>SAVED</code> or full content
-        /// validation if the status is set to <code>PUBLISHED</code>. An error is returned if
-        /// validation fails. It associates either the <code>$SAVED</code> qualifier or both of
-        /// the <code>$SAVED</code> and <code>$LATEST</code> qualifiers with the provided view
-        /// content based on the status. The view is idempotent if ClientToken is provided.
+        /// It performs basic content validation if the status is <c>SAVED</c> or full content
+        /// validation if the status is set to <c>PUBLISHED</c>. An error is returned if validation
+        /// fails. It associates either the <c>$SAVED</c> qualifier or both of the <c>$SAVED</c>
+        /// and <c>$LATEST</c> qualifiers with the provided view content based on the status.
+        /// The view is idempotent if ClientToken is provided.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateView service method.</param>
@@ -1882,7 +1882,7 @@ namespace Amazon.Connect
         /// <para>
         /// It returns the highest version if there is no change in content compared to that version.
         /// An error is displayed if the supplied ViewContentSha256 is different from the ViewContentSha256
-        /// of the <code>$LATEST</code> alias.
+        /// of the <c>$LATEST</c> alias.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateViewVersion service method.</param>
@@ -2727,7 +2727,7 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Deletes the particular version specified in <code>ViewVersion</code> identifier.
+        /// Deletes the particular version specified in <c>ViewVersion</c> identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteViewVersion service method.</param>
         /// <param name="cancellationToken">
@@ -3188,11 +3188,11 @@ namespace Amazon.Connect
         /// <para>
         /// If the number is claimed to a traffic distribution group, and you are calling in the
         /// Amazon Web Services Region where the traffic distribution group was created, you can
-        /// use either a phone number ARN or UUID value for the <code>PhoneNumberId</code> URI
-        /// request parameter. However, if the number is claimed to a traffic distribution group
-        /// and you are calling this API in the alternate Amazon Web Services Region associated
-        /// with the traffic distribution group, you must provide a full phone number ARN. If
-        /// a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.
+        /// use either a phone number ARN or UUID value for the <c>PhoneNumberId</c> URI request
+        /// parameter. However, if the number is claimed to a traffic distribution group and you
+        /// are calling this API in the alternate Amazon Web Services Region associated with the
+        /// traffic distribution group, you must provide a full phone number ARN. If a UUID is
+        /// provided in this scenario, you will receive a <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -3606,14 +3606,14 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        ///  <code>$SAVED</code> needs to be supplied if a view is unpublished.
+        ///  <c>$SAVED</c> needs to be supplied if a view is unpublished.
         /// </para>
         ///  
         /// <para>
-        /// The view identifier can contain an optional qualifier, for example, <code>&lt;view-id&gt;:$SAVED</code>,
-        /// which is either an actual version number or an Amazon Connect managed qualifier <code>$SAVED
-        /// | $LATEST</code>. If it is not supplied, then <code>$LATEST</code> is assumed for
-        /// customer managed views and an error is returned if there is no published content available.
+        /// The view identifier can contain an optional qualifier, for example, <c>&lt;view-id&gt;:$SAVED</c>,
+        /// which is either an actual version number or an Amazon Connect managed qualifier <c>$SAVED
+        /// | $LATEST</c>. If it is not supplied, then <c>$LATEST</c> is assumed for customer
+        /// managed views and an error is returned if there is no published content available.
         /// Version 1 is assumed for Amazon Web Services managed views.
         /// </para>
         /// </summary>
@@ -3956,11 +3956,11 @@ namespace Amazon.Connect
         /// If the number is claimed to a traffic distribution group, and you are calling this
         /// API using an instance in the Amazon Web Services Region where the traffic distribution
         /// group was created, you can use either a full phone number ARN or UUID value for the
-        /// <code>PhoneNumberId</code> URI request parameter. However, if the number is claimed
-        /// to a traffic distribution group and you are calling this API using an instance in
-        /// the alternate Amazon Web Services Region associated with the traffic distribution
-        /// group, you must provide a full phone number ARN. If a UUID is provided in this scenario,
-        /// you will receive a <code>ResourceNotFoundException</code>.
+        /// <c>PhoneNumberId</c> URI request parameter. However, if the number is claimed to a
+        /// traffic distribution group and you are calling this API using an instance in the alternate
+        /// Amazon Web Services Region associated with the traffic distribution group, you must
+        /// provide a full phone number ARN. If a UUID is provided in this scenario, you will
+        /// receive a <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -4175,8 +4175,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Dismisses contacts from an agent’s CCP and returns the agent to an available state,
         /// which allows the agent to receive a new routed contact. Contacts can only be dismissed
-        /// if they are in a <code>MISSED</code>, <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code>
-        /// state in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent
+        /// if they are in a <c>MISSED</c>, <c>ERROR</c>, <c>ENDED</c>, or <c>REJECTED</c> state
+        /// in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent
         /// Event Stream</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DismissUserContact service method.</param>
@@ -4329,8 +4329,8 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        ///  <code>Provided identity: Principal: .... User: .... cannot be used for federation
-        /// with Amazon Connect</code> 
+        ///  <c>Provided identity: Principal: .... User: .... cannot be used for federation with
+        /// Amazon Connect</c> 
         /// </para>
         ///  </note>
         /// </summary>
@@ -4415,7 +4415,7 @@ namespace Amazon.Connect
         /// <para>
         /// We recommend using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricDataV2.html">GetMetricDataV2</a>
         /// API. It provides more flexibility, features, and the ability to query longer time
-        /// ranges than <code>GetMetricData</code>. Use it to retrieve historical agent and contact
+        /// ranges than <c>GetMetricData</c>. Use it to retrieve historical agent and contact
         /// metrics for the last 3 months, at varying intervals. You can also use it to build
         /// custom dashboards to measure historical queue and agent performance. For example,
         /// you can track the number of incoming contacts for the last 7 days, with data split
@@ -4458,7 +4458,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        ///  <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
+        ///  <c>GetMetricDataV2</c> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
@@ -4466,8 +4466,8 @@ namespace Amazon.Connect
         /// </para>
         ///  
         /// <para>
-        /// For a description of the historical metrics that are supported by <code>GetMetricDataV2</code>
-        /// and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+        /// For a description of the historical metrics that are supported by <c>GetMetricDataV2</c>
+        /// and <c>GetMetricData</c>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
         /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
         /// </para>
         /// </summary>
@@ -4904,8 +4904,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// For the specified <code>referenceTypes</code>, returns a list of references associated
-        /// with the contact. 
+        /// For the specified <c>referenceTypes</c>, returns a list of references associated with
+        /// the contact. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListContactReferences service method.</param>
@@ -5335,16 +5335,16 @@ namespace Amazon.Connect
         ///  <important> <ul> <li> 
         /// <para>
         /// We recommend using <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
-        /// to return phone number types. ListPhoneNumbers doesn't support number types <code>UIFN</code>,
-        /// <code>SHARED</code>, <code>THIRD_PARTY_TF</code>, and <code>THIRD_PARTY_DID</code>.
-        /// While it returns numbers of those types, it incorrectly lists them as <code>TOLL_FREE</code>
-        /// or <code>DID</code>. 
+        /// to return phone number types. ListPhoneNumbers doesn't support number types <c>UIFN</c>,
+        /// <c>SHARED</c>, <c>THIRD_PARTY_TF</c>, and <c>THIRD_PARTY_DID</c>. While it returns
+        /// numbers of those types, it incorrectly lists them as <c>TOLL_FREE</c> or <c>DID</c>.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The phone number <code>Arn</code> value that is returned from each of the items in
-        /// the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
-        /// cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>.
+        /// The phone number <c>Arn</c> value that is returned from each of the items in the <a
+        /// href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a>
+        /// cannot be used to tag phone number resources. It will fail with a <c>ResourceNotFoundException</c>.
         /// Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API. It returns the new phone number ARN that can be used to tag phone number resources.
         /// </para>
@@ -5382,8 +5382,8 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Lists phone numbers claimed to your Amazon Connect instance or traffic distribution
-        /// group. If the provided <code>TargetArn</code> is a traffic distribution group, you
-        /// can call this API in both Amazon Web Services Regions associated with traffic distribution
+        /// group. If the provided <c>TargetArn</c> is a traffic distribution group, you can call
+        /// this API in both Amazon Web Services Regions associated with traffic distribution
         /// group.
         /// 
         ///  
@@ -5394,13 +5394,13 @@ namespace Amazon.Connect
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// When given an instance ARN, <code>ListPhoneNumbersV2</code> returns only the phone
-        /// numbers claimed to the instance.
+        /// When given an instance ARN, <c>ListPhoneNumbersV2</c> returns only the phone numbers
+        /// claimed to the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When given a traffic distribution group ARN <code>ListPhoneNumbersV2</code> returns
-        /// only the phone numbers claimed to the traffic distribution group.
+        /// When given a traffic distribution group ARN <c>ListPhoneNumbersV2</c> returns only
+        /// the phone numbers claimed to the traffic distribution group.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -5543,9 +5543,9 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// If you do not specify a <code>QueueTypes</code> parameter, both standard and agent
-        /// queues are returned. This might cause an unexpected truncation of results if you have
-        /// more than 1000 agents and you limit the number of results of the API call in code.
+        /// If you do not specify a <c>QueueTypes</c> parameter, both standard and agent queues
+        /// are returned. This might cause an unexpected truncation of results if you have more
+        /// than 1000 agents and you limit the number of results of the API call in code.
         /// </para>
         ///  
         /// <para>
@@ -6394,7 +6394,7 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// To release phone numbers from a traffic distribution group, use the <code>ReleasePhoneNumber</code>
+        /// To release phone numbers from a traffic distribution group, use the <c>ReleasePhoneNumber</c>
         /// API, not the Amazon Connect admin website.
         /// </para>
         ///  
@@ -6590,9 +6590,9 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Searches for available phone numbers that you can claim to your Amazon Connect instance
-        /// or traffic distribution group. If the provided <code>TargetArn</code> is a traffic
-        /// distribution group, you can call this API in both Amazon Web Services Regions associated
-        /// with the traffic distribution group.
+        /// or traffic distribution group. If the provided <c>TargetArn</c> is a traffic distribution
+        /// group, you can call this API in both Amazon Web Services Regions associated with the
+        /// traffic distribution group.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -6927,7 +6927,7 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>AfterContactWorkTimeLimit</code> is returned in milliseconds. 
+        ///  <c>AfterContactWorkTimeLimit</c> is returned in milliseconds. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -6962,8 +6962,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>,
-        /// <code>NameStartsWith</code>, and <code>LanguageCode</code>.
+        /// Searches for vocabularies within a specific Amazon Connect instance using <c>State</c>,
+        /// <c>NameStartsWith</c>, and <c>LanguageCode</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchVocabularies service method.</param>
         /// <param name="cancellationToken">
@@ -7066,19 +7066,18 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// API rate limit is exceeded. API TPS throttling returns a <code>TooManyRequests</code>
-        /// exception.
+        /// API rate limit is exceeded. API TPS throttling returns a <c>TooManyRequests</c> exception.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">quota
-        /// for concurrent active chats</a> is exceeded. Active chat throttling returns a <code>LimitExceededException</code>.
+        /// for concurrent active chats</a> is exceeded. Active chat throttling returns a <c>LimitExceededException</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you use the <code>ChatDurationInMinutes</code> parameter and receive a 400 error,
-        /// your account may not support the ability to configure custom chat durations. For more
-        /// information, contact Amazon Web Services Support. 
+        /// If you use the <c>ChatDurationInMinutes</c> parameter and receive a 400 error, your
+        /// account may not support the ability to configure custom chat durations. For more information,
+        /// contact Amazon Web Services Support. 
         /// </para>
         ///  
         /// <para>
@@ -7261,7 +7260,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Places an outbound call to a contact, and then initiates the flow. It performs the
-        /// actions in the flow that's specified (in <code>ContactFlowId</code>).
+        /// actions in the flow that's specified (in <c>ContactFlowId</c>).
         /// 
         ///  
         /// <para>
@@ -7283,9 +7282,9 @@ namespace Amazon.Connect
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Campaign calls are not allowed by default. Before you can make a call with <code>TrafficType</code>
-        /// = <code>CAMPAIGN</code>, you must submit a service quota increase request to the quota
-        /// <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
+        /// Campaign calls are not allowed by default. Before you can make a call with <c>TrafficType</c>
+        /// = <c>CAMPAIGN</c>, you must submit a service quota increase request to the quota <a
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html#outbound-communications-quotas">Amazon
         /// Connect campaigns</a>. 
         /// </para>
         ///  </note>
@@ -7333,26 +7332,26 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// When using <code>PreviousContactId</code> and <code>RelatedContactId</code> input
-        /// parameters, note the following:
+        /// When using <c>PreviousContactId</c> and <c>RelatedContactId</c> input parameters,
+        /// note the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PreviousContactId</code> 
+        ///  <c>PreviousContactId</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Any updates to user-defined task contact attributes on any contact linked through
-        /// the same <code>PreviousContactId</code> will affect every contact in the chain.
+        /// the same <c>PreviousContactId</c> will affect every contact in the chain.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// There can be a maximum of 12 linked task contacts in a chain. That is, 12 task contacts
-        /// can be created that share the same <code>PreviousContactId</code>.
+        /// can be created that share the same <c>PreviousContactId</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>RelatedContactId</code> 
+        ///  <c>RelatedContactId</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -7366,23 +7365,22 @@ namespace Amazon.Connect
         ///  </li> <li> 
         /// <para>
         /// There’s no limit on the number of task contacts that can be created that use the same
-        /// <code>RelatedContactId</code>.
+        /// <c>RelatedContactId</c>.
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// In addition, when calling StartTaskContact include only one of these parameters: <code>ContactFlowID</code>,
-        /// <code>QuickConnectID</code>, or <code>TaskTemplateID</code>. Only one parameter is
-        /// required as long as the task template has a flow configured to run it. If more than
-        /// one parameter is specified, or only the <code>TaskTemplateID</code> is specified but
-        /// it does not have a flow configured, the request returns an error because Amazon Connect
-        /// cannot identify the unique flow to run when the task is created.
+        /// In addition, when calling StartTaskContact include only one of these parameters: <c>ContactFlowID</c>,
+        /// <c>QuickConnectID</c>, or <c>TaskTemplateID</c>. Only one parameter is required as
+        /// long as the task template has a flow configured to run it. If more than one parameter
+        /// is specified, or only the <c>TaskTemplateID</c> is specified but it does not have
+        /// a flow configured, the request returns an error because Amazon Connect cannot identify
+        /// the unique flow to run when the task is created.
         /// </para>
         ///  
         /// <para>
-        /// A <code>ServiceQuotaExceededException</code> occurs when the number of open tasks
-        /// exceeds the active tasks quota or there are already 12 tasks referencing the same
-        /// <code>PreviousContactId</code>. For more information about service quotas for task
-        /// contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
+        /// A <c>ServiceQuotaExceededException</c> occurs when the number of open tasks exceeds
+        /// the active tasks quota or there are already 12 tasks referencing the same <c>PreviousContactId</c>.
+        /// For more information about service quotas for task contacts, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon
         /// Connect service quotas</a> in the <i>Amazon Connect Administrator Guide</i>. 
         /// </para>
         /// </summary>
@@ -7580,8 +7578,8 @@ namespace Amazon.Connect
         /// Submits a contact evaluation in the specified Amazon Connect instance. Answers included
         /// in the request are merged with existing answers for the given evaluation. If no answers
         /// or notes are passed, the evaluation is submitted with the existing answers and notes.
-        /// You can delete an answer or note by passing an empty object (<code>{}</code>) to the
-        /// question identifier. 
+        /// You can delete an answer or note by passing an empty object (<c>{}</c>) to the question
+        /// identifier. 
         /// 
         ///  
         /// <para>
@@ -7755,11 +7753,11 @@ namespace Amazon.Connect
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Transfer is supported for only <code>TASK</code> contacts.
+        /// Transfer is supported for only <c>TASK</c> contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use both <code>QueueId</code> and <code>UserId</code> in the same call.
+        /// Do not use both <c>QueueId</c> and <c>UserId</c> in the same call.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7768,7 +7766,7 @@ namespace Amazon.Connect
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>TransferContact</code> API can be called only on active contacts.
+        /// The <c>TransferContact</c> API can be called only on active contacts.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -8021,7 +8019,7 @@ namespace Amazon.Connect
         /// Updates details about a contact evaluation in the specified Amazon Connect instance.
         /// A contact evaluation must be in draft state. Answers included in the request are merged
         /// with existing answers for the given evaluation. An answer or note can be deleted by
-        /// passing an empty object (<code>{}</code>) to the question identifier.
+        /// passing an empty object (<c>{}</c>) to the question identifier.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateContactEvaluation service method.</param>
         /// <param name="cancellationToken">
@@ -8809,7 +8807,7 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code>
+        /// Updates the name and description of a queue. At least <c>Name</c> or <c>Description</c>
         /// must be provided.
         /// </para>
         /// </summary>
@@ -8858,18 +8856,18 @@ namespace Amazon.Connect
         /// <para>
         /// If the phone number is claimed to a traffic distribution group that was created in
         /// the same Region as the Amazon Connect instance where you are calling this API, then
-        /// you can use a full phone number ARN or a UUID for <code>OutboundCallerIdNumberId</code>.
+        /// you can use a full phone number ARN or a UUID for <c>OutboundCallerIdNumberId</c>.
         /// However, if the phone number is claimed to a traffic distribution group that is in
         /// one Region, and you are calling this API from an instance in another Amazon Web Services
         /// Region that is associated with the traffic distribution group, you must provide a
         /// full phone number ARN. If a UUID is provided in this scenario, you will receive a
-        /// <code>ResourceNotFoundException</code>.
+        /// <c>ResourceNotFoundException</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Only use the phone number ARN format that doesn't contain <code>instance</code> in
-        /// the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>.
-        /// This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
+        /// Only use the phone number ARN format that doesn't contain <c>instance</c> in the path,
+        /// for example, <c>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</c>. This is
+        /// the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a>
         /// API.
         /// </para>
         ///  </li> <li> 
@@ -8983,8 +8981,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the name and description of a quick connect. The request accepts the following
-        /// data in JSON format. At least <code>Name</code> or <code>Description</code> must be
-        /// provided.
+        /// data in JSON format. At least <c>Name</c> or <c>Description</c> must be provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateQuickConnectName service method.</param>
         /// <param name="cancellationToken">
@@ -9119,8 +9116,7 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates the name and description of a routing profile. The request accepts the following
-        /// data in JSON format. At least <code>Name</code> or <code>Description</code> must be
-        /// provided.
+        /// data in JSON format. At least <c>Name</c> or <c>Description</c> must be provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRoutingProfileName service method.</param>
         /// <param name="cancellationToken">
@@ -9306,10 +9302,10 @@ namespace Amazon.Connect
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>SignInConfig</code> distribution is available only on a default <code>TrafficDistributionGroup</code>
-        /// (see the <code>IsDefault</code> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
-        /// data type). If you call <code>UpdateTrafficDistribution</code> with a modified <code>SignInConfig</code>
-        /// and a non-default <code>TrafficDistributionGroup</code>, an <code>InvalidRequestException</code>
+        /// The <c>SignInConfig</c> distribution is available only on a default <c>TrafficDistributionGroup</c>
+        /// (see the <c>IsDefault</c> parameter in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_TrafficDistributionGroup.html">TrafficDistributionGroup</a>
+        /// data type). If you call <c>UpdateTrafficDistribution</c> with a modified <c>SignInConfig</c>
+        /// and a non-default <c>TrafficDistributionGroup</c>, an <c>InvalidRequestException</c>
         /// is returned.
         /// </para>
         ///  </note> 
@@ -9462,7 +9458,7 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
-        /// We strongly recommend limiting who has the ability to invoke <code>UpdateUserIdentityInfo</code>.
+        /// We strongly recommend limiting who has the ability to invoke <c>UpdateUserIdentityInfo</c>.
         /// Someone with that ability can change the login credentials of other users by changing
         /// their email address. This poses a security risk to your organization. They can change
         /// the email address of a user to the attacker's email address, and then reset the password
@@ -9639,10 +9635,10 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// It performs content validation if <code>Status</code> is set to <code>SAVED</code>
-        /// and performs full content validation if <code>Status</code> is <code>PUBLISHED</code>.
-        /// Note that the <code>$SAVED</code> alias' content will always be updated, but the <code>$LATEST</code>
-        /// alias' content will only be updated if <code>Status</code> is <code>PUBLISHED</code>.
+        /// It performs content validation if <c>Status</c> is set to <c>SAVED</c> and performs
+        /// full content validation if <c>Status</c> is <c>PUBLISHED</c>. Note that the <c>$SAVED</c>
+        /// alias' content will always be updated, but the <c>$LATEST</c> alias' content will
+        /// only be updated if <c>Status</c> is <c>PUBLISHED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateViewContent service method.</param>
@@ -9682,8 +9678,8 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Updates the view metadata. Note that either <code>Name</code> or <code>Description</code>
-        /// must be provided.
+        /// Updates the view metadata. Note that either <c>Name</c> or <c>Description</c> must
+        /// be provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateViewMetadata service method.</param>
         /// <param name="cancellationToken">

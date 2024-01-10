@@ -88,8 +88,8 @@ namespace Amazon.CodeCommit.Model
         /// <para>
         /// The branch, tag, HEAD, or other fully qualified reference used to identify a commit
         /// (for example, the full commit ID). Optional. If not specified, all changes before
-        /// the <code>afterCommitSpecifier</code> value are shown. If you do not use <code>beforeCommitSpecifier</code>
-        /// in your request, consider limiting the results with <code>maxResults</code>.
+        /// the <c>afterCommitSpecifier</c> value are shown. If you do not use <c>beforeCommitSpecifier</c>
+        /// in your request, consider limiting the results with <c>maxResults</c>.
         /// </para>
         /// </summary>
         public string BeforeCommitSpecifier
@@ -108,8 +108,8 @@ namespace Amazon.CodeCommit.Model
         /// Gets and sets the property BeforePath. 
         /// <para>
         /// The file path in which to check for differences. Limits the results to this path.
-        /// Can also be used to specify the previous name of a directory or folder. If <code>beforePath</code>
-        /// and <code>afterPath</code> are not specified, differences are shown for all paths.
+        /// Can also be used to specify the previous name of a directory or folder. If <c>beforePath</c>
+        /// and <c>afterPath</c> are not specified, differences are shown for all paths.
         /// </para>
         /// </summary>
         public string BeforePath

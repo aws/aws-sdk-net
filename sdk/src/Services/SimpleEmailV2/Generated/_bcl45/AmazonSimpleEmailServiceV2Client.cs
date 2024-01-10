@@ -895,7 +895,7 @@ namespace Amazon.SimpleEmailV2
         /// the world. When you perform a predictive inbox placement test, you provide a sample
         /// message that contains the content that you plan to send to your customers. Amazon
         /// SES then sends that message to special email addresses spread across several major
-        /// email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+        /// email providers. After about 24 hours, the test is complete, and you can use the <c>GetDeliverabilityTestReport</c>
         /// operation to view the results of the test.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeliverabilityTestReport service method.</param>
@@ -947,7 +947,7 @@ namespace Amazon.SimpleEmailV2
         /// the world. When you perform a predictive inbox placement test, you provide a sample
         /// message that contains the content that you plan to send to your customers. Amazon
         /// SES then sends that message to special email addresses spread across several major
-        /// email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+        /// email providers. After about 24 hours, the test is complete, and you can use the <c>GetDeliverabilityTestReport</c>
         /// operation to view the results of the test.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDeliverabilityTestReport service method.</param>
@@ -1014,21 +1014,21 @@ namespace Amazon.SimpleEmailV2
         /// </para>
         ///  
         /// <para>
-        /// When you verify a domain without specifying the <code>DkimSigningAttributes</code>
-        /// object, this operation provides a set of DKIM tokens. You can convert these tokens
-        /// into CNAME records, which you then add to the DNS configuration for your domain. Your
-        /// domain is verified when Amazon SES detects these records in the DNS configuration
-        /// for your domain. This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+        /// When you verify a domain without specifying the <c>DkimSigningAttributes</c> object,
+        /// this operation provides a set of DKIM tokens. You can convert these tokens into CNAME
+        /// records, which you then add to the DNS configuration for your domain. Your domain
+        /// is verified when Amazon SES detects these records in the DNS configuration for your
+        /// domain. This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
         /// DKIM</a>.
         /// </para>
         ///  
         /// <para>
         /// Alternatively, you can perform the verification process by providing your own public-private
         /// key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use
-        /// BYODKIM, your call to the <code>CreateEmailIdentity</code> operation has to include
-        /// the <code>DkimSigningAttributes</code> object. When you specify this object, you provide
-        /// a selector (a component of the DNS record name that identifies the public key to use
-        /// for DKIM authentication) and a private key.
+        /// BYODKIM, your call to the <c>CreateEmailIdentity</c> operation has to include the
+        /// <c>DkimSigningAttributes</c> object. When you specify this object, you provide a selector
+        /// (a component of the DNS record name that identifies the public key to use for DKIM
+        /// authentication) and a private key.
         /// </para>
         ///  
         /// <para>
@@ -1090,21 +1090,21 @@ namespace Amazon.SimpleEmailV2
         /// </para>
         ///  
         /// <para>
-        /// When you verify a domain without specifying the <code>DkimSigningAttributes</code>
-        /// object, this operation provides a set of DKIM tokens. You can convert these tokens
-        /// into CNAME records, which you then add to the DNS configuration for your domain. Your
-        /// domain is verified when Amazon SES detects these records in the DNS configuration
-        /// for your domain. This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
+        /// When you verify a domain without specifying the <c>DkimSigningAttributes</c> object,
+        /// this operation provides a set of DKIM tokens. You can convert these tokens into CNAME
+        /// records, which you then add to the DNS configuration for your domain. Your domain
+        /// is verified when Amazon SES detects these records in the DNS configuration for your
+        /// domain. This verification method is known as <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
         /// DKIM</a>.
         /// </para>
         ///  
         /// <para>
         /// Alternatively, you can perform the verification process by providing your own public-private
         /// key pair. This verification method is known as Bring Your Own DKIM (BYODKIM). To use
-        /// BYODKIM, your call to the <code>CreateEmailIdentity</code> operation has to include
-        /// the <code>DkimSigningAttributes</code> object. When you specify this object, you provide
-        /// a selector (a component of the DNS record name that identifies the public key to use
-        /// for DKIM authentication) and a private key.
+        /// BYODKIM, your call to the <c>CreateEmailIdentity</c> operation has to include the
+        /// <c>DkimSigningAttributes</c> object. When you specify this object, you provide a selector
+        /// (a component of the DNS record name that identifies the public key to use for DKIM
+        /// authentication) and a private key.
         /// </para>
         ///  
         /// <para>
@@ -3910,7 +3910,7 @@ namespace Amazon.SimpleEmailV2
         /// <summary>
         /// Show a list of the predictive inbox placement tests that you've performed, regardless
         /// of their statuses. For predictive inbox placement tests that are complete, you can
-        /// use the <code>GetDeliverabilityTestReport</code> operation to view the results.
+        /// use the <c>GetDeliverabilityTestReport</c> operation to view the results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeliverabilityTestReports service method.</param>
         /// 
@@ -3938,7 +3938,7 @@ namespace Amazon.SimpleEmailV2
         /// <summary>
         /// Show a list of the predictive inbox placement tests that you've performed, regardless
         /// of their statuses. For predictive inbox placement tests that are complete, you can
-        /// use the <code>GetDeliverabilityTestReport</code> operation to view the results.
+        /// use the <c>GetDeliverabilityTestReport</c> operation to view the results.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeliverabilityTestReports service method.</param>
         /// <param name="cancellationToken">
@@ -5124,7 +5124,7 @@ namespace Amazon.SimpleEmailV2
         ///  
         /// <para>
         /// The dedicated IP pool you specify must already exist. You can create a new pool by
-        /// using the <code>CreateDedicatedIpPool</code> operation.
+        /// using the <c>CreateDedicatedIpPool</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5162,7 +5162,7 @@ namespace Amazon.SimpleEmailV2
         ///  
         /// <para>
         /// The dedicated IP pool you specify must already exist. You can create a new pool by
-        /// using the <code>CreateDedicatedIpPool</code> operation.
+        /// using the <c>CreateDedicatedIpPool</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5201,7 +5201,7 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+        ///  <c>MANAGED</c> pools cannot be converted to <c>STANDARD</c> scaling mode.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5236,7 +5236,7 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+        ///  <c>MANAGED</c> pools cannot be converted to <c>STANDARD</c> scaling mode.
         /// </para>
         ///  </note>
         /// </summary>
@@ -5665,9 +5665,9 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// If the value is <code>true</code>, you receive email notifications when bounce or
-        /// complaint events occur. These notifications are sent to the address that you specified
-        /// in the <code>Return-Path</code> header of the original email.
+        /// If the value is <c>true</c>, you receive email notifications when bounce or complaint
+        /// events occur. These notifications are sent to the address that you specified in the
+        /// <c>Return-Path</c> header of the original email.
         /// </para>
         ///  
         /// <para>
@@ -5707,9 +5707,9 @@ namespace Amazon.SimpleEmailV2
         /// 
         ///  
         /// <para>
-        /// If the value is <code>true</code>, you receive email notifications when bounce or
-        /// complaint events occur. These notifications are sent to the address that you specified
-        /// in the <code>Return-Path</code> header of the original email.
+        /// If the value is <c>true</c>, you receive email notifications when bounce or complaint
+        /// events occur. These notifications are sent to the address that you specified in the
+        /// <c>Return-Path</c> header of the original email.
         /// </para>
         ///  
         /// <para>

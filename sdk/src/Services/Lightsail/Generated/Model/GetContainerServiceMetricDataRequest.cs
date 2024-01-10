@@ -78,31 +78,31 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CPUUtilization</code> - The average percentage of compute units that are currently
+        ///  <c>CPUUtilization</c> - The average percentage of compute units that are currently
         /// in use across all nodes of the container service. This metric identifies the processing
         /// power required to run containers on each node of the container service.
         /// </para>
         ///  
         /// <para>
-        /// Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+        /// Statistics: The most useful statistics are <c>Maximum</c> and <c>Average</c>.
         /// </para>
         ///  
         /// <para>
-        /// Unit: The published unit is <code>Percent</code>.
+        /// Unit: The published unit is <c>Percent</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MemoryUtilization</code> - The average percentage of available memory that
-        /// is currently in use across all nodes of the container service. This metric identifies
-        /// the memory required to run containers on each node of the container service.
+        ///  <c>MemoryUtilization</c> - The average percentage of available memory that is currently
+        /// in use across all nodes of the container service. This metric identifies the memory
+        /// required to run containers on each node of the container service.
         /// </para>
         ///  
         /// <para>
-        /// Statistics: The most useful statistics are <code>Maximum</code> and <code>Average</code>.
+        /// Statistics: The most useful statistics are <c>Maximum</c> and <c>Average</c>.
         /// </para>
         ///  
         /// <para>
-        /// Unit: The published unit is <code>Percent</code>.
+        /// Unit: The published unit is <c>Percent</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -191,30 +191,30 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Minimum</code> - The lowest value observed during the specified period. Use
-        /// this value to determine low volumes of activity for your application.
+        ///  <c>Minimum</c> - The lowest value observed during the specified period. Use this
+        /// value to determine low volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Maximum</code> - The highest value observed during the specified period. Use
-        /// this value to determine high volumes of activity for your application.
+        ///  <c>Maximum</c> - The highest value observed during the specified period. Use this
+        /// value to determine high volumes of activity for your application.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Sum</code> - All values submitted for the matching metric added together. You
-        /// can use this statistic to determine the total volume of a metric.
+        ///  <c>Sum</c> - All values submitted for the matching metric added together. You can
+        /// use this statistic to determine the total volume of a metric.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> - The value of <code>Sum</code> / <code>SampleCount</code> during
-        /// the specified period. By comparing this statistic with the <code>Minimum</code> and
-        /// <code>Maximum</code> values, you can determine the full scope of a metric and how
-        /// close the average use is to the <code>Minimum</code> and <code>Maximum</code> values.
-        /// This comparison helps you to know when to increase or decrease your resources.
+        ///  <c>Average</c> - The value of <c>Sum</c> / <c>SampleCount</c> during the specified
+        /// period. By comparing this statistic with the <c>Minimum</c> and <c>Maximum</c> values,
+        /// you can determine the full scope of a metric and how close the average use is to the
+        /// <c>Minimum</c> and <c>Maximum</c> values. This comparison helps you to know when to
+        /// increase or decrease your resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SampleCount</code> - The count, or number, of data points used for the statistical
+        ///  <c>SampleCount</c> - The count, or number, of data points used for the statistical
         /// calculation.
         /// </para>
         ///  </li> </ul>

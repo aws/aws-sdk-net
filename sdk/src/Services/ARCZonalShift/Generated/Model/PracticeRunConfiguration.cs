@@ -55,8 +55,8 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify blocked dates, in UTC, in the format <code>YYYY-MM-DD</code>, separated by
-        /// spaces. 
+        /// Specify blocked dates, in UTC, in the format <c>YYYY-MM-DD</c>, separated by spaces.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
@@ -80,8 +80,8 @@ namespace Amazon.ARCZonalShift.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify the blocked windows in UTC, using the format <code>DAY:HH:MM-DAY:HH:MM</code>,
-        /// separated by spaces. For example, <code>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</code>.
+        /// Specify the blocked windows in UTC, using the format <c>DAY:HH:MM-DAY:HH:MM</c>, separated
+        /// by spaces. For example, <c>MON:18:30-MON:19:30 TUE:18:30-TUE:19:30</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
@@ -101,7 +101,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property BlockingAlarms. 
         /// <para>
         /// The <i>blocking alarm</i> for practice runs is an optional alarm that you can specify
-        /// that blocks practice runs when the alarm is in an <code>ALARM</code> state.
+        /// that blocks practice runs when the alarm is in an <c>ALARM</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -121,7 +121,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property OutcomeAlarms. 
         /// <para>
         /// The <i>outcome alarm</i> for practice runs is an alarm that you specify that ends
-        /// a practice run when the alarm is in an <code>ALARM</code> state.
+        /// a practice run when the alarm is in an <c>ALARM</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]

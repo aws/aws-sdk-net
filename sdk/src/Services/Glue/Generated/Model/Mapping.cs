@@ -44,9 +44,9 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Children. 
         /// <para>
         /// Only applicable to nested data structures. If you want to change the parent structure,
-        /// but also one of its children, you can fill out this data strucutre. It is also <code>Mapping</code>,
-        /// but its <code>FromPath</code> will be the parent's <code>FromPath</code> plus the
-        /// <code>FromPath</code> from this structure.
+        /// but also one of its children, you can fill out this data strucutre. It is also <c>Mapping</c>,
+        /// but its <c>FromPath</c> will be the parent's <c>FromPath</c> plus the <c>FromPath</c>
+        /// from this structure.
         /// </para>
         ///  
         /// <para>
@@ -54,19 +54,19 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct",
+        ///  <c>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct",
         /// "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType":
-        /// "Double", "Dropped": false, }] }</code> 
+        /// "Double", "Dropped": false, }] }</c> 
         /// </para>
         ///  
         /// <para>
-        /// You can specify a <code>Mapping</code> that looks like:
+        /// You can specify a <c>Mapping</c> that looks like:
         /// </para>
         ///  
         /// <para>
-        ///  <code>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct",
+        ///  <c>{ "FromPath": "OuterStructure", "ToKey": "OuterStructure", "ToType": "Struct",
         /// "Dropped": false, "Chidlren": [{ "FromPath": "inner", "ToKey": "inner", "ToType":
-        /// "Double", "Dropped": false, }] }</code> 
+        /// "Double", "Dropped": false, }] }</c> 
         /// </para>
         /// </summary>
         public List<Mapping> Children
@@ -139,7 +139,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ToKey. 
         /// <para>
         /// After the apply mapping, what the name of the column should be. Can be the same as
-        /// <code>FromPath</code>.
+        /// <c>FromPath</c>.
         /// </para>
         /// </summary>
         public string ToKey

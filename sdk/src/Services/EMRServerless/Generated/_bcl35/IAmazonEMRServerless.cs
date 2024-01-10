@@ -37,24 +37,23 @@ namespace Amazon.EMRServerless
     /// 
     ///  
     /// <para>
-    /// The API reference to Amazon EMR Serverless is <code>emr-serverless</code>. The <code>emr-serverless</code>
+    /// The API reference to Amazon EMR Serverless is <c>emr-serverless</c>. The <c>emr-serverless</c>
     /// prefix is used in the following scenarios: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// It is the prefix in the CLI commands for Amazon EMR Serverless. For example, <code>aws
-    /// emr-serverless start-job-run</code>.
+    /// It is the prefix in the CLI commands for Amazon EMR Serverless. For example, <c>aws
+    /// emr-serverless start-job-run</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// It is the prefix before IAM policy actions for Amazon EMR Serverless. For example,
-    /// <code>"Action": ["emr-serverless:StartJobRun"]</code>. For more information, see <a
-    /// href="https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions">Policy
+    /// <c>"Action": ["emr-serverless:StartJobRun"]</c>. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/EMR-Serverless-UserGuide/security_iam_service-with-iam.html#security_iam_service-with-iam-id-based-policies-actions">Policy
     /// actions for Amazon EMR Serverless</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// It is the prefix used in Amazon EMR Serverless service endpoints. For example, <code>emr-serverless.us-east-2.amazonaws.com</code>.
+    /// It is the prefix used in Amazon EMR Serverless service endpoints. For example, <c>emr-serverless.us-east-2.amazonaws.com</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>

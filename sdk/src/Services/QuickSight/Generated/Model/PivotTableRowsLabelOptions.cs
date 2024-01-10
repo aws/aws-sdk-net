@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The options for the label thta is located above the row headers. This option is only
-    /// applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+    /// applicable when <c>RowsLayout</c> is set to <c>HIERARCHY</c>.
     /// </summary>
     public partial class PivotTableRowsLabelOptions
     {

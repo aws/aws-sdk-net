@@ -74,7 +74,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Architectures. 
         /// <para>
         /// The instruction set architecture that the function supports. Architecture is a string
-        /// array with one of the valid values. The default architecture value is <code>x86_64</code>.
+        /// array with one of the valid values. The default architecture value is <c>x86_64</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -185,8 +185,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
-        /// The size of the function’s <code>/tmp</code> directory in MB. The default value is
-        /// 512, but it can be any whole number between 512 and 10,240 MB.
+        /// The size of the function’s <c>/tmp</c> directory in MB. The default value is 512,
+        /// but it can be any whole number between 512 and 10,240 MB.
         /// </para>
         /// </summary>
         public EphemeralStorage EphemeralStorage
@@ -339,7 +339,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property LastUpdateStatus. 
         /// <para>
         /// The status of the last update that was performed on the function. This is first set
-        /// to <code>Successful</code> after function creation completes.
+        /// to <c>Successful</c> after function creation completes.
         /// </para>
         /// </summary>
         public LastUpdateStatus LastUpdateStatus
@@ -466,8 +466,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property PackageType. 
         /// <para>
-        /// The type of deployment package. Set to <code>Image</code> for container image and
-        /// set <code>Zip</code> for .zip file archive.
+        /// The type of deployment package. Set to <c>Image</c> for container image and set <c>Zip</c>
+        /// for .zip file archive.
         /// </para>
         /// </summary>
         public PackageType PackageType
@@ -599,10 +599,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property SnapStart. 
         /// <para>
-        /// Set <code>ApplyOn</code> to <code>PublishedVersions</code> to create a snapshot of
-        /// the initialized execution environment when you publish a function version. For more
-        /// information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving
-        /// startup performance with Lambda SnapStart</a>.
+        /// Set <c>ApplyOn</c> to <c>PublishedVersions</c> to create a snapshot of the initialized
+        /// execution environment when you publish a function version. For more information, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart.html">Improving startup
+        /// performance with Lambda SnapStart</a>.
         /// </para>
         /// </summary>
         public SnapStartResponse SnapStart
@@ -620,8 +620,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the function. When the state is <code>Inactive</code>, you can
-        /// reactivate the function by invoking it.
+        /// The current state of the function. When the state is <c>Inactive</c>, you can reactivate
+        /// the function by invoking it.
         /// </para>
         /// </summary>
         public State State
@@ -657,7 +657,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property StateReasonCode. 
         /// <para>
-        /// The reason code for the function's current state. When the code is <code>Creating</code>,
+        /// The reason code for the function's current state. When the code is <c>Creating</c>,
         /// you can't invoke or modify the function.
         /// </para>
         /// </summary>

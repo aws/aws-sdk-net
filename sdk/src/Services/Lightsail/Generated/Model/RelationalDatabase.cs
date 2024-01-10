@@ -135,7 +135,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The database software (for example, <code>MySQL</code>).
+        /// The database software (for example, <c>MySQL</c>).
         /// </para>
         /// </summary>
         public string Engine
@@ -153,7 +153,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The database engine version (for example, <code>5.7.23</code>).
+        /// The database engine version (for example, <c>5.7.23</c>).
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -353,7 +353,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created for the database (for
-        /// example, <code>16:00-16:30</code>).
+        /// example, <c>16:00-16:30</c>).
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -375,7 +375,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// In the format <code>ddd:hh24:mi-ddd:hh24:mi</code>. For example, <code>Tue:17:00-Tue:17:30</code>.
+        /// In the format <c>ddd:hh24:mi-ddd:hh24:mi</c>. For example, <c>Tue:17:00-Tue:17:30</c>.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -449,7 +449,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type for the database (for example, <code>RelationalDatabase</code>).
+        /// The Lightsail resource type for the database (for example, <c>RelationalDatabase</c>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

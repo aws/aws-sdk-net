@@ -105,19 +105,19 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// The entity that you are using as a source when you update the template. In <code>SourceEntity</code>,
-        /// you specify the type of object you're using as source: <code>SourceTemplate</code>
-        /// for a template or <code>SourceAnalysis</code> for an analysis. Both of these require
-        /// an Amazon Resource Name (ARN). For <code>SourceTemplate</code>, specify the ARN of
-        /// the source template. For <code>SourceAnalysis</code>, specify the ARN of the source
-        /// analysis. The <code>SourceTemplate</code> ARN can contain any Amazon Web Services
-        /// account and any Amazon QuickSight-supported Amazon Web Services Region;. 
+        /// The entity that you are using as a source when you update the template. In <c>SourceEntity</c>,
+        /// you specify the type of object you're using as source: <c>SourceTemplate</c> for a
+        /// template or <c>SourceAnalysis</c> for an analysis. Both of these require an Amazon
+        /// Resource Name (ARN). For <c>SourceTemplate</c>, specify the ARN of the source template.
+        /// For <c>SourceAnalysis</c>, specify the ARN of the source analysis. The <c>SourceTemplate</c>
+        /// ARN can contain any Amazon Web Services account and any Amazon QuickSight-supported
+        /// Amazon Web Services Region;. 
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
-        /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders
-        /// listed in the original. The schema in each dataset must match its placeholder. 
+        /// Use the <c>DataSetReferences</c> entity within <c>SourceTemplate</c> or <c>SourceAnalysis</c>
+        /// to list the replacement datasets for the placeholders listed in the original. The
+        /// schema in each dataset must match its placeholder. 
         /// </para>
         /// </summary>
         public TemplateSourceEntity SourceEntity
@@ -174,8 +174,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property VersionDescription. 
         /// <para>
         /// A description of the current template version that is being updated. Every time you
-        /// call <code>UpdateTemplate</code>, you create a new version of the template. Each version
-        /// of the template maintains a description of the version in the <code>VersionDescription</code>
+        /// call <c>UpdateTemplate</c>, you create a new version of the template. Each version
+        /// of the template maintains a description of the version in the <c>VersionDescription</c>
         /// field.
         /// </para>
         /// </summary>

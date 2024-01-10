@@ -56,7 +56,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property AvailabilityZoneId. 
         /// <para>
         /// The unique and consistent identifier of the Availability Zone in which the file system
-        /// is located, and is valid only for One Zone file systems. For example, <code>use1-az1</code>
+        /// is located, and is valid only for One Zone file systems. For example, <c>use1-az1</c>
         /// is an Availability Zone ID for the us-east-1 Amazon Web Services Region, and it has
         /// the same location in every Amazon Web Services account.
         /// </para>
@@ -153,8 +153,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property FileSystemArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the EFS file system, in the format <code>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
-        /// </code>. Example with sample data: <code>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</code>
+        /// The Amazon Resource Name (ARN) for the EFS file system, in the format <c>arn:aws:elasticfilesystem:<i>region</i>:<i>account-id</i>:file-system/<i>file-system-id</i>
+        /// </c>. Example with sample data: <c>arn:aws:elasticfilesystem:us-west-2:1111333322228888:file-system/fs-01234567</c>
         /// 
         /// </para>
         /// </summary>
@@ -248,9 +248,9 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// You can add tags to a file system, including a <code>Name</code> tag. For more information,
-        /// see <a>CreateFileSystem</a>. If the file system has a <code>Name</code> tag, Amazon
-        /// EFS returns the value in this field. 
+        /// You can add tags to a file system, including a <c>Name</c> tag. For more information,
+        /// see <a>CreateFileSystem</a>. If the file system has a <c>Name</c> tag, Amazon EFS
+        /// returns the value in this field. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -328,7 +328,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property ProvisionedThroughputInMibps. 
         /// <para>
         /// The amount of provisioned throughput, measured in MiBps, for the file system. Valid
-        /// for file systems using <code>ThroughputMode</code> set to <code>provisioned</code>.
+        /// for file systems using <c>ThroughputMode</c> set to <c>provisioned</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -348,13 +348,13 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property SizeInBytes. 
         /// <para>
         /// The latest known metered size (in bytes) of data stored in the file system, in its
-        /// <code>Value</code> field, and the time at which that size was determined in its <code>Timestamp</code>
-        /// field. The <code>Timestamp</code> value is the integer number of seconds since 1970-01-01T00:00:00Z.
-        /// The <code>SizeInBytes</code> value doesn't represent the size of a consistent snapshot
-        /// of the file system, but it is eventually consistent when there are no writes to the
-        /// file system. That is, <code>SizeInBytes</code> represents actual size only if the
-        /// file system is not modified for a period longer than a couple of hours. Otherwise,
-        /// the value is not the exact size that the file system was at any point in time. 
+        /// <c>Value</c> field, and the time at which that size was determined in its <c>Timestamp</c>
+        /// field. The <c>Timestamp</c> value is the integer number of seconds since 1970-01-01T00:00:00Z.
+        /// The <c>SizeInBytes</c> value doesn't represent the size of a consistent snapshot of
+        /// the file system, but it is eventually consistent when there are no writes to the file
+        /// system. That is, <c>SizeInBytes</c> represents actual size only if the file system
+        /// is not modified for a period longer than a couple of hours. Otherwise, the value is
+        /// not the exact size that the file system was at any point in time. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -373,8 +373,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with the file system, presented as an array of <code>Tag</code>
-        /// objects.
+        /// The tags associated with the file system, presented as an array of <c>Tag</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

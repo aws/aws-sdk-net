@@ -54,7 +54,7 @@ namespace Amazon.GreengrassV2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// When the status of any component on the core device becomes <code>BROKEN</code> 
+    /// When the status of any component on the core device becomes <c>BROKEN</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>

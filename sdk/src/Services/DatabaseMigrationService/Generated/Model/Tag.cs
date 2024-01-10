@@ -34,15 +34,15 @@ namespace Amazon.DatabaseMigrationService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AddTagsToResource</code> 
+    ///  <c>AddTagsToResource</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ListTagsForResource</code> 
+    ///  <c>ListTagsForResource</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RemoveTagsFromResource</code> 
+    ///  <c>RemoveTagsFromResource</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

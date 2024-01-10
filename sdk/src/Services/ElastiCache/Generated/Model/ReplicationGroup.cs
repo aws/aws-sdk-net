@@ -86,22 +86,22 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AtRestEncryptionEnabled. 
         /// <para>
-        /// A flag that enables encryption at-rest when set to <code>true</code>.
+        /// A flag that enables encryption at-rest when set to <c>true</c>.
         /// </para>
         ///  
         /// <para>
-        /// You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the cluster
-        /// is created. To enable encryption at-rest on a cluster you must set <code>AtRestEncryptionEnabled</code>
-        /// to <code>true</code> when you create a cluster.
+        /// You cannot modify the value of <c>AtRestEncryptionEnabled</c> after the cluster is
+        /// created. To enable encryption at-rest on a cluster you must set <c>AtRestEncryptionEnabled</c>
+        /// to <c>true</c> when you create a cluster.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
+        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool AtRestEncryptionEnabled
@@ -119,12 +119,11 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AuthTokenEnabled. 
         /// <para>
-        /// A flag that enables using an <code>AuthToken</code> (password) when issuing Redis
-        /// commands.
+        /// A flag that enables using an <c>AuthToken</c> (password) when issuing Redis commands.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool AuthTokenEnabled
@@ -222,7 +221,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>true</code> | <code>false</code> 
+        /// Valid values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool ClusterEnabled
@@ -339,7 +338,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property IpDiscovery. 
         /// <para>
-        /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
+        /// The network type you choose when modifying a cluster, either <c>ipv4</c> | <c>ipv6</c>.
         /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
         /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
@@ -452,10 +451,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property NetworkType. 
         /// <para>
-        /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
-        /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
-        /// version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
-        /// system</a>.
+        /// Must be either <c>ipv4</c> | <c>ipv6</c> | <c>dual_stack</c>. IPv6 is supported for
+        /// workloads using Redis engine version 6.2 onward or Memcached engine version 1.6.6
+        /// on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.
         /// </para>
         /// </summary>
         public NetworkType NetworkType
@@ -549,13 +547,13 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property SnapshotRetentionLimit. 
         /// <para>
         /// The number of days for which ElastiCache retains automatic cluster snapshots before
-        /// deleting them. For example, if you set <code>SnapshotRetentionLimit</code> to 5, a
-        /// snapshot that was taken today is retained for 5 days before being deleted.
+        /// deleting them. For example, if you set <c>SnapshotRetentionLimit</c> to 5, a snapshot
+        /// that was taken today is retained for 5 days before being deleted.
         /// </para>
         ///  <important> 
         /// <para>
-        ///  If the value of <code>SnapshotRetentionLimit</code> is set to zero (0), backups are
-        /// turned off.
+        ///  If the value of <c>SnapshotRetentionLimit</c> is set to zero (0), backups are turned
+        /// off.
         /// </para>
         ///  </important>
         /// </summary>
@@ -597,7 +595,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>05:00-09:00</code> 
+        /// Example: <c>05:00-09:00</c> 
         /// </para>
         ///  
         /// <para>
@@ -606,7 +604,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only valid if the <code>Engine</code> parameter is <code>redis</code>.
+        /// This parameter is only valid if the <c>Engine</c> parameter is <c>redis</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -625,8 +623,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of this replication group - <code>creating</code>, <code>available</code>,
-        /// <code>modifying</code>, <code>deleting</code>, <code>create-failed</code>, <code>snapshotting</code>.
+        /// The current state of this replication group - <c>creating</c>, <c>available</c>, <c>modifying</c>,
+        /// <c>deleting</c>, <c>create-failed</c>, <c>snapshotting</c>.
         /// </para>
         /// </summary>
         public string Status
@@ -644,16 +642,16 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property TransitEncryptionEnabled. 
         /// <para>
-        /// A flag that enables in-transit encryption when set to <code>true</code>.
+        /// A flag that enables in-transit encryption when set to <c>true</c>.
         /// </para>
         ///  
         /// <para>
         ///  <b>Required:</b> Only available when creating a replication group in an Amazon VPC
-        /// using redis version <code>3.2.6</code>, <code>4.x</code> or later.
+        /// using redis version <c>3.2.6</c>, <c>4.x</c> or later.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool TransitEncryptionEnabled

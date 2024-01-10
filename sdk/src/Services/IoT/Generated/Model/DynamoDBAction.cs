@@ -33,14 +33,13 @@ namespace Amazon.IoT.Model
     /// 
     ///  
     /// <para>
-    /// The <code>tableName</code>, <code>hashKeyField</code>, and <code>rangeKeyField</code>
-    /// values must match the values used when you created the table.
+    /// The <c>tableName</c>, <c>hashKeyField</c>, and <c>rangeKeyField</c> values must match
+    /// the values used when you created the table.
     /// </para>
     ///  
     /// <para>
-    /// The <code>hashKeyValue</code> and <code>rangeKeyvalue</code> fields use a substitution
-    /// template syntax. These templates provide data at runtime. The syntax is as follows:
-    /// ${<i>sql-expression</i>}.
+    /// The <c>hashKeyValue</c> and <c>rangeKeyvalue</c> fields use a substitution template
+    /// syntax. These templates provide data at runtime. The syntax is as follows: ${<i>sql-expression</i>}.
     /// </para>
     ///  
     /// <para>
@@ -50,7 +49,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>"hashKeyValue": "${topic(3)}"</code> 
+    ///  <c>"hashKeyValue": "${topic(3)}"</c> 
     /// </para>
     ///  
     /// <para>
@@ -58,7 +57,7 @@ namespace Amazon.IoT.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>"rangeKeyValue": "${timestamp()}"</code> 
+    ///  <c>"rangeKeyValue": "${timestamp()}"</c> 
     /// </para>
     /// </summary>
     public partial class DynamoDBAction
@@ -134,8 +133,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Operation. 
         /// <para>
         /// The type of operation to be performed. This follows the substitution template, so
-        /// it can be <code>${operation}</code>, but the substitution must result in one of the
-        /// following: <code>INSERT</code>, <code>UPDATE</code>, or <code>DELETE</code>.
+        /// it can be <c>${operation}</c>, but the substitution must result in one of the following:
+        /// <c>INSERT</c>, <c>UPDATE</c>, or <c>DELETE</c>.
         /// </para>
         /// </summary>
         public string Operation

@@ -30,10 +30,10 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteModel operation.
-    /// Deletes a model. The <code>DeleteModel</code> API deletes only the model entry that
-    /// was created in SageMaker when you called the <code>CreateModel</code> API. It does
-    /// not delete model artifacts, inference code, or the IAM role that you specified when
-    /// creating the model.
+    /// Deletes a model. The <c>DeleteModel</c> API deletes only the model entry that was
+    /// created in SageMaker when you called the <c>CreateModel</c> API. It does not delete
+    /// model artifacts, inference code, or the IAM role that you specified when creating
+    /// the model.
     /// </summary>
     public partial class DeleteModelRequest : AmazonSageMakerRequest
     {

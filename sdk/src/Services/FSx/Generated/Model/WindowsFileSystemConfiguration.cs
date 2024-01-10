@@ -175,19 +175,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MULTI_AZ_1</code> - Specifies a high availability file system that is configured
+        ///  <c>MULTI_AZ_1</c> - Specifies a high availability file system that is configured
         /// for Multi-AZ redundancy to tolerate temporary Availability Zone (AZ) unavailability,
         /// and supports SSD and HDD storage.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_1</code> - (Default) Specifies a file system that is configured for
-        /// single AZ redundancy, only supports SSD storage.
+        ///  <c>SINGLE_AZ_1</c> - (Default) Specifies a file system that is configured for single
+        /// AZ redundancy, only supports SSD storage.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_AZ_2</code> - Latest generation Single AZ file system. Specifies a file
-        /// system that is configured for single AZ redundancy and supports SSD and HDD storage.
+        ///  <c>SINGLE_AZ_2</c> - Latest generation Single AZ file system. Specifies a file system
+        /// that is configured for single AZ redundancy and supports SSD and HDD storage.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -250,7 +250,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PreferredFileServerIp. 
         /// <para>
-        /// For <code>MULTI_AZ_1</code> deployment types, the IP address of the primary, or preferred,
+        /// For <c>MULTI_AZ_1</c> deployment types, the IP address of the primary, or preferred,
         /// file server.
         /// </para>
         ///  
@@ -280,15 +280,15 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PreferredSubnetId. 
         /// <para>
-        /// For <code>MULTI_AZ_1</code> deployment types, it specifies the ID of the subnet where
-        /// the preferred file server is located. Must be one of the two subnet IDs specified
-        /// in <code>SubnetIds</code> property. Amazon FSx serves traffic from this subnet except
-        /// in the event of a failover to the secondary file server.
+        /// For <c>MULTI_AZ_1</c> deployment types, it specifies the ID of the subnet where the
+        /// preferred file server is located. Must be one of the two subnet IDs specified in <c>SubnetIds</c>
+        /// property. Amazon FSx serves traffic from this subnet except in the event of a failover
+        /// to the secondary file server.
         /// </para>
         ///  
         /// <para>
-        /// For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this value
-        /// is the same as that for <code>SubnetIDs</code>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
+        /// For <c>SINGLE_AZ_1</c> and <c>SINGLE_AZ_2</c> deployment types, this value is the
+        /// same as that for <c>SubnetIDs</c>. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/high-availability-multiAZ.html#single-multi-az-resources">Availability
         /// and durability: Single-AZ and Multi-AZ file systems</a>.
         /// </para>
         /// </summary>
@@ -308,13 +308,13 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property RemoteAdministrationEndpoint. 
         /// <para>
-        /// For <code>MULTI_AZ_1</code> deployment types, use this endpoint when performing administrative
+        /// For <c>MULTI_AZ_1</c> deployment types, use this endpoint when performing administrative
         /// tasks on the file system using Amazon FSx Remote PowerShell.
         /// </para>
         ///  
         /// <para>
-        /// For <code>SINGLE_AZ_1</code> and <code>SINGLE_AZ_2</code> deployment types, this is
-        /// the DNS name of the file system.
+        /// For <c>SINGLE_AZ_1</c> and <c>SINGLE_AZ_2</c> deployment types, this is the DNS name
+        /// of the file system.
         /// </para>
         ///  
         /// <para>

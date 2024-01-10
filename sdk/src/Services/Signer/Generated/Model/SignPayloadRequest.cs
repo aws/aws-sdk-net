@@ -61,7 +61,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property PayloadFormat. 
         /// <para>
-        /// Payload content type. The single valid type is <code>application/vnd.cncf.notary.payload.v1+json</code>.
+        /// Payload content type. The single valid type is <c>application/vnd.cncf.notary.payload.v1+json</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

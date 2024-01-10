@@ -40,7 +40,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier that Amazon Comprehend generated for the job. The <code>StartTargetedSentimentDetectionJob</code>
+        /// The identifier that Amazon Comprehend generated for the job. The <c>StartTargetedSentimentDetectionJob</c>
         /// operation returns this identifier in its response.
         /// </para>
         /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property EnvironmentSummaryList. 
         /// <para>
-        /// The list of <code>EnvironmentSummary</code> objects. 
+        /// The list of <c>EnvironmentSummary</c> objects. 
         /// </para>
         /// </summary>
         public List<EnvironmentSummary> EnvironmentSummaryList

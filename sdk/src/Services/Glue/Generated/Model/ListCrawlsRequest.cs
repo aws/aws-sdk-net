@@ -86,8 +86,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters the crawls by the criteria you specify in a list of <code>CrawlsFilter</code>
-        /// objects.
+        /// Filters the crawls by the criteria you specify in a list of <c>CrawlsFilter</c> objects.
         /// </para>
         /// </summary>
         public List<CrawlsFilter> Filters

@@ -125,7 +125,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The value of <code>State</code> is one of the following values:
+        /// The value of <c>State</c> is one of the following values:
         /// </para>
         ///  <dl> <dt>Applied</dt> <dd> 
         /// <para>
@@ -134,14 +134,14 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  </dd> <dt>Creating</dt> <dd> 
         /// <para>
-        /// Route 53 is creating the resource record sets. Use <code>GetTrafficPolicyInstance</code>
-        /// to confirm that the <code>CreateTrafficPolicyInstance</code> request completed successfully.
+        /// Route 53 is creating the resource record sets. Use <c>GetTrafficPolicyInstance</c>
+        /// to confirm that the <c>CreateTrafficPolicyInstance</c> request completed successfully.
         /// </para>
         ///  </dd> <dt>Failed</dt> <dd> 
         /// <para>
         /// Route 53 wasn't able to create or update the resource record sets. When the value
-        /// of <code>State</code> is <code>Failed</code>, see <code>Message</code> for an explanation
-        /// of what caused the request to fail.
+        /// of <c>State</c> is <c>Failed</c>, see <c>Message</c> for an explanation of what caused
+        /// the request to fail.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -161,8 +161,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// If <code>State</code> is <code>Failed</code>, an explanation of the reason for the
-        /// failure. If <code>State</code> is another value, <code>Message</code> is empty.
+        /// If <c>State</c> is <c>Failed</c>, an explanation of the reason for the failure. If
+        /// <c>State</c> is another value, <c>Message</c> is empty.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

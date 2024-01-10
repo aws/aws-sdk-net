@@ -93,35 +93,35 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>public:npmjs</code> - for the npm public repository. 
+        ///  <c>public:npmjs</c> - for the npm public repository. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:nuget-org</code> - for the NuGet Gallery. 
+        ///  <c>public:nuget-org</c> - for the NuGet Gallery. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:pypi</code> - for the Python Package Index. 
+        ///  <c>public:pypi</c> - for the Python Package Index. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:maven-central</code> - for Maven Central. 
+        ///  <c>public:maven-central</c> - for Maven Central. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:maven-googleandroid</code> - for the Google Android repository. 
+        ///  <c>public:maven-googleandroid</c> - for the Google Android repository. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:maven-gradleplugins</code> - for the Gradle plugins repository. 
+        ///  <c>public:maven-gradleplugins</c> - for the Gradle plugins repository. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:maven-commonsware</code> - for the CommonsWare Android repository. 
+        ///  <c>public:maven-commonsware</c> - for the CommonsWare Android repository. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>public:maven-clojars</code> - for the Clojars repository. 
+        ///  <c>public:maven-clojars</c> - for the Clojars repository. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

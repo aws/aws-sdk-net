@@ -30,8 +30,8 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// A geolocation target that you select to index. Each geolocation target contains a
-    /// <code>name</code> and <code>order</code> key-value pair that specifies the geolocation
-    /// target fields.
+    /// <c>name</c> and <c>order</c> key-value pair that specifies the geolocation target
+    /// fields.
     /// </summary>
     public partial class GeoLocationTarget
     {
@@ -41,9 +41,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The <code>name</code> of the geolocation target field. If the target field is part
-        /// of a named shadow, you must select the named shadow using the <code>namedShadow</code>
-        /// filter.
+        /// The <c>name</c> of the geolocation target field. If the target field is part of a
+        /// named shadow, you must select the named shadow using the <c>namedShadow</c> filter.
         /// </para>
         /// </summary>
         public string Name
@@ -61,8 +60,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Order. 
         /// <para>
-        /// The <code>order</code> of the geolocation target field. This field is optional. The
-        /// default value is <code>LatLon</code>.
+        /// The <c>order</c> of the geolocation target field. This field is optional. The default
+        /// value is <c>LatLon</c>.
         /// </para>
         /// </summary>
         public TargetFieldOrder Order

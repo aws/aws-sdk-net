@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the ListWorkteams operation.
     /// Gets a list of private work teams that you have defined in a region. The list may
-    /// be empty if no work team satisfies the filter specified in the <code>NameContains</code>
+    /// be empty if no work team satisfies the filter specified in the <c>NameContains</c>
     /// parameter.
     /// </summary>
     public partial class ListWorkteamsRequest : AmazonSageMakerRequest
@@ -84,9 +84,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListWorkteams</code> request was truncated, the
-        /// response includes a <code>NextToken</code>. To retrieve the next set of labeling jobs,
-        /// use the token in the next request.
+        /// If the result of the previous <c>ListWorkteams</c> request was truncated, the response
+        /// includes a <c>NextToken</c>. To retrieve the next set of labeling jobs, use the token
+        /// in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field to sort results by. The default is <code>CreationTime</code>.
+        /// The field to sort results by. The default is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public ListWorkteamsSortByOptions SortBy
@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for results. The default is <code>Ascending</code>.
+        /// The sort order for results. The default is <c>Ascending</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

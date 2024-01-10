@@ -85,8 +85,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        ///  The URL subdomain of the endpoint. For example, if <code>EndpointUrl</code> is <code>https://abcde.veo.endpoints.event.amazonaws.com</code>,
-        /// then the <code>EndpointId</code> is <code>abcde.veo</code>.
+        ///  The URL subdomain of the endpoint. For example, if <c>EndpointUrl</c> is <c>https://abcde.veo.endpoints.event.amazonaws.com</c>,
+        /// then the <c>EndpointId</c> is <c>abcde.veo</c>.
         /// </para>
         /// </summary>
         public string EndpointId
@@ -159,9 +159,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ReplicationConfig. 
         /// <para>
         ///  Whether event replication was enabled or disabled for this endpoint. The default
-        /// state is <code>ENABLED</code>, which means you must supply a <code>RoleArn</code>.
-        /// If you don't have a <code>RoleArn</code> or you don't want event replication enabled,
-        /// set the state to <code>DISABLED</code>.
+        /// state is <c>ENABLED</c>, which means you must supply a <c>RoleArn</c>. If you don't
+        /// have a <c>RoleArn</c> or you don't want event replication enabled, set the state to
+        /// <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public AwsEventsEndpointReplicationConfigDetails ReplicationConfig

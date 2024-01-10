@@ -32,7 +32,7 @@ namespace Amazon.Chime.Model
     /// Container for the parameters to the CreateVoiceConnectorGroup operation.
     /// Creates an Amazon Chime Voice Connector group under the administrator's AWS account.
     /// You can associate Amazon Chime Voice Connectors with the Amazon Chime Voice Connector
-    /// group by including <code>VoiceConnectorItems</code> in the request.
+    /// group by including <c>VoiceConnectorItems</c> in the request.
     /// 
     ///  
     /// <para>

@@ -41,9 +41,8 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A supported AWS IAM SAML <code>PrincipalTag</code> attribute that is matched to the
-        /// associated value when a user identity federates into an Amazon AppStream 2.0 SAML
-        /// application.
+        /// A supported AWS IAM SAML <c>PrincipalTag</c> attribute that is matched to the associated
+        /// value when a user identity federates into an Amazon AppStream 2.0 SAML application.
         /// </para>
         ///  
         /// <para>

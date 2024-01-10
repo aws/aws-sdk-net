@@ -52,7 +52,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property ActionName. 
         /// <para>
         /// A friendly name for the action. Choose a friendly name that accurately describes the
-        /// action (for example, <code>EnableLoggingAction</code>).
+        /// action (for example, <c>EnableLoggingAction</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

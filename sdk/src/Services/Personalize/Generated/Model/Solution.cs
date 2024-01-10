@@ -51,7 +51,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property AutoMLResult. 
         /// <para>
-        /// When <code>performAutoML</code> is true, specifies the best recipe found.
+        /// When <c>performAutoML</c> is true, specifies the best recipe found.
         /// </para>
         /// </summary>
         public AutoMLResult AutoMLResult
@@ -107,8 +107,8 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property EventType. 
         /// <para>
         /// The event type (for example, 'click' or 'like') that is used for training the model.
-        /// If no <code>eventType</code> is provided, Amazon Personalize uses all interactions
-        /// for training with equal weight regardless of type.
+        /// If no <c>eventType</c> is provided, Amazon Personalize uses all interactions for training
+        /// with equal weight regardless of type.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -189,8 +189,8 @@ namespace Amazon.Personalize.Model
         ///  </important> 
         /// <para>
         /// When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION
-        /// recipe from the list specified in the solution configuration (<code>recipeArn</code>
-        /// must not be specified). When false (the default), Amazon Personalize uses <code>recipeArn</code>
+        /// recipe from the list specified in the solution configuration (<c>recipeArn</c> must
+        /// not be specified). When false (the default), Amazon Personalize uses <c>recipeArn</c>
         /// for training.
         /// </para>
         /// </summary>
@@ -210,7 +210,7 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property PerformHPO. 
         /// <para>
         /// Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default
-        /// is <code>false</code>.
+        /// is <c>false</c>.
         /// </para>
         /// </summary>
         public bool PerformHPO
@@ -228,7 +228,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property RecipeArn. 
         /// <para>
-        /// The ARN of the recipe used to create the solution. This is required when <code>performAutoML</code>
+        /// The ARN of the recipe used to create the solution. This is required when <c>performAutoML</c>
         /// is false.
         /// </para>
         /// </summary>

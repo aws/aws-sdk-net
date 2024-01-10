@@ -221,16 +221,16 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property InterfaceType. 
         /// <para>
         /// The type of network interface. To create an Elastic Fabric Adapter (EFA), specify
-        /// <code>efa</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
+        /// <c>efa</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/efa.html">Elastic
         /// Fabric Adapter</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If you are not creating an EFA, specify <code>interface</code> or omit this parameter.
+        /// If you are not creating an EFA, specify <c>interface</c> or omit this parameter.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>interface</code> | <code>efa</code> 
+        /// Valid values: <c>interface</c> | <c>efa</c> 
         /// </para>
         /// </summary>
         public string InterfaceType
@@ -249,7 +249,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
         /// The number of IPv4 prefixes to be automatically assigned to the network interface.
-        /// You cannot use this option if you use the <code>Ipv4Prefix</code> option.
+        /// You cannot use this option if you use the <c>Ipv4Prefix</c> option.
         /// </para>
         /// </summary>
         public int Ipv4PrefixCount
@@ -268,7 +268,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
         /// One or more IPv4 prefixes to be assigned to the network interface. You cannot use
-        /// this option if you use the <code>Ipv4PrefixCount</code> option.
+        /// this option if you use the <c>Ipv4PrefixCount</c> option.
         /// </para>
         /// </summary>
         public List<Ipv4PrefixSpecificationRequest> Ipv4Prefixes
@@ -326,7 +326,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
         /// The number of IPv6 prefixes to be automatically assigned to the network interface.
-        /// You cannot use this option if you use the <code>Ipv6Prefix</code> option.
+        /// You cannot use this option if you use the <c>Ipv6Prefix</c> option.
         /// </para>
         /// </summary>
         public int Ipv6PrefixCount
@@ -345,7 +345,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
         /// One or more IPv6 prefixes to be assigned to the network interface. You cannot use
-        /// this option if you use the <code>Ipv6PrefixCount</code> option.
+        /// this option if you use the <c>Ipv6PrefixCount</c> option.
         /// </para>
         /// </summary>
         public List<Ipv6PrefixSpecificationRequest> Ipv6Prefixes

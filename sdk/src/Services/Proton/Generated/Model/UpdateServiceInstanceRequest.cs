@@ -34,13 +34,13 @@ namespace Amazon.Proton.Model
     /// 
     ///  
     /// <para>
-    /// There are a few modes for updating a service instance. The <code>deploymentType</code>
-    /// field defines the mode.
+    /// There are a few modes for updating a service instance. The <c>deploymentType</c> field
+    /// defines the mode.
     /// </para>
     ///  <note> 
     /// <para>
     /// You can't update a service instance while its deployment status, or the deployment
-    /// status of a component attached to it, is <code>IN_PROGRESS</code>.
+    /// status of a component attached to it, is <c>IN_PROGRESS</c>.
     /// </para>
     ///  
     /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  <dl> <dt/> <dd> 
         /// <para>
-        ///  <code>NONE</code> 
+        ///  <c>NONE</c> 
         /// </para>
         ///  
         /// <para>
@@ -94,7 +94,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>CURRENT_VERSION</code> 
+        ///  <c>CURRENT_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -104,7 +104,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MINOR_VERSION</code> 
+        ///  <c>MINOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </dd> <dt/> <dd> 
         /// <para>
-        ///  <code>MAJOR_VERSION</code> 
+        ///  <c>MAJOR_VERSION</c> 
         /// </para>
         ///  
         /// <para>

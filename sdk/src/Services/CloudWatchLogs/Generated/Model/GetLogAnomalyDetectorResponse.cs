@@ -47,7 +47,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property AnomalyDetectorStatus. 
         /// <para>
         /// Specifies whether the anomaly detector is currently active. To change its status,
-        /// use the <code>enabled</code> parameter in the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html">UpdateLogAnomalyDetector</a>
+        /// use the <c>enabled</c> parameter in the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateLogAnomalyDetector.html">UpdateLogAnomalyDetector</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -127,8 +127,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// Specifies how often the anomaly detector runs and look for anomalies. Set this value
         /// according to the frequency that the log group receives new logs. For example, if the
-        /// log group receives new log events every 10 minutes, then setting <code>evaluationFrequency</code>
-        /// to <code>FIFTEEN_MIN</code> might be appropriate.
+        /// log group receives new log events every 10 minutes, then setting <c>evaluationFrequency</c>
+        /// to <c>FIFTEEN_MIN</c> might be appropriate.
         /// </para>
         /// </summary>
         public EvaluationFrequency EvaluationFrequency

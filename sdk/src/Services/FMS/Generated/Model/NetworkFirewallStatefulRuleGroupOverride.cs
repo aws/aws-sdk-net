@@ -39,8 +39,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action that changes the rule group from <code>DROP</code> to <code>ALERT</code>.
-        /// This only applies to managed rule groups.
+        /// The action that changes the rule group from <c>DROP</c> to <c>ALERT</c>. This only
+        /// applies to managed rule groups.
         /// </para>
         /// </summary>
         public NetworkFirewallOverrideAction Action

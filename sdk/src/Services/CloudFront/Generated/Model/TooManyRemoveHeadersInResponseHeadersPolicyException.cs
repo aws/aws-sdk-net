@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The number of headers in <code>RemoveHeadersConfig</code> in the response headers
-    /// policy exceeds the maximum.
+    /// The number of headers in <c>RemoveHeadersConfig</c> in the response headers policy
+    /// exceeds the maximum.
     /// 
     ///  
     /// <para>

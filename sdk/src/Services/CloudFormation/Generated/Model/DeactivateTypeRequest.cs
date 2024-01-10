@@ -53,8 +53,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
-        /// <code>Type</code>.
+        /// Conditional: You must specify either <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -77,8 +76,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
-        /// <code>Type</code>.
+        /// Conditional: You must specify either <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         public ThirdPartyType Type
@@ -101,8 +99,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify either <code>Arn</code>, or <code>TypeName</code> and
-        /// <code>Type</code>.
+        /// Conditional: You must specify either <c>Arn</c>, or <c>TypeName</c> and <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]

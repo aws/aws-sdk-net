@@ -36,8 +36,8 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// For a rollback strategy, if you don't specify the fields in this object, or if you
-    /// set the <code>Value</code> to 100%, then SageMaker uses a blue/green rollback strategy
-    /// and rolls all traffic back to the blue fleet.
+    /// set the <c>Value</c> to 100%, then SageMaker uses a blue/green rollback strategy and
+    /// rolls all traffic back to the blue fleet.
     /// </para>
     /// </summary>
     public partial class CapacitySize
@@ -52,11 +52,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INSTANCE_COUNT</code>: The endpoint activates based on the number of instances.
+        ///  <c>INSTANCE_COUNT</c>: The endpoint activates based on the number of instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CAPACITY_PERCENT</code>: The endpoint activates based on the specified percentage
+        ///  <c>CAPACITY_PERCENT</c>: The endpoint activates based on the specified percentage
         /// of capacity.
         /// </para>
         ///  </li> </ul>

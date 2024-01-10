@@ -47,7 +47,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property AllowCredentials. 
         /// <para>
         /// Whether to allow cookies or other credentials in requests to your function URL. The
-        /// default is <code>false</code>.
+        /// default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool AllowCredentials
@@ -66,7 +66,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property AllowHeaders. 
         /// <para>
         /// The HTTP headers that origins can include in requests to your function URL. For example:
-        /// <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.
+        /// <c>Date</c>, <c>Keep-Alive</c>, <c>X-Custom-Header</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -85,8 +85,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AllowMethods. 
         /// <para>
-        /// The HTTP methods that are allowed when calling your function URL. For example: <code>GET</code>,
-        /// <code>POST</code>, <code>DELETE</code>, or the wildcard character (<code>*</code>).
+        /// The HTTP methods that are allowed when calling your function URL. For example: <c>GET</c>,
+        /// <c>POST</c>, <c>DELETE</c>, or the wildcard character (<c>*</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=6)]
@@ -106,12 +106,11 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property AllowOrigins. 
         /// <para>
         /// The origins that can access your function URL. You can list any number of specific
-        /// origins, separated by a comma. For example: <code>https://www.example.com</code>,
-        /// <code>http://localhost:60905</code>.
+        /// origins, separated by a comma. For example: <c>https://www.example.com</c>, <c>http://localhost:60905</c>.
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, you can grant access to all origins using the wildcard character (<code>*</code>).
+        /// Alternatively, you can grant access to all origins using the wildcard character (<c>*</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -131,7 +130,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property ExposeHeaders. 
         /// <para>
         /// The HTTP headers in your function response that you want to expose to origins that
-        /// call your function URL. For example: <code>Date</code>, <code>Keep-Alive</code>, <code>X-Custom-Header</code>.
+        /// call your function URL. For example: <c>Date</c>, <c>Keep-Alive</c>, <c>X-Custom-Header</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -151,7 +150,7 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property MaxAge. 
         /// <para>
         /// The maximum amount of time, in seconds, that web browsers can cache results of a preflight
-        /// request. By default, this is set to <code>0</code>, which means that the browser doesn't
+        /// request. By default, this is set to <c>0</c>, which means that the browser doesn't
         /// cache results.
         /// </para>
         /// </summary>

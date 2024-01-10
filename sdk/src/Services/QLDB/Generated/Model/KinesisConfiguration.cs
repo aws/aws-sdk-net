@@ -45,7 +45,7 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>True</code> 
+        /// Default: <c>True</c> 
         /// </para>
         ///  <important> 
         /// <para>

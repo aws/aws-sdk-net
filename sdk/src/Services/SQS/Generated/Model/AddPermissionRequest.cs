@@ -43,8 +43,8 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    ///  <code>AddPermission</code> generates a policy for you. You can use <code> <a>SetQueueAttributes</a>
-    /// </code> to upload your policy. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
+    ///  <c>AddPermission</c> generates a policy for you. You can use <c> <a>SetQueueAttributes</a>
+    /// </c> to upload your policy. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-creating-custom-policies.html">Using
     /// Custom Policies with the Amazon SQS Access Policy Language</a> in the <i>Amazon SQS
     /// Developer Guide</i>.
     /// </para>
@@ -55,12 +55,12 @@ namespace Amazon.SQS.Model
     ///  </li> <li> 
     /// <para>
     /// To remove the ability to change queue permissions, you must deny permission to the
-    /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-    /// actions in your IAM policy.
+    /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+    /// in your IAM policy.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+    /// Amazon SQS <c>AddPermission</c> does not support adding a non-account principal.
     /// </para>
     ///  </li> </ul> </note> <note> 
     /// <para>
@@ -102,7 +102,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property Actions. 
         /// <para>
         /// The action the client wants to allow for the specified principal. Valid values: the
-        /// name of any action or <code>*</code>.
+        /// name of any action or <c>*</c>.
         /// </para>
         ///  
         /// <para>
@@ -112,10 +112,9 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  
         /// <para>
-        /// Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code>
-        /// for <code>ActionName.n</code> also grants permissions for the corresponding batch
-        /// versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>,
-        /// and <code>ChangeMessageVisibilityBatch</code>.
+        /// Specifying <c>SendMessage</c>, <c>DeleteMessage</c>, or <c>ChangeMessageVisibility</c>
+        /// for <c>ActionName.n</c> also grants permissions for the corresponding batch versions
+        /// of those actions: <c>SendMessageBatch</c>, <c>DeleteMessageBatch</c>, and <c>ChangeMessageVisibilityBatch</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -156,9 +155,9 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Label. 
         /// <para>
-        /// The unique identification of the permission you're setting (for example, <code>AliceSendMessage</code>).
+        /// The unique identification of the permission you're setting (for example, <c>AliceSendMessage</c>).
         /// Maximum 80 characters. Allowed characters include alphanumeric characters, hyphens
-        /// (<code>-</code>), and underscores (<code>_</code>).
+        /// (<c>-</c>), and underscores (<c>_</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

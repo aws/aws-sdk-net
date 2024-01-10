@@ -42,20 +42,19 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>block-all-sharing</code> - All public sharing of snapshots is blocked. Users
-        /// in the account can't request new public sharing. Additionally, snapshots that were
-        /// already publicly shared are treated as private and are not publicly available.
+        ///  <c>block-all-sharing</c> - All public sharing of snapshots is blocked. Users in the
+        /// account can't request new public sharing. Additionally, snapshots that were already
+        /// publicly shared are treated as private and are not publicly available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>block-new-sharing</code> - Only new public sharing of snapshots is blocked.
-        /// Users in the account can't request new public sharing. However, snapshots that were
-        /// already publicly shared, remain publicly available.
+        ///  <c>block-new-sharing</c> - Only new public sharing of snapshots is blocked. Users
+        /// in the account can't request new public sharing. However, snapshots that were already
+        /// publicly shared, remain publicly available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unblocked</code> - Public sharing is not blocked. Users can publicly share
-        /// snapshots.
+        ///  <c>unblocked</c> - Public sharing is not blocked. Users can publicly share snapshots.
         /// </para>
         ///  </li> </ul>
         /// </summary>

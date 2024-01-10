@@ -44,16 +44,16 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INTERPOLATE</code>: Interpolate missing values between the prior and the next
-        /// known value.
+        ///  <c>INTERPOLATE</c>: Interpolate missing values between the prior and the next known
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SHOW_AS_ZERO</code>: Show missing values as the value <code>0</code>.
+        ///  <c>SHOW_AS_ZERO</c>: Show missing values as the value <c>0</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SHOW_AS_BLANK</code>: Display a blank space when rendering missing data.
+        ///  <c>SHOW_AS_BLANK</c>: Display a blank space when rendering missing data.
         /// </para>
         ///  </li> </ul>
         /// </summary>

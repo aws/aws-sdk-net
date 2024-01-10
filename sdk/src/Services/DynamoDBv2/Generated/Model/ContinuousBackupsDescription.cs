@@ -39,8 +39,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ContinuousBackupsStatus. 
         /// <para>
-        ///  <code>ContinuousBackupsStatus</code> can be one of the following states: ENABLED,
-        /// DISABLED
+        ///  <c>ContinuousBackupsStatus</c> can be one of the following states: ENABLED, DISABLED
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

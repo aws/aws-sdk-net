@@ -45,11 +45,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PrimaryY</code> 
+        ///  <c>PrimaryY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SecondaryY</code> 
+        ///  <c>SecondaryY</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -91,11 +91,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BAR</code> 
+        ///  <c>BAR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LINE</code> 
+        ///  <c>LINE</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

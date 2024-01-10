@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInstanceUser operation.
-    /// Deletes an <code>AppInstanceUser</code>.
+    /// Deletes an <c>AppInstanceUser</c>.
     /// 
     ///  <important> 
     /// <para>

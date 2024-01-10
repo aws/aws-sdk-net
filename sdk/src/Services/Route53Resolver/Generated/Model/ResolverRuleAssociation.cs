@@ -89,7 +89,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property ResolverRuleId. 
         /// <para>
         /// The ID of the Resolver rule that you associated with the VPC that is specified by
-        /// <code>VPCId</code>.
+        /// <c>VPCId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

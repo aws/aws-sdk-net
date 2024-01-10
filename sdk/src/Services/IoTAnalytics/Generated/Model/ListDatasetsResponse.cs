@@ -39,7 +39,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property DatasetSummaries. 
         /// <para>
-        /// A list of <code>DatasetSummary</code> objects.
+        /// A list of <c>DatasetSummary</c> objects.
         /// </para>
         /// </summary>
         public List<DatasetSummary> DatasetSummaries
@@ -57,8 +57,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next set of results, or <code>null</code> if there are no
-        /// more results.
+        /// The token to retrieve the next set of results, or <c>null</c> if there are no more
+        /// results.
         /// </para>
         /// </summary>
         public string NextToken

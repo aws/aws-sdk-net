@@ -35,18 +35,18 @@ namespace Amazon.EKS.Model
     ///  
     /// <para>
     /// The Amazon EKS control plane consists of control plane instances that run the Kubernetes
-    /// software, such as <code>etcd</code> and the API server. The control plane runs in
-    /// an account managed by Amazon Web Services, and the Kubernetes API is exposed by the
-    /// Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single tenant
-    /// and unique. It runs on its own set of Amazon EC2 instances.
+    /// software, such as <c>etcd</c> and the API server. The control plane runs in an account
+    /// managed by Amazon Web Services, and the Kubernetes API is exposed by the Amazon EKS
+    /// API server endpoint. Each Amazon EKS cluster control plane is single tenant and unique.
+    /// It runs on its own set of Amazon EC2 instances.
     /// </para>
     ///  
     /// <para>
     /// The cluster control plane is provisioned across multiple Availability Zones and fronted
     /// by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic
     /// network interfaces in your VPC subnets to provide connectivity from the control plane
-    /// instances to the nodes (for example, to support <code>kubectl exec</code>, <code>logs</code>,
-    /// and <code>proxy</code> data flows).
+    /// instances to the nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>,
+    /// and <c>proxy</c> data flows).
     /// </para>
     ///  
     /// <para>
@@ -56,19 +56,18 @@ namespace Amazon.EKS.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
-    /// parameters to enable or disable public and private access to your cluster's Kubernetes
-    /// API server endpoint. By default, public access is enabled, and private access is disabled.
-    /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+    /// You can use the <c>endpointPublicAccess</c> and <c>endpointPrivateAccess</c> parameters
+    /// to enable or disable public and private access to your cluster's Kubernetes API server
+    /// endpoint. By default, public access is enabled, and private access is disabled. For
+    /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
     /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// 
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>logging</code> parameter to enable or disable exporting the
-    /// Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster
-    /// control plane logs aren't exported to CloudWatch Logs. For more information, see <a
-    /// href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+    /// You can use the <c>logging</c> parameter to enable or disable exporting the Kubernetes
+    /// control plane logs for your cluster to CloudWatch Logs. By default, cluster control
+    /// plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
     /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
     /// </para>
     ///  <note> 

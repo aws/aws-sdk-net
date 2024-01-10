@@ -47,15 +47,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arm64</code> 
+        ///  <c>arm64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>i386</code> 
+        ///  <c>i386</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x86_64</code> 
+        ///  <c>x86_64</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -96,9 +96,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string ImagePublishedAt

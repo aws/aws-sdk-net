@@ -78,8 +78,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ProgressPercent. 
         /// <para>
-        /// The percentage-complete status of a <code>STORAGE_OPTIMIZATION</code> administrative
-        /// action. Does not apply to any other administrative action type.
+        /// The percentage-complete status of a <c>STORAGE_OPTIMIZATION</c> administrative action.
+        /// Does not apply to any other administrative action type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -139,25 +139,25 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Amazon FSx failed to process the administrative action successfully.
+        ///  <c>FAILED</c> - Amazon FSx failed to process the administrative action successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - Amazon FSx is processing the administrative action.
+        ///  <c>IN_PROGRESS</c> - Amazon FSx is processing the administrative action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon FSx is waiting to process the administrative action.
+        ///  <c>PENDING</c> - Amazon FSx is waiting to process the administrative action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - Amazon FSx has finished processing the administrative task.
+        ///  <c>COMPLETED</c> - Amazon FSx has finished processing the administrative task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATED_OPTIMIZING</code> - For a storage-capacity increase update, Amazon
-        /// FSx has updated the file system with the new storage capacity, and is now performing
-        /// the storage-optimization process.
+        ///  <c>UPDATED_OPTIMIZING</c> - For a storage-capacity increase update, Amazon FSx has
+        /// updated the file system with the new storage capacity, and is now performing the storage-optimization
+        /// process.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -176,8 +176,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property TargetFileSystemValues. 
         /// <para>
-        /// The target value for the administration action, provided in the <code>UpdateFileSystem</code>
-        /// operation. Returned for <code>FILE_SYSTEM_UPDATE</code> administrative actions. 
+        /// The target value for the administration action, provided in the <c>UpdateFileSystem</c>
+        /// operation. Returned for <c>FILE_SYSTEM_UPDATE</c> administrative actions. 
         /// </para>
         /// </summary>
         public FileSystem TargetFileSystemValues

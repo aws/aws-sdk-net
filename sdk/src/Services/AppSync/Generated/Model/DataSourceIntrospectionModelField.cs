@@ -76,7 +76,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The <code>DataSourceIntrospectionModelFieldType</code> object data.
+        /// The <c>DataSourceIntrospectionModelFieldType</c> object data.
         /// </para>
         /// </summary>
         public DataSourceIntrospectionModelFieldType Type

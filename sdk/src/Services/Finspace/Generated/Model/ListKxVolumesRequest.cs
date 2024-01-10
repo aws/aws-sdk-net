@@ -100,8 +100,8 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        ///  The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code>
-        /// volume type. 
+        ///  The type of file system volume. Currently, FinSpace only supports <c>NAS_1</c> volume
+        /// type. 
         /// </para>
         /// </summary>
         public KxVolumeType VolumeType

@@ -76,31 +76,31 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONING</code> - The resource is being prepared to switch over.
+        ///  <c>PROVISIONING</c> - The resource is being prepared to switch over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The resource is ready to switch over.
+        ///  <c>AVAILABLE</c> - The resource is ready to switch over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.
+        ///  <c>SWITCHOVER_IN_PROGRESS</c> - The resource is being switched over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.
+        ///  <c>SWITCHOVER_COMPLETED</c> - The resource has been switched over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.
+        ///  <c>SWITCHOVER_FAILED</c> - The resource attempted to switch over but failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISSING_SOURCE</code> - The source resource has been deleted.
+        ///  <c>MISSING_SOURCE</c> - The source resource has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISSING_TARGET</code> - The target resource has been deleted.
+        ///  <c>MISSING_TARGET</c> - The target resource has been deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

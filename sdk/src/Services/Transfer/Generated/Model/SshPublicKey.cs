@@ -31,9 +31,9 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Provides information about the public Secure Shell (SSH) key that is associated with
     /// a Transfer Family user for the specific file transfer protocol-enabled server (as
-    /// identified by <code>ServerId</code>). The information returned includes the date the
-    /// key was imported, the public key contents, and the public key ID. A user can store
-    /// more than one SSH public key associated with their user name on a specific server.
+    /// identified by <c>ServerId</c>). The information returned includes the date the key
+    /// was imported, the public key contents, and the public key ID. A user can store more
+    /// than one SSH public key associated with their user name on a specific server.
     /// </summary>
     public partial class SshPublicKey
     {
@@ -63,7 +63,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyBody. 
         /// <para>
-        /// Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
+        /// Specifies the content of the SSH public key as specified by the <c>PublicKeyId</c>.
         /// </para>
         ///  
         /// <para>
@@ -86,8 +86,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SshPublicKeyId. 
         /// <para>
-        /// Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the
-        /// public key.
+        /// Specifies the <c>SshPublicKeyId</c> parameter contains the identifier of the public
+        /// key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=21, Max=21)]

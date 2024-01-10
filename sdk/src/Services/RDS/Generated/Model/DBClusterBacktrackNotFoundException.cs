@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>BacktrackIdentifier</code> doesn't refer to an existing backtrack.
+    /// <c>BacktrackIdentifier</c> doesn't refer to an existing backtrack.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

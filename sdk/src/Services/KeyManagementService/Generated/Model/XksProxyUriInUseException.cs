@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the concatenation of the <code>XksProxyUriEndpoint</code>
-    /// and <code>XksProxyUriPath</code> is already associated with another external key store
-    /// in this Amazon Web Services Region. Each external key store in a Region must use a
-    /// unique external key store proxy API address.
+    /// The request was rejected because the concatenation of the <c>XksProxyUriEndpoint</c>
+    /// and <c>XksProxyUriPath</c> is already associated with another external key store in
+    /// this Amazon Web Services Region. Each external key store in a Region must use a unique
+    /// external key store proxy API address.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

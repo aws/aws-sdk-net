@@ -35,15 +35,13 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// You can use the optional <code>EntityFilter</code> parameter to limit the results
-    /// to a particular type of entity (users, groups, or roles). For example, to list only
-    /// the roles that are attached to the specified policy, set <code>EntityFilter</code>
-    /// to <code>Role</code>.
+    /// You can use the optional <c>EntityFilter</c> parameter to limit the results to a particular
+    /// type of entity (users, groups, or roles). For example, to list only the roles that
+    /// are attached to the specified policy, set <c>EntityFilter</c> to <c>Role</c>.
     /// </para>
     ///  
     /// <para>
-    /// You can paginate the results using the <code>MaxItems</code> and <code>Marker</code>
-    /// parameters.
+    /// You can paginate the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
     /// </para>
     /// </summary>
     public partial class ListEntitiesForPolicyRequest : AmazonIdentityManagementServiceRequest
@@ -62,10 +60,10 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, when <code>EntityFilter</code> is <code>Role</code>, only the roles that
-        /// are attached to the specified policy are returned. This parameter is optional. If
-        /// it is not included, all attached entities (users, groups, and roles) are returned.
-        /// The argument for this parameter must be one of the valid values listed below.
+        /// For example, when <c>EntityFilter</c> is <c>Role</c>, only the roles that are attached
+        /// to the specified policy are returned. This parameter is optional. If it is not included,
+        /// all attached entities (users, groups, and roles) are returned. The argument for this
+        /// parameter must be one of the valid values listed below.
         /// </para>
         /// </summary>
         public EntityType EntityFilter
@@ -84,7 +82,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter only when paginating results and only after you receive a response
-        /// indicating that the results are truncated. Set it to the value of the <code>Marker</code>
+        /// indicating that the results are truncated. Set it to the value of the <c>Marker</c>
         /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
@@ -106,15 +104,15 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// Use this only when paginating results to indicate the maximum number of items you
         /// want in the response. If additional items exist beyond the maximum you specify, the
-        /// <code>IsTruncated</code> response element is <code>true</code>.
+        /// <c>IsTruncated</c> response element is <c>true</c>.
         /// </para>
         ///  
         /// <para>
         /// If you do not include this parameter, the number of items defaults to 100. Note that
         /// IAM might return fewer results, even when there are more results available. In that
-        /// case, the <code>IsTruncated</code> response element returns <code>true</code>, and
-        /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from.
+        /// case, the <c>IsTruncated</c> response element returns <c>true</c>, and <c>Marker</c>
+        /// contains a value to include in the subsequent call that tells the service where to
+        /// continue from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -141,7 +139,7 @@ namespace Amazon.IdentityManagement.Model
         /// This parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
         /// pattern</a>) a string of characters consisting of either a forward slash (/) by itself
         /// or a string that must begin and end with forward slashes. In addition, it can contain
-        /// any ASCII character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>),
+        /// any ASCII character from the ! (<c>\u0021</c>) through the DEL character (<c>\u007F</c>),
         /// including most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         /// </summary>
@@ -189,8 +187,8 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// To list only permissions policies, set <code>PolicyUsageFilter</code> to <code>PermissionsPolicy</code>.
-        /// To list only the policies used to set permissions boundaries, set the value to <code>PermissionsBoundary</code>.
+        /// To list only permissions policies, set <c>PolicyUsageFilter</c> to <c>PermissionsPolicy</c>.
+        /// To list only the policies used to set permissions boundaries, set the value to <c>PermissionsBoundary</c>.
         /// </para>
         ///  
         /// <para>

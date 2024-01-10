@@ -30,32 +30,30 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Represents a condition to be compared with an attribute value. This condition can
-    /// be used with <code>DeleteItem</code>, <code>PutItem</code>, or <code>UpdateItem</code>
-    /// operations; if the comparison evaluates to true, the operation succeeds; if not, the
-    /// operation fails. You can use <code>ExpectedAttributeValue</code> in one of two different
-    /// ways:
+    /// be used with <c>DeleteItem</c>, <c>PutItem</c>, or <c>UpdateItem</c> operations; if
+    /// the comparison evaluates to true, the operation succeeds; if not, the operation fails.
+    /// You can use <c>ExpectedAttributeValue</c> in one of two different ways:
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Use <code>AttributeValueList</code> to specify one or more values to compare against
-    /// an attribute. Use <code>ComparisonOperator</code> to specify how you want to perform
-    /// the comparison. If the comparison evaluates to true, then the conditional operation
-    /// succeeds.
+    /// Use <c>AttributeValueList</c> to specify one or more values to compare against an
+    /// attribute. Use <c>ComparisonOperator</c> to specify how you want to perform the comparison.
+    /// If the comparison evaluates to true, then the conditional operation succeeds.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>Value</code> to specify a value that DynamoDB will compare against an attribute.
-    /// If the values match, then <code>ExpectedAttributeValue</code> evaluates to true and
-    /// the conditional operation succeeds. Optionally, you can also set <code>Exists</code>
-    /// to false, indicating that you <i>do not</i> expect to find the attribute value in
-    /// the table. In this case, the conditional operation succeeds only if the comparison
-    /// evaluates to false.
+    /// Use <c>Value</c> to specify a value that DynamoDB will compare against an attribute.
+    /// If the values match, then <c>ExpectedAttributeValue</c> evaluates to true and the
+    /// conditional operation succeeds. Optionally, you can also set <c>Exists</c> to false,
+    /// indicating that you <i>do not</i> expect to find the attribute value in the table.
+    /// In this case, the conditional operation succeeds only if the comparison evaluates
+    /// to false.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <code>Value</code> and <code>Exists</code> are incompatible with <code>AttributeValueList</code>
-    /// and <code>ComparisonOperator</code>. Note that if you use both sets of parameters
-    /// at once, DynamoDB will return a <code>ValidationException</code> exception.
+    ///  <c>Value</c> and <c>Exists</c> are incompatible with <c>AttributeValueList</c> and
+    /// <c>ComparisonOperator</c>. Note that if you use both sets of parameters at once, DynamoDB
+    /// will return a <c>ValidationException</c> exception.
     /// </para>
     /// </summary>
     public partial class ExpectedAttributeValue
@@ -92,7 +90,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property AttributeValueList. 
         /// <para>
         /// One or more values to evaluate against the supplied attribute. The number of values
-        /// in the list depends on the <code>ComparisonOperator</code> being used.
+        /// in the list depends on the <c>ComparisonOperator</c> being used.
         /// </para>
         ///  
         /// <para>
@@ -101,9 +99,8 @@ namespace Amazon.DynamoDBv2.Model
         ///  
         /// <para>
         /// String value comparisons for greater than, equals, or less than are based on ASCII
-        /// character code values. For example, <code>a</code> is greater than <code>A</code>,
-        /// and <code>a</code> is greater than <code>B</code>. For a list of code values, see
-        /// <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
+        /// character code values. For example, <c>a</c> is greater than <c>A</c>, and <c>a</c>
+        /// is greater than <c>B</c>. For a list of code values, see <a href="http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">http://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters</a>.
         /// </para>
         ///  
         /// <para>
@@ -131,8 +128,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// A comparator for evaluating attributes in the <code>AttributeValueList</code>. For
-        /// example, equals, greater than, less than, etc.
+        /// A comparator for evaluating attributes in the <c>AttributeValueList</c>. For example,
+        /// equals, greater than, less than, etc.
         /// </para>
         ///  
         /// <para>
@@ -140,8 +137,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
-        /// | IN | BETWEEN</code> 
+        ///  <c>EQ | NE | LE | LT | GE | GT | NOT_NULL | NULL | CONTAINS | NOT_CONTAINS | BEGINS_WITH
+        /// | IN | BETWEEN</c> 
         /// </para>
         ///  
         /// <para>
@@ -149,185 +146,177 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EQ</code> : Equal. <code>EQ</code> is supported for all data types, including
-        /// lists and maps.
+        ///  <c>EQ</c> : Equal. <c>EQ</c> is supported for all data types, including lists and
+        /// maps.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// element of type String, Number, Binary, String Set, Number Set, or Binary Set. If
-        /// an item contains an <code>AttributeValue</code> element of a different type than the
-        /// one provided in the request, the value does not match. For example, <code>{"S":"6"}</code>
-        /// does not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal
-        /// <code>{"NS":["6", "2", "1"]}</code>.
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> element of type
+        /// String, Number, Binary, String Set, Number Set, or Binary Set. If an item contains
+        /// an <c>AttributeValue</c> element of a different type than the one provided in the
+        /// request, the value does not match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>.
+        /// Also, <c>{"N":"6"}</c> does not equal <c>{"NS":["6", "2", "1"]}</c>.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>NE</code> : Not equal. <code>NE</code> is supported for all data types, including
-        /// lists and maps.
+        ///  <c>NE</c> : Not equal. <c>NE</c> is supported for all data types, including lists
+        /// and maps.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// of type String, Number, Binary, String Set, Number Set, or Binary Set. If an item
-        /// contains an <code>AttributeValue</code> of a different type than the one provided
-        /// in the request, the value does not match. For example, <code>{"S":"6"}</code> does
-        /// not equal <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not equal <code>{"NS":["6",
-        /// "2", "1"]}</code>.
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> of type String,
+        /// Number, Binary, String Set, Number Set, or Binary Set. If an item contains an <c>AttributeValue</c>
+        /// of a different type than the one provided in the request, the value does not match.
+        /// For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c>
+        /// does not equal <c>{"NS":["6", "2", "1"]}</c>.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>LE</code> : Less than or equal. 
+        ///  <c>LE</c> : Less than or equal. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// element of type String, Number, or Binary (not a set type). If an item contains an
-        /// <code>AttributeValue</code> element of a different type than the one provided in the
-        /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-        /// <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-        /// "2", "1"]}</code>.
-        /// </para>
-        ///   </li> <li> 
-        /// <para>
-        ///  <code>LT</code> : Less than. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// of type String, Number, or Binary (not a set type). If an item contains an <code>AttributeValue</code>
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> element of type
+        /// String, Number, or Binary (not a set type). If an item contains an <c>AttributeValue</c>
         /// element of a different type than the one provided in the request, the value does not
-        /// match. For example, <code>{"S":"6"}</code> does not equal <code>{"N":"6"}</code>.
-        /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>.
+        /// match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c>
+        /// does not compare to <c>{"NS":["6", "2", "1"]}</c>.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>GE</code> : Greater than or equal. 
+        ///  <c>LT</c> : Less than. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// element of type String, Number, or Binary (not a set type). If an item contains an
-        /// <code>AttributeValue</code> element of a different type than the one provided in the
-        /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-        /// <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-        /// "2", "1"]}</code>.
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> of type String,
+        /// Number, or Binary (not a set type). If an item contains an <c>AttributeValue</c> element
+        /// of a different type than the one provided in the request, the value does not match.
+        /// For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c>
+        /// does not compare to <c>{"NS":["6", "2", "1"]}</c>.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>GT</code> : Greater than. 
+        ///  <c>GE</c> : Greater than or equal. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// element of type String, Number, or Binary (not a set type). If an item contains an
-        /// <code>AttributeValue</code> element of a different type than the one provided in the
-        /// request, the value does not match. For example, <code>{"S":"6"}</code> does not equal
-        /// <code>{"N":"6"}</code>. Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6",
-        /// "2", "1"]}</code>.
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> element of type
+        /// String, Number, or Binary (not a set type). If an item contains an <c>AttributeValue</c>
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c>
+        /// does not compare to <c>{"NS":["6", "2", "1"]}</c>.
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>NOT_NULL</code> : The attribute exists. <code>NOT_NULL</code> is supported
-        /// for all data types, including lists and maps.
+        ///  <c>GT</c> : Greater than. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> element of type
+        /// String, Number, or Binary (not a set type). If an item contains an <c>AttributeValue</c>
+        /// element of a different type than the one provided in the request, the value does not
+        /// match. For example, <c>{"S":"6"}</c> does not equal <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c>
+        /// does not compare to <c>{"NS":["6", "2", "1"]}</c>.
+        /// </para>
+        ///   </li> <li> 
+        /// <para>
+        ///  <c>NOT_NULL</c> : The attribute exists. <c>NOT_NULL</c> is supported for all data
+        /// types, including lists and maps.
         /// </para>
         ///  <note> 
         /// <para>
         /// This operator tests for the existence of an attribute, not its data type. If the data
-        /// type of attribute "<code>a</code>" is null, and you evaluate it using <code>NOT_NULL</code>,
-        /// the result is a Boolean <code>true</code>. This result is because the attribute "<code>a</code>"
-        /// exists; its data type is not relevant to the <code>NOT_NULL</code> comparison operator.
+        /// type of attribute "<c>a</c>" is null, and you evaluate it using <c>NOT_NULL</c>, the
+        /// result is a Boolean <c>true</c>. This result is because the attribute "<c>a</c>" exists;
+        /// its data type is not relevant to the <c>NOT_NULL</c> comparison operator.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>NULL</code> : The attribute does not exist. <code>NULL</code> is supported
-        /// for all data types, including lists and maps.
+        ///  <c>NULL</c> : The attribute does not exist. <c>NULL</c> is supported for all data
+        /// types, including lists and maps.
         /// </para>
         ///  <note> 
         /// <para>
         /// This operator tests for the nonexistence of an attribute, not its data type. If the
-        /// data type of attribute "<code>a</code>" is null, and you evaluate it using <code>NULL</code>,
-        /// the result is a Boolean <code>false</code>. This is because the attribute "<code>a</code>"
-        /// exists; its data type is not relevant to the <code>NULL</code> comparison operator.
+        /// data type of attribute "<c>a</c>" is null, and you evaluate it using <c>NULL</c>,
+        /// the result is a Boolean <c>false</c>. This is because the attribute "<c>a</c>" exists;
+        /// its data type is not relevant to the <c>NULL</c> comparison operator.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>CONTAINS</code> : Checks for a subsequence, or value in a set.
+        ///  <c>CONTAINS</c> : Checks for a subsequence, or value in a set.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// element of type String, Number, or Binary (not a set type). If the target attribute
-        /// of the comparison is of type String, then the operator checks for a substring match.
-        /// If the target attribute of the comparison is of type Binary, then the operator looks
-        /// for a subsequence of the target that matches the input. If the target attribute of
-        /// the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"),
-        /// then the operator evaluates to true if it finds an exact match with any member of
-        /// the set.
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> element of type
+        /// String, Number, or Binary (not a set type). If the target attribute of the comparison
+        /// is of type String, then the operator checks for a substring match. If the target attribute
+        /// of the comparison is of type Binary, then the operator looks for a subsequence of
+        /// the target that matches the input. If the target attribute of the comparison is a
+        /// set ("<c>SS</c>", "<c>NS</c>", or "<c>BS</c>"), then the operator evaluates to true
+        /// if it finds an exact match with any member of the set.
         /// </para>
         ///  
         /// <para>
-        /// CONTAINS is supported for lists: When evaluating "<code>a CONTAINS b</code>", "<code>a</code>"
-        /// can be a list; however, "<code>b</code>" cannot be a set, a map, or a list.
+        /// CONTAINS is supported for lists: When evaluating "<c>a CONTAINS b</c>", "<c>a</c>"
+        /// can be a list; however, "<c>b</c>" cannot be a set, a map, or a list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CONTAINS</code> : Checks for absence of a subsequence, or absence of a
-        /// value in a set.
+        ///  <c>NOT_CONTAINS</c> : Checks for absence of a subsequence, or absence of a value
+        /// in a set.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// element of type String, Number, or Binary (not a set type). If the target attribute
-        /// of the comparison is a String, then the operator checks for the absence of a substring
-        /// match. If the target attribute of the comparison is Binary, then the operator checks
-        /// for the absence of a subsequence of the target that matches the input. If the target
-        /// attribute of the comparison is a set ("<code>SS</code>", "<code>NS</code>", or "<code>BS</code>"),
-        /// then the operator evaluates to true if it <i>does not</i> find an exact match with
-        /// any member of the set.
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> element of type
+        /// String, Number, or Binary (not a set type). If the target attribute of the comparison
+        /// is a String, then the operator checks for the absence of a substring match. If the
+        /// target attribute of the comparison is Binary, then the operator checks for the absence
+        /// of a subsequence of the target that matches the input. If the target attribute of
+        /// the comparison is a set ("<c>SS</c>", "<c>NS</c>", or "<c>BS</c>"), then the operator
+        /// evaluates to true if it <i>does not</i> find an exact match with any member of the
+        /// set.
         /// </para>
         ///  
         /// <para>
-        /// NOT_CONTAINS is supported for lists: When evaluating "<code>a NOT CONTAINS b</code>",
-        /// "<code>a</code>" can be a list; however, "<code>b</code>" cannot be a set, a map,
-        /// or a list.
+        /// NOT_CONTAINS is supported for lists: When evaluating "<c>a NOT CONTAINS b</c>", "<c>a</c>"
+        /// can be a list; however, "<c>b</c>" cannot be a set, a map, or a list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BEGINS_WITH</code> : Checks for a prefix. 
+        ///  <c>BEGINS_WITH</c> : Checks for a prefix. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain only one <code>AttributeValue</code>
-        /// of type String or Binary (not a Number or a set type). The target attribute of the
-        /// comparison must be of type String or Binary (not a Number or a set type).
+        ///  <c>AttributeValueList</c> can contain only one <c>AttributeValue</c> of type String
+        /// or Binary (not a Number or a set type). The target attribute of the comparison must
+        /// be of type String or Binary (not a Number or a set type).
         /// </para>
         ///   </li> <li> 
         /// <para>
-        ///  <code>IN</code> : Checks for matching elements in a list.
+        ///  <c>IN</c> : Checks for matching elements in a list.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> can contain one or more <code>AttributeValue</code>
-        /// elements of type String, Number, or Binary. These attributes are compared against
-        /// an existing attribute of an item. If any elements of the input are equal to the item
-        /// attribute, the expression evaluates to true.
+        ///  <c>AttributeValueList</c> can contain one or more <c>AttributeValue</c> elements
+        /// of type String, Number, or Binary. These attributes are compared against an existing
+        /// attribute of an item. If any elements of the input are equal to the item attribute,
+        /// the expression evaluates to true.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BETWEEN</code> : Greater than or equal to the first value, and less than or
-        /// equal to the second value. 
+        ///  <c>BETWEEN</c> : Greater than or equal to the first value, and less than or equal
+        /// to the second value. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>AttributeValueList</code> must contain two <code>AttributeValue</code> elements
-        /// of the same type, either String, Number, or Binary (not a set type). A target attribute
-        /// matches if the target value is greater than, or equal to, the first element and less
-        /// than, or equal to, the second element. If an item contains an <code>AttributeValue</code>
-        /// element of a different type than the one provided in the request, the value does not
-        /// match. For example, <code>{"S":"6"}</code> does not compare to <code>{"N":"6"}</code>.
-        /// Also, <code>{"N":"6"}</code> does not compare to <code>{"NS":["6", "2", "1"]}</code>
-        /// 
+        ///  <c>AttributeValueList</c> must contain two <c>AttributeValue</c> elements of the
+        /// same type, either String, Number, or Binary (not a set type). A target attribute matches
+        /// if the target value is greater than, or equal to, the first element and less than,
+        /// or equal to, the second element. If an item contains an <c>AttributeValue</c> element
+        /// of a different type than the one provided in the request, the value does not match.
+        /// For example, <c>{"S":"6"}</c> does not compare to <c>{"N":"6"}</c>. Also, <c>{"N":"6"}</c>
+        /// does not compare to <c>{"NS":["6", "2", "1"]}</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -350,36 +339,36 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>Exists</code> is <code>true</code>, DynamoDB will check to see if that attribute
-        /// value already exists in the table. If it is found, then the operation succeeds. If
-        /// it is not found, the operation fails with a <code>ConditionCheckFailedException</code>.
+        /// If <c>Exists</c> is <c>true</c>, DynamoDB will check to see if that attribute value
+        /// already exists in the table. If it is found, then the operation succeeds. If it is
+        /// not found, the operation fails with a <c>ConditionCheckFailedException</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>Exists</code> is <code>false</code>, DynamoDB assumes that the attribute
-        /// value does not exist in the table. If in fact the value does not exist, then the assumption
-        /// is valid and the operation succeeds. If the value is found, despite the assumption
-        /// that it does not exist, the operation fails with a <code>ConditionCheckFailedException</code>.
+        /// If <c>Exists</c> is <c>false</c>, DynamoDB assumes that the attribute value does not
+        /// exist in the table. If in fact the value does not exist, then the assumption is valid
+        /// and the operation succeeds. If the value is found, despite the assumption that it
+        /// does not exist, the operation fails with a <c>ConditionCheckFailedException</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default setting for <code>Exists</code> is <code>true</code>. If you supply a
-        /// <code>Value</code> all by itself, DynamoDB assumes the attribute exists: You don't
-        /// have to set <code>Exists</code> to <code>true</code>, because it is implied.
+        /// The default setting for <c>Exists</c> is <c>true</c>. If you supply a <c>Value</c>
+        /// all by itself, DynamoDB assumes the attribute exists: You don't have to set <c>Exists</c>
+        /// to <c>true</c>, because it is implied.
         /// </para>
         ///  
         /// <para>
-        /// DynamoDB returns a <code>ValidationException</code> if:
+        /// DynamoDB returns a <c>ValidationException</c> if:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Exists</code> is <code>true</code> but there is no <code>Value</code> to check.
-        /// (You expect a value to exist, but don't specify what that value is.)
+        ///  <c>Exists</c> is <c>true</c> but there is no <c>Value</c> to check. (You expect a
+        /// value to exist, but don't specify what that value is.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Exists</code> is <code>false</code> but you also provide a <code>Value</code>.
-        /// (You cannot expect an attribute to have a value, while also expecting it not to exist.)
+        ///  <c>Exists</c> is <c>false</c> but you also provide a <c>Value</c>. (You cannot expect
+        /// an attribute to have a value, while also expecting it not to exist.)
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -80,7 +80,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to associate with the Neptune DB cluster,
-        /// for example <code>arn:aws:iam::123456789012:role/NeptuneAccessRole</code>.
+        /// for example <c>arn:aws:iam::123456789012:role/NeptuneAccessRole</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

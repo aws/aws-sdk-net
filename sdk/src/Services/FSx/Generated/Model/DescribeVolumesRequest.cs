@@ -42,8 +42,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Enter a filter <code>Name</code> and <code>Values</code> pair to view a select set
-        /// of volumes.
+        /// Enter a filter <c>Name</c> and <c>Values</c> pair to view a select set of volumes.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2)]

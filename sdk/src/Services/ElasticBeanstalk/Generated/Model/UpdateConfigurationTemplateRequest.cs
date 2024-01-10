@@ -35,8 +35,8 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If a property (for example, <code>ApplicationName</code>) is not provided, its value
-    /// remains unchanged. To clear such properties, specify an empty string.
+    /// If a property (for example, <c>ApplicationName</c>) is not provided, its value remains
+    /// unchanged. To clear such properties, specify an empty string.
     /// </para>
     ///  </note> 
     /// <para>
@@ -79,8 +79,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no application is found with this name, <code>UpdateConfigurationTemplate</code>
-        /// returns an <code>InvalidParameterValue</code> error. 
+        ///  If no application is found with this name, <c>UpdateConfigurationTemplate</c> returns
+        /// an <c>InvalidParameterValue</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -140,7 +140,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  Constraint: You can remove only <code>UserDefined</code> configuration options. 
+        ///  Constraint: You can remove only <c>UserDefined</c> configuration options. 
         /// </para>
         /// </summary>
         public List<OptionSpecification> OptionsToRemove
@@ -162,8 +162,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        ///  If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code>
-        /// returns an <code>InvalidParameterValue</code> error. 
+        ///  If no configuration template is found with this name, <c>UpdateConfigurationTemplate</c>
+        /// returns an <c>InvalidParameterValue</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

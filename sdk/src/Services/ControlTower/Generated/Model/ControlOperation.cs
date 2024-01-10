@@ -60,7 +60,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property OperationType. 
         /// <para>
-        /// One of <code>ENABLE_CONTROL</code> or <code>DISABLE_CONTROL</code>.
+        /// One of <c>ENABLE_CONTROL</c> or <c>DISABLE_CONTROL</c>.
         /// </para>
         /// </summary>
         public ControlOperationType OperationType
@@ -96,7 +96,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// One of <code>IN_PROGRESS</code>, <code>SUCEEDED</code>, or <code>FAILED</code>.
+        /// One of <c>IN_PROGRESS</c>, <c>SUCEEDED</c>, or <c>FAILED</c>.
         /// </para>
         /// </summary>
         public ControlOperationStatus Status
@@ -114,7 +114,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// If the operation result is <code>FAILED</code>, this string contains a message explaining
+        /// If the operation result is <c>FAILED</c>, this string contains a message explaining
         /// why the operation failed.
         /// </para>
         /// </summary>

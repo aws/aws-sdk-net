@@ -57,8 +57,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Statistics. 
         /// <para>
-        /// Statistics about the channel. Included if the <code>includeStatistics</code> parameter
-        /// is set to <code>true</code> in the request.
+        /// Statistics about the channel. Included if the <c>includeStatistics</c> parameter is
+        /// set to <c>true</c> in the request.
         /// </para>
         /// </summary>
         public ChannelStatistics Statistics

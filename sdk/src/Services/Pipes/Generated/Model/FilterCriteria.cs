@@ -33,8 +33,8 @@ namespace Amazon.Pipes.Model
     /// 
     ///  
     /// <para>
-    /// To remove a filter, specify a <code>FilterCriteria</code> object with an empty array
-    /// of <code>Filter</code> objects.
+    /// To remove a filter, specify a <c>FilterCriteria</c> object with an empty array of
+    /// <c>Filter</c> objects.
     /// </para>
     ///  
     /// <para>

@@ -109,10 +109,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JobType. 
         /// <para>
-        /// Defines the type of recommendation job. Specify <code>Default</code> to initiate an
-        /// instance recommendation and <code>Advanced</code> to initiate a load test. If left
-        /// unspecified, Amazon SageMaker Inference Recommender will run an instance recommendation
-        /// (<code>DEFAULT</code>) job.
+        /// Defines the type of recommendation job. Specify <c>Default</c> to initiate an instance
+        /// recommendation and <c>Advanced</c> to initiate a load test. If left unspecified, Amazon
+        /// SageMaker Inference Recommender will run an instance recommendation (<c>DEFAULT</c>)
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

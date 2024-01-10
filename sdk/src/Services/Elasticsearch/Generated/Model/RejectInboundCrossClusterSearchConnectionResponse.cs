@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation.
+    /// The result of a <c><a>RejectInboundCrossClusterSearchConnection</a></c> operation.
     /// Contains details of rejected inbound connection.
     /// </summary>
     public partial class RejectInboundCrossClusterSearchConnectionResponse : AmazonWebServiceResponse
@@ -39,8 +39,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CrossClusterSearchConnection. 
         /// <para>
-        /// Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of rejected
-        /// inbound connection. 
+        /// Specifies the <c><a>InboundCrossClusterSearchConnection</a></c> of rejected inbound
+        /// connection. 
         /// </para>
         /// </summary>
         public InboundCrossClusterSearchConnection CrossClusterSearchConnection

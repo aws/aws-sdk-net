@@ -40,12 +40,11 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property DeploymentType. 
         /// <para>
         ///  Specifies the deployment mechanism through which the update shall be applied on the
-        /// domain. Possible responses are <code>Blue/Green</code> (The update will require a
-        /// blue/green deployment.) <code>DynamicUpdate</code> (The update can be applied in-place
-        /// without a Blue/Green deployment required.) <code>Undetermined</code> (The domain is
-        /// undergoing an update which needs to complete before the deployment type can be predicted.)
-        /// <code>None</code> (The configuration change matches the current configuration and
-        /// will not result in any update.) 
+        /// domain. Possible responses are <c>Blue/Green</c> (The update will require a blue/green
+        /// deployment.) <c>DynamicUpdate</c> (The update can be applied in-place without a Blue/Green
+        /// deployment required.) <c>Undetermined</c> (The domain is undergoing an update which
+        /// needs to complete before the deployment type can be predicted.) <c>None</c> (The configuration
+        /// change matches the current configuration and will not result in any update.) 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=128)]

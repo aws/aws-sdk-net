@@ -65,12 +65,12 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property BillingMethod. 
         /// <para>
-        /// Specifies the billing method for a test run: <code>metered</code> or <code>unmetered</code>.
-        /// If the parameter is not specified, the default value is <code>metered</code>.
+        /// Specifies the billing method for a test run: <c>metered</c> or <c>unmetered</c>. If
+        /// the parameter is not specified, the default value is <c>metered</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you have purchased unmetered device slots, you must set this parameter to <code>unmetered</code>
+        /// If you have purchased unmetered device slots, you must set this parameter to <c>unmetered</c>
         /// to make use of them. Otherwise, your run counts against your metered time.
         /// </para>
         ///  </note>
@@ -90,7 +90,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property CustomerArtifactPaths. 
         /// <para>
-        /// Input <code>CustomerArtifactPaths</code> object for the scheduled run configuration.
+        /// Input <c>CustomerArtifactPaths</c> object for the scheduled run configuration.
         /// </para>
         /// </summary>
         public CustomerArtifactPaths CustomerArtifactPaths

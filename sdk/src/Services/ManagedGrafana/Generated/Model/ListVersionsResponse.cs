@@ -58,8 +58,8 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use in a subsequent <code>ListVersions</code> operation to return the
-        /// next set of results.
+        /// The token to use in a subsequent <c>ListVersions</c> operation to return the next
+        /// set of results.
         /// </para>
         /// </summary>
         public string NextToken

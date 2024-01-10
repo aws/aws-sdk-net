@@ -47,11 +47,11 @@ namespace Amazon.SnowDeviceManagement
 
         /// <summary>
         /// Sends a cancel request for a specified task. You can cancel a task only if it's still
-        /// in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.
+        /// in a <c>QUEUED</c> state. Tasks that are already running can't be cancelled.
         /// 
         ///  <note> 
         /// <para>
-        /// A task might still run if it's processed from the queue before the <code>CancelTask</code>
+        /// A task might still run if it's processed from the queue before the <c>CancelTask</c>
         /// operation changes the task's state.
         /// </para>
         ///  </note>
@@ -81,11 +81,11 @@ namespace Amazon.SnowDeviceManagement
 
         /// <summary>
         /// Sends a cancel request for a specified task. You can cancel a task only if it's still
-        /// in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.
+        /// in a <c>QUEUED</c> state. Tasks that are already running can't be cancelled.
         /// 
         ///  <note> 
         /// <para>
-        /// A task might still run if it's processed from the queue before the <code>CancelTask</code>
+        /// A task might still run if it's processed from the queue before the <c>CancelTask</c>
         /// operation changes the task's state.
         /// </para>
         ///  </note>
@@ -244,7 +244,7 @@ namespace Amazon.SnowDeviceManagement
 
 
         /// <summary>
-        /// Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>,
+        /// Checks the current state of the Amazon EC2 instances. The output is similar to <c>describeDevice</c>,
         /// but the results are sourced from the device cache in the Amazon Web Services Cloud
         /// and include a subset of the available fields.
         /// </summary>
@@ -272,7 +272,7 @@ namespace Amazon.SnowDeviceManagement
 
 
         /// <summary>
-        /// Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>,
+        /// Checks the current state of the Amazon EC2 instances. The output is similar to <c>describeDevice</c>,
         /// but the results are sourced from the device cache in the Amazon Web Services Cloud
         /// and include a subset of the available fields.
         /// </summary>

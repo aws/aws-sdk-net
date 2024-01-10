@@ -68,12 +68,11 @@ namespace Amazon.CloudSearchDomain.Model
         /// </para>
         ///  
         /// <para>
-        /// If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>,
-        /// or <code>double-array</code>), <code>max</code> is the string representation of a
-        /// double-precision 64-bit floating point value. If the field is <code>date</code> or
-        /// <code>date-array</code>, <code>max</code> is the string representation of a date with
-        /// the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-        /// yyyy-mm-ddTHH:mm:ss.SSSZ.
+        /// If the field is numeric (<c>int</c>, <c>int-array</c>, <c>double</c>, or <c>double-array</c>),
+        /// <c>max</c> is the string representation of a double-precision 64-bit floating point
+        /// value. If the field is <c>date</c> or <c>date-array</c>, <c>max</c> is the string
+        /// representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+        /// RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
         /// </para>
         /// </summary>
         public string Max
@@ -95,12 +94,11 @@ namespace Amazon.CloudSearchDomain.Model
         /// </para>
         ///  
         /// <para>
-        /// If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>,
-        /// or <code>double-array</code>), <code>mean</code> is the string representation of a
-        /// double-precision 64-bit floating point value. If the field is <code>date</code> or
-        /// <code>date-array</code>, <code>mean</code> is the string representation of a date
-        /// with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-        /// yyyy-mm-ddTHH:mm:ss.SSSZ.
+        /// If the field is numeric (<c>int</c>, <c>int-array</c>, <c>double</c>, or <c>double-array</c>),
+        /// <c>mean</c> is the string representation of a double-precision 64-bit floating point
+        /// value. If the field is <c>date</c> or <c>date-array</c>, <c>mean</c> is the string
+        /// representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+        /// RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
         /// </para>
         /// </summary>
         public string Mean
@@ -122,12 +120,11 @@ namespace Amazon.CloudSearchDomain.Model
         /// </para>
         ///  
         /// <para>
-        /// If the field is numeric (<code>int</code>, <code>int-array</code>, <code>double</code>,
-        /// or <code>double-array</code>), <code>min</code> is the string representation of a
-        /// double-precision 64-bit floating point value. If the field is <code>date</code> or
-        /// <code>date-array</code>, <code>min</code> is the string representation of a date with
-        /// the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF RFC3339</a>:
-        /// yyyy-mm-ddTHH:mm:ss.SSSZ.
+        /// If the field is numeric (<c>int</c>, <c>int-array</c>, <c>double</c>, or <c>double-array</c>),
+        /// <c>min</c> is the string representation of a double-precision 64-bit floating point
+        /// value. If the field is <c>date</c> or <c>date-array</c>, <c>min</c> is the string
+        /// representation of a date with the format specified in <a href="http://tools.ietf.org/html/rfc3339">IETF
+        /// RFC3339</a>: yyyy-mm-ddTHH:mm:ss.SSSZ.
         /// </para>
         /// </summary>
         public string Min
@@ -182,8 +179,8 @@ namespace Amazon.CloudSearchDomain.Model
         /// <summary>
         /// Gets and sets the property Sum. 
         /// <para>
-        /// The sum of the field values across the documents in the result set. <code>null</code>
-        /// for date fields.
+        /// The sum of the field values across the documents in the result set. <c>null</c> for
+        /// date fields.
         /// </para>
         /// </summary>
         public double Sum

@@ -31,8 +31,8 @@ namespace Amazon.Lex.Model
     /// <summary>
     /// A context is a variable that contains information about the current state of the conversation
     /// between a user and Amazon Lex. Context can be set automatically by Amazon Lex when
-    /// an intent is fulfilled, or it can be set at runtime using the <code>PutContent</code>,
-    /// <code>PutText</code>, or <code>PutSession</code> operation.
+    /// an intent is fulfilled, or it can be set at runtime using the <c>PutContent</c>, <c>PutText</c>,
+    /// or <c>PutSession</c> operation.
     /// </summary>
     public partial class ActiveContext
     {

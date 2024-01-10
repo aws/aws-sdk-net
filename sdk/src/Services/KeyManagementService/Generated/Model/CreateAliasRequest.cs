@@ -127,8 +127,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// Specifies the alias name. This value must begin with <code>alias/</code> followed
-        /// by a name, such as <code>alias/ExampleAlias</code>. 
+        /// Specifies the alias name. This value must begin with <c>alias/</c> followed by a name,
+        /// such as <c>alias/ExampleAlias</c>. 
         /// </para>
         ///  <important> 
         /// <para>
@@ -137,10 +137,10 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// The <code>AliasName</code> value must be string of 1-256 characters. It can contain
-        /// only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).
-        /// The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code>
-        /// prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
+        /// The <c>AliasName</c> value must be string of 1-256 characters. It can contain only
+        /// alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The
+        /// alias name cannot begin with <c>alias/aws/</c>. The <c>alias/aws/</c> prefix is reserved
+        /// for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
         /// Web Services managed keys</a>.
         /// </para>
         /// </summary>
@@ -183,11 +183,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 

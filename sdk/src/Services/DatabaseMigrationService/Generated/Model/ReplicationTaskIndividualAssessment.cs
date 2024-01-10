@@ -97,7 +97,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskIndividualAssessmentStartDate. 
         /// <para>
-        /// Date when this individual assessment was started as part of running the <code>StartReplicationTaskAssessmentRun</code>
+        /// Date when this individual assessment was started as part of running the <c>StartReplicationTaskAssessmentRun</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -124,27 +124,27 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"cancelled"</code> 
+        ///  <c>"cancelled"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"error"</code> 
+        ///  <c>"error"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"failed"</code> 
+        ///  <c>"failed"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"passed"</code> 
+        ///  <c>"passed"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"pending"</code> 
+        ///  <c>"pending"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>"running"</code> 
+        ///  <c>"running"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

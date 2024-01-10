@@ -45,14 +45,14 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <dl> <dt>Bitbucket</dt> <dd> 
         /// <para>
-        /// This parameter is used for the <code>name</code> parameter in the Bitbucket commit
-        /// status. For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a>
+        /// This parameter is used for the <c>name</c> parameter in the Bitbucket commit status.
+        /// For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a>
         /// in the Bitbucket API documentation.
         /// </para>
         ///  </dd> <dt>GitHub/GitHub Enterprise Server</dt> <dd> 
         /// <para>
-        /// This parameter is used for the <code>context</code> parameter in the GitHub commit
-        /// status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create
+        /// This parameter is used for the <c>context</c> parameter in the GitHub commit status.
+        /// For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create
         /// a commit status</a> in the GitHub developer guide.
         /// </para>
         ///  </dd> </dl>
@@ -77,14 +77,14 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <dl> <dt>Bitbucket</dt> <dd> 
         /// <para>
-        /// This parameter is used for the <code>url</code> parameter in the Bitbucket commit
-        /// status. For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a>
+        /// This parameter is used for the <c>url</c> parameter in the Bitbucket commit status.
+        /// For more information, see <a href="https://developer.atlassian.com/bitbucket/api/2/reference/resource/repositories/%7Bworkspace%7D/%7Brepo_slug%7D/commit/%7Bnode%7D/statuses/build">build</a>
         /// in the Bitbucket API documentation.
         /// </para>
         ///  </dd> <dt>GitHub/GitHub Enterprise Server</dt> <dd> 
         /// <para>
-        /// This parameter is used for the <code>target_url</code> parameter in the GitHub commit
-        /// status. For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create
+        /// This parameter is used for the <c>target_url</c> parameter in the GitHub commit status.
+        /// For more information, see <a href="https://developer.github.com/v3/repos/statuses/#create-a-commit-status">Create
         /// a commit status</a> in the GitHub developer guide.
         /// </para>
         ///  </dd> </dl>

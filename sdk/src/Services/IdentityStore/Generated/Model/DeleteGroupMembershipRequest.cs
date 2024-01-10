@@ -30,7 +30,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGroupMembership operation.
-    /// Delete a membership within a group given <code>MembershipId</code>.
+    /// Delete a membership within a group given <c>MembershipId</c>.
     /// </summary>
     public partial class DeleteGroupMembershipRequest : AmazonIdentityStoreRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property MembershipId. 
         /// <para>
-        /// The identifier for a <code>GroupMembership</code> in an identity store.
+        /// The identifier for a <c>GroupMembership</c> in an identity store.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=47)]

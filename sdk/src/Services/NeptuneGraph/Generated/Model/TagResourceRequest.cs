@@ -68,16 +68,16 @@ namespace Amazon.NeptuneGraph.Model
         ///  
         /// <para>
         ///  <b>Key</b> (string)   –   A key is the required name of the tag. The string value
-        /// can be from 1 to 128 Unicode characters in length. It can't be prefixed with <code>aws:</code>
+        /// can be from 1 to 128 Unicode characters in length. It can't be prefixed with <c>aws:</c>
         /// and can only contain the set of Unicode characters specified by this Java regular
-        /// expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.
+        /// expression: <c>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</c>.
         /// </para>
         ///  
         /// <para>
         ///  <b>Value</b> (string)   –   A value is the optional value of the tag. The string
         /// value can be from 1 to 256 Unicode characters in length. It can't be prefixed with
-        /// <code>aws:</code> and can only contain the set of Unicode characters specified by
-        /// this Java regular expression: <code>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</code>.
+        /// <c>aws:</c> and can only contain the set of Unicode characters specified by this Java
+        /// regular expression: <c>"^([\p{L}\p{Z}\p{N}_.:/=+\-]*)$")</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

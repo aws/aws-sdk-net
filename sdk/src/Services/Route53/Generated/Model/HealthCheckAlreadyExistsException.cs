@@ -34,14 +34,13 @@ namespace Amazon.Route53.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The same value for <code>CallerReference</code> as an existing health check, and one
-    /// or more values that differ from the existing health check that has the same caller
-    /// reference.
+    /// The same value for <c>CallerReference</c> as an existing health check, and one or
+    /// more values that differ from the existing health check that has the same caller reference.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The same value for <code>CallerReference</code> as a health check that you created
-    /// and later deleted, regardless of the other settings in the request.
+    /// The same value for <c>CallerReference</c> as a health check that you created and later
+    /// deleted, regardless of the other settings in the request.
     /// </para>
     ///  </li> </ul>
     /// </summary>

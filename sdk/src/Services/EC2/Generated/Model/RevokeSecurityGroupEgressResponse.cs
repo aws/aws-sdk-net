@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Return. 
         /// <para>
-        /// Returns <code>true</code> if the request succeeds; otherwise, returns an error.
+        /// Returns <c>true</c> if the request succeeds; otherwise, returns an error.
         /// </para>
         /// </summary>
         public bool Return
@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UnknownIpPermissions. 
         /// <para>
-        /// The outbound rules that were unknown to the service. In some cases, <code>unknownIpPermissionSet</code>
+        /// The outbound rules that were unknown to the service. In some cases, <c>unknownIpPermissionSet</c>
         /// might be in a different format from the request parameter. 
         /// </para>
         /// </summary>

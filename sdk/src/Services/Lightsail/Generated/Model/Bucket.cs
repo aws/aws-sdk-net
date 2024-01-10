@@ -228,16 +228,16 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Enabled</code> - Object versioning is enabled.
+        ///  <c>Enabled</c> - Object versioning is enabled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Suspended</code> - Object versioning was previously enabled but is currently
-        /// suspended. Existing object versions are retained.
+        ///  <c>Suspended</c> - Object versioning was previously enabled but is currently suspended.
+        /// Existing object versions are retained.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NeverEnabled</code> - Object versioning has never been enabled.
+        ///  <c>NeverEnabled</c> - Object versioning has never been enabled.
         /// </para>
         ///  </li> </ul>
         /// </summary>

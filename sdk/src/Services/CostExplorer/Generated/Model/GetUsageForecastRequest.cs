@@ -44,100 +44,100 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// The filters that you want to use to filter your forecast. The <code>GetUsageForecast</code>
+        /// The filters that you want to use to filter your forecast. The <c>GetUsageForecast</c>
         /// API supports filtering by the following dimensions:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AZ</code> 
+        ///  <c>AZ</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE_TYPE</code> 
+        ///  <c>INSTANCE_TYPE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LINKED_ACCOUNT</code> 
+        ///  <c>LINKED_ACCOUNT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LINKED_ACCOUNT_NAME</code> 
+        ///  <c>LINKED_ACCOUNT_NAME</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPERATION</code> 
+        ///  <c>OPERATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PURCHASE_TYPE</code> 
+        ///  <c>PURCHASE_TYPE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGION</code> 
+        ///  <c>REGION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SERVICE</code> 
+        ///  <c>SERVICE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USAGE_TYPE</code> 
+        ///  <c>USAGE_TYPE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>USAGE_TYPE_GROUP</code> 
+        ///  <c>USAGE_TYPE_GROUP</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RECORD_TYPE</code> 
+        ///  <c>RECORD_TYPE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPERATING_SYSTEM</code> 
+        ///  <c>OPERATING_SYSTEM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TENANCY</code> 
+        ///  <c>TENANCY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SCOPE</code> 
+        ///  <c>SCOPE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PLATFORM</code> 
+        ///  <c>PLATFORM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBSCRIPTION_ID</code> 
+        ///  <c>SUBSCRIPTION_ID</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LEGAL_ENTITY_NAME</code> 
+        ///  <c>LEGAL_ENTITY_NAME</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEPLOYMENT_OPTION</code> 
+        ///  <c>DEPLOYMENT_OPTION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DATABASE_ENGINE</code> 
+        ///  <c>DATABASE_ENGINE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE_TYPE_FAMILY</code> 
+        ///  <c>INSTANCE_TYPE_FAMILY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BILLING_ENTITY</code> 
+        ///  <c>BILLING_ENTITY</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESERVATION_ID</code> 
+        ///  <c>RESERVATION_ID</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SAVINGS_PLAN_ARN</code> 
+        ///  <c>SAVINGS_PLAN_ARN</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -156,12 +156,12 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// How granular you want the forecast to be. You can get 3 months of <code>DAILY</code>
-        /// forecasts or 12 months of <code>MONTHLY</code> forecasts.
+        /// How granular you want the forecast to be. You can get 3 months of <c>DAILY</c> forecasts
+        /// or 12 months of <c>MONTHLY</c> forecasts.
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetUsageForecast</code> operation supports only <code>DAILY</code> and <code>MONTHLY</code>
+        /// The <c>GetUsageForecast</c> operation supports only <c>DAILY</c> and <c>MONTHLY</c>
         /// granularities.
         /// </para>
         /// </summary>
@@ -185,7 +185,7 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for a <code>GetUsageForecast</code> call are the following:
+        /// Valid values for a <c>GetUsageForecast</c> call are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -238,11 +238,10 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// The start and end dates of the period that you want to retrieve usage forecast for.
         /// The start date is included in the period, but the end date isn't included in the period.
-        /// For example, if <code>start</code> is <code>2017-01-01</code> and <code>end</code>
-        /// is <code>2017-05-01</code>, then the cost and usage data is retrieved from <code>2017-01-01</code>
-        /// up to and including <code>2017-04-30</code> but not including <code>2017-05-01</code>.
-        /// The start date must be equal to or later than the current date to avoid a validation
-        /// error.
+        /// For example, if <c>start</c> is <c>2017-01-01</c> and <c>end</c> is <c>2017-05-01</c>,
+        /// then the cost and usage data is retrieved from <c>2017-01-01</c> up to and including
+        /// <c>2017-04-30</c> but not including <c>2017-05-01</c>. The start date must be equal
+        /// to or later than the current date to avoid a validation error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

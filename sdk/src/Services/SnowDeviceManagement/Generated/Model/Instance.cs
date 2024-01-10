@@ -214,7 +214,7 @@ namespace Amazon.SnowDeviceManagement.Model
         /// <summary>
         /// Gets and sets the property RootDeviceName. 
         /// <para>
-        /// The device name of the root device volume (for example, <code>/dev/sda1</code>). 
+        /// The device name of the root device volume (for example, <c>/dev/sda1</c>). 
         /// </para>
         /// </summary>
         public string RootDeviceName

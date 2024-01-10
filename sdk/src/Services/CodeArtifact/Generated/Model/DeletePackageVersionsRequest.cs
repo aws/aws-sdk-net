@@ -32,7 +32,7 @@ namespace Amazon.CodeArtifact.Model
     /// Container for the parameters to the DeletePackageVersions operation.
     /// Deletes one or more versions of a package. A deleted package version cannot be restored
     /// in your repository. If you want to remove a package version from your repository and
-    /// be able to restore it later, set its status to <code>Archived</code>. Archived packages
+    /// be able to restore it later, set its status to <c>Archived</c>. Archived packages
     /// cannot be downloaded from a repository and don't show up with list package APIs (for
     /// example, <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_ListPackageVersions.html">ListPackageVersions</a>),
     /// but you can restore them using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionsStatus</a>.
@@ -132,12 +132,12 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. The namespace
-        /// is required when deleting Maven package versions. 
+        ///  The namespace of a Maven package version is its <c>groupId</c>. The namespace is
+        /// required when deleting Maven package versions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -146,7 +146,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

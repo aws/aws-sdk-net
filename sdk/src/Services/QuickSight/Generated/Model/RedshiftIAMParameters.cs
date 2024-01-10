@@ -30,9 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A structure that grants Amazon QuickSight access to your cluster and make a call to
-    /// the <code>redshift:GetClusterCredentials</code> API. For more information on the <code>redshift:GetClusterCredentials</code>
+    /// the <c>redshift:GetClusterCredentials</c> API. For more information on the <c>redshift:GetClusterCredentials</c>
     /// API, see <a href="https://docs.aws.amazon.com/redshift/latest/APIReference/API_GetClusterCredentials.html">
-    /// <code>GetClusterCredentials</code> </a>.
+    /// <c>GetClusterCredentials</c> </a>.
     /// </summary>
     public partial class RedshiftIAMParameters
     {
@@ -44,11 +44,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AutoCreateDatabaseUser. 
         /// <para>
-        /// Automatically creates a database user. If your database doesn't have a <code>DatabaseUser</code>,
-        /// set this parameter to <code>True</code>. If there is no <code>DatabaseUser</code>,
-        /// Amazon QuickSight can't connect to your cluster. The <code>RoleArn</code> that you
-        /// use for this operation must grant access to <code>redshift:CreateClusterUser</code>
-        /// to successfully create the user.
+        /// Automatically creates a database user. If your database doesn't have a <c>DatabaseUser</c>,
+        /// set this parameter to <c>True</c>. If there is no <c>DatabaseUser</c>, Amazon QuickSight
+        /// can't connect to your cluster. The <c>RoleArn</c> that you use for this operation
+        /// must grant access to <c>redshift:CreateClusterUser</c> to successfully create the
+        /// user.
         /// </para>
         /// </summary>
         public bool AutoCreateDatabaseUser
@@ -68,8 +68,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A list of groups whose permissions will be granted to Amazon QuickSight to access
         /// the cluster. These permissions are combined with the permissions granted to Amazon
-        /// QuickSight by the <code>DatabaseUser</code>. If you choose to include this parameter,
-        /// the <code>RoleArn</code> must grant access to <code>redshift:JoinGroup</code>.
+        /// QuickSight by the <c>DatabaseUser</c>. If you choose to include this parameter, the
+        /// <c>RoleArn</c> must grant access to <c>redshift:JoinGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -91,8 +91,8 @@ namespace Amazon.QuickSight.Model
         /// The user whose permissions and group memberships will be used by Amazon QuickSight
         /// to access the cluster. If this user already exists in your database, Amazon QuickSight
         /// is granted the same permissions that the user has. If the user doesn't exist, set
-        /// the value of <code>AutoCreateDatabaseUser</code> to <code>True</code> to create a
-        /// new user with PUBLIC permissions.
+        /// the value of <c>AutoCreateDatabaseUser</c> to <c>True</c> to create a new user with
+        /// PUBLIC permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -111,10 +111,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// Use the <code>RoleArn</code> structure to allow Amazon QuickSight to call <code>redshift:GetClusterCredentials</code>
-        /// on your cluster. The calling principal must have <code>iam:PassRole</code> access
-        /// to pass the role to Amazon QuickSight. The role's trust policy must allow the Amazon
-        /// QuickSight service principal to assume the role.
+        /// Use the <c>RoleArn</c> structure to allow Amazon QuickSight to call <c>redshift:GetClusterCredentials</c>
+        /// on your cluster. The calling principal must have <c>iam:PassRole</c> access to pass
+        /// the role to Amazon QuickSight. The role's trust policy must allow the Amazon QuickSight
+        /// service principal to assume the role.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

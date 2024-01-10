@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityToken.Model
 {
     /// <summary>
-    /// The error returned if the message passed to <code>DecodeAuthorizationMessage</code>
-    /// was invalid. This can happen if the token contains invalid characters, such as linebreaks.
+    /// The error returned if the message passed to <c>DecodeAuthorizationMessage</c> was
+    /// invalid. This can happen if the token contains invalid characters, such as linebreaks.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

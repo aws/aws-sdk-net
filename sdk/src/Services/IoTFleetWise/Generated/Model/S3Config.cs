@@ -100,10 +100,10 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, Amazon Web Services IoT FleetWise sets the prefix <code>processed-data/year=YY/month=MM/date=DD/hour=HH/</code>
+        /// By default, Amazon Web Services IoT FleetWise sets the prefix <c>processed-data/year=YY/month=MM/date=DD/hour=HH/</c>
         /// (in UTC) to data it delivers to Amazon S3. You can enter a prefix to append it to
-        /// this default prefix. For example, if you enter the prefix <code>vehicles</code>, the
-        /// prefix will be <code>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</code>.
+        /// this default prefix. For example, if you enter the prefix <c>vehicles</c>, the prefix
+        /// will be <c>vehicles/processed-data/year=YY/month=MM/date=DD/hour=HH/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

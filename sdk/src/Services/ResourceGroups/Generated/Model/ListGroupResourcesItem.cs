@@ -59,7 +59,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This field is present in the response only if the group is of type <code>AWS::EC2::HostManagement</code>.
+        /// This field is present in the response only if the group is of type <c>AWS::EC2::HostManagement</c>.
         /// </para>
         ///  </note>
         /// </summary>

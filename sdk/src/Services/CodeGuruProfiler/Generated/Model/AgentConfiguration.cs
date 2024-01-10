@@ -30,8 +30,8 @@ namespace Amazon.CodeGuruProfiler.Model
 {
     /// <summary>
     /// The response of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
-    /// <code>ConfigureAgent</code> </a> that specifies if an agent profiles or not and for
-    /// how long to return profiling data.
+    /// <c>ConfigureAgent</c> </a> that specifies if an agent profiles or not and for how
+    /// long to return profiling data.
     /// </summary>
     public partial class AgentConfiguration
     {
@@ -46,31 +46,30 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MaxStackDepth</code> - The maximum depth of the stacks in the code that is
-        /// represented in the profile. For example, if CodeGuru Profiler finds a method <code>A</code>,
-        /// which calls method <code>B</code>, which calls method <code>C</code>, which calls
-        /// method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to
-        /// 2, then the profiler evaluates <code>A</code> and <code>B</code>. 
+        ///  <c>MaxStackDepth</c> - The maximum depth of the stacks in the code that is represented
+        /// in the profile. For example, if CodeGuru Profiler finds a method <c>A</c>, which calls
+        /// method <c>B</c>, which calls method <c>C</c>, which calls method <c>D</c>, then the
+        /// depth is 4. If the <c>maxDepth</c> is set to 2, then the profiler evaluates <c>A</c>
+        /// and <c>B</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MemoryUsageLimitPercent</code> - The percentage of memory that is used by the
-        /// profiler.
+        ///  <c>MemoryUsageLimitPercent</c> - The percentage of memory that is used by the profiler.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MinimumTimeForReportingInMilliseconds</code> - The minimum time in milliseconds
-        /// between sending reports. 
+        ///  <c>MinimumTimeForReportingInMilliseconds</c> - The minimum time in milliseconds between
+        /// sending reports. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReportingIntervalInMilliseconds</code> - The reporting interval in milliseconds
-        /// used to report profiles. 
+        ///  <c>ReportingIntervalInMilliseconds</c> - The reporting interval in milliseconds used
+        /// to report profiles. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SamplingIntervalInMilliseconds</code> - The sampling interval in milliseconds
-        /// that is used to profile samples. 
+        ///  <c>SamplingIntervalInMilliseconds</c> - The sampling interval in milliseconds that
+        /// is used to profile samples. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -90,10 +89,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property PeriodInSeconds. 
         /// <para>
         ///  How long a profiling agent should send profiling data using <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
-        /// <code>ConfigureAgent</code> </a>. For example, if this is set to 300, the profiling
-        /// agent calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
-        /// <code>ConfigureAgent</code> </a> every 5 minutes to submit the profiled data collected
-        /// during that period. 
+        /// <c>ConfigureAgent</c> </a>. For example, if this is set to 300, the profiling agent
+        /// calls <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ConfigureAgent.html">
+        /// <c>ConfigureAgent</c> </a> every 5 minutes to submit the profiled data collected during
+        /// that period. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -112,8 +111,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ShouldProfile. 
         /// <para>
-        ///  A <code>Boolean</code> that specifies whether the profiling agent collects profiling
-        /// data or not. Set to <code>true</code> to enable profiling. 
+        ///  A <c>Boolean</c> that specifies whether the profiling agent collects profiling data
+        /// or not. Set to <c>true</c> to enable profiling. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

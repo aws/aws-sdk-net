@@ -65,8 +65,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ImageId. 
         /// <para>
         /// The ID of the AMI. An AMI is required to launch an instance. This parameter is only
-        /// available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code>
-        /// and <code>request</code>, you must specify the AMI ID in the launch template.
+        /// available for fleets of type <c>instant</c>. For fleets of type <c>maintain</c> and
+        /// <c>request</c>, you must specify the AMI ID in the launch template.
         /// </para>
         /// </summary>
         public string ImageId
@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+        /// If you specify <c>InstanceRequirements</c>, you can't specify <c>InstanceType</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -112,11 +112,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>mac1.metal</code> is not supported as a launch template override.
+        ///  <c>mac1.metal</c> is not supported as a launch template override.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.
+        /// If you specify <c>InstanceType</c>, you can't specify <c>InstanceRequirements</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -183,21 +183,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the On-Demand <code>AllocationStrategy</code> is set to <code>prioritized</code>,
-        /// EC2 Fleet uses priority to determine which launch template override to use first in
-        /// fulfilling On-Demand capacity.
+        /// If the On-Demand <c>AllocationStrategy</c> is set to <c>prioritized</c>, EC2 Fleet
+        /// uses priority to determine which launch template override to use first in fulfilling
+        /// On-Demand capacity.
         /// </para>
         ///  
         /// <para>
-        /// If the Spot <code>AllocationStrategy</code> is set to <code>capacity-optimized-prioritized</code>,
+        /// If the Spot <c>AllocationStrategy</c> is set to <c>capacity-optimized-prioritized</c>,
         /// EC2 Fleet uses priority on a best-effort basis to determine which launch template
         /// override to use in fulfilling Spot capacity, but optimizes for capacity first.
         /// </para>
         ///  
         /// <para>
-        /// Valid values are whole numbers starting at <code>0</code>. The lower the number, the
-        /// higher the priority. If no number is set, the launch template override has the lowest
-        /// priority. You can set the same priority for different launch template overrides.
+        /// Valid values are whole numbers starting at <c>0</c>. The lower the number, the higher
+        /// the priority. If no number is set, the launch template override has the lowest priority.
+        /// You can set the same priority for different launch template overrides.
         /// </para>
         /// </summary>
         public double Priority
@@ -216,8 +216,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SubnetId. 
         /// <para>
         /// The IDs of the subnets in which to launch the instances. Separate multiple subnet
-        /// IDs using commas (for example, <code>subnet-1234abcdeexample1, subnet-0987cdef6example2</code>).
-        /// A request of type <code>instant</code> can have only one subnet ID.
+        /// IDs using commas (for example, <c>subnet-1234abcdeexample1, subnet-0987cdef6example2</c>).
+        /// A request of type <c>instant</c> can have only one subnet ID.
         /// </para>
         /// </summary>
         public string SubnetId

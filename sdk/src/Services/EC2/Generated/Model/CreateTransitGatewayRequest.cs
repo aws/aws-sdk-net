@@ -35,8 +35,8 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You can use a transit gateway to interconnect your virtual private clouds (VPC) and
-    /// on-premises networks. After the transit gateway enters the <code>available</code>
-    /// state, you can attach your VPCs and VPN connections to the transit gateway.
+    /// on-premises networks. After the transit gateway enters the <c>available</c> state,
+    /// you can attach your VPCs and VPN connections to the transit gateway.
     /// </para>
     ///  
     /// <para>

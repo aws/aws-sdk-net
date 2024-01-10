@@ -46,19 +46,19 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UPLOAD_IN_PROGRESS</code> The attachment is being uploaded.
+        ///  <c>UPLOAD_IN_PROGRESS</c> The attachment is being uploaded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPLOAD_COMPLETE</code> The attachment has been uploaded.
+        ///  <c>UPLOAD_COMPLETE</c> The attachment has been uploaded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPLOAD_FAILED</code> The attachment failed to uploaded.
+        ///  <c>UPLOAD_FAILED</c> The attachment failed to uploaded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> The attachment has been deleted..
+        ///  <c>DELETED</c> The attachment has been deleted..
         /// </para>
         ///  </li> </ul>
         /// </summary>

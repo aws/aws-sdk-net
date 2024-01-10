@@ -73,8 +73,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// When you use this task setting with a source PostgreSQL database, a logical replication
         /// slot should already be created and associated with the source endpoint. You can verify
-        /// this by setting the <code>slotName</code> extra connection attribute to the name of
-        /// this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+        /// this by setting the <c>slotName</c> extra connection attribute to the name of this
+        /// logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
         /// Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
         /// </para>
         ///  </note>
@@ -168,9 +168,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// When the migration type is <code>full-load</code> or <code>full-load-and-cdc</code>,
-        /// the only valid value for the first run of the task is <code>start-replication</code>.
-        /// This option will start the migration.
+        /// When the migration type is <c>full-load</c> or <c>full-load-and-cdc</c>, the only
+        /// valid value for the first run of the task is <c>start-replication</c>. This option
+        /// will start the migration.
         /// </para>
         ///  
         /// <para>
@@ -179,14 +179,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>resume-processing</code> option isn't applicable for a full-load task, because
+        /// The <c>resume-processing</c> option isn't applicable for a full-load task, because
         /// you can't resume partially loaded tables during the full load phase.
         /// </para>
         ///  
         /// <para>
-        /// For a <code>full-load-and-cdc</code> task, DMS migrates table data, and then applies
-        /// data changes that occur on the source. To load all the tables again, and start capturing
-        /// source changes, use <code>reload-target</code>. Otherwise use <code>resume-processing</code>,
+        /// For a <c>full-load-and-cdc</c> task, DMS migrates table data, and then applies data
+        /// changes that occur on the source. To load all the tables again, and start capturing
+        /// source changes, use <c>reload-target</c>. Otherwise use <c>resume-processing</c>,
         /// to replicate the changes from the last stop position.
         /// </para>
         /// </summary>

@@ -62,8 +62,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// For fleets of type <code>request</code> and <code>maintain</code>, a maximum of 300
-        /// items is allowed across all launch templates.
+        /// For fleets of type <c>request</c> and <c>maintain</c>, a maximum of 300 items is allowed
+        /// across all launch templates.
         /// </para>
         /// </summary>
         public List<FleetLaunchTemplateOverridesRequest> Overrides

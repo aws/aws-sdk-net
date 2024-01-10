@@ -103,55 +103,55 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OutOfService</code>: Endpoint is not available to take incoming requests.
+        ///  <c>OutOfService</c>: Endpoint is not available to take incoming requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Creating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+        ///  <c>Creating</c>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
         /// is executing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+        ///  <c>Updating</c>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
         /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
         /// is executing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be updated
-        /// or deleted or re-scaled until it has completed. This maintenance operation does not
-        /// change any customer-specified values such as VPC config, KMS encryption, model, instance
+        ///  <c>SystemUpdating</c>: Endpoint is undergoing maintenance and cannot be updated or
+        /// deleted or re-scaled until it has completed. This maintenance operation does not change
+        /// any customer-specified values such as VPC config, KMS encryption, model, instance
         /// type, or instance count.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RollingBack</code>: Endpoint fails to scale up or down or change its variant
-        /// weight and is in the process of rolling back to its previous configuration. Once the
-        /// rollback completes, endpoint returns to an <code>InService</code> status. This transitional
-        /// status only applies to an endpoint that has autoscaling enabled and is undergoing
-        /// variant weight or capacity changes as part of an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+        ///  <c>RollingBack</c>: Endpoint fails to scale up or down or change its variant weight
+        /// and is in the process of rolling back to its previous configuration. Once the rollback
+        /// completes, endpoint returns to an <c>InService</c> status. This transitional status
+        /// only applies to an endpoint that has autoscaling enabled and is undergoing variant
+        /// weight or capacity changes as part of an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
         /// call or when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
         /// operation is called explicitly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InService</code>: Endpoint is available to process incoming requests.
+        ///  <c>InService</c>: Endpoint is available to process incoming requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+        ///  <c>Deleting</c>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
         /// is executing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <code>DescribeEndpointOutput$FailureReason</code>
+        ///  <c>Failed</c>: Endpoint could not be created, updated, or re-scaled. Use <c>DescribeEndpointOutput$FailureReason</c>
         /// for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
         /// is the only operation that can be performed on a failed endpoint.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get a list of endpoints with a specified status, use the <code>StatusEquals</code>
-        /// filter with a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
+        /// To get a list of endpoints with a specified status, use the <c>StatusEquals</c> filter
+        /// with a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

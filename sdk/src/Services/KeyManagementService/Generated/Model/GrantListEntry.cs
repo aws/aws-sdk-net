@@ -87,9 +87,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually
-        /// contains the user or role designated as the grantee principal in the grant. However,
-        /// when the grantee principal in the grant is an Amazon Web Services service, the <code>GranteePrincipal</code>
+        /// The <c>GranteePrincipal</c> field in the <c>ListGrants</c> response usually contains
+        /// the user or role designated as the grantee principal in the grant. However, when the
+        /// grantee principal in the grant is an Amazon Web Services service, the <c>GranteePrincipal</c>
         /// field contains the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services">service
         /// principal</a>, which might represent several different grantee principals.
         /// </para>

@@ -40,7 +40,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This is used in the <code>AssociationConfig</code> of the web ACL. 
+    /// This is used in the <c>AssociationConfig</c> of the web ACL. 
     /// </para>
     /// </summary>
     public partial class RequestBodyAssociatedResourceTypeConfig
@@ -56,7 +56,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>16 KB (16,384 bytes)</code> 
+        /// Default: <c>16 KB (16,384 bytes)</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -73,7 +73,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Warnings. 
         /// <para>
-        /// A list of warning messages logged during the import of API keys when the <code>failOnWarnings</code>
+        /// A list of warning messages logged during the import of API keys when the <c>failOnWarnings</c>
         /// option is set to true.
         /// </para>
         /// </summary>

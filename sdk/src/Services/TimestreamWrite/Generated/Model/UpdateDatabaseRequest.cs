@@ -31,9 +31,8 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Container for the parameters to the UpdateDatabase operation.
     /// Modifies the KMS key for an existing database. While updating the database, you must
-    /// specify the database name and the identifier of the new KMS key to be used (<code>KmsKeyId</code>).
-    /// If there are any concurrent <code>UpdateDatabase</code> requests, first writer wins.
-    /// 
+    /// specify the database name and the identifier of the new KMS key to be used (<c>KmsKeyId</c>).
+    /// If there are any concurrent <c>UpdateDatabase</c> requests, first writer wins. 
     /// 
     ///  
     /// <para>
@@ -68,31 +67,30 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  The identifier of the new KMS key (<code>KmsKeyId</code>) to be used to encrypt the
-        /// data stored in the database. If the <code>KmsKeyId</code> currently registered with
-        /// the database is the same as the <code>KmsKeyId</code> in the request, there will not
-        /// be any update. 
+        ///  The identifier of the new KMS key (<c>KmsKeyId</c>) to be used to encrypt the data
+        /// stored in the database. If the <c>KmsKeyId</c> currently registered with the database
+        /// is the same as the <c>KmsKeyId</c> in the request, there will not be any update. 
         /// </para>
         ///  
         /// <para>
-        /// You can specify the <code>KmsKeyId</code> using any of the following:
+        /// You can specify the <c>KmsKeyId</c> using any of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-1:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN: <code>arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias</code> 
+        /// Alias ARN: <c>arn:aws:kms:us-east-1:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,9 +39,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ActionTargets. 
         /// <para>
-        /// A list of <code>ActionTarget</code> objects. Each object includes the <code>ActionTargetArn</code>,
-        /// <code>Description</code>, and <code>Name</code> of a custom action target available
-        /// in Security Hub.
+        /// A list of <c>ActionTarget</c> objects. Each object includes the <c>ActionTargetArn</c>,
+        /// <c>Description</c>, and <c>Name</c> of a custom action target available in Security
+        /// Hub.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

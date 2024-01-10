@@ -59,10 +59,10 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The S3 path of the folder where Voice ID writes the job output file. It has a <code>*.out</code>
-        /// extension. For example, if the input file name is <code>input-file.json</code> and
-        /// the output folder path is <code>s3://output-bucket/output-folder</code>, the full
-        /// output file path is <code>s3://output-bucket/output-folder/job-Id/input-file.json.out</code>.
+        /// The S3 path of the folder where Voice ID writes the job output file. It has a <c>*.out</c>
+        /// extension. For example, if the input file name is <c>input-file.json</c> and the output
+        /// folder path is <c>s3://output-bucket/output-folder</c>, the full output file path
+        /// is <c>s3://output-bucket/output-folder/job-Id/input-file.json.out</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

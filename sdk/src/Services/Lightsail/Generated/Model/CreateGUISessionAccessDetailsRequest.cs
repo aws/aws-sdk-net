@@ -37,7 +37,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// Use <code>StartGUISession</code> to open the session.
+    /// Use <c>StartGUISession</c> to open the session.
     /// </para>
     /// </summary>
     public partial class CreateGUISessionAccessDetailsRequest : AmazonLightsailRequest

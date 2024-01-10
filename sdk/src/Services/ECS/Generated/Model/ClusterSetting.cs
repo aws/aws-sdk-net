@@ -40,7 +40,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the cluster setting. The value is <code>containerInsights</code> .
+        /// The name of the cluster setting. The value is <c>containerInsights</c> .
         /// </para>
         /// </summary>
         public ClusterSettingName Name
@@ -58,16 +58,15 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value to set for the cluster setting. The supported values are <code>enabled</code>
-        /// and <code>disabled</code>. 
+        /// The value to set for the cluster setting. The supported values are <c>enabled</c>
+        /// and <c>disabled</c>. 
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>name</code> to <code>containerInsights</code> and <code>value</code>
-        /// to <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
-        /// otherwise it will be off unless the <code>containerInsights</code> account setting
-        /// is turned on. If a cluster value is specified, it will override the <code>containerInsights</code>
-        /// value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
+        /// If you set <c>name</c> to <c>containerInsights</c> and <c>value</c> to <c>enabled</c>,
+        /// CloudWatch Container Insights will be on for the cluster, otherwise it will be off
+        /// unless the <c>containerInsights</c> account setting is turned on. If a cluster value
+        /// is specified, it will override the <c>containerInsights</c> value set with <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSetting.html">PutAccountSetting</a>
         /// or <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_PutAccountSettingDefault.html">PutAccountSettingDefault</a>.
         /// </para>
         /// </summary>

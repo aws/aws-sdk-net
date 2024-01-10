@@ -43,14 +43,14 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Greengrass nucleus v2.7.0 or later is required to get an accurate <code>lastStatusChangeTimestamp</code>
+        /// Greengrass nucleus v2.7.0 or later is required to get an accurate <c>lastStatusChangeTimestamp</c>
         /// response. This response can be inaccurate in earlier Greengrass nucleus versions.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// Greengrass nucleus v2.8.0 or later is required to get an accurate <code>lastInstallationSource</code>
-        /// and <code>lastReportedTimestamp</code> response. This response can be inaccurate or
-        /// null in earlier Greengrass nucleus versions.
+        /// Greengrass nucleus v2.8.0 or later is required to get an accurate <c>lastInstallationSource</c>
+        /// and <c>lastReportedTimestamp</c> response. This response can be inaccurate or null
+        /// in earlier Greengrass nucleus versions.
         /// </para>
         ///  </note>
         /// </summary>

@@ -85,7 +85,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"Configuration" : { Key : Value },</code> 
+        ///  <c>"Configuration" : { Key : Value },</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Configuration

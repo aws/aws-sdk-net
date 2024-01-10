@@ -67,8 +67,8 @@ namespace Amazon.SSOAdmin.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -146,7 +146,7 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property TrustedTokenIssuerConfiguration. 
         /// <para>
         /// Specifies settings that apply to the new trusted token issuer configuration. The settings
-        /// that are available depend on what <code>TrustedTokenIssuerType</code> you specify.
+        /// that are available depend on what <c>TrustedTokenIssuerType</c> you specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

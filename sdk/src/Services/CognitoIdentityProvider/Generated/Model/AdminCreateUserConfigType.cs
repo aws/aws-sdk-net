@@ -40,8 +40,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AllowAdminCreateUserOnly. 
         /// <para>
-        /// Set to <code>True</code> if only the administrator is allowed to create user profiles.
-        /// Set to <code>False</code> if users can sign themselves up via an app.
+        /// Set to <c>True</c> if only the administrator is allowed to create user profiles. Set
+        /// to <c>False</c> if users can sign themselves up via an app.
         /// </para>
         /// </summary>
         public bool AllowAdminCreateUserOnly
@@ -84,14 +84,14 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The user account expiration limit, in days, after which a new account that hasn't
         /// signed in is no longer usable. To reset the account after that time limit, you must
-        /// call <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
-        /// <code>MessageAction</code> parameter. The default value for this parameter is 7.
+        /// call <c>AdminCreateUser</c> again, specifying <c>"RESEND"</c> for the <c>MessageAction</c>
+        /// parameter. The default value for this parameter is 7.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you set a value for <code>TemporaryPasswordValidityDays</code> in <code>PasswordPolicy</code>,
-        /// that value will be used, and <code>UnusedAccountValidityDays</code> will be no longer
-        /// be an available parameter for that user pool.
+        /// If you set a value for <c>TemporaryPasswordValidityDays</c> in <c>PasswordPolicy</c>,
+        /// that value will be used, and <c>UnusedAccountValidityDays</c> will be no longer be
+        /// an available parameter for that user pool.
         /// </para>
         ///  </note>
         /// </summary>

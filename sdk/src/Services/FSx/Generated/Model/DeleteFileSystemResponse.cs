@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for the <code>DeleteFileSystem</code> operation.
+    /// The response object for the <c>DeleteFileSystem</c> operation.
     /// </summary>
     public partial class DeleteFileSystemResponse : AmazonWebServiceResponse
     {
@@ -61,8 +61,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Lifecycle. 
         /// <para>
-        /// The file system lifecycle for the deletion request. If the <code>DeleteFileSystem</code>
-        /// operation is successful, this status is <code>DELETING</code>.
+        /// The file system lifecycle for the deletion request. If the <c>DeleteFileSystem</c>
+        /// operation is successful, this status is <c>DELETING</c>.
         /// </para>
         /// </summary>
         public FileSystemLifecycle Lifecycle
@@ -95,7 +95,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property OpenZFSResponse. 
         /// <para>
-        /// The response object for the OpenZFS file system that's being deleted in the <code>DeleteFileSystem</code>
+        /// The response object for the OpenZFS file system that's being deleted in the <c>DeleteFileSystem</c>
         /// operation.
         /// </para>
         /// </summary>

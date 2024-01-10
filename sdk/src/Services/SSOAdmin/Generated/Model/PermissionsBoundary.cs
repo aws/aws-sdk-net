@@ -30,8 +30,8 @@ namespace Amazon.SSOAdmin.Model
 {
     /// <summary>
     /// Specifies the configuration of the Amazon Web Services managed or customer managed
-    /// policy that you want to set as a permissions boundary. Specify either <code>CustomerManagedPolicyReference</code>
-    /// to use the name and path of a customer managed policy, or <code>ManagedPolicyArn</code>
+    /// policy that you want to set as a permissions boundary. Specify either <c>CustomerManagedPolicyReference</c>
+    /// to use the name and path of a customer managed policy, or <c>ManagedPolicyArn</c>
     /// to use the ARN of an Amazon Web Services managed policy. A permissions boundary represents
     /// the maximum permissions that any policy can grant your role. For more information,
     /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions

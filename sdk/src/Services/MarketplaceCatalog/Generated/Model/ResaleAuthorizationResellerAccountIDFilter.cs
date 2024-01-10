@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>ResellerAccountID</code> of a ResaleAuthorization.
+    /// Allows filtering on the <c>ResellerAccountID</c> of a ResaleAuthorization.
     /// </summary>
     public partial class ResaleAuthorizationResellerAccountIDFilter
     {
@@ -39,8 +39,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ValueList. 
         /// <para>
-        /// Allows filtering on the <code>ResellerAccountID</code> of a ResaleAuthorization with
-        /// list input.
+        /// Allows filtering on the <c>ResellerAccountID</c> of a ResaleAuthorization with list
+        /// input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -59,8 +59,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property WildCardValue. 
         /// <para>
-        /// Allows filtering on the <code>ResellerAccountID</code> of a ResaleAuthorization with
-        /// wild card input.
+        /// Allows filtering on the <c>ResellerAccountID</c> of a ResaleAuthorization with wild
+        /// card input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

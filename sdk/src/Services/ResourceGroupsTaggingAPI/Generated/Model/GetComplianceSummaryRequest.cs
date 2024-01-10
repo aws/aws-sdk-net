@@ -46,11 +46,11 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
     ///  
     /// <para>
     /// This operation supports pagination, where the response can be sent in multiple pages.
-    /// You should check the <code>PaginationToken</code> response parameter to determine
-    /// if there are additional results available to return. Repeat the query, passing the
-    /// <code>PaginationToken</code> response parameter value as an input to the next request
-    /// until you recieve a <code>null</code> value. A null value for <code>PaginationToken</code>
-    /// indicates that there are no more results waiting to be returned.
+    /// You should check the <c>PaginationToken</c> response parameter to determine if there
+    /// are additional results available to return. Repeat the query, passing the <c>PaginationToken</c>
+    /// response parameter value as an input to the next request until you recieve a <c>null</c>
+    /// value. A null value for <c>PaginationToken</c> indicates that there are no more results
+    /// waiting to be returned.
     /// </para>
     /// </summary>
     public partial class GetComplianceSummaryRequest : AmazonResourceGroupsTaggingAPIRequest
@@ -87,8 +87,8 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <para>
         /// Specifies the maximum number of results to be returned in each page. A query can return
         /// fewer than this maximum, even if there are more results still to return. You should
-        /// always check the <code>PaginationToken</code> response value to see if there are more
-        /// results. You can specify a minimum of 1 and a maximum value of 100.
+        /// always check the <c>PaginationToken</c> response value to see if there are more results.
+        /// You can specify a minimum of 1 and a maximum value of 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -107,9 +107,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// <summary>
         /// Gets and sets the property PaginationToken. 
         /// <para>
-        /// Specifies a <code>PaginationToken</code> response value from a previous request to
-        /// indicate that you want the next page of results. Leave this parameter empty in your
-        /// initial request.
+        /// Specifies a <c>PaginationToken</c> response value from a previous request to indicate
+        /// that you want the next page of results. Leave this parameter empty in your initial
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -150,9 +150,9 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
         /// Gets and sets the property ResourceTypeFilters. 
         /// <para>
         /// Specifies that you want the response to include information for only resources of
-        /// the specified types. The format of each resource type is <code>service[:resourceType]</code>.
-        /// For example, specifying a resource type of <code>ec2</code> returns all Amazon EC2
-        /// resources (which includes EC2 instances). Specifying a resource type of <code>ec2:instance</code>
+        /// the specified types. The format of each resource type is <c>service[:resourceType]</c>.
+        /// For example, specifying a resource type of <c>ec2</c> returns all Amazon EC2 resources
+        /// (which includes EC2 instances). Specifying a resource type of <c>ec2:instance</c>
         /// returns only EC2 instances.
         /// </para>
         ///  

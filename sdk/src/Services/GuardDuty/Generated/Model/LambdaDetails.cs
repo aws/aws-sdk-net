@@ -119,7 +119,7 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property LastModifiedAt. 
         /// <para>
         /// The timestamp when the Lambda function was last modified. This field is in the UTC
-        /// date string format <code>(2023-03-22T19:37:20.168Z)</code>.
+        /// date string format <c>(2023-03-22T19:37:20.168Z)</c>.
         /// </para>
         /// </summary>
         public DateTime LastModifiedAt
@@ -173,7 +173,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags attached to this resource, listed in the format of <code>key</code>:<code>value</code>
+        /// A list of tags attached to this resource, listed in the format of <c>key</c>:<c>value</c>
         /// pair.
         /// </para>
         /// </summary>

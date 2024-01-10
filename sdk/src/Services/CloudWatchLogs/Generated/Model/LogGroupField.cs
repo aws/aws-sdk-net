@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// The fields contained in log events found by a <code>GetLogGroupFields</code> operation,
+    /// The fields contained in log events found by a <c>GetLogGroupFields</c> operation,
     /// along with the percentage of queried log events in which each field appears.
     /// </summary>
     public partial class LogGroupField

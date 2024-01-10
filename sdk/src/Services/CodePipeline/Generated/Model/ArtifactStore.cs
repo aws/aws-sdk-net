@@ -33,9 +33,9 @@ namespace Amazon.CodePipeline.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You must include either <code>artifactStore</code> or <code>artifactStores</code>
-    /// in your pipeline, but you cannot use both. If you create a cross-region action in
-    /// your pipeline, you must use <code>artifactStores</code>.
+    /// You must include either <c>artifactStore</c> or <c>artifactStores</c> in your pipeline,
+    /// but you cannot use both. If you create a cross-region action in your pipeline, you
+    /// must use <c>artifactStores</c>.
     /// </para>
     ///  </note>
     /// </summary>

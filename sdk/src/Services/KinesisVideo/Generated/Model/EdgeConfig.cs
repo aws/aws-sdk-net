@@ -43,9 +43,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property DeletionConfig. 
         /// <para>
-        /// The deletion configuration is made up of the retention time (<code>EdgeRetentionInHours</code>)
-        /// and local size configuration (<code>LocalSizeConfig</code>) details that are used
-        /// to make the deletion.
+        /// The deletion configuration is made up of the retention time (<c>EdgeRetentionInHours</c>)
+        /// and local size configuration (<c>LocalSizeConfig</c>) details that are used to make
+        /// the deletion.
         /// </para>
         /// </summary>
         public DeletionConfig DeletionConfig
@@ -82,7 +82,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property RecorderConfig. 
         /// <para>
-        /// The recorder configuration consists of the local <code>MediaSourceConfig</code> details,
+        /// The recorder configuration consists of the local <c>MediaSourceConfig</c> details,
         /// that are used as credentials to access the local media files streamed on the camera.
         /// 
         /// </para>
@@ -103,9 +103,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property UploaderConfig. 
         /// <para>
-        /// The uploader configuration contains the <code>ScheduleExpression</code> details that
-        /// are used to schedule upload jobs for the recorded media files from the Edge Agent
-        /// to a Kinesis Video Stream.
+        /// The uploader configuration contains the <c>ScheduleExpression</c> details that are
+        /// used to schedule upload jobs for the recorded media files from the Edge Agent to a
+        /// Kinesis Video Stream.
         /// </para>
         /// </summary>
         public UploaderConfig UploaderConfig

@@ -46,7 +46,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssetBundleImportJobId. 
         /// <para>
-        /// The ID of the job. The job ID is set when you start a new job with a <code>StartAssetBundleImportJob</code>
+        /// The ID of the job. The job ID is set when you start a new job with a <c>StartAssetBundleImportJob</c>
         /// API call.
         /// </para>
         /// </summary>

@@ -126,7 +126,7 @@ namespace Amazon.GreengrassV2.Model
         ///  
         /// <para>
         /// Defaults to the version of the Lambda function as a semantic version. For example,
-        /// if your function version is <code>3</code>, the component version becomes <code>3.0.0</code>.
+        /// if your function version is <c>3</c>, the component version becomes <c>3.0.0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -147,7 +147,7 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>
         /// of the Lambda function. The ARN must include the version of the function to import.
-        /// You can't use version aliases like <code>$LATEST</code>.
+        /// You can't use version aliases like <c>$LATEST</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

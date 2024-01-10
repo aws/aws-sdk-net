@@ -30,8 +30,8 @@ namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// The <code>TagResource</code> operation associates tags with an Amazon Managed Grafana
-    /// resource. Currently, the only resource that can be tagged is workspaces. 
+    /// The <c>TagResource</c> operation associates tags with an Amazon Managed Grafana resource.
+    /// Currently, the only resource that can be tagged is workspaces. 
     /// 
     ///  
     /// <para>

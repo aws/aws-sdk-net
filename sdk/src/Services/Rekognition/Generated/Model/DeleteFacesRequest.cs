@@ -35,7 +35,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DeleteFaces</code>
+    /// This operation requires permissions to perform the <c>rekognition:DeleteFaces</c>
     /// action.
     /// </para>
     /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The format of the <code>StreamARN</code> is invalid.
+    /// The format of the <c>StreamARN</c> is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -44,8 +44,7 @@ namespace Amazon.AppRunner.Model
     ///  
     /// <para>
     /// This is an asynchronous operation. On a successful call, you can use the returned
-    /// <code>OperationId</code> and the <a>ListOperations</a> call to track the operation's
-    /// progress.
+    /// <c>OperationId</c> and the <a>ListOperations</a> call to track the operation's progress.
     /// </para>
     /// </summary>
     public partial class UpdateServiceRequest : AmazonAppRunnerRequest
@@ -180,10 +179,10 @@ namespace Amazon.AppRunner.Model
         /// <para>
         /// You can change the configuration of the code or image repository that the service
         /// uses. However, you can't switch from code to image or the other way around. This means
-        /// that you must provide the same structure member of <code>SourceConfiguration</code>
-        /// that you originally included when you created the service. Specifically, you can include
-        /// either <code>CodeRepository</code> or <code>ImageRepository</code>. To update the
-        /// source configuration, set the values to members of the structure that you include.
+        /// that you must provide the same structure member of <c>SourceConfiguration</c> that
+        /// you originally included when you created the service. Specifically, you can include
+        /// either <c>CodeRepository</c> or <c>ImageRepository</c>. To update the source configuration,
+        /// set the values to members of the structure that you include.
         /// </para>
         /// </summary>
         public SourceConfiguration SourceConfiguration

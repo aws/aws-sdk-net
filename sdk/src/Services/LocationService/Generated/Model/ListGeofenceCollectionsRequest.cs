@@ -44,7 +44,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: <code>100</code> 
+        /// Default value: <c>100</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -68,7 +68,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value: <code>null</code> 
+        /// Default value: <c>null</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2000)]

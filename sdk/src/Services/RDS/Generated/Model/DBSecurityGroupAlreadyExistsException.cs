@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// A DB security group with the name specified in <code>DBSecurityGroupName</code> already
+    /// A DB security group with the name specified in <c>DBSecurityGroupName</c> already
     /// exists.
     /// </summary>
     #if !NETSTANDARD

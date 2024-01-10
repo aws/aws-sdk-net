@@ -41,10 +41,10 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more than <code>MaxResults</code> query logging associations, you can
-        /// submit another <code>ListResolverQueryLogConfigAssociations</code> request to get
-        /// the next group of associations. In the next request, specify the value of <code>NextToken</code>
-        /// from the previous response. 
+        /// If there are more than <c>MaxResults</c> query logging associations, you can submit
+        /// another <c>ListResolverQueryLogConfigAssociations</c> request to get the next group
+        /// of associations. In the next request, specify the value of <c>NextToken</c> from the
+        /// previous response. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -62,8 +62,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverQueryLogConfigAssociations. 
         /// <para>
-        /// A list that contains one <code>ResolverQueryLogConfigAssociations</code> element for
-        /// each query logging association that matches the values that you specified for <code>Filter</code>.
+        /// A list that contains one <c>ResolverQueryLogConfigAssociations</c> element for each
+        /// query logging association that matches the values that you specified for <c>Filter</c>.
         /// </para>
         /// </summary>
         public List<ResolverQueryLogConfigAssociation> ResolverQueryLogConfigAssociations
@@ -83,7 +83,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// The total number of query logging associations that were created by the current account
         /// in the specified Region. This count can differ from the number of associations that
-        /// are returned in a <code>ListResolverQueryLogConfigAssociations</code> response, depending
+        /// are returned in a <c>ListResolverQueryLogConfigAssociations</c> response, depending
         /// on the values that you specify in the request.
         /// </para>
         /// </summary>
@@ -103,9 +103,9 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property TotalFilteredCount. 
         /// <para>
         /// The total number of query logging associations that were created by the current account
-        /// in the specified Region and that match the filters that were specified in the <code>ListResolverQueryLogConfigAssociations</code>
+        /// in the specified Region and that match the filters that were specified in the <c>ListResolverQueryLogConfigAssociations</c>
         /// request. For the total number of associations that were created by the current account
-        /// in the specified Region, see <code>TotalCount</code>.
+        /// in the specified Region, see <c>TotalCount</c>.
         /// </para>
         /// </summary>
         public int TotalFilteredCount

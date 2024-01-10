@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// Container for the response returned by an <code>DissociatePackage</code> operation.
+    /// Container for the response returned by an <c>DissociatePackage</c> operation.
     /// </summary>
     public partial class DissociatePackageResponse : AmazonWebServiceResponse
     {

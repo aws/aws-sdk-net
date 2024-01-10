@@ -33,9 +33,9 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// Container for the parameters to the AssociateSoftwareToken operation.
     /// Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA)
     /// for a user, with a unique private key that Amazon Cognito generates and returns in
-    /// the API response. You can authorize an <code>AssociateSoftwareToken</code> request
-    /// with either the user's access token, or a session string from a challenge response
-    /// that you received from Amazon Cognito.
+    /// the API response. You can authorize an <c>AssociateSoftwareToken</c> request with
+    /// either the user's access token, or a session string from a challenge response that
+    /// you received from Amazon Cognito.
     /// 
     ///  <note> 
     /// <para>
@@ -44,12 +44,12 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// VerifySoftwareToken</a> API request. If you don't verify the software token and your
     /// user pool doesn't require MFA, the user can then authenticate with user name and password
     /// credentials alone. If your user pool requires TOTP MFA, Amazon Cognito generates an
-    /// <code>MFA_SETUP</code> or <code>SOFTWARE_TOKEN_SETUP</code> challenge each time your
-    /// user signs. Complete setup with <code>AssociateSoftwareToken</code> and <code>VerifySoftwareToken</code>.
+    /// <c>MFA_SETUP</c> or <c>SOFTWARE_TOKEN_SETUP</c> challenge each time your user signs.
+    /// Complete setup with <c>AssociateSoftwareToken</c> and <c>VerifySoftwareToken</c>.
     /// </para>
     ///  
     /// <para>
-    /// After you set up software token MFA for your user, Amazon Cognito generates a <code>SOFTWARE_TOKEN_MFA</code>
+    /// After you set up software token MFA for your user, Amazon Cognito generates a <c>SOFTWARE_TOKEN_MFA</c>
     /// challenge when they authenticate. Respond to this challenge with your user's TOTP.
     /// </para>
     ///  </note> <note> 

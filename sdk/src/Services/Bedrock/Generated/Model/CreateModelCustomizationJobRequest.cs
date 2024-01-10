@@ -44,7 +44,7 @@ namespace Amazon.Bedrock.Model
     ///  
     /// <para>
     ///  Model-customization jobs are asynchronous and the completion time depends on the
-    /// base model and the training/validation data size. To monitor a job, use the <code>GetModelCustomizationJob</code>
+    /// base model and the training/validation data size. To monitor a job, use the <c>GetModelCustomizationJob</c>
     /// operation to retrieve the job status.
     /// </para>
     ///  
@@ -266,7 +266,7 @@ namespace Amazon.Bedrock.Model
         /// The Amazon Resource Name (ARN) of an IAM role that Amazon Bedrock can assume to perform
         /// tasks on your behalf. For example, during model training, Amazon Bedrock needs your
         /// permission to read input data from an S3 bucket, write model artifacts to an S3 bucket.
-        /// To pass this role to Amazon Bedrock, the caller of this API must have the <code>iam:PassRole</code>
+        /// To pass this role to Amazon Bedrock, the caller of this API must have the <c>iam:PassRole</c>
         /// permission. 
         /// </para>
         /// </summary>

@@ -97,8 +97,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the Auto-Tune action. Valid values are <code>LOW</code>, <code>MEDIUM</code>,
-        /// and <code>HIGH</code>.
+        /// The severity of the Auto-Tune action. Valid values are <c>LOW</c>, <c>MEDIUM</c>,
+        /// and <c>HIGH</c>.
         /// </para>
         /// </summary>
         public ScheduledAutoTuneSeverityType Severity

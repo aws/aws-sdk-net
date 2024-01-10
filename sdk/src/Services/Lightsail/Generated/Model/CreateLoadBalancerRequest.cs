@@ -38,13 +38,13 @@ namespace Amazon.Lightsail.Model
     ///  
     /// <para>
     /// When you create a load balancer, you can specify a unique name and port settings.
-    /// To change additional load balancer settings, use the <code>UpdateLoadBalancerAttribute</code>
+    /// To change additional load balancer settings, use the <c>UpdateLoadBalancerAttribute</c>
     /// operation.
     /// </para>
     ///  
     /// <para>
-    /// The <code>create load balancer</code> operation supports tag-based access control
-    /// via request tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>create load balancer</c> operation supports tag-based access control via request
+    /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -64,8 +64,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property CertificateAlternativeNames. 
         /// <para>
         /// The optional alternative domains and subdomains to use with your SSL/TLS certificate
-        /// (<code>www.example.com</code>, <code>example.com</code>, <code>m.example.com</code>,
-        /// <code>blog.example.com</code>).
+        /// (<c>www.example.com</c>, <c>example.com</c>, <c>m.example.com</c>, <c>blog.example.com</c>).
         /// </para>
         /// </summary>
         public List<string> CertificateAlternativeNames
@@ -83,12 +82,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CertificateDomainName. 
         /// <para>
-        /// The domain name with which your certificate is associated (<code>example.com</code>).
+        /// The domain name with which your certificate is associated (<c>example.com</c>).
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>certificateDomainName</code>, then <code>certificateName</code>
-        /// is required (and vice-versa).
+        /// If you specify <c>certificateDomainName</c>, then <c>certificateName</c> is required
+        /// (and vice-versa).
         /// </para>
         /// </summary>
         public string CertificateDomainName
@@ -110,8 +109,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>certificateName</code>, then <code>certificateDomainName</code>
-        /// is required (and vice-versa).
+        /// If you specify <c>certificateName</c>, then <c>certificateDomainName</c> is required
+        /// (and vice-versa).
         /// </para>
         /// </summary>
         public string CertificateName
@@ -130,7 +129,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property HealthCheckPath. 
         /// <para>
         /// The path you provided to perform the load balancer health check. If you didn't specify
-        /// a health check path, Lightsail uses the root path of your website (<code>"/"</code>).
+        /// a health check path, Lightsail uses the root path of your website (<c>"/"</c>).
         /// </para>
         ///  
         /// <para>
@@ -176,12 +175,12 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code>
-        /// for IPv4 and IPv6.
+        /// The possible values are <c>ipv4</c> for IPv4 only, and <c>dualstack</c> for IPv4 and
+        /// IPv6.
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>dualstack</code>.
+        /// The default value is <c>dualstack</c>.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType
@@ -222,7 +221,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
         /// </summary>
         public List<Tag> Tags

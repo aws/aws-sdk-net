@@ -102,15 +102,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL (default)</code>- Display all existing themes.
+        ///  <c>ALL (default)</c>- Display all existing themes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CUSTOM</code> - Display only the themes created by people using Amazon QuickSight.
+        ///  <c>CUSTOM</c> - Display only the themes created by people using Amazon QuickSight.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUICKSIGHT</code> - Display only the starting themes defined by Amazon QuickSight.
+        ///  <c>QUICKSIGHT</c> - Display only the starting themes defined by Amazon QuickSight.
         /// </para>
         ///  </li> </ul>
         /// </summary>

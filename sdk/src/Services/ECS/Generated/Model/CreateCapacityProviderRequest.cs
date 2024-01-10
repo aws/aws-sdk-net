@@ -37,9 +37,9 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Only capacity providers that use an Auto Scaling group can be created. Amazon ECS
-    /// tasks on Fargate use the <code>FARGATE</code> and <code>FARGATE_SPOT</code> capacity
-    /// providers. These providers are available to all accounts in the Amazon Web Services
-    /// Regions that Fargate supports.
+    /// tasks on Fargate use the <c>FARGATE</c> and <c>FARGATE_SPOT</c> capacity providers.
+    /// These providers are available to all accounts in the Amazon Web Services Regions that
+    /// Fargate supports.
     /// </para>
     /// </summary>
     public partial class CreateCapacityProviderRequest : AmazonECSRequest
@@ -72,7 +72,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The name of the capacity provider. Up to 255 characters are allowed. They include
         /// letters (both upper and lowercase letters), numbers, underscores (_), and hyphens
-        /// (-). The name can't be prefixed with "<code>aws</code>", "<code>ecs</code>", or "<code>fargate</code>".
+        /// (-). The name can't be prefixed with "<c>aws</c>", "<c>ecs</c>", or "<c>fargate</c>".
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -129,10 +129,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

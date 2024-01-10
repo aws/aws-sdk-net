@@ -82,18 +82,18 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user
-        /// value is similar to the slot value.
+        ///  <c>ORIGINAL_VALUE</c> - Returns the value entered by the user, if the user value
+        /// is similar to the slot value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
-        /// the first value in the resolution list as the slot type value. If there is no resolution
-        /// list, null is returned.
+        ///  <c>TOP_RESOLUTION</c> - If there is a resolution list for the slot, return the first
+        /// value in the resolution list as the slot type value. If there is no resolution list,
+        /// null is returned.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify the <code>valueSelectionStrategy</code>, the default is <code>ORIGINAL_VALUE</code>.
+        /// If you don't specify the <c>valueSelectionStrategy</c>, the default is <c>ORIGINAL_VALUE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

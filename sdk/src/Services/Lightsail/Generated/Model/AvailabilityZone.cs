@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes an Availability Zone. This is returned only as part of a <code>GetRegions</code>
+    /// Describes an Availability Zone. This is returned only as part of a <c>GetRegions</c>
     /// request.
     /// </summary>
     public partial class AvailabilityZone
@@ -58,7 +58,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ZoneName. 
         /// <para>
-        /// The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).
+        /// The name of the Availability Zone. The format is <c>us-east-2a</c> (case-sensitive).
         /// </para>
         /// </summary>
         public string ZoneName

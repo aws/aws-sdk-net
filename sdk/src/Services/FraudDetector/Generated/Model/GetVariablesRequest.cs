@@ -31,9 +31,9 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Container for the parameters to the GetVariables operation.
     /// Gets all of the variables or the specific variable. This is a paginated API. Providing
-    /// null <code>maxSizePerPage</code> results in retrieving maximum of 100 records per
-    /// page. If you provide <code>maxSizePerPage</code> the value must be between 50 and
-    /// 100. To get the next page result, a provide a pagination token from <code>GetVariablesResult</code>
+    /// null <c>maxSizePerPage</c> results in retrieving maximum of 100 records per page.
+    /// If you provide <c>maxSizePerPage</c> the value must be between 50 and 100. To get
+    /// the next page result, a provide a pagination token from <c>GetVariablesResult</c>
     /// as part of your request. Null pagination token fetches the records from the beginning.
     /// </summary>
     public partial class GetVariablesRequest : AmazonFraudDetectorRequest

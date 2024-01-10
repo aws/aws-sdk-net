@@ -30,8 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// If provided, the generated manifest includes only source bucket objects whose object
-    /// keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>,
-    /// and <code>MatchAnySubstring</code>.
+    /// keys match the string constraints specified for <c>MatchAnyPrefix</c>, <c>MatchAnySuffix</c>,
+    /// and <c>MatchAnySubstring</c>.
     /// </summary>
     public partial class KeyNameConstraint
     {

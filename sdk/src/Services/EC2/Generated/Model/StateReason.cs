@@ -61,63 +61,62 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Server.InsufficientInstanceCapacity</code>: There was insufficient capacity
-        /// available to satisfy the launch request.
+        ///  <c>Server.InsufficientInstanceCapacity</c>: There was insufficient capacity available
+        /// to satisfy the launch request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Server.InternalError</code>: An internal error caused the instance to terminate
-        /// during launch.
+        ///  <c>Server.InternalError</c>: An internal error caused the instance to terminate during
+        /// launch.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Server.ScheduledStop</code>: The instance was stopped due to a scheduled retirement.
+        ///  <c>Server.ScheduledStop</c>: The instance was stopped due to a scheduled retirement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Server.SpotInstanceShutdown</code>: The instance was stopped because the number
+        ///  <c>Server.SpotInstanceShutdown</c>: The instance was stopped because the number of
+        /// Spot requests with a maximum price equal to or higher than the Spot price exceeded
+        /// available capacity or because of an increase in the Spot price.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>Server.SpotInstanceTermination</c>: The instance was terminated because the number
         /// of Spot requests with a maximum price equal to or higher than the Spot price exceeded
         /// available capacity or because of an increase in the Spot price.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Server.SpotInstanceTermination</code>: The instance was terminated because
-        /// the number of Spot requests with a maximum price equal to or higher than the Spot
-        /// price exceeded available capacity or because of an increase in the Spot price.
+        ///  <c>Client.InstanceInitiatedShutdown</c>: The instance was shut down using the <c>shutdown
+        /// -h</c> command from the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.InstanceInitiatedShutdown</code>: The instance was shut down using the
-        /// <code>shutdown -h</code> command from the instance.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>Client.InstanceTerminated</code>: The instance was terminated or rebooted during
+        ///  <c>Client.InstanceTerminated</c>: The instance was terminated or rebooted during
         /// AMI creation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.InternalError</code>: A client error caused the instance to terminate
-        /// during launch.
+        ///  <c>Client.InternalError</c>: A client error caused the instance to terminate during
+        /// launch.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.InvalidSnapshot.NotFound</code>: The specified snapshot was not found.
+        ///  <c>Client.InvalidSnapshot.NotFound</c>: The specified snapshot was not found.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.UserInitiatedHibernate</code>: Hibernation was initiated on the instance.
+        ///  <c>Client.UserInitiatedHibernate</c>: Hibernation was initiated on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.UserInitiatedShutdown</code>: The instance was shut down using the Amazon
+        ///  <c>Client.UserInitiatedShutdown</c>: The instance was shut down using the Amazon
         /// EC2 API.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.VolumeLimitExceeded</code>: The limit on the number of EBS volumes or
-        /// total storage was exceeded. Decrease usage or request an increase in your account
-        /// limits.
+        ///  <c>Client.VolumeLimitExceeded</c>: The limit on the number of EBS volumes or total
+        /// storage was exceeded. Decrease usage or request an increase in your account limits.
         /// </para>
         ///  </li> </ul>
         /// </summary>

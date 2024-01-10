@@ -119,8 +119,8 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property SpeakerSearchTaskStatus. 
         /// <para>
-        /// The status of the speaker search task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>,
-        /// <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.
+        /// The status of the speaker search task, <c>IN_QUEUE</c>, <c>IN_PROGRESS</c>, <c>PARTIAL_SUCCESS</c>,
+        /// <c>SUCCEEDED</c>, <c>FAILED</c>, or <c>STOPPED</c>.
         /// </para>
         /// </summary>
         public string SpeakerSearchTaskStatus

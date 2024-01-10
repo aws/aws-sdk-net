@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GlobalAccelerator.Model
 {
     /// <summary>
-    /// A complex type that contains a <code>Tag</code> key and <code>Tag</code> value.
+    /// A complex type that contains a <c>Tag</c> key and <c>Tag</c> value.
     /// </summary>
     public partial class Tag
     {
@@ -39,7 +39,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A string that contains a <code>Tag</code> key.
+        /// A string that contains a <c>Tag</c> key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -58,7 +58,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A string that contains a <code>Tag</code> value.
+        /// A string that contains a <c>Tag</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

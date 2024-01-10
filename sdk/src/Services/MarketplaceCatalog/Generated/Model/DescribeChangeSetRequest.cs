@@ -40,8 +40,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        /// Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
-        /// 
+        /// Required. The catalog related to the request. Fixed value: <c>AWSMarketplace</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -60,8 +59,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ChangeSetId. 
         /// <para>
-        /// Required. The unique identifier for the <code>StartChangeSet</code> request that you
-        /// want to describe the details for.
+        /// Required. The unique identifier for the <c>StartChangeSet</c> request that you want
+        /// to describe the details for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

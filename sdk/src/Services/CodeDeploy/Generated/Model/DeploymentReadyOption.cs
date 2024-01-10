@@ -73,8 +73,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property WaitTimeInMinutes. 
         /// <para>
         /// The number of minutes to wait before the status of a blue/green deployment is changed
-        /// to Stopped if rerouting is not started manually. Applies only to the <code>STOP_DEPLOYMENT</code>
-        /// option for <code>actionOnTimeout</code>.
+        /// to Stopped if rerouting is not started manually. Applies only to the <c>STOP_DEPLOYMENT</c>
+        /// option for <c>actionOnTimeout</c>.
         /// </para>
         /// </summary>
         public int WaitTimeInMinutes

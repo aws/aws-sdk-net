@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceBotArn. 
         /// <para>
-        /// The ARN of the <code>AppinstanceBot</code>.
+        /// The ARN of the <c>AppinstanceBot</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

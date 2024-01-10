@@ -47,15 +47,15 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL</code> – The list includes all deployments.
+        ///  <c>ALL</c> – The list includes all deployments.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LATEST_ONLY</code> – The list includes only the latest revision of each deployment.
+        ///  <c>LATEST_ONLY</c> – The list includes only the latest revision of each deployment.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>LATEST_ONLY</code> 
+        /// Default: <c>LATEST_ONLY</c> 
         /// </para>
         /// </summary>
         public DeploymentHistoryFilter HistoryFilter

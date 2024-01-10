@@ -45,23 +45,23 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Count</code> – The number of times the intent was invoked.
+        ///  <c>Count</c> – The number of times the intent was invoked.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Success</code> – The number of times the intent succeeded.
+        ///  <c>Success</c> – The number of times the intent succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failure</code> – The number of times the intent failed.
+        ///  <c>Failure</c> – The number of times the intent failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Switched</code> – The number of times there was a switch to a different intent.
+        ///  <c>Switched</c> – The number of times there was a switch to a different intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Dropped</code> – The number of times the user dropped the intent.
+        ///  <c>Dropped</c> – The number of times the user dropped the intent.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -84,16 +84,16 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Sum</code> – The total count for the category you provide in <code>name</code>.
+        ///  <c>Sum</c> – The total count for the category you provide in <c>name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Average</code> – The total count divided by the number of intents in the category
-        /// you provide in <code>name</code>.
+        ///  <c>Average</c> – The total count divided by the number of intents in the category
+        /// you provide in <c>name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Max</code> – The highest count in the category you provide in <code>name</code>.
+        ///  <c>Max</c> – The highest count in the category you provide in <c>name</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

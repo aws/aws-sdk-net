@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceIds. 
         /// <para>
-        /// A list of data source IDs that you want to apply overrides to. You can use <code>*</code>
+        /// A list of data source IDs that you want to apply overrides to. You can use <c>*</c>
         /// to override all data sources in this asset bundle.
         /// </para>
         /// </summary>

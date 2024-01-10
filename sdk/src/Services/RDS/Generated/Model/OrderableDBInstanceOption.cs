@@ -33,7 +33,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeOrderableDBInstanceOptions</code>
+    /// This data type is used as a response element in the <c>DescribeOrderableDBInstanceOptions</c>
     /// action.
     /// </para>
     /// </summary>
@@ -463,7 +463,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SupportedActivityStreamModes. 
         /// <para>
         /// The list of supported modes for Database Activity Streams. Aurora PostgreSQL returns
-        /// the value <code>[sync, async]</code>. Aurora MySQL and RDS for Oracle return <code>[async]</code>
+        /// the value <c>[sync, async]</c>. Aurora MySQL and RDS for Oracle return <c>[async]</c>
         /// only. If Database Activity Streams isn't supported, the return value is an empty list.
         /// </para>
         /// </summary>
@@ -500,12 +500,12 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SupportedNetworkTypes. 
         /// <para>
-        /// The network types supported by the DB instance (<code>IPV4</code> or <code>DUAL</code>).
+        /// The network types supported by the DB instance (<c>IPV4</c> or <c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
         /// A DB instance can support only the IPv4 protocol or the IPv4 and the IPv6 protocols
-        /// (<code>DUAL</code>).
+        /// (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>

@@ -37,8 +37,8 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// After capacity pricing is added, you can use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
-    /// </code> API operation with the <code>--identity-type ANONYMOUS</code> option.
+    /// After capacity pricing is added, you can use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_GetDashboardEmbedUrl.html">GetDashboardEmbedUrl</a>
+    /// </c> API operation with the <c>--identity-type ANONYMOUS</c> option.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

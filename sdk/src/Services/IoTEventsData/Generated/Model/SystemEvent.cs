@@ -39,7 +39,7 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The event type. If the value is <code>STATE_CHANGE</code>, the event contains information
+        /// The event type. If the value is <c>STATE_CHANGE</c>, the event contains information
         /// about alarm state changes.
         /// </para>
         /// </summary>

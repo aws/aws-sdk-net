@@ -48,7 +48,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EvaluationState. 
         /// <para>
-        /// The status of the monitor evaluation. The state can be <code>SUCCESS</code> or <code>FAILURE</code>.
+        /// The status of the monitor evaluation. The state can be <c>SUCCESS</c> or <c>FAILURE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

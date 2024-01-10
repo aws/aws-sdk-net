@@ -41,7 +41,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// </para>
     ///  
     /// <para>
-    /// If the load balancer does not exist or has already been deleted, the call to <code>DeleteLoadBalancer</code>
+    /// If the load balancer does not exist or has already been deleted, the call to <c>DeleteLoadBalancer</c>
     /// still succeeds.
     /// </para>
     /// </summary>

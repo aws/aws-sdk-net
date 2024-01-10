@@ -36,7 +36,7 @@ namespace Amazon.DataSync.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Request parameters related to <code>SMB</code> aren't supported with the <code>CreateLocationFsxOpenZfs</code>
+    /// Request parameters related to <c>SMB</c> aren't supported with the <c>CreateLocationFsxOpenZfs</c>
     /// operation.
     /// </para>
     ///  </note>
@@ -110,9 +110,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// A subdirectory in the location's path that must begin with <code>/fsx</code>. DataSync
-        /// uses this subdirectory to read or write data (depending on whether the file system
-        /// is a source or destination location).
+        /// A subdirectory in the location's path that must begin with <c>/fsx</c>. DataSync uses
+        /// this subdirectory to read or write data (depending on whether the file system is a
+        /// source or destination location).
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

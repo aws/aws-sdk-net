@@ -60,8 +60,7 @@ namespace Amazon.AppMesh.Model
         /// <summary>
         /// Gets and sets the property Enforce. 
         /// <para>
-        /// Whether the policy is enforced. The default is <code>True</code>, if a value isn't
-        /// specified.
+        /// Whether the policy is enforced. The default is <c>True</c>, if a value isn't specified.
         /// </para>
         /// </summary>
         public bool Enforce

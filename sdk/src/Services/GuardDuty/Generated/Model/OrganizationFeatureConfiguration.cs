@@ -63,14 +63,14 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code>: Indicates that when a new account joins the organization, they
-        /// will have the feature enabled automatically. 
+        ///  <c>NEW</c>: Indicates that when a new account joins the organization, they will have
+        /// the feature enabled automatically. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code>: Indicates that all accounts in the organization have the feature
-        /// enabled automatically. This includes <code>NEW</code> accounts that join the organization
-        /// and accounts that may have been suspended or removed from the organization in GuardDuty.
+        ///  <c>ALL</c>: Indicates that all accounts in the organization have the feature enabled
+        /// automatically. This includes <c>NEW</c> accounts that join the organization and accounts
+        /// that may have been suspended or removed from the organization in GuardDuty.
         /// </para>
         ///  
         /// <para>
@@ -78,9 +78,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code>: Indicates that the feature will not be automatically enabled for
-        /// any account in the organization. The administrator must manage the feature for each
-        /// account individually.
+        ///  <c>NONE</c>: Indicates that the feature will not be automatically enabled for any
+        /// account in the organization. The administrator must manage the feature for each account
+        /// individually.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,9 +30,9 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateBackupVault operation.
-    /// Creates a logical container where backups are stored. A <code>CreateBackupVault</code>
-    /// request includes a name, optionally one or more resource tags, an encryption key,
-    /// and a request ID.
+    /// Creates a logical container where backups are stored. A <c>CreateBackupVault</c> request
+    /// includes a name, optionally one or more resource tags, an encryption key, and a request
+    /// ID.
     /// 
     ///  <note> 
     /// <para>
@@ -115,7 +115,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
         /// The server-side encryption key that is used to protect your backups; for example,
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         /// </summary>
         public string EncryptionKeyArn

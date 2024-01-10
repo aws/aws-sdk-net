@@ -179,8 +179,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// If the <code>Status</code> field is set to <code>ERROR</code>, the <code>ErrorMessage</code>
-        /// field contains a description of the error that caused the synchronization to fail.
+        /// If the <c>Status</c> field is set to <c>ERROR</c>, the <c>ErrorMessage</c> field contains
+        /// a description of the error that caused the synchronization to fail.
         /// </para>
         /// </summary>
         public ErrorDetail Error

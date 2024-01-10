@@ -30,7 +30,7 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeSnapshots operation.
-    /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+    /// Returns information about cluster or replication group snapshots. By default, <c>DescribeSnapshots</c>
     /// lists all of your snapshots; it can optionally describe a single snapshot, or just
     /// the snapshots associated with a particular cache cluster.
     /// 
@@ -74,7 +74,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
         /// results from this operation. If this parameter is specified, the response includes
-        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+        /// only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -93,8 +93,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a marker is included in the response
-        /// so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>
@@ -177,10 +177,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property SnapshotSource. 
         /// <para>
-        /// If set to <code>system</code>, the output shows snapshots that were automatically
-        /// created by ElastiCache. If set to <code>user</code> the output shows snapshots that
-        /// were manually created. If omitted, the output shows both automatically and manually
-        /// created snapshots.
+        /// If set to <c>system</c>, the output shows snapshots that were automatically created
+        /// by ElastiCache. If set to <c>user</c> the output shows snapshots that were manually
+        /// created. If omitted, the output shows both automatically and manually created snapshots.
         /// </para>
         /// </summary>
         public string SnapshotSource

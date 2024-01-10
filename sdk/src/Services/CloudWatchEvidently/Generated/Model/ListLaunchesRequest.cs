@@ -62,7 +62,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to use when requesting the next set of results. You received this token
-        /// from a previous <code>ListLaunches</code> operation.
+        /// from a previous <c>ListLaunches</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

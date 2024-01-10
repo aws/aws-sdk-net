@@ -120,7 +120,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ReplicaInaccessibleDateTime. 
         /// <para>
         /// The time at which the replica was first detected as inaccessible. To determine cause
-        /// of inaccessibility check the <code>ReplicaStatus</code> property.
+        /// of inaccessibility check the <c>ReplicaStatus</c> property.
         /// </para>
         /// </summary>
         public DateTime ReplicaInaccessibleDateTime
@@ -142,24 +142,24 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The replica is being created.
+        ///  <c>CREATING</c> - The replica is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The replica is being updated.
+        ///  <c>UPDATING</c> - The replica is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The replica is being deleted.
+        ///  <c>DELETING</c> - The replica is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The replica is ready for use.
+        ///  <c>ACTIVE</c> - The replica is ready for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGION_DISABLED</code> - The replica is inaccessible because the Amazon Web
-        /// Services Region has been disabled.
+        ///  <c>REGION_DISABLED</c> - The replica is inaccessible because the Amazon Web Services
+        /// Region has been disabled.
         /// </para>
         ///  <note> 
         /// <para>
@@ -169,8 +169,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>INACCESSIBLE_ENCRYPTION_CREDENTIALS </code> - The KMS key used to encrypt the
-        /// table is inaccessible.
+        ///  <c>INACCESSIBLE_ENCRYPTION_CREDENTIALS </c> - The KMS key used to encrypt the table
+        /// is inaccessible.
         /// </para>
         ///  <note> 
         /// <para>

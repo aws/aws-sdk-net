@@ -79,18 +79,18 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of query execution. <code>QUEUED</code> indicates that the query has been
-        /// submitted to the service, and Athena will execute the query as soon as resources are
-        /// available. <code>RUNNING</code> indicates that the query is in execution phase. <code>SUCCEEDED</code>
-        /// indicates that the query completed without errors. <code>FAILED</code> indicates that
-        /// the query experienced an error and did not complete processing. <code>CANCELLED</code>
-        /// indicates that a user input interrupted query execution.
+        /// The state of query execution. <c>QUEUED</c> indicates that the query has been submitted
+        /// to the service, and Athena will execute the query as soon as resources are available.
+        /// <c>RUNNING</c> indicates that the query is in execution phase. <c>SUCCEEDED</c> indicates
+        /// that the query completed without errors. <c>FAILED</c> indicates that the query experienced
+        /// an error and did not complete processing. <c>CANCELLED</c> indicates that a user input
+        /// interrupted query execution.
         /// </para>
         ///  <note> 
         /// <para>
         /// Athena automatically retries your queries in cases of certain transient errors. As
-        /// a result, you may see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
-        /// to <code>QUEUED</code>. 
+        /// a result, you may see the query state transition from <c>RUNNING</c> or <c>FAILED</c>
+        /// to <c>QUEUED</c>. 
         /// </para>
         ///  </note>
         /// </summary>

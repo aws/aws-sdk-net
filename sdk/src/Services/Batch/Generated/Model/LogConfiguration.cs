@@ -46,14 +46,13 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// The supported log drivers are <code>awslogs</code>, <code>fluentd</code>, <code>gelf</code>,
-        /// <code>json-file</code>, <code>journald</code>, <code>logentries</code>, <code>syslog</code>,
-        /// and <code>splunk</code>.
+        /// The supported log drivers are <c>awslogs</c>, <c>fluentd</c>, <c>gelf</c>, <c>json-file</c>,
+        /// <c>journald</c>, <c>logentries</c>, <c>syslog</c>, and <c>splunk</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Jobs that are running on Fargate resources are restricted to the <code>awslogs</code>
-        /// and <code>splunk</code> log drivers.
+        /// Jobs that are running on Fargate resources are restricted to the <c>awslogs</c> and
+        /// <c>splunk</c> log drivers.
         /// </para>
         ///  </note> <dl> <dt>awslogs</dt> <dd> 
         /// <para>
@@ -111,8 +110,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// This parameter requires version 1.18 of the Docker Remote API or greater on your container
         /// instance. To check the Docker Remote API version on your container instance, log in
-        /// to your container instance and run the following command: <code>sudo docker version
-        /// | grep "Server API version"</code> 
+        /// to your container instance and run the following command: <c>sudo docker version |
+        /// grep "Server API version"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -134,7 +133,7 @@ namespace Amazon.Batch.Model
         /// The configuration options to send to the log driver. This parameter requires version
         /// 1.19 of the Docker Remote API or greater on your container instance. To check the
         /// Docker Remote API version on your container instance, log in to your container instance
-        /// and run the following command: <code>sudo docker version | grep "Server API version"</code>
+        /// and run the following command: <c>sudo docker version | grep "Server API version"</c>
         /// 
         /// </para>
         /// </summary>

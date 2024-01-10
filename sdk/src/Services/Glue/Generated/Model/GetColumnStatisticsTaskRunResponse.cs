@@ -38,8 +38,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ColumnStatisticsTaskRun. 
         /// <para>
-        /// A <code>ColumnStatisticsTaskRun</code> object representing the details of the column
-        /// stats run.
+        /// A <c>ColumnStatisticsTaskRun</c> object representing the details of the column stats
+        /// run.
         /// </para>
         /// </summary>
         public ColumnStatisticsTaskRun ColumnStatisticsTaskRun

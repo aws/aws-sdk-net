@@ -76,7 +76,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The map glyph content type. For example, <code>application/octet-stream</code>.
+        /// The map glyph content type. For example, <c>application/octet-stream</c>.
         /// </para>
         /// </summary>
         public string ContentType

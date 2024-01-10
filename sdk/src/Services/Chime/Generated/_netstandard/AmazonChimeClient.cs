@@ -89,8 +89,7 @@ namespace Amazon.Chime
     /// </para>
     ///  
     /// <para>
-    /// When making REST API calls, use the service name <code>chime</code> and REST endpoint
-    /// <code>https://service.chime.aws.amazon.com</code>.
+    /// When making REST API calls, use the service name <c>chime</c> and REST endpoint <c>https://service.chime.aws.amazon.com</c>.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -866,22 +865,22 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Suspends up to 50 users from a <code>Team</code> or <code>EnterpriseLWA</code> Amazon
-        /// Chime account. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
+        /// Suspends up to 50 users from a <c>Team</c> or <c>EnterpriseLWA</c> Amazon Chime account.
+        /// For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
         /// Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
         /// 
         ///  
         /// <para>
-        /// Users suspended from a <code>Team</code> account are disassociated from the account,but
+        /// Users suspended from a <c>Team</c> account are disassociated from the account,but
         /// they can continue to use Amazon Chime as free users. To remove the suspension from
-        /// suspended <code>Team</code> account users, invite them to the <code>Team</code> account
-        /// again. You can use the <a>InviteUsers</a> action to do so.
+        /// suspended <c>Team</c> account users, invite them to the <c>Team</c> account again.
+        /// You can use the <a>InviteUsers</a> action to do so.
         /// </para>
         ///  
         /// <para>
-        /// Users suspended from an <code>EnterpriseLWA</code> account are immediately signed
-        /// out of Amazon Chime and can no longer sign in. To remove the suspension from suspended
-        /// <code>EnterpriseLWA</code> account users, use the <a>BatchUnsuspendUser</a> action.
+        /// Users suspended from an <c>EnterpriseLWA</c> account are immediately signed out of
+        /// Amazon Chime and can no longer sign in. To remove the suspension from suspended <c>EnterpriseLWA</c>
+        /// account users, use the <a>BatchUnsuspendUser</a> action.
         /// </para>
         ///  
         /// <para>
@@ -942,15 +941,15 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Removes the suspension from up to 50 previously suspended users for the specified
-        /// Amazon Chime <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code>
-        /// accounts can be unsuspended using this action. For more information about different
-        /// account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">
+        /// Amazon Chime <c>EnterpriseLWA</c> account. Only users on <c>EnterpriseLWA</c> accounts
+        /// can be unsuspended using this action. For more information about different account
+        /// types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">
         /// Managing Your Amazon Chime Accounts </a> in the account types, in the <i>Amazon Chime
         /// Administration Guide</i>. 
         /// 
         ///  
         /// <para>
-        /// Previously suspended users who are unsuspended using this action are returned to <code>Registered</code>
+        /// Previously suspended users who are unsuspended using this action are returned to <c>Registered</c>
         /// status. Users who are not previously suspended are ignored.
         /// </para>
         /// </summary>
@@ -1008,8 +1007,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Updates phone number product types or calling names. You can update one attribute
-        /// at a time for each <code>UpdatePhoneNumberRequestItem</code>. For example, you can
-        /// update the product type or the calling name.
+        /// at a time for each <c>UpdatePhoneNumberRequestItem</c>. For example, you can update
+        /// the product type or the calling name.
         /// 
         ///  
         /// <para>
@@ -1077,7 +1076,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Updates user details within the <a>UpdateUserRequestItem</a> object for up to 20 users
-        /// for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates
+        /// for the specified Amazon Chime account. Currently, only <c>LicenseType</c> updates
         /// are supported for this action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchUpdateUser service method.</param>
@@ -1133,7 +1132,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Creates an Amazon Chime account under the administrator's AWS account. Only <code>Team</code>
+        /// Creates an Amazon Chime account under the administrator's AWS account. Only <c>Team</c>
         /// account types are currently supported for this action. For more information about
         /// different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing
         /// Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
@@ -1192,9 +1191,9 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account.
-        /// Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports
-        /// idempotency behavior as described in the AWS API Standard.
+        /// Creates an Amazon Chime SDK messaging <c>AppInstance</c> under an AWS account. Only
+        /// SDK messaging customers use this API. <c>CreateAppInstance</c> supports idempotency
+        /// behavior as described in the AWS API Standard.
         /// 
         ///  <important> 
         /// <para>
@@ -1269,8 +1268,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
-        /// promoted user can perform the following actions. 
+        /// Promotes an <c>AppInstanceUser</c> to an <c>AppInstanceAdmin</c>. The promoted user
+        /// can perform the following actions. 
         /// 
         ///  <important> 
         /// <para>
@@ -1286,16 +1285,15 @@ namespace Amazon.Chime
         /// </para>
         ///  </important> <ul> <li> 
         /// <para>
-        ///  <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
+        ///  <c>ChannelModerator</c> actions across all channels in the <c>AppInstance</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeleteChannelMessage</code> actions.
+        ///  <c>DeleteChannelMessage</c> actions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
-        /// role.
+        /// Only an <c>AppInstanceUser</c> can be promoted to an <c>AppInstanceAdmin</c> role.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceAdmin service method.</param>
@@ -1357,8 +1355,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists
-        /// of a unique <code>appInstanceUserId</code> and <code>Name</code> for that user.
+        /// Creates a user under an Amazon Chime <c>AppInstance</c>. The request consists of a
+        /// unique <c>appInstanceUserId</c> and <c>Name</c> for that user.
         /// 
         ///  <important> 
         /// <para>
@@ -1575,7 +1573,7 @@ namespace Amazon.Chime
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -1652,9 +1650,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Permanently bans a member from a channel. Moderators can't add banned members to a
-        /// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
-        /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
-        /// channels.
+        /// channel. To undo a ban, you first have to <c>DeleteChannelBan</c>, and then <c>CreateChannelMembership</c>.
+        /// Bans are cleaned up when you delete users or channels.
         /// 
         ///  
         /// <para>
@@ -1663,7 +1660,7 @@ namespace Amazon.Chime
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -1739,8 +1736,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Adds a user to a channel. The <code>InvitedBy</code> response field is derived from
-        /// the request header. A channel member can:
+        /// Adds a user to a channel. The <c>InvitedBy</c> response field is derived from the
+        /// request header. A channel member can:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1777,7 +1774,7 @@ namespace Amazon.Chime
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -1853,7 +1850,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Creates a new <code>ChannelModerator</code>. A channel moderator can:
+        /// Creates a new <c>ChannelModerator</c>. A channel moderator can:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1877,7 +1874,7 @@ namespace Amazon.Chime
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -2105,7 +2102,7 @@ namespace Amazon.Chime
         /// 
         ///  
         /// <para>
-        /// To play welcome audio or implement an interactive voice response (IVR), use the <code>CreateSipMediaApplicationCall</code>
+        /// To play welcome audio or implement an interactive voice response (IVR), use the <c>CreateSipMediaApplicationCall</c>
         /// action with the corresponding SIP media application ID.
         /// </para>
         ///  <important> 
@@ -2579,7 +2576,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Creates an outbound call to a phone number from the phone number specified in the
-        /// request, and it invokes the endpoint of the specified <code>sipMediaApplicationId</code>.
+        /// request, and it invokes the endpoint of the specified <c>sipMediaApplicationId</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -2875,7 +2872,7 @@ namespace Amazon.Chime
         /// <summary>
         /// Creates an Amazon Chime Voice Connector group under the administrator's AWS account.
         /// You can associate Amazon Chime Voice Connectors with the Amazon Chime Voice Connector
-        /// group by including <code>VoiceConnectorItems</code> in the request.
+        /// group by including <c>VoiceConnectorItems</c> in the request.
         /// 
         ///  
         /// <para>
@@ -2954,23 +2951,22 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Deletes the specified Amazon Chime account. You must suspend all users before deleting
-        /// <code>Team</code> account. You can use the <a>BatchSuspendUser</a> action to dodo.
+        /// <c>Team</c> account. You can use the <a>BatchSuspendUser</a> action to dodo.
         /// 
         ///  
         /// <para>
-        /// For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release
-        /// the claimed domains for your Amazon Chime account before deletion. As soon as you
-        /// release the domain, all users under that account are suspended.
+        /// For <c>EnterpriseLWA</c> and <c>EnterpriseAD</c> accounts, you must release the claimed
+        /// domains for your Amazon Chime account before deletion. As soon as you release the
+        /// domain, all users under that account are suspended.
         /// </para>
         ///  
         /// <para>
-        /// Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To
-        /// restore deleted account from your <code>Disabled</code> accounts list, you must contact
-        /// AWS Support.
+        /// Deleted accounts appear in your <c>Disabled</c> accounts list for 90 days. To restore
+        /// deleted account from your <c>Disabled</c> accounts list, you must contact AWS Support.
         /// </para>
         ///  
         /// <para>
-        /// After 90 days, deleted accounts are permanently removed from your <code>Disabled</code>
+        /// After 90 days, deleted accounts are permanently removed from your <c>Disabled</c>
         /// accounts list.
         /// </para>
         /// </summary>
@@ -3031,7 +3027,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Deletes an <code>AppInstance</code> and all associated data asynchronously.
+        /// Deletes an <c>AppInstance</c> and all associated data asynchronously.
         /// 
         ///  <important> 
         /// <para>
@@ -3099,8 +3095,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This
-        /// action does not delete the user.
+        /// Demotes an <c>AppInstanceAdmin</c> to an <c>AppInstanceUser</c>. This action does
+        /// not delete the user.
         /// 
         ///  <important> 
         /// <para>
@@ -3172,7 +3168,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Deletes the streaming configurations of an <code>AppInstance</code>.
+        /// Deletes the streaming configurations of an <c>AppInstance</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -3243,7 +3239,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Deletes an <code>AppInstanceUser</code>.
+        /// Deletes an <c>AppInstanceUser</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -3312,8 +3308,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
-        /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK
-        /// meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+        /// <c>JoinToken</c>. Attendees are automatically deleted when a Amazon Chime SDK meeting
+        /// is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
         /// 
         ///  <important> 
@@ -3390,7 +3386,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -3463,7 +3459,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -3536,7 +3532,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -3610,11 +3606,11 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Deletes a channel message. Only admins can perform this action. Deletion makes messages
-        /// inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.
+        /// inaccessible immediately. A background process deletes any revisions created by <c>UpdateChannelMessage</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -3687,7 +3683,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -4495,7 +4491,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code>
+        /// Deletes the specified Amazon Chime Voice Connector group. Any <c>VoiceConnectorItems</c>
         /// and phone numbers associated with the group must be removed before it can be deleted.
         /// 
         ///  <important> 
@@ -4937,7 +4933,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns the full details of an <code>AppInstance</code>.
+        /// Returns the full details of an <c>AppInstance</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -5005,7 +5001,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns the full details of an <code>AppInstanceAdmin</code>.
+        /// Returns the full details of an <c>AppInstanceAdmin</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -5073,7 +5069,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns the full details of an <code>AppInstanceUser</code>.
+        /// Returns the full details of an <c>AppInstanceUser</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -5141,11 +5137,11 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
+        /// Returns the full details of a channel in an Amazon Chime <c>AppInstance</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -5218,7 +5214,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -5294,7 +5290,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -5366,11 +5362,11 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+        /// Returns the details of a channel based on the membership of the specified <c>AppInstanceUser</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -5439,11 +5435,11 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+        /// Returns the full details of a channel moderated by the specified <c>AppInstanceUser</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -5516,7 +5512,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -5956,7 +5952,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Gets the retention settings for an <code>AppInstance</code>.
+        /// Gets the retention settings for an <c>AppInstance</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -6027,7 +6023,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Gets the streaming settings for an <code>AppInstance</code>.
+        /// Gets the streaming settings for an <c>AppInstance</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -6231,7 +6227,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The x-amz-chime-bearer request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -7449,7 +7445,7 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name,
-        /// and associated <code>VoiceConnectorItems</code>.
+        /// and associated <c>VoiceConnectorItems</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -7892,8 +7888,8 @@ namespace Amazon.Chime
         /// </para>
         ///  </important> 
         /// <para>
-        /// Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received
-        /// from your SIP infrastructure for the specified Amazon Chime Voice Connector.
+        /// Retrieves information about the last time a SIP <c>OPTIONS</c> ping was received from
+        /// your SIP infrastructure for the specified Amazon Chime Voice Connector.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorTerminationHealth service method.</param>
@@ -7951,8 +7947,8 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime
-        /// <code>Team</code> account. Only <code>Team</code> account types are currently supported
-        /// for this action.
+        /// <c>Team</c> account. Only <c>Team</c> account types are currently supported for this
+        /// action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InviteUsers service method.</param>
         /// <param name="cancellationToken">
@@ -8065,7 +8061,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Returns a list of the administrators in the <code>AppInstance</code>.
+        /// Returns a list of the administrators in the <c>AppInstance</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -8133,7 +8129,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
+        /// Lists all Amazon Chime <c>AppInstance</c>s created under a single AWS account.
         /// 
         ///  <important> 
         /// <para>
@@ -8201,8 +8197,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
-        /// 
+        /// List all <c>AppInstanceUsers</c> created under a single <c>AppInstance</c>. 
         /// 
         ///  <important> 
         /// <para>
@@ -8467,7 +8462,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -8540,7 +8535,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -8609,13 +8604,12 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only
-        /// an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their
-        /// own. 
+        /// Lists all channels that a particular <c>AppInstanceUser</c> is a part of. Only an
+        /// <c>AppInstanceAdmin</c> can call the API with a user ARN that is not their own. 
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -8684,7 +8678,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>.
+        /// List all the messages in a channel. Returns a paginated list of <c>ChannelMessages</c>.
         /// By default, sorted by creation timestamp in descending order.
         /// 
         ///  <note> 
@@ -8695,7 +8689,7 @@ namespace Amazon.Chime
         /// </para>
         ///  
         /// <para>
-        /// Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// Also, the x-amz-chime-bearer request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -8768,7 +8762,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -8846,16 +8840,16 @@ namespace Amazon.Chime
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
+        /// Use privacy = <c>PUBLIC</c> to retrieve all public channels in the account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list
-        /// the private channels in an account.
+        /// Only an <c>AppInstanceAdmin</c> can set privacy = <c>PRIVATE</c> to list the private
+        /// channels in an account.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -8924,11 +8918,11 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// A list of the channels moderated by an <code>AppInstanceUser</code>.
+        /// A list of the channels moderated by an <c>AppInstanceUser</c>.
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -10077,7 +10071,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Sets the amount of time in days that a given <code>AppInstance</code> retains data.
+        /// Sets the amount of time in days that a given <c>AppInstance</c> retains data.
         /// 
         ///  <important> 
         /// <para>
@@ -10152,7 +10146,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// The data streaming configurations of an <code>AppInstance</code>.
+        /// The data streaming configurations of an <c>AppInstance</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -10947,7 +10941,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -11295,10 +11289,9 @@ namespace Amazon.Chime
 
         /// <summary>
         /// Searches for phone numbers that can be ordered. For US numbers, provide at least one
-        /// of the following search filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>,
-        /// or <code>TollFreePrefix</code>. If you provide <code>City</code>, you must also provide
-        /// <code>State</code>. Numbers outside the US only support the <code>PhoneNumberType</code>
-        /// filter, which you must use.
+        /// of the following search filters: <c>AreaCode</c>, <c>City</c>, <c>State</c>, or <c>TollFreePrefix</c>.
+        /// If you provide <c>City</c>, you must also provide <c>State</c>. Numbers outside the
+        /// US only support the <c>PhoneNumberType</c> filter, which you must use.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchAvailablePhoneNumbers service method.</param>
         /// <param name="cancellationToken">
@@ -11358,13 +11351,13 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  
         /// <para>
-        /// Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata.
-        /// <code>CONTROL</code> messages can contain 30 bytes of data and no metadata.
+        /// Also, <c>STANDARD</c> messages can contain 4KB of data and the 1KB of metadata. <c>CONTROL</c>
+        /// messages can contain 30 bytes of data and no metadata.
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -11436,17 +11429,17 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Starts transcription for the specified <code>meetingId</code>. For more information,
-        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Starts transcription for the specified <c>meetingId</c>. For more information, refer
+        /// to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
         /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
         /// Guide</i>.
         /// 
         ///  
         /// <para>
-        /// If you specify an invalid configuration, a <code>TranscriptFailed</code> event will
-        /// be sent with the contents of the <code>BadRequestException</code> generated by Amazon
-        /// Transcribe. For more information on each parameter and which combinations are valid,
-        /// refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
+        /// If you specify an invalid configuration, a <c>TranscriptFailed</c> event will be sent
+        /// with the contents of the <c>BadRequestException</c> generated by Amazon Transcribe.
+        /// For more information on each parameter and which combinations are valid, refer to
+        /// the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
         /// API in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         ///  <note> 
@@ -11531,7 +11524,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Stops transcription for the specified <code>meetingId</code>.
+        /// Stops transcription for the specified <c>meetingId</c>.
         /// 
         ///  <important> 
         /// <para>
@@ -12139,7 +12132,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates <code>AppInstance</code> metadata.
+        /// Updates <c>AppInstance</c> metadata.
         /// 
         ///  <important> 
         /// <para>
@@ -12211,7 +12204,7 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
+        /// Updates the details of an <c>AppInstanceUser</c>. You can update names and metadata.
         /// 
         ///  <important> 
         /// <para>
@@ -12347,7 +12340,7 @@ namespace Amazon.Chime
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -12424,7 +12417,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -12501,7 +12494,7 @@ namespace Amazon.Chime
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+        /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
         /// of the user that makes the API call as the value in the header.
         /// </para>
         ///  </note> <important> 
@@ -13166,8 +13159,8 @@ namespace Amazon.Chime
 
 
         /// <summary>
-        /// Updates user details for a specified user ID. Currently, only <code>LicenseType</code>
-        /// updates are supported for this action.
+        /// Updates user details for a specified user ID. Currently, only <c>LicenseType</c> updates
+        /// are supported for this action.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateUser service method.</param>
         /// <param name="cancellationToken">

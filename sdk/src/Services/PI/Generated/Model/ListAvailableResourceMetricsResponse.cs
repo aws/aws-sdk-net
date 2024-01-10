@@ -59,9 +59,8 @@ namespace Amazon.PI.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token that indicates the response didn’t return all available records
-        /// because <code>MaxRecords</code> was specified in the previous request. To get the
-        /// remaining records, specify <code>NextToken</code> in a separate request with this
-        /// value. 
+        /// because <c>MaxRecords</c> was specified in the previous request. To get the remaining
+        /// records, specify <c>NextToken</c> in a separate request with this value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Conformance packs with no evaluation results will have a compliance score of <code>INSUFFICIENT_DATA</code>.
+    /// Conformance packs with no evaluation results will have a compliance score of <c>INSUFFICIENT_DATA</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -54,7 +54,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters the results based on the <code>ConformancePackComplianceScoresFilters</code>.
+        /// Filters the results based on the <c>ConformancePackComplianceScoresFilters</c>.
         /// </para>
         /// </summary>
         public ConformancePackComplianceScoresFilters Filters
@@ -91,7 +91,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string in a prior request that you can use to get the paginated
+        /// The <c>nextToken</c> string in a prior request that you can use to get the paginated
         /// response for the next set of conformance pack compliance scores.
         /// </para>
         /// </summary>
@@ -111,12 +111,12 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property SortBy. 
         /// <para>
         /// Sorts your conformance pack compliance scores in either ascending or descending order,
-        /// depending on <code>SortOrder</code>.
+        /// depending on <c>SortOrder</c>.
         /// </para>
         ///  
         /// <para>
         /// By default, conformance pack compliance scores are sorted in alphabetical order by
-        /// name of the conformance pack. Enter <code>SCORE</code>, to sort conformance pack compliance
+        /// name of the conformance pack. Enter <c>SCORE</c>, to sort conformance pack compliance
         /// scores by the numerical value of the compliance score.
         /// </para>
         /// </summary>
@@ -142,15 +142,15 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// By default, conformance pack compliance scores are sorted in alphabetical order by
         /// name of the conformance pack. Conformance pack compliance scores are sorted in reverse
-        /// alphabetical order if you enter <code>DESCENDING</code>.
+        /// alphabetical order if you enter <c>DESCENDING</c>.
         /// </para>
         ///  
         /// <para>
         /// You can sort conformance pack compliance scores by the numerical value of the compliance
-        /// score by entering <code>SCORE</code> in the <code>SortBy</code> action. When compliance
-        /// scores are sorted by <code>SCORE</code>, conformance packs with a compliance score
-        /// of <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
-        /// first when sorting by descending order.
+        /// score by entering <c>SCORE</c> in the <c>SortBy</c> action. When compliance scores
+        /// are sorted by <c>SCORE</c>, conformance packs with a compliance score of <c>INSUFFICIENT_DATA</c>
+        /// will be last when sorting by ascending order and first when sorting by descending
+        /// order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

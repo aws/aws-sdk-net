@@ -49,7 +49,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>ListMultiRegionAccessPoint</code>:
+    /// The following actions are related to <c>ListMultiRegionAccessPoint</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

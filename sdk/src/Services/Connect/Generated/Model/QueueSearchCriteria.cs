@@ -33,9 +33,9 @@ namespace Amazon.Connect.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>name</code> and <code>description</code> fields support "contains" queries
-    /// with a minimum of 2 characters and a maximum of 25 characters. Any queries with character
-    /// lengths outside of this range will throw invalid results. 
+    /// The <c>name</c> and <c>description</c> fields support "contains" queries with a minimum
+    /// of 2 characters and a maximum of 25 characters. Any queries with character lengths
+    /// outside of this range will throw invalid results. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -107,8 +107,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
-        /// and <code>resourceID</code>.
+        /// The currently supported values for <c>FieldName</c> are <c>name</c>, <c>description</c>,
+        /// and <c>resourceID</c>.
         /// </para>
         ///  </note>
         /// </summary>

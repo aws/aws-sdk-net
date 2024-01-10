@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>TestRoleResponse</code> structure.
+    /// The <c>TestRoleResponse</c> structure.
     /// </summary>
     [Obsolete("This type is deprecated")]
     public partial class TestRoleResponse : AmazonWebServiceResponse
@@ -40,8 +40,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Messages. 
         /// <para>
-        /// If the <code>Success</code> element contains <code>false</code>, this value is an
-        /// array of one or more error messages that were generated during the test process.
+        /// If the <c>Success</c> element contains <c>false</c>, this value is an array of one
+        /// or more error messages that were generated during the test process.
         /// </para>
         /// </summary>
         public List<string> Messages
@@ -59,8 +59,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Success. 
         /// <para>
-        /// If the operation is successful, this value is <code>true</code>; otherwise, the value
-        /// is <code>false</code>.
+        /// If the operation is successful, this value is <c>true</c>; otherwise, the value is
+        /// <c>false</c>.
         /// </para>
         /// </summary>
         public string Success

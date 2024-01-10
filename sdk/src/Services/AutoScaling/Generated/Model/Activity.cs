@@ -107,7 +107,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroupState. 
         /// <para>
-        /// The state of the Auto Scaling group, which is either <code>InService</code> or <code>Deleted</code>.
+        /// The state of the Auto Scaling group, which is either <c>InService</c> or <c>Deleted</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]

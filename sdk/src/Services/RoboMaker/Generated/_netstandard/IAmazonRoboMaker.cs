@@ -278,9 +278,9 @@ namespace Amazon.RoboMaker
         /// </para>
         ///  </important> 
         /// <para>
-        /// The robot application must have a numbered <code>applicationVersion</code> for consistency
-        /// reasons. To create a new version, use <code>CreateRobotApplicationVersion</code> or
-        /// see <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
+        /// The robot application must have a numbered <c>applicationVersion</c> for consistency
+        /// reasons. To create a new version, use <c>CreateRobotApplicationVersion</c> or see
+        /// <a href="https://docs.aws.amazon.com/robomaker/latest/dg/create-robot-application-version.html">Creating
         /// a Robot Application Version</a>. 
         /// </para>
         ///  <note> 
@@ -1773,7 +1773,7 @@ namespace Amazon.RoboMaker
 
 
         /// <summary>
-        /// Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code>
+        /// Starts a new simulation job batch. The batch is defined using one or more <c>SimulationJobRequest</c>
         /// objects.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSimulationJobBatch service method.</param>
@@ -1909,7 +1909,7 @@ namespace Amazon.RoboMaker
         /// <para>
         /// To remove a tag, specify the tag key. To change the tag value of an existing tag key,
         /// use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html">
-        /// <code>TagResource</code> </a>. 
+        /// <c>TagResource</c> </a>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>

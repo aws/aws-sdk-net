@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The status of <code>OfflineStore</code>.
+    /// The status of <c>OfflineStore</c>.
     /// </summary>
     public partial class OfflineStoreStatus
     {
@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// An <code>OfflineStore</code> status.
+        /// An <c>OfflineStore</c> status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -69,7 +69,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property KeyPolicies. 
         /// <para>
         /// Resource policy configuration for the KMS key. The only valid value for the name of
-        /// the key policy is <code>default</code>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
+        /// the key policy is <c>default</c>. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
         /// key policy</a>.
         /// </para>
         /// </summary>

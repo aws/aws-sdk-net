@@ -57,7 +57,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more results, this is the token to provide in the next call to <code>ListFindingAggregators</code>.
+        /// If there are more results, this is the token to provide in the next call to <c>ListFindingAggregators</c>.
         /// </para>
         ///  
         /// <para>

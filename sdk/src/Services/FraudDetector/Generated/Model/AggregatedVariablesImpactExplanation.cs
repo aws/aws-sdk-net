@@ -37,7 +37,7 @@ namespace Amazon.FraudDetector.Model
     /// calculate a set of variables (aggregated variables) based on historical events. For
     /// example, the model might calculate the number of times an user has logged in using
     /// the same IP address. In this case, event variables used to derive the aggregated variables
-    /// are <code>IP address</code> and <code>user</code>.
+    /// are <c>IP address</c> and <c>user</c>.
     /// </para>
     /// </summary>
     public partial class AggregatedVariablesImpactExplanation

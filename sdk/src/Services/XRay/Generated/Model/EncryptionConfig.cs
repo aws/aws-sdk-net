@@ -58,8 +58,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The encryption status. While the status is <code>UPDATING</code>, X-Ray may encrypt
-        /// data with a combination of the new and old settings.
+        /// The encryption status. While the status is <c>UPDATING</c>, X-Ray may encrypt data
+        /// with a combination of the new and old settings.
         /// </para>
         /// </summary>
         public EncryptionStatus Status
@@ -77,8 +77,8 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of encryption. Set to <code>KMS</code> for encryption with KMS keys. Set
-        /// to <code>NONE</code> for default encryption.
+        /// The type of encryption. Set to <c>KMS</c> for encryption with KMS keys. Set to <c>NONE</c>
+        /// for default encryption.
         /// </para>
         /// </summary>
         public EncryptionType Type

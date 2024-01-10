@@ -122,7 +122,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Document. 
         /// <para>
-        /// The job document. Required if you don't specify a value for <code>documentSource</code>.
+        /// The job document. Required if you don't specify a value for <c>documentSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32768)]
@@ -146,9 +146,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>documentParameters</code> can only be used when creating jobs from Amazon Web
-        /// Services managed templates. This parameter can't be used with custom job templates
-        /// or to create jobs from them.
+        ///  <c>documentParameters</c> can only be used when creating jobs from Amazon Web Services
+        /// managed templates. This parameter can't be used with custom job templates or to create
+        /// jobs from them.
         /// </para>
         ///  </note>
         /// </summary>
@@ -168,11 +168,11 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property DocumentSource. 
         /// <para>
         /// An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object
-        /// URL and is required if you don't specify a value for <code>document</code>.
+        /// URL and is required if you don't specify a value for <c>document</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+        /// For example, <c>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</c>
         /// 
         /// </para>
         ///  
@@ -281,12 +281,12 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+        ///  <c>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</c>
         /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>namespaceId</code> feature is in public preview.
+        /// The <c>namespaceId</c> feature is in public preview.
         /// </para>
         ///  </note>
         /// </summary>
@@ -409,9 +409,9 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property TimeoutConfig. 
         /// <para>
         /// Specifies the amount of time each device has to finish its execution of the job. The
-        /// timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-        /// If the job execution status is not set to another terminal state before the time expires,
-        /// it will be automatically set to <code>TIMED_OUT</code>.
+        /// timer is started when the job execution status is set to <c>IN_PROGRESS</c>. If the
+        /// job execution status is not set to another terminal state before the time expires,
+        /// it will be automatically set to <c>TIMED_OUT</c>.
         /// </para>
         /// </summary>
         public TimeoutConfig TimeoutConfig

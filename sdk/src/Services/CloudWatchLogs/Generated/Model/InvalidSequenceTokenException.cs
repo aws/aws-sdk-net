@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// The sequence token is not valid. You can get the correct sequence token in the <code>expectedSequenceToken</code>
-    /// field in the <code>InvalidSequenceTokenException</code> message. 
+    /// The sequence token is not valid. You can get the correct sequence token in the <c>expectedSequenceToken</c>
+    /// field in the <c>InvalidSequenceTokenException</c> message. 
     /// 
     ///  <important> 
     /// <para>
-    ///  <code>PutLogEvents</code> actions are now always accepted and never return <code>InvalidSequenceTokenException</code>
+    ///  <c>PutLogEvents</c> actions are now always accepted and never return <c>InvalidSequenceTokenException</c>
     /// regardless of receiving an invalid sequence token. 
     /// </para>
     ///  </important>

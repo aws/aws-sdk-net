@@ -41,7 +41,7 @@ namespace Amazon.Shield.Model
         /// Gets and sets the property ProtectionId. 
         /// <para>
         /// The unique identifier (ID) for the <a>Protection</a> object to describe. You must
-        /// provide either the <code>ResourceArn</code> of the protected resource or the <code>ProtectionID</code>
+        /// provide either the <c>ResourceArn</c> of the protected resource or the <c>ProtectionID</c>
         /// of the protection, but not both.
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.Shield.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The ARN (Amazon Resource Name) of the protected Amazon Web Services resource. You
-        /// must provide either the <code>ResourceArn</code> of the protected resource or the
-        /// <code>ProtectionID</code> of the protection, but not both.
+        /// must provide either the <c>ResourceArn</c> of the protected resource or the <c>ProtectionID</c>
+        /// of the protection, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

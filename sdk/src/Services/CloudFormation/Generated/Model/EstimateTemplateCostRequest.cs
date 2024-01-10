@@ -43,7 +43,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of <code>Parameter</code> structures that specify input parameters.
+        /// A list of <c>Parameter</c> structures that specify input parameters.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters
@@ -67,8 +67,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must pass <code>TemplateBody</code> or <code>TemplateURL</code>.
-        /// If both are passed, only <code>TemplateBody</code> is used.
+        /// Conditional: You must pass <c>TemplateBody</c> or <c>TemplateURL</c>. If both are
+        /// passed, only <c>TemplateBody</c> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -94,8 +94,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must pass <code>TemplateURL</code> or <code>TemplateBody</code>.
-        /// If both are passed, only <code>TemplateBody</code> is used.
+        /// Conditional: You must pass <c>TemplateURL</c> or <c>TemplateBody</c>. If both are
+        /// passed, only <c>TemplateBody</c> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

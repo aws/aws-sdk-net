@@ -166,7 +166,7 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property PerformAutoML. 
         /// <para>
         /// When true, Amazon Personalize searches for the most optimal recipe according to the
-        /// solution configuration. When false (the default), Amazon Personalize uses <code>recipeArn</code>.
+        /// solution configuration. When false (the default), Amazon Personalize uses <c>recipeArn</c>.
         /// </para>
         /// </summary>
         public bool PerformAutoML
@@ -185,7 +185,7 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property PerformHPO. 
         /// <para>
         /// Whether to perform hyperparameter optimization (HPO) on the chosen recipe. The default
-        /// is <code>false</code>.
+        /// is <c>false</c>.
         /// </para>
         /// </summary>
         public bool PerformHPO
@@ -346,17 +346,17 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property TrainingMode. 
         /// <para>
-        /// The scope of training to be performed when creating the solution version. The <code>FULL</code>
+        /// The scope of training to be performed when creating the solution version. The <c>FULL</c>
         /// option trains the solution version based on the entirety of the input solution's training
-        /// data, while the <code>UPDATE</code> option processes only the data that has changed
-        /// in comparison to the input solution. Choose <code>UPDATE</code> when you want to incrementally
-        /// update your solution version instead of creating an entirely new one.
+        /// data, while the <c>UPDATE</c> option processes only the data that has changed in comparison
+        /// to the input solution. Choose <c>UPDATE</c> when you want to incrementally update
+        /// your solution version instead of creating an entirely new one.
         /// </para>
         ///  <important> 
         /// <para>
-        /// The <code>UPDATE</code> option can only be used when you already have an active solution
-        /// version created from the input solution using the <code>FULL</code> option and the
-        /// input solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
+        /// The <c>UPDATE</c> option can only be used when you already have an active solution
+        /// version created from the input solution using the <c>FULL</c> option and the input
+        /// solution was trained with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
         /// recipe or the <a href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
         /// recipe.
         /// </para>

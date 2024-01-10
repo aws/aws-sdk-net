@@ -35,22 +35,22 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// When you use <code>DisassociateKmsKey</code>, you specify either the <code>logGroupName</code>
-    /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
-    /// of those parameters in the same operation.
+    /// When you use <c>DisassociateKmsKey</c>, you specify either the <c>logGroupName</c>
+    /// parameter or the <c>resourceIdentifier</c> parameter. You can't specify both of those
+    /// parameters in the same operation.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Specify the <code>logGroupName</code> parameter to stop using the KMS key to encrypt
-    /// future log events ingested and stored in the log group. Instead, they will be encrypted
-    /// with the default CloudWatch Logs method. The log events that were ingested while the
-    /// key was associated with the log group are still encrypted with that key. Therefore,
-    /// CloudWatch Logs will need permissions for the key whenever that data is accessed.
+    /// Specify the <c>logGroupName</c> parameter to stop using the KMS key to encrypt future
+    /// log events ingested and stored in the log group. Instead, they will be encrypted with
+    /// the default CloudWatch Logs method. The log events that were ingested while the key
+    /// was associated with the log group are still encrypted with that key. Therefore, CloudWatch
+    /// Logs will need permissions for the key whenever that data is accessed.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Specify the <code>resourceIdentifier</code> parameter with the <code>query-result</code>
-    /// resource to stop using the KMS key to encrypt the results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+    /// Specify the <c>resourceIdentifier</c> parameter with the <c>query-result</c> resource
+    /// to stop using the KMS key to encrypt the results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
     /// operations in the account. They will instead be encrypted with the default CloudWatch
     /// Logs method. The results from queries that ran while the key was associated with the
     /// account are still encrypted with that key. Therefore, CloudWatch Logs will need permissions
@@ -73,8 +73,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// In your <code>DisassociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code>
-        /// parameter or the <code>logGroup</code> parameter, but you can't specify both.
+        /// In your <c>DisassociateKmsKey</c> operation, you must specify either the <c>resourceIdentifier</c>
+        /// parameter or the <c>logGroup</c> parameter, but you can't specify both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -105,8 +105,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
-        /// </code> 
+        ///  <c>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -117,12 +117,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> 
+        ///  <c>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In your <code>DisssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code>
-        /// parameter or the <code>logGroup</code> parameter, but you can't specify both.
+        /// In your <c>DisssociateKmsKey</c> operation, you must specify either the <c>resourceIdentifier</c>
+        /// parameter or the <c>logGroup</c> parameter, but you can't specify both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

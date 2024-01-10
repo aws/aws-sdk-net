@@ -122,8 +122,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property ChargeDetails. 
         /// <para>
-        /// A <code>ListCustomLineItemChargeDetails</code> that describes the charge details of
-        /// a custom line item.
+        /// A <c>ListCustomLineItemChargeDetails</c> that describes the charge details of a custom
+        /// line item.
         /// </para>
         /// </summary>
         public ListCustomLineItemChargeDetails ChargeDetails

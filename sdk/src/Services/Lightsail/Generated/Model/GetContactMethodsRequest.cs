@@ -50,8 +50,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Protocols. 
         /// <para>
-        /// The protocols used to send notifications, such as <code>Email</code>, or <code>SMS</code>
-        /// (text messaging).
+        /// The protocols used to send notifications, such as <c>Email</c>, or <c>SMS</c> (text
+        /// messaging).
         /// </para>
         ///  
         /// <para>

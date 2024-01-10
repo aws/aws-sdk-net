@@ -38,8 +38,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property TriggerType. 
         /// <para>
-        /// The trigger type. If the value is <code>SNOOZE_TIMEOUT</code>, the snooze duration
-        /// ends and the alarm automatically changes to the <code>NORMAL</code> state.
+        /// The trigger type. If the value is <c>SNOOZE_TIMEOUT</c>, the snooze duration ends
+        /// and the alarm automatically changes to the <c>NORMAL</c> state.
         /// </para>
         /// </summary>
         public TriggerType TriggerType

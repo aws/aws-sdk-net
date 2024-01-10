@@ -40,8 +40,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property GatewayAdmins. 
         /// <para>
         /// A list of Active Directory users and groups that have local Gateway Admin permissions.
-        /// Acceptable formats include: <code>DOMAIN\User1</code>, <code>user1</code>, <code>DOMAIN\group1</code>,
-        /// and <code>group1</code>.
+        /// Acceptable formats include: <c>DOMAIN\User1</c>, <c>user1</c>, <c>DOMAIN\group1</c>,
+        /// and <c>group1</c>.
         /// </para>
         ///  
         /// <para>

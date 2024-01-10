@@ -60,7 +60,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>selectAttributes</code> activity.
+        /// The name of the <c>selectAttributes</c> activity.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

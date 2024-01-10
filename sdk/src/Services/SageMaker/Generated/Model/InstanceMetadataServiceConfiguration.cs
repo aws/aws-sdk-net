@@ -39,9 +39,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MinimumInstanceMetadataServiceVersion. 
         /// <para>
         /// Indicates the minimum IMDS version that the notebook instance supports. When passed
-        /// as part of <code>CreateNotebookInstance</code>, if no value is selected, then it defaults
+        /// as part of <c>CreateNotebookInstance</c>, if no value is selected, then it defaults
         /// to IMDSv1. This means that both IMDSv1 and IMDSv2 are supported. If passed as part
-        /// of <code>UpdateNotebookInstance</code>, there is no default.
+        /// of <c>UpdateNotebookInstance</c>, there is no default.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1)]

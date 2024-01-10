@@ -279,8 +279,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OverallBestTrainingJob. 
         /// <para>
-        /// If the hyperparameter tuning job is an warm start tuning job with a <code>WarmStartType</code>
-        /// of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+        /// If the hyperparameter tuning job is an warm start tuning job with a <c>WarmStartType</c>
+        /// of <c>IDENTICAL_DATA_AND_ALGORITHM</c>, this is the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
         /// for the training job with the best objective metric value of all training jobs launched
         /// by this tuning job and all parent jobs specified for the warm start tuning job.
         /// </para>

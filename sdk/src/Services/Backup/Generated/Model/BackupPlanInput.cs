@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Contains an optional backup plan display name and an array of <code>BackupRule</code>
-    /// objects, each of which specifies a backup rule. Each rule in a backup plan is a separate
-    /// scheduled task.
+    /// Contains an optional backup plan display name and an array of <c>BackupRule</c> objects,
+    /// each of which specifies a backup rule. Each rule in a backup plan is a separate scheduled
+    /// task.
     /// </summary>
     public partial class BackupPlanInput
     {
@@ -42,8 +42,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property AdvancedBackupSettings. 
         /// <para>
-        /// Specifies a list of <code>BackupOptions</code> for each resource type. These settings
-        /// are only available for Windows Volume Shadow Copy Service (VSS) backup jobs.
+        /// Specifies a list of <c>BackupOptions</c> for each resource type. These settings are
+        /// only available for Windows Volume Shadow Copy Service (VSS) backup jobs.
         /// </para>
         /// </summary>
         public List<AdvancedBackupSetting> AdvancedBackupSettings
@@ -80,8 +80,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Rules. 
         /// <para>
-        /// An array of <code>BackupRule</code> objects, each of which specifies a scheduled task
-        /// that is used to back up a selection of resources.
+        /// An array of <c>BackupRule</c> objects, each of which specifies a scheduled task that
+        /// is used to back up a selection of resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

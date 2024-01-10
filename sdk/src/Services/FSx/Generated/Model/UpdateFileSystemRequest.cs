@@ -39,39 +39,39 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AuditLogConfiguration</code> 
+    ///  <c>AuditLogConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AutomaticBackupRetentionDays</code> 
+    ///  <c>AutomaticBackupRetentionDays</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DailyAutomaticBackupStartTime</code> 
+    ///  <c>DailyAutomaticBackupStartTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SelfManagedActiveDirectoryConfiguration</code> 
+    ///  <c>SelfManagedActiveDirectoryConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StorageCapacity</code> 
+    ///  <c>StorageCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StorageType</code> 
+    ///  <c>StorageType</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ThroughputCapacity</code> 
+    ///  <c>ThroughputCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DiskIopsConfiguration</code> 
+    ///  <c>DiskIopsConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WeeklyMaintenanceStartTime</code> 
+    ///  <c>WeeklyMaintenanceStartTime</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -79,39 +79,39 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AutoImportPolicy</code> 
+    ///  <c>AutoImportPolicy</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AutomaticBackupRetentionDays</code> 
+    ///  <c>AutomaticBackupRetentionDays</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DailyAutomaticBackupStartTime</code> 
+    ///  <c>DailyAutomaticBackupStartTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DataCompressionType</code> 
+    ///  <c>DataCompressionType</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LogConfiguration</code> 
+    ///  <c>LogConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LustreRootSquashConfiguration</code> 
+    ///  <c>LustreRootSquashConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PerUnitStorageThroughput</code> 
+    ///  <c>PerUnitStorageThroughput</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StorageCapacity</code> 
+    ///  <c>StorageCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WeeklyMaintenanceStartTime</code> 
+    ///  <c>WeeklyMaintenanceStartTime</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -119,47 +119,47 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AddRouteTableIds</code> 
+    ///  <c>AddRouteTableIds</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AutomaticBackupRetentionDays</code> 
+    ///  <c>AutomaticBackupRetentionDays</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DailyAutomaticBackupStartTime</code> 
+    ///  <c>DailyAutomaticBackupStartTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DiskIopsConfiguration</code> 
+    ///  <c>DiskIopsConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>FsxAdminPassword</code> 
+    ///  <c>FsxAdminPassword</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>HAPairs</code> 
+    ///  <c>HAPairs</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RemoveRouteTableIds</code> 
+    ///  <c>RemoveRouteTableIds</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StorageCapacity</code> 
+    ///  <c>StorageCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ThroughputCapacity</code> 
+    ///  <c>ThroughputCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ThroughputCapacityPerHAPair</code> 
+    ///  <c>ThroughputCapacityPerHAPair</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WeeklyMaintenanceStartTime</code> 
+    ///  <c>WeeklyMaintenanceStartTime</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -167,43 +167,43 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AddRouteTableIds</code> 
+    ///  <c>AddRouteTableIds</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AutomaticBackupRetentionDays</code> 
+    ///  <c>AutomaticBackupRetentionDays</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CopyTagsToBackups</code> 
+    ///  <c>CopyTagsToBackups</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CopyTagsToVolumes</code> 
+    ///  <c>CopyTagsToVolumes</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DailyAutomaticBackupStartTime</code> 
+    ///  <c>DailyAutomaticBackupStartTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DiskIopsConfiguration</code> 
+    ///  <c>DiskIopsConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RemoveRouteTableIds</code> 
+    ///  <c>RemoveRouteTableIds</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>StorageCapacity</code> 
+    ///  <c>StorageCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ThroughputCapacity</code> 
+    ///  <c>ThroughputCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WeeklyMaintenanceStartTime</code> 
+    ///  <c>WeeklyMaintenanceStartTime</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -325,20 +325,19 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>SCRATCH_2</code>, <code>PERSISTENT_1</code>, and <code>PERSISTENT_2 SSD</code>
-        /// deployment types, valid values are in multiples of 2400 GiB. The value must be greater
-        /// than the current storage capacity.
+        /// For <c>SCRATCH_2</c>, <c>PERSISTENT_1</c>, and <c>PERSISTENT_2 SSD</c> deployment
+        /// types, valid values are in multiples of 2400 GiB. The value must be greater than the
+        /// current storage capacity.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>PERSISTENT HDD</code> file systems, valid values are multiples of 6000 GiB
-        /// for 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps
-        /// throughput per TiB file systems. The values must be greater than the current storage
-        /// capacity.
+        /// For <c>PERSISTENT HDD</c> file systems, valid values are multiples of 6000 GiB for
+        /// 12-MBps throughput per TiB file systems and multiples of 1800 GiB for 40-MBps throughput
+        /// per TiB file systems. The values must be greater than the current storage capacity.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>SCRATCH_1</code> file systems, you can't increase the storage capacity.
+        /// For <c>SCRATCH_1</c> file systems, you can't increase the storage capacity.
         /// </para>
         ///  </li> </ul> 
         /// <para>

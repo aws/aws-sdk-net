@@ -398,16 +398,15 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation aborts the vault locking process if the vault lock is not in the <code>Locked</code>
-        /// state. If the vault lock is in the <code>Locked</code> state when this operation is
-        /// requested, the operation returns an <code>AccessDeniedException</code> error. Aborting
-        /// the vault locking process removes the vault lock policy from the specified vault.
-        /// 
+        /// This operation aborts the vault locking process if the vault lock is not in the <c>Locked</c>
+        /// state. If the vault lock is in the <c>Locked</c> state when this operation is requested,
+        /// the operation returns an <c>AccessDeniedException</c> error. Aborting the vault locking
+        /// process removes the vault lock policy from the specified vault. 
         /// 
         ///  
         /// <para>
-        /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
-        /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+        /// A vault lock is put into the <c>InProgress</c> state by calling <a>InitiateVaultLock</a>.
+        /// A vault lock is put into the <c>Locked</c> state by calling <a>CompleteVaultLock</a>.
         /// You can get the state of a vault lock by calling <a>GetVaultLock</a>. For more information
         /// about the vault locking process, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
         /// Glacier Vault Lock</a>. For more information about vault lock policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
@@ -416,8 +415,8 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// This operation is idempotent. You can successfully invoke this operation multiple
-        /// times, if the vault lock is in the <code>InProgress</code> state or if there is no
-        /// policy associated with the vault.
+        /// times, if the vault lock is in the <c>InProgress</c> state or if there is no policy
+        /// associated with the vault.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AbortVaultLock service method.</param>
@@ -467,7 +466,7 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation adds the specified tags to a vault. Each tag is composed of a key and
         /// a value. Each vault can have up to 10 tags. If your request would cause the tag limit
-        /// for the vault to be exceeded, the operation throws the <code>LimitExceededException</code>
+        /// for the vault to be exceeded, the operation throws the <c>LimitExceededException</c>
         /// error. If a tag already exists on the vault under a specified key, the existing key
         /// value will be overwritten. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging
         /// Amazon S3 Glacier Resources</a>.
@@ -617,8 +616,8 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation completes the vault locking process by transitioning the vault lock
-        /// from the <code>InProgress</code> state to the <code>Locked</code> state, which causes
-        /// the vault lock policy to become unchangeable. A vault lock is put into the <code>InProgress</code>
+        /// from the <c>InProgress</c> state to the <c>Locked</c> state, which causes the vault
+        /// lock policy to become unchangeable. A vault lock is put into the <c>InProgress</c>
         /// state by calling <a>InitiateVaultLock</a>. You can obtain the state of the vault lock
         /// by calling <a>GetVaultLock</a>. For more information about the vault locking process,
         /// <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
@@ -627,15 +626,15 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// This operation is idempotent. This request is always successful if the vault lock
-        /// is in the <code>Locked</code> state and the provided lock ID matches the lock ID originally
+        /// is in the <c>Locked</c> state and the provided lock ID matches the lock ID originally
         /// used to lock the vault.
         /// </para>
         ///  
         /// <para>
-        /// If an invalid lock ID is passed in the request when the vault lock is in the <code>Locked</code>
-        /// state, the operation returns an <code>AccessDeniedException</code> error. If an invalid
-        /// lock ID is passed in the request when the vault lock is in the <code>InProgress</code>
-        /// state, the operation throws an <code>InvalidParameter</code> error.
+        /// If an invalid lock ID is passed in the request when the vault lock is in the <c>Locked</c>
+        /// state, the operation returns an <c>AccessDeniedException</c> error. If an invalid
+        /// lock ID is passed in the request when the vault lock is in the <c>InProgress</c> state,
+        /// the operation throws an <c>InvalidParameter</c> error.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CompleteVaultLock service method.</param>
@@ -1254,7 +1253,7 @@ namespace Amazon.Glacier
         /// <para>
         /// For archive retrieval jobs, you should also verify that the size is what you expected.
         /// If you download a portion of the output, the expected size is based on the range of
-        /// bytes you specified. For example, if you specify a range of <code>bytes=0-1048575</code>,
+        /// bytes you specified. For example, if you specify a range of <c>bytes=0-1048575</c>,
         /// you should verify your download size is 1,048,576 bytes. If you download an entire
         /// archive, the expected size is the size of the archive when you uploaded it to Amazon
         /// S3 Glacier The expected size is also returned in the headers from the <b>Get Job Output</b>
@@ -1334,11 +1333,11 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation retrieves the <code>access-policy</code> subresource set on the vault;
-        /// for more information on setting this subresource, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
+        /// This operation retrieves the <c>access-policy</c> subresource set on the vault; for
+        /// more information on setting this subresource, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set
         /// Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the
-        /// vault, the operation returns a <code>404 Not found</code> error. For more information
-        /// about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
+        /// vault, the operation returns a <c>404 Not found</c> error. For more information about
+        /// vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
         /// Glacier Access Control with Vault Access Policies</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVaultAccessPolicy service method.</param>
@@ -1386,8 +1385,8 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation retrieves the following attributes from the <code>lock-policy</code>
-        /// subresource set on the specified vault: 
+        /// This operation retrieves the following attributes from the <c>lock-policy</c> subresource
+        /// set on the specified vault: 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -1395,7 +1394,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The state of the vault lock, which is either <code>InProgess</code> or <code>Locked</code>.
+        /// The state of the vault lock, which is either <c>InProgess</c> or <c>Locked</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1403,20 +1402,20 @@ namespace Amazon.Glacier
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When the vault lock was initiated and put into the <code>InProgress</code> state.
+        /// When the vault lock was initiated and put into the <c>InProgress</c> state.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// A vault lock is put into the <code>InProgress</code> state by calling <a>InitiateVaultLock</a>.
-        /// A vault lock is put into the <code>Locked</code> state by calling <a>CompleteVaultLock</a>.
+        /// A vault lock is put into the <c>InProgress</c> state by calling <a>InitiateVaultLock</a>.
+        /// A vault lock is put into the <c>Locked</c> state by calling <a>CompleteVaultLock</a>.
         /// You can abort the vault locking process by calling <a>AbortVaultLock</a>. For more
         /// information about the vault locking process, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
         /// Glacier Vault Lock</a>. 
         /// </para>
         ///  
         /// <para>
-        /// If there is no vault lock policy set on the vault, the operation returns a <code>404
-        /// Not found</code> error. For more information about vault lock policies, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
+        /// If there is no vault lock policy set on the vault, the operation returns a <c>404
+        /// Not found</c> error. For more information about vault lock policies, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock-policy.html">Amazon
         /// Glacier Access Control with Vault Lock Policies</a>. 
         /// </para>
         /// </summary>
@@ -1465,14 +1464,14 @@ namespace Amazon.Glacier
 
 
         /// <summary>
-        /// This operation retrieves the <code>notification-configuration</code> subresource of
-        /// the specified vault.
+        /// This operation retrieves the <c>notification-configuration</c> subresource of the
+        /// specified vault.
         /// 
         ///  
         /// <para>
         /// For information about setting a notification configuration on a vault, see <a>SetVaultNotifications</a>.
-        /// If a notification configuration for a vault is not set, the operation returns a <code>404
-        /// Not Found</code> error. For more information about vault notifications, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
+        /// If a notification configuration for a vault is not set, the operation returns a <c>404
+        /// Not Found</c> error. For more information about vault notifications, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/configuring-notifications.html">Configuring
         /// Vault Notifications in Amazon S3 Glacier</a>. 
         /// </para>
         ///  
@@ -1693,7 +1692,7 @@ namespace Amazon.Glacier
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Setting the lock state of vault lock to <code>InProgress</code>.
+        /// Setting the lock state of vault lock to <c>InProgress</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1708,16 +1707,15 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// You must complete the vault locking process within 24 hours after the vault lock enters
-        /// the <code>InProgress</code> state. After the 24 hour window ends, the lock ID expires,
-        /// the vault automatically exits the <code>InProgress</code> state, and the vault lock
-        /// policy is removed from the vault. You call <a>CompleteVaultLock</a> to complete the
-        /// vault locking process by setting the state of the vault lock to <code>Locked</code>.
-        /// 
+        /// the <c>InProgress</c> state. After the 24 hour window ends, the lock ID expires, the
+        /// vault automatically exits the <c>InProgress</c> state, and the vault lock policy is
+        /// removed from the vault. You call <a>CompleteVaultLock</a> to complete the vault locking
+        /// process by setting the state of the vault lock to <c>Locked</c>. 
         /// </para>
         ///  
         /// <para>
-        /// After a vault lock is in the <code>Locked</code> state, you cannot initiate a new
-        /// vault lock for the vault.
+        /// After a vault lock is in the <c>Locked</c> state, you cannot initiate a new vault
+        /// lock for the vault.
         /// </para>
         ///  
         /// <para>
@@ -1728,10 +1726,10 @@ namespace Amazon.Glacier
         /// </para>
         ///  
         /// <para>
-        /// If this operation is called when the vault lock is in the <code>InProgress</code>
-        /// state, the operation returns an <code>AccessDeniedException</code> error. When the
-        /// vault lock is in the <code>InProgress</code> state you must call <a>AbortVaultLock</a>
-        /// before you can initiate a new vault lock policy. 
+        /// If this operation is called when the vault lock is in the <c>InProgress</c> state,
+        /// the operation returns an <c>AccessDeniedException</c> error. When the vault lock is
+        /// in the <c>InProgress</c> state you must call <a>AbortVaultLock</a> before you can
+        /// initiate a new vault lock policy. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the InitiateVaultLock service method.</param>
@@ -1797,28 +1795,28 @@ namespace Amazon.Glacier
         ///  </note> 
         /// <para>
         /// The List Jobs operation supports pagination. You should always check the response
-        /// <code>Marker</code> field. If there are no more jobs to list, the <code>Marker</code>
-        /// field is set to <code>null</code>. If there are more jobs to list, the <code>Marker</code>
-        /// field is set to a non-null value, which you can use to continue the pagination of
-        /// the list. To return a list of jobs that begins at a specific job, set the marker request
-        /// parameter to the <code>Marker</code> value for that job that you obtained from a previous
-        /// List Jobs request.
+        /// <c>Marker</c> field. If there are no more jobs to list, the <c>Marker</c> field is
+        /// set to <c>null</c>. If there are more jobs to list, the <c>Marker</c> field is set
+        /// to a non-null value, which you can use to continue the pagination of the list. To
+        /// return a list of jobs that begins at a specific job, set the marker request parameter
+        /// to the <c>Marker</c> value for that job that you obtained from a previous List Jobs
+        /// request.
         /// </para>
         ///  
         /// <para>
         /// You can set a maximum limit for the number of jobs returned in the response by specifying
-        /// the <code>limit</code> parameter in the request. The default limit is 50. The number
-        /// of jobs returned might be fewer than the limit, but the number of returned jobs never
+        /// the <c>limit</c> parameter in the request. The default limit is 50. The number of
+        /// jobs returned might be fewer than the limit, but the number of returned jobs never
         /// exceeds the limit.
         /// </para>
         ///  
         /// <para>
-        /// Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code>
-        /// parameter or <code>completed</code> parameter, or both. Using the <code>statuscode</code>
-        /// parameter, you can specify to return only jobs that match either the <code>InProgress</code>,
-        /// <code>Succeeded</code>, or <code>Failed</code> status. Using the <code>completed</code>
-        /// parameter, you can specify to return only jobs that were completed (<code>true</code>)
-        /// or jobs that were not completed (<code>false</code>).
+        /// Additionally, you can filter the jobs list returned by specifying the optional <c>statuscode</c>
+        /// parameter or <c>completed</c> parameter, or both. Using the <c>statuscode</c> parameter,
+        /// you can specify to return only jobs that match either the <c>InProgress</c>, <c>Succeeded</c>,
+        /// or <c>Failed</c> status. Using the <c>completed</c> parameter, you can specify to
+        /// return only jobs that were completed (<c>true</c>) or jobs that were not completed
+        /// (<c>false</c>).
         /// </para>
         ///  
         /// <para>
@@ -1881,12 +1879,11 @@ namespace Amazon.Glacier
         /// <para>
         /// The List Multipart Uploads operation supports pagination. By default, this operation
         /// returns up to 50 multipart uploads in the response. You should always check the response
-        /// for a <code>marker</code> at which to continue the list; if there are no more items
-        /// the <code>marker</code> is <code>null</code>. To return a list of multipart uploads
-        /// that begins at a specific upload, set the <code>marker</code> request parameter to
-        /// the value you obtained from a previous List Multipart Upload request. You can also
-        /// limit the number of uploads returned in the response by specifying the <code>limit</code>
-        /// parameter in the request.
+        /// for a <c>marker</c> at which to continue the list; if there are no more items the
+        /// <c>marker</c> is <c>null</c>. To return a list of multipart uploads that begins at
+        /// a specific upload, set the <c>marker</c> request parameter to the value you obtained
+        /// from a previous List Multipart Upload request. You can also limit the number of uploads
+        /// returned in the response by specifying the <c>limit</c> parameter in the request.
         /// </para>
         ///  
         /// <para>
@@ -1964,12 +1961,12 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// The List Parts operation supports pagination. By default, this operation returns up
-        /// to 50 uploaded parts in the response. You should always check the response for a <code>marker</code>
-        /// at which to continue the list; if there are no more items the <code>marker</code>
-        /// is <code>null</code>. To return a list of parts that begins at a specific part, set
-        /// the <code>marker</code> request parameter to the value you obtained from a previous
-        /// List Parts request. You can also limit the number of parts returned in the response
-        /// by specifying the <code>limit</code> parameter in the request. 
+        /// to 50 uploaded parts in the response. You should always check the response for a <c>marker</c>
+        /// at which to continue the list; if there are no more items the <c>marker</c> is <c>null</c>.
+        /// To return a list of parts that begins at a specific part, set the <c>marker</c> request
+        /// parameter to the value you obtained from a previous List Parts request. You can also
+        /// limit the number of parts returned in the response by specifying the <c>limit</c>
+        /// parameter in the request. 
         /// </para>
         ///  
         /// <para>
@@ -2132,12 +2129,12 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// By default, this operation returns up to 10 items. If there are more vaults to list,
-        /// the response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
-        /// at which to continue the list with a new List Vaults request; otherwise, the <code>marker</code>
-        /// field is <code>null</code>. To return a list of vaults that begins at a specific vault,
-        /// set the <code>marker</code> request parameter to the vault ARN you obtained from a
-        /// previous List Vaults request. You can also limit the number of vaults returned in
-        /// the response by specifying the <code>limit</code> parameter in the request. 
+        /// the response <c>marker</c> field contains the vault Amazon Resource Name (ARN) at
+        /// which to continue the list with a new List Vaults request; otherwise, the <c>marker</c>
+        /// field is <c>null</c>. To return a list of vaults that begins at a specific vault,
+        /// set the <c>marker</c> request parameter to the vault ARN you obtained from a previous
+        /// List Vaults request. You can also limit the number of vaults returned in the response
+        /// by specifying the <c>limit</c> parameter in the request. 
         /// </para>
         ///  
         /// <para>
@@ -2187,12 +2184,12 @@ namespace Amazon.Glacier
         ///  
         /// <para>
         /// By default, this operation returns up to 10 items. If there are more vaults to list,
-        /// the response <code>marker</code> field contains the vault Amazon Resource Name (ARN)
-        /// at which to continue the list with a new List Vaults request; otherwise, the <code>marker</code>
-        /// field is <code>null</code>. To return a list of vaults that begins at a specific vault,
-        /// set the <code>marker</code> request parameter to the vault ARN you obtained from a
-        /// previous List Vaults request. You can also limit the number of vaults returned in
-        /// the response by specifying the <code>limit</code> parameter in the request. 
+        /// the response <c>marker</c> field contains the vault Amazon Resource Name (ARN) at
+        /// which to continue the list with a new List Vaults request; otherwise, the <c>marker</c>
+        /// field is <c>null</c>. To return a list of vaults that begins at a specific vault,
+        /// set the <c>marker</c> request parameter to the vault ARN you obtained from a previous
+        /// List Vaults request. You can also limit the number of vaults returned in the response
+        /// by specifying the <c>limit</c> parameter in the request. 
         /// </para>
         ///  
         /// <para>
@@ -2404,7 +2401,7 @@ namespace Amazon.Glacier
 
         /// <summary>
         /// This operation configures an access policy for a vault and will overwrite an existing
-        /// policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code>
+        /// policy. To configure a vault access policy, send a PUT request to the <c>access-policy</c>
         /// subresource of the vault. An access policy is specific to a vault and is also called
         /// a vault subresource. You can set one access policy per vault and the policy can be
         /// up to 20 KB in size. For more information about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon
@@ -2460,7 +2457,7 @@ namespace Amazon.Glacier
         /// 
         ///  
         /// <para>
-        /// To configure vault notifications, send a PUT request to the <code>notification-configuration</code>
+        /// To configure vault notifications, send a PUT request to the <c>notification-configuration</c>
         /// subresource of the vault. The request should include a JSON document that provides
         /// an Amazon SNS topic and specific events for which you want Amazon S3 Glacier to send
         /// notifications to the topic.
@@ -2548,7 +2545,7 @@ namespace Amazon.Glacier
         /// <summary>
         /// This operation adds an archive to a vault. This is a synchronous operation, and for
         /// a successful upload, your data is durably persisted. Amazon S3 Glacier returns the
-        /// archive ID in the <code>x-amz-archive-id</code> header of the response. 
+        /// archive ID in the <c>x-amz-archive-id</c> header of the response. 
         /// 
         ///  
         /// <para>

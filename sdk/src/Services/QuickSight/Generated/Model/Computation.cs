@@ -143,7 +143,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PeriodToDate. 
         /// <para>
-        /// The period to <code>DataSetIdentifier</code> computation configuration.
+        /// The period to <c>DataSetIdentifier</c> computation configuration.
         /// </para>
         /// </summary>
         public PeriodToDateComputation PeriodToDate

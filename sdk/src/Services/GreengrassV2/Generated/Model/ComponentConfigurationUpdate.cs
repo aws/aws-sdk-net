@@ -68,9 +68,9 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// The list of configuration nodes to reset to default values on target devices. Use
         /// JSON pointers to specify each node to reset. JSON pointers start with a forward slash
-        /// (<code>/</code>) and use forward slashes to separate the key for each level in the
-        /// object. For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON
-        /// pointer specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset
+        /// (<c>/</c>) and use forward slashes to separate the key for each level in the object.
+        /// For more information, see the <a href="https://tools.ietf.org/html/rfc6901">JSON pointer
+        /// specification</a> and <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/update-component-configurations.html#reset-configuration-update">Reset
         /// configuration updates</a> in the <i>IoT Greengrass V2 Developer Guide</i>.
         /// </para>
         /// </summary>

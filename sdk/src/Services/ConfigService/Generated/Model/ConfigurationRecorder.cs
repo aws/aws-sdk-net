@@ -157,7 +157,7 @@ namespace Amazon.ConfigService.Model
         ///  <note> 
         /// <para>
         /// While the API model does not require this field, the server will reject a request
-        /// without a defined <code>roleARN</code> for the configuration recorder.
+        /// without a defined <c>roleARN</c> for the configuration recorder.
         /// </para>
         ///  </note> <note> 
         /// <para>

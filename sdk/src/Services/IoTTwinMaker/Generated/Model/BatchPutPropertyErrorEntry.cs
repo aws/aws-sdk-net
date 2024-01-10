@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
-    /// An object that contains information about errors returned by the <code>BatchPutProperty</code>
+    /// An object that contains information about errors returned by the <c>BatchPutProperty</c>
     /// action.
     /// </summary>
     public partial class BatchPutPropertyErrorEntry
@@ -39,7 +39,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A list of objects that contain information about errors returned by the <code>BatchPutProperty</code>
+        /// A list of objects that contain information about errors returned by the <c>BatchPutProperty</c>
         /// action.
         /// </para>
         /// </summary>

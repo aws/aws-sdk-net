@@ -63,23 +63,23 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PARAMETER_STORE</code>: An environment variable stored in Systems Manager Parameter
+        ///  <c>PARAMETER_STORE</c>: An environment variable stored in Systems Manager Parameter
         /// Store. For environment variables of this type, specify the name of the parameter as
-        /// the <code>value</code> of the EnvironmentVariable. The parameter value will be substituted
+        /// the <c>value</c> of the EnvironmentVariable. The parameter value will be substituted
         /// for the name at runtime. You can also define Parameter Store environment variables
         /// in the buildspec. To learn how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.parameter-store">env/parameter-store</a>
         /// in the <i>CodeBuild User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PLAINTEXT</code>: An environment variable in plain text format. This is the
-        /// default value.
+        ///  <c>PLAINTEXT</c>: An environment variable in plain text format. This is the default
+        /// value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SECRETS_MANAGER</code>: An environment variable stored in Secrets Manager.
-        /// For environment variables of this type, specify the name of the secret as the <code>value</code>
-        /// of the EnvironmentVariable. The secret value will be substituted for the name at runtime.
+        ///  <c>SECRETS_MANAGER</c>: An environment variable stored in Secrets Manager. For environment
+        /// variables of this type, specify the name of the secret as the <c>value</c> of the
+        /// EnvironmentVariable. The secret value will be substituted for the name at runtime.
         /// You can also define Secrets Manager environment variables in the buildspec. To learn
         /// how to do so, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html#build-spec.env.secrets-manager">env/secrets-manager</a>
         /// in the <i>CodeBuild User Guide</i>.
@@ -105,11 +105,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// We strongly discourage the use of <code>PLAINTEXT</code> environment variables to
-        /// store sensitive values, especially Amazon Web Services secret key IDs. <code>PLAINTEXT</code>
+        /// We strongly discourage the use of <c>PLAINTEXT</c> environment variables to store
+        /// sensitive values, especially Amazon Web Services secret key IDs. <c>PLAINTEXT</c>
         /// environment variables can be displayed in plain text using the CodeBuild console and
         /// the CLI. For sensitive values, we recommend you use an environment variable of type
-        /// <code>PARAMETER_STORE</code> or <code>SECRETS_MANAGER</code>. 
+        /// <c>PARAMETER_STORE</c> or <c>SECRETS_MANAGER</c>. 
         /// </para>
         ///  </important>
         /// </summary>

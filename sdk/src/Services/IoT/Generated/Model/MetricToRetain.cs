@@ -40,8 +40,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ExportMetric. 
         /// <para>
-        /// The value indicates exporting metrics related to the <code>MetricToRetain </code>
-        /// when it's true.
+        /// The value indicates exporting metrics related to the <c>MetricToRetain </c> when it's
+        /// true.
         /// </para>
         /// </summary>
         public bool ExportMetric

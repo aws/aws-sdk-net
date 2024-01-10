@@ -42,8 +42,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Optional filters used to narrow down the scope of the returned maintenance windows.
-        /// Supported filter keys are <code>Name</code> and <code>Enabled</code>. For example,
-        /// <code>Name=MyMaintenanceWindow</code> and <code>Enabled=True</code>.
+        /// Supported filter keys are <c>Name</c> and <c>Enabled</c>. For example, <c>Name=MyMaintenanceWindow</c>
+        /// and <c>Enabled=True</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

@@ -31,7 +31,7 @@ namespace Amazon.Snowball.Model
     /// <summary>
     /// Container for the parameters to the GetSoftwareUpdates operation.
     /// Returns an Amazon S3 presigned URL for an update file associated with a specified
-    /// <code>JobId</code>.
+    /// <c>JobId</c>.
     /// </summary>
     public partial class GetSoftwareUpdatesRequest : AmazonSnowballRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The ID for a job that you want to get the software update file for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The ID for a job that you want to get the software update file for, for example <c>JID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=39, Max=39)]

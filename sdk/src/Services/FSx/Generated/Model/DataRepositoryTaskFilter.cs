@@ -32,8 +32,7 @@ namespace Amazon.FSx.Model
     /// (Optional) An array of filter objects you can use to filter the response of data repository
     /// tasks you will see in the the response. You can filter the tasks returned in the response
     /// by one or more file system IDs, task lifecycles, and by task type. A filter object
-    /// consists of a filter <code>Name</code>, and one or more <code>Values</code> for the
-    /// filter.
+    /// consists of a filter <c>Name</c>, and one or more <c>Values</c> for the filter.
     /// </summary>
     public partial class DataRepositoryTaskFilter
     {
@@ -47,13 +46,12 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code>file-system-id</code> to retrieve data repository tasks for specific file
-        /// systems.
+        /// Use <c>file-system-id</c> to retrieve data repository tasks for specific file systems.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>task-lifecycle</code> to retrieve data repository tasks with one or more
-        /// specific lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.
+        /// Use <c>task-lifecycle</c> to retrieve data repository tasks with one or more specific
+        /// lifecycle states, as follows: CANCELED, EXECUTING, FAILED, PENDING, and SUCCEEDED.
         /// </para>
         ///  </li> </ul>
         /// </summary>

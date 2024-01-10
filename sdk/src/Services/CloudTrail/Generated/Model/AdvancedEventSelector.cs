@@ -37,27 +37,27 @@ namespace Amazon.CloudTrail.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>readOnly</code> 
+    ///  <c>readOnly</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>eventSource</code> 
+    ///  <c>eventSource</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>eventName</code> 
+    ///  <c>eventName</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>eventCategory</code> 
+    ///  <c>eventCategory</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>resources.type</code> 
+    ///  <c>resources.type</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>resources.ARN</code> 
+    ///  <c>resources.ARN</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>

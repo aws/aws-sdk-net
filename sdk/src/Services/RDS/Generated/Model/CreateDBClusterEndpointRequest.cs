@@ -90,7 +90,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of the endpoint, one of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
+        /// The type of the endpoint, one of: <c>READER</c>, <c>WRITER</c>, <c>ANY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -43,67 +43,66 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name prefix.
-        /// SageMaker uses all objects that match the specified key name prefix for model training.
+        /// If you choose <c>S3Prefix</c>, <c>S3Uri</c> identifies a key name prefix. SageMaker
+        /// uses all objects that match the specified key name prefix for model training.
         /// </para>
         ///  
         /// <para>
-        /// The <code>S3Prefix</code> should have the following format:
+        /// The <c>S3Prefix</c> should have the following format:
         /// </para>
         ///  
         /// <para>
-        ///  <code>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</code> 
+        ///  <c>s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER-OR-FILE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies an object that
-        /// is a manifest file containing a list of object keys that you want SageMaker to use
-        /// for model training.
+        /// If you choose <c>ManifestFile</c>, <c>S3Uri</c> identifies an object that is a manifest
+        /// file containing a list of object keys that you want SageMaker to use for model training.
         /// </para>
         ///  
         /// <para>
-        /// A <code>ManifestFile</code> should have the format shown below:
+        /// A <c>ManifestFile</c> should have the format shown below:
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"},
-        /// </code> 
+        ///  <c>[ {"prefix": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/DOC-EXAMPLE-PREFIX/"},
+        /// </c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</code> 
+        ///  <c>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-1",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</code> 
+        ///  <c>"DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-2",</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</code> 
+        ///  <c>... "DOC-EXAMPLE-RELATIVE-PATH/DOC-EXAMPLE-FOLDER/DATA-N" ]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you choose <code>AugmentedManifestFile</code>, <code>S3Uri</code> identifies an
-        /// object that is an augmented manifest file in JSON lines format. This file contains
-        /// the data you want to use for model training. <code>AugmentedManifestFile</code> is
-        /// available for V2 API jobs only (for example, for jobs created by calling <code>CreateAutoMLJobV2</code>).
+        /// If you choose <c>AugmentedManifestFile</c>, <c>S3Uri</c> identifies an object that
+        /// is an augmented manifest file in JSON lines format. This file contains the data you
+        /// want to use for model training. <c>AugmentedManifestFile</c> is available for V2 API
+        /// jobs only (for example, for jobs created by calling <c>CreateAutoMLJobV2</c>).
         /// </para>
         ///  
         /// <para>
-        /// Here is a minimal, single-record example of an <code>AugmentedManifestFile</code>:
+        /// Here is a minimal, single-record example of an <c>AugmentedManifestFile</c>:
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</code>
+        ///  <c>{"source-ref": "s3://DOC-EXAMPLE-BUCKET/DOC-EXAMPLE-FOLDER/cats/cat.jpg",</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"label-metadata": {"class-name": "cat"</code> }
+        ///  <c>"label-metadata": {"class-name": "cat"</c> }
         /// </para>
         ///  
         /// <para>
-        /// For more information on <code>AugmentedManifestFile</code>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide
+        /// For more information on <c>AugmentedManifestFile</c>, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/augmented-manifest.html">Provide
         /// Dataset Metadata to Training Jobs with an Augmented Manifest File</a>.
         /// </para>
         ///  </li> </ul>

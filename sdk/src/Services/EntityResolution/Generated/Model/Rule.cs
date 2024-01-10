@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// An object containing <code>RuleName</code>, and <code>MatchingKeys</code>.
+    /// An object containing <c>RuleName</c>, and <c>MatchingKeys</c>.
     /// </summary>
     public partial class Rule
     {
@@ -39,9 +39,9 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property MatchingKeys. 
         /// <para>
-        /// A list of <code>MatchingKeys</code>. The <code>MatchingKeys</code> must have been
-        /// defined in the <code>SchemaMapping</code>. Two records are considered to match according
-        /// to this rule if all of the <code>MatchingKeys</code> match.
+        /// A list of <c>MatchingKeys</c>. The <c>MatchingKeys</c> must have been defined in the
+        /// <c>SchemaMapping</c>. Two records are considered to match according to this rule if
+        /// all of the <c>MatchingKeys</c> match.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=15)]

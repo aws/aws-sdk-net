@@ -30,7 +30,7 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Specifies a transform where you enter a SQL query using Spark SQL syntax to transform
-    /// the data. The output is a single <code>DynamicFrame</code>.
+    /// the data. The output is a single <c>DynamicFrame</c>.
     /// </summary>
     public partial class SparkSQL
     {
@@ -103,12 +103,12 @@ namespace Amazon.Glue.Model
         /// <para>
         /// A list of aliases. An alias allows you to specify what name to use in the SQL for
         /// a given input. For example, you have a datasource named "MyDataSource". If you specify
-        /// <code>From</code> as MyDataSource, and <code>Alias</code> as SqlName, then in your
-        /// SQL you can do:
+        /// <c>From</c> as MyDataSource, and <c>Alias</c> as SqlName, then in your SQL you can
+        /// do:
         /// </para>
         ///  
         /// <para>
-        ///  <code>select * from SqlName</code> 
+        ///  <c>select * from SqlName</c> 
         /// </para>
         ///  
         /// <para>

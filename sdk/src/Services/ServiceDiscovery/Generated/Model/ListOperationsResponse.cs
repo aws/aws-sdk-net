@@ -39,16 +39,16 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response contains <code>NextToken</code>, submit another <code>ListOperations</code>
-        /// request to get the next group of results. Specify the value of <code>NextToken</code>
-        /// from the previous response in the next request.
+        /// If the response contains <c>NextToken</c>, submit another <c>ListOperations</c> request
+        /// to get the next group of results. Specify the value of <c>NextToken</c> from the previous
+        /// response in the next request.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Cloud Map gets <code>MaxResults</code> operations and then filters them based on the
-        /// specified criteria. It's possible that no operations in the first <code>MaxResults</code>
-        /// operations matched the specified criteria but that subsequent groups of <code>MaxResults</code>
-        /// operations do contain operations that match the criteria.
+        /// Cloud Map gets <c>MaxResults</c> operations and then filters them based on the specified
+        /// criteria. It's possible that no operations in the first <c>MaxResults</c> operations
+        /// matched the specified criteria but that subsequent groups of <c>MaxResults</c> operations
+        /// do contain operations that match the criteria.
         /// </para>
         ///  </note>
         /// </summary>

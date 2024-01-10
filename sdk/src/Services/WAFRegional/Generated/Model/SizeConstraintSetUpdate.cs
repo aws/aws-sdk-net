@@ -44,7 +44,7 @@ namespace Amazon.WAFRegional.Model
     /// <para>
     /// Specifies the part of a web request that you want to inspect the size of and indicates
     /// whether you want to add the specification to a <a>SizeConstraintSet</a> or delete
-    /// it from a <code>SizeConstraintSet</code>.
+    /// it from a <c>SizeConstraintSet</c>.
     /// </para>
     /// </summary>
     public partial class SizeConstraintSetUpdate
@@ -55,8 +55,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a <a>SizeConstraintSet</a>.
-        /// Use <code>DELETE</code> to remove a <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.
+        /// Specify <c>INSERT</c> to add a <a>SizeConstraintSetUpdate</a> to a <a>SizeConstraintSet</a>.
+        /// Use <c>DELETE</c> to remove a <c>SizeConstraintSetUpdate</c> from a <c>SizeConstraintSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,10 +76,9 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property SizeConstraint. 
         /// <para>
         /// Specifies a constraint on the size of a part of the web request. AWS WAF uses the
-        /// <code>Size</code>, <code>ComparisonOperator</code>, and <code>FieldToMatch</code>
-        /// to build an expression in the form of "<code>Size</code> <code>ComparisonOperator</code>
-        /// size in bytes of <code>FieldToMatch</code>". If that expression is true, the <code>SizeConstraint</code>
-        /// is considered to match.
+        /// <c>Size</c>, <c>ComparisonOperator</c>, and <c>FieldToMatch</c> to build an expression
+        /// in the form of "<c>Size</c> <c>ComparisonOperator</c> size in bytes of <c>FieldToMatch</c>".
+        /// If that expression is true, the <c>SizeConstraint</c> is considered to match.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

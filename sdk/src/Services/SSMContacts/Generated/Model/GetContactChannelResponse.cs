@@ -137,8 +137,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of contact channel. The type is <code>SMS</code>, <code>VOICE</code>, or
-        /// <code>EMAIL</code>.
+        /// The type of contact channel. The type is <c>SMS</c>, <c>VOICE</c>, or <c>EMAIL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

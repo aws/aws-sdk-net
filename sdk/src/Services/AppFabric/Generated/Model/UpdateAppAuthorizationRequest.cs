@@ -35,8 +35,8 @@ namespace Amazon.AppFabric.Model
     /// 
     ///  
     /// <para>
-    /// If the app authorization was in a <code>connected</code> state, updating the app authorization
-    /// will set it back to a <code>PendingConnect</code> state.
+    /// If the app authorization was in a <c>connected</c> state, updating the app authorization
+    /// will set it back to a <c>PendingConnect</c> state.
     /// </para>
     /// </summary>
     public partial class UpdateAppAuthorizationRequest : AmazonAppFabricRequest
@@ -96,7 +96,7 @@ namespace Amazon.AppFabric.Model
         /// <para>
         /// Specify credentials that match the authorization type of the app authorization to
         /// update. For example, if the authorization type of the app authorization is OAuth2
-        /// (<code>oauth2</code>), then you should provide only the OAuth2 credentials.
+        /// (<c>oauth2</c>), then you should provide only the OAuth2 credentials.
         /// </para>
         /// </summary>
         public Credential Credential

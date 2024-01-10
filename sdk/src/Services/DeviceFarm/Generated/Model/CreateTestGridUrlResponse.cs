@@ -58,7 +58,7 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property Url. 
         /// <para>
         /// A signed URL, expiring in <a>CreateTestGridUrlRequest$expiresInSeconds</a> seconds,
-        /// to be passed to a <code>RemoteWebDriver</code>. 
+        /// to be passed to a <c>RemoteWebDriver</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

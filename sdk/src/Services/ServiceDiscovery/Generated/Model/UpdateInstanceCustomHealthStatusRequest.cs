@@ -35,10 +35,10 @@ namespace Amazon.ServiceDiscovery.Model
     /// 
     ///  
     /// <para>
-    /// You can use <code>UpdateInstanceCustomHealthStatus</code> to change the status only
-    /// for custom health checks, which you define using <code>HealthCheckCustomConfig</code>
-    /// when you create a service. You can't use it to change the status for Route 53 health
-    /// checks, which you define using <code>HealthCheckConfig</code>.
+    /// You can use <c>UpdateInstanceCustomHealthStatus</c> to change the status only for
+    /// custom health checks, which you define using <c>HealthCheckCustomConfig</c> when you
+    /// create a service. You can't use it to change the status for Route 53 health checks,
+    /// which you define using <c>HealthCheckConfig</c>.
     /// </para>
     ///  
     /// <para>
@@ -93,7 +93,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The new status of the instance, <code>HEALTHY</code> or <code>UNHEALTHY</code>.
+        /// The new status of the instance, <c>HEALTHY</c> or <c>UNHEALTHY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

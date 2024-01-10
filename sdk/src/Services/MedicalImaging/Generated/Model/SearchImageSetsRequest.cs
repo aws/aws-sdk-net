@@ -34,14 +34,14 @@ namespace Amazon.MedicalImaging.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>SearchImageSets</code> accepts a single search query parameter and returns
-    /// a paginated response of all image sets that have the matching criteria. All range
-    /// queries must be input as <code>(lowerBound, upperBound)</code>.
+    ///  <c>SearchImageSets</c> accepts a single search query parameter and returns a paginated
+    /// response of all image sets that have the matching criteria. All range queries must
+    /// be input as <c>(lowerBound, upperBound)</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>SearchImageSets</code> uses the <code>updatedAt</code> field for sorting in
-    /// decreasing order from latest to oldest.
+    ///  <c>SearchImageSets</c> uses the <c>updatedAt</c> field for sorting in decreasing
+    /// order from latest to oldest.
     /// </para>
     ///  </note>
     /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property SearchCriteria. 
         /// <para>
-        /// The search criteria that filters by applying a maximum of 1 item to <code>SearchByAttribute</code>.
+        /// The search criteria that filters by applying a maximum of 1 item to <c>SearchByAttribute</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

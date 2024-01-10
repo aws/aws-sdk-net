@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// You must have the <code>s3:ListTagsForResource</code> permission to use this operation.
+    /// You must have the <c>s3:ListTagsForResource</c> permission to use this operation.
     /// 
     /// </para>
     ///  </dd> </dl> <note> 

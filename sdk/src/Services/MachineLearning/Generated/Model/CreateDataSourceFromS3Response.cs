@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateDataSourceFromS3</code> operation, and is
-    /// an acknowledgement that Amazon ML received the request.
+    /// Represents the output of a <c>CreateDataSourceFromS3</c> operation, and is an acknowledgement
+    /// that Amazon ML received the request.
     /// 
     ///  
     /// <para>
-    /// The <code>CreateDataSourceFromS3</code> operation is asynchronous. You can poll for
-    /// updates by using the <code>GetBatchPrediction</code> operation and checking the <code>Status</code>
-    /// parameter. 
+    /// The <c>CreateDataSourceFromS3</c> operation is asynchronous. You can poll for updates
+    /// by using the <c>GetBatchPrediction</c> operation and checking the <c>Status</c> parameter.
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateDataSourceFromS3Response : AmazonWebServiceResponse
@@ -46,9 +46,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>DataSource</code>. This value
-        /// should be identical to the value of the <code>DataSourceID</code> in the request.
-        /// 
+        /// A user-supplied ID that uniquely identifies the <c>DataSource</c>. This value should
+        /// be identical to the value of the <c>DataSourceID</c> in the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

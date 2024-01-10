@@ -185,7 +185,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+        /// If the <c>multipleValuesSetting</c> is not set, the default value is <c>false</c>.
         /// </para>
         /// </summary>
         public MultipleValuesSetting MultipleValuesSetting
@@ -203,7 +203,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ObfuscationSetting. 
         /// <para>
-        /// Whether slot values are shown in Amazon CloudWatch logs. If the value is <code>None</code>,
+        /// Whether slot values are shown in Amazon CloudWatch logs. If the value is <c>None</c>,
         /// the actual value of the slot is shown in logs.
         /// </para>
         /// </summary>

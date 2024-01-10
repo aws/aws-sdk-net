@@ -31,7 +31,7 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the ListUsers operation.
     /// Lists the users for a file transfer protocol-enabled server that you specify by passing
-    /// the <code>ServerId</code> parameter.
+    /// the <c>ServerId</c> parameter.
     /// </summary>
     public partial class ListUsersRequest : AmazonTransferRequest
     {
@@ -42,8 +42,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Specifies the number of users to return as a response to the <code>ListUsers</code>
-        /// request.
+        /// Specifies the number of users to return as a response to the <c>ListUsers</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -62,9 +61,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are additional results from the <code>ListUsers</code> call, a <code>NextToken</code>
-        /// parameter is returned in the output. You can then pass the <code>NextToken</code>
-        /// to a subsequent <code>ListUsers</code> command, to continue listing additional users.
+        /// If there are additional results from the <c>ListUsers</c> call, a <c>NextToken</c>
+        /// parameter is returned in the output. You can then pass the <c>NextToken</c> to a subsequent
+        /// <c>ListUsers</c> command, to continue listing additional users.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

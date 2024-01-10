@@ -48,7 +48,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:CreateGroup</code> 
+    ///  <c>resource-groups:CreateGroup</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>,
+        /// A resource group can contain either a <c>Configuration</c> or a <c>ResourceQuery</c>,
         /// but not both.
         /// </para>
         ///  </note>
@@ -115,9 +115,8 @@ namespace Amazon.ResourceGroups.Model
         /// The name of the group, which is the identifier of the group in other operations. You
         /// can't change the name of a resource group after you create it. A resource group name
         /// can consist of letters, numbers, hyphens, periods, and underscores. The name cannot
-        /// start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource group
-        /// name must be unique within each Amazon Web Services Region in your Amazon Web Services
-        /// account.
+        /// start with <c>AWS</c> or <c>aws</c>; these are reserved. A resource group name must
+        /// be unique within each Amazon Web Services Region in your Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300)]
@@ -142,7 +141,7 @@ namespace Amazon.ResourceGroups.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>,
+        /// A resource group can contain either a <c>ResourceQuery</c> or a <c>Configuration</c>,
         /// but not both.
         /// </para>
         ///  </note>

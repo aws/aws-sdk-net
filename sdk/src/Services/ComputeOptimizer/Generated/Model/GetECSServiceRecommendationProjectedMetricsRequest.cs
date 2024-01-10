@@ -89,8 +89,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
-        /// 
+        ///  <c>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

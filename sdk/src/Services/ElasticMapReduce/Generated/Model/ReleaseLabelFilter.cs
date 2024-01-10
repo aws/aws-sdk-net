@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// Optional release label application filter. For example, <code>spark@2.1.0</code>.
+        /// Optional release label application filter. For example, <c>spark@2.1.0</c>.
         /// </para>
         /// </summary>
         public string Application
@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// Optional release label version prefix filter. For example, <code>emr-5</code>.
+        /// Optional release label version prefix filter. For example, <c>emr-5</c>.
         /// </para>
         /// </summary>
         public string Prefix

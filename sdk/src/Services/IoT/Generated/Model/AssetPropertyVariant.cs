@@ -41,8 +41,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property BooleanValue. 
         /// <para>
-        /// Optional. A string that contains the boolean value (<code>true</code> or <code>false</code>)
-        /// of the value entry. Accepts substitution templates.
+        /// Optional. A string that contains the boolean value (<c>true</c> or <c>false</c>) of
+        /// the value entry. Accepts substitution templates.
         /// </para>
         /// </summary>
         public string BooleanValue

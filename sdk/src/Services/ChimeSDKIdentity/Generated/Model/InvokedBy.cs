@@ -43,22 +43,22 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL</code>: The bot processes all standard messages.
+        ///  <c>ALL</c>: The bot processes all standard messages.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTO</code>: The bot responds to ALL messages when the channel has one other
-        /// non-hidden member, and responds to MENTIONS when the channel has more than one other
-        /// non-hidden member.
+        ///  <c>AUTO</c>: The bot responds to ALL messages when the channel has one other non-hidden
+        /// member, and responds to MENTIONS when the channel has more than one other non-hidden
+        /// member.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MENTIONS</code>: The bot processes all standard messages that have a message
-        /// attribute with <code>CHIME.mentions</code> and a value of the bot ARN.
+        ///  <c>MENTIONS</c>: The bot processes all standard messages that have a message attribute
+        /// with <c>CHIME.mentions</c> and a value of the bot ARN.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code>: The bot processes no standard messages.
+        ///  <c>NONE</c>: The bot processes no standard messages.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -82,12 +82,12 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL</code>: The bot processes all <code>TargetedMessages</code> sent to it.
-        /// The bot then responds with a targeted message back to the sender. 
+        ///  <c>ALL</c>: The bot processes all <c>TargetedMessages</c> sent to it. The bot then
+        /// responds with a targeted message back to the sender. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code>: The bot processes no targeted messages.
+        ///  <c>NONE</c>: The bot processes no targeted messages.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,11 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Contains information about the certificate subject. The <code>Subject</code> field
-    /// in the certificate identifies the entity that owns or controls the public key in the
-    /// certificate. The entity can be a user, computer, device, or service. The <code>Subject
-    /// </code>must contain an X.500 distinguished name (DN). A DN is a sequence of relative
-    /// distinguished names (RDNs). The RDNs are separated by commas in the certificate.
+    /// Contains information about the certificate subject. The <c>Subject</c> field in the
+    /// certificate identifies the entity that owns or controls the public key in the certificate.
+    /// The entity can be a user, computer, device, or service. The <c>Subject </c>must contain
+    /// an X.500 distinguished name (DN). A DN is a sequence of relative distinguished names
+    /// (RDNs). The RDNs are separated by commas in the certificate.
     /// </summary>
     public partial class ASN1Subject
     {

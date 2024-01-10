@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provided if <code>ActionType</code> is <code>NETWORK_CONNECTION</code>. It provides
-    /// details about the attempted network connection that was detected.
+    /// Provided if <c>ActionType</c> is <c>NETWORK_CONNECTION</c>. It provides details about
+    /// the attempted network connection that was detected.
     /// </summary>
     public partial class NetworkConnectionAction
     {
@@ -62,7 +62,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ConnectionDirection. 
         /// <para>
-        /// The direction of the network connection request (<code>IN</code> or <code>OUT</code>).
+        /// The direction of the network connection request (<c>IN</c> or <c>OUT</c>).
         /// </para>
         /// </summary>
         public string ConnectionDirection

@@ -31,7 +31,7 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// A segment from a trace that has been ingested by the X-Ray service. The segment can
     /// be compiled from documents uploaded with <a href="https://docs.aws.amazon.com/xray/latest/api/API_PutTraceSegments.html">PutTraceSegments</a>,
-    /// or an <code>inferred</code> segment for a downstream service, generated from a subsegment
+    /// or an <c>inferred</c> segment for a downstream service, generated from a subsegment
     /// sent by the service that called it.
     /// 
     ///  

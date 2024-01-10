@@ -37,7 +37,7 @@ namespace Amazon.Personalize.Model
     ///  <note> 
     /// <para>
     /// Only one event tracker can be associated with a dataset group. You will get an error
-    /// if you call <code>CreateEventTracker</code> using the same dataset group as an existing
+    /// if you call <c>CreateEventTracker</c> using the same dataset group as an existing
     /// event tracker.
     /// </para>
     ///  </note> 

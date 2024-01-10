@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
-    /// The subtype containing details about the Codestar connection <code>Type</code>.
+    /// The subtype containing details about the Codestar connection <c>Type</c>.
     /// </summary>
     public partial class CodeStarParameters
     {

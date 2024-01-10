@@ -39,7 +39,7 @@ namespace Amazon.PaymentCryptography.Model
     /// <para>
     /// This is a paginated operation, which means that each response might contain only a
     /// subset of all the aliases. When the response contains only a subset of aliases, it
-    /// includes a <code>NextToken</code> value. Use this value in a subsequent <code>ListAliases</code>
+    /// includes a <c>NextToken</c> value. Use this value in a subsequent <c>ListAliases</c>
     /// request to get more aliases. When you receive a response with no NextToken (or an
     /// empty or null value), that means there are no more aliases to get.
     /// </para>
@@ -105,8 +105,8 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Use this parameter in a subsequent request after you receive a response with truncated
-        /// results. Set it to the value of <code>NextToken</code> from the truncated response
-        /// you just received.
+        /// results. Set it to the value of <c>NextToken</c> from the truncated response you just
+        /// received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]

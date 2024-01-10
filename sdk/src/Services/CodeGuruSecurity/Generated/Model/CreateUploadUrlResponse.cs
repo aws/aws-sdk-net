@@ -79,7 +79,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Gets and sets the property S3Url. 
         /// <para>
         /// A pre-signed S3 URL. You can upload the code file you want to scan and add the required
-        /// <code>requestHeaders</code> using any HTTP client.
+        /// <c>requestHeaders</c> using any HTTP client.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]

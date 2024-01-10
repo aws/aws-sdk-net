@@ -44,8 +44,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter and the <code>PreTokenGeneration</code> property of <code>LambdaConfig</code>
-        /// have the same value. For new instances of pre token generation triggers, set <code>LambdaArn</code>.
+        /// This parameter and the <c>PreTokenGeneration</c> property of <c>LambdaConfig</c> have
+        /// the same value. For new instances of pre token generation triggers, set <c>LambdaArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]

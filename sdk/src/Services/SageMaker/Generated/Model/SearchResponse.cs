@@ -39,9 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>Search</code> request was truncated, the response
-        /// includes a NextToken. To retrieve the next set of results, use the token in the next
-        /// request.
+        /// If the result of the previous <c>Search</c> request was truncated, the response includes
+        /// a NextToken. To retrieve the next set of results, use the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -60,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of <code>SearchRecord</code> objects.
+        /// A list of <c>SearchRecord</c> objects.
         /// </para>
         /// </summary>
         public List<SearchRecord> Results

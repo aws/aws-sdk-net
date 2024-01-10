@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
-    /// A <code>PaginationToken</code> is valid for a maximum of 15 minutes. Your request
-    /// was denied because the specified <code>PaginationToken</code> has expired.
+    /// A <c>PaginationToken</c> is valid for a maximum of 15 minutes. Your request was denied
+    /// because the specified <c>PaginationToken</c> has expired.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

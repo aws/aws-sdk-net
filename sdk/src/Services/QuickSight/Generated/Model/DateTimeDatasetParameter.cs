@@ -117,8 +117,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ValueType. 
         /// <para>
-        /// The value type of the dataset parameter. Valid values are <code>single value</code>
-        /// or <code>multi value</code>.
+        /// The value type of the dataset parameter. Valid values are <c>single value</c> or <c>multi
+        /// value</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

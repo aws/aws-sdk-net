@@ -106,11 +106,11 @@ namespace Amazon.SSOOIDC.Model
         /// </para>
         ///  
         /// <para>
-        /// * Access Token - <code>urn:ietf:params:oauth:token-type:access_token</code> 
+        /// * Access Token - <c>urn:ietf:params:oauth:token-type:access_token</c> 
         /// </para>
         ///  
         /// <para>
-        /// * Refresh Token - <code>urn:ietf:params:oauth:token-type:refresh_token</code> 
+        /// * Refresh Token - <c>urn:ietf:params:oauth:token-type:refresh_token</c> 
         /// </para>
         /// </summary>
         public string IssuedTokenType
@@ -175,7 +175,7 @@ namespace Amazon.SSOOIDC.Model
         /// Gets and sets the property TokenType. 
         /// <para>
         /// Used to notify the requester that the returned token is an access token. The supported
-        /// token type is <code>Bearer</code>.
+        /// token type is <c>Bearer</c>.
         /// </para>
         /// </summary>
         public string TokenType

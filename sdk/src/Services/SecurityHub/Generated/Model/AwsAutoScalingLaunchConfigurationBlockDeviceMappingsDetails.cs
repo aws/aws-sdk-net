@@ -41,8 +41,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DeviceName. 
         /// <para>
-        /// The device name that is exposed to the EC2 instance. For example, <code>/dev/sdh</code>
-        /// or <code>xvdh</code>.
+        /// The device name that is exposed to the EC2 instance. For example, <c>/dev/sdh</c>
+        /// or <c>xvdh</c>.
         /// </para>
         /// </summary>
         public string DeviceName
@@ -84,7 +84,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>NoDevice</code> is <code>true</code>, then you cannot specify <code>Ebs</code>.&gt;
+        /// If <c>NoDevice</c> is <c>true</c>, then you cannot specify <c>Ebs</c>.&gt;
         /// </para>
         /// </summary>
         public bool NoDevice
@@ -102,11 +102,11 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property VirtualName. 
         /// <para>
-        /// The name of the virtual device (for example, <code>ephemeral0</code>).
+        /// The name of the virtual device (for example, <c>ephemeral0</c>).
         /// </para>
         ///  
         /// <para>
-        /// You can provide either <code>VirtualName</code> or <code>Ebs</code>, but not both.
+        /// You can provide either <c>VirtualName</c> or <c>Ebs</c>, but not both.
         /// </para>
         /// </summary>
         public string VirtualName

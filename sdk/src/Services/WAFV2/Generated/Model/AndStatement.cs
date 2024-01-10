@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// A logical rule statement used to combine other rule statements with AND logic. You
-    /// provide more than one <a>Statement</a> within the <code>AndStatement</code>.
+    /// provide more than one <a>Statement</a> within the <c>AndStatement</c>.
     /// </summary>
     public partial class AndStatement
     {

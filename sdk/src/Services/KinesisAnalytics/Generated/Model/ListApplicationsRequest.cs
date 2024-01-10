@@ -41,9 +41,9 @@ namespace Amazon.KinesisAnalytics.Model
     /// <para>
     /// Returns a list of Amazon Kinesis Analytics applications in your account. For each
     /// application, the response includes the application name, Amazon Resource Name (ARN),
-    /// and status. If the response returns the <code>HasMoreApplications</code> value as
-    /// true, you can send another request by adding the <code>ExclusiveStartApplicationName</code>
-    /// in the request body, and set the value of this to the last application name from the
+    /// and status. If the response returns the <c>HasMoreApplications</c> value as true,
+    /// you can send another request by adding the <c>ExclusiveStartApplicationName</c> in
+    /// the request body, and set the value of this to the last application name from the
     /// previous response. 
     /// </para>
     ///  
@@ -52,7 +52,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:ListApplications</code>
+    /// This operation requires permissions to perform the <c>kinesisanalytics:ListApplications</c>
     /// action.
     /// </para>
     /// </summary>

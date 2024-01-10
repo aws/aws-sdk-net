@@ -43,7 +43,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target
-        /// resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// resource; for example: <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -61,9 +61,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ProtectedResourceArns. 
         /// <para>
-        /// You can include a list of specific ARNs, such as <code>ProtectedResourceArns: ["arn:aws:...",
-        /// "arn:aws:..."]</code> or you can include a wildcard: <code>ProtectedResourceArns:
-        /// ["*"]</code>, but not both.
+        /// You can include a list of specific ARNs, such as <c>ProtectedResourceArns: ["arn:aws:...",
+        /// "arn:aws:..."]</c> or you can include a wildcard: <c>ProtectedResourceArns: ["*"]</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         public List<string> ProtectedResourceArns
@@ -86,8 +86,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
-        /// "true" },</code>. Condition operators are case sensitive.
+        /// For example, <c>"StringEquals": { "Key": "aws:ResourceTag/CreatedByCryo", "Value":
+        /// "true" },</c>. Condition operators are case sensitive.
         /// </para>
         /// </summary>
         public ProtectedResourceConditions ProtectedResourceConditions
@@ -105,8 +105,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreMetadataOverrides. 
         /// <para>
-        /// You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code>
-        /// in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.
+        /// You can override certain restore metadata keys by including the parameter <c>RestoreMetadataOverrides</c>
+        /// in the body of <c>RestoreTestingSelection</c>. Key values are not case sensitive.
         /// </para>
         ///  
         /// <para>

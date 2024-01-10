@@ -46,15 +46,15 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Esri</code> 
+        ///  <c>Esri</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Grab</code> 
+        ///  <c>Grab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Here</code> 
+        ///  <c>Here</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -117,8 +117,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property RouteCount. 
         /// <para>
-        /// The count of cells in the route matrix. Equal to the number of <code>DeparturePositions</code>
-        /// multiplied by the number of <code>DestinationPositions</code>.
+        /// The count of cells in the route matrix. Equal to the number of <c>DeparturePositions</c>
+        /// multiplied by the number of <c>DestinationPositions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=160000)]

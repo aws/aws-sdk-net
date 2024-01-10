@@ -42,9 +42,9 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In an <a>UpdateRegexPatternSet</a> request, <code>RegexPatternSetUpdate</code> specifies
-    /// whether to insert or delete a <code>RegexPatternString</code> and includes the settings
-    /// for the <code>RegexPatternString</code>.
+    /// In an <a>UpdateRegexPatternSet</a> request, <c>RegexPatternSetUpdate</c> specifies
+    /// whether to insert or delete a <c>RegexPatternString</c> and includes the settings
+    /// for the <c>RegexPatternString</c>.
     /// </para>
     /// </summary>
     public partial class RegexPatternSetUpdate
@@ -55,7 +55,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specifies whether to insert or delete a <code>RegexPatternString</code>.
+        /// Specifies whether to insert or delete a <c>RegexPatternString</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -75,7 +75,7 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property RegexPatternString. 
         /// <para>
         /// Specifies the regular expression (regex) pattern that you want AWS WAF to search for,
-        /// such as <code>B[a@]dB[o0]t</code>.
+        /// such as <c>B[a@]dB[o0]t</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

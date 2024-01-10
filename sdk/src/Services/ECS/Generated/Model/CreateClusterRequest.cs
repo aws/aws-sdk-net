@@ -30,9 +30,9 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateCluster operation.
-    /// Creates a new Amazon ECS cluster. By default, your account receives a <code>default</code>
+    /// Creates a new Amazon ECS cluster. By default, your account receives a <c>default</c>
     /// cluster when you launch your first container instance. However, you can create your
-    /// own cluster with a unique name with the <code>CreateCluster</code> action.
+    /// own cluster with a unique name with the <c>CreateCluster</c> action.
     /// 
     ///  <note> 
     /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// To use a Fargate capacity provider, specify either the <code>FARGATE</code> or <code>FARGATE_SPOT</code>
+        /// To use a Fargate capacity provider, specify either the <c>FARGATE</c> or <c>FARGATE_SPOT</c>
         /// capacity providers. The Fargate capacity providers are available to all accounts and
         /// only need to be associated with a cluster to be used.
         /// </para>
@@ -102,7 +102,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ClusterName. 
         /// <para>
         /// The name of your cluster. If you don't specify a name for your cluster, you create
-        /// a cluster that's named <code>default</code>. Up to 255 letters (uppercase and lowercase),
+        /// a cluster that's named <c>default</c>. Up to 255 letters (uppercase and lowercase),
         /// numbers, underscores, and hyphens are allowed. 
         /// </para>
         /// </summary>
@@ -121,7 +121,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The <code>execute</code> command configuration for the cluster.
+        /// The <c>execute</c> command configuration for the cluster.
         /// </para>
         /// </summary>
         public ClusterConfiguration Configuration
@@ -169,10 +169,9 @@ namespace Amazon.ECS.Model
         /// Use this parameter to set a default Service Connect namespace. After you set a default
         /// Service Connect namespace, any new services with Service Connect turned on that are
         /// created in the cluster are added as client services in the namespace. This setting
-        /// only applies to new services that set the <code>enabled</code> parameter to <code>true</code>
-        /// in the <code>ServiceConnectConfiguration</code>. You can set the namespace of each
-        /// service individually in the <code>ServiceConnectConfiguration</code> to override this
-        /// default parameter.
+        /// only applies to new services that set the <c>enabled</c> parameter to <c>true</c>
+        /// in the <c>ServiceConnectConfiguration</c>. You can set the namespace of each service
+        /// individually in the <c>ServiceConnectConfiguration</c> to override this default parameter.
         /// </para>
         ///  
         /// <para>
@@ -200,7 +199,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Settings. 
         /// <para>
         /// The setting to use when creating a cluster. This parameter is used to turn on CloudWatch
-        /// Container Insights for a cluster. If this value is specified, it overrides the <code>containerInsights</code>
+        /// Container Insights for a cluster. If this value is specified, it overrides the <c>containerInsights</c>
         /// value set with <a>PutAccountSetting</a> or <a>PutAccountSettingDefault</a>.
         /// </para>
         /// </summary>
@@ -256,10 +255,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

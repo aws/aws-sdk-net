@@ -47,7 +47,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the tagged ML object. For example, <code>exampleModelId</code>.
+        /// The ID of the tagged ML object. For example, <c>exampleModelId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -41,10 +41,10 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more than <code>MaxResults</code> query logging configurations, you can
-        /// submit another <code>ListResolverQueryLogConfigs</code> request to get the next group
-        /// of configurations. In the next request, specify the value of <code>NextToken</code>
-        /// from the previous response. 
+        /// If there are more than <c>MaxResults</c> query logging configurations, you can submit
+        /// another <c>ListResolverQueryLogConfigs</c> request to get the next group of configurations.
+        /// In the next request, specify the value of <c>NextToken</c> from the previous response.
+        /// 
         /// </para>
         /// </summary>
         public string NextToken
@@ -62,8 +62,8 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property ResolverQueryLogConfigs. 
         /// <para>
-        /// A list that contains one <code>ResolverQueryLogConfig</code> element for each query
-        /// logging configuration that matches the values that you specified for <code>Filter</code>.
+        /// A list that contains one <c>ResolverQueryLogConfig</c> element for each query logging
+        /// configuration that matches the values that you specified for <c>Filter</c>.
         /// </para>
         /// </summary>
         public List<ResolverQueryLogConfig> ResolverQueryLogConfigs
@@ -83,7 +83,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// The total number of query logging configurations that were created by the current
         /// account in the specified Region. This count can differ from the number of query logging
-        /// configurations that are returned in a <code>ListResolverQueryLogConfigs</code> response,
+        /// configurations that are returned in a <c>ListResolverQueryLogConfigs</c> response,
         /// depending on the values that you specify in the request.
         /// </para>
         /// </summary>
@@ -104,9 +104,9 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// The total number of query logging configurations that were created by the current
         /// account in the specified Region and that match the filters that were specified in
-        /// the <code>ListResolverQueryLogConfigs</code> request. For the total number of query
-        /// logging configurations that were created by the current account in the specified Region,
-        /// see <code>TotalCount</code>.
+        /// the <c>ListResolverQueryLogConfigs</c> request. For the total number of query logging
+        /// configurations that were created by the current account in the specified Region, see
+        /// <c>TotalCount</c>.
         /// </para>
         /// </summary>
         public int TotalFilteredCount

@@ -145,10 +145,9 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property FederationStatus. 
         /// <para>
         ///  Indicates the <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-federation.html">Lake
-        /// query federation</a> status. The status is <code>ENABLED</code> if Lake query federation
-        /// is enabled, or <code>DISABLED</code> if Lake query federation is disabled. You cannot
-        /// delete an event data store if the <code>FederationStatus</code> is <code>ENABLED</code>.
-        /// 
+        /// query federation</a> status. The status is <c>ENABLED</c> if Lake query federation
+        /// is enabled, or <c>DISABLED</c> if Lake query federation is disabled. You cannot delete
+        /// an event data store if the <c>FederationStatus</c> is <c>ENABLED</c>. 
         /// </para>
         /// </summary>
         public FederationStatus FederationStatus
@@ -171,7 +170,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         /// </summary>
@@ -303,8 +302,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The timestamp that shows when the event data store was last updated. <code>UpdatedTimestamp</code>
-        /// is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
+        /// The timestamp that shows when the event data store was last updated. <c>UpdatedTimestamp</c>
+        /// is always either the same or newer than the time shown in <c>CreatedTimestamp</c>.
         /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp

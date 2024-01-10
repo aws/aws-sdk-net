@@ -41,7 +41,7 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property DurationInSeconds. 
         /// <para>
         /// How long, in seconds, for the canary to continue making regular runs according to
-        /// the schedule in the <code>Expression</code> value. If you specify 0, the canary continues
+        /// the schedule in the <c>Expression</c> value. If you specify 0, the canary continues
         /// making runs until you stop it. If you omit this field, the default of 0 is used.
         /// </para>
         /// </summary>
@@ -61,29 +61,28 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// A <code>rate</code> expression or a <code>cron</code> expression that defines how
-        /// often the canary is to run.
+        /// A <c>rate</c> expression or a <c>cron</c> expression that defines how often the canary
+        /// is to run.
         /// </para>
         ///  
         /// <para>
-        /// For a rate expression, The syntax is <code>rate(<i>number unit</i>)</code>. <i>unit</i>
-        /// can be <code>minute</code>, <code>minutes</code>, or <code>hour</code>. 
+        /// For a rate expression, The syntax is <c>rate(<i>number unit</i>)</c>. <i>unit</i>
+        /// can be <c>minute</c>, <c>minutes</c>, or <c>hour</c>. 
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>rate(1 minute)</code> runs the canary once a minute, <code>rate(10
-        /// minutes)</code> runs it once every 10 minutes, and <code>rate(1 hour)</code> runs
-        /// it once every hour. You can specify a frequency between <code>rate(1 minute)</code>
-        /// and <code>rate(1 hour)</code>.
+        /// For example, <c>rate(1 minute)</c> runs the canary once a minute, <c>rate(10 minutes)</c>
+        /// runs it once every 10 minutes, and <c>rate(1 hour)</c> runs it once every hour. You
+        /// can specify a frequency between <c>rate(1 minute)</c> and <c>rate(1 hour)</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specifying <code>rate(0 minute)</code> or <code>rate(0 hour)</code> is a special value
-        /// that causes the canary to run only once when it is started.
+        /// Specifying <c>rate(0 minute)</c> or <c>rate(0 hour)</c> is a special value that causes
+        /// the canary to run only once when it is started.
         /// </para>
         ///  
         /// <para>
-        /// Use <code>cron(<i>expression</i>)</code> to specify a cron expression. You can't schedule
+        /// Use <c>cron(<i>expression</i>)</c> to specify a cron expression. You can't schedule
         /// a canary to wait for more than a year before running. For information about the syntax
         /// for cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_cron.html">
         /// Scheduling canary runs using cron</a>.

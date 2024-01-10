@@ -59,7 +59,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AssociatedAt. 
         /// <para>
-        /// The date and time the <code>AccessPolicy</code> was associated with an <code>AccessEntry</code>.
+        /// The date and time the <c>AccessPolicy</c> was associated with an <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         public DateTime AssociatedAt
@@ -95,7 +95,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PolicyArn. 
         /// <para>
-        /// The ARN of the <code>AccessPolicy</code>.
+        /// The ARN of the <c>AccessPolicy</c>.
         /// </para>
         /// </summary>
         public string PolicyArn

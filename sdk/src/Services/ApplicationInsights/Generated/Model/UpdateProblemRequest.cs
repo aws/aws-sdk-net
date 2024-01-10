@@ -30,7 +30,7 @@ namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProblem operation.
-    /// Updates the visibility of the problem or specifies the problem as <code>RESOLVED</code>.
+    /// Updates the visibility of the problem or specifies the problem as <c>RESOLVED</c>.
     /// </summary>
     public partial class UpdateProblemRequest : AmazonApplicationInsightsRequest
     {
@@ -61,7 +61,7 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property UpdateStatus. 
         /// <para>
         /// The status of the problem. Arguments can be passed for only problems that show a status
-        /// of <code>RECOVERING</code>.
+        /// of <c>RECOVERING</c>.
         /// </para>
         /// </summary>
         public UpdateStatus UpdateStatus
@@ -79,9 +79,9 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The visibility of a problem. When you pass a value of <code>IGNORED</code>, the problem
+        /// The visibility of a problem. When you pass a value of <c>IGNORED</c>, the problem
         /// is removed from the default view, and all notifications for the problem are suspended.
-        /// When <code>VISIBLE</code> is passed, the <code>IGNORED</code> action is reversed.
+        /// When <c>VISIBLE</c> is passed, the <c>IGNORED</c> action is reversed.
         /// </para>
         /// </summary>
         public Visibility Visibility

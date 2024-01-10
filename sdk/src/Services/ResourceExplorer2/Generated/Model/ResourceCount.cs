@@ -46,18 +46,18 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property Complete. 
         /// <para>
-        /// Indicates whether the <code>TotalResources</code> value represents an exhaustive count
-        /// of search results.
+        /// Indicates whether the <c>TotalResources</c> value represents an exhaustive count of
+        /// search results.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>True</code>, it indicates that the search was exhaustive. Every resource
-        /// that matches the query was counted.
+        /// If <c>True</c>, it indicates that the search was exhaustive. Every resource that matches
+        /// the query was counted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>False</code>, then the search reached the limit of 1,000 matching results,
-        /// and stopped counting.
+        /// If <c>False</c>, then the search reached the limit of 1,000 matching results, and
+        /// stopped counting.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -78,8 +78,8 @@ namespace Amazon.ResourceExplorer2.Model
         /// <para>
         /// The number of resources that match the search query. This value can't exceed 1,000.
         /// If there are more than 1,000 resources that match the query, then only 1,000 are counted
-        /// and the <code>Complete</code> field is set to false. We recommend that you refine
-        /// your query to return a smaller number of results.
+        /// and the <c>Complete</c> field is set to false. We recommend that you refine your query
+        /// to return a smaller number of results.
         /// </para>
         /// </summary>
         public long TotalResources

@@ -44,9 +44,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property LocalPath. 
         /// <para>
         /// The local path in your container where you want Amazon SageMaker to write input data
-        /// to. <code>LocalPath</code> is an absolute path to the input data and must begin with
-        /// <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when
-        /// <code>AppManaged</code> is <code>False</code> (default).
+        /// to. <c>LocalPath</c> is an absolute path to the input data and must begin with <c>/opt/ml/processing/</c>.
+        /// <c>LocalPath</c> is a required parameter when <c>AppManaged</c> is <c>False</c> (default).
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -66,9 +65,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property S3CompressionType. 
         /// <para>
         /// Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing
-        /// container. <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified
-        /// as the <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams
-        /// input data from the source directly to your container without using the EBS volume.
+        /// container. <c>Gzip</c> can only be used when <c>Pipe</c> mode is specified as the
+        /// <c>S3InputMode</c>. In <c>Pipe</c> mode, Amazon SageMaker streams input data from
+        /// the source directly to your container without using the EBS volume.
         /// </para>
         /// </summary>
         public ProcessingS3CompressionType S3CompressionType
@@ -86,7 +85,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataDistributionType. 
         /// <para>
-        /// Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>,
+        /// Whether to distribute the data from Amazon S3 to all processing instances with <c>FullyReplicated</c>,
         /// or whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard
         /// of data to each processing instance.
         /// </para>
@@ -106,12 +105,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3DataType. 
         /// <para>
-        /// Whether you use an <code>S3Prefix</code> or a <code>ManifestFile</code> for the data
-        /// type. If you choose <code>S3Prefix</code>, <code>S3Uri</code> identifies a key name
-        /// prefix. Amazon SageMaker uses all objects with the specified key name prefix for the
-        /// processing job. If you choose <code>ManifestFile</code>, <code>S3Uri</code> identifies
-        /// an object that is a manifest file containing a list of object keys that you want Amazon
-        /// SageMaker to use for the processing job.
+        /// Whether you use an <c>S3Prefix</c> or a <c>ManifestFile</c> for the data type. If
+        /// you choose <c>S3Prefix</c>, <c>S3Uri</c> identifies a key name prefix. Amazon SageMaker
+        /// uses all objects with the specified key name prefix for the processing job. If you
+        /// choose <c>ManifestFile</c>, <c>S3Uri</c> identifies an object that is a manifest file
+        /// containing a list of object keys that you want Amazon SageMaker to use for the processing
+        /// job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -130,11 +129,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3InputMode. 
         /// <para>
-        /// Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon
-        /// SageMaker copies the data from the input source onto the local ML storage volume before
-        /// starting your processing container. This is the most commonly used input mode. In
-        /// <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly
-        /// to your processing container into named pipes without using the ML storage volume.
+        /// Whether to use <c>File</c> or <c>Pipe</c> input mode. In File mode, Amazon SageMaker
+        /// copies the data from the input source onto the local ML storage volume before starting
+        /// your processing container. This is the most commonly used input mode. In <c>Pipe</c>
+        /// mode, Amazon SageMaker streams input data from the source directly to your processing
+        /// container into named pipes without using the ML storage volume.
         /// </para>
         /// </summary>
         public ProcessingS3InputMode S3InputMode

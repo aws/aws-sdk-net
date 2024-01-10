@@ -45,7 +45,7 @@ namespace Amazon.DLM.Model
         ///  <b>[Default policies for EBS snapshots only]</b> Indicates whether to exclude volumes
         /// that are attached to instances as the boot volume. If you exclude boot volumes, only
         /// volumes attached as data (non-boot) volumes will be backed up by the policy. To exclude
-        /// boot volumes, specify <code>true</code>.
+        /// boot volumes, specify <c>true</c>.
         /// </para>
         /// </summary>
         public bool ExcludeBootVolumes

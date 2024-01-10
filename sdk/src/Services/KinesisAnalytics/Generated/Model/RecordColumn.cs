@@ -48,7 +48,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <para>
         /// Reference to the data element in the streaming input or the reference data source.
         /// This element is required if the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_RecordFormat.html#analytics-Type-RecordFormat-RecordFormatTypel">RecordFormatType</a>
-        /// is <code>JSON</code>.
+        /// is <c>JSON</c>.
         /// </para>
         /// </summary>
         public string Mapping

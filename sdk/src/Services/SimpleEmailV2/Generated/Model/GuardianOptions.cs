@@ -43,12 +43,12 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> – Amazon SES enables optimized shared delivery for the configuration
+        ///  <c>ENABLED</c> – Amazon SES enables optimized shared delivery for the configuration
         /// set.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> – Amazon SES disables optimized shared delivery for the configuration
+        ///  <c>DISABLED</c> – Amazon SES disables optimized shared delivery for the configuration
         /// set.
         /// </para>
         ///  </li> </ul>

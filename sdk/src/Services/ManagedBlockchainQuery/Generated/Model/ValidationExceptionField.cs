@@ -39,7 +39,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The <code>ValidationException</code> message.
+        /// The <c>ValidationException</c> message.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,7 +58,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the field that triggered the <code>ValidationException</code>.
+        /// The name of the field that triggered the <c>ValidationException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

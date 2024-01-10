@@ -30,8 +30,8 @@ namespace Amazon.FraudDetector.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRule operation.
-    /// Deletes the rule. You cannot delete a rule if it is used by an <code>ACTIVE</code>
-    /// or <code>INACTIVE</code> detector version.
+    /// Deletes the rule. You cannot delete a rule if it is used by an <c>ACTIVE</c> or <c>INACTIVE</c>
+    /// detector version.
     /// 
     ///  
     /// <para>

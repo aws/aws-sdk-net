@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// The definition of <code>tagQuery</code>. Specifies which resources are associated
-    /// with an application.
+    /// The definition of <c>tagQuery</c>. Specifies which resources are associated with
+    /// an application.
     /// </summary>
     public partial class TagQueryConfiguration
     {

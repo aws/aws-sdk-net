@@ -44,10 +44,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>nodejs10.x</code> | <code>nodejs12.x</code> | <code>java8</code>
-        /// | <code>java11</code> | <code>python2.7</code> | <code>python3.6</code> | <code>python3.7</code>
-        /// | <code>python3.8</code> | <code>dotnetcore1.0</code> | <code>dotnetcore2.1</code>
-        /// | <code>go1.x</code> | <code>ruby2.5</code> | <code>provided</code> 
+        /// Valid values: <c>nodejs10.x</c> | <c>nodejs12.x</c> | <c>java8</c> | <c>java11</c>
+        /// | <c>python2.7</c> | <c>python3.6</c> | <c>python3.7</c> | <c>python3.8</c> | <c>dotnetcore1.0</c>
+        /// | <c>dotnetcore2.1</c> | <c>go1.x</c> | <c>ruby2.5</c> | <c>provided</c> 
         /// </para>
         /// </summary>
         public List<string> CompatibleRuntimes
@@ -69,9 +68,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string CreatedDate

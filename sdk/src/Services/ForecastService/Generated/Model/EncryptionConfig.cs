@@ -65,7 +65,7 @@ namespace Amazon.ForecastService.Model
         ///  
         /// <para>
         /// Passing a role across Amazon Web Services accounts is not allowed. If you pass a role
-        /// that isn't in your account, you get an <code>InvalidInputException</code> error.
+        /// that isn't in your account, you get an <c>InvalidInputException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

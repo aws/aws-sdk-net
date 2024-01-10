@@ -133,8 +133,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The name of the Identity and Access Management (IAM) role that you want to assign
         /// to the managed node. This IAM role must provide AssumeRole permissions for the Amazon
-        /// Web Services Systems Manager service principal <code>ssm.amazonaws.com</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
+        /// Web Services Systems Manager service principal <c>ssm.amazonaws.com</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-service-role.html">Create
         /// an IAM service role for a hybrid environment</a> in the <i>Amazon Web Services Systems
         /// Manager User Guide</i>.
         /// </para>
@@ -162,7 +162,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property RegistrationLimit. 
         /// <para>
         /// Specify the maximum number of managed nodes you want to register. The default value
-        /// is <code>1</code>.
+        /// is <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -207,11 +207,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Key=OS,Value=Windows</code> 
+        ///  <c>Key=OS,Value=Windows</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=Environment,Value=Production</code> 
+        ///  <c>Key=Environment,Value=Production</c> 
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>

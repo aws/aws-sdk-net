@@ -313,8 +313,8 @@ namespace Amazon.CloudWatchRUM
         /// Extended metrics enable you to send metrics with additional dimensions not included
         /// in the default metrics. You can also send extended metrics to Evidently as well as
         /// CloudWatch. The valid dimension names for the additional dimensions for extended metrics
-        /// are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>,
-        /// <code>OSName</code>, and <code>PageId</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+        /// are <c>BrowserName</c>, <c>CountryCode</c>, <c>DeviceType</c>, <c>FileType</c>, <c>OSName</c>,
+        /// and <c>PageId</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
         /// Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
         /// </para>
         ///  </li> <li> 
@@ -326,15 +326,15 @@ namespace Amazon.CloudWatchRUM
         /// </para>
         ///  
         /// <para>
-        /// You can't send custom metrics to the <code>AWS/RUM</code> namespace. You must send
-        /// custom metrics to a custom namespace that you define. The namespace that you use can't
-        /// start with <code>AWS/</code>. CloudWatch RUM prepends <code>RUM/CustomMetrics/</code>
-        /// to the custom namespace that you define, so the final namespace for your metrics in
-        /// CloudWatch is <code>RUM/CustomMetrics/<i>your-custom-namespace</i> </code>.
+        /// You can't send custom metrics to the <c>AWS/RUM</c> namespace. You must send custom
+        /// metrics to a custom namespace that you define. The namespace that you use can't start
+        /// with <c>AWS/</c>. CloudWatch RUM prepends <c>RUM/CustomMetrics/</c> to the custom
+        /// namespace that you define, so the final namespace for your metrics in CloudWatch is
+        /// <c>RUM/CustomMetrics/<i>your-custom-namespace</i> </c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code>
+        /// The maximum number of metric definitions that you can specify in one <c>BatchCreateRumMetricDefinitions</c>
         /// operation is 200.
         /// </para>
         ///  
@@ -355,9 +355,9 @@ namespace Amazon.CloudWatchRUM
         /// </para>
         ///  
         /// <para>
-        /// If some metric definitions specified in a <code>BatchCreateRumMetricDefinitions</code>
-        /// operations are not valid, those metric definitions fail and return errors, but all
-        /// valid metric definitions in the same operation still succeed.
+        /// If some metric definitions specified in a <c>BatchCreateRumMetricDefinitions</c> operations
+        /// are not valid, those metric definitions fail and return errors, but all valid metric
+        /// definitions in the same operation still succeed.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchCreateRumMetricDefinitions service method.</param>
@@ -417,13 +417,13 @@ namespace Amazon.CloudWatchRUM
         /// 
         ///  
         /// <para>
-        /// If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code>
+        /// If some metric definition IDs specified in a <c>BatchDeleteRumMetricDefinitions</c>
         /// operations are not valid, those metric definitions fail and return errors, but all
         /// valid metric definition IDs in the same operation are still deleted.
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code>
+        /// The maximum number of metric definitions that you can specify in one <c>BatchDeleteRumMetricDefinitions</c>
         /// operation is 200.
         /// </para>
         /// </summary>
@@ -942,12 +942,11 @@ namespace Amazon.CloudWatchRUM
         /// <summary>
         /// Sends telemetry events about your application performance and user behavior to CloudWatch
         /// RUM. The code snippet that RUM generates for you to add to your application includes
-        /// <code>PutRumEvents</code> operations to send this data to RUM.
+        /// <c>PutRumEvents</c> operations to send this data to RUM.
         /// 
         ///  
         /// <para>
-        /// Each <code>PutRumEvents</code> operation can send a batch of events from one user
-        /// session.
+        /// Each <c>PutRumEvents</c> operation can send a batch of events from one user session.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutRumEvents service method.</param>
@@ -1071,11 +1070,11 @@ namespace Amazon.CloudWatchRUM
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key for the resource, this tag is appended to the list of
-        /// tags associated with the alarm. If you specify a tag key that is already associated
-        /// with the resource, the new tag value that you specify replaces the previous value
-        /// for that tag.
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key for the resource, this tag is appended to the list of tags
+        /// associated with the alarm. If you specify a tag key that is already associated with
+        /// the resource, the new tag value that you specify replaces the previous value for that
+        /// tag.
         /// </para>
         ///  
         /// <para>

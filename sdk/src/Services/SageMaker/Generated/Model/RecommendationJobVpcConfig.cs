@@ -40,8 +40,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// The VPC security group IDs. IDs have the form of <code>sg-xxxxxxxx</code>. Specify
-        /// the security groups for the VPC that is specified in the <code>Subnets</code> field.
+        /// The VPC security group IDs. IDs have the form of <c>sg-xxxxxxxx</c>. Specify the security
+        /// groups for the VPC that is specified in the <c>Subnets</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

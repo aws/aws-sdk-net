@@ -41,7 +41,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// </para>
     ///  
     /// <para>
-    /// You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code>
+    /// You control the amount of time that the URL will be valid using the <c>SessionExpirationDurationInSeconds</c>
     /// parameter. If you do not provide this parameter, the returned URL is valid for twelve
     /// hours.
     /// </para>
@@ -101,7 +101,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property UrlType. 
         /// <para>
         /// The type of the extension for which to create and return a URL. Currently, the only
-        /// valid extension URL type is <code>FLINK_DASHBOARD_URL</code>. 
+        /// valid extension URL type is <c>FLINK_DASHBOARD_URL</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

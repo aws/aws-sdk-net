@@ -37,7 +37,7 @@ namespace Amazon.IoTEvents.Model
     /// 
     ///  
     /// <para>
-    /// You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions
+    /// You must use expressions for all parameters in <c>DynamoDBAction</c>. The expressions
     /// accept literals, operators, functions, references, and substitution templates.
     /// </para>
     ///  
@@ -47,42 +47,42 @@ namespace Amazon.IoTEvents.Model
     ///  <ul> <li> 
     /// <para>
     /// For literal values, the expressions must contain single quotes. For example, the value
-    /// for the <code>hashKeyType</code> parameter can be <code>'STRING'</code>.
+    /// for the <c>hashKeyType</c> parameter can be <c>'STRING'</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For references, you must specify either variables or input values. For example, the
-    /// value for the <code>hashKeyField</code> parameter can be <code>$input.GreenhouseInput.name</code>.
+    /// value for the <c>hashKeyField</c> parameter can be <c>$input.GreenhouseInput.name</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a substitution template, you must use <code>${}</code>, and the template must
-    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// For a substitution template, you must use <c>${}</c>, and the template must be in
+    /// single quotes. A substitution template can also contain a combination of literals,
     /// operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
-    /// In the following example, the value for the <code>hashKeyValue</code> parameter uses
-    /// a substitution template. 
+    /// In the following example, the value for the <c>hashKeyValue</c> parameter uses a substitution
+    /// template. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code> 
+    ///  <c>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a string concatenation, you must use <code>+</code>. A string concatenation can
-    /// also contain a combination of literals, operators, functions, references, and substitution
+    /// For a string concatenation, you must use <c>+</c>. A string concatenation can also
+    /// contain a combination of literals, operators, functions, references, and substitution
     /// templates.
     /// </para>
     ///  
     /// <para>
-    /// In the following example, the value for the <code>tableName</code> parameter uses
-    /// a string concatenation. 
+    /// In the following example, the value for the <c>tableName</c> parameter uses a string
+    /// concatenation. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code> 
+    ///  <c>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -91,9 +91,9 @@ namespace Amazon.IoTEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON
-    /// data to the DynamoDB table as binary data. The DynamoDB console displays the data
-    /// as Base64-encoded text. The value for the <code>payloadField</code> parameter is <code>&lt;payload-field&gt;_raw</code>.
+    /// If the defined payload type is a string, <c>DynamoDBAction</c> writes non-JSON data
+    /// to the DynamoDB table as binary data. The DynamoDB console displays the data as Base64-encoded
+    /// text. The value for the <c>payloadField</c> parameter is <c>&lt;payload-field&gt;_raw</c>.
     /// </para>
     /// </summary>
     public partial class DynamoDBAction
@@ -112,7 +112,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property HashKeyField. 
         /// <para>
-        /// The name of the hash key (also called the partition key). The <code>hashKeyField</code>
+        /// The name of the hash key (also called the partition key). The <c>hashKeyField</c>
         /// value must match the partition key of the target DynamoDB table.
         /// </para>
         /// </summary>
@@ -137,15 +137,15 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>'STRING'</code> - The hash key is a string.
+        ///  <c>'STRING'</c> - The hash key is a string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>'NUMBER'</code> - The hash key is a number.
+        ///  <c>'NUMBER'</c> - The hash key is a number.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
+        /// If you don't specify <c>hashKeyType</c>, the default value is <c>'STRING'</c>.
         /// </para>
         /// </summary>
         public string HashKeyType
@@ -186,26 +186,25 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item
-        /// uses the specified hash key as a partition key. If you specified a range key, the
-        /// item uses the range key as a sort key.
+        ///  <c>'INSERT'</c> - Insert data as a new item into the DynamoDB table. This item uses
+        /// the specified hash key as a partition key. If you specified a range key, the item
+        /// uses the range key as a sort key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data.
-        /// This item's partition key must match the specified hash key. If you specified a range
-        /// key, the range key must match the item's sort key.
+        ///  <c>'UPDATE'</c> - Update an existing item of the DynamoDB table with new data. This
+        /// item's partition key must match the specified hash key. If you specified a range key,
+        /// the range key must match the item's sort key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's
-        /// partition key must match the specified hash key. If you specified a range key, the
-        /// range key must match the item's sort key.
+        ///  <c>'DELETE'</c> - Delete an existing item of the DynamoDB table. This item's partition
+        /// key must match the specified hash key. If you specified a range key, the range key
+        /// must match the item's sort key.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code>
-        /// operation.
+        /// If you don't specify this parameter, AWS IoT Events triggers the <c>'INSERT'</c> operation.
         /// </para>
         /// </summary>
         public string Operation
@@ -242,7 +241,7 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this parameter, the name of the DynamoDB column is <code>payload</code>.
+        /// If you don't specify this parameter, the name of the DynamoDB column is <c>payload</c>.
         /// </para>
         /// </summary>
         public string PayloadField
@@ -260,8 +259,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property RangeKeyField. 
         /// <para>
-        /// The name of the range key (also called the sort key). The <code>rangeKeyField</code>
-        /// value must match the sort key of the target DynamoDB table. 
+        /// The name of the range key (also called the sort key). The <c>rangeKeyField</c> value
+        /// must match the sort key of the target DynamoDB table. 
         /// </para>
         /// </summary>
         public string RangeKeyField
@@ -284,15 +283,15 @@ namespace Amazon.IoTEvents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>'STRING'</code> - The range key is a string.
+        ///  <c>'STRING'</c> - The range key is a string.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>'NUMBER'</code> - The range key is number.
+        ///  <c>'NUMBER'</c> - The range key is number.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
+        /// If you don't specify <c>rangeKeyField</c>, the default value is <c>'STRING'</c>.
         /// </para>
         /// </summary>
         public string RangeKeyType
@@ -328,8 +327,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property TableName. 
         /// <para>
-        /// The name of the DynamoDB table. The <code>tableName</code> value must match the table
-        /// name of the target DynamoDB table. 
+        /// The name of the DynamoDB table. The <c>tableName</c> value must match the table name
+        /// of the target DynamoDB table. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

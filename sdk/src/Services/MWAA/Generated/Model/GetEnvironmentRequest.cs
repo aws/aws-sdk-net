@@ -39,7 +39,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+        /// The name of the Amazon MWAA environment. For example, <c>MyMWAAEnvironment</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=80)]

@@ -76,7 +76,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The map tile's content type. For example, <code>application/vnd.mapbox-vector-tile</code>.
+        /// The map tile's content type. For example, <c>application/vnd.mapbox-vector-tile</c>.
         /// </para>
         /// </summary>
         public string ContentType

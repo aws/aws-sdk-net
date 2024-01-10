@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
-    /// DescribeAvailabilityZones</a> to view the value for <code>GroupName</code>.
+    /// DescribeAvailabilityZones</a> to view the value for <c>GroupName</c>.
     /// </para>
     /// </summary>
     public partial class ModifyAvailabilityZoneGroupRequest : AmazonEC2Request
@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property OptInStatus. 
         /// <para>
         /// Indicates whether you are opted in to the Local Zone group or Wavelength Zone group.
-        /// The only valid value is <code>opted-in</code>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon
+        /// The only valid value is <c>opted-in</c>. You must contact <a href="https://console.aws.amazon.com/support/home#/case/create%3FissueType=customer-service%26serviceCode=general-info%26getting-started%26categoryCode=using-aws%26services">Amazon
         /// Web Services Support</a> to opt out of a Local Zone or Wavelength Zone group.
         /// </para>
         /// </summary>

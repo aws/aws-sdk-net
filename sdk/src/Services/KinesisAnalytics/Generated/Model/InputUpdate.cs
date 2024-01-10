@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Describes updates to a specific input configuration (identified by the <code>InputId</code>
+    /// Describes updates to a specific input configuration (identified by the <c>InputId</c>
     /// of an application).
     /// </summary>
     public partial class InputUpdate

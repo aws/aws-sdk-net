@@ -31,7 +31,7 @@ namespace Amazon.Route53.Model
     /// <summary>
     /// You tried to update a traffic policy instance by using a traffic policy version that
     /// has a different DNS type than the current type for the instance. You specified the
-    /// type in the JSON document in the <code>CreateTrafficPolicy</code> or <code>CreateTrafficPolicyVersion</code>request.
+    /// type in the JSON document in the <c>CreateTrafficPolicy</c> or <c>CreateTrafficPolicyVersion</c>request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

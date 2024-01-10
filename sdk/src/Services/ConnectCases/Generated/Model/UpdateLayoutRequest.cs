@@ -39,7 +39,7 @@ namespace Amazon.ConnectCases.Model
     /// </para>
     ///  
     /// <para>
-    /// A <code>ValidationException</code> is returned when you add non-existent <code>fieldIds</code>
+    /// A <c>ValidationException</c> is returned when you add non-existent <c>fieldIds</c>
     /// to a layout.
     /// </para>
     ///  <note> 

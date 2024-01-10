@@ -38,8 +38,8 @@ namespace Amazon.WellArchitected.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>)
-    /// cannot be removed from a workload.
+    /// The Amazon Web Services Well-Architected Framework lens (<c>wellarchitected</c>) cannot
+    /// be removed from a workload.
     /// </para>
     ///  </note>
     /// </summary>

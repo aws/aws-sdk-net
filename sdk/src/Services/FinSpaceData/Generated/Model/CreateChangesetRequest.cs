@@ -47,18 +47,18 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLACE</code> – Changeset will be considered as a replacement to all prior
+        ///  <c>REPLACE</c> – Changeset will be considered as a replacement to all prior loaded
+        /// Changesets.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>APPEND</c> – Changeset will be considered as an addition to the end of all prior
         /// loaded Changesets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPEND</code> – Changeset will be considered as an addition to the end of all
-        /// prior loaded Changesets.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MODIFY</code> – Changeset is considered as a replacement to a specific prior
-        /// ingested Changeset.
+        ///  <c>MODIFY</c> – Changeset is considered as a replacement to a specific prior ingested
+        /// Changeset.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -118,47 +118,46 @@ namespace Amazon.FinSpaceData.Model
         /// Gets and sets the property FormatParams. 
         /// <para>
         /// Options that define the structure of the source file(s) including the format type
-        /// (<code>formatType</code>), header row (<code>withHeader</code>), data separation character
-        /// (<code>separator</code>) and the type of compression (<code>compression</code>). 
+        /// (<c>formatType</c>), header row (<c>withHeader</c>), data separation character (<c>separator</c>)
+        /// and the type of compression (<c>compression</c>). 
         /// </para>
         ///  
         /// <para>
-        ///  <code>formatType</code> is a required attribute and can have the following values:
-        /// 
+        ///  <c>formatType</c> is a required attribute and can have the following values: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PARQUET</code> – Parquet source file format.
+        ///  <c>PARQUET</c> – Parquet source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CSV</code> – CSV source file format.
+        ///  <c>CSV</c> – CSV source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JSON</code> – JSON source file format.
+        ///  <c>JSON</c> – JSON source file format.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>XML</code> – XML source file format.
+        ///  <c>XML</c> – XML source file format.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Here is an example of how you could specify the <code>formatParams</code>:
+        /// Here is an example of how you could specify the <c>formatParams</c>:
         /// </para>
         ///  
         /// <para>
-        ///  <code> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator":
-        /// ",", "compression":"None" } </code> 
+        ///  <c> "formatParams": { "formatType": "CSV", "withHeader": "true", "separator": ",",
+        /// "compression":"None" } </c> 
         /// </para>
         ///  
         /// <para>
-        /// Note that if you only provide <code>formatType</code> as <code>CSV</code>, the rest
-        /// of the attributes will automatically default to CSV values as following:
+        /// Note that if you only provide <c>formatType</c> as <c>CSV</c>, the rest of the attributes
+        /// will automatically default to CSV values as following:
         /// </para>
         ///  
         /// <para>
-        ///  <code> { "withHeader": "true", "separator": "," } </code> 
+        ///  <c> { "withHeader": "true", "separator": "," } </c> 
         /// </para>
         ///  
         /// <para>
@@ -182,21 +181,21 @@ namespace Amazon.FinSpaceData.Model
         /// <summary>
         /// Gets and sets the property SourceParams. 
         /// <para>
-        /// Options that define the location of the data being ingested (<code>s3SourcePath</code>)
-        /// and the source of the changeset (<code>sourceType</code>).
+        /// Options that define the location of the data being ingested (<c>s3SourcePath</c>)
+        /// and the source of the changeset (<c>sourceType</c>).
         /// </para>
         ///  
         /// <para>
-        /// Both <code>s3SourcePath</code> and <code>sourceType</code> are required attributes.
+        /// Both <c>s3SourcePath</c> and <c>sourceType</c> are required attributes.
         /// </para>
         ///  
         /// <para>
-        /// Here is an example of how you could specify the <code>sourceParams</code>:
+        /// Here is an example of how you could specify the <c>sourceParams</c>:
         /// </para>
         ///  
         /// <para>
-        ///  <code> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv",
-        /// "sourceType": "S3" } </code> 
+        ///  <c> "sourceParams": { "s3SourcePath": "s3://finspace-landing-us-east-2-bk7gcfvitndqa6ebnvys4d/scratch/wr5hh8pwkpqqkxa4sxrmcw/ingestion/equity.csv",
+        /// "sourceType": "S3" } </c> 
         /// </para>
         ///  
         /// <para>

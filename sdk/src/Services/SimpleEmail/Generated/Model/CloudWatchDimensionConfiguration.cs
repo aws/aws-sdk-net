@@ -110,10 +110,10 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property DimensionValueSource. 
         /// <para>
         /// The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch.
-        /// To use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code>
-        /// header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API,
-        /// specify <code>messageTag</code>. To use your own email headers, specify <code>emailHeader</code>.
-        /// To put a custom tag on any link included in your email, specify <code>linkTag</code>.
+        /// To use the message tags that you specify using an <c>X-SES-MESSAGE-TAGS</c> header
+        /// or a parameter to the <c>SendEmail</c>/<c>SendRawEmail</c> API, specify <c>messageTag</c>.
+        /// To use your own email headers, specify <c>emailHeader</c>. To put a custom tag on
+        /// any link included in your email, specify <c>linkTag</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

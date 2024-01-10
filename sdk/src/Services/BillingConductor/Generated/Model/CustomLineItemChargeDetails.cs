@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The charge details of a custom line item. It should contain only one of <code>Flat</code>
-    /// or <code>Percentage</code>.
+    /// The charge details of a custom line item. It should contain only one of <c>Flat</c>
+    /// or <c>Percentage</c>.
     /// </summary>
     public partial class CustomLineItemChargeDetails
     {
@@ -42,8 +42,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Flat. 
         /// <para>
-        /// A <code>CustomLineItemFlatChargeDetails</code> that describes the charge details of
-        /// a flat custom line item.
+        /// A <c>CustomLineItemFlatChargeDetails</c> that describes the charge details of a flat
+        /// custom line item.
         /// </para>
         /// </summary>
         public CustomLineItemFlatChargeDetails Flat
@@ -80,8 +80,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Percentage. 
         /// <para>
-        /// A <code>CustomLineItemPercentageChargeDetails</code> that describes the charge details
-        /// of a percentage custom line item.
+        /// A <c>CustomLineItemPercentageChargeDetails</c> that describes the charge details of
+        /// a percentage custom line item.
         /// </para>
         /// </summary>
         public CustomLineItemPercentageChargeDetails Percentage

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Provides detailed information about the data repository if its <code>Lifecycle</code>
-    /// is set to <code>MISCONFIGURED</code> or <code>FAILED</code>.
+    /// Provides detailed information about the data repository if its <c>Lifecycle</c> is
+    /// set to <c>MISCONFIGURED</c> or <c>FAILED</c>.
     /// </summary>
     public partial class DataRepositoryFailureDetails
     {

@@ -57,7 +57,7 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The first level of the <code>slotHints</code> map is the name of the intent. The second
+        /// The first level of the <c>slotHints</c> map is the name of the intent. The second
         /// level is the name of the slot within the intent. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/using-hints.html">Using
         /// hints to improve accuracy</a>.
         /// </para>

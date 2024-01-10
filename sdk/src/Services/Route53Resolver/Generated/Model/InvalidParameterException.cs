@@ -126,8 +126,7 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property FieldName. 
         /// <para>
-        /// For an <code>InvalidParameterException</code> error, the name of the parameter that's
-        /// invalid.
+        /// For an <c>InvalidParameterException</c> error, the name of the parameter that's invalid.
         /// </para>
         /// </summary>
         public string FieldName

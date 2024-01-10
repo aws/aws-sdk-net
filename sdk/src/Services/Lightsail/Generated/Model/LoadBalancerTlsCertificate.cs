@@ -148,12 +148,12 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>NO_AVAILABLE_CONTACTS</code> </b> - This failure applies to email validation,
+        ///  <b> <c>NO_AVAILABLE_CONTACTS</c> </b> - This failure applies to email validation,
         /// which is not available for Lightsail certificates.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ADDITIONAL_VERIFICATION_REQUIRED</code> </b> - Lightsail requires additional
+        ///  <b> <c>ADDITIONAL_VERIFICATION_REQUIRED</c> </b> - Lightsail requires additional
         /// information to process this certificate request. This can happen as a fraud-protection
         /// measure, such as when the domain ranks within the Alexa top 1000 websites. To provide
         /// the required information, use the <a href="https://console.aws.amazon.com/support/home">AWS
@@ -166,8 +166,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <b> <code>DOMAIN_NOT_ALLOWED</code> </b> - One or more of the domain names in the
-        /// certificate request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>.
+        ///  <b> <c>DOMAIN_NOT_ALLOWED</c> </b> - One or more of the domain names in the certificate
+        /// request was reported as an unsafe domain by <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>.
         /// To correct the problem, search for your domain name on the <a href="https://www.virustotal.com/gui/home/url">VirusTotal</a>
         /// website. If your domain is reported as suspicious, see <a href="https://developers.google.com/web/fundamentals/security/hacked">Google
         /// Help for Hacked Websites</a> to learn what you can do.
@@ -187,17 +187,17 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>INVALID_PUBLIC_DOMAIN</code> </b> - One or more of the domain names in
-        /// the certificate request is not valid. Typically, this is because a domain name in
-        /// the request is not a valid top-level domain. Try to request a certificate again, correcting
-        /// any spelling errors or typos that were in the failed request, and ensure that all
-        /// domain names in the request are for valid top-level domains. For example, you cannot
-        /// request a certificate for <code>example.invalidpublicdomain</code> because <code>invalidpublicdomain</code>
+        ///  <b> <c>INVALID_PUBLIC_DOMAIN</c> </b> - One or more of the domain names in the certificate
+        /// request is not valid. Typically, this is because a domain name in the request is not
+        /// a valid top-level domain. Try to request a certificate again, correcting any spelling
+        /// errors or typos that were in the failed request, and ensure that all domain names
+        /// in the request are for valid top-level domains. For example, you cannot request a
+        /// certificate for <c>example.invalidpublicdomain</c> because <c>invalidpublicdomain</c>
         /// is not a valid top-level domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>OTHER</code> </b> - Typically, this failure occurs when there is a typographical
+        ///  <b> <c>OTHER</c> </b> - Typically, this failure occurs when there is a typographical
         /// error in one or more of the domain names in the certificate request. Try to request
         /// a certificate again, correcting any spelling errors or typos that were in the failed
         /// request. 
@@ -219,8 +219,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IsAttached. 
         /// <para>
-        /// When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load
-        /// balancer.
+        /// When <c>true</c>, the SSL/TLS certificate is attached to the Lightsail load balancer.
         /// </para>
         /// </summary>
         public bool IsAttached
@@ -328,7 +327,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the SSL/TLS certificate (<code>my-certificate</code>).
+        /// The name of the SSL/TLS certificate (<c>my-certificate</c>).
         /// </para>
         /// </summary>
         public string Name
@@ -400,48 +399,48 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type (<code>LoadBalancerTlsCertificate</code>).
+        /// The resource type (<c>LoadBalancerTlsCertificate</c>).
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Instance</code> </b> - A Lightsail instance (a virtual private server)
+        ///  <b> <c>Instance</c> </b> - A Lightsail instance (a virtual private server)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>StaticIp</code> </b> - A static IP address
+        ///  <b> <c>StaticIp</c> </b> - A static IP address
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>KeyPair</code> </b> - The key pair used to connect to a Lightsail instance
+        ///  <b> <c>KeyPair</c> </b> - The key pair used to connect to a Lightsail instance
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>InstanceSnapshot</code> </b> - A Lightsail instance snapshot
+        ///  <b> <c>InstanceSnapshot</c> </b> - A Lightsail instance snapshot
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Domain</code> </b> - A DNS zone
+        ///  <b> <c>Domain</c> </b> - A DNS zone
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>PeeredVpc</code> </b> - A peered VPC
+        ///  <b> <c>PeeredVpc</c> </b> - A peered VPC
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>LoadBalancer</code> </b> - A Lightsail load balancer
+        ///  <b> <c>LoadBalancer</c> </b> - A Lightsail load balancer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>LoadBalancerTlsCertificate</code> </b> - An SSL/TLS certificate associated
-        /// with a Lightsail load balancer
+        ///  <b> <c>LoadBalancerTlsCertificate</c> </b> - An SSL/TLS certificate associated with
+        /// a Lightsail load balancer
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Disk</code> </b> - A Lightsail block storage disk
+        ///  <b> <c>Disk</c> </b> - A Lightsail block storage disk
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>DiskSnapshot</code> </b> - A block storage disk snapshot
+        ///  <b> <c>DiskSnapshot</c> </b> - A block storage disk snapshot
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -461,7 +460,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property RevocationReason. 
         /// <para>
         /// The reason the certificate was revoked. This value is present only when the certificate
-        /// status is <code>REVOKED</code>.
+        /// status is <c>REVOKED</c>.
         /// </para>
         /// </summary>
         public LoadBalancerTlsCertificateRevocationReason RevocationReason
@@ -480,7 +479,7 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property RevokedAt. 
         /// <para>
         /// The timestamp when the certificate was revoked. This value is present only when the
-        /// certificate status is <code>REVOKED</code>.
+        /// certificate status is <c>REVOKED</c>.
         /// </para>
         /// </summary>
         public DateTime RevokedAt
@@ -570,8 +569,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SubjectAlternativeNames. 
         /// <para>
-        /// An array of strings that specify the alternate domains (<code>example2.com</code>)
-        /// and subdomains (<code>blog.example.com</code>) for the certificate.
+        /// An array of strings that specify the alternate domains (<c>example2.com</c>) and subdomains
+        /// (<c>blog.example.com</c>) for the certificate.
         /// </para>
         /// </summary>
         public List<string> SubjectAlternativeNames

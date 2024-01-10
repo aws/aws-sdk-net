@@ -34,15 +34,15 @@ namespace Amazon.QBusiness.Model
     /// 
     ///  
     /// <para>
-    /// To determine if index creation has completed, check the <code>Status</code> field
-    /// returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field
-    /// is set to <code>ACTIVE</code> when the index is ready to use.
+    /// To determine if index creation has completed, check the <c>Status</c> field returned
+    /// from a call to <c>DescribeIndex</c>. The <c>Status</c> field is set to <c>ACTIVE</c>
+    /// when the index is ready to use.
     /// </para>
     ///  
     /// <para>
     /// Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_BatchPutDocument.html">
-    /// <code>BatchPutDocument</code> </a> API or the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html">
-    /// <code>CreateDataSource</code> </a> API.
+    /// <c>BatchPutDocument</c> </a> API or the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html">
+    /// <c>CreateDataSource</c> </a> API.
     /// </para>
     /// </summary>
     public partial class CreateIndexRequest : AmazonQBusinessRequest
@@ -96,8 +96,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create an index. Multiple calls
-        /// to the <code>CreateIndex</code> API with the same client token will create only one
-        /// index.
+        /// to the <c>CreateIndex</c> API with the same client token will create only one index.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

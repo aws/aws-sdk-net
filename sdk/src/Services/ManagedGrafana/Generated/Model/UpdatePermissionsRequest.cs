@@ -30,7 +30,7 @@ namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePermissions operation.
-    /// Updates which users in a workspace have the Grafana <code>Admin</code> or <code>Editor</code>
+    /// Updates which users in a workspace have the Grafana <c>Admin</c> or <c>Editor</c>
     /// roles.
     /// </summary>
     public partial class UpdatePermissionsRequest : AmazonManagedGrafanaRequest

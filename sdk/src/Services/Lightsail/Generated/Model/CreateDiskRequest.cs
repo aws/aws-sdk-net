@@ -31,12 +31,12 @@ namespace Amazon.Lightsail.Model
     /// <summary>
     /// Container for the parameters to the CreateDisk operation.
     /// Creates a block storage disk that can be attached to an Amazon Lightsail instance
-    /// in the same Availability Zone (<code>us-east-2a</code>).
+    /// in the same Availability Zone (<c>us-east-2a</c>).
     /// 
     ///  
     /// <para>
-    /// The <code>create disk</code> operation supports tag-based access control via request
-    /// tags. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>create disk</c> operation supports tag-based access control via request tags.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -69,13 +69,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone where you want to create the disk (<code>us-east-2a</code>).
-        /// Use the same Availability Zone as the Lightsail instance to which you want to attach
-        /// the disk.
+        /// The Availability Zone where you want to create the disk (<c>us-east-2a</c>). Use the
+        /// same Availability Zone as the Lightsail instance to which you want to attach the disk.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>get regions</code> operation to list the Availability Zones where Lightsail
+        /// Use the <c>get regions</c> operation to list the Availability Zones where Lightsail
         /// is currently available.
         /// </para>
         /// </summary>
@@ -95,7 +94,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique Lightsail disk name (<code>my-disk</code>).
+        /// The unique Lightsail disk name (<c>my-disk</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -114,7 +113,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property SizeInGb. 
         /// <para>
-        /// The size of the disk in GB (<code>32</code>).
+        /// The size of the disk in GB (<c>32</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,7 +136,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
         /// </summary>
         public List<Tag> Tags

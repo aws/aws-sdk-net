@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ParameterControlId. 
         /// <para>
-        /// The ID of the <code>ParameterDropDownControl</code>.
+        /// The ID of the <c>ParameterDropDownControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -119,7 +119,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceParameterName. 
         /// <para>
-        /// The source parameter name of the <code>ParameterDropDownControl</code>.
+        /// The source parameter name of the <c>ParameterDropDownControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -138,7 +138,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// The title of the <code>ParameterDropDownControl</code>.
+        /// The title of the <c>ParameterDropDownControl</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]
@@ -157,7 +157,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type parameter name of the <code>ParameterDropDownControl</code>.
+        /// The type parameter name of the <c>ParameterDropDownControl</c>.
         /// </para>
         /// </summary>
         public SheetControlListType Type

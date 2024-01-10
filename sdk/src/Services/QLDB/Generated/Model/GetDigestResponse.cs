@@ -39,8 +39,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property Digest. 
         /// <para>
-        /// The 256-bit hash value representing the digest returned by a <code>GetDigest</code>
-        /// request.
+        /// The 256-bit hash value representing the digest returned by a <c>GetDigest</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=32, Max=32)]
@@ -60,7 +59,7 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property DigestTipAddress. 
         /// <para>
         /// The latest block location covered by the digest that you requested. An address is
-        /// an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+        /// an Amazon Ion structure that has two fields: <c>strandId</c> and <c>sequenceNo</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

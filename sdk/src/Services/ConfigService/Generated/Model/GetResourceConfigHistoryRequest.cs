@@ -32,30 +32,30 @@ namespace Amazon.ConfigService.Model
     /// Container for the parameters to the GetResourceConfigHistory operation.
     /// <important> 
     /// <para>
-    /// For accurate reporting on the compliance status, you must record the <code>AWS::Config::ResourceCompliance</code>
+    /// For accurate reporting on the compliance status, you must record the <c>AWS::Config::ResourceCompliance</c>
     /// resource type. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
     /// Which Resources Config Records</a>.
     /// </para>
     ///  </important> 
     /// <para>
-    /// Returns a list of <code>ConfigurationItems</code> for the specified resource. The
-    /// list contains details about each state of the resource during the specified time interval.
-    /// If you specified a retention period to retain your <code>ConfigurationItems</code>
-    /// between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns
-    /// the <code>ConfigurationItems</code> for the specified retention period. 
+    /// Returns a list of <c>ConfigurationItems</c> for the specified resource. The list contains
+    /// details about each state of the resource during the specified time interval. If you
+    /// specified a retention period to retain your <c>ConfigurationItems</c> between a minimum
+    /// of 30 days and a maximum of 7 years (2557 days), Config returns the <c>ConfigurationItems</c>
+    /// for the specified retention period. 
     /// </para>
     ///  
     /// <para>
     /// The response is paginated. By default, Config returns a limit of 10 configuration
-    /// items per page. You can customize this number with the <code>limit</code> parameter.
-    /// The response includes a <code>nextToken</code> string. To get the next page of results,
-    /// run the request again and specify the string for the <code>nextToken</code> parameter.
+    /// items per page. You can customize this number with the <c>limit</c> parameter. The
+    /// response includes a <c>nextToken</c> string. To get the next page of results, run
+    /// the request again and specify the string for the <c>nextToken</c> parameter.
     /// </para>
     ///  <note> 
     /// <para>
     /// Each call to the API is limited to span a duration of seven days. It is likely that
-    /// the number of records returned is smaller than the specified <code>limit</code>. In
-    /// such cases, you can make another call, using the <code>nextToken</code>.
+    /// the number of records returned is smaller than the specified <c>limit</c>. In such
+    /// cases, you can make another call, using the <c>nextToken</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -150,8 +150,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response.
+        /// The <c>nextToken</c> string returned on a previous page that you use to get the next
+        /// page of results in a paginated response.
         /// </para>
         /// </summary>
         public string NextToken
@@ -169,7 +169,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the resource (for example., <code>sg-xxxxxx</code>).
+        /// The ID of the resource (for example., <c>sg-xxxxxx</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=768)]

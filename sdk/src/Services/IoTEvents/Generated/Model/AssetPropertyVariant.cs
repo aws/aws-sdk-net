@@ -34,9 +34,8 @@ namespace Amazon.IoTEvents.Model
     /// 
     ///  
     /// <para>
-    /// You must use expressions for all parameters in <code>AssetPropertyVariant</code>.
-    /// The expressions accept literals, operators, functions, references, and substitution
-    /// templates.
+    /// You must use expressions for all parameters in <c>AssetPropertyVariant</c>. The expressions
+    /// accept literals, operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
@@ -45,27 +44,27 @@ namespace Amazon.IoTEvents.Model
     ///  <ul> <li> 
     /// <para>
     /// For literal values, the expressions must contain single quotes. For example, the value
-    /// for the <code>integerValue</code> parameter can be <code>'100'</code>.
+    /// for the <c>integerValue</c> parameter can be <c>'100'</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For references, you must specify either variables or parameters. For example, the
-    /// value for the <code>booleanValue</code> parameter can be <code>$variable.offline</code>.
+    /// value for the <c>booleanValue</c> parameter can be <c>$variable.offline</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a substitution template, you must use <code>${}</code>, and the template must
-    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// For a substitution template, you must use <c>${}</c>, and the template must be in
+    /// single quotes. A substitution template can also contain a combination of literals,
     /// operators, functions, references, and substitution templates. 
     /// </para>
     ///  
     /// <para>
-    /// In the following example, the value for the <code>doubleValue</code> parameter uses
-    /// a substitution template. 
+    /// In the following example, the value for the <c>doubleValue</c> parameter uses a substitution
+    /// template. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>'${$input.TemperatureInput.sensorData.temperature * 6 / 5 + 32}'</code> 
+    ///  <c>'${$input.TemperatureInput.sensorData.temperature * 6 / 5 + 32}'</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -74,7 +73,7 @@ namespace Amazon.IoTEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify one of the following value types, depending on the <code>dataType</code>
+    /// You must specify one of the following value types, depending on the <c>dataType</c>
     /// of the specified asset property. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_AssetProperty.html">AssetProperty</a>
     /// in the <i>AWS IoT SiteWise API Reference</i>.
     /// </para>
@@ -89,7 +88,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property BooleanValue. 
         /// <para>
-        /// The asset property value is a Boolean value that must be <code>'TRUE'</code> or <code>'FALSE'</code>.
+        /// The asset property value is a Boolean value that must be <c>'TRUE'</c> or <c>'FALSE'</c>.
         /// You must use an expression, and the evaluated result should be a Boolean value.
         /// </para>
         /// </summary>

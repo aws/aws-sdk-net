@@ -41,9 +41,9 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of IP addresses that you want to return in the response to a <code>ListResolverEndpointIpAddresses</code>
-        /// request. If you don't specify a value for <code>MaxResults</code>, Resolver returns
-        /// up to 100 IP addresses. 
+        /// The maximum number of IP addresses that you want to return in the response to a <c>ListResolverEndpointIpAddresses</c>
+        /// request. If you don't specify a value for <c>MaxResults</c>, Resolver returns up to
+        /// 100 IP addresses. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -62,13 +62,13 @@ namespace Amazon.Route53Resolver.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// For the first <code>ListResolverEndpointIpAddresses</code> request, omit this value.
+        /// For the first <c>ListResolverEndpointIpAddresses</c> request, omit this value.
         /// </para>
         ///  
         /// <para>
-        /// If the specified Resolver endpoint has more than <code>MaxResults</code> IP addresses,
-        /// you can submit another <code>ListResolverEndpointIpAddresses</code> request to get
-        /// the next group of IP addresses. In the next request, specify the value of <code>NextToken</code>
+        /// If the specified Resolver endpoint has more than <c>MaxResults</c> IP addresses, you
+        /// can submit another <c>ListResolverEndpointIpAddresses</c> request to get the next
+        /// group of IP addresses. In the next request, specify the value of <c>NextToken</c>
         /// from the previous response. 
         /// </para>
         /// </summary>

@@ -34,8 +34,8 @@ namespace Amazon.IoTTwinMaker.Model
     /// 
     ///  
     /// <para>
-    /// You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>,
-    /// <code>entityId</code>, or <code>workspaceId</code>.
+    /// You must specify a value for either <c>componentName</c>, <c>componentTypeId</c>,
+    /// <c>entityId</c>, or <c>workspaceId</c>.
     /// </para>
     /// </summary>
     public partial class GetPropertyValueRequest : AmazonIoTTwinMakerRequest

@@ -37,8 +37,7 @@ namespace Amazon.CloudControlApi.Model
     /// <para>
     /// After you have initiated a resource deletion request, you can monitor the progress
     /// of your request by calling <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-    /// using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned by
-    /// <code>DeleteResource</code>.
+    /// using the <c>RequestToken</c> of the <c>ProgressEvent</c> returned by <c>DeleteResource</c>.
     /// </para>
     /// </summary>
     public partial class DeleteResourceRequest : AmazonCloudControlApiRequest
@@ -103,7 +102,7 @@ namespace Amazon.CloudControlApi.Model
         /// For compound primary identifiers (that is, one that consists of multiple resource
         /// properties strung together), to specify the primary identifier as a string, list the
         /// property values <i>in the order they are specified</i> in the primary identifier definition,
-        /// separated by <code>|</code>.
+        /// separated by <c>|</c>.
         /// </para>
         ///  
         /// <para>
@@ -130,8 +129,8 @@ namespace Amazon.CloudControlApi.Model
         /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role for
         /// Cloud Control API to use when performing this resource operation. The role specified
         /// must have the permissions required for this operation. The necessary permissions for
-        /// each event handler are defined in the <code> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
-        /// </code> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
+        /// each event handler are defined in the <c> <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html#schema-properties-handlers">handlers</a>
+        /// </c> section of the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">resource
         /// type definition schema</a>.
         /// </para>
         ///  

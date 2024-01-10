@@ -39,9 +39,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property FindingIdentifiers. 
         /// <para>
-        /// A list of finding identifiers. Each identifier consists of a <code>scanName</code>
-        /// and a <code>findingId</code>. You retrieve the <code>findingId</code> when you call
-        /// <code>GetFindings</code>.
+        /// A list of finding identifiers. Each identifier consists of a <c>scanName</c> and a
+        /// <c>findingId</c>. You retrieve the <c>findingId</c> when you call <c>GetFindings</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=25)]

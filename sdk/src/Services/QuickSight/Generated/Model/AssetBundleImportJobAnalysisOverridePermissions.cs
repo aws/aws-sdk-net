@@ -40,8 +40,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AnalysisIds. 
         /// <para>
-        /// A list of analysis IDs that you want to apply overrides to. You can use <code>*</code>
-        /// to override all analyses in this asset bundle.
+        /// A list of analysis IDs that you want to apply overrides to. You can use <c>*</c> to
+        /// override all analyses in this asset bundle.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

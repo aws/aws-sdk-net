@@ -53,37 +53,37 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> – The deployment job is running.
+        ///  <c>IN_PROGRESS</c> – The deployment job is running.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUEUED</code> – The deployment job is in the job queue and waiting to run.
+        ///  <c>QUEUED</c> – The deployment job is in the job queue and waiting to run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – The deployment failed. For more information, see the <code>statusDetails</code>
+        ///  <c>FAILED</c> – The deployment failed. For more information, see the <c>statusDetails</c>
         /// field.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> – The deployment to an IoT thing was completed successfully.
+        ///  <c>COMPLETED</c> – The deployment to an IoT thing was completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIMED_OUT</code> – The deployment didn't complete in the allotted time. 
+        ///  <c>TIMED_OUT</c> – The deployment didn't complete in the allotted time. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELED</code> – The deployment was canceled by the user.
+        ///  <c>CANCELED</c> – The deployment was canceled by the user.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECTED</code> – The deployment was rejected. For more information, see the
-        /// <code>statusDetails</code> field.
+        ///  <c>REJECTED</c> – The deployment was rejected. For more information, see the <c>statusDetails</c>
+        /// field.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code> – The deployment to an IoT thing group was completed successfully.
+        ///  <c>SUCCEEDED</c> – The deployment to an IoT thing group was completed successfully.
         /// </para>
         ///  </li> </ul>
         /// </summary>

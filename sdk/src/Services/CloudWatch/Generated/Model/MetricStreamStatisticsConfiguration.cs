@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatch.Model
 {
     /// <summary>
-    /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
-    /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. This structure
-    /// contains information for one metric that includes additional statistics in the stream.
-    /// For more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+    /// By default, a metric stream always sends the <c>MAX</c>, <c>MIN</c>, <c>SUM</c>, and
+    /// <c>SAMPLECOUNT</c> statistics for each metric that is streamed. This structure contains
+    /// information for one metric that includes additional statistics in the stream. For
+    /// more information about statistics, see CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
     /// CloudWatch statistics definitions</a>.
     /// </summary>
     public partial class MetricStreamStatisticsConfiguration
@@ -44,21 +44,21 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property AdditionalStatistics. 
         /// <para>
         /// The list of additional statistics that are to be streamed for the metrics listed in
-        /// the <code>IncludeMetrics</code> array in this structure. This list can include as
-        /// many as 20 statistics.
+        /// the <c>IncludeMetrics</c> array in this structure. This list can include as many as
+        /// 20 statistics.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>OutputFormat</code> for the stream is <code>opentelemetry1.0</code> or
-        /// <code>opentelemetry0.7</code>, the only valid values are <code>p<i>??</i> </code>
-        /// percentile statistics such as <code>p90</code>, <code>p99</code> and so on.
+        /// If the <c>OutputFormat</c> for the stream is <c>opentelemetry1.0</c> or <c>opentelemetry0.7</c>,
+        /// the only valid values are <c>p<i>??</i> </c> percentile statistics such as <c>p90</c>,
+        /// <c>p99</c> and so on.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>OutputFormat</code> for the stream is <code>json</code>, the valid values
-        /// include the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
-        /// CloudWatch statistics definitions</a>. For example, this includes <code>tm98, </code>
-        /// <code>wm90</code>, <code>PR(:300)</code>, and so on.
+        /// If the <c>OutputFormat</c> for the stream is <c>json</c>, the valid values include
+        /// the abbreviations for all of the statistics listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+        /// CloudWatch statistics definitions</a>. For example, this includes <c>tm98, </c> <c>wm90</c>,
+        /// <c>PR(:300)</c>, and so on.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -78,8 +78,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property IncludeMetrics. 
         /// <para>
         /// An array of metric name and namespace pairs that stream the additional statistics
-        /// listed in the value of the <code>AdditionalStatistics</code> parameter. There can
-        /// be as many as 100 pairs in the array.
+        /// listed in the value of the <c>AdditionalStatistics</c> parameter. There can be as
+        /// many as 100 pairs in the array.
         /// </para>
         ///  
         /// <para>

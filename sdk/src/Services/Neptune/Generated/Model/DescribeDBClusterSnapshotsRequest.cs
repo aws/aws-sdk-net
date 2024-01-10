@@ -47,7 +47,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBClusterIdentifier. 
         /// <para>
         /// The ID of the DB cluster to retrieve the list of DB cluster snapshots for. This parameter
-        /// can't be used in conjunction with the <code>DBClusterSnapshotIdentifier</code> parameter.
+        /// can't be used in conjunction with the <c>DBClusterSnapshotIdentifier</c> parameter.
         /// This parameter is not case-sensitive.
         /// </para>
         ///  
@@ -76,8 +76,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property DBClusterSnapshotIdentifier. 
         /// <para>
         /// A specific DB cluster snapshot identifier to describe. This parameter can't be used
-        /// in conjunction with the <code>DBClusterIdentifier</code> parameter. This value is
-        /// stored as a lowercase string.
+        /// in conjunction with the <c>DBClusterIdentifier</c> parameter. This value is stored
+        /// as a lowercase string.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If this identifier is for an automated snapshot, the <code>SnapshotType</code> parameter
+        /// If this identifier is for an automated snapshot, the <c>SnapshotType</c> parameter
         /// must also be specified.
         /// </para>
         ///  </li> </ul>
@@ -128,8 +128,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property IncludePublic. 
         /// <para>
         /// True to include manual DB cluster snapshots that are public and can be copied or restored
-        /// by any Amazon account, and otherwise false. The default is <code>false</code>. The
-        /// default is false.
+        /// by any Amazon account, and otherwise false. The default is <c>false</c>. The default
+        /// is false.
         /// </para>
         ///  
         /// <para>
@@ -154,7 +154,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// True to include shared manual DB cluster snapshots from other Amazon accounts that
         /// this Amazon account has been given permission to copy or restore, and otherwise false.
-        /// The default is <code>false</code>.
+        /// The default is <c>false</c>.
         /// </para>
         ///  
         /// <para>
@@ -177,9 +177,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeDBClusterSnapshots</code>
+        /// An optional pagination token provided by a previous <c>DescribeDBClusterSnapshots</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        /// the marker, up to the value specified by <c>MaxRecords</c>. 
         /// </para>
         /// </summary>
         public string Marker
@@ -198,8 +198,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>
@@ -230,38 +230,37 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>automated</code> - Return all DB cluster snapshots that have been automatically
-        /// taken by Amazon Neptune for my Amazon account.
+        ///  <c>automated</c> - Return all DB cluster snapshots that have been automatically taken
+        /// by Amazon Neptune for my Amazon account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>manual</code> - Return all DB cluster snapshots that have been taken by my
+        ///  <c>manual</c> - Return all DB cluster snapshots that have been taken by my Amazon
+        /// account.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>shared</c> - Return all manual DB cluster snapshots that have been shared to my
         /// Amazon account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>shared</code> - Return all manual DB cluster snapshots that have been shared
-        /// to my Amazon account.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>public</code> - Return all DB cluster snapshots that have been marked as public.
+        ///  <c>public</c> - Return all DB cluster snapshots that have been marked as public.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify a <code>SnapshotType</code> value, then both automated and manual
-        /// DB cluster snapshots are returned. You can include shared DB cluster snapshots with
-        /// these results by setting the <code>IncludeShared</code> parameter to <code>true</code>.
-        /// You can include public DB cluster snapshots with these results by setting the <code>IncludePublic</code>
-        /// parameter to <code>true</code>.
+        /// If you don't specify a <c>SnapshotType</c> value, then both automated and manual DB
+        /// cluster snapshots are returned. You can include shared DB cluster snapshots with these
+        /// results by setting the <c>IncludeShared</c> parameter to <c>true</c>. You can include
+        /// public DB cluster snapshots with these results by setting the <c>IncludePublic</c>
+        /// parameter to <c>true</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>IncludeShared</code> and <code>IncludePublic</code> parameters don't apply
-        /// for <code>SnapshotType</code> values of <code>manual</code> or <code>automated</code>.
-        /// The <code>IncludePublic</code> parameter doesn't apply when <code>SnapshotType</code>
-        /// is set to <code>shared</code>. The <code>IncludeShared</code> parameter doesn't apply
-        /// when <code>SnapshotType</code> is set to <code>public</code>.
+        /// The <c>IncludeShared</c> and <c>IncludePublic</c> parameters don't apply for <c>SnapshotType</c>
+        /// values of <c>manual</c> or <c>automated</c>. The <c>IncludePublic</c> parameter doesn't
+        /// apply when <c>SnapshotType</c> is set to <c>shared</c>. The <c>IncludeShared</c> parameter
+        /// doesn't apply when <c>SnapshotType</c> is set to <c>public</c>.
         /// </para>
         /// </summary>
         public string SnapshotType

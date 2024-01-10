@@ -70,20 +70,19 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  
         /// <para>
-        /// When the status is <code>Creating</code> the bot locale is being configured. When
-        /// the status is <code>Building</code> Amazon Lex is building the bot for testing and
-        /// use.
+        /// When the status is <c>Creating</c> the bot locale is being configured. When the status
+        /// is <c>Building</c> Amazon Lex is building the bot for testing and use.
         /// </para>
         ///  
         /// <para>
-        /// If the status of the bot is <code>ReadyExpressTesting</code>, you can test the bot
-        /// using the exact utterances specified in the bots' intents. When the bot is ready for
-        /// full testing or to run, the status is <code>Built</code>.
+        /// If the status of the bot is <c>ReadyExpressTesting</c>, you can test the bot using
+        /// the exact utterances specified in the bots' intents. When the bot is ready for full
+        /// testing or to run, the status is <c>Built</c>.
         /// </para>
         ///  
         /// <para>
-        /// If there was a problem with building the bot, the status is <code>Failed</code>. If
-        /// the bot was saved but not built, the status is <code>NotBuilt</code>.
+        /// If there was a problem with building the bot, the status is <c>Failed</c>. If the
+        /// bot was saved but not built, the status is <c>NotBuilt</c>.
         /// </para>
         /// </summary>
         public BotLocaleStatus BotLocaleStatus
@@ -208,8 +207,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NluIntentConfidenceThreshold. 
         /// <para>
-        /// The specified confidence threshold for inserting the <code>AMAZON.FallbackIntent</code>
-        /// and <code>AMAZON.KendraSearchIntent</code> intents.
+        /// The specified confidence threshold for inserting the <c>AMAZON.FallbackIntent</c>
+        /// and <c>AMAZON.KendraSearchIntent</c> intents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

@@ -30,14 +30,14 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportSshPublicKey operation.
-    /// Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code>
+    /// Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <c>UserName</c>
     /// value assigned to the specific file transfer protocol-enabled server, identified by
-    /// <code>ServerId</code>.
+    /// <c>ServerId</c>.
     /// 
     ///  
     /// <para>
-    /// The response returns the <code>UserName</code> value, the <code>ServerId</code> value,
-    /// and the name of the <code>SshPublicKeyId</code>.
+    /// The response returns the <c>UserName</c> value, the <c>ServerId</c> value, and the
+    /// name of the <c>SshPublicKeyId</c>.
     /// </para>
     /// </summary>
     public partial class ImportSshPublicKeyRequest : AmazonTransferRequest

@@ -37,52 +37,51 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AllocatedStorage</code> - The total allocated storage per account, in GiB.
-    /// The used value is the total allocated storage in the account, in GiB.
+    ///  <c>AllocatedStorage</c> - The total allocated storage per account, in GiB. The used
+    /// value is the total allocated storage in the account, in GiB.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AuthorizationsPerDBSecurityGroup</code> - The number of ingress rules per DB
-    /// security group. The used value is the highest number of ingress rules in a DB security
-    /// group in the account. Other DB security groups in the account might have a lower number
+    ///  <c>AuthorizationsPerDBSecurityGroup</c> - The number of ingress rules per DB security
+    /// group. The used value is the highest number of ingress rules in a DB security group
+    /// in the account. Other DB security groups in the account might have a lower number
     /// of ingress rules.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CustomEndpointsPerDBCluster</code> - The number of custom endpoints per DB
-    /// cluster. The used value is the highest number of custom endpoints in a DB clusters
-    /// in the account. Other DB clusters in the account might have a lower number of custom
-    /// endpoints.
+    ///  <c>CustomEndpointsPerDBCluster</c> - The number of custom endpoints per DB cluster.
+    /// The used value is the highest number of custom endpoints in a DB clusters in the account.
+    /// Other DB clusters in the account might have a lower number of custom endpoints.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBClusterParameterGroups</code> - The number of DB cluster parameter groups
-    /// per account, excluding default parameter groups. The used value is the count of nondefault
-    /// DB cluster parameter groups in the account.
+    ///  <c>DBClusterParameterGroups</c> - The number of DB cluster parameter groups per account,
+    /// excluding default parameter groups. The used value is the count of nondefault DB cluster
+    /// parameter groups in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBClusterRoles</code> - The number of associated Amazon Web Services Identity
-    /// and Access Management (IAM) roles per DB cluster. The used value is the highest number
+    ///  <c>DBClusterRoles</c> - The number of associated Amazon Web Services Identity and
+    /// Access Management (IAM) roles per DB cluster. The used value is the highest number
     /// of associated IAM roles for a DB cluster in the account. Other DB clusters in the
     /// account might have a lower number of associated IAM roles.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBClusters</code> - The number of DB clusters per account. The used value is
-    /// the count of DB clusters in the account.
+    ///  <c>DBClusters</c> - The number of DB clusters per account. The used value is the
+    /// count of DB clusters in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBInstanceRoles</code> - The number of associated IAM roles per DB instance.
-    /// The used value is the highest number of associated IAM roles for a DB instance in
-    /// the account. Other DB instances in the account might have a lower number of associated
+    ///  <c>DBInstanceRoles</c> - The number of associated IAM roles per DB instance. The
+    /// used value is the highest number of associated IAM roles for a DB instance in the
+    /// account. Other DB instances in the account might have a lower number of associated
     /// IAM roles.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBInstances</code> - The number of DB instances per account. The used value
-    /// is the count of the DB instances in the account.
+    ///  <c>DBInstances</c> - The number of DB instances per account. The used value is the
+    /// count of the DB instances in the account.
     /// </para>
     ///  
     /// <para>
@@ -91,58 +90,57 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBParameterGroups</code> - The number of DB parameter groups per account, excluding
+    ///  <c>DBParameterGroups</c> - The number of DB parameter groups per account, excluding
     /// default parameter groups. The used value is the count of nondefault DB parameter groups
     /// in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBSecurityGroups</code> - The number of DB security groups (not VPC security
-    /// groups) per account, excluding the default security group. The used value is the count
-    /// of nondefault DB security groups in the account.
+    ///  <c>DBSecurityGroups</c> - The number of DB security groups (not VPC security groups)
+    /// per account, excluding the default security group. The used value is the count of
+    /// nondefault DB security groups in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DBSubnetGroups</code> - The number of DB subnet groups per account. The used
-    /// value is the count of the DB subnet groups in the account.
+    ///  <c>DBSubnetGroups</c> - The number of DB subnet groups per account. The used value
+    /// is the count of the DB subnet groups in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>EventSubscriptions</code> - The number of event subscriptions per account.
-    /// The used value is the count of the event subscriptions in the account.
+    ///  <c>EventSubscriptions</c> - The number of event subscriptions per account. The used
+    /// value is the count of the event subscriptions in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots per
-    /// account. The used value is the count of the manual DB cluster snapshots in the account.
+    ///  <c>ManualClusterSnapshots</c> - The number of manual DB cluster snapshots per account.
+    /// The used value is the count of the manual DB cluster snapshots in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ManualSnapshots</code> - The number of manual DB instance snapshots per account.
+    ///  <c>ManualSnapshots</c> - The number of manual DB instance snapshots per account.
     /// The used value is the count of the manual DB instance snapshots in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>OptionGroups</code> - The number of DB option groups per account, excluding
-    /// default option groups. The used value is the count of nondefault DB option groups
-    /// in the account.
+    ///  <c>OptionGroups</c> - The number of DB option groups per account, excluding default
+    /// option groups. The used value is the count of nondefault DB option groups in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ReadReplicasPerMaster</code> - The number of read replicas per DB instance.
-    /// The used value is the highest number of read replicas for a DB instance in the account.
-    /// Other DB instances in the account might have a lower number of read replicas.
+    ///  <c>ReadReplicasPerMaster</c> - The number of read replicas per DB instance. The used
+    /// value is the highest number of read replicas for a DB instance in the account. Other
+    /// DB instances in the account might have a lower number of read replicas.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ReservedDBInstances</code> - The number of reserved DB instances per account.
-    /// The used value is the count of the active reserved DB instances in the account.
+    ///  <c>ReservedDBInstances</c> - The number of reserved DB instances per account. The
+    /// used value is the count of the active reserved DB instances in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SubnetsPerDBSubnetGroup</code> - The number of subnets per DB subnet group.
-    /// The used value is highest number of subnets for a DB subnet group in the account.
-    /// Other DB subnet groups in the account might have a lower number of subnets.
+    ///  <c>SubnetsPerDBSubnetGroup</c> - The number of subnets per DB subnet group. The used
+    /// value is highest number of subnets for a DB subnet group in the account. Other DB
+    /// subnet groups in the account might have a lower number of subnets.
     /// </para>
     ///  </li> </ul> 
     /// <para>

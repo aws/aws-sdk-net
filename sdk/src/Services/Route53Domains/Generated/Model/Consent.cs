@@ -39,7 +39,7 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property Currency. 
         /// <para>
-        ///  Currency for the <code>MaxPrice</code>. 
+        ///  Currency for the <c>MaxPrice</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=3)]

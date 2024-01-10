@@ -79,8 +79,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The name of the job whose <code>JobRuns</code> this condition applies to, and on which
-        /// this trigger waits.
+        /// The name of the job whose <c>JobRuns</c> this condition applies to, and on which this
+        /// trigger waits.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -118,9 +118,9 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The condition state. Currently, the only job states that a trigger can listen for
-        /// are <code>SUCCEEDED</code>, <code>STOPPED</code>, <code>FAILED</code>, and <code>TIMEOUT</code>.
-        /// The only crawler states that a trigger can listen for are <code>SUCCEEDED</code>,
-        /// <code>FAILED</code>, and <code>CANCELLED</code>.
+        /// are <c>SUCCEEDED</c>, <c>STOPPED</c>, <c>FAILED</c>, and <c>TIMEOUT</c>. The only
+        /// crawler states that a trigger can listen for are <c>SUCCEEDED</c>, <c>FAILED</c>,
+        /// and <c>CANCELLED</c>.
         /// </para>
         /// </summary>
         public JobRunState State

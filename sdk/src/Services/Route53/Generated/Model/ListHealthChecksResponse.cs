@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contains the response to a <code>ListHealthChecks</code> request.
+    /// A complex type that contains the response to a <c>ListHealthChecks</c> request.
     /// </summary>
     public partial class ListHealthChecksResponse : AmazonWebServiceResponse
     {
@@ -42,8 +42,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HealthChecks. 
         /// <para>
-        /// A complex type that contains one <code>HealthCheck</code> element for each health
-        /// check that is associated with the current Amazon Web Services account.
+        /// A complex type that contains one <c>HealthCheck</c> element for each health check
+        /// that is associated with the current Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,9 +62,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// For the second and subsequent calls to <code>ListHealthChecks</code>, <code>Marker</code>
-        /// is the value that you specified for the <code>marker</code> parameter in the previous
-        /// request.
+        /// For the second and subsequent calls to <c>ListHealthChecks</c>, <c>Marker</c> is the
+        /// value that you specified for the <c>marker</c> parameter in the previous request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -84,9 +83,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more health checks to be listed. If the response
-        /// was truncated, you can get the next group of health checks by submitting another <code>ListHealthChecks</code>
-        /// request and specifying the value of <code>NextMarker</code> in the <code>marker</code>
-        /// parameter.
+        /// was truncated, you can get the next group of health checks by submitting another <c>ListHealthChecks</c>
+        /// request and specifying the value of <c>NextMarker</c> in the <c>marker</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -105,10 +103,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextMarker</code>
-        /// identifies the first health check that Amazon Route 53 returns if you submit another
-        /// <code>ListHealthChecks</code> request and specify the value of <code>NextMarker</code>
-        /// in the <code>marker</code> parameter.
+        /// If <c>IsTruncated</c> is <c>true</c>, the value of <c>NextMarker</c> identifies the
+        /// first health check that Amazon Route 53 returns if you submit another <c>ListHealthChecks</c>
+        /// request and specify the value of <c>NextMarker</c> in the <c>marker</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -127,8 +124,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for the <code>maxitems</code> parameter in the call to
-        /// <code>ListHealthChecks</code> that produced the current response.
+        /// The value that you specified for the <c>maxitems</c> parameter in the call to <c>ListHealthChecks</c>
+        /// that produced the current response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

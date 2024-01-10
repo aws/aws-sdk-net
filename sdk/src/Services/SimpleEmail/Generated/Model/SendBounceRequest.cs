@@ -63,7 +63,7 @@ namespace Amazon.SimpleEmail.Model
         /// <para>
         /// A list of recipients of the bounced message, including the information required to
         /// create the Delivery Status Notifications (DSNs) for the recipients. You must specify
-        /// at least one <code>BouncedRecipientInfo</code> in the list.
+        /// at least one <c>BouncedRecipientInfo</c> in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

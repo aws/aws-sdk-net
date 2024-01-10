@@ -54,12 +54,12 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// It can optionally start with <code>*</code> (asterisk).
+        /// It can optionally start with <c>*</c> (asterisk).
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// With the exception of the optional starting asterisk, it must only contain the following
-        /// characters: <code>A-Z</code>, <code>a-z</code>, <code>0-9</code>, <code>-</code> (hyphen).
+        /// characters: <c>A-Z</c>, <c>a-z</c>, <c>0-9</c>, <c>-</c> (hyphen).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -106,18 +106,16 @@ namespace Amazon.Route53Resolver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADD</code> - Add the domains to the ones that are already in the domain list.
+        ///  <c>ADD</c> - Add the domains to the ones that are already in the domain list. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REMOVE</c> - Search the domain list for the domains and remove them from the list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>REPLACE</c> - Update the domain list to exactly match the list that you are providing.
         /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>REMOVE</code> - Search the domain list for the domains and remove them from
-        /// the list.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>REPLACE</code> - Update the domain list to exactly match the list that you
-        /// are providing. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

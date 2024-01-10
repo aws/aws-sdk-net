@@ -84,7 +84,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// A Boolean value indicating whether the subscription is enabled. A value of <code>true</code>
+        /// A Boolean value indicating whether the subscription is enabled. A value of <c>true</c>
         /// indicates that the subscription is enabled.
         /// </para>
         /// </summary>
@@ -201,14 +201,14 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Can be one of the following: <code>creating</code>, <code>modifying</code>, <code>deleting</code>,
-        /// <code>active</code>, <code>no-permission</code>, <code>topic-not-exist</code> 
+        /// Can be one of the following: <c>creating</c>, <c>modifying</c>, <c>deleting</c>, <c>active</c>,
+        /// <c>no-permission</c>, <c>topic-not-exist</c> 
         /// </para>
         ///  
         /// <para>
-        /// The <code>no-permission</code> status indicates that Amazon DocumentDB no longer has
-        /// permission to post to the SNS topic. The <code>topic-not-exist</code> status indicates
-        /// that the topic was deleted after the subscription was created.
+        /// The <c>no-permission</c> status indicates that Amazon DocumentDB no longer has permission
+        /// to post to the SNS topic. The <c>topic-not-exist</c> status indicates that the topic
+        /// was deleted after the subscription was created.
         /// </para>
         /// </summary>
         public string Status

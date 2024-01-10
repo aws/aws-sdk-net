@@ -65,9 +65,9 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>,
-        /// which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-        /// CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
+        /// Specifies the format of S3 data to be imported. Valid values are <c>CSV</c>, which
+        /// identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
+        /// CSV format</a> or <c>OPENCYPHER</c>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
         /// load format</a>.
         /// </para>
         /// </summary>
@@ -104,10 +104,10 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property ImportOptions. 
         /// <para>
-        /// Contains options for controlling the import process. For example, if the <code>failOnError</code>
-        /// key is set to <code>false</code>, the import skips problem data and attempts to continue
-        /// (whereas if set to <code>true</code>, the default, or if omitted, the import operation
-        /// halts immediately when an error is encountered.
+        /// Contains options for controlling the import process. For example, if the <c>failOnError</c>
+        /// key is set to <c>false</c>, the import skips problem data and attempts to continue
+        /// (whereas if set to <c>true</c>, the default, or if omitted, the import operation halts
+        /// immediately when an error is encountered.
         /// </para>
         /// </summary>
         public ImportOptions ImportOptions
@@ -219,9 +219,8 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FAILED</b>   –   Graph creation or data loading failed. When the status is <code>FAILED</code>,
-        /// you can use <code>get-graphs</code> to get more information about the state of the
-        /// graph.
+        ///  <b>FAILED</b>   –   Graph creation or data loading failed. When the status is <c>FAILED</c>,
+        /// you can use <c>get-graphs</c> to get more information about the state of the graph.
         /// </para>
         ///  </li> <li> 
         /// <para>

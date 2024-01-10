@@ -88,17 +88,15 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</code> 
+        ///  <c>BUILD_GENERAL1_SMALL: Use up to 3 GB memory and 2 vCPUs for builds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</code>
-        /// 
+        ///  <c>BUILD_GENERAL1_MEDIUM: Use up to 7 GB memory and 4 vCPUs for builds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</code>
-        /// 
+        ///  <c>BUILD_GENERAL1_LARGE: Use up to 15 GB memory and 8 vCPUs for builds</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

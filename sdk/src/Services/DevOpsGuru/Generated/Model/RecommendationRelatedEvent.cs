@@ -39,7 +39,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the event. This corresponds to the <code>Name</code> field in an <code>Event</code>
+        ///  The name of the event. This corresponds to the <c>Name</c> field in an <c>Event</c>
         /// object. 
         /// </para>
         /// </summary>
@@ -58,9 +58,9 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        ///  A <code>ResourceCollection</code> object that contains arrays of the names of Amazon
-        /// Web Services CloudFormation stacks. You can specify up to 500 Amazon Web Services
-        /// CloudFormation stacks. 
+        ///  A <c>ResourceCollection</c> object that contains arrays of the names of Amazon Web
+        /// Services CloudFormation stacks. You can specify up to 500 Amazon Web Services CloudFormation
+        /// stacks. 
         /// </para>
         /// </summary>
         public List<RecommendationRelatedEventResource> Resources

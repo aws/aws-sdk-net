@@ -78,7 +78,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ActualEndTime. 
         /// <para>
-        /// The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.
+        /// The time a runbook workflow ended. Currently reported only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime ActualEndTime
@@ -97,7 +97,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ActualStartTime. 
         /// <para>
         /// The time a runbook workflow started. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.
+        /// <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime ActualStartTime
@@ -252,9 +252,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// Operational data keys <i>can't</i> begin with the following: <code>amazon</code>,
-        /// <code>aws</code>, <code>amzn</code>, <code>ssm</code>, <code>/amazon</code>, <code>/aws</code>,
-        /// <code>/amzn</code>, <code>/ssm</code>.
+        /// Operational data keys <i>can't</i> begin with the following: <c>amazon</c>, <c>aws</c>,
+        /// <c>amzn</c>, <c>ssm</c>, <c>/amazon</c>, <c>/aws</c>, <c>/amzn</c>, <c>/ssm</c>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -267,8 +266,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>/aws/resources</code> key in OperationalData to specify a related resource
-        /// in the request. Use the <code>/aws/automations</code> key in OperationalData to associate
+        /// Use the <c>/aws/resources</c> key in OperationalData to specify a related resource
+        /// in the request. Use the <c>/aws/automations</c> key in OperationalData to associate
         /// an Automation runbook with the OpsItem. To view Amazon Web Services CLI example commands
         /// that use these keys, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-manually-create-OpsItems.html">Creating
         /// OpsItems manually</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
@@ -330,7 +329,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>/aws/issue</code> 
+        ///  <c>/aws/issue</c> 
         /// </para>
         ///  
         /// <para>
@@ -338,7 +337,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/aws/changerequest</code> 
+        ///  <c>/aws/changerequest</c> 
         /// </para>
         ///  
         /// <para>
@@ -347,7 +346,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/aws/insight</code> 
+        ///  <c>/aws/insight</c> 
         /// </para>
         ///  
         /// <para>
@@ -372,7 +371,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PlannedEndTime. 
         /// <para>
         /// The time specified in a change request for a runbook workflow to end. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.
+        /// only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime PlannedEndTime
@@ -391,7 +390,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PlannedStartTime. 
         /// <para>
         /// The time specified in a change request for a runbook workflow to start. Currently
-        /// supported only for the OpsItem type <code>/aws/changerequest</code>.
+        /// supported only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime PlannedStartTime
@@ -487,8 +486,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
+        /// The OpsItem status. Status can be <c>Open</c>, <c>In Progress</c>, or <c>Resolved</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-working-with-OpsItems-editing-details.html">Editing
         /// OpsItem details</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.
         /// </para>
         /// </summary>

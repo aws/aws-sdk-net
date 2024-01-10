@@ -39,9 +39,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The current setting for the specified limit. For example, if you specified <code>MAX_RRSETS_BY_ZONE</code>
-        /// for the value of <code>Type</code> in the request, the value of <code>Limit</code>
-        /// is the maximum number of records that you can create in the specified hosted zone.
+        /// The current setting for the specified limit. For example, if you specified <c>MAX_RRSETS_BY_ZONE</c>
+        /// for the value of <c>Type</c> in the request, the value of <c>Limit</c> is the maximum
+        /// number of records that you can create in the specified hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,9 +61,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Count. 
         /// <para>
         /// The current number of entities that you have created of the specified type. For example,
-        /// if you specified <code>MAX_RRSETS_BY_ZONE</code> for the value of <code>Type</code>
-        /// in the request, the value of <code>Count</code> is the current number of records that
-        /// you have created in the specified hosted zone.
+        /// if you specified <c>MAX_RRSETS_BY_ZONE</c> for the value of <c>Type</c> in the request,
+        /// the value of <c>Count</c> is the current number of records that you have created in
+        /// the specified hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

@@ -34,9 +34,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// You can use <code>EBSFilter</code> with the <a>GetEBSVolumeRecommendations</a> action,
-    /// <code>JobFilter</code> with the <a>DescribeRecommendationExportJobs</a> action, and
-    /// <code>Filter</code> with the <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a>
+    /// You can use <c>EBSFilter</c> with the <a>GetEBSVolumeRecommendations</a> action, <c>JobFilter</c>
+    /// with the <a>DescribeRecommendationExportJobs</a> action, and <c>Filter</c> with the
+    /// <a>GetAutoScalingGroupRecommendations</a> and <a>GetEC2InstanceRecommendations</a>
     /// actions.
     /// </para>
     /// </summary>
@@ -52,34 +52,34 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Finding</code> to return recommendations with a specific finding classification
-        /// (for example, <code>NotOptimized</code>).
+        /// Specify <c>Finding</c> to return recommendations with a specific finding classification
+        /// (for example, <c>NotOptimized</c>).
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>FindingReasonCode</code> to return recommendations with a specific finding
-        /// reason code (for example, <code>MemoryUnderprovisioned</code>).
+        /// Specify <c>FindingReasonCode</c> to return recommendations with a specific finding
+        /// reason code (for example, <c>MemoryUnderprovisioned</c>).
         /// </para>
         ///  
         /// <para>
-        /// You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code>
+        /// You can filter your Lambda function recommendations by <c>tag:key</c> and <c>tag-key</c>
         /// tags.
         /// </para>
         ///  
         /// <para>
-        /// A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda
-        /// function recommendations. Use the tag key in the filter name and the tag value as
-        /// the filter value. For example, to find all Lambda function recommendations that have
-        /// a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify
-        /// <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+        /// A <c>tag:key</c> is a key and value combination of a tag assigned to your Lambda function
+        /// recommendations. Use the tag key in the filter name and the tag value as the filter
+        /// value. For example, to find all Lambda function recommendations that have a tag with
+        /// the key of <c>Owner</c> and the value of <c>TeamA</c>, specify <c>tag:Owner</c> for
+        /// the filter name and <c>TeamA</c> for the filter value.
         /// </para>
         ///  
         /// <para>
-        /// A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations.
+        /// A <c>tag-key</c> is the key of a tag assigned to your Lambda function recommendations.
         /// Use this filter to find all of your Lambda function recommendations that have a tag
         /// with a specific key. This doesn’t consider the tag value. For example, you can find
-        /// your Lambda function recommendations with a tag key value of <code>Owner</code> or
-        /// without any tag keys assigned.
+        /// your Lambda function recommendations with a tag key value of <c>Owner</c> or without
+        /// any tag keys assigned.
         /// </para>
         /// </summary>
         public LambdaFunctionRecommendationFilterName Name
@@ -102,17 +102,17 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         /// The valid values for this parameter are as follows, depending on what you specify
-        /// for the <code>name</code> parameter:
+        /// for the <c>name</c> parameter:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify <code>Optimized</code>, <code>NotOptimized</code>, or <code>Unavailable</code>
-        /// if you specify the <code>name</code> parameter as <code>Finding</code>.
+        /// Specify <c>Optimized</c>, <c>NotOptimized</c>, or <c>Unavailable</c> if you specify
+        /// the <c>name</c> parameter as <c>Finding</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <code>MemoryOverprovisioned</code>, <code>MemoryUnderprovisioned</code>, <code>InsufficientData</code>,
-        /// or <code>Inconclusive</code> if you specify the <code>name</code> parameter as <code>FindingReasonCode</code>.
+        /// Specify <c>MemoryOverprovisioned</c>, <c>MemoryUnderprovisioned</c>, <c>InsufficientData</c>,
+        /// or <c>Inconclusive</c> if you specify the <c>name</c> parameter as <c>FindingReasonCode</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -40,8 +40,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// The internal ID of the package you want to delete. Use <code>DescribePackages</code>
-        /// to find this value.
+        /// The internal ID of the package you want to delete. Use <c>DescribePackages</c> to
+        /// find this value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

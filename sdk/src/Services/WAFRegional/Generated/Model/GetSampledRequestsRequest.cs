@@ -50,9 +50,9 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>GetSampledRequests</code> returns a time range, which is usually the time range
-    /// that you specified. However, if your resource (such as a CloudFront distribution)
-    /// received 5,000 requests before the specified time range elapsed, <code>GetSampledRequests</code>
+    ///  <c>GetSampledRequests</c> returns a time range, which is usually the time range that
+    /// you specified. However, if your resource (such as a CloudFront distribution) received
+    /// 5,000 requests before the specified time range elapsed, <c>GetSampledRequests</c>
     /// returns an updated time range. This new time range indicates the actual period during
     /// which AWS WAF selected the requests in the sample.
     /// </para>
@@ -69,8 +69,8 @@ namespace Amazon.WAFRegional.Model
         /// <para>
         /// The number of requests that you want AWS WAF to return from among the first 5,000
         /// requests that your AWS resource received during the time range. If your resource received
-        /// fewer requests than the value of <code>MaxItems</code>, <code>GetSampledRequests</code>
-        /// returns information about all of them. 
+        /// fewer requests than the value of <c>MaxItems</c>, <c>GetSampledRequests</c> returns
+        /// information about all of them. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]
@@ -89,18 +89,17 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleId. 
         /// <para>
-        ///  <code>RuleId</code> is one of three values:
+        ///  <c>RuleId</c> is one of three values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>RuleId</code> of the <code>Rule</code> or the <code>RuleGroupId</code> of
-        /// the <code>RuleGroup</code> for which you want <code>GetSampledRequests</code> to return
-        /// a sample of requests.
+        /// The <c>RuleId</c> of the <c>Rule</c> or the <c>RuleGroupId</c> of the <c>RuleGroup</c>
+        /// for which you want <c>GetSampledRequests</c> to return a sample of requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Default_Action</code>, which causes <code>GetSampledRequests</code> to return
-        /// a sample of the requests that didn't match any of the rules in the specified <code>WebACL</code>.
+        ///  <c>Default_Action</c>, which causes <c>GetSampledRequests</c> to return a sample
+        /// of the requests that didn't match any of the rules in the specified <c>WebACL</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -121,10 +120,10 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property TimeWindow. 
         /// <para>
         /// The start date and time and the end date and time of the range for which you want
-        /// <code>GetSampledRequests</code> to return a sample of requests. You must specify the
-        /// times in Coordinated Universal Time (UTC) format. UTC format includes the special
-        /// designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
-        /// specify any time range in the previous three hours.
+        /// <c>GetSampledRequests</c> to return a sample of requests. You must specify the times
+        /// in Coordinated Universal Time (UTC) format. UTC format includes the special designator,
+        /// <c>Z</c>. For example, <c>"2016-09-27T14:50Z"</c>. You can specify any time range
+        /// in the previous three hours.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,7 +142,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property WebAclId. 
         /// <para>
-        /// The <code>WebACLId</code> of the <code>WebACL</code> for which you want <code>GetSampledRequests</code>
+        /// The <c>WebACLId</c> of the <c>WebACL</c> for which you want <c>GetSampledRequests</c>
         /// to return a sample of requests.
         /// </para>
         /// </summary>

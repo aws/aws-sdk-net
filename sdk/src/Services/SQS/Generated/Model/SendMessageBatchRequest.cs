@@ -30,18 +30,18 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the SendMessageBatch operation.
-    /// You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified
-    /// queue by assigning either identical or different values to each message (or by not
-    /// assigning values at all). This is a batch version of <code> <a>SendMessage</a>.</code>
-    /// For a FIFO queue, multiple messages within a single batch are enqueued in the order
-    /// they are sent.
+    /// You can use <c>SendMessageBatch</c> to send up to 10 messages to the specified queue
+    /// by assigning either identical or different values to each message (or by not assigning
+    /// values at all). This is a batch version of <c> <a>SendMessage</a>.</c> For a FIFO
+    /// queue, multiple messages within a single batch are enqueued in the order they are
+    /// sent.
     /// 
     ///  
     /// <para>
     /// The result of sending each message is reported individually in the response. Because
     /// the batch request can result in a combination of successful and unsuccessful actions,
     /// you should check for batch errors even when the call returns an HTTP status code of
-    /// <code>200</code>.
+    /// <c>200</c>.
     /// </para>
     ///  
     /// <para>
@@ -56,9 +56,8 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code>
-    /// | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>
-    /// 
+    ///  <c>#x9</c> | <c>#xA</c> | <c>#xD</c> | <c>#x20</c> to <c>#xD7FF</c> | <c>#xE000</c>
+    /// to <c>#xFFFD</c> | <c>#x10000</c> to <c>#x10FFFF</c> 
     /// </para>
     ///  
     /// <para>
@@ -67,8 +66,8 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
-    /// SQS uses the default value for the queue.
+    /// If you don't specify the <c>DelaySeconds</c> parameter for an entry, Amazon SQS uses
+    /// the default value for the queue.
     /// </para>
     /// </summary>
     public partial class SendMessageBatchRequest : AmazonSQSRequest
@@ -95,7 +94,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of <code> <a>SendMessageBatchRequestEntry</a> </code> items.
+        /// A list of <c> <a>SendMessageBatchRequestEntry</a> </c> items.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

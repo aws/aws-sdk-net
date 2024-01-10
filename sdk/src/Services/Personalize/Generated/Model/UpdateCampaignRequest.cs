@@ -31,7 +31,7 @@ namespace Amazon.Personalize.Model
     /// <summary>
     /// Container for the parameters to the UpdateCampaign operation.
     /// Updates a campaign to deploy a retrained solution version with an existing campaign,
-    /// change your campaign's <code>minProvisionedTPS</code>, or modify your campaign's configuration,
+    /// change your campaign's <c>minProvisionedTPS</c>, or modify your campaign's configuration,
     /// such as the exploration configuration. 
     /// 
     ///  
@@ -44,7 +44,7 @@ namespace Amazon.Personalize.Model
     /// <para>
     /// You can still get recommendations from a campaign while an update is in progress.
     /// The campaign will use the previous solution version and campaign configuration to
-    /// generate recommendations until the latest campaign update status is <code>Active</code>.
+    /// generate recommendations until the latest campaign update status is <c>Active</c>.
     /// 
     /// </para>
     ///  </note> 
@@ -102,9 +102,9 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property MinProvisionedTPS. 
         /// <para>
         /// Specifies the requested minimum provisioned transactions (recommendations) per second
-        /// that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase
-        /// your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default).
-        /// Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code>
+        /// that Amazon Personalize will support. A high <c>minProvisionedTPS</c> will increase
+        /// your bill. We recommend starting with 1 for <c>minProvisionedTPS</c> (the default).
+        /// Track your usage using Amazon CloudWatch metrics, and increase the <c>minProvisionedTPS</c>
         /// as necessary.
         /// </para>
         /// </summary>

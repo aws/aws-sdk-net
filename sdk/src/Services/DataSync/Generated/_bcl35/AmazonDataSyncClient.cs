@@ -755,7 +755,7 @@ namespace Amazon.DataSync
         /// 
         ///  <note> 
         /// <para>
-        /// Request parameters related to <code>SMB</code> aren't supported with the <code>CreateLocationFsxOpenZfs</code>
+        /// Request parameters related to <c>SMB</c> aren't supported with the <c>CreateLocationFsxOpenZfs</c>
         /// operation.
         /// </para>
         ///  </note>
@@ -955,7 +955,7 @@ namespace Amazon.DataSync
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you're copying data to or from an Snowcone device, you can also use <code>CreateLocationNfs</code>
+        /// If you're copying data to or from an Snowcone device, you can also use <c>CreateLocationNfs</c>
         /// to create your transfer location. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/nfs-on-snowcone.html">Configuring
         /// transfers with Snowcone</a>.
         /// </para>
@@ -1800,8 +1800,8 @@ namespace Amazon.DataSync
         /// 
         ///  <note> 
         /// <para>
-        /// If your location uses SMB, the <code>DescribeLocationFsxOntap</code> operation doesn't
-        /// actually return a <code>Password</code>.
+        /// If your location uses SMB, the <c>DescribeLocationFsxOntap</c> operation doesn't actually
+        /// return a <c>Password</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1868,7 +1868,7 @@ namespace Amazon.DataSync
         /// 
         ///  <note> 
         /// <para>
-        /// Response elements related to <code>SMB</code> aren't supported with the <code>DescribeLocationFsxOpenZfs</code>
+        /// Response elements related to <c>SMB</c> aren't supported with the <c>DescribeLocationFsxOpenZfs</c>
         /// operation.
         /// </para>
         ///  </note>
@@ -2678,12 +2678,12 @@ namespace Amazon.DataSync
         /// </para>
         ///  
         /// <para>
-        ///  <code>ListAgents</code> is eventually consistent. This means the result of running
-        /// the operation might not reflect that you just created or deleted an agent. For example,
+        ///  <c>ListAgents</c> is eventually consistent. This means the result of running the
+        /// operation might not reflect that you just created or deleted an agent. For example,
         /// if you create an agent with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html">CreateAgent</a>
-        /// and then immediately run <code>ListAgents</code>, that agent might not show up in
-        /// the list right away. In situations like this, you can always confirm whether an agent
-        /// has been created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
+        /// and then immediately run <c>ListAgents</c>, that agent might not show up in the list
+        /// right away. In situations like this, you can always confirm whether an agent has been
+        /// created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAgents service method.</param>
@@ -4061,9 +4061,9 @@ namespace Amazon.DataSync
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, the only <code>Option</code> that you can modify with <code>UpdateTaskExecution</code>
-        /// is <code> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
-        /// </code>, which throttles bandwidth for a running or queued task execution.
+        /// Currently, the only <c>Option</c> that you can modify with <c>UpdateTaskExecution</c>
+        /// is <c> <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_Options.html#DataSync-Type-Options-BytesPerSecond">BytesPerSecond</a>
+        /// </c>, which throttles bandwidth for a running or queued task execution.
         /// </para>
         ///  </note>
         /// </summary>

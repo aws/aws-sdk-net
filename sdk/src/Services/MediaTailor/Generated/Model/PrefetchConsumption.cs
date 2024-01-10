@@ -42,8 +42,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property AvailMatchingCriteria. 
         /// <para>
         /// If you only want MediaTailor to insert prefetched ads into avails (ad breaks) that
-        /// match specific dynamic variables, such as <code>scte.event_id</code>, set the avail
-        /// matching criteria.
+        /// match specific dynamic variables, such as <c>scte.event_id</c>, set the avail matching
+        /// criteria.
         /// </para>
         /// </summary>
         public List<AvailMatchingCriteria> AvailMatchingCriteria
@@ -64,7 +64,7 @@ namespace Amazon.MediaTailor.Model
         /// The time when MediaTailor no longer considers the prefetched ads for use in an ad
         /// break. MediaTailor automatically deletes prefetch schedules no less than seven days
         /// after the end time. If you'd like to manually delete the prefetch schedule, you can
-        /// call <code>DeletePrefetchSchedule</code>.
+        /// call <c>DeletePrefetchSchedule</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,8 +84,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The time when prefetched ads are considered for use in an ad break. If you don't specify
-        /// <code>StartTime</code>, the prefetched ads are available after MediaTailor retrives
-        /// them from the ad decision server.
+        /// <c>StartTime</c>, the prefetched ads are available after MediaTailor retrives them
+        /// from the ad decision server.
         /// </para>
         /// </summary>
         public DateTime StartTime

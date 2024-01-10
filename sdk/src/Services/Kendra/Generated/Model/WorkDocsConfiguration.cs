@@ -50,12 +50,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlComments. 
         /// <para>
-        ///  <code>TRUE</code> to include comments on documents in your index. Including comments
-        /// in your index means each comment is a document that can be searched on.
+        ///  <c>TRUE</c> to include comments on documents in your index. Including comments in
+        /// your index means each comment is a document that can be searched on.
         /// </para>
         ///  
         /// <para>
-        /// The default is set to <code>FALSE</code>.
+        /// The default is set to <c>FALSE</c>.
         /// </para>
         /// </summary>
         public bool CrawlComments
@@ -96,10 +96,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map Amazon WorkDocs
-        /// data source attributes or field names to Amazon Kendra index field names. To create
-        /// custom fields, use the <code>UpdateIndex</code> API before you map to Amazon WorkDocs
-        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map Amazon WorkDocs data
+        /// source attributes or field names to Amazon Kendra index field names. To create custom
+        /// fields, use the <c>UpdateIndex</c> API before you map to Amazon WorkDocs fields. For
+        /// more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Amazon WorkDocs data source field names must exist in
         /// your Amazon WorkDocs custom metadata.
         /// </para>
@@ -170,10 +170,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        ///  <code>TRUE</code> to use the Amazon WorkDocs change log to determine which documents
-        /// require updating in the index. Depending on the change log's size, it may take longer
-        /// for Amazon Kendra to use the change log than to scan all of your documents in Amazon
-        /// WorkDocs.
+        ///  <c>TRUE</c> to use the Amazon WorkDocs change log to determine which documents require
+        /// updating in the index. Depending on the change log's size, it may take longer for
+        /// Amazon Kendra to use the change log than to scan all of your documents in Amazon WorkDocs.
         /// </para>
         /// </summary>
         public bool UseChangeLog

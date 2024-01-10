@@ -39,7 +39,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Passwords. 
         /// <para>
-        /// Specifies the passwords to use for authentication if <code>Type</code> is set to <code>password</code>.
+        /// Specifies the passwords to use for authentication if <c>Type</c> is set to <c>password</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

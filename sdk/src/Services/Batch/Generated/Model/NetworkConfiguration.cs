@@ -44,7 +44,7 @@ namespace Amazon.Batch.Model
         /// to pull container images), the private subnet requires a NAT gateway be attached to
         /// route requests to the internet. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Amazon
         /// ECS task networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
-        /// The default value is "<code>DISABLED</code>".
+        /// The default value is "<c>DISABLED</c>".
         /// </para>
         /// </summary>
         public AssignPublicIp AssignPublicIp

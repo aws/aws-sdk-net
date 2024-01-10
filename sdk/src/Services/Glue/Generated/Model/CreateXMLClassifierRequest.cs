@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies an XML classifier for <code>CreateClassifier</code> to create.
+    /// Specifies an XML classifier for <c>CreateClassifier</c> to create.
     /// </summary>
     public partial class CreateXMLClassifierRequest
     {
@@ -79,10 +79,10 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RowTag. 
         /// <para>
         /// The XML tag designating the element that contains each record in an XML document being
-        /// parsed. This can't identify a self-closing element (closed by <code>/&gt;</code>).
-        /// An empty row element that contains only attributes can be parsed as long as it ends
-        /// with a closing tag (for example, <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code>
-        /// is okay, but <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).
+        /// parsed. This can't identify a self-closing element (closed by <c>/&gt;</c>). An empty
+        /// row element that contains only attributes can be parsed as long as it ends with a
+        /// closing tag (for example, <c>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</c> is
+        /// okay, but <c>&lt;row item_a="A" item_b="B" /&gt;</c> is not).
         /// </para>
         /// </summary>
         public string RowTag

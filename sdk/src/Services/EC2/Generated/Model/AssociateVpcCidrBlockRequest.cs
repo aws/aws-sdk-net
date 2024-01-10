@@ -140,7 +140,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Ipv6CidrBlock. 
         /// <para>
-        /// An IPv6 CIDR block from the IPv6 address pool. You must also specify <code>Ipv6Pool</code>
+        /// An IPv6 CIDR block from the IPv6 address pool. You must also specify <c>Ipv6Pool</c>
         /// in the request.
         /// </para>
         ///  
@@ -168,8 +168,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  You must set <code>AmazonProvidedIpv6CidrBlock</code> to <code>true</code> to use
-        /// this parameter.
+        ///  You must set <c>AmazonProvidedIpv6CidrBlock</c> to <c>true</c> to use this parameter.
         /// </para>
         ///  
         /// <para>

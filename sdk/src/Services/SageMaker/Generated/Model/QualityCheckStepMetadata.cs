@@ -184,10 +184,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RegisterNewBaseline. 
         /// <para>
         /// This flag indicates if a newly calculated baseline can be accessed through step properties
-        /// <code>BaselineUsedForDriftCheckConstraints</code> and <code>BaselineUsedForDriftCheckStatistics</code>.
-        /// If it is set to <code>False</code>, the previous baseline of the configured check
-        /// type must also be available. These can be accessed through the <code>BaselineUsedForDriftCheckConstraints</code>
-        /// and <code> BaselineUsedForDriftCheckStatistics</code> properties. 
+        /// <c>BaselineUsedForDriftCheckConstraints</c> and <c>BaselineUsedForDriftCheckStatistics</c>.
+        /// If it is set to <c>False</c>, the previous baseline of the configured check type must
+        /// also be available. These can be accessed through the <c>BaselineUsedForDriftCheckConstraints</c>
+        /// and <c> BaselineUsedForDriftCheckStatistics</c> properties. 
         /// </para>
         /// </summary>
         public bool RegisterNewBaseline
@@ -206,8 +206,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SkipCheck. 
         /// <para>
         /// This flag indicates if the drift check against the previous baseline will be skipped
-        /// or not. If it is set to <code>False</code>, the previous baseline of the configured
-        /// check type must be available.
+        /// or not. If it is set to <c>False</c>, the previous baseline of the configured check
+        /// type must be available.
         /// </para>
         /// </summary>
         public bool SkipCheck

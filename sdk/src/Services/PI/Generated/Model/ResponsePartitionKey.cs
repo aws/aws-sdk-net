@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PI.Model
 {
     /// <summary>
-    /// If <code>PartitionBy</code> was specified in a <code>DescribeDimensionKeys</code>
-    /// request, the dimensions are returned in an array. Each element in the array specifies
-    /// one dimension.
+    /// If <c>PartitionBy</c> was specified in a <c>DescribeDimensionKeys</c> request, the
+    /// dimensions are returned in an array. Each element in the array specifies one dimension.
     /// </summary>
     public partial class ResponsePartitionKey
     {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// Cost Explorer was unable to identify the usage unit. Provide <code>UsageType/UsageTypeGroup</code>
-    /// filter selections that contain matching units, for example: <code>hours</code>.
+    /// Cost Explorer was unable to identify the usage unit. Provide <c>UsageType/UsageTypeGroup</c>
+    /// filter selections that contain matching units, for example: <c>hours</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -38,7 +38,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackResourceDetail. 
         /// <para>
-        /// A <code>StackResourceDetail</code> structure containing the description of the specified
+        /// A <c>StackResourceDetail</c> structure containing the description of the specified
         /// resource in the specified stack.
         /// </para>
         /// </summary>

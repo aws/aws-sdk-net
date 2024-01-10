@@ -95,8 +95,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxParallelLaunches. 
         /// <para>
         /// The maximum number of instances that Amazon EC2 can launch at the same time to create
-        /// pre-provisioned snapshots for Windows fast launch. Value must be <code>6</code> or
-        /// greater.
+        /// pre-provisioned snapshots for Windows fast launch. Value must be <c>6</c> or greater.
         /// </para>
         /// </summary>
         public int MaxParallelLaunches
@@ -115,7 +114,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of resource to use for pre-provisioning the AMI for Windows fast launch.
-        /// Supported values include: <code>snapshot</code>, which is the default value.
+        /// Supported values include: <c>snapshot</c>, which is the default value.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -134,8 +133,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SnapshotConfiguration. 
         /// <para>
         /// Configuration settings for creating and managing the snapshots that are used for pre-provisioning
-        /// the AMI for Windows fast launch. The associated <code>ResourceType</code> must be
-        /// <code>snapshot</code>.
+        /// the AMI for Windows fast launch. The associated <c>ResourceType</c> must be <c>snapshot</c>.
         /// </para>
         /// </summary>
         public FastLaunchSnapshotConfigurationRequest SnapshotConfiguration

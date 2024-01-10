@@ -50,10 +50,10 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property BaseCanaryRunId. 
         /// <para>
         /// Specifies which canary run to use the screenshots from as the baseline for future
-        /// visual monitoring with this canary. Valid values are <code>nextrun</code> to use the
-        /// screenshots from the next run after this update is made, <code>lastrun</code> to use
-        /// the screenshots from the most recent run before this update was made, or the value
-        /// of <code>Id</code> in the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html">
+        /// visual monitoring with this canary. Valid values are <c>nextrun</c> to use the screenshots
+        /// from the next run after this update is made, <c>lastrun</c> to use the screenshots
+        /// from the most recent run before this update was made, or the value of <c>Id</c> in
+        /// the <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_CanaryRun.html">
         /// CanaryRun</a> from any past run of this canary.
         /// </para>
         /// </summary>

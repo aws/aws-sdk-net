@@ -39,8 +39,8 @@ namespace Amazon.PinpointEmail.Model
         /// <summary>
         /// Gets and sets the property SendingEnabled. 
         /// <para>
-        /// Enables or disables your account's ability to send email. Set to <code>true</code>
-        /// to enable email sending, or set to <code>false</code> to disable email sending.
+        /// Enables or disables your account's ability to send email. Set to <c>true</c> to enable
+        /// email sending, or set to <c>false</c> to disable email sending.
         /// </para>
         ///  <note> 
         /// <para>

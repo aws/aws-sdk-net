@@ -126,9 +126,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property FindingType. 
         /// <para>
-        /// The type of the finding. For external access analyzers, the type is <code>ExternalAccess</code>.
-        /// For unused access analyzers, the type can be <code>UnusedIAMRole</code>, <code>UnusedIAMUserAccessKey</code>,
-        /// <code>UnusedIAMUserPassword</code>, or <code>UnusedPermission</code>.
+        /// The type of the finding. For external access analyzers, the type is <c>ExternalAccess</c>.
+        /// For unused access analyzers, the type can be <c>UnusedIAMRole</c>, <c>UnusedIAMUserAccessKey</c>,
+        /// <c>UnusedIAMUserPassword</c>, or <c>UnusedPermission</c>.
         /// </para>
         /// </summary>
         public FindingType FindingType

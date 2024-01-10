@@ -38,7 +38,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     /// A Amazon GameLift instance is limited to 50 processes running concurrently. To calculate
-    /// the total number of processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code>
+    /// the total number of processes in a runtime configuration, add the values of the <c>ConcurrentExecutions</c>
     /// parameter for each server process. Learn more about <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
     /// Running Multiple Processes on a Fleet</a>.
     /// </para>
@@ -53,9 +53,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionActivationTimeoutSeconds. 
         /// <para>
         /// The maximum amount of time (in seconds) allowed to launch a new game session and have
-        /// it report ready to host players. During this time, the game session is in status <code>ACTIVATING</code>.
+        /// it report ready to host players. During this time, the game session is in status <c>ACTIVATING</c>.
         /// If the game session does not become active before the timeout, it is ended and the
-        /// game session status is changed to <code>TERMINATED</code>.
+        /// game session status is changed to <c>TERMINATED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=600)]
@@ -74,9 +74,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property MaxConcurrentGameSessionActivations. 
         /// <para>
-        /// The number of game sessions in status <code>ACTIVATING</code> to allow on an instance.
-        /// This setting limits the instance resources that can be used for new game activations
-        /// at any one time.
+        /// The number of game sessions in status <c>ACTIVATING</c> to allow on an instance. This
+        /// setting limits the instance resources that can be used for new game activations at
+        /// any one time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2147483647)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DirectoryService.Model
 {
     /// <summary>
-    /// The <code>NextToken</code> value is not valid.
+    /// The <c>NextToken</c> value is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

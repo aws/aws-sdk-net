@@ -127,31 +127,31 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATION_IN_PROGRESS</code> 
+        ///  <c>CREATION_IN_PROGRESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATION_SUCCESSFUL</code> 
+        ///  <c>CREATION_SUCCESSFUL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATION_FAILED</code> 
+        ///  <c>CREATION_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_IN_PROGRESS</code> 
+        ///  <c>UPDATE_IN_PROGRESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_SUCCESSFUL</code> 
+        ///  <c>UPDATE_SUCCESSFUL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_FAILED</code> 
+        ///  <c>UPDATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> 
+        ///  <c>DELETED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

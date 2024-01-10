@@ -44,7 +44,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property ActiveDirectory. 
         /// <para>
         /// Information about the Active Directory to be used, if applicable. You must provide
-        /// this information if <b>Type</b> is <code>directory-service-authentication</code>.
+        /// this information if <b>Type</b> is <c>directory-service-authentication</c>.
         /// </para>
         /// </summary>
         public DirectoryServiceAuthenticationRequest ActiveDirectory
@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FederatedAuthentication. 
         /// <para>
         /// Information about the IAM SAML identity provider to be used, if applicable. You must
-        /// provide this information if <b>Type</b> is <code>federated-authentication</code>.
+        /// provide this information if <b>Type</b> is <c>federated-authentication</c>.
         /// </para>
         /// </summary>
         public FederatedAuthenticationRequest FederatedAuthentication
@@ -82,7 +82,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MutualAuthentication. 
         /// <para>
         /// Information about the authentication certificates to be used, if applicable. You must
-        /// provide this information if <b>Type</b> is <code>certificate-authentication</code>.
+        /// provide this information if <b>Type</b> is <c>certificate-authentication</c>.
         /// </para>
         /// </summary>
         public CertificateAuthenticationRequest MutualAuthentication

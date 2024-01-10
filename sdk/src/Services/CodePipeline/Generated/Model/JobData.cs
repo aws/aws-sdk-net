@@ -183,8 +183,7 @@ namespace Amazon.CodePipeline.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for custom
-        /// jobs.
+        /// Includes <c>pipelineArn</c> and <c>pipelineExecutionId</c> for custom jobs.
         /// </para>
         ///  </note>
         /// </summary>

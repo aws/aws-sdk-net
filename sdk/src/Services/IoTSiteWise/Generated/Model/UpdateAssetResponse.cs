@@ -38,7 +38,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetStatus. 
         /// <para>
-        /// The status of the asset, which contains a state (<code>UPDATING</code> after successfully
+        /// The status of the asset, which contains a state (<c>UPDATING</c> after successfully
         /// calling this operation) and any error message.
         /// </para>
         /// </summary>

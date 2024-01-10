@@ -48,9 +48,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AsmServer. 
         /// <para>
         /// The address of your Oracle Automatic Storage Management (ASM) server. You can set
-        /// this value from the <code>asm_server</code> value. You set <code>asm_server</code>
-        /// as part of the extra connection attribute string to access an Oracle server with Binary
-        /// Reader that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
+        /// this value from the <c>asm_server</c> value. You set <c>asm_server</c> as part of
+        /// the extra connection attribute string to access an Oracle server with Binary Reader
+        /// that uses ASM. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.Oracle.html#dms/latest/userguide/CHAP_Source.Oracle.html#CHAP_Source.Oracle.CDC.Configuration">Configuration
         /// for change data capture (CDC) on an Oracle source database</a>.
         /// </para>
         /// </summary>
@@ -222,7 +222,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SslMode. 
         /// <para>
-        /// The SSL mode used to connect to the Oracle data provider. The default value is <code>none</code>.
+        /// The SSL mode used to connect to the Oracle data provider. The default value is <c>none</c>.
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

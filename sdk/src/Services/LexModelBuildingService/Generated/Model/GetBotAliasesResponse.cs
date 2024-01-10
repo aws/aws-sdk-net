@@ -39,7 +39,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property BotAliases. 
         /// <para>
-        /// An array of <code>BotAliasMetadata</code> objects, each describing a bot alias.
+        /// An array of <c>BotAliasMetadata</c> objects, each describing a bot alias.
         /// </para>
         /// </summary>
         public List<BotAliasMetadata> BotAliases

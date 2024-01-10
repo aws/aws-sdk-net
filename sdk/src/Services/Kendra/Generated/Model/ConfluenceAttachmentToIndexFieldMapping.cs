@@ -30,8 +30,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Maps attributes or field names of Confluence attachments to Amazon Kendra index field
-    /// names. To create custom fields, use the <code>UpdateIndex</code> API before you map
-    /// to Confluence fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+    /// names. To create custom fields, use the <c>UpdateIndex</c> API before you map to Confluence
+    /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
     /// data source fields</a>. The Confuence data source field names must exist in your Confluence
     /// custom metadata.
     /// </summary>
@@ -48,7 +48,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// You must first create the index field using the <code>UpdateIndex</code> API. 
+        /// You must first create the index field using the <c>UpdateIndex</c> API. 
         /// </para>
         /// </summary>
         public ConfluenceAttachmentFieldName DataSourceFieldName
@@ -66,7 +66,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DateFieldFormat. 
         /// <para>
-        /// The format for date fields in the data source. If the field specified in <code>DataSourceFieldName</code>
+        /// The format for date fields in the data source. If the field specified in <c>DataSourceFieldName</c>
         /// is a date field you must specify the date format. If the field is not a date field,
         /// an exception is thrown.
         /// </para>

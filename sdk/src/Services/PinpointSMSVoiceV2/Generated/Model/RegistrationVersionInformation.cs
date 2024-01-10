@@ -63,37 +63,37 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DRAFT</code>: The initial status of a registration version after it’s created.
+        ///  <c>DRAFT</c>: The initial status of a registration version after it’s created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBMITTED</code>: Your registration has been submitted.
+        ///  <c>SUBMITTED</c>: Your registration has been submitted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REVIEWING</code>: Your registration has been accepted and is being reviewed.
+        ///  <c>REVIEWING</c>: Your registration has been accepted and is being reviewed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APPROVED</code>: Your registration has been approved.
+        ///  <c>APPROVED</c>: Your registration has been approved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISCARDED</code>: You've abandon this version of their registration to start
-        /// over with a new version. 
+        ///  <c>DISCARDED</c>: You've abandon this version of their registration to start over
+        /// with a new version. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DENIED</code>: You must fix your registration and resubmit it.
+        ///  <c>DENIED</c>: You must fix your registration and resubmit it.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REVOKED</code>: Your previously approved registration has been revoked.
+        ///  <c>REVOKED</c>: Your previously approved registration has been revoked.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ARCHIVED</code>: Your previously approved registration version moves into this
-        /// status when a more recently submitted version is approved.
+        ///  <c>ARCHIVED</c>: Your previously approved registration version moves into this status
+        /// when a more recently submitted version is approved.
         /// </para>
         ///  </li> </ul>
         /// </summary>

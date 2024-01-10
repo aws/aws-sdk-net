@@ -43,7 +43,7 @@ namespace Amazon.Neptunedata.Model
         /// Gets and sets the property Format. 
         /// <para>
         /// Serialization format for the change records being returned. Currently, the only supported
-        /// value is <code>PG_JSON</code>.
+        /// value is <c>PG_JSON</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -66,9 +66,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  
         /// <para>
-        /// An event ID is composed of two fields: a <code>commitNum</code>, which identifies
-        /// a transaction that changed the graph, and an <code>opNum</code>, which identifies
-        /// a specific operation within that transaction:
+        /// An event ID is composed of two fields: a <c>commitNum</c>, which identifies a transaction
+        /// that changed the graph, and an <c>opNum</c>, which identifies a specific operation
+        /// within that transaction:
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

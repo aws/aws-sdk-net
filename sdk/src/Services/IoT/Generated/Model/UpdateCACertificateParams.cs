@@ -40,7 +40,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// The action that you want to apply to the CA certificate. The only supported value
-        /// is <code>DEACTIVATE</code>.
+        /// is <c>DEACTIVATE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

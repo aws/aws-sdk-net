@@ -41,7 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property Info. 
         /// <para>
         /// Specify the template source with one of the following options, but not both. Keys
-        /// accepted: [ <code>LoadTemplateFromURL</code>, <code>ImportFromPhysicalId</code> ].
+        /// accepted: [ <c>LoadTemplateFromURL</c>, <c>ImportFromPhysicalId</c> ].
         /// </para>
         ///  
         /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>LoadTemplateFromURL</code> 
+        ///  <c>LoadTemplateFromURL</c> 
         /// </para>
         ///  
         /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>ImportFromPhysicalId</code> 
+        ///  <c>ImportFromPhysicalId</c> 
         /// </para>
         ///  
         /// <para>

@@ -46,8 +46,8 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property DesiredState. 
         /// <para>
-        /// Specify whether to consider the launch as <code>COMPLETED</code> or <code>CANCELLED</code>
-        /// after it stops.
+        /// Specify whether to consider the launch as <c>COMPLETED</c> or <c>CANCELLED</c> after
+        /// it stops.
         /// </para>
         /// </summary>
         public LaunchStopDesiredState DesiredState

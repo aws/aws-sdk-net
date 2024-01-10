@@ -61,7 +61,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot to import the locale to. This can only be the <code>DRAFT</code>
+        /// The version of the bot to import the locale to. This can only be the <c>DRAFT</c>
         /// version of the bot.
         /// </para>
         /// </summary>
@@ -103,33 +103,33 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NluIntentConfidenceThreshold. 
         /// <para>
-        /// Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents.
-        /// <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are
-        /// only inserted if they are configured for the bot. 
+        /// Determines the threshold where Amazon Lex will insert the <c>AMAZON.FallbackIntent</c>,
+        /// <c>AMAZON.KendraSearchIntent</c>, or both when returning alternative intents. <c>AMAZON.FallbackIntent</c>
+        /// and <c>AMAZON.KendraSearchIntent</c> are only inserted if they are configured for
+        /// the bot. 
         /// </para>
         ///  
         /// <para>
         /// For example, suppose a bot is configured with the confidence threshold of 0.80 and
-        /// the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents
-        /// with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50).
-        /// The response from the <code>PostText</code> operation would be:
+        /// the <c>AMAZON.FallbackIntent</c>. Amazon Lex returns three alternative intents with
+        /// the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The
+        /// response from the <c>PostText</c> operation would be:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AMAZON.FallbackIntent</code> 
+        ///  <c>AMAZON.FallbackIntent</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IntentA</code> 
+        ///  <c>IntentA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IntentB</code> 
+        ///  <c>IntentB</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IntentC</code> 
+        ///  <c>IntentC</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -40,7 +40,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The code associated with an error that was returned for a <code>BatchGetIncidentFindings</code>
+        /// The code associated with an error that was returned for a <c>BatchGetIncidentFindings</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property FindingId. 
         /// <para>
-        /// The ID of a specified finding for which an error was returned for a <code>BatchGetIncidentFindings</code>
+        /// The ID of a specified finding for which an error was returned for a <c>BatchGetIncidentFindings</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The description for an error that was returned for a <code>BatchGetIncidentFindings</code>
+        /// The description for an error that was returned for a <c>BatchGetIncidentFindings</c>
         /// operation.
         /// </para>
         /// </summary>

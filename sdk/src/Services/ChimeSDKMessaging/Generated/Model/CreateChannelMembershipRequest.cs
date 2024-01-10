@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateChannelMembership operation.
-    /// Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code>
+    /// Adds a member to a channel. The <c>InvitedBy</c> field in <c>ChannelMembership</c>
     /// is derived from the request header. A channel member can:
     /// 
     ///  <ul> <li> 
@@ -68,9 +68,8 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
-    /// <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API
-    /// call as the value in the header.
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the ARN of the <c>AppInstanceUserArn</c>
+    /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -104,8 +103,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
-        /// the API call.
+        /// The ARN of the <c>AppInstanceUser</c> or <c>AppInstanceBot</c> that makes the API
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -124,7 +123,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArn. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the member you want to add to the channel.
+        /// The <c>AppInstanceUserArn</c> of the member you want to add to the channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -168,11 +167,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default
-        /// members are always returned as part of <code>ListChannelMemberships</code>. Hidden
-        /// members are only returned if the type filter in <code>ListChannelMemberships</code>
-        /// equals <code>HIDDEN</code>. Otherwise hidden members are not returned. This is only
-        /// supported by moderators.
+        /// The membership type of a user, <c>DEFAULT</c> or <c>HIDDEN</c>. Default members are
+        /// always returned as part of <c>ListChannelMemberships</c>. Hidden members are only
+        /// returned if the type filter in <c>ListChannelMemberships</c> equals <c>HIDDEN</c>.
+        /// Otherwise hidden members are not returned. This is only supported by moderators.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

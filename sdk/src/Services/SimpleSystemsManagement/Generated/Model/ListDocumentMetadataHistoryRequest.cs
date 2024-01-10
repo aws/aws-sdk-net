@@ -82,7 +82,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Metadata. 
         /// <para>
         /// The type of data for which details are being requested. Currently, the only supported
-        /// value is <code>DocumentReviews</code>.
+        /// value is <c>DocumentReviews</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

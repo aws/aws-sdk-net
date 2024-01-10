@@ -112,8 +112,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AccountRecoverySetting. 
         /// <para>
         /// The available verified method a user can use to recover their password when they call
-        /// <code>ForgotPassword</code>. You can use this setting to define a preferred method
-        /// when a user has more than one method available. With this setting, SMS doesn't qualify
+        /// <c>ForgotPassword</c>. You can use this setting to define a preferred method when
+        /// a user has more than one method available. With this setting, SMS doesn't qualify
         /// for a valid password recovery mechanism if the user also has SMS multi-factor authentication
         /// (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior
         /// to determine the recovery method where SMS is preferred through email.
@@ -134,7 +134,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 
         /// <para>
-        /// The configuration for <code>AdminCreateUser</code> requests.
+        /// The configuration for <c>AdminCreateUser</c> requests.
         /// </para>
         /// </summary>
         public AdminCreateUserConfigType AdminCreateUserConfig
@@ -189,16 +189,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// When active, <code>DeletionProtection</code> prevents accidental deletion of your
-        /// user pool. Before you can delete a user pool that you have protected against deletion,
-        /// you must deactivate this feature.
+        /// When active, <c>DeletionProtection</c> prevents accidental deletion of your user pool.
+        /// Before you can delete a user pool that you have protected against deletion, you must
+        /// deactivate this feature.
         /// </para>
         ///  
         /// <para>
-        /// When you try to delete a protected user pool in a <code>DeleteUserPool</code> API
-        /// request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To
-        /// delete a protected user pool, send a new <code>DeleteUserPool</code> request after
-        /// you deactivate deletion protection in an <code>UpdateUserPool</code> API request.
+        /// When you try to delete a protected user pool in a <c>DeleteUserPool</c> API request,
+        /// Amazon Cognito returns an <c>InvalidParameterException</c> error. To delete a protected
+        /// user pool, send a new <c>DeleteUserPool</c> request after you deactivate deletion
+        /// protection in an <c>UpdateUserPool</c> API request.
         /// </para>
         /// </summary>
         public DeletionProtectionType DeletionProtection
@@ -221,8 +221,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you provide a value for any <code>DeviceConfiguration</code> field, you activate
-        /// the Amazon Cognito device-remembering feature.
+        /// When you provide a value for any <c>DeviceConfiguration</c> field, you activate the
+        /// Amazon Cognito device-remembering feature.
         /// </para>
         ///  </note>
         /// </summary>
@@ -469,7 +469,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserAttributeUpdateSettings. 
         /// <para>
-        /// The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>,
+        /// The settings for updates to user attributes. These settings include the property <c>AttributesRequireVerificationBeforeUpdate</c>,
         /// a user-pool setting that tells Amazon Cognito how to handle changes to the value of
         /// your users' email address and phone number attributes. For more information, see <a
         /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
@@ -511,13 +511,13 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UsernameConfiguration. 
         /// <para>
         /// Case sensitivity on the username input for the selected sign-in option. When case
-        /// sensitivity is set to <code>False</code> (case insensitive), users can sign in with
-        /// any combination of capital and lowercase letters. For example, <code>username</code>,
-        /// <code>USERNAME</code>, or <code>UserName</code>, or for email, <code>email@example.com</code>
-        /// or <code>EMaiL@eXamplE.Com</code>. For most use cases, set case sensitivity to <code>False</code>
-        /// (case insensitive) as a best practice. When usernames and email addresses are case
-        /// insensitive, Amazon Cognito treats any variation in case as the same user, and prevents
-        /// a case variation from being assigned to the same attribute for a different user.
+        /// sensitivity is set to <c>False</c> (case insensitive), users can sign in with any
+        /// combination of capital and lowercase letters. For example, <c>username</c>, <c>USERNAME</c>,
+        /// or <c>UserName</c>, or for email, <c>email@example.com</c> or <c>EMaiL@eXamplE.Com</c>.
+        /// For most use cases, set case sensitivity to <c>False</c> (case insensitive) as a best
+        /// practice. When usernames and email addresses are case insensitive, Amazon Cognito
+        /// treats any variation in case as the same user, and prevents a case variation from
+        /// being assigned to the same attribute for a different user.
         /// </para>
         ///  
         /// <para>
@@ -540,9 +540,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
         /// User pool add-ons. Contains settings for activation of advanced security features.
-        /// To log user security information but take no action, set to <code>AUDIT</code>. To
-        /// configure automatic security responses to risky traffic to your user pool, set to
-        /// <code>ENFORCED</code>.
+        /// To log user security information but take no action, set to <c>AUDIT</c>. To configure
+        /// automatic security responses to risky traffic to your user pool, set to <c>ENFORCED</c>.
         /// </para>
         ///  
         /// <para>

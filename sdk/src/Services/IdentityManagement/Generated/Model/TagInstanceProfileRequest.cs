@@ -62,9 +62,9 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-    /// If you need to store an array, you can store comma-separated values in the string.
-    /// However, you must interpret the value in your code.
+    /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+    /// you need to store an array, you can store comma-separated values in the string. However,
+    /// you must interpret the value in your code.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>

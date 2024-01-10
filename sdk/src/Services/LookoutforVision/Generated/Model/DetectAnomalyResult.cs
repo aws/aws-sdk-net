@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LookoutforVision.Model
 {
     /// <summary>
-    /// The prediction results from a call to <a>DetectAnomalies</a>. <code>DetectAnomalyResult</code>
-    /// includes classification information for the prediction (<code>IsAnomalous</code> and
-    /// <code>Confidence</code>). If the model you use is an image segementation model, <code>DetectAnomalyResult</code>
-    /// also includes segmentation information (<code>Anomalies</code> and <code>AnomalyMask</code>).
-    /// Classification information is calculated separately from segmentation information
-    /// and you shouldn't assume a relationship between them.
+    /// The prediction results from a call to <a>DetectAnomalies</a>. <c>DetectAnomalyResult</c>
+    /// includes classification information for the prediction (<c>IsAnomalous</c> and <c>Confidence</c>).
+    /// If the model you use is an image segementation model, <c>DetectAnomalyResult</c> also
+    /// includes segmentation information (<c>Anomalies</c> and <c>AnomalyMask</c>). Classification
+    /// information is calculated separately from segmentation information and you shouldn't
+    /// assume a relationship between them.
     /// </summary>
     public partial class DetectAnomalyResult
     {
@@ -47,10 +47,10 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Anomalies. 
         /// <para>
-        /// If the model is an image segmentation model, <code>Anomalies</code> contains a list
-        /// of anomaly types found in the image. There is one entry for each type of anomaly found
-        /// (even if multiple instances of an anomaly type exist on the image). The first element
-        /// in the list is always an anomaly type representing the image background ('background')
+        /// If the model is an image segmentation model, <c>Anomalies</c> contains a list of anomaly
+        /// types found in the image. There is one entry for each type of anomaly found (even
+        /// if multiple instances of an anomaly type exist on the image). The first element in
+        /// the list is always an anomaly type representing the image background ('background')
         /// and shouldn't be considered an anomaly. Amazon Lookout for Vision automatically add
         /// the background anomaly type to the response, and you don't need to declare a background
         /// anomaly type in your dataset.
@@ -61,7 +61,7 @@ namespace Amazon.LookoutforVision.Model
         /// </para>
         ///   
         /// <para>
-        /// An image classification model doesn't return an <code>Anomalies</code> list. 
+        /// An image classification model doesn't return an <c>Anomalies</c> list. 
         /// </para>
         /// </summary>
         public List<Anomaly> Anomalies
@@ -79,14 +79,14 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property AnomalyMask. 
         /// <para>
-        /// If the model is an image segmentation model, <code>AnomalyMask</code> contains pixel
-        /// masks that covers all anomaly types found on the image. Each anomaly type has a different
-        /// mask color. To map a color to an anomaly type, see the <code>color</code> field of
-        /// the <a>PixelAnomaly</a> object.
+        /// If the model is an image segmentation model, <c>AnomalyMask</c> contains pixel masks
+        /// that covers all anomaly types found on the image. Each anomaly type has a different
+        /// mask color. To map a color to an anomaly type, see the <c>color</c> field of the <a>PixelAnomaly</a>
+        /// object.
         /// </para>
         ///  
         /// <para>
-        /// An image classification model doesn't return an <code>Anomalies</code> list. 
+        /// An image classification model doesn't return an <c>Anomalies</c> list. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5242880)]
@@ -106,7 +106,7 @@ namespace Amazon.LookoutforVision.Model
         /// Gets and sets the property Confidence. 
         /// <para>
         /// The confidence that Lookout for Vision has in the accuracy of the classification in
-        /// <code>IsAnomalous</code>.
+        /// <c>IsAnomalous</c>.
         /// </para>
         /// </summary>
         public float Confidence
@@ -143,8 +143,8 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The source of the image that was analyzed. <code>direct</code> means that the images
-        /// was supplied from the local computer. No other values are supported.
+        /// The source of the image that was analyzed. <c>direct</c> means that the images was
+        /// supplied from the local computer. No other values are supported.
         /// </para>
         /// </summary>
         public ImageSource Source

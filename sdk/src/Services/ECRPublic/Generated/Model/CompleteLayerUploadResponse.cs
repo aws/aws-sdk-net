@@ -41,7 +41,7 @@ namespace Amazon.ECRPublic.Model
         /// <summary>
         /// Gets and sets the property LayerDigest. 
         /// <para>
-        /// The <code>sha256</code> digest of the image layer.
+        /// The <c>sha256</c> digest of the image layer.
         /// </para>
         /// </summary>
         public string LayerDigest

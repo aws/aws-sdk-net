@@ -42,13 +42,12 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A string-to-string key-value map of query parameters <code>sdkType</code>-dependent
-        /// properties of the SDK. For <code>sdkType</code> of <code>objectivec</code> or <code>swift</code>,
-        /// a parameter named <code>classPrefix</code> is required. For <code>sdkType</code> of
-        /// <code>android</code>, parameters named <code>groupId</code>, <code>artifactId</code>,
-        /// <code>artifactVersion</code>, and <code>invokerPackage</code> are required. For <code>sdkType</code>
-        /// of <code>java</code>, parameters named <code>serviceName</code> and <code>javaPackageName</code>
-        /// are required. 
+        /// A string-to-string key-value map of query parameters <c>sdkType</c>-dependent properties
+        /// of the SDK. For <c>sdkType</c> of <c>objectivec</c> or <c>swift</c>, a parameter named
+        /// <c>classPrefix</c> is required. For <c>sdkType</c> of <c>android</c>, parameters named
+        /// <c>groupId</c>, <c>artifactId</c>, <c>artifactVersion</c>, and <c>invokerPackage</c>
+        /// are required. For <c>sdkType</c> of <c>java</c>, parameters named <c>serviceName</c>
+        /// and <c>javaPackageName</c> are required. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Parameters
@@ -85,9 +84,8 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property SdkType. 
         /// <para>
-        /// The language for the generated SDK. Currently <code>java</code>, <code>javascript</code>,
-        /// <code>android</code>, <code>objectivec</code> (for iOS), <code>swift</code> (for iOS),
-        /// and <code>ruby</code> are supported.
+        /// The language for the generated SDK. Currently <c>java</c>, <c>javascript</c>, <c>android</c>,
+        /// <c>objectivec</c> (for iOS), <c>swift</c> (for iOS), and <c>ruby</c> are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

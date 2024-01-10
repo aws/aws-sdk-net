@@ -47,9 +47,9 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Poll job descriptions with a <code>DescribeDashboardSnapshotJob</code> API call. Once
-    /// the job succeeds, use the <code>DescribeDashboardSnapshotJobResult</code> API to obtain
-    /// the download URIs that the job generates.
+    /// Poll job descriptions with a <c>DescribeDashboardSnapshotJob</c> API call. Once the
+    /// job succeeds, use the <c>DescribeDashboardSnapshotJobResult</c> API to obtain the
+    /// download URIs that the job generates.
     /// </para>
     /// </summary>
     public partial class StartDashboardSnapshotJobRequest : AmazonQuickSightRequest
@@ -122,7 +122,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SnapshotJobId. 
         /// <para>
         /// An ID for the dashboard snapshot job. This ID is unique to the dashboard while the
-        /// job is running. This ID can be used to poll the status of a job with a <code>DescribeDashboardSnapshotJob</code>
+        /// job is running. This ID can be used to poll the status of a job with a <c>DescribeDashboardSnapshotJob</c>
         /// while the job runs. You can reuse this ID for another job 24 hours after the current
         /// job is completed.
         /// </para>

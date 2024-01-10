@@ -530,7 +530,7 @@ namespace Amazon.CloudDirectory
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <code>ObjectIdentifier</code> 
+        /// Using <c>ObjectIdentifier</c> 
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -605,7 +605,7 @@ namespace Amazon.CloudDirectory
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Using <code>ObjectIdentifier</code> 
+        /// Using <c>ObjectIdentifier</c> 
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -1191,7 +1191,7 @@ namespace Amazon.CloudDirectory
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.BatchWriteException">
-        /// A <code>BatchWrite</code> exception has occurred.
+        /// A <c>BatchWrite</c> exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1247,7 +1247,7 @@ namespace Amazon.CloudDirectory
         /// permissions.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.BatchWriteException">
-        /// A <code>BatchWrite</code> exception has occurred.
+        /// A <c>BatchWrite</c> exception has occurred.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.DirectoryNotEnabledException">
         /// Operations are only permitted on enabled directories.
@@ -1297,7 +1297,7 @@ namespace Amazon.CloudDirectory
         /// 
         ///  
         /// <para>
-        /// You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>.
+        /// You can also quickly create a directory using a managed schema, called the <c>QuickStartSchema</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed
         /// Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.
         /// </para>
@@ -1358,7 +1358,7 @@ namespace Amazon.CloudDirectory
         /// 
         ///  
         /// <para>
-        /// You can also quickly create a directory using a managed schema, called the <code>QuickStartSchema</code>.
+        /// You can also quickly create a directory using a managed schema, called the <c>QuickStartSchema</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_managed.html">Managed
         /// Schema</a> in the <i>Amazon Cloud Directory Developer Guide</i>.
         /// </para>
@@ -1684,9 +1684,9 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent,
-        /// if a parent reference and <code>LinkName</code> is specified. An object is simply
-        /// a collection of <a>Facet</a> attributes. You can also use this API call to create
-        /// a policy object, if the facet from which you create the object is a policy facet.
+        /// if a parent reference and <c>LinkName</c> is specified. An object is simply a collection
+        /// of <a>Facet</a> attributes. You can also use this API call to create a policy object,
+        /// if the facet from which you create the object is a policy facet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateObject service method.</param>
         /// 
@@ -1750,9 +1750,9 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Creates an object in a <a>Directory</a>. Additionally attaches the object to a parent,
-        /// if a parent reference and <code>LinkName</code> is specified. An object is simply
-        /// a collection of <a>Facet</a> attributes. You can also use this API call to create
-        /// a policy object, if the facet from which you create the object is a policy facet.
+        /// if a parent reference and <c>LinkName</c> is specified. An object is simply a collection
+        /// of <a>Facet</a> attributes. You can also use this API call to create a policy object,
+        /// if the facet from which you create the object is a policy facet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateObject service method.</param>
         /// <param name="cancellationToken">
@@ -2837,7 +2837,7 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
         /// Occurs when any invalid operations are performed on an object that is not a node,
-        /// such as calling <code>ListObjectChildren</code> for a leaf node object.
+        /// such as calling <c>ListObjectChildren</c> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -2897,7 +2897,7 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
         /// Occurs when any invalid operations are performed on an object that is not a node,
-        /// such as calling <code>ListObjectChildren</code> for a leaf node object.
+        /// such as calling <c>ListObjectChildren</c> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -3604,8 +3604,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or
-        /// <code>ObjectType</code>. You can call this on all kinds of schema facets -- published,
-        /// development, or applied.
+        /// <c>ObjectType</c>. You can call this on all kinds of schema facets -- published, development,
+        /// or applied.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFacet service method.</param>
         /// 
@@ -3658,8 +3658,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Gets details of the <a>Facet</a>, such as facet name, attributes, <a>Rule</a>s, or
-        /// <code>ObjectType</code>. You can call this on all kinds of schema facets -- published,
-        /// development, or applied.
+        /// <c>ObjectType</c>. You can call this on all kinds of schema facets -- published, development,
+        /// or applied.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFacet service method.</param>
         /// <param name="cancellationToken">
@@ -4199,7 +4199,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4259,7 +4259,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4295,7 +4295,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided,
+        /// Lists schema major versions applied to a directory. If <c>SchemaArn</c> is provided,
         /// lists the minor version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppliedSchemaArns service method.</param>
@@ -4316,7 +4316,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4348,7 +4348,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided,
+        /// Lists schema major versions applied to a directory. If <c>SchemaArn</c> is provided,
         /// lists the minor version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppliedSchemaArns service method.</param>
@@ -4372,7 +4372,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4539,7 +4539,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4594,7 +4594,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4650,7 +4650,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4702,7 +4702,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4758,7 +4758,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4816,7 +4816,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4872,7 +4872,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4927,7 +4927,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -4993,7 +4993,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5058,7 +5058,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5121,7 +5121,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5186,7 +5186,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5246,7 +5246,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -5290,7 +5290,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -5341,7 +5341,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5403,7 +5403,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5462,7 +5462,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5470,7 +5470,7 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
         /// Occurs when any invalid operations are performed on an object that is not a node,
-        /// such as calling <code>ListObjectChildren</code> for a leaf node object.
+        /// such as calling <c>ListObjectChildren</c> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -5524,7 +5524,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5532,7 +5532,7 @@ namespace Amazon.CloudDirectory
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.NotNodeException">
         /// Occurs when any invalid operations are performed on an object that is not a node,
-        /// such as calling <code>ListObjectChildren</code> for a leaf node object.
+        /// such as calling <c>ListObjectChildren</c> for a leaf node object.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.ResourceNotFoundException">
         /// The specified resource could not be found.
@@ -5572,8 +5572,8 @@ namespace Amazon.CloudDirectory
         /// <para>
         /// Use this API to evaluate all parents for an object. The call returns all objects from
         /// the root of the directory up to the requested object. The API returns the number of
-        /// paths based on user-defined <code>MaxResults</code>, in case there are multiple paths
-        /// to the parent. The order of the paths and nodes returned is consistent among multiple
+        /// paths based on user-defined <c>MaxResults</c>, in case there are multiple paths to
+        /// the parent. The order of the paths and nodes returned is consistent among multiple
         /// API calls unless the objects are deleted or moved. Paths not leading to the directory
         /// root are ignored from the target object.
         /// </para>
@@ -5599,7 +5599,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5639,8 +5639,8 @@ namespace Amazon.CloudDirectory
         /// <para>
         /// Use this API to evaluate all parents for an object. The call returns all objects from
         /// the root of the directory up to the requested object. The API returns the number of
-        /// paths based on user-defined <code>MaxResults</code>, in case there are multiple paths
-        /// to the parent. The order of the paths and nodes returned is consistent among multiple
+        /// paths based on user-defined <c>MaxResults</c>, in case there are multiple paths to
+        /// the parent. The order of the paths and nodes returned is consistent among multiple
         /// API calls unless the objects are deleted or moved. Paths not leading to the directory
         /// root are ignored from the target object.
         /// </para>
@@ -5669,7 +5669,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5731,7 +5731,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5792,7 +5792,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5851,7 +5851,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5909,7 +5909,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -5975,7 +5975,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6040,7 +6040,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6076,7 +6076,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
+        /// Returns all of the <c>ObjectIdentifiers</c> to which a given policy is attached.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyAttachments service method.</param>
         /// 
@@ -6099,7 +6099,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6134,7 +6134,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
+        /// Returns all of the <c>ObjectIdentifiers</c> to which a given policy is attached.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPolicyAttachments service method.</param>
         /// <param name="cancellationToken">
@@ -6160,7 +6160,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6200,8 +6200,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Lists the major version families of each published schema. If a major version ARN
-        /// is provided as <code>SchemaArn</code>, the minor version revisions in that family
-        /// are listed instead.
+        /// is provided as <c>SchemaArn</c>, the minor version revisions in that family are listed
+        /// instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublishedSchemaArns service method.</param>
         /// 
@@ -6221,7 +6221,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6254,8 +6254,8 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Lists the major version families of each published schema. If a major version ARN
-        /// is provided as <code>SchemaArn</code>, the minor version revisions in that family
-        /// are listed instead.
+        /// is provided as <c>SchemaArn</c>, the minor version revisions in that family are listed
+        /// instead.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublishedSchemaArns service method.</param>
         /// <param name="cancellationToken">
@@ -6278,7 +6278,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6458,7 +6458,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6518,7 +6518,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6554,7 +6554,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
+        /// Returns a paginated list of <c>TypedLink</c> facet names for a particular schema.
         /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
         /// Links</a>.
         /// </summary>
@@ -6576,7 +6576,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6608,7 +6608,7 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Returns a paginated list of <code>TypedLink</code> facet names for a particular schema.
+        /// Returns a paginated list of <c>TypedLink</c> facet names for a particular schema.
         /// For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
         /// Links</a>.
         /// </summary>
@@ -6633,7 +6633,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6671,10 +6671,10 @@ namespace Amazon.CloudDirectory
         /// <summary>
         /// Lists all policies from the root of the <a>Directory</a> to the object specified.
         /// If there are no policies present, an empty list is returned. If policies are present,
-        /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
-        /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
-        /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
-        /// from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
+        /// and if some objects don't have the policies attached, it returns the <c>ObjectIdentifier</c>
+        /// for such objects. If policies are present, it returns <c>ObjectIdentifier</c>, <c>policyId</c>,
+        /// and <c>policyType</c>. Paths that don't lead to the root from the target object are
+        /// ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupPolicy service method.</param>
         /// 
@@ -6697,7 +6697,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6731,10 +6731,10 @@ namespace Amazon.CloudDirectory
         /// <summary>
         /// Lists all policies from the root of the <a>Directory</a> to the object specified.
         /// If there are no policies present, an empty list is returned. If policies are present,
-        /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
-        /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
-        /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
-        /// from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
+        /// and if some objects don't have the policies attached, it returns the <c>ObjectIdentifier</c>
+        /// for such objects. If policies are present, it returns <c>ObjectIdentifier</c>, <c>policyId</c>,
+        /// and <c>policyType</c>. Paths that don't lead to the root from the target object are
+        /// ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the LookupPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -6760,7 +6760,7 @@ namespace Amazon.CloudDirectory
         /// Indicates that the provided ARN value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidNextTokenException">
-        /// Indicates that the <code>NextToken</code> value is not valid.
+        /// Indicates that the <c>NextToken</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6932,7 +6932,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidSchemaDocException">
-        /// Indicates that the provided <code>SchemaDoc</code> value is not valid.
+        /// Indicates that the provided <c>SchemaDoc</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -6989,7 +6989,7 @@ namespace Amazon.CloudDirectory
         /// Occurs when any of the rule parameter keys or values are invalid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.InvalidSchemaDocException">
-        /// Indicates that the provided <code>SchemaDoc</code> value is not valid.
+        /// Indicates that the provided <c>SchemaDoc</c> value is not valid.
         /// </exception>
         /// <exception cref="Amazon.CloudDirectory.Model.LimitExceededException">
         /// Indicates that limits are exceeded. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Limits</a>
@@ -7375,15 +7375,15 @@ namespace Amazon.CloudDirectory
         /// 
         ///  <ol> <li> 
         /// <para>
-        /// Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
+        /// Adds new <c>Attributes</c>, <c>Rules</c>, or <c>ObjectTypes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
+        /// Updates existing <c>Attributes</c>, <c>Rules</c>, or <c>ObjectTypes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
+        /// Deletes existing <c>Attributes</c>, <c>Rules</c>, or <c>ObjectTypes</c>.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -7451,15 +7451,15 @@ namespace Amazon.CloudDirectory
         /// 
         ///  <ol> <li> 
         /// <para>
-        /// Adds new <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
+        /// Adds new <c>Attributes</c>, <c>Rules</c>, or <c>ObjectTypes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Updates existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
+        /// Updates existing <c>Attributes</c>, <c>Rules</c>, or <c>ObjectTypes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Deletes existing <code>Attributes</code>, <code>Rules</code>, or <code>ObjectTypes</code>.
+        /// Deletes existing <c>Attributes</c>, <c>Rules</c>, or <c>ObjectTypes</c>.
         /// </para>
         ///  </li> </ol>
         /// </summary>
@@ -7531,7 +7531,7 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Updates a given typed link’s attributes. Attributes to be updated must not contribute
-        /// to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.
+        /// to the typed link’s identity, as defined by its <c>IdentityAttributeOrder</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes service method.</param>
         /// 
@@ -7588,7 +7588,7 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Updates a given typed link’s attributes. Attributes to be updated must not contribute
-        /// to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.
+        /// to the typed link’s identity, as defined by its <c>IdentityAttributeOrder</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLinkAttributes service method.</param>
         /// <param name="cancellationToken">
@@ -8016,12 +8016,12 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with
-        /// schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version
-        /// upgrades are instantaneously available for readers on all objects in the directory.
-        /// Note: This is a synchronous API call and upgrades only one schema on a given directory
-        /// per call. To upgrade multiple directories from one schema, you would need to call
-        /// this API on each directory.
+        /// Upgrades a single directory in-place using the <c>PublishedSchemaArn</c> with schema
+        /// updates found in <c>MinorVersion</c>. Backwards-compatible minor version upgrades
+        /// are instantaneously available for readers on all objects in the directory. Note: This
+        /// is a synchronous API call and upgrades only one schema on a given directory per call.
+        /// To upgrade multiple directories from one schema, you would need to call this API on
+        /// each directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpgradeAppliedSchema service method.</param>
         /// 
@@ -8079,12 +8079,12 @@ namespace Amazon.CloudDirectory
 
 
         /// <summary>
-        /// Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with
-        /// schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version
-        /// upgrades are instantaneously available for readers on all objects in the directory.
-        /// Note: This is a synchronous API call and upgrades only one schema on a given directory
-        /// per call. To upgrade multiple directories from one schema, you would need to call
-        /// this API on each directory.
+        /// Upgrades a single directory in-place using the <c>PublishedSchemaArn</c> with schema
+        /// updates found in <c>MinorVersion</c>. Backwards-compatible minor version upgrades
+        /// are instantaneously available for readers on all objects in the directory. Note: This
+        /// is a synchronous API call and upgrades only one schema on a given directory per call.
+        /// To upgrade multiple directories from one schema, you would need to call this API on
+        /// each directory.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpgradeAppliedSchema service method.</param>
         /// <param name="cancellationToken">
@@ -8150,7 +8150,7 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Upgrades a published schema under a new minor version revision using the current contents
-        /// of <code>DevelopmentSchemaArn</code>.
+        /// of <c>DevelopmentSchemaArn</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpgradePublishedSchema service method.</param>
         /// 
@@ -8209,7 +8209,7 @@ namespace Amazon.CloudDirectory
 
         /// <summary>
         /// Upgrades a published schema under a new minor version revision using the current contents
-        /// of <code>DevelopmentSchemaArn</code>.
+        /// of <c>DevelopmentSchemaArn</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpgradePublishedSchema service method.</param>
         /// <param name="cancellationToken">

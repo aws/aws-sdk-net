@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// Information about a reference when the <code>referenceType</code> is <code>NUMBER</code>.
-    /// Otherwise, null.
+    /// Information about a reference when the <c>referenceType</c> is <c>NUMBER</c>. Otherwise,
+    /// null.
     /// </summary>
     public partial class NumberReference
     {

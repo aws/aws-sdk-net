@@ -199,8 +199,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelCompositeModelType. 
         /// <para>
-        /// The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>,
-        /// or <code> AWS/L4E_ANOMALY</code>.
+        /// The composite model type. Valid values are <c>AWS/ALARM</c>, <c>CUSTOM</c>, or <c>
+        /// AWS/L4E_ANOMALY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -238,10 +238,10 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property CompositionDetails. 
         /// <para>
-        /// Metadata for the composition relationship established by using <code>composedAssetModelId</code>
+        /// Metadata for the composition relationship established by using <c>composedAssetModelId</c>
         /// in <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_CreateAssetModelCompositeModel.html">
-        /// <code>CreateAssetModelCompositeModel</code> </a>. For instance, an array detailing
-        /// the path of the composition relationship for this composite model.
+        /// <c>CreateAssetModelCompositeModel</c> </a>. For instance, an array detailing the path
+        /// of the composition relationship for this composite model.
         /// </para>
         /// </summary>
         public CompositionDetails CompositionDetails

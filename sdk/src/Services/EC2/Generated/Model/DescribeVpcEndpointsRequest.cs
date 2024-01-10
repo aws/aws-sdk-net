@@ -46,43 +46,42 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ip-address-type</code> - The IP address type (<code>ipv4</code> | <code>ipv6</code>).
+        ///  <c>ip-address-type</c> - The IP address type (<c>ipv4</c> | <c>ipv6</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>service-name</code> - The name of the service.
+        ///  <c>service-name</c> - The name of the service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to the
-        /// resource. Use the tag key in the filter name and the tag value as the filter value.
-        /// For example, to find all resources that have a tag with the key <code>Owner</code>
-        /// and the value <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name
-        /// and <code>TeamA</code> for the filter value.
+        ///  <c>tag</c>:&lt;key&gt; - The key/value combination of a tag assigned to the resource.
+        /// Use the tag key in the filter name and the tag value as the filter value. For example,
+        /// to find all resources that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>,
+        /// specify <c>tag:Owner</c> for the filter name and <c>TeamA</c> for the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tag-key</code> - The key of a tag assigned to the resource. Use this filter
-        /// to find all resources assigned a tag with a specific key, regardless of the tag value.
+        ///  <c>tag-key</c> - The key of a tag assigned to the resource. Use this filter to find
+        /// all resources assigned a tag with a specific key, regardless of the tag value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-id</code> - The ID of the VPC in which the endpoint resides.
+        ///  <c>vpc-id</c> - The ID of the VPC in which the endpoint resides.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-id</code> - The ID of the endpoint.
+        ///  <c>vpc-endpoint-id</c> - The ID of the endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-state</code> - The state of the endpoint (<code>pendingAcceptance</code>
-        /// | <code>pending</code> | <code>available</code> | <code>deleting</code> | <code>deleted</code>
-        /// | <code>rejected</code> | <code>failed</code>).
+        ///  <c>vpc-endpoint-state</c> - The state of the endpoint (<c>pendingAcceptance</c> |
+        /// <c>pending</c> | <c>available</c> | <c>deleting</c> | <c>deleted</c> | <c>rejected</c>
+        /// | <c>failed</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-endpoint-type</code> - The type of VPC endpoint (<code>Interface</code>
-        /// | <code>Gateway</code> | <code>GatewayLoadBalancer</code>).
+        ///  <c>vpc-endpoint-type</c> - The type of VPC endpoint (<c>Interface</c> | <c>Gateway</c>
+        /// | <c>GatewayLoadBalancer</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

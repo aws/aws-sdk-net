@@ -86,7 +86,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property StopInstanceOnIdleRequest. 
         /// <para>
-        /// An object that represents additional parameters when enabling or modifying the <code>StopInstanceOnIdle</code>
+        /// An object that represents additional parameters when enabling or modifying the <c>StopInstanceOnIdle</c>
         /// add-on.
         /// </para>
         ///  <important> 

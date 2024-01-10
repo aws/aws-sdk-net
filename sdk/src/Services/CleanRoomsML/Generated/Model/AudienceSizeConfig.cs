@@ -30,9 +30,9 @@ namespace Amazon.CleanRoomsML.Model
 {
     /// <summary>
     /// Configure the list of audience output sizes that can be created. A request to <a>StartAudienceGenerationJob</a>
-    /// that uses this configured audience model must have an <code>audienceSize</code> selected
-    /// from this list. You can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure
-    /// out audience sizes using the count of identifiers in the output. You can use the <code>Percentage</code>
+    /// that uses this configured audience model must have an <c>audienceSize</c> selected
+    /// from this list. You can use the <c>ABSOLUTE</c> <a>AudienceSize</a> to configure out
+    /// audience sizes using the count of identifiers in the output. You can use the <c>Percentage</c>
     /// <a>AudienceSize</a> to configure sizes in the range 1-100 percent.
     /// </summary>
     public partial class AudienceSizeConfig

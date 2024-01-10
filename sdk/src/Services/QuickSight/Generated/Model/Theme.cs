@@ -136,8 +136,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of theme, based on how it was created. Valid values include: <code>QUICKSIGHT</code>
-        /// and <code>CUSTOM</code>.
+        /// The type of theme, based on how it was created. Valid values include: <c>QUICKSIGHT</c>
+        /// and <c>CUSTOM</c>.
         /// </para>
         /// </summary>
         public ThemeType Type

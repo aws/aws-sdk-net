@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Describes an ASN.1 X.400 <code>GeneralName</code> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC
+    /// Describes an ASN.1 X.400 <c>GeneralName</c> as defined in <a href="https://datatracker.ietf.org/doc/html/rfc5280">RFC
     /// 5280</a>. Only one of the following naming options should be provided. Providing more
-    /// than one option results in an <code>InvalidArgsException</code> error.
+    /// than one option results in an <c>InvalidArgsException</c> error.
     /// </summary>
     public partial class GeneralName
     {
@@ -62,7 +62,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// Represents <code>GeneralName</code> as a DNS name.
+        /// Represents <c>GeneralName</c> as a DNS name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=253)]
@@ -81,7 +81,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property EdiPartyName. 
         /// <para>
-        /// Represents <code>GeneralName</code> as an <code>EdiPartyName</code> object.
+        /// Represents <c>GeneralName</c> as an <c>EdiPartyName</c> object.
         /// </para>
         /// </summary>
         public EdiPartyName EdiPartyName
@@ -99,7 +99,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// Represents <code>GeneralName</code> as an IPv4 or IPv6 address.
+        /// Represents <c>GeneralName</c> as an IPv4 or IPv6 address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=39)]
@@ -118,7 +118,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property OtherName. 
         /// <para>
-        /// Represents <code>GeneralName</code> using an <code>OtherName</code> object.
+        /// Represents <c>GeneralName</c> using an <c>OtherName</c> object.
         /// </para>
         /// </summary>
         public OtherName OtherName
@@ -136,7 +136,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property RegisteredId. 
         /// <para>
-        ///  Represents <code>GeneralName</code> as an object identifier (OID).
+        ///  Represents <c>GeneralName</c> as an object identifier (OID).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -155,7 +155,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property Rfc822Name. 
         /// <para>
-        /// Represents <code>GeneralName</code> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC
+        /// Represents <c>GeneralName</c> as an <a href="https://datatracker.ietf.org/doc/html/rfc822">RFC
         /// 822</a> email address.
         /// </para>
         /// </summary>
@@ -175,7 +175,7 @@ namespace Amazon.ACMPCA.Model
         /// <summary>
         /// Gets and sets the property UniformResourceIdentifier. 
         /// <para>
-        /// Represents <code>GeneralName</code> as a URI.
+        /// Represents <c>GeneralName</c> as a URI.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=253)]

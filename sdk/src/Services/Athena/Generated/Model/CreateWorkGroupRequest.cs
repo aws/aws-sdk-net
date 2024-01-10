@@ -48,8 +48,8 @@ namespace Amazon.Athena.Model
         /// S3 where query and calculation results are stored, the encryption configuration, if
         /// any, used for encrypting query results, whether the Amazon CloudWatch Metrics are
         /// enabled for the workgroup, the limit for the amount of bytes scanned (cutoff) per
-        /// query, if it is specified, and whether workgroup's settings (specified with <code>EnforceWorkGroupConfiguration</code>)
-        /// in the <code>WorkGroupConfiguration</code> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+        /// query, if it is specified, and whether workgroup's settings (specified with <c>EnforceWorkGroupConfiguration</c>)
+        /// in the <c>WorkGroupConfiguration</c> override client-side settings. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
         /// </para>
         /// </summary>
         public WorkGroupConfiguration Configuration

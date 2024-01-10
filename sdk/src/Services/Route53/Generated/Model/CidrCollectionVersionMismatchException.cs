@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The CIDR collection version you provided, doesn't match the one in the <code>ListCidrCollections</code>
+    /// The CIDR collection version you provided, doesn't match the one in the <c>ListCidrCollections</c>
     /// operation.
     /// </summary>
     #if !NETSTANDARD

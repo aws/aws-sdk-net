@@ -40,7 +40,7 @@ namespace Amazon.LocationService.Model
         /// <para>
         /// Specifies the political view for the style. Set to an empty string to not use a political
         /// view, or, for styles that support specific political views, you can choose a view,
-        /// such as <code>IND</code> for the Indian view.
+        /// such as <c>IND</c> for the Indian view.
         /// </para>
         ///  <note> 
         /// <para>

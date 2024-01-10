@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The option to relax the validation that is required to export each asset. When <code>StrictModeForAllResource</code>
+    /// The option to relax the validation that is required to export each asset. When <c>StrictModeForAllResource</c>
     /// is set to true, validation is skipped for specific UI errors.
     /// </summary>
     public partial class AssetBundleExportJobValidationStrategy

@@ -58,7 +58,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceModelVersion. 
         /// <para>
-        /// Version number of the face detection model associated with the input collection (<code>CollectionId</code>).
+        /// Version number of the face detection model associated with the input collection (<c>CollectionId</c>).
         /// </para>
         /// </summary>
         public string FaceModelVersion

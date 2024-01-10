@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeBuild.Model
 {
     /// <summary>
-    /// A filter used to return reports with the status specified by the input <code>status</code>
+    /// A filter used to return reports with the status specified by the input <c>status</c>
     /// parameter.
     /// </summary>
     public partial class ReportFilter

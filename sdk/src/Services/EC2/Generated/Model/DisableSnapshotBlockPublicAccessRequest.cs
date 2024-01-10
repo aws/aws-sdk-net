@@ -36,9 +36,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// If block public access is enabled in <code>block-all-sharing</code> mode, and you
-    /// disable block public access, all snapshots that were previously publicly shared are
-    /// no longer treated as private and they become publicly accessible again.
+    /// If block public access is enabled in <c>block-all-sharing</c> mode, and you disable
+    /// block public access, all snapshots that were previously publicly shared are no longer
+    /// treated as private and they become publicly accessible again.
     /// </para>
     ///  
     /// <para>

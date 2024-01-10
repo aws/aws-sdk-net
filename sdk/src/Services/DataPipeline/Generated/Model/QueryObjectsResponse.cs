@@ -77,8 +77,8 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// The starting point for the next page of results. To view the next page of results,
-        /// call <code>QueryObjects</code> again with this marker value. If the value is null,
-        /// there are no more results.
+        /// call <c>QueryObjects</c> again with this marker value. If the value is null, there
+        /// are no more results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

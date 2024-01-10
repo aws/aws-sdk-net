@@ -78,7 +78,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FacetResults. 
         /// <para>
-        /// Contains the results of a document attribute/field that is a nested facet. A <code>FacetResult</code>
+        /// Contains the results of a document attribute/field that is a nested facet. A <c>FacetResult</c>
         /// contains the counts for each facet nested within a facet.
         /// </para>
         ///  

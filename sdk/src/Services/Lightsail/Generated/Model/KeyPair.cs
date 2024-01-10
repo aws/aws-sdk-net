@@ -45,7 +45,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the key pair (<code>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the key pair (<c>arn:aws:lightsail:us-east-2:123456789101:KeyPair/05859e3d-331d-48ba-9034-12345EXAMPLE</c>).
         /// </para>
         /// </summary>
         public string Arn
@@ -63,7 +63,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The timestamp when the key pair was created (<code>1479816991.349</code>).
+        /// The timestamp when the key pair was created (<c>1479816991.349</c>).
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -135,7 +135,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type (usually <code>KeyPair</code>).
+        /// The resource type (usually <c>KeyPair</c>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

@@ -44,7 +44,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Destination. 
         /// <para>
         /// The destination IP address or address range to inspect for, in CIDR notation. To match
-        /// with any address, specify <code>ANY</code>.
+        /// with any address, specify <c>ANY</c>.
         /// </para>
         /// </summary>
         public string Destination
@@ -62,9 +62,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// The destination port to inspect for. You can specify an individual port, such as <code>1994</code>.
-        /// You also can specify a port range, such as <code>1990:1994</code>. To match with any
-        /// port, specify <code>ANY</code>.
+        /// The destination port to inspect for. You can specify an individual port, such as <c>1994</c>.
+        /// You also can specify a port range, such as <c>1990:1994</c>. To match with any port,
+        /// specify <c>ANY</c>.
         /// </para>
         /// </summary>
         public string DestinationPort
@@ -82,10 +82,10 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection
-        /// matches bidirectional traffic, both from the source to the destination and from the
-        /// destination to the source. If set to <code>FORWARD</code>, the inspection only matches
-        /// traffic going from the source to the destination.
+        /// The direction of traffic flow to inspect. If set to <c>ANY</c>, the inspection matches
+        /// bidirectional traffic, both from the source to the destination and from the destination
+        /// to the source. If set to <c>FORWARD</c>, the inspection only matches traffic going
+        /// from the source to the destination.
         /// </para>
         /// </summary>
         public string Direction
@@ -103,7 +103,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol to inspect for. To inspector for all protocols, use <code>IP</code>.
+        /// The protocol to inspect for. To inspector for all protocols, use <c>IP</c>.
         /// </para>
         /// </summary>
         public string Protocol
@@ -122,7 +122,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// The source IP address or address range to inspect for, in CIDR notation. To match
-        /// with any address, specify <code>ANY</code>.
+        /// with any address, specify <c>ANY</c>.
         /// </para>
         /// </summary>
         public string Source
@@ -140,9 +140,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourcePort. 
         /// <para>
-        /// The source port to inspect for. You can specify an individual port, such as <code>1994</code>.
-        /// You also can specify a port range, such as <code>1990:1994</code>. To match with any
-        /// port, specify <code>ANY</code>.
+        /// The source port to inspect for. You can specify an individual port, such as <c>1994</c>.
+        /// You also can specify a port range, such as <c>1990:1994</c>. To match with any port,
+        /// specify <c>ANY</c>.
         /// </para>
         /// </summary>
         public string SourcePort

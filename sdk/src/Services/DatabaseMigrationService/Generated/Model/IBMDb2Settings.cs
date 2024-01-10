@@ -204,19 +204,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
-        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
-        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
-        /// to the Db2 LUW endpoint. 
+        /// entity and grants the required permissions to access the value in <c>SecretsManagerSecret</c>.
+        /// The role must allow the <c>iam:PassRole</c> action. <c>SecretsManagerSecret</c> has
+        /// the value of the Amazon Web Services Secrets Manager secret that allows access to
+        /// the Db2 LUW endpoint. 
         /// </para>
         ///  <note> 
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
-        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
-        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
-        /// and <code>Port</code>. You can't specify both. For more information on creating this
-        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// values for this setting and <c>SecretsManagerSecretId</c>. Or you can specify clear-text
+        /// values for <c>UserName</c>, <c>Password</c>, <c>ServerName</c>, and <c>Port</c>. You
+        /// can't specify both. For more information on creating this <c>SecretsManagerSecret</c>
+        /// and the <c>SecretsManagerAccessRoleArn</c> and <c>SecretsManagerSecretId</c> required
+        /// to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
         /// Service User Guide</i>.
         /// </para>
@@ -237,8 +237,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerSecretId. 
         /// <para>
-        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
-        /// that contains the Db2 LUW endpoint connection details.
+        /// The full ARN, partial ARN, or friendly name of the <c>SecretsManagerSecret</c> that
+        /// contains the Db2 LUW endpoint connection details.
         /// </para>
         /// </summary>
         public string SecretsManagerSecretId

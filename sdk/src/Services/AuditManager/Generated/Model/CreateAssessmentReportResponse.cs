@@ -38,8 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentReport. 
         /// <para>
-        ///  The new assessment report that the <code>CreateAssessmentReport</code> API returned.
-        /// 
+        ///  The new assessment report that the <c>CreateAssessmentReport</c> API returned. 
         /// </para>
         /// </summary>
         public AssessmentReport AssessmentReport

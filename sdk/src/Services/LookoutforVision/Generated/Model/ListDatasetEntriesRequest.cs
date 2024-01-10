@@ -36,7 +36,7 @@ namespace Amazon.LookoutforVision.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code>
+    /// This operation requires permissions to perform the <c>lookoutvision:ListDatasetEntries</c>
     /// operation.
     /// </para>
     /// </summary>
@@ -55,7 +55,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property AfterCreationDate. 
         /// <para>
-        /// Only includes entries after the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.
+        /// Only includes entries after the specified date in the response. For example, <c>2020-06-23T00:00:00</c>.
         /// </para>
         /// </summary>
         public DateTime AfterCreationDate
@@ -73,9 +73,9 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property AnomalyClass. 
         /// <para>
-        /// Specify <code>normal</code> to include only normal images. Specify <code>anomaly</code>
-        /// to only include anomalous entries. If you don't specify a value, Amazon Lookout for
-        /// Vision returns normal and anomalous images.
+        /// Specify <c>normal</c> to include only normal images. Specify <c>anomaly</c> to only
+        /// include anomalous entries. If you don't specify a value, Amazon Lookout for Vision
+        /// returns normal and anomalous images.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -94,7 +94,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property BeforeCreationDate. 
         /// <para>
-        /// Only includes entries before the specified date in the response. For example, <code>2020-06-23T00:00:00</code>.
+        /// Only includes entries before the specified date in the response. For example, <c>2020-06-23T00:00:00</c>.
         /// </para>
         /// </summary>
         public DateTime BeforeCreationDate
@@ -112,9 +112,9 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property DatasetType. 
         /// <para>
-        /// The type of the dataset that you want to list. Specify <code>train</code> to list
-        /// the training dataset. Specify <code>test</code> to list the test dataset. If you have
-        /// a single dataset project, specify <code>train</code>.
+        /// The type of the dataset that you want to list. Specify <c>train</c> to list the training
+        /// dataset. Specify <c>test</c> to list the test dataset. If you have a single dataset
+        /// project, specify <c>train</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -133,8 +133,8 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property Labeled. 
         /// <para>
-        /// Specify <code>true</code> to include labeled entries, otherwise specify <code>false</code>.
-        /// If you don't specify a value, Lookout for Vision returns all entries.
+        /// Specify <c>true</c> to include labeled entries, otherwise specify <c>false</c>. If
+        /// you don't specify a value, Lookout for Vision returns all entries.
         /// </para>
         /// </summary>
         public bool Labeled
@@ -213,8 +213,8 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property SourceRefContains. 
         /// <para>
-        /// Perform a "contains" search on the values of the <code>source-ref</code> key within
-        /// the dataset. For example a value of "IMG_17" returns all JSON Lines where the <code>source-ref</code>
+        /// Perform a "contains" search on the values of the <c>source-ref</c> key within the
+        /// dataset. For example a value of "IMG_17" returns all JSON Lines where the <c>source-ref</c>
         /// key value matches <i>*IMG_17*</i>.
         /// </para>
         /// </summary>

@@ -31,13 +31,13 @@ namespace Amazon.Detective.Model
     /// <summary>
     /// Container for the parameters to the RejectInvitation operation.
     /// Rejects an invitation to contribute the account data to a behavior graph. This operation
-    /// must be called by an invited member account that has the <code>INVITED</code> status.
+    /// must be called by an invited member account that has the <c>INVITED</c> status.
     /// 
     ///  
     /// <para>
-    ///  <code>RejectInvitation</code> cannot be called by an organization account in the
-    /// organization behavior graph. In the organization behavior graph, organization accounts
-    /// do not receive an invitation.
+    ///  <c>RejectInvitation</c> cannot be called by an organization account in the organization
+    /// behavior graph. In the organization behavior graph, organization accounts do not receive
+    /// an invitation.
     /// </para>
     /// </summary>
     public partial class RejectInvitationRequest : AmazonDetectiveRequest
@@ -51,7 +51,7 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  
         /// <para>
-        /// The member account's current member status in the behavior graph must be <code>INVITED</code>.
+        /// The member account's current member status in the behavior graph must be <c>INVITED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

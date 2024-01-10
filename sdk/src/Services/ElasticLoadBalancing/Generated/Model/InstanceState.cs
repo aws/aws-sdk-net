@@ -51,54 +51,54 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>N/A</code> 
+        ///  <c>N/A</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>A transient error occurred. Please try again later.</code> 
+        ///  <c>A transient error occurred. Please try again later.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance has failed at least the UnhealthyThreshold number of health checks
-        /// consecutively.</code> 
+        ///  <c>Instance has failed at least the UnhealthyThreshold number of health checks consecutively.</c>
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance has not passed the configured HealthyThreshold number of health checks
-        /// consecutively.</code> 
+        ///  <c>Instance has not passed the configured HealthyThreshold number of health checks
+        /// consecutively.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance registration is still in progress.</code> 
+        ///  <c>Instance registration is still in progress.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured
-        /// to route traffic to.</code> 
+        ///  <c>Instance is in the EC2 Availability Zone for which LoadBalancer is not configured
+        /// to route traffic to.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance is not currently registered with the LoadBalancer.</code> 
+        ///  <c>Instance is not currently registered with the LoadBalancer.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance deregistration currently in progress.</code> 
+        ///  <c>Instance deregistration currently in progress.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Disable Availability Zone is currently in progress.</code> 
+        ///  <c>Disable Availability Zone is currently in progress.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance is in pending state.</code> 
+        ///  <c>Instance is in pending state.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance is in stopped state.</code> 
+        ///  <c>Instance is in stopped state.</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Instance is in terminated state.</code> 
+        ///  <c>Instance is in terminated state.</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -135,12 +135,12 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// <summary>
         /// Gets and sets the property ReasonCode. 
         /// <para>
-        /// Information about the cause of <code>OutOfService</code> instances. Specifically,
-        /// whether the cause is Elastic Load Balancing or the instance.
+        /// Information about the cause of <c>OutOfService</c> instances. Specifically, whether
+        /// the cause is Elastic Load Balancing or the instance.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code> 
+        /// Valid values: <c>ELB</c> | <c>Instance</c> | <c>N/A</c> 
         /// </para>
         /// </summary>
         public string ReasonCode
@@ -162,8 +162,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code>
-        /// 
+        /// Valid values: <c>InService</c> | <c>OutOfService</c> | <c>Unknown</c> 
         /// </para>
         /// </summary>
         public string State

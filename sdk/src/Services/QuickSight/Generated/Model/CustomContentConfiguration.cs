@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>CustomContentVisual</code>.
+    /// The configuration of a <c>CustomContentVisual</c>.
     /// </summary>
     public partial class CustomContentConfiguration
     {
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ImageScaling. 
         /// <para>
         /// The sizing options for the size of the custom content visual. This structure is required
-        /// when the <code>ContentType</code> of the visual is <code>'IMAGE'</code>.
+        /// when the <c>ContentType</c> of the visual is <c>'IMAGE'</c>.
         /// </para>
         /// </summary>
         public CustomContentImageScalingConfiguration ImageScaling

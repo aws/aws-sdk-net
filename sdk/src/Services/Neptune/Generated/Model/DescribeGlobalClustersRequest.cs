@@ -65,9 +65,9 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// (<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>.
+        /// (<i>Optional</i>) A pagination token returned by a previous call to <c>DescribeGlobalClusters</c>.
         /// If this parameter is specified, the response will only include records beyond the
-        /// marker, up to the number specified by <code>MaxRecords</code>.
+        /// marker, up to the number specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -86,12 +86,12 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination marker token is included
-        /// in the response that you can use to retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination marker token is included in the
+        /// response that you can use to retrieve the remaining results.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code> 
+        /// Default: <c>100</c> 
         /// </para>
         ///  
         /// <para>

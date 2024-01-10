@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateMLModel</code> operation, and is an acknowledgement
+    /// Represents the output of a <c>CreateMLModel</c> operation, and is an acknowledgement
     /// that Amazon ML received the request.
     /// 
     ///  
     /// <para>
-    /// The <code>CreateMLModel</code> operation is asynchronous. You can poll for status
-    /// updates by using the <code>GetMLModel</code> operation and checking the <code>Status</code>
-    /// parameter. 
+    /// The <c>CreateMLModel</c> operation is asynchronous. You can poll for status updates
+    /// by using the <c>GetMLModel</c> operation and checking the <c>Status</c> parameter.
+    /// 
     /// </para>
     /// </summary>
     public partial class CreateMLModelResponse : AmazonWebServiceResponse
@@ -46,8 +46,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should
-        /// be identical to the value of the <code>MLModelId</code> in the request. 
+        /// A user-supplied ID that uniquely identifies the <c>MLModel</c>. This value should
+        /// be identical to the value of the <c>MLModelId</c> in the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

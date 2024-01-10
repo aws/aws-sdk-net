@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// An object that describes the endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code>
+    /// An object that describes the endpoint of the signaling channel returned by the <c>GetSignalingChannelEndpoint</c>
     /// API.
     /// 
     ///  
     /// <para>
-    /// The media server endpoint will correspond to the <code>WEBRTC</code> Protocol.
+    /// The media server endpoint will correspond to the <c>WEBRTC</c> Protocol.
     /// </para>
     /// </summary>
     public partial class ResourceEndpointListItem
@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code>
+        /// The protocol of the signaling channel returned by the <c>GetSignalingChannelEndpoint</c>
         /// API.
         /// </para>
         /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ResourceEndpoint. 
         /// <para>
-        /// The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code>
+        /// The endpoint of the signaling channel returned by the <c>GetSignalingChannelEndpoint</c>
         /// API.
         /// </para>
         /// </summary>

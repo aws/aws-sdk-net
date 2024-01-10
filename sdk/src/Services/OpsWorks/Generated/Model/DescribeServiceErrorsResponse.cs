@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeServiceErrors</code> request.
+    /// Contains the response to a <c>DescribeServiceErrors</c> request.
     /// </summary>
     public partial class DescribeServiceErrorsResponse : AmazonWebServiceResponse
     {
@@ -38,8 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ServiceErrors. 
         /// <para>
-        /// An array of <code>ServiceError</code> objects that describe the specified service
-        /// errors.
+        /// An array of <c>ServiceError</c> objects that describe the specified service errors.
         /// </para>
         /// </summary>
         public List<ServiceError> ServiceErrors

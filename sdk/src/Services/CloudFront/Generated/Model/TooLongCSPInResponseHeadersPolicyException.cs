@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The length of the <code>Content-Security-Policy</code> header value in the response
-    /// headers policy exceeds the maximum.
+    /// The length of the <c>Content-Security-Policy</c> header value in the response headers
+    /// policy exceeds the maximum.
     /// 
     ///  
     /// <para>

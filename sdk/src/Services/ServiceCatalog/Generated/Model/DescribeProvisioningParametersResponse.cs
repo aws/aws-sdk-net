@@ -158,7 +158,7 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property UsageInstructions. 
         /// <para>
         /// Any additional metadata specifically related to the provisioning of the product. For
-        /// example, see the <code>Version</code> field of the CloudFormation template.
+        /// example, see the <c>Version</c> field of the CloudFormation template.
         /// </para>
         /// </summary>
         public List<UsageInstruction> UsageInstructions

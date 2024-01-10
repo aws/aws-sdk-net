@@ -45,8 +45,8 @@ namespace Amazon.Glue.Model
         /// and cost. A value of 0.5 means that the system balances accuracy and cost concerns.
         /// A value of 1.0 means a bias purely for accuracy, which typically results in a higher
         /// cost, sometimes substantially higher. A value of 0.0 means a bias purely for cost,
-        /// which results in a less accurate <code>FindMatches</code> transform, sometimes with
-        /// unacceptable accuracy.
+        /// which results in a less accurate <c>FindMatches</c> transform, sometimes with unacceptable
+        /// accuracy.
         /// </para>
         ///  
         /// <para>
@@ -77,11 +77,10 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property EnforceProvidedLabels. 
         /// <para>
         /// The value to switch on or off to force the output to match the provided labels from
-        /// users. If the value is <code>True</code>, the <code>find matches</code> transform
-        /// forces the output to match the provided labels. The results override the normal conflation
-        /// results. If the value is <code>False</code>, the <code>find matches</code> transform
-        /// does not ensure all the labels provided are respected, and the results rely on the
-        /// trained model.
+        /// users. If the value is <c>True</c>, the <c>find matches</c> transform forces the output
+        /// to match the provided labels. The results override the normal conflation results.
+        /// If the value is <c>False</c>, the <c>find matches</c> transform does not ensure all
+        /// the labels provided are respected, and the results rely on the trained model.
         /// </para>
         ///  
         /// <para>

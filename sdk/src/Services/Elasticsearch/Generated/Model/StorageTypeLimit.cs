@@ -39,8 +39,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property LimitName. 
         /// <para>
-        ///  Name of storage limits that are applicable for given storage type. If <code> <a>StorageType</a>
-        /// </code> is ebs, following storage options are applicable <ol> <li>MinimumVolumeSize</li>
+        ///  Name of storage limits that are applicable for given storage type. If <c> <a>StorageType</a>
+        /// </c> is ebs, following storage options are applicable <ol> <li>MinimumVolumeSize</li>
         /// Minimum amount of volume size that is applicable for given storage type.It can be
         /// empty if it is not applicable. <li>MaximumVolumeSize</li> Maximum amount of volume
         /// size that is applicable for given storage type.It can be empty if it is not applicable.
@@ -68,7 +68,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property LimitValues. 
         /// <para>
-        ///  Values for the <code> <a>StorageTypeLimit$LimitName</a> </code> . 
+        ///  Values for the <c> <a>StorageTypeLimit$LimitName</a> </c> . 
         /// </para>
         /// </summary>
         public List<string> LimitValues

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Specifies the minimum and maximum for the <code>NetworkBandwidthGbps</code> object
-    /// when you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    /// Specifies the minimum and maximum for the <c>NetworkBandwidthGbps</c> object when
+    /// you specify <a>InstanceRequirements</a> for an Auto Scaling group.
     /// 
     ///  <note> 
     /// <para>

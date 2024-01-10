@@ -94,7 +94,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property VoiceConnectorItems. 
         /// <para>
-        /// The <code>VoiceConnectorItems</code> to associate with the group.
+        /// The <c>VoiceConnectorItems</c> to associate with the group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

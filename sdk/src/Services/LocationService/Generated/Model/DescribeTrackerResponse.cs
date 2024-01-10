@@ -50,7 +50,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
-        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -88,8 +88,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property EventBridgeEnabled. 
         /// <para>
-        /// Whether <code>UPDATE</code> events from this tracker in EventBridge are enabled. If
-        /// set to <code>true</code> these events will be sent to EventBridge.
+        /// Whether <c>UPDATE</c> events from this tracker in EventBridge are enabled. If set
+        /// to <c>true</c> these events will be sent to EventBridge.
         /// </para>
         /// </summary>
         public bool EventBridgeEnabled
@@ -107,7 +107,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyEnableGeospatialQueries. 
         /// <para>
-        /// Enables <code>GeospatialQueries</code> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+        /// Enables <c>GeospatialQueries</c> for a tracker that uses a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
         /// Web Services KMS customer managed key</a>.
         /// </para>
         ///  
@@ -125,8 +125,8 @@ namespace Amazon.LocationService.Model
         ///  
         /// <para>
         /// You can choose to opt-in to the Bounding Polygon Quseries feature. This is done by
-        /// setting the <code>KmsKeyEnableGeospatialQueries</code> parameter to true when creating
-        /// or updating a Tracker.
+        /// setting the <c>KmsKeyEnableGeospatialQueries</c> parameter to true when creating or
+        /// updating a Tracker.
         /// </para>
         ///  </note>
         /// </summary>
@@ -183,7 +183,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// Always returns <code>RequestBasedUsage</code>.
+        /// Always returns <c>RequestBasedUsage</c>.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
@@ -245,8 +245,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// 
+        /// Format example: <c>arn:aws:geo:region:account-id:tracker/ExampleTracker</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -286,7 +285,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property UpdateTime. 
         /// <para>
         /// The timestamp for when the tracker resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
-        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

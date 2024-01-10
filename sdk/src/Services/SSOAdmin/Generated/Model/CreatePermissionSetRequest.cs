@@ -34,8 +34,8 @@ namespace Amazon.SSOAdmin.Model
     /// 
     ///  <note> 
     /// <para>
-    /// To grant users and groups access to Amazon Web Services account resources, use <code>
-    /// <a>CreateAccountAssignment</a> </code>.
+    /// To grant users and groups access to Amazon Web Services account resources, use <c>
+    /// <a>CreateAccountAssignment</a> </c>.
     /// </para>
     ///  </note>
     /// </summary>

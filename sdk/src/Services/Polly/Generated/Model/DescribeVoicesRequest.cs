@@ -36,25 +36,24 @@ namespace Amazon.Polly.Model
     /// 
     ///  
     /// <para>
-    /// When synthesizing speech ( <code>SynthesizeSpeech</code> ), you provide the voice
-    /// ID for the voice you want from the list of voices returned by <code>DescribeVoices</code>.
+    /// When synthesizing speech ( <c>SynthesizeSpeech</c> ), you provide the voice ID for
+    /// the voice you want from the list of voices returned by <c>DescribeVoices</c>.
     /// </para>
     ///  
     /// <para>
     /// For example, you want your news reader application to read news in a specific language,
-    /// but giving a user the option to choose the voice. Using the <code>DescribeVoices</code>
+    /// but giving a user the option to choose the voice. Using the <c>DescribeVoices</c>
     /// operation you can provide the user with a list of available voices to select from.
     /// </para>
     ///  
     /// <para>
     ///  You can optionally specify a language code to filter the available voices. For example,
-    /// if you specify <code>en-US</code>, the operation returns a list of all available US
-    /// English voices. 
+    /// if you specify <c>en-US</c>, the operation returns a list of all available US English
+    /// voices. 
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>polly:DescribeVoices</code>
-    /// action.
+    /// This operation requires permissions to perform the <c>polly:DescribeVoices</c> action.
     /// </para>
     /// </summary>
     public partial class DescribeVoicesRequest : AmazonPollyRequest
@@ -67,8 +66,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>)
-        /// used by Amazon Polly when processing input text for speech synthesis. 
+        /// Specifies the engine (<c>standard</c>, <c>neural</c> or <c>long-form</c>) used by
+        /// Amazon Polly when processing input text for speech synthesis. 
         /// </para>
         /// </summary>
         public Engine Engine
@@ -89,8 +88,8 @@ namespace Amazon.Polly.Model
         /// Boolean value indicating whether to return any bilingual voices that use the specified
         /// language as an additional language. For instance, if you request all languages that
         /// use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT)
-        /// and US English, that voice will be included if you specify <code>yes</code> but not
-        /// if you specify <code>no</code>.
+        /// and US English, that voice will be included if you specify <c>yes</c> but not if you
+        /// specify <c>no</c>.
         /// </para>
         /// </summary>
         public bool IncludeAdditionalLanguageCodes
@@ -128,8 +127,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque pagination token returned from the previous <code>DescribeVoices</code>
-        /// operation. If present, this indicates where to continue the listing.
+        /// An opaque pagination token returned from the previous <c>DescribeVoices</c> operation.
+        /// If present, this indicates where to continue the listing.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]

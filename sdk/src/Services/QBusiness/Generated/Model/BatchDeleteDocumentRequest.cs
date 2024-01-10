@@ -30,7 +30,7 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDeleteDocument operation.
-    /// Asynchronously deletes one or more documents added using the <code>BatchPutDocument</code>
+    /// Asynchronously deletes one or more documents added using the <c>BatchPutDocument</c>
     /// API from an Amazon Q index.
     /// 
     ///  

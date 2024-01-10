@@ -40,7 +40,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// High-level information about a <a>WebACL</a>, returned by operations like create and
         /// list. This provides information like the ID, that you can use to retrieve and manage
-        /// a <code>WebACL</code>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.
+        /// a <c>WebACL</c>, and the ARN, that you provide to operations like <a>AssociateWebACL</a>.
         /// </para>
         /// </summary>
         public WebACLSummary Summary

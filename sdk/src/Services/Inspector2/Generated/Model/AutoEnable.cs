@@ -102,7 +102,7 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property LambdaCode. 
         /// <para>
         /// Represents whether AWS Lambda code scans are automatically enabled for new members
-        /// of your Amazon Inspector organization. <pre><code> &lt;/p&gt; </code></pre>
+        /// of your Amazon Inspector organization. <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
         public bool LambdaCode
         {

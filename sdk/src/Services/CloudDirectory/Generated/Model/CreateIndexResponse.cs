@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ObjectIdentifier. 
         /// <para>
-        /// The <code>ObjectIdentifier</code> of the index created by this operation.
+        /// The <c>ObjectIdentifier</c> of the index created by this operation.
         /// </para>
         /// </summary>
         public string ObjectIdentifier

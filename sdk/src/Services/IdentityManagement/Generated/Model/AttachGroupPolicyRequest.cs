@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// You use this operation to attach a managed policy to a group. To embed an inline policy
     /// in a group, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_PutGroupPolicy.html">
-    /// <code>PutGroupPolicy</code> </a>.
+    /// <c>PutGroupPolicy</c> </a>.
     /// </para>
     ///  
     /// <para>

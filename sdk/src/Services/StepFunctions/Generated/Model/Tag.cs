@@ -41,8 +41,8 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  
     /// <para>
-    /// Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_
-    /// . : / = + - @</code>.
+    /// Tags may only contain Unicode letters, digits, white space, or these symbols: <c>_
+    /// . : / = + - @</c>.
     /// </para>
     /// </summary>
     public partial class Tag

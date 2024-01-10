@@ -30,7 +30,7 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// The metadata of a specific type that you can use to filter and group your results.
-    /// You can use <code>GetDimensionValues</code> to find specific values.
+    /// You can use <c>GetDimensionValues</c> to find specific values.
     /// </summary>
     public partial class DimensionValuesWithAttributes
     {
@@ -40,7 +40,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attribute that applies to a specific <code>Dimension</code>.
+        /// The attribute that applies to a specific <c>Dimension</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

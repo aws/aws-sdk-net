@@ -59,7 +59,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The KMS key ID. Takes the form <code>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</code>.
+        /// The KMS key ID. Takes the form <c>1a2a3a4-1a2a-3a4a-5a6a-1a2a3a4a5a6a</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]

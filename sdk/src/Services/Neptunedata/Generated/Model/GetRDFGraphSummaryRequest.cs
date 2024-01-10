@@ -47,7 +47,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Mode can take one of two values: <code>BASIC</code> (the default), and <code>DETAILED</code>.
+        /// Mode can take one of two values: <c>BASIC</c> (the default), and <c>DETAILED</c>.
         /// </para>
         /// </summary>
         public GraphSummaryType Mode

@@ -48,9 +48,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DETECTION_COMPLETE</code>: The stack drift detection operation has successfully
-        /// completed for all resources in the stack that support drift detection. (Resources
-        /// that don't currently support stack detection remain unchecked.)
+        ///  <c>DETECTION_COMPLETE</c>: The stack drift detection operation has successfully completed
+        /// for all resources in the stack that support drift detection. (Resources that don't
+        /// currently support stack detection remain unchecked.)
         /// </para>
         ///  
         /// <para>
@@ -60,14 +60,14 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DETECTION_FAILED</code>: The stack drift detection operation has failed for
-        /// at least one resource in the stack. Results will be available for resources on which
-        /// CloudFormation successfully completed drift detection.
+        ///  <c>DETECTION_FAILED</c>: The stack drift detection operation has failed for at least
+        /// one resource in the stack. Results will be available for resources on which CloudFormation
+        /// successfully completed drift detection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DETECTION_IN_PROGRESS</code>: The stack drift detection operation is currently
-        /// in progress.
+        ///  <c>DETECTION_IN_PROGRESS</c>: The stack drift detection operation is currently in
+        /// progress.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -106,8 +106,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DriftedStackResourceCount. 
         /// <para>
         /// Total number of stack resources that have drifted. This is NULL until the drift detection
-        /// operation reaches a status of <code>DETECTION_COMPLETE</code>. This value will be
-        /// 0 for stacks whose drift status is <code>IN_SYNC</code>.
+        /// operation reaches a status of <c>DETECTION_COMPLETE</c>. This value will be 0 for
+        /// stacks whose drift status is <c>IN_SYNC</c>.
         /// </para>
         /// </summary>
         public int DriftedStackResourceCount
@@ -154,22 +154,21 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DRIFTED</code>: The stack differs from its expected template configuration.
-        /// A stack is considered to have drifted if one or more of its resources have drifted.
+        ///  <c>DRIFTED</c>: The stack differs from its expected template configuration. A stack
+        /// is considered to have drifted if one or more of its resources have drifted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack differs from
-        /// its expected template configuration.
+        ///  <c>NOT_CHECKED</c>: CloudFormation hasn't checked if the stack differs from its expected
+        /// template configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The stack's actual configuration matches its expected template
-        /// configuration.
+        ///  <c>IN_SYNC</c>: The stack's actual configuration matches its expected template configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code>: This value is reserved for future use.
+        ///  <c>UNKNOWN</c>: This value is reserved for future use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

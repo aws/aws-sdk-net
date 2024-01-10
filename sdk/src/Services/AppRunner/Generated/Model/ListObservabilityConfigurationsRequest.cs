@@ -38,7 +38,7 @@ namespace Amazon.AppRunner.Model
     ///  
     /// <para>
     /// To retrieve a full description of a particular configuration revision, call and provide
-    /// one of the ARNs returned by <code>ListObservabilityConfigurations</code>.
+    /// one of the ARNs returned by <c>ListObservabilityConfigurations</c>.
     /// </para>
     /// </summary>
     public partial class ListObservabilityConfigurationsRequest : AmazonAppRunnerRequest
@@ -51,16 +51,16 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property LatestOnly. 
         /// <para>
-        /// Set to <code>true</code> to list only the latest revision for each requested configuration
+        /// Set to <c>true</c> to list only the latest revision for each requested configuration
         /// name.
         /// </para>
         ///  
         /// <para>
-        /// Set to <code>false</code> to list all revisions for each requested configuration name.
+        /// Set to <c>false</c> to list all revisions for each requested configuration name.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>true</code> 
+        /// Default: <c>true</c> 
         /// </para>
         /// </summary>
         public bool LatestOnly
@@ -83,8 +83,8 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>MaxResults</code>, the request retrieves all available
-        /// results in a single response.
+        /// If you don't specify <c>MaxResults</c>, the request retrieves all available results
+        /// in a single response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -109,8 +109,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify <code>NextToken</code>, the request retrieves the first result
-        /// page.
+        /// If you don't specify <c>NextToken</c>, the request retrieves the first result page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

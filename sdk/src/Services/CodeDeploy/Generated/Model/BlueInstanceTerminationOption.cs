@@ -30,8 +30,8 @@ namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
     /// Information about whether instances in the original environment are terminated when
-    /// a blue/green deployment is successful. <code>BlueInstanceTerminationOption</code>
-    /// does not apply to Lambda deployments.
+    /// a blue/green deployment is successful. <c>BlueInstanceTerminationOption</c> does not
+    /// apply to Lambda deployments.
     /// </summary>
     public partial class BlueInstanceTerminationOption
     {
@@ -46,12 +46,12 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE</code>: Instances are terminated after a specified wait time.
+        ///  <c>TERMINATE</c>: Instances are terminated after a specified wait time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KEEP_ALIVE</code>: Instances are left running after they are deregistered from
-        /// the load balancer and removed from the deployment group.
+        ///  <c>KEEP_ALIVE</c>: Instances are left running after they are deregistered from the
+        /// load balancer and removed from the deployment group.
         /// </para>
         ///  </li> </ul>
         /// </summary>

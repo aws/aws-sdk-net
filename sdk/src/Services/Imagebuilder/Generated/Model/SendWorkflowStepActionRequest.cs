@@ -30,7 +30,7 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the SendWorkflowStepAction operation.
-    /// Pauses or resumes image creation when the associated workflow runs a <code>WaitForAction</code>
+    /// Pauses or resumes image creation when the associated workflow runs a <c>WaitForAction</c>
     /// step.
     /// </summary>
     public partial class SendWorkflowStepActionRequest : AmazonImagebuilderRequest
@@ -44,7 +44,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action for the image creation process to take while a workflow <code>WaitForAction</code>
+        /// The action for the image creation process to take while a workflow <c>WaitForAction</c>
         /// step waits for an asynchronous action to complete.
         /// </para>
         /// </summary>

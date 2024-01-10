@@ -35,9 +35,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  <note> 
     /// <para>
     /// For maintenance window tasks without a specified target, you can't supply values for
-    /// <code>--max-errors</code> and <code>--max-concurrency</code>. Instead, the system
-    /// inserts a placeholder value of <code>1</code>, which may be reported in the response
-    /// to this command. These values don't affect the running of your task and can be ignored.
+    /// <c>--max-errors</c> and <c>--max-concurrency</c>. Instead, the system inserts a placeholder
+    /// value of <c>1</c>, which may be reported in the response to this command. These values
+    /// don't affect the running of your task and can be ignored.
     /// </para>
     ///  </note>
     /// </summary>
@@ -52,8 +52,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Optional filters used to narrow down the scope of the returned tasks. The supported
-        /// filter keys are <code>WindowTaskId</code>, <code>TaskArn</code>, <code>Priority</code>,
-        /// and <code>TaskType</code>.
+        /// filter keys are <c>WindowTaskId</c>, <c>TaskArn</c>, <c>Priority</c>, and <c>TaskType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

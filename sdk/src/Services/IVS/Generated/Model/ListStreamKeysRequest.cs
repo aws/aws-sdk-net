@@ -79,7 +79,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The first stream key to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// The first stream key to retrieve. This is used for pagination; see the <c>nextToken</c>
         /// response field.
         /// </para>
         /// </summary>

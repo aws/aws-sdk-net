@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Each slot type can have a set of values. Each <code>SlotTypeValue</code> represents
-    /// a value that the slot type can take.
+    /// Each slot type can have a set of values. Each <c>SlotTypeValue</c> represents a value
+    /// that the slot type can take.
     /// </summary>
     public partial class SlotTypeValue
     {

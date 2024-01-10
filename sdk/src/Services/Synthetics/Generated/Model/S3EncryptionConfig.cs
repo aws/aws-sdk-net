@@ -46,8 +46,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property EncryptionMode. 
         /// <para>
-        ///  The encryption method to use for artifacts created by this canary. Specify <code>SSE_S3</code>
-        /// to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <code>SSE-KMS</code>
+        ///  The encryption method to use for artifacts created by this canary. Specify <c>SSE_S3</c>
+        /// to use server-side encryption (SSE) with an Amazon S3-managed key. Specify <c>SSE-KMS</c>
         /// to use server-side encryption with a customer-managed KMS key.
         /// </para>
         ///  
@@ -70,8 +70,8 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The ARN of the customer-managed KMS key to use, if you specify <code>SSE-KMS</code>
-        /// for <code>EncryptionMode</code> 
+        /// The ARN of the customer-managed KMS key to use, if you specify <c>SSE-KMS</c> for
+        /// <c>EncryptionMode</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

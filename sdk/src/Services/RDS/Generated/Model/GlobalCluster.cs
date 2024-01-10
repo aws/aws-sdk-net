@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// A data object containing all properties for the current state of an in-process or
         /// pending switchover or failover process for this global cluster (Aurora global database).
-        /// This object is empty unless the <code>SwitchoverGlobalCluster</code> or <code>FailoverGlobalCluster</code>
+        /// This object is empty unless the <c>SwitchoverGlobalCluster</c> or <c>FailoverGlobalCluster</c>
         /// operation was called on this global cluster.
         /// </para>
         /// </summary>

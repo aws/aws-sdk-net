@@ -48,28 +48,28 @@ namespace Amazon.Glacier.Model
     ///  </note> 
     /// <para>
     /// The List Jobs operation supports pagination. You should always check the response
-    /// <code>Marker</code> field. If there are no more jobs to list, the <code>Marker</code>
-    /// field is set to <code>null</code>. If there are more jobs to list, the <code>Marker</code>
-    /// field is set to a non-null value, which you can use to continue the pagination of
-    /// the list. To return a list of jobs that begins at a specific job, set the marker request
-    /// parameter to the <code>Marker</code> value for that job that you obtained from a previous
-    /// List Jobs request.
+    /// <c>Marker</c> field. If there are no more jobs to list, the <c>Marker</c> field is
+    /// set to <c>null</c>. If there are more jobs to list, the <c>Marker</c> field is set
+    /// to a non-null value, which you can use to continue the pagination of the list. To
+    /// return a list of jobs that begins at a specific job, set the marker request parameter
+    /// to the <c>Marker</c> value for that job that you obtained from a previous List Jobs
+    /// request.
     /// </para>
     ///  
     /// <para>
     /// You can set a maximum limit for the number of jobs returned in the response by specifying
-    /// the <code>limit</code> parameter in the request. The default limit is 50. The number
-    /// of jobs returned might be fewer than the limit, but the number of returned jobs never
+    /// the <c>limit</c> parameter in the request. The default limit is 50. The number of
+    /// jobs returned might be fewer than the limit, but the number of returned jobs never
     /// exceeds the limit.
     /// </para>
     ///  
     /// <para>
-    /// Additionally, you can filter the jobs list returned by specifying the optional <code>statuscode</code>
-    /// parameter or <code>completed</code> parameter, or both. Using the <code>statuscode</code>
-    /// parameter, you can specify to return only jobs that match either the <code>InProgress</code>,
-    /// <code>Succeeded</code>, or <code>Failed</code> status. Using the <code>completed</code>
-    /// parameter, you can specify to return only jobs that were completed (<code>true</code>)
-    /// or jobs that were not completed (<code>false</code>).
+    /// Additionally, you can filter the jobs list returned by specifying the optional <c>statuscode</c>
+    /// parameter or <c>completed</c> parameter, or both. Using the <c>statuscode</c> parameter,
+    /// you can specify to return only jobs that match either the <c>InProgress</c>, <c>Succeeded</c>,
+    /// or <c>Failed</c> status. Using the <c>completed</c> parameter, you can specify to
+    /// return only jobs that were completed (<c>true</c>) or jobs that were not completed
+    /// (<c>false</c>).
     /// </para>
     ///  
     /// <para>
@@ -115,11 +115,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> value is the AWS account ID of the account that owns the
-        /// vault. You can either specify an AWS account ID or optionally a single '<code>-</code>'
-        /// (hyphen), in which case Amazon S3 Glacier uses the AWS account ID associated with
-        /// the credentials used to sign the request. If you use an account ID, do not include
-        /// any hyphens ('-') in the ID. 
+        /// The <c>AccountId</c> value is the AWS account ID of the account that owns the vault.
+        /// You can either specify an AWS account ID or optionally a single '<c>-</c>' (hyphen),
+        /// in which case Amazon S3 Glacier uses the AWS account ID associated with the credentials
+        /// used to sign the request. If you use an account ID, do not include any hyphens ('-')
+        /// in the ID. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -138,7 +138,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Completed. 
         /// <para>
-        /// The state of the jobs to return. You can specify <code>true</code> or <code>false</code>.
+        /// The state of the jobs to return. You can specify <c>true</c> or <c>false</c>.
         /// </para>
         /// </summary>
         public bool Completed
@@ -197,8 +197,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Statuscode. 
         /// <para>
-        /// The type of job status to return. You can specify the following values: <code>InProgress</code>,
-        /// <code>Succeeded</code>, or <code>Failed</code>.
+        /// The type of job status to return. You can specify the following values: <c>InProgress</c>,
+        /// <c>Succeeded</c>, or <c>Failed</c>.
         /// </para>
         /// </summary>
         public string Statuscode

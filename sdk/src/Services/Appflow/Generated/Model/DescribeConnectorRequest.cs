@@ -42,7 +42,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ConnectorLabel. 
         /// <para>
-        /// The label of the connector. The label is unique for each <code>ConnectorRegistration</code>
+        /// The label of the connector. The label is unique for each <c>ConnectorRegistration</c>
         /// in your Amazon Web Services account. Only needed if calling for CUSTOMCONNECTOR connector
         /// type/.
         /// </para>

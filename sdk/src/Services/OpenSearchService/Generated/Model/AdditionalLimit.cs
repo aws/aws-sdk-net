@@ -39,14 +39,14 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LimitName. <ul> <li> 
         /// <para>
-        ///  <code>MaximumNumberOfDataNodesSupported</code> - This attribute only applies to master
+        ///  <c>MaximumNumberOfDataNodesSupported</c> - This attribute only applies to master
         /// nodes and specifies the maximum number of data nodes of a given instance type a master
         /// node can support.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MaximumNumberOfDataNodesWithoutMasterNode</code> - This attribute only applies
-        /// to data nodes and specifies the maximum number of data nodes of a given instance type
+        ///  <c>MaximumNumberOfDataNodesWithoutMasterNode</c> - This attribute only applies to
+        /// data nodes and specifies the maximum number of data nodes of a given instance type
         /// can exist without a master node governing them.
         /// </para>
         ///  </li> </ul>

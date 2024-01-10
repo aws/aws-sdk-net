@@ -67,8 +67,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CopyActions. 
         /// <para>
-        /// An array of <code>CopyAction</code> objects, which contains the details of the copy
-        /// operation.
+        /// An array of <c>CopyAction</c> objects, which contains the details of the copy operation.
         /// </para>
         /// </summary>
         public List<CopyAction> CopyActions
@@ -200,10 +199,10 @@ namespace Amazon.Backup.Model
         /// A cron expression in UTC specifying when Backup initiates a backup job. For more information
         /// about Amazon Web Services cron expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
         /// Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Two
-        /// examples of Amazon Web Services cron expressions are <code> 15 * ? * * *</code> (take
-        /// a backup every hour at 15 minutes past the hour) and <code>0 12 * * ? *</code> (take
-        /// a backup every day at 12 noon UTC). For a table of examples, click the preceding link
-        /// and scroll down the page.
+        /// examples of Amazon Web Services cron expressions are <c> 15 * ? * * *</c> (take a
+        /// backup every hour at 15 minutes past the hour) and <c>0 12 * * ? *</c> (take a backup
+        /// every day at 12 noon UTC). For a table of examples, click the preceding link and scroll
+        /// down the page.
         /// </para>
         /// </summary>
         public string ScheduleExpression
@@ -246,13 +245,13 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// During the start window, the backup job status remains in <code>CREATED</code> status
-        /// until it has successfully begun or until the start window time has run out. If within
-        /// the start window time Backup receives an error that allows the job to be retried,
-        /// Backup will automatically retry to begin the job at least every 10 minutes until the
-        /// backup successfully begins (the job status changes to <code>RUNNING</code>) or until
-        /// the job status changes to <code>EXPIRED</code> (which is expected to occur when the
-        /// start window time is over).
+        /// During the start window, the backup job status remains in <c>CREATED</c> status until
+        /// it has successfully begun or until the start window time has run out. If within the
+        /// start window time Backup receives an error that allows the job to be retried, Backup
+        /// will automatically retry to begin the job at least every 10 minutes until the backup
+        /// successfully begins (the job status changes to <c>RUNNING</c>) or until the job status
+        /// changes to <c>EXPIRED</c> (which is expected to occur when the start window time is
+        /// over).
         /// </para>
         /// </summary>
         public long StartWindowMinutes

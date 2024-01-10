@@ -129,7 +129,7 @@ namespace Amazon.Synthetics.Model
         /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
-        /// The ARN of the IAM role used to run the canary. This role must include <code>lambda.amazonaws.com</code>
+        /// The ARN of the IAM role used to run the canary. This role must include <c>lambda.amazonaws.com</c>
         /// as a principal in the trust policy.
         /// </para>
         /// </summary>

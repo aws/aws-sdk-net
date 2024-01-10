@@ -41,8 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardSummaryList. 
         /// <para>
-        /// The list of dashboards owned by the user specified in <code>Filters</code> in your
-        /// request.
+        /// The list of dashboards owned by the user specified in <c>Filters</c> in your request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

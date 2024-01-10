@@ -31,10 +31,10 @@ namespace Amazon.RAM.Model
     /// <summary>
     /// Container for the parameters to the PromotePermissionCreatedFromPolicy operation.
     /// When you attach a resource-based policy to a resource, RAM automatically creates a
-    /// resource share of <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a
-    /// managed permission that has the same IAM permissions as the original resource-based
-    /// policy. However, this type of managed permission is visible to only the resource share
-    /// owner, and the associated resource share can't be modified by using RAM.
+    /// resource share of <c>featureSet</c>=<c>CREATED_FROM_POLICY</c> with a managed permission
+    /// that has the same IAM permissions as the original resource-based policy. However,
+    /// this type of managed permission is visible to only the resource share owner, and the
+    /// associated resource share can't be modified by using RAM.
     /// 
     ///  
     /// <para>
@@ -50,22 +50,22 @@ namespace Amazon.RAM.Model
     /// </para>
     ///  <note> <ul> <li> 
     /// <para>
-    /// The original <code>CREATED_FROM_POLICY</code> policy isn't deleted, and resource shares
+    /// The original <c>CREATED_FROM_POLICY</c> policy isn't deleted, and resource shares
     /// using that original policy aren't automatically updated.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You can't modify a <code>CREATED_FROM_POLICY</code> resource share so you can't associate
-    /// the new customer managed permission by using <code>ReplacePermsissionAssociations</code>.
+    /// You can't modify a <c>CREATED_FROM_POLICY</c> resource share so you can't associate
+    /// the new customer managed permission by using <c>ReplacePermsissionAssociations</c>.
     /// However, if you use <a>PromoteResourceShareCreatedFromPolicy</a>, that operation automatically
     /// associates the fully manageable customer managed permission to the newly promoted
-    /// <code>STANDARD</code> resource share.
+    /// <c>STANDARD</c> resource share.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// After you promote a resource share, if the original <code>CREATED_FROM_POLICY</code>
-    /// managed permission has no other associations to A resource share, then RAM automatically
-    /// deletes it.
+    /// After you promote a resource share, if the original <c>CREATED_FROM_POLICY</c> managed
+    /// permission has no other associations to A resource share, then RAM automatically deletes
+    /// it.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -92,8 +92,8 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -131,8 +131,8 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property PermissionArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Name (ARN)</a> of the <code>CREATED_FROM_POLICY</code> permission that you
-        /// want to promote. You can get this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of the <c>CREATED_FROM_POLICY</c> permission that you want
+        /// to promote. You can get this <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Name (ARN)</a> by calling the <a>ListResourceSharePermissions</a> operation.
         /// </para>
         /// </summary>

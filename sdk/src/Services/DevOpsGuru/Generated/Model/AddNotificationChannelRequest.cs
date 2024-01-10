@@ -56,7 +56,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Config. 
         /// <para>
-        ///  A <code>NotificationChannelConfig</code> object that specifies what type of notification
+        ///  A <c>NotificationChannelConfig</c> object that specifies what type of notification
         /// channel to add. The one supported notification channel is Amazon Simple Notification
         /// Service (Amazon SNS). 
         /// </para>

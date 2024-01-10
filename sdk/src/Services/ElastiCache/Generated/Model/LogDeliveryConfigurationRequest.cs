@@ -61,8 +61,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property DestinationType. 
         /// <para>
-        /// Specify either <code>cloudwatch-logs</code> or <code>kinesis-firehose</code> as the
-        /// destination type.
+        /// Specify either <c>cloudwatch-logs</c> or <c>kinesis-firehose</c> as the destination
+        /// type.
         /// </para>
         /// </summary>
         public DestinationType DestinationType
@@ -80,7 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specify if log delivery is enabled. Default <code>true</code>.
+        /// Specify if log delivery is enabled. Default <c>true</c>.
         /// </para>
         /// </summary>
         public bool Enabled

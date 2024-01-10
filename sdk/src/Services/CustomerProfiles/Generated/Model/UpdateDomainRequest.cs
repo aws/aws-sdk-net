@@ -41,7 +41,7 @@ namespace Amazon.CustomerProfiles.Model
     /// <para>
     /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
     /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-    /// resolution</a>: set <code>Matching</code> to true.
+    /// resolution</a>: set <c>Matching</c> to true.
     /// </para>
     ///  
     /// <para>
@@ -150,8 +150,8 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Matching. 
         /// <para>
-        /// The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
-        /// Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution
+        /// The process of matching duplicate profiles. If <c>Matching</c> = <c>true</c>, Amazon
+        /// Connect Customer Profiles starts a weekly batch process called Identity Resolution
         /// Job. If you do not specify a date and time for Identity Resolution Job to run, by
         /// default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
         /// 
@@ -159,8 +159,8 @@ namespace Amazon.CustomerProfiles.Model
         ///  
         /// <para>
         /// After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code>
-        /// in the <code>MatchingRequest</code>, you can download the results from S3.
+        /// API to return and review the results. Or, if you have configured <c>ExportingConfig</c>
+        /// in the <c>MatchingRequest</c>, you can download the results from S3.
         /// </para>
         /// </summary>
         public MatchingRequest Matching
@@ -178,12 +178,12 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property RuleBasedMatching. 
         /// <para>
-        /// The process of matching duplicate profiles using the rule-Based matching. If <code>RuleBasedMatching</code>
+        /// The process of matching duplicate profiles using the rule-Based matching. If <c>RuleBasedMatching</c>
         /// = true, Amazon Connect Customer Profiles will start to match and merge your profiles
-        /// according to your configuration in the <code>RuleBasedMatchingRequest</code>. You
-        /// can use the <code>ListRuleBasedMatches</code> and <code>GetSimilarProfiles</code>
-        /// API to return and review the results. Also, if you have configured <code>ExportingConfig</code>
-        /// in the <code>RuleBasedMatchingRequest</code>, you can download the results from S3.
+        /// according to your configuration in the <c>RuleBasedMatchingRequest</c>. You can use
+        /// the <c>ListRuleBasedMatches</c> and <c>GetSimilarProfiles</c> API to return and review
+        /// the results. Also, if you have configured <c>ExportingConfig</c> in the <c>RuleBasedMatchingRequest</c>,
+        /// you can download the results from S3.
         /// </para>
         /// </summary>
         public RuleBasedMatchingRequest RuleBasedMatching

@@ -105,9 +105,8 @@ namespace Amazon.PinpointEmail.Model
         /// The location where Amazon Pinpoint finds the value of a dimension to publish to Amazon
         /// CloudWatch. If you want Amazon Pinpoint to use the message tags that you specify using
         /// an X-SES-MESSAGE-TAGS header or a parameter to the SendEmail/SendRawEmail API, choose
-        /// <code>messageTag</code>. If you want Amazon Pinpoint to use your own email headers,
-        /// choose <code>emailHeader</code>. If you want Amazon Pinpoint to use link tags, choose
-        /// <code>linkTags</code>.
+        /// <c>messageTag</c>. If you want Amazon Pinpoint to use your own email headers, choose
+        /// <c>emailHeader</c>. If you want Amazon Pinpoint to use link tags, choose <c>linkTags</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

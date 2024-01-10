@@ -38,7 +38,7 @@ namespace Amazon.MemoryDB.Model
         /// <summary>
         /// Gets and sets the property ReservedNode. 
         /// <para>
-        /// Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.
+        /// Represents the output of a <c>PurchaseReservedNodesOffering</c> operation.
         /// </para>
         /// </summary>
         public ReservedNode ReservedNode

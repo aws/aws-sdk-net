@@ -30,7 +30,7 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Details for your use of the account creation fraud prevention managed rule group,
-    /// <code>AWSManagedRulesACFPRuleSet</code>. This configuration is used in <code>ManagedRuleGroupConfig</code>.
+    /// <c>AWSManagedRulesACFPRuleSet</c>. This configuration is used in <c>ManagedRuleGroupConfig</c>.
     /// </summary>
     public partial class AWSManagedRulesACFPRuleSet
     {
@@ -45,17 +45,16 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The path of the account creation endpoint for your application. This is the page on
         /// your website that accepts the completed registration form for a new user. This page
-        /// must accept <code>POST</code> requests.
+        /// must accept <c>POST</c> requests.
         /// </para>
         ///  
         /// <para>
-        /// For example, for the URL <code>https://example.com/web/newaccount</code>, you would
-        /// provide the path <code>/web/newaccount</code>. Account creation page paths that start
-        /// with the path that you provide are considered a match. For example <code>/web/newaccount</code>
-        /// matches the account creation paths <code>/web/newaccount</code>, <code>/web/newaccount/</code>,
-        /// <code>/web/newaccountPage</code>, and <code>/web/newaccount/thisPage</code>, but doesn't
-        /// match the path <code>/home/web/newaccount</code> or <code>/website/newaccount</code>.
-        /// 
+        /// For example, for the URL <c>https://example.com/web/newaccount</c>, you would provide
+        /// the path <c>/web/newaccount</c>. Account creation page paths that start with the path
+        /// that you provide are considered a match. For example <c>/web/newaccount</c> matches
+        /// the account creation paths <c>/web/newaccount</c>, <c>/web/newaccount/</c>, <c>/web/newaccountPage</c>,
+        /// and <c>/web/newaccount/thisPage</c>, but doesn't match the path <c>/home/web/newaccount</c>
+        /// or <c>/website/newaccount</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -98,17 +97,16 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This page must accept <code>GET</code> text/html requests.
+        /// This page must accept <c>GET</c> text/html requests.
         /// </para>
         ///  </note> 
         /// <para>
-        /// For example, for the URL <code>https://example.com/web/registration</code>, you would
-        /// provide the path <code>/web/registration</code>. Registration page paths that start
-        /// with the path that you provide are considered a match. For example <code>/web/registration</code>
-        /// matches the registration paths <code>/web/registration</code>, <code>/web/registration/</code>,
-        /// <code>/web/registrationPage</code>, and <code>/web/registration/thisPage</code>, but
-        /// doesn't match the path <code>/home/web/registration</code> or <code>/website/registration</code>.
-        /// 
+        /// For example, for the URL <c>https://example.com/web/registration</c>, you would provide
+        /// the path <c>/web/registration</c>. Registration page paths that start with the path
+        /// that you provide are considered a match. For example <c>/web/registration</c> matches
+        /// the registration paths <c>/web/registration</c>, <c>/web/registration/</c>, <c>/web/registrationPage</c>,
+        /// and <c>/web/registration/thisPage</c>, but doesn't match the path <c>/home/web/registration</c>
+        /// or <c>/website/registration</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

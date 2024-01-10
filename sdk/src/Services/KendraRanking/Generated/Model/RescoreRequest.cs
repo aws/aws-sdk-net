@@ -63,8 +63,7 @@ namespace Amazon.KendraRanking.Model
         /// Gets and sets the property RescoreExecutionPlanId. 
         /// <para>
         /// The identifier of the rescore execution plan. A rescore execution plan is an Amazon
-        /// Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code>
-        /// API.
+        /// Kendra Intelligent Ranking resource used for provisioning the <c>Rescore</c> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

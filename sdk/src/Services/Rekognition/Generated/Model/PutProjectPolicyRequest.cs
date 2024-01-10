@@ -50,7 +50,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// The response from <code>PutProjectPolicy</code> is a revision ID for the project policy.
+    /// The response from <c>PutProjectPolicy</c> is a revision ID for the project policy.
     /// You can attach multiple project policies to a project. You can also update an existing
     /// project policy by specifying the policy revision ID of the existing policy.
     /// </para>
@@ -66,7 +66,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:PutProjectPolicy</code>
+    /// This operation requires permissions to perform the <c>rekognition:PutProjectPolicy</c>
     /// action.
     /// </para>
     /// </summary>
@@ -122,7 +122,7 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property PolicyRevisionId. 
         /// <para>
         /// The revision ID for the Project Policy. Each time you modify a policy, Amazon Rekognition
-        /// Custom Labels generates and assigns a new <code>PolicyRevisionId</code> and then deletes
+        /// Custom Labels generates and assigns a new <c>PolicyRevisionId</c> and then deletes
         /// the previous version of the policy.
         /// </para>
         /// </summary>

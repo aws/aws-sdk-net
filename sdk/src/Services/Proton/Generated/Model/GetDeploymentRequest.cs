@@ -100,7 +100,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceInstanceName. 
         /// <para>
-        /// The name of the service instance associated with the given deployment ID. <code>serviceName</code>
+        /// The name of the service instance associated with the given deployment ID. <c>serviceName</c>
         /// must be specified to identify the service instance.
         /// </para>
         /// </summary>

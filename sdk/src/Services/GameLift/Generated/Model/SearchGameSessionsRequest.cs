@@ -68,9 +68,9 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <code>GameSession</code> object is returned for each game session
-    /// that matches the request. Search finds game sessions that are in <code>ACTIVE</code>
-    /// status only. To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
+    /// If successful, a <c>GameSession</c> object is returned for each game session that
+    /// matches the request. Search finds game sessions that are in <c>ACTIVE</c> status only.
+    /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
     /// .
     /// </para>
     ///  
@@ -82,7 +82,7 @@ namespace Amazon.GameLift.Model
     ///  <ul> <li> 
     /// <para>
     ///  <b>gameSessionId</b> -- A unique identifier for the game session. You can use either
-    /// a <code>GameSessionId</code> or <code>GameSessionArn</code> value. 
+    /// a <c>GameSessionId</c> or <c>GameSessionArn</c> value. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -92,15 +92,15 @@ namespace Amazon.GameLift.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
-    /// in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.
-    /// The filter expression must specify the <a>GameProperty</a> -- a <code>Key</code> and
-    /// a string <code>Value</code> to search for the game sessions.
+    /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
+    /// filter expression must specify the <a>GameProperty</a> -- a <c>Key</c> and a string
+    /// <c>Value</c> to search for the game sessions.
     /// </para>
     ///  
     /// <para>
     /// For example, to search for the above key-value pair, specify the following search
-    /// filter: <code>gameSessionProperties.difficulty = "novice"</code>. All game property
-    /// values are searched as strings.
+    /// filter: <c>gameSessionProperties.difficulty = "novice"</c>. All game property values
+    /// are searched as strings.
     /// </para>
     ///  
     /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+    /// Returned values for <c>playerSessionCount</c> and <c>hasAvailablePlayerSessions</c>
     /// change quickly as players join sessions and others drop out. Results should be considered
     /// a snapshot in time. Be sure to refresh search results often, and handle sessions that
     /// fill up before a player can join. 
@@ -176,7 +176,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// String containing the search criteria for the session search. If no filter expression
         /// is included, the request returns results for all game sessions in the fleet that are
-        /// in <code>ACTIVE</code> status.
+        /// in <c>ACTIVE</c> status.
         /// </para>
         ///  
         /// <para>
@@ -185,29 +185,29 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
+        ///  <b>Operand</b> -- Name of a game session attribute. Valid values are <c>gameSessionName</c>,
+        /// <c>gameSessionId</c>, <c>gameSessionProperties</c>, <c>maximumSessions</c>, <c>creationTimeMillis</c>,
+        /// <c>playerSessionCount</c>, <c>hasAvailablePlayerSessions</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Comparator</b> -- Valid comparators are: <code>=</code>, <code>&lt;&gt;</code>,
-        /// <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>, <code>&gt;=</code>. 
+        ///  <b>Comparator</b> -- Valid comparators are: <c>=</c>, <c>&lt;&gt;</c>, <c>&lt;</c>,
+        /// <c>&gt;</c>, <c>&lt;=</c>, <c>&gt;=</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b>Value</b> -- Value to be searched for. Values may be numbers, boolean values (true/false)
         /// or strings depending on the operand. String values are case sensitive and must be
         /// enclosed in single quotes. Special characters must be escaped. Boolean and string
-        /// values can only be used with the comparators <code>=</code> and <code>&lt;&gt;</code>.
-        /// For example, the following filter expression searches on <code>gameSessionName</code>:
-        /// "<code>FilterExpression": "gameSessionName = 'Matt\\'s Awesome Game 1'"</code>. 
+        /// values can only be used with the comparators <c>=</c> and <c>&lt;&gt;</c>. For example,
+        /// the following filter expression searches on <c>gameSessionName</c>: "<c>FilterExpression":
+        /// "gameSessionName = 'Matt\\'s Awesome Game 1'"</c>. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To chain multiple conditions in a single expression, use the logical keywords <code>AND</code>,
-        /// <code>OR</code>, and <code>NOT</code> and parentheses as needed. For example: <code>x
-        /// AND y AND NOT z</code>, <code>NOT (x OR y)</code>.
+        /// To chain multiple conditions in a single expression, use the logical keywords <c>AND</c>,
+        /// <c>OR</c>, and <c>NOT</c> and parentheses as needed. For example: <c>x AND y AND NOT
+        /// z</c>, <c>NOT (x OR y)</c>.
         /// </para>
         ///  
         /// <para>
@@ -216,8 +216,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        ///  <code>=</code>, <code>&lt;&gt;</code>, <code>&lt;</code>, <code>&gt;</code>, <code>&lt;=</code>,
-        /// <code>&gt;=</code> 
+        ///  <c>=</c>, <c>&lt;&gt;</c>, <c>&lt;</c>, <c>&gt;</c>, <c>&lt;=</c>, <c>&gt;=</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -238,7 +237,7 @@ namespace Amazon.GameLift.Model
         ///  </li> </ol> 
         /// <para>
         /// For example, this filter expression retrieves game sessions hosting at least ten players
-        /// that have an open player slot: <code>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</code>.
+        /// that have an open player slot: <c>"maximumSessions&gt;=10 AND hasAvailablePlayerSessions=true"</c>.
         /// 
         /// </para>
         /// </summary>
@@ -278,7 +277,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages. The maximum number of results returned
         /// is 20, even if this value is not set or is set higher than 20. 
         /// </para>
@@ -300,7 +299,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// A fleet location to search for game sessions. You can specify a fleet's home Region
-        /// or a remote location. Use the Amazon Web Services Region code format, such as <code>us-west-2</code>.
+        /// or a remote location. Use the Amazon Web Services Region code format, such as <c>us-west-2</c>.
         /// 
         /// </para>
         /// </summary>
@@ -347,20 +346,19 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Operand</b> -- Name of a game session attribute. Valid values are <code>gameSessionName</code>,
-        /// <code>gameSessionId</code>, <code>gameSessionProperties</code>, <code>maximumSessions</code>,
-        /// <code>creationTimeMillis</code>, <code>playerSessionCount</code>, <code>hasAvailablePlayerSessions</code>.
+        ///  <b>Operand</b> -- Name of a game session attribute. Valid values are <c>gameSessionName</c>,
+        /// <c>gameSessionId</c>, <c>gameSessionProperties</c>, <c>maximumSessions</c>, <c>creationTimeMillis</c>,
+        /// <c>playerSessionCount</c>, <c>hasAvailablePlayerSessions</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Order</b> -- Valid sort orders are <code>ASC</code> (ascending) and <code>DESC</code>
-        /// (descending).
+        ///  <b>Order</b> -- Valid sort orders are <c>ASC</c> (ascending) and <c>DESC</c> (descending).
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, this sort expression returns the oldest active sessions first: <code>"SortExpression":
-        /// "creationTimeMillis ASC"</code>. Results with a null value for the sort operand are
-        /// returned at the end of the list.
+        /// For example, this sort expression returns the oldest active sessions first: <c>"SortExpression":
+        /// "creationTimeMillis ASC"</c>. Results with a null value for the sort operand are returned
+        /// at the end of the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

@@ -39,10 +39,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you can get additional results from the <code>ListServers</code> operation, a
-        /// <code>NextToken</code> parameter is returned in the output. In a following command,
-        /// you can pass in the <code>NextToken</code> parameter to continue listing additional
-        /// servers.
+        /// When you can get additional results from the <c>ListServers</c> operation, a <c>NextToken</c>
+        /// parameter is returned in the output. In a following command, you can pass in the <c>NextToken</c>
+        /// parameter to continue listing additional servers.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

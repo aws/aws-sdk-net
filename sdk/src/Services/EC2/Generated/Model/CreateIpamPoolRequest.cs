@@ -304,11 +304,11 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PublicIpSource. 
         /// <para>
         /// The IP address source for pools in the public scope. Only used for provisioning IP
-        /// address CIDRs to pools in the public scope. Default is <code>byoip</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
+        /// address CIDRs to pools in the public scope. Default is <c>byoip</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/intro-create-ipv6-pools.html">Create
         /// IPv6 pools</a> in the <i>Amazon VPC IPAM User Guide</i>. By default, you can add only
         /// one Amazon-provided IPv6 CIDR block to a top-level IPv6 pool if PublicIpSource is
-        /// <code>amazon</code>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">
+        /// <c>amazon</c>. For information on increasing the default limit, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">
         /// Quotas for your IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -328,7 +328,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PubliclyAdvertisable. 
         /// <para>
         /// Determines if the pool is publicly advertisable. This option is not available for
-        /// pools with AddressFamily set to <code>ipv4</code>.
+        /// pools with AddressFamily set to <c>ipv4</c>.
         /// </para>
         /// </summary>
         public bool PubliclyAdvertisable
@@ -386,9 +386,8 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The key/value combination of a tag assigned to the resource. Use the tag key in the
         /// filter name and the tag value as the filter value. For example, to find all resources
-        /// that have a tag with the key <code>Owner</code> and the value <code>TeamA</code>,
-        /// specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the
-        /// filter value.
+        /// that have a tag with the key <c>Owner</c> and the value <c>TeamA</c>, specify <c>tag:Owner</c>
+        /// for the filter name and <c>TeamA</c> for the filter value.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications

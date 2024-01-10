@@ -80,7 +80,7 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Only one of <code>WorkloadID</code> or <code>ResourceARN</code> should be specified.
+        /// Only one of <c>WorkloadID</c> or <c>ResourceARN</c> should be specified.
         /// </para>
         ///  </note>
         /// </summary>

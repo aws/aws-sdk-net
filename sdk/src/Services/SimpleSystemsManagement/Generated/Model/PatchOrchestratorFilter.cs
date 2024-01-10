@@ -30,7 +30,7 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Defines a filter used in Patch Manager APIs. Supported filter keys depend on the API
-    /// operation that includes the filter. Patch Manager API operations that use <code>PatchOrchestratorFilter</code>
+    /// operation that includes the filter. Patch Manager API operations that use <c>PatchOrchestratorFilter</c>
     /// include the following:
     /// 
     ///  <ul> <li> 

@@ -63,7 +63,7 @@ namespace Amazon.RecycleBin.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value.
+        /// results, make another call with the returned <c>NextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -122,8 +122,8 @@ namespace Amazon.RecycleBin.Model
         /// <para>
         /// The resource type retained by the retention rule. Only retention rules that retain
         /// the specified resource type are listed. Currently, only Amazon EBS snapshots and EBS-backed
-        /// AMIs are supported. To list retention rules that retain snapshots, specify <code>EBS_SNAPSHOT</code>.
-        /// To list retention rules that retain EBS-backed AMIs, specify <code>EC2_IMAGE</code>.
+        /// AMIs are supported. To list retention rules that retain snapshots, specify <c>EBS_SNAPSHOT</c>.
+        /// To list retention rules that retain EBS-backed AMIs, specify <c>EC2_IMAGE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

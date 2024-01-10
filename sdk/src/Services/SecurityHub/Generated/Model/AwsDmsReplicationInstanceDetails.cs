@@ -91,7 +91,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The Availability Zone that the replication instance is created in. The default value
         /// is a random, system-chosen Availability Zone in the endpoint's Amazon Web Services
-        /// Region, such as <code>us-east-1d</code>.
+        /// Region, such as <c>us-east-1d</c>.
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -130,10 +130,10 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         ///  An KMS key identifier that is used to encrypt the data on the replication instance.
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, DMS uses your
-        /// default encryption key. KMS creates the default encryption key for your Amazon Web
-        /// Services account. Your Amazon Web Services account has a different default encryption
-        /// key for each Amazon Web Services Region.
+        /// If you don't specify a value for the <c>KmsKeyId</c> parameter, DMS uses your default
+        /// encryption key. KMS creates the default encryption key for your Amazon Web Services
+        /// account. Your Amazon Web Services account has a different default encryption key for
+        /// each Amazon Web Services Region.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -152,8 +152,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property MultiAZ. 
         /// <para>
         ///  Specifies whether the replication instance is deployed across multiple Availability
-        /// Zones (AZs). You can't set the <code>AvailabilityZone</code> parameter if the <code>MultiAZ</code>
-        /// parameter is set to <code>true</code>.
+        /// Zones (AZs). You can't set the <c>AvailabilityZone</c> parameter if the <c>MultiAZ</c>
+        /// parameter is set to <c>true</c>.
         /// </para>
         /// </summary>
         public bool MultiAZ
@@ -190,9 +190,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        ///  Specifies the accessibility options for the replication instance. A value of <code>true</code>
-        /// represents an instance with a public IP address. A value of <code>false</code> represents
-        /// an instance with a private IP address. The default value is <code>true</code>.
+        ///  Specifies the accessibility options for the replication instance. A value of <c>true</c>
+        /// represents an instance with a public IP address. A value of <c>false</c> represents
+        /// an instance with a private IP address. The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

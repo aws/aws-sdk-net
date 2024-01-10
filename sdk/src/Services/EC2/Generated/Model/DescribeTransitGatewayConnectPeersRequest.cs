@@ -46,16 +46,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the Connect peer (<code>pending</code> | <code>available</code>
-        /// | <code>deleting</code> | <code>deleted</code>).
+        ///  <c>state</c> - The state of the Connect peer (<c>pending</c> | <c>available</c> |
+        /// <c>deleting</c> | <c>deleted</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-attachment-id</code> - The ID of the attachment.
+        ///  <c>transit-gateway-attachment-id</c> - The ID of the attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-connect-peer-id</code> - The ID of the Connect peer.
+        ///  <c>transit-gateway-connect-peer-id</c> - The ID of the Connect peer.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -75,7 +75,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

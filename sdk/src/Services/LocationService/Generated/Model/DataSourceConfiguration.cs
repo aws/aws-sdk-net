@@ -38,13 +38,13 @@ namespace Amazon.LocationService.Model
     ///  <ul> <li> 
     /// <para>
     /// If using HERE Technologies as a data provider, you can't store results for locations
-    /// in Japan by setting <code>IntendedUse</code> to <code>Storage</code>. parameter.
+    /// in Japan by setting <c>IntendedUse</c> to <c>Storage</c>. parameter.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Under the <code>MobileAssetTracking</code> or <code>MobilAssetManagement</code> pricing
-    /// plan, you can't store results from your place index resources by setting <code>IntendedUse</code>
-    /// to <code>Storage</code>. This returns a validation exception error.
+    /// Under the <c>MobileAssetTracking</c> or <c>MobilAssetManagement</c> pricing plan,
+    /// you can't store results from your place index resources by setting <c>IntendedUse</c>
+    /// to <c>Storage</c>. This returns a validation exception error.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -68,15 +68,15 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SingleUse</code> specifies that the results won't be stored. 
+        ///  <c>SingleUse</c> specifies that the results won't be stored. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage</code> specifies that the result can be cached or stored in a database.
+        ///  <c>Storage</c> specifies that the result can be cached or stored in a database.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default value: <code>SingleUse</code> 
+        /// Default value: <c>SingleUse</c> 
         /// </para>
         /// </summary>
         public IntendedUse IntendedUse

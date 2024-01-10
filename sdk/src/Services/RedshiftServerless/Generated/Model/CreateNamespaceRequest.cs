@@ -51,7 +51,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property AdminPasswordSecretKmsKeyId. 
         /// <para>
         /// The ID of the Key Management Service (KMS) key used to encrypt and store the namespace's
-        /// admin credentials secret. You can only use this parameter if <code>manageAdminPassword</code>
+        /// admin credentials secret. You can only use this parameter if <c>manageAdminPassword</c>
         /// is true.
         /// </para>
         /// </summary>
@@ -93,8 +93,7 @@ namespace Amazon.RedshiftServerless.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code> is
-        /// true. 
+        /// You can't use <c>adminUserPassword</c> if <c>manageAdminPassword</c> is true. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -186,8 +185,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property LogExports. 
         /// <para>
-        /// The types of logs the namespace can export. Available export types are <code>userlog</code>,
-        /// <code>connectionlog</code>, and <code>useractivitylog</code>.
+        /// The types of logs the namespace can export. Available export types are <c>userlog</c>,
+        /// <c>connectionlog</c>, and <c>useractivitylog</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=16)]
@@ -206,10 +205,10 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property ManageAdminPassword. 
         /// <para>
-        /// If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the namespace's
-        /// admin credentials. You can't use <code>adminUserPassword</code> if <code>manageAdminPassword</code>
-        /// is true. If <code>manageAdminPassword</code> is false or not set, Amazon Redshift
-        /// uses <code>adminUserPassword</code> for the admin user account's password. 
+        /// If <c>true</c>, Amazon Redshift uses Secrets Manager to manage the namespace's admin
+        /// credentials. You can't use <c>adminUserPassword</c> if <c>manageAdminPassword</c>
+        /// is true. If <c>manageAdminPassword</c> is false or not set, Amazon Redshift uses <c>adminUserPassword</c>
+        /// for the admin user account's password. 
         /// </para>
         /// </summary>
         public bool ManageAdminPassword

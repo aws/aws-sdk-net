@@ -43,8 +43,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property CodeSnippet. 
         /// <para>
-        /// A list of <code>CodeLine</code> objects that describe where the security vulnerability
-        /// appears in your code.
+        /// A list of <c>CodeLine</c> objects that describe where the security vulnerability appears
+        /// in your code.
         /// </para>
         /// </summary>
         public List<CodeLine> CodeSnippet

@@ -30,11 +30,11 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchDatabasesByLFTags operation.
-    /// This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>.
-    /// This operation is used by admins who want to grant user permissions on certain <code>TagConditions</code>.
-    /// Before making a grant, the admin can use <code>SearchDatabasesByTags</code> to find
-    /// all resources where the given <code>TagConditions</code> are valid to verify whether
-    /// the returned resources can be shared.
+    /// This operation allows a search on <c>DATABASE</c> resources by <c>TagCondition</c>.
+    /// This operation is used by admins who want to grant user permissions on certain <c>TagConditions</c>.
+    /// Before making a grant, the admin can use <c>SearchDatabasesByTags</c> to find all
+    /// resources where the given <c>TagConditions</c> are valid to verify whether the returned
+    /// resources can be shared.
     /// </summary>
     public partial class SearchDatabasesByLFTagsRequest : AmazonLakeFormationRequest
     {
@@ -67,7 +67,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// A list of conditions (<code>LFTag</code> structures) to search for in database resources.
+        /// A list of conditions (<c>LFTag</c> structures) to search for in database resources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

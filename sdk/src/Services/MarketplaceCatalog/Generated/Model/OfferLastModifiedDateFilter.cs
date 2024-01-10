@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>LastModifiedDate</code> of an offer.
+    /// Allows filtering on the <c>LastModifiedDate</c> of an offer.
     /// </summary>
     public partial class OfferLastModifiedDateFilter
     {
@@ -38,8 +38,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property DateRange. 
         /// <para>
-        /// Allows filtering on the <code>LastModifiedDate</code> of an offer with date range
-        /// as input.
+        /// Allows filtering on the <c>LastModifiedDate</c> of an offer with date range as input.
         /// </para>
         /// </summary>
         public OfferLastModifiedDateFilterDateRange DateRange

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// An error entity for the <code>BatchImportEvidenceToAssessmentControl</code> API.
-    /// This is used to provide more meaningful errors than a simple string message.
+    /// An error entity for the <c>BatchImportEvidenceToAssessmentControl</c> API. This is
+    /// used to provide more meaningful errors than a simple string message.
     /// </summary>
     public partial class BatchImportEvidenceToAssessmentControlError
     {
@@ -41,7 +41,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        ///  The error code that the <code>BatchImportEvidenceToAssessmentControl</code> API returned.
+        ///  The error code that the <c>BatchImportEvidenceToAssessmentControl</c> API returned.
         /// 
         /// </para>
         /// </summary>
@@ -61,8 +61,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        ///  The error message that the <code>BatchImportEvidenceToAssessmentControl</code> API
-        /// returned. 
+        ///  The error message that the <c>BatchImportEvidenceToAssessmentControl</c> API returned.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=300)]

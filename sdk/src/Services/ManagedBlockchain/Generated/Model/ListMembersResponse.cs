@@ -39,8 +39,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Members. 
         /// <para>
-        /// An array of <code>MemberSummary</code> objects. Each object contains details about
-        /// a network member.
+        /// An array of <c>MemberSummary</c> objects. Each object contains details about a network
+        /// member.
         /// </para>
         /// </summary>
         public List<MemberSummary> Members

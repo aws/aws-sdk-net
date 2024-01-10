@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains <code>HeaderName</code> and <code>HeaderValue</code>
-    /// elements, if any, for this distribution.
+    /// A complex type that contains <c>HeaderName</c> and <c>HeaderValue</c> elements, if
+    /// any, for this distribution.
     /// </summary>
     public partial class OriginCustomHeader
     {
@@ -61,7 +61,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HeaderValue. 
         /// <para>
-        /// The value for the header that you specified in the <code>HeaderName</code> field.
+        /// The value for the header that you specified in the <c>HeaderName</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

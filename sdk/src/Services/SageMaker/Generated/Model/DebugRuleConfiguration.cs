@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Configuration information for SageMaker Debugger rules for debugging. To learn more
-    /// about how to configure the <code>DebugRuleConfiguration</code> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
+    /// about how to configure the <c>DebugRuleConfiguration</c> parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/debugger-createtrainingjob-api.html">Use
     /// the SageMaker and Debugger Configuration API Operations to Create, Update, and Debug
     /// Your Training Job</a>.
     /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+        /// Path to local storage location for output of rules. Defaults to <c>/opt/ml/processing/output/rule/</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

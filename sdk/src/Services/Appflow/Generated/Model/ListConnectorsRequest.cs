@@ -43,7 +43,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Specifies the maximum number of items that should be returned in the result set. The
-        /// default for <code>maxResults</code> is 20 (for all paginated API operations).
+        /// default for <c>maxResults</c> is 20 (for all paginated API operations).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

@@ -39,7 +39,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ChannelInfoList. 
         /// <para>
-        /// An array of <code>ChannelInfo</code> objects.
+        /// An array of <c>ChannelInfo</c> objects.
         /// </para>
         /// </summary>
         public List<ChannelInfo> ChannelInfoList

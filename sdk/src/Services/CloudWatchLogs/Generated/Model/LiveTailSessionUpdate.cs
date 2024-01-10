@@ -67,9 +67,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// A <code>sessionResults</code> array can include as many as 500 log events. If the
-        /// number of log events matching the request exceeds 500 per second, the log events are
-        /// sampled down to 500 log events to be included in each <code>sessionUpdate</code> structure.
+        /// A <c>sessionResults</c> array can include as many as 500 log events. If the number
+        /// of log events matching the request exceeds 500 per second, the log events are sampled
+        /// down to 500 log events to be included in each <c>sessionUpdate</c> structure.
         /// </para>
         /// </summary>
         public List<LiveTailSessionLogEvent> SessionResults

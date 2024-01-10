@@ -80,7 +80,7 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property LineItemGroups. 
         /// <para>
-        /// Information detected on each table of a document, seperated into <code>LineItems</code>.
+        /// Information detected on each table of a document, seperated into <c>LineItems</c>.
         /// </para>
         /// </summary>
         public List<LineItemGroup> LineItemGroups

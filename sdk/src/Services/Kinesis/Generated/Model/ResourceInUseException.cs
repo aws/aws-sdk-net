@@ -30,7 +30,7 @@ namespace Amazon.Kinesis.Model
 {
     /// <summary>
     /// The resource is not available for this operation. For successful operation, the resource
-    /// must be in the <code>ACTIVE</code> state.
+    /// must be in the <c>ACTIVE</c> state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

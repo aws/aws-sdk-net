@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// <code>GetImages</code> was requested for a stream that does not retain data (that
-    /// is, has a <code>DataRetentionInHours</code> of 0).
+    /// <c>GetImages</c> was requested for a stream that does not retain data (that is, has
+    /// a <c>DataRetentionInHours</c> of 0).
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

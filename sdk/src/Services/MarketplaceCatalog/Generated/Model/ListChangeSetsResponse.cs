@@ -39,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ChangeSetSummaryList. 
         /// <para>
-        ///  Array of <code>ChangeSetSummaryListItem</code> objects.
+        ///  Array of <c>ChangeSetSummaryListItem</c> objects.
         /// </para>
         /// </summary>
         public List<ChangeSetSummaryListItem> ChangeSetSummaryList

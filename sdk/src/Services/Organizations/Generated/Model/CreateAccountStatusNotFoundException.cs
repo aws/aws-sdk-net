@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find an create account request with the <code>CreateAccountRequestId</code>
-    /// that you specified.
+    /// We can't find an create account request with the <c>CreateAccountRequestId</c> that
+    /// you specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

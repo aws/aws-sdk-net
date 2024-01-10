@@ -30,8 +30,8 @@ namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// The <code>UntagResource</code> operation removes the association of the tag with the
-    /// Amazon Managed Grafana resource.
+    /// The <c>UntagResource</c> operation removes the association of the tag with the Amazon
+    /// Managed Grafana resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonManagedGrafanaRequest
     {

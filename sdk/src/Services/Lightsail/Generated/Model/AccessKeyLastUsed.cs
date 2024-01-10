@@ -73,7 +73,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is <code>N/A</code> if the access key has not been used.
+        /// This value is <c>N/A</c> if the access key has not been used.
         /// </para>
         /// </summary>
         public string Region
@@ -96,7 +96,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is <code>N/A</code> if the access key has not been used.
+        /// This value is <c>N/A</c> if the access key has not been used.
         /// </para>
         /// </summary>
         public string ServiceName

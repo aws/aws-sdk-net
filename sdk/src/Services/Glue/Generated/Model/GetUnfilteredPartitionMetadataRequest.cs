@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartition</code>.
+    /// For IAM authorization, the public IAM action associated with this API is <c>glue:GetPartition</c>.
     /// </para>
     /// </summary>
     public partial class GetUnfilteredPartitionMetadataRequest : AmazonGlueRequest

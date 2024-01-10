@@ -63,7 +63,7 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property MonitorName. 
         /// <para>
         /// The name of the monitor to associated with the probe. To get a list of available monitors,
-        /// use <code>ListMonitors</code>.
+        /// use <c>ListMonitors</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

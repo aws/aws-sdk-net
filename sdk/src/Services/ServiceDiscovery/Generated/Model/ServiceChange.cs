@@ -80,7 +80,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         ///  <i>Public DNS and HTTP namespaces only.</i> Settings for an optional health check.
         /// If you specify settings for a health check, Cloud Map associates the health check
-        /// with the records that you specify in <code>DnsConfig</code>.
+        /// with the records that you specify in <c>DnsConfig</c>.
         /// </para>
         /// </summary>
         public HealthCheckConfig HealthCheckConfig

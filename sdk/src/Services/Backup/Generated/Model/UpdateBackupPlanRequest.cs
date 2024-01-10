@@ -30,8 +30,8 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBackupPlan operation.
-    /// Updates an existing backup plan identified by its <code>backupPlanId</code> with the
-    /// input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.
+    /// Updates an existing backup plan identified by its <c>backupPlanId</c> with the input
+    /// document in JSON format. The new version is uniquely identified by a <c>VersionId</c>.
     /// </summary>
     public partial class UpdateBackupPlanRequest : AmazonBackupRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupPlan. 
         /// <para>
-        /// Specifies the body of a backup plan. Includes a <code>BackupPlanName</code> and one
-        /// or more sets of <code>Rules</code>.
+        /// Specifies the body of a backup plan. Includes a <c>BackupPlanName</c> and one or more
+        /// sets of <c>Rules</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

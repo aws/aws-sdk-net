@@ -101,7 +101,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        ///  The top recommendation option is ranked as <code>1</code>. 
+        ///  The top recommendation option is ranked as <c>1</c>. 
         /// </para>
         /// </summary>
         public int Rank

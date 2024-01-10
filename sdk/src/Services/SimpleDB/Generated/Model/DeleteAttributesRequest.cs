@@ -35,15 +35,15 @@ namespace Amazon.SimpleDB.Model
     /// 
     ///  
     /// <para>
-    ///  <code>DeleteAttributes</code> is an idempotent operation; running it multiple times
-    /// on the same item or attribute does not result in an error response. 
+    ///  <c>DeleteAttributes</c> is an idempotent operation; running it multiple times on
+    /// the same item or attribute does not result in an error response. 
     /// </para>
     ///  
     /// <para>
     ///  Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency
     /// update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read)
-    /// immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation
-    /// (write) might not return updated item data. 
+    /// immediately after a <c>DeleteAttributes</c> or <a>PutAttributes</a> operation (write)
+    /// might not return updated item data. 
     /// </para>
     /// </summary>
     public partial class DeleteAttributesRequest : AmazonSimpleDBRequest

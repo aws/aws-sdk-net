@@ -179,14 +179,13 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the status is <code>ONLINE</code>, the agent is configured properly and ready to
-        /// use.
+        /// If the status is <c>ONLINE</c>, the agent is configured properly and ready to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the status is <code>OFFLINE</code>, the agent has been out of contact with DataSync
-        /// for five minutes or longer. This can happen for a few reasons. For more information,
-        /// see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What
+        /// If the status is <c>OFFLINE</c>, the agent has been out of contact with DataSync for
+        /// five minutes or longer. This can happen for a few reasons. For more information, see
+        /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-agents.html#troubleshoot-agent-offline">What
         /// do I do if my agent is offline?</a> 
         /// </para>
         ///  </li> </ul>

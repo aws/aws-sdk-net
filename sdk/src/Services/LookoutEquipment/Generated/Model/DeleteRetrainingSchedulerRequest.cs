@@ -31,7 +31,7 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Container for the parameters to the DeleteRetrainingScheduler operation.
     /// Deletes a retraining scheduler from a model. The retraining scheduler must be in the
-    /// <code>STOPPED</code> status.
+    /// <c>STOPPED</c> status.
     /// </summary>
     public partial class DeleteRetrainingSchedulerRequest : AmazonLookoutEquipmentRequest
     {

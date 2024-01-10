@@ -83,12 +83,12 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>ALL</code> to join all rows from data sources to the resulting DynamicFrame.
+        /// Specify <c>ALL</c> to join all rows from data sources to the resulting DynamicFrame.
         /// The resulting union does not remove duplicate rows.
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>DISTINCT</code> to remove duplicate rows in the resulting DynamicFrame.
+        /// Specify <c>DISTINCT</c> to remove duplicate rows in the resulting DynamicFrame.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

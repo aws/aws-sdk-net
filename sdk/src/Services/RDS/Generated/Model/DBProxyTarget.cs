@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBProxyTargets</code>
+    /// This data type is used as a response element in the <c>DescribeDBProxyTargets</c>
     /// action.
     /// </para>
     /// </summary>

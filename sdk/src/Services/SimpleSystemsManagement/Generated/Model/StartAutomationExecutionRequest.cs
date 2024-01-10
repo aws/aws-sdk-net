@@ -130,7 +130,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
         /// The maximum number of targets allowed to run this task in parallel. You can specify
-        /// a number, such as 10, or a percentage, such as 10%. The default value is <code>10</code>.
+        /// a number, such as 10, or a percentage, such as 10%. The default value is <c>10</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -229,11 +229,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Key=environment,Value=test</code> 
+        ///  <c>Key=environment,Value=test</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=OS,Value=Windows</code> 
+        ///  <c>Key=OS,Value=Windows</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

@@ -41,8 +41,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
-        /// The <code>keyARN</code> of the PEK that Amazon Web Services Payment Cryptography uses
-        /// for encrypted pin block generation.
+        /// The <c>keyARN</c> of the PEK that Amazon Web Services Payment Cryptography uses for
+        /// encrypted pin block generation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]
@@ -84,8 +84,8 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property VerificationKeyArn. 
         /// <para>
-        /// The <code>keyARN</code> of the PIN encryption key that Amazon Web Services Payment
-        /// Cryptography uses for PIN or PIN Offset verification.
+        /// The <c>keyARN</c> of the PIN encryption key that Amazon Web Services Payment Cryptography
+        /// uses for PIN or PIN Offset verification.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

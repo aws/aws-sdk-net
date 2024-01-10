@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetRecords</code> operation.
+    /// Represents the output of a <c>GetRecords</c> operation.
     /// </summary>
     public partial class GetRecordsResponse : AmazonWebServiceResponse
     {
@@ -40,8 +40,8 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property NextShardIterator. 
         /// <para>
         /// The next position in the shard from which to start sequentially reading stream records.
-        /// If set to <code>null</code>, the shard has been closed and the requested iterator
-        /// will not return any more data.
+        /// If set to <c>null</c>, the shard has been closed and the requested iterator will not
+        /// return any more data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

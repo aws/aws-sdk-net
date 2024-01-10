@@ -43,8 +43,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AliasName. 
         /// <para>
         /// The name that you want to give to the theme alias that you are creating. The alias
-        /// name can't begin with a <code>$</code>. Alias names that start with <code>$</code>
-        /// are reserved by Amazon QuickSight. 
+        /// name can't begin with a <c>$</c>. Alias names that start with <c>$</c> are reserved
+        /// by Amazon QuickSight. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

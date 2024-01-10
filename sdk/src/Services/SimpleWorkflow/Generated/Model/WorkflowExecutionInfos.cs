@@ -58,13 +58,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property NextPageToken. 
         /// <para>
-        /// If a <code>NextPageToken</code> was returned by a previous call, there are more results
+        /// If a <c>NextPageToken</c> was returned by a previous call, there are more results
         /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>nextPageToken</code>. Keep all other arguments unchanged.
+        /// token in <c>nextPageToken</c>. Keep all other arguments unchanged.
         /// </para>
         ///  
         /// <para>
-        /// The configured <code>maximumPageSize</code> determines how many results can be returned
+        /// The configured <c>maximumPageSize</c> determines how many results can be returned
         /// in a single call.
         /// </para>
         /// </summary>

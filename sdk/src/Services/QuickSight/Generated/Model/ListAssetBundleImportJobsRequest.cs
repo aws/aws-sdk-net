@@ -32,8 +32,8 @@ namespace Amazon.QuickSight.Model
     /// Container for the parameters to the ListAssetBundleImportJobs operation.
     /// Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs
     /// created more than 14 days ago are deleted forever and are not returned. If you are
-    /// using the same job ID for multiple jobs, <code>ListAssetBundleImportJobs</code> only
-    /// returns the most recent job that uses the repeated job ID.
+    /// using the same job ID for multiple jobs, <c>ListAssetBundleImportJobs</c> only returns
+    /// the most recent job that uses the repeated job ID.
     /// </summary>
     public partial class ListAssetBundleImportJobsRequest : AmazonQuickSightRequest
     {

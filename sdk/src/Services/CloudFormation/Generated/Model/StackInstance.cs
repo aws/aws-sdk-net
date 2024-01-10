@@ -78,23 +78,23 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DRIFTED</code>: The stack differs from the expected template and parameter
-        /// configuration of the stack set to which it belongs. A stack instance is considered
-        /// to have drifted if one or more of the resources in the associated stack have drifted.
+        ///  <c>DRIFTED</c>: The stack differs from the expected template and parameter configuration
+        /// of the stack set to which it belongs. A stack instance is considered to have drifted
+        /// if one or more of the resources in the associated stack have drifted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_CHECKED</code>: CloudFormation hasn't checked if the stack instance differs
-        /// from its expected stack set configuration.
+        ///  <c>NOT_CHECKED</c>: CloudFormation hasn't checked if the stack instance differs from
+        /// its expected stack set configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_SYNC</code>: The stack instance's actual configuration matches its expected
-        /// stack set configuration.
+        ///  <c>IN_SYNC</c>: The stack instance's actual configuration matches its expected stack
+        /// set configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code>: This value is reserved for future use.
+        ///  <c>UNKNOWN</c>: This value is reserved for future use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -114,8 +114,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property LastDriftCheckTimestamp. 
         /// <para>
         /// Most recent time when CloudFormation performed a drift detection operation on the
-        /// stack instance. This value will be <code>NULL</code> for any stack instance on which
-        /// drift detection hasn't yet been performed.
+        /// stack instance. This value will be <c>NULL</c> for any stack instance on which drift
+        /// detection hasn't yet been performed.
         /// </para>
         /// </summary>
         public DateTime LastDriftCheckTimestamp
@@ -267,29 +267,29 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INOPERABLE</code>: A <code>DeleteStackInstances</code> operation has failed
-        /// and left the stack in an unstable state. Stacks in this state are excluded from further
-        /// <code>UpdateStackSet</code> operations. You might need to perform a <code>DeleteStackInstances</code>
-        /// operation, with <code>RetainStacks</code> set to <code>true</code>, to delete the
-        /// stack instance, and then delete the stack manually.
+        ///  <c>INOPERABLE</c>: A <c>DeleteStackInstances</c> operation has failed and left the
+        /// stack in an unstable state. Stacks in this state are excluded from further <c>UpdateStackSet</c>
+        /// operations. You might need to perform a <c>DeleteStackInstances</c> operation, with
+        /// <c>RetainStacks</c> set to <c>true</c>, to delete the stack instance, and then delete
+        /// the stack manually.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OUTDATED</code>: The stack isn't currently up to date with the stack set because:
+        ///  <c>OUTDATED</c>: The stack isn't currently up to date with the stack set because:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The associated stack failed during a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
+        /// The associated stack failed during a <c>CreateStackSet</c> or <c>UpdateStackSet</c>
         /// operation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-        /// operation that failed or was stopped before the stack was created or updated.
+        /// The stack was part of a <c>CreateStackSet</c> or <c>UpdateStackSet</c> operation that
+        /// failed or was stopped before the stack was created or updated.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>CURRENT</code>: The stack is currently up to date with the stack set.
+        ///  <c>CURRENT</c>: The stack is currently up to date with the stack set.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAgreement operation.
-    /// Describes the agreement that's identified by the <code>AgreementId</code>.
+    /// Describes the agreement that's identified by the <c>AgreementId</c>.
     /// </summary>
     public partial class DescribeAgreementRequest : AmazonTransferRequest
     {

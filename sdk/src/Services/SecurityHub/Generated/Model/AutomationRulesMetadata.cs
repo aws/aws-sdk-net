@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Metadata for automation rules in the calling account. The response includes rules
-    /// with a <code>RuleStatus</code> of <code>ENABLED</code> and <code>DISABLED</code>.
+    /// with a <c>RuleStatus</c> of <c>ENABLED</c> and <c>DISABLED</c>.
     /// </summary>
     public partial class AutomationRulesMetadata
     {
@@ -51,9 +51,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -186,10 +186,10 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RuleStatus. 
         /// <para>
-        ///  Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>,
+        ///  Whether the rule is active after it is created. If this parameter is equal to <c>ENABLED</c>,
         /// Security Hub starts applying the rule to findings and finding updates after the rule
         /// is created. To change the value of this parameter after creating a rule, use <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_BatchUpdateAutomationRules.html">
-        /// <code>BatchUpdateAutomationRules</code> </a>. 
+        /// <c>BatchUpdateAutomationRules</c> </a>. 
         /// </para>
         /// </summary>
         public RuleStatus RuleStatus
@@ -211,9 +211,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

@@ -280,8 +280,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property KendraConfiguration. 
         /// <para>
-        /// Configuration information required to use the <code>AMAZON.KendraSearchIntent</code>
-        /// intent.
+        /// Configuration information required to use the <c>AMAZON.KendraSearchIntent</c> intent.
         /// </para>
         /// </summary>
         public KendraConfiguration KendraConfiguration

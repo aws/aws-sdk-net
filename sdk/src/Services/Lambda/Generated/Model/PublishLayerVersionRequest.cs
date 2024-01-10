@@ -31,8 +31,8 @@ namespace Amazon.Lambda.Model
     /// <summary>
     /// Container for the parameters to the PublishLayerVersion operation.
     /// Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda
-    /// layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code>
-    /// with the same layer name, a new version is created.
+    /// layer</a> from a ZIP archive. Each time you call <c>PublishLayerVersion</c> with the
+    /// same layer name, a new version is created.
     /// 
     ///  
     /// <para>
@@ -158,11 +158,11 @@ namespace Amazon.Lambda.Model
         ///  <ul> <li> 
         /// <para>
         /// An <a href="https://spdx.org/licenses/">SPDX license identifier</a>. For example,
-        /// <code>MIT</code>.
+        /// <c>MIT</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The URL of a license hosted on the internet. For example, <code>https://opensource.org/licenses/MIT</code>.
+        /// The URL of a license hosted on the internet. For example, <c>https://opensource.org/licenses/MIT</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

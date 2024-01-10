@@ -1204,7 +1204,7 @@ namespace Amazon.LookoutEquipment
 
         /// <summary>
         /// Deletes a retraining scheduler from a model. The retraining scheduler must be in the
-        /// <code>STOPPED</code> status.
+        /// <c>STOPPED</c> status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteRetrainingScheduler service method.</param>
         /// 
@@ -2628,8 +2628,8 @@ namespace Amazon.LookoutEquipment
 
         /// <summary>
         /// Generates a list of all model versions for a given model, including the model version,
-        /// model version ARN, and status. To list a subset of versions, use the <code>MaxModelVersion</code>
-        /// and <code>MinModelVersion</code> fields.
+        /// model version ARN, and status. To list a subset of versions, use the <c>MaxModelVersion</c>
+        /// and <c>MinModelVersion</c> fields.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListModelVersions service method.</param>
         /// 

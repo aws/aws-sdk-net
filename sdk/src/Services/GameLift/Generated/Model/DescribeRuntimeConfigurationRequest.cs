@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <code>RuntimeConfiguration</code> object is returned for the requested
+    /// If successful, a <c>RuntimeConfiguration</c> object is returned for the requested
     /// fleet. If the requested fleet has been deleted, the result set is empty.
     /// </para>
     ///  

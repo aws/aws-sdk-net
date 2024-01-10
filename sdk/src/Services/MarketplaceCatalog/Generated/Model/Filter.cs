@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// A filter object, used to optionally filter results from calls to the <code>ListEntities</code>
-    /// and <code>ListChangeSets</code> actions.
+    /// A filter object, used to optionally filter results from calls to the <c>ListEntities</c>
+    /// and <c>ListChangeSets</c> actions.
     /// </summary>
     public partial class Filter
     {
@@ -40,11 +40,11 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.
+        /// For <c>ListEntities</c>, the supported value for this is an <c>EntityId</c>.
         /// </para>
         ///  
         /// <para>
-        /// For <code>ListChangeSets</code>, the supported values are as follows:
+        /// For <c>ListChangeSets</c>, the supported values are as follows:
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -63,48 +63,46 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ValueList. 
         /// <para>
-        ///  <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.
+        ///  <c>ListEntities</c> - This is a list of unique <c>EntityId</c>s.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s
+        ///  <c>ListChangeSets</c> - The supported filter names and associated <c>ValueList</c>s
         /// is as follows:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique
-        /// <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code>
-        /// action.
+        ///  <c>ChangeSetName</c> - The supported <c>ValueList</c> is a list of non-unique <c>ChangeSetName</c>s.
+        /// These are defined when you call the <c>StartChangeSet</c> action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code> - The supported <code>ValueList</code> is a list of statuses
-        /// for all change set requests.
+        ///  <c>Status</c> - The supported <c>ValueList</c> is a list of statuses for all change
+        /// set requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique
-        /// <code>EntityId</code>s.
+        ///  <c>EntityId</c> - The supported <c>ValueList</c> is a list of unique <c>EntityId</c>s.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of
-        /// all change sets that started before the filter value.
+        ///  <c>BeforeStartTime</c> - The supported <c>ValueList</c> is a list of all change sets
+        /// that started before the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all
-        /// change sets that started after the filter value.
+        ///  <c>AfterStartTime</c> - The supported <c>ValueList</c> is a list of all change sets
+        /// that started after the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all
-        /// change sets that ended before the filter value.
+        ///  <c>BeforeEndTime</c> - The supported <c>ValueList</c> is a list of all change sets
+        /// that ended before the filter value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all
-        /// change sets that ended after the filter value.
+        ///  <c>AfterEndTime</c> - The supported <c>ValueList</c> is a list of all change sets
+        /// that ended after the filter value.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -53,8 +53,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property AnalysisResults. 
         /// <para>
-        /// The list of analysis results for <code>AnalyzeRuleGroup</code>. If you set <code>AnalyzeRuleGroup</code>
-        /// to <code>TRUE</code> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>,
+        /// The list of analysis results for <c>AnalyzeRuleGroup</c>. If you set <c>AnalyzeRuleGroup</c>
+        /// to <c>TRUE</c> in <a>CreateRuleGroup</a>, <a>UpdateRuleGroup</a>, or <a>DescribeRuleGroup</a>,
         /// Network Firewall analyzes the rule group and identifies the rules that might adversely
         /// effect your firewall's functionality. For example, if Network Firewall detects a rule
         /// that's routing traffic asymmetrically, which impacts the service's ability to properly
@@ -84,7 +84,7 @@ namespace Amazon.NetworkFirewall.Model
         ///  
         /// <para>
         /// You can retrieve the capacity that would be required for a rule group before you create
-        /// the rule group by calling <a>CreateRuleGroup</a> with <code>DryRun</code> set to <code>TRUE</code>.
+        /// the rule group by calling <a>CreateRuleGroup</a> with <c>DryRun</c> set to <c>TRUE</c>.
         /// 
         /// </para>
         /// </summary>
@@ -199,7 +199,7 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>,
+        /// If this response is for a create request that had <c>DryRun</c> set to <c>TRUE</c>,
         /// then this ARN is a placeholder that isn't attached to a valid resource.
         /// </para>
         ///  </note>

@@ -39,7 +39,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property MatchIds. 
         /// <para>
-        /// The list of <code>MatchIds</code> for the given domain.
+        /// The list of <c>MatchIds</c> for the given domain.
         /// </para>
         /// </summary>
         public List<string> MatchIds
@@ -57,7 +57,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token from the previous <code>ListRuleBasedMatches</code> API call.
+        /// The pagination token from the previous <c>ListRuleBasedMatches</c> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

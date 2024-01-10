@@ -83,14 +83,14 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The directory within the Amazon EFS file system to mount as the root directory inside
         /// the host. If this parameter is omitted, the root of the Amazon EFS volume is used
-        /// instead. Specifying <code>/</code> has the same effect as omitting this parameter.
-        /// The maximum length is 4,096 characters.
+        /// instead. Specifying <c>/</c> has the same effect as omitting this parameter. The maximum
+        /// length is 4,096 characters.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If an EFS access point is specified in the <code>authorizationConfig</code>, the root
-        /// directory parameter must either be omitted or set to <code>/</code>, which enforces
-        /// the path set on the Amazon EFS access point.
+        /// If an EFS access point is specified in the <c>authorizationConfig</c>, the root directory
+        /// parameter must either be omitted or set to <c>/</c>, which enforces the path set on
+        /// the Amazon EFS access point.
         /// </para>
         ///  </important>
         /// </summary>
@@ -112,7 +112,7 @@ namespace Amazon.Batch.Model
         /// Determines whether to enable encryption for Amazon EFS data in transit between the
         /// Amazon ECS host and the Amazon EFS server. Transit encryption must be enabled if Amazon
         /// EFS IAM authorization is used. If this parameter is omitted, the default value of
-        /// <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
+        /// <c>DISABLED</c> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
         /// data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>

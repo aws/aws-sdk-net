@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackResourceSummaries. 
         /// <para>
-        /// A list of <code>StackResourceSummary</code> structures.
+        /// A list of <c>StackResourceSummary</c> structures.
         /// </para>
         /// </summary>
         public List<StackResourceSummary> StackResourceSummaries

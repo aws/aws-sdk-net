@@ -43,7 +43,7 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The destination IP address. This will be either <code>IPV4</code> or <code>IPV6</code>.
+        /// The destination IP address. This will be either <c>IPV4</c> or <c>IPV6</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -62,9 +62,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property DestinationPort. 
         /// <para>
-        /// The port associated with the <code>destination</code>. This is required only if the
-        /// <code>protocol</code> is <code>TCP</code> and must be a number between <code>1</code>
-        /// and <code>65536</code>.
+        /// The port associated with the <c>destination</c>. This is required only if the <c>protocol</c>
+        /// is <c>TCP</c> and must be a number between <c>1</c> and <c>65536</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65536)]
@@ -84,7 +83,7 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property PacketSize. 
         /// <para>
         /// The size of the packets sent between the source and destination. This will be a number
-        /// between <code>56</code> and <code>8500</code>.
+        /// between <c>56</c> and <c>8500</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=56, Max=8500)]
@@ -103,8 +102,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol used for the network traffic between the <code>source</code> and <code>destination</code>.
-        /// This will be either <code>TCP</code> or <code>ICMP</code>.
+        /// The protocol used for the network traffic between the <c>source</c> and <c>destination</c>.
+        /// This will be either <c>TCP</c> or <c>ICMP</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

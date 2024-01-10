@@ -78,7 +78,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property S3Resources. 
         /// <para>
-        /// An array of <code>S3Resource</code> objects.
+        /// An array of <c>S3Resource</c> objects.
         /// </para>
         /// </summary>
         public List<S3Resource> S3Resources

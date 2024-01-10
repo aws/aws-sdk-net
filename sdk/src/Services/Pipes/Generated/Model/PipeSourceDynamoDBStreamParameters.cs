@@ -144,7 +144,7 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property OnPartialBatchItemFailure. 
         /// <para>
-        /// (Streams only) Define how to handle item process failures. <code>AUTOMATIC_BISECT</code>
+        /// (Streams only) Define how to handle item process failures. <c>AUTOMATIC_BISECT</c>
         /// halves each batch and retry each half until all the records are processed or there
         /// is one failed message left in the batch.
         /// </para>

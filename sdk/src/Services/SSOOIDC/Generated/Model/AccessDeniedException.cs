@@ -129,7 +129,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Single error code. For this exception the value will be <code>access_denied</code>.
+        /// Single error code. For this exception the value will be <c>access_denied</c>.
         /// </para>
         /// </summary>
         public string Error

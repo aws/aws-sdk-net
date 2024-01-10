@@ -36,7 +36,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as a response element in the <code>DescribeDBProxyEndpoints</code>
+    /// This data type is used as a response element in the <c>DescribeDBProxyEndpoints</c>
     /// operation.
     /// </para>
     /// </summary>
@@ -170,9 +170,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of this DB proxy endpoint. A status of <code>available</code> means
-        /// the endpoint is ready to handle requests. Other values indicate that you must wait
-        /// for the endpoint to be ready, or take some action to resolve an issue.
+        /// The current status of this DB proxy endpoint. A status of <c>available</c> means the
+        /// endpoint is ready to handle requests. Other values indicate that you must wait for
+        /// the endpoint to be ready, or take some action to resolve an issue.
         /// </para>
         /// </summary>
         public DBProxyEndpointStatus Status

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Represents the output of a <code>BatchRead</code> success response operation.
+    /// Represents the output of a <c>BatchRead</c> success response operation.
     /// </summary>
     public partial class BatchReadSuccessfulResponse
     {
@@ -275,7 +275,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property ListPolicyAttachments. 
         /// <para>
-        /// Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.
+        /// Returns all of the <c>ObjectIdentifiers</c> to which a given policy is attached.
         /// </para>
         /// </summary>
         public BatchListPolicyAttachmentsResponse ListPolicyAttachments
@@ -295,10 +295,10 @@ namespace Amazon.CloudDirectory.Model
         /// <para>
         /// Lists all policies from the root of the <a>Directory</a> to the object specified.
         /// If there are no policies present, an empty list is returned. If policies are present,
-        /// and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code>
-        /// for such objects. If policies are present, it returns <code>ObjectIdentifier</code>,
-        /// <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root
-        /// from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
+        /// and if some objects don't have the policies attached, it returns the <c>ObjectIdentifier</c>
+        /// for such objects. If policies are present, it returns <c>ObjectIdentifier</c>, <c>policyId</c>,
+        /// and <c>policyType</c>. Paths that don't lead to the root from the target object are
+        /// ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.
         /// </para>
         /// </summary>
         public BatchLookupPolicyResponse LookupPolicy

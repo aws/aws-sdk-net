@@ -68,8 +68,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Silent. 
         /// <para>
-        /// If set to <code>TRUE</code>, causes the cancelation of the openCypher query to happen
-        /// silently.
+        /// If set to <c>TRUE</c>, causes the cancelation of the openCypher query to happen silently.
         /// </para>
         /// </summary>
         public bool Silent

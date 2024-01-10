@@ -40,7 +40,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the output exceeds 1 MB, a string that identifies the next page of change sets.
-        /// If there is no additional page, this value is <code>null</code>.
+        /// If there is no additional page, this value is <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -59,8 +59,8 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <code>ChangeSetSummary</code> structures that provides the ID and status
-        /// of each change set for the specified stack.
+        /// A list of <c>ChangeSetSummary</c> structures that provides the ID and status of each
+        /// change set for the specified stack.
         /// </para>
         /// </summary>
         public List<ChangeSetSummary> Summaries

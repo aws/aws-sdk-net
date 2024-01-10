@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// Information about an extension. Call <code>GetExtension</code> to get more information
-    /// about an extension.
+    /// Information about an extension. Call <c>GetExtension</c> to get more information about
+    /// an extension.
     /// </summary>
     public partial class ExtensionSummary
     {

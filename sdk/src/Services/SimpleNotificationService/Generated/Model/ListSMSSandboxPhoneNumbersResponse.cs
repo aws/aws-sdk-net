@@ -39,7 +39,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A <code>NextToken</code> string is returned when you call the <code>ListSMSSandboxPhoneNumbersInput</code>
+        /// A <c>NextToken</c> string is returned when you call the <c>ListSMSSandboxPhoneNumbersInput</c>
         /// operation if additional pages of records are available.
         /// </para>
         /// </summary>

@@ -57,7 +57,7 @@ namespace Amazon.ResourceGroups.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The resource type of a resource, such as <code>AWS::EC2::Instance</code>.
+        /// The resource type of a resource, such as <c>AWS::EC2::Instance</c>.
         /// </para>
         /// </summary>
         public string ResourceType

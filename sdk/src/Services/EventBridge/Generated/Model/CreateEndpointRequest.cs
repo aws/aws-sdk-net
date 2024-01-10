@@ -92,7 +92,7 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the global endpoint. For example, <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.
+        /// The name of the global endpoint. For example, <c>"Name":"us-east-2-custom_bus_A-endpoint"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -111,9 +111,9 @@ namespace Amazon.EventBridge.Model
         /// <summary>
         /// Gets and sets the property ReplicationConfig. 
         /// <para>
-        /// Enable or disable event replication. The default state is <code>ENABLED</code> which
-        /// means you must supply a <code>RoleArn</code>. If you don't have a <code>RoleArn</code>
-        /// or you don't want event replication enabled, set the state to <code>DISABLED</code>.
+        /// Enable or disable event replication. The default state is <c>ENABLED</c> which means
+        /// you must supply a <c>RoleArn</c>. If you don't have a <c>RoleArn</c> or you don't
+        /// want event replication enabled, set the state to <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public ReplicationConfig ReplicationConfig

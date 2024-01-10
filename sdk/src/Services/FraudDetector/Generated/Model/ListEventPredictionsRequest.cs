@@ -36,16 +36,16 @@ namespace Amazon.FraudDetector.Model
     /// 
     ///  
     /// <para>
-    /// For example, the following filter lists all past predictions for <code>xyz</code>
-    /// event type - <code>{ "eventType":{ "value": "xyz" }” } </code> 
+    /// For example, the following filter lists all past predictions for <c>xyz</c> event
+    /// type - <c>{ "eventType":{ "value": "xyz" }” } </c> 
     /// </para>
     ///  
     /// <para>
-    /// This is a paginated API. If you provide a null <code>maxResults</code>, this action
-    /// will retrieve a maximum of 10 records per page. If you provide a <code>maxResults</code>,
-    /// the value must be between 50 and 100. To get the next page results, provide the <code>nextToken</code>
-    /// from the response as part of your request. A null <code>nextToken</code> fetches the
-    /// records from the beginning. 
+    /// This is a paginated API. If you provide a null <c>maxResults</c>, this action will
+    /// retrieve a maximum of 10 records per page. If you provide a <c>maxResults</c>, the
+    /// value must be between 50 and 100. To get the next page results, provide the <c>nextToken</c>
+    /// from the response as part of your request. A null <c>nextToken</c> fetches the records
+    /// from the beginning. 
     /// </para>
     /// </summary>
     public partial class ListEventPredictionsRequest : AmazonFraudDetectorRequest

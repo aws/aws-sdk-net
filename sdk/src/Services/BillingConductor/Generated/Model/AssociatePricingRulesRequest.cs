@@ -30,9 +30,8 @@ namespace Amazon.BillingConductor.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociatePricingRules operation.
-    /// Connects an array of <code>PricingRuleArns</code> to a defined <code>PricingPlan</code>.
-    /// The maximum number <code>PricingRuleArn</code> that can be associated in one call
-    /// is 30.
+    /// Connects an array of <c>PricingRuleArns</c> to a defined <c>PricingPlan</c>. The maximum
+    /// number <c>PricingRuleArn</c> that can be associated in one call is 30.
     /// </summary>
     public partial class AssociatePricingRulesRequest : AmazonBillingConductorRequest
     {
@@ -42,8 +41,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        ///  The <code>PricingPlanArn</code> that the <code>PricingRuleArns</code> are associated
-        /// with. 
+        ///  The <c>PricingPlanArn</c> that the <c>PricingRuleArns</c> are associated with. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +60,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property PricingRuleArns. 
         /// <para>
-        ///  The <code>PricingRuleArns</code> that are associated with the Pricing Plan. 
+        ///  The <c>PricingRuleArns</c> that are associated with the Pricing Plan. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]

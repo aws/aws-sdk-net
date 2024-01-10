@@ -56,9 +56,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use a bucket policy with an <code>s3:PutObject</code> permission that only
-        /// allows objects with server-side encryption, set the condition key of <code>s3:x-amz-server-side-encryption</code>
-        /// to <code>"aws:kms"</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
+        /// If you use a bucket policy with an <c>s3:PutObject</c> permission that only allows
+        /// objects with server-side encryption, set the condition key of <c>s3:x-amz-server-side-encryption</c>
+        /// to <c>"aws:kms"</c>. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">KMS-Managed
         /// Encryption Keys</a> in the <i>Amazon Simple Storage Service Developer Guide.</i> 
         /// </para>
         /// </summary>
@@ -97,15 +97,15 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <code>SnsTopicArn</code>
+        /// An Amazon Simple Notification Service (Amazon SNS) output topic ARN. Provide a <c>SnsTopicArn</c>
         /// if you want to do real time chaining to another streaming job and receive an Amazon
         /// SNS notifications each time a data object is submitted by a worker.
         /// </para>
         ///  
         /// <para>
-        /// If you provide an <code>SnsTopicArn</code> in <code>OutputConfig</code>, when workers
-        /// complete labeling tasks, Ground Truth will send labeling task output data to the SNS
-        /// output topic you specify here. 
+        /// If you provide an <c>SnsTopicArn</c> in <c>OutputConfig</c>, when workers complete
+        /// labeling tasks, Ground Truth will send labeling task output data to the SNS output
+        /// topic you specify here. 
         /// </para>
         ///  
         /// <para>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Represents an input or output artifact of a trial component. You specify <code>TrialComponentArtifact</code>
-    /// as part of the <code>InputArtifacts</code> and <code>OutputArtifacts</code> parameters
-    /// in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a>
+    /// Represents an input or output artifact of a trial component. You specify <c>TrialComponentArtifact</c>
+    /// as part of the <c>InputArtifacts</c> and <c>OutputArtifacts</c> parameters in the
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a>
     /// request.
     /// 
     ///  

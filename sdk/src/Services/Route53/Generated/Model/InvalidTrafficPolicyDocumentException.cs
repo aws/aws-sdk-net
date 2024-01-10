@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// The format of the traffic policy document that you specified in the <code>Document</code>
+    /// The format of the traffic policy document that you specified in the <c>Document</c>
     /// element is not valid.
     /// </summary>
     #if !NETSTANDARD

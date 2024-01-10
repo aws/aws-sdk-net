@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
     /// API, but not to training jobs that the hyperparameter tuning job launched before you
     /// called this API. To make sure that the tags associated with a hyperparameter tuning
     /// job are also added to all training jobs that the hyperparameter tuning job launches,
-    /// add the tags when you first create the tuning job by specifying them in the <code>Tags</code>
+    /// add the tags when you first create the tuning job by specifying them in the <c>Tags</c>
     /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
     /// 
     /// </para>
@@ -58,7 +58,7 @@ namespace Amazon.SageMaker.Model
     /// but not to Apps that the Domain or User Profile launched before you called this API.
     /// To make sure that the tags associated with a Domain or User Profile are also added
     /// to all Apps that the Domain or User Profile launches, add the tags when you first
-    /// create the Domain or User Profile by specifying them in the <code>Tags</code> parameter
+    /// create the Domain or User Profile by specifying them in the <c>Tags</c> parameter
     /// of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
     /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
     /// </para>

@@ -40,32 +40,30 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <important> 
     /// <para>
-    ///  A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
-    /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
-    /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
+    ///  A high <c>minProvisionedTPS</c> will increase your bill. We recommend starting with
+    /// 1 for <c>minProvisionedTPS</c> (the default). Track your usage using Amazon CloudWatch
+    /// metrics, and increase the <c>minProvisionedTPS</c> as necessary.
     /// </para>
     ///  </important> 
     /// <para>
-    /// A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code>
+    /// A transaction is a single <c>GetRecommendations</c> or <c>GetPersonalizedRanking</c>
     /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
-    /// Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>) specifies
-    /// the baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
+    /// Personalize. The minimum provisioned TPS (<c>minProvisionedTPS</c>) specifies the
+    /// baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
     /// charge. 
     /// </para>
     ///  
     /// <para>
-    ///  If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize auto-scales
-    /// the provisioned capacity up and down, but never below <code>minProvisionedTPS</code>.
-    /// There's a short time delay while the capacity is increased that might cause loss of
-    /// transactions.
+    ///  If your TPS increases beyond <c>minProvisionedTPS</c>, Amazon Personalize auto-scales
+    /// the provisioned capacity up and down, but never below <c>minProvisionedTPS</c>. There's
+    /// a short time delay while the capacity is increased that might cause loss of transactions.
     /// </para>
     ///  
     /// <para>
     /// The actual TPS used is calculated as the average requests/second within a 5-minute
     /// window. You pay for maximum of either the minimum provisioned TPS or the actual TPS.
-    /// We recommend starting with a low <code>minProvisionedTPS</code>, track your usage
-    /// using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code>
-    /// as necessary.
+    /// We recommend starting with a low <c>minProvisionedTPS</c>, track your usage using
+    /// Amazon CloudWatch metrics, and then increase the <c>minProvisionedTPS</c> as necessary.
     /// </para>
     ///  
     /// <para>
@@ -89,8 +87,8 @@ namespace Amazon.Personalize.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// Wait until the <code>status</code> of the campaign is <code>ACTIVE</code> before asking
-    /// the campaign for recommendations.
+    /// Wait until the <c>status</c> of the campaign is <c>ACTIVE</c> before asking the campaign
+    /// for recommendations.
     /// </para>
     ///  </note> 
     /// <para>
@@ -148,9 +146,9 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property MinProvisionedTPS. 
         /// <para>
         /// Specifies the requested minimum provisioned transactions (recommendations) per second
-        /// that Amazon Personalize will support. A high <code>minProvisionedTPS</code> will increase
-        /// your bill. We recommend starting with 1 for <code>minProvisionedTPS</code> (the default).
-        /// Track your usage using Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code>
+        /// that Amazon Personalize will support. A high <c>minProvisionedTPS</c> will increase
+        /// your bill. We recommend starting with 1 for <c>minProvisionedTPS</c> (the default).
+        /// Track your usage using Amazon CloudWatch metrics, and increase the <c>minProvisionedTPS</c>
         /// as necessary.
         /// </para>
         /// </summary>

@@ -63,21 +63,20 @@ namespace Amazon.AWSHealth.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+        /// If the <c>eventScopeCode</c> value is <c>PUBLIC</c>, then the <c>affectedAccounts</c>
         /// value is always empty.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
-        /// <code>affectedAccounts</code> value lists the affected Amazon Web Services accounts
-        /// in your organization. For example, if an event affects a service such as Amazon Elastic
-        /// Compute Cloud and you have Amazon Web Services accounts that use that service, those
-        /// account IDs appear in the response.
+        /// If the <c>eventScopeCode</c> value is <c>ACCOUNT_SPECIFIC</c>, then the <c>affectedAccounts</c>
+        /// value lists the affected Amazon Web Services accounts in your organization. For example,
+        /// if an event affects a service such as Amazon Elastic Compute Cloud and you have Amazon
+        /// Web Services accounts that use that service, those account IDs appear in the response.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code>
-        /// that you specified in the request is invalid or doesn't exist.
+        /// If the <c>eventScopeCode</c> value is <c>NONE</c>, then the <c>eventArn</c> that you
+        /// specified in the request is invalid or doesn't exist.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -97,8 +96,8 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the results of a search are large, only a portion of the results are returned,
-        /// and a <code>nextToken</code> pagination token is returned in the response. To retrieve
-        /// the next batch of results, reissue the search request and include the returned token.
+        /// and a <c>nextToken</c> pagination token is returned in the response. To retrieve the
+        /// next batch of results, reissue the search request and include the returned token.
         /// When all results have been returned, the response does not contain a pagination token
         /// value.
         /// </para>

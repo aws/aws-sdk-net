@@ -316,7 +316,7 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
+        /// To copy a DB cluster snapshot from a shared manual DB cluster snapshot, <c>SourceDBClusterSnapshotIdentifier</c>
         /// must be the Amazon Resource Name (ARN) of the shared DB cluster snapshot.
         /// </para>
         /// </summary>
@@ -429,15 +429,15 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create the DB
-        /// cluster as a Read Replica of another DB cluster or Amazon Neptune DB instance.
+        /// You can use the <c>ReplicationSourceIdentifier</c> parameter to create the DB cluster
+        /// as a Read Replica of another DB cluster or Amazon Neptune DB instance.
         /// </para>
         ///  
         /// <para>
-        /// Note that when you create a new cluster using <code>CreateDBCluster</code> directly,
-        /// deletion protection is disabled by default (when you create a new production cluster
-        /// in the console, deletion protection is enabled by default). You can only delete a
-        /// DB cluster if its <code>DeletionProtection</code> field is set to <code>false</code>.
+        /// Note that when you create a new cluster using <c>CreateDBCluster</c> directly, deletion
+        /// protection is disabled by default (when you create a new production cluster in the
+        /// console, deletion protection is enabled by default). You can only delete a DB cluster
+        /// if its <c>DeletionProtection</c> field is set to <c>false</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDBCluster service method.</param>
@@ -468,8 +468,7 @@ namespace Amazon.Neptune
         /// <i>DBSubnetGroupName</i> does not refer to an existing DB subnet group.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
-        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
-        /// cluster.
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InsufficientStorageClusterCapacityException">
         /// There is insufficient storage available for the current action. You may be able to
@@ -621,10 +620,10 @@ namespace Amazon.Neptune
         /// action before the DB cluster parameter group is used as the default for a new DB cluster.
         /// This is especially important for parameters that are critical when creating the default
         /// database for a DB cluster, such as the character set for the default database defined
-        /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
-        /// Groups</i> option of the <a href="https://console.aws.amazon.com/rds/">Amazon Neptune
-        /// console</a> or the <a>DescribeDBClusterParameters</a> command to verify that your
-        /// DB cluster parameter group has been created or modified.
+        /// by the <c>character_set_database</c> parameter. You can use the <i>Parameter Groups</i>
+        /// option of the <a href="https://console.aws.amazon.com/rds/">Amazon Neptune console</a>
+        /// or the <a>DescribeDBClusterParameters</a> command to verify that your DB cluster parameter
+        /// group has been created or modified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -850,7 +849,7 @@ namespace Amazon.Neptune
         /// group. This allows Amazon Neptune to fully complete the create action before the parameter
         /// group is used as the default for a new DB instance. This is especially important for
         /// parameters that are critical when creating the default database for a DB instance,
-        /// such as the character set for the default database defined by the <code>character_set_database</code>
+        /// such as the character set for the default database defined by the <c>character_set_database</c>
         /// parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune console
         /// or the <i>DescribeDBParameters</i> command to verify that your DB parameter group
         /// has been created or modified.
@@ -1061,8 +1060,8 @@ namespace Amazon.Neptune
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterAlreadyExistsException">
-        /// The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database
-        /// identifier (unique name) to create a new global database cluster.
+        /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global database identifier
+        /// (unique name) to create a new global database cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterQuotaExceededException">
         /// The number of global database clusters for this account is already at the maximum
@@ -1113,7 +1112,7 @@ namespace Amazon.Neptune
         ///  
         /// <para>
         /// Note that the DB Cluster cannot be deleted if deletion protection is enabled. To delete
-        /// it, you must first set its <code>DeletionProtection</code> field to <code>False</code>.
+        /// it, you must first set its <c>DeletionProtection</c> field to <c>False</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDBCluster service method.</param>
@@ -1273,7 +1272,7 @@ namespace Amazon.Neptune
         /// 
         ///  <note> 
         /// <para>
-        /// The DB cluster snapshot must be in the <code>available</code> state to be deleted.
+        /// The DB cluster snapshot must be in the <c>available</c> state to be deleted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1323,21 +1322,21 @@ namespace Amazon.Neptune
         /// <summary>
         /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
         /// delete a DB instance, all automated backups for that instance are deleted and can't
-        /// be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code>
+        /// be recovered. Manual DB snapshots of the DB instance to be deleted by <c>DeleteDBInstance</c>
         /// are not deleted.
         /// 
         ///  
         /// <para>
         ///  If you request a final DB snapshot the status of the Amazon Neptune DB instance is
-        /// <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code>
+        /// <c>deleting</c> until the DB snapshot is created. The API action <c>DescribeDBInstance</c>
         /// is used to monitor the status of this operation. The action can't be canceled or reverted
         /// once submitted.
         /// </para>
         ///  
         /// <para>
-        /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
-        /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
-        /// delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+        /// Note that when a DB instance is in a failure state and has a status of <c>failed</c>,
+        /// <c>incompatible-restore</c>, or <c>incompatible-network</c>, you can only delete it
+        /// when the <c>SkipFinalSnapshot</c> parameter is set to <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -1555,8 +1554,7 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the DeleteGlobalCluster service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
-        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
-        /// cluster.
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
@@ -1646,7 +1644,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code>
+        /// Returns a list of <c>DBClusterParameterGroup</c> descriptions. If a <c>DBClusterParameterGroupName</c>
         /// parameter is specified, the list will contain only the description of the specified
         /// DB cluster parameter group.
         /// </summary>
@@ -1789,11 +1787,11 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        /// When sharing snapshots with other Amazon accounts, <code>DescribeDBClusterSnapshotAttributes</code>
-        /// returns the <code>restore</code> attribute and a list of IDs for the Amazon accounts
-        /// that are authorized to copy or restore the manual DB cluster snapshot. If <code>all</code>
-        /// is included in the list of values for the <code>restore</code> attribute, then the
-        /// manual DB cluster snapshot is public and can be copied or restored by all Amazon accounts.
+        /// When sharing snapshots with other Amazon accounts, <c>DescribeDBClusterSnapshotAttributes</c>
+        /// returns the <c>restore</c> attribute and a list of IDs for the Amazon accounts that
+        /// are authorized to copy or restore the manual DB cluster snapshot. If <c>all</c> is
+        /// included in the list of values for the <c>restore</c> attribute, then the manual DB
+        /// cluster snapshot is public and can be copied or restored by all Amazon accounts.
         /// </para>
         ///  
         /// <para>
@@ -1976,7 +1974,7 @@ namespace Amazon.Neptune
 
 
         /// <summary>
-        /// Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code>
+        /// Returns a list of <c>DBParameterGroup</c> descriptions. If a <c>DBParameterGroupName</c>
         /// is specified, the list will contain only the description of the specified DB parameter
         /// group.
         /// </summary>
@@ -2336,8 +2334,7 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the DescribeGlobalClusters service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
-        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
-        /// cluster.
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/DescribeGlobalClusters">REST API Reference for DescribeGlobalClusters Operation</seealso>
         DescribeGlobalClustersResponse DescribeGlobalClusters(DescribeGlobalClustersRequest request);
@@ -2594,8 +2591,7 @@ namespace Amazon.Neptune
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
-        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
-        /// cluster.
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidDBClusterStateException">
         /// The DB cluster is not in a valid state.
@@ -2825,9 +2821,8 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Modifies the parameters of a DB cluster parameter group. To modify more than one
-        /// parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
-        /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request.
+        /// parameter, submit a list of the following: <c>ParameterName</c>, <c>ParameterValue</c>,
+        /// and <c>ApplyMethod</c>. A maximum of 20 parameters can be modified in a single request.
         /// 
         ///  <note> 
         /// <para>
@@ -2843,9 +2838,9 @@ namespace Amazon.Neptune
         /// action before the parameter group is used as the default for a new DB cluster. This
         /// is especially important for parameters that are critical when creating the default
         /// database for a DB cluster, such as the character set for the default database defined
-        /// by the <code>character_set_database</code> parameter. You can use the <i>Parameter
-        /// Groups</i> option of the Amazon Neptune console or the <a>DescribeDBClusterParameters</a>
-        /// command to verify that your DB cluster parameter group has been created or modified.
+        /// by the <c>character_set_database</c> parameter. You can use the <i>Parameter Groups</i>
+        /// option of the Amazon Neptune console or the <a>DescribeDBClusterParameters</a> command
+        /// to verify that your DB cluster parameter group has been created or modified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2900,16 +2895,16 @@ namespace Amazon.Neptune
         /// 
         ///  
         /// <para>
-        /// To share a manual DB cluster snapshot with other Amazon accounts, specify <code>restore</code>
-        /// as the <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to
-        /// add a list of IDs of the Amazon accounts that are authorized to restore the manual
-        /// DB cluster snapshot. Use the value <code>all</code> to make the manual DB cluster
-        /// snapshot public, which means that it can be copied or restored by all Amazon accounts.
-        /// Do not add the <code>all</code> value for any manual DB cluster snapshots that contain
-        /// private information that you don't want available to all Amazon accounts. If a manual
-        /// DB cluster snapshot is encrypted, it can be shared, but only by specifying a list
-        /// of authorized Amazon account IDs for the <code>ValuesToAdd</code> parameter. You can't
-        /// use <code>all</code> as a value for that parameter in this case.
+        /// To share a manual DB cluster snapshot with other Amazon accounts, specify <c>restore</c>
+        /// as the <c>AttributeName</c> and use the <c>ValuesToAdd</c> parameter to add a list
+        /// of IDs of the Amazon accounts that are authorized to restore the manual DB cluster
+        /// snapshot. Use the value <c>all</c> to make the manual DB cluster snapshot public,
+        /// which means that it can be copied or restored by all Amazon accounts. Do not add the
+        /// <c>all</c> value for any manual DB cluster snapshots that contain private information
+        /// that you don't want available to all Amazon accounts. If a manual DB cluster snapshot
+        /// is encrypted, it can be shared, but only by specifying a list of authorized Amazon
+        /// account IDs for the <c>ValuesToAdd</c> parameter. You can't use <c>all</c> as a value
+        /// for that parameter in this case.
         /// </para>
         ///  
         /// <para>
@@ -3066,9 +3061,8 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Modifies the parameters of a DB parameter group. To modify more than one parameter,
-        /// submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>,
-        /// and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single
-        /// request.
+        /// submit a list of the following: <c>ParameterName</c>, <c>ParameterValue</c>, and <c>ApplyMethod</c>.
+        /// A maximum of 20 parameters can be modified in a single request.
         /// 
         ///  <note> 
         /// <para>
@@ -3083,7 +3077,7 @@ namespace Amazon.Neptune
         /// group. This allows Amazon Neptune to fully complete the modify action before the parameter
         /// group is used as the default for a new DB instance. This is especially important for
         /// parameters that are critical when creating the default database for a DB instance,
-        /// such as the character set for the default database defined by the <code>character_set_database</code>
+        /// such as the character set for the default database defined by the <c>character_set_database</c>
         /// parameter. You can use the <i>Parameter Groups</i> option of the Amazon Neptune console
         /// or the <i>DescribeDBParameters</i> command to verify that your DB parameter group
         /// has been created or modified.
@@ -3270,8 +3264,7 @@ namespace Amazon.Neptune
         /// 
         /// <returns>The response from the ModifyGlobalCluster service method, as returned by Neptune.</returns>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
-        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
-        /// cluster.
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
@@ -3422,8 +3415,7 @@ namespace Amazon.Neptune
         /// <i>DBClusterIdentifier</i> does not refer to an existing DB cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.GlobalClusterNotFoundException">
-        /// The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database
-        /// cluster.
+        /// The <c>GlobalClusterIdentifier</c> doesn't refer to an existing global database cluster.
         /// </exception>
         /// <exception cref="Amazon.Neptune.Model.InvalidGlobalClusterStateException">
         /// The global cluster is in an invalid state and can't perform the requested operation.
@@ -3609,14 +3601,14 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Modifies the parameters of a DB cluster parameter group to the default value. To
-        /// reset specific parameters submit a list of the following: <code>ParameterName</code>
-        /// and <code>ApplyMethod</code>. To reset the entire DB cluster parameter group, specify
-        /// the <code>DBClusterParameterGroupName</code> and <code>ResetAllParameters</code> parameters.
+        /// reset specific parameters submit a list of the following: <c>ParameterName</c> and
+        /// <c>ApplyMethod</c>. To reset the entire DB cluster parameter group, specify the <c>DBClusterParameterGroupName</c>
+        /// and <c>ResetAllParameters</c> parameters.
         /// 
         ///  
         /// <para>
         ///  When resetting the entire group, dynamic parameters are updated immediately and static
-        /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
+        /// parameters are set to <c>pending-reboot</c> to take effect on the next DB instance
         /// restart or <a>RebootDBInstance</a> request. You must call <a>RebootDBInstance</a>
         /// for every DB instance in your DB cluster that you want the updated static parameter
         /// to apply to.
@@ -3669,12 +3661,11 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Modifies the parameters of a DB parameter group to the engine/system default value.
-        /// To reset specific parameters, provide a list of the following: <code>ParameterName</code>
-        /// and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the
-        /// <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters.
-        /// When resetting the entire group, dynamic parameters are updated immediately and static
-        /// parameters are set to <code>pending-reboot</code> to take effect on the next DB instance
-        /// restart or <code>RebootDBInstance</code> request.
+        /// To reset specific parameters, provide a list of the following: <c>ParameterName</c>
+        /// and <c>ApplyMethod</c>. To reset the entire DB parameter group, specify the <c>DBParameterGroup</c>
+        /// name and <c>ResetAllParameters</c> parameters. When resetting the entire group, dynamic
+        /// parameters are updated immediately and static parameters are set to <c>pending-reboot</c>
+        /// to take effect on the next DB instance restart or <c>RebootDBInstance</c> request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetDBParameterGroup service method.</param>
         /// 
@@ -3830,7 +3821,7 @@ namespace Amazon.Neptune
 
         /// <summary>
         /// Restores a DB cluster to an arbitrary point in time. Users can restore to any point
-        /// in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code>
+        /// in time before <c>LatestRestorableTime</c> for up to <c>BackupRetentionPeriod</c>
         /// days. The target DB cluster is created from the source DB cluster with the same configuration
         /// as the original DB cluster, except that the new DB cluster is created with the default
         /// DB security group.
@@ -3839,9 +3830,9 @@ namespace Amazon.Neptune
         /// <para>
         /// This action only restores the DB cluster, not the DB instances for that DB cluster.
         /// You must invoke the <a>CreateDBInstance</a> action to create DB instances for the
-        /// restored DB cluster, specifying the identifier of the restored DB cluster in <code>DBClusterIdentifier</code>.
-        /// You can create DB instances only after the <code>RestoreDBClusterToPointInTime</code>
-        /// action has completed and the DB cluster is available.
+        /// restored DB cluster, specifying the identifier of the restored DB cluster in <c>DBClusterIdentifier</c>.
+        /// You can create DB instances only after the <c>RestoreDBClusterToPointInTime</c> action
+        /// has completed and the DB cluster is available.
         /// </para>
         ///  </note>
         /// </summary>

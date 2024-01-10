@@ -63,23 +63,23 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_LAUNCH</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_LAUNCH</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_LAUNCH_ERROR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_TERMINATE</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_TERMINATE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</code> 
+        ///  <c>autoscaling:EC2_INSTANCE_TERMINATE_ERROR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>autoscaling:TEST_NOTIFICATION</code> 
+        ///  <c>autoscaling:TEST_NOTIFICATION</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

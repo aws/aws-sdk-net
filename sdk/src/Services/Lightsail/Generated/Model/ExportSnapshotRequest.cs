@@ -32,8 +32,8 @@ namespace Amazon.Lightsail.Model
     /// Container for the parameters to the ExportSnapshot operation.
     /// Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic
     /// Compute Cloud (Amazon EC2). This operation results in an export snapshot record that
-    /// can be used with the <code>create cloud formation stack</code> operation to create
-    /// new Amazon EC2 instances.
+    /// can be used with the <c>create cloud formation stack</c> operation to create new Amazon
+    /// EC2 instances.
     /// 
     ///  
     /// <para>
@@ -45,15 +45,15 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///   
     /// <para>
-    /// The <code>export snapshot</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>source snapshot name</code>. For
-    /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>export snapshot</c> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by <c>source snapshot name</c>. For more information,
+    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Use the <code>get instance snapshots</code> or <code>get disk snapshots</code> operations
-    /// to get a list of snapshots that you can export to Amazon EC2.
+    /// Use the <c>get instance snapshots</c> or <c>get disk snapshots</c> operations to get
+    /// a list of snapshots that you can export to Amazon EC2.
     /// </para>
     ///  </note>
     /// </summary>

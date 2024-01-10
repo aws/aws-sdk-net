@@ -37,17 +37,16 @@ namespace Amazon.IdentityManagement.Model
     /// When you embed an inline policy in a role, the inline policy is used as part of the
     /// role's access (permissions) policy. The role's trust policy is created at the same
     /// time as the role, using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">
-    /// <code>CreateRole</code> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
-    /// <code>UpdateAssumeRolePolicy</code> </a>. For more information about roles, see <a
-    /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM roles</a>
-    /// in the <i>IAM User Guide</i>.
+    /// <c>CreateRole</c> </a>. You can update a role's trust policy using <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_UpdateAssumeRolePolicy.html">
+    /// <c>UpdateAssumeRolePolicy</c> </a>. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">IAM
+    /// roles</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// A role can also have a managed policy attached to it. To attach a managed policy to
     /// a role, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_AttachRolePolicy.html">
-    /// <code>AttachRolePolicy</code> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
-    /// <code>CreatePolicy</code> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+    /// <c>AttachRolePolicy</c> </a>. To create a new managed policy, use <a href="https://docs.aws.amazon.com/IAM/latest/APIReference/API_CreatePolicy.html">
+    /// <c>CreatePolicy</c> </a>. For information about policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
     /// policies and inline policies</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  
@@ -59,8 +58,8 @@ namespace Amazon.IdentityManagement.Model
     ///  <note> 
     /// <para>
     /// Because policy documents can be large, you should use POST rather than GET when calling
-    /// <code>PutRolePolicy</code>. For general information about using the Query API with
-    /// IAM, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
+    /// <c>PutRolePolicy</c>. For general information about using the Query API with IAM,
+    /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making
     /// query requests</a> in the <i>IAM User Guide</i>.
     /// </para>
     ///  </note>
@@ -89,18 +88,18 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any printable ASCII character ranging from the space character (<code>\u0020</code>)
-        /// through the end of the ASCII character range
+        /// Any printable ASCII character ranging from the space character (<c>\u0020</c>) through
+        /// the end of the ASCII character range
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
-        /// <code>\u00FF</code>)
+        /// <c>\u00FF</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
-        /// and carriage return (<code>\u000D</code>)
+        /// The special characters tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage
+        /// return (<c>\u000D</c>)
         /// </para>
         ///  </li> </ul>
         /// </summary>

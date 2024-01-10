@@ -32,8 +32,8 @@ namespace Amazon.BillingConductor.Model
     /// A representation of the line item filter for your custom line item. You can use line
     /// item filters to include or exclude specific resource values from the billing group's
     /// total cost. For example, if you create a custom line item and you want to filter out
-    /// a value, such as Savings Plan discounts, you can update <code>LineItemFilter</code>
-    /// to exclude it.
+    /// a value, such as Savings Plan discounts, you can update <c>LineItemFilter</c> to exclude
+    /// it.
     /// </summary>
     public partial class LineItemFilter
     {

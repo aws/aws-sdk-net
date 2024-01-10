@@ -32,8 +32,8 @@ namespace Amazon.ManagedGrafana.Model
     /// Container for the parameters to the UpdateWorkspaceAuthentication operation.
     /// Use this operation to define the identity provider (IdP) that this workspace authenticates
     /// users from, using SAML. You can also map SAML assertion attributes to workspace user
-    /// information and define which groups in the assertion attribute are to have the <code>Admin</code>
-    /// and <code>Editor</code> roles in the workspace.
+    /// information and define which groups in the assertion attribute are to have the <c>Admin</c>
+    /// and <c>Editor</c> roles in the workspace.
     /// 
     ///  <note> 
     /// <para>
@@ -75,7 +75,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <para>
         /// If the workspace uses SAML, use this structure to map SAML assertion attributes to
         /// workspace user information and define which groups in the assertion attribute are
-        /// to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.
+        /// to have the <c>Admin</c> and <c>Editor</c> roles in the workspace.
         /// </para>
         /// </summary>
         public SamlConfiguration SamlConfiguration

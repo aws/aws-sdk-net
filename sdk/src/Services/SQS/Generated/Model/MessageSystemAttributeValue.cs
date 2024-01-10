@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The user-specified message system attribute value. For string data types, the <code>Value</code>
+    /// The user-specified message system attribute value. For string data types, the <c>Value</c>
     /// attribute has the same restrictions on the content as the message body. For more information,
-    /// see <code> <a>SendMessage</a>.</code> 
+    /// see <c> <a>SendMessage</a>.</c> 
     /// 
     ///  
     /// <para>
-    ///  <code>Name</code>, <code>type</code>, <code>value</code> and the message body must
-    /// not be empty or null.
+    ///  <c>Name</c>, <c>type</c>, <c>value</c> and the message body must not be empty or
+    /// null.
     /// </para>
     /// </summary>
     public partial class MessageSystemAttributeValue
@@ -87,8 +87,8 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// Amazon SQS supports the following logical data types: <code>String</code>, <code>Number</code>,
-        /// and <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
+        /// Amazon SQS supports the following logical data types: <c>String</c>, <c>Number</c>,
+        /// and <c>Binary</c>. For the <c>Number</c> data type, you must use <c>StringValue</c>.
         /// </para>
         ///  
         /// <para>

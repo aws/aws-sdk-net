@@ -59,9 +59,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EnableAdditionalMetadata. 
         /// <para>
-        /// Specify a value of <code>RAWTYPES</code> or <code>COMMENTS</code> to enable additional
-        /// metadata in table responses. <code>RAWTYPES</code> provides the native-level datatype.
-        /// <code>COMMENTS</code> provides comments associated with a column or table in the database.
+        /// Specify a value of <c>RAWTYPES</c> or <c>COMMENTS</c> to enable additional metadata
+        /// in table responses. <c>RAWTYPES</c> provides the native-level datatype. <c>COMMENTS</c>
+        /// provides comments associated with a column or table in the database.
         /// </para>
         ///  
         /// <para>

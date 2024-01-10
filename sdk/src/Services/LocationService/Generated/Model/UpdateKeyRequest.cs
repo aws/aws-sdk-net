@@ -64,7 +64,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property ExpireTime. 
         /// <para>
         /// Updates the timestamp for when the API key resource will expire in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
-        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         public DateTime ExpireTime
@@ -82,21 +82,21 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property ForceUpdate. 
         /// <para>
-        /// The boolean flag to be included for updating <code>ExpireTime</code> or <code>Restrictions</code>
+        /// The boolean flag to be included for updating <c>ExpireTime</c> or <c>Restrictions</c>
         /// details.
         /// </para>
         ///  
         /// <para>
-        /// Must be set to <code>true</code> to update an API key resource that has been used
-        /// in the past 7 days.
+        /// Must be set to <c>true</c> to update an API key resource that has been used in the
+        /// past 7 days.
         /// </para>
         ///  
         /// <para>
-        ///  <code>False</code> if force update is not preferred
+        ///  <c>False</c> if force update is not preferred
         /// </para>
         ///  
         /// <para>
-        /// Default value: <code>False</code> 
+        /// Default value: <c>False</c> 
         /// </para>
         /// </summary>
         public bool ForceUpdate
@@ -133,8 +133,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property NoExpiry. 
         /// <para>
-        /// Whether the API key should expire. Set to <code>true</code> to set the API key to
-        /// have no expiration time.
+        /// Whether the API key should expire. Set to <c>true</c> to set the API key to have no
+        /// expiration time.
         /// </para>
         /// </summary>
         public bool NoExpiry

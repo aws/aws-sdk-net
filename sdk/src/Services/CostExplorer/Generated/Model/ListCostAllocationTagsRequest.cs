@@ -122,11 +122,10 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of <code>CostAllocationTag</code> object that are returned for this request.
-        /// The <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines
-        /// and applies to support Amazon Web Services resources for cost allocation purposes.
-        /// The <code>UserDefined</code> type tags are tags that you define, create, and apply
-        /// to resources. 
+        /// The type of <c>CostAllocationTag</c> object that are returned for this request. The
+        /// <c>AWSGenerated</c> type tags are tags that Amazon Web Services defines and applies
+        /// to support Amazon Web Services resources for cost allocation purposes. The <c>UserDefined</c>
+        /// type tags are tags that you define, create, and apply to resources. 
         /// </para>
         /// </summary>
         public CostAllocationTagType Type

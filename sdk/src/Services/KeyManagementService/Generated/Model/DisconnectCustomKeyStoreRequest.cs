@@ -56,10 +56,9 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// When you disconnect a custom key store, its <code>ConnectionState</code> changes to
-    /// <code>Disconnected</code>. To find the connection state of a custom key store, use
-    /// the <a>DescribeCustomKeyStores</a> operation. To reconnect a custom key store, use
-    /// the <a>ConnectCustomKeyStore</a> operation.
+    /// When you disconnect a custom key store, its <c>ConnectionState</c> changes to <c>Disconnected</c>.
+    /// To find the connection state of a custom key store, use the <a>DescribeCustomKeyStores</a>
+    /// operation. To reconnect a custom key store, use the <a>ConnectCustomKeyStore</a> operation.
     /// </para>
     ///  
     /// <para>

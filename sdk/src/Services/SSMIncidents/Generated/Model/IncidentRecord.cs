@@ -154,23 +154,23 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>1</code> - Critical
+        ///  <c>1</c> - Critical
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>2</code> - High
+        ///  <c>2</c> - High
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>3</code> - Medium
+        ///  <c>3</c> - Medium
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>4</code> - Low
+        ///  <c>4</c> - Low
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>5</code> - No Impact
+        ///  <c>5</c> - No Impact
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -146,7 +146,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of an <a href="/kms/latest/developerguide/concepts.html#master_keys">KMS
         /// key</a>. Amazon Cognito uses the key to encrypt codes and temporary passwords sent
-        /// to <code>CustomEmailSender</code> and <code>CustomSMSSender</code>.
+        /// to <c>CustomEmailSender</c> and <c>CustomSMSSender</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -246,9 +246,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// Set this parameter for legacy purposes. If you also set an ARN in <code>PreTokenGenerationConfig</code>,
-        /// its value must be identical to <code>PreTokenGeneration</code>. For new instances
-        /// of pre token generation triggers, set the <code>LambdaArn</code> of <code>PreTokenGenerationConfig</code>.
+        /// Set this parameter for legacy purposes. If you also set an ARN in <c>PreTokenGenerationConfig</c>,
+        /// its value must be identical to <c>PreTokenGeneration</c>. For new instances of pre
+        /// token generation triggers, set the <c>LambdaArn</c> of <c>PreTokenGenerationConfig</c>.
         /// </para>
         ///  
         /// <para>
@@ -272,7 +272,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property PreTokenGenerationConfig. 
         /// <para>
         /// The detailed configuration of a pre token generation trigger. If you also set an ARN
-        /// in <code>PreTokenGeneration</code>, its value must be identical to <code>PreTokenGenerationConfig</code>.
+        /// in <c>PreTokenGeneration</c>, its value must be identical to <c>PreTokenGenerationConfig</c>.
         /// </para>
         /// </summary>
         public PreTokenGenerationVersionConfigType PreTokenGenerationConfig

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Options for filtering the <code>ListConfigurationPolicyAssociations</code> response.
-    /// You can filter by the Amazon Resource Name (ARN) or universally unique identifier
-    /// (UUID) of a configuration policy, <code>AssociationType</code>, or <code>AssociationStatus</code>.
+    /// Options for filtering the <c>ListConfigurationPolicyAssociations</c> response. You
+    /// can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID)
+    /// of a configuration policy, <c>AssociationType</c>, or <c>AssociationStatus</c>.
     /// </summary>
     public partial class AssociationFilters
     {

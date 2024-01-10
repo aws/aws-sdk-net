@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Filter to apply in <code>DescribePackage</code> response.
+    /// Filter to apply in <c>DescribePackage</c> response.
     /// </summary>
     public partial class DescribePackagesFilter
     {
@@ -39,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Any field from <code>PackageDetails</code>.
+        /// Any field from <c>PackageDetails</c>.
         /// </para>
         /// </summary>
         public DescribePackagesFilterName Name

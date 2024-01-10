@@ -59,8 +59,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NotebookInstanceLifecycleConfigs. 
         /// <para>
-        /// An array of <code>NotebookInstanceLifecycleConfiguration</code> objects, each listing
-        /// a lifecycle configuration.
+        /// An array of <c>NotebookInstanceLifecycleConfiguration</c> objects, each listing a
+        /// lifecycle configuration.
         /// </para>
         /// </summary>
         public List<NotebookInstanceLifecycleConfigSummary> NotebookInstanceLifecycleConfigs

@@ -63,8 +63,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AssociationStatusMessage. 
         /// <para>
-        ///  The explanation for a <code>FAILED</code> value for <code>AssociationStatus</code>.
-        /// 
+        ///  The explanation for a <c>FAILED</c> value for <c>AssociationStatus</c>. 
         /// </para>
         /// </summary>
         public string AssociationStatusMessage
@@ -103,7 +102,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ConfigurationPolicyId. 
         /// <para>
         ///  The universally unique identifier (UUID) of a configuration policy. For self-managed
-        /// behavior, the value is <code>SELF_MANAGED_SECURITY_HUB</code>. 
+        /// behavior, the value is <c>SELF_MANAGED_SECURITY_HUB</c>. 
         /// </para>
         /// </summary>
         public string ConfigurationPolicyId

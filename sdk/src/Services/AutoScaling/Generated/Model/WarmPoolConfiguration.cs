@@ -61,7 +61,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property MaxGroupPreparedCapacity. 
         /// <para>
         /// The maximum number of instances that are allowed to be in the warm pool or in any
-        /// state except <code>Terminated</code> for the Auto Scaling group.
+        /// state except <c>Terminated</c> for the Auto Scaling group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1)]

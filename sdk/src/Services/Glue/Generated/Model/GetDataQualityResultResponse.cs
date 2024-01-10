@@ -50,8 +50,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AnalyzerResults. 
         /// <para>
-        /// A list of <code>DataQualityAnalyzerResult</code> objects representing the results
-        /// for each analyzer. 
+        /// A list of <c>DataQualityAnalyzerResult</c> objects representing the results for each
+        /// analyzer. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]
@@ -108,7 +108,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// In the context of a job in Glue Studio, each node in the canvas is typically assigned
         /// some sort of name and data quality nodes will have names. In the case of multiple
-        /// nodes, the <code>evaluationContext</code> can differentiate the nodes.
+        /// nodes, the <c>evaluationContext</c> can differentiate the nodes.
         /// </para>
         /// </summary>
         public string EvaluationContext
@@ -164,8 +164,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Observations. 
         /// <para>
-        /// A list of <code>DataQualityObservation</code> objects representing the observations
-        /// generated after evaluating the rules and analyzers. 
+        /// A list of <c>DataQualityObservation</c> objects representing the observations generated
+        /// after evaluating the rules and analyzers. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]
@@ -203,8 +203,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RuleResults. 
         /// <para>
-        /// A list of <code>DataQualityRuleResult</code> objects representing the results for
-        /// each rule. 
+        /// A list of <c>DataQualityRuleResult</c> objects representing the results for each rule.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2000)]

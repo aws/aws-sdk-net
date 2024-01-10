@@ -34,9 +34,9 @@ namespace Amazon.Keyspaces.Model
     /// 
     ///  
     /// <para>
-    /// Amazon Web Services-assigned tag names and values are automatically assigned the <code>aws:</code>
+    /// Amazon Web Services-assigned tag names and values are automatically assigned the <c>aws:</c>
     /// prefix, which the user cannot assign. Amazon Web Services-assigned tag names do not
-    /// count towards the tag limit of 50. User-assigned tag names have the prefix <code>user:</code>
+    /// count towards the tag limit of 50. User-assigned tag names have the prefix <c>user:</c>
     /// in the Cost Allocation Report. You cannot backdate the application of a tag.
     /// </para>
     ///  

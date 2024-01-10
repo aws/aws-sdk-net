@@ -84,9 +84,9 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property AliasName. 
         /// <para>
-        /// A friendly name that you can use to refer to a key. An alias must begin with <code>alias/</code>
-        /// followed by a name, for example <code>alias/ExampleAlias</code>. It can contain only
-        /// alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).
+        /// A friendly name that you can use to refer to a key. An alias must begin with <c>alias/</c>
+        /// followed by a name, for example <c>alias/ExampleAlias</c>. It can contain only alphanumeric
+        /// characters, forward slashes (/), underscores (_), and dashes (-).
         /// </para>
         ///  <important> 
         /// <para>
@@ -111,7 +111,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property KeyArn. 
         /// <para>
-        /// The <code>KeyARN</code> of the key to associate with the alias.
+        /// The <c>KeyARN</c> of the key to associate with the alias.
         /// </para>
         /// </summary>
         [AWSProperty(Min=70, Max=150)]

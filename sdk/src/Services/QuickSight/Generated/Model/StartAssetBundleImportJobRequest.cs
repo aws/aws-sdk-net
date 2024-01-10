@@ -42,9 +42,9 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>,
-    /// and <code>"update"</code> permissions in their IAM role to access each resource type
-    /// that is contained in the bundle file before the resources can be imported.
+    /// The API caller must have the necessary <c>"create"</c>, <c>"describe"</c>, and <c>"update"</c>
+    /// permissions in their IAM role to access each resource type that is contained in the
+    /// bundle file before the resources can be imported.
     /// </para>
     /// </summary>
     public partial class StartAssetBundleImportJobRequest : AmazonQuickSightRequest
@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AssetBundleImportSource. 
         /// <para>
         /// The source of the asset bundle zip file that contains the data that you want to import.
-        /// The file must be in <code>QUICKSIGHT_JSON</code> format. 
+        /// The file must be in <c>QUICKSIGHT_JSON</c> format. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,13 +124,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>ROLLBACK</code>, failed import jobs will attempt to undo any asset
-        /// changes caused by the failed job.
+        /// If you choose <c>ROLLBACK</c>, failed import jobs will attempt to undo any asset changes
+        /// caused by the failed job.
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll
-        /// back any asset changes caused by the failed job, possibly keeping the Amazon QuickSight
+        /// If you choose <c>DO_NOTHING</c>, failed import jobs will not attempt to roll back
+        /// any asset changes caused by the failed job, possibly keeping the Amazon QuickSight
         /// account in an inconsistent state.
         /// </para>
         /// </summary>

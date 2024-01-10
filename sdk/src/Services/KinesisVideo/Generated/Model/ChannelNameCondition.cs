@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// An optional input parameter for the <code>ListSignalingChannels</code> API. When this
-    /// parameter is specified while invoking <code>ListSignalingChannels</code>, the API
-    /// returns only the channels that satisfy a condition specified in <code>ChannelNameCondition</code>.
+    /// An optional input parameter for the <c>ListSignalingChannels</c> API. When this parameter
+    /// is specified while invoking <c>ListSignalingChannels</c>, the API returns only the
+    /// channels that satisfy a condition specified in <c>ChannelNameCondition</c>.
     /// </summary>
     public partial class ChannelNameCondition
     {
@@ -41,8 +41,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property ComparisonOperator. 
         /// <para>
-        /// A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code>
-        /// operator, which finds signaling channels whose names begin with a given prefix.
+        /// A comparison operator. Currently, you can only specify the <c>BEGINS_WITH</c> operator,
+        /// which finds signaling channels whose names begin with a given prefix.
         /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator

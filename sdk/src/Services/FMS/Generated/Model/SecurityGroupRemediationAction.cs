@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FMS.Model
 {
     /// <summary>
-    /// Remediation option for the rule specified in the <code>ViolationTarget</code>.
+    /// Remediation option for the rule specified in the <c>ViolationTarget</c>.
     /// </summary>
     public partial class SecurityGroupRemediationAction
     {
@@ -96,8 +96,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property RemediationResult. 
         /// <para>
-        /// The final state of the rule specified in the <code>ViolationTarget</code> after it
-        /// is remediated.
+        /// The final state of the rule specified in the <c>ViolationTarget</c> after it is remediated.
         /// </para>
         /// </summary>
         public SecurityGroupRuleDescription RemediationResult

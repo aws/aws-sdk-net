@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property AllowedLocations. 
         /// <para>
         ///  A list of locations to allow game session placement in, in the form of Amazon Web
-        /// Services Region codes such as <code>us-west-2</code>. 
+        /// Services Region codes such as <c>us-west-2</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

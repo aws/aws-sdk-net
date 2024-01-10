@@ -39,9 +39,9 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used to submit the <code>CreateRateBasedRule</code>
-        /// request. You can also use this value to query the status of the request. For more
-        /// information, see <a>GetChangeTokenStatus</a>.
+        /// The <c>ChangeToken</c> that you used to submit the <c>CreateRateBasedRule</c> request.
+        /// You can also use this value to query the status of the request. For more information,
+        /// see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -60,8 +60,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Rule. 
         /// <para>
-        /// The <a>RateBasedRule</a> that is returned in the <code>CreateRateBasedRule</code>
-        /// response.
+        /// The <a>RateBasedRule</a> that is returned in the <c>CreateRateBasedRule</c> response.
         /// </para>
         /// </summary>
         public RateBasedRule Rule

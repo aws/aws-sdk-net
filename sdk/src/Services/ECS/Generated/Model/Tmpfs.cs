@@ -63,12 +63,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev"
-        /// | "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand"
-        /// | "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable"
+        /// Valid values: <c>"defaults" | "ro" | "rw" | "suid" | "nosuid" | "dev" | "nodev" |
+        /// "exec" | "noexec" | "sync" | "async" | "dirsync" | "remount" | "mand" | "nomand" |
+        /// "atime" | "noatime" | "diratime" | "nodiratime" | "bind" | "rbind" | "unbindable"
         /// | "runbindable" | "private" | "rprivate" | "shared" | "rshared" | "slave" | "rslave"
         /// | "relatime" | "norelatime" | "strictatime" | "nostrictatime" | "mode" | "uid" | "gid"
-        /// | "nr_inodes" | "nr_blocks" | "mpol"</code> 
+        /// | "nr_inodes" | "nr_blocks" | "mpol"</c> 
         /// </para>
         /// </summary>
         public List<string> MountOptions

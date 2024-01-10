@@ -46,8 +46,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>true</code>, then new controls for enabled standards are enabled automatically.
-        /// If set to <code>false</code>, then new controls are not enabled.
+        /// If set to <c>true</c>, then new controls for enabled standards are enabled automatically.
+        /// If set to <c>false</c>, then new controls are not enabled.
         /// </para>
         /// </summary>
         public bool AutoEnableControls
@@ -66,21 +66,20 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ControlFindingGenerator. 
         /// <para>
         /// Specifies whether the calling account has consolidated control findings turned on.
-        /// If the value for this field is set to <code>SECURITY_CONTROL</code>, Security Hub
-        /// generates a single finding for a control check even when the check applies to multiple
-        /// enabled standards.
+        /// If the value for this field is set to <c>SECURITY_CONTROL</c>, Security Hub generates
+        /// a single finding for a control check even when the check applies to multiple enabled
+        /// standards.
         /// </para>
         ///  
         /// <para>
-        /// If the value for this field is set to <code>STANDARD_CONTROL</code>, Security Hub
-        /// generates separate findings for a control check when the check applies to multiple
-        /// enabled standards.
+        /// If the value for this field is set to <c>STANDARD_CONTROL</c>, Security Hub generates
+        /// separate findings for a control check when the check applies to multiple enabled standards.
         /// </para>
         ///  
         /// <para>
         /// The value for this field in a member account matches the value in the administrator
         /// account. For accounts that aren't part of an organization, the default value of this
-        /// field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or after February
+        /// field is <c>SECURITY_CONTROL</c> if you enabled Security Hub on or after February
         /// 23, 2023.
         /// </para>
         /// </summary>

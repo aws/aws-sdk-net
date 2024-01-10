@@ -63,9 +63,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property JupyterLabAppImageConfig. 
         /// <para>
-        /// The <code>JupyterLabAppImageConfig</code>. You can only specify one image kernel in
-        /// the <code>AppImageConfig</code> API. This kernel is shown to users before the image
-        /// starts. After the image runs, all kernels are visible in JupyterLab.
+        /// The <c>JupyterLabAppImageConfig</c>. You can only specify one image kernel in the
+        /// <c>AppImageConfig</c> API. This kernel is shown to users before the image starts.
+        /// After the image runs, all kernels are visible in JupyterLab.
         /// </para>
         /// </summary>
         public JupyterLabAppImageConfig JupyterLabAppImageConfig

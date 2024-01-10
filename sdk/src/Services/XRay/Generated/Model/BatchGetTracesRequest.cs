@@ -31,8 +31,8 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Container for the parameters to the BatchGetTraces operation.
     /// Retrieves a list of traces specified by ID. Each trace is a collection of segment
-    /// documents that originates from a single request. Use <code>GetTraceSummaries</code>
-    /// to get a list of trace IDs.
+    /// documents that originates from a single request. Use <c>GetTraceSummaries</c> to get
+    /// a list of trace IDs.
     /// </summary>
     public partial class BatchGetTracesRequest : AmazonXRayRequest
     {

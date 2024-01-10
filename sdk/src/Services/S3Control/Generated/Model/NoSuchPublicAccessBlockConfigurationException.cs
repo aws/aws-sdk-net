@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Amazon S3 throws this exception if you make a <code>GetPublicAccessBlock</code> request
-    /// against an account that doesn't have a <code>PublicAccessBlockConfiguration</code>
-    /// set.
+    /// Amazon S3 throws this exception if you make a <c>GetPublicAccessBlock</c> request
+    /// against an account that doesn't have a <c>PublicAccessBlockConfiguration</c> set.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

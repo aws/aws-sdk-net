@@ -120,7 +120,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property WriteOperations. 
         /// <para>
-        /// A list of <code>WriteOperation</code> objects that define an object to add to or delete
+        /// A list of <c>WriteOperation</c> objects that define an object to add to or delete
         /// from the manifest for a governed table.
         /// </para>
         /// </summary>

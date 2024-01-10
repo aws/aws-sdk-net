@@ -60,7 +60,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         /// The payload that Kinesis Video Streams returns is a sequence of chunks from the specified
         /// stream. For information about the chunks, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
-        /// The chunks that Kinesis Video Streams returns in the <code>GetMediaForFragmentList</code>
+        /// The chunks that Kinesis Video Streams returns in the <c>GetMediaForFragmentList</c>
         /// call also include the following additional Matroska (MKV) tags: 
         /// </para>
         ///  <ul> <li> 

@@ -61,7 +61,7 @@ namespace Amazon.SecurityLake.Model
         /// <para>
         ///  Subscribers can consume data by directly querying Lake Formation tables in your Amazon
         /// S3 bucket through services like Amazon Athena. This subscription type is defined as
-        /// <code>LAKEFORMATION</code>.
+        /// <c>LAKEFORMATION</c>.
         /// </para>
         /// </summary>
         public List<string> AccessTypes
@@ -217,8 +217,7 @@ namespace Amazon.SecurityLake.Model
         /// Gets and sets the property SubscriberDescription. 
         /// <para>
         /// The subscriber descriptions for a subscriber account. The description for a subscriber
-        /// includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>,
-        /// and <code>subscriberId</code>.
+        /// includes <c>subscriberName</c>, <c>accountID</c>, <c>externalID</c>, and <c>subscriberId</c>.
         /// </para>
         /// </summary>
         public string SubscriberDescription

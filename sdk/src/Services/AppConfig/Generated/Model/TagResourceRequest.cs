@@ -62,8 +62,8 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// The key-value string map. The valid character set is [a-zA-Z+-=._:/]. The tag key
-        /// can be up to 128 characters and must not start with <code>aws:</code>. The tag value
-        /// can be up to 256 characters.
+        /// can be up to 128 characters and must not start with <c>aws:</c>. The tag value can
+        /// be up to 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

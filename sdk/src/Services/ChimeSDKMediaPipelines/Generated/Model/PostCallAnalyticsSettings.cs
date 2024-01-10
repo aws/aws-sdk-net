@@ -35,12 +35,12 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
     /// 
     ///  
     /// <para>
-    ///  <code>DataAccessRoleArn</code> and <code>OutputLocation</code> are required fields.
+    ///  <c>DataAccessRoleArn</c> and <c>OutputLocation</c> are required fields.
     /// </para>
     ///  
     /// <para>
-    ///  <code>PostCallAnalyticsSettings</code> provides the same insights as a Call Analytics
-    /// post-call transcription. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call
+    ///  <c>PostCallAnalyticsSettings</c> provides the same insights as a Call Analytics post-call
+    /// transcription. For more information, refer to <a href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call
     /// analytics with real-time transcriptions</a> in the <i>Amazon Transcribe Developer
     /// Guide</i>.
     /// </para>

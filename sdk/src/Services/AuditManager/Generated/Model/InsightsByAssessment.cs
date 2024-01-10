@@ -33,32 +33,32 @@ namespace Amazon.AuditManager.Model
     /// 
     ///  
     /// <para>
-    /// This summary is a snapshot of the data that was collected on the <code>lastUpdated</code>
-    /// date. It’s important to understand that the totals in <code>InsightsByAssessment</code>
+    /// This summary is a snapshot of the data that was collected on the <c>lastUpdated</c>
+    /// date. It’s important to understand that the totals in <c>InsightsByAssessment</c>
     /// are daily counts based on this date — they aren’t a total sum to date. 
     /// </para>
     ///  
     /// <para>
-    /// The <code>InsightsByAssessment</code> data is eventually consistent. This means that
-    /// when you read data from <code>InsightsByAssessment</code>, the response might not
-    /// instantly reflect the results of a recently completed write or update operation. If
-    /// you repeat your read request after a few hours, the response returns the latest data.
+    /// The <c>InsightsByAssessment</c> data is eventually consistent. This means that when
+    /// you read data from <c>InsightsByAssessment</c>, the response might not instantly reflect
+    /// the results of a recently completed write or update operation. If you repeat your
+    /// read request after a few hours, the response returns the latest data.
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you delete an assessment or change its status to inactive, <code>InsightsByAssessment</code>
+    /// If you delete an assessment or change its status to inactive, <c>InsightsByAssessment</c>
     /// includes data for that assessment as follows.
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <b>Inactive assessments</b> - If Audit Manager collected evidence for your assessment
-    /// before you changed it inactive, that evidence is included in the <code>InsightsByAssessment</code>
+    /// before you changed it inactive, that evidence is included in the <c>InsightsByAssessment</c>
     /// counts for that day.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>Deleted assessments</b> - If Audit Manager collected evidence for your assessment
-    /// before you deleted it, that evidence isn't included in the <code>InsightsByAssessment</code>
+    /// before you deleted it, that evidence isn't included in the <c>InsightsByAssessment</c>
     /// counts for that day.
     /// </para>
     ///  </li> </ul> </note>
@@ -75,7 +75,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentControlsCountByNoncompliantEvidence. 
         /// <para>
-        /// The number of assessment controls that collected non-compliant evidence on the <code>lastUpdated</code>
+        /// The number of assessment controls that collected non-compliant evidence on the <c>lastUpdated</c>
         /// date. 
         /// </para>
         /// </summary>
@@ -123,7 +123,7 @@ namespace Amazon.AuditManager.Model
         ///  <note> 
         /// <para>
         /// If evidence has a compliance check status of <i>not applicable</i>, it's classified
-        /// as <i>inconclusive</i> in <code>InsightsByAssessment</code> data.
+        /// as <i>inconclusive</i> in <c>InsightsByAssessment</c> data.
         /// </para>
         ///  </note>
         /// </summary>

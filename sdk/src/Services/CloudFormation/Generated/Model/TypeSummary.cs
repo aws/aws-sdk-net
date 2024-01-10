@@ -57,7 +57,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// This applies only to private extensions you have registered in your account. For public
         /// extensions, both those provided by Amazon and published by third parties, CloudFormation
-        /// returns <code>null</code>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// returns <c>null</c>. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  
         /// <para>
@@ -136,7 +136,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For all other extension types, CloudFormation returns <code>null</code>.
+        /// For all other extension types, CloudFormation returns <c>null</c>.
         /// </para>
         /// </summary>
         public DateTime LastUpdated
@@ -156,13 +156,13 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// For public extensions that have been activated for this account and Region, the latest
         /// version of the public extension <i>that is available</i>. For any extensions other
-        /// than activated third-arty extensions, CloudFormation returns <code>null</code>.
+        /// than activated third-arty extensions, CloudFormation returns <c>null</c>.
         /// </para>
         ///  
         /// <para>
-        /// How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extension in this account and Region when
-        /// a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
+        /// How you specified <c>AutoUpdate</c> when enabling the extension affects whether CloudFormation
+        /// automatically updates the extension in this account and Region when a new version
+        /// is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
         /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
         /// User Guide</i>.
         /// </para>
@@ -188,10 +188,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-        /// account and Region, CloudFormation treats that alias as the extension's type name
-        /// within the account and Region, not the type name of the public extension. For more
-        /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
+        /// If you specified a <c>TypeNameAlias</c> when enabling the extension in this account
+        /// and Region, CloudFormation treats that alias as the extension's type name within the
+        /// account and Region, not the type name of the public extension. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
         /// aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -217,9 +217,9 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// How you specified <code>AutoUpdate</code> when enabling the extension affects whether
-        /// CloudFormation automatically updates the extension in this account and Region when
-        /// a new version is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
+        /// How you specified <c>AutoUpdate</c> when enabling the extension affects whether CloudFormation
+        /// automatically updates the extension in this account and Region when a new version
+        /// is released. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-auto">Setting
         /// CloudFormation to automatically use new versions of extensions</a> in the <i>CloudFormation
         /// User Guide</i>.
         /// </para>
@@ -345,7 +345,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specified a <code>TypeNameAlias</code> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
+        /// If you specified a <c>TypeNameAlias</c> when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
         /// this extension</a> in your account and Region, CloudFormation considers that alias
         /// as the type name.
         /// </para>

@@ -48,11 +48,11 @@ namespace Amazon.Comprehend.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>Image files and scanned PDF files</b> - Amazon Comprehend uses the Amazon Textract
-    /// <code>DetectDocumentText</code> API to extract the text. 
+    /// <c>DetectDocumentText</c> API to extract the text. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <code>DocumentReaderConfig</code> does not apply to plain text files or Word files.
+    ///  <c>DocumentReaderConfig</c> does not apply to plain text files or Word files.
     /// </para>
     ///  
     /// <para>
@@ -75,12 +75,12 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TEXTRACT_DETECT_DOCUMENT_TEXT</code> - The Amazon Comprehend service uses the
-        /// <code>DetectDocumentText</code> API operation. 
+        ///  <c>TEXTRACT_DETECT_DOCUMENT_TEXT</c> - The Amazon Comprehend service uses the <c>DetectDocumentText</c>
+        /// API operation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEXTRACT_ANALYZE_DOCUMENT</code> - The Amazon Comprehend service uses the <code>AnalyzeDocument</code>
+        ///  <c>TEXTRACT_ANALYZE_DOCUMENT</c> - The Amazon Comprehend service uses the <c>AnalyzeDocument</c>
         /// API operation. 
         /// </para>
         ///  </li> </ul>
@@ -105,13 +105,12 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SERVICE_DEFAULT</code> - use the Amazon Comprehend service defaults for PDF
-        /// files.
+        ///  <c>SERVICE_DEFAULT</c> - use the Amazon Comprehend service defaults for PDF files.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FORCE_DOCUMENT_READ_ACTION</code> - Amazon Comprehend uses the Textract API
-        /// specified by DocumentReadAction for all PDF files, including digital PDF files. 
+        ///  <c>FORCE_DOCUMENT_READ_ACTION</c> - Amazon Comprehend uses the Textract API specified
+        /// by DocumentReadAction for all PDF files, including digital PDF files. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,18 +129,18 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property FeatureTypes. 
         /// <para>
-        /// Specifies the type of Amazon Textract features to apply. If you chose <code>TEXTRACT_ANALYZE_DOCUMENT</code>
+        /// Specifies the type of Amazon Textract features to apply. If you chose <c>TEXTRACT_ANALYZE_DOCUMENT</c>
         /// as the read action, you must specify one or both of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TABLES</code> - Returns additional information about any tables that are detected
+        ///  <c>TABLES</c> - Returns additional information about any tables that are detected
         /// in the input document. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FORMS</code> - Returns additional information about any forms that are detected
-        /// in the input document. 
+        ///  <c>FORMS</c> - Returns additional information about any forms that are detected in
+        /// the input document. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

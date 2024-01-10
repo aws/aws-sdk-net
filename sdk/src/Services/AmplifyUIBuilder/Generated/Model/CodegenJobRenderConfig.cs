@@ -39,7 +39,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property React. 
         /// <para>
-        /// The name of the <code>ReactStartCodegenJobData</code> object.
+        /// The name of the <c>ReactStartCodegenJobData</c> object.
         /// </para>
         /// </summary>
         public ReactStartCodegenJobData React

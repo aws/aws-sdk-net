@@ -31,11 +31,11 @@ namespace Amazon.SnowDeviceManagement.Model
     /// <summary>
     /// Container for the parameters to the CancelTask operation.
     /// Sends a cancel request for a specified task. You can cancel a task only if it's still
-    /// in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.
+    /// in a <c>QUEUED</c> state. Tasks that are already running can't be cancelled.
     /// 
     ///  <note> 
     /// <para>
-    /// A task might still run if it's processed from the queue before the <code>CancelTask</code>
+    /// A task might still run if it's processed from the queue before the <c>CancelTask</c>
     /// operation changes the task's state.
     /// </para>
     ///  </note>
@@ -48,7 +48,7 @@ namespace Amazon.SnowDeviceManagement.Model
         /// Gets and sets the property TaskId. 
         /// <para>
         /// The ID of the task that you are attempting to cancel. You can retrieve a task ID by
-        /// using the <code>ListTasks</code> operation.
+        /// using the <c>ListTasks</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -79,7 +79,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntityIdentifier. 
         /// <para>
-        /// The ID of the entity, in the format of <code>EntityId@RevisionId</code>.
+        /// The ID of the entity, in the format of <c>EntityId@RevisionId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -98,7 +98,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntityType. 
         /// <para>
-        /// The entity type of the entity, in the format of <code>EntityType@Version</code>.
+        /// The entity type of the entity, in the format of <c>EntityType@Version</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

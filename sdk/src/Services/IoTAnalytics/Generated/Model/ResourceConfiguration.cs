@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
-    /// The configuration of the resource used to execute the <code>containerAction</code>.
+    /// The configuration of the resource used to execute the <c>containerAction</c>.
     /// </summary>
     public partial class ResourceConfiguration
     {
@@ -39,9 +39,9 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property ComputeType. 
         /// <para>
-        /// The type of the compute resource used to execute the <code>containerAction</code>.
-        /// Possible values are: <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code>
-        /// (vCPU=8, memory=32 GiB).
+        /// The type of the compute resource used to execute the <c>containerAction</c>. Possible
+        /// values are: <c>ACU_1</c> (vCPU=4, memory=16 GiB) or <c>ACU_2</c> (vCPU=8, memory=32
+        /// GiB).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.IoTAnalytics.Model
         /// Gets and sets the property VolumeSizeInGB. 
         /// <para>
         /// The size, in GB, of the persistent storage available to the resource instance used
-        /// to execute the <code>containerAction</code> (min: 1, max: 50).
+        /// to execute the <c>containerAction</c> (min: 1, max: 50).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.PersonalizeEvents.Model
 {
     /// <summary>
-    /// Represents item metadata added to an Items dataset using the <code>PutItems</code>
-    /// API. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
+    /// Represents item metadata added to an Items dataset using the <c>PutItems</c> API.
+    /// For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing
     /// items individually</a>.
     /// </summary>
     public partial class Item
@@ -61,15 +61,15 @@ namespace Amazon.PersonalizeEvents.Model
         /// Gets and sets the property Properties. 
         /// <para>
         /// A string map of item-specific metadata. Each element in the map consists of a key-value
-        /// pair. For example, <code>{"numberOfRatings": "12"}</code>.
+        /// pair. For example, <c>{"numberOfRatings": "12"}</c>.
         /// </para>
         ///  
         /// <para>
         /// The keys use camel case names that match the fields in the schema for the Items dataset.
-        /// In the previous example, the <code>numberOfRatings</code> matches the 'NUMBER_OF_RATINGS'
+        /// In the previous example, the <c>numberOfRatings</c> matches the 'NUMBER_OF_RATINGS'
         /// field defined in the Items schema. For categorical string data, to include multiple
-        /// categories for a single item, separate each category with a pipe separator (<code>|</code>).
-        /// For example, <code>\"Horror|Action\"</code>.
+        /// categories for a single item, separate each category with a pipe separator (<c>|</c>).
+        /// For example, <c>\"Horror|Action\"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=32000)]

@@ -31,8 +31,8 @@ namespace Amazon.PI.Model
     /// <summary>
     /// Container for the parameters to the GetPerformanceAnalysisReport operation.
     /// Retrieves the report including the report ID, status, time details, and the insights
-    /// with recommendations. The report status can be <code>RUNNING</code>, <code>SUCCEEDED</code>,
-    /// or <code>FAILED</code>. The insights include the <code>description</code> and <code>recommendation</code>
+    /// with recommendations. The report status can be <c>RUNNING</c>, <c>SUCCEEDED</c>, or
+    /// <c>FAILED</c>. The insights include the <c>description</c> and <c>recommendation</c>
     /// fields.
     /// </summary>
     public partial class GetPerformanceAnalysisReportRequest : AmazonPIRequest
@@ -46,8 +46,7 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property AcceptLanguage. 
         /// <para>
-        /// The text language in the report. The default language is <code>EN_US</code> (English).
-        /// 
+        /// The text language in the report. The default language is <c>EN_US</c> (English). 
         /// </para>
         /// </summary>
         public AcceptLanguage AcceptLanguage
@@ -65,7 +64,7 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property AnalysisReportId. 
         /// <para>
-        /// A unique identifier of the created analysis report. For example, <code>report-12345678901234567</code>
+        /// A unique identifier of the created analysis report. For example, <c>report-12345678901234567</c>
         /// 
         /// </para>
         /// </summary>
@@ -87,13 +86,13 @@ namespace Amazon.PI.Model
         /// <para>
         /// An immutable identifier for a data source that is unique for an Amazon Web Services
         /// Region. Performance Insights gathers metrics from this data source. In the console,
-        /// the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>,
-        /// the identifier is returned as <code>DbiResourceId</code>.
+        /// the identifier is shown as <i>ResourceID</i>. When you call <c>DescribeDBInstances</c>,
+        /// the identifier is returned as <c>DbiResourceId</c>.
         /// </para>
         ///  
         /// <para>
-        /// To use a DB instance as a data source, specify its <code>DbiResourceId</code> value.
-        /// For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.
+        /// To use a DB instance as a data source, specify its <c>DbiResourceId</c> value. For
+        /// example, specify <c>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -113,7 +112,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property ServiceType. 
         /// <para>
         /// The Amazon Web Services service for which Performance Insights will return metrics.
-        /// Valid value is <code>RDS</code>.
+        /// Valid value is <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -132,8 +131,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property TextFormat. 
         /// <para>
-        /// Indicates the text format in the report. The options are <code>PLAIN_TEXT</code> or
-        /// <code>MARKDOWN</code>. The default value is <code>plain text</code>.
+        /// Indicates the text format in the report. The options are <c>PLAIN_TEXT</c> or <c>MARKDOWN</c>.
+        /// The default value is <c>plain text</c>.
         /// </para>
         /// </summary>
         public TextFormat TextFormat

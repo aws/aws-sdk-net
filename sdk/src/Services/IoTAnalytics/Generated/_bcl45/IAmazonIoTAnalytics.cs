@@ -254,10 +254,10 @@ namespace Amazon.IoTAnalytics
 
         /// <summary>
         /// Used to create a dataset. A dataset stores data retrieved from a data store by applying
-        /// a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
-        /// a containerized application). This operation creates the skeleton of a dataset. The
-        /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
-        /// automatically according to a trigger you specify.
+        /// a <c>queryAction</c> (a SQL query) or a <c>containerAction</c> (executing a containerized
+        /// application). This operation creates the skeleton of a dataset. The dataset can be
+        /// populated manually by calling <c>CreateDatasetContent</c> or automatically according
+        /// to a trigger you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// 
@@ -287,10 +287,10 @@ namespace Amazon.IoTAnalytics
 
         /// <summary>
         /// Used to create a dataset. A dataset stores data retrieved from a data store by applying
-        /// a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing
-        /// a containerized application). This operation creates the skeleton of a dataset. The
-        /// dataset can be populated manually by calling <code>CreateDatasetContent</code> or
-        /// automatically according to a trigger you specify.
+        /// a <c>queryAction</c> (a SQL query) or a <c>containerAction</c> (executing a containerized
+        /// application). This operation creates the skeleton of a dataset. The dataset can be
+        /// populated manually by calling <c>CreateDatasetContent</c> or automatically according
+        /// to a trigger you specify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataset service method.</param>
         /// <param name="cancellationToken">
@@ -325,8 +325,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query)
-        /// or a <code>containerAction</code> (executing a containerized application).
+        /// Creates the content of a dataset by applying a <c>queryAction</c> (a SQL query) or
+        /// a <c>containerAction</c> (executing a containerized application).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
         /// 
@@ -352,8 +352,8 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query)
-        /// or a <code>containerAction</code> (executing a containerized application).
+        /// Creates the content of a dataset by applying a <c>queryAction</c> (a SQL query) or
+        /// a <c>containerAction</c> (executing a containerized application).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetContent service method.</param>
         /// <param name="cancellationToken">
@@ -451,8 +451,8 @@ namespace Amazon.IoTAnalytics
         /// <summary>
         /// Creates a pipeline. A pipeline consumes messages from a channel and allows you to
         /// process the messages before storing them in a data store. You must specify both a
-        /// <code>channel</code> and a <code>datastore</code> activity and, optionally, as many
-        /// as 23 additional activities in the <code>pipelineActivities</code> array.
+        /// <c>channel</c> and a <c>datastore</c> activity and, optionally, as many as 23 additional
+        /// activities in the <c>pipelineActivities</c> array.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// 
@@ -483,8 +483,8 @@ namespace Amazon.IoTAnalytics
         /// <summary>
         /// Creates a pipeline. A pipeline consumes messages from a channel and allows you to
         /// process the messages before storing them in a data store. You must specify both a
-        /// <code>channel</code> and a <code>datastore</code> activity and, optionally, as many
-        /// as 23 additional activities in the <code>pipelineActivities</code> array.
+        /// <c>channel</c> and a <c>datastore</c> activity and, optionally, as many as 23 additional
+        /// activities in the <c>pipelineActivities</c> array.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreatePipeline service method.</param>
         /// <param name="cancellationToken">
@@ -1501,10 +1501,10 @@ namespace Amazon.IoTAnalytics
         /// 
         ///  
         /// <para>
-        /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
-        /// minute for the change to take effect. Also, if you change the policy attached to the
-        /// role you specified in the <code>roleArn</code> field (for example, to correct an invalid
-        /// policy), it takes up to five minutes for that change to take effect. 
+        /// If you update the value of any <c>loggingOptions</c> field, it takes up to one minute
+        /// for the change to take effect. Also, if you change the policy attached to the role
+        /// you specified in the <c>roleArn</c> field (for example, to correct an invalid policy),
+        /// it takes up to five minutes for that change to take effect. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>
@@ -1532,10 +1532,10 @@ namespace Amazon.IoTAnalytics
         /// 
         ///  
         /// <para>
-        /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
-        /// minute for the change to take effect. Also, if you change the policy attached to the
-        /// role you specified in the <code>roleArn</code> field (for example, to correct an invalid
-        /// policy), it takes up to five minutes for that change to take effect. 
+        /// If you update the value of any <c>loggingOptions</c> field, it takes up to one minute
+        /// for the change to take effect. Also, if you change the policy attached to the role
+        /// you specified in the <c>roleArn</c> field (for example, to correct an invalid policy),
+        /// it takes up to five minutes for that change to take effect. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>
@@ -2045,9 +2045,9 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a pipeline. You must specify both a <code>channel</code> and
-        /// a <code>datastore</code> activity and, optionally, as many as 23 additional activities
-        /// in the <code>pipelineActivities</code> array.
+        /// Updates the settings of a pipeline. You must specify both a <c>channel</c> and a <c>datastore</c>
+        /// activity and, optionally, as many as 23 additional activities in the <c>pipelineActivities</c>
+        /// array.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// 
@@ -2076,9 +2076,9 @@ namespace Amazon.IoTAnalytics
 
 
         /// <summary>
-        /// Updates the settings of a pipeline. You must specify both a <code>channel</code> and
-        /// a <code>datastore</code> activity and, optionally, as many as 23 additional activities
-        /// in the <code>pipelineActivities</code> array.
+        /// Updates the settings of a pipeline. You must specify both a <c>channel</c> and a <c>datastore</c>
+        /// activity and, optionally, as many as 23 additional activities in the <c>pipelineActivities</c>
+        /// array.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePipeline service method.</param>
         /// <param name="cancellationToken">

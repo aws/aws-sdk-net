@@ -51,7 +51,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneFilter. 
         /// <para>
-        /// Filters the results by Availability Zone (for example, <code>us-east-1a</code>).
+        /// Filters the results by Availability Zone (for example, <c>us-east-1a</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -70,7 +70,7 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZoneIdFilter. 
         /// <para>
-        /// Filters the results by AZ ID (for example, <code>use1-az1</code>).
+        /// Filters the results by AZ ID (for example, <c>use1-az1</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

@@ -214,9 +214,9 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status for a monitor. The accepted values for <code>Status</code> with the <code>UpdateMonitor</code>
-        /// API call are the following: <code>ACTIVE</code> and <code>INACTIVE</code>. The following
-        /// values are <i>not</i> accepted: <code>PENDING</code>, and <code>ERROR</code>.
+        /// The status for a monitor. The accepted values for <c>Status</c> with the <c>UpdateMonitor</c>
+        /// API call are the following: <c>ACTIVE</c> and <c>INACTIVE</c>. The following values
+        /// are <i>not</i> accepted: <c>PENDING</c>, and <c>ERROR</c>.
         /// </para>
         /// </summary>
         public MonitorConfigState Status

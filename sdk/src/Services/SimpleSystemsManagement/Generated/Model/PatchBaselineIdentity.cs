@@ -119,7 +119,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// Defines the operating system the patch baseline applies to. The default value is <code>WINDOWS</code>.
+        /// Defines the operating system the patch baseline applies to. The default value is <c>WINDOWS</c>.
         /// 
         /// </para>
         /// </summary>

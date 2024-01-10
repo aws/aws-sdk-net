@@ -105,23 +105,23 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::ECS::Service</code> 
+        ///  <c>AWS::ECS::Service</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EFS::FileSystem</code> 
+        ///  <c>AWS::EFS::FileSystem</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> 
+        ///  <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Lambda::Function</code> 
+        ///  <c>AWS::Lambda::Function</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SNS::Topic</code> 
+        ///  <c>AWS::SNS::Topic</c> 
         /// </para>
         ///  </li> </ul> </dd> <dt>Native</dt> <dd> 
         /// <para>
@@ -130,79 +130,79 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::ApiGateway::RestApi</code> 
+        ///  <c>AWS::ApiGateway::RestApi</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::ApiGatewayV2::Api</code> 
+        ///  <c>AWS::ApiGatewayV2::Api</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::AutoScaling::AutoScalingGroup</code> 
+        ///  <c>AWS::AutoScaling::AutoScalingGroup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DocDB::DBCluster</code> 
+        ///  <c>AWS::DocDB::DBCluster</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DocDB::DBGlobalCluster</code> 
+        ///  <c>AWS::DocDB::DBGlobalCluster</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DocDB::DBInstance</code> 
+        ///  <c>AWS::DocDB::DBInstance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::GlobalTable</code> 
+        ///  <c>AWS::DynamoDB::GlobalTable</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::Table</code> 
+        ///  <c>AWS::DynamoDB::Table</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EC2::EC2Fleet</code> 
+        ///  <c>AWS::EC2::EC2Fleet</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EC2::Instance</code> 
+        ///  <c>AWS::EC2::Instance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EC2::NatGateway</code> 
+        ///  <c>AWS::EC2::NatGateway</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::EC2::Volume</code> 
+        ///  <c>AWS::EC2::Volume</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::ElasticLoadBalancing::LoadBalancer</code> 
+        ///  <c>AWS::ElasticLoadBalancing::LoadBalancer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::RDS::DBCluster</code> 
+        ///  <c>AWS::RDS::DBCluster</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::RDS::DBInstance</code> 
+        ///  <c>AWS::RDS::DBInstance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::RDS::GlobalCluster</code> 
+        ///  <c>AWS::RDS::GlobalCluster</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Route53::RecordSet</code> 
+        ///  <c>AWS::Route53::RecordSet</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3::Bucket</code> 
+        ///  <c>AWS::S3::Bucket</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::SQS::Queue</code> 
+        ///  <c>AWS::SQS::Queue</c> 
         /// </para>
         ///  </li> </ul> </dd> </dl>
         /// </summary>

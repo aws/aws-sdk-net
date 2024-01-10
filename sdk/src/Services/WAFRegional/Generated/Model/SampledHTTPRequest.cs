@@ -42,10 +42,10 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The response from a <a>GetSampledRequests</a> request includes a <code>SampledHTTPRequests</code>
-    /// complex type that appears as <code>SampledRequests</code> in the response syntax.
-    /// <code>SampledHTTPRequests</code> contains one <code>SampledHTTPRequest</code> object
-    /// for each web request that is returned by <code>GetSampledRequests</code>.
+    /// The response from a <a>GetSampledRequests</a> request includes a <c>SampledHTTPRequests</c>
+    /// complex type that appears as <c>SampledRequests</c> in the response syntax. <c>SampledHTTPRequests</c>
+    /// contains one <c>SampledHTTPRequest</c> object for each web request that is returned
+    /// by <c>GetSampledRequests</c>.
     /// </para>
     /// </summary>
     public partial class SampledHTTPRequest
@@ -59,8 +59,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The action for the <code>Rule</code> that the request matched: <code>ALLOW</code>,
-        /// <code>BLOCK</code>, or <code>COUNT</code>.
+        /// The action for the <c>Rule</c> that the request matched: <c>ALLOW</c>, <c>BLOCK</c>,
+        /// or <c>COUNT</c>.
         /// </para>
         /// </summary>
         public string Action
@@ -97,9 +97,9 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleWithinRuleGroup. 
         /// <para>
-        /// This value is returned if the <code>GetSampledRequests</code> request specifies the
-        /// ID of a <code>RuleGroup</code> rather than the ID of an individual rule. <code>RuleWithinRuleGroup</code>
-        /// is the rule within the specified <code>RuleGroup</code> that matched the request listed
+        /// This value is returned if the <c>GetSampledRequests</c> request specifies the ID of
+        /// a <c>RuleGroup</c> rather than the ID of an individual rule. <c>RuleWithinRuleGroup</c>
+        /// is the rule within the specified <c>RuleGroup</c> that matched the request listed
         /// in the response.
         /// </para>
         /// </summary>
@@ -139,8 +139,8 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Weight. 
         /// <para>
         /// A value that indicates how one result in the response relates proportionally to other
-        /// results in the response. A result that has a weight of <code>2</code> represents roughly
-        /// twice as many CloudFront web requests as a result that has a weight of <code>1</code>.
+        /// results in the response. A result that has a weight of <c>2</c> represents roughly
+        /// twice as many CloudFront web requests as a result that has a weight of <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

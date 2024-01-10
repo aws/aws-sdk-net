@@ -46,8 +46,8 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the <code>channelMessages</code> object, you must not specify a value for
-        /// <code>startTime</code> and <code>endTime</code>.
+        /// If you use the <c>channelMessages</c> object, you must not specify a value for <c>startTime</c>
+        /// and <c>endTime</c>.
         /// </para>
         /// </summary>
         public ChannelMessages ChannelMessages
@@ -69,8 +69,8 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for the <code>endTime</code> parameter, you must not use the
-        /// <code>channelMessages</code> object.
+        /// If you specify a value for the <c>endTime</c> parameter, you must not use the <c>channelMessages</c>
+        /// object.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -111,8 +111,8 @@ namespace Amazon.IoTAnalytics.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify a value for the <code>startTime</code> parameter, you must not use
-        /// the <code>channelMessages</code> object.
+        /// If you specify a value for the <c>startTime</c> parameter, you must not use the <c>channelMessages</c>
+        /// object.
         /// </para>
         /// </summary>
         public DateTime StartTime

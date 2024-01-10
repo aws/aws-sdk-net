@@ -45,8 +45,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// An origin that is not an Amazon S3 bucket, with one exception. If the Amazon S3 bucket
         /// is configured with static website hosting, use this attribute. If the Amazon S3 bucket
-        /// is not configured with static website hosting, use the <code>S3OriginConfig</code>
-        /// type instead. 
+        /// is not configured with static website hosting, use the <c>S3OriginConfig</c> type
+        /// instead. 
         /// </para>
         /// </summary>
         public AwsCloudFrontDistributionOriginCustomOriginConfig CustomOriginConfig

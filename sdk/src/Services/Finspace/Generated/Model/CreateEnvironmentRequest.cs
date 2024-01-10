@@ -51,13 +51,13 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</code> - Contains
+        ///  <c>arn:aws:finspace:${Region}::data-bundle/capital-markets-sample</c> - Contains
         /// sample Capital Markets datasets, categories and controlled vocabularies.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:finspace:${Region}::data-bundle/taq</code> (default) - Contains trades
-        /// and quotes data in addition to sample Capital Markets data.
+        ///  <c>arn:aws:finspace:${Region}::data-bundle/taq</c> (default) - Contains trades and
+        /// quotes data in addition to sample Capital Markets data.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -99,13 +99,13 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FEDERATED</code> - Users access FinSpace through Single Sign On (SSO) via your
-        /// Identity provider.
+        ///  <c>FEDERATED</c> - Users access FinSpace through Single Sign On (SSO) via your Identity
+        /// provider.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOCAL</code> - Users access FinSpace via email and password managed within
-        /// the FinSpace environment.
+        ///  <c>LOCAL</c> - Users access FinSpace via email and password managed within the FinSpace
+        /// environment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

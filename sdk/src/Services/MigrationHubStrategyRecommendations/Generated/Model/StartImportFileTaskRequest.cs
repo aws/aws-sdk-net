@@ -65,8 +65,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Gets and sets the property GroupId. 
         /// <para>
         /// Groups the resources in the import file together with a unique name. This ID can be
-        /// as filter in <code>ListApplicationComponents</code> and <code>ListServers</code>.
-        /// 
+        /// as filter in <c>ListApplicationComponents</c> and <c>ListServers</c>. 
         /// </para>
         /// </summary>
         public List<Group> GroupId
@@ -104,7 +103,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Gets and sets the property S3Bucket. 
         /// <para>
         ///  The S3 bucket where the import file is located. The bucket name is required to begin
-        /// with <code>migrationhub-strategy-</code>.
+        /// with <c>migrationhub-strategy-</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=63)]

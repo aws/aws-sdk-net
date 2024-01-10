@@ -78,7 +78,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
-        /// An ARN that uniquely identifies a backup vault; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// An ARN that uniquely identifies a backup vault; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -116,7 +116,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CalculatedLifecycle. 
         /// <para>
-        /// A <code>CalculatedLifecycle</code> object containing <code>DeleteAt</code> and <code>MoveToColdStorageAt</code>
+        /// A <c>CalculatedLifecycle</c> object containing <c>DeleteAt</c> and <c>MoveToColdStorageAt</c>
         /// timestamps.
         /// </para>
         /// </summary>
@@ -136,9 +136,9 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time a job to restore a recovery point is completed, in Unix format and
-        /// Coordinated Universal Time (UTC). The value of <code>CompletionDate</code> is accurate
-        /// to milliseconds. For example, the value 1516925490.087 represents Friday, January
-        /// 26, 2018 12:11:30.087 AM.
+        /// Coordinated Universal Time (UTC). The value of <c>CompletionDate</c> is accurate to
+        /// milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
+        /// 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CompletionDate
@@ -178,8 +178,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatedBy. 
         /// <para>
         /// Contains identifying information about the creation of a recovery point, including
-        /// the <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
-        /// and <code>BackupRuleId</code> of the backup plan that is used to create it.
+        /// the <c>BackupPlanArn</c>, <c>BackupPlanId</c>, <c>BackupPlanVersion</c>, and <c>BackupRuleId</c>
+        /// of the backup plan that is used to create it.
         /// </para>
         /// </summary>
         public RecoveryPointCreator CreatedBy
@@ -198,9 +198,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time a recovery point is created, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM.
+        /// Time (UTC). The value of <c>CreationDate</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -219,7 +218,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property EncryptionKeyArn. 
         /// <para>
         /// The server-side encryption key that is used to protect your backups; for example,
-        /// <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         /// </summary>
         public string EncryptionKeyArn
@@ -238,7 +237,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -256,8 +255,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IsEncrypted. 
         /// <para>
-        /// A Boolean value that is returned as <code>TRUE</code> if the specified recovery point
-        /// is encrypted, or <code>FALSE</code> if the recovery point is not encrypted.
+        /// A Boolean value that is returned as <c>TRUE</c> if the specified recovery point is
+        /// encrypted, or <c>FALSE</c> if the recovery point is not encrypted.
         /// </para>
         /// </summary>
         public bool IsEncrypted
@@ -294,7 +293,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property LastRestoreTime. 
         /// <para>
         /// The date and time a recovery point was last restored, in Unix format and Coordinated
-        /// Universal Time (UTC). The value of <code>LastRestoreTime</code> is accurate to milliseconds.
+        /// Universal Time (UTC). The value of <c>LastRestoreTime</c> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.
         /// </para>
@@ -367,7 +366,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string RecoveryPointArn
@@ -444,7 +443,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SourceBackupVaultArn. 
         /// <para>
         /// The backup vault where the recovery point was originally copied from. If the recovery
-        /// point is restored to the same account this value will be <code>null</code>.
+        /// point is restored to the same account this value will be <c>null</c>.
         /// </para>
         /// </summary>
         public string SourceBackupVaultArn

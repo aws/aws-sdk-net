@@ -42,7 +42,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property EncryptionType. 
         /// <para>
         /// The server-side encryption algorithm used when storing job results in Amazon S3, for
-        /// example <code>AES256</code> or <code>aws:kms</code>.
+        /// example <c>AES256</c> or <c>aws:kms</c>.
         /// </para>
         /// </summary>
         public EncryptionType EncryptionType
@@ -60,8 +60,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property KMSContext. 
         /// <para>
-        /// Optional. If the encryption type is <code>aws:kms</code>, you can use this value to
-        /// specify the encryption context for the job results.
+        /// Optional. If the encryption type is <c>aws:kms</c>, you can use this value to specify
+        /// the encryption context for the job results.
         /// </para>
         /// </summary>
         public string KMSContext

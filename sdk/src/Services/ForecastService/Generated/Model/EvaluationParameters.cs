@@ -43,13 +43,13 @@ namespace Amazon.ForecastService.Model
         /// <para>
         /// The point from the end of the dataset where you want to split the data for model training
         /// and testing (evaluation). Specify the value as the number of data points. The default
-        /// is the value of the forecast horizon. <code>BackTestWindowOffset</code> can be used
-        /// to mimic a past virtual forecast start date. This value must be greater than or equal
-        /// to the forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.
+        /// is the value of the forecast horizon. <c>BackTestWindowOffset</c> can be used to mimic
+        /// a past virtual forecast start date. This value must be greater than or equal to the
+        /// forecast horizon and less than half of the TARGET_TIME_SERIES dataset length.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 * TARGET_TIME_SERIES
+        ///  <c>ForecastHorizon</c> &lt;= <c>BackTestWindowOffset</c> &lt; 1/2 * TARGET_TIME_SERIES
         /// dataset length
         /// </para>
         /// </summary>

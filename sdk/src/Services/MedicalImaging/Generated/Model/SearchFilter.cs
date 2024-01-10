@@ -39,7 +39,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The search filter operator for <code>imageSetDateTime</code>.
+        /// The search filter operator for <c>imageSetDateTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

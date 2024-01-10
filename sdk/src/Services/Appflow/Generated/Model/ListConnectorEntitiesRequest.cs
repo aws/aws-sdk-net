@@ -65,7 +65,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ConnectorProfileName. 
         /// <para>
-        ///  The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
+        ///  The name of the connector profile. The name is unique for each <c>ConnectorProfile</c>
         /// in the Amazon Web Services account, and is used to query the downstream connector.
         /// 
         /// </para>
@@ -106,7 +106,7 @@ namespace Amazon.Appflow.Model
         /// <para>
         ///  This optional parameter is specific to connector implementation. Some connectors
         /// support multiple levels or categories of entities. You can find out the list of roots
-        /// for such providers by sending a request without the <code>entitiesPath</code> parameter.
+        /// for such providers by sending a request without the <c>entitiesPath</c> parameter.
         /// If the connector supports entities at different roots, this initial request returns
         /// the list of roots. Otherwise, this request returns all entities supported by the provider.
         /// 
@@ -147,8 +147,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that was provided by your prior <code>ListConnectorEntities</code> operation
-        /// if the response was too big for the page size. You specify this token to get the next
+        /// A token that was provided by your prior <c>ListConnectorEntities</c> operation if
+        /// the response was too big for the page size. You specify this token to get the next
         /// page of results in paginated response.
         /// </para>
         /// </summary>

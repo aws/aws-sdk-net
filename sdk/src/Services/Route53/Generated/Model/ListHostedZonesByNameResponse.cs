@@ -63,9 +63,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property DNSName. 
         /// <para>
-        /// For the second and subsequent calls to <code>ListHostedZonesByName</code>, <code>DNSName</code>
-        /// is the value that you specified for the <code>dnsname</code> parameter in the request
-        /// that produced the current response.
+        /// For the second and subsequent calls to <c>ListHostedZonesByName</c>, <c>DNSName</c>
+        /// is the value that you specified for the <c>dnsname</c> parameter in the request that
+        /// produced the current response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -104,9 +104,9 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether there are more hosted zones to be listed. If the response
-        /// was truncated, you can get the next group of <code>maxitems</code> hosted zones by
-        /// calling <code>ListHostedZonesByName</code> again and specifying the values of <code>NextDNSName</code>
-        /// and <code>NextHostedZoneId</code> elements in the <code>dnsname</code> and <code>hostedzoneid</code>
+        /// was truncated, you can get the next group of <c>maxitems</c> hosted zones by calling
+        /// <c>ListHostedZonesByName</c> again and specifying the values of <c>NextDNSName</c>
+        /// and <c>NextHostedZoneId</c> elements in the <c>dnsname</c> and <c>hostedzoneid</c>
         /// parameters.
         /// </para>
         /// </summary>
@@ -126,15 +126,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextDNSName. 
         /// <para>
-        /// If <code>IsTruncated</code> is true, the value of <code>NextDNSName</code> is the
-        /// name of the first hosted zone in the next group of <code>maxitems</code> hosted zones.
-        /// Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
-        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
-        /// parameters, respectively.
+        /// If <c>IsTruncated</c> is true, the value of <c>NextDNSName</c> is the name of the
+        /// first hosted zone in the next group of <c>maxitems</c> hosted zones. Call <c>ListHostedZonesByName</c>
+        /// again and specify the value of <c>NextDNSName</c> and <c>NextHostedZoneId</c> in the
+        /// <c>dnsname</c> and <c>hostedzoneid</c> parameters, respectively.
         /// </para>
         ///  
         /// <para>
-        /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
+        /// This element is present only if <c>IsTruncated</c> is <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -153,15 +152,14 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextHostedZoneId. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, the value of <code>NextHostedZoneId</code>
-        /// identifies the first hosted zone in the next group of <code>maxitems</code> hosted
-        /// zones. Call <code>ListHostedZonesByName</code> again and specify the value of <code>NextDNSName</code>
-        /// and <code>NextHostedZoneId</code> in the <code>dnsname</code> and <code>hostedzoneid</code>
-        /// parameters, respectively.
+        /// If <c>IsTruncated</c> is <c>true</c>, the value of <c>NextHostedZoneId</c> identifies
+        /// the first hosted zone in the next group of <c>maxitems</c> hosted zones. Call <c>ListHostedZonesByName</c>
+        /// again and specify the value of <c>NextDNSName</c> and <c>NextHostedZoneId</c> in the
+        /// <c>dnsname</c> and <c>hostedzoneid</c> parameters, respectively.
         /// </para>
         ///  
         /// <para>
-        /// This element is present only if <code>IsTruncated</code> is <code>true</code>.
+        /// This element is present only if <c>IsTruncated</c> is <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -180,8 +178,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for the <code>maxitems</code> parameter in the call to
-        /// <code>ListHostedZonesByName</code> that produced the current response.
+        /// The value that you specified for the <c>maxitems</c> parameter in the call to <c>ListHostedZonesByName</c>
+        /// that produced the current response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

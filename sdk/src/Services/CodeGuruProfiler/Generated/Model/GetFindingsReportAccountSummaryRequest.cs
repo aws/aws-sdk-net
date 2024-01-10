@@ -31,8 +31,8 @@ namespace Amazon.CodeGuruProfiler.Model
     /// <summary>
     /// Container for the parameters to the GetFindingsReportAccountSummary operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_FindingsReportSummary.html">
-    /// <code>FindingsReportSummary</code> </a> objects that contain analysis results for
-    /// all profiling groups in your AWS account.
+    /// <c>FindingsReportSummary</c> </a> objects that contain analysis results for all profiling
+    /// groups in your AWS account.
     /// </summary>
     public partial class GetFindingsReportAccountSummaryRequest : AmazonCodeGuruProfilerRequest
     {
@@ -43,10 +43,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property DailyReportsOnly. 
         /// <para>
-        /// A <code>Boolean</code> value indicating whether to only return reports from daily
-        /// profiles. If set to <code>True</code>, only analysis data from daily profiles is returned.
-        /// If set to <code>False</code>, analysis data is returned from smaller time windows
-        /// (for example, one hour).
+        /// A <c>Boolean</c> value indicating whether to only return reports from daily profiles.
+        /// If set to <c>True</c>, only analysis data from daily profiles is returned. If set
+        /// to <c>False</c>, analysis data is returned from smaller time windows (for example,
+        /// one hour).
         /// </para>
         /// </summary>
         public bool DailyReportsOnly
@@ -64,11 +64,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results returned by <code> GetFindingsReportAccountSummary</code>
-        /// in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// The maximum number of results returned by <c> GetFindingsReportAccountSummary</c>
+        /// in paginated output. When this parameter is used, <c>GetFindingsReportAccountSummary</c>
+        /// only returns <c>maxResults</c> results in a single page along with a <c>nextToken</c>
         /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code>
+        /// another <c>GetFindingsReportAccountSummary</c> request with the returned <c>nextToken</c>
         /// value.
         /// </para>
         /// </summary>
@@ -88,10 +88,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. 
+        /// The <c>nextToken</c> value returned from a previous paginated <c>GetFindingsReportAccountSummary</c>
+        /// request where <c>maxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>nextToken</c> value. 
         /// </para>
         ///  <note> 
         /// <para>

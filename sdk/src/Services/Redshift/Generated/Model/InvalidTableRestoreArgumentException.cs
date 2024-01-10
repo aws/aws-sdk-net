@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The value specified for the <code>sourceDatabaseName</code>, <code>sourceSchemaName</code>,
-    /// or <code>sourceTableName</code> parameter, or a combination of these, doesn't exist
-    /// in the snapshot.
+    /// The value specified for the <c>sourceDatabaseName</c>, <c>sourceSchemaName</c>, or
+    /// <c>sourceTableName</c> parameter, or a combination of these, doesn't exist in the
+    /// snapshot.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

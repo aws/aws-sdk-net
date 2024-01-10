@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>GetPackageVersionHistory</a> </code>
-    /// operation.
+    /// Container for response returned by <c> <a>GetPackageVersionHistory</a> </c> operation.
     /// </summary>
     public partial class GetPackageVersionHistoryResponse : AmazonWebServiceResponse
     {
@@ -71,7 +70,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property PackageVersionHistoryList. 
         /// <para>
-        /// List of <code>PackageVersionHistory</code> objects.
+        /// List of <c>PackageVersionHistory</c> objects.
         /// </para>
         /// </summary>
         public List<PackageVersionHistory> PackageVersionHistoryList

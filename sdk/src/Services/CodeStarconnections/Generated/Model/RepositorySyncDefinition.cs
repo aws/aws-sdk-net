@@ -61,7 +61,7 @@ namespace Amazon.CodeStarconnections.Model
         /// Gets and sets the property Directory. 
         /// <para>
         /// The configuration file for a repository sync definition. This value comes from creating
-        /// or updating the <code>config-file</code> field of a <code>sync-configuration</code>.
+        /// or updating the <c>config-file</c> field of a <c>sync-configuration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,7 +38,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property DataProtectionPolicy. 
         /// <para>
-        /// Retrieves the <code>DataProtectionPolicy</code> in JSON string format.
+        /// Retrieves the <c>DataProtectionPolicy</c> in JSON string format.
         /// </para>
         /// </summary>
         public string DataProtectionPolicy

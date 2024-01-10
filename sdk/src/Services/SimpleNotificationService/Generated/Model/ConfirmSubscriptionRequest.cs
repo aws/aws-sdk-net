@@ -31,10 +31,10 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the ConfirmSubscription operation.
     /// Verifies an endpoint owner's intent to receive messages by validating the token sent
-    /// to the endpoint by an earlier <code>Subscribe</code> action. If the token is valid,
-    /// the action creates a new subscription and returns its Amazon Resource Name (ARN).
-    /// This call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code>
-    /// flag is set to "true".
+    /// to the endpoint by an earlier <c>Subscribe</c> action. If the token is valid, the
+    /// action creates a new subscription and returns its Amazon Resource Name (ARN). This
+    /// call requires an AWS signature only when the <c>AuthenticateOnUnsubscribe</c> flag
+    /// is set to "true".
     /// </summary>
     public partial class ConfirmSubscriptionRequest : AmazonSimpleNotificationServiceRequest
     {
@@ -75,8 +75,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// Gets and sets the property AuthenticateOnUnsubscribe. 
         /// <para>
         /// Disallows unauthenticated unsubscribes of the subscription. If the value of this parameter
-        /// is <code>true</code> and the request has an Amazon Web Services signature, then only
-        /// the topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe
+        /// is <c>true</c> and the request has an Amazon Web Services signature, then only the
+        /// topic owner and the subscription owner can unsubscribe the endpoint. The unsubscribe
         /// action requires Amazon Web Services authentication. 
         /// </para>
         /// </summary>
@@ -95,7 +95,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Token. 
         /// <para>
-        /// Short-lived token sent to an endpoint during the <code>Subscribe</code> action.
+        /// Short-lived token sent to an endpoint during the <c>Subscribe</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

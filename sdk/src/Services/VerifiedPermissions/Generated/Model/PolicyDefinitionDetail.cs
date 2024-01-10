@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
-    /// A structure that describes a policy definition. It must always have either an <code>static</code>
-    /// or a <code>templateLinked</code> element.
+    /// A structure that describes a policy definition. It must always have either an <c>static</c>
+    /// or a <c>templateLinked</c> element.
     /// 
     ///  
     /// <para>

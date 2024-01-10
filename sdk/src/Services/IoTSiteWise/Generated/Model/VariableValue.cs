@@ -42,16 +42,15 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// The ID of the hierarchy to query for the property ID. You can use the hierarchy's
         /// name instead of the hierarchy's ID. If the hierarchy has an external ID, you can specify
-        /// <code>externalId:</code> followed by the external ID. For more information, see <a
-        /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// <c>externalId:</c> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
         /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// You use a hierarchy ID instead of a model ID because you can have several hierarchies
-        /// using the same model and therefore the same <code>propertyId</code>. For example,
-        /// you might have separately grouped assets that come from the same asset model. For
-        /// more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
+        /// using the same model and therefore the same <c>propertyId</c>. For example, you might
+        /// have separately grouped assets that come from the same asset model. For more information,
+        /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/asset-hierarchies.html">Asset
         /// hierarchies</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>
@@ -71,10 +70,9 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PropertyId. 
         /// <para>
-        /// The ID of the property to use as the variable. You can use the property <code>name</code>
+        /// The ID of the property to use as the variable. You can use the property <c>name</c>
         /// if it's from the same asset model. If the property has an external ID, you can specify
-        /// <code>externalId:</code> followed by the external ID. For more information, see <a
-        /// href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
+        /// <c>externalId:</c> followed by the external ID. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
         /// external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         /// </summary>

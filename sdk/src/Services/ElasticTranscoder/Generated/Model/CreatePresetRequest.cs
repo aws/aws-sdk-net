@@ -37,7 +37,7 @@ namespace Amazon.ElasticTranscoder.Model
     /// Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic
     /// Transcoder requirements and to determine whether they comply with H.264 standards.
     /// If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns
-    /// an HTTP 400 response (<code>ValidationException</code>) and does not create the preset.
+    /// an HTTP 400 response (<c>ValidationException</c>) and does not create the preset.
     /// If the settings are valid for Elastic Transcoder but aren't strictly compliant with
     /// the H.264 standard, Elastic Transcoder creates the preset and returns a warning message
     /// in the response. This helps you determine whether your settings comply with the H.264
@@ -81,9 +81,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Container. 
         /// <para>
-        /// The container type for the output file. Valid values include <code>flac</code>, <code>flv</code>,
-        /// <code>fmp4</code>, <code>gif</code>, <code>mp3</code>, <code>mp4</code>, <code>mpg</code>,
-        /// <code>mxf</code>, <code>oga</code>, <code>ogg</code>, <code>ts</code>, and <code>webm</code>.
+        /// The container type for the output file. Valid values include <c>flac</c>, <c>flv</c>,
+        /// <c>fmp4</c>, <c>gif</c>, <c>mp3</c>, <c>mp4</c>, <c>mpg</c>, <c>mxf</c>, <c>oga</c>,
+        /// <c>ogg</c>, <c>ts</c>, and <c>webm</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

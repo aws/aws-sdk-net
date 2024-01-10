@@ -64,20 +64,20 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The index is being created.
+        ///  <c>CREATING</c> - The index is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The table/index configuration is being updated. The table/index
-        /// remains available for data operations when <code>UPDATING</code> 
+        ///  <c>UPDATING</c> - The table/index configuration is being updated. The table/index
+        /// remains available for data operations when <c>UPDATING</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The index is being deleted.
+        ///  <c>DELETING</c> - The index is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The index is ready for use.
+        ///  <c>ACTIVE</c> - The index is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

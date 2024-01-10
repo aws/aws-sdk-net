@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Backup.Model
 {
     /// <summary>
-    /// Contains an array of <code>Transition</code> objects specifying how long in days before
+    /// Contains an array of <c>Transition</c> objects specifying how long in days before
     /// a recovery point transitions to cold storage or is deleted.
     /// 
     ///  
@@ -57,7 +57,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property DeleteAfterDays. 
         /// <para>
         /// Specifies the number of days after creation that a recovery point is deleted. Must
-        /// be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>.
+        /// be greater than 90 days plus <c>MoveToColdStorageAfterDays</c>.
         /// </para>
         /// </summary>
         public long DeleteAfterDays

@@ -37,16 +37,16 @@ namespace Amazon.Backup.Model
     /// </para>
     ///  
     /// <para>
-    /// This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>,
+    /// This consists of <c>RestoreTestingSelectionName</c>, <c>ProtectedResourceType</c>,
     /// and one of the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ProtectedResourceArns</code> 
+    ///  <c>ProtectedResourceArns</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ProtectedResourceConditions</code> 
+    ///  <c>ProtectedResourceConditions</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -54,14 +54,13 @@ namespace Amazon.Backup.Model
     /// </para>
     ///  
     /// <para>
-    /// A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code>
-    /// along with <code>ProtectedResourceConditions</code>. Alternatively, you can include
-    /// up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.
+    /// A restore testing selection can include a wildcard value ("*") for <c>ProtectedResourceArns</c>
+    /// along with <c>ProtectedResourceConditions</c>. Alternatively, you can include up to
+    /// 30 specific protected resource ARNs in <c>ProtectedResourceArns</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>ProtectedResourceConditions</code> examples include as <code>StringEquals</code>
-    /// and <code>StringNotEquals</code>.
+    ///  <c>ProtectedResourceConditions</c> examples include as <c>StringEquals</c> and <c>StringNotEquals</c>.
     /// </para>
     /// </summary>
     public partial class RestoreTestingSelectionForCreate
@@ -78,7 +77,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target
-        /// resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>. 
+        /// resource; for example: <c>arn:aws:iam::123456789012:role/S3Access</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -97,9 +96,9 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ProtectedResourceArns. 
         /// <para>
-        /// Each protected resource can be filtered by its specific ARNs, such as <code>ProtectedResourceArns:
-        /// ["arn:aws:...", "arn:aws:..."]</code> or by a wildcard: <code>ProtectedResourceArns:
-        /// ["*"]</code>, but not both.
+        /// Each protected resource can be filtered by its specific ARNs, such as <c>ProtectedResourceArns:
+        /// ["arn:aws:...", "arn:aws:..."]</c> or by a wildcard: <c>ProtectedResourceArns: ["*"]</c>,
+        /// but not both.
         /// </para>
         /// </summary>
         public List<string> ProtectedResourceArns
@@ -118,8 +117,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ProtectedResourceConditions. 
         /// <para>
         /// If you have included the wildcard in ProtectedResourceArns, you can include resource
-        /// conditions, such as <code>ProtectedResourceConditions: { StringEquals: [{ key: "XXXX",
-        /// value: "YYYY" }]</code>.
+        /// conditions, such as <c>ProtectedResourceConditions: { StringEquals: [{ key: "XXXX",
+        /// value: "YYYY" }]</c>.
         /// </para>
         /// </summary>
         public ProtectedResourceConditions ProtectedResourceConditions
@@ -146,43 +145,43 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Aurora</code> for Amazon Aurora
+        ///  <c>Aurora</c> for Amazon Aurora
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        ///  <c>DocumentDB</c> for Amazon DocumentDB (with MongoDB compatibility)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DynamoDB</code> for Amazon DynamoDB
+        ///  <c>DynamoDB</c> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS</code> for Amazon Elastic Block Store
+        ///  <c>EBS</c> for Amazon Elastic Block Store
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EC2</code> for Amazon Elastic Compute Cloud
+        ///  <c>EC2</c> for Amazon Elastic Compute Cloud
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EFS</code> for Amazon Elastic File System
+        ///  <c>EFS</c> for Amazon Elastic File System
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FSx</code> for Amazon FSx
+        ///  <c>FSx</c> for Amazon FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Neptune</code> for Amazon Neptune
+        ///  <c>Neptune</c> for Amazon Neptune
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RDS</code> for Amazon Relational Database Service
+        ///  <c>RDS</c> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code> for Amazon S3
+        ///  <c>S3</c> for Amazon S3
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -202,8 +201,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreMetadataOverrides. 
         /// <para>
-        /// You can override certain restore metadata keys by including the parameter <code>RestoreMetadataOverrides</code>
-        /// in the body of <code>RestoreTestingSelection</code>. Key values are not case sensitive.
+        /// You can override certain restore metadata keys by including the parameter <c>RestoreMetadataOverrides</c>
+        /// in the body of <c>RestoreTestingSelection</c>. Key values are not case sensitive.
         /// </para>
         ///  
         /// <para>

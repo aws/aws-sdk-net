@@ -55,7 +55,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> 
+        ///  <c>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=4, Max=128)]

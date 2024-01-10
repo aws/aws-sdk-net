@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// We can't find a handshake with the <code>HandshakeId</code> that you specified.
+    /// We can't find a handshake with the <c>HandshakeId</c> that you specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

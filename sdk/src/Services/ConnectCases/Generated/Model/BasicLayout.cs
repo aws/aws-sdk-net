@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectCases.Model
 {
     /// <summary>
-    /// Content specific to <code>BasicLayout</code> type. It configures fields in the top
-    /// panel and More Info tab of agent application.
+    /// Content specific to <c>BasicLayout</c> type. It configures fields in the top panel
+    /// and More Info tab of agent application.
     /// </summary>
     public partial class BasicLayout
     {

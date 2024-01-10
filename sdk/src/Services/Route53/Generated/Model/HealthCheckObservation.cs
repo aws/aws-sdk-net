@@ -41,7 +41,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The region of the Amazon Route 53 health checker that provided the status in <code>StatusReport</code>.
+        /// The region of the Amazon Route 53 health checker that provided the status in <c>StatusReport</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -61,7 +61,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property IPAddress. 
         /// <para>
         /// The IP address of the Amazon Route 53 health checker that provided the failure reason
-        /// in <code>StatusReport</code>.
+        /// in <c>StatusReport</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=45)]

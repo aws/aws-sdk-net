@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>RequestCancelExternalWorkflowExecutionInitiated</code>
+    /// Provides the details of the <c>RequestCancelExternalWorkflowExecutionInitiated</c>
     /// event.
     /// </summary>
     public partial class RequestCancelExternalWorkflowExecutionInitiatedEventAttributes
@@ -62,10 +62,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>RequestCancelExternalWorkflowExecution</code> decision
-        /// for this cancellation request. This information can be useful for diagnosing problems
-        /// by tracing back the chain of events leading up to this event.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>RequestCancelExternalWorkflowExecution</c> decision for this
+        /// cancellation request. This information can be useful for diagnosing problems by tracing
+        /// back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,7 +84,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property RunId. 
         /// <para>
-        /// The <code>runId</code> of the external workflow execution to be canceled.
+        /// The <c>runId</c> of the external workflow execution to be canceled.
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -103,7 +103,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property WorkflowId. 
         /// <para>
-        /// The <code>workflowId</code> of the external workflow execution to be canceled.
+        /// The <c>workflowId</c> of the external workflow execution to be canceled.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

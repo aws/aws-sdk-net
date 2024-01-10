@@ -33,25 +33,25 @@ namespace Amazon.EKS.Model
     /// 
     ///  
     /// <para>
-    /// Each summary is simplified by removing these fields compared to the full <code> <a>PodIdentityAssociation</a>
-    /// </code>:
+    /// Each summary is simplified by removing these fields compared to the full <c> <a>PodIdentityAssociation</a>
+    /// </c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The IAM role: <code>roleArn</code> 
+    /// The IAM role: <c>roleArn</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The timestamp that the association was created at: <code>createdAt</code> 
+    /// The timestamp that the association was created at: <c>createdAt</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The most recent timestamp that the association was modified at:. <code>modifiedAt</code>
+    /// The most recent timestamp that the association was modified at:. <c>modifiedAt</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The tags on the association: <code>tags</code> 
+    /// The tags on the association: <c>tags</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

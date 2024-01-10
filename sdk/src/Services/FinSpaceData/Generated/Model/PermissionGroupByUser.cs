@@ -44,17 +44,16 @@ namespace Amazon.FinSpaceData.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ADDITION_IN_PROGRESS</code> – The user is currently being added to the permission
+        ///  <c>ADDITION_IN_PROGRESS</c> – The user is currently being added to the permission
         /// group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADDITION_SUCCESS</code> – The user is successfully added to the permission
-        /// group.
+        ///  <c>ADDITION_SUCCESS</c> – The user is successfully added to the permission group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the permission
+        ///  <c>REMOVAL_IN_PROGRESS</c> – The user is currently being removed from the permission
         /// group.
         /// </para>
         ///  </li> </ul>

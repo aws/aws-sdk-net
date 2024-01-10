@@ -38,7 +38,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property LifecycleEventHookExecutionId. 
         /// <para>
-        /// The execution ID of the lifecycle event hook. A hook is specified in the <code>hooks</code>
+        /// The execution ID of the lifecycle event hook. A hook is specified in the <c>hooks</c>
         /// section of the deployment's AppSpec file.
         /// </para>
         /// </summary>

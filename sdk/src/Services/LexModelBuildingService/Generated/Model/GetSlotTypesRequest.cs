@@ -34,17 +34,17 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// If you specify the <code>nameContains</code> field, returns the <code>$LATEST</code>
-    /// version of all slot types that contain the specified string.
+    /// If you specify the <c>nameContains</c> field, returns the <c>$LATEST</c> version of
+    /// all slot types that contain the specified string.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  If you don't specify the <code>nameContains</code> field, returns information about
-    /// the <code>$LATEST</code> version of all slot types. 
+    ///  If you don't specify the <c>nameContains</c> field, returns information about the
+    /// <c>$LATEST</c> version of all slot types. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  The operation requires permission for the <code>lex:GetSlotTypes</code> action. 
+    ///  The operation requires permission for the <c>lex:GetSlotTypes</c> action. 
     /// </para>
     /// </summary>
     public partial class GetSlotTypesRequest : AmazonLexModelBuildingServiceRequest

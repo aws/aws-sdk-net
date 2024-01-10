@@ -53,17 +53,17 @@ namespace Amazon.AutoScaling.Model
     /// <para>
     /// An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured
     /// health checks, or not ignoring or allowing the termination of instances that are in
-    /// <code>Standby</code> state or protected from scale in. You can monitor for failed
-    /// EC2 launches using the scaling activities. To find the scaling activities, call the
-    /// <a>DescribeScalingActivities</a> API.
+    /// <c>Standby</c> state or protected from scale in. You can monitor for failed EC2 launches
+    /// using the scaling activities. To find the scaling activities, call the <a>DescribeScalingActivities</a>
+    /// API.
     /// </para>
     ///  
     /// <para>
     /// If you enable auto rollback, your Auto Scaling group will be rolled back automatically
     /// when the instance refresh fails. You can enable this feature before starting an instance
-    /// refresh by specifying the <code>AutoRollback</code> property in the instance refresh
-    /// preferences. Otherwise, to roll back an instance refresh before it finishes, use the
-    /// <a>RollbackInstanceRefresh</a> API. 
+    /// refresh by specifying the <c>AutoRollback</c> property in the instance refresh preferences.
+    /// Otherwise, to roll back an instance refresh before it finishes, use the <a>RollbackInstanceRefresh</a>
+    /// API. 
     /// </para>
     /// </summary>
     public partial class StartInstanceRefreshRequest : AmazonAutoScalingRequest
@@ -106,7 +106,7 @@ namespace Amazon.AutoScaling.Model
         ///  <note> 
         /// <para>
         /// When you specify a new launch template or a new version of the current launch template
-        /// for your desired configuration, consider enabling the <code>SkipMatching</code> property
+        /// for your desired configuration, consider enabling the <c>SkipMatching</c> property
         /// in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances
         /// that already use the specified launch template and instance types. This can help you
         /// reduce the number of replacements that are required to apply updates. 
@@ -131,7 +131,7 @@ namespace Amazon.AutoScaling.Model
         /// Sets your preferences for the instance refresh so that it performs as expected when
         /// you start it. Includes the instance warmup time, the minimum and maximum healthy percentages,
         /// and the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are
-        /// in <code>Standby</code> state or protected from scale in are found. You can also choose
+        /// in <c>Standby</c> state or protected from scale in are found. You can also choose
         /// to enable additional features, such as the following:
         /// </para>
         ///  <ul> <li> 
@@ -167,7 +167,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Strategy. 
         /// <para>
-        /// The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.
+        /// The strategy to use for the instance refresh. The only valid value is <c>Rolling</c>.
         /// </para>
         /// </summary>
         public RefreshStrategy Strategy

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
-    /// The regular expression (regex) you specified in <code>RegexPatternString</code> is
-    /// invalid.
+    /// The regular expression (regex) you specified in <c>RegexPatternString</c> is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

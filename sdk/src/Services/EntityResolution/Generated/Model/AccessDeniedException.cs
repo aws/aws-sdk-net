@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// You do not have sufficient access to perform this action. <code>HTTP Status Code:
-    /// 403</code>
+    /// You do not have sufficient access to perform this action. <c>HTTP Status Code: 403</c>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

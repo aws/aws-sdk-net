@@ -81,8 +81,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property FieldMappings. 
         /// <para>
         /// Maps attributes or field names of the custom knowledge article to Amazon Kendra index
-        /// field names. To create custom fields, use the <code>UpdateIndex</code> API before
-        /// you map to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// field names. To create custom fields, use the <c>UpdateIndex</c> API before you map
+        /// to Salesforce fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Salesforce data source field names must exist in your
         /// Salesforce custom metadata.
         /// </para>

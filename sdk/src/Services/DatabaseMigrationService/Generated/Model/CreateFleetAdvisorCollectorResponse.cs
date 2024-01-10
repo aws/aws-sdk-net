@@ -60,7 +60,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CollectorReferencedId. 
         /// <para>
-        /// The unique ID of the new Fleet Advisor collector, for example: <code>22fda70c-40d5-4acf-b233-a495bd8eb7f5</code>
+        /// The unique ID of the new Fleet Advisor collector, for example: <c>22fda70c-40d5-4acf-b233-a495bd8eb7f5</c>
         /// 
         /// </para>
         /// </summary>

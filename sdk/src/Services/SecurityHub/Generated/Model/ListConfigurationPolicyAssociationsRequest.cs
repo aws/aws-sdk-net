@@ -43,10 +43,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  Options for filtering the <code>ListConfigurationPolicyAssociations</code> response.
-        /// You can filter by the Amazon Resource Name (ARN) or universally unique identifier
-        /// (UUID) of a configuration, <code>AssociationType</code>, or <code>AssociationStatus</code>.
-        /// 
+        ///  Options for filtering the <c>ListConfigurationPolicyAssociations</c> response. You
+        /// can filter by the Amazon Resource Name (ARN) or universally unique identifier (UUID)
+        /// of a configuration, <c>AssociationType</c>, or <c>AssociationStatus</c>. 
         /// </para>
         /// </summary>
         public AssociationFilters Filters
@@ -64,13 +63,12 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of results that's returned by <code>ListConfigurationPolicies</code>
-        /// in each page of the response. When this parameter is used, <code>ListConfigurationPolicyAssociations</code>
-        /// returns the specified number of results in a single page and a <code>NextToken</code>
-        /// response element. You can see the remaining results of the initial request by sending
-        /// another <code>ListConfigurationPolicyAssociations</code> request with the returned
-        /// <code>NextToken</code> value. A valid range for <code>MaxResults</code> is between
-        /// 1 and 100. 
+        ///  The maximum number of results that's returned by <c>ListConfigurationPolicies</c>
+        /// in each page of the response. When this parameter is used, <c>ListConfigurationPolicyAssociations</c>
+        /// returns the specified number of results in a single page and a <c>NextToken</c> response
+        /// element. You can see the remaining results of the initial request by sending another
+        /// <c>ListConfigurationPolicyAssociations</c> request with the returned <c>NextToken</c>
+        /// value. A valid range for <c>MaxResults</c> is between 1 and 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -89,11 +87,11 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The <code>NextToken</code> value that's returned from a previous paginated <code>ListConfigurationPolicyAssociations</code>
-        /// request where <code>MaxResults</code> was used but the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous response that
-        /// returned the <code>NextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return. 
+        ///  The <c>NextToken</c> value that's returned from a previous paginated <c>ListConfigurationPolicyAssociations</c>
+        /// request where <c>MaxResults</c> was used but the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous response that returned
+        /// the <c>NextToken</c> value. This value is <c>null</c> when there are no more results
+        /// to return. 
         /// </para>
         /// </summary>
         public string NextToken

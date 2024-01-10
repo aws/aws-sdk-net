@@ -136,7 +136,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the bot. For a new bot, the version is always <code>$LATEST</code>.
+        /// The version of the bot. For a new bot, the version is always <c>$LATEST</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

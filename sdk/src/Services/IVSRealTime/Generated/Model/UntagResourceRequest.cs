@@ -59,7 +59,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Array of tags to be removed. Array of maps, each of the form <code>string:string (key:value)</code>.
+        /// Array of tags to be removed. Array of maps, each of the form <c>string:string (key:value)</c>.
         /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
         /// naming limits and requirements"; Amazon IVS has no constraints beyond what is documented

@@ -155,8 +155,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        ///  The unit of measure used for the CloudWatch metric. For example, <code>Bytes</code>,
-        /// <code>Seconds</code>, <code>Count</code>, and <code>Percent</code>. 
+        ///  The unit of measure used for the CloudWatch metric. For example, <c>Bytes</c>, <c>Seconds</c>,
+        /// <c>Count</c>, and <c>Percent</c>. 
         /// </para>
         /// </summary>
         public string Unit

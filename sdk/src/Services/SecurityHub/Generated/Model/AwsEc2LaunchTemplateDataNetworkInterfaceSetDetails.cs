@@ -189,7 +189,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Ipv4PrefixCount. 
         /// <para>
         ///  The number of IPv4 prefixes to be automatically assigned to the network interface.
-        /// You cannot use this option if you use the <code>Ipv4Prefixes</code> option. 
+        /// You cannot use this option if you use the <c>Ipv4Prefixes</c> option. 
         /// </para>
         /// </summary>
         public int Ipv4PrefixCount
@@ -208,7 +208,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Ipv4Prefixes. 
         /// <para>
         ///  One or more IPv4 prefixes to be assigned to the network interface. You cannot use
-        /// this option if you use the <code>Ipv4PrefixCount</code> option. 
+        /// this option if you use the <c>Ipv4PrefixCount</c> option. 
         /// </para>
         /// </summary>
         public List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv4PrefixesDetails> Ipv4Prefixes
@@ -228,7 +228,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The number of IPv6 addresses to assign to a network interface. Amazon EC2 automatically
         /// selects the IPv6 addresses from the subnet range. You can't use this option if you
-        /// use <code>Ipv6Addresses</code>. 
+        /// use <c>Ipv6Addresses</c>. 
         /// </para>
         /// </summary>
         public int Ipv6AddressCount
@@ -247,7 +247,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Ipv6Addresses. 
         /// <para>
         ///  One or more specific IPv6 addresses from the IPv6 CIDR block range of your subnet.
-        /// You can't use this option if you use <code>Ipv6AddressCount</code>. 
+        /// You can't use this option if you use <c>Ipv6AddressCount</c>. 
         /// </para>
         /// </summary>
         public List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails> Ipv6Addresses
@@ -266,7 +266,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Ipv6PrefixCount. 
         /// <para>
         ///  The number of IPv6 prefixes to be automatically assigned to the network interface.
-        /// You cannot use this option if you use the <code>Ipv6Prefix</code> option. 
+        /// You cannot use this option if you use the <c>Ipv6Prefix</c> option. 
         /// </para>
         /// </summary>
         public int Ipv6PrefixCount
@@ -285,7 +285,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Ipv6Prefixes. 
         /// <para>
         ///  One or more IPv6 prefixes to be assigned to the network interface. You cannot use
-        /// this option if you use the <code>Ipv6PrefixCount</code> option. 
+        /// this option if you use the <c>Ipv6PrefixCount</c> option. 
         /// </para>
         /// </summary>
         public List<AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6PrefixesDetails> Ipv6Prefixes
@@ -304,8 +304,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property NetworkCardIndex. 
         /// <para>
         ///  The index of the network card. Some instance types support multiple network cards.
-        /// The primary network interface must be assigned to network card index <code>0</code>.
-        /// The default is network card index <code>0</code>. 
+        /// The primary network interface must be assigned to network card index <c>0</c>. The
+        /// default is network card index <c>0</c>. 
         /// </para>
         /// </summary>
         public int NetworkCardIndex

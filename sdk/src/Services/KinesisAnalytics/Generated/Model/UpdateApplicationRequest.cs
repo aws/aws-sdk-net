@@ -44,12 +44,12 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    /// Note that Amazon Kinesis Analytics updates the <code>CurrentApplicationVersionId</code>
+    /// Note that Amazon Kinesis Analytics updates the <c>CurrentApplicationVersionId</c>
     /// each time you update your application. 
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permission for the <code>kinesisanalytics:UpdateApplication</code>
+    /// This operation requires permission for the <c>kinesisanalytics:UpdateApplication</c>
     /// action.
     /// </para>
     /// </summary>

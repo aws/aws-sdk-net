@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeTimeBasedAutoScaling</code> request.
+    /// Contains the response to a <c>DescribeTimeBasedAutoScaling</c> request.
     /// </summary>
     public partial class DescribeTimeBasedAutoScalingResponse : AmazonWebServiceResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property TimeBasedAutoScalingConfigurations. 
         /// <para>
-        /// An array of <code>TimeBasedAutoScalingConfiguration</code> objects that describe the
-        /// configuration for the specified instances.
+        /// An array of <c>TimeBasedAutoScalingConfiguration</c> objects that describe the configuration
+        /// for the specified instances.
         /// </para>
         /// </summary>
         public List<TimeBasedAutoScalingConfiguration> TimeBasedAutoScalingConfigurations

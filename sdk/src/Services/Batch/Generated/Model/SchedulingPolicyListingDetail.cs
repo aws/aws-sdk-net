@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// An object that contains the details of a scheduling policy that's returned in a <code>ListSchedulingPolicy</code>
+    /// An object that contains the details of a scheduling policy that's returned in a <c>ListSchedulingPolicy</c>
     /// action.
     /// </summary>
     public partial class SchedulingPolicyListingDetail

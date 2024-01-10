@@ -46,16 +46,16 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENTIRE_PAST_SESSION</code>: Rehydrates a chat from the most recently terminated
-        /// past chat contact of the specified past ended chat session. To use this type, provide
-        /// the <code>initialContactId</code> of the past ended chat session in the <code>sourceContactId</code>
+        ///  <c>ENTIRE_PAST_SESSION</c>: Rehydrates a chat from the most recently terminated past
+        /// chat contact of the specified past ended chat session. To use this type, provide the
+        /// <c>initialContactId</c> of the past ended chat session in the <c>sourceContactId</c>
         /// field. In this type, Amazon Connect determines the most recent chat contact on the
         /// specified chat session that has ended, and uses it to start a persistent chat. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FROM_SEGMENT</code>: Rehydrates a chat from the past chat contact that is specified
-        /// in the <code>sourceContactId</code> field. 
+        ///  <c>FROM_SEGMENT</c>: Rehydrates a chat from the past chat contact that is specified
+        /// in the <c>sourceContactId</c> field. 
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -65,8 +65,8 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property Option. 
         /// <para>
         /// Specifies which cookies to forward to the distribution's origin for a cache behavior:
-        /// <code>all</code>, <code>none</code>, or <code>allow-list</code> to forward only the
-        /// cookies specified in the <code>cookiesAllowList</code> parameter.
+        /// <c>all</c>, <c>none</c>, or <c>allow-list</c> to forward only the cookies specified
+        /// in the <c>cookiesAllowList</c> parameter.
         /// </para>
         /// </summary>
         public ForwardValues Option

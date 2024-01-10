@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Groups. 
         /// <para>
-        /// The <code>group</code> to which the user name belongs.
+        /// The <c>group</c> to which the user name belongs.
         /// </para>
         /// </summary>
         public List<string> Groups
@@ -57,7 +57,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Username. 
         /// <para>
-        /// Information about the <code>username</code> that was being impersonated.
+        /// Information about the <c>username</c> that was being impersonated.
         /// </para>
         /// </summary>
         public string Username

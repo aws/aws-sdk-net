@@ -38,9 +38,9 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfig. 
         /// <para>
-        /// An <code>EncryptionConfig</code> object that contains the KMS key ARN to use for encryption.
+        /// An <c>EncryptionConfig</c> object that contains the KMS key ARN to use for encryption.
         /// By default, CodeGuru Security uses an AWS-managed key for encryption. To specify your
-        /// own key, call <code>UpdateAccountConfiguration</code>.
+        /// own key, call <c>UpdateAccountConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

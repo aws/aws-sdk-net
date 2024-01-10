@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Details about a reactive anomaly. This object is returned by <code>DescribeAnomaly.</code>
+    /// Details about a reactive anomaly. This object is returned by <c>DescribeAnomaly.</c>
     /// </summary>
     public partial class ReactiveAnomalySummary
     {
@@ -50,8 +50,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property AnomalyReportedTimeRange. 
         /// <para>
-        ///  An <code>AnomalyReportedTimeRange</code> object that specifies the time range between
-        /// when the anomaly is opened and the time when it is closed. 
+        ///  An <c>AnomalyReportedTimeRange</c> object that specifies the time range between when
+        /// the anomaly is opened and the time when it is closed. 
         /// </para>
         /// </summary>
         public AnomalyReportedTimeRange AnomalyReportedTimeRange
@@ -274,11 +274,11 @@ namespace Amazon.DevOpsGuru.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CAUSAL</code> - the anomaly can cause a new insight.
+        ///  <c>CAUSAL</c> - the anomaly can cause a new insight.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CONTEXTUAL</code> - the anomaly contains additional information about an insight
+        ///  <c>CONTEXTUAL</c> - the anomaly contains additional information about an insight
         /// or its causal anomaly.
         /// </para>
         ///  </li> </ul>

@@ -271,8 +271,8 @@ namespace Amazon.IoTEventsData
 
 
         /// <summary>
-        /// Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code>
-        /// state after you acknowledge them.
+        /// Acknowledges one or more alarms. The alarms change to the <c>ACKNOWLEDGED</c> state
+        /// after you acknowledge them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchAcknowledgeAlarm service method.</param>
         /// <param name="cancellationToken">
@@ -367,8 +367,8 @@ namespace Amazon.IoTEventsData
 
 
         /// <summary>
-        /// Disables one or more alarms. The alarms change to the <code>DISABLED</code> state
-        /// after you disable them.
+        /// Disables one or more alarms. The alarms change to the <c>DISABLED</c> state after
+        /// you disable them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchDisableAlarm service method.</param>
         /// <param name="cancellationToken">
@@ -414,8 +414,8 @@ namespace Amazon.IoTEventsData
 
 
         /// <summary>
-        /// Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after
-        /// you enable them.
+        /// Enables one or more alarms. The alarms change to the <c>NORMAL</c> state after you
+        /// enable them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchEnableAlarm service method.</param>
         /// <param name="cancellationToken">
@@ -462,8 +462,8 @@ namespace Amazon.IoTEventsData
 
         /// <summary>
         /// Sends a set of messages to the IoT Events system. Each message payload is transformed
-        /// into the input you specify (<code>"inputName"</code>) and ingested into any detectors
-        /// that monitor that input. If multiple messages are sent, the order in which the messages
+        /// into the input you specify (<c>"inputName"</c>) and ingested into any detectors that
+        /// monitor that input. If multiple messages are sent, the order in which the messages
         /// are processed isn't guaranteed. To guarantee ordering, you must send messages one
         /// at a time and wait for a successful response.
         /// </summary>
@@ -511,8 +511,8 @@ namespace Amazon.IoTEventsData
 
 
         /// <summary>
-        /// Resets one or more alarms. The alarms return to the <code>NORMAL</code> state after
-        /// you reset them.
+        /// Resets one or more alarms. The alarms return to the <c>NORMAL</c> state after you
+        /// reset them.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchResetAlarm service method.</param>
         /// <param name="cancellationToken">
@@ -558,7 +558,7 @@ namespace Amazon.IoTEventsData
 
 
         /// <summary>
-        /// Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code>
+        /// Changes one or more alarms to the snooze mode. The alarms change to the <c>SNOOZE_DISABLED</c>
         /// state after you set them to the snooze mode.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchSnoozeAlarm service method.</param>

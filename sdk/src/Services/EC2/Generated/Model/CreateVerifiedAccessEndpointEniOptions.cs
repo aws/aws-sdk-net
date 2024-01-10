@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes the network interface options when creating an Amazon Web Services Verified
-    /// Access endpoint using the <code>network-interface</code> type.
+    /// Access endpoint using the <c>network-interface</c> type.
     /// </summary>
     public partial class CreateVerifiedAccessEndpointEniOptions
     {

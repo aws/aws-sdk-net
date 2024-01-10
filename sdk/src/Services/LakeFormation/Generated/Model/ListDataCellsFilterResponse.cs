@@ -39,7 +39,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property DataCellsFilters. 
         /// <para>
-        /// A list of <code>DataCellFilter</code> structures.
+        /// A list of <c>DataCellFilter</c> structures.
         /// </para>
         /// </summary>
         public List<DataCellsFilter> DataCellsFilters

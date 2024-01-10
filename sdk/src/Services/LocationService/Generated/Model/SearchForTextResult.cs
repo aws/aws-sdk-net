@@ -42,7 +42,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Distance. 
         /// <para>
         /// The distance in meters of a great-circle arc between the bias position specified and
-        /// the result. <code>Distance</code> will be returned only if a bias position was specified
+        /// the result. <c>Distance</c> will be returned only if a bias position was specified
         /// in the query.
         /// </para>
         ///  <note> 
@@ -87,13 +87,13 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PlaceId. 
         /// <para>
-        /// The unique identifier of the place. You can use this with the <code>GetPlace</code>
-        /// operation to find the place again later.
+        /// The unique identifier of the place. You can use this with the <c>GetPlace</c> operation
+        /// to find the place again later.
         /// </para>
         ///  <note> 
         /// <para>
-        /// For <code>SearchPlaceIndexForText</code> operations, the <code>PlaceId</code> is returned
-        /// only by place indexes that use HERE or Grab as a data provider.
+        /// For <c>SearchPlaceIndexForText</c> operations, the <c>PlaceId</c> is returned only
+        /// by place indexes that use HERE or Grab as a data provider.
         /// </para>
         ///  </note>
         /// </summary>

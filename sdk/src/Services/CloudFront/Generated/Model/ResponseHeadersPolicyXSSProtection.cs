@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Determines whether CloudFront includes the <code>X-XSS-Protection</code> HTTP response
-    /// header and the header's value.
+    /// Determines whether CloudFront includes the <c>X-XSS-Protection</c> HTTP response header
+    /// and the header's value.
     /// 
     ///  
     /// <para>
-    /// For more information about the <code>X-XSS-Protection</code> HTTP response header,
-    /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
+    /// For more information about the <c>X-XSS-Protection</c> HTTP response header, see <a
+    /// href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-XSS-Protection">X-XSS-Protection</a>
     /// in the MDN Web Docs.
     /// </para>
     /// </summary>
@@ -49,8 +49,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ModeBlock. 
         /// <para>
-        /// A Boolean that determines whether CloudFront includes the <code>mode=block</code>
-        /// directive in the <code>X-XSS-Protection</code> header.
+        /// A Boolean that determines whether CloudFront includes the <c>mode=block</c> directive
+        /// in the <c>X-XSS-Protection</c> header.
         /// </para>
         ///  
         /// <para>
@@ -73,7 +73,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Override. 
         /// <para>
-        /// A Boolean that determines whether CloudFront overrides the <code>X-XSS-Protection</code>
+        /// A Boolean that determines whether CloudFront overrides the <c>X-XSS-Protection</c>
         /// HTTP response header received from the origin with the one specified in this response
         /// headers policy.
         /// </para>
@@ -94,10 +94,10 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Protection. 
         /// <para>
-        /// A Boolean that determines the value of the <code>X-XSS-Protection</code> HTTP response
-        /// header. When this setting is <code>true</code>, the value of the <code>X-XSS-Protection</code>
-        /// header is <code>1</code>. When this setting is <code>false</code>, the value of the
-        /// <code>X-XSS-Protection</code> header is <code>0</code>.
+        /// A Boolean that determines the value of the <c>X-XSS-Protection</c> HTTP response header.
+        /// When this setting is <c>true</c>, the value of the <c>X-XSS-Protection</c> header
+        /// is <c>1</c>. When this setting is <c>false</c>, the value of the <c>X-XSS-Protection</c>
+        /// header is <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -121,12 +121,12 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ReportUri. 
         /// <para>
-        /// A reporting URI, which CloudFront uses as the value of the <code>report</code> directive
-        /// in the <code>X-XSS-Protection</code> header.
+        /// A reporting URI, which CloudFront uses as the value of the <c>report</c> directive
+        /// in the <c>X-XSS-Protection</c> header.
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify a <code>ReportUri</code> when <code>ModeBlock</code> is <code>true</code>.
+        /// You cannot specify a <c>ReportUri</c> when <c>ModeBlock</c> is <c>true</c>.
         /// </para>
         ///  
         /// <para>

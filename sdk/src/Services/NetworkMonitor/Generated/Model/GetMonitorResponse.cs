@@ -122,7 +122,7 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property MonitorName. 
         /// <para>
         /// The name of the monitor. To get a list of the current monitors and their names, use
-        /// the <code>ListMonitors</code> action.
+        /// the <c>ListMonitors</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

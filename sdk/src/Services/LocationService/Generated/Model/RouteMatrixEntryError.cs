@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// An error corresponding to the calculation of a route between the <code>DeparturePosition</code>
-    /// and <code>DestinationPosition</code>.
+    /// An error corresponding to the calculation of a route between the <c>DeparturePosition</c>
+    /// and <c>DestinationPosition</c>.
     /// 
     ///  
     /// <para>
@@ -38,32 +38,32 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>RouteNotFound</code> - Unable to find a valid route with the given parameters.
+    ///  <c>RouteNotFound</c> - Unable to find a valid route with the given parameters.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>RouteTooLong</code> - Route calculation went beyond the maximum size of a route
-    /// and was terminated before completion.
+    ///  <c>RouteTooLong</c> - Route calculation went beyond the maximum size of a route and
+    /// was terminated before completion.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>PositionsNotFound</code> - One or more of the input positions were not found
-    /// on the route network.
+    ///  <c>PositionsNotFound</c> - One or more of the input positions were not found on the
+    /// route network.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>DestinationPositionNotFound</code> - The destination position was not found
-    /// on the route network.
+    ///  <c>DestinationPositionNotFound</c> - The destination position was not found on the
+    /// route network.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>DeparturePositionNotFound</code> - The departure position was not found on
-    /// the route network.
+    ///  <c>DeparturePositionNotFound</c> - The departure position was not found on the route
+    /// network.
     /// </para>
     ///  </li> </ul> <ul> <li> 
     /// <para>
-    ///  <code>OtherValidationError</code> - The given inputs were not valid or a route was
-    /// not found. More information is given in the error <code>Message</code> 
+    ///  <c>OtherValidationError</c> - The given inputs were not valid or a route was not
+    /// found. More information is given in the error <c>Message</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

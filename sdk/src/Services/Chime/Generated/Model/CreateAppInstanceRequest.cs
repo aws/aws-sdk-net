@@ -30,9 +30,9 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppInstance operation.
-    /// Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account.
-    /// Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports
-    /// idempotency behavior as described in the AWS API Standard.
+    /// Creates an Amazon Chime SDK messaging <c>AppInstance</c> under an AWS account. Only
+    /// SDK messaging customers use this API. <c>CreateAppInstance</c> supports idempotency
+    /// behavior as described in the AWS API Standard.
     /// 
     ///  <important> 
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
+        /// The <c>ClientRequestToken</c> of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=64)]
@@ -77,7 +77,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
+        /// The metadata of the <c>AppInstance</c>. Limited to a 1KB string in UTF-8.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1024)]
@@ -96,7 +96,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>AppInstance</code>.
+        /// The name of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
@@ -115,7 +115,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags assigned to the <code>AppInstance</code>.
+        /// Tags assigned to the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

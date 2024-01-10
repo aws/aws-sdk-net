@@ -88,9 +88,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property EnableCachingForHttp. 
         /// <para>
-        /// When <code>true</code>, the result from the authorizer’s Lambda function is cached
-        /// for the time specified in <code>refreshAfterInSeconds</code>. The cached result is
-        /// used while the device reuses the same HTTP connection.
+        /// When <c>true</c>, the result from the authorizer’s Lambda function is cached for the
+        /// time specified in <c>refreshAfterInSeconds</c>. The cached result is used while the
+        /// device reuses the same HTTP connection.
         /// </para>
         /// </summary>
         public bool EnableCachingForHttp

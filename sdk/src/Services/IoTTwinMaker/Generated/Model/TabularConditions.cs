@@ -64,7 +64,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"key": "serverType", "value": "webServer"}</code> 
+        ///  <c>{"key": "serverType", "value": "webServer"}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

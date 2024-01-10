@@ -39,7 +39,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Specify the <code>resourceArn</code> for the resource whose tags to display.
+        /// Specify the <c>resourceArn</c> for the resource whose tags to display.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -59,8 +59,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ResourceCounts. 
         /// <para>
-        /// The list of <code>ResourceCount</code> objects. Each object is listed in descending
-        /// order by the number of resources.
+        /// The list of <c>ResourceCount</c> objects. Each object is listed in descending order
+        /// by the number of resources.
         /// </para>
         /// </summary>
         public List<ResourceCount> ResourceCounts
@@ -93,12 +93,12 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You make a call to the <code>GetDiscoveredResourceCounts</code> action and specify
-        /// the resource type, <code>"AWS::EC2::Instances"</code>, in the request.
+        /// You make a call to the <c>GetDiscoveredResourceCounts</c> action and specify the resource
+        /// type, <c>"AWS::EC2::Instances"</c>, in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Config returns 25 for <code>totalDiscoveredResources</code>.
+        /// Config returns 25 for <c>totalDiscoveredResources</c>.
         /// </para>
         ///  </li> </ol>
         /// </summary>

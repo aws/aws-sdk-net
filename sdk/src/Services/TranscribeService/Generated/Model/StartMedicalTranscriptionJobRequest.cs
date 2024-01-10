@@ -43,49 +43,48 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  
     /// <para>
-    /// To make a <code>StartMedicalTranscriptionJob</code> request, you must first upload
-    /// your media file into an Amazon S3 bucket; you can then specify the Amazon S3 location
-    /// of the file using the <code>Media</code> parameter.
+    /// To make a <c>StartMedicalTranscriptionJob</c> request, you must first upload your
+    /// media file into an Amazon S3 bucket; you can then specify the Amazon S3 location of
+    /// the file using the <c>Media</c> parameter.
     /// </para>
     ///  
     /// <para>
-    /// You must include the following parameters in your <code>StartMedicalTranscriptionJob</code>
+    /// You must include the following parameters in your <c>StartMedicalTranscriptionJob</c>
     /// request:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>region</code>: The Amazon Web Services Region where you are making your request.
+    ///  <c>region</c>: The Amazon Web Services Region where you are making your request.
     /// For a list of Amazon Web Services Regions supported with Amazon Transcribe, refer
     /// to <a href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html">Amazon
     /// Transcribe endpoints and quotas</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>MedicalTranscriptionJobName</code>: A custom name you create for your transcription
+    ///  <c>MedicalTranscriptionJobName</c>: A custom name you create for your transcription
     /// job that is unique within your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media
-    /// file.
+    ///  <c>Media</c> (<c>MediaFileUri</c>): The Amazon S3 location of your media file.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LanguageCode</code>: This must be <code>en-US</code>.
+    ///  <c>LanguageCode</c>: This must be <c>en-US</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>OutputBucketName</code>: The Amazon S3 bucket where you want your transcript
-    /// stored. If you want your output stored in a sub-folder of this bucket, you must also
-    /// include <code>OutputKey</code>.
+    ///  <c>OutputBucketName</c>: The Amazon S3 bucket where you want your transcript stored.
+    /// If you want your output stored in a sub-folder of this bucket, you must also include
+    /// <c>OutputKey</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Specialty</code>: This must be <code>PRIMARYCARE</code>.
+    ///  <c>Specialty</c>: This must be <c>PRIMARYCARE</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Type</code>: Choose whether your audio is a conversation or a dictation.
+    ///  <c>Type</c>: Choose whether your audio is a conversation or a dictation.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -153,9 +152,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property LanguageCode. 
         /// <para>
         /// The language code that represents the language spoken in the input media file. US
-        /// English (<code>en-US</code>) is the only valid value for medical transcription jobs.
-        /// Any other value you enter for language code results in a <code>BadRequestException</code>
-        /// error.
+        /// English (<c>en-US</c>) is the only valid value for medical transcription jobs. Any
+        /// other value you enter for language code results in a <c>BadRequestException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -215,7 +213,7 @@ namespace Amazon.TranscribeService.Model
         /// If you do not specify the media sample rate, Amazon Transcribe Medical determines
         /// it for you. If you specify the sample rate, it must match the rate detected by Amazon
         /// Transcribe Medical; if there's a mismatch between the value that you specify and the
-        /// value detected, your job fails. Therefore, in most cases, it's advised to omit <code>MediaSampleRateHertz</code>
+        /// value detected, your job fails. Therefore, in most cases, it's advised to omit <c>MediaSampleRateHertz</c>
         /// and let Amazon Transcribe Medical determine the sample rate.
         /// </para>
         /// </summary>
@@ -237,14 +235,14 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// A unique name, chosen by you, for your medical transcription job. The name that you
         /// specify is also used as the default name of your transcription output file. If you
-        /// want to specify a different name for your transcription output, use the <code>OutputKey</code>
+        /// want to specify a different name for your transcription output, use the <c>OutputKey</c>
         /// parameter.
         /// </para>
         ///  
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
         /// Web Services account. If you try to create a new job with the same name as an existing
-        /// job, you get a <code>ConflictException</code> error.
+        /// job, you get a <c>ConflictException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -264,21 +262,19 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property OutputBucketName. 
         /// <para>
         /// The name of the Amazon S3 bucket where you want your medical transcription output
-        /// stored. Do not include the <code>S3://</code> prefix of the specified bucket.
+        /// stored. Do not include the <c>S3://</c> prefix of the specified bucket.
         /// </para>
         ///  
         /// <para>
         /// If you want your output to go to a sub-folder of this bucket, specify it using the
-        /// <code>OutputKey</code> parameter; <code>OutputBucketName</code> only accepts the name
-        /// of a bucket.
+        /// <c>OutputKey</c> parameter; <c>OutputBucketName</c> only accepts the name of a bucket.
         /// </para>
         ///  
         /// <para>
-        /// For example, if you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET</code>,
-        /// set <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code>. However, if
-        /// you want your output stored in <code>S3://DOC-EXAMPLE-BUCKET/test-files/</code>, set
-        /// <code>OutputBucketName</code> to <code>DOC-EXAMPLE-BUCKET</code> and <code>OutputKey</code>
-        /// to <code>test-files/</code>.
+        /// For example, if you want your output stored in <c>S3://DOC-EXAMPLE-BUCKET</c>, set
+        /// <c>OutputBucketName</c> to <c>DOC-EXAMPLE-BUCKET</c>. However, if you want your output
+        /// stored in <c>S3://DOC-EXAMPLE-BUCKET/test-files/</c>, set <c>OutputBucketName</c>
+        /// to <c>DOC-EXAMPLE-BUCKET</c> and <c>OutputKey</c> to <c>test-files/</c>.
         /// </para>
         ///  
         /// <para>
@@ -313,19 +309,19 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the KMS key ID itself. For example, <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
+        /// Use an alias for the KMS key ID. For example, <c>alias/ExampleAlias</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -334,11 +330,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the ARN for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -348,7 +344,7 @@ namespace Amazon.TranscribeService.Model
         ///  
         /// <para>
         /// If you specify a KMS key to encrypt your output, you must also specify an output location
-        /// using the <code>OutputLocation</code> parameter.
+        /// using the <c>OutputLocation</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -372,36 +368,36 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property OutputKey. 
         /// <para>
-        /// Use in combination with <code>OutputBucketName</code> to specify the output location
-        /// of your transcript and, optionally, a unique name for your output file. The default
-        /// name for your transcription output is the same as the name you specified for your
-        /// medical transcription job (<code>MedicalTranscriptionJobName</code>).
+        /// Use in combination with <c>OutputBucketName</c> to specify the output location of
+        /// your transcript and, optionally, a unique name for your output file. The default name
+        /// for your transcription output is the same as the name you specified for your medical
+        /// transcription job (<c>MedicalTranscriptionJobName</c>).
         /// </para>
         ///  
         /// <para>
-        /// Here are some examples of how you can use <code>OutputKey</code>:
+        /// Here are some examples of how you can use <c>OutputKey</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'my-transcript.json'
-        /// as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</code>.
+        /// If you specify 'DOC-EXAMPLE-BUCKET' as the <c>OutputBucketName</c> and 'my-transcript.json'
+        /// as the <c>OutputKey</c>, your transcription output path is <c>s3://DOC-EXAMPLE-BUCKET/my-transcript.json</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
-        /// 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'my-transcript' as
-        /// the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</code>.
+        /// If you specify 'my-first-transcription' as the <c>MedicalTranscriptionJobName</c>,
+        /// 'DOC-EXAMPLE-BUCKET' as the <c>OutputBucketName</c>, and 'my-transcript' as the <c>OutputKey</c>,
+        /// your transcription output path is <c>s3://DOC-EXAMPLE-BUCKET/my-transcript/my-first-transcription.json</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code> and 'test-files/my-transcript.json'
-        /// as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</code>.
+        /// If you specify 'DOC-EXAMPLE-BUCKET' as the <c>OutputBucketName</c> and 'test-files/my-transcript.json'
+        /// as the <c>OutputKey</c>, your transcription output path is <c>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript.json</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify 'my-first-transcription' as the <code>MedicalTranscriptionJobName</code>,
-        /// 'DOC-EXAMPLE-BUCKET' as the <code>OutputBucketName</code>, and 'test-files/my-transcript'
-        /// as the <code>OutputKey</code>, your transcription output path is <code>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</code>.
+        /// If you specify 'my-first-transcription' as the <c>MedicalTranscriptionJobName</c>,
+        /// 'DOC-EXAMPLE-BUCKET' as the <c>OutputBucketName</c>, and 'test-files/my-transcript'
+        /// as the <c>OutputKey</c>, your transcription output path is <c>s3://DOC-EXAMPLE-BUCKET/test-files/my-transcript/my-first-transcription.json</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -446,7 +442,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Specialty. 
         /// <para>
         /// Specify the predominant medical specialty represented in your media. For batch transcriptions,
-        /// <code>PRIMARYCARE</code> is the only valid value. If you require additional specialties,
+        /// <c>PRIMARYCARE</c> is the only valid value. If you require additional specialties,
         /// refer to .
         /// </para>
         /// </summary>
@@ -491,14 +487,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specify whether your input media contains only one person (<code>DICTATION</code>)
-        /// or contains a conversation between two people (<code>CONVERSATION</code>).
+        /// Specify whether your input media contains only one person (<c>DICTATION</c>) or contains
+        /// a conversation between two people (<c>CONVERSATION</c>).
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>DICTATION</code> could be used for a medical professional wanting
-        /// to transcribe voice memos; <code>CONVERSATION</code> could be used for transcribing
-        /// the doctor-patient dialogue during the patient's office visit.
+        /// For example, <c>DICTATION</c> could be used for a medical professional wanting to
+        /// transcribe voice memos; <c>CONVERSATION</c> could be used for transcribing the doctor-patient
+        /// dialogue during the patient's office visit.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

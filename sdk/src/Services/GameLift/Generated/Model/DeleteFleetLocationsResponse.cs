@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
-        /// are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// </para>
         /// </summary>
         public string FleetArn
@@ -78,7 +78,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property LocationStates. 
         /// <para>
-        /// The remote locations that are being deleted, with each location status set to <code>DELETING</code>.
+        /// The remote locations that are being deleted, with each location status set to <c>DELETING</c>.
         /// </para>
         /// </summary>
         public List<LocationState> LocationStates

@@ -60,7 +60,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CreateTimestamp. 
         /// <para>
-        /// Use the <code>DescribeApplication</code> operation to get this value.
+        /// Use the <c>DescribeApplication</c> operation to get this value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

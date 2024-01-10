@@ -98,11 +98,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DatabaseName. 
         /// <para>
         /// Database name for the endpoint. For a MySQL source or target endpoint, don't explicitly
-        /// specify the database using the <code>DatabaseName</code> request parameter on either
-        /// the <code>CreateEndpoint</code> or <code>ModifyEndpoint</code> API call. Specifying
-        /// <code>DatabaseName</code> when you create or modify a MySQL endpoint replicates all
-        /// the task tables to this single database. For MySQL endpoints, you specify the database
-        /// only when you specify the schema in the table-mapping rules of the DMS task.
+        /// specify the database using the <c>DatabaseName</c> request parameter on either the
+        /// <c>CreateEndpoint</c> or <c>ModifyEndpoint</c> API call. Specifying <c>DatabaseName</c>
+        /// when you create or modify a MySQL endpoint replicates all the task tables to this
+        /// single database. For MySQL endpoints, you specify the database only when you specify
+        /// the schema in the table-mapping rules of the DMS task.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -125,7 +125,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>eventsPollInterval=5;</code> 
+        /// Example: <c>eventsPollInterval=5;</c> 
         /// </para>
         ///  
         /// <para>
@@ -170,7 +170,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>maxFileSize=512</code> 
+        /// Example: <c>maxFileSize=512</c> 
         /// </para>
         /// </summary>
         public int MaxFileSize
@@ -196,7 +196,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>parallelLoadThreads=1</code> 
+        /// Example: <c>parallelLoadThreads=1</c> 
         /// </para>
         /// </summary>
         public int ParallelLoadThreads
@@ -252,19 +252,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
-        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
-        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
-        /// to the MySQL endpoint.
+        /// entity and grants the required permissions to access the value in <c>SecretsManagerSecret</c>.
+        /// The role must allow the <c>iam:PassRole</c> action. <c>SecretsManagerSecret</c> has
+        /// the value of the Amazon Web Services Secrets Manager secret that allows access to
+        /// the MySQL endpoint.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
-        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
-        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
-        /// and <code>Port</code>. You can't specify both. For more information on creating this
-        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// values for this setting and <c>SecretsManagerSecretId</c>. Or you can specify clear-text
+        /// values for <c>UserName</c>, <c>Password</c>, <c>ServerName</c>, and <c>Port</c>. You
+        /// can't specify both. For more information on creating this <c>SecretsManagerSecret</c>
+        /// and the <c>SecretsManagerAccessRoleArn</c> and <c>SecretsManagerSecretId</c> required
+        /// to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
         /// Service User Guide</i>.
         /// </para>
@@ -285,8 +285,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerSecretId. 
         /// <para>
-        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
-        /// that contains the MySQL endpoint connection details.
+        /// The full ARN, partial ARN, or friendly name of the <c>SecretsManagerSecret</c> that
+        /// contains the MySQL endpoint connection details.
         /// </para>
         /// </summary>
         public string SecretsManagerSecretId
@@ -309,13 +309,13 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// For an Amazon RDS MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
-        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// in the <c> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</c>
         /// field.
         /// </para>
         ///  
         /// <para>
         /// For an Aurora MySQL instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBClusters.html">DescribeDBClusters</a>,
-        /// in the <code>Endpoint</code> field.
+        /// in the <c>Endpoint</c> field.
         /// </para>
         /// </summary>
         public string ServerName
@@ -337,7 +337,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>serverTimezone=US/Pacific;</code> 
+        /// Example: <c>serverTimezone=US/Pacific;</c> 
         /// </para>
         ///  
         /// <para>
@@ -360,13 +360,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property TargetDbType. 
         /// <para>
         /// Specifies where to migrate source tables on the target, either to a single database
-        /// or multiple databases. If you specify <code>SPECIFIC_DATABASE</code>, specify the
-        /// database name using the <code>DatabaseName</code> parameter of the <code>Endpoint</code>
-        /// object.
+        /// or multiple databases. If you specify <c>SPECIFIC_DATABASE</c>, specify the database
+        /// name using the <c>DatabaseName</c> parameter of the <c>Endpoint</c> object.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>targetDbType=MULTIPLE_DATABASES</code> 
+        /// Example: <c>targetDbType=MULTIPLE_DATABASES</c> 
         /// </para>
         /// </summary>
         public TargetDbType TargetDbType

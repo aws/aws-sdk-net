@@ -39,8 +39,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A pagination token. You can use this in future calls to <code>ListScans</code> to
-        /// continue listing results after the current page.
+        /// A pagination token. You can use this in future calls to <c>ListScans</c> to continue
+        /// listing results after the current page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -59,8 +59,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <code>ScanSummary</code> objects with information about all scans in an
-        /// account.
+        /// A list of <c>ScanSummary</c> objects with information about all scans in an account.
         /// </para>
         /// </summary>
         public List<ScanSummary> Summaries

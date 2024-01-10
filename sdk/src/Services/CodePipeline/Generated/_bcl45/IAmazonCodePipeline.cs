@@ -521,9 +521,9 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// In the pipeline structure, you must include either <c>artifactStore</c> or <c>artifactStores</c>
         /// in your pipeline, but you cannot use both. If you create a cross-region action in
-        /// your pipeline, you must use <code>artifactStores</code>.
+        /// your pipeline, you must use <c>artifactStores</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -569,9 +569,9 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// In the pipeline structure, you must include either <c>artifactStore</c> or <c>artifactStores</c>
         /// in your pipeline, but you cannot use both. If you create a cross-region action in
-        /// your pipeline, you must use <code>artifactStores</code>.
+        /// your pipeline, you must use <c>artifactStores</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -618,9 +618,9 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// In the pipeline structure, you must include either <c>artifactStore</c> or <c>artifactStores</c>
         /// in your pipeline, but you cannot use both. If you create a cross-region action in
-        /// your pipeline, you must use <code>artifactStores</code>.
+        /// your pipeline, you must use <c>artifactStores</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -670,9 +670,9 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// In the pipeline structure, you must include either <code>artifactStore</code> or <code>artifactStores</code>
+        /// In the pipeline structure, you must include either <c>artifactStore</c> or <c>artifactStores</c>
         /// in your pipeline, but you cannot use both. If you create a cross-region action in
-        /// your pipeline, you must use <code>artifactStores</code>.
+        /// your pipeline, you must use <c>artifactStores</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -722,8 +722,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails
-        /// after the action is marked for deletion. Used for custom actions only.
+        /// Marks a custom action as deleted. <c>PollForJobs</c> for the custom action fails after
+        /// the action is marked for deletion. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
@@ -749,8 +749,8 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails
-        /// after the action is marked for deletion. Used for custom actions only.
+        /// Marks a custom action as deleted. <c>PollForJobs</c> for the custom action fails after
+        /// the action is marked for deletion. Used for custom actions only.
         /// 
         ///  <important> 
         /// <para>
@@ -1382,8 +1382,8 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
-        /// indicate the source revision information, such as the commit ID, for the current state.
+        /// Values returned in the <c>revisionId</c> and <c>revisionUrl</c> fields indicate the
+        /// source revision information, such as the commit ID, for the current state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1404,8 +1404,8 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
-        /// indicate the source revision information, such as the commit ID, for the current state.
+        /// Values returned in the <c>revisionId</c> and <c>revisionUrl</c> fields indicate the
+        /// source revision information, such as the commit ID, for the current state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1427,8 +1427,8 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
-        /// indicate the source revision information, such as the commit ID, for the current state.
+        /// Values returned in the <c>revisionId</c> and <c>revisionUrl</c> fields indicate the
+        /// source revision information, such as the commit ID, for the current state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1453,8 +1453,8 @@ namespace Amazon.CodePipeline
         /// 
         ///  <note> 
         /// <para>
-        /// Values returned in the <code>revisionId</code> and <code>revisionUrl</code> fields
-        /// indicate the source revision information, such as the commit ID, for the current state.
+        /// Values returned in the <c>revisionId</c> and <c>revisionUrl</c> fields indicate the
+        /// source revision information, such as the commit ID, for the current state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2003,9 +2003,9 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about any jobs for CodePipeline to act on. <code>PollForJobs</code>
+        /// Returns information about any jobs for CodePipeline to act on. <c>PollForJobs</c>
         /// is valid only for action types with "Custom" in the owner field. If the action type
-        /// contains <code>AWS</code> or <code>ThirdParty</code> in the owner field, the <code>PollForJobs</code>
+        /// contains <c>AWS</c> or <c>ThirdParty</c> in the owner field, the <c>PollForJobs</c>
         /// action returns an error.
         /// 
         ///  <important> 
@@ -2032,9 +2032,9 @@ namespace Amazon.CodePipeline
 
 
         /// <summary>
-        /// Returns information about any jobs for CodePipeline to act on. <code>PollForJobs</code>
+        /// Returns information about any jobs for CodePipeline to act on. <c>PollForJobs</c>
         /// is valid only for action types with "Custom" in the owner field. If the action type
-        /// contains <code>AWS</code> or <code>ThirdParty</code> in the owner field, the <code>PollForJobs</code>
+        /// contains <c>AWS</c> or <c>ThirdParty</c> in the owner field, the <c>PollForJobs</c>
         /// action returns an error.
         /// 
         ///  <important> 
@@ -2696,7 +2696,7 @@ namespace Amazon.CodePipeline
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
-        /// The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code>
+        /// The stage has failed in a later run of the pipeline and the <c>pipelineExecutionId</c>
         /// associated with the request is out of date.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
@@ -2738,7 +2738,7 @@ namespace Amazon.CodePipeline
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.NotLatestPipelineExecutionException">
-        /// The stage has failed in a later run of the pipeline and the <code>pipelineExecutionId</code>
+        /// The stage has failed in a later run of the pipeline and the <c>pipelineExecutionId</c>
         /// associated with the request is out of date.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
@@ -2859,8 +2859,8 @@ namespace Amazon.CodePipeline
         /// Stops the specified pipeline execution. You choose to either stop the pipeline execution
         /// by completing in-progress actions without starting subsequent actions, or by abandoning
         /// in-progress actions. While completing or abandoning in-progress actions, the pipeline
-        /// execution is in a <code>Stopping</code> state. After all in-progress actions are completed
-        /// or abandoned, the pipeline execution is in a <code>Stopped</code> state.
+        /// execution is in a <c>Stopping</c> state. After all in-progress actions are completed
+        /// or abandoned, the pipeline execution is in a <c>Stopped</c> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>
         /// 
@@ -2870,14 +2870,13 @@ namespace Amazon.CodePipeline
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.DuplicatedStopRequestException">
-        /// The pipeline execution is already in a <code>Stopping</code> state. If you already
-        /// chose to stop and wait, you cannot make that request again. You can choose to stop
-        /// and abandon now, but be aware that this option can lead to failed tasks or out of
-        /// sequence tasks. If you already chose to stop and abandon, you cannot make that request
-        /// again.
+        /// The pipeline execution is already in a <c>Stopping</c> state. If you already chose
+        /// to stop and wait, you cannot make that request again. You can choose to stop and abandon
+        /// now, but be aware that this option can lead to failed tasks or out of sequence tasks.
+        /// If you already chose to stop and abandon, you cannot make that request again.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotStoppableException">
-        /// Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code>
+        /// Unable to stop the pipeline execution. The execution might already be in a <c>Stopped</c>
         /// state, or it might no longer be in progress.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
@@ -2895,8 +2894,8 @@ namespace Amazon.CodePipeline
         /// Stops the specified pipeline execution. You choose to either stop the pipeline execution
         /// by completing in-progress actions without starting subsequent actions, or by abandoning
         /// in-progress actions. While completing or abandoning in-progress actions, the pipeline
-        /// execution is in a <code>Stopping</code> state. After all in-progress actions are completed
-        /// or abandoned, the pipeline execution is in a <code>Stopped</code> state.
+        /// execution is in a <c>Stopping</c> state. After all in-progress actions are completed
+        /// or abandoned, the pipeline execution is in a <c>Stopped</c> state.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopPipelineExecution service method.</param>
         /// <param name="cancellationToken">
@@ -2909,14 +2908,13 @@ namespace Amazon.CodePipeline
         /// Try again later.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.DuplicatedStopRequestException">
-        /// The pipeline execution is already in a <code>Stopping</code> state. If you already
-        /// chose to stop and wait, you cannot make that request again. You can choose to stop
-        /// and abandon now, but be aware that this option can lead to failed tasks or out of
-        /// sequence tasks. If you already chose to stop and abandon, you cannot make that request
-        /// again.
+        /// The pipeline execution is already in a <c>Stopping</c> state. If you already chose
+        /// to stop and wait, you cannot make that request again. You can choose to stop and abandon
+        /// now, but be aware that this option can lead to failed tasks or out of sequence tasks.
+        /// If you already chose to stop and abandon, you cannot make that request again.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineExecutionNotStoppableException">
-        /// Unable to stop the pipeline execution. The execution might already be in a <code>Stopped</code>
+        /// Unable to stop the pipeline execution. The execution might already be in a <c>Stopped</c>
         /// state, or it might no longer be in progress.
         /// </exception>
         /// <exception cref="Amazon.CodePipeline.Model.PipelineNotFoundException">
@@ -3060,8 +3058,7 @@ namespace Amazon.CodePipeline
         /// <summary>
         /// Updates an action type that was created with any supported integration model, where
         /// the action type is to be used by customers of the action type provider. Use a JSON
-        /// file with the action definition and <code>UpdateActionType</code> to provide the full
-        /// structure.
+        /// file with the action definition and <c>UpdateActionType</c> to provide the full structure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateActionType service method.</param>
         /// 
@@ -3083,8 +3080,7 @@ namespace Amazon.CodePipeline
         /// <summary>
         /// Updates an action type that was created with any supported integration model, where
         /// the action type is to be used by customers of the action type provider. Use a JSON
-        /// file with the action definition and <code>UpdateActionType</code> to provide the full
-        /// structure.
+        /// file with the action definition and <c>UpdateActionType</c> to provide the full structure.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateActionType service method.</param>
         /// <param name="cancellationToken">
@@ -3111,7 +3107,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// with the pipeline structure and <c>UpdatePipeline</c> to provide the full structure
         /// of the pipeline. Updating the pipeline increases the version number of the pipeline
         /// by 1.
         /// </summary>
@@ -3142,7 +3138,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// with the pipeline structure and <c>UpdatePipeline</c> to provide the full structure
         /// of the pipeline. Updating the pipeline increases the version number of the pipeline
         /// by 1.
         /// </summary>
@@ -3174,7 +3170,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// with the pipeline structure and <c>UpdatePipeline</c> to provide the full structure
         /// of the pipeline. Updating the pipeline increases the version number of the pipeline
         /// by 1.
         /// </summary>
@@ -3209,7 +3205,7 @@ namespace Amazon.CodePipeline
 
         /// <summary>
         /// Updates a specified pipeline with edits or changes to its structure. Use a JSON file
-        /// with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure
+        /// with the pipeline structure and <c>UpdatePipeline</c> to provide the full structure
         /// of the pipeline. Updating the pipeline increases the version number of the pipeline
         /// by 1.
         /// </summary>

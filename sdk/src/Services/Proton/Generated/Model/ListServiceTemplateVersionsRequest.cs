@@ -43,12 +43,11 @@ namespace Amazon.Proton.Model
         /// Gets and sets the property MajorVersion. 
         /// <para>
         /// To view a list of minor of versions under a major version of a service template, include
-        /// <code>major Version</code>.
+        /// <c>major Version</c>.
         /// </para>
         ///  
         /// <para>
-        /// To view a list of major versions of a service template, <i>exclude</i> <code>major
-        /// Version</code>.
+        /// To view a list of major versions of a service template, <i>exclude</i> <c>major Version</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

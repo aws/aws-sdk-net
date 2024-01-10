@@ -60,8 +60,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupDefinitions. 
         /// <para>
-        /// The groups that are specified by the <code>Filter</code> or <code>GroupBy</code> parameters
-        /// in the request.
+        /// The groups that are specified by the <c>Filter</c> or <c>GroupBy</c> parameters in
+        /// the request.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupDefinitions

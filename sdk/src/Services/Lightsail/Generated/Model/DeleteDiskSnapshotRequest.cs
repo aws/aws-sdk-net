@@ -42,9 +42,9 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>delete disk snapshot</code> operation supports tag-based access control
-    /// via resource tags applied to the resource identified by <code>disk snapshot name</code>.
-    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>delete disk snapshot</c> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by <c>disk snapshot name</c>. For more information,
+    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -55,7 +55,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskSnapshotName. 
         /// <para>
-        /// The name of the disk snapshot you want to delete (<code>my-disk-snapshot</code>).
+        /// The name of the disk snapshot you want to delete (<c>my-disk-snapshot</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -244,19 +244,19 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Completed</code>: The code review is complete.
+        ///  <c>Completed</c>: The code review is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Pending</code>: The code review started and has not completed or failed.
+        ///  <c>Pending</c>: The code review started and has not completed or failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: The code review failed.
+        ///  <c>Failed</c>: The code review failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code>: The code review is being deleted.
+        ///  <c>Deleting</c>: The code review is being deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

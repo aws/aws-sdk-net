@@ -80,7 +80,7 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
         /// DescribeConnectionAliases</a> to make sure that the current state of the connection
-        /// alias is <code>CREATED</code>.
+        /// alias is <c>CREATED</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -119,7 +119,7 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
         /// DescribeConnectionAliases</a> to make sure that the current state of the connection
-        /// alias is <code>CREATED</code>.
+        /// alias is <c>CREATED</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1088,14 +1088,14 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
-        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// The <c>MANUAL</c> running mode value is only supported by Amazon WorkSpaces Core.
+        /// Contact your account team to be allow-listed to use this value. For more information,
         /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because
-        /// <code>WSP</code> is the default protocol for those bundles.
+        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
+        /// is the default protocol for those bundles.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1129,14 +1129,14 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
-        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// The <c>MANUAL</c> running mode value is only supported by Amazon WorkSpaces Core.
+        /// Contact your account team to be allow-listed to use this value. For more information,
         /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You don't need to specify the <code>PCOIP</code> protocol for Linux bundles because
-        /// <code>WSP</code> is the default protocol for those bundles.
+        /// You don't need to specify the <c>PCOIP</c> protocol for Linux bundles because <c>WSP</c>
+        /// is the default protocol for those bundles.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2824,7 +2824,7 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
         /// DescribeConnectionAliases</a> to make sure that the current state of the connection
-        /// alias is <code>CREATED</code>.
+        /// alias is <c>CREATED</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2861,7 +2861,7 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
         /// DescribeConnectionAliases</a> to make sure that the current state of the connection
-        /// alias is <code>CREATED</code>.
+        /// alias is <c>CREATED</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3027,9 +3027,9 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code>
-        /// parameters are mutually exclusive. You can specify only one parameter for each platform
-        /// type, but not both.
+        /// In each platform type, the <c>SupportEmail</c> and <c>SupportLink</c> parameters are
+        /// mutually exclusive. You can specify only one parameter for each platform type, but
+        /// not both.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3080,9 +3080,9 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code>
-        /// parameters are mutually exclusive. You can specify only one parameter for each platform
-        /// type, but not both.
+        /// In each platform type, the <c>SupportEmail</c> and <c>SupportLink</c> parameters are
+        /// mutually exclusive. You can specify only one parameter for each platform type, but
+        /// not both.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3196,7 +3196,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// This operation can be run only by Amazon Web Services accounts that are enabled for
-        /// BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+        /// BYOL. If your account isn't enabled for BYOL, you'll receive an <c>AccessDeniedException</c>
         /// error.
         /// </para>
         ///  
@@ -3228,7 +3228,7 @@ namespace Amazon.WorkSpaces
         ///  
         /// <para>
         /// This operation can be run only by Amazon Web Services accounts that are enabled for
-        /// BYOL. If your account isn't enabled for BYOL, you'll receive an <code>AccessDeniedException</code>
+        /// BYOL. If your account isn't enabled for BYOL, you'll receive an <c>AccessDeniedException</c>
         /// error.
         /// </para>
         ///  
@@ -3266,10 +3266,10 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// The migration process recreates the WorkSpace by using a new root volume from the
         /// target bundle image and the user volume from the last available snapshot of the original
-        /// WorkSpace. During migration, the original <code>D:\Users\%USERNAME%</code> user profile
-        /// folder is renamed to <code>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>. A
-        /// new <code>D:\Users\%USERNAME%\</code> folder is generated by the new OS. Certain files
-        /// in the old user profile are moved to the new user profile.
+        /// WorkSpace. During migration, the original <c>D:\Users\%USERNAME%</c> user profile
+        /// folder is renamed to <c>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</c>. A new <c>D:\Users\%USERNAME%\</c>
+        /// folder is generated by the new OS. Certain files in the old user profile are moved
+        /// to the new user profile.
         /// </para>
         ///  
         /// <para>
@@ -3312,10 +3312,10 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// The migration process recreates the WorkSpace by using a new root volume from the
         /// target bundle image and the user volume from the last available snapshot of the original
-        /// WorkSpace. During migration, the original <code>D:\Users\%USERNAME%</code> user profile
-        /// folder is renamed to <code>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</code>. A
-        /// new <code>D:\Users\%USERNAME%\</code> folder is generated by the new OS. Certain files
-        /// in the old user profile are moved to the new user profile.
+        /// WorkSpace. During migration, the original <c>D:\Users\%USERNAME%</c> user profile
+        /// folder is renamed to <c>D:\Users\%USERNAME%MMddyyTHHmmss%.NotMigrated</c>. A new <c>D:\Users\%USERNAME%\</c>
+        /// folder is generated by the new OS. Certain files in the old user profile are moved
+        /// to the new user profile.
         /// </para>
         ///  
         /// <para>
@@ -3723,8 +3723,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
-        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// The <c>MANUAL</c> running mode value is only supported by Amazon WorkSpaces Core.
+        /// Contact your account team to be allow-listed to use this value. For more information,
         /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
         /// </para>
         ///  </note>
@@ -3767,8 +3767,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>MANUAL</code> running mode value is only supported by Amazon WorkSpaces
-        /// Core. Contact your account team to be allow-listed to use this value. For more information,
+        /// The <c>MANUAL</c> running mode value is only supported by Amazon WorkSpaces Core.
+        /// Contact your account team to be allow-listed to use this value. For more information,
         /// see <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
         /// </para>
         ///  </note>
@@ -3815,10 +3815,10 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+        /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <c>ADMIN_MAINTENANCE</c>.
         /// WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild,
         /// or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into
-        /// a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+        /// a WorkSpace in the <c>ADMIN_MAINTENANCE</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState service method.</param>
@@ -3846,10 +3846,10 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <code>ADMIN_MAINTENANCE</code>.
+        /// To maintain a WorkSpace without being interrupted, set the WorkSpace state to <c>ADMIN_MAINTENANCE</c>.
         /// WorkSpaces in this state do not respond to requests to reboot, stop, start, rebuild,
         /// or restore. An AutoStop WorkSpace in this state is not stopped. Users cannot log into
-        /// a WorkSpace in the <code>ADMIN_MAINTENANCE</code> state.
+        /// a WorkSpace in the <c>ADMIN_MAINTENANCE</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyWorkspaceState service method.</param>
@@ -3883,7 +3883,7 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
+        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c> or <c>UNHEALTHY</c>.
         /// </para>
         ///  
         /// <para>
@@ -3906,7 +3906,7 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot reboot a WorkSpace unless its state is <code>AVAILABLE</code> or <code>UNHEALTHY</code>.
+        /// You cannot reboot a WorkSpace unless its state is <c>AVAILABLE</c> or <c>UNHEALTHY</c>.
         /// </para>
         ///  
         /// <para>
@@ -3935,8 +3935,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-        /// <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
+        /// You cannot rebuild a WorkSpace unless its state is <c>AVAILABLE</c>, <c>ERROR</c>,
+        /// <c>UNHEALTHY</c>, <c>STOPPED</c>, or <c>REBOOTING</c>.
         /// </para>
         ///  
         /// <para>
@@ -3966,8 +3966,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot rebuild a WorkSpace unless its state is <code>AVAILABLE</code>, <code>ERROR</code>,
-        /// <code>UNHEALTHY</code>, <code>STOPPED</code>, or <code>REBOOTING</code>.
+        /// You cannot rebuild a WorkSpace unless its state is <c>AVAILABLE</c>, <c>ERROR</c>,
+        /// <c>UNHEALTHY</c>, <c>STOPPED</c>, or <c>REBOOTING</c>.
         /// </para>
         ///  
         /// <para>
@@ -4099,8 +4099,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
-        /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+        /// You cannot restore a WorkSpace unless its state is <c> AVAILABLE</c>, <c>ERROR</c>,
+        /// <c>UNHEALTHY</c>, or <c>STOPPED</c>.
         /// </para>
         ///  
         /// <para>
@@ -4138,8 +4138,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot restore a WorkSpace unless its state is <code> AVAILABLE</code>, <code>ERROR</code>,
-        /// <code>UNHEALTHY</code>, or <code>STOPPED</code>.
+        /// You cannot restore a WorkSpace unless its state is <c> AVAILABLE</c>, <c>ERROR</c>,
+        /// <c>UNHEALTHY</c>, or <c>STOPPED</c>.
         /// </para>
         ///  
         /// <para>
@@ -4235,8 +4235,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code>
-        /// and a state of <code>STOPPED</code>.
+        /// You cannot start a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
+        /// state of <c>STOPPED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
@@ -4252,8 +4252,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot start a WorkSpace unless it has a running mode of <code>AutoStop</code>
-        /// and a state of <code>STOPPED</code>.
+        /// You cannot start a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
+        /// state of <c>STOPPED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartWorkspaces service method.</param>
@@ -4275,9 +4275,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code>
-        /// and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>,
-        /// or <code>ERROR</code>.
+        /// You cannot stop a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
+        /// state of <c>AVAILABLE</c>, <c>IMPAIRED</c>, <c>UNHEALTHY</c>, or <c>ERROR</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>
@@ -4293,9 +4292,8 @@ namespace Amazon.WorkSpaces
         /// 
         ///  
         /// <para>
-        /// You cannot stop a WorkSpace unless it has a running mode of <code>AutoStop</code>
-        /// and a state of <code>AVAILABLE</code>, <code>IMPAIRED</code>, <code>UNHEALTHY</code>,
-        /// or <code>ERROR</code>.
+        /// You cannot stop a WorkSpace unless it has a running mode of <c>AutoStop</c> and a
+        /// state of <c>AVAILABLE</c>, <c>IMPAIRED</c>, <c>UNHEALTHY</c>, or <c>ERROR</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopWorkspaces service method.</param>
@@ -4323,15 +4321,15 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </important> 
         /// <para>
-        /// You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
+        /// You can terminate a WorkSpace that is in any state except <c>SUSPENDED</c>.
         /// </para>
         ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have been completely
-        /// terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-        /// returned only briefly before the WorkSpace directory metadata is cleaned up, so this
-        /// state is rarely returned. To confirm that a WorkSpace is terminated, check for the
-        /// WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+        /// terminated. After a WorkSpace is terminated, the <c>TERMINATED</c> state is returned
+        /// only briefly before the WorkSpace directory metadata is cleaned up, so this state
+        /// is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace
+        /// ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
         /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
         /// been successfully terminated.
         /// </para>
@@ -4371,15 +4369,15 @@ namespace Amazon.WorkSpaces
         /// </para>
         ///  </important> 
         /// <para>
-        /// You can terminate a WorkSpace that is in any state except <code>SUSPENDED</code>.
+        /// You can terminate a WorkSpace that is in any state except <c>SUSPENDED</c>.
         /// </para>
         ///  
         /// <para>
         /// This operation is asynchronous and returns before the WorkSpaces have been completely
-        /// terminated. After a WorkSpace is terminated, the <code>TERMINATED</code> state is
-        /// returned only briefly before the WorkSpace directory metadata is cleaned up, so this
-        /// state is rarely returned. To confirm that a WorkSpace is terminated, check for the
-        /// WorkSpace ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
+        /// terminated. After a WorkSpace is terminated, the <c>TERMINATED</c> state is returned
+        /// only briefly before the WorkSpace directory metadata is cleaned up, so this state
+        /// is rarely returned. To confirm that a WorkSpace is terminated, check for the WorkSpace
+        /// ID by using <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeWorkspaces.html">
         /// DescribeWorkSpaces</a>. If the WorkSpace ID isn't returned, then the WorkSpace has
         /// been successfully terminated.
         /// </para>
@@ -4474,7 +4472,7 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
         /// DescribeConnectionAliases</a> to make sure that the current state of the connection
-        /// alias is <code>CREATED</code>.
+        /// alias is <c>CREATED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4527,7 +4525,7 @@ namespace Amazon.WorkSpaces
         /// <para>
         /// Before performing this operation, call <a href="https://docs.aws.amazon.com/workspaces/latest/api/API_DescribeConnectionAliases.html">
         /// DescribeConnectionAliases</a> to make sure that the current state of the connection
-        /// alias is <code>CREATED</code>.
+        /// alias is <c>CREATED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>

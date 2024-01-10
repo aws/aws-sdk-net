@@ -40,7 +40,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property ConnectionSummaryList. 
         /// <para>
         /// A list of summary information records for connections. In a paginated request, the
-        /// request returns up to <code>MaxResults</code> records for each call.
+        /// request returns up to <c>MaxResults</c> records for each call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
+        /// If you choose <c>PRIMARY_Y_AXIS</c>, the primary Y Axis is located on the leftmost
         /// vertical axis of the chart.
         /// </para>
         /// </summary>

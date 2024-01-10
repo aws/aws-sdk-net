@@ -35,8 +35,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     /// Use this operation instead of the <a>DescribeInstanceInformationRequest$InstanceInformationFilterList</a>
-    /// method. The <code>InstanceInformationFilterList</code> method is a legacy method and
-    /// doesn't support tags. 
+    /// method. The <c>InstanceInformationFilterList</c> method is a legacy method and doesn't
+    /// support tags. 
     /// </para>
     /// </summary>
     public partial class InstanceInformationFilter

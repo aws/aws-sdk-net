@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Gets the summary returned by <code>ListFileSystemAssociation</code>, which is a summary
+    /// Gets the summary returned by <c>ListFileSystemAssociation</c>, which is a summary
     /// of a created file system association.
     /// </summary>
     public partial class FileSystemAssociationSummary
@@ -80,9 +80,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileSystemAssociationStatus. 
         /// <para>
-        /// The status of the file share. Valid Values: <code>AVAILABLE</code> | <code>CREATING</code>
-        /// | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code> | <code>ERROR</code>
-        /// 
+        /// The status of the file share. Valid Values: <c>AVAILABLE</c> | <c>CREATING</c> | <c>DELETING</c>
+        /// | <c>FORCE_DELETING</c> | <c>UPDATING</c> | <c>ERROR</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=50)]

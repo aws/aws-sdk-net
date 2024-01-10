@@ -33,8 +33,8 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// This data type is used as an element in the <code>OrderableDBInstanceOption</code>
-    /// data type.
+    /// This data type is used as an element in the <c>OrderableDBInstanceOption</c> data
+    /// type.
     /// </para>
     /// </summary>
     public partial class AvailabilityZone

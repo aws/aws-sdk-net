@@ -38,7 +38,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The unique message identifier returned from the <code>SendCustomVerificationEmail</code>
+        /// The unique message identifier returned from the <c>SendCustomVerificationEmail</c>
         /// operation.
         /// </para>
         /// </summary>

@@ -100,8 +100,8 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  The virtual device name (ephemeralN). Instance store volumes are numbered starting
         /// from 0. An instance type with 2 available instance store volumes can specify mappings
-        /// for <code>ephemeral0</code> and <code>ephemeral1</code>. The number of available instance
-        /// store volumes depends on the instance type. 
+        /// for <c>ephemeral0</c> and <c>ephemeral1</c>. The number of available instance store
+        /// volumes depends on the instance type. 
         /// </para>
         /// </summary>
         public string VirtualName

@@ -38,7 +38,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property DashboardValidationMessages. 
         /// <para>
-        /// If the input for <code>PutDashboard</code> was correct and the dashboard was successfully
+        /// If the input for <c>PutDashboard</c> was correct and the dashboard was successfully
         /// created or modified, this result is empty.
         /// </para>
         ///  

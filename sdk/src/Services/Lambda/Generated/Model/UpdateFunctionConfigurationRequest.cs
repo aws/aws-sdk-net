@@ -37,7 +37,7 @@ namespace Amazon.Lambda.Model
     /// When you update a function, Lambda provisions an instance of the function and its
     /// supporting resources. If your function connects to a VPC, this process can take a
     /// minute. During this time, you can't modify the function, but you can still invoke
-    /// it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code>
+    /// it. The <c>LastUpdateStatus</c>, <c>LastUpdateStatusReason</c>, and <c>LastUpdateStatusReasonCode</c>
     /// fields in the response from <a>GetFunctionConfiguration</a> indicate when the update
     /// is complete and the function is processing events with the new configuration. For
     /// more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda
@@ -137,8 +137,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property EphemeralStorage. 
         /// <para>
-        /// The size of the function's <code>/tmp</code> directory in MB. The default value is
-        /// 512, but can be any whole number between 512 and 10,240 MB.
+        /// The size of the function's <c>/tmp</c> directory in MB. The default value is 512,
+        /// but can be any whole number between 512 and 10,240 MB.
         /// </para>
         /// </summary>
         public EphemeralStorage EphemeralStorage
@@ -205,15 +205,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> – <code>my-function</code>.
+        ///  <b>Function name</b> – <c>my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -490,8 +490,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TracingConfig. 
         /// <para>
-        /// Set <code>Mode</code> to <code>Active</code> to sample and trace a subset of incoming
-        /// requests with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
+        /// Set <c>Mode</c> to <c>Active</c> to sample and trace a subset of incoming requests
+        /// with <a href="https://docs.aws.amazon.com/lambda/latest/dg/services-xray.html">X-Ray</a>.
         /// </para>
         /// </summary>
         public TracingConfig TracingConfig

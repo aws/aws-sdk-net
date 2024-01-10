@@ -30,10 +30,10 @@ namespace Amazon.CodeArtifact.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePackageVersionsStatus operation.
-    /// Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>,
-    /// you can update the status of package versions to <code>Archived</code>, <code>Published</code>,
-    /// or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>,
-    /// use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
+    /// Updates the status of one or more versions of a package. Using <c>UpdatePackageVersionsStatus</c>,
+    /// you can update the status of package versions to <c>Archived</c>, <c>Published</c>,
+    /// or <c>Unlisted</c>. To set the status of a package version to <c>Disposed</c>, use
+    /// <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>.
     /// </summary>
     public partial class UpdatePackageVersionsStatusRequest : AmazonCodeArtifactRequest
     {
@@ -91,10 +91,9 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property ExpectedStatus. 
         /// <para>
-        ///  The package version’s expected status before it is updated. If <code>expectedStatus</code>
+        ///  The package version’s expected status before it is updated. If <c>expectedStatus</c>
         /// is provided, the package version's status is updated only if its status at the time
-        /// <code>UpdatePackageVersionsStatus</code> is called matches <code>expectedStatus</code>.
-        /// 
+        /// <c>UpdatePackageVersionsStatus</c> is called matches <c>expectedStatus</c>. 
         /// </para>
         /// </summary>
         public PackageVersionStatus ExpectedStatus
@@ -136,11 +135,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package version is its <code>groupId</code>. 
+        ///  The namespace of a Maven package version is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package version is its <code>scope</code>. 
+        ///  The namespace of an npm package version is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -149,7 +148,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -227,9 +226,9 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property VersionRevisions. 
         /// <para>
-        ///  A map of package versions and package version revisions. The map <code>key</code>
-        /// is the package version (for example, <code>3.5.2</code>), and the map <code>value</code>
-        /// is the package version revision. 
+        ///  A map of package versions and package version revisions. The map <c>key</c> is the
+        /// package version (for example, <c>3.5.2</c>), and the map <c>value</c> is the package
+        /// version revision. 
         /// </para>
         /// </summary>
         public Dictionary<string, string> VersionRevisions

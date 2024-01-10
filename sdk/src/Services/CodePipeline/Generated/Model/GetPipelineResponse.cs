@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents the output of a <code>GetPipeline</code> action.
+    /// Represents the output of a <c>GetPipeline</c> action.
     /// </summary>
     public partial class GetPipelineResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// Represents the pipeline metadata information returned as part of the output of a <code>GetPipeline</code>
+        /// Represents the pipeline metadata information returned as part of the output of a <c>GetPipeline</c>
         /// action.
         /// </para>
         /// </summary>

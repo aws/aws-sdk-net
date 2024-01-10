@@ -31,16 +31,15 @@ namespace Amazon.DevOpsGuru.Model
     /// <summary>
     /// Container for the parameters to the SearchInsights operation.
     /// Returns a list of insights in your Amazon Web Services account. You can specify which
-    /// insights are returned by their start time, one or more statuses (<code>ONGOING</code>
-    /// or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>,
-    /// and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>).
-    /// 
+    /// insights are returned by their start time, one or more statuses (<c>ONGOING</c> or
+    /// <c>CLOSED</c>), one or more severities (<c>LOW</c>, <c>MEDIUM</c>, and <c>HIGH</c>),
+    /// and type (<c>REACTIVE</c> or <c>PROACTIVE</c>). 
     /// 
     ///  
     /// <para>
-    ///  Use the <code>Filters</code> parameter to specify status and severity search parameters.
-    /// Use the <code>Type</code> parameter to specify <code>REACTIVE</code> or <code>PROACTIVE</code>
-    /// in your search. 
+    ///  Use the <c>Filters</c> parameter to specify status and severity search parameters.
+    /// Use the <c>Type</c> parameter to specify <c>REACTIVE</c> or <c>PROACTIVE</c> in your
+    /// search. 
     /// </para>
     /// </summary>
     public partial class SearchInsightsRequest : AmazonDevOpsGuruRequest
@@ -54,8 +53,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  A <code>SearchInsightsFilters</code> object that is used to set the severity and
-        /// status filters on your insight search. 
+        ///  A <c>SearchInsightsFilters</c> object that is used to set the severity and status
+        /// filters on your insight search. 
         /// </para>
         /// </summary>
         public SearchInsightsFilters Filters
@@ -74,7 +73,7 @@ namespace Amazon.DevOpsGuru.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -133,7 +132,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of insights you are searching for (<code>REACTIVE</code> or <code>PROACTIVE</code>).
+        ///  The type of insights you are searching for (<c>REACTIVE</c> or <c>PROACTIVE</c>).
         /// 
         /// </para>
         /// </summary>

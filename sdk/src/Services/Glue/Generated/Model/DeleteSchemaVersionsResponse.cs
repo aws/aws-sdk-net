@@ -38,8 +38,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaVersionErrors. 
         /// <para>
-        /// A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and
-        /// schema version.
+        /// A list of <c>SchemaVersionErrorItem</c> objects, each containing an error and schema
+        /// version.
         /// </para>
         /// </summary>
         public List<SchemaVersionErrorItem> SchemaVersionErrors

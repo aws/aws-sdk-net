@@ -30,9 +30,9 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSignalingChannels operation.
-    /// Returns an array of <code>ChannelInfo</code> objects. Each object describes a signaling
+    /// Returns an array of <c>ChannelInfo</c> objects. Each object describes a signaling
     /// channel. To retrieve only those channels that satisfy a specific condition, you can
-    /// specify a <code>ChannelNameCondition</code>.
+    /// specify a <c>ChannelNameCondition</c>.
     /// </summary>
     public partial class ListSignalingChannelsRequest : AmazonKinesisVideoRequest
     {
@@ -80,9 +80,9 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify this parameter, when the result of a <code>ListSignalingChannels</code>
-        /// operation is truncated, the call returns the <code>NextToken</code> in the response.
-        /// To get another batch of channels, provide this token in your next request.
+        /// If you specify this parameter, when the result of a <c>ListSignalingChannels</c> operation
+        /// is truncated, the call returns the <c>NextToken</c> in the response. To get another
+        /// batch of channels, provide this token in your next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

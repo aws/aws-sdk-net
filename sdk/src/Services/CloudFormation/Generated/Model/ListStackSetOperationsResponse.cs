@@ -39,10 +39,10 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the request doesn't return all results, <code>NextToken</code> is set to a token.
-        /// To retrieve the next set of results, call <code>ListOperationResults</code> again
-        /// and assign that token to the request object's <code>NextToken</code> parameter. If
-        /// there are no remaining results, <code>NextToken</code> is set to <code>null</code>.
+        /// If the request doesn't return all results, <c>NextToken</c> is set to a token. To
+        /// retrieve the next set of results, call <c>ListOperationResults</c> again and assign
+        /// that token to the request object's <c>NextToken</c> parameter. If there are no remaining
+        /// results, <c>NextToken</c> is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -61,7 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Summaries. 
         /// <para>
-        /// A list of <code>StackSetOperationSummary</code> structures that contain summary information
+        /// A list of <c>StackSetOperationSummary</c> structures that contain summary information
         /// about operations for the specified stack set.
         /// </para>
         /// </summary>

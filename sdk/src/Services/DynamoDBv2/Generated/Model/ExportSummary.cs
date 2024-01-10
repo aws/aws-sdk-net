@@ -77,8 +77,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ExportType. 
         /// <para>
-        /// The type of export that was performed. Valid values are <code>FULL_EXPORT</code> or
-        /// <code>INCREMENTAL_EXPORT</code>.
+        /// The type of export that was performed. Valid values are <c>FULL_EXPORT</c> or <c>INCREMENTAL_EXPORT</c>.
         /// </para>
         /// </summary>
         public ExportType ExportType

@@ -37,8 +37,8 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     ///  
     /// <para>
-    /// Templates aren't associated with any environment. The <code>EnvironmentName</code>
-    /// response element is always <code>null</code>.
+    /// Templates aren't associated with any environment. The <c>EnvironmentName</c> response
+    /// element is always <c>null</c>.
     /// </para>
     ///  
     /// <para>
@@ -129,8 +129,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property EnvironmentId. 
         /// <para>
         /// The ID of an environment whose settings you want to use to create the configuration
-        /// template. You must specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>,
-        /// <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.
+        /// template. You must specify <c>EnvironmentId</c> if you don't specify <c>PlatformArn</c>,
+        /// <c>SolutionStackName</c>, or <c>SourceConfiguration</c>.
         /// </para>
         /// </summary>
         public string EnvironmentId
@@ -176,7 +176,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.
+        /// If you specify <c>PlatformArn</c>, then don't specify <c>SolutionStackName</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -196,21 +196,21 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property SolutionStackName. 
         /// <para>
         /// The name of an Elastic Beanstalk solution stack (platform version) that this configuration
-        /// uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>.
-        /// A solution stack specifies the operating system, runtime, and application server for
-        /// a configuration template. It also determines the set of configuration options as well
-        /// as the possible and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
+        /// uses. For example, <c>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</c>. A solution
+        /// stack specifies the operating system, runtime, and application server for a configuration
+        /// template. It also determines the set of configuration options as well as the possible
+        /// and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported
         /// Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>,
-        /// <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.
+        /// You must specify <c>SolutionStackName</c> if you don't specify <c>PlatformArn</c>,
+        /// <c>EnvironmentId</c>, or <c>SourceConfiguration</c>.
         /// </para>
         ///  
         /// <para>
         /// Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html">
-        /// <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution
+        /// <c>ListAvailableSolutionStacks</c> </a> API to obtain a list of available solution
         /// stacks.
         /// </para>
         /// </summary>
@@ -235,13 +235,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Values specified in <code>OptionSettings</code> override any values obtained from
-        /// the <code>SourceConfiguration</code>.
+        /// Values specified in <c>OptionSettings</c> override any values obtained from the <c>SourceConfiguration</c>.
         /// </para>
         ///  
         /// <para>
-        /// You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>,
-        /// <code>EnvironmentId</code>, or <code>SolutionStackName</code>.
+        /// You must specify <c>SourceConfiguration</c> if you don't specify <c>PlatformArn</c>,
+        /// <c>EnvironmentId</c>, or <c>SolutionStackName</c>.
         /// </para>
         ///  
         /// <para>

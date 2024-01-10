@@ -42,11 +42,11 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// For the action that is associated with a rule in a <code>WebACL</code>, specifies
-    /// the action that you want AWS WAF to perform when a web request matches all of the
-    /// conditions in a rule. For the default action in a <code>WebACL</code>, specifies the
-    /// action that you want AWS WAF to take when a web request doesn't match all of the conditions
-    /// in any of the rules in a <code>WebACL</code>. 
+    /// For the action that is associated with a rule in a <c>WebACL</c>, specifies the action
+    /// that you want AWS WAF to perform when a web request matches all of the conditions
+    /// in a rule. For the default action in a <c>WebACL</c>, specifies the action that you
+    /// want AWS WAF to take when a web request doesn't match all of the conditions in any
+    /// of the rules in a <c>WebACL</c>. 
     /// </para>
     /// </summary>
     public partial class WafAction
@@ -57,22 +57,22 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Specifies how you want AWS WAF to respond to requests that match the settings in a
-        /// <code>Rule</code>. Valid settings include the following:
+        /// <c>Rule</c>. Valid settings include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALLOW</code>: AWS WAF allows requests
+        ///  <c>ALLOW</c>: AWS WAF allows requests
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BLOCK</code>: AWS WAF blocks requests
+        ///  <c>BLOCK</c>: AWS WAF blocks requests
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COUNT</code>: AWS WAF increments a counter of the requests that match all of
-        /// the conditions in the rule. AWS WAF then continues to inspect the web request based
-        /// on the remaining rules in the web ACL. You can't specify <code>COUNT</code> for the
-        /// default action for a <code>WebACL</code>.
+        ///  <c>COUNT</c>: AWS WAF increments a counter of the requests that match all of the
+        /// conditions in the rule. AWS WAF then continues to inspect the web request based on
+        /// the remaining rules in the web ACL. You can't specify <c>COUNT</c> for the default
+        /// action for a <c>WebACL</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

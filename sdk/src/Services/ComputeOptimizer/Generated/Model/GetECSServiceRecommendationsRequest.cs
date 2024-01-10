@@ -103,7 +103,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <c>nextToken</c>
         /// value.
         /// </para>
         /// </summary>
@@ -149,8 +149,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
-        /// 
+        ///  <c>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</c> 
         /// </para>
         /// </summary>
         public List<string> ServiceArns

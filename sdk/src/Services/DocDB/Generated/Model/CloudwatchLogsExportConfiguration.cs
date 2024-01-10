@@ -34,9 +34,9 @@ namespace Amazon.DocDB.Model
     /// 
     ///  
     /// <para>
-    /// The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
-    /// which logs are exported (or not exported) to CloudWatch Logs. The values within these
-    /// arrays depend on the engine that is being used.
+    /// The <c>EnableLogTypes</c> and <c>DisableLogTypes</c> arrays determine which logs are
+    /// exported (or not exported) to CloudWatch Logs. The values within these arrays depend
+    /// on the engine that is being used.
     /// </para>
     /// </summary>
     public partial class CloudwatchLogsExportConfiguration

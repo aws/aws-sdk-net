@@ -59,9 +59,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property ValueAsString. 
         /// <para>
-        /// The value in string format associated with a feature. Used when your <code>CollectionType</code>
-        /// is <code>None</code>. Note that features types can be <code>String</code>, <code>Integral</code>,
-        /// or <code>Fractional</code>. This value represents all three types as a string.
+        /// The value in string format associated with a feature. Used when your <c>CollectionType</c>
+        /// is <c>None</c>. Note that features types can be <c>String</c>, <c>Integral</c>, or
+        /// <c>Fractional</c>. This value represents all three types as a string.
         /// </para>
         /// </summary>
         [AWSProperty(Max=358400)]
@@ -80,10 +80,10 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property ValueAsStringList. 
         /// <para>
-        /// The list of values in string format associated with a feature. Used when your <code>CollectionType</code>
-        /// is a <code>List</code>, <code>Set</code>, or <code>Vector</code>. Note that features
-        /// types can be <code>String</code>, <code>Integral</code>, or <code>Fractional</code>.
-        /// These values represents all three types as a string.
+        /// The list of values in string format associated with a feature. Used when your <c>CollectionType</c>
+        /// is a <c>List</c>, <c>Set</c>, or <c>Vector</c>. Note that features types can be <c>String</c>,
+        /// <c>Integral</c>, or <c>Fractional</c>. These values represents all three types as
+        /// a string.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=358400)]

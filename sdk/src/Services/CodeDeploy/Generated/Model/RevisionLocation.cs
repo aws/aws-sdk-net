@@ -95,9 +95,9 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AppSpecContent: An <code>AppSpecContent</code> object that contains the contents of
-        /// an AppSpec file for an Lambda or Amazon ECS deployment. The content is formatted as
-        /// JSON or YAML stored as a RawString.
+        /// AppSpecContent: An <c>AppSpecContent</c> object that contains the contents of an AppSpec
+        /// file for an Lambda or Amazon ECS deployment. The content is formatted as JSON or YAML
+        /// stored as a RawString.
         /// </para>
         ///  </li> </ul>
         /// </summary>

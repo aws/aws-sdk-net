@@ -157,7 +157,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaName. 
         /// <para>
-        /// The name of the Cloudwatch log group to read from. For example, <code>/aws-glue/jobs/output</code>.
+        /// The name of the Cloudwatch log group to read from. For example, <c>/aws-glue/jobs/output</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

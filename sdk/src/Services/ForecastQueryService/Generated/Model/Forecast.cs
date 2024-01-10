@@ -59,10 +59,10 @@ namespace Amazon.ForecastQueryService.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default setting is <code>["0.1", "0.5", "0.9"]</code>. Use the optional <code>ForecastTypes</code>
+        /// The default setting is <c>["0.1", "0.5", "0.9"]</c>. Use the optional <c>ForecastTypes</c>
         /// parameter of the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateForecast.html">CreateForecast</a>
         /// operation to change the values. The values will vary depending on how this is set,
-        /// with a minimum of <code>1</code> and a maximum of <code>5.</code> 
+        /// with a minimum of <c>1</c> and a maximum of <c>5.</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, List<DataPoint>> Predictions

@@ -58,7 +58,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property Transactions. 
         /// <para>
-        /// A list of transactions. The record for each transaction is a <code>TransactionDescription</code>
+        /// A list of transactions. The record for each transaction is a <c>TransactionDescription</c>
         /// object.
         /// </para>
         /// </summary>

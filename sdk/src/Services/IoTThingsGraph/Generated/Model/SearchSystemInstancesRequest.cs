@@ -41,8 +41,8 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Optional filter to apply to the search. Valid filters are <code>SYSTEM_TEMPLATE_ID</code>,
-        /// <code>STATUS</code>, and <code>GREENGRASS_GROUP_NAME</code>.
+        /// Optional filter to apply to the search. Valid filters are <c>SYSTEM_TEMPLATE_ID</c>,
+        /// <c>STATUS</c>, and <c>GREENGRASS_GROUP_NAME</c>.
         /// </para>
         ///  
         /// <para>

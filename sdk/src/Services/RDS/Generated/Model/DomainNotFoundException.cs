@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>Domain</code> doesn't refer to an existing Active Directory domain.
+    /// <c>Domain</c> doesn't refer to an existing Active Directory domain.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

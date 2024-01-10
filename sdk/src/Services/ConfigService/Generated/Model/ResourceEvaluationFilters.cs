@@ -60,7 +60,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property EvaluationMode. 
         /// <para>
         /// Filters all resource evaluations results based on an evaluation mode. the valid value
-        /// for this API is <code>Proactive</code>.
+        /// for this API is <c>Proactive</c>.
         /// </para>
         /// </summary>
         public EvaluationMode EvaluationMode
@@ -78,7 +78,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TimeWindow. 
         /// <para>
-        /// Returns a <code>TimeWindow</code> object.
+        /// Returns a <c>TimeWindow</c> object.
         /// </para>
         /// </summary>
         public TimeWindow TimeWindow

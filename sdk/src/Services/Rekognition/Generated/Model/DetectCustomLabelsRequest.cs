@@ -41,7 +41,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// You specify which version of a model version to use by using the <code>ProjectVersionArn</code>
+    /// You specify which version of a model version to use by using the <c>ProjectVersionArn</c>
     /// input parameter. 
     /// </para>
     ///  
@@ -53,30 +53,29 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    ///  For each object that the model version detects on an image, the API returns a (<code>CustomLabel</code>)
-    /// object in an array (<code>CustomLabels</code>). Each <code>CustomLabel</code> object
-    /// provides the label name (<code>Name</code>), the level of confidence that the image
-    /// contains the object (<code>Confidence</code>), and object location information, if
-    /// it exists, for the label on the image (<code>Geometry</code>). 
+    ///  For each object that the model version detects on an image, the API returns a (<c>CustomLabel</c>)
+    /// object in an array (<c>CustomLabels</c>). Each <c>CustomLabel</c> object provides
+    /// the label name (<c>Name</c>), the level of confidence that the image contains the
+    /// object (<c>Confidence</c>), and object location information, if it exists, for the
+    /// label on the image (<c>Geometry</c>). 
     /// </para>
     ///  
     /// <para>
-    /// To filter labels that are returned, specify a value for <code>MinConfidence</code>.
-    /// <code>DetectCustomLabelsLabels</code> only returns labels with a confidence that's
-    /// higher than the specified value. The value of <code>MinConfidence</code> maps to the
-    /// assumed threshold values created during training. For more information, see <i>Assumed
-    /// threshold</i> in the Amazon Rekognition Custom Labels Developer Guide. Amazon Rekognition
-    /// Custom Labels metrics expresses an assumed threshold as a floating point value between
-    /// 0-1. The range of <code>MinConfidence</code> normalizes the threshold value to a percentage
-    /// value (0-100). Confidence responses from <code>DetectCustomLabels</code> are also
-    /// returned as a percentage. You can use <code>MinConfidence</code> to change the precision
-    /// and recall or your model. For more information, see <i>Analyzing an image</i> in the
-    /// Amazon Rekognition Custom Labels Developer Guide. 
+    /// To filter labels that are returned, specify a value for <c>MinConfidence</c>. <c>DetectCustomLabelsLabels</c>
+    /// only returns labels with a confidence that's higher than the specified value. The
+    /// value of <c>MinConfidence</c> maps to the assumed threshold values created during
+    /// training. For more information, see <i>Assumed threshold</i> in the Amazon Rekognition
+    /// Custom Labels Developer Guide. Amazon Rekognition Custom Labels metrics expresses
+    /// an assumed threshold as a floating point value between 0-1. The range of <c>MinConfidence</c>
+    /// normalizes the threshold value to a percentage value (0-100). Confidence responses
+    /// from <c>DetectCustomLabels</c> are also returned as a percentage. You can use <c>MinConfidence</c>
+    /// to change the precision and recall or your model. For more information, see <i>Analyzing
+    /// an image</i> in the Amazon Rekognition Custom Labels Developer Guide. 
     /// </para>
     ///  
     /// <para>
-    /// If you don't specify a value for <code>MinConfidence</code>, <code>DetectCustomLabels</code>
-    /// returns labels based on the assumed threshold of each label.
+    /// If you don't specify a value for <c>MinConfidence</c>, <c>DetectCustomLabels</c> returns
+    /// labels based on the assumed threshold of each label.
     /// </para>
     ///  
     /// <para>
@@ -84,7 +83,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DetectCustomLabels</code>
+    /// This operation requires permissions to perform the <c>rekognition:DetectCustomLabels</c>
     /// action. 
     /// </para>
     ///  
@@ -140,12 +139,12 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property MinConfidence. 
         /// <para>
-        /// Specifies the minimum confidence level for the labels to return. <code>DetectCustomLabels</code>
+        /// Specifies the minimum confidence level for the labels to return. <c>DetectCustomLabels</c>
         /// doesn't return any labels with a confidence value that's lower than this specified
-        /// value. If you specify a value of 0, <code>DetectCustomLabels</code> returns all labels,
+        /// value. If you specify a value of 0, <c>DetectCustomLabels</c> returns all labels,
         /// regardless of the assumed threshold applied to each label. If you don't specify a
-        /// value for <code>MinConfidence</code>, <code>DetectCustomLabels</code> returns labels
-        /// based on the assumed threshold of each label.
+        /// value for <c>MinConfidence</c>, <c>DetectCustomLabels</c> returns labels based on
+        /// the assumed threshold of each label.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

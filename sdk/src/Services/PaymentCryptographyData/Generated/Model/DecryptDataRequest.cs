@@ -38,7 +38,7 @@ namespace Amazon.PaymentCryptographyData.Model
     /// <para>
     /// You can use an encryption key generated within Amazon Web Services Payment Cryptography,
     /// or you can import your own encryption key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
-    /// For this operation, the key must have <code>KeyModesOfUse</code> set to <code>Decrypt</code>.
+    /// For this operation, the key must have <c>KeyModesOfUse</c> set to <c>Decrypt</c>.
     /// In asymmetric decryption, Amazon Web Services Payment Cryptography decrypts the ciphertext
     /// using the private component of the asymmetric encryption key pair. For data encryption
     /// outside of Amazon Web Services Payment Cryptography, you can export the public component
@@ -47,11 +47,10 @@ namespace Amazon.PaymentCryptographyData.Model
     ///  
     /// <para>
     /// For symmetric and DUKPT decryption, Amazon Web Services Payment Cryptography supports
-    /// <code>TDES</code> and <code>AES</code> algorithms. For asymmetric decryption, Amazon
-    /// Web Services Payment Cryptography supports <code>RSA</code>. When you use DUKPT, for
-    /// <code>TDES</code> algorithm, the ciphertext data length must be a multiple of 16 bytes.
-    /// For <code>AES</code> algorithm, the ciphertext data length must be a multiple of 32
-    /// bytes.
+    /// <c>TDES</c> and <c>AES</c> algorithms. For asymmetric decryption, Amazon Web Services
+    /// Payment Cryptography supports <c>RSA</c>. When you use DUKPT, for <c>TDES</c> algorithm,
+    /// the ciphertext data length must be a multiple of 16 bytes. For <c>AES</c> algorithm,
+    /// the ciphertext data length must be a multiple of 32 bytes.
     /// </para>
     ///  
     /// <para>
@@ -132,7 +131,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property KeyIdentifier. 
         /// <para>
-        /// The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography
+        /// The <c>keyARN</c> of the encryption key that Amazon Web Services Payment Cryptography
         /// uses for ciphertext decryption.
         /// </para>
         /// </summary>

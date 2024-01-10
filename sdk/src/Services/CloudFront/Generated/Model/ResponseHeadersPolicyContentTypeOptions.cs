@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// Determines whether CloudFront includes the <code>X-Content-Type-Options</code> HTTP
-    /// response header with its value set to <code>nosniff</code>.
+    /// Determines whether CloudFront includes the <c>X-Content-Type-Options</c> HTTP response
+    /// header with its value set to <c>nosniff</c>.
     /// 
     ///  
     /// <para>
-    /// For more information about the <code>X-Content-Type-Options</code> HTTP response header,
+    /// For more information about the <c>X-Content-Type-Options</c> HTTP response header,
     /// see <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Content-Type-Options">X-Content-Type-Options</a>
     /// in the MDN Web Docs.
     /// </para>
@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Override. 
         /// <para>
-        /// A Boolean that determines whether CloudFront overrides the <code>X-Content-Type-Options</code>
+        /// A Boolean that determines whether CloudFront overrides the <c>X-Content-Type-Options</c>
         /// HTTP response header received from the origin with the one specified in this response
         /// headers policy.
         /// </para>

@@ -46,9 +46,9 @@ namespace Amazon.RedshiftServerless.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\",
+        ///  <c>"{\"Version\": \"2012-10-17\", \"Statement\" : [{ \"Sid\": \"AllowUserRestoreFromSnapshot\",
         /// \"Principal\":{\"AWS\": [\"739247239426\"]}, \"Action\": [\"redshift-serverless:RestoreFromSnapshot\"]
-        /// , \"Effect\": \"Allow\" }]}"</code> 
+        /// , \"Effect\": \"Allow\" }]}"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

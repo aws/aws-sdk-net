@@ -136,7 +136,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the transit gateway peering attachment. Note that the <code>initiating</code>
+        /// The state of the transit gateway peering attachment. Note that the <c>initiating</c>
         /// state has been deprecated.
         /// </para>
         /// </summary>

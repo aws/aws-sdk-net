@@ -79,8 +79,8 @@ namespace Amazon.ServiceQuotas.Model
         /// <summary>
         /// Gets and sets the property ContextScopeType. 
         /// <para>
-        /// When the <code>ContextScope</code> is <code>RESOURCE</code>, then this specifies the
-        /// resource type of the specified resource.
+        /// When the <c>ContextScope</c> is <c>RESOURCE</c>, then this specifies the resource
+        /// type of the specified resource.
         /// </para>
         /// </summary>
         public string ContextScopeType

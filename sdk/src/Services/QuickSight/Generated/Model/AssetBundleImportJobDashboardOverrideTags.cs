@@ -39,7 +39,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardIds. 
         /// <para>
-        /// A list of dashboard IDs that you want to apply overrides to. You can use <code>*</code>
+        /// A list of dashboard IDs that you want to apply overrides to. You can use <c>*</c>
         /// to override all dashboards in this asset bundle.
         /// </para>
         /// </summary>

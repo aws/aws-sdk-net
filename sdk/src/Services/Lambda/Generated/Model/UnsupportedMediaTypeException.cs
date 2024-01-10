@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// The content type of the <code>Invoke</code> request body is not JSON.
+    /// The content type of the <c>Invoke</c> request body is not JSON.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

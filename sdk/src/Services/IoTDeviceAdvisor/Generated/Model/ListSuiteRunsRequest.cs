@@ -106,8 +106,8 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SuiteDefinitionVersion. 
         /// <para>
-        /// Must be passed along with <code>suiteDefinitionId</code>. Lists the test suite runs
-        /// of the specified test suite based on suite definition version.
+        /// Must be passed along with <c>suiteDefinitionId</c>. Lists the test suite runs of the
+        /// specified test suite based on suite definition version.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=255)]

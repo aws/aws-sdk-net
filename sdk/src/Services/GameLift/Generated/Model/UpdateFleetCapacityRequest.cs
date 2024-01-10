@@ -57,14 +57,12 @@ namespace Amazon.GameLift.Model
     ///  <ul> <li> 
     /// <para>
     /// To update capacity for a fleet's home Region, or if the fleet has no remote locations,
-    /// omit the <code>Location</code> parameter. The fleet must be in <code>ACTIVE</code>
-    /// status. 
+    /// omit the <c>Location</c> parameter. The fleet must be in <c>ACTIVE</c> status. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To update capacity for a fleet's remote location, include the <code>Location</code>
-    /// parameter set to the location to be updated. The location must be in <code>ACTIVE</code>
-    /// status.
+    /// To update capacity for a fleet's remote location, include the <c>Location</c> parameter
+    /// set to the location to be updated. The location must be in <c>ACTIVE</c> status.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -75,7 +73,7 @@ namespace Amazon.GameLift.Model
     /// current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
     /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
     /// If the requested desired instance count is higher than the instance type's limit,
-    /// the <code>LimitExceeded</code> exception occurs.
+    /// the <c>LimitExceeded</c> exception occurs.
     /// </para>
     ///  
     /// <para>
@@ -141,7 +139,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The name of a remote location to update fleet capacity settings for, in the form of
-        /// an Amazon Web Services Region code such as <code>us-west-2</code>.
+        /// an Amazon Web Services Region code such as <c>us-west-2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

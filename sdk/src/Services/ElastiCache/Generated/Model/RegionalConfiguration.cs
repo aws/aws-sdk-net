@@ -78,7 +78,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReshardingConfiguration. 
         /// <para>
-        /// A list of <code>PreferredAvailabilityZones</code> objects that specifies the configuration
+        /// A list of <c>PreferredAvailabilityZones</c> objects that specifies the configuration
         /// of a node group in the resharded cluster. 
         /// </para>
         /// </summary>

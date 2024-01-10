@@ -57,16 +57,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DPDTimeoutAction. 
         /// <para>
-        /// The action to take after DPD timeout occurs. Specify <code>restart</code> to restart
-        /// the IKE initiation. Specify <code>clear</code> to end the IKE session.
+        /// The action to take after DPD timeout occurs. Specify <c>restart</c> to restart the
+        /// IKE initiation. Specify <c>clear</c> to end the IKE session.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>clear</code> | <code>none</code> | <code>restart</code> 
+        /// Valid Values: <c>clear</c> | <c>none</c> | <c>restart</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>clear</code> 
+        /// Default: <c>clear</c> 
         /// </para>
         /// </summary>
         public string DPDTimeoutAction
@@ -92,7 +92,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>30</code> 
+        /// Default: <c>30</c> 
         /// </para>
         /// </summary>
         public int DPDTimeoutSeconds
@@ -132,7 +132,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ikev1</code> | <code>ikev2</code> 
+        /// Valid values: <c>ikev1</c> | <c>ikev2</c> 
         /// </para>
         /// </summary>
         public List<IKEVersionsRequestListValue> IKEVersions
@@ -173,9 +173,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>2</code> | <code>14</code> | <code>15</code> | <code>16</code>
-        /// | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code> | <code>21</code>
-        /// | <code>22</code> | <code>23</code> | <code>24</code> 
+        /// Valid values: <c>2</c> | <c>14</c> | <c>15</c> | <c>16</c> | <c>17</c> | <c>18</c>
+        /// | <c>19</c> | <c>20</c> | <c>21</c> | <c>22</c> | <c>23</c> | <c>24</c> 
         /// </para>
         /// </summary>
         public List<Phase1DHGroupNumbersRequestListValue> Phase1DHGroupNumbers
@@ -198,8 +197,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code>
-        /// | <code>AES256-GCM-16</code> 
+        /// Valid values: <c>AES128</c> | <c>AES256</c> | <c>AES128-GCM-16</c> | <c>AES256-GCM-16</c>
+        /// 
         /// </para>
         /// </summary>
         public List<Phase1EncryptionAlgorithmsRequestListValue> Phase1EncryptionAlgorithms
@@ -222,8 +221,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
-        /// <code>SHA2-512</code> 
+        /// Valid values: <c>SHA1</c> | <c>SHA2-256</c> | <c>SHA2-384</c> | <c>SHA2-512</c> 
         /// </para>
         /// </summary>
         public List<Phase1IntegrityAlgorithmsRequestListValue> Phase1IntegrityAlgorithms
@@ -249,7 +247,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>28800</code> 
+        /// Default: <c>28800</c> 
         /// </para>
         /// </summary>
         public int Phase1LifetimeSeconds
@@ -272,9 +270,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>2</code> | <code>5</code> | <code>14</code> | <code>15</code>
-        /// | <code>16</code> | <code>17</code> | <code>18</code> | <code>19</code> | <code>20</code>
-        /// | <code>21</code> | <code>22</code> | <code>23</code> | <code>24</code> 
+        /// Valid values: <c>2</c> | <c>5</c> | <c>14</c> | <c>15</c> | <c>16</c> | <c>17</c>
+        /// | <c>18</c> | <c>19</c> | <c>20</c> | <c>21</c> | <c>22</c> | <c>23</c> | <c>24</c>
+        /// 
         /// </para>
         /// </summary>
         public List<Phase2DHGroupNumbersRequestListValue> Phase2DHGroupNumbers
@@ -297,8 +295,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>AES128</code> | <code>AES256</code> | <code>AES128-GCM-16</code>
-        /// | <code>AES256-GCM-16</code> 
+        /// Valid values: <c>AES128</c> | <c>AES256</c> | <c>AES128-GCM-16</c> | <c>AES256-GCM-16</c>
+        /// 
         /// </para>
         /// </summary>
         public List<Phase2EncryptionAlgorithmsRequestListValue> Phase2EncryptionAlgorithms
@@ -321,8 +319,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>SHA1</code> | <code>SHA2-256</code> | <code>SHA2-384</code> |
-        /// <code>SHA2-512</code> 
+        /// Valid values: <c>SHA1</c> | <c>SHA2-256</c> | <c>SHA2-384</c> | <c>SHA2-512</c> 
         /// </para>
         /// </summary>
         public List<Phase2IntegrityAlgorithmsRequestListValue> Phase2IntegrityAlgorithms
@@ -345,11 +342,11 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Constraints: A value between 900 and 3,600. The value must be less than the value
-        /// for <code>Phase1LifetimeSeconds</code>.
+        /// for <c>Phase1LifetimeSeconds</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>3600</code> 
+        /// Default: <c>3600</c> 
         /// </para>
         /// </summary>
         public int Phase2LifetimeSeconds
@@ -392,8 +389,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RekeyFuzzPercentage. 
         /// <para>
-        /// The percentage of the rekey window (determined by <code>RekeyMarginTimeSeconds</code>)
-        /// during which the rekey time is randomly selected.
+        /// The percentage of the rekey window (determined by <c>RekeyMarginTimeSeconds</c>) during
+        /// which the rekey time is randomly selected.
         /// </para>
         ///  
         /// <para>
@@ -401,7 +398,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code> 
+        /// Default: <c>100</c> 
         /// </para>
         /// </summary>
         public int RekeyFuzzPercentage
@@ -421,15 +418,15 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The margin time, in seconds, before the phase 2 lifetime expires, during which the
         /// Amazon Web Services side of the VPN connection performs an IKE rekey. The exact time
-        /// of the rekey is randomly selected based on the value for <code>RekeyFuzzPercentage</code>.
+        /// of the rekey is randomly selected based on the value for <c>RekeyFuzzPercentage</c>.
         /// </para>
         ///  
         /// <para>
-        /// Constraints: A value between 60 and half of <code>Phase2LifetimeSeconds</code>.
+        /// Constraints: A value between 60 and half of <c>Phase2LifetimeSeconds</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>540</code> 
+        /// Default: <c>540</c> 
         /// </para>
         /// </summary>
         public int RekeyMarginTimeSeconds
@@ -455,7 +452,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1024</code> 
+        /// Default: <c>1024</c> 
         /// </para>
         /// </summary>
         public int ReplayWindowSize
@@ -475,15 +472,15 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The action to take when the establishing the tunnel for the VPN connection. By default,
         /// your customer gateway device must initiate the IKE negotiation and bring up the tunnel.
-        /// Specify <code>start</code> for Amazon Web Services to initiate the IKE negotiation.
+        /// Specify <c>start</c> for Amazon Web Services to initiate the IKE negotiation.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>add</code> | <code>start</code> 
+        /// Valid Values: <c>add</c> | <c>start</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>add</code> 
+        /// Default: <c>add</c> 
         /// </para>
         /// </summary>
         public string StartupAction
@@ -506,36 +503,36 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: A size /30 CIDR block from the <code>169.254.0.0/16</code> range. The
-        /// following CIDR blocks are reserved and cannot be used:
+        /// Constraints: A size /30 CIDR block from the <c>169.254.0.0/16</c> range. The following
+        /// CIDR blocks are reserved and cannot be used:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>169.254.0.0/30</code> 
+        ///  <c>169.254.0.0/30</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>169.254.1.0/30</code> 
+        ///  <c>169.254.1.0/30</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>169.254.2.0/30</code> 
+        ///  <c>169.254.2.0/30</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>169.254.3.0/30</code> 
+        ///  <c>169.254.3.0/30</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>169.254.4.0/30</code> 
+        ///  <c>169.254.4.0/30</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>169.254.5.0/30</code> 
+        ///  <c>169.254.5.0/30</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>169.254.169.252/30</code> 
+        ///  <c>169.254.169.252/30</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -559,7 +556,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: A size /126 CIDR block from the local <code>fd00::/8</code> range.
+        /// Constraints: A size /126 CIDR block from the local <c>fd00::/8</c> range.
         /// </para>
         /// </summary>
         public string TunnelInsideIpv6Cidr

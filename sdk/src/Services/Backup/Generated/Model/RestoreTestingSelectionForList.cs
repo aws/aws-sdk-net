@@ -44,7 +44,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// This is the date and time that a restore testing selection was created, in Unix format
-        /// and Coordinated Universal Time (UTC). The value of <code>CreationTime</code> is accurate
+        /// and Coordinated Universal Time (UTC). The value of <c>CreationTime</c> is accurate
         /// to milliseconds. For example, the value 1516925490.087 represents Friday, January
         /// 26,2018 12:11:30.087 AM.
         /// </para>
@@ -66,7 +66,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target
-        /// resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// resource; for example: <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

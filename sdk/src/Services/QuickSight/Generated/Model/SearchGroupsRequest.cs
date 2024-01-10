@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchGroups operation.
-    /// Use the <code>SearchGroups</code> operation to search groups in a specified Amazon
-    /// QuickSight namespace using the supplied filters.
+    /// Use the <c>SearchGroups</c> operation to search groups in a specified Amazon QuickSight
+    /// namespace using the supplied filters.
     /// </summary>
     public partial class SearchGroupsRequest : AmazonQuickSightRequest
     {

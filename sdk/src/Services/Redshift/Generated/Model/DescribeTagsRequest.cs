@@ -36,7 +36,7 @@ namespace Amazon.Redshift.Model
     /// 
     ///  
     /// <para>
-    /// The following are limitations for <code>DescribeTags</code>: 
+    /// The following are limitations for <c>DescribeTags</c>: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -44,21 +44,21 @@ namespace Amazon.Redshift.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You cannot use the <code>MaxRecords</code> and <code>Marker</code> parameters together
-    /// with the ARN parameter.
+    /// You cannot use the <c>MaxRecords</c> and <c>Marker</c> parameters together with the
+    /// ARN parameter.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>MaxRecords</code> parameter can be a range from 10 to 50 results to return
-    /// in a request.
+    /// The <c>MaxRecords</c> parameter can be a range from 10 to 50 results to return in
+    /// a request.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// If you specify both tag keys and tag values in the same request, Amazon Redshift returns
     /// all resources that match any combination of the specified keys and values. For example,
-    /// if you have <code>owner</code> and <code>environment</code> for tag keys, and <code>admin</code>
-    /// and <code>test</code> for tag values, all resources that have any combination of those
-    /// values are returned.
+    /// if you have <c>owner</c> and <c>environment</c> for tag keys, and <c>admin</c> and
+    /// <c>test</c> for tag values, all resources that have any combination of those values
+    /// are returned.
     /// </para>
     ///  
     /// <para>
@@ -80,9 +80,9 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A value that indicates the starting point for the next set of response records in
         /// a subsequent request. If a value is returned in a response, you can retrieve the next
-        /// set of records by providing this returned marker value in the <code>marker</code>
-        /// parameter and retrying the command. If the <code>marker</code> field is empty, all
-        /// response records have been retrieved for the request. 
+        /// set of records by providing this returned marker value in the <c>marker</c> parameter
+        /// and retrying the command. If the <c>marker</c> field is empty, all response records
+        /// have been retrieved for the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -102,9 +102,9 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number or response records to return in each call. If the number of remaining
-        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
-        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
-        /// by retrying the command with the returned <code>marker</code> value. 
+        /// response records exceeds the specified <c>MaxRecords</c> value, a value is returned
+        /// in a <c>marker</c> field of the response. You can retrieve the next set of records
+        /// by retrying the command with the returned <c>marker</c> value. 
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -123,7 +123,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon Resource Name (ARN) for which you want to describe the tag or tags. For
-        /// example, <code>arn:aws:redshift:us-east-2:123456789:cluster:t1</code>. 
+        /// example, <c>arn:aws:redshift:us-east-2:123456789:cluster:t1</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -210,9 +210,9 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A tag key or keys for which you want to return all matching resources that are associated
         /// with the specified key or keys. For example, suppose that you have resources tagged
-        /// with keys called <code>owner</code> and <code>environment</code>. If you specify both
-        /// of these tag keys in the request, Amazon Redshift returns a response with all resources
-        /// that have either or both of these tag keys associated with them.
+        /// with keys called <c>owner</c> and <c>environment</c>. If you specify both of these
+        /// tag keys in the request, Amazon Redshift returns a response with all resources that
+        /// have either or both of these tag keys associated with them.
         /// </para>
         /// </summary>
         public List<string> TagKeys
@@ -232,9 +232,9 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A tag value or values for which you want to return all matching resources that are
         /// associated with the specified value or values. For example, suppose that you have
-        /// resources tagged with values called <code>admin</code> and <code>test</code>. If you
-        /// specify both of these tag values in the request, Amazon Redshift returns a response
-        /// with all resources that have either or both of these tag values associated with them.
+        /// resources tagged with values called <c>admin</c> and <c>test</c>. If you specify both
+        /// of these tag values in the request, Amazon Redshift returns a response with all resources
+        /// that have either or both of these tag values associated with them.
         /// </para>
         /// </summary>
         public List<string> TagValues

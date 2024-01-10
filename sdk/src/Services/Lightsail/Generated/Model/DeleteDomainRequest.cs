@@ -34,8 +34,8 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// The <code>delete domain</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>domain name</code>. For more information,
+    /// The <c>delete domain</c> operation supports tag-based access control via resource
+    /// tags applied to the resource identified by <c>domain name</c>. For more information,
     /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>

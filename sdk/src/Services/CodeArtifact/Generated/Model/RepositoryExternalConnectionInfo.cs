@@ -64,20 +64,20 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>npm</code>: A Node Package Manager (npm) package. 
+        ///  <c>npm</c>: A Node Package Manager (npm) package. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pypi</code>: A Python Package Index (PyPI) package. 
+        ///  <c>pypi</c>: A Python Package Index (PyPI) package. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>maven</code>: A Maven package that contains compiled code in a distributable
-        /// format, such as a JAR file. 
+        ///  <c>maven</c>: A Maven package that contains compiled code in a distributable format,
+        /// such as a JAR file. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>nuget</code>: A NuGet package. 
+        ///  <c>nuget</c>: A NuGet package. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -97,7 +97,7 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The status of the external connection of a repository. There is one valid value,
-        /// <code>Available</code>. 
+        /// <c>Available</c>. 
         /// </para>
         /// </summary>
         public ExternalConnectionStatus Status

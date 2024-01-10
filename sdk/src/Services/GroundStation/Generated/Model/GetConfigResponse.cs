@@ -43,7 +43,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigArn. 
         /// <para>
-        /// ARN of a <code>Config</code> 
+        /// ARN of a <c>Config</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigData. 
         /// <para>
-        /// Data elements in a <code>Config</code>.
+        /// Data elements in a <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,7 +81,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigId. 
         /// <para>
-        /// UUID of a <code>Config</code>.
+        /// UUID of a <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -100,7 +100,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigType. 
         /// <para>
-        /// Type of a <code>Config</code>.
+        /// Type of a <c>Config</c>.
         /// </para>
         /// </summary>
         public ConfigCapabilityType ConfigType
@@ -118,7 +118,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of a <code>Config</code>.
+        /// Name of a <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -137,7 +137,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags assigned to a <code>Config</code>.
+        /// Tags assigned to a <c>Config</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Tags

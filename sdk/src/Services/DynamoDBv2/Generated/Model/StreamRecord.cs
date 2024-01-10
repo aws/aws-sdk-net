@@ -161,19 +161,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KEYS_ONLY</code> - only the key attributes of the modified item.
+        ///  <c>KEYS_ONLY</c> - only the key attributes of the modified item.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_IMAGE</code> - the entire item, as it appeared after it was modified.
+        ///  <c>NEW_IMAGE</c> - the entire item, as it appeared after it was modified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OLD_IMAGE</code> - the entire item, as it appeared before it was modified.
+        ///  <c>OLD_IMAGE</c> - the entire item, as it appeared before it was modified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_AND_OLD_IMAGES</code> - both the new and the old item images of the item.
+        ///  <c>NEW_AND_OLD_IMAGES</c> - both the new and the old item images of the item.
         /// </para>
         ///  </li> </ul>
         /// </summary>

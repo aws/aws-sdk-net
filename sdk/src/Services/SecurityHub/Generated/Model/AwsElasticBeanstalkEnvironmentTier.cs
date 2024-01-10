@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the environment tier. Valid values are <code>WebServer</code> or <code>Worker</code>.
+        /// The name of the environment tier. Valid values are <c>WebServer</c> or <c>Worker</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of environment tier. Valid values are <code>Standard</code> or <code>SQS/HTTP</code>.
+        /// The type of environment tier. Valid values are <c>Standard</c> or <c>SQS/HTTP</c>.
         /// </para>
         /// </summary>
         public string Type

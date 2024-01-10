@@ -88,11 +88,11 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property AutoPromotionResultReason. 
         /// <para>
-        /// Indicates the reason for the <code>AutoPromotionResult</code>. For example, a model
-        /// might not be promoted if its performance was worse than the active version, if there
-        /// was an error during training, or if the retraining scheduler was using <code>MANUAL</code>
-        /// promote mode. The model will be promoted in <code>MANAGED</code> promote mode if the
-        /// performance is better than the previous model. 
+        /// Indicates the reason for the <c>AutoPromotionResult</c>. For example, a model might
+        /// not be promoted if its performance was worse than the active version, if there was
+        /// an error during training, or if the retraining scheduler was using <c>MANUAL</c> promote
+        /// mode. The model will be promoted in <c>MANAGED</c> promote mode if the performance
+        /// is better than the previous model. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

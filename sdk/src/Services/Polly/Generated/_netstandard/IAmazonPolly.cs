@@ -56,8 +56,7 @@ namespace Amazon.Polly
         /// <summary>
         /// Deletes the specified pronunciation lexicon stored in an Amazon Web Services Region.
         /// A lexicon which has been deleted is not available for speech synthesis, nor is it
-        /// possible to retrieve it using either the <code>GetLexicon</code> or <code>ListLexicon</code>
-        /// APIs.
+        /// possible to retrieve it using either the <c>GetLexicon</c> or <c>ListLexicon</c> APIs.
         /// 
         ///  
         /// <para>
@@ -101,25 +100,24 @@ namespace Amazon.Polly
         /// 
         ///  
         /// <para>
-        /// When synthesizing speech ( <code>SynthesizeSpeech</code> ), you provide the voice
-        /// ID for the voice you want from the list of voices returned by <code>DescribeVoices</code>.
+        /// When synthesizing speech ( <c>SynthesizeSpeech</c> ), you provide the voice ID for
+        /// the voice you want from the list of voices returned by <c>DescribeVoices</c>.
         /// </para>
         ///  
         /// <para>
         /// For example, you want your news reader application to read news in a specific language,
-        /// but giving a user the option to choose the voice. Using the <code>DescribeVoices</code>
+        /// but giving a user the option to choose the voice. Using the <c>DescribeVoices</c>
         /// operation you can provide the user with a list of available voices to select from.
         /// </para>
         ///  
         /// <para>
         ///  You can optionally specify a language code to filter the available voices. For example,
-        /// if you specify <code>en-US</code>, the operation returns a list of all available US
-        /// English voices. 
+        /// if you specify <c>en-US</c>, the operation returns a list of all available US English
+        /// voices. 
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>polly:DescribeVoices</code>
-        /// action.
+        /// This operation requires permissions to perform the <c>polly:DescribeVoices</c> action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVoices service method.</param>
@@ -294,7 +292,7 @@ namespace Amazon.Polly
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsAlphabetException">
         /// The alphabet specified by the lexicon is not a supported alphabet. Valid values are
-        /// <code>x-sampa</code> and <code>ipa</code>.
+        /// <c>x-sampa</c> and <c>ipa</c>.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.UnsupportedPlsLanguageException">
         /// The language specified in the lexicon is unsupported. For a list of supported languages,
@@ -311,14 +309,14 @@ namespace Amazon.Polly
 
 
         /// <summary>
-        /// Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>.
+        /// Allows the creation of an asynchronous synthesis task, by starting a new <c>SpeechSynthesisTask</c>.
         /// This operation requires all the standard information needed for speech synthesis,
         /// plus the name of an Amazon S3 bucket for the service to store the output of the synthesis
-        /// task and two optional parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>).
-        /// Once the synthesis task is created, this operation will return a <code>SpeechSynthesisTask</code>
+        /// task and two optional parameters (<c>OutputS3KeyPrefix</c> and <c>SnsTopicArn</c>).
+        /// Once the synthesis task is created, this operation will return a <c>SpeechSynthesisTask</c>
         /// object, which will include an identifier of this task as well as the current status.
-        /// The <code>SpeechSynthesisTask</code> object is available for 72 hours after starting
-        /// the asynchronous synthesis task.
+        /// The <c>SpeechSynthesisTask</c> object is available for 72 hours after starting the
+        /// asynchronous synthesis task.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSpeechSynthesisTask service method.</param>
         /// <param name="cancellationToken">
@@ -364,8 +362,8 @@ namespace Amazon.Polly
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.MarksNotSupportedForFormatException">
-        /// Speech marks are not supported for the <code>OutputFormat</code> selected. Speech
-        /// marks are only available for content in <code>json</code> format.
+        /// Speech marks are not supported for the <c>OutputFormat</c> selected. Speech marks
+        /// are only available for content in <c>json</c> format.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -374,11 +372,11 @@ namespace Amazon.Polly
         /// SSML speech marks are not supported for plain text-type input.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
-        /// The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code>
+        /// The value of the "Text" parameter is longer than the accepted limits. For the <c>SynthesizeSpeech</c>
         /// API, the limit for input text is a maximum of 6000 characters total, of which no more
-        /// than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code>
-        /// API, the maximum is 200,000 characters, of which no more than 100,000 can be billed
-        /// characters. SSML tags are not counted as billed characters.
+        /// than 3000 can be billed characters. For the <c>StartSpeechSynthesisTask</c> API, the
+        /// maximum is 200,000 characters, of which no more than 100,000 can be billed characters.
+        /// SSML tags are not counted as billed characters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/StartSpeechSynthesisTask">REST API Reference for StartSpeechSynthesisTask Operation</seealso>
         Task<StartSpeechSynthesisTaskResponse> StartSpeechSynthesisTaskAsync(StartSpeechSynthesisTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -428,8 +426,8 @@ namespace Amazon.Polly
         /// </para>
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.MarksNotSupportedForFormatException">
-        /// Speech marks are not supported for the <code>OutputFormat</code> selected. Speech
-        /// marks are only available for content in <code>json</code> format.
+        /// Speech marks are not supported for the <c>OutputFormat</c> selected. Speech marks
+        /// are only available for content in <c>json</c> format.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.ServiceFailureException">
         /// An unknown condition has caused a service failure.
@@ -438,11 +436,11 @@ namespace Amazon.Polly
         /// SSML speech marks are not supported for plain text-type input.
         /// </exception>
         /// <exception cref="Amazon.Polly.Model.TextLengthExceededException">
-        /// The value of the "Text" parameter is longer than the accepted limits. For the <code>SynthesizeSpeech</code>
+        /// The value of the "Text" parameter is longer than the accepted limits. For the <c>SynthesizeSpeech</c>
         /// API, the limit for input text is a maximum of 6000 characters total, of which no more
-        /// than 3000 can be billed characters. For the <code>StartSpeechSynthesisTask</code>
-        /// API, the maximum is 200,000 characters, of which no more than 100,000 can be billed
-        /// characters. SSML tags are not counted as billed characters.
+        /// than 3000 can be billed characters. For the <c>StartSpeechSynthesisTask</c> API, the
+        /// maximum is 200,000 characters, of which no more than 100,000 can be billed characters.
+        /// SSML tags are not counted as billed characters.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/polly-2016-06-10/SynthesizeSpeech">REST API Reference for SynthesizeSpeech Operation</seealso>
         Task<SynthesizeSpeechResponse> SynthesizeSpeechAsync(SynthesizeSpeechRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));

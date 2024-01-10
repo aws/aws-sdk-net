@@ -155,35 +155,35 @@ namespace Amazon.AppSync.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SMALL</code> 
+        ///  <c>SMALL</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MEDIUM</code> 
+        ///  <c>MEDIUM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LARGE</code> 
+        ///  <c>LARGE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>XLARGE</code> 
+        ///  <c>XLARGE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LARGE_2X</code> 
+        ///  <c>LARGE_2X</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LARGE_4X</code> 
+        ///  <c>LARGE_4X</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LARGE_8X</code> (not available in all regions)
+        ///  <c>LARGE_8X</c> (not available in all regions)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LARGE_12X</code> 
+        ///  <c>LARGE_12X</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeElasticIps</code> request.
+    /// Contains the response to a <c>DescribeElasticIps</c> request.
     /// </summary>
     public partial class DescribeElasticIpsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ElasticIps. 
         /// <para>
-        /// An <code>ElasticIps</code> object that describes the specified Elastic IP addresses.
+        /// An <c>ElasticIps</c> object that describes the specified Elastic IP addresses.
         /// </para>
         /// </summary>
         public List<ElasticIp> ElasticIps

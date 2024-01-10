@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of selected fields in the<code>CustomActionFilterOperation</code>.
+    /// The configuration of selected fields in the<c>CustomActionFilterOperation</c>.
     /// 
     ///  
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SelectedFieldOptions. 
         /// <para>
         /// A structure that contains the options that choose which fields are filtered in the
-        /// <code>CustomActionFilterOperation</code>.
+        /// <c>CustomActionFilterOperation</c>.
         /// </para>
         ///  
         /// <para>
@@ -74,7 +74,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_FIELDS</code>: Applies the filter operation to all fields.
+        ///  <c>ALL_FIELDS</c>: Applies the filter operation to all fields.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -93,7 +93,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SelectedFields. 
         /// <para>
-        /// Chooses the fields that are filtered in <code>CustomActionFilterOperation</code>.
+        /// Chooses the fields that are filtered in <c>CustomActionFilterOperation</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

@@ -31,7 +31,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Container for the parameters to the DescribeTags operation.
     /// Retrieves a list of configuration items that have tags as specified by the key-value
-    /// pairs, name and value, passed to the optional parameter <code>filters</code>.
+    /// pairs, name and value, passed to the optional parameter <c>filters</c>.
     /// 
     ///  
     /// <para>
@@ -52,7 +52,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
     ///  </li> </ul> 
     /// <para>
     /// Also, all configuration items associated with your user that have tags can be listed
-    /// if you call <code>DescribeTags</code> as is without passing any parameters.
+    /// if you call <c>DescribeTags</c> as is without passing any parameters.
     /// </para>
     /// </summary>
     public partial class DescribeTagsRequest : AmazonApplicationDiscoveryServiceRequest
@@ -65,8 +65,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// You can filter the list using a <i>key</i>-<i>value</i> format. You can separate these
-        /// items by using logical operators. Allowed filters include <code>tagKey</code>, <code>tagValue</code>,
-        /// and <code>configurationId</code>. 
+        /// items by using logical operators. Allowed filters include <c>tagKey</c>, <c>tagValue</c>,
+        /// and <c>configurationId</c>. 
         /// </para>
         /// </summary>
         public List<TagFilter> Filters

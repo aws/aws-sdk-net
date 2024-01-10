@@ -60,30 +60,30 @@ namespace Amazon.ResourceExplorer2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <b>Action</b>: <code>resource-explorer-2:CreateIndex</code> 
+    ///  <b>Action</b>: <c>resource-explorer-2:CreateIndex</c> 
     /// </para>
     ///  
     /// <para>
     ///  <b>Resource</b>: The ARN of the index (as it will exist after the operation completes)
     /// in the Amazon Web Services Region and account in which you're trying to create the
-    /// index. Use the wildcard character (<code>*</code>) at the end of the string to match
-    /// the eventual UUID. For example, the following <code>Resource</code> element restricts
-    /// the role or user to creating an index in only the <code>us-east-2</code> Region of
-    /// the specified account.
+    /// index. Use the wildcard character (<c>*</c>) at the end of the string to match the
+    /// eventual UUID. For example, the following <c>Resource</c> element restricts the role
+    /// or user to creating an index in only the <c>us-east-2</c> Region of the specified
+    /// account.
     /// </para>
     ///  
     /// <para>
-    ///  <code>"Resource": "arn:aws:resource-explorer-2:us-west-2:<i>&lt;account-id&gt;</i>:index/*"</code>
+    ///  <c>"Resource": "arn:aws:resource-explorer-2:us-west-2:<i>&lt;account-id&gt;</i>:index/*"</c>
     /// 
     /// </para>
     ///  
     /// <para>
-    /// Alternatively, you can use <code>"Resource": "*"</code> to allow the role or user
-    /// to create an index in any Region.
+    /// Alternatively, you can use <c>"Resource": "*"</c> to allow the role or user to create
+    /// an index in any Region.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Action</b>: <code>iam:CreateServiceLinkedRole</code> 
+    ///  <b>Action</b>: <c>iam:CreateServiceLinkedRole</c> 
     /// </para>
     ///  
     /// <para>

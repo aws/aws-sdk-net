@@ -41,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
-        /// One or more Availability Zones. For example, <code>us-east-2a</code>.
+        /// One or more Availability Zones. For example, <c>us-east-2a</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SourceSnapshotIds. 
         /// <para>
-        /// The IDs of one or more snapshots. For example, <code>snap-1234567890abcdef0</code>.
+        /// The IDs of one or more snapshots. For example, <c>snap-1234567890abcdef0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

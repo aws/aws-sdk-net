@@ -30,8 +30,8 @@ namespace Amazon.WorkMail.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAvailabilityConfiguration operation.
-    /// Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail
-    /// organization and domain.
+    /// Updates an existing <c>AvailabilityConfiguration</c> for the given WorkMail organization
+    /// and domain.
     /// </summary>
     public partial class UpdateAvailabilityConfigurationRequest : AmazonWorkMailRequest
     {
@@ -63,8 +63,8 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property EwsProvider. 
         /// <para>
         /// The EWS availability provider definition. The request must contain exactly one provider
-        /// definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>. The previously
-        /// stored provider will be overridden by the one provided.
+        /// definition, either <c>EwsProvider</c> or <c>LambdaProvider</c>. The previously stored
+        /// provider will be overridden by the one provided.
         /// </para>
         /// </summary>
         public EwsAvailabilityProvider EwsProvider
@@ -83,8 +83,8 @@ namespace Amazon.WorkMail.Model
         /// Gets and sets the property LambdaProvider. 
         /// <para>
         /// The Lambda availability provider definition. The request must contain exactly one
-        /// provider definition, either <code>EwsProvider</code> or <code>LambdaProvider</code>.
-        /// The previously stored provider will be overridden by the one provided.
+        /// provider definition, either <c>EwsProvider</c> or <c>LambdaProvider</c>. The previously
+        /// stored provider will be overridden by the one provided.
         /// </para>
         /// </summary>
         public LambdaAvailabilityProvider LambdaProvider
@@ -102,8 +102,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// The WorkMail organization for which the <code>AvailabilityConfiguration</code> will
-        /// be updated.
+        /// The WorkMail organization for which the <c>AvailabilityConfiguration</c> will be updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=34, Max=34)]

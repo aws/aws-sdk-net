@@ -30,8 +30,8 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the SelectResourceConfig operation.
-    /// Accepts a structured query language (SQL) <code>SELECT</code> command, performs the
-    /// corresponding search, and returns resource configurations matching the properties.
+    /// Accepts a structured query language (SQL) <c>SELECT</c> command, performs the corresponding
+    /// search, and returns resource configurations matching the properties.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Expression. 
         /// <para>
-        /// The SQL query <code>SELECT</code> command.
+        /// The SQL query <c>SELECT</c> command.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=4096)]
@@ -86,7 +86,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned in a previous request that you use to request
+        /// The <c>nextToken</c> string returned in a previous request that you use to request
         /// the next page of results in a paginated response. 
         /// </para>
         /// </summary>

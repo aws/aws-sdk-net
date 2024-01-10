@@ -63,9 +63,9 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Gets and sets the property FilterValue. 
         /// <para>
         ///  Specify the value based on the application component criteria type. For example,
-        /// if <code>applicationComponentCriteria</code> is set to <code>SERVER_ID</code> and
-        /// <code>filterValue</code> is set to <code>server1</code>, then <a>ListApplicationComponents</a>
-        /// returns all the application components running on server1. 
+        /// if <c>applicationComponentCriteria</c> is set to <c>SERVER_ID</c> and <c>filterValue</c>
+        /// is set to <c>server1</c>, then <a>ListApplicationComponents</a> returns all the application
+        /// components running on server1. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -122,7 +122,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  The token from a previous call that you use to retrieve the next set of results.
-        /// For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code>
+        /// For example, if a previous call to this action returned 100 items, but you set <c>maxResults</c>
         /// to 10. You'll receive a set of 10 results along with a token. You then use the returned
         /// token to retrieve the next set of 10. 
         /// </para>
@@ -143,8 +143,8 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        ///  Specifies whether to sort by ascending (<code>ASC</code>) or descending (<code>DESC</code>)
-        /// order. 
+        ///  Specifies whether to sort by ascending (<c>ASC</c>) or descending (<c>DESC</c>) order.
+        /// 
         /// </para>
         /// </summary>
         public SortOrder Sort

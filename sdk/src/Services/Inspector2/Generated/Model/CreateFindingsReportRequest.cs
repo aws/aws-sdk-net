@@ -30,9 +30,9 @@ namespace Amazon.Inspector2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFindingsReport operation.
-    /// Creates a finding report. By default only <code>ACTIVE</code> findings are returned
-    /// in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must
-    /// specify a value for the <code>findingStatus</code> filter criteria.
+    /// Creates a finding report. By default only <c>ACTIVE</c> findings are returned in the
+    /// report. To see <c>SUPRESSED</c> or <c>CLOSED</c> findings you must specify a value
+    /// for the <c>findingStatus</c> filter criteria.
     /// </summary>
     public partial class CreateFindingsReportRequest : AmazonInspector2Request
     {

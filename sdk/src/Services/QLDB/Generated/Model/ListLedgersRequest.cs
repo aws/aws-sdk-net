@@ -35,8 +35,8 @@ namespace Amazon.QLDB.Model
     /// 
     ///  
     /// <para>
-    /// This action returns a maximum of <code>MaxResults</code> items and is paginated so
-    /// that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.
+    /// This action returns a maximum of <c>MaxResults</c> items and is paginated so that
+    /// you can retrieve all the items by calling <c>ListLedgers</c> multiple times.
     /// </para>
     /// </summary>
     public partial class ListLedgersRequest : AmazonQLDBRequest
@@ -47,8 +47,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single <code>ListLedgers</code> request.
-        /// (The actual number of results returned might be fewer.)
+        /// The maximum number of results to return in a single <c>ListLedgers</c> request. (The
+        /// actual number of results returned might be fewer.)
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -68,8 +68,8 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A pagination token, indicating that you want to retrieve the next page of results.
-        /// If you received a value for <code>NextToken</code> in the response from a previous
-        /// <code>ListLedgers</code> call, then you should use that value as input here.
+        /// If you received a value for <c>NextToken</c> in the response from a previous <c>ListLedgers</c>
+        /// call, then you should use that value as input here.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=1024)]

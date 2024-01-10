@@ -41,9 +41,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The total number of items to return in the response. If the total number of items
-        /// available is more than the value specified, a <code>NextToken</code> is provided in
-        /// the response. To resume pagination, provide the <code>NextToken</code> value in the
-        /// as part of a subsequent call. The default value is 10.
+        /// available is more than the value specified, a <c>NextToken</c> is provided in the
+        /// response. To resume pagination, provide the <c>NextToken</c> value in the as part
+        /// of a subsequent call. The default value is 10.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

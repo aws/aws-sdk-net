@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>GetUpgradeStatus</a> </code> operation.
+    /// Container for response returned by <c> <a>GetUpgradeStatus</a> </c> operation.
     /// </summary>
     public partial class GetUpgradeStatusResponse : AmazonWebServiceResponse
     {
@@ -40,8 +40,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property StepStatus. 
         /// <para>
-        ///  One of 4 statuses that a step can go through returned as part of the <code> <a>GetUpgradeStatusResponse</a>
-        /// </code> object. The status can take one of the following values: <ul> <li>In Progress</li>
+        ///  One of 4 statuses that a step can go through returned as part of the <c> <a>GetUpgradeStatusResponse</a>
+        /// </c> object. The status can take one of the following values: <ul> <li>In Progress</li>
         /// <li>Succeeded</li> <li>Succeeded with Issues</li> <li>Failed</li> </ul> 
         /// </para>
         /// </summary>

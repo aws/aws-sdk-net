@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The <code>CreateCase</code> action definition.
+    /// The <c>CreateCase</c> action definition.
     /// </summary>
     public partial class CreateCaseActionDefinition
     {
@@ -39,7 +39,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// An array of objects with <code>Field ID</code> and <code>Value</code> data.
+        /// An array of objects with <c>Field ID</c> and <c>Value</c> data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

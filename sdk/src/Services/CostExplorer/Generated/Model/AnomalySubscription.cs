@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// An <code>AnomalySubscription</code> resource (also referred to as an alert subscription)
+    /// An <c>AnomalySubscription</c> resource (also referred to as an alert subscription)
     /// sends notifications about specific anomalies that meet an alerting criteria defined
     /// by you.
     /// 
@@ -40,16 +40,16 @@ namespace Amazon.CostExplorer.Model
     ///  
     /// <para>
     /// Anomaly subscriptions can be associated with one or more <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_AnomalyMonitor.html">
-    /// <code>AnomalyMonitor</code> </a> resources, and they only send notifications about
-    /// anomalies detected by those associated monitors. You can also configure a threshold
-    /// to further control which anomalies are included in the notifications.
+    /// <c>AnomalyMonitor</c> </a> resources, and they only send notifications about anomalies
+    /// detected by those associated monitors. You can also configure a threshold to further
+    /// control which anomalies are included in the notifications.
     /// </para>
     ///  
     /// <para>
     /// Anomalies that don’t exceed the chosen threshold and therefore don’t trigger notifications
     /// from an anomaly subscription will still be available on the console and from the <a
     /// href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetAnomalies.html">
-    /// <code>GetAnomalies</code> </a> API.
+    /// <c>GetAnomalies</c> </a> API.
     /// </para>
     /// </summary>
     public partial class AnomalySubscription
@@ -145,7 +145,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property SubscriptionArn. 
         /// <para>
-        /// The <code>AnomalySubscription</code> Amazon Resource Name (ARN). 
+        /// The <c>AnomalySubscription</c> Amazon Resource Name (ARN). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -221,12 +221,12 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
         /// object used to specify the anomalies that you want to generate alerts for. This supports
-        /// dimensions and nested expressions. The supported dimensions are <code>ANOMALY_TOTAL_IMPACT_ABSOLUTE</code>
-        /// and <code>ANOMALY_TOTAL_IMPACT_PERCENTAGE</code>, corresponding to an anomaly’s TotalImpact
+        /// dimensions and nested expressions. The supported dimensions are <c>ANOMALY_TOTAL_IMPACT_ABSOLUTE</c>
+        /// and <c>ANOMALY_TOTAL_IMPACT_PERCENTAGE</c>, corresponding to an anomaly’s TotalImpact
         /// and TotalImpactPercentage, respectively (see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Impact.html">Impact</a>
-        /// for more details). The supported nested expression types are <code>AND</code> and
-        /// <code>OR</code>. The match option <code>GREATER_THAN_OR_EQUAL</code> is required.
-        /// Values must be numbers between 0 and 10,000,000,000 in string format.
+        /// for more details). The supported nested expression types are <c>AND</c> and <c>OR</c>.
+        /// The match option <c>GREATER_THAN_OR_EQUAL</c> is required. Values must be numbers
+        /// between 0 and 10,000,000,000 in string format.
         /// </para>
         ///  
         /// <para>
@@ -239,27 +239,27 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Absolute threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
-        /// "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> 
+        /// Absolute threshold: <c>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions":
+        /// [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Percentage threshold: <code>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
-        /// "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</code> 
+        /// Percentage threshold: <c>{ "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE",
+        /// "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AND</code> two thresholds together: <code>{ "And": [ { "Dimensions": { "Key":
-        /// "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values":
-        /// [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions":
-        /// [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> 
+        ///  <c>AND</c> two thresholds together: <c>{ "And": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
+        /// "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions":
+        /// { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL"
+        /// ], "Values": [ "100" ] } } ] }</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OR</code> two thresholds together: <code>{ "Or": [ { "Dimensions": { "Key":
-        /// "ANOMALY_TOTAL_IMPACT_ABSOLUTE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values":
-        /// [ "100" ] } }, { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions":
-        /// [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } } ] }</code> 
+        ///  <c>OR</c> two thresholds together: <c>{ "Or": [ { "Dimensions": { "Key": "ANOMALY_TOTAL_IMPACT_ABSOLUTE",
+        /// "MatchOptions": [ "GREATER_THAN_OR_EQUAL" ], "Values": [ "100" ] } }, { "Dimensions":
+        /// { "Key": "ANOMALY_TOTAL_IMPACT_PERCENTAGE", "MatchOptions": [ "GREATER_THAN_OR_EQUAL"
+        /// ], "Values": [ "100" ] } } ] }</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -59,9 +59,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Comment. 
         /// <para>
-        /// The new comment for the hosted zone. If you don't specify a value for <code>Comment</code>,
-        /// Amazon Route 53 deletes the existing value of the <code>Comment</code> element, if
-        /// any.
+        /// The new comment for the hosted zone. If you don't specify a value for <c>Comment</c>,
+        /// Amazon Route 53 deletes the existing value of the <c>Comment</c> element, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]

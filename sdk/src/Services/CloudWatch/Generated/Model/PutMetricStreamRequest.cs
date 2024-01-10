@@ -41,8 +41,8 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// To create a metric stream, you must be signed in to an account that has the <code>iam:PassRole</code>
-    /// permission and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
+    /// To create a metric stream, you must be signed in to an account that has the <c>iam:PassRole</c>
+    /// permission and either the <c>CloudWatchFullAccess</c> policy or the <c>cloudwatch:PutMetricStream</c>
     /// permission.
     /// </para>
     ///  
@@ -56,26 +56,25 @@ namespace Amazon.CloudWatch.Model
     ///  </li> <li> 
     /// <para>
     /// Stream metrics from all metric namespaces in the account, except for the namespaces
-    /// that you list in <code>ExcludeFilters</code>.
+    /// that you list in <c>ExcludeFilters</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.
+    /// Stream metrics from only the metric namespaces that you list in <c>IncludeFilters</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
-    /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
-    /// use the <code>StatisticsConfigurations</code> parameter to have the metric stream
-    /// send additional statistics in the stream. Streaming additional statistics incurs additional
-    /// costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+    /// By default, a metric stream always sends the <c>MAX</c>, <c>MIN</c>, <c>SUM</c>, and
+    /// <c>SAMPLECOUNT</c> statistics for each metric that is streamed. You can use the <c>StatisticsConfigurations</c>
+    /// parameter to have the metric stream send additional statistics in the stream. Streaming
+    /// additional statistics incurs additional costs. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
     /// CloudWatch Pricing</a>. 
     /// </para>
     ///  
     /// <para>
-    /// When you use <code>PutMetricStream</code> to create a new metric stream, the stream
-    /// is created in the <code>running</code> state. If you use it to update an existing
-    /// stream, the state of the stream is not changed.
+    /// When you use <c>PutMetricStream</c> to create a new metric stream, the stream is created
+    /// in the <c>running</c> state. If you use it to update an existing stream, the state
+    /// of the stream is not changed.
     /// </para>
     ///  
     /// <para>
@@ -105,8 +104,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in
-        /// the same operation.
+        /// You cannot include <c>ExcludeFilters</c> and <c>IncludeFilters</c> in the same operation.
         /// </para>
         /// </summary>
         public List<MetricStreamFilter> ExcludeFilters
@@ -150,8 +148,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot include <code>IncludeFilters</code> and <code>ExcludeFilters</code> in
-        /// the same operation.
+        /// You cannot include <c>IncludeFilters</c> and <c>ExcludeFilters</c> in the same operation.
         /// </para>
         /// </summary>
         public List<MetricStreamFilter> IncludeFilters
@@ -169,8 +166,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property IncludeLinkedAccountsMetrics. 
         /// <para>
-        /// If you are creating a metric stream in a monitoring account, specify <code>true</code>
-        /// to include metrics from source accounts in the metric stream.
+        /// If you are creating a metric stream in a monitoring account, specify <c>true</c> to
+        /// include metrics from source accounts in the metric stream.
         /// </para>
         /// </summary>
         public bool IncludeLinkedAccountsMetrics
@@ -217,9 +214,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        /// The output format for the stream. Valid values are <code>json</code>, <code>opentelemetry1.0</code>,
-        /// and <code>opentelemetry0.7</code>. For more information about metric stream output
-        /// formats, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
+        /// The output format for the stream. Valid values are <c>json</c>, <c>opentelemetry1.0</c>,
+        /// and <c>opentelemetry0.7</c>. For more information about metric stream output formats,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
         /// Metric streams output formats</a>.
         /// </para>
         /// </summary>
@@ -269,21 +266,21 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StatisticsConfigurations. 
         /// <para>
-        /// By default, a metric stream always sends the <code>MAX</code>, <code>MIN</code>, <code>SUM</code>,
-        /// and <code>SAMPLECOUNT</code> statistics for each metric that is streamed. You can
-        /// use this parameter to have the metric stream also send additional statistics in the
-        /// stream. This array can have up to 100 members.
+        /// By default, a metric stream always sends the <c>MAX</c>, <c>MIN</c>, <c>SUM</c>, and
+        /// <c>SAMPLECOUNT</c> statistics for each metric that is streamed. You can use this parameter
+        /// to have the metric stream also send additional statistics in the stream. This array
+        /// can have up to 100 members.
         /// </para>
         ///  
         /// <para>
         /// For each entry in this array, you specify one or more metrics and the list of additional
         /// statistics to stream for those metrics. The additional statistics that you can stream
-        /// depend on the stream's <code>OutputFormat</code>. If the <code>OutputFormat</code>
-        /// is <code>json</code>, you can stream any additional statistic that is supported by
-        /// CloudWatch, listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
-        /// CloudWatch statistics definitions</a>. If the <code>OutputFormat</code> is <code>opentelemetry1.0</code>
-        /// or <code>opentelemetry0.7</code>, you can stream percentile statistics such as p95,
-        /// p99.9, and so on.
+        /// depend on the stream's <c>OutputFormat</c>. If the <c>OutputFormat</c> is <c>json</c>,
+        /// you can stream any additional statistic that is supported by CloudWatch, listed in
+        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Statistics-definitions.html.html">
+        /// CloudWatch statistics definitions</a>. If the <c>OutputFormat</c> is <c>opentelemetry1.0</c>
+        /// or <c>opentelemetry0.7</c>, you can stream percentile statistics such as p95, p99.9,
+        /// and so on.
         /// </para>
         /// </summary>
         public List<MetricStreamStatisticsConfiguration> StatisticsConfigurations

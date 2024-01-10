@@ -69,8 +69,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property AcceptAnyDate. 
         /// <para>
         /// A value that indicates to allow any date format, including invalid formats such as
-        /// 00/00/00 00:00:00, to be loaded without generating an error. You can choose <code>true</code>
-        /// or <code>false</code> (the default).
+        /// 00/00/00 00:00:00, to be loaded without generating an error. You can choose <c>true</c>
+        /// or <c>false</c> (the default).
         /// </para>
         ///  
         /// <para>
@@ -119,8 +119,8 @@ namespace Amazon.DatabaseMigrationService.Model
         ///  
         /// <para>
         /// For full load mode, DMS converts source records into .csv files and loads them to
-        /// the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <code>COPY</code> command
-        /// to upload the .csv files to the target table. The files are deleted once the <code>COPY</code>
+        /// the <i>BucketFolder/TableID</i> path. DMS uses the Redshift <c>COPY</c> command to
+        /// upload the .csv files to the target table. The files are deleted once the <c>COPY</c>
         /// operation has finished. For more information, see <a href="https://docs.aws.amazon.com/redshift/latest/dg/r_COPY.html">COPY</a>
         /// in the <i>Amazon Redshift Database Developer Guide</i>.
         /// </para>
@@ -164,8 +164,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CaseSensitiveNames. 
         /// <para>
-        /// If Amazon Redshift is configured to support case sensitive schema names, set <code>CaseSensitiveNames</code>
-        /// to <code>true</code>. The default is <code>false</code>.
+        /// If Amazon Redshift is configured to support case sensitive schema names, set <c>CaseSensitiveNames</c>
+        /// to <c>true</c>. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool CaseSensitiveNames
@@ -183,11 +183,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CompUpdate. 
         /// <para>
-        /// If you set <code>CompUpdate</code> to <code>true</code> Amazon Redshift applies automatic
-        /// compression if the table is empty. This applies even if the table columns already
-        /// have encodings other than <code>RAW</code>. If you set <code>CompUpdate</code> to
-        /// <code>false</code>, automatic compression is disabled and existing column encodings
-        /// aren't changed. The default is <code>true</code>.
+        /// If you set <c>CompUpdate</c> to <c>true</c> Amazon Redshift applies automatic compression
+        /// if the table is empty. This applies even if the table columns already have encodings
+        /// other than <c>RAW</c>. If you set <c>CompUpdate</c> to <c>false</c>, automatic compression
+        /// is disabled and existing column encodings aren't changed. The default is <c>true</c>.
         /// </para>
         /// </summary>
         public bool CompUpdate
@@ -242,14 +241,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DateFormat. 
         /// <para>
-        /// The date format that you are using. Valid values are <code>auto</code> (case-sensitive),
+        /// The date format that you are using. Valid values are <c>auto</c> (case-sensitive),
         /// your date format string enclosed in quotes, or NULL. If this parameter is left unset
-        /// (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <code>auto</code> recognizes
-        /// most strings, even some that aren't supported when you use a date format string. 
+        /// (NULL), it defaults to a format of 'YYYY-MM-DD'. Using <c>auto</c> recognizes most
+        /// strings, even some that aren't supported when you use a date format string. 
         /// </para>
         ///  
         /// <para>
-        /// If your date and time values use formats different from each other, set this to <code>auto</code>.
+        /// If your date and time values use formats different from each other, set this to <c>auto</c>.
         /// 
         /// </para>
         /// </summary>
@@ -269,8 +268,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EmptyAsNull. 
         /// <para>
         /// A value that specifies whether DMS should migrate empty CHAR and VARCHAR fields as
-        /// NULL. A value of <code>true</code> sets empty CHAR and VARCHAR fields to null. The
-        /// default is <code>false</code>.
+        /// NULL. A value of <c>true</c> sets empty CHAR and VARCHAR fields to null. The default
+        /// is <c>false</c>.
         /// </para>
         /// </summary>
         public bool EmptyAsNull
@@ -290,20 +289,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The type of server-side encryption that you want to use for your data. This encryption
         /// type is part of the endpoint settings or the extra connections attributes for Amazon
-        /// S3. You can choose either <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>.
-        /// 
+        /// S3. You can choose either <c>SSE_S3</c> (the default) or <c>SSE_KMS</c>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For the <code>ModifyEndpoint</code> operation, you can change the existing value of
-        /// the <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>.
-        /// But you can’t change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+        /// For the <c>ModifyEndpoint</c> operation, you can change the existing value of the
+        /// <c>EncryptionMode</c> parameter from <c>SSE_KMS</c> to <c>SSE_S3</c>. But you can’t
+        /// change the existing value from <c>SSE_S3</c> to <c>SSE_KMS</c>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// To use <code>SSE_S3</code>, create an Identity and Access Management (IAM) role with
-        /// a policy that allows <code>"arn:aws:s3:::*"</code> to use the following actions: <code>"s3:PutObject",
-        /// "s3:ListBucket"</code> 
+        /// To use <c>SSE_S3</c>, create an Identity and Access Management (IAM) role with a policy
+        /// that allows <c>"arn:aws:s3:::*"</c> to use the following actions: <c>"s3:PutObject",
+        /// "s3:ListBucket"</c> 
         /// </para>
         /// </summary>
         public EncryptionModeValue EncryptionMode
@@ -321,10 +319,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExplicitIds. 
         /// <para>
-        /// This setting is only valid for a full-load migration task. Set <code>ExplicitIds</code>
-        /// to <code>true</code> to have tables with <code>IDENTITY</code> columns override their
-        /// auto-generated values with explicit values loaded from the source data files used
-        /// to populate the tables. The default is <code>false</code>.
+        /// This setting is only valid for a full-load migration task. Set <c>ExplicitIds</c>
+        /// to <c>true</c> to have tables with <c>IDENTITY</c> columns override their auto-generated
+        /// values with explicit values loaded from the source data files used to populate the
+        /// tables. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool ExplicitIds
@@ -353,8 +351,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>FileTransferUploadStreams</code> accepts a value from 1 through 64. It defaults
-        /// to 10.
+        ///  <c>FileTransferUploadStreams</c> accepts a value from 1 through 64. It defaults to
+        /// 10.
         /// </para>
         /// </summary>
         public int FileTransferUploadStreams
@@ -392,8 +390,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MapBooleanAsBoolean. 
         /// <para>
         /// When true, lets Redshift migrate the boolean type as boolean. By default, Redshift
-        /// migrates booleans as <code>varchar(1)</code>. You must set this setting on both the
-        /// source and target endpoints for it to take effect.
+        /// migrates booleans as <c>varchar(1)</c>. You must set this setting on both the source
+        /// and target endpoints for it to take effect.
         /// </para>
         /// </summary>
         public bool MapBooleanAsBoolean
@@ -430,7 +428,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
-        /// The password for the user named in the <code>username</code> property.
+        /// The password for the user named in the <c>username</c> property.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -469,7 +467,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// A value that specifies to remove surrounding quotation marks from strings in the incoming
         /// data. All characters within the quotation marks, including delimiters, are retained.
-        /// Choose <code>true</code> to remove quotation marks. The default is <code>false</code>.
+        /// Choose <c>true</c> to remove quotation marks. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool RemoveQuotes
@@ -487,8 +485,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplaceChars. 
         /// <para>
-        /// A value that specifies to replaces the invalid characters specified in <code>ReplaceInvalidChars</code>,
-        /// substituting the specified characters instead. The default is <code>"?"</code>.
+        /// A value that specifies to replaces the invalid characters specified in <c>ReplaceInvalidChars</c>,
+        /// substituting the specified characters instead. The default is <c>"?"</c>.
         /// </para>
         /// </summary>
         public string ReplaceChars
@@ -506,7 +504,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplaceInvalidChars. 
         /// <para>
-        /// A list of characters that you want to replace. Use with <code>ReplaceChars</code>.
+        /// A list of characters that you want to replace. Use with <c>ReplaceChars</c>.
         /// </para>
         /// </summary>
         public string ReplaceInvalidChars
@@ -525,19 +523,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
-        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
-        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
-        /// to the Amazon Redshift endpoint.
+        /// entity and grants the required permissions to access the value in <c>SecretsManagerSecret</c>.
+        /// The role must allow the <c>iam:PassRole</c> action. <c>SecretsManagerSecret</c> has
+        /// the value of the Amazon Web Services Secrets Manager secret that allows access to
+        /// the Amazon Redshift endpoint.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
-        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
-        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
-        /// and <code>Port</code>. You can't specify both. For more information on creating this
-        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// values for this setting and <c>SecretsManagerSecretId</c>. Or you can specify clear-text
+        /// values for <c>UserName</c>, <c>Password</c>, <c>ServerName</c>, and <c>Port</c>. You
+        /// can't specify both. For more information on creating this <c>SecretsManagerSecret</c>
+        /// and the <c>SecretsManagerAccessRoleArn</c> and <c>SecretsManagerSecretId</c> required
+        /// to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
         /// Service User Guide</i>.
         /// </para>
@@ -558,8 +556,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerSecretId. 
         /// <para>
-        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
-        /// that contains the Amazon Redshift endpoint connection details.
+        /// The full ARN, partial ARN, or friendly name of the <c>SecretsManagerSecret</c> that
+        /// contains the Amazon Redshift endpoint connection details.
         /// </para>
         /// </summary>
         public string SecretsManagerSecretId
@@ -595,9 +593,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerSideEncryptionKmsKeyId. 
         /// <para>
-        /// The KMS key ID. If you are using <code>SSE_KMS</code> for the <code>EncryptionMode</code>,
-        /// provide this key ID. The key that you use needs an attached policy that enables IAM
-        /// user permissions and allows use of the key.
+        /// The KMS key ID. If you are using <c>SSE_KMS</c> for the <c>EncryptionMode</c>, provide
+        /// this key ID. The key that you use needs an attached policy that enables IAM user permissions
+        /// and allows use of the key.
         /// </para>
         /// </summary>
         public string ServerSideEncryptionKmsKeyId
@@ -616,7 +614,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that has access to the Amazon Redshift
-        /// service. The role must allow the <code>iam:PassRole</code> action.
+        /// service. The role must allow the <c>iam:PassRole</c> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn
@@ -634,15 +632,15 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TimeFormat. 
         /// <para>
-        /// The time format that you want to use. Valid values are <code>auto</code> (case-sensitive),
-        /// <code>'timeformat_string'</code>, <code>'epochsecs'</code>, or <code>'epochmillisecs'</code>.
-        /// It defaults to 10. Using <code>auto</code> recognizes most strings, even some that
-        /// aren't supported when you use a time format string. 
+        /// The time format that you want to use. Valid values are <c>auto</c> (case-sensitive),
+        /// <c>'timeformat_string'</c>, <c>'epochsecs'</c>, or <c>'epochmillisecs'</c>. It defaults
+        /// to 10. Using <c>auto</c> recognizes most strings, even some that aren't supported
+        /// when you use a time format string. 
         /// </para>
         ///  
         /// <para>
         /// If your date and time values use formats different from each other, set this parameter
-        /// to <code>auto</code>. 
+        /// to <c>auto</c>. 
         /// </para>
         /// </summary>
         public string TimeFormat
@@ -661,8 +659,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property TrimBlanks. 
         /// <para>
         /// A value that specifies to remove the trailing white space characters from a VARCHAR
-        /// string. This parameter applies only to columns with a VARCHAR data type. Choose <code>true</code>
-        /// to remove unneeded white space. The default is <code>false</code>.
+        /// string. This parameter applies only to columns with a VARCHAR data type. Choose <c>true</c>
+        /// to remove unneeded white space. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool TrimBlanks
@@ -682,8 +680,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// A value that specifies to truncate data in columns to the appropriate number of characters,
         /// so that the data fits in the column. This parameter applies only to columns with a
-        /// VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose <code>true</code>
-        /// to truncate data. The default is <code>false</code>.
+        /// VARCHAR or CHAR data type, and rows with a size of 4 MB or less. Choose <c>true</c>
+        /// to truncate data. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool TruncateColumns

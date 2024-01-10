@@ -30,8 +30,8 @@ namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
     /// Limits for given InstanceType and for each of it's role. <br/> Limits contains following
-    /// <code> <a>StorageTypes,</a> </code> <code> <a>InstanceLimits</a> </code> and <code>
-    /// <a>AdditionalLimits</a> </code>
+    /// <c> <a>StorageTypes,</a> </c> <c> <a>InstanceLimits</a> </c> and <c> <a>AdditionalLimits</a>
+    /// </c>
     /// </summary>
     public partial class Limits
     {
@@ -43,7 +43,7 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property AdditionalLimits. 
         /// <para>
         ///  List of additional limits that are specific to a given InstanceType and for each
-        /// of it's <code> <a>InstanceRole</a> </code> . 
+        /// of it's <c> <a>InstanceRole</a> </c> . 
         /// </para>
         /// </summary>
         public List<AdditionalLimit> AdditionalLimits

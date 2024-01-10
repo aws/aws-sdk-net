@@ -31,9 +31,9 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the StartEventDataStoreIngestion operation.
     /// Starts the ingestion of live events on an event data store specified as either an
-    /// ARN or the ID portion of the ARN. To start ingestion, the event data store <code>Status</code>
-    /// must be <code>STOPPED_INGESTION</code> and the <code>eventCategory</code> must be
-    /// <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+    /// ARN or the ID portion of the ARN. To start ingestion, the event data store <c>Status</c>
+    /// must be <c>STOPPED_INGESTION</c> and the <c>eventCategory</c> must be <c>Management</c>,
+    /// <c>Data</c>, or <c>ConfigurationItem</c>.
     /// </summary>
     public partial class StartEventDataStoreIngestionRequest : AmazonCloudTrailRequest
     {

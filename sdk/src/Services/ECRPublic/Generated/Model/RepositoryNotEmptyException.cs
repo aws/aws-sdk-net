@@ -30,7 +30,7 @@ namespace Amazon.ECRPublic.Model
 {
     /// <summary>
     /// The specified repository contains images. To delete a repository that contains images,
-    /// you must force the deletion with the <code>force</code> parameter.
+    /// you must force the deletion with the <c>force</c> parameter.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

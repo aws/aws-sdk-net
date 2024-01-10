@@ -70,8 +70,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The URL of the custom OpenID Connect (OIDC) provider that provides identity to let
         /// a user federate into Amazon QuickSight with an associated Identity and Access Management(IAM)
-        /// role. This parameter should only be used when <code>ExternalLoginFederationProviderType</code>
-        /// parameter is set to <code>CUSTOM_OIDC</code>.
+        /// role. This parameter should only be used when <c>ExternalLoginFederationProviderType</c>
+        /// parameter is set to <c>CUSTOM_OIDC</c>.
         /// </para>
         /// </summary>
         public string CustomFederationProviderUrl
@@ -113,7 +113,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A set of custom permissions includes any combination of these restrictions. Currently,
         /// you need to create the profile names for custom permission sets by using the Amazon
-        /// QuickSight console. Then, you use the <code>RegisterUser</code> API operation to assign
+        /// QuickSight console. Then, you use the <c>RegisterUser</c> API operation to assign
         /// the named set of permissions to a Amazon QuickSight user. 
         /// </para>
         ///  
@@ -168,21 +168,21 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
-        /// When choosing the <code>COGNITO</code> provider type, don’t use the "CustomFederationProviderUrl"
+        ///  <c>COGNITO</c>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+        /// When choosing the <c>COGNITO</c> provider type, don’t use the "CustomFederationProviderUrl"
         /// parameter which is only needed when the external provider is custom.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider. When choosing <code>CUSTOM_OIDC</code>
-        /// type, use the <code>CustomFederationProviderUrl</code> parameter to provide the custom
-        /// OIDC provider URL.
+        ///  <c>CUSTOM_OIDC</c>: Custom OpenID Connect (OIDC) provider. When choosing <c>CUSTOM_OIDC</c>
+        /// type, use the <c>CustomFederationProviderUrl</c> parameter to provide the custom OIDC
+        /// provider URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code>: This clears all the previously saved external login information
-        /// for a user. Use the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
-        /// </code> API operation to check the external login information.
+        ///  <c>NONE</c>: This clears all the previously saved external login information for
+        /// a user. Use the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeUser.html">DescribeUser</a>
+        /// </c> API operation to check the external login information.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -219,7 +219,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace. Currently, you should set this to <code>default</code>.
+        /// The namespace. Currently, you should set this to <c>default</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=64)]
@@ -243,17 +243,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READER</code>: A user who has read-only access to dashboards.
+        ///  <c>READER</c>: A user who has read-only access to dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTHOR</code>: A user who can create data sources, datasets, analyses, and
-        /// dashboards.
+        ///  <c>AUTHOR</c>: A user who can create data sources, datasets, analyses, and dashboards.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ADMIN</code>: A user who is an author, who can also manage Amazon QuickSight
-        /// settings.
+        ///  <c>ADMIN</c>: A user who is an author, who can also manage Amazon QuickSight settings.
         /// </para>
         ///  </li> </ul> 
         /// <para>

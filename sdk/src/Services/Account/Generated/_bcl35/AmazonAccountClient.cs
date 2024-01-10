@@ -736,7 +736,7 @@ namespace Amazon.Account
 
         /// <summary>
         /// Lists all the Regions for a given account and their respective opt-in statuses. Optionally,
-        /// this list can be filtered by the <code>region-opt-status-contains</code> parameter.
+        /// this list can be filtered by the <c>region-opt-status-contains</c> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRegions service method.</param>
         /// 

@@ -30,7 +30,7 @@ namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
     /// Specifies the time, in UTC format, when the service takes a daily automated snapshot
-    /// of the specified Elasticsearch domain. Default value is <code>0</code> hours.
+    /// of the specified Elasticsearch domain. Default value is <c>0</c> hours.
     /// </summary>
     public partial class SnapshotOptions
     {
@@ -40,7 +40,7 @@ namespace Amazon.Elasticsearch.Model
         /// Gets and sets the property AutomatedSnapshotStartHour. 
         /// <para>
         /// Specifies the time, in UTC format, when the service takes a daily automated snapshot
-        /// of the specified Elasticsearch domain. Default value is <code>0</code> hours.
+        /// of the specified Elasticsearch domain. Default value is <c>0</c> hours.
         /// </para>
         /// </summary>
         public int AutomatedSnapshotStartHour

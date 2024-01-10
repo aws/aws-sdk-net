@@ -30,7 +30,7 @@ namespace Amazon.NimbleStudio.Model
 {
     /// <summary>
     /// Container for the parameters to the ListStudioComponents operation.
-    /// Lists the <code>StudioComponents</code> in a studio.
+    /// Lists the <c>StudioComponents</c> in a studio.
     /// </summary>
     public partial class ListStudioComponentsRequest : AmazonNimbleStudioRequest
     {

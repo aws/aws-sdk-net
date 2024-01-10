@@ -60,7 +60,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// Specifies the parameters as a <code>BlueprintParameters</code> object.
+        /// Specifies the parameters as a <c>BlueprintParameters</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]

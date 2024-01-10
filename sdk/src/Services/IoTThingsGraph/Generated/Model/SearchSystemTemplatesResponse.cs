@@ -39,8 +39,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The string to specify as <code>nextToken</code> when you request the next page of
-        /// results.
+        /// The string to specify as <c>nextToken</c> when you request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

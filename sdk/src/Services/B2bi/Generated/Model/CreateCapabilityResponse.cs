@@ -161,7 +161,7 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Returns the type of the capability. Currently, only <code>edi</code> is supported.
+        /// Returns the type of the capability. Currently, only <c>edi</c> is supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

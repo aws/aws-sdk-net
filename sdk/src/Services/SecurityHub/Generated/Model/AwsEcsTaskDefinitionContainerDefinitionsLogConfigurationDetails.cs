@@ -48,15 +48,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>awsfirelens</code> 
+        ///  <c>awsfirelens</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>awslogs</code> 
+        ///  <c>awslogs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>splunk</code> 
+        ///  <c>splunk</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -64,39 +64,39 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>awsfirelens</code> 
+        ///  <c>awsfirelens</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>awslogs</code> 
+        ///  <c>awslogs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fluentd</code> 
+        ///  <c>fluentd</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>gelf</code> 
+        ///  <c>gelf</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>journald</code> 
+        ///  <c>journald</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>json-file</code> 
+        ///  <c>json-file</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>logentries</code> 
+        ///  <c>logentries</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>splunk</code> 
+        ///  <c>splunk</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>syslog</code> 
+        ///  <c>syslog</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,8 +30,8 @@ namespace Amazon.NetworkMonitor.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateMonitor operation.
-    /// Updates the <code>aggregationPeriod</code> for a monitor. Monitors support an <code>aggregationPeriod</code>
-    /// of either <code>30</code> or <code>60</code> seconds.
+    /// Updates the <c>aggregationPeriod</c> for a monitor. Monitors support an <c>aggregationPeriod</c>
+    /// of either <c>30</c> or <c>60</c> seconds.
     /// </summary>
     public partial class UpdateMonitorRequest : AmazonNetworkMonitorRequest
     {
@@ -41,8 +41,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property AggregationPeriod. 
         /// <para>
-        /// The aggregation time, in seconds, to change to. This must be either <code>30</code>
-        /// or <code>60</code>. 
+        /// The aggregation time, in seconds, to change to. This must be either <c>30</c> or <c>60</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=30)]
@@ -61,8 +61,8 @@ namespace Amazon.NetworkMonitor.Model
         /// <summary>
         /// Gets and sets the property MonitorName. 
         /// <para>
-        /// The name of the monitor to update. Run <code>ListMonitors</code> to get a list of
-        /// monitor names.
+        /// The name of the monitor to update. Run <c>ListMonitors</c> to get a list of monitor
+        /// names.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

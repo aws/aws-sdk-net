@@ -42,15 +42,15 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon Cognito returns an <code>Access Token has been revoked</code> error when your
-    /// app attempts to authorize a user pools API request with a revoked access token that
-    /// contains the scope <code>aws.cognito.signin.user.admin</code>.
+    /// Amazon Cognito returns an <c>Access Token has been revoked</c> error when your app
+    /// attempts to authorize a user pools API request with a revoked access token that contains
+    /// the scope <c>aws.cognito.signin.user.admin</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Amazon Cognito no longer accepts a signed-out user's ID token in a <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html">GetId
-    /// </a> request to an identity pool with <code>ServerSideTokenCheck</code> enabled for
-    /// its user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
+    /// </a> request to an identity pool with <c>ServerSideTokenCheck</c> enabled for its
+    /// user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -92,8 +92,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

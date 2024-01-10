@@ -30,8 +30,8 @@ namespace Amazon.VerifiedPermissions.Model
 {
     /// <summary>
     /// Contains additional details about the context of the request. Verified Permissions
-    /// evaluates this information in an authorization request as part of the <code>when</code>
-    /// and <code>unless</code> clauses in a policy.
+    /// evaluates this information in an authorization request as part of the <c>when</c>
+    /// and <c>unless</c> clauses in a policy.
     /// 
     ///  
     /// <para>
@@ -42,7 +42,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// Example: <code>"context":{"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}}</code>
+    /// Example: <c>"context":{"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}}</c>
     /// 
     /// </para>
     /// </summary>
@@ -58,7 +58,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</code>
+        /// Example: <c>"contextMap":{"&lt;KeyName1&gt;":{"boolean":true},"&lt;KeyName2&gt;":{"long":1234}}</c>
         /// 
         /// </para>
         /// </summary>

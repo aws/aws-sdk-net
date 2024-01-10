@@ -39,7 +39,7 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property HomeRegionControls. 
         /// <para>
-        /// An array that contains your <code>HomeRegionControl</code> objects.
+        /// An array that contains your <c>HomeRegionControl</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]
@@ -58,9 +58,9 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a <code>NextToken</code> was returned by a previous call, more results are available.
+        /// If a <c>NextToken</c> was returned by a previous call, more results are available.
         /// To retrieve the next page of results, make the call again using the returned token
-        /// in <code>NextToken</code>.
+        /// in <c>NextToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

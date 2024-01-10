@@ -137,7 +137,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ErrorDetailList. 
         /// <para>
-        /// An array of <code>ErrorDetail</code> objects associated with the change.
+        /// An array of <c>ErrorDetail</c> objects associated with the change.
         /// </para>
         /// </summary>
         public List<ErrorDetail> ErrorDetailList

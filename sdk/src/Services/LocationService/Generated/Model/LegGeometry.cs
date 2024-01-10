@@ -48,8 +48,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, <code>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</code>
-        /// 
+        /// For example, <c>[[-123.117, 49.284],[-123.115, 49.285],[-123.115, 49.285]]</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

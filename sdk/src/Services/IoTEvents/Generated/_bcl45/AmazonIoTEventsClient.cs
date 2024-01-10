@@ -730,7 +730,7 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+        /// Retrieves information about an alarm model. If you don't specify a value for the <c>alarmModelVersion</c>
         /// parameter, the latest version is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmModel service method.</param>
@@ -763,7 +763,7 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+        /// Retrieves information about an alarm model. If you don't specify a value for the <c>alarmModelVersion</c>
         /// parameter, the latest version is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAlarmModel service method.</param>
@@ -803,8 +803,8 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Describes a detector model. If the <code>version</code> parameter is not specified,
-        /// information about the latest version is returned.
+        /// Describes a detector model. If the <c>version</c> parameter is not specified, information
+        /// about the latest version is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModel service method.</param>
         /// 
@@ -836,8 +836,8 @@ namespace Amazon.IoTEvents
 
 
         /// <summary>
-        /// Describes a detector model. If the <code>version</code> parameter is not specified,
-        /// information about the latest version is returned.
+        /// Describes a detector model. If the <c>version</c> parameter is not specified, information
+        /// about the latest version is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDetectorModel service method.</param>
         /// <param name="cancellationToken">
@@ -1685,10 +1685,10 @@ namespace Amazon.IoTEvents
         /// 
         ///  
         /// <para>
-        /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
-        /// minute for the change to take effect. If you change the policy attached to the role
-        /// you specified in the <code>roleArn</code> field (for example, to correct an invalid
-        /// policy), it takes up to five minutes for that change to take effect.
+        /// If you update the value of any <c>loggingOptions</c> field, it takes up to one minute
+        /// for the change to take effect. If you change the policy attached to the role you specified
+        /// in the <c>roleArn</c> field (for example, to correct an invalid policy), it takes
+        /// up to five minutes for that change to take effect.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>
@@ -1728,10 +1728,10 @@ namespace Amazon.IoTEvents
         /// 
         ///  
         /// <para>
-        /// If you update the value of any <code>loggingOptions</code> field, it takes up to one
-        /// minute for the change to take effect. If you change the policy attached to the role
-        /// you specified in the <code>roleArn</code> field (for example, to correct an invalid
-        /// policy), it takes up to five minutes for that change to take effect.
+        /// If you update the value of any <c>loggingOptions</c> field, it takes up to one minute
+        /// for the change to take effect. If you change the policy attached to the role you specified
+        /// in the <c>roleArn</c> field (for example, to correct an invalid policy), it takes
+        /// up to five minutes for that change to take effect.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutLoggingOptions service method.</param>

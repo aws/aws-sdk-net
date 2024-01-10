@@ -49,7 +49,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AutoUpgrade. 
         /// <para>
         /// Indicates whether the target version is applied to any source DB instances that have
-        /// <code>AutoMinorVersionUpgrade</code> set to true.
+        /// <c>AutoMinorVersionUpgrade</c> set to true.
         /// </para>
         /// </summary>
         public bool AutoUpgrade

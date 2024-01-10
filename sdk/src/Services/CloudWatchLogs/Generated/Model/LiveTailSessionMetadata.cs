@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// This object contains the metadata for one <code>LiveTailSessionUpdate</code> structure.
+    /// This object contains the metadata for one <c>LiveTailSessionUpdate</c> structure.
     /// It indicates whether that update includes only a sample of 500 log events out of a
     /// larger number of ingested log events, or if it contains all of the matching log events
     /// ingested during that second of time.
@@ -41,15 +41,14 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Sampled. 
         /// <para>
-        /// If this is <code>true</code>, then more than 500 log events matched the request for
-        /// this update, and the <code>sessionResults</code> includes a sample of 500 of those
-        /// events.
+        /// If this is <c>true</c>, then more than 500 log events matched the request for this
+        /// update, and the <c>sessionResults</c> includes a sample of 500 of those events.
         /// </para>
         ///  
         /// <para>
-        /// If this is <code>false</code>, then 500 or fewer log events matched the request for
-        /// this update, so no sampling was necessary. In this case, the <code>sessionResults</code>
-        /// array includes all log events that matched your request during this time.
+        /// If this is <c>false</c>, then 500 or fewer log events matched the request for this
+        /// update, so no sampling was necessary. In this case, the <c>sessionResults</c> array
+        /// includes all log events that matched your request during this time.
         /// </para>
         /// </summary>
         public bool Sampled

@@ -58,7 +58,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property Replays. 
         /// <para>
-        /// An array of <code>Replay</code> objects that contain information about the replay.
+        /// An array of <c>Replay</c> objects that contain information about the replay.
         /// </para>
         /// </summary>
         public List<Replay> Replays

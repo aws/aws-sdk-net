@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Describes the configuration for all of a component's properties. Use <code>ComponentProperty</code>
+    /// Describes the configuration for all of a component's properties. Use <c>ComponentProperty</c>
     /// to specify the values to render or bind by default.
     /// </summary>
     public partial class ComponentProperty

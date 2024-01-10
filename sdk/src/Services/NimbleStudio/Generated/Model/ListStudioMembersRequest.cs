@@ -34,7 +34,7 @@ namespace Amazon.NimbleStudio.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>ListStudioMembers</code> only returns admin members.
+    ///  <c>ListStudioMembers</c> only returns admin members.
     /// </para>
     ///  </note>
     /// </summary>

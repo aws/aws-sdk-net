@@ -30,8 +30,8 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Describes the configuration of an event. You can bind an event and a corresponding
-    /// action to a <code>Component</code> or a <code>ComponentChild</code>. A button click
-    /// is an example of an event.
+    /// action to a <c>Component</c> or a <c>ComponentChild</c>. A button click is an example
+    /// of an event.
     /// </summary>
     public partial class ComponentEvent
     {
@@ -60,7 +60,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property BindingEvent. 
         /// <para>
-        /// Binds an event to an action on a component. When you specify a <code>bindingEvent</code>,
+        /// Binds an event to an action on a component. When you specify a <c>bindingEvent</c>,
         /// the event is called when the action is performed.
         /// </para>
         /// </summary>

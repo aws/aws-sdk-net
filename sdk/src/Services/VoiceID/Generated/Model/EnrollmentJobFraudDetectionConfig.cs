@@ -41,9 +41,9 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property FraudDetectionAction. 
         /// <para>
         /// The action to take when the given speaker is flagged by the fraud detection system.
-        /// The default value is <code>FAIL</code>, which fails the speaker enrollment. Changing
-        /// this value to <code>IGNORE</code> results in the speaker being enrolled even if they
-        /// are flagged by the fraud detection system.
+        /// The default value is <c>FAIL</c>, which fails the speaker enrollment. Changing this
+        /// value to <c>IGNORE</c> results in the speaker being enrolled even if they are flagged
+        /// by the fraud detection system.
         /// </para>
         /// </summary>
         public FraudDetectionAction FraudDetectionAction

@@ -37,8 +37,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The maximum number of items specified for <code>Array Members</code> refers to the
-    /// maximum number of hyperparameters for each range and also the maximum for the hyperparameter
+    /// The maximum number of items specified for <c>Array Members</c> refers to the maximum
+    /// number of hyperparameters for each range and also the maximum for the hyperparameter
     /// tuning job itself. That is, the sum of the number of hyperparameters for all the ranges
     /// can't exceed the maximum number specified.
     /// </para>

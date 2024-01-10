@@ -47,8 +47,8 @@ namespace Amazon.SupportApp.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API to authorize each
-    /// Slack workspace for the organization.
+    /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API to authorize each Slack
+    /// workspace for the organization.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -83,7 +83,7 @@ namespace Amazon.SupportApp.Model
         /// <summary>
         /// Gets and sets the property TeamId. 
         /// <para>
-        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
+        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <c>T012ABCDEFG</c>.
         /// Specify the Slack workspace that you want to use for your organization.
         /// </para>
         /// </summary>

@@ -42,7 +42,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property ExecutionArn. 
         /// <para>
-        /// The <code>executionArn</code> of the execution from which the Map Run was started.
+        /// The <c>executionArn</c> of the execution from which the Map Run was started.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

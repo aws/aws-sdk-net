@@ -130,7 +130,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property ProcessedInputRecords. 
         /// <para>
-        /// Stream data that was modified by the processor specified in the <code>InputProcessingConfiguration</code>
+        /// Stream data that was modified by the processor specified in the <c>InputProcessingConfiguration</c>
         /// parameter. 
         /// </para>
         /// </summary>

@@ -39,9 +39,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property HasMoreTags. 
         /// <para>
-        /// If this is <code>true</code> in the response, more tags are available. To list the
-        /// remaining tags, set <code>ExclusiveStartTagKey</code> to the key of the last tag returned
-        /// and call <code>ListTagsForDeliveryStream</code> again.
+        /// If this is <c>true</c> in the response, more tags are available. To list the remaining
+        /// tags, set <c>ExclusiveStartTagKey</c> to the key of the last tag returned and call
+        /// <c>ListTagsForDeliveryStream</c> again.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,8 +60,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags associated with <code>DeliveryStreamName</code>, starting with the
-        /// first tag after <code>ExclusiveStartTagKey</code> and up to the specified <code>Limit</code>.
+        /// A list of tags associated with <c>DeliveryStreamName</c>, starting with the first
+        /// tag after <c>ExclusiveStartTagKey</c> and up to the specified <c>Limit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

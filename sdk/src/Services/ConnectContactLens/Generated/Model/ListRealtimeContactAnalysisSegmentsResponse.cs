@@ -40,7 +40,7 @@ namespace Amazon.ConnectContactLens.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If there are additional results, this is the token for the next set of results. If
-        /// response includes <code>nextToken</code> there are two possible scenarios:
+        /// response includes <c>nextToken</c> there are two possible scenarios:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -54,7 +54,7 @@ namespace Amazon.ConnectContactLens.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If response does not include <code>nextToken</code>, the analysis is completed (successfully
+        /// If response does not include <c>nextToken</c>, the analysis is completed (successfully
         /// or failed) and there are no more segments to retrieve.
         /// </para>
         /// </summary>

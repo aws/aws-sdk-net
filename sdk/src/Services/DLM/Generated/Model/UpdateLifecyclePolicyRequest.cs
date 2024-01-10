@@ -187,14 +187,14 @@ namespace Amazon.DLM.Model
         /// If a source resource is deleted, Amazon Data Lifecycle Manager will continue to delete
         /// previously created snapshots or AMIs, up to but not including the last one, based
         /// on the specified retention period. If you want Amazon Data Lifecycle Manager to delete
-        /// all snapshots or AMIs, including the last one, specify <code>true</code>.
+        /// all snapshots or AMIs, including the last one, specify <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If a policy enters the error, disabled, or deleted state, Amazon Data Lifecycle Manager
         /// stops deleting snapshots and AMIs. If you want Amazon Data Lifecycle Manager to continue
         /// deleting snapshots or AMIs, including the last one, if the policy enters one of these
-        /// states, specify <code>true</code>.
+        /// states, specify <c>true</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

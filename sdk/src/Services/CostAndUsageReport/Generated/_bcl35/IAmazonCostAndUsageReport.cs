@@ -170,7 +170,7 @@ namespace Amazon.CostAndUsageReport
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
-        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// The specified report (<c>ReportName</c>) in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
@@ -273,7 +273,7 @@ namespace Amazon.CostAndUsageReport
         /// an existing report.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
-        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// The specified report (<c>ReportName</c>) in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
@@ -322,7 +322,7 @@ namespace Amazon.CostAndUsageReport
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
-        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// The specified report (<c>ReportName</c>) in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
@@ -371,7 +371,7 @@ namespace Amazon.CostAndUsageReport
         /// An error on the server occurred during the processing of your request. Try again later.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ResourceNotFoundException">
-        /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+        /// The specified report (<c>ReportName</c>) in the request doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.CostAndUsageReport.Model.ValidationException">
         /// The input fails to satisfy the constraints specified by an Amazon Web Services service.

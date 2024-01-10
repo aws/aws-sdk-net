@@ -38,7 +38,7 @@ namespace Amazon.MedicalImaging.Model
         /// <summary>
         /// Gets and sets the property DICOMUpdates. 
         /// <para>
-        /// The object containing <code>removableAttributes</code> and <code>updatableAttributes</code>.
+        /// The object containing <c>removableAttributes</c> and <c>updatableAttributes</c>.
         /// </para>
         /// </summary>
         public DICOMUpdates DICOMUpdates

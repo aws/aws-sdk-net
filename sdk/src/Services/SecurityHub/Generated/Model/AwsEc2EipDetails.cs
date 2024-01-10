@@ -89,8 +89,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If the address is for use with EC2 instances in a VPC, then <code>Domain</code> is
-        /// <code>vpc</code>. Otherwise, <code>Domain</code> is <code>standard</code>. 
+        /// If the address is for use with EC2 instances in a VPC, then <c>Domain</c> is <c>vpc</c>.
+        /// Otherwise, <c>Domain</c> is <c>standard</c>. 
         /// </para>
         /// </summary>
         public string Domain

@@ -86,13 +86,13 @@ namespace Amazon.ECRPublic.Model
         /// <para>
         /// Indicates whether the registry alias is the primary alias for the registry. If true,
         /// the alias is the primary registry alias and is displayed in both the repository URL
-        /// and the image URI used in the <code>docker pull</code> commands on the Amazon ECR
-        /// Public Gallery.
+        /// and the image URI used in the <c>docker pull</c> commands on the Amazon ECR Public
+        /// Gallery.
         /// </para>
         ///  <note> 
         /// <para>
         /// A registry alias that isn't the primary registry alias can be used in the repository
-        /// URI in a <code>docker pull</code> command.
+        /// URI in a <c>docker pull</c> command.
         /// </para>
         ///  </note>
         /// </summary>

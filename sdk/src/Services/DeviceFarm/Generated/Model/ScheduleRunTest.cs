@@ -71,7 +71,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>app_performance_monitoring</code>: Performance monitoring is enabled by default.
+        ///  <c>app_performance_monitoring</c>: Performance monitoring is enabled by default.
         /// Set this parameter to false to disable it.
         /// </para>
         ///  </li> </ul> 
@@ -80,7 +80,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// profile: A cucumber profile (for example, <code>my_profile_name</code>).
+        /// profile: A cucumber profile (for example, <c>my_profile_name</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -153,15 +153,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Running a single test case: <code>com.android.abc.Test1</code> 
+        /// Running a single test case: <c>com.android.abc.Test1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a single test: <code>com.android.abc.Test1#smoke</code> 
+        /// Running a single test: <c>com.android.abc.Test1#smoke</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> 
+        /// Running multiple tests: <c>com.android.abc.Test1,com.android.abc.Test2</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -173,19 +173,19 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Running a single test class: <code>LoginTests</code> 
+        /// Running a single test class: <c>LoginTests</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a multiple test classes: <code>LoginTests,SmokeTests</code> 
+        /// Running a multiple test classes: <c>LoginTests,SmokeTests</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a single test: <code>LoginTests/testValid</code> 
+        /// Running a single test: <c>LoginTests/testValid</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running multiple tests: <code>LoginTests/testValid,LoginTests/testInvalid</code> 
+        /// Running multiple tests: <c>LoginTests/testValid,LoginTests/testInvalid</c> 
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
@@ -197,15 +197,15 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Running a single test case: <code>com.android.abc.Test1</code> 
+        /// Running a single test case: <c>com.android.abc.Test1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running a single test: <code>com.android.abc.Test1#smoke</code> 
+        /// Running a single test: <c>com.android.abc.Test1#smoke</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Running multiple tests: <code>com.android.abc.Test1,com.android.abc.Test2</code> 
+        /// Running multiple tests: <c>com.android.abc.Test1,com.android.abc.Test2</c> 
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// An optional configuration within the <code>SchedulingConfig</code> to setup a recurring
+    /// An optional configuration within the <c>SchedulingConfig</c> to setup a recurring
     /// maintenance window with a predetermined start time and duration for the rollout of
     /// a job document to all devices in a target group for a job.
     /// </summary>

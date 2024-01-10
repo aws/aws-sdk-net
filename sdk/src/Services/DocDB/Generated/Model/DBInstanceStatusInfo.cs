@@ -60,8 +60,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Normal. 
         /// <para>
-        /// A Boolean value that is <code>true</code> if the instance is operating normally, or
-        /// <code>false</code> if the instance is in an error state.
+        /// A Boolean value that is <c>true</c> if the instance is operating normally, or <c>false</c>
+        /// if the instance is in an error state.
         /// </para>
         /// </summary>
         public bool Normal
@@ -79,8 +79,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Status of the instance. For a <code>StatusType</code> of read replica, the values
-        /// can be <code>replicating</code>, error, <code>stopped</code>, or <code>terminated</code>.
+        /// Status of the instance. For a <c>StatusType</c> of read replica, the values can be
+        /// <c>replicating</c>, error, <c>stopped</c>, or <c>terminated</c>.
         /// </para>
         /// </summary>
         public string Status
@@ -98,7 +98,7 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property StatusType. 
         /// <para>
-        /// This value is currently "<code>read replication</code>."
+        /// This value is currently "<c>read replication</c>."
         /// </para>
         /// </summary>
         public string StatusType

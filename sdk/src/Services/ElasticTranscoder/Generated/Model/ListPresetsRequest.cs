@@ -42,7 +42,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Ascending. 
         /// <para>
         /// To list presets in chronological order by the date and time that they were created,
-        /// enter <code>true</code>. To list presets in reverse chronological order, enter <code>false</code>.
+        /// enter <c>true</c>. To list presets in reverse chronological order, enter <c>false</c>.
         /// </para>
         /// </summary>
         public string Ascending
@@ -60,8 +60,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        /// When Elastic Transcoder returns more than one page of results, use <code>pageToken</code>
-        /// in subsequent <code>GET</code> requests to get each successive page of results. 
+        /// When Elastic Transcoder returns more than one page of results, use <c>pageToken</c>
+        /// in subsequent <c>GET</c> requests to get each successive page of results. 
         /// </para>
         /// </summary>
         public string PageToken

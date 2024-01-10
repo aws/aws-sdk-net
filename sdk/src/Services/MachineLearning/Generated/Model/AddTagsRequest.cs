@@ -32,7 +32,7 @@ namespace Amazon.MachineLearning.Model
     /// Container for the parameters to the AddTags operation.
     /// Adds one or more tags to an object, up to a limit of 10. Each tag consists of a key
     /// and an optional value. If you add a tag using a key that is already associated with
-    /// the ML object, <code>AddTags</code> updates the tag's value.
+    /// the ML object, <c>AddTags</c> updates the tag's value.
     /// </summary>
     public partial class AddTagsRequest : AmazonMachineLearningRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The ID of the ML object to tag. For example, <code>exampleModelId</code>.
+        /// The ID of the ML object to tag. For example, <c>exampleModelId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

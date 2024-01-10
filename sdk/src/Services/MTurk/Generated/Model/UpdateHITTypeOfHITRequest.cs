@@ -30,7 +30,7 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateHITTypeOfHIT operation.
-    /// The <code>UpdateHITTypeOfHIT</code> operation allows you to change the HITType properties
+    /// The <c>UpdateHITTypeOfHIT</c> operation allows you to change the HITType properties
     /// of a HIT. This operation disassociates the HIT from its old HITType properties and
     /// associates it with the new HITType properties. The HIT takes on the properties of
     /// the new HITType in place of the old ones.

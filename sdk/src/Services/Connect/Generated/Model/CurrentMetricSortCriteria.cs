@@ -30,8 +30,8 @@ namespace Amazon.Connect.Model
 {
     /// <summary>
     /// The way to sort the resulting response based on metrics. By default resources are
-    /// sorted based on <code>AGENTS_ONLINE</code>, <code>DESCENDING</code>. The metric collection
-    /// is sorted based on the input metrics.
+    /// sorted based on <c>AGENTS_ONLINE</c>, <c>DESCENDING</c>. The metric collection is
+    /// sorted based on the input metrics.
     /// </summary>
     public partial class CurrentMetricSortCriteria
     {

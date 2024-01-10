@@ -104,7 +104,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a call to <code>ListModelQualityJobDefinitions</code>.
+        /// The maximum number of results to return in a call to <c>ListModelQualityJobDefinitions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -143,9 +143,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListModelQualityJobDefinitions</code> request
-        /// was truncated, the response includes a <code>NextToken</code>. To retrieve the next
-        /// set of model quality monitoring job definitions, use the token in the next request.
+        /// If the result of the previous <c>ListModelQualityJobDefinitions</c> request was truncated,
+        /// the response includes a <c>NextToken</c>. To retrieve the next set of model quality
+        /// monitoring job definitions, use the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -164,7 +164,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The field to sort results by. The default is <code>CreationTime</code>.
+        /// The field to sort results by. The default is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public MonitoringJobDefinitionSortKey SortBy
@@ -182,8 +182,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// Whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.
-        /// The default is <code>Descending</code>.
+        /// Whether to sort the results in <c>Ascending</c> or <c>Descending</c> order. The default
+        /// is <c>Descending</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

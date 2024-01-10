@@ -57,7 +57,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>false</code>.
+        /// The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool AcceptTermsAndConditions

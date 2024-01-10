@@ -82,27 +82,27 @@ namespace Amazon.AppRegistry.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATING </code>if the resource group is in the process of being created.
+        ///  <c>CREATING </c>if the resource group is in the process of being created.
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATE_COMPLETE</code> if the resource group was created successfully.
+        ///  <c>CREATE_COMPLETE</c> if the resource group was created successfully.
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATE_FAILED</code> if the resource group failed to be created.
+        ///  <c>CREATE_FAILED</c> if the resource group failed to be created.
         /// </para>
         ///  
         /// <para>
-        ///  <code>UPDATING</code> if the resource group is in the process of being updated.
+        ///  <c>UPDATING</c> if the resource group is in the process of being updated.
         /// </para>
         ///  
         /// <para>
-        ///  <code>UPDATE_COMPLETE</code> if the resource group updated successfully.
+        ///  <c>UPDATE_COMPLETE</c> if the resource group updated successfully.
         /// </para>
         ///  
         /// <para>
-        ///  <code>UPDATE_FAILED</code> if the resource group could not update successfully.
+        ///  <c>UPDATE_FAILED</c> if the resource group could not update successfully.
         /// </para>
         /// </summary>
         public ResourceGroupState State

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// An object that contains the <code>ChangeType</code>, <code>Details</code>, and <code>Entity</code>.
+    /// An object that contains the <c>ChangeType</c>, <c>Details</c>, and <c>Entity</c>.
     /// </summary>
     public partial class Change
     {
@@ -63,9 +63,9 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Gets and sets the property ChangeType. 
         /// <para>
         /// Change types are single string values that describe your intention for the change.
-        /// Each change type is unique for each <code>EntityType</code> provided in the change's
-        /// scope. For more information about change types available for single-AMI products,
-        /// see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+        /// Each change type is unique for each <c>EntityType</c> provided in the change's scope.
+        /// For more information about change types available for single-AMI products, see <a
+        /// href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
         /// with single-AMI products</a>. Also, for more information about change types available
         /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
         /// with container products</a>.
@@ -111,9 +111,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property DetailsDocument. 
         /// <para>
-        /// Alternative field that accepts a JSON value instead of a string for <code>ChangeType</code>
-        /// details. You can use either <code>Details</code> or <code>DetailsDocument</code>,
-        /// but not both.
+        /// Alternative field that accepts a JSON value instead of a string for <c>ChangeType</c>
+        /// details. You can use either <c>Details</c> or <c>DetailsDocument</c>, but not both.
         /// </para>
         /// </summary>
         public Amazon.Runtime.Documents.Document DetailsDocument

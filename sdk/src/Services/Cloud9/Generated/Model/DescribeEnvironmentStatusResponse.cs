@@ -62,31 +62,31 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>connecting</code>: The environment is connecting.
+        ///  <c>connecting</c>: The environment is connecting.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>creating</code>: The environment is being created.
+        ///  <c>creating</c>: The environment is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code>: The environment is being deleted.
+        ///  <c>deleting</c>: The environment is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>error</code>: The environment is in an error state.
+        ///  <c>error</c>: The environment is in an error state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ready</code>: The environment is ready.
+        ///  <c>ready</c>: The environment is ready.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stopped</code>: The environment is stopped.
+        ///  <c>stopped</c>: The environment is stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stopping</code>: The environment is stopping.
+        ///  <c>stopping</c>: The environment is stopping.
         /// </para>
         ///  </li> </ul>
         /// </summary>

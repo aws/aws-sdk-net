@@ -30,9 +30,9 @@ namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSimilarProfiles operation.
-    /// Returns a set of profiles that belong to the same matching group using the <code>matchId</code>
-    /// or <code>profileId</code>. You can also specify the type of matching that you want
-    /// for finding similar profiles using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+    /// Returns a set of profiles that belong to the same matching group using the <c>matchId</c>
+    /// or <c>profileId</c>. You can also specify the type of matching that you want for finding
+    /// similar profiles using either <c>RULE_BASED_MATCHING</c> or <c>ML_BASED_MATCHING</c>.
     /// </summary>
     public partial class GetSimilarProfilesRequest : AmazonCustomerProfilesRequest
     {
@@ -103,7 +103,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token from the previous <code>GetSimilarProfiles</code> API call.
+        /// The pagination token from the previous <c>GetSimilarProfiles</c> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -141,7 +141,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property SearchValue. 
         /// <para>
-        /// The string based on <code>SearchKey</code> to be searched for similar profiles.
+        /// The string based on <c>SearchKey</c> to be searched for similar profiles.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

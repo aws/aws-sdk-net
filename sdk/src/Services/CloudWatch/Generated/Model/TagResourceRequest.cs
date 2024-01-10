@@ -47,8 +47,8 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// You can use the <code>TagResource</code> action with an alarm that already has tags.
-    /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+    /// You can use the <c>TagResource</c> action with an alarm that already has tags. If
+    /// you specify a new tag key for the alarm, this tag is appended to the list of tags
     /// associated with the alarm. If you specify a tag key that is already associated with
     /// the alarm, the new tag value that you specify replaces the previous value for that
     /// tag.
@@ -70,13 +70,13 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of an alarm is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
-        /// </code> 
+        /// The ARN format of an alarm is <c>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:alarm:<i>alarm-name</i>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
-        /// The ARN format of a Contributor Insights rule is <code>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i>
-        /// </code> 
+        /// The ARN format of a Contributor Insights rule is <c>arn:aws:cloudwatch:<i>Region</i>:<i>account-id</i>:insight-rule/<i>insight-rule-name</i>
+        /// </c> 
         /// </para>
         ///  
         /// <para>

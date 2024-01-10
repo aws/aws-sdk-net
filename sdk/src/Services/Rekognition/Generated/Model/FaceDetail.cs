@@ -33,18 +33,17 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// A <code>FaceDetail</code> object contains either the default facial attributes or
-    /// all facial attributes. The default attributes are <code>BoundingBox</code>, <code>Confidence</code>,
-    /// <code>Landmarks</code>, <code>Pose</code>, and <code>Quality</code>.
+    /// A <c>FaceDetail</c> object contains either the default facial attributes or all facial
+    /// attributes. The default attributes are <c>BoundingBox</c>, <c>Confidence</c>, <c>Landmarks</c>,
+    /// <c>Pose</c>, and <c>Quality</c>.
     /// </para>
     ///  
     /// <para>
     ///  <a>GetFaceDetection</a> is the only Amazon Rekognition Video stored video operation
-    /// that can return a <code>FaceDetail</code> object with all attributes. To specify which
-    /// attributes to return, use the <code>FaceAttributes</code> input parameter for <a>StartFaceDetection</a>.
+    /// that can return a <c>FaceDetail</c> object with all attributes. To specify which attributes
+    /// to return, use the <c>FaceAttributes</c> input parameter for <a>StartFaceDetection</a>.
     /// The following Amazon Rekognition Video operations return only the default attributes.
-    /// The corresponding Start operations don't have a <code>FaceAttributes</code> input
-    /// parameter:
+    /// The corresponding Start operations don't have a <c>FaceAttributes</c> input parameter:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -61,9 +60,9 @@ namespace Amazon.Rekognition.Model
     ///  </li> </ul> 
     /// <para>
     /// The Amazon Rekognition Image <a>DetectFaces</a> and <a>IndexFaces</a> operations can
-    /// return all facial attributes. To specify which attributes to return, use the <code>Attributes</code>
-    /// input parameter for <code>DetectFaces</code>. For <code>IndexFaces</code>, use the
-    /// <code>DetectAttributes</code> input parameter.
+    /// return all facial attributes. To specify which attributes to return, use the <c>Attributes</c>
+    /// input parameter for <c>DetectFaces</c>. For <c>IndexFaces</c>, use the <c>DetectAttributes</c>
+    /// input parameter.
     /// </para>
     /// </summary>
     public partial class FaceDetail
@@ -242,12 +241,12 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property FaceOccluded. 
         /// <para>
-        ///  <code>FaceOccluded</code> should return "true" with a high confidence score if a
-        /// detected face’s eyes, nose, and mouth are partially captured or if they are covered
-        /// by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code>
-        /// should return "false" with a high confidence score if common occurrences that do not
-        /// impact face verification are detected, such as eye glasses, lightly tinted sunglasses,
-        /// strands of hair, and others. 
+        ///  <c>FaceOccluded</c> should return "true" with a high confidence score if a detected
+        /// face’s eyes, nose, and mouth are partially captured or if they are covered by masks,
+        /// dark sunglasses, cell phones, hands, or other objects. <c>FaceOccluded</c> should
+        /// return "false" with a high confidence score if common occurrences that do not impact
+        /// face verification are detected, such as eye glasses, lightly tinted sunglasses, strands
+        /// of hair, and others. 
         /// </para>
         /// </summary>
         public FaceOccluded FaceOccluded

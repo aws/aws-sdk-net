@@ -39,8 +39,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property KeyId. 
         /// <para>
         /// A container for the ARN of the SSE-KMS encryption. This property is read-only and
-        /// follows the following format: <code> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i>
-        /// </code> 
+        /// follows the following format: <c> arn:aws:kms:<i>us-east-1</i>:<i>example-account-id</i>:key/<i>example-9a73-4afc-8d29-8f5900cef44e</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

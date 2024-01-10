@@ -58,7 +58,7 @@ namespace Amazon.IdentityManagement.Model
     ///  <note> 
     /// <para>
     /// Because the body of the public key certificate, private key, and the certificate chain
-    /// can be large, you should use POST rather than GET when calling <code>UploadServerCertificate</code>.
+    /// can be large, you should use POST rather than GET when calling <c>UploadServerCertificate</c>.
     /// For information about setting up signatures and authorization through the API, see
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing
     /// Amazon Web Services API requests</a> in the <i>Amazon Web Services General Reference</i>.
@@ -106,18 +106,18 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any printable ASCII character ranging from the space character (<code>\u0020</code>)
-        /// through the end of the ASCII character range
+        /// Any printable ASCII character ranging from the space character (<c>\u0020</c>) through
+        /// the end of the ASCII character range
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
-        /// <code>\u00FF</code>)
+        /// <c>\u00FF</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
-        /// and carriage return (<code>\u000D</code>)
+        /// The special characters tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage
+        /// return (<c>\u000D</c>)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -147,18 +147,18 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any printable ASCII character ranging from the space character (<code>\u0020</code>)
-        /// through the end of the ASCII character range
+        /// Any printable ASCII character ranging from the space character (<c>\u0020</c>) through
+        /// the end of the ASCII character range
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
-        /// <code>\u00FF</code>)
+        /// <c>\u00FF</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
-        /// and carriage return (<code>\u000D</code>)
+        /// The special characters tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage
+        /// return (<c>\u000D</c>)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -187,15 +187,14 @@ namespace Amazon.IdentityManagement.Model
         /// parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
         /// a string of characters consisting of either a forward slash (/) by itself or a string
         /// that must begin and end with forward slashes. In addition, it can contain any ASCII
-        /// character from the ! (<code>\u0021</code>) through the DEL character (<code>\u007F</code>),
-        /// including most punctuation characters, digits, and upper and lowercased letters.
+        /// character from the ! (<c>\u0021</c>) through the DEL character (<c>\u007F</c>), including
+        /// most punctuation characters, digits, and upper and lowercased letters.
         /// </para>
         ///  <note> 
         /// <para>
         ///  If you are uploading a server certificate specifically for use with Amazon CloudFront
-        /// distributions, you must specify a path using the <code>path</code> parameter. The
-        /// path must begin with <code>/cloudfront</code> and must include a trailing slash (for
-        /// example, <code>/cloudfront/test/</code>).
+        /// distributions, you must specify a path using the <c>path</c> parameter. The path must
+        /// begin with <c>/cloudfront</c> and must include a trailing slash (for example, <c>/cloudfront/test/</c>).
         /// </para>
         ///  </note>
         /// </summary>
@@ -224,18 +223,18 @@ namespace Amazon.IdentityManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Any printable ASCII character ranging from the space character (<code>\u0020</code>)
-        /// through the end of the ASCII character range
+        /// Any printable ASCII character ranging from the space character (<c>\u0020</c>) through
+        /// the end of the ASCII character range
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// The printable characters in the Basic Latin and Latin-1 Supplement character set (through
-        /// <code>\u00FF</code>)
+        /// <c>\u00FF</c>)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
-        /// and carriage return (<code>\u000D</code>)
+        /// The special characters tab (<c>\u0009</c>), line feed (<c>\u000A</c>), and carriage
+        /// return (<c>\u000D</c>)
         /// </para>
         ///  </li> </ul>
         /// </summary>

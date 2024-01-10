@@ -85,7 +85,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackInputParameters. 
         /// <para>
-        /// A list of <code>ConformancePackInputParameter</code> objects.
+        /// A list of <c>ConformancePackInputParameter</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]

@@ -83,13 +83,13 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The directory within the Amazon EFS file system to mount as the root directory inside
         /// the host. If this parameter is omitted, the root of the Amazon EFS volume will be
-        /// used. Specifying <code>/</code> will have the same effect as omitting this parameter.
+        /// used. Specifying <c>/</c> will have the same effect as omitting this parameter.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If an EFS access point is specified in the <code>authorizationConfig</code>, the root
-        /// directory parameter must either be omitted or set to <code>/</code> which will enforce
-        /// the path set on the EFS access point.
+        /// If an EFS access point is specified in the <c>authorizationConfig</c>, the root directory
+        /// parameter must either be omitted or set to <c>/</c> which will enforce the path set
+        /// on the EFS access point.
         /// </para>
         ///  </important>
         /// </summary>
@@ -111,7 +111,7 @@ namespace Amazon.ECS.Model
         /// Determines whether to use encryption for Amazon EFS data in transit between the Amazon
         /// ECS host and the Amazon EFS server. Transit encryption must be turned on if Amazon
         /// EFS IAM authorization is used. If this parameter is omitted, the default value of
-        /// <code>DISABLED</code> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
+        /// <c>DISABLED</c> is used. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/encryption-in-transit.html">Encrypting
         /// data in transit</a> in the <i>Amazon Elastic File System User Guide</i>.
         /// </para>
         /// </summary>

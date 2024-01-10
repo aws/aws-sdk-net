@@ -39,8 +39,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Lists the prefetch schedules. An empty <code>Items</code> list doesn't mean there
-        /// aren't more items to fetch, just that that page was empty.
+        /// Lists the prefetch schedules. An empty <c>Items</c> list doesn't mean there aren't
+        /// more items to fetch, just that that page was empty.
         /// </para>
         /// </summary>
         public List<PrefetchSchedule> Items

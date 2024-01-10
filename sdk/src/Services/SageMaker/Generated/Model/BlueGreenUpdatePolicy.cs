@@ -46,8 +46,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property MaximumExecutionTimeoutInSeconds. 
         /// <para>
         /// Maximum execution timeout for the deployment. Note that the timeout value should be
-        /// larger than the total waiting time specified in <code>TerminationWaitInSeconds</code>
-        /// and <code>WaitIntervalInSeconds</code>.
+        /// larger than the total waiting time specified in <c>TerminationWaitInSeconds</c> and
+        /// <c>WaitIntervalInSeconds</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=600, Max=28800)]

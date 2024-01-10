@@ -46,7 +46,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MultiRegionKeyType. 
         /// <para>
-        /// Indicates whether the KMS key is a <code>PRIMARY</code> or <code>REPLICA</code> key.
+        /// Indicates whether the KMS key is a <c>PRIMARY</c> or <c>REPLICA</c> key.
         /// </para>
         /// </summary>
         public MultiRegionKeyType MultiRegionKeyType

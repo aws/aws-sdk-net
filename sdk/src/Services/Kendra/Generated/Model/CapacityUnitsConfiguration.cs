@@ -50,12 +50,12 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>GetQuerySuggestions</code> capacity is five times the provisioned query capacity
+        ///  <c>GetQuerySuggestions</c> capacity is five times the provisioned query capacity
         /// for an index, or the base capacity of 2.5 calls per second, whichever is higher. For
-        /// example, the base capacity for an index is 0.1 queries per second, and <code>GetQuerySuggestions</code>
+        /// example, the base capacity for an index is 0.1 queries per second, and <c>GetQuerySuggestions</c>
         /// capacity has a base of 2.5 calls per second. If you add another 0.1 queries per second
-        /// to total 0.2 queries per second for an index, the <code>GetQuerySuggestions</code>
-        /// capacity is 2.5 calls per second (higher than five times 0.2 queries per second).
+        /// to total 0.2 queries per second for an index, the <c>GetQuerySuggestions</c> capacity
+        /// is 2.5 calls per second (higher than five times 0.2 queries per second).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

@@ -40,8 +40,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token indicating that there are additional email templates available to be listed.
-        /// Pass this token to a subsequent <code>ListEmailTemplates</code> call to retrieve the
-        /// next 10 email templates.
+        /// Pass this token to a subsequent <c>ListEmailTemplates</c> call to retrieve the next
+        /// 10 email templates.
         /// </para>
         /// </summary>
         public string NextToken

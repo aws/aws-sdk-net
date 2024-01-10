@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisabledTime. 
         /// <para>
-        /// The time at which fast snapshot restores entered the <code>disabled</code> state.
+        /// The time at which fast snapshot restores entered the <c>disabled</c> state.
         /// </para>
         /// </summary>
         public DateTime DisabledTime
@@ -84,7 +84,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisablingTime. 
         /// <para>
-        /// The time at which fast snapshot restores entered the <code>disabling</code> state.
+        /// The time at which fast snapshot restores entered the <c>disabling</c> state.
         /// </para>
         /// </summary>
         public DateTime DisablingTime
@@ -102,7 +102,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnabledTime. 
         /// <para>
-        /// The time at which fast snapshot restores entered the <code>enabled</code> state.
+        /// The time at which fast snapshot restores entered the <c>enabled</c> state.
         /// </para>
         /// </summary>
         public DateTime EnabledTime
@@ -120,7 +120,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property EnablingTime. 
         /// <para>
-        /// The time at which fast snapshot restores entered the <code>enabling</code> state.
+        /// The time at which fast snapshot restores entered the <c>enabling</c> state.
         /// </para>
         /// </summary>
         public DateTime EnablingTime
@@ -138,7 +138,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OptimizingTime. 
         /// <para>
-        /// The time at which fast snapshot restores entered the <code>optimizing</code> state.
+        /// The time at which fast snapshot restores entered the <c>optimizing</c> state.
         /// </para>
         /// </summary>
         public DateTime OptimizingTime
@@ -234,13 +234,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Client.UserInitiated</code> - The state successfully transitioned to <code>enabling</code>
-        /// or <code>disabling</code>.
+        ///  <c>Client.UserInitiated</c> - The state successfully transitioned to <c>enabling</c>
+        /// or <c>disabling</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Client.UserInitiated - Lifecycle state transition</code> - The state successfully
-        /// transitioned to <code>optimizing</code>, <code>enabled</code>, or <code>disabled</code>.
+        ///  <c>Client.UserInitiated - Lifecycle state transition</c> - The state successfully
+        /// transitioned to <c>optimizing</c>, <c>enabled</c>, or <c>disabled</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

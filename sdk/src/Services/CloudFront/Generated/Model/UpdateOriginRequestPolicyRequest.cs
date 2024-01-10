@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use <code>GetOriginRequestPolicyConfig</code> to get the current configuration.
+    /// Use <c>GetOriginRequestPolicyConfig</c> to get the current configuration.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,8 +49,8 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Call <code>UpdateOriginRequestPolicy</code> by providing the entire origin request
-    /// policy configuration, including the fields that you modified and those that you didn't.
+    /// Call <c>UpdateOriginRequestPolicy</c> by providing the entire origin request policy
+    /// configuration, including the fields that you modified and those that you didn't.
     /// </para>
     ///  </li> </ol>
     /// </summary>
@@ -64,8 +64,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier for the origin request policy that you are updating. The identifier
-        /// is returned in a cache behavior's <code>OriginRequestPolicyId</code> field in the
-        /// response to <code>GetDistributionConfig</code>.
+        /// is returned in a cache behavior's <c>OriginRequestPolicyId</c> field in the response
+        /// to <c>GetDistributionConfig</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,7 +85,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IfMatch. 
         /// <para>
         /// The version of the origin request policy that you are updating. The version is returned
-        /// in the origin request policy's <code>ETag</code> field in the response to <code>GetOriginRequestPolicyConfig</code>.
+        /// in the origin request policy's <c>ETag</c> field in the response to <c>GetOriginRequestPolicyConfig</c>.
         /// </para>
         /// </summary>
         public string IfMatch

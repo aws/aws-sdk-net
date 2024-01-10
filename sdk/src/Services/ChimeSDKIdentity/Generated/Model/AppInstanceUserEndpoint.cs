@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// An endpoint under an Amazon Chime <code>AppInstanceUser</code> that receives messages
-    /// for a user. For push notifications, the endpoint is a mobile device used to receive
-    /// mobile push notifications for a user.
+    /// An endpoint under an Amazon Chime <c>AppInstanceUser</c> that receives messages for
+    /// a user. For push notifications, the endpoint is a mobile device used to receive mobile
+    /// push notifications for a user.
     /// </summary>
     public partial class AppInstanceUserEndpoint
     {
@@ -49,9 +49,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AllowMessages. 
         /// <para>
-        /// Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in
-        /// to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.
+        /// Boolean that controls whether the <c>AppInstanceUserEndpoint</c> is opted in to receive
+        /// messages. <c>ALL</c> indicates the endpoint will receive all messages. <c>NONE</c>
+        /// indicates the endpoint will receive no messages.
         /// </para>
         /// </summary>
         public AllowMessages AllowMessages
@@ -69,7 +69,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -88,7 +88,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property CreatedTimestamp. 
         /// <para>
-        /// The time at which an <code>AppInstanceUserEndpoint</code> was created.
+        /// The time at which an <c>AppInstanceUserEndpoint</c> was created.
         /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
@@ -106,7 +106,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointAttributes. 
         /// <para>
-        /// The attributes of an <code>Endpoint</code>.
+        /// The attributes of an <c>Endpoint</c>.
         /// </para>
         /// </summary>
         public EndpointAttributes EndpointAttributes
@@ -124,7 +124,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+        /// The unique identifier of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]
@@ -143,31 +143,28 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointState. 
         /// <para>
-        /// A read-only field that represents the state of an <code>AppInstanceUserEndpoint</code>.
+        /// A read-only field that represents the state of an <c>AppInstanceUserEndpoint</c>.
         /// Supported values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is active and able
-        /// to receive messages. When <code>ACTIVE</code>, the <code>EndpointStatusReason</code>
-        /// remains empty.
+        ///  <c>ACTIVE</c>: The <c>AppInstanceUserEndpoint</c> is active and able to receive messages.
+        /// When <c>ACTIVE</c>, the <c>EndpointStatusReason</c> remains empty.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INACTIVE</code>: The <code>AppInstanceUserEndpoint</code> is inactive and can't
-        /// receive message. When <code>INACTIVE</code>, the corresponding reason will be conveyed
-        /// through <code>EndpointStatusReason</code>.
+        ///  <c>INACTIVE</c>: The <c>AppInstanceUserEndpoint</c> is inactive and can't receive
+        /// message. When <c>INACTIVE</c>, the corresponding reason will be conveyed through <c>EndpointStatusReason</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID_DEVICE_TOKEN</code> indicates that an <code>AppInstanceUserEndpoint</code>
-        /// is <code>INACTIVE</code> due to invalid device token
+        ///  <c>INVALID_DEVICE_TOKEN</c> indicates that an <c>AppInstanceUserEndpoint</c> is <c>INACTIVE</c>
+        /// due to invalid device token
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID_PINPOINT_ARN</code> indicates that an <code>AppInstanceUserEndpoint</code>
-        /// is <code>INACTIVE</code> due to an invalid pinpoint ARN that was input through the
-        /// <code>ResourceArn</code> field.
+        ///  <c>INVALID_PINPOINT_ARN</c> indicates that an <c>AppInstanceUserEndpoint</c> is <c>INACTIVE</c>
+        /// due to an invalid pinpoint ARN that was input through the <c>ResourceArn</c> field.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -186,7 +183,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTimestamp. 
         /// <para>
-        /// The time at which an <code>AppInstanceUserEndpoint</code> was last updated.
+        /// The time at which an <c>AppInstanceUserEndpoint</c> was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTimestamp
@@ -204,7 +201,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>AppInstanceUserEndpoint</code>.
+        /// The name of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1600)]
@@ -242,7 +239,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the <code>AppInstanceUserEndpoint</code>.
+        /// The type of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         public AppInstanceUserEndpointType Type

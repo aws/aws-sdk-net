@@ -121,8 +121,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Gets and sets the property ResourceAccessRoleArn. 
         /// <para>
         /// The ARN of the role used by the service to access Amazon Web Services resources, including
-        /// <code>Transcribe</code> and <code>Transcribe Call Analytics</code>, on the caller’s
-        /// behalf.
+        /// <c>Transcribe</c> and <c>Transcribe Call Analytics</c>, on the caller’s behalf.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]

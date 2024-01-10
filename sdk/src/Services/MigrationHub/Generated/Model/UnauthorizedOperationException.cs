@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
-    /// Exception raised to indicate a request was not authorized when the <code>DryRun</code>
-    /// flag is set to "true".
+    /// Exception raised to indicate a request was not authorized when the <c>DryRun</c> flag
+    /// is set to "true".
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

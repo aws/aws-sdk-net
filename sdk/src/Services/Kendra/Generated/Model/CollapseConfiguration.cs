@@ -44,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property DocumentAttributeKey. 
         /// <para>
         /// The document attribute used to group search results. You can use any attribute that
-        /// has the <code>Sortable</code> flag set to true. You can also sort by any of the following
+        /// has the <c>Sortable</c> flag set to true. You can also sort by any of the following
         /// built-in attributes:"_category","_created_at", "_last_updated_at", "_version", "_view_count".
         /// </para>
         /// </summary>
@@ -109,18 +109,18 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Choose to <code>COLLAPSE</code> all documents with null or missing values in one group.
+        /// Choose to <c>COLLAPSE</c> all documents with null or missing values in one group.
         /// This is the default configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Choose to <code>IGNORE</code> documents with null or missing values. Ignored documents
-        /// will not appear in query results.
+        /// Choose to <c>IGNORE</c> documents with null or missing values. Ignored documents will
+        /// not appear in query results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Choose to <code>EXPAND</code> each document with a null or missing value into a group
-        /// of its own.
+        /// Choose to <c>EXPAND</c> each document with a null or missing value into a group of
+        /// its own.
         /// </para>
         ///  </li> </ul>
         /// </summary>

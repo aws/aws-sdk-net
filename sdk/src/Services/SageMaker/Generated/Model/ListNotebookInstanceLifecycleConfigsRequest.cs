@@ -163,8 +163,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of a <code>ListNotebookInstanceLifecycleConfigs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To get the next set of lifecycle configurations,
+        /// If the result of a <c>ListNotebookInstanceLifecycleConfigs</c> request was truncated,
+        /// the response includes a <c>NextToken</c>. To get the next set of lifecycle configurations,
         /// use the token in the next request.
         /// </para>
         /// </summary>
@@ -184,7 +184,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Sorts the list of results. The default is <code>CreationTime</code>.
+        /// Sorts the list of results. The default is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public NotebookInstanceLifecycleConfigSortKey SortBy

@@ -173,33 +173,33 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The backup is fully available.
+        ///  <c>AVAILABLE</c> - The backup is fully available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - For user-initiated backups on Lustre file systems only; Amazon
-        /// FSx hasn't started creating the backup.
+        ///  <c>PENDING</c> - For user-initiated backups on Lustre file systems only; Amazon FSx
+        /// hasn't started creating the backup.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Amazon FSx is creating the backup.
+        ///  <c>CREATING</c> - Amazon FSx is creating the backup.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRANSFERRING</code> - For user-initiated backups on Lustre file systems only;
-        /// Amazon FSx is transferring the backup to Amazon S3.
+        ///  <c>TRANSFERRING</c> - For user-initiated backups on Lustre file systems only; Amazon
+        /// FSx is transferring the backup to Amazon S3.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COPYING</code> - Amazon FSx is copying the backup.
+        ///  <c>COPYING</c> - Amazon FSx is copying the backup.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Amazon FSx deleted the backup and it's no longer available.
+        ///  <c>DELETED</c> - Amazon FSx deleted the backup and it's no longer available.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Amazon FSx couldn't finish the backup.
+        ///  <c>FAILED</c> - Amazon FSx couldn't finish the backup.
         /// </para>
         ///  </li> </ul>
         /// </summary>

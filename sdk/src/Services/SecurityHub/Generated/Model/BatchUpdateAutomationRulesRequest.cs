@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property UpdateAutomationRulesRequestItems. 
         /// <para>
         ///  An array of ARNs for the rules that are to be updated. Optionally, you can also include
-        /// <code>RuleStatus</code> and <code>RuleOrder</code>. 
+        /// <c>RuleStatus</c> and <c>RuleOrder</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

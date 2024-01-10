@@ -46,9 +46,9 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property Overrides. 
         /// <para>
-        /// A subfield of <code>platform</code>. This specifies any different configuration options
-        /// that you want to apply to the chosen platform (such as a different <code>hash-algorithm</code>
-        /// or <code>signing-algorithm</code>).
+        /// A subfield of <c>platform</c>. This specifies any different configuration options
+        /// that you want to apply to the chosen platform (such as a different <c>hash-algorithm</c>
+        /// or <c>signing-algorithm</c>).
         /// </para>
         /// </summary>
         public SigningPlatformOverrides Overrides

@@ -59,8 +59,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property AddIdleTimeBetweenReads. 
         /// <para>
         /// Adds a time delay between two consecutive getRecords operations. The default value
-        /// is <code>"False"</code>. This option is only configurable for Glue version 2.0 and
-        /// above.
+        /// is <c>"False"</c>. This option is only configurable for Glue version 2.0 and above.
         /// </para>
         /// </summary>
         public bool AddIdleTimeBetweenReads
@@ -100,7 +99,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property AvoidEmptyBatches. 
         /// <para>
         /// Avoids creating an empty microbatch job by checking for unread data in the Kinesis
-        /// data stream before the batch is started. The default value is <code>"False"</code>.
+        /// data stream before the batch is started. The default value is <c>"False"</c>.
         /// </para>
         /// </summary>
         public bool AvoidEmptyBatches
@@ -155,7 +154,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property DescribeShardInterval. 
         /// <para>
         /// The minimum time interval between two ListShards API calls for your script to consider
-        /// resharding. The default value is <code>1s</code>.
+        /// resharding. The default value is <c>1s</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -214,8 +213,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property IdleTimeBetweenReadsInMs. 
         /// <para>
         /// The minimum time delay between two consecutive getRecords operations, specified in
-        /// ms. The default value is <code>1000</code>. This option is only configurable for Glue
-        /// version 2.0 and above.
+        /// ms. The default value is <c>1000</c>. This option is only configurable for Glue version
+        /// 2.0 and above.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -235,7 +234,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property MaxFetchRecordsPerShard. 
         /// <para>
         /// The maximum number of records to fetch per shard in the Kinesis data stream. The default
-        /// value is <code>100000</code>.
+        /// value is <c>100000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -255,7 +254,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property MaxFetchTimeInMs. 
         /// <para>
         /// The maximum time spent in the job executor to fetch a record from the Kinesis data
-        /// stream per shard, specified in milliseconds (ms). The default value is <code>1000</code>.
+        /// stream per shard, specified in milliseconds (ms). The default value is <c>1000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -275,7 +274,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property MaxRecordPerRead. 
         /// <para>
         /// The maximum number of records to fetch from the Kinesis data stream in each getRecords
-        /// operation. The default value is <code>10000</code>.
+        /// operation. The default value is <c>10000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -295,7 +294,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property MaxRetryIntervalMs. 
         /// <para>
         /// The maximum cool-off time period (specified in ms) between two retries of a Kinesis
-        /// Data Streams API call. The default value is <code>10000</code>.
+        /// Data Streams API call. The default value is <c>10000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -315,7 +314,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property NumRetries. 
         /// <para>
         /// The maximum number of retries for Kinesis Data Streams API requests. The default value
-        /// is <code>3</code>.
+        /// is <c>3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -335,7 +334,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RetryIntervalMs. 
         /// <para>
         /// The cool-off time period (specified in ms) before retrying the Kinesis Data Streams
-        /// API call. The default value is <code>1000</code>.
+        /// API call. The default value is <c>1000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -357,7 +356,7 @@ namespace Amazon.Glue.Model
         /// The Amazon Resource Name (ARN) of the role to assume using AWS Security Token Service
         /// (AWS STS). This role must have permissions for describe or read record operations
         /// for the Kinesis data stream. You must use this parameter when accessing a data stream
-        /// in a different account. Used in conjunction with <code>"awsSTSSessionName"</code>.
+        /// in a different account. Used in conjunction with <c>"awsSTSSessionName"</c>.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -376,7 +375,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RoleSessionName. 
         /// <para>
         /// An identifier for the session assuming the role using AWS STS. You must use this parameter
-        /// when accessing a data stream in a different account. Used in conjunction with <code>"awsSTSRoleARN"</code>.
+        /// when accessing a data stream in a different account. Used in conjunction with <c>"awsSTSRoleARN"</c>.
         /// </para>
         /// </summary>
         public string RoleSessionName
@@ -395,10 +394,10 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property StartingPosition. 
         /// <para>
         /// The starting position in the Kinesis data stream to read data from. The possible values
-        /// are <code>"latest"</code>, <code>"trim_horizon"</code>, <code>"earliest"</code>, or
-        /// a timestamp string in UTC format in the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code>
-        /// (where <code>Z</code> represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00").
-        /// The default value is <code>"latest"</code>.
+        /// are <c>"latest"</c>, <c>"trim_horizon"</c>, <c>"earliest"</c>, or a timestamp string
+        /// in UTC format in the pattern <c>yyyy-mm-ddTHH:MM:SSZ</c> (where <c>Z</c> represents
+        /// a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00-04:00"). The default
+        /// value is <c>"latest"</c>.
         /// </para>
         ///  
         /// <para>
@@ -422,7 +421,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property StartingTimestamp. 
         /// <para>
         /// The timestamp of the record in the Kinesis data stream to start reading data from.
-        /// The possible values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code>
+        /// The possible values are a timestamp string in UTC format of the pattern <c>yyyy-mm-ddTHH:MM:SSZ</c>
         /// (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
         /// 
         /// </para>

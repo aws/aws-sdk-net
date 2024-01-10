@@ -37,8 +37,8 @@ namespace Amazon.KinesisVideoMedia.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You must first call the <code>GetDataEndpoint</code> API to get an endpoint. Then
-    /// send the <code>GetMedia</code> requests to this endpoint using the <a href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
+    /// You must first call the <c>GetDataEndpoint</c> API to get an endpoint. Then send the
+    /// <c>GetMedia</c> requests to this endpoint using the <a href="https://docs.aws.amazon.com/cli/latest/reference/">--endpoint-url
     /// parameter</a>. 
     /// </para>
     ///  </note> 
@@ -46,21 +46,21 @@ namespace Amazon.KinesisVideoMedia.Model
     /// When you put media data (fragments) on a stream, Kinesis Video Streams stores each
     /// incoming fragment and related metadata in what is called a "chunk." For more information,
     /// see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_PutMedia.html">PutMedia</a>.
-    /// The <code>GetMedia</code> API returns a stream of these chunks starting from the chunk
-    /// that you specify in the request. 
+    /// The <c>GetMedia</c> API returns a stream of these chunks starting from the chunk that
+    /// you specify in the request. 
     /// </para>
     ///  
     /// <para>
-    /// The following limits apply when using the <code>GetMedia</code> API:
+    /// The following limits apply when using the <c>GetMedia</c> API:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A client can call <code>GetMedia</code> up to five times per second per stream. 
+    /// A client can call <c>GetMedia</c> up to five times per second per stream. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// Kinesis Video Streams sends media data at a rate of up to 25 megabytes per second
-    /// (or 200 megabits per second) during a <code>GetMedia</code> session. 
+    /// (or 200 megabits per second) during a <c>GetMedia</c> session. 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -70,13 +70,13 @@ namespace Amazon.KinesisVideoMedia.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type in
-    /// addition to what the HTTP status code provides. 
+    ///  <c>x-amz-ErrorType</c> HTTP header – contains a more specific error type in addition
+    /// to what the HTTP status code provides. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to AWS,
-    /// the support team can better diagnose the problem if given the Request Id.
+    ///  <c>x-amz-RequestId</c> HTTP header – if you want to report an issue to AWS, the support
+    /// team can better diagnose the problem if given the Request Id.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// Gets and sets the property StreamARN. 
         /// <para>
         /// The ARN of the stream from where you want to get the media content. If you don't specify
-        /// the <code>streamARN</code>, you must specify the <code>streamName</code>.
+        /// the <c>streamARN</c>, you must specify the <c>streamName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -142,7 +142,7 @@ namespace Amazon.KinesisVideoMedia.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The Kinesis video stream name from where you want to get the media content. If you
-        /// don't specify the <code>streamName</code>, you must specify the <code>streamARN</code>.
+        /// don't specify the <c>streamName</c>, you must specify the <c>streamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

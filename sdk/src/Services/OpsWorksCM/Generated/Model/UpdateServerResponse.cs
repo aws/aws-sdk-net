@@ -38,7 +38,7 @@ namespace Amazon.OpsWorksCM.Model
         /// <summary>
         /// Gets and sets the property Server. 
         /// <para>
-        /// Contains the response to a <code>UpdateServer</code> request. 
+        /// Contains the response to a <c>UpdateServer</c> request. 
         /// </para>
         /// </summary>
         public CMServer Server

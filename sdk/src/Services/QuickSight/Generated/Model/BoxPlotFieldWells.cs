@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The field wells of a <code>BoxPlotVisual</code>.
+    /// The field wells of a <c>BoxPlotVisual</c>.
     /// 
     ///  
     /// <para>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A leaf node condition which can be used to specify a tag condition, for example, <code>HAVE
-    /// BPO = 123</code>.
+    /// A leaf node condition which can be used to specify a tag condition, for example, <c>HAVE
+    /// BPO = 123</c>.
     /// </summary>
     public partial class TagCondition
     {

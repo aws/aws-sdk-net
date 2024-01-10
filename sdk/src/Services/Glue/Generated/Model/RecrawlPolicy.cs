@@ -46,16 +46,16 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.
+        /// A value of <c>CRAWL_EVERYTHING</c> specifies crawling the entire dataset again.
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that
-        /// were added since the last crawler run.
+        /// A value of <c>CRAWL_NEW_FOLDERS_ONLY</c> specifies crawling only folders that were
+        /// added since the last crawler run.
         /// </para>
         ///  
         /// <para>
-        /// A value of <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified
+        /// A value of <c>CRAWL_EVENT_MODE</c> specifies crawling only the changes identified
         /// by Amazon S3 events.
         /// </para>
         /// </summary>

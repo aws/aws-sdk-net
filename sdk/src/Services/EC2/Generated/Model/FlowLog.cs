@@ -89,12 +89,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeliverLogsErrorMessage. 
         /// <para>
-        /// Information about the error that occurred. <code>Rate limited</code> indicates that
-        /// CloudWatch Logs throttling has been applied for one or more network interfaces, or
-        /// that you've reached the limit on the number of log groups that you can create. <code>Access
-        /// error</code> indicates that the IAM role associated with the flow log does not have
-        /// sufficient permissions to publish to CloudWatch Logs. <code>Unknown error</code> indicates
-        /// an internal error.
+        /// Information about the error that occurred. <c>Rate limited</c> indicates that CloudWatch
+        /// Logs throttling has been applied for one or more network interfaces, or that you've
+        /// reached the limit on the number of log groups that you can create. <c>Access error</c>
+        /// indicates that the IAM role associated with the flow log does not have sufficient
+        /// permissions to publish to CloudWatch Logs. <c>Unknown error</c> indicates an internal
+        /// error.
         /// </para>
         /// </summary>
         public string DeliverLogsErrorMessage
@@ -130,7 +130,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeliverLogsStatus. 
         /// <para>
-        /// The status of the logs delivery (<code>SUCCESS</code> | <code>FAILED</code>).
+        /// The status of the logs delivery (<c>SUCCESS</c> | <c>FAILED</c>).
         /// </para>
         /// </summary>
         public string DeliverLogsStatus
@@ -184,7 +184,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property FlowLogStatus. 
         /// <para>
-        /// The status of the flow log (<code>ACTIVE</code>).
+        /// The status of the flow log (<c>ACTIVE</c>).
         /// </para>
         /// </summary>
         public string FlowLogStatus
@@ -285,7 +285,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>60</code> | <code>600</code> 
+        /// Valid Values: <c>60</c> | <c>600</c> 
         /// </para>
         /// </summary>
         public int MaxAggregationInterval

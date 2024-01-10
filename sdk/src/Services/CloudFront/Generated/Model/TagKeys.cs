@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// A complex type that contains zero or more <code>Tag</code> elements.
+    /// A complex type that contains zero or more <c>Tag</c> elements.
     /// </summary>
     public partial class TagKeys
     {
@@ -38,7 +38,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// A complex type that contains <code>Tag</code> key elements.
+        /// A complex type that contains <c>Tag</c> key elements.
         /// </para>
         /// </summary>
         public List<string> Items

@@ -68,7 +68,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>123e4567-e89b-12d3-a456-426655440000</code> 
+        /// Example: <c>123e4567-e89b-12d3-a456-426655440000</c> 
         /// </para>
         /// </summary>
         public string BacktrackIdentifier
@@ -107,7 +107,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster1</code> 
+        /// Example: <c>my-cluster1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -131,29 +131,29 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db-cluster-backtrack-id</code> - Accepts backtrack identifiers. The results
-        /// list includes information about only the backtracks identified by these identifiers.
+        ///  <c>db-cluster-backtrack-id</c> - Accepts backtrack identifiers. The results list
+        /// includes information about only the backtracks identified by these identifiers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-cluster-backtrack-status</code> - Accepts any of the following backtrack
-        /// status values:
+        ///  <c>db-cluster-backtrack-status</c> - Accepts any of the following backtrack status
+        /// values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>applying</code> 
+        ///  <c>applying</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>completed</code> 
+        ///  <c>completed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed</code> 
+        ///  <c>failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code> 
+        ///  <c>pending</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -177,9 +177,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeDBClusterBacktracks</code>
+        /// An optional pagination token provided by a previous <c>DescribeDBClusterBacktracks</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>.
+        /// the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -198,8 +198,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

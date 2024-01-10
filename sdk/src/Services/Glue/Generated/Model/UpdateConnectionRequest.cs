@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionInput. 
         /// <para>
-        /// A <code>ConnectionInput</code> object that redefines the connection in question.
+        /// A <c>ConnectionInput</c> object that redefines the connection in question.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

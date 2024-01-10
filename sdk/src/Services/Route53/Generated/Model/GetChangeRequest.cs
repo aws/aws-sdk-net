@@ -35,14 +35,14 @@ namespace Amazon.Route53.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PENDING</code> indicates that the changes in this request have not propagated
-    /// to all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status
+    ///  <c>PENDING</c> indicates that the changes in this request have not propagated to
+    /// all Amazon Route 53 DNS servers managing the hosted zone. This is the initial status
     /// of all change batch requests.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>INSYNC</code> indicates that the changes have propagated to all Route 53 DNS
-    /// servers managing the hosted zone. 
+    ///  <c>INSYNC</c> indicates that the changes have propagated to all Route 53 DNS servers
+    /// managing the hosted zone. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -68,8 +68,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The ID of the change batch request. The value that you specify here is the value that
-        /// <code>ChangeResourceRecordSets</code> returned in the <code>Id</code> element when
-        /// you submitted the request.
+        /// <c>ChangeResourceRecordSets</c> returned in the <c>Id</c> element when you submitted
+        /// the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=6500)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The value of an <code>IndexField</code> and its current status.
+    /// The value of an <c>IndexField</c> and its current status.
     /// </summary>
     public partial class IndexFieldStatus
     {

@@ -150,7 +150,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid value: <code>["connect:sms"]</code> 
+        /// Valid value: <c>["connect:sms"]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

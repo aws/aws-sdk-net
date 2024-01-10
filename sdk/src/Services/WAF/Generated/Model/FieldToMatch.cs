@@ -42,7 +42,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Specifies where in a web request to look for <code>TargetString</code>.
+    /// Specifies where in a web request to look for <c>TargetString</c>.
     /// </para>
     /// </summary>
     public partial class FieldToMatch
@@ -53,19 +53,19 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Data. 
         /// <para>
-        /// When the value of <code>Type</code> is <code>HEADER</code>, enter the name of the
-        /// header that you want AWS WAF to search, for example, <code>User-Agent</code> or <code>Referer</code>.
-        /// The name of the header is not case sensitive.
+        /// When the value of <c>Type</c> is <c>HEADER</c>, enter the name of the header that
+        /// you want AWS WAF to search, for example, <c>User-Agent</c> or <c>Referer</c>. The
+        /// name of the header is not case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// When the value of <code>Type</code> is <code>SINGLE_QUERY_ARG</code>, enter the name
-        /// of the parameter that you want AWS WAF to search, for example, <code>UserName</code>
-        /// or <code>SalesRegion</code>. The parameter name is not case sensitive.
+        /// When the value of <c>Type</c> is <c>SINGLE_QUERY_ARG</c>, enter the name of the parameter
+        /// that you want AWS WAF to search, for example, <c>UserName</c> or <c>SalesRegion</c>.
+        /// The parameter name is not case sensitive.
         /// </para>
         ///  
         /// <para>
-        /// If the value of <code>Type</code> is any other value, omit <code>Data</code>.
+        /// If the value of <c>Type</c> is any other value, omit <c>Data</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -89,47 +89,46 @@ namespace Amazon.WAF.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HEADER</code>: A specified request header, for example, the value of the <code>User-Agent</code>
-        /// or <code>Referer</code> header. If you choose <code>HEADER</code> for the type, specify
-        /// the name of the header in <code>Data</code>.
+        ///  <c>HEADER</c>: A specified request header, for example, the value of the <c>User-Agent</c>
+        /// or <c>Referer</c> header. If you choose <c>HEADER</c> for the type, specify the name
+        /// of the header in <c>Data</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>METHOD</code>: The HTTP method, which indicated the type of operation that
-        /// the request is asking the origin to perform. Amazon CloudFront supports the following
-        /// methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
-        /// <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>.
+        ///  <c>METHOD</c>: The HTTP method, which indicated the type of operation that the request
+        /// is asking the origin to perform. Amazon CloudFront supports the following methods:
+        /// <c>DELETE</c>, <c>GET</c>, <c>HEAD</c>, <c>OPTIONS</c>, <c>PATCH</c>, <c>POST</c>,
+        /// and <c>PUT</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>QUERY_STRING</code>: A query string, which is the part of a URL that appears
-        /// after a <code>?</code> character, if any.
+        ///  <c>QUERY_STRING</c>: A query string, which is the part of a URL that appears after
+        /// a <c>?</c> character, if any.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>URI</code>: The part of a web request that identifies a resource, for example,
-        /// <code>/images/daily-ad.jpg</code>.
+        ///  <c>URI</c>: The part of a web request that identifies a resource, for example, <c>/images/daily-ad.jpg</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BODY</code>: The part of a request that contains any additional data that you
-        /// want to send to your web server as the HTTP request body, such as data from a form.
-        /// The request body immediately follows the request headers. Note that only the first
-        /// <code>8192</code> bytes of the request body are forwarded to AWS WAF for inspection.
-        /// To allow or block requests based on the length of the body, you can create a size
-        /// constraint set. For more information, see <a>CreateSizeConstraintSet</a>. 
+        ///  <c>BODY</c>: The part of a request that contains any additional data that you want
+        /// to send to your web server as the HTTP request body, such as data from a form. The
+        /// request body immediately follows the request headers. Note that only the first <c>8192</c>
+        /// bytes of the request body are forwarded to AWS WAF for inspection. To allow or block
+        /// requests based on the length of the body, you can create a size constraint set. For
+        /// more information, see <a>CreateSizeConstraintSet</a>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SINGLE_QUERY_ARG</code>: The parameter in the query string that you will inspect,
-        /// such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <code>SINGLE_QUERY_ARG</code>
+        ///  <c>SINGLE_QUERY_ARG</c>: The parameter in the query string that you will inspect,
+        /// such as <i>UserName</i> or <i>SalesRegion</i>. The maximum length for <c>SINGLE_QUERY_ARG</c>
         /// is 30 characters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL_QUERY_ARGS</code>: Similar to <code>SINGLE_QUERY_ARG</code>, but rather
-        /// than inspecting a single parameter, AWS WAF will inspect all parameters within the
-        /// query for the value or regex pattern that you specify in <code>TargetString</code>.
+        ///  <c>ALL_QUERY_ARGS</c>: Similar to <c>SINGLE_QUERY_ARG</c>, but rather than inspecting
+        /// a single parameter, AWS WAF will inspect all parameters within the query for the value
+        /// or regex pattern that you specify in <c>TargetString</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

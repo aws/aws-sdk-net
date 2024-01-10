@@ -39,9 +39,9 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property RecommendationDescription. 
         /// <para>
-        /// The recommendation details to help resolve the performance issue. For example, <code>Investigate
+        /// The recommendation details to help resolve the performance issue. For example, <c>Investigate
         /// the following SQLs that contributed to 100% of the total DBLoad during that time period:
-        /// sql-id</code> 
+        /// sql-id</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=8000)]

@@ -43,7 +43,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>WebACL</a> that is specified by <code>WebACLId</code>.
+    /// Returns the <a>WebACL</a> that is specified by <c>WebACLId</c>.
     /// </para>
     /// </summary>
     public partial class GetWebACLRequest : AmazonWAFRegionalRequest
@@ -53,8 +53,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property WebACLId. 
         /// <para>
-        /// The <code>WebACLId</code> of the <a>WebACL</a> that you want to get. <code>WebACLId</code>
-        /// is returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
+        /// The <c>WebACLId</c> of the <a>WebACL</a> that you want to get. <c>WebACLId</c> is
+        /// returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

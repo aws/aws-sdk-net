@@ -30,7 +30,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTestGridUrl operation.
-    /// Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code>
+    /// Creates a signed, short-term URL that can be passed to a Selenium <c>RemoteWebDriver</c>
     /// constructor.
     /// </summary>
     public partial class CreateTestGridUrlRequest : AmazonDeviceFarmRequest

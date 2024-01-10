@@ -122,8 +122,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ScheduledBy. 
         /// <para>
-        /// Whether the action was scheduled manually (<code>CUSTOMER</code>, or by OpenSearch
-        /// Service automatically (<code>SYSTEM</code>).
+        /// Whether the action was scheduled manually (<c>CUSTOMER</c>, or by OpenSearch Service
+        /// automatically (<c>SYSTEM</c>).
         /// </para>
         /// </summary>
         public ScheduledBy ScheduledBy

@@ -47,7 +47,7 @@ namespace Amazon.NetworkMonitor.Model
         /// Gets and sets the property AggregationPeriod. 
         /// <para>
         /// The time, in seconds, that metrics are aggregated and sent to Amazon CloudWatch. Valid
-        /// values are either <code>30</code> or <code>60</code>. 
+        /// values are either <c>30</c> or <c>60</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=30)]

@@ -43,7 +43,7 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. <code>INSUFFICIENT_DATA</code>
+        /// The allowed values are <c>COMPLIANT</c> and <c>NON_COMPLIANT</c>. <c>INSUFFICIENT_DATA</c>
         /// is not supported.
         /// </para>
         /// </summary>

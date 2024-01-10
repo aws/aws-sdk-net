@@ -88,9 +88,9 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Description. 
         /// <para>
         /// The description of the filter. Valid characters include alphanumeric characters, and
-        /// special characters such as hyphen, period, colon, underscore, parentheses (<code>{
-        /// }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab,
-        /// vertical tab, newline, form feed, return, and whitespace.
+        /// special characters such as hyphen, period, colon, underscore, parentheses (<c>{ }</c>,
+        /// <c>[ ]</c>, and <c>( )</c>), forward slash, horizontal tab, vertical tab, newline,
+        /// form feed, return, and whitespace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -159,15 +159,15 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Low</b>: <code>["1", "2", "3"]</code> 
+        ///  <b>Low</b>: <c>["1", "2", "3"]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Medium</b>: <code>["4", "5", "6"]</code> 
+        ///  <b>Medium</b>: <c>["4", "5", "6"]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>High</b>: <code>["7", "8", "9"]</code> 
+        ///  <b>High</b>: <c>["7", "8", "9"]</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

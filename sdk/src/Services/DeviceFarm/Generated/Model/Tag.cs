@@ -42,8 +42,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// One part of a key-value pair that makes up a tag. A <code>key</code> is a general
-        /// label that acts like a category for more specific tag values.
+        /// One part of a key-value pair that makes up a tag. A <c>key</c> is a general label
+        /// that acts like a category for more specific tag values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -62,8 +62,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The optional part of a key-value pair that makes up a tag. A <code>value</code> acts
-        /// as a descriptor in a tag category (key).
+        /// The optional part of a key-value pair that makes up a tag. A <c>value</c> acts as
+        /// a descriptor in a tag category (key).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

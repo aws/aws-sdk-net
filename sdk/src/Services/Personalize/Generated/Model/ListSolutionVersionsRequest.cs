@@ -63,7 +63,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token returned from the previous call to <code>ListSolutionVersions</code> for getting
+        /// A token returned from the previous call to <c>ListSolutionVersions</c> for getting
         /// the next set of solution versions (if they exist).
         /// </para>
         /// </summary>

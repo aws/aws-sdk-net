@@ -66,8 +66,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// To retrieve the next set of results, the <code>nextToken</code> value from a previous
-        /// response; otherwise <b>null</b> to receive the first set of results.
+        /// To retrieve the next set of results, the <c>nextToken</c> value from a previous response;
+        /// otherwise <b>null</b> to receive the first set of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -85,7 +85,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property TargetType. 
         /// <para>
-        /// The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.
+        /// The type of resource for which you are configuring logging. Must be <c>THING_Group</c>.
         /// </para>
         /// </summary>
         public LogTargetType TargetType

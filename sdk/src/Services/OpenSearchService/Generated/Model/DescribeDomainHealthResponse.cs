@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>DescribeDomainHealth</code> request. Contains health information
-    /// for the requested domain.
+    /// The result of a <c>DescribeDomainHealth</c> request. Contains health information for
+    /// the requested domain.
     /// </summary>
     public partial class DescribeDomainHealthResponse : AmazonWebServiceResponse
     {
@@ -52,7 +52,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property ActiveAvailabilityZoneCount. 
         /// <para>
         /// The number of active Availability Zones configured for the domain. If the service
-        /// is unable to fetch this information, it will return <code>NotAvailable</code>.
+        /// is unable to fetch this information, it will return <c>NotAvailable</c>.
         /// </para>
         /// </summary>
         public string ActiveAvailabilityZoneCount
@@ -71,7 +71,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property AvailabilityZoneCount. 
         /// <para>
         /// The number of Availability Zones configured for the domain. If the service is unable
-        /// to fetch this information, it will return <code>NotAvailable</code>.
+        /// to fetch this information, it will return <c>NotAvailable</c>.
         /// </para>
         /// </summary>
         public string AvailabilityZoneCount
@@ -93,20 +93,19 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Red</code> - At least one primary shard is not allocated to any node.
+        ///  <c>Red</c> - At least one primary shard is not allocated to any node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Yellow</code> - All primary shards are allocated to nodes, but some replicas
-        /// aren’t.
+        ///  <c>Yellow</c> - All primary shards are allocated to nodes, but some replicas aren’t.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Green</code> - All primary shards and their replicas are allocated to nodes.
+        ///  <c>Green</c> - All primary shards and their replicas are allocated to nodes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NotAvailable</code> - Unable to retrieve cluster health.
+        ///  <c>NotAvailable</c> - Unable to retrieve cluster health.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -126,7 +125,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property DataNodeCount. 
         /// <para>
         /// The number of data nodes configured for the domain. If the service is unable to fetch
-        /// this information, it will return <code>NotAvailable</code>.
+        /// this information, it will return <c>NotAvailable</c>.
         /// </para>
         /// </summary>
         public string DataNodeCount
@@ -166,11 +165,11 @@ namespace Amazon.OpenSearchService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Processing</code> - The domain has updates in progress.
+        ///  <c>Processing</c> - The domain has updates in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Active</code> - Requested changes have been processed and deployed to the domain.
+        ///  <c>Active</c> - Requested changes have been processed and deployed to the domain.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -189,7 +188,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EnvironmentInformation. 
         /// <para>
-        /// A list of <code>EnvironmentInfo</code> for the domain. 
+        /// A list of <c>EnvironmentInfo</c> for the domain. 
         /// </para>
         /// </summary>
         public List<EnvironmentInfo> EnvironmentInformation
@@ -209,7 +208,7 @@ namespace Amazon.OpenSearchService.Model
         /// <para>
         /// The number of nodes that can be elected as a master node. If dedicated master nodes
         /// is turned on, this value is the number of dedicated master nodes configured for the
-        /// domain. If the service is unable to fetch this information, it will return <code>NotAvailable</code>.
+        /// domain. If the service is unable to fetch this information, it will return <c>NotAvailable</c>.
         /// </para>
         /// </summary>
         public string MasterEligibleNodeCount
@@ -256,7 +255,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property StandByAvailabilityZoneCount. 
         /// <para>
         /// The number of standby Availability Zones configured for the domain. If the service
-        /// is unable to fetch this information, it will return <code>NotAvailable</code>.
+        /// is unable to fetch this information, it will return <c>NotAvailable</c>.
         /// </para>
         /// </summary>
         public string StandByAvailabilityZoneCount

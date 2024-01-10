@@ -141,7 +141,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Settings to create and manage the pre-provisioned snapshots that Amazon EC2 uses for
         /// faster launches from the Windows AMI. This property is returned when the associated
-        /// <code>resourceType</code> is <code>snapshot</code>.
+        /// <c>resourceType</c> is <c>snapshot</c>.
         /// </para>
         /// </summary>
         public FastLaunchSnapshotConfigurationResponse SnapshotConfiguration

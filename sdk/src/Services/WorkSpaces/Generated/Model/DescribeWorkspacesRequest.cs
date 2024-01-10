@@ -70,8 +70,8 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property DirectoryId. 
         /// <para>
         /// The identifier of the directory. In addition, you can optionally specify a specific
-        /// directory user (see <code>UserName</code>). You cannot combine this parameter with
-        /// any other filter.
+        /// directory user (see <c>UserName</c>). You cannot combine this parameter with any other
+        /// filter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=65)]
@@ -109,8 +109,8 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you received a <code>NextToken</code> from a previous call that was paginated,
-        /// provide this token to receive the next set of results.
+        /// If you received a <c>NextToken</c> from a previous call that was paginated, provide
+        /// this token to receive the next set of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -129,7 +129,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the directory user. You must specify this parameter with <code>DirectoryId</code>.
+        /// The name of the directory user. You must specify this parameter with <c>DirectoryId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

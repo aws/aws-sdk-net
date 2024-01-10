@@ -30,7 +30,7 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the CancelCluster operation.
-    /// Cancels a cluster job. You can only cancel a cluster job while it's in the <code>AwaitingQuorum</code>
+    /// Cancels a cluster job. You can only cancel a cluster job while it's in the <c>AwaitingQuorum</c>
     /// status. You'll have at least an hour after creating a cluster job to cancel it.
     /// </summary>
     public partial class CancelClusterRequest : AmazonSnowballRequest
@@ -40,7 +40,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ClusterId. 
         /// <para>
-        /// The 39-character ID for the cluster that you want to cancel, for example <code>CID123e4567-e89b-12d3-a456-426655440000</code>.
+        /// The 39-character ID for the cluster that you want to cancel, for example <c>CID123e4567-e89b-12d3-a456-426655440000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=39, Max=39)]

@@ -60,7 +60,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property VpcConnectors. 
         /// <para>
         /// A list of information records for VPC connectors. In a paginated request, the request
-        /// returns up to <code>MaxResults</code> records for each call.
+        /// returns up to <c>MaxResults</c> records for each call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

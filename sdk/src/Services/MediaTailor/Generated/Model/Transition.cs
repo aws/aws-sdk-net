@@ -60,7 +60,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property RelativePosition. 
         /// <para>
-        /// The position where this program will be inserted relative to the <code>RelativePosition</code>.
+        /// The position where this program will be inserted relative to the <c>RelativePosition</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property RelativeProgram. 
         /// <para>
         /// The name of the program that this program will be inserted next to, as defined by
-        /// <code>RelativePosition</code>.
+        /// <c>RelativePosition</c>.
         /// </para>
         /// </summary>
         public string RelativeProgram
@@ -116,17 +116,17 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Defines when the program plays in the schedule. You can set the value to <code>ABSOLUTE</code>
-        /// or <code>RELATIVE</code>.
+        /// Defines when the program plays in the schedule. You can set the value to <c>ABSOLUTE</c>
+        /// or <c>RELATIVE</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ABSOLUTE</code> - The program plays at a specific wall clock time. This setting
-        /// can only be used for channels using the <code>LINEAR</code> <code>PlaybackMode</code>.
+        ///  <c>ABSOLUTE</c> - The program plays at a specific wall clock time. This setting can
+        /// only be used for channels using the <c>LINEAR</c> <c>PlaybackMode</c>.
         /// </para>
         ///  
         /// <para>
-        /// Note the following considerations when using <code>ABSOLUTE</code> transitions:
+        /// Note the following considerations when using <c>ABSOLUTE</c> transitions:
         /// </para>
         ///  
         /// <para>
@@ -135,13 +135,13 @@ namespace Amazon.MediaTailor.Model
         /// </para>
         ///  
         /// <para>
-        /// If there are gaps in playback, MediaTailor plays the <code>FillerSlate</code> you
-        /// configured for your linear channel.
+        /// If there are gaps in playback, MediaTailor plays the <c>FillerSlate</c> you configured
+        /// for your linear channel.
         /// </para>
         ///  
         /// <para>
-        ///  <code>RELATIVE</code> - The program is inserted into the schedule either before or
-        /// after a program that you specify via <code>RelativePosition</code>.
+        ///  <c>RELATIVE</c> - The program is inserted into the schedule either before or after
+        /// a program that you specify via <c>RelativePosition</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

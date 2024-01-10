@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// The insight results returned by the <code>GetInsightResults</code> operation.
+    /// The insight results returned by the <c>GetInsightResults</c> operation.
     /// </summary>
     public partial class InsightResults
     {
@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property GroupByAttribute. 
         /// <para>
         /// The attribute that the findings are grouped by for the insight whose results are returned
-        /// by the <code>GetInsightResults</code> operation.
+        /// by the <c>GetInsightResults</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InsightArn. 
         /// <para>
-        /// The ARN of the insight whose results are returned by the <code>GetInsightResults</code>
+        /// The ARN of the insight whose results are returned by the <c>GetInsightResults</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -80,7 +80,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResultValues. 
         /// <para>
-        /// The list of insight result values returned by the <code>GetInsightResults</code> operation.
+        /// The list of insight result values returned by the <c>GetInsightResults</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>CreateUserProfile</code> request.
+    /// Contains the response to a <c>CreateUserProfile</c> request.
     /// </summary>
     public partial class CreateUserProfileResponse : AmazonWebServiceResponse
     {

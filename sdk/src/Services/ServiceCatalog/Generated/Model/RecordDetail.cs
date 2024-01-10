@@ -164,9 +164,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisionedProductType. 
         /// <para>
-        /// The type of provisioned product. The supported values are <code>CFN_STACK</code>,
-        /// <code>CFN_STACKSET</code>, <code>TERRAFORM_OPEN_SOURCE</code>, <code>TERRAFORM_CLOUD</code>,
-        /// and <code>EXTERNAL</code>.
+        /// The type of provisioned product. The supported values are <c>CFN_STACK</c>, <c>CFN_STACKSET</c>,
+        /// <c>TERRAFORM_OPEN_SOURCE</c>, <c>TERRAFORM_CLOUD</c>, and <c>EXTERNAL</c>.
         /// </para>
         /// </summary>
         public string ProvisionedProductType
@@ -263,15 +262,15 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISION_PRODUCT</code> 
+        ///  <c>PROVISION_PRODUCT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_PROVISIONED_PRODUCT</code> 
+        ///  <c>UPDATE_PROVISIONED_PRODUCT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERMINATE_PROVISIONED_PRODUCT</code> 
+        ///  <c>TERMINATE_PROVISIONED_PRODUCT</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -294,24 +293,24 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATED</code> - The request was created but the operation has not started.
+        ///  <c>CREATED</c> - The request was created but the operation has not started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - The requested operation is in progress.
+        ///  <c>IN_PROGRESS</c> - The requested operation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS_IN_ERROR</code> - The provisioned product is under change but the
-        /// requested operation failed and some remediation is occurring. For example, a rollback.
+        ///  <c>IN_PROGRESS_IN_ERROR</c> - The provisioned product is under change but the requested
+        /// operation failed and some remediation is occurring. For example, a rollback.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code> - The requested operation has successfully completed.
+        ///  <c>SUCCEEDED</c> - The requested operation has successfully completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The requested operation has unsuccessfully completed. Investigate
+        ///  <c>FAILED</c> - The requested operation has unsuccessfully completed. Investigate
         /// using the error messages returned.
         /// </para>
         ///  </li> </ul>

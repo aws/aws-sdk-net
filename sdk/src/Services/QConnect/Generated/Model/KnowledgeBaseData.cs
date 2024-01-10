@@ -185,9 +185,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
-        /// <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the
-        /// IAM identity using the key to invoke Amazon Q. 
+        /// This KMS key must have a policy that allows <c>kms:CreateGrant</c>, <c>kms:DescribeKey</c>,
+        /// <c>kms:Decrypt</c>, and <c>kms:GenerateDataKey*</c> permissions to the IAM identity
+        /// using the key to invoke Amazon Q. 
         /// </para>
         ///  
         /// <para>

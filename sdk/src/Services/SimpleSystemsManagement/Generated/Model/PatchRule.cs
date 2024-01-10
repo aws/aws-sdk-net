@@ -43,7 +43,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApproveAfterDays. 
         /// <para>
         /// The number of days after the release date of each patch matched by the rule that the
-        /// patch is marked as approved in the patch baseline. For example, a value of <code>7</code>
+        /// patch is marked as approved in the patch baseline. For example, a value of <c>7</c>
         /// means that patches are approved seven days after they are released. Not supported
         /// on Debian Server or Ubuntu Server.
         /// </para>
@@ -70,7 +70,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        /// Enter dates in the format <code>YYYY-MM-DD</code>. For example, <code>2021-12-31</code>.
+        /// Enter dates in the format <c>YYYY-MM-DD</c>. For example, <c>2021-12-31</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -109,7 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// For managed nodes identified by the approval rule filters, enables a patch baseline
         /// to apply non-security updates available in the specified repository. The default value
-        /// is <code>false</code>. Applies to Linux managed nodes only.
+        /// is <c>false</c>. Applies to Linux managed nodes only.
         /// </para>
         /// </summary>
         public bool EnableNonSecurity

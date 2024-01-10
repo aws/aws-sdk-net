@@ -30,7 +30,7 @@ namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
     /// The vehicle middleware defined as a type of network interface. Examples of vehicle
-    /// middleware include <code>ROS2</code> and <code>SOME/IP</code>.
+    /// middleware include <c>ROS2</c> and <c>SOME/IP</c>.
     /// </summary>
     public partial class VehicleMiddleware
     {

@@ -42,44 +42,43 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ordering</code>: The initial state of a hosted connection provisioned on an
-        /// interconnect. The connection stays in the ordering state until the owner of the hosted
-        /// connection confirms or declines the connection order.
+        ///  <c>ordering</c>: The initial state of a hosted connection provisioned on an interconnect.
+        /// The connection stays in the ordering state until the owner of the hosted connection
+        /// confirms or declines the connection order.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requested</code>: The initial state of a standard connection. The connection
-        /// stays in the requested state until the Letter of Authorization (LOA) is sent to the
-        /// customer.
+        ///  <c>requested</c>: The initial state of a standard connection. The connection stays
+        /// in the requested state until the Letter of Authorization (LOA) is sent to the customer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code>: The connection has been approved and is being initialized.
+        ///  <c>pending</c>: The connection has been approved and is being initialized.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available</code>: The network link is up and the connection is ready for use.
+        ///  <c>available</c>: The network link is up and the connection is ready for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>down</code>: The network link is down.
+        ///  <c>down</c>: The network link is down.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code>: The connection is being deleted.
+        ///  <c>deleting</c>: The connection is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code>: The connection has been deleted.
+        ///  <c>deleted</c>: The connection has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rejected</code>: A hosted connection in the <code>ordering</code> state enters
-        /// the <code>rejected</code> state if it is deleted by the customer.
+        ///  <c>rejected</c>: A hosted connection in the <c>ordering</c> state enters the <c>rejected</c>
+        /// state if it is deleted by the customer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unknown</code>: The state of the connection is not available.
+        ///  <c>unknown</c>: The state of the connection is not available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

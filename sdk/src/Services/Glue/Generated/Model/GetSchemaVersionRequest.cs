@@ -47,13 +47,13 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code>
-        /// or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.
+        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <c>SchemaArn</c>
+        /// or <c>SchemaName</c> and <c>RegistryName</c> has to be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code>
-        /// and <code>RegistryName</code> has to be provided.
+        /// SchemaId$SchemaName: The name of the schema. Either <c>SchemaArn</c> or <c>SchemaName</c>
+        /// and <c>RegistryName</c> has to be provided.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -72,9 +72,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaVersionId. 
         /// <para>
-        /// The <code>SchemaVersionId</code> of the schema version. This field is required for
-        /// fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be
-        /// provided.
+        /// The <c>SchemaVersionId</c> of the schema version. This field is required for fetching
+        /// by schema ID. Either this or the <c>SchemaId</c> wrapper has to be provided.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

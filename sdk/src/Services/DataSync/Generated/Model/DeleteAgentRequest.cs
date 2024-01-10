@@ -48,8 +48,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent to delete. Use the <code>ListAgents</code>
-        /// operation to return a list of agents for your account and Amazon Web Services Region.
+        /// The Amazon Resource Name (ARN) of the agent to delete. Use the <c>ListAgents</c> operation
+        /// to return a list of agents for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=128)]

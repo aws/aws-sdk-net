@@ -42,7 +42,7 @@ namespace Amazon.Scheduler.Model
         /// <para>
         /// The base value designates how many tasks, at a minimum, to run on the specified capacity
         /// provider. Only one capacity provider in a capacity provider strategy can have a base
-        /// defined. If no value is specified, the default value of <code>0</code> is used.
+        /// defined. If no value is specified, the default value of <c>0</c> is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]

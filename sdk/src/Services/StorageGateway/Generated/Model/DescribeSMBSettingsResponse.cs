@@ -48,35 +48,35 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACCESS_DENIED</code>: Indicates that the <code>JoinDomain</code> operation
-        /// failed due to an authentication error.
+        ///  <c>ACCESS_DENIED</c>: Indicates that the <c>JoinDomain</c> operation failed due to
+        /// an authentication error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DETACHED</code>: Indicates that gateway is not joined to a domain.
+        ///  <c>DETACHED</c>: Indicates that gateway is not joined to a domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JOINED</code>: Indicates that the gateway has successfully joined a domain.
+        ///  <c>JOINED</c>: Indicates that the gateway has successfully joined a domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JOINING</code>: Indicates that a <code>JoinDomain</code> operation is in progress.
+        ///  <c>JOINING</c>: Indicates that a <c>JoinDomain</c> operation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NETWORK_ERROR</code>: Indicates that <code>JoinDomain</code> operation failed
-        /// due to a network or connectivity error.
+        ///  <c>NETWORK_ERROR</c>: Indicates that <c>JoinDomain</c> operation failed due to a
+        /// network or connectivity error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TIMEOUT</code>: Indicates that the <code>JoinDomain</code> operation failed
-        /// because the operation didn't complete within the allotted time.
+        ///  <c>TIMEOUT</c>: Indicates that the <c>JoinDomain</c> operation failed because the
+        /// operation didn't complete within the allotted time.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN_ERROR</code>: Indicates that the <code>JoinDomain</code> operation
-        /// failed due to another type of error.
+        ///  <c>UNKNOWN_ERROR</c>: Indicates that the <c>JoinDomain</c> operation failed due to
+        /// another type of error.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -149,12 +149,12 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property SMBGuestPasswordSet. 
         /// <para>
-        /// This value is <code>true</code> if a password for the guest user <code>smbguest</code>
-        /// is set, otherwise <code>false</code>. Only supported for S3 File Gateways.
+        /// This value is <c>true</c> if a password for the guest user <c>smbguest</c> is set,
+        /// otherwise <c>false</c>. Only supported for S3 File Gateways.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool SMBGuestPasswordSet
@@ -195,23 +195,23 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ClientSpecified</code>: If you use this option, requests are established based
-        /// on what is negotiated by the client. This option is recommended when you want to maximize
+        ///  <c>ClientSpecified</c>: If you use this option, requests are established based on
+        /// what is negotiated by the client. This option is recommended when you want to maximize
         /// compatibility across different clients in your environment. Only supported for S3
         /// File Gateways.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MandatorySigning</code>: If you use this option, file gateway only allows connections
+        ///  <c>MandatorySigning</c>: If you use this option, file gateway only allows connections
         /// from SMBv2 or SMBv3 clients that have signing enabled. This option works with SMB
         /// clients on Microsoft Windows Vista, Windows Server 2008 or newer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MandatoryEncryption</code>: If you use this option, file gateway only allows
-        /// connections from SMBv3 clients that have encryption enabled. This option is highly
-        /// recommended for environments that handle sensitive data. This option works with SMB
-        /// clients on Microsoft Windows 8, Windows Server 2012 or newer.
+        ///  <c>MandatoryEncryption</c>: If you use this option, file gateway only allows connections
+        /// from SMBv3 clients that have encryption enabled. This option is highly recommended
+        /// for environments that handle sensitive data. This option works with SMB clients on
+        /// Microsoft Windows 8, Windows Server 2012 or newer.
         /// </para>
         ///  </li> </ul>
         /// </summary>

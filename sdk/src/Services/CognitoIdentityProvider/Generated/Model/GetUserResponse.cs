@@ -87,7 +87,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
         /// name.
         /// </para>
         /// </summary>
@@ -108,7 +108,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserMFASettingList. 
         /// <para>
         /// The MFA options that are activated for the user. The possible values in this list
-        /// are <code>SMS_MFA</code> and <code>SOFTWARE_TOKEN_MFA</code>.
+        /// are <c>SMS_MFA</c> and <c>SOFTWARE_TOKEN_MFA</c>.
         /// </para>
         /// </summary>
         public List<string> UserMFASettingList

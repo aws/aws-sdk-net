@@ -45,11 +45,11 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies the total number of results that you want included on each page of the response.
         /// If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+        /// operation. If additional items exist beyond the number you specify, the <c>NextToken</c>
         /// response element is returned with a value (not null). Include the specified value
-        /// as the <code>NextToken</code> request parameter in the next call to the operation
-        /// to get the next part of the results. Note that the service might return fewer results
-        /// than the maximum even when there are more results available. You should check <code>NextToken</code>
+        /// as the <c>NextToken</c> request parameter in the next call to the operation to get
+        /// the next part of the results. Note that the service might return fewer results than
+        /// the maximum even when there are more results available. You should check <c>NextToken</c>
         /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
@@ -70,9 +70,9 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Specifies that you want to receive the next page of results. Valid only if you received
-        /// a <code>NextToken</code> response in the previous request. If you did, it indicates
-        /// that more output is available. Set this parameter to the value provided by the previous
-        /// call's <code>NextToken</code> response to request the next page of results.
+        /// a <c>NextToken</c> response in the previous request. If you did, it indicates that
+        /// more output is available. Set this parameter to the value provided by the previous
+        /// call's <c>NextToken</c> response to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -94,20 +94,20 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS</code> – returns only Amazon Web Services managed permissions.
+        ///  <c>AWS</c> – returns only Amazon Web Services managed permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOCAL</code> – returns only customer managed permissions
+        ///  <c>LOCAL</c> – returns only customer managed permissions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code> – returns both Amazon Web Services managed permissions and customer
-        /// managed permissions.
+        ///  <c>ALL</c> – returns both Amazon Web Services managed permissions and customer managed
+        /// permissions.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't specify this parameter, the default is <code>All</code>.
+        /// If you don't specify this parameter, the default is <c>All</c>.
         /// </para>
         /// </summary>
         public PermissionTypeFilter PermissionType
@@ -130,7 +130,7 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, to list only permissions that apply to Amazon EC2 subnets, specify <code>ec2:subnet</code>.
+        /// For example, to list only permissions that apply to Amazon EC2 subnets, specify <c>ec2:subnet</c>.
         /// You can use the <a>ListResourceTypes</a> operation to get the specific string required.
         /// </para>
         /// </summary>

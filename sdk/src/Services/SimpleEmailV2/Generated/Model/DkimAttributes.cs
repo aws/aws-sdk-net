@@ -116,14 +116,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS_SES</code> – Indicates that DKIM was configured for the identity by using
-        /// <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy
-        /// DKIM</a>.
+        ///  <c>AWS_SES</c> – Indicates that DKIM was configured for the identity by using <a
+        /// href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/easy-dkim.html">Easy DKIM</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXTERNAL</code> – Indicates that DKIM was configured for the identity by using
-        /// Bring Your Own DKIM (BYODKIM).
+        ///  <c>EXTERNAL</c> – Indicates that DKIM was configured for the identity by using Bring
+        /// Your Own DKIM (BYODKIM).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -142,9 +141,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property SigningEnabled. 
         /// <para>
-        /// If the value is <code>true</code>, then the messages that you send from the identity
-        /// are signed using DKIM. If the value is <code>false</code>, then the messages that
-        /// you send from the identity aren't DKIM-signed.
+        /// If the value is <c>true</c>, then the messages that you send from the identity are
+        /// signed using DKIM. If the value is <c>false</c>, then the messages that you send from
+        /// the identity aren't DKIM-signed.
         /// </para>
         /// </summary>
         public bool SigningEnabled
@@ -167,27 +166,27 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't
-        /// yet detected the DKIM records in the DNS configuration for the domain.
+        ///  <c>PENDING</c> – The verification process was initiated, but Amazon SES hasn't yet
+        /// detected the DKIM records in the DNS configuration for the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> – The verification process completed successfully.
+        ///  <c>SUCCESS</c> – The verification process completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – The verification process failed. This typically occurs when
-        /// Amazon SES fails to find the DKIM records in the DNS configuration of the domain.
+        ///  <c>FAILED</c> – The verification process failed. This typically occurs when Amazon
+        /// SES fails to find the DKIM records in the DNS configuration of the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from
-        /// determining the DKIM authentication status of the domain.
+        ///  <c>TEMPORARY_FAILURE</c> – A temporary issue is preventing Amazon SES from determining
+        /// the DKIM authentication status of the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_STARTED</code> – The DKIM verification process hasn't been initiated for
-        /// the domain.
+        ///  <c>NOT_STARTED</c> – The DKIM verification process hasn't been initiated for the
+        /// domain.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the action <code>DescribeDBEngineVersions</code>.
+    /// This data type is used as a response element in the action <c>DescribeDBEngineVersions</c>.
     /// </summary>
     public partial class CharacterSet
     {

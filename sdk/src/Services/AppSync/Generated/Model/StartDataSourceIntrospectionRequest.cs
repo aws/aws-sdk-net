@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDataSourceIntrospection operation.
-    /// Creates a new introspection. Returns the <code>introspectionId</code> of the new introspection
+    /// Creates a new introspection. Returns the <c>introspectionId</c> of the new introspection
     /// after its creation.
     /// </summary>
     public partial class StartDataSourceIntrospectionRequest : AmazonAppSyncRequest
@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property RdsDataApiConfig. 
         /// <para>
-        /// The <code>rdsDataApiConfig</code> object data.
+        /// The <c>rdsDataApiConfig</c> object data.
         /// </para>
         /// </summary>
         public RdsDataApiConfig RdsDataApiConfig

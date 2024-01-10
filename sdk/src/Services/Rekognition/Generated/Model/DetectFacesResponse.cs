@@ -57,7 +57,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property OrientationCorrection. 
         /// <para>
-        /// The value of <code>OrientationCorrection</code> is always null.
+        /// The value of <c>OrientationCorrection</c> is always null.
         /// </para>
         ///  
         /// <para>

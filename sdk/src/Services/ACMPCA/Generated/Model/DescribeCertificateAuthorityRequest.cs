@@ -36,37 +36,37 @@ namespace Amazon.ACMPCA.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CREATING</code> - Amazon Web Services Private CA is creating your private certificate
+    ///  <c>CREATING</c> - Amazon Web Services Private CA is creating your private certificate
     /// authority.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PENDING_CERTIFICATE</code> - The certificate is pending. You must use your
-    /// Amazon Web Services Private CA-hosted or on-premises root or subordinate CA to sign
-    /// your private CA CSR and then import it into Amazon Web Services Private CA. 
+    ///  <c>PENDING_CERTIFICATE</c> - The certificate is pending. You must use your Amazon
+    /// Web Services Private CA-hosted or on-premises root or subordinate CA to sign your
+    /// private CA CSR and then import it into Amazon Web Services Private CA. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ACTIVE</code> - Your private CA is active.
+    ///  <c>ACTIVE</c> - Your private CA is active.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DISABLED</code> - Your private CA has been disabled.
+    ///  <c>DISABLED</c> - Your private CA has been disabled.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>EXPIRED</code> - Your private CA certificate has expired.
+    ///  <c>EXPIRED</c> - Your private CA certificate has expired.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>FAILED</code> - Your private CA has failed. Your CA can fail because of problems
+    ///  <c>FAILED</c> - Your private CA has failed. Your CA can fail because of problems
     /// such a network outage or back-end Amazon Web Services failure or other errors. A failed
     /// CA can never return to the pending state. You must create a new CA. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DELETED</code> - Your private CA is within the restoration period, after which
-    /// it is permanently deleted. The length of time remaining in the CA's restoration period
+    ///  <c>DELETED</c> - Your private CA is within the restoration period, after which it
+    /// is permanently deleted. The length of time remaining in the CA's restoration period
     /// is also included in this action's output.
     /// </para>
     ///  </li> </ul>
@@ -83,8 +83,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code>. 
+        ///  <c>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        /// </c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=200)]

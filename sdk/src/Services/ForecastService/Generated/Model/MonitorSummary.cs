@@ -31,7 +31,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Provides a summary of the monitor properties used in the <a>ListMonitors</a> operation.
     /// To get a complete set of properties, call the <a>DescribeMonitor</a> operation, and
-    /// provide the listed <code>MonitorArn</code>.
+    /// provide the listed <c>MonitorArn</c>.
     /// </summary>
     public partial class MonitorSummary
     {
@@ -68,20 +68,19 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+        ///  <c>CREATE_PENDING</c> - The <c>CreationTime</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+        ///  <c>CREATE_IN_PROGRESS</c> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code> - When the resource stopped.
+        ///  <c>STOPPED</c> - When the resource stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the monitor creation finished
-        /// or failed.
+        ///  <c>ACTIVE</c> or <c>CREATE_FAILED</c> - When the monitor creation finished or failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -161,25 +160,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> 
+        ///  <c>ACTIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE_STOPPING</code>, <code>ACTIVE_STOPPED</code> 
+        ///  <c>ACTIVE_STOPPING</c>, <c>ACTIVE_STOPPED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_IN_PROGRESS</code> 
+        ///  <c>UPDATE_IN_PROGRESS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
-        /// 
+        ///  <c>CREATE_PENDING</c>, <c>CREATE_IN_PROGRESS</c>, <c>CREATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
-        /// 
+        ///  <c>DELETE_PENDING</c>, <c>DELETE_IN_PROGRESS</c>, <c>DELETE_FAILED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

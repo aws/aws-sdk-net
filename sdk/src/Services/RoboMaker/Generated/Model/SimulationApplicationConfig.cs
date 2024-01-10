@@ -141,7 +141,7 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property UseDefaultTools. 
         /// <para>
         /// A Boolean indicating whether to use default simulation application tools. The default
-        /// tools are rviz, rqt, terminal and rosbag record. The default is <code>False</code>.
+        /// tools are rviz, rqt, terminal and rosbag record. The default is <c>False</c>.
         /// </para>
         ///  <important> 
         /// <para>
@@ -165,13 +165,13 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property UseDefaultUploadConfigurations. 
         /// <para>
-        /// A Boolean indicating whether to use default upload configurations. By default, <code>.ros</code>
-        /// and <code>.gazebo</code> files are uploaded when the application terminates and all
-        /// ROS topics will be recorded.
+        /// A Boolean indicating whether to use default upload configurations. By default, <c>.ros</c>
+        /// and <c>.gazebo</c> files are uploaded when the application terminates and all ROS
+        /// topics will be recorded.
         /// </para>
         ///  
         /// <para>
-        /// If you set this value, you must specify an <code>outputLocation</code>.
+        /// If you set this value, you must specify an <c>outputLocation</c>.
         /// </para>
         ///  <important> 
         /// <para>

@@ -45,11 +45,11 @@ namespace Amazon.IoTSiteWise.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The <code>assetId</code> and <code>propertyId</code> of an asset property.
+    /// The <c>assetId</c> and <c>propertyId</c> of an asset property.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>propertyAlias</code>, which is a data stream alias (for example, <code>/company/windfarm/3/turbine/7/temperature</code>).
+    /// A <c>propertyAlias</c>, which is a data stream alias (for example, <c>/company/windfarm/3/turbine/7/temperature</c>).
     /// To define an asset property's alias, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetProperty.html">UpdateAssetProperty</a>.
     /// </para>
     ///  </li> </ul>
@@ -112,7 +112,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property EndTimeOffsetInNanos. 
         /// <para>
-        /// The nanosecond offset converted from <code>endTimeInSeconds</code>.
+        /// The nanosecond offset converted from <c>endTimeInSeconds</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999999)]
@@ -158,8 +158,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// If you specify a value for the <code>intervalWindowInSeconds</code> parameter, the
-        /// value for the <code>type</code> parameter must be <code>LINEAR_INTERPOLATION</code>.
+        /// If you specify a value for the <c>intervalWindowInSeconds</c> parameter, the value
+        /// for the <c>type</c> parameter must be <c>LINEAR_INTERPOLATION</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -234,7 +234,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property PropertyAlias. 
         /// <para>
         /// The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
+        /// (for example, <c>/company/windfarm/3/turbine/7/temperature</c>). For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
         /// industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
@@ -314,7 +314,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property StartTimeOffsetInNanos. 
         /// <para>
-        /// The nanosecond offset converted from <code>startTimeInSeconds</code>.
+        /// The nanosecond offset converted from <c>startTimeInSeconds</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=999999999)]
@@ -337,11 +337,11 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</code> 
+        /// Valid values: <c>LINEAR_INTERPOLATION | LOCF_INTERPOLATION</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LINEAR_INTERPOLATION</code> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
+        ///  <c>LINEAR_INTERPOLATION</c> – Estimates missing data using <a href="https://en.wikipedia.org/wiki/Linear_interpolation">linear
         /// interpolation</a>.
         /// </para>
         ///  
@@ -354,7 +354,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LOCF_INTERPOLATION</code> – Estimates missing data using last observation carried
+        ///  <c>LOCF_INTERPOLATION</c> – Estimates missing data using last observation carried
         /// forward interpolation
         /// </para>
         ///  

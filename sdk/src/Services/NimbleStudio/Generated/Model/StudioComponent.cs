@@ -40,7 +40,7 @@ namespace Amazon.NimbleStudio.Model
     /// </para>
     ///  
     /// <para>
-    /// A studio component also has a set of initialization scripts that are returned by <code>GetLaunchProfileInitialization</code>.
+    /// A studio component also has a set of initialization scripts that are returned by <c>GetLaunchProfileInitialization</c>.
     /// These initialization scripts run on streaming sessions when they start. They provide
     /// users with flexibility in controlling how the studio resources are configured on a
     /// streaming session.

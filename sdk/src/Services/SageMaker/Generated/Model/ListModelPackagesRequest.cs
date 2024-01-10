@@ -145,16 +145,16 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>UNVERSIONED</code> - List only unversioined models. This is the default value
-        /// if no <code>ModelPackageType</code> is specified.
+        ///  <c>UNVERSIONED</c> - List only unversioined models. This is the default value if
+        /// no <c>ModelPackageType</c> is specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VERSIONED</code> - List only versioned models.
+        ///  <c>VERSIONED</c> - List only versioned models.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BOTH</code> - List both versioned and unversioned models.
+        ///  <c>BOTH</c> - List both versioned and unversioned models.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -193,9 +193,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response to a previous <code>ListModelPackages</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of model
-        /// packages, use the token in the next request.
+        /// If the response to a previous <c>ListModelPackages</c> request was truncated, the
+        /// response includes a <c>NextToken</c>. To retrieve the next set of model packages,
+        /// use the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -214,7 +214,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The parameter by which to sort the results. The default is <code>CreationTime</code>.
+        /// The parameter by which to sort the results. The default is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public ModelPackageSortBy SortBy
@@ -232,7 +232,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order for the results. The default is <code>Ascending</code>.
+        /// The sort order for the results. The default is <c>Ascending</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

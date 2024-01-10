@@ -44,14 +44,14 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property AuthenticationType. 
         /// <para>
         /// The type of authentication used to connect to the ServiceNow instance. If you choose
-        /// <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password
-        /// provided in the Secrets Manager secret in the <code>SecretArn</code> field. If you
-        /// choose <code>OAUTH2</code>, Amazon Kendra is authenticated using the credentials of
-        /// client ID, client secret, user name and password.
+        /// <c>HTTP_BASIC</c>, Amazon Kendra is authenticated using the user name and password
+        /// provided in the Secrets Manager secret in the <c>SecretArn</c> field. If you choose
+        /// <c>OAUTH2</c>, Amazon Kendra is authenticated using the credentials of client ID,
+        /// client secret, user name and password.
         /// </para>
         ///  
         /// <para>
-        /// When you use <code>OAUTH2</code> authentication, you must generate a token and a client
+        /// When you use <c>OAUTH2</c> authentication, you must generate a token and a client
         /// secret using the ServiceNow console. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using
         /// a ServiceNow data source</a>.
         /// </para>
@@ -151,7 +151,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ServiceNowBuildVersion. 
         /// <para>
         /// The identifier of the release that the ServiceNow host is running. If the host is
-        /// not running the <code>LONDON</code> release, use <code>OTHERS</code>.
+        /// not running the <c>LONDON</c> release, use <c>OTHERS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

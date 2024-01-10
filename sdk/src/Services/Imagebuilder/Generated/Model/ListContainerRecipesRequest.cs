@@ -46,19 +46,19 @@ namespace Amazon.Imagebuilder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>containerType</code> 
+        ///  <c>containerType</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>name</code> 
+        ///  <c>name</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>parentImage</code> 
+        ///  <c>parentImage</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>platform</code> 
+        ///  <c>platform</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

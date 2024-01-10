@@ -68,7 +68,7 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The authorization type to use. The only valid value is <code>OAUTH</code>, which represents
+        /// The authorization type to use. The only valid value is <c>OAUTH</c>, which represents
         /// the OAuth authorization type.
         /// </para>
         /// </summary>

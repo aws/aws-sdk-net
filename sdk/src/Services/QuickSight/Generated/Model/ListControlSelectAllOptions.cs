@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of the <code>Select all</code> options in a list control.
+    /// The configuration of the <c>Select all</c> options in a list control.
     /// </summary>
     public partial class ListControlSelectAllOptions
     {
@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The visibility configuration of the <code>Select all</code> options in a list control.
+        /// The visibility configuration of the <c>Select all</c> options in a list control.
         /// </para>
         /// </summary>
         public Visibility Visibility

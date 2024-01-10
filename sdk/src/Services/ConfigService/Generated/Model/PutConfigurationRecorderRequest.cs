@@ -35,7 +35,7 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code>
+    /// You can also use this action to change the <c>roleARN</c> or the <c>recordingGroup</c>
     /// of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
     /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
     /// </para>
@@ -46,8 +46,8 @@ namespace Amazon.ConfigService.Model
     /// </para>
     ///  
     /// <para>
-    /// If the configuration recorder does not have the <code>recordingGroup</code> field
-    /// specified, the default is to record all supported resource types.
+    /// If the configuration recorder does not have the <c>recordingGroup</c> field specified,
+    /// the default is to record all supported resource types.
     /// </para>
     ///  </note>
     /// </summary>

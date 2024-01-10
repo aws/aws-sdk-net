@@ -42,11 +42,11 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property GranteeIdentifier. 
         /// <para>
-        /// The unique identifier of the <code>Grantee</code>. If the grantee type is <code>IAM</code>,
-        /// the identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee
+        /// The unique identifier of the <c>Grantee</c>. If the grantee type is <c>IAM</c>, the
+        /// identifier is the IAM Amazon Resource Name (ARN) of the user or role. If the grantee
         /// type is a directory user or group, the identifier is 128-bit universally unique identifier
-        /// (UUID) in the format <code>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</code>. You can obtain
-        /// this UUID from your Amazon Web Services IAM Identity Center instance.
+        /// (UUID) in the format <c>a1b2c3d4-5678-90ab-cdef-EXAMPLE11111</c>. You can obtain this
+        /// UUID from your Amazon Web Services IAM Identity Center instance.
         /// </para>
         /// </summary>
         public string GranteeIdentifier
@@ -69,17 +69,17 @@ namespace Amazon.S3Control.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IAM</code> - An IAM user or role.
+        ///  <c>IAM</c> - An IAM user or role.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIRECTORY_USER</code> - Your corporate directory user. You can use this option
-        /// if you have added your corporate identity directory to IAM Identity Center and associated
+        ///  <c>DIRECTORY_USER</c> - Your corporate directory user. You can use this option if
+        /// you have added your corporate identity directory to IAM Identity Center and associated
         /// the IAM Identity Center instance with your S3 Access Grants instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIRECTORY_GROUP</code> - Your corporate directory group. You can use this option
+        ///  <c>DIRECTORY_GROUP</c> - Your corporate directory group. You can use this option
         /// if you have added your corporate identity directory to IAM Identity Center and associated
         /// the IAM Identity Center instance with your S3 Access Grants instance.
         /// </para>

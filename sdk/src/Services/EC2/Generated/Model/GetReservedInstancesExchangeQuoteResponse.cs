@@ -64,8 +64,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IsValidExchange. 
         /// <para>
-        /// If <code>true</code>, the exchange is valid. If <code>false</code>, the exchange cannot
-        /// be completed.
+        /// If <c>true</c>, the exchange is valid. If <c>false</c>, the exchange cannot be completed.
         /// </para>
         /// </summary>
         public bool IsValidExchange

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// Represents the output of a <code>FlushApiCache</code> operation.
+    /// Represents the output of a <c>FlushApiCache</c> operation.
     /// </summary>
     public partial class FlushApiCacheResponse : AmazonWebServiceResponse
     {

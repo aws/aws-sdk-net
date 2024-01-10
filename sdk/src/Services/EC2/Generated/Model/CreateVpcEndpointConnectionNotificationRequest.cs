@@ -71,8 +71,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ConnectionEvents. 
         /// <para>
-        /// The endpoint events for which to receive notifications. Valid values are <code>Accept</code>,
-        /// <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.
+        /// The endpoint events for which to receive notifications. Valid values are <c>Accept</c>,
+        /// <c>Connect</c>, <c>Delete</c>, and <c>Reject</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

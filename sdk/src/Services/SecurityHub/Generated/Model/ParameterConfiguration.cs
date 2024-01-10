@@ -63,15 +63,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// When <code>ValueType</code> is set equal to <code>DEFAULT</code>, the default behavior
-        /// can be a specific Security Hub default value, or the default behavior can be to ignore
-        /// a specific parameter. When <code>ValueType</code> is set equal to <code>DEFAULT</code>,
-        /// Security Hub ignores user-provided input for the <code>Value</code> field.
+        /// When <c>ValueType</c> is set equal to <c>DEFAULT</c>, the default behavior can be
+        /// a specific Security Hub default value, or the default behavior can be to ignore a
+        /// specific parameter. When <c>ValueType</c> is set equal to <c>DEFAULT</c>, Security
+        /// Hub ignores user-provided input for the <c>Value</c> field.
         /// </para>
         ///  
         /// <para>
-        /// When <code>ValueType</code> is set equal to <code>CUSTOM</code>, the <code>Value</code>
-        /// field can't be empty.
+        /// When <c>ValueType</c> is set equal to <c>CUSTOM</c>, the <c>Value</c> field can't
+        /// be empty.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

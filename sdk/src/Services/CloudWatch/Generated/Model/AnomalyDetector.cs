@@ -183,8 +183,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property StateValue. 
         /// <para>
-        /// The current status of the anomaly detector's training. The possible values are <code>TRAINED
-        /// | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</code> 
+        /// The current status of the anomaly detector's training. The possible values are <c>TRAINED
+        /// | PENDING_TRAINING | TRAINED_INSUFFICIENT_DATA</c> 
         /// </para>
         /// </summary>
         public AnomalyDetectorStateValue StateValue

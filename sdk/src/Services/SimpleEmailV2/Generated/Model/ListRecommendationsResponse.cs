@@ -41,8 +41,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A string token indicating that there might be additional recommendations available
-        /// to be listed. Use the token provided in the <code>ListRecommendationsResponse</code>
-        /// to use in the subsequent call to <code>ListRecommendations</code> with the same parameters
+        /// to be listed. Use the token provided in the <c>ListRecommendationsResponse</c> to
+        /// use in the subsequent call to <c>ListRecommendations</c> with the same parameters
         /// to retrieve the next page of recommendations.
         /// </para>
         /// </summary>

@@ -42,8 +42,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AwsOrganizationsSource. 
         /// <para>
-        /// Information about the <code>AwsOrganizationsSource</code> resource data sync source.
-        /// A sync source of this type can synchronize data from Organizations.
+        /// Information about the <c>AwsOrganizationsSource</c> resource data sync source. A sync
+        /// source of this type can synchronize data from Organizations.
         /// </para>
         /// </summary>
         public ResourceDataSyncAwsOrganizationsSource AwsOrganizationsSource
@@ -103,8 +103,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SourceRegions. 
         /// <para>
-        /// The <code>SyncSource</code> Amazon Web Services Regions included in the resource data
-        /// sync.
+        /// The <c>SyncSource</c> Amazon Web Services Regions included in the resource data sync.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,9 +122,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// The type of data source for the resource data sync. <code>SourceType</code> is either
-        /// <code>AwsOrganizations</code> (if an organization is present in Organizations) or
-        /// <code>SingleAccountMultiRegions</code>.
+        /// The type of data source for the resource data sync. <c>SourceType</c> is either <c>AwsOrganizations</c>
+        /// (if an organization is present in Organizations) or <c>SingleAccountMultiRegions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

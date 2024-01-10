@@ -44,8 +44,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Analyses. 
         /// <para>
-        /// A list of tag overrides for any <code>Analysis</code> resources that are present in
-        /// the asset bundle that is imported.
+        /// A list of tag overrides for any <c>Analysis</c> resources that are present in the
+        /// asset bundle that is imported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -64,8 +64,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Dashboards. 
         /// <para>
-        /// A list of tag overrides for any <code>Dashboard</code> resources that are present
-        /// in the asset bundle that is imported.
+        /// A list of tag overrides for any <c>Dashboard</c> resources that are present in the
+        /// asset bundle that is imported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -84,8 +84,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSets. 
         /// <para>
-        /// A list of tag overrides for any <code>DataSet</code> resources that are present in
-        /// the asset bundle that is imported.
+        /// A list of tag overrides for any <c>DataSet</c> resources that are present in the asset
+        /// bundle that is imported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -104,8 +104,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSources. 
         /// <para>
-        /// A list of tag overrides for any <code>DataSource</code> resources that are present
-        /// in the asset bundle that is imported.
+        /// A list of tag overrides for any <c>DataSource</c> resources that are present in the
+        /// asset bundle that is imported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -124,8 +124,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Themes. 
         /// <para>
-        /// A list of tag overrides for any <code>Theme</code> resources that are present in the
-        /// asset bundle that is imported.
+        /// A list of tag overrides for any <c>Theme</c> resources that are present in the asset
+        /// bundle that is imported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -144,8 +144,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VPCConnections. 
         /// <para>
-        /// A list of tag overrides for any <code>VPCConnection</code> resources that are present
-        /// in the asset bundle that is imported.
+        /// A list of tag overrides for any <c>VPCConnection</c> resources that are present in
+        /// the asset bundle that is imported.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

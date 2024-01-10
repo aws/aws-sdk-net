@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// The control mapping fields that represent the source for evidence collection, along
-    /// with related parameters and metadata. This doesn't contain <code>mappingID</code>.
+    /// with related parameters and metadata. This doesn't contain <c>mappingID</c>.
     /// </summary>
     public partial class CreateControlMappingSource
     {

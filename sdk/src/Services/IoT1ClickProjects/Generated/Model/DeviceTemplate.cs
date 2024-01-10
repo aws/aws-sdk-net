@@ -58,7 +58,7 @@ namespace Amazon.IoT1ClickProjects.Model
         /// <summary>
         /// Gets and sets the property DeviceType. 
         /// <para>
-        /// The device type, which currently must be <code>"button"</code>.
+        /// The device type, which currently must be <c>"button"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

@@ -35,7 +35,7 @@ namespace Amazon.StorageGateway.Model
     /// 
     ///  
     /// <para>
-    /// If a specific <code>TapeARN</code> is not specified, Storage Gateway returns a description
+    /// If a specific <c>TapeARN</c> is not specified, Storage Gateway returns a description
     /// of all virtual tapes found in the VTS associated with your account.
     /// </para>
     /// </summary>

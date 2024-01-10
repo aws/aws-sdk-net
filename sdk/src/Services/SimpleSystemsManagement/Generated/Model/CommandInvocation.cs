@@ -31,9 +31,9 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// An invocation is a copy of a command sent to a specific managed node. A command can
     /// apply to one or more managed nodes. A command invocation applies to one managed node.
-    /// For example, if a user runs <code>SendCommand</code> against three managed nodes,
-    /// then a command invocation is created for each requested managed node ID. A command
-    /// invocation returns status and detail information about a command you ran.
+    /// For example, if a user runs <c>SendCommand</c> against three managed nodes, then a
+    /// command invocation is created for each requested managed node ID. A command invocation
+    /// returns status and detail information about a command you ran.
     /// </summary>
     public partial class CommandInvocation
     {
@@ -264,7 +264,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardErrorUrl. 
         /// <para>
         /// The URL to the plugin's StdErr file in Amazon Simple Storage Service (Amazon S3),
-        /// if the S3 bucket was defined for the parent command. For an invocation, <code>StandardErrorUrl</code>
+        /// if the S3 bucket was defined for the parent command. For an invocation, <c>StandardErrorUrl</c>
         /// is populated if there is just one plugin defined for the command, and the S3 bucket
         /// was defined for the command.
         /// </para>
@@ -285,7 +285,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property StandardOutputUrl. 
         /// <para>
         /// The URL to the plugin's StdOut file in Amazon Simple Storage Service (Amazon S3),
-        /// if the S3 bucket was defined for the parent command. For an invocation, <code>StandardOutputUrl</code>
+        /// if the S3 bucket was defined for the parent command. For an invocation, <c>StandardOutputUrl</c>
         /// is populated if there is just one plugin defined for the command, and the S3 bucket
         /// was defined for the command.
         /// </para>
@@ -348,7 +348,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  </li> <li> 
         /// <para>
         /// Delivery Timed Out: The command wasn't delivered to the managed node before the delivery
-        /// timeout expired. Delivery timeouts don't count against the parent command's <code>MaxErrors</code>
+        /// timeout expired. Delivery timeouts don't count against the parent command's <c>MaxErrors</c>
         /// limit, but they do contribute to whether the parent command status is Success or Incomplete.
         /// This is a terminal state.
         /// </para>
@@ -356,14 +356,14 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// Execution Timed Out: Command execution started on the managed node, but the execution
         /// wasn't complete before the execution timeout expired. Execution timeouts count against
-        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// the <c>MaxErrors</c> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Failed: The command wasn't successful on the managed node. For a plugin, this indicates
         /// that the result code wasn't zero. For a command invocation, this indicates that the
         /// result code for one or more plugins wasn't zero. Invocation failures count against
-        /// the <code>MaxErrors</code> limit of the parent command. This is a terminal state.
+        /// the <c>MaxErrors</c> limit of the parent command. This is a terminal state.
         /// </para>
         ///  </li> <li> 
         /// <para>

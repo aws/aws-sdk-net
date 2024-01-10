@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
-    /// The configuration details that include the maximum size of the media (<code>MaxLocalMediaSizeInMB</code>)
+    /// The configuration details that include the maximum size of the media (<c>MaxLocalMediaSizeInMB</c>)
     /// that you want to store for a stream on the Edge Agent, as well as the strategy that
-    /// should be used (<code>StrategyOnFullSize</code>) when a stream's maximum size has
-    /// been reached.
+    /// should be used (<c>StrategyOnFullSize</c>) when a stream's maximum size has been reached.
     /// </summary>
     public partial class LocalSizeConfig
     {
@@ -62,8 +61,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StrategyOnFullSize. 
         /// <para>
-        /// The strategy to perform when a stream’s <code>MaxLocalMediaSizeInMB</code> limit is
-        /// reached.
+        /// The strategy to perform when a stream’s <c>MaxLocalMediaSizeInMB</c> limit is reached.
         /// </para>
         /// </summary>
         public StrategyOnFullSize StrategyOnFullSize

@@ -49,9 +49,9 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// The name of the Amazon CloudWatch Logs log group must begin with the <code>/aws/fsx</code>
+        /// The name of the Amazon CloudWatch Logs log group must begin with the <c>/aws/fsx</c>
         /// prefix. The name of the Amazon Kinesis Data Firehose delivery stream must begin with
-        /// the <code>aws-fsx</code> prefix.
+        /// the <c>aws-fsx</c> prefix.
         /// </para>
         ///  
         /// <para>
@@ -80,21 +80,20 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCESS_ONLY</code> - only successful attempts to access files or folders are
-        /// logged.
+        ///  <c>SUCCESS_ONLY</c> - only successful attempts to access files or folders are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILURE_ONLY</code> - only failed attempts to access files or folders are logged.
+        ///  <c>FAILURE_ONLY</c> - only failed attempts to access files or folders are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to
-        /// access files or folders are logged.
+        ///  <c>SUCCESS_AND_FAILURE</c> - both successful attempts and failed attempts to access
+        /// files or folders are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - access auditing of files and folders is turned off.
+        ///  <c>DISABLED</c> - access auditing of files and folders is turned off.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -118,20 +117,20 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCESS_ONLY</code> - only successful attempts to access file shares are logged.
+        ///  <c>SUCCESS_ONLY</c> - only successful attempts to access file shares are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILURE_ONLY</code> - only failed attempts to access file shares are logged.
+        ///  <c>FAILURE_ONLY</c> - only failed attempts to access file shares are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS_AND_FAILURE</code> - both successful attempts and failed attempts to
-        /// access file shares are logged.
+        ///  <c>SUCCESS_AND_FAILURE</c> - both successful attempts and failed attempts to access
+        /// file shares are logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - access auditing of file shares is turned off.
+        ///  <c>DISABLED</c> - access auditing of file shares is turned off.
         /// </para>
         ///  </li> </ul>
         /// </summary>

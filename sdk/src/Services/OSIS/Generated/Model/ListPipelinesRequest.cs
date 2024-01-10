@@ -43,7 +43,7 @@ namespace Amazon.OSIS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter that specifies the maximum number of results to return. You
-        /// can use <code>nextToken</code> to get the next page of results.
+        /// can use <c>nextToken</c> to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -62,9 +62,9 @@ namespace Amazon.OSIS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListPipelines</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListPipelines</code>
-        /// operations, which returns results in the next page.
+        /// If your initial <c>ListPipelines</c> operation returns a <c>nextToken</c>, you can
+        /// include the returned <c>nextToken</c> in subsequent <c>ListPipelines</c> operations,
+        /// which returns results in the next page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3000)]

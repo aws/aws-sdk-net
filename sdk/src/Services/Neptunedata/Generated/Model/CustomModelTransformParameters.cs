@@ -42,7 +42,7 @@ namespace Amazon.Neptunedata.Model
         /// <para>
         /// The path to the Amazon S3 location where the Python module implementing your model
         /// is located. This must point to a valid existing Amazon S3 location that contains,
-        /// at a minimum, a training script, a transform script, and a <code>model-hpo-configuration.json</code>
+        /// at a minimum, a training script, a transform script, and a <c>model-hpo-configuration.json</c>
         /// file.
         /// </para>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.Neptunedata.Model
         /// The name of the entry point in your module of a script that should be run after the
         /// best model from the hyperparameter search has been identified, to compute the model
         /// artifacts necessary for model deployment. It should be able to run with no command-line
-        /// arguments. The default is <code>transform.py</code>.
+        /// arguments. The default is <c>transform.py</c>.
         /// </para>
         /// </summary>
         public string TransformEntryPointScript

@@ -316,7 +316,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property GenderString. 
         /// <para>
-        /// An alternative to <code>Gender</code> which accepts any string as input.
+        /// An alternative to <c>Gender</c> which accepts any string as input.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]
@@ -449,7 +449,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property PartyTypeString. 
         /// <para>
-        /// An alternative to <code>PartyType</code> which accepts any string as input.
+        /// An alternative to <c>PartyType</c> which accepts any string as input.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=255)]

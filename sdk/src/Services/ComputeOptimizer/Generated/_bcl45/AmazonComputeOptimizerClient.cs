@@ -1516,10 +1516,10 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
-        /// metrics returned when you run this action. Additionally, the <code>Memory</code> metric
-        /// is returned only for resources that have the unified CloudWatch agent installed on
-        /// them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// The <c>Cpu</c> and <c>Memory</c> metrics are the only projected utilization metrics
+        /// returned when you run this action. Additionally, the <c>Memory</c> metric is returned
+        /// only for resources that have the unified CloudWatch agent installed on them. For more
+        /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note>
@@ -1568,10 +1568,10 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  <note> 
         /// <para>
-        /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
-        /// metrics returned when you run this action. Additionally, the <code>Memory</code> metric
-        /// is returned only for resources that have the unified CloudWatch agent installed on
-        /// them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// The <c>Cpu</c> and <c>Memory</c> metrics are the only projected utilization metrics
+        /// returned when you run this action. Additionally, the <c>Memory</c> metric is returned
+        /// only for resources that have the unified CloudWatch agent installed on them. For more
+        /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note>
@@ -1825,9 +1825,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// When you create a recommendation preference, you can set its status to <code>Active</code>
-        /// or <code>Inactive</code>. Use this action to view the recommendation preferences that
-        /// are in effect, or <code>Active</code>.
+        /// When you create a recommendation preference, you can set its status to <c>Active</c>
+        /// or <c>Inactive</c>. Use this action to view the recommendation preferences that are
+        /// in effect, or <c>Active</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectiveRecommendationPreferences service method.</param>
@@ -1876,9 +1876,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// When you create a recommendation preference, you can set its status to <code>Active</code>
-        /// or <code>Inactive</code>. Use this action to view the recommendation preferences that
-        /// are in effect, or <code>Active</code>.
+        /// When you create a recommendation preference, you can set its status to <c>Active</c>
+        /// or <c>Inactive</c>. Use this action to view the recommendation preferences that are
+        /// in effect, or <c>Active</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEffectiveRecommendationPreferences service method.</param>
@@ -2330,9 +2330,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// Use the <code>scope</code> parameter to specify which preferences to return. You can
-        /// specify to return preferences for an organization, a specific account ID, or a specific
-        /// EC2 instance or Auto Scaling group Amazon Resource Name (ARN).
+        /// Use the <c>scope</c> parameter to specify which preferences to return. You can specify
+        /// to return preferences for an organization, a specific account ID, or a specific EC2
+        /// instance or Auto Scaling group Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
@@ -2384,9 +2384,9 @@ namespace Amazon.ComputeOptimizer
         /// 
         ///  
         /// <para>
-        /// Use the <code>scope</code> parameter to specify which preferences to return. You can
-        /// specify to return preferences for an organization, a specific account ID, or a specific
-        /// EC2 instance or Auto Scaling group Amazon Resource Name (ARN).
+        /// Use the <c>scope</c> parameter to specify which preferences to return. You can specify
+        /// to return preferences for an organization, a specific account ID, or a specific EC2
+        /// instance or Auto Scaling group Amazon Resource Name (ARN).
         /// </para>
         ///  
         /// <para>
@@ -2449,25 +2449,25 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-        /// or <code>Optimized</code>.
+        /// Amazon EC2 instances in an account that are <c>Underprovisioned</c>, <c>Overprovisioned</c>,
+        /// or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// Amazon EBS volumes in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// Lambda functions in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-        /// or <code>Optimized</code>.
+        /// Amazon ECS services in an account that are <c>Underprovisioned</c>, <c>Overprovisioned</c>,
+        /// or <c>Optimized</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2516,25 +2516,25 @@ namespace Amazon.ComputeOptimizer
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-        /// or <code>Optimized</code>.
+        /// Amazon EC2 instances in an account that are <c>Underprovisioned</c>, <c>Overprovisioned</c>,
+        /// or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// Amazon EBS volumes in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+        /// Lambda functions in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-        /// or <code>Optimized</code>.
+        /// Amazon ECS services in an account that are <c>Underprovisioned</c>, <c>Overprovisioned</c>,
+        /// or <c>Optimized</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

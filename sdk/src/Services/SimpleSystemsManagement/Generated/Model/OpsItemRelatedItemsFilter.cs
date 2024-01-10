@@ -40,8 +40,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The name of the filter key. Supported values include <code>ResourceUri</code>, <code>ResourceType</code>,
-        /// or <code>AssociationId</code>.
+        /// The name of the filter key. Supported values include <c>ResourceUri</c>, <c>ResourceType</c>,
+        /// or <c>AssociationId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator used by the filter call. The only supported operator is <code>EQUAL</code>.
+        /// The operator used by the filter call. The only supported operator is <c>EQUAL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -130,13 +130,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>NotOptimized</code> </b>—A volume is considered not optimized when Compute
-        /// Optimizer identifies a recommendation that can provide better performance for your
-        /// workload.
+        ///  <b> <c>NotOptimized</c> </b>—A volume is considered not optimized when Compute Optimizer
+        /// identifies a recommendation that can provide better performance for your workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Optimized</code> </b>—An volume is considered optimized when Compute Optimizer
+        ///  <b> <c>Optimized</c> </b>—An volume is considered optimized when Compute Optimizer
         /// determines that the volume is correctly provisioned to run your workload based on
         /// the chosen volume type. For optimized resources, Compute Optimizer might recommend
         /// a new generation volume type.

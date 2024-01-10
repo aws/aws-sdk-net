@@ -38,9 +38,8 @@ namespace Amazon.GreengrassV2.Model
     /// <para>
     /// This operation identifies components that meet all dependency requirements for a deployment.
     /// If the requirements conflict, then this operation returns an error and the deployment
-    /// fails. For example, this occurs if component <code>A</code> requires version <code>&gt;2.0.0</code>
-    /// and component <code>B</code> requires version <code>&lt;2.0.0</code> of a component
-    /// dependency.
+    /// fails. For example, this occurs if component <c>A</c> requires version <c>&gt;2.0.0</c>
+    /// and component <c>B</c> requires version <c>&lt;2.0.0</c> of a component dependency.
     /// </para>
     ///  
     /// <para>

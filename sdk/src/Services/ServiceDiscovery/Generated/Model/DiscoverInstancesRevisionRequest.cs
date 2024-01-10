@@ -40,8 +40,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The <code>HttpName</code> name of the namespace. It's found in the <code>HttpProperties</code>
-        /// member of the <code>Properties</code> member of the namespace.
+        /// The <c>HttpName</c> name of the namespace. It's found in the <c>HttpProperties</c>
+        /// member of the <c>Properties</c> member of the namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

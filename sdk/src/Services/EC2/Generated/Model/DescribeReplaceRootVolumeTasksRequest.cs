@@ -47,7 +47,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-id</code> - The ID of the instance for which the root volume replacement
+        ///  <c>instance-id</c> - The ID of the instance for which the root volume replacement
         /// task was created.
         /// </para>
         ///  </li> </ul>

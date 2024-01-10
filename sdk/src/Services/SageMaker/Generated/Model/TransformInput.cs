@@ -44,7 +44,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// If your transform data is compressed, specify the compression type. Amazon SageMaker
         /// automatically decompresses the data for the transform job accordingly. The default
-        /// value is <code>None</code>.
+        /// value is <c>None</c>.
         /// </para>
         /// </summary>
         public CompressionType CompressionType
@@ -105,12 +105,11 @@ namespace Amazon.SageMaker.Model
         /// The method to use to split the transform job's data files into smaller batches. Splitting
         /// is necessary when the total size of each object is too large to fit in a single request.
         /// You can also use data splitting to improve performance by processing multiple concurrent
-        /// mini-batches. The default value for <code>SplitType</code> is <code>None</code>, which
-        /// indicates that input data files are not split, and request payloads contain the entire
-        /// contents of an input object. Set the value of this parameter to <code>Line</code>
-        /// to split records on a newline character boundary. <code>SplitType</code> also supports
-        /// a number of record-oriented binary data formats. Currently, the supported record formats
-        /// are:
+        /// mini-batches. The default value for <c>SplitType</c> is <c>None</c>, which indicates
+        /// that input data files are not split, and request payloads contain the entire contents
+        /// of an input object. Set the value of this parameter to <c>Line</c> to split records
+        /// on a newline character boundary. <c>SplitType</c> also supports a number of record-oriented
+        /// binary data formats. Currently, the supported record formats are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -122,24 +121,24 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When splitting is enabled, the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
-        /// and <code>MaxPayloadInMB</code> parameters. When the value of <code>BatchStrategy</code>
-        /// is <code>MultiRecord</code>, Amazon SageMaker sends the maximum number of records
-        /// in each request, up to the <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code>
-        /// is <code>SingleRecord</code>, Amazon SageMaker sends individual records in each request.
+        /// When splitting is enabled, the size of a mini-batch depends on the values of the <c>BatchStrategy</c>
+        /// and <c>MaxPayloadInMB</c> parameters. When the value of <c>BatchStrategy</c> is <c>MultiRecord</c>,
+        /// Amazon SageMaker sends the maximum number of records in each request, up to the <c>MaxPayloadInMB</c>
+        /// limit. If the value of <c>BatchStrategy</c> is <c>SingleRecord</c>, Amazon SageMaker
+        /// sends individual records in each request.
         /// </para>
         ///  <note> 
         /// <para>
         /// Some data formats represent a record as a binary payload wrapped with extra padding
         /// bytes. When splitting is applied to a binary data format, padding is removed if the
-        /// value of <code>BatchStrategy</code> is set to <code>SingleRecord</code>. Padding is
-        /// not removed if the value of <code>BatchStrategy</code> is set to <code>MultiRecord</code>.
+        /// value of <c>BatchStrategy</c> is set to <c>SingleRecord</c>. Padding is not removed
+        /// if the value of <c>BatchStrategy</c> is set to <c>MultiRecord</c>.
         /// </para>
         ///  
         /// <para>
-        /// For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
+        /// For more information about <c>RecordIO</c>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
         /// a Dataset Using RecordIO</a> in the MXNet documentation. For more information about
-        /// <code>TFRecord</code>, see <a href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
+        /// <c>TFRecord</c>, see <a href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming
         /// TFRecord data</a> in the TensorFlow documentation.
         /// </para>
         ///  </note>

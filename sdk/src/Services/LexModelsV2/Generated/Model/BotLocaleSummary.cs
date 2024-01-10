@@ -44,8 +44,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotLocaleStatus. 
         /// <para>
-        /// The current status of the bot locale. When the status is <code>Built</code> the locale
-        /// is ready for use.
+        /// The current status of the bot locale. When the status is <c>Built</c> the locale is
+        /// ready for use.
         /// </para>
         /// </summary>
         public BotLocaleStatus BotLocaleStatus

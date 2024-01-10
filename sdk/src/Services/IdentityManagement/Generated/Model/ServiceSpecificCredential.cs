@@ -123,8 +123,8 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// The generated user name for the service-specific credential. This value is generated
         /// by combining the IAM user's name combined with the ID number of the Amazon Web Services
-        /// account, as in <code>jane-at-123456789012</code>, for example. This value cannot be
-        /// configured by the user.
+        /// account, as in <c>jane-at-123456789012</c>, for example. This value cannot be configured
+        /// by the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=17, Max=200)]
@@ -143,8 +143,8 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the service-specific credential. <code>Active</code> means that the
-        /// key is valid for API calls, while <code>Inactive</code> means it is not.
+        /// The status of the service-specific credential. <c>Active</c> means that the key is
+        /// valid for API calls, while <c>Inactive</c> means it is not.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

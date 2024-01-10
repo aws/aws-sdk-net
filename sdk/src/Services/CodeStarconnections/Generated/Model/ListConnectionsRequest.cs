@@ -62,7 +62,7 @@ namespace Amazon.CodeStarconnections.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -81,8 +81,8 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token that was returned from the previous <code>ListConnections</code> call, which
-        /// can be used to return the next set of connections in the list.
+        /// The token that was returned from the previous <c>ListConnections</c> call, which can
+        /// be used to return the next set of connections in the list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

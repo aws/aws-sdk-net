@@ -34,10 +34,10 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// For tasks that use the EC2 launch type, the container instances require at least version
-    /// 1.26.0 of the container agent and at least version 1.26.0-1 of the <code>ecs-init</code>
+    /// 1.26.0 of the container agent and at least version 1.26.0-1 of the <c>ecs-init</c>
     /// package to use a proxy configuration. If your container instances are launched from
-    /// the Amazon ECS optimized AMI version <code>20190301</code> or later, then they contain
-    /// the required versions of the container agent and <code>ecs-init</code>. For more information,
+    /// the Amazon ECS optimized AMI version <c>20190301</c> or later, then they contain the
+    /// required versions of the container agent and <c>ecs-init</c>. For more information,
     /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html">Amazon
     /// ECS-optimized Linux AMI</a> 
     /// </para>
@@ -75,44 +75,44 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IgnoredUID</code> - (Required) The user ID (UID) of the proxy container as
-        /// defined by the <code>user</code> parameter in a container definition. This is used
-        /// to ensure the proxy ignores its own traffic. If <code>IgnoredGID</code> is specified,
-        /// this field can be empty.
+        ///  <c>IgnoredUID</c> - (Required) The user ID (UID) of the proxy container as defined
+        /// by the <c>user</c> parameter in a container definition. This is used to ensure the
+        /// proxy ignores its own traffic. If <c>IgnoredGID</c> is specified, this field can be
+        /// empty.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IgnoredGID</code> - (Required) The group ID (GID) of the proxy container as
-        /// defined by the <code>user</code> parameter in a container definition. This is used
-        /// to ensure the proxy ignores its own traffic. If <code>IgnoredUID</code> is specified,
-        /// this field can be empty.
+        ///  <c>IgnoredGID</c> - (Required) The group ID (GID) of the proxy container as defined
+        /// by the <c>user</c> parameter in a container definition. This is used to ensure the
+        /// proxy ignores its own traffic. If <c>IgnoredUID</c> is specified, this field can be
+        /// empty.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AppPorts</code> - (Required) The list of ports that the application uses. Network
-        /// traffic to these ports is forwarded to the <code>ProxyIngressPort</code> and <code>ProxyEgressPort</code>.
+        ///  <c>AppPorts</c> - (Required) The list of ports that the application uses. Network
+        /// traffic to these ports is forwarded to the <c>ProxyIngressPort</c> and <c>ProxyEgressPort</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ProxyIngressPort</code> - (Required) Specifies the port that incoming traffic
-        /// to the <code>AppPorts</code> is directed to.
+        ///  <c>ProxyIngressPort</c> - (Required) Specifies the port that incoming traffic to
+        /// the <c>AppPorts</c> is directed to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ProxyEgressPort</code> - (Required) Specifies the port that outgoing traffic
-        /// from the <code>AppPorts</code> is directed to.
+        ///  <c>ProxyEgressPort</c> - (Required) Specifies the port that outgoing traffic from
+        /// the <c>AppPorts</c> is directed to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EgressIgnoredPorts</code> - (Required) The egress traffic going to the specified
-        /// ports is ignored and not redirected to the <code>ProxyEgressPort</code>. It can be
-        /// an empty list.
+        ///  <c>EgressIgnoredPorts</c> - (Required) The egress traffic going to the specified
+        /// ports is ignored and not redirected to the <c>ProxyEgressPort</c>. It can be an empty
+        /// list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EgressIgnoredIPs</code> - (Required) The egress traffic going to the specified
-        /// IP addresses is ignored and not redirected to the <code>ProxyEgressPort</code>. It
-        /// can be an empty list.
+        ///  <c>EgressIgnoredIPs</c> - (Required) The egress traffic going to the specified IP
+        /// addresses is ignored and not redirected to the <c>ProxyEgressPort</c>. It can be an
+        /// empty list.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -131,7 +131,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The proxy type. The only supported value is <code>APPMESH</code>.
+        /// The proxy type. The only supported value is <c>APPMESH</c>.
         /// </para>
         /// </summary>
         public ProxyConfigurationType Type

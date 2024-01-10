@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property StorageTier. 
         /// <para>
-        /// The name of the storage tier. You must specify <code>archive</code>.
+        /// The name of the storage tier. You must specify <c>archive</c>.
         /// </para>
         /// </summary>
         public TargetStorageTier StorageTier

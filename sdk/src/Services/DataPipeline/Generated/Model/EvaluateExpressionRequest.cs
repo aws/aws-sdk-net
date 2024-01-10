@@ -30,9 +30,9 @@ namespace Amazon.DataPipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the EvaluateExpression operation.
-    /// Task runners call <code>EvaluateExpression</code> to evaluate a string in the context
-    /// of the specified object. For example, a task runner can evaluate SQL queries stored
-    /// in Amazon S3.
+    /// Task runners call <c>EvaluateExpression</c> to evaluate a string in the context of
+    /// the specified object. For example, a task runner can evaluate SQL queries stored in
+    /// Amazon S3.
     /// </summary>
     public partial class EvaluateExpressionRequest : AmazonDataPipelineRequest
     {

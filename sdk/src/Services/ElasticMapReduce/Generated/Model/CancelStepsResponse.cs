@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property CancelStepsInfoList. 
         /// <para>
         /// A list of <a>CancelStepsInfo</a>, which shows the status of specified cancel requests
-        /// for each <code>StepID</code> specified.
+        /// for each <c>StepID</c> specified.
         /// </para>
         /// </summary>
         public List<CancelStepsInfo> CancelStepsInfoList

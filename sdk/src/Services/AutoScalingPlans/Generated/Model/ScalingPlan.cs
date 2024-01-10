@@ -144,36 +144,36 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Active</code> - The scaling plan is active.
+        ///  <c>Active</c> - The scaling plan is active.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ActiveWithProblems</code> - The scaling plan is active, but the scaling configuration
+        ///  <c>ActiveWithProblems</c> - The scaling plan is active, but the scaling configuration
         /// for one or more resources could not be applied.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreationInProgress</code> - The scaling plan is being created.
+        ///  <c>CreationInProgress</c> - The scaling plan is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreationFailed</code> - The scaling plan could not be created.
+        ///  <c>CreationFailed</c> - The scaling plan could not be created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeletionInProgress</code> - The scaling plan is being deleted.
+        ///  <c>DeletionInProgress</c> - The scaling plan is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DeletionFailed</code> - The scaling plan could not be deleted.
+        ///  <c>DeletionFailed</c> - The scaling plan could not be deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UpdateInProgress</code> - The scaling plan is being updated.
+        ///  <c>UpdateInProgress</c> - The scaling plan is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UpdateFailed</code> - The scaling plan could not be updated.
+        ///  <c>UpdateFailed</c> - The scaling plan could not be updated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

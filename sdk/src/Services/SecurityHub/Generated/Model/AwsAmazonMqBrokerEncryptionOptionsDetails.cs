@@ -58,7 +58,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UseAwsOwnedKey. 
         /// <para>
-        ///  Specifies that an KMS key should be used for at-rest encryption. Set to <code>true</code>
+        ///  Specifies that an KMS key should be used for at-rest encryption. Set to <c>true</c>
         /// by default if no value is provided (for example, for RabbitMQ brokers). 
         /// </para>
         /// </summary>

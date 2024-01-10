@@ -64,8 +64,8 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property CreatedDate. 
         /// <para>
         /// The date and time that this version of the secret was created. If you don't specify
-        /// which version in <code>VersionId</code> or <code>VersionStage</code>, then Secrets
-        /// Manager uses the <code>AWSCURRENT</code> version.
+        /// which version in <c>VersionId</c> or <c>VersionStage</c>, then Secrets Manager uses
+        /// the <c>AWSCURRENT</c> version.
         /// </para>
         /// </summary>
         public DateTime CreatedDate
@@ -110,7 +110,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// If the secret was created by using the Secrets Manager console, or if the secret value
         /// was originally provided as a string, then this field is omitted. The secret value
-        /// appears in <code>SecretString</code> instead.
+        /// appears in <c>SecretString</c> instead.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=65536)]

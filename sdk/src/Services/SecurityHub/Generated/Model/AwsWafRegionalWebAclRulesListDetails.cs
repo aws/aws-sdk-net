@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// A combination of <code>ByteMatchSet</code>, <code>IPSet</code>, and/or <code>SqlInjectionMatchSet</code>
+    /// A combination of <c>ByteMatchSet</c>, <c>IPSet</c>, and/or <c>SqlInjectionMatchSet</c>
     /// objects that identify the web requests that you want to allow, block, or count.
     /// </summary>
     public partial class AwsWafRegionalWebAclRulesListDetails

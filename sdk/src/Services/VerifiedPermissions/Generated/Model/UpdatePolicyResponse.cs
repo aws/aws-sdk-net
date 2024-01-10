@@ -140,7 +140,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property Principal. 
         /// <para>
         /// The principal specified in the policy's scope. This element isn't included in the
-        /// response when <code>Principal</code> isn't present in the policy content.
+        /// response when <c>Principal</c> isn't present in the policy content.
         /// </para>
         /// </summary>
         public EntityIdentifier Principal
@@ -159,7 +159,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property Resource. 
         /// <para>
         /// The resource specified in the policy's scope. This element isn't included in the response
-        /// when <code>Resource</code> isn't present in the policy content.
+        /// when <c>Resource</c> isn't present in the policy content.
         /// </para>
         /// </summary>
         public EntityIdentifier Resource

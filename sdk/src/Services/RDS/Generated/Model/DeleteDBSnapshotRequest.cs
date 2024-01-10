@@ -34,7 +34,7 @@ namespace Amazon.RDS.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The DB snapshot must be in the <code>available</code> state to be deleted.
+    /// The DB snapshot must be in the <c>available</c> state to be deleted.
     /// </para>
     ///  </note>
     /// </summary>
@@ -63,8 +63,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be the name of an existing DB snapshot in the <code>available</code>
-        /// state.
+        /// Constraints: Must be the name of an existing DB snapshot in the <c>available</c> state.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -36,7 +36,7 @@ namespace Amazon.ElasticLoadBalancing.Model
     ///  
     /// <para>
     /// Each tag consists of a key and an optional value. If a tag with the same key is already
-    /// associated with the load balancer, <code>AddTags</code> updates its value.
+    /// associated with the load balancer, <c>AddTags</c> updates its value.
     /// </para>
     ///  
     /// <para>

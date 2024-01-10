@@ -42,84 +42,83 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  <dl> <dt>DocumentType</dt> <dd> <ul> <li> 
     /// <para>
-    ///  <code>ApplicationConfiguration</code> 
+    ///  <c>ApplicationConfiguration</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ApplicationConfigurationSchema</code> 
+    ///  <c>ApplicationConfigurationSchema</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Automation</code> 
+    ///  <c>Automation</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ChangeCalendar</code> 
+    ///  <c>ChangeCalendar</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Command</code> 
+    ///  <c>Command</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Package</code> 
+    ///  <c>Package</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Policy</code> 
+    ///  <c>Policy</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Session</code> 
+    ///  <c>Session</c> 
     /// </para>
     ///  </li> </ul> </dd> <dt>Owner</dt> <dd> 
     /// <para>
-    /// Note that only one <code>Owner</code> can be specified in a request. For example:
-    /// <code>Key=Owner,Values=Self</code>.
+    /// Note that only one <c>Owner</c> can be specified in a request. For example: <c>Key=Owner,Values=Self</c>.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Amazon</code> 
+    ///  <c>Amazon</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Private</code> 
+    ///  <c>Private</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Public</code> 
+    ///  <c>Public</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Self</code> 
+    ///  <c>Self</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ThirdParty</code> 
+    ///  <c>ThirdParty</c> 
     /// </para>
     ///  </li> </ul> </dd> <dt>PlatformTypes</dt> <dd> <ul> <li> 
     /// <para>
-    ///  <code>Linux</code> 
+    ///  <c>Linux</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Windows</code> 
+    ///  <c>Windows</c> 
     /// </para>
     ///  </li> </ul> </dd> </dl> 
     /// <para>
-    ///  <code>Name</code> is another Amazon Web Services-provided key. If you use <code>Name</code>
-    /// as a key, you can use a name prefix to return a list of documents. For example, in
-    /// the Amazon Web Services CLI, to return a list of all documents that begin with <code>Te</code>,
+    ///  <c>Name</c> is another Amazon Web Services-provided key. If you use <c>Name</c> as
+    /// a key, you can use a name prefix to return a list of documents. For example, in the
+    /// Amazon Web Services CLI, to return a list of all documents that begin with <c>Te</c>,
     /// run the following command:
     /// </para>
     ///  
     /// <para>
-    ///  <code>aws ssm list-documents --filters Key=Name,Values=Te</code> 
+    ///  <c>aws ssm list-documents --filters Key=Name,Values=Te</c> 
     /// </para>
     ///  
     /// <para>
-    /// You can also use the <code>TargetType</code> Amazon Web Services-provided key. For
-    /// a list of valid resource type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
+    /// You can also use the <c>TargetType</c> Amazon Web Services-provided key. For a list
+    /// of valid resource type values that can be used with this key, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
     /// Web Services resource and property types reference</a> in the <i>CloudFormation User
     /// Guide</i>.
     /// </para>
@@ -131,16 +130,16 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// To specify a custom key-value pair, use the format <code>Key=tag:tagName,Values=valueName</code>.
+    /// To specify a custom key-value pair, use the format <c>Key=tag:tagName,Values=valueName</c>.
     /// </para>
     ///  
     /// <para>
     /// For example, if you created a key called region and are using the Amazon Web Services
-    /// CLI to call the <code>list-documents</code> command: 
+    /// CLI to call the <c>list-documents</c> command: 
     /// </para>
     ///  
     /// <para>
-    ///  <code>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</code>
+    ///  <c>aws ssm list-documents --filters Key=tag:region,Values=east,west Key=Owner,Values=Self</c>
     /// 
     /// </para>
     /// </summary>

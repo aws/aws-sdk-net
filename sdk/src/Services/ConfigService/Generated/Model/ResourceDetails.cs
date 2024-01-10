@@ -65,9 +65,9 @@ namespace Amazon.ConfigService.Model
         ///  <note> 
         /// <para>
         /// You can find the <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-schema.html">Resource
-        /// type schema</a>, or <code>CFN_RESOURCE_SCHEMA</code>, in "<i>Amazon Web Services public
+        /// type schema</a>, or <c>CFN_RESOURCE_SCHEMA</c>, in "<i>Amazon Web Services public
         /// extensions</i>" within the CloudFormation registry or with the following CLI commmand:
-        /// <code>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</code>.
+        /// <c>aws cloudformation describe-type --type-name "AWS::S3::Bucket" --type RESOURCE</c>.
         /// </para>
         ///  
         /// <para>

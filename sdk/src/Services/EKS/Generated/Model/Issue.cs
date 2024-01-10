@@ -91,10 +91,10 @@ namespace Amazon.EKS.Model
         ///  <b>Ec2SubnetInvalidConfiguration</b>: One or more Amazon EC2 subnets specified for
         /// a node group do not automatically assign public IP addresses to instances launched
         /// into it. If you want your instances to be assigned a public IP address, then you need
-        /// to enable the <code>auto-assign public IP address</code> setting for the subnet. See
-        /// <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
-        /// the public <code>IPv4</code> addressing attribute for your subnet</a> in the <i>Amazon
-        /// VPC User Guide</i>.
+        /// to enable the <c>auto-assign public IP address</c> setting for the subnet. See <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html#subnet-public-ip">Modifying
+        /// the public <c>IPv4</c> addressing attribute for your subnet</a> in the <i>Amazon VPC
+        /// User Guide</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>

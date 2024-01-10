@@ -213,8 +213,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The dataset status. While the system creates the dataset, the status is <code>CREATING</code>.
-        /// When the dataset is ready to use, the status changes to <code>COMPLETED</code>. 
+        /// The dataset status. While the system creates the dataset, the status is <c>CREATING</c>.
+        /// When the dataset is ready to use, the status changes to <c>COMPLETED</c>. 
         /// </para>
         /// </summary>
         public DatasetStatus Status

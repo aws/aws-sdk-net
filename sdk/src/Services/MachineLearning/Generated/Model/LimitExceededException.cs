@@ -30,7 +30,7 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// The subscriber exceeded the maximum number of operations. This exception can occur
-    /// when listing objects such as <code>DataSource</code>.
+    /// when listing objects such as <c>DataSource</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

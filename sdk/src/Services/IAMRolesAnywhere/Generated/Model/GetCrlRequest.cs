@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:GetCrl</c>. 
     /// </para>
     /// </summary>
     public partial class GetCrlRequest : AmazonIAMRolesAnywhereRequest

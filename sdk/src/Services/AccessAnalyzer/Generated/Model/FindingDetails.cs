@@ -30,7 +30,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// Contains information about an external access or unused access finding. Only one parameter
-    /// can be used in a <code>FindingDetails</code> object.
+    /// can be used in a <c>FindingDetails</c> object.
     /// </summary>
     public partial class FindingDetails
     {

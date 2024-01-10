@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response returned by <code> <a>GetUpgradeHistory</a> </code> operation.
+    /// Container for response returned by <c> <a>GetUpgradeHistory</a> </c> operation.
     /// </summary>
     public partial class GetUpgradeHistoryResponse : AmazonWebServiceResponse
     {
@@ -58,9 +58,9 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property UpgradeHistories. 
         /// <para>
-        ///  A list of <code> <a>UpgradeHistory</a> </code> objects corresponding to each Upgrade
-        /// or Upgrade Eligibility Check performed on a domain returned as part of <code> <a>GetUpgradeHistoryResponse</a>
-        /// </code> object. 
+        ///  A list of <c> <a>UpgradeHistory</a> </c> objects corresponding to each Upgrade or
+        /// Upgrade Eligibility Check performed on a domain returned as part of <c> <a>GetUpgradeHistoryResponse</a>
+        /// </c> object. 
         /// </para>
         /// </summary>
         public List<UpgradeHistory> UpgradeHistories

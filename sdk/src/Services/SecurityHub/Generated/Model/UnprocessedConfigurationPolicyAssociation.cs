@@ -30,7 +30,7 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// An array of configuration policy associations, one for each configuration policy
-    /// association identifier, that was specified in a <code>BatchGetConfigurationPolicyAssociations</code>
+    /// association identifier, that was specified in a <c>BatchGetConfigurationPolicyAssociations</c>
     /// request but couldn’t be processed due to an error.
     /// </summary>
     public partial class UnprocessedConfigurationPolicyAssociation
@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ConfigurationPolicyAssociationIdentifiers. 
         /// <para>
-        ///  Configuration policy association identifiers that were specified in a <code>BatchGetConfigurationPolicyAssociations</code>
+        ///  Configuration policy association identifiers that were specified in a <c>BatchGetConfigurationPolicyAssociations</c>
         /// request but couldn’t be processed due to an error. 
         /// </para>
         /// </summary>

@@ -30,8 +30,7 @@ namespace Amazon.CloudWatchEvidently.Model
 {
     /// <summary>
     /// The value assigned to a feature variation. This structure must contain exactly one
-    /// field. It can be <code>boolValue</code>, <code>doubleValue</code>, <code>longValue</code>,
-    /// or <code>stringValue</code>.
+    /// field. It can be <c>boolValue</c>, <c>doubleValue</c>, <c>longValue</c>, or <c>stringValue</c>.
     /// </summary>
     public partial class VariableValue
     {

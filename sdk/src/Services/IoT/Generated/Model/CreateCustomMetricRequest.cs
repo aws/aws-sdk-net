@@ -94,8 +94,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property MetricName. 
         /// <para>
         ///  The name of the custom metric. This will be used in the metric report submitted from
-        /// the device/thing. The name can't begin with <code>aws:</code>. You can't change the
-        /// name after you define it.
+        /// the device/thing. The name can't begin with <c>aws:</c>. You can't change the name
+        /// after you define it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -118,8 +118,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The type <code>number</code> only takes a single metric value as an input, but when
-        /// you submit the metrics value in the DeviceMetrics report, you must pass it as an array
+        /// The type <c>number</c> only takes a single metric value as an input, but when you
+        /// submit the metrics value in the DeviceMetrics report, you must pass it as an array
         /// with a single value.
         /// </para>
         ///  </important>

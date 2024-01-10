@@ -82,13 +82,13 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HEALTHY</code> – The IoT Greengrass Core software and all components run on
-        /// the core device without issue.
+        ///  <c>HEALTHY</c> – The IoT Greengrass Core software and all components run on the core
+        /// device without issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNHEALTHY</code> – The IoT Greengrass Core software or a component is in a
-        /// failed state on the core device.
+        ///  <c>UNHEALTHY</c> – The IoT Greengrass Core software or a component is in a failed
+        /// state on the core device.
         /// </para>
         ///  </li> </ul>
         /// </summary>

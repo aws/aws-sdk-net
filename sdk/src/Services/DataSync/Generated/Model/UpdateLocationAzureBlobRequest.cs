@@ -170,7 +170,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property Subdirectory. 
         /// <para>
         /// Specifies path segments if you want to limit your transfer to a virtual directory
-        /// in your container (for example, <code>/my/images</code>).
+        /// in your container (for example, <c>/my/images</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

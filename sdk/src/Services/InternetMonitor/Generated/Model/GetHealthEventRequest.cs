@@ -53,9 +53,9 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The internally-generated identifier of a health event. Because <code>EventID</code>
-        /// contains the forward slash (“/”) character, you must URL-encode the <code>EventID</code>
-        /// field in the request URL.
+        /// The internally-generated identifier of a health event. Because <c>EventID</c> contains
+        /// the forward slash (“/”) character, you must URL-encode the <c>EventID</c> field in
+        /// the request URL.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

@@ -65,33 +65,32 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  
         /// <para>
-        /// Neptune can queue up as many as 64 load requests at a time, if their <code>queueRequest</code>
-        /// parameters are set to <code>"TRUE"</code>. The <code>dependencies</code> parameter
-        /// lets you make execution of such a queued request dependent on the successful completion
-        /// of one or more specified previous requests in the queue.
+        /// Neptune can queue up as many as 64 load requests at a time, if their <c>queueRequest</c>
+        /// parameters are set to <c>"TRUE"</c>. The <c>dependencies</c> parameter lets you make
+        /// execution of such a queued request dependent on the successful completion of one or
+        /// more specified previous requests in the queue.
         /// </para>
         ///  
         /// <para>
-        /// For example, if load <code>Job-A</code> and <code>Job-B</code> are independent of
-        /// each other, but load <code>Job-C</code> needs <code>Job-A</code> and <code>Job-B</code>
-        /// to be finished before it begins, proceed as follows:
+        /// For example, if load <c>Job-A</c> and <c>Job-B</c> are independent of each other,
+        /// but load <c>Job-C</c> needs <c>Job-A</c> and <c>Job-B</c> to be finished before it
+        /// begins, proceed as follows:
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Submit <code>load-job-A</code> and <code>load-job-B</code> one after another in any
-        /// order, and save their load-ids.
+        /// Submit <c>load-job-A</c> and <c>load-job-B</c> one after another in any order, and
+        /// save their load-ids.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Submit <code>load-job-C</code> with the load-ids of the two jobs in its <code>dependencies</code>
+        /// Submit <c>load-job-C</c> with the load-ids of the two jobs in its <c>dependencies</c>
         /// field:
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// Because of the <code>dependencies</code> parameter, the bulk loader will not start
-        /// <code>Job-C</code> until <code>Job-A</code> and <code>Job-B</code> have completed
-        /// successfully. If either one of them fails, Job-C will not be executed, and its status
-        /// will be set to <code>LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED</code>.
+        /// Because of the <c>dependencies</c> parameter, the bulk loader will not start <c>Job-C</c>
+        /// until <c>Job-A</c> and <c>Job-B</c> have completed successfully. If either one of
+        /// them fails, Job-C will not be executed, and its status will be set to <c>LOAD_FAILED_BECAUSE_DEPENDENCY_NOT_SATISFIED</c>.
         /// </para>
         ///  
         /// <para>
@@ -115,25 +114,25 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property FailOnError. 
         /// <para>
-        ///  <b> <code>failOnError</code> </b>   –   A flag to toggle a complete stop on an error.
+        ///  <b> <c>failOnError</c> </b>   –   A flag to toggle a complete stop on an error.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.
+        ///  <i>Allowed values</i>: <c>"TRUE"</c>, <c>"FALSE"</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Default value</i>: <code>"TRUE"</code>.
+        ///  <i>Default value</i>: <c>"TRUE"</c>.
         /// </para>
         ///  
         /// <para>
-        /// When this parameter is set to <code>"FALSE"</code>, the loader tries to load all the
-        /// data in the location specified, skipping any entries with errors.
+        /// When this parameter is set to <c>"FALSE"</c>, the loader tries to load all the data
+        /// in the location specified, skipping any entries with errors.
         /// </para>
         ///  
         /// <para>
-        /// When this parameter is set to <code>"TRUE"</code>, the loader stops as soon as it
-        /// encounters an error. Data loaded up to that point persists.
+        /// When this parameter is set to <c>"TRUE"</c>, the loader stops as soon as it encounters
+        /// an error. Data loaded up to that point persists.
         /// </para>
         /// </summary>
         public bool FailOnError
@@ -151,7 +150,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// The format of the data. For more information about data formats for the Neptune <code>Loader</code>
+        /// The format of the data. For more information about data formats for the Neptune <c>Loader</c>
         /// command, see <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format.html">Load
         /// Data Formats</a>.
         /// </para>
@@ -161,33 +160,33 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>csv</code> </b> for the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
+        ///  <b> <c>csv</c> </b> for the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
         /// CSV data format</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>opencypher</code> </b> for the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
+        ///  <b> <c>opencypher</c> </b> for the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
         /// CSV data format</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ntriples</code> </b> for the <a href="https://www.w3.org/TR/n-triples/">N-Triples
+        ///  <b> <c>ntriples</c> </b> for the <a href="https://www.w3.org/TR/n-triples/">N-Triples
         /// RDF data format</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>nquads</code> </b> for the <a href="https://www.w3.org/TR/n-quads/">N-Quads
+        ///  <b> <c>nquads</c> </b> for the <a href="https://www.w3.org/TR/n-quads/">N-Quads RDF
+        /// data format</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>rdfxml</c> </b> for the <a href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF\XML
         /// RDF data format</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>rdfxml</code> </b> for the <a href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF\XML
-        /// RDF data format</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>turtle</code> </b> for the <a href="https://www.w3.org/TR/turtle/">Turtle
-        /// RDF data format</a>.
+        ///  <b> <c>turtle</c> </b> for the <a href="https://www.w3.org/TR/turtle/">Turtle RDF
+        /// data format</a>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -233,11 +232,11 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  
         /// <para>
-        ///  <i>Allowed values</i>: <code>RESUME</code>, <code>NEW</code>, <code>AUTO</code>.
+        ///  <i>Allowed values</i>: <c>RESUME</c>, <c>NEW</c>, <c>AUTO</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Default value</i>: <code>AUTO</code>.
+        ///  <i>Default value</i>: <c>AUTO</c>.
         /// </para>
         ///  
         /// <para>
@@ -245,9 +244,9 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RESUME</code>   –   In RESUME mode, the loader looks for a previous load from
-        /// this source, and if it finds one, resumes that load job. If no previous load job is
-        /// found, the loader stops.
+        ///  <c>RESUME</c>   –   In RESUME mode, the loader looks for a previous load from this
+        /// source, and if it finds one, resumes that load job. If no previous load job is found,
+        /// the loader stops.
         /// </para>
         ///  
         /// <para>
@@ -259,21 +258,19 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW</code>   –   In NEW mode, the creates a new load request regardless of
-        /// any previous loads. You can use this mode to reload all the data from a source after
-        /// dropping previously loaded data from your Neptune cluster, or to load new data available
-        /// at the same source.
+        ///  <c>NEW</c>   –   In NEW mode, the creates a new load request regardless of any previous
+        /// loads. You can use this mode to reload all the data from a source after dropping previously
+        /// loaded data from your Neptune cluster, or to load new data available at the same source.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTO</code>   –   In AUTO mode, the loader looks for a previous load job from
-        /// the same source, and if it finds one, resumes that job, just as in <code>RESUME</code>
-        /// mode.
+        ///  <c>AUTO</c>   –   In AUTO mode, the loader looks for a previous load job from the
+        /// same source, and if it finds one, resumes that job, just as in <c>RESUME</c> mode.
         /// </para>
         ///  
         /// <para>
         /// If the loader doesn't find a previous load job from the same source, it loads all
-        /// data from the source, just as in <code>NEW</code> mode.
+        /// data from the source, just as in <c>NEW</c> mode.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -292,8 +289,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Parallelism. 
         /// <para>
-        /// The optional <code>parallelism</code> parameter can be set to reduce the number of
-        /// threads used by the bulk load process.
+        /// The optional <c>parallelism</c> parameter can be set to reduce the number of threads
+        /// used by the bulk load process.
         /// </para>
         ///  
         /// <para>
@@ -301,41 +298,40 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LOW</code> –   The number of threads used is the number of available vCPUs
-        /// divided by 8.
+        ///  <c>LOW</c> –   The number of threads used is the number of available vCPUs divided
+        /// by 8.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MEDIUM</code> –   The number of threads used is the number of available vCPUs
-        /// divided by 2.
+        ///  <c>MEDIUM</c> –   The number of threads used is the number of available vCPUs divided
+        /// by 2.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HIGH</code> –   The number of threads used is the same as the number of available
+        ///  <c>HIGH</c> –   The number of threads used is the same as the number of available
         /// vCPUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OVERSUBSCRIBE</code> –   The number of threads used is the number of available
-        /// vCPUs multiplied by 2. If this value is used, the bulk loader takes up all available
-        /// resources.
+        ///  <c>OVERSUBSCRIBE</c> –   The number of threads used is the number of available vCPUs
+        /// multiplied by 2. If this value is used, the bulk loader takes up all available resources.
         /// </para>
         ///  
         /// <para>
-        /// This does not mean, however, that the <code>OVERSUBSCRIBE</code> setting results in
-        /// 100% CPU utilization. Because the load operation is I/O bound, the highest CPU utilization
+        /// This does not mean, however, that the <c>OVERSUBSCRIBE</c> setting results in 100%
+        /// CPU utilization. Because the load operation is I/O bound, the highest CPU utilization
         /// to expect is in the 60% to 70% range.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <i>Default value</i>: <code>HIGH</code> 
+        ///  <i>Default value</i>: <c>HIGH</c> 
         /// </para>
         ///  
         /// <para>
-        /// The <code>parallelism</code> setting can sometimes result in a deadlock between threads
-        /// when loading openCypher data. When this happens, Neptune returns the <code>LOAD_DATA_DEADLOCK</code>
-        /// error. You can generally fix the issue by setting <code>parallelism</code> to a lower
-        /// setting and retrying the load command.
+        /// The <c>parallelism</c> setting can sometimes result in a deadlock between threads
+        /// when loading openCypher data. When this happens, Neptune returns the <c>LOAD_DATA_DEADLOCK</c>
+        /// error. You can generally fix the issue by setting <c>parallelism</c> to a lower setting
+        /// and retrying the load command.
         /// </para>
         /// </summary>
         public Parallelism Parallelism
@@ -353,8 +349,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property ParserConfiguration. 
         /// <para>
-        ///  <b> <code>parserConfiguration</code> </b>   –   An optional object with additional
-        /// parser configuration values. Each of the child parameters is also optional:
+        ///  <b> <c>parserConfiguration</c> </b>   –   An optional object with additional parser
+        /// configuration values. Each of the child parameters is also optional:
         /// </para>
         ///  
         /// <para>
@@ -362,32 +358,32 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>namedGraphUri</code> </b>   –   The default graph for all RDF formats when
-        /// no graph is specified (for non-quads formats and NQUAD entries with no graph).
+        ///  <b> <c>namedGraphUri</c> </b>   –   The default graph for all RDF formats when no
+        /// graph is specified (for non-quads formats and NQUAD entries with no graph).
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</code>.
+        /// The default is <c>https://aws.amazon.com/neptune/vocab/v01/DefaultNamedGraph</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>baseUri</code> </b>   –   The base URI for RDF/XML and Turtle formats.
+        ///  <b> <c>baseUri</c> </b>   –   The base URI for RDF/XML and Turtle formats.
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>https://aws.amazon.com/neptune/default</code>.
+        /// The default is <c>https://aws.amazon.com/neptune/default</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>allowEmptyStrings</code> </b>   –   Gremlin users need to be able to pass
-        /// empty string values("") as node and edge properties when loading CSV data. If <code>allowEmptyStrings</code>
-        /// is set to <code>false</code> (the default), such empty strings are treated as nulls
-        /// and are not loaded.
+        ///  <b> <c>allowEmptyStrings</c> </b>   –   Gremlin users need to be able to pass empty
+        /// string values("") as node and edge properties when loading CSV data. If <c>allowEmptyStrings</c>
+        /// is set to <c>false</c> (the default), such empty strings are treated as nulls and
+        /// are not loaded.
         /// </para>
         ///  
         /// <para>
-        /// If <code>allowEmptyStrings</code> is set to <code>true</code>, the loader treats empty
-        /// strings as valid property values and loads them accordingly.
+        /// If <c>allowEmptyStrings</c> is set to <c>true</c>, the loader treats empty strings
+        /// as valid property values and loads them accordingly.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -412,22 +408,22 @@ namespace Amazon.Neptunedata.Model
         ///  
         /// <para>
         /// You don't have to wait for one load job to complete before issuing the next one, because
-        /// Neptune can queue up as many as 64 jobs at a time, provided that their <code>queueRequest</code>
-        /// parameters are all set to <code>"TRUE"</code>. The queue order of the jobs will be
-        /// first-in-first-out (FIFO).
+        /// Neptune can queue up as many as 64 jobs at a time, provided that their <c>queueRequest</c>
+        /// parameters are all set to <c>"TRUE"</c>. The queue order of the jobs will be first-in-first-out
+        /// (FIFO).
         /// </para>
         ///  
         /// <para>
-        /// If the <code>queueRequest</code> parameter is omitted or set to <code>"FALSE"</code>,
-        /// the load request will fail if another load job is already running.
+        /// If the <c>queueRequest</c> parameter is omitted or set to <c>"FALSE"</c>, the load
+        /// request will fail if another load job is already running.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.
+        ///  <i>Allowed values</i>: <c>"TRUE"</c>, <c>"FALSE"</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Default value</i>: <code>"FALSE"</code>.
+        ///  <i>Default value</i>: <c>"FALSE"</c>.
         /// </para>
         /// </summary>
         public bool QueueRequest
@@ -464,9 +460,9 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
-        /// The <code>source</code> parameter accepts an S3 URI that identifies a single file,
-        /// multiple files, a folder, or multiple folders. Neptune loads every data file in any
-        /// folder that is specified.
+        /// The <c>source</c> parameter accepts an S3 URI that identifies a single file, multiple
+        /// files, a folder, or multiple folders. Neptune loads every data file in any folder
+        /// that is specified.
         /// </para>
         ///  
         /// <para>
@@ -474,19 +470,19 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>s3://(bucket_name)/(object-key-name)</code> 
+        ///  <c>s3://(bucket_name)/(object-key-name)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>https://s3.amazonaws.com/(bucket_name)/(object-key-name)</code> 
+        ///  <c>https://s3.amazonaws.com/(bucket_name)/(object-key-name)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>https://s3.us-east-1.amazonaws.com/(bucket_name)/(object-key-name)</code> 
+        ///  <c>https://s3.us-east-1.amazonaws.com/(bucket_name)/(object-key-name)</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>object-key-name</code> element of the URI is equivalent to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html#API_ListObjects_RequestParameters">prefix</a>
+        /// The <c>object-key-name</c> element of the URI is equivalent to the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html#API_ListObjects_RequestParameters">prefix</a>
         /// parameter in an S3 <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
         /// API call. It identifies all the objects in the specified S3 bucket whose names begin
         /// with that prefix. That can be a single file or folder, or multiple files and/or folders.
@@ -513,32 +509,32 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property UpdateSingleCardinalityProperties. 
         /// <para>
-        ///  <code>updateSingleCardinalityProperties</code> is an optional parameter that controls
-        /// how the bulk loader treats a new value for single-cardinality vertex or edge properties.
+        ///  <c>updateSingleCardinalityProperties</c> is an optional parameter that controls how
+        /// the bulk loader treats a new value for single-cardinality vertex or edge properties.
         /// This is not supported for loading openCypher data.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Allowed values</i>: <code>"TRUE"</code>, <code>"FALSE"</code>.
+        ///  <i>Allowed values</i>: <c>"TRUE"</c>, <c>"FALSE"</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <i>Default value</i>: <code>"FALSE"</code>.
+        ///  <i>Default value</i>: <c>"FALSE"</c>.
         /// </para>
         ///  
         /// <para>
-        /// By default, or when <code>updateSingleCardinalityProperties</code> is explicitly set
-        /// to <code>"FALSE"</code>, the loader treats a new value as an error, because it violates
-        /// single cardinality.
+        /// By default, or when <c>updateSingleCardinalityProperties</c> is explicitly set to
+        /// <c>"FALSE"</c>, the loader treats a new value as an error, because it violates single
+        /// cardinality.
         /// </para>
         ///  
         /// <para>
-        /// When <code>updateSingleCardinalityProperties</code> is set to <code>"TRUE"</code>,
-        /// on the other hand, the bulk loader replaces the existing value with the new one. If
-        /// multiple edge or single-cardinality vertex property values are provided in the source
-        /// file(s) being loaded, the final value at the end of the bulk load could be any one
-        /// of those new values. The loader only guarantees that the existing value has been replaced
-        /// by one of the new ones.
+        /// When <c>updateSingleCardinalityProperties</c> is set to <c>"TRUE"</c>, on the other
+        /// hand, the bulk loader replaces the existing value with the new one. If multiple edge
+        /// or single-cardinality vertex property values are provided in the source file(s) being
+        /// loaded, the final value at the end of the bulk load could be any one of those new
+        /// values. The loader only guarantees that the existing value has been replaced by one
+        /// of the new ones.
         /// </para>
         /// </summary>
         public bool UpdateSingleCardinalityProperties
@@ -557,19 +553,19 @@ namespace Amazon.Neptunedata.Model
         /// Gets and sets the property UserProvidedEdgeIds. 
         /// <para>
         /// This parameter is required only when loading openCypher data that contains relationship
-        /// IDs. It must be included and set to <code>True</code> when openCypher relationship
-        /// IDs are explicitly provided in the load data (recommended).
+        /// IDs. It must be included and set to <c>True</c> when openCypher relationship IDs are
+        /// explicitly provided in the load data (recommended).
         /// </para>
         ///  
         /// <para>
-        /// When <code>userProvidedEdgeIds</code> is absent or set to <code>True</code>, an <code>:ID</code>
-        /// column must be present in every relationship file in the load.
+        /// When <c>userProvidedEdgeIds</c> is absent or set to <c>True</c>, an <c>:ID</c> column
+        /// must be present in every relationship file in the load.
         /// </para>
         ///  
         /// <para>
-        /// When <code>userProvidedEdgeIds</code> is present and set to <code>False</code>, relationship
-        /// files in the load <b>must not</b> contain an <code>:ID</code> column. Instead, the
-        /// Neptune loader automatically generates an ID for each relationship.
+        /// When <c>userProvidedEdgeIds</c> is present and set to <c>False</c>, relationship files
+        /// in the load <b>must not</b> contain an <c>:ID</c> column. Instead, the Neptune loader
+        /// automatically generates an ID for each relationship.
         /// </para>
         ///  
         /// <para>

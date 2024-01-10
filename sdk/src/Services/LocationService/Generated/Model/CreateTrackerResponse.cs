@@ -41,7 +41,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp for when the tracker resource was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">
-        /// ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. 
+        /// ISO 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,8 +65,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:aws:geo:region:account-id:tracker/ExampleTracker</code>
-        /// 
+        /// Format example: <c>arn:aws:geo:region:account-id:tracker/ExampleTracker</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

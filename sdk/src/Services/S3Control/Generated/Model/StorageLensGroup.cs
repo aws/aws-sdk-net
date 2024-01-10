@@ -32,7 +32,7 @@ namespace Amazon.S3Control.Model
     /// A custom grouping of objects that include filters for prefixes, suffixes, object tags,
     /// object size, or object age. You can create an S3 Storage Lens group that includes
     /// a single filter or multiple filter conditions. To specify multiple filter conditions,
-    /// you use <code>AND</code> or <code>OR</code> logical operators.
+    /// you use <c>AND</c> or <c>OR</c> logical operators.
     /// </summary>
     public partial class StorageLensGroup
     {
@@ -44,7 +44,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// Sets the criteria for the Storage Lens group data that is displayed. For multiple
-        /// filter conditions, the <code>AND</code> or <code>OR</code> logical operator is used.
+        /// filter conditions, the <c>AND</c> or <c>OR</c> logical operator is used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

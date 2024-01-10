@@ -64,11 +64,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>endpoint-id</code> - The ID of the Client VPN endpoint.
+        ///  <c>endpoint-id</c> - The ID of the Client VPN endpoint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transport-protocol</code> - The transport protocol (<code>tcp</code> | <code>udp</code>).
+        ///  <c>transport-protocol</c> - The transport protocol (<c>tcp</c> | <c>udp</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -83,10 +83,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property ComputePlatform. 
         /// <para>
-        ///  The compute platform of the profiling group. Use <code>AWSLambda</code> if your application
-        /// runs on AWS Lambda. Use <code>Default</code> if your application runs on a compute
-        /// platform that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server,
-        /// or a different platform. If not specified, <code>Default</code> is used. 
+        ///  The compute platform of the profiling group. Use <c>AWSLambda</c> if your application
+        /// runs on AWS Lambda. Use <c>Default</c> if your application runs on a compute platform
+        /// that is not AWS Lambda, such an Amazon EC2 instance, an on-premises server, or a different
+        /// platform. If not specified, <c>Default</c> is used. 
         /// </para>
         /// </summary>
         public ComputePlatform ComputePlatform

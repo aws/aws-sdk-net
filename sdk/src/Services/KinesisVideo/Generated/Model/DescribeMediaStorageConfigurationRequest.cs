@@ -30,8 +30,8 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMediaStorageConfiguration operation.
-    /// Returns the most current information about the channel. Specify the <code>ChannelName</code>
-    /// or <code>ChannelARN</code> in the input.
+    /// Returns the most current information about the channel. Specify the <c>ChannelName</c>
+    /// or <c>ChannelARN</c> in the input.
     /// </summary>
     public partial class DescribeMediaStorageConfigurationRequest : AmazonKinesisVideoRequest
     {

@@ -42,7 +42,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// UTC timestamp at which the upgrade API call was made, in the format <code>yyyy-MM-ddTHH:mm:ssZ</code>.
+        /// UTC timestamp at which the upgrade API call was made, in the format <c>yyyy-MM-ddTHH:mm:ssZ</c>.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp

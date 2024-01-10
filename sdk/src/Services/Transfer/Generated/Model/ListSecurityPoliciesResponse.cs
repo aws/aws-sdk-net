@@ -39,10 +39,9 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you can get additional results from the <code>ListSecurityPolicies</code> operation,
-        /// a <code>NextToken</code> parameter is returned in the output. In a following command,
-        /// you can pass in the <code>NextToken</code> parameter to continue listing security
-        /// policies.
+        /// When you can get additional results from the <c>ListSecurityPolicies</c> operation,
+        /// a <c>NextToken</c> parameter is returned in the output. In a following command, you
+        /// can pass in the <c>NextToken</c> parameter to continue listing security policies.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

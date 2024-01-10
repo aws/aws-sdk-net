@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Filter used in the request. Supported filter keys depend on the API operation that
-    /// includes the filter. API operations that use <code>MaintenanceWindowFilter&gt;</code>
-    /// include the following:
+    /// includes the filter. API operations that use <c>MaintenanceWindowFilter&gt;</c> include
+    /// the following:
     /// 
     ///  <ul> <li> 
     /// <para>

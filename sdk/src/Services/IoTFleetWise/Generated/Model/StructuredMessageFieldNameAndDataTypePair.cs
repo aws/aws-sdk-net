@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
-    /// Represents a <code>StructureMessageName</code> to <code>DataType</code> map element.
+    /// Represents a <c>StructureMessageName</c> to <c>DataType</c> map element.
     /// </summary>
     public partial class StructuredMessageFieldNameAndDataTypePair
     {

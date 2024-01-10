@@ -43,22 +43,22 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// If you use <code>PutAccountPolicy</code> to create a data protection policy for your
-    /// whole account, it applies to both existing log groups and all log groups that are
-    /// created later in this account. The account policy is applied to existing log groups
-    /// with eventual consistency. It might take up to 5 minutes before sensitive data in
-    /// existing log groups begins to be masked.
+    /// If you use <c>PutAccountPolicy</c> to create a data protection policy for your whole
+    /// account, it applies to both existing log groups and all log groups that are created
+    /// later in this account. The account policy is applied to existing log groups with eventual
+    /// consistency. It might take up to 5 minutes before sensitive data in existing log groups
+    /// begins to be masked.
     /// </para>
     ///  
     /// <para>
     /// By default, when a user views a log event that includes masked data, the sensitive
-    /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
-    /// can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+    /// data is replaced by asterisks. A user who has the <c>logs:Unmask</c> permission can
+    /// use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
     /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
-    /// operation with the <code>unmask</code> parameter set to <code>true</code> to view
-    /// the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked
-    /// data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with
-    /// the <code>unmask</code> query command.
+    /// operation with the <c>unmask</c> parameter set to <c>true</c> to view the unmasked
+    /// log events. Users with the <c>logs:Unmask</c> can also view unmasked data in the CloudWatch
+    /// Logs console by running a CloudWatch Logs Insights query with the <c>unmask</c> query
+    /// command.
     /// </para>
     ///  
     /// <para>
@@ -68,13 +68,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// To use the <code>PutAccountPolicy</code> operation, you must be signed on with the
-    /// <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.
+    /// To use the <c>PutAccountPolicy</c> operation, you must be signed on with the <c>logs:PutDataProtectionPolicy</c>
+    /// and <c>logs:PutAccountPolicy</c> permissions.
     /// </para>
     ///  
     /// <para>
-    /// The <code>PutAccountPolicy</code> operation applies to all log groups in the account.
-    /// You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+    /// The <c>PutAccountPolicy</c> operation applies to all log groups in the account. You
+    /// can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
     /// to create a data protection policy that applies to just one log group. If a log group
     /// has its own data protection policy and the account also has an account-level data
     /// protection policy, then the two policies are cumulative. Any sensitive term specified
@@ -99,32 +99,31 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The first block must include both a <code>DataIdentifer</code> array and an <code>Operation</code>
-        /// property with an <code>Audit</code> action. The <code>DataIdentifer</code> array lists
-        /// the types of sensitive data that you want to mask. For more information about the
-        /// available options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types
+        /// The first block must include both a <c>DataIdentifer</c> array and an <c>Operation</c>
+        /// property with an <c>Audit</c> action. The <c>DataIdentifer</c> array lists the types
+        /// of sensitive data that you want to mask. For more information about the available
+        /// options, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data-types.html">Types
         /// of data that you can mask</a>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Operation</code> property with an <code>Audit</code> action is required
-        /// to find the sensitive data terms. This <code>Audit</code> action must contain a <code>FindingsDestination</code>
-        /// object. You can optionally use that <code>FindingsDestination</code> object to list
-        /// one or more destinations to send audit findings to. If you specify destinations such
-        /// as log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.
+        /// The <c>Operation</c> property with an <c>Audit</c> action is required to find the
+        /// sensitive data terms. This <c>Audit</c> action must contain a <c>FindingsDestination</c>
+        /// object. You can optionally use that <c>FindingsDestination</c> object to list one
+        /// or more destinations to send audit findings to. If you specify destinations such as
+        /// log groups, Kinesis Data Firehose streams, and S3 buckets, they must already exist.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The second block must include both a <code>DataIdentifer</code> array and an <code>Operation</code>
-        /// property with an <code>Deidentify</code> action. The <code>DataIdentifer</code> array
-        /// must exactly match the <code>DataIdentifer</code> array in the first block of the
-        /// policy.
+        /// The second block must include both a <c>DataIdentifer</c> array and an <c>Operation</c>
+        /// property with an <c>Deidentify</c> action. The <c>DataIdentifer</c> array must exactly
+        /// match the <c>DataIdentifer</c> array in the first block of the policy.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Operation</code> property with the <code>Deidentify</code> action is what
-        /// actually masks the data, and it must contain the <code> "MaskConfig": {}</code> object.
-        /// The <code> "MaskConfig": {}</code> object must be empty.
+        /// The <c>Operation</c> property with the <c>Deidentify</c> action is what actually masks
+        /// the data, and it must contain the <c> "MaskConfig": {}</c> object. The <c> "MaskConfig":
+        /// {}</c> object must be empty.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -132,19 +131,18 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The contents of the two <code>DataIdentifer</code> arrays must match exactly.
+        /// The contents of the two <c>DataIdentifer</c> arrays must match exactly.
         /// </para>
         ///  </important> 
         /// <para>
-        /// In addition to the two JSON blocks, the <code>policyDocument</code> can also include
-        /// <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The
-        /// <code>Name</code> is different than the operation's <code>policyName</code> parameter,
-        /// and is used as a dimension when CloudWatch Logs reports audit findings metrics to
-        /// CloudWatch.
+        /// In addition to the two JSON blocks, the <c>policyDocument</c> can also include <c>Name</c>,
+        /// <c>Description</c>, and <c>Version</c> fields. The <c>Name</c> is different than the
+        /// operation's <c>policyName</c> parameter, and is used as a dimension when CloudWatch
+        /// Logs reports audit findings metrics to CloudWatch.
         /// </para>
         ///  
         /// <para>
-        /// The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
+        /// The JSON specified in <c>policyDocument</c> can be up to 30,720 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -182,7 +180,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.
+        /// Currently the only valid value for this parameter is <c>DATA_PROTECTION_POLICY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,9 +199,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// Currently the only valid value for this parameter is <code>ALL</code>, which specifies
-        /// that the data protection policy applies to all log groups in the account. If you omit
-        /// this parameter, the default of <code>ALL</code> is used.
+        /// Currently the only valid value for this parameter is <c>ALL</c>, which specifies that
+        /// the data protection policy applies to all log groups in the account. If you omit this
+        /// parameter, the default of <c>ALL</c> is used.
         /// </para>
         /// </summary>
         public Scope Scope

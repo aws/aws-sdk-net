@@ -30,10 +30,10 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the GetChannelMessageStatus operation.
-    /// Gets message status for a specified <code>messageId</code>. Use this API to determine
-    /// the intermediate status of messages going through channel flow processing. The API
-    /// provides an alternative to retrieving message status if the event was not received
-    /// because a client wasn't connected to a websocket. 
+    /// Gets message status for a specified <c>messageId</c>. Use this API to determine the
+    /// intermediate status of messages going through channel flow processing. The API provides
+    /// an alternative to retrieving message status if the event was not received because
+    /// a client wasn't connected to a websocket. 
     /// 
     ///  
     /// <para>
@@ -66,9 +66,8 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
-    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
-    /// as the value in the header.
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the ARN of the <c>AppInstanceUser</c>
+    /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -101,7 +100,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user making the API call.
+        /// The <c>AppInstanceUserArn</c> of the user making the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

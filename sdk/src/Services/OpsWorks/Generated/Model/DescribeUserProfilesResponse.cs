@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeUserProfiles</code> request.
+    /// Contains the response to a <c>DescribeUserProfiles</c> request.
     /// </summary>
     public partial class DescribeUserProfilesResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property UserProfiles. 
         /// <para>
-        /// A <code>Users</code> object that describes the specified users.
+        /// A <c>Users</c> object that describes the specified users.
         /// </para>
         /// </summary>
         public List<UserProfile> UserProfiles

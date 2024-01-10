@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Location. 
         /// <para>
         /// The fully qualified URI of the distribution and invalidation batch request, including
-        /// the <code>Invalidation ID</code>.
+        /// the <c>Invalidation ID</c>.
         /// </para>
         /// </summary>
         public string Location

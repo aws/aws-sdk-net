@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyDBProxyTargetGroup operation.
-    /// Modifies the properties of a <code>DBProxyTargetGroup</code>.
+    /// Modifies the properties of a <c>DBProxyTargetGroup</c>.
     /// </summary>
     public partial class ModifyDBProxyTargetGroupRequest : AmazonRDSRequest
     {
@@ -80,9 +80,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NewName. 
         /// <para>
-        /// The new name for the modified <code>DBProxyTarget</code>. An identifier must begin
-        /// with a letter and must contain only ASCII letters, digits, and hyphens; it can't end
-        /// with a hyphen or contain two consecutive hyphens.
+        /// The new name for the modified <c>DBProxyTarget</c>. An identifier must begin with
+        /// a letter and must contain only ASCII letters, digits, and hyphens; it can't end with
+        /// a hyphen or contain two consecutive hyphens.
         /// </para>
         /// </summary>
         public string NewName

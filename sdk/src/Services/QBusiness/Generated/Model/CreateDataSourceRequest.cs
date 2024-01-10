@@ -34,8 +34,8 @@ namespace Amazon.QBusiness.Model
     /// 
     ///  
     /// <para>
-    ///  <code>CreateDataSource</code> is a synchronous operation. The operation returns 200
-    /// if the data source was successfully created. Otherwise, an exception is raised.
+    ///  <c>CreateDataSource</c> is a synchronous operation. The operation returns 200 if
+    /// the data source was successfully created. Otherwise, an exception is raised.
     /// </para>
     /// </summary>
     public partial class CreateDataSourceRequest : AmazonQBusinessRequest
@@ -75,8 +75,8 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token you provide to identify a request to create a data source connector. Multiple
-        /// calls to the <code>CreateDataSource</code> API with the same client token will create
-        /// only one data source connector. 
+        /// calls to the <c>CreateDataSource</c> API with the same client token will create only
+        /// one data source connector. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -214,10 +214,10 @@ namespace Amazon.QBusiness.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify a <code>cron-</code> format schedule string or an empty string to indicate
-        /// that the index is updated on demand. You can't specify the <code>Schedule</code> parameter
-        /// when the <code>Type</code> parameter is set to <code>CUSTOM</code>. If you do, you
-        /// receive a <code>ValidationException</code> exception. 
+        /// Specify a <c>cron-</c> format schedule string or an empty string to indicate that
+        /// the index is updated on demand. You can't specify the <c>Schedule</c> parameter when
+        /// the <c>Type</c> parameter is set to <c>CUSTOM</c>. If you do, you receive a <c>ValidationException</c>
+        /// exception. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=998)]

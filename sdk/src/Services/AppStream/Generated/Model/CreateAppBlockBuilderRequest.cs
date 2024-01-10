@@ -126,7 +126,7 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder.
         /// To assume a role, the app block builder calls the AWS Security Token Service (STS)
-        /// <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
+        /// <c>AssumeRole</c> API operation and passes the ARN of the role to use. The operation
         /// creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
         /// credentials and creates the <b>appstream_machine_role</b> credential profile on the
         /// instance.
@@ -217,7 +217,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>WINDOWS_SERVER_2019</code> is the only valid value.
+        ///  <c>WINDOWS_SERVER_2019</c> is the only valid value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

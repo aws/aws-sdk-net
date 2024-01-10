@@ -59,7 +59,7 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         ///  
         /// <para>
-        /// Only returned when <code>JSON</code> format is requested.
+        /// Only returned when <c>JSON</c> format is requested.
         /// </para>
         /// </summary>
         public List<ConsolidatedReportMetric> Metrics

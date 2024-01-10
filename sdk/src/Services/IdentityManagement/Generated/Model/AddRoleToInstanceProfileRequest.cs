@@ -40,8 +40,8 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The caller of this operation must be granted the <code>PassRole</code> permission
-    /// on the IAM role by a permissions policy.
+    /// The caller of this operation must be granted the <c>PassRole</c> permission on the
+    /// IAM role by a permissions policy.
     /// </para>
     ///  </note> 
     /// <para>

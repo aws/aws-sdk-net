@@ -57,7 +57,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The current version of the distribution's information. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// The current version of the distribution's information. For example: <c>E2QWRUHAPOMQZL</c>.
         /// </para>
         /// </summary>
         public string ETag

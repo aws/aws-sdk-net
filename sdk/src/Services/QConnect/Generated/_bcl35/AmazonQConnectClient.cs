@@ -307,7 +307,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -379,7 +379,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -453,7 +453,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -522,8 +522,7 @@ namespace Amazon.QConnect
         /// <para>
         /// When using this API, you cannot reuse <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon
         /// AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce
-        /// and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error.
-        /// 
+        /// and ServiceNow. If you do, you'll get an <c>InvalidRequestException</c> error. 
         /// </para>
         ///  
         /// <para>
@@ -558,7 +557,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -628,7 +627,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -700,7 +699,7 @@ namespace Amazon.QConnect
         /// <returns>The response from the CreateSession service method, as returned by QConnect.</returns>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -958,7 +957,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -1039,7 +1038,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -1604,7 +1603,7 @@ namespace Amazon.QConnect
         /// <summary>
         /// Retrieves recommendations for the specified session. To avoid retrieving the same
         /// recommendations in subsequent calls, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_NotifyRecommendationsReceived.html">NotifyRecommendationsReceived</a>.
-        /// This API supports long-polling behavior with the <code>waitTimeSeconds</code> parameter.
+        /// This API supports long-polling behavior with the <c>waitTimeSeconds</c> parameter.
         /// Short poll is the default behavior and only returns recommendations already available.
         /// To perform a manual query against an assistant, use <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_QueryAssistant.html">QueryAssistant</a>.
         /// </summary>
@@ -2160,7 +2159,7 @@ namespace Amazon.QConnect
         /// <summary>
         /// Removes the specified recommendations from the specified assistant's queue of newly
         /// available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/amazon-q-connect/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>
-        /// and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate
+        /// and a <c>waitTimeSeconds</c> input for long-polling behavior and avoiding duplicate
         /// recommendations.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the NotifyRecommendationsReceived service method.</param>
@@ -2704,7 +2703,7 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
@@ -2893,8 +2892,8 @@ namespace Amazon.QConnect
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.PreconditionFailedException">
-        /// The provided <code>revisionId</code> does not match, indicating the content has been
-        /// modified since it was last read.
+        /// The provided <c>revisionId</c> does not match, indicating the content has been modified
+        /// since it was last read.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.
@@ -2952,10 +2951,9 @@ namespace Amazon.QConnect
 
         /// <summary>
         /// Updates the template URI of a knowledge base. This is only supported for knowledge
-        /// bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format;
-        /// this interpolated by Amazon Q using ingested content. For example, if you ingest a
-        /// Salesforce article, it has an <code>Id</code> value, and you can set the template
-        /// URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>.
+        /// bases of type EXTERNAL. Include a single variable in <c>${variable}</c> format; this
+        /// interpolated by Amazon Q using ingested content. For example, if you ingest a Salesforce
+        /// article, it has an <c>Id</c> value, and you can set the template URI to <c>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateKnowledgeBaseTemplateUri service method.</param>
         /// 
@@ -3028,13 +3026,13 @@ namespace Amazon.QConnect
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ConflictException">
         /// The request could not be processed because of conflict in the current state of the
-        /// resource. For example, if you're using a <code>Create</code> API (such as <code>CreateAssistant</code>)
+        /// resource. For example, if you're using a <c>Create</c> API (such as <c>CreateAssistant</c>)
         /// that accepts name, a conflicting resource (usually with the same name) is being created
         /// or mutated.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.PreconditionFailedException">
-        /// The provided <code>revisionId</code> does not match, indicating the content has been
-        /// modified since it was last read.
+        /// The provided <c>revisionId</c> does not match, indicating the content has been modified
+        /// since it was last read.
         /// </exception>
         /// <exception cref="Amazon.QConnect.Model.ResourceNotFoundException">
         /// The specified resource does not exist.

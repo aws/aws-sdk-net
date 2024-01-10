@@ -38,24 +38,23 @@ namespace Amazon.QConnect.Model
         /// <summary>
         /// Gets and sets the property TemplateUri. 
         /// <para>
-        /// A URI template containing exactly one variable in <code>${variableName} </code>format.
-        /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow,
-        /// and Zendesk, the variable must be one of the following:
+        /// A URI template containing exactly one variable in <c>${variableName} </c>format. This
+        /// can only be set for <c>EXTERNAL</c> knowledge bases. For Salesforce, ServiceNow, and
+        /// Zendesk, the variable must be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Salesforce: <code>Id</code>, <code>ArticleNumber</code>, <code>VersionNumber</code>,
-        /// <code>Title</code>, <code>PublishStatus</code>, or <code>IsDeleted</code> 
+        /// Salesforce: <c>Id</c>, <c>ArticleNumber</c>, <c>VersionNumber</c>, <c>Title</c>, <c>PublishStatus</c>,
+        /// or <c>IsDeleted</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>,
-        /// <code>workflow_state</code>, or <code>active</code> 
+        /// ServiceNow: <c>number</c>, <c>short_description</c>, <c>sys_mod_count</c>, <c>workflow_state</c>,
+        /// or <c>active</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
-        /// 
+        /// Zendesk: <c>id</c>, <c>title</c>, <c>updated_at</c>, or <c>draft</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

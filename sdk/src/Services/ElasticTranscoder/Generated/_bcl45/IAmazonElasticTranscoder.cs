@@ -53,9 +53,9 @@ namespace Amazon.ElasticTranscoder
         /// 
         ///  <note> 
         /// <para>
-        /// You can only cancel a job that has a status of <code>Submitted</code>. To prevent
-        /// a pipeline from starting to process a job while you're getting the job identifier,
-        /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.
+        /// You can only cancel a job that has a status of <c>Submitted</c>. To prevent a pipeline
+        /// from starting to process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a>
+        /// to temporarily pause the pipeline.
         /// </para>
         ///  </note>
         /// </summary>
@@ -93,9 +93,9 @@ namespace Amazon.ElasticTranscoder
         /// 
         ///  <note> 
         /// <para>
-        /// You can only cancel a job that has a status of <code>Submitted</code>. To prevent
-        /// a pipeline from starting to process a job while you're getting the job identifier,
-        /// use <a>UpdatePipelineStatus</a> to temporarily pause the pipeline.
+        /// You can only cancel a job that has a status of <c>Submitted</c>. To prevent a pipeline
+        /// from starting to process a job while you're getting the job identifier, use <a>UpdatePipelineStatus</a>
+        /// to temporarily pause the pipeline.
         /// </para>
         ///  </note>
         /// </summary>
@@ -298,7 +298,7 @@ namespace Amazon.ElasticTranscoder
         /// Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic
         /// Transcoder requirements and to determine whether they comply with H.264 standards.
         /// If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns
-        /// an HTTP 400 response (<code>ValidationException</code>) and does not create the preset.
+        /// an HTTP 400 response (<c>ValidationException</c>) and does not create the preset.
         /// If the settings are valid for Elastic Transcoder but aren't strictly compliant with
         /// the H.264 standard, Elastic Transcoder creates the preset and returns a warning message
         /// in the response. This helps you determine whether your settings comply with the H.264
@@ -345,7 +345,7 @@ namespace Amazon.ElasticTranscoder
         /// Elastic Transcoder checks the CreatePreset settings to ensure that they meet Elastic
         /// Transcoder requirements and to determine whether they comply with H.264 standards.
         /// If your settings are not valid for Elastic Transcoder, Elastic Transcoder returns
-        /// an HTTP 400 response (<code>ValidationException</code>) and does not create the preset.
+        /// an HTTP 400 response (<c>ValidationException</c>) and does not create the preset.
         /// If the settings are valid for Elastic Transcoder but aren't strictly compliant with
         /// the H.264 standard, Elastic Transcoder creates the preset and returns a warning message
         /// in the response. This helps you determine whether your settings comply with the H.264
@@ -396,7 +396,7 @@ namespace Amazon.ElasticTranscoder
         ///  
         /// <para>
         ///  You can only delete a pipeline that has never been used or that is not currently
-        /// in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code>
+        /// in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c>
         /// returns an error. 
         /// </para>
         /// </summary>
@@ -435,7 +435,7 @@ namespace Amazon.ElasticTranscoder
         ///  
         /// <para>
         ///  You can only delete a pipeline that has never been used or that is not currently
-        /// in use (doesn't contain any active jobs). If the pipeline is currently in use, <code>DeletePipeline</code>
+        /// in use (doesn't contain any active jobs). If the pipeline is currently in use, <c>DeletePipeline</c>
         /// returns an error. 
         /// </para>
         /// </summary>
@@ -1087,9 +1087,9 @@ namespace Amazon.ElasticTranscoder
         /// 
         ///  
         /// <para>
-        /// The <code>TestRole</code> action lets you determine whether the IAM role you are using
-        /// has sufficient permissions to let Elastic Transcoder perform tasks associated with
-        /// the transcoding process. The action attempts to assume the specified IAM role, checks
+        /// The <c>TestRole</c> action lets you determine whether the IAM role you are using has
+        /// sufficient permissions to let Elastic Transcoder perform tasks associated with the
+        /// transcoding process. The action attempts to assume the specified IAM role, checks
         /// read access to the input and output buckets, and tries to send a test notification
         /// to Amazon SNS topics that you specify.
         /// </para>
@@ -1125,9 +1125,9 @@ namespace Amazon.ElasticTranscoder
         /// 
         ///  
         /// <para>
-        /// The <code>TestRole</code> action lets you determine whether the IAM role you are using
-        /// has sufficient permissions to let Elastic Transcoder perform tasks associated with
-        /// the transcoding process. The action attempts to assume the specified IAM role, checks
+        /// The <c>TestRole</c> action lets you determine whether the IAM role you are using has
+        /// sufficient permissions to let Elastic Transcoder perform tasks associated with the
+        /// transcoding process. The action attempts to assume the specified IAM role, checks
         /// read access to the input and output buckets, and tries to send a test notification
         /// to Amazon SNS topics that you specify.
         /// </para>
@@ -1165,7 +1165,7 @@ namespace Amazon.ElasticTranscoder
 
 
         /// <summary>
-        /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
+        /// Use the <c>UpdatePipeline</c> operation to update settings for a pipeline.
         /// 
         ///  <important> 
         /// <para>
@@ -1205,7 +1205,7 @@ namespace Amazon.ElasticTranscoder
 
 
         /// <summary>
-        /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
+        /// Use the <c>UpdatePipeline</c> operation to update settings for a pipeline.
         /// 
         ///  <important> 
         /// <para>

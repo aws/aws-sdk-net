@@ -53,7 +53,7 @@ namespace Amazon.DAX.Model
         /// Gets and sets the property AvailabilityZones. 
         /// <para>
         /// The Availability Zones (AZs) in which the cluster nodes will reside after the cluster
-        /// has been created or updated. If provided, the length of this list must equal the <code>ReplicationFactor</code>
+        /// has been created or updated. If provided, the length of this list must equal the <c>ReplicationFactor</c>
         /// parameter. If you omit this parameter, DAX will spread the nodes across Availability
         /// Zones for the highest availability.
         /// </para>
@@ -77,11 +77,11 @@ namespace Amazon.DAX.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> for no encryption
+        ///  <c>NONE</c> for no encryption
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TLS</code> for Transport Layer Security
+        ///  <c>TLS</c> for Transport Layer Security
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -237,40 +237,40 @@ namespace Amazon.DAX.Model
         /// <para>
         /// Specifies the weekly time range during which maintenance on the DAX cluster is performed.
         /// It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC).
-        /// The minimum maintenance window is a 60 minute period. Valid values for <code>ddd</code>
+        /// The minimum maintenance window is a 60 minute period. Valid values for <c>ddd</c>
         /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>sun</code> 
+        ///  <c>sun</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>mon</code> 
+        ///  <c>mon</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tue</code> 
+        ///  <c>tue</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>wed</code> 
+        ///  <c>wed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>thu</code> 
+        ///  <c>thu</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fri</code> 
+        ///  <c>fri</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>sat</code> 
+        ///  <c>sat</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>sun:05:00-sun:09:00</code> 
+        /// Example: <c>sun:05:00-sun:09:00</c> 
         /// </para>
         ///  <note> 
         /// <para>
@@ -297,10 +297,10 @@ namespace Amazon.DAX.Model
         /// <para>
         /// The number of nodes in the DAX cluster. A replication factor of 1 will create a single-node
         /// cluster, without any read replicas. For additional fault tolerance, you can create
-        /// a multiple node cluster with one or more read replicas. To do this, set <code>ReplicationFactor</code>
+        /// a multiple node cluster with one or more read replicas. To do this, set <c>ReplicationFactor</c>
         /// to a number between 3 (one primary and two read replicas) and 10 (one primary and
-        /// nine read replicas). <code>If the AvailabilityZones</code> parameter is provided,
-        /// its length must equal the <code>ReplicationFactor</code>.
+        /// nine read replicas). <c>If the AvailabilityZones</c> parameter is provided, its length
+        /// must equal the <c>ReplicationFactor</c>.
         /// </para>
         ///  <note> 
         /// <para>

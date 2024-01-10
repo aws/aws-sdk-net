@@ -63,7 +63,7 @@ namespace Amazon.AutoScaling.Model
         /// Indicates whether scaling in by the target tracking scaling policy is disabled. If
         /// scaling in is disabled, the target tracking scaling policy doesn't remove instances
         /// from the Auto Scaling group. Otherwise, the target tracking scaling policy can remove
-        /// instances from the Auto Scaling group. The default is <code>false</code>.
+        /// instances from the Auto Scaling group. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool DisableScaleIn

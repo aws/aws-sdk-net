@@ -31,8 +31,8 @@ namespace Amazon.LookoutEquipment.Model
     /// <summary>
     /// Container for the parameters to the ListModelVersions operation.
     /// Generates a list of all model versions for a given model, including the model version,
-    /// model version ARN, and status. To list a subset of versions, use the <code>MaxModelVersion</code>
-    /// and <code>MinModelVersion</code> fields.
+    /// model version ARN, and status. To list a subset of versions, use the <c>MaxModelVersion</c>
+    /// and <c>MinModelVersion</c> fields.
     /// </summary>
     public partial class ListModelVersionsRequest : AmazonLookoutEquipmentRequest
     {
@@ -163,8 +163,8 @@ namespace Amazon.LookoutEquipment.Model
         /// <para>
         /// If the total number of results exceeds the limit that the response can display, the
         /// response returns an opaque pagination token indicating where to continue the listing
-        /// of machine learning model versions. Use this token in the <code>NextToken</code> field
-        /// in the request to list the next page of results.
+        /// of machine learning model versions. Use this token in the <c>NextToken</c> field in
+        /// the request to list the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

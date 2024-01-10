@@ -142,10 +142,10 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property ObjectTypeNames. 
         /// <para>
         /// A map in which each key is an event type from an external application such as Segment
-        /// or Shopify, and each value is an <code>ObjectTypeName</code> (template) used to ingest
-        /// the event. It supports the following event types: <code>SegmentIdentify</code>, <code>ShopifyCreateCustomers</code>,
-        /// <code>ShopifyUpdateCustomers</code>, <code>ShopifyCreateDraftOrders</code>, <code>ShopifyUpdateDraftOrders</code>,
-        /// <code>ShopifyCreateOrders</code>, and <code>ShopifyUpdatedOrders</code>.
+        /// or Shopify, and each value is an <c>ObjectTypeName</c> (template) used to ingest the
+        /// event. It supports the following event types: <c>SegmentIdentify</c>, <c>ShopifyCreateCustomers</c>,
+        /// <c>ShopifyUpdateCustomers</c>, <c>ShopifyCreateDraftOrders</c>, <c>ShopifyUpdateDraftOrders</c>,
+        /// <c>ShopifyCreateOrders</c>, and <c>ShopifyUpdatedOrders</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> ObjectTypeNames

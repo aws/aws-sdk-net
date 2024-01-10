@@ -41,8 +41,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property TriggerProperties. 
         /// <para>
         ///  Specifies the configuration details of a schedule-triggered flow as defined by the
-        /// user. Currently, these settings only apply to the <code>Scheduled</code> trigger type.
-        /// 
+        /// user. Currently, these settings only apply to the <c>Scheduled</c> trigger type. 
         /// </para>
         /// </summary>
         public TriggerProperties TriggerProperties
@@ -60,8 +59,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property TriggerType. 
         /// <para>
-        ///  Specifies the type of flow trigger. This can be <code>OnDemand</code>, <code>Scheduled</code>,
-        /// or <code>Event</code>. 
+        ///  Specifies the type of flow trigger. This can be <c>OnDemand</c>, <c>Scheduled</c>,
+        /// or <c>Event</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

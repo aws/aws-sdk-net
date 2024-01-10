@@ -126,10 +126,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property DirectInternetAccess. 
         /// <para>
         ///  Sets whether SageMaker provides internet access to the notebook instance. If you
-        /// set this to <code>Disabled</code>, this notebook instance is able to access resources
-        /// only in your VPC, and is not be able to connect to SageMaker training and endpoint
-        /// services unless you configure a Network Address Translation (NAT) Gateway in your
-        /// VPC. 
+        /// set this to <c>Disabled</c>, this notebook instance is able to access resources only
+        /// in your VPC, and is not be able to connect to SageMaker training and endpoint services
+        /// unless you configure a Network Address Translation (NAT) Gateway in your VPC. 
         /// </para>
         /// </summary>
         public string DirectInternetAccess
@@ -147,7 +146,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        ///  If status of the instance is <code>Failed</code>, the reason it failed. 
+        ///  If status of the instance is <c>Failed</c>, the reason it failed. 
         /// </para>
         /// </summary>
         public string FailureReason

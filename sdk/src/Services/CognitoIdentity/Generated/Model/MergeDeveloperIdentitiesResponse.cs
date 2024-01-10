@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentity.Model
 {
     /// <summary>
-    /// Returned in response to a successful <code>MergeDeveloperIdentities</code> action.
+    /// Returned in response to a successful <c>MergeDeveloperIdentities</c> action.
     /// </summary>
     public partial class MergeDeveloperIdentitiesResponse : AmazonWebServiceResponse
     {

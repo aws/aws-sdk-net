@@ -182,7 +182,7 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The graph name. For example: <code>my-graph-1</code>.
+        /// The graph name. For example: <c>my-graph-1</c>.
         /// </para>
         ///  
         /// <para>

@@ -84,8 +84,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Opaque pagination token returned from a previous ListFileShares operation. If present,
-        /// <code>Marker</code> specifies where to continue the list from after a previous call
-        /// to ListFileShares. Optional.
+        /// <c>Marker</c> specifies where to continue the list from after a previous call to ListFileShares.
+        /// Optional.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

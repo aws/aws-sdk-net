@@ -58,7 +58,7 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property AlarmRoleArn. 
         /// <para>
-        /// ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <code>AlarmArn</code>.
+        /// ARN of an Identity and Access Management (IAM) role for AppConfig to monitor <c>AlarmArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

@@ -40,10 +40,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneSummaries. 
         /// <para>
-        /// A list that contains one <code>HostedZoneSummary</code> element for each hosted zone
-        /// that the specified Amazon VPC is associated with. Each <code>HostedZoneSummary</code>
-        /// element contains the hosted zone name and ID, and information about who owns the hosted
-        /// zone.
+        /// A list that contains one <c>HostedZoneSummary</c> element for each hosted zone that
+        /// the specified Amazon VPC is associated with. Each <c>HostedZoneSummary</c> element
+        /// contains the hosted zone name and ID, and information about who owns the hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +61,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for <code>MaxItems</code> in the most recent <code>ListHostedZonesByVPC</code>
+        /// The value that you specified for <c>MaxItems</c> in the most recent <c>ListHostedZonesByVPC</c>
         /// request.
         /// </para>
         /// </summary>
@@ -82,7 +81,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The value that you will use for <code>NextToken</code> in the next <code>ListHostedZonesByVPC</code>
+        /// The value that you will use for <c>NextToken</c> in the next <c>ListHostedZonesByVPC</c>
         /// request.
         /// </para>
         /// </summary>

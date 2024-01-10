@@ -34,23 +34,23 @@ namespace Amazon.WAFRegional.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// You tried to add a <code>Rule</code> to or delete a <code>Rule</code> from a <code>WebACL</code>
+    /// You tried to add a <c>Rule</c> to or delete a <c>Rule</c> from a <c>WebACL</c> that
+    /// doesn't exist.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You tried to add a <c>ByteMatchSet</c> to or delete a <c>ByteMatchSet</c> from a <c>Rule</c>
     /// that doesn't exist.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to add a <code>ByteMatchSet</code> to or delete a <code>ByteMatchSet</code>
-    /// from a <code>Rule</code> that doesn't exist.
+    /// You tried to add an IP address to or delete an IP address from an <c>IPSet</c> that
+    /// doesn't exist.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// You tried to add an IP address to or delete an IP address from an <code>IPSet</code>
-    /// that doesn't exist.
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// You tried to add a <code>ByteMatchTuple</code> to or delete a <code>ByteMatchTuple</code>
-    /// from a <code>ByteMatchSet</code> that doesn't exist.
+    /// You tried to add a <c>ByteMatchTuple</c> to or delete a <c>ByteMatchTuple</c> from
+    /// a <c>ByteMatchSet</c> that doesn't exist.
     /// </para>
     ///  </li> </ul>
     /// </summary>

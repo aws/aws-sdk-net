@@ -34,10 +34,10 @@ namespace Amazon.AppStream.Model
     /// 
     ///  
     /// <para>
-    /// If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code>
-    /// state, you can't update it. If the app block builder is in the <code>RUNNING</code>
-    /// state, you can only update the DisplayName and Description. If the app block builder
-    /// is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+    /// If the app block builder is in the <c>STARTING</c> or <c>STOPPING</c> state, you can't
+    /// update it. If the app block builder is in the <c>RUNNING</c> state, you can only update
+    /// the DisplayName and Description. If the app block builder is in the <c>STOPPED</c>
+    /// state, you can update any attribute except the Name.
     /// </para>
     /// </summary>
     public partial class UpdateAppBlockBuilderRequest : AmazonAppStreamRequest
@@ -152,7 +152,7 @@ namespace Amazon.AppStream.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role to apply to the app block builder.
         /// To assume a role, the app block builder calls the AWS Security Token Service (STS)
-        /// <code>AssumeRole</code> API operation and passes the ARN of the role to use. The operation
+        /// <c>AssumeRole</c> API operation and passes the ARN of the role to use. The operation
         /// creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
         /// credentials and creates the <b>appstream_machine_role</b> credential profile on the
         /// instance.
@@ -243,7 +243,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>WINDOWS_SERVER_2019</code> is the only valid value.
+        ///  <c>WINDOWS_SERVER_2019</c> is the only valid value.
         /// </para>
         /// </summary>
         public PlatformType Platform

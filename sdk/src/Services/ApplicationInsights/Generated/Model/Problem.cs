@@ -200,9 +200,9 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property ResolutionMethod. 
         /// <para>
-        /// Specifies how the problem was resolved. If the value is <code>AUTOMATIC</code>, the
-        /// system resolved the problem. If the value is <code>MANUAL</code>, the user resolved
-        /// the problem. If the value is <code>UNRESOLVED</code>, then the problem is not resolved.
+        /// Specifies how the problem was resolved. If the value is <c>AUTOMATIC</c>, the system
+        /// resolved the problem. If the value is <c>MANUAL</c>, the user resolved the problem.
+        /// If the value is <c>UNRESOLVED</c>, then the problem is not resolved.
         /// </para>
         /// </summary>
         public ResolutionMethod ResolutionMethod

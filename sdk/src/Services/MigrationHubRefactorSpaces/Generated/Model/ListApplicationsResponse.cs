@@ -39,7 +39,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property ApplicationSummaryList. 
         /// <para>
-        /// The list of <code>ApplicationSummary</code> objects. 
+        /// The list of <c>ApplicationSummary</c> objects. 
         /// </para>
         /// </summary>
         public List<ApplicationSummary> ApplicationSummaryList

@@ -101,29 +101,27 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property MaxGroupPreparedCapacity. 
         /// <para>
         /// Specifies the maximum number of instances that are allowed to be in the warm pool
-        /// or in any state except <code>Terminated</code> for the Auto Scaling group. This is
-        /// an optional property. Specify it only if you do not want the warm pool size to be
-        /// determined by the difference between the group's maximum capacity and its desired
-        /// capacity. 
+        /// or in any state except <c>Terminated</c> for the Auto Scaling group. This is an optional
+        /// property. Specify it only if you do not want the warm pool size to be determined by
+        /// the difference between the group's maximum capacity and its desired capacity. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// If a value for <code>MaxGroupPreparedCapacity</code> is not specified, Amazon EC2
-        /// Auto Scaling launches and maintains the difference between the group's maximum capacity
-        /// and its desired capacity. If you specify a value for <code>MaxGroupPreparedCapacity</code>,
-        /// Amazon EC2 Auto Scaling uses the difference between the <code>MaxGroupPreparedCapacity</code>
-        /// and the desired capacity instead. 
+        /// If a value for <c>MaxGroupPreparedCapacity</c> is not specified, Amazon EC2 Auto Scaling
+        /// launches and maintains the difference between the group's maximum capacity and its
+        /// desired capacity. If you specify a value for <c>MaxGroupPreparedCapacity</c>, Amazon
+        /// EC2 Auto Scaling uses the difference between the <c>MaxGroupPreparedCapacity</c> and
+        /// the desired capacity instead. 
         /// </para>
         ///  
         /// <para>
-        /// The size of the warm pool is dynamic. Only when <code>MaxGroupPreparedCapacity</code>
-        /// and <code>MinSize</code> are set to the same value does the warm pool have an absolute
-        /// size.
+        /// The size of the warm pool is dynamic. Only when <c>MaxGroupPreparedCapacity</c> and
+        /// <c>MinSize</c> are set to the same value does the warm pool have an absolute size.
         /// </para>
         ///  </important> 
         /// <para>
-        /// If the desired capacity of the Auto Scaling group is higher than the <code>MaxGroupPreparedCapacity</code>,
-        /// the capacity of the warm pool is 0, unless you specify a value for <code>MinSize</code>.
+        /// If the desired capacity of the Auto Scaling group is higher than the <c>MaxGroupPreparedCapacity</c>,
+        /// the capacity of the warm pool is 0, unless you specify a value for <c>MinSize</c>.
         /// To remove a value that you previously set, include the property but specify -1 for
         /// the value. 
         /// </para>
@@ -166,7 +164,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property PoolState. 
         /// <para>
         /// Sets the instance state to transition to after the lifecycle actions are complete.
-        /// Default is <code>Stopped</code>.
+        /// Default is <c>Stopped</c>.
         /// </para>
         /// </summary>
         public WarmPoolState PoolState

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTSiteWise.Model
 {
     /// <summary>
-    /// Represents a composite model that composed an asset model of type <code>COMPONENT_MODEL</code>.
+    /// Represents a composite model that composed an asset model of type <c>COMPONENT_MODEL</c>.
     /// </summary>
     public partial class CompositionRelationshipItem
     {

@@ -59,7 +59,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Properties. 
         /// <para>
-        /// A <code>GeneratedPolicyProperties</code> object that contains properties of the generated
+        /// A <c>GeneratedPolicyProperties</c> object that contains properties of the generated
         /// policy.
         /// </para>
         /// </summary>

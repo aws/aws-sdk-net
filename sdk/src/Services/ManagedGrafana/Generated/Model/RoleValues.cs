@@ -30,9 +30,9 @@ namespace Amazon.ManagedGrafana.Model
 {
     /// <summary>
     /// This structure defines which groups defined in the SAML assertion attribute are to
-    /// be mapped to the Grafana <code>Admin</code> and <code>Editor</code> roles in the workspace.
-    /// SAML authenticated users not part of <code>Admin</code> or <code>Editor</code> role
-    /// groups have <code>Viewer</code> permission over the workspace.
+    /// be mapped to the Grafana <c>Admin</c> and <c>Editor</c> roles in the workspace. SAML
+    /// authenticated users not part of <c>Admin</c> or <c>Editor</c> role groups have <c>Viewer</c>
+    /// permission over the workspace.
     /// </summary>
     public partial class RoleValues
     {
@@ -42,7 +42,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Admin. 
         /// <para>
-        /// A list of groups from the SAML assertion attribute to grant the Grafana <code>Admin</code>
+        /// A list of groups from the SAML assertion attribute to grant the Grafana <c>Admin</c>
         /// role to.
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.ManagedGrafana.Model
         /// <summary>
         /// Gets and sets the property Editor. 
         /// <para>
-        /// A list of groups from the SAML assertion attribute to grant the Grafana <code>Editor</code>
+        /// A list of groups from the SAML assertion attribute to grant the Grafana <c>Editor</c>
         /// role to.
         /// </para>
         /// </summary>

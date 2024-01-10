@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LocalPath. 
         /// <para>
-        /// Path to local storage location for output of rules. Defaults to <code>/opt/ml/processing/output/rule/</code>.
+        /// Path to local storage location for output of rules. Defaults to <c>/opt/ml/processing/output/rule/</c>.
         /// 
         /// </para>
         /// </summary>

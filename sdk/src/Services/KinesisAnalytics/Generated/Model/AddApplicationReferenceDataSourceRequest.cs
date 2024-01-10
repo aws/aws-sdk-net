@@ -58,7 +58,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    ///  This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationOutput</code>
+    ///  This operation requires permissions to perform the <c>kinesisanalytics:AddApplicationOutput</c>
     /// action. 
     /// </para>
     /// </summary>
@@ -93,7 +93,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// Version of the application for which you are adding the reference data source. You
         /// can use the <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
         /// operation to get the current application version. If the version specified is not
-        /// the current version, the <code>ConcurrentModificationException</code> is returned.
+        /// the current version, the <c>ConcurrentModificationException</c> is returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=999999999)]

@@ -40,7 +40,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property KeyArn. 
         /// <para>
-        /// The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography
+        /// The <c>keyARN</c> of the encryption key that Amazon Web Services Payment Cryptography
         /// uses to encrypt outgoing PIN block data after translation.
         /// </para>
         /// </summary>

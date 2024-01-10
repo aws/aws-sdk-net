@@ -42,8 +42,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InstanceCount. 
         /// <para>
         /// The number of ML compute instances to use in the transform job. The default value
-        /// is <code>1</code>, and the maximum is <code>100</code>. For distributed transform
-        /// jobs, specify a value greater than <code>1</code>.
+        /// is <c>1</c>, and the maximum is <c>100</c>. For distributed transform jobs, specify
+        /// a value greater than <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -63,7 +63,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         /// The ML compute instance type for the transform job. If you are using built-in algorithms
-        /// to transform moderately sized datasets, we recommend using ml.m4.xlarge or <code>ml.m5.large</code>instance
+        /// to transform moderately sized datasets, we recommend using ml.m4.xlarge or <c>ml.m5.large</c>instance
         /// types.
         /// </para>
         /// </summary>
@@ -91,7 +91,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Certain Nitro-based instances include local storage, dependent on the instance type.
         /// Local storage volumes are encrypted using a hardware module on the instance. You can't
-        /// request a <code>VolumeKmsKeyId</code> when using an instance type with local storage.
+        /// request a <c>VolumeKmsKeyId</c> when using an instance type with local storage.
         /// </para>
         ///  
         /// <para>
@@ -105,25 +105,24 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </note> 
         /// <para>
-        ///  The <code>VolumeKmsKeyId</code> can be any of the following formats:
+        ///  The <c>VolumeKmsKeyId</c> can be any of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
-        /// 
+        /// Alias name ARN: <c>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

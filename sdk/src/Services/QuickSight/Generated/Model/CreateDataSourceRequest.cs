@@ -222,11 +222,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the data source. To return a list of all data sources, use <code>ListDataSources</code>.
+        /// The type of the data source. To return a list of all data sources, use <c>ListDataSources</c>.
         /// </para>
         ///  
         /// <para>
-        /// Use <code>AMAZON_ELASTICSEARCH</code> for Amazon OpenSearch Service.
+        /// Use <c>AMAZON_ELASTICSEARCH</c> for Amazon OpenSearch Service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

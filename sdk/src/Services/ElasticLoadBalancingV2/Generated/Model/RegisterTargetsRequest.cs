@@ -34,8 +34,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// If the target is an EC2 instance, it must be in the <code>running</code> state when
-    /// you register it.
+    /// If the target is an EC2 instance, it must be in the <c>running</c> state when you
+    /// register it.
     /// </para>
     ///  
     /// <para>

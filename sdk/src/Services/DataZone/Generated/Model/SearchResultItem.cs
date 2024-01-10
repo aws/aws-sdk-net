@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The details of the results of the <code>SearchListings</code> action.
+    /// The details of the results of the <c>SearchListings</c> action.
     /// </summary>
     public partial class SearchResultItem
     {
@@ -38,7 +38,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property AssetListing. 
         /// <para>
-        /// The asset listing included in the results of the <code>SearchListings</code> action.
+        /// The asset listing included in the results of the <c>SearchListings</c> action.
         /// </para>
         /// </summary>
         public AssetListingItem AssetListing

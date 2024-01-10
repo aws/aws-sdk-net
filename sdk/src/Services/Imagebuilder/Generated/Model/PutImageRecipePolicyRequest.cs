@@ -31,7 +31,7 @@ namespace Amazon.Imagebuilder.Model
     /// <summary>
     /// Container for the parameters to the PutImageRecipePolicy operation.
     /// Applies a policy to an image recipe. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
-    /// to share resources. If you call the Image Builder API <code>PutImageRecipePolicy</code>,
+    /// to share resources. If you call the Image Builder API <c>PutImageRecipePolicy</c>,
     /// you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a>
     /// in order for the resource to be visible to all principals with whom the resource is
     /// shared.

@@ -29,22 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A configuration for a shuffle option for input data in a channel. If you use <code>S3Prefix</code>
-    /// for <code>S3DataType</code>, the results of the S3 key prefix matches are shuffled.
-    /// If you use <code>ManifestFile</code>, the order of the S3 object references in the
-    /// <code>ManifestFile</code> is shuffled. If you use <code>AugmentedManifestFile</code>,
-    /// the order of the JSON lines in the <code>AugmentedManifestFile</code> is shuffled.
-    /// The shuffling order is determined using the <code>Seed</code> value.
+    /// A configuration for a shuffle option for input data in a channel. If you use <c>S3Prefix</c>
+    /// for <c>S3DataType</c>, the results of the S3 key prefix matches are shuffled. If you
+    /// use <c>ManifestFile</c>, the order of the S3 object references in the <c>ManifestFile</c>
+    /// is shuffled. If you use <c>AugmentedManifestFile</c>, the order of the JSON lines
+    /// in the <c>AugmentedManifestFile</c> is shuffled. The shuffling order is determined
+    /// using the <c>Seed</c> value.
     /// 
     ///  
     /// <para>
-    /// For Pipe input mode, when <code>ShuffleConfig</code> is specified shuffling is done
-    /// at the start of every epoch. With large datasets, this ensures that the order of the
-    /// training data is different for each epoch, and it helps reduce bias and possible overfitting.
-    /// In a multi-node training job when <code>ShuffleConfig</code> is combined with <code>S3DataDistributionType</code>
-    /// of <code>ShardedByS3Key</code>, the data is shuffled across nodes so that the content
-    /// sent to a particular node on the first epoch might be sent to a different node on
-    /// the second epoch.
+    /// For Pipe input mode, when <c>ShuffleConfig</c> is specified shuffling is done at the
+    /// start of every epoch. With large datasets, this ensures that the order of the training
+    /// data is different for each epoch, and it helps reduce bias and possible overfitting.
+    /// In a multi-node training job when <c>ShuffleConfig</c> is combined with <c>S3DataDistributionType</c>
+    /// of <c>ShardedByS3Key</c>, the data is shuffled across nodes so that the content sent
+    /// to a particular node on the first epoch might be sent to a different node on the second
+    /// epoch.
     /// </para>
     /// </summary>
     public partial class ShuffleConfig
@@ -54,7 +54,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Seed. 
         /// <para>
-        /// Determines the shuffling order in <code>ShuffleConfig</code> value.
+        /// Determines the shuffling order in <c>ShuffleConfig</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

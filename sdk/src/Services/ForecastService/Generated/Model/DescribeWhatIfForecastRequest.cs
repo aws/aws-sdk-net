@@ -34,24 +34,24 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to listing the properties provided in the <code>CreateWhatIfForecast</code>
+    /// In addition to listing the properties provided in the <c>CreateWhatIfForecast</c>
     /// request, this operation lists the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>CreationTime</code> 
+    ///  <c>CreationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastModificationTime</code> 
+    ///  <c>LastModificationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Message</code> - If an error occurred, information about the error.
+    ///  <c>Message</c> - If an error occurred, information about the error.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Status</code> 
+    ///  <c>Status</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

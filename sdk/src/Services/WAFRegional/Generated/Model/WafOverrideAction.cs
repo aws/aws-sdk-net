@@ -42,8 +42,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The action to take if any rule within the <code>RuleGroup</code> matches a request.
-    /// 
+    /// The action to take if any rule within the <c>RuleGroup</c> matches a request. 
     /// </para>
     /// </summary>
     public partial class WafOverrideAction
@@ -53,9 +52,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  <code>COUNT</code> overrides the action specified by the individual rule within a
-        /// <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action will take
-        /// place.
+        ///  <c>COUNT</c> overrides the action specified by the individual rule within a <c>RuleGroup</c>
+        /// . If set to <c>NONE</c>, the rule's action will take place.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.ResourceGroupsTaggingAPI.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReportCreation operation.
-    /// Describes the status of the <code>StartReportCreation</code> operation. 
+    /// Describes the status of the <c>StartReportCreation</c> operation. 
     /// 
     ///  
     /// <para>

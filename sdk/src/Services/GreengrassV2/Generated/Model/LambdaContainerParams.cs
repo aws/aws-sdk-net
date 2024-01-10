@@ -64,7 +64,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>16384</code> (16 MB)
+        /// Default: <c>16384</c> (16 MB)
         /// </para>
         /// </summary>
         public int MemorySizeInKB
@@ -82,12 +82,11 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property MountROSysfs. 
         /// <para>
-        /// Whether or not the container can read information from the device's <code>/sys</code>
-        /// folder.
+        /// Whether or not the container can read information from the device's <c>/sys</c> folder.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool MountROSysfs

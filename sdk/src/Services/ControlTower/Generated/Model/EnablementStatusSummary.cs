@@ -66,17 +66,15 @@ namespace Amazon.ControlTower.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code>: The <code>enabledControl</code> configuration was deployed
-        /// successfully.
+        ///  <c>SUCCEEDED</c>: The <c>enabledControl</c> configuration was deployed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNDER_CHANGE</code>: The <code>enabledControl</code> configuration is changing.
-        /// 
+        ///  <c>UNDER_CHANGE</c>: The <c>enabledControl</c> configuration is changing. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The <code>enabledControl</code> configuration failed to deploy.
+        ///  <c>FAILED</c>: The <c>enabledControl</c> configuration failed to deploy.
         /// </para>
         ///  </li> </ul>
         /// </summary>

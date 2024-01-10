@@ -83,7 +83,7 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property ConnectionString. 
         /// <para>
         /// The connection string specified for the connection alias. The connection string must
-        /// be in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.
+        /// be in the form of a fully qualified domain name (FQDN), such as <c>www.example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

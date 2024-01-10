@@ -30,8 +30,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppInstanceUser operation.
-    /// Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists
-    /// of a unique <code>appInstanceUserId</code> and <code>Name</code> for that user.
+    /// Creates a user under an Amazon Chime <c>AppInstance</c>. The request consists of a
+    /// unique <c>appInstanceUserId</c> and <c>Name</c> for that user.
     /// 
     ///  <important> 
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code> request.
+        /// The ARN of the <c>AppInstance</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -78,7 +78,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserId. 
         /// <para>
-        /// The user ID of the <code>AppInstance</code>.
+        /// The user ID of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
@@ -97,7 +97,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token assigned to the user requesting an <code>AppInstance</code>.
+        /// The token assigned to the user requesting an <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=64)]
@@ -154,7 +154,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags assigned to the <code>AppInstanceUser</code>.
+        /// Tags assigned to the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

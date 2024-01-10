@@ -38,15 +38,15 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ChangeInCapacity</code> 
+    ///  <c>ChangeInCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ExactCapacity</code> 
+    ///  <c>ExactCapacity</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PercentChangeInCapacity</code> 
+    ///  <c>PercentChangeInCapacity</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the association of tags from an Amazon DynamoDB resource. You can call <code>UntagResource</code>
+    /// Removes the association of tags from an Amazon DynamoDB resource. You can call <c>UntagResource</c>
     /// up to five times per second, per account. 
     /// 
     ///  

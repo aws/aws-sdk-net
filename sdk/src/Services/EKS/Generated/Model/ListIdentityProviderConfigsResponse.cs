@@ -57,10 +57,10 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>ListIdentityProviderConfigsResponse</code>
-        /// request. When the results of a <code>ListIdentityProviderConfigsResponse</code> request
-        /// exceed <code>maxResults</code>, you can use this value to retrieve the next page of
-        /// results. This value is <code>null</code> when there are no more results to return.
+        /// The <c>nextToken</c> value to include in a future <c>ListIdentityProviderConfigsResponse</c>
+        /// request. When the results of a <c>ListIdentityProviderConfigsResponse</c> request
+        /// exceed <c>maxResults</c>, you can use this value to retrieve the next page of results.
+        /// This value is <c>null</c> when there are no more results to return.
         /// </para>
         ///  <note> 
         /// <para>

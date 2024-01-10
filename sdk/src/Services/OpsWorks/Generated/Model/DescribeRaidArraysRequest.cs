@@ -53,8 +53,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID. If you use this parameter, <code>DescribeRaidArrays</code> returns
-        /// descriptions of the RAID arrays associated with the specified instance. 
+        /// The instance ID. If you use this parameter, <c>DescribeRaidArrays</c> returns descriptions
+        /// of the RAID arrays associated with the specified instance. 
         /// </para>
         /// </summary>
         public string InstanceId
@@ -72,9 +72,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property RaidArrayIds. 
         /// <para>
-        /// An array of RAID array IDs. If you use this parameter, <code>DescribeRaidArrays</code>
-        /// returns descriptions of the specified arrays. Otherwise, it returns a description
-        /// of every array.
+        /// An array of RAID array IDs. If you use this parameter, <c>DescribeRaidArrays</c> returns
+        /// descriptions of the specified arrays. Otherwise, it returns a description of every
+        /// array.
         /// </para>
         /// </summary>
         public List<string> RaidArrayIds

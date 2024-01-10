@@ -59,8 +59,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A description of the error. For example, <code>The specified Index resource is not
-        /// found</code>.
+        /// A description of the error. For example, <c>The specified Index resource is not found</c>.
         /// </para>
         /// </summary>
         public string ErrorMessage

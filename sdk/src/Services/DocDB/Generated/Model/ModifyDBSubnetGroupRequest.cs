@@ -65,12 +65,12 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must match the name of an existing <code>DBSubnetGroup</code>. Must not
-        /// be default.
+        /// Constraints: Must match the name of an existing <c>DBSubnetGroup</c>. Must not be
+        /// default.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>mySubnetgroup</code> 
+        /// Example: <c>mySubnetgroup</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

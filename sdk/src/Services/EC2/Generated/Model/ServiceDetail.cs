@@ -203,7 +203,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// Consumers of the endpoint service cannot use the private name when the state is not
-        /// <code>verified</code>.
+        /// <c>verified</c>.
         /// </para>
         /// </summary>
         public DnsNameState PrivateDnsNameVerificationState

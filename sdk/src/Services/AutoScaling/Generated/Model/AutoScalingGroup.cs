@@ -241,8 +241,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property DesiredCapacityType. 
         /// <para>
         /// The unit of measurement for the value specified for desired capacity. Amazon EC2 Auto
-        /// Scaling supports <code>DesiredCapacityType</code> for attribute-based instance type
-        /// selection only.
+        /// Scaling supports <c>DesiredCapacityType</c> for attribute-based instance type selection
+        /// only.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

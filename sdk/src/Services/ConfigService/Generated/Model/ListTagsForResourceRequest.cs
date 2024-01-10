@@ -61,8 +61,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response. 
+        /// The <c>nextToken</c> string returned on a previous page that you use to get the next
+        /// page of results in a paginated response. 
         /// </para>
         /// </summary>
         public string NextToken
@@ -81,8 +81,8 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies the resource for which to list the
-        /// tags. Currently, the supported resources are <code>ConfigRule</code>, <code>ConfigurationAggregator</code>
-        /// and <code>AggregatorAuthorization</code>.
+        /// tags. Currently, the supported resources are <c>ConfigRule</c>, <c>ConfigurationAggregator</c>
+        /// and <c>AggregatorAuthorization</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

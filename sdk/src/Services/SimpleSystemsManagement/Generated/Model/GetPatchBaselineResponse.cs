@@ -109,7 +109,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ApprovedPatchesEnableNonSecurity. 
         /// <para>
         /// Indicates whether the list of approved patches includes non-security updates that
-        /// should be applied to the managed nodes. The default value is <code>false</code>. Applies
+        /// should be applied to the managed nodes. The default value is <c>false</c>. Applies
         /// to Linux managed nodes only.
         /// </para>
         /// </summary>
@@ -294,9 +294,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property RejectedPatchesAction. 
         /// <para>
-        /// The action specified to take on patches included in the <code>RejectedPatches</code>
-        /// list. A patch can be allowed only if it is a dependency of another package, or blocked
-        /// entirely along with packages that include it as a dependency.
+        /// The action specified to take on patches included in the <c>RejectedPatches</c> list.
+        /// A patch can be allowed only if it is a dependency of another package, or blocked entirely
+        /// along with packages that include it as a dependency.
         /// </para>
         /// </summary>
         public PatchAction RejectedPatchesAction

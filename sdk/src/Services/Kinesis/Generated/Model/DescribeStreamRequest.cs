@@ -41,9 +41,9 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  </note> <note> 
     /// <para>
-    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-    /// parameter when you invoke this API.
+    /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+    /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+    /// when you invoke this API.
     /// </para>
     ///  </note> 
     /// <para>
@@ -86,11 +86,11 @@ namespace Amazon.Kinesis.Model
         ///  
         /// <para>
         /// Specify this parameter to indicate that you want to describe the stream starting with
-        /// the shard whose ID immediately follows <code>ExclusiveStartShardId</code>.
+        /// the shard whose ID immediately follows <c>ExclusiveStartShardId</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this parameter, the default behavior for <code>DescribeStream</code>
+        /// If you don't specify this parameter, the default behavior for <c>DescribeStream</c>
         /// is to describe the stream starting with the first shard in the stream.
         /// </para>
         /// </summary>

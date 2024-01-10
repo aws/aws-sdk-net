@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property DisableApiStop. 
         /// <para>
         /// To enable the instance for Amazon Web Services Stop Protection, set this parameter
-        /// to <code>true</code>; otherwise, set it to <code>false</code>.
+        /// to <c>true</c>; otherwise, set it to <c>false</c>.
         /// </para>
         /// </summary>
         public bool DisableApiStop
@@ -91,8 +91,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        /// If the value is <code>true</code>, you can't terminate the instance through the Amazon
-        /// EC2 console, CLI, or API; otherwise, you can.
+        /// If the value is <c>true</c>, you can't terminate the instance through the Amazon EC2
+        /// console, CLI, or API; otherwise, you can.
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -147,7 +147,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnclaveOptions. 
         /// <para>
         /// To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter
-        /// to <code>true</code>; otherwise, set it to <code>false</code>.
+        /// to <c>true</c>; otherwise, set it to <c>false</c>.
         /// </para>
         /// </summary>
         public EnclaveOptions EnclaveOptions
@@ -292,7 +292,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RootDeviceName. 
         /// <para>
-        /// The device name of the root device volume (for example, <code>/dev/sda1</code>).
+        /// The device name of the root device volume (for example, <c>/dev/sda1</c>).
         /// </para>
         /// </summary>
         public string RootDeviceName
@@ -311,10 +311,10 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property SourceDestCheck. 
         /// <para>
         /// Enable or disable source/destination checks, which ensure that the instance is either
-        /// the source or the destination of any traffic that it receives. If the value is <code>true</code>,
+        /// the source or the destination of any traffic that it receives. If the value is <c>true</c>,
         /// source/destination checks are enabled; otherwise, they are disabled. The default value
-        /// is <code>true</code>. You must disable source/destination checks if the instance runs
-        /// services such as network address translation, routing, or firewalls.
+        /// is <c>true</c>. You must disable source/destination checks if the instance runs services
+        /// such as network address translation, routing, or firewalls.
         /// </para>
         /// </summary>
         public bool SourceDestCheck

@@ -39,8 +39,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of block public access for snapshots for the account and Region. Returns
-        /// either <code>block-all-sharing</code> or <code>block-new-sharing</code> if the request
-        /// succeeds.
+        /// either <c>block-all-sharing</c> or <c>block-new-sharing</c> if the request succeeds.
         /// </para>
         /// </summary>
         public SnapshotBlockPublicAccessState State

@@ -30,7 +30,7 @@ namespace Amazon.InternetMonitor.Model
 {
     /// <summary>
     /// Defines a field to query for your application's Amazon CloudWatch Internet Monitor
-    /// data. You create a data repository by running a query of a specific type. Each <code>QueryType</code>
+    /// data. You create a data repository by running a query of a specific type. Each <c>QueryType</c>
     /// includes a specific set of fields and datatypes to retrieve data for.
     /// </summary>
     public partial class QueryField
@@ -42,7 +42,7 @@ namespace Amazon.InternetMonitor.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of a field to query your application's Amazon CloudWatch Internet Monitor
-        /// data for, such as <code>availability_score</code>.
+        /// data for, such as <c>availability_score</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -61,8 +61,8 @@ namespace Amazon.InternetMonitor.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// The data type for a query field, which must correspond to the field you're defining
-        /// for <code>QueryField</code>. For example, if the query field name is <code>availability_score</code>,
-        /// the data type is <code>float</code>.
+        /// for <c>QueryField</c>. For example, if the query field name is <c>availability_score</c>,
+        /// the data type is <c>float</c>.
         /// </para>
         /// </summary>
         public string Type

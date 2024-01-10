@@ -65,16 +65,16 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>description</code> - The description of the authorization rule.
+        ///  <c>description</c> - The description of the authorization rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>destination-cidr</code> - The CIDR of the network to which the authorization
-        /// rule applies.
+        ///  <c>destination-cidr</c> - The CIDR of the network to which the authorization rule
+        /// applies.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>group-id</code> - The ID of the Active Directory group to which the authorization
+        ///  <c>group-id</c> - The ID of the Active Directory group to which the authorization
         /// rule grants access.
         /// </para>
         ///  </li> </ul>

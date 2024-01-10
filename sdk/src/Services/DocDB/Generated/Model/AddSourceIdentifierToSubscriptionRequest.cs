@@ -44,21 +44,19 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the source type is an instance, a <code>DBInstanceIdentifier</code> must be provided.
+        /// If the source type is an instance, a <c>DBInstanceIdentifier</c> must be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a security group, a <code>DBSecurityGroupName</code> must be
-        /// provided.
+        /// If the source type is a security group, a <c>DBSecurityGroupName</c> must be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a parameter group, a <code>DBParameterGroupName</code> must
-        /// be provided.
+        /// If the source type is a parameter group, a <c>DBParameterGroupName</c> must be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is a snapshot, a <code>DBSnapshotIdentifier</code> must be provided.
+        /// If the source type is a snapshot, a <c>DBSnapshotIdentifier</c> must be provided.
         /// </para>
         ///  </li> </ul>
         /// </summary>

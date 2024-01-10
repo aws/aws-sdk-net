@@ -140,25 +140,25 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Available</code> - The cluster is available for queries.
+        ///  <c>Available</c> - The cluster is available for queries.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Unavailable</code> - The cluster is not available for queries.
+        ///  <c>Unavailable</c> - The cluster is not available for queries.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Maintenance</code> - The cluster is intermittently available for queries due
-        /// to maintenance activities.
+        ///  <c>Maintenance</c> - The cluster is intermittently available for queries due to maintenance
+        /// activities.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Modifying</code> -The cluster is intermittently available for queries due to
-        /// changes that modify the cluster.
+        ///  <c>Modifying</c> -The cluster is intermittently available for queries due to changes
+        /// that modify the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The cluster failed and is not available for queries.
+        ///  <c>Failed</c> - The cluster failed and is not available for queries.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -181,9 +181,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string ClusterCreateTime
@@ -332,13 +332,12 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>available</code> | <code>available, prep-for-resize</code> | <code>available,
-        /// resize-cleanup</code> |<code> cancelling-resize</code> | <code>creating</code> | <code>deleting</code>
-        /// | <code>final-snapshot</code> | <code>hardware-failure</code> | <code>incompatible-hsm</code>
-        /// |<code> incompatible-network</code> | <code>incompatible-parameters</code> | <code>incompatible-restore</code>
-        /// | <code>modifying</code> | <code>paused</code> | <code>rebooting</code> | <code>renaming</code>
-        /// | <code>resizing</code> | <code>rotating-keys</code> | <code>storage-full</code> |
-        /// <code>updating-hsm</code> 
+        /// Valid values: <c>available</c> | <c>available, prep-for-resize</c> | <c>available,
+        /// resize-cleanup</c> |<c> cancelling-resize</c> | <c>creating</c> | <c>deleting</c>
+        /// | <c>final-snapshot</c> | <c>hardware-failure</c> | <c>incompatible-hsm</c> |<c> incompatible-network</c>
+        /// | <c>incompatible-parameters</c> | <c>incompatible-restore</c> | <c>modifying</c>
+        /// | <c>paused</c> | <c>rebooting</c> | <c>renaming</c> | <c>resizing</c> | <c>rotating-keys</c>
+        /// | <c>storage-full</c> | <c>updating-hsm</c> 
         /// </para>
         /// </summary>
         public string ClusterStatus
@@ -401,7 +400,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If an initial database is not specified, a database named <code>devdev</code> is created
+        /// If an initial database is not specified, a database named <c>devdev</c> is created
         /// by default.
         /// </para>
         /// </summary>
@@ -534,9 +533,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string ExpectedNextSnapshotScheduleTime
@@ -558,7 +557,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>OnTrack</code> | <code>Pending</code> 
+        /// Valid values: <c>OnTrack</c> | <c>Pending</c> 
         /// </para>
         /// </summary>
         public string ExpectedNextSnapshotScheduleTimeStatus
@@ -672,7 +671,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If the value is <code>-1</code>, the snapshot is retained indefinitely.
+        /// If the value is <c>-1</c>, the snapshot is retained indefinitely.
         /// </para>
         ///  
         /// <para>
@@ -680,7 +679,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Either <code>-1</code> or an integer between 1 and 3,653
+        /// Valid values: Either <c>-1</c> or an integer between 1 and 3,653
         /// </para>
         /// </summary>
         public int ManualSnapshotRetentionPeriod
@@ -699,7 +698,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property MasterUsername. 
         /// <para>
         /// The master user name for the cluster. This name is used to connect to the database
-        /// that is specified in as the value of <code>DBName</code>.
+        /// that is specified in as the value of <c>DBName</c>.
         /// </para>
         /// </summary>
         public string MasterUsername
@@ -721,9 +720,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string NextMaintenanceWindowStartTime
@@ -818,16 +817,16 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code> <i>&lt;day&gt;</i>:HH:MM-<i>&lt;day&gt;</i>:HH:MM</code> 
+        /// Format: <c> <i>&lt;day&gt;</i>:HH:MM-<i>&lt;day&gt;</i>:HH:MM</c> 
         /// </para>
         ///  
         /// <para>
-        /// For the day values, use <code>mon</code> | <code>tue</code> | <code>wed</code> | <code>thu</code>
-        /// | <code>fri</code> | <code>sat</code> | <code>sun</code> 
+        /// For the day values, use <c>mon</c> | <c>tue</c> | <c>wed</c> | <c>thu</c> | <c>fri</c>
+        /// | <c>sat</c> | <c>sun</c> 
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>sun:09:32-sun:10:02</code> 
+        /// For example, <c>sun:09:32-sun:10:02</c> 
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow
@@ -922,7 +921,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>MODIFYING</code> | <code>ACTIVE</code> | <code>FAILED</code> 
+        /// Valid values: <c>MODIFYING</c> | <c>ACTIVE</c> | <c>FAILED</c> 
         /// </para>
         /// </summary>
         public string SnapshotScheduleState

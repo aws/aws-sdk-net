@@ -80,12 +80,12 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// When you specify an IP or forwarded IP in the custom key settings, you must also specify
         /// at least one other key to use. You can aggregate on only the forwarded IP address
-        /// by specifying <code>FORWARDED_IP</code> in your rate-based statement's <code>AggregateKeyType</code>.
+        /// by specifying <c>FORWARDED_IP</c> in your rate-based statement's <c>AggregateKeyType</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// With this option, you must specify the header to use in the rate-based rule's <code>ForwardedIPConfig</code>
+        /// With this option, you must specify the header to use in the rate-based rule's <c>ForwardedIPConfig</c>
         /// property. 
         /// </para>
         /// </summary>
@@ -151,7 +151,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// When you specify an IP or forwarded IP in the custom key settings, you must also specify
         /// at least one other key to use. You can aggregate on only the IP address by specifying
-        /// <code>IP</code> in your rate-based statement's <code>AggregateKeyType</code>. 
+        /// <c>IP</c> in your rate-based statement's <c>AggregateKeyType</c>. 
         /// </para>
         /// </summary>
         public RateLimitIP IP

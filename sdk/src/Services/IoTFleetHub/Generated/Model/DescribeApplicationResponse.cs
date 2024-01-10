@@ -201,7 +201,7 @@ namespace Amazon.IoTFleetHub.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A message indicating why the <code>DescribeApplication</code> API failed.
+        /// A message indicating why the <c>DescribeApplication</c> API failed.
         /// </para>
         /// </summary>
         public string ErrorMessage

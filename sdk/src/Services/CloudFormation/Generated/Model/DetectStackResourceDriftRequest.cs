@@ -40,9 +40,8 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// Use <code>DetectStackResourceDrift</code> to detect drift on individual resources,
-    /// or <a>DetectStackDrift</a> to detect drift on all resources in a given stack that
-    /// support drift detection.
+    /// Use <c>DetectStackResourceDrift</c> to detect drift on individual resources, or <a>DetectStackDrift</a>
+    /// to detect drift on all resources in a given stack that support drift detection.
     /// </para>
     ///  
     /// <para>

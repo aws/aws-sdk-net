@@ -136,10 +136,10 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The network protocol for the vehicle. For example, <code>CAN_SIGNAL</code> specifies
-        /// a protocol that defines how data is communicated between electronic control units
-        /// (ECUs). <code>OBD_SIGNAL</code> specifies a protocol that defines how self-diagnostic
-        /// data is communicated between ECUs.
+        /// The network protocol for the vehicle. For example, <c>CAN_SIGNAL</c> specifies a protocol
+        /// that defines how data is communicated between electronic control units (ECUs). <c>OBD_SIGNAL</c>
+        /// specifies a protocol that defines how self-diagnostic data is communicated between
+        /// ECUs.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

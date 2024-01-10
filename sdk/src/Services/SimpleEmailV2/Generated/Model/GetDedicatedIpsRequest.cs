@@ -42,8 +42,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token returned from a previous call to <code>GetDedicatedIps</code> to indicate
-        /// the position of the dedicated IP pool in the list of IP pools.
+        /// A token returned from a previous call to <c>GetDedicatedIps</c> to indicate the position
+        /// of the dedicated IP pool in the list of IP pools.
         /// </para>
         /// </summary>
         public string NextToken
@@ -61,10 +61,10 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property PageSize. 
         /// <para>
-        /// The number of results to show in a single call to <code>GetDedicatedIpsRequest</code>.
-        /// If the number of results is larger than the number you specified in this parameter,
-        /// then the response includes a <code>NextToken</code> element, which you can use to
-        /// obtain additional results.
+        /// The number of results to show in a single call to <c>GetDedicatedIpsRequest</c>. If
+        /// the number of results is larger than the number you specified in this parameter, then
+        /// the response includes a <c>NextToken</c> element, which you can use to obtain additional
+        /// results.
         /// </para>
         /// </summary>
         public int PageSize

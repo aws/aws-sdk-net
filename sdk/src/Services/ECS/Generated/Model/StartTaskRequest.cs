@@ -128,7 +128,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Whether or not the execute command functionality is turned on for the task. If <code>true</code>,
+        /// Whether or not the execute command functionality is turned on for the task. If <c>true</c>,
         /// this turns on the execute command functionality on all containers in the task.
         /// </para>
         /// </summary>
@@ -167,7 +167,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The VPC subnet and security group configuration for tasks that receive their own elastic
-        /// network interface by using the <code>awsvpc</code> networking mode.
+        /// network interface by using the <c>awsvpc</c> networking mode.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -188,9 +188,9 @@ namespace Amazon.ECS.Model
         /// A list of container overrides in JSON format that specify the name of a container
         /// in the specified task definition and the overrides it receives. You can override the
         /// default command for a container (that's specified in the task definition or Docker
-        /// image) with a <code>command</code> override. You can also override existing environment
+        /// image) with a <c>command</c> override. You can also override existing environment
         /// variables (that are specified in the task definition or Docker image) on a container
-        /// or add new environment variables to it with an <code>environment</code> override.
+        /// or add new environment variables to it with an <c>environment</c> override.
         /// </para>
         ///  <note> 
         /// <para>
@@ -253,15 +253,15 @@ namespace Amazon.ECS.Model
         /// <para>
         /// An optional tag specified when a task is started. For example, if you automatically
         /// trigger a task to run a batch process job, you could apply a unique identifier for
-        /// that job to your task with the <code>startedBy</code> parameter. You can then identify
-        /// which tasks belong to that job by filtering the results of a <a>ListTasks</a> call
-        /// with the <code>startedBy</code> value. Up to 36 letters (uppercase and lowercase),
-        /// numbers, hyphens (-), and underscores (_) are allowed.
+        /// that job to your task with the <c>startedBy</c> parameter. You can then identify which
+        /// tasks belong to that job by filtering the results of a <a>ListTasks</a> call with
+        /// the <c>startedBy</c> value. Up to 36 letters (uppercase and lowercase), numbers, hyphens
+        /// (-), and underscores (_) are allowed.
         /// </para>
         ///  
         /// <para>
-        /// If a task is started by an Amazon ECS service, the <code>startedBy</code> parameter
-        /// contains the deployment ID of the service that starts it.
+        /// If a task is started by an Amazon ECS service, the <c>startedBy</c> parameter contains
+        /// the deployment ID of the service that starts it.
         /// </para>
         /// </summary>
         public string StartedBy
@@ -316,10 +316,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -339,9 +339,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinition. 
         /// <para>
-        /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to start. If a <code>revision</code> isn't specified,
-        /// the latest <code>ACTIVE</code> revision is used.
+        /// The <c>family</c> and <c>revision</c> (<c>family:revision</c>) or full ARN of the
+        /// task definition to start. If a <c>revision</c> isn't specified, the latest <c>ACTIVE</c>
+        /// revision is used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

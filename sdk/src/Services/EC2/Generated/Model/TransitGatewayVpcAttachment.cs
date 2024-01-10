@@ -82,8 +82,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the VPC attachment. Note that the <code>initiating</code> state has been
-        /// deprecated.
+        /// The state of the VPC attachment. Note that the <c>initiating</c> state has been deprecated.
         /// </para>
         /// </summary>
         public TransitGatewayAttachmentState State

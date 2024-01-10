@@ -31,7 +31,7 @@ namespace Amazon.CodeGuruProfiler.Model
     /// <summary>
     /// Container for the parameters to the ListProfilingGroups operation.
     /// Returns a list of profiling groups. The profiling groups are returned as <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-    /// <code>ProfilingGroupDescription</code> </a> objects.
+    /// <c>ProfilingGroupDescription</c> </a> objects.
     /// </summary>
     public partial class ListProfilingGroupsRequest : AmazonCodeGuruProfilerRequest
     {
@@ -42,11 +42,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property IncludeDescription. 
         /// <para>
-        /// A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>,
+        /// A <c>Boolean</c> value indicating whether to include a description. If <c>true</c>,
         /// then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code> </a> objects that contain detailed information
-        /// about profiling groups is returned. If <code>false</code>, then a list of profiling
-        /// group names is returned.
+        /// <c>ProfilingGroupDescription</c> </a> objects that contain detailed information about
+        /// profiling groups is returned. If <c>false</c>, then a list of profiling group names
+        /// is returned.
         /// </para>
         /// </summary>
         public bool IncludeDescription
@@ -64,12 +64,11 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of profiling groups results returned by <code>ListProfilingGroups</code>
-        /// in paginated output. When this parameter is used, <code>ListProfilingGroups</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code>
-        /// value. 
+        /// The maximum number of profiling groups results returned by <c>ListProfilingGroups</c>
+        /// in paginated output. When this parameter is used, <c>ListProfilingGroups</c> only
+        /// returns <c>maxResults</c> results in a single page along with a <c>nextToken</c> response
+        /// element. The remaining results of the initial request can be seen by sending another
+        /// <c>ListProfilingGroups</c> request with the returned <c>nextToken</c> value. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -88,10 +87,10 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. 
+        /// The <c>nextToken</c> value returned from a previous paginated <c>ListProfilingGroups</c>
+        /// request where <c>maxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>nextToken</c> value. 
         /// </para>
         ///  <note> 
         /// <para>

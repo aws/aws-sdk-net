@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>BlueGreenDeploymentIdentifier</code> doesn't refer to an existing blue/green
-    /// deployment.
+    /// <c>BlueGreenDeploymentIdentifier</c> doesn't refer to an existing blue/green deployment.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -59,8 +59,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MetricValues. 
         /// <para>
-        /// An object of type <code>DataQualityMetricValues</code> representing the analysis of
-        /// the data quality metric value.
+        /// An object of type <c>DataQualityMetricValues</c> representing the analysis of the
+        /// data quality metric value.
         /// </para>
         /// </summary>
         public DataQualityMetricValues MetricValues

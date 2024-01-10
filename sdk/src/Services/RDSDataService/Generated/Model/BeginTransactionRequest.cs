@@ -45,7 +45,7 @@ namespace Amazon.RDSDataService.Model
     ///  
     /// <para>
     /// DDL statements inside a transaction cause an implicit commit. We recommend that you
-    /// run each DDL statement in a separate <code>ExecuteStatement</code> call with <code>continueAfterTimeout</code>
+    /// run each DDL statement in a separate <c>ExecuteStatement</c> call with <c>continueAfterTimeout</c>
     /// enabled.
     /// </para>
     ///  </note>

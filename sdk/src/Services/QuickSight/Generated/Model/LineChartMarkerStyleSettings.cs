@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Marker styles options for a line series in <code>LineChartVisual</code>.
+    /// Marker styles options for a line series in <c>LineChartVisual</c>.
     /// </summary>
     public partial class LineChartMarkerStyleSettings
     {
@@ -63,23 +63,23 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CIRCLE</code>: Show marker as a circle.
+        ///  <c>CIRCLE</c>: Show marker as a circle.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRIANGLE</code>: Show marker as a triangle.
+        ///  <c>TRIANGLE</c>: Show marker as a triangle.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SQUARE</code>: Show marker as a square.
+        ///  <c>SQUARE</c>: Show marker as a square.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DIAMOND</code>: Show marker as a diamond.
+        ///  <c>DIAMOND</c>: Show marker as a diamond.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ROUNDED_SQUARE</code>: Show marker as a rounded square.
+        ///  <c>ROUNDED_SQUARE</c>: Show marker as a rounded square.
         /// </para>
         ///  </li> </ul>
         /// </summary>

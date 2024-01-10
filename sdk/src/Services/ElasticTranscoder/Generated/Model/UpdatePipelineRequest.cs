@@ -30,7 +30,7 @@ namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePipeline operation.
-    /// Use the <code>UpdatePipeline</code> operation to update settings for a pipeline.
+    /// Use the <c>UpdatePipeline</c> operation to update settings for a pipeline.
     /// 
     ///  <important> 
     /// <para>
@@ -58,11 +58,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>,
-        /// you don't need to provide a key with your job because a default key, known as an AWS-KMS
+        /// If you use either <c>s3</c> or <c>s3-aws-kms</c> as your <c>Encryption:Mode</c>, you
+        /// don't need to provide a key with your job because a default key, known as an AWS-KMS
         /// key, is created for you automatically. You need to provide an AWS-KMS key only if
-        /// you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code>
-        /// of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.
+        /// you want to use a non-default AWS-KMS key, or if you are using an <c>Encryption:Mode</c>
+        /// of <c>aes-cbc-pkcs7</c>, <c>aes-ctr</c>, or <c>aes-gcm</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -81,21 +81,20 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property ContentConfig. 
         /// <para>
-        /// The optional <code>ContentConfig</code> object specifies information about the Amazon
-        /// S3 bucket in which you want Elastic Transcoder to save transcoded files and playlists:
+        /// The optional <c>ContentConfig</c> object specifies information about the Amazon S3
+        /// bucket in which you want Elastic Transcoder to save transcoded files and playlists:
         /// which bucket to use, which users you want to have access to the files, the type of
         /// access you want users to have, and the storage class that you want to assign to the
         /// files.
         /// </para>
         ///  
         /// <para>
-        /// If you specify values for <code>ContentConfig</code>, you must also specify values
-        /// for <code>ThumbnailConfig</code>.
+        /// If you specify values for <c>ContentConfig</c>, you must also specify values for <c>ThumbnailConfig</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.
+        /// If you specify values for <c>ContentConfig</c> and <c>ThumbnailConfig</c>, omit the
+        /// <c>OutputBucket</c> object.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -110,12 +109,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Grantee Type</b>: Specify the type of value that appears in the <code>Grantee</code>
+        ///  <b>Grantee Type</b>: Specify the type of value that appears in the <c>Grantee</c>
         /// object:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical
+        ///  <b>Canonical</b>: The value in the <c>Grantee</c> object is either the canonical
         /// user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.
         /// For more information about canonical user IDs, see Access Control List (ACL) Overview
         /// in the Amazon Simple Storage Service Developer Guide. For more information about using
@@ -129,14 +128,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        ///  <b>Email</b>: The value in the <code>Grantee</code> object is the registered email
-        /// address of an AWS account.
+        ///  <b>Email</b>: The value in the <c>Grantee</c> object is the registered email address
+        /// of an AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Group</b>: The value in the <code>Grantee</code> object is one of the following
-        /// predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>,
-        /// or <code>LogDelivery</code>.
+        ///  <b>Group</b>: The value in the <c>Grantee</c> object is one of the following predefined
+        /// Amazon S3 groups: <c>AllUsers</c>, <c>AuthenticatedUsers</c>, or <c>LogDelivery</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -148,33 +146,32 @@ namespace Amazon.ElasticTranscoder.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Access</b>: The permission that you want to give to the AWS user that you specified
-        /// in <code>Grantee</code>. Permissions are granted on the files that Elastic Transcoder
-        /// adds to the bucket, including playlists and video files. Valid values include: 
+        /// in <c>Grantee</c>. Permissions are granted on the files that Elastic Transcoder adds
+        /// to the bucket, including playlists and video files. Valid values include: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READ</code>: The grantee can read the objects and metadata for objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>READ_ACP</code>: The grantee can read the object ACL for objects that Elastic
-        /// Transcoder adds to the Amazon S3 bucket. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>WRITE_ACP</code>: The grantee can write the ACL for the objects that Elastic
+        ///  <c>READ</c>: The grantee can read the objects and metadata for objects that Elastic
         /// Transcoder adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>,
-        /// and <code>WRITE_ACP</code> permissions for the objects that Elastic Transcoder adds
-        /// to the Amazon S3 bucket.
+        ///  <c>READ_ACP</c>: The grantee can read the object ACL for objects that Elastic Transcoder
+        /// adds to the Amazon S3 bucket. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>WRITE_ACP</c>: The grantee can write the ACL for the objects that Elastic Transcoder
+        /// adds to the Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FULL_CONTROL</c>: The grantee has <c>READ</c>, <c>READ_ACP</c>, and <c>WRITE_ACP</c>
+        /// permissions for the objects that Elastic Transcoder adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>,
+        ///  <b>StorageClass</b>: The Amazon S3 storage class, <c>Standard</c> or <c>ReducedRedundancy</c>,
         /// that you want Elastic Transcoder to assign to the video files and playlists that it
         /// stores in your Amazon S3 bucket.
         /// </para>
@@ -326,20 +323,20 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property ThumbnailConfig. 
         /// <para>
-        /// The <code>ThumbnailConfig</code> object specifies several values, including the Amazon
-        /// S3 bucket in which you want Elastic Transcoder to save thumbnail files, which users
-        /// you want to have access to the files, the type of access you want users to have, and
-        /// the storage class that you want to assign to the files.
+        /// The <c>ThumbnailConfig</c> object specifies several values, including the Amazon S3
+        /// bucket in which you want Elastic Transcoder to save thumbnail files, which users you
+        /// want to have access to the files, the type of access you want users to have, and the
+        /// storage class that you want to assign to the files.
         /// </para>
         ///  
         /// <para>
-        /// If you specify values for <code>ContentConfig</code>, you must also specify values
-        /// for <code>ThumbnailConfig</code> even if you don't want to create thumbnails.
+        /// If you specify values for <c>ContentConfig</c>, you must also specify values for <c>ThumbnailConfig</c>
+        /// even if you don't want to create thumbnails.
         /// </para>
         ///  
         /// <para>
-        /// If you specify values for <code>ContentConfig</code> and <code>ThumbnailConfig</code>,
-        /// omit the <code>OutputBucket</code> object.
+        /// If you specify values for <c>ContentConfig</c> and <c>ThumbnailConfig</c>, omit the
+        /// <c>OutputBucket</c> object.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -348,10 +345,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Permissions</b> (Optional): The <code>Permissions</code> object specifies which
-        /// users and/or predefined Amazon S3 groups you want to have access to thumbnail files,
-        /// and the type of access you want them to have. You can grant permissions to a maximum
-        /// of 30 users and/or predefined Amazon S3 groups.
+        ///  <b>Permissions</b> (Optional): The <c>Permissions</c> object specifies which users
+        /// and/or predefined Amazon S3 groups you want to have access to thumbnail files, and
+        /// the type of access you want them to have. You can grant permissions to a maximum of
+        /// 30 users and/or predefined Amazon S3 groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -359,7 +356,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Canonical</b>: The value in the <code>Grantee</code> object is either the canonical
+        ///  <b>Canonical</b>: The value in the <c>Grantee</c> object is either the canonical
         /// user ID for an AWS account or an origin access identity for an Amazon CloudFront distribution.
         /// </para>
         ///  <important> 
@@ -368,14 +365,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
-        ///  <b>Email</b>: The value in the <code>Grantee</code> object is the registered email
-        /// address of an AWS account.
+        ///  <b>Email</b>: The value in the <c>Grantee</c> object is the registered email address
+        /// of an AWS account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Group</b>: The value in the <code>Grantee</code> object is one of the following
-        /// predefined Amazon S3 groups: <code>AllUsers</code>, <code>AuthenticatedUsers</code>,
-        /// or <code>LogDelivery</code>.
+        ///  <b>Group</b>: The value in the <c>Grantee</c> object is one of the following predefined
+        /// Amazon S3 groups: <c>AllUsers</c>, <c>AuthenticatedUsers</c>, or <c>LogDelivery</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -387,33 +383,33 @@ namespace Amazon.ElasticTranscoder.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Access</b>: The permission that you want to give to the AWS user that you specified
-        /// in <code>Grantee</code>. Permissions are granted on the thumbnail files that Elastic
-        /// Transcoder adds to the bucket. Valid values include: 
+        /// in <c>Grantee</c>. Permissions are granted on the thumbnail files that Elastic Transcoder
+        /// adds to the bucket. Valid values include: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>READ</code>: The grantee can read the thumbnails and metadata for objects that
-        /// Elastic Transcoder adds to the Amazon S3 bucket.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>READ_ACP</code>: The grantee can read the object ACL for thumbnails that Elastic
+        ///  <c>READ</c>: The grantee can read the thumbnails and metadata for objects that Elastic
         /// Transcoder adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WRITE_ACP</code>: The grantee can write the ACL for the thumbnails that Elastic
+        ///  <c>READ_ACP</c>: The grantee can read the object ACL for thumbnails that Elastic
         /// Transcoder adds to the Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FULL_CONTROL</code>: The grantee has <code>READ</code>, <code>READ_ACP</code>,
-        /// and <code>WRITE_ACP</code> permissions for the thumbnails that Elastic Transcoder
-        /// adds to the Amazon S3 bucket. 
+        ///  <c>WRITE_ACP</c>: The grantee can write the ACL for the thumbnails that Elastic Transcoder
+        /// adds to the Amazon S3 bucket.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>FULL_CONTROL</c>: The grantee has <c>READ</c>, <c>READ_ACP</c>, and <c>WRITE_ACP</c>
+        /// permissions for the thumbnails that Elastic Transcoder adds to the Amazon S3 bucket.
+        /// 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <b>StorageClass</b>: The Amazon S3 storage class, <code>Standard</code> or <code>ReducedRedundancy</code>,
+        ///  <b>StorageClass</b>: The Amazon S3 storage class, <c>Standard</c> or <c>ReducedRedundancy</c>,
         /// that you want Elastic Transcoder to assign to the thumbnails that it stores in your
         /// Amazon S3 bucket.
         /// </para>

@@ -41,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property Hours. 
         /// <para>
         /// The start hour of the window in Coordinated Universal Time (UTC), using 24-hour time.
-        /// For example, <code>17</code> refers to 5:00 P.M. UTC.
+        /// For example, <c>17</c> refers to 5:00 P.M. UTC.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=23)]

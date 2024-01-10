@@ -57,7 +57,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the LSA analysis, for example <code>COMPLETED</code>.
+        /// The status of the LSA analysis, for example <c>COMPLETED</c>.
         /// </para>
         /// </summary>
         public string Status

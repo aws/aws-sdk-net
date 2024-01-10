@@ -73,7 +73,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The Amazon Web Services KMS key identifier for encryption of the replicated automated
         /// backups. The KMS key ID is the Amazon Resource Name (ARN) for the KMS encryption key
-        /// in the destination Amazon Web Services Region, for example, <code>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</code>.
+        /// in the destination Amazon Web Services Region, for example, <c>arn:aws:kms:us-east-1:123456789012:key/AKIAIOSFODNN7EXAMPLE</c>.
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -92,9 +92,9 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
         /// In an Amazon Web Services GovCloud (US) Region, an URL that contains a Signature Version
-        /// 4 signed request for the <code>StartDBInstanceAutomatedBackupsReplication</code> operation
+        /// 4 signed request for the <c>StartDBInstanceAutomatedBackupsReplication</c> operation
         /// to call in the Amazon Web Services Region of the source DB instance. The presigned
-        /// URL must be a valid request for the <code>StartDBInstanceAutomatedBackupsReplication</code>
+        /// URL must be a valid request for the <c>StartDBInstanceAutomatedBackupsReplication</c>
         /// API operation that can run in the Amazon Web Services Region that contains the source
         /// DB instance.
         /// </para>
@@ -112,11 +112,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
-        /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
-        /// manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that
-        /// is a valid request for the operation that can run in the source Amazon Web Services
-        /// Region.
+        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <c>SourceRegion</c>
+        /// (or <c>--source-region</c> for the CLI) instead of specifying <c>PreSignedUrl</c>
+        /// manually. Specifying <c>SourceRegion</c> autogenerates a presigned URL that is a valid
+        /// request for the operation that can run in the source Amazon Web Services Region.
         /// </para>
         ///  </note>
         /// </summary>
@@ -136,7 +135,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property SourceDBInstanceArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the source DB instance for the replicated automated
-        /// backups, for example, <code>arn:aws:rds:us-west-2:123456789012:db:mydatabase</code>.
+        /// backups, for example, <c>arn:aws:rds:us-west-2:123456789012:db:mydatabase</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

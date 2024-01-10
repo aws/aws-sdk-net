@@ -32,7 +32,7 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the ListSubscribedWorkteams operation.
     /// Gets a list of the work teams that you are subscribed to in the Amazon Web Services
     /// Marketplace. The list may be empty if no work team satisfies the filter specified
-    /// in the <code>NameContains</code> parameter.
+    /// in the <c>NameContains</c> parameter.
     /// </summary>
     public partial class ListSubscribedWorkteamsRequest : AmazonSageMakerRequest
     {
@@ -82,9 +82,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListSubscribedWorkteams</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of labeling
-        /// jobs, use the token in the next request.
+        /// If the result of the previous <c>ListSubscribedWorkteams</c> request was truncated,
+        /// the response includes a <c>NextToken</c>. To retrieve the next set of labeling jobs,
+        /// use the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

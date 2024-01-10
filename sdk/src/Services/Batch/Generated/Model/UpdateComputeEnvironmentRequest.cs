@@ -99,16 +99,15 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// If your specified role has a path other than <code>/</code>, then you must either
-        /// specify the full role ARN (recommended) or prefix the role name with the path.
+        /// If your specified role has a path other than <c>/</c>, then you must either specify
+        /// the full role ARN (recommended) or prefix the role name with the path.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+        /// Depending on how you created your Batch service role, its ARN might contain the <c>service-role</c>
         /// path prefix. When you only specify the name of the service role, Batch assumes that
-        /// your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
-        /// recommend that you specify the full ARN of your service role when you create compute
-        /// environments.
+        /// your ARN doesn't use the <c>service-role</c> path prefix. Because of this, we recommend
+        /// that you specify the full ARN of your service role when you create compute environments.
         /// </para>
         ///  </note>
         /// </summary>
@@ -127,38 +126,37 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the compute environment. Compute environments in the <code>ENABLED</code>
-        /// state can accept jobs from a queue and scale in or out automatically based on the
-        /// workload demand of its associated queues.
+        /// The state of the compute environment. Compute environments in the <c>ENABLED</c> state
+        /// can accept jobs from a queue and scale in or out automatically based on the workload
+        /// demand of its associated queues.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
-        /// jobs from an associated job queue on the compute resources within the environment.
-        /// If the compute environment is managed, then it can scale its instances out or in automatically,
+        /// If the state is <c>ENABLED</c>, then the Batch scheduler can attempt to place jobs
+        /// from an associated job queue on the compute resources within the environment. If the
+        /// compute environment is managed, then it can scale its instances out or in automatically,
         /// based on the job queue demand.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
-        /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
-        /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
-        /// state don't scale out. 
+        /// If the state is <c>DISABLED</c>, then the Batch scheduler doesn't attempt to place
+        /// jobs within the environment. Jobs in a <c>STARTING</c> or <c>RUNNING</c> state continue
+        /// to progress normally. Managed compute environments in the <c>DISABLED</c> state don't
+        /// scale out. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// Compute environments in a <code>DISABLED</code> state may continue to incur billing
-        /// charges. To prevent additional charges, turn off and then delete the compute environment.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges.
+        /// To prevent additional charges, turn off and then delete the compute environment. For
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
         /// in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// When an instance is idle, the instance scales down to the <code>minvCpus</code> value.
-        /// However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code>
-        /// instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code>
-        /// value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code>
-        /// instance.
+        /// When an instance is idle, the instance scales down to the <c>minvCpus</c> value. However,
+        /// the instance size doesn't change. For example, consider a <c>c5.8xlarge</c> instance
+        /// with a <c>minvCpus</c> value of <c>4</c> and a <c>desiredvCpus</c> value of <c>36</c>.
+        /// This instance doesn't scale down to a <c>c5.large</c> instance.
         /// </para>
         /// </summary>
         public CEState State

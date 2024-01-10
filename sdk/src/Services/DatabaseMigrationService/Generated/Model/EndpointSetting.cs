@@ -65,8 +65,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property DefaultValue. 
         /// <para>
-        /// The default value of the endpoint setting if no value is specified using <code>CreateEndpoint</code>
-        /// or <code>ModifyEndpoint</code>.
+        /// The default value of the endpoint setting if no value is specified using <c>CreateEndpoint</c>
+        /// or <c>ModifyEndpoint</c>.
         /// </para>
         /// </summary>
         public string DefaultValue
@@ -102,7 +102,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property IntValueMax. 
         /// <para>
-        /// The maximum value of an endpoint setting that is of type <code>int</code>.
+        /// The maximum value of an endpoint setting that is of type <c>int</c>.
         /// </para>
         /// </summary>
         public int IntValueMax
@@ -120,7 +120,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property IntValueMin. 
         /// <para>
-        /// The minimum value of an endpoint setting that is of type <code>int</code>.
+        /// The minimum value of an endpoint setting that is of type <c>int</c>.
         /// </para>
         /// </summary>
         public int IntValueMin
@@ -174,7 +174,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
+        /// The type of endpoint. Valid values are <c>source</c> and <c>target</c>.
         /// </para>
         /// </summary>
         public EndpointSettingTypeValue Type

@@ -47,7 +47,7 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// The filter name <code>name</code> is supported. When filtering, you must use the complete
+        /// The filter name <c>name</c> is supported. When filtering, you must use the complete
         /// value of the filtered item. You can use up to three filters.
         /// </para>
         /// </summary>
@@ -67,12 +67,12 @@ namespace Amazon.RoboMaker.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// When this parameter is used, <code>ListSimulationApplications</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable. 
+        /// When this parameter is used, <c>ListSimulationApplications</c> only returns <c>maxResults</c>
+        /// results in a single page along with a <c>nextToken</c> response element. The remaining
+        /// results of the initial request can be seen by sending another <c>ListSimulationApplications</c>
+        /// request with the returned <c>nextToken</c> value. This value can be between 1 and
+        /// 100. If this parameter is not used, then <c>ListSimulationApplications</c> returns
+        /// up to 100 results and a <c>nextToken</c> value if applicable. 
         /// </para>
         /// </summary>
         public int MaxResults
@@ -91,11 +91,10 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request did not return all of the remaining results, the
-        /// response object's <code>nextToken</code> parameter value is set to a token. To retrieve
-        /// the next set of results, call <code>ListSimulationApplications</code> again and assign
-        /// that token to the request object's <code>nextToken</code> parameter. If there are
-        /// no remaining results, the previous response object's NextToken parameter is set to
-        /// null. 
+        /// response object's <c>nextToken</c> parameter value is set to a token. To retrieve
+        /// the next set of results, call <c>ListSimulationApplications</c> again and assign that
+        /// token to the request object's <c>nextToken</c> parameter. If there are no remaining
+        /// results, the previous response object's NextToken parameter is set to null. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

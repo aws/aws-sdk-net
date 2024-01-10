@@ -116,8 +116,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property Replacement. 
         /// <para>
-        /// If the change type is <code>Modify</code>, indicates whether the existing resource
-        /// is deleted and replaced with a new one.
+        /// If the change type is <c>Modify</c>, indicates whether the existing resource is deleted
+        /// and replaced with a new one.
         /// </para>
         /// </summary>
         public Replacement Replacement

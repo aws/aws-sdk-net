@@ -91,8 +91,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Restrictions. 
         /// <para>
-        /// A <code>BatchRestrictions</code> object that specifies the restrictions for the batch
-        /// build.
+        /// A <c>BatchRestrictions</c> object that specifies the restrictions for the batch build.
         /// </para>
         /// </summary>
         public BatchRestrictions Restrictions

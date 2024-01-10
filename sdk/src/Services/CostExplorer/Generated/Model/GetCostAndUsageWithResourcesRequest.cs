@@ -31,10 +31,10 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// Container for the parameters to the GetCostAndUsageWithResources operation.
     /// Retrieves cost and usage metrics with resources for your account. You can specify
-    /// which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>,
+    /// which cost and usage-related metric, such as <c>BlendedCosts</c> or <c>UsageQuantity</c>,
     /// that you want the request to return. You can also filter and group your data by various
-    /// dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range.
-    /// For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
+    /// dimensions, such as <c>SERVICE</c> or <c>AZ</c>, in a specific time range. For a complete
+    /// list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
     /// operation. Management account in an organization in Organizations have access to all
     /// member accounts. This API is currently available for the Amazon Elastic Compute Cloud
     /// – Compute service only.
@@ -60,27 +60,26 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// Filters Amazon Web Services costs by different dimensions. For example, you can specify
-        /// <code>SERVICE</code> and <code>LINKED_ACCOUNT</code> and get the costs that are associated
-        /// with that account's usage of that service. You can nest <code>Expression</code> objects
-        /// to define any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
+        /// <c>SERVICE</c> and <c>LINKED_ACCOUNT</c> and get the costs that are associated with
+        /// that account's usage of that service. You can nest <c>Expression</c> objects to define
+        /// any combination of dimension filters. For more information, see <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// The <code>GetCostAndUsageWithResources</code> operation requires that you either group
-        /// by or filter by a <code>ResourceId</code>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
-        /// <code>"SERVICE = Amazon Elastic Compute Cloud - Compute"</code> in the filter.
+        /// The <c>GetCostAndUsageWithResources</c> operation requires that you either group by
+        /// or filter by a <c>ResourceId</c>. It requires the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_Expression.html">Expression</a>
+        /// <c>"SERVICE = Amazon Elastic Compute Cloud - Compute"</c> in the filter.
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>MatchOptions</code> for <code>Dimensions</code> are <code>EQUALS</code>
-        /// and <code>CASE_SENSITIVE</code>.
+        /// Valid values for <c>MatchOptions</c> for <c>Dimensions</c> are <c>EQUALS</c> and <c>CASE_SENSITIVE</c>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>MatchOptions</code> for <code>CostCategories</code> and <code>Tags</code>
-        /// are <code>EQUALS</code>, <code>ABSENT</code>, and <code>CASE_SENSITIVE</code>. Default
-        /// values are <code>EQUALS</code> and <code>CASE_SENSITIVE</code>.
+        /// Valid values for <c>MatchOptions</c> for <c>CostCategories</c> and <c>Tags</c> are
+        /// <c>EQUALS</c>, <c>ABSENT</c>, and <c>CASE_SENSITIVE</c>. Default values are <c>EQUALS</c>
+        /// and <c>CASE_SENSITIVE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,10 +98,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Granularity. 
         /// <para>
-        /// Sets the Amazon Web Services cost granularity to <code>MONTHLY</code>, <code>DAILY</code>,
-        /// or <code>HOURLY</code>. If <code>Granularity</code> isn't set, the response object
-        /// doesn't include the <code>Granularity</code>, <code>MONTHLY</code>, <code>DAILY</code>,
-        /// or <code>HOURLY</code>. 
+        /// Sets the Amazon Web Services cost granularity to <c>MONTHLY</c>, <c>DAILY</c>, or
+        /// <c>HOURLY</c>. If <c>Granularity</c> isn't set, the response object doesn't include
+        /// the <c>Granularity</c>, <c>MONTHLY</c>, <c>DAILY</c>, or <c>HOURLY</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -121,8 +119,8 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property GroupBy. 
         /// <para>
-        /// You can group Amazon Web Services costs using up to two different groups: <code>DIMENSION</code>,
-        /// <code>TAG</code>, <code>COST_CATEGORY</code>.
+        /// You can group Amazon Web Services costs using up to two different groups: <c>DIMENSION</c>,
+        /// <c>TAG</c>, <c>COST_CATEGORY</c>.
         /// </para>
         /// </summary>
         public List<GroupDefinition> GroupBy
@@ -146,22 +144,22 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are <code>AmortizedCost</code>, <code>BlendedCost</code>, <code>NetAmortizedCost</code>,
-        /// <code>NetUnblendedCost</code>, <code>NormalizedUsageAmount</code>, <code>UnblendedCost</code>,
-        /// and <code>UsageQuantity</code>. 
+        /// Valid values are <c>AmortizedCost</c>, <c>BlendedCost</c>, <c>NetAmortizedCost</c>,
+        /// <c>NetUnblendedCost</c>, <c>NormalizedUsageAmount</c>, <c>UnblendedCost</c>, and <c>UsageQuantity</c>.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you return the <code>UsageQuantity</code> metric, the service aggregates all usage
-        /// numbers without taking the units into account. For example, if you aggregate <code>usageQuantity</code>
+        /// If you return the <c>UsageQuantity</c> metric, the service aggregates all usage numbers
+        /// without taking the units into account. For example, if you aggregate <c>usageQuantity</c>
         /// across all of Amazon EC2, the results aren't meaningful because Amazon EC2 compute
         /// hours and data transfer are measured in different units (for example, hour or GB).
-        /// To get more meaningful <code>UsageQuantity</code> metrics, filter by <code>UsageType</code>
-        /// or <code>UsageTypeGroups</code>. 
+        /// To get more meaningful <c>UsageQuantity</c> metrics, filter by <c>UsageType</c> or
+        /// <c>UsageTypeGroups</c>. 
         /// </para>
         ///  </note> 
         /// <para>
-        ///  <code>Metrics</code> is required for <code>GetCostAndUsageWithResources</code> requests.
+        ///  <c>Metrics</c> is required for <c>GetCostAndUsageWithResources</c> requests.
         /// </para>
         /// </summary>
         public List<string> Metrics
@@ -201,10 +199,10 @@ namespace Amazon.CostExplorer.Model
         /// <para>
         /// Sets the start and end dates for retrieving Amazon Web Services costs. The range must
         /// be within the last 14 days (the start date cannot be earlier than 14 days ago). The
-        /// start date is inclusive, but the end date is exclusive. For example, if <code>start</code>
-        /// is <code>2017-01-01</code> and <code>end</code> is <code>2017-05-01</code>, then the
-        /// cost and usage data is retrieved from <code>2017-01-01</code> up to and including
-        /// <code>2017-04-30</code> but not including <code>2017-05-01</code>.
+        /// start date is inclusive, but the end date is exclusive. For example, if <c>start</c>
+        /// is <c>2017-01-01</c> and <c>end</c> is <c>2017-05-01</c>, then the cost and usage
+        /// data is retrieved from <c>2017-01-01</c> up to and including <c>2017-04-30</c> but
+        /// not including <c>2017-05-01</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

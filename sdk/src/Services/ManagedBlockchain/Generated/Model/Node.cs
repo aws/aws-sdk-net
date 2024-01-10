@@ -164,8 +164,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of the customer managed key in Key Management Service
         /// (KMS) that the node uses for encryption at rest. If the value of this parameter is
-        /// <code>"AWS Owned KMS Key"</code>, the node uses an Amazon Web Services owned KMS key
-        /// for encryption. The node inherits this parameter from the member that it belongs to.
+        /// <c>"AWS Owned KMS Key"</c>, the node uses an Amazon Web Services owned KMS key for
+        /// encryption. The node inherits this parameter from the member that it belongs to.
         /// </para>
         ///  
         /// <para>
@@ -253,7 +253,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property StateDB. 
         /// <para>
-        /// The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+        /// The state database that the node uses. Values are <c>LevelDB</c> or <c>CouchDB</c>.
         /// </para>
         ///  
         /// <para>
@@ -279,45 +279,45 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The Amazon Web Services account is in the process of creating
-        /// a node.
+        ///  <c>CREATING</c> - The Amazon Web Services account is in the process of creating a
+        /// node.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The node has been created and can participate in the network.
+        ///  <c>AVAILABLE</c> - The node has been created and can participate in the network.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNHEALTHY</code> - The node is impaired and might not function as expected.
-        /// Amazon Managed Blockchain automatically finds nodes in this state and tries to recover
-        /// them. If a node is recoverable, it returns to <code>AVAILABLE</code>. Otherwise, it
-        /// moves to <code>FAILED</code> status.
+        ///  <c>UNHEALTHY</c> - The node is impaired and might not function as expected. Amazon
+        /// Managed Blockchain automatically finds nodes in this state and tries to recover them.
+        /// If a node is recoverable, it returns to <c>AVAILABLE</c>. Otherwise, it moves to <c>FAILED</c>
+        /// status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> - The Amazon Web Services account attempted to create
-        /// a node and creation failed.
+        ///  <c>CREATE_FAILED</c> - The Amazon Web Services account attempted to create a node
+        /// and creation failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The node is in the process of being updated.
+        ///  <c>UPDATING</c> - The node is in the process of being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The node is in the process of being deleted.
+        ///  <c>DELETING</c> - The node is in the process of being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - The node can no longer participate on the network.
+        ///  <c>DELETED</c> - The node can no longer participate on the network.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - The node is no longer functional, cannot be recovered, and
-        /// must be deleted.
+        ///  <c>FAILED</c> - The node is no longer functional, cannot be recovered, and must be
+        /// deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INACCESSIBLE_ENCRYPTION_KEY</code> - The node is impaired and might not function
+        ///  <c>INACCESSIBLE_ENCRYPTION_KEY</c> - The node is impaired and might not function
         /// as expected because it cannot access the specified customer managed key in KMS for
         /// encryption at rest. Either the KMS key was disabled or deleted, or the grants on the
         /// key were revoked.

@@ -30,7 +30,7 @@ namespace Amazon.Keyspaces.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteKeyspace operation.
-    /// The <code>DeleteKeyspace</code> operation deletes a keyspace and all of its tables.
+    /// The <c>DeleteKeyspace</c> operation deletes a keyspace and all of its tables.
     /// </summary>
     public partial class DeleteKeyspaceRequest : AmazonKeyspacesRequest
     {

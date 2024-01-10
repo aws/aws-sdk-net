@@ -129,7 +129,7 @@ namespace Amazon.EMRServerless.Model
         /// Gets and sets the property ImageConfiguration. 
         /// <para>
         /// The image configuration for all worker types. You can either set this parameter or
-        /// <code>imageConfiguration</code> for each worker type in <code>workerTypeSpecifications</code>.
+        /// <c>imageConfiguration</c> for each worker type in <c>workerTypeSpecifications</c>.
         /// </para>
         /// </summary>
         public ImageConfigurationInput ImageConfiguration
@@ -320,11 +320,11 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property WorkerTypeSpecifications. 
         /// <para>
-        /// The key-value pairs that specify worker type to <code>WorkerTypeSpecificationInput</code>.
+        /// The key-value pairs that specify worker type to <c>WorkerTypeSpecificationInput</c>.
         /// This parameter must contain all valid worker types for a Spark or Hive application.
-        /// Valid worker types include <code>Driver</code> and <code>Executor</code> for Spark
-        /// applications and <code>HiveDriver</code> and <code>TezTask</code> for Hive applications.
-        /// You can either set image details in this parameter for each worker type, or in <code>imageConfiguration</code>
+        /// Valid worker types include <c>Driver</c> and <c>Executor</c> for Spark applications
+        /// and <c>HiveDriver</c> and <c>TezTask</c> for Hive applications. You can either set
+        /// image details in this parameter for each worker type, or in <c>imageConfiguration</c>
         /// for all worker types.
         /// </para>
         /// </summary>

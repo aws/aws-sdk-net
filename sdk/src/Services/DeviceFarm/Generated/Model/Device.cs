@@ -429,7 +429,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property RemoteDebugEnabled. 
         /// <para>
-        /// This flag is set to <code>true</code> if remote debugging is enabled for the device.
+        /// This flag is set to <c>true</c> if remote debugging is enabled for the device.
         /// </para>
         ///  
         /// <para>

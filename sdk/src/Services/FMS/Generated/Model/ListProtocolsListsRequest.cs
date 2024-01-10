@@ -30,7 +30,7 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the ListProtocolsLists operation.
-    /// Returns an array of <code>ProtocolsListDataSummary</code> objects.
+    /// Returns an array of <c>ProtocolsListDataSummary</c> objects.
     /// </summary>
     public partial class ListProtocolsListsRequest : AmazonFMSRequest
     {
@@ -60,7 +60,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects that you want Firewall Manager to return for this request.
-        /// If more objects are available, in the response, Firewall Manager provides a <code>NextToken</code>
+        /// If more objects are available, in the response, Firewall Manager provides a <c>NextToken</c>
         /// value that you can use in a subsequent call to get the next batch of objects.
         /// </para>
         ///  
@@ -84,10 +84,10 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If you specify a value for <code>MaxResults</code> in your list request, and you have
-        /// more objects than the maximum, Firewall Manager returns this token in the response.
-        /// For all but the first request, you provide the token returned by the prior request
-        /// in the request parameters, to retrieve the next batch of objects.
+        /// If you specify a value for <c>MaxResults</c> in your list request, and you have more
+        /// objects than the maximum, Firewall Manager returns this token in the response. For
+        /// all but the first request, you provide the token returned by the prior request in
+        /// the request parameters, to retrieve the next batch of objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaTailor.Model
 {
     /// <summary>
-    /// For <code>SCTE35_ENHANCED</code> output, defines a key and corresponding value. MediaTailor
-    /// generates these pairs within the <code>EXT-X-ASSET</code>tag.
+    /// For <c>SCTE35_ENHANCED</c> output, defines a key and corresponding value. MediaTailor
+    /// generates these pairs within the <c>EXT-X-ASSET</c>tag.
     /// </summary>
     public partial class KeyValuePair
     {
@@ -40,8 +40,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// For <code>SCTE35_ENHANCED</code> output, defines a key. MediaTailor takes this key,
-        /// and its associated value, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag.
+        /// For <c>SCTE35_ENHANCED</c> output, defines a key. MediaTailor takes this key, and
+        /// its associated value, and generates the key/value pair within the <c>EXT-X-ASSET</c>tag.
         /// If you specify a key, you must also specify a corresponding value.
         /// </para>
         /// </summary>
@@ -61,8 +61,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// For <code>SCTE35_ENHANCED</code> output, defines a value. MediaTailor; takes this
-        /// value, and its associated key, and generates the key/value pair within the <code>EXT-X-ASSET</code>tag.
+        /// For <c>SCTE35_ENHANCED</c> output, defines a value. MediaTailor; takes this value,
+        /// and its associated key, and generates the key/value pair within the <c>EXT-X-ASSET</c>tag.
         /// If you specify a value, you must also specify a corresponding key.
         /// </para>
         /// </summary>

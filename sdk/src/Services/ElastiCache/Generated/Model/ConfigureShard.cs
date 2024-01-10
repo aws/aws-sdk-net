@@ -44,8 +44,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property NewReplicaCount. 
         /// <para>
         /// The number of replicas you want in this node group at the end of this operation. The
-        /// maximum value for <code>NewReplicaCount</code> is 5. The minimum value depends upon
-        /// the type of Redis replication group you are working with.
+        /// maximum value for <c>NewReplicaCount</c> is 5. The minimum value depends upon the
+        /// type of Redis replication group you are working with.
         /// </para>
         ///  
         /// <para>
@@ -108,11 +108,11 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property PreferredAvailabilityZones. 
         /// <para>
-        /// A list of <code>PreferredAvailabilityZone</code> strings that specify which availability
-        /// zones the replication group's nodes are to be in. The nummber of <code>PreferredAvailabilityZone</code>
-        /// values must equal the value of <code>NewReplicaCount</code> plus 1 to account for
-        /// the primary node. If this member of <code>ReplicaConfiguration</code> is omitted,
-        /// ElastiCache for Redis selects the availability zone for each of the replicas.
+        /// A list of <c>PreferredAvailabilityZone</c> strings that specify which availability
+        /// zones the replication group's nodes are to be in. The nummber of <c>PreferredAvailabilityZone</c>
+        /// values must equal the value of <c>NewReplicaCount</c> plus 1 to account for the primary
+        /// node. If this member of <c>ReplicaConfiguration</c> is omitted, ElastiCache for Redis
+        /// selects the availability zone for each of the replicas.
         /// </para>
         /// </summary>
         public List<string> PreferredAvailabilityZones

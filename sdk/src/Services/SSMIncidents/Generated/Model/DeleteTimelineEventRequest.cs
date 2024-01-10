@@ -40,8 +40,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventId. 
         /// <para>
-        /// The ID of the event to update. You can use <code>ListTimelineEvents</code> to find
-        /// an event's ID.
+        /// The ID of the event to update. You can use <c>ListTimelineEvents</c> to find an event's
+        /// ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=50)]

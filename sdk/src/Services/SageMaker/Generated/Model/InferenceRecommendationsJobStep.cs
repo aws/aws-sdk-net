@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A returned array object for the <code>Steps</code> response field in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRecommendationsJobSteps.html">ListInferenceRecommendationsJobSteps</a>
+    /// A returned array object for the <c>Steps</c> response field in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListInferenceRecommendationsJobSteps.html">ListInferenceRecommendationsJobSteps</a>
     /// API command.
     /// </summary>
     public partial class InferenceRecommendationsJobStep
@@ -102,8 +102,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>BENCHMARK</code>: Evaluate the performance of your model on different instance
-        /// types.
+        ///  <c>BENCHMARK</c>: Evaluate the performance of your model on different instance types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

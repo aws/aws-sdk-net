@@ -62,8 +62,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaPipelineArn. 
         /// <para>
-        /// The ARN of the media pipeline that you specify in the <code>SourceConfiguration</code>
-        /// object.
+        /// The ARN of the media pipeline that you specify in the <c>SourceConfiguration</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1011)]

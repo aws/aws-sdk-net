@@ -173,7 +173,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property NumberOfTimedOutThings. 
         /// <para>
-        /// The number of things whose job execution status is <code>TIMED_OUT</code>.
+        /// The number of things whose job execution status is <c>TIMED_OUT</c>.
         /// </para>
         /// </summary>
         public int NumberOfTimedOutThings

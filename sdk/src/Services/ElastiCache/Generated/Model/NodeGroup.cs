@@ -137,8 +137,8 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of this replication group - <code>creating</code>, <code>available</code>,
-        /// <code>modifying</code>, <code>deleting</code>.
+        /// The current state of this replication group - <c>creating</c>, <c>available</c>, <c>modifying</c>,
+        /// <c>deleting</c>.
         /// </para>
         /// </summary>
         public string Status

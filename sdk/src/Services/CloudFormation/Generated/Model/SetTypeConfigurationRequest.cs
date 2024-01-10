@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code>
+    /// To view the current configuration data for an extension, refer to the <c>ConfigurationSchema</c>
     /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
     /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
@@ -65,7 +65,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// The configuration data must be formatted as JSON, and validate against the schema
-        /// returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+        /// returned in the <c>ConfigurationSchema</c> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
         /// account-level configuration data for an extension</a> in the <i>CloudFormation CLI
         /// User Guide</i>.
@@ -115,8 +115,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code>
-        /// and <code>TypeName</code>.
+        /// Conditional: You must specify <c>ConfigurationArn</c>, or <c>Type</c> and <c>TypeName</c>.
         /// </para>
         /// </summary>
         public ThirdPartyType Type
@@ -169,8 +168,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: You must specify <code>ConfigurationArn</code>, or <code>Type</code>
-        /// and <code>TypeName</code>.
+        /// Conditional: You must specify <c>ConfigurationArn</c>, or <c>Type</c> and <c>TypeName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=204)]

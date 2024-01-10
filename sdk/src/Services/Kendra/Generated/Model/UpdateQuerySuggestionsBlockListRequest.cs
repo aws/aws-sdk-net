@@ -50,8 +50,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>UpdateQuerySuggestionsBlockList</code> is currently not supported in the Amazon
-    /// Web Services GovCloud (US-West) region.
+    ///  <c>UpdateQuerySuggestionsBlockList</c> is currently not supported in the Amazon Web
+    /// Services GovCloud (US-West) region.
     /// </para>
     /// </summary>
     public partial class UpdateQuerySuggestionsBlockListRequest : AmazonKendraRequest
@@ -168,7 +168,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// If you update your block list and provide the same path to the block list text file
         /// in S3, then Amazon Kendra reloads the file to refresh the block list. Amazon Kendra
-        /// does not automatically refresh your block list. You need to call the <code>UpdateQuerySuggestionsBlockList</code>
+        /// does not automatically refresh your block list. You need to call the <c>UpdateQuerySuggestionsBlockList</c>
         /// API to refresh you block list.
         /// </para>
         ///  

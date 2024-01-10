@@ -43,8 +43,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property CustomDomains. 
         /// <para>
         /// A list of descriptions of custom domain names that are associated with the service.
-        /// In a paginated request, the request returns up to <code>MaxResults</code> records
-        /// per call.
+        /// In a paginated request, the request returns up to <c>MaxResults</c> records per call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

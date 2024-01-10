@@ -30,8 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Part of the response from <a>GetSampledRequests</a>. This is a complex type that appears
-    /// as <code>Headers</code> in the response syntax. <code>HTTPHeader</code> contains the
-    /// names and values of all of the headers that appear in one of the web requests.
+    /// as <c>Headers</c> in the response syntax. <c>HTTPHeader</c> contains the names and
+    /// values of all of the headers that appear in one of the web requests.
     /// </summary>
     public partial class HTTPHeader
     {

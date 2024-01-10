@@ -63,7 +63,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// An optional marker returned from a prior request. Use this marker for pagination of
         /// results from this operation. If this parameter is specified, the response includes
-        /// only records beyond the marker, up to the value specified by <code>MaxRecords</code>.
+        /// only records beyond the marker, up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -82,8 +82,8 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a marker is included in the response
-        /// so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a marker is included in the response so that
+        /// the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>

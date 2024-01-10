@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property TransformJobSummaries. 
         /// <para>
-        /// An array of <code>TransformJobSummary</code> objects.
+        /// An array of <c>TransformJobSummary</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

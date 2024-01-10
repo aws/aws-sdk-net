@@ -43,7 +43,7 @@ namespace Amazon.FMS.Model
         /// Gets and sets the property PartialMatches. 
         /// <para>
         /// List of rules specified in the security group of the Firewall Manager policy that
-        /// partially match the <code>ViolationTarget</code> rule.
+        /// partially match the <c>ViolationTarget</c> rule.
         /// </para>
         /// </summary>
         public List<PartialMatch> PartialMatches
@@ -61,7 +61,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PossibleSecurityGroupRemediationActions. 
         /// <para>
-        /// Remediation options for the rule specified in the <code>ViolationTarget</code>.
+        /// Remediation options for the rule specified in the <c>ViolationTarget</c>.
         /// </para>
         /// </summary>
         public List<SecurityGroupRemediationAction> PossibleSecurityGroupRemediationActions

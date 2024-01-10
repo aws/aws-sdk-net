@@ -160,7 +160,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// To use <code>SearchableContactAttributes</code> in a search request, the <code>GetContactAttributes</code>
+        /// To use <c>SearchableContactAttributes</c> in a search request, the <c>GetContactAttributes</c>
         /// action is required to perform an API request. For more information, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions">https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonconnect.html#amazonconnect-actions-as-permissions</a>Actions
         /// defined by Amazon Connect.
         /// </para>

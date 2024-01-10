@@ -30,8 +30,7 @@ namespace Amazon.MigrationHubConfig.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHomeRegionControls operation.
-    /// This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code>
-    /// fields.
+    /// This API permits filtering on the <c>ControlId</c> and <c>HomeRegion</c> fields.
     /// </summary>
     public partial class DescribeHomeRegionControlsRequest : AmazonMigrationHubConfigRequest
     {
@@ -44,7 +43,7 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property ControlId. 
         /// <para>
-        /// The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code>
+        /// The <c>ControlID</c> is a unique identifier string of your <c>HomeRegionControl</c>
         /// object.
         /// </para>
         /// </summary>
@@ -102,9 +101,9 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a <code>NextToken</code> was returned by a previous call, more results are available.
+        /// If a <c>NextToken</c> was returned by a previous call, more results are available.
         /// To retrieve the next page of results, make the call again using the returned token
-        /// in <code>NextToken</code>.
+        /// in <c>NextToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -124,8 +123,8 @@ namespace Amazon.MigrationHubConfig.Model
         /// Gets and sets the property Target. 
         /// <para>
         /// The target parameter specifies the identifier to which the home region is applied,
-        /// which is always of type <code>ACCOUNT</code>. It applies the home region to the current
-        /// <code>ACCOUNT</code>.
+        /// which is always of type <c>ACCOUNT</c>. It applies the home region to the current
+        /// <c>ACCOUNT</c>.
         /// </para>
         /// </summary>
         public Target Target

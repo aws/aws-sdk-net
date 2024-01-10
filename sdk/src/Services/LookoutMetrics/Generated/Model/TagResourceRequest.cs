@@ -61,7 +61,7 @@ namespace Amazon.LookoutMetrics.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Tags to apply to the resource. Tag keys and values can contain letters, numbers, spaces,
-        /// and the following symbols: <code>_.:/=+@-</code> 
+        /// and the following symbols: <c>_.:/=+@-</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

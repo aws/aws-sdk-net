@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBClusterAutomatedBackups. 
         /// <para>
-        /// A list of <code>DBClusterAutomatedBackup</code> backups.
+        /// A list of <c>DBClusterAutomatedBackup</c> backups.
         /// </para>
         /// </summary>
         public List<DBClusterAutomatedBackup> DBClusterAutomatedBackups
@@ -58,7 +58,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// The pagination token provided in the previous request. If this parameter is specified
-        /// the response includes only records beyond the marker, up to <code>MaxRecords</code>.
+        /// the response includes only records beyond the marker, up to <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker

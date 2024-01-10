@@ -44,24 +44,24 @@ namespace Amazon.WAFRegional.Model
     ///  </note> 
     /// <para>
     /// Inserts or deletes <a>SqlInjectionMatchTuple</a> objects (filters) in a <a>SqlInjectionMatchSet</a>.
-    /// For each <code>SqlInjectionMatchTuple</code> object, you specify the following values:
+    /// For each <c>SqlInjectionMatchTuple</c> object, you specify the following values:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Action</code>: Whether to insert the object into or delete the object from
-    /// the array. To change a <code>SqlInjectionMatchTuple</code>, you delete the existing
-    /// object and add a new one.
+    ///  <c>Action</c>: Whether to insert the object into or delete the object from the array.
+    /// To change a <c>SqlInjectionMatchTuple</c>, you delete the existing object and add
+    /// a new one.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>FieldToMatch</code>: The part of web requests that you want AWS WAF to inspect
-    /// and, if you want AWS WAF to inspect a header or custom query parameter, the name of
-    /// the header or parameter.
+    ///  <c>FieldToMatch</c>: The part of web requests that you want AWS WAF to inspect and,
+    /// if you want AWS WAF to inspect a header or custom query parameter, the name of the
+    /// header or parameter.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>TextTransformation</code>: Which text transformation, if any, to perform on
-    /// the web request before inspecting the request for snippets of malicious SQL code.
+    ///  <c>TextTransformation</c>: Which text transformation, if any, to perform on the web
+    /// request before inspecting the request for snippets of malicious SQL code.
     /// </para>
     ///  
     /// <para>
@@ -69,16 +69,15 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You use <code>SqlInjectionMatchSet</code> objects to specify which CloudFront requests
-    /// that you want to allow, block, or count. For example, if you're receiving requests
-    /// that contain snippets of SQL code in the query string and you want to block the requests,
-    /// you can create a <code>SqlInjectionMatchSet</code> with the applicable settings, and
-    /// then configure AWS WAF to block the requests. 
+    /// You use <c>SqlInjectionMatchSet</c> objects to specify which CloudFront requests that
+    /// you want to allow, block, or count. For example, if you're receiving requests that
+    /// contain snippets of SQL code in the query string and you want to block the requests,
+    /// you can create a <c>SqlInjectionMatchSet</c> with the applicable settings, and then
+    /// configure AWS WAF to block the requests. 
     /// </para>
     ///  
     /// <para>
-    /// To create and configure a <code>SqlInjectionMatchSet</code>, perform the following
-    /// steps:
+    /// To create and configure a <c>SqlInjectionMatchSet</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
@@ -86,13 +85,13 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
     /// parameter of an <a>UpdateIPSet</a> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit an <code>UpdateSqlInjectionMatchSet</code> request to specify the parts of
-    /// web requests that you want AWS WAF to inspect for snippets of SQL code.
+    /// Submit an <c>UpdateSqlInjectionMatchSet</c> request to specify the parts of web requests
+    /// that you want AWS WAF to inspect for snippets of SQL code.
     /// </para>
     ///  </li> </ol> 
     /// <para>
@@ -129,8 +128,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property SqlInjectionMatchSetId. 
         /// <para>
-        /// The <code>SqlInjectionMatchSetId</code> of the <code>SqlInjectionMatchSet</code> that
-        /// you want to update. <code>SqlInjectionMatchSetId</code> is returned by <a>CreateSqlInjectionMatchSet</a>
+        /// The <c>SqlInjectionMatchSetId</c> of the <c>SqlInjectionMatchSet</c> that you want
+        /// to update. <c>SqlInjectionMatchSetId</c> is returned by <a>CreateSqlInjectionMatchSet</a>
         /// and by <a>ListSqlInjectionMatchSets</a>.
         /// </para>
         /// </summary>
@@ -150,23 +149,23 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Updates. 
         /// <para>
-        /// An array of <code>SqlInjectionMatchSetUpdate</code> objects that you want to insert
-        /// into or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable
+        /// An array of <c>SqlInjectionMatchSetUpdate</c> objects that you want to insert into
+        /// or delete from a <a>SqlInjectionMatchSet</a>. For more information, see the applicable
         /// data types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>SqlInjectionMatchSetUpdate</a>: Contains <code>Action</code> and <code>SqlInjectionMatchTuple</code>
+        ///  <a>SqlInjectionMatchSetUpdate</a>: Contains <c>Action</c> and <c>SqlInjectionMatchTuple</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>SqlInjectionMatchTuple</a>: Contains <code>FieldToMatch</code> and <code>TextTransformation</code>
+        ///  <a>SqlInjectionMatchTuple</a>: Contains <c>FieldToMatch</c> and <c>TextTransformation</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        ///  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

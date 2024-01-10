@@ -137,31 +137,31 @@ namespace Amazon.AppConfig.Model
         ///  
         /// <para>
         ///  <b>Linear</b>: For this type, AppConfig processes the deployment by dividing the
-        /// total number of targets by the value specified for <code>Step percentage</code>. For
-        /// example, a linear deployment that uses a <code>Step percentage</code> of 10 deploys
-        /// the configuration to 10 percent of the hosts. After those deployments are complete,
-        /// the system deploys the configuration to the next 10 percent. This continues until
-        /// 100% of the targets have successfully received the configuration.
+        /// total number of targets by the value specified for <c>Step percentage</c>. For example,
+        /// a linear deployment that uses a <c>Step percentage</c> of 10 deploys the configuration
+        /// to 10 percent of the hosts. After those deployments are complete, the system deploys
+        /// the configuration to the next 10 percent. This continues until 100% of the targets
+        /// have successfully received the configuration.
         /// </para>
         ///  
         /// <para>
         ///  <b>Exponential</b>: For this type, AppConfig processes the deployment exponentially
-        /// using the following formula: <code>G*(2^N)</code>. In this formula, <code>G</code>
-        /// is the growth factor specified by the user and <code>N</code> is the number of steps
-        /// until the configuration is deployed to all targets. For example, if you specify a
-        /// growth factor of 2, then the system rolls out the configuration as follows:
+        /// using the following formula: <c>G*(2^N)</c>. In this formula, <c>G</c> is the growth
+        /// factor specified by the user and <c>N</c> is the number of steps until the configuration
+        /// is deployed to all targets. For example, if you specify a growth factor of 2, then
+        /// the system rolls out the configuration as follows:
         /// </para>
         ///  
         /// <para>
-        ///  <code>2*(2^0)</code> 
+        ///  <c>2*(2^0)</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>2*(2^1)</code> 
+        ///  <c>2*(2^1)</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>2*(2^2)</code> 
+        ///  <c>2*(2^2)</c> 
         /// </para>
         ///  
         /// <para>

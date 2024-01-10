@@ -39,7 +39,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property CodeCoverages. 
         /// <para>
-        /// An array of <code>CodeCoverage</code> objects that contain the results.
+        /// An array of <c>CodeCoverage</c> objects that contain the results.
         /// </para>
         /// </summary>
         public List<CodeCoverage> CodeCoverages
@@ -58,7 +58,7 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If there are more items to return, this contains a token that is passed to a subsequent
-        /// call to <code>DescribeCodeCoverages</code> to retrieve the next set of items.
+        /// call to <c>DescribeCodeCoverages</c> to retrieve the next set of items.
         /// </para>
         /// </summary>
         public string NextToken

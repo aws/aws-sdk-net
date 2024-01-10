@@ -35,7 +35,7 @@ namespace Amazon.LookoutforVision.Model
     /// 
     ///  
     /// <para>
-    /// A model is ready to use when its status is <code>HOSTED</code>.
+    /// A model is ready to use when its status is <c>HOSTED</c>.
     /// </para>
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.LookoutforVision.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This operation requires permissions to perform the <code>lookoutvision:StartModel</code>
+    /// This operation requires permissions to perform the <c>lookoutvision:StartModel</c>
     /// operation.
     /// </para>
     /// </summary>
@@ -63,22 +63,21 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// ClientToken is an idempotency token that ensures a call to <code>StartModel</code>
-        /// completes only once. You choose the value to pass. For example, An issue might prevent
-        /// you from getting a response from <code>StartModel</code>. In this case, safely retry
-        /// your call to <code>StartModel</code> by using the same <code>ClientToken</code> parameter
-        /// value. 
+        /// ClientToken is an idempotency token that ensures a call to <c>StartModel</c> completes
+        /// only once. You choose the value to pass. For example, An issue might prevent you from
+        /// getting a response from <c>StartModel</c>. In this case, safely retry your call to
+        /// <c>StartModel</c> by using the same <c>ClientToken</c> parameter value. 
         /// </para>
         ///  
         /// <para>
-        /// If you don't supply a value for <code>ClientToken</code>, the AWS SDK you are using
-        /// inserts a value for you. This prevents retries after a network error from making multiple
+        /// If you don't supply a value for <c>ClientToken</c>, the AWS SDK you are using inserts
+        /// a value for you. This prevents retries after a network error from making multiple
         /// start requests. You'll need to provide your own value for other use cases. 
         /// </para>
         ///  
         /// <para>
         /// An error occurs if the other input parameters are not the same as in the first request.
-        /// Using a different value for <code>ClientToken</code> is considered a new call to <code>StartModel</code>.
+        /// Using a different value for <c>ClientToken</c> is considered a new call to <c>StartModel</c>.
         /// An idempotency token is active for 8 hours. 
         /// </para>
         /// </summary>

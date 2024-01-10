@@ -46,20 +46,19 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CRAWL_ID</code>: A string representing the UUID identifier for a crawl.
+        ///  <c>CRAWL_ID</c>: A string representing the UUID identifier for a crawl.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STATE</code>: A string representing the state of the crawl.
+        ///  <c>STATE</c>: A string representing the state of the crawl.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.
+        ///  <c>START_TIME</c> and <c>END_TIME</c>: The epoch timestamp in milliseconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the
-        /// crawl.
+        ///  <c>DPU_HOUR</c>: The number of data processing unit (DPU) hours used for the crawl.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,27 +99,27 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>GT</code>: Greater than.
+        ///  <c>GT</c>: Greater than.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GE</code>: Greater than or equal to.
+        ///  <c>GE</c>: Greater than or equal to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LT</code>: Less than.
+        ///  <c>LT</c>: Less than.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LE</code>: Less than or equal to.
+        ///  <c>LE</c>: Less than or equal to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EQ</code>: Equal to.
+        ///  <c>EQ</c>: Equal to.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NE</code>: Not equal to.
+        ///  <c>NE</c>: Not equal to.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -48,23 +48,23 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>group-id</code>: The security group ID.
+        ///  <c>group-id</c>: The security group ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>description</code>: The security group's description.
+        ///  <c>description</c>: The security group's description.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>group-name</code>: The security group name.
+        ///  <c>group-name</c>: The security group name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code>: The security group owner ID.
+        ///  <c>owner-id</c>: The security group owner ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>primary-vpc-id</code>: The VPC ID in which the security group was created.
+        ///  <c>primary-vpc-id</c>: The VPC ID in which the security group was created.
         /// </para>
         ///  </li> </ul>
         /// </summary>

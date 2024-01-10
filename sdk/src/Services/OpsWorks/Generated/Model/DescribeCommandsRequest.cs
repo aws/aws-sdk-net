@@ -53,9 +53,9 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property CommandIds. 
         /// <para>
-        /// An array of command IDs. If you include this parameter, <code>DescribeCommands</code>
-        /// returns a description of the specified commands. Otherwise, it returns a description
-        /// of every command.
+        /// An array of command IDs. If you include this parameter, <c>DescribeCommands</c> returns
+        /// a description of the specified commands. Otherwise, it returns a description of every
+        /// command.
         /// </para>
         /// </summary>
         public List<string> CommandIds
@@ -73,7 +73,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property DeploymentId. 
         /// <para>
-        /// The deployment ID. If you include this parameter, <code>DescribeCommands</code> returns
+        /// The deployment ID. If you include this parameter, <c>DescribeCommands</c> returns
         /// a description of the commands associated with the specified deployment.
         /// </para>
         /// </summary>
@@ -92,8 +92,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The instance ID. If you include this parameter, <code>DescribeCommands</code> returns
-        /// a description of the commands associated with the specified instance.
+        /// The instance ID. If you include this parameter, <c>DescribeCommands</c> returns a
+        /// description of the commands associated with the specified instance.
         /// </para>
         /// </summary>
         public string InstanceId

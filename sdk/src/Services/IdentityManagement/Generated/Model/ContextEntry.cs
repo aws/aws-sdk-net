@@ -31,7 +31,7 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Contains information about a condition context key. It includes the name of the key
     /// and specifies the value (or values, if the context key supports multiple values) to
-    /// use in the simulation. This information is used when evaluating the <code>Condition</code>
+    /// use in the simulation. This information is used when evaluating the <c>Condition</c>
     /// elements of the input policies.
     /// 
     ///  
@@ -49,7 +49,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ContextKeyName. 
         /// <para>
         /// The full name of a condition context key, including the service prefix. For example,
-        /// <code>aws:SourceIp</code> or <code>s3:VersionId</code>.
+        /// <c>aws:SourceIp</c> or <c>s3:VersionId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=256)]
@@ -68,8 +68,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property ContextKeyType. 
         /// <para>
-        /// The data type of the value (or values) specified in the <code>ContextKeyValues</code>
-        /// parameter.
+        /// The data type of the value (or values) specified in the <c>ContextKeyValues</c> parameter.
         /// </para>
         /// </summary>
         public ContextKeyTypeEnum ContextKeyType
@@ -88,8 +87,8 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property ContextKeyValues. 
         /// <para>
         /// The value (or values, if the condition context key supports multiple values) to provide
-        /// to the simulation when the key is referenced by a <code>Condition</code> element in
-        /// an input policy.
+        /// to the simulation when the key is referenced by a <c>Condition</c> element in an input
+        /// policy.
         /// </para>
         /// </summary>
         public List<string> ContextKeyValues

@@ -32,7 +32,7 @@ namespace Amazon.FraudDetector.Model
     /// Container for the parameters to the UpdateDetectorVersion operation.
     /// Updates a detector version. The detector version attributes that you can update include
     /// models, external model endpoints, rules, rule execution mode, and description. You
-    /// can only update a <code>DRAFT</code> detector version.
+    /// can only update a <c>DRAFT</c> detector version.
     /// </summary>
     public partial class UpdateDetectorVersionRequest : AmazonFraudDetectorRequest
     {
@@ -145,19 +145,19 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>FIRST_MATCHED</code>, Amazon Fraud Detector evaluates rules sequentially,
+        /// If you specify <c>FIRST_MATCHED</c>, Amazon Fraud Detector evaluates rules sequentially,
         /// first to last, stopping at the first matched rule. Amazon Fraud dectector then provides
         /// the outcomes for that single rule.
         /// </para>
         ///  
         /// <para>
-        /// If you specifiy <code>ALL_MATCHED</code>, Amazon Fraud Detector evaluates all rules
-        /// and returns the outcomes for all matched rules. You can define and edit the rule mode
+        /// If you specifiy <c>ALL_MATCHED</c>, Amazon Fraud Detector evaluates all rules and
+        /// returns the outcomes for all matched rules. You can define and edit the rule mode
         /// at the detector version level, when it is in draft status.
         /// </para>
         ///  
         /// <para>
-        /// The default behavior is <code>FIRST_MATCHED</code>.
+        /// The default behavior is <c>FIRST_MATCHED</c>.
         /// </para>
         /// </summary>
         public RuleExecutionMode RuleExecutionMode

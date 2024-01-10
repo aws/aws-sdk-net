@@ -147,8 +147,8 @@ namespace Amazon.DocDBElastic.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason why the validation exception occurred (one of <code>unknownOperation</code>,
-        /// <code>cannotParse</code>, <code>fieldValidationFailed</code>, or <code>other</code>).
+        /// The reason why the validation exception occurred (one of <c>unknownOperation</c>,
+        /// <c>cannotParse</c>, <c>fieldValidationFailed</c>, or <c>other</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

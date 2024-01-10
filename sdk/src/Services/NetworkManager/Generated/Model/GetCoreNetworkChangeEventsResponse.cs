@@ -39,7 +39,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property CoreNetworkChangeEvents. 
         /// <para>
-        /// The response to <code>GetCoreNetworkChangeEventsRequest</code>.
+        /// The response to <c>GetCoreNetworkChangeEventsRequest</c>.
         /// </para>
         /// </summary>
         public List<CoreNetworkChangeEvent> CoreNetworkChangeEvents

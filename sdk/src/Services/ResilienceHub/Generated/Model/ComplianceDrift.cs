@@ -183,7 +183,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property EntityType. 
         /// <para>
         /// The type of entity in which drift was detected. For compliance drifts, Resilience
-        /// Hub supports <code>AWS::ResilienceHub::AppComponent</code> and <code>AWS::ResilienceHub::Application</code>.
+        /// Hub supports <c>AWS::ResilienceHub::AppComponent</c> and <c>AWS::ResilienceHub::Application</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

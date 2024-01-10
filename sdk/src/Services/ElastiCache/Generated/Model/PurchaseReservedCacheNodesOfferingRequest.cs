@@ -49,7 +49,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         /// </summary>
         public int CacheNodeCount
@@ -99,7 +99,7 @@ namespace Amazon.ElastiCache.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>438012d3-4052-4cc7-b2e3-8d3372e0e706</code> 
+        /// Example: <c>438012d3-4052-4cc7-b2e3-8d3372e0e706</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

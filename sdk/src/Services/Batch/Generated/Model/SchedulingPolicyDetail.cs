@@ -41,8 +41,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the scheduling policy. An example is <code>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
-        /// </code>.
+        /// The Amazon Resource Name (ARN) of the scheduling policy. An example is <c>arn:<i>aws</i>:batch:<i>us-east-1</i>:<i>123456789012</i>:scheduling-policy/<i>HighPriority</i>
+        /// </c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

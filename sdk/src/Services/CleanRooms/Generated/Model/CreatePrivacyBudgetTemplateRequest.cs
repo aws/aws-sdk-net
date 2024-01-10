@@ -50,7 +50,7 @@ namespace Amazon.CleanRooms.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you plan to regularly bring new data into the collaboration, you can use <code>CALENDAR_MONTH</code>
+        /// If you plan to regularly bring new data into the collaboration, you can use <c>CALENDAR_MONTH</c>
         /// to automatically get a new privacy budget for the collaboration every calendar month.
         /// Choosing this option allows arbitrary amounts of information to be revealed about
         /// rows of the data when repeatedly queries across refreshes. Avoid choosing this if

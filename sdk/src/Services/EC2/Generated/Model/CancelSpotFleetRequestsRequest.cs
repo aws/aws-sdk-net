@@ -39,10 +39,10 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// You must also specify whether a canceled Spot Fleet request should terminate its instances.
-    /// If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code>
-    /// state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code>
-    /// state and the instances continue to run until they are interrupted or you terminate
-    /// them manually.
+    /// If you choose to terminate the instances, the Spot Fleet request enters the <c>cancelled_terminating</c>
+    /// state. Otherwise, the Spot Fleet request enters the <c>cancelled_running</c> state
+    /// and the instances continue to run until they are interrupted or you terminate them
+    /// manually.
     /// </para>
     /// </summary>
     public partial class CancelSpotFleetRequestsRequest : AmazonEC2Request
@@ -78,7 +78,7 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// To let the instances continue to run after the Spot Fleet request is canceled, specify
-        /// <code>no-terminate-instances</code>.
+        /// <c>no-terminate-instances</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -40,9 +40,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property Images. 
         /// <para>
         /// The list of images generated from the video stream. If there is no media available
-        /// for the given timestamp, the <code>NO_MEDIA</code> error will be listed in the output.
-        /// If an error occurs while the image is being generated, the <code>MEDIA_ERROR</code>
-        /// will be listed in the output as the cause of the missing image. 
+        /// for the given timestamp, the <c>NO_MEDIA</c> error will be listed in the output. If
+        /// an error occurs while the image is being generated, the <c>MEDIA_ERROR</c> will be
+        /// listed in the output as the cause of the missing image. 
         /// </para>
         /// </summary>
         public List<Image> Images

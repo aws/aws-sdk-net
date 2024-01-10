@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of a <code>CreateBatchPrediction</code> operation, and is an
-    /// acknowledgement that Amazon ML received the request.
+    /// Represents the output of a <c>CreateBatchPrediction</c> operation, and is an acknowledgement
+    /// that Amazon ML received the request.
     /// 
     ///  
     /// <para>
-    /// The <code>CreateBatchPrediction</code> operation is asynchronous. You can poll for
-    /// status updates by using the <code>&gt;GetBatchPrediction</code> operation and checking
-    /// the <code>Status</code> parameter of the result. 
+    /// The <c>CreateBatchPrediction</c> operation is asynchronous. You can poll for status
+    /// updates by using the <c>&gt;GetBatchPrediction</c> operation and checking the <c>Status</c>
+    /// parameter of the result. 
     /// </para>
     /// </summary>
     public partial class CreateBatchPredictionResponse : AmazonWebServiceResponse
@@ -46,8 +46,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>BatchPrediction</code>. This
-        /// value is identical to the value of the <code>BatchPredictionId</code> in the request.
+        /// A user-supplied ID that uniquely identifies the <c>BatchPrediction</c>. This value
+        /// is identical to the value of the <c>BatchPredictionId</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

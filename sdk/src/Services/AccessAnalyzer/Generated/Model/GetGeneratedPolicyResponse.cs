@@ -39,8 +39,8 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property GeneratedPolicyResult. 
         /// <para>
-        /// A <code>GeneratedPolicyResult</code> object that contains the generated policies and
-        /// associated details.
+        /// A <c>GeneratedPolicyResult</c> object that contains the generated policies and associated
+        /// details.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,8 +59,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property JobDetails. 
         /// <para>
-        /// A <code>GeneratedPolicyDetails</code> object that contains details about the generated
-        /// policy.
+        /// A <c>GeneratedPolicyDetails</c> object that contains details about the generated policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,20 +30,19 @@ namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
     /// Container for the parameters to the SignalWorkflowExecution operation.
-    /// Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history
+    /// Records a <c>WorkflowExecutionSignaled</c> event in the workflow execution history
     /// and creates a decision task for the workflow execution identified by the given domain,
     /// workflowId and runId. The event is recorded with the specified user defined signalName
     /// and input (if provided).
     /// 
     ///  <note> 
     /// <para>
-    /// If a runId isn't specified, then the <code>WorkflowExecutionSignaled</code> event
-    /// is recorded in the history of the current open workflow with the matching workflowId
-    /// in the domain.
+    /// If a runId isn't specified, then the <c>WorkflowExecutionSignaled</c> event is recorded
+    /// in the history of the current open workflow with the matching workflowId in the domain.
     /// </para>
     ///  </note> <note> 
     /// <para>
-    /// If the specified workflow execution isn't open, this method fails with <code>UnknownResource</code>.
+    /// If the specified workflow execution isn't open, this method fails with <c>UnknownResource</c>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -56,12 +55,12 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use a <code>Resource</code> element with the domain name to limit the action to only
-    /// specified domains.
+    /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+    /// domains.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// Use an <c>Action</c> element to allow or deny permission to call this action.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -71,8 +70,8 @@ namespace Amazon.SimpleWorkflow.Model
     /// <para>
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+    /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -106,7 +105,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Input. 
         /// <para>
-        /// Data to attach to the <code>WorkflowExecutionSignaled</code> event in the target workflow
+        /// Data to attach to the <c>WorkflowExecutionSignaled</c> event in the target workflow
         /// execution's history.
         /// </para>
         /// </summary>

@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Batch.Model
 {
     /// <summary>
-    /// Specifies an array of up to 5 conditions to be met, and an action to take (<code>RETRY</code>
-    /// or <code>EXIT</code>) if all conditions are met. If none of the <code>EvaluateOnExit</code>
-    /// conditions in a <code>RetryStrategy</code> match, then the job is retried.
+    /// Specifies an array of up to 5 conditions to be met, and an action to take (<c>RETRY</c>
+    /// or <c>EXIT</c>) if all conditions are met. If none of the <c>EvaluateOnExit</c> conditions
+    /// in a <c>RetryStrategy</c> match, then the job is retried.
     /// </summary>
     public partial class EvaluateOnExit
     {
@@ -43,9 +43,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// Specifies the action to take if all of the specified conditions (<code>onStatusReason</code>,
-        /// <code>onReason</code>, and <code>onExitCode</code>) are met. The values aren't case
-        /// sensitive.
+        /// Specifies the action to take if all of the specified conditions (<c>onStatusReason</c>,
+        /// <c>onReason</c>, and <c>onExitCode</c>) are met. The values aren't case sensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -64,7 +63,7 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property OnExitCode. 
         /// <para>
-        /// Contains a glob pattern to match against the decimal representation of the <code>ExitCode</code>
+        /// Contains a glob pattern to match against the decimal representation of the <c>ExitCode</c>
         /// returned for a job. The pattern can be up to 512 characters long. It can contain only
         /// numbers, and can end with an asterisk (*) so that only the start of the string needs
         /// to be an exact match.
@@ -89,8 +88,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property OnReason. 
         /// <para>
-        /// Contains a glob pattern to match against the <code>Reason</code> returned for a job.
-        /// The pattern can contain up to 512 characters. It can contain letters, numbers, periods
+        /// Contains a glob pattern to match against the <c>Reason</c> returned for a job. The
+        /// pattern can contain up to 512 characters. It can contain letters, numbers, periods
         /// (.), colons (:), and white space (including spaces and tabs). It can optionally end
         /// with an asterisk (*) so that only the start of the string needs to be an exact match.
         /// </para>
@@ -110,11 +109,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property OnStatusReason. 
         /// <para>
-        /// Contains a glob pattern to match against the <code>StatusReason</code> returned for
-        /// a job. The pattern can contain up to 512 characters. It can contain letters, numbers,
-        /// periods (.), colons (:), and white spaces (including spaces or tabs). It can optionally
-        /// end with an asterisk (*) so that only the start of the string needs to be an exact
-        /// match.
+        /// Contains a glob pattern to match against the <c>StatusReason</c> returned for a job.
+        /// The pattern can contain up to 512 characters. It can contain letters, numbers, periods
+        /// (.), colons (:), and white spaces (including spaces or tabs). It can optionally end
+        /// with an asterisk (*) so that only the start of the string needs to be an exact match.
         /// </para>
         /// </summary>
         public string OnStatusReason

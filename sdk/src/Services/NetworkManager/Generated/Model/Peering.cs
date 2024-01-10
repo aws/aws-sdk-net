@@ -160,7 +160,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property PeeringType. 
         /// <para>
-        /// The type of peering. This will be <code>TRANSIT_GATEWAY</code>.
+        /// The type of peering. This will be <c>TRANSIT_GATEWAY</c>.
         /// </para>
         /// </summary>
         public PeeringType PeeringType

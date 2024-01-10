@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ACMPCA.Model
 {
     /// <summary>
-    /// Contains X.509 certificate information to be placed in an issued certificate. An <code>APIPassthrough</code>
-    /// or <code>APICSRPassthrough</code> template variant must be selected, or else this
-    /// parameter is ignored. 
+    /// Contains X.509 certificate information to be placed in an issued certificate. An <c>APIPassthrough</c>
+    /// or <c>APICSRPassthrough</c> template variant must be selected, or else this parameter
+    /// is ignored. 
     /// 
     ///  
     /// <para>

@@ -49,20 +49,20 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  
     /// <para>
-    /// To create and configure an <code>XssMatchSet</code>, perform the following steps:
+    /// To create and configure an <c>XssMatchSet</c>, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of a <code>CreateXssMatchSet</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of a <c>CreateXssMatchSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit a <code>CreateXssMatchSet</code> request.
+    /// Submit a <c>CreateXssMatchSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code>GetChangeToken</code> to get the change token that you provide in the <code>ChangeToken</code>
+    /// Use <c>GetChangeToken</c> to get the change token that you provide in the <c>ChangeToken</c>
     /// parameter of an <a>UpdateXssMatchSet</a> request.
     /// </para>
     ///  </li> <li> 
@@ -105,7 +105,7 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A friendly name or description for the <a>XssMatchSet</a> that you're creating. You
-        /// can't change <code>Name</code> after you create the <code>XssMatchSet</code>.
+        /// can't change <c>Name</c> after you create the <c>XssMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

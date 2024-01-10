@@ -198,23 +198,23 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>1</code> - Critical
+        ///  <c>1</c> - Critical
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>2</code> - High
+        ///  <c>2</c> - High
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>3</code> - Medium
+        ///  <c>3</c> - Medium
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>4</code> - Low
+        ///  <c>4</c> - Low
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>5</code> - No Impact
+        ///  <c>5</c> - No Impact
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -273,10 +273,10 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentTemplateTags. 
         /// <para>
-        /// Tags to assign to the template. When the <code>StartIncident</code> API action is
-        /// called, Incident Manager assigns the tags specified in the template to the incident.
-        /// To call this action, you must also have permission to call the <code>TagResource</code>
-        /// API action for the incident record resource.
+        /// Tags to assign to the template. When the <c>StartIncident</c> API action is called,
+        /// Incident Manager assigns the tags specified in the template to the incident. To call
+        /// this action, you must also have permission to call the <c>TagResource</c> API action
+        /// for the incident record resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

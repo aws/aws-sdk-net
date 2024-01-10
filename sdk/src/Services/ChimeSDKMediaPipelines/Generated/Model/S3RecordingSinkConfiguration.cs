@@ -30,8 +30,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
     /// The structure that holds the settings for transmitting media to the Amazon S3 bucket.
-    /// These values are used as defaults if <code>S3RecordingSinkRuntimeConfiguration</code>
-    /// is not specified.
+    /// These values are used as defaults if <c>S3RecordingSinkRuntimeConfiguration</c> is
+    /// not specified.
     /// </summary>
     public partial class S3RecordingSinkConfiguration
     {

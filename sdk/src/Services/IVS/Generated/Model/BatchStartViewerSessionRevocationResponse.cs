@@ -38,8 +38,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// Each error object is related to a specific <code>channelArn</code> and <code>viewerId</code>
-        /// pair in the request.
+        /// Each error object is related to a specific <c>channelArn</c> and <c>viewerId</c> pair
+        /// in the request.
         /// </para>
         /// </summary>
         public List<BatchStartViewerSessionRevocationError> Errors

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
-    /// The provided <code>revisionId</code> does not match, indicating the content has been
-    /// modified since it was last read.
+    /// The provided <c>revisionId</c> does not match, indicating the content has been modified
+    /// since it was last read.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

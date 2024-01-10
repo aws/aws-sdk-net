@@ -43,7 +43,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>GeoMatchSet</a> that is specified by <code>GeoMatchSetId</code>.
+    /// Returns the <a>GeoMatchSet</a> that is specified by <c>GeoMatchSetId</c>.
     /// </para>
     /// </summary>
     public partial class GetGeoMatchSetRequest : AmazonWAFRequest
@@ -53,7 +53,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property GeoMatchSetId. 
         /// <para>
-        /// The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to get. <code>GeoMatchSetId</code>
+        /// The <c>GeoMatchSetId</c> of the <a>GeoMatchSet</a> that you want to get. <c>GeoMatchSetId</c>
         /// is returned by <a>CreateGeoMatchSet</a> and by <a>ListGeoMatchSets</a>.
         /// </para>
         /// </summary>

@@ -38,8 +38,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileSystemAssociationInfoList. 
         /// <para>
-        /// An array containing the <code>FileSystemAssociationInfo</code> data type of each file
-        /// system association to be described. 
+        /// An array containing the <c>FileSystemAssociationInfo</c> data type of each file system
+        /// association to be described. 
         /// </para>
         /// </summary>
         public List<FileSystemAssociationInfo> FileSystemAssociationInfoList

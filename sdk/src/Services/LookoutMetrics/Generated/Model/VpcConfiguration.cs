@@ -58,7 +58,7 @@ namespace Amazon.LookoutMetrics.Model
         /// <summary>
         /// Gets and sets the property SubnetIdList. 
         /// <para>
-        /// An array of strings containing the Amazon VPC subnet IDs (e.g., <code>subnet-0bb1c79de3EXAMPLE</code>.
+        /// An array of strings containing the Amazon VPC subnet IDs (e.g., <c>subnet-0bb1c79de3EXAMPLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

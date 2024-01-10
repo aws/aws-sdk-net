@@ -122,7 +122,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ResourceTypes. 
         /// <para>
         /// The type of resource from which to get compliance information. Currently, the only
-        /// supported resource type is <code>ManagedInstance</code>.
+        /// supported resource type is <c>ManagedInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

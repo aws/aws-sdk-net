@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// In response to the <code>DescribeOrderableReplicationInstances</code> operation, this
-    /// object describes an available replication instance. This description includes the
-    /// replication instance's type, engine version, and allocated storage.
+    /// In response to the <c>DescribeOrderableReplicationInstances</c> operation, this object
+    /// describes an available replication instance. This description includes the replication
+    /// instance's type, engine version, and allocated storage.
     /// </summary>
     public partial class OrderableReplicationInstance
     {
@@ -159,12 +159,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReleaseStatus. 
         /// <para>
-        /// The value returned when the specified <code>EngineVersion</code> of the replication
-        /// instance is in Beta or test mode. This indicates some features might not work as expected.
+        /// The value returned when the specified <c>EngineVersion</c> of the replication instance
+        /// is in Beta or test mode. This indicates some features might not work as expected.
         /// </para>
         ///  <note> 
         /// <para>
-        /// DMS supports the <code>ReleaseStatus</code> parameter in versions 3.1.4 and later.
+        /// DMS supports the <c>ReleaseStatus</c> parameter in versions 3.1.4 and later.
         /// </para>
         ///  </note>
         /// </summary>
@@ -185,7 +185,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The compute and memory capacity of the replication instance as defined for the specified
         /// replication instance class. For example to specify the instance class dms.c4.large,
-        /// set this parameter to <code>"dms.c4.large"</code>.
+        /// set this parameter to <c>"dms.c4.large"</c>.
         /// </para>
         ///  
         /// <para>

@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The key-value pair that represents the attribute by which the <code>BillingGroupCostReportResults</code>
+    /// The key-value pair that represents the attribute by which the <c>BillingGroupCostReportResults</c>
     /// are grouped. For example, if you want a service-level breakdown for Amazon Simple
     /// Storage Service (Amazon S3) of the billing group, the attribute will be a key-value
-    /// pair of <code>"PRODUCT_NAME"</code> and <code>"S3"</code>.
+    /// pair of <c>"PRODUCT_NAME"</c> and <c>"S3"</c>.
     /// </summary>
     public partial class Attribute
     {

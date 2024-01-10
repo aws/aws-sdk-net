@@ -138,8 +138,8 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property LastModificationTime. 
         /// <para>
         /// When the dataset group was created or last updated from a call to the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
-        /// operation. While the dataset group is being updated, <code>LastModificationTime</code>
-        /// is the current time of the <code>DescribeDatasetGroup</code> call.
+        /// operation. While the dataset group is being updated, <c>LastModificationTime</c> is
+        /// the current time of the <c>DescribeDatasetGroup</c> call.
         /// </para>
         /// </summary>
         public DateTime LastModificationTime
@@ -161,32 +161,29 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> 
+        ///  <c>ACTIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
-        /// 
+        ///  <c>CREATE_PENDING</c>, <c>CREATE_IN_PROGRESS</c>, <c>CREATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
-        /// 
+        ///  <c>DELETE_PENDING</c>, <c>DELETE_IN_PROGRESS</c>, <c>DELETE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_PENDING</code>, <code>UPDATE_IN_PROGRESS</code>, <code>UPDATE_FAILED</code>
-        /// 
+        ///  <c>UPDATE_PENDING</c>, <c>UPDATE_IN_PROGRESS</c>, <c>UPDATE_FAILED</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>UPDATE</code> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
+        /// The <c>UPDATE</c> states apply when you call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a>
         /// operation.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Status</code> of the dataset group must be <code>ACTIVE</code> before you
-        /// can use the dataset group to create a predictor.
+        /// The <c>Status</c> of the dataset group must be <c>ACTIVE</c> before you can use the
+        /// dataset group to create a predictor.
         /// </para>
         ///  </note>
         /// </summary>

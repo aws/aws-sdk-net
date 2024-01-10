@@ -36,15 +36,15 @@ namespace Amazon.DynamoDBv2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can call <code>DescribeStream</code> at a maximum rate of 10 times per second.
+    /// You can call <c>DescribeStream</c> at a maximum rate of 10 times per second.
     /// </para>
     ///  </note> 
     /// <para>
-    /// Each shard in the stream has a <code>SequenceNumberRange</code> associated with it.
-    /// If the <code>SequenceNumberRange</code> has a <code>StartingSequenceNumber</code>
-    /// but no <code>EndingSequenceNumber</code>, then the shard is still open (able to receive
-    /// more stream records). If both <code>StartingSequenceNumber</code> and <code>EndingSequenceNumber</code>
-    /// are present, then that shard is closed and can no longer receive more data.
+    /// Each shard in the stream has a <c>SequenceNumberRange</c> associated with it. If the
+    /// <c>SequenceNumberRange</c> has a <c>StartingSequenceNumber</c> but no <c>EndingSequenceNumber</c>,
+    /// then the shard is still open (able to receive more stream records). If both <c>StartingSequenceNumber</c>
+    /// and <c>EndingSequenceNumber</c> are present, then that shard is closed and can no
+    /// longer receive more data.
     /// </para>
     /// </summary>
     public partial class DescribeStreamRequest : AmazonDynamoDBStreamsRequest
@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExclusiveStartShardId. 
         /// <para>
         /// The shard ID of the first item that this operation will evaluate. Use the value that
-        /// was returned for <code>LastEvaluatedShardId</code> in the previous operation. 
+        /// was returned for <c>LastEvaluatedShardId</c> in the previous operation. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=28, Max=65)]

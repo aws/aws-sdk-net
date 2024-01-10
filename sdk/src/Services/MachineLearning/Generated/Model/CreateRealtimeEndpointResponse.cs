@@ -29,17 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of an <code>CreateRealtimeEndpoint</code> operation.
+    /// Represents the output of an <c>CreateRealtimeEndpoint</c> operation.
     /// 
     ///  
     /// <para>
-    /// The result contains the <code>MLModelId</code> and the endpoint information for the
-    /// <code>MLModel</code>.
+    /// The result contains the <c>MLModelId</c> and the endpoint information for the <c>MLModel</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <b>Note:</b> The endpoint information includes the URI of the <code>MLModel</code>;
-    /// that is, the location to send online prediction requests for the specified <code>MLModel</code>.
+    ///  <b>Note:</b> The endpoint information includes the URI of the <c>MLModel</c>; that
+    /// is, the location to send online prediction requests for the specified <c>MLModel</c>.
     /// </para>
     /// </summary>
     public partial class CreateRealtimeEndpointResponse : AmazonWebServiceResponse
@@ -50,8 +49,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// A user-supplied ID that uniquely identifies the <code>MLModel</code>. This value should
-        /// be identical to the value of the <code>MLModelId</code> in the request.
+        /// A user-supplied ID that uniquely identifies the <c>MLModel</c>. This value should
+        /// be identical to the value of the <c>MLModelId</c> in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -70,7 +69,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property RealtimeEndpointInfo. 
         /// <para>
-        /// The endpoint information of the <code>MLModel</code> 
+        /// The endpoint information of the <c>MLModel</c> 
         /// </para>
         /// </summary>
         public RealtimeEndpointInfo RealtimeEndpointInfo

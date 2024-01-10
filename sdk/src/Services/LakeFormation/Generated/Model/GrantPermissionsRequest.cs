@@ -94,7 +94,7 @@ namespace Amazon.LakeFormation.Model
         /// Gets and sets the property PermissionsWithGrantOption. 
         /// <para>
         /// Indicates a list of the granted permissions that the principal may pass to other users.
-        /// These permissions may only be a subset of the permissions granted in the <code>Privileges</code>.
+        /// These permissions may only be a subset of the permissions granted in the <c>Privileges</c>.
         /// </para>
         /// </summary>
         public List<string> PermissionsWithGrantOption

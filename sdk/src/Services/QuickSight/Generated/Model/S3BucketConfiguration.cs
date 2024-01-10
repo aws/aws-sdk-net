@@ -82,7 +82,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property BucketRegion. 
         /// <para>
         /// The region that the Amazon S3 bucket is located in. The bucket must be located in
-        /// the same region that the <code>StartDashboardSnapshotJob</code> API call is made.
+        /// the same region that the <c>StartDashboardSnapshotJob</c> API call is made.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

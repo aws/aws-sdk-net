@@ -62,7 +62,7 @@ namespace Amazon.Bedrock
         ///  
         /// <para>
         ///  Model-customization jobs are asynchronous and the completion time depends on the
-        /// base model and the training/validation data size. To monitor a job, use the <code>GetModelCustomizationJob</code>
+        /// base model and the training/validation data size. To monitor a job, use the <c>GetModelCustomizationJob</c>
         /// operation to retrieve the job status.
         /// </para>
         ///  
@@ -646,7 +646,7 @@ namespace Amazon.Bedrock
 
 
         /// <summary>
-        /// Returns a list of the custom models that you have created with the <code>CreateModelCustomizationJob</code>
+        /// Returns a list of the custom models that you have created with the <c>CreateModelCustomizationJob</c>
         /// operation.
         /// 
         ///  

@@ -38,7 +38,7 @@ namespace Amazon.CloudHSMV2.Model
         /// <summary>
         /// Gets and sets the property Backup. 
         /// <para>
-        /// Information on the <code>Backup</code> object deleted.
+        /// Information on the <c>Backup</c> object deleted.
         /// </para>
         /// </summary>
         public Backup Backup

@@ -40,8 +40,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// A pagination token returned for you to pass to a subsequent request. If you pass this
-        /// token as the <code>Marker</code> value in a subsequent request, the response includes
-        /// only records beyond the marker, up to the value specified in the request by <code>MaxRecords</code>.
+        /// token as the <c>Marker</c> value in a subsequent request, the response includes only
+        /// records beyond the marker, up to the value specified in the request by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -59,7 +59,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicationTaskIndividualAssessments. 
         /// <para>
-        /// One or more individual assessments as specified by <code>Filters</code>.
+        /// One or more individual assessments as specified by <c>Filters</c>.
         /// </para>
         /// </summary>
         public List<ReplicationTaskIndividualAssessment> ReplicationTaskIndividualAssessments

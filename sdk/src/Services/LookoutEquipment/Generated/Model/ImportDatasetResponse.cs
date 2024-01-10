@@ -98,7 +98,7 @@ namespace Amazon.LookoutEquipment.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the <code>ImportDataset</code> operation.
+        /// The status of the <c>ImportDataset</c> operation.
         /// </para>
         /// </summary>
         public DatasetStatus Status

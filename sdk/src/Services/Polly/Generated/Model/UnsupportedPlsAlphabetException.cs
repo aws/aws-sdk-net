@@ -30,7 +30,7 @@ namespace Amazon.Polly.Model
 {
     /// <summary>
     /// The alphabet specified by the lexicon is not a supported alphabet. Valid values are
-    /// <code>x-sampa</code> and <code>ipa</code>.
+    /// <c>x-sampa</c> and <c>ipa</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

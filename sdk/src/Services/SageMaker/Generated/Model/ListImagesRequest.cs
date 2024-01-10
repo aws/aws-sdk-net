@@ -158,8 +158,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous call to <code>ListImages</code> didn't return the full set of images,
-        /// the call returns a token for getting the next set of images.
+        /// If the previous call to <c>ListImages</c> didn't return the full set of images, the
+        /// call returns a token for getting the next set of images.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -178,7 +178,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The property used to sort results. The default value is <code>CREATION_TIME</code>.
+        /// The property used to sort results. The default value is <c>CREATION_TIME</c>.
         /// </para>
         /// </summary>
         public ImageSortBy SortBy
@@ -196,7 +196,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order. The default value is <code>DESCENDING</code>.
+        /// The sort order. The default value is <c>DESCENDING</c>.
         /// </para>
         /// </summary>
         public ImageSortOrder SortOrder

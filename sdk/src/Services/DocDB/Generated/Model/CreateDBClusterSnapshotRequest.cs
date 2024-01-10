@@ -50,11 +50,11 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing <code>DBCluster</code>.
+        /// Must match the identifier of an existing <c>DBCluster</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster</code> 
+        /// Example: <c>my-cluster</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,7 +93,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster-snapshot1</code> 
+        /// Example: <c>my-cluster-snapshot1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

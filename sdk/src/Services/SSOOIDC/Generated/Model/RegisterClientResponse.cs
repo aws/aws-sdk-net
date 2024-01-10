@@ -80,8 +80,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property ClientIdIssuedAt. 
         /// <para>
-        /// Indicates the time at which the <code>clientId</code> and <code>clientSecret</code>
-        /// were issued.
+        /// Indicates the time at which the <c>clientId</c> and <c>clientSecret</c> were issued.
         /// </para>
         /// </summary>
         public long ClientIdIssuedAt
@@ -119,8 +118,8 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property ClientSecretExpiresAt. 
         /// <para>
-        /// Indicates the time at which the <code>clientId</code> and <code>clientSecret</code>
-        /// will become invalid.
+        /// Indicates the time at which the <c>clientId</c> and <c>clientSecret</c> will become
+        /// invalid.
         /// </para>
         /// </summary>
         public long ClientSecretExpiresAt

@@ -83,9 +83,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws_managed</code> account settings are read-only, as Amazon Web Services manages
-        /// such on the customer's behalf. Currently, the <code>guardDutyActivate</code> account
-        /// setting is the only one Amazon Web Services manages.
+        ///  <c>aws_managed</c> account settings are read-only, as Amazon Web Services manages
+        /// such on the customer's behalf. Currently, the <c>guardDutyActivate</c> account setting
+        /// is the only one Amazon Web Services manages.
         /// </para>
         /// </summary>
         public SettingType Type

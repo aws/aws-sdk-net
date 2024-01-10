@@ -41,51 +41,47 @@ namespace Amazon.TranscribeService.Model
     /// </para>
     ///  
     /// <para>
-    /// To make a <code>StartMedicalScribeJob</code> request, you must first upload your media
-    /// file into an Amazon S3 bucket; you can then specify the Amazon S3 location of the
-    /// file using the <code>Media</code> parameter.
+    /// To make a <c>StartMedicalScribeJob</c> request, you must first upload your media file
+    /// into an Amazon S3 bucket; you can then specify the Amazon S3 location of the file
+    /// using the <c>Media</c> parameter.
     /// </para>
     ///  
     /// <para>
-    /// You must include the following parameters in your <code>StartMedicalTranscriptionJob</code>
+    /// You must include the following parameters in your <c>StartMedicalTranscriptionJob</c>
     /// request:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DataAccessRoleArn</code>: The ARN of an IAM role with the these minimum permissions:
-    /// read permission on input file Amazon S3 bucket specified in <code>Media</code>, write
-    /// permission on the Amazon S3 bucket specified in <code>OutputBucketName</code>, and
-    /// full permissions on the KMS key specified in <code>OutputEncryptionKMSKeyId</code>
-    /// (if set). The role should also allow <code>transcribe.amazonaws.com</code> to assume
-    /// it. 
+    ///  <c>DataAccessRoleArn</c>: The ARN of an IAM role with the these minimum permissions:
+    /// read permission on input file Amazon S3 bucket specified in <c>Media</c>, write permission
+    /// on the Amazon S3 bucket specified in <c>OutputBucketName</c>, and full permissions
+    /// on the KMS key specified in <c>OutputEncryptionKMSKeyId</c> (if set). The role should
+    /// also allow <c>transcribe.amazonaws.com</c> to assume it. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Media</code> (<code>MediaFileUri</code>): The Amazon S3 location of your media
-    /// file.
+    ///  <c>Media</c> (<c>MediaFileUri</c>): The Amazon S3 location of your media file.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>MedicalScribeJobName</code>: A custom name you create for your MedicalScribe
-    /// job that is unique within your Amazon Web Services account.
+    ///  <c>MedicalScribeJobName</c>: A custom name you create for your MedicalScribe job
+    /// that is unique within your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>OutputBucketName</code>: The Amazon S3 bucket where you want your output files
-    /// stored.
+    ///  <c>OutputBucketName</c>: The Amazon S3 bucket where you want your output files stored.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Settings</code>: A <code>MedicalScribeSettings</code> obect that must set exactly
-    /// one of <code>ShowSpeakerLabels</code> or <code>ChannelIdentification</code> to true.
-    /// If <code>ShowSpeakerLabels</code> is true, <code>MaxSpeakerLabels</code> must also
-    /// be set. 
+    ///  <c>Settings</c>: A <c>MedicalScribeSettings</c> obect that must set exactly one of
+    /// <c>ShowSpeakerLabels</c> or <c>ChannelIdentification</c> to true. If <c>ShowSpeakerLabels</c>
+    /// is true, <c>MaxSpeakerLabels</c> must also be set. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ChannelDefinitions</code>: A <code>MedicalScribeChannelDefinitions</code> array
-    /// should be set if and only if the <code>ChannelIdentification</code> value of <code>Settings</code>
-    /// is set to true. 
+    ///  <c>ChannelDefinitions</c>: A <c>MedicalScribeChannelDefinitions</c> array should
+    /// be set if and only if the <c>ChannelIdentification</c> value of <c>Settings</c> is
+    /// set to true. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -105,13 +101,12 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property ChannelDefinitions. 
         /// <para>
         /// Makes it possible to specify which speaker is on which channel. For example, if the
-        /// clinician is the first participant to speak, you would set <code>ChannelId</code>
-        /// of the first <code>ChannelDefinition</code> in the list to <code>0</code> (to indicate
-        /// the first channel) and <code>ParticipantRole</code> to <code>CLINICIAN</code> (to
-        /// indicate that it's the clinician speaking). Then you would set the <code>ChannelId</code>
-        /// of the second <code>ChannelDefinition</code> in the list to <code>1</code> (to indicate
-        /// the second channel) and <code>ParticipantRole</code> to <code>PATIENT</code> (to indicate
-        /// that it's the patient speaking). 
+        /// clinician is the first participant to speak, you would set <c>ChannelId</c> of the
+        /// first <c>ChannelDefinition</c> in the list to <c>0</c> (to indicate the first channel)
+        /// and <c>ParticipantRole</c> to <c>CLINICIAN</c> (to indicate that it's the clinician
+        /// speaking). Then you would set the <c>ChannelId</c> of the second <c>ChannelDefinition</c>
+        /// in the list to <c>1</c> (to indicate the second channel) and <c>ParticipantRole</c>
+        /// to <c>PATIENT</c> (to indicate that it's the patient speaking). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]
@@ -137,8 +132,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
-        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// IAM role ARNs have the format <c>arn:partition:iam::account:role/role-name-with-path</c>.
+        /// For example: <c>arn:aws:iam::111122223333:role/Admin</c>.
         /// </para>
         ///  
         /// <para>
@@ -207,7 +202,7 @@ namespace Amazon.TranscribeService.Model
         /// <para>
         /// This name is case sensitive, cannot contain spaces, and must be unique within an Amazon
         /// Web Services account. If you try to create a new job with the same name as an existing
-        /// job, you get a <code>ConflictException</code> error.
+        /// job, you get a <c>ConflictException</c> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -227,12 +222,12 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property OutputBucketName. 
         /// <para>
         /// The name of the Amazon S3 bucket where you want your Medical Scribe output stored.
-        /// Do not include the <code>S3://</code> prefix of the specified bucket.
+        /// Do not include the <c>S3://</c> prefix of the specified bucket.
         /// </para>
         ///  
         /// <para>
-        /// Note that the role specified in the <code>DataAccessRoleArn</code> request parameter
-        /// must have permission to use the specified location. You can change Amazon S3 permissions
+        /// Note that the role specified in the <c>DataAccessRoleArn</c> request parameter must
+        /// have permission to use the specified location. You can change Amazon S3 permissions
         /// using the <a href="https://console.aws.amazon.com/s3">Amazon Web Services Management
         /// Console</a>. See also <a href="https://docs.aws.amazon.com/transcribe/latest/dg/security_iam_id-based-policy-examples.html#auth-role-iam-user">Permissions
         /// Required for IAM User Roles</a>.
@@ -263,19 +258,19 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the KMS key ID itself. For example, <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the KMS key ID itself. For example, <c>1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use an alias for the KMS key ID. For example, <code>alias/ExampleAlias</code>.
+        /// Use an alias for the KMS key ID. For example, <c>alias/ExampleAlias</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the Amazon Resource Name (ARN) for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -284,11 +279,11 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Use the ARN for the KMS key ID. For example, <code>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>.
+        /// Use the ARN for the KMS key ID. For example, <c>arn:aws:kms:region:account-ID:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use the ARN for the KMS key alias. For example, <code>arn:aws:kms:region:account-ID:alias/ExampleAlias</code>.
+        /// Use the ARN for the KMS key alias. For example, <c>arn:aws:kms:region:account-ID:alias/ExampleAlias</c>.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -297,8 +292,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that the role specified in the <code>DataAccessRoleArn</code> request parameter
-        /// must have permission to use the specified KMS key.
+        /// Note that the role specified in the <c>DataAccessRoleArn</c> request parameter must
+        /// have permission to use the specified KMS key.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -317,15 +312,14 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Makes it possible to control how your Medical Scribe job is processed using a <code>MedicalScribeSettings</code>
-        /// object. Specify <code>ChannelIdentification</code> if <code>ChannelDefinitions</code>
-        /// are set. Enabled <code>ShowSpeakerLabels</code> if <code>ChannelIdentification</code>
-        /// and <code>ChannelDefinitions</code> are not set. One and only one of <code>ChannelIdentification</code>
-        /// and <code>ShowSpeakerLabels</code> must be set. If <code>ShowSpeakerLabels</code>
-        /// is set, <code>MaxSpeakerLabels</code> must also be set. Use <code>Settings</code>
-        /// to specify a vocabulary or vocabulary filter or both using <code>VocabularyName</code>,
-        /// <code>VocabularyFilterName</code>. <code>VocabularyFilterMethod</code> must be specified
-        /// if <code>VocabularyFilterName</code> is set. 
+        /// Makes it possible to control how your Medical Scribe job is processed using a <c>MedicalScribeSettings</c>
+        /// object. Specify <c>ChannelIdentification</c> if <c>ChannelDefinitions</c> are set.
+        /// Enabled <c>ShowSpeakerLabels</c> if <c>ChannelIdentification</c> and <c>ChannelDefinitions</c>
+        /// are not set. One and only one of <c>ChannelIdentification</c> and <c>ShowSpeakerLabels</c>
+        /// must be set. If <c>ShowSpeakerLabels</c> is set, <c>MaxSpeakerLabels</c> must also
+        /// be set. Use <c>Settings</c> to specify a vocabulary or vocabulary filter or both using
+        /// <c>VocabularyName</c>, <c>VocabularyFilterName</c>. <c>VocabularyFilterMethod</c>
+        /// must be specified if <c>VocabularyFilterName</c> is set. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

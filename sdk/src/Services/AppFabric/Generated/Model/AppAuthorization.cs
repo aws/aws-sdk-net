@@ -164,7 +164,7 @@ namespace Amazon.AppFabric.Model
         /// </para>
         ///  
         /// <para>
-        /// This field should always be <code>admin</code>.
+        /// This field should always be <c>admin</c>.
         /// </para>
         /// </summary>
         public Persona Persona
@@ -190,25 +190,25 @@ namespace Amazon.AppFabric.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PendingConnect</code>: The initial state of the app authorization. The app
-        /// authorization is created but not yet connected.
+        ///  <c>PendingConnect</c>: The initial state of the app authorization. The app authorization
+        /// is created but not yet connected.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Connected</code>: The app authorization is connected to the application, and
-        /// is ready to be used.
+        ///  <c>Connected</c>: The app authorization is connected to the application, and is ready
+        /// to be used.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ConnectionValidationFailed</code>: The app authorization received a validation
-        /// exception when trying to connect to the application. If the app authorization is in
-        /// this state, you should verify the configured credentials and try to connect the app
-        /// authorization again.
+        ///  <c>ConnectionValidationFailed</c>: The app authorization received a validation exception
+        /// when trying to connect to the application. If the app authorization is in this state,
+        /// you should verify the configured credentials and try to connect the app authorization
+        /// again.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TokenAutoRotationFailed</code>: AppFabric failed to refresh the access token.
-        /// If the app authorization is in this state, you should try to reconnect the app authorization.
+        ///  <c>TokenAutoRotationFailed</c>: AppFabric failed to refresh the access token. If
+        /// the app authorization is in this state, you should try to reconnect the app authorization.
         /// </para>
         ///  </li> </ul>
         /// </summary>

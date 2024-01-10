@@ -33,7 +33,7 @@ namespace Amazon.Synthetics.Model
     /// the Lambda handler with the location where the canary should start running the script.
     /// If the script is stored in an S3 bucket, the bucket name, key, and version are also
     /// included. If the script was passed into the canary directly, the script code is contained
-    /// in the value of <code>Zipfile</code>.
+    /// in the value of <c>Zipfile</c>.
     /// </summary>
     public partial class CanaryCodeInput
     {
@@ -47,13 +47,12 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property Handler. 
         /// <para>
         /// The entry point to use for the source code when running the canary. For canaries that
-        /// use the <code>syn-python-selenium-1.0</code> runtime or a <code>syn-nodejs.puppeteer</code>
-        /// runtime earlier than <code>syn-nodejs.puppeteer-3.4</code>, the handler must be specified
-        /// as <code> <i>fileName</i>.handler</code>. For <code>syn-python-selenium-1.1</code>,
-        /// <code>syn-nodejs.puppeteer-3.4</code>, and later runtimes, the handler can be specified
-        /// as <code> <i>fileName</i>.<i>functionName</i> </code>, or you can specify a folder
-        /// where canary scripts reside as <code> <i>folder</i>/<i>fileName</i>.<i>functionName</i>
-        /// </code>.
+        /// use the <c>syn-python-selenium-1.0</c> runtime or a <c>syn-nodejs.puppeteer</c> runtime
+        /// earlier than <c>syn-nodejs.puppeteer-3.4</c>, the handler must be specified as <c>
+        /// <i>fileName</i>.handler</c>. For <c>syn-python-selenium-1.1</c>, <c>syn-nodejs.puppeteer-3.4</c>,
+        /// and later runtimes, the handler can be specified as <c> <i>fileName</i>.<i>functionName</i>
+        /// </c>, or you can specify a folder where canary scripts reside as <c> <i>folder</i>/<i>fileName</i>.<i>functionName</i>
+        /// </c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -73,7 +72,7 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property S3Bucket. 
         /// <para>
         /// If your canary script is located in S3, specify the bucket name here. Do not include
-        /// <code>s3://</code> as the start of the bucket name.
+        /// <c>s3://</c> as the start of the bucket name.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

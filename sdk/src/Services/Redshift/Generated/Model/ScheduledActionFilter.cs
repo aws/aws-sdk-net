@@ -58,8 +58,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// List of values. Compare if the value (of type defined by <code>Name</code>) equals
-        /// an item in the list of scheduled actions. 
+        /// List of values. Compare if the value (of type defined by <c>Name</c>) equals an item
+        /// in the list of scheduled actions. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

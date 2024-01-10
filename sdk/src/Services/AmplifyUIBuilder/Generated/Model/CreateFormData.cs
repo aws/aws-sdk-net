@@ -47,8 +47,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property Cta. 
         /// <para>
-        /// The <code>FormCTA</code> object that stores the call to action configuration for the
-        /// form.
+        /// The <c>FormCTA</c> object that stores the call to action configuration for the form.
         /// </para>
         /// </summary>
         public FormCTA Cta

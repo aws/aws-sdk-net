@@ -30,9 +30,8 @@ namespace Amazon.Finspace.Model
 {
     /// <summary>
     /// A configuration to store the Tickerplant logs. It consists of a list of volumes that
-    /// will be mounted to your cluster. For the cluster type <code>Tickerplant</code>, the
-    /// location of the TP volume on the cluster will be available by using the global variable
-    /// <code>.aws.tp_log_path</code>.
+    /// will be mounted to your cluster. For the cluster type <c>Tickerplant</c>, the location
+    /// of the TP volume on the cluster will be available by using the global variable <c>.aws.tp_log_path</c>.
     /// </summary>
     public partial class TickerplantLogConfiguration
     {

@@ -34,9 +34,9 @@ namespace Amazon.Batch.Model
     /// 
     ///  
     /// <para>
-    /// If you're using an unmanaged compute environment, you can use the <code>DescribeComputeEnvironment</code>
-    /// operation to determine the <code>ecsClusterArn</code> that you launch your Amazon
-    /// ECS container instances into.
+    /// If you're using an unmanaged compute environment, you can use the <c>DescribeComputeEnvironment</c>
+    /// operation to determine the <c>ecsClusterArn</c> that you launch your Amazon ECS container
+    /// instances into.
     /// </para>
     /// </summary>
     public partial class DescribeComputeEnvironmentsRequest : AmazonBatchRequest
@@ -66,13 +66,13 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of cluster results returned by <code>DescribeComputeEnvironments</code>
-        /// in paginated output. When this parameter is used, <code>DescribeComputeEnvironments</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// The maximum number of cluster results returned by <c>DescribeComputeEnvironments</c>
+        /// in paginated output. When this parameter is used, <c>DescribeComputeEnvironments</c>
+        /// only returns <c>maxResults</c> results in a single page along with a <c>nextToken</c>
         /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeComputeEnvironments</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter isn't used, then <code>DescribeComputeEnvironments</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable.
+        /// another <c>DescribeComputeEnvironments</c> request with the returned <c>nextToken</c>
+        /// value. This value can be between 1 and 100. If this parameter isn't used, then <c>DescribeComputeEnvironments</c>
+        /// returns up to 100 results and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -90,11 +90,11 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>DescribeComputeEnvironments</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// The <c>nextToken</c> value returned from a previous paginated <c>DescribeComputeEnvironments</c>
+        /// request where <c>maxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>nextToken</c> value. This value is <c>null</c> when there are no more results
+        /// to return.
         /// </para>
         ///  <note> 
         /// <para>

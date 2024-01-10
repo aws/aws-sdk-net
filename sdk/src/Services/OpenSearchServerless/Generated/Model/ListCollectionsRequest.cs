@@ -67,7 +67,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return. Default is 20. You can use <code>nextToken</code>
+        /// The maximum number of results to return. Default is 20. You can use <c>nextToken</c>
         /// to get the next page of results.
         /// </para>
         /// </summary>
@@ -87,9 +87,9 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListCollections</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in subsequent <code>ListCollections</code>
-        /// operations, which returns results in the next page.
+        /// If your initial <c>ListCollections</c> operation returns a <c>nextToken</c>, you can
+        /// include the returned <c>nextToken</c> in subsequent <c>ListCollections</c> operations,
+        /// which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

@@ -59,7 +59,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// </para>
     ///  
     /// <para>
-    /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+    /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
     /// name.
     /// </para>
     ///  
@@ -108,10 +108,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the AdminUpdateUserAttributes API action, Amazon Cognito invokes the function
         /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes
         /// this function, it passes a JSON payload, which the function receives as input. This
-        /// payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes
-        /// request. In your function code in Lambda, you can process the <code>clientMetadata</code>
-        /// value to enhance your workflow for your specific needs.
+        /// payload contains a <c>clientMetadata</c> attribute, which provides the data that you
+        /// assigned to the ClientMetadata parameter in your AdminUpdateUserAttributes request.
+        /// In your function code in Lambda, you can process the <c>clientMetadata</c> value to
+        /// enhance your workflow for your specific needs.
         /// </para>
         ///  
         /// <para>
@@ -159,7 +159,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
         /// name.
         /// </para>
         ///  
@@ -174,11 +174,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         ///  
         /// <para>
         /// To update the value of an attribute that requires verification in the same API request,
-        /// include the <code>email_verified</code> or <code>phone_number_verified</code> attribute,
-        /// with a value of <code>true</code>. If you set the <code>email_verified</code> or <code>phone_number_verified</code>
-        /// value for an <code>email</code> or <code>phone_number</code> attribute that requires
-        /// verification to <code>true</code>, Amazon Cognito doesn’t send a verification message
-        /// to your user.
+        /// include the <c>email_verified</c> or <c>phone_number_verified</c> attribute, with
+        /// a value of <c>true</c>. If you set the <c>email_verified</c> or <c>phone_number_verified</c>
+        /// value for an <c>email</c> or <c>phone_number</c> attribute that requires verification
+        /// to <c>true</c>, Amazon Cognito doesn’t send a verification message to your user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -199,8 +198,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

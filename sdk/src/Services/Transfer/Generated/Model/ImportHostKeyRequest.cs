@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportHostKey operation.
-    /// Adds a host key to the server that's specified by the <code>ServerId</code> parameter.
+    /// Adds a host key to the server that's specified by the <c>ServerId</c> parameter.
     /// </summary>
     public partial class ImportHostKeyRequest : AmazonTransferRequest
     {

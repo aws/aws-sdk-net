@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataZone.Model
 {
     /// <summary>
-    /// The details of the results of the <code>SearchTypes</code> action.
+    /// The details of the results of the <c>SearchTypes</c> action.
     /// </summary>
     public partial class SearchTypesResultItem
     {
@@ -39,7 +39,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property AssetTypeItem. 
         /// <para>
-        /// The asset type included in the results of the <code>SearchTypes</code> action.
+        /// The asset type included in the results of the <c>SearchTypes</c> action.
         /// </para>
         /// </summary>
         public AssetTypeItem AssetTypeItem
@@ -57,7 +57,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property FormTypeItem. 
         /// <para>
-        /// The form type included in the results of the <code>SearchTypes</code> action.
+        /// The form type included in the results of the <c>SearchTypes</c> action.
         /// </para>
         /// </summary>
         public FormTypeData FormTypeItem

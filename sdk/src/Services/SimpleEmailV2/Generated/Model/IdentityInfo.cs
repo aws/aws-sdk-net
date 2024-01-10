@@ -60,8 +60,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property IdentityType. 
         /// <para>
-        /// The email identity type. Note: the <code>MANAGED_DOMAIN</code> type is not supported
-        /// for email identity types.
+        /// The email identity type. Note: the <c>MANAGED_DOMAIN</c> type is not supported for
+        /// email identity types.
         /// </para>
         /// </summary>
         public IdentityType IdentityType
@@ -107,26 +107,25 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – The verification process was initiated, but Amazon SES hasn't
-        /// yet been able to verify the identity.
+        ///  <c>PENDING</c> – The verification process was initiated, but Amazon SES hasn't yet
+        /// been able to verify the identity.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> – The verification process completed successfully.
+        ///  <c>SUCCESS</c> – The verification process completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – The verification process failed.
+        ///  <c>FAILED</c> – The verification process failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEMPORARY_FAILURE</code> – A temporary issue is preventing Amazon SES from
-        /// determining the verification status of the identity.
+        ///  <c>TEMPORARY_FAILURE</c> – A temporary issue is preventing Amazon SES from determining
+        /// the verification status of the identity.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_STARTED</code> – The verification process hasn't been initiated for the
-        /// identity.
+        ///  <c>NOT_STARTED</c> – The verification process hasn't been initiated for the identity.
         /// </para>
         ///  </li> </ul>
         /// </summary>

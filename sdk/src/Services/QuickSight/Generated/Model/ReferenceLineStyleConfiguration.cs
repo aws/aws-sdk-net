@@ -61,15 +61,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SOLID</code> 
+        ///  <c>SOLID</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DASHED</code> 
+        ///  <c>DASHED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DOTTED</code> 
+        ///  <c>DOTTED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -31,7 +31,7 @@ namespace Amazon.AppSync.Model
     /// <summary>
     /// Container for the parameters to the EvaluateCode operation.
     /// Evaluates the given code and returns the response. The code definition requirements
-    /// depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines
+    /// depend on the specified runtime. For <c>APPSYNC_JS</c> runtimes, the code defines
     /// the request and response functions. The request function takes the incoming request
     /// after a GraphQL operation is parsed and converts it into a request configuration for
     /// the selected data source operation. The response function interprets responses from
@@ -47,8 +47,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The code definition to be evaluated. Note that <code>code</code> and <code>runtime</code>
-        /// are both required for this action. The <code>runtime</code> value must be <code>APPSYNC_JS</code>.
+        /// The code definition to be evaluated. Note that <c>code</c> and <c>runtime</c> are
+        /// both required for this action. The <c>runtime</c> value must be <c>APPSYNC_JS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32768)]
@@ -68,7 +68,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property Context. 
         /// <para>
         /// The map that holds all of the contextual information for your resolver invocation.
-        /// A <code>context</code> is required for this action.
+        /// A <c>context</c> is required for this action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=28000)]
@@ -87,8 +87,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Function. 
         /// <para>
-        /// The function within the code to be evaluated. If provided, the valid values are <code>request</code>
-        /// and <code>response</code>.
+        /// The function within the code to be evaluated. If provided, the valid values are <c>request</c>
+        /// and <c>response</c>.
         /// </para>
         /// </summary>
         public string Function
@@ -106,7 +106,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// The runtime to be used when evaluating the code. Currently, only the <code>APPSYNC_JS</code>
+        /// The runtime to be used when evaluating the code. Currently, only the <c>APPSYNC_JS</c>
         /// runtime is supported.
         /// </para>
         /// </summary>

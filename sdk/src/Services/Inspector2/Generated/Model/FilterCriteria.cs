@@ -485,9 +485,9 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property FixAvailable. 
         /// <para>
         /// Details on whether a fix is available through a version update. This value can be
-        /// <code>YES</code>, <code>NO</code>, or <code>PARTIAL</code>. A <code>PARTIAL</code>
-        /// fix means that some, but not all, of the packages identified in the finding have fixes
-        /// available through updated versions.
+        /// <c>YES</c>, <c>NO</c>, or <c>PARTIAL</c>. A <c>PARTIAL</c> fix means that some, but
+        /// not all, of the packages identified in the finding have fixes available through updated
+        /// versions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

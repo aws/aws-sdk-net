@@ -58,8 +58,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A string token indicating that there might be additional import jobs available to
-        /// be listed. Copy this token to a subsequent call to <code>ListImportJobs</code> with
-        /// the same parameters to retrieve the next page of import jobs.
+        /// be listed. Copy this token to a subsequent call to <c>ListImportJobs</c> with the
+        /// same parameters to retrieve the next page of import jobs.
         /// </para>
         /// </summary>
         public string NextToken

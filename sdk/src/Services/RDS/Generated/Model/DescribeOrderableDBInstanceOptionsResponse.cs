@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <code>DescribeOrderableDBInstanceOptions</code>
+    /// Contains the result of a successful invocation of the <c>DescribeOrderableDBInstanceOptions</c>
     /// action.
     /// </summary>
     public partial class DescribeOrderableDBInstanceOptionsResponse : AmazonWebServiceResponse
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous OrderableDBInstanceOptions request.
         /// If this parameter is specified, the response includes only records beyond the marker,
-        /// up to the value specified by <code>MaxRecords</code>.
+        /// up to the value specified by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property OrderableDBInstanceOptions. 
         /// <para>
-        /// An <code>OrderableDBInstanceOption</code> structure containing information about orderable
+        /// An <c>OrderableDBInstanceOption</c> structure containing information about orderable
         /// options for the DB instance.
         /// </para>
         /// </summary>

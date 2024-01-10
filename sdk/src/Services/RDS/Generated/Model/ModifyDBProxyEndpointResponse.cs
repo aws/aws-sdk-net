@@ -38,8 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyEndpoint. 
         /// <para>
-        /// The <code>DBProxyEndpoint</code> object representing the new settings for the DB proxy
-        /// endpoint.
+        /// The <c>DBProxyEndpoint</c> object representing the new settings for the DB proxy endpoint.
         /// </para>
         /// </summary>
         public DBProxyEndpoint DBProxyEndpoint

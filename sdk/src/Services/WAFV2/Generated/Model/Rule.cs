@@ -55,12 +55,12 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// This is used only for rules whose statements do not reference a rule group. Rule statements
-        /// that reference a rule group include <code>RuleGroupReferenceStatement</code> and <code>ManagedRuleGroupStatement</code>.
+        /// that reference a rule group include <c>RuleGroupReferenceStatement</c> and <c>ManagedRuleGroupStatement</c>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// You must specify either this <code>Action</code> setting or the rule <code>OverrideAction</code>
+        /// You must specify either this <c>Action</c> setting or the rule <c>OverrideAction</c>
         /// setting, but not both:
         /// </para>
         ///  <ul> <li> 
@@ -90,9 +90,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CaptchaConfig. 
         /// <para>
-        /// Specifies how WAF should handle <code>CAPTCHA</code> evaluations. If you don't specify
-        /// this, WAF uses the <code>CAPTCHA</code> configuration that's defined for the web ACL.
-        /// 
+        /// Specifies how WAF should handle <c>CAPTCHA</c> evaluations. If you don't specify this,
+        /// WAF uses the <c>CAPTCHA</c> configuration that's defined for the web ACL. 
         /// </para>
         /// </summary>
         public CaptchaConfig CaptchaConfig
@@ -110,7 +109,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ChallengeConfig. 
         /// <para>
-        /// Specifies how WAF should handle <code>Challenge</code> evaluations. If you don't specify
+        /// Specifies how WAF should handle <c>Challenge</c> evaluations. If you don't specify
         /// this, WAF uses the challenge configuration that's defined for the web ACL. 
         /// </para>
         /// </summary>
@@ -133,8 +132,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you change the name of a <code>Rule</code> after you create it and you want the
-        /// rule's metric name to reflect the change, update the metric name in the rule's <code>VisibilityConfig</code>
+        /// If you change the name of a <c>Rule</c> after you create it and you want the rule's
+        /// metric name to reflect the change, update the metric name in the rule's <c>VisibilityConfig</c>
         /// settings. WAF doesn't automatically update the metric name when you update the rule
         /// name. 
         /// </para>
@@ -161,15 +160,15 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only use this for rule statements that reference a rule group, like <code>RuleGroupReferenceStatement</code>
-        /// and <code>ManagedRuleGroupStatement</code>. 
+        /// You can only use this for rule statements that reference a rule group, like <c>RuleGroupReferenceStatement</c>
+        /// and <c>ManagedRuleGroupStatement</c>. 
         /// </para>
         ///  <note> 
         /// <para>
         /// This option is usually set to none. It does not affect how the rules in the rule group
         /// are evaluated. If you want the rules in the rule group to only count matches, do not
-        /// use this and instead use the rule action override option, with <code>Count</code>
-        /// action, in your rule group reference statement settings. 
+        /// use this and instead use the rule action override option, with <c>Count</c> action,
+        /// in your rule group reference statement settings. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -188,10 +187,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// If you define more than one <code>Rule</code> in a <code>WebACL</code>, WAF evaluates
-        /// each request against the <code>Rules</code> in order based on the value of <code>Priority</code>.
-        /// WAF processes rules with lower priority first. The priorities don't need to be consecutive,
-        /// but they must all be different.
+        /// If you define more than one <c>Rule</c> in a <c>WebACL</c>, WAF evaluates each request
+        /// against the <c>Rules</c> in order based on the value of <c>Priority</c>. WAF processes
+        /// rules with lower priority first. The priorities don't need to be consecutive, but
+        /// they must all be different.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -218,7 +217,7 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// Rules that run after this rule in the web ACL can match against these labels using
-        /// a <code>LabelMatchStatement</code>.
+        /// a <c>LabelMatchStatement</c>.
         /// </para>
         ///  
         /// <para>
@@ -239,14 +238,12 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Don't use the following reserved words in your label specification: <code>aws</code>,
-        /// <code>waf</code>, <code>managed</code>, <code>rulegroup</code>, <code>webacl</code>,
-        /// <code>regexpatternset</code>, or <code>ipset</code>.
+        /// Don't use the following reserved words in your label specification: <c>aws</c>, <c>waf</c>,
+        /// <c>managed</c>, <c>rulegroup</c>, <c>webacl</c>, <c>regexpatternset</c>, or <c>ipset</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For example, <code>myLabelName</code> or <code>nameSpace1:nameSpace2:myLabelName</code>.
-        /// 
+        /// For example, <c>myLabelName</c> or <c>nameSpace1:nameSpace2:myLabelName</c>. 
         /// </para>
         /// </summary>
         public List<Label> RuleLabels
@@ -288,9 +285,9 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you change the name of a <code>Rule</code> after you create it and you want the
-        /// rule's metric name to reflect the change, update the metric name as well. WAF doesn't
-        /// automatically update the metric name. 
+        /// If you change the name of a <c>Rule</c> after you create it and you want the rule's
+        /// metric name to reflect the change, update the metric name as well. WAF doesn't automatically
+        /// update the metric name. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

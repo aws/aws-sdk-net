@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The optional configuration of totals cells in a <code>PivotTableVisual</code>.
+    /// The optional configuration of totals cells in a <c>PivotTableVisual</c>.
     /// </summary>
     public partial class PivotTotalOptions
     {

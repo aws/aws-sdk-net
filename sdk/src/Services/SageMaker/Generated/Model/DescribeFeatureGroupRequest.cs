@@ -30,9 +30,9 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFeatureGroup operation.
-    /// Use this operation to describe a <code>FeatureGroup</code>. The response includes
-    /// information on the creation time, <code>FeatureGroup</code> name, the unique identifier
-    /// for each <code>FeatureGroup</code>, and more.
+    /// Use this operation to describe a <c>FeatureGroup</c>. The response includes information
+    /// on the creation time, <c>FeatureGroup</c> name, the unique identifier for each <c>FeatureGroup</c>,
+    /// and more.
     /// </summary>
     public partial class DescribeFeatureGroupRequest : AmazonSageMakerRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name or Amazon Resource Name (ARN) of the <code>FeatureGroup</code> you want described.
+        /// The name or Amazon Resource Name (ARN) of the <c>FeatureGroup</c> you want described.
         /// 
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token to resume pagination of the list of <code>Features</code> (<code>FeatureDefinitions</code>).
-        /// 2,500 <code>Features</code> are returned by default.
+        /// A token to resume pagination of the list of <c>Features</c> (<c>FeatureDefinitions</c>).
+        /// 2,500 <c>Features</c> are returned by default.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

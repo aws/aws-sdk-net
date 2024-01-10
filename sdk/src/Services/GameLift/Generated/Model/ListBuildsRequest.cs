@@ -32,8 +32,8 @@ namespace Amazon.GameLift.Model
     /// Container for the parameters to the ListBuilds operation.
     /// Retrieves build resources for all builds associated with the Amazon Web Services account
     /// in use. You can limit results to builds that are in a specific status by using the
-    /// <code>Status</code> parameter. Use the pagination parameters to retrieve results in
-    /// a set of sequential pages. 
+    /// <c>Status</c> parameter. Use the pagination parameters to retrieve results in a set
+    /// of sequential pages. 
     /// 
     ///  <note> 
     /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages.
         /// </para>
         /// </summary>

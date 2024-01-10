@@ -140,8 +140,8 @@ namespace Amazon.DAX.Model
         /// Gets and sets the property PreferredMaintenanceWindow. 
         /// <para>
         /// A range of time when maintenance of DAX cluster software will be performed. For example:
-        /// <code>sun:01:00-sun:09:00</code>. Cluster maintenance normally takes less than 30
-        /// minutes, and is performed automatically within the maintenance window.
+        /// <c>sun:01:00-sun:09:00</c>. Cluster maintenance normally takes less than 30 minutes,
+        /// and is performed automatically within the maintenance window.
         /// </para>
         /// </summary>
         public string PreferredMaintenanceWindow

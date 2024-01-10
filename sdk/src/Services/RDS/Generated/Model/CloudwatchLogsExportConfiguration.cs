@@ -34,9 +34,9 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
-    /// The <code>EnableLogTypes</code> and <code>DisableLogTypes</code> arrays determine
-    /// which logs will be exported (or not exported) to CloudWatch Logs. The values within
-    /// these arrays depend on the DB engine being used.
+    /// The <c>EnableLogTypes</c> and <c>DisableLogTypes</c> arrays determine which logs will
+    /// be exported (or not exported) to CloudWatch Logs. The values within these arrays depend
+    /// on the DB engine being used.
     /// </para>
     ///  
     /// <para>

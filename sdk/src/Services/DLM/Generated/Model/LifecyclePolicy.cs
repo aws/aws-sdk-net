@@ -89,11 +89,11 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VOLUME</code> - Default policy for EBS snapshots
+        ///  <c>VOLUME</c> - Default policy for EBS snapshots
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+        ///  <c>INSTANCE</c> - Default policy for EBS-backed AMIs
         /// </para>
         ///  </li> </ul>
         /// </summary>

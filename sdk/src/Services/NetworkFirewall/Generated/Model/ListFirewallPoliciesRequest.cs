@@ -43,7 +43,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of objects that you want Network Firewall to return for this request.
-        /// If more objects are available, in the response, Network Firewall provides a <code>NextToken</code>
+        /// If more objects are available, in the response, Network Firewall provides a <c>NextToken</c>
         /// value that you can use in a subsequent call to get the next batch of objects.
         /// </para>
         /// </summary>
@@ -63,10 +63,10 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When you request a list of objects with a <code>MaxResults</code> setting, if the
-        /// number of objects that are still available for retrieval exceeds the maximum you requested,
-        /// Network Firewall returns a <code>NextToken</code> value in the response. To retrieve
-        /// the next batch of objects, use the token returned from the prior request in your next
+        /// When you request a list of objects with a <c>MaxResults</c> setting, if the number
+        /// of objects that are still available for retrieval exceeds the maximum you requested,
+        /// Network Firewall returns a <c>NextToken</c> value in the response. To retrieve the
+        /// next batch of objects, use the token returned from the prior request in your next
         /// request.
         /// </para>
         /// </summary>

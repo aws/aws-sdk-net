@@ -45,13 +45,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>COMPLAINT</code> – Amazon SES adds an email address to the suppression list
-        /// for your account when a message sent to that address results in a complaint.
+        ///  <c>COMPLAINT</c> – Amazon SES adds an email address to the suppression list for your
+        /// account when a message sent to that address results in a complaint.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BOUNCE</code> – Amazon SES adds an email address to the suppression list for
-        /// your account when a message sent to that address results in a hard bounce.
+        ///  <c>BOUNCE</c> – Amazon SES adds an email address to the suppression list for your
+        /// account when a message sent to that address results in a hard bounce.
         /// </para>
         ///  </li> </ul>
         /// </summary>

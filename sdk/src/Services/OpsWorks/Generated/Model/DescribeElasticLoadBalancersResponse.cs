@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeElasticLoadBalancers</code> request.
+    /// Contains the response to a <c>DescribeElasticLoadBalancers</c> request.
     /// </summary>
     public partial class DescribeElasticLoadBalancersResponse : AmazonWebServiceResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ElasticLoadBalancers. 
         /// <para>
-        /// A list of <code>ElasticLoadBalancer</code> objects that describe the specified Elastic
-        /// Load Balancing instances.
+        /// A list of <c>ElasticLoadBalancer</c> objects that describe the specified Elastic Load
+        /// Balancing instances.
         /// </para>
         /// </summary>
         public List<ElasticLoadBalancer> ElasticLoadBalancers

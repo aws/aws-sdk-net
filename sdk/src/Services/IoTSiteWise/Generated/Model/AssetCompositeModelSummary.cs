@@ -67,7 +67,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  
         /// <para>
         /// If the composite model is a derived composite model, or one nested inside a component
-        /// model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code>
+        /// model, you can only set the external ID using <c>UpdateAssetModelCompositeModel</c>
         /// and specifying the derived ID of the model or property from the created model it's
         /// a part of.
         /// </para>

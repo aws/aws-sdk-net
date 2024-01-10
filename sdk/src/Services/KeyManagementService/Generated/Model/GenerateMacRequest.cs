@@ -63,7 +63,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
     /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-    /// <code>KeyId</code> parameter. 
+    /// <c>KeyId</c> parameter. 
     /// </para>
     ///  
     /// <para>
@@ -92,8 +92,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
-        /// 
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter. 
         /// </para>
         ///  
         /// <para>
@@ -149,7 +148,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// To identify an HMAC KMS key, use the <a>DescribeKey</a> operation and see the <code>KeySpec</code>
+        /// To identify an HMAC KMS key, use the <a>DescribeKey</a> operation and see the <c>KeySpec</c>
         /// field in the response.
         /// </para>
         /// </summary>
@@ -175,7 +174,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         ///  The algorithm must be compatible with the HMAC KMS key that you specify. To find
         /// the MAC algorithms that your HMAC KMS key supports, use the <a>DescribeKey</a> operation
-        /// and see the <code>MacAlgorithms</code> field in the <code>DescribeKey</code> response.
+        /// and see the <c>MacAlgorithms</c> field in the <c>DescribeKey</c> response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -198,9 +197,9 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>GenerateMac</code> and <a>VerifyMac</a> do not provide special handling for
-        /// message digests. If you generate an HMAC for a hash digest of a message, you must
-        /// verify the HMAC of the same hash digest.
+        ///  <c>GenerateMac</c> and <a>VerifyMac</a> do not provide special handling for message
+        /// digests. If you generate an HMAC for a hash digest of a message, you must verify the
+        /// HMAC of the same hash digest.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]

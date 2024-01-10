@@ -144,8 +144,8 @@ namespace Amazon.IoTThingsGraph
         /// <para>
         /// This action validates the system instance, prepares the deployment-related resources.
         /// For Greengrass deployments, it updates the Greengrass group that is specified by the
-        /// <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified
-        /// by the <code>s3BucketName</code> parameter. You need to call <code>DeploySystemInstance</code>
+        /// <c>greengrassGroupName</c> parameter. It also adds a file to the S3 bucket specified
+        /// by the <c>s3BucketName</c> parameter. You need to call <c>DeploySystemInstance</c>
         /// after running this action.
         /// </para>
         ///  
@@ -157,9 +157,9 @@ namespace Amazon.IoTThingsGraph
         /// </para>
         ///  
         /// <para>
-        /// For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value.
-        /// This is an IAM role that has permissions to access AWS services, such as AWS Lambda
-        /// and AWS IoT, that the flow uses when it executes.
+        /// For cloud deployments, this action requires a <c>flowActionsRoleArn</c> value. This
+        /// is an IAM role that has permissions to access AWS services, such as AWS Lambda and
+        /// AWS IoT, that the flow uses when it executes.
         /// </para>
         ///  
         /// <para>
@@ -365,7 +365,7 @@ namespace Amazon.IoTThingsGraph
         /// 
         ///  
         /// <para>
-        /// Deploys the system instance to the target specified in <code>CreateSystemInstance</code>.
+        /// Deploys the system instance to the target specified in <c>CreateSystemInstance</c>.
         /// 
         /// </para>
         ///  
@@ -624,7 +624,7 @@ namespace Amazon.IoTThingsGraph
 
 
         /// <summary>
-        /// Gets the latest version of the <code>DefinitionDocument</code> and <code>FlowTemplateSummary</code>
+        /// Gets the latest version of the <c>DefinitionDocument</c> and <c>FlowTemplateSummary</c>
         /// for the specified workflow.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetFlowTemplate service method.</param>
@@ -1057,9 +1057,9 @@ namespace Amazon.IoTThingsGraph
         ///  
         /// <para>
         /// For example, if two different devices, camera1 and camera2, implement the camera device
-        /// model, the user can associate thing1 to camera1 and thing2 to camera2. <code>SearchThings(camera2)</code>
-        /// will return only thing2, but <code>SearchThings(camera)</code> will return both thing1
-        /// and thing2.
+        /// model, the user can associate thing1 to camera1 and thing2 to camera2. <c>SearchThings(camera2)</c>
+        /// will return only thing2, but <c>SearchThings(camera)</c> will return both thing1 and
+        /// thing2.
         /// </para>
         ///  
         /// <para>
@@ -1259,20 +1259,19 @@ namespace Amazon.IoTThingsGraph
 
         /// <summary>
         /// Asynchronously uploads one or more entity definitions to the user's namespace. The
-        /// <code>document</code> parameter is required if <code>syncWithPublicNamespace</code>
-        /// and <code>deleteExistingEntites</code> are false. If the <code>syncWithPublicNamespace</code>
-        /// parameter is set to <code>true</code>, the user's namespace will synchronize with
-        /// the latest version of the public namespace. If <code>deprecateExistingEntities</code>
-        /// is set to true, all entities in the latest version will be deleted before the new
-        /// <code>DefinitionDocument</code> is uploaded.
+        /// <c>document</c> parameter is required if <c>syncWithPublicNamespace</c> and <c>deleteExistingEntites</c>
+        /// are false. If the <c>syncWithPublicNamespace</c> parameter is set to <c>true</c>,
+        /// the user's namespace will synchronize with the latest version of the public namespace.
+        /// If <c>deprecateExistingEntities</c> is set to true, all entities in the latest version
+        /// will be deleted before the new <c>DefinitionDocument</c> is uploaded.
         /// 
         ///  
         /// <para>
         /// When a user uploads entity definitions for the first time, the service creates a new
         /// namespace for the user. The new namespace tracks the public namespace. Currently users
         /// can have only one namespace. The namespace version increments whenever a user uploads
-        /// entity definitions that are backwards-incompatible and whenever a user sets the <code>syncWithPublicNamespace</code>
-        /// parameter or the <code>deprecateExistingEntities</code> parameter to <code>true</code>.
+        /// entity definitions that are backwards-incompatible and whenever a user sets the <c>syncWithPublicNamespace</c>
+        /// parameter or the <c>deprecateExistingEntities</c> parameter to <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -1282,9 +1281,9 @@ namespace Amazon.IoTThingsGraph
         /// </para>
         ///  
         /// <para>
-        /// Valid entities are <code>Device</code>, <code>DeviceModel</code>, <code>Service</code>,
-        /// <code>Capability</code>, <code>State</code>, <code>Action</code>, <code>Event</code>,
-        /// <code>Property</code>, <code>Mapping</code>, <code>Enum</code>. 
+        /// Valid entities are <c>Device</c>, <c>DeviceModel</c>, <c>Service</c>, <c>Capability</c>,
+        /// <c>State</c>, <c>Action</c>, <c>Event</c>, <c>Property</c>, <c>Mapping</c>, <c>Enum</c>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UploadEntityDefinitions service method.</param>

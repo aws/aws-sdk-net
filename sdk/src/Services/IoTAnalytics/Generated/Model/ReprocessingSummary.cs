@@ -58,7 +58,7 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
+        /// The <c>reprocessingId</c> returned by <c>StartPipelineReprocessing</c>.
         /// </para>
         /// </summary>
         public string Id

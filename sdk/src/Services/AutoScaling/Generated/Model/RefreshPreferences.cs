@@ -68,7 +68,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// (Optional) Indicates whether to roll back the Auto Scaling group to its previous configuration
         /// if the instance refresh fails or a CloudWatch alarm threshold is met. The default
-        /// is <code>false</code>.
+        /// is <c>false</c>.
         /// </para>
         ///  
         /// <para>
@@ -81,11 +81,11 @@ namespace Amazon.AutoScaling.Model
         ///  </li> <li> 
         /// <para>
         /// The Auto Scaling group has a launch template that uses an Amazon Web Services Systems
-        /// Manager parameter instead of an AMI ID for the <code>ImageId</code> property.
+        /// Manager parameter instead of an AMI ID for the <c>ImageId</c> property.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code>
+        /// The Auto Scaling group uses the launch template's <c>$Latest</c> or <c>$Default</c>
         /// version.
         /// </para>
         ///  </li> </ul> 
@@ -111,9 +111,9 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// (Optional) The amount of time, in seconds, to wait after a checkpoint before continuing.
         /// This property is optional, but if you specify a value for it, you must also specify
-        /// a value for <code>CheckpointPercentages</code>. If you specify a value for <code>CheckpointPercentages</code>
-        /// and not for <code>CheckpointDelay</code>, the <code>CheckpointDelay</code> defaults
-        /// to <code>3600</code> (1 hour). 
+        /// a value for <c>CheckpointPercentages</c>. If you specify a value for <c>CheckpointPercentages</c>
+        /// and not for <c>CheckpointDelay</c>, the <c>CheckpointDelay</c> defaults to <c>3600</c>
+        /// (1 hour). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=172800)]
@@ -134,7 +134,7 @@ namespace Amazon.AutoScaling.Model
         /// <para>
         /// (Optional) Threshold values for each checkpoint in ascending order. Each number must
         /// be unique. To replace all instances in the Auto Scaling group, the last number in
-        /// the array must be <code>100</code>.
+        /// the array must be <c>100</c>.
         /// </para>
         ///  
         /// <para>
@@ -158,21 +158,20 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property InstanceWarmup. 
         /// <para>
         /// A time period, in seconds, during which an instance refresh waits before moving on
-        /// to replacing the next instance after a new instance enters the <code>InService</code>
-        /// state.
+        /// to replacing the next instance after a new instance enters the <c>InService</c> state.
         /// </para>
         ///  
         /// <para>
-        /// This property is not required for normal usage. Instead, use the <code>DefaultInstanceWarmup</code>
-        /// property of the Auto Scaling group. The <code>InstanceWarmup</code> and <code>DefaultInstanceWarmup</code>
+        /// This property is not required for normal usage. Instead, use the <c>DefaultInstanceWarmup</c>
+        /// property of the Auto Scaling group. The <c>InstanceWarmup</c> and <c>DefaultInstanceWarmup</c>
         /// properties work the same way. Only specify this property if you must override the
-        /// <code>DefaultInstanceWarmup</code> property. 
+        /// <c>DefaultInstanceWarmup</c> property. 
         /// </para>
         ///  
         /// <para>
         ///  If you do not specify this property, the instance warmup by default is the value
-        /// of the <code>DefaultInstanceWarmup</code> property, if defined (which is recommended
-        /// in all cases), or the <code>HealthCheckGracePeriod</code> property otherwise.
+        /// of the <c>DefaultInstanceWarmup</c> property, if defined (which is recommended in
+        /// all cases), or the <c>HealthCheckGracePeriod</c> property otherwise.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -198,7 +197,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>MaxHealthyPercentage</code>, you must also specify <code>MinHealthyPercentage</code>,
+        /// If you specify <c>MaxHealthyPercentage</c>, you must also specify <c>MinHealthyPercentage</c>,
         /// and the difference between them cannot be greater than 100. A larger range increases
         /// the number of instances that can be replaced at the same time.
         /// </para>
@@ -289,11 +288,11 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property SkipMatching. 
         /// <para>
-        /// (Optional) Indicates whether skip matching is enabled. If enabled (<code>true</code>),
-        /// then Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration.
+        /// (Optional) Indicates whether skip matching is enabled. If enabled (<c>true</c>), then
+        /// Amazon EC2 Auto Scaling skips replacing instances that match the desired configuration.
         /// If no desired configuration is specified, then it skips replacing instances that have
         /// the same launch template and instance types that the Auto Scaling group was using
-        /// before the start of the instance refresh. The default is <code>false</code>.
+        /// before the start of the instance refresh. The default is <c>false</c>.
         /// </para>
         ///  
         /// <para>
@@ -317,7 +316,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property StandbyInstances. 
         /// <para>
-        /// Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <code>Standby</code>
+        /// Choose the behavior that you want Amazon EC2 Auto Scaling to use if instances in <c>Standby</c>
         /// state are found.
         /// </para>
         ///  
@@ -326,12 +325,12 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <dl> <dt>Terminate</dt> <dd> 
         /// <para>
-        /// Amazon EC2 Auto Scaling terminates instances that are in <code>Standby</code>.
+        /// Amazon EC2 Auto Scaling terminates instances that are in <c>Standby</c>.
         /// </para>
         ///  </dd> <dt>Ignore</dt> <dd> 
         /// <para>
-        /// Amazon EC2 Auto Scaling ignores instances that are in <code>Standby</code> and continues
-        /// to replace instances that are in the <code>InService</code> state.
+        /// Amazon EC2 Auto Scaling ignores instances that are in <c>Standby</c> and continues
+        /// to replace instances that are in the <c>InService</c> state.
         /// </para>
         ///  </dd> <dt>Wait (default)</dt> <dd> 
         /// <para>

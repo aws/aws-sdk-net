@@ -42,7 +42,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Only returns packages that match the <code>DescribePackagesFilterList</code> values.
+        /// Only returns packages that match the <c>DescribePackagesFilterList</c> values.
         /// </para>
         /// </summary>
         public List<DescribePackagesFilter> Filters

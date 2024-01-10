@@ -42,7 +42,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ConnectionString. 
         /// <para>
-        /// A connection string in the form of a fully qualified domain name (FQDN), such as <code>www.example.com</code>.
+        /// A connection string in the form of a fully qualified domain name (FQDN), such as <c>www.example.com</c>.
         /// </para>
         ///  <important> 
         /// <para>

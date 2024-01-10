@@ -37,8 +37,7 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:ListFaces</code>
-    /// action.
+    /// This operation requires permissions to perform the <c>rekognition:ListFaces</c> action.
     /// </para>
     /// </summary>
     public partial class ListFacesRequest : AmazonRekognitionRequest

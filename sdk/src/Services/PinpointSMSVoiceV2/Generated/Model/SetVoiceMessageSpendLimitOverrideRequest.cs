@@ -31,8 +31,8 @@ namespace Amazon.PinpointSMSVoiceV2.Model
     /// <summary>
     /// Container for the parameters to the SetVoiceMessageSpendLimitOverride operation.
     /// Sets an account level monthly spend limit override for sending voice messages. The
-    /// requested spend limit must be less than or equal to the <code>MaxLimit</code>, which
-    /// is set by Amazon Web Services.
+    /// requested spend limit must be less than or equal to the <c>MaxLimit</c>, which is
+    /// set by Amazon Web Services.
     /// </summary>
     public partial class SetVoiceMessageSpendLimitOverrideRequest : AmazonPinpointSMSVoiceV2Request
     {

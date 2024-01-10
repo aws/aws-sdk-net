@@ -54,17 +54,17 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// Content of the message or event. This is required when <code>Type</code> is <code>MESSAGE</code>
-        /// and for certain <code>ContentTypes</code> when <code>Type</code> is <code>EVENT</code>.
+        /// Content of the message or event. This is required when <c>Type</c> is <c>MESSAGE</c>
+        /// and for certain <c>ContentTypes</c> when <c>Type</c> is <c>EVENT</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For allowed message content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
+        /// For allowed message content, see the <c>Content</c> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
         /// topic in the <i>Amazon Connect Participant Service API Reference</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For allowed event content, see the <code>Content</code> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
+        /// For allowed event content, see the <c>Content</c> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
         /// topic in the <i>Amazon Connect Participant Service API Reference</i>. 
         /// </para>
         ///  </li> </ul>
@@ -85,19 +85,18 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// Type of content. This is required when <code>Type</code> is <code>MESSAGE</code> or
-        /// <code>EVENT</code>. 
+        /// Type of content. This is required when <c>Type</c> is <c>MESSAGE</c> or <c>EVENT</c>.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For allowed message content types, see the <code>ContentType</code> parameter in the
-        /// <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
+        /// For allowed message content types, see the <c>ContentType</c> parameter in the <a
+        /// href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendMessage.html">SendMessage</a>
         /// topic in the <i>Amazon Connect Participant Service API Reference</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For allowed event content types, see the <code>ContentType</code> parameter in the
-        /// <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
+        /// For allowed event content types, see the <c>ContentType</c> parameter in the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_SendEvent.html">SendEvent</a>
         /// topic in the <i>Amazon Connect Participant Service API Reference</i>. 
         /// </para>
         ///  </li> </ul>

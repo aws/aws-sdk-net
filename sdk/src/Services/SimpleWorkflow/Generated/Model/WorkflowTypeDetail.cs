@@ -68,13 +68,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REGISTERED</code> – The type is registered and available. Workers supporting
-        /// this type should be running.
+        ///  <c>REGISTERED</c> – The type is registered and available. Workers supporting this
+        /// type should be running.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEPRECATED</code> – The type was deprecated using <a>DeprecateWorkflowType</a>,
-        /// but is still in use. You should keep workers supporting this type running. You cannot
+        ///  <c>DEPRECATED</c> – The type was deprecated using <a>DeprecateWorkflowType</a>, but
+        /// is still in use. You should keep workers supporting this type running. You cannot
         /// create new workflow executions of this type.
         /// </para>
         ///  </li> </ul>

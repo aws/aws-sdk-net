@@ -31,33 +31,32 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the PutInsightSelectors operation.
     /// Lets you enable Insights event logging by specifying the Insights selectors that you
-    /// want to enable on an existing trail or event data store. You also use <code>PutInsightSelectors</code>
+    /// want to enable on an existing trail or event data store. You also use <c>PutInsightSelectors</c>
     /// to turn off Insights event logging, by passing an empty list of Insights types. The
-    /// valid Insights event types are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.
+    /// valid Insights event types are <c>ApiErrorRateInsight</c> and <c>ApiCallRateInsight</c>.
     /// 
     ///  
     /// <para>
     /// To enable Insights on an event data store, you must specify the ARNs (or ID suffix
-    /// of the ARNs) for the source event data store (<code>EventDataStore</code>) and the
-    /// destination event data store (<code>InsightsDestination</code>). The source event
-    /// data store logs management events and enables Insights. The destination event data
-    /// store logs Insights events based upon the management event activity of the source
-    /// event data store. The source and destination event data stores must belong to the
-    /// same Amazon Web Services account.
+    /// of the ARNs) for the source event data store (<c>EventDataStore</c>) and the destination
+    /// event data store (<c>InsightsDestination</c>). The source event data store logs management
+    /// events and enables Insights. The destination event data store logs Insights events
+    /// based upon the management event activity of the source event data store. The source
+    /// and destination event data stores must belong to the same Amazon Web Services account.
     /// </para>
     ///  
     /// <para>
-    /// To log Insights events for a trail, you must specify the name (<code>TrailName</code>)
-    /// of the CloudTrail trail for which you want to change or add Insights selectors.
+    /// To log Insights events for a trail, you must specify the name (<c>TrailName</c>) of
+    /// the CloudTrail trail for which you want to change or add Insights selectors.
     /// </para>
     ///  
     /// <para>
     /// To log CloudTrail Insights events on API call volume, the trail or event data store
-    /// must log <code>write</code> management events. To log CloudTrail Insights events on
-    /// API error rate, the trail or event data store must log <code>read</code> or <code>write</code>
-    /// management events. You can call <code>GetEventSelectors</code> on a trail to check
-    /// whether the trail logs management events. You can call <code>GetEventDataStore</code>
-    /// on an event data store to check whether the event data store logs management events.
+    /// must log <c>write</c> management events. To log CloudTrail Insights events on API
+    /// error rate, the trail or event data store must log <c>read</c> or <c>write</c> management
+    /// events. You can call <c>GetEventSelectors</c> on a trail to check whether the trail
+    /// logs management events. You can call <c>GetEventDataStore</c> on an event data store
+    /// to check whether the event data store logs management events.
     /// </para>
     ///  
     /// <para>
@@ -77,12 +76,11 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// The ARN (or ID suffix of the ARN) of the source event data store for which you want
         /// to change or add Insights selectors. To enable Insights on an event data store, you
-        /// must provide both the <code>EventDataStore</code> and <code>InsightsDestination</code>
-        /// parameters.
+        /// must provide both the <c>EventDataStore</c> and <c>InsightsDestination</c> parameters.
         /// </para>
         ///  
         /// <para>
-        /// You cannot use this parameter with the <code>TrailName</code> parameter.
+        /// You cannot use this parameter with the <c>TrailName</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=256)]
@@ -102,12 +100,12 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property InsightsDestination. 
         /// <para>
         ///  The ARN (or ID suffix of the ARN) of the destination event data store that logs Insights
-        /// events. To enable Insights on an event data store, you must provide both the <code>EventDataStore</code>
-        /// and <code>InsightsDestination</code> parameters. 
+        /// events. To enable Insights on an event data store, you must provide both the <c>EventDataStore</c>
+        /// and <c>InsightsDestination</c> parameters. 
         /// </para>
         ///  
         /// <para>
-        /// You cannot use this parameter with the <code>TrailName</code> parameter.
+        /// You cannot use this parameter with the <c>TrailName</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=256)]
@@ -127,18 +125,18 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property InsightSelectors. 
         /// <para>
         /// A JSON string that contains the Insights types you want to log on a trail or event
-        /// data store. <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are
-        /// valid Insight types.
+        /// data store. <c>ApiCallRateInsight</c> and <c>ApiErrorRateInsight</c> are valid Insight
+        /// types.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ApiCallRateInsight</code> Insights type analyzes write-only management API
-        /// calls that are aggregated per minute against a baseline API call volume.
+        /// The <c>ApiCallRateInsight</c> Insights type analyzes write-only management API calls
+        /// that are aggregated per minute against a baseline API call volume.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ApiErrorRateInsight</code> Insights type analyzes management API calls that
-        /// result in error codes. The error is shown if the API call is unsuccessful.
+        /// The <c>ApiErrorRateInsight</c> Insights type analyzes management API calls that result
+        /// in error codes. The error is shown if the API call is unsuccessful.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -161,7 +159,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot use this parameter with the <code>EventDataStore</code> and <code>InsightsDestination</code>
+        /// You cannot use this parameter with the <c>EventDataStore</c> and <c>InsightsDestination</c>
         /// parameters.
         /// </para>
         /// </summary>

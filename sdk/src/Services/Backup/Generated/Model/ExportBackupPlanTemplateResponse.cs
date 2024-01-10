@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This is a signed JSON document that cannot be modified before being passed to <code>GetBackupPlanFromJSON.</code>
+        /// This is a signed JSON document that cannot be modified before being passed to <c>GetBackupPlanFromJSON.</c>
         /// 
         /// </para>
         ///  </note>

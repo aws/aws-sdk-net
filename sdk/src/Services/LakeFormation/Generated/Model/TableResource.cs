@@ -105,8 +105,8 @@ namespace Amazon.LakeFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// At least one of <code>TableResource$Name</code> or <code>TableResource$TableWildcard</code>
-        /// is required.
+        /// At least one of <c>TableResource$Name</c> or <c>TableResource$TableWildcard</c> is
+        /// required.
         /// </para>
         /// </summary>
         public TableWildcard TableWildcard

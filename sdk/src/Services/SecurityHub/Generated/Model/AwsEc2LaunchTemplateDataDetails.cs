@@ -162,8 +162,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DisableApiTermination. 
         /// <para>
-        ///  If you set this parameter to <code>true</code>, you can't terminate the instance
-        /// using the Amazon EC2 console, CLI, or API. If set to <code>true</code>, you can. 
+        ///  If you set this parameter to <c>true</c>, you can't terminate the instance using
+        /// the Amazon EC2 console, CLI, or API. If set to <c>true</c>, you can. 
         /// </para>
         /// </summary>
         public bool DisableApiTermination
@@ -346,8 +346,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property InstanceRequirements. 
         /// <para>
         ///  The attributes for the instance types. When you specify instance attributes, Amazon
-        /// EC2 will identify instance types with these attributes. If you specify <code>InstanceRequirements</code>,
-        /// you can't specify <code>InstanceType</code>. 
+        /// EC2 will identify instance types with these attributes. If you specify <c>InstanceRequirements</c>,
+        /// you can't specify <c>InstanceType</c>. 
         /// </para>
         /// </summary>
         public AwsEc2LaunchTemplateDataInstanceRequirementsDetails InstanceRequirements
@@ -366,8 +366,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property InstanceType. 
         /// <para>
         ///  The instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
-        /// types</a> in the <i>Amazon EC2 User Guide</i>. If you specify <code>InstanceType</code>,
-        /// you can't specify <code>InstanceRequirements</code>. 
+        /// types</a> in the <i>Amazon EC2 User Guide</i>. If you specify <c>InstanceType</c>,
+        /// you can't specify <c>InstanceRequirements</c>. 
         /// </para>
         /// </summary>
         public string InstanceType

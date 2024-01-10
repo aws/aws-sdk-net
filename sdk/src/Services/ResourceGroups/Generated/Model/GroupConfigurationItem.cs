@@ -62,8 +62,8 @@ namespace Amazon.ResourceGroups.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Specifies the type of group configuration item. Each item must have a unique value
-        /// for <code>type</code>. For the list of types that you can specify for a configuration
-        /// item, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
+        /// for <c>type</c>. For the list of types that you can specify for a configuration item,
+        /// see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html#about-slg-types">Supported
         /// resource types and parameters</a>.
         /// </para>
         /// </summary>

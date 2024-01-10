@@ -30,9 +30,9 @@ namespace Amazon.IoT.Model
 {
     /// <summary>
     /// Specifies the amount of time each device has to finish its execution of the job. A
-    /// timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-    /// If the job execution status is not set to another terminal state before the timer
-    /// expires, it will be automatically set to <code>TIMED_OUT</code>.
+    /// timer is started when the job execution status is set to <c>IN_PROGRESS</c>. If the
+    /// job execution status is not set to another terminal state before the timer expires,
+    /// it will be automatically set to <c>TIMED_OUT</c>.
     /// </summary>
     public partial class AwsJobTimeoutConfig
     {
@@ -45,7 +45,7 @@ namespace Amazon.IoT.Model
         /// job. The timeout interval can be anywhere between 1 minute and 7 days (1 to 10080
         /// minutes). The in progress timer can't be updated and will apply to all job executions
         /// for the job. Whenever a job execution remains in the IN_PROGRESS status for longer
-        /// than this interval, the job execution will fail and switch to the terminal <code>TIMED_OUT</code>
+        /// than this interval, the job execution will fail and switch to the terminal <c>TIMED_OUT</c>
         /// status.
         /// </para>
         /// </summary>

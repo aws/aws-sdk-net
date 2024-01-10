@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// A map from an <code> <a>ElasticsearchVersion</a> </code> to a list of compatible
-    /// <code> <a>ElasticsearchVersion</a> </code> s to which the domain can be upgraded.
+    /// A map from an <c> <a>ElasticsearchVersion</a> </c> to a list of compatible <c> <a>ElasticsearchVersion</a>
+    /// </c> s to which the domain can be upgraded.
     /// </summary>
     public partial class CompatibleVersionsMap
     {

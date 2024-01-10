@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Filters you can use to specify which events are returned when <code>ListEvents</code>
-    /// is called.
+    /// Filters you can use to specify which events are returned when <c>ListEvents</c> is
+    /// called.
     /// </summary>
     public partial class SearchOrganizationInsightsFilters
     {

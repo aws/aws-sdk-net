@@ -66,8 +66,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The current version (<code>ETag</code> value) of the origin access control that you
-        /// are deleting.
+        /// The current version (<c>ETag</c> value) of the origin access control that you are
+        /// deleting.
         /// </para>
         /// </summary>
         public string IfMatch

@@ -30,7 +30,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// The user-defined preferences that will be applied during product provisioning, unless
-    /// overridden by <code>ProvisioningPreferences</code> or <code>UpdateProvisioningPreferences</code>.
+    /// overridden by <c>ProvisioningPreferences</c> or <c>UpdateProvisioningPreferences</c>.
     /// 
     ///  
     /// <para>
@@ -48,12 +48,12 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property StackSetAccounts. 
         /// <para>
         /// One or more Amazon Web Services accounts where stack instances are deployed from the
-        /// stack set. These accounts can be scoped in <code>ProvisioningPreferences$StackSetAccounts</code>
-        /// and <code>UpdateProvisioningPreferences$StackSetAccounts</code>.
+        /// stack set. These accounts can be scoped in <c>ProvisioningPreferences$StackSetAccounts</c>
+        /// and <c>UpdateProvisioningPreferences$StackSetAccounts</c>.
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         /// </summary>
         public List<string> StackSetAccounts
@@ -72,12 +72,12 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property StackSetRegions. 
         /// <para>
         /// One or more Amazon Web Services Regions where stack instances are deployed from the
-        /// stack set. These Regions can be scoped in <code>ProvisioningPreferences$StackSetRegions</code>
-        /// and <code>UpdateProvisioningPreferences$StackSetRegions</code>.
+        /// stack set. These Regions can be scoped in <c>ProvisioningPreferences$StackSetRegions</c>
+        /// and <c>UpdateProvisioningPreferences$StackSetRegions</c>.
         /// </para>
         ///  
         /// <para>
-        /// Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+        /// Applicable only to a <c>CFN_STACKSET</c> provisioned product type.
         /// </para>
         /// </summary>
         public List<string> StackSetRegions

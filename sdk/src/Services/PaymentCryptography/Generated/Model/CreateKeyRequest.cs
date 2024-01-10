@@ -44,10 +44,10 @@ namespace Amazon.PaymentCryptography.Model
     /// <para>
     /// When you create a key, you specify both immutable and mutable data about the key.
     /// The immutable data contains key attributes that define the scope and cryptographic
-    /// operations that you can perform using the key, for example key class (example: <code>SYMMETRIC_KEY</code>),
-    /// key algorithm (example: <code>TDES_2KEY</code>), key usage (example: <code>TR31_P0_PIN_ENCRYPTION_KEY</code>)
-    /// and key modes of use (example: <code>Encrypt</code>). For information about valid
-    /// combinations of key attributes, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
+    /// operations that you can perform using the key, for example key class (example: <c>SYMMETRIC_KEY</c>),
+    /// key algorithm (example: <c>TDES_2KEY</c>), key usage (example: <c>TR31_P0_PIN_ENCRYPTION_KEY</c>)
+    /// and key modes of use (example: <c>Encrypt</c>). For information about valid combinations
+    /// of key attributes, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-validattributes.html">Understanding
     /// key attributes</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// The mutable data contained within a key includes usage timestamp and key deletion
     /// timestamp and can be modified after creation.

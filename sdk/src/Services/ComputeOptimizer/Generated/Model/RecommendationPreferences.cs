@@ -45,7 +45,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, when you specify <code>AWS_ARM64</code> with:
+        /// For example, when you specify <c>AWS_ARM64</c> with:
         /// </para>
         ///  <ul> <li> 
         /// <para>

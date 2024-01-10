@@ -88,12 +88,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>prefix</code> - Amazon Web Services assigns the reserved IP addresses to network
+        ///  <c>prefix</c> - Amazon Web Services assigns the reserved IP addresses to network
         /// interfaces.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>explicit</code> - You assign the reserved IP addresses to network interfaces.
+        ///  <c>explicit</c> - You assign the reserved IP addresses to network interfaces.
         /// </para>
         ///  </li> </ul>
         /// </summary>

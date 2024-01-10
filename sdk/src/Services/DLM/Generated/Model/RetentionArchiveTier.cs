@@ -101,7 +101,7 @@ namespace Amazon.DLM.Model
         /// Gets and sets the property IntervalUnit. 
         /// <para>
         /// The unit of time in which to measure the <b>Interval</b>. For example, to retain a
-        /// snapshots in the archive tier for 6 months, specify <code>Interval=6</code> and <code>IntervalUnit=MONTHS</code>.
+        /// snapshots in the archive tier for 6 months, specify <c>Interval=6</c> and <c>IntervalUnit=MONTHS</c>.
         /// </para>
         /// </summary>
         public RetentionIntervalUnitValues IntervalUnit

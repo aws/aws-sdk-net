@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// A <code>UsageRecord</code> indicates a quantity of usage for a given product, customer,
+    /// A <c>UsageRecord</c> indicates a quantity of usage for a given product, customer,
     /// dimension and time.
     /// 
     ///  
     /// <para>
-    /// Multiple requests with the same <code>UsageRecords</code> as input will be de-duplicated
+    /// Multiple requests with the same <c>UsageRecords</c> as input will be de-duplicated
     /// to prevent double charges.
     /// </para>
     /// </summary>
@@ -49,8 +49,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property CustomerIdentifier. 
         /// <para>
-        /// The <code>CustomerIdentifier</code> is obtained through the <code>ResolveCustomer</code>
-        /// operation and represents an individual buyer in your application.
+        /// The <c>CustomerIdentifier</c> is obtained through the <c>ResolveCustomer</c> operation
+        /// and represents an individual buyer in your application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -90,7 +90,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The quantity of usage consumed by the customer for the given dimension and time. Defaults
-        /// to <code>0</code> if not specified.
+        /// to <c>0</c> if not specified.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]
@@ -113,7 +113,7 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// </para>
         ///  
         /// <para>
-        /// Your application can meter usage for up to one hour in the past. Make sure the <code>timestamp</code>
+        /// Your application can meter usage for up to one hour in the past. Make sure the <c>timestamp</c>
         /// value is not before the start of the software usage.
         /// </para>
         /// </summary>
@@ -133,8 +133,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UsageAllocations. 
         /// <para>
-        /// The set of <code>UsageAllocations</code> to submit. The sum of all <code>UsageAllocation</code>
-        /// quantities must equal the Quantity of the <code>UsageRecord</code>.
+        /// The set of <c>UsageAllocations</c> to submit. The sum of all <c>UsageAllocation</c>
+        /// quantities must equal the Quantity of the <c>UsageRecord</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2500)]

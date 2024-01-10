@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The Region provided for <code>SourceRegion</code> is not valid or is in a different
-    /// Amazon Web Services partition.
+    /// The Region provided for <c>SourceRegion</c> is not valid or is in a different Amazon
+    /// Web Services partition.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

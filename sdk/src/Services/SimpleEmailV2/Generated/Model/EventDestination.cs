@@ -68,13 +68,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If <code>true</code>, the event destination is enabled. When the event destination
-        /// is enabled, the specified event types are sent to the destinations in this <code>EventDestinationDefinition</code>.
+        /// If <c>true</c>, the event destination is enabled. When the event destination is enabled,
+        /// the specified event types are sent to the destinations in this <c>EventDestinationDefinition</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>false</code>, the event destination is disabled. When the event destination
-        /// is disabled, events aren't sent to the specified destinations.
+        /// If <c>false</c>, the event destination is disabled. When the event destination is
+        /// disabled, events aren't sent to the specified destinations.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -116,61 +116,59 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SEND</code> - The send request was successful and SES will attempt to deliver
-        /// the message to the recipient’s mail server. (If account-level or global suppression
-        /// is being used, SES will still count it as a send, but delivery is suppressed.)
+        ///  <c>SEND</c> - The send request was successful and SES will attempt to deliver the
+        /// message to the recipient’s mail server. (If account-level or global suppression is
+        /// being used, SES will still count it as a send, but delivery is suppressed.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECT</code> - SES accepted the email, but determined that it contained a
-        /// virus and didn’t attempt to deliver it to the recipient’s mail server.
+        ///  <c>REJECT</c> - SES accepted the email, but determined that it contained a virus
+        /// and didn’t attempt to deliver it to the recipient’s mail server.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BOUNCE</code> - (<i>Hard bounce</i>) The recipient's mail server permanently
-        /// rejected the email. (<i>Soft bounces</i> are only included when SES fails to deliver
-        /// the email after retrying for a period of time.)
+        ///  <c>BOUNCE</c> - (<i>Hard bounce</i>) The recipient's mail server permanently rejected
+        /// the email. (<i>Soft bounces</i> are only included when SES fails to deliver the email
+        /// after retrying for a period of time.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLAINT</code> - The email was successfully delivered to the recipient’s
-        /// mail server, but the recipient marked it as spam.
+        ///  <c>COMPLAINT</c> - The email was successfully delivered to the recipient’s mail server,
+        /// but the recipient marked it as spam.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELIVERY</code> - SES successfully delivered the email to the recipient's mail
-        /// server.
+        ///  <c>DELIVERY</c> - SES successfully delivered the email to the recipient's mail server.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPEN</code> - The recipient received the message and opened it in their email
-        /// client.
+        ///  <c>OPEN</c> - The recipient received the message and opened it in their email client.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CLICK</code> - The recipient clicked one or more links in the email.
+        ///  <c>CLICK</c> - The recipient clicked one or more links in the email.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RENDERING_FAILURE</code> - The email wasn't sent because of a template rendering
+        ///  <c>RENDERING_FAILURE</c> - The email wasn't sent because of a template rendering
         /// issue. This event type can occur when template data is missing, or when there is a
         /// mismatch between template parameters and data. (This event type only occurs when you
         /// send email using the <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendTemplatedEmail.html">
-        /// <code>SendTemplatedEmail</code> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
-        /// <code>SendBulkTemplatedEmail</code> </a> API operations.) 
+        /// <c>SendTemplatedEmail</c> </a> or <a href="https://docs.aws.amazon.com/ses/latest/APIReference/API_SendBulkTemplatedEmail.html">
+        /// <c>SendBulkTemplatedEmail</c> </a> API operations.) 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELIVERY_DELAY</code> - The email couldn't be delivered to the recipient’s
-        /// mail server because a temporary issue occurred. Delivery delays can occur, for example,
-        /// when the recipient's inbox is full, or when the receiving email server experiences
-        /// a transient issue.
+        ///  <c>DELIVERY_DELAY</c> - The email couldn't be delivered to the recipient’s mail server
+        /// because a temporary issue occurred. Delivery delays can occur, for example, when the
+        /// recipient's inbox is full, or when the receiving email server experiences a transient
+        /// issue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUBSCRIPTION</code> - The email was successfully delivered, but the recipient
-        /// updated their subscription preferences by clicking on an <i>unsubscribe</i> link as
-        /// part of your <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
+        ///  <c>SUBSCRIPTION</c> - The email was successfully delivered, but the recipient updated
+        /// their subscription preferences by clicking on an <i>unsubscribe</i> link as part of
+        /// your <a href="https://docs.aws.amazon.com/ses/latest/dg/sending-email-subscription-management.html">subscription
         /// management</a>.
         /// </para>
         ///  </li> </ul>

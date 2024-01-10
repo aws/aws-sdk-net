@@ -30,7 +30,7 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A structure that contains the file groups that are requested for the artifact generation
-    /// in a <code>StartDashboardSnapshotJob</code> API call.
+    /// in a <c>StartDashboardSnapshotJob</c> API call.
     /// </summary>
     public partial class AnonymousUserSnapshotJobResult
     {
@@ -39,11 +39,11 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FileGroups. 
         /// <para>
-        /// A list of <code>SnapshotJobResultFileGroup</code> objects that contain information
-        /// on the files that are requested during a <code>StartDashboardSnapshotJob</code> API
-        /// call. If the job succeeds, these objects contain the location where the snapshot artifacts
-        /// are stored. If the job fails, the objects contain information about the error that
-        /// caused the job to fail.
+        /// A list of <c>SnapshotJobResultFileGroup</c> objects that contain information on the
+        /// files that are requested during a <c>StartDashboardSnapshotJob</c> API call. If the
+        /// job succeeds, these objects contain the location where the snapshot artifacts are
+        /// stored. If the job fails, the objects contain information about the error that caused
+        /// the job to fail.
         /// </para>
         /// </summary>
         public List<SnapshotJobResultFileGroup> FileGroups

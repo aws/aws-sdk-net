@@ -30,7 +30,7 @@ namespace Amazon.Organizations.Model
 {
     /// <summary>
     /// We can't find an organizational unit (OU) or Amazon Web Services account with the
-    /// <code>ChildId</code> that you specified.
+    /// <c>ChildId</c> that you specified.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

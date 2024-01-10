@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     ///  
     /// <para>
     /// The Identity and Access Management (IAM) permission required for this operation is
-    /// <code>UpdateTable</code>.
+    /// <c>UpdateTable</c>.
     /// </para>
     /// </summary>
     public partial class UpdateColumnStatisticsForTableRequest : AmazonGlueRequest

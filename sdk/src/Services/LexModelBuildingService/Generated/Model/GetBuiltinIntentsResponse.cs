@@ -39,8 +39,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Intents. 
         /// <para>
-        /// An array of <code>builtinIntentMetadata</code> objects, one for each intent in the
-        /// response.
+        /// An array of <c>builtinIntentMetadata</c> objects, one for each intent in the response.
         /// </para>
         /// </summary>
         public List<BuiltinIntentMetadata> Intents

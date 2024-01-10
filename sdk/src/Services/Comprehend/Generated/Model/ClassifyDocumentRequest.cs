@@ -30,7 +30,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the ClassifyDocument operation.
-    /// Creates a classification request to analyze a single document in real-time. <code>ClassifyDocument</code>
+    /// Creates a classification request to analyze a single document in real-time. <c>ClassifyDocument</c>
     /// supports the following model types:
     /// 
     ///  <ul> <li> 
@@ -44,19 +44,19 @@ namespace Amazon.Comprehend.Model
     /// <para>
     /// Prompt safety classifier - Amazon Comprehend provides a pre-trained model for classifying
     /// input prompts for generative AI applications. For input, you provide English plain
-    /// text input. For prompt safety classification, the response includes only the <code>Classes</code>
+    /// text input. For prompt safety classification, the response includes only the <c>Classes</c>
     /// field. For more information about prompt safety classifiers, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/trust-safety.html#prompt-classification">Prompt
     /// safety classification</a> in the <i>Amazon Comprehend Developer Guide</i>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// If the system detects errors while processing a page in the input document, the API
-    /// response includes an <code>Errors</code> field that describes the errors.
+    /// response includes an <c>Errors</c> field that describes the errors.
     /// </para>
     ///  
     /// <para>
     /// If the system detects a document-level error in your input document, the API returns
-    /// an <code>InvalidRequestException</code> error response. For details about this exception,
+    /// an <c>InvalidRequestException</c> error response. For details about this exception,
     /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
     /// Errors in semi-structured documents</a> in the Comprehend Developer Guide. 
     /// </para>
@@ -71,18 +71,18 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file.
+        /// Use the <c>Bytes</c> parameter to input a text, PDF, Word or image file.
         /// </para>
         ///  
         /// <para>
-        /// When you classify a document using a custom model, you can also use the <code>Bytes</code>
-        /// parameter to input an Amazon Textract <code>DetectDocumentText</code> or <code>AnalyzeDocument</code>
+        /// When you classify a document using a custom model, you can also use the <c>Bytes</c>
+        /// parameter to input an Amazon Textract <c>DetectDocumentText</c> or <c>AnalyzeDocument</c>
         /// output file.
         /// </para>
         ///  
         /// <para>
-        /// To classify a document using the prompt safety classifier, use the <code>Text</code>
-        /// parameter for input.
+        /// To classify a document using the prompt safety classifier, use the <c>Text</c> parameter
+        /// for input.
         /// </para>
         ///  
         /// <para>
@@ -98,7 +98,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.
+        /// If you use the <c>Bytes</c> parameter, do not use the <c>Text</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -168,7 +168,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property Text. 
         /// <para>
         /// The document text to be analyzed. If you enter text using this parameter, do not use
-        /// the <code>Bytes</code> parameter.
+        /// the <c>Bytes</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]

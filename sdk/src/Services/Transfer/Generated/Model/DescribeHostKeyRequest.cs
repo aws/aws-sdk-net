@@ -30,8 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeHostKey operation.
-    /// Returns the details of the host key that's specified by the <code>HostKeyId</code>
-    /// and <code>ServerId</code>.
+    /// Returns the details of the host key that's specified by the <c>HostKeyId</c> and <c>ServerId</c>.
     /// </summary>
     public partial class DescribeHostKeyRequest : AmazonTransferRequest
     {

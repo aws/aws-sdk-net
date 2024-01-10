@@ -30,8 +30,8 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the DetectSentiment operation.
-    /// Inspects text and returns an inference of the prevailing sentiment (<code>POSITIVE</code>,
-    /// <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>).
+    /// Inspects text and returns an inference of the prevailing sentiment (<c>POSITIVE</c>,
+    /// <c>NEUTRAL</c>, <c>MIXED</c>, or <c>NEGATIVE</c>).
     /// </summary>
     public partial class DetectSentimentRequest : AmazonComprehendRequest
     {

@@ -88,7 +88,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Columns. 
         /// <para>
-        /// A list of the <code>Columns</code> in the table.
+        /// A list of the <c>Columns</c> in the table.
         /// </para>
         /// </summary>
         public List<Column> Columns
@@ -106,8 +106,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Compressed. 
         /// <para>
-        ///  <code>True</code> if the data in the table is compressed, or <code>False</code> if
-        /// not.
+        ///  <c>True</c> if the data in the table is compressed, or <c>False</c> if not.
         /// </para>
         /// </summary>
         public bool Compressed
@@ -125,7 +124,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property InputFormat. 
         /// <para>
-        /// The input format: <code>SequenceFileInputFormat</code> (binary), or <code>TextInputFormat</code>,
+        /// The input format: <c>SequenceFileInputFormat</c> (binary), or <c>TextInputFormat</c>,
         /// or a custom format.
         /// </para>
         /// </summary>
@@ -184,7 +183,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        /// The output format: <code>SequenceFileOutputFormat</code> (binary), or <code>IgnoreKeyTextOutputFormat</code>,
+        /// The output format: <c>SequenceFileOutputFormat</c> (binary), or <c>IgnoreKeyTextOutputFormat</c>,
         /// or a custom format.
         /// </para>
         /// </summary>
@@ -299,8 +298,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StoredAsSubDirectories. 
         /// <para>
-        ///  <code>True</code> if the table data is stored in subdirectories, or <code>False</code>
-        /// if not.
+        ///  <c>True</c> if the table data is stored in subdirectories, or <c>False</c> if not.
         /// </para>
         /// </summary>
         public bool StoredAsSubDirectories

@@ -30,7 +30,7 @@ namespace Amazon.SQS.Model
 {
     /// <summary>
     /// Container for the parameters to the RemovePermission operation.
-    /// Revokes any permissions in the queue policy that matches the specified <code>Label</code>
+    /// Revokes any permissions in the queue policy that matches the specified <c>Label</c>
     /// parameter.
     /// 
     ///  <note> <ul> <li> 
@@ -47,8 +47,8 @@ namespace Amazon.SQS.Model
     ///  </li> <li> 
     /// <para>
     /// To remove the ability to change queue permissions, you must deny permission to the
-    /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
-    /// actions in your IAM policy.
+    /// <c>AddPermission</c>, <c>RemovePermission</c>, and <c>SetQueueAttributes</c> actions
+    /// in your IAM policy.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.SQS.Model
         /// Gets and sets the property Label. 
         /// <para>
         /// The identification of the permission to remove. This is the label added using the
-        /// <code> <a>AddPermission</a> </code> action.
+        /// <c> <a>AddPermission</a> </c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

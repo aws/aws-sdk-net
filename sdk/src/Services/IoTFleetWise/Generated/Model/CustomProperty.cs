@@ -30,7 +30,7 @@ namespace Amazon.IoTFleetWise.Model
 {
     /// <summary>
     /// Represents a member of the complex data structure. The data type of the property can
-    /// be either primitive or another <code>struct</code>.
+    /// be either primitive or another <c>struct</c>.
     /// </summary>
     public partial class CustomProperty
     {
@@ -140,7 +140,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property FullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the custom property. For example, the fully qualified
-        /// name of a custom property might be <code>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</code>.
+        /// name of a custom property might be <c>ComplexDataTypes.VehicleDataTypes.SVMCamera.FPS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -160,7 +160,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property StructFullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the struct node for the custom property if the data type
-        /// of the custom property is <code>Struct</code> or <code>StructArray</code>. 
+        /// of the custom property is <c>Struct</c> or <c>StructArray</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=150)]

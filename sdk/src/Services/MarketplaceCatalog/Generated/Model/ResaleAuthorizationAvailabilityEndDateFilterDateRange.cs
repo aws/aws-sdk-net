@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization with
-    /// date range as input.
+    /// Allows filtering on <c>AvailabilityEndDate</c> of a ResaleAuthorization with date
+    /// range as input.
     /// </summary>
     public partial class ResaleAuthorizationAvailabilityEndDateFilterDateRange
     {
@@ -40,8 +40,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property AfterValue. 
         /// <para>
-        /// Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization after
-        /// a date.
+        /// Allows filtering on <c>AvailabilityEndDate</c> of a ResaleAuthorization after a date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]
@@ -60,8 +59,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property BeforeValue. 
         /// <para>
-        /// Allows filtering on <code>AvailabilityEndDate</code> of a ResaleAuthorization before
-        /// a date.
+        /// Allows filtering on <c>AvailabilityEndDate</c> of a ResaleAuthorization before a date.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=20)]

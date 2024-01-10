@@ -121,7 +121,7 @@ namespace Amazon.ManagedGrafana.Model
         /// Gets and sets the property RoleValues. 
         /// <para>
         /// A structure containing arrays that map group names in the SAML assertion to the Grafana
-        /// <code>Admin</code> and <code>Editor</code> roles in the workspace.
+        /// <c>Admin</c> and <c>Editor</c> roles in the workspace.
         /// </para>
         /// </summary>
         public RoleValues RoleValues

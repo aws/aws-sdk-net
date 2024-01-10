@@ -41,8 +41,8 @@ namespace Amazon.InternetMonitor.Model
         /// The configuration information for publishing Internet Monitor internet measurements
         /// to Amazon S3. The configuration includes the bucket name and (optionally) prefix for
         /// the S3 bucket to store the measurements, and the delivery status. The delivery status
-        /// is <code>ENABLED</code> or <code>DISABLED</code>, depending on whether you choose
-        /// to deliver internet measurements to S3 logs.
+        /// is <c>ENABLED</c> or <c>DISABLED</c>, depending on whether you choose to deliver internet
+        /// measurements to S3 logs.
         /// </para>
         /// </summary>
         public S3Config S3Config

@@ -59,8 +59,8 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
-        /// </code> 
+        ///  <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">InternalFailure</a>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
@@ -68,8 +68,8 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
-        /// </code> 
+        ///  <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">ThrottlingException</a>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
@@ -81,8 +81,8 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
-        /// </code> 
+        ///  <c> <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/CommonErrors.html">AccessDeniedException</a>
+        /// </c> 
         /// </para>
         ///  
         /// <para>
@@ -90,7 +90,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InvalidAccountIdException</code> 
+        ///  <c>InvalidAccountIdException</c> 
         /// </para>
         ///  
         /// <para>
@@ -98,7 +98,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InvalidArgument</code> 
+        ///  <c>InvalidArgument</c> 
         /// </para>
         ///  
         /// <para>
@@ -106,7 +106,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MalformedDetail</code> 
+        ///  <c>MalformedDetail</c> 
         /// </para>
         ///  
         /// <para>
@@ -114,7 +114,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RedactionFailure</code> 
+        ///  <c>RedactionFailure</c> 
         /// </para>
         ///  
         /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NotAuthorizedForSourceException</code> 
+        ///  <c>NotAuthorizedForSourceException</c> 
         /// </para>
         ///  
         /// <para>
@@ -130,7 +130,7 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NotAuthorizedForDetailTypeException</code> 
+        ///  <c>NotAuthorizedForDetailTypeException</c> 
         /// </para>
         ///  
         /// <para>

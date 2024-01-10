@@ -39,7 +39,7 @@ namespace Amazon.PaymentCryptographyData.Model
     /// You can generate an encryption key within Amazon Web Services Payment Cryptography
     /// by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
     /// You can import your own encryption key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>.
-    /// For this operation, the key must have <code>KeyModesOfUse</code> set to <code>Encrypt</code>.
+    /// For this operation, the key must have <c>KeyModesOfUse</c> set to <c>Encrypt</c>.
     /// In asymmetric encryption, plaintext is encrypted using public component. You can import
     /// the public component of an asymmetric key pair created outside Amazon Web Services
     /// Payment Cryptography by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_ImportKey.html">ImportKey</a>).
@@ -48,10 +48,10 @@ namespace Amazon.PaymentCryptographyData.Model
     ///  
     /// <para>
     /// for symmetric and DUKPT encryption, Amazon Web Services Payment Cryptography supports
-    /// <code>TDES</code> and <code>AES</code> algorithms. For asymmetric encryption, Amazon
-    /// Web Services Payment Cryptography supports <code>RSA</code>. To encrypt using DUKPT,
-    /// you must already have a DUKPT key in your account with <code>KeyModesOfUse</code>
-    /// set to <code>DeriveKey</code>, or you can generate a new DUKPT key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
+    /// <c>TDES</c> and <c>AES</c> algorithms. For asymmetric encryption, Amazon Web Services
+    /// Payment Cryptography supports <c>RSA</c>. To encrypt using DUKPT, you must already
+    /// have a DUKPT key in your account with <c>KeyModesOfUse</c> set to <c>DeriveKey</c>,
+    /// or you can generate a new DUKPT key by calling <a href="https://docs.aws.amazon.com/payment-cryptography/latest/APIReference/API_CreateKey.html">CreateKey</a>.
     /// </para>
     ///  
     /// <para>
@@ -117,7 +117,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property KeyIdentifier. 
         /// <para>
-        /// The <code>keyARN</code> of the encryption key that Amazon Web Services Payment Cryptography
+        /// The <c>keyARN</c> of the encryption key that Amazon Web Services Payment Cryptography
         /// uses for plaintext encryption.
         /// </para>
         /// </summary>

@@ -44,8 +44,8 @@ namespace Amazon.MediaTailor.Model
         /// to be used by players that don't support sticky redirects. Disable this if you have
         /// CDN routing rules set up for accessing MediaTailor manifests, and you are either using
         /// client-side reporting or your players support sticky HTTP redirects. Valid values
-        /// are <code>DISABLED</code> and <code>EMT_DEFAULT</code>. The <code>EMT_DEFAULT</code>
-        /// setting enables the inclusion of the tag and is the default value.
+        /// are <c>DISABLED</c> and <c>EMT_DEFAULT</c>. The <c>EMT_DEFAULT</c> setting enables
+        /// the inclusion of the tag and is the default value.
         /// </para>
         /// </summary>
         public string MpdLocation
@@ -65,9 +65,8 @@ namespace Amazon.MediaTailor.Model
         /// <para>
         /// The setting that controls whether MediaTailor handles manifests from the origin server
         /// as multi-period manifests or single-period manifests. If your origin server produces
-        /// single-period manifests, set this to <code>SINGLE_PERIOD</code>. The default setting
-        /// is <code>MULTI_PERIOD</code>. For multi-period manifests, omit this setting or set
-        /// it to <code>MULTI_PERIOD</code>.
+        /// single-period manifests, set this to <c>SINGLE_PERIOD</c>. The default setting is
+        /// <c>MULTI_PERIOD</c>. For multi-period manifests, omit this setting or set it to <c>MULTI_PERIOD</c>.
         /// </para>
         /// </summary>
         public OriginManifestType OriginManifestType

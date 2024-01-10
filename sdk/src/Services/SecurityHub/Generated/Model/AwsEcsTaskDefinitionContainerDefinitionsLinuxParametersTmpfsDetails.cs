@@ -62,17 +62,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>"defaults"</code> | <code>"ro"</code> | <code>"rw"</code> | <code>"suid"</code>
-        /// | <code>"nosuid"</code> | <code>"dev"</code> | <code>"nodev"</code> |<code> "exec"</code>
-        /// | <code>"noexec"</code> | <code>"sync"</code> | <code>"async"</code> | <code>"dirsync"</code>
-        /// | <code>"remount"</code> | <code>"mand"</code> | <code>"nomand"</code> | <code>"atime"</code>
-        /// | <code>"noatime"</code> | <code>"diratime"</code> | <code>"nodiratime"</code> | <code>"bind"</code>
-        /// | <code>"rbind"</code> | <code>"unbindable"</code> | <code>"runbindable"</code> |
-        /// <code>"private"</code> | <code>"rprivate"</code> | <code>"shared"</code> | <code>"rshared"</code>
-        /// | <code>"slave"</code> | <code>"rslave"</code> | <code>"relatime"</code> | <code>"norelatime"</code>
-        /// | <code>"strictatime"</code> | <code>"nostrictatime"</code> |<code> "mode"</code>
-        /// | <code>"uid"</code> | <code>"gid"</code> | <code>"nr_inodes"</code> |<code> "nr_blocks"</code>
-        /// | <code>"mpol"</code> 
+        /// Valid values: <c>"defaults"</c> | <c>"ro"</c> | <c>"rw"</c> | <c>"suid"</c> | <c>"nosuid"</c>
+        /// | <c>"dev"</c> | <c>"nodev"</c> |<c> "exec"</c> | <c>"noexec"</c> | <c>"sync"</c>
+        /// | <c>"async"</c> | <c>"dirsync"</c> | <c>"remount"</c> | <c>"mand"</c> | <c>"nomand"</c>
+        /// | <c>"atime"</c> | <c>"noatime"</c> | <c>"diratime"</c> | <c>"nodiratime"</c> | <c>"bind"</c>
+        /// | <c>"rbind"</c> | <c>"unbindable"</c> | <c>"runbindable"</c> | <c>"private"</c> |
+        /// <c>"rprivate"</c> | <c>"shared"</c> | <c>"rshared"</c> | <c>"slave"</c> | <c>"rslave"</c>
+        /// | <c>"relatime"</c> | <c>"norelatime"</c> | <c>"strictatime"</c> | <c>"nostrictatime"</c>
+        /// |<c> "mode"</c> | <c>"uid"</c> | <c>"gid"</c> | <c>"nr_inodes"</c> |<c> "nr_blocks"</c>
+        /// | <c>"mpol"</c> 
         /// </para>
         /// </summary>
         public List<string> MountOptions

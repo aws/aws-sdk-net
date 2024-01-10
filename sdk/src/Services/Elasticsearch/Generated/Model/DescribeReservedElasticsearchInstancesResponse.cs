@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for results from <code>DescribeReservedElasticsearchInstances</code>
+    /// Container for results from <c>DescribeReservedElasticsearchInstances</c>
     /// </summary>
     public partial class DescribeReservedElasticsearchInstancesResponse : AmazonWebServiceResponse
     {

@@ -105,11 +105,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> 
+        /// Valid values: <c>PrivateIpv4</c> | <c>PublicIpv4</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>PublicIpv4</code> 
+        /// Default: <c>PublicIpv4</c> 
         /// </para>
         /// </summary>
         public string OutsideIpAddressType

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodeDeploy.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteGitHubAccountToken</code> operation.
+    /// Represents the output of a <c>DeleteGitHubAccountToken</c> operation.
     /// </summary>
     public partial class DeleteGitHubAccountTokenResponse : AmazonWebServiceResponse
     {

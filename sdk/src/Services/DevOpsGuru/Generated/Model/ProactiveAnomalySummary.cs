@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Details about a proactive anomaly. This object is returned by <code>DescribeAnomaly.</code>
+    /// Details about a proactive anomaly. This object is returned by <c>DescribeAnomaly.</c>
     /// </summary>
     public partial class ProactiveAnomalySummary
     {
@@ -51,8 +51,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property AnomalyReportedTimeRange. 
         /// <para>
-        ///  An <code>AnomalyReportedTimeRange</code> object that specifies the time range between
-        /// when the anomaly is opened and the time when it is closed. 
+        ///  An <c>AnomalyReportedTimeRange</c> object that specifies the time range between when
+        /// the anomaly is opened and the time when it is closed. 
         /// </para>
         /// </summary>
         public AnomalyReportedTimeRange AnomalyReportedTimeRange

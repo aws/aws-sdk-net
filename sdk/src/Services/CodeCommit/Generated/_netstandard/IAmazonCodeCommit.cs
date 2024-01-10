@@ -697,7 +697,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/BatchDescribeMergeConflicts">REST API Reference for BatchDescribeMergeConflicts Operation</seealso>
         Task<BatchDescribeMergeConflictsResponse> BatchDescribeMergeConflictsAsync(BatchDescribeMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1600,7 +1600,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/CreateUnreferencedMergeCommit">REST API Reference for CreateUnreferencedMergeCommit Operation</seealso>
         Task<CreateUnreferencedMergeCommitResponse> CreateUnreferencedMergeCommitAsync(CreateUnreferencedMergeCommitRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2049,7 +2049,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/DescribeMergeConflicts">REST API Reference for DescribeMergeConflicts Operation</seealso>
         Task<DescribeMergeConflictsResponse> DescribeMergeConflictsAsync(DescribeMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3088,7 +3088,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeConflicts">REST API Reference for GetMergeConflicts Operation</seealso>
         Task<GetMergeConflictsResponse> GetMergeConflictsAsync(GetMergeConflictsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3167,7 +3167,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/GetMergeOptions">REST API Reference for GetMergeOptions Operation</seealso>
         Task<GetMergeOptionsResponse> GetMergeOptionsAsync(GetMergeOptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3631,7 +3631,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/ListFileCommitHistory">REST API Reference for ListFileCommitHistory Operation</seealso>
         Task<ListFileCommitHistoryResponse> ListFileCommitHistoryAsync(ListFileCommitHistoryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3682,8 +3682,7 @@ namespace Amazon.CodeCommit
         /// The specified number of maximum results is not valid.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestStatusException">
-        /// The pull request status is not valid. The only valid values are <code>OPEN</code>
-        /// and <code>CLOSED</code>.
+        /// The pull request status is not valid. The only valid values are <c>OPEN</c> and <c>CLOSED</c>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidRepositoryNameException">
         /// A specified repository name is not valid.
@@ -3914,7 +3913,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByFastForward">REST API Reference for MergeBranchesByFastForward Operation</seealso>
         Task<MergeBranchesByFastForwardResponse> MergeBranchesByFastForwardAsync(MergeBranchesByFastForwardRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4076,7 +4075,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesBySquash">REST API Reference for MergeBranchesBySquash Operation</seealso>
         Task<MergeBranchesBySquashResponse> MergeBranchesBySquashAsync(MergeBranchesBySquashRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4238,7 +4237,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergeBranchesByThreeWay">REST API Reference for MergeBranchesByThreeWay Operation</seealso>
         Task<MergeBranchesByThreeWayResponse> MergeBranchesByThreeWayAsync(MergeBranchesByThreeWayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4496,7 +4495,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestBySquash">REST API Reference for MergePullRequestBySquash Operation</seealso>
         Task<MergePullRequestBySquashResponse> MergePullRequestBySquashAsync(MergePullRequestBySquashRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4660,7 +4659,7 @@ namespace Amazon.CodeCommit
         /// <exception cref="Amazon.CodeCommit.Model.TipsDivergenceExceededException">
         /// The divergence between the tips of the provided commit specifiers is too great to
         /// determine whether there might be any merge conflicts. Locally compare the specifiers
-        /// using <code>git diff</code> or a diff tool.
+        /// using <c>git diff</c> or a diff tool.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecommit-2015-04-13/MergePullRequestByThreeWay">REST API Reference for MergePullRequestByThreeWay Operation</seealso>
         Task<MergePullRequestByThreeWayResponse> MergePullRequestByThreeWayAsync(MergePullRequestByThreeWayRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -5947,12 +5946,11 @@ namespace Amazon.CodeCommit
         /// that the pull request is in the specified repository, and then try again.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestStatusException">
-        /// The pull request status is not valid. The only valid values are <code>OPEN</code>
-        /// and <code>CLOSED</code>.
+        /// The pull request status is not valid. The only valid values are <c>OPEN</c> and <c>CLOSED</c>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.InvalidPullRequestStatusUpdateException">
-        /// The pull request status update is not valid. The only valid update is from <code>OPEN</code>
-        /// to <code>CLOSED</code>.
+        /// The pull request status update is not valid. The only valid update is from <c>OPEN</c>
+        /// to <c>CLOSED</c>.
         /// </exception>
         /// <exception cref="Amazon.CodeCommit.Model.PullRequestDoesNotExistException">
         /// The pull request ID could not be found. Make sure that you have specified the correct

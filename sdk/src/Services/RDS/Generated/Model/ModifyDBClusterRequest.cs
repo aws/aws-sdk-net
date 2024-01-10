@@ -117,7 +117,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property AllowEngineModeChange. 
         /// <para>
-        /// Specifies whether engine mode changes from <code>serverless</code> to <code>provisioned</code>
+        /// Specifies whether engine mode changes from <c>serverless</c> to <c>provisioned</c>
         /// are allowed.
         /// </para>
         ///  
@@ -130,7 +130,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must allow engine mode changes when specifying a different value for the <code>EngineMode</code>
+        /// You must allow engine mode changes when specifying a different value for the <c>EngineMode</c>
         /// parameter from the DB cluster's current engine mode.
         /// </para>
         ///  </li> </ul>
@@ -162,7 +162,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must allow major version upgrades when specifying a value for the <code>EngineVersion</code>
+        /// You must allow major version upgrades when specifying a value for the <c>EngineVersion</c>
         /// parameter that is a different major version than the DB cluster's current version.
         /// </para>
         ///  </li> </ul>
@@ -183,7 +183,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
         /// Specifies whether the modifications in this request and any pending modifications
-        /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
+        /// are asynchronously applied as soon as possible, regardless of the <c>PreferredMaintenanceWindow</c>
         /// setting for the DB cluster. If this parameter is disabled, changes to the DB cluster
         /// are applied during the next maintenance window.
         /// </para>
@@ -260,7 +260,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property BacktrackWindow. 
         /// <para>
         /// The target backtrack window, in seconds. To disable backtracking, set this value to
-        /// <code>0</code>.
+        /// <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -268,7 +268,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         ///  
         /// <para>
@@ -296,7 +296,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property BackupRetentionPeriod. 
         /// <para>
         /// The number of days for which automated backups are retained. Specify a minimum value
-        /// of <code>1</code>.
+        /// of <c>1</c>.
         /// </para>
         ///  
         /// <para>
@@ -304,7 +304,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         ///  
         /// <para>
@@ -344,19 +344,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Aurora MySQL - <code>audit | error | general | slowquery</code> 
+        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Aurora PostgreSQL - <code>postgresql</code> 
+        /// Aurora PostgreSQL - <c>postgresql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for MySQL - <code>error | general | slowquery</code> 
+        /// RDS for MySQL - <c>error | general | slowquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// RDS for PostgreSQL - <code>postgresql | upgrade</code> 
+        /// RDS for PostgreSQL - <c>postgresql | upgrade</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -440,8 +440,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property DBClusterInstanceClass. 
         /// <para>
         /// The compute and memory capacity of each DB instance in the Multi-AZ DB cluster, for
-        /// example <code>db.m6gd.xlarge</code>. Not all DB instance classes are available in
-        /// all Amazon Web Services Regions, or for all database engines.
+        /// example <c>db.m6gd.xlarge</c>. Not all DB instance classes are available in all Amazon
+        /// Web Services Regions, or for all database engines.
         /// </para>
         ///  
         /// <para>
@@ -495,9 +495,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you apply a parameter group using the <code>DBInstanceParameterGroupName</code>
-        /// parameter, the DB cluster isn't rebooted automatically. Also, parameter changes are
-        /// applied immediately rather than during the next maintenance window.
+        /// When you apply a parameter group using the <c>DBInstanceParameterGroupName</c> parameter,
+        /// the DB cluster isn't rebooted automatically. Also, parameter changes are applied immediately
+        /// rather than during the next maintenance window.
         /// </para>
         ///  </note> 
         /// <para>
@@ -517,8 +517,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>DBInstanceParameterGroupName</code> parameter is valid in combination with
-        /// the <code>AllowMajorVersionUpgrade</code> parameter for a major version upgrade only.
+        /// The <c>DBInstanceParameterGroupName</c> parameter is valid in combination with the
+        /// <c>AllowMajorVersionUpgrade</c> parameter for a major version upgrade only.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -561,9 +561,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The Active Directory directory ID to move the DB cluster to. Specify <code>none</code>
-        /// to remove the cluster from its current domain. The domain must be created prior to
-        /// this operation.
+        /// The Active Directory directory ID to move the DB cluster to. Specify <c>none</c> to
+        /// remove the cluster from its current domain. The domain must be created prior to this
+        /// operation.
         /// </para>
         ///  
         /// <para>
@@ -664,7 +664,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// This parameter applies only to Aurora Serverless v1 DB clusters. To enable or disable
         /// the HTTP endpoint for an Aurora PostgreSQL Serverless v2 or provisioned DB cluster,
-        /// use the <code>EnableHttpEndpoint</code> and <code>DisableHttpEndpoint</code> operations.
+        /// use the <c>EnableHttpEndpoint</c> and <c>DisableHttpEndpoint</c> operations.
         /// </para>
         ///  </note> 
         /// <para>
@@ -764,11 +764,11 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// The DB engine mode of the DB cluster, either <c>provisioned</c> or <c>serverless</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The DB engine mode can be modified only from <code>serverless</code> to <code>provisioned</code>.
+        /// The DB engine mode can be modified only from <c>serverless</c> to <c>provisioned</c>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -797,7 +797,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The version number of the database engine to which you want to upgrade. Changing this
         /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// window unless <c>ApplyImmediately</c> is enabled.
         /// </para>
         ///  
         /// <para>
@@ -810,7 +810,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -820,7 +820,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine aurora-postgresql --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -830,7 +830,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine mysql --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -840,7 +840,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws rds describe-db-engine-versions --engine postgres --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         ///  
@@ -907,15 +907,15 @@ namespace Amazon.RDS.Model
         /// <para>
         /// If the DB cluster doesn't manage the master user password with Amazon Web Services
         /// Secrets Manager, you can turn on this management. In this case, you can't specify
-        /// <code>MasterUserPassword</code>.
+        /// <c>MasterUserPassword</c>.
         /// </para>
         ///  
         /// <para>
         /// If the DB cluster already manages the master user password with Amazon Web Services
         /// Secrets Manager, and you specify that the master user password is not managed with
-        /// Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>.
+        /// Amazon Web Services Secrets Manager, then you must specify <c>MasterUserPassword</c>.
         /// In this case, RDS deletes the secret and uses the new password for the master user
-        /// specified by <code>MasterUserPassword</code>.
+        /// specified by <c>MasterUserPassword</c>.
         /// </para>
         ///  
         /// <para>
@@ -965,7 +965,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if <code>ManageMasterUserPassword</code> is turned on.
+        /// Can't be specified if <c>ManageMasterUserPassword</c> is turned on.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1003,14 +1003,14 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You are turning on <code>ManageMasterUserPassword</code> to manage the master user
-        /// password in Amazon Web Services Secrets Manager.
+        /// You are turning on <c>ManageMasterUserPassword</c> to manage the master user password
+        /// in Amazon Web Services Secrets Manager.
         /// </para>
         ///  
         /// <para>
-        /// If you are turning on <code>ManageMasterUserPassword</code> and don't specify <code>MasterUserSecretKmsKeyId</code>,
-        /// then the <code>aws/secretsmanager</code> KMS key is used to encrypt the secret. If
-        /// the secret is in a different Amazon Web Services account, then you can't use the <code>aws/secretsmanager</code>
+        /// If you are turning on <c>ManageMasterUserPassword</c> and don't specify <c>MasterUserSecretKmsKeyId</c>,
+        /// then the <c>aws/secretsmanager</c> KMS key is used to encrypt the secret. If the secret
+        /// is in a different Amazon Web Services account, then you can't use the <c>aws/secretsmanager</c>
         /// KMS key to encrypt the secret, and you must use a customer managed KMS key.
         /// </para>
         ///  </li> </ul> 
@@ -1045,12 +1045,12 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MonitoringInterval. 
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
-        /// for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <code>0</code>.
+        /// for the DB cluster. To turn off collecting Enhanced Monitoring metrics, specify <c>0</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringRoleArn</code> is specified, also set <code>MonitoringInterval</code>
-        /// to a value other than <code>0</code>.
+        /// If <c>MonitoringRoleArn</c> is specified, also set <c>MonitoringInterval</c> to a
+        /// value other than <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -1058,11 +1058,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> 
+        /// Valid Values: <c>0 | 1 | 5 | 10 | 15 | 30 | 60</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         /// </summary>
         public int MonitoringInterval
@@ -1081,15 +1081,15 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the IAM role that permits RDS to send Enhanced
-        /// Monitoring metrics to Amazon CloudWatch Logs. An example is <code>arn:aws:iam:123456789012:role/emaccess</code>.
+        /// Monitoring metrics to Amazon CloudWatch Logs. An example is <c>arn:aws:iam:123456789012:role/emaccess</c>.
         /// For information on creating a monitoring role, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User
         /// Guide.</i> 
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringInterval</code> is set to a value other than <code>0</code>, supply
-        /// a <code>MonitoringRoleArn</code> value.
+        /// If <c>MonitoringInterval</c> is set to a value other than <c>0</c>, supply a <c>MonitoringRoleArn</c>
+        /// value.
         /// </para>
         ///  
         /// <para>
@@ -1115,9 +1115,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for the
-        /// DB cluster. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the
-        /// IPv4 and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for the DB cluster.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -1130,7 +1130,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>IPV4 | DUAL</code> 
+        /// Valid Values: <c>IPV4 | DUAL</c> 
         /// </para>
         /// </summary>
         public string NetworkType
@@ -1173,7 +1173,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster2</code> 
+        /// Example: <c>my-cluster2</c> 
         /// </para>
         /// </summary>
         public string NewDBClusterIdentifier
@@ -1223,8 +1223,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
-        /// RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services
+        /// If you don't specify a value for <c>PerformanceInsightsKMSKeyId</c>, then Amazon RDS
+        /// uses your default KMS key. There is a default KMS key for your Amazon Web Services
         /// account. Your Amazon Web Services account has a different default KMS key for each
         /// Amazon Web Services Region.
         /// </para>
@@ -1260,26 +1260,25 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>7</code> 
+        ///  <c>7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
-        /// <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code>
-        /// (19 months * 31)
+        /// <c>93</c> (3 months * 31), <c>341</c> (11 months * 31), <c>589</c> (19 months * 31)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>731</code> 
+        ///  <c>731</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>7</code> days
+        /// Default: <c>7</c> days
         /// </para>
         ///  
         /// <para>
-        /// If you specify a retention period that isn't valid, such as <code>94</code>, Amazon
-        /// RDS issues an error.
+        /// If you specify a retention period that isn't valid, such as <c>94</c>, Amazon RDS
+        /// issues an error.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -1305,7 +1304,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <c>1150-65535</c> 
         /// </para>
         ///  
         /// <para>
@@ -1328,7 +1327,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter.
+        /// are enabled, using the <c>BackupRetentionPeriod</c> parameter.
         /// </para>
         ///  
         /// <para>
@@ -1346,7 +1345,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1398,11 +1397,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>ddd:hh24:mi-ddd:hh24:mi</code>.
+        /// Must be in the format <c>ddd:hh24:mi-ddd:hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Days must be one of <code>Mon | Tue | Wed | Thu | Fri | Sat | Sun</code>.
+        /// Days must be one of <c>Mon | Tue | Wed | Thu | Fri | Sat | Sun</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1476,7 +1475,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property ScalingConfiguration. 
         /// <para>
         /// The scaling properties of the DB cluster. You can only modify scaling properties for
-        /// DB clusters in <code>serverless</code> DB engine mode.
+        /// DB clusters in <c>serverless</c> DB engine mode.
         /// </para>
         ///  
         /// <para>
@@ -1524,8 +1523,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
-        /// is required.
+        /// When specified for a Multi-AZ DB cluster, a value for the <c>Iops</c> parameter is
+        /// required.
         /// </para>
         ///  
         /// <para>
@@ -1537,11 +1536,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Aurora DB clusters - <code>aurora | aurora-iopt1</code> 
+        /// Aurora DB clusters - <c>aurora | aurora-iopt1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Multi-AZ DB clusters - <code>io1</code> 
+        /// Multi-AZ DB clusters - <c>io1</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1549,11 +1548,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Aurora DB clusters - <code>aurora</code> 
+        /// Aurora DB clusters - <c>aurora</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Multi-AZ DB clusters - <code>io1</code> 
+        /// Multi-AZ DB clusters - <c>io1</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

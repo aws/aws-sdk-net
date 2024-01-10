@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeLayers</code> request.
+    /// Contains the response to a <c>DescribeLayers</c> request.
     /// </summary>
     public partial class DescribeLayersResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Layers. 
         /// <para>
-        /// An array of <code>Layer</code> objects that describe the layers.
+        /// An array of <c>Layer</c> objects that describe the layers.
         /// </para>
         /// </summary>
         public List<Layer> Layers

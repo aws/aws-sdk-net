@@ -42,8 +42,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of channels that you want MediaTailor to return in response to
-        /// the current request. If there are more than <code>MaxResults</code> channels, use
-        /// the value of <code>NextToken</code> in the response to get the next page of results.
+        /// the current request. If there are more than <c>MaxResults</c> channels, use the value
+        /// of <c>NextToken</c> in the response to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

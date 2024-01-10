@@ -105,9 +105,9 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property GroupsPrefix. 
         /// <para>
         /// The prefix that is prepended to group claims to prevent clashes with existing names
-        /// (such as <code>system:</code> groups). For example, the value<code> oidc:</code> creates
-        /// group names like <code>oidc:engineering</code> and <code>oidc:infra</code>. The prefix
-        /// can't contain <code>system:</code> 
+        /// (such as <c>system:</c> groups). For example, the value<c> oidc:</c> creates group
+        /// names like <c>oidc:engineering</c> and <c>oidc:infra</c>. The prefix can't contain
+        /// <c>system:</c> 
         /// </para>
         /// </summary>
         public string GroupsPrefix
@@ -257,7 +257,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property UsernamePrefix. 
         /// <para>
         /// The prefix that is prepended to username claims to prevent clashes with existing names.
-        /// The prefix can't contain <code>system:</code> 
+        /// The prefix can't contain <c>system:</c> 
         /// </para>
         /// </summary>
         public string UsernamePrefix

@@ -57,9 +57,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier of the replicated instance. You can find the <code>instanceId</code>
-        /// in the ARN of the instance. The replicated instance has the same identifier as the
-        /// instance it was replicated from.
+        /// The identifier of the replicated instance. You can find the <c>instanceId</c> in the
+        /// ARN of the instance. The replicated instance has the same identifier as the instance
+        /// it was replicated from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

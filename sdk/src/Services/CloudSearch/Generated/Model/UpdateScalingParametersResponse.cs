@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>UpdateScalingParameters</code> request. Contains the status
-    /// of the newly-configured scaling parameters.
+    /// The result of a <c>UpdateScalingParameters</c> request. Contains the status of the
+    /// newly-configured scaling parameters.
     /// </summary>
     public partial class UpdateScalingParametersResponse : AmazonWebServiceResponse
     {

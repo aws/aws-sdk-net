@@ -49,7 +49,7 @@ namespace Amazon.CloudHSM.Model
     /// </para>
     ///  
     /// <para>
-    /// There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code>
+    /// There is an upfront fee charged for each HSM instance that you create with the <c>CreateHsm</c>
     /// operation. If you accidentally provision an HSM and want to request a refund, delete
     /// the instance using the <a>DeleteHsm</a> operation, go to the <a href="https://console.aws.amazon.com/support/home">AWS
     /// Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.
@@ -58,7 +58,7 @@ namespace Amazon.CloudHSM.Model
     /// <para>
     /// It can take up to 20 minutes to create and provision an HSM. You can monitor the status
     /// of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized
-    /// when the status changes to <code>RUNNING</code>.
+    /// when the status changes to <c>RUNNING</c>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -118,7 +118,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external ID from <code>IamRoleArn</code>, if present.
+        /// The external ID from <c>IamRoleArn</c>, if present.
         /// </para>
         /// </summary>
         public string ExternalId

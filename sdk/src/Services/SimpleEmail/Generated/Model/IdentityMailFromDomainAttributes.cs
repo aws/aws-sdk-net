@@ -42,16 +42,16 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property BehaviorOnMXFailure. 
         /// <para>
         /// The action that Amazon SES takes if it cannot successfully read the required MX record
-        /// when you send an email. A value of <code>UseDefaultValue</code> indicates that if
-        /// Amazon SES cannot read the required MX record, it uses amazonses.com (or a subdomain
-        /// of that) as the MAIL FROM domain. A value of <code>RejectMessage</code> indicates
-        /// that if Amazon SES cannot read the required MX record, Amazon SES returns a <code>MailFromDomainNotVerified</code>
+        /// when you send an email. A value of <c>UseDefaultValue</c> indicates that if Amazon
+        /// SES cannot read the required MX record, it uses amazonses.com (or a subdomain of that)
+        /// as the MAIL FROM domain. A value of <c>RejectMessage</c> indicates that if Amazon
+        /// SES cannot read the required MX record, Amazon SES returns a <c>MailFromDomainNotVerified</c>
         /// error and does not send the email.
         /// </para>
         ///  
         /// <para>
-        /// The custom MAIL FROM setup states that result in this behavior are <code>Pending</code>,
-        /// <code>Failed</code>, and <code>TemporaryFailure</code>.
+        /// The custom MAIL FROM setup states that result in this behavior are <c>Pending</c>,
+        /// <c>Failed</c>, and <c>TemporaryFailure</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,9 +90,9 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property MailFromDomainStatus. 
         /// <para>
         /// The state that indicates whether Amazon SES has successfully read the MX record required
-        /// for custom MAIL FROM domain setup. If the state is <code>Success</code>, Amazon SES
-        /// uses the specified custom MAIL FROM domain when the verified identity sends an email.
-        /// All other states indicate that Amazon SES takes the action described by <code>BehaviorOnMXFailure</code>.
+        /// for custom MAIL FROM domain setup. If the state is <c>Success</c>, Amazon SES uses
+        /// the specified custom MAIL FROM domain when the verified identity sends an email. All
+        /// other states indicate that Amazon SES takes the action described by <c>BehaviorOnMXFailure</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

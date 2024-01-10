@@ -230,7 +230,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LocalTarget. 
         /// <para>
-        /// Specifies whether to reset the local route to its default target (<code>local</code>).
+        /// Specifies whether to reset the local route to its default target (<c>local</c>).
         /// </para>
         /// </summary>
         public bool LocalTarget

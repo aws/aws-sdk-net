@@ -30,8 +30,8 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// Specifies a location within the frame that Rekognition checks for objects of interest
-    /// such as text, labels, or faces. It uses a <code>BoundingBox</code> or <code>Polygon</code>
-    /// to set a region of the screen.
+    /// such as text, labels, or faces. It uses a <c>BoundingBox</c> or <c>Polygon</c> to
+    /// set a region of the screen.
     /// 
     ///  
     /// <para>
@@ -67,8 +67,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Polygon. 
         /// <para>
-        ///  Specifies a shape made up of up to 10 <code>Point</code> objects to define a region
-        /// of interest. 
+        ///  Specifies a shape made up of up to 10 <c>Point</c> objects to define a region of
+        /// interest. 
         /// </para>
         /// </summary>
         public List<Point> Polygon

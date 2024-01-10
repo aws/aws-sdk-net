@@ -97,8 +97,8 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property Verb. 
         /// <para>
         /// The verb component of the Kubernetes API call. For example, when you check whether
-        /// or not you have the permission to call the <code>CreatePod</code> API, the verb component
-        /// will be <code>Create</code>.
+        /// or not you have the permission to call the <c>CreatePod</c> API, the verb component
+        /// will be <c>Create</c>.
         /// </para>
         /// </summary>
         public string Verb

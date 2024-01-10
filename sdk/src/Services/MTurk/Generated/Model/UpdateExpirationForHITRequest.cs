@@ -30,9 +30,8 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateExpirationForHIT operation.
-    /// The <code>UpdateExpirationForHIT</code> operation allows you update the expiration
-    /// time of a HIT. If you update it to a time in the past, the HIT will be immediately
-    /// expired.
+    /// The <c>UpdateExpirationForHIT</c> operation allows you update the expiration time
+    /// of a HIT. If you update it to a time in the past, the HIT will be immediately expired.
     /// </summary>
     public partial class UpdateExpirationForHITRequest : AmazonMTurkRequest
     {

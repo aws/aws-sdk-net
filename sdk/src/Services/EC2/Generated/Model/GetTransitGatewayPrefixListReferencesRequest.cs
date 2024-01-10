@@ -47,35 +47,34 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>attachment.resource-id</code> - The ID of the resource for the attachment.
+        ///  <c>attachment.resource-id</c> - The ID of the resource for the attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.resource-type</code> - The type of resource for the attachment.
-        /// Valid values are <code>vpc</code> | <code>vpn</code> | <code>direct-connect-gateway</code>
-        /// | <code>peering</code>.
+        ///  <c>attachment.resource-type</c> - The type of resource for the attachment. Valid
+        /// values are <c>vpc</c> | <c>vpn</c> | <c>direct-connect-gateway</c> | <c>peering</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attachment.transit-gateway-attachment-id</code> - The ID of the attachment.
+        ///  <c>attachment.transit-gateway-attachment-id</c> - The ID of the attachment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>is-blackhole</code> - Whether traffic matching the route is blocked (<code>true</code>
-        /// | <code>false</code>).
+        ///  <c>is-blackhole</c> - Whether traffic matching the route is blocked (<c>true</c>
+        /// | <c>false</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>prefix-list-id</code> - The ID of the prefix list.
+        ///  <c>prefix-list-id</c> - The ID of the prefix list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>prefix-list-owner-id</code> - The ID of the owner of the prefix list.
+        ///  <c>prefix-list-owner-id</c> - The ID of the owner of the prefix list.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the prefix list reference (<code>pending</code>
-        /// | <code>available</code> | <code>modifying</code> | <code>deleting</code>).
+        ///  <c>state</c> - The state of the prefix list reference (<c>pending</c> | <c>available</c>
+        /// | <c>modifying</c> | <c>deleting</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -95,7 +94,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

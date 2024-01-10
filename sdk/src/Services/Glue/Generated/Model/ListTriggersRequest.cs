@@ -36,9 +36,9 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// This operation takes the optional <code>Tags</code> field, which you can use as a
-    /// filter on the response so that tagged resources can be retrieved as a group. If you
-    /// choose to use tags filtering, only resources with the tag are retrieved.
+    /// This operation takes the optional <c>Tags</c> field, which you can use as a filter
+    /// on the response so that tagged resources can be retrieved as a group. If you choose
+    /// to use tags filtering, only resources with the tag are retrieved.
     /// </para>
     /// </summary>
     public partial class ListTriggersRequest : AmazonGlueRequest

@@ -38,8 +38,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Restrictions. 
         /// <para>
-        /// A <code>PackageOriginRestrictions</code> object that contains information about the
-        /// upstream and publish package origin configuration for the package.
+        /// A <c>PackageOriginRestrictions</c> object that contains information about the upstream
+        /// and publish package origin configuration for the package.
         /// </para>
         /// </summary>
         public PackageOriginRestrictions Restrictions

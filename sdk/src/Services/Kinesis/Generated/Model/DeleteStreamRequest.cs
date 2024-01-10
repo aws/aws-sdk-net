@@ -32,25 +32,25 @@ namespace Amazon.Kinesis.Model
     /// Container for the parameters to the DeleteStream operation.
     /// Deletes a Kinesis data stream and all its shards and data. You must shut down any
     /// applications that are operating on the stream before you delete the stream. If an
-    /// application attempts to operate on a deleted stream, it receives the exception <code>ResourceNotFoundException</code>.
+    /// application attempts to operate on a deleted stream, it receives the exception <c>ResourceNotFoundException</c>.
     /// 
     ///  <note> 
     /// <para>
-    /// When invoking this API, you must use either the <code>StreamARN</code> or the <code>StreamName</code>
-    /// parameter, or both. It is recommended that you use the <code>StreamARN</code> input
-    /// parameter when you invoke this API.
+    /// When invoking this API, you must use either the <c>StreamARN</c> or the <c>StreamName</c>
+    /// parameter, or both. It is recommended that you use the <c>StreamARN</c> input parameter
+    /// when you invoke this API.
     /// </para>
     ///  </note> 
     /// <para>
-    /// If the stream is in the <code>ACTIVE</code> state, you can delete it. After a <code>DeleteStream</code>
-    /// request, the specified stream is in the <code>DELETING</code> state until Kinesis
-    /// Data Streams completes the deletion.
+    /// If the stream is in the <c>ACTIVE</c> state, you can delete it. After a <c>DeleteStream</c>
+    /// request, the specified stream is in the <c>DELETING</c> state until Kinesis Data Streams
+    /// completes the deletion.
     /// </para>
     ///  
     /// <para>
     ///  <b>Note:</b> Kinesis Data Streams might continue to accept data read and write operations,
     /// such as <a>PutRecord</a>, <a>PutRecords</a>, and <a>GetRecords</a>, on a stream in
-    /// the <code>DELETING</code> state until the stream deletion is complete.
+    /// the <c>DELETING</c> state until the stream deletion is complete.
     /// </para>
     ///  
     /// <para>
@@ -60,7 +60,7 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     /// You can use the <a>DescribeStreamSummary</a> operation to check the state of the stream,
-    /// which is returned in <code>StreamStatus</code>.
+    /// which is returned in <c>StreamStatus</c>.
     /// </para>
     ///  
     /// <para>
@@ -76,9 +76,9 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property EnforceConsumerDeletion. 
         /// <para>
-        /// If this parameter is unset (<code>null</code>) or if you set it to <code>false</code>,
-        /// and the stream has registered consumers, the call to <code>DeleteStream</code> fails
-        /// with a <code>ResourceInUseException</code>. 
+        /// If this parameter is unset (<c>null</c>) or if you set it to <c>false</c>, and the
+        /// stream has registered consumers, the call to <c>DeleteStream</c> fails with a <c>ResourceInUseException</c>.
+        /// 
         /// </para>
         /// </summary>
         public bool EnforceConsumerDeletion

@@ -47,8 +47,8 @@ namespace Amazon.StorageGateway.Model
         /// <para>
         /// The minimum number of available virtual tapes that the gateway maintains at all times.
         /// If the number of tapes on the gateway goes below this value, the gateway creates as
-        /// many new tapes as are needed to have <code>MinimumNumTapes</code> on the gateway.
-        /// For more information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
+        /// many new tapes as are needed to have <c>MinimumNumTapes</c> on the gateway. For more
+        /// information about automatic tape creation, see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically">Creating
         /// Tapes Automatically</a>.
         /// </para>
         /// </summary>
@@ -136,8 +136,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Worm. 
         /// <para>
-        /// Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many
-        /// (WORM). Set to <code>false</code> when WORM is not enabled for tapes.
+        /// Set to <c>true</c> to indicate that tapes are to be archived as write-once-read-many
+        /// (WORM). Set to <c>false</c> when WORM is not enabled for tapes.
         /// </para>
         /// </summary>
         public bool Worm

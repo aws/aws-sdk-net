@@ -42,7 +42,7 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// In dead-letter queues redrive context, the <code>StartMessageMoveTask</code> the source
+    /// In dead-letter queues redrive context, the <c>StartMessageMoveTask</c> the source
     /// queue is the DLQ, while the destination queue can be the original source queue (from
     /// which the messages were driven to the dead-letter-queue), or a custom destination
     /// queue.

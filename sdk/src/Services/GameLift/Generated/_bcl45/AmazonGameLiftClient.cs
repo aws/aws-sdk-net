@@ -341,17 +341,17 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// When FlexMatch builds a match, all the matchmaking tickets involved in the proposed
-        /// match are placed into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for
-        /// your game to get acceptance from all players in each ticket. Calls to this action
-        /// are only valid for tickets that are in this status; calls for tickets not in this
-        /// status result in an error.
+        /// match are placed into status <c>REQUIRES_ACCEPTANCE</c>. This is a trigger for your
+        /// game to get acceptance from all players in each ticket. Calls to this action are only
+        /// valid for tickets that are in this status; calls for tickets not in this status result
+        /// in an error.
         /// </para>
         ///  
         /// <para>
         /// To register acceptance, specify the ticket ID, one or more players, and an acceptance
         /// response. When all players have accepted, Amazon GameLift advances the matchmaking
-        /// tickets to status <code>PLACING</code>, and attempts to create a new game session
-        /// for the match. 
+        /// tickets to status <c>PLACING</c>, and attempts to create a new game session for the
+        /// match. 
         /// </para>
         ///  
         /// <para>
@@ -362,12 +362,12 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// If the ticket has one or more players who rejected the match or failed to respond,
-        /// the ticket status is set <code>CANCELLED</code> and processing is terminated.
+        /// the ticket status is set <c>CANCELLED</c> and processing is terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If all players in the ticket accepted the match, the ticket status is returned to
-        /// <code>SEARCHING</code> to find a new match. 
+        /// <c>SEARCHING</c> to find a new match. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -422,17 +422,17 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// When FlexMatch builds a match, all the matchmaking tickets involved in the proposed
-        /// match are placed into status <code>REQUIRES_ACCEPTANCE</code>. This is a trigger for
-        /// your game to get acceptance from all players in each ticket. Calls to this action
-        /// are only valid for tickets that are in this status; calls for tickets not in this
-        /// status result in an error.
+        /// match are placed into status <c>REQUIRES_ACCEPTANCE</c>. This is a trigger for your
+        /// game to get acceptance from all players in each ticket. Calls to this action are only
+        /// valid for tickets that are in this status; calls for tickets not in this status result
+        /// in an error.
         /// </para>
         ///  
         /// <para>
         /// To register acceptance, specify the ticket ID, one or more players, and an acceptance
         /// response. When all players have accepted, Amazon GameLift advances the matchmaking
-        /// tickets to status <code>PLACING</code>, and attempts to create a new game session
-        /// for the match. 
+        /// tickets to status <c>PLACING</c>, and attempts to create a new game session for the
+        /// match. 
         /// </para>
         ///  
         /// <para>
@@ -443,12 +443,12 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// If the ticket has one or more players who rejected the match or failed to respond,
-        /// the ticket status is set <code>CANCELLED</code> and processing is terminated.
+        /// the ticket status is set <c>CANCELLED</c> and processing is terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If all players in the ticket accepted the match, the ticket status is returned to
-        /// <code>SEARCHING</code> to find a new match. 
+        /// <c>SEARCHING</c> to find a new match. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -510,9 +510,9 @@ namespace Amazon.GameLift
         /// Locates an available game server and temporarily reserves it to host gameplay and
         /// players. This operation is called from a game client or client service (such as a
         /// matchmaker) to request hosting resources for a new game session. In response, Amazon
-        /// GameLift FleetIQ locates an available game server, places it in <code>CLAIMED</code>
-        /// status for 60 seconds, and returns connection information that players can use to
-        /// connect to the game server. 
+        /// GameLift FleetIQ locates an available game server, places it in <c>CLAIMED</c> status
+        /// for 60 seconds, and returns connection information that players can use to connect
+        /// to the game server. 
         /// </para>
         ///  
         /// <para>
@@ -520,18 +520,18 @@ namespace Amazon.GameLift
         /// server ID, although this approach bypasses Amazon GameLift FleetIQ placement optimization.
         /// Optionally, include game data to pass to the game server at the start of a game session,
         /// such as a game map or player information. Add filter options to further restrict how
-        /// a game server is chosen, such as only allowing game servers on <code>ACTIVE</code>
-        /// instances to be claimed.
+        /// a game server is chosen, such as only allowing game servers on <c>ACTIVE</c> instances
+        /// to be claimed.
         /// </para>
         ///  
         /// <para>
         /// When a game server is successfully claimed, connection information is returned. A
-        /// claimed game server's utilization status remains <code>AVAILABLE</code> while the
-        /// claim status is set to <code>CLAIMED</code> for up to 60 seconds. This time period
-        /// gives the game server time to update its status to <code>UTILIZED</code> after players
-        /// join. If the game server's status is not updated within 60 seconds, the game server
-        /// reverts to unclaimed status and is available to be claimed by another request. The
-        /// claim time period is a fixed value and is not configurable.
+        /// claimed game server's utilization status remains <c>AVAILABLE</c> while the claim
+        /// status is set to <c>CLAIMED</c> for up to 60 seconds. This time period gives the game
+        /// server time to update its status to <c>UTILIZED</c> after players join. If the game
+        /// server's status is not updated within 60 seconds, the game server reverts to unclaimed
+        /// status and is available to be claimed by another request. The claim time period is
+        /// a fixed value and is not configurable.
         /// </para>
         ///  
         /// <para>
@@ -540,16 +540,16 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the game server utilization status is <code>UTILIZED</code>.
+        /// If the game server utilization status is <c>UTILIZED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the game server claim status is <code>CLAIMED</code>.
+        /// If the game server claim status is <c>CLAIMED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the game server is running on an instance in <code>DRAINING</code> status and the
-        /// provided filter option does not allow placing on <code>DRAINING</code> instances.
+        /// If the game server is running on an instance in <c>DRAINING</c> status and the provided
+        /// filter option does not allow placing on <c>DRAINING</c> instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -581,7 +581,7 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.OutOfCapacityException">
-        /// The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code>
+        /// The specified game server group has no available game servers to fulfill a <c>ClaimGameServer</c>
         /// request. Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -607,9 +607,9 @@ namespace Amazon.GameLift
         /// Locates an available game server and temporarily reserves it to host gameplay and
         /// players. This operation is called from a game client or client service (such as a
         /// matchmaker) to request hosting resources for a new game session. In response, Amazon
-        /// GameLift FleetIQ locates an available game server, places it in <code>CLAIMED</code>
-        /// status for 60 seconds, and returns connection information that players can use to
-        /// connect to the game server. 
+        /// GameLift FleetIQ locates an available game server, places it in <c>CLAIMED</c> status
+        /// for 60 seconds, and returns connection information that players can use to connect
+        /// to the game server. 
         /// </para>
         ///  
         /// <para>
@@ -617,18 +617,18 @@ namespace Amazon.GameLift
         /// server ID, although this approach bypasses Amazon GameLift FleetIQ placement optimization.
         /// Optionally, include game data to pass to the game server at the start of a game session,
         /// such as a game map or player information. Add filter options to further restrict how
-        /// a game server is chosen, such as only allowing game servers on <code>ACTIVE</code>
-        /// instances to be claimed.
+        /// a game server is chosen, such as only allowing game servers on <c>ACTIVE</c> instances
+        /// to be claimed.
         /// </para>
         ///  
         /// <para>
         /// When a game server is successfully claimed, connection information is returned. A
-        /// claimed game server's utilization status remains <code>AVAILABLE</code> while the
-        /// claim status is set to <code>CLAIMED</code> for up to 60 seconds. This time period
-        /// gives the game server time to update its status to <code>UTILIZED</code> after players
-        /// join. If the game server's status is not updated within 60 seconds, the game server
-        /// reverts to unclaimed status and is available to be claimed by another request. The
-        /// claim time period is a fixed value and is not configurable.
+        /// claimed game server's utilization status remains <c>AVAILABLE</c> while the claim
+        /// status is set to <c>CLAIMED</c> for up to 60 seconds. This time period gives the game
+        /// server time to update its status to <c>UTILIZED</c> after players join. If the game
+        /// server's status is not updated within 60 seconds, the game server reverts to unclaimed
+        /// status and is available to be claimed by another request. The claim time period is
+        /// a fixed value and is not configurable.
         /// </para>
         ///  
         /// <para>
@@ -637,16 +637,16 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the game server utilization status is <code>UTILIZED</code>.
+        /// If the game server utilization status is <c>UTILIZED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the game server claim status is <code>CLAIMED</code>.
+        /// If the game server claim status is <c>CLAIMED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the game server is running on an instance in <code>DRAINING</code> status and the
-        /// provided filter option does not allow placing on <code>DRAINING</code> instances.
+        /// If the game server is running on an instance in <c>DRAINING</c> status and the provided
+        /// filter option does not allow placing on <c>DRAINING</c> instances.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -681,7 +681,7 @@ namespace Amazon.GameLift
         /// deleted.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.OutOfCapacityException">
-        /// The specified game server group has no available game servers to fulfill a <code>ClaimGameServer</code>
+        /// The specified game server group has no available game servers to fulfill a <c>ClaimGameServer</c>
         /// request. Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
@@ -721,7 +721,7 @@ namespace Amazon.GameLift
         /// To create a fleet alias, specify an alias name, routing strategy, and optional description.
         /// Each simple alias can point to only one fleet, but a fleet can have multiple aliases.
         /// If successful, a new alias record is returned, including an alias ID and an ARN. You
-        /// can reassign an alias to another fleet by calling <code>UpdateAlias</code>.
+        /// can reassign an alias to another fleet by calling <c>UpdateAlias</c>.
         /// </para>
         ///  
         /// <para>
@@ -789,7 +789,7 @@ namespace Amazon.GameLift
         /// To create a fleet alias, specify an alias name, routing strategy, and optional description.
         /// Each simple alias can point to only one fleet, but a fleet can have multiple aliases.
         /// If successful, a new alias record is returned, including an alias ID and an ARN. You
-        /// can reassign an alias to another fleet by calling <code>UpdateAlias</code>.
+        /// can reassign an alias to another fleet by calling <c>UpdateAlias</c>.
         /// </para>
         ///  
         /// <para>
@@ -859,7 +859,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </important> 
         /// <para>
-        /// You can use the <code>CreateBuild</code> operation in the following scenarios:
+        /// You can use the <c>CreateBuild</c> operation in the following scenarios:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -881,8 +881,8 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// If successful, this operation creates a new build resource with a unique build ID
-        /// and places it in <code>INITIALIZED</code> status. A build must be in <code>READY</code>
-        /// status before you can create fleets with it.
+        /// and places it in <c>INITIALIZED</c> status. A build must be in <c>READY</c> status
+        /// before you can create fleets with it.
         /// </para>
         ///  
         /// <para>
@@ -951,7 +951,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </important> 
         /// <para>
-        /// You can use the <code>CreateBuild</code> operation in the following scenarios:
+        /// You can use the <c>CreateBuild</c> operation in the following scenarios:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -973,8 +973,8 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// If successful, this operation creates a new build resource with a unique build ID
-        /// and places it in <code>INITIALIZED</code> status. A build must be in <code>READY</code>
-        /// status before you can create fleets with it.
+        /// and places it in <c>INITIALIZED</c> status. A build must be in <c>READY</c> status
+        /// before you can create fleets with it.
         /// </para>
         ///  
         /// <para>
@@ -1071,7 +1071,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, this operation creates a new Fleet resource and places it in <code>NEW</code>
+        /// If successful, this operation creates a new Fleet resource and places it in <c>NEW</c>
         /// status, which prompts Amazon GameLift to initiate the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
         /// creation workflow</a>. You can track fleet creation by checking fleet status using
         /// <a>DescribeFleetAttributes</a> and <a>DescribeFleetLocationAttributes</a>/, or by
@@ -1079,9 +1079,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// When the fleet status changes to <code>ACTIVE</code>, you can enable automatic scaling
-        /// with <a>PutScalingPolicy</a> and set capacity for the home Region with <a>UpdateFleetCapacity</a>.
-        /// When the status of each remote location reaches <code>ACTIVE</code>, you can set capacity
+        /// When the fleet status changes to <c>ACTIVE</c>, you can enable automatic scaling with
+        /// <a>PutScalingPolicy</a> and set capacity for the home Region with <a>UpdateFleetCapacity</a>.
+        /// When the status of each remote location reaches <c>ACTIVE</c>, you can set capacity
         /// by location using <a>UpdateFleetCapacity</a>.
         /// </para>
         ///  
@@ -1183,7 +1183,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, this operation creates a new Fleet resource and places it in <code>NEW</code>
+        /// If successful, this operation creates a new Fleet resource and places it in <c>NEW</c>
         /// status, which prompts Amazon GameLift to initiate the <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-creating-all.html#fleets-creation-workflow">fleet
         /// creation workflow</a>. You can track fleet creation by checking fleet status using
         /// <a>DescribeFleetAttributes</a> and <a>DescribeFleetLocationAttributes</a>/, or by
@@ -1191,9 +1191,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// When the fleet status changes to <code>ACTIVE</code>, you can enable automatic scaling
-        /// with <a>PutScalingPolicy</a> and set capacity for the home Region with <a>UpdateFleetCapacity</a>.
-        /// When the status of each remote location reaches <code>ACTIVE</code>, you can set capacity
+        /// When the fleet status changes to <c>ACTIVE</c>, you can enable automatic scaling with
+        /// <a>PutScalingPolicy</a> and set capacity for the home Region with <a>UpdateFleetCapacity</a>.
+        /// When the status of each remote location reaches <c>ACTIVE</c>, you can set capacity
         /// by location using <a>UpdateFleetCapacity</a>.
         /// </para>
         ///  
@@ -1286,9 +1286,9 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, this operation returns the list of added locations with their status
-        /// set to <code>NEW</code>. Amazon GameLift initiates the process of starting an instance
-        /// in each added location. You can track the status of each new location by monitoring
-        /// location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
+        /// set to <c>NEW</c>. Amazon GameLift initiates the process of starting an instance in
+        /// each added location. You can track the status of each new location by monitoring location
+        /// creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
         /// </para>
         ///  
         /// <para>
@@ -1368,9 +1368,9 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// If successful, this operation returns the list of added locations with their status
-        /// set to <code>NEW</code>. Amazon GameLift initiates the process of starting an instance
-        /// in each added location. You can track the status of each new location by monitoring
-        /// location creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
+        /// set to <c>NEW</c>. Amazon GameLift initiates the process of starting an instance in
+        /// each added location. You can track the status of each new location by monitoring location
+        /// creation events using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetEvents.html">DescribeFleetEvents</a>.
         /// </para>
         ///  
         /// <para>
@@ -1643,7 +1643,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// When creating a game session, you specify exactly where you want to place it and provide
-        /// a set of game session configuration settings. The target fleet must be in <code>ACTIVE</code>
+        /// a set of game session configuration settings. The target fleet must be in <c>ACTIVE</c>
         /// status. 
         /// </para>
         ///  
@@ -1668,11 +1668,11 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// If successful, Amazon GameLift initiates a workflow to start a new game session and
-        /// returns a <code>GameSession</code> object containing the game session configuration
-        /// and status. When the game session status is <code>ACTIVE</code>, it is updated with
-        /// connection information and you can create player sessions for the game session. By
-        /// default, newly created game sessions are open to new players. You can restrict new
-        /// player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+        /// returns a <c>GameSession</c> object containing the game session configuration and
+        /// status. When the game session status is <c>ACTIVE</c>, it is updated with connection
+        /// information and you can create player sessions for the game session. By default, newly
+        /// created game sessions are open to new players. You can restrict new player access
+        /// by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
         /// to change the game session's player session creation policy.
         /// </para>
         ///  
@@ -1707,7 +1707,7 @@ namespace Amazon.GameLift
         /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.FleetCapacityExceededException">
-        /// The specified fleet has no available instances to fulfill a <code>CreateGameSession</code>
+        /// The specified fleet has no available instances to fulfill a <c>CreateGameSession</c>
         /// request. Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.IdempotentParameterMismatchException">
@@ -1736,9 +1736,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -1767,7 +1767,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// When creating a game session, you specify exactly where you want to place it and provide
-        /// a set of game session configuration settings. The target fleet must be in <code>ACTIVE</code>
+        /// a set of game session configuration settings. The target fleet must be in <c>ACTIVE</c>
         /// status. 
         /// </para>
         ///  
@@ -1792,11 +1792,11 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// If successful, Amazon GameLift initiates a workflow to start a new game session and
-        /// returns a <code>GameSession</code> object containing the game session configuration
-        /// and status. When the game session status is <code>ACTIVE</code>, it is updated with
-        /// connection information and you can create player sessions for the game session. By
-        /// default, newly created game sessions are open to new players. You can restrict new
-        /// player access by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
+        /// returns a <c>GameSession</c> object containing the game session configuration and
+        /// status. When the game session status is <c>ACTIVE</c>, it is updated with connection
+        /// information and you can create player sessions for the game session. By default, newly
+        /// created game sessions are open to new players. You can restrict new player access
+        /// by using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateGameSession.html">UpdateGameSession</a>
         /// to change the game session's player session creation policy.
         /// </para>
         ///  
@@ -1834,7 +1834,7 @@ namespace Amazon.GameLift
         /// resource associated with the request. Resolve the conflict before retrying this request.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.FleetCapacityExceededException">
-        /// The specified fleet has no available instances to fulfill a <code>CreateGameSession</code>
+        /// The specified fleet has no available instances to fulfill a <c>CreateGameSession</c>
         /// request. Clients can retry such requests immediately or after a waiting period.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.IdempotentParameterMismatchException">
@@ -1863,9 +1863,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -1921,8 +1921,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
-        /// queue ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
+        /// If successful, a new <c>GameSessionQueue</c> object is returned with an assigned queue
+        /// ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html">StartMatchmaking</a>,
         /// reference a queue's name or ARN. 
         /// </para>
@@ -2024,8 +2024,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a new <code>GameSessionQueue</code> object is returned with an assigned
-        /// queue ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
+        /// If successful, a new <c>GameSessionQueue</c> object is returned with an assigned queue
+        /// ARN. New game session requests, which are submitted to queue with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchmaking.html">StartMatchmaking</a>,
         /// reference a queue's name or ARN. 
         /// </para>
@@ -2496,9 +2496,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves an open player slot in a game session for a player. New player sessions can
-        /// be created in any game session with an open slot that is in <code>ACTIVE</code> status
-        /// and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of
-        /// players to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
+        /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
+        /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
+        /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
         /// . 
         /// 
         ///  
@@ -2508,7 +2508,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code>
+        /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
         /// use it to validate the player reservation with the Amazon GameLift service. Player
@@ -2555,9 +2555,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2574,9 +2574,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves an open player slot in a game session for a player. New player sessions can
-        /// be created in any game session with an open slot that is in <code>ACTIVE</code> status
-        /// and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of
-        /// players to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
+        /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
+        /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
+        /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
         /// . 
         /// 
         ///  
@@ -2586,7 +2586,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code>
+        /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
         /// use it to validate the player reservation with the Amazon GameLift service. Player
@@ -2632,9 +2632,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2652,9 +2652,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves an open player slot in a game session for a player. New player sessions can
-        /// be created in any game session with an open slot that is in <code>ACTIVE</code> status
-        /// and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of
-        /// players to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
+        /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
+        /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
+        /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
         /// . 
         /// 
         ///  
@@ -2664,7 +2664,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code>
+        /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
         /// use it to validate the player reservation with the Amazon GameLift service. Player
@@ -2714,9 +2714,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2733,9 +2733,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves an open player slot in a game session for a player. New player sessions can
-        /// be created in any game session with an open slot that is in <code>ACTIVE</code> status
-        /// and has a player creation policy of <code>ACCEPT_ALL</code>. You can add a group of
-        /// players to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
+        /// be created in any game session with an open slot that is in <c>ACTIVE</c> status and
+        /// has a player creation policy of <c>ACCEPT_ALL</c>. You can add a group of players
+        /// to a game session with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSessions.html">CreatePlayerSessions</a>
         /// . 
         /// 
         ///  
@@ -2745,7 +2745,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for the player and a new <code>PlayerSessions</code>
+        /// If successful, a slot is reserved in the game session for the player and a new <c>PlayerSessions</c>
         /// object is returned with a player session ID. The player references the player session
         /// ID when sending a connection request to the game session, and the game server can
         /// use it to validate the player reservation with the Amazon GameLift service. Player
@@ -2794,9 +2794,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2818,9 +2818,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves open slots in a game session for a group of players. New player sessions
-        /// can be created in any game session with an open slot that is in <code>ACTIVE</code>
-        /// status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single
-        /// player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
+        /// can be created in any game session with an open slot that is in <c>ACTIVE</c> status
+        /// and has a player creation policy of <c>ACCEPT_ALL</c>. To add a single player to a
+        /// game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
         /// 
         /// 
         ///  
@@ -2830,7 +2830,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code>
+        /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
         /// can use it to validate the player reservation with the Amazon GameLift service. Player
@@ -2877,9 +2877,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2896,9 +2896,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves open slots in a game session for a group of players. New player sessions
-        /// can be created in any game session with an open slot that is in <code>ACTIVE</code>
-        /// status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single
-        /// player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
+        /// can be created in any game session with an open slot that is in <c>ACTIVE</c> status
+        /// and has a player creation policy of <c>ACCEPT_ALL</c>. To add a single player to a
+        /// game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
         /// 
         /// 
         ///  
@@ -2908,7 +2908,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code>
+        /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
         /// can use it to validate the player reservation with the Amazon GameLift service. Player
@@ -2954,9 +2954,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -2974,9 +2974,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves open slots in a game session for a group of players. New player sessions
-        /// can be created in any game session with an open slot that is in <code>ACTIVE</code>
-        /// status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single
-        /// player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
+        /// can be created in any game session with an open slot that is in <c>ACTIVE</c> status
+        /// and has a player creation policy of <c>ACCEPT_ALL</c>. To add a single player to a
+        /// game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
         /// 
         /// 
         ///  
@@ -2986,7 +2986,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code>
+        /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
         /// can use it to validate the player reservation with the Amazon GameLift service. Player
@@ -3036,9 +3036,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -3055,9 +3055,9 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Reserves open slots in a game session for a group of players. New player sessions
-        /// can be created in any game session with an open slot that is in <code>ACTIVE</code>
-        /// status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single
-        /// player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
+        /// can be created in any game session with an open slot that is in <c>ACTIVE</c> status
+        /// and has a player creation policy of <c>ACCEPT_ALL</c>. To add a single player to a
+        /// game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a>
         /// 
         /// 
         ///  
@@ -3067,7 +3067,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a slot is reserved in the game session for each player, and new <code>PlayerSession</code>
+        /// If successful, a slot is reserved in the game session for each player, and new <c>PlayerSession</c>
         /// objects are returned with player session IDs. Each player references their player
         /// session ID when sending a connection request to the game session, and the game server
         /// can use it to validate the player reservation with the Amazon GameLift service. Player
@@ -3116,9 +3116,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -4063,7 +4063,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Deletes all resources and information related a fleet. Any current fleet instances,
-        /// including those in remote locations, are shut down. You don't need to call <code>DeleteFleetLocations</code>
+        /// including those in remote locations, are shut down. You don't need to call <c>DeleteFleetLocations</c>
         /// separately.
         /// 
         ///  <note> 
@@ -4075,8 +4075,8 @@ namespace Amazon.GameLift
         ///  </note> 
         /// <para>
         /// To delete a fleet, specify the fleet ID to be terminated. During the deletion process
-        /// the fleet status is changed to <code>DELETING</code>. When completed, the status switches
-        /// to <code>TERMINATED</code> and the fleet event <code>FLEET_DELETED</code> is sent.
+        /// the fleet status is changed to <c>DELETING</c>. When completed, the status switches
+        /// to <c>TERMINATED</c> and the fleet event <c>FLEET_DELETED</c> is sent.
         /// </para>
         ///  
         /// <para>
@@ -4125,7 +4125,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Deletes all resources and information related a fleet. Any current fleet instances,
-        /// including those in remote locations, are shut down. You don't need to call <code>DeleteFleetLocations</code>
+        /// including those in remote locations, are shut down. You don't need to call <c>DeleteFleetLocations</c>
         /// separately.
         /// 
         ///  <note> 
@@ -4137,8 +4137,8 @@ namespace Amazon.GameLift
         ///  </note> 
         /// <para>
         /// To delete a fleet, specify the fleet ID to be terminated. During the deletion process
-        /// the fleet status is changed to <code>DELETING</code>. When completed, the status switches
-        /// to <code>TERMINATED</code> and the fleet event <code>FLEET_DELETED</code> is sent.
+        /// the fleet status is changed to <c>DELETING</c>. When completed, the status switches
+        /// to <c>TERMINATED</c> and the fleet event <c>FLEET_DELETED</c> is sent.
         /// </para>
         ///  
         /// <para>
@@ -4189,7 +4189,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Deletes all resources and information related a fleet. Any current fleet instances,
-        /// including those in remote locations, are shut down. You don't need to call <code>DeleteFleetLocations</code>
+        /// including those in remote locations, are shut down. You don't need to call <c>DeleteFleetLocations</c>
         /// separately.
         /// 
         ///  <note> 
@@ -4201,8 +4201,8 @@ namespace Amazon.GameLift
         ///  </note> 
         /// <para>
         /// To delete a fleet, specify the fleet ID to be terminated. During the deletion process
-        /// the fleet status is changed to <code>DELETING</code>. When completed, the status switches
-        /// to <code>TERMINATED</code> and the fleet event <code>FLEET_DELETED</code> is sent.
+        /// the fleet status is changed to <c>DELETING</c>. When completed, the status switches
+        /// to <c>TERMINATED</c> and the fleet event <c>FLEET_DELETED</c> is sent.
         /// </para>
         ///  
         /// <para>
@@ -4254,7 +4254,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Deletes all resources and information related a fleet. Any current fleet instances,
-        /// including those in remote locations, are shut down. You don't need to call <code>DeleteFleetLocations</code>
+        /// including those in remote locations, are shut down. You don't need to call <c>DeleteFleetLocations</c>
         /// separately.
         /// 
         ///  <note> 
@@ -4266,8 +4266,8 @@ namespace Amazon.GameLift
         ///  </note> 
         /// <para>
         /// To delete a fleet, specify the fleet ID to be terminated. During the deletion process
-        /// the fleet status is changed to <code>DELETING</code>. When completed, the status switches
-        /// to <code>TERMINATED</code> and the fleet event <code>FLEET_DELETED</code> is sent.
+        /// the fleet status is changed to <c>DELETING</c>. When completed, the status switches
+        /// to <c>TERMINATED</c> and the fleet event <c>FLEET_DELETED</c> is sent.
         /// </para>
         ///  
         /// <para>
@@ -4335,9 +4335,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, GameLift sets the location status to <code>DELETING</code>, and begins
-        /// to shut down existing server processes and terminate instances in each location being
-        /// deleted. When completed, the location status changes to <code>TERMINATED</code>.
+        /// If successful, GameLift sets the location status to <c>DELETING</c>, and begins to
+        /// shut down existing server processes and terminate instances in each location being
+        /// deleted. When completed, the location status changes to <c>TERMINATED</c>.
         /// </para>
         ///  
         /// <para>
@@ -4393,9 +4393,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, GameLift sets the location status to <code>DELETING</code>, and begins
-        /// to shut down existing server processes and terminate instances in each location being
-        /// deleted. When completed, the location status changes to <code>TERMINATED</code>.
+        /// If successful, GameLift sets the location status to <c>DELETING</c>, and begins to
+        /// shut down existing server processes and terminate instances in each location being
+        /// deleted. When completed, the location status changes to <c>TERMINATED</c>.
         /// </para>
         ///  
         /// <para>
@@ -4473,16 +4473,16 @@ namespace Amazon.GameLift
         /// <para>
         /// To delete a game server group, identify the game server group to delete and specify
         /// the type of delete operation to initiate. Game server groups can only be deleted if
-        /// they are in <code>ACTIVE</code> or <code>ERROR</code> status.
+        /// they are in <c>ACTIVE</c> or <c>ERROR</c> status.
         /// </para>
         ///  
         /// <para>
         /// If the delete request is successful, a series of operations are kicked off. The game
-        /// server group status is changed to <code>DELETE_SCHEDULED</code>, which prevents new
-        /// game servers from being registered and stops automatic scaling activity. Once all
-        /// game servers in the game server group are deregistered, Amazon GameLift FleetIQ can
-        /// begin deleting resources. If any of the delete operations fail, the game server group
-        /// is placed in <code>ERROR</code> status.
+        /// server group status is changed to <c>DELETE_SCHEDULED</c>, which prevents new game
+        /// servers from being registered and stops automatic scaling activity. Once all game
+        /// servers in the game server group are deregistered, Amazon GameLift FleetIQ can begin
+        /// deleting resources. If any of the delete operations fail, the game server group is
+        /// placed in <c>ERROR</c> status.
         /// </para>
         ///  
         /// <para>
@@ -4554,16 +4554,16 @@ namespace Amazon.GameLift
         /// <para>
         /// To delete a game server group, identify the game server group to delete and specify
         /// the type of delete operation to initiate. Game server groups can only be deleted if
-        /// they are in <code>ACTIVE</code> or <code>ERROR</code> status.
+        /// they are in <c>ACTIVE</c> or <c>ERROR</c> status.
         /// </para>
         ///  
         /// <para>
         /// If the delete request is successful, a series of operations are kicked off. The game
-        /// server group status is changed to <code>DELETE_SCHEDULED</code>, which prevents new
-        /// game servers from being registered and stops automatic scaling activity. Once all
-        /// game servers in the game server group are deregistered, Amazon GameLift FleetIQ can
-        /// begin deleting resources. If any of the delete operations fail, the game server group
-        /// is placed in <code>ERROR</code> status.
+        /// server group status is changed to <c>DELETE_SCHEDULED</c>, which prevents new game
+        /// servers from being registered and stops automatic scaling activity. Once all game
+        /// servers in the game server group are deregistered, Amazon GameLift FleetIQ can begin
+        /// deleting resources. If any of the delete operations fail, the game server group is
+        /// placed in <c>ERROR</c> status.
         /// </para>
         ///  
         /// <para>
@@ -5585,7 +5585,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
-        /// To get an alias's target fleet ID only, use <code>ResolveAlias</code>. 
+        /// To get an alias's target fleet ID only, use <c>ResolveAlias</c>. 
         /// 
         ///  
         /// <para>
@@ -5631,7 +5631,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
-        /// To get an alias's target fleet ID only, use <code>ResolveAlias</code>. 
+        /// To get an alias's target fleet ID only, use <c>ResolveAlias</c>. 
         /// 
         ///  
         /// <para>
@@ -5679,7 +5679,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
-        /// To get an alias's target fleet ID only, use <code>ResolveAlias</code>. 
+        /// To get an alias's target fleet ID only, use <c>ResolveAlias</c>. 
         /// 
         ///  
         /// <para>
@@ -5728,7 +5728,7 @@ namespace Amazon.GameLift
 
         /// <summary>
         /// Retrieves properties for an alias. This operation returns all alias metadata and settings.
-        /// To get an alias's target fleet ID only, use <code>ResolveAlias</code>. 
+        /// To get an alias's target fleet ID only, use <c>ResolveAlias</c>. 
         /// 
         ///  
         /// <para>
@@ -6096,22 +6096,22 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Request specifies the Region <code>ap-northeast-1</code> with no location. The result
-        /// is limits and usage data on all instance types that are deployed in <code>us-east-2</code>,
-        /// by all of the fleets that reside in <code>ap-northeast-1</code>. 
+        /// Request specifies the Region <c>ap-northeast-1</c> with no location. The result is
+        /// limits and usage data on all instance types that are deployed in <c>us-east-2</c>,
+        /// by all of the fleets that reside in <c>ap-northeast-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>us-east-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>us-east-2</code>. These limits do not affect
-        /// fleets in any other Regions that deploy instances to <code>ca-central-1</code>.
+        /// Request specifies the Region <c>us-east-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>us-east-2</c>. These limits do not affect fleets
+        /// in any other Regions that deploy instances to <c>ca-central-1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>eu-west-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>eu-west-1</code>.
+        /// Request specifies the Region <c>eu-west-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>eu-west-1</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6132,8 +6132,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, an <code>EC2InstanceLimits</code> object is returned with limits and
-        /// usage data for each requested instance type.
+        /// If successful, an <c>EC2InstanceLimits</c> object is returned with limits and usage
+        /// data for each requested instance type.
         /// </para>
         ///  
         /// <para>
@@ -6191,22 +6191,22 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Request specifies the Region <code>ap-northeast-1</code> with no location. The result
-        /// is limits and usage data on all instance types that are deployed in <code>us-east-2</code>,
-        /// by all of the fleets that reside in <code>ap-northeast-1</code>. 
+        /// Request specifies the Region <c>ap-northeast-1</c> with no location. The result is
+        /// limits and usage data on all instance types that are deployed in <c>us-east-2</c>,
+        /// by all of the fleets that reside in <c>ap-northeast-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>us-east-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>us-east-2</code>. These limits do not affect
-        /// fleets in any other Regions that deploy instances to <code>ca-central-1</code>.
+        /// Request specifies the Region <c>us-east-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>us-east-2</c>. These limits do not affect fleets
+        /// in any other Regions that deploy instances to <c>ca-central-1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>eu-west-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>eu-west-1</code>.
+        /// Request specifies the Region <c>eu-west-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>eu-west-1</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6227,8 +6227,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, an <code>EC2InstanceLimits</code> object is returned with limits and
-        /// usage data for each requested instance type.
+        /// If successful, an <c>EC2InstanceLimits</c> object is returned with limits and usage
+        /// data for each requested instance type.
         /// </para>
         ///  
         /// <para>
@@ -6288,22 +6288,22 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Request specifies the Region <code>ap-northeast-1</code> with no location. The result
-        /// is limits and usage data on all instance types that are deployed in <code>us-east-2</code>,
-        /// by all of the fleets that reside in <code>ap-northeast-1</code>. 
+        /// Request specifies the Region <c>ap-northeast-1</c> with no location. The result is
+        /// limits and usage data on all instance types that are deployed in <c>us-east-2</c>,
+        /// by all of the fleets that reside in <c>ap-northeast-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>us-east-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>us-east-2</code>. These limits do not affect
-        /// fleets in any other Regions that deploy instances to <code>ca-central-1</code>.
+        /// Request specifies the Region <c>us-east-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>us-east-2</c>. These limits do not affect fleets
+        /// in any other Regions that deploy instances to <c>ca-central-1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>eu-west-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>eu-west-1</code>.
+        /// Request specifies the Region <c>eu-west-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>eu-west-1</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6324,8 +6324,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, an <code>EC2InstanceLimits</code> object is returned with limits and
-        /// usage data for each requested instance type.
+        /// If successful, an <c>EC2InstanceLimits</c> object is returned with limits and usage
+        /// data for each requested instance type.
         /// </para>
         ///  
         /// <para>
@@ -6386,22 +6386,22 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Request specifies the Region <code>ap-northeast-1</code> with no location. The result
-        /// is limits and usage data on all instance types that are deployed in <code>us-east-2</code>,
-        /// by all of the fleets that reside in <code>ap-northeast-1</code>. 
+        /// Request specifies the Region <c>ap-northeast-1</c> with no location. The result is
+        /// limits and usage data on all instance types that are deployed in <c>us-east-2</c>,
+        /// by all of the fleets that reside in <c>ap-northeast-1</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>us-east-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>us-east-2</code>. These limits do not affect
-        /// fleets in any other Regions that deploy instances to <code>ca-central-1</code>.
+        /// Request specifies the Region <c>us-east-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>us-east-2</c>. These limits do not affect fleets
+        /// in any other Regions that deploy instances to <c>ca-central-1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Request specifies the Region <code>eu-west-1</code> with location <code>ca-central-1</code>.
-        /// The result is limits and usage data on all instance types that are deployed in <code>ca-central-1</code>,
-        /// by all of the fleets that reside in <code>eu-west-1</code>.
+        /// Request specifies the Region <c>eu-west-1</c> with location <c>ca-central-1</c>. The
+        /// result is limits and usage data on all instance types that are deployed in <c>ca-central-1</c>,
+        /// by all of the fleets that reside in <c>eu-west-1</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -6422,8 +6422,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, an <code>EC2InstanceLimits</code> object is returned with limits and
-        /// usage data for each requested instance type.
+        /// If successful, an <c>EC2InstanceLimits</c> object is returned with limits and usage
+        /// data for each requested instance type.
         /// </para>
         ///  
         /// <para>
@@ -6494,7 +6494,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetAttributes</code> object is returned for each fleet requested,
+        /// If successful, a <c>FleetAttributes</c> object is returned for each fleet requested,
         /// unless the fleet identifier is not found. 
         /// </para>
         ///  <note> 
@@ -6566,7 +6566,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetAttributes</code> object is returned for each fleet requested,
+        /// If successful, a <c>FleetAttributes</c> object is returned for each fleet requested,
         /// unless the fleet identifier is not found. 
         /// </para>
         ///  <note> 
@@ -6647,10 +6647,10 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetCapacity</code> object is returned for each requested
-        /// fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which
-        /// is set to the fleet's home Region. When a list of fleet IDs is provided, attribute
-        /// objects are returned only for fleets that currently exist.
+        /// If successful, a <c>FleetCapacity</c> object is returned for each requested fleet
+        /// ID. Each FleetCapacity object includes a <c>Location</c> property, which is set to
+        /// the fleet's home Region. When a list of fleet IDs is provided, attribute objects are
+        /// returned only for fleets that currently exist.
         /// </para>
         ///  <note> 
         /// <para>
@@ -6728,10 +6728,10 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetCapacity</code> object is returned for each requested
-        /// fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which
-        /// is set to the fleet's home Region. When a list of fleet IDs is provided, attribute
-        /// objects are returned only for fleets that currently exist.
+        /// If successful, a <c>FleetCapacity</c> object is returned for each requested fleet
+        /// ID. Each FleetCapacity object includes a <c>Location</c> property, which is set to
+        /// the fleet's home Region. When a list of fleet IDs is provided, attribute objects are
+        /// returned only for fleets that currently exist.
         /// </para>
         ///  <note> 
         /// <para>
@@ -6930,10 +6930,10 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>LocationAttributes</code> object is returned for each requested
-        /// location. If the fleet does not have a requested location, no information is returned.
-        /// This operation does not return the home Region. To get information on a fleet's home
-        /// Region, call <code>DescribeFleetAttributes</code>.
+        /// If successful, a <c>LocationAttributes</c> object is returned for each requested location.
+        /// If the fleet does not have a requested location, no information is returned. This
+        /// operation does not return the home Region. To get information on a fleet's home Region,
+        /// call <c>DescribeFleetAttributes</c>.
         /// </para>
         ///  
         /// <para>
@@ -7002,10 +7002,10 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>LocationAttributes</code> object is returned for each requested
-        /// location. If the fleet does not have a requested location, no information is returned.
-        /// This operation does not return the home Region. To get information on a fleet's home
-        /// Region, call <code>DescribeFleetAttributes</code>.
+        /// If successful, a <c>LocationAttributes</c> object is returned for each requested location.
+        /// If the fleet does not have a requested location, no information is returned. This
+        /// operation does not return the home Region. To get information on a fleet's home Region,
+        /// call <c>DescribeFleetAttributes</c>.
         /// </para>
         ///  
         /// <para>
@@ -7061,7 +7061,7 @@ namespace Amazon.GameLift
         /// the current capacity (number of EC2 instances) and some scaling settings for the requested
         /// fleet location. Use this operation to retrieve capacity information for a fleet's
         /// remote location or home Region (you can also retrieve home Region capacity by calling
-        /// <code>DescribeFleetCapacity</code>).
+        /// <c>DescribeFleetCapacity</c>).
         /// 
         ///  
         /// <para>
@@ -7069,8 +7069,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetCapacity</code> object is returned for the requested fleet
-        /// location. 
+        /// If successful, a <c>FleetCapacity</c> object is returned for the requested fleet location.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -7124,7 +7124,7 @@ namespace Amazon.GameLift
         /// the current capacity (number of EC2 instances) and some scaling settings for the requested
         /// fleet location. Use this operation to retrieve capacity information for a fleet's
         /// remote location or home Region (you can also retrieve home Region capacity by calling
-        /// <code>DescribeFleetCapacity</code>).
+        /// <c>DescribeFleetCapacity</c>).
         /// 
         ///  
         /// <para>
@@ -7132,8 +7132,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetCapacity</code> object is returned for the requested fleet
-        /// location. 
+        /// If successful, a <c>FleetCapacity</c> object is returned for the requested fleet location.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -7193,7 +7193,7 @@ namespace Amazon.GameLift
         /// Retrieves current usage data for a fleet location. Utilization data provides a snapshot
         /// of current game hosting activity at the requested location. Use this operation to
         /// retrieve utilization information for a fleet's remote location or home Region (you
-        /// can also retrieve home Region utilization by calling <code>DescribeFleetUtilization</code>).
+        /// can also retrieve home Region utilization by calling <c>DescribeFleetUtilization</c>).
         /// 
         ///  
         /// <para>
@@ -7201,8 +7201,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetUtilization</code> object is returned for the requested
-        /// fleet location. 
+        /// If successful, a <c>FleetUtilization</c> object is returned for the requested fleet
+        /// location. 
         /// </para>
         ///  
         /// <para>
@@ -7255,7 +7255,7 @@ namespace Amazon.GameLift
         /// Retrieves current usage data for a fleet location. Utilization data provides a snapshot
         /// of current game hosting activity at the requested location. Use this operation to
         /// retrieve utilization information for a fleet's remote location or home Region (you
-        /// can also retrieve home Region utilization by calling <code>DescribeFleetUtilization</code>).
+        /// can also retrieve home Region utilization by calling <c>DescribeFleetUtilization</c>).
         /// 
         ///  
         /// <para>
@@ -7263,8 +7263,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>FleetUtilization</code> object is returned for the requested
-        /// fleet location. 
+        /// If successful, a <c>FleetUtilization</c> object is returned for the requested fleet
+        /// location. 
         /// </para>
         ///  
         /// <para>
@@ -7343,7 +7343,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, a set of <code>IpPermission</code> objects is returned for the requested
+        /// If successful, a set of <c>IpPermission</c> objects is returned for the requested
         /// fleet ID. When a location is specified, a pending status is included. If the requested
         /// fleet has been deleted, the result set is empty.
         /// </para>
@@ -7410,7 +7410,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, a set of <code>IpPermission</code> objects is returned for the requested
+        /// If successful, a set of <c>IpPermission</c> objects is returned for the requested
         /// fleet ID. When a location is specified, a pending status is included. If the requested
         /// fleet has been deleted, the result set is empty.
         /// </para>
@@ -7479,7 +7479,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, a set of <code>IpPermission</code> objects is returned for the requested
+        /// If successful, a set of <c>IpPermission</c> objects is returned for the requested
         /// fleet ID. When a location is specified, a pending status is included. If the requested
         /// fleet has been deleted, the result set is empty.
         /// </para>
@@ -7549,7 +7549,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If successful, a set of <code>IpPermission</code> objects is returned for the requested
+        /// If successful, a set of <c>IpPermission</c> objects is returned for the requested
         /// fleet ID. When a location is specified, a pending status is included. If the requested
         /// fleet has been deleted, the result set is empty.
         /// </para>
@@ -7631,8 +7631,8 @@ namespace Amazon.GameLift
         /// <para>
         /// If successful, a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_FleetUtilization.html">FleetUtilization</a>
         /// object is returned for each requested fleet ID, unless the fleet identifier is not
-        /// found. Each fleet utilization object includes a <code>Location</code> property, which
-        /// is set to the fleet's home Region. 
+        /// found. Each fleet utilization object includes a <c>Location</c> property, which is
+        /// set to the fleet's home Region. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -7713,8 +7713,8 @@ namespace Amazon.GameLift
         /// <para>
         /// If successful, a <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_FleetUtilization.html">FleetUtilization</a>
         /// object is returned for each requested fleet ID, unless the fleet identifier is not
-        /// found. Each fleet utilization object includes a <code>Location</code> property, which
-        /// is set to the fleet's home Region. 
+        /// found. Each fleet utilization object includes a <c>Location</c> property, which is
+        /// set to the fleet's home Region. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -7900,7 +7900,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To get attributes for a game server group, provide a group name or ARN value. If successful,
-        /// a <code>GameServerGroup</code> object is returned.
+        /// a <c>GameServerGroup</c> object is returned.
         /// </para>
         ///  
         /// <para>
@@ -7955,7 +7955,7 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To get attributes for a game server group, provide a group name or ARN value. If successful,
-        /// a <code>GameServerGroup</code> object is returned.
+        /// a <c>GameServerGroup</c> object is returned.
         /// </para>
         ///  
         /// <para>
@@ -8018,8 +8018,8 @@ namespace Amazon.GameLift
         /// To request status for all instances in the game server group, provide a game server
         /// group ID only. To request status for specific instances, provide the game server group
         /// ID and one or more instance IDs. Use the pagination parameters to retrieve results
-        /// in sequential segments. If successful, a collection of <code>GameServerInstance</code>
-        /// objects is returned. 
+        /// in sequential segments. If successful, a collection of <c>GameServerInstance</c> objects
+        /// is returned. 
         /// </para>
         ///  
         /// <para>
@@ -8082,8 +8082,8 @@ namespace Amazon.GameLift
         /// To request status for all instances in the game server group, provide a game server
         /// group ID only. To request status for specific instances, provide the game server group
         /// ID and one or more instance IDs. Use the pagination parameters to retrieve results
-        /// in sequential segments. If successful, a collection of <code>GameServerInstance</code>
-        /// objects is returned. 
+        /// in sequential segments. If successful, a collection of <c>GameServerInstance</c> objects
+        /// is returned. 
         /// </para>
         ///  
         /// <para>
@@ -8171,7 +8171,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>GameSessionDetail</code> object is returned for each game session
+        /// If successful, a <c>GameSessionDetail</c> object is returned for each game session
         /// that matches the request.
         /// </para>
         ///  
@@ -8206,9 +8206,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8260,7 +8260,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>GameSessionDetail</code> object is returned for each game session
+        /// If successful, a <c>GameSessionDetail</c> object is returned for each game session
         /// that matches the request.
         /// </para>
         ///  
@@ -8298,9 +8298,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8336,7 +8336,7 @@ namespace Amazon.GameLift
         /// This operation is not designed to be continually called to track game session status.
         /// This practice can cause you to exceed your API limit, which results in errors. Instead,
         /// you must configure configure an Amazon Simple Notification Service (SNS) topic to
-        /// receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessionPlacement</code>
+        /// receive notifications from FlexMatch or queues. Continuously polling with <c>DescribeGameSessionPlacement</c>
         /// should only be used for games in development with low game session usage. 
         /// </para>
         /// </summary>
@@ -8382,7 +8382,7 @@ namespace Amazon.GameLift
         /// This operation is not designed to be continually called to track game session status.
         /// This practice can cause you to exceed your API limit, which results in errors. Instead,
         /// you must configure configure an Amazon Simple Notification Service (SNS) topic to
-        /// receive notifications from FlexMatch or queues. Continuously polling with <code>DescribeGameSessionPlacement</code>
+        /// receive notifications from FlexMatch or queues. Continuously polling with <c>DescribeGameSessionPlacement</c>
         /// should only be used for games in development with low game session usage. 
         /// </para>
         /// </summary>
@@ -8551,16 +8551,16 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>GameSession</code> object is returned for each game session
-        /// that matches the request.
+        /// If successful, a <c>GameSession</c> object is returned for each game session that
+        /// matches the request.
         /// </para>
         ///  
         /// <para>
         /// This operation is not designed to be continually called to track game session status.
         /// This practice can cause you to exceed your API limit, which results in errors. Instead,
         /// you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications
-        /// from FlexMatch or queues. Continuously polling with <code>DescribeGameSessions</code>
-        /// should only be used for games in development with low game session usage. 
+        /// from FlexMatch or queues. Continuously polling with <c>DescribeGameSessions</c> should
+        /// only be used for games in development with low game session usage. 
         /// </para>
         ///  
         /// <para>
@@ -8598,9 +8598,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8651,16 +8651,16 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>GameSession</code> object is returned for each game session
-        /// that matches the request.
+        /// If successful, a <c>GameSession</c> object is returned for each game session that
+        /// matches the request.
         /// </para>
         ///  
         /// <para>
         /// This operation is not designed to be continually called to track game session status.
         /// This practice can cause you to exceed your API limit, which results in errors. Instead,
         /// you must configure an Amazon Simple Notification Service (SNS) topic to receive notifications
-        /// from FlexMatch or queues. Continuously polling with <code>DescribeGameSessions</code>
-        /// should only be used for games in development with low game session usage. 
+        /// from FlexMatch or queues. Continuously polling with <c>DescribeGameSessions</c> should
+        /// only be used for games in development with low game session usage. 
         /// </para>
         ///  
         /// <para>
@@ -8701,9 +8701,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -8757,9 +8757,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, this operation returns <code>Instance</code> objects for each requested
-        /// instance, listed in no particular order. If you call this operation for an Anywhere
-        /// fleet, you receive an InvalidRequestException.
+        /// If successful, this operation returns <c>Instance</c> objects for each requested instance,
+        /// listed in no particular order. If you call this operation for an Anywhere fleet, you
+        /// receive an InvalidRequestException.
         /// </para>
         ///  
         /// <para>
@@ -8848,9 +8848,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, this operation returns <code>Instance</code> objects for each requested
-        /// instance, listed in no particular order. If you call this operation for an Anywhere
-        /// fleet, you receive an InvalidRequestException.
+        /// If successful, this operation returns <c>Instance</c> objects for each requested instance,
+        /// listed in no particular order. If you call this operation for an Anywhere fleet, you
+        /// receive an InvalidRequestException.
         /// </para>
         ///  
         /// <para>
@@ -9265,14 +9265,14 @@ namespace Amazon.GameLift
         /// <para>
         /// To request player sessions, specify either a player session ID, game session ID, or
         /// player ID. You can filter this request by player session status. If you provide a
-        /// specific <code>PlayerSessionId</code> or <code>PlayerId</code>, Amazon GameLift ignores
-        /// the filter criteria. Use the pagination parameters to retrieve results as a set of
-        /// sequential pages. 
+        /// specific <c>PlayerSessionId</c> or <c>PlayerId</c>, Amazon GameLift ignores the filter
+        /// criteria. Use the pagination parameters to retrieve results as a set of sequential
+        /// pages. 
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>PlayerSession</code> object is returned for each session that
-        /// matches the request.
+        /// If successful, a <c>PlayerSession</c> object is returned for each session that matches
+        /// the request.
         /// </para>
         ///  
         /// <para>
@@ -9336,14 +9336,14 @@ namespace Amazon.GameLift
         /// <para>
         /// To request player sessions, specify either a player session ID, game session ID, or
         /// player ID. You can filter this request by player session status. If you provide a
-        /// specific <code>PlayerSessionId</code> or <code>PlayerId</code>, Amazon GameLift ignores
-        /// the filter criteria. Use the pagination parameters to retrieve results as a set of
-        /// sequential pages. 
+        /// specific <c>PlayerSessionId</c> or <c>PlayerId</c>, Amazon GameLift ignores the filter
+        /// criteria. Use the pagination parameters to retrieve results as a set of sequential
+        /// pages. 
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>PlayerSession</code> object is returned for each session that
-        /// matches the request.
+        /// If successful, a <c>PlayerSession</c> object is returned for each session that matches
+        /// the request.
         /// </para>
         ///  
         /// <para>
@@ -9402,7 +9402,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>RuntimeConfiguration</code> object is returned for the requested
+        /// If successful, a <c>RuntimeConfiguration</c> object is returned for the requested
         /// fleet. If the requested fleet has been deleted, the result set is empty.
         /// </para>
         ///  
@@ -9460,7 +9460,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>RuntimeConfiguration</code> object is returned for the requested
+        /// If successful, a <c>RuntimeConfiguration</c> object is returned for the requested
         /// fleet. If the requested fleet has been deleted, the result set is empty.
         /// </para>
         ///  
@@ -9522,7 +9522,7 @@ namespace Amazon.GameLift
         /// To get a fleet's scaling policies, specify the fleet ID. You can filter this request
         /// by policy status, such as to retrieve only active scaling policies. Use the pagination
         /// parameters to retrieve results as a set of sequential pages. If successful, set of
-        /// <code>ScalingPolicy</code> objects is returned for the fleet.
+        /// <c>ScalingPolicy</c> objects is returned for the fleet.
         /// </para>
         ///  
         /// <para>
@@ -9570,7 +9570,7 @@ namespace Amazon.GameLift
         /// To get a fleet's scaling policies, specify the fleet ID. You can filter this request
         /// by policy status, such as to retrieve only active scaling policies. Use the pagination
         /// parameters to retrieve results as a set of sequential pages. If successful, set of
-        /// <code>ScalingPolicy</code> objects is returned for the fleet.
+        /// <c>ScalingPolicy</c> objects is returned for the fleet.
         /// </para>
         ///  
         /// <para>
@@ -10072,7 +10072,7 @@ namespace Amazon.GameLift
         /// an Anywhere fleet. The game servers that are running on the compute use this token
         /// to authenticate with the Amazon GameLift service. Each server process must provide
         /// a valid authentication token in its call to the Amazon GameLift server SDK action
-        /// <code>InitSDK()</code>.
+        /// <c>InitSDK()</c>.
         /// 
         ///  
         /// <para>
@@ -10134,7 +10134,7 @@ namespace Amazon.GameLift
         /// an Anywhere fleet. The game servers that are running on the compute use this token
         /// to authenticate with the Amazon GameLift service. Each server process must provide
         /// a valid authentication token in its call to the Amazon GameLift server SDK action
-        /// <code>InitSDK()</code>.
+        /// <c>InitSDK()</c>.
         /// 
         ///  
         /// <para>
@@ -10417,10 +10417,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         /// For a Linux instance: returns a user name and secret (RSA private key) for use with
-        /// an SSH client. You must save the secret to a <code>.pem</code> file. If you're using
-        /// the CLI, see the example <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html#API_GetInstanceAccess_Examples">
+        /// an SSH client. You must save the secret to a <c>.pem</c> file. If you're using the
+        /// CLI, see the example <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html#API_GetInstanceAccess_Examples">
         /// Get credentials for a Linux instance</a> for tips on automatically saving the secret
-        /// to a <code>.pem</code> file. 
+        /// to a <c>.pem</c> file. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10500,10 +10500,10 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         /// For a Linux instance: returns a user name and secret (RSA private key) for use with
-        /// an SSH client. You must save the secret to a <code>.pem</code> file. If you're using
-        /// the CLI, see the example <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html#API_GetInstanceAccess_Examples">
+        /// an SSH client. You must save the secret to a <c>.pem</c> file. If you're using the
+        /// CLI, see the example <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GetInstanceAccess.html#API_GetInstanceAccess_Examples">
         /// Get credentials for a Linux instance</a> for tips on automatically saving the secret
-        /// to a <code>.pem</code> file. 
+        /// to a <c>.pem</c> file. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -10663,8 +10663,8 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves build resources for all builds associated with the Amazon Web Services account
         /// in use. You can limit results to builds that are in a specific status by using the
-        /// <code>Status</code> parameter. Use the pagination parameters to retrieve results in
-        /// a set of sequential pages. 
+        /// <c>Status</c> parameter. Use the pagination parameters to retrieve results in a set
+        /// of sequential pages. 
         /// 
         ///  <note> 
         /// <para>
@@ -10713,8 +10713,8 @@ namespace Amazon.GameLift
         /// <summary>
         /// Retrieves build resources for all builds associated with the Amazon Web Services account
         /// in use. You can limit results to builds that are in a specific status by using the
-        /// <code>Status</code> parameter. Use the pagination parameters to retrieve results in
-        /// a set of sequential pages. 
+        /// <c>Status</c> parameter. Use the pagination parameters to retrieve results in a set
+        /// of sequential pages. 
         /// 
         ///  <note> 
         /// <para>
@@ -11530,7 +11530,7 @@ namespace Amazon.GameLift
         /// <para>
         /// To create or update a target-based policy, specify a fleet ID and name, and set the
         /// policy type to "TargetBased". Specify the metric to track (PercentAvailableGameSessions)
-        /// and reference a <code>TargetConfiguration</code> object with your desired buffer value.
+        /// and reference a <c>TargetConfiguration</c> object with your desired buffer value.
         /// Exclude all other parameters. On a successful request, the policy name is returned.
         /// The scaling policy is automatically in force as soon as it's successfully created.
         /// If the fleet's auto-scaling actions are temporarily suspended, the new policy will
@@ -11559,9 +11559,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If <code>[MetricName]</code> is <code>[ComparisonOperator]</code> <code>[Threshold]</code>
-        /// for <code>[EvaluationPeriods]</code> minutes, then <code>[ScalingAdjustmentType]</code>
-        /// to/by <code>[ScalingAdjustment]</code>.
+        /// If <c>[MetricName]</c> is <c>[ComparisonOperator]</c> <c>[Threshold]</c> for <c>[EvaluationPeriods]</c>
+        /// minutes, then <c>[ScalingAdjustmentType]</c> to/by <c>[ScalingAdjustment]</c>.
         /// </para>
         ///  
         /// <para>
@@ -11569,8 +11568,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code> <code>[20]</code>
-        /// for <code>[15]</code> minutes, then <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.
+        /// If <c>[PercentIdleInstances]</c> is <c>[GreaterThanThreshold]</c> <c>[20]</c> for
+        /// <c>[15]</c> minutes, then <c>[PercentChangeInCapacity]</c> to/by <c>[10]</c>.
         /// </para>
         ///  
         /// <para>
@@ -11657,7 +11656,7 @@ namespace Amazon.GameLift
         /// <para>
         /// To create or update a target-based policy, specify a fleet ID and name, and set the
         /// policy type to "TargetBased". Specify the metric to track (PercentAvailableGameSessions)
-        /// and reference a <code>TargetConfiguration</code> object with your desired buffer value.
+        /// and reference a <c>TargetConfiguration</c> object with your desired buffer value.
         /// Exclude all other parameters. On a successful request, the policy name is returned.
         /// The scaling policy is automatically in force as soon as it's successfully created.
         /// If the fleet's auto-scaling actions are temporarily suspended, the new policy will
@@ -11686,9 +11685,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If <code>[MetricName]</code> is <code>[ComparisonOperator]</code> <code>[Threshold]</code>
-        /// for <code>[EvaluationPeriods]</code> minutes, then <code>[ScalingAdjustmentType]</code>
-        /// to/by <code>[ScalingAdjustment]</code>.
+        /// If <c>[MetricName]</c> is <c>[ComparisonOperator]</c> <c>[Threshold]</c> for <c>[EvaluationPeriods]</c>
+        /// minutes, then <c>[ScalingAdjustmentType]</c> to/by <c>[ScalingAdjustment]</c>.
         /// </para>
         ///  
         /// <para>
@@ -11696,8 +11694,8 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If <code>[PercentIdleInstances]</code> is <code>[GreaterThanThreshold]</code> <code>[20]</code>
-        /// for <code>[15]</code> minutes, then <code>[PercentChangeInCapacity]</code> to/by <code>[10]</code>.
+        /// If <c>[PercentIdleInstances]</c> is <c>[GreaterThanThreshold]</c> <c>[20]</c> for
+        /// <c>[15]</c> minutes, then <c>[PercentChangeInCapacity]</c> to/by <c>[10]</c>.
         /// </para>
         ///  
         /// <para>
@@ -11762,7 +11760,7 @@ namespace Amazon.GameLift
         /// If successful, this operation returns the compute details, including an Amazon GameLift
         /// SDK endpoint. Game server processes that run on the compute use this endpoint to communicate
         /// with the Amazon GameLift service. Each server process includes the SDK endpoint in
-        /// its call to the Amazon GameLift server SDK action <code>InitSDK()</code>.
+        /// its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
         /// </para>
         ///  
         /// <para>
@@ -11835,7 +11833,7 @@ namespace Amazon.GameLift
         /// If successful, this operation returns the compute details, including an Amazon GameLift
         /// SDK endpoint. Game server processes that run on the compute use this endpoint to communicate
         /// with the Amazon GameLift service. Each server process includes the SDK endpoint in
-        /// its call to the Amazon GameLift server SDK action <code>InitSDK()</code>.
+        /// its call to the Amazon GameLift server SDK action <c>InitSDK()</c>.
         /// </para>
         ///  
         /// <para>
@@ -11918,7 +11916,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Once a game server is successfully registered, it is put in status <code>AVAILABLE</code>.
+        /// Once a game server is successfully registered, it is put in status <c>AVAILABLE</c>.
         /// A request to register a game server may fail if the instance it is running on is in
         /// the process of shutting down as part of instance balancing or scale-down activity.
         /// 
@@ -11986,7 +11984,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// Once a game server is successfully registered, it is put in status <code>AVAILABLE</code>.
+        /// Once a game server is successfully registered, it is put in status <c>AVAILABLE</c>.
         /// A request to register a game server may fail if the instance it is running on is in
         /// the process of shutting down as part of instance balancing or scale-down activity.
         /// 
@@ -12048,7 +12046,7 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
@@ -12101,7 +12099,7 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
@@ -12156,7 +12154,7 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
@@ -12212,7 +12210,7 @@ namespace Amazon.GameLift
         /// 
         ///  
         /// <para>
-        /// To request new credentials, specify the build ID as returned with an initial <code>CreateBuild</code>
+        /// To request new credentials, specify the build ID as returned with an initial <c>CreateBuild</c>
         /// request. If successful, a new set of credentials are returned, along with the S3 storage
         /// location associated with the build ID.
         /// </para>
@@ -12297,9 +12295,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12343,9 +12341,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12394,9 +12392,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12443,9 +12441,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12481,8 +12479,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To resume activity, specify a game server group ARN and the type of activity to be
-        /// resumed. If successful, a <code>GameServerGroup</code> object is returned showing
-        /// that the resumed activity is no longer listed in <code>SuspendedActions</code>. 
+        /// resumed. If successful, a <c>GameServerGroup</c> object is returned showing that the
+        /// resumed activity is no longer listed in <c>SuspendedActions</c>. 
         /// </para>
         ///  
         /// <para>
@@ -12539,8 +12537,8 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To resume activity, specify a game server group ARN and the type of activity to be
-        /// resumed. If successful, a <code>GameServerGroup</code> object is returned showing
-        /// that the resumed activity is no longer listed in <code>SuspendedActions</code>. 
+        /// resumed. If successful, a <c>GameServerGroup</c> object is returned showing that the
+        /// resumed activity is no longer listed in <c>SuspendedActions</c>. 
         /// </para>
         ///  
         /// <para>
@@ -12627,9 +12625,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>GameSession</code> object is returned for each game session
-        /// that matches the request. Search finds game sessions that are in <code>ACTIVE</code>
-        /// status only. To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
+        /// If successful, a <c>GameSession</c> object is returned for each game session that
+        /// matches the request. Search finds game sessions that are in <c>ACTIVE</c> status only.
+        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
         /// .
         /// </para>
         ///  
@@ -12641,7 +12639,7 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         ///  <b>gameSessionId</b> -- A unique identifier for the game session. You can use either
-        /// a <code>GameSessionId</code> or <code>GameSessionArn</code> value. 
+        /// a <c>GameSessionId</c> or <c>GameSessionArn</c> value. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12651,15 +12649,15 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
-        /// in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.
-        /// The filter expression must specify the <a>GameProperty</a> -- a <code>Key</code> and
-        /// a string <code>Value</code> to search for the game sessions.
+        /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
+        /// filter expression must specify the <a>GameProperty</a> -- a <c>Key</c> and a string
+        /// <c>Value</c> to search for the game sessions.
         /// </para>
         ///  
         /// <para>
         /// For example, to search for the above key-value pair, specify the following search
-        /// filter: <code>gameSessionProperties.difficulty = "novice"</code>. All game property
-        /// values are searched as strings.
+        /// filter: <c>gameSessionProperties.difficulty = "novice"</c>. All game property values
+        /// are searched as strings.
         /// </para>
         ///  
         /// <para>
@@ -12689,7 +12687,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+        /// Returned values for <c>playerSessionCount</c> and <c>hasAvailablePlayerSessions</c>
         /// change quickly as players join sessions and others drop out. Results should be considered
         /// a snapshot in time. Be sure to refresh search results often, and handle sessions that
         /// fill up before a player can join. 
@@ -12717,9 +12715,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -12777,9 +12775,9 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, a <code>GameSession</code> object is returned for each game session
-        /// that matches the request. Search finds game sessions that are in <code>ACTIVE</code>
-        /// status only. To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
+        /// If successful, a <c>GameSession</c> object is returned for each game session that
+        /// matches the request. Search finds game sessions that are in <c>ACTIVE</c> status only.
+        /// To retrieve information on game sessions in other statuses, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>
         /// .
         /// </para>
         ///  
@@ -12791,7 +12789,7 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         ///  <b>gameSessionId</b> -- A unique identifier for the game session. You can use either
-        /// a <code>GameSessionId</code> or <code>GameSessionArn</code> value. 
+        /// a <c>GameSessionId</c> or <c>GameSessionArn</c> value. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12801,15 +12799,15 @@ namespace Amazon.GameLift
         ///  </li> <li> 
         /// <para>
         ///  <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom data
-        /// in a game session. For example: <code>{"Key": "difficulty", "Value": "novice"}</code>.
-        /// The filter expression must specify the <a>GameProperty</a> -- a <code>Key</code> and
-        /// a string <code>Value</code> to search for the game sessions.
+        /// in a game session. For example: <c>{"Key": "difficulty", "Value": "novice"}</c>. The
+        /// filter expression must specify the <a>GameProperty</a> -- a <c>Key</c> and a string
+        /// <c>Value</c> to search for the game sessions.
         /// </para>
         ///  
         /// <para>
         /// For example, to search for the above key-value pair, specify the following search
-        /// filter: <code>gameSessionProperties.difficulty = "novice"</code>. All game property
-        /// values are searched as strings.
+        /// filter: <c>gameSessionProperties.difficulty = "novice"</c>. All game property values
+        /// are searched as strings.
         /// </para>
         ///  
         /// <para>
@@ -12839,7 +12837,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// Returned values for <code>playerSessionCount</code> and <code>hasAvailablePlayerSessions</code>
+        /// Returned values for <c>playerSessionCount</c> and <c>hasAvailablePlayerSessions</c>
         /// change quickly as players join sessions and others drop out. Results should be considered
         /// a snapshot in time. Be sure to refresh search results often, and handle sessions that
         /// fill up before a player can join. 
@@ -12870,9 +12868,9 @@ namespace Amazon.GameLift
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.TerminalRoutingStrategyException">
         /// The service is unable to resolve the routing for a particular alias because it has
-        /// a terminal <code>RoutingStrategy</code> associated with it. The message returned in
-        /// this exception is the message defined in the routing strategy itself. Such requests
-        /// should only be retried if the routing strategy for the specified alias is modified.
+        /// a terminal <c>RoutingStrategy</c> associated with it. The message returned in this
+        /// exception is the message defined in the routing strategy itself. Such requests should
+        /// only be retried if the routing strategy for the specified alias is modified.
         /// </exception>
         /// <exception cref="Amazon.GameLift.Model.UnauthorizedException">
         /// The client failed authentication. Clients should not retry such requests.
@@ -13093,10 +13091,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
-        /// and check the request's status. If the status is <code>FULFILLED</code>, a new game
-        /// session has been created and a game session ARN and Region are referenced. If the
-        /// placement request times out, you can resubmit the request or retry it with a different
-        /// queue. 
+        /// and check the request's status. If the status is <c>FULFILLED</c>, a new game session
+        /// has been created and a game session ARN and Region are referenced. If the placement
+        /// request times out, you can resubmit the request or retry it with a different queue.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
@@ -13185,10 +13183,10 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To track the status of a placement request, call <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessionPlacement.html">DescribeGameSessionPlacement</a>
-        /// and check the request's status. If the status is <code>FULFILLED</code>, a new game
-        /// session has been created and a game session ARN and Region are referenced. If the
-        /// placement request times out, you can resubmit the request or retry it with a different
-        /// queue. 
+        /// and check the request's status. If the status is <c>FULFILLED</c>, a new game session
+        /// has been created and a game session ARN and Region are referenced. If the placement
+        /// request times out, you can resubmit the request or retry it with a different queue.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartGameSessionPlacement service method.</param>
@@ -13238,13 +13236,13 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// When using FlexMatch with Amazon GameLift managed hosting, you can request a backfill
-        /// match from a client service by calling this operation with a <code>GameSessions</code>
-        /// ID. You also have the option of making backfill requests directly from your game server.
+        /// match from a client service by calling this operation with a <c>GameSessions</c> ID.
+        /// You also have the option of making backfill requests directly from your game server.
         /// In response to a request, FlexMatch creates player sessions for the new players, updates
-        /// the <code>GameSession</code> resource, and sends updated matchmaking data to the game
-        /// server. You can request a backfill match at any point after a game session is started.
-        /// Each game session can have only one active backfill request at a time; a subsequent
-        /// request automatically replaces the earlier request.
+        /// the <c>GameSession</c> resource, and sends updated matchmaking data to the game server.
+        /// You can request a backfill match at any point after a game session is started. Each
+        /// game session can have only one active backfill request at a time; a subsequent request
+        /// automatically replaces the earlier request.
         /// </para>
         ///  
         /// <para>
@@ -13257,9 +13255,9 @@ namespace Amazon.GameLift
         /// <para>
         /// To request a backfill match, specify a unique ticket ID, the original matchmaking
         /// configuration, and matchmaking data for all current players in the game session being
-        /// backfilled. Optionally, specify the <code>GameSession</code> ARN. If successful, a
-        /// match backfill ticket is created and returned with status set to QUEUED. Track the
-        /// status of backfill tickets using the same method for tracking tickets for new matches.
+        /// backfilled. Optionally, specify the <c>GameSession</c> ARN. If successful, a match
+        /// backfill ticket is created and returned with status set to QUEUED. Track the status
+        /// of backfill tickets using the same method for tracking tickets for new matches.
         /// </para>
         ///  
         /// <para>
@@ -13325,13 +13323,13 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// When using FlexMatch with Amazon GameLift managed hosting, you can request a backfill
-        /// match from a client service by calling this operation with a <code>GameSessions</code>
-        /// ID. You also have the option of making backfill requests directly from your game server.
+        /// match from a client service by calling this operation with a <c>GameSessions</c> ID.
+        /// You also have the option of making backfill requests directly from your game server.
         /// In response to a request, FlexMatch creates player sessions for the new players, updates
-        /// the <code>GameSession</code> resource, and sends updated matchmaking data to the game
-        /// server. You can request a backfill match at any point after a game session is started.
-        /// Each game session can have only one active backfill request at a time; a subsequent
-        /// request automatically replaces the earlier request.
+        /// the <c>GameSession</c> resource, and sends updated matchmaking data to the game server.
+        /// You can request a backfill match at any point after a game session is started. Each
+        /// game session can have only one active backfill request at a time; a subsequent request
+        /// automatically replaces the earlier request.
         /// </para>
         ///  
         /// <para>
@@ -13344,9 +13342,9 @@ namespace Amazon.GameLift
         /// <para>
         /// To request a backfill match, specify a unique ticket ID, the original matchmaking
         /// configuration, and matchmaking data for all current players in the game session being
-        /// backfilled. Optionally, specify the <code>GameSession</code> ARN. If successful, a
-        /// match backfill ticket is created and returned with status set to QUEUED. Track the
-        /// status of backfill tickets using the same method for tracking tickets for new matches.
+        /// backfilled. Optionally, specify the <c>GameSession</c> ARN. If successful, a match
+        /// backfill ticket is created and returned with status set to QUEUED. Track the status
+        /// of backfill tickets using the same method for tracking tickets for new matches.
         /// </para>
         ///  
         /// <para>
@@ -13422,7 +13420,7 @@ namespace Amazon.GameLift
         /// To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration,
         /// and include the players to be matched. You must also include any player attributes
         /// that are required by the matchmaking configuration's rule set. If successful, a matchmaking
-        /// ticket is returned with status set to <code>QUEUED</code>. 
+        /// ticket is returned with status set to <c>QUEUED</c>. 
         /// </para>
         ///  
         /// <para>
@@ -13494,7 +13492,7 @@ namespace Amazon.GameLift
         /// To start matchmaking, provide a unique ticket ID, specify a matchmaking configuration,
         /// and include the players to be matched. You must also include any player attributes
         /// that are required by the matchmaking configuration's rule set. If successful, a matchmaking
-        /// ticket is returned with status set to <code>QUEUED</code>. 
+        /// ticket is returned with status set to <c>QUEUED</c>. 
         /// </para>
         ///  
         /// <para>
@@ -13713,9 +13711,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Cancels a game session placement that is in <code>PENDING</code> status. To stop a
-        /// placement, provide the placement ID values. If successful, the placement is moved
-        /// to <code>CANCELLED</code> status.
+        /// Cancels a game session placement that is in <c>PENDING</c> status. To stop a placement,
+        /// provide the placement ID values. If successful, the placement is moved to <c>CANCELLED</c>
+        /// status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopGameSessionPlacement service method.</param>
         /// 
@@ -13747,9 +13745,9 @@ namespace Amazon.GameLift
 
 
         /// <summary>
-        /// Cancels a game session placement that is in <code>PENDING</code> status. To stop a
-        /// placement, provide the placement ID values. If successful, the placement is moved
-        /// to <code>CANCELLED</code> status.
+        /// Cancels a game session placement that is in <c>PENDING</c> status. To stop a placement,
+        /// provide the placement ID values. If successful, the placement is moved to <c>CANCELLED</c>
+        /// status.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopGameSessionPlacement service method.</param>
         /// <param name="cancellationToken">
@@ -13790,13 +13788,13 @@ namespace Amazon.GameLift
         /// <summary>
         /// Cancels a matchmaking ticket or match backfill ticket that is currently being processed.
         /// To stop the matchmaking operation, specify the ticket ID. If successful, work on the
-        /// ticket is stopped, and the ticket status is changed to <code>CANCELLED</code>.
+        /// ticket is stopped, and the ticket status is changed to <c>CANCELLED</c>.
         /// 
         ///  
         /// <para>
         /// This call is also used to turn off automatic backfill for an individual game session.
         /// This is for game sessions that are created with a matchmaking configuration that has
-        /// automatic backfill enabled. The ticket ID is included in the <code>MatchmakerData</code>
+        /// automatic backfill enabled. The ticket ID is included in the <c>MatchmakerData</c>
         /// of an updated game session object, which is provided to the game server.
         /// </para>
         ///  <note> 
@@ -13846,13 +13844,13 @@ namespace Amazon.GameLift
         /// <summary>
         /// Cancels a matchmaking ticket or match backfill ticket that is currently being processed.
         /// To stop the matchmaking operation, specify the ticket ID. If successful, work on the
-        /// ticket is stopped, and the ticket status is changed to <code>CANCELLED</code>.
+        /// ticket is stopped, and the ticket status is changed to <c>CANCELLED</c>.
         /// 
         ///  
         /// <para>
         /// This call is also used to turn off automatic backfill for an individual game session.
         /// This is for game sessions that are created with a matchmaking configuration that has
-        /// automatic backfill enabled. The ticket ID is included in the <code>MatchmakerData</code>
+        /// automatic backfill enabled. The ticket ID is included in the <c>MatchmakerData</c>
         /// of an updated game session object, which is provided to the game server.
         /// </para>
         ///  <note> 
@@ -13929,8 +13927,8 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// To suspend activity, specify a game server group ARN and the type of activity to be
-        /// suspended. If successful, a <code>GameServerGroup</code> object is returned showing
-        /// that the activity is listed in <code>SuspendedActions</code>.
+        /// suspended. If successful, a <c>GameServerGroup</c> object is returned showing that
+        /// the activity is listed in <c>SuspendedActions</c>.
         /// </para>
         ///  
         /// <para>
@@ -13994,8 +13992,8 @@ namespace Amazon.GameLift
         ///  </li> </ul> 
         /// <para>
         /// To suspend activity, specify a game server group ARN and the type of activity to be
-        /// suspended. If successful, a <code>GameServerGroup</code> object is returned showing
-        /// that the activity is listed in <code>SuspendedActions</code>.
+        /// suspended. If successful, a <c>GameServerGroup</c> object is returned showing that
+        /// the activity is listed in <c>SuspendedActions</c>.
         /// </para>
         ///  
         /// <para>
@@ -14538,7 +14536,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, an updated <code>FleetAttributes</code> object is returned.
+        /// If successful, an updated <c>FleetAttributes</c> object is returned.
         /// </para>
         ///  
         /// <para>
@@ -14602,7 +14600,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, an updated <code>FleetAttributes</code> object is returned.
+        /// If successful, an updated <c>FleetAttributes</c> object is returned.
         /// </para>
         ///  
         /// <para>
@@ -14690,14 +14688,12 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// To update capacity for a fleet's home Region, or if the fleet has no remote locations,
-        /// omit the <code>Location</code> parameter. The fleet must be in <code>ACTIVE</code>
-        /// status. 
+        /// omit the <c>Location</c> parameter. The fleet must be in <c>ACTIVE</c> status. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To update capacity for a fleet's remote location, include the <code>Location</code>
-        /// parameter set to the location to be updated. The location must be in <code>ACTIVE</code>
-        /// status.
+        /// To update capacity for a fleet's remote location, include the <c>Location</c> parameter
+        /// set to the location to be updated. The location must be in <c>ACTIVE</c> status.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14708,7 +14704,7 @@ namespace Amazon.GameLift
         /// current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
         /// If the requested desired instance count is higher than the instance type's limit,
-        /// the <code>LimitExceeded</code> exception occurs.
+        /// the <c>LimitExceeded</c> exception occurs.
         /// </para>
         ///  
         /// <para>
@@ -14792,14 +14788,12 @@ namespace Amazon.GameLift
         ///  <ul> <li> 
         /// <para>
         /// To update capacity for a fleet's home Region, or if the fleet has no remote locations,
-        /// omit the <code>Location</code> parameter. The fleet must be in <code>ACTIVE</code>
-        /// status. 
+        /// omit the <c>Location</c> parameter. The fleet must be in <c>ACTIVE</c> status. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// To update capacity for a fleet's remote location, include the <code>Location</code>
-        /// parameter set to the location to be updated. The location must be in <code>ACTIVE</code>
-        /// status.
+        /// To update capacity for a fleet's remote location, include the <c>Location</c> parameter
+        /// set to the location to be updated. The location must be in <c>ACTIVE</c> status.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -14810,7 +14804,7 @@ namespace Amazon.GameLift
         /// current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
         /// If the requested desired instance count is higher than the instance type's limit,
-        /// the <code>LimitExceeded</code> exception occurs.
+        /// the <c>LimitExceeded</c> exception occurs.
         /// </para>
         ///  
         /// <para>
@@ -14880,15 +14874,15 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To update settings, specify the fleet ID to be updated and specify the changes to
-        /// be made. List the permissions you want to add in <code>InboundPermissionAuthorizations</code>,
-        /// and permissions you want to remove in <code>InboundPermissionRevocations</code>. Permissions
+        /// be made. List the permissions you want to add in <c>InboundPermissionAuthorizations</c>,
+        /// and permissions you want to remove in <c>InboundPermissionRevocations</c>. Permissions
         /// to be removed must match existing fleet permissions. 
         /// </para>
         ///  
         /// <para>
         /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
         /// locations, port setting updates can take time to propagate across all locations. You
-        /// can check the status of updates in each location by calling <code>DescribeFleetPortSettings</code>
+        /// can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
         /// with a location name.
         /// </para>
         ///  
@@ -14949,15 +14943,15 @@ namespace Amazon.GameLift
         ///  
         /// <para>
         /// To update settings, specify the fleet ID to be updated and specify the changes to
-        /// be made. List the permissions you want to add in <code>InboundPermissionAuthorizations</code>,
-        /// and permissions you want to remove in <code>InboundPermissionRevocations</code>. Permissions
+        /// be made. List the permissions you want to add in <c>InboundPermissionAuthorizations</c>,
+        /// and permissions you want to remove in <c>InboundPermissionRevocations</c>. Permissions
         /// to be removed must match existing fleet permissions. 
         /// </para>
         ///  
         /// <para>
         /// If successful, the fleet ID for the updated fleet is returned. For fleets with remote
         /// locations, port setting updates can take time to propagate across all locations. You
-        /// can check the status of updates in each location by calling <code>DescribeFleetPortSettings</code>
+        /// can check the status of updates in each location by calling <c>DescribeFleetPortSettings</c>
         /// with a location name.
         /// </para>
         ///  
@@ -15035,18 +15029,18 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To update the game server's utilization status from <code>AVAILABLE</code> (when the
-        /// game server is available to be claimed) to <code>UTILIZED</code> (when the game server
-        /// is currently hosting games). Identify the game server and game server group and specify
-        /// the new utilization status. You can't change the status from to <code>UTILIZED</code>
-        /// to <code>AVAILABLE</code> .
+        /// To update the game server's utilization status from <c>AVAILABLE</c> (when the game
+        /// server is available to be claimed) to <c>UTILIZED</c> (when the game server is currently
+        /// hosting games). Identify the game server and game server group and specify the new
+        /// utilization status. You can't change the status from to <c>UTILIZED</c> to <c>AVAILABLE</c>
+        /// .
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To report health status, identify the game server and game server group and set health
-        /// check to <code>HEALTHY</code>. If a game server does not report health status for
-        /// a certain length of time, the game server is no longer considered healthy. As a result,
-        /// it will be eventually deregistered from the game server group to avoid affecting utilization
+        /// check to <c>HEALTHY</c>. If a game server does not report health status for a certain
+        /// length of time, the game server is no longer considered healthy. As a result, it will
+        /// be eventually deregistered from the game server group to avoid affecting utilization
         /// metrics. The best practice is to report health every 60 seconds.
         /// </para>
         ///  </li> <li> 
@@ -15114,18 +15108,18 @@ namespace Amazon.GameLift
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To update the game server's utilization status from <code>AVAILABLE</code> (when the
-        /// game server is available to be claimed) to <code>UTILIZED</code> (when the game server
-        /// is currently hosting games). Identify the game server and game server group and specify
-        /// the new utilization status. You can't change the status from to <code>UTILIZED</code>
-        /// to <code>AVAILABLE</code> .
+        /// To update the game server's utilization status from <c>AVAILABLE</c> (when the game
+        /// server is available to be claimed) to <c>UTILIZED</c> (when the game server is currently
+        /// hosting games). Identify the game server and game server group and specify the new
+        /// utilization status. You can't change the status from to <c>UTILIZED</c> to <c>AVAILABLE</c>
+        /// .
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To report health status, identify the game server and game server group and set health
-        /// check to <code>HEALTHY</code>. If a game server does not report health status for
-        /// a certain length of time, the game server is no longer considered healthy. As a result,
-        /// it will be eventually deregistered from the game server group to avoid affecting utilization
+        /// check to <c>HEALTHY</c>. If a game server does not report health status for a certain
+        /// length of time, the game server is no longer considered healthy. As a result, it will
+        /// be eventually deregistered from the game server group to avoid affecting utilization
         /// metrics. The best practice is to report health every 60 seconds.
         /// </para>
         ///  </li> <li> 
@@ -15198,7 +15192,7 @@ namespace Amazon.GameLift
         /// To update the game server group, specify the game server group ID and provide the
         /// updated values. Before applying the updates, the new values are validated to ensure
         /// that Amazon GameLift FleetIQ can continue to perform instance balancing activity.
-        /// If successful, a <code>GameServerGroup</code> object is returned.
+        /// If successful, a <c>GameServerGroup</c> object is returned.
         /// </para>
         ///  
         /// <para>
@@ -15254,7 +15248,7 @@ namespace Amazon.GameLift
         /// To update the game server group, specify the game server group ID and provide the
         /// updated values. Before applying the updates, the new values are validated to ensure
         /// that Amazon GameLift FleetIQ can continue to perform instance balancing activity.
-        /// If successful, a <code>GameServerGroup</code> object is returned.
+        /// If successful, a <c>GameServerGroup</c> object is returned.
         /// </para>
         ///  
         /// <para>
@@ -15312,7 +15306,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, the updated <code>GameSession</code> object is returned. 
+        /// If successful, the updated <c>GameSession</c> object is returned. 
         /// </para>
         ///  
         /// <para>
@@ -15368,7 +15362,7 @@ namespace Amazon.GameLift
         /// </para>
         ///  
         /// <para>
-        /// If successful, the updated <code>GameSession</code> object is returned. 
+        /// If successful, the updated <c>GameSession</c> object is returned. 
         /// </para>
         ///  
         /// <para>
@@ -15617,11 +15611,11 @@ namespace Amazon.GameLift
         /// Updates the current runtime configuration for the specified fleet, which tells Amazon
         /// GameLift how to launch server processes on all instances in the fleet. You can update
         /// a fleet's runtime configuration at any time after the fleet is created; it does not
-        /// need to be in <code>ACTIVE</code> status.
+        /// need to be in <c>ACTIVE</c> status.
         /// 
         ///  
         /// <para>
-        /// To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
+        /// To update runtime configuration, specify the fleet ID and provide a <c>RuntimeConfiguration</c>
         /// with an updated set of server process configurations.
         /// </para>
         ///  
@@ -15679,11 +15673,11 @@ namespace Amazon.GameLift
         /// Updates the current runtime configuration for the specified fleet, which tells Amazon
         /// GameLift how to launch server processes on all instances in the fleet. You can update
         /// a fleet's runtime configuration at any time after the fleet is created; it does not
-        /// need to be in <code>ACTIVE</code> status.
+        /// need to be in <c>ACTIVE</c> status.
         /// 
         ///  
         /// <para>
-        /// To update runtime configuration, specify the fleet ID and provide a <code>RuntimeConfiguration</code>
+        /// To update runtime configuration, specify the fleet ID and provide a <c>RuntimeConfiguration</c>
         /// with an updated set of server process configurations.
         /// </para>
         ///  

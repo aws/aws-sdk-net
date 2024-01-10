@@ -31,12 +31,11 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the ListAttributes operation.
     /// Lists the attributes for Amazon ECS resources within a specified target type and cluster.
-    /// When you specify a target type and cluster, <code>ListAttributes</code> returns a
-    /// list of attribute objects, one for each attribute on each resource. You can filter
-    /// the list of results to a single attribute name to only return results that have that
-    /// name. You can also filter the results by attribute name and value. You can do this,
-    /// for example, to see which container instances in a cluster are running a Linux AMI
-    /// (<code>ecs.os-type=linux</code>).
+    /// When you specify a target type and cluster, <c>ListAttributes</c> returns a list of
+    /// attribute objects, one for each attribute on each resource. You can filter the list
+    /// of results to a single attribute name to only return results that have that name.
+    /// You can also filter the results by attribute name and value. You can do this, for
+    /// example, to see which container instances in a cluster are running a Linux AMI (<c>ecs.os-type=linux</c>).
     /// </summary>
     public partial class ListAttributesRequest : AmazonECSRequest
     {
@@ -106,13 +105,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of cluster results that <code>ListAttributes</code> returned in
-        /// paginated output. When this parameter is used, <code>ListAttributes</code> only returns
-        /// <code>maxResults</code> results in a single page along with a <code>nextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>ListAttributes</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 100. If this parameter isn't used, then <code>ListAttributes</code>
-        /// returns up to 100 results and a <code>nextToken</code> value if applicable.
+        /// The maximum number of cluster results that <c>ListAttributes</c> returned in paginated
+        /// output. When this parameter is used, <c>ListAttributes</c> only returns <c>maxResults</c>
+        /// results in a single page along with a <c>nextToken</c> response element. The remaining
+        /// results of the initial request can be seen by sending another <c>ListAttributes</c>
+        /// request with the returned <c>nextToken</c> value. This value can be between 1 and
+        /// 100. If this parameter isn't used, then <c>ListAttributes</c> returns up to 100 results
+        /// and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -130,10 +129,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a <code>ListAttributes</code> request
-        /// indicating that more results are available to fulfill the request and further calls
-        /// are needed. If <code>maxResults</code> was provided, it's possible the number of results
-        /// to be fewer than <code>maxResults</code>.
+        /// The <c>nextToken</c> value returned from a <c>ListAttributes</c> request indicating
+        /// that more results are available to fulfill the request and further calls are needed.
+        /// If <c>maxResults</c> was provided, it's possible the number of results to be fewer
+        /// than <c>maxResults</c>.
         /// </para>
         ///  <note> 
         /// <para>

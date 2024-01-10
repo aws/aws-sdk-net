@@ -30,14 +30,14 @@ namespace Amazon.Polly.Model
 {
     /// <summary>
     /// Container for the parameters to the StartSpeechSynthesisTask operation.
-    /// Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>.
+    /// Allows the creation of an asynchronous synthesis task, by starting a new <c>SpeechSynthesisTask</c>.
     /// This operation requires all the standard information needed for speech synthesis,
     /// plus the name of an Amazon S3 bucket for the service to store the output of the synthesis
-    /// task and two optional parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>).
-    /// Once the synthesis task is created, this operation will return a <code>SpeechSynthesisTask</code>
+    /// task and two optional parameters (<c>OutputS3KeyPrefix</c> and <c>SnsTopicArn</c>).
+    /// Once the synthesis task is created, this operation will return a <c>SpeechSynthesisTask</c>
     /// object, which will include an identifier of this task as well as the current status.
-    /// The <code>SpeechSynthesisTask</code> object is available for 72 hours after starting
-    /// the asynchronous synthesis task.
+    /// The <c>SpeechSynthesisTask</c> object is available for 72 hours after starting the
+    /// asynchronous synthesis task.
     /// </summary>
     public partial class StartSpeechSynthesisTaskRequest : AmazonPollyRequest
     {
@@ -57,9 +57,9 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// Specifies the engine (<code>standard</code>, <code>neural</code> or <code>long-form</code>)
-        /// for Amazon Polly to use when processing input text for speech synthesis. Using a voice
-        /// that is not supported for the engine selected will result in an error.
+        /// Specifies the engine (<c>standard</c>, <c>neural</c> or <c>long-form</c>) for Amazon
+        /// Polly to use when processing input text for speech synthesis. Using a voice that is
+        /// not supported for the engine selected will result in an error.
         /// </para>
         /// </summary>
         public Engine Engine
@@ -86,8 +86,8 @@ namespace Amazon.Polly.Model
         /// If a bilingual voice is used and no language code is specified, Amazon Polly uses
         /// the default language of the bilingual voice. The default language for any voice is
         /// the one returned by the <a href="https://docs.aws.amazon.com/polly/latest/dg/API_DescribeVoices.html">DescribeVoices</a>
-        /// operation for the <code>LanguageCode</code> parameter. For example, if no language
-        /// code is specified, Aditi will use Indian English rather than Hindi.
+        /// operation for the <c>LanguageCode</c> parameter. For example, if no language code
+        /// is specified, Aditi will use Indian English rather than Hindi.
         /// </para>
         /// </summary>
         public LanguageCode LanguageCode

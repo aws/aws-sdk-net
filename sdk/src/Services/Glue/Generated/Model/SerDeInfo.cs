@@ -78,7 +78,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SerializationLibrary. 
         /// <para>
-        /// Usually the class that implements the SerDe. An example is <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.
+        /// Usually the class that implements the SerDe. An example is <c>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

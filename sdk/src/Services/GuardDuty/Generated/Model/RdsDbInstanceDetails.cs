@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GuardDuty.Model
 {
     /// <summary>
-    /// Contains information about the resource type <code>RDSDBInstance</code> involved in
-    /// a GuardDuty finding.
+    /// Contains information about the resource type <c>RDSDBInstance</c> involved in a GuardDuty
+    /// finding.
     /// </summary>
     public partial class RdsDbInstanceDetails
     {

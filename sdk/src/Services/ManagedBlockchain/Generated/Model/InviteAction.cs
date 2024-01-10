@@ -30,8 +30,8 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// An action to invite a specific Amazon Web Services account to create a member and
-    /// join the network. The <code>InviteAction</code> is carried out when a <code>Proposal</code>
-    /// is <code>APPROVED</code>.
+    /// join the network. The <c>InviteAction</c> is carried out when a <c>Proposal</c> is
+    /// <c>APPROVED</c>.
     /// 
     ///  
     /// <para>

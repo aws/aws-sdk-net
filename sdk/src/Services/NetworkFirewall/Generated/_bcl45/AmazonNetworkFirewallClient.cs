@@ -51,8 +51,8 @@ namespace Amazon.NetworkFirewall
     /// </para>
     ///  
     /// <para>
-    /// To access Network Firewall using the REST API endpoint: <code>https://network-firewall.&lt;region&gt;.amazonaws.com
-    /// </code> 
+    /// To access Network Firewall using the REST API endpoint: <c>https://network-firewall.&lt;region&gt;.amazonaws.com
+    /// </c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -930,8 +930,8 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// You provide your rule group specification in your request using either <code>RuleGroup</code>
-        /// or <code>Rules</code>.
+        /// You provide your rule group specification in your request using either <c>RuleGroup</c>
+        /// or <c>Rules</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRuleGroup service method.</param>
@@ -986,8 +986,8 @@ namespace Amazon.NetworkFirewall
         /// 
         ///  
         /// <para>
-        /// You provide your rule group specification in your request using either <code>RuleGroup</code>
-        /// or <code>Rules</code>.
+        /// You provide your rule group specification in your request using either <c>RuleGroup</c>
+        /// or <c>Rules</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRuleGroup service method.</param>
@@ -1208,8 +1208,8 @@ namespace Amazon.NetworkFirewall
 
         /// <summary>
         /// Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>. This operation
-        /// requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>.
-        /// You can't revert this operation. 
+        /// requires the firewall's <c>DeleteProtection</c> flag to be <c>FALSE</c>. You can't
+        /// revert this operation. 
         /// 
         ///  
         /// <para>
@@ -1277,8 +1277,8 @@ namespace Amazon.NetworkFirewall
 
         /// <summary>
         /// Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>. This operation
-        /// requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>.
-        /// You can't revert this operation. 
+        /// requires the firewall's <c>DeleteProtection</c> flag to be <c>FALSE</c>. You can't
+        /// revert this operation. 
         /// 
         ///  
         /// <para>
@@ -3486,8 +3486,8 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Modifies the flag, <code>DeleteProtection</code>, which indicates whether it is possible
-        /// to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+        /// Modifies the flag, <c>DeleteProtection</c>, which indicates whether it is possible
+        /// to delete the firewall. If the flag is set to <c>TRUE</c>, the firewall is protected
         /// against deletion. This setting helps protect against accidentally deleting a firewall
         /// that's in use.
         /// </summary>
@@ -3540,8 +3540,8 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Modifies the flag, <code>DeleteProtection</code>, which indicates whether it is possible
-        /// to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+        /// Modifies the flag, <c>DeleteProtection</c>, which indicates whether it is possible
+        /// to delete the firewall. If the flag is set to <c>TRUE</c>, the firewall is protected
         /// against deletion. This setting helps protect against accidentally deleting a firewall
         /// that's in use.
         /// </summary>
@@ -3918,8 +3918,8 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible
-        /// to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+        /// Modifies the flag, <c>ChangeProtection</c>, which indicates whether it is possible
+        /// to change the firewall. If the flag is set to <c>TRUE</c>, the firewall is protected
         /// from changes. This setting helps protect against accidentally changing a firewall
         /// that's in use.
         /// </summary>
@@ -3972,8 +3972,8 @@ namespace Amazon.NetworkFirewall
 
 
         /// <summary>
-        /// Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible
-        /// to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected
+        /// Modifies the flag, <c>ChangeProtection</c>, which indicates whether it is possible
+        /// to change the firewall. If the flag is set to <c>TRUE</c>, the firewall is protected
         /// from changes. This setting helps protect against accidentally changing a firewall
         /// that's in use.
         /// </summary>
@@ -4044,29 +4044,29 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  
         /// <para>
-        /// You can perform only one of the following actions in any call to <code>UpdateLoggingConfiguration</code>:
+        /// You can perform only one of the following actions in any call to <c>UpdateLoggingConfiguration</c>:
         /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Create a new log destination object by adding a single <code>LogDestinationConfig</code>
-        /// array element to <code>LogDestinationConfigs</code>.
+        /// Create a new log destination object by adding a single <c>LogDestinationConfig</c>
+        /// array element to <c>LogDestinationConfigs</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delete a log destination object by removing a single <code>LogDestinationConfig</code>
-        /// array element from <code>LogDestinationConfigs</code>.
+        /// Delete a log destination object by removing a single <c>LogDestinationConfig</c> array
+        /// element from <c>LogDestinationConfigs</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Change the <code>LogDestination</code> setting in a single <code>LogDestinationConfig</code>
-        /// array element.
+        /// Change the <c>LogDestination</c> setting in a single <c>LogDestinationConfig</c> array
+        /// element.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can't change the <code>LogDestinationType</code> or <code>LogType</code> in a
-        /// <code>LogDestinationConfig</code>. To change these settings, delete the existing <code>LogDestinationConfig</code>
-        /// object and create a new one, using two separate calls to this update operation.
+        /// You can't change the <c>LogDestinationType</c> or <c>LogType</c> in a <c>LogDestinationConfig</c>.
+        /// To change these settings, delete the existing <c>LogDestinationConfig</c> object and
+        /// create a new one, using two separate calls to this update operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration service method.</param>
@@ -4129,29 +4129,29 @@ namespace Amazon.NetworkFirewall
         /// </para>
         ///  
         /// <para>
-        /// You can perform only one of the following actions in any call to <code>UpdateLoggingConfiguration</code>:
+        /// You can perform only one of the following actions in any call to <c>UpdateLoggingConfiguration</c>:
         /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Create a new log destination object by adding a single <code>LogDestinationConfig</code>
-        /// array element to <code>LogDestinationConfigs</code>.
+        /// Create a new log destination object by adding a single <c>LogDestinationConfig</c>
+        /// array element to <c>LogDestinationConfigs</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delete a log destination object by removing a single <code>LogDestinationConfig</code>
-        /// array element from <code>LogDestinationConfigs</code>.
+        /// Delete a log destination object by removing a single <c>LogDestinationConfig</c> array
+        /// element from <c>LogDestinationConfigs</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Change the <code>LogDestination</code> setting in a single <code>LogDestinationConfig</code>
-        /// array element.
+        /// Change the <c>LogDestination</c> setting in a single <c>LogDestinationConfig</c> array
+        /// element.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can't change the <code>LogDestinationType</code> or <code>LogType</code> in a
-        /// <code>LogDestinationConfig</code>. To change these settings, delete the existing <code>LogDestinationConfig</code>
-        /// object and create a new one, using two separate calls to this update operation.
+        /// You can't change the <c>LogDestinationType</c> or <c>LogType</c> in a <c>LogDestinationConfig</c>.
+        /// To change these settings, delete the existing <c>LogDestinationConfig</c> object and
+        /// create a new one, using two separate calls to this update operation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateLoggingConfiguration service method.</param>

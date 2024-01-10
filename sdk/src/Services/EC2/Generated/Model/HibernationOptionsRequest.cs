@@ -41,27 +41,27 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Configured. 
         /// <para>
-        /// Set to <code>true</code> to enable your instance for hibernation.
+        /// Set to <c>true</c> to enable your instance for hibernation.
         /// </para>
         ///  
         /// <para>
-        /// For Spot Instances, if you set <code>Configured</code> to <code>true</code>, either
-        /// omit the <code>InstanceInterruptionBehavior</code> parameter (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotMarketOptions.html">
-        /// <code>SpotMarketOptions</code> </a>), or set it to <code>hibernate</code>. When <code>Configured</code>
+        /// For Spot Instances, if you set <c>Configured</c> to <c>true</c>, either omit the <c>InstanceInterruptionBehavior</c>
+        /// parameter (for <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_SpotMarketOptions.html">
+        /// <c>SpotMarketOptions</c> </a>), or set it to <c>hibernate</c>. When <c>Configured</c>
         /// is true:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you omit <code>InstanceInterruptionBehavior</code>, it defaults to <code>hibernate</code>.
+        /// If you omit <c>InstanceInterruptionBehavior</c>, it defaults to <c>hibernate</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you set <code>InstanceInterruptionBehavior</code> to a value other than <code>hibernate</code>,
+        /// If you set <c>InstanceInterruptionBehavior</c> to a value other than <c>hibernate</c>,
         /// you'll get an error.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Configured

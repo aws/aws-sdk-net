@@ -42,7 +42,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
         /// that is assigned to a Amazon GameLift fleet resource and uniquely identifies it. ARNs
-        /// are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// are unique across all Regions. Format is <c>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</c>.
         /// 
         /// </para>
         /// </summary>
@@ -80,10 +80,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LocationStates. 
         /// <para>
         /// The remote locations that are being added to the fleet, and the life-cycle status
-        /// of each location. For new locations, the status is set to <code>NEW</code>. During
-        /// location creation, Amazon GameLift updates each location's status as instances are
-        /// deployed there and prepared for game hosting. This list does not include the fleet
-        /// home Region or any remote locations that were already added to the fleet.
+        /// of each location. For new locations, the status is set to <c>NEW</c>. During location
+        /// creation, Amazon GameLift updates each location's status as instances are deployed
+        /// there and prepared for game hosting. This list does not include the fleet home Region
+        /// or any remote locations that were already added to the fleet.
         /// </para>
         /// </summary>
         public List<LocationState> LocationStates

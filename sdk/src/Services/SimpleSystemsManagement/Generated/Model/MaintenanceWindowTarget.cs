@@ -128,7 +128,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code> 
+        ///  <c>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</c> 
         /// </para>
         ///  
         /// <para>
@@ -136,7 +136,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
+        ///  <c>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

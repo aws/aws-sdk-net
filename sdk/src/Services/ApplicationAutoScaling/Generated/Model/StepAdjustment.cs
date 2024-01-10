@@ -41,12 +41,12 @@ namespace Amazon.ApplicationAutoScaling.Model
     ///  <ul> <li> 
     /// <para>
     /// To initiate the adjustment when the metric is greater than or equal to 50 and less
-    /// than 60, specify a lower bound of <code>0</code> and an upper bound of <code>10</code>.
+    /// than 60, specify a lower bound of <c>0</c> and an upper bound of <c>10</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To initiate the adjustment when the metric is greater than 40 and less than or equal
-    /// to 50, specify a lower bound of <code>-10</code> and an upper bound of <code>0</code>.
+    /// to 50, specify a lower bound of <c>-10</c> and an upper bound of <c>0</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>

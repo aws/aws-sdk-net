@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearchDomain.Model
 {
     /// <summary>
-    /// Contains the response to an <code>UploadDocuments</code> request.
+    /// Contains the response to an <c>UploadDocuments</c> request.
     /// </summary>
     public partial class UploadDocumentsResponse : AmazonWebServiceResponse
     {
@@ -77,7 +77,7 @@ namespace Amazon.CloudSearchDomain.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of an <code>UploadDocumentsRequest</code>.
+        /// The status of an <c>UploadDocumentsRequest</c>.
         /// </para>
         /// </summary>
         public string Status

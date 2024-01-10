@@ -100,7 +100,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        ///  To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+        ///  To retrieve the remaining results, make another request with the returned <c>nextToken</c>
         /// value. 
         /// </para>
         /// </summary>
@@ -146,7 +146,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:ec2:region:aws_account_id:instance/instance-id</code> 
+        ///  <c>arn:aws:ec2:region:aws_account_id:instance/instance-id</c> 
         /// </para>
         /// </summary>
         public List<string> ResourceArns

@@ -1394,8 +1394,8 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// The initial state of the builder is <code>PENDING</code>. When it is ready, the state
-        /// is <code>RUNNING</code>.
+        /// The initial state of the builder is <c>PENDING</c>. When it is ready, the state is
+        /// <c>RUNNING</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilder service method.</param>
@@ -1453,8 +1453,8 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// The initial state of the builder is <code>PENDING</code>. When it is ready, the state
-        /// is <code>RUNNING</code>.
+        /// The initial state of the builder is <c>PENDING</c>. When it is ready, the state is
+        /// <c>RUNNING</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateImageBuilder service method.</param>
@@ -4801,10 +4801,10 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code>
-        /// state, you can't update it. If the app block builder is in the <code>RUNNING</code>
-        /// state, you can only update the DisplayName and Description. If the app block builder
-        /// is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+        /// If the app block builder is in the <c>STARTING</c> or <c>STOPPING</c> state, you can't
+        /// update it. If the app block builder is in the <c>RUNNING</c> state, you can only update
+        /// the DisplayName and Description. If the app block builder is in the <c>STOPPED</c>
+        /// state, you can update any attribute except the Name.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAppBlockBuilder service method.</param>
@@ -4858,10 +4858,10 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// If the app block builder is in the <code>STARTING</code> or <code>STOPPING</code>
-        /// state, you can't update it. If the app block builder is in the <code>RUNNING</code>
-        /// state, you can only update the DisplayName and Description. If the app block builder
-        /// is in the <code>STOPPED</code> state, you can update any attribute except the Name.
+        /// If the app block builder is in the <c>STARTING</c> or <c>STOPPING</c> state, you can't
+        /// update it. If the app block builder is in the <c>RUNNING</c> state, you can only update
+        /// the DisplayName and Description. If the app block builder is in the <c>STOPPED</c>
+        /// state, you can update any attribute except the Name.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateAppBlockBuilder service method.</param>
@@ -5121,13 +5121,13 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-        /// the fleet name.
+        /// If the fleet is in the <c>STOPPED</c> state, you can update any attribute except the
+        /// fleet name.
         /// </para>
         ///  
         /// <para>
-        /// If the fleet is in the <code>RUNNING</code> state, you can update the following based
-        /// on the fleet type:
+        /// If the fleet is in the <c>RUNNING</c> state, you can update the following based on
+        /// the fleet type:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5135,9 +5135,8 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
-        /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
-        /// attributes.
+        /// You can update the <c>DisplayName</c>, <c>ComputeCapacity</c>, <c>ImageARN</c>, <c>ImageName</c>,
+        /// <c>IdleDisconnectTimeoutInSeconds</c>, and <c>DisconnectTimeoutInSeconds</c> attributes.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5145,14 +5144,13 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
-        /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, <code>SessionScriptS3Location</code>
-        /// and <code>UsbDeviceFilterStrings</code> attributes.
+        /// You can update the <c>DisplayName</c>, <c>IdleDisconnectTimeoutInSeconds</c>, <c>DisconnectTimeoutInSeconds</c>,
+        /// <c>MaxConcurrentSessions</c>, <c>SessionScriptS3Location</c> and <c>UsbDeviceFilterStrings</c>
+        /// attributes.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't
-        /// update it.
+        /// If the fleet is in the <c>STARTING</c> or <c>STOPPED</c> state, you can't update it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>
@@ -5209,13 +5207,13 @@ namespace Amazon.AppStream
         /// 
         ///  
         /// <para>
-        /// If the fleet is in the <code>STOPPED</code> state, you can update any attribute except
-        /// the fleet name.
+        /// If the fleet is in the <c>STOPPED</c> state, you can update any attribute except the
+        /// fleet name.
         /// </para>
         ///  
         /// <para>
-        /// If the fleet is in the <code>RUNNING</code> state, you can update the following based
-        /// on the fleet type:
+        /// If the fleet is in the <c>RUNNING</c> state, you can update the following based on
+        /// the fleet type:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -5223,9 +5221,8 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// You can update the <code>DisplayName</code>, <code>ComputeCapacity</code>, <code>ImageARN</code>,
-        /// <code>ImageName</code>, <code>IdleDisconnectTimeoutInSeconds</code>, and <code>DisconnectTimeoutInSeconds</code>
-        /// attributes.
+        /// You can update the <c>DisplayName</c>, <c>ComputeCapacity</c>, <c>ImageARN</c>, <c>ImageName</c>,
+        /// <c>IdleDisconnectTimeoutInSeconds</c>, and <c>DisconnectTimeoutInSeconds</c> attributes.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -5233,14 +5230,13 @@ namespace Amazon.AppStream
         /// </para>
         ///  
         /// <para>
-        /// You can update the <code>DisplayName</code>, <code>IdleDisconnectTimeoutInSeconds</code>,
-        /// <code>DisconnectTimeoutInSeconds</code>, <code>MaxConcurrentSessions</code>, <code>SessionScriptS3Location</code>
-        /// and <code>UsbDeviceFilterStrings</code> attributes.
+        /// You can update the <c>DisplayName</c>, <c>IdleDisconnectTimeoutInSeconds</c>, <c>DisconnectTimeoutInSeconds</c>,
+        /// <c>MaxConcurrentSessions</c>, <c>SessionScriptS3Location</c> and <c>UsbDeviceFilterStrings</c>
+        /// attributes.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the fleet is in the <code>STARTING</code> or <code>STOPPED</code> state, you can't
-        /// update it.
+        /// If the fleet is in the <c>STARTING</c> or <c>STOPPED</c> state, you can't update it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateFleet service method.</param>

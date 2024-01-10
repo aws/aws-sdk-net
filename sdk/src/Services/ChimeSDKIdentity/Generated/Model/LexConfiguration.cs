@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property LexBotAliasArn. 
         /// <para>
-        /// The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <code>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</code>
+        /// The ARN of the Amazon Lex V2 bot's alias. The ARN uses this format: <c>arn:aws:lex:REGION:ACCOUNT:bot-alias/MYBOTID/MYBOTALIAS</c>
         /// 
         /// </para>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property RespondsTo. <important> 
         /// <para>
-        ///  <b>Deprecated</b>. Use <code>InvokedBy</code> instead.
+        ///  <b>Deprecated</b>. Use <c>InvokedBy</c> instead.
         /// </para>
         ///  </important> 
         /// <para>

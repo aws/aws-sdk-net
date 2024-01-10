@@ -41,8 +41,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// Shows the identifier of the data source to see information on the processing of <code>PUT</code>
-        /// and <code>DELETE</code> actions for mapping users to their groups.
+        /// Shows the identifier of the data source to see information on the processing of <c>PUT</c>
+        /// and <c>DELETE</c> actions for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -61,8 +61,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GroupId. 
         /// <para>
-        /// Shows the identifier of the group to see information on the processing of <code>PUT</code>
-        /// and <code>DELETE</code> actions for mapping users to their groups.
+        /// Shows the identifier of the group to see information on the processing of <c>PUT</c>
+        /// and <c>DELETE</c> actions for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -81,13 +81,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property GroupOrderingIdSummaries. 
         /// <para>
-        /// Shows the following information on the processing of <code>PUT</code> and <code>DELETE</code>
+        /// Shows the following information on the processing of <c>PUT</c> and <c>DELETE</c>
         /// actions for mapping users to their groups:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
-        /// <code>DELETED</code>, or <code>FAILED</code>.
+        /// Status—the status can be either <c>PROCESSING</c>, <c>SUCCEEDED</c>, <c>DELETING</c>,
+        /// <c>DELETED</c>, or <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -123,8 +123,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IndexId. 
         /// <para>
-        /// Shows the identifier of the index to see information on the processing of <code>PUT</code>
-        /// and <code>DELETE</code> actions for mapping users to their groups.
+        /// Shows the identifier of the index to see information on the processing of <c>PUT</c>
+        /// and <c>DELETE</c> actions for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=36, Max=36)]

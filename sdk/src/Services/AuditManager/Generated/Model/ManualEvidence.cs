@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Evidence that's manually added to a control in Audit Manager. <code>manualEvidence</code>
-    /// can be one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>,
-    /// or <code>textResponse</code>.
+    /// Evidence that's manually added to a control in Audit Manager. <c>manualEvidence</c>
+    /// can be one of the following: <c>evidenceFileName</c>, <c>s3ResourcePath</c>, or <c>textResponse</c>.
     /// </summary>
     public partial class ManualEvidence
     {
@@ -43,8 +42,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property EvidenceFileName. 
         /// <para>
         /// The name of the file that's uploaded as manual evidence. This name is populated using
-        /// the <code>evidenceFileName</code> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html">
-        /// <code>GetEvidenceFileUploadUrl</code> </a> API response.
+        /// the <c>evidenceFileName</c> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html">
+        /// <c>GetEvidenceFileUploadUrl</c> </a> API response.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=300)]

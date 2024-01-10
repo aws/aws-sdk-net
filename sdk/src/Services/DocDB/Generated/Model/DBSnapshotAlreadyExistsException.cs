@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBSnapshotIdentifier</code> is already being used by an existing snapshot.
+    /// <c>DBSnapshotIdentifier</c> is already being used by an existing snapshot.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -34,8 +34,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must be signed on with the <code>logs:DeleteDataProtectionPolicy</code>
-    /// and <code>logs:DeleteAccountPolicy</code> permissions.
+    /// To use this operation, you must be signed on with the <c>logs:DeleteDataProtectionPolicy</c>
+    /// and <c>logs:DeleteAccountPolicy</c> permissions.
     /// </para>
     /// </summary>
     public partial class DeleteAccountPolicyRequest : AmazonCloudWatchLogsRequest
@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The type of policy to delete. Currently, the only valid value is <code>DATA_PROTECTION_POLICY</code>.
+        /// The type of policy to delete. Currently, the only valid value is <c>DATA_PROTECTION_POLICY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

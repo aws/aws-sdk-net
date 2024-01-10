@@ -61,8 +61,8 @@ namespace Amazon.AlexaForBusiness.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to include in the response. If more results exist than
-        /// the specified <code>MaxResults</code> value, a token is included in the response so
-        /// that the remaining results can be retrieved.
+        /// the specified <c>MaxResults</c> value, a token is included in the response so that
+        /// the remaining results can be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -83,7 +83,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// <para>
         /// An optional token returned from a prior request. Use this token for pagination of
         /// results from this action. If this parameter is specified, the response includes only
-        /// results beyond the token, up to the value specified by <code>MaxResults</code>. 
+        /// results beyond the token, up to the value specified by <c>MaxResults</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1100)]

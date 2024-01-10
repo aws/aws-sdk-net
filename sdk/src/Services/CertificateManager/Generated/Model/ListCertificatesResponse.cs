@@ -58,7 +58,7 @@ namespace Amazon.CertificateManager.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// When the list is truncated, this value is present and contains the value to use for
-        /// the <code>NextToken</code> parameter in a subsequent pagination request.
+        /// the <c>NextToken</c> parameter in a subsequent pagination request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]

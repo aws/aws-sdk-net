@@ -101,19 +101,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The global table is being created.
+        ///  <c>CREATING</c> - The global table is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The global table is being updated.
+        ///  <c>UPDATING</c> - The global table is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The global table is being deleted.
+        ///  <c>DELETING</c> - The global table is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The global table is ready for use.
+        ///  <c>ACTIVE</c> - The global table is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>

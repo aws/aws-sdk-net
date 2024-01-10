@@ -39,8 +39,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// <para>
     /// If an Amazon Web Services resource is launched in a service VPC, and you want it to
     /// be accessible to all of an environment’s services with VPCs and routes, apply the
-    /// <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more
-    /// cross-account constraints, apply your own security group.
+    /// <c>RefactorSpacesSecurityGroup</c> to the resource. Alternatively, to add more cross-account
+    /// constraints, apply your own security group.
     /// </para>
     ///  </important>
     /// </summary>
@@ -215,8 +215,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Gets and sets the property UrlEndpoint. 
         /// <para>
         /// The configuration for the URL endpoint type. When creating a route to a service, Refactor
-        /// Spaces automatically resolves the address in the <code>UrlEndpointInput</code> object
-        /// URL when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds
+        /// Spaces automatically resolves the address in the <c>UrlEndpointInput</c> object URL
+        /// when the Domain Name System (DNS) time-to-live (TTL) expires, or every 60 seconds
         /// for TTLs less than 60 seconds.
         /// </para>
         /// </summary>

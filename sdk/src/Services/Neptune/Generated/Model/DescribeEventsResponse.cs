@@ -59,7 +59,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         ///  An optional pagination token provided by a previous Events request. If this parameter
         /// is specified, the response includes only records beyond the marker, up to the value
-        /// specified by <code>MaxRecords</code> .
+        /// specified by <c>MaxRecords</c> .
         /// </para>
         /// </summary>
         public string Marker

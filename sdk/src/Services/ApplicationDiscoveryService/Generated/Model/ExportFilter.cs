@@ -42,7 +42,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Condition. 
         /// <para>
-        /// Supported condition: <code>EQUALS</code> 
+        /// Supported condition: <c>EQUALS</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=200)]
@@ -61,7 +61,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A single <code>ExportFilter</code> name. Supported filters: <code>agentIds</code>.
+        /// A single <c>ExportFilter</c> name. Supported filters: <c>agentIds</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1000)]
@@ -81,7 +81,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property Values. 
         /// <para>
         /// A single agent ID for a Discovery Agent. An agent ID can be found using the <a href="http://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeAgents.html">DescribeAgents</a>
-        /// action. Typically an ADS agent ID is in the form <code>o-0123456789abcdef0</code>.
+        /// action. Typically an ADS agent ID is in the form <c>o-0123456789abcdef0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

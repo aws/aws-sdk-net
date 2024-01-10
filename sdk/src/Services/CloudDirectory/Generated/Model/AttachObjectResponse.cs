@@ -38,7 +38,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property AttachedObjectIdentifier. 
         /// <para>
-        /// The attached <code>ObjectIdentifier</code>, which is the child <code>ObjectIdentifier</code>.
+        /// The attached <c>ObjectIdentifier</c>, which is the child <c>ObjectIdentifier</c>.
         /// </para>
         /// </summary>
         public string AttachedObjectIdentifier

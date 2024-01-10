@@ -60,7 +60,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property IntrospectionResult. 
         /// <para>
-        /// The <code>DataSourceIntrospectionResult</code> object data.
+        /// The <c>DataSourceIntrospectionResult</c> object data.
         /// </para>
         /// </summary>
         public DataSourceIntrospectionResult IntrospectionResult
@@ -79,10 +79,10 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property IntrospectionStatus. 
         /// <para>
         /// The status of the introspection during retrieval. By default, when a new instrospection
-        /// is being retrieved, the status will be set to <code>PROCESSING</code>. Once the operation
-        /// has been completed, the status will change to <code>SUCCESS</code> or <code>FAILED</code>
-        /// depending on how the data was parsed. A <code>FAILED</code> operation will return
-        /// an error and its details as an <code>introspectionStatusDetail</code>.
+        /// is being retrieved, the status will be set to <c>PROCESSING</c>. Once the operation
+        /// has been completed, the status will change to <c>SUCCESS</c> or <c>FAILED</c> depending
+        /// on how the data was parsed. A <c>FAILED</c> operation will return an error and its
+        /// details as an <c>introspectionStatusDetail</c>.
         /// </para>
         /// </summary>
         public DataSourceIntrospectionStatus IntrospectionStatus
@@ -100,9 +100,9 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property IntrospectionStatusDetail. 
         /// <para>
-        /// The error detail field. When a <code>FAILED</code> <code>introspectionStatus</code>
-        /// is returned, the <code>introspectionStatusDetail</code> will also return the exact
-        /// error that was generated during the operation.
+        /// The error detail field. When a <c>FAILED</c> <c>introspectionStatus</c> is returned,
+        /// the <c>introspectionStatusDetail</c> will also return the exact error that was generated
+        /// during the operation.
         /// </para>
         /// </summary>
         public string IntrospectionStatusDetail

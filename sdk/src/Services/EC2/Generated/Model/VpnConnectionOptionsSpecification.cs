@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool EnableAcceleration
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0.0.0.0/0</code> 
+        /// Default: <c>0.0.0.0/0</c> 
         /// </para>
         /// </summary>
         public string LocalIpv4NetworkCidr
@@ -95,7 +95,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>::/0</code> 
+        /// Default: <c>::/0</c> 
         /// </para>
         /// </summary>
         public string LocalIpv6NetworkCidr
@@ -118,11 +118,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>PrivateIpv4</code> | <code>PublicIpv4</code> 
+        /// Valid values: <c>PrivateIpv4</c> | <c>PublicIpv4</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>PublicIpv4</code> 
+        /// Default: <c>PublicIpv4</c> 
         /// </para>
         /// </summary>
         public string OutsideIpAddressType
@@ -144,7 +144,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0.0.0.0/0</code> 
+        /// Default: <c>0.0.0.0/0</c> 
         /// </para>
         /// </summary>
         public string RemoteIpv4NetworkCidr
@@ -166,7 +166,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>::/0</code> 
+        /// Default: <c>::/0</c> 
         /// </para>
         /// </summary>
         public string RemoteIpv6NetworkCidr
@@ -185,12 +185,12 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property StaticRoutesOnly. 
         /// <para>
         /// Indicate whether the VPN connection uses static routes only. If you are creating a
-        /// VPN connection for a device that does not support BGP, you must specify <code>true</code>.
+        /// VPN connection for a device that does not support BGP, you must specify <c>true</c>.
         /// Use <a>CreateVpnConnectionRoute</a> to create a static route.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool StaticRoutesOnly
@@ -212,7 +212,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if <code>OutsideIpAddressType</code> is set to <code>PrivateIpv4</code>.
+        /// Required if <c>OutsideIpAddressType</c> is set to <c>PrivateIpv4</c>.
         /// </para>
         /// </summary>
         public string TransportTransitGatewayAttachmentId
@@ -234,7 +234,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>ipv4</code> 
+        /// Default: <c>ipv4</c> 
         /// </para>
         /// </summary>
         public TunnelInsideIpVersion TunnelInsideIpVersion

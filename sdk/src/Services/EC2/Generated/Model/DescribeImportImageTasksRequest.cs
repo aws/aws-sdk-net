@@ -43,8 +43,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filter tasks using the <code>task-state</code> filter and one of the following values:
-        /// <code>active</code>, <code>completed</code>, <code>deleting</code>, or <code>deleted</code>.
+        /// Filter tasks using the <c>task-state</c> filter and one of the following values: <c>active</c>,
+        /// <c>completed</c>, <c>deleting</c>, or <c>deleted</c>.
         /// </para>
         /// </summary>
         public List<Filter> Filters

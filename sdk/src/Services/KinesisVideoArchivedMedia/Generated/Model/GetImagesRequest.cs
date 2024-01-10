@@ -52,8 +52,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property EndTimestamp. 
         /// <para>
         /// The end timestamp for the range of images to be generated. If the time range between
-        /// <code>StartTimestamp</code> and <code>EndTimestamp</code> is more than 300 seconds
-        /// above <code>StartTimestamp</code>, you will receive an <code>IllegalArgumentException</code>.
+        /// <c>StartTimestamp</c> and <c>EndTimestamp</c> is more than 300 seconds above <c>StartTimestamp</c>,
+        /// you will receive an <c>IllegalArgumentException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -92,12 +92,12 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property FormatConfig. 
         /// <para>
         /// The list of a key-value pair structure that contains extra parameters that can be
-        /// applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>,
-        /// which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code>
+        /// applied when the image is generated. The <c>FormatConfig</c> key is the <c>JPEGQuality</c>,
+        /// which indicates the JPEG quality key to be used to generate the image. The <c>FormatConfig</c>
         /// value accepts ints from 1 to 100. If the value is 1, the image will be generated with
         /// less quality and the best compression. If the value is 100, the image will be generated
         /// with the best quality and less compression. If no value is provided, the default value
-        /// of the <code>JPEGQuality</code> key will be set to 80.
+        /// of the <c>JPEGQuality</c> key will be set to 80.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -116,12 +116,11 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property HeightPixels. 
         /// <para>
-        /// The height of the output image that is used in conjunction with the <code>WidthPixels</code>
-        /// parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters
-        /// are provided, the image will be stretched to fit the specified aspect ratio. If only
-        /// the <code>HeightPixels</code> parameter is provided, its original aspect ratio will
-        /// be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided,
-        /// the original image size will be returned.
+        /// The height of the output image that is used in conjunction with the <c>WidthPixels</c>
+        /// parameter. When both <c>HeightPixels</c> and <c>WidthPixels</c> parameters are provided,
+        /// the image will be stretched to fit the specified aspect ratio. If only the <c>HeightPixels</c>
+        /// parameter is provided, its original aspect ratio will be used to calculate the <c>WidthPixels</c>
+        /// ratio. If neither parameter is provided, the original image size will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2160)]
@@ -163,9 +162,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The default limit is 25 images per API response. Providing a <code>MaxResults</code>
-        /// greater than this value will result in a page size of 25. Any additional results will
-        /// be paginated. 
+        /// The default limit is 25 images per API response. Providing a <c>MaxResults</c> greater
+        /// than this value will result in a page size of 25. Any additional results will be paginated.
+        /// 
         /// </para>
         ///  </note>
         /// </summary>
@@ -186,7 +185,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that specifies where to start paginating the next set of Images. This is the
-        /// <code>GetImages:NextToken</code> from a previously truncated response.
+        /// <c>GetImages:NextToken</c> from a previously truncated response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -207,7 +206,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         /// The time interval in milliseconds (ms) at which the images need to be generated from
         /// the stream. The minimum value that can be provided is 200 ms (5 images per second).
-        /// If the timestamp range is less than the sampling interval, the image from the <code>startTimestamp</code>
+        /// If the timestamp range is less than the sampling interval, the image from the <c>startTimestamp</c>
         /// will be returned if available. 
         /// </para>
         /// </summary>
@@ -226,7 +225,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property StartTimestamp. 
         /// <para>
-        /// The starting point from which the images should be generated. This <code>StartTimestamp</code>
+        /// The starting point from which the images should be generated. This <c>StartTimestamp</c>
         /// must be within an inclusive range of timestamps for an image to be returned.
         /// </para>
         /// </summary>
@@ -247,7 +246,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property StreamARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the stream from which to retrieve the images. You
-        /// must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -267,7 +266,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream from which to retrieve the images. You must specify either
-        /// the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -286,12 +285,12 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property WidthPixels. 
         /// <para>
-        /// The width of the output image that is used in conjunction with the <code>HeightPixels</code>
-        /// parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters
-        /// are provided, the image will be stretched to fit the specified aspect ratio. If only
-        /// the <code>WidthPixels</code> parameter is provided or if only the <code>HeightPixels</code>
-        /// is provided, a <code>ValidationException</code> will be thrown. If neither parameter
-        /// is provided, the original image size from the stream will be returned.
+        /// The width of the output image that is used in conjunction with the <c>HeightPixels</c>
+        /// parameter. When both <c>WidthPixels</c> and <c>HeightPixels</c> parameters are provided,
+        /// the image will be stretched to fit the specified aspect ratio. If only the <c>WidthPixels</c>
+        /// parameter is provided or if only the <c>HeightPixels</c> is provided, a <c>ValidationException</c>
+        /// will be thrown. If neither parameter is provided, the original image size from the
+        /// stream will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3840)]

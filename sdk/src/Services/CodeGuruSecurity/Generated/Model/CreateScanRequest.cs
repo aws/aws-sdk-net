@@ -44,10 +44,10 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property AnalysisType. 
         /// <para>
-        /// The type of analysis you want CodeGuru Security to perform in the scan, either <code>Security</code>
-        /// or <code>All</code>. The <code>Security</code> type only generates findings related
-        /// to security. The <code>All</code> type generates both security findings and quality
-        /// findings. Defaults to <code>Security</code> type if missing.
+        /// The type of analysis you want CodeGuru Security to perform in the scan, either <c>Security</c>
+        /// or <c>All</c>. The <c>Security</c> type only generates findings related to security.
+        /// The <c>All</c> type generates both security findings and quality findings. Defaults
+        /// to <c>Security</c> type if missing.
         /// </para>
         /// </summary>
         public AnalysisType AnalysisType
@@ -105,7 +105,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Gets and sets the property ScanName. 
         /// <para>
         /// The unique name that CodeGuru Security uses to track revisions across multiple scans
-        /// of the same resource. Only allowed for a <code>STANDARD</code> scan type. If not specified,
+        /// of the same resource. Only allowed for a <c>STANDARD</c> scan type. If not specified,
         /// it will be auto generated. 
         /// </para>
         /// </summary>
@@ -125,14 +125,14 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property ScanType. 
         /// <para>
-        /// The type of scan, either <code>Standard</code> or <code>Express</code>. Defaults to
-        /// <code>Standard</code> type if missing.
+        /// The type of scan, either <c>Standard</c> or <c>Express</c>. Defaults to <c>Standard</c>
+        /// type if missing.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Express</code> scans run on limited resources and use a limited set of detectors
-        /// to analyze your code in near-real time. <code>Standard</code> scans have standard
-        /// resource limits and use the full set of detectors to analyze your code.
+        ///  <c>Express</c> scans run on limited resources and use a limited set of detectors
+        /// to analyze your code in near-real time. <c>Standard</c> scans have standard resource
+        /// limits and use the full set of detectors to analyze your code.
         /// </para>
         /// </summary>
         public ScanType ScanType
@@ -155,12 +155,12 @@ namespace Amazon.CodeGuruSecurity.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A tag key. For example, <code>CostCenter</code>, <code>Environment</code>, or <code>Secret</code>.
-        /// Tag keys are case sensitive.
+        /// A tag key. For example, <c>CostCenter</c>, <c>Environment</c>, or <c>Secret</c>. Tag
+        /// keys are case sensitive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An optional tag value field. For example, <code>111122223333</code>, <code>Production</code>,
+        /// An optional tag value field. For example, <c>111122223333</c>, <c>Production</c>,
         /// or a team name. Omitting the tag value is the same as using an empty string. Tag values
         /// are case sensitive.
         /// </para>

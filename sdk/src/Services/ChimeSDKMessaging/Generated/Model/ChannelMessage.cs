@@ -95,7 +95,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// The content type of the channel message. For Amazon Lex V2 bot responses, the content
-        /// type is <code>application/amz-chime-lex-msgs</code> for success responses and <code>application/amz-chime-lex-error</code>
+        /// type is <c>application/amz-chime-lex-msgs</c> for success responses and <c>application/amz-chime-lex-error</c>
         /// for failure responses. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/appinstance-bots#process-response.html">Processing
         /// responses from an AppInstanceBot</a> in the <i>Amazon Chime SDK Messaging Developer
         /// Guide</i>.

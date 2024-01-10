@@ -34,21 +34,21 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
-    /// while signed in to your Amazon Web Services account, <code>ListStackSets</code> returns
-    /// all self-managed stack sets in your Amazon Web Services account.
+    /// [Self-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c> while
+    /// signed in to your Amazon Web Services account, <c>ListStackSets</c> returns all self-managed
+    /// stack sets in your Amazon Web Services account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code>
-    /// while signed in to the organization's management account, <code>ListStackSets</code>
-    /// returns all stack sets in the management account.
+    /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>SELF</c>
+    /// while signed in to the organization's management account, <c>ListStackSets</c> returns
+    /// all stack sets in the management account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code>
-    /// while signed in to your member account, <code>ListStackSets</code> returns all stack
-    /// sets with service-managed permissions in the management account.
+    /// [Service-managed permissions] If you set the <c>CallAs</c> parameter to <c>DELEGATED_ADMIN</c>
+    /// while signed in to your member account, <c>ListStackSets</c> returns all stack sets
+    /// with service-managed permissions in the management account.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -67,16 +67,16 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// If you are signed in to a delegated administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>
@@ -102,9 +102,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned with a single call. If the number of
-        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
-        /// value that you can assign to the <code>NextToken</code> request parameter to get the
-        /// next set of results.
+        /// available results exceeds this maximum, the response includes a <c>NextToken</c> value
+        /// that you can assign to the <c>NextToken</c> request parameter to get the next set
+        /// of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -124,10 +124,10 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request didn't return all the remaining results, the response
-        /// object's <code>NextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call <code>ListStackSets</code> again and assign that token to
-        /// the request object's <code>NextToken</code> parameter. If there are no remaining results,
-        /// the previous response object's <code>NextToken</code> parameter is set to <code>null</code>.
+        /// object's <c>NextToken</c> parameter value is set to a token. To retrieve the next
+        /// set of results, call <c>ListStackSets</c> again and assign that token to the request
+        /// object's <c>NextToken</c> parameter. If there are no remaining results, the previous
+        /// response object's <c>NextToken</c> parameter is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

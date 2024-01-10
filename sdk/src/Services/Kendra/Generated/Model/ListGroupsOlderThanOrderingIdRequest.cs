@@ -35,8 +35,8 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    ///  <code>ListGroupsOlderThanOrderingId</code> is currently not supported in the Amazon
-    /// Web Services GovCloud (US-West) region.
+    ///  <c>ListGroupsOlderThanOrderingId</c> is currently not supported in the Amazon Web
+    /// Services GovCloud (US-West) region.
     /// </para>
     /// </summary>
     public partial class ListGroupsOlderThanOrderingIdRequest : AmazonKendraRequest
@@ -132,8 +132,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OrderingId. 
         /// <para>
-        /// The timestamp identifier used for the latest <code>PUT</code> or <code>DELETE</code>
-        /// action for mapping users to their groups.
+        /// The timestamp identifier used for the latest <c>PUT</c> or <c>DELETE</c> action for
+        /// mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=32535158400000)]

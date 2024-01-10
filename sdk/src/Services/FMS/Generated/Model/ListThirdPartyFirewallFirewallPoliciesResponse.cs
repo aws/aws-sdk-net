@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The value that you will use for <code>NextToken</code> in the next <code>ListThirdPartyFirewallFirewallPolicies</code>
+        /// The value that you will use for <c>NextToken</c> in the next <c>ListThirdPartyFirewallFirewallPolicies</c>
         /// request.
         /// </para>
         /// </summary>
@@ -59,10 +59,10 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ThirdPartyFirewallFirewallPolicies. 
         /// <para>
-        /// A list that contains one <code>ThirdPartyFirewallFirewallPolicies</code> element for
-        /// each third-party firewall policies that the specified third-party firewall vendor
-        /// is associated with. Each <code>ThirdPartyFirewallFirewallPolicies</code> element contains
-        /// the firewall policy name and ID.
+        /// A list that contains one <c>ThirdPartyFirewallFirewallPolicies</c> element for each
+        /// third-party firewall policies that the specified third-party firewall vendor is associated
+        /// with. Each <c>ThirdPartyFirewallFirewallPolicies</c> element contains the firewall
+        /// policy name and ID.
         /// </para>
         /// </summary>
         public List<ThirdPartyFirewallFirewallPolicy> ThirdPartyFirewallFirewallPolicies

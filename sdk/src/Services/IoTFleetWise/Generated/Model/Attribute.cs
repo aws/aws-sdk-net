@@ -181,7 +181,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property FullyQualifiedName. 
         /// <para>
         /// The fully qualified name of the attribute. For example, the fully qualified name of
-        /// an attribute might be <code>Vehicle.Body.Engine.Type</code>.
+        /// an attribute might be <c>Vehicle.Body.Engine.Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

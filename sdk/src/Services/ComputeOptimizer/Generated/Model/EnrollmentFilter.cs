@@ -44,8 +44,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>Status</code> to return accounts with a specific enrollment status (for
-        /// example, <code>Active</code>).
+        /// Specify <c>Status</c> to return accounts with a specific enrollment status (for example,
+        /// <c>Active</c>).
         /// </para>
         /// </summary>
         public EnrollmentFilterName Name
@@ -67,8 +67,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values are <code>Active</code>, <code>Inactive</code>, <code>Pending</code>,
-        /// and <code>Failed</code>.
+        /// The valid values are <c>Active</c>, <c>Inactive</c>, <c>Pending</c>, and <c>Failed</c>.
         /// </para>
         /// </summary>
         public List<string> Values

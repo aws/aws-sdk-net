@@ -60,7 +60,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property DirectPutContent. 
         /// <para>
-        ///  <code>TRUE</code> to use documents you indexed directly using the <code>BatchPutDocument</code>
+        ///  <c>TRUE</c> to use documents you indexed directly using the <c>BatchPutDocument</c>
         /// API.
         /// </para>
         /// </summary>

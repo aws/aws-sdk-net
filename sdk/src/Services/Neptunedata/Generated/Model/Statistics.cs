@@ -123,16 +123,16 @@ namespace Amazon.Neptunedata.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>signatureCount</code> - The total number of signatures across all characteristic
+        ///  <c>signatureCount</c> - The total number of signatures across all characteristic
         /// sets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>instanceCount</code> - The total number of characteristic-set instances.
+        ///  <c>instanceCount</c> - The total number of characteristic-set instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>predicateCount</code> - The total number of unique predicates.
+        ///  <c>predicateCount</c> - The total number of unique predicates.
         /// </para>
         ///  </li> </ul>
         /// </summary>

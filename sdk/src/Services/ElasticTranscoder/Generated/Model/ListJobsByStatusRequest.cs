@@ -43,7 +43,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Ascending. 
         /// <para>
         ///  To list jobs in chronological order by the date and time that they were submitted,
-        /// enter <code>true</code>. To list jobs in reverse chronological order, enter <code>false</code>.
+        /// enter <c>true</c>. To list jobs in reverse chronological order, enter <c>false</c>.
         /// 
         /// </para>
         /// </summary>
@@ -62,8 +62,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PageToken. 
         /// <para>
-        ///  When Elastic Transcoder returns more than one page of results, use <code>pageToken</code>
-        /// in subsequent <code>GET</code> requests to get each successive page of results. 
+        ///  When Elastic Transcoder returns more than one page of results, use <c>pageToken</c>
+        /// in subsequent <c>GET</c> requests to get each successive page of results. 
         /// </para>
         /// </summary>
         public string PageToken
@@ -82,8 +82,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// To get information about all of the jobs associated with the current AWS account that
-        /// have a given status, specify the following status: <code>Submitted</code>, <code>Progressing</code>,
-        /// <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
+        /// have a given status, specify the following status: <c>Submitted</c>, <c>Progressing</c>,
+        /// <c>Complete</c>, <c>Canceled</c>, or <c>Error</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

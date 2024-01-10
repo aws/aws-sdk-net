@@ -43,8 +43,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// A fully qualified domain name (FQDN) in the certificate. For example, <code>www.example.com</code>
-        /// or <code>example.com</code>. 
+        /// A fully qualified domain name (FQDN) in the certificate. For example, <c>www.example.com</c>
+        /// or <c>example.com</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=253)]
@@ -149,7 +149,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING_VALIDATION</code> 
+        ///  <c>PENDING_VALIDATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,13 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Information about an uplink echo <code>Config</code>.
+    /// Information about an uplink echo <c>Config</c>.
     /// 
     ///  
     /// <para>
-    /// Parameters from the <code>AntennaUplinkConfig</code>, corresponding to the specified
-    /// <code>AntennaUplinkConfigArn</code>, are used when this <code>UplinkEchoConfig</code>
-    /// is used in a contact.
+    /// Parameters from the <c>AntennaUplinkConfig</c>, corresponding to the specified <c>AntennaUplinkConfigArn</c>,
+    /// are used when this <c>UplinkEchoConfig</c> is used in a contact.
     /// </para>
     /// </summary>
     public partial class UplinkEchoConfig
@@ -46,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property AntennaUplinkConfigArn. 
         /// <para>
-        /// ARN of an uplink <code>Config</code>.
+        /// ARN of an uplink <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -65,7 +64,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Whether or not an uplink <code>Config</code> is enabled.
+        /// Whether or not an uplink <c>Config</c> is enabled.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -74,7 +74,7 @@ namespace Amazon.ARCZonalShift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of alarm specified for a practice run. The only valid value is <code>CLOUDWATCH</code>.
+        /// The type of alarm specified for a practice run. The only valid value is <c>CLOUDWATCH</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -30,7 +30,7 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Contains a summary of a component. This is a read-only data type that is returned
-    /// by <code>ListComponents</code>.
+    /// by <c>ListComponents</c>.
     /// </summary>
     public partial class ComponentSummary
     {

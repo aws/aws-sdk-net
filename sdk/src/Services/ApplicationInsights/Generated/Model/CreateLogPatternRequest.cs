@@ -30,7 +30,7 @@ namespace Amazon.ApplicationInsights.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateLogPattern operation.
-    /// Adds an log pattern to a <code>LogPatternSet</code>.
+    /// Adds an log pattern to a <c>LogPatternSet</c>.
     /// </summary>
     public partial class CreateLogPatternRequest : AmazonApplicationInsightsRequest
     {
@@ -101,16 +101,15 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property Rank. 
         /// <para>
-        /// Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>.
-        /// The patterns are sorted by rank, so we recommend that you set your highest priority
-        /// patterns with the lowest rank. A pattern of rank <code>1</code> will be the first
-        /// to get matched to a log line. A pattern of rank <code>1,000,000</code> will be last
-        /// to get matched. When you configure custom log patterns from the console, a <code>Low</code>
-        /// severity pattern translates to a <code>750,000</code> rank. A <code>Medium</code>
-        /// severity pattern translates to a <code>500,000</code> rank. And a <code>High</code>
-        /// severity pattern translates to a <code>250,000</code> rank. Rank values less than
-        /// <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided
-        /// patterns. 
+        /// Rank of the log pattern. Must be a value between <c>1</c> and <c>1,000,000</c>. The
+        /// patterns are sorted by rank, so we recommend that you set your highest priority patterns
+        /// with the lowest rank. A pattern of rank <c>1</c> will be the first to get matched
+        /// to a log line. A pattern of rank <c>1,000,000</c> will be last to get matched. When
+        /// you configure custom log patterns from the console, a <c>Low</c> severity pattern
+        /// translates to a <c>750,000</c> rank. A <c>Medium</c> severity pattern translates to
+        /// a <c>500,000</c> rank. And a <c>High</c> severity pattern translates to a <c>250,000</c>
+        /// rank. Rank values less than <c>1</c> or greater than <c>1,000,000</c> are reserved
+        /// for AWS-provided patterns. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -50,13 +50,13 @@ namespace Amazon.Finspace.Model
         ///  </li> <li> 
         /// <para>
         /// NO_RESTART – This option updates the cluster without stopping the running q process.
-        /// It is only available for <code>GP</code> type cluster. This option is quicker as it
-        /// reduces the turn around time to update configuration on a cluster. 
+        /// It is only available for <c>GP</c> type cluster. This option is quicker as it reduces
+        /// the turn around time to update configuration on a cluster. 
         /// </para>
         ///  
         /// <para>
-        /// With this deployment mode, you cannot update the <code>initializationScript</code>
-        /// and <code>commandLineArguments</code> parameters.
+        /// With this deployment mode, you cannot update the <c>initializationScript</c> and <c>commandLineArguments</c>
+        /// parameters.
         /// </para>
         ///  </li> <li> 
         /// <para>

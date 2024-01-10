@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The key for that specifies the tag that you're using to filter the search results.
-        /// The key must start with <code>Tags.</code>.
+        /// The key must start with <c>Tags.</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

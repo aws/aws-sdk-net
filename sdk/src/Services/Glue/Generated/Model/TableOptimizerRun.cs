@@ -96,7 +96,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Metrics. 
         /// <para>
-        /// A <code>RunMetrics</code> object containing metrics for the optimizer run.
+        /// A <c>RunMetrics</c> object containing metrics for the optimizer run.
         /// </para>
         /// </summary>
         public RunMetrics Metrics

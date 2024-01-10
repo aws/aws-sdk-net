@@ -50,7 +50,7 @@ namespace Amazon.CloudControlApi.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// For requests with a status of <code>FAILED</code>, the associated error code.
+        /// For requests with a status of <c>FAILED</c>, the associated error code.
         /// </para>
         ///  
         /// <para>
@@ -97,7 +97,7 @@ namespace Amazon.CloudControlApi.Model
         ///  <note> 
         /// <para>
         /// In some cases, the resource identifier may be available before the resource operation
-        /// has reached a status of <code>SUCCESS</code>.
+        /// has reached a status of <c>SUCCESS</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -139,29 +139,28 @@ namespace Amazon.CloudControlApi.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code>: The resource operation hasn't yet started.
+        ///  <c>PENDING</c>: The resource operation hasn't yet started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code>: The resource operation is currently in progress.
+        ///  <c>IN_PROGRESS</c>: The resource operation is currently in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code>: The resource operation has successfully completed.
+        ///  <c>SUCCESS</c>: The resource operation has successfully completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The resource operation has failed. Refer to the error code and
-        /// status message for more information.
+        ///  <c>FAILED</c>: The resource operation has failed. Refer to the error code and status
+        /// message for more information.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCEL_IN_PROGRESS</code>: The resource operation is in the process of being
-        /// canceled.
+        ///  <c>CANCEL_IN_PROGRESS</c>: The resource operation is in the process of being canceled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.
+        ///  <c>CANCEL_COMPLETE</c>: The resource operation has been canceled.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -184,7 +183,7 @@ namespace Amazon.CloudControlApi.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>RequestToken</code> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
+        /// Use the <c>RequestToken</c> with <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
         /// to return the current status of a resource operation request.
         /// </para>
         /// </summary>

@@ -33,9 +33,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// Each rule must include exactly one of the following types of actions: <code>forward</code>,
-    /// <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action
-    /// to be performed.
+    /// Each rule must include exactly one of the following types of actions: <c>forward</c>,
+    /// <c>fixed-response</c>, or <c>redirect</c>, and it must be the last action to be performed.
     /// </para>
     /// </summary>
     public partial class Action
@@ -53,7 +52,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property AuthenticateCognitoConfig. 
         /// <para>
         /// [HTTPS listeners] Information for using Amazon Cognito to authenticate users. Specify
-        /// only when <code>Type</code> is <code>authenticate-cognito</code>.
+        /// only when <c>Type</c> is <c>authenticate-cognito</c>.
         /// </para>
         /// </summary>
         public AuthenticateCognitoActionConfig AuthenticateCognitoConfig
@@ -72,7 +71,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property AuthenticateOidcConfig. 
         /// <para>
         /// [HTTPS listeners] Information about an identity provider that is compliant with OpenID
-        /// Connect (OIDC). Specify only when <code>Type</code> is <code>authenticate-oidc</code>.
+        /// Connect (OIDC). Specify only when <c>Type</c> is <c>authenticate-oidc</c>.
         /// </para>
         /// </summary>
         public AuthenticateOidcActionConfig AuthenticateOidcConfig
@@ -91,7 +90,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property FixedResponseConfig. 
         /// <para>
         /// [Application Load Balancer] Information for creating an action that returns a custom
-        /// HTTP response. Specify only when <code>Type</code> is <code>fixed-response</code>.
+        /// HTTP response. Specify only when <c>Type</c> is <c>fixed-response</c>.
         /// </para>
         /// </summary>
         public FixedResponseActionConfig FixedResponseConfig
@@ -111,9 +110,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <para>
         /// Information for creating an action that distributes requests among one or more target
         /// groups. For Network Load Balancers, you can specify a single target group. Specify
-        /// only when <code>Type</code> is <code>forward</code>. If you specify both <code>ForwardConfig</code>
-        /// and <code>TargetGroupArn</code>, you can specify only one target group using <code>ForwardConfig</code>
-        /// and it must be the same target group specified in <code>TargetGroupArn</code>.
+        /// only when <c>Type</c> is <c>forward</c>. If you specify both <c>ForwardConfig</c>
+        /// and <c>TargetGroupArn</c>, you can specify only one target group using <c>ForwardConfig</c>
+        /// and it must be the same target group specified in <c>TargetGroupArn</c>.
         /// </para>
         /// </summary>
         public ForwardActionConfig ForwardConfig
@@ -152,7 +151,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// Gets and sets the property RedirectConfig. 
         /// <para>
         /// [Application Load Balancer] Information for creating a redirect action. Specify only
-        /// when <code>Type</code> is <code>redirect</code>.
+        /// when <c>Type</c> is <c>redirect</c>.
         /// </para>
         /// </summary>
         public RedirectActionConfig RedirectConfig
@@ -170,9 +169,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property TargetGroupArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the target group. Specify only when <code>Type</code>
-        /// is <code>forward</code> and you want to route to a single target group. To route to
-        /// one or more target groups, use <code>ForwardConfig</code> instead.
+        /// The Amazon Resource Name (ARN) of the target group. Specify only when <c>Type</c>
+        /// is <c>forward</c> and you want to route to a single target group. To route to one
+        /// or more target groups, use <c>ForwardConfig</c> instead.
         /// </para>
         /// </summary>
         public string TargetGroupArn

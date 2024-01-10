@@ -33,19 +33,19 @@ namespace Amazon.KinesisVideo.Model
     /// An asynchronous API that updates a stream’s existing edge configuration. The Kinesis
     /// Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass
     /// component that runs on an IoT Hub Device, setup at your premise. The time to sync
-    /// can vary and depends on the connectivity of the Hub Device. The <code>SyncStatus</code>
+    /// can vary and depends on the connectivity of the Hub Device. The <c>SyncStatus</c>
     /// will be updated as the edge configuration is acknowledged, and synced with the Edge
     /// Agent. 
     /// 
     ///  
     /// <para>
     /// If this API is invoked for the first time, a new edge configuration will be created
-    /// for the stream, and the sync status will be set to <code>SYNCING</code>. You will
-    /// have to wait for the sync status to reach a terminal state such as: <code>IN_SYNC</code>,
-    /// or <code>SYNC_FAILED</code>, before using this API again. If you invoke this API during
-    /// the syncing process, a <code>ResourceInUseException</code> will be thrown. The connectivity
-    /// of the stream’s edge configuration and the Edge Agent will be retried for 15 minutes.
-    /// After 15 minutes, the status will transition into the <code>SYNC_FAILED</code> state.
+    /// for the stream, and the sync status will be set to <c>SYNCING</c>. You will have to
+    /// wait for the sync status to reach a terminal state such as: <c>IN_SYNC</c>, or <c>SYNC_FAILED</c>,
+    /// before using this API again. If you invoke this API during the syncing process, a
+    /// <c>ResourceInUseException</c> will be thrown. The connectivity of the stream’s edge
+    /// configuration and the Edge Agent will be retried for 15 minutes. After 15 minutes,
+    /// the status will transition into the <c>SYNC_FAILED</c> state.
     /// </para>
     ///  
     /// <para>
@@ -82,8 +82,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>
-        /// or the <code>StreamARN</code>.
+        ///  The Amazon Resource Name (ARN) of the stream. Specify either the <c>StreamName</c>
+        /// or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -103,7 +103,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream whose edge configuration you want to update. Specify either
-        /// the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

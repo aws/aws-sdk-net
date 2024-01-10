@@ -51,8 +51,8 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>,
-        /// <code>Metrics</code> is returned.
+        /// For <c>PDF</c>, <c>Base64String</c> is returned. For <c>JSON</c>, <c>Metrics</c> is
+        /// returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,7 +71,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property IncludeSharedResources. 
         /// <para>
-        /// Set to <code>true</code> to have shared resources included in the report.
+        /// Set to <c>true</c> to have shared resources included in the report.
         /// </para>
         /// </summary>
         public bool IncludeSharedResources

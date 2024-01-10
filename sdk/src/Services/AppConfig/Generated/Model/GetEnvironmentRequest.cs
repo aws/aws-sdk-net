@@ -31,10 +31,10 @@ namespace Amazon.AppConfig.Model
     /// <summary>
     /// Container for the parameters to the GetEnvironment operation.
     /// Retrieves information about an environment. An environment is a deployment group of
-    /// AppConfig applications, such as applications in a <code>Production</code> environment
-    /// or in an <code>EU_Region</code> environment. Each configuration deployment targets
-    /// an environment. You can enable one or more Amazon CloudWatch alarms for an environment.
-    /// If an alarm is triggered during a deployment, AppConfig roles back the configuration.
+    /// AppConfig applications, such as applications in a <c>Production</c> environment or
+    /// in an <c>EU_Region</c> environment. Each configuration deployment targets an environment.
+    /// You can enable one or more Amazon CloudWatch alarms for an environment. If an alarm
+    /// is triggered during a deployment, AppConfig roles back the configuration.
     /// </summary>
     public partial class GetEnvironmentRequest : AmazonAppConfigRequest
     {

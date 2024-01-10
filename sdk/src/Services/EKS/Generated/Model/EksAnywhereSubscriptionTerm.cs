@@ -60,7 +60,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The term unit of the subscription. Valid value is <code>MONTHS</code>.
+        /// The term unit of the subscription. Valid value is <c>MONTHS</c>.
         /// </para>
         /// </summary>
         public EksAnywhereSubscriptionTermUnit Unit

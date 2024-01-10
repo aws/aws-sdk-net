@@ -30,9 +30,9 @@ namespace Amazon.Snowball.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAddresses operation.
-    /// Returns a specified number of <code>ADDRESS</code> objects. Calling this API in one
-    /// of the US regions will return addresses from the list of all addresses associated
-    /// with this account in all US regions.
+    /// Returns a specified number of <c>ADDRESS</c> objects. Calling this API in one of the
+    /// US regions will return addresses from the list of all addresses associated with this
+    /// account in all US regions.
     /// </summary>
     public partial class DescribeAddressesRequest : AmazonSnowballRequest
     {
@@ -42,7 +42,7 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The number of <code>ADDRESS</code> objects to return.
+        /// The number of <c>ADDRESS</c> objects to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -61,9 +61,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. To identify what object comes "next" in the list of <code>ADDRESS</code>
-        /// objects, you have the option of specifying a value for <code>NextToken</code> as the
-        /// starting point for your list of returned addresses.
+        /// HTTP requests are stateless. To identify what object comes "next" in the list of <c>ADDRESS</c>
+        /// objects, you have the option of specifying a value for <c>NextToken</c> as the starting
+        /// point for your list of returned addresses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

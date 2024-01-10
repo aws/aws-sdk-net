@@ -59,7 +59,7 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property FailedPutCount. 
         /// <para>
         /// The number of records that might have failed processing. This number might be greater
-        /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check <code>FailedPutCount</code>
+        /// than 0 even if the <a>PutRecordBatch</a> call succeeds. Check <c>FailedPutCount</c>
         /// to determine whether there are records that you need to resend.
         /// </para>
         /// </summary>

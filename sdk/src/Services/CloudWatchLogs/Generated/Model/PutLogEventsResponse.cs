@@ -47,10 +47,10 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// The sequence token is now ignored in <code>PutLogEvents</code> actions. <code>PutLogEvents</code>
+        /// The sequence token is now ignored in <c>PutLogEvents</c> actions. <c>PutLogEvents</c>
         /// actions are always accepted even if the sequence token is not valid. You can use parallel
-        /// <code>PutLogEvents</code> actions on the same log stream and you do not need to wait
-        /// for the response of a previous <code>PutLogEvents</code> action to obtain the <code>nextSequenceToken</code>
+        /// <c>PutLogEvents</c> actions on the same log stream and you do not need to wait for
+        /// the response of a previous <c>PutLogEvents</c> action to obtain the <c>nextSequenceToken</c>
         /// value.
         /// </para>
         ///  </important>

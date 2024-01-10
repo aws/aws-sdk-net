@@ -97,7 +97,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource. The only supported value is <code>auto-scaling-group</code>.
+        /// The type of resource. The only supported value is <c>auto-scaling-group</c>.
         /// </para>
         /// </summary>
         public string ResourceType

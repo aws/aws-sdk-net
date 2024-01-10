@@ -72,9 +72,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -229,7 +229,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RuleStatus. 
         /// <para>
-        ///  Whether the rule is active after it is created. If this parameter is equal to <code>ENABLED</code>,
+        ///  Whether the rule is active after it is created. If this parameter is equal to <c>ENABLED</c>,
         /// Security Hub starts applying the rule to findings and finding updates after the rule
         /// is created. 
         /// </para>
@@ -253,9 +253,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

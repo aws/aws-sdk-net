@@ -37,8 +37,8 @@ namespace Amazon.Shield.Model
     /// 
     ///  
     /// <para>
-    /// To use the services of the SRT and make an <code>AssociateDRTLogBucket</code> request,
-    /// you must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
+    /// To use the services of the SRT and make an <c>AssociateDRTLogBucket</c> request, you
+    /// must be subscribed to the <a href="http://aws.amazon.com/premiumsupport/business-support/">Business
     /// Support plan</a> or the <a href="http://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise
     /// Support plan</a>.
     /// </para>

@@ -40,10 +40,9 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property Legs. 
         /// <para>
         /// Contains details about each path between a pair of positions included along a route
-        /// such as: <code>StartPosition</code>, <code>EndPosition</code>, <code>Distance</code>,
-        /// <code>DurationSeconds</code>, <code>Geometry</code>, and <code>Steps</code>. The number
-        /// of legs returned corresponds to one fewer than the total number of positions in the
-        /// request. 
+        /// such as: <c>StartPosition</c>, <c>EndPosition</c>, <c>Distance</c>, <c>DurationSeconds</c>,
+        /// <c>Geometry</c>, and <c>Steps</c>. The number of legs returned corresponds to one
+        /// fewer than the total number of positions in the request. 
         /// </para>
         ///  
         /// <para>
@@ -53,11 +52,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>StartPosition</code> is the departure position.
+        /// The <c>StartPosition</c> is the departure position.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>EndPosition</code> is the destination position.
+        /// The <c>EndPosition</c> is the destination position.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -66,13 +65,13 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code>
+        /// Leg 1: The <c>StartPosition</c> is the departure position . The <c>EndPosition</c>
         /// is the waypoint positon.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code>
-        /// is the destination position.
+        /// Leg 2: The <c>StartPosition</c> is the waypoint position. The <c>EndPosition</c> is
+        /// the destination position.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -92,8 +91,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// Contains information about the whole route, such as: <code>RouteBBox</code>, <code>DataSource</code>,
-        /// <code>Distance</code>, <code>DistanceUnit</code>, and <code>DurationSeconds</code>.
+        /// Contains information about the whole route, such as: <c>RouteBBox</c>, <c>DataSource</c>,
+        /// <c>Distance</c>, <c>DistanceUnit</c>, and <c>DurationSeconds</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

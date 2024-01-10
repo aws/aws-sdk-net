@@ -159,10 +159,10 @@ namespace Amazon.ServiceCatalog.Model
         /// <para>
         /// Specifies the revision of the external artifact that was used to automatically sync
         /// the Service Catalog product and create the provisioning artifact. Service Catalog
-        /// includes this response parameter as a high level field to the existing <code>ProvisioningArtifactDetail</code>
-        /// type, which is returned as part of the response for <code>CreateProduct</code>, <code>UpdateProduct</code>,
-        /// <code>DescribeProductAsAdmin</code>, <code>DescribeProvisioningArtifact</code>, <code>ListProvisioningArtifact</code>,
-        /// and <code>UpdateProvisioningArticat</code> APIs. 
+        /// includes this response parameter as a high level field to the existing <c>ProvisioningArtifactDetail</c>
+        /// type, which is returned as part of the response for <c>CreateProduct</c>, <c>UpdateProduct</c>,
+        /// <c>DescribeProductAsAdmin</c>, <c>DescribeProvisioningArtifact</c>, <c>ListProvisioningArtifact</c>,
+        /// and <c>UpdateProvisioningArticat</c> APIs. 
         /// </para>
         ///  
         /// <para>
@@ -189,19 +189,19 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CLOUD_FORMATION_TEMPLATE</code> - CloudFormation template
+        ///  <c>CLOUD_FORMATION_TEMPLATE</c> - CloudFormation template
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERRAFORM_OPEN_SOURCE</code> - Terraform Open Source configuration file
+        ///  <c>TERRAFORM_OPEN_SOURCE</c> - Terraform Open Source configuration file
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERRAFORM_CLOUD</code> - Terraform Cloud configuration file
+        ///  <c>TERRAFORM_CLOUD</c> - Terraform Cloud configuration file
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXTERNAL</code> - External configuration file
+        ///  <c>EXTERNAL</c> - External configuration file
         /// </para>
         ///  </li> </ul>
         /// </summary>

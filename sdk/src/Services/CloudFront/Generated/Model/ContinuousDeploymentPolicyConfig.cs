@@ -41,8 +41,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// A Boolean that indicates whether this continuous deployment policy is enabled (in
-        /// effect). When this value is <code>true</code>, this policy is enabled and in effect.
-        /// When this value is <code>false</code>, this policy is not enabled and has no effect.
+        /// effect). When this value is <c>true</c>, this policy is enabled and in effect. When
+        /// this value is <c>false</c>, this policy is not enabled and has no effect.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,7 +61,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property StagingDistributionDnsNames. 
         /// <para>
-        /// The CloudFront domain name of the staging distribution. For example: <code>d111111abcdef8.cloudfront.net</code>.
+        /// The CloudFront domain name of the staging distribution. For example: <c>d111111abcdef8.cloudfront.net</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

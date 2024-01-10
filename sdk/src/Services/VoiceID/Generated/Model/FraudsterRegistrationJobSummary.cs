@@ -102,8 +102,8 @@ namespace Amazon.VoiceID.Model
         /// <para>
         /// Contains details that are populated when an entire batch job fails. In cases of individual
         /// registration job failures, the batch job as a whole doesn't fail; it is completed
-        /// with a <code>JobStatus</code> of <code>COMPLETED_WITH_ERRORS</code>. You can use the
-        /// job output file to identify the individual registration requests that failed.
+        /// with a <c>JobStatus</c> of <c>COMPLETED_WITH_ERRORS</c>. You can use the job output
+        /// file to identify the individual registration requests that failed.
         /// </para>
         /// </summary>
         public FailureDetails FailureDetails

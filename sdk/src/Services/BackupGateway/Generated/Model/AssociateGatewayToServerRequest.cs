@@ -41,7 +41,7 @@ namespace Amazon.BackupGateway.Model
         /// <summary>
         /// Gets and sets the property GatewayArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the gateway. Use the <code>ListGateways</code> operation
+        /// The Amazon Resource Name (ARN) of the gateway. Use the <c>ListGateways</c> operation
         /// to return a list of gateways for your account and Amazon Web Services Region.
         /// </para>
         /// </summary>

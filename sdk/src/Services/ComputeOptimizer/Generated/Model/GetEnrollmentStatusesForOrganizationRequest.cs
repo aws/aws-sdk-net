@@ -72,7 +72,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <c>nextToken</c>
         /// value.
         /// </para>
         /// </summary>

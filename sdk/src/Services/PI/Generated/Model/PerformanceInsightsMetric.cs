@@ -97,7 +97,7 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of the metric. For example, <code>9</code> for <code>db.load.avg</code>.
+        /// The value of the metric. For example, <c>9</c> for <c>db.load.avg</c>.
         /// </para>
         /// </summary>
         public double Value

@@ -55,8 +55,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>moving-status</code> - The status of the Elastic IP address (<code>MovingToVpc</code>
-        /// | <code>RestoringToClassic</code>).
+        ///  <c>moving-status</c> - The status of the Elastic IP address (<c>MovingToVpc</c> |
+        /// <c>RestoringToClassic</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results of the initial request can be seen by sending another request with the returned
-        /// <code>NextToken</code> value. This value can be between 5 and 1000; if <code>MaxResults</code>
+        /// <c>NextToken</c> value. This value can be between 5 and 1000; if <c>MaxResults</c>
         /// is given a value outside of this range, an error is returned.
         /// </para>
         ///  

@@ -39,8 +39,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A list of <code>MetricDataError</code> encountered while processing your metric data
-        /// batch request.
+        /// A list of <c>MetricDataError</c> encountered while processing your metric data batch
+        /// request.
         /// </para>
         /// </summary>
         public List<MetricDataError> Errors
@@ -58,7 +58,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of successfully retrieved <code>MetricDataResult</code>.
+        /// A list of successfully retrieved <c>MetricDataResult</c>.
         /// </para>
         /// </summary>
         public List<MetricDataResult> Results

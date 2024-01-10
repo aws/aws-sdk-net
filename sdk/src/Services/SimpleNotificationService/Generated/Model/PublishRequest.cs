@@ -31,7 +31,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// <summary>
     /// Container for the parameters to the Publish operation.
     /// Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a
-    /// phone number, or a message to a mobile platform endpoint (when you specify the <code>TargetArn</code>).
+    /// phone number, or a message to a mobile platform endpoint (when you specify the <c>TargetArn</c>).
     /// 
     ///  
     /// <para>
@@ -41,15 +41,15 @@ namespace Amazon.SimpleNotificationService.Model
     /// </para>
     ///  
     /// <para>
-    /// When a <code>messageId</code> is returned, the message is saved and Amazon SNS immediately
+    /// When a <c>messageId</c> is returned, the message is saved and Amazon SNS immediately
     /// delivers it to subscribers.
     /// </para>
     ///  
     /// <para>
-    /// To use the <code>Publish</code> action for publishing a message to a mobile endpoint,
-    /// such as an app on a Kindle device or mobile phone, you must specify the EndpointArn
-    /// for the TargetArn parameter. The EndpointArn is returned when making a call with the
-    /// <code>CreatePlatformEndpoint</code> action. 
+    /// To use the <c>Publish</c> action for publishing a message to a mobile endpoint, such
+    /// as an app on a Kindle device or mobile phone, you must specify the EndpointArn for
+    /// the TargetArn parameter. The EndpointArn is returned when making a call with the <c>CreatePlatformEndpoint</c>
+    /// action. 
     /// </para>
     ///  
     /// <para>
@@ -113,9 +113,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <para>
         /// If you are publishing to a topic and you want to send the same message to all transport
         /// protocols, include the text of the message as a String value. If you want to send
-        /// different messages for each transport protocol, set the value of the <code>MessageStructure</code>
-        /// parameter to <code>json</code> and use a JSON object for the <code>Message</code>
-        /// parameter. 
+        /// different messages for each transport protocol, set the value of the <c>MessageStructure</c>
+        /// parameter to <c>json</c> and use a JSON object for the <c>Message</c> parameter. 
         /// </para>
         ///   
         /// <para>
@@ -140,7 +139,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The total size limit for a single SMS <code>Publish</code> action is 1,600 characters.
+        /// The total size limit for a single SMS <c>Publish</c> action is 1,600 characters.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -183,7 +182,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failure to parse or validate any key or value in the message will cause the <code>Publish</code>
+        /// Failure to parse or validate any key or value in the message will cause the <c>Publish</c>
         /// call to return an error (no partial delivery).
         /// </para>
         ///  </li> </ul>
@@ -222,22 +221,22 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property MessageDeduplicationId. 
         /// <para>
-        /// This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageDeduplicationId</code>
-        /// can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation
-        /// <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        /// This parameter applies only to FIFO (first-in-first-out) topics. The <c>MessageDeduplicationId</c>
+        /// can contain up to 128 alphanumeric characters <c>(a-z, A-Z, 0-9)</c> and punctuation
+        /// <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
         /// </para>
         ///  
         /// <para>
-        /// Every message must have a unique <code>MessageDeduplicationId</code>, which is a token
-        /// used for deduplication of sent messages. If a message with a particular <code>MessageDeduplicationId</code>
-        /// is sent successfully, any message sent with the same <code>MessageDeduplicationId</code>
+        /// Every message must have a unique <c>MessageDeduplicationId</c>, which is a token used
+        /// for deduplication of sent messages. If a message with a particular <c>MessageDeduplicationId</c>
+        /// is sent successfully, any message sent with the same <c>MessageDeduplicationId</c>
         /// during the 5-minute deduplication interval is treated as a duplicate. 
         /// </para>
         ///  
         /// <para>
-        /// If the topic has <code>ContentBasedDeduplication</code> set, the system generates
-        /// a <code>MessageDeduplicationId</code> based on the contents of the message. Your <code>MessageDeduplicationId</code>
-        /// overrides the generated one.
+        /// If the topic has <c>ContentBasedDeduplication</c> set, the system generates a <c>MessageDeduplicationId</c>
+        /// based on the contents of the message. Your <c>MessageDeduplicationId</c> overrides
+        /// the generated one.
         /// </para>
         /// </summary>
         public string MessageDeduplicationId
@@ -255,16 +254,16 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property MessageGroupId. 
         /// <para>
-        /// This parameter applies only to FIFO (first-in-first-out) topics. The <code>MessageGroupId</code>
-        /// can contain up to 128 alphanumeric characters <code>(a-z, A-Z, 0-9)</code> and punctuation
-        /// <code>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</code>.
+        /// This parameter applies only to FIFO (first-in-first-out) topics. The <c>MessageGroupId</c>
+        /// can contain up to 128 alphanumeric characters <c>(a-z, A-Z, 0-9)</c> and punctuation
+        /// <c>(!"#$%&amp;'()*+,-./:;&lt;=&gt;?@[\]^_`{|}~)</c>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>MessageGroupId</code> is a tag that specifies that a message belongs to
-        /// a specific message group. Messages that belong to the same message group are processed
-        /// in a FIFO manner (however, messages in different message groups might be processed
-        /// out of order). Every message must include a <code>MessageGroupId</code>.
+        /// The <c>MessageGroupId</c> is a tag that specifies that a message belongs to a specific
+        /// message group. Messages that belong to the same message group are processed in a FIFO
+        /// manner (however, messages in different message groups might be processed out of order).
+        /// Every message must include a <c>MessageGroupId</c>.
         /// </para>
         /// </summary>
         public string MessageGroupId
@@ -282,11 +281,11 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property MessageStructure. 
         /// <para>
-        /// Set <code>MessageStructure</code> to <code>json</code> if you want to send a different
-        /// message for each protocol. For example, using one publish action, you can send a short
-        /// message to your SMS subscribers and a longer message to your email subscribers. If
-        /// you set <code>MessageStructure</code> to <code>json</code>, the value of the <code>Message</code>
-        /// parameter must: 
+        /// Set <c>MessageStructure</c> to <c>json</c> if you want to send a different message
+        /// for each protocol. For example, using one publish action, you can send a short message
+        /// to your SMS subscribers and a longer message to your email subscribers. If you set
+        /// <c>MessageStructure</c> to <c>json</c>, the value of the <c>Message</c> parameter
+        /// must: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -303,7 +302,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid value: <code>json</code> 
+        /// Valid value: <c>json</c> 
         /// </para>
         /// </summary>
         public string MessageStructure
@@ -325,8 +324,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>PhoneNumber</code> parameter, you must
-        /// specify a value for the <code>TargetArn</code> or <code>TopicArn</code> parameters.
+        /// If you don't specify a value for the <c>PhoneNumber</c> parameter, you must specify
+        /// a value for the <c>TargetArn</c> or <c>TopicArn</c> parameters.
         /// </para>
         /// </summary>
         public string PhoneNumber
@@ -370,8 +369,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property TargetArn. 
         /// <para>
-        /// If you don't specify a value for the <code>TargetArn</code> parameter, you must specify
-        /// a value for the <code>PhoneNumber</code> or <code>TopicArn</code> parameters.
+        /// If you don't specify a value for the <c>TargetArn</c> parameter, you must specify
+        /// a value for the <c>PhoneNumber</c> or <c>TopicArn</c> parameters.
         /// </para>
         /// </summary>
         public string TargetArn
@@ -393,8 +392,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>TopicArn</code> parameter, you must specify
-        /// a value for the <code>PhoneNumber</code> or <code>TargetArn</code> parameters.
+        /// If you don't specify a value for the <c>TopicArn</c> parameter, you must specify a
+        /// value for the <c>PhoneNumber</c> or <c>TargetArn</c> parameters.
         /// </para>
         /// </summary>
         public string TopicArn

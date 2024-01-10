@@ -30,7 +30,7 @@ namespace Amazon.LexModelBuildingService.Model
 {
     /// <summary>
     /// Describes the resource that refers to the resource that you are attempting to delete.
-    /// This object is returned as part of the <code>ResourceInUseException</code> exception.
+    /// This object is returned as part of the <c>ResourceInUseException</c> exception.
     /// </summary>
     public partial class ResourceReference
     {

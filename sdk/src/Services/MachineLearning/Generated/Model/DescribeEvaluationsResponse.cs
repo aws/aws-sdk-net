@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the query results from a <code>DescribeEvaluations</code> operation. The
-    /// content is essentially a list of <code>Evaluation</code>.
+    /// Represents the query results from a <c>DescribeEvaluations</c> operation. The content
+    /// is essentially a list of <c>Evaluation</c>.
     /// </summary>
     public partial class DescribeEvaluationsResponse : AmazonWebServiceResponse
     {
@@ -59,7 +59,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// A list of <code>Evaluation</code> that meet the search criteria. 
+        /// A list of <c>Evaluation</c> that meet the search criteria. 
         /// </para>
         /// </summary>
         public List<Evaluation> Results

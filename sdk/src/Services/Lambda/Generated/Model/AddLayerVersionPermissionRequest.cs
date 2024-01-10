@@ -54,7 +54,7 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The API action that grants access to the layer. For example, <code>lambda:GetLayerVersion</code>.
+        /// The API action that grants access to the layer. For example, <c>lambda:GetLayerVersion</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=22)]
@@ -92,8 +92,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property OrganizationId. 
         /// <para>
-        /// With the principal set to <code>*</code>, grant permission to all accounts in the
-        /// specified organization.
+        /// With the principal set to <c>*</c>, grant permission to all accounts in the specified
+        /// organization.
         /// </para>
         /// </summary>
         [AWSProperty(Max=34)]
@@ -112,10 +112,10 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// An account ID, or <code>*</code> to grant layer usage permission to all accounts in
-        /// an organization, or all Amazon Web Services accounts (if <code>organizationId</code>
-        /// is not specified). For the last case, make sure that you really do want all Amazon
-        /// Web Services accounts to have usage permission to this layer. 
+        /// An account ID, or <c>*</c> to grant layer usage permission to all accounts in an organization,
+        /// or all Amazon Web Services accounts (if <c>organizationId</c> is not specified). For
+        /// the last case, make sure that you really do want all Amazon Web Services accounts
+        /// to have usage permission to this layer. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

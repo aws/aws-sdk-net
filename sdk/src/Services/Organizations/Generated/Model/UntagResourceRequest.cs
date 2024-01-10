@@ -78,18 +78,18 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Organizational unit – specify the OU ID that begins with <code>ou-</code> and looks
-        /// similar to: <code>ou-<i>1a2b-34uvwxyz</i> </code> 
+        /// Organizational unit – specify the OU ID that begins with <c>ou-</c> and looks similar
+        /// to: <c>ou-<i>1a2b-34uvwxyz</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Root – specify the root ID that begins with <code>r-</code> and looks similar to:
-        /// <code>r-<i>1a2b</i> </code> 
+        /// Root – specify the root ID that begins with <c>r-</c> and looks similar to: <c>r-<i>1a2b</i>
+        /// </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Policy – specify the policy ID that begins with <code>p-</code> andlooks similar to:
-        /// <code>p-<i>12abcdefg3</i> </code> 
+        /// Policy – specify the policy ID that begins with <c>p-</c> andlooks similar to: <c>p-<i>12abcdefg3</i>
+        /// </c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

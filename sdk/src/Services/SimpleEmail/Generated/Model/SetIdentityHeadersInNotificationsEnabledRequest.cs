@@ -54,14 +54,14 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// Sets whether Amazon SES includes the original email headers in Amazon SNS notifications
-        /// of the specified notification type. A value of <code>true</code> specifies that Amazon
-        /// SES includes headers in notifications, and a value of <code>false</code> specifies
-        /// that Amazon SES does not include headers in notifications.
+        /// of the specified notification type. A value of <c>true</c> specifies that Amazon SES
+        /// includes headers in notifications, and a value of <c>false</c> specifies that Amazon
+        /// SES does not include headers in notifications.
         /// </para>
         ///  
         /// <para>
-        /// This value can only be set when <code>NotificationType</code> is already set to use
-        /// a particular Amazon SNS topic.
+        /// This value can only be set when <c>NotificationType</c> is already set to use a particular
+        /// Amazon SNS topic.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,8 +80,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property Identity. 
         /// <para>
-        /// The identity for which to enable or disable headers in notifications. Examples: <code>user@example.com</code>,
-        /// <code>example.com</code>.
+        /// The identity for which to enable or disable headers in notifications. Examples: <c>user@example.com</c>,
+        /// <c>example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

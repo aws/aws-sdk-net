@@ -47,15 +47,15 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>deletion_protection.enabled</code> - Indicates whether deletion protection
-        /// is enabled. The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        ///  <c>deletion_protection.enabled</c> - Indicates whether deletion protection is enabled.
+        /// The value is <c>true</c> or <c>false</c>. The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>load_balancing.cross_zone.enabled</code> - Indicates whether cross-zone load
-        /// balancing is enabled. The possible values are <code>true</code> and <code>false</code>.
-        /// The default for Network Load Balancers and Gateway Load Balancers is <code>false</code>.
-        /// The default for Application Load Balancers is <code>true</code>, and cannot be changed.
+        ///  <c>load_balancing.cross_zone.enabled</c> - Indicates whether cross-zone load balancing
+        /// is enabled. The possible values are <c>true</c> and <c>false</c>. The default for
+        /// Network Load Balancers and Gateway Load Balancers is <c>false</c>. The default for
+        /// Application Load Balancers is <c>true</c>, and cannot be changed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -64,27 +64,27 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>access_logs.s3.enabled</code> - Indicates whether access logs are enabled.
-        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        ///  <c>access_logs.s3.enabled</c> - Indicates whether access logs are enabled. The value
+        /// is <c>true</c> or <c>false</c>. The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>access_logs.s3.bucket</code> - The name of the S3 bucket for the access logs.
-        /// This attribute is required if access logs are enabled. The bucket must exist in the
-        /// same region as the load balancer and have a bucket policy that grants Elastic Load
-        /// Balancing permissions to write to the bucket.
+        ///  <c>access_logs.s3.bucket</c> - The name of the S3 bucket for the access logs. This
+        /// attribute is required if access logs are enabled. The bucket must exist in the same
+        /// region as the load balancer and have a bucket policy that grants Elastic Load Balancing
+        /// permissions to write to the bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>access_logs.s3.prefix</code> - The prefix for the location in the S3 bucket
-        /// for the access logs.
+        ///  <c>access_logs.s3.prefix</c> - The prefix for the location in the S3 bucket for the
+        /// access logs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ipv6.deny_all_igw_traffic</code> - Blocks internet gateway (IGW) access to
-        /// the load balancer. It is set to <code>false</code> for internet-facing load balancers
-        /// and <code>true</code> for internal load balancers, preventing unintended access to
-        /// your internal load balancer through an internet gateway.
+        ///  <c>ipv6.deny_all_igw_traffic</c> - Blocks internet gateway (IGW) access to the load
+        /// balancer. It is set to <c>false</c> for internet-facing load balancers and <c>true</c>
+        /// for internal load balancers, preventing unintended access to your internal load balancer
+        /// through an internet gateway.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -92,102 +92,98 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>idle_timeout.timeout_seconds</code> - The idle timeout value, in seconds. The
-        /// valid range is 1-4000 seconds. The default is 60 seconds.
+        ///  <c>idle_timeout.timeout_seconds</c> - The idle timeout value, in seconds. The valid
+        /// range is 1-4000 seconds. The default is 60 seconds.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>connection_logs.s3.enabled</code> - Indicates whether connection logs are enabled.
-        /// The value is <code>true</code> or <code>false</code>. The default is <code>false</code>.
+        ///  <c>connection_logs.s3.enabled</c> - Indicates whether connection logs are enabled.
+        /// The value is <c>true</c> or <c>false</c>. The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>connection_logs.s3.bucket</code> - The name of the S3 bucket for the connection
-        /// logs. This attribute is required if connection logs are enabled. The bucket must exist
-        /// in the same region as the load balancer and have a bucket policy that grants Elastic
+        ///  <c>connection_logs.s3.bucket</c> - The name of the S3 bucket for the connection logs.
+        /// This attribute is required if connection logs are enabled. The bucket must exist in
+        /// the same region as the load balancer and have a bucket policy that grants Elastic
         /// Load Balancing permissions to write to the bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>connection_logs.s3.prefix</code> - The prefix for the location in the S3 bucket
-        /// for the connection logs.
+        ///  <c>connection_logs.s3.prefix</c> - The prefix for the location in the S3 bucket for
+        /// the connection logs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http.desync_mitigation_mode</code> - Determines how the load balancer
-        /// handles requests that might pose a security risk to your application. The possible
-        /// values are <code>monitor</code>, <code>defensive</code>, and <code>strictest</code>.
-        /// The default is <code>defensive</code>.
+        ///  <c>routing.http.desync_mitigation_mode</c> - Determines how the load balancer handles
+        /// requests that might pose a security risk to your application. The possible values
+        /// are <c>monitor</c>, <c>defensive</c>, and <c>strictest</c>. The default is <c>defensive</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http.drop_invalid_header_fields.enabled</code> - Indicates whether
-        /// HTTP headers with invalid header fields are removed by the load balancer (<code>true</code>)
-        /// or routed to targets (<code>false</code>). The default is <code>false</code>.
+        ///  <c>routing.http.drop_invalid_header_fields.enabled</c> - Indicates whether HTTP headers
+        /// with invalid header fields are removed by the load balancer (<c>true</c>) or routed
+        /// to targets (<c>false</c>). The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http.preserve_host_header.enabled</code> - Indicates whether the Application
-        /// Load Balancer should preserve the <code>Host</code> header in the HTTP request and
-        /// send it to the target without any change. The possible values are <code>true</code>
-        /// and <code>false</code>. The default is <code>false</code>.
+        ///  <c>routing.http.preserve_host_header.enabled</c> - Indicates whether the Application
+        /// Load Balancer should preserve the <c>Host</c> header in the HTTP request and send
+        /// it to the target without any change. The possible values are <c>true</c> and <c>false</c>.
+        /// The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</code> - Indicates
-        /// whether the two headers (<code>x-amzn-tls-version</code> and <code>x-amzn-tls-cipher-suite</code>),
-        /// which contain information about the negotiated TLS version and cipher suite, are added
-        /// to the client request before sending it to the target. The <code>x-amzn-tls-version</code>
+        ///  <c>routing.http.x_amzn_tls_version_and_cipher_suite.enabled</c> - Indicates whether
+        /// the two headers (<c>x-amzn-tls-version</c> and <c>x-amzn-tls-cipher-suite</c>), which
+        /// contain information about the negotiated TLS version and cipher suite, are added to
+        /// the client request before sending it to the target. The <c>x-amzn-tls-version</c>
         /// header has information about the TLS protocol version negotiated with the client,
-        /// and the <code>x-amzn-tls-cipher-suite</code> header has information about the cipher
-        /// suite negotiated with the client. Both headers are in OpenSSL format. The possible
-        /// values for the attribute are <code>true</code> and <code>false</code>. The default
-        /// is <code>false</code>.
+        /// and the <c>x-amzn-tls-cipher-suite</c> header has information about the cipher suite
+        /// negotiated with the client. Both headers are in OpenSSL format. The possible values
+        /// for the attribute are <c>true</c> and <c>false</c>. The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http.xff_client_port.enabled</code> - Indicates whether the <code>X-Forwarded-For</code>
+        ///  <c>routing.http.xff_client_port.enabled</c> - Indicates whether the <c>X-Forwarded-For</c>
         /// header should preserve the source port that the client used to connect to the load
-        /// balancer. The possible values are <code>true</code> and <code>false</code>. The default
-        /// is <code>false</code>.
+        /// balancer. The possible values are <c>true</c> and <c>false</c>. The default is <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>routing.http.xff_header_processing.mode</code> - Enables you to modify, preserve,
-        /// or remove the <code>X-Forwarded-For</code> header in the HTTP request before the Application
-        /// Load Balancer sends the request to the target. The possible values are <code>append</code>,
-        /// <code>preserve</code>, and <code>remove</code>. The default is <code>append</code>.
+        ///  <c>routing.http.xff_header_processing.mode</c> - Enables you to modify, preserve,
+        /// or remove the <c>X-Forwarded-For</c> header in the HTTP request before the Application
+        /// Load Balancer sends the request to the target. The possible values are <c>append</c>,
+        /// <c>preserve</c>, and <c>remove</c>. The default is <c>append</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the value is <code>append</code>, the Application Load Balancer adds the client
-        /// IP address (of the last hop) to the <code>X-Forwarded-For</code> header in the HTTP
-        /// request before it sends it to targets.
+        /// If the value is <c>append</c>, the Application Load Balancer adds the client IP address
+        /// (of the last hop) to the <c>X-Forwarded-For</c> header in the HTTP request before
+        /// it sends it to targets.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value is <code>preserve</code> the Application Load Balancer preserves the
-        /// <code>X-Forwarded-For</code> header in the HTTP request, and sends it to targets without
-        /// any change.
+        /// If the value is <c>preserve</c> the Application Load Balancer preserves the <c>X-Forwarded-For</c>
+        /// header in the HTTP request, and sends it to targets without any change.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the value is <code>remove</code>, the Application Load Balancer removes the <code>X-Forwarded-For</code>
+        /// If the value is <c>remove</c>, the Application Load Balancer removes the <c>X-Forwarded-For</c>
         /// header in the HTTP request before it sends it to targets.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>routing.http2.enabled</code> - Indicates whether HTTP/2 is enabled. The possible
-        /// values are <code>true</code> and <code>false</code>. The default is <code>true</code>.
-        /// Elastic Load Balancing requires that message header names contain only alphanumeric
-        /// characters and hyphens.
+        ///  <c>routing.http2.enabled</c> - Indicates whether HTTP/2 is enabled. The possible
+        /// values are <c>true</c> and <c>false</c>. The default is <c>true</c>. Elastic Load
+        /// Balancing requires that message header names contain only alphanumeric characters
+        /// and hyphens.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>waf.fail_open.enabled</code> - Indicates whether to allow a WAF-enabled load
-        /// balancer to route requests to targets if it is unable to forward the request to Amazon
-        /// Web Services WAF. The possible values are <code>true</code> and <code>false</code>.
-        /// The default is <code>false</code>.
+        ///  <c>waf.fail_open.enabled</c> - Indicates whether to allow a WAF-enabled load balancer
+        /// to route requests to targets if it is unable to forward the request to Amazon Web
+        /// Services WAF. The possible values are <c>true</c> and <c>false</c>. The default is
+        /// <c>false</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -195,11 +191,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>dns_record.client_routing_policy</code> - Indicates how traffic is distributed
-        /// among the load balancer Availability Zones. The possible values are <code>availability_zone_affinity</code>
-        /// with 100 percent zonal affinity, <code>partial_availability_zone_affinity</code> with
-        /// 85 percent zonal affinity, and <code>any_availability_zone</code> with 0 percent zonal
-        /// affinity.
+        ///  <c>dns_record.client_routing_policy</c> - Indicates how traffic is distributed among
+        /// the load balancer Availability Zones. The possible values are <c>availability_zone_affinity</c>
+        /// with 100 percent zonal affinity, <c>partial_availability_zone_affinity</c> with 85
+        /// percent zonal affinity, and <c>any_availability_zone</c> with 0 percent zonal affinity.
         /// </para>
         ///  </li> </ul>
         /// </summary>

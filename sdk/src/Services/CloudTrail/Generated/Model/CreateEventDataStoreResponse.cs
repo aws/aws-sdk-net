@@ -128,7 +128,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         /// </summary>
@@ -276,8 +276,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property UpdatedTimestamp. 
         /// <para>
-        /// The timestamp that shows when an event data store was updated, if applicable. <code>UpdatedTimestamp</code>
-        /// is always either the same or newer than the time shown in <code>CreatedTimestamp</code>.
+        /// The timestamp that shows when an event data store was updated, if applicable. <c>UpdatedTimestamp</c>
+        /// is always either the same or newer than the time shown in <c>CreatedTimestamp</c>.
         /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp

@@ -40,7 +40,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property AndConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>AND</code> condition.
+        /// A list of conditions which would be applied together with an <c>AND</c> condition.
         /// </para>
         /// </summary>
         public List<PredefinedAttributeSearchCriteria> AndConditions
@@ -58,7 +58,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property OrConditions. 
         /// <para>
-        /// A list of conditions which would be applied together with an <code>OR</code> condition.
+        /// A list of conditions which would be applied together with an <c>OR</c> condition.
         /// </para>
         /// </summary>
         public List<PredefinedAttributeSearchCriteria> OrConditions

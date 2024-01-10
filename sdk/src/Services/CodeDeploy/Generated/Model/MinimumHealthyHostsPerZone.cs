@@ -39,8 +39,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The <code>type</code> associated with the <code>MinimumHealthyHostsPerZone</code>
-        /// option.
+        /// The <c>type</c> associated with the <c>MinimumHealthyHostsPerZone</c> option.
         /// </para>
         /// </summary>
         public MinimumHealthyHostsPerZoneType Type
@@ -58,8 +57,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The <code>value</code> associated with the <code>MinimumHealthyHostsPerZone</code>
-        /// option.
+        /// The <c>value</c> associated with the <c>MinimumHealthyHostsPerZone</c> option.
         /// </para>
         /// </summary>
         public int Value

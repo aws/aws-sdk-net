@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDataSource operation.
-    /// Retrieves a <code>DataSource</code> object.
+    /// Retrieves a <c>DataSource</c> object.
     /// </summary>
     public partial class GetDataSourceRequest : AmazonAppSyncRequest
     {

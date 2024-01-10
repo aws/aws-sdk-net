@@ -30,8 +30,8 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateQualificationFromWorker operation.
-    /// The <code>DisassociateQualificationFromWorker</code> revokes a previously granted
-    /// Qualification from a user. 
+    /// The <c>DisassociateQualificationFromWorker</c> revokes a previously granted Qualification
+    /// from a user. 
     /// 
     ///  
     /// <para>

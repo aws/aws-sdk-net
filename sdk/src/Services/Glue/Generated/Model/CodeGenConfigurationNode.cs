@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// <code>CodeGenConfigurationNode</code> enumerates all valid Node types. One and only
-    /// one of its member variables can be populated.
+    /// <c>CodeGenConfigurationNode</c> enumerates all valid Node types. One and only one
+    /// of its member variables can be populated.
     /// </summary>
     public partial class CodeGenConfigurationNode
     {
@@ -677,7 +677,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Merge. 
         /// <para>
-        /// Specifies a transform that merges a <code>DynamicFrame</code> with a staging <code>DynamicFrame</code>
+        /// Specifies a transform that merges a <c>DynamicFrame</c> with a staging <c>DynamicFrame</c>
         /// based on the specified primary keys to identify records. Duplicate records (records
         /// with the same primary keys) are not de-duplicated. 
         /// </para>
@@ -1239,9 +1239,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SelectFromCollection. 
         /// <para>
-        /// Specifies a transform that chooses one <code>DynamicFrame</code> from a collection
-        /// of <code>DynamicFrames</code>. The output is the selected <code>DynamicFrame</code>
-        /// 
+        /// Specifies a transform that chooses one <c>DynamicFrame</c> from a collection of <c>DynamicFrames</c>.
+        /// The output is the selected <c>DynamicFrame</c> 
         /// </para>
         /// </summary>
         public SelectFromCollection SelectFromCollection
@@ -1332,7 +1331,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property SparkSQL. 
         /// <para>
         /// Specifies a transform where you enter a SQL query using Spark SQL syntax to transform
-        /// the data. The output is a single <code>DynamicFrame</code>.
+        /// the data. The output is a single <c>DynamicFrame</c>.
         /// </para>
         /// </summary>
         public SparkSQL SparkSQL
@@ -1368,8 +1367,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SplitFields. 
         /// <para>
-        /// Specifies a transform that splits data property keys into two <code>DynamicFrames</code>.
-        /// The output is a collection of <code>DynamicFrames</code>: one with selected data property
+        /// Specifies a transform that splits data property keys into two <c>DynamicFrames</c>.
+        /// The output is a collection of <c>DynamicFrames</c>: one with selected data property
         /// keys, and one with the remaining data property keys.
         /// </para>
         /// </summary>

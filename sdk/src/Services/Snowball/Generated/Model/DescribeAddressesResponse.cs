@@ -57,8 +57,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. If you use the automatically generated <code>NextToken</code>
-        /// value in your next <code>DescribeAddresses</code> call, your list of returned addresses
+        /// HTTP requests are stateless. If you use the automatically generated <c>NextToken</c>
+        /// value in your next <c>DescribeAddresses</c> call, your list of returned addresses
         /// will start from this point in the array.
         /// </para>
         /// </summary>

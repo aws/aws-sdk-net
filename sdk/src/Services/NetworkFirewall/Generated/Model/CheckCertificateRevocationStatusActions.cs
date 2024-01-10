@@ -56,7 +56,7 @@ namespace Amazon.NetworkFirewall.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The
-        /// service closes the connection and drops subsequent packets for that connection. <code>REJECT</code>
+        /// service closes the connection and drops subsequent packets for that connection. <c>REJECT</c>
         /// is available only for TCP traffic.
         /// </para>
         ///  </li> </ul>
@@ -94,7 +94,7 @@ namespace Amazon.NetworkFirewall.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>REJECT</b> - Network Firewall sends a TCP reject packet back to your client. The
-        /// service closes the connection and drops subsequent packets for that connection. <code>REJECT</code>
+        /// service closes the connection and drops subsequent packets for that connection. <c>REJECT</c>
         /// is available only for TCP traffic.
         /// </para>
         ///  </li> </ul>

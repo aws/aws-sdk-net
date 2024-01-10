@@ -60,37 +60,36 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE_CLUSTER</code> - Shuts down the cluster.
+        ///  <c>TERMINATE_CLUSTER</c> - Shuts down the cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCEL_AND_WAIT</code> - Cancels any pending steps and returns the cluster
-        /// to the <code>WAITING</code> state.
+        ///  <c>CANCEL_AND_WAIT</c> - Cancels any pending steps and returns the cluster to the
+        /// <c>WAITING</c> state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Continues to the next step in the queue.
+        ///  <c>CONTINUE</c> - Continues to the next step in the queue.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERMINATE_JOB_FLOW</code> - Shuts down the cluster. <code>TERMINATE_JOB_FLOW</code>
-        /// is provided for backward compatibility. We recommend using <code>TERMINATE_CLUSTER</code>
-        /// instead.
+        ///  <c>TERMINATE_JOB_FLOW</c> - Shuts down the cluster. <c>TERMINATE_JOB_FLOW</c> is
+        /// provided for backward compatibility. We recommend using <c>TERMINATE_CLUSTER</c> instead.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If a cluster's <code>StepConcurrencyLevel</code> is greater than <code>1</code>, do
-        /// not use <code>AddJobFlowSteps</code> to submit a step with this parameter set to <code>CANCEL_AND_WAIT</code>
-        /// or <code>TERMINATE_CLUSTER</code>. The step is not submitted and the action fails
-        /// with a message that the <code>ActionOnFailure</code> setting is not valid.
+        /// If a cluster's <c>StepConcurrencyLevel</c> is greater than <c>1</c>, do not use <c>AddJobFlowSteps</c>
+        /// to submit a step with this parameter set to <c>CANCEL_AND_WAIT</c> or <c>TERMINATE_CLUSTER</c>.
+        /// The step is not submitted and the action fails with a message that the <c>ActionOnFailure</c>
+        /// setting is not valid.
         /// </para>
         ///  
         /// <para>
-        /// If you change a cluster's <code>StepConcurrencyLevel</code> to be greater than 1 while
-        /// a step is running, the <code>ActionOnFailure</code> parameter may not behave as you
-        /// expect. In this case, for a step that fails with this parameter set to <code>CANCEL_AND_WAIT</code>,
+        /// If you change a cluster's <c>StepConcurrencyLevel</c> to be greater than 1 while a
+        /// step is running, the <c>ActionOnFailure</c> parameter may not behave as you expect.
+        /// In this case, for a step that fails with this parameter set to <c>CANCEL_AND_WAIT</c>,
         /// pending steps and the running step are not canceled; for a step that fails with this
-        /// parameter set to <code>TERMINATE_CLUSTER</code>, the cluster does not terminate.
+        /// parameter set to <c>TERMINATE_CLUSTER</c>, the cluster does not terminate.
         /// </para>
         /// </summary>
         public ActionOnFailure ActionOnFailure

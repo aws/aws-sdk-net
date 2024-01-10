@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The aggregated field well configuration of a <code>RadarChartVisual</code>.
+    /// The aggregated field well configuration of a <c>RadarChartVisual</c>.
     /// </summary>
     public partial class RadarChartAggregatedFieldWells
     {

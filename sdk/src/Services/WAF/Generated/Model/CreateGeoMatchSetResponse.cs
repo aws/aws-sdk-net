@@ -39,9 +39,9 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ChangeToken. 
         /// <para>
-        /// The <code>ChangeToken</code> that you used to submit the <code>CreateGeoMatchSet</code>
-        /// request. You can also use this value to query the status of the request. For more
-        /// information, see <a>GetChangeTokenStatus</a>.
+        /// The <c>ChangeToken</c> that you used to submit the <c>CreateGeoMatchSet</c> request.
+        /// You can also use this value to query the status of the request. For more information,
+        /// see <a>GetChangeTokenStatus</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -60,8 +60,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property GeoMatchSet. 
         /// <para>
-        /// The <a>GeoMatchSet</a> returned in the <code>CreateGeoMatchSet</code> response. The
-        /// <code>GeoMatchSet</code> contains no <code>GeoMatchConstraints</code>.
+        /// The <a>GeoMatchSet</a> returned in the <c>CreateGeoMatchSet</c> response. The <c>GeoMatchSet</c>
+        /// contains no <c>GeoMatchConstraints</c>.
         /// </para>
         /// </summary>
         public GeoMatchSet GeoMatchSet

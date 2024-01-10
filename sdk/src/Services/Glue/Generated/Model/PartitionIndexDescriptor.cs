@@ -120,7 +120,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Keys. 
         /// <para>
-        /// A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition
+        /// A list of one or more keys, as <c>KeySchemaElement</c> structures, for the partition
         /// index.
         /// </para>
         /// </summary>

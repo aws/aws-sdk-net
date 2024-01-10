@@ -68,8 +68,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the route. The format for this ARN is <code>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
-        /// </code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
+        /// The Amazon Resource Name (ARN) of the route. The format for this ARN is <c>arn:aws:refactor-spaces:<i>region</i>:<i>account-id</i>:<i>resource-type/resource-id</i>
+        /// </c>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>
@@ -220,9 +220,8 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the route. Activation state only allows <code>ACTIVE</code> or
-        /// <code>INACTIVE</code> as user inputs. <code>FAILED</code> is a route state that is
-        /// system generated.
+        /// The current state of the route. Activation state only allows <c>ACTIVE</c> or <c>INACTIVE</c>
+        /// as user inputs. <c>FAILED</c> is a route state that is system generated.
         /// </para>
         /// </summary>
         public RouteState State

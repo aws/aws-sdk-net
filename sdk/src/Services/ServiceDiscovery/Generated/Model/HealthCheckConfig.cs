@@ -31,12 +31,12 @@ namespace Amazon.ServiceDiscovery.Model
     /// <summary>
     /// <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings
     /// for an optional health check. If you specify settings for a health check, Cloud Map
-    /// associates the health check with the records that you specify in <code>DnsConfig</code>.
+    /// associates the health check with the records that you specify in <c>DnsConfig</c>.
     /// 
     ///  <important> 
     /// <para>
-    /// If you specify a health check configuration, you can specify either <code>HealthCheckCustomConfig</code>
-    /// or <code>HealthCheckConfig</code> but not both.
+    /// If you specify a health check configuration, you can specify either <c>HealthCheckCustomConfig</c>
+    /// or <c>HealthCheckConfig</c> but not both.
     /// </para>
     ///  </important> 
     /// <para>
@@ -50,17 +50,16 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  <dl> <dt>A and AAAA records</dt> <dd> 
     /// <para>
-    /// If <code>DnsConfig</code> includes configurations for both <code>A</code> and <code>AAAA</code>
-    /// records, Cloud Map creates a health check that uses the IPv4 address to check the
-    /// health of the resource. If the endpoint tthat's specified by the IPv4 address is unhealthy,
-    /// Route 53 considers both the <code>A</code> and <code>AAAA</code> records to be unhealthy.
-    /// 
+    /// If <c>DnsConfig</c> includes configurations for both <c>A</c> and <c>AAAA</c> records,
+    /// Cloud Map creates a health check that uses the IPv4 address to check the health of
+    /// the resource. If the endpoint tthat's specified by the IPv4 address is unhealthy,
+    /// Route 53 considers both the <c>A</c> and <c>AAAA</c> records to be unhealthy. 
     /// </para>
     ///  </dd> <dt>CNAME records</dt> <dd> 
     /// <para>
-    /// You can't specify settings for <code>HealthCheckConfig</code> when the <code>DNSConfig</code>
-    /// includes <code>CNAME</code> for the value of <code>Type</code>. If you do, the <code>CreateService</code>
-    /// request will fail with an <code>InvalidInput</code> error.
+    /// You can't specify settings for <c>HealthCheckConfig</c> when the <c>DNSConfig</c>
+    /// includes <c>CNAME</c> for the value of <c>Type</c>. If you do, the <c>CreateService</c>
+    /// request will fail with an <c>InvalidInput</c> error.
     /// </para>
     ///  </dd> <dt>Request interval</dt> <dd> 
     /// <para>
@@ -77,20 +76,20 @@ namespace Amazon.ServiceDiscovery.Model
     /// </para>
     ///  </dd> <dt>Alias records</dt> <dd> 
     /// <para>
-    /// When you register an instance, if you include the <code>AWS_ALIAS_DNS_NAME</code>
-    /// attribute, Cloud Map creates a Route 53 alias record. Note the following:
+    /// When you register an instance, if you include the <c>AWS_ALIAS_DNS_NAME</c> attribute,
+    /// Cloud Map creates a Route 53 alias record. Note the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Route 53 automatically sets <code>EvaluateTargetHealth</code> to true for alias records.
-    /// When <code>EvaluateTargetHealth</code> is true, the alias record inherits the health
-    /// of the referenced Amazon Web Services resource. such as an ELB load balancer. For
-    /// more information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.
+    /// Route 53 automatically sets <c>EvaluateTargetHealth</c> to true for alias records.
+    /// When <c>EvaluateTargetHealth</c> is true, the alias record inherits the health of
+    /// the referenced Amazon Web Services resource. such as an ELB load balancer. For more
+    /// information, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AliasTarget.html#Route53-Type-AliasTarget-EvaluateTargetHealth">EvaluateTargetHealth</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you include <code>HealthCheckConfig</code> and then use the service to register
-    /// an instance that creates an alias record, Route 53 doesn't create the health check.
+    /// If you include <c>HealthCheckConfig</c> and then use the service to register an instance
+    /// that creates an alias record, Route 53 doesn't create the health check.
     /// </para>
     ///  </li> </ul> </dd> <dt>Charges for health checks</dt> <dd> 
     /// <para>
@@ -134,14 +133,14 @@ namespace Amazon.ServiceDiscovery.Model
         /// <para>
         /// The path that you want Route 53 to request when performing health checks. The path
         /// can be any value that your endpoint returns an HTTP status code of a 2xx or 3xx format
-        /// for when the endpoint is healthy. An example file is <code>/docs/route53-health-check.html</code>.
+        /// for when the endpoint is healthy. An example file is <c>/docs/route53-health-check.html</c>.
         /// Route 53 automatically adds the DNS name for the service. If you don't specify a value
-        /// for <code>ResourcePath</code>, the default value is <code>/</code>.
+        /// for <c>ResourcePath</c>, the default value is <c>/</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>TCP</code> for <code>Type</code>, you must <i>not</i> specify
-        /// a value for <code>ResourcePath</code>.
+        /// If you specify <c>TCP</c> for <c>Type</c>, you must <i>not</i> specify a value for
+        /// <c>ResourcePath</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]
@@ -165,7 +164,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// You can't change the value of <code>Type</code> after you create a health check.
+        /// You can't change the value of <c>Type</c> after you create a health check.
         /// </para>
         ///  </important> 
         /// <para>
@@ -185,8 +184,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you specify HTTPS for the value of <code>Type</code>, the endpoint must support
-        /// TLS v1.0 or later.
+        /// If you specify HTTPS for the value of <c>Type</c>, the endpoint must support TLS v1.0
+        /// or later.
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
@@ -194,7 +193,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>TCP</code> for <code>Type</code>, don't specify a value for <code>ResourcePath</code>.
+        /// If you specify <c>TCP</c> for <c>Type</c>, don't specify a value for <c>ResourcePath</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

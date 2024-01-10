@@ -47,17 +47,17 @@ namespace Amazon.CostExplorer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Proportional</code> - Allocates charges across your targets based on the proportional
+        ///  <c>Proportional</c> - Allocates charges across your targets based on the proportional
         /// weighted cost of each target.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Fixed</code> - Allocates charges across your targets based on your defined
-        /// allocation percentage.
+        ///  <c>Fixed</c> - Allocates charges across your targets based on your defined allocation
+        /// percentage.
         /// </para>
         ///  
         /// <para>
-        /// &gt;<code>Even</code> - Allocates costs evenly across all targets.
+        /// &gt;<c>Even</c> - Allocates costs evenly across all targets.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,7 +76,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// The parameters for a split charge method. This is only required for the <code>FIXED</code>
+        /// The parameters for a split charge method. This is only required for the <c>FIXED</c>
         /// method. 
         /// </para>
         /// </summary>

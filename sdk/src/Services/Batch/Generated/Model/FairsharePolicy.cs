@@ -45,19 +45,18 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  
         /// <para>
-        /// The reserved ratio is <code>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i>
-        /// </code> where <code> <i>ActiveFairShares</i> </code> is the number of active fair
-        /// share identifiers.
+        /// The reserved ratio is <c>(<i>computeReservation</i>/100)^<i>ActiveFairShares</i> </c>
+        /// where <c> <i>ActiveFairShares</i> </c> is the number of active fair share identifiers.
         /// </para>
         ///  
         /// <para>
-        /// For example, a <code>computeReservation</code> value of 50 indicates that Batchreserves
+        /// For example, a <c>computeReservation</c> value of 50 indicates that Batchreserves
         /// 50% of the maximum available vCPU if there's only one fair share identifier. It reserves
         /// 25% if there are two fair share identifiers. It reserves 12.5% if there are three
-        /// fair share identifiers. A <code>computeReservation</code> value of 25 indicates that
-        /// Batch should reserve 25% of the maximum available vCPU if there's only one fair share
-        /// identifier, 6.25% if there are two fair share identifiers, and 1.56% if there are
-        /// three fair share identifiers.
+        /// fair share identifiers. A <c>computeReservation</c> value of 25 indicates that Batch
+        /// should reserve 25% of the maximum available vCPU if there's only one fair share identifier,
+        /// 6.25% if there are two fair share identifiers, and 1.56% if there are three fair share
+        /// identifiers.
         /// </para>
         ///  
         /// <para>
@@ -100,9 +99,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property ShareDistribution. 
         /// <para>
-        /// An array of <code>SharedIdentifier</code> objects that contain the weights for the
-        /// fair share identifiers for the fair share policy. Fair share identifiers that aren't
-        /// included have a default weight of <code>1.0</code>.
+        /// An array of <c>SharedIdentifier</c> objects that contain the weights for the fair
+        /// share identifiers for the fair share policy. Fair share identifiers that aren't included
+        /// have a default weight of <c>1.0</c>.
         /// </para>
         /// </summary>
         public List<ShareAttributes> ShareDistribution

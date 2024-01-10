@@ -34,9 +34,8 @@ namespace Amazon.EKS.Model
     /// 
     ///  
     /// <para>
-    /// Deleting an access entry of a type other than <code>Standard</code> can cause your
-    /// cluster to function improperly. If you delete an access entry in error, you can recreate
-    /// it.
+    /// Deleting an access entry of a type other than <c>Standard</c> can cause your cluster
+    /// to function improperly. If you delete an access entry in error, you can recreate it.
     /// </para>
     /// </summary>
     public partial class DeleteAccessEntryRequest : AmazonEKSRequest
@@ -66,7 +65,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The ARN of the IAM principal for the <code>AccessEntry</code>.
+        /// The ARN of the IAM principal for the <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

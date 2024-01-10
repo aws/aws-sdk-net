@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Signer.Model
 {
     /// <summary>
-    /// An <code>S3Source</code> object that contains information about the S3 bucket where
-    /// you saved your unsigned code.
+    /// An <c>S3Source</c> object that contains information about the S3 bucket where you
+    /// saved your unsigned code.
     /// </summary>
     public partial class Source
     {
@@ -39,7 +39,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property S3. 
         /// <para>
-        /// The <code>S3Source</code> object.
+        /// The <c>S3Source</c> object.
         /// </para>
         /// </summary>
         public S3Source S3

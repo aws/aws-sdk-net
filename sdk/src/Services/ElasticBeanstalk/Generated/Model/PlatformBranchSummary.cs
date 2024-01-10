@@ -61,13 +61,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Gets and sets the property BranchOrder. 
         /// <para>
         /// An ordinal number that designates the order in which platform branches have been added
-        /// to a platform. This can be helpful, for example, if your code calls the <code>ListPlatformBranches</code>
+        /// to a platform. This can be helpful, for example, if your code calls the <c>ListPlatformBranches</c>
         /// action and then displays a list of platform branches.
         /// </para>
         ///  
         /// <para>
-        /// A larger <code>BranchOrder</code> value designates a newer platform branch within
-        /// the platform.
+        /// A larger <c>BranchOrder</c> value designates a newer platform branch within the platform.
         /// </para>
         /// </summary>
         public int BranchOrder
@@ -89,8 +88,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values: <code>beta</code> | <code>supported</code> | <code>deprecated</code>
-        /// | <code>retired</code> 
+        /// Possible values: <c>beta</c> | <c>supported</c> | <c>deprecated</c> | <c>retired</c>
+        /// 
         /// </para>
         /// </summary>
         public string LifecycleState
@@ -130,7 +129,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> 
+        /// Possible values: <c>WebServer/Standard</c> | <c>Worker/SQS/HTTP</c> 
         /// </para>
         /// </summary>
         public List<string> SupportedTierList

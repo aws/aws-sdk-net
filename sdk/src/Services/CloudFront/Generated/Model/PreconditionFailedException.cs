@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFront.Model
 {
     /// <summary>
-    /// The precondition in one or more of the request fields evaluated to <code>false</code>.
+    /// The precondition in one or more of the request fields evaluated to <c>false</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

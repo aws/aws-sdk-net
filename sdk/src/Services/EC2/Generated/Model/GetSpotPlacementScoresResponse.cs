@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The token to include in another request to get the next page of items. This value
-        /// is <code>null</code> when there are no more items to return.
+        /// is <c>null</c> when there are no more items to return.
         /// </para>
         /// </summary>
         public string NextToken
@@ -61,17 +61,17 @@ namespace Amazon.EC2.Model
         /// The Spot placement score for the top 10 Regions or Availability Zones, scored on a
         /// scale from 1 to 10. Each score&#x2028; reflects how likely it is that each Region
         /// or Availability Zone will succeed at fulfilling the specified target capacity&#x2028;
-        /// <i>at the time of the Spot placement score request</i>. A score of <code>10</code>
-        /// means that your Spot capacity request is highly likely to succeed in that Region or
-        /// Availability Zone. 
+        /// <i>at the time of the Spot placement score request</i>. A score of <c>10</c> means
+        /// that your Spot capacity request is highly likely to succeed in that Region or Availability
+        /// Zone. 
         /// </para>
         ///  
         /// <para>
         /// If you request a Spot placement score for Regions, a high score assumes that your
-        /// fleet request will be configured to use all Availability Zones and the <code>capacity-optimized</code>
+        /// fleet request will be configured to use all Availability Zones and the <c>capacity-optimized</c>
         /// allocation strategy. If you request a Spot placement score for Availability Zones,
         /// a high score assumes that your fleet request will be configured to use a single Availability
-        /// Zone and the <code>capacity-optimized</code> allocation strategy.
+        /// Zone and the <c>capacity-optimized</c> allocation strategy.
         /// </para>
         ///  
         /// <para>

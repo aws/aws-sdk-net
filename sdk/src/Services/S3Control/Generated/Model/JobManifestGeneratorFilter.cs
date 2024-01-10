@@ -103,8 +103,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property KeyNameConstraint. 
         /// <para>
         /// If provided, the generated manifest includes only source bucket objects whose object
-        /// keys match the string constraints specified for <code>MatchAnyPrefix</code>, <code>MatchAnySuffix</code>,
-        /// and <code>MatchAnySubstring</code>.
+        /// keys match the string constraints specified for <c>MatchAnyPrefix</c>, <c>MatchAnySuffix</c>,
+        /// and <c>MatchAnySubstring</c>.
         /// </para>
         /// </summary>
         public KeyNameConstraint KeyNameConstraint

@@ -179,7 +179,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property InstanceInterruptionBehavior. 
         /// <para>
-        /// The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
+        /// The behavior when a Spot Instance is interrupted. The default is <c>terminate</c>.
         /// </para>
         /// </summary>
         public InstanceInterruptionBehavior InstanceInterruptionBehavior
@@ -265,9 +265,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property TagSpecifications. 
         /// <para>
         /// The key-value pair for tagging the Spot Instance request on creation. The value for
-        /// <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the
-        /// Spot Instance request fails. To tag the Spot Instance request after it has been created,
-        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+        /// <c>ResourceType</c> must be <c>spot-instances-request</c>, otherwise the Spot Instance
+        /// request fails. To tag the Spot Instance request after it has been created, see <a
+        /// href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
         /// 
         /// </para>
         /// </summary>
@@ -290,7 +290,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>one-time</code> 
+        /// Default: <c>one-time</c> 
         /// </para>
         /// </summary>
         public SpotInstanceType Type
@@ -338,14 +338,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
-        /// date and time is reached. Otherwise, the request remains active until you cancel it.
-        /// 
+        /// For a persistent request, the request remains active until the <c>ValidUntil</c> date
+        /// and time is reached. Otherwise, the request remains active until you cancel it. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For a one-time request, the request remains active until all instances launch, the
-        /// request is canceled, or the <code>ValidUntil</code> date and time is reached. By default,
+        /// request is canceled, or the <c>ValidUntil</c> date and time is reached. By default,
         /// the request is valid for 7 days from the date the request was created.
         /// </para>
         ///  </li> </ul>
@@ -419,14 +418,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For a persistent request, the request remains active until the <code>ValidUntil</code>
-        /// date and time is reached. Otherwise, the request remains active until you cancel it.
-        /// 
+        /// For a persistent request, the request remains active until the <c>ValidUntil</c> date
+        /// and time is reached. Otherwise, the request remains active until you cancel it. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For a one-time request, the request remains active until all instances launch, the
-        /// request is canceled, or the <code>ValidUntil</code> date and time is reached. By default,
+        /// request is canceled, or the <c>ValidUntil</c> date and time is reached. By default,
         /// the request is valid for 7 days from the date the request was created.
         /// </para>
         ///  </li> </ul>

@@ -30,9 +30,9 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterAppInstanceUserEndpoint operation.
-    /// Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint
-    /// receives messages for a user. For push notifications, the endpoint is a mobile device
-    /// used to receive mobile push notifications for a user.
+    /// Registers an endpoint under an Amazon Chime <c>AppInstanceUser</c>. The endpoint receives
+    /// messages for a user. For push notifications, the endpoint is a mobile device used
+    /// to receive mobile push notifications for a user.
     /// </summary>
     public partial class RegisterAppInstanceUserEndpointRequest : AmazonChimeSDKIdentityRequest
     {
@@ -48,8 +48,8 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// Gets and sets the property AllowMessages. 
         /// <para>
         /// Boolean that controls whether the AppInstanceUserEndpoint is opted in to receive messages.
-        /// <code>ALL</code> indicates the endpoint receives all messages. <code>NONE</code> indicates
-        /// the endpoint receives no messages.
+        /// <c>ALL</c> indicates the endpoint receives all messages. <c>NONE</c> indicates the
+        /// endpoint receives no messages.
         /// </para>
         /// </summary>
         public AllowMessages AllowMessages
@@ -67,7 +67,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=5, Max=1600)]
@@ -105,7 +105,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointAttributes. 
         /// <para>
-        /// The attributes of an <code>Endpoint</code>.
+        /// The attributes of an <c>Endpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -124,7 +124,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>AppInstanceUserEndpoint</code>.
+        /// The name of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1600)]
@@ -162,24 +162,24 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the <code>AppInstanceUserEndpoint</code>. Supported types:
+        /// The type of the <c>AppInstanceUserEndpoint</c>. Supported types:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>APNS</code>: The mobile notification service for an Apple device.
+        ///  <c>APNS</c>: The mobile notification service for an Apple device.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>APNS_SANDBOX</code>: The sandbox environment of the mobile notification service
-        /// for an Apple device.
+        ///  <c>APNS_SANDBOX</c>: The sandbox environment of the mobile notification service for
+        /// an Apple device.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GCM</code>: The mobile notification service for an Android device.
+        ///  <c>GCM</c>: The mobile notification service for an Android device.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Populate the <code>ResourceArn</code> value of each type as <code>PinpointAppArn</code>.
+        /// Populate the <c>ResourceArn</c> value of each type as <c>PinpointAppArn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -50,8 +50,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AutoPause. 
         /// <para>
         /// Indicates whether to allow or disallow automatic pause for an Aurora DB cluster in
-        /// <code>serverless</code> DB engine mode. A DB cluster can be paused only when it's
-        /// idle (it has no connections).
+        /// <c>serverless</c> DB engine mode. A DB cluster can be paused only when it's idle (it
+        /// has no connections).
         /// </para>
         ///  <note> 
         /// <para>
@@ -76,19 +76,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MaxCapacity. 
         /// <para>
-        /// The maximum capacity for an Aurora DB cluster in <code>serverless</code> DB engine
-        /// mode.
+        /// The maximum capacity for an Aurora DB cluster in <c>serverless</c> DB engine mode.
         /// </para>
         ///  
         /// <para>
-        /// For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>,
-        /// <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>,
-        /// and <code>256</code>.
+        /// For Aurora MySQL, valid capacity values are <c>1</c>, <c>2</c>, <c>4</c>, <c>8</c>,
+        /// <c>16</c>, <c>32</c>, <c>64</c>, <c>128</c>, and <c>256</c>.
         /// </para>
         ///  
         /// <para>
-        /// For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>,
-        /// <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.
+        /// For Aurora PostgreSQL, valid capacity values are <c>2</c>, <c>4</c>, <c>8</c>, <c>16</c>,
+        /// <c>32</c>, <c>64</c>, <c>192</c>, and <c>384</c>.
         /// </para>
         ///  
         /// <para>
@@ -110,19 +108,17 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property MinCapacity. 
         /// <para>
-        /// The minimum capacity for an Aurora DB cluster in <code>serverless</code> DB engine
-        /// mode.
+        /// The minimum capacity for an Aurora DB cluster in <c>serverless</c> DB engine mode.
         /// </para>
         ///  
         /// <para>
-        /// For Aurora MySQL, valid capacity values are <code>1</code>, <code>2</code>, <code>4</code>,
-        /// <code>8</code>, <code>16</code>, <code>32</code>, <code>64</code>, <code>128</code>,
-        /// and <code>256</code>.
+        /// For Aurora MySQL, valid capacity values are <c>1</c>, <c>2</c>, <c>4</c>, <c>8</c>,
+        /// <c>16</c>, <c>32</c>, <c>64</c>, <c>128</c>, and <c>256</c>.
         /// </para>
         ///  
         /// <para>
-        /// For Aurora PostgreSQL, valid capacity values are <code>2</code>, <code>4</code>, <code>8</code>,
-        /// <code>16</code>, <code>32</code>, <code>64</code>, <code>192</code>, and <code>384</code>.
+        /// For Aurora PostgreSQL, valid capacity values are <c>2</c>, <c>4</c>, <c>8</c>, <c>16</c>,
+        /// <c>32</c>, <c>64</c>, <c>192</c>, and <c>384</c>.
         /// </para>
         ///  
         /// <para>
@@ -168,8 +164,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SecondsUntilAutoPause. 
         /// <para>
-        /// The time, in seconds, before an Aurora DB cluster in <code>serverless</code> mode
-        /// is paused.
+        /// The time, in seconds, before an Aurora DB cluster in <c>serverless</c> mode is paused.
         /// </para>
         ///  
         /// <para>
@@ -191,23 +186,23 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TimeoutAction. 
         /// <para>
-        /// The action to take when the timeout is reached, either <code>ForceApplyCapacityChange</code>
-        /// or <code>RollbackCapacityChange</code>.
+        /// The action to take when the timeout is reached, either <c>ForceApplyCapacityChange</c>
+        /// or <c>RollbackCapacityChange</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ForceApplyCapacityChange</code> sets the capacity to the specified value as
-        /// soon as possible.
+        ///  <c>ForceApplyCapacityChange</c> sets the capacity to the specified value as soon
+        /// as possible.
         /// </para>
         ///  
         /// <para>
-        ///  <code>RollbackCapacityChange</code>, the default, ignores the capacity change if
-        /// a scaling point isn't found in the timeout period.
+        ///  <c>RollbackCapacityChange</c>, the default, ignores the capacity change if a scaling
+        /// point isn't found in the timeout period.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you specify <code>ForceApplyCapacityChange</code>, connections that prevent Aurora
-        /// Serverless v1 from finding a scaling point might be dropped.
+        /// If you specify <c>ForceApplyCapacityChange</c>, connections that prevent Aurora Serverless
+        /// v1 from finding a scaling point might be dropped.
         /// </para>
         ///  </important> 
         /// <para>

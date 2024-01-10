@@ -39,7 +39,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// Returns an array of the certificates that are specified in the <code>ListCertificates</code>
+        /// Returns an array of the certificates that are specified in the <c>ListCertificates</c>
         /// call.
         /// </para>
         /// </summary>

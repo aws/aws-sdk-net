@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The <code>DataSource</code> object.
+        /// The <c>DataSource</c> object.
         /// </para>
         /// </summary>
         public DataSource DataSource

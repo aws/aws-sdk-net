@@ -83,7 +83,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Vote. 
         /// <para>
-        ///  The vote value, either <code>YES</code> or <code>NO</code>. 
+        ///  The vote value, either <c>YES</c> or <c>NO</c>. 
         /// </para>
         /// </summary>
         public VoteValue Vote

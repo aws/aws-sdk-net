@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataRepositoryTask operation.
-    /// Creates an Amazon FSx for Lustre data repository task. A <code>CreateDataRepositoryTask</code>
+    /// Creates an Amazon FSx for Lustre data repository task. A <c>CreateDataRepositoryTask</c>
     /// operation will fail if a data repository is not linked to the FSx file system.
     /// 
     ///  
@@ -70,7 +70,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property CapacityToRelease. 
         /// <para>
-        /// Specifies the amount of data to release, in GiB, by an Amazon File Cache <code>AUTO_RELEASE_DATA</code>
+        /// Specifies the amount of data to release, in GiB, by an Amazon File Cache <c>AUTO_RELEASE_DATA</c>
         /// task that automatically releases files from the cache.
         /// </para>
         /// </summary>
@@ -133,15 +133,15 @@ namespace Amazon.FSx.Model
         /// For export tasks, the list contains paths on the FSx for Lustre file system from which
         /// the files are exported to the Amazon S3 bucket. The default path is the file system
         /// root directory. The paths you provide need to be relative to the mount point of the
-        /// file system. If the mount point is <code>/mnt/fsx</code> and <code>/mnt/fsx/path1</code>
-        /// is a directory or file on the file system you want to export, then the path to provide
-        /// is <code>path1</code>.
+        /// file system. If the mount point is <c>/mnt/fsx</c> and <c>/mnt/fsx/path1</c> is a
+        /// directory or file on the file system you want to export, then the path to provide
+        /// is <c>path1</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For import tasks, the list contains paths in the Amazon S3 bucket from which POSIX
         /// metadata changes are imported to the FSx for Lustre file system. The path can be an
-        /// S3 bucket or prefix in the format <code>s3://myBucket/myPrefix</code> (where <code>myPrefix</code>
+        /// S3 bucket or prefix in the format <c>s3://myBucket/myPrefix</c> (where <c>myPrefix</c>
         /// is optional). 
         /// </para>
         ///  </li> <li> 
@@ -196,7 +196,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// Defines whether or not Amazon FSx provides a CompletionReport once the task has completed.
         /// A CompletionReport provides a detailed report on the files that Amazon FSx processed
-        /// that meet the criteria specified by the <code>Scope</code> parameter. For more information,
+        /// that meet the criteria specified by the <c>Scope</c> parameter. For more information,
         /// see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/task-completion-report.html">Working
         /// with Task Completion Reports</a>.
         /// </para>
@@ -237,24 +237,24 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>EXPORT_TO_REPOSITORY</code> tasks export from your Amazon FSx for Lustre file
-        /// system to a linked data repository.
+        ///  <c>EXPORT_TO_REPOSITORY</c> tasks export from your Amazon FSx for Lustre file system
+        /// to a linked data repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from a
-        /// linked S3 bucket to your Amazon FSx for Lustre file system.
+        ///  <c>IMPORT_METADATA_FROM_REPOSITORY</c> tasks import metadata changes from a linked
+        /// S3 bucket to your Amazon FSx for Lustre file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks release files in your Amazon FSx
-        /// for Lustre file system that have been exported to a linked S3 bucket and that meet
-        /// your specified release criteria.
+        ///  <c>RELEASE_DATA_FROM_FILESYSTEM</c> tasks release files in your Amazon FSx for Lustre
+        /// file system that have been exported to a linked S3 bucket and that meet your specified
+        /// release criteria.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File
-        /// Cache resource.
+        ///  <c>AUTO_RELEASE_DATA</c> tasks automatically release files from an Amazon File Cache
+        /// resource.
         /// </para>
         ///  </li> </ul>
         /// </summary>

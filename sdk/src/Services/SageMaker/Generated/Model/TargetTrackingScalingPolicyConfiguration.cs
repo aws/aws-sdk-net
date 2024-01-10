@@ -35,7 +35,7 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// When using the <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html">PutScalingPolicy</a>
     /// API, this parameter is required when you are creating a policy with the policy type
-    /// <code>TargetTrackingScaling</code>.
+    /// <c>TargetTrackingScaling</c>.
     /// </para>
     /// </summary>
     public partial class TargetTrackingScalingPolicyConfiguration

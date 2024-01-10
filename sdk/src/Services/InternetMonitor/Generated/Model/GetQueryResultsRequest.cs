@@ -31,7 +31,7 @@ namespace Amazon.InternetMonitor.Model
     /// <summary>
     /// Container for the parameters to the GetQueryResults operation.
     /// Return the data for a query with the Amazon CloudWatch Internet Monitor query interface.
-    /// Specify the query that you want to return results for by providing a <code>QueryId</code>
+    /// Specify the query that you want to return results for by providing a <c>QueryId</c>
     /// and a monitor name.
     /// 
     ///  
@@ -107,8 +107,8 @@ namespace Amazon.InternetMonitor.Model
         /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
-        /// The ID of the query that you want to return data results for. A <code>QueryId</code>
-        /// is an internally-generated identifier for a specific query.
+        /// The ID of the query that you want to return data results for. A <c>QueryId</c> is
+        /// an internally-generated identifier for a specific query.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

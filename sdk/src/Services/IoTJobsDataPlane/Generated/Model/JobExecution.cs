@@ -49,7 +49,7 @@ namespace Amazon.IoTJobsDataPlane.Model
         /// Gets and sets the property ApproximateSecondsBeforeTimedOut. 
         /// <para>
         /// The estimated number of seconds that remain before the job execution status will be
-        /// changed to <code>TIMED_OUT</code>.
+        /// changed to <c>TIMED_OUT</c>.
         /// </para>
         /// </summary>
         public long ApproximateSecondsBeforeTimedOut

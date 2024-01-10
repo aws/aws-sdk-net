@@ -78,7 +78,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property UnprocessedIdentifiers. 
         /// <para>
-        /// A unprocessed list of <code>FeatureGroup</code> names, with their corresponding <code>RecordIdentifier</code>
+        /// A unprocessed list of <c>FeatureGroup</c> names, with their corresponding <c>RecordIdentifier</c>
         /// value, and Feature name.
         /// </para>
         /// </summary>

@@ -60,7 +60,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property LatestUpdateAttemptStatus. 
         /// <para>
         /// The status of the parallel data update attempt. When the updated parallel data resource
-        /// is ready for you to use, the status is <code>ACTIVE</code>.
+        /// is ready for you to use, the status is <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         public ParallelDataStatus LatestUpdateAttemptStatus
@@ -98,7 +98,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the parallel data resource that you are attempting to update. Your update
-        /// request is accepted only if this status is either <code>ACTIVE</code> or <code>FAILED</code>.
+        /// request is accepted only if this status is either <c>ACTIVE</c> or <c>FAILED</c>.
         /// </para>
         /// </summary>
         public ParallelDataStatus Status

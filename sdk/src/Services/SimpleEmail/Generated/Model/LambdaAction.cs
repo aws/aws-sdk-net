@@ -57,7 +57,7 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property FunctionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon Web Services Lambda function. An example
-        /// of an Amazon Web Services Lambda function ARN is <code>arn:aws:lambda:us-west-2:account-id:function:MyFunction</code>.
+        /// of an Amazon Web Services Lambda function ARN is <c>arn:aws:lambda:us-west-2:account-id:function:MyFunction</c>.
         /// For more information about Amazon Web Services Lambda, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/welcome.html">Amazon
         /// Web Services Lambda Developer Guide</a>.
         /// </para>
@@ -79,18 +79,17 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property InvocationType. 
         /// <para>
         /// The invocation type of the Amazon Web Services Lambda function. An invocation type
-        /// of <code>RequestResponse</code> means that the execution of the function immediately
-        /// results in a response, and a value of <code>Event</code> means that the function is
-        /// invoked asynchronously. The default value is <code>Event</code>. For information about
-        /// Amazon Web Services Lambda invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon
+        /// of <c>RequestResponse</c> means that the execution of the function immediately results
+        /// in a response, and a value of <c>Event</c> means that the function is invoked asynchronously.
+        /// The default value is <c>Event</c>. For information about Amazon Web Services Lambda
+        /// invocation types, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_Invoke.html">Amazon
         /// Web Services Lambda Developer Guide</a>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// There is a 30-second timeout on <code>RequestResponse</code> invocations. You should
-        /// use <code>Event</code> invocation in most cases. Use <code>RequestResponse</code>
-        /// only to make a mail flow decision, such as whether to stop the receipt rule or the
-        /// receipt rule set.
+        /// There is a 30-second timeout on <c>RequestResponse</c> invocations. You should use
+        /// <c>Event</c> invocation in most cases. Use <c>RequestResponse</c> only to make a mail
+        /// flow decision, such as whether to stop the receipt rule or the receipt rule set.
         /// </para>
         ///  </important>
         /// </summary>

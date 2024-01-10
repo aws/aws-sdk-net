@@ -35,8 +35,8 @@ namespace Amazon.QLDB.Model
     ///  
     /// <para>
     /// If deletion protection is enabled, you must first disable it before you can delete
-    /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-    /// to set this parameter to <code>false</code>.
+    /// the ledger. You can disable it by calling the <c>UpdateLedger</c> operation to set
+    /// this parameter to <c>false</c>.
     /// </para>
     /// </summary>
     public partial class DeleteLedgerRequest : AmazonQLDBRequest

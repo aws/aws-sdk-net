@@ -37,9 +37,8 @@ namespace Amazon.ElasticLoadBalancing.Model
     /// 
     ///  
     /// <para>
-    /// Each time you use <code>SetLoadBalancerPoliciesForBackendServer</code> to enable the
-    /// policies, use the <code>PolicyNames</code> parameter to list the policies that you
-    /// want to enable.
+    /// Each time you use <c>SetLoadBalancerPoliciesForBackendServer</c> to enable the policies,
+    /// use the <c>PolicyNames</c> parameter to list the policies that you want to enable.
     /// </para>
     ///  
     /// <para>

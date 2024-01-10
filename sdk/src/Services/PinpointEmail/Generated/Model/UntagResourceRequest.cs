@@ -65,10 +65,9 @@ namespace Amazon.PinpointEmail.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove more than one tag from the resource, append the <code>TagKeys</code> parameter
+        /// To remove more than one tag from the resource, append the <c>TagKeys</c> parameter
         /// and argument for each additional tag to remove, separated by an ampersand. For example:
-        /// <code>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</code>
-        /// 
+        /// <c>/v1/email/tags?ResourceArn=ResourceArn&amp;TagKeys=Key1&amp;TagKeys=Key2</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

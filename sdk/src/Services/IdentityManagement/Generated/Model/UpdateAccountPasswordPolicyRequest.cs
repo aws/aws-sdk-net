@@ -69,7 +69,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>false</code>. The result is that IAM users in the account do not automatically
+        /// value of <c>false</c>. The result is that IAM users in the account do not automatically
         /// have permissions to change their own password.
         /// </para>
         /// </summary>
@@ -95,16 +95,16 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>false</code>. The result is that IAM users can change their passwords
-        /// after they expire and continue to sign in as the user.
+        /// value of <c>false</c>. The result is that IAM users can change their passwords after
+        /// they expire and continue to sign in as the user.
         /// </para>
         ///  <note> 
         /// <para>
         ///  In the Amazon Web Services Management Console, the custom password policy option
-        /// <b>Allow users to change their own password</b> gives IAM users permissions to <code>iam:ChangePassword</code>
-        /// for only their user and to the <code>iam:GetAccountPasswordPolicy</code> action. This
-        /// option does not attach a permissions policy to each user, rather the permissions are
-        /// applied at the account-level for all users by IAM. IAM users with <code>iam:ChangePassword</code>
+        /// <b>Allow users to change their own password</b> gives IAM users permissions to <c>iam:ChangePassword</c>
+        /// for only their user and to the <c>iam:GetAccountPasswordPolicy</c> action. This option
+        /// does not attach a permissions policy to each user, rather the permissions are applied
+        /// at the account-level for all users by IAM. IAM users with <c>iam:ChangePassword</c>
         /// permission and active access keys can reset their own expired console password using
         /// the CLI or API.
         /// </para>
@@ -130,7 +130,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>0</code>. The result is that IAM user passwords never expire.
+        /// value of <c>0</c>. The result is that IAM user passwords never expire.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1095)]
@@ -154,7 +154,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>6</code>.
+        /// value of <c>6</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=6, Max=128)]
@@ -178,8 +178,8 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>0</code>. The result is that IAM users are not prevented from reusing
-        /// previous passwords.
+        /// value of <c>0</c>. The result is that IAM users are not prevented from reusing previous
+        /// passwords.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=24)]
@@ -204,8 +204,8 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>false</code>. The result is that passwords do not require at least
-        /// one lowercase character.
+        /// value of <c>false</c>. The result is that passwords do not require at least one lowercase
+        /// character.
         /// </para>
         /// </summary>
         public bool RequireLowercaseCharacters
@@ -229,8 +229,8 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>false</code>. The result is that passwords do not require at least
-        /// one numeric character.
+        /// value of <c>false</c>. The result is that passwords do not require at least one numeric
+        /// character.
         /// </para>
         /// </summary>
         public bool RequireNumbers
@@ -258,8 +258,8 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>false</code>. The result is that passwords do not require at least
-        /// one symbol character.
+        /// value of <c>false</c>. The result is that passwords do not require at least one symbol
+        /// character.
         /// </para>
         /// </summary>
         public bool RequireSymbols
@@ -283,8 +283,8 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// If you do not specify a value for this parameter, then the operation uses the default
-        /// value of <code>false</code>. The result is that passwords do not require at least
-        /// one uppercase character.
+        /// value of <c>false</c>. The result is that passwords do not require at least one uppercase
+        /// character.
         /// </para>
         /// </summary>
         public bool RequireUppercaseCharacters

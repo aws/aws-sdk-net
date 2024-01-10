@@ -93,7 +93,7 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This setting is required for requests that do not include the <code>RuleGroupARN</code>.
+        /// This setting is required for requests that do not include the <c>RuleGroupARN</c>.
         /// </para>
         ///  </note>
         /// </summary>

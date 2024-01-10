@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lex.Model
 {
     /// <summary>
-    /// The Content-Type header (<code>PostContent</code> API) has an invalid value.
+    /// The Content-Type header (<c>PostContent</c> API) has an invalid value.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

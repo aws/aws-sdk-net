@@ -30,8 +30,8 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDatasetContent operation.
-    /// Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query)
-    /// or a <code>containerAction</code> (executing a containerized application).
+    /// Creates the content of a dataset by applying a <c>queryAction</c> (a SQL query) or
+    /// a <c>containerAction</c> (executing a containerized application).
     /// </summary>
     public partial class CreateDatasetContentRequest : AmazonIoTAnalyticsRequest
     {
@@ -60,8 +60,8 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The version ID of the dataset content. To specify <code>versionId</code> for a dataset
-        /// content, the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+        /// The version ID of the dataset content. To specify <c>versionId</c> for a dataset content,
+        /// the dataset must use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
         /// filter.
         /// </para>
         /// </summary>

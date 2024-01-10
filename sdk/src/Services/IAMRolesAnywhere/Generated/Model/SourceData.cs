@@ -41,7 +41,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <para>
         ///  The root certificate of the Private Certificate Authority specified by this ARN is
         /// used in trust validation for temporary credential requests. Included for trust anchors
-        /// of type <code>AWS_ACM_PCA</code>. 
+        /// of type <c>AWS_ACM_PCA</c>. 
         /// </para>
         /// </summary>
         public string AcmPcaArn
@@ -60,7 +60,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Gets and sets the property X509CertificateData. 
         /// <para>
         /// The PEM-encoded data for the certificate anchor. Included for trust anchors of type
-        /// <code>CERTIFICATE_BUNDLE</code>. 
+        /// <c>CERTIFICATE_BUNDLE</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8000)]

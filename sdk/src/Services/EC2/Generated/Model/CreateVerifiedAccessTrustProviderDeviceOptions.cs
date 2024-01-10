@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Describes the options when creating an Amazon Web Services Verified Access trust provider
-    /// using the <code>device</code> type.
+    /// using the <c>device</c> type.
     /// </summary>
     public partial class CreateVerifiedAccessTrustProviderDeviceOptions
     {

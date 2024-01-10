@@ -114,8 +114,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property S3PutObjectAcl. 
         /// <para>
-        /// Directs the specified job to run a <code>PutObjectAcl</code> call on every object
-        /// in the manifest.
+        /// Directs the specified job to run a <c>PutObjectAcl</c> call on every object in the
+        /// manifest.
         /// </para>
         ///  <note> 
         /// <para>
@@ -210,8 +210,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property S3ReplicateObject. 
         /// <para>
-        /// Directs the specified job to invoke <code>ReplicateObject</code> on every object in
-        /// the job's manifest.
+        /// Directs the specified job to invoke <c>ReplicateObject</c> on every object in the
+        /// job's manifest.
         /// </para>
         ///  <note> 
         /// <para>

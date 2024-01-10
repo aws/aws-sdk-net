@@ -41,11 +41,11 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// If the scaling event succeeds, the value of the <code>StatusCode</code> element in
-    /// the response is <code>Successful</code>. If an attempt to launch instances failed,
-    /// the <code>StatusCode</code> value is <code>Failed</code> or <code>Cancelled</code>
-    /// and the <code>StatusMessage</code> element in the response indicates the cause of
-    /// the failure. For help interpreting the <code>StatusMessage</code>, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
+    /// If the scaling event succeeds, the value of the <c>StatusCode</c> element in the response
+    /// is <c>Successful</c>. If an attempt to launch instances failed, the <c>StatusCode</c>
+    /// value is <c>Failed</c> or <c>Cancelled</c> and the <c>StatusMessage</c> element in
+    /// the response indicates the cause of the failure. For help interpreting the <c>StatusMessage</c>,
+    /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/CHAP_Troubleshooting.html">Troubleshooting
     /// Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>. 
     /// </para>
     /// </summary>
@@ -122,8 +122,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of items to return with this call. The default value is <code>100</code>
-        /// and the maximum value is <code>100</code>.
+        /// The maximum number of items to return with this call. The default value is <c>100</c>
+        /// and the maximum value is <c>100</c>.
         /// </para>
         /// </summary>
         public int MaxRecords

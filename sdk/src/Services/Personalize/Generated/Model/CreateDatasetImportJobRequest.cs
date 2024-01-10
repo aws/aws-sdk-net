@@ -67,8 +67,7 @@ namespace Amazon.Personalize.Model
     /// To get the status of the import job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>,
     /// providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import
     /// is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED,
-    /// the response includes a <code>failureReason</code> key, which describes why the job
-    /// failed.
+    /// the response includes a <c>failureReason</c> key, which describes why the job failed.
     /// </para>
     ///  <note> 
     /// <para>
@@ -143,19 +142,18 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property ImportMode. 
         /// <para>
         /// Specify how to add the new records to an existing dataset. The default import mode
-        /// is <code>FULL</code>. If you haven't imported bulk records into the dataset previously,
-        /// you can only specify <code>FULL</code>.
+        /// is <c>FULL</c>. If you haven't imported bulk records into the dataset previously,
+        /// you can only specify <c>FULL</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify <code>FULL</code> to overwrite all existing bulk data in your dataset. Data
-        /// you imported individually is not replaced.
+        /// Specify <c>FULL</c> to overwrite all existing bulk data in your dataset. Data you
+        /// imported individually is not replaced.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <code>INCREMENTAL</code> to append the new records to the existing data in
-        /// your dataset. Amazon Personalize replaces any record with the same ID with the new
-        /// one.
+        /// Specify <c>INCREMENTAL</c> to append the new records to the existing data in your
+        /// dataset. Amazon Personalize replaces any record with the same ID with the new one.
         /// </para>
         ///  </li> </ul>
         /// </summary>

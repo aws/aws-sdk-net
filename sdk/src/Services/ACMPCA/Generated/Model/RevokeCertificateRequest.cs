@@ -37,8 +37,8 @@ namespace Amazon.ACMPCA.Model
     /// typically updated approximately 30 minutes after a certificate is revoked. If for
     /// any reason the CRL update fails, Amazon Web Services Private CA attempts makes further
     /// attempts every 15 minutes. With Amazon CloudWatch, you can create alarms for the metrics
-    /// <code>CRLGenerated</code> and <code>MisconfiguredCRLBucket</code>. For more information,
-    /// see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html">Supported
+    /// <c>CRLGenerated</c> and <c>MisconfiguredCRLBucket</c>. For more information, see <a
+    /// href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaCloudWatch.html">Supported
     /// CloudWatch Metrics</a>.
     /// 
     ///  <note> 
@@ -74,8 +74,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code> 
+        ///  <c>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=200)]
@@ -103,7 +103,7 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>openssl x509 -in <i>file_path</i> -text -noout</code> 
+        ///  <c>openssl x509 -in <i>file_path</i> -text -noout</c> 
         /// </para>
         ///  
         /// <para>

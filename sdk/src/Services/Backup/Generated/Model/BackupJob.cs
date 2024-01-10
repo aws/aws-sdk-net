@@ -103,9 +103,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code>
-        /// backup option and create a Windows VSS backup. Set to <code>"WindowsVSS":"disabled"</code>
-        /// to create a regular backup. If you specify an invalid option, you get an <code>InvalidParameterValueException</code>
+        /// Valid values: Set to <c>"WindowsVSS":"enabled"</c> to enable the <c>WindowsVSS</c>
+        /// backup option and create a Windows VSS backup. Set to <c>"WindowsVSS":"disabled"</c>
+        /// to create a regular backup. If you specify an invalid option, you get an <c>InvalidParameterValueException</c>
         /// exception.
         /// </para>
         /// </summary>
@@ -161,7 +161,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup vault; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         public string BackupVaultArn
@@ -219,7 +219,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CompletionDate. 
         /// <para>
         /// The date and time a job to create a backup job is completed, in Unix format and Coordinated
-        /// Universal Time (UTC). The value of <code>CompletionDate</code> is accurate to milliseconds.
+        /// Universal Time (UTC). The value of <c>CompletionDate</c> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.
         /// </para>
@@ -240,8 +240,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatedBy. 
         /// <para>
         /// Contains identifying information about the creation of a backup job, including the
-        /// <code>BackupPlanArn</code>, <code>BackupPlanId</code>, <code>BackupPlanVersion</code>,
-        /// and <code>BackupRuleId</code> of the backup plan used to create it.
+        /// <c>BackupPlanArn</c>, <c>BackupPlanId</c>, <c>BackupPlanVersion</c>, and <c>BackupRuleId</c>
+        /// of the backup plan used to create it.
         /// </para>
         /// </summary>
         public RecoveryPointCreator CreatedBy
@@ -260,9 +260,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time a backup job is created, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM.
+        /// Time (UTC). The value of <c>CreationDate</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -281,7 +280,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property ExpectedCompletionDate. 
         /// <para>
         /// The date and time a job to back up resources is expected to be completed, in Unix
-        /// format and Coordinated Universal Time (UTC). The value of <code>ExpectedCompletionDate</code>
+        /// format and Coordinated Universal Time (UTC). The value of <c>ExpectedCompletionDate</c>
         /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
@@ -302,8 +301,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// Specifies the IAM role ARN used to create the target recovery point. IAM roles other
-        /// than the default role must include either <code>AWSBackup</code> or <code>AwsBackup</code>
-        /// in the role name. For example, <code>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</code>.
+        /// than the default role must include either <c>AWSBackup</c> or <c>AwsBackup</c> in
+        /// the role name. For example, <c>arn:aws:iam::123456789012:role/AWSBackupRDSAccess</c>.
         /// Role names without those strings lack permissions to perform backup jobs.
         /// </para>
         /// </summary>
@@ -362,8 +361,8 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Example strings may include <code>AccessDenied</code>, <code>SUCCESS</code>, <code>AGGREGATE_ALL</code>,
-        /// and <code>INVALIDPARAMETERS</code>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
+        /// Example strings may include <c>AccessDenied</c>, <c>SUCCESS</c>, <c>AGGREGATE_ALL</c>,
+        /// and <c>INVALIDPARAMETERS</c>. See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
         /// for a list of MessageCategory strings.
         /// </para>
         ///  
@@ -372,7 +371,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts for all message categories and returns
         /// the sum.
         /// </para>
         /// </summary>
@@ -429,7 +428,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
-        /// An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// An ARN that uniquely identifies a recovery point; for example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         public string RecoveryPointArn
@@ -508,9 +507,9 @@ namespace Amazon.Backup.Model
         /// Specifies the time in Unix format and Coordinated Universal Time (UTC) when a backup
         /// job must be started before it is canceled. The value is calculated by adding the start
         /// window to the scheduled time. So if the scheduled time were 6:00 PM and the start
-        /// window is 2 hours, the <code>StartBy</code> time would be 8:00 PM on the date specified.
-        /// The value of <code>StartBy</code> is accurate to milliseconds. For example, the value
-        /// 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
+        /// window is 2 hours, the <c>StartBy</c> time would be 8:00 PM on the date specified.
+        /// The value of <c>StartBy</c> is accurate to milliseconds. For example, the value 1516925490.087
+        /// represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime StartBy

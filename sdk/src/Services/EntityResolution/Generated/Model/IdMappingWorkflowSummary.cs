@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EntityResolution.Model
 {
     /// <summary>
-    /// A list of <code>IdMappingWorkflowSummary</code> objects, each of which contain the
-    /// fields <code>WorkflowName</code>, <code>WorkflowArn</code>, <code>CreatedAt</code>,
-    /// and <code>UpdatedAt</code>.
+    /// A list of <c>IdMappingWorkflowSummary</c> objects, each of which contain the fields
+    /// <c>WorkflowName</c>, <c>WorkflowArn</c>, <c>CreatedAt</c>, and <c>UpdatedAt</c>.
     /// </summary>
     public partial class IdMappingWorkflowSummary
     {
@@ -81,7 +80,7 @@ namespace Amazon.EntityResolution.Model
         /// <summary>
         /// Gets and sets the property WorkflowArn. 
         /// <para>
-        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <code>IdMappingWorkflow</code>.
+        /// The ARN (Amazon Resource Name) that Entity Resolution generated for the <c>IdMappingWorkflow</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

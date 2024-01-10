@@ -53,7 +53,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{\"attributes\":{\"name1\":\"value2\"}}</code> 
+        ///  <c>{\"attributes\":{\"name1\":\"value2\"}}</c> 
         /// </para>
         ///  
         /// <para>
@@ -77,7 +77,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The expected version of the thing record in the registry. If the version of the record
         /// in the registry does not match the expected version specified in the request, the
-        /// <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.
+        /// <c>UpdateThing</c> request is rejected with a <c>VersionConflictException</c>.
         /// </para>
         /// </summary>
         public long ExpectedVersion

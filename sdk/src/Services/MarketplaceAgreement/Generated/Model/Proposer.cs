@@ -30,7 +30,7 @@ namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
     /// Details of the party proposing the agreement terms,. This is commonly the seller for
-    /// <code>PurchaseAgreement</code>.
+    /// <c>PurchaseAgreement</c>.
     /// </summary>
     public partial class Proposer
     {

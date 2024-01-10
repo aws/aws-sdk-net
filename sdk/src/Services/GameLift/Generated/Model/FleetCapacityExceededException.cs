@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// The specified fleet has no available instances to fulfill a <code>CreateGameSession</code>
+    /// The specified fleet has no available instances to fulfill a <c>CreateGameSession</c>
     /// request. Clients can retry such requests immediately or after a waiting period.
     /// </summary>
     #if !NETSTANDARD

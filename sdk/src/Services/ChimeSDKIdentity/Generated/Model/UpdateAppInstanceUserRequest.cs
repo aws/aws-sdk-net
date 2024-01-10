@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAppInstanceUser operation.
-    /// Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
+    /// Updates the details of an <c>AppInstanceUser</c>. You can update names and metadata.
     /// </summary>
     public partial class UpdateAppInstanceUserRequest : AmazonChimeSDKIdentityRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Metadata. 
         /// <para>
-        /// The metadata of the <code>AppInstanceUser</code>.
+        /// The metadata of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
@@ -79,7 +79,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>AppInstanceUser</code>.
+        /// The name of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]

@@ -42,10 +42,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ForceFailover. 
         /// <para>
-        /// If this parameter is <code>true</code>, the reboot is conducted through a Multi-AZ
-        /// failover. If the instance isn't configured for Multi-AZ, then you can't specify <code>true</code>.
-        /// ( <code>--force-planned-failover</code> and <code>--force-failover</code> can't both
-        /// be set to <code>true</code>.)
+        /// If this parameter is <c>true</c>, the reboot is conducted through a Multi-AZ failover.
+        /// If the instance isn't configured for Multi-AZ, then you can't specify <c>true</c>.
+        /// ( <c>--force-planned-failover</c> and <c>--force-failover</c> can't both be set to
+        /// <c>true</c>.)
         /// </para>
         /// </summary>
         public bool ForceFailover
@@ -63,11 +63,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ForcePlannedFailover. 
         /// <para>
-        /// If this parameter is <code>true</code>, the reboot is conducted through a planned
-        /// Multi-AZ failover where resources are released and cleaned up prior to conducting
-        /// the failover. If the instance isn''t configured for Multi-AZ, then you can't specify
-        /// <code>true</code>. ( <code>--force-planned-failover</code> and <code>--force-failover</code>
-        /// can't both be set to <code>true</code>.)
+        /// If this parameter is <c>true</c>, the reboot is conducted through a planned Multi-AZ
+        /// failover where resources are released and cleaned up prior to conducting the failover.
+        /// If the instance isn''t configured for Multi-AZ, then you can't specify <c>true</c>.
+        /// ( <c>--force-planned-failover</c> and <c>--force-failover</c> can't both be set to
+        /// <c>true</c>.)
         /// </para>
         /// </summary>
         public bool ForcePlannedFailover

@@ -48,9 +48,9 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Defines the type of time for the retention period of an FSx for ONTAP SnapLock volume.
-        /// Set it to one of the valid types. If you set it to <code>INFINITE</code>, the files
-        /// are retained forever. If you set it to <code>UNSPECIFIED</code>, the files are retained
-        /// until you set an explicit retention period. 
+        /// Set it to one of the valid types. If you set it to <c>INFINITE</c>, the files are
+        /// retained forever. If you set it to <c>UNSPECIFIED</c>, the files are retained until
+        /// you set an explicit retention period. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -70,32 +70,32 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// Defines the amount of time for the retention period of an FSx for ONTAP SnapLock volume.
-        /// You can't set a value for <code>INFINITE</code> or <code>UNSPECIFIED</code>. For all
-        /// other options, the following ranges are valid: 
+        /// You can't set a value for <c>INFINITE</c> or <c>UNSPECIFIED</c>. For all other options,
+        /// the following ranges are valid: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Seconds</code>: 0 - 65,535
+        ///  <c>Seconds</c>: 0 - 65,535
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Minutes</code>: 0 - 65,535
+        ///  <c>Minutes</c>: 0 - 65,535
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Hours</code>: 0 - 24
+        ///  <c>Hours</c>: 0 - 24
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Days</code>: 0 - 365
+        ///  <c>Days</c>: 0 - 365
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Months</code>: 0 - 12
+        ///  <c>Months</c>: 0 - 12
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Years</code>: 0 - 100
+        ///  <c>Years</c>: 0 - 100
         /// </para>
         ///  </li> </ul>
         /// </summary>

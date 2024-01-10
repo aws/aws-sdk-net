@@ -54,8 +54,8 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property AdjustmentType. 
         /// <para>
         /// Specifies how the scaling adjustment is interpreted (for example, an absolute number
-        /// or a percentage). The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>,
-        /// and <code>PercentChangeInCapacity</code>.
+        /// or a percentage). The valid values are <c>ChangeInCapacity</c>, <c>ExactCapacity</c>,
+        /// and <c>PercentChangeInCapacity</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -129,7 +129,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether the policy is enabled (<code>true</code>) or disabled (<code>false</code>).
+        /// Indicates whether the policy is enabled (<c>true</c>) or disabled (<c>false</c>).
         /// </para>
         /// </summary>
         public bool Enabled
@@ -166,8 +166,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetricAggregationType. 
         /// <para>
-        /// The aggregation type for the CloudWatch metrics. The valid values are <code>Minimum</code>,
-        /// <code>Maximum</code>, and <code>Average</code>.
+        /// The aggregation type for the CloudWatch metrics. The valid values are <c>Minimum</c>,
+        /// <c>Maximum</c>, and <c>Average</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -186,7 +186,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentMagnitude. 
         /// <para>
-        /// The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>.
+        /// The minimum value to scale by when the adjustment type is <c>PercentChangeInCapacity</c>.
         /// 
         /// </para>
         /// </summary>
@@ -205,7 +205,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MinAdjustmentStep. 
         /// <para>
-        /// Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code> instead.
+        /// Available for backward compatibility. Use <c>MinAdjustmentMagnitude</c> instead.
         /// </para>
         /// </summary>
         public int MinAdjustmentStep
@@ -265,19 +265,19 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TargetTrackingScaling</code> 
+        ///  <c>TargetTrackingScaling</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StepScaling</code> 
+        ///  <c>StepScaling</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SimpleScaling</code> (default)
+        ///  <c>SimpleScaling</c> (default)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PredictiveScaling</code> 
+        ///  <c>PredictiveScaling</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

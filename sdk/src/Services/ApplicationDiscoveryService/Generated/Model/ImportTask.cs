@@ -294,9 +294,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the import task. An import can have the status of <code>IMPORT_COMPLETE</code>
+        /// The status of the import task. An import can have the status of <c>IMPORT_COMPLETE</c>
         /// and still have some records fail to import from the overall request. More information
-        /// can be found in the downloadable archive defined in the <code>errorsAndFailedEntriesZip</code>
+        /// can be found in the downloadable archive defined in the <c>errorsAndFailedEntriesZip</c>
         /// field, or in the Migration Hub management console.
         /// </para>
         /// </summary>

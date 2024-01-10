@@ -100,7 +100,7 @@ namespace Amazon.Connect.Model
         /// Gets and sets the property IsDefault. 
         /// <para>
         /// Whether this is the default traffic distribution group created during instance replication.
-        /// The default traffic distribution group cannot be deleted by the <code>DeleteTrafficDistributionGroup</code>
+        /// The default traffic distribution group cannot be deleted by the <c>DeleteTrafficDistributionGroup</c>
         /// API. The default traffic distribution group is deleted as part of the process for
         /// deleting a replica.
         /// </para>
@@ -143,32 +143,32 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATION_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a>
+        ///  <c>CREATION_IN_PROGRESS</c> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a>
         /// operation is still in progress and has not yet completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a>
+        ///  <c>ACTIVE</c> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a>
         /// operation has succeeded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATION_FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a>
+        ///  <c>CREATION_FAILED</c> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_CreateTrafficDistributionGroup.html">CreateTrafficDistributionGroup</a>
         /// operation has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_DELETION</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
+        ///  <c>PENDING_DELETION</c> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
         /// operation is still in progress and has not yet completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETION_FAILED</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
+        ///  <c>DELETION_FAILED</c> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DeleteTrafficDistributionGroup.html">DeleteTrafficDistributionGroup</a>
         /// operation has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_IN_PROGRESS</code> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
+        ///  <c>UPDATE_IN_PROGRESS</c> means the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdateTrafficDistributionGroup.html">UpdateTrafficDistributionGroup</a>
         /// operation is still in progress and has not yet completed.
         /// </para>
         ///  </li> </ul>

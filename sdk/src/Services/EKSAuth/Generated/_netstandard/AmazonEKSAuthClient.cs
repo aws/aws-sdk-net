@@ -38,8 +38,8 @@ namespace Amazon.EKSAuth
     /// <summary>
     /// <para>Implementation for accessing EKSAuth</para>
     ///
-    /// The Amazon EKS Auth API and the <code>AssumeRoleForPodIdentity</code> action are only
-    /// used by the EKS Pod Identity Agent.
+    /// The Amazon EKS Auth API and the <c>AssumeRoleForPodIdentity</c> action are only used
+    /// by the EKS Pod Identity Agent.
     /// </summary>
     public partial class AmazonEKSAuthClient : AmazonServiceClient, IAmazonEKSAuth
     {
@@ -264,8 +264,8 @@ namespace Amazon.EKSAuth
 
 
         /// <summary>
-        /// The Amazon EKS Auth API and the <code>AssumeRoleForPodIdentity</code> action are only
-        /// used by the EKS Pod Identity Agent.
+        /// The Amazon EKS Auth API and the <c>AssumeRoleForPodIdentity</c> action are only used
+        /// by the EKS Pod Identity Agent.
         /// 
         ///  
         /// <para>

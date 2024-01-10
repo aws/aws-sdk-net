@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CoolOffPeriodExpiresOn. 
         /// <para>
         /// The date and time at which the compliance mode cooling-off period expires, in the
-        /// UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).
+        /// UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         /// </summary>
         public DateTime CoolOffPeriodExpiresOn
@@ -83,7 +83,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LockCreatedOn. 
         /// <para>
-        /// The date and time at which the snapshot was locked, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).
+        /// The date and time at which the snapshot was locked, in the UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         /// </summary>
         public DateTime LockCreatedOn
@@ -119,12 +119,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LockDurationStartTime. 
         /// <para>
-        /// The date and time at which the lock duration started, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).
+        /// The date and time at which the lock duration started, in the UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         ///  
         /// <para>
-        /// If you lock a snapshot that is in the <code>pending</code> state, the lock duration
-        /// starts only once the snapshot enters the <code>completed</code> state.
+        /// If you lock a snapshot that is in the <c>pending</c> state, the lock duration starts
+        /// only once the snapshot enters the <c>completed</c> state.
         /// </para>
         /// </summary>
         public DateTime LockDurationStartTime
@@ -142,7 +142,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LockExpiresOn. 
         /// <para>
-        /// The date and time at which the lock will expire, in the UTC time zone (<code>YYYY-MM-DDThh:mm:ss.sssZ</code>).
+        /// The date and time at which the lock will expire, in the UTC time zone (<c>YYYY-MM-DDThh:mm:ss.sssZ</c>).
         /// </para>
         /// </summary>
         public DateTime LockExpiresOn
@@ -164,27 +164,26 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>compliance-cooloff</code> - The snapshot has been locked in compliance mode
-        /// but it is still within the cooling-off period. The snapshot can't be deleted, but
-        /// it can be unlocked and the lock settings can be modified by users with appropriate
-        /// permissions.
+        ///  <c>compliance-cooloff</c> - The snapshot has been locked in compliance mode but it
+        /// is still within the cooling-off period. The snapshot can't be deleted, but it can
+        /// be unlocked and the lock settings can be modified by users with appropriate permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>governance</code> - The snapshot is locked in governance mode. The snapshot
-        /// can't be deleted, but it can be unlocked and the lock settings can be modified by
-        /// users with appropriate permissions.
+        ///  <c>governance</c> - The snapshot is locked in governance mode. The snapshot can't
+        /// be deleted, but it can be unlocked and the lock settings can be modified by users
+        /// with appropriate permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>compliance</code> - The snapshot is locked in compliance mode and the cooling-off
+        ///  <c>compliance</c> - The snapshot is locked in compliance mode and the cooling-off
         /// period has expired. The snapshot can't be unlocked or deleted. The lock duration can
         /// only be increased by users with appropriate permissions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>expired</code> - The snapshot was locked in compliance or governance mode but
-        /// the lock duration has expired. The snapshot is not locked and can be deleted.
+        ///  <c>expired</c> - The snapshot was locked in compliance or governance mode but the
+        /// lock duration has expired. The snapshot is not locked and can be deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,13 +30,13 @@ namespace Amazon.CostExplorer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCostCategoryDefinitions operation.
-    /// Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective
-    /// dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code>
+    /// Returns the name, Amazon Resource Name (ARN), <c>NumberOfRules</c> and effective dates
+    /// of all Cost Categories defined in the account. You have the option to use <c>EffectiveOn</c>
     /// to return a list of Cost Categories that were active on a specific date. If there
-    /// is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective
-    /// on the current date. If Cost Category is still effective, <code>EffectiveEnd</code>
-    /// is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination.
-    /// The request can have a <code>MaxResults</code> range up to 100.
+    /// is no <c>EffectiveOn</c> specified, you’ll see Cost Categories that are effective
+    /// on the current date. If Cost Category is still effective, <c>EffectiveEnd</c> is omitted
+    /// in the response. <c>ListCostCategoryDefinitions</c> supports pagination. The request
+    /// can have a <c>MaxResults</c> range up to 100.
     /// </summary>
     public partial class ListCostCategoryDefinitionsRequest : AmazonCostExplorerRequest
     {

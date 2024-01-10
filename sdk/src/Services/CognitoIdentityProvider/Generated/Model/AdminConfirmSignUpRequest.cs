@@ -82,8 +82,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// If your user pool configuration includes triggers, the AdminConfirmSignUp API action
         /// invokes the Lambda function that is specified for the <i>post confirmation</i> trigger.
         /// When Amazon Cognito invokes this function, it passes a JSON payload, which the function
-        /// receives as input. In this payload, the <code>clientMetadata</code> attribute provides
-        /// the data that you assigned to the ClientMetadata parameter in your AdminConfirmSignUp
+        /// receives as input. In this payload, the <c>clientMetadata</c> attribute provides the
+        /// data that you assigned to the ClientMetadata parameter in your AdminConfirmSignUp
         /// request. In your function code in Lambda, you can process the ClientMetadata value
         /// to enhance your workflow for your specific needs.
         /// </para>
@@ -131,8 +131,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

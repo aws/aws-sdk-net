@@ -61,7 +61,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// Amazon Resource Name (ARN) for your private certificate authority (CA). The format
-        /// is <code> <i>12345678-1234-1234-1234-123456789012</i> </code>.
+        /// is <c> <i>12345678-1234-1234-1234-123456789012</i> </c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=200)]
@@ -145,7 +145,7 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Note: Amazon Web Services Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER.
         /// You must explicitly specify this parameter and value when creating a CA in that Region.
-        /// Specifying a different value (or no value) results in an <code>InvalidArgsException</code>
+        /// Specifying a different value (or no value) results in an <c>InvalidArgsException</c>
         /// with the message "A certificate authority cannot be created in this region with the
         /// specified security standard."
         /// </para>
@@ -239,7 +239,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property RestorableUntil. 
         /// <para>
         /// The period during which a deleted CA can be restored. For more information, see the
-        /// <code>PermanentDeletionTimeInDays</code> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
+        /// <c>PermanentDeletionTimeInDays</c> parameter of the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html">DeleteCertificateAuthorityRequest</a>
         /// action. 
         /// </para>
         /// </summary>

@@ -61,8 +61,8 @@ namespace Amazon.TimestreamQuery.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  A pagination token that can be used again on a <code>Query</code> call to get the
-        /// next set of results. 
+        ///  A pagination token that can be used again on a <c>Query</c> call to get the next
+        /// set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

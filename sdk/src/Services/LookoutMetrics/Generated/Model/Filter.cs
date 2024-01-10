@@ -31,7 +31,7 @@ namespace Amazon.LookoutMetrics.Model
     /// <summary>
     /// Describes a filter for choosing a subset of dimension values. Each filter consists
     /// of the dimension that you want to include and the condition statement. The condition
-    /// statement is specified in the <code>FilterOperation</code> object.
+    /// statement is specified in the <c>FilterOperation</c> object.
     /// </summary>
     public partial class Filter
     {

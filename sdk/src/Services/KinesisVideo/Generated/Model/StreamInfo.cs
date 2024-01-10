@@ -122,7 +122,7 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property MediaType. 
         /// <para>
-        /// The <code>MediaType</code> of the stream. 
+        /// The <c>MediaType</c> of the stream. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

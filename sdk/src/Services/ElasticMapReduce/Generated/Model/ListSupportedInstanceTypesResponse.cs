@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SupportedInstanceTypes. 
         /// <para>
-        /// The list of instance types that the release specified in <code>ListSupportedInstanceTypesInput$ReleaseLabel</code>
+        /// The list of instance types that the release specified in <c>ListSupportedInstanceTypesInput$ReleaseLabel</c>
         /// supports, filtered by Amazon Web Services Region.
         /// </para>
         /// </summary>

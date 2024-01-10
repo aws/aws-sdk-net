@@ -61,8 +61,8 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property AmiType. 
         /// <para>
         /// If the node group was deployed using a launch template with a custom AMI, then this
-        /// is <code>CUSTOM</code>. For node groups that weren't deployed using a launch template,
-        /// this is the AMI type that was specified in the node group configuration.
+        /// is <c>CUSTOM</c>. For node groups that weren't deployed using a launch template, this
+        /// is the AMI type that was specified in the node group configuration.
         /// </para>
         /// </summary>
         public AMITypes AmiType
@@ -136,7 +136,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the disk size
         /// in the node group configuration. If the node group was deployed with a launch template,
-        /// then this is <code>null</code>.
+        /// then this is <c>null</c>.
         /// </para>
         /// </summary>
         public int DiskSize
@@ -175,7 +175,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the instance
         /// type that is associated with the node group. If the node group was deployed with a
-        /// launch template, then this is <code>null</code>.
+        /// launch template, then this is <c>null</c>.
         /// </para>
         /// </summary>
         public List<string> InstanceTypes
@@ -193,12 +193,12 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property Labels. 
         /// <para>
-        /// The Kubernetes <code>labels</code> applied to the nodes in the node group.
+        /// The Kubernetes <c>labels</c> applied to the nodes in the node group.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Only <code>labels</code> that are applied with the Amazon EKS API are shown here.
-        /// There may be other Kubernetes <code>labels</code> applied to the nodes in this group.
+        /// Only <c>labels</c> that are applied with the Amazon EKS API are shown here. There
+        /// may be other Kubernetes <c>labels</c> applied to the nodes in this group.
         /// </para>
         ///  </note>
         /// </summary>
@@ -290,8 +290,8 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property NodeRole. 
         /// <para>
-        /// The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code>
-        /// daemon makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions
+        /// The IAM role associated with your node group. The Amazon EKS node <c>kubelet</c> daemon
+        /// makes calls to Amazon Web Services APIs on your behalf. Nodes receive permissions
         /// for these API calls through an IAM instance profile and associated policies.
         /// </para>
         /// </summary>
@@ -333,7 +333,7 @@ namespace Amazon.EKS.Model
         /// <para>
         /// If the node group wasn't deployed with a launch template, then this is the remote
         /// access configuration that is associated with the node group. If the node group was
-        /// deployed with a launch template, then this is <code>null</code>.
+        /// deployed with a launch template, then this is <c>null</c>.
         /// </para>
         /// </summary>
         public RemoteAccessConfig RemoteAccess
@@ -448,7 +448,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property Taints. 
         /// <para>
         /// The Kubernetes taints to be applied to the nodes in the node group when they are created.
-        /// Effect is one of <code>No_Schedule</code>, <code>Prefer_No_Schedule</code>, or <code>No_Execute</code>.
+        /// Effect is one of <c>No_Schedule</c>, <c>Prefer_No_Schedule</c>, or <c>No_Execute</c>.
         /// Kubernetes taints can be used together with tolerations to control how workloads are
         /// scheduled to your nodes. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
         /// taints on managed node groups</a>.

@@ -31,10 +31,9 @@ namespace Amazon.QuickSight.Model
     /// <summary>
     /// Container for the parameters to the CreateAccountCustomization operation.
     /// Creates Amazon QuickSight customizations for the current Amazon Web Services Region.
-    /// Currently, you can add a custom default theme by using the <code>CreateAccountCustomization</code>
-    /// or <code>UpdateAccountCustomization</code> API operation. To further customize Amazon
-    /// QuickSight by removing Amazon QuickSight sample assets and videos for all new users,
-    /// see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
+    /// Currently, you can add a custom default theme by using the <c>CreateAccountCustomization</c>
+    /// or <c>UpdateAccountCustomization</c> API operation. To further customize Amazon QuickSight
+    /// by removing Amazon QuickSight sample assets and videos for all new users, see <a href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing
     /// Amazon QuickSight</a> in the <i>Amazon QuickSight User Guide.</i> 
     /// 
     ///  
@@ -42,19 +41,17 @@ namespace Amazon.QuickSight.Model
     /// You can create customizations for your Amazon Web Services account or, if you specify
     /// a namespace, for a QuickSight namespace instead. Customizations that apply to a namespace
     /// always override customizations that apply to an Amazon Web Services account. To find
-    /// out which customizations apply, use the <code>DescribeAccountCustomization</code>
-    /// API operation.
+    /// out which customizations apply, use the <c>DescribeAccountCustomization</c> API operation.
     /// </para>
     ///  
     /// <para>
-    /// Before you use the <code>CreateAccountCustomization</code> API operation to add a
-    /// theme as the namespace default, make sure that you first share the theme with the
-    /// namespace. If you don't share it with the namespace, the theme isn't visible to your
-    /// users even if you make it the default theme. To check if the theme is shared, view
-    /// the current permissions by using the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a>
-    /// </code> API operation. To share the theme, grant permissions by using the <code> <a
-    /// href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
-    /// </code> API operation. 
+    /// Before you use the <c>CreateAccountCustomization</c> API operation to add a theme
+    /// as the namespace default, make sure that you first share the theme with the namespace.
+    /// If you don't share it with the namespace, the theme isn't visible to your users even
+    /// if you make it the default theme. To check if the theme is shared, view the current
+    /// permissions by using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_DescribeThemePermissions.html">DescribeThemePermissions</a>
+    /// </c> API operation. To share the theme, grant permissions by using the <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateThemePermissions.html">UpdateThemePermissions</a>
+    /// </c> API operation. 
     /// </para>
     /// </summary>
     public partial class CreateAccountCustomizationRequest : AmazonQuickSightRequest
@@ -73,11 +70,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, you can add a default theme by setting <code>AccountCustomization</code>
-        /// to the midnight theme: <code>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT"
-        /// }</code>. Or, you can add a custom theme by specifying <code>"AccountCustomization":
-        /// { "DefaultTheme": "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
-        /// }</code>. 
+        /// For example, you can add a default theme by setting <c>AccountCustomization</c> to
+        /// the midnight theme: <c>"AccountCustomization": { "DefaultTheme": "arn:aws:quicksight::aws:theme/MIDNIGHT"
+        /// }</c>. Or, you can add a custom theme by specifying <c>"AccountCustomization": { "DefaultTheme":
+        /// "arn:aws:quicksight:us-west-2:111122223333:theme/bdb844d0-0fe9-4d9d-b520-0fe602d93639"
+        /// }</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

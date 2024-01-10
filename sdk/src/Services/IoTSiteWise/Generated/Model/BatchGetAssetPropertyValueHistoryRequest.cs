@@ -72,8 +72,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The number of data points in the result set is equal to the value of <code>maxResults</code>.
-        /// The maximum value of <code>maxResults</code> is 20000.
+        /// The number of data points in the result set is equal to the value of <c>maxResults</c>.
+        /// The maximum value of <c>maxResults</c> is 20000.
         /// </para>
         ///  </li> </ul>
         /// </summary>

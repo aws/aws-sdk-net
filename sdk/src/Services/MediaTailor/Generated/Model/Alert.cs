@@ -43,7 +43,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property AlertCode. 
         /// <para>
-        /// The code for the alert. For example, <code>NOT_PROCESSED</code>.
+        /// The code for the alert. For example, <c>NOT_PROCESSED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

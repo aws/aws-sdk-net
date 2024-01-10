@@ -48,7 +48,7 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property AppComponentName. 
         /// <para>
         /// Application Component name for the CloudWatch alarm recommendation. This name is saved
-        /// as the first item in the <code>appComponentNames</code> list.
+        /// as the first item in the <c>appComponentNames</c> list.
         /// </para>
         /// </summary>
         [Obsolete("An alarm recommendation can be attached to multiple Application Components, hence this property will be replaced by the new property 'appComponentNames'.")]

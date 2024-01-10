@@ -35,8 +35,8 @@ namespace Amazon.Comprehend.Model
     ///  
     /// <para>
     /// Only those recognizers that are in terminated states (IN_ERROR, TRAINED) will be deleted.
-    /// If an active inference job is using the model, a <code>ResourceInUseException</code>
-    /// will be returned.
+    /// If an active inference job is using the model, a <c>ResourceInUseException</c> will
+    /// be returned.
     /// </para>
     ///  
     /// <para>

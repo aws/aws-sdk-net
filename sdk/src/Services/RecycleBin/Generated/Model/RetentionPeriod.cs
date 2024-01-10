@@ -39,7 +39,7 @@ namespace Amazon.RecycleBin.Model
         /// <summary>
         /// Gets and sets the property RetentionPeriodUnit. 
         /// <para>
-        /// The unit of time in which the retention period is measured. Currently, only <code>DAYS</code>
+        /// The unit of time in which the retention period is measured. Currently, only <c>DAYS</c>
         /// is supported.
         /// </para>
         /// </summary>

@@ -46,9 +46,9 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique case-sensitive string used to ensure the request to create the query is idempotent
-        /// (executes only once). If another <code>CreateNamedQuery</code> request is received,
-        /// the same response is returned and another query is not created. If a parameter has
-        /// changed, for example, the <code>QueryString</code>, an error is returned.
+        /// (executes only once). If another <c>CreateNamedQuery</c> request is received, the
+        /// same response is returned and another query is not created. If a parameter has changed,
+        /// for example, the <c>QueryString</c>, an error is returned.
         /// </para>
         ///  <important> 
         /// <para>

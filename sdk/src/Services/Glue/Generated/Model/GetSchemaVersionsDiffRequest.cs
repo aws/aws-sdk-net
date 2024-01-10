@@ -68,7 +68,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaDiffType. 
         /// <para>
-        /// Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.
+        /// Refers to <c>SYNTAX_DIFF</c>, which is the currently supported diff type.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,12 +91,12 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code>
-        /// or <code>SchemaName</code> has to be provided.
+        /// SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <c>SchemaArn</c>
+        /// or <c>SchemaName</c> has to be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code>
+        /// SchemaId$SchemaName: The name of the schema. One of <c>SchemaArn</c> or <c>SchemaName</c>
         /// has to be provided.
         /// </para>
         ///  </li> </ul>

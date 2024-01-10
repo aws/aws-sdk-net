@@ -34,9 +34,9 @@ namespace Amazon.LexModelsV2.Model
     /// 
     ///  
     /// <para>
-    /// If a slot is using the slot type, Amazon Lex throws a <code>ResourceInUseException</code>
-    /// exception. To avoid the exception, set the <code>skipResourceInUseCheck</code> parameter
-    /// to <code>true</code>.
+    /// If a slot is using the slot type, Amazon Lex throws a <c>ResourceInUseException</c>
+    /// exception. To avoid the exception, set the <c>skipResourceInUseCheck</c> parameter
+    /// to <c>true</c>.
     /// </para>
     /// </summary>
     public partial class DeleteSlotTypeRequest : AmazonLexModelsV2Request
@@ -109,10 +109,10 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property SkipResourceInUseCheck. 
         /// <para>
-        /// By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code>
-        /// exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code>
-        /// parameter to <code>true</code> to skip this check and remove the slot type even if
-        /// a slot uses it.
+        /// By default, the <c>DeleteSlotType</c> operations throws a <c>ResourceInUseException</c>
+        /// exception if you try to delete a slot type used by a slot. Set the <c>skipResourceInUseCheck</c>
+        /// parameter to <c>true</c> to skip this check and remove the slot type even if a slot
+        /// uses it.
         /// </para>
         /// </summary>
         public bool SkipResourceInUseCheck

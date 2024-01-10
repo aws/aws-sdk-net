@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The returned release label application name. For example, <code>hadoop</code>.
+        /// The returned release label application name. For example, <c>hadoop</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The returned release label application version. For example, <code>3.2.1</code>.
+        /// The returned release label application version. For example, <c>3.2.1</c>.
         /// </para>
         /// </summary>
         public string Version

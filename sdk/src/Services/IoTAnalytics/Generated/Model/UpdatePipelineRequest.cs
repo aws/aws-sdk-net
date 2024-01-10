@@ -30,9 +30,9 @@ namespace Amazon.IoTAnalytics.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePipeline operation.
-    /// Updates the settings of a pipeline. You must specify both a <code>channel</code> and
-    /// a <code>datastore</code> activity and, optionally, as many as 23 additional activities
-    /// in the <code>pipelineActivities</code> array.
+    /// Updates the settings of a pipeline. You must specify both a <c>channel</c> and a <c>datastore</c>
+    /// activity and, optionally, as many as 23 additional activities in the <c>pipelineActivities</c>
+    /// array.
     /// </summary>
     public partial class UpdatePipelineRequest : AmazonIoTAnalyticsRequest
     {
@@ -42,21 +42,20 @@ namespace Amazon.IoTAnalytics.Model
         /// <summary>
         /// Gets and sets the property PipelineActivities. 
         /// <para>
-        /// A list of <code>PipelineActivity</code> objects. Activities perform transformations
-        /// on your messages, such as removing, renaming or adding message attributes; filtering
-        /// messages based on attribute values; invoking your Lambda functions on messages for
-        /// advanced processing; or performing mathematical transformations to normalize device
-        /// data.
+        /// A list of <c>PipelineActivity</c> objects. Activities perform transformations on your
+        /// messages, such as removing, renaming or adding message attributes; filtering messages
+        /// based on attribute values; invoking your Lambda functions on messages for advanced
+        /// processing; or performing mathematical transformations to normalize device data.
         /// </para>
         ///  
         /// <para>
-        /// The list can be 2-25 <code>PipelineActivity</code> objects and must contain both a
-        /// <code>channel</code> and a <code>datastore</code> activity. Each entry in the list
-        /// must contain only one activity. For example:
+        /// The list can be 2-25 <c>PipelineActivity</c> objects and must contain both a <c>channel</c>
+        /// and a <c>datastore</c> activity. Each entry in the list must contain only one activity.
+        /// For example:
         /// </para>
         ///  
         /// <para>
-        ///  <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</code>
+        ///  <c>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ... ]</c>
         /// 
         /// </para>
         /// </summary>

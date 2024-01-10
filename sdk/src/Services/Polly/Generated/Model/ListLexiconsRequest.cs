@@ -41,8 +41,8 @@ namespace Amazon.Polly.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque pagination token returned from previous <code>ListLexicons</code> operation.
-        /// If present, indicates where to continue the list of lexicons.
+        /// An opaque pagination token returned from previous <c>ListLexicons</c> operation. If
+        /// present, indicates where to continue the list of lexicons.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4096)]

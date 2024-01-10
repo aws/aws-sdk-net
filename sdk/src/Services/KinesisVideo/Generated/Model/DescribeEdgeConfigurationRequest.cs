@@ -30,7 +30,7 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeEdgeConfiguration operation.
-    /// Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code>
+    /// Describes a stream’s edge configuration that was set using the <c>StartEdgeConfigurationUpdate</c>
     /// API and the latest status of the edge agent's recorder and uploader jobs. Use this
     /// API to get the status of the configuration to determine if the configuration is in
     /// sync with the Edge Agent. Use this API to evaluate the health of the Edge Agent.
@@ -43,8 +43,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>or
-        /// the <code>StreamARN</code>.
+        /// The Amazon Resource Name (ARN) of the stream. Specify either the <c>StreamName</c>or
+        /// the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -64,7 +64,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream whose edge configuration you want to update. Specify either
-        /// the <code>StreamName</code> or the <code>StreamARN</code>. 
+        /// the <c>StreamName</c> or the <c>StreamARN</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

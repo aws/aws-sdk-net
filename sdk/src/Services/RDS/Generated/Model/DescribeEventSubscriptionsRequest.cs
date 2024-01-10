@@ -31,12 +31,12 @@ namespace Amazon.RDS.Model
     /// <summary>
     /// Container for the parameters to the DescribeEventSubscriptions operation.
     /// Lists all the subscription descriptions for a customer account. The description for
-    /// a subscription includes <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>,
-    /// <code>SourceType</code>, <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+    /// a subscription includes <c>SubscriptionName</c>, <c>SNSTopicARN</c>, <c>CustomerID</c>,
+    /// <c>SourceType</c>, <c>SourceID</c>, <c>CreationTime</c>, and <c>Status</c>.
     /// 
     ///  
     /// <para>
-    /// If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+    /// If you specify a <c>SubscriptionName</c>, lists the description for that subscription.
     /// </para>
     /// </summary>
     public partial class DescribeEventSubscriptionsRequest : AmazonRDSRequest
@@ -69,7 +69,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous DescribeOrderableDBInstanceOptions
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code> .
+        /// the marker, up to the value specified by <c>MaxRecords</c> .
         /// </para>
         /// </summary>
         public string Marker
@@ -88,8 +88,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that you can retrieve the remaining results.
         /// </para>
         ///  
         /// <para>

@@ -48,9 +48,9 @@ namespace Amazon.AppStream.Model
         /// <summary>
         /// Gets and sets the property AuthenticationType. 
         /// <para>
-        /// The authentication method. Specify <code>API</code> for a user authenticated using
-        /// a streaming URL or <code>SAML</code> for a SAML federated user. The default is to
-        /// authenticate users using a streaming URL.
+        /// The authentication method. Specify <c>API</c> for a user authenticated using a streaming
+        /// URL or <c>SAML</c> for a SAML federated user. The default is to authenticate users
+        /// using a streaming URL.
         /// </para>
         /// </summary>
         public AuthenticationType AuthenticationType

@@ -85,7 +85,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ActiveTrustedSigners. <important> 
         /// <para>
-        /// We recommend using <code>TrustedKeyGroups</code> instead of <code>TrustedSigners</code>.
+        /// We recommend using <c>TrustedKeyGroups</c> instead of <c>TrustedSigners</c>.
         /// </para>
         ///  </important> 
         /// <para>
@@ -174,7 +174,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// The distribution's CloudFront domain name. For example: <code>d111111abcdef8.cloudfront.net</code>.
+        /// The distribution's CloudFront domain name. For example: <c>d111111abcdef8.cloudfront.net</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -193,7 +193,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The distribution's identifier. For example: <code>E1U5RQF7T870K0</code>.
+        /// The distribution's identifier. For example: <c>E1U5RQF7T870K0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -250,7 +250,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The distribution's status. When the status is <code>Deployed</code>, the distribution's
+        /// The distribution's status. When the status is <c>Deployed</c>, the distribution's
         /// information is fully propagated to all CloudFront edge locations.
         /// </para>
         /// </summary>

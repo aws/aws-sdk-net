@@ -55,7 +55,7 @@ namespace Amazon.BedrockRuntime.Model
         /// Gets and sets the property Accept. 
         /// <para>
         /// The desired MIME type of the inference body in the response. The default value is
-        /// <code>application/json</code>.
+        /// <c>application/json</c>.
         /// </para>
         /// </summary>
         public string Accept
@@ -94,7 +94,7 @@ namespace Amazon.BedrockRuntime.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The MIME type of the input data in the request. The default value is <code>application/json</code>.
+        /// The MIME type of the input data in the request. The default value is <c>application/json</c>.
         /// </para>
         /// </summary>
         public string ContentType

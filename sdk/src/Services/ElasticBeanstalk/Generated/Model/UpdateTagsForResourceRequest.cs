@@ -31,7 +31,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the UpdateTagsForResource operation.
     /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
-    /// be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+    /// be passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
     /// 
     ///  
     /// <para>
@@ -46,13 +46,13 @@ namespace Amazon.ElasticBeanstalk.Model
     /// </para>
     ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
     /// <para>
-    /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
-    /// tags to add in the <code>TagsToAdd</code> parameter.
+    /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tags to
+    /// add in the <c>TagsToAdd</c> parameter.
     /// </para>
     ///  </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> 
     /// <para>
-    /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
-    /// tag keys to remove in the <code>TagsToRemove</code> parameter.
+    /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tag keys
+    /// to remove in the <c>TagsToRemove</c> parameter.
     /// </para>
     ///  </dd> </dl> 
     /// <para>
@@ -97,7 +97,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.
+        /// Specify at least one of these parameters: <c>TagsToAdd</c>, <c>TagsToRemove</c>.
         /// </para>
         /// </summary>
         public List<Tag> TagsToAdd
@@ -119,7 +119,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.
+        /// Specify at least one of these parameters: <c>TagsToAdd</c>, <c>TagsToRemove</c>.
         /// </para>
         /// </summary>
         public List<string> TagsToRemove

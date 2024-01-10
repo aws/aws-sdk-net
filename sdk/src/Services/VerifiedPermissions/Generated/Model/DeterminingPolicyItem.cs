@@ -40,8 +40,7 @@ namespace Amazon.VerifiedPermissions.Model
     /// </para>
     ///  
     /// <para>
-    /// Example: <code>"determiningPolicies":[{"policyId":"SPEXAMPLEabcdefg111111"}]</code>
-    /// 
+    /// Example: <c>"determiningPolicies":[{"policyId":"SPEXAMPLEabcdefg111111"}]</c> 
     /// </para>
     /// </summary>
     public partial class DeterminingPolicyItem
@@ -55,7 +54,7 @@ namespace Amazon.VerifiedPermissions.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>"policyId":"SPEXAMPLEabcdefg111111"</code> 
+        /// Example: <c>"policyId":"SPEXAMPLEabcdefg111111"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]

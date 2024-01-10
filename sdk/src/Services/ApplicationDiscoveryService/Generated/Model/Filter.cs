@@ -89,8 +89,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// A string value on which to filter. For example, if you choose the <code>destinationServer.osVersion</code>
-        /// filter name, you could specify <code>Ubuntu</code> for the value.
+        /// A string value on which to filter. For example, if you choose the <c>destinationServer.osVersion</c>
+        /// filter name, you could specify <c>Ubuntu</c> for the value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

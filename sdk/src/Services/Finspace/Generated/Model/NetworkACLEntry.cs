@@ -47,9 +47,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        ///  The IPv4 network range to allow or deny, in CIDR notation. For example, <code>172.16.0.0/24</code>.
+        ///  The IPv4 network range to allow or deny, in CIDR notation. For example, <c>172.16.0.0/24</c>.
         /// We modify the specified CIDR block to its canonical form. For example, if you specify
-        /// <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>. 
+        /// <c>100.68.0.18/18</c>, we modify it to <c>100.68.0.0/18</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=18)]

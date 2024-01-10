@@ -52,7 +52,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectory. 
         /// <para>
-        /// A <code>LaunchProfileInitializationActiveDirectory</code> resource.
+        /// A <c>LaunchProfileInitializationActiveDirectory</c> resource.
         /// </para>
         /// </summary>
         public LaunchProfileInitializationActiveDirectory ActiveDirectory

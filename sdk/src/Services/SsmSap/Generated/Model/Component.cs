@@ -412,7 +412,7 @@ namespace Amazon.SsmSap.Model
         /// <para>
         /// RUNNING_WITH_ERROR - one or more child component(s) of the parent component is not
         /// running. Call <a href="https://docs.aws.amazon.com/ssmsap/latest/APIReference/API_GetComponent.html">
-        /// <code>GetComponent</code> </a> to review the status of each child component.
+        /// <c>GetComponent</c> </a> to review the status of each child component.
         /// </para>
         ///  </li> <li> 
         /// <para>

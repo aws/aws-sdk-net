@@ -41,8 +41,8 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ChildShards. 
         /// <para>
-        /// The list of the current shard's child shards, returned in the <code>GetRecords</code>
-        /// API's response only when the end of the current shard is reached.
+        /// The list of the current shard's child shards, returned in the <c>GetRecords</c> API's
+        /// response only when the end of the current shard is reached.
         /// </para>
         /// </summary>
         public List<ChildShard> ChildShards
@@ -83,8 +83,8 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property NextShardIterator. 
         /// <para>
         /// The next position in the shard from which to start sequentially reading data records.
-        /// If set to <code>null</code>, the shard has been closed and the requested iterator
-        /// does not return any more data. 
+        /// If set to <c>null</c>, the shard has been closed and the requested iterator does not
+        /// return any more data. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

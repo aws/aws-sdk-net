@@ -38,7 +38,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Operations. 
         /// <para>
-        /// The available API operations for <code>SetupInstanceHttps</code>.
+        /// The available API operations for <c>SetupInstanceHttps</c>.
         /// </para>
         /// </summary>
         public List<Operation> Operations

@@ -40,7 +40,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriberId. 
         /// <para>
-        /// A value created by Amazon Security Lake that uniquely identifies your <code>GetSubscriber</code>
+        /// A value created by Amazon Security Lake that uniquely identifies your <c>GetSubscriber</c>
         /// API request.
         /// </para>
         /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Count. 
         /// <para>
-        /// The number of listed Reserved Instances in the state specified by the <code>state</code>.
+        /// The number of listed Reserved Instances in the state specified by the <c>state</c>.
         /// </para>
         /// </summary>
         public int Count

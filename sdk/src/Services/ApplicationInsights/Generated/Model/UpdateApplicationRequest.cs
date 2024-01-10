@@ -83,8 +83,8 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property CWEMonitorEnabled. 
         /// <para>
         ///  Indicates whether Application Insights can listen to CloudWatch events for the application
-        /// resources, such as <code>instance terminated</code>, <code>failed deployment</code>,
-        /// and others. 
+        /// resources, such as <c>instance terminated</c>, <c>failed deployment</c>, and others.
+        /// 
         /// </para>
         /// </summary>
         public bool CWEMonitorEnabled
@@ -102,7 +102,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property OpsCenterEnabled. 
         /// <para>
-        ///  When set to <code>true</code>, creates opsItems for any problems detected on an application.
+        ///  When set to <c>true</c>, creates opsItems for any problems detected on an application.
         /// 
         /// </para>
         /// </summary>

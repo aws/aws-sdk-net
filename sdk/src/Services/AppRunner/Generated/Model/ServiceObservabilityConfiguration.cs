@@ -42,17 +42,17 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property ObservabilityConfigurationArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the observability configuration that is associated
-        /// with the service. Specified only when <code>ObservabilityEnabled</code> is <code>true</code>.
+        /// with the service. Specified only when <c>ObservabilityEnabled</c> is <c>true</c>.
         /// </para>
         ///  
         /// <para>
         /// Specify an ARN with a name and a revision number to associate that revision. For example:
-        /// <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
+        /// <c>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// Specify just the name to associate the latest revision. For example: <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
+        /// Specify just the name to associate the latest revision. For example: <c>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</c>
         /// 
         /// </para>
         /// </summary>
@@ -72,8 +72,8 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property ObservabilityEnabled. 
         /// <para>
-        /// When <code>true</code>, an observability configuration resource is associated with
-        /// the service, and an <code>ObservabilityConfigurationArn</code> is specified.
+        /// When <c>true</c>, an observability configuration resource is associated with the service,
+        /// and an <c>ObservabilityConfigurationArn</c> is specified.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

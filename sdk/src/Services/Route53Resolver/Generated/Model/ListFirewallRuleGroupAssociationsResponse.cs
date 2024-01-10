@@ -44,7 +44,7 @@ namespace Amazon.Route53Resolver.Model
         ///  
         /// <para>
         /// This might be a partial list of the associations that you have defined. For information,
-        /// see <code>MaxResults</code>. 
+        /// see <c>MaxResults</c>. 
         /// </para>
         /// </summary>
         public List<FirewallRuleGroupAssociation> FirewallRuleGroupAssociations

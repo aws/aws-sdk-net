@@ -38,10 +38,10 @@ namespace Amazon.S3Control.Model
     /// <para>
     /// Submits an updated route configuration for a Multi-Region Access Point. This API operation
     /// updates the routing status for the specified Regions from active to passive, or from
-    /// passive to active. A value of <code>0</code> indicates a passive status, which means
-    /// that traffic won't be routed to the specified Region. A value of <code>100</code>
-    /// indicates an active status, which means that traffic will be routed to the specified
-    /// Region. At least one Region must be active at all times.
+    /// passive to active. A value of <c>0</c> indicates a passive status, which means that
+    /// traffic won't be routed to the specified Region. A value of <c>100</c> indicates an
+    /// active status, which means that traffic will be routed to the specified Region. At
+    /// least one Region must be active at all times.
     /// </para>
     ///  
     /// <para>
@@ -62,23 +62,23 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>us-east-1</code> 
+    ///  <c>us-east-1</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>us-west-2</code> 
+    ///  <c>us-west-2</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ap-southeast-2</code> 
+    ///  <c>ap-southeast-2</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ap-northeast-1</code> 
+    ///  <c>ap-northeast-1</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>eu-west-1</code> 
+    ///  <c>eu-west-1</c> 
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -134,7 +134,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property RouteUpdates. 
         /// <para>
         /// The different routes that make up the new route configuration. Active routes return
-        /// a value of <code>100</code>, and passive routes return a value of <code>0</code>.
+        /// a value of <c>100</c>, and passive routes return a value of <c>0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -38,7 +38,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property DetectAnomalyResult. 
         /// <para>
-        /// The results of the <code>DetectAnomalies</code> operation.
+        /// The results of the <c>DetectAnomalies</c> operation.
         /// </para>
         /// </summary>
         public DetectAnomalyResult DetectAnomalyResult

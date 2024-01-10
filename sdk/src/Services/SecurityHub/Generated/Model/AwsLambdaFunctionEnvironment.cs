@@ -39,7 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// An <code>AwsLambdaFunctionEnvironmentError</code> object.
+        /// An <c>AwsLambdaFunctionEnvironmentError</c> object.
         /// </para>
         /// </summary>
         public AwsLambdaFunctionEnvironmentError Error

@@ -33,9 +33,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// Resources with a <code>high</code> or <code>medium</code> rating are at risk of not
-    /// meeting the performance needs of their workloads, while resources with a <code>low</code>
-    /// rating are performing well in their workloads.
+    /// Resources with a <c>high</c> or <c>medium</c> rating are at risk of not meeting the
+    /// performance needs of their workloads, while resources with a <c>low</c> rating are
+    /// performing well in their workloads.
     /// </para>
     /// </summary>
     public partial class CurrentPerformanceRiskRatings

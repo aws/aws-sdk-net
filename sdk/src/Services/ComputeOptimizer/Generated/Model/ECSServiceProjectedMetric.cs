@@ -74,13 +74,12 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Cpu</code> — The percentage of allocated compute units that are currently in
-        /// use on the service tasks.
+        ///  <c>Cpu</c> — The percentage of allocated compute units that are currently in use
+        /// on the service tasks.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Memory</code> — The percentage of memory that's currently in use on the service
-        /// tasks.
+        ///  <c>Memory</c> — The percentage of memory that's currently in use on the service tasks.
         /// </para>
         ///  </li> </ul>
         /// </summary>

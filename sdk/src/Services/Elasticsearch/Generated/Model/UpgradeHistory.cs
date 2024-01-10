@@ -59,8 +59,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property StepsList. 
         /// <para>
-        ///  A list of <code> <a>UpgradeStepItem</a> </code> s representing information about
-        /// each step performed as pard of a specific Upgrade or Upgrade Eligibility Check. 
+        ///  A list of <c> <a>UpgradeStepItem</a> </c> s representing information about each step
+        /// performed as pard of a specific Upgrade or Upgrade Eligibility Check. 
         /// </para>
         /// </summary>
         public List<UpgradeStepItem> StepsList

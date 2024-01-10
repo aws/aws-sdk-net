@@ -45,15 +45,14 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>none</code> – No HTTP headers are included in the cache key or in requests
-        /// that CloudFront sends to the origin. Even when this field is set to <code>none</code>,
-        /// any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included
-        /// in origin requests.
+        ///  <c>none</c> – No HTTP headers are included in the cache key or in requests that CloudFront
+        /// sends to the origin. Even when this field is set to <c>none</c>, any headers that
+        /// are listed in an <c>OriginRequestPolicy</c> <i>are</i> included in origin requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code>
-        /// type are included in the cache key and in requests that CloudFront sends to the origin.
+        ///  <c>whitelist</c> – Only the HTTP headers that are listed in the <c>Headers</c> type
+        /// are included in the cache key and in requests that CloudFront sends to the origin.
         /// </para>
         ///  </li> </ul>
         /// </summary>

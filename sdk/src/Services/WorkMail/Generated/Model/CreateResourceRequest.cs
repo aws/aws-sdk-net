@@ -118,7 +118,7 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the new resource. The available types are <code>equipment</code> and <code>room</code>.
+        /// The type of the new resource. The available types are <c>equipment</c> and <c>room</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

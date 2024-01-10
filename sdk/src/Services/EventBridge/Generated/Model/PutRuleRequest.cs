@@ -45,9 +45,8 @@ namespace Amazon.EventBridge.Model
     ///  
     /// <para>
     /// If you are updating an existing rule, the rule is replaced with what you specify in
-    /// this <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>,
-    /// the old values for those arguments are not kept. Instead, they are replaced with null
-    /// values.
+    /// this <c>PutRule</c> command. If you omit arguments in <c>PutRule</c>, the old values
+    /// for those arguments are not kept. Instead, they are replaced with null values.
     /// </para>
     ///  
     /// <para>
@@ -66,14 +65,13 @@ namespace Amazon.EventBridge.Model
     /// When you initially create a rule, you can optionally assign one or more tags to the
     /// rule. Tags can help you organize and categorize your resources. You can also use them
     /// to scope user permissions, by granting a user permission to access or change only
-    /// rules with certain tag values. To use the <code>PutRule</code> operation and assign
-    /// tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code>
-    /// permissions.
+    /// rules with certain tag values. To use the <c>PutRule</c> operation and assign tags,
+    /// you must have both the <c>events:PutRule</c> and <c>events:TagResource</c> permissions.
     /// </para>
     ///  
     /// <para>
-    /// If you are updating an existing rule, any tags you specify in the <code>PutRule</code>
-    /// operation are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a>
+    /// If you are updating an existing rule, any tags you specify in the <c>PutRule</c> operation
+    /// are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a>
     /// and <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html">UntagResource</a>.
     /// </para>
     ///  
@@ -203,7 +201,7 @@ namespace Amazon.EventBridge.Model
         /// <para>
         /// If you're setting an event bus in another account as the target and that account granted
         /// permission to your account through an organization instead of directly by the account
-        /// ID, you must specify a <code>RoleArn</code> with proper permissions in the <code>Target</code>
+        /// ID, you must specify a <c>RoleArn</c> with proper permissions in the <c>Target</c>
         /// structure, instead of here in this parameter.
         /// </para>
         /// </summary>
@@ -250,18 +248,18 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DISABLED</code>: The rule is disabled. EventBridge does not match any events
-        /// against the rule.
+        ///  <c>DISABLED</c>: The rule is disabled. EventBridge does not match any events against
+        /// the rule.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code>: The rule is enabled. EventBridge matches events against the
-        /// rule, <i>except</i> for Amazon Web Services management events delivered through CloudTrail.
+        ///  <c>ENABLED</c>: The rule is enabled. EventBridge matches events against the rule,
+        /// <i>except</i> for Amazon Web Services management events delivered through CloudTrail.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</code>: The rule is enabled for
-        /// all events, including Amazon Web Services management events delivered through CloudTrail.
+        ///  <c>ENABLED_WITH_ALL_CLOUDTRAIL_MANAGEMENT_EVENTS</c>: The rule is enabled for all
+        /// events, including Amazon Web Services management events delivered through CloudTrail.
         /// </para>
         ///  
         /// <para>

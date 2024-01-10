@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when a call results in the <code>InvalidClientTokenId</code>
-    /// error code. This can occur when you are creating or updating a trail to send notifications
+    /// This exception is thrown when a call results in the <c>InvalidClientTokenId</c> error
+    /// code. This can occur when you are creating or updating a trail to send notifications
     /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
     /// </summary>
     #if !NETSTANDARD

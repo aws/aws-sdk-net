@@ -69,7 +69,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot that contains the slot. Must always be <code>DRAFT</code>.
+        /// The version of the bot that contains the slot. Must always be <c>DRAFT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=5)]
@@ -148,12 +148,12 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property MultipleValuesSetting. 
         /// <para>
         /// Determines whether the slot accepts multiple values in one response. Multiple value
-        /// slots are only available in the en-US locale. If you set this value to <code>true</code>
-        /// in any other locale, Amazon Lex throws a <code>ValidationException</code>.
+        /// slots are only available in the en-US locale. If you set this value to <c>true</c>
+        /// in any other locale, Amazon Lex throws a <c>ValidationException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>multipleValuesSetting</code> is not set, the default value is <code>false</code>.
+        /// If the <c>multipleValuesSetting</c> is not set, the default value is <c>false</c>.
         /// </para>
         /// </summary>
         public MultipleValuesSetting MultipleValuesSetting

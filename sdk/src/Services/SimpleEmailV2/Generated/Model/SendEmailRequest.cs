@@ -127,8 +127,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property EmailTags. 
         /// <para>
         /// A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendEmail</code> operation. Tags correspond to characteristics of
-        /// the email that you define, so that you can publish email sending events. 
+        /// using the <c>SendEmail</c> operation. Tags correspond to characteristics of the email
+        /// that you define, so that you can publish email sending events. 
         /// </para>
         /// </summary>
         public List<MessageTag> EmailTags
@@ -166,14 +166,14 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// This parameter is used only for sending authorization. It is the ARN of the identity
         /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FeedbackForwardingEmailAddress</code> parameter.
+        /// email address specified in the <c>FeedbackForwardingEmailAddress</c> parameter.
         /// </para>
         ///  
         /// <para>
         /// For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
         /// attaches a policy to it that authorizes you to use feedback@example.com, then you
-        /// would specify the <code>FeedbackForwardingEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com,
-        /// and the <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.
+        /// would specify the <c>FeedbackForwardingEmailAddressIdentityArn</c> to be arn:aws:ses:us-east-1:123456789012:identity/example.com,
+        /// and the <c>FeedbackForwardingEmailAddress</c> to be feedback@example.com.
         /// </para>
         ///  
         /// <para>
@@ -217,14 +217,14 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// This parameter is used only for sending authorization. It is the ARN of the identity
         /// that is associated with the sending authorization policy that permits you to use the
-        /// email address specified in the <code>FromEmailAddress</code> parameter.
+        /// email address specified in the <c>FromEmailAddress</c> parameter.
         /// </para>
         ///  
         /// <para>
         /// For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
         /// attaches a policy to it that authorizes you to use sender@example.com, then you would
-        /// specify the <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com,
-        /// and the <code>FromEmailAddress</code> to be sender@example.com.
+        /// specify the <c>FromEmailAddressIdentityArn</c> to be arn:aws:ses:us-east-1:123456789012:identity/example.com,
+        /// and the <c>FromEmailAddress</c> to be sender@example.com.
         /// </para>
         ///  
         /// <para>
@@ -233,7 +233,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN
+        /// For Raw emails, the <c>FromEmailAddressIdentityArn</c> value overrides the X-SES-SOURCE-ARN
         /// and X-SES-FROM-ARN headers specified in raw email message content.
         /// </para>
         /// </summary>

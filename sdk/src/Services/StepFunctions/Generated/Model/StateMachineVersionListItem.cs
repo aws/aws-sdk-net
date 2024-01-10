@@ -60,7 +60,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// The Amazon Resource Name (ARN) that identifies a state machine version. The version
         /// ARN is a combination of state machine ARN and the version number separated by a colon
-        /// (:). For example, <code>stateMachineARN:1</code>.
+        /// (:). For example, <c>stateMachineARN:1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2000)]

@@ -81,8 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PartitionsToDelete. 
         /// <para>
-        /// A list of <code>PartitionInput</code> structures that define the partitions to be
-        /// deleted.
+        /// A list of <c>PartitionInput</c> structures that define the partitions to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=25)]

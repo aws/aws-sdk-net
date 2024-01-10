@@ -52,8 +52,8 @@ namespace Amazon.SimpleEmail.Model
         /// Gets and sets the property Identities. 
         /// <para>
         /// A list of one or more identities. You can specify an identity by using its name or
-        /// by using its Amazon Resource Name (ARN). Examples: <code>user@example.com</code>,
-        /// <code>example.com</code>, <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+        /// by using its Amazon Resource Name (ARN). Examples: <c>user@example.com</c>, <c>example.com</c>,
+        /// <c>arn:aws:ses:us-east-1:123456789012:identity/example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

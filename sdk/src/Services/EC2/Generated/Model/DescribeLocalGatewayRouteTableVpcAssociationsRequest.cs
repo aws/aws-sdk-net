@@ -46,33 +46,33 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>local-gateway-id</code> - The ID of a local gateway.
+        ///  <c>local-gateway-id</c> - The ID of a local gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>local-gateway-route-table-arn</code> - The Amazon Resource Name (ARN) of the
-        /// local gateway route table for the association.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>local-gateway-route-table-id</code> - The ID of the local gateway route table.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>local-gateway-route-table-vpc-association-id</code> - The ID of the association.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the local
+        ///  <c>local-gateway-route-table-arn</c> - The Amazon Resource Name (ARN) of the local
         /// gateway route table for the association.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the association.
+        ///  <c>local-gateway-route-table-id</c> - The ID of the local gateway route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-id</code> - The ID of the VPC.
+        ///  <c>local-gateway-route-table-vpc-association-id</c> - The ID of the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>owner-id</c> - The ID of the Amazon Web Services account that owns the local gateway
+        /// route table for the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>state</c> - The state of the association.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>vpc-id</c> - The ID of the VPC.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

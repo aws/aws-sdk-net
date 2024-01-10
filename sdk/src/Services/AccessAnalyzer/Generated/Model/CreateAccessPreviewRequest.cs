@@ -44,8 +44,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
         /// of the account analyzer</a> used to generate the access preview. You can only create
-        /// an access preview for analyzers with an <code>Account</code> type and <code>Active</code>
-        /// status.
+        /// an access preview for analyzers with an <c>Account</c> type and <c>Active</c> status.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

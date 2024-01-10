@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteResolver operation.
-    /// Deletes a <code>Resolver</code> object.
+    /// Deletes a <c>Resolver</c> object.
     /// </summary>
     public partial class DeleteResolverRequest : AmazonAppSyncRequest
     {

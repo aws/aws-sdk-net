@@ -42,7 +42,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        ///  A <code>TestCaseFilter</code> object used to filter the returned reports. 
+        ///  A <c>TestCaseFilter</c> object used to filter the returned reports. 
         /// </para>
         /// </summary>
         public TestCaseFilter Filter
@@ -60,9 +60,9 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        ///  The maximum number of paginated test cases returned per response. Use <code>nextToken</code>
-        /// to iterate pages in the list of returned <code>TestCase</code> objects. The default
-        /// value is 100. 
+        ///  The maximum number of paginated test cases returned per response. Use <c>nextToken</c>
+        /// to iterate pages in the list of returned <c>TestCase</c> objects. The default value
+        /// is 100. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -82,11 +82,11 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  During a previous call, the maximum number of items that can be returned is the value
-        /// specified in <code>maxResults</code>. If there more items in the list, then a unique
-        /// string called a <i>nextToken</i> is returned. To get the next batch of items in the
-        /// list, call this operation again, adding the next token to the call. To get all of
-        /// the items in the list, keep calling this operation with each subsequent next token
-        /// that is returned, until no more next tokens are returned. 
+        /// specified in <c>maxResults</c>. If there more items in the list, then a unique string
+        /// called a <i>nextToken</i> is returned. To get the next batch of items in the list,
+        /// call this operation again, adding the next token to the call. To get all of the items
+        /// in the list, keep calling this operation with each subsequent next token that is returned,
+        /// until no more next tokens are returned. 
         /// </para>
         /// </summary>
         public string NextToken

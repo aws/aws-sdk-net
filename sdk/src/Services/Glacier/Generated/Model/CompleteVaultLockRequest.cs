@@ -31,8 +31,8 @@ namespace Amazon.Glacier.Model
     /// <summary>
     /// Container for the parameters to the CompleteVaultLock operation.
     /// This operation completes the vault locking process by transitioning the vault lock
-    /// from the <code>InProgress</code> state to the <code>Locked</code> state, which causes
-    /// the vault lock policy to become unchangeable. A vault lock is put into the <code>InProgress</code>
+    /// from the <c>InProgress</c> state to the <c>Locked</c> state, which causes the vault
+    /// lock policy to become unchangeable. A vault lock is put into the <c>InProgress</c>
     /// state by calling <a>InitiateVaultLock</a>. You can obtain the state of the vault lock
     /// by calling <a>GetVaultLock</a>. For more information about the vault locking process,
     /// <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon
@@ -41,15 +41,15 @@ namespace Amazon.Glacier.Model
     ///  
     /// <para>
     /// This operation is idempotent. This request is always successful if the vault lock
-    /// is in the <code>Locked</code> state and the provided lock ID matches the lock ID originally
+    /// is in the <c>Locked</c> state and the provided lock ID matches the lock ID originally
     /// used to lock the vault.
     /// </para>
     ///  
     /// <para>
-    /// If an invalid lock ID is passed in the request when the vault lock is in the <code>Locked</code>
-    /// state, the operation returns an <code>AccessDeniedException</code> error. If an invalid
-    /// lock ID is passed in the request when the vault lock is in the <code>InProgress</code>
-    /// state, the operation throws an <code>InvalidParameter</code> error.
+    /// If an invalid lock ID is passed in the request when the vault lock is in the <c>Locked</c>
+    /// state, the operation returns an <c>AccessDeniedException</c> error. If an invalid
+    /// lock ID is passed in the request when the vault lock is in the <c>InProgress</c> state,
+    /// the operation throws an <c>InvalidParameter</c> error.
     /// </para>
     /// </summary>
     public partial class CompleteVaultLockRequest : AmazonGlacierRequest
@@ -61,12 +61,11 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountId</code> value is the AWS account ID. This value must match the
-        /// AWS account ID associated with the credentials used to sign the request. You can either
-        /// specify an AWS account ID or optionally a single '<code>-</code>' (hyphen), in which
-        /// case Amazon Glacier uses the AWS account ID associated with the credentials used to
-        /// sign the request. If you specify your account ID, do not include any hyphens ('-')
-        /// in the ID.
+        /// The <c>AccountId</c> value is the AWS account ID. This value must match the AWS account
+        /// ID associated with the credentials used to sign the request. You can either specify
+        /// an AWS account ID or optionally a single '<c>-</c>' (hyphen), in which case Amazon
+        /// Glacier uses the AWS account ID associated with the credentials used to sign the request.
+        /// If you specify your account ID, do not include any hyphens ('-') in the ID.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,8 +84,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property LockId. 
         /// <para>
-        /// The <code>lockId</code> value is the lock ID obtained from a <a>InitiateVaultLock</a>
-        /// request.
+        /// The <c>lockId</c> value is the lock ID obtained from a <a>InitiateVaultLock</a> request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeApps</code> request.
+    /// Contains the response to a <c>DescribeApps</c> request.
     /// </summary>
     public partial class DescribeAppsResponse : AmazonWebServiceResponse
     {
@@ -38,7 +38,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Apps. 
         /// <para>
-        /// An array of <code>App</code> objects that describe the specified apps. 
+        /// An array of <c>App</c> objects that describe the specified apps. 
         /// </para>
         /// </summary>
         public List<App> Apps

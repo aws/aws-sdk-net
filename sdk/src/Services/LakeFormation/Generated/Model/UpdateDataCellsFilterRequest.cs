@@ -39,8 +39,7 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property TableData. 
         /// <para>
-        /// A <code>DataCellsFilter</code> structure containing information about the data cells
-        /// filter.
+        /// A <c>DataCellsFilter</c> structure containing information about the data cells filter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

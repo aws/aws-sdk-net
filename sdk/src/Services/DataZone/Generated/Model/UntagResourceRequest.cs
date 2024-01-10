@@ -59,7 +59,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property TagKeys. 
         /// <para>
-        /// Specifies the tag keys for the <code>UntagResource</code> action.
+        /// Specifies the tag keys for the <c>UntagResource</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

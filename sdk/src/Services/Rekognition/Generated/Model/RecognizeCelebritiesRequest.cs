@@ -35,26 +35,25 @@ namespace Amazon.Rekognition.Model
     /// 
     ///  
     /// <para>
-    ///  <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists
-    /// the recognized celebrities in the <code>CelebrityFaces</code> array and any unrecognized
-    /// faces in the <code>UnrecognizedFaces</code> array. <code>RecognizeCelebrities</code>
-    /// doesn't return celebrities whose faces aren't among the largest 64 faces in the image.
+    ///  <c>RecognizeCelebrities</c> returns the 64 largest faces in the image. It lists the
+    /// recognized celebrities in the <c>CelebrityFaces</c> array and any unrecognized faces
+    /// in the <c>UnrecognizedFaces</c> array. <c>RecognizeCelebrities</c> doesn't return
+    /// celebrities whose faces aren't among the largest 64 faces in the image.
     /// </para>
     ///  
     /// <para>
-    /// For each celebrity recognized, <code>RecognizeCelebrities</code> returns a <code>Celebrity</code>
-    /// object. The <code>Celebrity</code> object contains the celebrity name, ID, URL links
-    /// to additional information, match confidence, and a <code>ComparedFace</code> object
-    /// that you can use to locate the celebrity's face on the image.
+    /// For each celebrity recognized, <c>RecognizeCelebrities</c> returns a <c>Celebrity</c>
+    /// object. The <c>Celebrity</c> object contains the celebrity name, ID, URL links to
+    /// additional information, match confidence, and a <c>ComparedFace</c> object that you
+    /// can use to locate the celebrity's face on the image.
     /// </para>
     ///  
     /// <para>
     /// Amazon Rekognition doesn't retain information about which images a celebrity has been
-    /// recognized in. Your application must store this information and use the <code>Celebrity</code>
+    /// recognized in. Your application must store this information and use the <c>Celebrity</c>
     /// ID property as a unique identifier for the celebrity. If you don't store the celebrity
-    /// name or additional information URLs returned by <code>RecognizeCelebrities</code>,
-    /// you will need the ID to identify the celebrity in a call to the <a>GetCelebrityInfo</a>
-    /// operation.
+    /// name or additional information URLs returned by <c>RecognizeCelebrities</c>, you will
+    /// need the ID to identify the celebrity in a call to the <a>GetCelebrityInfo</a> operation.
     /// </para>
     ///  
     /// <para>
@@ -70,7 +69,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:RecognizeCelebrities</code>
+    /// This operation requires permissions to perform the <c>rekognition:RecognizeCelebrities</c>
     /// operation.
     /// </para>
     /// </summary>
@@ -88,7 +87,7 @@ namespace Amazon.Rekognition.Model
         ///  
         /// <para>
         /// If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. For more information, see Images
+        /// image bytes passed using the <c>Bytes</c> field. For more information, see Images
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>

@@ -40,10 +40,10 @@ namespace Amazon.CodeBuild.Model
     /// </para>
     ///  <note> 
     /// <para>
-    ///  During a build, the value of a variable is available starting with the <code>install</code>
-    /// phase. It can be updated between the start of the <code>install</code> phase and the
-    /// end of the <code>post_build</code> phase. After the <code>post_build</code> phase
-    /// ends, the value of exported variables cannot change.
+    ///  During a build, the value of a variable is available starting with the <c>install</c>
+    /// phase. It can be updated between the start of the <c>install</c> phase and the end
+    /// of the <c>post_build</c> phase. After the <c>post_build</c> phase ends, the value
+    /// of exported variables cannot change.
     /// </para>
     ///  </note>
     /// </summary>

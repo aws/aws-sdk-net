@@ -67,9 +67,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency in which the <code>totalUpfrontPrice</code>, <code>LimitPrice</code>,
-        /// and <code>totalHourlyPrice</code> amounts are specified. At this time, the only supported
-        /// currency is <code>USD</code>.
+        /// The currency in which the <c>totalUpfrontPrice</c>, <c>LimitPrice</c>, and <c>totalHourlyPrice</c>
+        /// amounts are specified. At this time, the only supported currency is <c>USD</c>.
         /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode
@@ -110,7 +109,7 @@ namespace Amazon.EC2.Model
         /// as the offering's upfront cost multiplied by the host count). If the total upfront
         /// cost is greater than the specified price limit, the request fails. This is used to
         /// ensure that the purchase does not exceed the expected upfront cost of the purchase.
-        /// At this time, the only supported currency is <code>USD</code>. For example, to indicate
+        /// At this time, the only supported currency is <c>USD</c>. For example, to indicate
         /// a limit price of USD 100, specify 100.00.
         /// </para>
         /// </summary>

@@ -33,24 +33,24 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// DescribeUserPool</a> request returns a null value for this object when the user pool
     /// isn't configured to remember devices. When device remembering is active, you can remember
     /// a user's device with a <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmDevice.html">ConfirmDevice</a>
-    /// API request. Additionally. when the property <code>DeviceOnlyRememberedOnUserPrompt</code>
-    /// is <code>true</code>, you must follow <code>ConfirmDevice</code> with an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a>
-    /// API request that sets the user's device to <code>remembered</code> or <code>not_remembered</code>.
+    /// API request. Additionally. when the property <c>DeviceOnlyRememberedOnUserPrompt</c>
+    /// is <c>true</c>, you must follow <c>ConfirmDevice</c> with an <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UpdateDeviceStatus.html">UpdateDeviceStatus</a>
+    /// API request that sets the user's device to <c>remembered</c> or <c>not_remembered</c>.
     /// 
     ///  
     /// <para>
-    /// To sign in with a remembered device, include <code>DEVICE_KEY</code> in the authentication
+    /// To sign in with a remembered device, include <c>DEVICE_KEY</c> in the authentication
     /// parameters in your user's <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html">
-    /// InitiateAuth</a> request. If your app doesn't include a <code>DEVICE_KEY</code> parameter,
+    /// InitiateAuth</a> request. If your app doesn't include a <c>DEVICE_KEY</c> parameter,
     /// the <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html#API_InitiateAuth_ResponseSyntax">response</a>
-    /// from Amazon Cognito includes newly-generated <code>DEVICE_KEY</code> and <code>DEVICE_GROUP_KEY</code>
-    /// values under <code>NewDeviceMetadata</code>. Store these values to use in future device-authentication
+    /// from Amazon Cognito includes newly-generated <c>DEVICE_KEY</c> and <c>DEVICE_GROUP_KEY</c>
+    /// values under <c>NewDeviceMetadata</c>. Store these values to use in future device-authentication
     /// requests.
     /// </para>
     ///  <note> 
     /// <para>
-    /// When you provide a value for any property of <code>DeviceConfiguration</code>, you
-    /// activate the device remembering for the user pool.
+    /// When you provide a value for any property of <c>DeviceConfiguration</c>, you activate
+    /// the device remembering for the user pool.
     /// </para>
     ///  </note>
     /// </summary>
@@ -67,9 +67,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Whether or not <code>ChallengeRequiredOnNewDevice</code> is true, users who sign in
-        /// with devices that have not been confirmed or remembered must still provide a second
-        /// factor in a user pool that requires MFA.
+        /// Whether or not <c>ChallengeRequiredOnNewDevice</c> is true, users who sign in with
+        /// devices that have not been confirmed or remembered must still provide a second factor
+        /// in a user pool that requires MFA.
         /// </para>
         ///  </note>
         /// </summary>
@@ -96,9 +96,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// When <code>DeviceOnlyRememberedOnUserPrompt</code> is <code>false</code>, Amazon Cognito
-        /// immediately remembers devices that you register in a <code>ConfirmDevice</code> API
-        /// request.
+        /// When <c>DeviceOnlyRememberedOnUserPrompt</c> is <c>false</c>, Amazon Cognito immediately
+        /// remembers devices that you register in a <c>ConfirmDevice</c> API request.
         /// </para>
         /// </summary>
         public bool DeviceOnlyRememberedOnUserPrompt

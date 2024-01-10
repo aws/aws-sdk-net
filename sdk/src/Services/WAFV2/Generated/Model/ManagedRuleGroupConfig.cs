@@ -39,22 +39,21 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use the <code>AWSManagedRulesACFPRuleSet</code> configuration object to configure
-    /// the account creation fraud prevention managed rule group. The configuration includes
-    /// the registration and sign-up pages of your application and the locations in the account
-    /// creation request payload of data, such as the user email and phone number fields.
-    /// 
+    /// Use the <c>AWSManagedRulesACFPRuleSet</c> configuration object to configure the account
+    /// creation fraud prevention managed rule group. The configuration includes the registration
+    /// and sign-up pages of your application and the locations in the account creation request
+    /// payload of data, such as the user email and phone number fields. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the <code>AWSManagedRulesATPRuleSet</code> configuration object to configure the
-    /// account takeover prevention managed rule group. The configuration includes the sign-in
-    /// page of your application and the locations in the login request payload of data such
-    /// as the username and password. 
+    /// Use the <c>AWSManagedRulesATPRuleSet</c> configuration object to configure the account
+    /// takeover prevention managed rule group. The configuration includes the sign-in page
+    /// of your application and the locations in the login request payload of data such as
+    /// the username and password. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use the <code>AWSManagedRulesBotControlRuleSet</code> configuration object to configure
+    /// Use the <c>AWSManagedRulesBotControlRuleSet</c> configuration object to configure
     /// the protection level that you want the Bot Control rule group to use. 
     /// </para>
     ///  </li> </ul> 
@@ -76,7 +75,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property AWSManagedRulesACFPRuleSet. 
         /// <para>
         /// Additional configuration for using the account creation fraud prevention (ACFP) managed
-        /// rule group, <code>AWSManagedRulesACFPRuleSet</code>. Use this to provide account creation
+        /// rule group, <c>AWSManagedRulesACFPRuleSet</c>. Use this to provide account creation
         /// request information to the rule group. For web ACLs that protect CloudFront distributions,
         /// use this to also provide the information about how your distribution responds to account
         /// creation requests. 
@@ -105,14 +104,14 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property AWSManagedRulesATPRuleSet. 
         /// <para>
         /// Additional configuration for using the account takeover prevention (ATP) managed rule
-        /// group, <code>AWSManagedRulesATPRuleSet</code>. Use this to provide login request information
+        /// group, <c>AWSManagedRulesATPRuleSet</c>. Use this to provide login request information
         /// to the rule group. For web ACLs that protect CloudFront distributions, use this to
         /// also provide the information about how your distribution responds to login requests.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// This configuration replaces the individual configuration fields in <code>ManagedRuleGroupConfig</code>
+        /// This configuration replaces the individual configuration fields in <c>ManagedRuleGroupConfig</c>
         /// and provides additional feature configuration. 
         /// </para>
         ///  
@@ -159,7 +158,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LoginPath. <note> 
         /// <para>
-        /// Instead of this setting, provide your configuration under <code>AWSManagedRulesATPRuleSet</code>.
+        /// Instead of this setting, provide your configuration under <c>AWSManagedRulesATPRuleSet</c>.
         /// 
         /// </para>
         ///  </note>
@@ -182,8 +181,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property PasswordField. <note> 
         /// <para>
         /// Instead of this setting, provide your configuration under the request inspection configuration
-        /// for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>.
-        /// 
+        /// for <c>AWSManagedRulesATPRuleSet</c> or <c>AWSManagedRulesACFPRuleSet</c>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -204,8 +202,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property PayloadType. <note> 
         /// <para>
         /// Instead of this setting, provide your configuration under the request inspection configuration
-        /// for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>.
-        /// 
+        /// for <c>AWSManagedRulesATPRuleSet</c> or <c>AWSManagedRulesACFPRuleSet</c>. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -226,8 +223,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property UsernameField. <note> 
         /// <para>
         /// Instead of this setting, provide your configuration under the request inspection configuration
-        /// for <code>AWSManagedRulesATPRuleSet</code> or <code>AWSManagedRulesACFPRuleSet</code>.
-        /// 
+        /// for <c>AWSManagedRulesATPRuleSet</c> or <c>AWSManagedRulesACFPRuleSet</c>. 
         /// </para>
         ///  </note>
         /// </summary>

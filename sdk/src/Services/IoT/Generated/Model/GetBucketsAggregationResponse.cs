@@ -39,16 +39,16 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Buckets. 
         /// <para>
-        /// The main part of the response with a list of buckets. Each bucket contains a <code>keyValue</code>
-        /// and a <code>count</code>.
+        /// The main part of the response with a list of buckets. Each bucket contains a <c>keyValue</c>
+        /// and a <c>count</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>keyValue</code>: The aggregation field value counted for the particular bucket.
+        ///  <c>keyValue</c>: The aggregation field value counted for the particular bucket.
         /// </para>
         ///  
         /// <para>
-        ///  <code>count</code>: The number of documents that have that value.
+        ///  <c>count</c>: The number of documents that have that value.
         /// </para>
         /// </summary>
         public List<Bucket> Buckets

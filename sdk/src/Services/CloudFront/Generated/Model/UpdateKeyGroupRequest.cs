@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Get the current key group with <code>GetKeyGroup</code> or <code>GetKeyGroupConfig</code>.
+    /// Get the current key group with <c>GetKeyGroup</c> or <c>GetKeyGroupConfig</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Call <code>UpdateKeyGroup</code> with the entire key group object, including the fields
+    /// Call <c>UpdateKeyGroup</c> with the entire key group object, including the fields
     /// that you modified and those that you didn't.
     /// </para>
     ///  </li> </ol>
@@ -83,7 +83,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IfMatch. 
         /// <para>
         /// The version of the key group that you are updating. The version is the key group's
-        /// <code>ETag</code> value.
+        /// <c>ETag</c> value.
         /// </para>
         /// </summary>
         public string IfMatch

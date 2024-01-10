@@ -41,36 +41,36 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The <code>connectionType</code>, as provided to the underlying Glue library. This
-        /// node type supports the following connection types: 
+        /// The <c>connectionType</c>, as provided to the underlying Glue library. This node type
+        /// supports the following connection types: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>opensearch</code> 
+        ///  <c>opensearch</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>azuresql</code> 
+        ///  <c>azuresql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>azurecosmos</code> 
+        ///  <c>azurecosmos</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bigquery</code> 
+        ///  <c>bigquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>saphana</code> 
+        ///  <c>saphana</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>teradata</code> 
+        ///  <c>teradata</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vertica</code> 
+        ///  <c>vertica</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

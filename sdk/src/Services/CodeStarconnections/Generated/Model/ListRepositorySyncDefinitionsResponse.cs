@@ -59,7 +59,7 @@ namespace Amazon.CodeStarconnections.Model
         /// <summary>
         /// Gets and sets the property RepositorySyncDefinitions. 
         /// <para>
-        /// The list of repository sync definitions returned by the request. A <code>RepositorySyncDefinition</code>
+        /// The list of repository sync definitions returned by the request. A <c>RepositorySyncDefinition</c>
         /// is a mapping from a repository branch to all the Amazon Web Services resources that
         /// are being synced from that branch.
         /// </para>

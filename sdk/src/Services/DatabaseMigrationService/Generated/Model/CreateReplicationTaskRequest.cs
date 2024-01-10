@@ -75,8 +75,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// When you use this task setting with a source PostgreSQL database, a logical replication
         /// slot should already be created and associated with the source endpoint. You can verify
-        /// this by setting the <code>slotName</code> extra connection attribute to the name of
-        /// this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+        /// this by setting the <c>slotName</c> extra connection attribute to the name of this
+        /// logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
         /// Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
         /// </para>
         ///  </note>
@@ -147,7 +147,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MigrationType. 
         /// <para>
-        /// The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
+        /// The migration type. Valid values: <c>full-load</c> | <c>cdc</c> | <c>full-load-and-cdc</c>
         /// 
         /// </para>
         /// </summary>
@@ -242,14 +242,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The
-        /// value for this parameter can have up to 31 characters. It can contain only ASCII letters,
-        /// digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive
-        /// hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>.
-        /// For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>.
-        /// If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
-        /// identifier value for the end of <code>EndpointArn</code>.
+        /// A friendly name for the resource identifier at the end of the <c>EndpointArn</c> response
+        /// parameter that is returned in the created <c>Endpoint</c> object. The value for this
+        /// parameter can have up to 31 characters. It can contain only ASCII letters, digits,
+        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
+        /// and can only begin with a letter, such as <c>Example-App-ARN1</c>. For example, this
+        /// value might result in the <c>EndpointArn</c> value <c>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</c>.
+        /// If you don't specify a <c>ResourceIdentifier</c> value, DMS generates a default identifier
+        /// value for the end of <c>EndpointArn</c>.
         /// </para>
         /// </summary>
         public string ResourceIdentifier

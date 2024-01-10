@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// The container for <code>SnowconeDeviceConfiguration</code>.
+    /// The container for <c>SnowconeDeviceConfiguration</c>.
     /// </summary>
     public partial class DeviceConfiguration
     {

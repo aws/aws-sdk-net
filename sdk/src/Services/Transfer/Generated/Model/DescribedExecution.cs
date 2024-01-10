@@ -137,7 +137,7 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Results. 
         /// <para>
         /// A structure that describes the execution results. This includes a list of the steps
-        /// along with the details of each step, error type and message (if any), and the <code>OnExceptionSteps</code>
+        /// along with the details of each step, error type and message (if any), and the <c>OnExceptionSteps</c>
         /// structure.
         /// </para>
         /// </summary>

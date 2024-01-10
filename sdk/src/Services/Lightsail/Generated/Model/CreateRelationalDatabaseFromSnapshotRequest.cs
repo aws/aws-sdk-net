@@ -40,9 +40,9 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>create relational database from snapshot</code> operation supports tag-based
-    /// access control via request tags and resource tags applied to the resource identified
-    /// by relationalDatabaseSnapshotName. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>create relational database from snapshot</c> operation supports tag-based access
+    /// control via request tags and resource tags applied to the resource identified by relationalDatabaseSnapshotName.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -61,13 +61,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property AvailabilityZone. 
         /// <para>
-        /// The Availability Zone in which to create your new database. Use the <code>us-east-2a</code>
+        /// The Availability Zone in which to create your new database. Use the <c>us-east-2a</c>
         /// case-sensitive format.
         /// </para>
         ///  
         /// <para>
-        /// You can get a list of Availability Zones by using the <code>get regions</code> operation.
-        /// Be sure to add the <code>include relational database Availability Zones</code> parameter
+        /// You can get a list of Availability Zones by using the <c>get regions</c> operation.
+        /// Be sure to add the <c>include relational database Availability Zones</c> parameter
         /// to your request.
         /// </para>
         /// </summary>
@@ -86,10 +86,10 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
-        /// Specifies the accessibility options for your new database. A value of <code>true</code>
+        /// Specifies the accessibility options for your new database. A value of <c>true</c>
         /// specifies a database that is available to resources outside of your Lightsail account.
-        /// A value of <code>false</code> specifies a database that is available only to your
-        /// Lightsail resources in the same region as your database.
+        /// A value of <c>false</c> specifies a database that is available only to your Lightsail
+        /// resources in the same region as your database.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible
@@ -112,8 +112,8 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// You can get a list of database bundle IDs by using the <code>get relational database
-        /// bundles</code> operation.
+        /// You can get a list of database bundle IDs by using the <c>get relational database
+        /// bundles</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -198,7 +198,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cannot be specified if the <code>use latest restorable time</code> parameter is <code>true</code>.
+        /// Cannot be specified if the <c>use latest restorable time</c> parameter is <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -211,7 +211,7 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// For example, if you wish to use a restore time of October 1, 2018, at 8 PM UTC, then
-        /// you input <code>1538424000</code> as the restore time.
+        /// you input <c>1538424000</c> as the restore time.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -252,7 +252,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -271,15 +271,15 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
         /// Specifies whether your database is restored from the latest backup time. A value of
-        /// <code>true</code> restores from the latest backup time. 
+        /// <c>true</c> restores from the latest backup time. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Cannot be specified if the <code>restore time</code> parameter is provided.
+        /// Constraints: Cannot be specified if the <c>restore time</c> parameter is provided.
         /// </para>
         /// </summary>
         public bool UseLatestRestorableTime

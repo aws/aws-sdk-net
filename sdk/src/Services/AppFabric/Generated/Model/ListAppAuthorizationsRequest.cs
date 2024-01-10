@@ -61,7 +61,7 @@ namespace Amazon.AppFabric.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results that are returned per call. You can use <code>nextToken</code>
+        /// The maximum number of results that are returned per call. You can use <c>nextToken</c>
         /// to obtain further pages of results.
         /// </para>
         ///  
@@ -86,11 +86,11 @@ namespace Amazon.AppFabric.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <code>nextToken</code> is returned, there are more results available. The value
-        /// of <code>nextToken</code> is a unique pagination token for each page. Make the call
-        /// again using the returned token to retrieve the next page. Keep all other arguments
-        /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
-        /// token will return an <i>HTTP 400 InvalidToken error</i>.
+        /// If <c>nextToken</c> is returned, there are more results available. The value of <c>nextToken</c>
+        /// is a unique pagination token for each page. Make the call again using the returned
+        /// token to retrieve the next page. Keep all other arguments unchanged. Each pagination
+        /// token expires after 24 hours. Using an expired pagination token will return an <i>HTTP
+        /// 400 InvalidToken error</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

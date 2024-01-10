@@ -34,8 +34,8 @@ namespace Amazon.IoTFleetWise.Model
     /// 
     ///  <note> 
     /// <para>
-    /// This API operation uses pagination. Specify the <code>nextToken</code> parameter in
-    /// the request to return more results.
+    /// This API operation uses pagination. Specify the <c>nextToken</c> parameter in the
+    /// request to return more results.
     /// </para>
     ///  </note>
     /// </summary>
@@ -72,10 +72,10 @@ namespace Amazon.IoTFleetWise.Model
         ///  
         /// <para>
         /// If the results of a search are large, only a portion of the results are returned,
-        /// and a <code>nextToken</code> pagination token is returned in the response. To retrieve
-        /// the next set of results, reissue the search request and include the returned token.
-        /// When all results have been returned, the response does not contain a pagination token
-        /// value. 
+        /// and a <c>nextToken</c> pagination token is returned in the response. To retrieve the
+        /// next set of results, reissue the search request and include the returned token. When
+        /// all results have been returned, the response does not contain a pagination token value.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

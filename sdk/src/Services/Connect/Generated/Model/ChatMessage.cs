@@ -43,18 +43,18 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints
-        /// are Minimum of 1, Maximum of 1024. 
+        /// For <c>text/plain</c> and <c>text/markdown</c>, the Length Constraints are Minimum
+        /// of 1, Maximum of 1024. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum
-        /// of 12000. 
+        /// For <c>application/json</c>, the Length Constraints are Minimum of 1, Maximum of 12000.
+        /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the
-        /// Length Constraints are Minimum of 1, Maximum of 12288.
+        /// For <c>application/vnd.amazonaws.connect.message.interactive.response</c>, the Length
+        /// Constraints are Minimum of 1, Maximum of 12288.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -74,8 +74,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property ContentType. 
         /// <para>
-        /// The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>,
-        /// <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+        /// The type of the content. Supported types are <c>text/plain</c>, <c>text/markdown</c>,
+        /// <c>application/json</c>, and <c>application/vnd.amazonaws.connect.message.interactive.response</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

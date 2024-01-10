@@ -524,7 +524,7 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this operation, you must poll GetStreamingSession until the streaming
-        /// session is in the <code>READY</code> state.
+        /// session is in the <c>READY</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingSession service method.</param>
@@ -612,7 +612,7 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this API, invoke GetStreamingSessionStream with the returned streamId
-        /// to poll the resource until it is in the <code>READY</code> state.
+        /// to poll the resource until it is in the <c>READY</c> state.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStreamingSessionStream service method.</param>
@@ -705,25 +705,25 @@ namespace Amazon.NimbleStudio
         /// </para>
         ///  
         /// <para>
-        /// The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy
+        /// The user role must have the <c>AmazonNimbleStudio-StudioUser</c> managed policy attached
+        /// for the portal to function properly.
+        /// </para>
+        ///  
+        /// <para>
+        /// The admin role must have the <c>AmazonNimbleStudio-StudioAdmin</c> managed policy
         /// attached for the portal to function properly.
         /// </para>
         ///  
         /// <para>
-        /// The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy
-        /// attached for the portal to function properly.
-        /// </para>
-        ///  
-        /// <para>
-        /// You may optionally specify a KMS key in the <code>StudioEncryptionConfiguration</code>.
+        /// You may optionally specify a KMS key in the <c>StudioEncryptionConfiguration</c>.
         /// </para>
         ///  
         /// <para>
         /// In Nimble Studio, resource names, descriptions, initialization scripts, and other
         /// data you provide are always encrypted at rest using an KMS key. By default, this key
         /// is owned by Amazon Web Services and managed on your behalf. You may provide your own
-        /// KMS key when calling <code>CreateStudio</code> to encrypt this data using a key you
-        /// own and manage.
+        /// KMS key when calling <c>CreateStudio</c> to encrypt this data using a key you own
+        /// and manage.
         /// </para>
         ///  
         /// <para>
@@ -1152,12 +1152,12 @@ namespace Amazon.NimbleStudio
         ///  
         /// <para>
         /// After invoking this operation, use GetStreamingSession to poll the resource until
-        /// it transitions to a <code>DELETED</code> state.
+        /// it transitions to a <c>DELETED</c> state.
         /// </para>
         ///  
         /// <para>
         /// A streaming session will count against your streaming session quota until it is marked
-        /// <code>DELETED</code>.
+        /// <c>DELETED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteStreamingSession service method.</param>
@@ -2069,7 +2069,7 @@ namespace Amazon.NimbleStudio
         #region  GetStreamingSessionBackup
 
         /// <summary>
-        /// Gets <code>StreamingSessionBackup</code> resource.
+        /// Gets <c>StreamingSessionBackup</c> resource.
         /// 
         ///  
         /// <para>
@@ -2152,12 +2152,12 @@ namespace Amazon.NimbleStudio
         /// 
         ///  
         /// <para>
-        /// Invoke this operation to poll the resource after invoking <code>CreateStreamingSessionStream</code>.
+        /// Invoke this operation to poll the resource after invoking <c>CreateStreamingSessionStream</c>.
         /// </para>
         ///  
         /// <para>
-        /// After the <code>StreamingSessionStream</code> changes to the <code>READY</code> state,
-        /// the url property will contain a stream to be used with the DCV streaming client.
+        /// After the <c>StreamingSessionStream</c> changes to the <c>READY</c> state, the url
+        /// property will contain a stream to be used with the DCV streaming client.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetStreamingSessionStream service method.</param>
@@ -3057,7 +3057,7 @@ namespace Amazon.NimbleStudio
         #region  ListStudioComponents
 
         /// <summary>
-        /// Lists the <code>StudioComponents</code> in a studio.
+        /// Lists the <c>StudioComponents</c> in a studio.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListStudioComponents service method.</param>
         /// 
@@ -3143,7 +3143,7 @@ namespace Amazon.NimbleStudio
         /// 
         ///  <note> 
         /// <para>
-        ///  <code>ListStudioMembers</code> only returns admin members.
+        ///  <c>ListStudioMembers</c> only returns admin members.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3564,9 +3564,9 @@ namespace Amazon.NimbleStudio
         #region  StartStreamingSession
 
         /// <summary>
-        /// Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code>
-        /// state. The <code>START_IN_PROGRESS</code> state is the intermediate state between
-        /// the <code>STOPPED</code> and <code>READY</code> states.
+        /// Transitions sessions from the <c>STOPPED</c> state into the <c>READY</c> state. The
+        /// <c>START_IN_PROGRESS</c> state is the intermediate state between the <c>STOPPED</c>
+        /// and <c>READY</c> states.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartStreamingSession service method.</param>
         /// 
@@ -3659,7 +3659,7 @@ namespace Amazon.NimbleStudio
         /// <para>
         /// If the studio does not have a valid IAM Identity Center configuration currently associated
         /// with it, then a new IAM Identity Center application is created for the studio and
-        /// the studio is changed to the <code>READY</code> state.
+        /// the studio is changed to the <c>READY</c> state.
         /// </para>
         ///  
         /// <para>
@@ -3747,9 +3747,9 @@ namespace Amazon.NimbleStudio
         #region  StopStreamingSession
 
         /// <summary>
-        /// Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code>
-        /// state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the
-        /// <code>READY</code> and <code>STOPPED</code> states.
+        /// Transitions sessions from the <c>READY</c> state into the <c>STOPPED</c> state. The
+        /// <c>STOP_IN_PROGRESS</c> state is the intermediate state between the <c>READY</c> and
+        /// <c>STOPPED</c> states.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopStreamingSession service method.</param>
         /// 

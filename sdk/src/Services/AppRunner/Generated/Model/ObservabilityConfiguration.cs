@@ -30,15 +30,15 @@ namespace Amazon.AppRunner.Model
 {
     /// <summary>
     /// Describes an App Runner observability configuration resource. Multiple revisions of
-    /// a configuration have the same <code>ObservabilityConfigurationName</code> and different
-    /// <code>ObservabilityConfigurationRevision</code> values.
+    /// a configuration have the same <c>ObservabilityConfigurationName</c> and different
+    /// <c>ObservabilityConfigurationRevision</c> values.
     /// 
     ///  
     /// <para>
     /// The resource is designed to configure multiple features (currently one feature, tracing).
     /// This type contains optional members that describe the configuration of these features
-    /// (currently one member, <code>TraceConfiguration</code>). If a feature member isn't
-    /// specified, the feature isn't enabled.
+    /// (currently one member, <c>TraceConfiguration</c>). If a feature member isn't specified,
+    /// the feature isn't enabled.
     /// </para>
     /// </summary>
     public partial class ObservabilityConfiguration
@@ -93,9 +93,9 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property Latest. 
         /// <para>
-        /// It's set to <code>true</code> for the configuration with the highest <code>Revision</code>
-        /// among all configurations that share the same <code>ObservabilityConfigurationName</code>.
-        /// It's set to <code>false</code> otherwise.
+        /// It's set to <c>true</c> for the configuration with the highest <c>Revision</c> among
+        /// all configurations that share the same <c>ObservabilityConfigurationName</c>. It's
+        /// set to <c>false</c> otherwise.
         /// </para>
         /// </summary>
         public bool Latest
@@ -153,7 +153,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property ObservabilityConfigurationRevision. 
         /// <para>
         /// The revision of this observability configuration. It's unique among all the active
-        /// configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.
+        /// configurations (<c>"Status": "ACTIVE"</c>) that share the same <c>ObservabilityConfigurationName</c>.
         /// </para>
         /// </summary>
         public int ObservabilityConfigurationRevision
@@ -172,7 +172,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current state of the observability configuration. If the status of a configuration
-        /// revision is <code>INACTIVE</code>, it was deleted and can't be used. Inactive configuration
+        /// revision is <c>INACTIVE</c>, it was deleted and can't be used. Inactive configuration
         /// revisions are permanently removed some time after they are deleted.
         /// </para>
         /// </summary>

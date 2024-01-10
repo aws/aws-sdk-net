@@ -49,24 +49,24 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>iot:Data</code> - Returns a VeriSign signed data endpoint.
+        ///  <c>iot:Data</c> - Returns a VeriSign signed data endpoint.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.
+        ///  <c>iot:Data-ATS</c> - Returns an ATS signed data endpoint.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.
+        ///  <c>iot:CredentialProvider</c> - Returns an IoT credentials provider API endpoint.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
-        ///  <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.
+        ///  <c>iot:Jobs</c> - Returns an IoT device management Jobs API endpoint.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint
-        /// type to avoid issues related to the widespread distrust of Symantec certificate authorities.
+        /// We strongly recommend that customers use the newer <c>iot:Data-ATS</c> endpoint type
+        /// to avoid issues related to the widespread distrust of Symantec certificate authorities.
         /// ATS Signed Certificates are more secure and are trusted by most popular browsers.
         /// </para>
         /// </summary>

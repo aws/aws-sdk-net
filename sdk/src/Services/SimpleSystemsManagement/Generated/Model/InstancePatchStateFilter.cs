@@ -35,19 +35,19 @@ namespace Amazon.SimpleSystemsManagement.Model
     ///  
     /// <para>
     ///  <b>Example</b>: To filter for all managed nodes in a patch group having more than
-    /// three patches with a <code>FailedCount</code> status, use the following for the filter:
+    /// three patches with a <c>FailedCount</c> status, use the following for the filter:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Value for <code>Key</code>: <code>FailedCount</code> 
+    /// Value for <c>Key</c>: <c>FailedCount</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Value for <code>Type</code>: <code>GreaterThan</code> 
+    /// Value for <c>Type</c>: <c>GreaterThan</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Value for <code>Values</code>: <code>3</code> 
+    /// Value for <c>Values</c>: <c>3</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -64,35 +64,35 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>InstalledCount</code> 
+        ///  <c>InstalledCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InstalledOtherCount</code> 
+        ///  <c>InstalledOtherCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InstalledPendingRebootCount</code> 
+        ///  <c>InstalledPendingRebootCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InstalledRejectedCount</code> 
+        ///  <c>InstalledRejectedCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MissingCount</code> 
+        ///  <c>MissingCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FailedCount</code> 
+        ///  <c>FailedCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UnreportedNotApplicableCount</code> 
+        ///  <c>UnreportedNotApplicableCount</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NotApplicableCount</code> 
+        ///  <c>NotApplicableCount</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

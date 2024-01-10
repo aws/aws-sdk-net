@@ -39,7 +39,7 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property SharedDirectoryId. 
         /// <para>
         /// Identifier of the directory that is stored in the directory consumer account that
-        /// is shared from the specified directory (<code>DirectoryId</code>).
+        /// is shared from the specified directory (<c>DirectoryId</c>).
         /// </para>
         /// </summary>
         public string SharedDirectoryId

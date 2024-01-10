@@ -132,12 +132,12 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CompilationStartTime. 
         /// <para>
-        /// The time when the model compilation job started the <code>CompilationJob</code> instances.
+        /// The time when the model compilation job started the <c>CompilationJob</c> instances.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code>
+        /// You are billed for the time between this timestamp and the timestamp in the <c>CompilationEndTime</c>
         /// field. In Amazon CloudWatch Logs, the start time might be later than this time. That's
         /// because it takes time to download the compilation job, which depends on the size of
         /// the compilation job container. 

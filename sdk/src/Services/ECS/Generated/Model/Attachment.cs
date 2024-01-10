@@ -78,9 +78,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the attachment. Valid values are <code>PRECREATED</code>, <code>CREATED</code>,
-        /// <code>ATTACHING</code>, <code>ATTACHED</code>, <code>DETACHING</code>, <code>DETACHED</code>,
-        /// <code>DELETED</code>, and <code>FAILED</code>.
+        ///  The status of the attachment. Valid values are <c>PRECREATED</c>, <c>CREATED</c>,
+        /// <c>ATTACHING</c>, <c>ATTACHED</c>, <c>DETACHING</c>, <c>DETACHED</c>, <c>DELETED</c>,
+        /// and <c>FAILED</c>.
         /// </para>
         /// </summary>
         public string Status
@@ -98,7 +98,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the attachment, such as <code>ElasticNetworkInterface</code>.
+        /// The type of the attachment, such as <c>ElasticNetworkInterface</c>.
         /// </para>
         /// </summary>
         public string Type

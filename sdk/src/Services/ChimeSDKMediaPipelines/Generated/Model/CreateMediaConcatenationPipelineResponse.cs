@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaConcatenationPipeline. 
         /// <para>
-        /// A media concatenation pipeline object, the ID, source type, <code>MediaPipelineARN</code>,
+        /// A media concatenation pipeline object, the ID, source type, <c>MediaPipelineARN</c>,
         /// and sink of a media concatenation pipeline object.
         /// </para>
         /// </summary>

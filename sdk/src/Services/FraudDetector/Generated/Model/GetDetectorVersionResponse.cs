@@ -202,15 +202,15 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>FIRST_MATCHED</code> indicates that Amazon Fraud Detector evaluates rules sequentially,
+        ///  <c>FIRST_MATCHED</c> indicates that Amazon Fraud Detector evaluates rules sequentially,
         /// first to last, stopping at the first matched rule. Amazon Fraud dectector then provides
         /// the outcomes for that single rule.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ALL_MATCHED</code> indicates that Amazon Fraud Detector evaluates all rules
-        /// and returns the outcomes for all matched rules. You can define and edit the rule mode
-        /// at the detector version level, when it is in draft status.
+        ///  <c>ALL_MATCHED</c> indicates that Amazon Fraud Detector evaluates all rules and returns
+        /// the outcomes for all matched rules. You can define and edit the rule mode at the detector
+        /// version level, when it is in draft status.
         /// </para>
         /// </summary>
         public RuleExecutionMode RuleExecutionMode

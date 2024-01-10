@@ -39,10 +39,10 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID of the target. If the target type of the target group is <code>INSTANCE</code>,
-        /// this is an instance ID. If the target type is <code>IP</code> , this is an IP address.
-        /// If the target type is <code>LAMBDA</code>, this is the ARN of the Lambda function.
-        /// If the target type is <code>ALB</code>, this is the ARN of the Application Load Balancer.
+        /// The ID of the target. If the target type of the target group is <c>INSTANCE</c>, this
+        /// is an instance ID. If the target type is <c>IP</c> , this is an IP address. If the
+        /// target type is <c>LAMBDA</c>, this is the ARN of the Lambda function. If the target
+        /// type is <c>ALB</c>, this is the ARN of the Application Load Balancer.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=200)]
@@ -61,8 +61,8 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port on which the target is listening. For HTTP, the default is <code>80</code>.
-        /// For HTTPS, the default is <code>443</code>.
+        /// The port on which the target is listening. For HTTP, the default is <c>80</c>. For
+        /// HTTPS, the default is <c>443</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65535)]

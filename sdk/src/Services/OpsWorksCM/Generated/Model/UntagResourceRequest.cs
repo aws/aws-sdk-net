@@ -41,7 +41,7 @@ namespace Amazon.OpsWorksCM.Model
         /// Gets and sets the property ResourceArn. 
         /// <para>
         /// The Amazon Resource Number (ARN) of a resource from which you want to remove tags.
-        /// For example, <code>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</code>.
+        /// For example, <c>arn:aws:opsworks-cm:us-west-2:123456789012:server/test-owcm-server/EXAMPLE-66b0-4196-8274-d1a2bEXAMPLE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

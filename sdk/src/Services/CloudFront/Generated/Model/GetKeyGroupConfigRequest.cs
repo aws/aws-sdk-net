@@ -36,9 +36,9 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// To get a key group configuration, you must provide the key group's identifier. If
     /// the key group is referenced in a distribution's cache behavior, you can get the key
-    /// group's identifier using <code>ListDistributions</code> or <code>GetDistribution</code>.
-    /// If the key group is not referenced in a cache behavior, you can get the identifier
-    /// using <code>ListKeyGroups</code>.
+    /// group's identifier using <c>ListDistributions</c> or <c>GetDistribution</c>. If the
+    /// key group is not referenced in a cache behavior, you can get the identifier using
+    /// <c>ListKeyGroups</c>.
     /// </para>
     /// </summary>
     public partial class GetKeyGroupConfigRequest : AmazonCloudFrontRequest
@@ -49,7 +49,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The identifier of the key group whose configuration you are getting. To get the identifier,
-        /// use <code>ListKeyGroups</code>.
+        /// use <c>ListKeyGroups</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -31,8 +31,8 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the BatchGetWorkflows operation.
     /// Returns a list of resource metadata for a given list of workflow names. After calling
-    /// the <code>ListWorkflows</code> operation, you can call this operation to access the
-    /// data to which you have been granted permissions. This operation supports all IAM permissions,
+    /// the <c>ListWorkflows</c> operation, you can call this operation to access the data
+    /// to which you have been granted permissions. This operation supports all IAM permissions,
     /// including permission conditions that uses tags.
     /// </summary>
     public partial class BatchGetWorkflowsRequest : AmazonGlueRequest
@@ -61,7 +61,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Names. 
         /// <para>
-        /// A list of workflow names, which may be the names returned from the <code>ListWorkflows</code>
+        /// A list of workflow names, which may be the names returned from the <c>ListWorkflows</c>
         /// operation.
         /// </para>
         /// </summary>

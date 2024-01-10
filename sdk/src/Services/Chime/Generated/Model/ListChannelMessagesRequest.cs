@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChannelMessages operation.
-    /// List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>.
+    /// List all the messages in a channel. Returns a paginated list of <c>ChannelMessages</c>.
     /// By default, sorted by creation timestamp in descending order.
     /// 
     ///  <note> 
@@ -41,7 +41,7 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  
     /// <para>
-    /// Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// Also, the x-amz-chime-bearer request header is mandatory. Use the <c>AppInstanceUserArn</c>
     /// of the user that makes the API call as the value in the header.
     /// </para>
     ///  </note> <important> 
@@ -90,7 +90,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The <c>AppInstanceUserArn</c> of the user that makes the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]

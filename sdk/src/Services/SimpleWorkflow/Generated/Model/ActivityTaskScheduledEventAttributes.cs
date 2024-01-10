@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>ActivityTaskScheduled</code> event.
+    /// Provides the details of the <c>ActivityTaskScheduled</c> event.
     /// </summary>
     public partial class ActivityTaskScheduledEventAttributes
     {
@@ -106,9 +106,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// that resulted in the scheduling of this activity task. This information can be useful
-        /// for diagnosing problems by tracing back the chain of events leading up to this event.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision that
+        /// resulted in the scheduling of this activity task. This information can be useful for
+        /// diagnosing problems by tracing back the chain of events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -249,8 +249,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code> (-2147483648)
-        /// to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher priority.
+        /// Valid values are integers that range from Java's <c>Integer.MIN_VALUE</c> (-2147483648)
+        /// to <c>Integer.MAX_VALUE</c> (2147483647). Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>

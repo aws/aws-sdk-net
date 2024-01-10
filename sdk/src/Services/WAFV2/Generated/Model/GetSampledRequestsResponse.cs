@@ -40,10 +40,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property PopulationSize. 
         /// <para>
-        /// The total number of requests from which <code>GetSampledRequests</code> got a sample
-        /// of <code>MaxItems</code> requests. If <code>PopulationSize</code> is less than <code>MaxItems</code>,
-        /// the sample includes every request that your Amazon Web Services resource received
-        /// during the specified time range.
+        /// The total number of requests from which <c>GetSampledRequests</c> got a sample of
+        /// <c>MaxItems</c> requests. If <c>PopulationSize</c> is less than <c>MaxItems</c>, the
+        /// sample includes every request that your Amazon Web Services resource received during
+        /// the specified time range.
         /// </para>
         /// </summary>
         public long PopulationSize
@@ -80,9 +80,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property TimeWindow. 
         /// <para>
-        /// Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
+        /// Usually, <c>TimeWindow</c> is the time range that you specified in the <c>GetSampledRequests</c>
         /// request. However, if your Amazon Web Services resource received more than 5,000 requests
-        /// during the time range that you specified in the request, <code>GetSampledRequests</code>
+        /// during the time range that you specified in the request, <c>GetSampledRequests</c>
         /// returns the time range for the first 5,000 requests. Times are in Coordinated Universal
         /// Time (UTC) format.
         /// </para>

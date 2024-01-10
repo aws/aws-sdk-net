@@ -39,25 +39,25 @@ namespace Amazon.KinesisFirehose.Model
     ///  
     /// <para>
     /// This is an asynchronous operation that immediately returns. The initial status of
-    /// the delivery stream is <code>CREATING</code>. After the delivery stream is created,
-    /// its status is <code>ACTIVE</code> and it now accepts data. If the delivery stream
-    /// creation fails, the status transitions to <code>CREATING_FAILED</code>. Attempts to
-    /// send data to a delivery stream that is not in the <code>ACTIVE</code> state cause
-    /// an exception. To check the state of a delivery stream, use <a>DescribeDeliveryStream</a>.
+    /// the delivery stream is <c>CREATING</c>. After the delivery stream is created, its
+    /// status is <c>ACTIVE</c> and it now accepts data. If the delivery stream creation fails,
+    /// the status transitions to <c>CREATING_FAILED</c>. Attempts to send data to a delivery
+    /// stream that is not in the <c>ACTIVE</c> state cause an exception. To check the state
+    /// of a delivery stream, use <a>DescribeDeliveryStream</a>.
     /// </para>
     ///  
     /// <para>
-    /// If the status of a delivery stream is <code>CREATING_FAILED</code>, this status doesn't
-    /// change, and you can't invoke <code>CreateDeliveryStream</code> again on it. However,
-    /// you can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
+    /// If the status of a delivery stream is <c>CREATING_FAILED</c>, this status doesn't
+    /// change, and you can't invoke <c>CreateDeliveryStream</c> again on it. However, you
+    /// can invoke the <a>DeleteDeliveryStream</a> operation to delete it.
     /// </para>
     ///  
     /// <para>
     /// A Kinesis Data Firehose delivery stream can be configured to receive records directly
     /// from providers using <a>PutRecord</a> or <a>PutRecordBatch</a>, or it can be configured
     /// to use an existing Kinesis stream as its source. To specify a Kinesis data stream
-    /// as input, set the <code>DeliveryStreamType</code> parameter to <code>KinesisStreamAsSource</code>,
-    /// and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <code>KinesisStreamSourceConfiguration</code>
+    /// as input, set the <c>DeliveryStreamType</c> parameter to <c>KinesisStreamAsSource</c>,
+    /// and provide the Kinesis stream Amazon Resource Name (ARN) and role ARN in the <c>KinesisStreamSourceConfiguration</c>
     /// parameter.
     /// </para>
     ///  
@@ -73,21 +73,21 @@ namespace Amazon.KinesisFirehose.Model
     /// Serverless, Splunk, and any custom HTTP endpoint or HTTP endpoints owned by or supported
     /// by third-party service providers, including Datadog, Dynatrace, LogicMonitor, MongoDB,
     /// New Relic, and Sumo Logic. You must specify only one of the following destination
-    /// configuration parameters: <code>ExtendedS3DestinationConfiguration</code>, <code>S3DestinationConfiguration</code>,
-    /// <code>ElasticsearchDestinationConfiguration</code>, <code>RedshiftDestinationConfiguration</code>,
-    /// or <code>SplunkDestinationConfiguration</code>.
+    /// configuration parameters: <c>ExtendedS3DestinationConfiguration</c>, <c>S3DestinationConfiguration</c>,
+    /// <c>ElasticsearchDestinationConfiguration</c>, <c>RedshiftDestinationConfiguration</c>,
+    /// or <c>SplunkDestinationConfiguration</c>.
     /// </para>
     ///  
     /// <para>
-    /// When you specify <code>S3DestinationConfiguration</code>, you can also provide the
-    /// following optional values: BufferingHints, <code>EncryptionConfiguration</code>, and
-    /// <code>CompressionFormat</code>. By default, if no <code>BufferingHints</code> value
-    /// is provided, Kinesis Data Firehose buffers data up to 5 MB or for 5 minutes, whichever
-    /// condition is satisfied first. <code>BufferingHints</code> is a hint, so there are
-    /// some cases where the service cannot adhere to these conditions strictly. For example,
-    /// record boundaries might be such that the size is a little over or under the configured
-    /// buffering size. By default, no encryption is performed. We strongly recommend that
-    /// you enable encryption to ensure secure data storage in Amazon S3.
+    /// When you specify <c>S3DestinationConfiguration</c>, you can also provide the following
+    /// optional values: BufferingHints, <c>EncryptionConfiguration</c>, and <c>CompressionFormat</c>.
+    /// By default, if no <c>BufferingHints</c> value is provided, Kinesis Data Firehose buffers
+    /// data up to 5 MB or for 5 minutes, whichever condition is satisfied first. <c>BufferingHints</c>
+    /// is a hint, so there are some cases where the service cannot adhere to these conditions
+    /// strictly. For example, record boundaries might be such that the size is a little over
+    /// or under the configured buffering size. By default, no encryption is performed. We
+    /// strongly recommend that you enable encryption to ensure secure data storage in Amazon
+    /// S3.
     /// </para>
     ///  
     /// <para>
@@ -96,22 +96,21 @@ namespace Amazon.KinesisFirehose.Model
     ///  <ul> <li> 
     /// <para>
     /// An Amazon Redshift destination requires an S3 bucket as intermediate location. Kinesis
-    /// Data Firehose first delivers data to Amazon S3 and then uses <code>COPY</code> syntax
-    /// to load data into an Amazon Redshift table. This is specified in the <code>RedshiftDestinationConfiguration.S3Configuration</code>
+    /// Data Firehose first delivers data to Amazon S3 and then uses <c>COPY</c> syntax to
+    /// load data into an Amazon Redshift table. This is specified in the <c>RedshiftDestinationConfiguration.S3Configuration</c>
     /// parameter.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The compression formats <code>SNAPPY</code> or <code>ZIP</code> cannot be specified
-    /// in <code>RedshiftDestinationConfiguration.S3Configuration</code> because the Amazon
-    /// Redshift <code>COPY</code> operation that reads from the S3 bucket doesn't support
-    /// these compression formats.
+    /// The compression formats <c>SNAPPY</c> or <c>ZIP</c> cannot be specified in <c>RedshiftDestinationConfiguration.S3Configuration</c>
+    /// because the Amazon Redshift <c>COPY</c> operation that reads from the S3 bucket doesn't
+    /// support these compression formats.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// We strongly recommend that you use the user name and password you provide exclusively
     /// with Kinesis Data Firehose, and that the permissions for the account are restricted
-    /// for Amazon Redshift <code>INSERT</code> permissions.
+    /// for Amazon Redshift <c>INSERT</c> permissions.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -225,12 +224,12 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DirectPut</code>: Provider applications access the delivery stream directly.
+        ///  <c>DirectPut</c>: Provider applications access the delivery stream directly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data stream
-        /// as a source.
+        ///  <c>KinesisStreamAsSource</c>: The delivery stream uses a Kinesis data stream as a
+        /// source.
         /// </para>
         ///  </li> </ul>
         /// </summary>

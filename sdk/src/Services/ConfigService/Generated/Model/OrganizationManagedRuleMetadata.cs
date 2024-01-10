@@ -92,8 +92,7 @@ namespace Amazon.ConfigService.Model
         ///  <note> 
         /// <para>
         /// By default, rules with a periodic trigger are evaluated every 24 hours. To change
-        /// the frequency, specify a valid value for the <code>MaximumExecutionFrequency</code>
-        /// parameter.
+        /// the frequency, specify a valid value for the <c>MaximumExecutionFrequency</c> parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -151,8 +150,8 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property RuleIdentifier. 
         /// <para>
         /// For organization config managed rules, a predefined identifier from a list. For example,
-        /// <code>IAM_PASSWORD_POLICY</code> is a managed rule. To reference a managed rule, see
-        /// <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
+        /// <c>IAM_PASSWORD_POLICY</c> is a managed rule. To reference a managed rule, see <a
+        /// href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config_use-managed-rules.html">Using
         /// Config managed rules</a>.
         /// </para>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the GetRestoreTestingPlan operation.
-    /// Returns <code>RestoreTestingPlan</code> details for the specified <code>RestoreTestingPlanName</code>.
+    /// Returns <c>RestoreTestingPlan</c> details for the specified <c>RestoreTestingPlanName</c>.
     /// The details are the body of a restore testing plan in JSON format, in addition to
     /// plan metadata.
     /// </summary>

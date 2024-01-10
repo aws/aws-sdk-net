@@ -39,8 +39,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:PutNotificationSettings</code>.
-    /// 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:PutNotificationSettings</c>. 
     /// </para>
     /// </summary>
     public partial class PutNotificationSettingsRequest : AmazonIAMRolesAnywhereRequest

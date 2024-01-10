@@ -38,7 +38,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property OperationIdentifier. 
         /// <para>
-        ///  The operation identifier for this <code>UpdateEnabledControl</code> operation. 
+        ///  The operation identifier for this <c>UpdateEnabledControl</c> operation. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

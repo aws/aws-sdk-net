@@ -62,8 +62,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// A <code>ListBillingGroupCostReportsFilter</code> to specify billing groups to retrieve
-        /// reports from. 
+        /// A <c>ListBillingGroupCostReportsFilter</c> to specify billing groups to retrieve reports
+        /// from. 
         /// </para>
         /// </summary>
         public ListBillingGroupCostReportsFilter Filters

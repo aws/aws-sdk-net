@@ -140,9 +140,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property EnableInteroperability. 
         /// <para>
-        /// When <code>true</code>, allows organization interoperability between WorkMail and
-        /// Microsoft Exchange. If <code>true</code>, you must include a AD Connector directory
-        /// ID in the request.
+        /// When <c>true</c>, allows organization interoperability between WorkMail and Microsoft
+        /// Exchange. If <c>true</c>, you must include a AD Connector directory ID in the request.
         /// </para>
         /// </summary>
         public bool EnableInteroperability

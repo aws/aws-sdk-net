@@ -30,9 +30,9 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateRealtimeEndpoint operation.
-    /// Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the
-    /// URI of the <code>MLModel</code>; that is, the location to send real-time prediction
-    /// requests for the specified <code>MLModel</code>.
+    /// Creates a real-time endpoint for the <c>MLModel</c>. The endpoint contains the URI
+    /// of the <c>MLModel</c>; that is, the location to send real-time prediction requests
+    /// for the specified <c>MLModel</c>.
     /// </summary>
     public partial class CreateRealtimeEndpointRequest : AmazonMachineLearningRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property MLModelId. 
         /// <para>
-        /// The ID assigned to the <code>MLModel</code> during creation.
+        /// The ID assigned to the <c>MLModel</c> during creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

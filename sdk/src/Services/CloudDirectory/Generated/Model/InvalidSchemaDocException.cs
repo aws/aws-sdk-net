@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
-    /// Indicates that the provided <code>SchemaDoc</code> value is not valid.
+    /// Indicates that the provided <c>SchemaDoc</c> value is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

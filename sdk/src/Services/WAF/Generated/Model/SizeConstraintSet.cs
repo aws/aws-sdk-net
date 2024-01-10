@@ -42,10 +42,10 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// A complex type that contains <code>SizeConstraint</code> objects, which specify the
-    /// parts of web requests that you want AWS WAF to inspect the size of. If a <code>SizeConstraintSet</code>
-    /// contains more than one <code>SizeConstraint</code> object, a request only needs to
-    /// match one constraint to be considered a match.
+    /// A complex type that contains <c>SizeConstraint</c> objects, which specify the parts
+    /// of web requests that you want AWS WAF to inspect the size of. If a <c>SizeConstraintSet</c>
+    /// contains more than one <c>SizeConstraint</c> object, a request only needs to match
+    /// one constraint to be considered a match.
     /// </para>
     /// </summary>
     public partial class SizeConstraintSet
@@ -57,7 +57,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name, if any, of the <code>SizeConstraintSet</code>.
+        /// The name, if any, of the <c>SizeConstraintSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -95,17 +95,15 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property SizeConstraintSetId. 
         /// <para>
-        /// A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code>
-        /// to get information about a <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>),
-        /// update a <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert
-        /// a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code>
-        /// (see <a>UpdateRule</a>), and delete a <code>SizeConstraintSet</code> from AWS WAF
-        /// (see <a>DeleteSizeConstraintSet</a>).
+        /// A unique identifier for a <c>SizeConstraintSet</c>. You use <c>SizeConstraintSetId</c>
+        /// to get information about a <c>SizeConstraintSet</c> (see <a>GetSizeConstraintSet</a>),
+        /// update a <c>SizeConstraintSet</c> (see <a>UpdateSizeConstraintSet</a>), insert a <c>SizeConstraintSet</c>
+        /// into a <c>Rule</c> or delete one from a <c>Rule</c> (see <a>UpdateRule</a>), and delete
+        /// a <c>SizeConstraintSet</c> from AWS WAF (see <a>DeleteSizeConstraintSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and
-        /// by <a>ListSizeConstraintSets</a>.
+        ///  <c>SizeConstraintSetId</c> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

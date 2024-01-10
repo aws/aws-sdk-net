@@ -30,7 +30,7 @@ namespace Amazon.CertificateManager.Model
 {
     /// <summary>
     /// One or both of the values that make up the key-value pair is not valid. For example,
-    /// you cannot specify a tag value that begins with <code>aws:</code>.
+    /// you cannot specify a tag value that begins with <c>aws:</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

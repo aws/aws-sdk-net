@@ -38,8 +38,8 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// Depending on the value specified for the <code>S3DataType</code>, identifies either
-        /// a key name prefix or a manifest that locates the S3 data source.
+        /// Depending on the value specified for the <c>S3DataType</c>, identifies either a key
+        /// name prefix or a manifest that locates the S3 data source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

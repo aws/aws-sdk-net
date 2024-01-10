@@ -40,9 +40,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// Specifies whether user name case sensitivity will be applied for all users in the
         /// user pool through Amazon Cognito APIs. For most use cases, set case sensitivity to
-        /// <code>False</code> (case insensitive) as a best practice. When usernames and email
-        /// addresses are case insensitive, users can sign in as the same user when they enter
-        /// a different capitalization of their user name.
+        /// <c>False</c> (case insensitive) as a best practice. When usernames and email addresses
+        /// are case insensitive, users can sign in as the same user when they enter a different
+        /// capitalization of their user name.
         /// </para>
         ///  
         /// <para>
@@ -50,17 +50,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <dl> <dt>True</dt> <dd> 
         /// <para>
-        /// Enables case sensitivity for all username input. When this option is set to <code>True</code>,
+        /// Enables case sensitivity for all username input. When this option is set to <c>True</c>,
         /// users must sign in using the exact capitalization of their given username, such as
         /// “UserName”. This is the default value.
         /// </para>
         ///  </dd> <dt>False</dt> <dd> 
         /// <para>
         /// Enables case insensitivity for all username input. For example, when this option is
-        /// set to <code>False</code>, users can sign in using <code>username</code>, <code>USERNAME</code>,
-        /// or <code>UserName</code>. This option also enables both <code>preferred_username</code>
-        /// and <code>email</code> alias to be case insensitive, in addition to the <code>username</code>
-        /// attribute.
+        /// set to <c>False</c>, users can sign in using <c>username</c>, <c>USERNAME</c>, or
+        /// <c>UserName</c>. This option also enables both <c>preferred_username</c> and <c>email</c>
+        /// alias to be case insensitive, in addition to the <c>username</c> attribute.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

@@ -177,9 +177,8 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Owner. 
         /// <para>
-        /// The owner of the streaming image, either the <code>studioId</code> that contains the
-        /// streaming image, or <code>amazon</code> for images that are provided by Amazon Nimble
-        /// Studio.
+        /// The owner of the streaming image, either the <c>studioId</c> that contains the streaming
+        /// image, or <c>amazon</c> for images that are provided by Amazon Nimble Studio.
         /// </para>
         /// </summary>
         public string Owner

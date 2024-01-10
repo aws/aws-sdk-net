@@ -31,7 +31,7 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the UpdateOrganizationConfiguration operation.
     /// Configures the delegated administrator account with the provided values. You must
-    /// provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>,
+    /// provide a value for either <c>autoEnableOrganizationMembers</c> or <c>autoEnable</c>,
     /// but not both. 
     /// 
     ///  
@@ -57,9 +57,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  
         /// <para>
-        /// Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code>
-        /// to achieve the similar results. You must provide a value for either <code>autoEnableOrganizationMembers</code>
-        /// or <code>autoEnable</code>.
+        /// Even though this is still supported, we recommend using <c>AutoEnableOrganizationMembers</c>
+        /// to achieve the similar results. You must provide a value for either <c>autoEnableOrganizationMembers</c>
+        /// or <c>autoEnable</c>.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated, use AutoEnableOrganizationMembers instead")]
@@ -79,23 +79,23 @@ namespace Amazon.GuardDuty.Model
         /// Gets and sets the property AutoEnableOrganizationMembers. 
         /// <para>
         /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in
-        /// the organization. You must provide a value for either <code>autoEnableOrganizationMembers</code>
-        /// or <code>autoEnable</code>. 
+        /// the organization. You must provide a value for either <c>autoEnableOrganizationMembers</c>
+        /// or <c>autoEnable</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Use one of the following configuration values for <code>autoEnableOrganizationMembers</code>:
+        /// Use one of the following configuration values for <c>autoEnableOrganizationMembers</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code>: Indicates that when a new account joins the organization, they
-        /// will have GuardDuty enabled automatically. 
+        ///  <c>NEW</c>: Indicates that when a new account joins the organization, they will have
+        /// GuardDuty enabled automatically. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ALL</code>: Indicates that all accounts in the organization have GuardDuty
-        /// enabled automatically. This includes <code>NEW</code> accounts that join the organization
-        /// and accounts that may have been suspended or removed from the organization in GuardDuty.
+        ///  <c>ALL</c>: Indicates that all accounts in the organization have GuardDuty enabled
+        /// automatically. This includes <c>NEW</c> accounts that join the organization and accounts
+        /// that may have been suspended or removed from the organization in GuardDuty.
         /// </para>
         ///  
         /// <para>
@@ -103,9 +103,9 @@ namespace Amazon.GuardDuty.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for
-        /// any account in the organization. The administrator must manage GuardDuty for each
-        /// account in the organization individually.
+        ///  <c>NONE</c>: Indicates that GuardDuty will not be automatically enabled for any account
+        /// in the organization. The administrator must manage GuardDuty for each account in the
+        /// organization individually.
         /// </para>
         ///  </li> </ul>
         /// </summary>

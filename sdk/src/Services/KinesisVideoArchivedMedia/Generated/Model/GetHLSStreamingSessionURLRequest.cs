@@ -35,9 +35,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// 
     ///  
     /// <para>
-    /// Both the <code>StreamName</code> and the <code>StreamARN</code> parameters are optional,
-    /// but you must specify either the <code>StreamName</code> or the <code>StreamARN</code>
-    /// when invoking this API operation.
+    /// Both the <c>StreamName</c> and the <c>StreamARN</c> parameters are optional, but you
+    /// must specify either the <c>StreamName</c> or the <c>StreamARN</c> when invoking this
+    /// API operation.
     /// </para>
     ///  
     /// <para>
@@ -47,10 +47,10 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  <ul> <li> 
     /// <para>
     /// For streaming video, the media must contain H.264 or H.265 encoded video and, optionally,
-    /// AAC encoded audio. Specifically, the codec ID of track 1 should be <code>V_MPEG/ISO/AVC</code>
-    /// (for H.264) or <code>V_MPEG/ISO/HEVC</code> (for H.265). Optionally, the codec ID
-    /// of track 2 should be <code>A_AAC</code>. For audio only streaming, the codec ID of
-    /// track 1 should be <code>A_AAC</code>.
+    /// AAC encoded audio. Specifically, the codec ID of track 1 should be <c>V_MPEG/ISO/AVC</c>
+    /// (for H.264) or <c>V_MPEG/ISO/HEVC</c> (for H.265). Optionally, the codec ID of track
+    /// 2 should be <c>A_AAC</c>. For audio only streaming, the codec ID of track 1 should
+    /// be <c>A_AAC</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -84,15 +84,14 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  <ol> <li> 
     /// <para>
     /// Get an endpoint using <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_GetDataEndpoint.html">GetDataEndpoint</a>,
-    /// specifying <code>GET_HLS_STREAMING_SESSION_URL</code> for the <code>APIName</code>
-    /// parameter.
+    /// specifying <c>GET_HLS_STREAMING_SESSION_URL</c> for the <c>APIName</c> parameter.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Retrieve the HLS URL using <code>GetHLSStreamingSessionURL</code>. Kinesis Video Streams
+    /// Retrieve the HLS URL using <c>GetHLSStreamingSessionURL</c>. Kinesis Video Streams
     /// creates an HLS streaming session to be used for accessing content in a stream using
-    /// the HLS protocol. <code>GetHLSStreamingSessionURL</code> returns an authenticated
-    /// URL (that includes an encrypted session token) for the session's HLS <i>master playlist</i>
+    /// the HLS protocol. <c>GetHLSStreamingSessionURL</c> returns an authenticated URL (that
+    /// includes an encrypted session token) for the session's HLS <i>master playlist</i>
     /// (the root resource needed for streaming with HLS).
     /// </para>
     ///  <note> 
@@ -124,29 +123,28 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  <ul> <li> 
     /// <para>
     ///  <b>GetHLSMasterPlaylist:</b> Retrieves an HLS master playlist, which contains a URL
-    /// for the <code>GetHLSMediaPlaylist</code> action for each track, and additional metadata
+    /// for the <c>GetHLSMediaPlaylist</c> action for each track, and additional metadata
     /// for the media player, including estimated bitrate and resolution.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>GetHLSMediaPlaylist:</b> Retrieves an HLS media playlist, which contains a URL
-    /// to access the MP4 initialization fragment with the <code>GetMP4InitFragment</code>
-    /// action, and URLs to access the MP4 media fragments with the <code>GetMP4MediaFragment</code>
-    /// actions. The HLS media playlist also contains metadata about the stream that the player
-    /// needs to play it, such as whether the <code>PlaybackMode</code> is <code>LIVE</code>
-    /// or <code>ON_DEMAND</code>. The HLS media playlist is typically static for sessions
-    /// with a <code>PlaybackType</code> of <code>ON_DEMAND</code>. The HLS media playlist
-    /// is continually updated with new fragments for sessions with a <code>PlaybackType</code>
-    /// of <code>LIVE</code>. There is a distinct HLS media playlist for the video track and
-    /// the audio track (if applicable) that contains MP4 media URLs for the specific track.
-    /// 
+    /// to access the MP4 initialization fragment with the <c>GetMP4InitFragment</c> action,
+    /// and URLs to access the MP4 media fragments with the <c>GetMP4MediaFragment</c> actions.
+    /// The HLS media playlist also contains metadata about the stream that the player needs
+    /// to play it, such as whether the <c>PlaybackMode</c> is <c>LIVE</c> or <c>ON_DEMAND</c>.
+    /// The HLS media playlist is typically static for sessions with a <c>PlaybackType</c>
+    /// of <c>ON_DEMAND</c>. The HLS media playlist is continually updated with new fragments
+    /// for sessions with a <c>PlaybackType</c> of <c>LIVE</c>. There is a distinct HLS media
+    /// playlist for the video track and the audio track (if applicable) that contains MP4
+    /// media URLs for the specific track. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <b>GetMP4InitFragment:</b> Retrieves the MP4 initialization fragment. The media player
     /// typically loads the initialization fragment before loading any media fragments. This
-    /// fragment contains the "<code>fytp</code>" and "<code>moov</code>" MP4 atoms, and the
-    /// child atoms that are needed to initialize the media player decoder.
+    /// fragment contains the "<c>fytp</c>" and "<c>moov</c>" MP4 atoms, and the child atoms
+    /// that are needed to initialize the media player decoder.
     /// </para>
     ///  
     /// <para>
@@ -157,8 +155,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  </li> <li> 
     /// <para>
     ///  <b>GetMP4MediaFragment:</b> Retrieves MP4 media fragments. These fragments contain
-    /// the "<code>moof</code>" and "<code>mdat</code>" MP4 atoms and their child atoms, containing
-    /// the encoded fragment's media frames and their timestamps. 
+    /// the "<c>moof</c>" and "<c>mdat</c>" MP4 atoms and their child atoms, containing the
+    /// encoded fragment's media frames and their timestamps. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -183,9 +181,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// If the <code>ContainerFormat</code> is <code>MPEG_TS</code>, this API is used instead
-    /// of <code>GetMP4InitFragment</code> and <code>GetMP4MediaFragment</code> to retrieve
-    /// stream media.
+    /// If the <c>ContainerFormat</c> is <c>MPEG_TS</c>, this API is used instead of <c>GetMP4InitFragment</c>
+    /// and <c>GetMP4MediaFragment</c> to retrieve stream media.
     /// </para>
     ///  </note> 
     /// <para>
@@ -202,7 +199,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     ///  
     /// <para>
     /// You can monitor the amount of data that the media player consumes by monitoring the
-    /// <code>GetMP4MediaFragment.OutgoingBytes</code> Amazon CloudWatch metric. For information
+    /// <c>GetMP4MediaFragment.OutgoingBytes</c> Amazon CloudWatch metric. For information
     /// about using CloudWatch to monitor Kinesis Video Streams, see <a href="http://docs.aws.amazon.com/kinesisvideostreams/latest/dg/monitoring.html">Monitoring
     /// Kinesis Video Streams</a>. For pricing information, see <a href="https://aws.amazon.com/kinesis/video-streams/pricing/">Amazon
     /// Kinesis Video Streams Pricing</a> and <a href="https://aws.amazon.com/pricing/">Amazon
@@ -222,14 +219,13 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>x-amz-ErrorType</code> HTTP header – contains a more specific error type in
-    /// addition to what the HTTP status code provides. 
+    ///  <c>x-amz-ErrorType</c> HTTP header – contains a more specific error type in addition
+    /// to what the HTTP status code provides. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>x-amz-RequestId</code> HTTP header – if you want to report an issue to Amazon
-    /// Web Services, the support team can better diagnose the problem if given the Request
-    /// Id.
+    ///  <c>x-amz-RequestId</c> HTTP header – if you want to report an issue to Amazon Web
+    /// Services, the support team can better diagnose the problem if given the Request Id.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -261,17 +257,17 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property ContainerFormat. 
         /// <para>
-        /// Specifies which format should be used for packaging the media. Specifying the <code>FRAGMENTED_MP4</code>
+        /// Specifies which format should be used for packaging the media. Specifying the <c>FRAGMENTED_MP4</c>
         /// container format packages the media into MP4 fragments (fMP4 or CMAF). This is the
         /// recommended packaging because there is minimal packaging overhead. The other container
-        /// format option is <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was
-        /// released and is sometimes the only supported packaging on older HLS players. MPEG
-        /// TS typically has a 5-25 percent packaging overhead. This means MPEG TS typically requires
-        /// 5-25 percent more bandwidth and cost than fMP4.
+        /// format option is <c>MPEG_TS</c>. HLS has supported MPEG TS chunks since it was released
+        /// and is sometimes the only supported packaging on older HLS players. MPEG TS typically
+        /// has a 5-25 percent packaging overhead. This means MPEG TS typically requires 5-25
+        /// percent more bandwidth and cost than fMP4.
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>FRAGMENTED_MP4</code>.
+        /// The default is <c>FRAGMENTED_MP4</c>.
         /// </para>
         /// </summary>
         public ContainerFormat ContainerFormat
@@ -296,8 +292,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <para>
         /// Media players typically build a timeline of media content to play, based on the timestamps
         /// of each fragment. This means that if there is any overlap or gap between fragments
-        /// (as is typical if <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>),
-        /// the media player timeline will also have small gaps between fragments in some places,
+        /// (as is typical if <a>HLSFragmentSelector</a> is set to <c>SERVER_TIMESTAMP</c>), the
+        /// media player timeline will also have small gaps between fragments in some places,
         /// and will overwrite frames in other places. Gaps in the media player timeline can cause
         /// playback to stall and overlaps can cause playback to be jittery. When there are discontinuity
         /// flags between fragments, the media player is expected to reset the timeline, resulting
@@ -309,28 +305,28 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALWAYS</code>: a discontinuity marker is placed between every fragment in the
-        /// HLS media playlist. It is recommended to use a value of <code>ALWAYS</code> if the
-        /// fragment timestamps are not accurate.
+        ///  <c>ALWAYS</c>: a discontinuity marker is placed between every fragment in the HLS
+        /// media playlist. It is recommended to use a value of <c>ALWAYS</c> if the fragment
+        /// timestamps are not accurate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEVER</code>: no discontinuity markers are placed anywhere. It is recommended
-        /// to use a value of <code>NEVER</code> to ensure the media player timeline most accurately
-        /// maps to the producer timestamps. 
+        ///  <c>NEVER</c>: no discontinuity markers are placed anywhere. It is recommended to
+        /// use a value of <c>NEVER</c> to ensure the media player timeline most accurately maps
+        /// to the producer timestamps. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ON_DISCONTINUITY</code>: a discontinuity marker is placed between fragments
-        /// that have a gap or overlap of more than 50 milliseconds. For most playback scenarios,
-        /// it is recommended to use a value of <code>ON_DISCONTINUITY</code> so that the media
-        /// player timeline is only reset when there is a significant issue with the media timeline
-        /// (e.g. a missing fragment).
+        ///  <c>ON_DISCONTINUITY</c>: a discontinuity marker is placed between fragments that
+        /// have a gap or overlap of more than 50 milliseconds. For most playback scenarios, it
+        /// is recommended to use a value of <c>ON_DISCONTINUITY</c> so that the media player
+        /// timeline is only reset when there is a significant issue with the media timeline (e.g.
+        /// a missing fragment).
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>ALWAYS</code> when <a>HLSFragmentSelector</a> is set to <code>SERVER_TIMESTAMP</code>,
-        /// and <code>NEVER</code> when it is set to <code>PRODUCER_TIMESTAMP</code>.
+        /// The default is <c>ALWAYS</c> when <a>HLSFragmentSelector</a> is set to <c>SERVER_TIMESTAMP</c>,
+        /// and <c>NEVER</c> when it is set to <c>PRODUCER_TIMESTAMP</c>.
         /// </para>
         /// </summary>
         public HLSDiscontinuityMode DiscontinuityMode
@@ -357,9 +353,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>NEVER</code>. When <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>,
+        /// The default is <c>NEVER</c>. When <a>HLSFragmentSelector</a> is <c>SERVER_TIMESTAMP</c>,
         /// the timestamps will be the server start timestamps. Similarly, when <a>HLSFragmentSelector</a>
-        /// is <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start timestamps.
+        /// is <c>PRODUCER_TIMESTAMP</c>, the timestamps will be the producer start timestamps.
         /// 
         /// </para>
         /// </summary>
@@ -383,9 +379,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When a session expires, no new calls to <code>GetHLSMasterPlaylist</code>, <code>GetHLSMediaPlaylist</code>,
-        /// <code>GetMP4InitFragment</code>, <code>GetMP4MediaFragment</code>, or <code>GetTSFragment</code>
-        /// can be made for that session.
+        /// When a session expires, no new calls to <c>GetHLSMasterPlaylist</c>, <c>GetHLSMediaPlaylist</c>,
+        /// <c>GetMP4InitFragment</c>, <c>GetMP4MediaFragment</c>, or <c>GetTSFragment</c> can
+        /// be made for that session.
         /// </para>
         ///  
         /// <para>
@@ -412,12 +408,11 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is required if <code>PlaybackMode</code> is <code>ON_DEMAND</code>
-        /// or <code>LIVE_REPLAY</code>. This parameter is optional if PlaybackMode is<code/>
-        /// <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the <code>FragmentSelectorType</code>
-        /// can be set, but the <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code>
-        /// is <code>ON_DEMAND</code> or <code>LIVE_REPLAY</code>, both <code>FragmentSelectorType</code>
-        /// and <code>TimestampRange</code> must be set.
+        /// This parameter is required if <c>PlaybackMode</c> is <c>ON_DEMAND</c> or <c>LIVE_REPLAY</c>.
+        /// This parameter is optional if PlaybackMode is<code/> <c>LIVE</c>. If <c>PlaybackMode</c>
+        /// is <c>LIVE</c>, the <c>FragmentSelectorType</c> can be set, but the <c>TimestampRange</c>
+        /// should not be set. If <c>PlaybackMode</c> is <c>ON_DEMAND</c> or <c>LIVE_REPLAY</c>,
+        /// both <c>FragmentSelectorType</c> and <c>TimestampRange</c> must be set.
         /// </para>
         /// </summary>
         public HLSFragmentSelector HLSFragmentSelector
@@ -439,9 +434,9 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// When the <code>PlaybackMode</code> is <code>LIVE</code>, the most recent fragments
-        /// are returned up to this value. When the <code>PlaybackMode</code> is <code>ON_DEMAND</code>,
-        /// the oldest fragments are returned, up to this maximum number.
+        /// When the <c>PlaybackMode</c> is <c>LIVE</c>, the most recent fragments are returned
+        /// up to this value. When the <c>PlaybackMode</c> is <c>ON_DEMAND</c>, the oldest fragments
+        /// are returned, up to this maximum number.
         /// </para>
         ///  
         /// <para>
@@ -453,8 +448,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is 5 fragments if <code>PlaybackMode</code> is <code>LIVE</code> or <code>LIVE_REPLAY</code>,
-        /// and 1,000 if <code>PlaybackMode</code> is <code>ON_DEMAND</code>. 
+        /// The default is 5 fragments if <c>PlaybackMode</c> is <c>LIVE</c> or <c>LIVE_REPLAY</c>,
+        /// and 1,000 if <c>PlaybackMode</c> is <c>ON_DEMAND</c>. 
         /// </para>
         ///  
         /// <para>
@@ -487,48 +482,46 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is
-        /// continually updated with the latest fragments as they become available. We recommend
-        /// that the media player retrieve a new playlist on a one-second interval. When this
-        /// type of session is played in a media player, the user interface typically displays
-        /// a "live" notification, with no scrubber control for choosing the position in the playback
-        /// window to display.
+        ///  <b> <c>LIVE</c> </b>: For sessions of this type, the HLS media playlist is continually
+        /// updated with the latest fragments as they become available. We recommend that the
+        /// media player retrieve a new playlist on a one-second interval. When this type of session
+        /// is played in a media player, the user interface typically displays a "live" notification,
+        /// with no scrubber control for choosing the position in the playback window to display.
         /// </para>
         ///  <note> 
         /// <para>
-        /// In <code>LIVE</code> mode, the newest available fragments are included in an HLS media
-        /// playlist, even if there is a gap between fragments (that is, if a fragment is missing).
-        /// A gap like this might cause a media player to halt or cause a jump in playback. In
-        /// this mode, fragments are not added to the HLS media playlist if they are older than
-        /// the newest fragment in the playlist. If the missing fragment becomes available after
-        /// a subsequent fragment is added to the playlist, the older fragment is not added, and
+        /// In <c>LIVE</c> mode, the newest available fragments are included in an HLS media playlist,
+        /// even if there is a gap between fragments (that is, if a fragment is missing). A gap
+        /// like this might cause a media player to halt or cause a jump in playback. In this
+        /// mode, fragments are not added to the HLS media playlist if they are older than the
+        /// newest fragment in the playlist. If the missing fragment becomes available after a
+        /// subsequent fragment is added to the playlist, the older fragment is not added, and
         /// the gap is not filled.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <b> <code>LIVE_REPLAY</code> </b>: For sessions of this type, the HLS media playlist
-        /// is updated similarly to how it is updated for <code>LIVE</code> mode except that it
-        /// starts by including fragments from a given start time. Instead of fragments being
-        /// added as they are ingested, fragments are added as the duration of the next fragment
-        /// elapses. For example, if the fragments in the session are two seconds long, then a
-        /// new fragment is added to the media playlist every two seconds. This mode is useful
-        /// to be able to start playback from when an event is detected and continue live streaming
-        /// media that has not yet been ingested as of the time of the session creation. This
-        /// mode is also useful to stream previously archived media without being limited by the
-        /// 1,000 fragment limit in the <code>ON_DEMAND</code> mode. 
+        ///  <b> <c>LIVE_REPLAY</c> </b>: For sessions of this type, the HLS media playlist is
+        /// updated similarly to how it is updated for <c>LIVE</c> mode except that it starts
+        /// by including fragments from a given start time. Instead of fragments being added as
+        /// they are ingested, fragments are added as the duration of the next fragment elapses.
+        /// For example, if the fragments in the session are two seconds long, then a new fragment
+        /// is added to the media playlist every two seconds. This mode is useful to be able to
+        /// start playback from when an event is detected and continue live streaming media that
+        /// has not yet been ingested as of the time of the session creation. This mode is also
+        /// useful to stream previously archived media without being limited by the 1,000 fragment
+        /// limit in the <c>ON_DEMAND</c> mode. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media playlist
-        /// contains all the fragments for the session, up to the number that is specified in
-        /// <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be retrieved only
-        /// once for each session. When this type of session is played in a media player, the
-        /// user interface typically displays a scrubber control for choosing the position in
-        /// the playback window to display.
+        ///  <b> <c>ON_DEMAND</c> </b>: For sessions of this type, the HLS media playlist contains
+        /// all the fragments for the session, up to the number that is specified in <c>MaxMediaPlaylistFragmentResults</c>.
+        /// The playlist must be retrieved only once for each session. When this type of session
+        /// is played in a media player, the user interface typically displays a scrubber control
+        /// for choosing the position in the playback window to display.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In all playback modes, if <code>FragmentSelectorType</code> is <code>PRODUCER_TIMESTAMP</code>,
+        /// In all playback modes, if <c>FragmentSelectorType</c> is <c>PRODUCER_TIMESTAMP</c>,
         /// and if there are multiple fragments with the same start timestamp, the fragment that
         /// has the largest fragment number (that is, the newest fragment) is included in the
         /// HLS media playlist. The other fragments are not included. Fragments that have different
@@ -537,7 +530,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>LIVE</code>.
+        /// The default is <c>LIVE</c>.
         /// </para>
         /// </summary>
         public HLSPlaybackMode PlaybackMode
@@ -560,7 +553,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// You must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -583,7 +576,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// You must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

@@ -30,13 +30,13 @@ namespace Amazon.NetworkFirewall.Model
 {
     /// <summary>
     /// The value to use in an Amazon CloudWatch custom metric dimension. This is used in
-    /// the <code>PublishMetrics</code> <a>CustomAction</a>. A CloudWatch custom metric dimension
+    /// the <c>PublishMetrics</c> <a>CustomAction</a>. A CloudWatch custom metric dimension
     /// is a name/value pair that's part of the identity of a metric. 
     /// 
     ///  
     /// <para>
-    /// Network Firewall sets the dimension name to <code>CustomAction</code> and you provide
-    /// the dimension value. 
+    /// Network Firewall sets the dimension name to <c>CustomAction</c> and you provide the
+    /// dimension value. 
     /// </para>
     ///  
     /// <para>

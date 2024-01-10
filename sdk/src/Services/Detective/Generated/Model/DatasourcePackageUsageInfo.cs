@@ -58,7 +58,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property VolumeUsageUpdateTime. 
         /// <para>
         /// The data and time when the member account data volume was last updated. The value
-        /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime VolumeUsageUpdateTime

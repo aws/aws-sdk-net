@@ -31,8 +31,8 @@ namespace Amazon.LocationService.Model
     /// <summary>
     /// Container for the parameters to the CalculateRoute operation.
     /// <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates
-    /// a route</a> given the following required parameters: <code>DeparturePosition</code>
-    /// and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
+    /// a route</a> given the following required parameters: <c>DeparturePosition</c> and
+    /// <c>DestinationPosition</c>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create
     /// a route calculator resource</a>.
     /// 
     ///  
@@ -47,26 +47,25 @@ namespace Amazon.LocationService.Model
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying
-    /// a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>.
-    /// This calculates a route based on predictive traffic data at the given time. 
+    /// a departure time</a> using either <c>DepartureTime</c> or <c>DepartNow</c>. This calculates
+    /// a route based on predictive traffic data at the given time. 
     /// </para>
     ///  <note> 
     /// <para>
-    /// You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a
-    /// single request. Specifying both parameters returns a validation error.
+    /// You can't specify both <c>DepartureTime</c> and <c>DepartNow</c> in a single request.
+    /// Specifying both parameters returns a validation error.
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying
     /// a travel mode</a> using TravelMode sets the transportation mode used to calculate
-    /// the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code>
-    /// if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by
-    /// <code>Truck</code>.
+    /// the routes. This also lets you specify additional route preferences in <c>CarModeOptions</c>
+    /// if traveling by <c>Car</c>, or <c>TruckModeOptions</c> if traveling by <c>Truck</c>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// If you specify <code>walking</code> for the travel mode and your data provider is
-    /// Esri, the start and destination must be within 40km.
+    /// If you specify <c>walking</c> for the travel mode and your data provider is Esri,
+    /// the start and destination must be within 40km.
     /// </para>
     ///  </note> </li> </ul>
     /// </summary>
@@ -135,12 +134,12 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property CarModeOptions. 
         /// <para>
-        /// Specifies route preferences when traveling by <code>Car</code>, such as avoiding routes
+        /// Specifies route preferences when traveling by <c>Car</c>, such as avoiding routes
         /// that use ferries or tolls.
         /// </para>
         ///  
         /// <para>
-        /// Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.
+        /// Requirements: <c>TravelMode</c> must be specified as <c>Car</c>.
         /// </para>
         /// </summary>
         public CalculateRouteCarModeOptions CarModeOptions
@@ -164,11 +163,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>false</code> 
+        /// Default Value: <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>false</code> | <code>true</code> 
+        /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
         public bool DepartNow
@@ -187,22 +186,22 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property DeparturePosition. 
         /// <para>
         /// The start position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
-        /// Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.
+        /// Geodetic System (WGS 84)</a> format: <c>[longitude, latitude]</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, <code>[-123.115, 49.285]</code> 
+        /// For example, <c>[-123.115, 49.285]</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
         /// If you specify a departure that's not located on a road, Amazon Location <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">moves
         /// the position to the nearest road</a>. If Esri is the provider for your route calculator,
-        /// specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code>
+        /// specifying a route that is longer than 400 km returns a <c>400 RoutesValidationException</c>
         /// error.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
+        /// Valid Values: <c>[-180 to 180,-90 to 90]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
@@ -228,7 +227,7 @@ namespace Amazon.LocationService.Model
         ///  <ul> <li> 
         /// <para>
         /// In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format:
-        /// <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code>
+        /// <c>YYYY-MM-DDThh:mm:ss.sssZ</c>. For example, <c>2020–07-2T12:15:20.000Z+01:00</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -249,11 +248,11 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property DestinationPosition. 
         /// <para>
         /// The finish position for the route. Defined in <a href="https://earth-info.nga.mil/index.php?dir=wgs84&amp;action=wgs84">World
-        /// Geodetic System (WGS 84)</a> format: <code>[longitude, latitude]</code>.
+        /// Geodetic System (WGS 84)</a> format: <c>[longitude, latitude]</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  For example, <code>[-122.339, 47.615]</code> 
+        ///  For example, <c>[-122.339, 47.615]</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -262,7 +261,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
+        /// Valid Values: <c>[-180 to 180,-90 to 90]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
@@ -285,7 +284,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>Kilometers</code> 
+        /// Default Value: <c>Kilometers</c> 
         /// </para>
         /// </summary>
         public DistanceUnit DistanceUnit
@@ -308,11 +307,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>false</code> 
+        /// Default Value: <c>false</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>false</code> | <code>true</code> 
+        /// Valid Values: <c>false</c> | <c>true</c> 
         /// </para>
         /// </summary>
         public bool IncludeLegGeometry
@@ -369,18 +368,17 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property TravelMode. 
         /// <para>
         /// Specifies the mode of transport when calculating a route. Used in estimating the speed
-        /// of travel and road compatibility. You can choose <code>Car</code>, <code>Truck</code>,
-        /// <code>Walking</code>, <code>Bicycle</code> or <code>Motorcycle</code> as options for
-        /// the <code>TravelMode</code>.
+        /// of travel and road compatibility. You can choose <c>Car</c>, <c>Truck</c>, <c>Walking</c>,
+        /// <c>Bicycle</c> or <c>Motorcycle</c> as options for the <c>TravelMode</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Bicycle</code> and <code>Motorcycle</code> are only valid when using Grab as
-        /// a data provider, and only within Southeast Asia.
+        ///  <c>Bicycle</c> and <c>Motorcycle</c> are only valid when using Grab as a data provider,
+        /// and only within Southeast Asia.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Truck</code> is not available for Grab.
+        ///  <c>Truck</c> is not available for Grab.
         /// </para>
         ///  
         /// <para>
@@ -390,20 +388,20 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The <code>TravelMode</code> you specify also determines how you specify route preferences:
+        /// The <c>TravelMode</c> you specify also determines how you specify route preferences:
         /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If traveling by <code>Car</code> use the <code>CarModeOptions</code> parameter.
+        /// If traveling by <c>Car</c> use the <c>CarModeOptions</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.
+        /// If traveling by <c>Truck</c> use the <c>TruckModeOptions</c> parameter.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default Value: <code>Car</code> 
+        /// Default Value: <c>Car</c> 
         /// </para>
         /// </summary>
         public TravelMode TravelMode
@@ -421,13 +419,13 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property TruckModeOptions. 
         /// <para>
-        /// Specifies route preferences when traveling by <code>Truck</code>, such as avoiding
-        /// routes that use ferries or tolls, and truck specifications to consider when choosing
-        /// an optimal road.
+        /// Specifies route preferences when traveling by <c>Truck</c>, such as avoiding routes
+        /// that use ferries or tolls, and truck specifications to consider when choosing an optimal
+        /// road.
         /// </para>
         ///  
         /// <para>
-        /// Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.
+        /// Requirements: <c>TravelMode</c> must be specified as <c>Truck</c>.
         /// </para>
         /// </summary>
         public CalculateRouteTruckModeOptions TruckModeOptions
@@ -450,9 +448,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, from the <code>DeparturePosition</code> <code>[-123.115, 49.285]</code>,
-        /// the route follows the order that the waypoint positions are given <code>[[-122.757,
-        /// 49.0021],[-122.349, 47.620]]</code> 
+        /// For example, from the <c>DeparturePosition</c> <c>[-123.115, 49.285]</c>, the route
+        /// follows the order that the waypoint positions are given <c>[[-122.757, 49.0021],[-122.349,
+        /// 47.620]]</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -462,16 +460,16 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Specifying more than 23 waypoints returns a <code>400 ValidationException</code> error.
+        /// Specifying more than 23 waypoints returns a <c>400 ValidationException</c> error.
         /// </para>
         ///  
         /// <para>
         /// If Esri is the provider for your route calculator, specifying a route that is longer
-        /// than 400 km returns a <code>400 RoutesValidationException</code> error.
+        /// than 400 km returns a <c>400 RoutesValidationException</c> error.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Valid Values: <code>[-180 to 180,-90 to 90]</code> 
+        /// Valid Values: <c>[-180 to 180,-90 to 90]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=23)]

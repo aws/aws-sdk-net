@@ -36,7 +36,7 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    ///  <code>≈&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</code>
+    ///  <c>≈&lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;</c>
     /// 
     /// </para>
     ///  
@@ -60,8 +60,8 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>Status</code> of the forecast export job must be <code>ACTIVE</code> before
-    /// you can access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeWhatIfForecastExport</a>
+    /// The <c>Status</c> of the forecast export job must be <c>ACTIVE</c> before you can
+    /// access the forecast in your Amazon S3 bucket. To get the status, use the <a>DescribeWhatIfForecastExport</a>
     /// operation.
     /// </para>
     ///  </note>
@@ -83,8 +83,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>Destination</code> must include an Key Management Service
-        /// (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.
+        /// If encryption is used, <c>Destination</c> must include an Key Management Service (KMS)
+        /// key. The IAM role must allow Amazon Forecast permission to access the key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

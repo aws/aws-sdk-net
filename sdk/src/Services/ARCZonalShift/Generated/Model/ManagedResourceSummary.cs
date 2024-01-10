@@ -158,14 +158,14 @@ namespace Amazon.ARCZonalShift.Model
         /// <para>
         /// This status tracks whether a practice run configuration exists for a resource. When
         /// you configure a practice run for a resource so that a practice run configuration exists,
-        /// Route 53 ARC sets this value to <code>ENABLED</code>. If a you have not configured
-        /// a practice run for the resource, or delete a practice run configuration, Route 53
-        /// ARC sets the value to <code>DISABLED</code>.
+        /// Route 53 ARC sets this value to <c>ENABLED</c>. If a you have not configured a practice
+        /// run for the resource, or delete a practice run configuration, Route 53 ARC sets the
+        /// value to <c>DISABLED</c>.
         /// </para>
         ///  
         /// <para>
-        /// Route 53 ARC updates this status; you can't set a practice run status to <code>ENABLED</code>
-        /// or <code>DISABLED</code>.
+        /// Route 53 ARC updates this status; you can't set a practice run status to <c>ENABLED</c>
+        /// or <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public ZonalAutoshiftStatus PracticeRunStatus
@@ -184,7 +184,7 @@ namespace Amazon.ARCZonalShift.Model
         /// Gets and sets the property ZonalAutoshiftStatus. 
         /// <para>
         /// The status of autoshift for a resource. When you configure zonal autoshift for a resource,
-        /// you can set the value of the status to <code>ENABLED</code> or <code>DISABLED</code>.
+        /// you can set the value of the status to <c>ENABLED</c> or <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public ZonalAutoshiftStatus ZonalAutoshiftStatus

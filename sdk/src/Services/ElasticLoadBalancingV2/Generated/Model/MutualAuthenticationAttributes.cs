@@ -58,8 +58,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The client certificate handling method. Options are <code>off</code>, <code>passthrough</code>
-        /// or <code>verify</code>. The default value is <code>off</code>.
+        /// The client certificate handling method. Options are <c>off</c>, <c>passthrough</c>
+        /// or <c>verify</c>. The default value is <c>off</c>.
         /// </para>
         /// </summary>
         public string Mode

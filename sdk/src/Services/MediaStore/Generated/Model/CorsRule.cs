@@ -43,10 +43,10 @@ namespace Amazon.MediaStore.Model
         /// <summary>
         /// Gets and sets the property AllowedHeaders. 
         /// <para>
-        /// Specifies which headers are allowed in a preflight <code>OPTIONS</code> request through
-        /// the <code>Access-Control-Request-Headers</code> header. Each header name that is specified
-        /// in <code>Access-Control-Request-Headers</code> must have a corresponding entry in
-        /// the rule. Only the headers that were requested are sent back. 
+        /// Specifies which headers are allowed in a preflight <c>OPTIONS</c> request through
+        /// the <c>Access-Control-Request-Headers</c> header. Each header name that is specified
+        /// in <c>Access-Control-Request-Headers</c> must have a corresponding entry in the rule.
+        /// Only the headers that were requested are sent back. 
         /// </para>
         ///  
         /// <para>
@@ -74,7 +74,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         ///  
         /// <para>
-        /// Each CORS rule must contain at least one <code>AllowedMethods</code> and one <code>AllowedOrigins</code>
+        /// Each CORS rule must contain at least one <c>AllowedMethods</c> and one <c>AllowedOrigins</c>
         /// element.
         /// </para>
         /// </summary>
@@ -95,14 +95,13 @@ namespace Amazon.MediaStore.Model
         /// Gets and sets the property AllowedOrigins. 
         /// <para>
         /// One or more response headers that you want users to be able to access from their applications
-        /// (for example, from a JavaScript <code>XMLHttpRequest</code> object).
+        /// (for example, from a JavaScript <c>XMLHttpRequest</c> object).
         /// </para>
         ///  
         /// <para>
-        /// Each CORS rule must have at least one <code>AllowedOrigins</code> element. The string
-        /// value can include only one wildcard character (*), for example, http://*.example.com.
-        /// Additionally, you can specify only one wildcard character to allow cross-origin access
-        /// for all origins.
+        /// Each CORS rule must have at least one <c>AllowedOrigins</c> element. The string value
+        /// can include only one wildcard character (*), for example, http://*.example.com. Additionally,
+        /// you can specify only one wildcard character to allow cross-origin access for all origins.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -122,7 +121,7 @@ namespace Amazon.MediaStore.Model
         /// Gets and sets the property ExposeHeaders. 
         /// <para>
         /// One or more headers in the response that you want users to be able to access from
-        /// their applications (for example, from a JavaScript <code>XMLHttpRequest</code> object).
+        /// their applications (for example, from a JavaScript <c>XMLHttpRequest</c> object).
         /// </para>
         ///  
         /// <para>
@@ -150,7 +149,7 @@ namespace Amazon.MediaStore.Model
         /// </para>
         ///  
         /// <para>
-        /// A CORS rule can have only one <code>MaxAgeSeconds</code> element.
+        /// A CORS rule can have only one <c>MaxAgeSeconds</c> element.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2147483647)]

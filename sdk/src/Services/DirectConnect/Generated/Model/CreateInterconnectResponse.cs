@@ -184,33 +184,32 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>requested</code>: The initial state of an interconnect. The interconnect stays
-        /// in the requested state until the Letter of Authorization (LOA) is sent to the customer.
+        ///  <c>requested</c>: The initial state of an interconnect. The interconnect stays in
+        /// the requested state until the Letter of Authorization (LOA) is sent to the customer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code>: The interconnect is approved, and is being initialized.
+        ///  <c>pending</c>: The interconnect is approved, and is being initialized.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available</code>: The network link is up, and the interconnect is ready for
-        /// use.
+        ///  <c>available</c>: The network link is up, and the interconnect is ready for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>down</code>: The network link is down.
+        ///  <c>down</c>: The network link is down.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code>: The interconnect is being deleted.
+        ///  <c>deleting</c>: The interconnect is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code>: The interconnect is deleted.
+        ///  <c>deleted</c>: The interconnect is deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>unknown</code>: The state of the interconnect is not available.
+        ///  <c>unknown</c>: The state of the interconnect is not available.
         /// </para>
         ///  </li> </ul>
         /// </summary>

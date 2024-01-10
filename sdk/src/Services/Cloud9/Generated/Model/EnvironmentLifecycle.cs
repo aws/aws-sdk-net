@@ -82,23 +82,23 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code>: The environment is in the process of being created.
+        ///  <c>CREATING</c>: The environment is in the process of being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATED</code>: The environment was successfully created.
+        ///  <c>CREATED</c>: The environment was successfully created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code>: The environment failed to be created.
+        ///  <c>CREATE_FAILED</c>: The environment failed to be created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code>: The environment is in the process of being deleted.
+        ///  <c>DELETING</c>: The environment is in the process of being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_FAILED</code>: The environment failed to delete.
+        ///  <c>DELETE_FAILED</c>: The environment failed to delete.
         /// </para>
         ///  </li> </ul>
         /// </summary>

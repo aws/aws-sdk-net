@@ -30,7 +30,7 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// An action to remove a member from a Managed Blockchain network as the result of a
-    /// removal proposal that is <code>APPROVED</code>. The member and all associated resources
+    /// removal proposal that is <c>APPROVED</c>. The member and all associated resources
     /// are deleted from the network.
     /// 
     ///  

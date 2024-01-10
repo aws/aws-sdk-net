@@ -239,8 +239,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Settings. 
         /// <para>
         /// Input parameters used in a streaming video analyzed by a stream processor. You can
-        /// use <code>FaceSearch</code> to recognize faces in a streaming video, or you can use
-        /// <code>ConnectedHome</code> to detect labels.
+        /// use <c>FaceSearch</c> to recognize faces in a streaming video, or you can use <c>ConnectedHome</c>
+        /// to detect labels.
         /// </para>
         /// </summary>
         public StreamProcessorSettings Settings

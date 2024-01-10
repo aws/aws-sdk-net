@@ -53,12 +53,12 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: Do not encrypt the records in the stream.
+        ///  <c>NONE</c>: Do not encrypt the records in the stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KMS</code>: Use server-side encryption on the records in the stream using a
-        /// customer-managed Amazon Web Services KMS key.
+        ///  <c>KMS</c>: Use server-side encryption on the records in the stream using a customer-managed
+        /// Amazon Web Services KMS key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -96,7 +96,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property HasMoreShards. 
         /// <para>
-        /// If set to <code>true</code>, more shards in the stream are available to describe.
+        /// If set to <c>true</c>, more shards in the stream are available to describe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -118,30 +118,28 @@ namespace Amazon.Kinesis.Model
         /// The GUID for the customer-managed Amazon Web Services KMS key to use for encryption.
         /// This value can be a globally unique identifier, a fully specified ARN to either an
         /// alias or a key, or an alias name prefixed by "alias/".You can also use a master key
-        /// owned by Kinesis Data Streams by specifying the alias <code>aws/kinesis</code>.
+        /// owned by Kinesis Data Streams by specifying the alias <c>aws/kinesis</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ARN example: <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        /// Key ARN example: <c>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN example: <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code>
-        /// 
+        /// Alias ARN example: <c>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Globally unique key ID example: <code>12345678-1234-1234-1234-123456789012</code>
-        /// 
+        /// Globally unique key ID example: <c>12345678-1234-1234-1234-123456789012</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name example: <code>alias/MyAliasName</code> 
+        /// Alias name example: <c>alias/MyAliasName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Master key owned by Kinesis Data Streams: <code>alias/aws/kinesis</code> 
+        /// Master key owned by Kinesis Data Streams: <c>alias/aws/kinesis</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -281,25 +279,23 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The stream is being created. Kinesis Data Streams immediately
-        /// returns and sets <code>StreamStatus</code> to <code>CREATING</code>.
+        ///  <c>CREATING</c> - The stream is being created. Kinesis Data Streams immediately returns
+        /// and sets <c>StreamStatus</c> to <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The stream is being deleted. The specified stream is in the
-        /// <code>DELETING</code> state until Kinesis Data Streams completes the deletion.
+        ///  <c>DELETING</c> - The stream is being deleted. The specified stream is in the <c>DELETING</c>
+        /// state until Kinesis Data Streams completes the deletion.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The stream exists and is ready for read and write operations
-        /// or deletion. You should perform read and write operations only on an <code>ACTIVE</code>
-        /// stream.
+        ///  <c>ACTIVE</c> - The stream exists and is ready for read and write operations or deletion.
+        /// You should perform read and write operations only on an <c>ACTIVE</c> stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
-        /// write operations continue to work while the stream is in the <code>UPDATING</code>
-        /// state.
+        ///  <c>UPDATING</c> - Shards in the stream are being merged or split. Read and write
+        /// operations continue to work while the stream is in the <c>UPDATING</c> state.
         /// </para>
         ///  </li> </ul>
         /// </summary>

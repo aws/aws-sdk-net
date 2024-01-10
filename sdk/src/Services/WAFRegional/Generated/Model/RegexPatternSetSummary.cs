@@ -42,8 +42,8 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returned by <a>ListRegexPatternSets</a>. Each <code>RegexPatternSetSummary</code>
-    /// object includes the <code>Name</code> and <code>RegexPatternSetId</code> for one <a>RegexPatternSet</a>.
+    /// Returned by <a>ListRegexPatternSets</a>. Each <c>RegexPatternSetSummary</c> object
+    /// includes the <c>Name</c> and <c>RegexPatternSetId</c> for one <a>RegexPatternSet</a>.
     /// </para>
     /// </summary>
     public partial class RegexPatternSetSummary
@@ -54,8 +54,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>RegexPatternSet</a>. You can't change <code>Name</code>
-        /// after you create a <code>RegexPatternSet</code>.
+        /// A friendly name or description of the <a>RegexPatternSet</a>. You can't change <c>Name</c>
+        /// after you create a <c>RegexPatternSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -74,15 +74,14 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RegexPatternSetId. 
         /// <para>
-        /// The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code>
-        /// to get information about a <code>RegexPatternSet</code>, update a <code>RegexPatternSet</code>,
-        /// remove a <code>RegexPatternSet</code> from a <code>RegexMatchSet</code>, and delete
-        /// a <code>RegexPatternSet</code> from AWS WAF.
+        /// The <c>RegexPatternSetId</c> for a <c>RegexPatternSet</c>. You use <c>RegexPatternSetId</c>
+        /// to get information about a <c>RegexPatternSet</c>, update a <c>RegexPatternSet</c>,
+        /// remove a <c>RegexPatternSet</c> from a <c>RegexMatchSet</c>, and delete a <c>RegexPatternSet</c>
+        /// from AWS WAF.
         /// </para>
         ///  
         /// <para>
-        ///  <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-        /// <a>ListRegexPatternSets</a>.
+        ///  <c>RegexPatternSetId</c> is returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

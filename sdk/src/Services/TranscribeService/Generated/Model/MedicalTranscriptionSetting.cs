@@ -90,8 +90,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>MaxAlternatives</code> in your request, you must also include
-        /// <code>ShowAlternatives</code> with a value of <code>true</code>.
+        /// If you include <c>MaxAlternatives</c> in your request, you must also include <c>ShowAlternatives</c>
+        /// with a value of <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -124,7 +124,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
+        /// If you specify the <c>MaxSpeakerLabels</c> field, you must set the <c>ShowSpeakerLabels</c>
         /// field to true.
         /// </para>
         /// </summary>
@@ -144,12 +144,12 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ShowAlternatives. 
         /// <para>
-        /// To include alternative transcriptions within your transcription output, include <code>ShowAlternatives</code>
+        /// To include alternative transcriptions within your transcription output, include <c>ShowAlternatives</c>
         /// in your transcription request.
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>ShowAlternatives</code>, you must also include <code>MaxAlternatives</code>,
+        /// If you include <c>ShowAlternatives</c>, you must also include <c>MaxAlternatives</c>,
         /// which is the maximum number of alternative transcriptions you want Amazon Transcribe
         /// Medical to generate.
         /// </para>
@@ -179,8 +179,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
-        /// <code>MaxSpeakerLabels</code>.
+        /// If you enable <c>ShowSpeakerLabels</c> in your request, you must also include <c>MaxSpeakerLabels</c>.
         /// </para>
         ///  
         /// <para>
@@ -211,7 +210,7 @@ namespace Amazon.TranscribeService.Model
         /// The language of the specified custom vocabulary must match the language code that
         /// you specify in your transcription request. If the languages do not match, the custom
         /// vocabulary isn't applied. There are no errors or warnings associated with a language
-        /// mismatch. US English (<code>en-US</code>) is the only valid language for Amazon Transcribe
+        /// mismatch. US English (<c>en-US</c>) is the only valid language for Amazon Transcribe
         /// Medical.
         /// </para>
         /// </summary>

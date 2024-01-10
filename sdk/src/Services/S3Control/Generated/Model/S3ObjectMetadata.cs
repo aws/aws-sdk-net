@@ -200,7 +200,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property SSEAlgorithm.  <note> 
         /// <para>
         /// For directory buckets, only the server-side encryption with Amazon S3 managed keys
-        /// (SSE-S3) (<code>AES256</code>) is supported.
+        /// (SSE-S3) (<c>AES256</c>) is supported.
         /// </para>
         ///  </note>
         /// </summary>

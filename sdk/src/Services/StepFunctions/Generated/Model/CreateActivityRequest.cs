@@ -32,7 +32,7 @@ namespace Amazon.StepFunctions.Model
     /// Container for the parameters to the CreateActivity operation.
     /// Creates an activity. An activity is a task that you write in any programming language
     /// and host on any machine that has access to Step Functions. Activities must poll Step
-    /// Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code>
+    /// Functions using the <c>GetActivityTask</c> API action and respond using <c>SendTask*</c>
     /// API actions. This function lets Step Functions know the existence of your activity
     /// and returns an identifier for use in a state machine and when polling from the activity.
     /// 
@@ -43,12 +43,11 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> <note> 
     /// <para>
-    ///  <code>CreateActivity</code> is an idempotent API. Subsequent requests won’t create
-    /// a duplicate resource if it was already created. <code>CreateActivity</code>'s idempotency
-    /// check is based on the activity <code>name</code>. If a following request has different
-    /// <code>tags</code> values, Step Functions will ignore these differences and treat it
-    /// as an idempotent request of the previous. In this case, <code>tags</code> will not
-    /// be updated, even if they are different.
+    ///  <c>CreateActivity</c> is an idempotent API. Subsequent requests won’t create a duplicate
+    /// resource if it was already created. <c>CreateActivity</c>'s idempotency check is based
+    /// on the activity <c>name</c>. If a following request has different <c>tags</c> values,
+    /// Step Functions will ignore these differences and treat it as an idempotent request
+    /// of the previous. In this case, <c>tags</c> will not be updated, even if they are different.
     /// </para>
     ///  </note>
     /// </summary>
@@ -75,19 +74,19 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// brackets <code>&lt; &gt; { } [ ]</code> 
+        /// brackets <c>&lt; &gt; { } [ ]</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// wildcard characters <code>? *</code> 
+        /// wildcard characters <c>? *</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// special characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> 
+        /// special characters <c>" # % \ ^ | ~ ` $ &amp; , ; : /</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)
+        /// control characters (<c>U+0000-001F</c>, <c>U+007F-009F</c>)
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -122,8 +121,8 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        /// Tags may only contain Unicode letters, digits, white space, or these symbols: <code>_
-        /// . : / = + - @</code>.
+        /// Tags may only contain Unicode letters, digits, white space, or these symbols: <c>_
+        /// . : / = + - @</c>.
         /// </para>
         /// </summary>
         public List<Tag> Tags

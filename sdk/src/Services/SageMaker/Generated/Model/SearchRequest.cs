@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the Search operation.
     /// Finds SageMaker resources that match a search query. Matching resources are returned
-    /// as a list of <code>SearchRecord</code> objects in the response. You can sort the search
+    /// as a list of <c>SearchRecord</c> objects in the response. You can sort the search
     /// results by any resource property in a ascending or descending order.
     /// 
     ///  
@@ -60,13 +60,13 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CrossAccountFilterOption. 
         /// <para>
-        ///  A cross account filter option. When the value is <code>"CrossAccount"</code> the
-        /// search results will only include resources made discoverable to you from other accounts.
-        /// When the value is <code>"SameAccount"</code> or <code>null</code> the search results
-        /// will only include resources from your account. Default is <code>null</code>. For more
-        /// information on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
+        ///  A cross account filter option. When the value is <c>"CrossAccount"</c> the search
+        /// results will only include resources made discoverable to you from other accounts.
+        /// When the value is <c>"SameAccount"</c> or <c>null</c> the search results will only
+        /// include resources from your account. Default is <c>null</c>. For more information
+        /// on searching for resources made discoverable to your account, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/feature-store-cross-account-discoverability-use.html">
         /// Search discoverable resources</a> in the SageMaker Developer Guide. The maximum number
-        /// of <code>ResourceCatalog</code>s viewable is 1000. 
+        /// of <c>ResourceCatalog</c>s viewable is 1000. 
         /// </para>
         /// </summary>
         public CrossAccountFilterOption CrossAccountFilterOption
@@ -103,9 +103,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If more than <code>MaxResults</code> resources match the specified <code>SearchExpression</code>,
-        /// the response includes a <code>NextToken</code>. The <code>NextToken</code> can be
-        /// passed to the next <code>SearchRequest</code> to continue retrieving results.
+        /// If more than <c>MaxResults</c> resources match the specified <c>SearchExpression</c>,
+        /// the response includes a <c>NextToken</c>. The <c>NextToken</c> can be passed to the
+        /// next <c>SearchRequest</c> to continue retrieving results.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -145,9 +145,8 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// A Boolean conditional statement. Resources must satisfy this condition to be included
         /// in search results. You must provide at least one subexpression, filter, or nested
-        /// filter. The maximum number of recursive <code>SubExpressions</code>, <code>NestedFilters</code>,
-        /// and <code>Filters</code> that can be included in a <code>SearchExpression</code> object
-        /// is 50.
+        /// filter. The maximum number of recursive <c>SubExpressions</c>, <c>NestedFilters</c>,
+        /// and <c>Filters</c> that can be included in a <c>SearchExpression</c> object is 50.
         /// </para>
         /// </summary>
         public SearchExpression SearchExpression
@@ -165,8 +164,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The name of the resource property used to sort the <code>SearchResults</code>. The
-        /// default is <code>LastModifiedTime</code>.
+        /// The name of the resource property used to sort the <c>SearchResults</c>. The default
+        /// is <c>LastModifiedTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -185,8 +184,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// How <code>SearchResults</code> are ordered. Valid values are <code>Ascending</code>
-        /// or <code>Descending</code>. The default is <code>Descending</code>.
+        /// How <c>SearchResults</c> are ordered. Valid values are <c>Ascending</c> or <c>Descending</c>.
+        /// The default is <c>Descending</c>.
         /// </para>
         /// </summary>
         public SearchSortOrder SortOrder

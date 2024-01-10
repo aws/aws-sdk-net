@@ -36,8 +36,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You can use the <code>queryDefinitionNamePrefix</code> parameter to limit the results
-    /// to only the query definitions that have names that start with a certain string.
+    /// You can use the <c>queryDefinitionNamePrefix</c> parameter to limit the results to
+    /// only the query definitions that have names that start with a certain string.
     /// </para>
     /// </summary>
     public partial class DescribeQueryDefinitionsRequest : AmazonCloudWatchLogsRequest

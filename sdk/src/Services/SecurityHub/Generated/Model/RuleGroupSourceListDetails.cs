@@ -40,7 +40,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property GeneratedRulesType. 
         /// <para>
-        /// Indicates whether to allow or deny access to the domains listed in <code>Targets</code>.
+        /// Indicates whether to allow or deny access to the domains listed in <c>Targets</c>.
         /// </para>
         /// </summary>
         public string GeneratedRulesType
@@ -59,8 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Targets. 
         /// <para>
         /// The domains that you want to inspect for in your traffic flows. You can provide full
-        /// domain names, or use the '.' prefix as a wildcard. For example, <code>.example.com</code>
-        /// matches all domains that end with <code>example.com</code>.
+        /// domain names, or use the '.' prefix as a wildcard. For example, <c>.example.com</c>
+        /// matches all domains that end with <c>example.com</c>.
         /// </para>
         /// </summary>
         public List<string> Targets
@@ -78,8 +78,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property TargetTypes. 
         /// <para>
-        /// The protocols that you want to inspect. Specify <code>LS_SNI</code> for HTTPS. Specify
-        /// <code>HTTP_HOST</code> for HTTP. You can specify either or both.
+        /// The protocols that you want to inspect. Specify <c>LS_SNI</c> for HTTPS. Specify <c>HTTP_HOST</c>
+        /// for HTTP. You can specify either or both.
         /// </para>
         /// </summary>
         public List<string> TargetTypes

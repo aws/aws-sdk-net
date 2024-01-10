@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         ///  An array that returns the identifier, Amazon Resource Name (ARN), and other details
         /// about a security control. The same information is returned whether the request includes
-        /// <code>SecurityControlId</code> or <code>SecurityControlArn</code>. 
+        /// <c>SecurityControlId</c> or <c>SecurityControlArn</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UnprocessedIds. 
         /// <para>
-        ///  A security control (identified with <code>SecurityControlId</code>, <code>SecurityControlArn</code>,
+        ///  A security control (identified with <c>SecurityControlId</c>, <c>SecurityControlArn</c>,
         /// or a mix of both parameters) for which details cannot be returned. 
         /// </para>
         /// </summary>

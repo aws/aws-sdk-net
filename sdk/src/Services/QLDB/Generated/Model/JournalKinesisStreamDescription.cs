@@ -89,8 +89,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property ErrorCause. 
         /// <para>
-        /// The error message that describes the reason that a stream has a status of <code>IMPAIRED</code>
-        /// or <code>FAILED</code>. This is not applicable to streams that have other status values.
+        /// The error message that describes the reason that a stream has a status of <c>IMPAIRED</c>
+        /// or <c>FAILED</c>. This is not applicable to streams that have other status values.
         /// </para>
         /// </summary>
         public ErrorCause ErrorCause

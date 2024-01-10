@@ -63,7 +63,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CreateTime. 
         /// <para>
         /// The timestamp for when the geofence collection was created in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> 
+        /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -101,7 +101,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// No longer used. Always returns <code>RequestBasedUsage</code>.
+        /// No longer used. Always returns <c>RequestBasedUsage</c>.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. Always returns RequestBasedUsage.")]
@@ -140,7 +140,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property UpdateTime. 
         /// <para>
         /// Specifies a timestamp for when the resource was last updated in <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO
-        /// 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code> 
+        /// 8601</a> format: <c>YYYY-MM-DDThh:mm:ss.sssZ</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

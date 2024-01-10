@@ -130,8 +130,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserDataShared. 
         /// <para>
-        /// If <code>UserDataShared</code> is <code>true</code>, Amazon Cognito includes user
-        /// data in the events that it publishes to Amazon Pinpoint analytics.
+        /// If <c>UserDataShared</c> is <c>true</c>, Amazon Cognito includes user data in the
+        /// events that it publishes to Amazon Pinpoint analytics.
         /// </para>
         /// </summary>
         public bool UserDataShared

@@ -95,8 +95,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VPCConnectionSummaries. 
         /// <para>
-        /// A <code>VPCConnectionSummaries</code> object that returns a summary of VPC connection
-        /// objects.
+        /// A <c>VPCConnectionSummaries</c> object that returns a summary of VPC connection objects.
         /// </para>
         /// </summary>
         public List<VPCConnectionSummary> VPCConnectionSummaries

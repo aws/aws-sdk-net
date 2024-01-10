@@ -31,8 +31,8 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the GetRestoreTestingInferredMetadata operation.
     /// This request returns the minimal required set of metadata needed to start a restore
-    /// job with secure default settings. <code>BackupVaultName</code> and <code>RecoveryPointArn</code>
-    /// are required parameters. <code>BackupVaultAccountId</code> is an optional parameter.
+    /// job with secure default settings. <c>BackupVaultName</c> and <c>RecoveryPointArn</c>
+    /// are required parameters. <c>BackupVaultAccountId</c> is an optional parameter.
     /// </summary>
     public partial class GetRestoreTestingInferredMetadataRequest : AmazonBackupRequest
     {
@@ -83,7 +83,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a recovery point; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// 
         /// </para>
         /// </summary>

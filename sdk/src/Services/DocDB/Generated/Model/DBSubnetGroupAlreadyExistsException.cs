@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBSubnetGroupName</code> is already being used by an existing subnet group.
+    /// <c>DBSubnetGroupName</c> is already being used by an existing subnet group.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

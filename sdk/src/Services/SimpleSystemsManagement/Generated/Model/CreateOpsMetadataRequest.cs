@@ -89,11 +89,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Key=Environment,Value=Production</code> 
+        ///  <c>Key=Environment,Value=Production</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Key=Region,Value=us-east-2</code> 
+        ///  <c>Key=Region,Value=us-east-2</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

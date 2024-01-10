@@ -61,7 +61,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response to a previous <code>ListModelMetadataResponse</code> request was truncated,
+        /// If the response to a previous <c>ListModelMetadataResponse</c> request was truncated,
         /// the response includes a NextToken. To retrieve the next set of model metadata, use
         /// the token in the next request.
         /// </para>

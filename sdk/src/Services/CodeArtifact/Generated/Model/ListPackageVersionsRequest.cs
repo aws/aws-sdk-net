@@ -32,8 +32,8 @@ namespace Amazon.CodeArtifact.Model
     /// Container for the parameters to the ListPackageVersions operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
     /// objects for package versions in a repository that match the request parameters. Package
-    /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
-    /// with no <code>--status</code> parameter.
+    /// versions of all statuses will be returned by default when calling <c>list-package-versions</c>
+    /// with no <c>--status</c> parameter.
     /// </summary>
     public partial class ListPackageVersionsRequest : AmazonCodeArtifactRequest
     {
@@ -135,11 +135,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of a Maven package is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
+        ///  The namespace of an npm package is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -148,7 +148,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -188,8 +188,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property OriginType. 
         /// <para>
-        /// The <code>originType</code> used to filter package versions. Only package versions
-        /// with the provided <code>originType</code> will be returned.
+        /// The <c>originType</c> used to filter package versions. Only package versions with
+        /// the provided <c>originType</c> will be returned.
         /// </para>
         /// </summary>
         public PackageVersionOriginType OriginType

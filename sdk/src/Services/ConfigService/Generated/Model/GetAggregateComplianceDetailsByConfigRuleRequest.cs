@@ -37,8 +37,8 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The results can return an empty result page. But if you have a <code>nextToken</code>,
-    /// the results are displayed on the next page.
+    /// The results can return an empty result page. But if you have a <c>nextToken</c>, the
+    /// results are displayed on the next page.
     /// </para>
     ///  </note>
     /// </summary>
@@ -97,9 +97,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For the <code>GetAggregateComplianceDetailsByConfigRuleRequest</code> data type, Config
-        /// supports only the <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. Config does
-        /// not support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code> values.
+        /// For the <c>GetAggregateComplianceDetailsByConfigRuleRequest</c> data type, Config
+        /// supports only the <c>COMPLIANT</c> and <c>NON_COMPLIANT</c>. Config does not support
+        /// the <c>NOT_APPLICABLE</c> and <c>INSUFFICIENT_DATA</c> values.
         /// </para>
         ///  </note>
         /// </summary>
@@ -176,8 +176,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response.
+        /// The <c>nextToken</c> string returned on a previous page that you use to get the next
+        /// page of results in a paginated response.
         /// </para>
         /// </summary>
         public string NextToken

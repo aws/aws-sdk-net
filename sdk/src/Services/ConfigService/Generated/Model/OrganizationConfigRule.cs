@@ -142,7 +142,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationCustomRuleMetadata. 
         /// <para>
-        /// An <code>OrganizationCustomRuleMetadata</code> object.
+        /// An <c>OrganizationCustomRuleMetadata</c> object.
         /// </para>
         /// </summary>
         public OrganizationCustomRuleMetadata OrganizationCustomRuleMetadata
@@ -160,7 +160,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property OrganizationManagedRuleMetadata. 
         /// <para>
-        /// An <code>OrganizationManagedRuleMetadata</code> object.
+        /// An <c>OrganizationManagedRuleMetadata</c> object.
         /// </para>
         /// </summary>
         public OrganizationManagedRuleMetadata OrganizationManagedRuleMetadata

@@ -39,7 +39,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property SpectrumConfig. 
         /// <para>
-        /// Object that describes a spectral <code>Config</code>.
+        /// Object that describes a spectral <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

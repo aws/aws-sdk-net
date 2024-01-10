@@ -48,7 +48,7 @@ namespace Amazon.AWSSupport.Model
     /// <para>
     ///  <b>type</b> - A string value indicating the communication type that the aforementioned
     /// rules apply to. At the moment the type value can assume one of 3 values at the moment
-    /// <code>chat</code>, <code>web</code> and <code>call</code>. 
+    /// <c>chat</c>, <c>web</c> and <c>call</c>. 
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Rekognition.Model
 {
     /// <summary>
-    /// A technical cue or shot detection segment detected in a video. An array of <code>SegmentDetection</code>
+    /// A technical cue or shot detection segment detected in a video. An array of <c>SegmentDetection</c>
     /// objects containing all segments detected in a stored video is returned by <a>GetSegmentDetection</a>.
     /// </summary>
     public partial class SegmentDetection
@@ -127,8 +127,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property EndTimecodeSMPTE. 
         /// <para>
         /// The frame-accurate SMPTE timecode, from the start of a video, for the end of a detected
-        /// segment. <code>EndTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i>
-        /// for drop frame-rates).
+        /// segment. <c>EndTimecode</c> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for drop
+        /// frame-rates).
         /// </para>
         /// </summary>
         public string EndTimecodeSMPTE
@@ -204,8 +204,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property StartTimecodeSMPTE. 
         /// <para>
         /// The frame-accurate SMPTE timecode, from the start of a video, for the start of a detected
-        /// segment. <code>StartTimecode</code> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i>
-        /// for drop frame-rates). 
+        /// segment. <c>StartTimecode</c> is in <i>HH:MM:SS:fr</i> format (and <i>;fr</i> for
+        /// drop frame-rates). 
         /// </para>
         /// </summary>
         public string StartTimecodeSMPTE
@@ -261,7 +261,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the segment. Valid values are <code>TECHNICAL_CUE</code> and <code>SHOT</code>.
+        /// The type of the segment. Valid values are <c>TECHNICAL_CUE</c> and <c>SHOT</c>.
         /// </para>
         /// </summary>
         public SegmentType Type

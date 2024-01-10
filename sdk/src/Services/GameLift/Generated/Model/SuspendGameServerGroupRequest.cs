@@ -52,8 +52,8 @@ namespace Amazon.GameLift.Model
     ///  </li> </ul> 
     /// <para>
     /// To suspend activity, specify a game server group ARN and the type of activity to be
-    /// suspended. If successful, a <code>GameServerGroup</code> object is returned showing
-    /// that the activity is listed in <code>SuspendedActions</code>.
+    /// suspended. If successful, a <c>GameServerGroup</c> object is returned showing that
+    /// the activity is listed in <c>SuspendedActions</c>.
     /// </para>
     ///  
     /// <para>

@@ -34,12 +34,11 @@ namespace Amazon.DeviceFarm.Model
     /// 
     ///  
     /// <para>
-    /// Specify <code>deviceHostPaths</code> and optionally specify either <code>iosPaths</code>
-    /// or <code>androidPaths</code>.
+    /// Specify <c>deviceHostPaths</c> and optionally specify either <c>iosPaths</c> or <c>androidPaths</c>.
     /// </para>
     ///  
     /// <para>
-    /// For web app tests, you can specify both <code>iosPaths</code> and <code>androidPaths</code>.
+    /// For web app tests, you can specify both <c>iosPaths</c> and <c>androidPaths</c>.
     /// </para>
     /// </summary>
     public partial class CustomerArtifactPaths

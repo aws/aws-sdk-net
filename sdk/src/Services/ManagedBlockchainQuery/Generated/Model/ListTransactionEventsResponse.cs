@@ -39,8 +39,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// An array of <code>TransactionEvent</code> objects. Each object contains details about
-        /// the transaction events.
+        /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
+        /// transaction events.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=250)]

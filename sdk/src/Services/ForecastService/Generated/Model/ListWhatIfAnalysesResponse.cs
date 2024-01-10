@@ -59,7 +59,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property WhatIfAnalyses. 
         /// <para>
-        /// An array of <code>WhatIfAnalysisSummary</code> objects that describe the matched analyses.
+        /// An array of <c>WhatIfAnalysisSummary</c> objects that describe the matched analyses.
         /// </para>
         /// </summary>
         public List<WhatIfAnalysisSummary> WhatIfAnalyses

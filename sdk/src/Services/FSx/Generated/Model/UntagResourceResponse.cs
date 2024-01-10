@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for <code>UntagResource</code> action.
+    /// The response object for <c>UntagResource</c> action.
     /// </summary>
     public partial class UntagResourceResponse : AmazonWebServiceResponse
     {

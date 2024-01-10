@@ -82,7 +82,7 @@ namespace Amazon.StepFunctions.Model
         /// Gets and sets the property InspectionData. 
         /// <para>
         /// Returns additional details about the state's execution, including its input and output
-        /// data processing flow, and HTTP request and response information. The <code>inspectionLevel</code>
+        /// data processing flow, and HTTP request and response information. The <c>inspectionLevel</c>
         /// request parameter specifies which details are returned.
         /// </para>
         /// </summary>

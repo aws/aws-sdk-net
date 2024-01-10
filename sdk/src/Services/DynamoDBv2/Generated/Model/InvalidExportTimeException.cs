@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// The specified <code>ExportTime</code> is outside of the point in time recovery window.
+    /// The specified <c>ExportTime</c> is outside of the point in time recovery window.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

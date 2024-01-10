@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// This data type is used as a response element in the <code>DescribeDBSecurityGroups</code>
+    /// This data type is used as a response element in the <c>DescribeDBSecurityGroups</c>
     /// action.
     /// </summary>
     public partial class IPRange

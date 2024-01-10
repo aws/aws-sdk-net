@@ -416,8 +416,8 @@ namespace Amazon.CloudHSMV2
         /// <para>
         /// This is a paginated operation, which means that each response might contain only a
         /// subset of all the backups. When the response contains only a subset of backups, it
-        /// includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeBackups</code>
-        /// request to get more backups. When you receive a response with no <code>NextToken</code>
+        /// includes a <c>NextToken</c> value. Use this value in a subsequent <c>DescribeBackups</c>
+        /// request to get more backups. When you receive a response with no <c>NextToken</c>
         /// (or an empty or null value), that means there are no more backups to get.
         /// </para>
         /// </summary>
@@ -486,8 +486,8 @@ namespace Amazon.CloudHSMV2
         /// <para>
         /// This is a paginated operation, which means that each response might contain only a
         /// subset of all the clusters. When the response contains only a subset of clusters,
-        /// it includes a <code>NextToken</code> value. Use this value in a subsequent <code>DescribeClusters</code>
-        /// request to get more clusters. When you receive a response with no <code>NextToken</code>
+        /// it includes a <c>NextToken</c> value. Use this value in a subsequent <c>DescribeClusters</c>
+        /// request to get more clusters. When you receive a response with no <c>NextToken</c>
         /// (or an empty or null value), that means there are no more clusters to get.
         /// </para>
         /// </summary>
@@ -613,9 +613,9 @@ namespace Amazon.CloudHSMV2
         /// <para>
         /// This is a paginated operation, which means that each response might contain only a
         /// subset of all the tags. When the response contains only a subset of tags, it includes
-        /// a <code>NextToken</code> value. Use this value in a subsequent <code>ListTags</code>
-        /// request to get more tags. When you receive a response with no <code>NextToken</code>
-        /// (or an empty or null value), that means there are no more tags to get.
+        /// a <c>NextToken</c> value. Use this value in a subsequent <c>ListTags</c> request to
+        /// get more tags. When you receive a response with no <c>NextToken</c> (or an empty or
+        /// null value), that means there are no more tags to get.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
@@ -791,8 +791,8 @@ namespace Amazon.CloudHSMV2
 
 
         /// <summary>
-        /// Restores a specified AWS CloudHSM backup that is in the <code>PENDING_DELETION</code>
-        /// state. For mor information on deleting a backup, see <a>DeleteBackup</a>.
+        /// Restores a specified AWS CloudHSM backup that is in the <c>PENDING_DELETION</c> state.
+        /// For mor information on deleting a backup, see <a>DeleteBackup</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreBackup service method.</param>
         /// 

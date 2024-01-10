@@ -39,7 +39,7 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property ResolverConfig. 
         /// <para>
         /// Information about the behavior configuration of Route 53 Resolver behavior for the
-        /// VPC you specified in the <code>GetResolverConfig</code> request.
+        /// VPC you specified in the <c>GetResolverConfig</c> request.
         /// </para>
         /// </summary>
         public ResolverConfig ResolverConfig

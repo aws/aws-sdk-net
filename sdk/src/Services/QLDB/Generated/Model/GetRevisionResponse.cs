@@ -39,8 +39,8 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property Proof. 
         /// <para>
-        /// The proof object in Amazon Ion format returned by a <code>GetRevision</code> request.
-        /// A proof contains the list of hash values that are required to recalculate the specified
+        /// The proof object in Amazon Ion format returned by a <c>GetRevision</c> request. A
+        /// proof contains the list of hash values that are required to recalculate the specified
         /// digest using a Merkle tree, starting with the specified document revision.
         /// </para>
         /// </summary>

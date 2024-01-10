@@ -1173,11 +1173,11 @@ namespace Amazon.Translate
         /// <summary>
         /// Starts an asynchronous batch translation job. Use batch translation jobs to translate
         /// large volumes of text across multiple documents at once. For batch translation, you
-        /// can input documents with different source languages (specify <code>auto</code> as
-        /// the source language). You can specify one or more target languages. Batch translation
-        /// translates each input document into each of the target languages. For more information,
-        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
-        /// batch processing</a>.
+        /// can input documents with different source languages (specify <c>auto</c> as the source
+        /// language). You can specify one or more target languages. Batch translation translates
+        /// each input document into each of the target languages. For more information, see <a
+        /// href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch
+        /// processing</a>.
         /// 
         ///  
         /// <para>
@@ -1228,11 +1228,11 @@ namespace Amazon.Translate
         /// <summary>
         /// Starts an asynchronous batch translation job. Use batch translation jobs to translate
         /// large volumes of text across multiple documents at once. For batch translation, you
-        /// can input documents with different source languages (specify <code>auto</code> as
-        /// the source language). You can specify one or more target languages. Batch translation
-        /// translates each input document into each of the target languages. For more information,
-        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous
-        /// batch processing</a>.
+        /// can input documents with different source languages (specify <c>auto</c> as the source
+        /// language). You can specify one or more target languages. Batch translation translates
+        /// each input document into each of the target languages. For more information, see <a
+        /// href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch
+        /// processing</a>.
         /// 
         ///  
         /// <para>
@@ -1292,16 +1292,16 @@ namespace Amazon.Translate
         /// 
         ///  
         /// <para>
-        /// If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination
-        /// and put into the <code>STOP_REQUESTED</code> state. If the job completes before it
-        /// can be stopped, it is put into the <code>COMPLETED</code> state. Otherwise, the job
-        /// is put into the <code>STOPPED</code> state.
+        /// If the job's state is <c>IN_PROGRESS</c>, the job will be marked for termination and
+        /// put into the <c>STOP_REQUESTED</c> state. If the job completes before it can be stopped,
+        /// it is put into the <c>COMPLETED</c> state. Otherwise, the job is put into the <c>STOPPED</c>
+        /// state.
         /// </para>
         ///  
         /// <para>
         /// Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a>
         /// operation. You can use the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a>
-        /// operations to get a batch translation job's <code>JobId</code>.
+        /// operations to get a batch translation job's <c>JobId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTextTranslationJob service method.</param>
@@ -1335,16 +1335,16 @@ namespace Amazon.Translate
         /// 
         ///  
         /// <para>
-        /// If the job's state is <code>IN_PROGRESS</code>, the job will be marked for termination
-        /// and put into the <code>STOP_REQUESTED</code> state. If the job completes before it
-        /// can be stopped, it is put into the <code>COMPLETED</code> state. Otherwise, the job
-        /// is put into the <code>STOPPED</code> state.
+        /// If the job's state is <c>IN_PROGRESS</c>, the job will be marked for termination and
+        /// put into the <c>STOP_REQUESTED</c> state. If the job completes before it can be stopped,
+        /// it is put into the <c>COMPLETED</c> state. Otherwise, the job is put into the <c>STOPPED</c>
+        /// state.
         /// </para>
         ///  
         /// <para>
         /// Asynchronous batch translation jobs are started with the <a>StartTextTranslationJob</a>
         /// operation. You can use the <a>DescribeTextTranslationJob</a> or <a>ListTextTranslationJobs</a>
-        /// operations to get a batch translation job's <code>JobId</code>.
+        /// operations to get a batch translation job's <c>JobId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopTextTranslationJob service method.</param>
@@ -1466,14 +1466,14 @@ namespace Amazon.Translate
         /// <summary>
         /// Translates the input document from the source language to the target language. This
         /// synchronous operation supports text, HTML, or Word documents as the input document.
-        /// <code>TranslateDocument</code> supports translations from English to any supported
-        /// language, and from any supported language to English. Therefore, specify either the
-        /// source language code or the target language code as “en” (English). 
+        /// <c>TranslateDocument</c> supports translations from English to any supported language,
+        /// and from any supported language to English. Therefore, specify either the source language
+        /// code or the target language code as “en” (English). 
         /// 
         ///  
         /// <para>
-        ///  If you set the <code>Formality</code> parameter, the request will fail if the target
-        /// language does not support formality. For a list of target languages that support formality,
+        ///  If you set the <c>Formality</c> parameter, the request will fail if the target language
+        /// does not support formality. For a list of target languages that support formality,
         /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
         /// formality</a>. 
         /// </para>
@@ -1524,14 +1524,14 @@ namespace Amazon.Translate
         /// <summary>
         /// Translates the input document from the source language to the target language. This
         /// synchronous operation supports text, HTML, or Word documents as the input document.
-        /// <code>TranslateDocument</code> supports translations from English to any supported
-        /// language, and from any supported language to English. Therefore, specify either the
-        /// source language code or the target language code as “en” (English). 
+        /// <c>TranslateDocument</c> supports translations from English to any supported language,
+        /// and from any supported language to English. Therefore, specify either the source language
+        /// code or the target language code as “en” (English). 
         /// 
         ///  
         /// <para>
-        ///  If you set the <code>Formality</code> parameter, the request will fail if the target
-        /// language does not support formality. For a list of target languages that support formality,
+        ///  If you set the <c>Formality</c> parameter, the request will fail if the target language
+        /// does not support formality. For a list of target languages that support formality,
         /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
         /// formality</a>. 
         /// </para>

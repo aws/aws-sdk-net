@@ -1811,8 +1811,8 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses
-        /// and domains.
+        /// Deprecated. Use the <c>DeleteIdentity</c> operation to delete email addresses and
+        /// domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service method.</param>
         /// 
@@ -1829,8 +1829,8 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses
-        /// and domains.
+        /// Deprecated. Use the <c>DeleteIdentity</c> operation to delete email addresses and
+        /// domains.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVerifiedEmailAddress service method.</param>
         /// <param name="cancellationToken">
@@ -2885,10 +2885,10 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// You can execute this operation no more than once per second. This operation returns
         /// up to 1,000 configuration sets each time it is run. If your Amazon SES account has
-        /// more than 1,000 configuration sets, this operation also returns <code>NextToken</code>.
-        /// You can then execute the <code>ListConfigurationSets</code> operation again, passing
-        /// the <code>NextToken</code> parameter and the value of the NextToken element to retrieve
-        /// additional results.
+        /// more than 1,000 configuration sets, this operation also returns <c>NextToken</c>.
+        /// You can then execute the <c>ListConfigurationSets</c> operation again, passing the
+        /// <c>NextToken</c> parameter and the value of the NextToken element to retrieve additional
+        /// results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets service method.</param>
@@ -2915,10 +2915,10 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// You can execute this operation no more than once per second. This operation returns
         /// up to 1,000 configuration sets each time it is run. If your Amazon SES account has
-        /// more than 1,000 configuration sets, this operation also returns <code>NextToken</code>.
-        /// You can then execute the <code>ListConfigurationSets</code> operation again, passing
-        /// the <code>NextToken</code> parameter and the value of the NextToken element to retrieve
-        /// additional results.
+        /// more than 1,000 configuration sets, this operation also returns <c>NextToken</c>.
+        /// You can then execute the <c>ListConfigurationSets</c> operation again, passing the
+        /// <c>NextToken</c> parameter and the value of the NextToken element to retrieve additional
+        /// results.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListConfigurationSets service method.</param>
@@ -3018,12 +3018,11 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// It's recommended that for successive pagination calls of this API, you continue to
         /// the use the same parameter/value pairs as used in the original call, e.g., if you
-        /// used <code>IdentityType=Domain</code> in the the original call and received a <code>NextToken</code>
-        /// in the response, you should continue providing the <code>IdentityType=Domain</code>
-        /// parameter for further <code>NextToken</code> calls; however, if you didn't provide
-        /// the <code>IdentityType</code> parameter in the original call, then continue to not
-        /// provide it for successive pagination calls. Using this protocol will ensure consistent
-        /// results.
+        /// used <c>IdentityType=Domain</c> in the the original call and received a <c>NextToken</c>
+        /// in the response, you should continue providing the <c>IdentityType=Domain</c> parameter
+        /// for further <c>NextToken</c> calls; however, if you didn't provide the <c>IdentityType</c>
+        /// parameter in the original call, then continue to not provide it for successive pagination
+        /// calls. Using this protocol will ensure consistent results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3049,12 +3048,11 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// It's recommended that for successive pagination calls of this API, you continue to
         /// the use the same parameter/value pairs as used in the original call, e.g., if you
-        /// used <code>IdentityType=Domain</code> in the the original call and received a <code>NextToken</code>
-        /// in the response, you should continue providing the <code>IdentityType=Domain</code>
-        /// parameter for further <code>NextToken</code> calls; however, if you didn't provide
-        /// the <code>IdentityType</code> parameter in the original call, then continue to not
-        /// provide it for successive pagination calls. Using this protocol will ensure consistent
-        /// results.
+        /// used <c>IdentityType=Domain</c> in the the original call and received a <c>NextToken</c>
+        /// in the response, you should continue providing the <c>IdentityType=Domain</c> parameter
+        /// for further <c>NextToken</c> calls; however, if you didn't provide the <c>IdentityType</c>
+        /// parameter in the original call, then continue to not provide it for successive pagination
+        /// calls. Using this protocol will ensure consistent results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3085,12 +3083,11 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// It's recommended that for successive pagination calls of this API, you continue to
         /// the use the same parameter/value pairs as used in the original call, e.g., if you
-        /// used <code>IdentityType=Domain</code> in the the original call and received a <code>NextToken</code>
-        /// in the response, you should continue providing the <code>IdentityType=Domain</code>
-        /// parameter for further <code>NextToken</code> calls; however, if you didn't provide
-        /// the <code>IdentityType</code> parameter in the original call, then continue to not
-        /// provide it for successive pagination calls. Using this protocol will ensure consistent
-        /// results.
+        /// used <c>IdentityType=Domain</c> in the the original call and received a <c>NextToken</c>
+        /// in the response, you should continue providing the <c>IdentityType=Domain</c> parameter
+        /// for further <c>NextToken</c> calls; however, if you didn't provide the <c>IdentityType</c>
+        /// parameter in the original call, then continue to not provide it for successive pagination
+        /// calls. Using this protocol will ensure consistent results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3118,12 +3115,11 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// It's recommended that for successive pagination calls of this API, you continue to
         /// the use the same parameter/value pairs as used in the original call, e.g., if you
-        /// used <code>IdentityType=Domain</code> in the the original call and received a <code>NextToken</code>
-        /// in the response, you should continue providing the <code>IdentityType=Domain</code>
-        /// parameter for further <code>NextToken</code> calls; however, if you didn't provide
-        /// the <code>IdentityType</code> parameter in the original call, then continue to not
-        /// provide it for successive pagination calls. Using this protocol will ensure consistent
-        /// results.
+        /// used <c>IdentityType=Domain</c> in the the original call and received a <c>NextToken</c>
+        /// in the response, you should continue providing the <c>IdentityType=Domain</c> parameter
+        /// for further <c>NextToken</c> calls; however, if you didn't provide the <c>IdentityType</c>
+        /// parameter in the original call, then continue to not provide it for successive pagination
+        /// calls. Using this protocol will ensure consistent results.
         /// </para>
         ///  </note>
         /// </summary>
@@ -3151,7 +3147,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Returns a list of sending authorization policies that are attached to the given identity
         /// (an email address or a domain). This operation returns only a list. To get the actual
-        /// policy content, use <code>GetIdentityPolicies</code>.
+        /// policy content, use <c>GetIdentityPolicies</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -3187,7 +3183,7 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Returns a list of sending authorization policies that are attached to the given identity
         /// (an email address or a domain). This operation returns only a list. To get the actual
-        /// policy content, use <code>GetIdentityPolicies</code>.
+        /// policy content, use <c>GetIdentityPolicies</c>.
         /// 
         ///  <note> 
         /// <para>
@@ -3293,8 +3289,8 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Lists the receipt rule sets that exist under your Amazon Web Services account in the
         /// current Amazon Web Services Region. If there are additional receipt rule sets to be
-        /// retrieved, you receive a <code>NextToken</code> that you can provide to the next call
-        /// to <code>ListReceiptRuleSets</code> to retrieve the additional entries.
+        /// retrieved, you receive a <c>NextToken</c> that you can provide to the next call to
+        /// <c>ListReceiptRuleSets</c> to retrieve the additional entries.
         /// 
         ///  
         /// <para>
@@ -3323,8 +3319,8 @@ namespace Amazon.SimpleEmail
         /// <summary>
         /// Lists the receipt rule sets that exist under your Amazon Web Services account in the
         /// current Amazon Web Services Region. If there are additional receipt rule sets to be
-        /// retrieved, you receive a <code>NextToken</code> that you can provide to the next call
-        /// to <code>ListReceiptRuleSets</code> to retrieve the additional entries.
+        /// retrieved, you receive a <c>NextToken</c> that you can provide to the next call to
+        /// <c>ListReceiptRuleSets</c> to retrieve the additional entries.
         /// 
         ///  
         /// <para>
@@ -3411,8 +3407,8 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses
-        /// and domains associated with your account.
+        /// Deprecated. Use the <c>ListIdentities</c> operation to list the email addresses and
+        /// domains associated with your account.
         /// </summary>
         /// 
         /// <returns>The response from the ListVerifiedEmailAddresses service method, as returned by SimpleEmailService.</returns>
@@ -3424,8 +3420,8 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses
-        /// and domains associated with your account.
+        /// Deprecated. Use the <c>ListIdentities</c> operation to list the email addresses and
+        /// domains associated with your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service method.</param>
         /// 
@@ -3442,8 +3438,8 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses
-        /// and domains associated with your account.
+        /// Deprecated. Use the <c>ListIdentities</c> operation to list the email addresses and
+        /// domains associated with your account.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -3457,8 +3453,8 @@ namespace Amazon.SimpleEmail
         }
 
         /// <summary>
-        /// Deprecated. Use the <code>ListIdentities</code> operation to list the email addresses
-        /// and domains associated with your account.
+        /// Deprecated. Use the <c>ListIdentities</c> operation to list the email addresses and
+        /// domains associated with your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListVerifiedEmailAddresses service method.</param>
         /// <param name="cancellationToken">
@@ -3815,9 +3811,9 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each <code>Destination</code> parameter must include at least one recipient email
-        /// address. The recipient address can be a To: address, a CC: address, or a BCC: address.
-        /// If a recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
+        /// Each <c>Destination</c> parameter must include at least one recipient email address.
+        /// The recipient address can be a To: address, a CC: address, or a BCC: address. If a
+        /// recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
         /// the entire message is rejected, even if the message contains other recipients that
         /// are valid.
         /// </para>
@@ -3825,7 +3821,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// The message may not include more than 50 recipients, across the To:, CC: and BCC:
         /// fields. If you need to send an email message to a larger audience, you can divide
-        /// your recipient list into groups of 50 or fewer, and then call the <code>SendBulkTemplatedEmail</code>
+        /// your recipient list into groups of 50 or fewer, and then call the <c>SendBulkTemplatedEmail</c>
         /// operation several times to send the message to each group.
         /// </para>
         ///  </li> <li> 
@@ -3912,9 +3908,9 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Each <code>Destination</code> parameter must include at least one recipient email
-        /// address. The recipient address can be a To: address, a CC: address, or a BCC: address.
-        /// If a recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
+        /// Each <c>Destination</c> parameter must include at least one recipient email address.
+        /// The recipient address can be a To: address, a CC: address, or a BCC: address. If a
+        /// recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
         /// the entire message is rejected, even if the message contains other recipients that
         /// are valid.
         /// </para>
@@ -3922,7 +3918,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// The message may not include more than 50 recipients, across the To:, CC: and BCC:
         /// fields. If you need to send an email message to a larger audience, you can divide
-        /// your recipient list into groups of 50 or fewer, and then call the <code>SendBulkTemplatedEmail</code>
+        /// your recipient list into groups of 50 or fewer, and then call the <c>SendBulkTemplatedEmail</c>
         /// operation several times to send the message to each group.
         /// </para>
         ///  </li> <li> 
@@ -4124,7 +4120,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// The message may not include more than 50 recipients, across the To:, CC: and BCC:
         /// fields. If you need to send an email message to a larger audience, you can divide
-        /// your recipient list into groups of 50 or fewer, and then call the <code>SendEmail</code>
+        /// your recipient list into groups of 50 or fewer, and then call the <c>SendEmail</c>
         /// operation several times to send the message to each group.
         /// </para>
         ///  </li> </ul> <important> 
@@ -4213,7 +4209,7 @@ namespace Amazon.SimpleEmail
         /// <para>
         /// The message may not include more than 50 recipients, across the To:, CC: and BCC:
         /// fields. If you need to send an email message to a larger audience, you can divide
-        /// your recipient list into groups of 50 or fewer, and then call the <code>SendEmail</code>
+        /// your recipient list into groups of 50 or fewer, and then call the <c>SendEmail</c>
         /// operation several times to send the message to each group.
         /// </para>
         ///  </li> </ul> <important> 
@@ -4281,15 +4277,15 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// This operation is more flexible than the <code>SendEmail</code> operation. When you
-        /// use the <code>SendRawEmail</code> operation, you can specify the headers of the message
-        /// as well as its content. This flexibility is useful, for example, when you need to
-        /// send a multipart MIME email (such a message that contains both a text and an HTML
-        /// version). You can also use this operation to send messages that include attachments.
+        /// This operation is more flexible than the <c>SendEmail</c> operation. When you use
+        /// the <c>SendRawEmail</c> operation, you can specify the headers of the message as well
+        /// as its content. This flexibility is useful, for example, when you need to send a multipart
+        /// MIME email (such a message that contains both a text and an HTML version). You can
+        /// also use this operation to send messages that include attachments.
         /// </para>
         ///  
         /// <para>
-        /// The <code>SendRawEmail</code> operation has the following requirements:
+        /// The <c>SendRawEmail</c> operation has the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4337,35 +4333,35 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Additionally, keep the following considerations in mind when using the <code>SendRawEmail</code>
+        /// Additionally, keep the following considerations in mind when using the <c>SendRawEmail</c>
         /// operation:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Although you can customize the message headers when using the <code>SendRawEmail</code>
-        /// operation, Amazon SES automatically applies its own <code>Message-ID</code> and <code>Date</code>
+        /// Although you can customize the message headers when using the <c>SendRawEmail</c>
+        /// operation, Amazon SES automatically applies its own <c>Message-ID</c> and <c>Date</c>
         /// headers; if you passed these headers when creating the message, they are overwritten
         /// by the values that Amazon SES provides.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code>
+        /// If you are using sending authorization to send on behalf of another user, <c>SendRawEmail</c>
         /// enables you to specify the cross-account identity for the email's Source, From, and
-        /// Return-Path parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>,
-        /// <code>FromArn</code>, and/or <code>ReturnPathArn</code>, or you can include the following
-        /// X-headers in the header of your raw email:
+        /// Return-Path parameters in one of two ways: you can pass optional parameters <c>SourceArn</c>,
+        /// <c>FromArn</c>, and/or <c>ReturnPathArn</c>, or you can include the following X-headers
+        /// in the header of your raw email:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>X-SES-SOURCE-ARN</code> 
+        ///  <c>X-SES-SOURCE-ARN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>X-SES-FROM-ARN</code> 
+        ///  <c>X-SES-FROM-ARN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>X-SES-RETURN-PATH-ARN</code> 
+        ///  <c>X-SES-RETURN-PATH-ARN</c> 
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
@@ -4374,8 +4370,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES sets
-        /// the From and Return-Path addresses to the same identity that you specified.
+        /// If you only specify the <c>SourceIdentityArn</c> parameter, Amazon SES sets the From
+        /// and Return-Path addresses to the same identity that you specified.
         /// </para>
         ///  
         /// <para>
@@ -4441,15 +4437,15 @@ namespace Amazon.SimpleEmail
         /// 
         ///  
         /// <para>
-        /// This operation is more flexible than the <code>SendEmail</code> operation. When you
-        /// use the <code>SendRawEmail</code> operation, you can specify the headers of the message
-        /// as well as its content. This flexibility is useful, for example, when you need to
-        /// send a multipart MIME email (such a message that contains both a text and an HTML
-        /// version). You can also use this operation to send messages that include attachments.
+        /// This operation is more flexible than the <c>SendEmail</c> operation. When you use
+        /// the <c>SendRawEmail</c> operation, you can specify the headers of the message as well
+        /// as its content. This flexibility is useful, for example, when you need to send a multipart
+        /// MIME email (such a message that contains both a text and an HTML version). You can
+        /// also use this operation to send messages that include attachments.
         /// </para>
         ///  
         /// <para>
-        /// The <code>SendRawEmail</code> operation has the following requirements:
+        /// The <c>SendRawEmail</c> operation has the following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -4497,35 +4493,35 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Additionally, keep the following considerations in mind when using the <code>SendRawEmail</code>
+        /// Additionally, keep the following considerations in mind when using the <c>SendRawEmail</c>
         /// operation:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Although you can customize the message headers when using the <code>SendRawEmail</code>
-        /// operation, Amazon SES automatically applies its own <code>Message-ID</code> and <code>Date</code>
+        /// Although you can customize the message headers when using the <c>SendRawEmail</c>
+        /// operation, Amazon SES automatically applies its own <c>Message-ID</c> and <c>Date</c>
         /// headers; if you passed these headers when creating the message, they are overwritten
         /// by the values that Amazon SES provides.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are using sending authorization to send on behalf of another user, <code>SendRawEmail</code>
+        /// If you are using sending authorization to send on behalf of another user, <c>SendRawEmail</c>
         /// enables you to specify the cross-account identity for the email's Source, From, and
-        /// Return-Path parameters in one of two ways: you can pass optional parameters <code>SourceArn</code>,
-        /// <code>FromArn</code>, and/or <code>ReturnPathArn</code>, or you can include the following
-        /// X-headers in the header of your raw email:
+        /// Return-Path parameters in one of two ways: you can pass optional parameters <c>SourceArn</c>,
+        /// <c>FromArn</c>, and/or <c>ReturnPathArn</c>, or you can include the following X-headers
+        /// in the header of your raw email:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>X-SES-SOURCE-ARN</code> 
+        ///  <c>X-SES-SOURCE-ARN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>X-SES-FROM-ARN</code> 
+        ///  <c>X-SES-FROM-ARN</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>X-SES-RETURN-PATH-ARN</code> 
+        ///  <c>X-SES-RETURN-PATH-ARN</c> 
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
@@ -4534,8 +4530,8 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you only specify the <code>SourceIdentityArn</code> parameter, Amazon SES sets
-        /// the From and Return-Path addresses to the same identity that you specified.
+        /// If you only specify the <c>SourceIdentityArn</c> parameter, Amazon SES sets the From
+        /// and Return-Path addresses to the same identity that you specified.
         /// </para>
         ///  
         /// <para>
@@ -4632,14 +4628,14 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Calls to the <code>SendTemplatedEmail</code> operation may only include one <code>Destination</code>
+        /// Calls to the <c>SendTemplatedEmail</c> operation may only include one <c>Destination</c>
         /// parameter. A destination is a set of recipients that receives the same version of
-        /// the email. The <code>Destination</code> parameter can include up to 50 recipients,
-        /// across the To:, CC: and BCC: fields.
+        /// the email. The <c>Destination</c> parameter can include up to 50 recipients, across
+        /// the To:, CC: and BCC: fields.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Destination</code> parameter must include at least one recipient email address.
+        /// The <c>Destination</c> parameter must include at least one recipient email address.
         /// The recipient address can be a To: address, a CC: address, or a BCC: address. If a
         /// recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
         /// the entire message is rejected, even if the message contains other recipients that
@@ -4647,11 +4643,11 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// If your call to the <code>SendTemplatedEmail</code> operation includes all of the
-        /// required parameters, Amazon SES accepts it and returns a Message ID. However, if Amazon
-        /// SES can't render the email because the template contains errors, it doesn't send the
-        /// email. Additionally, because it already accepted the message, Amazon SES doesn't return
-        /// a message stating that it was unable to send the email.
+        /// If your call to the <c>SendTemplatedEmail</c> operation includes all of the required
+        /// parameters, Amazon SES accepts it and returns a Message ID. However, if Amazon SES
+        /// can't render the email because the template contains errors, it doesn't send the email.
+        /// Additionally, because it already accepted the message, Amazon SES doesn't return a
+        /// message stating that it was unable to send the email.
         /// </para>
         ///  
         /// <para>
@@ -4738,14 +4734,14 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Calls to the <code>SendTemplatedEmail</code> operation may only include one <code>Destination</code>
+        /// Calls to the <c>SendTemplatedEmail</c> operation may only include one <c>Destination</c>
         /// parameter. A destination is a set of recipients that receives the same version of
-        /// the email. The <code>Destination</code> parameter can include up to 50 recipients,
-        /// across the To:, CC: and BCC: fields.
+        /// the email. The <c>Destination</c> parameter can include up to 50 recipients, across
+        /// the To:, CC: and BCC: fields.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Destination</code> parameter must include at least one recipient email address.
+        /// The <c>Destination</c> parameter must include at least one recipient email address.
         /// The recipient address can be a To: address, a CC: address, or a BCC: address. If a
         /// recipient email address is invalid (that is, it is not in the format <i>UserName@[SubDomain.]Domain.TopLevelDomain</i>),
         /// the entire message is rejected, even if the message contains other recipients that
@@ -4753,11 +4749,11 @@ namespace Amazon.SimpleEmail
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// If your call to the <code>SendTemplatedEmail</code> operation includes all of the
-        /// required parameters, Amazon SES accepts it and returns a Message ID. However, if Amazon
-        /// SES can't render the email because the template contains errors, it doesn't send the
-        /// email. Additionally, because it already accepted the message, Amazon SES doesn't return
-        /// a message stating that it was unable to send the email.
+        /// If your call to the <c>SendTemplatedEmail</c> operation includes all of the required
+        /// parameters, Amazon SES accepts it and returns a Message ID. However, if Amazon SES
+        /// can't render the email because the template contains errors, it doesn't send the email.
+        /// Additionally, because it already accepted the message, Amazon SES doesn't return a
+        /// message stating that it was unable to send the email.
         /// </para>
         ///  
         /// <para>
@@ -4828,7 +4824,7 @@ namespace Amazon.SimpleEmail
         ///  <note> 
         /// <para>
         /// To disable your email-receiving through Amazon SES completely, you can call this operation
-        /// with <code>RuleSetName</code> set to null.
+        /// with <c>RuleSetName</c> set to null.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4863,7 +4859,7 @@ namespace Amazon.SimpleEmail
         ///  <note> 
         /// <para>
         /// To disable your email-receiving through Amazon SES completely, you can call this operation
-        /// with <code>RuleSetName</code> set to null.
+        /// with <c>RuleSetName</c> set to null.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4907,9 +4903,9 @@ namespace Amazon.SimpleEmail
         /// 
         ///  <note> 
         /// <para>
-        /// For email addresses (for example, <code>user@example.com</code>), you can only enable
-        /// DKIM signing if the corresponding domain (in this case, <code>example.com</code>)
-        /// has been set up to use Easy DKIM.
+        /// For email addresses (for example, <c>user@example.com</c>), you can only enable DKIM
+        /// signing if the corresponding domain (in this case, <c>example.com</c>) has been set
+        /// up to use Easy DKIM.
         /// </para>
         ///  </note> 
         /// <para>
@@ -4948,9 +4944,9 @@ namespace Amazon.SimpleEmail
         /// 
         ///  <note> 
         /// <para>
-        /// For email addresses (for example, <code>user@example.com</code>), you can only enable
-        /// DKIM signing if the corresponding domain (in this case, <code>example.com</code>)
-        /// has been set up to use Easy DKIM.
+        /// For email addresses (for example, <c>user@example.com</c>), you can only enable DKIM
+        /// signing if the corresponding domain (in this case, <c>example.com</c>) has been set
+        /// up to use Easy DKIM.
         /// </para>
         ///  </note> 
         /// <para>
@@ -6093,11 +6089,11 @@ namespace Amazon.SimpleEmail
         /// 
         ///  <important> 
         /// <para>
-        /// When you execute the <code>VerifyDomainDkim</code> operation, the domain that you
-        /// specify is added to the list of identities that are associated with your account.
-        /// This is true even if you haven't already associated the domain with your account by
-        /// using the <code>VerifyDomainIdentity</code> operation. However, you can't send email
-        /// from the domain until you either successfully <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure">verify
+        /// When you execute the <c>VerifyDomainDkim</c> operation, the domain that you specify
+        /// is added to the list of identities that are associated with your account. This is
+        /// true even if you haven't already associated the domain with your account by using
+        /// the <c>VerifyDomainIdentity</c> operation. However, you can't send email from the
+        /// domain until you either successfully <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure">verify
         /// it</a> or you successfully <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">set
         /// up DKIM for it</a>.
         /// </para>
@@ -6156,11 +6152,11 @@ namespace Amazon.SimpleEmail
         /// 
         ///  <important> 
         /// <para>
-        /// When you execute the <code>VerifyDomainDkim</code> operation, the domain that you
-        /// specify is added to the list of identities that are associated with your account.
-        /// This is true even if you haven't already associated the domain with your account by
-        /// using the <code>VerifyDomainIdentity</code> operation. However, you can't send email
-        /// from the domain until you either successfully <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure">verify
+        /// When you execute the <c>VerifyDomainDkim</c> operation, the domain that you specify
+        /// is added to the list of identities that are associated with your account. This is
+        /// true even if you haven't already associated the domain with your account by using
+        /// the <c>VerifyDomainIdentity</c> operation. However, you can't send email from the
+        /// domain until you either successfully <a href="https://docs.aws.amazon.com/ses/latest/dg/creating-identities.html#verify-domain-procedure">verify
         /// it</a> or you successfully <a href="https://docs.aws.amazon.com/ses/latest/dg/send-email-authentication-dkim-easy.html">set
         /// up DKIM for it</a>.
         /// </para>
@@ -6279,8 +6275,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a new email
-        /// address.
+        /// Deprecated. Use the <c>VerifyEmailIdentity</c> operation to verify a new email address.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress service method.</param>
         /// 
@@ -6297,8 +6292,7 @@ namespace Amazon.SimpleEmail
 
 
         /// <summary>
-        /// Deprecated. Use the <code>VerifyEmailIdentity</code> operation to verify a new email
-        /// address.
+        /// Deprecated. Use the <c>VerifyEmailIdentity</c> operation to verify a new email address.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the VerifyEmailAddress service method.</param>
         /// <param name="cancellationToken">

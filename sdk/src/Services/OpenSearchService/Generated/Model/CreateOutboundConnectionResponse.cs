@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>CreateOutboundConnection</code> request. Contains details about
-    /// the newly created cross-cluster connection.
+    /// The result of a <c>CreateOutboundConnection</c> request. Contains details about the
+    /// newly created cross-cluster connection.
     /// </summary>
     public partial class CreateOutboundConnectionResponse : AmazonWebServiceResponse
     {
@@ -102,7 +102,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ConnectionProperties. 
         /// <para>
-        /// The <code>ConnectionProperties</code> for the newly created connection.
+        /// The <c>ConnectionProperties</c> for the newly created connection.
         /// </para>
         /// </summary>
         public ConnectionProperties ConnectionProperties

@@ -118,7 +118,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The network (<code>vpc</code>).
+        /// The network (<c>vpc</c>).
         /// </para>
         /// </summary>
         public DomainType Domain

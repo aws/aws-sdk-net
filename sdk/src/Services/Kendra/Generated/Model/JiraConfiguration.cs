@@ -52,12 +52,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property AttachmentFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Jira attachments to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
-        /// Mapping data source fields</a>. The Jira data source field names must exist in your
-        /// Jira custom metadata.
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Jira attachments to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Jira fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
+        /// data source fields</a>. The Jira data source field names must exist in your Jira custom
+        /// metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -76,12 +76,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CommentFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Jira comments to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
-        /// Mapping data source fields</a>. The Jira data source field names must exist in your
-        /// Jira custom metadata.
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Jira comments to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Jira fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
+        /// data source fields</a>. The Jira data source field names must exist in your Jira custom
+        /// metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -146,9 +146,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property IssueFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Jira issues to Amazon Kendra index field names. To create custom fields,
-        /// use the <code>UpdateIndex</code> API before you map to Jira fields. For more information,
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Jira issues to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Jira fields. For more information,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
         /// data source fields</a>. The Jira data source field names must exist in your Jira custom
         /// metadata.
@@ -247,12 +247,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ProjectFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Jira projects to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
-        /// Mapping data source fields</a>. The Jira data source field names must exist in your
-        /// Jira custom metadata.
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Jira projects to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Jira fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
+        /// data source fields</a>. The Jira data source field names must exist in your Jira custom
+        /// metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -321,9 +321,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        ///  <code>TRUE</code> to use the Jira change log to determine which documents require
-        /// updating in the index. Depending on the change log's size, it may take longer for
-        /// Amazon Kendra to use the change log than to scan all of your documents in Jira.
+        ///  <c>TRUE</c> to use the Jira change log to determine which documents require updating
+        /// in the index. Depending on the change log's size, it may take longer for Amazon Kendra
+        /// to use the change log than to scan all of your documents in Jira.
         /// </para>
         /// </summary>
         public bool UseChangeLog
@@ -361,12 +361,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property WorkLogFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Jira work logs to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to Jira fields. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">
-        /// Mapping data source fields</a>. The Jira data source field names must exist in your
-        /// Jira custom metadata.
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Jira work logs to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Jira fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html"> Mapping
+        /// data source fields</a>. The Jira data source field names must exist in your Jira custom
+        /// metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

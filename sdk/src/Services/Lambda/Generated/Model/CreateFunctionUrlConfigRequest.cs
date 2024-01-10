@@ -44,11 +44,11 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property AuthType. 
         /// <para>
-        /// The type of authentication that your function URL uses. Set to <code>AWS_IAM</code>
-        /// if you want to restrict access to authenticated users only. Set to <code>NONE</code>
-        /// if you want to bypass IAM authentication to create a public endpoint. For more information,
-        /// see <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security
-        /// and auth model for Lambda function URLs</a>.
+        /// The type of authentication that your function URL uses. Set to <c>AWS_IAM</c> if you
+        /// want to restrict access to authenticated users only. Set to <c>NONE</c> if you want
+        /// to bypass IAM authentication to create a public endpoint. For more information, see
+        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
+        /// auth model for Lambda function URLs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,15 +94,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Function name</b> – <code>my-function</code>.
+        ///  <b>Function name</b> – <c>my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.
+        ///  <b>Function ARN</b> – <c>arn:aws:lambda:us-west-2:123456789012:function:my-function</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.
+        ///  <b>Partial ARN</b> – <c>123456789012:function:my-function</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -130,15 +130,15 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BUFFERED</code> – This is the default option. Lambda invokes your function
-        /// using the <code>Invoke</code> API operation. Invocation results are available when
-        /// the payload is complete. The maximum payload size is 6 MB.
+        ///  <c>BUFFERED</c> – This is the default option. Lambda invokes your function using
+        /// the <c>Invoke</c> API operation. Invocation results are available when the payload
+        /// is complete. The maximum payload size is 6 MB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESPONSE_STREAM</code> – Your function streams payload results as they become
-        /// available. Lambda invokes your function using the <code>InvokeWithResponseStream</code>
-        /// API operation. The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
+        ///  <c>RESPONSE_STREAM</c> – Your function streams payload results as they become available.
+        /// Lambda invokes your function using the <c>InvokeWithResponseStream</c> API operation.
+        /// The maximum response payload size is 20 MB, however, you can <a href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
         /// a quota increase</a>.
         /// </para>
         ///  </li> </ul>

@@ -41,8 +41,8 @@ namespace Amazon.ResilienceHub.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Maximum number of results to include in the response. If more results exist than the
-        /// specified <code>MaxResults</code> value, a token is included in the response so that
-        /// the remaining results can be retrieved.
+        /// specified <c>MaxResults</c> value, a token is included in the response so that the
+        /// remaining results can be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

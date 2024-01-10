@@ -48,9 +48,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// You can use API filters to narrow down the list of resources returned by <code>ListLocations</code>.
-        /// For example, to retrieve all tasks on a specific source location, you can use <code>ListLocations</code>
-        /// with filter name <code>LocationType S3</code> and <code>Operator Equals</code>.
+        /// You can use API filters to narrow down the list of resources returned by <c>ListLocations</c>.
+        /// For example, to retrieve all tasks on a specific source location, you can use <c>ListLocations</c>
+        /// with filter name <c>LocationType S3</c> and <c>Operator Equals</c>.
         /// </para>
         /// </summary>
         public List<LocationFilter> Filters

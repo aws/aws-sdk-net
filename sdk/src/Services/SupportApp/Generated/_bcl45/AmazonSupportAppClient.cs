@@ -390,13 +390,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -486,13 +486,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -624,13 +624,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -694,13 +694,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -765,13 +765,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -835,13 +835,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1113,8 +1113,8 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API to authorize each
-        /// Slack workspace for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API to authorize each Slack
+        /// workspace for the organization.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -1173,13 +1173,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1223,8 +1223,8 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API to authorize each
-        /// Slack workspace for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API to authorize each Slack
+        /// workspace for the organization.
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -1286,13 +1286,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1356,13 +1356,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>
@@ -1425,13 +1425,13 @@ namespace Amazon.SupportApp
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from an Amazon Web
-        /// Services account that doesn't belong to an organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from an Amazon Web Services
+        /// account that doesn't belong to an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Call the <code>RegisterSlackWorkspaceForOrganization</code> API from a member account,
-        /// but the management account hasn't registered that workspace yet for the organization.
+        /// Call the <c>RegisterSlackWorkspaceForOrganization</c> API from a member account, but
+        /// the management account hasn't registered that workspace yet for the organization.
         /// </para>
         ///  </li> </ul>
         /// </exception>

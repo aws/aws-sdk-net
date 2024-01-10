@@ -86,7 +86,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in <code>HH:00</code> format, and in an hourly increment.
+        /// Must be in <c>HH:00</c> format, and in an hourly increment.
         /// </para>
         ///  </li> <li> 
         /// <para>

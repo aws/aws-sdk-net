@@ -72,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of items to return with this call. The maximum value is <code>50</code>.
+        /// The maximum number of items to return with this call. The maximum value is <c>50</c>.
         /// </para>
         /// </summary>
         public int MaxRecords
@@ -117,16 +117,16 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>elb</code> if the traffic source is a Classic Load Balancer.
+        ///  <c>elb</c> if the traffic source is a Classic Load Balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>elbv2</code> if the traffic source is a Application Load Balancer, Gateway
-        /// Load Balancer, or Network Load Balancer.
+        ///  <c>elbv2</c> if the traffic source is a Application Load Balancer, Gateway Load Balancer,
+        /// or Network Load Balancer.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-lattice</code> if the traffic source is VPC Lattice.
+        ///  <c>vpc-lattice</c> if the traffic source is VPC Lattice.
         /// </para>
         ///  </li> </ul>
         /// </summary>

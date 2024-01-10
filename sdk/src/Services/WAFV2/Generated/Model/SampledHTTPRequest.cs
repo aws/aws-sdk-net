@@ -30,8 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Represents a single sampled web request. The response from <a>GetSampledRequests</a>
-    /// includes a <code>SampledHTTPRequests</code> complex type that appears as <code>SampledRequests</code>
-    /// in the response syntax. <code>SampledHTTPRequests</code> contains an array of <code>SampledHTTPRequest</code>
+    /// includes a <c>SampledHTTPRequests</c> complex type that appears as <c>SampledRequests</c>
+    /// in the response syntax. <c>SampledHTTPRequests</c> contains an array of <c>SampledHTTPRequest</c>
     /// objects.
     /// </summary>
     public partial class SampledHTTPRequest
@@ -69,7 +69,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CaptchaResponse. 
         /// <para>
-        /// The <code>CAPTCHA</code> response for the request.
+        /// The <c>CAPTCHA</c> response for the request.
         /// </para>
         /// </summary>
         public CaptchaResponse CaptchaResponse
@@ -87,7 +87,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ChallengeResponse. 
         /// <para>
-        /// The <code>Challenge</code> response for the request.
+        /// The <c>Challenge</c> response for the request.
         /// </para>
         /// </summary>
         public ChallengeResponse ChallengeResponse
@@ -112,8 +112,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</code>
-        /// or <code>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</code>. 
+        /// For example, <c>awswaf:111122223333:myRuleGroup:testRules:testNS1:testNS2:labelNameA</c>
+        /// or <c>awswaf:managed:aws:managed-rule-set:header:encoding:utf8</c>. 
         /// </para>
         /// </summary>
         public List<Label> Labels
@@ -133,7 +133,7 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Used only for rule group rules that have a rule action override in place in the web
         /// ACL. This is the action that the rule group rule is configured for, and not the action
-        /// that was applied to the request. The action that WAF applied is the <code>Action</code>
+        /// that was applied to the request. The action that WAF applied is the <c>Action</c>
         /// value. 
         /// </para>
         /// </summary>
@@ -209,11 +209,11 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property RuleNameWithinRuleGroup. 
         /// <para>
-        /// The name of the <code>Rule</code> that the request matched. For managed rule groups,
-        /// the format for this name is <code>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule
-        /// name&gt;</code>. For your own rule groups, the format for this name is <code>&lt;rule
-        /// group name&gt;#&lt;rule name&gt;</code>. If the rule is not in a rule group, this
-        /// field is absent. 
+        /// The name of the <c>Rule</c> that the request matched. For managed rule groups, the
+        /// format for this name is <c>&lt;vendor name&gt;#&lt;managed rule group name&gt;#&lt;rule
+        /// name&gt;</c>. For your own rule groups, the format for this name is <c>&lt;rule group
+        /// name&gt;#&lt;rule name&gt;</c>. If the rule is not in a rule group, this field is
+        /// absent. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -252,8 +252,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property Weight. 
         /// <para>
         /// A value that indicates how one result in the response relates proportionally to other
-        /// results in the response. For example, a result that has a weight of <code>2</code>
-        /// represents roughly twice as many web requests as a result that has a weight of <code>1</code>.
+        /// results in the response. For example, a result that has a weight of <c>2</c> represents
+        /// roughly twice as many web requests as a result that has a weight of <c>1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

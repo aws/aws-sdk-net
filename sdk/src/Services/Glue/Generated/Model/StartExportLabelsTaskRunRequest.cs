@@ -32,13 +32,13 @@ namespace Amazon.Glue.Model
     /// Container for the parameters to the StartExportLabelsTaskRun operation.
     /// Begins an asynchronous task to export all labeled data for a particular transform.
     /// This task is the only label-related API call that is not part of the typical active
-    /// learning workflow. You typically use <code>StartExportLabelsTaskRun</code> when you
-    /// want to work with all of your existing labels at the same time, such as when you want
-    /// to remove or change labels that were previously submitted as truth. This API operation
-    /// accepts the <code>TransformId</code> whose labels you want to export and an Amazon
-    /// Simple Storage Service (Amazon S3) path to export the labels to. The operation returns
-    /// a <code>TaskRunId</code>. You can check on the status of your task run by calling
-    /// the <code>GetMLTaskRun</code> API.
+    /// learning workflow. You typically use <c>StartExportLabelsTaskRun</c> when you want
+    /// to work with all of your existing labels at the same time, such as when you want to
+    /// remove or change labels that were previously submitted as truth. This API operation
+    /// accepts the <c>TransformId</c> whose labels you want to export and an Amazon Simple
+    /// Storage Service (Amazon S3) path to export the labels to. The operation returns a
+    /// <c>TaskRunId</c>. You can check on the status of your task run by calling the <c>GetMLTaskRun</c>
+    /// API.
     /// </summary>
     public partial class StartExportLabelsTaskRunRequest : AmazonGlueRequest
     {

@@ -36,8 +36,8 @@ namespace Amazon.QuickSight.Model
     /// <para>
     /// Updating a Dashboard creates a new dashboard version but does not immediately publish
     /// the new version. You can update the published version of a dashboard by using the
-    /// <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
-    /// </code> API operation.
+    /// <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_UpdateDashboardPublishedVersion.html">UpdateDashboardPublishedVersion</a>
+    /// </c> API operation.
     /// </para>
     ///  </note>
     /// </summary>
@@ -100,24 +100,23 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AvailabilityStatus</code> for <code>AdHocFilteringOption</code> - This status
-        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. When this is set to <code>DISABLED</code>,
-        /// Amazon QuickSight disables the left filter pane on the published dashboard, which
-        /// can be used for ad hoc (one-time) filtering. This option is <code>ENABLED</code> by
+        ///  <c>AvailabilityStatus</c> for <c>AdHocFilteringOption</c> - This status can be either
+        /// <c>ENABLED</c> or <c>DISABLED</c>. When this is set to <c>DISABLED</c>, Amazon QuickSight
+        /// disables the left filter pane on the published dashboard, which can be used for ad
+        /// hoc (one-time) filtering. This option is <c>ENABLED</c> by default. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>AvailabilityStatus</c> for <c>ExportToCSVOption</c> - This status can be either
+        /// <c>ENABLED</c> or <c>DISABLED</c>. The visual option to export data to .CSV format
+        /// isn't enabled when this is set to <c>DISABLED</c>. This option is <c>ENABLED</c> by
         /// default. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status
-        /// can be either <code>ENABLED</code> or <code>DISABLED</code>. The visual option to
-        /// export data to .CSV format isn't enabled when this is set to <code>DISABLED</code>.
-        /// This option is <code>ENABLED</code> by default. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility
-        /// state can be either <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is
-        /// <code>COLLAPSED</code> by default. 
+        ///  <c>VisibilityState</c> for <c>SheetControlsOption</c> - This visibility state can
+        /// be either <c>COLLAPSED</c> or <c>EXPANDED</c>. This option is <c>COLLAPSED</c> by
+        /// default. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -197,21 +196,20 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SourceEntity. 
         /// <para>
-        /// The entity that you are using as a source when you update the dashboard. In <code>SourceEntity</code>,
+        /// The entity that you are using as a source when you update the dashboard. In <c>SourceEntity</c>,
         /// you specify the type of object you're using as source. You can only update a dashboard
-        /// from a template, so you use a <code>SourceTemplate</code> entity. If you need to update
+        /// from a template, so you use a <c>SourceTemplate</c> entity. If you need to update
         /// a dashboard from an analysis, first convert the analysis to a template by using the
-        /// <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
-        /// </code> API operation. For <code>SourceTemplate</code>, specify the Amazon Resource
-        /// Name (ARN) of the source template. The <code>SourceTemplate</code> ARN can contain
-        /// any Amazon Web Services account and any Amazon QuickSight-supported Amazon Web Services
-        /// Region. 
+        /// <c> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a>
+        /// </c> API operation. For <c>SourceTemplate</c>, specify the Amazon Resource Name (ARN)
+        /// of the source template. The <c>SourceTemplate</c> ARN can contain any Amazon Web Services
+        /// account and any Amazon QuickSight-supported Amazon Web Services Region. 
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to
-        /// list the replacement datasets for the placeholders listed in the original. The schema
-        /// in each dataset must match its placeholder. 
+        /// Use the <c>DataSetReferences</c> entity within <c>SourceTemplate</c> to list the replacement
+        /// datasets for the placeholders listed in the original. The schema in each dataset must
+        /// match its placeholder. 
         /// </para>
         /// </summary>
         public DashboardSourceEntity SourceEntity

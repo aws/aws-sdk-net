@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Represents the output of the <code>GetDataSource</code> operation. 
+    /// Represents the output of the <c>GetDataSource</c> operation. 
     /// 
     ///  
     /// <para>
     ///  The content consists of the detailed metadata and data file information and the current
-    /// status of the <code>DataSource</code>. 
+    /// status of the <c>DataSource</c>. 
     /// </para>
     /// </summary>
     public partial class DataSource
@@ -61,7 +61,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ComputeStatistics. 
         /// <para>
-        ///  The parameter is <code>true</code> if statistics need to be generated from the observation
+        ///  The parameter is <c>true</c> if statistics need to be generated from the observation
         /// data. 
         /// </para>
         /// </summary>
@@ -95,8 +95,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time that the <code>DataSource</code> was created. The time is expressed in epoch
-        /// time.
+        /// The time that the <c>DataSource</c> was created. The time is expressed in epoch time.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -114,9 +113,9 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedByIamUser. 
         /// <para>
-        /// The AWS user account from which the <code>DataSource</code> was created. The account
-        /// type can be either an AWS root account or an AWS Identity and Access Management (IAM)
-        /// user account.
+        /// The AWS user account from which the <c>DataSource</c> was created. The account type
+        /// can be either an AWS root account or an AWS Identity and Access Management (IAM) user
+        /// account.
         /// </para>
         /// </summary>
         public string CreatedByIamUser
@@ -135,7 +134,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property DataLocationS3. 
         /// <para>
         /// The location and name of the data in Amazon Simple Storage Service (Amazon S3) that
-        /// is used by a <code>DataSource</code>.
+        /// is used by a <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]
@@ -155,7 +154,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property DataRearrangement. 
         /// <para>
         /// A JSON string that represents the splitting and rearrangement requirement used when
-        /// this <code>DataSource</code> was created.
+        /// this <c>DataSource</c> was created.
         /// </para>
         /// </summary>
         public string DataRearrangement
@@ -173,7 +172,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSizeInBytes. 
         /// <para>
-        /// The total number of observations contained in the data files that the <code>DataSource</code>
+        /// The total number of observations contained in the data files that the <c>DataSource</c>
         /// references.
         /// </para>
         /// </summary>
@@ -192,7 +191,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// The ID that is assigned to the <code>DataSource</code> during creation.
+        /// The ID that is assigned to the <c>DataSource</c> during creation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -226,8 +225,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The time of the most recent edit to the <code>BatchPrediction</code>. The time is
-        /// expressed in epoch time.
+        /// The time of the most recent edit to the <c>BatchPrediction</c>. The time is expressed
+        /// in epoch time.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -245,7 +244,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// A description of the most recent details about creating the <code>DataSource</code>.
+        /// A description of the most recent details about creating the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=10240)]
@@ -264,7 +263,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A user-supplied name or description of the <code>DataSource</code>.
+        /// A user-supplied name or description of the <c>DataSource</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -283,7 +282,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property NumberOfFiles. 
         /// <para>
-        /// The number of data files referenced by the <code>DataSource</code>.
+        /// The number of data files referenced by the <c>DataSource</c>.
         /// </para>
         /// </summary>
         public long NumberOfFiles
@@ -362,12 +361,12 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the <code>DataSource</code>. This element can have one of the
-        /// following values: 
+        /// The current status of the <c>DataSource</c>. This element can have one of the following
+        /// values: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+        /// PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <c>DataSource</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -375,8 +374,8 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// FAILED - The request to create a <code>DataSource</code> did not run to completion.
-        /// It is not usable.
+        /// FAILED - The request to create a <c>DataSource</c> did not run to completion. It is
+        /// not usable.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -384,7 +383,7 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+        /// DELETED - The <c>DataSource</c> is marked as deleted. It is not usable.
         /// </para>
         ///  </li> </ul>
         /// </summary>

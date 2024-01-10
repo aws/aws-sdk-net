@@ -73,8 +73,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// For sessions with Network Load Balancer (NLB) traffic mirror targets, the default
-        /// <code>PacketLength</code> will be set to 8500. Valid values are 1-8500. Setting a
-        /// <code>PacketLength</code> greater than 8500 will result in an error response.
+        /// <c>PacketLength</c> will be set to 8500. Valid values are 1-8500. Setting a <c>PacketLength</c>
+        /// greater than 8500 will result in an error response.
         /// </para>
         /// </summary>
         public int PacketLength

@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AggregationVisibility. 
         /// <para>
-        /// The visibility of <code>Show aggregations</code>.
+        /// The visibility of <c>Show aggregations</c>.
         /// </para>
         /// </summary>
         public Visibility AggregationVisibility
@@ -81,11 +81,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: Doesn't use the primary value as the title.
+        ///  <c>NONE</c>: Doesn't use the primary value as the title.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PRIMARY_VALUE</code>: Uses primary value as the title.
+        ///  <c>PRIMARY_VALUE</c>: Uses primary value as the title.
         /// </para>
         ///  </li> </ul>
         /// </summary>

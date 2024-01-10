@@ -58,8 +58,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Nodes. 
         /// <para>
-        /// An array of <code>NodeSummary</code> objects that contain configuration properties
-        /// for each node.
+        /// An array of <c>NodeSummary</c> objects that contain configuration properties for each
+        /// node.
         /// </para>
         /// </summary>
         public List<NodeSummary> Nodes

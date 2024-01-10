@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>DescribeLoadBasedAutoScaling</code> request.
+    /// Contains the response to a <c>DescribeLoadBasedAutoScaling</c> request.
     /// </summary>
     public partial class DescribeLoadBasedAutoScalingResponse : AmazonWebServiceResponse
     {
@@ -38,8 +38,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LoadBasedAutoScalingConfigurations. 
         /// <para>
-        /// An array of <code>LoadBasedAutoScalingConfiguration</code> objects that describe each
-        /// layer's configuration.
+        /// An array of <c>LoadBasedAutoScalingConfiguration</c> objects that describe each layer's
+        /// configuration.
         /// </para>
         /// </summary>
         public List<LoadBasedAutoScalingConfiguration> LoadBasedAutoScalingConfigurations

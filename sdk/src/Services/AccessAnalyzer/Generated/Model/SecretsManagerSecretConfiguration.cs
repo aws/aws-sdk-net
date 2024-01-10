@@ -40,7 +40,7 @@ namespace Amazon.AccessAnalyzer.Model
     /// and you do not specify the policy, the access preview assumes a secret without a policy.
     /// To propose deletion of an existing policy, you can specify an empty string. If the
     /// proposed configuration is for a new secret and you do not specify the KMS key ID,
-    /// the access preview uses the Amazon Web Services managed key <code>aws/secretsmanager</code>.
+    /// the access preview uses the Amazon Web Services managed key <c>aws/secretsmanager</c>.
     /// If you specify an empty string for the KMS key ID, the access preview uses the Amazon
     /// Web Services managed key of the Amazon Web Services account. For more information
     /// about secret policy limits, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/reference_limits.html">Quotas

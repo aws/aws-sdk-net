@@ -36,8 +36,8 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use the <code>UpdateJobStatus</code> operation, you must have permission to perform
-    /// the <code>s3:UpdateJobStatus</code> action.
+    /// To use the <c>UpdateJobStatus</c> operation, you must have permission to perform the
+    /// <c>s3:UpdateJobStatus</c> action.
     /// </para>
     ///  </dd> </dl> 
     /// <para>

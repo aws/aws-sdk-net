@@ -42,7 +42,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>DISABLED</code> | <code>ENABLED</code> 
+        /// Valid values: <c>DISABLED</c> | <c>ENABLED</c> 
         /// </para>
         /// </summary>
         public string CertificateTransparencyLoggingPreference

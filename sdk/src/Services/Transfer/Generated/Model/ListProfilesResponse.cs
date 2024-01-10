@@ -39,8 +39,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Returns a token that you can use to call <code>ListProfiles</code> again and receive
-        /// additional results, if there are any.
+        /// Returns a token that you can use to call <c>ListProfiles</c> again and receive additional
+        /// results, if there are any.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6144)]

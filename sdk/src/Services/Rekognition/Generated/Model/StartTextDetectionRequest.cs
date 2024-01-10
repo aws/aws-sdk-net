@@ -35,17 +35,16 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     /// Amazon Rekognition Video can detect text in a video stored in an Amazon S3 bucket.
-    /// Use <a>Video</a> to specify the bucket name and the filename of the video. <code>StartTextDetection</code>
-    /// returns a job identifier (<code>JobId</code>) which you use to get the results of
-    /// the operation. When text detection is finished, Amazon Rekognition Video publishes
-    /// a completion status to the Amazon Simple Notification Service topic that you specify
-    /// in <code>NotificationChannel</code>.
+    /// Use <a>Video</a> to specify the bucket name and the filename of the video. <c>StartTextDetection</c>
+    /// returns a job identifier (<c>JobId</c>) which you use to get the results of the operation.
+    /// When text detection is finished, Amazon Rekognition Video publishes a completion status
+    /// to the Amazon Simple Notification Service topic that you specify in <c>NotificationChannel</c>.
     /// </para>
     ///  
     /// <para>
     /// To get the results of the text detection operation, first check that the status value
-    /// published to the Amazon SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetTextDetection</a>
-    /// and pass the job identifier (<code>JobId</code>) from the initial call to <code>StartTextDetection</code>.
+    /// published to the Amazon SNS topic is <c>SUCCEEDED</c>. if so, call <a>GetTextDetection</a>
+    /// and pass the job identifier (<c>JobId</c>) from the initial call to <c>StartTextDetection</c>.
     /// 
     /// </para>
     /// </summary>
@@ -61,9 +60,9 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// Idempotent token used to identify the start request. If you use the same token with
-        /// multiple <code>StartTextDetection</code> requests, the same <code>JobId</code> is
-        /// returned. Use <code>ClientRequestToken</code> to prevent the same job from being accidentaly
-        /// started more than once.
+        /// multiple <c>StartTextDetection</c> requests, the same <c>JobId</c> is returned. Use
+        /// <c>ClientRequestToken</c> to prevent the same job from being accidentaly started more
+        /// than once.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -102,8 +101,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property JobTag. 
         /// <para>
         /// An identifier returned in the completion status published by your Amazon Simple Notification
-        /// Service topic. For example, you can use <code>JobTag</code> to group related jobs
-        /// and identify them in the completion notification.
+        /// Service topic. For example, you can use <c>JobTag</c> to group related jobs and identify
+        /// them in the completion notification.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

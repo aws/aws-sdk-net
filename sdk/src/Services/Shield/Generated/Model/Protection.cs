@@ -102,7 +102,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the protection. For example, <code>My CloudFront distributions</code>.
+        /// The name of the protection. For example, <c>My CloudFront distributions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

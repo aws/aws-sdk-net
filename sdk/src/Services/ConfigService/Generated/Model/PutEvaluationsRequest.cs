@@ -83,16 +83,14 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TestMode. 
         /// <para>
-        /// Use this parameter to specify a test run for <code>PutEvaluations</code>. You can
-        /// verify whether your Lambda function will deliver evaluation results to Config. No
-        /// updates occur to your existing evaluations, and evaluation results are not sent to
-        /// Config.
+        /// Use this parameter to specify a test run for <c>PutEvaluations</c>. You can verify
+        /// whether your Lambda function will deliver evaluation results to Config. No updates
+        /// occur to your existing evaluations, and evaluation results are not sent to Config.
         /// </para>
         ///  <note> 
         /// <para>
-        /// When <code>TestMode</code> is <code>true</code>, <code>PutEvaluations</code> doesn't
-        /// require a valid value for the <code>ResultToken</code> parameter, but the value cannot
-        /// be null.
+        /// When <c>TestMode</c> is <c>true</c>, <c>PutEvaluations</c> doesn't require a valid
+        /// value for the <c>ResultToken</c> parameter, but the value cannot be null.
         /// </para>
         ///  </note>
         /// </summary>

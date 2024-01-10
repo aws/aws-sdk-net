@@ -106,15 +106,15 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::Config::ResourceCompliance</code> 
+        ///  <c>AWS::Config::ResourceCompliance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Config::ConformancePackCompliance</code> 
+        ///  <c>AWS::Config::ConformancePackCompliance</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Config::ConfigurationRecorder</code> 
+        ///  <c>AWS::Config::ConfigurationRecorder</c> 
         /// </para>
         ///  </li> </ul> </important>
         /// </summary>

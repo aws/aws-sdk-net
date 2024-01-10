@@ -37,7 +37,7 @@ namespace Amazon.EC2.Model
     /// An inbound rule permits instances to receive traffic from the specified IPv4 or IPv6
     /// CIDR address range, or from the instances that are associated with the specified destination
     /// security groups. When specifying an inbound rule for your security group in a VPC,
-    /// the <code>IpPermissions</code> must include a source for the traffic.
+    /// the <c>IpPermissions</c> must include a source for the traffic.
     /// </para>
     ///  
     /// <para>

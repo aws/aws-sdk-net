@@ -58,8 +58,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TreatUndefinedSpecifiedValues. 
         /// <para>
-        /// The treat of undefined specified values. Valid values for this structure are <code>LEAST</code>
-        /// and <code>MOST</code>.
+        /// The treat of undefined specified values. Valid values for this structure are <c>LEAST</c>
+        /// and <c>MOST</c>.
         /// </para>
         /// </summary>
         public UndefinedSpecifiedValueType TreatUndefinedSpecifiedValues
@@ -77,8 +77,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property UseOrdering. 
         /// <para>
-        /// The ordering type for a column. Valid values for this structure are <code>GREATER_IS_BETTER</code>,
-        /// <code>LESSER_IS_BETTER</code> and <code>SPECIFIED</code>.
+        /// The ordering type for a column. Valid values for this structure are <c>GREATER_IS_BETTER</c>,
+        /// <c>LESSER_IS_BETTER</c> and <c>SPECIFIED</c>.
         /// </para>
         /// </summary>
         public ColumnOrderingType UseOrdering

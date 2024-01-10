@@ -38,8 +38,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property Task. 
         /// <para>
-        ///  The <code>BatchDeleteConfigurationTask</code> that represents the deletion task being
-        /// executed. 
+        ///  The <c>BatchDeleteConfigurationTask</c> that represents the deletion task being executed.
+        /// 
         /// </para>
         /// </summary>
         public BatchDeleteConfigurationTask Task

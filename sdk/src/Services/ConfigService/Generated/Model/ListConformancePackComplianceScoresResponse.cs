@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackComplianceScores. 
         /// <para>
-        /// A list of <code>ConformancePackComplianceScore</code> objects.
+        /// A list of <c>ConformancePackComplianceScore</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -58,8 +58,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string that you can use to get the next page of results
-        /// in a paginated response.
+        /// The <c>nextToken</c> string that you can use to get the next page of results in a
+        /// paginated response.
         /// </para>
         /// </summary>
         public string NextToken

@@ -69,7 +69,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ReplacementEmailContent. 
         /// <para>
-        /// The <code>ReplacementEmailContent</code> associated with a <code>BulkEmailEntry</code>.
+        /// The <c>ReplacementEmailContent</c> associated with a <c>BulkEmailEntry</c>.
         /// </para>
         /// </summary>
         public ReplacementEmailContent ReplacementEmailContent
@@ -88,7 +88,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property ReplacementTags. 
         /// <para>
         /// A list of tags, in the form of name/value pairs, to apply to an email that you send
-        /// using the <code>SendBulkTemplatedEmail</code> operation. Tags correspond to characteristics
+        /// using the <c>SendBulkTemplatedEmail</c> operation. Tags correspond to characteristics
         /// of the email that you define, so that you can publish email sending events.
         /// </para>
         /// </summary>

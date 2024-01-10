@@ -30,7 +30,7 @@ namespace Amazon.MigrationHubConfig.Model
 {
     /// <summary>
     /// Exception raised to indicate that authorization of an action was successful, when
-    /// the <code>DryRun</code> flag is set to true.
+    /// the <c>DryRun</c> flag is set to true.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

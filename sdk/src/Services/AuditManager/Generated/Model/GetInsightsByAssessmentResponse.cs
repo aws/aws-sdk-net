@@ -38,7 +38,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property Insights. 
         /// <para>
-        ///  The assessment analytics data that the <code>GetInsightsByAssessment</code> API returned.
+        ///  The assessment analytics data that the <c>GetInsightsByAssessment</c> API returned.
         /// 
         /// </para>
         /// </summary>

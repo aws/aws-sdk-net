@@ -57,8 +57,8 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property VoiceprintGenerationStatus. 
         /// <para>
-        /// The status of a voice print generation operation, <code>VoiceprintGenerationSuccess</code>
-        /// or <code>VoiceprintGenerationFailure</code>..
+        /// The status of a voice print generation operation, <c>VoiceprintGenerationSuccess</c>
+        /// or <c>VoiceprintGenerationFailure</c>..
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

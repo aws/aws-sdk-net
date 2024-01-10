@@ -79,7 +79,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property LocaleId. 
         /// <para>
         /// The identifier of the local to import the custom vocabulary to. The value must be
-        /// <code>en_GB</code>.
+        /// <c>en_GB</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

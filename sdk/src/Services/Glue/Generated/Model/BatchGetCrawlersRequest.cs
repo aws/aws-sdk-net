@@ -31,8 +31,8 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the BatchGetCrawlers operation.
     /// Returns a list of resource metadata for a given list of crawler names. After calling
-    /// the <code>ListCrawlers</code> operation, you can call this operation to access the
-    /// data to which you have been granted permissions. This operation supports all IAM permissions,
+    /// the <c>ListCrawlers</c> operation, you can call this operation to access the data
+    /// to which you have been granted permissions. This operation supports all IAM permissions,
     /// including permission conditions that uses tags.
     /// </summary>
     public partial class BatchGetCrawlersRequest : AmazonGlueRequest
@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlerNames. 
         /// <para>
-        /// A list of crawler names, which might be the names returned from the <code>ListCrawlers</code>
+        /// A list of crawler names, which might be the names returned from the <c>ListCrawlers</c>
         /// operation.
         /// </para>
         /// </summary>

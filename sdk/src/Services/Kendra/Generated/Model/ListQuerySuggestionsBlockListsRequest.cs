@@ -39,8 +39,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>ListQuerySuggestionsBlockLists</code> is currently not supported in the Amazon
-    /// Web Services GovCloud (US-West) region.
+    ///  <c>ListQuerySuggestionsBlockLists</c> is currently not supported in the Amazon Web
+    /// Services GovCloud (US-West) region.
     /// </para>
     /// </summary>
     public partial class ListQuerySuggestionsBlockListsRequest : AmazonKendraRequest
@@ -97,7 +97,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// If the previous response was incomplete (because there is more data to retrieve),
         /// Amazon Kendra returns a pagination token in the response. You can use this pagination
-        /// token to retrieve the next set of block lists (<code>BlockListSummaryItems</code>).
+        /// token to retrieve the next set of block lists (<c>BlockListSummaryItems</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=800)]

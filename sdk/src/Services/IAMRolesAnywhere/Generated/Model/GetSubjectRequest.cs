@@ -37,7 +37,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:GetSubject</c>. 
     /// </para>
     /// </summary>
     public partial class GetSubjectRequest : AmazonIAMRolesAnywhereRequest

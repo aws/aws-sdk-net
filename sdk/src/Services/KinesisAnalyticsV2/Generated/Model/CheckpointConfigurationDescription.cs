@@ -46,9 +46,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-        /// the application will use a <code>CheckpointingEnabled</code> value of <code>true</code>,
-        /// even if this value is set to another value using this API or in application code.
+        /// If <c>CheckpointConfiguration.ConfigurationType</c> is <c>DEFAULT</c>, the application
+        /// will use a <c>CheckpointingEnabled</c> value of <c>true</c>, even if this value is
+        /// set to another value using this API or in application code.
         /// </para>
         ///  </note>
         /// </summary>
@@ -71,9 +71,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-        /// the application will use a <code>CheckpointInterval</code> value of 60000, even if
-        /// this value is set to another value using this API or in application code.
+        /// If <c>CheckpointConfiguration.ConfigurationType</c> is <c>DEFAULT</c>, the application
+        /// will use a <c>CheckpointInterval</c> value of 60000, even if this value is set to
+        /// another value using this API or in application code.
         /// </para>
         ///  </note>
         /// </summary>
@@ -98,8 +98,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If this value is set to <code>DEFAULT</code>, the application will use the following
-        /// values, even if they are set to other values using APIs or application code:
+        /// If this value is set to <c>DEFAULT</c>, the application will use the following values,
+        /// even if they are set to other values using APIs or application code:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -135,9 +135,9 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>,
-        /// the application will use a <code>MinPauseBetweenCheckpoints</code> value of 5000,
-        /// even if this value is set using this API or in application code.
+        /// If <c>CheckpointConfiguration.ConfigurationType</c> is <c>DEFAULT</c>, the application
+        /// will use a <c>MinPauseBetweenCheckpoints</c> value of 5000, even if this value is
+        /// set using this API or in application code.
         /// </para>
         ///  </note>
         /// </summary>

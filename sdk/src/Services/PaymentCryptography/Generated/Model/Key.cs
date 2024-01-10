@@ -70,7 +70,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property DeletePendingTimestamp. 
         /// <para>
         /// The date and time after which Amazon Web Services Payment Cryptography will delete
-        /// the key. This value is present only when <code>KeyState</code> is <code>DELETE_PENDING</code>
+        /// the key. This value is present only when <c>KeyState</c> is <c>DELETE_PENDING</c>
         /// and the key is scheduled for deletion.
         /// </para>
         /// </summary>
@@ -90,7 +90,7 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property DeleteTimestamp. 
         /// <para>
         /// The date and time after which Amazon Web Services Payment Cryptography will delete
-        /// the key. This value is present only when when the <code>KeyState</code> is <code>DELETE_COMPLETE</code>
+        /// the key. This value is present only when when the <c>KeyState</c> is <c>DELETE_COMPLETE</c>
         /// and the Amazon Web Services Payment Cryptography key is deleted.
         /// </para>
         /// </summary>
@@ -234,8 +234,8 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property KeyOrigin. 
         /// <para>
         /// The source of the key material. For keys created within Amazon Web Services Payment
-        /// Cryptography, the value is <code>AWS_PAYMENT_CRYPTOGRAPHY</code>. For keys imported
-        /// into Amazon Web Services Payment Cryptography, the value is <code>EXTERNAL</code>.
+        /// Cryptography, the value is <c>AWS_PAYMENT_CRYPTOGRAPHY</c>. For keys imported into
+        /// Amazon Web Services Payment Cryptography, the value is <c>EXTERNAL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

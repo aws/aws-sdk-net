@@ -37,9 +37,9 @@ namespace Amazon.SimpleEmail.Model
     /// 
     ///  <note> 
     /// <para>
-    /// For email addresses (for example, <code>user@example.com</code>), you can only enable
-    /// DKIM signing if the corresponding domain (in this case, <code>example.com</code>)
-    /// has been set up to use Easy DKIM.
+    /// For email addresses (for example, <c>user@example.com</c>), you can only enable DKIM
+    /// signing if the corresponding domain (in this case, <c>example.com</c>) has been set
+    /// up to use Easy DKIM.
     /// </para>
     ///  </note> 
     /// <para>
@@ -64,8 +64,8 @@ namespace Amazon.SimpleEmail.Model
         /// <summary>
         /// Gets and sets the property DkimEnabled. 
         /// <para>
-        /// Sets whether DKIM signing is enabled for an identity. Set to <code>true</code> to
-        /// enable DKIM signing for this identity; <code>false</code> to disable it. 
+        /// Sets whether DKIM signing is enabled for an identity. Set to <c>true</c> to enable
+        /// DKIM signing for this identity; <c>false</c> to disable it. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

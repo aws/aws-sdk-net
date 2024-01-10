@@ -42,11 +42,11 @@ namespace Amazon.ComputeOptimizer.Model
     /// <para>
     /// You cannot create recommendation preferences for Auto Scaling groups at the organization
     /// and account levels. You can create recommendation preferences for Auto Scaling groups
-    /// only at the resource level by specifying a scope name of <code>ResourceArn</code>
-    /// and a scope value of the Auto Scaling group Amazon Resource Name (ARN). This will
-    /// configure the preference for all instances that are part of the specified Auto Scaling
-    /// group. You also cannot create recommendation preferences at the resource level for
-    /// instances that are part of an Auto Scaling group. You can create recommendation preferences
+    /// only at the resource level by specifying a scope name of <c>ResourceArn</c> and a
+    /// scope value of the Auto Scaling group Amazon Resource Name (ARN). This will configure
+    /// the preference for all instances that are part of the specified Auto Scaling group.
+    /// You also cannot create recommendation preferences at the resource level for instances
+    /// that are part of an Auto Scaling group. You can create recommendation preferences
     /// at the resource level only for standalone instances.
     /// </para>
     ///  </note>
@@ -67,18 +67,18 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Organization</code> - Specifies that the recommendation preference applies
-        /// at the organization level, for all member accounts of an organization.
+        ///  <c>Organization</c> - Specifies that the recommendation preference applies at the
+        /// organization level, for all member accounts of an organization.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountId</code> - Specifies that the recommendation preference applies at
-        /// the account level, for all resources of a given resource type in an account.
+        ///  <c>AccountId</c> - Specifies that the recommendation preference applies at the account
+        /// level, for all resources of a given resource type in an account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ResourceArn</code> - Specifies that the recommendation preference applies at
-        /// the individual resource level.
+        ///  <c>ResourceArn</c> - Specifies that the recommendation preference applies at the
+        /// individual resource level.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -101,21 +101,21 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specified the <code>name</code> of the scope as:
+        /// If you specified the <c>name</c> of the scope as:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Organization</code> - The <code>value</code> must be <code>ALL_ACCOUNTS</code>.
+        ///  <c>Organization</c> - The <c>value</c> must be <c>ALL_ACCOUNTS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AccountId</code> - The <code>value</code> must be a 12-digit Amazon Web Services
-        /// account ID.
+        ///  <c>AccountId</c> - The <c>value</c> must be a 12-digit Amazon Web Services account
+        /// ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ResourceArn</code> - The <code>value</code> must be the Amazon Resource Name
-        /// (ARN) of an EC2 instance or an Auto Scaling group.
+        ///  <c>ResourceArn</c> - The <c>value</c> must be the Amazon Resource Name (ARN) of an
+        /// EC2 instance or an Auto Scaling group.
         /// </para>
         ///  </li> </ul> 
         /// <para>

@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DomainNameConfig. 
         /// <para>
-        /// The configuration for the <code>DomainName</code>.
+        /// The configuration for the <c>DomainName</c>.
         /// </para>
         /// </summary>
         public DomainNameConfig DomainNameConfig

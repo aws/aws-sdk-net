@@ -52,7 +52,7 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// The key of the key-value pair of a tag added to your Amazon Web Services resource.
         /// A tag key can be up to 128 Unicode characters in length and is case-sensitive. System
-        /// created tags that begin with <code>aws:</code> aren’t supported. 
+        /// created tags that begin with <c>aws:</c> aren’t supported. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

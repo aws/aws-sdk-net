@@ -31,8 +31,7 @@ namespace Amazon.AppRunner.Model
     /// <summary>
     /// Describes the basic configuration needed for building and running an App Runner service.
     /// This type doesn't support the full set of possible configuration options. Fur full
-    /// configuration capabilities, use a <code>apprunner.yaml</code> file in the source code
-    /// repository.
+    /// configuration capabilities, use a <c>apprunner.yaml</c> file in the source code repository.
     /// </summary>
     public partial class CodeConfigurationValues
     {
@@ -69,7 +68,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>8080</code> 
+        /// Default: <c>8080</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=51200)]

@@ -46,7 +46,7 @@ namespace Amazon.CloudFront.Model
     ///  </li> <li> 
     /// <para>
     /// The headers that CloudFront automatically includes in every origin request, including
-    /// <code>Host</code>, <code>User-Agent</code>, and <code>X-Amz-Cf-Id</code>.
+    /// <c>Host</c>, <c>User-Agent</c>, and <c>X-Amz-Cf-Id</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.CloudFront.Model
     /// <para>
     /// CloudFront sends a request when it can't find a valid object in its cache that matches
     /// the request. If you want to send values to the origin and also include them in the
-    /// cache key, use <code>CachePolicy</code>.
+    /// cache key, use <c>CachePolicy</c>.
     /// </para>
     ///  
     /// <para>

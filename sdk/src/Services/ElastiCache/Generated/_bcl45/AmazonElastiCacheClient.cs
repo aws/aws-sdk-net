@@ -326,7 +326,7 @@ namespace Amazon.ElastiCache
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
         /// The state of the serverless cache snapshot was not received. Available for Redis only.
@@ -418,7 +418,7 @@ namespace Amazon.ElastiCache
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
         /// The state of the serverless cache snapshot was not received. Available for Redis only.
@@ -682,7 +682,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the CompleteMigration service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -711,7 +711,7 @@ namespace Amazon.ElastiCache
         /// 
         /// <returns>The response from the CompleteMigration service method, as returned by ElastiCache.</returns>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -840,9 +840,9 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// Users or groups that have permissions to use the <code>CopySnapshot</code> operation
-        /// can create their own Amazon S3 buckets and copy snapshots to it. To control access
-        /// to your snapshots, use an IAM policy to control who has the ability to use the <code>CopySnapshot</code>
+        /// Users or groups that have permissions to use the <c>CopySnapshot</c> operation can
+        /// create their own Amazon S3 buckets and copy snapshots to it. To control access to
+        /// your snapshots, use an IAM policy to control who has the ability to use the <c>CopySnapshot</c>
         /// operation. For more information about using IAM to control the use of ElastiCache
         /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
         /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
@@ -901,9 +901,9 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        ///  <b>Solution:</b> Give the <code>TargetSnapshotName</code> a new and unique value.
-        /// If exporting a snapshot, you could alternatively create a new Amazon S3 bucket and
-        /// use this same value for <code>TargetSnapshotName</code>.
+        ///  <b>Solution:</b> Give the <c>TargetSnapshotName</c> a new and unique value. If exporting
+        /// a snapshot, you could alternatively create a new Amazon S3 bucket and use this same
+        /// value for <c>TargetSnapshotName</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -986,9 +986,9 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </note> <important> 
         /// <para>
-        /// Users or groups that have permissions to use the <code>CopySnapshot</code> operation
-        /// can create their own Amazon S3 buckets and copy snapshots to it. To control access
-        /// to your snapshots, use an IAM policy to control who has the ability to use the <code>CopySnapshot</code>
+        /// Users or groups that have permissions to use the <c>CopySnapshot</c> operation can
+        /// create their own Amazon S3 buckets and copy snapshots to it. To control access to
+        /// your snapshots, use an IAM policy to control who has the ability to use the <c>CopySnapshot</c>
         /// operation. For more information about using IAM to control the use of ElastiCache
         /// operations, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/backups-exporting.html">Exporting
         /// Snapshots</a> and <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.html">Authentication
@@ -1047,9 +1047,9 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        ///  <b>Solution:</b> Give the <code>TargetSnapshotName</code> a new and unique value.
-        /// If exporting a snapshot, you could alternatively create a new Amazon S3 bucket and
-        /// use this same value for <code>TargetSnapshotName</code>.
+        ///  <b>Solution:</b> Give the <c>TargetSnapshotName</c> a new and unique value. If exporting
+        /// a snapshot, you could alternatively create a new Amazon S3 bucket and use this same
+        /// value for <c>TargetSnapshotName</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1172,7 +1172,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -1249,7 +1249,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -1636,7 +1636,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -1686,7 +1686,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -1793,7 +1793,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
         /// The Global datastore is not available or in primary-only state.
@@ -1931,7 +1931,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidGlobalReplicationGroupStateException">
         /// The Global datastore is not available or in primary-only state.
@@ -2210,7 +2210,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2219,7 +2219,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -2232,8 +2232,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-        /// node.
+        /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2282,7 +2281,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2291,7 +2290,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -2304,8 +2303,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-        /// node.
+        /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2611,7 +2609,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2620,7 +2618,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -2675,7 +2673,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2684,7 +2682,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -2722,10 +2720,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code> deletes
-        /// all associated cache nodes, node endpoints and the cluster itself. When you receive
-        /// a successful response from this operation, Amazon ElastiCache immediately begins deleting
-        /// the cluster; you cannot cancel or revert this operation.
+        /// Deletes a previously provisioned cluster. <c>DeleteCacheCluster</c> deletes all associated
+        /// cache nodes, node endpoints and the cluster itself. When you receive a successful
+        /// response from this operation, Amazon ElastiCache immediately begins deleting the cluster;
+        /// you cannot cancel or revert this operation.
         /// 
         ///  
         /// <para>
@@ -2757,7 +2755,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A cluster that is not in the <code>available</code> state
+        /// A cluster that is not in the <c>available</c> state
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2768,7 +2766,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2784,8 +2782,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-        /// node.
+        /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2811,10 +2808,10 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code> deletes
-        /// all associated cache nodes, node endpoints and the cluster itself. When you receive
-        /// a successful response from this operation, Amazon ElastiCache immediately begins deleting
-        /// the cluster; you cannot cancel or revert this operation.
+        /// Deletes a previously provisioned cluster. <c>DeleteCacheCluster</c> deletes all associated
+        /// cache nodes, node endpoints and the cluster itself. When you receive a successful
+        /// response from this operation, Amazon ElastiCache immediately begins deleting the cluster;
+        /// you cannot cancel or revert this operation.
         /// 
         ///  
         /// <para>
@@ -2846,7 +2843,7 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A cluster that is not in the <code>available</code> state
+        /// A cluster that is not in the <c>available</c> state
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2860,7 +2857,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidParameterCombinationException">
         /// Two or more incompatible parameters were specified.
@@ -2876,8 +2873,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-        /// node.
+        /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3135,13 +3131,13 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Once the Global datastore contains only the primary cluster, you can use the <code>DeleteGlobalReplicationGroup</code>
-        /// API to delete the Global datastore while retainining the primary cluster using <code>RetainPrimaryReplicationGroup=true</code>.
+        /// Once the Global datastore contains only the primary cluster, you can use the <c>DeleteGlobalReplicationGroup</c>
+        /// API to delete the Global datastore while retainining the primary cluster using <c>RetainPrimaryReplicationGroup=true</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Since the Global Datastore has only a primary cluster, you can delete the Global Datastore
-        /// while retaining the primary by setting <code>RetainPrimaryReplicationGroup=true</code>.
+        /// while retaining the primary by setting <c>RetainPrimaryReplicationGroup=true</c>.
         /// The primary cluster is never deleted when deleting a Global Datastore. It can only
         /// be deleted when it no longer is associated with any Global Datastore.
         /// </para>
@@ -3184,13 +3180,13 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Once the Global datastore contains only the primary cluster, you can use the <code>DeleteGlobalReplicationGroup</code>
-        /// API to delete the Global datastore while retainining the primary cluster using <code>RetainPrimaryReplicationGroup=true</code>.
+        /// Once the Global datastore contains only the primary cluster, you can use the <c>DeleteGlobalReplicationGroup</c>
+        /// API to delete the Global datastore while retainining the primary cluster using <c>RetainPrimaryReplicationGroup=true</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// Since the Global Datastore has only a primary cluster, you can delete the Global Datastore
-        /// while retaining the primary by setting <code>RetainPrimaryReplicationGroup=true</code>.
+        /// while retaining the primary by setting <c>RetainPrimaryReplicationGroup=true</c>.
         /// The primary cluster is never deleted when deleting a Global Datastore. It can only
         /// be deleted when it no longer is associated with any Global Datastore.
         /// </para>
@@ -3234,7 +3230,7 @@ namespace Amazon.ElastiCache
         /// Deletes an existing replication group. By default, this operation deletes the entire
         /// replication group, including the primary/primaries and all of the read replicas. If
         /// the replication group has only one primary, you can optionally delete only the read
-        /// replicas, while retaining the primary by setting <code>RetainPrimaryCluster=true</code>.
+        /// replicas, while retaining the primary by setting <c>RetainPrimaryCluster=true</c>.
         /// 
         ///  
         /// <para>
@@ -3257,7 +3253,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -3270,8 +3266,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-        /// node.
+        /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -3300,7 +3295,7 @@ namespace Amazon.ElastiCache
         /// Deletes an existing replication group. By default, this operation deletes the entire
         /// replication group, including the primary/primaries and all of the read replicas. If
         /// the replication group has only one primary, you can optionally delete only the read
-        /// replicas, while retaining the primary by setting <code>RetainPrimaryCluster=true</code>.
+        /// replicas, while retaining the primary by setting <c>RetainPrimaryCluster=true</c>.
         /// 
         ///  
         /// <para>
@@ -3326,7 +3321,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
@@ -3339,8 +3334,7 @@ namespace Amazon.ElastiCache
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Creating a snapshot of a Redis cluster running on a <code>cache.t1.micro</code> cache
-        /// node.
+        /// Creating a snapshot of a Redis cluster running on a <c>cache.t1.micro</c> cache node.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4657,7 +4651,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Returns information about a particular replication group. If no identifier is specified,
-        /// <code>DescribeReplicationGroups</code> returns information about all replication groups.
+        /// <c>DescribeReplicationGroups</c> returns information about all replication groups.
         /// 
         ///  <note> 
         /// <para>
@@ -4685,7 +4679,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Returns information about a particular replication group. If no identifier is specified,
-        /// <code>DescribeReplicationGroups</code> returns information about all replication groups.
+        /// <c>DescribeReplicationGroups</c> returns information about all replication groups.
         /// 
         ///  <note> 
         /// <para>
@@ -4718,7 +4712,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Returns information about a particular replication group. If no identifier is specified,
-        /// <code>DescribeReplicationGroups</code> returns information about all replication groups.
+        /// <c>DescribeReplicationGroups</c> returns information about all replication groups.
         /// 
         ///  <note> 
         /// <para>
@@ -4748,7 +4742,7 @@ namespace Amazon.ElastiCache
 
         /// <summary>
         /// Returns information about a particular replication group. If no identifier is specified,
-        /// <code>DescribeReplicationGroups</code> returns information about all replication groups.
+        /// <c>DescribeReplicationGroups</c> returns information about all replication groups.
         /// 
         ///  <note> 
         /// <para>
@@ -5192,7 +5186,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+        /// Returns information about cluster or replication group snapshots. By default, <c>DescribeSnapshots</c>
         /// lists all of your snapshots; it can optionally describe a single snapshot, or just
         /// the snapshots associated with a particular cache cluster.
         /// 
@@ -5224,7 +5218,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+        /// Returns information about cluster or replication group snapshots. By default, <c>DescribeSnapshots</c>
         /// lists all of your snapshots; it can optionally describe a single snapshot, or just
         /// the snapshots associated with a particular cache cluster.
         /// 
@@ -5261,7 +5255,7 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+        /// Returns information about cluster or replication group snapshots. By default, <c>DescribeSnapshots</c>
         /// lists all of your snapshots; it can optionally describe a single snapshot, or just
         /// the snapshots associated with a particular cache cluster.
         /// 
@@ -5295,7 +5289,7 @@ namespace Amazon.ElastiCache
         }
 
         /// <summary>
-        /// Returns information about cluster or replication group snapshots. By default, <code>DescribeSnapshots</code>
+        /// Returns information about cluster or replication group snapshots. By default, <c>DescribeSnapshots</c>
         /// lists all of your snapshots; it can optionally describe a single snapshot, or just
         /// the snapshots associated with a particular cache cluster.
         /// 
@@ -5792,7 +5786,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
         /// The KMS key supplied is not valid.
@@ -5804,7 +5798,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -5856,7 +5850,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
         /// The KMS key supplied is not valid.
@@ -5868,7 +5862,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -5908,8 +5902,8 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
-        /// operations to scale your cluster or replication group, the value of the <code>CacheNodeType</code>
+        /// When you use the <c>ModifyCacheCluster</c> or <c>ModifyReplicationGroup</c> operations
+        /// to scale your cluster or replication group, the value of the <c>CacheNodeType</c>
         /// parameter must be one of the node types returned by this operation.
         /// </para>
         /// </summary>
@@ -5945,8 +5939,8 @@ namespace Amazon.ElastiCache
         /// 
         ///  
         /// <para>
-        /// When you use the <code>ModifyCacheCluster</code> or <code>ModifyReplicationGroup</code>
-        /// operations to scale your cluster or replication group, the value of the <code>CacheNodeType</code>
+        /// When you use the <c>ModifyCacheCluster</c> or <c>ModifyReplicationGroup</c> operations
+        /// to scale your cluster or replication group, the value of the <c>CacheNodeType</c>
         /// parameter must be one of the node types returned by this operation.
         /// </para>
         /// </summary>
@@ -5997,8 +5991,8 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code>
-        /// returns an error.
+        /// If the cluster is not in the <i>available</i> state, <c>ListTagsForResource</c> returns
+        /// an error.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -6022,7 +6016,7 @@ namespace Amazon.ElastiCache
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
         /// The state of the serverless cache snapshot was not received. Available for Redis only.
@@ -6077,8 +6071,8 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  
         /// <para>
-        /// If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code>
-        /// returns an error.
+        /// If the cluster is not in the <i>available</i> state, <c>ListTagsForResource</c> returns
+        /// an error.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -6105,7 +6099,7 @@ namespace Amazon.ElastiCache
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
         /// The state of the serverless cache snapshot was not received. Available for Redis only.
@@ -6174,7 +6168,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
@@ -6234,7 +6228,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
@@ -6526,7 +6520,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
@@ -6541,7 +6535,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
         /// The user group is not in an active state.
@@ -6617,7 +6611,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheSecurityGroupStateException">
         /// The current state of the cache security group does not allow deletion.
@@ -6632,7 +6626,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidUserGroupStateException">
         /// The user group is not in an active state.
@@ -6682,7 +6676,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
         /// The KMS key supplied is not valid.
@@ -6694,7 +6688,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -6737,7 +6731,7 @@ namespace Amazon.ElastiCache
         /// in the ElastiCache User Guide.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
         /// The KMS key supplied is not valid.
@@ -6749,7 +6743,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidVPCNetworkStateException">
         /// The VPC network is in an invalid state.
@@ -7209,7 +7203,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
         public virtual RebootCacheClusterResponse RebootCacheCluster(RebootCacheClusterRequest request)
@@ -7259,7 +7253,7 @@ namespace Amazon.ElastiCache
         /// The requested cluster ID does not refer to an existing cluster.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/RebootCacheCluster">REST API Reference for RebootCacheCluster Operation</seealso>
         public virtual Task<RebootCacheClusterResponse> RebootCacheClusterAsync(RebootCacheClusterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7277,12 +7271,12 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Removes the tags identified by the <code>TagKeys</code> list from the named resource.
-        /// A tag is a key-value pair where the key and value are case-sensitive. You can use
-        /// tags to categorize and track all your ElastiCache resources, with the exception of
-        /// global replication group. When you add or remove tags on replication groups, those
-        /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// Removes the tags identified by the <c>TagKeys</c> list from the named resource. A
+        /// tag is a key-value pair where the key and value are case-sensitive. You can use tags
+        /// to categorize and track all your ElastiCache resources, with the exception of global
+        /// replication group. When you add or remove tags on replication groups, those actions
+        /// will be replicated to all nodes in the replication group. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -7306,7 +7300,7 @@ namespace Amazon.ElastiCache
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
         /// The state of the serverless cache snapshot was not received. Available for Redis only.
@@ -7351,12 +7345,12 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Removes the tags identified by the <code>TagKeys</code> list from the named resource.
-        /// A tag is a key-value pair where the key and value are case-sensitive. You can use
-        /// tags to categorize and track all your ElastiCache resources, with the exception of
-        /// global replication group. When you add or remove tags on replication groups, those
-        /// actions will be replicated to all nodes in the replication group. For more information,
-        /// see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
+        /// Removes the tags identified by the <c>TagKeys</c> list from the named resource. A
+        /// tag is a key-value pair where the key and value are case-sensitive. You can use tags
+        /// to categorize and track all your ElastiCache resources, with the exception of global
+        /// replication group. When you add or remove tags on replication groups, those actions
+        /// will be replicated to all nodes in the replication group. For more information, see
+        /// <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level
         /// permissions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTagsFromResource service method.</param>
@@ -7383,7 +7377,7 @@ namespace Amazon.ElastiCache
         /// The requested Amazon Resource Name (ARN) does not refer to an existing resource.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidServerlessCacheSnapshotStateException">
         /// The state of the serverless cache snapshot was not received. Available for Redis only.
@@ -7434,8 +7428,8 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Modifies the parameters of a cache parameter group to the engine or system default
         /// value. You can reset specific parameters by submitting a list of parameter names.
-        /// To reset the entire cache parameter group, specify the <code>ResetAllParameters</code>
-        /// and <code>CacheParameterGroupName</code> parameters.
+        /// To reset the entire cache parameter group, specify the <c>ResetAllParameters</c> and
+        /// <c>CacheParameterGroupName</c> parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetCacheParameterGroup service method.</param>
         /// 
@@ -7471,8 +7465,8 @@ namespace Amazon.ElastiCache
         /// <summary>
         /// Modifies the parameters of a cache parameter group to the engine or system default
         /// value. You can reset specific parameters by submitting a list of parameter names.
-        /// To reset the entire cache parameter group, specify the <code>ResetAllParameters</code>
-        /// and <code>CacheParameterGroupName</code> parameters.
+        /// To reset the entire cache parameter group, specify the <c>ResetAllParameters</c> and
+        /// <c>CacheParameterGroupName</c> parameters.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResetCacheParameterGroup service method.</param>
         /// <param name="cancellationToken">
@@ -7599,7 +7593,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
         /// The targeted replication group is not available.
@@ -7631,7 +7625,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
         /// The targeted replication group is not available.
@@ -7655,9 +7649,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Represents the input of a <code>TestFailover</code> operation which test automatic
-        /// failover on a specified node group (called shard in the console) in a replication
-        /// group (called cluster in the console).
+        /// Represents the input of a <c>TestFailover</c> operation which test automatic failover
+        /// on a specified node group (called shard in the console) in a replication group (called
+        /// cluster in the console).
         /// 
         ///  
         /// <para>
@@ -7698,27 +7692,26 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Replication group message: <code>Test Failover API called for node group &lt;node-group-id&gt;</code>
+        /// Replication group message: <c>Test Failover API called for node group &lt;node-group-id&gt;</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
-        /// replica node &lt;node-id&gt; completed</code> 
+        /// Cache cluster message: <c>Failover from primary node &lt;primary-node-id&gt; to replica
+        /// node &lt;node-id&gt; completed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
-        /// to replica node &lt;node-id&gt; completed</code> 
+        /// Replication group message: <c>Failover from primary node &lt;primary-node-id&gt; to
+        /// replica node &lt;node-id&gt; completed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Recovering cache nodes &lt;node-id&gt;</code> 
+        /// Cache cluster message: <c>Recovering cache nodes &lt;node-id&gt;</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
-        /// 
+        /// Cache cluster message: <c>Finished recovery for cache nodes &lt;node-id&gt;</c> 
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -7747,7 +7740,7 @@ namespace Amazon.ElastiCache
         /// The customer has exceeded the allowed rate of API calls.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
         /// The KMS key supplied is not valid.
@@ -7759,18 +7752,18 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupNotFoundException">
-        /// The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-        /// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code>
-        /// value correctly.
+        /// The node group specified by the <c>NodeGroupId</c> parameter could not be found. Please
+        /// verify that the node group exists and that you spelled the <c>NodeGroupId</c> value
+        /// correctly.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TestFailoverNotAvailableException">
-        /// The <code>TestFailover</code> action is not available.
+        /// The <c>TestFailover</c> action is not available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
         public virtual TestFailoverResponse TestFailover(TestFailoverRequest request)
@@ -7784,9 +7777,9 @@ namespace Amazon.ElastiCache
 
 
         /// <summary>
-        /// Represents the input of a <code>TestFailover</code> operation which test automatic
-        /// failover on a specified node group (called shard in the console) in a replication
-        /// group (called cluster in the console).
+        /// Represents the input of a <c>TestFailover</c> operation which test automatic failover
+        /// on a specified node group (called shard in the console) in a replication group (called
+        /// cluster in the console).
         /// 
         ///  
         /// <para>
@@ -7827,27 +7820,26 @@ namespace Amazon.ElastiCache
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// Replication group message: <code>Test Failover API called for node group &lt;node-group-id&gt;</code>
+        /// Replication group message: <c>Test Failover API called for node group &lt;node-group-id&gt;</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
-        /// replica node &lt;node-id&gt; completed</code> 
+        /// Cache cluster message: <c>Failover from primary node &lt;primary-node-id&gt; to replica
+        /// node &lt;node-id&gt; completed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
-        /// to replica node &lt;node-id&gt; completed</code> 
+        /// Replication group message: <c>Failover from primary node &lt;primary-node-id&gt; to
+        /// replica node &lt;node-id&gt; completed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Recovering cache nodes &lt;node-id&gt;</code> 
+        /// Cache cluster message: <c>Recovering cache nodes &lt;node-id&gt;</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Cache cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
-        /// 
+        /// Cache cluster message: <c>Finished recovery for cache nodes &lt;node-id&gt;</c> 
         /// </para>
         ///  </li> </ol> 
         /// <para>
@@ -7879,7 +7871,7 @@ namespace Amazon.ElastiCache
         /// The customer has exceeded the allowed rate of API calls.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidCacheClusterStateException">
-        /// The requested cluster is not in the <code>available</code> state.
+        /// The requested cluster is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidKMSKeyException">
         /// The KMS key supplied is not valid.
@@ -7891,18 +7883,18 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.NodeGroupNotFoundException">
-        /// The node group specified by the <code>NodeGroupId</code> parameter could not be found.
-        /// Please verify that the node group exists and that you spelled the <code>NodeGroupId</code>
-        /// value correctly.
+        /// The node group specified by the <c>NodeGroupId</c> parameter could not be found. Please
+        /// verify that the node group exists and that you spelled the <c>NodeGroupId</c> value
+        /// correctly.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupNotFoundException">
         /// The specified replication group does not exist.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.TestFailoverNotAvailableException">
-        /// The <code>TestFailover</code> action is not available.
+        /// The <c>TestFailover</c> action is not available.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/TestFailover">REST API Reference for TestFailover Operation</seealso>
         public virtual Task<TestFailoverResponse> TestFailoverAsync(TestFailoverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -7929,7 +7921,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
         /// The targeted replication group is not available.
@@ -7961,7 +7953,7 @@ namespace Amazon.ElastiCache
         /// The value for a parameter is invalid.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.InvalidReplicationGroupStateException">
-        /// The requested replication group is not in the <code>available</code> state.
+        /// The requested replication group is not in the <c>available</c> state.
         /// </exception>
         /// <exception cref="Amazon.ElastiCache.Model.ReplicationGroupAlreadyUnderMigrationException">
         /// The targeted replication group is not available.

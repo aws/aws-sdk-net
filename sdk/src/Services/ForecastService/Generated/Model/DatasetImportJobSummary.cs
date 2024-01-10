@@ -31,7 +31,7 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Provides a summary of the dataset import job properties used in the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_ListDatasetImportJobs.html">ListDatasetImportJobs</a>
     /// operation. To get the complete set of properties, call the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>
-    /// operation, and provide the <code>DatasetImportJobArn</code>.
+    /// operation, and provide the <c>DatasetImportJobArn</c>.
     /// </summary>
     public partial class DatasetImportJobSummary
     {
@@ -109,8 +109,8 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>DataSource</code> includes an Key Management Service
-        /// (KMS) key.
+        /// If encryption is used, <c>DataSource</c> includes an Key Management Service (KMS)
+        /// key.
         /// </para>
         /// </summary>
         public DataSource DataSource
@@ -151,23 +151,23 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+        ///  <c>CREATE_PENDING</c> - The <c>CreationTime</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+        ///  <c>CREATE_IN_PROGRESS</c> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPING</code> - The current timestamp.
+        ///  <c>CREATE_STOPPING</c> - The current timestamp.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPED</code> - When the job stopped.
+        ///  <c>CREATE_STOPPED</c> - When the job stopped.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+        ///  <c>ACTIVE</c> or <c>CREATE_FAILED</c> - When the job finished or failed.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -208,21 +208,19 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> 
+        ///  <c>ACTIVE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
-        /// 
+        ///  <c>CREATE_PENDING</c>, <c>CREATE_IN_PROGRESS</c>, <c>CREATE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
-        /// 
+        ///  <c>DELETE_PENDING</c>, <c>DELETE_IN_PROGRESS</c>, <c>DELETE_FAILED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code> 
+        ///  <c>CREATE_STOPPING</c>, <c>CREATE_STOPPED</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

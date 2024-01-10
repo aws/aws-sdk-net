@@ -207,13 +207,13 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InitiationTimestamp. 
         /// <para>
-        /// The date and time this contact was initiated, in UTC time. For <code>INBOUND</code>,
-        /// this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent
-        /// began dialing. For <code>CALLBACK</code>, this is when the callback contact was created.
-        /// For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-        /// was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>,
-        /// this is when the agent started dialing the external participant. For <code>MONITOR</code>,
-        /// this is when the supervisor started listening to a contact.
+        /// The date and time this contact was initiated, in UTC time. For <c>INBOUND</c>, this
+        /// is when the contact arrived. For <c>OUTBOUND</c>, this is when the agent began dialing.
+        /// For <c>CALLBACK</c>, this is when the callback contact was created. For <c>TRANSFER</c>
+        /// and <c>QUEUE_TRANSFER</c>, this is when the transfer was initiated. For <c>API</c>,
+        /// this is when the request arrived. For <c>EXTERNAL_OUTBOUND</c>, this is when the agent
+        /// started dialing the external participant. For <c>MONITOR</c>, this is when the supervisor
+        /// started listening to a contact.
         /// </para>
         /// </summary>
         public DateTime InitiationTimestamp

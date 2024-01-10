@@ -82,8 +82,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// When you use this task setting with a source PostgreSQL database, a logical replication
         /// slot should already be created and associated with the source endpoint. You can verify
-        /// this by setting the <code>slotName</code> extra connection attribute to the name of
-        /// this logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
+        /// this by setting the <c>slotName</c> extra connection attribute to the name of this
+        /// logical replication slot. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.PostgreSQL.html#CHAP_Source.PostgreSQL.ConnectionAttrib">Extra
         /// Connection Attributes When Using PostgreSQL as a Source for DMS</a>.
         /// </para>
         ///  </note>
@@ -154,7 +154,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property MigrationType. 
         /// <para>
-        /// The migration type. Valid values: <code>full-load</code> | <code>cdc</code> | <code>full-load-and-cdc</code>
+        /// The migration type. Valid values: <c>full-load</c> | <c>cdc</c> | <c>full-load-and-cdc</c>
         /// 
         /// </para>
         /// </summary>
@@ -246,9 +246,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property TableMappings. 
         /// <para>
         /// When using the CLI or boto3, provide the path of the JSON file that contains the table
-        /// mappings. Precede the path with <code>file://</code>. For example, <code>--table-mappings
-        /// file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
-        /// the parameter value. 
+        /// mappings. Precede the path with <c>file://</c>. For example, <c>--table-mappings file://mappingfile.json</c>.
+        /// When working with the DMS API, provide the JSON as the parameter value. 
         /// </para>
         /// </summary>
         public string TableMappings

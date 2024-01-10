@@ -59,8 +59,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property ResultList. 
         /// <para>
         /// A list of objects containing the results of the operation. The results are sorted
-        /// in ascending order by the <code>Index</code> field and match the order of the documents
-        /// in the input list. If all of the documents contain an error, the <code>ResultList</code>
+        /// in ascending order by the <c>Index</c> field and match the order of the documents
+        /// in the input list. If all of the documents contain an error, the <c>ResultList</c>
         /// is empty.
         /// </para>
         /// </summary>

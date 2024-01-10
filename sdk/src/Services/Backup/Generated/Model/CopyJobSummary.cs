@@ -115,7 +115,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Example strings include <code>AccessDenied</code>, <code>Success</code>, and <code>InvalidParameters</code>.
+        /// Example strings include <c>AccessDenied</c>, <c>Success</c>, and <c>InvalidParameters</c>.
         /// See <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">Monitoring</a>
         /// for a list of MessageCategory strings.
         /// </para>
@@ -125,7 +125,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>AGGREGATE_ALL</code> aggregates job counts for all message categories and returns
+        ///  <c>AGGREGATE_ALL</c> aggregates job counts for all message categories and returns
         /// the sum.
         /// </para>
         /// </summary>
@@ -162,7 +162,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// This value is the job count for the specified resource type. The request <code>GetSupportedResourceTypes</code>
+        /// This value is the job count for the specified resource type. The request <c>GetSupportedResourceTypes</c>
         /// returns strings for supported resource types
         /// </para>
         /// </summary>

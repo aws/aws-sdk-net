@@ -45,8 +45,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Classification. 
         /// <para>
-        /// The classification of the patch, such as <code>SecurityUpdates</code>, <code>Updates</code>,
-        /// and <code>CriticalUpdates</code>.
+        /// The classification of the patch, such as <c>SecurityUpdates</c>, <c>Updates</c>, and
+        /// <c>CriticalUpdates</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -123,8 +123,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity of the patch such as <code>Critical</code>, <code>Important</code>, and
-        /// <code>Moderate</code>.
+        /// The severity of the patch such as <c>Critical</c>, <c>Important</c>, and <c>Moderate</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

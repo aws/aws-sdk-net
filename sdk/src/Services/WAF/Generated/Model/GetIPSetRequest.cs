@@ -43,7 +43,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>IPSet</a> that is specified by <code>IPSetId</code>.
+    /// Returns the <a>IPSet</a> that is specified by <c>IPSetId</c>.
     /// </para>
     /// </summary>
     public partial class GetIPSetRequest : AmazonWAFRequest
@@ -53,8 +53,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property IPSetId. 
         /// <para>
-        /// The <code>IPSetId</code> of the <a>IPSet</a> that you want to get. <code>IPSetId</code>
-        /// is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
+        /// The <c>IPSetId</c> of the <a>IPSet</a> that you want to get. <c>IPSetId</c> is returned
+        /// by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

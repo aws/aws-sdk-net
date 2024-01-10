@@ -38,9 +38,9 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// A list of <code>UpdateCostAllocationTagsStatusError</code> objects with error details
-        /// about each cost allocation tag that can't be updated. If there's no failure, an empty
-        /// array returns. 
+        /// A list of <c>UpdateCostAllocationTagsStatusError</c> objects with error details about
+        /// each cost allocation tag that can't be updated. If there's no failure, an empty array
+        /// returns. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=20)]

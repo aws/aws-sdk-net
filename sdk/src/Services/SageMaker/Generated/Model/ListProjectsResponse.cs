@@ -39,9 +39,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of the previous <code>ListCompilationJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of model
-        /// compilation jobs, use the token in the next request.
+        /// If the result of the previous <c>ListCompilationJobs</c> request was truncated, the
+        /// response includes a <c>NextToken</c>. To retrieve the next set of model compilation
+        /// jobs, use the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Information about valid modifications that you can make to your DB instance. Contains
-    /// the result of a successful call to the <code>DescribeValidDBInstanceModifications</code>
-    /// action. You can use this information when you call <code>ModifyDBInstance</code>.
+    /// the result of a successful call to the <c>DescribeValidDBInstanceModifications</c>
+    /// action. You can use this information when you call <c>ModifyDBInstance</c>.
     /// </summary>
     public partial class ValidDBInstanceModificationsMessage
     {

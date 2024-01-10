@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model
         /// <para>
         /// The expected version of the security profile. A new version is generated whenever
         /// the security profile is updated. If you specify a value that is different from the
-        /// actual version, a <code>VersionConflictException</code> is thrown.
+        /// actual version, a <c>VersionConflictException</c> is thrown.
         /// </para>
         /// </summary>
         public long ExpectedVersion

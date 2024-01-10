@@ -99,8 +99,8 @@ namespace Amazon.CustomerProfiles
         /// into Customer Profiles will be included in the calculated attribute, which can be
         /// retrieved for a profile using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html">GetCalculatedAttributeForProfile</a>
         /// API. Defining a calculated attribute makes it available for all profiles within a
-        /// domain. Each calculated attribute can only reference one <code>ObjectType</code> and
-        /// at most, two fields from that <code>ObjectType</code>.
+        /// domain. Each calculated attribute can only reference one <c>ObjectType</c> and at
+        /// most, two fields from that <c>ObjectType</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCalculatedAttributeDefinition service method.</param>
         /// <param name="cancellationToken">
@@ -146,7 +146,7 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-        /// resolution</a>: set <code>Matching</code> to true.
+        /// resolution</a>: set <c>Matching</c> to true.
         /// </para>
         ///  
         /// <para>
@@ -652,9 +652,9 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// We strongly recommend you use this API to do a dry run of the automerging process
         /// before running the Identity Resolution Job. Include <b>at least</b> two matching attributes.
-        /// If your matching list includes too few attributes (such as only <code>FirstName</code>
-        /// or only <code>LastName</code>), there may be a large number of matches. This increases
-        /// the chances of erroneous merges.
+        /// If your matching list includes too few attributes (such as only <c>FirstName</c> or
+        /// only <c>LastName</c>), there may be a large number of matches. This increases the
+        /// chances of erroneous merges.
         /// </para>
         ///  </important>
         /// </summary>
@@ -896,7 +896,7 @@ namespace Amazon.CustomerProfiles
         /// <summary>
         /// Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a>
-        /// to enable identity resolution: set <code>Matching</code> to true.
+        /// to enable identity resolution: set <c>Matching</c> to true.
         /// 
         ///  
         /// <para>
@@ -905,8 +905,8 @@ namespace Amazon.CustomerProfiles
         /// </para>
         ///  <important> 
         /// <para>
-        /// The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>,
-        /// Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution
+        /// The process of matching duplicate profiles. If <c>Matching</c> = <c>true</c>, Amazon
+        /// Connect Customer Profiles starts a weekly batch process called Identity Resolution
         /// Job. If you do not specify a date and time for Identity Resolution Job to run, by
         /// default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains.
         /// 
@@ -914,8 +914,8 @@ namespace Amazon.CustomerProfiles
         ///  
         /// <para>
         /// After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>
-        /// API to return and review the results. Or, if you have configured <code>ExportingConfig</code>
-        /// in the <code>MatchingRequest</code>, you can download the results from S3.
+        /// API to return and review the results. Or, if you have configured <c>ExportingConfig</c>
+        /// in the <c>MatchingRequest</c>, you can download the results from S3.
         /// </para>
         ///  </important> 
         /// <para>
@@ -1066,9 +1066,9 @@ namespace Amazon.CustomerProfiles
 
 
         /// <summary>
-        /// Returns a set of profiles that belong to the same matching group using the <code>matchId</code>
-        /// or <code>profileId</code>. You can also specify the type of matching that you want
-        /// for finding similar profiles using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
+        /// Returns a set of profiles that belong to the same matching group using the <c>matchId</c>
+        /// or <c>profileId</c>. You can also specify the type of matching that you want for finding
+        /// similar profiles using either <c>RULE_BASED_MATCHING</c> or <c>ML_BASED_MATCHING</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSimilarProfiles service method.</param>
         /// <param name="cancellationToken">
@@ -1333,7 +1333,7 @@ namespace Amazon.CustomerProfiles
 
         /// <summary>
         /// Lists all of the Identity Resolution Jobs in your domain. The response sorts the list
-        /// by <code>JobStartTime</code>.
+        /// by <c>JobStartTime</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListIdentityResolutionJobs service method.</param>
         /// <param name="cancellationToken">
@@ -1498,7 +1498,7 @@ namespace Amazon.CustomerProfiles
 
 
         /// <summary>
-        /// Returns a set of <code>MatchIds</code> that belong to the given domain.
+        /// Returns a set of <c>MatchIds</c> that belong to the given domain.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRuleBasedMatches service method.</param>
         /// <param name="cancellationToken">
@@ -1597,21 +1597,19 @@ namespace Amazon.CustomerProfiles
         /// 
         ///  <ol> <li> 
         /// <para>
-        /// All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main
-        /// profile.
+        /// All the profileKeys in the <c>ProfileToBeMerged</c> will be moved to the main profile.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.
+        /// All the objects in the <c>ProfileToBeMerged</c> will be moved to the main profile.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// All the <code>ProfileToBeMerged</code> will be deleted at the end.
+        /// All the <c>ProfileToBeMerged</c> will be deleted at the end.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the
-        /// main profile.
+        /// All the profileKeys in the <c>ProfileIdsToBeMerged</c> will be moved to the main profile.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1627,13 +1625,13 @@ namespace Amazon.CustomerProfiles
         /// </para>
         ///  <ol> <li> 
         /// <para>
-        /// If no <code>SourceProfileIds</code> entry is specified, the main Profile value is
-        /// always taken. 
+        /// If no <c>SourceProfileIds</c> entry is specified, the main Profile value is always
+        /// taken. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If a <code>SourceProfileIds</code> entry is specified, the specified profileId is
-        /// always taken, even if it is a NULL value.
+        /// If a <c>SourceProfileIds</c> entry is specified, the specified profileId is always
+        /// taken, even if it is a NULL value.
         /// </para>
         ///  </li> </ol> </li> </ol> </li> </ol> 
         /// <para>
@@ -1807,13 +1805,13 @@ namespace Amazon.CustomerProfiles
         /// <summary>
         /// Searches for profiles within a specific domain using one or more predefined search
         /// keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search
-        /// keys. A search key is a data type pair that consists of a <code>KeyName</code> and
-        /// <code>Values</code> list.
+        /// keys. A search key is a data type pair that consists of a <c>KeyName</c> and <c>Values</c>
+        /// list.
         /// 
         ///  
         /// <para>
         /// This operation supports searching for profiles with a minimum of 1 key-value(s) pair
-        /// and up to 5 key-value(s) pairs using either <code>AND</code> or <code>OR</code> logic.
+        /// and up to 5 key-value(s) pairs using either <c>AND</c> or <c>OR</c> logic.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchProfiles service method.</param>
@@ -1970,7 +1968,7 @@ namespace Amazon.CustomerProfiles
         /// <para>
         /// Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
         /// to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity
-        /// resolution</a>: set <code>Matching</code> to true.
+        /// resolution</a>: set <c>Matching</c> to true.
         /// </para>
         ///  
         /// <para>

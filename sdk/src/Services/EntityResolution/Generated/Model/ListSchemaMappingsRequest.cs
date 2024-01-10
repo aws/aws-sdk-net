@@ -30,8 +30,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSchemaMappings operation.
-    /// Returns a list of all the <code>SchemaMappings</code> that have been created for an
-    /// Amazon Web Services account.
+    /// Returns a list of all the <c>SchemaMappings</c> that have been created for an Amazon
+    /// Web Services account.
     /// </summary>
     public partial class ListSchemaMappingsRequest : AmazonEntityResolutionRequest
     {

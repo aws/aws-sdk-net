@@ -36,7 +36,7 @@ namespace Amazon.PaymentCryptography.Model
     /// <para>
     /// This is a paginated operation, which means that each response might contain only a
     /// subset of all the tags. When the response contains only a subset of tags, it includes
-    /// a <code>NextToken</code> value. Use this value in a subsequent <code>ListTagsForResource</code>
+    /// a <c>NextToken</c> value. Use this value in a subsequent <c>ListTagsForResource</c>
     /// request to get more tags. When you receive a response with no NextToken (or an empty
     /// or null value), that means there are no more tags to get.
     /// </para>
@@ -95,8 +95,8 @@ namespace Amazon.PaymentCryptography.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Use this parameter in a subsequent request after you receive a response with truncated
-        /// results. Set it to the value of <code>NextToken</code> from the truncated response
-        /// you just received.
+        /// results. Set it to the value of <c>NextToken</c> from the truncated response you just
+        /// received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8192)]
@@ -115,7 +115,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The <code>KeyARN</code> of the key whose tags you are getting.
+        /// The <c>KeyARN</c> of the key whose tags you are getting.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

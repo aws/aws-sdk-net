@@ -67,8 +67,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property StringValues. 
         /// <para>
-        /// Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code>
-        /// dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").
+        /// Specifies the value or list of values for the dimension. For <c>TOPIC_FILTER</c> dimensions,
+        /// this is a pattern used to match the MQTT topic (for example, "admin/#").
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

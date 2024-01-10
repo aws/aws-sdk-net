@@ -36,7 +36,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// JSON specification: <code>"RateLimitHTTPMethod": {}</code> 
+    /// JSON specification: <c>"RateLimitHTTPMethod": {}</c> 
     /// </para>
     /// </summary>
     public partial class RateLimitHTTPMethod

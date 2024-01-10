@@ -38,7 +38,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// You can't delete a delivery destination if any current deliveries are associated with
     /// it. To find whether any deliveries are associated with this delivery destination,
     /// use the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeDeliveries.html">DescribeDeliveries</a>
-    /// operation and check the <code>deliveryDestinationArn</code> field in the results.
+    /// operation and check the <c>deliveryDestinationArn</c> field in the results.
     /// </para>
     /// </summary>
     public partial class DeleteDeliveryDestinationRequest : AmazonCloudWatchLogsRequest

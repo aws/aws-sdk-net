@@ -60,8 +60,8 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property SkipSnapshot. 
         /// <para>
         /// Determines whether a final graph snapshot is created before the graph is deleted.
-        /// If <code>true</code> is specified, no graph snapshot is created. If <code>false</code>
-        /// is specified, a graph snapshot is created before the graph is deleted.
+        /// If <c>true</c> is specified, no graph snapshot is created. If <c>false</c> is specified,
+        /// a graph snapshot is created before the graph is deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

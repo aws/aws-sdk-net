@@ -39,9 +39,9 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value for the <code>NextToken</code>
-        /// parameter in a subsequent call to <code>ListSchemaExtensions</code> to retrieve the
-        /// next set of items.
+        /// If not null, more results are available. Pass this value for the <c>NextToken</c>
+        /// parameter in a subsequent call to <c>ListSchemaExtensions</c> to retrieve the next
+        /// set of items.
         /// </para>
         /// </summary>
         public string NextToken

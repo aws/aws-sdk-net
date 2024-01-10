@@ -99,7 +99,7 @@ namespace Amazon.Drs.Model
         /// <summary>
         /// Gets and sets the property OptimizedStagingDiskType. 
         /// <para>
-        /// The Staging Disk EBS volume type to be used during replication when <code>stagingDiskType</code>
+        /// The Staging Disk EBS volume type to be used during replication when <c>stagingDiskType</c>
         /// is set to Auto. This is a read-only field.
         /// </para>
         /// </summary>

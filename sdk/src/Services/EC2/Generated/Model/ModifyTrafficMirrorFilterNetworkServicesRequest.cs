@@ -35,11 +35,11 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     ///  By default, Amazon DNS network services are not eligible for Traffic Mirror. Use
-    /// <code>AddNetworkServices</code> to add network services to a Traffic Mirror filter.
-    /// When a network service is added to the Traffic Mirror filter, all traffic related
-    /// to that network service will be mirrored. When you no longer want to mirror network
-    /// services, use <code>RemoveNetworkServices</code> to remove the network services from
-    /// the Traffic Mirror filter. 
+    /// <c>AddNetworkServices</c> to add network services to a Traffic Mirror filter. When
+    /// a network service is added to the Traffic Mirror filter, all traffic related to that
+    /// network service will be mirrored. When you no longer want to mirror network services,
+    /// use <c>RemoveNetworkServices</c> to remove the network services from the Traffic Mirror
+    /// filter. 
     /// </para>
     /// </summary>
     public partial class ModifyTrafficMirrorFilterNetworkServicesRequest : AmazonEC2Request

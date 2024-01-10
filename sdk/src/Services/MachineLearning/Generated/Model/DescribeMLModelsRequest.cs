@@ -30,7 +30,7 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMLModels operation.
-    /// Returns a list of <code>MLModel</code> that match the search criteria in the request.
+    /// Returns a list of <c>MLModel</c> that match the search criteria in the request.
     /// </summary>
     public partial class DescribeMLModelsRequest : AmazonMachineLearningRequest
     {
@@ -49,8 +49,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EQ. 
         /// <para>
-        /// The equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
-        /// values that exactly match the value specified with <code>EQ</code>.
+        /// The equal to operator. The <c>MLModel</c> results will have <c>FilterVariable</c>
+        /// values that exactly match the value specified with <c>EQ</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -69,52 +69,51 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property FilterVariable. 
         /// <para>
-        /// Use one of the following variables to filter a list of <code>MLModel</code>:
+        /// Use one of the following variables to filter a list of <c>MLModel</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation
-        /// date.
+        ///  <c>CreatedAt</c> - Sets the search criteria to <c>MLModel</c> creation date.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+        ///  <c>Status</c> - Sets the search criteria to <c>MLModel</c> status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code>
-        /// <b> </b> <code>Name</code>.
+        ///  <c>Name</c> - Sets the search criteria to the contents of <c>MLModel</c> <b> </b>
+        /// <c>Name</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IAMUser</code> - Sets the search criteria to the user account that invoked
-        /// the <code>MLModel</code> creation.
+        ///  <c>IAMUser</c> - Sets the search criteria to the user account that invoked the <c>MLModel</c>
+        /// creation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code>
-        /// used to train one or more <code>MLModel</code>.
+        ///  <c>TrainingDataSourceId</c> - Sets the search criteria to the <c>DataSource</c> used
+        /// to train one or more <c>MLModel</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code>
-        /// real-time endpoint status.
+        ///  <c>RealtimeEndpointStatus</c> - Sets the search criteria to the <c>MLModel</c> real-time
+        /// endpoint status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type:
-        /// binary, regression, or multi-class.
+        ///  <c>MLModelType</c> - Sets the search criteria to <c>MLModel</c> type: binary, regression,
+        /// or multi-class.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code>
+        ///  <c>Algorithm</c> - Sets the search criteria to the algorithm that the <c>MLModel</c>
         /// uses.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used
-        /// in training a <code>MLModel</code>. The URL can identify either a file or an Amazon
-        /// Simple Storage Service (Amazon S3) bucket or directory.
+        ///  <c>TrainingDataURI</c> - Sets the search criteria to the data file(s) used in training
+        /// a <c>MLModel</c>. The URL can identify either a file or an Amazon Simple Storage Service
+        /// (Amazon S3) bucket or directory.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -133,9 +132,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property GE. 
         /// <para>
-        /// The greater than or equal to operator. The <code>MLModel</code> results will have
-        /// <code>FilterVariable</code> values that are greater than or equal to the value specified
-        /// with <code>GE</code>. 
+        /// The greater than or equal to operator. The <c>MLModel</c> results will have <c>FilterVariable</c>
+        /// values that are greater than or equal to the value specified with <c>GE</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -154,8 +152,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property GT. 
         /// <para>
-        /// The greater than operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
-        /// values that are greater than the value specified with <code>GT</code>.
+        /// The greater than operator. The <c>MLModel</c> results will have <c>FilterVariable</c>
+        /// values that are greater than the value specified with <c>GT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -174,8 +172,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LE. 
         /// <para>
-        /// The less than or equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
-        /// values that are less than or equal to the value specified with <code>LE</code>.
+        /// The less than or equal to operator. The <c>MLModel</c> results will have <c>FilterVariable</c>
+        /// values that are less than or equal to the value specified with <c>LE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -195,7 +193,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property Limit. 
         /// <para>
         /// The number of pages of information to include in the result. The range of acceptable
-        /// values is <code>1</code> through <code>100</code>. The default value is <code>100</code>.
+        /// values is <c>1</c> through <c>100</c>. The default value is <c>100</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -214,8 +212,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property LT. 
         /// <para>
-        /// The less than operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
-        /// values that are less than the value specified with <code>LT</code>.
+        /// The less than operator. The <c>MLModel</c> results will have <c>FilterVariable</c>
+        /// values that are less than the value specified with <c>LT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -234,8 +232,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property NE. 
         /// <para>
-        /// The not equal to operator. The <code>MLModel</code> results will have <code>FilterVariable</code>
-        /// values not equal to the value specified with <code>NE</code>.
+        /// The not equal to operator. The <c>MLModel</c> results will have <c>FilterVariable</c>
+        /// values not equal to the value specified with <c>NE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -272,14 +270,13 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property Prefix. 
         /// <para>
-        /// A string that is found at the beginning of a variable, such as <code>Name</code> or
-        /// <code>Id</code>.
+        /// A string that is found at the beginning of a variable, such as <c>Name</c> or <c>Id</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example, an <code>MLModel</code> could have the <code>Name</code> <code>2014-09-09-HolidayGiftMailer</code>.
-        /// To search for this <code>MLModel</code>, select <code>Name</code> for the <code>FilterVariable</code>
-        /// and any of the following strings for the <code>Prefix</code>: 
+        /// For example, an <c>MLModel</c> could have the <c>Name</c> <c>2014-09-09-HolidayGiftMailer</c>.
+        /// To search for this <c>MLModel</c>, select <c>Name</c> for the <c>FilterVariable</c>
+        /// and any of the following strings for the <c>Prefix</c>: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -311,19 +308,19 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.
+        /// A two-value parameter that determines the sequence of the resulting list of <c>MLModel</c>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+        ///  <c>asc</c> - Arranges the list in ascending order (A-Z, 0-9).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+        ///  <c>dsc</c> - Arranges the list in descending order (Z-A, 9-0).
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Results are sorted by <code>FilterVariable</code>.
+        /// Results are sorted by <c>FilterVariable</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

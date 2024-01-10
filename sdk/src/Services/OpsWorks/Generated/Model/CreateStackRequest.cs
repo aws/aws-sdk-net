@@ -70,7 +70,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Auto-update - Set this parameter to <code>LATEST</code>. AWS OpsWorks Stacks automatically
+        /// Auto-update - Set this parameter to <c>LATEST</c>. AWS OpsWorks Stacks automatically
         /// installs new agent versions on the stack's instances as soon as they are available.
         /// </para>
         ///  </li> <li> 
@@ -126,8 +126,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property ChefConfiguration. 
         /// <para>
-        /// A <code>ChefConfiguration</code> object that specifies whether to enable Berkshelf
-        /// and the Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
+        /// A <c>ChefConfiguration</c> object that specifies whether to enable Berkshelf and the
+        /// Berkshelf version on Chef 11.10 stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-creating.html">Create
         /// a New Stack</a>.
         /// </para>
         /// </summary>
@@ -193,7 +193,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</code> 
+        ///  <c>"{\"key1\": \"value1\", \"key2\": \"value2\",...}"</c> 
         /// </para>
         ///  
         /// <para>
@@ -218,9 +218,9 @@ namespace Amazon.OpsWorks.Model
         /// <para>
         /// The stack's default Availability Zone, which must be in the specified region. For
         /// more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
-        /// and Endpoints</a>. If you also specify a value for <code>DefaultSubnetId</code>, the
-        /// subnet must be in the same zone. For more information, see the <code>VpcId</code>
-        /// parameter description. 
+        /// and Endpoints</a>. If you also specify a value for <c>DefaultSubnetId</c>, the subnet
+        /// must be in the same zone. For more information, see the <c>VpcId</c> parameter description.
+        /// 
         /// </para>
         /// </summary>
         public string DefaultAvailabilityZone
@@ -265,35 +265,35 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A supported Linux operating system: An Amazon Linux version, such as <code>Amazon
-        /// Linux 2018.03</code>, <code>Amazon Linux 2017.09</code>, <code>Amazon Linux 2017.03</code>,
-        /// <code>Amazon Linux 2016.09</code>, <code>Amazon Linux 2016.03</code>, <code>Amazon
-        /// Linux 2015.09</code>, or <code>Amazon Linux 2015.03</code>.
+        /// A supported Linux operating system: An Amazon Linux version, such as <c>Amazon Linux
+        /// 2018.03</c>, <c>Amazon Linux 2017.09</c>, <c>Amazon Linux 2017.03</c>, <c>Amazon Linux
+        /// 2016.09</c>, <c>Amazon Linux 2016.03</c>, <c>Amazon Linux 2015.09</c>, or <c>Amazon
+        /// Linux 2015.03</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A supported Ubuntu operating system, such as <code>Ubuntu 16.04 LTS</code>, <code>Ubuntu
-        /// 14.04 LTS</code>, or <code>Ubuntu 12.04 LTS</code>.
+        /// A supported Ubuntu operating system, such as <c>Ubuntu 16.04 LTS</c>, <c>Ubuntu 14.04
+        /// LTS</c>, or <c>Ubuntu 12.04 LTS</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CentOS Linux 7</code> 
+        ///  <c>CentOS Linux 7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Red Hat Enterprise Linux 7</code> 
+        ///  <c>Red Hat Enterprise Linux 7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A supported Windows operating system, such as <code>Microsoft Windows Server 2012
-        /// R2 Base</code>, <code>Microsoft Windows Server 2012 R2 with SQL Server Express</code>,
-        /// <code>Microsoft Windows Server 2012 R2 with SQL Server Standard</code>, or <code>Microsoft
-        /// Windows Server 2012 R2 with SQL Server Web</code>.
+        /// A supported Windows operating system, such as <c>Microsoft Windows Server 2012 R2
+        /// Base</c>, <c>Microsoft Windows Server 2012 R2 with SQL Server Express</c>, <c>Microsoft
+        /// Windows Server 2012 R2 with SQL Server Standard</c>, or <c>Microsoft Windows Server
+        /// 2012 R2 with SQL Server Web</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A custom AMI: <code>Custom</code>. You specify the custom AMI you want to use when
-        /// you create instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
+        /// A custom AMI: <c>Custom</c>. You specify the custom AMI you want to use when you create
+        /// instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">
         /// Using Custom AMIs</a>.
         /// </para>
         ///  </li> </ul> 
@@ -319,7 +319,7 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultRootDeviceType. 
         /// <para>
         /// The default root device type. This value is the default for all instances in the stack,
-        /// but you can override it when you create an instance. The default option is <code>instance-store</code>.
+        /// but you can override it when you create an instance. The default option is <c>instance-store</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
         /// for the Root Device</a>.
         /// </para>
@@ -365,11 +365,11 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property DefaultSubnetId. 
         /// <para>
         /// The stack's default VPC subnet ID. This parameter is required if you specify a value
-        /// for the <code>VpcId</code> parameter. All instances are launched into this subnet
-        /// unless you specify otherwise when you create the instance. If you also specify a value
-        /// for <code>DefaultAvailabilityZone</code>, the subnet must be in that zone. For information
-        /// on default values and when this parameter is required, see the <code>VpcId</code>
-        /// parameter description. 
+        /// for the <c>VpcId</c> parameter. All instances are launched into this subnet unless
+        /// you specify otherwise when you create the instance. If you also specify a value for
+        /// <c>DefaultAvailabilityZone</c>, the subnet must be in that zone. For information on
+        /// default values and when this parameter is required, see the <c>VpcId</c> parameter
+        /// description. 
         /// </para>
         /// </summary>
         public string DefaultSubnetId
@@ -388,57 +388,57 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property HostnameTheme. 
         /// <para>
         /// The stack's host name theme, with spaces replaced by underscores. The theme is used
-        /// to generate host names for the stack's instances. By default, <code>HostnameTheme</code>
-        /// is set to <code>Layer_Dependent</code>, which creates host names by appending integers
-        /// to the layer's short name. The other themes are:
+        /// to generate host names for the stack's instances. By default, <c>HostnameTheme</c>
+        /// is set to <c>Layer_Dependent</c>, which creates host names by appending integers to
+        /// the layer's short name. The other themes are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Baked_Goods</code> 
+        ///  <c>Baked_Goods</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Clouds</code> 
+        ///  <c>Clouds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Europe_Cities</code> 
+        ///  <c>Europe_Cities</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fruits</code> 
+        ///  <c>Fruits</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Greek_Deities_and_Titans</code> 
+        ///  <c>Greek_Deities_and_Titans</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Legendary_creatures_from_Japan</code> 
+        ///  <c>Legendary_creatures_from_Japan</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Planets_and_Moons</code> 
+        ///  <c>Planets_and_Moons</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Roman_Deities</code> 
+        ///  <c>Roman_Deities</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Scottish_Islands</code> 
+        ///  <c>Scottish_Islands</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>US_Cities</code> 
+        ///  <c>US_Cities</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Wild_Cats</code> 
+        ///  <c>Wild_Cats</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To obtain a generated host name, call <code>GetHostNameSuggestion</code>, which returns
+        /// To obtain a generated host name, call <c>GetHostNameSuggestion</c>, which returns
         /// a host name based on the current theme.
         /// </para>
         /// </summary>
@@ -476,27 +476,26 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The stack's AWS region, such as <code>ap-south-1</code>. For more information about
-        /// Amazon regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
+        /// The stack's AWS region, such as <c>ap-south-1</c>. For more information about Amazon
+        /// regions, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande.html">Regions
         /// and Endpoints</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// In the AWS CLI, this API maps to the <code>--stack-region</code> parameter. If the
-        /// <code>--stack-region</code> parameter and the AWS CLI common parameter <code>--region</code>
-        /// are set to the same value, the stack uses a <i>regional</i> endpoint. If the <code>--stack-region</code>
-        /// parameter is not set, but the AWS CLI <code>--region</code> parameter is, this also
-        /// results in a stack with a <i>regional</i> endpoint. However, if the <code>--region</code>
-        /// parameter is set to <code>us-east-1</code>, and the <code>--stack-region</code> parameter
-        /// is set to one of the following, then the stack uses a legacy or <i>classic</i> region:
-        /// <code>us-west-1, us-west-2, sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1,
-        /// ap-southeast-2</code>. In this case, the actual API endpoint of the stack is in <code>us-east-1</code>.
-        /// Only the preceding regions are supported as classic regions in the <code>us-east-1</code>
-        /// API endpoint. Because it is a best practice to choose the regional endpoint that is
-        /// closest to where you manage AWS, we recommend that you use regional endpoints for
-        /// new stacks. The AWS CLI common <code>--region</code> parameter always specifies a
-        /// regional API endpoint; it cannot be used to specify a classic AWS OpsWorks Stacks
-        /// region.
+        /// In the AWS CLI, this API maps to the <c>--stack-region</c> parameter. If the <c>--stack-region</c>
+        /// parameter and the AWS CLI common parameter <c>--region</c> are set to the same value,
+        /// the stack uses a <i>regional</i> endpoint. If the <c>--stack-region</c> parameter
+        /// is not set, but the AWS CLI <c>--region</c> parameter is, this also results in a stack
+        /// with a <i>regional</i> endpoint. However, if the <c>--region</c> parameter is set
+        /// to <c>us-east-1</c>, and the <c>--stack-region</c> parameter is set to one of the
+        /// following, then the stack uses a legacy or <i>classic</i> region: <c>us-west-1, us-west-2,
+        /// sa-east-1, eu-central-1, eu-west-1, ap-northeast-1, ap-southeast-1, ap-southeast-2</c>.
+        /// In this case, the actual API endpoint of the stack is in <c>us-east-1</c>. Only the
+        /// preceding regions are supported as classic regions in the <c>us-east-1</c> API endpoint.
+        /// Because it is a best practice to choose the regional endpoint that is closest to where
+        /// you manage AWS, we recommend that you use regional endpoints for new stacks. The AWS
+        /// CLI common <c>--region</c> parameter always specifies a regional API endpoint; it
+        /// cannot be used to specify a classic AWS OpsWorks Stacks region.
         /// </para>
         ///  </note>
         /// </summary>
@@ -563,8 +562,8 @@ namespace Amazon.OpsWorks.Model
         ///  
         /// <para>
         /// AWS OpsWorks Stacks provides a standard set of built-in security groups, one for each
-        /// layer, which are associated with layers by default. With <code>UseOpsworksSecurityGroups</code>
-        /// you can instead provide your own custom security groups. <code>UseOpsworksSecurityGroups</code>
+        /// layer, which are associated with layers by default. With <c>UseOpsworksSecurityGroups</c>
+        /// you can instead provide your own custom security groups. <c>UseOpsworksSecurityGroups</c>
         /// has the following settings: 
         /// </para>
         ///  <ul> <li> 
@@ -607,7 +606,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If your account supports EC2-Classic, the default value is <code>no VPC</code>.
+        /// If your account supports EC2-Classic, the default value is <c>no VPC</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -616,11 +615,11 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the VPC ID corresponds to a default VPC and you have specified either the <code>DefaultAvailabilityZone</code>
-        /// or the <code>DefaultSubnetId</code> parameter only, AWS OpsWorks Stacks infers the
-        /// value of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks
-        /// sets these parameters to the first valid Availability Zone for the specified region
-        /// and the corresponding default VPC subnet ID, respectively.
+        /// If the VPC ID corresponds to a default VPC and you have specified either the <c>DefaultAvailabilityZone</c>
+        /// or the <c>DefaultSubnetId</c> parameter only, AWS OpsWorks Stacks infers the value
+        /// of the other parameter. If you specify neither parameter, AWS OpsWorks Stacks sets
+        /// these parameters to the first valid Availability Zone for the specified region and
+        /// the corresponding default VPC subnet ID, respectively.
         /// </para>
         ///  
         /// <para>
@@ -632,7 +631,7 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You must specify a value for <code>DefaultSubnetId</code>.
+        /// You must specify a value for <c>DefaultSubnetId</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

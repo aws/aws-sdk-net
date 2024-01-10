@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the DeleteNotebookInstance operation.
     /// Deletes an SageMaker notebook instance. Before you can delete a notebook instance,
-    /// you must call the <code>StopNotebookInstance</code> API. 
+    /// you must call the <c>StopNotebookInstance</c> API. 
     /// 
     ///  <important> 
     /// <para>

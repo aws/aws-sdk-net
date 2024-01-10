@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of an <code>UpdateServiceAccessPolicies</code> request. Contains the new
-    /// access policies.
+    /// The result of an <c>UpdateServiceAccessPolicies</c> request. Contains the new access
+    /// policies.
     /// </summary>
     public partial class UpdateServiceAccessPoliciesResponse : AmazonWebServiceResponse
     {

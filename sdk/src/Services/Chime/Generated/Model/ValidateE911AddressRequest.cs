@@ -81,7 +81,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property City. 
         /// <para>
-        /// The address city, such as <code>Portland</code>.
+        /// The address city, such as <c>Portland</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -100,7 +100,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Country. 
         /// <para>
-        /// The address country, such as <code>US</code>. 
+        /// The address country, such as <c>US</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -119,7 +119,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property PostalCode. 
         /// <para>
-        /// The address postal code, such as <code>04352</code>.
+        /// The address postal code, such as <c>04352</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -138,7 +138,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The address state, such as <code>ME</code>.
+        /// The address state, such as <c>ME</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -157,7 +157,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property StreetInfo. 
         /// <para>
-        /// The address street information, such as <code>8th Avenue</code>.
+        /// The address street information, such as <c>8th Avenue</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -176,7 +176,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property StreetNumber. 
         /// <para>
-        /// The address street number, such as <code>200</code> or <code>2121</code>.
+        /// The address street number, such as <c>200</c> or <c>2121</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]

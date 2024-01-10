@@ -58,8 +58,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SignupResponse. 
         /// <para>
-        /// A <code>SignupResponse</code> object that returns information about a newly created
-        /// Amazon QuickSight account.
+        /// A <c>SignupResponse</c> object that returns information about a newly created Amazon
+        /// QuickSight account.
         /// </para>
         /// </summary>
         public SignupResponse SignupResponse

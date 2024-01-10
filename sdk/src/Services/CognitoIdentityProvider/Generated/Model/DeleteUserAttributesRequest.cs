@@ -75,8 +75,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prependattach the <code>custom:</code> prefix to the
-        /// front of the attribute name.
+        /// For custom attributes, you must prependattach the <c>custom:</c> prefix to the front
+        /// of the attribute name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

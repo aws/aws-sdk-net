@@ -47,15 +47,15 @@ namespace Amazon.CodeGuruProfiler.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>P1D</code> — 1 day 
+        ///  <c>P1D</c> — 1 day 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PT1H</code> — 1 hour 
+        ///  <c>PT1H</c> — 1 hour 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PT5M</code> — 5 minutes 
+        ///  <c>PT5M</c> — 5 minutes 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -76,12 +76,12 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <para>
         ///  The time that aggregation of posted agent profiles for a profiling group starts.
         /// The aggregation profile contains profiles posted by the agent starting at this time
-        /// for an aggregation period specified by the <code>period</code> property of the <code>AggregatedProfileTime</code>
+        /// for an aggregation period specified by the <c>period</c> property of the <c>AggregatedProfileTime</c>
         /// object. 
         /// </para>
         ///  
         /// <para>
-        ///  Specify <code>start</code> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+        ///  Specify <c>start</c> using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
         /// represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
         /// </para>
         /// </summary>

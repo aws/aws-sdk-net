@@ -66,20 +66,20 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// KMS Key ID: <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        /// KMS Key ID: <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon Resource Name (ARN) of a KMS Key: <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        /// Amazon Resource Name (ARN) of a KMS Key: <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// KMS Key Alias: <code>"alias/ExampleAlias"</code> 
+        /// KMS Key Alias: <c>"alias/ExampleAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ARN of a KMS Key Alias: <code>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</code>
+        /// ARN of a KMS Key Alias: <c>"arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias"</c>
         /// 
         /// </para>
         ///  </li> </ul>
@@ -100,7 +100,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// When you use the <code>OutputDataConfig</code> object while creating a custom classifier,
+        /// When you use the <c>OutputDataConfig</c> object while creating a custom classifier,
         /// you specify the Amazon S3 location where you want to write the confusion matrix and
         /// other output files. The URI must be in the same Region as the API endpoint that you
         /// are calling. The location is used as the prefix for the actual location of this output
@@ -109,9 +109,9 @@ namespace Amazon.Comprehend.Model
         ///  
         /// <para>
         /// When the custom classifier job is finished, the service creates the output file in
-        /// a directory specific to the job. The <code>S3Uri</code> field contains the location
-        /// of the output file, called <code>output.tar.gz</code>. It is a compressed archive
-        /// that contains the confusion matrix.
+        /// a directory specific to the job. The <c>S3Uri</c> field contains the location of the
+        /// output file, called <c>output.tar.gz</c>. It is a compressed archive that contains
+        /// the confusion matrix.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

@@ -41,8 +41,8 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Max. 
         /// <para>
         ///  The maximum number of accelerators. If this parameter isn't specified, there's no
-        /// maximum limit. To exclude accelerator-enabled instance types, set <code>Max</code>
-        /// to <code>0</code>. 
+        /// maximum limit. To exclude accelerator-enabled instance types, set <c>Max</c> to <c>0</c>.
+        /// 
         /// </para>
         /// </summary>
         public int Max

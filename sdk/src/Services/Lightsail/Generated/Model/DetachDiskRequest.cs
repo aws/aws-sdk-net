@@ -36,9 +36,9 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// The <code>detach disk</code> operation supports tag-based access control via resource
-    /// tags applied to the resource identified by <code>disk name</code>. For more information,
-    /// see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>detach disk</c> operation supports tag-based access control via resource tags
+    /// applied to the resource identified by <c>disk name</c>. For more information, see
+    /// the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -49,7 +49,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property DiskName. 
         /// <para>
-        /// The unique name of the disk you want to detach from your instance (<code>my-disk</code>).
+        /// The unique name of the disk you want to detach from your instance (<c>my-disk</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

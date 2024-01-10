@@ -113,8 +113,8 @@ namespace Amazon.EC2.Model
         ///  
         /// <para>
         /// To create a subnet in a Local Zone, set this value to the Local Zone ID, for example
-        /// <code>us-west-2-lax-1a</code>. For information about the Regions that support Local
-        /// Zones, see <a href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
+        /// <c>us-west-2-lax-1a</c>. For information about the Regions that support Local Zones,
+        /// see <a href="http://aws.amazon.com/about-aws/global-infrastructure/localzones/locations/">Local
         /// Zones locations</a>.
         /// </para>
         ///  
@@ -156,9 +156,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CidrBlock. 
         /// <para>
-        /// The IPv4 network range for the subnet, in CIDR notation. For example, <code>10.0.0.0/24</code>.
+        /// The IPv4 network range for the subnet, in CIDR notation. For example, <c>10.0.0.0/24</c>.
         /// We modify the specified CIDR block to its canonical form; for example, if you specify
-        /// <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
+        /// <c>100.68.0.18/18</c>, we modify it to <c>100.68.0.0/18</c>.
         /// </para>
         ///  
         /// <para>

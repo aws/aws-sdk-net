@@ -31,8 +31,8 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Container for the parameters to the DeleteWhatIfForecastExport operation.
     /// Deletes a what-if forecast export created using the <a>CreateWhatIfForecastExport</a>
-    /// operation. You can delete only what-if forecast exports that have a status of <code>ACTIVE</code>
-    /// or <code>CREATE_FAILED</code>. To get the status, use the <a>DescribeWhatIfForecastExport</a>
+    /// operation. You can delete only what-if forecast exports that have a status of <c>ACTIVE</c>
+    /// or <c>CREATE_FAILED</c>. To get the status, use the <a>DescribeWhatIfForecastExport</a>
     /// operation.
     /// </summary>
     public partial class DeleteWhatIfForecastExportRequest : AmazonForecastServiceRequest

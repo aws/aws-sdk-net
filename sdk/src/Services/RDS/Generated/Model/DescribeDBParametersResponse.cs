@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <code>DescribeDBParameters</code>
+    /// Contains the result of a successful invocation of the <c>DescribeDBParameters</c>
     /// action.
     /// </summary>
     public partial class DescribeDBParametersResponse : AmazonWebServiceResponse
@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -60,7 +60,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of <code>Parameter</code> values.
+        /// A list of <c>Parameter</c> values.
         /// </para>
         /// </summary>
         public List<Parameter> Parameters

@@ -30,9 +30,9 @@ namespace Amazon.LakeFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetQueryState operation.
-    /// Returns the state of a query previously submitted. Clients are expected to poll <code>GetQueryState</code>
+    /// Returns the state of a query previously submitted. Clients are expected to poll <c>GetQueryState</c>
     /// to monitor the current state of the planning before retrieving the work units. A query
-    /// state is only visible to the principal that made the initial call to <code>StartQueryPlanning</code>.
+    /// state is only visible to the principal that made the initial call to <c>StartQueryPlanning</c>.
     /// </summary>
     public partial class GetQueryStateRequest : AmazonLakeFormationRequest
     {

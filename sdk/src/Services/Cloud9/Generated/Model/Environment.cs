@@ -65,7 +65,7 @@ namespace Amazon.Cloud9.Model
         /// <summary>
         /// Gets and sets the property ConnectionType. 
         /// <para>
-        /// The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code>
+        /// The connection type used for connecting to an Amazon EC2 environment. <c>CONNECT_SSH</c>
         /// is selected by default.
         /// </para>
         /// </summary>
@@ -144,43 +144,43 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED_ON_CREATE</code> 
+        ///  <c>ENABLED_ON_CREATE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED_BY_OWNER</code> 
+        ///  <c>ENABLED_BY_OWNER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED_BY_DEFAULT</code> 
+        ///  <c>DISABLED_BY_DEFAULT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED_BY_OWNER</code> 
+        ///  <c>DISABLED_BY_OWNER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED_BY_COLLABORATOR</code> 
+        ///  <c>DISABLED_BY_COLLABORATOR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_REMOVAL_BY_COLLABORATOR</code> 
+        ///  <c>PENDING_REMOVAL_BY_COLLABORATOR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING_REMOVAL_BY_OWNER</code> 
+        ///  <c>PENDING_REMOVAL_BY_OWNER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED_REMOVAL_BY_COLLABORATOR</code> 
+        ///  <c>FAILED_REMOVAL_BY_COLLABORATOR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED_BY_OWNER</code> 
+        ///  <c>ENABLED_BY_OWNER</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED_BY_DEFAULT</code> 
+        ///  <c>DISABLED_BY_DEFAULT</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -241,12 +241,12 @@ namespace Amazon.Cloud9.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ec2</code>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects
-        /// to the environment.
+        ///  <c>ec2</c>: An Amazon Elastic Compute Cloud (Amazon EC2) instance connects to the
+        /// environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ssh</code>: Your own server connects to the environment.
+        ///  <c>ssh</c>: Your own server connects to the environment.
         /// </para>
         ///  </li> </ul>
         /// </summary>

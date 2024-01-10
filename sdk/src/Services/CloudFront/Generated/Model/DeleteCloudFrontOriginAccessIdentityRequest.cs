@@ -75,8 +75,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The value of the <code>ETag</code> header you received from a previous <code>GET</code>
-        /// or <code>PUT</code> request. For example: <code>E2QWRUHAPOMQZL</code>.
+        /// The value of the <c>ETag</c> header you received from a previous <c>GET</c> or <c>PUT</c>
+        /// request. For example: <c>E2QWRUHAPOMQZL</c>.
         /// </para>
         /// </summary>
         public string IfMatch

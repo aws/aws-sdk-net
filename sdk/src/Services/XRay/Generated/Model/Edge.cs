@@ -65,7 +65,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property EdgeType. 
         /// <para>
-        /// Describes an asynchronous connection, with a value of <code>link</code>.
+        /// Describes an asynchronous connection, with a value of <c>link</c>.
         /// </para>
         /// </summary>
         public string EdgeType
@@ -102,7 +102,7 @@ namespace Amazon.XRay.Model
         /// Gets and sets the property ReceivedEventAgeHistogram. 
         /// <para>
         /// A histogram that maps the spread of event age when received by consumers. Age is calculated
-        /// each time an event is received. Only populated when <i>EdgeType</i> is <code>link</code>.
+        /// each time an event is received. Only populated when <i>EdgeType</i> is <c>link</c>.
         /// </para>
         /// </summary>
         public List<HistogramEntry> ReceivedEventAgeHistogram

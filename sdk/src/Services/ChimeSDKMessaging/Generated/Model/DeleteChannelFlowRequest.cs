@@ -35,9 +35,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     ///  <note> 
     /// <para>
     ///  This API works only when the channel flow is not associated with any channel. To
-    /// get a list of all channels that a channel flow is associated with, use the <code>ListChannelsAssociatedWithChannelFlow</code>
-    /// API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow
-    /// from all channels. 
+    /// get a list of all channels that a channel flow is associated with, use the <c>ListChannelsAssociatedWithChannelFlow</c>
+    /// API. Use the <c>DisassociateChannelFlow</c> API to disassociate a channel flow from
+    /// all channels. 
     /// </para>
     ///  </note>
     /// </summary>

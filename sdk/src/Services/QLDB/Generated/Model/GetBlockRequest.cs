@@ -31,7 +31,7 @@ namespace Amazon.QLDB.Model
     /// <summary>
     /// Container for the parameters to the GetBlock operation.
     /// Returns a block object at a specified address in a journal. Also returns a proof of
-    /// the specified block for verification if <code>DigestTipAddress</code> is provided.
+    /// the specified block for verification if <c>DigestTipAddress</c> is provided.
     /// 
     ///  
     /// <para>
@@ -40,16 +40,16 @@ namespace Amazon.QLDB.Model
     /// </para>
     ///  
     /// <para>
-    /// If the specified ledger doesn't exist or is in <code>DELETING</code> status, then
-    /// throws <code>ResourceNotFoundException</code>.
+    /// If the specified ledger doesn't exist or is in <c>DELETING</c> status, then throws
+    /// <c>ResourceNotFoundException</c>.
     /// </para>
     ///  
     /// <para>
-    /// If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.
+    /// If the specified ledger is in <c>CREATING</c> status, then throws <c>ResourcePreconditionNotMetException</c>.
     /// </para>
     ///  
     /// <para>
-    /// If no block exists with the specified address, then throws <code>InvalidParameterException</code>.
+    /// If no block exists with the specified address, then throws <c>InvalidParameterException</c>.
     /// </para>
     /// </summary>
     public partial class GetBlockRequest : AmazonQLDBRequest
@@ -62,11 +62,11 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property BlockAddress. 
         /// <para>
         /// The location of the block that you want to request. An address is an Amazon Ion structure
-        /// that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+        /// that has two fields: <c>strandId</c> and <c>sequenceNo</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
+        /// For example: <c>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -86,11 +86,11 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property DigestTipAddress. 
         /// <para>
         /// The latest block location covered by the digest for which to request a proof. An address
-        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+        /// is an Amazon Ion structure that has two fields: <c>strandId</c> and <c>sequenceNo</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
+        /// For example: <c>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

@@ -59,8 +59,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// The unique pagination token returned for you to pass to a subsequent request. Fleet
         /// Advisor returns this token when the number of records in the response is greater than
-        /// the <code>MaxRecords</code> value. To retrieve the next page, make the call again
-        /// using the returned token and keeping all other arguments unchanged.
+        /// the <c>MaxRecords</c> value. To retrieve the next page, make the call again using
+        /// the returned token and keeping all other arguments unchanged.
         /// </para>
         /// </summary>
         public string NextToken

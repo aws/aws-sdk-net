@@ -79,7 +79,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>ListSchemaExtensions.NextToken</code> value from a previous call to <code>ListSchemaExtensions</code>.
+        /// The <c>ListSchemaExtensions.NextToken</c> value from a previous call to <c>ListSchemaExtensions</c>.
         /// Pass null if this is the first call.
         /// </para>
         /// </summary>

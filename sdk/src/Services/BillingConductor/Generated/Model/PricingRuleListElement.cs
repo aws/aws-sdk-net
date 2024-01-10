@@ -205,9 +205,9 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         ///  
         /// <para>
-        ///  If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates
-        /// which operation the <code>PricingRule</code> is modifying. For example, a value of
-        /// <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.
+        ///  If the <c>Scope</c> attribute is set to <c>SKU</c>, this attribute indicates which
+        /// operation the <c>PricingRule</c> is modifying. For example, a value of <c>RunInstances:0202</c>
+        /// indicates the operation of running an Amazon EC2 instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -245,8 +245,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Service. 
         /// <para>
-        /// If the <code>Scope</code> attribute is <code>SERVICE</code>, this attribute indicates
-        /// which service the <code>PricingRule</code> is applicable for.
+        /// If the <c>Scope</c> attribute is <c>SERVICE</c>, this attribute indicates which service
+        /// the <c>PricingRule</c> is applicable for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -306,10 +306,10 @@ namespace Amazon.BillingConductor.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates
-        /// which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code>
-        /// describes an<code> M2 High Memory Double Extra Large</code> instance in the US West
-        /// (Oregon) Region. <pre><code>&lt;/p&gt; </code></pre>
+        /// If the <c>Scope</c> attribute is set to <c>SKU</c>, this attribute indicates which
+        /// usage type the <c>PricingRule</c> is modifying. For example, <c>USW2-BoxUsage:m2.2xlarge</c>
+        /// describes an<c> M2 High Memory Double Extra Large</c> instance in the US West (Oregon)
+        /// Region. <pre><c>&lt;/p&gt; </c></pre>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string UsageType

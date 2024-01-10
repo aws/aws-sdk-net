@@ -123,37 +123,37 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PASS</code>: Test passed.
+        ///  <c>PASS</c>: Test passed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAIL</code>: Test failed.
+        ///  <c>FAIL</c>: Test failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code>: Test has not started running but is scheduled.
+        ///  <c>PENDING</c>: Test has not started running but is scheduled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code>: Test is running.
+        ///  <c>RUNNING</c>: Test is running.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPING</code>: Test is performing cleanup steps. You will see this status
-        /// only if you stop a suite run.
+        ///  <c>STOPPING</c>: Test is performing cleanup steps. You will see this status only
+        /// if you stop a suite run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STOPPED</code> Test is stopped. You will see this status only if you stop a
-        /// suite run.
+        ///  <c>STOPPED</c> Test is stopped. You will see this status only if you stop a suite
+        /// run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PASS_WITH_WARNINGS</code>: Test passed with warnings.
+        ///  <c>PASS_WITH_WARNINGS</c>: Test passed with warnings.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ERORR</code>: Test faced an error when running due to an internal issue.
+        ///  <c>ERORR</c>: Test faced an error when running due to an internal issue.
         /// </para>
         ///  </li> </ul>
         /// </summary>

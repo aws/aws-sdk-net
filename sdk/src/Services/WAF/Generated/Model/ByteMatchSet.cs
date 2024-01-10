@@ -42,18 +42,17 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In a <a>GetByteMatchSet</a> request, <code>ByteMatchSet</code> is a complex type that
-    /// contains the <code>ByteMatchSetId</code> and <code>Name</code> of a <code>ByteMatchSet</code>,
-    /// and the values that you specified when you updated the <code>ByteMatchSet</code>.
-    /// 
+    /// In a <a>GetByteMatchSet</a> request, <c>ByteMatchSet</c> is a complex type that contains
+    /// the <c>ByteMatchSetId</c> and <c>Name</c> of a <c>ByteMatchSet</c>, and the values
+    /// that you specified when you updated the <c>ByteMatchSet</c>. 
     /// </para>
     ///  
     /// <para>
-    /// A complex type that contains <code>ByteMatchTuple</code> objects, which specify the
-    /// parts of web requests that you want AWS WAF to inspect and the values that you want
-    /// AWS WAF to search for. If a <code>ByteMatchSet</code> contains more than one <code>ByteMatchTuple</code>
-    /// object, a request needs to match the settings in only one <code>ByteMatchTuple</code>
-    /// to be considered a match.
+    /// A complex type that contains <c>ByteMatchTuple</c> objects, which specify the parts
+    /// of web requests that you want AWS WAF to inspect and the values that you want AWS
+    /// WAF to search for. If a <c>ByteMatchSet</c> contains more than one <c>ByteMatchTuple</c>
+    /// object, a request needs to match the settings in only one <c>ByteMatchTuple</c> to
+    /// be considered a match.
     /// </para>
     /// </summary>
     public partial class ByteMatchSet
@@ -65,15 +64,15 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property ByteMatchSetId. 
         /// <para>
-        /// The <code>ByteMatchSetId</code> for a <code>ByteMatchSet</code>. You use <code>ByteMatchSetId</code>
-        /// to get information about a <code>ByteMatchSet</code> (see <a>GetByteMatchSet</a>),
-        /// update a <code>ByteMatchSet</code> (see <a>UpdateByteMatchSet</a>), insert a <code>ByteMatchSet</code>
-        /// into a <code>Rule</code> or delete one from a <code>Rule</code> (see <a>UpdateRule</a>),
-        /// and delete a <code>ByteMatchSet</code> from AWS WAF (see <a>DeleteByteMatchSet</a>).
+        /// The <c>ByteMatchSetId</c> for a <c>ByteMatchSet</c>. You use <c>ByteMatchSetId</c>
+        /// to get information about a <c>ByteMatchSet</c> (see <a>GetByteMatchSet</a>), update
+        /// a <c>ByteMatchSet</c> (see <a>UpdateByteMatchSet</a>), insert a <c>ByteMatchSet</c>
+        /// into a <c>Rule</c> or delete one from a <c>Rule</c> (see <a>UpdateRule</a>), and delete
+        /// a <c>ByteMatchSet</c> from AWS WAF (see <a>DeleteByteMatchSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
+        ///  <c>ByteMatchSetId</c> is returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -113,8 +112,8 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A friendly name or description of the <a>ByteMatchSet</a>. You can't change <code>Name</code>
-        /// after you create a <code>ByteMatchSet</code>.
+        /// A friendly name or description of the <a>ByteMatchSet</a>. You can't change <c>Name</c>
+        /// after you create a <c>ByteMatchSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

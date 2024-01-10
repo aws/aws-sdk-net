@@ -31,7 +31,7 @@ namespace Amazon.Neptunedata.Model
     /// <summary>
     /// Container for the parameters to the StartMLModelTrainingJob operation.
     /// Creates a new Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-    /// training using the <code>modeltraining</code> command</a>.
+    /// training using the <c>modeltraining</c> command</a>.
     /// 
     ///  
     /// <para>
@@ -124,7 +124,7 @@ namespace Amazon.Neptunedata.Model
         /// Gets and sets the property EnableManagedSpotTraining. 
         /// <para>
         /// Optimizes the cost of training machine-learning models by using Amazon Elastic Compute
-        /// Cloud spot instances. The default is <code>False</code>.
+        /// Cloud spot instances. The default is <c>False</c>.
         /// </para>
         /// </summary>
         public bool EnableManagedSpotTraining
@@ -163,8 +163,8 @@ namespace Amazon.Neptunedata.Model
         /// Maximum total number of training jobs to start for the hyperparameter tuning job.
         /// The default is 2. Neptune ML automatically tunes the hyperparameters of the machine
         /// learning model. To obtain a model that performs well, use at least 10 jobs (in other
-        /// words, set <code>maxHPONumberOfTrainingJobs</code> to 10). In general, the more tuning
-        /// runs, the better the results.
+        /// words, set <c>maxHPONumberOfTrainingJobs</c> to 10). In general, the more tuning runs,
+        /// the better the results.
         /// </para>
         /// </summary>
         public int MaxHPONumberOfTrainingJobs
@@ -315,8 +315,8 @@ namespace Amazon.Neptunedata.Model
         /// Gets and sets the property TrainingInstanceType. 
         /// <para>
         /// The type of ML instance used for model training. All Neptune ML models support CPU,
-        /// GPU, and multiGPU training. The default is <code>ml.p3.2xlarge</code>. Choosing the
-        /// right instance type for training depends on the task type, graph size, and your budget.
+        /// GPU, and multiGPU training. The default is <c>ml.p3.2xlarge</c>. Choosing the right
+        /// instance type for training depends on the task type, graph size, and your budget.
         /// </para>
         /// </summary>
         public string TrainingInstanceType

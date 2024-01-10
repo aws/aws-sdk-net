@@ -39,8 +39,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListTableRestoreStatus</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in following <code>ListTableRestoreStatus</code>
+        /// If your initial <c>ListTableRestoreStatus</c> operation returns a <c>nextToken</c>,
+        /// you can include the returned <c>nextToken</c> in following <c>ListTableRestoreStatus</c>
         /// operations. This will returns results on the next page.
         /// </para>
         /// </summary>
@@ -60,7 +60,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property TableRestoreStatuses. 
         /// <para>
-        /// The array of returned <code>TableRestoreStatus</code> objects.
+        /// The array of returned <c>TableRestoreStatus</c> objects.
         /// </para>
         /// </summary>
         public List<TableRestoreStatus> TableRestoreStatuses

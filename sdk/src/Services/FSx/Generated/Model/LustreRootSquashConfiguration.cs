@@ -30,13 +30,13 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The configuration for Lustre root squash used to restrict root-level access from clients
-    /// that try to access your FSx for Lustre file system as root. Use the <code>RootSquash</code>
+    /// that try to access your FSx for Lustre file system as root. Use the <c>RootSquash</c>
     /// parameter to enable root squash. To learn more about Lustre root squash, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/root-squash.html">Lustre
     /// root squash</a>.
     /// 
     ///  
     /// <para>
-    /// You can also use the <code>NoSquashNids</code> parameter to provide an array of clients
+    /// You can also use the <c>NoSquashNids</c> parameter to provide an array of clients
     /// who are not affected by the root squash setting. These clients will access the file
     /// system as root, with unrestricted privileges.
     /// </para>
@@ -57,11 +57,11 @@ namespace Amazon.FSx.Model
         ///  <ul> <li> 
         /// <para>
         /// A single address is described in standard Lustre NID format by specifying the client’s
-        /// IP address followed by the Lustre network ID (for example, <code>10.0.1.6@tcp</code>).
+        /// IP address followed by the Lustre network ID (for example, <c>10.0.1.6@tcp</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An address range is described using a dash to separate the range (for example, <code>10.0.[2-10].[1-255]@tcp</code>).
+        /// An address range is described using a dash to separate the range (for example, <c>10.0.[2-10].[1-255]@tcp</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -82,8 +82,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property RootSquash. 
         /// <para>
         /// You enable root squash by setting a user ID (UID) and group ID (GID) for the file
-        /// system in the format <code>UID:GID</code> (for example, <code>365534:65534</code>).
-        /// The UID and GID values can range from <code>0</code> to <code>4294967294</code>:
+        /// system in the format <c>UID:GID</c> (for example, <c>365534:65534</c>). The UID and
+        /// GID values can range from <c>0</c> to <c>4294967294</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A value of <code>0</code> (zero) for UID and GID indicates root, and therefore disables
+        /// A value of <c>0</c> (zero) for UID and GID indicates root, and therefore disables
         /// root squash.
         /// </para>
         ///  </li> </ul> 

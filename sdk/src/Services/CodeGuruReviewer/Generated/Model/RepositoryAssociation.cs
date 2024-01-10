@@ -30,7 +30,7 @@ namespace Amazon.CodeGuruReviewer.Model
 {
     /// <summary>
     /// Information about a repository association. The <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">DescribeRepositoryAssociation</a>
-    /// operation returns a <code>RepositoryAssociation</code> object.
+    /// operation returns a <c>RepositoryAssociation</c> object.
     /// </summary>
     public partial class RepositoryAssociation
     {
@@ -89,7 +89,7 @@ namespace Amazon.CodeGuruReviewer.Model
         /// Gets and sets the property ConnectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Amazon Web Services CodeStar Connections connection.
-        /// Its format is <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>.
+        /// Its format is <c>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">Connection</a>
         /// in the <i>Amazon Web Services CodeStar Connections API Reference</i>.
         /// </para>
@@ -128,13 +128,13 @@ namespace Amazon.CodeGuruReviewer.Model
         /// <summary>
         /// Gets and sets the property KMSKeyDetails. 
         /// <para>
-        /// A <code>KMSKeyDetails</code> object that contains:
+        /// A <c>KMSKeyDetails</c> object that contains:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// The encryption option for this repository association. It is either owned by Amazon
-        /// Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or customer
-        /// managed (<code>CUSTOMER_MANAGED_CMK</code>).
+        /// Web Services Key Management Service (KMS) (<c>AWS_OWNED_CMK</c>) or customer managed
+        /// (<c>CUSTOMER_MANAGED_CMK</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -273,10 +273,10 @@ namespace Amazon.CodeGuruReviewer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub
-        /// Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks
-        /// in your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks,
-        /// reviews of code in your repository cannot be triggered.
+        /// If your repository <c>ProviderType</c> is <c>GitHub</c>, <c>GitHub Enterprise Server</c>,
+        /// or <c>Bitbucket</c>, CodeGuru Reviewer creates webhooks in your repository to trigger
+        /// CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in your repository
+        /// cannot be triggered.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>

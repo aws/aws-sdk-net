@@ -43,30 +43,30 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Permanently deletes an <a>IPSet</a>. You can't delete an <code>IPSet</code> if it's
-    /// still used in any <code>Rules</code> or if it still includes any IP addresses.
+    /// Permanently deletes an <a>IPSet</a>. You can't delete an <c>IPSet</c> if it's still
+    /// used in any <c>Rules</c> or if it still includes any IP addresses.
     /// </para>
     ///  
     /// <para>
-    /// If you just want to remove an <code>IPSet</code> from a <code>Rule</code>, use <a>UpdateRule</a>.
+    /// If you just want to remove an <c>IPSet</c> from a <c>Rule</c>, use <a>UpdateRule</a>.
     /// </para>
     ///  
     /// <para>
-    /// To permanently delete an <code>IPSet</code> from AWS WAF, perform the following steps:
+    /// To permanently delete an <c>IPSet</c> from AWS WAF, perform the following steps:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Update the <code>IPSet</code> to remove IP address ranges, if any. For more information,
+    /// Update the <c>IPSet</c> to remove IP address ranges, if any. For more information,
     /// see <a>UpdateIPSet</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <code>ChangeToken</code>
-    /// parameter of a <code>DeleteIPSet</code> request.
+    /// Use <a>GetChangeToken</a> to get the change token that you provide in the <c>ChangeToken</c>
+    /// parameter of a <c>DeleteIPSet</c> request.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit a <code>DeleteIPSet</code> request.
+    /// Submit a <c>DeleteIPSet</c> request.
     /// </para>
     ///  </li> </ol>
     /// </summary>
@@ -97,8 +97,8 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property IPSetId. 
         /// <para>
-        /// The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete. <code>IPSetId</code>
-        /// is returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
+        /// The <c>IPSetId</c> of the <a>IPSet</a> that you want to delete. <c>IPSetId</c> is
+        /// returned by <a>CreateIPSet</a> and by <a>ListIPSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

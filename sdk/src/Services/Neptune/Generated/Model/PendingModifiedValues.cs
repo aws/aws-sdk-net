@@ -51,8 +51,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
-        ///  Contains the new <code>AllocatedStorage</code> size for the DB instance that will
-        /// be applied or is currently being applied.
+        ///  Contains the new <c>AllocatedStorage</c> size for the DB instance that will be applied
+        /// or is currently being applied.
         /// </para>
         /// </summary>
         public int AllocatedStorage
@@ -106,7 +106,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBInstanceClass. 
         /// <para>
-        ///  Contains the new <code>DBInstanceClass</code> for the DB instance that will be applied
+        ///  Contains the new <c>DBInstanceClass</c> for the DB instance that will be applied
         /// or is currently being applied.
         /// </para>
         /// </summary>
@@ -125,8 +125,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property DBInstanceIdentifier. 
         /// <para>
-        ///  Contains the new <code>DBInstanceIdentifier</code> for the DB instance that will
-        /// be applied or is currently being applied.
+        ///  Contains the new <c>DBInstanceIdentifier</c> for the DB instance that will be applied
+        /// or is currently being applied.
         /// </para>
         /// </summary>
         public string DBInstanceIdentifier
@@ -253,8 +253,8 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property PendingCloudwatchLogsExports. 
         /// <para>
-        /// This <code>PendingCloudwatchLogsExports</code> structure specifies pending changes
-        /// to which CloudWatch logs are enabled and which are disabled.
+        /// This <c>PendingCloudwatchLogsExports</c> structure specifies pending changes to which
+        /// CloudWatch logs are enabled and which are disabled.
         /// </para>
         /// </summary>
         public PendingCloudwatchLogsExports PendingCloudwatchLogsExports

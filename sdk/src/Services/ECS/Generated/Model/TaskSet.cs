@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Information about a set of Amazon ECS tasks in either an CodeDeploy or an <code>EXTERNAL</code>
+    /// Information about a set of Amazon ECS tasks in either an CodeDeploy or an <c>EXTERNAL</c>
     /// deployment. An Amazon ECS task set includes details such as the desired number of
     /// tasks, how many tasks are running, and whether the task set serves production traffic.
     /// </summary>
@@ -101,9 +101,9 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ComputedDesiredCount. 
         /// <para>
         /// The computed desired count for the task set. This is calculated by multiplying the
-        /// service's <code>desiredCount</code> by the task set's <code>scale</code> percentage.
-        /// The result is always rounded up. For example, if the computed desired count is 1.2,
-        /// it rounds up to 2 tasks.
+        /// service's <c>desiredCount</c> by the task set's <c>scale</c> percentage. The result
+        /// is always rounded up. For example, if the computed desired count is 1.2, it rounds
+        /// up to 2 tasks.
         /// </para>
         /// </summary>
         public int ComputedDesiredCount
@@ -143,13 +143,13 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If an CodeDeploy deployment created a task set, the <code>externalId</code> parameter
-        /// contains the CodeDeploy deployment ID.
+        /// If an CodeDeploy deployment created a task set, the <c>externalId</c> parameter contains
+        /// the CodeDeploy deployment ID.
         /// </para>
         ///  
         /// <para>
         /// If a task set is created for an external deployment and is associated with a service
-        /// discovery registry, the <code>externalId</code> parameter contains the <code>ECS_TASK_SET_EXTERNAL_ID</code>
+        /// discovery registry, the <c>externalId</c> parameter contains the <c>ECS_TASK_SET_EXTERNAL_ID</c>
         /// Cloud Map attribute.
         /// </para>
         /// </summary>
@@ -242,10 +242,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PendingCount. 
         /// <para>
-        /// The number of tasks in the task set that are in the <code>PENDING</code> status during
-        /// a deployment. A task in the <code>PENDING</code> state is preparing to enter the <code>RUNNING</code>
-        /// state. A task set enters the <code>PENDING</code> status when it launches for the
-        /// first time or when it's restarted after being in the <code>STOPPED</code> state.
+        /// The number of tasks in the task set that are in the <c>PENDING</c> status during a
+        /// deployment. A task in the <c>PENDING</c> state is preparing to enter the <c>RUNNING</c>
+        /// state. A task set enters the <c>PENDING</c> status when it launches for the first
+        /// time or when it's restarted after being in the <c>STOPPED</c> state.
         /// </para>
         /// </summary>
         public int PendingCount
@@ -306,8 +306,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RunningCount. 
         /// <para>
-        /// The number of tasks in the task set that are in the <code>RUNNING</code> status during
-        /// a deployment. A task in the <code>RUNNING</code> state is running and ready for use.
+        /// The number of tasks in the task set that are in the <c>RUNNING</c> status during a
+        /// deployment. A task in the <c>RUNNING</c> state is running and ready for use.
         /// </para>
         /// </summary>
         public int RunningCount
@@ -383,19 +383,19 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StabilityStatus. 
         /// <para>
         /// The stability status. This indicates whether the task set has reached a steady state.
-        /// If the following conditions are met, the task set are in <code>STEADY_STATE</code>:
+        /// If the following conditions are met, the task set are in <c>STEADY_STATE</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The task <code>runningCount</code> is equal to the <code>computedDesiredCount</code>.
+        /// The task <c>runningCount</c> is equal to the <c>computedDesiredCount</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>pendingCount</code> is <code>0</code>.
+        /// The <c>pendingCount</c> is <c>0</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// There are no tasks that are running on container instances in the <code>DRAINING</code>
+        /// There are no tasks that are running on container instances in the <c>DRAINING</c>
         /// status.
         /// </para>
         ///  </li> <li> 
@@ -405,7 +405,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If any of those conditions aren't met, the stability status returns <code>STABILIZING</code>.
+        /// If any of those conditions aren't met, the stability status returns <c>STABILIZING</c>.
         /// </para>
         /// </summary>
         public StabilityStatus StabilityStatus
@@ -442,9 +442,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property StartedBy. 
         /// <para>
         /// The tag specified when a task set is started. If an CodeDeploy deployment created
-        /// the task set, the <code>startedBy</code> parameter is <code>CODE_DEPLOY</code>. If
-        /// an external deployment created the task set, the <code>startedBy</code> field isn't
-        /// used.
+        /// the task set, the <c>startedBy</c> parameter is <c>CODE_DEPLOY</c>. If an external
+        /// deployment created the task set, the <c>startedBy</c> field isn't used.
         /// </para>
         /// </summary>
         public string StartedBy
@@ -531,10 +530,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>

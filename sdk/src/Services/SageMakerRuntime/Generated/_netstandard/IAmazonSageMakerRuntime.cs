@@ -58,8 +58,8 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Calls to <code>InvokeEndpoint</code> are authenticated by using Amazon Web Services
-        /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Calls to <c>InvokeEndpoint</c> are authenticated by using Amazon Web Services Signature
+        /// Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
         /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
         ///  
@@ -132,7 +132,7 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Calls to <code>InvokeEndpointAsync</code> are authenticated by using Amazon Web Services
+        /// Calls to <c>InvokeEndpointAsync</c> are authenticated by using Amazon Web Services
         /// Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
         /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
@@ -185,7 +185,7 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Before you can use this operation, your IAM permissions must allow the <code>sagemaker:InvokeEndpoint</code>
+        /// Before you can use this operation, your IAM permissions must allow the <c>sagemaker:InvokeEndpoint</c>
         /// action. For more information about Amazon SageMaker actions for IAM policies, see
         /// <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonsagemaker.html">Actions,
         /// resources, and condition keys for Amazon SageMaker</a> in the <i>IAM Service Authorization
@@ -199,8 +199,8 @@ namespace Amazon.SageMakerRuntime
         /// </para>
         ///  
         /// <para>
-        /// Calls to <code>InvokeEndpointWithResponseStream</code> are authenticated by using
-        /// Amazon Web Services Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
+        /// Calls to <c>InvokeEndpointWithResponseStream</c> are authenticated by using Amazon
+        /// Web Services Signature Version 4. For information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
         /// Requests (Amazon Web Services Signature Version 4)</a> in the <i>Amazon S3 API Reference</i>.
         /// </para>
         /// </summary>

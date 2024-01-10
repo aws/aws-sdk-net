@@ -31,8 +31,8 @@ namespace Amazon.SimpleSystemsManagement.Model
     /// <summary>
     /// Container for the parameters to the DescribeAssociation operation.
     /// Describes the association for the specified target or managed node. If you created
-    /// the association by using the <code>Targets</code> parameter, then you must retrieve
-    /// the association by using the association ID.
+    /// the association by using the <c>Targets</c> parameter, then you must retrieve the
+    /// association by using the association ID.
     /// </summary>
     public partial class DescribeAssociationRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -79,9 +79,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property AssociationVersion. 
         /// <para>
         /// Specify the association version to retrieve. To view the latest version, either specify
-        /// <code>$LATEST</code> for this parameter, or omit this parameter. To view a list of
-        /// all associations for a managed node, use <a>ListAssociations</a>. To get a list of
-        /// versions for a specific association, use <a>ListAssociationVersions</a>. 
+        /// <c>$LATEST</c> for this parameter, or omit this parameter. To view a list of all associations
+        /// for a managed node, use <a>ListAssociations</a>. To get a list of versions for a specific
+        /// association, use <a>ListAssociationVersions</a>. 
         /// </para>
         /// </summary>
         public string AssociationVersion

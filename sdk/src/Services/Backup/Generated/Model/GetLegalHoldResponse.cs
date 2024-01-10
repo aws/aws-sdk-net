@@ -194,8 +194,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// This is the status of the legal hold. Statuses can be <code>ACTIVE</code>, <code>CREATING</code>,
-        /// <code>CANCELED</code>, and <code>CANCELING</code>.
+        /// This is the status of the legal hold. Statuses can be <c>ACTIVE</c>, <c>CREATING</c>,
+        /// <c>CANCELED</c>, and <c>CANCELING</c>.
         /// </para>
         /// </summary>
         public LegalHoldStatus Status

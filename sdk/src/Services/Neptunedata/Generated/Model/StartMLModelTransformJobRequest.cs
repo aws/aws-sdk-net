@@ -102,7 +102,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property CustomModelTransformParameters. 
         /// <para>
-        /// Configuration information for a model transform using a custom model. The <code>customModelTransformParameters</code>
+        /// Configuration information for a model transform using a custom model. The <c>customModelTransformParameters</c>
         /// object contains the following fields, which must have values compatible with the saved
         /// model parameters from the training job:
         /// </para>
@@ -122,8 +122,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property DataProcessingJobId. 
         /// <para>
-        /// The job ID of a completed data-processing job. You must include either <code>dataProcessingJobId</code>
-        /// and a <code>mlModelTrainingJobId</code>, or a <code>trainingJobName</code>.
+        /// The job ID of a completed data-processing job. You must include either <c>dataProcessingJobId</c>
+        /// and a <c>mlModelTrainingJobId</c>, or a <c>trainingJobName</c>.
         /// </para>
         /// </summary>
         public string DataProcessingJobId
@@ -159,8 +159,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property MlModelTrainingJobId. 
         /// <para>
-        /// The job ID of a completed model-training job. You must include either <code>dataProcessingJobId</code>
-        /// and a <code>mlModelTrainingJobId</code>, or a <code>trainingJobName</code>.
+        /// The job ID of a completed model-training job. You must include either <c>dataProcessingJobId</c>
+        /// and a <c>mlModelTrainingJobId</c>, or a <c>trainingJobName</c>.
         /// </para>
         /// </summary>
         public string MlModelTrainingJobId
@@ -290,8 +290,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property TrainingJobName. 
         /// <para>
-        /// The name of a completed SageMaker training job. You must include either <code>dataProcessingJobId</code>
-        /// and a <code>mlModelTrainingJobId</code>, or a <code>trainingJobName</code>.
+        /// The name of a completed SageMaker training job. You must include either <c>dataProcessingJobId</c>
+        /// and a <c>mlModelTrainingJobId</c>, or a <c>trainingJobName</c>.
         /// </para>
         /// </summary>
         public string TrainingJobName

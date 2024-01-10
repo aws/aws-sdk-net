@@ -63,7 +63,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>db-instance</code>, <code>db-parameter-group</code>, <code>db-security-group</code>
+        /// Valid values: <c>db-instance</c>, <c>db-parameter-group</c>, <c>db-security-group</c>
         /// 
         /// </para>
         /// </summary>

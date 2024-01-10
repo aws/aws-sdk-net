@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFRegional.Model
 {
     /// <summary>
-    /// The operation exceeds a resource limit, for example, the maximum number of <code>WebACL</code>
+    /// The operation exceeds a resource limit, for example, the maximum number of <c>WebACL</c>
     /// objects that you can create for an AWS account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a>
     /// in the <i>AWS WAF Developer Guide</i>.
     /// </summary>

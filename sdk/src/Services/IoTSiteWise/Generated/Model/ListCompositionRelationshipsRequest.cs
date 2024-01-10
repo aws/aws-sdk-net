@@ -31,7 +31,7 @@ namespace Amazon.IoTSiteWise.Model
     /// <summary>
     /// Container for the parameters to the ListCompositionRelationships operation.
     /// Retrieves a paginated list of composition relationships for an asset model of type
-    /// <code>COMPONENT_MODEL</code>.
+    /// <c>COMPONENT_MODEL</c>.
     /// </summary>
     public partial class ListCompositionRelationshipsRequest : AmazonIoTSiteWiseRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AssetModelId. 
         /// <para>
         /// The ID of the asset model. This can be either the actual ID in UUID format, or else
-        /// <code>externalId:</code> followed by the external ID, if it has one. For more information,
+        /// <c>externalId:</c> followed by the external ID, if it has one. For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>

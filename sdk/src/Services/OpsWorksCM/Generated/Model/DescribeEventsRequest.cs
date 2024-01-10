@@ -39,9 +39,8 @@ namespace Amazon.OpsWorksCM.Model
     /// </para>
     ///  
     /// <para>
-    ///  A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-    /// A <code>ValidationException</code> is raised when parameters of the request are not
-    /// valid. 
+    ///  A <c>ResourceNotFoundException</c> is thrown when the server does not exist. A <c>ValidationException</c>
+    /// is raised when parameters of the request are not valid. 
     /// </para>
     /// </summary>
     public partial class DescribeEventsRequest : AmazonOpsWorksCMRequest
@@ -55,8 +54,8 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         /// To receive a paginated response, use this parameter to specify the maximum number
         /// of results to be returned with a single call. If the number of available results exceeds
-        /// this maximum, the response includes a <code>NextToken</code> value that you can assign
-        /// to the <code>NextToken</code> request parameter to get the next set of results. 
+        /// this maximum, the response includes a <c>NextToken</c> value that you can assign to
+        /// the <c>NextToken</c> request parameter to get the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -77,12 +76,11 @@ namespace Amazon.OpsWorksCM.Model
         /// <para>
         /// NextToken is a string that is returned in some command responses. It indicates that
         /// not all entries have been returned, and that you must run at least one more request
-        /// to get remaining items. To get remaining results, call <code>DescribeEvents</code>
-        /// again, and assign the token from the previous results as the value of the <code>nextToken</code>
-        /// parameter. If there are no more results, the response object's <code>nextToken</code>
-        /// parameter value is <code>null</code>. Setting a <code>nextToken</code> value that
-        /// was not returned in your previous results causes an <code>InvalidNextTokenException</code>
-        /// to occur. 
+        /// to get remaining items. To get remaining results, call <c>DescribeEvents</c> again,
+        /// and assign the token from the previous results as the value of the <c>nextToken</c>
+        /// parameter. If there are no more results, the response object's <c>nextToken</c> parameter
+        /// value is <c>null</c>. Setting a <c>nextToken</c> value that was not returned in your
+        /// previous results causes an <c>InvalidNextTokenException</c> to occur. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=10000)]

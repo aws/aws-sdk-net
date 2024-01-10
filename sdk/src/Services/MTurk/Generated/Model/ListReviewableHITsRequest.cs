@@ -30,9 +30,8 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReviewableHITs operation.
-    /// The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal
-    /// to Reviewable or Status equal to Reviewing that belong to the Requester calling the
-    /// operation.
+    /// The <c>ListReviewableHITs</c> operation retrieves the HITs with Status equal to Reviewable
+    /// or Status equal to Reviewing that belong to the Requester calling the operation.
     /// </summary>
     public partial class ListReviewableHITsRequest : AmazonMTurkRequest
     {
@@ -102,8 +101,8 @@ namespace Amazon.MTurk.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable is the
-        /// default value. 
+        ///  Can be either <c>Reviewable</c> or <c>Reviewing</c>. Reviewable is the default value.
+        /// 
         /// </para>
         /// </summary>
         public ReviewableHITStatus Status

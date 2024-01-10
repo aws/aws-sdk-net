@@ -33,11 +33,11 @@ namespace Amazon.Keyspaces.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
+    ///  <c>throughputMode:PAY_PER_REQUEST</c> and 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>throughputMode:PROVISIONED</code>.
+    ///  <c>throughputMode:PROVISIONED</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -74,8 +74,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property ReadCapacityUnits. 
         /// <para>
-        /// The throughput capacity specified for <code>read</code> operations defined in <code>read
-        /// capacity units</code> <code>(RCUs)</code>.
+        /// The throughput capacity specified for <c>read</c> operations defined in <c>read capacity
+        /// units</c> <c>(RCUs)</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -98,16 +98,16 @@ namespace Amazon.Keyspaces.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
+        ///  <c>throughputMode:PAY_PER_REQUEST</c> and 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
-        /// and <code>writeCapacityUnits</code> as input. 
+        ///  <c>throughputMode:PROVISIONED</c> - Provisioned capacity mode requires <c>readCapacityUnits</c>
+        /// and <c>writeCapacityUnits</c> as input. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
+        /// The default is <c>throughput_mode:PAY_PER_REQUEST</c>.
         /// </para>
         ///  
         /// <para>
@@ -131,8 +131,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property WriteCapacityUnits. 
         /// <para>
-        /// The throughput capacity specified for <code>write</code> operations defined in <code>write
-        /// capacity units</code> <code>(WCUs)</code>.
+        /// The throughput capacity specified for <c>write</c> operations defined in <c>write
+        /// capacity units</c> <c>(WCUs)</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

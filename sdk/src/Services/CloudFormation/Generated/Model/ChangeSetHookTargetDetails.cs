@@ -39,7 +39,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property ResourceTargetDetails. 
         /// <para>
-        /// Required if <code>TargetType</code> is <code>RESOURCE</code>.
+        /// Required if <c>TargetType</c> is <c>RESOURCE</c>.
         /// </para>
         /// </summary>
         public ChangeSetHookResourceTargetDetails ResourceTargetDetails

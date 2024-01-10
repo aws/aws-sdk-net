@@ -39,9 +39,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AnonymousUsers. 
         /// <para>
-        ///  A list of <code>AnonymousUserSnapshotJobResult</code> objects that contain information
+        ///  A list of <c>AnonymousUserSnapshotJobResult</c> objects that contain information
         /// on anonymous users and their user configurations. This data provided by you when you
-        /// make a <code>StartDashboardSnapshotJob</code> API call.
+        /// make a <c>StartDashboardSnapshotJob</c> API call.
         /// </para>
         /// </summary>
         public List<AnonymousUserSnapshotJobResult> AnonymousUsers

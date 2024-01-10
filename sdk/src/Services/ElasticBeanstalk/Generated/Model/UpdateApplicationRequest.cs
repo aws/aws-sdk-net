@@ -34,7 +34,7 @@ namespace Amazon.ElasticBeanstalk.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If a property (for example, <code>description</code>) is not provided, the value remains
+    /// If a property (for example, <c>description</c>) is not provided, the value remains
     /// unchanged. To clear these properties, specify an empty string.
     /// </para>
     ///  </note>
@@ -61,8 +61,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property ApplicationName. 
         /// <para>
-        /// The name of the application to update. If no such application is found, <code>UpdateApplication</code>
-        /// returns an <code>InvalidParameterValue</code> error. 
+        /// The name of the application to update. If no such application is found, <c>UpdateApplication</c>
+        /// returns an <c>InvalidParameterValue</c> error. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -113,7 +113,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PartitionCount. 
         /// <para>
-        /// The number of partitions. Valid only if <b>strategy</b> is set to <code>partition</code>.
+        /// The number of partitions. Valid only if <b>strategy</b> is set to <c>partition</c>.
         /// </para>
         /// </summary>
         public int PartitionCount

@@ -62,7 +62,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property GeofenceId. 
         /// <para>
-        /// An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.
+        /// An identifier for the geofence. For example, <c>ExampleGeofence-1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -86,7 +86,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=3)]

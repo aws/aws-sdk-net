@@ -46,8 +46,7 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Policies. 
         /// <para>
-        /// The <code>PoliciesGrantingServiceAccess</code> object that contains details about
-        /// the policy.
+        /// The <c>PoliciesGrantingServiceAccess</c> object that contains details about the policy.
         /// </para>
         /// </summary>
         public List<PolicyGrantingServiceAccess> Policies
@@ -72,8 +71,8 @@ namespace Amazon.IdentityManagement.Model
         /// To learn the service namespace of a service, see <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/reference_policies_actions-resources-contextkeys.html">Actions,
         /// resources, and condition keys for Amazon Web Services services</a> in the <i>Service
         /// Authorization Reference</i>. Choose the name of the service to view details for that
-        /// service. In the first paragraph, find the service prefix. For example, <code>(service
-        /// prefix: a4b)</code>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
+        /// service. In the first paragraph, find the service prefix. For example, <c>(service
+        /// prefix: a4b)</c>. For more information about service namespaces, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">Amazon
         /// Web Services service namespaces</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
         /// </summary>

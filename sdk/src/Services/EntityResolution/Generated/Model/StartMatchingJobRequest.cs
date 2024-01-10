@@ -30,8 +30,8 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the StartMatchingJob operation.
-    /// Starts the <code>MatchingJob</code> of a workflow. The workflow must have previously
-    /// been created using the <code>CreateMatchingWorkflow</code> endpoint.
+    /// Starts the <c>MatchingJob</c> of a workflow. The workflow must have previously been
+    /// created using the <c>CreateMatchingWorkflow</c> endpoint.
     /// </summary>
     public partial class StartMatchingJobRequest : AmazonEntityResolutionRequest
     {

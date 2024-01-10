@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Contains details on one of the errors in the error list returned by the <code>BatchGetTableOptimizer</code>
+    /// Contains details on one of the errors in the error list returned by the <c>BatchGetTableOptimizer</c>
     /// operation.
     /// </summary>
     public partial class BatchGetTableOptimizerError
@@ -81,7 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// An <code>ErrorDetail</code> object containing code and message details about the error.
+        /// An <c>ErrorDetail</c> object containing code and message details about the error.
         /// </para>
         /// </summary>
         public ErrorDetail Error

@@ -52,9 +52,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: Set to <code>"WindowsVSS":"enabled"</code> to enable the <code>WindowsVSS</code>
-        /// backup option and create a Windows VSS backup. Set to <code>"WindowsVSS""disabled"</code>
-        /// to create a regular backup. The <code>WindowsVSS</code> option is not enabled by default.
+        /// Valid values: Set to <c>"WindowsVSS":"enabled"</c> to enable the <c>WindowsVSS</c>
+        /// backup option and create a Windows VSS backup. Set to <c>"WindowsVSS""disabled"</c>
+        /// to create a regular backup. The <c>WindowsVSS</c> option is not enabled by default.
         /// </para>
         /// </summary>
         public Dictionary<string, string> BackupOptions
@@ -95,13 +95,13 @@ namespace Amazon.Backup.Model
         /// <para>
         /// A value in minutes during which a successfully started backup must complete, or else
         /// Backup will cancel the job. This value is optional. This value begins counting down
-        /// from when the backup was scheduled. It does not add additional time for <code>StartWindowMinutes</code>,
+        /// from when the backup was scheduled. It does not add additional time for <c>StartWindowMinutes</c>,
         /// or if the backup started later than scheduled.
         /// </para>
         ///  
         /// <para>
-        /// Like <code>StartWindowMinutes</code>, this parameter has a maximum value of 100 years
-        /// (52,560,000 minutes).
+        /// Like <c>StartWindowMinutes</c>, this parameter has a maximum value of 100 years (52,560,000
+        /// minutes).
         /// </para>
         /// </summary>
         public long CompleteWindowMinutes
@@ -120,7 +120,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// Specifies the IAM role ARN used to create the target recovery point; for example,
-        /// <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -140,8 +140,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartBackupJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.
+        /// calls to <c>StartBackupJob</c>. Retrying a successful request with the same idempotency
+        /// token results in a success message with no action taken.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -247,13 +247,13 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// During the start window, the backup job status remains in <code>CREATED</code> status
-        /// until it has successfully begun or until the start window time has run out. If within
-        /// the start window time Backup receives an error that allows the job to be retried,
-        /// Backup will automatically retry to begin the job at least every 10 minutes until the
-        /// backup successfully begins (the job status changes to <code>RUNNING</code>) or until
-        /// the job status changes to <code>EXPIRED</code> (which is expected to occur when the
-        /// start window time is over).
+        /// During the start window, the backup job status remains in <c>CREATED</c> status until
+        /// it has successfully begun or until the start window time has run out. If within the
+        /// start window time Backup receives an error that allows the job to be retried, Backup
+        /// will automatically retry to begin the job at least every 10 minutes until the backup
+        /// successfully begins (the job status changes to <c>RUNNING</c>) or until the job status
+        /// changes to <c>EXPIRED</c> (which is expected to occur when the start window time is
+        /// over).
         /// </para>
         /// </summary>
         public long StartWindowMinutes

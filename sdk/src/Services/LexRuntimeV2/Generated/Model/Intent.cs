@@ -41,8 +41,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// <summary>
         /// Gets and sets the property ConfirmationState. 
         /// <para>
-        /// Indicates whether the intent has been <code>Confirmed</code>, <code>Denied</code>,
-        /// or <code>None</code> if the confirmation stage has not yet been reached.
+        /// Indicates whether the intent has been <c>Confirmed</c>, <c>Denied</c>, or <c>None</c>
+        /// if the confirmation stage has not yet been reached.
         /// </para>
         /// </summary>
         public ConfirmationState ConfirmationState
@@ -103,30 +103,30 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Failed</code> – The bot failed to fulfill the intent.
+        ///  <c>Failed</c> – The bot failed to fulfill the intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fulfilled</code> – The bot has completed fulfillment of the intent.
+        ///  <c>Fulfilled</c> – The bot has completed fulfillment of the intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FulfillmentInProgress</code> – The bot is in the middle of fulfilling the intent.
+        ///  <c>FulfillmentInProgress</c> – The bot is in the middle of fulfilling the intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code> – The bot is in the middle of eliciting the slot values that
-        /// are necessary to fulfill the intent.
+        ///  <c>InProgress</c> – The bot is in the middle of eliciting the slot values that are
+        /// necessary to fulfill the intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReadyForFulfillment</code> – The bot has elicited all the slot values for the
-        /// intent and is ready to fulfill the intent.
+        ///  <c>ReadyForFulfillment</c> – The bot has elicited all the slot values for the intent
+        /// and is ready to fulfill the intent.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Waiting</code> – The bot is waiting for a response from the user (limited to
-        /// streaming conversations).
+        ///  <c>Waiting</c> – The bot is waiting for a response from the user (limited to streaming
+        /// conversations).
         /// </para>
         ///  </li> </ul>
         /// </summary>

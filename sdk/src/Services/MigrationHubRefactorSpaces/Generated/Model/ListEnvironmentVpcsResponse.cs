@@ -39,7 +39,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property EnvironmentVpcList. 
         /// <para>
-        /// The list of <code>EnvironmentVpc</code> objects. 
+        /// The list of <c>EnvironmentVpc</c> objects. 
         /// </para>
         /// </summary>
         public List<EnvironmentVpc> EnvironmentVpcList

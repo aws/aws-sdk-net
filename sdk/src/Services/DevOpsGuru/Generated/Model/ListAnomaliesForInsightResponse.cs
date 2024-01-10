@@ -60,8 +60,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ProactiveAnomalies. 
         /// <para>
-        ///  An array of <code>ProactiveAnomalySummary</code> objects that represent the requested
-        /// anomalies 
+        ///  An array of <c>ProactiveAnomalySummary</c> objects that represent the requested anomalies
+        /// 
         /// </para>
         /// </summary>
         public List<ProactiveAnomalySummary> ProactiveAnomalies
@@ -79,8 +79,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property ReactiveAnomalies. 
         /// <para>
-        ///  An array of <code>ReactiveAnomalySummary</code> objects that represent the requested
-        /// anomalies 
+        ///  An array of <c>ReactiveAnomalySummary</c> objects that represent the requested anomalies
+        /// 
         /// </para>
         /// </summary>
         public List<ReactiveAnomalySummary> ReactiveAnomalies

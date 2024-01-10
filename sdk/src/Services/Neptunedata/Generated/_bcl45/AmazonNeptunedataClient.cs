@@ -405,8 +405,7 @@ namespace Amazon.Neptunedata
 
 
         /// <summary>
-        /// Cancels a specified load job. This is an HTTP <code>DELETE</code> request. See <a
-        /// href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
+        /// Cancels a specified load job. This is an HTTP <c>DELETE</c> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
         /// Loader Get-Status API</a> for more information.
         /// 
         ///  
@@ -471,8 +470,7 @@ namespace Amazon.Neptunedata
 
 
         /// <summary>
-        /// Cancels a specified load job. This is an HTTP <code>DELETE</code> request. See <a
-        /// href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
+        /// Cancels a specified load job. This is an HTTP <c>DELETE</c> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/load-api-reference-status.htm">Neptune
         /// Loader Get-Status API</a> for more information.
         /// 
         ///  
@@ -545,7 +543,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Cancels a Neptune ML data processing job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-        /// <code>dataprocessing</code> command</a>.
+        /// <c>dataprocessing</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -604,7 +602,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Cancels a Neptune ML data processing job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-        /// <code>dataprocessing</code> command</a>.
+        /// <c>dataprocessing</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -670,7 +668,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Cancels a Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -729,7 +727,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Cancels a Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -1597,10 +1595,10 @@ namespace Amazon.Neptunedata
         /// 
         ///  
         /// <para>
-        /// Neptune fast reset is a two-step process. First you call <code>ExecuteFastReset</code>
-        /// with <code>action</code> set to <code>initiateDatabaseReset</code>. This returns a
-        /// UUID token which you then include when calling <code>ExecuteFastReset</code> again
-        /// with <code>action</code> set to <code>performDatabaseReset</code>. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-fast-reset.html">Empty
+        /// Neptune fast reset is a two-step process. First you call <c>ExecuteFastReset</c> with
+        /// <c>action</c> set to <c>initiateDatabaseReset</c>. This returns a UUID token which
+        /// you then include when calling <c>ExecuteFastReset</c> again with <c>action</c> set
+        /// to <c>performDatabaseReset</c>. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-fast-reset.html">Empty
         /// an Amazon Neptune DB cluster using the fast reset API</a>.
         /// </para>
         ///  
@@ -1671,10 +1669,10 @@ namespace Amazon.Neptunedata
         /// 
         ///  
         /// <para>
-        /// Neptune fast reset is a two-step process. First you call <code>ExecuteFastReset</code>
-        /// with <code>action</code> set to <code>initiateDatabaseReset</code>. This returns a
-        /// UUID token which you then include when calling <code>ExecuteFastReset</code> again
-        /// with <code>action</code> set to <code>performDatabaseReset</code>. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-fast-reset.html">Empty
+        /// Neptune fast reset is a two-step process. First you call <c>ExecuteFastReset</c> with
+        /// <c>action</c> set to <c>initiateDatabaseReset</c>. This returns a UUID token which
+        /// you then include when calling <c>ExecuteFastReset</c> again with <c>action</c> set
+        /// to <c>performDatabaseReset</c>. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/manage-console-fast-reset.html">Empty
         /// an Amazon Neptune DB cluster using the fast reset API</a>.
         /// </para>
         ///  
@@ -1751,10 +1749,10 @@ namespace Amazon.Neptunedata
         /// 
         ///  
         /// <para>
-        /// Amazon Neptune has added a Gremlin feature named <code>explain</code> that provides
-        /// is a self-service tool for understanding the execution approach being taken by the
-        /// Neptune engine for the query. You invoke it by adding an <code>explain</code> parameter
-        /// to an HTTP call that submits a Gremlin query.
+        /// Amazon Neptune has added a Gremlin feature named <c>explain</c> that provides is a
+        /// self-service tool for understanding the execution approach being taken by the Neptune
+        /// engine for the query. You invoke it by adding an <c>explain</c> parameter to an HTTP
+        /// call that submits a Gremlin query.
         /// </para>
         ///  
         /// <para>
@@ -1875,10 +1873,10 @@ namespace Amazon.Neptunedata
         /// 
         ///  
         /// <para>
-        /// Amazon Neptune has added a Gremlin feature named <code>explain</code> that provides
-        /// is a self-service tool for understanding the execution approach being taken by the
-        /// Neptune engine for the query. You invoke it by adding an <code>explain</code> parameter
-        /// to an HTTP call that submits a Gremlin query.
+        /// Amazon Neptune has added a Gremlin feature named <c>explain</c> that provides is a
+        /// self-service tool for understanding the execution approach being taken by the Neptune
+        /// engine for the query. You invoke it by adding an <c>explain</c> parameter to an HTTP
+        /// call that submits a Gremlin query.
         /// </para>
         ///  
         /// <para>
@@ -2442,7 +2440,7 @@ namespace Amazon.Neptunedata
 
 
         /// <summary>
-        /// Executes an openCypher <code>explain</code> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html">The
+        /// Executes an openCypher <c>explain</c> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html">The
         /// openCypher explain feature</a> for more information.
         /// 
         ///  
@@ -2542,7 +2540,7 @@ namespace Amazon.Neptunedata
 
 
         /// <summary>
-        /// Executes an openCypher <code>explain</code> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html">The
+        /// Executes an openCypher <c>explain</c> request. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/access-graph-opencypher-explain.html">The
         /// openCypher explain feature</a> for more information.
         /// 
         ///  
@@ -3334,7 +3332,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Retrieves information about a specified data processing job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-        /// <code>dataprocessing</code> command</a>.
+        /// <c>dataprocessing</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -3393,7 +3391,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Retrieves information about a specified data processing job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-        /// <code>dataprocessing</code> command</a>.
+        /// <c>dataprocessing</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -3584,7 +3582,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Retrieves information about a Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -3643,7 +3641,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Retrieves information about a Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -4148,14 +4146,14 @@ namespace Amazon.Neptunedata
         ///  
         /// <para>
         /// With the Neptune Streams feature, you can generate a complete sequence of change-log
-        /// entries that record every change made to your graph data as it happens. <code>GetPropertygraphStream</code>
+        /// entries that record every change made to your graph data as it happens. <c>GetPropertygraphStream</c>
         /// lets you collect these change-log entries for a property graph.
         /// </para>
         ///  
         /// <para>
         /// The Neptune streams feature needs to be enabled on your Neptune DBcluster. To enable
         /// streams, set the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/parameters.html#parameters-db-cluster-parameters-neptune_streams">neptune_streams</a>
-        /// DB cluster parameter to <code>1</code>.
+        /// DB cluster parameter to <c>1</c>.
         /// </para>
         ///  
         /// <para>
@@ -4254,14 +4252,14 @@ namespace Amazon.Neptunedata
         ///  
         /// <para>
         /// With the Neptune Streams feature, you can generate a complete sequence of change-log
-        /// entries that record every change made to your graph data as it happens. <code>GetPropertygraphStream</code>
+        /// entries that record every change made to your graph data as it happens. <c>GetPropertygraphStream</c>
         /// lets you collect these change-log entries for a property graph.
         /// </para>
         ///  
         /// <para>
         /// The Neptune streams feature needs to be enabled on your Neptune DBcluster. To enable
         /// streams, set the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/parameters.html#parameters-db-cluster-parameters-neptune_streams">neptune_streams</a>
-        /// DB cluster parameter to <code>1</code>.
+        /// DB cluster parameter to <c>1</c>.
         /// </para>
         ///  
         /// <para>
@@ -4756,14 +4754,14 @@ namespace Amazon.Neptunedata
         ///  
         /// <para>
         /// With the Neptune Streams feature, you can generate a complete sequence of change-log
-        /// entries that record every change made to your graph data as it happens. <code>GetSparqlStream</code>
+        /// entries that record every change made to your graph data as it happens. <c>GetSparqlStream</c>
         /// lets you collect these change-log entries for an RDF graph.
         /// </para>
         ///  
         /// <para>
         /// The Neptune streams feature needs to be enabled on your Neptune DBcluster. To enable
         /// streams, set the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/parameters.html#parameters-db-cluster-parameters-neptune_streams">neptune_streams</a>
-        /// DB cluster parameter to <code>1</code>.
+        /// DB cluster parameter to <c>1</c>.
         /// </para>
         ///  
         /// <para>
@@ -4843,14 +4841,14 @@ namespace Amazon.Neptunedata
         ///  
         /// <para>
         /// With the Neptune Streams feature, you can generate a complete sequence of change-log
-        /// entries that record every change made to your graph data as it happens. <code>GetSparqlStream</code>
+        /// entries that record every change made to your graph data as it happens. <c>GetSparqlStream</c>
         /// lets you collect these change-log entries for an RDF graph.
         /// </para>
         ///  
         /// <para>
         /// The Neptune streams feature needs to be enabled on your Neptune DBcluster. To enable
         /// streams, set the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/parameters.html#parameters-db-cluster-parameters-neptune_streams">neptune_streams</a>
-        /// DB cluster parameter to <code>1</code>.
+        /// DB cluster parameter to <c>1</c>.
         /// </para>
         ///  
         /// <para>
@@ -5103,7 +5101,7 @@ namespace Amazon.Neptunedata
 
 
         /// <summary>
-        /// Retrieves a list of the <code>loadIds</code> for all active loader jobs.
+        /// Retrieves a list of the <c>loadIds</c> for all active loader jobs.
         /// 
         ///  
         /// <para>
@@ -5164,7 +5162,7 @@ namespace Amazon.Neptunedata
 
 
         /// <summary>
-        /// Retrieves a list of the <code>loadIds</code> for all active loader jobs.
+        /// Retrieves a list of the <c>loadIds</c> for all active loader jobs.
         /// 
         ///  
         /// <para>
@@ -5483,7 +5481,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Lists Neptune ML model-training jobs. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -5542,7 +5540,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Lists Neptune ML model-training jobs. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -6326,7 +6324,7 @@ namespace Amazon.Neptunedata
         /// <summary>
         /// Creates a new Neptune ML data processing job for processing the graph data exported
         /// from Neptune for training. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-        /// <code>dataprocessing</code> command</a>.
+        /// <c>dataprocessing</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -6386,7 +6384,7 @@ namespace Amazon.Neptunedata
         /// <summary>
         /// Creates a new Neptune ML data processing job for processing the graph data exported
         /// from Neptune for training. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-dataprocessing.html">The
-        /// <code>dataprocessing</code> command</a>.
+        /// <c>dataprocessing</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -6452,7 +6450,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Creates a new Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>
@@ -6511,7 +6509,7 @@ namespace Amazon.Neptunedata
 
         /// <summary>
         /// Creates a new Neptune ML model training job. See <a href="https://docs.aws.amazon.com/neptune/latest/userguide/machine-learning-api-modeltraining.html">Model
-        /// training using the <code>modeltraining</code> command</a>.
+        /// training using the <c>modeltraining</c> command</a>.
         /// 
         ///  
         /// <para>

@@ -62,7 +62,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The recommendation description / disambiguator - e.g. <code>DKIM1</code> and <code>DKIM2</code>
+        /// The recommendation description / disambiguator - e.g. <c>DKIM1</c> and <c>DKIM2</c>
         /// are different recommendations about your DKIM setup.
         /// </para>
         /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Impact. 
         /// <para>
-        /// The recommendation impact, with values like <code>HIGH</code> or <code>LOW</code>.
+        /// The recommendation impact, with values like <c>HIGH</c> or <c>LOW</c>.
         /// </para>
         /// </summary>
         public RecommendationImpact Impact
@@ -117,7 +117,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The resource affected by the recommendation, with values like <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.
+        /// The resource affected by the recommendation, with values like <c>arn:aws:ses:us-east-1:123456789012:identity/example.com</c>.
         /// </para>
         /// </summary>
         public string ResourceArn
@@ -135,7 +135,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The recommendation status, with values like <code>OPEN</code> or <code>FIXED</code>.
+        /// The recommendation status, with values like <c>OPEN</c> or <c>FIXED</c>.
         /// </para>
         /// </summary>
         public RecommendationStatus Status
@@ -153,8 +153,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code>
-        /// or <code>BIMI</code>.
+        /// The recommendation type, with values like <c>DKIM</c>, <c>SPF</c>, <c>DMARC</c> or
+        /// <c>BIMI</c>.
         /// </para>
         /// </summary>
         public RecommendationType Type

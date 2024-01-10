@@ -81,7 +81,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FunctionInput. 
         /// <para>
-        /// A <code>FunctionInput</code> object that redefines the function in the Data Catalog.
+        /// A <c>FunctionInput</c> object that redefines the function in the Data Catalog.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -118,12 +118,12 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the set of featured results. When the value is <code>ACTIVE</code>,
+        /// The current status of the set of featured results. When the value is <c>ACTIVE</c>,
         /// featured results are ready for use. You can still configure your settings before setting
-        /// the status to <code>ACTIVE</code>. You can set the status to <code>ACTIVE</code> or
-        /// <code>INACTIVE</code> using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a>
+        /// the status to <c>ACTIVE</c>. You can set the status to <c>ACTIVE</c> or <c>INACTIVE</c>
+        /// using the <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UpdateFeaturedResultsSet.html">UpdateFeaturedResultsSet</a>
         /// API. The queries you specify for featured results must be unique per featured results
-        /// set for each index, whether the status is <code>ACTIVE</code> or <code>INACTIVE</code>.
+        /// set for each index, whether the status is <c>ACTIVE</c> or <c>INACTIVE</c>.
         /// </para>
         /// </summary>
         public FeaturedResultsSetStatus Status

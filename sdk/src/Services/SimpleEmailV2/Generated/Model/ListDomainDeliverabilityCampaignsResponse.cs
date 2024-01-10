@@ -61,7 +61,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code>
+        /// A token that’s returned from a previous call to the <c>ListDomainDeliverabilityCampaigns</c>
         /// operation. This token indicates the position of the campaign in the list of campaigns.
         /// </para>
         /// </summary>

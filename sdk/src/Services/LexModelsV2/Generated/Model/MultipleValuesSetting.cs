@@ -38,18 +38,18 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property AllowMultipleValues. 
         /// <para>
-        /// Indicates whether a slot can return multiple values. When <code>true</code>, the slot
-        /// may return more than one value in a response. When <code>false</code>, the slot returns
-        /// only a single value.
+        /// Indicates whether a slot can return multiple values. When <c>true</c>, the slot may
+        /// return more than one value in a response. When <c>false</c>, the slot returns only
+        /// a single value.
         /// </para>
         ///  
         /// <para>
         /// Multi-value slots are only available in the en-US locale. If you set this value to
-        /// <code>true</code> in any other locale, Amazon Lex throws a <code>ValidationException</code>.
+        /// <c>true</c> in any other locale, Amazon Lex throws a <c>ValidationException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>allowMutlipleValues</code> is not set, the default value is <code>false</code>.
+        /// If the <c>allowMutlipleValues</c> is not set, the default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool AllowMultipleValues

@@ -34,8 +34,8 @@ namespace Amazon.IoTEvents.Model
     /// 
     ///  
     /// <para>
-    /// You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The
-    /// expressions accept literals, operators, functions, references, and substitutions templates.
+    /// You must use expressions for all parameters in <c>IotSiteWiseAction</c>. The expressions
+    /// accept literals, operators, functions, references, and substitutions templates.
     /// </para>
     ///  
     /// <para>
@@ -44,33 +44,33 @@ namespace Amazon.IoTEvents.Model
     ///  <ul> <li> 
     /// <para>
     /// For literal values, the expressions must contain single quotes. For example, the value
-    /// for the <code>propertyAlias</code> parameter can be <code>'/company/windfarm/3/turbine/7/temperature'</code>.
+    /// for the <c>propertyAlias</c> parameter can be <c>'/company/windfarm/3/turbine/7/temperature'</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For references, you must specify either variables or input values. For example, the
-    /// value for the <code>assetId</code> parameter can be <code>$input.TurbineInput.assetId1</code>.
+    /// value for the <c>assetId</c> parameter can be <c>$input.TurbineInput.assetId1</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a substitution template, you must use <code>${}</code>, and the template must
-    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// For a substitution template, you must use <c>${}</c>, and the template must be in
+    /// single quotes. A substitution template can also contain a combination of literals,
     /// operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
-    /// In the following example, the value for the <code>propertyAlias</code> parameter uses
-    /// a substitution template. 
+    /// In the following example, the value for the <c>propertyAlias</c> parameter uses a
+    /// substitution template. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/
-    /// ${$input.TemperatureInput.sensorData.turbineID}/temperature'</code> 
+    ///  <c>'company/windfarm/${$input.TemperatureInput.sensorData.windfarmID}/turbine/ ${$input.TemperatureInput.sensorData.turbineID}/temperature'</c>
+    /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// You must specify either <code>propertyAlias</code> or both <code>assetId</code> and
-    /// <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.
+    /// You must specify either <c>propertyAlias</c> or both <c>assetId</c> and <c>propertyId</c>
+    /// to identify the target asset property in AWS IoT SiteWise.
     /// </para>
     ///  
     /// <para>

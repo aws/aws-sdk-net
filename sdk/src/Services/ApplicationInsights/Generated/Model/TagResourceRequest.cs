@@ -71,8 +71,8 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// A list of tags that to add to the application. A tag consists of a required tag key
-        /// (<code>Key</code>) and an associated tag value (<code>Value</code>). The maximum length
-        /// of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+        /// (<c>Key</c>) and an associated tag value (<c>Value</c>). The maximum length of a tag
+        /// key is 128 characters. The maximum length of a tag value is 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

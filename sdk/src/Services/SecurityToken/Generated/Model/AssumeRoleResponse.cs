@@ -45,8 +45,8 @@ namespace Amazon.SecurityToken.Model
         /// The Amazon Resource Name (ARN) and the assumed role ID, which are identifiers that
         /// you can use to refer to the resulting temporary security credentials. For example,
         /// you can reference these credentials as a principal in a resource-based policy by using
-        /// the ARN or assumed role ID. The ARN and ID include the <code>RoleSessionName</code>
-        /// that you specified when you called <code>AssumeRole</code>. 
+        /// the ARN or assumed role ID. The ARN and ID include the <c>RoleSessionName</c> that
+        /// you specified when you called <c>AssumeRole</c>. 
         /// </para>
         /// </summary>
         public AssumedRoleUser AssumedRoleUser
@@ -110,17 +110,17 @@ namespace Amazon.SecurityToken.Model
         /// <summary>
         /// Gets and sets the property SourceIdentity. 
         /// <para>
-        /// The source identity specified by the principal that is calling the <code>AssumeRole</code>
+        /// The source identity specified by the principal that is calling the <c>AssumeRole</c>
         /// operation.
         /// </para>
         ///  
         /// <para>
         /// You can require users to specify a source identity when they assume a role. You do
-        /// this by using the <code>sts:SourceIdentity</code> condition key in a role trust policy.
+        /// this by using the <c>sts:SourceIdentity</c> condition key in a role trust policy.
         /// You can use source identity information in CloudTrail logs to determine who took actions
-        /// with a role. You can use the <code>aws:SourceIdentity</code> condition key to further
-        /// control access to Amazon Web Services resources based on the value of source identity.
-        /// For more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+        /// with a role. You can use the <c>aws:SourceIdentity</c> condition key to further control
+        /// access to Amazon Web Services resources based on the value of source identity. For
+        /// more information about using source identity, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
         /// and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  

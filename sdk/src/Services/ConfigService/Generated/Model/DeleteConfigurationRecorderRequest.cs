@@ -40,7 +40,7 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// This action does not delete the configuration information that was previously recorded.
-    /// You will be able to access the previously recorded information by using the <code>GetResourceConfigHistory</code>
+    /// You will be able to access the previously recorded information by using the <c>GetResourceConfigHistory</c>
     /// action, but you will not be able to access this information in the Config console
     /// until you create a new configuration recorder.
     /// </para>
@@ -53,8 +53,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property ConfigurationRecorderName. 
         /// <para>
         /// The name of the configuration recorder to be deleted. You can retrieve the name of
-        /// your configuration recorder by using the <code>DescribeConfigurationRecorders</code>
-        /// action.
+        /// your configuration recorder by using the <c>DescribeConfigurationRecorders</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

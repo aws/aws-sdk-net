@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// The access configuration file for the ML model. You can explicitly accept the model
-    /// end-user license agreement (EULA) within the <code>ModelAccessConfig</code>. For more
-    /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user
+    /// end-user license agreement (EULA) within the <c>ModelAccessConfig</c>. For more information,
+    /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/jumpstart-foundation-models-choose.html#jumpstart-foundation-models-choose-eula">End-user
     /// license agreements</a>.
     /// </summary>
     public partial class ModelAccessConfig
@@ -41,11 +41,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AcceptEula. 
         /// <para>
-        /// Specifies agreement to the model end-user license agreement (EULA). The <code>AcceptEula</code>
-        /// value must be explicitly defined as <code>True</code> in order to accept the EULA
-        /// that this model requires. You are responsible for reviewing and complying with any
-        /// applicable license terms and making sure they are acceptable for your use case before
-        /// downloading or using a model.
+        /// Specifies agreement to the model end-user license agreement (EULA). The <c>AcceptEula</c>
+        /// value must be explicitly defined as <c>True</c> in order to accept the EULA that this
+        /// model requires. You are responsible for reviewing and complying with any applicable
+        /// license terms and making sure they are acceptable for your use case before downloading
+        /// or using a model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

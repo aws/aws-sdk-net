@@ -47,27 +47,26 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>default-association-route-table</code> - Indicates whether this is the default
-        /// association route table for the transit gateway (<code>true</code> | <code>false</code>).
+        ///  <c>default-association-route-table</c> - Indicates whether this is the default association
+        /// route table for the transit gateway (<c>true</c> | <c>false</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>default-propagation-route-table</code> - Indicates whether this is the default
-        /// propagation route table for the transit gateway (<code>true</code> | <code>false</code>).
+        ///  <c>default-propagation-route-table</c> - Indicates whether this is the default propagation
+        /// route table for the transit gateway (<c>true</c> | <c>false</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the route table (<code>available</code> | <code>deleting</code>
-        /// | <code>deleted</code> | <code>pending</code>).
+        ///  <c>state</c> - The state of the route table (<c>available</c> | <c>deleting</c> |
+        /// <c>deleted</c> | <c>pending</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-id</code> - The ID of the transit gateway.
+        ///  <c>transit-gateway-id</c> - The ID of the transit gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-route-table-id</code> - The ID of the transit gateway route
-        /// table.
+        ///  <c>transit-gateway-route-table-id</c> - The ID of the transit gateway route table.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -87,7 +86,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

@@ -31,7 +31,7 @@ namespace Amazon.IoT.Model
     /// <summary>
     /// Container for the parameters to the CreateDimension operation.
     /// Create a dimension that you can use to limit the scope of a metric used in a security
-    /// profile for IoT Device Defender. For example, using a <code>TOPIC_FILTER</code> dimension,
+    /// profile for IoT Device Defender. For example, using a <c>TOPIC_FILTER</c> dimension,
     /// you can narrow down the scope of the metric only to MQTT topics whose name match the
     /// pattern specified in the dimension.
     /// 
@@ -94,8 +94,8 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property StringValues. 
         /// <para>
-        /// Specifies the value or list of values for the dimension. For <code>TOPIC_FILTER</code>
-        /// dimensions, this is a pattern used to match the MQTT topic (for example, "admin/#").
+        /// Specifies the value or list of values for the dimension. For <c>TOPIC_FILTER</c> dimensions,
+        /// this is a pattern used to match the MQTT topic (for example, "admin/#").
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -132,7 +132,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Specifies the type of dimension. Supported types: <code>TOPIC_FILTER.</code> 
+        /// Specifies the type of dimension. Supported types: <c>TOPIC_FILTER.</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

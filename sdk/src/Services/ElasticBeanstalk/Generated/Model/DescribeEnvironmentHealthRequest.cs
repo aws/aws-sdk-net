@@ -42,7 +42,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property AttributeNames. 
         /// <para>
-        /// Specify the response elements to return. To retrieve all attributes, set to <code>All</code>.
+        /// Specify the response elements to return. To retrieve all attributes, set to <c>All</c>.
         /// If no attribute names are specified, returns the name of the environment.
         /// </para>
         /// </summary>

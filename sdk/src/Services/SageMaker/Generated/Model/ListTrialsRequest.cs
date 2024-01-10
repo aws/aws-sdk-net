@@ -124,8 +124,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous call to <code>ListTrials</code> didn't return the full set of trials,
-        /// the call returns a token for getting the next set of trials.
+        /// If the previous call to <c>ListTrials</c> didn't return the full set of trials, the
+        /// call returns a token for getting the next set of trials.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]
@@ -144,7 +144,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// The property used to sort results. The default value is <code>CreationTime</code>.
+        /// The property used to sort results. The default value is <c>CreationTime</c>.
         /// </para>
         /// </summary>
         public SortTrialsBy SortBy
@@ -162,7 +162,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// The sort order. The default value is <code>Descending</code>.
+        /// The sort order. The default value is <c>Descending</c>.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

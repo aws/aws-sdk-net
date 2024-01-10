@@ -87,10 +87,10 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
-        /// The date and time that the invitation expires. This is the <code>CreationDate</code>
-        /// plus the <code>ProposalDurationInHours</code> that is specified in the <code>ProposalThresholdPolicy</code>.
+        /// The date and time that the invitation expires. This is the <c>CreationDate</c> plus
+        /// the <c>ProposalDurationInHours</c> that is specified in the <c>ProposalThresholdPolicy</c>.
         /// After this date and time, the invitee can no longer create a member and join the network
-        /// using this <code>InvitationId</code>.
+        /// using this <c>InvitationId</c>.
         /// </para>
         /// </summary>
         public DateTime ExpirationDate
@@ -146,27 +146,26 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The invitee hasn't created a member to join the network, and
-        /// the invitation hasn't yet expired.
+        ///  <c>PENDING</c> - The invitee hasn't created a member to join the network, and the
+        /// invitation hasn't yet expired.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCEPTING</code> - The invitee has begun creating a member, and creation hasn't
-        /// yet completed.
+        ///  <c>ACCEPTING</c> - The invitee has begun creating a member, and creation hasn't yet
+        /// completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCEPTED</code> - The invitee created a member and joined the network using
-        /// the <code>InvitationID</code>.
+        ///  <c>ACCEPTED</c> - The invitee created a member and joined the network using the <c>InvitationID</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REJECTED</code> - The invitee rejected the invitation.
+        ///  <c>REJECTED</c> - The invitee rejected the invitation.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXPIRED</code> - The invitee neither created a member nor rejected the invitation
-        /// before the <code>ExpirationDate</code>.
+        ///  <c>EXPIRED</c> - The invitee neither created a member nor rejected the invitation
+        /// before the <c>ExpirationDate</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

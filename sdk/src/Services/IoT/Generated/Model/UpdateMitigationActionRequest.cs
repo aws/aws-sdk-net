@@ -47,7 +47,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property ActionName. 
         /// <para>
-        /// The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>.
+        /// The friendly name for the mitigation action. You cannot change the name by using <c>UpdateMitigationAction</c>.
         /// Instead, you must delete and recreate the mitigation action with the new name.
         /// </para>
         /// </summary>

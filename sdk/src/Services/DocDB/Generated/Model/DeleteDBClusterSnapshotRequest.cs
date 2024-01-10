@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The cluster snapshot must be in the <code>available</code> state to be deleted.
+    /// The cluster snapshot must be in the <c>available</c> state to be deleted.
     /// </para>
     ///  </note>
     /// </summary>
@@ -50,7 +50,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be the name of an existing cluster snapshot in the <code>available</code>
+        /// Constraints: Must be the name of an existing cluster snapshot in the <c>available</c>
         /// state.
         /// </para>
         /// </summary>

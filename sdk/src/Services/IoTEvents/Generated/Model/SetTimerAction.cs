@@ -41,11 +41,10 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property DurationExpression. 
         /// <para>
         /// The duration of the timer, in seconds. You can use a string expression that includes
-        /// numbers, variables (<code>$variable.&lt;variable-name&gt;</code>), and input values
-        /// (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>) as the duration. The
-        /// range of the duration is 1-31622400 seconds. To ensure accuracy, the minimum duration
-        /// is 60 seconds. The evaluated result of the duration is rounded down to the nearest
-        /// whole number. 
+        /// numbers, variables (<c>$variable.&lt;variable-name&gt;</c>), and input values (<c>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</c>)
+        /// as the duration. The range of the duration is 1-31622400 seconds. To ensure accuracy,
+        /// the minimum duration is 60 seconds. The evaluated result of the duration is rounded
+        /// down to the nearest whole number. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

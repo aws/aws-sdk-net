@@ -58,8 +58,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CurrencyCode. 
         /// <para>
-        /// The currency in which the <code>limitPrice</code> amount is specified. At this time,
-        /// the only supported currency is <code>USD</code>.
+        /// The currency in which the <c>limitPrice</c> amount is specified. At this time, the
+        /// only supported currency is <c>USD</c>.
         /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode

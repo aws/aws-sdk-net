@@ -36,7 +36,7 @@ namespace Amazon.IoTEvents.Model
     /// By default, AWS IoT Events generates a standard payload in JSON for any action. This
     /// action payload contains all attribute-value pairs that have the information about
     /// the detector model instance and the event triggered the action. To configure the action
-    /// payload, you can use <code>contentExpression</code>.
+    /// payload, you can use <c>contentExpression</c>.
     /// </para>
     /// </summary>
     public partial class Payload
@@ -48,10 +48,10 @@ namespace Amazon.IoTEvents.Model
         /// Gets and sets the property ContentExpression. 
         /// <para>
         /// The content of the payload. You can use a string expression that includes quoted strings
-        /// (<code>'&lt;string&gt;'</code>), variables (<code>$variable.&lt;variable-name&gt;</code>),
-        /// input values (<code>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</code>), string
-        /// concatenations, and quoted strings that contain <code>${}</code> as the content. The
-        /// recommended maximum size of a content expression is 1 KB.
+        /// (<c>'&lt;string&gt;'</c>), variables (<c>$variable.&lt;variable-name&gt;</c>), input
+        /// values (<c>$input.&lt;input-name&gt;.&lt;path-to-datum&gt;</c>), string concatenations,
+        /// and quoted strings that contain <c>${}</c> as the content. The recommended maximum
+        /// size of a content expression is 1 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
@@ -70,7 +70,7 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The value of the payload type can be either <code>STRING</code> or <code>JSON</code>.
+        /// The value of the payload type can be either <c>STRING</c> or <c>JSON</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

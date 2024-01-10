@@ -31,8 +31,8 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the CreateCrawler operation.
     /// Creates a new crawler with specified targets, role, configuration, and optional schedule.
-    /// At least one crawl target must be specified, in the <code>s3Targets</code> field,
-    /// the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.
+    /// At least one crawl target must be specified, in the <c>s3Targets</c> field, the <c>jdbcTargets</c>
+    /// field, or the <c>DynamoDBTargets</c> field.
     /// </summary>
     public partial class CreateCrawlerRequest : AmazonGlueRequest
     {
@@ -95,7 +95,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CrawlerSecurityConfiguration. 
         /// <para>
-        /// The name of the <code>SecurityConfiguration</code> structure to be used by this crawler.
+        /// The name of the <c>SecurityConfiguration</c> structure to be used by this crawler.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -114,7 +114,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DatabaseName. 
         /// <para>
-        /// The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
+        /// The Glue database where results are written, such as: <c>arn:aws:daylight:us-east-1::database/sometable/*</c>.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -245,9 +245,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// A <c>cron</c> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
         /// Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15
-        /// UTC, you would specify: <code>cron(15 12 * * ? *)</code>.
+        /// UTC, you would specify: <c>cron(15 12 * * ? *)</c>.
         /// </para>
         /// </summary>
         public string Schedule

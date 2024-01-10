@@ -73,16 +73,16 @@ namespace Amazon.OAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>$AccountName</code> is the name of the account
+        ///  <c>$AccountName</c> is the name of the account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>$AccountEmail</code> is the globally unique email address of the account
+        ///  <c>$AccountEmail</c> is the globally unique email address of the account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>$AccountEmailNoDomain</code> is the email address of the account without the
-        /// domain name
+        ///  <c>$AccountEmailNoDomain</c> is the email address of the account without the domain
+        /// name
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property NewDiskName. 
         /// <para>
-        /// The new disk name (<code>my-new-disk</code>).
+        /// The new disk name (<c>my-new-disk</c>).
         /// </para>
         /// </summary>
         public string NewDiskName
@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property OriginalDiskPath. 
         /// <para>
-        /// The original disk path exposed to the instance (for example, <code>/dev/sdh</code>).
+        /// The original disk path exposed to the instance (for example, <c>/dev/sdh</c>).
         /// </para>
         /// </summary>
         public string OriginalDiskPath

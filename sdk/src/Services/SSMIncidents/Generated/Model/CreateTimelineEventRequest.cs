@@ -85,7 +85,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventReferences. 
         /// <para>
-        /// Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon
+        /// Adds one or more references to the <c>TimelineEvent</c>. A reference is an Amazon
         /// Web Services resource involved or associated with the incident. To specify a reference,
         /// enter its Amazon Resource Name (ARN). You can also specify a related item associated
         /// with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a
@@ -128,14 +128,14 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of event. You can create timeline events of type <code>Custom Event</code>
-        /// and <code>Note</code>.
+        /// The type of event. You can create timeline events of type <c>Custom Event</c> and
+        /// <c>Note</c>.
         /// </para>
         ///  
         /// <para>
         /// To make a Note-type event appear on the <i>Incident notes</i> panel in the console,
-        /// specify <code>eventType</code> as <code>Note</code>and enter the Amazon Resource Name
-        /// (ARN) of the incident as the value for <code>eventReference</code>.
+        /// specify <c>eventType</c> as <c>Note</c>and enter the Amazon Resource Name (ARN) of
+        /// the incident as the value for <c>eventReference</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

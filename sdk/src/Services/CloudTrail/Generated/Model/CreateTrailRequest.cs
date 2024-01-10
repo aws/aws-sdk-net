@@ -57,7 +57,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        /// Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
+        /// Not required unless you specify <c>CloudWatchLogsRoleArn</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -190,8 +190,8 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specifies the KMS key ID to use to encrypt the logs delivered by CloudTrail. The value
-        /// can be an alias name prefixed by <code>alias/</code>, a fully specified ARN to an
-        /// alias, a fully specified ARN to a key, or a globally unique identifier.
+        /// can be an alias name prefixed by <c>alias/</c>, a fully specified ARN to an alias,
+        /// a fully specified ARN to a key, or a globally unique identifier.
         /// </para>
         ///  
         /// <para>
@@ -205,20 +205,20 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>alias/MyAliasName</code> 
+        ///  <c>alias/MyAliasName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</code> 
+        ///  <c>arn:aws:kms:us-east-2:123456789012:alias/MyAliasName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:kms:us-east-2:123456789012:key/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>12345678-1234-1234-1234-123456789012</code> 
+        ///  <c>12345678-1234-1234-1234-123456789012</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -254,8 +254,8 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Have no adjacent periods, underscores or dashes. Names like <code>my-_namespace</code>
-        /// and <code>my--namespace</code> are not valid.
+        /// Have no adjacent periods, underscores or dashes. Names like <c>my-_namespace</c> and
+        /// <c>my--namespace</c> are not valid.
         /// </para>
         ///  </li> <li> 
         /// <para>

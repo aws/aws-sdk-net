@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Blueprints. 
         /// <para>
-        /// Returns a list of blueprint as a <code>Blueprints</code> object.
+        /// Returns a list of blueprint as a <c>Blueprints</c> object.
         /// </para>
         /// </summary>
         public List<Blueprint> Blueprints
@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MissingBlueprints. 
         /// <para>
-        /// Returns a list of <code>BlueprintNames</code> that were not found.
+        /// Returns a list of <c>BlueprintNames</c> that were not found.
         /// </para>
         /// </summary>
         public List<string> MissingBlueprints

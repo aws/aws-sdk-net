@@ -32,14 +32,14 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the StopNotebookInstance operation.
     /// Terminates the ML compute instance. Before terminating the instance, SageMaker disconnects
     /// the ML storage volume from it. SageMaker preserves the ML storage volume. SageMaker
-    /// stops charging you for the ML compute instance when you call <code>StopNotebookInstance</code>.
+    /// stops charging you for the ML compute instance when you call <c>StopNotebookInstance</c>.
     /// 
     ///  
     /// <para>
     /// To access data on the ML storage volume for a notebook instance that has been terminated,
-    /// call the <code>StartNotebookInstance</code> API. <code>StartNotebookInstance</code>
-    /// launches another ML compute instance, configures it, and attaches the preserved ML
-    /// storage volume so you can continue your work. 
+    /// call the <c>StartNotebookInstance</c> API. <c>StartNotebookInstance</c> launches another
+    /// ML compute instance, configures it, and attaches the preserved ML storage volume so
+    /// you can continue your work. 
     /// </para>
     /// </summary>
     public partial class StopNotebookInstanceRequest : AmazonSageMakerRequest

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoT.Model
 {
     /// <summary>
-    /// Information about an audit mitigation actions task that is returned by <code>ListAuditMitigationActionsTasks</code>.
+    /// Information about an audit mitigation actions task that is returned by <c>ListAuditMitigationActionsTasks</c>.
     /// </summary>
     public partial class AuditMitigationActionsTaskMetadata
     {

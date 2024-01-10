@@ -61,8 +61,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Savings. 
         /// <para>
         /// The amount that's saved by using existing Savings Plans. Savings returns both net
-        /// savings from Savings Plans and also the <code>onDemandCostEquivalent</code> of the
-        /// Savings Plans when considering the utilization rate.
+        /// savings from Savings Plans and also the <c>onDemandCostEquivalent</c> of the Savings
+        /// Plans when considering the utilization rate.
         /// </para>
         /// </summary>
         public SavingsPlansSavings Savings

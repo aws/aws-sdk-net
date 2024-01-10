@@ -38,13 +38,13 @@ namespace Amazon.EC2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To modify a subnet on an Outpost rack, set both <code>MapCustomerOwnedIpOnLaunch</code>
-    /// and <code>CustomerOwnedIpv4Pool</code>. These two parameters act as a single attribute.
+    /// To modify a subnet on an Outpost rack, set both <c>MapCustomerOwnedIpOnLaunch</c>
+    /// and <c>CustomerOwnedIpv4Pool</c>. These two parameters act as a single attribute.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To modify a subnet on an Outpost server, set either <code>EnableLniAtDeviceIndex</code>
-    /// or <code>DisableLniAtDeviceIndex</code>.
+    /// To modify a subnet on an Outpost server, set either <c>EnableLniAtDeviceIndex</c>
+    /// or <c>DisableLniAtDeviceIndex</c>.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -79,15 +79,15 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AssignIpv6AddressOnCreation. 
         /// <para>
-        /// Specify <code>true</code> to indicate that network interfaces created in the specified
-        /// subnet should be assigned an IPv6 address. This includes a network interface that's
-        /// created when launching an instance into the subnet (the instance therefore receives
-        /// an IPv6 address). 
+        /// Specify <c>true</c> to indicate that network interfaces created in the specified subnet
+        /// should be assigned an IPv6 address. This includes a network interface that's created
+        /// when launching an instance into the subnet (the instance therefore receives an IPv6
+        /// address). 
         /// </para>
         ///  
         /// <para>
         /// If you enable the IPv6 addressing feature for your subnet, your network interface
-        /// or instance only receives an IPv6 address if it's created using version <code>2016-11-15</code>
+        /// or instance only receives an IPv6 address if it's created using version <c>2016-11-15</c>
         /// or later of the Amazon EC2 API.
         /// </para>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// You must set this value when you specify <code>true</code> for <code>MapCustomerOwnedIpOnLaunch</code>.
+        /// You must set this value when you specify <c>true</c> for <c>MapCustomerOwnedIpOnLaunch</c>.
         /// </para>
         /// </summary>
         public string CustomerOwnedIpv4Pool
@@ -128,8 +128,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DisableLniAtDeviceIndex. 
         /// <para>
-        ///  Specify <code>true</code> to indicate that local network interfaces at the current
-        /// position should be disabled. 
+        ///  Specify <c>true</c> to indicate that local network interfaces at the current position
+        /// should be disabled. 
         /// </para>
         /// </summary>
         public bool DisableLniAtDeviceIndex
@@ -167,9 +167,9 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnableLniAtDeviceIndex. 
         /// <para>
         ///  Indicates the device position for local network interfaces in this subnet. For example,
-        /// <code>1</code> indicates local network interfaces in this subnet are the secondary
-        /// network interface (eth1). A local network interface cannot be the primary network
-        /// interface (eth0). 
+        /// <c>1</c> indicates local network interfaces in this subnet are the secondary network
+        /// interface (eth1). A local network interface cannot be the primary network interface
+        /// (eth0). 
         /// </para>
         /// </summary>
         public int EnableLniAtDeviceIndex
@@ -223,13 +223,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MapCustomerOwnedIpOnLaunch. 
         /// <para>
-        /// Specify <code>true</code> to indicate that network interfaces attached to instances
-        /// created in the specified subnet should be assigned a customer-owned IPv4 address.
+        /// Specify <c>true</c> to indicate that network interfaces attached to instances created
+        /// in the specified subnet should be assigned a customer-owned IPv4 address.
         /// </para>
         ///  
         /// <para>
-        /// When this value is <code>true</code>, you must specify the customer-owned IP pool
-        /// using <code>CustomerOwnedIpv4Pool</code>.
+        /// When this value is <c>true</c>, you must specify the customer-owned IP pool using
+        /// <c>CustomerOwnedIpv4Pool</c>.
         /// </para>
         /// </summary>
         public bool MapCustomerOwnedIpOnLaunch
@@ -247,8 +247,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MapPublicIpOnLaunch. 
         /// <para>
-        /// Specify <code>true</code> to indicate that network interfaces attached to instances
-        /// created in the specified subnet should be assigned a public IPv4 address.
+        /// Specify <c>true</c> to indicate that network interfaces attached to instances created
+        /// in the specified subnet should be assigned a public IPv4 address.
         /// </para>
         /// </summary>
         public bool MapPublicIpOnLaunch

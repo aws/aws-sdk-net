@@ -65,14 +65,14 @@ namespace Amazon.CloudWatch.Model
         /// resolution, a period can be as short as one minute (60 seconds) and must be a multiple
         /// of 60. For high-resolution metrics that are collected at intervals of less than one
         /// minute, the period can be 1, 5, 10, 30, 60, or any multiple of 60. High-resolution
-        /// metrics are those metrics stored by a <code>PutMetricData</code> call that includes
-        /// a <code>StorageResolution</code> of 1 second.
+        /// metrics are those metrics stored by a <c>PutMetricData</c> call that includes a <c>StorageResolution</c>
+        /// of 1 second.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>StartTime</code> parameter specifies a time stamp that is greater than
-        /// 3 hours ago, you must specify the period as follows or no data points in that time
-        /// range is returned:
+        /// If the <c>StartTime</c> parameter specifies a time stamp that is greater than 3 hours
+        /// ago, you must specify the period as follows or no data points in that time range is
+        /// returned:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -123,16 +123,16 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// When you are using a <code>Put</code> operation, this defines what unit you want to
-        /// use when storing the metric.
+        /// When you are using a <c>Put</c> operation, this defines what unit you want to use
+        /// when storing the metric.
         /// </para>
         ///  
         /// <para>
-        /// In a <code>Get</code> operation, if you omit <code>Unit</code> then all data that
-        /// was collected with any unit is returned, along with the corresponding units that were
-        /// specified when the data was reported to CloudWatch. If you specify a unit, the operation
-        /// returns only data that was collected with that unit specified. If you specify a unit
-        /// that does not match the data collected, the results of the operation are null. CloudWatch
+        /// In a <c>Get</c> operation, if you omit <c>Unit</c> then all data that was collected
+        /// with any unit is returned, along with the corresponding units that were specified
+        /// when the data was reported to CloudWatch. If you specify a unit, the operation returns
+        /// only data that was collected with that unit specified. If you specify a unit that
+        /// does not match the data collected, the results of the operation are null. CloudWatch
         /// does not perform unit conversions.
         /// </para>
         /// </summary>

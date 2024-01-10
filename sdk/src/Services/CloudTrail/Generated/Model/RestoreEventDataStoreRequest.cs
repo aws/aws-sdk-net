@@ -30,9 +30,9 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreEventDataStore operation.
-    /// Restores a deleted event data store specified by <code>EventDataStore</code>, which
-    /// accepts an event data store ARN. You can only restore a deleted event data store within
-    /// the seven-day wait period after deletion. Restoring an event data store can take several
+    /// Restores a deleted event data store specified by <c>EventDataStore</c>, which accepts
+    /// an event data store ARN. You can only restore a deleted event data store within the
+    /// seven-day wait period after deletion. Restoring an event data store can take several
     /// minutes, depending on the size of the event data store.
     /// </summary>
     public partial class RestoreEventDataStoreRequest : AmazonCloudTrailRequest

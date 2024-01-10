@@ -31,8 +31,8 @@ namespace Amazon.MediaStoreData.Model
     /// <summary>
     /// Container for the parameters to the GetObject operation.
     /// Downloads the object at the specified path. If the object’s upload availability is
-    /// set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even
-    /// if it’s still uploading the object.
+    /// set to <c>streaming</c>, AWS Elemental MediaStore downloads the object even if it’s
+    /// still uploading the object.
     /// </summary>
     public partial class GetObjectRequest : AmazonMediaStoreDataRequest
     {
@@ -47,8 +47,8 @@ namespace Amazon.MediaStoreData.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, to upload the file <code>mlaw.avi</code> to the folder path <code>premium\canada</code>
-        /// in the container <code>movies</code>, enter the path <code>premium/canada/mlaw.avi</code>.
+        /// For example, to upload the file <c>mlaw.avi</c> to the folder path <c>premium\canada</c>
+        /// in the container <c>movies</c>, enter the path <c>premium/canada/mlaw.avi</c>.
         /// </para>
         ///  
         /// <para>
@@ -57,10 +57,10 @@ namespace Amazon.MediaStoreData.Model
         ///  
         /// <para>
         /// If the path includes any folders that don't exist yet, the service creates them. For
-        /// example, suppose you have an existing <code>premium/usa</code> subfolder. If you specify
-        /// <code>premium/canada</code>, the service creates a <code>canada</code> subfolder in
-        /// the <code>premium</code> folder. You then have two subfolders, <code>usa</code> and
-        /// <code>canada</code>, in the <code>premium</code> folder. 
+        /// example, suppose you have an existing <c>premium/usa</c> subfolder. If you specify
+        /// <c>premium/canada</c>, the service creates a <c>canada</c> subfolder in the <c>premium</c>
+        /// folder. You then have two subfolders, <c>usa</c> and <c>canada</c>, in the <c>premium</c>
+        /// folder. 
         /// </para>
         ///  
         /// <para>
@@ -95,7 +95,7 @@ namespace Amazon.MediaStoreData.Model
         /// <summary>
         /// Gets and sets the property Range. 
         /// <para>
-        /// The range bytes of an object to retrieve. For more information about the <code>Range</code>
+        /// The range bytes of an object to retrieve. For more information about the <c>Range</c>
         /// header, see <a href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.35</a>.
         /// AWS Elemental MediaStore ignores this header for partially uploaded objects that have
         /// streaming upload availability.

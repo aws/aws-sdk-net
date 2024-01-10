@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>RadarChartVisual</code>.
+    /// The configuration of a <c>RadarChartVisual</c>.
     /// </summary>
     public partial class RadarChartConfiguration
     {
@@ -214,7 +214,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FieldWells. 
         /// <para>
-        /// The field well configuration of a <code>RadarChartVisual</code>.
+        /// The field well configuration of a <c>RadarChartVisual</c>.
         /// </para>
         /// </summary>
         public RadarChartFieldWells FieldWells
@@ -268,7 +268,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration of a <code>RadarChartVisual</code>.
+        /// The sort configuration of a <c>RadarChartVisual</c>.
         /// </para>
         /// </summary>
         public RadarChartSortConfiguration SortConfiguration

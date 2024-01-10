@@ -43,8 +43,8 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  
     /// <para>
-    /// If the cluster is not in the <i>available</i> state, <code>ListTagsForResource</code>
-    /// returns an error.
+    /// If the cluster is not in the <i>available</i> state, <c>ListTagsForResource</c> returns
+    /// an error.
     /// </para>
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonElastiCacheRequest
@@ -55,8 +55,7 @@ namespace Amazon.ElastiCache.Model
         /// Gets and sets the property ResourceName. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the resource for which you want the list of tags,
-        /// for example <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code>
-        /// or <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.
+        /// for example <c>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</c> or <c>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</c>.
         /// </para>
         ///  
         /// <para>

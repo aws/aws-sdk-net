@@ -130,7 +130,7 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property ServerCertificate. 
         /// <para>
         /// Specifies a file with the certificates that are used to sign the object storage server's
-        /// certificate (for example, <code>file:///home/user/.ssh/storage_sys_certificate.pem</code>).
+        /// certificate (for example, <c>file:///home/user/.ssh/storage_sys_certificate.pem</c>).
         /// The file you specify must include the following:
         /// </para>
         ///  <ul> <li> 
@@ -147,7 +147,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A <code>.pem</code> extension
+        /// A <c>.pem</c> extension
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -155,7 +155,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// To use this parameter, configure <code>ServerProtocol</code> to <code>HTTPS</code>.
+        /// To use this parameter, configure <c>ServerProtocol</c> to <c>HTTPS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32768)]

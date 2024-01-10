@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// To list a resource's tags, use the <code>ListTags</code> API. 
+    /// To list a resource's tags, use the <c>ListTags</c> API. 
     /// </para>
     ///  <note> 
     /// <para>

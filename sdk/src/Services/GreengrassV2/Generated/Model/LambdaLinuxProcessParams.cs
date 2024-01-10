@@ -63,7 +63,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>GreengrassContainer</code> 
+        /// Default: <c>GreengrassContainer</c> 
         /// </para>
         /// </summary>
         public LambdaIsolationMode IsolationMode

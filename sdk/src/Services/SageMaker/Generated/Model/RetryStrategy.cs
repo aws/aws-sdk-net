@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The retry strategy to use when a training job fails due to an <code>InternalServerError</code>.
-    /// <code>RetryStrategy</code> is specified as part of the <code>CreateTrainingJob</code>
-    /// and <code>CreateHyperParameterTuningJob</code> requests. You can add the <code>StoppingCondition</code>
-    /// parameter to the request to limit the training time for the complete job.
+    /// The retry strategy to use when a training job fails due to an <c>InternalServerError</c>.
+    /// <c>RetryStrategy</c> is specified as part of the <c>CreateTrainingJob</c> and <c>CreateHyperParameterTuningJob</c>
+    /// requests. You can add the <c>StoppingCondition</c> parameter to the request to limit
+    /// the training time for the complete job.
     /// </summary>
     public partial class RetryStrategy
     {
@@ -41,8 +41,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// The number of times to retry the job. When the job is retried, it's <code>SecondaryStatus</code>
-        /// is changed to <code>STARTING</code>.
+        /// The number of times to retry the job. When the job is retried, it's <c>SecondaryStatus</c>
+        /// is changed to <c>STARTING</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=30)]

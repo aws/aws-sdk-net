@@ -67,7 +67,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         ///  An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>. 
+        /// by <c>MaxRecords</c>. 
         /// </para>
         /// </summary>
         public string Marker
@@ -86,8 +86,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that the remaining results can be retrieved. 
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that the remaining results can be retrieved. 
         /// </para>
         ///  
         /// <para>
@@ -114,8 +114,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property WithoutSettings. 
         /// <para>
         /// An option to set to avoid returning information about settings. Use this to reduce
-        /// overhead when setting information is too large. To use this option, choose <code>true</code>;
-        /// otherwise, choose <code>false</code> (the default).
+        /// overhead when setting information is too large. To use this option, choose <c>true</c>;
+        /// otherwise, choose <c>false</c> (the default).
         /// </para>
         /// </summary>
         public bool WithoutSettings

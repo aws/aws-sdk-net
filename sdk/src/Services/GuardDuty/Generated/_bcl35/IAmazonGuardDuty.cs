@@ -385,8 +385,8 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
-        /// As a delegated administrator, using <code>CreateMembers</code> will enable GuardDuty
-        /// in the added member accounts, with the exception of the organization delegated administrator
+        /// As a delegated administrator, using <c>CreateMembers</c> will enable GuardDuty in
+        /// the added member accounts, with the exception of the organization delegated administrator
         /// account. A delegated administrator must enable GuardDuty prior to being added as a
         /// member.
         /// </para>
@@ -400,8 +400,7 @@ namespace Amazon.GuardDuty
         ///  
         /// <para>
         /// If you are adding accounts by invitation, before using <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_InviteMembers.html">InviteMembers</a>,
-        /// use <code>CreateMembers</code> after GuardDuty has been enabled in potential member
-        /// accounts.
+        /// use <c>CreateMembers</c> after GuardDuty has been enabled in potential member accounts.
         /// </para>
         ///  
         /// <para>
@@ -506,8 +505,8 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Generates sample findings of types specified by the list of finding types. If 'NULL'
-        /// is specified for <code>findingTypes</code>, the API generates sample findings of all
-        /// supported finding types.
+        /// is specified for <c>findingTypes</c>, the API generates sample findings of all supported
+        /// finding types.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSampleFindings service method.</param>
         /// 
@@ -787,8 +786,8 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted
-        /// IP lists in the console user interface.
+        /// Deletes the IPSet specified by the <c>ipSetId</c>. IPSets are called trusted IP lists
+        /// in the console user interface.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIPSet service method.</param>
         /// 
@@ -839,9 +838,9 @@ namespace Amazon.GuardDuty
         /// 
         ///  
         /// <para>
-        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
-        /// set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty
-        /// for a member account in your organization.
+        /// With <c>autoEnableOrganizationMembers</c> configuration for your organization set
+        /// to <c>ALL</c>, you'll receive an error if you attempt to disable GuardDuty for a member
+        /// account in your organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
@@ -888,7 +887,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Deletes the publishing definition with the specified <code>destinationId</code>.
+        /// Deletes the publishing definition with the specified <c>destinationId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePublishingDestination service method.</param>
         /// 
@@ -1091,7 +1090,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Returns information about the publishing destination specified by the provided <code>destinationId</code>.
+        /// Returns information about the publishing destination specified by the provided <c>destinationId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePublishingDestination service method.</param>
         /// 
@@ -1198,9 +1197,9 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
-        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
-        /// set to <code>ALL</code>, you'll receive an error if you attempt to disable GuardDuty
-        /// in a member account.
+        /// With <c>autoEnableOrganizationMembers</c> configuration for your organization set
+        /// to <c>ALL</c>, you'll receive an error if you attempt to disable GuardDuty in a member
+        /// account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateFromAdministratorAccount service method.</param>
@@ -1322,9 +1321,9 @@ namespace Amazon.GuardDuty
         /// </para>
         ///  
         /// <para>
-        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
-        /// set to <code>ALL</code>, you'll receive an error if you attempt to disassociate a
-        /// member account before removing them from your organization.
+        /// With <c>autoEnableOrganizationMembers</c> configuration for your organization set
+        /// to <c>ALL</c>, you'll receive an error if you attempt to disassociate a member account
+        /// before removing them from your organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembers service method.</param>
@@ -1425,7 +1424,7 @@ namespace Amazon.GuardDuty
         ///  <note> 
         /// <para>
         /// If the organization's management account or a delegated administrator runs this API,
-        /// it will return success (<code>HTTP 200</code>) but no content.
+        /// it will return success (<c>HTTP 200</c>) but no content.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1761,7 +1760,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Retrieves the IPSet specified by the <code>ipSetId</code>.
+        /// Retrieves the IPSet specified by the <c>ipSetId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIPSet service method.</param>
         /// 
@@ -2661,7 +2660,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Returns a list of publishing destinations associated with the specified <code>detectorId</code>.
+        /// Returns a list of publishing destinations associated with the specified <c>detectorId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPublishingDestinations service method.</param>
         /// 
@@ -2904,14 +2903,14 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Stops GuardDuty monitoring for the specified member accounts. Use the <code>StartMonitoringMembers</code>
+        /// Stops GuardDuty monitoring for the specified member accounts. Use the <c>StartMonitoringMembers</c>
         /// operation to restart monitoring for those accounts.
         /// 
         ///  
         /// <para>
-        /// With <code>autoEnableOrganizationMembers</code> configuration for your organization
-        /// set to <code>ALL</code>, you'll receive an error if you attempt to stop monitoring
-        /// the member accounts in your organization.
+        /// With <c>autoEnableOrganizationMembers</c> configuration for your organization set
+        /// to <c>ALL</c>, you'll receive an error if you attempt to stop monitoring the member
+        /// accounts in your organization.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopMonitoringMembers service method.</param>
@@ -3007,7 +3006,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Unarchives GuardDuty findings specified by the <code>findingIds</code>.
+        /// Unarchives GuardDuty findings specified by the <c>findingIds</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UnarchiveFindings service method.</param>
         /// 
@@ -3403,7 +3402,7 @@ namespace Amazon.GuardDuty
 
         /// <summary>
         /// Configures the delegated administrator account with the provided values. You must
-        /// provide a value for either <code>autoEnableOrganizationMembers</code> or <code>autoEnable</code>,
+        /// provide a value for either <c>autoEnableOrganizationMembers</c> or <c>autoEnable</c>,
         /// but not both. 
         /// 
         ///  
@@ -3458,7 +3457,7 @@ namespace Amazon.GuardDuty
 
 
         /// <summary>
-        /// Updates information about the publishing destination specified by the <code>destinationId</code>.
+        /// Updates information about the publishing destination specified by the <c>destinationId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdatePublishingDestination service method.</param>
         /// 

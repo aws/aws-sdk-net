@@ -60,8 +60,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property Service. 
         /// <para>
         /// A description of the App Runner service updated by this request. All configuration
-        /// values in the returned <code>Service</code> structure reflect configuration changes
-        /// that are being applied by this request.
+        /// values in the returned <c>Service</c> structure reflect configuration changes that
+        /// are being applied by this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

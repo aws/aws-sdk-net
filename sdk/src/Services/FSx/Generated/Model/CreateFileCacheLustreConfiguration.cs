@@ -41,7 +41,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DeploymentType. 
         /// <para>
-        /// Specifies the cache deployment type, which must be <code>CACHE_1</code>.
+        /// Specifies the cache deployment type, which must be <c>CACHE_1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property PerUnitStorageThroughput. 
         /// <para>
         /// Provisions the amount of read and write throughput for each 1 tebibyte (TiB) of cache
-        /// storage capacity, in MB/s/TiB. The only supported value is <code>1000</code>.
+        /// storage capacity, in MB/s/TiB. The only supported value is <c>1000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=1000)]

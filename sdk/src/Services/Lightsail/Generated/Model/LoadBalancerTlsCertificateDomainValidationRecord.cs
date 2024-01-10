@@ -80,7 +80,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A fully qualified domain name in the certificate. For example, <code>example.com</code>.
+        /// A fully qualified domain name in the certificate. For example, <c>example.com</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -98,7 +98,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of validation record. For example, <code>CNAME</code> for domain validation.
+        /// The type of validation record. For example, <c>CNAME</c> for domain validation.
         /// </para>
         /// </summary>
         public string Type

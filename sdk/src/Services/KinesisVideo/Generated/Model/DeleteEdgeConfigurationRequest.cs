@@ -35,11 +35,11 @@ namespace Amazon.KinesisVideo.Model
     /// 
     ///  
     /// <para>
-    /// When you invoke this API, the sync status is set to <code>DELETING</code>. A deletion
-    /// process starts, in which active edge jobs are stopped and all media is deleted from
-    /// the edge device. The time to delete varies, depending on the total amount of stored
-    /// media. If the deletion process fails, the sync status changes to <code>DELETE_FAILED</code>.
-    /// You will need to re-try the deletion.
+    /// When you invoke this API, the sync status is set to <c>DELETING</c>. A deletion process
+    /// starts, in which active edge jobs are stopped and all media is deleted from the edge
+    /// device. The time to delete varies, depending on the total amount of stored media.
+    /// If the deletion process fails, the sync status changes to <c>DELETE_FAILED</c>. You
+    /// will need to re-try the deletion.
     /// </para>
     ///  
     /// <para>
@@ -55,8 +55,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property StreamARN. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the stream. Specify either the <code>StreamName</code>
-        /// or the <code>StreamARN</code>.
+        /// The Amazon Resource Name (ARN) of the stream. Specify either the <c>StreamName</c>
+        /// or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -76,7 +76,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream from which to delete the edge configuration. Specify either
-        /// the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

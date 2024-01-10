@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OnCreate. 
         /// <para>
-        /// The directory of the LifeCycle script under <code>SourceS3Uri</code>. This LifeCycle
-        /// script runs during cluster creation.
+        /// The directory of the LifeCycle script under <c>SourceS3Uri</c>. This LifeCycle script
+        /// runs during cluster creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

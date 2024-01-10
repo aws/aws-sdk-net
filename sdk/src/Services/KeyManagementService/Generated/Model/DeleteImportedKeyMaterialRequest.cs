@@ -38,9 +38,9 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// When the specified KMS key is in the <code>PendingDeletion</code> state, this operation
+    /// When the specified KMS key is in the <c>PendingDeletion</c> state, this operation
     /// does not change the KMS key's state. Otherwise, it changes the KMS key's state to
-    /// <code>PendingImport</code>.
+    /// <c>PendingImport</c>.
     /// </para>
     ///  
     /// <para>
@@ -84,8 +84,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// Identifies the KMS key from which you are deleting imported key material. The <code>Origin</code>
-        /// of the KMS key must be <code>EXTERNAL</code>.
+        /// Identifies the KMS key from which you are deleting imported key material. The <c>Origin</c>
+        /// of the KMS key must be <c>EXTERNAL</c>.
         /// </para>
         ///  
         /// <para>
@@ -97,11 +97,11 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> </ul> 

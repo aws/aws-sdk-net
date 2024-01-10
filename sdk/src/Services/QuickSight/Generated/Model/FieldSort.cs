@@ -43,11 +43,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASC</code>: Ascending
+        ///  <c>ASC</c>: Ascending
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESC</code>: Descending
+        ///  <c>DESC</c>: Descending
         /// </para>
         ///  </li> </ul>
         /// </summary>

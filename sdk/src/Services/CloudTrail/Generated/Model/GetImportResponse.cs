@@ -83,9 +83,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EndEventTime. 
         /// <para>
-        ///  Used with <code>StartEventTime</code> to bound a <code>StartImport</code> request,
-        /// and limit imported trail events to only those events logged within a specified time
-        /// period. 
+        ///  Used with <c>StartEventTime</c> to bound a <c>StartImport</c> request, and limit
+        /// imported trail events to only those events logged within a specified time period.
+        /// 
         /// </para>
         /// </summary>
         public DateTime EndEventTime
@@ -141,9 +141,9 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property ImportStatistics. 
         /// <para>
         ///  Provides statistics for the import. CloudTrail does not update import statistics
-        /// in real-time. Returned values for parameters such as <code>EventsCompleted</code>
-        /// may be lower than the actual value, because CloudTrail updates statistics incrementally
-        /// over the course of the import. 
+        /// in real-time. Returned values for parameters such as <c>EventsCompleted</c> may be
+        /// lower than the actual value, because CloudTrail updates statistics incrementally over
+        /// the course of the import. 
         /// </para>
         /// </summary>
         public ImportStatistics ImportStatistics
@@ -179,9 +179,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property StartEventTime. 
         /// <para>
-        ///  Used with <code>EndEventTime</code> to bound a <code>StartImport</code> request,
-        /// and limit imported trail events to only those events logged within a specified time
-        /// period. 
+        ///  Used with <c>EndEventTime</c> to bound a <c>StartImport</c> request, and limit imported
+        /// trail events to only those events logged within a specified time period. 
         /// </para>
         /// </summary>
         public DateTime StartEventTime

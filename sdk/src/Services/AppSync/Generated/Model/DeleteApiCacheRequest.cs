@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteApiCache operation.
-    /// Deletes an <code>ApiCache</code> object.
+    /// Deletes an <c>ApiCache</c> object.
     /// </summary>
     public partial class DeleteApiCacheRequest : AmazonAppSyncRequest
     {

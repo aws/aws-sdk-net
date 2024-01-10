@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisAnalytics.Model
 {
     /// <summary>
-    /// Describes updates to the output configuration identified by the <code>OutputId</code>.
+    /// Describes updates to the output configuration identified by the <c>OutputId</c>.
     /// </summary>
     public partial class OutputUpdate
     {

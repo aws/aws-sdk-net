@@ -42,13 +42,13 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property PipelineExecutionStartCondition. 
         /// <para>
         /// The condition configures when the pipeline should trigger a new image build. When
-        /// the <code>pipelineExecutionStartCondition</code> is set to <code>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</code>,
+        /// the <c>pipelineExecutionStartCondition</c> is set to <c>EXPRESSION_MATCH_AND_DEPENDENCY_UPDATES_AVAILABLE</c>,
         /// and you use semantic version filters on the base image or components in your image
         /// recipe, EC2 Image Builder will build a new image only when there are new versions
         /// of the image or components in your recipe that match the semantic version filter.
-        /// When it is set to <code>EXPRESSION_MATCH_ONLY</code>, it will build a new image every
-        /// time the CRON expression matches the current time. For semantic version syntax, see
-        /// <a href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
+        /// When it is set to <c>EXPRESSION_MATCH_ONLY</c>, it will build a new image every time
+        /// the CRON expression matches the current time. For semantic version syntax, see <a
+        /// href="https://docs.aws.amazon.com/imagebuilder/latest/APIReference/API_CreateComponent.html">CreateComponent</a>
         /// in the <i> EC2 Image Builder API Reference</i>.
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ScheduleExpression. 
         /// <para>
-        /// The cron expression determines how often EC2 Image Builder evaluates your <code>pipelineExecutionStartCondition</code>.
+        /// The cron expression determines how often EC2 Image Builder evaluates your <c>pipelineExecutionStartCondition</c>.
         /// </para>
         ///  
         /// <para>

@@ -34,7 +34,7 @@ namespace Amazon.CodePipeline.Model
     ///  <note> 
     /// <para>
     /// You can specify the Git configuration trigger type for all third-party Git-based source
-    /// actions that are supported by the <code>CodeStarSourceConnection</code> action type.
+    /// actions that are supported by the <c>CodeStarSourceConnection</c> action type.
     /// </para>
     ///  </note> <note> 
     /// <para>

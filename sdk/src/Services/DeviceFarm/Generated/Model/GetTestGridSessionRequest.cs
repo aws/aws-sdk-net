@@ -30,9 +30,9 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTestGridSession operation.
-    /// A session is an instance of a browser created through a <code>RemoteWebDriver</code>
-    /// with the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to
-    /// look up sessions:
+    /// A session is an instance of a browser created through a <c>RemoteWebDriver</c> with
+    /// the URL from <a>CreateTestGridUrlResult$url</a>. You can use the following to look
+    /// up sessions:
     /// 
     ///  <ul> <li> 
     /// <para>

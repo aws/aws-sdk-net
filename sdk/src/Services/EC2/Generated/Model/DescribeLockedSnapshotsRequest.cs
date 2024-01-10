@@ -46,8 +46,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>lock-state</code> - The state of the snapshot lock (<code>compliance-cooloff</code>
-        /// | <code>governance</code> | <code>compliance</code> | <code>expired</code>).
+        ///  <c>lock-state</c> - The state of the snapshot lock (<c>compliance-cooloff</c> | <c>governance</c>
+        /// | <c>compliance</c> | <c>expired</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>

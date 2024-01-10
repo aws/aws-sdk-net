@@ -76,8 +76,8 @@ namespace Amazon.CodeBuild.Model
         /// Gets and sets the property Location. 
         /// <para>
         ///  The ARN of an S3 bucket and the path prefix for S3 logs. If your Amazon S3 bucket
-        /// name is <code>my-bucket</code>, and your path prefix is <code>build-log</code>, then
-        /// acceptable formats are <code>my-bucket/build-log</code> or <code>arn:aws:s3:::my-bucket/build-log</code>.
+        /// name is <c>my-bucket</c>, and your path prefix is <c>build-log</c>, then acceptable
+        /// formats are <c>my-bucket/build-log</c> or <c>arn:aws:s3:::my-bucket/build-log</c>.
         /// 
         /// </para>
         /// </summary>
@@ -100,11 +100,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code>: S3 build logs are enabled for this build project.
+        ///  <c>ENABLED</c>: S3 build logs are enabled for this build project.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code>: S3 build logs are not enabled for this build project.
+        ///  <c>DISABLED</c>: S3 build logs are not enabled for this build project.
         /// </para>
         ///  </li> </ul>
         /// </summary>

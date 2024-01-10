@@ -31,7 +31,7 @@ namespace Amazon.PinpointEmail.Model
     /// <summary>
     /// An array of objects that provide deliverability data for all the campaigns that used
     /// a specific domain to send email during a specified time range. This data is available
-    /// for a domain only if you enabled the Deliverability dashboard (<code>PutDeliverabilityDashboardOption</code>
+    /// for a domain only if you enabled the Deliverability dashboard (<c>PutDeliverabilityDashboardOption</c>
     /// operation) for the domain.
     /// </summary>
     public partial class ListDomainDeliverabilityCampaignsResponse : AmazonWebServiceResponse
@@ -62,7 +62,7 @@ namespace Amazon.PinpointEmail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that’s returned from a previous call to the <code>ListDomainDeliverabilityCampaigns</code>
+        /// A token that’s returned from a previous call to the <c>ListDomainDeliverabilityCampaigns</c>
         /// operation. This token indicates the position of the campaign in the list of campaigns.
         /// </para>
         /// </summary>

@@ -53,7 +53,7 @@ namespace Amazon.IotData
     /// </para>
     ///  
     /// <para>
-    ///  <code>aws iot describe-endpoint --endpoint-type iot:Data-ATS</code> 
+    ///  <c>aws iot describe-endpoint --endpoint-type iot:Data-ATS</c> 
     /// </para>
     ///  
     /// <para>

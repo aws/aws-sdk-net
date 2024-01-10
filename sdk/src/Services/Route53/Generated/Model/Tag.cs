@@ -40,27 +40,27 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The value of <code>Key</code> depends on the operation that you want to perform:
+        /// The value of <c>Key</c> depends on the operation that you want to perform:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Add a tag to a health check or hosted zone</b>: <code>Key</code> is the name that
-        /// you want to give the new tag.
+        ///  <b>Add a tag to a health check or hosted zone</b>: <c>Key</c> is the name that you
+        /// want to give the new tag.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Edit a tag</b>: <code>Key</code> is the name of the tag that you want to change
-        /// the <code>Value</code> for.
+        ///  <b>Edit a tag</b>: <c>Key</c> is the name of the tag that you want to change the
+        /// <c>Value</c> for.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> Delete a key</b>: <code>Key</code> is the name of the tag you want to remove.
+        ///  <b> Delete a key</b>: <c>Key</c> is the name of the tag you want to remove.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Give a name to a health check</b>: Edit the default <code>Name</code> tag. In
-        /// the Amazon Route 53 console, the list of your health checks includes a <b>Name</b>
-        /// column that lets you see the name that you've given to each health check.
+        ///  <b>Give a name to a health check</b>: Edit the default <c>Name</c> tag. In the Amazon
+        /// Route 53 console, the list of your health checks includes a <b>Name</b> column that
+        /// lets you see the name that you've given to each health check.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -80,17 +80,16 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value of <code>Value</code> depends on the operation that you want to perform:
+        /// The value of <c>Value</c> depends on the operation that you want to perform:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Add a tag to a health check or hosted zone</b>: <code>Value</code> is the value
-        /// that you want to give the new tag.
+        ///  <b>Add a tag to a health check or hosted zone</b>: <c>Value</c> is the value that
+        /// you want to give the new tag.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Edit a tag</b>: <code>Value</code> is the new value that you want to assign the
-        /// tag.
+        ///  <b>Edit a tag</b>: <c>Value</c> is the new value that you want to assign the tag.
         /// </para>
         ///  </li> </ul>
         /// </summary>

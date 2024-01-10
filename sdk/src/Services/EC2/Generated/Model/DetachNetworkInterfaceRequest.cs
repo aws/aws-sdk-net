@@ -63,13 +63,13 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// Use the <code>Force</code> parameter only as a last resort to detach a network interface
+        /// Use the <c>Force</c> parameter only as a last resort to detach a network interface
         /// from a failed instance. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you use the <code>Force</code> parameter to detach a network interface, you might
-        /// not be able to attach a different network interface to the same index on the instance
+        /// If you use the <c>Force</c> parameter to detach a network interface, you might not
+        /// be able to attach a different network interface to the same index on the instance
         /// without first stopping and starting the instance.
         /// </para>
         ///  </li> <li> 

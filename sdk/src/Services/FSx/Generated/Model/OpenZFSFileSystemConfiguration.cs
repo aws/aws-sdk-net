@@ -67,10 +67,10 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CopyTagsToBackups. 
         /// <para>
         /// A Boolean value indicating whether tags on the file system should be copied to backups.
-        /// If it's set to <code>true</code>, all tags on the file system are copied to all automatic
+        /// If it's set to <c>true</c>, all tags on the file system are copied to all automatic
         /// backups and any user-initiated backups where the user doesn't specify any tags. If
-        /// this value is <code>true</code> and you specify one or more tags, only the specified
-        /// tags are copied to backups. If you specify one or more tags when creating a user-initiated
+        /// this value is <c>true</c> and you specify one or more tags, only the specified tags
+        /// are copied to backups. If you specify one or more tags when creating a user-initiated
         /// backup, no tags are copied from the file system, regardless of this value. 
         /// </para>
         /// </summary>
@@ -90,11 +90,11 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property CopyTagsToVolumes. 
         /// <para>
         /// A Boolean value indicating whether tags for the volume should be copied to snapshots.
-        /// This value defaults to <code>false</code>. If it's set to <code>true</code>, all tags
-        /// for the volume are copied to snapshots where the user doesn't specify tags. If this
-        /// value is <code>true</code> and you specify one or more tags, only the specified tags
-        /// are copied to snapshots. If you specify one or more tags when creating the snapshot,
-        /// no tags are copied from the volume, regardless of this value. 
+        /// This value defaults to <c>false</c>. If it's set to <c>true</c>, all tags for the
+        /// volume are copied to snapshots where the user doesn't specify tags. If this value
+        /// is <c>true</c> and you specify one or more tags, only the specified tags are copied
+        /// to snapshots. If you specify one or more tags when creating the snapshot, no tags
+        /// are copied from the volume, regardless of this value. 
         /// </para>
         /// </summary>
         public bool CopyTagsToVolumes
@@ -129,7 +129,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DeploymentType. 
         /// <para>
         /// Specifies the file-system deployment type. Amazon FSx for OpenZFS supports&#x2028;
-        /// <code>MULTI_AZ_1</code>, <code>SINGLE_AZ_1</code>, and <code>SINGLE_AZ_2</code>.
+        /// <c>MULTI_AZ_1</c>, <c>SINGLE_AZ_1</c>, and <c>SINGLE_AZ_2</c>.
         /// </para>
         /// </summary>
         public OpenZFSDeploymentType DeploymentType
@@ -204,8 +204,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property PreferredSubnetId. 
         /// <para>
-        /// Required when <code>DeploymentType</code> is set to <code>MULTI_AZ_1</code>. This
-        /// specifies the subnet in which you want the preferred file server to be located.
+        /// Required when <c>DeploymentType</c> is set to <c>MULTI_AZ_1</c>. This specifies the
+        /// subnet in which you want the preferred file server to be located.
         /// </para>
         /// </summary>
         [AWSProperty(Min=15, Max=24)]

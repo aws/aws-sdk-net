@@ -37,7 +37,7 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  
     /// <para>
-    /// The option to deny permissions by setting <code>PermissionPolicy</code> to <code>DENY_ACCESS</code>
+    /// The option to deny permissions by setting <c>PermissionPolicy</c> to <c>DENY_ACCESS</c>
     /// is not supported for new RLS datasets.
     /// </para>
     /// </summary>
@@ -76,10 +76,10 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>FormatVersion</code> is <code>VERSION_1</code>. When <code>FormatVersion</code>
-        /// is <code>VERSION_1</code>, <code>UserName</code> and <code>GroupName</code> are required.
-        /// When <code>FormatVersion</code> is <code>VERSION_2</code>, <code>UserARN</code> and
-        /// <code>GroupARN</code> are required, and <code>Namespace</code> must not exist.
+        /// By default, <c>FormatVersion</c> is <c>VERSION_1</c>. When <c>FormatVersion</c> is
+        /// <c>VERSION_1</c>, <c>UserName</c> and <c>GroupName</c> are required. When <c>FormatVersion</c>
+        /// is <c>VERSION_2</c>, <c>UserARN</c> and <c>GroupARN</c> are required, and <c>Namespace</c>
+        /// must not exist.
         /// </para>
         /// </summary>
         public RowLevelPermissionFormatVersion FormatVersion
@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property PermissionPolicy. 
         /// <para>
-        /// The type of permissions to use when interpreting the permissions for RLS. <code>DENY_ACCESS</code>
+        /// The type of permissions to use when interpreting the permissions for RLS. <c>DENY_ACCESS</c>
         /// is included for backward compatibility only.
         /// </para>
         /// </summary>
@@ -137,7 +137,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the row-level security permission dataset. If enabled, the status is
-        /// <code>ENABLED</code>. If disabled, the status is <code>DISABLED</code>.
+        /// <c>ENABLED</c>. If disabled, the status is <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public Status Status

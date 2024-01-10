@@ -99,7 +99,7 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property Issuer. 
         /// <para>
         /// The issuer for the OIDC configuration. The issuer returned by discovery must exactly
-        /// match the value of <code>iss</code> in the ID token.
+        /// match the value of <c>iss</c> in the ID token.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for the Microsoft Windows file system used in the <code>DeleteFileSystem</code>
+    /// The response object for the Microsoft Windows file system used in the <c>DeleteFileSystem</c>
     /// operation.
     /// </summary>
     public partial class DeleteFileSystemWindowsResponse

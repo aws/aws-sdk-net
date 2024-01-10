@@ -73,7 +73,7 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique case-sensitive string used to ensure the request to create the calculation
-        /// is idempotent (executes only once). If another <code>StartCalculationExecutionRequest</code>
+        /// is idempotent (executes only once). If another <c>StartCalculationExecutionRequest</c>
         /// is received, the same response is returned and another calculation is not created.
         /// If a parameter has changed, an error is returned.
         /// </para>

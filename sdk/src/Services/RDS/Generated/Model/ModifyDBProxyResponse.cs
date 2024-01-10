@@ -38,7 +38,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxy. 
         /// <para>
-        /// The <code>DBProxy</code> object representing the new settings for the proxy.
+        /// The <c>DBProxy</c> object representing the new settings for the proxy.
         /// </para>
         /// </summary>
         public DBProxy DBProxy

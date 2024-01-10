@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultGid. 
         /// <para>
-        /// The default POSIX group ID (GID). If not specified, defaults to <code>100</code>.
+        /// The default POSIX group ID (GID). If not specified, defaults to <c>100</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
@@ -59,7 +59,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DefaultUid. 
         /// <para>
-        /// The default POSIX user ID (UID). If not specified, defaults to <code>1000</code>.
+        /// The default POSIX user ID (UID). If not specified, defaults to <c>1000</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]

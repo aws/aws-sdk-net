@@ -39,8 +39,8 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Cases. 
         /// <para>
-        /// A list of case documents where each case contains the properties <code>CaseId</code>
-        /// and <code>Fields</code> where each field is a complex union structure. 
+        /// A list of case documents where each case contains the properties <c>CaseId</c> and
+        /// <c>Fields</c> where each field is a complex union structure. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=25)]

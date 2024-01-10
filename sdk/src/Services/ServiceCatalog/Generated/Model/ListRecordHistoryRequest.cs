@@ -47,11 +47,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -71,7 +71,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property AccessLevelFilter. 
         /// <para>
-        /// The access level to use to obtain results. The default is <code>User</code>.
+        /// The access level to use to obtain results. The default is <c>User</c>.
         /// </para>
         /// </summary>
         public AccessLevelFilter AccessLevelFilter

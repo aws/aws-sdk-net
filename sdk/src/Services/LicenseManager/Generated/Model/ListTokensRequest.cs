@@ -46,7 +46,7 @@ namespace Amazon.LicenseManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LicenseArns</code> 
+        ///  <c>LicenseArns</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

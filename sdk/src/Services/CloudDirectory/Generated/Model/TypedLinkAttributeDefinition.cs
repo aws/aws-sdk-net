@@ -98,7 +98,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property RequiredBehavior. 
         /// <para>
-        /// The required behavior of the <code>TypedLinkAttributeDefinition</code>.
+        /// The required behavior of the <c>TypedLinkAttributeDefinition</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

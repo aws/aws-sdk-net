@@ -34,7 +34,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:TagResource</code>. 
+    ///  <b>Required permissions: </b> <c>rolesanywhere:TagResource</c>. 
     /// </para>
     /// </summary>
     public partial class TagResourceRequest : AmazonIAMRolesAnywhereRequest

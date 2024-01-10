@@ -95,8 +95,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The name of the component as displayed. If <code>DisplayName</code> isn't specified,
-        /// <code>TrialComponentName</code> is displayed.
+        /// The name of the component as displayed. If <c>DisplayName</c> isn't specified, <c>TrialComponentName</c>
+        /// is displayed.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=120)]

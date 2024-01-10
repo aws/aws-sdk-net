@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// The result of the <code>SendBulkEmail</code> operation of each specified <code>BulkEmailEntry</code>.
+    /// The result of the <c>SendBulkEmail</c> operation of each specified <c>BulkEmailEntry</c>.
     /// </summary>
     public partial class BulkEmailEntryResult
     {
@@ -40,7 +40,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// A description of an error that prevented a message being sent using the <code>SendBulkTemplatedEmail</code>
+        /// A description of an error that prevented a message being sent using the <c>SendBulkTemplatedEmail</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -59,8 +59,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The unique message identifier returned from the <code>SendBulkTemplatedEmail</code>
-        /// operation.
+        /// The unique message identifier returned from the <c>SendBulkTemplatedEmail</c> operation.
         /// </para>
         /// </summary>
         public string MessageId
@@ -78,7 +77,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a message sent using the <code>SendBulkTemplatedEmail</code> operation.
+        /// The status of a message sent using the <c>SendBulkTemplatedEmail</c> operation.
         /// </para>
         ///  
         /// <para>

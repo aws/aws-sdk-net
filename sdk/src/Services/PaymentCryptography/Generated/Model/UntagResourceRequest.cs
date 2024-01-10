@@ -64,7 +64,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The <code>KeyARN</code> of the key whose tags are being removed.
+        /// The <c>KeyARN</c> of the key whose tags are being removed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=70, Max=150)]

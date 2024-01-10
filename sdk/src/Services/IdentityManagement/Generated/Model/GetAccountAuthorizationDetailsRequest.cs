@@ -39,14 +39,13 @@ namespace Amazon.IdentityManagement.Model
     /// <para>
     /// Policies returned by this operation are URL-encoded compliant with <a href="https://tools.ietf.org/html/rfc3986">RFC
     /// 3986</a>. You can use a URL decoding method to convert the policy back to plain JSON
-    /// text. For example, if you use Java, you can use the <code>decode</code> method of
-    /// the <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
-    /// and SDKs provide similar functionality.
+    /// text. For example, if you use Java, you can use the <c>decode</c> method of the <c>java.net.URLDecoder</c>
+    /// utility class in the Java SDK. Other languages and SDKs provide similar functionality.
     /// </para>
     ///  </note> 
     /// <para>
-    /// You can optionally filter the results using the <code>Filter</code> parameter. You
-    /// can paginate the results using the <code>MaxItems</code> and <code>Marker</code> parameters.
+    /// You can optionally filter the results using the <c>Filter</c> parameter. You can paginate
+    /// the results using the <c>MaxItems</c> and <c>Marker</c> parameters.
     /// </para>
     /// </summary>
     public partial class GetAccountAuthorizationDetailsRequest : AmazonIdentityManagementServiceRequest
@@ -59,7 +58,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A list of entity types used to filter the results. Only the entities that match the
-        /// types you specify are included in the output. Use the value <code>LocalManagedPolicy</code>
+        /// types you specify are included in the output. Use the value <c>LocalManagedPolicy</c>
         /// to include customer managed policies.
         /// </para>
         ///  
@@ -84,7 +83,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// Use this parameter only when paginating results and only after you receive a response
-        /// indicating that the results are truncated. Set it to the value of the <code>Marker</code>
+        /// indicating that the results are truncated. Set it to the value of the <c>Marker</c>
         /// element in the response that you received to indicate where the next call should start.
         /// </para>
         /// </summary>
@@ -106,15 +105,15 @@ namespace Amazon.IdentityManagement.Model
         /// <para>
         /// Use this only when paginating results to indicate the maximum number of items you
         /// want in the response. If additional items exist beyond the maximum you specify, the
-        /// <code>IsTruncated</code> response element is <code>true</code>.
+        /// <c>IsTruncated</c> response element is <c>true</c>.
         /// </para>
         ///  
         /// <para>
         /// If you do not include this parameter, the number of items defaults to 100. Note that
         /// IAM might return fewer results, even when there are more results available. In that
-        /// case, the <code>IsTruncated</code> response element returns <code>true</code>, and
-        /// <code>Marker</code> contains a value to include in the subsequent call that tells
-        /// the service where to continue from.
+        /// case, the <c>IsTruncated</c> response element returns <c>true</c>, and <c>Marker</c>
+        /// contains a value to include in the subsequent call that tells the service where to
+        /// continue from.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

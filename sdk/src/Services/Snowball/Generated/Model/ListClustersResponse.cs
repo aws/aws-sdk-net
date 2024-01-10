@@ -39,8 +39,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property ClusterListEntries. 
         /// <para>
-        /// Each <code>ClusterListEntry</code> object contains a cluster's state, a cluster's
-        /// ID, and other important status information.
+        /// Each <c>ClusterListEntry</c> object contains a cluster's state, a cluster's ID, and
+        /// other important status information.
         /// </para>
         /// </summary>
         public List<ClusterListEntry> ClusterListEntries
@@ -58,9 +58,9 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// HTTP requests are stateless. If you use the automatically generated <code>NextToken</code>
-        /// value in your next <code>ClusterListEntry</code> call, your list of returned clusters
-        /// will start from this point in the array.
+        /// HTTP requests are stateless. If you use the automatically generated <c>NextToken</c>
+        /// value in your next <c>ClusterListEntry</c> call, your list of returned clusters will
+        /// start from this point in the array.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

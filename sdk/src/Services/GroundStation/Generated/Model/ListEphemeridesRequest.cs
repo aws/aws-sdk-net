@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// The end time to list in UTC. The operation will return an ephemeris if its expiration
-        /// time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.
+        /// time is within the time range defined by the <c>startTime</c> and <c>endTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -122,7 +122,7 @@ namespace Amazon.GroundStation.Model
         /// Gets and sets the property StartTime. 
         /// <para>
         /// The start time to list in UTC. The operation will return an ephemeris if its expiration
-        /// time is within the time range defined by the <code>startTime</code> and <code>endTime</code>.
+        /// time is within the time range defined by the <c>startTime</c> and <c>endTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

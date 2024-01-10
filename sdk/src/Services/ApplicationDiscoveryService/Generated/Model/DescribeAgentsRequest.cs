@@ -31,8 +31,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Container for the parameters to the DescribeAgents operation.
     /// Lists agents or collectors as specified by ID or other filters. All agents/collectors
-    /// associated with your user can be listed if you call <code>DescribeAgents</code> as
-    /// is without passing any parameters.
+    /// associated with your user can be listed if you call <c>DescribeAgents</c> as is without
+    /// passing any parameters.
     /// </summary>
     public partial class DescribeAgentsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -68,7 +68,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"key": "collectionStatus", "value": "STARTED"}</code> 
+        ///  <c>{"key": "collectionStatus", "value": "STARTED"}</c> 
         /// </para>
         /// </summary>
         public List<Filter> Filters
@@ -106,7 +106,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token to retrieve the next set of results. For example, if you previously specified
-        /// 100 IDs for <code>DescribeAgentsRequest$agentIds</code> but set <code>DescribeAgentsRequest$maxResults</code>
+        /// 100 IDs for <c>DescribeAgentsRequest$agentIds</c> but set <c>DescribeAgentsRequest$maxResults</c>
         /// to 10, you received a set of 10 results along with a token. Use that token in this
         /// query to get the next set of 10.
         /// </para>

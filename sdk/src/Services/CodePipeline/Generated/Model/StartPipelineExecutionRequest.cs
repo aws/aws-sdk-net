@@ -103,7 +103,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A list that overrides pipeline variables for a pipeline execution that's being started.
-        /// Variable names must match <code>[A-Za-z0-9@\-_]+</code>, and the values can be anything
+        /// Variable names must match <c>[A-Za-z0-9@\-_]+</c>, and the values can be anything
         /// except an empty string.
         /// </para>
         /// </summary>

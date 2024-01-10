@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Stores information for generating Amplify DataStore queries. Use a <code>Predicate</code>
+    /// Stores information for generating Amplify DataStore queries. Use a <c>Predicate</c>
     /// to retrieve a subset of the data in a collection.
     /// </summary>
     public partial class Predicate

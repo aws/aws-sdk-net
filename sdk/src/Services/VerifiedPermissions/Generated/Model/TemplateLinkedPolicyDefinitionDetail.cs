@@ -69,8 +69,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property Principal. 
         /// <para>
         /// The principal associated with this template-linked policy. Verified Permissions substitutes
-        /// this principal for the <code>?principal</code> placeholder in the policy template
-        /// when it evaluates an authorization request.
+        /// this principal for the <c>?principal</c> placeholder in the policy template when it
+        /// evaluates an authorization request.
         /// </para>
         /// </summary>
         public EntityIdentifier Principal
@@ -89,8 +89,8 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property Resource. 
         /// <para>
         /// The resource associated with this template-linked policy. Verified Permissions substitutes
-        /// this resource for the <code>?resource</code> placeholder in the policy template when
-        /// it evaluates an authorization request.
+        /// this resource for the <c>?resource</c> placeholder in the policy template when it
+        /// evaluates an authorization request.
         /// </para>
         /// </summary>
         public EntityIdentifier Resource

@@ -57,8 +57,7 @@ namespace Amazon.CloudDirectory.Model
         /// <summary>
         /// Gets and sets the property PathToObjectIdentifiersList. 
         /// <para>
-        /// Returns the path to the <code>ObjectIdentifiers</code> that are associated with the
-        /// directory.
+        /// Returns the path to the <c>ObjectIdentifiers</c> that are associated with the directory.
         /// </para>
         /// </summary>
         public List<PathToObjectIdentifiers> PathToObjectIdentifiersList

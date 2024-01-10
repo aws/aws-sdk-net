@@ -164,34 +164,34 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONING</code> - Resources are being created in the green environment.
+        ///  <c>PROVISIONING</c> - Resources are being created in the green environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - Resources are available in the green environment.
+        ///  <c>AVAILABLE</c> - Resources are available in the green environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SWITCHOVER_IN_PROGRESS</code> - The deployment is being switched from the blue
-        /// environment to the green environment.
+        ///  <c>SWITCHOVER_IN_PROGRESS</c> - The deployment is being switched from the blue environment
+        /// to the green environment.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SWITCHOVER_COMPLETED</code> - Switchover from the blue environment to the green
-        /// environment is complete.
+        ///  <c>SWITCHOVER_COMPLETED</c> - Switchover from the blue environment to the green environment
+        /// is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID_CONFIGURATION</code> - Resources in the green environment are invalid,
-        /// so switchover isn't possible.
+        ///  <c>INVALID_CONFIGURATION</c> - Resources in the green environment are invalid, so
+        /// switchover isn't possible.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SWITCHOVER_FAILED</code> - Switchover was attempted but failed.
+        ///  <c>SWITCHOVER_FAILED</c> - Switchover was attempted but failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The blue/green deployment is being deleted.
+        ///  <c>DELETING</c> - The blue/green deployment is being deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

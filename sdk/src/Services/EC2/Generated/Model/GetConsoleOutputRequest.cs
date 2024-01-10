@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: disabled (<code>false</code>)
+        /// Default: disabled (<c>false</c>)
         /// </para>
         /// </summary>
         public bool Latest

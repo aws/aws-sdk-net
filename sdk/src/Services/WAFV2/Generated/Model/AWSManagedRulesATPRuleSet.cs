@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Details for your use of the account takeover prevention managed rule group, <code>AWSManagedRulesATPRuleSet</code>.
-    /// This configuration is used in <code>ManagedRuleGroupConfig</code>.
+    /// Details for your use of the account takeover prevention managed rule group, <c>AWSManagedRulesATPRuleSet</c>.
+    /// This configuration is used in <c>ManagedRuleGroupConfig</c>.
     /// </summary>
     public partial class AWSManagedRulesATPRuleSet
     {
@@ -60,17 +60,15 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property LoginPath. 
         /// <para>
-        /// The path of the login endpoint for your application. For example, for the URL <code>https://example.com/web/login</code>,
-        /// you would provide the path <code>/web/login</code>. Login paths that start with the
-        /// path that you provide are considered a match. For example <code>/web/login</code>
-        /// matches the login paths <code>/web/login</code>, <code>/web/login/</code>, <code>/web/loginPage</code>,
-        /// and <code>/web/login/thisPage</code>, but doesn't match the login path <code>/home/web/login</code>
-        /// or <code>/website/login</code>.
+        /// The path of the login endpoint for your application. For example, for the URL <c>https://example.com/web/login</c>,
+        /// you would provide the path <c>/web/login</c>. Login paths that start with the path
+        /// that you provide are considered a match. For example <c>/web/login</c> matches the
+        /// login paths <c>/web/login</c>, <c>/web/login/</c>, <c>/web/loginPage</c>, and <c>/web/login/thisPage</c>,
+        /// but doesn't match the login path <c>/home/web/login</c> or <c>/website/login</c>.
         /// </para>
         ///  
         /// <para>
-        /// The rule group inspects only HTTP <code>POST</code> requests to your specified login
-        /// endpoint.
+        /// The rule group inspects only HTTP <c>POST</c> requests to your specified login endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

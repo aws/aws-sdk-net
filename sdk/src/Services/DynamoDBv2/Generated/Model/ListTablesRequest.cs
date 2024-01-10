@@ -31,7 +31,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the ListTables operation.
     /// Returns an array of table names associated with the current account and endpoint.
-    /// The output from <code>ListTables</code> is paginated, with each page returning a maximum
+    /// The output from <c>ListTables</c> is paginated, with each page returning a maximum
     /// of 100 table names.
     /// </summary>
     public partial class ListTablesRequest : AmazonDynamoDBRequest
@@ -68,7 +68,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExclusiveStartTableName. 
         /// <para>
         /// The first table name that this operation will evaluate. Use the value that was returned
-        /// for <code>LastEvaluatedTableName</code> in a previous operation, so that you can obtain
+        /// for <c>LastEvaluatedTableName</c> in a previous operation, so that you can obtain
         /// the next page of results.
         /// </para>
         /// </summary>

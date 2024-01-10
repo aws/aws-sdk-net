@@ -34,12 +34,11 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// CloudFront caches responses to <code>GET</code> and <code>HEAD</code> requests.
+    /// CloudFront caches responses to <c>GET</c> and <c>HEAD</c> requests.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// CloudFront caches responses to <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code>
-    /// requests.
+    /// CloudFront caches responses to <c>GET</c>, <c>HEAD</c>, and <c>OPTIONS</c> requests.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -77,9 +76,9 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Quantity. 
         /// <para>
         /// The number of HTTP methods for which you want CloudFront to cache responses. Valid
-        /// values are <code>2</code> (for caching responses to <code>GET</code> and <code>HEAD</code>
-        /// requests) and <code>3</code> (for caching responses to <code>GET</code>, <code>HEAD</code>,
-        /// and <code>OPTIONS</code> requests).
+        /// values are <c>2</c> (for caching responses to <c>GET</c> and <c>HEAD</c> requests)
+        /// and <c>3</c> (for caching responses to <c>GET</c>, <c>HEAD</c>, and <c>OPTIONS</c>
+        /// requests).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

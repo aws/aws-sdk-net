@@ -67,10 +67,9 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property ArchiveId. 
         /// <para>
-        /// The ID of the archive that you want to retrieve. This field is required only if <code>Type</code>
-        /// is set to <code>select</code> or <code>archive-retrieval</code>code&gt;. An error
-        /// occurs if you specify this request parameter for an inventory retrieval job request.
-        /// 
+        /// The ID of the archive that you want to retrieve. This field is required only if <c>Type</c>
+        /// is set to <c>select</c> or <c>archive-retrieval</c>code&gt;. An error occurs if you
+        /// specify this request parameter for an inventory retrieval job request. 
         /// </para>
         /// </summary>
         public string ArchiveId
@@ -230,8 +229,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The tier to use for a select or an archive retrieval job. Valid values are <code>Expedited</code>,
-        /// <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+        /// The tier to use for a select or an archive retrieval job. Valid values are <c>Expedited</c>,
+        /// <c>Standard</c>, or <c>Bulk</c>. <c>Standard</c> is the default.
         /// </para>
         /// </summary>
         public string Tier

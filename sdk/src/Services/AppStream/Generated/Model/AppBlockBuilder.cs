@@ -242,7 +242,7 @@ namespace Amazon.AppStream.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>WINDOWS_SERVER_2019</code> is the only valid value.
+        ///  <c>WINDOWS_SERVER_2019</c> is the only valid value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

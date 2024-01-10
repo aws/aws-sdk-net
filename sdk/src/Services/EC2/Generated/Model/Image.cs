@@ -197,8 +197,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// The hypervisor type of the image. Only <code>xen</code> is supported. <code>ovm</code>
-        /// is not supported.
+        /// The hypervisor type of the image. Only <c>xen</c> is supported. <c>ovm</c> is not
+        /// supported.
         /// </para>
         /// </summary>
         public HypervisorType Hypervisor
@@ -252,8 +252,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageOwnerAlias. 
         /// <para>
-        /// The Amazon Web Services account alias (for example, <code>amazon</code>, <code>self</code>)
-        /// or the Amazon Web Services account ID of the AMI owner.
+        /// The Amazon Web Services account alias (for example, <c>amazon</c>, <c>self</c>) or
+        /// the Amazon Web Services account ID of the AMI owner.
         /// </para>
         /// </summary>
         public string ImageOwnerAlias
@@ -289,11 +289,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImdsSupport. 
         /// <para>
-        /// If <code>v2.0</code>, it indicates that IMDSv2 is specified in the AMI. Instances
-        /// launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code>
-        /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
-        /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+        /// If <c>v2.0</c>, it indicates that IMDSv2 is specified in the AMI. Instances launched
+        /// from this AMI will have <c>HttpTokens</c> automatically set to <c>required</c> so
+        /// that, by default, the instance requires that IMDSv2 is used when requesting instance
+        /// metadata. In addition, <c>HttpPutResponseHopLimit</c> is set to <c>2</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
         /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -366,7 +366,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// This value is set to <code>windows</code> for Windows AMIs; otherwise, it is blank.
+        /// This value is set to <c>windows</c> for Windows AMIs; otherwise, it is blank.
         /// </para>
         /// </summary>
         public PlatformValues Platform
@@ -422,8 +422,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Public. 
         /// <para>
-        /// Indicates whether the image has public launch permissions. The value is <code>true</code>
-        /// if this image has public launch permissions or <code>false</code> if it has only implicit
+        /// Indicates whether the image has public launch permissions. The value is <c>true</c>
+        /// if this image has public launch permissions or <c>false</c> if it has only implicit
         /// and explicit launch permissions.
         /// </para>
         /// </summary>
@@ -460,7 +460,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RootDeviceName. 
         /// <para>
-        /// The device name of the root device volume (for example, <code>/dev/sda1</code>).
+        /// The device name of the root device volume (for example, <c>/dev/sda1</c>).
         /// </para>
         /// </summary>
         public string RootDeviceName
@@ -536,8 +536,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The current state of the AMI. If the state is <code>available</code>, the image is
-        /// successfully registered and can be used to launch an instance.
+        /// The current state of the AMI. If the state is <c>available</c>, the image is successfully
+        /// registered and can be used to launch an instance.
         /// </para>
         /// </summary>
         public ImageState State
@@ -591,8 +591,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TpmSupport. 
         /// <para>
-        /// If the image is configured for NitroTPM support, the value is <code>v2.0</code>. For
-        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// If the image is configured for NitroTPM support, the value is <c>v2.0</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
         /// in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>
@@ -612,7 +612,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property UsageOperation. 
         /// <para>
         /// The operation of the Amazon EC2 instance and the billing code that is associated with
-        /// the AMI. <code>usageOperation</code> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
+        /// the AMI. <c>usageOperation</c> corresponds to the <a href="https://docs.aws.amazon.com/cur/latest/userguide/Lineitem-columns.html#Lineitem-details-O-Operation">lineitem/Operation</a>
         /// column on your Amazon Web Services Cost and Usage Report and in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/price-changes.html">Amazon
         /// Web Services Price List API</a>. You can view these fields on the <b>Instances</b>
         /// or <b>AMIs</b> pages in the Amazon EC2 console, or in the responses that are returned

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A parameter declaration for the <code>DateTime</code> data type.
+    /// A parameter declaration for the <c>DateTime</c> data type.
     /// </summary>
     public partial class DateTimeParameterDeclaration
     {
@@ -96,7 +96,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TimeGranularity. 
         /// <para>
-        /// The level of time precision that is used to aggregate <code>DateTime</code> values.
+        /// The level of time precision that is used to aggregate <c>DateTime</c> values.
         /// </para>
         /// </summary>
         public TimeGranularity TimeGranularity
@@ -114,8 +114,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ValueWhenUnset. 
         /// <para>
-        /// The configuration that defines the default value of a <code>DateTime</code> parameter
-        /// when a value has not been set.
+        /// The configuration that defines the default value of a <c>DateTime</c> parameter when
+        /// a value has not been set.
         /// </para>
         /// </summary>
         public DateTimeValueWhenUnsetConfiguration ValueWhenUnset

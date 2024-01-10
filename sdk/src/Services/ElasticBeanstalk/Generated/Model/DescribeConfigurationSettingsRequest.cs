@@ -98,8 +98,8 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Condition: You must specify either this or a TemplateName, but not both. If you specify
-        /// both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error.
-        /// If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code>
+        /// both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c> error. If
+        /// you do not specify either, AWS Elastic Beanstalk returns <c>MissingRequiredParameter</c>
         /// error. 
         /// </para>
         /// </summary>
@@ -124,8 +124,8 @@ namespace Amazon.ElasticBeanstalk.Model
         ///  
         /// <para>
         ///  Conditional: You must specify either this parameter or an EnvironmentName, but not
-        /// both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code>
-        /// error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code>
+        /// both. If you specify both, AWS Elastic Beanstalk returns an <c>InvalidParameterCombination</c>
+        /// error. If you do not specify either, AWS Elastic Beanstalk returns a <c>MissingRequiredParameter</c>
         /// error. 
         /// </para>
         /// </summary>

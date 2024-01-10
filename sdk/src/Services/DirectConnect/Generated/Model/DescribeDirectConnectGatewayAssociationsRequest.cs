@@ -145,12 +145,11 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MaxResults</code> is given a value larger than 100, only 100 results are
-        /// returned.
+        /// If <c>MaxResults</c> is given a value larger than 100, only 100 results are returned.
         /// </para>
         /// </summary>
         public int MaxResults

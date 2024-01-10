@@ -90,7 +90,7 @@ namespace Amazon.XRay.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Don't use <code>aws:</code> as a prefix for keys; it's reserved for Amazon Web Services
+        /// Don't use <c>aws:</c> as a prefix for keys; it's reserved for Amazon Web Services
         /// use. You cannot edit or delete system tags.
         /// </para>
         ///  </li> </ul>

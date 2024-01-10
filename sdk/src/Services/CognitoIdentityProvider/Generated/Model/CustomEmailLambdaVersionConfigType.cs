@@ -64,8 +64,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// You must use a <code>LambdaVersion</code> of <code>V1_0</code> with a custom sender
-        /// function.
+        /// You must use a <c>LambdaVersion</c> of <c>V1_0</c> with a custom sender function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

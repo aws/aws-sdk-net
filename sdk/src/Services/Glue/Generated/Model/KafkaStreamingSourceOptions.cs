@@ -77,8 +77,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Assign. 
         /// <para>
-        /// The specific <code>TopicPartitions</code> to consume. You must specify at least one
-        /// of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.
+        /// The specific <c>TopicPartitions</c> to consume. You must specify at least one of <c>"topicName"</c>,
+        /// <c>"assign"</c> or <c>"subscribePattern"</c>.
         /// </para>
         /// </summary>
         public string Assign
@@ -96,7 +96,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property BootstrapServers. 
         /// <para>
-        /// A list of bootstrap server URLs, for example, as <code>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</code>.
+        /// A list of bootstrap server URLs, for example, as <c>b-1.vpc-test-2.o4q88o.c6.kafka.us-east-1.amazonaws.com:9094</c>.
         /// This option must be specified in the API call or defined in the table metadata in
         /// the Data Catalog.
         /// </para>
@@ -191,8 +191,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndingOffsets. 
         /// <para>
-        /// The end point when a batch query is ended. Possible values are either <code>"latest"</code>
-        /// or a JSON string that specifies an ending offset for each <code>TopicPartition</code>.
+        /// The end point when a batch query is ended. Possible values are either <c>"latest"</c>
+        /// or a JSON string that specifies an ending offset for each <c>TopicPartition</c>.
         /// </para>
         /// </summary>
         public string EndingOffsets
@@ -211,8 +211,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property IncludeHeaders. 
         /// <para>
         /// Whether to include the Kafka headers. When the option is set to "true", the data output
-        /// will contain an additional column named "glue_streaming_kafka_headers" with type <code>Array[Struct(key:
-        /// String, value: String)]</code>. The default value is "false". This option is available
+        /// will contain an additional column named "glue_streaming_kafka_headers" with type <c>Array[Struct(key:
+        /// String, value: String)]</c>. The default value is "false". This option is available
         /// in Glue version 3.0 or later only.
         /// </para>
         /// </summary>
@@ -232,7 +232,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property MaxOffsetsPerTrigger. 
         /// <para>
         /// The rate limit on the maximum number of offsets that are processed per trigger interval.
-        /// The specified total number of offsets is proportionally split across <code>topicPartitions</code>
+        /// The specified total number of offsets is proportionally split across <c>topicPartitions</c>
         /// of different volumes. The default value is null, which means that the consumer reads
         /// all offsets until the known latest offset.
         /// </para>
@@ -275,7 +275,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property NumRetries. 
         /// <para>
         /// The number of times to retry before failing to fetch Kafka offsets. The default value
-        /// is <code>3</code>.
+        /// is <c>3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -295,7 +295,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property PollTimeoutMs. 
         /// <para>
         /// The timeout in milliseconds to poll data from Kafka in Spark job executors. The default
-        /// value is <code>512</code>.
+        /// value is <c>512</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -315,7 +315,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RetryIntervalMs. 
         /// <para>
         /// The time in milliseconds to wait before retrying to fetch Kafka offsets. The default
-        /// value is <code>10</code>.
+        /// value is <c>10</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -334,8 +334,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityProtocol. 
         /// <para>
-        /// The protocol used to communicate with brokers. The possible values are <code>"SSL"</code>
-        /// or <code>"PLAINTEXT"</code>.
+        /// The protocol used to communicate with brokers. The possible values are <c>"SSL"</c>
+        /// or <c>"PLAINTEXT"</c>.
         /// </para>
         /// </summary>
         public string SecurityProtocol
@@ -354,7 +354,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property StartingOffsets. 
         /// <para>
         /// The starting position in the Kafka topic to read data from. The possible values are
-        /// <code>"earliest"</code> or <code>"latest"</code>. The default value is <code>"latest"</code>.
+        /// <c>"earliest"</c> or <c>"latest"</c>. The default value is <c>"latest"</c>.
         /// </para>
         /// </summary>
         public string StartingOffsets
@@ -373,14 +373,13 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property StartingTimestamp. 
         /// <para>
         /// The timestamp of the record in the Kafka topic to start reading data from. The possible
-        /// values are a timestamp string in UTC format of the pattern <code>yyyy-mm-ddTHH:MM:SSZ</code>
+        /// values are a timestamp string in UTC format of the pattern <c>yyyy-mm-ddTHH:MM:SSZ</c>
         /// (where Z represents a UTC timezone offset with a +/-. For example: "2023-04-04T08:00:00+08:00").
         /// 
         /// </para>
         ///  
         /// <para>
-        /// Only one of <code>StartingTimestamp</code> or <code>StartingOffsets</code> must be
-        /// set.
+        /// Only one of <c>StartingTimestamp</c> or <c>StartingOffsets</c> must be set.
         /// </para>
         /// </summary>
         public DateTime StartingTimestamp
@@ -399,7 +398,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property SubscribePattern. 
         /// <para>
         /// A Java regex string that identifies the topic list to subscribe to. You must specify
-        /// at least one of <code>"topicName"</code>, <code>"assign"</code> or <code>"subscribePattern"</code>.
+        /// at least one of <c>"topicName"</c>, <c>"assign"</c> or <c>"subscribePattern"</c>.
         /// </para>
         /// </summary>
         public string SubscribePattern
@@ -417,8 +416,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TopicName. 
         /// <para>
-        /// The topic name as specified in Apache Kafka. You must specify at least one of <code>"topicName"</code>,
-        /// <code>"assign"</code> or <code>"subscribePattern"</code>.
+        /// The topic name as specified in Apache Kafka. You must specify at least one of <c>"topicName"</c>,
+        /// <c>"assign"</c> or <c>"subscribePattern"</c>.
         /// </para>
         /// </summary>
         public string TopicName

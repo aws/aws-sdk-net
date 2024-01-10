@@ -42,13 +42,13 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// Specifies whether the ledger is protected from being deleted by any user. If not defined
-        /// during ledger creation, this feature is enabled (<code>true</code>) by default.
+        /// during ledger creation, this feature is enabled (<c>true</c>) by default.
         /// </para>
         ///  
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
-        /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-        /// to set this parameter to <code>false</code>.
+        /// the ledger. You can disable it by calling the <c>UpdateLedger</c> operation to set
+        /// this parameter to <c>false</c>.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -76,8 +76,8 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by Amazon
-        /// Web Services on your behalf.
+        ///  <c>AWS_OWNED_KMS_KEY</c>: Use an KMS key that is owned and managed by Amazon Web
+        /// Services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.QLDB.Model
         ///  </li> </ul> 
         /// <para>
         /// To specify a customer managed KMS key, you can use its key ID, Amazon Resource Name
-        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with <code>"alias/"</code>.
+        /// (ARN), alias name, or alias ARN. When using an alias name, prefix it with <c>"alias/"</c>.
         /// To specify a key in a different Amazon Web Services account, you must use the key
         /// ARN or alias ARN.
         /// </para>
@@ -106,20 +106,20 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> 
+        /// Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

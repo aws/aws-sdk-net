@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChannelSummary. 
         /// <para>
-        /// Summary of the details of a <code>Channel</code>.
+        /// Summary of the details of a <c>Channel</c>.
         /// </para>
         /// </summary>
         public ChannelSummary ChannelSummary

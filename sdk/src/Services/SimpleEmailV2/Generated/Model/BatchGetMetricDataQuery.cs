@@ -43,7 +43,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Dimensions. 
         /// <para>
-        /// An object that contains mapping between <code>MetricDimensionName</code> and <code>MetricDimensionValue</code>
+        /// An object that contains mapping between <c>MetricDimensionName</c> and <c>MetricDimensionValue</c>
         /// to filter metrics by.
         /// </para>
         /// </summary>
@@ -105,62 +105,61 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SEND</code> – Emails sent eligible for tracking in the VDM dashboard. This
-        /// excludes emails sent to the mailbox simulator and emails addressed to more than one
-        /// recipient.
+        ///  <c>SEND</c> – Emails sent eligible for tracking in the VDM dashboard. This excludes
+        /// emails sent to the mailbox simulator and emails addressed to more than one recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLAINT</code> – Complaints received for your account. This excludes complaints
+        ///  <c>COMPLAINT</c> – Complaints received for your account. This excludes complaints
         /// from the mailbox simulator, those originating from your account-level suppression
         /// list (if enabled), and those for emails addressed to more than one recipient
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PERMANENT_BOUNCE</code> – Permanent bounces - i.e. feedback received for emails
-        /// sent to non-existent mailboxes. Excludes bounces from the mailbox simulator, those
-        /// originating from your account-level suppression list (if enabled), and those for emails
-        /// addressed to more than one recipient.
+        ///  <c>PERMANENT_BOUNCE</c> – Permanent bounces - i.e. feedback received for emails sent
+        /// to non-existent mailboxes. Excludes bounces from the mailbox simulator, those originating
+        /// from your account-level suppression list (if enabled), and those for emails addressed
+        /// to more than one recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRANSIENT_BOUNCE</code> – Transient bounces - i.e. feedback received for delivery
+        ///  <c>TRANSIENT_BOUNCE</c> – Transient bounces - i.e. feedback received for delivery
         /// failures excluding issues with non-existent mailboxes. Excludes bounces from the mailbox
         /// simulator, and those for emails addressed to more than one recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPEN</code> – Unique open events for emails including open trackers. Excludes
-        /// opens for emails addressed to more than one recipient.
+        ///  <c>OPEN</c> – Unique open events for emails including open trackers. Excludes opens
+        /// for emails addressed to more than one recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CLICK</code> – Unique click events for emails including wrapped links. Excludes
-        /// clicks for emails addressed to more than one recipient.
+        ///  <c>CLICK</c> – Unique click events for emails including wrapped links. Excludes clicks
+        /// for emails addressed to more than one recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELIVERY</code> – Successful deliveries for email sending attempts. Excludes
-        /// deliveries to the mailbox simulator and for emails addressed to more than one recipient.
+        ///  <c>DELIVERY</c> – Successful deliveries for email sending attempts. Excludes deliveries
+        /// to the mailbox simulator and for emails addressed to more than one recipient.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELIVERY_OPEN</code> – Successful deliveries for email sending attempts. Excludes
+        ///  <c>DELIVERY_OPEN</c> – Successful deliveries for email sending attempts. Excludes
         /// deliveries to the mailbox simulator, for emails addressed to more than one recipient,
         /// and emails without open trackers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELIVERY_CLICK</code> – Successful deliveries for email sending attempts. Excludes
+        ///  <c>DELIVERY_CLICK</c> – Successful deliveries for email sending attempts. Excludes
         /// deliveries to the mailbox simulator, for emails addressed to more than one recipient,
         /// and emails without click trackers.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELIVERY_COMPLAINT</code> – Successful deliveries for email sending attempts.
-        /// Excludes deliveries to the mailbox simulator, for emails addressed to more than one
-        /// recipient, and emails addressed to recipients hosted by ISPs with which Amazon SES
-        /// does not have a feedback loop agreement.
+        ///  <c>DELIVERY_COMPLAINT</c> – Successful deliveries for email sending attempts. Excludes
+        /// deliveries to the mailbox simulator, for emails addressed to more than one recipient,
+        /// and emails addressed to recipients hosted by ISPs with which Amazon SES does not have
+        /// a feedback loop agreement.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -180,7 +179,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The query namespace - e.g. <code>VDM</code> 
+        /// The query namespace - e.g. <c>VDM</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -107,16 +107,16 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <para>
         /// The version of the document used in the association. If you change a document version
         /// for a State Manager association, Systems Manager immediately runs the association
-        /// unless you previously specifed the <code>apply-only-at-cron-interval</code> parameter.
+        /// unless you previously specifed the <c>apply-only-at-cron-interval</c> parameter.
         /// </para>
         ///  <important> 
         /// <para>
         /// State Manager doesn't support running associations that use a new version of a document
-        /// if that document is shared from another account. State Manager always runs the <code>default</code>
+        /// if that document is shared from another account. State Manager always runs the <c>default</c>
         /// version of a document if shared from another account, even though the Systems Manager
         /// console shows that a new version was processed. If you want to run an association
         /// using a new version of a document shared form another account, you must set the document
-        /// version to <code>default</code>.
+        /// version to <c>default</c>.
         /// </para>
         ///  </important>
         /// </summary>
@@ -267,8 +267,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Targets. 
         /// <para>
         /// The managed nodes targeted by the request to create an association. You can target
-        /// all managed nodes in an Amazon Web Services account by specifying the <code>InstanceIds</code>
-        /// key with a value of <code>*</code>.
+        /// all managed nodes in an Amazon Web Services account by specifying the <c>InstanceIds</c>
+        /// key with a value of <c>*</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]

@@ -40,8 +40,8 @@ namespace Amazon.CodeDeploy.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         ///  If a large amount of information is returned, a token identifier is also returned.
-        /// It can be used in a subsequent <code>ListDeploymentTargets</code> call to return the
-        /// next set of deployment targets in the list. 
+        /// It can be used in a subsequent <c>ListDeploymentTargets</c> call to return the next
+        /// set of deployment targets in the list. 
         /// </para>
         /// </summary>
         public string NextToken

@@ -57,8 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
     ///  </li> <li> 
     /// <para>
     ///  Job flows created within the last two months that are in one of the following states:
-    /// <code>RUNNING</code>, <code>WAITING</code>, <code>SHUTTING_DOWN</code>, <code>STARTING</code>
-    /// 
+    /// <c>RUNNING</c>, <c>WAITING</c>, <c>SHUTTING_DOWN</c>, <c>STARTING</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>

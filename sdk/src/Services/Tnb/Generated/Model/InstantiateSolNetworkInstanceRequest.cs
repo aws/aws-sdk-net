@@ -74,7 +74,7 @@ namespace Amazon.Tnb.Model
         /// <para>
         /// A check for whether you have the required permissions for the action without actually
         /// making the request and provides an error response. If you have the required permissions,
-        /// the error response is <code>DryRunOperation</code>. Otherwise, it is <code>UnauthorizedOperation</code>.
+        /// the error response is <c>DryRunOperation</c>. Otherwise, it is <c>UnauthorizedOperation</c>.
         /// </para>
         /// </summary>
         public bool DryRun

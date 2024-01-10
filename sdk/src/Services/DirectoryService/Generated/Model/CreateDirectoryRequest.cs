@@ -35,9 +35,9 @@ namespace Amazon.DirectoryService.Model
     /// 
     ///  
     /// <para>
-    /// Before you call <code>CreateDirectory</code>, ensure that all of the required permissions
+    /// Before you call <c>CreateDirectory</c>, ensure that all of the required permissions
     /// have been explicitly granted through a policy. For details about what permissions
-    /// are required to run the <code>CreateDirectory</code> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
+    /// are required to run the <c>CreateDirectory</c> operation, see <a href="http://docs.aws.amazon.com/directoryservice/latest/admin-guide/UsingWithDS_IAM_ResourcePermissions.html">Directory
     /// Service API Permissions: Actions, Resources, and Conditions Reference</a>.
     /// </para>
     /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The fully qualified name for the directory, such as <code>corp.example.com</code>.
+        /// The fully qualified name for the directory, such as <c>corp.example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -93,8 +93,8 @@ namespace Amazon.DirectoryService.Model
         /// Gets and sets the property Password. 
         /// <para>
         /// The password for the directory administrator. The directory creation process creates
-        /// a directory administrator account with the user name <code>Administrator</code> and
-        /// this password.
+        /// a directory administrator account with the user name <c>Administrator</c> and this
+        /// password.
         /// </para>
         ///  
         /// <para>
@@ -152,7 +152,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property ShortName. 
         /// <para>
-        /// The NetBIOS name of the directory, such as <code>CORP</code>.
+        /// The NetBIOS name of the directory, such as <c>CORP</c>.
         /// </para>
         /// </summary>
         public string ShortName

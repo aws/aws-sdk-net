@@ -844,7 +844,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// </para>
         ///  
         /// <para>
-        /// You control the amount of time that the URL will be valid using the <code>SessionExpirationDurationInSeconds</code>
+        /// You control the amount of time that the URL will be valid using the <c>SessionExpirationDurationInSeconds</c>
         /// parameter. If you do not provide this parameter, the returned URL is valid for twelve
         /// hours.
         /// </para>
@@ -1739,8 +1739,8 @@ namespace Amazon.KinesisAnalyticsV2
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ResourceProvisionedThroughputExceededException">
         /// Discovery failed to get a record from the streaming source because of the Kinesis
-        /// Streams <code>ProvisionedThroughputExceededException</code>. For more information,
-        /// see <a href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a>
+        /// Streams <c>ProvisionedThroughputExceededException</c>. For more information, see <a
+        /// href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a>
         /// in the Amazon Kinesis Streams API Reference.
         /// </exception>
         /// <exception cref="Amazon.KinesisAnalyticsV2.Model.ServiceUnavailableException">
@@ -2077,7 +2077,7 @@ namespace Amazon.KinesisAnalyticsV2
         /// 
         ///  
         /// <para>
-        /// You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code>
+        /// You can roll back an application only if it is in the <c>UPDATING</c> or <c>AUTOSCALING</c>
         /// status.
         /// </para>
         ///  
@@ -2234,7 +2234,7 @@ namespace Amazon.KinesisAnalyticsV2
 
         /// <summary>
         /// Stops the application from processing data. You can stop an application only if it
-        /// is in the running status, unless you set the <code>Force</code> parameter to <code>true</code>.
+        /// is in the running status, unless you set the <c>Force</c> parameter to <c>true</c>.
         /// 
         ///  
         /// <para>
@@ -2243,8 +2243,8 @@ namespace Amazon.KinesisAnalyticsV2
         /// </para>
         ///  
         /// <para>
-        /// Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code>
-        /// is set to <code>true</code>.
+        /// Kinesis Data Analytics takes a snapshot when the application is stopped, unless <c>Force</c>
+        /// is set to <c>true</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopApplication service method.</param>
@@ -2475,14 +2475,14 @@ namespace Amazon.KinesisAnalyticsV2
         /// 
         ///  
         /// <para>
-        /// Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you
-        /// update your application. 
+        /// Kinesis Data Analytics updates the <c>ApplicationVersionId</c> each time you update
+        /// your application. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// You cannot update the <code>RuntimeEnvironment</code> of an existing application.
-        /// If you need to update an application's <code>RuntimeEnvironment</code>, you must delete
-        /// the application and create it again.
+        /// You cannot update the <c>RuntimeEnvironment</c> of an existing application. If you
+        /// need to update an application's <c>RuntimeEnvironment</c>, you must delete the application
+        /// and create it again.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2570,9 +2570,9 @@ namespace Amazon.KinesisAnalyticsV2
         ///  
         /// <para>
         /// You can invoke this operation on an application that is in one of the two following
-        /// states: <code>READY</code> or <code>RUNNING</code>. If you invoke it when the application
-        /// is in a state other than these two states, it throws a <code>ResourceInUseException</code>.
-        /// The service makes use of the updated configuration the next time it schedules maintenance
+        /// states: <c>READY</c> or <c>RUNNING</c>. If you invoke it when the application is in
+        /// a state other than these two states, it throws a <c>ResourceInUseException</c>. The
+        /// service makes use of the updated configuration the next time it schedules maintenance
         /// for the application. If you invoke this operation after the service schedules maintenance,
         /// the service will apply the configuration update the next time it schedules maintenance
         /// for the application. This means that you might not see the maintenance configuration

@@ -58,8 +58,7 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// If the request includes <code>Marker</code>, the response returns that value in this
-        /// field.
+        /// If the request includes <c>Marker</c>, the response returns that value in this field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -79,8 +78,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If a value is present, there are more file shares to return. In a subsequent request,
-        /// use <code>NextMarker</code> as the value for <code>Marker</code> to retrieve the next
-        /// set of file shares.
+        /// use <c>NextMarker</c> as the value for <c>Marker</c> to retrieve the next set of file
+        /// shares.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

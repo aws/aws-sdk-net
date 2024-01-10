@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// The <code>GlobalClusterIdentifier</code> already exists. Choose a new global cluster
-    /// identifier (unique name) to create a new global cluster.
+    /// The <c>GlobalClusterIdentifier</c> already exists. Choose a new global cluster identifier
+    /// (unique name) to create a new global cluster.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

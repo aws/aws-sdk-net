@@ -63,8 +63,8 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Optional filter to apply to the search. Valid filters are <code>NAME</code> <code>NAMESPACE</code>,
-        /// <code>SEMANTIC_TYPE_PATH</code> and <code>REFERENCED_ENTITY_ID</code>. <code>REFERENCED_ENTITY_ID</code>
+        /// Optional filter to apply to the search. Valid filters are <c>NAME</c> <c>NAMESPACE</c>,
+        /// <c>SEMANTIC_TYPE_PATH</c> and <c>REFERENCED_ENTITY_ID</c>. <c>REFERENCED_ENTITY_ID</c>
         /// filters on entities that are used by the entity in the result set. For example, you
         /// can filter on the ID of a property that is used in a state.
         /// </para>

@@ -150,9 +150,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StrategyConfig. 
         /// <para>
-        /// The configuration for the <code>Hyperband</code> optimization strategy. This parameter
-        /// should be provided only if <code>Hyperband</code> is selected as the strategy for
-        /// <code>HyperParameterTuningJobConfig</code>.
+        /// The configuration for the <c>Hyperband</c> optimization strategy. This parameter should
+        /// be provided only if <c>Hyperband</c> is selected as the strategy for <c>HyperParameterTuningJobConfig</c>.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobStrategyConfig StrategyConfig
@@ -171,10 +170,10 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingJobEarlyStoppingType. 
         /// <para>
         /// Specifies whether to use early stopping for training jobs launched by the hyperparameter
-        /// tuning job. Because the <code>Hyperband</code> strategy has its own advanced internal
-        /// early stopping mechanism, <code>TrainingJobEarlyStoppingType</code> must be <code>OFF</code>
-        /// to use <code>Hyperband</code>. This parameter can take on one of the following values
-        /// (the default value is <code>OFF</code>):
+        /// tuning job. Because the <c>Hyperband</c> strategy has its own advanced internal early
+        /// stopping mechanism, <c>TrainingJobEarlyStoppingType</c> must be <c>OFF</c> to use
+        /// <c>Hyperband</c>. This parameter can take on one of the following values (the default
+        /// value is <c>OFF</c>):
         /// </para>
         ///  <dl> <dt>OFF</dt> <dd> 
         /// <para>

@@ -100,15 +100,15 @@ namespace Amazon.Appflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>true</code>: Amazon AppFlow preserves the data types when it writes to Amazon
-        /// S3. For example, an integer or <code>1</code> in your source data is still an integer
-        /// in your output.
+        ///  <c>true</c>: Amazon AppFlow preserves the data types when it writes to Amazon S3.
+        /// For example, an integer or <c>1</c> in your source data is still an integer in your
+        /// output.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>false</code>: Amazon AppFlow converts all of the source data into strings when
-        /// it writes to Amazon S3. For example, an integer of <code>1</code> in your source data
-        /// becomes the string <code>"1"</code> in the output.
+        ///  <c>false</c>: Amazon AppFlow converts all of the source data into strings when it
+        /// writes to Amazon S3. For example, an integer of <c>1</c> in your source data becomes
+        /// the string <c>"1"</c> in the output.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -55,7 +55,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</code>
+        ///  <c>arn:${Partition}:iotsitewise:${Region}:${Account}:asset-model/${AssetModelId}</c>
         /// 
         /// </para>
         /// </summary>
@@ -76,7 +76,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property AssetModelCompositeModels. 
         /// <para>
         /// The list of built-in composite models for the asset model, such as those with those
-        /// of type <code>AWS/ALARMS</code>.
+        /// of type <c>AWS/ALARMS</c>.
         /// </para>
         /// </summary>
         public List<AssetModelCompositeModel> AssetModelCompositeModels
@@ -169,9 +169,9 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelHierarchies. 
         /// <para>
-        /// A list of asset model hierarchies that each contain a <code>childAssetModelId</code>
-        /// and a <code>hierarchyId</code> (named <code>id</code>). A hierarchy specifies allowed
-        /// parent/child asset relationships for an asset model.
+        /// A list of asset model hierarchies that each contain a <c>childAssetModelId</c> and
+        /// a <c>hierarchyId</c> (named <c>id</c>). A hierarchy specifies allowed parent/child
+        /// asset relationships for an asset model.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -252,7 +252,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  
         /// <para>
         /// This object doesn't include properties that you define in composite models. You can
-        /// find composite model properties in the <code>assetModelCompositeModels</code> object.
+        /// find composite model properties in the <c>assetModelCompositeModels</c> object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

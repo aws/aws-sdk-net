@@ -56,7 +56,7 @@ namespace Amazon.Finspace.Model
         /// plant and stores it in memory until the end of day, after which it writes all of its
         /// data to a disk and reloads the HDB. This cluster type requires local storage for temporary
         /// storage of data during the savedown process. If you specify this field in your request,
-        /// you must provide the <code>savedownStorageConfiguration</code> parameter.
+        /// you must provide the <c>savedownStorageConfiguration</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -70,7 +70,7 @@ namespace Amazon.Finspace.Model
         /// by granting greater access to system commands and enabling a fast reload of custom
         /// code. This cluster type can optionally mount databases including cache and savedown
         /// storage. For this cluster type, the node count is fixed at 1. It does not support
-        /// autoscaling and supports only <code>SINGLE</code> AZ mode.
+        /// autoscaling and supports only <c>SINGLE</c> AZ mode.
         /// </para>
         ///  </li> <li> 
         /// <para>

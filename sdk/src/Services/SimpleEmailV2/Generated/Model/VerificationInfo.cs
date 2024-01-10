@@ -47,30 +47,30 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INVALID_VALUE</code> – Amazon SES was able to find the record, but the value
-        /// contained within the record was invalid. Ensure you have published the correct values
-        /// for the record.
+        ///  <c>INVALID_VALUE</c> – Amazon SES was able to find the record, but the value contained
+        /// within the record was invalid. Ensure you have published the correct values for the
+        /// record.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TYPE_NOT_FOUND</code> – The queried hostname exists but does not have the requested
+        ///  <c>TYPE_NOT_FOUND</c> – The queried hostname exists but does not have the requested
         /// type of DNS record. Ensure that you have published the correct type of DNS record.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HOST_NOT_FOUND</code> – The queried hostname does not exist or was not reachable
+        ///  <c>HOST_NOT_FOUND</c> – The queried hostname does not exist or was not reachable
         /// at the time of the request. Ensure that you have published the required DNS record(s).
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SERVICE_ERROR</code> – A temporary issue is preventing Amazon SES from determining
+        ///  <c>SERVICE_ERROR</c> – A temporary issue is preventing Amazon SES from determining
         /// the verification status of the domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DNS_SERVER_ERROR</code> – The DNS server encountered an issue and was unable
-        /// to complete the request.
+        ///  <c>DNS_SERVER_ERROR</c> – The DNS server encountered an issue and was unable to complete
+        /// the request.
         /// </para>
         ///  </li> </ul>
         /// </summary>

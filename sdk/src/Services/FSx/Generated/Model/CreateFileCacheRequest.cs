@@ -36,16 +36,16 @@ namespace Amazon.FSx.Model
     /// <para>
     /// You can use this operation with a client request token in the request that Amazon
     /// File Cache uses to ensure idempotent creation. If a cache with the specified client
-    /// request token exists and the parameters match, <code>CreateFileCache</code> returns
-    /// the description of the existing cache. If a cache with the specified client request
-    /// token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>.
-    /// If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code>
+    /// request token exists and the parameters match, <c>CreateFileCache</c> returns the
+    /// description of the existing cache. If a cache with the specified client request token
+    /// exists and the parameters don't match, this call returns <c>IncompatibleParameterError</c>.
+    /// If a file cache with the specified client request token doesn't exist, <c>CreateFileCache</c>
     /// does the following: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial
-    /// lifecycle state of <code>CREATING</code>.
+    /// lifecycle state of <c>CREATING</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -53,9 +53,8 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <code>CreateFileCache</code> call returns while the cache's lifecycle state is
-    /// still <code>CREATING</code>. You can check the cache creation status by calling the
-    /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+    /// The <c>CreateFileCache</c> call returns while the cache's lifecycle state is still
+    /// <c>CREATING</c>. You can check the cache creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
     /// operation, which returns the cache state along with other information.
     /// </para>
     ///  </note>
@@ -83,7 +82,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// By using the idempotent operation, you can retry a <code>CreateFileCache</code> operation
+        /// By using the idempotent operation, you can retry a <c>CreateFileCache</c> operation
         /// without the risk of creating an extra cache. This approach can be useful when an initial
         /// call fails in a way that makes it unclear whether a cache was created. Examples are
         /// if a transport level timeout occurred, or your connection was reset. If you use the
@@ -164,7 +163,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileCacheType. 
         /// <para>
-        /// The type of cache that you're creating, which must be <code>LUSTRE</code>.
+        /// The type of cache that you're creating, which must be <c>LUSTRE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -183,7 +182,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileCacheTypeVersion. 
         /// <para>
-        /// Sets the Lustre version for the cache that you're creating, which must be <code>2.12</code>.
+        /// Sets the Lustre version for the cache that you're creating, which must be <c>2.12</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -203,7 +202,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// Specifies the ID of the Key Management Service (KMS) key to use for encrypting data
-        /// on an Amazon File Cache. If a <code>KmsKeyId</code> isn't specified, the Amazon FSx-managed
+        /// on an Amazon File Cache. If a <c>KmsKeyId</c> isn't specified, the Amazon FSx-managed
         /// KMS key for your account is used. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_Encrypt.html">Encrypt</a>
         /// in the <i>Key Management Service API Reference</i>.
         /// </para>

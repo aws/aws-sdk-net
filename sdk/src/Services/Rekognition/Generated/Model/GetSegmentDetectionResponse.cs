@@ -47,11 +47,11 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property AudioMetadata. 
         /// <para>
-        /// An array of objects. There can be multiple audio streams. Each <code>AudioMetadata</code>
-        /// object contains metadata for a single audio stream. Audio information in an <code>AudioMetadata</code>
+        /// An array of objects. There can be multiple audio streams. Each <c>AudioMetadata</c>
+        /// object contains metadata for a single audio stream. Audio information in an <c>AudioMetadata</c>
         /// objects includes the audio codec, the number of audio channels, the duration of the
         /// audio stream, and the sample rate. Audio metadata is returned in each page of information
-        /// returned by <code>GetSegmentDetection</code>.
+        /// returned by <c>GetSegmentDetection</c>.
         /// </para>
         /// </summary>
         public List<AudioMetadata> AudioMetadata
@@ -149,9 +149,8 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property Segments. 
         /// <para>
         /// An array of segments detected in a video. The array is sorted by the segment types
-        /// (TECHNICAL_CUE or SHOT) specified in the <code>SegmentTypes</code> input parameter
-        /// of <code>StartSegmentDetection</code>. Within each segment type the array is sorted
-        /// by timestamp values.
+        /// (TECHNICAL_CUE or SHOT) specified in the <c>SegmentTypes</c> input parameter of <c>StartSegmentDetection</c>.
+        /// Within each segment type the array is sorted by timestamp values.
         /// </para>
         /// </summary>
         public List<SegmentDetection> Segments
@@ -169,7 +168,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property SelectedSegmentTypes. 
         /// <para>
-        /// An array containing the segment types requested in the call to <code>StartSegmentDetection</code>.
+        /// An array containing the segment types requested in the call to <c>StartSegmentDetection</c>.
         /// 
         /// </para>
         /// </summary>
@@ -188,7 +187,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// If the job fails, <code>StatusMessage</code> provides a descriptive error message.
+        /// If the job fails, <c>StatusMessage</c> provides a descriptive error message.
         /// </para>
         /// </summary>
         public string StatusMessage
@@ -221,11 +220,11 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property VideoMetadata. 
         /// <para>
-        /// Currently, Amazon Rekognition Video returns a single object in the <code>VideoMetadata</code>
+        /// Currently, Amazon Rekognition Video returns a single object in the <c>VideoMetadata</c>
         /// array. The object contains information about the video stream in the input file that
-        /// Amazon Rekognition Video chose to analyze. The <code>VideoMetadata</code> object includes
+        /// Amazon Rekognition Video chose to analyze. The <c>VideoMetadata</c> object includes
         /// the video codec, video format and other information. Video metadata is returned in
-        /// each page of information returned by <code>GetSegmentDetection</code>.
+        /// each page of information returned by <c>GetSegmentDetection</c>.
         /// </para>
         /// </summary>
         public List<VideoMetadata> VideoMetadata

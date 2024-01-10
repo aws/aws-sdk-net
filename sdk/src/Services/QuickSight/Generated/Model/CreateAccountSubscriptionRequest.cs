@@ -48,10 +48,9 @@ namespace Amazon.QuickSight.Model
     /// </para>
     ///  
     /// <para>
-    /// If your IAM policy includes both the <code>Subscribe</code> and <code>CreateAccountSubscription</code>
-    /// actions, make sure that both actions are set to <code>Allow</code>. If either action
-    /// is set to <code>Deny</code>, the <code>Deny</code> action prevails and your API call
-    /// fails.
+    /// If your IAM policy includes both the <c>Subscribe</c> and <c>CreateAccountSubscription</c>
+    /// actions, make sure that both actions are set to <c>Allow</c>. If either action is
+    /// set to <c>Deny</c>, the <c>Deny</c> action prevails and your API call fails.
     /// </para>
     ///  
     /// <para>
@@ -91,7 +90,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AccountName. 
         /// <para>
         /// The name of your Amazon QuickSight account. This name is unique over all of Amazon
-        /// Web Services, and it appears only when users sign in. You can't change <code>AccountName</code>
+        /// Web Services, and it appears only when users sign in. You can't change <c>AccountName</c>
         /// value after the Amazon QuickSight account is created.
         /// </para>
         /// </summary>
@@ -111,7 +110,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ActiveDirectoryName. 
         /// <para>
-        /// The name of your Active Directory. This field is required if <code>ACTIVE_DIRECTORY</code>
+        /// The name of your Active Directory. This field is required if <c>ACTIVE_DIRECTORY</c>
         /// is the selected authentication method of the new Amazon QuickSight account.
         /// </para>
         /// </summary>
@@ -131,8 +130,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property AdminGroup. 
         /// <para>
         /// The admin group associated with your Active Directory or IAM Identity Center account.
-        /// This field is required if <code>ACTIVE_DIRECTORY</code> or <code>IAM_IDENTITY_CENTER</code>
-        /// is the selected authentication method of the new Amazon QuickSight account.
+        /// This field is required if <c>ACTIVE_DIRECTORY</c> or <c>IAM_IDENTITY_CENTER</c> is
+        /// the selected authentication method of the new Amazon QuickSight account.
         /// </para>
         ///  
         /// <para>
@@ -164,13 +163,13 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>ACTIVE_DIRECTORY</code>, provide an <code>ActiveDirectoryName</code>
-        /// and an <code>AdminGroup</code> associated with your Active Directory.
+        /// If you choose <c>ACTIVE_DIRECTORY</c>, provide an <c>ActiveDirectoryName</c> and an
+        /// <c>AdminGroup</c> associated with your Active Directory.
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>IAM_IDENTITY_CENTER</code>, provide an <code>AdminGroup</code>
-        /// associated with your IAM Identity Center account.
+        /// If you choose <c>IAM_IDENTITY_CENTER</c>, provide an <c>AdminGroup</c> associated
+        /// with your IAM Identity Center account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -238,8 +237,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ContactNumber. 
         /// <para>
         /// A 10-digit phone number for the author of the Amazon QuickSight account to use for
-        /// future communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is
-        /// the selected edition of the new Amazon QuickSight account.
+        /// future communications. This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected
+        /// edition of the new Amazon QuickSight account.
         /// </para>
         /// </summary>
         public string ContactNumber
@@ -276,27 +275,27 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Edition. 
         /// <para>
         /// The edition of Amazon QuickSight that you want your account to have. Currently, you
-        /// can choose from <code>ENTERPRISE</code> or <code>ENTERPRISE_AND_Q</code>.
+        /// can choose from <c>ENTERPRISE</c> or <c>ENTERPRISE_AND_Q</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you choose <code>ENTERPRISE_AND_Q</code>, the following parameters are required:
+        /// If you choose <c>ENTERPRISE_AND_Q</c>, the following parameters are required:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FirstName</code> 
+        ///  <c>FirstName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LastName</code> 
+        ///  <c>LastName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EmailAddress</code> 
+        ///  <c>EmailAddress</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ContactNumber</code> 
+        ///  <c>ContactNumber</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -317,7 +316,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property EmailAddress. 
         /// <para>
         /// The email address of the author of the Amazon QuickSight account to use for future
-        /// communications. This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected
+        /// communications. This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected
         /// edition of the new Amazon QuickSight account.
         /// </para>
         /// </summary>
@@ -337,8 +336,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property FirstName. 
         /// <para>
         /// The first name of the author of the Amazon QuickSight account to use for future communications.
-        /// This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of
-        /// the new Amazon QuickSight account.
+        /// This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected edition of the
+        /// new Amazon QuickSight account.
         /// </para>
         /// </summary>
         public string FirstName
@@ -357,8 +356,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property LastName. 
         /// <para>
         /// The last name of the author of the Amazon QuickSight account to use for future communications.
-        /// This field is required if <code>ENTERPPRISE_AND_Q</code> is the selected edition of
-        /// the new Amazon QuickSight account.
+        /// This field is required if <c>ENTERPPRISE_AND_Q</c> is the selected edition of the
+        /// new Amazon QuickSight account.
         /// </para>
         /// </summary>
         public string LastName
@@ -425,8 +424,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property Realm. 
         /// <para>
         /// The realm of the Active Directory that is associated with your Amazon QuickSight account.
-        /// This field is required if <code>ACTIVE_DIRECTORY</code> is the selected authentication
-        /// method of the new Amazon QuickSight account.
+        /// This field is required if <c>ACTIVE_DIRECTORY</c> is the selected authentication method
+        /// of the new Amazon QuickSight account.
         /// </para>
         /// </summary>
         public string Realm

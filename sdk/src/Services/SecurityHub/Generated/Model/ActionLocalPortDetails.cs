@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// For <code>NetworkConnectionAction</code> and <code>PortProbeDetails</code>, <code>LocalPortDetails</code>
+    /// For <c>NetworkConnectionAction</c> and <c>PortProbeDetails</c>, <c>LocalPortDetails</c>
     /// provides information about the local port that was involved in the action.
     /// </summary>
     public partial class ActionLocalPortDetails

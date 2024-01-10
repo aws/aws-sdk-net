@@ -65,7 +65,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AccessPolicyPermission. 
         /// <para>
-        /// The permission level for this access policy. Note that a project <code>ADMINISTRATOR</code>
+        /// The permission level for this access policy. Note that a project <c>ADMINISTRATOR</c>
         /// is also known as a project owner.
         /// </para>
         /// </summary>

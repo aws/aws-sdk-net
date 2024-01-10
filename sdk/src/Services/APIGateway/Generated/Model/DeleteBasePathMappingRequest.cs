@@ -44,7 +44,7 @@ namespace Amazon.APIGateway.Model
         /// </para>
         ///  
         /// <para>
-        /// To specify an empty base path, set this parameter to <code>'(none)'</code>.
+        /// To specify an empty base path, set this parameter to <c>'(none)'</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

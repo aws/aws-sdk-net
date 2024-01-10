@@ -38,7 +38,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags, as <code>key:value</code> strings.
+        /// A list of tags, as <c>key:value</c> strings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=200)]

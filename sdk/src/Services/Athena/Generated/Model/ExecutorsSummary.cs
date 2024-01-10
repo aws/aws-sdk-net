@@ -85,27 +85,27 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATING</code> - The executor is being started, including acquiring resources.
+        ///  <c>CREATING</c> - The executor is being started, including acquiring resources.
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATED</code> - The executor has been started.
+        ///  <c>CREATED</c> - The executor has been started.
         /// </para>
         ///  
         /// <para>
-        ///  <code>REGISTERED</code> - The executor has been registered.
+        ///  <c>REGISTERED</c> - The executor has been registered.
         /// </para>
         ///  
         /// <para>
-        ///  <code>TERMINATING</code> - The executor is in the process of shutting down.
+        ///  <c>TERMINATING</c> - The executor is in the process of shutting down.
         /// </para>
         ///  
         /// <para>
-        ///  <code>TERMINATED</code> - The executor is no longer running.
+        ///  <c>TERMINATED</c> - The executor is no longer running.
         /// </para>
         ///  
         /// <para>
-        ///  <code>FAILED</code> - Due to a failure, the executor is no longer running.
+        ///  <c>FAILED</c> - Due to a failure, the executor is no longer running.
         /// </para>
         /// </summary>
         public ExecutorState ExecutorState
@@ -123,8 +123,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property ExecutorType. 
         /// <para>
-        /// The type of executor used for the application (<code>COORDINATOR</code>, <code>GATEWAY</code>,
-        /// or <code>WORKER</code>).
+        /// The type of executor used for the application (<c>COORDINATOR</c>, <c>GATEWAY</c>,
+        /// or <c>WORKER</c>).
         /// </para>
         /// </summary>
         public ExecutorType ExecutorType

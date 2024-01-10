@@ -30,10 +30,10 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the RestoreTableToPointInTime operation.
-    /// Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code>
-    /// and <code>LatestRestorableDateTime</code>. You can restore your table to any point
-    /// in time during the last 35 days. Any number of users can execute up to 4 concurrent
-    /// restores (any type of restore) in a given account. 
+    /// Restores the specified table to the specified point in time within <c>EarliestRestorableDateTime</c>
+    /// and <c>LatestRestorableDateTime</c>. You can restore your table to any point in time
+    /// during the last 35 days. Any number of users can execute up to 4 concurrent restores
+    /// (any type of restore) in a given account. 
     /// 
     ///  
     /// <para>
@@ -285,8 +285,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property UseLatestRestorableTime. 
         /// <para>
-        /// Restore the table to the latest possible time. <code>LatestRestorableDateTime</code>
-        /// is typically 5 minutes before the current time. 
+        /// Restore the table to the latest possible time. <c>LatestRestorableDateTime</c> is
+        /// typically 5 minutes before the current time. 
         /// </para>
         /// </summary>
         public bool UseLatestRestorableTime

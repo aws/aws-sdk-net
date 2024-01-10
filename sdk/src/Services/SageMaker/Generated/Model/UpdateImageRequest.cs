@@ -46,7 +46,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DeleteProperties. 
         /// <para>
-        /// A list of properties to delete. Only the <code>Description</code> and <code>DisplayName</code>
+        /// A list of properties to delete. Only the <c>Description</c> and <c>DisplayName</c>
         /// properties can be deleted.
         /// </para>
         /// </summary>

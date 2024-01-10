@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>NaN</code> indicates that the value is not available.
+        ///  <c>NaN</c> indicates that the value is not available.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -128,7 +128,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>NaN</code> indicates that the value is not available.
+        ///  <c>NaN</c> indicates that the value is not available.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -172,7 +172,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>NaN</code> indicates that the value is not available.
+        ///  <c>NaN</c> indicates that the value is not available.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

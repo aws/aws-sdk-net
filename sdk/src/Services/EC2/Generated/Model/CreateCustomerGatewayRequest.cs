@@ -202,7 +202,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of VPN connection that this customer gateway supports (<code>ipsec.1</code>).
+        /// The type of VPN connection that this customer gateway supports (<c>ipsec.1</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

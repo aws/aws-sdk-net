@@ -42,9 +42,9 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property F1Score. 
         /// <para>
         /// A measure of how accurate the recognizer results are for a specific entity type in
-        /// the test data. It is derived from the <code>Precision</code> and <code>Recall</code>
-        /// values. The <code>F1Score</code> is the harmonic average of the two scores. The highest
-        /// score is 1, and the worst score is 0. 
+        /// the test data. It is derived from the <c>Precision</c> and <c>Recall</c> values. The
+        /// <c>F1Score</c> is the harmonic average of the two scores. The highest score is 1,
+        /// and the worst score is 0. 
         /// </para>
         /// </summary>
         public double F1Score

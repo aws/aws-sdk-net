@@ -31,8 +31,7 @@ namespace Amazon.Kendra.Model
     /// <summary>
     /// Container for the parameters to the StartDataSourceSyncJob operation.
     /// Starts a synchronization job for a data source connector. If a synchronization job
-    /// is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code>
-    /// exception.
+    /// is already in progress, Amazon Kendra returns a <c>ResourceInUseException</c> exception.
     /// 
     ///  
     /// <para>

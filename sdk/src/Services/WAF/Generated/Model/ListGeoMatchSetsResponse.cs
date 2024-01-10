@@ -57,11 +57,11 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// If you have more <code>GeoMatchSet</code> objects than the number that you specified
-        /// for <code>Limit</code> in the request, the response includes a <code>NextMarker</code>
-        /// value. To list more <code>GeoMatchSet</code> objects, submit another <code>ListGeoMatchSets</code>
-        /// request, and specify the <code>NextMarker</code> value from the response in the <code>NextMarker</code>
-        /// value in the next request.
+        /// If you have more <c>GeoMatchSet</c> objects than the number that you specified for
+        /// <c>Limit</c> in the request, the response includes a <c>NextMarker</c> value. To list
+        /// more <c>GeoMatchSet</c> objects, submit another <c>ListGeoMatchSets</c> request, and
+        /// specify the <c>NextMarker</c> value from the response in the <c>NextMarker</c> value
+        /// in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]

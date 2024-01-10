@@ -105,8 +105,8 @@ namespace Amazon.ApplicationInsights.Model
         /// Gets and sets the property CWEMonitorEnabled. 
         /// <para>
         ///  Indicates whether Application Insights can listen to CloudWatch events for the application
-        /// resources, such as <code>instance terminated</code>, <code>failed deployment</code>,
-        /// and others. 
+        /// resources, such as <c>instance terminated</c>, <c>failed deployment</c>, and others.
+        /// 
         /// </para>
         /// </summary>
         public bool CWEMonitorEnabled
@@ -126,7 +126,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <para>
         /// Application Insights can create applications based on a resource group or on an account.
         /// To create an account-based application using all of the resources in the account,
-        /// set this parameter to <code>ACCOUNT_BASED</code>. 
+        /// set this parameter to <c>ACCOUNT_BASED</c>. 
         /// </para>
         /// </summary>
         public GroupingType GroupingType
@@ -144,7 +144,7 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property OpsCenterEnabled. 
         /// <para>
-        ///  When set to <code>true</code>, creates opsItems for any problems detected on an application.
+        ///  When set to <c>true</c>, creates opsItems for any problems detected on an application.
         /// 
         /// </para>
         /// </summary>
@@ -202,9 +202,9 @@ namespace Amazon.ApplicationInsights.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// List of tags to add to the application. tag key (<code>Key</code>) and an associated
-        /// tag value (<code>Value</code>). The maximum length of a tag key is 128 characters.
-        /// The maximum length of a tag value is 256 characters.
+        /// List of tags to add to the application. tag key (<c>Key</c>) and an associated tag
+        /// value (<c>Value</c>). The maximum length of a tag key is 128 characters. The maximum
+        /// length of a tag value is 256 characters.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

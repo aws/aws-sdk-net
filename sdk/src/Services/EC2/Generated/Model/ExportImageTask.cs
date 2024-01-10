@@ -135,8 +135,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the export image task. The possible values are <code>active</code>,
-        /// <code>completed</code>, <code>deleting</code>, and <code>deleted</code>.
+        /// The status of the export image task. The possible values are <c>active</c>, <c>completed</c>,
+        /// <c>deleting</c>, and <c>deleted</c>.
         /// </para>
         /// </summary>
         public string Status

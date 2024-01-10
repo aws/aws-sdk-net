@@ -133,7 +133,7 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -152,8 +152,8 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         ///  The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token (marker) is included
-        /// in the response so that the remaining results can be retrieved.
+        /// the specified <c>MaxRecords</c> value, a pagination token (marker) is included in
+        /// the response so that the remaining results can be retrieved.
         /// </para>
         ///  
         /// <para>
@@ -188,28 +188,25 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If <code>SourceIdentifier</code> is provided, <code>SourceType</code> must also be
+        /// If <c>SourceIdentifier</c> is provided, <c>SourceType</c> must also be provided.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is <c>DBInstance</c>, a <c>DBInstanceIdentifier</c> must be provided.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If the source type is <c>DBSecurityGroup</c>, a <c>DBSecurityGroupName</c> must be
         /// provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is <code>DBInstance</code>, a <code>DBInstanceIdentifier</code>
-        /// must be provided.
+        /// If the source type is <c>DBParameterGroup</c>, a <c>DBParameterGroupName</c> must
+        /// be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the source type is <code>DBSecurityGroup</code>, a <code>DBSecurityGroupName</code>
-        /// must be provided.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the source type is <code>DBParameterGroup</code>, a <code>DBParameterGroupName</code>
-        /// must be provided.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// If the source type is <code>DBSnapshot</code>, a <code>DBSnapshotIdentifier</code>
-        /// must be provided.
+        /// If the source type is <c>DBSnapshot</c>, a <c>DBSnapshotIdentifier</c> must be provided.
         /// </para>
         ///  </li> <li> 
         /// <para>

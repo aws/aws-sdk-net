@@ -55,21 +55,20 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BACKUP_JOB_STARTED</code> | <code>BACKUP_JOB_COMPLETED</code> 
+        ///  <c>BACKUP_JOB_STARTED</c> | <c>BACKUP_JOB_COMPLETED</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COPY_JOB_STARTED</code> | <code>COPY_JOB_SUCCESSFUL</code> | <code>COPY_JOB_FAILED</code>
+        ///  <c>COPY_JOB_STARTED</c> | <c>COPY_JOB_SUCCESSFUL</c> | <c>COPY_JOB_FAILED</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>RESTORE_JOB_STARTED</c> | <c>RESTORE_JOB_COMPLETED</c> | <c>RECOVERY_POINT_MODIFIED</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESTORE_JOB_STARTED</code> | <code>RESTORE_JOB_COMPLETED</code> | <code>RECOVERY_POINT_MODIFIED</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>S3_BACKUP_OBJECT_FAILED</code> | <code>S3_RESTORE_OBJECT_FAILED</code> 
+        ///  <c>S3_BACKUP_OBJECT_FAILED</c> | <c>S3_RESTORE_OBJECT_FAILED</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -117,7 +116,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property SNSTopicArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) that specifies the topic for a backup vault’s events;
-        /// for example, <code>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</code>.
+        /// for example, <c>arn:aws:sns:us-west-2:111122223333:MyVaultTopic</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

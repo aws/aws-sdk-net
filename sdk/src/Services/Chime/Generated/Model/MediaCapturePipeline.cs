@@ -47,8 +47,8 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChimeSdkMeetingConfiguration. 
         /// <para>
-        /// The configuration for a specified media capture pipeline. <code>SourceType</code>
-        /// must be <code>ChimeSdkMeeting</code>.
+        /// The configuration for a specified media capture pipeline. <c>SourceType</c> must be
+        /// <c>ChimeSdkMeeting</c>.
         /// </para>
         /// </summary>
         public ChimeSdkMeetingConfiguration ChimeSdkMeetingConfiguration
@@ -158,7 +158,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// Source type from which media artifacts are saved. You must use <code>ChimeMeeting</code>.
+        /// Source type from which media artifacts are saved. You must use <c>ChimeMeeting</c>.
         /// </para>
         /// </summary>
         public MediaPipelineSourceType SourceType

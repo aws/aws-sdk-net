@@ -151,8 +151,8 @@ namespace Amazon.Route53Resolver.Model
         /// Gets and sets the property ManagedOwnerName. 
         /// <para>
         /// The owner of the list, used only for lists that are not managed by you. For example,
-        /// the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed
-        /// owner name <code>Route 53 Resolver DNS Firewall</code>.
+        /// the managed domain list <c>AWSManagedDomainsMalwareDomainList</c> has the managed
+        /// owner name <c>Route 53 Resolver DNS Firewall</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

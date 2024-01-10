@@ -56,9 +56,9 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To avoid confusion, do not use multiple encryption context pairs that differ only
-    /// by case. To require a fully case-sensitive encryption context, use the <code>kms:EncryptionContext:</code>
-    /// and <code>kms:EncryptionContextKeys</code> conditions in an IAM or key policy. For
-    /// details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a>
+    /// by case. To require a fully case-sensitive encryption context, use the <c>kms:EncryptionContext:</c>
+    /// and <c>kms:EncryptionContextKeys</c> conditions in an IAM or key policy. For details,
+    /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/policy-conditions.html#conditions-kms-encryption-context">kms:EncryptionContext:</a>
     /// in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  </important>

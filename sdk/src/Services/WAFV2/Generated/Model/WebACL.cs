@@ -144,9 +144,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CaptchaConfig. 
         /// <para>
-        /// Specifies how WAF should handle <code>CAPTCHA</code> evaluations for rules that don't
-        /// have their own <code>CaptchaConfig</code> settings. If you don't specify this, WAF
-        /// uses its default settings for <code>CaptchaConfig</code>. 
+        /// Specifies how WAF should handle <c>CAPTCHA</c> evaluations for rules that don't have
+        /// their own <c>CaptchaConfig</c> settings. If you don't specify this, WAF uses its default
+        /// settings for <c>CaptchaConfig</c>. 
         /// </para>
         /// </summary>
         public CaptchaConfig CaptchaConfig
@@ -165,8 +165,8 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property ChallengeConfig. 
         /// <para>
         /// Specifies how WAF should handle challenge evaluations for rules that don't have their
-        /// own <code>ChallengeConfig</code> settings. If you don't specify this, WAF uses its
-        /// default settings for <code>ChallengeConfig</code>. 
+        /// own <c>ChallengeConfig</c> settings. If you don't specify this, WAF uses its default
+        /// settings for <c>ChallengeConfig</c>. 
         /// </para>
         /// </summary>
         public ChallengeConfig ChallengeConfig
@@ -217,8 +217,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property DefaultAction. 
         /// <para>
-        /// The action to perform if none of the <code>Rules</code> contained in the <code>WebACL</code>
-        /// match. 
+        /// The action to perform if none of the <c>Rules</c> contained in the <c>WebACL</c> match.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -256,9 +256,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// A unique identifier for the <code>WebACL</code>. This ID is returned in the responses
-        /// to create and list commands. You use this ID to do things like get, update, and delete
-        /// a <code>WebACL</code>.
+        /// A unique identifier for the <c>WebACL</c>. This ID is returned in the responses to
+        /// create and list commands. You use this ID to do things like get, update, and delete
+        /// a <c>WebACL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -286,7 +286,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code> 
+        ///  <c>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -297,7 +297,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code> 
+        ///  <c>&lt;label namespace&gt;:&lt;label from rule&gt;</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

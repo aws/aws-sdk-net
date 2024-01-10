@@ -57,7 +57,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     ///  </note> 
     /// <para>
     /// Deactivates a user's password, requiring them to change it. If a user tries to sign
-    /// in after the API is called, Amazon Cognito responds with a <code>PasswordResetRequiredException</code>
+    /// in after the API is called, Amazon Cognito responds with a <c>PasswordResetRequiredException</c>
     /// error. Your app must then perform the actions that reset your user's password: the
     /// forgot-password flow. In addition, if the user pool has phone verification selected
     /// and a verified phone number exists for the user, or if email verification is selected
@@ -104,10 +104,10 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the AdminResetUserPassword API action, Amazon Cognito invokes the function
         /// that is assigned to the <i>custom message</i> trigger. When Amazon Cognito invokes
         /// this function, it passes a JSON payload, which the function receives as input. This
-        /// payload contains a <code>clientMetadata</code> attribute, which provides the data
-        /// that you assigned to the ClientMetadata parameter in your AdminResetUserPassword request.
-        /// In your function code in Lambda, you can process the <code>clientMetadata</code> value
-        /// to enhance your workflow for your specific needs. 
+        /// payload contains a <c>clientMetadata</c> attribute, which provides the data that you
+        /// assigned to the ClientMetadata parameter in your AdminResetUserPassword request. In
+        /// your function code in Lambda, you can process the <c>clientMetadata</c> value to enhance
+        /// your workflow for your specific needs. 
         /// </para>
         ///  
         /// <para>
@@ -153,8 +153,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

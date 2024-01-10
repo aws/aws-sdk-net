@@ -64,39 +64,39 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.1 (TLS_WEB_SERVER_AUTHENTICATION)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.2 (TLS_WEB_CLIENT_AUTHENTICATION)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.3 (CODE_SIGNING)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.4 (EMAIL_PROTECTION)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.8 (TIME_STAMPING)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.9 (OCSP_SIGNING)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.5 (IPSEC_END_SYSTEM)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.6 (IPSEC_TUNNEL)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</code> 
+        ///  <c>1.3.6.1.5.5.7.3.7 (IPSEC_USER)</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

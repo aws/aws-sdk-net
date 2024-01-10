@@ -31,7 +31,7 @@ namespace Amazon.KeyManagementService.Model
     /// <summary>
     /// Container for the parameters to the GetPublicKey operation.
     /// Returns the public key of an asymmetric KMS key. Unlike the private key of a asymmetric
-    /// KMS key, which never leaves KMS unencrypted, callers with <code>kms:GetPublicKey</code>
+    /// KMS key, which never leaves KMS unencrypted, callers with <c>kms:GetPublicKey</c>
     /// permission can download the public key of an asymmetric KMS key. You can share the
     /// public key to allow others to encrypt messages and verify signatures outside of KMS.
     /// For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
@@ -48,13 +48,13 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// To help you use the public key safely outside of KMS, <code>GetPublicKey</code> returns
+    /// To help you use the public key safely outside of KMS, <c>GetPublicKey</c> returns
     /// important information about the public key in the response, including:
     /// </para>
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_GetPublicKey.html#KMS-GetPublicKey-response-KeySpec">KeySpec</a>:
-    /// The type of key material in the public key, such as <code>RSA_4096</code> or <code>ECC_NIST_P521</code>.
+    /// The type of key material in the public key, such as <c>RSA_4096</c> or <c>ECC_NIST_P521</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -79,7 +79,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To verify a signature outside of KMS with an SM2 public key (China Regions only),
-    /// you must specify the distinguishing ID. By default, KMS uses <code>1234567812345678</code>
+    /// you must specify the distinguishing ID. By default, KMS uses <c>1234567812345678</c>
     /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
     /// verification with SM2 key pairs</a>.
     /// </para>
@@ -93,7 +93,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
     /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-    /// <code>KeyId</code> parameter.
+    /// <c>KeyId</c> parameter.
     /// </para>
     ///  
     /// <para>
@@ -151,7 +151,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using
-        /// an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different
+        /// an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different
         /// Amazon Web Services account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
@@ -160,20 +160,20 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> 
+        /// Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

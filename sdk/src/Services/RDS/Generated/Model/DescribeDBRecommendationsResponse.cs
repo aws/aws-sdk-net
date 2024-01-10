@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBRecommendations. 
         /// <para>
-        /// A list of recommendations which is returned from <code>DescribeDBRecommendations</code>
+        /// A list of recommendations which is returned from <c>DescribeDBRecommendations</c>
         /// API request.
         /// </para>
         /// </summary>
@@ -58,8 +58,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DBRecommendationsMessage</code>
-        /// request. This token can be used later in a <code>DescribeDBRecomendations</code> request.
+        /// An optional pagination token provided by a previous <c>DBRecommendationsMessage</c>
+        /// request. This token can be used later in a <c>DescribeDBRecomendations</c> request.
         /// 
         /// </para>
         /// </summary>

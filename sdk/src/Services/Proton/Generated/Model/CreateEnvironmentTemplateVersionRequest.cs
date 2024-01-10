@@ -86,12 +86,12 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To create a new minor version of the environment template, include <code>major Version</code>.
+        /// To create a new minor version of the environment template, include <c>major Version</c>.
         /// </para>
         ///  
         /// <para>
-        /// To create a new major and minor version of the environment template, exclude <code>major
-        /// Version</code>.
+        /// To create a new major and minor version of the environment template, exclude <c>major
+        /// Version</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

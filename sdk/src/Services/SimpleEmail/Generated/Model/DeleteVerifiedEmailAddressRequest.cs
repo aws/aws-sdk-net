@@ -30,8 +30,8 @@ namespace Amazon.SimpleEmail.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVerifiedEmailAddress operation.
-    /// Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses
-    /// and domains.
+    /// Deprecated. Use the <c>DeleteIdentity</c> operation to delete email addresses and
+    /// domains.
     /// </summary>
     public partial class DeleteVerifiedEmailAddressRequest : AmazonSimpleEmailServiceRequest
     {

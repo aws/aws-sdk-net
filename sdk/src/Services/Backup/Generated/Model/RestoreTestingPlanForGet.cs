@@ -48,7 +48,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The date and time that a restore testing plan was created, in Unix format and Coordinated
-        /// Universal Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds.
+        /// Universal Time (UTC). The value of <c>CreationTime</c> is accurate to milliseconds.
         /// For example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
         /// AM.
         /// </para>
@@ -70,7 +70,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
         /// This identifies the request and allows failed requests to be retried without the risk
-        /// of running the operation twice. If the request includes a <code>CreatorRequestId</code>
+        /// of running the operation twice. If the request includes a <c>CreatorRequestId</c>
         /// that matches an existing backup plan, that plan is returned. This parameter is optional.
         /// </para>
         ///  
@@ -94,7 +94,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property LastExecutionTime. 
         /// <para>
         /// The last time a restore test was run with the specified restore testing plan. A date
-        /// and time, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastExecutionDate</code>
+        /// and time, in Unix format and Coordinated Universal Time (UTC). The value of <c>LastExecutionDate</c>
         /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
@@ -115,8 +115,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property LastUpdateTime. 
         /// <para>
         /// The date and time that the restore testing plan was updated. This update is in Unix
-        /// format and Coordinated Universal Time (UTC). The value of <code>LastUpdateTime</code>
-        /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+        /// format and Coordinated Universal Time (UTC). The value of <c>LastUpdateTime</c> is
+        /// accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>

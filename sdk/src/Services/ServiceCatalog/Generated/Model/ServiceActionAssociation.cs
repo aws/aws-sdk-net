@@ -41,7 +41,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.
+        /// The product identifier. For example, <c>prod-abcdzk7xy33qa</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -60,7 +60,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProvisioningArtifactId. 
         /// <para>
-        /// The identifier of the provisioning artifact. For example, <code>pa-4abcdjnxjj6ne</code>.
+        /// The identifier of the provisioning artifact. For example, <c>pa-4abcdjnxjj6ne</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -79,7 +79,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property ServiceActionId. 
         /// <para>
-        /// The self-service action identifier. For example, <code>act-fs7abcd89wxyz</code>.
+        /// The self-service action identifier. For example, <c>act-fs7abcd89wxyz</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

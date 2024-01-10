@@ -43,8 +43,8 @@ namespace Amazon.AWSHealth.Model
         /// Gets and sets the property Accounts. 
         /// <para>
         /// A list of entity aggregates for each of the specified accounts in your organization
-        /// that are affected by a specific event. If there are no <code>awsAccountIds</code>
-        /// provided in the request, this field will be empty in the response.
+        /// that are affected by a specific event. If there are no <c>awsAccountIds</c> provided
+        /// in the request, this field will be empty in the response.
         /// </para>
         /// </summary>
         public List<AccountEntityAggregate> Accounts
@@ -81,8 +81,8 @@ namespace Amazon.AWSHealth.Model
         /// <summary>
         /// Gets and sets the property EventArn. 
         /// <para>
-        /// A list of event ARNs (unique identifiers). For example: <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
-        /// "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+        /// A list of event ARNs (unique identifiers). For example: <c>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+        /// "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</c>
         /// 
         /// </para>
         /// </summary>

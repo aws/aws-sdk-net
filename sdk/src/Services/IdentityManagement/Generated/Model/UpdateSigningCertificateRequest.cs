@@ -36,7 +36,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// If the <code>UserName</code> field is not specified, the user name is determined implicitly
+    /// If the <c>UserName</c> field is not specified, the user name is determined implicitly
     /// based on the Amazon Web Services access key ID used to sign the request. This operation
     /// works for access keys under the Amazon Web Services account. Consequently, you can
     /// use this operation to manage Amazon Web Services account root user credentials even
@@ -93,9 +93,9 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status you want to assign to the certificate. <code>Active</code> means that
-        /// the certificate can be used for programmatic calls to Amazon Web Services <code>Inactive</code>
-        /// means that the certificate cannot be used.
+        ///  The status you want to assign to the certificate. <c>Active</c> means that the certificate
+        /// can be used for programmatic calls to Amazon Web Services <c>Inactive</c> means that
+        /// the certificate cannot be used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

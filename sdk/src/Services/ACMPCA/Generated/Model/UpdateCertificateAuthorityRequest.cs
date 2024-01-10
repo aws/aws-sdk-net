@@ -31,9 +31,9 @@ namespace Amazon.ACMPCA.Model
     /// <summary>
     /// Container for the parameters to the UpdateCertificateAuthority operation.
     /// Updates the status or configuration of a private certificate authority (CA). Your
-    /// private CA must be in the <code>ACTIVE</code> or <code>DISABLED</code> state before
-    /// you can update it. You can disable a private CA that is in the <code>ACTIVE</code>
-    /// state or make a CA that is in the <code>DISABLED</code> state active again.
+    /// private CA must be in the <c>ACTIVE</c> or <c>DISABLED</c> state before you can update
+    /// it. You can disable a private CA that is in the <c>ACTIVE</c> state or make a CA that
+    /// is in the <c>DISABLED</c> state active again.
     /// 
     ///  <note> 
     /// <para>
@@ -59,8 +59,8 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
-        /// </code> 
+        ///  <c>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+        /// </c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=200)]
@@ -92,14 +92,13 @@ namespace Amazon.ACMPCA.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// A configuration disabling CRLs or OCSP must contain only the <code>Enabled=False</code>
-        /// parameter, and will fail if other parameters such as <code>CustomCname</code> or <code>ExpirationInDays</code>
+        /// A configuration disabling CRLs or OCSP must contain only the <c>Enabled=False</c>
+        /// parameter, and will fail if other parameters such as <c>CustomCname</c> or <c>ExpirationInDays</c>
         /// are included.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In a CRL configuration, the <code>S3BucketName</code> parameter must conform to <a
-        /// href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
+        /// In a CRL configuration, the <c>S3BucketName</c> parameter must conform to <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Amazon
         /// S3 bucket naming rules</a>.
         /// </para>
         ///  </li> <li> 

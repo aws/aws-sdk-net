@@ -128,7 +128,7 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// This field is required when the trigger type is <code>CONDITIONAL</code>.
+        /// This field is required when the trigger type is <c>CONDITIONAL</c>.
         /// </para>
         /// </summary>
         public Predicate Predicate
@@ -146,9 +146,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Schedule. 
         /// <para>
-        /// A <code>cron</code> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+        /// A <c>cron</c> expression used to specify the schedule (see <a href="https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
         /// Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15
-        /// UTC, you would specify: <code>cron(15 12 * * ? *)</code>.
+        /// UTC, you would specify: <c>cron(15 12 * * ? *)</c>.
         /// </para>
         ///  
         /// <para>
@@ -170,8 +170,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StartOnCreation. 
         /// <para>
-        /// Set to <code>true</code> to start <code>SCHEDULED</code> and <code>CONDITIONAL</code>
-        /// triggers when created. True is not supported for <code>ON_DEMAND</code> triggers.
+        /// Set to <c>true</c> to start <c>SCHEDULED</c> and <c>CONDITIONAL</c> triggers when
+        /// created. True is not supported for <c>ON_DEMAND</c> triggers.
         /// </para>
         /// </summary>
         public bool StartOnCreation

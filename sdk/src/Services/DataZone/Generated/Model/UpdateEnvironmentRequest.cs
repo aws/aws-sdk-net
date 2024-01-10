@@ -43,7 +43,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description to be updated as part of the <code>UpdateEnvironment</code> action.
+        /// The description to be updated as part of the <c>UpdateEnvironment</c> action.
         /// </para>
         /// </summary>
         public string Description
@@ -80,7 +80,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property GlossaryTerms. 
         /// <para>
-        /// The glossary terms to be updated as part of the <code>UpdateEnvironment</code> action.
+        /// The glossary terms to be updated as part of the <c>UpdateEnvironment</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -118,7 +118,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to be updated as part of the <code>UpdateEnvironment</code> action.
+        /// The name to be updated as part of the <c>UpdateEnvironment</c> action.
         /// </para>
         /// </summary>
         public string Name

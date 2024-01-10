@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubRefactorSpaces.Model
 {
     /// <summary>
-    /// A summary for the service as a response to <code>ListServices</code>.
+    /// A summary for the service as a response to <c>ListServices</c>.
     /// </summary>
     public partial class ServiceSummary
     {

@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Resolver. 
         /// <para>
-        /// The <code>Resolver</code> object.
+        /// The <c>Resolver</c> object.
         /// </para>
         /// </summary>
         public Resolver Resolver

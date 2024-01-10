@@ -60,8 +60,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property RelativeDateFilterFunction. 
         /// <para>
         /// The function to be used in a relative date filter to determine the range of dates
-        /// to include in the results. Valid values for this structure are <code>BEFORE</code>,
-        /// <code>AFTER</code>, and <code>BETWEEN</code>.
+        /// to include in the results. Valid values for this structure are <c>BEFORE</c>, <c>AFTER</c>,
+        /// and <c>BETWEEN</c>.
         /// </para>
         /// </summary>
         public TopicRelativeDateFilterFunction RelativeDateFilterFunction
@@ -79,7 +79,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property TimeGranularity. 
         /// <para>
-        /// The level of time precision that is used to aggregate <code>DateTime</code> values.
+        /// The level of time precision that is used to aggregate <c>DateTime</c> values.
         /// </para>
         /// </summary>
         public TopicTimeGranularity TimeGranularity

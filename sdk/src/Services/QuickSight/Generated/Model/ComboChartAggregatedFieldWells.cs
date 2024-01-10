@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property BarValues. 
         /// <para>
-        /// The aggregated <code>BarValues</code> field well of a combo chart.
+        /// The aggregated <c>BarValues</c> field well of a combo chart.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property LineValues. 
         /// <para>
-        /// The aggregated <code>LineValues</code> field well of a combo chart.
+        /// The aggregated <c>LineValues</c> field well of a combo chart.
         /// </para>
         /// </summary>
         [AWSProperty(Max=200)]

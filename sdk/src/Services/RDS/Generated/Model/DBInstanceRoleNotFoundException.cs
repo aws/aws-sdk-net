@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The specified <code>RoleArn</code> value doesn't match the specified feature for the
-    /// DB instance.
+    /// The specified <c>RoleArn</c> value doesn't match the specified feature for the DB
+    /// instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -46,8 +46,8 @@ namespace Amazon.AppRunner.Model
         ///  
         /// <para>
         /// The ARN can be a full auto scaling configuration ARN, or a partial ARN ending with
-        /// either <code>.../<i>name</i> </code> or <code>.../<i>name</i>/<i>revision</i> </code>.
-        /// If a revision isn't specified, the latest active revision is set as the default.
+        /// either <c>.../<i>name</i> </c> or <c>.../<i>name</i>/<i>revision</i> </c>. If a revision
+        /// isn't specified, the latest active revision is set as the default.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

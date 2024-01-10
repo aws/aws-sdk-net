@@ -47,19 +47,19 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>creationTime</code> 
+        ///  <c>creationTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>impact</code> 
+        ///  <c>impact</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> 
+        ///  <c>status</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>createdBy</code> 
+        ///  <c>createdBy</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

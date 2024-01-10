@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceBot. 
         /// <para>
-        /// The detials of the <code>AppInstanceBot</code>.
+        /// The detials of the <c>AppInstanceBot</c>.
         /// </para>
         /// </summary>
         public AppInstanceBot AppInstanceBot

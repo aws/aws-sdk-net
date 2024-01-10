@@ -38,22 +38,22 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property XssMatchSet. 
         /// <para>
-        /// Information about the <a>XssMatchSet</a> that you specified in the <code>GetXssMatchSet</code>
+        /// Information about the <a>XssMatchSet</a> that you specified in the <c>GetXssMatchSet</c>
         /// request. For more information, see the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>XssMatchSet</a>: Contains <code>Name</code>, <code>XssMatchSetId</code>, and an
-        /// array of <code>XssMatchTuple</code> objects
+        ///  <a>XssMatchSet</a>: Contains <c>Name</c>, <c>XssMatchSetId</c>, and an array of <c>XssMatchTuple</c>
+        /// objects
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code> object contains <code>FieldToMatch</code>
-        /// and <code>TextTransformation</code> 
+        ///  <a>XssMatchTuple</a>: Each <c>XssMatchTuple</c> object contains <c>FieldToMatch</c>
+        /// and <c>TextTransformation</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> 
+        ///  <a>FieldToMatch</a>: Contains <c>Data</c> and <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,7 +39,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Functions. 
         /// <para>
-        /// A list of <code>Function</code> objects.
+        /// A list of <c>Function</c> objects.
         /// </para>
         /// </summary>
         public List<FunctionConfiguration> Functions

@@ -177,36 +177,36 @@ namespace Amazon.CustomerProfiles.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code>: The Identity Resolution Job is scheduled but has not started
-        /// yet. If you turn off the Identity Resolution feature in your domain, jobs in the <code>PENDING</code>
+        ///  <c>PENDING</c>: The Identity Resolution Job is scheduled but has not started yet.
+        /// If you turn off the Identity Resolution feature in your domain, jobs in the <c>PENDING</c>
         /// state are deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PREPROCESSING</code>: The Identity Resolution Job is loading your data.
+        ///  <c>PREPROCESSING</c>: The Identity Resolution Job is loading your data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FIND_MATCHING</code>: The Identity Resolution Job is using the machine learning
-        /// model to identify profiles that belong to the same matching group.
+        ///  <c>FIND_MATCHING</c>: The Identity Resolution Job is using the machine learning model
+        /// to identify profiles that belong to the same matching group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MERGING</code>: The Identity Resolution Job is merging duplicate profiles.
+        ///  <c>MERGING</c>: The Identity Resolution Job is merging duplicate profiles.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code>: The Identity Resolution Job completed successfully.
+        ///  <c>COMPLETED</c>: The Identity Resolution Job completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PARTIAL_SUCCESS</code>: There's a system error and not all of the data is merged.
+        ///  <c>PARTIAL_SUCCESS</c>: There's a system error and not all of the data is merged.
         /// The Identity Resolution Job writes a message indicating the source of the problem.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The Identity Resolution Job did not merge any data. It writes
-        /// a message indicating the source of the problem.
+        ///  <c>FAILED</c>: The Identity Resolution Job did not merge any data. It writes a message
+        /// indicating the source of the problem.
         /// </para>
         ///  </li> </ul>
         /// </summary>

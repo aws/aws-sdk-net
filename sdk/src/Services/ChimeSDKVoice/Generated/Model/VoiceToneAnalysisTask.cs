@@ -154,8 +154,8 @@ namespace Amazon.ChimeSDKVoice.Model
         /// <summary>
         /// Gets and sets the property VoiceToneAnalysisTaskStatus. 
         /// <para>
-        /// The status of a voice tone analysis task, <code>IN_QUEUE</code>, <code>IN_PROGRESS</code>,
-        /// <code>PARTIAL_SUCCESS</code>, <code>SUCCEEDED</code>, <code>FAILED</code>, or <code>STOPPED</code>.
+        /// The status of a voice tone analysis task, <c>IN_QUEUE</c>, <c>IN_PROGRESS</c>, <c>PARTIAL_SUCCESS</c>,
+        /// <c>SUCCEEDED</c>, <c>FAILED</c>, or <c>STOPPED</c>.
         /// </para>
         /// </summary>
         public string VoiceToneAnalysisTaskStatus

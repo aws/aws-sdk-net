@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// A container element for specifying <code>Or</code> rule conditions. The rule conditions
-    /// determine the subset of objects to which the <code>Or</code> rule applies. Objects
-    /// can match any of the listed filter conditions, which are joined by the <code>Or</code>
-    /// logical operator. Only one of each filter condition is allowed.
+    /// A container element for specifying <c>Or</c> rule conditions. The rule conditions
+    /// determine the subset of objects to which the <c>Or</c> rule applies. Objects can match
+    /// any of the listed filter conditions, which are joined by the <c>Or</c> logical operator.
+    /// Only one of each filter condition is allowed.
     /// </summary>
     public partial class StorageLensGroupOrOperator
     {

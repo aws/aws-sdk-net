@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// The specified cluster is not in the <code>available</code> state.
+    /// The specified cluster is not in the <c>available</c> state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -39,8 +39,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property FailedVersions. 
         /// <para>
-        ///  A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each package
-        /// version with a status that successfully updated. 
+        ///  A list of <c>SuccessfulPackageVersionInfo</c> objects, one for each package version
+        /// with a status that successfully updated. 
         /// </para>
         /// </summary>
         public Dictionary<string, PackageVersionError> FailedVersions
@@ -58,8 +58,8 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property SuccessfulVersions. 
         /// <para>
-        ///  A list of <code>PackageVersionError</code> objects, one for each package version
-        /// with a status that failed to update. 
+        ///  A list of <c>PackageVersionError</c> objects, one for each package version with a
+        /// status that failed to update. 
         /// </para>
         /// </summary>
         public Dictionary<string, SuccessfulPackageVersionInfo> SuccessfulVersions

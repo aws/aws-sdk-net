@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Column. 
         /// <para>
-        /// The column that is used in the <code>NumericalDimensionField</code>.
+        /// The column that is used in the <c>NumericalDimensionField</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

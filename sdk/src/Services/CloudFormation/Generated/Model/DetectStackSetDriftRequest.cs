@@ -37,9 +37,9 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    ///  <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack
-    /// set drift detection operation. Use this operation id with <a>DescribeStackSetOperation</a>
-    /// to monitor the progress of the drift detection operation. The drift detection operation
+    ///  <c>DetectStackSetDrift</c> returns the <c>OperationId</c> of the stack set drift
+    /// detection operation. Use this operation id with <a>DescribeStackSetOperation</a> to
+    /// monitor the progress of the drift detection operation. The drift detection operation
     /// may take some time, depending on the number of stack instances included in the stack
     /// set, in addition to the number of resources included in each stack.
     /// </para>
@@ -94,16 +94,16 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// If you are signed in to a delegated administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>

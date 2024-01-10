@@ -45,11 +45,11 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.query.statement</code> (Amazon DocumentDB)
+        ///  <c>db.query.statement</c> (Amazon DocumentDB)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sql.statement</code> (Amazon RDS and Aurora)
+        ///  <c>db.sql.statement</c> (Amazon RDS and Aurora)
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -73,17 +73,17 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The dimension detail data is ready to be retrieved.
+        ///  <c>AVAILABLE</c> - The dimension detail data is ready to be retrieved.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PROCESSING</code> - The dimension detail data isn't ready to be retrieved because
-        /// more processing time is required. If the requested detail data has the status <code>PROCESSING</code>,
+        ///  <c>PROCESSING</c> - The dimension detail data isn't ready to be retrieved because
+        /// more processing time is required. If the requested detail data has the status <c>PROCESSING</c>,
         /// Performance Insights returns the truncated query.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNAVAILABLE</code> - The dimension detail data could not be collected successfully.
+        ///  <c>UNAVAILABLE</c> - The dimension detail data could not be collected successfully.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -107,11 +107,11 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.query.statement</code> (Amazon DocumentDB)
+        ///  <c>db.query.statement</c> (Amazon DocumentDB)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sql.statement</code> (Amazon RDS and Aurora)
+        ///  <c>db.sql.statement</c> (Amazon RDS and Aurora)
         /// </para>
         ///  </li> </ul>
         /// </summary>

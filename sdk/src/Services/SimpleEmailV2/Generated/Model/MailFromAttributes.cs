@@ -41,15 +41,15 @@ namespace Amazon.SimpleEmailV2.Model
         /// Gets and sets the property BehaviorOnMxFailure. 
         /// <para>
         /// The action to take if the required MX record can't be found when you send an email.
-        /// When you set this value to <code>USE_DEFAULT_VALUE</code>, the mail is sent using
-        /// <i>amazonses.com</i> as the MAIL FROM domain. When you set this value to <code>REJECT_MESSAGE</code>,
-        /// the Amazon SES API v2 returns a <code>MailFromDomainNotVerified</code> error, and
-        /// doesn't attempt to deliver the email.
+        /// When you set this value to <c>USE_DEFAULT_VALUE</c>, the mail is sent using <i>amazonses.com</i>
+        /// as the MAIL FROM domain. When you set this value to <c>REJECT_MESSAGE</c>, the Amazon
+        /// SES API v2 returns a <c>MailFromDomainNotVerified</c> error, and doesn't attempt to
+        /// deliver the email.
         /// </para>
         ///  
         /// <para>
         /// These behaviors are taken when the custom MAIL FROM domain configuration is in the
-        /// <code>Pending</code>, <code>Failed</code>, and <code>TemporaryFailure</code> states.
+        /// <c>Pending</c>, <c>Failed</c>, and <c>TemporaryFailure</c> states.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,22 +91,21 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> – Amazon SES hasn't started searching for the MX record yet.
+        ///  <c>PENDING</c> – Amazon SES hasn't started searching for the MX record yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCESS</code> – Amazon SES detected the required MX record for the MAIL FROM
-        /// domain.
+        ///  <c>SUCCESS</c> – Amazon SES detected the required MX record for the MAIL FROM domain.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> – Amazon SES can't find the required MX record, or the record
-        /// no longer exists.
+        ///  <c>FAILED</c> – Amazon SES can't find the required MX record, or the record no longer
+        /// exists.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TEMPORARY_FAILURE</code> – A temporary issue occurred, which prevented Amazon
-        /// SES from determining the status of the MAIL FROM domain.
+        ///  <c>TEMPORARY_FAILURE</c> – A temporary issue occurred, which prevented Amazon SES
+        /// from determining the status of the MAIL FROM domain.
         /// </para>
         ///  </li> </ul>
         /// </summary>

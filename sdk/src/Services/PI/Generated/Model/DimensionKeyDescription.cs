@@ -78,8 +78,8 @@ namespace Amazon.PI.Model
         /// <summary>
         /// Gets and sets the property Partitions. 
         /// <para>
-        /// If <code>PartitionBy</code> was specified, <code>PartitionKeys</code> contains the
-        /// dimensions that were.
+        /// If <c>PartitionBy</c> was specified, <c>PartitionKeys</c> contains the dimensions
+        /// that were.
         /// </para>
         /// </summary>
         public List<double> Partitions

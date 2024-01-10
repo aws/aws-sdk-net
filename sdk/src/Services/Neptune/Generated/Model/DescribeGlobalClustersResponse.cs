@@ -58,7 +58,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// A pagination token. If this parameter is returned in the response, more records are
-        /// available, which can be retrieved by one or more additional calls to <code>DescribeGlobalClusters</code>.
+        /// available, which can be retrieved by one or more additional calls to <c>DescribeGlobalClusters</c>.
         /// </para>
         /// </summary>
         public string Marker

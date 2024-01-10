@@ -44,7 +44,7 @@ namespace Amazon.Ivschat.Model
         /// the timeout period, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/service-quotas.html">
         /// Service Quotas</a>.) If allowed, the message is delivered with returned content to
         /// all users connected to the room. If denied, the message is not delivered to any user.
-        /// Default: <code>ALLOW</code>.
+        /// Default: <c>ALLOW</c>.
         /// </para>
         /// </summary>
         public FallbackResult FallbackResult

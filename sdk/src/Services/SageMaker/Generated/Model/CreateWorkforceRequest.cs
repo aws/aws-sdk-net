@@ -39,20 +39,20 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// If you want to create a new workforce in an Amazon Web Services Region where a workforce
     /// already exists, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkforce.html">DeleteWorkforce</a>
-    /// API operation to delete the existing workforce and then use <code>CreateWorkforce</code>
+    /// API operation to delete the existing workforce and then use <c>CreateWorkforce</c>
     /// to create a new workforce.
     /// </para>
     ///  
     /// <para>
     /// To create a private workforce using Amazon Cognito, you must specify a Cognito user
-    /// pool in <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce
-    /// using the Amazon SageMaker console. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
+    /// pool in <c>CognitoConfig</c>. You can also create an Amazon Cognito workforce using
+    /// the Amazon SageMaker console. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private.html">
     /// Create a Private Workforce (Amazon Cognito)</a>.
     /// </para>
     ///  
     /// <para>
     /// To create a private workforce using your own OIDC Identity Provider (IdP), specify
-    /// your IdP configuration in <code>OidcConfig</code>. Your OIDC IdP must support <i>groups</i>
+    /// your IdP configuration in <c>OidcConfig</c>. Your OIDC IdP must support <i>groups</i>
     /// because groups are used by Ground Truth and Amazon A2I to create work teams. For more
     /// information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-create-private-oidc.html">
     /// Create a Private Workforce (OIDC IdP)</a>.
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Do not use <code>OidcConfig</code> if you specify values for <code>CognitoConfig</code>.
+        /// Do not use <c>OidcConfig</c> if you specify values for <c>CognitoConfig</c>.
         /// </para>
         /// </summary>
         public CognitoConfig CognitoConfig
@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Do not use <code>CognitoConfig</code> if you specify values for <code>OidcConfig</code>.
+        /// Do not use <c>CognitoConfig</c> if you specify values for <c>OidcConfig</c>.
         /// </para>
         /// </summary>
         public OidcConfig OidcConfig

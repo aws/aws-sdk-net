@@ -193,14 +193,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an
-        /// association, use the <code>Targets</code> parameter. Requests that include the parameter
-        /// <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema
-        /// version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>,
-        /// you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>,
-        /// <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>,
-        /// or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code>
-        /// parameter.
+        ///  <c>InstanceId</c> has been deprecated. To specify a managed node ID for an association,
+        /// use the <c>Targets</c> parameter. Requests that include the parameter <c>InstanceID</c>
+        /// with Systems Manager documents (SSM documents) that use schema version 2.0 or later
+        /// will fail. In addition, if you use the parameter <c>InstanceId</c>, you can't use
+        /// the parameters <c>AssociationName</c>, <c>DocumentVersion</c>, <c>MaxErrors</c>, <c>MaxConcurrency</c>,
+        /// <c>OutputLocation</c>, or <c>ScheduleExpression</c>. To use these parameters, you
+        /// must use the <c>Targets</c> parameter.
         /// </para>
         ///  </note>
         /// </summary>
@@ -227,9 +226,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// If a new managed node starts and attempts to run an association while Systems Manager
-        /// is running <code>MaxConcurrency</code> associations, the association is allowed to
-        /// run. During the next association interval, the new managed node will process its association
-        /// within the limit specified for <code>MaxConcurrency</code>.
+        /// is running <c>MaxConcurrency</c> associations, the association is allowed to run.
+        /// During the next association interval, the new managed node will process its association
+        /// within the limit specified for <c>MaxConcurrency</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -253,15 +252,15 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// of errors, for example 10, or a percentage of the target set, for example 10%. If
         /// you specify 3, for example, the system stops sending requests when the fourth error
         /// is received. If you specify 0, then the system stops sending requests after the first
-        /// error is returned. If you run an association on 50 managed nodes and set <code>MaxError</code>
+        /// error is returned. If you run an association on 50 managed nodes and set <c>MaxError</c>
         /// to 10%, then the system stops sending the request when the sixth error is received.
         /// </para>
         ///  
         /// <para>
-        /// Executions that are already running an association when <code>MaxErrors</code> is
-        /// reached are allowed to complete, but some of these executions may fail as well. If
-        /// you need to ensure that there won't be more than max-errors failed executions, set
-        /// <code>MaxConcurrency</code> to 1 so that executions proceed one at a time.
+        /// Executions that are already running an association when <c>MaxErrors</c> is reached
+        /// are allowed to complete, but some of these executions may fail as well. If you need
+        /// to ensure that there won't be more than max-errors failed executions, set <c>MaxConcurrency</c>
+        /// to 1 so that executions proceed one at a time.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=7)]
@@ -295,7 +294,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>
+        ///  <c>arn:aws:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </c>
         /// 
         /// </para>
         ///  
@@ -304,13 +303,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code> 
+        ///  <c>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</c> 
         /// </para>
         ///  
         /// <para>
         /// For Amazon Web Services-predefined documents and SSM documents you created in your
-        /// account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code>
-        /// or <code>My-Document</code>.
+        /// account, you only need to specify the document name. For example, <c>AWS-ApplyPatchBaseline</c>
+        /// or <c>My-Document</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -404,23 +403,22 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property SyncCompliance. 
         /// <para>
-        /// The mode for generating association compliance. You can specify <code>AUTO</code>
-        /// or <code>MANUAL</code>. In <code>AUTO</code> mode, the system uses the status of the
-        /// association execution to determine the compliance status. If the association execution
-        /// runs successfully, then the association is <code>COMPLIANT</code>. If the association
-        /// execution doesn't run successfully, the association is <code>NON-COMPLIANT</code>.
-        /// 
+        /// The mode for generating association compliance. You can specify <c>AUTO</c> or <c>MANUAL</c>.
+        /// In <c>AUTO</c> mode, the system uses the status of the association execution to determine
+        /// the compliance status. If the association execution runs successfully, then the association
+        /// is <c>COMPLIANT</c>. If the association execution doesn't run successfully, the association
+        /// is <c>NON-COMPLIANT</c>. 
         /// </para>
         ///  
         /// <para>
-        /// In <code>MANUAL</code> mode, you must specify the <code>AssociationId</code> as a
-        /// parameter for the <a>PutComplianceItems</a> API operation. In this case, compliance
-        /// data isn't managed by State Manager, a capability of Amazon Web Services Systems Manager.
-        /// It is managed by your direct call to the <a>PutComplianceItems</a> API operation.
+        /// In <c>MANUAL</c> mode, you must specify the <c>AssociationId</c> as a parameter for
+        /// the <a>PutComplianceItems</a> API operation. In this case, compliance data isn't managed
+        /// by State Manager, a capability of Amazon Web Services Systems Manager. It is managed
+        /// by your direct call to the <a>PutComplianceItems</a> API operation.
         /// </para>
         ///  
         /// <para>
-        /// By default, all associations use <code>AUTO</code> mode.
+        /// By default, all associations use <c>AUTO</c> mode.
         /// </para>
         /// </summary>
         public AssociationSyncCompliance SyncCompliance

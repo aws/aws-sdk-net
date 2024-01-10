@@ -30,8 +30,8 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Contains details about the truck's weight specifications. Used to avoid roads that
-    /// can't support or allow the total weight for requests that specify <code>TravelMode</code>
-    /// as <code>Truck</code>.
+    /// can't support or allow the total weight for requests that specify <c>TravelMode</c>
+    /// as <c>Truck</c>.
     /// </summary>
     public partial class TruckWeight
     {
@@ -45,7 +45,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, <code>3500</code>.
+        /// For example, <c>3500</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default Value: <code>Kilograms</code> 
+        /// Default Value: <c>Kilograms</c> 
         /// </para>
         /// </summary>
         public VehicleWeightUnit Unit

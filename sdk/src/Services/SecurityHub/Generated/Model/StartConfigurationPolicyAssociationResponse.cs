@@ -63,8 +63,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AssociationStatusMessage. 
         /// <para>
-        ///  An explanation for a <code>FAILED</code> value for <code>AssociationStatus</code>.
-        /// 
+        ///  An explanation for a <c>FAILED</c> value for <c>AssociationStatus</c>. 
         /// </para>
         /// </summary>
         public string AssociationStatusMessage

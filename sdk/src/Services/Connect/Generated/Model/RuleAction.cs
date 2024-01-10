@@ -68,10 +68,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
-        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code>
-        /// | <code>OnPostChatAnalysisAvailable</code> | <code>OnZendeskTicketCreate</code> |
-        /// <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code> 
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnPostCallAnalysisAvailable</c>
+        /// | <c>OnRealTimeCallAnalysisAvailable</c> | <c>OnRealTimeChatAnalysisAvailable</c>
+        /// | <c>OnPostChatAnalysisAvailable</c> | <c>OnZendeskTicketCreate</c> | <c>OnZendeskTicketStatusUpdate</c>
+        /// | <c>OnSalesforceCaseCreate</c> 
         /// </para>
         /// </summary>
         public AssignContactCategoryActionDefinition AssignContactCategoryAction
@@ -93,8 +93,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
-        /// | <code>OnPostChatAnalysisAvailable</code>.
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnPostCallAnalysisAvailable</c>
+        /// | <c>OnPostChatAnalysisAvailable</c>.
         /// </para>
         /// </summary>
         public CreateCaseActionDefinition CreateCaseAction
@@ -116,7 +116,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported only for <code>TriggerEventSource</code> values: <code>OnCaseUpdate</code>.
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnCaseUpdate</c>.
         /// </para>
         /// </summary>
         public EndAssociatedTasksActionDefinition EndAssociatedTasksAction
@@ -138,10 +138,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
-        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code>
-        /// | <code>OnPostChatAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code>
-        /// | <code>OnMetricDataUpdate</code> 
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnPostCallAnalysisAvailable</c>
+        /// | <c>OnRealTimeCallAnalysisAvailable</c> | <c>OnRealTimeChatAnalysisAvailable</c>
+        /// | <c>OnPostChatAnalysisAvailable</c> | <c>OnContactEvaluationSubmit</c> | <c>OnMetricDataUpdate</c>
+        /// 
         /// </para>
         /// </summary>
         public EventBridgeActionDefinition EventBridgeAction
@@ -163,10 +163,10 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported only for <code>TriggerEventSource</code> values: <code>OnPostCallAnalysisAvailable</code>
-        /// | <code>OnRealTimeCallAnalysisAvailable</code> | <code>OnRealTimeChatAnalysisAvailable</code>
-        /// | <code>OnPostChatAnalysisAvailable</code> | <code>OnContactEvaluationSubmit</code>
-        /// | <code>OnMetricDataUpdate</code> 
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnPostCallAnalysisAvailable</c>
+        /// | <c>OnRealTimeCallAnalysisAvailable</c> | <c>OnRealTimeChatAnalysisAvailable</c>
+        /// | <c>OnPostChatAnalysisAvailable</c> | <c>OnContactEvaluationSubmit</c> | <c>OnMetricDataUpdate</c>
+        /// 
         /// </para>
         /// </summary>
         public SendNotificationActionDefinition SendNotificationAction
@@ -184,9 +184,9 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property TaskAction. 
         /// <para>
-        /// Information about the task action. This field is required if <code>TriggerEventSource</code>
-        /// is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code>
-        /// | <code>OnSalesforceCaseCreate</code> 
+        /// Information about the task action. This field is required if <c>TriggerEventSource</c>
+        /// is one of the following values: <c>OnZendeskTicketCreate</c> | <c>OnZendeskTicketStatusUpdate</c>
+        /// | <c>OnSalesforceCaseCreate</c> 
         /// </para>
         /// </summary>
         public TaskActionDefinition TaskAction
@@ -208,8 +208,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// Supported only for <code>TriggerEventSource</code> values: <code>OnCaseCreate</code>
-        /// | <code>OnCaseUpdate</code>.
+        /// Supported only for <c>TriggerEventSource</c> values: <c>OnCaseCreate</c> | <c>OnCaseUpdate</c>.
         /// </para>
         /// </summary>
         public UpdateCaseActionDefinition UpdateCaseAction

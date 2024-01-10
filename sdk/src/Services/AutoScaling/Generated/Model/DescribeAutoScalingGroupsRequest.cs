@@ -58,7 +58,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property AutoScalingGroupNames. 
         /// <para>
         /// The names of the Auto Scaling groups. By default, you can only specify up to 50 names.
-        /// You can optionally increase this limit using the <code>MaxRecords</code> property.
+        /// You can optionally increase this limit using the <c>MaxRecords</c> property.
         /// </para>
         ///  
         /// <para>
@@ -98,8 +98,8 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MaxRecords. 
         /// <para>
-        /// The maximum number of items to return with this call. The default value is <code>50</code>
-        /// and the maximum value is <code>100</code>.
+        /// The maximum number of items to return with this call. The default value is <c>50</c>
+        /// and the maximum value is <c>100</c>.
         /// </para>
         /// </summary>
         public int MaxRecords

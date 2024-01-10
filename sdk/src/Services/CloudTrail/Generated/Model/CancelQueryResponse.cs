@@ -58,8 +58,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property QueryStatus. 
         /// <para>
-        /// Shows the status of a query after a <code>CancelQuery</code> request. Typically, the
-        /// values shown are either <code>RUNNING</code> or <code>CANCELLED</code>.
+        /// Shows the status of a query after a <c>CancelQuery</c> request. Typically, the values
+        /// shown are either <c>RUNNING</c> or <c>CANCELLED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

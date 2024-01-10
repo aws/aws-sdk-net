@@ -30,11 +30,11 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetConfig operation.
-    /// Returns <code>Config</code> information.
+    /// Returns <c>Config</c> information.
     /// 
     ///  
     /// <para>
-    /// Only one <code>Config</code> response can be returned.
+    /// Only one <c>Config</c> response can be returned.
     /// </para>
     /// </summary>
     public partial class GetConfigRequest : AmazonGroundStationRequest
@@ -45,7 +45,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigId. 
         /// <para>
-        /// UUID of a <code>Config</code>.
+        /// UUID of a <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -64,7 +64,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property ConfigType. 
         /// <para>
-        /// Type of a <code>Config</code>.
+        /// Type of a <c>Config</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

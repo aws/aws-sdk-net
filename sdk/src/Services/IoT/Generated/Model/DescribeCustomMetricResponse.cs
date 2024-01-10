@@ -141,9 +141,9 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The type <code>number</code> only takes a single metric value as an input, but while
-        /// submitting the metrics value in the DeviceMetrics report, it must be passed as an
-        /// array with a single value.
+        /// The type <c>number</c> only takes a single metric value as an input, but while submitting
+        /// the metrics value in the DeviceMetrics report, it must be passed as an array with
+        /// a single value.
         /// </para>
         ///  </important>
         /// </summary>

@@ -38,7 +38,7 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
     /// of the user that makes the API call as the value in the header.
     /// </para>
     ///  </note> <important> 
@@ -88,7 +88,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The <c>AppInstanceUserArn</c> of the user that makes the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -107,7 +107,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The client token for the request. An <code>Idempotency</code> token.
+        /// The client token for the request. An <c>Idempotency</c> token.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=64)]
@@ -145,9 +145,9 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The channel mode: <code>UNRESTRICTED</code> or <code>RESTRICTED</code>. Administrators,
-        /// moderators, and channel members can add themselves and other members to unrestricted
-        /// channels. Only administrators and moderators can add members to restricted channels.
+        /// The channel mode: <c>UNRESTRICTED</c> or <c>RESTRICTED</c>. Administrators, moderators,
+        /// and channel members can add themselves and other members to unrestricted channels.
+        /// Only administrators and moderators can add members to restricted channels.
         /// </para>
         /// </summary>
         public ChannelMode Mode
@@ -184,9 +184,9 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Privacy. 
         /// <para>
-        /// The channel's privacy level: <code>PUBLIC</code> or <code>PRIVATE</code>. Private
-        /// channels aren't discoverable by users outside the channel. Public channels are discoverable
-        /// by anyone in the <code>AppInstance</code>.
+        /// The channel's privacy level: <c>PUBLIC</c> or <c>PRIVATE</c>. Private channels aren't
+        /// discoverable by users outside the channel. Public channels are discoverable by anyone
+        /// in the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         public ChannelPrivacy Privacy

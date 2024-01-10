@@ -43,18 +43,18 @@ namespace Amazon.IoTSiteWise.Model
     ///  
     /// <para>
     /// To replace an existing composite asset model property with a new one with the same
-    /// <code>name</code>, do the following:
+    /// <c>name</c>, do the following:
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Submit an <code>UpdateAssetModelCompositeModel</code> request with the entire existing
-    /// property removed.
+    /// Submit an <c>UpdateAssetModelCompositeModel</c> request with the entire existing property
+    /// removed.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Submit a second <code>UpdateAssetModelCompositeModel</code> request that includes
-    /// the new property. The new asset property will have the same <code>name</code> as the
-    /// previous one and IoT SiteWise will generate a new unique <code>id</code>.
+    /// Submit a second <c>UpdateAssetModelCompositeModel</c> request that includes the new
+    /// property. The new asset property will have the same <c>name</c> as the previous one
+    /// and IoT SiteWise will generate a new unique <c>id</c>.
     /// </para>
     ///  </li> </ol> </important>
     /// </summary>

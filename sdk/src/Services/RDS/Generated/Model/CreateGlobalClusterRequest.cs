@@ -70,8 +70,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
-        /// case, Amazon Aurora uses the database name from the source DB cluster.
+        /// Can't be specified if <c>SourceDBClusterIdentifier</c> is specified. In this case,
+        /// Amazon Aurora uses the database name from the source DB cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -113,7 +113,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>aurora-mysql | aurora-postgresql</code> 
+        /// Valid Values: <c>aurora-mysql | aurora-postgresql</c> 
         /// </para>
         ///  
         /// <para>
@@ -121,8 +121,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
-        /// case, Amazon Aurora uses the engine of the source DB cluster.
+        /// Can't be specified if <c>SourceDBClusterIdentifier</c> is specified. In this case,
+        /// Amazon Aurora uses the engine of the source DB cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -149,8 +149,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
-        /// case, Amazon Aurora uses the engine version of the source DB cluster.
+        /// Can't be specified if <c>SourceDBClusterIdentifier</c> is specified. In this case,
+        /// Amazon Aurora uses the engine version of the source DB cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -197,19 +197,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DatabaseName</code> 
+        ///  <c>DatabaseName</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Engine</code> 
+        ///  <c>Engine</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EngineVersion</code> 
+        ///  <c>EngineVersion</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StorageEncrypted</code> 
+        ///  <c>StorageEncrypted</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -236,8 +236,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can't be specified if <code>SourceDBClusterIdentifier</code> is specified. In this
-        /// case, Amazon Aurora uses the setting from the source DB cluster.
+        /// Can't be specified if <c>SourceDBClusterIdentifier</c> is specified. In this case,
+        /// Amazon Aurora uses the setting from the source DB cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>

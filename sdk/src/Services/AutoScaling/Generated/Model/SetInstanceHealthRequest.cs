@@ -47,9 +47,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// The health status of the instance. Set to <code>Healthy</code> to have the instance
-        /// remain in service. Set to <code>Unhealthy</code> to have the instance be out of service.
-        /// Amazon EC2 Auto Scaling terminates and replaces the unhealthy instance.
+        /// The health status of the instance. Set to <c>Healthy</c> to have the instance remain
+        /// in service. Set to <c>Unhealthy</c> to have the instance be out of service. Amazon
+        /// EC2 Auto Scaling terminates and replaces the unhealthy instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -87,10 +87,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property ShouldRespectGracePeriod. 
         /// <para>
-        /// If the Auto Scaling group of the specified instance has a <code>HealthCheckGracePeriod</code>
+        /// If the Auto Scaling group of the specified instance has a <c>HealthCheckGracePeriod</c>
         /// specified for the group, by default, this call respects the grace period. Set this
-        /// to <code>False</code>, to have the call not respect the grace period associated with
-        /// the group.
+        /// to <c>False</c>, to have the call not respect the grace period associated with the
+        /// group.
         /// </para>
         ///  
         /// <para>

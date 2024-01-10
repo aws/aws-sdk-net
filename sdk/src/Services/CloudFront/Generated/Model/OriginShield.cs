@@ -77,7 +77,7 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Specify the Amazon Web Services Region that has the lowest latency to your origin.
         /// To specify a region, use the region code, not the region name. For example, specify
-        /// the US East (Ohio) region as <code>us-east-2</code>.
+        /// the US East (Ohio) region as <c>us-east-2</c>.
         /// </para>
         ///  
         /// <para>

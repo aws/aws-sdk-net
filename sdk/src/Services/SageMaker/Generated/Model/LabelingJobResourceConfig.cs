@@ -47,16 +47,16 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only specify a <code>VolumeKmsKeyId</code> when you create a labeling job
-        /// with automated data labeling enabled using the API operation <code>CreateLabelingJob</code>.
-        /// You cannot specify an Amazon Web Services KMS key to encrypt the storage volume used
-        /// for automated data labeling model training and inference when you create a labeling
-        /// job using the console. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
+        /// You can only specify a <c>VolumeKmsKeyId</c> when you create a labeling job with automated
+        /// data labeling enabled using the API operation <c>CreateLabelingJob</c>. You cannot
+        /// specify an Amazon Web Services KMS key to encrypt the storage volume used for automated
+        /// data labeling model training and inference when you create a labeling job using the
+        /// console. To learn more, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-security.html">Output
         /// Data and Storage Volume Encryption</a>.
         /// </para>
         ///  
         /// <para>
-        /// The <code>VolumeKmsKeyId</code> can be any of the following formats:
+        /// The <c>VolumeKmsKeyId</c> can be any of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        ///  <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</code>
+        ///  <c>"arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab"</c>
         /// 
         /// </para>
         ///  </li> </ul>

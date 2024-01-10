@@ -67,7 +67,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Can be <code>immediate</code> or <code>pending-reboot</code>.
+        /// Can be <c>immediate</c> or <c>pending-reboot</c>.
         /// </para>
         /// </summary>
         public string ApplyMethod

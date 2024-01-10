@@ -40,7 +40,7 @@ namespace Amazon.Braket.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// Specify the <code>resourceArn</code> for the resource from which to remove the tags.
+        /// Specify the <c>resourceArn</c> for the resource from which to remove the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

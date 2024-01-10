@@ -80,8 +80,8 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
-        /// <code>timezone</code>, and <code>resourceID</code>.
+        /// The currently supported values for <c>FieldName</c> are <c>name</c>, <c>description</c>,
+        /// <c>timezone</c>, and <c>resourceID</c>.
         /// </para>
         ///  </note>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DescribeCacheSubnetGroups</code> operation.
+    /// Represents the output of a <c>DescribeCacheSubnetGroups</c> operation.
     /// </summary>
     public partial class DescribeCacheSubnetGroupsResponse : AmazonWebServiceResponse
     {

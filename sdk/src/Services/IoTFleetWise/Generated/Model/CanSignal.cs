@@ -161,7 +161,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property Offset. 
         /// <para>
         /// The offset used to calculate the signal value. Combined with factor, the calculation
-        /// is <code>value = raw_value * factor + offset</code>.
+        /// is <c>value = raw_value * factor + offset</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -186,9 +186,9 @@ namespace Amazon.IoTFleetWise.Model
         ///  
         /// <para>
         /// This value might be different from the value in a DBC file. For little endian signals,
-        /// <code>startBit</code> is the same value as in the DBC file. For big endian signals
-        /// in a DBC file, the start bit is the most significant bit (MSB). You will have to calculate
-        /// the LSB instead and pass it as the <code>startBit</code>.
+        /// <c>startBit</c> is the same value as in the DBC file. For big endian signals in a
+        /// DBC file, the start bit is the most significant bit (MSB). You will have to calculate
+        /// the LSB instead and pass it as the <c>startBit</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]

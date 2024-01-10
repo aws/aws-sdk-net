@@ -42,8 +42,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property AttackLayer. 
         /// <para>
-        /// The type of Shield event that was observed. <code>NETWORK</code> indicates layer 3
-        /// and layer 4 events and <code>APPLICATION</code> indicates layer 7 events.
+        /// The type of Shield event that was observed. <c>NETWORK</c> indicates layer 3 and layer
+        /// 4 events and <c>APPLICATION</c> indicates layer 7 events.
         /// </para>
         ///  
         /// <para>
@@ -67,8 +67,8 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property AttackPropertyIdentifier. 
         /// <para>
-        /// Defines the Shield event property information that is provided. The <code>WORDPRESS_PINGBACK_REFLECTOR</code>
-        /// and <code>WORDPRESS_PINGBACK_SOURCE</code> values are valid only for WordPress reflective
+        /// Defines the Shield event property information that is provided. The <c>WORDPRESS_PINGBACK_REFLECTOR</c>
+        /// and <c>WORDPRESS_PINGBACK_SOURCE</c> values are valid only for WordPress reflective
         /// pingback events.
         /// </para>
         /// </summary>
@@ -125,7 +125,7 @@ namespace Amazon.Shield.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit used for the <code>Contributor</code> <code>Value</code> property. 
+        /// The unit used for the <c>Contributor</c> <c>Value</c> property. 
         /// </para>
         /// </summary>
         public Unit Unit

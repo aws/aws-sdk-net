@@ -39,8 +39,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property DnsRecords. 
         /// <para>
-        /// An array that contains one <code>DnsRecord</code> object for each Route 53 record
-        /// that you want Cloud Map to create when you register an instance.
+        /// An array that contains one <c>DnsRecord</c> object for each Route 53 record that you
+        /// want Cloud Map to create when you register an instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

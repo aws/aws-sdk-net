@@ -47,12 +47,12 @@ namespace Amazon.Comprehend.Model
     ///  
     /// <para>
     /// If the system detects errors while processing a page in the input document, the API
-    /// response includes an entry in <code>Errors</code> for each error. 
+    /// response includes an entry in <c>Errors</c> for each error. 
     /// </para>
     ///  
     /// <para>
     /// If the system detects a document-level error in your input document, the API returns
-    /// an <code>InvalidRequestException</code> error response. For details about this exception,
+    /// an <c>InvalidRequestException</c> error response. For details about this exception,
     /// see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-inputs-sync-err.html">
     /// Errors in semi-structured documents</a> in the Comprehend Developer Guide. 
     /// </para>
@@ -69,19 +69,18 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property Bytes. 
         /// <para>
         /// This field applies only when you use a custom entity recognition model that was trained
-        /// with PDF annotations. For other cases, enter your text input in the <code>Text</code>
-        /// field.
+        /// with PDF annotations. For other cases, enter your text input in the <c>Text</c> field.
         /// </para>
         ///  
         /// <para>
-        ///  Use the <code>Bytes</code> parameter to input a text, PDF, Word or image file. Using
-        /// a plain-text file in the <code>Bytes</code> parameter is equivelent to using the <code>Text</code>
-        /// parameter (the <code>Entities</code> field in the response is identical).
+        ///  Use the <c>Bytes</c> parameter to input a text, PDF, Word or image file. Using a
+        /// plain-text file in the <c>Bytes</c> parameter is equivelent to using the <c>Text</c>
+        /// parameter (the <c>Entities</c> field in the response is identical).
         /// </para>
         ///  
         /// <para>
-        /// You can also use the <code>Bytes</code> parameter to input an Amazon Textract <code>DetectDocumentText</code>
-        /// or <code>AnalyzeDocument</code> output file.
+        /// You can also use the <c>Bytes</c> parameter to input an Amazon Textract <c>DetectDocumentText</c>
+        /// or <c>AnalyzeDocument</c> output file.
         /// </para>
         ///  
         /// <para>
@@ -97,7 +96,7 @@ namespace Amazon.Comprehend.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use the <code>Bytes</code> parameter, do not use the <code>Text</code> parameter.
+        /// If you use the <c>Bytes</c> parameter, do not use the <c>Text</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -192,7 +191,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property Text. 
         /// <para>
         /// A UTF-8 text string. The maximum string size is 100 KB. If you enter text using this
-        /// parameter, do not use the <code>Bytes</code> parameter.
+        /// parameter, do not use the <c>Bytes</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1)]

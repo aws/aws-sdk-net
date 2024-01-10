@@ -35,9 +35,9 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// You can specify your compute requirements either by using <code>InstanceRequirementsWithMetadata</code>
+    /// You can specify your compute requirements either by using <c>InstanceRequirementsWithMetadata</c>
     /// and letting Amazon EC2 choose the optimal instance types to fulfill your Spot request,
-    /// or you can specify the instance types by using <code>InstanceTypes</code>.
+    /// or you can specify the instance types by using <c>InstanceTypes</c>.
     /// </para>
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceRequirementsWithMetadata</code>, you can't specify <code>InstanceTypes</code>.
+        /// If you specify <c>InstanceRequirementsWithMetadata</c>, you can't specify <c>InstanceTypes</c>.
         /// </para>
         /// </summary>
         public InstanceRequirementsWithMetadataRequest InstanceRequirementsWithMetadata
@@ -84,12 +84,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The instance types. We recommend that you specify at least three instance types. If
         /// you specify one or two instance types, or specify variations of a single instance
-        /// type (for example, an <code>m3.xlarge</code> with and without instance storage), the
-        /// returned placement score will always be low. 
+        /// type (for example, an <c>m3.xlarge</c> with and without instance storage), the returned
+        /// placement score will always be low. 
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>InstanceTypes</code>, you can't specify <code>InstanceRequirementsWithMetadata</code>.
+        /// If you specify <c>InstanceTypes</c>, you can't specify <c>InstanceRequirementsWithMetadata</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]
@@ -149,7 +149,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property RegionNames. 
         /// <para>
         /// The Regions used to narrow down the list of Regions to be scored. Enter the Region
-        /// code, for example, <code>us-east-1</code>.
+        /// code, for example, <c>us-east-1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -168,8 +168,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SingleAvailabilityZone. 
         /// <para>
-        /// Specify <code>true</code> so that the response returns a list of scored Availability
-        /// Zones. Otherwise, the response returns a list of scored Regions.
+        /// Specify <c>true</c> so that the response returns a list of scored Availability Zones.
+        /// Otherwise, the response returns a list of scored Regions.
         /// </para>
         ///  
         /// <para>
@@ -215,7 +215,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>units</code> (translates to number of instances)
+        /// Default: <c>units</c> (translates to number of instances)
         /// </para>
         /// </summary>
         public TargetCapacityUnitType TargetCapacityUnitType

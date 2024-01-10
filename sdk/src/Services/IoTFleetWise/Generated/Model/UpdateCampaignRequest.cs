@@ -46,22 +46,21 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>APPROVE</code> - To approve delivering a data collection scheme to vehicles.
-        /// 
+        ///  <c>APPROVE</c> - To approve delivering a data collection scheme to vehicles. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUSPEND</code> - To suspend collecting signal data. The campaign is deleted
-        /// from vehicles and all vehicles in the suspended campaign will stop sending data.
+        ///  <c>SUSPEND</c> - To suspend collecting signal data. The campaign is deleted from
+        /// vehicles and all vehicles in the suspended campaign will stop sending data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The campaign
-        /// is redeployed to all vehicles and the vehicles will resume sending data.
+        ///  <c>RESUME</c> - To reactivate the <c>SUSPEND</c> campaign. The campaign is redeployed
+        /// to all vehicles and the vehicles will resume sending data.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE</code> - To update a campaign. 
+        ///  <c>UPDATE</c> - To update a campaign. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

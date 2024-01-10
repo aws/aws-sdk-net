@@ -40,9 +40,9 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Attempts. 
         /// <para>
-        /// The number of times to move a job to the <code>RUNNABLE</code> status. You can specify
-        /// between 1 and 10 attempts. If the value of <code>attempts</code> is greater than one,
-        /// the job is retried on failure the same number of attempts as the value.
+        /// The number of times to move a job to the <c>RUNNABLE</c> status. You can specify between
+        /// 1 and 10 attempts. If the value of <c>attempts</c> is greater than one, the job is
+        /// retried on failure the same number of attempts as the value.
         /// </para>
         /// </summary>
         public int Attempts
@@ -61,8 +61,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property EvaluateOnExit. 
         /// <para>
         /// Array of up to 5 objects that specify the conditions where jobs are retried or failed.
-        /// If this parameter is specified, then the <code>attempts</code> parameter must also
-        /// be specified. If none of the listed conditions match, then the job is retried.
+        /// If this parameter is specified, then the <c>attempts</c> parameter must also be specified.
+        /// If none of the listed conditions match, then the job is retried.
         /// </para>
         /// </summary>
         public List<EvaluateOnExit> EvaluateOnExit

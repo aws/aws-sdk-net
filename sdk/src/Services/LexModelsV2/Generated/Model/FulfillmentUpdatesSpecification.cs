@@ -46,8 +46,8 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  
         /// <para>
-        /// If the <code>active</code> field is set to true, the <code>startResponse</code>, <code>updateResponse</code>,
-        /// and <code>timeoutInSeconds</code> fields are required.
+        /// If the <c>active</c> field is set to true, the <c>startResponse</c>, <c>updateResponse</c>,
+        /// and <c>timeoutInSeconds</c> fields are required.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

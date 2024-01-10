@@ -40,7 +40,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>DeleteAccessPointForObjectLambda</code>:
+    /// The following actions are related to <c>DeleteAccessPointForObjectLambda</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -40,7 +40,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property CloudTrailProperties. 
         /// <para>
-        /// Lists details about the <code>Trail</code> used to generated policy.
+        /// Lists details about the <c>Trail</c> used to generated policy.
         /// </para>
         /// </summary>
         public CloudTrailProperties CloudTrailProperties
@@ -58,9 +58,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property IsComplete. 
         /// <para>
-        /// This value is set to <code>true</code> if the generated policy contains all possible
-        /// actions for a service that IAM Access Analyzer identified from the CloudTrail trail
-        /// that you specified, and <code>false</code> otherwise.
+        /// This value is set to <c>true</c> if the generated policy contains all possible actions
+        /// for a service that IAM Access Analyzer identified from the CloudTrail trail that you
+        /// specified, and <c>false</c> otherwise.
         /// </para>
         /// </summary>
         public bool IsComplete

@@ -60,8 +60,8 @@ namespace Amazon.DocDB.Model
         ///  
         /// <para>
         /// Constraints: You must allow major version upgrades when specifying a value for the
-        /// <code>EngineVersion</code> parameter that is a different major version than the DB
-        /// cluster's current version.
+        /// <c>EngineVersion</c> parameter that is a different major version than the DB cluster's
+        /// current version.
         /// </para>
         /// </summary>
         public bool AllowMajorVersionUpgrade
@@ -80,21 +80,21 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
         /// A value that specifies whether the changes in this request and any pending changes
-        /// are asynchronously applied as soon as possible, regardless of the <code>PreferredMaintenanceWindow</code>
-        /// setting for the cluster. If this parameter is set to <code>false</code>, changes to
-        /// the cluster are applied during the next maintenance window.
+        /// are asynchronously applied as soon as possible, regardless of the <c>PreferredMaintenanceWindow</c>
+        /// setting for the cluster. If this parameter is set to <c>false</c>, changes to the
+        /// cluster are applied during the next maintenance window.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ApplyImmediately</code> parameter affects only the <code>NewDBClusterIdentifier</code>
-        /// and <code>MasterUserPassword</code> values. If you set this parameter value to <code>false</code>,
-        /// the changes to the <code>NewDBClusterIdentifier</code> and <code>MasterUserPassword</code>
-        /// values are applied during the next maintenance window. All other changes are applied
-        /// immediately, regardless of the value of the <code>ApplyImmediately</code> parameter.
+        /// The <c>ApplyImmediately</c> parameter affects only the <c>NewDBClusterIdentifier</c>
+        /// and <c>MasterUserPassword</c> values. If you set this parameter value to <c>false</c>,
+        /// the changes to the <c>NewDBClusterIdentifier</c> and <c>MasterUserPassword</c> values
+        /// are applied during the next maintenance window. All other changes are applied immediately,
+        /// regardless of the value of the <c>ApplyImmediately</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool ApplyImmediately
@@ -145,7 +145,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property CloudwatchLogsExportConfiguration. 
         /// <para>
         /// The configuration setting for the log types to be enabled for export to Amazon CloudWatch
-        /// Logs for a specific instance or cluster. The <code>EnableLogTypes</code> and <code>DisableLogTypes</code>
+        /// Logs for a specific instance or cluster. The <c>EnableLogTypes</c> and <c>DisableLogTypes</c>
         /// arrays determine which logs are exported (or not exported) to CloudWatch Logs.
         /// </para>
         /// </summary>
@@ -173,7 +173,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must match the identifier of an existing <code>DBCluster</code>.
+        /// Must match the identifier of an existing <c>DBCluster</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -211,10 +211,9 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// Specifies whether this cluster can be deleted. If <code>DeletionProtection</code>
-        /// is enabled, the cluster cannot be deleted unless it is modified and <code>DeletionProtection</code>
-        /// is disabled. <code>DeletionProtection</code> protects clusters from being accidentally
-        /// deleted.
+        /// Specifies whether this cluster can be deleted. If <c>DeletionProtection</c> is enabled,
+        /// the cluster cannot be deleted unless it is modified and <c>DeletionProtection</c>
+        /// is disabled. <c>DeletionProtection</c> protects clusters from being accidentally deleted.
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -234,7 +233,7 @@ namespace Amazon.DocDB.Model
         /// <para>
         /// The version number of the database engine to which you want to upgrade. Changing this
         /// parameter results in an outage. The change is applied during the next maintenance
-        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// window unless <c>ApplyImmediately</c> is enabled.
         /// </para>
         ///  
         /// <para>
@@ -243,7 +242,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</code>
+        ///  <c>aws docdb describe-db-engine-versions --engine docdb --query "DBEngineVersions[].EngineVersion"</c>
         /// 
         /// </para>
         /// </summary>
@@ -306,7 +305,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster2</code> 
+        /// Example: <c>my-cluster2</c> 
         /// </para>
         /// </summary>
         public string NewDBClusterIdentifier
@@ -328,7 +327,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: Must be a value from <code>1150</code> to <code>65535</code>. 
+        /// Constraints: Must be a value from <c>1150</c> to <c>65535</c>. 
         /// </para>
         ///  
         /// <para>
@@ -351,7 +350,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         /// The daily time range during which automated backups are created if automated backups
-        /// are enabled, using the <code>BackupRetentionPeriod</code> parameter. 
+        /// are enabled, using the <c>BackupRetentionPeriod</c> parameter. 
         /// </para>
         ///  
         /// <para>
@@ -364,7 +363,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Must be in the format <code>hh24:mi-hh24:mi</code>.
+        /// Must be in the format <c>hh24:mi-hh24:mi</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -400,7 +399,7 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Format: <code>ddd:hh24:mi-ddd:hh24:mi</code> 
+        /// Format: <c>ddd:hh24:mi-ddd:hh24:mi</c> 
         /// </para>
         ///  
         /// <para>
@@ -440,11 +439,11 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for storage type - <code>standard | iopt1</code> 
+        /// Valid values for storage type - <c>standard | iopt1</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default value is <code>standard </code> 
+        /// Default value is <c>standard </c> 
         /// </para>
         /// </summary>
         public string StorageType

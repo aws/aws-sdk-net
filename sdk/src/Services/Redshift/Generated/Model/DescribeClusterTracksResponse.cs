@@ -39,7 +39,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MaintenanceTracks. 
         /// <para>
-        /// A list of maintenance tracks output by the <code>DescribeClusterTracks</code> operation.
+        /// A list of maintenance tracks output by the <c>DescribeClusterTracks</c> operation.
         /// 
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// The starting point to return a set of response tracklist records. You can retrieve
-        /// the next set of response records by providing the returned marker value in the <code>Marker</code>
+        /// the next set of response records by providing the returned marker value in the <c>Marker</c>
         /// parameter and retrying the request.
         /// </para>
         /// </summary>

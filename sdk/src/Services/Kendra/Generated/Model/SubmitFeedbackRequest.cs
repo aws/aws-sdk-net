@@ -35,8 +35,8 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    ///  <code>SubmitFeedback</code> is currently not supported in the Amazon Web Services
-    /// GovCloud (US-West) region.
+    ///  <c>SubmitFeedback</c> is currently not supported in the Amazon Web Services GovCloud
+    /// (US-West) region.
     /// </para>
     /// </summary>
     public partial class SubmitFeedbackRequest : AmazonKendraRequest
@@ -87,7 +87,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property QueryId. 
         /// <para>
         /// The identifier of the specific query for which you are submitting feedback. The query
-        /// ID is returned in the response to the <code>Query</code> API.
+        /// ID is returned in the response to the <c>Query</c> API.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A parameter declaration for the <code>Integer</code> data type.
+    /// A parameter declaration for the <c>Integer</c> data type.
     /// </summary>
     public partial class IntegerParameterDeclaration
     {
@@ -115,7 +115,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ValueWhenUnset. 
         /// <para>
-        /// A parameter declaration for the <code>Integer</code> data type.
+        /// A parameter declaration for the <c>Integer</c> data type.
         /// </para>
         /// </summary>
         public IntegerValueWhenUnsetConfiguration ValueWhenUnset

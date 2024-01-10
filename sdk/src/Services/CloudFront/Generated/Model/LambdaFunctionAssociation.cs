@@ -45,27 +45,26 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>viewer-request</code>: The function executes when CloudFront receives a request
-        /// from a viewer and before it checks to see whether the requested object is in the edge
-        /// cache.
+        ///  <c>viewer-request</c>: The function executes when CloudFront receives a request from
+        /// a viewer and before it checks to see whether the requested object is in the edge cache.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>origin-request</code>: The function executes only when CloudFront sends a request
+        ///  <c>origin-request</c>: The function executes only when CloudFront sends a request
         /// to your origin. When the requested object is in the edge cache, the function doesn't
         /// execute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>origin-response</code>: The function executes after CloudFront receives a response
+        ///  <c>origin-response</c>: The function executes after CloudFront receives a response
         /// from the origin and before it caches the object in the response. When the requested
         /// object is in the edge cache, the function doesn't execute.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>viewer-response</code>: The function executes before CloudFront returns the
-        /// requested object to the viewer. The function executes regardless of whether the object
-        /// was already in the edge cache.
+        ///  <c>viewer-response</c>: The function executes before CloudFront returns the requested
+        /// object to the viewer. The function executes regardless of whether the object was already
+        /// in the edge cache.
         /// </para>
         ///  
         /// <para>

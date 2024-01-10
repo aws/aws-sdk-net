@@ -40,9 +40,9 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property KeyARN. 
         /// <para>
-        /// If you set <code>KeyType</code> to <code>CUSTOMER_MANAGED_CMK</code>, you must specify
-        /// the Amazon Resource Name (ARN) of the CMK. If you set <code>KeyType</code> to <code>Amazon
-        /// Web Services_OWNED_CMK</code>, Kinesis Data Firehose uses a service-account CMK.
+        /// If you set <c>KeyType</c> to <c>CUSTOMER_MANAGED_CMK</c>, you must specify the Amazon
+        /// Resource Name (ARN) of the CMK. If you set <c>KeyType</c> to <c>Amazon Web Services_OWNED_CMK</c>,
+        /// Kinesis Data Firehose uses a service-account CMK.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -62,11 +62,11 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property KeyType. 
         /// <para>
         /// Indicates the type of customer master key (CMK) to use for encryption. The default
-        /// setting is <code>Amazon Web Services_OWNED_CMK</code>. For more information about
-        /// CMKs, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
+        /// setting is <c>Amazon Web Services_OWNED_CMK</c>. For more information about CMKs,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#master_keys">Customer
         /// Master Keys (CMKs)</a>. When you invoke <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a>
-        /// with <code>KeyType</code> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes
-        /// the Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
+        /// with <c>KeyType</c> set to CUSTOMER_MANAGED_CMK, Kinesis Data Firehose invokes the
+        /// Amazon KMS operation <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_CreateGrant.html">CreateGrant</a>
         /// to create a grant that allows the Kinesis Data Firehose service to use the customer
         /// managed CMK to perform encryption and decryption. Kinesis Data Firehose manages that
         /// grant. 
@@ -81,7 +81,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// You can use a CMK of type CUSTOMER_MANAGED_CMK to encrypt up to 500 delivery streams.
         /// If a <a>CreateDeliveryStream</a> or <a>StartDeliveryStreamEncryption</a> operation
-        /// exceeds this limit, Kinesis Data Firehose throws a <code>LimitExceededException</code>.
+        /// exceeds this limit, Kinesis Data Firehose throws a <c>LimitExceededException</c>.
         /// 
         /// </para>
         ///  <important> 

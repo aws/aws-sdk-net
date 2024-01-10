@@ -60,8 +60,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property AdvisoryIds. 
         /// <para>
-        /// The Advisory ID of the patch. For example, <code>RHSA-2020:3779</code>. Applies to
-        /// Linux-based managed nodes only.
+        /// The Advisory ID of the patch. For example, <c>RHSA-2020:3779</c>. Applies to Linux-based
+        /// managed nodes only.
         /// </para>
         /// </summary>
         public List<string> AdvisoryIds
@@ -79,9 +79,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Arch. 
         /// <para>
-        /// The architecture of the patch. For example, in <code>example-pkg-0.710.10-2.7.abcd.x86_64</code>,
-        /// the architecture is indicated by <code>x86_64</code>. Applies to Linux-based managed
-        /// nodes only.
+        /// The architecture of the patch. For example, in <c>example-pkg-0.710.10-2.7.abcd.x86_64</c>,
+        /// the architecture is indicated by <c>x86_64</c>. Applies to Linux-based managed nodes
+        /// only.
         /// </para>
         /// </summary>
         public string Arch
@@ -99,7 +99,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property BugzillaIds. 
         /// <para>
-        /// The Bugzilla ID of the patch. For example, <code>1600646</code>. Applies to Linux-based
+        /// The Bugzilla ID of the patch. For example, <c>1600646</c>. Applies to Linux-based
         /// managed nodes only.
         /// </para>
         /// </summary>
@@ -118,8 +118,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Classification. 
         /// <para>
-        /// The classification of the patch. For example, <code>SecurityUpdates</code>, <code>Updates</code>,
-        /// or <code>CriticalUpdates</code>.
+        /// The classification of the patch. For example, <c>SecurityUpdates</c>, <c>Updates</c>,
+        /// or <c>CriticalUpdates</c>.
         /// </para>
         /// </summary>
         public string Classification
@@ -155,7 +155,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CVEIds. 
         /// <para>
-        /// The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <code>CVE-2011-3192</code>.
+        /// The Common Vulnerabilities and Exposures (CVE) ID of the patch. For example, <c>CVE-2011-3192</c>.
         /// Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
@@ -192,8 +192,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Epoch. 
         /// <para>
-        /// The epoch of the patch. For example in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
-        /// the epoch value is <code>20180914-2</code>. Applies to Linux-based managed nodes only.
+        /// The epoch of the patch. For example in <c>pkg-example-EE-20180914-2.2.amzn1.noarch</c>,
+        /// the epoch value is <c>20180914-2</c>. Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public int Epoch
@@ -272,7 +272,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property MsrcNumber. 
         /// <para>
         /// The ID of the Microsoft Security Response Center (MSRC) bulletin the patch is related
-        /// to. For example, <code>MS14-045</code>. Applies to Windows patches only.
+        /// to. For example, <c>MS14-045</c>. Applies to Windows patches only.
         /// </para>
         /// </summary>
         public string MsrcNumber
@@ -290,8 +290,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property MsrcSeverity. 
         /// <para>
-        /// The severity of the patch, such as <code>Critical</code>, <code>Important</code>,
-        /// or <code>Moderate</code>. Applies to Windows patches only.
+        /// The severity of the patch, such as <c>Critical</c>, <c>Important</c>, or <c>Moderate</c>.
+        /// Applies to Windows patches only.
         /// </para>
         /// </summary>
         public string MsrcSeverity
@@ -327,8 +327,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Product. 
         /// <para>
-        /// The specific product the patch is applicable for. For example, <code>WindowsServer2016</code>
-        /// or <code>AmazonLinux2018.03</code>.
+        /// The specific product the patch is applicable for. For example, <c>WindowsServer2016</c>
+        /// or <c>AmazonLinux2018.03</c>.
         /// </para>
         /// </summary>
         public string Product
@@ -346,8 +346,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ProductFamily. 
         /// <para>
-        /// The product family the patch is applicable for. For example, <code>Windows</code>
-        /// or <code>Amazon Linux 2</code>.
+        /// The product family the patch is applicable for. For example, <c>Windows</c> or <c>Amazon
+        /// Linux 2</c>.
         /// </para>
         /// </summary>
         public string ProductFamily
@@ -365,8 +365,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Release. 
         /// <para>
-        /// The particular release of a patch. For example, in <code>pkg-example-EE-20180914-2.2.amzn1.noarch</code>,
-        /// the release is <code>2.amaz1</code>. Applies to Linux-based managed nodes only.
+        /// The particular release of a patch. For example, in <c>pkg-example-EE-20180914-2.2.amzn1.noarch</c>,
+        /// the release is <c>2.amaz1</c>. Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public string Release
@@ -402,9 +402,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Repository. 
         /// <para>
-        /// The source patch repository for the operating system and version, such as <code>trusty-security</code>
-        /// for Ubuntu Server 14.04 LTE and <code>focal-security</code> for Ubuntu Server 20.04
-        /// LTE. Applies to Linux-based managed nodes only.
+        /// The source patch repository for the operating system and version, such as <c>trusty-security</c>
+        /// for Ubuntu Server 14.04 LTE and <c>focal-security</c> for Ubuntu Server 20.04 LTE.
+        /// Applies to Linux-based managed nodes only.
         /// </para>
         /// </summary>
         public string Repository
@@ -422,7 +422,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Severity. 
         /// <para>
-        /// The severity level of the patch. For example, <code>CRITICAL</code> or <code>MODERATE</code>.
+        /// The severity level of the patch. For example, <c>CRITICAL</c> or <c>MODERATE</c>.
         /// </para>
         /// </summary>
         public string Severity
@@ -476,9 +476,9 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version number of the patch. For example, in <code>example-pkg-1.710.10-2.7.abcd.x86_64</code>,
-        /// the version number is indicated by <code>-1</code>. Applies to Linux-based managed
-        /// nodes only.
+        /// The version number of the patch. For example, in <c>example-pkg-1.710.10-2.7.abcd.x86_64</c>,
+        /// the version number is indicated by <c>-1</c>. Applies to Linux-based managed nodes
+        /// only.
         /// </para>
         /// </summary>
         public string Version

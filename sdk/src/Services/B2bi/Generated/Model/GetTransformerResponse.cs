@@ -87,8 +87,8 @@ namespace Amazon.B2bi.Model
         /// <summary>
         /// Gets and sets the property FileFormat. 
         /// <para>
-        /// Returns that the currently supported file formats for EDI transformations are <code>JSON</code>
-        /// and <code>XML</code>.
+        /// Returns that the currently supported file formats for EDI transformations are <c>JSON</c>
+        /// and <c>XML</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -185,8 +185,8 @@ namespace Amazon.B2bi.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Returns the state of the newly created transformer. The transformer can be either
-        /// <code>active</code> or <code>inactive</code>. For the transformer to be used in a
-        /// capability, its status must <code>active</code>.
+        /// <c>active</c> or <c>inactive</c>. For the transformer to be used in a capability,
+        /// its status must <c>active</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

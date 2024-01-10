@@ -59,7 +59,7 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// A string representing the starting point for the next set of revisions. If a value
         /// is returned in a response, you can retrieve the next set of revisions by providing
-        /// the value in the <code>marker</code> parameter and retrying the command. If the <code>marker</code>
+        /// the value in the <c>marker</c> parameter and retrying the command. If the <c>marker</c>
         /// field is empty, all revisions have already been returned.
         /// </para>
         /// </summary>

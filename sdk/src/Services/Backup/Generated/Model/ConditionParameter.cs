@@ -40,8 +40,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionKey. 
         /// <para>
-        /// The key in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
-        /// <code>Department</code> is the key.
+        /// The key in a key-value pair. For example, in the tag <c>Department: Accounting</c>,
+        /// <c>Department</c> is the key.
         /// </para>
         /// </summary>
         public string ConditionKey
@@ -59,8 +59,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ConditionValue. 
         /// <para>
-        /// The value in a key-value pair. For example, in the tag <code>Department: Accounting</code>,
-        /// <code>Accounting</code> is the value.
+        /// The value in a key-value pair. For example, in the tag <c>Department: Accounting</c>,
+        /// <c>Accounting</c> is the value.
         /// </para>
         /// </summary>
         public string ConditionValue

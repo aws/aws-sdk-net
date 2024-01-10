@@ -110,8 +110,8 @@ namespace Amazon.Detective.Model
         /// <summary>
         /// Gets and sets the property DisabledReason. 
         /// <para>
-        /// For member accounts with a status of <code>ACCEPTED_BUT_DISABLED</code>, the reason
-        /// that the member account is not enabled.
+        /// For member accounts with a status of <c>ACCEPTED_BUT_DISABLED</c>, the reason that
+        /// the member account is not enabled.
         /// </para>
         ///  
         /// <para>
@@ -119,13 +119,13 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VOLUME_TOO_HIGH</code> - Indicates that adding the member account would cause
-        /// the data volume for the behavior graph to be too high.
+        ///  <c>VOLUME_TOO_HIGH</c> - Indicates that adding the member account would cause the
+        /// data volume for the behavior graph to be too high.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VOLUME_UNKNOWN</code> - Indicates that Detective is unable to verify the data
-        /// volume for the member account. This is usually because the member account is not enrolled
+        ///  <c>VOLUME_UNKNOWN</c> - Indicates that Detective is unable to verify the data volume
+        /// for the member account. This is usually because the member account is not enrolled
         /// in Amazon GuardDuty. 
         /// </para>
         ///  </li> </ul>
@@ -186,11 +186,11 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  
         /// <para>
-        /// For an organization account in the organization behavior graph, the type is <code>ORGANIZATION</code>.
+        /// For an organization account in the organization behavior graph, the type is <c>ORGANIZATION</c>.
         /// </para>
         ///  
         /// <para>
-        /// For an account that was invited to a behavior graph, the type is <code>INVITATION</code>.
+        /// For an account that was invited to a behavior graph, the type is <c>INVITATION</c>.
         /// 
         /// </para>
         /// </summary>
@@ -210,7 +210,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property InvitedTime. 
         /// <para>
         /// For invited accounts, the date and time that Detective sent the invitation to the
-        /// account. The value is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// account. The value is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime InvitedTime
@@ -260,8 +260,8 @@ namespace Amazon.Detective.Model
         /// <para>
         /// For example, the data volume for the behavior graph is 80 GB per day. The maximum
         /// data volume is 160 GB per day. If the data volume for the member account is 40 GB
-        /// per day, then <code>PercentOfGraphUtilization</code> is 25. It represents 25% of the
-        /// maximum allowed data volume. 
+        /// per day, then <c>PercentOfGraphUtilization</c> is 25. It represents 25% of the maximum
+        /// allowed data volume. 
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
@@ -281,7 +281,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property PercentOfGraphUtilizationUpdatedTime. 
         /// <para>
         /// The date and time when the graph utilization percentage was last updated. The value
-        /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]
@@ -305,16 +305,16 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INVITED</code> - For invited accounts only. Indicates that the member was sent
-        /// an invitation but has not yet responded.
+        ///  <c>INVITED</c> - For invited accounts only. Indicates that the member was sent an
+        /// invitation but has not yet responded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VERIFICATION_IN_PROGRESS</code> - For invited accounts only, indicates that
-        /// Detective is verifying that the account identifier and email address provided for
-        /// the member account match. If they do match, then Detective sends the invitation. If
-        /// the email address and account identifier don't match, then the member cannot be added
-        /// to the behavior graph.
+        ///  <c>VERIFICATION_IN_PROGRESS</c> - For invited accounts only, indicates that Detective
+        /// is verifying that the account identifier and email address provided for the member
+        /// account match. If they do match, then Detective sends the invitation. If the email
+        /// address and account identifier don't match, then the member cannot be added to the
+        /// behavior graph.
         /// </para>
         ///  
         /// <para>
@@ -323,23 +323,23 @@ namespace Amazon.Detective.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VERIFICATION_FAILED</code> - For invited accounts only. Indicates that the
-        /// account and email address provided for the member account do not match, and Detective
-        /// did not send an invitation to the account.
+        ///  <c>VERIFICATION_FAILED</c> - For invited accounts only. Indicates that the account
+        /// and email address provided for the member account do not match, and Detective did
+        /// not send an invitation to the account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED</code> - Indicates that the member account currently contributes data
-        /// to the behavior graph. For invited accounts, the member account accepted the invitation.
+        ///  <c>ENABLED</c> - Indicates that the member account currently contributes data to
+        /// the behavior graph. For invited accounts, the member account accepted the invitation.
         /// For organization accounts in the organization behavior graph, the Detective administrator
         /// account enabled the organization account as a member account.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACCEPTED_BUT_DISABLED</code> - The account accepted the invitation, or was
-        /// enabled by the Detective administrator account, but is prevented from contributing
-        /// data to the behavior graph. <code>DisabledReason</code> provides the reason why the
-        /// member account is not enabled.
+        ///  <c>ACCEPTED_BUT_DISABLED</c> - The account accepted the invitation, or was enabled
+        /// by the Detective administrator account, but is prevented from contributing data to
+        /// the behavior graph. <c>DisabledReason</c> provides the reason why the member account
+        /// is not enabled.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -364,7 +364,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property UpdatedTime. 
         /// <para>
         /// The date and time that the member account was last updated. The value is an ISO8601
-        /// formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         public DateTime UpdatedTime
@@ -420,7 +420,7 @@ namespace Amazon.Detective.Model
         /// Gets and sets the property VolumeUsageUpdatedTime. 
         /// <para>
         /// The data and time when the member account data volume was last updated. The value
-        /// is an ISO8601 formatted string. For example, <code>2021-08-18T16:35:56.284Z</code>.
+        /// is an ISO8601 formatted string. For example, <c>2021-08-18T16:35:56.284Z</c>.
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated. Use VolumeUsageByDatasourcePackage instead.")]

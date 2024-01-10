@@ -40,7 +40,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property FleetAttributes. 
         /// <para>
         /// The properties for the new fleet, including the current status. All fleets are placed
-        /// in <code>NEW</code> status on creation. 
+        /// in <c>NEW</c> status on creation. 
         /// </para>
         /// </summary>
         public FleetAttributes FleetAttributes
@@ -59,10 +59,10 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property LocationStates. 
         /// <para>
         /// The fleet's locations and life-cycle status of each location. For new fleets, the
-        /// status of all locations is set to <code>NEW</code>. During fleet creation, Amazon
-        /// GameLift updates each location status as instances are deployed there and prepared
-        /// for game hosting. This list includes an entry for the fleet's home Region. For fleets
-        /// with no remote locations, only one entry, representing the home Region, is returned.
+        /// status of all locations is set to <c>NEW</c>. During fleet creation, Amazon GameLift
+        /// updates each location status as instances are deployed there and prepared for game
+        /// hosting. This list includes an entry for the fleet's home Region. For fleets with
+        /// no remote locations, only one entry, representing the home Region, is returned.
         /// </para>
         /// </summary>
         public List<LocationState> LocationStates

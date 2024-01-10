@@ -58,24 +58,22 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Creates a new dataset in an Amazon Lookout for Vision project. <code>CreateDataset</code>
-        /// can create a training or a test dataset from a valid dataset source (<code>DatasetSource</code>).
+        /// Creates a new dataset in an Amazon Lookout for Vision project. <c>CreateDataset</c>
+        /// can create a training or a test dataset from a valid dataset source (<c>DatasetSource</c>).
         /// 
         ///  
         /// <para>
-        /// If you want a single dataset project, specify <code>train</code> for the value of
-        /// <code>DatasetType</code>.
+        /// If you want a single dataset project, specify <c>train</c> for the value of <c>DatasetType</c>.
         /// </para>
         ///  
         /// <para>
-        /// To have a project with separate training and test datasets, call <code>CreateDataset</code>
-        /// twice. On the first call, specify <code>train</code> for the value of <code>DatasetType</code>.
-        /// On the second call, specify <code>test</code> for the value of <code>DatasetType</code>.
-        /// 
+        /// To have a project with separate training and test datasets, call <c>CreateDataset</c>
+        /// twice. On the first call, specify <c>train</c> for the value of <c>DatasetType</c>.
+        /// On the second call, specify <c>test</c> for the value of <c>DatasetType</c>. 
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:CreateDataset</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:CreateDataset</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -141,13 +139,13 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Creates a new version of a model within an an Amazon Lookout for Vision project. <code>CreateModel</code>
+        /// Creates a new version of a model within an an Amazon Lookout for Vision project. <c>CreateModel</c>
         /// is an asynchronous operation in which Amazon Lookout for Vision trains, tests, and
         /// evaluates a new version of a model. 
         /// 
         ///  
         /// <para>
-        /// To get the current status, check the <code>Status</code> field returned in the response
+        /// To get the current status, check the <c>Status</c> field returned in the response
         /// from <a>DescribeModel</a>.
         /// </para>
         ///  
@@ -160,12 +158,12 @@ namespace Amazon.LookoutforVision
         ///  
         /// <para>
         /// After training completes, the evaluation metrics are stored at the location specified
-        /// in <code>OutputConfig</code>. 
+        /// in <c>OutputConfig</c>. 
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:CreateModel</code>
-        /// operation. If you want to tag your model, you also require permission to the <code>lookoutvision:TagResource</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:CreateModel</c>
+        /// operation. If you want to tag your model, you also require permission to the <c>lookoutvision:TagResource</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -236,7 +234,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:CreateProject</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:CreateProject</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -302,7 +300,7 @@ namespace Amazon.LookoutforVision
 
 
         /// <summary>
-        /// Deletes an existing Amazon Lookout for Vision <code>dataset</code>. 
+        /// Deletes an existing Amazon Lookout for Vision <c>dataset</c>. 
         /// 
         ///  
         /// <para>
@@ -326,7 +324,7 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DeleteDataset</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DeleteDataset</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -394,12 +392,12 @@ namespace Amazon.LookoutforVision
         ///  
         /// <para>
         /// It might take a few seconds to delete a model. To determine if a model has been deleted,
-        /// call <a>ListModels</a> and check if the version of the model (<code>ModelVersion</code>)
-        /// is in the <code>Models</code> array. 
+        /// call <a>ListModels</a> and check if the version of the model (<c>ModelVersion</c>)
+        /// is in the <c>Models</c> array. 
         /// </para>
         ///   
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DeleteModel</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DeleteModel</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -476,7 +474,7 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DeleteProject</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DeleteProject</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -542,7 +540,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DescribeDataset</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DescribeDataset</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -608,7 +606,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DescribeModel</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DescribeModel</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -674,7 +672,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DescribeModelPackagingJob</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DescribeModelPackagingJob</c>
         /// operation.
         /// </para>
         ///  
@@ -742,7 +740,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DescribeProject</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DescribeProject</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -808,18 +806,17 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// The response from <code>DetectAnomalies</code> includes a boolean prediction that
-        /// the image contains one or more anomalies and a confidence value for the prediction.
-        /// If the model is an image segmentation model, the response also includes segmentation
-        /// information for each type of anomaly found in the image.
+        /// The response from <c>DetectAnomalies</c> includes a boolean prediction that the image
+        /// contains one or more anomalies and a confidence value for the prediction. If the model
+        /// is an image segmentation model, the response also includes segmentation information
+        /// for each type of anomaly found in the image.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Before calling <code>DetectAnomalies</code>, you must first start your model with
-        /// the <a>StartModel</a> operation. You are charged for the amount of time, in minutes,
-        /// that a model runs and for the number of anomaly detection units that your model uses.
-        /// If you are not using a model, use the <a>StopModel</a> operation to stop your model.
-        /// 
+        /// Before calling <c>DetectAnomalies</c>, you must first start your model with the <a>StartModel</a>
+        /// operation. You are charged for the amount of time, in minutes, that a model runs and
+        /// for the number of anomaly detection units that your model uses. If you are not using
+        /// a model, use the <a>StopModel</a> operation to stop your model. 
         /// </para>
         ///  </note> 
         /// <para>
@@ -828,7 +825,7 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:DetectAnomalies</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:DetectAnomalies</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -896,7 +893,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:ListDatasetEntries</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:ListDatasetEntries</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -963,7 +960,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:ListModelPackagingJobs</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:ListModelPackagingJobs</c>
         /// operation. 
         /// </para>
         ///  
@@ -1031,12 +1028,12 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// The <code>ListModels</code> operation is eventually consistent. Recent calls to <code>CreateModel</code>
-        /// might take a while to appear in the response from <code>ListProjects</code>.
+        /// The <c>ListModels</c> operation is eventually consistent. Recent calls to <c>CreateModel</c>
+        /// might take a while to appear in the response from <c>ListProjects</c>.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:ListModels</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:ListModels</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -1099,17 +1096,16 @@ namespace Amazon.LookoutforVision
 
         /// <summary>
         /// Lists the Amazon Lookout for Vision projects in your AWS account that are in the AWS
-        /// Region in which you call <code>ListProjects</code>.
+        /// Region in which you call <c>ListProjects</c>.
         /// 
         ///  
         /// <para>
-        /// The <code>ListProjects</code> operation is eventually consistent. Recent calls to
-        /// <code>CreateProject</code> and <code>DeleteProject</code> might take a while to appear
-        /// in the response from <code>ListProjects</code>.
+        /// The <c>ListProjects</c> operation is eventually consistent. Recent calls to <c>CreateProject</c>
+        /// and <c>DeleteProject</c> might take a while to appear in the response from <c>ListProjects</c>.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:ListProjects</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:ListProjects</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -1175,7 +1171,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:ListTagsForResource</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:ListTagsForResource</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -1242,7 +1238,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// A model is ready to use when its status is <code>HOSTED</code>.
+        /// A model is ready to use when its status is <c>HOSTED</c>.
         /// </para>
         ///  
         /// <para>
@@ -1255,7 +1251,7 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  </note> 
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:StartModel</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:StartModel</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -1328,7 +1324,7 @@ namespace Amazon.LookoutforVision
         ///  
         /// <para>
         /// Use the <a>DescribeModelPackagingJob</a> API to determine the current status of the
-        /// job. The model packaging job is complete if the value of <code>Status</code> is <code>SUCCEEDED</code>.
+        /// job. The model packaging job is complete if the value of <c>Status</c> is <c>SUCCEEDED</c>.
         /// </para>
         ///  
         /// <para>
@@ -1342,32 +1338,31 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>lookoutvision:StartModelPackagingJob</code> 
+        ///  <c>lookoutvision:StartModelPackagingJob</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3:PutObject</code> 
+        ///  <c>s3:PutObject</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>s3:GetBucketLocation</code> 
+        ///  <c>s3:GetBucketLocation</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kms:GenerateDataKey</code> 
+        ///  <c>kms:GenerateDataKey</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>greengrass:CreateComponentVersion</code> 
+        ///  <c>greengrass:CreateComponentVersion</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>greengrass:DescribeComponent</code> 
+        ///  <c>greengrass:DescribeComponent</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// (Optional) <code>greengrass:TagResource</code>. Only required if you want to tag the
-        /// component.
+        /// (Optional) <c>greengrass:TagResource</c>. Only required if you want to tag the component.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1442,11 +1437,11 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// After the model hosting stops, the <code>Status</code> of the model is <code>TRAINED</code>.
+        /// After the model hosting stops, the <c>Status</c> of the model is <c>TRAINED</c>.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:StopModel</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:StopModel</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -1514,7 +1509,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:TagResource</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:TagResource</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -1586,7 +1581,7 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:UntagResource</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:UntagResource</c>
         /// operation.
         /// </para>
         /// </summary>
@@ -1653,10 +1648,9 @@ namespace Amazon.LookoutforVision
         /// 
         ///  
         /// <para>
-        /// To update an existing JSON Line, use the <code>source-ref</code> field to identify
-        /// the JSON Line. The JSON line that you supply replaces the existing JSON line. Any
-        /// existing annotations that are not in the new JSON line are removed from the dataset.
-        /// 
+        /// To update an existing JSON Line, use the <c>source-ref</c> field to identify the JSON
+        /// Line. The JSON line that you supply replaces the existing JSON line. Any existing
+        /// annotations that are not in the new JSON line are removed from the dataset. 
         /// </para>
         ///  
         /// <para>
@@ -1665,17 +1659,17 @@ namespace Amazon.LookoutforVision
         /// </para>
         ///  <note> 
         /// <para>
-        /// The images you reference in the <code>source-ref</code> field of a JSON line, must
-        /// be in the same S3 bucket as the existing images in the dataset. 
+        /// The images you reference in the <c>source-ref</c> field of a JSON line, must be in
+        /// the same S3 bucket as the existing images in the dataset. 
         /// </para>
         ///  </note> 
         /// <para>
         /// Updating a dataset might take a while to complete. To check the current status, call
-        /// <a>DescribeDataset</a> and check the <code>Status</code> field in the response.
+        /// <a>DescribeDataset</a> and check the <c>Status</c> field in the response.
         /// </para>
         ///  
         /// <para>
-        /// This operation requires permissions to perform the <code>lookoutvision:UpdateDatasetEntries</code>
+        /// This operation requires permissions to perform the <c>lookoutvision:UpdateDatasetEntries</c>
         /// operation.
         /// </para>
         /// </summary>

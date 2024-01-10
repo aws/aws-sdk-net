@@ -59,7 +59,7 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property ServiceArnList. 
         /// <para>
-        /// A list of service ARN records. In a paginated request, the request returns up to <code>MaxResults</code>
+        /// A list of service ARN records. In a paginated request, the request returns up to <c>MaxResults</c>
         /// records for each call.
         /// </para>
         /// </summary>

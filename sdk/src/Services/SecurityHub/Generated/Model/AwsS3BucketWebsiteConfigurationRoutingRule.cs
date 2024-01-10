@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Redirect. 
         /// <para>
-        /// Provides the rules to redirect the request if the condition in <code>Condition</code>
-        /// is met.
+        /// Provides the rules to redirect the request if the condition in <c>Condition</c> is
+        /// met.
         /// </para>
         /// </summary>
         public AwsS3BucketWebsiteConfigurationRoutingRuleRedirect Redirect

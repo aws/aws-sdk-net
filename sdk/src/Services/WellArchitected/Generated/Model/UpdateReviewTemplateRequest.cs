@@ -82,7 +82,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensesToDisassociate. 
         /// <para>
-        /// A list of lens aliases or ARNs to unapply to the review template. The <code>wellarchitected</code>
+        /// A list of lens aliases or ARNs to unapply to the review template. The <c>wellarchitected</c>
         /// lens cannot be unapplied.
         /// </para>
         /// </summary>

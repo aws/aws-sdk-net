@@ -38,22 +38,21 @@ namespace Amazon.AppRunner.Model
     ///  
     /// <para>
     /// Create multiple revisions of a configuration by calling this action multiple times
-    /// using the same <code>AutoScalingConfigurationName</code>. The call returns incremental
-    /// <code>AutoScalingConfigurationRevision</code> values. When you create a service and
-    /// configure an auto scaling configuration resource, the service uses the latest active
-    /// revision of the auto scaling configuration by default. You can optionally configure
-    /// the service to use a specific revision.
+    /// using the same <c>AutoScalingConfigurationName</c>. The call returns incremental <c>AutoScalingConfigurationRevision</c>
+    /// values. When you create a service and configure an auto scaling configuration resource,
+    /// the service uses the latest active revision of the auto scaling configuration by default.
+    /// You can optionally configure the service to use a specific revision.
     /// </para>
     ///  
     /// <para>
-    /// Configure a higher <code>MinSize</code> to increase the spread of your App Runner
-    /// service over more Availability Zones in the Amazon Web Services Region. The tradeoff
-    /// is a higher minimal cost.
+    /// Configure a higher <c>MinSize</c> to increase the spread of your App Runner service
+    /// over more Availability Zones in the Amazon Web Services Region. The tradeoff is a
+    /// higher minimal cost.
     /// </para>
     ///  
     /// <para>
-    /// Configure a lower <code>MaxSize</code> to control your cost. The tradeoff is lower
-    /// responsiveness during peak demand.
+    /// Configure a lower <c>MaxSize</c> to control your cost. The tradeoff is lower responsiveness
+    /// during peak demand.
     /// </para>
     /// </summary>
     public partial class CreateAutoScalingConfigurationRequest : AmazonAppRunnerRequest
@@ -68,39 +67,39 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property AutoScalingConfigurationName. 
         /// <para>
         /// A name for the auto scaling configuration. When you use it for the first time in an
-        /// Amazon Web Services Region, App Runner creates revision number <code>1</code> of this
-        /// name. When you use the same name in subsequent calls, App Runner creates incremental
-        /// revisions of the configuration.
+        /// Amazon Web Services Region, App Runner creates revision number <c>1</c> of this name.
+        /// When you use the same name in subsequent calls, App Runner creates incremental revisions
+        /// of the configuration.
         /// </para>
         ///  <note> 
         /// <para>
         /// Prior to the release of <a href="https://docs.aws.amazon.com/apprunner/latest/relnotes/release-2023-09-22-auto-scale-config.html">Auto
-        /// scale configuration enhancements</a>, the name <code>DefaultConfiguration</code> was
-        /// reserved. 
+        /// scale configuration enhancements</a>, the name <c>DefaultConfiguration</c> was reserved.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// This restriction is no longer in place. You can now manage <code>DefaultConfiguration</code>
+        /// This restriction is no longer in place. You can now manage <c>DefaultConfiguration</c>
         /// the same way you manage your custom auto scaling configurations. This means you can
-        /// do the following with the <code>DefaultConfiguration</code> that App Runner provides:
+        /// do the following with the <c>DefaultConfiguration</c> that App Runner provides:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Create new revisions of the <code>DefaultConfiguration</code>.
+        /// Create new revisions of the <c>DefaultConfiguration</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delete the revisions of the <code>DefaultConfiguration</code>.
+        /// Delete the revisions of the <c>DefaultConfiguration</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Delete the auto scaling configuration for which the App Runner <code>DefaultConfiguration</code>
+        /// Delete the auto scaling configuration for which the App Runner <c>DefaultConfiguration</c>
         /// was created.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// If you delete the auto scaling configuration you can create another custom auto scaling
-        /// configuration with the same <code>DefaultConfiguration</code> name. The original <code>DefaultConfiguration</code>
+        /// configuration with the same <c>DefaultConfiguration</c> name. The original <c>DefaultConfiguration</c>
         /// resource provided by App Runner remains in your account unless you make changes to
         /// it.
         /// </para>
@@ -127,7 +126,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code> 
+        /// Default: <c>100</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -146,12 +145,12 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property MaxSize. 
         /// <para>
-        /// The maximum number of instances that your service scales up to. At most <code>MaxSize</code>
+        /// The maximum number of instances that your service scales up to. At most <c>MaxSize</c>
         /// instances actively serve traffic for your service.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>25</code> 
+        /// Default: <c>25</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -171,8 +170,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property MinSize. 
         /// <para>
         /// The minimum number of instances that App Runner provisions for your service. The service
-        /// always has at least <code>MinSize</code> provisioned instances. Some of them actively
-        /// serve traffic. The rest of them (provisioned and inactive instances) are a cost-effective
+        /// always has at least <c>MinSize</c> provisioned instances. Some of them actively serve
+        /// traffic. The rest of them (provisioned and inactive instances) are a cost-effective
         /// compute capacity reserve and are ready to be quickly activated. You pay for memory
         /// usage of all the provisioned instances. You pay for CPU usage of only the active subset.
         /// </para>
@@ -183,7 +182,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1</code> 
+        /// Default: <c>1</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]

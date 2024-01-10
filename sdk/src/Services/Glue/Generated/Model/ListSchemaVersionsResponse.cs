@@ -58,8 +58,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Schemas. 
         /// <para>
-        /// An array of <code>SchemaVersionList</code> objects containing details of each schema
-        /// version.
+        /// An array of <c>SchemaVersionList</c> objects containing details of each schema version.
         /// </para>
         /// </summary>
         public List<SchemaVersionListItem> Schemas

@@ -30,7 +30,7 @@ namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
     /// Provides information that describes status of a schema at an endpoint specified by
-    /// the <code>DescribeRefreshSchemaStatus</code> operation.
+    /// the <c>DescribeRefreshSchemaStatus</c> operation.
     /// </summary>
     public partial class RefreshSchemasStatus
     {

@@ -47,9 +47,9 @@ namespace Amazon.Rekognition.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// Idempotency token used to prevent the accidental creation of duplicate versions. If
-        /// you use the same token with multiple <code>StartMediaAnalysisJobRequest</code> requests,
-        /// the same response is returned. Use <code>ClientRequestToken</code> to prevent the
-        /// same request from being processed more than once.
+        /// you use the same token with multiple <c>StartMediaAnalysisJobRequest</c> requests,
+        /// the same response is returned. Use <c>ClientRequestToken</c> to prevent the same request
+        /// from being processed more than once.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpsWorks.Model
 {
     /// <summary>
-    /// Contains the response to a <code>GetHostnameSuggestion</code> request.
+    /// Contains the response to a <c>GetHostnameSuggestion</c> request.
     /// </summary>
     public partial class GetHostnameSuggestionResponse : AmazonWebServiceResponse
     {

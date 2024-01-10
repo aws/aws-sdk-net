@@ -62,9 +62,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-        /// <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>,
-        /// and <code>eia2.xlarge</code>. 
+        ///  The type of elastic inference accelerator. The possible values are <c>eia1.medium</c>,
+        /// <c>eia1.large</c>, <c>eia1.xlarge</c>, <c>eia2.medium</c>, <c>eia2.large</c>, and
+        /// <c>eia2.xlarge</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -43,7 +43,7 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property GroupIdentifier. 
         /// <para>
         /// Specifies the group to return information for. You can specify the group name, the
-        /// ARN, or the group ID as the <code>GroupIdentifier</code>.
+        /// ARN, or the group ID as the <c>GroupIdentifier</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -63,8 +63,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Specify this parameter to limit how many canary ARNs are returned each time you use
-        /// the <code>ListGroupResources</code> operation. If you omit this parameter, the default
-        /// of 20 is used.
+        /// the <c>ListGroupResources</c> operation. If you omit this parameter, the default of
+        /// 20 is used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

@@ -31,8 +31,8 @@ namespace Amazon.ECS.Model
     /// <summary>
     /// Container for the parameters to the CreateService operation.
     /// Runs and maintains your desired number of tasks from a specified task definition.
-    /// If the number of tasks running in a service drops below the <code>desiredCount</code>,
-    /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
+    /// If the number of tasks running in a service drops below the <c>desiredCount</c>, Amazon
+    /// ECS runs another copy of the task in the specified cluster. To update an existing
     /// service, see the <a>UpdateService</a> action.
     /// 
     ///  <note> 
@@ -56,9 +56,9 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// Tasks for services that don't use a load balancer are considered healthy if they're
-    /// in the <code>RUNNING</code> state. Tasks for services that use a load balancer are
-    /// considered healthy if they're in the <code>RUNNING</code> state and are reported as
-    /// healthy by the load balancer.
+    /// in the <c>RUNNING</c> state. Tasks for services that use a load balancer are considered
+    /// healthy if they're in the <c>RUNNING</c> state and are reported as healthy by the
+    /// load balancer.
     /// </para>
     ///  
     /// <para>
@@ -66,18 +66,18 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>REPLICA</code> - The replica scheduling strategy places and maintains your
-    /// desired number of tasks across your cluster. By default, the service scheduler spreads
-    /// tasks across Availability Zones. You can use task placement strategies and constraints
-    /// to customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+    ///  <c>REPLICA</c> - The replica scheduling strategy places and maintains your desired
+    /// number of tasks across your cluster. By default, the service scheduler spreads tasks
+    /// across Availability Zones. You can use task placement strategies and constraints to
+    /// customize task placement decisions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
     /// scheduler concepts</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DAEMON</code> - The daemon scheduling strategy deploys exactly one task on
-    /// each active container instance that meets all of the task placement constraints that
-    /// you specify in your cluster. The service scheduler also evaluates the task placement
-    /// constraints for running tasks. It also stops tasks that don't meet the placement constraints.
+    ///  <c>DAEMON</c> - The daemon scheduling strategy deploys exactly one task on each active
+    /// container instance that meets all of the task placement constraints that you specify
+    /// in your cluster. The service scheduler also evaluates the task placement constraints
+    /// for running tasks. It also stops tasks that don't meet the placement constraints.
     /// When using this strategy, you don't need to specify a desired number of tasks, a task
     /// placement strategy, or use Service Auto Scaling policies. For more information, see
     /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
@@ -88,34 +88,33 @@ namespace Amazon.ECS.Model
     /// You can optionally specify a deployment configuration for your service. The deployment
     /// is initiated by changing properties. For example, the deployment might be initiated
     /// by the task definition or by your desired count of a service. This is done with an
-    /// <a>UpdateService</a> operation. The default value for a replica service for <code>minimumHealthyPercent</code>
-    /// is 100%. The default value for a daemon service for <code>minimumHealthyPercent</code>
-    /// is 0%.
+    /// <a>UpdateService</a> operation. The default value for a replica service for <c>minimumHealthyPercent</c>
+    /// is 100%. The default value for a daemon service for <c>minimumHealthyPercent</c> is
+    /// 0%.
     /// </para>
     ///  
     /// <para>
-    /// If a service uses the <code>ECS</code> deployment controller, the minimum healthy
-    /// percent represents a lower limit on the number of tasks in a service that must remain
-    /// in the <code>RUNNING</code> state during a deployment. Specifically, it represents
-    /// it as a percentage of your desired number of tasks (rounded up to the nearest integer).
-    /// This happens when any of your container instances are in the <code>DRAINING</code>
-    /// state if the service contains tasks using the EC2 launch type. Using this parameter,
-    /// you can deploy without using additional cluster capacity. For example, if you set
-    /// your service to have desired number of four tasks and a minimum healthy percent of
-    /// 50%, the scheduler might stop two existing tasks to free up cluster capacity before
-    /// starting two new tasks. If they're in the <code>RUNNING</code> state, tasks for services
-    /// that don't use a load balancer are considered healthy . If they're in the <code>RUNNING</code>
-    /// state and reported as healthy by the load balancer, tasks for services that <i>do</i>
-    /// use a load balancer are considered healthy . The default value for minimum healthy
-    /// percent is 100%.
+    /// If a service uses the <c>ECS</c> deployment controller, the minimum healthy percent
+    /// represents a lower limit on the number of tasks in a service that must remain in the
+    /// <c>RUNNING</c> state during a deployment. Specifically, it represents it as a percentage
+    /// of your desired number of tasks (rounded up to the nearest integer). This happens
+    /// when any of your container instances are in the <c>DRAINING</c> state if the service
+    /// contains tasks using the EC2 launch type. Using this parameter, you can deploy without
+    /// using additional cluster capacity. For example, if you set your service to have desired
+    /// number of four tasks and a minimum healthy percent of 50%, the scheduler might stop
+    /// two existing tasks to free up cluster capacity before starting two new tasks. If they're
+    /// in the <c>RUNNING</c> state, tasks for services that don't use a load balancer are
+    /// considered healthy . If they're in the <c>RUNNING</c> state and reported as healthy
+    /// by the load balancer, tasks for services that <i>do</i> use a load balancer are considered
+    /// healthy . The default value for minimum healthy percent is 100%.
     /// </para>
     ///  
     /// <para>
-    /// If a service uses the <code>ECS</code> deployment controller, the <b>maximum percent</b>
+    /// If a service uses the <c>ECS</c> deployment controller, the <b>maximum percent</b>
     /// parameter represents an upper limit on the number of tasks in a service that are allowed
-    /// in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment. Specifically,
-    /// it represents it as a percentage of the desired number of tasks (rounded down to the
-    /// nearest integer). This happens when any of your container instances are in the <code>DRAINING</code>
+    /// in the <c>RUNNING</c> or <c>PENDING</c> state during a deployment. Specifically, it
+    /// represents it as a percentage of the desired number of tasks (rounded down to the
+    /// nearest integer). This happens when any of your container instances are in the <c>DRAINING</c>
     /// state if the service contains tasks using the EC2 launch type. Using this parameter,
     /// you can define the deployment batch size. For example, if your service has a desired
     /// number of four tasks and a maximum percent value of 200%, the scheduler may start
@@ -124,20 +123,20 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// If a service uses either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment
-    /// controller types and tasks that use the EC2 launch type, the <b>minimum healthy percent</b>
-    /// and <b>maximum percent</b> values are used only to define the lower and upper limit
-    /// on the number of the tasks in the service that remain in the <code>RUNNING</code>
-    /// state. This is while the container instances are in the <code>DRAINING</code> state.
-    /// If the tasks in the service use the Fargate launch type, the minimum healthy percent
-    /// and maximum percent values aren't used. This is the case even if they're currently
-    /// visible when describing your service.
+    /// If a service uses either the <c>CODE_DEPLOY</c> or <c>EXTERNAL</c> deployment controller
+    /// types and tasks that use the EC2 launch type, the <b>minimum healthy percent</b> and
+    /// <b>maximum percent</b> values are used only to define the lower and upper limit on
+    /// the number of the tasks in the service that remain in the <c>RUNNING</c> state. This
+    /// is while the container instances are in the <c>DRAINING</c> state. If the tasks in
+    /// the service use the Fargate launch type, the minimum healthy percent and maximum percent
+    /// values aren't used. This is the case even if they're currently visible when describing
+    /// your service.
     /// </para>
     ///  
     /// <para>
-    /// When creating a service that uses the <code>EXTERNAL</code> deployment controller,
-    /// you can specify only parameters that aren't controlled at the task set level. The
-    /// only required parameter is the service name. You control your services using the <a>CreateTaskSet</a>
+    /// When creating a service that uses the <c>EXTERNAL</c> deployment controller, you can
+    /// specify only parameters that aren't controlled at the task set level. The only required
+    /// parameter is the service name. You control your services using the <a>CreateTaskSet</a>
     /// operation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
     /// ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
@@ -181,10 +180,9 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If a <code>capacityProviderStrategy</code> is specified, the <code>launchType</code>
-        /// parameter must be omitted. If no <code>capacityProviderStrategy</code> or <code>launchType</code>
-        /// is specified, the <code>defaultCapacityProviderStrategy</code> for the cluster is
-        /// used.
+        /// If a <c>capacityProviderStrategy</c> is specified, the <c>launchType</c> parameter
+        /// must be omitted. If no <c>capacityProviderStrategy</c> or <c>launchType</c> is specified,
+        /// the <c>defaultCapacityProviderStrategy</c> for the cluster is used.
         /// </para>
         ///  
         /// <para>
@@ -265,7 +263,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DeploymentController. 
         /// <para>
         /// The deployment controller to use for the service. If no deployment controller is specified,
-        /// the default value of <code>ECS</code> is used.
+        /// the default value of <c>ECS</c> is used.
         /// </para>
         /// </summary>
         public DeploymentController DeploymentController
@@ -288,9 +286,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// This is required if <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't
-        /// specified. If <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
-        /// required.
+        /// This is required if <c>schedulingStrategy</c> is <c>REPLICA</c> or isn't specified.
+        /// If <c>schedulingStrategy</c> is <c>DAEMON</c> then this isn't required.
         /// </para>
         /// </summary>
         public int DesiredCount
@@ -315,8 +312,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// When you use Amazon ECS managed tags, you need to set the <code>propagateTags</code>
-        /// request parameter.
+        /// When you use Amazon ECS managed tags, you need to set the <c>propagateTags</c> request
+        /// parameter.
         /// </para>
         /// </summary>
         public bool EnableECSManagedTags
@@ -335,8 +332,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
         /// Determines whether the execute command functionality is turned on for the service.
-        /// If <code>true</code>, this enables execute command functionality on all containers
-        /// in the service tasks.
+        /// If <c>true</c>, this enables execute command functionality on all containers in the
+        /// service tasks.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -358,11 +355,11 @@ namespace Amazon.ECS.Model
         /// Elastic Load Balancing target health checks after a task has first started. This is
         /// only used when your service is configured to use a load balancer. If your service
         /// has a load balancer defined and you don't specify a health check grace period value,
-        /// the default value of <code>0</code> is used.
+        /// the default value of <c>0</c> is used.
         /// </para>
         ///  
         /// <para>
-        /// If you do not use an Elastic Load Balancing, we recommend that you use the <code>startPeriod</code>
+        /// If you do not use an Elastic Load Balancing, we recommend that you use the <c>startPeriod</c>
         /// in the task definition health check parameters. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html">Health
         /// check</a>.
         /// </para>
@@ -395,7 +392,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>FARGATE</code> launch type runs your tasks on Fargate On-Demand infrastructure.
+        /// The <c>FARGATE</c> launch type runs your tasks on Fargate On-Demand infrastructure.
         /// </para>
         ///  <note> 
         /// <para>
@@ -405,18 +402,18 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The <code>EC2</code> launch type runs your tasks on Amazon EC2 instances registered
-        /// to your cluster.
+        /// The <c>EC2</c> launch type runs your tasks on Amazon EC2 instances registered to your
+        /// cluster.
         /// </para>
         ///  
         /// <para>
-        /// The <code>EXTERNAL</code> launch type runs your tasks on your on-premises server or
-        /// virtual machine (VM) capacity registered to your cluster.
+        /// The <c>EXTERNAL</c> launch type runs your tasks on your on-premises server or virtual
+        /// machine (VM) capacity registered to your cluster.
         /// </para>
         ///  
         /// <para>
-        /// A service can use either a launch type or a capacity provider strategy. If a <code>launchType</code>
-        /// is specified, the <code>capacityProviderStrategy</code> parameter must be omitted.
+        /// A service can use either a launch type or a capacity provider strategy. If a <c>launchType</c>
+        /// is specified, the <c>capacityProviderStrategy</c> parameter must be omitted.
         /// </para>
         /// </summary>
         public LaunchType LaunchType
@@ -440,30 +437,29 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the service uses the rolling update (<code>ECS</code>) deployment controller and
-        /// using either an Application Load Balancer or Network Load Balancer, you must specify
-        /// one or more target group ARNs to attach to the service. The service-linked role is
-        /// required for services that use multiple target groups. For more information, see <a
-        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// If the service uses the rolling update (<c>ECS</c>) deployment controller and using
+        /// either an Application Load Balancer or Network Load Balancer, you must specify one
+        /// or more target group ARNs to attach to the service. The service-linked role is required
+        /// for services that use multiple target groups. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If the service uses the <code>CODE_DEPLOY</code> deployment controller, the service
-        /// is required to use either an Application Load Balancer or Network Load Balancer. When
-        /// creating an CodeDeploy deployment group, you specify two target groups (referred to
-        /// as a <code>targetGroupPair</code>). During a deployment, CodeDeploy determines which
-        /// task set in your service has the status <code>PRIMARY</code>, and it associates one
-        /// target group with it. Then, it also associates the other target group with the replacement
-        /// task set. The load balancer can also have up to two listeners: a required listener
-        /// for production traffic and an optional listener that you can use to perform validation
-        /// tests with Lambda functions before routing production traffic to it.
+        /// If the service uses the <c>CODE_DEPLOY</c> deployment controller, the service is required
+        /// to use either an Application Load Balancer or Network Load Balancer. When creating
+        /// an CodeDeploy deployment group, you specify two target groups (referred to as a <c>targetGroupPair</c>).
+        /// During a deployment, CodeDeploy determines which task set in your service has the
+        /// status <c>PRIMARY</c>, and it associates one target group with it. Then, it also associates
+        /// the other target group with the replacement task set. The load balancer can also have
+        /// up to two listeners: a required listener for production traffic and an optional listener
+        /// that you can use to perform validation tests with Lambda functions before routing
+        /// production traffic to it.
         /// </para>
         ///  
         /// <para>
-        /// If you use the <code>CODE_DEPLOY</code> deployment controller, these values can be
-        /// changed when updating the service.
+        /// If you use the <c>CODE_DEPLOY</c> deployment controller, these values can be changed
+        /// when updating the service.
         /// </para>
         ///  
         /// <para>
@@ -484,12 +480,12 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// Services with tasks that use the <code>awsvpc</code> network mode (for example, those
-        /// with the Fargate launch type) only support Application Load Balancers and Network
-        /// Load Balancers. Classic Load Balancers aren't supported. Also, when you create any
-        /// target groups for these services, you must choose <code>ip</code> as the target type,
-        /// not <code>instance</code>. This is because tasks that use the <code>awsvpc</code>
-        /// network mode are associated with an elastic network interface, not an Amazon EC2 instance.
+        /// Services with tasks that use the <c>awsvpc</c> network mode (for example, those with
+        /// the Fargate launch type) only support Application Load Balancers and Network Load
+        /// Balancers. Classic Load Balancers aren't supported. Also, when you create any target
+        /// groups for these services, you must choose <c>ip</c> as the target type, not <c>instance</c>.
+        /// This is because tasks that use the <c>awsvpc</c> network mode are associated with
+        /// an elastic network interface, not an Amazon EC2 instance.
         /// </para>
         /// </summary>
         public List<LoadBalancer> LoadBalancers
@@ -508,9 +504,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The network configuration for the service. This parameter is required for task definitions
-        /// that use the <code>awsvpc</code> network mode to receive their own elastic network
-        /// interface, and it isn't supported for other network modes. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
+        /// that use the <c>awsvpc</c> network mode to receive their own elastic network interface,
+        /// and it isn't supported for other network modes. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-networking.html">Task
         /// networking</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -570,7 +565,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The platform version that your tasks in the service are running on. A platform version
         /// is specified only for tasks using the Fargate launch type. If one isn't specified,
-        /// the <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// the <c>LATEST</c> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// platform versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -596,7 +591,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>NONE</code>.
+        /// The default is <c>NONE</c>.
         /// </para>
         /// </summary>
         public PropagateTags PropagateTags
@@ -617,27 +612,26 @@ namespace Amazon.ECS.Model
         /// The name or full Amazon Resource Name (ARN) of the IAM role that allows Amazon ECS
         /// to make calls to your load balancer on your behalf. This parameter is only permitted
         /// if you are using a load balancer with your service and your task definition doesn't
-        /// use the <code>awsvpc</code> network mode. If you specify the <code>role</code> parameter,
-        /// you must also specify a load balancer object with the <code>loadBalancers</code> parameter.
+        /// use the <c>awsvpc</c> network mode. If you specify the <c>role</c> parameter, you
+        /// must also specify a load balancer object with the <c>loadBalancers</c> parameter.
         /// </para>
         ///  <important> 
         /// <para>
         /// If your account has already created the Amazon ECS service-linked role, that role
         /// is used for your service unless you specify a role here. The service-linked role is
-        /// required if your task definition uses the <code>awsvpc</code> network mode or if the
-        /// service is configured to use service discovery, an external deployment controller,
-        /// multiple target groups, or Elastic Inference accelerators in which case you don't
-        /// specify a role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
+        /// required if your task definition uses the <c>awsvpc</c> network mode or if the service
+        /// is configured to use service discovery, an external deployment controller, multiple
+        /// target groups, or Elastic Inference accelerators in which case you don't specify a
+        /// role here. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/using-service-linked-roles.html">Using
         /// service-linked roles for Amazon ECS</a> in the <i>Amazon Elastic Container Service
         /// Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
-        /// If your specified role has a path other than <code>/</code>, then you must either
-        /// specify the full role ARN (this is recommended) or prefix the role name with the path.
-        /// For example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>
-        /// then you would specify <code>/foo/bar</code> as the role name. For more information,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// If your specified role has a path other than <c>/</c>, then you must either specify
+        /// the full role ARN (this is recommended) or prefix the role name with the path. For
+        /// example, if a role with the name <c>bar</c> has a path of <c>/foo/</c> then you would
+        /// specify <c>/foo/bar</c> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
         /// names and paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
@@ -664,25 +658,25 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPLICA</code>-The replica scheduling strategy places and maintains the desired
-        /// number of tasks across your cluster. By default, the service scheduler spreads tasks
-        /// across Availability Zones. You can use task placement strategies and constraints to
-        /// customize task placement decisions. This scheduler strategy is required if the service
-        /// uses the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code> deployment controller types.
+        ///  <c>REPLICA</c>-The replica scheduling strategy places and maintains the desired number
+        /// of tasks across your cluster. By default, the service scheduler spreads tasks across
+        /// Availability Zones. You can use task placement strategies and constraints to customize
+        /// task placement decisions. This scheduler strategy is required if the service uses
+        /// the <c>CODE_DEPLOY</c> or <c>EXTERNAL</c> deployment controller types.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on each
-        /// active container instance that meets all of the task placement constraints that you
-        /// specify in your cluster. The service scheduler also evaluates the task placement constraints
+        ///  <c>DAEMON</c>-The daemon scheduling strategy deploys exactly one task on each active
+        /// container instance that meets all of the task placement constraints that you specify
+        /// in your cluster. The service scheduler also evaluates the task placement constraints
         /// for running tasks and will stop tasks that don't meet the placement constraints. When
         /// you're using this strategy, you don't need to specify a desired number of tasks, a
         /// task placement strategy, or use Service Auto Scaling policies.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Tasks using the Fargate launch type or the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
-        /// deployment controller types don't support the <code>DAEMON</code> scheduling strategy.
+        /// Tasks using the Fargate launch type or the <c>CODE_DEPLOY</c> or <c>EXTERNAL</c> deployment
+        /// controller types don't support the <c>DAEMON</c> scheduling strategy.
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
@@ -815,10 +809,10 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination
-        /// of such as a prefix for either keys or values as it is reserved for Amazon Web Services
-        /// use. You cannot edit or delete tag keys or values with this prefix. Tags with this
-        /// prefix do not count against your tags per resource limit.
+        /// Do not use <c>aws:</c>, <c>AWS:</c>, or any upper or lowercase combination of such
+        /// as a prefix for either keys or values as it is reserved for Amazon Web Services use.
+        /// You cannot edit or delete tag keys or values with this prefix. Tags with this prefix
+        /// do not count against your tags per resource limit.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -838,14 +832,14 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TaskDefinition. 
         /// <para>
-        /// The <code>family</code> and <code>revision</code> (<code>family:revision</code>) or
-        /// full ARN of the task definition to run in your service. If a <code>revision</code>
-        /// isn't specified, the latest <code>ACTIVE</code> revision is used.
+        /// The <c>family</c> and <c>revision</c> (<c>family:revision</c>) or full ARN of the
+        /// task definition to run in your service. If a <c>revision</c> isn't specified, the
+        /// latest <c>ACTIVE</c> revision is used.
         /// </para>
         ///  
         /// <para>
-        /// A task definition must be specified if the service uses either the <code>ECS</code>
-        /// or <code>CODE_DEPLOY</code> deployment controllers.
+        /// A task definition must be specified if the service uses either the <c>ECS</c> or <c>CODE_DEPLOY</c>
+        /// deployment controllers.
         /// </para>
         ///  
         /// <para>

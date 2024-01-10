@@ -31,8 +31,7 @@ namespace Amazon.KendraRanking.Model
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
     /// Removes a tag from a rescore execution plan. A rescore execution plan is an Amazon
-    /// Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code>
-    /// operation.
+    /// Kendra Intelligent Ranking resource used for provisioning the <c>Rescore</c> operation.
     /// </summary>
     public partial class UntagResourceRequest : AmazonKendraRankingRequest
     {

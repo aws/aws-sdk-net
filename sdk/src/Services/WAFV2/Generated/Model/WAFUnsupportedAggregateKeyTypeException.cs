@@ -31,7 +31,7 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// The rule that you've named doesn't aggregate solely on the IP address or solely on
     /// the forwarded IP address. This call is only available for rate-based rules with an
-    /// <code>AggregateKeyType</code> setting of <code>IP</code> or <code>FORWARDED_IP</code>.
+    /// <c>AggregateKeyType</c> setting of <c>IP</c> or <c>FORWARDED_IP</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

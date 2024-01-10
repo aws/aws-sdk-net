@@ -60,9 +60,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NewDBProxyEndpointName. 
         /// <para>
-        /// The new identifier for the <code>DBProxyEndpoint</code>. An identifier must begin
-        /// with a letter and must contain only ASCII letters, digits, and hyphens; it can't end
-        /// with a hyphen or contain two consecutive hyphens.
+        /// The new identifier for the <c>DBProxyEndpoint</c>. An identifier must begin with a
+        /// letter and must contain only ASCII letters, digits, and hyphens; it can't end with
+        /// a hyphen or contain two consecutive hyphens.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=63)]

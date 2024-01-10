@@ -90,8 +90,8 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Cancels an existing Amazon FSx for Lustre data repository task if that task is in
-        /// either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel am
-        /// export task, Amazon FSx does the following.
+        /// either the <c>PENDING</c> or <c>EXECUTING</c> state. When you cancel am export task,
+        /// Amazon FSx does the following.
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -155,8 +155,8 @@ namespace Amazon.FSx
         /// a disaster in the primary Region, you can restore from backup and recover availability
         /// quickly in the other Region. You can make cross-Region copies only within your Amazon
         /// Web Services partition. A partition is a grouping of Regions. Amazon Web Services
-        /// currently has three partitions: <code>aws</code> (Standard Regions), <code>aws-cn</code>
-        /// (China Regions), and <code>aws-us-gov</code> (Amazon Web Services GovCloud [US] Regions).
+        /// currently has three partitions: <c>aws</c> (Standard Regions), <c>aws-cn</c> (China
+        /// Regions), and <c>aws-us-gov</c> (Amazon Web Services GovCloud [US] Regions).
         /// </para>
         ///  
         /// <para>
@@ -165,12 +165,12 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>SourceRegion</code> parameter to specify the Amazon Web Services
-        /// Region from which the backup will be copied. For example, if you make the call from
-        /// the <code>us-west-1</code> Region and want to copy a backup from the <code>us-east-2</code>
-        /// Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
-        /// to make a cross-Region copy. If you don't specify a Region, the backup copy is created
-        /// in the same Region where the request is sent from (in-Region copy).
+        /// You can use the <c>SourceRegion</c> parameter to specify the Amazon Web Services Region
+        /// from which the backup will be copied. For example, if you make the call from the <c>us-west-1</c>
+        /// Region and want to copy a backup from the <c>us-east-2</c> Region, you specify <c>us-east-2</c>
+        /// in the <c>SourceRegion</c> parameter to make a cross-Region copy. If you don't specify
+        /// a Region, the backup copy is created in the same Region where the request is sent
+        /// from (in-Region copy).
         /// </para>
         ///  
         /// <para>
@@ -208,8 +208,8 @@ namespace Amazon.FSx
         /// The Key Management Service (KMS) key of the destination backup is not valid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidRegionException">
-        /// The Region provided for <code>SourceRegion</code> is not valid or is in a different
-        /// Amazon Web Services partition.
+        /// The Region provided for <c>SourceRegion</c> is not valid or is in a different Amazon
+        /// Web Services partition.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidSourceKmsKeyException">
         /// The Key Management Service (KMS) key of the source backup is not valid.
@@ -219,7 +219,7 @@ namespace Amazon.FSx
         /// some service limits by contacting Amazon Web Services Support.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.SourceBackupUnavailableException">
-        /// The request was rejected because the lifecycle status of the source backup isn't <code>AVAILABLE</code>.
+        /// The request was rejected because the lifecycle status of the source backup isn't <c>AVAILABLE</c>.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.UnsupportedOperationException">
         /// The requested operation is not supported for this resource or API.
@@ -317,13 +317,13 @@ namespace Amazon.FSx
         /// If a backup with the specified client request token exists and the parameters match,
         /// this operation returns the description of the existing backup. If a backup with the
         /// specified client request token exists and the parameters don't match, this operation
-        /// returns <code>IncompatibleParameterError</code>. If a backup with the specified client
-        /// request token doesn't exist, <code>CreateBackup</code> does the following: 
+        /// returns <c>IncompatibleParameterError</c>. If a backup with the specified client request
+        /// token doesn't exist, <c>CreateBackup</c> does the following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Creates a new Amazon FSx backup with an assigned ID, and an initial lifecycle state
-        /// of <code>CREATING</code>.
+        /// of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -331,17 +331,16 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// By using the idempotent operation, you can retry a <code>CreateBackup</code> operation
-        /// without the risk of creating an extra backup. This approach can be useful when an
-        /// initial call fails in a way that makes it unclear whether a backup was created. If
-        /// you use the same client request token and the initial call created a backup, the operation
+        /// By using the idempotent operation, you can retry a <c>CreateBackup</c> operation without
+        /// the risk of creating an extra backup. This approach can be useful when an initial
+        /// call fails in a way that makes it unclear whether a backup was created. If you use
+        /// the same client request token and the initial call created a backup, the operation
         /// returns a successful result because all the parameters are the same.
         /// </para>
         ///  
         /// <para>
-        /// The <code>CreateBackup</code> operation returns while the backup's lifecycle state
-        /// is still <code>CREATING</code>. You can check the backup creation status by calling
-        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html">DescribeBackups</a>
+        /// The <c>CreateBackup</c> operation returns while the backup's lifecycle state is still
+        /// <c>CREATING</c>. You can check the backup creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeBackups.html">DescribeBackups</a>
         /// operation, which returns the backup state along with other information.
         /// </para>
         /// </summary>
@@ -393,7 +392,7 @@ namespace Amazon.FSx
         /// association is a link between a directory on the file system and an Amazon S3 bucket
         /// or prefix. You can have a maximum of 8 data repository associations on a file system.
         /// Data repository associations are supported on all FSx for Lustre 2.12 and 2.15 file
-        /// systems, excluding <code>scratch_1</code> deployment type.
+        /// systems, excluding <c>scratch_1</c> deployment type.
         /// 
         ///  
         /// <para>
@@ -405,9 +404,8 @@ namespace Amazon.FSx
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>CreateDataRepositoryAssociation</code> isn't supported on Amazon File Cache
-        /// resources. To create a DRA on Amazon File Cache, use the <code>CreateFileCache</code>
-        /// operation.
+        ///  <c>CreateDataRepositoryAssociation</c> isn't supported on Amazon File Cache resources.
+        /// To create a DRA on Amazon File Cache, use the <c>CreateFileCache</c> operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -448,7 +446,7 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Creates an Amazon FSx for Lustre data repository task. A <code>CreateDataRepositoryTask</code>
+        /// Creates an Amazon FSx for Lustre data repository task. A <c>CreateDataRepositoryTask</c>
         /// operation will fail if a data repository is not linked to the FSx file system.
         /// 
         ///  
@@ -521,16 +519,16 @@ namespace Amazon.FSx
         /// <para>
         /// You can use this operation with a client request token in the request that Amazon
         /// File Cache uses to ensure idempotent creation. If a cache with the specified client
-        /// request token exists and the parameters match, <code>CreateFileCache</code> returns
-        /// the description of the existing cache. If a cache with the specified client request
-        /// token exists and the parameters don't match, this call returns <code>IncompatibleParameterError</code>.
-        /// If a file cache with the specified client request token doesn't exist, <code>CreateFileCache</code>
+        /// request token exists and the parameters match, <c>CreateFileCache</c> returns the
+        /// description of the existing cache. If a cache with the specified client request token
+        /// exists and the parameters don't match, this call returns <c>IncompatibleParameterError</c>.
+        /// If a file cache with the specified client request token doesn't exist, <c>CreateFileCache</c>
         /// does the following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Creates a new, empty Amazon File Cache resourcewith an assigned ID, and an initial
-        /// lifecycle state of <code>CREATING</code>.
+        /// lifecycle state of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -538,9 +536,8 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>CreateFileCache</code> call returns while the cache's lifecycle state is
-        /// still <code>CREATING</code>. You can check the cache creation status by calling the
-        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
+        /// The <c>CreateFileCache</c> call returns while the cache's lifecycle state is still
+        /// <c>CREATING</c>. You can check the cache creation status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
         /// operation, which returns the cache state along with other information.
         /// </para>
         ///  </note>
@@ -566,8 +563,8 @@ namespace Amazon.FSx
         /// One or more network settings specified in the request are invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
-        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
-        /// your file system again, using a valid value.
+        /// An invalid value for <c>PerUnitStorageThroughput</c> was provided. Please create your
+        /// file system again, using a valid value.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileCacheConfigurationException">
         /// A cache configuration is required for this operation.
@@ -587,7 +584,7 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Creates a new, empty Amazon FSx file system. You can create the following supported
-        /// Amazon FSx file systems using the <code>CreateFileSystem</code> API operation:
+        /// Amazon FSx file systems using the <c>CreateFileSystem</c> API operation:
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -610,9 +607,9 @@ namespace Amazon.FSx
         /// This operation requires a client request token in the request that Amazon FSx uses
         /// to ensure idempotent creation. This means that calling the operation multiple times
         /// with the same client request token has no effect. By using the idempotent operation,
-        /// you can retry a <code>CreateFileSystem</code> operation without the risk of creating
-        /// an extra file system. This approach can be useful when an initial call fails in a
-        /// way that makes it unclear whether a file system was created. Examples are if a transport
+        /// you can retry a <c>CreateFileSystem</c> operation without the risk of creating an
+        /// extra file system. This approach can be useful when an initial call fails in a way
+        /// that makes it unclear whether a file system was created. Examples are if a transport
         /// level timeout occurred, or your connection was reset. If you use the same client request
         /// token and the initial call created a file system, the client receives success as long
         /// as the parameters are the same.
@@ -620,16 +617,16 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// If a file system with the specified client request token exists and the parameters
-        /// match, <code>CreateFileSystem</code> returns the description of the existing file
-        /// system. If a file system with the specified client request token exists and the parameters
-        /// don't match, this call returns <code>IncompatibleParameterError</code>. If a file
-        /// system with the specified client request token doesn't exist, <code>CreateFileSystem</code>
-        /// does the following: 
+        /// match, <c>CreateFileSystem</c> returns the description of the existing file system.
+        /// If a file system with the specified client request token exists and the parameters
+        /// don't match, this call returns <c>IncompatibleParameterError</c>. If a file system
+        /// with the specified client request token doesn't exist, <c>CreateFileSystem</c> does
+        /// the following: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Creates a new, empty Amazon FSx file system with an assigned ID, and an initial lifecycle
-        /// state of <code>CREATING</code>.
+        /// state of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -637,9 +634,9 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The <code>CreateFileSystem</code> call returns while the file system's lifecycle state
-        /// is still <code>CREATING</code>. You can check the file-system creation status by calling
-        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
+        /// The <c>CreateFileSystem</c> call returns while the file system's lifecycle state is
+        /// still <c>CREATING</c>. You can check the file-system creation status by calling the
+        /// <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
         /// operation, which returns the file system state along with other information.
         /// </para>
         ///  </note>
@@ -674,8 +671,8 @@ namespace Amazon.FSx
         /// One or more network settings specified in the request are invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
-        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
-        /// your file system again, using a valid value.
+        /// An invalid value for <c>PerUnitStorageThroughput</c> was provided. Please create your
+        /// file system again, using a valid value.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
@@ -702,13 +699,13 @@ namespace Amazon.FSx
         /// If a file system with the specified client request token exists and the parameters
         /// match, this operation returns the description of the file system. If a file system
         /// with the specified client request token exists but the parameters don't match, this
-        /// call returns <code>IncompatibleParameterError</code>. If a file system with the specified
+        /// call returns <c>IncompatibleParameterError</c>. If a file system with the specified
         /// client request token doesn't exist, this operation does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Creates a new Amazon FSx file system from backup with an assigned ID, and an initial
-        /// lifecycle state of <code>CREATING</code>.
+        /// lifecycle state of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -722,7 +719,7 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// By using the idempotent operation, you can retry a <code>CreateFileSystemFromBackup</code>
+        /// By using the idempotent operation, you can retry a <c>CreateFileSystemFromBackup</c>
         /// call without the risk of creating an extra file system. This approach can be useful
         /// when an initial call fails in a way that makes it unclear whether a file system was
         /// created. Examples are if a transport level timeout occurred, or your connection was
@@ -731,9 +728,9 @@ namespace Amazon.FSx
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>CreateFileSystemFromBackup</code> call returns while the file system's lifecycle
-        /// state is still <code>CREATING</code>. You can check the file-system creation status
-        /// by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">
+        /// The <c>CreateFileSystemFromBackup</c> call returns while the file system's lifecycle
+        /// state is still <c>CREATING</c>. You can check the file-system creation status by calling
+        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">
         /// DescribeFileSystems</a> operation, which returns the file system state along with
         /// other information.
         /// </para>
@@ -766,8 +763,8 @@ namespace Amazon.FSx
         /// One or more network settings specified in the request are invalid.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.InvalidPerUnitStorageThroughputException">
-        /// An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create
-        /// your file system again, using a valid value.
+        /// An invalid value for <c>PerUnitStorageThroughput</c> was provided. Please create your
+        /// file system again, using a valid value.
         /// </exception>
         /// <exception cref="Amazon.FSx.Model.MissingFileSystemConfigurationException">
         /// A file system configuration is required for this operation.
@@ -795,13 +792,13 @@ namespace Amazon.FSx
         /// If a snapshot with the specified client request token exists, and the parameters match,
         /// this operation returns the description of the existing snapshot. If a snapshot with
         /// the specified client request token exists, and the parameters don't match, this operation
-        /// returns <code>IncompatibleParameterError</code>. If a snapshot with the specified
-        /// client request token doesn't exist, <code>CreateSnapshot</code> does the following:
+        /// returns <c>IncompatibleParameterError</c>. If a snapshot with the specified client
+        /// request token doesn't exist, <c>CreateSnapshot</c> does the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Creates a new OpenZFS snapshot with an assigned ID, and an initial lifecycle state
-        /// of <code>CREATING</code>.
+        /// of <c>CREATING</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -809,7 +806,7 @@ namespace Amazon.FSx
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// By using the idempotent operation, you can retry a <code>CreateSnapshot</code> operation
+        /// By using the idempotent operation, you can retry a <c>CreateSnapshot</c> operation
         /// without the risk of creating an extra snapshot. This approach can be useful when an
         /// initial call fails in a way that makes it unclear whether a snapshot was created.
         /// If you use the same client request token and the initial call created a snapshot,
@@ -817,9 +814,9 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// The <code>CreateSnapshot</code> operation returns while the snapshot's lifecycle state
-        /// is still <code>CREATING</code>. You can check the snapshot creation status by calling
-        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
+        /// The <c>CreateSnapshot</c> operation returns while the snapshot's lifecycle state is
+        /// still <c>CREATING</c>. You can check the snapshot creation status by calling the <a
+        /// href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a>
         /// operation, which returns the snapshot state along with other information.
         /// </para>
         /// </summary>
@@ -990,8 +987,8 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// The <code>DeleteBackup</code> call returns instantly. The backup won't show up in
-        /// later <code>DescribeBackups</code> calls.
+        /// The <c>DeleteBackup</c> call returns instantly. The backup won't show up in later
+        /// <c>DescribeBackups</c> calls.
         /// </para>
         ///  <important> 
         /// <para>
@@ -1044,7 +1041,7 @@ namespace Amazon.FSx
         /// When deleting a data repository association, you have the option of deleting the data
         /// in the file system that corresponds to the data repository association. Data repository
         /// associations are supported on all FSx for Lustre 2.12 and 2.15 file systems, excluding
-        /// <code>scratch_1</code> deployment type.
+        /// <c>scratch_1</c> deployment type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataRepositoryAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -1085,10 +1082,10 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// The <code>DeleteFileCache</code> operation returns while the cache has the <code>DELETING</code>
+        /// The <c>DeleteFileCache</c> operation returns while the cache has the <c>DELETING</c>
         /// status. You can check the cache deletion status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileCaches.html">DescribeFileCaches</a>
         /// operation, which returns a list of caches in your account. If you pass the cache ID
-        /// for a deleted cache, the <code>DescribeFileCaches</code> operation returns a <code>FileCacheNotFound</code>
+        /// for a deleted cache, the <c>DescribeFileCaches</c> operation returns a <c>FileCacheNotFound</c>
         /// error.
         /// </para>
         ///  <important> 
@@ -1137,8 +1134,8 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// To delete an Amazon FSx for NetApp ONTAP file system, first delete all the volumes
-        /// and storage virtual machines (SVMs) on the file system. Then provide a <code>FileSystemId</code>
-        /// value to the <code>DeleFileSystem</code> operation.
+        /// and storage virtual machines (SVMs) on the file system. Then provide a <c>FileSystemId</c>
+        /// value to the <c>DeleFileSystem</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -1149,13 +1146,13 @@ namespace Amazon.FSx
         ///  
         /// <para>
         /// To delete an Amazon FSx for Lustre file system, first <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/unmounting-fs.html">unmount</a>
-        /// it from every connected Amazon EC2 instance, then provide a <code>FileSystemId</code>
-        /// value to the <code>DeleFileSystem</code> operation. By default, Amazon FSx will not
-        /// take a final backup when the <code>DeleteFileSystem</code> operation is invoked. On
-        /// file systems not linked to an Amazon S3 bucket, set <code>SkipFinalBackup</code> to
-        /// <code>false</code> to take a final backup of the file system you are deleting. Backups
-        /// cannot be enabled on S3-linked file systems. To ensure all of your data is written
-        /// back to S3 before deleting your file system, you can either monitor for the <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/monitoring-cloudwatch.html#auto-import-export-metrics">AgeOfOldestQueuedMessage</a>
+        /// it from every connected Amazon EC2 instance, then provide a <c>FileSystemId</c> value
+        /// to the <c>DeleFileSystem</c> operation. By default, Amazon FSx will not take a final
+        /// backup when the <c>DeleteFileSystem</c> operation is invoked. On file systems not
+        /// linked to an Amazon S3 bucket, set <c>SkipFinalBackup</c> to <c>false</c> to take
+        /// a final backup of the file system you are deleting. Backups cannot be enabled on S3-linked
+        /// file systems. To ensure all of your data is written back to S3 before deleting your
+        /// file system, you can either monitor for the <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/monitoring-cloudwatch.html#auto-import-export-metrics">AgeOfOldestQueuedMessage</a>
         /// metric to be zero (if using automatic export) or you can run an <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repo-task-dra.html">export
         /// data repository task</a>. If you have automatic export enabled and want to use an
         /// export data repository task, you have to disable automatic export before executing
@@ -1163,18 +1160,16 @@ namespace Amazon.FSx
         /// </para>
         ///  
         /// <para>
-        /// The <code>DeleteFileSystem</code> operation returns while the file system has the
-        /// <code>DELETING</code> status. You can check the file system deletion status by calling
-        /// the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
+        /// The <c>DeleteFileSystem</c> operation returns while the file system has the <c>DELETING</c>
+        /// status. You can check the file system deletion status by calling the <a href="https://docs.aws.amazon.com/fsx/latest/APIReference/API_DescribeFileSystems.html">DescribeFileSystems</a>
         /// operation, which returns a list of file systems in your account. If you pass the file
-        /// system ID for a deleted file system, the <code>DescribeFileSystems</code> operation
-        /// returns a <code>FileSystemNotFound</code> error.
+        /// system ID for a deleted file system, the <c>DescribeFileSystems</c> operation returns
+        /// a <c>FileSystemNotFound</c> error.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If a data repository task is in a <code>PENDING</code> or <code>EXECUTING</code> state,
-        /// deleting an Amazon FSx for Lustre file system will fail with an HTTP status code 400
-        /// (Bad Request).
+        /// If a data repository task is in a <c>PENDING</c> or <c>EXECUTING</c> state, deleting
+        /// an Amazon FSx for Lustre file system will fail with an HTTP status code 400 (Bad Request).
         /// </para>
         ///  </note> <important> 
         /// <para>
@@ -1222,8 +1217,8 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// The <code>DeleteSnapshot</code> operation returns instantly. The snapshot appears
-        /// with the lifecycle status of <code>DELETING</code> until the deletion is complete.
+        /// The <c>DeleteSnapshot</c> operation returns instantly. The snapshot appears with the
+        /// lifecycle status of <c>DELETING</c> until the deletion is complete.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSnapshot service method.</param>
@@ -1321,26 +1316,25 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of a specific Amazon FSx backup, if a <code>BackupIds</code>
-        /// value is provided for that backup. Otherwise, it returns all backups owned by your
-        /// Amazon Web Services account in the Amazon Web Services Region of the endpoint that
-        /// you're calling.
+        /// Returns the description of a specific Amazon FSx backup, if a <c>BackupIds</c> value
+        /// is provided for that backup. Otherwise, it returns all backups owned by your Amazon
+        /// Web Services account in the Amazon Web Services Region of the endpoint that you're
+        /// calling.
         /// 
         ///  
         /// <para>
-        /// When retrieving all backups, you can optionally specify the <code>MaxResults</code>
-        /// parameter to limit the number of backups in a response. If more backups remain, Amazon
-        /// FSx returns a <code>NextToken</code> value in the response. In this case, send a later
-        /// request with the <code>NextToken</code> request parameter set to the value of the
-        /// <code>NextToken</code> value from the last response.
+        /// When retrieving all backups, you can optionally specify the <c>MaxResults</c> parameter
+        /// to limit the number of backups in a response. If more backups remain, Amazon FSx returns
+        /// a <c>NextToken</c> value in the response. In this case, send a later request with
+        /// the <c>NextToken</c> request parameter set to the value of the <c>NextToken</c> value
+        /// from the last response.
         /// </para>
         ///  
         /// <para>
         /// This operation is used in an iterative process to retrieve a list of your backups.
-        /// <code>DescribeBackups</code> is called first without a <code>NextToken</code> value.
-        /// Then the operation continues to be called with the <code>NextToken</code> parameter
-        /// set to the value of the last <code>NextToken</code> value until a response has no
-        /// <code>NextToken</code> value.
+        /// <c>DescribeBackups</c> is called first without a <c>NextToken</c> value. Then the
+        /// operation continues to be called with the <c>NextToken</c> parameter set to the value
+        /// of the last <c>NextToken</c> value until a response has no <c>NextToken</c> value.
         /// </para>
         ///  
         /// <para>
@@ -1348,13 +1342,13 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The operation might return fewer than the <code>MaxResults</code> value of backup
-        /// descriptions while still including a <code>NextToken</code> value.
+        /// The operation might return fewer than the <c>MaxResults</c> value of backup descriptions
+        /// while still including a <c>NextToken</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The order of the backups returned in the response of one <code>DescribeBackups</code>
-        /// call and the order of the backups returned across the responses of a multi-call iteration
+        /// The order of the backups returned in the response of one <c>DescribeBackups</c> call
+        /// and the order of the backups returned across the responses of a multi-call iteration
         /// is unspecified.
         /// </para>
         ///  </li> </ul>
@@ -1391,30 +1385,29 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data
-        /// repository associations, if one or more <code>AssociationIds</code> values are provided
+        /// repository associations, if one or more <c>AssociationIds</c> values are provided
         /// in the request, or if filters are used in the request. Data repository associations
         /// are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and 2,15
-        /// file systems, excluding <code>scratch_1</code> deployment type.
+        /// file systems, excluding <c>scratch_1</c> deployment type.
         /// 
         ///  
         /// <para>
         /// You can use filters to narrow the response to include just data repository associations
-        /// for specific file systems (use the <code>file-system-id</code> filter with the ID
-        /// of the file system) or caches (use the <code>file-cache-id</code> filter with the
-        /// ID of the cache), or data repository associations for a specific repository type (use
-        /// the <code>data-repository-type</code> filter with a value of <code>S3</code> or <code>NFS</code>).
-        /// If you don't use filters, the response returns all data repository associations owned
-        /// by your Amazon Web Services account in the Amazon Web Services Region of the endpoint
-        /// that you're calling.
+        /// for specific file systems (use the <c>file-system-id</c> filter with the ID of the
+        /// file system) or caches (use the <c>file-cache-id</c> filter with the ID of the cache),
+        /// or data repository associations for a specific repository type (use the <c>data-repository-type</c>
+        /// filter with a value of <c>S3</c> or <c>NFS</c>). If you don't use filters, the response
+        /// returns all data repository associations owned by your Amazon Web Services account
+        /// in the Amazon Web Services Region of the endpoint that you're calling.
         /// </para>
         ///  
         /// <para>
         /// When retrieving all data repository associations, you can paginate the response by
-        /// using the optional <code>MaxResults</code> parameter to limit the number of data repository
+        /// using the optional <c>MaxResults</c> parameter to limit the number of data repository
         /// associations returned in a response. If more data repository associations remain,
-        /// a <code>NextToken</code> value is returned in the response. In this case, send a later
-        /// request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
-        /// from the last response.
+        /// a <c>NextToken</c> value is returned in the response. In this case, send a later request
+        /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
+        /// the last response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryAssociations service method.</param>
@@ -1449,7 +1442,7 @@ namespace Amazon.FSx
 
         /// <summary>
         /// Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data
-        /// repository tasks, if one or more <code>TaskIds</code> values are provided in the request,
+        /// repository tasks, if one or more <c>TaskIds</c> values are provided in the request,
         /// or if filters are used in the request. You can use filters to narrow the response
         /// to include just tasks for specific file systems or caches, or tasks in a specific
         /// lifecycle state. Otherwise, it returns all data repository tasks owned by your Amazon
@@ -1458,11 +1451,11 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// When retrieving all tasks, you can paginate the response by using the optional <code>MaxResults</code>
+        /// When retrieving all tasks, you can paginate the response by using the optional <c>MaxResults</c>
         /// parameter to limit the number of tasks returned in a response. If more tasks remain,
-        /// a <code>NextToken</code> value is returned in the response. In this case, send a later
-        /// request with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
-        /// from the last response.
+        /// a <c>NextToken</c> value is returned in the response. In this case, send a later request
+        /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
+        /// the last response.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDataRepositoryTasks service method.</param>
@@ -1493,26 +1486,25 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of a specific Amazon File Cache resource, if a <code>FileCacheIds</code>
+        /// Returns the description of a specific Amazon File Cache resource, if a <c>FileCacheIds</c>
         /// value is provided for that cache. Otherwise, it returns descriptions of all caches
         /// owned by your Amazon Web Services account in the Amazon Web Services Region of the
         /// endpoint that you're calling.
         /// 
         ///  
         /// <para>
-        /// When retrieving all cache descriptions, you can optionally specify the <code>MaxResults</code>
+        /// When retrieving all cache descriptions, you can optionally specify the <c>MaxResults</c>
         /// parameter to limit the number of descriptions in a response. If more cache descriptions
-        /// remain, the operation returns a <code>NextToken</code> value in the response. In this
-        /// case, send a later request with the <code>NextToken</code> request parameter set to
-        /// the value of <code>NextToken</code> from the last response.
+        /// remain, the operation returns a <c>NextToken</c> value in the response. In this case,
+        /// send a later request with the <c>NextToken</c> request parameter set to the value
+        /// of <c>NextToken</c> from the last response.
         /// </para>
         ///  
         /// <para>
         /// This operation is used in an iterative process to retrieve a list of your cache descriptions.
-        /// <code>DescribeFileCaches</code> is called first without a <code>NextToken</code>value.
-        /// Then the operation continues to be called with the <code>NextToken</code> parameter
-        /// set to the value of the last <code>NextToken</code> value until a response has no
-        /// <code>NextToken</code>.
+        /// <c>DescribeFileCaches</c> is called first without a <c>NextToken</c>value. Then the
+        /// operation continues to be called with the <c>NextToken</c> parameter set to the value
+        /// of the last <c>NextToken</c> value until a response has no <c>NextToken</c>.
         /// </para>
         ///  
         /// <para>
@@ -1520,14 +1512,14 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The implementation might return fewer than <code>MaxResults</code> cache descriptions
-        /// while still including a <code>NextToken</code> value.
+        /// The implementation might return fewer than <c>MaxResults</c> cache descriptions while
+        /// still including a <c>NextToken</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The order of caches returned in the response of one <code>DescribeFileCaches</code>
-        /// call and the order of caches returned across the responses of a multicall iteration
-        /// is unspecified.
+        /// The order of caches returned in the response of one <c>DescribeFileCaches</c> call
+        /// and the order of caches returned across the responses of a multicall iteration is
+        /// unspecified.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1586,26 +1578,25 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx file systems, if a <code>FileSystemIds</code>
+        /// Returns the description of specific Amazon FSx file systems, if a <c>FileSystemIds</c>
         /// value is provided for that file system. Otherwise, it returns descriptions of all
         /// file systems owned by your Amazon Web Services account in the Amazon Web Services
         /// Region of the endpoint that you're calling.
         /// 
         ///  
         /// <para>
-        /// When retrieving all file system descriptions, you can optionally specify the <code>MaxResults</code>
+        /// When retrieving all file system descriptions, you can optionally specify the <c>MaxResults</c>
         /// parameter to limit the number of descriptions in a response. If more file system descriptions
-        /// remain, Amazon FSx returns a <code>NextToken</code> value in the response. In this
-        /// case, send a later request with the <code>NextToken</code> request parameter set to
-        /// the value of <code>NextToken</code> from the last response.
+        /// remain, Amazon FSx returns a <c>NextToken</c> value in the response. In this case,
+        /// send a later request with the <c>NextToken</c> request parameter set to the value
+        /// of <c>NextToken</c> from the last response.
         /// </para>
         ///  
         /// <para>
         /// This operation is used in an iterative process to retrieve a list of your file system
-        /// descriptions. <code>DescribeFileSystems</code> is called first without a <code>NextToken</code>value.
-        /// Then the operation continues to be called with the <code>NextToken</code> parameter
-        /// set to the value of the last <code>NextToken</code> value until a response has no
-        /// <code>NextToken</code>.
+        /// descriptions. <c>DescribeFileSystems</c> is called first without a <c>NextToken</c>value.
+        /// Then the operation continues to be called with the <c>NextToken</c> parameter set
+        /// to the value of the last <c>NextToken</c> value until a response has no <c>NextToken</c>.
         /// </para>
         ///  
         /// <para>
@@ -1613,12 +1604,12 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The implementation might return fewer than <code>MaxResults</code> file system descriptions
-        /// while still including a <code>NextToken</code> value.
+        /// The implementation might return fewer than <c>MaxResults</c> file system descriptions
+        /// while still including a <c>NextToken</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The order of file systems returned in the response of one <code>DescribeFileSystems</code>
+        /// The order of file systems returned in the response of one <c>DescribeFileSystems</c>
         /// call and the order of file systems returned across the responses of a multicall iteration
         /// is unspecified.
         /// </para>
@@ -1676,25 +1667,25 @@ namespace Amazon.FSx
 
 
         /// <summary>
-        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code>
+        /// Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <c>SnapshotIds</c>
         /// value is provided. Otherwise, this operation returns all snapshots owned by your Amazon
         /// Web Services account in the Amazon Web Services Region of the endpoint that you're
         /// calling.
         /// 
         ///  
         /// <para>
-        /// When retrieving all snapshots, you can optionally specify the <code>MaxResults</code>
-        /// parameter to limit the number of snapshots in a response. If more backups remain,
-        /// Amazon FSx returns a <code>NextToken</code> value in the response. In this case, send
-        /// a later request with the <code>NextToken</code> request parameter set to the value
-        /// of <code>NextToken</code> from the last response. 
+        /// When retrieving all snapshots, you can optionally specify the <c>MaxResults</c> parameter
+        /// to limit the number of snapshots in a response. If more backups remain, Amazon FSx
+        /// returns a <c>NextToken</c> value in the response. In this case, send a later request
+        /// with the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from
+        /// the last response. 
         /// </para>
         ///  
         /// <para>
-        /// Use this operation in an iterative process to retrieve a list of your snapshots. <code>DescribeSnapshots</code>
-        /// is called first without a <code>NextToken</code> value. Then the operation continues
-        /// to be called with the <code>NextToken</code> parameter set to the value of the last
-        /// <code>NextToken</code> value until a response has no <code>NextToken</code> value.
+        /// Use this operation in an iterative process to retrieve a list of your snapshots. <c>DescribeSnapshots</c>
+        /// is called first without a <c>NextToken</c> value. Then the operation continues to
+        /// be called with the <c>NextToken</c> parameter set to the value of the last <c>NextToken</c>
+        /// value until a response has no <c>NextToken</c> value.
         /// </para>
         ///  
         /// <para>
@@ -1702,14 +1693,14 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The operation might return fewer than the <code>MaxResults</code> value of snapshot
-        /// descriptions while still including a <code>NextToken</code> value.
+        /// The operation might return fewer than the <c>MaxResults</c> value of snapshot descriptions
+        /// while still including a <c>NextToken</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The order of snapshots returned in the response of one <code>DescribeSnapshots</code>
-        /// call and the order of backups returned across the responses of a multi-call iteration
-        /// is unspecified. 
+        /// The order of snapshots returned in the response of one <c>DescribeSnapshots</c> call
+        /// and the order of backups returned across the responses of a multi-call iteration is
+        /// unspecified. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1834,18 +1825,18 @@ namespace Amazon.FSx
         /// 
         ///  
         /// <para>
-        /// When retrieving all tags, you can optionally specify the <code>MaxResults</code> parameter
+        /// When retrieving all tags, you can optionally specify the <c>MaxResults</c> parameter
         /// to limit the number of tags in a response. If more tags remain, Amazon FSx returns
-        /// a <code>NextToken</code> value in the response. In this case, send a later request
-        /// with the <code>NextToken</code> request parameter set to the value of <code>NextToken</code>
-        /// from the last response.
+        /// a <c>NextToken</c> value in the response. In this case, send a later request with
+        /// the <c>NextToken</c> request parameter set to the value of <c>NextToken</c> from the
+        /// last response.
         /// </para>
         ///  
         /// <para>
-        /// This action is used in an iterative process to retrieve a list of your tags. <code>ListTagsForResource</code>
-        /// is called first without a <code>NextToken</code>value. Then the action continues to
-        /// be called with the <code>NextToken</code> parameter set to the value of the last <code>NextToken</code>
-        /// value until a response has no <code>NextToken</code>.
+        /// This action is used in an iterative process to retrieve a list of your tags. <c>ListTagsForResource</c>
+        /// is called first without a <c>NextToken</c>value. Then the action continues to be called
+        /// with the <c>NextToken</c> parameter set to the value of the last <c>NextToken</c>
+        /// value until a response has no <c>NextToken</c>.
         /// </para>
         ///  
         /// <para>
@@ -1853,14 +1844,13 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The implementation might return fewer than <code>MaxResults</code> file system descriptions
-        /// while still including a <code>NextToken</code> value.
+        /// The implementation might return fewer than <c>MaxResults</c> file system descriptions
+        /// while still including a <c>NextToken</c> value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The order of tags returned in the response of one <code>ListTagsForResource</code>
-        /// call and the order of tags returned across the responses of a multi-call iteration
-        /// is unspecified.
+        /// The order of tags returned in the response of one <c>ListTagsForResource</c> call
+        /// and the order of tags returned across the responses of a multi-call iteration is unspecified.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2058,8 +2048,7 @@ namespace Amazon.FSx
         /// <summary>
         /// Updates the configuration of an existing data repository association on an Amazon
         /// FSx for Lustre file system. Data repository associations are supported on all FSx
-        /// for Lustre 2.12 and 2.15 file systems, excluding <code>scratch_1</code> deployment
-        /// type.
+        /// for Lustre 2.12 and 2.15 file systems, excluding <c>scratch_1</c> deployment type.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDataRepositoryAssociation service method.</param>
         /// <param name="cancellationToken">
@@ -2147,39 +2136,39 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AuditLogConfiguration</code> 
+        ///  <c>AuditLogConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AutomaticBackupRetentionDays</code> 
+        ///  <c>AutomaticBackupRetentionDays</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DailyAutomaticBackupStartTime</code> 
+        ///  <c>DailyAutomaticBackupStartTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SelfManagedActiveDirectoryConfiguration</code> 
+        ///  <c>SelfManagedActiveDirectoryConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StorageCapacity</code> 
+        ///  <c>StorageCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StorageType</code> 
+        ///  <c>StorageType</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ThroughputCapacity</code> 
+        ///  <c>ThroughputCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DiskIopsConfiguration</code> 
+        ///  <c>DiskIopsConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WeeklyMaintenanceStartTime</code> 
+        ///  <c>WeeklyMaintenanceStartTime</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2187,39 +2176,39 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AutoImportPolicy</code> 
+        ///  <c>AutoImportPolicy</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AutomaticBackupRetentionDays</code> 
+        ///  <c>AutomaticBackupRetentionDays</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DailyAutomaticBackupStartTime</code> 
+        ///  <c>DailyAutomaticBackupStartTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DataCompressionType</code> 
+        ///  <c>DataCompressionType</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LogConfiguration</code> 
+        ///  <c>LogConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LustreRootSquashConfiguration</code> 
+        ///  <c>LustreRootSquashConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PerUnitStorageThroughput</code> 
+        ///  <c>PerUnitStorageThroughput</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StorageCapacity</code> 
+        ///  <c>StorageCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WeeklyMaintenanceStartTime</code> 
+        ///  <c>WeeklyMaintenanceStartTime</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2227,47 +2216,47 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AddRouteTableIds</code> 
+        ///  <c>AddRouteTableIds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AutomaticBackupRetentionDays</code> 
+        ///  <c>AutomaticBackupRetentionDays</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DailyAutomaticBackupStartTime</code> 
+        ///  <c>DailyAutomaticBackupStartTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DiskIopsConfiguration</code> 
+        ///  <c>DiskIopsConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FsxAdminPassword</code> 
+        ///  <c>FsxAdminPassword</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HAPairs</code> 
+        ///  <c>HAPairs</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RemoveRouteTableIds</code> 
+        ///  <c>RemoveRouteTableIds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StorageCapacity</code> 
+        ///  <c>StorageCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ThroughputCapacity</code> 
+        ///  <c>ThroughputCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ThroughputCapacityPerHAPair</code> 
+        ///  <c>ThroughputCapacityPerHAPair</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WeeklyMaintenanceStartTime</code> 
+        ///  <c>WeeklyMaintenanceStartTime</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -2275,43 +2264,43 @@ namespace Amazon.FSx
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AddRouteTableIds</code> 
+        ///  <c>AddRouteTableIds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AutomaticBackupRetentionDays</code> 
+        ///  <c>AutomaticBackupRetentionDays</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CopyTagsToBackups</code> 
+        ///  <c>CopyTagsToBackups</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CopyTagsToVolumes</code> 
+        ///  <c>CopyTagsToVolumes</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DailyAutomaticBackupStartTime</code> 
+        ///  <c>DailyAutomaticBackupStartTime</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DiskIopsConfiguration</code> 
+        ///  <c>DiskIopsConfiguration</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RemoveRouteTableIds</code> 
+        ///  <c>RemoveRouteTableIds</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StorageCapacity</code> 
+        ///  <c>StorageCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ThroughputCapacity</code> 
+        ///  <c>ThroughputCapacity</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WeeklyMaintenanceStartTime</code> 
+        ///  <c>WeeklyMaintenanceStartTime</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2367,8 +2356,8 @@ namespace Amazon.FSx
         /// <para>
         /// We strongly recommend that participant-created Multi-AZ file systems in the shared
         /// VPC are deleted before you disable this feature. Once the feature is disabled, these
-        /// file systems will enter a <code>MISCONFIGURED</code> state and behave like Single-AZ
-        /// file systems. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html#disabling-maz-vpc-sharing">Important
+        /// file systems will enter a <c>MISCONFIGURED</c> state and behave like Single-AZ file
+        /// systems. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/maz-shared-vpc.html#disabling-maz-vpc-sharing">Important
         /// considerations before disabling shared VPC support for Multi-AZ file systems</a>.
         /// </para>
         ///  </note>

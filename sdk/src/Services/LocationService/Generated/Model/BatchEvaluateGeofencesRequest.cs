@@ -40,13 +40,13 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ENTER</code> if Amazon Location determines that the tracked device has entered
-    /// a geofenced area.
+    ///  <c>ENTER</c> if Amazon Location determines that the tracked device has entered a
+    /// geofenced area.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>EXIT</code> if Amazon Location determines that the tracked device has exited
-    /// a geofenced area.
+    ///  <c>EXIT</c> if Amazon Location determines that the tracked device has exited a geofenced
+    /// area.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
@@ -56,12 +56,12 @@ namespace Amazon.LocationService.Model
     ///  </note> <note> 
     /// <para>
     /// Geofence evaluation uses the given device position. It does not account for the optional
-    /// <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.
+    /// <c>Accuracy</c> of a <c>DevicePositionUpdate</c>.
     /// </para>
     ///  </note> <note> 
     /// <para>
-    /// The <code>DeviceID</code> is used as a string to represent the device. You do not
-    /// need to have a <code>Tracker</code> associated with the <code>DeviceID</code>.
+    /// The <c>DeviceID</c> is used as a string to represent the device. You do not need to
+    /// have a <c>Tracker</c> associated with the <c>DeviceID</c>.
     /// </para>
     ///  </note>
     /// </summary>

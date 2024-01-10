@@ -41,8 +41,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property CreationDate. 
         /// <para>
-        /// The UTC date and time at which the vault lock was put into the <code>InProgress</code>
-        /// state.
+        /// The UTC date and time at which the vault lock was put into the <c>InProgress</c> state.
         /// </para>
         /// </summary>
         public string CreationDate
@@ -60,8 +59,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property ExpirationDate. 
         /// <para>
-        /// The UTC date and time at which the lock ID expires. This value can be <code>null</code>
-        /// if the vault lock is in a <code>Locked</code> state.
+        /// The UTC date and time at which the lock ID expires. This value can be <c>null</c>
+        /// if the vault lock is in a <c>Locked</c> state.
         /// </para>
         /// </summary>
         public string ExpirationDate
@@ -97,7 +96,7 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.
+        /// The state of the vault lock. <c>InProgress</c> or <c>Locked</c>.
         /// </para>
         /// </summary>
         public string State

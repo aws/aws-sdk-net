@@ -58,12 +58,11 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// Defines how the <code>dimensionValues</code> of a dimension are interpreted. For example,
-        /// for dimension type TOPIC_FILTER, the <code>IN</code> operator, a message will be counted
-        /// only if its topic matches one of the topic filters. With <code>NOT_IN</code> operator,
-        /// a message will be counted only if it doesn't match any of the topic filters. The operator
-        /// is optional: if it's not provided (is <code>null</code>), it will be interpreted as
-        /// <code>IN</code>.
+        /// Defines how the <c>dimensionValues</c> of a dimension are interpreted. For example,
+        /// for dimension type TOPIC_FILTER, the <c>IN</c> operator, a message will be counted
+        /// only if its topic matches one of the topic filters. With <c>NOT_IN</c> operator, a
+        /// message will be counted only if it doesn't match any of the topic filters. The operator
+        /// is optional: if it's not provided (is <c>null</c>), it will be interpreted as <c>IN</c>.
         /// </para>
         /// </summary>
         public DimensionValueOperator Operator

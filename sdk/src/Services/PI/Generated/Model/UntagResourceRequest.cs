@@ -63,7 +63,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property ServiceType. 
         /// <para>
         /// List the tags for the Amazon Web Services service for which Performance Insights returns
-        /// metrics. Valid value is <code>RDS</code>.
+        /// metrics. Valid value is <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -43,7 +43,7 @@ namespace Amazon.SecurityLake.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The managed policy <code>AWSGlueServiceRole</code> 
+        /// The managed policy <c>AWSGlueServiceRole</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>

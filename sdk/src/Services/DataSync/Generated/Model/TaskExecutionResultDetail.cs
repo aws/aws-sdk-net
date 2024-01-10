@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Describes the detailed result of a <code>TaskExecution</code> operation. This result
-    /// includes the time in milliseconds spent in each phase, the status of the task execution,
-    /// and the errors encountered.
+    /// Describes the detailed result of a <c>TaskExecution</c> operation. This result includes
+    /// the time in milliseconds spent in each phase, the status of the task execution, and
+    /// the errors encountered.
     /// </summary>
     public partial class TaskExecutionResultDetail
     {

@@ -57,7 +57,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property PolicyGenerations. 
         /// <para>
-        /// A <code>PolicyGeneration</code> object that contains details about the generated policy.
+        /// A <c>PolicyGeneration</c> object that contains details about the generated policy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

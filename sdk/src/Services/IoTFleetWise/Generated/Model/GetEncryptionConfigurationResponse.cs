@@ -81,10 +81,9 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property EncryptionType. 
         /// <para>
-        /// The type of encryption. Set to <code>KMS_BASED_ENCRYPTION</code> to use a KMS key
-        /// that you own and manage. Set to <code>FLEETWISE_DEFAULT_ENCRYPTION</code> to use an
-        /// Amazon Web Services managed key that is owned by the Amazon Web Services IoT FleetWise
-        /// service account.
+        /// The type of encryption. Set to <c>KMS_BASED_ENCRYPTION</c> to use a KMS key that you
+        /// own and manage. Set to <c>FLEETWISE_DEFAULT_ENCRYPTION</c> to use an Amazon Web Services
+        /// managed key that is owned by the Amazon Web Services IoT FleetWise service account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

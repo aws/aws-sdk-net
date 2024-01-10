@@ -57,7 +57,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token from the previous call to <code>DescribeExportTasks</code>.
+        /// The token from the previous call to <c>DescribeExportTasks</c>.
         /// </para>
         /// </summary>
         public string NextToken

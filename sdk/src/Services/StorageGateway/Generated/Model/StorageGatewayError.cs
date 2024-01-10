@@ -30,8 +30,8 @@ namespace Amazon.StorageGateway.Model
 {
     /// <summary>
     /// Provides additional information about an error that was returned by the service. See
-    /// the <code>errorCode</code> and <code>errorDetails</code> members for more information
-    /// about the error.
+    /// the <c>errorCode</c> and <c>errorDetails</c> members for more information about the
+    /// error.
     /// </summary>
     public partial class StorageGatewayError
     {

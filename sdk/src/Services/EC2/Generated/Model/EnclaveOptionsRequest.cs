@@ -42,7 +42,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// To enable the instance for Amazon Web Services Nitro Enclaves, set this parameter
-        /// to <code>true</code>.
+        /// to <c>true</c>.
         /// </para>
         /// </summary>
         public bool Enabled

@@ -38,27 +38,26 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property WebACL. 
         /// <para>
-        /// Information about the <a>WebACL</a> that you specified in the <code>GetWebACL</code>
-        /// request. For more information, see the following topics:
+        /// Information about the <a>WebACL</a> that you specified in the <c>GetWebACL</c> request.
+        /// For more information, see the following topics:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <a>WebACL</a>: Contains <code>DefaultAction</code>, <code>MetricName</code>, <code>Name</code>,
-        /// an array of <code>Rule</code> objects, and <code>WebACLId</code> 
+        ///  <a>WebACL</a>: Contains <c>DefaultAction</c>, <c>MetricName</c>, <c>Name</c>, an
+        /// array of <c>Rule</c> objects, and <c>WebACLId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DefaultAction</code> (Data type is <a>WafAction</a>): Contains <code>Type</code>
-        /// 
+        ///  <c>DefaultAction</c> (Data type is <a>WafAction</a>): Contains <c>Type</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Rules</code>: Contains an array of <code>ActivatedRule</code> objects, which
-        /// contain <code>Action</code>, <code>Priority</code>, and <code>RuleId</code> 
+        ///  <c>Rules</c>: Contains an array of <c>ActivatedRule</c> objects, which contain <c>Action</c>,
+        /// <c>Priority</c>, and <c>RuleId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Action</code>: Contains <code>Type</code> 
+        ///  <c>Action</c>: Contains <c>Type</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

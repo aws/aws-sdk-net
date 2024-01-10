@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// Storage of the specified <code>StorageType</code> can't be associated with the DB
-    /// instance.
+    /// Storage of the specified <c>StorageType</c> can't be associated with the DB instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

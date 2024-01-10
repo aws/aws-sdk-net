@@ -33,16 +33,16 @@ namespace Amazon.BillingConductor.Model
     /// 
     ///  
     /// <para>
-    ///  <code>MONITORED</code>: linked accounts that are associated to billing groups.
+    ///  <c>MONITORED</c>: linked accounts that are associated to billing groups.
     /// </para>
     ///  
     /// <para>
-    ///  <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+    ///  <c>UNMONITORED</c>: linked accounts that are not associated to billing groups.
     /// </para>
     ///  
     /// <para>
-    ///  <code>Billing Group Arn</code>: linked accounts that are associated to the provided
-    /// Billing Group Arn.
+    ///  <c>Billing Group Arn</c>: linked accounts that are associated to the provided Billing
+    /// Group Arn.
     /// </para>
     /// </summary>
     public partial class ListAccountAssociationsFilter
@@ -92,16 +92,16 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Association. 
         /// <para>
-        ///  <code>MONITORED</code>: linked accounts that are associated to billing groups.
+        ///  <c>MONITORED</c>: linked accounts that are associated to billing groups.
         /// </para>
         ///  
         /// <para>
-        ///  <code>UNMONITORED</code>: linked accounts that are not associated to billing groups.
+        ///  <c>UNMONITORED</c>: linked accounts that are not associated to billing groups.
         /// </para>
         ///  
         /// <para>
-        ///  <code>Billing Group Arn</code>: linked accounts that are associated to the provided
-        /// Billing Group Arn.
+        ///  <c>Billing Group Arn</c>: linked accounts that are associated to the provided Billing
+        /// Group Arn.
         /// </para>
         /// </summary>
         public string Association

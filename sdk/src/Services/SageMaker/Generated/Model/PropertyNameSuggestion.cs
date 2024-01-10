@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// A property name returned from a <code>GetSearchSuggestions</code> call that specifies
-    /// a value in the <code>PropertyNameQuery</code> field.
+    /// A property name returned from a <c>GetSearchSuggestions</c> call that specifies a
+    /// value in the <c>PropertyNameQuery</c> field.
     /// </summary>
     public partial class PropertyNameSuggestion
     {

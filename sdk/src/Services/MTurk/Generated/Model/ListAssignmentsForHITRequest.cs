@@ -30,8 +30,8 @@ namespace Amazon.MTurk.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAssignmentsForHIT operation.
-    /// The <code>ListAssignmentsForHIT</code> operation retrieves completed assignments
-    /// for a HIT. You can use this operation to retrieve the results for a HIT. 
+    /// The <c>ListAssignmentsForHIT</c> operation retrieves completed assignments for a
+    /// HIT. You can use this operation to retrieve the results for a HIT. 
     /// 
     ///  
     /// <para>

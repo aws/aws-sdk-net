@@ -322,56 +322,54 @@ namespace Amazon.SimpleDB
 
 
         /// <summary>
-        /// The <code>BatchPutAttributes</code> operation creates or replaces attributes within
-        /// one or more items. By using this operation, the client can perform multiple <a>PutAttribute</a>
+        /// The <c>BatchPutAttributes</c> operation creates or replaces attributes within one
+        /// or more items. By using this operation, the client can perform multiple <a>PutAttribute</a>
         /// operation with a single call. This helps yield savings in round trips and latencies,
         /// enabling Amazon SimpleDB to optimize requests and generally produce better throughput.
         /// 
         /// 
         ///  
         /// <para>
-        ///  The client may specify the item name with the <code>Item.X.ItemName</code> parameter.
-        /// The client may specify new attributes using a combination of the <code>Item.X.Attribute.Y.Name</code>
-        /// and <code>Item.X.Attribute.Y.Value</code> parameters. The client may specify the first
-        /// attribute for the first item using the parameters <code>Item.0.Attribute.0.Name</code>
-        /// and <code>Item.0.Attribute.0.Value</code>, and for the second attribute for the first
-        /// item by the parameters <code>Item.0.Attribute.1.Name</code> and <code>Item.0.Attribute.1.Value</code>,
-        /// and so on. 
+        ///  The client may specify the item name with the <c>Item.X.ItemName</c> parameter. The
+        /// client may specify new attributes using a combination of the <c>Item.X.Attribute.Y.Name</c>
+        /// and <c>Item.X.Attribute.Y.Value</c> parameters. The client may specify the first attribute
+        /// for the first item using the parameters <c>Item.0.Attribute.0.Name</c> and <c>Item.0.Attribute.0.Value</c>,
+        /// and for the second attribute for the first item by the parameters <c>Item.0.Attribute.1.Name</c>
+        /// and <c>Item.0.Attribute.1.Value</c>, and so on. 
         /// </para>
         ///  
         /// <para>
         ///  Attributes are uniquely identified within an item by their name/value combination.
-        /// For example, a single item can have the attributes <code>{ "first_name", "first_value"
-        /// }</code> and <code>{ "first_name", "second_value" }</code>. However, it cannot have
-        /// two attribute instances where both the <code>Item.X.Attribute.Y.Name</code> and <code>Item.X.Attribute.Y.Value</code>
+        /// For example, a single item can have the attributes <c>{ "first_name", "first_value"
+        /// }</c> and <c>{ "first_name", "second_value" }</c>. However, it cannot have two attribute
+        /// instances where both the <c>Item.X.Attribute.Y.Name</c> and <c>Item.X.Attribute.Y.Value</c>
         /// are the same. 
         /// </para>
         ///  
         /// <para>
-        ///  Optionally, the requester can supply the <code>Replace</code> parameter for each
-        /// individual value. Setting this value to <code>true</code> will cause the new attribute
-        /// values to replace the existing attribute values. For example, if an item <code>I</code>
-        /// has the attributes <code>{ 'a', '1' }, { 'b', '2'}</code> and <code>{ 'b', '3' }</code>
-        /// and the requester does a BatchPutAttributes of <code>{'I', 'b', '4' }</code> with
-        /// the Replace parameter set to true, the final attributes of the item will be <code>{
-        /// 'a', '1' }</code> and <code>{ 'b', '4' }</code>, replacing the previous values of
-        /// the 'b' attribute with the new value. 
+        ///  Optionally, the requester can supply the <c>Replace</c> parameter for each individual
+        /// value. Setting this value to <c>true</c> will cause the new attribute values to replace
+        /// the existing attribute values. For example, if an item <c>I</c> has the attributes
+        /// <c>{ 'a', '1' }, { 'b', '2'}</c> and <c>{ 'b', '3' }</c> and the requester does a
+        /// BatchPutAttributes of <c>{'I', 'b', '4' }</c> with the Replace parameter set to true,
+        /// the final attributes of the item will be <c>{ 'a', '1' }</c> and <c>{ 'b', '4' }</c>,
+        /// replacing the previous values of the 'b' attribute with the new value. 
         /// </para>
         ///  <important> This operation is vulnerable to exceeding the maximum URL size when making
         /// a REST request using the HTTP GET method. This operation does not support conditions
-        /// using <code>Expected.X.Name</code>, <code>Expected.X.Value</code>, or <code>Expected.X.Exists</code>.
+        /// using <c>Expected.X.Name</c>, <c>Expected.X.Value</c>, or <c>Expected.X.Exists</c>.
         /// </important> 
         /// <para>
-        ///  You can execute multiple <code>BatchPutAttributes</code> operations and other operations
-        /// in parallel. However, large numbers of concurrent <code>BatchPutAttributes</code>
-        /// calls can result in Service Unavailable (503) responses. 
+        ///  You can execute multiple <c>BatchPutAttributes</c> operations and other operations
+        /// in parallel. However, large numbers of concurrent <c>BatchPutAttributes</c> calls
+        /// can result in Service Unavailable (503) responses. 
         /// </para>
         ///  
         /// <para>
         ///  The following limitations are enforced for this operation: <ul> <li>256 attribute
         /// name-value pairs per item</li> <li>1 MB request size</li> <li>1 billion attributes
         /// per domain</li> <li>10 GB of total user data storage per domain</li> <li>25 item limit
-        /// per <code>BatchPutAttributes</code> operation</li> </ul> 
+        /// per <c>BatchPutAttributes</c> operation</li> </ul> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the BatchPutAttributes service method.</param>
@@ -433,9 +431,9 @@ namespace Amazon.SimpleDB
 
 
         /// <summary>
-        /// The <code>CreateDomain</code> operation creates a new domain. The domain name should
-        /// be unique among the domains associated with the Access Key ID provided in the request.
-        /// The <code>CreateDomain</code> operation may take 10 or more seconds to complete. 
+        /// The <c>CreateDomain</c> operation creates a new domain. The domain name should be
+        /// unique among the domains associated with the Access Key ID provided in the request.
+        /// The <c>CreateDomain</c> operation may take 10 or more seconds to complete. 
         /// 
         ///  
         /// <para>
@@ -493,15 +491,15 @@ namespace Amazon.SimpleDB
         /// 
         ///  
         /// <para>
-        ///  <code>DeleteAttributes</code> is an idempotent operation; running it multiple times
-        /// on the same item or attribute does not result in an error response. 
+        ///  <c>DeleteAttributes</c> is an idempotent operation; running it multiple times on
+        /// the same item or attribute does not result in an error response. 
         /// </para>
         ///  
         /// <para>
         ///  Because Amazon SimpleDB makes multiple copies of item data and uses an eventual consistency
         /// update model, performing a <a>GetAttributes</a> or <a>Select</a> operation (read)
-        /// immediately after a <code>DeleteAttributes</code> or <a>PutAttributes</a> operation
-        /// (write) might not return updated item data. 
+        /// immediately after a <c>DeleteAttributes</c> or <a>PutAttributes</a> operation (write)
+        /// might not return updated item data. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttributes service method.</param>
@@ -548,9 +546,9 @@ namespace Amazon.SimpleDB
 
 
         /// <summary>
-        /// The <code>DeleteDomain</code> operation deletes a domain. Any items (and their attributes)
-        /// in the domain are deleted as well. The <code>DeleteDomain</code> operation might take
-        /// 10 or more seconds to complete.
+        /// The <c>DeleteDomain</c> operation deletes a domain. Any items (and their attributes)
+        /// in the domain are deleted as well. The <c>DeleteDomain</c> operation might take 10
+        /// or more seconds to complete.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDomain service method.</param>
         /// <param name="cancellationToken">
@@ -684,12 +682,12 @@ namespace Amazon.SimpleDB
 
 
         /// <summary>
-        /// The <code>ListDomains</code> operation lists all domains associated with the Access
-        /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
-        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
-        /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
-        /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
-        /// names with each successive operation call.
+        /// The <c>ListDomains</c> operation lists all domains associated with the Access Key
+        /// ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c>
+        /// domains. Calling <c>ListDomains</c> successive times with the <c>NextToken</c> provided
+        /// by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each
+        /// successive operation call.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -711,12 +709,12 @@ namespace Amazon.SimpleDB
 
 
         /// <summary>
-        /// The <code>ListDomains</code> operation lists all domains associated with the Access
-        /// Key ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
-        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <code>MaxNumberOfDomains</code>
-        /// domains. Calling <code>ListDomains</code> successive times with the <code>NextToken</code>
-        /// provided by the operation returns up to <code>MaxNumberOfDomains</code> more domain
-        /// names with each successive operation call.
+        /// The <c>ListDomains</c> operation lists all domains associated with the Access Key
+        /// ID. It returns domain names up to the limit set by <a href="#MaxNumberOfDomains">MaxNumberOfDomains</a>.
+        /// A <a href="#NextToken">NextToken</a> is returned if there are more than <c>MaxNumberOfDomains</c>
+        /// domains. Calling <c>ListDomains</c> successive times with the <c>NextToken</c> provided
+        /// by the operation returns up to <c>MaxNumberOfDomains</c> more domain names with each
+        /// successive operation call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDomains service method.</param>
         /// <param name="cancellationToken">
@@ -757,30 +755,30 @@ namespace Amazon.SimpleDB
 
         /// <summary>
         /// The PutAttributes operation creates or replaces attributes in an item. The client
-        /// may specify new attributes using a combination of the <code>Attribute.X.Name</code>
-        /// and <code>Attribute.X.Value</code> parameters. The client specifies the first attribute
-        /// by the parameters <code>Attribute.0.Name</code> and <code>Attribute.0.Value</code>,
-        /// the second attribute by the parameters <code>Attribute.1.Name</code> and <code>Attribute.1.Value</code>,
-        /// and so on. 
+        /// may specify new attributes using a combination of the <c>Attribute.X.Name</c> and
+        /// <c>Attribute.X.Value</c> parameters. The client specifies the first attribute by the
+        /// parameters <c>Attribute.0.Name</c> and <c>Attribute.0.Value</c>, the second attribute
+        /// by the parameters <c>Attribute.1.Name</c> and <c>Attribute.1.Value</c>, and so on.
+        /// 
         /// 
         ///  
         /// <para>
         ///  Attributes are uniquely identified in an item by their name/value combination. For
-        /// example, a single item can have the attributes <code>{ "first_name", "first_value"
-        /// }</code> and <code>{ "first_name", second_value" }</code>. However, it cannot have
-        /// two attribute instances where both the <code>Attribute.X.Name</code> and <code>Attribute.X.Value</code>
-        /// are the same. 
+        /// example, a single item can have the attributes <c>{ "first_name", "first_value" }</c>
+        /// and <c>{ "first_name", second_value" }</c>. However, it cannot have two attribute
+        /// instances where both the <c>Attribute.X.Name</c> and <c>Attribute.X.Value</c> are
+        /// the same. 
         /// </para>
         ///  
         /// <para>
-        ///  Optionally, the requestor can supply the <code>Replace</code> parameter for each
-        /// individual attribute. Setting this value to <code>true</code> causes the new attribute
-        /// value to replace the existing attribute value(s). For example, if an item has the
-        /// attributes <code>{ 'a', '1' }</code>, <code>{ 'b', '2'}</code> and <code>{ 'b', '3'
-        /// }</code> and the requestor calls <code>PutAttributes</code> using the attributes <code>{
-        /// 'b', '4' }</code> with the <code>Replace</code> parameter set to true, the final attributes
-        /// of the item are changed to <code>{ 'a', '1' }</code> and <code>{ 'b', '4' }</code>,
-        /// which replaces the previous values of the 'b' attribute with the new value. 
+        ///  Optionally, the requestor can supply the <c>Replace</c> parameter for each individual
+        /// attribute. Setting this value to <c>true</c> causes the new attribute value to replace
+        /// the existing attribute value(s). For example, if an item has the attributes <c>{ 'a',
+        /// '1' }</c>, <c>{ 'b', '2'}</c> and <c>{ 'b', '3' }</c> and the requestor calls <c>PutAttributes</c>
+        /// using the attributes <c>{ 'b', '4' }</c> with the <c>Replace</c> parameter set to
+        /// true, the final attributes of the item are changed to <c>{ 'a', '1' }</c> and <c>{
+        /// 'b', '4' }</c>, which replaces the previous values of the 'b' attribute with the new
+        /// value. 
         /// </para>
         ///  
         /// <para>
@@ -853,17 +851,17 @@ namespace Amazon.SimpleDB
 
 
         /// <summary>
-        /// The <code>Select</code> operation returns a set of attributes for <code>ItemNames</code>
-        /// that match the select expression. <code>Select</code> is similar to the standard SQL
-        /// SELECT statement. 
+        /// The <c>Select</c> operation returns a set of attributes for <c>ItemNames</c> that
+        /// match the select expression. <c>Select</c> is similar to the standard SQL SELECT statement.
+        /// 
         /// 
         ///  
         /// <para>
         ///  The total size of the response cannot exceed 1 MB in total size. Amazon SimpleDB
         /// automatically adjusts the number of items returned per page to enforce this limit.
         /// For example, if the client asks to retrieve 2500 items, but each individual item is
-        /// 10 kB in size, the system returns 100 items and an appropriate <code>NextToken</code>
-        /// so the client can access the next page of results. 
+        /// 10 kB in size, the system returns 100 items and an appropriate <c>NextToken</c> so
+        /// the client can access the next page of results. 
         /// </para>
         ///  
         /// <para>

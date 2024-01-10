@@ -38,7 +38,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Presents the status of the <code>OrganizationAccess</code>.
+        /// Presents the status of the <c>OrganizationAccess</c>.
         /// </para>
         /// </summary>
         public OrganizationStatus Status

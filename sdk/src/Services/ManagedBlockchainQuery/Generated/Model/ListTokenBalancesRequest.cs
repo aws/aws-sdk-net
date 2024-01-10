@@ -47,8 +47,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// You must always specify the network property of the <code>tokenFilter</code> when
-    /// using this operation.
+    /// You must always specify the network property of the <c>tokenFilter</c> when using
+    /// this operation.
     /// </para>
     ///  </note>
     /// </summary>
@@ -101,8 +101,8 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Gets and sets the property OwnerFilter. 
         /// <para>
         /// The contract or wallet address on the blockchain network by which to filter the request.
-        /// You must specify the <code>address</code> property of the <code>ownerFilter</code>
-        /// when listing balances of tokens owned by the address.
+        /// You must specify the <c>address</c> property of the <c>ownerFilter</c> when listing
+        /// balances of tokens owned by the address.
         /// </para>
         /// </summary>
         public OwnerFilter OwnerFilter
@@ -121,7 +121,7 @@ namespace Amazon.ManagedBlockchainQuery.Model
         /// Gets and sets the property TokenFilter. 
         /// <para>
         /// The contract address or a token identifier on the blockchain network by which to filter
-        /// the request. You must specify the <code>contractAddress</code> property of this container
+        /// the request. You must specify the <c>contractAddress</c> property of this container
         /// when listing tokens minted by a contract.
         /// </para>
         ///  <note> 

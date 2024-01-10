@@ -74,8 +74,8 @@ namespace Amazon.AuditManager.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         ///  The names and values that are used by the evidence event. This includes an attribute
-        /// name (such as <code>allowUsersToChangePassword</code>) and value (such as <code>true</code>
-        /// or <code>false</code>). 
+        /// name (such as <c>allowUsersToChangePassword</c>) and value (such as <c>true</c> or
+        /// <c>false</c>). 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The configuration object for Amazon FSx for Lustre file systems used in the <code>UpdateFileSystem</code>
+    /// The configuration object for Amazon FSx for Lustre file systems used in the <c>UpdateFileSystem</c>
     /// operation.
     /// </summary>
     public partial class UpdateFileSystemLustreConfiguration
@@ -49,33 +49,32 @@ namespace Amazon.FSx.Model
         ///  (Optional) When you create your file system, your existing S3 objects appear as file
         /// and directory listings. Use this property to choose how Amazon FSx keeps your file
         /// and directory listing up to date as you add or modify objects in your linked S3 bucket.
-        /// <code>AutoImportPolicy</code> can have the following values:
+        /// <c>AutoImportPolicy</c> can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - (Default) AutoImport is off. Amazon FSx only updates file and
-        /// directory listings from the linked S3 bucket when the file system is created. FSx
-        /// does not update the file and directory listing for any new or changed objects after
-        /// choosing this option.
+        ///  <c>NONE</c> - (Default) AutoImport is off. Amazon FSx only updates file and directory
+        /// listings from the linked S3 bucket when the file system is created. FSx does not update
+        /// the file and directory listing for any new or changed objects after choosing this
+        /// option.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory listings
+        ///  <c>NEW</c> - AutoImport is on. Amazon FSx automatically imports directory listings
         /// of any new objects added to the linked S3 bucket that do not currently exist in the
         /// FSx file system. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports file
-        /// and directory listings of any new objects added to the S3 bucket and any existing
-        /// objects that are changed in the S3 bucket after you choose this option.
+        ///  <c>NEW_CHANGED</c> - AutoImport is on. Amazon FSx automatically imports file and
+        /// directory listings of any new objects added to the S3 bucket and any existing objects
+        /// that are changed in the S3 bucket after you choose this option.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically imports
-        /// file and directory listings of any new objects added to the S3 bucket, any existing
-        /// objects that are changed in the S3 bucket, and any objects that were deleted in the
-        /// S3 bucket.
+        ///  <c>NEW_CHANGED_DELETED</c> - AutoImport is on. Amazon FSx automatically imports file
+        /// and directory listings of any new objects added to the S3 bucket, any existing objects
+        /// that are changed in the S3 bucket, and any objects that were deleted in the S3 bucket.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -97,9 +96,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property AutomaticBackupRetentionDays. 
         /// <para>
-        /// The number of days to retain automatic backups. Setting this property to <code>0</code>
+        /// The number of days to retain automatic backups. Setting this property to <c>0</c>
         /// disables automatic backups. You can retain automatic backups for a maximum of 90 days.
-        /// The default is <code>0</code>.
+        /// The default is <c>0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=90)]
@@ -134,21 +133,21 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property DataCompressionType. 
         /// <para>
-        /// Sets the data compression configuration for the file system. <code>DataCompressionType</code>
+        /// Sets the data compression configuration for the file system. <c>DataCompressionType</c>
         /// can have the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - Data compression is turned off for the file system.
+        ///  <c>NONE</c> - Data compression is turned off for the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LZ4</code> - Data compression is turned on with the LZ4 algorithm.
+        ///  <c>LZ4</c> - Data compression is turned on with the LZ4 algorithm.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you don't use <code>DataCompressionType</code>, the file system retains its current
-        /// data compression configuration.
+        /// If you don't use <c>DataCompressionType</c>, the file system retains its current data
+        /// compression configuration.
         /// </para>
         ///  
         /// <para>
@@ -198,13 +197,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>PERSISTENT_1</code> SSD-based deployment types, valid values are 50, 100,
-        /// and 200 MB/s/TiB.
+        /// For <c>PERSISTENT_1</c> SSD-based deployment types, valid values are 50, 100, and
+        /// 200 MB/s/TiB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>PERSISTENT_2</code> SSD-based deployment types, valid values are 125, 250,
-        /// 500, and 1000 MB/s/TiB.
+        /// For <c>PERSISTENT_2</c> SSD-based deployment types, valid values are 125, 250, 500,
+        /// and 1000 MB/s/TiB.
         /// </para>
         ///  </li> </ul> 
         /// <para>

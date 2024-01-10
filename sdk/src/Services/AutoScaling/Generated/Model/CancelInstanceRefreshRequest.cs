@@ -31,8 +31,7 @@ namespace Amazon.AutoScaling.Model
     /// <summary>
     /// Container for the parameters to the CancelInstanceRefresh operation.
     /// Cancels an instance refresh or rollback that is in progress. If an instance refresh
-    /// or rollback is not in progress, an <code>ActiveInstanceRefreshNotFound</code> error
-    /// occurs.
+    /// or rollback is not in progress, an <c>ActiveInstanceRefreshNotFound</c> error occurs.
     /// 
     ///  
     /// <para>

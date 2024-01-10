@@ -35,14 +35,14 @@ namespace Amazon.KinesisAnalyticsV2.Model
     /// 
     ///  
     /// <para>
-    /// Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you
-    /// update your application. 
+    /// Kinesis Data Analytics updates the <c>ApplicationVersionId</c> each time you update
+    /// your application. 
     /// </para>
     ///  <note> 
     /// <para>
-    /// You cannot update the <code>RuntimeEnvironment</code> of an existing application.
-    /// If you need to update an application's <code>RuntimeEnvironment</code>, you must delete
-    /// the application and create it again.
+    /// You cannot update the <c>RuntimeEnvironment</c> of an existing application. If you
+    /// need to update an application's <c>RuntimeEnvironment</c>, you must delete the application
+    /// and create it again.
     /// </para>
     ///  </note>
     /// </summary>
@@ -117,10 +117,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property ConditionalToken. 
         /// <para>
         /// A value you use to implement strong concurrency for application updates. You must
-        /// provide the <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>.
-        /// You get the application's current <code>ConditionalToken</code> using <a>DescribeApplication</a>.
-        /// For better concurrency support, use the <code>ConditionalToken</code> parameter instead
-        /// of <code>CurrentApplicationVersionId</code>.
+        /// provide the <c>CurrentApplicationVersionId</c> or the <c>ConditionalToken</c>. You
+        /// get the application's current <c>ConditionalToken</c> using <a>DescribeApplication</a>.
+        /// For better concurrency support, use the <c>ConditionalToken</c> parameter instead
+        /// of <c>CurrentApplicationVersionId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -139,10 +139,10 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property CurrentApplicationVersionId. 
         /// <para>
-        /// The current application version ID. You must provide the <code>CurrentApplicationVersionId</code>
-        /// or the <code>ConditionalToken</code>.You can retrieve the application version ID using
-        /// <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code>
-        /// parameter instead of <code>CurrentApplicationVersionId</code>.
+        /// The current application version ID. You must provide the <c>CurrentApplicationVersionId</c>
+        /// or the <c>ConditionalToken</c>.You can retrieve the application version ID using <a>DescribeApplication</a>.
+        /// For better concurrency support, use the <c>ConditionalToken</c> parameter instead
+        /// of <c>CurrentApplicationVersionId</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=999999999)]

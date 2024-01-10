@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// The <code>NextToken</code> parameter that was passed is invalid.
+    /// The <c>NextToken</c> parameter that was passed is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

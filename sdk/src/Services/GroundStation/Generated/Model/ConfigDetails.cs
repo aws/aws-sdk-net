@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Details for certain <code>Config</code> object types in a contact.
+    /// Details for certain <c>Config</c> object types in a contact.
     /// </summary>
     public partial class ConfigDetails
     {
@@ -40,7 +40,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property AntennaDemodDecodeDetails. 
         /// <para>
-        /// Details for antenna demod decode <code>Config</code> in a contact.
+        /// Details for antenna demod decode <c>Config</c> in a contact.
         /// </para>
         /// </summary>
         public AntennaDemodDecodeDetails AntennaDemodDecodeDetails
@@ -73,7 +73,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property S3RecordingDetails. 
         /// <para>
-        /// Details for an S3 recording <code>Config</code> in a contact.
+        /// Details for an S3 recording <c>Config</c> in a contact.
         /// </para>
         /// </summary>
         public S3RecordingDetails S3RecordingDetails

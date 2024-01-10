@@ -43,7 +43,7 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property CertificateAuthorityPublicKeyIdentifier. 
         /// <para>
-        /// The <code>KeyARN</code> of the certificate chain that signs the wrapping key certificate
+        /// The <c>KeyARN</c> of the certificate chain that signs the wrapping key certificate
         /// during TR-34 key export.
         /// </para>
         /// </summary>
@@ -127,8 +127,8 @@ namespace Amazon.PaymentCryptography.Model
         /// <summary>
         /// Gets and sets the property WrappingKeyCertificate. 
         /// <para>
-        /// The <code>KeyARN</code> of the wrapping key certificate. Amazon Web Services Payment
-        /// Cryptography uses this certificate to wrap the key under export.
+        /// The <c>KeyARN</c> of the wrapping key certificate. Amazon Web Services Payment Cryptography
+        /// uses this certificate to wrap the key under export.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=32768)]

@@ -99,7 +99,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property ExpressionType. 
         /// <para>
-        /// The type of value in <code>Expression</code>.
+        /// The type of value in <c>Expression</c>.
         /// </para>
         /// </summary>
         public ExpressionType ExpressionType

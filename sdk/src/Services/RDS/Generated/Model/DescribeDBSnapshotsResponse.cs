@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// Contains the result of a successful invocation of the <code>DescribeDBSnapshots</code>
-    /// action.
+    /// Contains the result of a successful invocation of the <c>DescribeDBSnapshots</c> action.
     /// </summary>
     public partial class DescribeDBSnapshotsResponse : AmazonWebServiceResponse
     {
@@ -40,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBSnapshots. 
         /// <para>
-        /// A list of <code>DBSnapshot</code> instances.
+        /// A list of <c>DBSnapshot</c> instances.
         /// </para>
         /// </summary>
         public List<DBSnapshot> DBSnapshots
@@ -60,7 +59,7 @@ namespace Amazon.RDS.Model
         /// <para>
         /// An optional pagination token provided by a previous request. If this parameter is
         /// specified, the response includes only records beyond the marker, up to the value specified
-        /// by <code>MaxRecords</code>.
+        /// by <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker

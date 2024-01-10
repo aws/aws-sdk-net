@@ -93,7 +93,7 @@ namespace Amazon.SecurityHub.Model
         ///  </li> <li> 
         /// <para>
         /// For source code in an CodeCommit repository, the HTTPS clone URL to the repository
-        /// that contains the source code and the build spec file (for example, <code>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</code>
+        /// that contains the source code and the build spec file (for example, <c>https://git-codecommit.region-ID.amazonaws.com/v1/repos/repo-name</c>
         /// ).
         /// </para>
         ///  </li> <li> 
@@ -102,11 +102,11 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The path to the ZIP file that contains the source code (for example, <code>bucket-name/path/to/object-name.zip</code>).
+        /// The path to the ZIP file that contains the source code (for example, <c>bucket-name/path/to/object-name.zip</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The path to the folder that contains the source code (for example, <code>bucket-name/path/to/source-code/folder/</code>).
+        ///  The path to the folder that contains the source code (for example, <c>bucket-name/path/to/source-code/folder/</c>).
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -139,32 +139,32 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>BITBUCKET</code> - The source code is in a Bitbucket repository.
+        ///  <c>BITBUCKET</c> - The source code is in a Bitbucket repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CODECOMMIT</code> - The source code is in an CodeCommit repository.
+        ///  <c>CODECOMMIT</c> - The source code is in an CodeCommit repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CODEPIPELINE</code> - The source code settings are specified in the source
-        /// action of a pipeline in CodePipeline.
+        ///  <c>CODEPIPELINE</c> - The source code settings are specified in the source action
+        /// of a pipeline in CodePipeline.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GITHUB</code> - The source code is in a GitHub repository.
+        ///  <c>GITHUB</c> - The source code is in a GitHub repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GITHUB_ENTERPRISE</code> - The source code is in a GitHub Enterprise repository.
+        ///  <c>GITHUB_ENTERPRISE</c> - The source code is in a GitHub Enterprise repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NO_SOURCE</code> - The project does not have input source code.
+        ///  <c>NO_SOURCE</c> - The project does not have input source code.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code> - The source code is in an S3 input bucket. 
+        ///  <c>S3</c> - The source code is in an S3 input bucket. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

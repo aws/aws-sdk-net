@@ -47,8 +47,8 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// The statistics generation mode. One of: <code>DISABLE_AUTOCOMPUTE</code>, <code>ENABLE_AUTOCOMPUTE</code>,
-        /// or <code>REFRESH</code>, the last of which manually triggers DFE statistics generation.
+        /// The statistics generation mode. One of: <c>DISABLE_AUTOCOMPUTE</c>, <c>ENABLE_AUTOCOMPUTE</c>,
+        /// or <c>REFRESH</c>, the last of which manually triggers DFE statistics generation.
         /// </para>
         /// </summary>
         public StatisticsAutoGenerationMode Mode

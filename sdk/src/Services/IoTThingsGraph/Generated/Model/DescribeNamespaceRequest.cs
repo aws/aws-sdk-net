@@ -40,7 +40,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property NamespaceName. 
         /// <para>
-        /// The name of the user's namespace. Set this to <code>aws</code> to get the public namespace.
+        /// The name of the user's namespace. Set this to <c>aws</c> to get the public namespace.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

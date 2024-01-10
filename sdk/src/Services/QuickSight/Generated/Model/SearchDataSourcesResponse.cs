@@ -41,7 +41,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DataSourceSummaries. 
         /// <para>
-        /// A <code>DataSourceSummaries</code> object that returns a summary of a data source.
+        /// A <c>DataSourceSummaries</c> object that returns a summary of a data source.
         /// </para>
         /// </summary>
         public List<DataSourceSummary> DataSourceSummaries

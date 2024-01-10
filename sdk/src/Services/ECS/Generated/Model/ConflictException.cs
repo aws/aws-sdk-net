@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// The <code>RunTask</code> request could not be processed due to conflicts. The provided
-    /// <code>clientToken</code> is already in use with a different <code>RunTask</code> request.
-    /// The <code>resourceIds</code> are the existing task ARNs which are already associated
-    /// with the <code>clientToken</code>. 
+    /// The <c>RunTask</c> request could not be processed due to conflicts. The provided <c>clientToken</c>
+    /// is already in use with a different <c>RunTask</c> request. The <c>resourceIds</c>
+    /// are the existing task ARNs which are already associated with the <c>clientToken</c>.
+    /// 
     /// 
     ///  
     /// <para>
@@ -40,12 +40,11 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Run <code>RunTask</code> with a unique <code>clientToken</code>.
+    /// Run <c>RunTask</c> with a unique <c>clientToken</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Run <code>RunTask</code> with the <code>clientToken</code> and the original set of
-    /// parameters
+    /// Run <c>RunTask</c> with the <c>clientToken</c> and the original set of parameters
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -144,7 +143,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ResourceIds. 
         /// <para>
-        /// The existing task ARNs which are already associated with the <code>clientToken</code>.
+        /// The existing task ARNs which are already associated with the <c>clientToken</c>.
         /// </para>
         /// </summary>
         public List<string> ResourceIds

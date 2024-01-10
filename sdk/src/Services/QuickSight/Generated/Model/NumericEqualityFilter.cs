@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>NumericEqualityFilter</code> filters values that are equal to the specified
-    /// value.
+    /// A <c>NumericEqualityFilter</c> filters values that are equal to the specified value.
     /// </summary>
     public partial class NumericEqualityFilter
     {
@@ -125,15 +124,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_VALUES</code>: Include null values in filtered results.
+        ///  <c>ALL_VALUES</c>: Include null values in filtered results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NULLS_ONLY</code>: Only include null values in filtered results.
+        ///  <c>NULLS_ONLY</c>: Only include null values in filtered results.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_NULLS_ONLY</code>: Exclude null values from filtered results.
+        ///  <c>NON_NULLS_ONLY</c>: Exclude null values from filtered results.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -176,7 +175,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FILTER_ALL_VALUES</code> 
+        ///  <c>FILTER_ALL_VALUES</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -94,9 +94,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// The environment account connection must have a <code>componentRoleArn</code> to allow
-        /// directly defined components to be associated with any environments running in the
-        /// account.
+        /// The environment account connection must have a <c>componentRoleArn</c> to allow directly
+        /// defined components to be associated with any environments running in the account.
         /// </para>
         ///  
         /// <para>

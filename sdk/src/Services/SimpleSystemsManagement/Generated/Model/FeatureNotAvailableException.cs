@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// You attempted to register a <code>LAMBDA</code> or <code>STEP_FUNCTIONS</code> task
-    /// in a region where the corresponding service isn't available.
+    /// You attempted to register a <c>LAMBDA</c> or <c>STEP_FUNCTIONS</c> task in a region
+    /// where the corresponding service isn't available.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -84,7 +84,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CopyCommand. 
         /// <para>
-        /// The <code>COPY</code> command.
+        /// The <c>COPY</c> command.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

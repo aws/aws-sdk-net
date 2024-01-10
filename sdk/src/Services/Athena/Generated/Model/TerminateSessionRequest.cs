@@ -30,11 +30,10 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the TerminateSession operation.
-    /// Terminates an active session. A <code>TerminateSession</code> call on a session that
-    /// is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code>
-    /// or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running
-    /// in the session when <code>TerminateSession</code> is called are forcefully stopped,
-    /// but may display as <code>FAILED</code> instead of <code>STOPPED</code>.
+    /// Terminates an active session. A <c>TerminateSession</c> call on a session that is
+    /// already inactive (for example, in a <c>FAILED</c>, <c>TERMINATED</c> or <c>TERMINATING</c>
+    /// state) succeeds but has no effect. Calculations running in the session when <c>TerminateSession</c>
+    /// is called are forcefully stopped, but may display as <c>FAILED</c> instead of <c>STOPPED</c>.
     /// </summary>
     public partial class TerminateSessionRequest : AmazonAthenaRequest
     {

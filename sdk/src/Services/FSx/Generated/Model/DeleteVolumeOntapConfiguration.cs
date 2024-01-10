@@ -42,11 +42,11 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property BypassSnaplockEnterpriseRetention. 
         /// <para>
-        /// Setting this to <code>true</code> allows a SnapLock administrator to delete an FSx
-        /// for ONTAP SnapLock Enterprise volume with unexpired write once, read many (WORM) files.
-        /// The IAM permission <code>fsx:BypassSnaplockEnterpriseRetention</code> is also required
-        /// to delete SnapLock Enterprise volumes with unexpired WORM files. The default value
-        /// is <code>false</code>. 
+        /// Setting this to <c>true</c> allows a SnapLock administrator to delete an FSx for ONTAP
+        /// SnapLock Enterprise volume with unexpired write once, read many (WORM) files. The
+        /// IAM permission <c>fsx:BypassSnaplockEnterpriseRetention</c> is also required to delete
+        /// SnapLock Enterprise volumes with unexpired WORM files. The default value is <c>false</c>.
+        /// 
         /// </para>
         ///  
         /// <para>

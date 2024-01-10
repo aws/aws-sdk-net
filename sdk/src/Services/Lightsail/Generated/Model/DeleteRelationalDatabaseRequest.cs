@@ -34,7 +34,7 @@ namespace Amazon.Lightsail.Model
     /// 
     ///  
     /// <para>
-    /// The <code>delete relational database</code> operation supports tag-based access control
+    /// The <c>delete relational database</c> operation supports tag-based access control
     /// via resource tags applied to the resource identified by relationalDatabaseName. For
     /// more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
@@ -49,13 +49,13 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property FinalRelationalDatabaseSnapshotName. 
         /// <para>
-        /// The name of the database snapshot created if <code>skip final snapshot</code> is <code>false</code>,
+        /// The name of the database snapshot created if <c>skip final snapshot</c> is <c>false</c>,
         /// which is the default value for that parameter.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Specifying this parameter and also specifying the <code>skip final snapshot</code>
-        /// parameter to <code>true</code> results in an error.
+        /// Specifying this parameter and also specifying the <c>skip final snapshot</c> parameter
+        /// to <c>true</c> results in an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -106,17 +106,17 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
         /// Determines whether a final database snapshot is created before your database is deleted.
-        /// If <code>true</code> is specified, no database snapshot is created. If <code>false</code>
-        /// is specified, a database snapshot is created before your database is deleted.
+        /// If <c>true</c> is specified, no database snapshot is created. If <c>false</c> is specified,
+        /// a database snapshot is created before your database is deleted.
         /// </para>
         ///  
         /// <para>
-        /// You must specify the <code>final relational database snapshot name</code> parameter
-        /// if the <code>skip final snapshot</code> parameter is <code>false</code>.
+        /// You must specify the <c>final relational database snapshot name</c> parameter if the
+        /// <c>skip final snapshot</c> parameter is <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool SkipFinalSnapshot

@@ -81,7 +81,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// The direction. The possible values are <code>FORWARD</code> and <code>ANY</code>.
+        /// The direction. The possible values are <c>FORWARD</c> and <c>ANY</c>.
         /// </para>
         /// </summary>
         public string Direction
@@ -117,8 +117,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RuleAction. 
         /// <para>
-        /// The rule action. The possible values are <code>pass</code>, <code>drop</code>, and
-        /// <code>alert</code>.
+        /// The rule action. The possible values are <c>pass</c>, <c>drop</c>, and <c>alert</c>.
         /// </para>
         /// </summary>
         public string RuleAction

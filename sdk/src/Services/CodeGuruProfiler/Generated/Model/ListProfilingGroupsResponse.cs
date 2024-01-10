@@ -40,9 +40,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value to include in a future <code>ListProfilingGroups</code>
-        /// request. When the results of a <code>ListProfilingGroups</code> request exceed <code>maxResults</code>,
-        /// this value can be used to retrieve the next page of results. This value is <code>null</code>
+        /// The <c>nextToken</c> value to include in a future <c>ListProfilingGroups</c> request.
+        /// When the results of a <c>ListProfilingGroups</c> request exceed <c>maxResults</c>,
+        /// this value can be used to retrieve the next page of results. This value is <c>null</c>
         /// when there are no more results to return. 
         /// </para>
         /// </summary>
@@ -63,8 +63,8 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property ProfilingGroupNames. 
         /// <para>
         ///  A returned list of profiling group names. A list of the names is returned only if
-        /// <code>includeDescription</code> is <code>false</code>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code> </a> objects is returned. 
+        /// <c>includeDescription</c> is <c>false</c>, otherwise a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <c>ProfilingGroupDescription</c> </a> objects is returned. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -84,9 +84,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// Gets and sets the property ProfilingGroups. 
         /// <para>
         ///  A returned list <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
-        /// <code>ProfilingGroupDescription</code> </a> objects is returned only if <code>includeDescription</code>
-        /// is <code>true</code>, otherwise a list of profiling group names is returned. 
+        /// <c>ProfilingGroupDescription</c> </a> objects. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html">
+        /// <c>ProfilingGroupDescription</c> </a> objects is returned only if <c>includeDescription</c>
+        /// is <c>true</c>, otherwise a list of profiling group names is returned. 
         /// </para>
         /// </summary>
         public List<ProfilingGroupDescription> ProfilingGroups

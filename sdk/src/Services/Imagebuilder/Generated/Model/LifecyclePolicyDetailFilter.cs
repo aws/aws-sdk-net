@@ -42,9 +42,9 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property RetainAtLeast. 
         /// <para>
         /// For age-based filters, this is the number of resources to keep on hand after the lifecycle
-        /// <code>DELETE</code> action is applied. Impacted resources are only deleted if you
-        /// have more than this number of resources. If you have fewer resources than this number,
-        /// the impacted resource is not deleted.
+        /// <c>DELETE</c> action is applied. Impacted resources are only deleted if you have more
+        /// than this number of resources. If you have fewer resources than this number, the impacted
+        /// resource is not deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -63,7 +63,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Filter resources based on either <code>age</code> or <code>count</code>.
+        /// Filter resources based on either <c>age</c> or <c>count</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,7 +102,7 @@ namespace Amazon.Imagebuilder.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The number of units for the time period or for the count. For example, a value of
-        /// <code>6</code> might refer to six months or six AMIs.
+        /// <c>6</c> might refer to six months or six AMIs.
         /// </para>
         ///  <note> 
         /// <para>

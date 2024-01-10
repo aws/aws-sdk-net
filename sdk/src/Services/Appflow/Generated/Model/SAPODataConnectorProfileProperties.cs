@@ -102,8 +102,8 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property DisableSSO. 
         /// <para>
-        /// If you set this parameter to <code>true</code>, Amazon AppFlow bypasses the single
-        /// sign-on (SSO) settings in your SAP account when it accesses your SAP OData instance.
+        /// If you set this parameter to <c>true</c>, Amazon AppFlow bypasses the single sign-on
+        /// (SSO) settings in your SAP account when it accesses your SAP OData instance.
         /// </para>
         ///  
         /// <para>

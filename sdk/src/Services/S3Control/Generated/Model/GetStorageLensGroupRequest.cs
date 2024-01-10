@@ -34,7 +34,7 @@ namespace Amazon.S3Control.Model
     /// 
     ///  
     /// <para>
-    /// To use this operation, you must have the permission to perform the <code>s3:GetStorageLensGroup</code>
+    /// To use this operation, you must have the permission to perform the <c>s3:GetStorageLensGroup</c>
     /// action. For more information about the required Storage Lens Groups permissions, see
     /// <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_iam_permissions.html#storage_lens_groups_permissions">Setting
     /// account permissions to use S3 Storage Lens groups</a>.

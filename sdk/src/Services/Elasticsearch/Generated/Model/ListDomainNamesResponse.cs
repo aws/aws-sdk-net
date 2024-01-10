@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code>ListDomainNames</code> operation. Contains the names of all
-    /// domains owned by this account and their respective engine types.
+    /// The result of a <c>ListDomainNames</c> operation. Contains the names of all domains
+    /// owned by this account and their respective engine types.
     /// </summary>
     public partial class ListDomainNamesResponse : AmazonWebServiceResponse
     {

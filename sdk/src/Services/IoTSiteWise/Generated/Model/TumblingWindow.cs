@@ -35,16 +35,16 @@ namespace Amazon.IoTSiteWise.Model
     /// 
     ///  
     /// <para>
-    /// You can use <code>m</code>, <code>h</code>, <code>d</code>, and <code>w</code> when
-    /// you specify an interval or offset. Note that <code>m</code> represents minutes, <code>h</code>
-    /// represents hours, <code>d</code> represents days, and <code>w</code> represents weeks.
-    /// You can also use <code>s</code> to represent seconds in <code>offset</code>.
+    /// You can use <c>m</c>, <c>h</c>, <c>d</c>, and <c>w</c> when you specify an interval
+    /// or offset. Note that <c>m</c> represents minutes, <c>h</c> represents hours, <c>d</c>
+    /// represents days, and <c>w</c> represents weeks. You can also use <c>s</c> to represent
+    /// seconds in <c>offset</c>.
     /// </para>
     ///  
     /// <para>
-    /// The <code>interval</code> and <code>offset</code> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
-    /// 8601 format</a>. For example, <code>PT5S</code> represents 5 seconds, <code>PT5M</code>
-    /// represents 5 minutes, and <code>PT5H</code> represents 5 hours.
+    /// The <c>interval</c> and <c>offset</c> parameters support the <a href="https://en.wikipedia.org/wiki/ISO_8601">ISO
+    /// 8601 format</a>. For example, <c>PT5S</c> represents 5 seconds, <c>PT5M</c> represents
+    /// 5 minutes, and <c>PT5H</c> represents 5 hours.
     /// </para>
     /// </summary>
     public partial class TumblingWindow
@@ -60,9 +60,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// IoT SiteWise computes the <code>1w</code> interval the end of Sunday at midnight each
-        /// week (UTC), the <code>1d</code> interval at the end of each day at midnight (UTC),
-        /// the <code>1h</code> interval at the end of each hour, and so on. 
+        /// IoT SiteWise computes the <c>1w</c> interval the end of Sunday at midnight each week
+        /// (UTC), the <c>1d</c> interval at the end of each day at midnight (UTC), the <c>1h</c>
+        /// interval at the end of each hour, and so on. 
         /// </para>
         ///  
         /// <para>
@@ -87,8 +87,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Offset. 
         /// <para>
-        /// The offset for the tumbling window. The <code>offset</code> parameter accepts the
-        /// following:
+        /// The offset for the tumbling window. The <c>offset</c> parameter accepts the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -96,8 +95,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>18h</code> for <code>offset</code> and <code>1d</code>
-        /// for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:
+        /// For example, if you specify <c>18h</c> for <c>offset</c> and <c>1d</c> for <c>interval</c>,
+        /// IoT SiteWise aggregates data in one of the following ways:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -115,8 +114,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>PT18H</code> for <code>offset</code> and <code>1d</code>
-        /// for <code>interval</code>, IoT SiteWise aggregates data in one of the following ways:
+        /// For example, if you specify <c>PT18H</c> for <c>offset</c> and <c>1d</c> for <c>interval</c>,
+        /// IoT SiteWise aggregates data in one of the following ways:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -134,10 +133,9 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>00:03:00</code> for <code>offset</code>, <code>5m</code>
-        /// for <code>interval</code>, and you create the metric at 2 PM (UTC), you get the first
-        /// aggregation result at 2:03 PM (UTC). You get the second aggregation result at 2:08
-        /// PM (UTC). 
+        /// For example, if you specify <c>00:03:00</c> for <c>offset</c>, <c>5m</c> for <c>interval</c>,
+        /// and you create the metric at 2 PM (UTC), you get the first aggregation result at 2:03
+        /// PM (UTC). You get the second aggregation result at 2:08 PM (UTC). 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -145,9 +143,8 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, if you specify <code>2021-07-23T18:00-08</code> for <code>offset</code>
-        /// and <code>1d</code> for <code>interval</code>, IoT SiteWise aggregates data in one
-        /// of the following ways:
+        /// For example, if you specify <c>2021-07-23T18:00-08</c> for <c>offset</c> and <c>1d</c>
+        /// for <c>interval</c>, IoT SiteWise aggregates data in one of the following ways:
         /// </para>
         ///  <ul> <li> 
         /// <para>

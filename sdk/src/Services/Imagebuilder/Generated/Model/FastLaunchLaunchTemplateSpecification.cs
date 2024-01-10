@@ -34,7 +34,7 @@ namespace Amazon.Imagebuilder.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You can specify either the <code>launchTemplateName</code> or the <code>launchTemplateId</code>,
+    /// You can specify either the <c>launchTemplateName</c> or the <c>launchTemplateId</c>,
     /// but not both.
     /// </para>
     ///  </note>

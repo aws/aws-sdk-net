@@ -81,9 +81,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property ExportSummaries. 
         /// <para>
         /// Summary information for the exports that meet the filter criteria specified in the
-        /// request. The length of the list is specified in the <code>maxResults</code> parameter.
-        /// If there are more exports available, the <code>nextToken</code> field contains a token
-        /// to get the next page of results.
+        /// request. The length of the list is specified in the <c>maxResults</c> parameter. If
+        /// there are more exports available, the <c>nextToken</c> field contains a token to get
+        /// the next page of results.
         /// </para>
         /// </summary>
         public List<ExportSummary> ExportSummaries
@@ -120,9 +120,9 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// A token that indicates whether there are more results to return in a response to the
-        /// <code>ListExports</code> operation. If the <code>nextToken</code> field is present,
-        /// you send the contents as the <code>nextToken</code> parameter of a <code>ListExports</code>
-        /// operation request to get the next page of results.
+        /// <c>ListExports</c> operation. If the <c>nextToken</c> field is present, you send the
+        /// contents as the <c>nextToken</c> parameter of a <c>ListExports</c> operation request
+        /// to get the next page of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -35,10 +35,10 @@ namespace Amazon.KeyManagementService.Model
     /// 
     ///  
     /// <para>
-    /// Use the required <code>CustomKeyStoreId</code> parameter to identify the custom key
-    /// store. Use the remaining optional parameters to change its properties. This operation
-    /// does not return any property values. To verify the updated property values, use the
-    /// <a>DescribeCustomKeyStores</a> operation.
+    /// Use the required <c>CustomKeyStoreId</c> parameter to identify the custom key store.
+    /// Use the remaining optional parameters to change its properties. This operation does
+    /// not return any property values. To verify the updated property values, use the <a>DescribeCustomKeyStores</a>
+    /// operation.
     /// </para>
     ///  
     /// <para>
@@ -69,41 +69,39 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// When updating an external key store in the KMS console, you can upload a JSON-based
     /// proxy configuration file with the desired values. You cannot upload the proxy configuration
-    /// file to the <code>UpdateCustomKeyStore</code> operation. However, you can use the
-    /// file to help you determine the correct values for the <code>UpdateCustomKeyStore</code>
-    /// parameters.
+    /// file to the <c>UpdateCustomKeyStore</c> operation. However, you can use the file to
+    /// help you determine the correct values for the <c>UpdateCustomKeyStore</c> parameters.
     /// </para>
     ///  </note> 
     /// <para>
     /// For an CloudHSM key store, you can use this operation to change the custom key store
-    /// friendly name (<code>NewCustomKeyStoreName</code>), to tell KMS about a change to
-    /// the <code>kmsuser</code> crypto user password (<code>KeyStorePassword</code>), or
-    /// to associate the custom key store with a different, but related, CloudHSM cluster
-    /// (<code>CloudHsmClusterId</code>). To update any property of an CloudHSM key store,
-    /// the <code>ConnectionState</code> of the CloudHSM key store must be <code>DISCONNECTED</code>.
-    /// 
+    /// friendly name (<c>NewCustomKeyStoreName</c>), to tell KMS about a change to the <c>kmsuser</c>
+    /// crypto user password (<c>KeyStorePassword</c>), or to associate the custom key store
+    /// with a different, but related, CloudHSM cluster (<c>CloudHsmClusterId</c>). To update
+    /// any property of an CloudHSM key store, the <c>ConnectionState</c> of the CloudHSM
+    /// key store must be <c>DISCONNECTED</c>. 
     /// </para>
     ///  
     /// <para>
     /// For an external key store, you can use this operation to change the custom key store
-    /// friendly name (<code>NewCustomKeyStoreName</code>), or to tell KMS about a change
-    /// to the external key store proxy authentication credentials (<code>XksProxyAuthenticationCredential</code>),
-    /// connection method (<code>XksProxyConnectivity</code>), external proxy endpoint (<code>XksProxyUriEndpoint</code>)
-    /// and path (<code>XksProxyUriPath</code>). For external key stores with an <code>XksProxyConnectivity</code>
-    /// of <code>VPC_ENDPOINT_SERVICE</code>, you can also update the Amazon VPC endpoint
-    /// service name (<code>XksProxyVpcEndpointServiceName</code>). To update most properties
-    /// of an external key store, the <code>ConnectionState</code> of the external key store
-    /// must be <code>DISCONNECTED</code>. However, you can update the <code>CustomKeyStoreName</code>,
-    /// <code>XksProxyAuthenticationCredential</code>, and <code>XksProxyUriPath</code> of
-    /// an external key store when it is in the CONNECTED or DISCONNECTED state. 
+    /// friendly name (<c>NewCustomKeyStoreName</c>), or to tell KMS about a change to the
+    /// external key store proxy authentication credentials (<c>XksProxyAuthenticationCredential</c>),
+    /// connection method (<c>XksProxyConnectivity</c>), external proxy endpoint (<c>XksProxyUriEndpoint</c>)
+    /// and path (<c>XksProxyUriPath</c>). For external key stores with an <c>XksProxyConnectivity</c>
+    /// of <c>VPC_ENDPOINT_SERVICE</c>, you can also update the Amazon VPC endpoint service
+    /// name (<c>XksProxyVpcEndpointServiceName</c>). To update most properties of an external
+    /// key store, the <c>ConnectionState</c> of the external key store must be <c>DISCONNECTED</c>.
+    /// However, you can update the <c>CustomKeyStoreName</c>, <c>XksProxyAuthenticationCredential</c>,
+    /// and <c>XksProxyUriPath</c> of an external key store when it is in the CONNECTED or
+    /// DISCONNECTED state. 
     /// </para>
     ///  
     /// <para>
-    /// If your update requires a <code>DISCONNECTED</code> state, before using <code>UpdateCustomKeyStore</code>,
+    /// If your update requires a <c>DISCONNECTED</c> state, before using <c>UpdateCustomKeyStore</c>,
     /// use the <a>DisconnectCustomKeyStore</a> operation to disconnect the custom key store.
-    /// After the <code>UpdateCustomKeyStore</code> operation completes, use the <a>ConnectCustomKeyStore</a>
-    /// to reconnect the custom key store. To find the <code>ConnectionState</code> of the
-    /// custom key store, use the <a>DescribeCustomKeyStores</a> operation. 
+    /// After the <c>UpdateCustomKeyStore</c> operation completes, use the <a>ConnectCustomKeyStore</a>
+    /// to reconnect the custom key store. To find the <c>ConnectionState</c> of the custom
+    /// key store, use the <a>DescribeCustomKeyStores</a> operation. 
     /// </para>
     ///  
     /// <para>
@@ -113,7 +111,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// Before updating the custom key store, verify that the new values allow KMS to connect
     /// the custom key store to its backing key store. For example, before you change the
-    /// <code>XksProxyUriPath</code> value, verify that the external key store proxy is reachable
+    /// <c>XksProxyUriPath</c> value, verify that the external key store proxy is reachable
     /// at the new path.
     /// </para>
     ///  
@@ -177,7 +175,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property CloudHsmClusterId. 
         /// <para>
         /// Associates the custom key store with a related CloudHSM cluster. This parameter is
-        /// valid only for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.
+        /// valid only for custom key stores with a <c>CustomKeyStoreType</c> of <c>AWS_CLOUDHSM</c>.
         /// </para>
         ///  
         /// <para>
@@ -231,14 +229,14 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyStorePassword. 
         /// <para>
-        /// Enter the current password of the <code>kmsuser</code> crypto user (CU) in the CloudHSM
+        /// Enter the current password of the <c>kmsuser</c> crypto user (CU) in the CloudHSM
         /// cluster that is associated with the custom key store. This parameter is valid only
-        /// for custom key stores with a <code>CustomKeyStoreType</code> of <code>AWS_CLOUDHSM</code>.
+        /// for custom key stores with a <c>CustomKeyStoreType</c> of <c>AWS_CLOUDHSM</c>.
         /// </para>
         ///  
         /// <para>
-        /// This parameter tells KMS the current password of the <code>kmsuser</code> crypto user
-        /// (CU). It does not set or change the password of any users in the CloudHSM cluster.
+        /// This parameter tells KMS the current password of the <c>kmsuser</c> crypto user (CU).
+        /// It does not set or change the password of any users in the CloudHSM cluster.
         /// </para>
         ///  
         /// <para>
@@ -292,13 +290,13 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property XksProxyAuthenticationCredential. 
         /// <para>
         /// Changes the credentials that KMS uses to sign requests to the external key store proxy
-        /// (XKS proxy). This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code>
-        /// of <code>EXTERNAL_KEY_STORE</code>.
+        /// (XKS proxy). This parameter is valid only for custom key stores with a <c>CustomKeyStoreType</c>
+        /// of <c>EXTERNAL_KEY_STORE</c>.
         /// </para>
         ///  
         /// <para>
-        /// You must specify both the <code>AccessKeyId</code> and <code>SecretAccessKey</code>
-        /// value in the authentication credential, even if you are only updating one value.
+        /// You must specify both the <c>AccessKeyId</c> and <c>SecretAccessKey</c> value in the
+        /// authentication credential, even if you are only updating one value.
         /// </para>
         ///  
         /// <para>
@@ -329,19 +327,19 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Changes the connectivity setting for the external key store. To indicate that the
         /// external key store proxy uses a Amazon VPC endpoint service to communicate with KMS,
-        /// specify <code>VPC_ENDPOINT_SERVICE</code>. Otherwise, specify <code>PUBLIC_ENDPOINT</code>.
+        /// specify <c>VPC_ENDPOINT_SERVICE</c>. Otherwise, specify <c>PUBLIC_ENDPOINT</c>.
         /// </para>
         ///  
         /// <para>
-        /// If you change the <code>XksProxyConnectivity</code> to <code>VPC_ENDPOINT_SERVICE</code>,
-        /// you must also change the <code>XksProxyUriEndpoint</code> and add an <code>XksProxyVpcEndpointServiceName</code>
+        /// If you change the <c>XksProxyConnectivity</c> to <c>VPC_ENDPOINT_SERVICE</c>, you
+        /// must also change the <c>XksProxyUriEndpoint</c> and add an <c>XksProxyVpcEndpointServiceName</c>
         /// value. 
         /// </para>
         ///  
         /// <para>
-        /// If you change the <code>XksProxyConnectivity</code> to <code>PUBLIC_ENDPOINT</code>,
-        /// you must also change the <code>XksProxyUriEndpoint</code> and specify a null or empty
-        /// string for the <code>XksProxyVpcEndpointServiceName</code> value.
+        /// If you change the <c>XksProxyConnectivity</c> to <c>PUBLIC_ENDPOINT</c>, you must
+        /// also change the <c>XksProxyUriEndpoint</c> and specify a null or empty string for
+        /// the <c>XksProxyVpcEndpointServiceName</c> value.
         /// </para>
         ///  
         /// <para>
@@ -364,24 +362,24 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property XksProxyUriEndpoint. 
         /// <para>
         /// Changes the URI endpoint that KMS uses to connect to your external key store proxy
-        /// (XKS proxy). This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code>
-        /// of <code>EXTERNAL_KEY_STORE</code>.
+        /// (XKS proxy). This parameter is valid only for custom key stores with a <c>CustomKeyStoreType</c>
+        /// of <c>EXTERNAL_KEY_STORE</c>.
         /// </para>
         ///  
         /// <para>
-        /// For external key stores with an <code>XksProxyConnectivity</code> value of <code>PUBLIC_ENDPOINT</code>,
+        /// For external key stores with an <c>XksProxyConnectivity</c> value of <c>PUBLIC_ENDPOINT</c>,
         /// the protocol must be HTTPS.
         /// </para>
         ///  
         /// <para>
-        /// For external key stores with an <code>XksProxyConnectivity</code> value of <code>VPC_ENDPOINT_SERVICE</code>,
-        /// specify <code>https://</code> followed by the private DNS name associated with the
-        /// VPC endpoint service. Each external key store must use a different private DNS name.
+        /// For external key stores with an <c>XksProxyConnectivity</c> value of <c>VPC_ENDPOINT_SERVICE</c>,
+        /// specify <c>https://</c> followed by the private DNS name associated with the VPC endpoint
+        /// service. Each external key store must use a different private DNS name.
         /// </para>
         ///  
         /// <para>
-        /// The combined <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> values
-        /// must be unique in the Amazon Web Services account and Region.
+        /// The combined <c>XksProxyUriEndpoint</c> and <c>XksProxyUriPath</c> values must be
+        /// unique in the Amazon Web Services account and Region.
         /// </para>
         ///  
         /// <para>
@@ -406,19 +404,19 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Changes the base path to the proxy APIs for this external key store. To find this
         /// value, see the documentation for your external key manager and external key store
-        /// proxy (XKS proxy). This parameter is valid only for custom key stores with a <code>CustomKeyStoreType</code>
-        /// of <code>EXTERNAL_KEY_STORE</code>.
+        /// proxy (XKS proxy). This parameter is valid only for custom key stores with a <c>CustomKeyStoreType</c>
+        /// of <c>EXTERNAL_KEY_STORE</c>.
         /// </para>
         ///  
         /// <para>
-        /// The value must start with <code>/</code> and must end with <code>/kms/xks/v1</code>,
-        /// where <code>v1</code> represents the version of the KMS external key store proxy API.
-        /// You can include an optional prefix between the required elements such as <code>/<i>example</i>/kms/xks/v1</code>.
+        /// The value must start with <c>/</c> and must end with <c>/kms/xks/v1</c>, where <c>v1</c>
+        /// represents the version of the KMS external key store proxy API. You can include an
+        /// optional prefix between the required elements such as <c>/<i>example</i>/kms/xks/v1</c>.
         /// </para>
         ///  
         /// <para>
-        /// The combined <code>XksProxyUriEndpoint</code> and <code>XksProxyUriPath</code> values
-        /// must be unique in the Amazon Web Services account and Region.
+        /// The combined <c>XksProxyUriEndpoint</c> and <c>XksProxyUriPath</c> values must be
+        /// unique in the Amazon Web Services account and Region.
         /// </para>
         ///  
         /// <para>
@@ -442,8 +440,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property XksProxyVpcEndpointServiceName. 
         /// <para>
         /// Changes the name that KMS uses to identify the Amazon VPC endpoint service for your
-        /// external key store proxy (XKS proxy). This parameter is valid when the <code>CustomKeyStoreType</code>
-        /// is <code>EXTERNAL_KEY_STORE</code> and the <code>XksProxyConnectivity</code> is <code>VPC_ENDPOINT_SERVICE</code>.
+        /// external key store proxy (XKS proxy). This parameter is valid when the <c>CustomKeyStoreType</c>
+        /// is <c>EXTERNAL_KEY_STORE</c> and the <c>XksProxyConnectivity</c> is <c>VPC_ENDPOINT_SERVICE</c>.
         /// </para>
         ///  
         /// <para>

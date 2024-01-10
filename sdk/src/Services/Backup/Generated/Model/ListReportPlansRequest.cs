@@ -31,7 +31,7 @@ namespace Amazon.Backup.Model
     /// <summary>
     /// Container for the parameters to the ListReportPlans operation.
     /// Returns a list of your report plans. For detailed information about a single report
-    /// plan, use <code>DescribeReportPlan</code>.
+    /// plan, use <c>DescribeReportPlan</c>.
     /// </summary>
     public partial class ListReportPlansRequest : AmazonBackupRequest
     {

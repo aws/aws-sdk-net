@@ -66,12 +66,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>connection-id</code> - The ID of the connection.
+        ///  <c>connection-id</c> - The ID of the connection.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>username</code> - For Active Directory client authentication, the user name
-        /// of the client who established the client connection.
+        ///  <c>username</c> - For Active Directory client authentication, the user name of the
+        /// client who established the client connection.
         /// </para>
         ///  </li> </ul>
         /// </summary>

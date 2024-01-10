@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property HyperParameterTuningJobSummaries. 
         /// <para>
         /// A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
-        /// objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code>
+        /// objects that describe the tuning jobs that the <c>ListHyperParameterTuningJobs</c>
         /// request returned.
         /// </para>
         /// </summary>
@@ -60,9 +60,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the result of this <code>ListHyperParameterTuningJobs</code> request was truncated,
-        /// the response includes a <code>NextToken</code>. To retrieve the next set of tuning
-        /// jobs, use the token in the next request.
+        /// If the result of this <c>ListHyperParameterTuningJobs</c> request was truncated, the
+        /// response includes a <c>NextToken</c>. To retrieve the next set of tuning jobs, use
+        /// the token in the next request.
         /// </para>
         /// </summary>
         [AWSProperty(Max=8192)]

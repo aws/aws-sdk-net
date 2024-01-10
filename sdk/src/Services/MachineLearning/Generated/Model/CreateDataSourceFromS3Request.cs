@@ -30,45 +30,43 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDataSourceFromS3 operation.
-    /// Creates a <code>DataSource</code> object. A <code>DataSource</code> references data
-    /// that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>,
-    /// or <code>CreateBatchPrediction</code> operations.
+    /// Creates a <c>DataSource</c> object. A <c>DataSource</c> references data that can be
+    /// used to perform <c>CreateMLModel</c>, <c>CreateEvaluation</c>, or <c>CreateBatchPrediction</c>
+    /// operations.
     /// 
     ///  
     /// <para>
-    ///  <code>CreateDataSourceFromS3</code> is an asynchronous operation. In response to
-    /// <code>CreateDataSourceFromS3</code>, Amazon Machine Learning (Amazon ML) immediately
-    /// returns and sets the <code>DataSource</code> status to <code>PENDING</code>. After
-    /// the <code>DataSource</code> has been created and is ready for use, Amazon ML sets
-    /// the <code>Status</code> parameter to <code>COMPLETED</code>. <code>DataSource</code>
-    /// in the <code>COMPLETED</code> or <code>PENDING</code> state can be used to perform
-    /// only <code>CreateMLModel</code>, <code>CreateEvaluation</code> or <code>CreateBatchPrediction</code>
-    /// operations. 
+    ///  <c>CreateDataSourceFromS3</c> is an asynchronous operation. In response to <c>CreateDataSourceFromS3</c>,
+    /// Amazon Machine Learning (Amazon ML) immediately returns and sets the <c>DataSource</c>
+    /// status to <c>PENDING</c>. After the <c>DataSource</c> has been created and is ready
+    /// for use, Amazon ML sets the <c>Status</c> parameter to <c>COMPLETED</c>. <c>DataSource</c>
+    /// in the <c>COMPLETED</c> or <c>PENDING</c> state can be used to perform only <c>CreateMLModel</c>,
+    /// <c>CreateEvaluation</c> or <c>CreateBatchPrediction</c> operations. 
     /// </para>
     ///  
     /// <para>
-    ///  If Amazon ML can't accept the input source, it sets the <code>Status</code> parameter
-    /// to <code>FAILED</code> and includes an error message in the <code>Message</code> attribute
-    /// of the <code>GetDataSource</code> operation response. 
+    ///  If Amazon ML can't accept the input source, it sets the <c>Status</c> parameter to
+    /// <c>FAILED</c> and includes an error message in the <c>Message</c> attribute of the
+    /// <c>GetDataSource</c> operation response. 
     /// </para>
     ///  
     /// <para>
-    /// The observation data used in a <code>DataSource</code> should be ready to use; that
-    /// is, it should have a consistent structure, and missing data values should be kept
-    /// to a minimum. The observation data must reside in one or more .csv files in an Amazon
-    /// Simple Storage Service (Amazon S3) location, along with a schema that describes the
-    /// data items by name and type. The same schema must be used for all of the data files
-    /// referenced by the <code>DataSource</code>. 
+    /// The observation data used in a <c>DataSource</c> should be ready to use; that is,
+    /// it should have a consistent structure, and missing data values should be kept to a
+    /// minimum. The observation data must reside in one or more .csv files in an Amazon Simple
+    /// Storage Service (Amazon S3) location, along with a schema that describes the data
+    /// items by name and type. The same schema must be used for all of the data files referenced
+    /// by the <c>DataSource</c>. 
     /// </para>
     ///  
     /// <para>
-    /// After the <code>DataSource</code> has been created, it's ready to use in evaluations
-    /// and batch predictions. If you plan to use the <code>DataSource</code> to train an
-    /// <code>MLModel</code>, the <code>DataSource</code> also needs a recipe. A recipe describes
-    /// how each input variable will be used in training an <code>MLModel</code>. Will the
-    /// variable be included or excluded from training? Will the variable be manipulated;
-    /// for example, will it be combined with another variable or will it be split apart into
-    /// word combinations? The recipe provides answers to these questions.
+    /// After the <c>DataSource</c> has been created, it's ready to use in evaluations and
+    /// batch predictions. If you plan to use the <c>DataSource</c> to train an <c>MLModel</c>,
+    /// the <c>DataSource</c> also needs a recipe. A recipe describes how each input variable
+    /// will be used in training an <c>MLModel</c>. Will the variable be included or excluded
+    /// from training? Will the variable be manipulated; for example, will it be combined
+    /// with another variable or will it be split apart into word combinations? The recipe
+    /// provides answers to these questions.
     /// </para>
     /// </summary>
     public partial class CreateDataSourceFromS3Request : AmazonMachineLearningRequest
@@ -81,11 +79,10 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property ComputeStatistics. 
         /// <para>
-        /// The compute statistics for a <code>DataSource</code>. The statistics are generated
-        /// from the observation data referenced by a <code>DataSource</code>. Amazon ML uses
-        /// the statistics internally during <code>MLModel</code> training. This parameter must
-        /// be set to <code>true</code> if the <code/>DataSource<code/> needs to be used for <code>MLModel</code>
-        /// training.
+        /// The compute statistics for a <c>DataSource</c>. The statistics are generated from
+        /// the observation data referenced by a <c>DataSource</c>. Amazon ML uses the statistics
+        /// internally during <c>MLModel</c> training. This parameter must be set to <c>true</c>
+        /// if the <code/>DataSource<code/> needs to be used for <c>MLModel</c> training.
         /// </para>
         /// </summary>
         public bool ComputeStatistics
@@ -103,7 +100,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSourceId. 
         /// <para>
-        /// A user-supplied identifier that uniquely identifies the <code>DataSource</code>. 
+        /// A user-supplied identifier that uniquely identifies the <c>DataSource</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -122,7 +119,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSourceName. 
         /// <para>
-        /// A user-supplied name or description of the <code>DataSource</code>. 
+        /// A user-supplied name or description of the <c>DataSource</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -141,7 +138,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property DataSpec. 
         /// <para>
-        /// The data specification of a <code>DataSource</code>:
+        /// The data specification of a <c>DataSource</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -149,22 +146,21 @@ namespace Amazon.MachineLearning.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DataSchemaLocationS3 - The Amazon S3 location of the <code>DataSchema</code>.
+        /// DataSchemaLocationS3 - The Amazon S3 location of the <c>DataSchema</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DataSchema - A JSON string representing the schema. This is not required if <code>DataSchemaUri</code>
+        /// DataSchema - A JSON string representing the schema. This is not required if <c>DataSchemaUri</c>
         /// is specified. 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// DataRearrangement - A JSON string that represents the splitting and rearrangement
-        /// requirements for the <code>Datasource</code>. 
+        /// requirements for the <c>Datasource</c>. 
         /// </para>
         ///  
         /// <para>
-        ///  Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
-        /// 
+        ///  Sample - <c> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

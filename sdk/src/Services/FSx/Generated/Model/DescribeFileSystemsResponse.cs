@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for <code>DescribeFileSystems</code> operation.
+    /// The response object for <c>DescribeFileSystems</c> operation.
     /// </summary>
     public partial class DescribeFileSystemsResponse : AmazonWebServiceResponse
     {
@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Present if there are more file systems than returned in the response (String). You
-        /// can use the <code>NextToken</code> value in the later request to fetch the descriptions.
+        /// can use the <c>NextToken</c> value in the later request to fetch the descriptions.
         /// 
         /// </para>
         /// </summary>

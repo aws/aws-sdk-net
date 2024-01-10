@@ -42,7 +42,7 @@ namespace Amazon.AWSSupport.Model
     ///  </li> <li> 
     /// <para>
     /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <c>SubscriptionRequiredException</c>
     /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
     /// Web Services Support</a>.
     /// </para>
@@ -57,8 +57,8 @@ namespace Amazon.AWSSupport.Model
         /// <para>
         /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
         /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean
-        /// (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter
-        /// if you want support in that language.
+        /// (“ko”). You must specify the ISO 639-1 code for the <c>language</c> parameter if you
+        /// want support in that language.
         /// </para>
         /// </summary>
         public string Language

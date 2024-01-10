@@ -30,8 +30,8 @@ namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
     /// An Image Builder image. You must specify exactly one recipe for the image – either
-    /// a container recipe (<code>containerRecipe</code>), which creates a container image,
-    /// or an image recipe (<code>imageRecipe</code>), which creates an AMI.
+    /// a container recipe (<c>containerRecipe</c>), which creates a container image, or an
+    /// image recipe (<c>imageRecipe</c>), which creates an AMI.
     /// </summary>
     public partial class Image
     {

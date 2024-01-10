@@ -98,7 +98,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The route state. The possible values are <code>active</code> and <code>blackhole</code>.
+        /// The route state. The possible values are <c>active</c> and <c>blackhole</c>.
         /// </para>
         /// </summary>
         public RouteState State
@@ -116,7 +116,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The route type. The possible values are <code>propagated</code> and <code>static</code>.
+        /// The route type. The possible values are <c>propagated</c> and <c>static</c>.
         /// </para>
         /// </summary>
         public RouteType Type

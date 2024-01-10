@@ -40,7 +40,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property LaunchTemplateSpecification. 
         /// <para>
         /// The launch template to use. Make sure that the launch template does not contain the
-        /// <code>NetworkInterfaceId</code> parameter because you can't specify a network interface
+        /// <c>NetworkInterfaceId</c> parameter because you can't specify a network interface
         /// ID in a Spot Fleet.
         /// </para>
         /// </summary>

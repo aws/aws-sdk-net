@@ -62,7 +62,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DlqEventQueueArn. 
         /// <para>
-        /// A valid Amazon dead-letter SQS ARN. For example, <code>arn:aws:sqs:region:account:deadLetterQueue</code>.
+        /// A valid Amazon dead-letter SQS ARN. For example, <c>arn:aws:sqs:region:account:deadLetterQueue</c>.
         /// </para>
         /// </summary>
         public string DlqEventQueueArn
@@ -80,7 +80,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EventQueueArn. 
         /// <para>
-        /// A valid Amazon SQS ARN. For example, <code>arn:aws:sqs:region:account:sqs</code>.
+        /// A valid Amazon SQS ARN. For example, <c>arn:aws:sqs:region:account:sqs</c>.
         /// </para>
         /// </summary>
         public string EventQueueArn

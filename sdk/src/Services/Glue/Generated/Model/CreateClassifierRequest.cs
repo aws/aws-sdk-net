@@ -30,9 +30,9 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateClassifier operation.
-    /// Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>,
-    /// an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>,
-    /// depending on which field of the request is present.
+    /// Creates a classifier in the user's account. This can be a <c>GrokClassifier</c>, an
+    /// <c>XMLClassifier</c>, a <c>JsonClassifier</c>, or a <c>CsvClassifier</c>, depending
+    /// on which field of the request is present.
     /// </summary>
     public partial class CreateClassifierRequest : AmazonGlueRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property CsvClassifier. 
         /// <para>
-        /// A <code>CsvClassifier</code> object specifying the classifier to create.
+        /// A <c>CsvClassifier</c> object specifying the classifier to create.
         /// </para>
         /// </summary>
         public CreateCsvClassifierRequest CsvClassifier
@@ -62,7 +62,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property GrokClassifier. 
         /// <para>
-        /// A <code>GrokClassifier</code> object specifying the classifier to create.
+        /// A <c>GrokClassifier</c> object specifying the classifier to create.
         /// </para>
         /// </summary>
         public CreateGrokClassifierRequest GrokClassifier
@@ -80,7 +80,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JsonClassifier. 
         /// <para>
-        /// A <code>JsonClassifier</code> object specifying the classifier to create.
+        /// A <c>JsonClassifier</c> object specifying the classifier to create.
         /// </para>
         /// </summary>
         public CreateJsonClassifierRequest JsonClassifier
@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property XMLClassifier. 
         /// <para>
-        /// An <code>XMLClassifier</code> object specifying the classifier to create.
+        /// An <c>XMLClassifier</c> object specifying the classifier to create.
         /// </para>
         /// </summary>
         public CreateXMLClassifierRequest XMLClassifier

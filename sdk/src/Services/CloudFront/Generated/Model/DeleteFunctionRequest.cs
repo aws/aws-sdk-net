@@ -40,8 +40,8 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  
     /// <para>
-    /// To delete a function, you must provide the function's name and version (<code>ETag</code>
-    /// value). To get these values, you can use <code>ListFunctions</code> and <code>DescribeFunction</code>.
+    /// To delete a function, you must provide the function's name and version (<c>ETag</c>
+    /// value). To get these values, you can use <c>ListFunctions</c> and <c>DescribeFunction</c>.
     /// </para>
     /// </summary>
     public partial class DeleteFunctionRequest : AmazonCloudFrontRequest
@@ -52,8 +52,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IfMatch. 
         /// <para>
-        /// The current version (<code>ETag</code> value) of the function that you are deleting,
-        /// which you can get using <code>DescribeFunction</code>.
+        /// The current version (<c>ETag</c> value) of the function that you are deleting, which
+        /// you can get using <c>DescribeFunction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

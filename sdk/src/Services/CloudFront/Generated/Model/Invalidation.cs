@@ -65,7 +65,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the invalidation request. For example: <code>IDFDVBD632BHDS5</code>.
+        /// The identifier for the invalidation request. For example: <c>IDFDVBD632BHDS5</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,7 +104,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the invalidation request. When the invalidation batch is finished, the
-        /// status is <code>Completed</code>.
+        /// status is <c>Completed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

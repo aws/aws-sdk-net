@@ -40,7 +40,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// Gets and sets the property Predefined. 
         /// <para>
         /// A string value representing Predefined Output Resolution for a stacking operation.
-        /// Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and <code>AVERAGE</code>.
+        /// Allowed values are <c>HIGHEST</c>, <c>LOWEST</c>, and <c>AVERAGE</c>.
         /// </para>
         /// </summary>
         public PredefinedResolution Predefined

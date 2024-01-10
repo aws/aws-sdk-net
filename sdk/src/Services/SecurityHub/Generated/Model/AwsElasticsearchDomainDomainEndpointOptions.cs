@@ -66,11 +66,11 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Policy-Min-TLS-1-0-2019-07</code>, which supports TLSv1.0 and higher
+        ///  <c>Policy-Min-TLS-1-0-2019-07</c>, which supports TLSv1.0 and higher
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Policy-Min-TLS-1-2-2019-07</code>, which only supports TLSv1.2
+        ///  <c>Policy-Min-TLS-1-2-2019-07</c>, which only supports TLSv1.2
         /// </para>
         ///  </li> </ul>
         /// </summary>

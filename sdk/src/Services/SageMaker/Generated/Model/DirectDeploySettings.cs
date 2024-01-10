@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     ///  <note> 
     /// <para>
     /// In order to enable model deployment for Canvas, the SageMaker Domain's or user profile's
-    /// Amazon Web Services IAM execution role must have the <code>AmazonSageMakerCanvasDirectDeployAccess</code>
+    /// Amazon Web Services IAM execution role must have the <c>AmazonSageMakerCanvasDirectDeployAccess</c>
     /// policy attached. You can also turn on model deployment permissions through the SageMaker
     /// Domain's or user profile's settings in the SageMaker console.
     /// </para>

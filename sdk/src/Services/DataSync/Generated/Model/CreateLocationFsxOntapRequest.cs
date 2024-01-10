@@ -129,7 +129,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// You can specify a junction path (also known as a mount point), qtree path (for NFS
         /// file shares), or share name (for SMB file shares). For example, your mount path might
-        /// be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.
+        /// be <c>/vol1</c>, <c>/vol1/tree1</c>, or <c>/share1</c>.
         /// </para>
         ///  <note> 
         /// <para>

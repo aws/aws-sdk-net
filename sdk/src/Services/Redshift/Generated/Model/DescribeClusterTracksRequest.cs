@@ -61,11 +61,11 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// An optional parameter that specifies the starting point to return a set of response
-        /// records. When the results of a <code>DescribeClusterTracks</code> request exceed the
-        /// value specified in <code>MaxRecords</code>, Amazon Redshift returns a value in the
-        /// <code>Marker</code> field of the response. You can retrieve the next set of response
-        /// records by providing the returned marker value in the <code>Marker</code> parameter
-        /// and retrying the request. 
+        /// records. When the results of a <c>DescribeClusterTracks</c> request exceed the value
+        /// specified in <c>MaxRecords</c>, Amazon Redshift returns a value in the <c>Marker</c>
+        /// field of the response. You can retrieve the next set of response records by providing
+        /// the returned marker value in the <c>Marker</c> parameter and retrying the request.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

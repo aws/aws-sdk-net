@@ -69,11 +69,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DocsToInvestigate. 
         /// <para>
         ///  Indicates the number of documents to preview to determine the document organization.
-        /// Use this setting when <code>NestingLevel</code> is set to <code>"one"</code>. 
+        /// Use this setting when <c>NestingLevel</c> is set to <c>"one"</c>. 
         /// </para>
         ///  
         /// <para>
-        /// Must be a positive value greater than <code>0</code>. Default value is <code>1000</code>.
+        /// Must be a positive value greater than <c>0</c>. Default value is <c>1000</c>.
         /// </para>
         /// </summary>
         public int DocsToInvestigate
@@ -91,12 +91,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ExtractDocId. 
         /// <para>
-        ///  Specifies the document ID. Use this setting when <code>NestingLevel</code> is set
-        /// to <code>"none"</code>. 
+        ///  Specifies the document ID. Use this setting when <c>NestingLevel</c> is set to <c>"none"</c>.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// Default value is <code>"false"</code>. 
+        /// Default value is <c>"false"</c>. 
         /// </para>
         /// </summary>
         public bool ExtractDocId
@@ -115,9 +115,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The KMS key identifier that is used to encrypt the content on the replication instance.
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
-        /// your default encryption key. KMS creates the default encryption key for your Amazon
-        /// Web Services account. Your Amazon Web Services account has a different default encryption
+        /// If you don't specify a value for the <c>KmsKeyId</c> parameter, then DMS uses your
+        /// default encryption key. KMS creates the default encryption key for your Amazon Web
+        /// Services account. Your Amazon Web Services account has a different default encryption
         /// key for each Amazon Web Services Region.
         /// </para>
         /// </summary>
@@ -140,8 +140,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Default value is <code>"none"</code>. Specify <code>"none"</code> to use document
-        /// mode. Specify <code>"one"</code> to use table mode.
+        /// Default value is <c>"none"</c>. Specify <c>"none"</c> to use document mode. Specify
+        /// <c>"one"</c> to use table mode.
         /// </para>
         /// </summary>
         public NestingLevelValue NestingLevel
@@ -197,20 +197,20 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReplicateShardCollections. 
         /// <para>
-        /// If <code>true</code>, DMS replicates data to shard collections. DMS only uses this
-        /// setting if the target endpoint is a DocumentDB elastic cluster.
+        /// If <c>true</c>, DMS replicates data to shard collections. DMS only uses this setting
+        /// if the target endpoint is a DocumentDB elastic cluster.
         /// </para>
         ///  
         /// <para>
-        /// When this setting is <code>true</code>, note the following:
+        /// When this setting is <c>true</c>, note the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// You must set <code>TargetTablePrepMode</code> to <code>nothing</code>.
+        /// You must set <c>TargetTablePrepMode</c> to <c>nothing</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DMS automatically sets <code>useUpdateLookup</code> to <code>false</code>.
+        /// DMS automatically sets <c>useUpdateLookup</c> to <c>false</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -230,19 +230,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
-        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
-        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
-        /// to the DocumentDB endpoint.
+        /// entity and grants the required permissions to access the value in <c>SecretsManagerSecret</c>.
+        /// The role must allow the <c>iam:PassRole</c> action. <c>SecretsManagerSecret</c> has
+        /// the value of the Amazon Web Services Secrets Manager secret that allows access to
+        /// the DocumentDB endpoint.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
-        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
-        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
-        /// and <code>Port</code>. You can't specify both. For more information on creating this
-        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// values for this setting and <c>SecretsManagerSecretId</c>. Or you can specify clear-text
+        /// values for <c>UserName</c>, <c>Password</c>, <c>ServerName</c>, and <c>Port</c>. You
+        /// can't specify both. For more information on creating this <c>SecretsManagerSecret</c>
+        /// and the <c>SecretsManagerAccessRoleArn</c> and <c>SecretsManagerSecretId</c> required
+        /// to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
         /// Service User Guide</i>.
         /// </para>
@@ -263,8 +263,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerSecretId. 
         /// <para>
-        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
-        /// that contains the DocumentDB endpoint connection details.
+        /// The full ARN, partial ARN, or friendly name of the <c>SecretsManagerSecret</c> that
+        /// contains the DocumentDB endpoint connection details.
         /// </para>
         /// </summary>
         public string SecretsManagerSecretId
@@ -318,10 +318,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property UseUpdateLookUp. 
         /// <para>
-        /// If <code>true</code>, DMS retrieves the entire document from the DocumentDB source
-        /// during migration. This may cause a migration failure if the server response exceeds
-        /// bandwidth limits. To fetch only updates and deletes during migration, set this parameter
-        /// to <code>false</code>.
+        /// If <c>true</c>, DMS retrieves the entire document from the DocumentDB source during
+        /// migration. This may cause a migration failure if the server response exceeds bandwidth
+        /// limits. To fetch only updates and deletes during migration, set this parameter to
+        /// <c>false</c>.
         /// </para>
         /// </summary>
         public bool UseUpdateLookUp

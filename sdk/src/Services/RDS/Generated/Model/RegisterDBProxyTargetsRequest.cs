@@ -30,7 +30,7 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterDBProxyTargets operation.
-    /// Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
+    /// Associate one or more <c>DBProxyTarget</c> data structures with a <c>DBProxyTargetGroup</c>.
     /// </summary>
     public partial class RegisterDBProxyTargetsRequest : AmazonRDSRequest
     {
@@ -78,7 +78,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyName. 
         /// <para>
-        /// The identifier of the <code>DBProxy</code> that is associated with the <code>DBProxyTargetGroup</code>.
+        /// The identifier of the <c>DBProxy</c> that is associated with the <c>DBProxyTargetGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -97,7 +97,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property TargetGroupName. 
         /// <para>
-        /// The identifier of the <code>DBProxyTargetGroup</code>.
+        /// The identifier of the <c>DBProxyTargetGroup</c>.
         /// </para>
         /// </summary>
         public string TargetGroupName

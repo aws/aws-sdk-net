@@ -47,10 +47,10 @@ namespace Amazon.TimestreamWrite.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  In this case, if Timestream rejects data, the <code>ExistingVersion</code> field
-    /// in the <code>RejectedRecords</code> response will indicate the current record’s version.
-    /// To force an update, you can resend the request with a version for the record set to
-    /// a value greater than the <code>ExistingVersion</code>.
+    ///  In this case, if Timestream rejects data, the <c>ExistingVersion</c> field in the
+    /// <c>RejectedRecords</c> response will indicate the current record’s version. To force
+    /// an update, you can resend the request with a version for the record set to a value
+    /// greater than the <c>ExistingVersion</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>

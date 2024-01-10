@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Chime.Model
 {
     /// <summary>
-    /// Summary of the messages in a <code>Channel</code>.
+    /// Summary of the messages in a <c>Channel</c>.
     /// </summary>
     public partial class ChannelMessageSummary
     {

@@ -105,7 +105,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If the inference component status is <code>Failed</code>, the reason for the failure.
+        /// If the inference component status is <c>Failed</c>, the reason for the failure.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

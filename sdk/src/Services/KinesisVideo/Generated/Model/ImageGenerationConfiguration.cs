@@ -85,12 +85,12 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property FormatConfig. 
         /// <para>
         /// The list of a key-value pair structure that contains extra parameters that can be
-        /// applied when the image is generated. The <code>FormatConfig</code> key is the <code>JPEGQuality</code>,
-        /// which indicates the JPEG quality key to be used to generate the image. The <code>FormatConfig</code>
+        /// applied when the image is generated. The <c>FormatConfig</c> key is the <c>JPEGQuality</c>,
+        /// which indicates the JPEG quality key to be used to generate the image. The <c>FormatConfig</c>
         /// value accepts ints from 1 to 100. If the value is 1, the image will be generated with
         /// less quality and the best compression. If the value is 100, the image will be generated
         /// with the best quality and less compression. If no value is provided, the default value
-        /// of the <code>JPEGQuality</code> key will be set to 80.
+        /// of the <c>JPEGQuality</c> key will be set to 80.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -109,12 +109,11 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property HeightPixels. 
         /// <para>
-        /// The height of the output image that is used in conjunction with the <code>WidthPixels</code>
-        /// parameter. When both <code>HeightPixels</code> and <code>WidthPixels</code> parameters
-        /// are provided, the image will be stretched to fit the specified aspect ratio. If only
-        /// the <code>HeightPixels</code> parameter is provided, its original aspect ratio will
-        /// be used to calculate the <code>WidthPixels</code> ratio. If neither parameter is provided,
-        /// the original image size will be returned.
+        /// The height of the output image that is used in conjunction with the <c>WidthPixels</c>
+        /// parameter. When both <c>HeightPixels</c> and <c>WidthPixels</c> parameters are provided,
+        /// the image will be stretched to fit the specified aspect ratio. If only the <c>HeightPixels</c>
+        /// parameter is provided, its original aspect ratio will be used to calculate the <c>WidthPixels</c>
+        /// ratio. If neither parameter is provided, the original image size will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2160)]
@@ -154,8 +153,8 @@ namespace Amazon.KinesisVideo.Model
         /// <para>
         /// The time interval in milliseconds (ms) at which the images need to be generated from
         /// the stream. The minimum value that can be provided is 200 ms. If the timestamp range
-        /// is less than the sampling interval, the Image from the <code>StartTimestamp</code>
-        /// will be returned if available. 
+        /// is less than the sampling interval, the Image from the <c>StartTimestamp</c> will
+        /// be returned if available. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -174,8 +173,8 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Indicates whether the <code>ContinuousImageGenerationConfigurations</code> API is
-        /// enabled or disabled.
+        /// Indicates whether the <c>ContinuousImageGenerationConfigurations</c> API is enabled
+        /// or disabled.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -194,12 +193,11 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property WidthPixels. 
         /// <para>
-        /// The width of the output image that is used in conjunction with the <code>HeightPixels</code>
-        /// parameter. When both <code>WidthPixels</code> and <code>HeightPixels</code> parameters
-        /// are provided, the image will be stretched to fit the specified aspect ratio. If only
-        /// the <code>WidthPixels</code> parameter is provided, its original aspect ratio will
-        /// be used to calculate the <code>HeightPixels</code> ratio. If neither parameter is
-        /// provided, the original image size will be returned.
+        /// The width of the output image that is used in conjunction with the <c>HeightPixels</c>
+        /// parameter. When both <c>WidthPixels</c> and <c>HeightPixels</c> parameters are provided,
+        /// the image will be stretched to fit the specified aspect ratio. If only the <c>WidthPixels</c>
+        /// parameter is provided, its original aspect ratio will be used to calculate the <c>HeightPixels</c>
+        /// ratio. If neither parameter is provided, the original image size will be returned.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3840)]

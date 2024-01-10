@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>BarChartVisual</code>.
+    /// The configuration of a <c>BarChartVisual</c>.
     /// </summary>
     public partial class BarChartConfiguration
     {
@@ -206,15 +206,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HORIZONTAL</code>: Used for charts that have horizontal bars. Visuals that
-        /// use this value are horizontal bar charts, horizontal stacked bar charts, and horizontal
-        /// stacked 100% bar charts.
+        ///  <c>HORIZONTAL</c>: Used for charts that have horizontal bars. Visuals that use this
+        /// value are horizontal bar charts, horizontal stacked bar charts, and horizontal stacked
+        /// 100% bar charts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VERTICAL</code>: Used for charts that have vertical bars. Visuals that use
-        /// this value are vertical bar charts, vertical stacked bar charts, and vertical stacked
-        /// 100% bar charts.
+        ///  <c>VERTICAL</c>: Used for charts that have vertical bars. Visuals that use this value
+        /// are vertical bar charts, vertical stacked bar charts, and vertical stacked 100% bar
+        /// charts.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -270,7 +270,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration of a <code>BarChartVisual</code>.
+        /// The sort configuration of a <c>BarChartVisual</c>.
         /// </para>
         /// </summary>
         public BarChartSortConfiguration SortConfiguration

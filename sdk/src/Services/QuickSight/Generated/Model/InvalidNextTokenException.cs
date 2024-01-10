@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The <code>NextToken</code> value isn't valid.
+    /// The <c>NextToken</c> value isn't valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -31,8 +31,8 @@ namespace Amazon.ComprehendMedical.Model
     /// <summary>
     /// The detected attributes that relate to an entity. This includes an extracted segment
     /// of the text that is an attribute of an entity, or otherwise related to an entity.
-    /// InferICD10CM detects the following attributes: <code>Direction</code>, <code>System,
-    /// Organ or Site</code>, and <code>Acuity</code>.
+    /// InferICD10CM detects the following attributes: <c>Direction</c>, <c>System, Organ
+    /// or Site</c>, and <c>Acuity</c>.
     /// </summary>
     public partial class ICD10CMAttribute
     {
@@ -69,7 +69,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+        /// The category of attribute. Can be either of <c>DX_NAME</c> or <c>TIME_EXPRESSION</c>.
         /// </para>
         /// </summary>
         public ICD10CMEntityType Category
@@ -145,7 +145,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property RelationshipType. 
         /// <para>
         /// The type of relationship between the entity and attribute. Type for the relationship
-        /// can be either of <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+        /// can be either of <c>OVERLAP</c> or <c>SYSTEM_ORGAN_SITE</c>.
         /// </para>
         /// </summary>
         public ICD10CMRelationshipType RelationshipType
@@ -202,7 +202,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Traits. 
         /// <para>
         /// The contextual information for the attribute. The traits recognized by InferICD10CM
-        /// are <code>DIAGNOSIS</code>, <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.
+        /// are <c>DIAGNOSIS</c>, <c>SIGN</c>, <c>SYMPTOM</c>, and <c>NEGATION</c>.
         /// </para>
         /// </summary>
         public List<ICD10CMTrait> Traits
@@ -220,8 +220,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of attribute. InferICD10CM detects entities of the type <code>DX_NAME</code>.
-        /// 
+        /// The type of attribute. InferICD10CM detects entities of the type <c>DX_NAME</c>. 
         /// </para>
         /// </summary>
         public ICD10CMAttributeType Type

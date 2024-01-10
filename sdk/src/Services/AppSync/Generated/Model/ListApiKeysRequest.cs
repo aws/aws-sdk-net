@@ -36,8 +36,7 @@ namespace Amazon.AppSync.Model
     /// <para>
     /// API keys are deleted automatically 60 days after they expire. However, they may still
     /// be included in the response until they have actually been deleted. You can safely
-    /// call <code>DeleteApiKey</code> to manually delete a key before it's automatically
-    /// deleted.
+    /// call <c>DeleteApiKey</c> to manually delete a key before it's automatically deleted.
     /// </para>
     ///  </note>
     /// </summary>

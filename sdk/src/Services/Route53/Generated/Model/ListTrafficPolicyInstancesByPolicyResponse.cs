@@ -43,8 +43,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyInstances. 
         /// <para>
-        /// A list that contains one <code>TrafficPolicyInstance</code> element for each traffic
-        /// policy instance that matches the elements in the request.
+        /// A list that contains one <c>TrafficPolicyInstance</c> element for each traffic policy
+        /// instance that matches the elements in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,9 +63,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property HostedZoneIdMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, <code>HostedZoneIdMarker</code>
-        /// is the ID of the hosted zone of the first traffic policy instance in the next group
-        /// of traffic policy instances.
+        /// If <c>IsTruncated</c> is <c>true</c>, <c>HostedZoneIdMarker</c> is the ID of the hosted
+        /// zone of the first traffic policy instance in the next group of traffic policy instances.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -84,9 +83,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyInstanceNameMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceNameMarker</code>
-        /// is the name of the first traffic policy instance in the next group of <code>MaxItems</code>
-        /// traffic policy instances.
+        /// If <c>IsTruncated</c> is <c>true</c>, <c>TrafficPolicyInstanceNameMarker</c> is the
+        /// name of the first traffic policy instance in the next group of <c>MaxItems</c> traffic
+        /// policy instances.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]
@@ -105,9 +104,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyInstanceTypeMarker. 
         /// <para>
-        /// If <code>IsTruncated</code> is <code>true</code>, <code>TrafficPolicyInstanceTypeMarker</code>
-        /// is the DNS type of the resource record sets that are associated with the first traffic
-        /// policy instance in the next group of <code>MaxItems</code> traffic policy instances.
+        /// If <c>IsTruncated</c> is <c>true</c>, <c>TrafficPolicyInstanceTypeMarker</c> is the
+        /// DNS type of the resource record sets that are associated with the first traffic policy
+        /// instance in the next group of <c>MaxItems</c> traffic policy instances.
         /// </para>
         /// </summary>
         public RRType TrafficPolicyInstanceTypeMarker
@@ -127,10 +126,9 @@ namespace Amazon.Route53.Model
         /// <para>
         /// A flag that indicates whether there are more traffic policy instances to be listed.
         /// If the response was truncated, you can get the next group of traffic policy instances
-        /// by calling <code>ListTrafficPolicyInstancesByPolicy</code> again and specifying the
-        /// values of the <code>HostedZoneIdMarker</code>, <code>TrafficPolicyInstanceNameMarker</code>,
-        /// and <code>TrafficPolicyInstanceTypeMarker</code> elements in the corresponding request
-        /// parameters.
+        /// by calling <c>ListTrafficPolicyInstancesByPolicy</c> again and specifying the values
+        /// of the <c>HostedZoneIdMarker</c>, <c>TrafficPolicyInstanceNameMarker</c>, and <c>TrafficPolicyInstanceTypeMarker</c>
+        /// elements in the corresponding request parameters.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -149,8 +147,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property MaxItems. 
         /// <para>
-        /// The value that you specified for the <code>MaxItems</code> parameter in the call to
-        /// <code>ListTrafficPolicyInstancesByPolicy</code> that produced the current response.
+        /// The value that you specified for the <c>MaxItems</c> parameter in the call to <c>ListTrafficPolicyInstancesByPolicy</c>
+        /// that produced the current response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -39,8 +39,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to retrieve the next page of results. The value is <code>null</code> when
-        /// there are no results to return.
+        /// The token to retrieve the next page of results. The value is <c>null</c> when there
+        /// are no results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

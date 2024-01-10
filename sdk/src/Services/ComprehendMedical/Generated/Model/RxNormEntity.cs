@@ -52,8 +52,8 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// The extracted attributes that relate to the entity. The attributes recognized by InferRxNorm
-        /// are <code>DOSAGE</code>, <code>DURATION</code>, <code>FORM</code>, <code>FREQUENCY</code>,
-        /// <code>RATE</code>, <code>ROUTE_OR_MODE</code>, and <code>STRENGTH</code>.
+        /// are <c>DOSAGE</c>, <c>DURATION</c>, <c>FORM</c>, <c>FREQUENCY</c>, <c>RATE</c>, <c>ROUTE_OR_MODE</c>,
+        /// and <c>STRENGTH</c>.
         /// </para>
         /// </summary>
         public List<RxNormAttribute> Attributes
@@ -90,8 +90,7 @@ namespace Amazon.ComprehendMedical.Model
         /// <summary>
         /// Gets and sets the property Category. 
         /// <para>
-        /// The category of the entity. The recognized categories are <code>GENERIC</code> or
-        /// <code>BRAND_NAME</code>.
+        /// The category of the entity. The recognized categories are <c>GENERIC</c> or <c>BRAND_NAME</c>.
         /// </para>
         /// </summary>
         public RxNormEntityCategory Category
@@ -223,7 +222,7 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  Describes the specific type of entity. For InferRxNorm, the recognized entity type
-        /// is <code>MEDICATION</code>.
+        /// is <c>MEDICATION</c>.
         /// </para>
         /// </summary>
         public RxNormEntityType Type

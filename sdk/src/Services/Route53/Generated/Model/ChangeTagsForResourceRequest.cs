@@ -52,11 +52,11 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The resource type for health checks is <code>healthcheck</code>.
+        /// The resource type for health checks is <c>healthcheck</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The resource type for hosted zones is <code>hostedzone</code>.
+        /// The resource type for hosted zones is <c>hostedzone</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -96,8 +96,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property AddTags. 
         /// <para>
         /// A complex type that contains a list of the tags that you want to add to the specified
-        /// health check or hosted zone and/or the tags that you want to edit <code>Value</code>
-        /// for.
+        /// health check or hosted zone and/or the tags that you want to edit <c>Value</c> for.
         /// </para>
         ///  
         /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// A structure that identifies filter criteria for <code>GetCoverageStatistics</code>.
+    /// A structure that identifies filter criteria for <c>GetCoverageStatistics</c>.
     /// </summary>
     public partial class CoverageFilterCriteria
     {
@@ -223,8 +223,7 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// An array of Amazon Web Services resource types to return coverage statistics for.
-        /// The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>
-        /// or <code>AWS_ECR_REPOSITORY</code>.
+        /// The values can be <c>AWS_EC2_INSTANCE</c>, <c>AWS_LAMBDA_FUNCTION</c> or <c>AWS_ECR_REPOSITORY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -243,9 +242,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property ScanStatusCode. 
         /// <para>
-        /// The scan status code to filter on. Valid values are: <code>ValidationException</code>,
-        /// <code>InternalServerException</code>, <code>ResourceNotFoundException</code>, <code>BadRequestException</code>,
-        /// and <code>ThrottlingException</code>.
+        /// The scan status code to filter on. Valid values are: <c>ValidationException</c>, <c>InternalServerException</c>,
+        /// <c>ResourceNotFoundException</c>, <c>BadRequestException</c>, and <c>ThrottlingException</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

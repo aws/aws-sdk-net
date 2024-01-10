@@ -39,8 +39,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ETag. 
         /// <para>
-        /// The value of the <code>ETag</code> header that you received when updating the configuration.
-        /// For example: <code>E2QWRUHAPOMQZL</code>.
+        /// The value of the <c>ETag</c> header that you received when updating the configuration.
+        /// For example: <c>E2QWRUHAPOMQZL</c>.
         /// </para>
         /// </summary>
         public string ETag

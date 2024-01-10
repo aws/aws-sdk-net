@@ -40,15 +40,14 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property AmbiguousRoleResolution. 
         /// <para>
-        /// If you specify Token or Rules as the <code>Type</code>, <code>AmbiguousRoleResolution</code>
-        /// is required.
+        /// If you specify Token or Rules as the <c>Type</c>, <c>AmbiguousRoleResolution</c> is
+        /// required.
         /// </para>
         ///  
         /// <para>
         /// Specifies the action to be taken if either no rules match the claim value for the
-        /// <code>Rules</code> type, or there is no <code>cognito:preferred_role</code> claim
-        /// and there are multiple <code>cognito:roles</code> matches for the <code>Token</code>
-        /// type.
+        /// <c>Rules</c> type, or there is no <c>cognito:preferred_role</c> claim and there are
+        /// multiple <c>cognito:roles</c> matches for the <c>Token</c> type.
         /// </para>
         /// </summary>
         public AmbiguousRoleResolutionType AmbiguousRoleResolution
@@ -70,8 +69,7 @@ namespace Amazon.CognitoIdentity.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify Rules as the role mapping type, <code>RulesConfiguration</code> is
-        /// required.
+        /// If you specify Rules as the role mapping type, <c>RulesConfiguration</c> is required.
         /// </para>
         /// </summary>
         public RulesConfigurationType RulesConfiguration
@@ -89,7 +87,7 @@ namespace Amazon.CognitoIdentity.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The role mapping type. Token will use <code>cognito:roles</code> and <code>cognito:preferred_role</code>
+        /// The role mapping type. Token will use <c>cognito:roles</c> and <c>cognito:preferred_role</c>
         /// claims from the Cognito identity provider token to map groups to roles. Rules will
         /// attempt to match claims from the token to map to a role.
         /// </para>

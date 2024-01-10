@@ -32,8 +32,8 @@ namespace Amazon.Elasticsearch.Model
     /// Status of the advanced options for the specified Elasticsearch domain. Currently,
     /// the following advanced options are available:
     /// 
-    ///  <ul> <li>Option to allow references to indices in an HTTP request body. Must be <code>false</code>
-    /// when configuring access to individual sub-resources. By default, the value is <code>true</code>.
+    ///  <ul> <li>Option to allow references to indices in an HTTP request body. Must be <c>false</c>
+    /// when configuring access to individual sub-resources. By default, the value is <c>true</c>.
     /// See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomain-configure-advanced-options"
     /// target="_blank">Configuration Advanced Options</a> for more information.</li> <li>Option
     /// to specify the percentage of heap space that is allocated to field data. By default,
@@ -70,7 +70,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  Specifies the status of <code>OptionStatus</code> for advanced options for the specified
+        ///  Specifies the status of <c>OptionStatus</c> for advanced options for the specified
         /// Elasticsearch domain.
         /// </para>
         /// </summary>

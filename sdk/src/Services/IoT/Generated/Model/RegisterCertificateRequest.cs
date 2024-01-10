@@ -93,7 +93,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ACTIVE | INACTIVE</code> 
+        /// Valid values: <c>ACTIVE | INACTIVE</c> 
         /// </para>
         /// </summary>
         [Obsolete("This property is deprecated")]
@@ -113,7 +113,7 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the register certificate request. Valid values that you can use include
-        /// <code>ACTIVE</code>, <code>INACTIVE</code>, and <code>REVOKED</code>.
+        /// <c>ACTIVE</c>, <c>INACTIVE</c>, and <c>REVOKED</c>.
         /// </para>
         /// </summary>
         public CertificateStatus Status

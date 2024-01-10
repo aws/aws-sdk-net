@@ -123,19 +123,19 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security
+        ///  <c>SEND_FINDINGS_TO_SECURITY_HUB</c> - The integration sends findings to Security
         /// Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings
-        /// from Security Hub.
+        ///  <c>RECEIVE_FINDINGS_FROM_SECURITY_HUB</c> - The integration receives findings from
+        /// Security Hub.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new
-        /// findings to Security Hub, but does make updates to the findings that it receives from
-        /// Security Hub.
+        ///  <c>UPDATE_FINDINGS_IN_SECURITY_HUB</c> - The integration does not send new findings
+        /// to Security Hub, but does make updates to the findings that it receives from Security
+        /// Hub.
         /// </para>
         ///  </li> </ul>
         /// </summary>

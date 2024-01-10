@@ -100,7 +100,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// To get a page token, perform an initial <code>GetAlarms</code> request. If your results
+        /// To get a page token, perform an initial <c>GetAlarms</c> request. If your results
         /// are paginated, the response will return a next page token that you can specify as
         /// the page token in a subsequent request.
         /// </para>

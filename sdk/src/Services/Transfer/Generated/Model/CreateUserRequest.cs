@@ -31,12 +31,11 @@ namespace Amazon.Transfer.Model
     /// <summary>
     /// Container for the parameters to the CreateUser operation.
     /// Creates a user and associates them with an existing file transfer protocol-enabled
-    /// server. You can only create and associate users with servers that have the <code>IdentityProviderType</code>
-    /// set to <code>SERVICE_MANAGED</code>. Using parameters for <code>CreateUser</code>,
-    /// you can specify the user name, set the home directory, store the user's public key,
-    /// and assign the user's Identity and Access Management (IAM) role. You can also optionally
-    /// add a session policy, and assign metadata with tags that can be used to group and
-    /// search for users.
+    /// server. You can only create and associate users with servers that have the <c>IdentityProviderType</c>
+    /// set to <c>SERVICE_MANAGED</c>. Using parameters for <c>CreateUser</c>, you can specify
+    /// the user name, set the home directory, store the user's public key, and assign the
+    /// user's Identity and Access Management (IAM) role. You can also optionally add a session
+    /// policy, and assign metadata with tags that can be used to group and search for users.
     /// </summary>
     public partial class CreateUserRequest : AmazonTransferRequest
     {
@@ -59,12 +58,12 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// A <code>HomeDirectory</code> example is <code>/bucket_name/home/mydirectory</code>.
+        /// A <c>HomeDirectory</c> example is <c>/bucket_name/home/mydirectory</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>HomeDirectory</code> parameter is only used if <code>HomeDirectoryType</code>
-        /// is set to <code>PATH</code>.
+        /// The <c>HomeDirectory</c> parameter is only used if <c>HomeDirectoryType</c> is set
+        /// to <c>PATH</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -86,35 +85,35 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Logical directory mappings that specify what Amazon S3 or Amazon EFS paths and keys
         /// should be visible to your user and how you want to make them visible. You must specify
-        /// the <code>Entry</code> and <code>Target</code> pair, where <code>Entry</code> shows
-        /// how the path is made visible and <code>Target</code> is the actual Amazon S3 or Amazon
-        /// EFS path. If you only specify a target, it is displayed as is. You also must ensure
-        /// that your Identity and Access Management (IAM) role provides access to paths in <code>Target</code>.
-        /// This value can be set only when <code>HomeDirectoryType</code> is set to <i>LOGICAL</i>.
+        /// the <c>Entry</c> and <c>Target</c> pair, where <c>Entry</c> shows how the path is
+        /// made visible and <c>Target</c> is the actual Amazon S3 or Amazon EFS path. If you
+        /// only specify a target, it is displayed as is. You also must ensure that your Identity
+        /// and Access Management (IAM) role provides access to paths in <c>Target</c>. This value
+        /// can be set only when <c>HomeDirectoryType</c> is set to <i>LOGICAL</i>.
         /// </para>
         ///  
         /// <para>
-        /// The following is an <code>Entry</code> and <code>Target</code> pair example.
+        /// The following is an <c>Entry</c> and <c>Target</c> pair example.
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</code>
+        ///  <c>[ { "Entry": "/directory1", "Target": "/bucket_name/home/mydirectory" } ]</c>
         /// 
         /// </para>
         ///  
         /// <para>
         /// In most cases, you can use this value instead of the session policy to lock your user
-        /// down to the designated home directory ("<code>chroot</code>"). To do this, you can
-        /// set <code>Entry</code> to <code>/</code> and set <code>Target</code> to the value
-        /// the user should see for their home directory when they log in.
+        /// down to the designated home directory ("<c>chroot</c>"). To do this, you can set <c>Entry</c>
+        /// to <c>/</c> and set <c>Target</c> to the value the user should see for their home
+        /// directory when they log in.
         /// </para>
         ///  
         /// <para>
-        /// The following is an <code>Entry</code> and <code>Target</code> pair example for <code>chroot</code>.
+        /// The following is an <c>Entry</c> and <c>Target</c> pair example for <c>chroot</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</code> 
+        ///  <c>[ { "Entry": "/", "Target": "/bucket_name/home/mydirectory" } ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50000)]
@@ -134,19 +133,18 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property HomeDirectoryType. 
         /// <para>
         /// The type of landing directory (folder) that you want your users' home directory to
-        /// be when they log in to the server. If you set it to <code>PATH</code>, the user will
-        /// see the absolute Amazon S3 bucket or Amazon EFS path as is in their file transfer
-        /// protocol clients. If you set it to <code>LOGICAL</code>, you need to provide mappings
-        /// in the <code>HomeDirectoryMappings</code> for how you want to make Amazon S3 or Amazon
-        /// EFS paths visible to your users.
+        /// be when they log in to the server. If you set it to <c>PATH</c>, the user will see
+        /// the absolute Amazon S3 bucket or Amazon EFS path as is in their file transfer protocol
+        /// clients. If you set it to <c>LOGICAL</c>, you need to provide mappings in the <c>HomeDirectoryMappings</c>
+        /// for how you want to make Amazon S3 or Amazon EFS paths visible to your users.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>HomeDirectoryType</code> is <code>LOGICAL</code>, you must provide mappings,
-        /// using the <code>HomeDirectoryMappings</code> parameter. If, on the other hand, <code>HomeDirectoryType</code>
-        /// is <code>PATH</code>, you provide an absolute path using the <code>HomeDirectory</code>
-        /// parameter. You cannot have both <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code>
-        /// in your template.
+        /// If <c>HomeDirectoryType</c> is <c>LOGICAL</c>, you must provide mappings, using the
+        /// <c>HomeDirectoryMappings</c> parameter. If, on the other hand, <c>HomeDirectoryType</c>
+        /// is <c>PATH</c>, you provide an absolute path using the <c>HomeDirectory</c> parameter.
+        /// You cannot have both <c>HomeDirectory</c> and <c>HomeDirectoryMappings</c> in your
+        /// template.
         /// </para>
         ///  </note>
         /// </summary>
@@ -167,19 +165,19 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// A session policy for your user so that you can use the same Identity and Access Management
         /// (IAM) role across multiple users. This policy scopes down a user's access to portions
-        /// of their Amazon S3 bucket. Variables that you can use inside this policy include <code>${Transfer:UserName}</code>,
-        /// <code>${Transfer:HomeDirectory}</code>, and <code>${Transfer:HomeBucket}</code>.
+        /// of their Amazon S3 bucket. Variables that you can use inside this policy include <c>${Transfer:UserName}</c>,
+        /// <c>${Transfer:HomeDirectory}</c>, and <c>${Transfer:HomeBucket}</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This policy applies only when the domain of <code>ServerId</code> is Amazon S3. Amazon
-        /// EFS does not use session policies.
+        /// This policy applies only when the domain of <c>ServerId</c> is Amazon S3. Amazon EFS
+        /// does not use session policies.
         /// </para>
         ///  
         /// <para>
         /// For session policies, Transfer Family stores the policy as a JSON blob, instead of
         /// the Amazon Resource Name (ARN) of the policy. You save the policy as a JSON blob and
-        /// pass it in the <code>Policy</code> argument.
+        /// pass it in the <c>Policy</c> argument.
         /// </para>
         ///  
         /// <para>
@@ -209,11 +207,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property PosixProfile. 
         /// <para>
-        /// Specifies the full POSIX identity, including user ID (<code>Uid</code>), group ID
-        /// (<code>Gid</code>), and any secondary groups IDs (<code>SecondaryGids</code>), that
-        /// controls your users' access to your Amazon EFS file systems. The POSIX permissions
-        /// that are set on files and directories in Amazon EFS determine the level of access
-        /// your users get when transferring files into and out of your Amazon EFS file systems.
+        /// Specifies the full POSIX identity, including user ID (<c>Uid</c>), group ID (<c>Gid</c>),
+        /// and any secondary groups IDs (<c>SecondaryGids</c>), that controls your users' access
+        /// to your Amazon EFS file systems. The POSIX permissions that are set on files and directories
+        /// in Amazon EFS determine the level of access your users get when transferring files
+        /// into and out of your Amazon EFS file systems.
         /// </para>
         /// </summary>
         public PosixProfile PosixProfile
@@ -280,9 +278,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// The three standard SSH public key format elements are <code>&lt;key type&gt;</code>,
-        /// <code>&lt;body base64&gt;</code>, and an optional <code>&lt;comment&gt;</code>, with
-        /// spaces between each element.
+        /// The three standard SSH public key format elements are <c>&lt;key type&gt;</c>, <c>&lt;body
+        /// base64&gt;</c>, and an optional <c>&lt;comment&gt;</c>, with spaces between each element.
         /// </para>
         ///  
         /// <para>
@@ -290,16 +287,16 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For RSA keys, the key type is <code>ssh-rsa</code>.
+        /// For RSA keys, the key type is <c>ssh-rsa</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For ED25519 keys, the key type is <code>ssh-ed25519</code>.
+        /// For ED25519 keys, the key type is <c>ssh-ed25519</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For ECDSA keys, the key type is either <code>ecdsa-sha2-nistp256</code>, <code>ecdsa-sha2-nistp384</code>,
-        /// or <code>ecdsa-sha2-nistp521</code>, depending on the size of the key you generated.
+        /// For ECDSA keys, the key type is either <c>ecdsa-sha2-nistp256</c>, <c>ecdsa-sha2-nistp384</c>,
+        /// or <c>ecdsa-sha2-nistp521</c>, depending on the size of the key you generated.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -339,8 +336,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// A unique string that identifies a user and is associated with a <code>ServerId</code>.
-        /// This user name must be a minimum of 3 and a maximum of 100 characters long. The following
+        /// A unique string that identifies a user and is associated with a <c>ServerId</c>. This
+        /// user name must be a minimum of 3 and a maximum of 100 characters long. The following
         /// are valid characters: a-z, A-Z, 0-9, underscore '_', hyphen '-', period '.', and at
         /// sign '@'. The user name can't start with a hyphen, period, or at sign.
         /// </para>

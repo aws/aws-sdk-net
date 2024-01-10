@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>DeletePipelineResponse</code> structure.
+    /// The <c>DeletePipelineResponse</c> structure.
     /// </summary>
     public partial class DeletePipelineResponse : AmazonWebServiceResponse
     {

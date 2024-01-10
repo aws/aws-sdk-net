@@ -47,9 +47,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationTime. 
         /// <para>
         /// The date and time that a report plan is created, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of <code>CreationTime</code> is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM.
+        /// Time (UTC). The value of <c>CreationTime</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -71,8 +70,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED</code>
-        /// 
+        ///  <c>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED</c> 
         /// </para>
         /// </summary>
         public string DeploymentStatus
@@ -91,7 +89,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property LastAttemptedExecutionTime. 
         /// <para>
         /// The date and time that a report job associated with this report plan last attempted
-        /// to run, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastAttemptedExecutionTime</code>
+        /// to run, in Unix format and Coordinated Universal Time (UTC). The value of <c>LastAttemptedExecutionTime</c>
         /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
@@ -112,7 +110,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property LastSuccessfulExecutionTime. 
         /// <para>
         /// The date and time that a report job associated with this report plan last successfully
-        /// ran, in Unix format and Coordinated Universal Time (UTC). The value of <code>LastSuccessfulExecutionTime</code>
+        /// ran, in Unix format and Coordinated Universal Time (UTC). The value of <c>LastSuccessfulExecutionTime</c>
         /// is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
         /// January 26, 2018 12:11:30.087 AM.
         /// </para>
@@ -215,12 +213,12 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT
-        /// | COPY_JOB_REPORT | RESTORE_JOB_REPORT</code> 
+        ///  <c>RESOURCE_COMPLIANCE_REPORT | CONTROL_COMPLIANCE_REPORT | BACKUP_JOB_REPORT | COPY_JOB_REPORT
+        /// | RESTORE_JOB_REPORT</c> 
         /// </para>
         ///  
         /// <para>
-        /// If the report template is <code>RESOURCE_COMPLIANCE_REPORT</code> or <code>CONTROL_COMPLIANCE_REPORT</code>,
+        /// If the report template is <c>RESOURCE_COMPLIANCE_REPORT</c> or <c>CONTROL_COMPLIANCE_REPORT</c>,
         /// this API resource also describes the report coverage by Amazon Web Services Regions
         /// and frameworks.
         /// </para>

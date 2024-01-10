@@ -136,12 +136,12 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Enabled</code> - Enables versioning of objects in the specified bucket.
+        ///  <c>Enabled</c> - Enables versioning of objects in the specified bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Suspended</code> - Suspends versioning of objects in the specified bucket.
-        /// Existing object versions are retained.
+        ///  <c>Suspended</c> - Suspends versioning of objects in the specified bucket. Existing
+        /// object versions are retained.
         /// </para>
         ///  </li> </ul>
         /// </summary>

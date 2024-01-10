@@ -154,8 +154,8 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// This error occurs only when there is a problem with the destination S3 bucket, and
         /// does not occur for requests that time out. To resolve the issue, create a new bucket,
-        /// and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-        /// objects so that CloudTrail can again write to the bucket.
+        /// and then call <c>UpdateTrail</c> to specify the new bucket; or fix the existing objects
+        /// so that CloudTrail can again write to the bucket.
         /// </para>
         ///  </note>
         /// </summary>
@@ -201,8 +201,8 @@ namespace Amazon.CloudTrail.Model
         /// <para>
         /// This error occurs only when there is a problem with the destination S3 bucket, and
         /// does not occur for requests that time out. To resolve the issue, create a new bucket,
-        /// and then call <code>UpdateTrail</code> to specify the new bucket; or fix the existing
-        /// objects so that CloudTrail can again write to the bucket.
+        /// and then call <c>UpdateTrail</c> to specify the new bucket; or fix the existing objects
+        /// so that CloudTrail can again write to the bucket.
         /// </para>
         ///  </note>
         /// </summary>

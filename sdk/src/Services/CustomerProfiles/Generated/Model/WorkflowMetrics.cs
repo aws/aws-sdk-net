@@ -38,7 +38,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AppflowIntegration. 
         /// <para>
-        /// Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.
+        /// Workflow execution metrics for <c>APPFLOW_INTEGRATION</c> workflow.
         /// </para>
         /// </summary>
         public AppflowIntegrationWorkflowMetrics AppflowIntegration

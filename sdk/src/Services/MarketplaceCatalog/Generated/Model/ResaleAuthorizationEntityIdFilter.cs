@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on <code>EntityId</code> of a ResaleAuthorization.
+    /// Allows filtering on <c>EntityId</c> of a ResaleAuthorization.
     /// </summary>
     public partial class ResaleAuthorizationEntityIdFilter
     {
@@ -38,7 +38,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ValueList. 
         /// <para>
-        /// Allows filtering on <code>EntityId</code> of a ResaleAuthorization with list input.
+        /// Allows filtering on <c>EntityId</c> of a ResaleAuthorization with list input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

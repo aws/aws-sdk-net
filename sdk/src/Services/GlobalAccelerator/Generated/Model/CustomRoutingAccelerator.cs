@@ -94,7 +94,7 @@ namespace Amazon.GlobalAccelerator.Model
         /// </para>
         ///  
         /// <para>
-        /// If you have a dual-stack accelerator, you also have a second DNS name, <code>DualStackDnsName</code>,
+        /// If you have a dual-stack accelerator, you also have a second DNS name, <c>DualStackDnsName</c>,
         /// that points to both the A record and the AAAA record for all four static addresses
         /// for the accelerator: two IPv4 addresses and two IPv6 addresses.
         /// </para>

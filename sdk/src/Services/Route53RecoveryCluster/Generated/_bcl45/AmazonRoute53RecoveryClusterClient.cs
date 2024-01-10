@@ -57,8 +57,8 @@ namespace Amazon.Route53RecoveryCluster
     ///  <i>Be aware that you must specify a Regional endpoint for a cluster when you work
     /// with API cluster operations to get or update routing control states in Route 53 ARC.</i>
     /// In addition, you must specify the US West (Oregon) Region for Route 53 ARC API calls.
-    /// For example, use the parameter <code>--region us-west-2</code> with AWS CLI commands.
-    /// For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.api.html">
+    /// For example, use the parameter <c>--region us-west-2</c> with AWS CLI commands. For
+    /// more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.update.api.html">
     /// Get and update routing control states using the API</a> in the Amazon Route 53 Application
     /// Recovery Controller Developer Guide.
     /// </para>
@@ -657,7 +657,7 @@ namespace Amazon.Route53RecoveryCluster
         /// </para>
         ///  
         /// <para>
-        /// The <code>SafetyRulesToOverride</code> property enables you override one or more safety
+        /// The <c>SafetyRulesToOverride</c> property enables you override one or more safety
         /// rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html">
         /// Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery
         /// Controller Developer Guide.
@@ -738,7 +738,7 @@ namespace Amazon.Route53RecoveryCluster
         /// </para>
         ///  
         /// <para>
-        /// The <code>SafetyRulesToOverride</code> property enables you override one or more safety
+        /// The <c>SafetyRulesToOverride</c> property enables you override one or more safety
         /// rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html">
         /// Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery
         /// Controller Developer Guide.
@@ -826,7 +826,7 @@ namespace Amazon.Route53RecoveryCluster
         /// </para>
         ///  
         /// <para>
-        /// The <code>SafetyRulesToOverride</code> property enables you override one or more safety
+        /// The <c>SafetyRulesToOverride</c> property enables you override one or more safety
         /// rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html">
         /// Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery
         /// Controller Developer Guide.
@@ -911,7 +911,7 @@ namespace Amazon.Route53RecoveryCluster
         /// </para>
         ///  
         /// <para>
-        /// The <code>SafetyRulesToOverride</code> property enables you override one or more safety
+        /// The <c>SafetyRulesToOverride</c> property enables you override one or more safety
         /// rules and update routing control states. For more information, see <a href="https://docs.aws.amazon.com/r53recovery/latest/dg/routing-control.override-safety-rule.html">
         /// Override safety rules to reroute traffic</a> in the Amazon Route 53 Application Recovery
         /// Controller Developer Guide.

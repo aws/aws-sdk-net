@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to the <code><a>RevokeVpcEndpointAccess</a></code>
-    /// operation. The response body for this operation is empty.
+    /// Container for response parameters to the <c><a>RevokeVpcEndpointAccess</a></c> operation.
+    /// The response body for this operation is empty.
     /// </summary>
     public partial class RevokeVpcEndpointAccessResponse : AmazonWebServiceResponse
     {

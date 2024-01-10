@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The specified next token is not valid. Specify the <code>nextToken</code> string that
-    /// was returned in the previous response to get the next page of results.
+    /// The specified next token is not valid. Specify the <c>nextToken</c> string that was
+    /// returned in the previous response to get the next page of results.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

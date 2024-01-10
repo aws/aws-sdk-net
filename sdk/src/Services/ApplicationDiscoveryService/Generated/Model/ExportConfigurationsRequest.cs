@@ -30,7 +30,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportConfigurations operation.
-    /// Deprecated. Use <code>StartExportTask</code> instead.
+    /// Deprecated. Use <c>StartExportTask</c> instead.
     /// 
     ///  
     /// <para>

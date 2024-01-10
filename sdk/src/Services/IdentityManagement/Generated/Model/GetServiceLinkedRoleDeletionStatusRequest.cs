@@ -31,9 +31,9 @@ namespace Amazon.IdentityManagement.Model
     /// <summary>
     /// Container for the parameters to the GetServiceLinkedRoleDeletionStatus operation.
     /// Retrieves the status of your service-linked role deletion. After you use <a>DeleteServiceLinkedRole</a>
-    /// to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code>
-    /// parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of
-    /// the deletion. If the deletion fails, this operation returns the reason that it failed,
+    /// to submit a service-linked role for deletion, you can use the <c>DeletionTaskId</c>
+    /// parameter in <c>GetServiceLinkedRoleDeletionStatus</c> to check the status of the
+    /// deletion. If the deletion fails, this operation returns the reason that it failed,
     /// if that information is returned by the service.
     /// </summary>
     public partial class GetServiceLinkedRoleDeletionStatusRequest : AmazonIdentityManagementServiceRequest
@@ -44,7 +44,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property DeletionTaskId. 
         /// <para>
         /// The deletion task identifier. This identifier is returned by the <a>DeleteServiceLinkedRole</a>
-        /// operation in the format <code>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</code>.
+        /// operation in the format <c>task/aws-service-role/&lt;service-principal-name&gt;/&lt;role-name&gt;/&lt;task-uuid&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

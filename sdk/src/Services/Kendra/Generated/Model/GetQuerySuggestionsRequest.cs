@@ -34,7 +34,7 @@ namespace Amazon.Kendra.Model
     /// 
     ///  
     /// <para>
-    ///  <code>GetQuerySuggestions</code> is currently not supported in the Amazon Web Services
+    ///  <c>GetQuerySuggestions</c> is currently not supported in the Amazon Web Services
     /// GovCloud (US-West) region.
     /// </para>
     /// </summary>

@@ -62,7 +62,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// Gets and sets the property IncludeAllRecommendations. 
         /// <para>
         /// List of all recommendations for a resource, or a single recommendation if de-duped
-        /// by <code>resourceId</code>.
+        /// by <c>resourceId</c>.
         /// </para>
         /// </summary>
         public bool IncludeAllRecommendations

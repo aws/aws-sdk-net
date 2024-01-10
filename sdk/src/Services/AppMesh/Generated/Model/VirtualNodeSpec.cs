@@ -116,7 +116,7 @@ namespace Amazon.AppMesh.Model
         /// Gets and sets the property ServiceDiscovery. 
         /// <para>
         /// The service discovery information for the virtual node. If your virtual node does
-        /// not expect ingress traffic, you can omit this parameter. If you specify a <code>listener</code>,
+        /// not expect ingress traffic, you can omit this parameter. If you specify a <c>listener</c>,
         /// then you must specify service discovery information.
         /// </para>
         /// </summary>

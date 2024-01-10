@@ -101,8 +101,8 @@ namespace Amazon.SageMakerGeospatial.Model
         /// <summary>
         /// Gets and sets the property SortOrder. 
         /// <para>
-        /// An optional value that specifies whether you want the results sorted in <code>Ascending</code>
-        /// or <code>Descending</code> order.
+        /// An optional value that specifies whether you want the results sorted in <c>Ascending</c>
+        /// or <c>Descending</c> order.
         /// </para>
         /// </summary>
         public SortOrder SortOrder

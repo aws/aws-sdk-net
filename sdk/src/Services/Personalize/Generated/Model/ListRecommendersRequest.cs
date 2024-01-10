@@ -84,8 +84,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token returned from the previous call to <code>ListRecommenders</code> for getting
-        /// the next set of recommenders (if they exist).
+        /// A token returned from the previous call to <c>ListRecommenders</c> for getting the
+        /// next set of recommenders (if they exist).
         /// </para>
         /// </summary>
         [AWSProperty(Max=1500)]

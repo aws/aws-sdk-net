@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserEndpoints. 
         /// <para>
-        /// The information for each requested <code>AppInstanceUserEndpoint</code>.
+        /// The information for each requested <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         public List<AppInstanceUserEndpointSummary> AppInstanceUserEndpoints

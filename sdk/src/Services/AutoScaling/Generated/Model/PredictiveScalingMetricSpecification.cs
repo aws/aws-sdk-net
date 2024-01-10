@@ -46,17 +46,17 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You create a predictive scaling policy and specify <code>ALBRequestCount</code> as
-    /// the value for the metric pair and <code>1000.0</code> as the target value. For this
-    /// type of metric, you must provide the metric dimension for the corresponding target
-    /// group, so you also provide a resource label for the Application Load Balancer target
-    /// group that is attached to your Auto Scaling group.
+    /// You create a predictive scaling policy and specify <c>ALBRequestCount</c> as the value
+    /// for the metric pair and <c>1000.0</c> as the target value. For this type of metric,
+    /// you must provide the metric dimension for the corresponding target group, so you also
+    /// provide a resource label for the Application Load Balancer target group that is attached
+    /// to your Auto Scaling group.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// The number of requests the target group receives per minute provides the load metric,
     /// and the request count averaged between the members of the target group provides the
-    /// scaling metric. In CloudWatch, this refers to the <code>RequestCount</code> and <code>RequestCountPerTarget</code>
+    /// scaling metric. In CloudWatch, this refers to the <c>RequestCount</c> and <c>RequestCountPerTarget</c>
     /// metrics, respectively.
     /// </para>
     ///  </li> <li> 

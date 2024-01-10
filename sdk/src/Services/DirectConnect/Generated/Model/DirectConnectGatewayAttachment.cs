@@ -48,23 +48,22 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>attaching</code>: The initial state after a virtual interface is created using
-        /// the Direct Connect gateway.
+        ///  <c>attaching</c>: The initial state after a virtual interface is created using the
+        /// Direct Connect gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>attached</code>: The Direct Connect gateway and virtual interface are attached
-        /// and ready to pass traffic.
+        ///  <c>attached</c>: The Direct Connect gateway and virtual interface are attached and
+        /// ready to pass traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>detaching</code>: The initial state after calling <a>DeleteVirtualInterface</a>.
+        ///  <c>detaching</c>: The initial state after calling <a>DeleteVirtualInterface</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>detached</code>: The virtual interface is detached from the Direct Connect
-        /// gateway. Traffic flow between the Direct Connect gateway and virtual interface is
-        /// stopped.
+        ///  <c>detached</c>: The virtual interface is detached from the Direct Connect gateway.
+        /// Traffic flow between the Direct Connect gateway and virtual interface is stopped.
         /// </para>
         ///  </li> </ul>
         /// </summary>

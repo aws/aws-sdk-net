@@ -135,12 +135,12 @@ namespace Amazon.ElasticBeanstalk.Model
         /// Constraint: Must be from 4 to 40 characters in length. The name can contain only letters,
         /// numbers, and hyphens. It can't start or end with a hyphen. This name must be unique
         /// within a region in your account. If the specified name already exists in the region,
-        /// Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. 
+        /// Elastic Beanstalk returns an <c>InvalidParameterValue</c> error. 
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name
-        /// becomes part of the CNAME, and therefore part of the visible URL for your application.
+        /// If you don't specify the <c>CNAMEPrefix</c> parameter, the environment name becomes
+        /// part of the CNAME, and therefore part of the visible URL for your application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=40)]
@@ -184,7 +184,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's
         /// operations role. If specified, Elastic Beanstalk uses the operations role for permissions
         /// to downstream services during this call and during subsequent calls acting on this
-        /// environment. To specify an operations role, you must have the <code>iam:PassRole</code>
+        /// environment. To specify an operations role, you must have the <c>iam:PassRole</c>
         /// permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
         /// roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
         /// </para>
@@ -250,7 +250,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.
+        /// If you specify <c>PlatformArn</c>, don't specify <c>SolutionStackName</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -277,8 +277,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code>
-        /// or <code>TemplateName</code>.
+        /// If you specify <c>SolutionStackName</c>, don't specify <c>PlatformArn</c> or <c>TemplateName</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -319,7 +318,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.
+        /// If you specify <c>TemplateName</c>, then don't specify <c>SolutionStackName</c>.
         /// </para>
         ///  </note>
         /// </summary>

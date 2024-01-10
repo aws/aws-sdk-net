@@ -83,8 +83,8 @@ namespace Amazon.Shield.Model
         /// Gets and sets the property Members. 
         /// <para>
         /// The ARNs (Amazon Resource Names) of the resources to include in the protection group.
-        /// You must set this when you set <code>Pattern</code> to <code>ARBITRARY</code> and
-        /// you must not set it for any other <code>Pattern</code> setting. 
+        /// You must set this when you set <c>Pattern</c> to <c>ARBITRARY</c> and you must not
+        /// set it for any other <c>Pattern</c> setting. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10000)]
@@ -165,9 +165,9 @@ namespace Amazon.Shield.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The resource type to include in the protection group. All protected resources of this
-        /// type are included in the protection group. You must set this when you set <code>Pattern</code>
-        /// to <code>BY_RESOURCE_TYPE</code> and you must not set it for any other <code>Pattern</code>
-        /// setting. 
+        /// type are included in the protection group. You must set this when you set <c>Pattern</c>
+        /// to <c>BY_RESOURCE_TYPE</c> and you must not set it for any other <c>Pattern</c> setting.
+        /// 
         /// </para>
         /// </summary>
         public ProtectedResourceType ResourceType

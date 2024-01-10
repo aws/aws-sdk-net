@@ -2734,7 +2734,7 @@ namespace Amazon.Finspace
 
 
         /// <summary>
-        /// Updates the databases mounted on a kdb cluster, which includes the <code>changesetId</code>
+        /// Updates the databases mounted on a kdb cluster, which includes the <c>changesetId</c>
         /// and all the dbPaths to be cached. This API does not allow you to change a database
         /// name or add a database if you created a cluster without one. 
         /// 
@@ -2774,7 +2774,7 @@ namespace Amazon.Finspace
 
 
         /// <summary>
-        /// Updates the databases mounted on a kdb cluster, which includes the <code>changesetId</code>
+        /// Updates the databases mounted on a kdb cluster, which includes the <c>changesetId</c>
         /// and all the dbPaths to be cached. This API does not allow you to change a database
         /// name or add a database if you created a cluster without one. 
         /// 

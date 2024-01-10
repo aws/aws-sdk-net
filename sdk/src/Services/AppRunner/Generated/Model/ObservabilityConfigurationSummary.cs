@@ -90,7 +90,7 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property ObservabilityConfigurationRevision. 
         /// <para>
         /// The revision of this observability configuration. It's unique among all the active
-        /// configurations (<code>"Status": "ACTIVE"</code>) that share the same <code>ObservabilityConfigurationName</code>.
+        /// configurations (<c>"Status": "ACTIVE"</c>) that share the same <c>ObservabilityConfigurationName</c>.
         /// </para>
         /// </summary>
         public int ObservabilityConfigurationRevision

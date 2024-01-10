@@ -42,8 +42,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>accountId</code> that is associated with the budget whose notifications
-        /// you want descriptions of.
+        /// The <c>accountId</c> that is associated with the budget whose notifications you want
+        /// descriptions of.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

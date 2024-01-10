@@ -112,11 +112,11 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage
-        /// Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code>
-        /// and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code>
-        /// structure. For information about how Amazon Web Services Systems Manager handles these
-        /// options for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
+        ///  <c>LoggingInfo</c> has been deprecated. To specify an Amazon Simple Storage Service
+        /// (Amazon S3) bucket to contain logs, instead use the <c>OutputS3BucketName</c> and
+        /// <c>OutputS3KeyPrefix</c> options in the <c>TaskInvocationParameters</c> structure.
+        /// For information about how Amazon Web Services Systems Manager handles these options
+        /// for the supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -146,8 +146,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For maintenance window tasks without a target specified, you can't supply a value
-        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
-        /// This value doesn't affect the running of your task.
+        /// for this option. Instead, the system inserts a placeholder value of <c>1</c>. This
+        /// value doesn't affect the running of your task.
         /// </para>
         ///  </note>
         /// </summary>
@@ -178,8 +178,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         ///  
         /// <para>
         /// For maintenance window tasks without a target specified, you can't supply a value
-        /// for this option. Instead, the system inserts a placeholder value of <code>1</code>.
-        /// This value doesn't affect the running of your task.
+        /// for this option. Instead, the system inserts a placeholder value of <c>1</c>. This
+        /// value doesn't affect the running of your task.
         /// </para>
         ///  </note>
         /// </summary>
@@ -258,8 +258,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Targets. 
         /// <para>
-        /// The targets (either managed nodes or tags). Managed nodes are specified using <code>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</code>.
-        /// Tags are specified using <code>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</code>.
+        /// The targets (either managed nodes or tags). Managed nodes are specified using <c>Key=instanceids,Values=&lt;instanceid1&gt;,&lt;instanceid2&gt;</c>.
+        /// Tags are specified using <c>Key=&lt;tag name&gt;,Values=&lt;tag value&gt;</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=5)]
@@ -278,11 +278,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property TaskArn. 
         /// <para>
-        /// The resource that the task uses during execution. For <code>RUN_COMMAND</code> and
-        /// <code>AUTOMATION</code> task types, <code>TaskArn</code> is the Amazon Web Services
-        /// Systems Manager (SSM document) name or ARN. For <code>LAMBDA</code> tasks, it's the
-        /// function name or ARN. For <code>STEP_FUNCTIONS</code> tasks, it's the state machine
-        /// ARN.
+        /// The resource that the task uses during execution. For <c>RUN_COMMAND</c> and <c>AUTOMATION</c>
+        /// task types, <c>TaskArn</c> is the Amazon Web Services Systems Manager (SSM document)
+        /// name or ARN. For <c>LAMBDA</c> tasks, it's the function name or ARN. For <c>STEP_FUNCTIONS</c>
+        /// tasks, it's the state machine ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1600)]
@@ -305,8 +304,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>TaskParameters</code> has been deprecated. To specify parameters to pass to
-        /// a task when it runs, instead use the <code>Parameters</code> option in the <code>TaskInvocationParameters</code>
+        ///  <c>TaskParameters</c> has been deprecated. To specify parameters to pass to a task
+        /// when it runs, instead use the <c>Parameters</c> option in the <c>TaskInvocationParameters</c>
         /// structure. For information about how Systems Manager handles these options for the
         /// supported maintenance window task types, see <a>MaintenanceWindowTaskInvocationParameters</a>.
         /// </para>

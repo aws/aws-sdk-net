@@ -32,14 +32,14 @@ namespace Amazon.Translate.Model
     /// Container for the parameters to the TranslateDocument operation.
     /// Translates the input document from the source language to the target language. This
     /// synchronous operation supports text, HTML, or Word documents as the input document.
-    /// <code>TranslateDocument</code> supports translations from English to any supported
-    /// language, and from any supported language to English. Therefore, specify either the
-    /// source language code or the target language code as “en” (English). 
+    /// <c>TranslateDocument</c> supports translations from English to any supported language,
+    /// and from any supported language to English. Therefore, specify either the source language
+    /// code or the target language code as “en” (English). 
     /// 
     ///  
     /// <para>
-    ///  If you set the <code>Formality</code> parameter, the request will fail if the target
-    /// language does not support formality. For a list of target languages that support formality,
+    ///  If you set the <c>Formality</c> parameter, the request will fail if the target language
+    /// does not support formality. For a list of target languages that support formality,
     /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
     /// formality</a>. 
     /// </para>
@@ -113,15 +113,15 @@ namespace Amazon.Translate.Model
         ///  
         /// <para>
         /// To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
-        /// Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
+        /// <c>auto</c> in the <c>SourceLanguageCode</c> field. If you specify <c>auto</c>, Amazon
+        /// Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
         /// Comprehend</a> to determine the source language.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>auto</code>, you must send the <code>TranslateDocument</code>
-        /// request in a region that supports Amazon Comprehend. Otherwise, the request returns
-        /// an error indicating that autodetect is not supported. 
+        /// If you specify <c>auto</c>, you must send the <c>TranslateDocument</c> request in
+        /// a region that supports Amazon Comprehend. Otherwise, the request returns an error
+        /// indicating that autodetect is not supported. 
         /// </para>
         ///  </note>
         /// </summary>

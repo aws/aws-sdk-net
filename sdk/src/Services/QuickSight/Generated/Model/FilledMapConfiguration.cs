@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration for a <code>FilledMapVisual</code>.
+    /// The configuration for a <c>FilledMapVisual</c>.
     /// </summary>
     public partial class FilledMapConfiguration
     {
@@ -97,7 +97,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration of a <code>FilledMapVisual</code>.
+        /// The sort configuration of a <c>FilledMapVisual</c>.
         /// </para>
         /// </summary>
         public FilledMapSortConfiguration SortConfiguration

@@ -160,20 +160,19 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The date and time at which the Capacity Reservation expires. When a Capacity Reservation
         /// expires, the reserved capacity is released and you can no longer launch instances
-        /// into it. The Capacity Reservation's state changes to <code>expired</code> when it
-        /// reaches its end date and time.
+        /// into it. The Capacity Reservation's state changes to <c>expired</c> when it reaches
+        /// its end date and time.
         /// </para>
         ///  
         /// <para>
-        /// You must provide an <code>EndDate</code> value if <code>EndDateType</code> is <code>limited</code>.
-        /// Omit <code>EndDate</code> if <code>EndDateType</code> is <code>unlimited</code>.
+        /// You must provide an <c>EndDate</c> value if <c>EndDateType</c> is <c>limited</c>.
+        /// Omit <c>EndDate</c> if <c>EndDateType</c> is <c>unlimited</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>EndDateType</code> is <code>limited</code>, the Capacity Reservation
-        /// is cancelled within an hour from the specified time. For example, if you specify 5/31/2019,
-        /// 13:30:55, the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55
-        /// on 5/31/2019.
+        /// If the <c>EndDateType</c> is <c>limited</c>, the Capacity Reservation is cancelled
+        /// within an hour from the specified time. For example, if you specify 5/31/2019, 13:30:55,
+        /// the Capacity Reservation is guaranteed to end between 13:30:55 and 14:30:55 on 5/31/2019.
         /// </para>
         /// </summary>
         public DateTime EndDate
@@ -196,15 +195,14 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>unlimited</code> - The Capacity Reservation remains active until you explicitly
-        /// cancel it. Do not provide an <code>EndDate</code> if the <code>EndDateType</code>
-        /// is <code>unlimited</code>.
+        ///  <c>unlimited</c> - The Capacity Reservation remains active until you explicitly cancel
+        /// it. Do not provide an <c>EndDate</c> if the <c>EndDateType</c> is <c>unlimited</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>limited</code> - The Capacity Reservation expires automatically at a specified
-        /// date and time. You must provide an <code>EndDate</code> value if the <code>EndDateType</code>
-        /// value is <code>limited</code>.
+        ///  <c>limited</c> - The Capacity Reservation expires automatically at a specified date
+        /// and time. You must provide an <c>EndDate</c> value if the <c>EndDateType</c> value
+        /// is <c>limited</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -269,21 +267,21 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>open</code> - The Capacity Reservation automatically matches all instances
-        /// that have matching attributes (instance type, platform, and Availability Zone). Instances
-        /// that have matching attributes run in the Capacity Reservation automatically without
-        /// specifying any additional parameters.
+        ///  <c>open</c> - The Capacity Reservation automatically matches all instances that have
+        /// matching attributes (instance type, platform, and Availability Zone). Instances that
+        /// have matching attributes run in the Capacity Reservation automatically without specifying
+        /// any additional parameters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>targeted</code> - The Capacity Reservation only accepts instances that have
-        /// matching attributes (instance type, platform, and Availability Zone), and explicitly
-        /// target the Capacity Reservation. This ensures that only permitted instances can use
-        /// the reserved capacity. 
+        ///  <c>targeted</c> - The Capacity Reservation only accepts instances that have matching
+        /// attributes (instance type, platform, and Availability Zone), and explicitly target
+        /// the Capacity Reservation. This ensures that only permitted instances can use the reserved
+        /// capacity. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>open</code> 
+        /// Default: <c>open</c> 
         /// </para>
         /// </summary>
         public InstanceMatchCriteria InstanceMatchCriteria
@@ -401,12 +399,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>default</code> - The Capacity Reservation is created on hardware that is shared
-        /// with other Amazon Web Services accounts.
+        ///  <c>default</c> - The Capacity Reservation is created on hardware that is shared with
+        /// other Amazon Web Services accounts.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dedicated</code> - The Capacity Reservation is created on single-tenant hardware
+        ///  <c>dedicated</c> - The Capacity Reservation is created on single-tenant hardware
         /// that is dedicated to a single Amazon Web Services account.
         /// </para>
         ///  </li> </ul>

@@ -64,8 +64,8 @@ namespace Amazon.NimbleStudio.Model
         ///  
         /// <para>
         /// Configures backups for streaming sessions launched with this launch profile. The default
-        /// value is <code>DEACTIVATED</code>, which means that backups are deactivated. To allow
-        /// backups, set this value to <code>AUTOMATIC</code>.
+        /// value is <c>DEACTIVATED</c>, which means that backups are deactivated. To allow backups,
+        /// set this value to <c>AUTOMATIC</c>.
         /// </para>
         /// </summary>
         public SessionBackupMode Mode

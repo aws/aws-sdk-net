@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>ListPresetsResponse</code> structure.
+    /// The <c>ListPresetsResponse</c> structure.
     /// </summary>
     public partial class ListPresetsResponse : AmazonWebServiceResponse
     {
@@ -41,7 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// A value that you use to access the second and subsequent pages of results, if any.
         /// When the presets fit on one page or when you've reached the last page of results,
-        /// the value of <code>NextPageToken</code> is <code>null</code>.
+        /// the value of <c>NextPageToken</c> is <c>null</c>.
         /// </para>
         /// </summary>
         public string NextPageToken
@@ -59,7 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Presets. 
         /// <para>
-        /// An array of <code>Preset</code> objects.
+        /// An array of <c>Preset</c> objects.
         /// </para>
         /// </summary>
         public List<Preset> Presets

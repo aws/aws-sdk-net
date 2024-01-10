@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>ScheduleLambdaFunctionFailed</code> event. It isn't
-    /// set for other event types.
+    /// Provides the details of the <c>ScheduleLambdaFunctionFailed</c> event. It isn't set
+    /// for other event types.
     /// </summary>
     public partial class ScheduleLambdaFunctionFailedEventAttributes
     {
@@ -47,9 +47,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
-        /// failed because it lacked sufficient permissions. For details and example IAM policies,
-        /// see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// If <c>cause</c> is set to <c>OPERATION_NOT_PERMITTED</c>, the decision failed because
+        /// it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         ///  </note>
@@ -70,8 +69,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the decision
-        /// that resulted in scheduling this Lambda task. To help diagnose issues, use this information
+        /// The ID of the <c>LambdaFunctionCompleted</c> event corresponding to the decision that
+        /// resulted in scheduling this Lambda task. To help diagnose issues, use this information
         /// to trace back the chain of events leading up to this event.
         /// </para>
         /// </summary>
@@ -91,7 +90,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID provided in the <code>ScheduleLambdaFunction</code> decision that failed. 
+        /// The ID provided in the <c>ScheduleLambdaFunction</c> decision that failed. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

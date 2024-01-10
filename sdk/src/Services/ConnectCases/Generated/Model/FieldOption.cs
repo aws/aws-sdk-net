@@ -40,7 +40,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// Describes whether the <code>FieldOption</code> is active (displayed) or inactive.
+        /// Describes whether the <c>FieldOption</c> is active (displayed) or inactive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -59,7 +59,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  <code>FieldOptionName</code> has max length 100 and disallows trailing spaces.
+        ///  <c>FieldOptionName</c> has max length 100 and disallows trailing spaces.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -78,7 +78,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  <code>FieldOptionValue</code> has max length 100 and must be alphanumeric with hyphens
+        ///  <c>FieldOptionValue</c> has max length 100 and must be alphanumeric with hyphens
         /// and underscores.
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CognitoIdentityProvider.Model
 {
     /// <summary>
-    /// The data type for <code>AccountRecoverySetting</code>.
+    /// The data type for <c>AccountRecoverySetting</c>.
     /// </summary>
     public partial class AccountRecoverySettingType
     {
@@ -38,7 +38,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property RecoveryMechanisms. 
         /// <para>
-        /// The list of <code>RecoveryOptionTypes</code>.
+        /// The list of <c>RecoveryOptionTypes</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

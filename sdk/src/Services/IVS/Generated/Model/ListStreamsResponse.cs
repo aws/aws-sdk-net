@@ -39,8 +39,8 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more streams than <code>maxResults</code>, use <code>nextToken</code>
-        /// in the request to get the next set.
+        /// If there are more streams than <c>maxResults</c>, use <c>nextToken</c> in the request
+        /// to get the next set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

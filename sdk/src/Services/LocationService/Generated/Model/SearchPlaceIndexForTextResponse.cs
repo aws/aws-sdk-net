@@ -64,11 +64,10 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Summary. 
         /// <para>
-        /// Contains a summary of the request. Echoes the input values for <code>BiasPosition</code>,
-        /// <code>FilterBBox</code>, <code>FilterCountries</code>, <code>Language</code>, <code>MaxResults</code>,
-        /// and <code>Text</code>. Also includes the <code>DataSource</code> of the place index
-        /// and the bounding box, <code>ResultBBox</code>, which surrounds the search results.
-        /// 
+        /// Contains a summary of the request. Echoes the input values for <c>BiasPosition</c>,
+        /// <c>FilterBBox</c>, <c>FilterCountries</c>, <c>Language</c>, <c>MaxResults</c>, and
+        /// <c>Text</c>. Also includes the <c>DataSource</c> of the place index and the bounding
+        /// box, <c>ResultBBox</c>, which surrounds the search results. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

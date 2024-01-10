@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// A response element in the <code>ModifyTenantDatabase</code> operation that describes
-    /// changes that will be applied. Specific changes are identified by subelements.
+    /// A response element in the <c>ModifyTenantDatabase</c> operation that describes changes
+    /// that will be applied. Specific changes are identified by subelements.
     /// </summary>
     public partial class TenantDatabasePendingModifiedValues
     {

@@ -153,12 +153,12 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+        ///  <c>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</c>
         /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>namespaceId</code> feature is in public preview.
+        /// The <c>namespaceId</c> feature is in public preview.
         /// </para>
         ///  </note>
         /// </summary>
@@ -196,9 +196,9 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property TimeoutConfig. 
         /// <para>
         /// Specifies the amount of time each device has to finish its execution of the job. The
-        /// timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-        /// If the job execution status is not set to another terminal state before the time expires,
-        /// it will be automatically set to <code>TIMED_OUT</code>. 
+        /// timer is started when the job execution status is set to <c>IN_PROGRESS</c>. If the
+        /// job execution status is not set to another terminal state before the time expires,
+        /// it will be automatically set to <c>TIMED_OUT</c>. 
         /// </para>
         /// </summary>
         public TimeoutConfig TimeoutConfig

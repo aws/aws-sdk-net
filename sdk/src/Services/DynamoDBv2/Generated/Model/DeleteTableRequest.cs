@@ -30,13 +30,12 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTable operation.
-    /// The <code>DeleteTable</code> operation deletes a table and all of its items. After
-    /// a <code>DeleteTable</code> request, the specified table is in the <code>DELETING</code>
-    /// state until DynamoDB completes the deletion. If the table is in the <code>ACTIVE</code>
-    /// state, you can delete it. If a table is in <code>CREATING</code> or <code>UPDATING</code>
-    /// states, then DynamoDB returns a <code>ResourceInUseException</code>. If the specified
-    /// table does not exist, DynamoDB returns a <code>ResourceNotFoundException</code>. If
-    /// table is already in the <code>DELETING</code> state, no error is returned. 
+    /// The <c>DeleteTable</c> operation deletes a table and all of its items. After a <c>DeleteTable</c>
+    /// request, the specified table is in the <c>DELETING</c> state until DynamoDB completes
+    /// the deletion. If the table is in the <c>ACTIVE</c> state, you can delete it. If a
+    /// table is in <c>CREATING</c> or <c>UPDATING</c> states, then DynamoDB returns a <c>ResourceInUseException</c>.
+    /// If the specified table does not exist, DynamoDB returns a <c>ResourceNotFoundException</c>.
+    /// If table is already in the <c>DELETING</c> state, no error is returned. 
     /// 
     ///  <important> 
     /// <para>
@@ -45,9 +44,9 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </important> <note> 
     /// <para>
-    /// DynamoDB might continue to accept data read and write operations, such as <code>GetItem</code>
-    /// and <code>PutItem</code>, on a table in the <code>DELETING</code> state until the
-    /// table deletion is complete.
+    /// DynamoDB might continue to accept data read and write operations, such as <c>GetItem</c>
+    /// and <c>PutItem</c>, on a table in the <c>DELETING</c> state until the table deletion
+    /// is complete.
     /// </para>
     ///  </note> 
     /// <para>
@@ -56,12 +55,12 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     /// If you have DynamoDB Streams enabled on the table, then the corresponding stream on
-    /// that table goes into the <code>DISABLED</code> state, and the stream is automatically
-    /// deleted after 24 hours.
+    /// that table goes into the <c>DISABLED</c> state, and the stream is automatically deleted
+    /// after 24 hours.
     /// </para>
     ///  
     /// <para>
-    /// Use the <code>DescribeTable</code> action to check the status of the table. 
+    /// Use the <c>DescribeTable</c> action to check the status of the table. 
     /// </para>
     /// </summary>
     public partial class DeleteTableRequest : AmazonDynamoDBRequest

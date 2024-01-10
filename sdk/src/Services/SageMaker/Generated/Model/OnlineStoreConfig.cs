@@ -30,12 +30,12 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Use this to specify the Amazon Web Services Key Management Service (KMS) Key ID, or
-    /// <code>KMSKeyId</code>, for at rest data encryption. You can turn <code>OnlineStore</code>
-    /// on or off by specifying the <code>EnableOnlineStore</code> flag at General Assembly.
+    /// <c>KMSKeyId</c>, for at rest data encryption. You can turn <c>OnlineStore</c> on or
+    /// off by specifying the <c>EnableOnlineStore</c> flag at General Assembly.
     /// 
     ///  
     /// <para>
-    /// The default value is <code>False</code>.
+    /// The default value is <c>False</c>.
     /// </para>
     /// </summary>
     public partial class OnlineStoreConfig
@@ -48,13 +48,13 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EnableOnlineStore. 
         /// <para>
-        /// Turn <code>OnlineStore</code> off by specifying <code>False</code> for the <code>EnableOnlineStore</code>
-        /// flag. Turn <code>OnlineStore</code> on by specifying <code>True</code> for the <code>EnableOnlineStore</code>
+        /// Turn <c>OnlineStore</c> off by specifying <c>False</c> for the <c>EnableOnlineStore</c>
+        /// flag. Turn <c>OnlineStore</c> on by specifying <c>True</c> for the <c>EnableOnlineStore</c>
         /// flag. 
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>False</code>.
+        /// The default value is <c>False</c>.
         /// </para>
         /// </summary>
         public bool EnableOnlineStore
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityConfig. 
         /// <para>
-        /// Use to specify KMS Key ID (<code>KMSKeyId</code>) for at-rest encryption of your <code>OnlineStore</code>.
+        /// Use to specify KMS Key ID (<c>KMSKeyId</c>) for at-rest encryption of your <c>OnlineStore</c>.
         /// </para>
         /// </summary>
         public OnlineStoreSecurityConfig SecurityConfig
@@ -94,12 +94,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Standard</code>: A managed low latency data store for feature groups.
+        ///  <c>Standard</c>: A managed low latency data store for feature groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InMemory</code>: A managed data store for feature groups that supports very
-        /// low latency retrieval. 
+        ///  <c>InMemory</c>: A managed data store for feature groups that supports very low latency
+        /// retrieval. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -119,8 +119,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TtlDuration. 
         /// <para>
         /// Time to live duration, where the record is hard deleted after the expiration time
-        /// is reached; <code>ExpiresAt</code> = <code>EventTime</code> + <code>TtlDuration</code>.
-        /// For information on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
+        /// is reached; <c>ExpiresAt</c> = <c>EventTime</c> + <c>TtlDuration</c>. For information
+        /// on HardDelete, see the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_feature_store_DeleteRecord.html">DeleteRecord</a>
         /// API in the Amazon SageMaker API Reference guide.
         /// </para>
         /// </summary>

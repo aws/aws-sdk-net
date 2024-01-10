@@ -39,8 +39,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>CreateDataSource</code> is a synchronous operation. The operation returns 200
-    /// if the data source was successfully created. Otherwise, an exception is raised.
+    ///  <c>CreateDataSource</c> is a synchronous operation. The operation returns 200 if
+    /// the data source was successfully created. Otherwise, an exception is raised.
     /// </para>
     ///  
     /// <para>
@@ -69,8 +69,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a data source connector.
-        /// Multiple calls to the <code>CreateDataSource</code> API with the same client token
-        /// will create only one data source connector.
+        /// Multiple calls to the <c>CreateDataSource</c> API with the same client token will
+        /// create only one data source connector.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -93,13 +93,12 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't specify the <code>Configuration</code> parameter when the <code>Type</code>
-        /// parameter is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code>
-        /// exception.
+        /// You can't specify the <c>Configuration</c> parameter when the <c>Type</c> parameter
+        /// is set to <c>CUSTOM</c>. If you do, you receive a <c>ValidationException</c> exception.
         /// </para>
         ///  
         /// <para>
-        /// The <code>Configuration</code> parameter is required for all other data sources.
+        /// The <c>Configuration</c> parameter is required for all other data sources.
         /// </para>
         /// </summary>
         public DataSourceConfiguration Configuration
@@ -227,13 +226,12 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// You can't specify the <code>RoleArn</code> parameter when the <code>Type</code> parameter
-        /// is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code>
-        /// exception.
+        /// You can't specify the <c>RoleArn</c> parameter when the <c>Type</c> parameter is set
+        /// to <c>CUSTOM</c>. If you do, you receive a <c>ValidationException</c> exception.
         /// </para>
         ///  
         /// <para>
-        /// The <code>RoleArn</code> parameter is required for all other data sources.
+        /// The <c>RoleArn</c> parameter is required for all other data sources.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1284)]
@@ -254,19 +252,18 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// Sets the frequency for Amazon Kendra to check the documents in your data source repository
         /// and update the index. If you don't set a schedule Amazon Kendra will not periodically
-        /// update the index. You can call the <code>StartDataSourceSyncJob</code> API to update
-        /// the index.
+        /// update the index. You can call the <c>StartDataSourceSyncJob</c> API to update the
+        /// index.
         /// </para>
         ///  
         /// <para>
-        /// Specify a <code>cron-</code> format schedule string or an empty string to indicate
-        /// that the index is updated on demand.
+        /// Specify a <c>cron-</c> format schedule string or an empty string to indicate that
+        /// the index is updated on demand.
         /// </para>
         ///  
         /// <para>
-        /// You can't specify the <code>Schedule</code> parameter when the <code>Type</code> parameter
-        /// is set to <code>CUSTOM</code>. If you do, you receive a <code>ValidationException</code>
-        /// exception.
+        /// You can't specify the <c>Schedule</c> parameter when the <c>Type</c> parameter is
+        /// set to <c>CUSTOM</c>. If you do, you receive a <c>ValidationException</c> exception.
         /// </para>
         /// </summary>
         public string Schedule
@@ -306,7 +303,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of data source repository. For example, <code>SHAREPOINT</code>.
+        /// The type of data source repository. For example, <c>SHAREPOINT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

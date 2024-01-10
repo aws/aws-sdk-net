@@ -64,18 +64,18 @@ namespace Amazon.Athena.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>INVALID_INPUT</code> - The name of the prepared statement that was provided
-        /// is not valid (for example, the name is too long).
+        ///  <c>INVALID_INPUT</c> - The name of the prepared statement that was provided is not
+        /// valid (for example, the name is too long).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>STATEMENT_NOT_FOUND</code> - A prepared statement with the name provided could
-        /// not be found.
+        ///  <c>STATEMENT_NOT_FOUND</c> - A prepared statement with the name provided could not
+        /// be found.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNAUTHORIZED</code> - The requester does not have permission to access the
-        /// workgroup that contains the prepared statement.
+        ///  <c>UNAUTHORIZED</c> - The requester does not have permission to access the workgroup
+        /// that contains the prepared statement.
         /// </para>
         ///  </li> </ul>
         /// </summary>

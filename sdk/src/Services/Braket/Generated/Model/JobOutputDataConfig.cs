@@ -61,7 +61,7 @@ namespace Amazon.Braket.Model
         /// Gets and sets the property S3Path. 
         /// <para>
         /// Identifies the S3 path where you want Amazon Braket to store the job training artifacts.
-        /// For example, <code>s3://bucket-name/key-name-prefix</code>.
+        /// For example, <c>s3://bucket-name/key-name-prefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

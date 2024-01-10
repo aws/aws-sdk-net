@@ -224,20 +224,19 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DATA_QUALITY</code> - The schedule is for a data quality monitoring job.
+        ///  <c>DATA_QUALITY</c> - The schedule is for a data quality monitoring job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODEL_QUALITY</code> - The schedule is for a model quality monitoring job.
+        ///  <c>MODEL_QUALITY</c> - The schedule is for a model quality monitoring job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODEL_BIAS</code> - The schedule is for a bias monitoring job.
+        ///  <c>MODEL_BIAS</c> - The schedule is for a bias monitoring job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MODEL_EXPLAINABILITY</code> - The schedule is for an explainability monitoring
-        /// job.
+        ///  <c>MODEL_EXPLAINABILITY</c> - The schedule is for an explainability monitoring job.
         /// </para>
         ///  </li> </ul>
         /// </summary>

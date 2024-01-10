@@ -39,7 +39,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If there are more storage configurations than <code>maxResults</code>, use <code>nextToken</code>
+        /// If there are more storage configurations than <c>maxResults</c>, use <c>nextToken</c>
         /// in the request to get the next set.
         /// </para>
         /// </summary>

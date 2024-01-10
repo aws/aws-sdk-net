@@ -47,59 +47,58 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>options.propagation-default-route-table-id</code> - The ID of the default propagation
+        ///  <c>options.propagation-default-route-table-id</c> - The ID of the default propagation
         /// route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>options.amazon-side-asn</code> - The private ASN for the Amazon side of a BGP
-        /// session.
+        ///  <c>options.amazon-side-asn</c> - The private ASN for the Amazon side of a BGP session.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>options.association-default-route-table-id</code> - The ID of the default association
+        ///  <c>options.association-default-route-table-id</c> - The ID of the default association
         /// route table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>options.auto-accept-shared-attachments</code> - Indicates whether there is
-        /// automatic acceptance of attachment requests (<code>enable</code> | <code>disable</code>).
+        ///  <c>options.auto-accept-shared-attachments</c> - Indicates whether there is automatic
+        /// acceptance of attachment requests (<c>enable</c> | <c>disable</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>options.default-route-table-association</code> - Indicates whether resource
-        /// attachments are automatically associated with the default association route table
-        /// (<code>enable</code> | <code>disable</code>).
+        ///  <c>options.default-route-table-association</c> - Indicates whether resource attachments
+        /// are automatically associated with the default association route table (<c>enable</c>
+        /// | <c>disable</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>options.default-route-table-propagation</code> - Indicates whether resource
-        /// attachments automatically propagate routes to the default propagation route table
-        /// (<code>enable</code> | <code>disable</code>).
+        ///  <c>options.default-route-table-propagation</c> - Indicates whether resource attachments
+        /// automatically propagate routes to the default propagation route table (<c>enable</c>
+        /// | <c>disable</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>options.dns-support</code> - Indicates whether DNS support is enabled (<code>enable</code>
-        /// | <code>disable</code>).
+        ///  <c>options.dns-support</c> - Indicates whether DNS support is enabled (<c>enable</c>
+        /// | <c>disable</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>options.vpn-ecmp-support</code> - Indicates whether Equal Cost Multipath Protocol
-        /// support is enabled (<code>enable</code> | <code>disable</code>).
+        ///  <c>options.vpn-ecmp-support</c> - Indicates whether Equal Cost Multipath Protocol
+        /// support is enabled (<c>enable</c> | <c>disable</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>owner-id</code> - The ID of the Amazon Web Services account that owns the transit
+        ///  <c>owner-id</c> - The ID of the Amazon Web Services account that owns the transit
         /// gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>state</code> - The state of the transit gateway (<code>available</code> | <code>deleted</code>
-        /// | <code>deleting</code> | <code>modifying</code> | <code>pending</code>).
+        ///  <c>state</c> - The state of the transit gateway (<c>available</c> | <c>deleted</c>
+        /// | <c>deleting</c> | <c>modifying</c> | <c>pending</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-id</code> - The ID of the transit gateway.
+        ///  <c>transit-gateway-id</c> - The ID of the transit gateway.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -119,7 +118,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

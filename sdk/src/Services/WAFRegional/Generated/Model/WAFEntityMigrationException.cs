@@ -30,40 +30,40 @@ namespace Amazon.WAFRegional.Model
 {
     /// <summary>
     /// The operation failed due to a problem with the migration. The failure cause is provided
-    /// in the exception, in the <code>MigrationErrorType</code>: 
+    /// in the exception, in the <c>MigrationErrorType</c>: 
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ENTITY_NOT_SUPPORTED</code> - The web ACL has an unsupported entity but the
-    /// <code>IgnoreUnsupportedType</code> is not set to true.
+    ///  <c>ENTITY_NOT_SUPPORTED</c> - The web ACL has an unsupported entity but the <c>IgnoreUnsupportedType</c>
+    /// is not set to true.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ENTITY_NOT_FOUND</code> - The web ACL doesn't exist. 
+    ///  <c>ENTITY_NOT_FOUND</c> - The web ACL doesn't exist. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>S3_BUCKET_NO_PERMISSION</code> - You don't have permission to perform the <code>PutObject</code>
+    ///  <c>S3_BUCKET_NO_PERMISSION</c> - You don't have permission to perform the <c>PutObject</c>
     /// action to the specified Amazon S3 bucket.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>S3_BUCKET_NOT_ACCESSIBLE</code> - The bucket policy doesn't allow AWS WAF to
-    /// perform the <code>PutObject</code> action in the bucket.
+    ///  <c>S3_BUCKET_NOT_ACCESSIBLE</c> - The bucket policy doesn't allow AWS WAF to perform
+    /// the <c>PutObject</c> action in the bucket.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>S3_BUCKET_NOT_FOUND</code> - The S3 bucket doesn't exist. 
+    ///  <c>S3_BUCKET_NOT_FOUND</c> - The S3 bucket doesn't exist. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>S3_BUCKET_INVALID_REGION</code> - The S3 bucket is not in the same Region as
-    /// the web ACL.
+    ///  <c>S3_BUCKET_INVALID_REGION</c> - The S3 bucket is not in the same Region as the
+    /// web ACL.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>S3_INTERNAL_ERROR</code> - AWS WAF failed to create the template in the S3
-    /// bucket for another reason.
+    ///  <c>S3_INTERNAL_ERROR</c> - AWS WAF failed to create the template in the S3 bucket
+    /// for another reason.
     /// </para>
     ///  </li> </ul>
     /// </summary>

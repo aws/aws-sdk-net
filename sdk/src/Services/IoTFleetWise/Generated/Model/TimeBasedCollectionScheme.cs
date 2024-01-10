@@ -40,8 +40,8 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property PeriodMs. 
         /// <para>
         /// The time period (in milliseconds) to decide how often to collect data. For example,
-        /// if the time period is <code>60000</code>, the Edge Agent software collects data once
-        /// every minute.
+        /// if the time period is <c>60000</c>, the Edge Agent software collects data once every
+        /// minute.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10000, Max=60000)]

@@ -96,12 +96,11 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property DataSources. 
         /// <para>
         /// Specify data sources to mount read-only files from S3 into your simulation. These
-        /// files are available under <code>/opt/robomaker/datasources/data_source_name</code>.
-        /// 
+        /// files are available under <c>/opt/robomaker/datasources/data_source_name</c>. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// There is a limit of 100 files and a combined size of 25GB for all <code>DataSourceConfig</code>
+        /// There is a limit of 100 files and a combined size of 25GB for all <c>DataSourceConfig</c>
         /// objects. 
         /// </para>
         ///  </note>
@@ -126,8 +125,8 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  <dl> <dt>Continue</dt> <dd> 
         /// <para>
-        /// Leaves the instance running for its maximum timeout duration after a <code>4XX</code>
-        /// error code.
+        /// Leaves the instance running for its maximum timeout duration after a <c>4XX</c> error
+        /// code.
         /// </para>
         ///  </dd> <dt>Fail</dt> <dd> 
         /// <para>
@@ -190,8 +189,8 @@ namespace Amazon.RoboMaker.Model
         /// Gets and sets the property MaxJobDurationInSeconds. 
         /// <para>
         /// The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds.
-        /// When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status
-        /// will transition to <code>Completed</code>.
+        /// When <c>maxJobDurationInSeconds</c> is reached, the simulation job will status will
+        /// transition to <c>Completed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

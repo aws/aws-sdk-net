@@ -42,7 +42,7 @@ namespace Amazon.Organizations.Model
     /// <para>
     /// The management account in an organization with all features enabled can set service
     /// control policies (SCPs) that can restrict what administrators of member accounts can
-    /// do. This includes preventing them from successfully calling <code>LeaveOrganization</code>
+    /// do. This includes preventing them from successfully calling <c>LeaveOrganization</c>
     /// and leaving the organization.
     /// </para>
     ///  </li> <li> 
@@ -102,9 +102,8 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// If you are using an organization principal to call <code>LeaveOrganization</code>
-    /// across multiple accounts, you can only do this up to 5 accounts per second in a single
-    /// organization.
+    /// If you are using an organization principal to call <c>LeaveOrganization</c> across
+    /// multiple accounts, you can only do this up to 5 accounts per second in a single organization.
     /// </para>
     ///  </li> </ul> </important>
     /// </summary>

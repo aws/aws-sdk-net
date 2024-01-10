@@ -94,7 +94,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property DocumentAttributes. 
         /// <para>
         /// An array of document fields/attributes assigned to a document in the search results.
-        /// For example, the document author (<code>_author</code>) or the source URI (<code>_source_uri</code>)
+        /// For example, the document author (<c>_author</c>) or the source URI (<c>_source_uri</c>)
         /// of the document.
         /// </para>
         /// </summary>
@@ -210,10 +210,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// If the <code>Type</code> of document within the response is <code>ANSWER</code>, then
-        /// it is either a <code>TABLE</code> answer or <code>TEXT</code> answer. If it's a table
-        /// answer, a table excerpt is returned in <code>TableExcerpt</code>. If it's a text answer,
-        /// a text excerpt is returned in <code>DocumentExcerpt</code>.
+        /// If the <c>Type</c> of document within the response is <c>ANSWER</c>, then it is either
+        /// a <c>TABLE</c> answer or <c>TEXT</c> answer. If it's a table answer, a table excerpt
+        /// is returned in <c>TableExcerpt</c>. If it's a text answer, a text excerpt is returned
+        /// in <c>DocumentExcerpt</c>.
         /// </para>
         /// </summary>
         public QueryResultFormat Format
@@ -251,15 +251,14 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ScoreAttributes. 
         /// <para>
         /// Indicates the confidence level of Amazon Kendra providing a relevant result for the
-        /// query. Each result is placed into a bin that indicates the confidence, <code>VERY_HIGH</code>,
-        /// <code>HIGH</code>, <code>MEDIUM</code> and <code>LOW</code>. You can use the score
-        /// to determine if a response meets the confidence needed for your application.
+        /// query. Each result is placed into a bin that indicates the confidence, <c>VERY_HIGH</c>,
+        /// <c>HIGH</c>, <c>MEDIUM</c> and <c>LOW</c>. You can use the score to determine if a
+        /// response meets the confidence needed for your application.
         /// </para>
         ///  
         /// <para>
-        /// The field is only set to <code>LOW</code> when the <code>Type</code> field is set
-        /// to <code>DOCUMENT</code> and Amazon Kendra is not confident that the result is relevant
-        /// to the query.
+        /// The field is only set to <c>LOW</c> when the <c>Type</c> field is set to <c>DOCUMENT</c>
+        /// and Amazon Kendra is not confident that the result is relevant to the query.
         /// </para>
         /// </summary>
         public ScoreAttributes ScoreAttributes

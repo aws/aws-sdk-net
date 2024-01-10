@@ -40,7 +40,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>GetAccessPointPolicyForObjectLambda</code>:
+    /// The following actions are related to <c>GetAccessPointPolicyForObjectLambda</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

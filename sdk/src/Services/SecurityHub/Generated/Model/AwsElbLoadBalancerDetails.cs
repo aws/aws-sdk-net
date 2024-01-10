@@ -130,9 +130,9 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+        /// Uses the <c>date-time</c> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
-        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// and date and time should be separated by <c>T</c>. For example, <c>2020-03-22T13:22:13.933Z</c>.
         /// </para>
         /// </summary>
         public string CreatedTime
@@ -280,13 +280,13 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// If <code>Scheme</code> is <code>internet-facing</code>, the load balancer has a public
-        /// DNS name that resolves to a public IP address.
+        /// If <c>Scheme</c> is <c>internet-facing</c>, the load balancer has a public DNS name
+        /// that resolves to a public IP address.
         /// </para>
         ///  
         /// <para>
-        /// If <code>Scheme</code> is <code>internal</code>, the load balancer has a public DNS
-        /// name that resolves to a private IP address.
+        /// If <c>Scheme</c> is <c>internal</c>, the load balancer has a public DNS name that
+        /// resolves to a private IP address.
         /// </para>
         /// </summary>
         public string Scheme

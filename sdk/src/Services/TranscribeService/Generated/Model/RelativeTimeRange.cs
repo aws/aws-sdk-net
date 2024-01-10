@@ -33,18 +33,18 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// You can use <code>StartPercentage</code> and <code>EndPercentage</code> to search
-    /// a custom segment. For example, setting <code>StartPercentage</code> to 10 and <code>EndPercentage</code>
-    /// to 50 only searches for your specified criteria in the audio contained between the
-    /// 10 percent mark and the 50 percent mark of your media file.
+    /// You can use <c>StartPercentage</c> and <c>EndPercentage</c> to search a custom segment.
+    /// For example, setting <c>StartPercentage</c> to 10 and <c>EndPercentage</c> to 50 only
+    /// searches for your specified criteria in the audio contained between the 10 percent
+    /// mark and the 50 percent mark of your media file.
     /// </para>
     ///  
     /// <para>
-    /// You can use also <code>First</code> to search from the start of the media file until
-    /// the time that you specify. Or use <code>Last</code> to search from the time that you
-    /// specify until the end of the media file. For example, setting <code>First</code> to
-    /// 10 only searches for your specified criteria in the audio contained in the first 10
-    /// percent of the media file.
+    /// You can use also <c>First</c> to search from the start of the media file until the
+    /// time that you specify. Or use <c>Last</c> to search from the time that you specify
+    /// until the end of the media file. For example, setting <c>First</c> to 10 only searches
+    /// for your specified criteria in the audio contained in the first 10 percent of the
+    /// media file.
     /// </para>
     ///  
     /// <para>
@@ -62,8 +62,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property EndPercentage. 
         /// <para>
         /// The time, in percentage, when Amazon Transcribe stops searching for the specified
-        /// criteria in your media file. If you include <code>EndPercentage</code> in your request,
-        /// you must also include <code>StartPercentage</code>.
+        /// criteria in your media file. If you include <c>EndPercentage</c> in your request,
+        /// you must also include <c>StartPercentage</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -123,8 +123,8 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property StartPercentage. 
         /// <para>
         /// The time, in percentage, when Amazon Transcribe starts searching for the specified
-        /// criteria in your media file. If you include <code>StartPercentage</code> in your request,
-        /// you must also include <code>EndPercentage</code>.
+        /// criteria in your media file. If you include <c>StartPercentage</c> in your request,
+        /// you must also include <c>EndPercentage</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

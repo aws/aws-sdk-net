@@ -103,7 +103,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property SamlOptions. 
         /// <para>
         /// Describes SAML options in in the form of a key-value map. This field is required if
-        /// you specify <code>saml</code> for the <code>type</code> parameter.
+        /// you specify <c>saml</c> for the <c>type</c> parameter.
         /// </para>
         /// </summary>
         public SamlConfigOptions SamlOptions

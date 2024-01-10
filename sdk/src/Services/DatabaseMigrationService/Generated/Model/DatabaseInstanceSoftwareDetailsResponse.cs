@@ -45,7 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property Engine. 
         /// <para>
         /// The database engine of a database in a Fleet Advisor collector inventory, for example
-        /// <code>Microsoft SQL Server</code>.
+        /// <c>Microsoft SQL Server</c>.
         /// </para>
         /// </summary>
         public string Engine
@@ -64,7 +64,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineEdition. 
         /// <para>
         /// The database engine edition of a database in a Fleet Advisor collector inventory,
-        /// for example <code>Express</code>.
+        /// for example <c>Express</c>.
         /// </para>
         /// </summary>
         public string EngineEdition
@@ -83,7 +83,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The database engine version of a database in a Fleet Advisor collector inventory,
-        /// for example <code>2019</code>.
+        /// for example <c>2019</c>.
         /// </para>
         /// </summary>
         public string EngineVersion
@@ -137,7 +137,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SupportLevel. 
         /// <para>
-        /// The support level of the database, for example <code>Mainstream support</code>.
+        /// The support level of the database, for example <c>Mainstream support</c>.
         /// </para>
         /// </summary>
         public string SupportLevel
@@ -155,8 +155,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Tooltip. 
         /// <para>
-        /// Information about the database engine software, for example <code>Mainstream support
-        /// ends on November 14th, 2024</code>.
+        /// Information about the database engine software, for example <c>Mainstream support
+        /// ends on November 14th, 2024</c>.
         /// </para>
         /// </summary>
         public string Tooltip

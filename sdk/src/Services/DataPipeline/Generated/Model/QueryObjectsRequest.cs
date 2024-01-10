@@ -44,8 +44,8 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of object names that <code>QueryObjects</code> will return in a
-        /// single call. The default value is 100. 
+        /// The maximum number of object names that <c>QueryObjects</c> will return in a single
+        /// call. The default value is 100. 
         /// </para>
         /// </summary>
         public int Limit
@@ -64,7 +64,7 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// The starting point for the results to be returned. For the first call, this value
-        /// should be empty. As long as there are more results, continue to call <code>QueryObjects</code>
+        /// should be empty. As long as there are more results, continue to call <c>QueryObjects</c>
         /// with the marker value from the previous call to retrieve the next set of results.
         /// </para>
         /// </summary>
@@ -103,10 +103,9 @@ namespace Amazon.DataPipeline.Model
         /// <summary>
         /// Gets and sets the property Query. 
         /// <para>
-        /// The query that defines the objects to be returned. The <code>Query</code> object can
-        /// contain a maximum of ten selectors. The conditions in the query are limited to top-level
-        /// String fields in the object. These filters can be applied to components, instances,
-        /// and attempts.
+        /// The query that defines the objects to be returned. The <c>Query</c> object can contain
+        /// a maximum of ten selectors. The conditions in the query are limited to top-level String
+        /// fields in the object. These filters can be applied to components, instances, and attempts.
         /// </para>
         /// </summary>
         public Query Query
@@ -125,7 +124,7 @@ namespace Amazon.DataPipeline.Model
         /// Gets and sets the property Sphere. 
         /// <para>
         /// Indicates whether the query applies to components or instances. The possible values
-        /// are: <code>COMPONENT</code>, <code>INSTANCE</code>, and <code>ATTEMPT</code>.
+        /// are: <c>COMPONENT</c>, <c>INSTANCE</c>, and <c>ATTEMPT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1024)]

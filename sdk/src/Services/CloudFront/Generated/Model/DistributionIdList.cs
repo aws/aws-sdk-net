@@ -44,7 +44,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IsTruncated. 
         /// <para>
         /// A flag that indicates whether more distribution IDs remain to be listed. If your results
-        /// were truncated, you can make a subsequent request using the <code>Marker</code> request
+        /// were truncated, you can make a subsequent request using the <c>Marker</c> request
         /// field to retrieve more distribution IDs in the list.
         /// </para>
         /// </summary>
@@ -82,7 +82,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The value provided in the <code>Marker</code> request field.
+        /// The value provided in the <c>Marker</c> request field.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -120,7 +120,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// Contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// Contains the value that you should use in the <c>Marker</c> field of a subsequent
         /// request to continue listing distribution IDs where you left off.
         /// </para>
         /// </summary>

@@ -118,8 +118,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RuleAction. 
         /// <para>
-        /// The rule action. The possible values are <code>pass</code>, <code>drop</code>, and
-        /// <code>forward_to_site</code>.
+        /// The rule action. The possible values are <c>pass</c>, <c>drop</c>, and <c>forward_to_site</c>.
         /// </para>
         /// </summary>
         public string RuleAction

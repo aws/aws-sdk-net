@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Describes the real-time endpoint information for an <code>MLModel</code>.
+    /// Describes the real-time endpoint information for an <c>MLModel</c>.
     /// </summary>
     public partial class RealtimeEndpointInfo
     {
@@ -41,7 +41,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The time that the request to create the real-time endpoint for the <code>MLModel</code>
+        /// The time that the request to create the real-time endpoint for the <c>MLModel</c>
         /// was received. The time is expressed in epoch time.
         /// </para>
         /// </summary>
@@ -60,20 +60,20 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EndpointStatus. 
         /// <para>
-        ///  The current status of the real-time endpoint for the <code>MLModel</code>. This element
+        ///  The current status of the real-time endpoint for the <c>MLModel</c>. This element
         /// can have one of the following values: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code> - Endpoint does not exist or was previously deleted.
+        ///  <c>NONE</c> - Endpoint does not exist or was previously deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>READY</code> - Endpoint is ready to be used for real-time predictions.
+        ///  <c>READY</c> - Endpoint is ready to be used for real-time predictions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - Updating/creating the endpoint. 
+        ///  <c>UPDATING</c> - Updating/creating the endpoint. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -92,7 +92,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property EndpointUrl. 
         /// <para>
-        /// The URI that specifies where to send real-time prediction requests for the <code>MLModel</code>.
+        /// The URI that specifies where to send real-time prediction requests for the <c>MLModel</c>.
         /// </para>
         ///  
         /// <para>
@@ -116,8 +116,8 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property PeakRequestsPerSecond. 
         /// <para>
-        ///  The maximum processing rate for the real-time endpoint for <code>MLModel</code>,
-        /// measured in incoming requests per second.
+        ///  The maximum processing rate for the real-time endpoint for <c>MLModel</c>, measured
+        /// in incoming requests per second.
         /// </para>
         /// </summary>
         public int PeakRequestsPerSecond

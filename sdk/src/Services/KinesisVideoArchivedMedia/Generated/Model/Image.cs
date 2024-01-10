@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoArchivedMedia.Model
 {
     /// <summary>
-    /// A structure that contains the <code>Timestamp</code>, <code>Error</code>, and <code>ImageContent</code>.
+    /// A structure that contains the <c>Timestamp</c>, <c>Error</c>, and <c>ImageContent</c>.
     /// </summary>
     public partial class Image
     {
@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// There is no media that exists for the specified <code>Timestamp</code>.
+        /// There is no media that exists for the specified <c>Timestamp</c>.
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property ImageContent. 
         /// <para>
-        /// An attribute of the <code>Image</code> object that is Base64 encoded.
+        /// An attribute of the <c>Image</c> object that is Base64 encoded.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=6291456)]
@@ -88,8 +88,8 @@ namespace Amazon.KinesisVideoArchivedMedia.Model
         /// <summary>
         /// Gets and sets the property TimeStamp. 
         /// <para>
-        /// An attribute of the <code>Image</code> object that is used to extract an image from
-        /// the video stream. This field is used to manage gaps on images or to better understand
+        /// An attribute of the <c>Image</c> object that is used to extract an image from the
+        /// video stream. This field is used to manage gaps on images or to better understand
         /// the pagination window.
         /// </para>
         /// </summary>

@@ -82,8 +82,8 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// If the <code>Status</code> field is set to <code>FAILED</code>, the <code>ErrorCode</code>
-        /// field indicates the reason the synchronization failed. 
+        /// If the <c>Status</c> field is set to <c>FAILED</c>, the <c>ErrorCode</c> field indicates
+        /// the reason the synchronization failed. 
         /// </para>
         /// </summary>
         public ErrorDetail Error
@@ -157,10 +157,9 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the synchronization job. When the <code>Status</code> field is set to
-        /// <code>SUCCEEDED</code>, the synchronization job is done. If the status code is <code>FAILED</code>,
-        /// the <code>ErrorCode</code> and <code>ErrorMessage</code> fields give you the reason
-        /// for the failure.
+        /// The status of the synchronization job. When the <c>Status</c> field is set to <c>SUCCEEDED</c>,
+        /// the synchronization job is done. If the status code is <c>FAILED</c>, the <c>ErrorCode</c>
+        /// and <c>ErrorMessage</c> fields give you the reason for the failure.
         /// </para>
         /// </summary>
         public DataSourceSyncJobStatus Status

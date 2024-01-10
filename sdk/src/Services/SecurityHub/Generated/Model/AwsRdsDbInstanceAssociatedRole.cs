@@ -77,21 +77,21 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// Describes the state of the association between the IAM role and the DB instance. The
-        /// <code>Status</code> property returns one of the following values:
+        /// <c>Status</c> property returns one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The IAM role ARN is associated with the DB instance and can
-        /// be used to access other Amazon Web Services services on your behalf.
+        ///  <c>ACTIVE</c> - The IAM role ARN is associated with the DB instance and can be used
+        /// to access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - The IAM role ARN is being associated with the DB instance.
+        ///  <c>PENDING</c> - The IAM role ARN is being associated with the DB instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID</code> - The IAM role ARN is associated with the DB instance. But the
-        /// DB instance is unable to assume the IAM role in order to access other Amazon Web Services
+        ///  <c>INVALID</c> - The IAM role ARN is associated with the DB instance. But the DB
+        /// instance is unable to assume the IAM role in order to access other Amazon Web Services
         /// services on your behalf. 
         /// </para>
         ///  </li> </ul>

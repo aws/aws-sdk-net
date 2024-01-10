@@ -47,11 +47,11 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required
-        /// for EventBridge to successfully send an event to an event bus. If you include event
-        /// entries in a request that do not include each of those properties, EventBridge fails
-        /// that entry. If you submit a request in which <i>none</i> of the entries have each
-        /// of these properties, EventBridge fails the entire request. 
+        ///  <c>Detail</c>, <c>DetailType</c>, and <c>Source</c> are required for EventBridge
+        /// to successfully send an event to an event bus. If you include event entries in a request
+        /// that do not include each of those properties, EventBridge fails that entry. If you
+        /// submit a request in which <i>none</i> of the entries have each of these properties,
+        /// EventBridge fails the entire request. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -75,11 +75,11 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required
-        /// for EventBridge to successfully send an event to an event bus. If you include event
-        /// entries in a request that do not include each of those properties, EventBridge fails
-        /// that entry. If you submit a request in which <i>none</i> of the entries have each
-        /// of these properties, EventBridge fails the entire request. 
+        ///  <c>Detail</c>, <c>DetailType</c>, and <c>Source</c> are required for EventBridge
+        /// to successfully send an event to an event bus. If you include event entries in a request
+        /// that do not include each of those properties, EventBridge fails that entry. If you
+        /// submit a request in which <i>none</i> of the entries have each of these properties,
+        /// EventBridge fails the entire request. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -121,11 +121,11 @@ namespace Amazon.EventBridge.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Detail</code>, <code>DetailType</code>, and <code>Source</code> are required
-        /// for EventBridge to successfully send an event to an event bus. If you include event
-        /// entries in a request that do not include each of those properties, EventBridge fails
-        /// that entry. If you submit a request in which <i>none</i> of the entries have each
-        /// of these properties, EventBridge fails the entire request. 
+        ///  <c>Detail</c>, <c>DetailType</c>, and <c>Source</c> are required for EventBridge
+        /// to successfully send an event to an event bus. If you include event entries in a request
+        /// that do not include each of those properties, EventBridge fails that entry. If you
+        /// submit a request in which <i>none</i> of the entries have each of these properties,
+        /// EventBridge fails the entire request. 
         /// </para>
         ///  </note>
         /// </summary>

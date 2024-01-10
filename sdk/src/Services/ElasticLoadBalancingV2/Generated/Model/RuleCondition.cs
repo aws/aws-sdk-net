@@ -33,11 +33,10 @@ namespace Amazon.ElasticLoadBalancingV2.Model
     /// 
     ///  
     /// <para>
-    /// Each rule can optionally include up to one of each of the following conditions: <code>http-request-method</code>,
-    /// <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>. Each
-    /// rule can also optionally include one or more of each of the following conditions:
-    /// <code>http-header</code> and <code>query-string</code>. Note that the value for a
-    /// condition cannot be empty.
+    /// Each rule can optionally include up to one of each of the following conditions: <c>http-request-method</c>,
+    /// <c>host-header</c>, <c>path-pattern</c>, and <c>source-ip</c>. Each rule can also
+    /// optionally include one or more of each of the following conditions: <c>http-header</c>
+    /// and <c>query-string</c>. Note that the value for a condition cannot be empty.
     /// </para>
     ///  
     /// <para>
@@ -63,27 +62,27 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>http-header</code> 
+        ///  <c>http-header</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>http-request-method</code> 
+        ///  <c>http-request-method</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>host-header</code> 
+        ///  <c>host-header</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>path-pattern</code> 
+        ///  <c>path-pattern</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>query-string</code> 
+        ///  <c>query-string</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source-ip</code> 
+        ///  <c>source-ip</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -103,7 +102,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HostHeaderConfig. 
         /// <para>
-        /// Information for a host header condition. Specify only when <code>Field</code> is <code>host-header</code>.
+        /// Information for a host header condition. Specify only when <c>Field</c> is <c>host-header</c>.
         /// </para>
         /// </summary>
         public HostHeaderConditionConfig HostHeaderConfig
@@ -121,8 +120,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HttpHeaderConfig. 
         /// <para>
-        /// Information for an HTTP header condition. Specify only when <code>Field</code> is
-        /// <code>http-header</code>.
+        /// Information for an HTTP header condition. Specify only when <c>Field</c> is <c>http-header</c>.
         /// </para>
         /// </summary>
         public HttpHeaderConditionConfig HttpHeaderConfig
@@ -140,8 +138,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property HttpRequestMethodConfig. 
         /// <para>
-        /// Information for an HTTP method condition. Specify only when <code>Field</code> is
-        /// <code>http-request-method</code>.
+        /// Information for an HTTP method condition. Specify only when <c>Field</c> is <c>http-request-method</c>.
         /// </para>
         /// </summary>
         public HttpRequestMethodConditionConfig HttpRequestMethodConfig
@@ -159,8 +156,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property PathPatternConfig. 
         /// <para>
-        /// Information for a path pattern condition. Specify only when <code>Field</code> is
-        /// <code>path-pattern</code>.
+        /// Information for a path pattern condition. Specify only when <c>Field</c> is <c>path-pattern</c>.
         /// </para>
         /// </summary>
         public PathPatternConditionConfig PathPatternConfig
@@ -178,8 +174,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property QueryStringConfig. 
         /// <para>
-        /// Information for a query string condition. Specify only when <code>Field</code> is
-        /// <code>query-string</code>.
+        /// Information for a query string condition. Specify only when <c>Field</c> is <c>query-string</c>.
         /// </para>
         /// </summary>
         public QueryStringConditionConfig QueryStringConfig
@@ -197,7 +192,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property SourceIpConfig. 
         /// <para>
-        /// Information for a source IP condition. Specify only when <code>Field</code> is <code>source-ip</code>.
+        /// Information for a source IP condition. Specify only when <c>Field</c> is <c>source-ip</c>.
         /// </para>
         /// </summary>
         public SourceIpConditionConfig SourceIpConfig
@@ -215,14 +210,14 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The condition value. Specify only when <code>Field</code> is <code>host-header</code>
-        /// or <code>path-pattern</code>. Alternatively, to specify multiple host names or multiple
-        /// path patterns, use <code>HostHeaderConfig</code> or <code>PathPatternConfig</code>.
+        /// The condition value. Specify only when <c>Field</c> is <c>host-header</c> or <c>path-pattern</c>.
+        /// Alternatively, to specify multiple host names or multiple path patterns, use <c>HostHeaderConfig</c>
+        /// or <c>PathPatternConfig</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>Field</code> is <code>host-header</code> and you are not using <code>HostHeaderConfig</code>,
-        /// you can specify a single host name (for example, my.example.com) in <code>Values</code>.
+        /// If <c>Field</c> is <c>host-header</c> and you are not using <c>HostHeaderConfig</c>,
+        /// you can specify a single host name (for example, my.example.com) in <c>Values</c>.
         /// A host name is case insensitive, can be up to 128 characters in length, and can contain
         /// any of the following characters.
         /// </para>
@@ -244,9 +239,9 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If <code>Field</code> is <code>path-pattern</code> and you are not using <code>PathPatternConfig</code>,
-        /// you can specify a single path pattern (for example, /img/*) in <code>Values</code>.
-        /// A path pattern is case-sensitive, can be up to 128 characters in length, and can contain
+        /// If <c>Field</c> is <c>path-pattern</c> and you are not using <c>PathPatternConfig</c>,
+        /// you can specify a single path pattern (for example, /img/*) in <c>Values</c>. A path
+        /// pattern is case-sensitive, can be up to 128 characters in length, and can contain
         /// any of the following characters.
         /// </para>
         ///  <ul> <li> 

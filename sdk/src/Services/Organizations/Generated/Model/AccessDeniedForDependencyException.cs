@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Organizations.Model
 {
     /// <summary>
-    /// The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code>
-    /// for <code>organizations.amazonaws.com</code> permission so that Organizations can
-    /// create the required service-linked role. You don't have that permission.
+    /// The operation that you attempted requires you to have the <c>iam:CreateServiceLinkedRole</c>
+    /// for <c>organizations.amazonaws.com</c> permission so that Organizations can create
+    /// the required service-linked role. You don't have that permission.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

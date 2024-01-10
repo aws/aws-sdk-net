@@ -42,7 +42,7 @@ namespace Amazon.Shield.Model
     /// <para>
     /// When you initially create a subscription, your subscription is set to be automatically
     /// renewed at the end of the existing subscription period. You can change this by submitting
-    /// an <code>UpdateSubscription</code> request. 
+    /// an <c>UpdateSubscription</c> request. 
     /// </para>
     /// </summary>
     public partial class CreateSubscriptionRequest : AmazonShieldRequest

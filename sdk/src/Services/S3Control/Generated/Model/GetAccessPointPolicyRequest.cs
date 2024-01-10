@@ -40,7 +40,7 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  
     /// <para>
-    /// The following actions are related to <code>GetAccessPointPolicy</code>:
+    /// The following actions are related to <c>GetAccessPointPolicy</c>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -91,10 +91,10 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// For using this parameter with S3 on Outposts with the Amazon Web Services SDK and
-        /// CLI, you must specify the ARN of the access point accessed in the format <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</code>.
-        /// For example, to access the access point <code>reports-ap</code> through Outpost <code>my-outpost</code>
-        /// owned by account <code>123456789012</code> in Region <code>us-west-2</code>, use the
-        /// URL encoding of <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</code>.
+        /// CLI, you must specify the ARN of the access point accessed in the format <c>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/accesspoint/&lt;my-accesspoint-name&gt;</c>.
+        /// For example, to access the access point <c>reports-ap</c> through Outpost <c>my-outpost</c>
+        /// owned by account <c>123456789012</c> in Region <c>us-west-2</c>, use the URL encoding
+        /// of <c>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/accesspoint/reports-ap</c>.
         /// The value must be URL encoded. 
         /// </para>
         /// </summary>

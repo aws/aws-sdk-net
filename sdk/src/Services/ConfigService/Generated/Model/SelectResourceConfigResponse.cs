@@ -40,7 +40,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned in a previous request that you use to request
+        /// The <c>nextToken</c> string returned in a previous request that you use to request
         /// the next page of results in a paginated response. 
         /// </para>
         /// </summary>
@@ -59,7 +59,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property QueryInfo. 
         /// <para>
-        /// Returns the <code>QueryInfo</code> object.
+        /// Returns the <c>QueryInfo</c> object.
         /// </para>
         /// </summary>
         public QueryInfo QueryInfo

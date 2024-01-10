@@ -97,12 +97,12 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code>
+        ///  <c>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</c>
         /// 
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>namespaceId</code> feature is in public preview.
+        /// The <c>namespaceId</c> feature is in public preview.
         /// </para>
         ///  </note>
         /// </summary>

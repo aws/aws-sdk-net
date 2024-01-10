@@ -47,7 +47,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// Indicates whether or not to enable deletion protection on the graph. The graph can’t
-        /// be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).
+        /// be deleted when deletion protection is enabled. (<c>true</c> or <c>false</c>).
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -130,8 +130,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property PublicConnectivity. 
         /// <para>
         /// Specifies whether or not the graph can be reachable over the internet. All access
-        /// to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to
-        /// disable.
+        /// to graphs IAM authenticated. (<c>true</c> to enable, or <c>false</c> to disable.
         /// </para>
         /// </summary>
         public bool PublicConnectivity
@@ -189,7 +188,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property VectorSearchConfiguration. 
         /// <para>
         /// Specifies the number of dimensions for vector embeddings that will be loaded into
-        /// the graph. The value is specified as <code>dimension=</code>value. Max = 65,535
+        /// the graph. The value is specified as <c>dimension=</c>value. Max = 65,535
         /// </para>
         /// </summary>
         public VectorSearchConfiguration VectorSearchConfiguration

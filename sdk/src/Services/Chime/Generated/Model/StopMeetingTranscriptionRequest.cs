@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the StopMeetingTranscription operation.
-    /// Stops transcription for the specified <code>meetingId</code>.
+    /// Stops transcription for the specified <c>meetingId</c>.
     /// 
     ///  <important> 
     /// <para>

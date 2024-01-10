@@ -82,11 +82,10 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Force. 
         /// <para>
-        /// Some SSM document types require that you specify a <code>Force</code> flag before
-        /// you can delete the document. For example, you must specify a <code>Force</code> flag
-        /// to delete a document of type <code>ApplicationConfigurationSchema</code>. You can
-        /// restrict access to the <code>Force</code> flag in an Identity and Access Management
-        /// (IAM) policy.
+        /// Some SSM document types require that you specify a <c>Force</c> flag before you can
+        /// delete the document. For example, you must specify a <c>Force</c> flag to delete a
+        /// document of type <c>ApplicationConfigurationSchema</c>. You can restrict access to
+        /// the <c>Force</c> flag in an Identity and Access Management (IAM) policy.
         /// </para>
         /// </summary>
         public bool Force

@@ -79,8 +79,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ExportStatus. 
         /// <para>
-        /// The status of the export. When the status is <code>Completed</code>, you can use the
-        /// <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
+        /// The status of the export. When the status is <c>Completed</c>, you can use the <a
+        /// href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
         /// operation to get the pre-signed S3 URL link to your exported bot or bot locale.
         /// </para>
         /// </summary>

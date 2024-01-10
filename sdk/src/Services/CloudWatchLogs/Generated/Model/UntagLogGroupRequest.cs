@@ -48,7 +48,7 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// CloudWatch Logs doesn’t support IAM policies that prevent users from assigning specified
-    /// tags to log groups using the <code>aws:Resource/<i>key-name</i> </code> or <code>aws:TagKeys</code>
+    /// tags to log groups using the <c>aws:Resource/<i>key-name</i> </c> or <c>aws:TagKeys</c>
     /// condition keys. 
     /// </para>
     /// </summary>

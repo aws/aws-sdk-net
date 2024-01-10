@@ -268,7 +268,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current
-        /// status must be <code>ACTIVE</code>.
+        /// status must be <c>ACTIVE</c>.
         /// 
         ///  
         /// <para>
@@ -302,7 +302,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current
-        /// status must be <code>ACTIVE</code>.
+        /// status must be <c>ACTIVE</c>.
         /// 
         ///  
         /// <para>
@@ -412,8 +412,8 @@ namespace Amazon.QLDB
         ///  
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
-        /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-        /// to set this parameter to <code>false</code>.
+        /// the ledger. You can disable it by calling the <c>UpdateLedger</c> operation to set
+        /// this parameter to <c>false</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLedger service method.</param>
@@ -448,8 +448,8 @@ namespace Amazon.QLDB
         ///  
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
-        /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-        /// to set this parameter to <code>false</code>.
+        /// the ledger. You can disable it by calling the <c>UpdateLedger</c> operation to set
+        /// this parameter to <c>false</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLedger service method.</param>
@@ -575,12 +575,11 @@ namespace Amazon.QLDB
         /// </para>
         ///  
         /// <para>
-        /// If the export job with the given <code>ExportId</code> doesn't exist, then throws
-        /// <code>ResourceNotFoundException</code>.
+        /// If the export job with the given <c>ExportId</c> doesn't exist, then throws <c>ResourceNotFoundException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+        /// If the ledger with the given <c>Name</c> doesn't exist, then throws <c>ResourceNotFoundException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJournalS3Export service method.</param>
@@ -613,12 +612,11 @@ namespace Amazon.QLDB
         /// </para>
         ///  
         /// <para>
-        /// If the export job with the given <code>ExportId</code> doesn't exist, then throws
-        /// <code>ResourceNotFoundException</code>.
+        /// If the export job with the given <c>ExportId</c> doesn't exist, then throws <c>ResourceNotFoundException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+        /// If the ledger with the given <c>Name</c> doesn't exist, then throws <c>ResourceNotFoundException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeJournalS3Export service method.</param>
@@ -708,17 +706,17 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+        /// If the ledger with the given <c>Name</c> doesn't exist, then throws <c>ResourceNotFoundException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the ledger with the given <code>Name</code> is in <code>CREATING</code> status,
-        /// then throws <code>ResourcePreconditionNotMetException</code>.
+        /// If the ledger with the given <c>Name</c> is in <c>CREATING</c> status, then throws
+        /// <c>ResourcePreconditionNotMetException</c>.
         /// </para>
         ///  
         /// <para>
         /// You can initiate up to two concurrent journal export requests for each ledger. Beyond
-        /// this limit, journal export requests throw <code>LimitExceededException</code>.
+        /// this limit, journal export requests throw <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportJournalToS3 service method.</param>
@@ -749,17 +747,17 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
+        /// If the ledger with the given <c>Name</c> doesn't exist, then throws <c>ResourceNotFoundException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the ledger with the given <code>Name</code> is in <code>CREATING</code> status,
-        /// then throws <code>ResourcePreconditionNotMetException</code>.
+        /// If the ledger with the given <c>Name</c> is in <c>CREATING</c> status, then throws
+        /// <c>ResourcePreconditionNotMetException</c>.
         /// </para>
         ///  
         /// <para>
         /// You can initiate up to two concurrent journal export requests for each ledger. Beyond
-        /// this limit, journal export requests throw <code>LimitExceededException</code>.
+        /// this limit, journal export requests throw <c>LimitExceededException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportJournalToS3 service method.</param>
@@ -791,7 +789,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Returns a block object at a specified address in a journal. Also returns a proof of
-        /// the specified block for verification if <code>DigestTipAddress</code> is provided.
+        /// the specified block for verification if <c>DigestTipAddress</c> is provided.
         /// 
         ///  
         /// <para>
@@ -800,16 +798,16 @@ namespace Amazon.QLDB
         /// </para>
         ///  
         /// <para>
-        /// If the specified ledger doesn't exist or is in <code>DELETING</code> status, then
-        /// throws <code>ResourceNotFoundException</code>.
+        /// If the specified ledger doesn't exist or is in <c>DELETING</c> status, then throws
+        /// <c>ResourceNotFoundException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.
+        /// If the specified ledger is in <c>CREATING</c> status, then throws <c>ResourcePreconditionNotMetException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If no block exists with the specified address, then throws <code>InvalidParameterException</code>.
+        /// If no block exists with the specified address, then throws <c>InvalidParameterException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlock service method.</param>
@@ -837,7 +835,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Returns a block object at a specified address in a journal. Also returns a proof of
-        /// the specified block for verification if <code>DigestTipAddress</code> is provided.
+        /// the specified block for verification if <c>DigestTipAddress</c> is provided.
         /// 
         ///  
         /// <para>
@@ -846,16 +844,16 @@ namespace Amazon.QLDB
         /// </para>
         ///  
         /// <para>
-        /// If the specified ledger doesn't exist or is in <code>DELETING</code> status, then
-        /// throws <code>ResourceNotFoundException</code>.
+        /// If the specified ledger doesn't exist or is in <c>DELETING</c> status, then throws
+        /// <c>ResourceNotFoundException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.
+        /// If the specified ledger is in <c>CREATING</c> status, then throws <c>ResourcePreconditionNotMetException</c>.
         /// </para>
         ///  
         /// <para>
-        /// If no block exists with the specified address, then throws <code>InvalidParameterException</code>.
+        /// If no block exists with the specified address, then throws <c>InvalidParameterException</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetBlock service method.</param>
@@ -951,7 +949,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Returns a revision data object for a specified document ID and block address. Also
-        /// returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
+        /// returns a proof of the specified revision for verification if <c>DigestTipAddress</c>
         /// is provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRevision service method.</param>
@@ -979,7 +977,7 @@ namespace Amazon.QLDB
 
         /// <summary>
         /// Returns a revision data object for a specified document ID and block address. Also
-        /// returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
+        /// returns a proof of the specified revision for verification if <c>DigestTipAddress</c>
         /// is provided.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetRevision service method.</param>
@@ -1023,8 +1021,8 @@ namespace Amazon.QLDB
         /// </para>
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items. It is paginated so
-        /// that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
+        /// This action returns a maximum of <c>MaxResults</c> items. It is paginated so that
+        /// you can retrieve all the items by calling <c>ListJournalKinesisStreamsForLedger</c>
         /// multiple times.
         /// </para>
         /// </summary>
@@ -1062,8 +1060,8 @@ namespace Amazon.QLDB
         /// </para>
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items. It is paginated so
-        /// that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code>
+        /// This action returns a maximum of <c>MaxResults</c> items. It is paginated so that
+        /// you can retrieve all the items by calling <c>ListJournalKinesisStreamsForLedger</c>
         /// multiple times.
         /// </para>
         /// </summary>
@@ -1103,9 +1101,8 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
-        /// that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-        /// times.
+        /// This action returns a maximum of <c>MaxResults</c> items, and is paginated so that
+        /// you can retrieve all the items by calling <c>ListJournalS3Exports</c> multiple times.
         /// </para>
         ///  
         /// <para>
@@ -1134,9 +1131,8 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
-        /// that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple
-        /// times.
+        /// This action returns a maximum of <c>MaxResults</c> items, and is paginated so that
+        /// you can retrieve all the items by calling <c>ListJournalS3Exports</c> multiple times.
         /// </para>
         ///  
         /// <para>
@@ -1171,9 +1167,9 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
-        /// that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
-        /// multiple times.
+        /// This action returns a maximum of <c>MaxResults</c> items, and is paginated so that
+        /// you can retrieve all the items by calling <c>ListJournalS3ExportsForLedger</c> multiple
+        /// times.
         /// </para>
         ///  
         /// <para>
@@ -1201,9 +1197,9 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items, and is paginated so
-        /// that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code>
-        /// multiple times.
+        /// This action returns a maximum of <c>MaxResults</c> items, and is paginated so that
+        /// you can retrieve all the items by calling <c>ListJournalS3ExportsForLedger</c> multiple
+        /// times.
         /// </para>
         ///  
         /// <para>
@@ -1239,8 +1235,8 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items and is paginated so
-        /// that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.
+        /// This action returns a maximum of <c>MaxResults</c> items and is paginated so that
+        /// you can retrieve all the items by calling <c>ListLedgers</c> multiple times.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLedgers service method.</param>
@@ -1263,8 +1259,8 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of <code>MaxResults</code> items and is paginated so
-        /// that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.
+        /// This action returns a maximum of <c>MaxResults</c> items and is paginated so that
+        /// you can retrieve all the items by calling <c>ListLedgers</c> multiple times.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLedgers service method.</param>
@@ -1582,9 +1578,9 @@ namespace Amazon.QLDB
         /// 
         ///  <important> 
         /// <para>
-        /// Before you switch to the <code>STANDARD</code> permissions mode, you must first create
-        /// all required IAM policies and table tags to avoid disruption to your users. To learn
-        /// more, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
+        /// Before you switch to the <c>STANDARD</c> permissions mode, you must first create all
+        /// required IAM policies and table tags to avoid disruption to your users. To learn more,
+        /// see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
         /// to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         ///  </important>
@@ -1614,9 +1610,9 @@ namespace Amazon.QLDB
         /// 
         ///  <important> 
         /// <para>
-        /// Before you switch to the <code>STANDARD</code> permissions mode, you must first create
-        /// all required IAM policies and table tags to avoid disruption to your users. To learn
-        /// more, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
+        /// Before you switch to the <c>STANDARD</c> permissions mode, you must first create all
+        /// required IAM policies and table tags to avoid disruption to your users. To learn more,
+        /// see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating
         /// to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.
         /// </para>
         ///  </important>

@@ -60,8 +60,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property LogConfiguration. 
         /// <para>
         /// The log configuration for the results of the execute command actions. The logs can
-        /// be sent to CloudWatch Logs or an Amazon S3 bucket. When <code>logging=OVERRIDE</code>
-        /// is specified, a <code>logConfiguration</code> must be provided.
+        /// be sent to CloudWatch Logs or an Amazon S3 bucket. When <c>logging=OVERRIDE</c> is
+        /// specified, a <c>logConfiguration</c> must be provided.
         /// </para>
         /// </summary>
         public ExecuteCommandLogConfiguration LogConfiguration
@@ -84,19 +84,19 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: The execute command session is not logged.
+        ///  <c>NONE</c>: The execute command session is not logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEFAULT</code>: The <code>awslogs</code> configuration in the task definition
-        /// is used. If no logging parameter is specified, it defaults to this value. If no <code>awslogs</code>
+        ///  <c>DEFAULT</c>: The <c>awslogs</c> configuration in the task definition is used.
+        /// If no logging parameter is specified, it defaults to this value. If no <c>awslogs</c>
         /// log driver is configured in the task definition, the output won't be logged.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OVERRIDE</code>: Specify the logging details as a part of <code>logConfiguration</code>.
-        /// If the <code>OVERRIDE</code> logging option is specified, the <code>logConfiguration</code>
-        /// is required.
+        ///  <c>OVERRIDE</c>: Specify the logging details as a part of <c>logConfiguration</c>.
+        /// If the <c>OVERRIDE</c> logging option is specified, the <c>logConfiguration</c> is
+        /// required.
         /// </para>
         ///  </li> </ul>
         /// </summary>

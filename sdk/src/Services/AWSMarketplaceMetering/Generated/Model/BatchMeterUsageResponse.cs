@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// Contains the <code>UsageRecords</code> processed by <code>BatchMeterUsage</code> and
-    /// any records that have failed due to transient error.
+    /// Contains the <c>UsageRecords</c> processed by <c>BatchMeterUsage</c> and any records
+    /// that have failed due to transient error.
     /// </summary>
     public partial class BatchMeterUsageResponse : AmazonWebServiceResponse
     {
@@ -40,9 +40,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property Results. 
         /// <para>
-        /// Contains all <code>UsageRecords</code> processed by <code>BatchMeterUsage</code>.
-        /// These records were either honored by AWS Marketplace Metering Service or were invalid.
-        /// Invalid records should be fixed before being resubmitted.
+        /// Contains all <c>UsageRecords</c> processed by <c>BatchMeterUsage</c>. These records
+        /// were either honored by AWS Marketplace Metering Service or were invalid. Invalid records
+        /// should be fixed before being resubmitted.
         /// </para>
         /// </summary>
         public List<UsageRecordResult> Results
@@ -60,9 +60,9 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property UnprocessedRecords. 
         /// <para>
-        /// Contains all <code>UsageRecords</code> that were not processed by <code>BatchMeterUsage</code>.
-        /// This is a list of <code>UsageRecords</code>. You can retry the failed request by making
-        /// another <code>BatchMeterUsage</code> call with this list as input in the <code>BatchMeterUsageRequest</code>.
+        /// Contains all <c>UsageRecords</c> that were not processed by <c>BatchMeterUsage</c>.
+        /// This is a list of <c>UsageRecords</c>. You can retry the failed request by making
+        /// another <c>BatchMeterUsage</c> call with this list as input in the <c>BatchMeterUsageRequest</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=25)]

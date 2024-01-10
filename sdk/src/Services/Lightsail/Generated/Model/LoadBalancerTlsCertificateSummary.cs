@@ -39,8 +39,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IsAttached. 
         /// <para>
-        /// When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail load
-        /// balancer.
+        /// When <c>true</c>, the SSL/TLS certificate is attached to the Lightsail load balancer.
         /// </para>
         /// </summary>
         public bool IsAttached

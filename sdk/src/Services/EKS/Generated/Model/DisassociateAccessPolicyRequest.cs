@@ -61,7 +61,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property PolicyArn. 
         /// <para>
         /// The ARN of the policy to disassociate from the access entry. For a list of associated
-        /// policies ARNs, use <code>ListAssociatedAccessPolicies</code>.
+        /// policies ARNs, use <c>ListAssociatedAccessPolicies</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The ARN of the IAM principal for the <code>AccessEntry</code>.
+        /// The ARN of the IAM principal for the <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

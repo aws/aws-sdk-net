@@ -47,18 +47,18 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALLOW</code> - WAF allows requests
+        ///  <c>ALLOW</c> - WAF allows requests
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BLOCK</code> - WAF blocks requests
+        ///  <c>BLOCK</c> - WAF blocks requests
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COUNT</code> - WAF increments a counter of the requests that match all of the
-        /// conditions in the rule. WAF then continues to inspect the web request based on the
-        /// remaining rules in the web ACL. You can't specify <code>COUNT</code> for the default
-        /// action for a web ACL.
+        ///  <c>COUNT</c> - WAF increments a counter of the requests that match all of the conditions
+        /// in the rule. WAF then continues to inspect the web request based on the remaining
+        /// rules in the web ACL. You can't specify <c>COUNT</c> for the default action for a
+        /// web ACL.
         /// </para>
         ///  </li> </ul>
         /// </summary>

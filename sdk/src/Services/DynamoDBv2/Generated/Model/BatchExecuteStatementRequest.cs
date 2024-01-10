@@ -31,8 +31,8 @@ namespace Amazon.DynamoDBv2.Model
     /// <summary>
     /// Container for the parameters to the BatchExecuteStatement operation.
     /// This operation allows you to perform batch reads or writes on data stored in DynamoDB,
-    /// using PartiQL. Each read statement in a <code>BatchExecuteStatement</code> must specify
-    /// an equality condition on all key attributes. This enforces that each <code>SELECT</code>
+    /// using PartiQL. Each read statement in a <c>BatchExecuteStatement</c> must specify
+    /// an equality condition on all key attributes. This enforces that each <c>SELECT</c>
     /// statement in a batch returns at most a single item.
     /// 
     ///  <note> 
@@ -44,7 +44,7 @@ namespace Amazon.DynamoDBv2.Model
     /// <para>
     /// A HTTP 200 response does not mean that all statements in the BatchExecuteStatement
     /// succeeded. Error details for individual statements can be found under the <a href="https://docs.aws.amazon.com/amazondynamodb/latest/APIReference/API_BatchStatementResponse.html#DDB-Type-BatchStatementResponse-Error">Error</a>
-    /// field of the <code>BatchStatementResponse</code> for each statement.
+    /// field of the <c>BatchStatementResponse</c> for each statement.
     /// </para>
     ///  </important>
     /// </summary>

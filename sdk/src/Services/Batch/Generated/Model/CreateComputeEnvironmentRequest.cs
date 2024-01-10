@@ -30,10 +30,9 @@ namespace Amazon.Batch.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateComputeEnvironment operation.
-    /// Creates an Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code>
-    /// compute environments. <code>MANAGED</code> compute environments can use Amazon EC2
-    /// or Fargate resources. <code>UNMANAGED</code> compute environments can only use EC2
-    /// resources.
+    /// Creates an Batch compute environment. You can create <c>MANAGED</c> or <c>UNMANAGED</c>
+    /// compute environments. <c>MANAGED</c> compute environments can use Amazon EC2 or Fargate
+    /// resources. <c>UNMANAGED</c> compute environments can only use EC2 resources.
     /// 
     ///  
     /// <para>
@@ -66,7 +65,7 @@ namespace Amazon.Batch.Model
     ///  <note> 
     /// <para>
     /// To create a compute environment that uses EKS resources, the caller must have permissions
-    /// to call <code>eks:DescribeCluster</code>.
+    /// to call <c>eks:DescribeCluster</c>.
     /// </para>
     ///  </note> <note> 
     /// <para>
@@ -103,45 +102,42 @@ namespace Amazon.Batch.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Either don't set the service role (<code>serviceRole</code>) parameter or set it to
-    /// the <b>AWSBatchServiceRole</b> service-linked role.
+    /// Either don't set the service role (<c>serviceRole</c>) parameter or set it to the
+    /// <b>AWSBatchServiceRole</b> service-linked role.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Set the allocation strategy (<code>allocationStrategy</code>) parameter to <code>BEST_FIT_PROGRESSIVE</code>,
-    /// <code>SPOT_CAPACITY_OPTIMIZED</code>, or <code>SPOT_PRICE_CAPACITY_OPTIMIZED</code>.
+    /// Set the allocation strategy (<c>allocationStrategy</c>) parameter to <c>BEST_FIT_PROGRESSIVE</c>,
+    /// <c>SPOT_CAPACITY_OPTIMIZED</c>, or <c>SPOT_PRICE_CAPACITY_OPTIMIZED</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Set the update to latest image version (<code>updateToLatestImageVersion</code>) parameter
-    /// to <code>true</code>. The <code>updateToLatestImageVersion</code> parameter is used
-    /// when you update a compute environment. This parameter is ignored when you create a
-    /// compute environment.
+    /// Set the update to latest image version (<c>updateToLatestImageVersion</c>) parameter
+    /// to <c>true</c>. The <c>updateToLatestImageVersion</c> parameter is used when you update
+    /// a compute environment. This parameter is ignored when you create a compute environment.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Don't specify an AMI ID in <code>imageId</code>, <code>imageIdOverride</code> (in
-    /// <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
-    /// <code>ec2Configuration</code> </a>), or in the launch template (<code>launchTemplate</code>).
+    /// Don't specify an AMI ID in <c>imageId</c>, <c>imageIdOverride</c> (in <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_Ec2Configuration.html">
+    /// <c>ec2Configuration</c> </a>), or in the launch template (<c>launchTemplate</c>).
     /// In that case, Batch selects the latest Amazon ECS optimized AMI that's supported by
     /// Batch at the time the infrastructure update is initiated. Alternatively, you can specify
-    /// the AMI ID in the <code>imageId</code> or <code>imageIdOverride</code> parameters,
-    /// or the launch template identified by the <code>LaunchTemplate</code> properties. Changing
-    /// any of these properties starts an infrastructure update. If the AMI ID is specified
-    /// in the launch template, it can't be replaced by specifying an AMI ID in either the
-    /// <code>imageId</code> or <code>imageIdOverride</code> parameters. It can only be replaced
-    /// by specifying a different launch template, or if the launch template version is set
-    /// to <code>$Default</code> or <code>$Latest</code>, by setting either a new default
-    /// version for the launch template (if <code>$Default</code>) or by adding a new version
-    /// to the launch template (if <code>$Latest</code>).
+    /// the AMI ID in the <c>imageId</c> or <c>imageIdOverride</c> parameters, or the launch
+    /// template identified by the <c>LaunchTemplate</c> properties. Changing any of these
+    /// properties starts an infrastructure update. If the AMI ID is specified in the launch
+    /// template, it can't be replaced by specifying an AMI ID in either the <c>imageId</c>
+    /// or <c>imageIdOverride</c> parameters. It can only be replaced by specifying a different
+    /// launch template, or if the launch template version is set to <c>$Default</c> or <c>$Latest</c>,
+    /// by setting either a new default version for the launch template (if <c>$Default</c>)
+    /// or by adding a new version to the launch template (if <c>$Latest</c>).
     /// </para>
     ///  </li> </ul> 
     /// <para>
     /// If these rules are followed, any update that starts an infrastructure update causes
-    /// the AMI ID to be re-selected. If the <code>version</code> setting in the launch template
-    /// (<code>launchTemplate</code>) is set to <code>$Latest</code> or <code>$Default</code>,
-    /// the latest or default version of the launch template is evaluated up at the time of
-    /// the infrastructure update, even if the <code>launchTemplate</code> wasn't updated.
+    /// the AMI ID to be re-selected. If the <c>version</c> setting in the launch template
+    /// (<c>launchTemplate</c>) is set to <c>$Latest</c> or <c>$Default</c>, the latest or
+    /// default version of the launch template is evaluated up at the time of the infrastructure
+    /// update, even if the <c>launchTemplate</c> wasn't updated.
     /// </para>
     ///  </note>
     /// </summary>
@@ -231,19 +227,18 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// If your specified role has a path other than <code>/</code>, then you must specify
-        /// either the full role ARN (recommended) or prefix the role name with the path. For
-        /// example, if a role with the name <code>bar</code> has a path of <code>/foo/</code>,
-        /// specify <code>/foo/bar</code> as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
+        /// If your specified role has a path other than <c>/</c>, then you must specify either
+        /// the full role ARN (recommended) or prefix the role name with the path. For example,
+        /// if a role with the name <c>bar</c> has a path of <c>/foo/</c>, specify <c>/foo/bar</c>
+        /// as the role name. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
         /// names and paths</a> in the <i>IAM User Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Depending on how you created your Batch service role, its ARN might contain the <code>service-role</code>
+        /// Depending on how you created your Batch service role, its ARN might contain the <c>service-role</c>
         /// path prefix. When you only specify the name of the service role, Batch assumes that
-        /// your ARN doesn't use the <code>service-role</code> path prefix. Because of this, we
-        /// recommend that you specify the full ARN of your service role when you create compute
-        /// environments.
+        /// your ARN doesn't use the <c>service-role</c> path prefix. Because of this, we recommend
+        /// that you specify the full ARN of your service role when you create compute environments.
         /// </para>
         ///  </note>
         /// </summary>
@@ -262,38 +257,36 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The state of the compute environment. If the state is <code>ENABLED</code>, then the
-        /// compute environment accepts jobs from a queue and can scale out automatically based
-        /// on queues.
+        /// The state of the compute environment. If the state is <c>ENABLED</c>, then the compute
+        /// environment accepts jobs from a queue and can scale out automatically based on queues.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>ENABLED</code>, then the Batch scheduler can attempt to place
-        /// jobs from an associated job queue on the compute resources within the environment.
-        /// If the compute environment is managed, then it can scale its instances out or in automatically,
+        /// If the state is <c>ENABLED</c>, then the Batch scheduler can attempt to place jobs
+        /// from an associated job queue on the compute resources within the environment. If the
+        /// compute environment is managed, then it can scale its instances out or in automatically,
         /// based on the job queue demand.
         /// </para>
         ///  
         /// <para>
-        /// If the state is <code>DISABLED</code>, then the Batch scheduler doesn't attempt to
-        /// place jobs within the environment. Jobs in a <code>STARTING</code> or <code>RUNNING</code>
-        /// state continue to progress normally. Managed compute environments in the <code>DISABLED</code>
-        /// state don't scale out. 
+        /// If the state is <c>DISABLED</c>, then the Batch scheduler doesn't attempt to place
+        /// jobs within the environment. Jobs in a <c>STARTING</c> or <c>RUNNING</c> state continue
+        /// to progress normally. Managed compute environments in the <c>DISABLED</c> state don't
+        /// scale out. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// Compute environments in a <code>DISABLED</code> state may continue to incur billing
-        /// charges. To prevent additional charges, turn off and then delete the compute environment.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
+        /// Compute environments in a <c>DISABLED</c> state may continue to incur billing charges.
+        /// To prevent additional charges, turn off and then delete the compute environment. For
+        /// more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environment_parameters.html#compute_environment_state">State</a>
         /// in the <i>Batch User Guide</i>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// When an instance is idle, the instance scales down to the <code>minvCpus</code> value.
-        /// However, the instance size doesn't change. For example, consider a <code>c5.8xlarge</code>
-        /// instance with a <code>minvCpus</code> value of <code>4</code> and a <code>desiredvCpus</code>
-        /// value of <code>36</code>. This instance doesn't scale down to a <code>c5.large</code>
-        /// instance.
+        /// When an instance is idle, the instance scales down to the <c>minvCpus</c> value. However,
+        /// the instance size doesn't change. For example, consider a <c>c5.8xlarge</c> instance
+        /// with a <c>minvCpus</c> value of <c>4</c> and a <c>desiredvCpus</c> value of <c>36</c>.
+        /// This instance doesn't scale down to a <c>c5.large</c> instance.
         /// </para>
         /// </summary>
         public CEState State
@@ -339,8 +332,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the compute environment: <code>MANAGED</code> or <code>UNMANAGED</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
+        /// The type of the compute environment: <c>MANAGED</c> or <c>UNMANAGED</c>. For more
+        /// information, see <a href="https://docs.aws.amazon.com/batch/latest/userguide/compute_environments.html">Compute
         /// Environments</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
@@ -366,7 +359,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported when the <code>type</code> parameter is set to <code>UNMANAGED</code>.
+        /// This parameter is only supported when the <c>type</c> parameter is set to <c>UNMANAGED</c>.
         /// </para>
         ///  </note>
         /// </summary>

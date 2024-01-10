@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// The <code>Export</code> structure describes the exported output values for a stack.
+    /// The <c>Export</c> structure describes the exported output values for a stack.
     /// </summary>
     public partial class Export
     {
@@ -58,9 +58,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of exported output value. Use this name and the <code>Fn::ImportValue</code>
-        /// function to import the associated value into other stacks. The name is defined in
-        /// the <code>Export</code> field in the associated stack's <code>Outputs</code> section.
+        /// The name of exported output value. Use this name and the <c>Fn::ImportValue</c> function
+        /// to import the associated value into other stacks. The name is defined in the <c>Export</c>
+        /// field in the associated stack's <c>Outputs</c> section.
         /// </para>
         /// </summary>
         public string Name
@@ -79,7 +79,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the exported output, such as a resource physical ID. This value is defined
-        /// in the <code>Export</code> field in the associated stack's <code>Outputs</code> section.
+        /// in the <c>Export</c> field in the associated stack's <c>Outputs</c> section.
         /// </para>
         /// </summary>
         public string Value

@@ -97,7 +97,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property IsUpdatable. 
         /// <para>
-        ///  Specifies whether the field can be updated during an <code>UPDATE</code> or <code>UPSERT</code>
+        ///  Specifies whether the field can be updated during an <c>UPDATE</c> or <c>UPSERT</c>
         /// write operation. 
         /// </para>
         /// </summary>
@@ -136,8 +136,8 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property SupportedWriteOperations. 
         /// <para>
         ///  A list of supported write operations. For each write operation listed, this field
-        /// can be used in <code>idFieldNames</code> when that write operation is present as a
-        /// destination option. 
+        /// can be used in <c>idFieldNames</c> when that write operation is present as a destination
+        /// option. 
         /// </para>
         /// </summary>
         public List<string> SupportedWriteOperations

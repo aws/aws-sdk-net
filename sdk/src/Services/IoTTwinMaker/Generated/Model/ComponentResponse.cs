@@ -48,8 +48,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property AreAllCompositeComponentsReturned. 
         /// <para>
-        /// This flag notes whether all <code>compositeComponents</code> are returned in the API
-        /// response.
+        /// This flag notes whether all <c>compositeComponents</c> are returned in the API response.
         /// </para>
         /// </summary>
         public bool AreAllCompositeComponentsReturned
@@ -124,7 +123,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property CompositeComponents. 
         /// <para>
-        /// This lists objects that contain information about the <code>compositeComponents</code>.
+        /// This lists objects that contain information about the <c>compositeComponents</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, ComponentSummary> CompositeComponents

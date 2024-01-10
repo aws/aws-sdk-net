@@ -101,7 +101,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// <summary>
         /// Gets and sets the property ShutdownAgentlessCollectors. 
         /// <para>
-        /// The number of Agentless Collector collectors with <code>SHUTDOWN</code> status. 
+        /// The number of Agentless Collector collectors with <c>SHUTDOWN</c> status. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

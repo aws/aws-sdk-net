@@ -63,8 +63,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BotTags. 
         /// <para>
         /// A list of tags to add to the bot. You can only add tags when you import a bot. You
-        /// can't use the <code>UpdateBot</code> operation to update tags. To update tags, use
-        /// the <code>TagResource</code> operation.
+        /// can't use the <c>UpdateBot</c> operation to update tags. To update tags, use the <c>TagResource</c>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -149,8 +149,8 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property TestBotAliasTags. 
         /// <para>
         /// A list of tags to add to the test alias for a bot. You can only add tags when you
-        /// import a bot. You can't use the <code>UpdateAlias</code> operation to update tags.
-        /// To update tags on the test alias, use the <code>TagResource</code> operation.
+        /// import a bot. You can't use the <c>UpdateAlias</c> operation to update tags. To update
+        /// tags on the test alias, use the <c>TagResource</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]

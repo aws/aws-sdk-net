@@ -145,8 +145,8 @@ namespace Amazon.ComprehendMedical.Model
         /// Gets and sets the property RelationshipType. 
         /// <para>
         /// The type of relationship between the entity and attribute. Type for the relationship
-        /// is <code>OVERLAP</code>, indicating that the entity occurred at the same time as the
-        /// <code>Date_Expression</code>. 
+        /// is <c>OVERLAP</c>, indicating that the entity occurred at the same time as the <c>Date_Expression</c>.
+        /// 
         /// </para>
         /// </summary>
         public RelationshipType RelationshipType

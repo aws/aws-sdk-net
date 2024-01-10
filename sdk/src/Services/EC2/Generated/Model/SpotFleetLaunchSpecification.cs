@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Describes the launch specification for one or more Spot Instances. If you include
     /// On-Demand capacity in your fleet request or want to specify an EFA network device,
-    /// you can't use <code>SpotFleetLaunchSpecification</code>; you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
+    /// you can't use <c>SpotFleetLaunchSpecification</c>; you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
     /// </summary>
     public partial class SpotFleetLaunchSpecification
     {
@@ -104,7 +104,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool EbsOptimized
@@ -163,7 +163,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you specify <code>InstanceRequirements</code>, you can't specify <code>InstanceType</code>.
+        /// If you specify <c>InstanceRequirements</c>, you can't specify <c>InstanceType</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -259,8 +259,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric
-        /// Adapter (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
+        ///  <c>SpotFleetLaunchSpecification</c> currently does not support Elastic Fabric Adapter
+        /// (EFA). To specify an EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
         /// </para>
         ///  </note>
         /// </summary>

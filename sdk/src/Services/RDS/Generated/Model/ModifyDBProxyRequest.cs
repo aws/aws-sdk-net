@@ -46,7 +46,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Auth. 
         /// <para>
-        /// The new authentication settings for the <code>DBProxy</code>.
+        /// The new authentication settings for the <c>DBProxy</c>.
         /// </para>
         /// </summary>
         public List<UserAuthConfig> Auth
@@ -64,7 +64,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DBProxyName. 
         /// <para>
-        /// The identifier for the <code>DBProxy</code> to modify.
+        /// The identifier for the <c>DBProxy</c> to modify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +126,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property NewDBProxyName. 
         /// <para>
-        /// The new identifier for the <code>DBProxy</code>. An identifier must begin with a letter
+        /// The new identifier for the <c>DBProxy</c>. An identifier must begin with a letter
         /// and must contain only ASCII letters, digits, and hyphens; it can't end with a hyphen
         /// or contain two consecutive hyphens.
         /// </para>
@@ -185,7 +185,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The new list of security groups for the <code>DBProxy</code>.
+        /// The new list of security groups for the <c>DBProxy</c>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroups

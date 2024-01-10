@@ -58,8 +58,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Registries. 
         /// <para>
-        /// An array of <code>RegistryDetailedListItem</code> objects containing minimal details
-        /// of each registry.
+        /// An array of <c>RegistryDetailedListItem</c> objects containing minimal details of
+        /// each registry.
         /// </para>
         /// </summary>
         public List<RegistryListItem> Registries

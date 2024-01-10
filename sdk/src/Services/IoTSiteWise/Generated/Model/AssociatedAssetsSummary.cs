@@ -52,7 +52,7 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</code> 
+        ///  <c>arn:${Partition}:iotsitewise:${Region}:${Account}:asset/${AssetId}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -148,8 +148,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Hierarchies. 
         /// <para>
-        /// A list of asset hierarchies that each contain a <code>hierarchyId</code>. A hierarchy
-        /// specifies allowed parent/child asset relationships.
+        /// A list of asset hierarchies that each contain a <c>hierarchyId</c>. A hierarchy specifies
+        /// allowed parent/child asset relationships.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

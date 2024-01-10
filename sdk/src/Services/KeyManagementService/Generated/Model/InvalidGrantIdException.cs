@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
-    /// The request was rejected because the specified <code>GrantId</code> is not valid.
+    /// The request was rejected because the specified <c>GrantId</c> is not valid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

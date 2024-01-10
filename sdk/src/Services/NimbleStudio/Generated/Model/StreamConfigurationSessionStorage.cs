@@ -39,7 +39,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property Mode. 
         /// <para>
-        /// Allows artists to upload files to their workstations. The only valid option is <code>UPLOAD</code>.
+        /// Allows artists to upload files to their workstations. The only valid option is <c>UPLOAD</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

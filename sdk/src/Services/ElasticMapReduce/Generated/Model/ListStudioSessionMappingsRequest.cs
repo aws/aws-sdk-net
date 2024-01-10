@@ -31,7 +31,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Container for the parameters to the ListStudioSessionMappings operation.
     /// Returns a list of all user or group session mappings for the Amazon EMR Studio specified
-    /// by <code>StudioId</code>.
+    /// by <c>StudioId</c>.
     /// </summary>
     public partial class ListStudioSessionMappingsRequest : AmazonElasticMapReduceRequest
     {

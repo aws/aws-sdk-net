@@ -30,7 +30,7 @@ namespace Amazon.DeviceFarm.Model
 {
     /// <summary>
     /// Represents the device filters used in a test run and the maximum number of devices
-    /// to be included in the run. It is passed in as the <code>deviceSelectionConfiguration</code>
+    /// to be included in the run. It is passed in as the <c>deviceSelectionConfiguration</c>
     /// request parameter in <a>ScheduleRun</a>.
     /// </summary>
     public partial class DeviceSelectionConfiguration
@@ -59,7 +59,7 @@ namespace Amazon.DeviceFarm.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// ARN: The Amazon Resource Name (ARN) of the device (for example, <code>arn:aws:devicefarm:us-west-2::device:12345Example</code>).
+        /// ARN: The Amazon Resource Name (ARN) of the device (for example, <c>arn:aws:devicefarm:us-west-2::device:12345Example</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>

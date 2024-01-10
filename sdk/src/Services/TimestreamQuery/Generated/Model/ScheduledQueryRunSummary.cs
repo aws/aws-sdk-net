@@ -99,8 +99,7 @@ namespace Amazon.TimestreamQuery.Model
         /// Gets and sets the property InvocationTime. 
         /// <para>
         /// InvocationTime for this run. This is the time at which the query is scheduled to run.
-        /// Parameter <code>@scheduled_runtime</code> can be used in the query to get the value.
-        /// 
+        /// Parameter <c>@scheduled_runtime</c> can be used in the query to get the value. 
         /// </para>
         /// </summary>
         public DateTime InvocationTime

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// <code>PutRecords</code> results.
+    /// <c>PutRecords</c> results.
     /// </summary>
     public partial class PutRecordsResponse : AmazonWebServiceResponse
     {
@@ -45,12 +45,12 @@ namespace Amazon.Kinesis.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NONE</code>: Do not encrypt the records.
+        ///  <c>NONE</c>: Do not encrypt the records.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KMS</code>: Use server-side encryption on the records using a customer-managed
-        /// Amazon Web Services KMS key.
+        ///  <c>KMS</c>: Use server-side encryption on the records using a customer-managed Amazon
+        /// Web Services KMS key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -69,7 +69,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property FailedRecordCount. 
         /// <para>
-        /// The number of unsuccessfully processed records in a <code>PutRecords</code> request.
+        /// The number of unsuccessfully processed records in a <c>PutRecords</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -89,9 +89,9 @@ namespace Amazon.Kinesis.Model
         /// Gets and sets the property Records. 
         /// <para>
         /// An array of successfully and unsuccessfully processed record results. A record that
-        /// is successfully added to a stream includes <code>SequenceNumber</code> and <code>ShardId</code>
-        /// in the result. A record that fails to be added to a stream includes <code>ErrorCode</code>
-        /// and <code>ErrorMessage</code> in the result.
+        /// is successfully added to a stream includes <c>SequenceNumber</c> and <c>ShardId</c>
+        /// in the result. A record that fails to be added to a stream includes <c>ErrorCode</c>
+        /// and <c>ErrorMessage</c> in the result.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=500)]

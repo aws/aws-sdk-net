@@ -30,7 +30,7 @@ namespace Amazon.MigrationHub.Model
 {
     /// <summary>
     /// Container for the parameters to the ListApplicationStates operation.
-    /// Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code>
+    /// Lists all the migration statuses for your applications. If you use the optional <c>ApplicationIds</c>
     /// parameter, only the migration statuses for those applications will be returned.
     /// </summary>
     public partial class ListApplicationStatesRequest : AmazonMigrationHubRequest
@@ -81,9 +81,9 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.
+        /// If a <c>NextToken</c> was returned by a previous call, there are more results available.
+        /// To retrieve the next page of results, make the call again using the returned token
+        /// in <c>NextToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

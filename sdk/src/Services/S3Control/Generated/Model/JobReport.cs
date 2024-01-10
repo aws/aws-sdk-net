@@ -106,7 +106,7 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Prefix. 
         /// <para>
         /// An optional prefix to describe where in the specified bucket the job-completion report
-        /// will be stored. Amazon S3 stores the job-completion report at <code>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</code>.
+        /// will be stored. Amazon S3 stores the job-completion report at <c>&lt;prefix&gt;/job-&lt;job-id&gt;/report.json</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

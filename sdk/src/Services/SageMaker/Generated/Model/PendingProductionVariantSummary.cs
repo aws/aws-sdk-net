@@ -32,7 +32,7 @@ namespace Amazon.SageMaker.Model
     /// The production variant summary for a deployment when an endpoint is creating or updating
     /// with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
     /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
-    /// operations. Describes the <code>VariantStatus </code>, weight and capacity for a production
+    /// operations. Describes the <c>VariantStatus </c>, weight and capacity for a production
     /// variant associated with an endpoint.
     /// </summary>
     public partial class PendingProductionVariantSummary
@@ -131,8 +131,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property DeployedImages. 
         /// <para>
-        /// An array of <code>DeployedImage</code> objects that specify the Amazon EC2 Container
-        /// Registry paths of the inference images deployed on instances of this <code>ProductionVariant</code>.
+        /// An array of <c>DeployedImage</c> objects that specify the Amazon EC2 Container Registry
+        /// paths of the inference images deployed on instances of this <c>ProductionVariant</c>.
         /// </para>
         /// </summary>
         public List<DeployedImage> DeployedImages

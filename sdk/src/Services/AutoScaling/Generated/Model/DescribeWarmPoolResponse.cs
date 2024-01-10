@@ -59,7 +59,7 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// This string indicates that the response contains more items than can be returned in
-        /// a single response. To receive additional items, specify this string for the <code>NextToken</code>
+        /// a single response. To receive additional items, specify this string for the <c>NextToken</c>
         /// value when requesting the next set of items. This value is null when there are no
         /// more items to return.
         /// </para>

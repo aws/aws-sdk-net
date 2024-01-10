@@ -133,7 +133,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property DistributionHostedZoneId. 
         /// <para>
         /// The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized endpoint.
-        /// The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions. For more information,
+        /// The valid value is <c>Z2FDTNDATAQYW2</c> for all the regions. For more information,
         /// see Set up a Regional Custom Domain Name and AWS Regions and Endpoints for API Gateway.
         /// 
         /// </para>
@@ -153,10 +153,10 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property DomainNameStatus. 
         /// <para>
-        /// The status of the DomainName migration. The valid values are <code>AVAILABLE</code>
-        /// and <code>UPDATING</code>. If the status is <code>UPDATING</code>, the domain cannot
-        /// be modified further until the existing operation is complete. If it is <code>AVAILABLE</code>,
-        /// the domain can be updated.
+        /// The status of the DomainName migration. The valid values are <c>AVAILABLE</c> and
+        /// <c>UPDATING</c>. If the status is <c>UPDATING</c>, the domain cannot be modified further
+        /// until the existing operation is complete. If it is <c>AVAILABLE</c>, the domain can
+        /// be updated.
         /// </para>
         /// </summary>
         public DomainNameStatus DomainNameStatus
@@ -232,7 +232,7 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The custom domain name as an API host name, for example, <code>my-api.example.com</code>.
+        /// The custom domain name as an API host name, for example, <c>my-api.example.com</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -349,7 +349,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property SecurityPolicy. 
         /// <para>
         /// The Transport Layer Security (TLS) version + cipher suite for this DomainName. The
-        /// valid values are <code>TLS_1_0</code> and <code>TLS_1_2</code>.
+        /// valid values are <c>TLS_1_0</c> and <c>TLS_1_2</c>.
         /// </para>
         /// </summary>
         public SecurityPolicy SecurityPolicy

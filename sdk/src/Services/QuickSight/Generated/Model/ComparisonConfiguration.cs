@@ -61,15 +61,15 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DIFFERENCE</code> 
+        ///  <c>DIFFERENCE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PERCENT_DIFFERENCE</code> 
+        ///  <c>PERCENT_DIFFERENCE</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PERCENT</code> 
+        ///  <c>PERCENT</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -201,7 +201,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property PreSignedUrl. 
         /// <para>
-        /// The pre-signed URL to be used to upload the <code>.csv</code> file.
+        /// The pre-signed URL to be used to upload the <c>.csv</c> file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -260,39 +260,38 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Created</code> - The job was created but not started.
+        ///  <c>Created</c> - The job was created but not started.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Pending</code> - A transition state. You have started the job, but it has not
-        /// begun importing users yet.
+        ///  <c>Pending</c> - A transition state. You have started the job, but it has not begun
+        /// importing users yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code> - The job has started, and users are being imported.
+        ///  <c>InProgress</c> - The job has started, and users are being imported.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopping</code> - You have stopped the job, but the job has not stopped importing
+        ///  <c>Stopping</c> - You have stopped the job, but the job has not stopped importing
         /// users yet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopped</code> - You have stopped the job, and the job has stopped importing
-        /// users.
+        ///  <c>Stopped</c> - You have stopped the job, and the job has stopped importing users.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Succeeded</code> - The job has completed successfully.
+        ///  <c>Succeeded</c> - The job has completed successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The job has stopped due to an error.
+        ///  <c>Failed</c> - The job has stopped due to an error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Expired</code> - You created a job, but did not start the job within 24-48
-        /// hours. All data associated with the job was deleted, and the job can't be started.
+        ///  <c>Expired</c> - You created a job, but did not start the job within 24-48 hours.
+        /// All data associated with the job was deleted, and the job can't be started.
         /// </para>
         ///  </li> </ul>
         /// </summary>

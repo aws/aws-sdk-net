@@ -70,7 +70,7 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The current value for the limit that is specified by <code>Type</code>.
+        /// The current value for the limit that is specified by <c>Type</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

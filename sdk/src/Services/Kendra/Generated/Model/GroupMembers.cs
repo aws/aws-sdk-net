@@ -90,9 +90,9 @@ namespace Amazon.Kendra.Model
         ///  
         /// <para>
         /// You can download this <a href="https://docs.aws.amazon.com/kendra/latest/dg/samples/group_members.zip">example
-        /// S3 file</a> that uses the correct format for listing group members. Note, <code>dataSourceId</code>
-        /// is optional. The value of <code>type</code> for a group is always <code>GROUP</code>
-        /// and for a user it is always <code>USER</code>.
+        /// S3 file</a> that uses the correct format for listing group members. Note, <c>dataSourceId</c>
+        /// is optional. The value of <c>type</c> for a group is always <c>GROUP</c> and for a
+        /// user it is always <c>USER</c>.
         /// </para>
         /// </summary>
         public S3Path S3PathforGroupMembers

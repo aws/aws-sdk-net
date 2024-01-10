@@ -43,12 +43,12 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For stateful rule groups, can contain <code>RulesString</code>, <code>RulesSourceList</code>,
-        /// or <code>StatefulRules</code>.
+        /// For stateful rule groups, can contain <c>RulesString</c>, <c>RulesSourceList</c>,
+        /// or <c>StatefulRules</c>.
         /// </para>
         ///  
         /// <para>
-        /// For stateless rule groups, contains <code>StatelessRulesAndCustomActions</code>.
+        /// For stateless rule groups, contains <c>StatelessRulesAndCustomActions</c>.
         /// </para>
         /// </summary>
         public RuleGroupSource RulesSource

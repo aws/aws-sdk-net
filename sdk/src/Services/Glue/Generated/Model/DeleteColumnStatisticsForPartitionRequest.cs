@@ -35,7 +35,7 @@ namespace Amazon.Glue.Model
     ///  
     /// <para>
     /// The Identity and Access Management (IAM) permission required for this operation is
-    /// <code>DeletePartition</code>.
+    /// <c>DeletePartition</c>.
     /// </para>
     /// </summary>
     public partial class DeleteColumnStatisticsForPartitionRequest : AmazonGlueRequest

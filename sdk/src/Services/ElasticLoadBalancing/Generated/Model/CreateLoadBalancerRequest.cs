@@ -177,8 +177,8 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>internal</code> to create a load balancer with a DNS name that resolves
-        /// to private IP addresses.
+        /// Specify <c>internal</c> to create a load balancer with a DNS name that resolves to
+        /// private IP addresses.
         /// </para>
         /// </summary>
         public string Scheme
@@ -215,7 +215,7 @@ namespace Amazon.ElasticLoadBalancing.Model
         /// Gets and sets the property Subnets. 
         /// <para>
         /// The IDs of the subnets in your VPC to attach to the load balancer. Specify one subnet
-        /// per Availability Zone specified in <code>AvailabilityZones</code>.
+        /// per Availability Zone specified in <c>AvailabilityZones</c>.
         /// </para>
         /// </summary>
         public List<string> Subnets

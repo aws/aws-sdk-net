@@ -42,17 +42,16 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    /// You define featurization using the <code>FeaturizationConfig</code> object. You specify
+    /// You define featurization using the <c>FeaturizationConfig</c> object. You specify
     /// an array of transformations, one for each field that you want to featurize. You then
-    /// include the <code>FeaturizationConfig</code> object in your <code>CreatePredictor</code>
-    /// request. Amazon Forecast applies the featurization to the <code>TARGET_TIME_SERIES</code>
-    /// and <code>RELATED_TIME_SERIES</code> datasets before model training.
+    /// include the <c>FeaturizationConfig</c> object in your <c>CreatePredictor</c> request.
+    /// Amazon Forecast applies the featurization to the <c>TARGET_TIME_SERIES</c> and <c>RELATED_TIME_SERIES</c>
+    /// datasets before model training.
     /// </para>
     ///  
     /// <para>
     /// You can create multiple featurization configurations. For example, you might call
-    /// the <code>CreatePredictor</code> operation twice by specifying different featurization
-    /// configurations.
+    /// the <c>CreatePredictor</c> operation twice by specifying different featurization configurations.
     /// </para>
     /// </summary>
     public partial class FeaturizationConfig
@@ -88,16 +87,15 @@ namespace Amazon.ForecastService.Model
         ///  
         /// <para>
         /// For example, suppose that you are generating a forecast for item sales across all
-        /// of your stores, and your dataset contains a <code>store_id</code> field. If you want
-        /// the sales forecast for each item by store, you would specify <code>store_id</code>
-        /// as the dimension.
+        /// of your stores, and your dataset contains a <c>store_id</c> field. If you want the
+        /// sales forecast for each item by store, you would specify <c>store_id</c> as the dimension.
         /// </para>
         ///  
         /// <para>
-        /// All forecast dimensions specified in the <code>TARGET_TIME_SERIES</code> dataset don't
-        /// need to be specified in the <code>CreatePredictor</code> request. All forecast dimensions
-        /// specified in the <code>RELATED_TIME_SERIES</code> dataset must be specified in the
-        /// <code>CreatePredictor</code> request.
+        /// All forecast dimensions specified in the <c>TARGET_TIME_SERIES</c> dataset don't need
+        /// to be specified in the <c>CreatePredictor</c> request. All forecast dimensions specified
+        /// in the <c>RELATED_TIME_SERIES</c> dataset must be specified in the <c>CreatePredictor</c>
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

@@ -68,15 +68,15 @@ namespace Amazon.Lightsail.Model
         ///  
         /// <para>
         /// The power specifies the amount of memory, vCPUs, and base monthly cost of each node
-        /// of the container service. The <code>power</code> and <code>scale</code> of a container
-        /// service makes up its configured capacity. To determine the monthly price of your container
-        /// service, multiply the base price of the <code>power</code> with the <code>scale</code>
-        /// (the number of nodes) of the service.
+        /// of the container service. The <c>power</c> and <c>scale</c> of a container service
+        /// makes up its configured capacity. To determine the monthly price of your container
+        /// service, multiply the base price of the <c>power</c> with the <c>scale</c> (the number
+        /// of nodes) of the service.
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>GetContainerServicePowers</code> action to view the specifications of
-        /// each power option.
+        /// Use the <c>GetContainerServicePowers</c> action to view the specifications of each
+        /// power option.
         /// </para>
         /// </summary>
         public ContainerServicePowerName Power
@@ -120,8 +120,8 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property PublicDomainNames. 
         /// <para>
-        /// The public domain names to use with the container service, such as <code>example.com</code>
-        /// and <code>www.example.com</code>.
+        /// The public domain names to use with the container service, such as <c>example.com</c>
+        /// and <c>www.example.com</c>.
         /// </para>
         ///  
         /// <para>
@@ -137,9 +137,8 @@ namespace Amazon.Lightsail.Model
         ///  <important> 
         /// <para>
         /// You must create and validate an SSL/TLS certificate before you can use public domain
-        /// names with your container service. Use the <code>CreateCertificate</code> action to
-        /// create a certificate for the public domain names you want to use with your container
-        /// service.
+        /// names with your container service. Use the <c>CreateCertificate</c> action to create
+        /// a certificate for the public domain names you want to use with your container service.
         /// </para>
         ///  </important> 
         /// <para>
@@ -166,10 +165,10 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// The scale specifies the allocated compute nodes of the container service. The <code>power</code>
-        /// and <code>scale</code> of a container service makes up its configured capacity. To
-        /// determine the monthly price of your container service, multiply the base price of
-        /// the <code>power</code> with the <code>scale</code> (the number of nodes) of the service.
+        /// The scale specifies the allocated compute nodes of the container service. The <c>power</c>
+        /// and <c>scale</c> of a container service makes up its configured capacity. To determine
+        /// the monthly price of your container service, multiply the base price of the <c>power</c>
+        /// with the <c>scale</c> (the number of nodes) of the service.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

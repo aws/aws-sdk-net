@@ -29,21 +29,20 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Used to set feature group throughput configuration. There are two modes: <code>ON_DEMAND</code>
-    /// and <code>PROVISIONED</code>. With on-demand mode, you are charged for data reads
-    /// and writes that your application performs on your feature group. You do not need to
-    /// specify read and write throughput because Feature Store accommodates your workloads
-    /// as they ramp up and down. You can switch a feature group to on-demand only once in
-    /// a 24 hour period. With provisioned throughput mode, you specify the read and write
-    /// capacity per second that you expect your application to require, and you are billed
-    /// based on those limits. Exceeding provisioned throughput will result in your requests
-    /// being throttled. 
+    /// Used to set feature group throughput configuration. There are two modes: <c>ON_DEMAND</c>
+    /// and <c>PROVISIONED</c>. With on-demand mode, you are charged for data reads and writes
+    /// that your application performs on your feature group. You do not need to specify read
+    /// and write throughput because Feature Store accommodates your workloads as they ramp
+    /// up and down. You can switch a feature group to on-demand only once in a 24 hour period.
+    /// With provisioned throughput mode, you specify the read and write capacity per second
+    /// that you expect your application to require, and you are billed based on those limits.
+    /// Exceeding provisioned throughput will result in your requests being throttled. 
     /// 
     ///  
     /// <para>
-    /// Note: <code>PROVISIONED</code> throughput mode is supported only for feature groups
-    /// that are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType">
-    /// <code>Standard</code> </a> tier online store. 
+    /// Note: <c>PROVISIONED</c> throughput mode is supported only for feature groups that
+    /// are offline-only, or use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OnlineStoreConfig.html#sagemaker-Type-OnlineStoreConfig-StorageType">
+    /// <c>Standard</c> </a> tier online store. 
     /// </para>
     /// </summary>
     public partial class ThroughputConfig
@@ -103,7 +102,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ThroughputMode. 
         /// <para>
-        /// The mode used for your feature group throughput: <code>ON_DEMAND</code> or <code>PROVISIONED</code>.
+        /// The mode used for your feature group throughput: <c>ON_DEMAND</c> or <c>PROVISIONED</c>.
         /// 
         /// </para>
         /// </summary>

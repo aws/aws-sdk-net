@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DocDB.Model
 {
     /// <summary>
-    /// <code>DBInstanceIdentifier</code> doesn't refer to an existing instance.
+    /// <c>DBInstanceIdentifier</c> doesn't refer to an existing instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -463,7 +463,7 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  
         /// <para>
-        ///  <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code> 
+        ///  <c> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </c> 
         /// </para>
         ///  
         /// <para>
@@ -528,7 +528,7 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  
         /// <para>
-        ///  <code> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </code> 
+        ///  <c> <i>partner_name</i>/<i>event_namespace</i>/<i>event_name</i> </c> 
         /// </para>
         ///  
         /// <para>
@@ -956,14 +956,14 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// If you call delete rule multiple times for the same rule, all calls will succeed.
-        /// When you call delete rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code>
+        /// When you call delete rule for a non-existent custom eventbus, <c>ResourceNotFoundException</c>
         /// is returned.
         /// </para>
         ///  
         /// <para>
         /// Managed rules are rules created and managed by another Amazon Web Services service
         /// on your behalf. These rules are created by those other Amazon Web Services services
-        /// to support functionality in those services. You can delete these rules using the <code>Force</code>
+        /// to support functionality in those services. You can delete these rules using the <c>Force</c>
         /// option, but you should do so only if you are sure the other service is not still using
         /// that rule.
         /// </para>
@@ -979,11 +979,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1008,14 +1008,14 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// If you call delete rule multiple times for the same rule, all calls will succeed.
-        /// When you call delete rule for a non-existent custom eventbus, <code>ResourceNotFoundException</code>
+        /// When you call delete rule for a non-existent custom eventbus, <c>ResourceNotFoundException</c>
         /// is returned.
         /// </para>
         ///  
         /// <para>
         /// Managed rules are rules created and managed by another Amazon Web Services service
         /// on your behalf. These rules are created by those other Amazon Web Services services
-        /// to support functionality in those services. You can delete these rules using the <code>Force</code>
+        /// to support functionality in those services. You can delete these rules using the <c>Force</c>
         /// option, but you should do so only if you are sure the other service is not still using
         /// that rule.
         /// </para>
@@ -1034,11 +1034,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1344,13 +1344,13 @@ namespace Amazon.CloudWatchEvents
 
 
         /// <summary>
-        /// Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the
-        /// progress of a running replay. A replay processes events to replay based on the time
-        /// in the event, and replays them using 1 minute intervals. If you use <code>StartReplay</code>
-        /// and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers
-        /// a 20 minute time range, the events are replayed from the first minute of that 20 minute
-        /// range first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
-        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// Retrieves details about a replay. Use <c>DescribeReplay</c> to determine the progress
+        /// of a running replay. A replay processes events to replay based on the time in the
+        /// event, and replays them using 1 minute intervals. If you use <c>StartReplay</c> and
+        /// specify an <c>EventStartTime</c> and an <c>EventEndTime</c> that covers a 20 minute
+        /// time range, the events are replayed from the first minute of that 20 minute range
+        /// first. Then the events from the second minute are replayed. You can use <c>DescribeReplay</c>
+        /// to determine the progress of a replay. The value returned for <c>EventLastReplayedTime</c>
         /// indicates the time within the specified time range associated with the last event
         /// replayed.
         /// </summary>
@@ -1369,13 +1369,13 @@ namespace Amazon.CloudWatchEvents
 
 
         /// <summary>
-        /// Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the
-        /// progress of a running replay. A replay processes events to replay based on the time
-        /// in the event, and replays them using 1 minute intervals. If you use <code>StartReplay</code>
-        /// and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers
-        /// a 20 minute time range, the events are replayed from the first minute of that 20 minute
-        /// range first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
-        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// Retrieves details about a replay. Use <c>DescribeReplay</c> to determine the progress
+        /// of a running replay. A replay processes events to replay based on the time in the
+        /// event, and replays them using 1 minute intervals. If you use <c>StartReplay</c> and
+        /// specify an <c>EventStartTime</c> and an <c>EventEndTime</c> that covers a 20 minute
+        /// time range, the events are replayed from the first minute of that 20 minute range
+        /// first. Then the events from the second minute are replayed. You can use <c>DescribeReplay</c>
+        /// to determine the progress of a replay. The value returned for <c>EventLastReplayedTime</c>
         /// indicates the time within the specified time range associated with the last event
         /// replayed.
         /// </summary>
@@ -1472,11 +1472,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1510,11 +1510,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1547,11 +1547,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -1584,11 +1584,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -2221,8 +2221,8 @@ namespace Amazon.CloudWatchEvents
 
 
         /// <summary>
-        /// Running <code>PutPermission</code> permits the specified Amazon Web Services account
-        /// or Amazon Web Services organization to put events to the specified <i>event bus</i>.
+        /// Running <c>PutPermission</c> permits the specified Amazon Web Services account or
+        /// Amazon Web Services organization to put events to the specified <i>event bus</i>.
         /// Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
         /// events arriving to an event bus in your account. 
         /// 
@@ -2234,16 +2234,15 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// To enable multiple Amazon Web Services accounts to put events to your event bus, run
-        /// <code>PutPermission</code> once for each of these accounts. Or, if all the accounts
-        /// are members of the same Amazon Web Services organization, you can run <code>PutPermission</code>
-        /// once specifying <code>Principal</code> as "*" and specifying the Amazon Web Services
-        /// organization ID in <code>Condition</code>, to grant permissions to all accounts in
-        /// that organization.
+        /// <c>PutPermission</c> once for each of these accounts. Or, if all the accounts are
+        /// members of the same Amazon Web Services organization, you can run <c>PutPermission</c>
+        /// once specifying <c>Principal</c> as "*" and specifying the Amazon Web Services organization
+        /// ID in <c>Condition</c>, to grant permissions to all accounts in that organization.
         /// </para>
         ///  
         /// <para>
         /// If you grant permissions using an organization, then accounts in that organization
-        /// must specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code>
+        /// must specify a <c>RoleArn</c> with proper permissions when they use <c>PutTarget</c>
         /// to add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
         /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
         /// User Guide</i>.
@@ -2277,8 +2276,8 @@ namespace Amazon.CloudWatchEvents
 
 
         /// <summary>
-        /// Running <code>PutPermission</code> permits the specified Amazon Web Services account
-        /// or Amazon Web Services organization to put events to the specified <i>event bus</i>.
+        /// Running <c>PutPermission</c> permits the specified Amazon Web Services account or
+        /// Amazon Web Services organization to put events to the specified <i>event bus</i>.
         /// Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
         /// events arriving to an event bus in your account. 
         /// 
@@ -2290,16 +2289,15 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// To enable multiple Amazon Web Services accounts to put events to your event bus, run
-        /// <code>PutPermission</code> once for each of these accounts. Or, if all the accounts
-        /// are members of the same Amazon Web Services organization, you can run <code>PutPermission</code>
-        /// once specifying <code>Principal</code> as "*" and specifying the Amazon Web Services
-        /// organization ID in <code>Condition</code>, to grant permissions to all accounts in
-        /// that organization.
+        /// <c>PutPermission</c> once for each of these accounts. Or, if all the accounts are
+        /// members of the same Amazon Web Services organization, you can run <c>PutPermission</c>
+        /// once specifying <c>Principal</c> as "*" and specifying the Amazon Web Services organization
+        /// ID in <c>Condition</c>, to grant permissions to all accounts in that organization.
         /// </para>
         ///  
         /// <para>
         /// If you grant permissions using an organization, then accounts in that organization
-        /// must specify a <code>RoleArn</code> with proper permissions when they use <code>PutTarget</code>
+        /// must specify a <c>RoleArn</c> with proper permissions when they use <c>PutTarget</c>
         /// to add your account's event bus as a target. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
         /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
         /// User Guide</i>.
@@ -2354,9 +2352,8 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// If you are updating an existing rule, the rule is replaced with what you specify in
-        /// this <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>,
-        /// the old values for those arguments are not kept. Instead, they are replaced with null
-        /// values.
+        /// this <c>PutRule</c> command. If you omit arguments in <c>PutRule</c>, the old values
+        /// for those arguments are not kept. Instead, they are replaced with null values.
         /// </para>
         ///  
         /// <para>
@@ -2375,14 +2372,13 @@ namespace Amazon.CloudWatchEvents
         /// When you initially create a rule, you can optionally assign one or more tags to the
         /// rule. Tags can help you organize and categorize your resources. You can also use them
         /// to scope user permissions, by granting a user permission to access or change only
-        /// rules with certain tag values. To use the <code>PutRule</code> operation and assign
-        /// tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code>
-        /// permissions.
+        /// rules with certain tag values. To use the <c>PutRule</c> operation and assign tags,
+        /// you must have both the <c>events:PutRule</c> and <c>events:TagResource</c> permissions.
         /// </para>
         ///  
         /// <para>
-        /// If you are updating an existing rule, any tags you specify in the <code>PutRule</code>
-        /// operation are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// If you are updating an existing rule, any tags you specify in the <c>PutRule</c> operation
+        /// are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a>
         /// and <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html">UntagResource</a>.
         /// </para>
         ///  
@@ -2432,11 +2428,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -2462,9 +2458,8 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// If you are updating an existing rule, the rule is replaced with what you specify in
-        /// this <code>PutRule</code> command. If you omit arguments in <code>PutRule</code>,
-        /// the old values for those arguments are not kept. Instead, they are replaced with null
-        /// values.
+        /// this <c>PutRule</c> command. If you omit arguments in <c>PutRule</c>, the old values
+        /// for those arguments are not kept. Instead, they are replaced with null values.
         /// </para>
         ///  
         /// <para>
@@ -2483,14 +2478,13 @@ namespace Amazon.CloudWatchEvents
         /// When you initially create a rule, you can optionally assign one or more tags to the
         /// rule. Tags can help you organize and categorize your resources. You can also use them
         /// to scope user permissions, by granting a user permission to access or change only
-        /// rules with certain tag values. To use the <code>PutRule</code> operation and assign
-        /// tags, you must have both the <code>events:PutRule</code> and <code>events:TagResource</code>
-        /// permissions.
+        /// rules with certain tag values. To use the <c>PutRule</c> operation and assign tags,
+        /// you must have both the <c>events:PutRule</c> and <c>events:TagResource</c> permissions.
         /// </para>
         ///  
         /// <para>
-        /// If you are updating an existing rule, any tags you specify in the <code>PutRule</code>
-        /// operation are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a>
+        /// If you are updating an existing rule, any tags you specify in the <c>PutRule</c> operation
+        /// are ignored. To update the tags of an existing rule, use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_TagResource.html">TagResource</a>
         /// and <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_UntagResource.html">UntagResource</a>.
         /// </para>
         ///  
@@ -2543,11 +2537,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -2603,19 +2597,19 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>CreateSnapshot</code> API call
+        /// Amazon EC2 <c>CreateSnapshot</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>RebootInstances</code> API call
+        /// Amazon EC2 <c>RebootInstances</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>StopInstances</code> API call
+        /// Amazon EC2 <c>StopInstances</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>TerminateInstances</code> API call
+        /// Amazon EC2 <c>TerminateInstances</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2677,17 +2671,16 @@ namespace Amazon.CloudWatchEvents
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the Amazon Web Services
-        /// Management Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
-        /// <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API call</code>,
-        /// and <code>EC2 TerminateInstances API call</code>. 
+        /// Management Console. The built-in targets are <c>EC2 CreateSnapshot API call</c>, <c>EC2
+        /// RebootInstances API call</c>, <c>EC2 StopInstances API call</c>, and <c>EC2 TerminateInstances
+        /// API call</c>. 
         /// </para>
         ///  
         /// <para>
-        /// For some target types, <code>PutTargets</code> provides target-specific parameters.
-        /// If the target is a Kinesis data stream, you can optionally specify which shard the
-        /// event goes to by using the <code>KinesisParameters</code> argument. To invoke a command
-        /// on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code>
-        /// field.
+        /// For some target types, <c>PutTargets</c> provides target-specific parameters. If the
+        /// target is a Kinesis data stream, you can optionally specify which shard the event
+        /// goes to by using the <c>KinesisParameters</c> argument. To invoke a command on multiple
+        /// EC2 instances with one rule, you can use the <c>RunCommandParameters</c> field.
         /// </para>
         ///  
         /// <para>
@@ -2695,34 +2688,33 @@ namespace Amazon.CloudWatchEvents
         /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
         /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
         /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-        /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// specify in the <c>RoleARN</c> argument in <c>PutTargets</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If another Amazon Web Services account is in the same region and has granted you permission
-        /// (using <code>PutPermission</code>), you can send events to that account. Set that
-        /// account's event bus as a target of the rules in your account. To send the matched
-        /// events to the other account, specify that account's event bus as the <code>Arn</code>
-        /// value when you run <code>PutTargets</code>. If your account sends events to another
-        /// account, your account is charged for each sent event. Each event sent to another account
-        /// is charged as a custom event. The account receiving the event is not charged. For
-        /// more information, see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon
-        /// EventBridge Pricing</a>.
+        /// (using <c>PutPermission</c>), you can send events to that account. Set that account's
+        /// event bus as a target of the rules in your account. To send the matched events to
+        /// the other account, specify that account's event bus as the <c>Arn</c> value when you
+        /// run <c>PutTargets</c>. If your account sends events to another account, your account
+        /// is charged for each sent event. Each event sent to another account is charged as a
+        /// custom event. The account receiving the event is not charged. For more information,
+        /// see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge Pricing</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Input</code>, <code>InputPath</code>, and <code>InputTransformer</code> are
-        /// not available with <code>PutTarget</code> if the target is an event bus of a different
-        /// Amazon Web Services account.
+        ///  <c>Input</c>, <c>InputPath</c>, and <c>InputTransformer</c> are not available with
+        /// <c>PutTarget</c> if the target is an event bus of a different Amazon Web Services
+        /// account.
         /// </para>
         ///  </note> 
         /// <para>
         /// If you are setting the event bus of another account as the target, and that account
         /// granted permission to your account through an organization instead of directly by
-        /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
-        /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
+        /// the account ID, then you must specify a <c>RoleArn</c> with proper permissions in
+        /// the <c>Target</c> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
         /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
         /// User Guide</i>.
         /// </para>
@@ -2748,7 +2740,7 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>),
+        /// If <b>InputPath</b> is specified in the form of JSONPath (for example, <c>$.detail</c>),
         /// then only the part of the event specified in the path is passed to the target (for
         /// example, only the detail part of the event is passed).
         /// </para>
@@ -2760,8 +2752,8 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must
-        /// use JSON dot notation, not bracket notation.
+        /// When you specify <c>InputPath</c> or <c>InputTransformer</c>, you must use JSON dot
+        /// notation, not bracket notation.
         /// </para>
         ///  
         /// <para>
@@ -2772,8 +2764,8 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// This action can partially fail if too many requests are made at the same time. If
-        /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
-        /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
+        /// that happens, <c>FailedEntryCount</c> is non-zero in the response and each entry in
+        /// <c>FailedEntries</c> provides the ID of the failed target and the error code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTargets service method.</param>
@@ -2791,11 +2783,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -2848,19 +2840,19 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>CreateSnapshot</code> API call
+        /// Amazon EC2 <c>CreateSnapshot</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>RebootInstances</code> API call
+        /// Amazon EC2 <c>RebootInstances</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>StopInstances</code> API call
+        /// Amazon EC2 <c>StopInstances</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon EC2 <code>TerminateInstances</code> API call
+        /// Amazon EC2 <c>TerminateInstances</c> API call
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -2922,17 +2914,16 @@ namespace Amazon.CloudWatchEvents
         ///  </li> </ul> 
         /// <para>
         /// Creating rules with built-in targets is supported only in the Amazon Web Services
-        /// Management Console. The built-in targets are <code>EC2 CreateSnapshot API call</code>,
-        /// <code>EC2 RebootInstances API call</code>, <code>EC2 StopInstances API call</code>,
-        /// and <code>EC2 TerminateInstances API call</code>. 
+        /// Management Console. The built-in targets are <c>EC2 CreateSnapshot API call</c>, <c>EC2
+        /// RebootInstances API call</c>, <c>EC2 StopInstances API call</c>, and <c>EC2 TerminateInstances
+        /// API call</c>. 
         /// </para>
         ///  
         /// <para>
-        /// For some target types, <code>PutTargets</code> provides target-specific parameters.
-        /// If the target is a Kinesis data stream, you can optionally specify which shard the
-        /// event goes to by using the <code>KinesisParameters</code> argument. To invoke a command
-        /// on multiple EC2 instances with one rule, you can use the <code>RunCommandParameters</code>
-        /// field.
+        /// For some target types, <c>PutTargets</c> provides target-specific parameters. If the
+        /// target is a Kinesis data stream, you can optionally specify which shard the event
+        /// goes to by using the <c>KinesisParameters</c> argument. To invoke a command on multiple
+        /// EC2 instances with one rule, you can use the <c>RunCommandParameters</c> field.
         /// </para>
         ///  
         /// <para>
@@ -2940,34 +2931,33 @@ namespace Amazon.CloudWatchEvents
         /// needs the appropriate permissions. For Lambda and Amazon SNS resources, EventBridge
         /// relies on resource-based policies. For EC2 instances, Kinesis Data Streams, Step Functions
         /// state machines and API Gateway REST APIs, EventBridge relies on IAM roles that you
-        /// specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
-        /// information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
+        /// specify in the <c>RoleARN</c> argument in <c>PutTargets</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html">Authentication
         /// and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
         /// </para>
         ///  
         /// <para>
         /// If another Amazon Web Services account is in the same region and has granted you permission
-        /// (using <code>PutPermission</code>), you can send events to that account. Set that
-        /// account's event bus as a target of the rules in your account. To send the matched
-        /// events to the other account, specify that account's event bus as the <code>Arn</code>
-        /// value when you run <code>PutTargets</code>. If your account sends events to another
-        /// account, your account is charged for each sent event. Each event sent to another account
-        /// is charged as a custom event. The account receiving the event is not charged. For
-        /// more information, see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon
-        /// EventBridge Pricing</a>.
+        /// (using <c>PutPermission</c>), you can send events to that account. Set that account's
+        /// event bus as a target of the rules in your account. To send the matched events to
+        /// the other account, specify that account's event bus as the <c>Arn</c> value when you
+        /// run <c>PutTargets</c>. If your account sends events to another account, your account
+        /// is charged for each sent event. Each event sent to another account is charged as a
+        /// custom event. The account receiving the event is not charged. For more information,
+        /// see <a href="http://aws.amazon.com/eventbridge/pricing/">Amazon EventBridge Pricing</a>.
         /// </para>
         ///  <note> 
         /// <para>
-        ///  <code>Input</code>, <code>InputPath</code>, and <code>InputTransformer</code> are
-        /// not available with <code>PutTarget</code> if the target is an event bus of a different
-        /// Amazon Web Services account.
+        ///  <c>Input</c>, <c>InputPath</c>, and <c>InputTransformer</c> are not available with
+        /// <c>PutTarget</c> if the target is an event bus of a different Amazon Web Services
+        /// account.
         /// </para>
         ///  </note> 
         /// <para>
         /// If you are setting the event bus of another account as the target, and that account
         /// granted permission to your account through an organization instead of directly by
-        /// the account ID, then you must specify a <code>RoleArn</code> with proper permissions
-        /// in the <code>Target</code> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
+        /// the account ID, then you must specify a <c>RoleArn</c> with proper permissions in
+        /// the <c>Target</c> structure. For more information, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eventbridge-cross-account-event-delivery.html">Sending
         /// and Receiving Events Between Amazon Web Services Accounts</a> in the <i>Amazon EventBridge
         /// User Guide</i>.
         /// </para>
@@ -2993,7 +2983,7 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <b>InputPath</b> is specified in the form of JSONPath (for example, <code>$.detail</code>),
+        /// If <b>InputPath</b> is specified in the form of JSONPath (for example, <c>$.detail</c>),
         /// then only the part of the event specified in the path is passed to the target (for
         /// example, only the detail part of the event is passed).
         /// </para>
@@ -3005,8 +2995,8 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When you specify <code>InputPath</code> or <code>InputTransformer</code>, you must
-        /// use JSON dot notation, not bracket notation.
+        /// When you specify <c>InputPath</c> or <c>InputTransformer</c>, you must use JSON dot
+        /// notation, not bracket notation.
         /// </para>
         ///  
         /// <para>
@@ -3017,8 +3007,8 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// This action can partially fail if too many requests are made at the same time. If
-        /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
-        /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
+        /// that happens, <c>FailedEntryCount</c> is non-zero in the response and each entry in
+        /// <c>FailedEntries</c> provides the ID of the failed target and the error code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTargets service method.</param>
@@ -3039,11 +3029,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -3058,9 +3048,9 @@ namespace Amazon.CloudWatchEvents
 
         /// <summary>
         /// Revokes the permission of another Amazon Web Services account to be able to put events
-        /// to the specified event bus. Specify the account to revoke by the <code>StatementId</code>
-        /// value that you associated with the account when you granted it permission with <code>PutPermission</code>.
-        /// You can find the <code>StatementId</code> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.
+        /// to the specified event bus. Specify the account to revoke by the <c>StatementId</c>
+        /// value that you associated with the account when you granted it permission with <c>PutPermission</c>.
+        /// You can find the <c>StatementId</c> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
@@ -3084,9 +3074,9 @@ namespace Amazon.CloudWatchEvents
 
         /// <summary>
         /// Revokes the permission of another Amazon Web Services account to be able to put events
-        /// to the specified event bus. Specify the account to revoke by the <code>StatementId</code>
-        /// value that you associated with the account when you granted it permission with <code>PutPermission</code>.
-        /// You can find the <code>StatementId</code> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.
+        /// to the specified event bus. Specify the account to revoke by the <c>StatementId</c>
+        /// value that you associated with the account when you granted it permission with <c>PutPermission</c>.
+        /// You can find the <c>StatementId</c> by using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventBus.html">DescribeEventBus</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// <param name="cancellationToken">
@@ -3126,8 +3116,8 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// This action can partially fail if too many requests are made at the same time. If
-        /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
-        /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
+        /// that happens, <c>FailedEntryCount</c> is non-zero in the response and each entry in
+        /// <c>FailedEntries</c> provides the ID of the failed target and the error code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTargets service method.</param>
@@ -3141,11 +3131,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -3167,8 +3157,8 @@ namespace Amazon.CloudWatchEvents
         ///  
         /// <para>
         /// This action can partially fail if too many requests are made at the same time. If
-        /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
-        /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
+        /// that happens, <c>FailedEntryCount</c> is non-zero in the response and each entry in
+        /// <c>FailedEntries</c> provides the ID of the failed target and the error code.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveTargets service method.</param>
@@ -3185,11 +3175,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -3206,10 +3196,10 @@ namespace Amazon.CloudWatchEvents
         /// Starts the specified replay. Events are not necessarily replayed in the exact same
         /// order that they were added to the archive. A replay processes events to replay based
         /// on the time in the event, and replays them using 1 minute intervals. If you specify
-        /// an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
-        /// time range, the events are replayed from the first minute of that 20 minute range
-        /// first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
-        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// an <c>EventStartTime</c> and an <c>EventEndTime</c> that covers a 20 minute time range,
+        /// the events are replayed from the first minute of that 20 minute range first. Then
+        /// the events from the second minute are replayed. You can use <c>DescribeReplay</c>
+        /// to determine the progress of a replay. The value returned for <c>EventLastReplayedTime</c>
         /// indicates the time within the specified time range associated with the last event
         /// replayed.
         /// </summary>
@@ -3241,10 +3231,10 @@ namespace Amazon.CloudWatchEvents
         /// Starts the specified replay. Events are not necessarily replayed in the exact same
         /// order that they were added to the archive. A replay processes events to replay based
         /// on the time in the event, and replays them using 1 minute intervals. If you specify
-        /// an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
-        /// time range, the events are replayed from the first minute of that 20 minute range
-        /// first. Then the events from the second minute are replayed. You can use <code>DescribeReplay</code>
-        /// to determine the progress of a replay. The value returned for <code>EventLastReplayedTime</code>
+        /// an <c>EventStartTime</c> and an <c>EventEndTime</c> that covers a 20 minute time range,
+        /// the events are replayed from the first minute of that 20 minute range first. Then
+        /// the events from the second minute are replayed. You can use <c>DescribeReplay</c>
+        /// to determine the progress of a replay. The value returned for <c>EventLastReplayedTime</c>
         /// indicates the time within the specified time range associated with the last event
         /// replayed.
         /// </summary>
@@ -3291,9 +3281,9 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key, this tag is appended to the list of tags associated
-        /// with the resource. If you specify a tag key that is already associated with the resource,
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key, this tag is appended to the list of tags associated with
+        /// the resource. If you specify a tag key that is already associated with the resource,
         /// the new tag value that you specify replaces the previous value for that tag.
         /// </para>
         ///  
@@ -3312,11 +3302,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -3339,9 +3329,9 @@ namespace Amazon.CloudWatchEvents
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key, this tag is appended to the list of tags associated
-        /// with the resource. If you specify a tag key that is already associated with the resource,
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key, this tag is appended to the list of tags associated with
+        /// the resource. If you specify a tag key that is already associated with the resource,
         /// the new tag value that you specify replaces the previous value for that tag.
         /// </para>
         ///  
@@ -3363,11 +3353,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -3451,11 +3441,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.
@@ -3483,11 +3473,11 @@ namespace Amazon.CloudWatchEvents
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ManagedRuleException">
         /// This rule was created by an Amazon Web Services service on behalf of your account.
-        /// It is managed by that service. If you see this error in response to <code>DeleteRule</code>
-        /// or <code>RemoveTargets</code>, you can use the <code>Force</code> parameter in those
-        /// calls to delete the rule or remove targets from the rule. You cannot modify these
-        /// managed rules by using <code>DisableRule</code>, <code>EnableRule</code>, <code>PutTargets</code>,
-        /// <code>PutRule</code>, <code>TagResource</code>, or <code>UntagResource</code>.
+        /// It is managed by that service. If you see this error in response to <c>DeleteRule</c>
+        /// or <c>RemoveTargets</c>, you can use the <c>Force</c> parameter in those calls to
+        /// delete the rule or remove targets from the rule. You cannot modify these managed rules
+        /// by using <c>DisableRule</c>, <c>EnableRule</c>, <c>PutTargets</c>, <c>PutRule</c>,
+        /// <c>TagResource</c>, or <c>UntagResource</c>.
         /// </exception>
         /// <exception cref="Amazon.CloudWatchEvents.Model.ResourceNotFoundException">
         /// An entity that you specified does not exist.

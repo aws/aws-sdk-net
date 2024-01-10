@@ -44,12 +44,12 @@ namespace Amazon.WAFRegional.Model
     /// <para>
     /// The regular expression pattern that you want AWS WAF to search for in web requests,
     /// the location in requests that you want AWS WAF to search, and other settings. Each
-    /// <code>RegexMatchTuple</code> object contains: 
+    /// <c>RegexMatchTuple</c> object contains: 
     /// </para>
     ///  <ul> <li> 
     /// <para>
     /// The part of a web request that you want AWS WAF to inspect, such as a query string
-    /// or the value of the <code>User-Agent</code> header. 
+    /// or the value of the <c>User-Agent</c> header. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property FieldToMatch. 
         /// <para>
-        /// Specifies where in a web request to look for the <code>RegexPatternSet</code>.
+        /// Specifies where in a web request to look for the <c>RegexPatternSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,17 +91,15 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RegexPatternSetId. 
         /// <para>
-        /// The <code>RegexPatternSetId</code> for a <code>RegexPatternSet</code>. You use <code>RegexPatternSetId</code>
-        /// to get information about a <code>RegexPatternSet</code> (see <a>GetRegexPatternSet</a>),
-        /// update a <code>RegexPatternSet</code> (see <a>UpdateRegexPatternSet</a>), insert a
-        /// <code>RegexPatternSet</code> into a <code>RegexMatchSet</code> or delete one from
-        /// a <code>RegexMatchSet</code> (see <a>UpdateRegexMatchSet</a>), and delete an <code>RegexPatternSet</code>
-        /// from AWS WAF (see <a>DeleteRegexPatternSet</a>).
+        /// The <c>RegexPatternSetId</c> for a <c>RegexPatternSet</c>. You use <c>RegexPatternSetId</c>
+        /// to get information about a <c>RegexPatternSet</c> (see <a>GetRegexPatternSet</a>),
+        /// update a <c>RegexPatternSet</c> (see <a>UpdateRegexPatternSet</a>), insert a <c>RegexPatternSet</c>
+        /// into a <c>RegexMatchSet</c> or delete one from a <c>RegexMatchSet</c> (see <a>UpdateRegexMatchSet</a>),
+        /// and delete an <c>RegexPatternSet</c> from AWS WAF (see <a>DeleteRegexPatternSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>RegexPatternSetId</code> is returned by <a>CreateRegexPatternSet</a> and by
-        /// <a>ListRegexPatternSets</a>.
+        ///  <c>RegexPatternSetId</c> is returned by <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -122,8 +120,8 @@ namespace Amazon.WAFRegional.Model
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
         /// web requests in an effort to bypass AWS WAF. If you specify a transformation, AWS
-        /// WAF performs the transformation on <code>RegexPatternSet</code> before inspecting
-        /// a request for a match.
+        /// WAF performs the transformation on <c>RegexPatternSet</c> before inspecting a request
+        /// for a match.
         /// </para>
         ///  
         /// <para>
@@ -194,7 +192,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <code>COMPRESS_WHITE_SPACE</code> also replaces multiple spaces with one space.
+        ///  <c>COMPRESS_WHITE_SPACE</c> also replaces multiple spaces with one space.
         /// </para>
         ///  
         /// <para>
@@ -202,33 +200,33 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Use this option to replace HTML-encoded characters with unencoded characters. <code>HTML_ENTITY_DECODE</code>
+        /// Use this option to replace HTML-encoded characters with unencoded characters. <c>HTML_ENTITY_DECODE</c>
         /// performs the following operations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)quot;</code> with <code>"</code> 
+        /// Replaces <c>(ampersand)quot;</c> with <c>"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)nbsp;</code> with a non-breaking space, decimal 160
+        /// Replaces <c>(ampersand)nbsp;</c> with a non-breaking space, decimal 160
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)lt;</code> with a "less than" symbol
+        /// Replaces <c>(ampersand)lt;</c> with a "less than" symbol
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces <code>(ampersand)gt;</code> with <code>&gt;</code> 
+        /// Replaces <c>(ampersand)gt;</c> with <c>&gt;</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in hexadecimal format, <code>(ampersand)#xhhhh;</code>,
+        /// Replaces characters that are represented in hexadecimal format, <c>(ampersand)#xhhhh;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Replaces characters that are represented in decimal format, <code>(ampersand)#nnnn;</code>,
+        /// Replaces characters that are represented in decimal format, <c>(ampersand)#nnnn;</c>,
         /// with the corresponding characters
         /// </para>
         ///  </li> </ul> 
@@ -253,7 +251,7 @@ namespace Amazon.WAFRegional.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>NONE</code> if you don't want to perform any text transformations.
+        /// Specify <c>NONE</c> if you don't want to perform any text transformations.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

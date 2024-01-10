@@ -57,8 +57,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// A single-line format of the access logs of data, as specified by selected <code>$context</code>
-        /// variables. The format must include at least <code>$context.requestId</code>.
+        /// A single-line format of the access logs of data, as specified by selected <c>$context</c>
+        /// variables. The format must include at least <c>$context.requestId</c>.
         /// </para>
         /// </summary>
         public string Format

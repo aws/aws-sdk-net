@@ -44,12 +44,12 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Set to <code>WindowsVSS: enabled</code> to enable the WindowsVSS backup option and
-        /// create a Windows VSS backup.
+        /// Set to <c>WindowsVSS: enabled</c> to enable the WindowsVSS backup option and create
+        /// a Windows VSS backup.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Set to <code>WindowsVSS: disabled</code> to create a regular backup. The <code>WindowsVSS</code>
+        /// Set to <c>WindowsVSS: disabled</c> to create a regular backup. The <c>WindowsVSS</c>
         /// option is not enabled by default.
         /// </para>
         ///  </li> </ul>
@@ -74,7 +74,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The only valid value is <code>EC2</code>.
+        /// The only valid value is <c>EC2</c>.
         /// </para>
         /// </summary>
         public string ResourceType

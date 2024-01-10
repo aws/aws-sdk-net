@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property BillingGroups. 
         /// <para>
-        /// A list of <code>BillingGroupListElement</code> retrieved. 
+        /// A list of <c>BillingGroupListElement</c> retrieved. 
         /// </para>
         /// </summary>
         public List<BillingGroupListElement> BillingGroups

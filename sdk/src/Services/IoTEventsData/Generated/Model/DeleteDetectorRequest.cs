@@ -79,8 +79,8 @@ namespace Amazon.IoTEventsData.Model
         /// <summary>
         /// Gets and sets the property MessageId. 
         /// <para>
-        /// The ID to assign to the <code>DeleteDetectorRequest</code>. Each <code>"messageId"</code>
-        /// must be unique within each batch sent.
+        /// The ID to assign to the <c>DeleteDetectorRequest</c>. Each <c>"messageId"</c> must
+        /// be unique within each batch sent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

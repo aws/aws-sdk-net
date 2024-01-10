@@ -44,18 +44,18 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NO_SUBSCRIPTION</code> - The Firewall Manager policy administrator isn't subscribed
+        ///  <c>NO_SUBSCRIPTION</c> - The Firewall Manager policy administrator isn't subscribed
         /// to the third-party firewall service in the Amazon Web Services Marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_COMPLETE</code> - The Firewall Manager policy administrator is in the process
+        ///  <c>NOT_COMPLETE</c> - The Firewall Manager policy administrator is in the process
         /// of subscribing to the third-party firewall service in the Amazon Web Services Marketplace,
         /// but doesn't yet have an active subscription.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETE</code> - The Firewall Manager policy administrator has an active subscription
+        ///  <c>COMPLETE</c> - The Firewall Manager policy administrator has an active subscription
         /// to the third-party firewall service in the Amazon Web Services Marketplace.
         /// </para>
         ///  </li> </ul>
@@ -80,28 +80,28 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ONBOARDING</code> - The Firewall Manager policy administrator is being designated
+        ///  <c>ONBOARDING</c> - The Firewall Manager policy administrator is being designated
         /// as a tenant administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ONBOARD_COMPLETE</code> - The Firewall Manager policy administrator is designated
+        ///  <c>ONBOARD_COMPLETE</c> - The Firewall Manager policy administrator is designated
         /// as a tenant administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OFFBOARDING</code> - The Firewall Manager policy administrator is being removed
+        ///  <c>OFFBOARDING</c> - The Firewall Manager policy administrator is being removed as
+        /// a tenant administrator.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <c>OFFBOARD_COMPLETE</c> - The Firewall Manager policy administrator has been removed
         /// as a tenant administrator.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OFFBOARD_COMPLETE</code> - The Firewall Manager policy administrator has been
-        /// removed as a tenant administrator.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>NOT_EXIST</code> - The Firewall Manager policy administrator doesn't exist
-        /// as a tenant administrator.
+        ///  <c>NOT_EXIST</c> - The Firewall Manager policy administrator doesn't exist as a tenant
+        /// administrator.
         /// </para>
         ///  </li> </ul>
         /// </summary>

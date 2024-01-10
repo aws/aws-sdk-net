@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Used to filter the workflow executions in visibility APIs by their <code>workflowId</code>.
+    /// Used to filter the workflow executions in visibility APIs by their <c>workflowId</c>.
     /// </summary>
     public partial class WorkflowExecutionFilter
     {

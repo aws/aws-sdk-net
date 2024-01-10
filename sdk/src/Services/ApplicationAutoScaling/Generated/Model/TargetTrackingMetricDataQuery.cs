@@ -53,14 +53,14 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property Expression. 
         /// <para>
         /// The math expression to perform on the returned data, if this object is performing
-        /// a math expression. This expression can use the <code>Id</code> of the other metrics
-        /// to refer to those metrics, and can also use the <code>Id</code> of other expressions
-        /// to use the result of those expressions. 
+        /// a math expression. This expression can use the <c>Id</c> of the other metrics to refer
+        /// to those metrics, and can also use the <c>Id</c> of other expressions to use the result
+        /// of those expressions. 
         /// </para>
         ///  
         /// <para>
-        /// Conditional: Within each <code>TargetTrackingMetricDataQuery</code> object, you must
-        /// specify either <code>Expression</code> or <code>MetricStat</code>, but not both.
+        /// Conditional: Within each <c>TargetTrackingMetricDataQuery</c> object, you must specify
+        /// either <c>Expression</c> or <c>MetricStat</c>, but not both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -80,7 +80,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// A short name that identifies the object's results in the response. This name must
-        /// be unique among all <code>MetricDataQuery</code> objects specified for a single scaling
+        /// be unique among all <c>MetricDataQuery</c> objects specified for a single scaling
         /// policy. If you are performing math expressions on this set of data, this name represents
         /// that data and can serve as a variable in the mathematical expression. The valid characters
         /// are letters, numbers, and underscores. The first character must be a lowercase letter.
@@ -126,8 +126,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Conditional: Within each <code>MetricDataQuery</code> object, you must specify either
-        /// <code>Expression</code> or <code>MetricStat</code>, but not both.
+        /// Conditional: Within each <c>MetricDataQuery</c> object, you must specify either <c>Expression</c>
+        /// or <c>MetricStat</c>, but not both.
         /// </para>
         /// </summary>
         public TargetTrackingMetricStat MetricStat
@@ -149,15 +149,15 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// If you use any math expressions, specify <code>true</code> for this value for only
-        /// the final math expression that the metric specification is based on. You must specify
-        /// <code>false</code> for <code>ReturnData</code> for all the other metrics and expressions
-        /// used in the metric specification.
+        /// If you use any math expressions, specify <c>true</c> for this value for only the final
+        /// math expression that the metric specification is based on. You must specify <c>false</c>
+        /// for <c>ReturnData</c> for all the other metrics and expressions used in the metric
+        /// specification.
         /// </para>
         ///  
         /// <para>
         /// If you are only retrieving metrics and not performing any math expressions, do not
-        /// specify anything for <code>ReturnData</code>. This sets it to its default (<code>true</code>).
+        /// specify anything for <c>ReturnData</c>. This sets it to its default (<c>true</c>).
         /// </para>
         /// </summary>
         public bool ReturnData

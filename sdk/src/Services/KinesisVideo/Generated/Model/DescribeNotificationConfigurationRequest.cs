@@ -30,7 +30,7 @@ namespace Amazon.KinesisVideo.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeNotificationConfiguration operation.
-    /// Gets the <code>NotificationConfiguration</code> for a given Kinesis video stream.
+    /// Gets the <c>NotificationConfiguration</c> for a given Kinesis video stream.
     /// </summary>
     public partial class DescribeNotificationConfigurationRequest : AmazonKinesisVideoRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property StreamARN. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Kinesis video stream from where you want to
-        /// retrieve the notification configuration. You must specify either the <code>StreamName</code>
+        /// retrieve the notification configuration. You must specify either the <c>StreamName</c>
         /// or the StreamARN.
         /// </para>
         /// </summary>
@@ -62,7 +62,7 @@ namespace Amazon.KinesisVideo.Model
         /// Gets and sets the property StreamName. 
         /// <para>
         /// The name of the stream from which to retrieve the notification configuration. You
-        /// must specify either the <code>StreamName</code> or the <code>StreamARN</code>.
+        /// must specify either the <c>StreamName</c> or the <c>StreamARN</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

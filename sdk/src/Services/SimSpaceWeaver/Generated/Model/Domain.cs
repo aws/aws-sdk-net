@@ -56,17 +56,17 @@ namespace Amazon.SimSpaceWeaver.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PerWorker</code> – Managed: SimSpace Weaver starts one app on each worker.
+        ///  <c>PerWorker</c> – Managed: SimSpace Weaver starts one app on each worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for each
-        /// spatial partition.
+        ///  <c>BySpatialSubdivision</c> – Managed: SimSpace Weaver starts one app for each spatial
+        /// partition.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ByRequest</code> – Unmanaged: You use the <code>StartApp</code> API to start
-        /// the apps and use the <code>StopApp</code> API to stop the apps.
+        ///  <c>ByRequest</c> – Unmanaged: You use the <c>StartApp</c> API to start the apps and
+        /// use the <c>StopApp</c> API to stop the apps.
         /// </para>
         ///  </li> </ul>
         /// </summary>

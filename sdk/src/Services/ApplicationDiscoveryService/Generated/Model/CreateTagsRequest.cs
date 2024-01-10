@@ -71,7 +71,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"key": "serverType", "value": "webServer"}</code> 
+        ///  <c>{"key": "serverType", "value": "webServer"}</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

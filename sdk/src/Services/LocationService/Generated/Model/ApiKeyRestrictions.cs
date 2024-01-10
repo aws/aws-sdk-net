@@ -54,7 +54,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>geo:GetMap*</code> - Allows all actions needed for map rendering.
+        ///  <c>geo:GetMap*</c> - Allows all actions needed for map rendering.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -62,20 +62,19 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>geo:SearchPlaceIndexForText</code> - Allows geocoding.
+        ///  <c>geo:SearchPlaceIndexForText</c> - Allows geocoding.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>geo:SearchPlaceIndexForPosition</code> - Allows reverse geocoding.
+        ///  <c>geo:SearchPlaceIndexForPosition</c> - Allows reverse geocoding.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>geo:SearchPlaceIndexForSuggestions</code> - Allows generating suggestions from
-        /// text.
+        ///  <c>geo:SearchPlaceIndexForSuggestions</c> - Allows generating suggestions from text.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GetPlace</code> - Allows finding a place by place ID.
+        ///  <c>GetPlace</c> - Allows finding a place by place ID.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -83,17 +82,17 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>geo:CalculateRoute</code> - Allows point to point routing.
+        ///  <c>geo:CalculateRoute</c> - Allows point to point routing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>geo:CalculateRouteMatrix</code> - Allows calculating a matrix of routes.
+        ///  <c>geo:CalculateRouteMatrix</c> - Allows calculating a matrix of routes.
         /// </para>
         ///  </li> </ul> </li> </ul> <note> 
         /// <para>
         /// You must use these strings exactly. For example, to provide access to map rendering,
-        /// the only valid action is <code>geo:GetMap*</code> as an input to the list. <code>["geo:GetMap*"]</code>
-        /// is valid but <code>["geo:GetMapTile"]</code> is not. Similarly, you cannot use <code>["geo:SearchPlaceIndexFor*"]</code>
+        /// the only valid action is <c>geo:GetMap*</c> as an input to the list. <c>["geo:GetMap*"]</c>
+        /// is valid but <c>["geo:GetMapTile"]</c> is not. Similarly, you cannot use <c>["geo:SearchPlaceIndexFor*"]</c>
         /// - you must list each of the Place actions separately.
         /// </para>
         ///  </note>
@@ -123,7 +122,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <code>$\-._+!*`(),;/?:@=&amp;</code>
+        /// Contain only alphanumeric characters (A–Z, a–z, 0–9) or any symbols in this list <c>$\-._+!*`(),;/?:@=&amp;</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -146,7 +145,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No spaces allowed. For example, <code>https://example.com</code>.
+        /// No spaces allowed. For example, <c>https://example.com</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -175,18 +174,18 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The resources must be in the same <code>partition</code>, <code>region</code>, and
-        /// <code>account-id</code> as the key that is being created.
+        /// The resources must be in the same <c>partition</c>, <c>region</c>, and <c>account-id</c>
+        /// as the key that is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Other than wildcards, you must include the full ARN, including the <code>arn</code>,
-        /// <code>partition</code>, <code>service</code>, <code>region</code>, <code>account-id</code>
-        /// and <code>resource-id</code> delimited by colons (:).
+        /// Other than wildcards, you must include the full ARN, including the <c>arn</c>, <c>partition</c>,
+        /// <c>service</c>, <c>region</c>, <c>account-id</c> and <c>resource-id</c> delimited
+        /// by colons (:).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No spaces allowed, even with wildcards. For example, <code>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</code>.
+        /// No spaces allowed, even with wildcards. For example, <c>arn:aws:geo:region:<i>account-id</i>:map/ExampleMap*</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

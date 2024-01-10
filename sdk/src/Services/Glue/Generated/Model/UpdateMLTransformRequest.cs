@@ -35,9 +35,9 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// After calling this operation, you can call the <code>StartMLEvaluationTaskRun</code>
-    /// operation to assess how well your new parameters achieved your goals (such as improving
-    /// the quality of your machine learning transform, or making it more cost-effective).
+    /// After calling this operation, you can call the <c>StartMLEvaluationTaskRun</c> operation
+    /// to assess how well your new parameters achieved your goals (such as improving the
+    /// quality of your machine learning transform, or making it more cost-effective).
     /// </para>
     /// </summary>
     public partial class UpdateMLTransformRequest : AmazonGlueRequest
@@ -106,8 +106,8 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// When the <code>WorkerType</code> field is set to a value other than <code>Standard</code>,
-        /// the <code>MaxCapacity</code> field is set automatically and becomes read-only.
+        /// When the <c>WorkerType</c> field is set to a value other than <c>Standard</c>, the
+        /// <c>MaxCapacity</c> field is set automatically and becomes read-only.
         /// </para>
         /// </summary>
         public double MaxCapacity
@@ -162,8 +162,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfWorkers. 
         /// <para>
-        /// The number of workers of a defined <code>workerType</code> that are allocated when
-        /// this task runs.
+        /// The number of workers of a defined <c>workerType</c> that are allocated when this
+        /// task runs.
         /// </para>
         /// </summary>
         public int NumberOfWorkers
@@ -220,7 +220,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The timeout for a task run for this transform in minutes. This is the maximum time
         /// that a task run for this transform can consume resources before it is terminated and
-        /// enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours).
+        /// enters <c>TIMEOUT</c> status. The default is 2,880 minutes (48 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -263,18 +263,18 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// For the <c>Standard</c> worker type, each worker provides 4 vCPU, 16 GB of memory
         /// and a 50GB disk, and 2 executors per worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.1X</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-        /// and a 64GB disk, and 1 executor per worker.
+        /// For the <c>G.1X</c> worker type, each worker provides 4 vCPU, 16 GB of memory and
+        /// a 64GB disk, and 1 executor per worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.2X</code> worker type, each worker provides 8 vCPU, 32 GB of memory
-        /// and a 128GB disk, and 1 executor per worker.
+        /// For the <c>G.2X</c> worker type, each worker provides 8 vCPU, 32 GB of memory and
+        /// a 128GB disk, and 1 executor per worker.
         /// </para>
         ///  </li> </ul>
         /// </summary>

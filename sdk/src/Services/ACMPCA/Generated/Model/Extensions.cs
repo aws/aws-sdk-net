@@ -92,7 +92,7 @@ namespace Amazon.ACMPCA.Model
         /// Gets and sets the property ExtendedKeyUsage. 
         /// <para>
         /// Specifies additional purposes for which the certified public key may be used other
-        /// than basic purposes indicated in the <code>KeyUsage</code> extension.
+        /// than basic purposes indicated in the <c>KeyUsage</c> extension.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]

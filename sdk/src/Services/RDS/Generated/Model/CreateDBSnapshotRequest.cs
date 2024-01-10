@@ -30,8 +30,8 @@ namespace Amazon.RDS.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDBSnapshot operation.
-    /// Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code>
-    /// or <code>storage-optimization</code> state.
+    /// Creates a snapshot of a DB instance. The source DB instance must be in the <c>available</c>
+    /// or <c>storage-optimization</c> state.
     /// </summary>
     public partial class CreateDBSnapshotRequest : AmazonRDSRequest
     {
@@ -110,7 +110,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-snapshot-id</code> 
+        /// Example: <c>my-snapshot-id</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

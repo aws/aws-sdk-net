@@ -36,7 +36,7 @@ namespace Amazon.PaymentCryptography.Model
     ///  
     /// <para>
     /// Amazon Web Services Payment Cryptography simplifies key exchange by replacing the
-    /// existing paper-based approach with a modern electronic approach. With <code>ImportKey</code>
+    /// existing paper-based approach with a modern electronic approach. With <c>ImportKey</c>
     /// you can import symmetric keys using either symmetric and asymmetric key exchange mechanisms.
     /// </para>
     ///  
@@ -89,25 +89,24 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>KeyMaterial</code>: <code>RootCertificatePublicKey</code> 
+    ///  <c>KeyMaterial</c>: <c>RootCertificatePublicKey</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>KeyClass</code>: <code>PUBLIC_KEY</code> 
+    ///  <c>KeyClass</c>: <c>PUBLIC_KEY</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>KeyModesOfUse</code>: <code>Verify</code> 
+    ///  <c>KeyModesOfUse</c>: <c>Verify</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>KeyUsage</code>: <code>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</code>
-    /// 
+    ///  <c>KeyUsage</c>: <c>TR31_S0_ASYMMETRIC_KEY_FOR_DIGITAL_SIGNATURE</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PublicKeyCertificate</code>: The public key certificate in PEM format (base64
-    /// encoded) of the private root key under import.
+    ///  <c>PublicKeyCertificate</c>: The public key certificate in PEM format (base64 encoded)
+    /// of the private root key under import.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -120,23 +119,22 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>KeyMaterial</code>: <code>TrustedCertificatePublicKey</code> 
+    ///  <c>KeyMaterial</c>: <c>TrustedCertificatePublicKey</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CertificateAuthorityPublicKeyIdentifier</code>: <code>KeyArn</code> of the
-    /// <code>RootCertificatePublicKey</code>.
+    ///  <c>CertificateAuthorityPublicKeyIdentifier</c>: <c>KeyArn</c> of the <c>RootCertificatePublicKey</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>KeyModesOfUse</code> and <code>KeyUsage</code>: Corresponding to the cryptographic
-    /// operations such as wrap, sign, or encrypt that you will allow the trusted public key
-    /// certificate to perform.
+    ///  <c>KeyModesOfUse</c> and <c>KeyUsage</c>: Corresponding to the cryptographic operations
+    /// such as wrap, sign, or encrypt that you will allow the trusted public key certificate
+    /// to perform.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PublicKeyCertificate</code>: The trusted public key certificate in PEM format
-    /// (base64 encoded) under import.
+    ///  <c>PublicKeyCertificate</c>: The trusted public key certificate in PEM format (base64
+    /// encoded) under import.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -165,7 +163,7 @@ namespace Amazon.PaymentCryptography.Model
     /// Next the KDH generates a key pair for the purpose of signing the encrypted KDH key
     /// and provides the public certificate of the signing key to Amazon Web Services Payment
     /// Cryptography. The KDH will also need to import the root certificate chain of the KDH
-    /// signing certificate by calling <code>ImportKey</code> for <code>RootCertificatePublicKey</code>.
+    /// signing certificate by calling <c>ImportKey</c> for <c>RootCertificatePublicKey</c>.
     /// For more information on TR-34 key import, see section <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-import.html">Importing
     /// symmetric keys</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.
     /// </para>
@@ -175,28 +173,28 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>KeyMaterial</code>: Use <code>Tr34KeyBlock</code> parameters.
+    ///  <c>KeyMaterial</c>: Use <c>Tr34KeyBlock</c> parameters.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CertificateAuthorityPublicKeyIdentifier</code>: The <code>KeyARN</code> of
-    /// the certificate chain that signed the KDH signing key certificate.
+    ///  <c>CertificateAuthorityPublicKeyIdentifier</c>: The <c>KeyARN</c> of the certificate
+    /// chain that signed the KDH signing key certificate.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ImportToken</code>: Obtained from KRD by calling <a>GetParametersForImport</a>.
+    ///  <c>ImportToken</c>: Obtained from KRD by calling <a>GetParametersForImport</a>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WrappedKeyBlock</code>: The TR-34 wrapped key material from KDH. It contains
-    /// the KDH key under import, wrapped with KRD wrapping certificate and signed by KDH
-    /// signing private key. This TR-34 key block is typically generated by the KDH Hardware
-    /// Security Module (HSM) outside of Amazon Web Services Payment Cryptography.
+    ///  <c>WrappedKeyBlock</c>: The TR-34 wrapped key material from KDH. It contains the
+    /// KDH key under import, wrapped with KRD wrapping certificate and signed by KDH signing
+    /// private key. This TR-34 key block is typically generated by the KDH Hardware Security
+    /// Module (HSM) outside of Amazon Web Services Payment Cryptography.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>SigningKeyCertificate</code>: The public key certificate in PEM format (base64
-    /// encoded) of the KDH signing key generated under the root certificate (CertificateAuthorityPublicKeyIdentifier)
+    ///  <c>SigningKeyCertificate</c>: The public key certificate in PEM format (base64 encoded)
+    /// of the KDH signing key generated under the root certificate (CertificateAuthorityPublicKeyIdentifier)
     /// imported in Amazon Web Services Payment Cryptography.
     /// </para>
     ///  </li> </ul> 
@@ -212,18 +210,18 @@ namespace Amazon.PaymentCryptography.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>KeyMaterial</code>: Use <code>Tr31KeyBlock</code> parameters.
+    ///  <c>KeyMaterial</c>: Use <c>Tr31KeyBlock</c> parameters.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WrappedKeyBlock</code>: The TR-31 wrapped key material. It contains the key
-    /// under import, encrypted using KEK. The TR-31 key block is typically generated by a
-    /// HSM outside of Amazon Web Services Payment Cryptography. 
+    ///  <c>WrappedKeyBlock</c>: The TR-31 wrapped key material. It contains the key under
+    /// import, encrypted using KEK. The TR-31 key block is typically generated by a HSM outside
+    /// of Amazon Web Services Payment Cryptography. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>WrappingKeyIdentifier</code>: The <code>KeyArn</code> of the KEK that Amazon
-    /// Web Services Payment Cryptography uses to decrypt or unwrap the key under import.
+    ///  <c>WrappingKeyIdentifier</c>: The <c>KeyArn</c> of the KEK that Amazon Web Services
+    /// Payment Cryptography uses to decrypt or unwrap the key under import.
     /// </para>
     ///  </li> </ul> 
     /// <para>

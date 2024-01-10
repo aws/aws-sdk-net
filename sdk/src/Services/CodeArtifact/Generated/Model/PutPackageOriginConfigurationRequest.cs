@@ -43,9 +43,9 @@ namespace Amazon.CodeArtifact.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>PutPackageOriginConfiguration</code> can be called on a package that doesn't
-    /// yet exist in the repository. When called on a package that does not exist, a package
-    /// is created in the repository with no versions and the requested restrictions are set
+    ///  <c>PutPackageOriginConfiguration</c> can be called on a package that doesn't yet
+    /// exist in the repository. When called on a package that does not exist, a package is
+    /// created in the repository with no versions and the requested restrictions are set
     /// on the package. This can be used to preemptively block ingesting or retaining any
     /// versions from external connections or upstream repositories, or to block publishing
     /// any versions of the package into the repository before connecting any package managers
@@ -128,11 +128,11 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  The namespace of a Maven package is its <code>groupId</code>. 
+        ///  The namespace of a Maven package is its <c>groupId</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of an npm package is its <code>scope</code>. 
+        ///  The namespace of an npm package is its <c>scope</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -141,7 +141,7 @@ namespace Amazon.CodeArtifact.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  The namespace of a generic package is its <code>namespace</code>. 
+        ///  The namespace of a generic package is its <c>namespace</c>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -200,15 +200,15 @@ namespace Amazon.CodeArtifact.Model
         /// Gets and sets the property Restrictions. 
         /// <para>
         /// A <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageOriginRestrictions.html">PackageOriginRestrictions</a>
-        /// object that contains information about the <code>upstream</code> and <code>publish</code>
-        /// package origin restrictions. The <code>upstream</code> restriction determines if new
-        /// package versions can be ingested or retained from external connections or upstream
-        /// repositories. The <code>publish</code> restriction determines if new package versions
-        /// can be published directly to the repository.
+        /// object that contains information about the <c>upstream</c> and <c>publish</c> package
+        /// origin restrictions. The <c>upstream</c> restriction determines if new package versions
+        /// can be ingested or retained from external connections or upstream repositories. The
+        /// <c>publish</c> restriction determines if new package versions can be published directly
+        /// to the repository.
         /// </para>
         ///  
         /// <para>
-        /// You must include both the desired <code>upstream</code> and <code>publish</code> restrictions.
+        /// You must include both the desired <c>upstream</c> and <c>publish</c> restrictions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

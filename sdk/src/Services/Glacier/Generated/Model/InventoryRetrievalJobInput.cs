@@ -43,7 +43,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The end of the date range in UTC for vault inventory retrieval that includes archives
         /// created before this date. This value should be a string in the ISO 8601 date format,
-        /// for example <code>2013-03-20T17:03:43Z</code>.
+        /// for example <c>2013-03-20T17:03:43Z</c>.
         /// </para>
         /// </summary>
         public string EndDate
@@ -82,7 +82,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// An opaque string that represents where to continue pagination of the vault inventory
         /// retrieval results. You use the marker in a new <b>InitiateJob</b> request to obtain
-        /// additional inventory items. If there are no more inventory items, this value is <code>null</code>.
+        /// additional inventory items. If there are no more inventory items, this value is <c>null</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -102,7 +102,7 @@ namespace Amazon.Glacier.Model
         /// <para>
         /// The start of the date range in UTC for vault inventory retrieval that includes archives
         /// created on or after this date. This value should be a string in the ISO 8601 date
-        /// format, for example <code>2013-03-20T17:03:43Z</code>.
+        /// format, for example <c>2013-03-20T17:03:43Z</c>.
         /// </para>
         /// </summary>
         public string StartDate

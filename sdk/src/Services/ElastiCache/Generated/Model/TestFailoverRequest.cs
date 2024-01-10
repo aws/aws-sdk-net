@@ -30,9 +30,9 @@ namespace Amazon.ElastiCache.Model
 {
     /// <summary>
     /// Container for the parameters to the TestFailover operation.
-    /// Represents the input of a <code>TestFailover</code> operation which test automatic
-    /// failover on a specified node group (called shard in the console) in a replication
-    /// group (called cluster in the console).
+    /// Represents the input of a <c>TestFailover</c> operation which test automatic failover
+    /// on a specified node group (called shard in the console) in a replication group (called
+    /// cluster in the console).
     /// 
     ///  
     /// <para>
@@ -73,27 +73,26 @@ namespace Amazon.ElastiCache.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Replication group message: <code>Test Failover API called for node group &lt;node-group-id&gt;</code>
+    /// Replication group message: <c>Test Failover API called for node group &lt;node-group-id&gt;</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Cache cluster message: <code>Failover from primary node &lt;primary-node-id&gt; to
-    /// replica node &lt;node-id&gt; completed</code> 
+    /// Cache cluster message: <c>Failover from primary node &lt;primary-node-id&gt; to replica
+    /// node &lt;node-id&gt; completed</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Replication group message: <code>Failover from primary node &lt;primary-node-id&gt;
-    /// to replica node &lt;node-id&gt; completed</code> 
+    /// Replication group message: <c>Failover from primary node &lt;primary-node-id&gt; to
+    /// replica node &lt;node-id&gt; completed</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Cache cluster message: <code>Recovering cache nodes &lt;node-id&gt;</code> 
+    /// Cache cluster message: <c>Recovering cache nodes &lt;node-id&gt;</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Cache cluster message: <code>Finished recovery for cache nodes &lt;node-id&gt;</code>
-    /// 
+    /// Cache cluster message: <c>Finished recovery for cache nodes &lt;node-id&gt;</c> 
     /// </para>
     ///  </li> </ol> 
     /// <para>

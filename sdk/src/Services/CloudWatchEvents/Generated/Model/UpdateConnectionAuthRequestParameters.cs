@@ -41,8 +41,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ApiKeyAuthParameters. 
         /// <para>
-        /// A <code>UpdateConnectionApiKeyAuthRequestParameters</code> object that contains the
-        /// authorization parameters for API key authorization.
+        /// A <c>UpdateConnectionApiKeyAuthRequestParameters</c> object that contains the authorization
+        /// parameters for API key authorization.
         /// </para>
         /// </summary>
         public UpdateConnectionApiKeyAuthRequestParameters ApiKeyAuthParameters
@@ -60,8 +60,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property BasicAuthParameters. 
         /// <para>
-        /// A <code>UpdateConnectionBasicAuthRequestParameters</code> object that contains the
-        /// authorization parameters for Basic authorization.
+        /// A <c>UpdateConnectionBasicAuthRequestParameters</c> object that contains the authorization
+        /// parameters for Basic authorization.
         /// </para>
         /// </summary>
         public UpdateConnectionBasicAuthRequestParameters BasicAuthParameters
@@ -79,8 +79,8 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property InvocationHttpParameters. 
         /// <para>
-        /// A <code>ConnectionHttpParameters</code> object that contains the additional parameters
-        /// to use for the connection.
+        /// A <c>ConnectionHttpParameters</c> object that contains the additional parameters to
+        /// use for the connection.
         /// </para>
         /// </summary>
         public ConnectionHttpParameters InvocationHttpParameters
@@ -98,7 +98,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property OAuthParameters. 
         /// <para>
-        /// A <code>UpdateConnectionOAuthRequestParameters</code> object that contains the authorization
+        /// A <c>UpdateConnectionOAuthRequestParameters</c> object that contains the authorization
         /// parameters for OAuth authorization.
         /// </para>
         /// </summary>

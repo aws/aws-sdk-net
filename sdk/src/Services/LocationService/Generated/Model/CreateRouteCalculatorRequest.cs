@@ -75,7 +75,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// No spaces allowed. For example, <code>ExampleRouteCalculator</code>.
+        /// No spaces allowed. For example, <c>ExampleRouteCalculator</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.LocationService.Model
         ///  <note> 
         /// <para>
         /// This field is case-sensitive. Enter the valid values as shown. For example, entering
-        /// <code>HERE</code> returns an error.
+        /// <c>HERE</c> returns an error.
         /// </para>
         ///  </note> 
         /// <para>
@@ -108,7 +108,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Esri</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
+        ///  <c>Esri</c> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a>'s
         /// coverage in your region of interest, see <a href="https://doc.arcgis.com/en/arcgis-online/reference/network-coverage.htm">Esri
         /// details on street networks and traffic coverage</a>.
         /// </para>
@@ -119,14 +119,14 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Grab</code> – Grab provides routing functionality for Southeast Asia. For additional
+        ///  <c>Grab</c> – Grab provides routing functionality for Southeast Asia. For additional
         /// information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a>'
         /// coverage, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html#grab-coverage-area">GrabMaps
         /// countries and areas covered</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Here</code> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
+        ///  <c>Here</c> – For additional information about <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
         /// Technologies</a>' coverage in your region of interest, see <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/car-routing.html">HERE
         /// car routing coverage</a> and <a href="https://developer.here.com/documentation/routing-api/dev_guide/topics/coverage/truck-routing.html">HERE
         /// truck routing coverage</a>.
@@ -172,7 +172,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property PricingPlan. 
         /// <para>
-        /// No longer used. If included, the only allowed value is <code>RequestBasedUsage</code>.
+        /// No longer used. If included, the only allowed value is <c>RequestBasedUsage</c>.
         /// </para>
         /// </summary>
         [Obsolete("Deprecated. If included, the only allowed value is RequestBasedUsage.")]
@@ -196,11 +196,11 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example: { <code>"tag1" : "value1"</code>, <code>"tag2" : "value2"</code>}
+        /// For example: { <c>"tag1" : "value1"</c>, <c>"tag2" : "value2"</c>}
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Format: <code>"key" : "value"</code> 
+        /// Format: <c>"key" : "value"</c> 
         /// </para>
         ///  
         /// <para>

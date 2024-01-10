@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>AvailabilityEndDate</code> of an offer.
+    /// Allows filtering on the <c>AvailabilityEndDate</c> of an offer.
     /// </summary>
     public partial class OfferAvailabilityEndDateFilter
     {
@@ -38,8 +38,8 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property DateRange. 
         /// <para>
-        /// Allows filtering on the <code>AvailabilityEndDate</code> of an offer with date range
-        /// as input.
+        /// Allows filtering on the <c>AvailabilityEndDate</c> of an offer with date range as
+        /// input.
         /// </para>
         /// </summary>
         public OfferAvailabilityEndDateFilterDateRange DateRange

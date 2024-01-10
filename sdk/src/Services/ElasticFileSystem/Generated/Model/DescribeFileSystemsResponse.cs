@@ -78,7 +78,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// Present if there are more file systems than returned in the response (String). You
-        /// can use the <code>NextMarker</code> in the subsequent request to fetch the descriptions.
+        /// can use the <c>NextMarker</c> in the subsequent request to fetch the descriptions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -59,8 +59,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  A list of tags returned by <code>ListTagsForResource</code>. The tags are associated
-        /// with the resource identified by the input <code>ResourceArn</code> parameter. 
+        ///  A list of tags returned by <c>ListTagsForResource</c>. The tags are associated with
+        /// the resource identified by the input <c>ResourceArn</c> parameter. 
         /// </para>
         /// </summary>
         public List<Tag> Tags

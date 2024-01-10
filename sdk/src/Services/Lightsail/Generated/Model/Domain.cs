@@ -46,7 +46,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the domain recordset (<code>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</code>).
+        /// The Amazon Resource Name (ARN) of the domain recordset (<c>arn:aws:lightsail:global:123456789101:Domain/824cede0-abc7-4f84-8dbc-12345EXAMPLE</c>).
         /// </para>
         /// </summary>
         public string Arn

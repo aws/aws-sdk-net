@@ -39,8 +39,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property Instances. 
         /// <para>
-        /// A complex type that contains one <code>HttpInstanceSummary</code> for each registered
-        /// instance.
+        /// A complex type that contains one <c>HttpInstanceSummary</c> for each registered instance.
         /// </para>
         /// </summary>
         public List<HttpInstanceSummary> Instances
@@ -59,8 +58,8 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property InstancesRevision. 
         /// <para>
         /// The increasing revision associated to the response Instances list. If a new instance
-        /// is registered or deregistered, the <code>InstancesRevision</code> updates. The health
-        /// status updates don't update <code>InstancesRevision</code>.
+        /// is registered or deregistered, the <c>InstancesRevision</c> updates. The health status
+        /// updates don't update <c>InstancesRevision</c>.
         /// </para>
         /// </summary>
         public long InstancesRevision

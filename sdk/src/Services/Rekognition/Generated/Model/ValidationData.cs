@@ -40,7 +40,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// You get the <code>ValidationData</code> object for the training dataset (<a>TrainingDataResult</a>)
+    /// You get the <c>ValidationData</c> object for the training dataset (<a>TrainingDataResult</a>)
     /// and the test dataset (<a>TestingDataResult</a>) by calling <a>DescribeProjectVersions</a>.
     /// 
     /// </para>

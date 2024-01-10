@@ -53,7 +53,7 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// Gets the token balance for a batch of tokens by using the <code>BatchGetTokenBalance</code>
+        /// Gets the token balance for a batch of tokens by using the <c>BatchGetTokenBalance</c>
         /// action for every token in the request.
         /// 
         ///  <note> 
@@ -93,7 +93,7 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// Gets the token balance for a batch of tokens by using the <code>BatchGetTokenBalance</code>
+        /// Gets the token balance for a batch of tokens by using the <c>BatchGetTokenBalance</c>
         /// action for every token in the request.
         /// 
         ///  <note> 
@@ -147,8 +147,8 @@ namespace Amazon.ManagedBlockchainQuery
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Metadata is currently only available for some <code>ERC-20</code> contracts. Metadata
-        /// will be available for additional contracts in the future.
+        /// Metadata is currently only available for some <c>ERC-20</c> contracts. Metadata will
+        /// be available for additional contracts in the future.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -190,8 +190,8 @@ namespace Amazon.ManagedBlockchainQuery
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Metadata is currently only available for some <code>ERC-20</code> contracts. Metadata
-        /// will be available for additional contracts in the future.
+        /// Metadata is currently only available for some <c>ERC-20</c> contracts. Metadata will
+        /// be available for additional contracts in the future.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -480,8 +480,8 @@ namespace Amazon.ManagedBlockchainQuery
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// You must always specify the network property of the <code>tokenFilter</code> when
-        /// using this operation.
+        /// You must always specify the network property of the <c>tokenFilter</c> when using
+        /// this operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -529,8 +529,8 @@ namespace Amazon.ManagedBlockchainQuery
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// You must always specify the network property of the <code>tokenFilter</code> when
-        /// using this operation.
+        /// You must always specify the network property of the <c>tokenFilter</c> when using
+        /// this operation.
         /// </para>
         ///  </note>
         /// </summary>
@@ -567,8 +567,8 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// An array of <code>TransactionEvent</code> objects. Each object contains details about
-        /// the transaction event.
+        /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
+        /// transaction event.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransactionEvents service method.</param>
         /// 
@@ -597,8 +597,8 @@ namespace Amazon.ManagedBlockchainQuery
 
 
         /// <summary>
-        /// An array of <code>TransactionEvent</code> objects. Each object contains details about
-        /// the transaction event.
+        /// An array of <c>TransactionEvent</c> objects. Each object contains details about the
+        /// transaction event.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTransactionEvents service method.</param>
         /// <param name="cancellationToken">

@@ -218,7 +218,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property EnableInterContainerTrafficEncryption. 
         /// <para>
         /// To encrypt all communications between ML compute instances in distributed training,
-        /// choose <code>True</code>. Encryption provides greater security for distributed training,
+        /// choose <c>True</c>. Encryption provides greater security for distributed training,
         /// but training might take longer. How long it takes depends on the amount of communication
         /// between compute instances, especially if you use a deep learning algorithm in distributed
         /// training.
@@ -259,9 +259,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property EnableNetworkIsolation. 
         /// <para>
-        /// If the <code>TrainingJob</code> was created with network isolation, the value is set
-        /// to <code>true</code>. If network isolation is enabled, nodes can't communicate beyond
-        /// the VPC they run in.
+        /// If the <c>TrainingJob</c> was created with network isolation, the value is set to
+        /// <c>true</c>. If network isolation is enabled, nodes can't communicate beyond the VPC
+        /// they run in.
         /// </para>
         /// </summary>
         public bool EnableNetworkIsolation
@@ -371,7 +371,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// An array of <code>Channel</code> objects that describes each data input channel.
+        /// An array of <c>Channel</c> objects that describes each data input channel.
         /// </para>
         ///  
         /// <para>
@@ -502,7 +502,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RetryStrategy. 
         /// <para>
-        /// The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+        /// The number of times to retry the job when the job fails due to an <c>InternalServerError</c>.
         /// </para>
         /// </summary>
         public RetryStrategy RetryStrategy
@@ -541,8 +541,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property SecondaryStatus. 
         /// <para>
         ///  Provides detailed information about the state of the training job. For detailed information
-        /// about the secondary status of the training job, see <code>StatusMessage</code> under
-        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.
+        /// about the secondary status of the training job, see <c>StatusMessage</c> under <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.
         /// </para>
         ///  
         /// <para>
@@ -550,48 +550,47 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <dl> <dt>InProgress</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>Starting</code> - Starting the training job.
+        ///  <c>Starting</c> - Starting the training job.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Downloading</code> - An optional stage for algorithms that support <code>File</code>
-        /// training input mode. It indicates that data is being downloaded to the ML storage
-        /// volumes.
+        ///  <c>Downloading</c> - An optional stage for algorithms that support <c>File</c> training
+        /// input mode. It indicates that data is being downloaded to the ML storage volumes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Training</code> - Training is in progress.
+        ///  <c>Training</c> - Training is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Uploading</code> - Training is complete and the model artifacts are being uploaded
+        ///  <c>Uploading</c> - Training is complete and the model artifacts are being uploaded
         /// to the S3 location.
         /// </para>
         ///  </li> </ul> </dd> <dt>Completed</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>Completed</code> - The training job has completed.
+        ///  <c>Completed</c> - The training job has completed.
         /// </para>
         ///  </li> </ul> </dd> <dt>Failed</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>Failed</code> - The training job has failed. The reason for the failure is
-        /// returned in the <code>FailureReason</code> field of <code>DescribeTrainingJobResponse</code>.
+        ///  <c>Failed</c> - The training job has failed. The reason for the failure is returned
+        /// in the <c>FailureReason</c> field of <c>DescribeTrainingJobResponse</c>.
         /// </para>
         ///  </li> </ul> </dd> <dt>Stopped</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>MaxRuntimeExceeded</code> - The job stopped because it exceeded the maximum
-        /// allowed runtime.
+        ///  <c>MaxRuntimeExceeded</c> - The job stopped because it exceeded the maximum allowed
+        /// runtime.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopped</code> - The training job has stopped.
+        ///  <c>Stopped</c> - The training job has stopped.
         /// </para>
         ///  </li> </ul> </dd> <dt>Stopping</dt> <dd> <ul> <li> 
         /// <para>
-        ///  <code>Stopping</code> - Stopping the training job.
+        ///  <c>Stopping</c> - Stopping the training job.
         /// </para>
         ///  </li> </ul> </dd> </dl> <important> 
         /// <para>
-        /// Valid values for <code>SecondaryStatus</code> are subject to change. 
+        /// Valid values for <c>SecondaryStatus</c> are subject to change. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -599,15 +598,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LaunchingMLInstances</code> 
+        ///  <c>LaunchingMLInstances</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PreparingTrainingStack</code> 
+        ///  <c>PreparingTrainingStack</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DownloadingTrainingImage</code> 
+        ///  <c>DownloadingTrainingImage</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -651,9 +650,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which
-        /// delays job termination for 120 seconds. Algorithms can use this 120-second window
-        /// to save the model artifacts, so the results of training are not lost. 
+        /// To stop a job, SageMaker sends the algorithm the <c>SIGTERM</c> signal, which delays
+        /// job termination for 120 seconds. Algorithms can use this 120-second window to save
+        /// the model artifacts, so the results of training are not lost. 
         /// </para>
         /// </summary>
         public StoppingCondition StoppingCondition
@@ -709,9 +708,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingEndTime. 
         /// <para>
         /// Indicates the time when the training job ends on training instances. You are billed
-        /// for the time interval between the value of <code>TrainingStartTime</code> and this
-        /// time. For successful jobs and stopped jobs, this is the time after model artifacts
-        /// are uploaded. For failed jobs, this is the time when SageMaker detects a job failure.
+        /// for the time interval between the value of <c>TrainingStartTime</c> and this time.
+        /// For successful jobs and stopped jobs, this is the time after model artifacts are uploaded.
+        /// For failed jobs, this is the time when SageMaker detects a job failure.
         /// </para>
         /// </summary>
         public DateTime TrainingEndTime
@@ -775,29 +774,29 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>InProgress</code> - The training is in progress.
+        ///  <c>InProgress</c> - The training is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Completed</code> - The training job has completed.
+        ///  <c>Completed</c> - The training job has completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code> - The training job has failed. To see the reason for the failure,
-        /// see the <code>FailureReason</code> field in the response to a <code>DescribeTrainingJobResponse</code>
+        ///  <c>Failed</c> - The training job has failed. To see the reason for the failure, see
+        /// the <c>FailureReason</c> field in the response to a <c>DescribeTrainingJobResponse</c>
         /// call.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopping</code> - The training job is stopping.
+        ///  <c>Stopping</c> - The training job is stopping.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stopped</code> - The training job has stopped.
+        ///  <c>Stopped</c> - The training job has stopped.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// For more detailed information, see <code>SecondaryStatus</code>. 
+        /// For more detailed information, see <c>SecondaryStatus</c>. 
         /// </para>
         /// </summary>
         public TrainingJobStatus TrainingJobStatus
@@ -816,9 +815,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingStartTime. 
         /// <para>
         /// Indicates the time when the training job starts on training instances. You are billed
-        /// for the time interval between this time and the value of <code>TrainingEndTime</code>.
-        /// The start time in CloudWatch Logs might be later than this time. The difference is
-        /// due to the time it takes to download the training data and to the size of the training
+        /// for the time interval between this time and the value of <c>TrainingEndTime</c>. The
+        /// start time in CloudWatch Logs might be later than this time. The difference is due
+        /// to the time it takes to download the training data and to the size of the training
         /// container.
         /// </para>
         /// </summary>

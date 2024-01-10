@@ -39,7 +39,7 @@ namespace Amazon.MigrationHub.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Shows the artifacts created by the migration tool that was associated by the <code>AssociateCreatedArtifact</code>
+    /// Shows the artifacts created by the migration tool that was associated by the <c>AssociateCreatedArtifact</c>
     /// API. 
     /// </para>
     ///  </li> <li> 
@@ -97,9 +97,9 @@ namespace Amazon.MigrationHub.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If a <code>NextToken</code> was returned by a previous call, there are more results
-        /// available. To retrieve the next page of results, make the call again using the returned
-        /// token in <code>NextToken</code>.
+        /// If a <c>NextToken</c> was returned by a previous call, there are more results available.
+        /// To retrieve the next page of results, make the call again using the returned token
+        /// in <c>NextToken</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

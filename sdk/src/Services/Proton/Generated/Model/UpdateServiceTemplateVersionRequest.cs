@@ -85,7 +85,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MajorVersion. 
         /// <para>
-        /// To update a major version of a service template, include <code>major Version</code>.
+        /// To update a major version of a service template, include <c>major Version</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -104,7 +104,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property MinorVersion. 
         /// <para>
-        /// To update a minor version of a service template, include <code>minorVersion</code>.
+        /// To update a minor version of a service template, include <c>minorVersion</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -146,9 +146,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// A change to <code>supportedComponentSources</code> doesn't impact existing component
-        /// attachments to instances based on this template version. A change only affects later
-        /// associations.
+        /// A change to <c>supportedComponentSources</c> doesn't impact existing component attachments
+        /// to instances based on this template version. A change only affects later associations.
         /// </para>
         ///  </note> 
         /// <para>

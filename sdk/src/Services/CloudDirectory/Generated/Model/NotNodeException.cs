@@ -30,7 +30,7 @@ namespace Amazon.CloudDirectory.Model
 {
     /// <summary>
     /// Occurs when any invalid operations are performed on an object that is not a node,
-    /// such as calling <code>ListObjectChildren</code> for a leaf node object.
+    /// such as calling <c>ListObjectChildren</c> for a leaf node object.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

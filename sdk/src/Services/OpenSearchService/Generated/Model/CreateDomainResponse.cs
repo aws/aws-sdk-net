@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>CreateDomain</code> operation. Contains the status of the newly
-    /// created domain.
+    /// The result of a <c>CreateDomain</c> operation. Contains the status of the newly created
+    /// domain.
     /// </summary>
     public partial class CreateDomainResponse : AmazonWebServiceResponse
     {

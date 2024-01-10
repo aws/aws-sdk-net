@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.StorageGateway.Model
 {
     /// <summary>
-    /// Describes the object returned by <code>DescribeFileSystemAssociations</code> that
-    /// describes a created file system association.
+    /// Describes the object returned by <c>DescribeFileSystemAssociations</c> that describes
+    /// a created file system association.
     /// </summary>
     public partial class FileSystemAssociationInfo
     {
@@ -86,7 +86,7 @@ namespace Amazon.StorageGateway.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If multiple file systems are associated with this gateway, this parameter's <code>IpAddresses</code>
+        /// If multiple file systems are associated with this gateway, this parameter's <c>IpAddresses</c>
         /// field is required.
         /// </para>
         ///  </note>
@@ -125,9 +125,8 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property FileSystemAssociationStatus. 
         /// <para>
-        /// The status of the file system association. Valid Values: <code>AVAILABLE</code> |
-        /// <code>CREATING</code> | <code>DELETING</code> | <code>FORCE_DELETING</code> | <code>UPDATING</code>
-        /// | <code>ERROR</code> 
+        /// The status of the file system association. Valid Values: <c>AVAILABLE</c> | <c>CREATING</c>
+        /// | <c>DELETING</c> | <c>FORCE_DELETING</c> | <c>UPDATING</c> | <c>ERROR</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=50)]

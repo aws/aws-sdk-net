@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A traffic policy that has the same value for <code>Name</code> already exists.
+    /// A traffic policy that has the same value for <c>Name</c> already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

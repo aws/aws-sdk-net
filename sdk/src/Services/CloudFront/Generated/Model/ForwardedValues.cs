@@ -117,7 +117,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// A complex type that specifies the <code>Headers</code>, if any, that you want CloudFront
+        /// A complex type that specifies the <c>Headers</c>, if any, that you want CloudFront
         /// to forward to the origin for this cache behavior (whitelisted headers). For the headers
         /// that you specify, CloudFront also caches separate versions of a specified object that
         /// is based on the header values in viewer requests.
@@ -163,27 +163,27 @@ namespace Amazon.CloudFront.Model
         /// <para>
         /// Indicates whether you want CloudFront to forward query strings to the origin that
         /// is associated with this cache behavior and cache based on the query string parameters.
-        /// CloudFront behavior depends on the value of <code>QueryString</code> and on the values
-        /// that you specify for <code>QueryStringCacheKeys</code>, if any:
+        /// CloudFront behavior depends on the value of <c>QueryString</c> and on the values that
+        /// you specify for <c>QueryStringCacheKeys</c>, if any:
         /// </para>
         ///  
         /// <para>
-        /// If you specify true for <code>QueryString</code> and you don't specify any values
-        /// for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters
-        /// to the origin and caches based on all query string parameters. Depending on how many
-        /// query string parameters and values you have, this can adversely affect performance
-        /// because CloudFront must forward more requests to the origin.
+        /// If you specify true for <c>QueryString</c> and you don't specify any values for <c>QueryStringCacheKeys</c>,
+        /// CloudFront forwards all query string parameters to the origin and caches based on
+        /// all query string parameters. Depending on how many query string parameters and values
+        /// you have, this can adversely affect performance because CloudFront must forward more
+        /// requests to the origin.
         /// </para>
         ///  
         /// <para>
-        /// If you specify true for <code>QueryString</code> and you specify one or more values
-        /// for <code>QueryStringCacheKeys</code>, CloudFront forwards all query string parameters
-        /// to the origin, but it only caches based on the query string parameters that you specify.
+        /// If you specify true for <c>QueryString</c> and you specify one or more values for
+        /// <c>QueryStringCacheKeys</c>, CloudFront forwards all query string parameters to the
+        /// origin, but it only caches based on the query string parameters that you specify.
         /// </para>
         ///  
         /// <para>
-        /// If you specify false for <code>QueryString</code>, CloudFront doesn't forward any
-        /// query string parameters to the origin, and doesn't cache based on query string parameters.
+        /// If you specify false for <c>QueryString</c>, CloudFront doesn't forward any query
+        /// string parameters to the origin, and doesn't cache based on query string parameters.
         /// </para>
         ///  
         /// <para>

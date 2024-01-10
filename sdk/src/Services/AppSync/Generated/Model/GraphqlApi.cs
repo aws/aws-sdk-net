@@ -59,7 +59,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AdditionalAuthenticationProviders. 
         /// <para>
-        /// A list of additional authentication providers for the <code>GraphqlApi</code> API.
+        /// A list of additional authentication providers for the <c>GraphqlApi</c> API.
         /// </para>
         /// </summary>
         public List<AdditionalAuthenticationProvider> AdditionalAuthenticationProviders
@@ -95,8 +95,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiType. 
         /// <para>
-        /// The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>)
-        /// or merged API (<code>MERGED</code>).
+        /// The value that indicates whether the GraphQL API is a standard API (<c>GRAPHQL</c>)
+        /// or merged API (<c>MERGED</c>).
         /// </para>
         /// </summary>
         public GraphQLApiType ApiType
@@ -168,10 +168,10 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property IntrospectionConfig. 
         /// <para>
-        /// Sets the value of the GraphQL API to enable (<code>ENABLED</code>) or disable (<code>DISABLED</code>)
+        /// Sets the value of the GraphQL API to enable (<c>ENABLED</c>) or disable (<c>DISABLED</c>)
         /// introspection. If no value is provided, the introspection configuration will be set
-        /// to <code>ENABLED</code> by default. This field will produce an error if the operation
-        /// attempts to use the introspection feature while this field is disabled.
+        /// to <c>ENABLED</c> by default. This field will produce an error if the operation attempts
+        /// to use the introspection feature while this field is disabled.
         /// </para>
         ///  
         /// <para>
@@ -232,8 +232,8 @@ namespace Amazon.AppSync.Model
         /// <para>
         /// The Identity and Access Management service role ARN for a merged API. The AppSync
         /// service assumes this role on behalf of the Merged API to validate access to source
-        /// APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API
-        /// endpoint with the source API changes automatically.
+        /// APIs at runtime and to prompt the <c>AUTO_MERGE</c> to update the merged API endpoint
+        /// with the source API changes automatically.
         /// </para>
         /// </summary>
         public string MergedApiExecutionRoleArn
@@ -329,10 +329,10 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property QueryDepthLimit. 
         /// <para>
         /// The maximum depth a query can have in a single request. Depth refers to the amount
-        /// of nested levels allowed in the body of query. The default value is <code>0</code>
-        /// (or unspecified), which indicates there's no depth limit. If you set a limit, it can
-        /// be between <code>1</code> and <code>75</code> nested levels. This field will produce
-        /// a limit error if the operation falls out of bounds.
+        /// of nested levels allowed in the body of query. The default value is <c>0</c> (or unspecified),
+        /// which indicates there's no depth limit. If you set a limit, it can be between <c>1</c>
+        /// and <c>75</c> nested levels. This field will produce a limit error if the operation
+        /// falls out of bounds.
         /// </para>
         ///  
         /// <para>
@@ -357,9 +357,9 @@ namespace Amazon.AppSync.Model
         /// Gets and sets the property ResolverCountLimit. 
         /// <para>
         /// The maximum number of resolvers that can be invoked in a single request. The default
-        /// value is <code>0</code> (or unspecified), which will set the limit to <code>10000</code>.
-        /// When specified, the limit value can be between <code>1</code> and <code>10000</code>.
-        /// This field will produce a limit error if the operation falls out of bounds.
+        /// value is <c>0</c> (or unspecified), which will set the limit to <c>10000</c>. When
+        /// specified, the limit value can be between <c>1</c> and <c>10000</c>. This field will
+        /// produce a limit error if the operation falls out of bounds.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10000)]
@@ -433,9 +433,9 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>).
-        /// If no value is provided, the visibility will be set to <code>GLOBAL</code> by default.
-        /// This value cannot be changed once the API has been created.
+        /// Sets the value of the GraphQL API to public (<c>GLOBAL</c>) or private (<c>PRIVATE</c>).
+        /// If no value is provided, the visibility will be set to <c>GLOBAL</c> by default. This
+        /// value cannot be changed once the API has been created.
         /// </para>
         /// </summary>
         public GraphQLApiVisibility Visibility
@@ -453,7 +453,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property WafWebAclArn. 
         /// <para>
-        /// The ARN of the WAF access control list (ACL) associated with this <code>GraphqlApi</code>,
+        /// The ARN of the WAF access control list (ACL) associated with this <c>GraphqlApi</c>,
         /// if one exists.
         /// </para>
         /// </summary>
@@ -472,7 +472,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property XrayEnabled. 
         /// <para>
-        /// A flag indicating whether to use X-Ray tracing for this <code>GraphqlApi</code>.
+        /// A flag indicating whether to use X-Ray tracing for this <c>GraphqlApi</c>.
         /// </para>
         /// </summary>
         public bool XrayEnabled

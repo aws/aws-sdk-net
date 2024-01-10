@@ -31,7 +31,7 @@ namespace Amazon.ConnectCases.Model
     /// <summary>
     /// Container for the parameters to the UpdateCase operation.
     /// Updates the values of fields on a case. Fields to be updated are received as an array
-    /// of id/value pairs identical to the <code>CreateCase</code> input .
+    /// of id/value pairs identical to the <c>CreateCase</c> input .
     /// 
     ///  
     /// <para>
@@ -86,8 +86,8 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Fields. 
         /// <para>
-        /// An array of objects with <code>fieldId</code> (matching ListFields/DescribeField)
-        /// and value union data, structured identical to <code>CreateCase</code>.
+        /// An array of objects with <c>fieldId</c> (matching ListFields/DescribeField) and value
+        /// union data, structured identical to <c>CreateCase</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

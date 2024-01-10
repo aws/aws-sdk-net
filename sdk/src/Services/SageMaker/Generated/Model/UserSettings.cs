@@ -30,14 +30,14 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A collection of settings that apply to users in a domain. These settings are specified
-    /// when the <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code>
-    /// when the <code>CreateDomain</code> API is called.
+    /// when the <c>CreateUserProfile</c> API is called, and as <c>DefaultUserSettings</c>
+    /// when the <c>CreateDomain</c> API is called.
     /// 
     ///  
     /// <para>
-    ///  <code>SecurityGroups</code> is aggregated when specified in both calls. For all other
-    /// settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>
-    /// take precedence over those specified in <code>CreateDomain</code>.
+    ///  <c>SecurityGroups</c> is aggregated when specified in both calls. For all other settings
+    /// in <c>UserSettings</c>, the values specified in <c>CreateUserProfile</c> take precedence
+    /// over those specified in <c>CreateDomain</c>.
     /// </para>
     /// </summary>
     public partial class UserSettings
@@ -141,12 +141,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>studio::</code>: Indicates that Studio is the default experience. This value
-        /// can only be passed if <code>StudioWebPortal</code> is set to <code>ENABLED</code>.
+        ///  <c>studio::</c>: Indicates that Studio is the default experience. This value can
+        /// only be passed if <c>StudioWebPortal</c> is set to <c>ENABLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>app:JupyterServer:</code>: Indicates that Studio Classic is the default experience.
+        ///  <c>app:JupyterServer:</c>: Indicates that Studio Classic is the default experience.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -239,7 +239,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RSessionAppSettings. 
         /// <para>
-        /// A collection of settings that configure the <code>RSessionGateway</code> app.
+        /// A collection of settings that configure the <c>RSessionGateway</c> app.
         /// </para>
         /// </summary>
         public RSessionAppSettings RSessionAppSettings
@@ -257,7 +257,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property RStudioServerProAppSettings. 
         /// <para>
-        /// A collection of settings that configure user interaction with the <code>RStudioServerPro</code>
+        /// A collection of settings that configure user interaction with the <c>RStudioServerPro</c>
         /// app.
         /// </para>
         /// </summary>
@@ -281,14 +281,12 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Optional when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set
-        /// to <code>PublicInternetOnly</code>.
+        /// Optional when the <c>CreateDomain.AppNetworkAccessType</c> parameter is set to <c>PublicInternetOnly</c>.
         /// </para>
         ///  
         /// <para>
-        /// Required when the <code>CreateDomain.AppNetworkAccessType</code> parameter is set
-        /// to <code>VpcOnly</code>, unless specified as part of the <code>DefaultUserSettings</code>
-        /// for the domain.
+        /// Required when the <c>CreateDomain.AppNetworkAccessType</c> parameter is set to <c>VpcOnly</c>,
+        /// unless specified as part of the <c>DefaultUserSettings</c> for the domain.
         /// </para>
         ///  
         /// <para>
@@ -349,8 +347,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StudioWebPortal. 
         /// <para>
-        /// Whether the user can access Studio. If this value is set to <code>DISABLED</code>,
-        /// the user cannot access Studio, even if that is the default experience for the domain.
+        /// Whether the user can access Studio. If this value is set to <c>DISABLED</c>, the user
+        /// cannot access Studio, even if that is the default experience for the domain.
         /// </para>
         /// </summary>
         public StudioWebPortal StudioWebPortal

@@ -34,9 +34,8 @@ namespace Amazon.IoTEvents.Model
     /// 
     ///  
     /// <para>
-    /// You must use expressions for all parameters in <code>AssetPropertyTimestamp</code>.
-    /// The expressions accept literals, operators, functions, references, and substitution
-    /// templates.
+    /// You must use expressions for all parameters in <c>AssetPropertyTimestamp</c>. The
+    /// expressions accept literals, operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
@@ -45,27 +44,27 @@ namespace Amazon.IoTEvents.Model
     ///  <ul> <li> 
     /// <para>
     /// For literal values, the expressions must contain single quotes. For example, the value
-    /// for the <code>timeInSeconds</code> parameter can be <code>'1586400675'</code>.
+    /// for the <c>timeInSeconds</c> parameter can be <c>'1586400675'</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For references, you must specify either variables or input values. For example, the
-    /// value for the <code>offsetInNanos</code> parameter can be <code>$variable.time</code>.
+    /// value for the <c>offsetInNanos</c> parameter can be <c>$variable.time</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a substitution template, you must use <code>${}</code>, and the template must
-    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// For a substitution template, you must use <c>${}</c>, and the template must be in
+    /// single quotes. A substitution template can also contain a combination of literals,
     /// operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
-    /// In the following example, the value for the <code>timeInSeconds</code> parameter uses
-    /// a substitution template.
+    /// In the following example, the value for the <c>timeInSeconds</c> parameter uses a
+    /// substitution template.
     /// </para>
     ///  
     /// <para>
-    ///  <code>'${$input.TemperatureInput.sensorData.timestamp / 1000}'</code> 
+    ///  <c>'${$input.TemperatureInput.sensorData.timestamp / 1000}'</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -81,8 +80,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property OffsetInNanos. 
         /// <para>
-        /// The nanosecond offset converted from <code>timeInSeconds</code>. The valid range is
-        /// between 0-999999999.
+        /// The nanosecond offset converted from <c>timeInSeconds</c>. The valid range is between
+        /// 0-999999999.
         /// </para>
         /// </summary>
         public string OffsetInNanos

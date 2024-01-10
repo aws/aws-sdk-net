@@ -40,8 +40,8 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property EksClusterArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <code>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i>
-        /// </code>. 
+        /// The Amazon Resource Name (ARN) of the Amazon EKS cluster. An example is <c>arn:<i>aws</i>:eks:<i>us-east-1</i>:<i>123456789012</i>:cluster/<i>ClusterForBatch</i>
+        /// </c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,9 +62,8 @@ namespace Amazon.Batch.Model
         /// <para>
         /// The namespace of the Amazon EKS cluster. Batch manages pods in this namespace. The
         /// value can't left empty or null. It must be fewer than 64 characters long, can't be
-        /// set to <code>default</code>, can't start with "<code>kube-</code>," and must match
-        /// this regular expression: <code>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</code>. For more information,
-        /// see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a>
+        /// set to <c>default</c>, can't start with "<c>kube-</c>," and must match this regular
+        /// expression: <c>^[a-z0-9]([-a-z0-9]*[a-z0-9])?$</c>. For more information, see <a href="https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/">Namespaces</a>
         /// in the Kubernetes documentation.
         /// </para>
         /// </summary>

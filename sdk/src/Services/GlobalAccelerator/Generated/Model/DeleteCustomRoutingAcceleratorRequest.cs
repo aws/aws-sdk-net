@@ -32,7 +32,7 @@ namespace Amazon.GlobalAccelerator.Model
     /// Container for the parameters to the DeleteCustomRoutingAccelerator operation.
     /// Delete a custom routing accelerator. Before you can delete an accelerator, you must
     /// disable it and remove all dependent resources (listeners and endpoint groups). To
-    /// disable the accelerator, update the accelerator to set <code>Enabled</code> to false.
+    /// disable the accelerator, update the accelerator to set <c>Enabled</c> to false.
     /// 
     ///  <important> 
     /// <para>

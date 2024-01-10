@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Details about a proactive insight. This object is returned by <code>ListInsights</code>.
+    /// Details about a proactive insight. This object is returned by <c>ListInsights</c>.
     /// </summary>
     public partial class ProactiveInsight
     {

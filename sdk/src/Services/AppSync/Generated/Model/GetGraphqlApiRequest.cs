@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGraphqlApi operation.
-    /// Retrieves a <code>GraphqlApi</code> object.
+    /// Retrieves a <c>GraphqlApi</c> object.
     /// </summary>
     public partial class GetGraphqlApiRequest : AmazonAppSyncRequest
     {

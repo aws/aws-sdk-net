@@ -34,12 +34,11 @@ namespace Amazon.ElasticTranscoder.Model
     /// 
     ///  
     /// <para>
-    /// PlayReady DRM encrypts your media files using <code>aes-ctr</code> encryption.
+    /// PlayReady DRM encrypts your media files using <c>aes-ctr</c> encryption.
     /// </para>
     ///  
     /// <para>
-    /// If you use DRM for an <code>HLSv3</code> playlist, your outputs must have a master
-    /// playlist.
+    /// If you use DRM for an <c>HLSv3</c> playlist, your outputs must have a master playlist.
     /// </para>
     /// </summary>
     public partial class PlayReadyDrm
@@ -100,7 +99,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>128</code>, <code>192</code>, or <code>256</code>. 
+        ///  <c>128</c>, <c>192</c>, or <c>256</c>. 
         /// </para>
         ///  
         /// <para>
@@ -171,7 +170,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// path, and is referenced by the PlayReady header. The PlayReady header is referenced
         /// in the protection header of the client manifest for Smooth Streaming outputs, and
         /// in the EXT-X-DXDRM and EXT-XDXDRMINFO metadata tags for HLS playlist outputs. An example
-        /// URL looks like this: <code>https://www.example.com/exampleKey/</code> 
+        /// URL looks like this: <c>https://www.example.com/exampleKey/</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]

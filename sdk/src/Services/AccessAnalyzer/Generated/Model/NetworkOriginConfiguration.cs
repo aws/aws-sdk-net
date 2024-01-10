@@ -29,12 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
-    /// The proposed <code>InternetConfiguration</code> or <code>VpcConfiguration</code> to
-    /// apply to the Amazon S3 access point. <code>VpcConfiguration</code> does not apply
-    /// to multi-region access points. You can make the access point accessible from the internet,
-    /// or you can specify that all requests made through that access point must originate
-    /// from a specific virtual private cloud (VPC). You can specify only one type of network
-    /// configuration. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating
+    /// The proposed <c>InternetConfiguration</c> or <c>VpcConfiguration</c> to apply to the
+    /// Amazon S3 access point. <c>VpcConfiguration</c> does not apply to multi-region access
+    /// points. You can make the access point accessible from the internet, or you can specify
+    /// that all requests made through that access point must originate from a specific virtual
+    /// private cloud (VPC). You can specify only one type of network configuration. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/creating-access-points.html">Creating
     /// access points</a>.
     /// </summary>
     public partial class NetworkOriginConfiguration
@@ -46,7 +46,7 @@ namespace Amazon.AccessAnalyzer.Model
         /// Gets and sets the property InternetConfiguration. 
         /// <para>
         /// The configuration for the Amazon S3 access point or multi-region access point with
-        /// an <code>Internet</code> origin.
+        /// an <c>Internet</c> origin.
         /// </para>
         /// </summary>
         public InternetConfiguration InternetConfiguration

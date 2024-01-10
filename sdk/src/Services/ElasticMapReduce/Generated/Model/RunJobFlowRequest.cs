@@ -33,14 +33,14 @@ namespace Amazon.ElasticMapReduce.Model
     /// RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the
     /// steps specified. After the steps complete, the cluster stops and the HDFS partition
     /// is lost. To prevent loss of data, configure the last step of the job flow to store
-    /// results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <code>KeepJobFlowAliveWhenNoSteps</code>
-    /// parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state
-    /// rather than shutting down after the steps have completed. 
+    /// results in Amazon S3. If the <a>JobFlowInstancesConfig</a> <c>KeepJobFlowAliveWhenNoSteps</c>
+    /// parameter is set to <c>TRUE</c>, the cluster transitions to the WAITING state rather
+    /// than shutting down after the steps have completed. 
     /// 
     ///  
     /// <para>
-    /// For additional protection, you can set the <a>JobFlowInstancesConfig</a> <code>TerminationProtected</code>
-    /// parameter to <code>TRUE</code> to lock the cluster and prevent it from being terminated
+    /// For additional protection, you can set the <a>JobFlowInstancesConfig</a> <c>TerminationProtected</c>
+    /// parameter to <c>TRUE</c> to lock the cluster and prevent it from being terminated
     /// by API call, user intervention, or in the event of a job flow error.
     /// </para>
     ///  
@@ -139,7 +139,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property AmiVersion. 
         /// <para>
         /// Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases 4.0 and
-        /// later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use <code>CustomAmiID</code>.
+        /// later, <c>ReleaseLabel</c> is used. To specify a custom AMI, use <c>CustomAmiID</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -179,7 +179,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property AutoScalingRole. 
         /// <para>
-        /// An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
+        /// An IAM role for automatic scaling policies. The default role is <c>EMR_AutoScaling_DefaultRole</c>.
         /// The IAM role provides permissions that the automatic scaling feature requires to launch
         /// and terminate Amazon EC2 instances in an instance group.
         /// </para>
@@ -256,8 +256,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Linux AMI. If specified, Amazon EMR uses this AMI when it launches cluster Amazon
         /// EC2 instances. For more information about custom AMIs in Amazon EMR, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
         /// a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the cluster
-        /// uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For Amazon EMR
-        /// releases 2.x and 3.x, use <code>AmiVersion</code> instead.
+        /// uses the base Linux AMI for the <c>ReleaseLabel</c> specified. For Amazon EMR releases
+        /// 2.x and 3.x, use <c>AmiVersion</c> instead.
         /// </para>
         ///  
         /// <para>
@@ -361,7 +361,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property JobFlowRole. 
         /// <para>
         /// Also called instance profile and Amazon EC2 role. An IAM role for an Amazon EMR cluster.
-        /// The Amazon EC2 instances of the cluster assume this role. The default role is <code>EMR_EC2_DefaultRole</code>.
+        /// The Amazon EC2 instances of the cluster assume this role. The default role is <c>EMR_EC2_DefaultRole</c>.
         /// In order to use the default role, you must have already created it using the CLI or
         /// console.
         /// </para>
@@ -580,12 +580,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property ReleaseLabel. 
         /// <para>
         /// The Amazon EMR release label, which determines the version of open-source application
-        /// packages installed on the cluster. Release labels are in the form <code>emr-x.x.x</code>,
-        /// where x.x.x is an Amazon EMR release version such as <code>emr-5.14.0</code>. For
-        /// more information about Amazon EMR release versions and included application versions
-        /// and features, see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+        /// packages installed on the cluster. Release labels are in the form <c>emr-x.x.x</c>,
+        /// where x.x.x is an Amazon EMR release version such as <c>emr-5.14.0</c>. For more information
+        /// about Amazon EMR release versions and included application versions and features,
+        /// see <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
         /// The release label applies only to Amazon EMR releases version 4.0 and later. Earlier
-        /// versions use <code>AmiVersion</code>.
+        /// versions use <c>AmiVersion</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -604,11 +604,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property RepoUpgradeOnBoot. 
         /// <para>
-        /// Applies only when <code>CustomAmiID</code> is used. Specifies which updates from the
-        /// Amazon Linux AMI package repositories to apply automatically when the instance boots
-        /// using the AMI. If omitted, the default is <code>SECURITY</code>, which indicates that
-        /// only security updates are applied. If <code>NONE</code> is specified, no updates are
-        /// applied, and all updates must be applied manually.
+        /// Applies only when <c>CustomAmiID</c> is used. Specifies which updates from the Amazon
+        /// Linux AMI package repositories to apply automatically when the instance boots using
+        /// the AMI. If omitted, the default is <c>SECURITY</c>, which indicates that only security
+        /// updates are applied. If <c>NONE</c> is specified, no updates are applied, and all
+        /// updates must be applied manually.
         /// </para>
         /// </summary>
         public RepoUpgradeOnBoot RepoUpgradeOnBoot
@@ -627,17 +627,16 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property ScaleDownBehavior. 
         /// <para>
         /// Specifies the way that individual Amazon EC2 instances terminate when an automatic
-        /// scale-in activity occurs or an instance group is resized. <code>TERMINATE_AT_INSTANCE_HOUR</code>
+        /// scale-in activity occurs or an instance group is resized. <c>TERMINATE_AT_INSTANCE_HOUR</c>
         /// indicates that Amazon EMR terminates nodes at the instance-hour boundary, regardless
         /// of when the request to terminate the instance was submitted. This option is only available
         /// with Amazon EMR 5.1.0 and later and is the default for clusters created using that
-        /// version. <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR adds
-        /// nodes to a deny list and drains tasks from nodes before terminating the Amazon EC2
-        /// instances, regardless of the instance-hour boundary. With either behavior, Amazon
-        /// EMR removes the least active nodes first and blocks instance termination if it could
-        /// lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available only
-        /// in Amazon EMR releases 4.1.0 and later, and is the default for releases of Amazon
-        /// EMR earlier than 5.1.0.
+        /// version. <c>TERMINATE_AT_TASK_COMPLETION</c> indicates that Amazon EMR adds nodes
+        /// to a deny list and drains tasks from nodes before terminating the Amazon EC2 instances,
+        /// regardless of the instance-hour boundary. With either behavior, Amazon EMR removes
+        /// the least active nodes first and blocks instance termination if it could lead to HDFS
+        /// corruption. <c>TERMINATE_AT_TASK_COMPLETION</c> available only in Amazon EMR releases
+        /// 4.1.0 and later, and is the default for releases of Amazon EMR earlier than 5.1.0.
         /// </para>
         /// </summary>
         public ScaleDownBehavior ScaleDownBehavior
@@ -696,7 +695,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property StepConcurrencyLevel. 
         /// <para>
         /// Specifies the number of steps that can be executed concurrently. The default value
-        /// is <code>1</code>. The maximum value is <code>256</code>.
+        /// is <c>1</c>. The maximum value is <c>256</c>.
         /// </para>
         /// </summary>
         public int StepConcurrencyLevel
@@ -784,20 +783,20 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property VisibleToAllUsers. <important> 
         /// <para>
         /// The VisibleToAllUsers parameter is no longer supported. By default, the value is set
-        /// to <code>true</code>. Setting it to <code>false</code> now has no effect.
+        /// to <c>true</c>. Setting it to <c>false</c> now has no effect.
         /// </para>
         ///  </important> 
         /// <para>
-        /// Set this value to <code>true</code> so that IAM principals in the Amazon Web Services
-        /// account associated with the cluster can perform Amazon EMR actions on the cluster
-        /// that their IAM policies allow. This value defaults to <code>true</code> for clusters
-        /// created using the Amazon EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+        /// Set this value to <c>true</c> so that IAM principals in the Amazon Web Services account
+        /// associated with the cluster can perform Amazon EMR actions on the cluster that their
+        /// IAM policies allow. This value defaults to <c>true</c> for clusters created using
+        /// the Amazon EMR API or the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
         /// command.
         /// </para>
         ///  
         /// <para>
-        /// When set to <code>false</code>, only the IAM principal that created the cluster and
-        /// the Amazon Web Services account root user can perform Amazon EMR actions for the cluster,
+        /// When set to <c>false</c>, only the IAM principal that created the cluster and the
+        /// Amazon Web Services account root user can perform Amazon EMR actions for the cluster,
         /// regardless of the IAM permissions policies attached to other IAM principals. For more
         /// information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding
         /// the Amazon EMR cluster VisibleToAllUsers setting</a> in the <i>Amazon EMR Management

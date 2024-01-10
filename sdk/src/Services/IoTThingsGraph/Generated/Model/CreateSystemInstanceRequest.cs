@@ -36,8 +36,8 @@ namespace Amazon.IoTThingsGraph.Model
     /// <para>
     /// This action validates the system instance, prepares the deployment-related resources.
     /// For Greengrass deployments, it updates the Greengrass group that is specified by the
-    /// <code>greengrassGroupName</code> parameter. It also adds a file to the S3 bucket specified
-    /// by the <code>s3BucketName</code> parameter. You need to call <code>DeploySystemInstance</code>
+    /// <c>greengrassGroupName</c> parameter. It also adds a file to the S3 bucket specified
+    /// by the <c>s3BucketName</c> parameter. You need to call <c>DeploySystemInstance</c>
     /// after running this action.
     /// </para>
     ///  
@@ -49,9 +49,9 @@ namespace Amazon.IoTThingsGraph.Model
     /// </para>
     ///  
     /// <para>
-    /// For cloud deployments, this action requires a <code>flowActionsRoleArn</code> value.
-    /// This is an IAM role that has permissions to access AWS services, such as AWS Lambda
-    /// and AWS IoT, that the flow uses when it executes.
+    /// For cloud deployments, this action requires a <c>flowActionsRoleArn</c> value. This
+    /// is an IAM role that has permissions to access AWS services, such as AWS Lambda and
+    /// AWS IoT, that the flow uses when it executes.
     /// </para>
     ///  
     /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// The ARN of the IAM role that AWS IoT Things Graph will assume when it executes the
         /// flow. This role must have read and write access to AWS Lambda and AWS IoT and any
         /// other AWS services that the flow uses when it executes. This value is required if
-        /// the value of the <code>target</code> parameter is <code>CLOUD</code>.
+        /// the value of the <c>target</c> parameter is <c>CLOUD</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -111,7 +111,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// Gets and sets the property GreengrassGroupName. 
         /// <para>
         /// The name of the Greengrass group where the system instance will be deployed. This
-        /// value is required if the value of the <code>target</code> parameter is <code>GREENGRASS</code>.
+        /// value is required if the value of the <c>target</c> parameter is <c>GREENGRASS</c>.
         /// </para>
         /// </summary>
         public string GreengrassGroupName
@@ -146,7 +146,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <para>
         /// The name of the Amazon Simple Storage Service bucket that will be used to store and
         /// deploy the system instance's resource file. This value is required if the value of
-        /// the <code>target</code> parameter is <code>GREENGRASS</code>.
+        /// the <c>target</c> parameter is <c>GREENGRASS</c>.
         /// </para>
         /// </summary>
         public string S3BucketName
@@ -184,7 +184,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The target type of the deployment. Valid values are <code>GREENGRASS</code> and <code>CLOUD</code>.
+        /// The target type of the deployment. Valid values are <c>GREENGRASS</c> and <c>CLOUD</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

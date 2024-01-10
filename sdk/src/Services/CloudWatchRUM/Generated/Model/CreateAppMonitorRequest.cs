@@ -63,8 +63,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// A structure that contains much of the configuration data for the app monitor. If you
         /// are using Amazon Cognito for authorization, you must include this structure in your
         /// request, and it must include the ID of the Amazon Cognito identity pool to use for
-        /// authorization. If you don't include <code>AppMonitorConfiguration</code>, you must
-        /// set up your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
+        /// authorization. If you don't include <c>AppMonitorConfiguration</c>, you must set up
+        /// your own authorization method. For more information, see <a href="https://docs.aws.amazon.com/monitoring/CloudWatch-RUM-get-started-authorization.html">Authorize
         /// your application to send data to Amazon Web Services</a>.
         /// </para>
         ///  
@@ -89,7 +89,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// Gets and sets the property CustomEvents. 
         /// <para>
         /// Specifies whether this app monitor allows the web client to define and send custom
-        /// events. If you omit this parameter, custom events are <code>DISABLED</code>.
+        /// events. If you omit this parameter, custom events are <c>DISABLED</c>.
         /// </para>
         ///  
         /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  
         /// <para>
-        /// If you omit this parameter, the default is <code>false</code>.
+        /// If you omit this parameter, the default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool CwLogEnabled

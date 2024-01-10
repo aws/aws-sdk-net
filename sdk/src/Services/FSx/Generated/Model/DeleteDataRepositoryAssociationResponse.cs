@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property DeleteDataInFileSystem. 
         /// <para>
         /// Indicates whether data in the file system that corresponds to the data repository
-        /// association is being deleted. Default is <code>false</code>.
+        /// association is being deleted. Default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool DeleteDataInFileSystem

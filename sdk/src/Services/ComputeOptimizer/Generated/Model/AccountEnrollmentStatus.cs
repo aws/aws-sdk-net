@@ -100,8 +100,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, an account might show a status of <code>Pending</code> because member
-        /// accounts of an organization require more time to be enrolled in the service.
+        /// For example, an account might show a status of <c>Pending</c> because member accounts
+        /// of an organization require more time to be enrolled in the service.
         /// </para>
         /// </summary>
         public string StatusReason

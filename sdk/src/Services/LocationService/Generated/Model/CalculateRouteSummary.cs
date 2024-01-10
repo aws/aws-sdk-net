@@ -47,15 +47,15 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Esri</code> 
+        ///  <c>Esri</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Grab</code> 
+        ///  <c>Grab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Here</code> 
+        ///  <c>Here</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -85,7 +85,7 @@ namespace Amazon.LocationService.Model
         ///  <note> 
         /// <para>
         /// If Esri is the data source for the route calculator, the route distance can’t be greater
-        /// than 400 km. If the route exceeds 400 km, the response is a <code>400 RoutesValidationException</code>
+        /// than 400 km. If the route exceeds 400 km, the response is a <c>400 RoutesValidationException</c>
         /// error.
         /// </para>
         ///  </note>
@@ -146,35 +146,35 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property RouteBBox. 
         /// <para>
         /// Specifies a geographical box surrounding a route. Used to zoom into a route when displaying
-        /// it in a map. For example, <code>[min x, min y, max x, max y]</code>.
+        /// it in a map. For example, <c>[min x, min y, max x, max y]</c>.
         /// </para>
         ///  
         /// <para>
-        /// The first 2 <code>bbox</code> parameters describe the lower southwest corner: 
+        /// The first 2 <c>bbox</c> parameters describe the lower southwest corner: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The first <code>bbox</code> position is the X coordinate or longitude of the lower
-        /// southwest corner. 
+        /// The first <c>bbox</c> position is the X coordinate or longitude of the lower southwest
+        /// corner. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The second <code>bbox</code> position is the Y coordinate or latitude of the lower
-        /// southwest corner. 
+        /// The second <c>bbox</c> position is the Y coordinate or latitude of the lower southwest
+        /// corner. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The next 2 <code>bbox</code> parameters describe the upper northeast corner: 
+        /// The next 2 <c>bbox</c> parameters describe the upper northeast corner: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The third <code>bbox</code> position is the X coordinate, or longitude of the upper
-        /// northeast corner. 
+        /// The third <c>bbox</c> position is the X coordinate, or longitude of the upper northeast
+        /// corner. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The fourth <code>bbox</code> position is the Y coordinate, or latitude of the upper
-        /// northeast corner. 
+        /// The fourth <c>bbox</c> position is the Y coordinate, or latitude of the upper northeast
+        /// corner. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

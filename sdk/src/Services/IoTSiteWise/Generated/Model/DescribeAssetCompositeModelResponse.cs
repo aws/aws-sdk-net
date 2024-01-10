@@ -89,7 +89,7 @@ namespace Amazon.IoTSiteWise.Model
         ///  
         /// <para>
         /// If the composite model is a component-based composite model, or one nested inside
-        /// a component model, you can only set the external ID using <code>UpdateAssetModelCompositeModel</code>
+        /// a component model, you can only set the external ID using <c>UpdateAssetModelCompositeModel</c>
         /// and specifying the derived ID of the model or property from the created model it's
         /// a part of.
         /// </para>
@@ -205,8 +205,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetCompositeModelType. 
         /// <para>
-        /// The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>,
-        /// or <code> AWS/L4E_ANOMALY</code>.
+        /// The composite model type. Valid values are <c>AWS/ALARM</c>, <c>CUSTOM</c>, or <c>
+        /// AWS/L4E_ANOMALY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

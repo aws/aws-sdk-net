@@ -61,7 +61,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property DeletionProtection. 
         /// <para>
         /// Indicates whether or not to enable deletion protection on the graph. The graph can’t
-        /// be deleted when deletion protection is enabled. (<code>true</code> or <code>false</code>).
+        /// be deleted when deletion protection is enabled. (<c>true</c> or <c>false</c>).
         /// </para>
         /// </summary>
         public bool DeletionProtection
@@ -79,9 +79,8 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property FailOnError. 
         /// <para>
-        /// If set to <code>true</code>, the task halts when an import error is encountered. If
-        /// set to <code>false</code>, the task skips the data that caused the error and continues
-        /// if possible.
+        /// If set to <c>true</c>, the task halts when an import error is encountered. If set
+        /// to <c>false</c>, the task skips the data that caused the error and continues if possible.
         /// </para>
         /// </summary>
         public bool FailOnError
@@ -99,9 +98,9 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        /// Specifies the format of S3 data to be imported. Valid values are <code>CSV</code>,
-        /// which identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
-        /// CSV format</a> or <code>OPENCYPHER</code>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
+        /// Specifies the format of S3 data to be imported. Valid values are <c>CSV</c>, which
+        /// identifies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-gremlin.html">Gremlin
+        /// CSV format</a> or <c>OPENCYPHER</c>, which identies the <a href="https://docs.aws.amazon.com/neptune/latest/userguide/bulk-load-tutorial-format-opencypher.html">openCypher
         /// load format</a>.
         /// </para>
         /// </summary>
@@ -145,10 +144,10 @@ namespace Amazon.NeptuneGraph.Model
         /// <summary>
         /// Gets and sets the property ImportOptions. 
         /// <para>
-        /// Contains options for controlling the import process. For example, if the <code>failOnError</code>
-        /// key is set to <code>false</code>, the import skips problem data and attempts to continue
-        /// (whereas if set to <code>true</code>, the default, or if omitted, the import operation
-        /// halts immediately when an error is encountered.
+        /// Contains options for controlling the import process. For example, if the <c>failOnError</c>
+        /// key is set to <c>false</c>, the import skips problem data and attempts to continue
+        /// (whereas if set to <c>true</c>, the default, or if omitted, the import operation halts
+        /// immediately when an error is encountered.
         /// </para>
         /// </summary>
         public ImportOptions ImportOptions
@@ -190,9 +189,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         ///  
         /// <para>
-        ///  If both the minimum and maximum values are specified, the max of the <code>min-provisioned-memory</code>
-        /// and <code>max-provisioned memory</code> is used to create the graph. If neither value
-        /// is specified 128 m-NCUs are used.
+        ///  If both the minimum and maximum values are specified, the max of the <c>min-provisioned-memory</c>
+        /// and <c>max-provisioned memory</c> is used to create the graph. If neither value is
+        /// specified 128 m-NCUs are used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=128, Max=24576)]
@@ -232,8 +231,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property PublicConnectivity. 
         /// <para>
         /// Specifies whether or not the graph can be reachable over the internet. All access
-        /// to graphs IAM authenticated. (<code>true</code> to enable, or <code>false</code> to
-        /// disable.
+        /// to graphs IAM authenticated. (<c>true</c> to enable, or <c>false</c> to disable.
         /// </para>
         /// </summary>
         public bool PublicConnectivity
@@ -331,7 +329,7 @@ namespace Amazon.NeptuneGraph.Model
         /// Gets and sets the property VectorSearchConfiguration. 
         /// <para>
         /// Specifies the number of dimensions for vector embeddings that will be loaded into
-        /// the graph. The value is specified as <code>dimension=</code>value. Max = 65,535 
+        /// the graph. The value is specified as <c>dimension=</c>value. Max = 65,535 
         /// </para>
         /// </summary>
         public VectorSearchConfiguration VectorSearchConfiguration

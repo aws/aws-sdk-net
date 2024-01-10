@@ -193,9 +193,9 @@ namespace Amazon.PinpointSMSVoiceV2.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, this is set to <code>False</code>. If you set this value to <code>True</code>,
-        /// your messages are sent using phone numbers or sender IDs (depending on the country)
-        /// that are shared with other Amazon Pinpoint users. In some countries, such as the United
+        /// By default, this is set to <c>False</c>. If you set this value to <c>True</c>, your
+        /// messages are sent using phone numbers or sender IDs (depending on the country) that
+        /// are shared with other Amazon Pinpoint users. In some countries, such as the United
         /// States, senders aren't allowed to use shared routes and must use a dedicated phone
         /// number or short code.
         /// </para>

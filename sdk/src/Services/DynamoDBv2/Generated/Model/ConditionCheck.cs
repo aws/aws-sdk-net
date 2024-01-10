@@ -125,9 +125,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnValuesOnConditionCheckFailure. 
         /// <para>
-        /// Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if
-        /// the <code>ConditionCheck</code> condition fails. For <code>ReturnValuesOnConditionCheckFailure</code>,
-        /// the valid values are: NONE and ALL_OLD.
+        /// Use <c>ReturnValuesOnConditionCheckFailure</c> to get the item attributes if the <c>ConditionCheck</c>
+        /// condition fails. For <c>ReturnValuesOnConditionCheckFailure</c>, the valid values
+        /// are: NONE and ALL_OLD.
         /// </para>
         /// </summary>
         public ReturnValuesOnConditionCheckFailure ReturnValuesOnConditionCheckFailure

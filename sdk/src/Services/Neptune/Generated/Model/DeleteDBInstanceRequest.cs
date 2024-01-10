@@ -32,21 +32,21 @@ namespace Amazon.Neptune.Model
     /// Container for the parameters to the DeleteDBInstance operation.
     /// The DeleteDBInstance action deletes a previously provisioned DB instance. When you
     /// delete a DB instance, all automated backups for that instance are deleted and can't
-    /// be recovered. Manual DB snapshots of the DB instance to be deleted by <code>DeleteDBInstance</code>
+    /// be recovered. Manual DB snapshots of the DB instance to be deleted by <c>DeleteDBInstance</c>
     /// are not deleted.
     /// 
     ///  
     /// <para>
     ///  If you request a final DB snapshot the status of the Amazon Neptune DB instance is
-    /// <code>deleting</code> until the DB snapshot is created. The API action <code>DescribeDBInstance</code>
+    /// <c>deleting</c> until the DB snapshot is created. The API action <c>DescribeDBInstance</c>
     /// is used to monitor the status of this operation. The action can't be canceled or reverted
     /// once submitted.
     /// </para>
     ///  
     /// <para>
-    /// Note that when a DB instance is in a failure state and has a status of <code>failed</code>,
-    /// <code>incompatible-restore</code>, or <code>incompatible-network</code>, you can only
-    /// delete it when the <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.
+    /// Note that when a DB instance is in a failure state and has a status of <c>failed</c>,
+    /// <c>incompatible-restore</c>, or <c>incompatible-network</c>, you can only delete it
+    /// when the <c>SkipFinalSnapshot</c> parameter is set to <c>true</c>.
     /// </para>
     ///  
     /// <para>
@@ -93,7 +93,7 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property FinalDBSnapshotIdentifier. 
         /// <para>
         ///  The DBSnapshotIdentifier of the new DBSnapshot created when SkipFinalSnapshot is
-        /// set to <code>false</code>.
+        /// set to <c>false</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -138,8 +138,8 @@ namespace Amazon.Neptune.Model
         /// Gets and sets the property SkipFinalSnapshot. 
         /// <para>
         ///  Determines whether a final DB snapshot is created before the DB instance is deleted.
-        /// If <code>true</code> is specified, no DBSnapshot is created. If <code>false</code>
-        /// is specified, a DB snapshot is created before the DB instance is deleted.
+        /// If <c>true</c> is specified, no DBSnapshot is created. If <c>false</c> is specified,
+        /// a DB snapshot is created before the DB instance is deleted.
         /// </para>
         ///  
         /// <para>
@@ -149,16 +149,16 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// Specify <code>true</code> when deleting a Read Replica.
+        /// Specify <c>true</c> when deleting a Read Replica.
         /// </para>
         ///  <note> 
         /// <para>
         /// The FinalDBSnapshotIdentifier parameter must be specified if SkipFinalSnapshot is
-        /// <code>false</code>.
+        /// <c>false</c>.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Default: <code>false</code> 
+        /// Default: <c>false</c> 
         /// </para>
         /// </summary>
         public bool SkipFinalSnapshot

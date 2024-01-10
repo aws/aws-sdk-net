@@ -69,11 +69,11 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PRINCIPAL</code> – list the principals whose associations you want to see.
+        ///  <c>PRINCIPAL</c> – list the principals whose associations you want to see.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESOURCE</code> – list the resources whose associations you want to see.
+        ///  <c>RESOURCE</c> – list the resources whose associations you want to see.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -95,11 +95,11 @@ namespace Amazon.RAM.Model
         /// <para>
         /// Specifies the total number of results that you want included on each page of the response.
         /// If you do not include this parameter, it defaults to a value that is specific to the
-        /// operation. If additional items exist beyond the number you specify, the <code>NextToken</code>
+        /// operation. If additional items exist beyond the number you specify, the <c>NextToken</c>
         /// response element is returned with a value (not null). Include the specified value
-        /// as the <code>NextToken</code> request parameter in the next call to the operation
-        /// to get the next part of the results. Note that the service might return fewer results
-        /// than the maximum even when there are more results available. You should check <code>NextToken</code>
+        /// as the <c>NextToken</c> request parameter in the next call to the operation to get
+        /// the next part of the results. Note that the service might return fewer results than
+        /// the maximum even when there are more results available. You should check <c>NextToken</c>
         /// after every operation to ensure that you receive all of the results.
         /// </para>
         /// </summary>
@@ -120,9 +120,9 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Specifies that you want to receive the next page of results. Valid only if you received
-        /// a <code>NextToken</code> response in the previous request. If you did, it indicates
-        /// that more output is available. Set this parameter to the value provided by the previous
-        /// call's <code>NextToken</code> response to request the next page of results.
+        /// a <c>NextToken</c> response in the previous request. If you did, it indicates that
+        /// more output is available. Set this parameter to the value provided by the previous
+        /// call's <c>NextToken</c> response to request the next page of results.
         /// </para>
         /// </summary>
         public string NextToken
@@ -147,7 +147,7 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter if the association type is <code>RESOURCE</code>.
+        /// You cannot specify this parameter if the association type is <c>RESOURCE</c>.
         /// </para>
         /// </summary>
         public string Principal
@@ -170,7 +170,7 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// You cannot specify this parameter if the association type is <code>PRINCIPAL</code>.
+        /// You cannot specify this parameter if the association type is <c>PRINCIPAL</c>.
         /// </para>
         /// </summary>
         public string ResourceArn

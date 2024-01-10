@@ -41,11 +41,11 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The <code>StartPosition</code> is the departure position.
+    /// The <c>StartPosition</c> is the departure position.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>EndPosition</code> is the destination position.
+    /// The <c>EndPosition</c> is the destination position.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -54,13 +54,13 @@ namespace Amazon.LocationService.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Leg 1: The <code>StartPosition</code> is the departure position . The <code>EndPosition</code>
+    /// Leg 1: The <c>StartPosition</c> is the departure position . The <c>EndPosition</c>
     /// is the waypoint positon.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Leg 2: The <code>StartPosition</code> is the waypoint position. The <code>EndPosition</code>
-    /// is the destination position.
+    /// Leg 2: The <c>StartPosition</c> is the waypoint position. The <c>EndPosition</c> is
+    /// the destination position.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -76,13 +76,13 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Distance. 
         /// <para>
-        /// The distance between the leg's <code>StartPosition</code> and <code>EndPosition</code>
-        /// along a calculated route. 
+        /// The distance between the leg's <c>StartPosition</c> and <c>EndPosition</c> along a
+        /// calculated route. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The default measurement is <code>Kilometers</code> unless the request specifies a
-        /// <code>DistanceUnit</code> of <code>Miles</code>.
+        /// The default measurement is <c>Kilometers</c> unless the request specifies a <c>DistanceUnit</c>
+        /// of <c>Miles</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property DurationSeconds. 
         /// <para>
-        /// The estimated travel time between the leg's <code>StartPosition</code> and <code>EndPosition</code>.
+        /// The estimated travel time between the leg's <c>StartPosition</c> and <c>EndPosition</c>.
         /// The travel mode and departure time that you specify in the request determines the
         /// calculated time.
         /// </para>
@@ -123,11 +123,11 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property EndPosition. 
         /// <para>
-        /// The terminating position of the leg. Follows the format <code>[longitude,latitude]</code>.
+        /// The terminating position of the leg. Follows the format <c>[longitude,latitude]</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the <code>EndPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
+        /// If the <c>EndPosition</c> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/nap-to-nearby-road.html">snapped
         /// to a nearby road</a>. 
         /// </para>
         ///  </note>
@@ -166,11 +166,11 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property StartPosition. 
         /// <para>
-        /// The starting position of the leg. Follows the format <code>[longitude,latitude]</code>.
+        /// The starting position of the leg. Follows the format <c>[longitude,latitude]</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If the <code>StartPosition</code> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
+        /// If the <c>StartPosition</c> isn't located on a road, it's <a href="https://docs.aws.amazon.com/location/latest/developerguide/snap-to-nearby-road.html">snapped
         /// to a nearby road</a>. 
         /// </para>
         ///  </note>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provided if <code>CallerType</code> is <code>domain</code>. It provides information
-    /// about the DNS domain that issued the API call.
+    /// Provided if <c>CallerType</c> is <c>domain</c>. It provides information about the
+    /// DNS domain that issued the API call.
     /// </summary>
     public partial class AwsApiCallActionDomainDetails
     {

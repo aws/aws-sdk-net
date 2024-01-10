@@ -40,7 +40,7 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Confidence. 
         /// <para>
-        /// The confidence that Amazon Rekognition has in the value of <code>Value</code>.
+        /// The confidence that Amazon Rekognition has in the value of <c>Value</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

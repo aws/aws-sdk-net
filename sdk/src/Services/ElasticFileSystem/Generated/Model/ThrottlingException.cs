@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticFileSystem.Model
 {
     /// <summary>
-    /// Returned when the <code>CreateAccessPoint</code> API action is called too quickly
-    /// and the number of Access Points on the file system is nearing the <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit
+    /// Returned when the <c>CreateAccessPoint</c> API action is called too quickly and the
+    /// number of Access Points on the file system is nearing the <a href="https://docs.aws.amazon.com/efs/latest/ug/limits.html#limits-efs-resources-per-account-per-region">limit
     /// of 120</a>.
     /// </summary>
     #if !NETSTANDARD

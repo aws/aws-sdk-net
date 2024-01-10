@@ -75,28 +75,28 @@ namespace Amazon.CognitoIdentity
 
         /// <summary>
         /// Creates a new identity pool. The identity pool is a store of user identity information
-        /// that is specific to your AWS account. The keys for <code>SupportedLoginProviders</code>
+        /// that is specific to your AWS account. The keys for <c>SupportedLoginProviders</c>
         /// are as follows:
         /// 
         ///  <ul> <li> 
         /// <para>
-        /// Facebook: <code>graph.facebook.com</code> 
+        /// Facebook: <c>graph.facebook.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Google: <code>accounts.google.com</code> 
+        /// Google: <c>accounts.google.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Amazon: <code>www.amazon.com</code> 
+        /// Amazon: <c>www.amazon.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Twitter: <code>api.twitter.com</code> 
+        /// Twitter: <c>api.twitter.com</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Digits: <code>www.digits.com</code> 
+        /// Digits: <c>www.digits.com</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -923,20 +923,20 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token
-        /// for a user authenticated by your backend authentication process. Supplying multiple
-        /// logins will create an implicit linked account. You can only specify one developer
-        /// provider as part of the <code>Logins</code> map, which is linked to the identity pool.
-        /// The developer provider is the "domain" by which Cognito will refer to your users.
+        /// Registers (or retrieves) a Cognito <c>IdentityId</c> and an OpenID Connect token for
+        /// a user authenticated by your backend authentication process. Supplying multiple logins
+        /// will create an implicit linked account. You can only specify one developer provider
+        /// as part of the <c>Logins</c> map, which is linked to the identity pool. The developer
+        /// provider is the "domain" by which Cognito will refer to your users.
         /// 
         ///  
         /// <para>
-        /// You can use <code>GetOpenIdTokenForDeveloperIdentity</code> to create a new identity
-        /// and to link new logins (that is, user credentials issued by a public provider or developer
-        /// provider) to an existing identity. When you want to create a new identity, the <code>IdentityId</code>
+        /// You can use <c>GetOpenIdTokenForDeveloperIdentity</c> to create a new identity and
+        /// to link new logins (that is, user credentials issued by a public provider or developer
+        /// provider) to an existing identity. When you want to create a new identity, the <c>IdentityId</c>
         /// should be null. When you want to associate a new login with an existing authenticated/unauthenticated
-        /// identity, you can do so by providing the existing <code>IdentityId</code>. This API
-        /// will create the identity in the specified <code>IdentityPoolId</code>.
+        /// identity, you can do so by providing the existing <c>IdentityId</c>. This API will
+        /// create the identity in the specified <c>IdentityPoolId</c>.
         /// </para>
         ///  
         /// <para>
@@ -1003,7 +1003,7 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code>
+        /// Use <c>GetPrincipalTagAttributeMap</c> to list all mappings between <c>PrincipalTags</c>
         /// and user attributes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPrincipalTagAttributeMap service method.</param>
@@ -1244,23 +1244,22 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code>
-        /// or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code>
-        /// for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code>
+        /// Retrieves the <c>IdentityID</c> associated with a <c>DeveloperUserIdentifier</c> or
+        /// the list of <c>DeveloperUserIdentifier</c> values associated with an <c>IdentityId</c>
+        /// for an existing identity. Either <c>IdentityID</c> or <c>DeveloperUserIdentifier</c>
         /// must not be null. If you supply only one of these values, the other value will be
         /// searched in the database and returned as a part of the response. If you supply both,
-        /// <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>.
-        /// If the values are verified against the database, the response returns both values
-        /// and is the same as the request. Otherwise a <code>ResourceConflictException</code>
-        /// is thrown.
+        /// <c>DeveloperUserIdentifier</c> will be matched against <c>IdentityID</c>. If the values
+        /// are verified against the database, the response returns both values and is the same
+        /// as the request. Otherwise a <c>ResourceConflictException</c> is thrown.
         /// 
         ///  
         /// <para>
-        ///  <code>LookupDeveloperIdentity</code> is intended for low-throughput control plane
-        /// operations: for example, to enable customer service to locate an identity ID by username.
-        /// If you are using it for higher-volume operations such as user authentication, your
-        /// requests are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is
-        /// a better option for higher-volume operations for user authentication.
+        ///  <c>LookupDeveloperIdentity</c> is intended for low-throughput control plane operations:
+        /// for example, to enable customer service to locate an identity ID by username. If you
+        /// are using it for higher-volume operations such as user authentication, your requests
+        /// are likely to be throttled. <a>GetOpenIdTokenForDeveloperIdentity</a> is a better
+        /// option for higher-volume operations for user authentication.
         /// </para>
         ///  
         /// <para>
@@ -1323,18 +1322,18 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Merges two users having different <code>IdentityId</code>s, existing in the same identity
+        /// Merges two users having different <c>IdentityId</c>s, existing in the same identity
         /// pool, and identified by the same developer provider. You can use this action to request
         /// that discrete users be merged and identified as a single user in the Cognito environment.
-        /// Cognito associates the given source user (<code>SourceUserIdentifier</code>) with
-        /// the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated
-        /// users can be merged. If the users to be merged are associated with the same public
-        /// provider, but as two different users, an exception will be thrown.
+        /// Cognito associates the given source user (<c>SourceUserIdentifier</c>) with the <c>IdentityId</c>
+        /// of the <c>DestinationUserIdentifier</c>. Only developer-authenticated users can be
+        /// merged. If the users to be merged are associated with the same public provider, but
+        /// as two different users, an exception will be thrown.
         /// 
         ///  
         /// <para>
         /// The number of linked logins is limited to 20. So, the number of linked logins for
-        /// the source user, <code>SourceUserIdentifier</code>, and the destination user, <code>DestinationUserIdentifier</code>,
+        /// the source user, <c>SourceUserIdentifier</c>, and the destination user, <c>DestinationUserIdentifier</c>,
         /// together should not be larger than 20. Otherwise, an exception will be thrown.
         /// </para>
         ///  
@@ -1566,9 +1565,9 @@ namespace Amazon.CognitoIdentity
         /// <para>
         /// Each tag consists of a key and value, both of which you define. A key is a general
         /// category for more specific values. For example, if you have two versions of an identity
-        /// pool, one for testing and another for production, you might assign an <code>Environment</code>
-        /// tag key to both identity pools. The value of this key might be <code>Test</code> for
-        /// one identity pool and <code>Production</code> for the other.
+        /// pool, one for testing and another for production, you might assign an <c>Environment</c>
+        /// tag key to both identity pools. The value of this key might be <c>Test</c> for one
+        /// identity pool and <c>Production</c> for the other.
         /// </para>
         ///  
         /// <para>
@@ -1636,10 +1635,10 @@ namespace Amazon.CognitoIdentity
 
 
         /// <summary>
-        /// Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked
-        /// developer users will be considered new identities next time they are seen. If, for
-        /// a given Cognito identity, you remove all federated identities as well as the developer
-        /// user identifier, the Cognito identity becomes inaccessible.
+        /// Unlinks a <c>DeveloperUserIdentifier</c> from an existing identity. Unlinked developer
+        /// users will be considered new identities next time they are seen. If, for a given Cognito
+        /// identity, you remove all federated identities as well as the developer user identifier,
+        /// the Cognito identity becomes inaccessible.
         /// 
         ///  
         /// <para>

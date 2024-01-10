@@ -40,8 +40,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Artwork. 
         /// <para>
         /// The file to be used as album art. There can be multiple artworks associated with an
-        /// audio file, to a maximum of 20. Valid formats are <code>.jpg</code> and <code>.png</code>
-        /// 
+        /// audio file, to a maximum of 20. Valid formats are <c>.jpg</c> and <c>.png</c> 
         /// </para>
         /// </summary>
         public List<Artwork> Artwork
@@ -64,20 +63,20 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Replace:</code> The specified album art replaces any existing album art.
+        ///  <c>Replace:</c> The specified album art replaces any existing album art.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Prepend:</code> The specified album art is placed in front of any existing
-        /// album art.
+        ///  <c>Prepend:</c> The specified album art is placed in front of any existing album
+        /// art.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Append:</code> The specified album art is placed after any existing album art.
+        ///  <c>Append:</c> The specified album art is placed after any existing album art.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fallback:</code> If the original input file contains artwork, Elastic Transcoder
+        ///  <c>Fallback:</c> If the original input file contains artwork, Elastic Transcoder
         /// uses that artwork for the output. If the original input does not contain artwork,
         /// Elastic Transcoder uses the specified album art file.
         /// </para>

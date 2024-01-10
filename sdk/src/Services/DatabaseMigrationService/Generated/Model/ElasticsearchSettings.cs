@@ -108,7 +108,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) used by the service to access the IAM role. The role
-        /// must allow the <code>iam:PassRole</code> action.
+        /// must allow the <c>iam:PassRole</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -127,9 +127,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property UseNewMappingType. 
         /// <para>
-        /// Set this option to <code>true</code> for DMS to migrate documentation using the documentation
-        /// type <code>_doc</code>. OpenSearch and an Elasticsearch cluster only support the _doc
-        /// documentation type in versions 7. x and later. The default value is <code>false</code>.
+        /// Set this option to <c>true</c> for DMS to migrate documentation using the documentation
+        /// type <c>_doc</c>. OpenSearch and an Elasticsearch cluster only support the _doc documentation
+        /// type in versions 7. x and later. The default value is <c>false</c>.
         /// </para>
         /// </summary>
         public bool UseNewMappingType

@@ -64,8 +64,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Destinations. 
         /// <para>
-        /// Array of Destination objects. A Composition can contain either one destination (<code>channel</code>
-        /// or <code>s3</code>) or two (one <code>channel</code> and one <code>s3</code>).
+        /// Array of Destination objects. A Composition can contain either one destination (<c>channel</c>
+        /// or <c>s3</c>) or two (one <c>channel</c> and one <c>s3</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
@@ -179,8 +179,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags attached to the resource. Array of maps, each of the form <code>string:string
-        /// (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Tags attached to the resource. Array of maps, each of the form <c>string:string (key:value)</c>.
+        /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// AWS Resources</a> for details, including restrictions that apply to tags and "Tag
         /// naming limits and requirements"; Amazon IVS has no constraints on tags beyond what
         /// is documented there.

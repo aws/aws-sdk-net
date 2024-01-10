@@ -40,8 +40,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The phone number. Phone numbers are formatted <code>[+] [country code] [subscriber
-        /// number including area code]</code>.
+        /// The phone number. Phone numbers are formatted <c>[+] [country code] [subscriber number
+        /// including area code]</c>.
         /// </para>
         /// </summary>
         public string PhoneNumber

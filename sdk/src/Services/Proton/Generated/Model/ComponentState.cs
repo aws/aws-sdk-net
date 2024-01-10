@@ -61,8 +61,8 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the service that <code>serviceInstanceName</code> is associated with.
-        /// Provided when a component is attached to a service instance.
+        /// The name of the service that <c>serviceInstanceName</c> is associated with. Provided
+        /// when a component is attached to a service instance.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

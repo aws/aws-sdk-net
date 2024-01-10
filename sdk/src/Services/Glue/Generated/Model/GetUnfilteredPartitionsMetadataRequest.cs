@@ -34,7 +34,7 @@ namespace Amazon.Glue.Model
     /// 
     ///  
     /// <para>
-    /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartitions</code>.
+    /// For IAM authorization, the public IAM action associated with this API is <c>glue:GetPartitions</c>.
     /// </para>
     /// </summary>
     public partial class GetUnfilteredPartitionsMetadataRequest : AmazonGlueRequest
@@ -115,13 +115,13 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// The expression uses SQL syntax similar to the SQL <code>WHERE</code> filter clause.
-        /// The SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a>
+        /// The expression uses SQL syntax similar to the SQL <c>WHERE</c> filter clause. The
+        /// SQL statement parser <a href="http://jsqlparser.sourceforge.net/home.php">JSQLParser</a>
         /// parses the expression. 
         /// </para>
         ///  
         /// <para>
-        ///  <i>Operators</i>: The following are the operators that you can use in the <code>Expression</code>
+        ///  <i>Operators</i>: The following are the operators that you can use in the <c>Expression</c>
         /// API call:
         /// </para>
         ///  <dl> <dt>=</dt> <dd> 
@@ -192,39 +192,39 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>string</code> 
+        ///  <c>string</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>date</code> 
+        ///  <c>date</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>timestamp</code> 
+        ///  <c>timestamp</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>int</code> 
+        ///  <c>int</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>bigint</code> 
+        ///  <c>bigint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>long</code> 
+        ///  <c>long</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>tinyint</code> 
+        ///  <c>tinyint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>smallint</code> 
+        ///  <c>smallint</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>decimal</code> 
+        ///  <c>decimal</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

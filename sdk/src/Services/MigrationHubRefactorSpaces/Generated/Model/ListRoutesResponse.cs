@@ -58,7 +58,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property RouteSummaryList. 
         /// <para>
-        /// The list of <code>RouteSummary</code> objects. 
+        /// The list of <c>RouteSummary</c> objects. 
         /// </para>
         /// </summary>
         public List<RouteSummary> RouteSummaryList

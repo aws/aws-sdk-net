@@ -63,7 +63,7 @@ namespace Amazon.IoTThingsGraph.Model
         /// <summary>
         /// Gets and sets the property Definition. 
         /// <para>
-        /// The <code>DefinitionDocument</code> used to create the system.
+        /// The <c>DefinitionDocument</c> used to create the system.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses the <code>Id</code> of an entry in <code> <a>DeleteMessageBatch</a>.</code>
+    /// Encloses the <c>Id</c> of an entry in <c> <a>DeleteMessageBatch</a>.</c>
     /// </summary>
     public partial class DeleteMessageBatchResultEntry
     {

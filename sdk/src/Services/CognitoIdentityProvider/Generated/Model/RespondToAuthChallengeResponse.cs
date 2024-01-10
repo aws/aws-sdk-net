@@ -98,7 +98,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The session that should be passed both ways in challenge-response calls to the service.
         /// If the caller must pass another challenge, they return a session with other challenge
-        /// parameters. This session should be passed as it is to the next <code>RespondToAuthChallenge</code>
+        /// parameters. This session should be passed as it is to the next <c>RespondToAuthChallenge</c>
         /// API call.
         /// </para>
         /// </summary>

@@ -32,7 +32,7 @@ namespace Amazon.StepFunctions.Model
     /// Container for the parameters to the SendTaskSuccess operation.
     /// Used by activity workers, Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a>
     /// pattern, and optionally Task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-sync">job
-    /// run</a> pattern to report that the task identified by the <code>taskToken</code> completed
+    /// run</a> pattern to report that the task identified by the <c>taskToken</c> completed
     /// successfully.
     /// </summary>
     public partial class SendTaskSuccessRequest : AmazonStepFunctionsRequest

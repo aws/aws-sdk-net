@@ -41,7 +41,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property StorageSubTypeName. 
         /// <para>
-        /// The storage sub-type, such as <code>gp3</code> or <code>io1</code>.
+        /// The storage sub-type, such as <c>gp3</c> or <c>io1</c>.
         /// </para>
         /// </summary>
         public string StorageSubTypeName

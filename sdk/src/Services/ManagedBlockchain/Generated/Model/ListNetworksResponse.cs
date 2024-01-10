@@ -39,8 +39,8 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property Networks. 
         /// <para>
-        /// An array of <code>NetworkSummary</code> objects that contain configuration properties
-        /// for each network.
+        /// An array of <c>NetworkSummary</c> objects that contain configuration properties for
+        /// each network.
         /// </para>
         /// </summary>
         public List<NetworkSummary> Networks

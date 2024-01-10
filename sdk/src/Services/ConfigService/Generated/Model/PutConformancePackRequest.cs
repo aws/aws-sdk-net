@@ -37,14 +37,14 @@ namespace Amazon.ConfigService.Model
     /// 
     ///  
     /// <para>
-    /// This API creates a service-linked role <code>AWSServiceRoleForConfigConforms</code>
-    /// in your account. The service-linked role is created only when the role does not exist
-    /// in your account. 
+    /// This API creates a service-linked role <c>AWSServiceRoleForConfigConforms</c> in your
+    /// account. The service-linked role is created only when the role does not exist in your
+    /// account. 
     /// </para>
     ///  <note> 
     /// <para>
-    /// You must specify only one of the follow parameters: <code>TemplateS3Uri</code>, <code>TemplateBody</code>
-    /// or <code>TemplateSSMDocumentDetails</code>.
+    /// You must specify only one of the follow parameters: <c>TemplateS3Uri</c>, <c>TemplateBody</c>
+    /// or <c>TemplateSSMDocumentDetails</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackInputParameters. 
         /// <para>
-        /// A list of <code>ConformancePackInputParameter</code> objects.
+        /// A list of <c>ConformancePackInputParameter</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=60)]
@@ -152,8 +152,8 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can use a YAML template with two resource types: Config rule (<code>AWS::Config::ConfigRule</code>)
-        /// and remediation action (<code>AWS::Config::RemediationConfiguration</code>).
+        /// You can use a YAML template with two resource types: Config rule (<c>AWS::Config::ConfigRule</c>)
+        /// and remediation action (<c>AWS::Config::RemediationConfiguration</c>).
         /// </para>
         ///  </note>
         /// </summary>
@@ -173,7 +173,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TemplateS3Uri. 
         /// <para>
-        /// The location of the file containing the template body (<code>s3://bucketname/prefix</code>).
+        /// The location of the file containing the template body (<c>s3://bucketname/prefix</c>).
         /// The uri must point to a conformance pack template (max size: 300 KB) that is located
         /// in an Amazon S3 bucket in the same Region as the conformance pack. 
         /// </para>
@@ -201,9 +201,9 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TemplateSSMDocumentDetails. 
         /// <para>
-        /// An object of type <code>TemplateSSMDocumentDetails</code>, which contains the name
-        /// or the Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document
-        /// (SSM document) and the version of the SSM document that is used to create a conformance
+        /// An object of type <c>TemplateSSMDocumentDetails</c>, which contains the name or the
+        /// Amazon Resource Name (ARN) of the Amazon Web Services Systems Manager document (SSM
+        /// document) and the version of the SSM document that is used to create a conformance
         /// pack.
         /// </para>
         /// </summary>

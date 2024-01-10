@@ -104,7 +104,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RoleSearchMatching. 
         /// <para>
-        ///  The LDAP search filter used to find roles within the <code>roleBase</code>. 
+        ///  The LDAP search filter used to find roles within the <c>roleBase</c>. 
         /// </para>
         /// </summary>
         public string RoleSearchMatching
@@ -122,8 +122,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RoleSearchSubtree. 
         /// <para>
-        ///  The directory search scope for the role. If set to <code>true</code>, the scope is
-        /// to search the entire subtree. 
+        ///  The directory search scope for the role. If set to <c>true</c>, the scope is to search
+        /// the entire subtree. 
         /// </para>
         /// </summary>
         public bool RoleSearchSubtree
@@ -198,7 +198,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UserSearchMatching. 
         /// <para>
-        ///  The LDAP search filter used to find users within the <code>userBase</code>. 
+        ///  The LDAP search filter used to find users within the <c>userBase</c>. 
         /// </para>
         /// </summary>
         public string UserSearchMatching

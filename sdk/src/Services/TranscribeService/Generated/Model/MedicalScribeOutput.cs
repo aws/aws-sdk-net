@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// The location of the output of your Medical Scribe job. <code>ClinicalDocumentUri</code>
-    /// holds the Amazon S3 URI for the Clinical Document and <code>TranscriptFileUri</code>
-    /// holds the Amazon S3 URI for the Transcript.
+    /// The location of the output of your Medical Scribe job. <c>ClinicalDocumentUri</c>
+    /// holds the Amazon S3 URI for the Clinical Document and <c>TranscriptFileUri</c> holds
+    /// the Amazon S3 URI for the Transcript.
     /// </summary>
     public partial class MedicalScribeOutput
     {

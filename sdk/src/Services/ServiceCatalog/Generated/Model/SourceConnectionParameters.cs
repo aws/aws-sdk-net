@@ -38,7 +38,7 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property CodeStar. 
         /// <para>
-        /// Provides <code>ConnectionType</code> details.
+        /// Provides <c>ConnectionType</c> details.
         /// </para>
         /// </summary>
         public CodeStarParameters CodeStar

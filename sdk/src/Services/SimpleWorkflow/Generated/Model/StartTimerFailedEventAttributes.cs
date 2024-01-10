@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>StartTimerFailed</code> event.
+    /// Provides the details of the <c>StartTimerFailed</c> event.
     /// </summary>
     public partial class StartTimerFailedEventAttributes
     {
@@ -45,9 +45,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If <code>cause</code> is set to <code>OPERATION_NOT_PERMITTED</code>, the decision
-        /// failed because it lacked sufficient permissions. For details and example IAM policies,
-        /// see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+        /// If <c>cause</c> is set to <c>OPERATION_NOT_PERMITTED</c>, the decision failed because
+        /// it lacked sufficient permissions. For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
         /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         ///  </note>
@@ -68,10 +67,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>StartTimer</code> decision for this activity task.
-        /// This information can be useful for diagnosing problems by tracing back the chain of
-        /// events leading up to this event.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>StartTimer</c> decision for this activity task. This information
+        /// can be useful for diagnosing problems by tracing back the chain of events leading
+        /// up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -90,7 +89,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property TimerId. 
         /// <para>
-        /// The timerId provided in the <code>StartTimer</code> decision that failed.
+        /// The timerId provided in the <c>StartTimer</c> decision that failed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

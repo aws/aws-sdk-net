@@ -42,7 +42,7 @@ namespace Amazon.CostOptimizationHub.Model
         /// Gets and sets the property OtherDiscount. 
         /// <para>
         /// Estimated other discounts include all discounts that are not itemized. Itemized discounts
-        /// include <code>reservedInstanceDiscount</code> and <code>savingsPlansDiscount</code>.
+        /// include <c>reservedInstanceDiscount</c> and <c>savingsPlansDiscount</c>.
         /// </para>
         /// </summary>
         public double OtherDiscount

@@ -60,7 +60,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property ConstantType. 
         /// <para>
         /// The type of category filter constant. This element is used to specify whether a constant
-        /// is a singular or collective. Valid values are <code>SINGULAR</code> and <code>COLLECTIVE</code>.
+        /// is a singular or collective. Valid values are <c>SINGULAR</c> and <c>COLLECTIVE</c>.
         /// </para>
         /// </summary>
         public ConstantType ConstantType

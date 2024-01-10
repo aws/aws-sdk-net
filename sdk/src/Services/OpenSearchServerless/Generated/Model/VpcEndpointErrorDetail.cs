@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// Error information for a failed <code>BatchGetVpcEndpoint</code> request.
+    /// Error information for a failed <c>BatchGetVpcEndpoint</c> request.
     /// </summary>
     public partial class VpcEndpointErrorDetail
     {

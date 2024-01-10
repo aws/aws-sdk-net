@@ -50,7 +50,7 @@ namespace Amazon.MigrationHubRefactorSpaces
     ///  
     /// <para>
     /// To share Refactor Spaces environments with other Amazon Web Services accounts or with
-    /// Organizations and their OUs, use Resource Access Manager's <code>CreateResourceShare</code>
+    /// Organizations and their OUs, use Resource Access Manager's <c>CreateResourceShare</c>
     /// API. See <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
     /// in the <i>Amazon Web Services RAM API Reference</i>.
     /// </para>
@@ -293,7 +293,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// In environments created with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// of <code>NONE</code> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">
+        /// of <c>NONE</c> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">
         /// VPC to VPC connectivity</a> between your service VPC and the application proxy VPC
         /// to route traffic through the application proxy to a service with a private URL endpoint.
         /// For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-application.html">
@@ -345,7 +345,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// In environments created with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// of <code>NONE</code> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">
+        /// of <c>NONE</c> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">
         /// VPC to VPC connectivity</a> between your service VPC and the application proxy VPC
         /// to route traffic through the application proxy to a service with a private URL endpoint.
         /// For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-application.html">
@@ -405,10 +405,10 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// When creating an environment with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// of <code>TRANSIT_GATEWAY</code>, Refactor Spaces provisions a transit gateway to enable
+        /// of <c>TRANSIT_GATEWAY</c>, Refactor Spaces provisions a transit gateway to enable
         /// services in VPCs to communicate directly across accounts. If <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// is <code>NONE</code>, Refactor Spaces does not create a transit gateway and you must
-        /// use your network infrastructure to route traffic to services with private URL endpoints.
+        /// is <c>NONE</c>, Refactor Spaces does not create a transit gateway and you must use
+        /// your network infrastructure to route traffic to services with private URL endpoints.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
@@ -457,10 +457,10 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// When creating an environment with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// of <code>TRANSIT_GATEWAY</code>, Refactor Spaces provisions a transit gateway to enable
+        /// of <c>TRANSIT_GATEWAY</c>, Refactor Spaces provisions a transit gateway to enable
         /// services in VPCs to communicate directly across accounts. If <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// is <code>NONE</code>, Refactor Spaces does not create a transit gateway and you must
-        /// use your network infrastructure to route traffic to services with private URL endpoints.
+        /// is <c>NONE</c>, Refactor Spaces does not create a transit gateway and you must use
+        /// your network infrastructure to route traffic to services with private URL endpoints.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEnvironment service method.</param>
@@ -509,8 +509,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner
         /// of the service resource is always the environment owner, regardless of which account
         /// creates the route. Routes target a service in the application. If an application does
-        /// not have any routes, then the first route must be created as a <code>DEFAULT</code>
-        /// <code>RouteType</code>.
+        /// not have any routes, then the first route must be created as a <c>DEFAULT</c> <c>RouteType</c>.
         /// 
         ///  
         /// <para>
@@ -540,9 +539,9 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// Refactor Spaces automatically resolves the public Domain Name System (DNS) names that
-        /// are set in <code>CreateService:UrlEndpoint </code>when you create a service. The DNS
-        /// names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs
-        /// less than 60 seconds. This periodic DNS resolution ensures that the route configuration
+        /// are set in <c>CreateService:UrlEndpoint </c>when you create a service. The DNS names
+        /// resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs less
+        /// than 60 seconds. This periodic DNS resolution ensures that the route configuration
         /// remains up-to-date. 
         /// </para>
         ///   
@@ -553,9 +552,9 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// A one-time health check is performed on the service when either the route is updated
         /// from inactive to active, or when it is created with an active state. If the health
-        /// check fails, the route transitions the route state to <code>FAILED</code>, an error
-        /// code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic
-        /// is sent to the service.
+        /// check fails, the route transitions the route state to <c>FAILED</c>, an error code
+        /// of <c>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</c> is provided, and no traffic is sent
+        /// to the service.
         /// </para>
         ///  
         /// <para>
@@ -583,8 +582,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// The Lambda function state is checked. If the function is not active, the function
         /// configuration is updated so that Lambda resources are provisioned. If the Lambda state
-        /// is <code>Failed</code>, then the route creation fails. For more information, see the
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
+        /// is <c>Failed</c>, then the route creation fails. For more information, see the <a
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
         /// State response parameter</a> in the <i>Lambda Developer Guide</i>.
         /// </para>
         ///  
@@ -600,8 +599,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// When you create environments without a network bridge (<a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// is <code>NONE)</code> and you use your own networking infrastructure, you need to
-        /// configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC
+        /// is <c>NONE)</c> and you use your own networking infrastructure, you need to configure
+        /// <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC
         /// to VPC connectivity</a> between your network and the application proxy VPC. Route
         /// creation from the application proxy to service endpoints will fail if your network
         /// is not configured to connect to the application proxy VPC. For more information, see
@@ -648,8 +647,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner
         /// of the service resource is always the environment owner, regardless of which account
         /// creates the route. Routes target a service in the application. If an application does
-        /// not have any routes, then the first route must be created as a <code>DEFAULT</code>
-        /// <code>RouteType</code>.
+        /// not have any routes, then the first route must be created as a <c>DEFAULT</c> <c>RouteType</c>.
         /// 
         ///  
         /// <para>
@@ -679,9 +677,9 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// Refactor Spaces automatically resolves the public Domain Name System (DNS) names that
-        /// are set in <code>CreateService:UrlEndpoint </code>when you create a service. The DNS
-        /// names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs
-        /// less than 60 seconds. This periodic DNS resolution ensures that the route configuration
+        /// are set in <c>CreateService:UrlEndpoint </c>when you create a service. The DNS names
+        /// resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs less
+        /// than 60 seconds. This periodic DNS resolution ensures that the route configuration
         /// remains up-to-date. 
         /// </para>
         ///   
@@ -692,9 +690,9 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// A one-time health check is performed on the service when either the route is updated
         /// from inactive to active, or when it is created with an active state. If the health
-        /// check fails, the route transitions the route state to <code>FAILED</code>, an error
-        /// code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic
-        /// is sent to the service.
+        /// check fails, the route transitions the route state to <c>FAILED</c>, an error code
+        /// of <c>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</c> is provided, and no traffic is sent
+        /// to the service.
         /// </para>
         ///  
         /// <para>
@@ -722,8 +720,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// The Lambda function state is checked. If the function is not active, the function
         /// configuration is updated so that Lambda resources are provisioned. If the Lambda state
-        /// is <code>Failed</code>, then the route creation fails. For more information, see the
-        /// <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
+        /// is <c>Failed</c>, then the route creation fails. For more information, see the <a
+        /// href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's
         /// State response parameter</a> in the <i>Lambda Developer Guide</i>.
         /// </para>
         ///  
@@ -739,8 +737,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         ///  
         /// <para>
         /// When you create environments without a network bridge (<a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a>
-        /// is <code>NONE)</code> and you use your own networking infrastructure, you need to
-        /// configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC
+        /// is <c>NONE)</c> and you use your own networking infrastructure, you need to configure
+        /// <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC
         /// to VPC connectivity</a> between your network and the application proxy VPC. Route
         /// creation from the application proxy to service endpoints will fail if your network
         /// is not configured to connect to the application proxy VPC. For more information, see
@@ -800,8 +798,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// If an Amazon Web Services resource is launched in a service VPC, and you want it to
         /// be accessible to all of an environment’s services with VPCs and routes, apply the
-        /// <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more
-        /// cross-account constraints, apply your own security group.
+        /// <c>RefactorSpacesSecurityGroup</c> to the resource. Alternatively, to add more cross-account
+        /// constraints, apply your own security group.
         /// </para>
         ///  </important>
         /// </summary>
@@ -850,8 +848,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <para>
         /// If an Amazon Web Services resource is launched in a service VPC, and you want it to
         /// be accessible to all of an environment’s services with VPCs and routes, apply the
-        /// <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more
-        /// cross-account constraints, apply your own security group.
+        /// <c>RefactorSpacesSecurityGroup</c> to the resource. Alternatively, to add more cross-account
+        /// constraints, apply your own security group.
         /// </para>
         ///  </important>
         /// </summary>
@@ -2040,7 +2038,7 @@ namespace Amazon.MigrationHubRefactorSpaces
 
         /// <summary>
         /// Lists the tags of a resource. The caller account must be the same as the resource’s
-        /// <code>OwnerAccountId</code>. Listing tags in other accounts is not supported.
+        /// <c>OwnerAccountId</c>. Listing tags in other accounts is not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
@@ -2067,7 +2065,7 @@ namespace Amazon.MigrationHubRefactorSpaces
 
         /// <summary>
         /// Lists the tags of a resource. The caller account must be the same as the resource’s
-        /// <code>OwnerAccountId</code>. Listing tags in other accounts is not supported.
+        /// <c>OwnerAccountId</c>. Listing tags in other accounts is not supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// <param name="cancellationToken">
@@ -2102,7 +2100,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <summary>
         /// Attaches a resource-based permission policy to the Amazon Web Services Migration Hub
         /// Refactor Spaces environment. The policy must contain the same actions and condition
-        /// statements as the <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code>
+        /// statements as the <c>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</c>
         /// permission in Resource Access Manager. The policy must not contain new lines or blank
         /// lines.
         /// </summary>
@@ -2141,7 +2139,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <summary>
         /// Attaches a resource-based permission policy to the Amazon Web Services Migration Hub
         /// Refactor Spaces environment. The policy must contain the same actions and condition
-        /// statements as the <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code>
+        /// statements as the <c>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</c>
         /// permission in Resource Access Manager. The policy must not contain new lines or blank
         /// lines.
         /// </summary>
@@ -2187,7 +2185,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <summary>
         /// Removes the tags of a given resource. Tags are metadata which can be used to manage
         /// a resource. To tag a resource, the caller account must be the same as the resource’s
-        /// <code>OwnerAccountId</code>. Tagging resources in other accounts is not supported.
+        /// <c>OwnerAccountId</c>. Tagging resources in other accounts is not supported.
         /// 
         ///  <note> 
         /// <para>
@@ -2222,7 +2220,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <summary>
         /// Removes the tags of a given resource. Tags are metadata which can be used to manage
         /// a resource. To tag a resource, the caller account must be the same as the resource’s
-        /// <code>OwnerAccountId</code>. Tagging resources in other accounts is not supported.
+        /// <c>OwnerAccountId</c>. Tagging resources in other accounts is not supported.
         /// 
         ///  <note> 
         /// <para>
@@ -2264,8 +2262,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <summary>
         /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
         /// used to manage a resource. To untag a resource, the caller account must be the same
-        /// as the resource’s <code>OwnerAccountId</code>. Untagging resources across accounts
-        /// is not supported.
+        /// as the resource’s <c>OwnerAccountId</c>. Untagging resources across accounts is not
+        /// supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
@@ -2293,8 +2291,8 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// <summary>
         /// Adds to or modifies the tags of the given resource. Tags are metadata which can be
         /// used to manage a resource. To untag a resource, the caller account must be the same
-        /// as the resource’s <code>OwnerAccountId</code>. Untagging resources across accounts
-        /// is not supported.
+        /// as the resource’s <c>OwnerAccountId</c>. Untagging resources across accounts is not
+        /// supported.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// <param name="cancellationToken">

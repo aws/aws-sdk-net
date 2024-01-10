@@ -50,7 +50,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property DestinationBackupVaultArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a destination backup vault
-        /// to copy to; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.
+        /// to copy to; for example, <c>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,7 +69,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// Specifies the IAM role ARN used to copy the target recovery point; for example, <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// Specifies the IAM role ARN used to copy the target recovery point; for example, <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -89,7 +89,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartCopyJob</code>. Retrying a successful request with the same idempotency
+        /// calls to <c>StartCopyJob</c>. Retrying a successful request with the same idempotency
         /// token results in a success message with no action taken.
         /// </para>
         /// </summary>

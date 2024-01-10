@@ -30,8 +30,8 @@ namespace Amazon.SecurityHub.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchEnableStandards operation.
-    /// Enables the standards specified by the provided <code>StandardsArn</code>. To obtain
-    /// the ARN for a standard, use the <code>DescribeStandards</code> operation.
+    /// Enables the standards specified by the provided <c>StandardsArn</c>. To obtain the
+    /// ARN for a standard, use the <c>DescribeStandards</c> operation.
     /// 
     ///  
     /// <para>

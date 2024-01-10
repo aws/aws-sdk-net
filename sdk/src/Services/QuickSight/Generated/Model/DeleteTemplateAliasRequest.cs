@@ -44,8 +44,8 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// The name for the template alias. To delete a specific alias, you delete the version
         /// that the alias points to. You can specify the alias name, or specify the latest version
-        /// of the template by providing the keyword <code>$LATEST</code> in the <code>AliasName</code>
-        /// parameter. 
+        /// of the template by providing the keyword <c>$LATEST</c> in the <c>AliasName</c> parameter.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

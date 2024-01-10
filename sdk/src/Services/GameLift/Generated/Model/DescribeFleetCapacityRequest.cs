@@ -55,10 +55,10 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    /// If successful, a <code>FleetCapacity</code> object is returned for each requested
-    /// fleet ID. Each FleetCapacity object includes a <code>Location</code> property, which
-    /// is set to the fleet's home Region. When a list of fleet IDs is provided, attribute
-    /// objects are returned only for fleets that currently exist.
+    /// If successful, a <c>FleetCapacity</c> object is returned for each requested fleet
+    /// ID. Each FleetCapacity object includes a <c>Location</c> property, which is set to
+    /// the fleet's home Region. When a list of fleet IDs is provided, attribute objects are
+    /// returned only for fleets that currently exist.
     /// </para>
     ///  <note> 
     /// <para>
@@ -111,7 +111,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of results to return. Use this parameter with <code>NextToken</code>
+        /// The maximum number of results to return. Use this parameter with <c>NextToken</c>
         /// to get results as a set of sequential pages. This parameter is ignored when the request
         /// specifies one or a list of fleet IDs.
         /// </para>

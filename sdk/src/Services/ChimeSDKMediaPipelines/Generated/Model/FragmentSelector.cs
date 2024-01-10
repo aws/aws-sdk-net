@@ -67,8 +67,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property FragmentSelectorType. 
         /// <para>
-        /// The origin of the timestamps to use, <code>Server</code> or <code>Producer</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
+        /// The origin of the timestamps to use, <c>Server</c> or <c>Producer</c>. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kinesisvideostreams/latest/dg/API_dataplane_StartSelector.html">StartSelectorType</a>
         /// in the <i>Amazon Kinesis Video Streams Developer Guide</i>.
         /// </para>
         /// </summary>

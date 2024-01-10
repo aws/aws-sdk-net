@@ -31,7 +31,7 @@ namespace Amazon.DatabaseMigrationService.Model
     /// <summary>
     /// Provides information about the values of pending modifications to a replication instance.
     /// This data type is an object of the <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_ReplicationInstance.html">
-    /// <code>ReplicationInstance</code> </a> user-defined data type.
+    /// <c>ReplicationInstance</c> </a> user-defined data type.
     /// </summary>
     public partial class ReplicationPendingModifiedValues
     {
@@ -81,7 +81,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property MultiAZ. 
         /// <para>
         ///  Specifies whether the replication instance is a Multi-AZ deployment. You can't set
-        /// the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set to <code>true</code>.
+        /// the <c>AvailabilityZone</c> parameter if the Multi-AZ parameter is set to <c>true</c>.
         /// 
         /// </para>
         /// </summary>

@@ -283,15 +283,15 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Studio Classic: <code>&amp;redirect=JupyterServer</code> 
+        /// Studio Classic: <c>&amp;redirect=JupyterServer</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// JupyterLab: <code>&amp;redirect=JupyterLab</code> 
+        /// JupyterLab: <c>&amp;redirect=JupyterLab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <code>&amp;redirect=CodeEditor</code>
+        /// Code Editor, based on Code-OSS, Visual Studio Code - Open Source: <c>&amp;redirect=CodeEditor</c>
         /// 
         /// </para>
         ///  </li> </ul>

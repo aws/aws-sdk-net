@@ -57,7 +57,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The connection status of the tunnel. Valid values are <code>CONNECTED</code> and <code>DISCONNECTED</code>.
+        /// The connection status of the tunnel. Valid values are <c>CONNECTED</c> and <c>DISCONNECTED</c>.
         /// </para>
         /// </summary>
         public ConnectionStatus Status

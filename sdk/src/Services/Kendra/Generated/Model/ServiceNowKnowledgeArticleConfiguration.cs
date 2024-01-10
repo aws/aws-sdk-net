@@ -45,7 +45,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlAttachments. 
         /// <para>
-        ///  <code>TRUE</code> to index attachments to knowledge articles.
+        ///  <c>TRUE</c> to index attachments to knowledge articles.
         /// </para>
         /// </summary>
         public bool CrawlAttachments
@@ -126,8 +126,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property FieldMappings. 
         /// <para>
         /// Maps attributes or field names of knoweldge articles to Amazon Kendra index field
-        /// names. To create custom fields, use the <code>UpdateIndex</code> API before you map
-        /// to ServiceNow fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// names. To create custom fields, use the <c>UpdateIndex</c> API before you map to ServiceNow
+        /// fields. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The ServiceNow data source field names must exist in your
         /// ServiceNow custom metadata.
         /// </para>

@@ -39,7 +39,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property RuleOrder. 
         /// <para>
-        /// Indicates how to manage the order of the rule evaluation for the rule group. <code>DEFAULT_ACTION_ORDER</code>
+        /// Indicates how to manage the order of the rule evaluation for the rule group. <c>DEFAULT_ACTION_ORDER</c>
         /// is the default behavior. Stateful rules are provided to the rule engine as Suricata
         /// compatible strings, and Suricata evaluates them based on certain settings. For more
         /// information, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-rule-evaluation-order.html">Evaluation

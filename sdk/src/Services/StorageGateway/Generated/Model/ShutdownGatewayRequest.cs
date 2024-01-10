@@ -52,10 +52,9 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// When you make a shutdown request, you will get a <code>200 OK</code> success response
-    /// immediately. However, it might take some time for the gateway to shut down. You can
-    /// call the <a>DescribeGatewayInformation</a> API to check the status. For more information,
-    /// see <a>ActivateGateway</a>.
+    /// When you make a shutdown request, you will get a <c>200 OK</c> success response immediately.
+    /// However, it might take some time for the gateway to shut down. You can call the <a>DescribeGatewayInformation</a>
+    /// API to check the status. For more information, see <a>ActivateGateway</a>.
     /// </para>
     ///  </note> 
     /// <para>

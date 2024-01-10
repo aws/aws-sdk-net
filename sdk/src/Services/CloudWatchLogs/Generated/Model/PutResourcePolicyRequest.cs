@@ -49,8 +49,8 @@ namespace Amazon.CloudWatchLogs.Model
         ///  
         /// <para>
         /// The following example creates a resource policy enabling the Route 53 service to put
-        /// DNS query logs in to the specified log group. Replace <code>"logArn"</code> with the
-        /// ARN of your CloudWatch Logs resource, such as a log group or log stream.
+        /// DNS query logs in to the specified log group. Replace <c>"logArn"</c> with the ARN
+        /// of your CloudWatch Logs resource, such as a log group or log stream.
         /// </para>
         ///  
         /// <para>
@@ -60,18 +60,18 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// In the example resource policy, you would replace the value of <code>SourceArn</code>
-        /// with the resource making the call from Route 53 to CloudWatch Logs. You would also
-        /// replace the value of <code>SourceAccount</code> with the Amazon Web Services account
-        /// ID making that call.
+        /// In the example resource policy, you would replace the value of <c>SourceArn</c> with
+        /// the resource making the call from Route 53 to CloudWatch Logs. You would also replace
+        /// the value of <c>SourceAccount</c> with the Amazon Web Services account ID making that
+        /// call.
         /// </para>
         ///   
         /// <para>
-        ///  <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs",
+        ///  <c>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs",
         /// "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":
         /// "logs:PutLogEvents", "Resource": "logArn", "Condition": { "ArnLike": { "aws:SourceArn":
         /// "myRoute53ResourceArn" }, "StringEquals": { "aws:SourceAccount": "myAwsAccountId"
-        /// } } } ] }</code> 
+        /// } } } ] }</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5120)]

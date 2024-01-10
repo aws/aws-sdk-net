@@ -51,37 +51,37 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources
-        /// and is not yet ready to run jobs.
+        ///  <c>PROVISIONING</c>—The instance fleet is provisioning Amazon EC2 resources and is
+        /// not yet ready to run jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned
+        ///  <c>BOOTSTRAPPING</c>—Amazon EC2 instances and other resources have been provisioned
         /// and the bootstrap actions specified for the instances are underway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are
-        /// either executing jobs or waiting to execute jobs.
+        ///  <c>RUNNING</c>—Amazon EC2 instances and other resources are running. They are either
+        /// executing jobs or waiting to execute jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either
-        /// being added or removed.
+        ///  <c>RESIZING</c>—A resize operation is underway. Amazon EC2 instances are either being
+        /// added or removed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2
-        /// instances are running, but instances can't be added or removed.
+        ///  <c>SUSPENDED</c>—A resize operation could not complete. Existing Amazon EC2 instances
+        /// are running, but instances can't be added or removed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.
+        ///  <c>TERMINATING</c>—The instance fleet is terminating Amazon EC2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2
-        /// instances have been terminated.
+        ///  <c>TERMINATED</c>—The instance fleet is no longer active, and all Amazon EC2 instances
+        /// have been terminated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -42,8 +42,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <para>
         ///  The filter configurations for the Amazon SNS notification topic you use with DevOps
         /// Guru. If you do not provide filter configurations, the default configurations are
-        /// to receive notifications for all message types of <code>High</code> or <code>Medium</code>
-        /// severity. 
+        /// to receive notifications for all message types of <c>High</c> or <c>Medium</c> severity.
+        /// 
         /// </para>
         /// </summary>
         public NotificationFilterConfig Filters

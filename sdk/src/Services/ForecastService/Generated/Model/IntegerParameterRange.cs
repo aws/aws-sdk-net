@@ -122,7 +122,7 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  </dd> <dt>ReverseLogarithmic</dt> <dd> 
         /// <para>
-        /// Not supported for <code>IntegerParameterRange</code>.
+        /// Not supported for <c>IntegerParameterRange</c>.
         /// </para>
         ///  
         /// <para>

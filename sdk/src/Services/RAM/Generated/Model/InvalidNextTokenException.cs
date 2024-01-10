@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The operation failed because the specified value for <code>NextToken</code> isn't
-    /// valid. You must specify a value you received in the <code>NextToken</code> response
-    /// of a previous call to this operation.
+    /// The operation failed because the specified value for <c>NextToken</c> isn't valid.
+    /// You must specify a value you received in the <c>NextToken</c> response of a previous
+    /// call to this operation.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

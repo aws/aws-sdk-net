@@ -36,8 +36,8 @@ namespace Amazon.S3Control.Model
     /// 
     ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
-    /// To use the <code>UpdateJobPriority</code> operation, you must have permission to perform
-    /// the <code>s3:UpdateJobPriority</code> action.
+    /// To use the <c>UpdateJobPriority</c> operation, you must have permission to perform
+    /// the <c>s3:UpdateJobPriority</c> action.
     /// </para>
     ///  </dd> </dl> 
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The specified <code>StorageType</code> can't be associated with the DB instance.
+    /// The specified <c>StorageType</c> can't be associated with the DB instance.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

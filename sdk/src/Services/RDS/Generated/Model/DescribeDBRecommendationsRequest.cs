@@ -53,13 +53,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>recommendation-id</code> - Accepts a list of recommendation identifiers. The
-        /// results list only includes the recommendations whose identifier is one of the specified
-        /// filter values.
+        ///  <c>recommendation-id</c> - Accepts a list of recommendation identifiers. The results
+        /// list only includes the recommendations whose identifier is one of the specified filter
+        /// values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>status</code> - Accepts a list of recommendation statuses.
+        ///  <c>status</c> - Accepts a list of recommendation statuses.
         /// </para>
         ///  
         /// <para>
@@ -67,19 +67,19 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>active</code> - The recommendations which are ready for you to apply.
+        ///  <c>active</c> - The recommendations which are ready for you to apply.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code> - The applied or scheduled recommendations which are in progress.
+        ///  <c>pending</c> - The applied or scheduled recommendations which are in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resolved</code> - The recommendations which are completed.
+        ///  <c>resolved</c> - The recommendations which are completed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dismissed</code> - The recommendations that you dismissed.
+        ///  <c>dismissed</c> - The recommendations that you dismissed.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -88,9 +88,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>severity</code> - Accepts a list of recommendation severities. The results
-        /// list only includes the recommendations whose severity is one of the specified filter
-        /// values.
+        ///  <c>severity</c> - Accepts a list of recommendation severities. The results list only
+        /// includes the recommendations whose severity is one of the specified filter values.
         /// </para>
         ///  
         /// <para>
@@ -98,46 +97,45 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>high</code> 
+        ///  <c>high</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>medium</code> 
+        ///  <c>medium</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>low</code> 
+        ///  <c>low</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>informational</code> 
+        ///  <c>informational</c> 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>type-id</code> - Accepts a list of recommendation type identifiers. The results
-        /// list only includes the recommendations whose type is one of the specified filter values.
+        ///  <c>type-id</c> - Accepts a list of recommendation type identifiers. The results list
+        /// only includes the recommendations whose type is one of the specified filter values.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dbi-resource-id</code> - Accepts a list of database resource identifiers. The
-        /// results list only includes the recommendations that generated for the specified databases.
+        ///  <c>dbi-resource-id</c> - Accepts a list of database resource identifiers. The results
+        /// list only includes the recommendations that generated for the specified databases.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cluster-resource-id</code> - Accepts a list of cluster resource identifiers.
-        /// The results list only includes the recommendations that generated for the specified
-        /// clusters.
+        ///  <c>cluster-resource-id</c> - Accepts a list of cluster resource identifiers. The
+        /// results list only includes the recommendations that generated for the specified clusters.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pg-arn</code> - Accepts a list of parameter group ARNs. The results list only
-        /// includes the recommendations that generated for the specified parameter groups.
+        ///  <c>pg-arn</c> - Accepts a list of parameter group ARNs. The results list only includes
+        /// the recommendations that generated for the specified parameter groups.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>cluster-pg-arn</code> - Accepts a list of cluster parameter group ARNs. The
-        /// results list only includes the recommendations that generated for the specified cluster
-        /// parameter groups.
+        ///  <c>cluster-pg-arn</c> - Accepts a list of cluster parameter group ARNs. The results
+        /// list only includes the recommendations that generated for the specified cluster parameter
+        /// groups.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -202,51 +200,51 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>en</code> 
+        ///  <c>en</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>en_UK</code> 
+        ///  <c>en_UK</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>de</code> 
+        ///  <c>de</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>es</code> 
+        ///  <c>es</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>fr</code> 
+        ///  <c>fr</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>id</code> 
+        ///  <c>id</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>it</code> 
+        ///  <c>it</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ja</code> 
+        ///  <c>ja</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ko</code> 
+        ///  <c>ko</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pt_BR</code> 
+        ///  <c>pt_BR</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh_TW</code> 
+        ///  <c>zh_TW</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh_CN</code> 
+        ///  <c>zh_CN</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -265,9 +263,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// An optional pagination token provided by a previous <code>DescribeDBRecommendations</code>
+        /// An optional pagination token provided by a previous <c>DescribeDBRecommendations</c>
         /// request. If this parameter is specified, the response includes only records beyond
-        /// the marker, up to the value specified by <code>MaxRecords</code>. 
+        /// the marker, up to the value specified by <c>MaxRecords</c>. 
         /// </para>
         /// </summary>
         public string Marker
@@ -286,8 +284,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of recommendations to include in the response. If more records
-        /// exist than the specified <code>MaxRecords</code> value, a pagination token called
-        /// a marker is included in the response so that you can retrieve the remaining results.
+        /// exist than the specified <c>MaxRecords</c> value, a pagination token called a marker
+        /// is included in the response so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
         public int MaxRecords

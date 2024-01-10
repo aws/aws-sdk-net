@@ -87,9 +87,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Can include any printable ASCII character except <code>/</code>, <code>"</code> (double
-        /// quote), <code>@</code>, <code>&amp;</code> (ampersand), and <code>'</code> (single
-        /// quote).
+        /// Can include any printable ASCII character except <c>/</c>, <c>"</c> (double quote),
+        /// <c>@</c>, <c>&amp;</c> (ampersand), and <c>'</c> (single quote).
         /// </para>
         ///  </li> </ul> 
         /// <para>

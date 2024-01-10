@@ -31,8 +31,8 @@ namespace Amazon.ECRPublic.Model
     /// <summary>
     /// Container for the parameters to the DeleteRepository operation.
     /// Deletes a repository in a public registry. If the repository contains images, you
-    /// must either manually delete all images in the repository or use the <code>force</code>
-    /// option. This option deletes all images on your behalf before deleting the repository.
+    /// must either manually delete all images in the repository or use the <c>force</c> option.
+    /// This option deletes all images on your behalf before deleting the repository.
     /// </summary>
     public partial class DeleteRepositoryRequest : AmazonECRPublicRequest
     {

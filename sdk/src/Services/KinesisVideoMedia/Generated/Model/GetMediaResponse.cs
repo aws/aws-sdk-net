@@ -60,12 +60,12 @@ namespace Amazon.KinesisVideoMedia.Model
         /// <para>
         ///  The payload Kinesis Video Streams returns is a sequence of chunks from the specified
         /// stream. For information about the chunks, see . The chunks that Kinesis Video Streams
-        /// returns in the <code>GetMedia</code> call also include the following additional Matroska
+        /// returns in the <c>GetMedia</c> call also include the following additional Matroska
         /// (MKV) tags: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// AWS_KINESISVIDEO_CONTINUATION_TOKEN (UTF-8 string) - In the event your <code>GetMedia</code>
+        /// AWS_KINESISVIDEO_CONTINUATION_TOKEN (UTF-8 string) - In the event your <c>GetMedia</c>
         /// call terminates, you can use this continuation token in your next request to get the
         /// next chunk where the last request terminated.
         /// </para>

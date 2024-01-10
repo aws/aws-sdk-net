@@ -41,7 +41,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// If set to <code>true</code>, StackSets automatically deploys additional stack instances
+        /// If set to <c>true</c>, StackSets automatically deploys additional stack instances
         /// to Organizations accounts that are added to a target organization or organizational
         /// unit (OU) in the specified Regions. If an account is removed from a target organization
         /// or OU, StackSets deletes stack instances from the account in the specified Regions.
@@ -62,9 +62,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RetainStacksOnAccountRemoval. 
         /// <para>
-        /// If set to <code>true</code>, stack resources are retained when an account is removed
-        /// from a target organization or OU. If set to <code>false</code>, stack resources are
-        /// deleted. Specify only if <code>Enabled</code> is set to <code>True</code>.
+        /// If set to <c>true</c>, stack resources are retained when an account is removed from
+        /// a target organization or OU. If set to <c>false</c>, stack resources are deleted.
+        /// Specify only if <c>Enabled</c> is set to <c>True</c>.
         /// </para>
         /// </summary>
         public bool RetainStacksOnAccountRemoval

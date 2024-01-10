@@ -780,19 +780,19 @@ namespace Amazon.OAM
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Metrics</b> - Specify with <code>AWS::CloudWatch::Metric</code> 
+        ///  <b>Metrics</b> - Specify with <c>AWS::CloudWatch::Metric</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Log groups</b> - Specify with <code>AWS::Logs::LogGroup</code> 
+        ///  <b>Log groups</b> - Specify with <c>AWS::Logs::LogGroup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> 
+        ///  <b>Traces</b> - Specify with <c>AWS::XRay::Trace</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Application Insights - Applications</b> - Specify with <code>AWS::ApplicationInsights::Application</code>
+        ///  <b>Application Insights - Applications</b> - Specify with <c>AWS::ApplicationInsights::Application</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -833,19 +833,19 @@ namespace Amazon.OAM
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Metrics</b> - Specify with <code>AWS::CloudWatch::Metric</code> 
+        ///  <b>Metrics</b> - Specify with <c>AWS::CloudWatch::Metric</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Log groups</b> - Specify with <code>AWS::Logs::LogGroup</code> 
+        ///  <b>Log groups</b> - Specify with <c>AWS::Logs::LogGroup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Traces</b> - Specify with <code>AWS::XRay::Trace</code> 
+        ///  <b>Traces</b> - Specify with <c>AWS::XRay::Trace</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Application Insights - Applications</b> - Specify with <code>AWS::ApplicationInsights::Application</code>
+        ///  <b>Application Insights - Applications</b> - Specify with <c>AWS::ApplicationInsights::Application</c>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -897,8 +897,8 @@ namespace Amazon.OAM
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key for the alarm, this tag is appended to the list of tags
         /// associated with the alarm. If you specify a tag key that is already associated with
         /// the alarm, the new tag value that you specify replaces the previous value for that
         /// tag.
@@ -910,7 +910,7 @@ namespace Amazon.OAM
         ///  <important> 
         /// <para>
         /// Unlike tagging permissions in other Amazon Web Services services, to tag or untag
-        /// links and sinks you must have the <code>oam:ResourceTag</code> permission. The <code>iam:ResourceTag</code>
+        /// links and sinks you must have the <c>oam:ResourceTag</c> permission. The <c>iam:ResourceTag</c>
         /// permission does not allow you to tag and untag links and sinks.
         /// </para>
         ///  </important>
@@ -949,8 +949,8 @@ namespace Amazon.OAM
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>TagResource</code> action with a resource that already has tags.
-        /// If you specify a new tag key for the alarm, this tag is appended to the list of tags
+        /// You can use the <c>TagResource</c> action with a resource that already has tags. If
+        /// you specify a new tag key for the alarm, this tag is appended to the list of tags
         /// associated with the alarm. If you specify a tag key that is already associated with
         /// the alarm, the new tag value that you specify replaces the previous value for that
         /// tag.
@@ -962,7 +962,7 @@ namespace Amazon.OAM
         ///  <important> 
         /// <para>
         /// Unlike tagging permissions in other Amazon Web Services services, to tag or untag
-        /// links and sinks you must have the <code>oam:ResourceTag</code> permission. The <code>iam:ResourceTag</code>
+        /// links and sinks you must have the <c>oam:ResourceTag</c> permission. The <c>iam:ResourceTag</c>
         /// permission does not allow you to tag and untag links and sinks.
         /// </para>
         ///  </important>
@@ -996,7 +996,7 @@ namespace Amazon.OAM
         ///  <important> 
         /// <para>
         /// Unlike tagging permissions in other Amazon Web Services services, to tag or untag
-        /// links and sinks you must have the <code>oam:ResourceTag</code> permission. The <code>iam:TagResource</code>
+        /// links and sinks you must have the <c>oam:ResourceTag</c> permission. The <c>iam:TagResource</c>
         /// permission does not allow you to tag and untag links and sinks.
         /// </para>
         ///  </important>
@@ -1021,7 +1021,7 @@ namespace Amazon.OAM
         ///  <important> 
         /// <para>
         /// Unlike tagging permissions in other Amazon Web Services services, to tag or untag
-        /// links and sinks you must have the <code>oam:ResourceTag</code> permission. The <code>iam:TagResource</code>
+        /// links and sinks you must have the <c>oam:ResourceTag</c> permission. The <c>iam:TagResource</c>
         /// permission does not allow you to tag and untag links and sinks.
         /// </para>
         ///  </important>

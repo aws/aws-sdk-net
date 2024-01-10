@@ -30,7 +30,7 @@ namespace Amazon.RedshiftServerless.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEndpointAccess operation.
-    /// Returns an array of <code>EndpointAccess</code> objects and relevant information.
+    /// Returns an array of <c>EndpointAccess</c> objects and relevant information.
     /// </summary>
     public partial class ListEndpointAccessRequest : AmazonRedshiftServerlessRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.RedshiftServerless.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// An optional parameter that specifies the maximum number of results to return. You
-        /// can use <code>nextToken</code> to display the next page of results.
+        /// can use <c>nextToken</c> to display the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -63,9 +63,9 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If your initial <code>ListEndpointAccess</code> operation returns a <code>nextToken</code>,
-        /// you can include the returned <code>nextToken</code> in following <code>ListEndpointAccess</code>
-        /// operations, which returns results in the next page.
+        /// If your initial <c>ListEndpointAccess</c> operation returns a <c>nextToken</c>, you
+        /// can include the returned <c>nextToken</c> in following <c>ListEndpointAccess</c> operations,
+        /// which returns results in the next page.
         /// </para>
         /// </summary>
         public string NextToken

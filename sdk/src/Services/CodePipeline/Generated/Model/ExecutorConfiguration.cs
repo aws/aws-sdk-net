@@ -30,8 +30,8 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// The action engine, or executor, related to the supported integration model used to
-    /// create and update the action type. The available executor types are <code>Lambda</code>
-    /// and <code>JobWorker</code>.
+    /// create and update the action type. The available executor types are <c>Lambda</c>
+    /// and <c>JobWorker</c>.
     /// </summary>
     public partial class ExecutorConfiguration
     {
@@ -41,7 +41,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property JobWorkerExecutorConfiguration. 
         /// <para>
-        /// Details about the <code>JobWorker</code> executor of the action type.
+        /// Details about the <c>JobWorker</c> executor of the action type.
         /// </para>
         /// </summary>
         public JobWorkerExecutorConfiguration JobWorkerExecutorConfiguration
@@ -59,7 +59,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property LambdaExecutorConfiguration. 
         /// <para>
-        /// Details about the <code>Lambda</code> executor of the action type.
+        /// Details about the <c>Lambda</c> executor of the action type.
         /// </para>
         /// </summary>
         public LambdaExecutorConfiguration LambdaExecutorConfiguration

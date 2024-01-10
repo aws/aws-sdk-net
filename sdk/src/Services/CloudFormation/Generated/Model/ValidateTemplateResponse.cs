@@ -68,7 +68,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property CapabilitiesReason. 
         /// <para>
-        /// The list of resources that generated the values in the <code>Capabilities</code> response
+        /// The list of resources that generated the values in the <c>Capabilities</c> response
         /// element.
         /// </para>
         /// </summary>
@@ -124,7 +124,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Parameters. 
         /// <para>
-        /// A list of <code>TemplateParameter</code> structures.
+        /// A list of <c>TemplateParameter</c> structures.
         /// </para>
         /// </summary>
         public List<TemplateParameter> Parameters

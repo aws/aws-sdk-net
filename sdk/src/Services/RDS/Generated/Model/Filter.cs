@@ -44,27 +44,27 @@ namespace Amazon.RDS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DescribeDBClusterBacktracks</code> 
+    ///  <c>DescribeDBClusterBacktracks</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeDBClusterEndpoints</code> 
+    ///  <c>DescribeDBClusterEndpoints</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeDBClusters</code> 
+    ///  <c>DescribeDBClusters</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeDBInstances</code> 
+    ///  <c>DescribeDBInstances</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribeDBRecommendations</code> 
+    ///  <c>DescribeDBRecommendations</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>DescribePendingMaintenanceActions</code> 
+    ///  <c>DescribePendingMaintenanceActions</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

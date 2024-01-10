@@ -30,7 +30,7 @@ namespace Amazon.MarketplaceAgreement.Model
 {
     /// <summary>
     /// Includes the list of references to legal resources proposed by the proposer to the
-    /// acceptor. Each <code>DocumentItem</code> refers to an individual reference.
+    /// acceptor. Each <c>DocumentItem</c> refers to an individual reference.
     /// </summary>
     public partial class DocumentItem
     {
@@ -45,25 +45,25 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CustomEula</code> – A custom EULA provided by you as seller. A URL for a EULA
-        /// stored in an accessible Amazon S3 bucket is required for this document type.
+        ///  <c>CustomEula</c> – A custom EULA provided by you as seller. A URL for a EULA stored
+        /// in an accessible Amazon S3 bucket is required for this document type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CustomDsa</code> – A custom Data Subscription Agreement (DSA) provided by you
-        /// as seller. A URL for a DSA stored in an accessible Amazon S3 bucket is required for
-        /// this document type.
+        ///  <c>CustomDsa</c> – A custom Data Subscription Agreement (DSA) provided by you as
+        /// seller. A URL for a DSA stored in an accessible Amazon S3 bucket is required for this
+        /// document type.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StandardEula</code> – The Standard Contract for AWS Marketplace (SCMP). For
-        /// more information about SCMP, see the AWS Marketplace Seller Guide. You don’t provide
-        /// a URL for this type because it’s managed by AWS Marketplace.
+        ///  <c>StandardEula</c> – The Standard Contract for AWS Marketplace (SCMP). For more
+        /// information about SCMP, see the AWS Marketplace Seller Guide. You don’t provide a
+        /// URL for this type because it’s managed by AWS Marketplace.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>StandardDsa</code> – DSA for AWS Marketplace. For more information about the
-        /// DSA, see the AWS Data Exchange User Guide. You don’t provide a URL for this type because
+        ///  <c>StandardDsa</c> – DSA for AWS Marketplace. For more information about the DSA,
+        /// see the AWS Data Exchange User Guide. You don’t provide a URL for this type because
         /// it’s managed by AWS Marketplace.
         /// </para>
         ///  </li> </ul>
@@ -84,8 +84,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Url. 
         /// <para>
-        /// A URL to the legal document for buyers to read. Required when <code>Type</code> is
-        /// <code>CustomEula</code>.
+        /// A URL to the legal document for buyers to read. Required when <c>Type</c> is <c>CustomEula</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
@@ -104,8 +103,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version of standard contracts provided by AWS Marketplace. Required when Type is <code>StandardEula</code>
-        /// or <code>StandardDsa</code>. 
+        /// Version of standard contracts provided by AWS Marketplace. Required when Type is <c>StandardEula</c>
+        /// or <c>StandardDsa</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]

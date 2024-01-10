@@ -61,37 +61,37 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </dd> <dt>AWS_EC2_INSTANCE_ID (HTTP namespaces only)</dt> <dd> 
         /// <para>
-        /// The Amazon EC2 instance ID for the instance. When the <code>AWS_EC2_INSTANCE_ID</code>
-        /// attribute is specified, then the <code>AWS_INSTANCE_IPV4</code> attribute contains
-        /// the primary private IPv4 address.
+        /// The Amazon EC2 instance ID for the instance. When the <c>AWS_EC2_INSTANCE_ID</c> attribute
+        /// is specified, then the <c>AWS_INSTANCE_IPV4</c> attribute contains the primary private
+        /// IPv4 address.
         /// </para>
         ///  </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> 
         /// <para>
-        /// If the service configuration includes <code>HealthCheckCustomConfig</code>, you can
-        /// optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of
-        /// the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-        /// specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
+        /// If the service configuration includes <c>HealthCheckCustomConfig</c>, you can optionally
+        /// use <c>AWS_INIT_HEALTH_STATUS</c> to specify the initial status of the custom health
+        /// check, <c>HEALTHY</c> or <c>UNHEALTHY</c>. If you don't specify a value for <c>AWS_INIT_HEALTH_STATUS</c>,
+        /// the initial status is <c>HEALTHY</c>.
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> 
         /// <para>
-        /// For a <code>CNAME</code> record, the domain name that Route 53 returns in response
-        /// to DNS queries (for example, <code>example.com</code>).
+        /// For a <c>CNAME</c> record, the domain name that Route 53 returns in response to DNS
+        /// queries (for example, <c>example.com</c>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> 
         /// <para>
-        /// For an <code>A</code> record, the IPv4 address that Route 53 returns in response to
-        /// DNS queries (for example, <code>192.0.2.44</code>).
+        /// For an <c>A</c> record, the IPv4 address that Route 53 returns in response to DNS
+        /// queries (for example, <c>192.0.2.44</c>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> 
         /// <para>
-        /// For an <code>AAAA</code> record, the IPv6 address that Route 53 returns in response
-        /// to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
+        /// For an <c>AAAA</c> record, the IPv6 address that Route 53 returns in response to DNS
+        /// queries (for example, <c>2001:0db8:85a3:0000:0000:abcd:0001:2345</c>).
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> 
         /// <para>
-        /// For an <code>SRV</code> record, the value that Route 53 returns for the port. In addition,
-        /// if the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-        /// Route 53 sends requests to.
+        /// For an <c>SRV</c> record, the value that Route 53 returns for the port. In addition,
+        /// if the service includes <c>HealthCheckConfig</c>, the port on the endpoint that Route 53
+        /// sends requests to.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

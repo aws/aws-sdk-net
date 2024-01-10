@@ -47,7 +47,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RoutingProfileArn</code>: Grouping the users by their <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon
+        ///  <c>RoutingProfileArn</c>: Grouping the users by their <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon
         /// Connect routing profile ARN</a>. User should have <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_SearchRoutingProfiles.html">SearchRoutingProfile</a>
         /// and <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribeRoutingProfile.html">DescribeRoutingProfile</a>
         /// permissions when setting criteria to this value.
@@ -74,8 +74,8 @@ namespace Amazon.ConnectWisdomService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When setting <code>criteria</code> to <code>RoutingProfileArn</code>, you need to
-        /// provide a list of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon
+        /// When setting <c>criteria</c> to <c>RoutingProfileArn</c>, you need to provide a list
+        /// of ARNs of <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_RoutingProfile.html">Amazon
         /// Connect routing profiles</a> as values of this parameter.
         /// </para>
         ///  </li> </ul>

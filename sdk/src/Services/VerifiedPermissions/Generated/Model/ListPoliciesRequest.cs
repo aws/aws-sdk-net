@@ -62,11 +62,11 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// Specifies the total number of results that you want included in each response. If
-        /// additional items exist beyond the number you specify, the <code>NextToken</code> response
-        /// element is returned with a value (not null). Include the specified value as the <code>NextToken</code>
+        /// additional items exist beyond the number you specify, the <c>NextToken</c> response
+        /// element is returned with a value (not null). Include the specified value as the <c>NextToken</c>
         /// request parameter in the next call to the operation to get the next set of results.
         /// Note that the service might return fewer results than the maximum even when there
-        /// are more results available. You should check <code>NextToken</code> after every operation
+        /// are more results available. You should check <c>NextToken</c> after every operation
         /// to ensure that you receive all of the results.
         /// </para>
         ///  
@@ -92,9 +92,9 @@ namespace Amazon.VerifiedPermissions.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Specifies that you want to receive the next page of results. Valid only if you received
-        /// a <code>NextToken</code> response in the previous request. If you did, it indicates
-        /// that more output is available. Set this parameter to the value provided by the previous
-        /// call's <code>NextToken</code> response to request the next page of results.
+        /// a <c>NextToken</c> response in the previous request. If you did, it indicates that
+        /// more output is available. Set this parameter to the value provided by the previous
+        /// call's <c>NextToken</c> response to request the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=8000)]

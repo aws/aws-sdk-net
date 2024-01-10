@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearch.Model
 {
     /// <summary>
-    /// The result of a <code>BuildSuggester</code> request. Contains a list of the fields
-    /// used for suggestions.
+    /// The result of a <c>BuildSuggester</c> request. Contains a list of the fields used
+    /// for suggestions.
     /// </summary>
     public partial class BuildSuggestersResponse : AmazonWebServiceResponse
     {

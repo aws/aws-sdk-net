@@ -70,7 +70,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>examplesecuritygroup</code> 
+        /// Example: <c>examplesecuritygroup</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

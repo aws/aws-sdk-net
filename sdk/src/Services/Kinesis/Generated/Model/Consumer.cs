@@ -103,8 +103,7 @@ namespace Amazon.Kinesis.Model
         /// <summary>
         /// Gets and sets the property ConsumerStatus. 
         /// <para>
-        /// A consumer can't read data while in the <code>CREATING</code> or <code>DELETING</code>
-        /// states.
+        /// A consumer can't read data while in the <c>CREATING</c> or <c>DELETING</c> states.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

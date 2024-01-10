@@ -132,21 +132,20 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s
-        /// not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An
-        /// under-provisioned service might result in poor application performance.
+        ///  <b> <c>Underprovisioned</c> </b> — When Compute Optimizer detects that there’s not
+        /// enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned
+        /// service might result in poor application performance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s
-        /// excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An
-        /// over-provisioned service might result in additional infrastructure costs. 
+        ///  <b> <c>Overprovisioned</c> </b> — When Compute Optimizer detects that there’s excessive
+        /// memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned
+        /// service might result in additional infrastructure costs. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS
-        /// service meet the performance requirements of your workload, the service is considered
-        /// optimized.
+        ///  <b> <c>Optimized</c> </b> — When both the CPU and memory of your Amazon ECS service
+        /// meet the performance requirements of your workload, the service is considered optimized.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -173,31 +172,29 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be
+        ///  <b> <c>CPUUnderprovisioned</c> </b> — The service CPU configuration can be sized
+        /// up to enhance the performance of your workload. This is identified by analyzing the
+        /// <c>CPUUtilization</c> metric of the current service during the look-back period.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>CPUOverprovisioned</c> </b> — The service CPU configuration can be sized down
+        /// while still meeting the performance requirements of your workload. This is identified
+        /// by analyzing the <c>CPUUtilization</c> metric of the current service during the look-back
+        /// period. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>MemoryUnderprovisioned</c> </b> — The service memory configuration can be
         /// sized up to enhance the performance of your workload. This is identified by analyzing
-        /// the <code>CPUUtilization</code> metric of the current service during the look-back
-        /// period.
+        /// the <c>MemoryUtilization</c> metric of the current service during the look-back period.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized
+        ///  <b> <c>MemoryOverprovisioned</c> </b> — The service memory configuration can be sized
         /// down while still meeting the performance requirements of your workload. This is identified
-        /// by analyzing the <code>CPUUtilization</code> metric of the current service during
-        /// the look-back period. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can
-        /// be sized up to enhance the performance of your workload. This is identified by analyzing
-        /// the <code>MemoryUtilization</code> metric of the current service during the look-back
-        /// period.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can
-        /// be sized down while still meeting the performance requirements of your workload. This
-        /// is identified by analyzing the <code>MemoryUtilization</code> metric of the current
-        /// service during the look-back period.
+        /// by analyzing the <c>MemoryUtilization</c> metric of the current service during the
+        /// look-back period.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -283,8 +280,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code>
-        /// 
+        ///  <c>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</c> 
         /// </para>
         /// </summary>
         public string ServiceArn

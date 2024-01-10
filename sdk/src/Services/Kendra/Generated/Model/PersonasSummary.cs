@@ -85,8 +85,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Persona. 
         /// <para>
         /// The persona that defines the specific permissions of the user or group in your IAM
-        /// Identity Center identity source. The available personas or access roles are <code>Owner</code>
-        /// and <code>Viewer</code>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
+        /// Identity Center identity source. The available personas or access roles are <c>Owner</c>
+        /// and <c>Viewer</c>. For more information on these personas, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html#access-search-experience">Providing
         /// access to your search page</a>.
         /// </para>
         /// </summary>

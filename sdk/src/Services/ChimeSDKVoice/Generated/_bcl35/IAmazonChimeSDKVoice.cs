@@ -505,7 +505,7 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Creates an outbound call to a phone number from the phone number specified in the
-        /// request, and it invokes the endpoint of the specified <code>sipMediaApplicationId</code>.
+        /// request, and it invokes the endpoint of the specified <c>sipMediaApplicationId</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateSipMediaApplicationCall service method.</param>
         /// 
@@ -707,7 +707,7 @@ namespace Amazon.ChimeSDKVoice
         /// <summary>
         /// Creates an Amazon Chime SDK Voice Connector group under the administrator's AWS account.
         /// You can associate Amazon Chime SDK Voice Connectors with the Voice Connector group
-        /// by including <code>VoiceConnectorItems</code> in the request. 
+        /// by including <c>VoiceConnectorItems</c> in the request. 
         /// 
         ///  
         /// <para>
@@ -1330,7 +1330,7 @@ namespace Amazon.ChimeSDKVoice
 
 
         /// <summary>
-        /// Deletes an Amazon Chime SDK Voice Connector group. Any <code>VoiceConnectorItems</code>
+        /// Deletes an Amazon Chime SDK Voice Connector group. Any <c>VoiceConnectorItems</c>
         /// and phone numbers associated with the group must be removed before it can be deleted.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteVoiceConnectorGroup service method.</param>
@@ -2716,7 +2716,7 @@ namespace Amazon.ChimeSDKVoice
 
         /// <summary>
         /// Retrieves details for the specified Amazon Chime SDK Voice Connector group, such as
-        /// timestamps,name, and associated <code>VoiceConnectorItems</code>.
+        /// timestamps,name, and associated <c>VoiceConnectorItems</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorGroup service method.</param>
         /// 
@@ -3086,8 +3086,8 @@ namespace Amazon.ChimeSDKVoice
 
 
         /// <summary>
-        /// Retrieves information about the last time a <code>SIP OPTIONS</code> ping was received
-        /// from your SIP infrastructure for the specified Amazon Chime SDK Voice Connector.
+        /// Retrieves information about the last time a <c>SIP OPTIONS</c> ping was received from
+        /// your SIP infrastructure for the specified Amazon Chime SDK Voice Connector.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetVoiceConnectorTerminationHealth service method.</param>
         /// 

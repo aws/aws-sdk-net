@@ -105,7 +105,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property JobId. 
         /// <para>
         /// The unique system-generated ID of the job that succeeded. This is the same ID returned
-        /// from <code>PollForJobs</code>.
+        /// from <c>PollForJobs</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -125,8 +125,8 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property OutputVariables. 
         /// <para>
         /// Key-value pairs produced as output by a job worker that can be made available to a
-        /// downstream action configuration. <code>outputVariables</code> can be included only
-        /// when there is no continuation token on the request.
+        /// downstream action configuration. <c>outputVariables</c> can be included only when
+        /// there is no continuation token on the request.
         /// </para>
         /// </summary>
         public Dictionary<string, string> OutputVariables

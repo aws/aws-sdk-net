@@ -44,7 +44,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Gets and sets the property EntityIdKey. 
         /// <para>
         /// The entity, such as a user or session, that does an action that causes a metric value
-        /// to be recorded. An example is <code>userDetails.userID</code>.
+        /// to be recorded. An example is <c>userDetails.userID</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

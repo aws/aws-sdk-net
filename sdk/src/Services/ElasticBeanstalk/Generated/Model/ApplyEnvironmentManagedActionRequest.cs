@@ -31,8 +31,8 @@ namespace Amazon.ElasticBeanstalk.Model
     /// <summary>
     /// Container for the parameters to the ApplyEnvironmentManagedAction operation.
     /// Applies a scheduled managed action immediately. A managed action can be applied only
-    /// if its status is <code>Scheduled</code>. Get the status and action ID of a managed
-    /// action with <a>DescribeEnvironmentManagedActions</a>.
+    /// if its status is <c>Scheduled</c>. Get the status and action ID of a managed action
+    /// with <a>DescribeEnvironmentManagedActions</a>.
     /// </summary>
     public partial class ApplyEnvironmentManagedActionRequest : AmazonElasticBeanstalkRequest
     {

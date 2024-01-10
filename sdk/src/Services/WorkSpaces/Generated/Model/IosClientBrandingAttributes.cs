@@ -73,10 +73,10 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property LoginMessage. 
         /// <para>
         /// The login message. Specified as a key value pair, in which the key is a locale and
-        /// the value is the localized message for that locale. The only key supported is <code>en_US</code>.
-        /// The HTML tags supported include the following: <code>a, b, blockquote, br, cite, code,
+        /// the value is the localized message for that locale. The only key supported is <c>en_US</c>.
+        /// The HTML tags supported include the following: <c>a, b, blockquote, br, cite, code,
         /// dd, dl, dt, div, em, i, li, ol, p, pre, q, small, span, strike, strong, sub, sup,
-        /// u, ul</code>.
+        /// u, ul</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> LoginMessage
@@ -96,7 +96,7 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The @2x version of the logo. This is the higher resolution display that offers a scale
         /// factor of 2.0 (or @2x). The only image format accepted is a binary data object that
-        /// is converted from a <code>.png</code> file.
+        /// is converted from a <c>.png</c> file.
         /// </para>
         ///  <note> 
         /// <para>
@@ -123,7 +123,7 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The @3x version of the logo. This is the higher resolution display that offers a scale
         /// factor of 3.0 (or @3x).The only image format accepted is a binary data object that
-        /// is converted from a <code>.png</code> file.
+        /// is converted from a <c>.png</c> file.
         /// </para>
         ///  <note> 
         /// <para>
@@ -150,7 +150,7 @@ namespace Amazon.WorkSpaces.Model
         /// <para>
         /// The logo. This is the standard-resolution display that has a 1:1 pixel density (or
         /// @1x), where one pixel is equal to one point. The only image format accepted is a binary
-        /// data object that is converted from a <code>.png</code> file.
+        /// data object that is converted from a <c>.png</c> file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -173,13 +173,13 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code>
-        /// parameters are mutually exclusive. You can specify one parameter for each platform
-        /// type, but not both.
+        /// In each platform type, the <c>SupportEmail</c> and <c>SupportLink</c> parameters are
+        /// mutually exclusive. You can specify one parameter for each platform type, but not
+        /// both.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The default email is <code>workspaces-feedback@amazon.com</code>.
+        /// The default email is <c>workspaces-feedback@amazon.com</c>.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>
@@ -203,13 +203,13 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// In each platform type, the <code>SupportEmail</code> and <code>SupportLink</code>
-        /// parameters are mutually exclusive. You can specify one parameter for each platform
-        /// type, but not both.
+        /// In each platform type, the <c>SupportEmail</c> and <c>SupportLink</c> parameters are
+        /// mutually exclusive. You can specify one parameter for each platform type, but not
+        /// both.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The default support link is <code>workspaces-feedback@amazon.com</code>.
+        /// The default support link is <c>workspaces-feedback@amazon.com</c>.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

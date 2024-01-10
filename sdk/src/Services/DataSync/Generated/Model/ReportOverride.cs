@@ -44,10 +44,10 @@ namespace Amazon.DataSync.Model
         ///  
         /// <para>
         /// For example, your report might mostly include only what didn't go well in your transfer
-        /// (<code>ERRORS_ONLY</code>). At the same time, you want to verify that your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
+        /// (<c>ERRORS_ONLY</c>). At the same time, you want to verify that your <a href="https://docs.aws.amazon.com/datasync/latest/userguide/filtering.html">task
         /// filter</a> is working correctly. In this situation, you can get a list of what files
         /// DataSync successfully skipped and if something transferred that you didn't to transfer
-        /// (<code>SUCCESSES_AND_ERRORS</code>).
+        /// (<c>SUCCESSES_AND_ERRORS</c>).
         /// </para>
         /// </summary>
         public ReportLevel ReportLevel

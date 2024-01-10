@@ -71,8 +71,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// If no <code>MaxRecords</code> is specified, all available application versions are
-        /// retrieved in a single response.
+        /// If no <c>MaxRecords</c> is specified, all available application versions are retrieved
+        /// in a single response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -97,7 +97,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// </para>
         ///  
         /// <para>
-        /// If no <code>NextToken</code> is specified, the first page is retrieved.
+        /// If no <c>NextToken</c> is specified, the first page is retrieved.
         /// </para>
         /// </summary>
         public string NextToken

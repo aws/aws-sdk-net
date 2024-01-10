@@ -80,7 +80,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property CurrentRole. 
         /// <para>
-        /// The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>.
+        /// The role that is currently assigned to the node - <c>primary</c> or <c>replica</c>.
         /// This member is only applicable for Redis (cluster mode disabled) replication groups.
         /// </para>
         /// </summary>

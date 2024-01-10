@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceRetentionSettings. 
         /// <para>
-        /// The retention settings for the <code>AppInstance</code>.
+        /// The retention settings for the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         public AppInstanceRetentionSettings AppInstanceRetentionSettings

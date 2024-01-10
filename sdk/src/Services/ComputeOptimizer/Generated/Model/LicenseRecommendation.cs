@@ -91,19 +91,19 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>InsufficentMetrics</code> — When Compute Optimizer detects that your CloudWatch
-        /// Application Insights isn't enabled or is enabled with insufficient permissions. 
+        ///  <c>InsufficentMetrics</c> — When Compute Optimizer detects that your CloudWatch Application
+        /// Insights isn't enabled or is enabled with insufficient permissions. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NotOptimized</code> — When Compute Optimizer detects that your EC2 infrastructure
+        ///  <c>NotOptimized</c> — When Compute Optimizer detects that your EC2 infrastructure
         /// isn't using any of the SQL server license features you're paying for, a license is
         /// considered not optimized.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Optimized</code> — When Compute Optimizer detects that all specifications of
-        /// your license meet the performance requirements of your workload. 
+        ///  <c>Optimized</c> — When Compute Optimizer detects that all specifications of your
+        /// license meet the performance requirements of your workload. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -131,24 +131,24 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Optimized</code> — All specifications of your license meet the performance
-        /// requirements of your workload. 
+        ///  <c>Optimized</c> — All specifications of your license meet the performance requirements
+        /// of your workload. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LicenseOverprovisioned</code> — A license is considered over-provisioned when
-        /// your license can be downgraded while still meeting the performance requirements of
-        /// your workload.
+        ///  <c>LicenseOverprovisioned</c> — A license is considered over-provisioned when your
+        /// license can be downgraded while still meeting the performance requirements of your
+        /// workload.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InvalidCloudwatchApplicationInsights</code> — CloudWatch Application Insights
-        /// isn't configured properly.
+        ///  <c>InvalidCloudwatchApplicationInsights</c> — CloudWatch Application Insights isn't
+        /// configured properly.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CloudwatchApplicationInsightsError</code> — There is a CloudWatch Application
-        /// Insights error. 
+        ///  <c>CloudwatchApplicationInsightsError</c> — There is a CloudWatch Application Insights
+        /// error. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

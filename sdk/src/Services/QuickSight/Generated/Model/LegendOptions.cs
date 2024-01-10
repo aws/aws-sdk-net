@@ -65,19 +65,19 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AUTO</code> 
+        ///  <c>AUTO</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RIGHT</code> 
+        ///  <c>RIGHT</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BOTTOM</code> 
+        ///  <c>BOTTOM</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LEFT</code> 
+        ///  <c>LEFT</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -39,73 +39,71 @@ namespace Amazon.MarketplaceAgreement.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code>
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code>
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>Status</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceIdentifier</c>
+    /// + <c>Status</c> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>OfferId</c> + <c>Status</c>
     /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>Status</code>
-    /// 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+    /// + <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceIdentifier</code>
-    /// + <code>Status</code> 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>ResourceType</c>
+    /// + <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>OfferId</code>
-    /// + <code>Status</code> 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+    /// + <c>ResourceType</c> + <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-    /// + <code>Status</code> 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+    /// + <c>OfferId</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>ResourceType</code>
-    /// + <code>Status</code> 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+    /// + <c>OfferId</c> + <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-    /// + <code>ResourceType</code> + <code>Status</code> 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+    /// + <c>ResourceIdentifier</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-    /// + <code>OfferId</code> 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+    /// + <c>ResourceIdentifier</c> + <c>Status</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-    /// + <code>OfferId</code> + <code>Status</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-    /// + <code>ResourceIdentifier</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-    /// + <code>ResourceIdentifier</code> + <code>Status</code> 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>PartyType</code> as <code>Proposer</code> + <code>AgreementType</code> + <code>AcceptorAccountId</code>
-    /// + <code>ResourceType</code> 
+    ///  <c>PartyType</c> as <c>Proposer</c> + <c>AgreementType</c> + <c>AcceptorAccountId</c>
+    /// + <c>ResourceType</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -147,50 +145,49 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ResourceIdentifier</code> – The unique identifier of the resource.
+        ///  <c>ResourceIdentifier</c> – The unique identifier of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ResourceType</code> – Type of the resource, which is the product (<code>AmiProduct</code>,
-        /// <code>ContainerProduct</code>, or <code>SaaSProduct</code>).
+        ///  <c>ResourceType</c> – Type of the resource, which is the product (<c>AmiProduct</c>,
+        /// <c>ContainerProduct</c>, or <c>SaaSProduct</c>).
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PartyType</code> – The party type (either <code>Acceptor</code> or <code>Proposer</code>)
-        /// of the caller. For agreements where the caller is the proposer, use the <code>Proposer</code>
-        /// filter. For agreements where the caller is the acceptor, use the <code>Acceptor</code>
-        /// filter.
+        ///  <c>PartyType</c> – The party type (either <c>Acceptor</c> or <c>Proposer</c>) of
+        /// the caller. For agreements where the caller is the proposer, use the <c>Proposer</c>
+        /// filter. For agreements where the caller is the acceptor, use the <c>Acceptor</c> filter.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AcceptorAccountId</code> – The AWS account ID of the party accepting the agreement
+        ///  <c>AcceptorAccountId</c> – The AWS account ID of the party accepting the agreement
         /// terms.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OfferId</code> – The unique identifier of the offer in which the terms are
-        /// registered in the agreement token.
+        ///  <c>OfferId</c> – The unique identifier of the offer in which the terms are registered
+        /// in the agreement token.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Status</code> – The current status of the agreement. Values include <code>ACTIVE</code>,
-        /// <code>ARCHIVED</code>, <code>CANCELLED</code>, <code>EXPIRED</code>, <code>RENEWED</code>,
-        /// <code>REPLACED</code>, and <code>TERMINATED</code>.
+        ///  <c>Status</c> – The current status of the agreement. Values include <c>ACTIVE</c>,
+        /// <c>ARCHIVED</c>, <c>CANCELLED</c>, <c>EXPIRED</c>, <c>RENEWED</c>, <c>REPLACED</c>,
+        /// and <c>TERMINATED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BeforeEndTime</code> – A date used to filter agreements with a date before
-        /// the <code>endTime</code> of an agreement.
+        ///  <c>BeforeEndTime</c> – A date used to filter agreements with a date before the <c>endTime</c>
+        /// of an agreement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AfterEndTime</code> – A date used to filter agreements with a date after the
-        /// <code>endTime</code> of an agreement.
+        ///  <c>AfterEndTime</c> – A date used to filter agreements with a date after the <c>endTime</c>
+        /// of an agreement.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AgreementType</code> – The type of agreement. Values include <code>PurchaseAgreement</code>
-        /// or <code>VendorInsightsAgreement</code>.
+        ///  <c>AgreementType</c> – The type of agreement. Values include <c>PurchaseAgreement</c>
+        /// or <c>VendorInsightsAgreement</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -248,7 +245,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// An object that contains the <code>SortBy</code> and <code>SortOrder</code> attributes.
+        /// An object that contains the <c>SortBy</c> and <c>SortOrder</c> attributes.
         /// </para>
         /// </summary>
         public Sort Sort

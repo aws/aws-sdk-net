@@ -59,8 +59,8 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Negate. 
         /// <para>
-        /// Matches keywords or phrases on their presence or absence. If set to <code>TRUE</code>,
-        /// the rule matches when all the specified keywords or phrases are absent. Default: <code>FALSE</code>.
+        /// Matches keywords or phrases on their presence or absence. If set to <c>TRUE</c>, the
+        /// rule matches when all the specified keywords or phrases are absent. Default: <c>FALSE</c>.
         /// </para>
         /// </summary>
         public bool Negate

@@ -50,8 +50,8 @@ namespace Amazon.Neptune.Model
         ///  
         /// <para>
         /// Constraints: You must allow major version upgrades if you specify a value for the
-        /// <code>EngineVersion</code> parameter that is a different major version than the DB
-        /// cluster's current version.
+        /// <c>EngineVersion</c> parameter that is a different major version than the DB cluster's
+        /// current version.
         /// </para>
         ///  
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.Neptune.Model
         /// <para>
         /// The version number of the database engine to which you want to upgrade. Changing this
         /// parameter will result in an outage. The change is applied during the next maintenance
-        /// window unless <code>ApplyImmediately</code> is enabled.
+        /// window unless <c>ApplyImmediately</c> is enabled.
         /// </para>
         ///  
         /// <para>
@@ -163,7 +163,7 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>my-cluster2</code> 
+        /// Example: <c>my-cluster2</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

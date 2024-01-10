@@ -63,8 +63,8 @@ namespace Amazon.Synthetics.Model
         /// Gets and sets the property ScreenshotName. 
         /// <para>
         /// The name of the screenshot. This is generated the first time the canary is run after
-        /// the <code>UpdateCanary</code> operation that specified for this canary to perform
-        /// visual monitoring.
+        /// the <c>UpdateCanary</c> operation that specified for this canary to perform visual
+        /// monitoring.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

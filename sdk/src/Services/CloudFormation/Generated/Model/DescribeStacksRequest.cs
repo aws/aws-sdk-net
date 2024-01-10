@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  <note> 
     /// <para>
-    /// If the stack doesn't exist, a <code>ValidationError</code> is returned.
+    /// If the stack doesn't exist, a <c>ValidationError</c> is returned.
     /// </para>
     ///  </note>
     /// </summary>
@@ -66,13 +66,13 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property StackName. <note> 
         /// <para>
-        /// If you don't pass a parameter to <code>StackName</code>, the API returns a response
-        /// that describes all resources in the account, which can impact performance. This requires
-        /// <code>ListStacks</code> and <code>DescribeStacks</code> permissions.
+        /// If you don't pass a parameter to <c>StackName</c>, the API returns a response that
+        /// describes all resources in the account, which can impact performance. This requires
+        /// <c>ListStacks</c> and <c>DescribeStacks</c> permissions.
         /// </para>
         ///  
         /// <para>
-        /// Consider using the <a>ListStacks</a> API if you're not passing a parameter to <code>StackName</code>.
+        /// Consider using the <a>ListStacks</a> API if you're not passing a parameter to <c>StackName</c>.
         /// </para>
         ///  
         /// <para>

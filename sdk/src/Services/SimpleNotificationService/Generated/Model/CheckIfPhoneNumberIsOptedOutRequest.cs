@@ -36,7 +36,7 @@ namespace Amazon.SimpleNotificationService.Model
     /// 
     ///  
     /// <para>
-    /// To resume sending messages, you can opt in the number by using the <code>OptInPhoneNumber</code>
+    /// To resume sending messages, you can opt in the number by using the <c>OptInPhoneNumber</c>
     /// action.
     /// </para>
     /// </summary>

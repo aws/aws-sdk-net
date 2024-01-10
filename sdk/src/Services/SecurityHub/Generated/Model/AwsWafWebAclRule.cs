@@ -80,28 +80,27 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property OverrideAction. 
         /// <para>
-        /// Use the <code>OverrideAction</code> to test your <code>RuleGroup</code>.
+        /// Use the <c>OverrideAction</c> to test your <c>RuleGroup</c>.
         /// </para>
         ///  
         /// <para>
-        /// Any rule in a <code>RuleGroup</code> can potentially block a request. If you set the
-        /// <code>OverrideAction</code> to <code>None</code>, the <code>RuleGroup</code> blocks
-        /// a request if any individual rule in the <code>RuleGroup</code> matches the request
-        /// and is configured to block that request.
+        /// Any rule in a <c>RuleGroup</c> can potentially block a request. If you set the <c>OverrideAction</c>
+        /// to <c>None</c>, the <c>RuleGroup</c> blocks a request if any individual rule in the
+        /// <c>RuleGroup</c> matches the request and is configured to block that request.
         /// </para>
         ///  
         /// <para>
-        /// However, if you first want to test the <code>RuleGroup</code>, set the <code>OverrideAction</code>
-        /// to <code>Count</code>. The <code>RuleGroup</code> then overrides any block action
-        /// specified by individual rules contained within the group. Instead of blocking matching
-        /// requests, those requests are counted.
+        /// However, if you first want to test the <c>RuleGroup</c>, set the <c>OverrideAction</c>
+        /// to <c>Count</c>. The <c>RuleGroup</c> then overrides any block action specified by
+        /// individual rules contained within the group. Instead of blocking matching requests,
+        /// those requests are counted.
         /// </para>
         ///  
         /// <para>
-        ///  <code>ActivatedRule</code>|<code>OverrideAction</code> applies only when updating
-        /// or adding a <code>RuleGroup</code> to a web ACL. In this case you do not use <code>ActivatedRule</code>
-        /// <code>Action</code>. For all other update requests, <code>ActivatedRule</code> <code>Action</code>
-        /// is used instead of <code>ActivatedRule</code> <code>OverrideAction</code>.
+        ///  <c>ActivatedRule</c>|<c>OverrideAction</c> applies only when updating or adding a
+        /// <c>RuleGroup</c> to a web ACL. In this case you do not use <c>ActivatedRule</c> <c>Action</c>.
+        /// For all other update requests, <c>ActivatedRule</c> <c>Action</c> is used instead
+        /// of <c>ActivatedRule</c> <c>OverrideAction</c>.
         /// </para>
         /// </summary>
         public WafOverrideAction OverrideAction
@@ -120,9 +119,9 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// Specifies the order in which the rules in a web ACL are evaluated. Rules with a lower
-        /// value for <code>Priority</code> are evaluated before rules with a higher value. The
-        /// value must be a unique integer. If you add multiple rules to a web ACL, the values
-        /// do not need to be consecutive.
+        /// value for <c>Priority</c> are evaluated before rules with a higher value. The value
+        /// must be a unique integer. If you add multiple rules to a web ACL, the values do not
+        /// need to be consecutive.
         /// </para>
         /// </summary>
         public int Priority
@@ -162,12 +161,11 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>REGULAR</code> | <code>RATE_BASED</code> | <code>GROUP</code>
-        /// 
+        /// Valid values: <c>REGULAR</c> | <c>RATE_BASED</c> | <c>GROUP</c> 
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>REGULAR</code>.
+        /// The default is <c>REGULAR</c>.
         /// </para>
         /// </summary>
         public string Type

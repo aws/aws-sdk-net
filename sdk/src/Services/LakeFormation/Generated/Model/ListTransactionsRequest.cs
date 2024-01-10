@@ -108,7 +108,7 @@ namespace Amazon.LakeFormation.Model
         /// Gets and sets the property StatusFilter. 
         /// <para>
         ///  A filter indicating the status of transactions to return. Options are ALL | COMPLETED
-        /// | COMMITTED | ABORTED | ACTIVE. The default is <code>ALL</code>.
+        /// | COMMITTED | ABORTED | ACTIVE. The default is <c>ALL</c>.
         /// </para>
         /// </summary>
         public TransactionStatusFilter StatusFilter

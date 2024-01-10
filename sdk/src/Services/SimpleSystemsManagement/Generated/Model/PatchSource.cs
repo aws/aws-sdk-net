@@ -45,19 +45,19 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>[main]</code> 
+        ///  <c>[main]</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>name=MyCustomRepository</code> 
+        ///  <c>name=MyCustomRepository</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>baseurl=https://my-custom-repository</code> 
+        ///  <c>baseurl=https://my-custom-repository</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>enabled=1</code> 
+        ///  <c>enabled=1</c> 
         /// </para>
         ///  <note> 
         /// <para>

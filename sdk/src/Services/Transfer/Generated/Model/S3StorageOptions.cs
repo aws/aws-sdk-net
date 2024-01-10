@@ -43,9 +43,9 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, home directory mappings have a <code>TYPE</code> of <code>DIRECTORY</code>.
-        /// If you enable this option, you would then need to explicitly set the <code>HomeDirectoryMapEntry</code>
-        /// <code>Type</code> to <code>FILE</code> if you want a mapping to have a file target.
+        /// By default, home directory mappings have a <c>TYPE</c> of <c>DIRECTORY</c>. If you
+        /// enable this option, you would then need to explicitly set the <c>HomeDirectoryMapEntry</c>
+        /// <c>Type</c> to <c>FILE</c> if you want a mapping to have a file target.
         /// </para>
         /// </summary>
         public DirectoryListingOptimization DirectoryListingOptimization

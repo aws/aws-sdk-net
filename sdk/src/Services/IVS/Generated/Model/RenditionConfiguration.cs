@@ -39,9 +39,9 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Renditions. 
         /// <para>
-        /// Indicates which renditions are recorded for a stream, if <code>renditionSelection</code>
-        /// is <code>CUSTOM</code>; otherwise, this field is irrelevant. The selected renditions
-        /// are recorded if they are available during the stream. If a selected rendition is unavailable,
+        /// Indicates which renditions are recorded for a stream, if <c>renditionSelection</c>
+        /// is <c>CUSTOM</c>; otherwise, this field is irrelevant. The selected renditions are
+        /// recorded if they are available during the stream. If a selected rendition is unavailable,
         /// the best available rendition is recorded. For details on the resolution dimensions
         /// of each rendition, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
         /// to Amazon S3</a>.
@@ -62,10 +62,9 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property RenditionSelection. 
         /// <para>
-        /// Indicates which set of renditions are recorded for a stream. For <code>BASIC</code>
-        /// channels, the <code>CUSTOM</code> value has no effect. If <code>CUSTOM</code> is specified,
-        /// a set of renditions must be specified in the <code>renditions</code> field. Default:
-        /// <code>ALL</code>.
+        /// Indicates which set of renditions are recorded for a stream. For <c>BASIC</c> channels,
+        /// the <c>CUSTOM</c> value has no effect. If <c>CUSTOM</c> is specified, a set of renditions
+        /// must be specified in the <c>renditions</c> field. Default: <c>ALL</c>.
         /// </para>
         /// </summary>
         public RenditionConfigurationRenditionSelection RenditionSelection

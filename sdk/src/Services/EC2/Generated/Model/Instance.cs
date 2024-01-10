@@ -148,9 +148,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BootMode. 
         /// <para>
-        /// The boot mode that was specified by the AMI. If the value is <code>uefi-preferred</code>,
-        /// the AMI supports both UEFI and Legacy BIOS. The <code>currentInstanceBootMode</code>
-        /// parameter is the boot mode that is used to boot the instance at launch or start.
+        /// The boot mode that was specified by the AMI. If the value is <c>uefi-preferred</c>,
+        /// the AMI supports both UEFI and Legacy BIOS. The <c>currentInstanceBootMode</c> parameter
+        /// is the boot mode that is used to boot the instance at launch or start.
         /// </para>
         ///  <note> 
         /// <para>
@@ -381,8 +381,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Hypervisor. 
         /// <para>
-        /// The hypervisor type of the instance. The value <code>xen</code> is used for both Xen
-        /// and Nitro hypervisors.
+        /// The hypervisor type of the instance. The value <c>xen</c> is used for both Xen and
+        /// Nitro hypervisors.
         /// </para>
         /// </summary>
         public HypervisorType Hypervisor
@@ -688,8 +688,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The platform. This value is <code>windows</code> for Windows instances; otherwise,
-        /// it is empty.
+        /// The platform. This value is <c>windows</c> for Windows instances; otherwise, it is
+        /// empty.
         /// </para>
         /// </summary>
         public PlatformValues Platform
@@ -728,7 +728,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// [IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname
         /// can only be used inside the Amazon EC2 network. This name is not available until the
-        /// instance enters the <code>running</code> state. 
+        /// instance enters the <c>running</c> state. 
         /// </para>
         ///  
         /// <para>
@@ -808,8 +808,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property PublicDnsName. 
         /// <para>
         /// [IPv4 only] The public DNS name assigned to the instance. This name is not available
-        /// until the instance enters the <code>running</code> state. This name is only available
-        /// if you've enabled DNS hostnames for your VPC.
+        /// until the instance enters the <c>running</c> state. This name is only available if
+        /// you've enabled DNS hostnames for your VPC.
         /// </para>
         /// </summary>
         public string PublicDnsName
@@ -868,7 +868,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RootDeviceName. 
         /// <para>
-        /// The device name of the root device volume (for example, <code>/dev/sda1</code>).
+        /// The device name of the root device volume (for example, <c>/dev/sda1</c>).
         /// </para>
         /// </summary>
         public string RootDeviceName
@@ -1068,8 +1068,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TpmSupport. 
         /// <para>
-        /// If the instance is configured for NitroTPM support, the value is <code>v2.0</code>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
+        /// If the instance is configured for NitroTPM support, the value is <c>v2.0</c>. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
         /// in the <i>Amazon EC2 User Guide</i>.
         /// </para>
         /// </summary>

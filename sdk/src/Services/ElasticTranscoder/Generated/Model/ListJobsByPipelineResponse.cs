@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>ListJobsByPipelineResponse</code> structure.
+    /// The <c>ListJobsByPipelineResponse</c> structure.
     /// </summary>
     public partial class ListJobsByPipelineResponse : AmazonWebServiceResponse
     {
@@ -39,7 +39,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Jobs. 
         /// <para>
-        /// An array of <code>Job</code> objects that are in the specified pipeline.
+        /// An array of <c>Job</c> objects that are in the specified pipeline.
         /// </para>
         /// </summary>
         public List<Job> Jobs
@@ -59,8 +59,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         ///  A value that you use to access the second and subsequent pages of results, if any.
         /// When the jobs in the specified pipeline fit on one page or when you've reached the
-        /// last page of results, the value of <code>NextPageToken</code> is <code>null</code>.
-        /// 
+        /// last page of results, the value of <c>NextPageToken</c> is <c>null</c>. 
         /// </para>
         /// </summary>
         public string NextPageToken

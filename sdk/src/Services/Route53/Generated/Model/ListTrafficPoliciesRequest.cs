@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>,
+    /// For information about how of deleting a traffic policy affects the response from <c>ListTrafficPolicies</c>,
     /// see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy</a>.
     /// 
     /// </para>
@@ -49,16 +49,16 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyIdMarker. 
         /// <para>
-        /// (Conditional) For your first request to <code>ListTrafficPolicies</code>, don't include
-        /// the <code>TrafficPolicyIdMarker</code> parameter.
+        /// (Conditional) For your first request to <c>ListTrafficPolicies</c>, don't include
+        /// the <c>TrafficPolicyIdMarker</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// If you have more traffic policies than the value of <code>MaxItems</code>, <code>ListTrafficPolicies</code>
-        /// returns only the first <code>MaxItems</code> traffic policies. To get the next group
-        /// of policies, submit another request to <code>ListTrafficPolicies</code>. For the value
-        /// of <code>TrafficPolicyIdMarker</code>, specify the value of <code>TrafficPolicyIdMarker</code>
-        /// that was returned in the previous response.
+        /// If you have more traffic policies than the value of <c>MaxItems</c>, <c>ListTrafficPolicies</c>
+        /// returns only the first <c>MaxItems</c> traffic policies. To get the next group of
+        /// policies, submit another request to <c>ListTrafficPolicies</c>. For the value of <c>TrafficPolicyIdMarker</c>,
+        /// specify the value of <c>TrafficPolicyIdMarker</c> that was returned in the previous
+        /// response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]
@@ -78,10 +78,10 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property MaxItems. 
         /// <para>
         /// (Optional) The maximum number of traffic policies that you want Amazon Route 53 to
-        /// return in response to this request. If you have more than <code>MaxItems</code> traffic
-        /// policies, the value of <code>IsTruncated</code> in the response is <code>true</code>,
-        /// and the value of <code>TrafficPolicyIdMarker</code> is the ID of the first traffic
-        /// policy that Route 53 will return if you submit another request.
+        /// return in response to this request. If you have more than <c>MaxItems</c> traffic
+        /// policies, the value of <c>IsTruncated</c> in the response is <c>true</c>, and the
+        /// value of <c>TrafficPolicyIdMarker</c> is the ID of the first traffic policy that Route
+        /// 53 will return if you submit another request.
         /// </para>
         /// </summary>
         public string MaxItems

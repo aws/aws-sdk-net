@@ -96,8 +96,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Tenancy. 
         /// <para>
         /// The tenancy of the instance (if the instance is running in a VPC). An instance with
-        /// a tenancy of <code>dedicated</code> runs on single-tenant hardware. The <code>host</code>
-        /// tenancy is not supported for Spot Instances.
+        /// a tenancy of <c>dedicated</c> runs on single-tenant hardware. The <c>host</c> tenancy
+        /// is not supported for Spot Instances.
         /// </para>
         /// </summary>
         public Tenancy Tenancy

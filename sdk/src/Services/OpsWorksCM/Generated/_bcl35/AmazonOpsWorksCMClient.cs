@@ -59,7 +59,7 @@ namespace Amazon.OpsWorksCM
     ///  </li> <li> 
     /// <para>
     ///  <b>Engine</b>: The engine is the specific configuration manager that you want to
-    /// use. Valid values in this release include <code>ChefAutomate</code> and <code>Puppet</code>.
+    /// use. Valid values in this release include <c>ChefAutomate</c> and <c>Puppet</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -375,31 +375,31 @@ namespace Amazon.OpsWorksCM
         /// 
         ///  
         /// <para>
-        ///  On a Chef server: This command is an alternative to <code>knife bootstrap</code>.
+        ///  On a Chef server: This command is an alternative to <c>knife bootstrap</c>.
         /// </para>
         ///  
         /// <para>
-        ///  Example (Chef): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
-        /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
-        /// "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</code> 
+        ///  Example (Chef): <c>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name
+        /// <i>MyManagedNode</i> --engine-attributes "Name=<i>CHEF_ORGANIZATION</i>,Value=default"
+        /// "Name=<i>CHEF_NODE_PUBLIC_KEY</i>,Value=<i>public-key-pem</i>"</c> 
         /// </para>
         ///  
         /// <para>
-        ///  On a Puppet server, this command is an alternative to the <code>puppet cert sign</code>
+        ///  On a Puppet server, this command is an alternative to the <c>puppet cert sign</c>
         /// command that signs a Puppet node CSR. 
         /// </para>
         ///  
         /// <para>
-        ///  Example (Puppet): <code>aws opsworks-cm associate-node --server-name <i>MyServer</i>
-        /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
+        ///  Example (Puppet): <c>aws opsworks-cm associate-node --server-name <i>MyServer</i>
+        /// --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        ///  A node can can only be associated with servers that are in a <code>HEALTHY</code>
-        /// state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
-        /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-        /// when parameters of the request are not valid. The AssociateNode API call can be integrated
+        ///  A node can can only be associated with servers that are in a <c>HEALTHY</c> state.
+        /// Otherwise, an <c>InvalidStateException</c> is thrown. A <c>ResourceNotFoundException</c>
+        /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
+        /// parameters of the request are not valid. The AssociateNode API call can be integrated
         /// into Auto Scaling configurations, AWS Cloudformation templates, or the user data of
         /// a server's instance. 
         /// </para>
@@ -465,14 +465,13 @@ namespace Amazon.OpsWorksCM
         #region  CreateBackup
 
         /// <summary>
-        /// Creates an application-level backup of a server. While the server is in the <code>BACKING_UP</code>
+        /// Creates an application-level backup of a server. While the server is in the <c>BACKING_UP</c>
         /// state, the server cannot be changed, and no additional backup can be created. 
         /// 
         ///  
         /// <para>
-        ///  Backups can be created for servers in <code>RUNNING</code>, <code>HEALTHY</code>,
-        /// and <code>UNHEALTHY</code> states. By default, you can create a maximum of 50 manual
-        /// backups. 
+        ///  Backups can be created for servers in <c>RUNNING</c>, <c>HEALTHY</c>, and <c>UNHEALTHY</c>
+        /// states. By default, you can create a maximum of 50 manual backups. 
         /// </para>
         ///  
         /// <para>
@@ -480,11 +479,11 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>LimitExceededException</code> is thrown when the maximum number of manual
-        /// backups is reached. An <code>InvalidStateException</code> is thrown when the server
-        /// is not in any of the following states: RUNNING, HEALTHY, or UNHEALTHY. A <code>ResourceNotFoundException</code>
-        /// is thrown when the server is not found. A <code>ValidationException</code> is thrown
-        /// when parameters of the request are not valid. 
+        ///  A <c>LimitExceededException</c> is thrown when the maximum number of manual backups
+        /// is reached. An <c>InvalidStateException</c> is thrown when the server is not in any
+        /// of the following states: RUNNING, HEALTHY, or UNHEALTHY. A <c>ResourceNotFoundException</c>
+        /// is thrown when the server is not found. A <c>ValidationException</c> is thrown when
+        /// parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateBackup service method.</param>
@@ -552,8 +551,7 @@ namespace Amazon.OpsWorksCM
 
         /// <summary>
         /// Creates and immedately starts a new server. The server is ready to use when it is
-        /// in the <code>HEALTHY</code> state. By default, you can create a maximum of 10 servers.
-        /// 
+        /// in the <c>HEALTHY</c> state. By default, you can create a maximum of 10 servers. 
         /// 
         ///  
         /// <para>
@@ -561,17 +559,17 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>LimitExceededException</code> is thrown when you have created the maximum
-        /// number of servers (10). A <code>ResourceAlreadyExistsException</code> is thrown when
-        /// a server with the same name already exists in the account. A <code>ResourceNotFoundException</code>
-        /// is thrown when you specify a backup ID that is not valid or is for a backup that does
-        /// not exist. A <code>ValidationException</code> is thrown when parameters of the request
-        /// are not valid. 
+        ///  A <c>LimitExceededException</c> is thrown when you have created the maximum number
+        /// of servers (10). A <c>ResourceAlreadyExistsException</c> is thrown when a server with
+        /// the same name already exists in the account. A <c>ResourceNotFoundException</c> is
+        /// thrown when you specify a backup ID that is not valid or is for a backup that does
+        /// not exist. A <c>ValidationException</c> is thrown when parameters of the request are
+        /// not valid. 
         /// </para>
         ///  
         /// <para>
-        ///  If you do not specify a security group by adding the <code>SecurityGroupIds</code>
-        /// parameter, AWS OpsWorks creates a new security group. 
+        ///  If you do not specify a security group by adding the <c>SecurityGroupIds</c> parameter,
+        /// AWS OpsWorks creates a new security group. 
         /// </para>
         ///  
         /// <para>
@@ -595,8 +593,8 @@ namespace Amazon.OpsWorksCM
         ///  
         /// <para>
         /// To specify your own domain for a server, and provide your own self-signed or CA-signed
-        /// certificate and private key, specify values for <code>CustomDomain</code>, <code>CustomCertificate</code>,
-        /// and <code>CustomPrivateKey</code>.
+        /// certificate and private key, specify values for <c>CustomDomain</c>, <c>CustomCertificate</c>,
+        /// and <c>CustomPrivateKey</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateServer service method.</param>
@@ -668,10 +666,9 @@ namespace Amazon.OpsWorksCM
         /// 
         ///  
         /// <para>
-        ///  An <code>InvalidStateException</code> is thrown when a backup deletion is already
-        /// in progress. A <code>ResourceNotFoundException</code> is thrown when the backup does
-        /// not exist. A <code>ValidationException</code> is thrown when parameters of the request
-        /// are not valid. 
+        ///  An <c>InvalidStateException</c> is thrown when a backup deletion is already in progress.
+        /// A <c>ResourceNotFoundException</c> is thrown when the backup does not exist. A <c>ValidationException</c>
+        /// is thrown when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteBackup service method.</param>
@@ -736,10 +733,9 @@ namespace Amazon.OpsWorksCM
 
         /// <summary>
         /// Deletes the server and the underlying AWS CloudFormation stacks (including the server's
-        /// EC2 instance). When you run this command, the server state is updated to <code>DELETING</code>.
-        /// After the server is deleted, it is no longer returned by <code>DescribeServer</code>
-        /// requests. If the AWS CloudFormation stack cannot be deleted, the server cannot be
-        /// deleted. 
+        /// EC2 instance). When you run this command, the server state is updated to <c>DELETING</c>.
+        /// After the server is deleted, it is no longer returned by <c>DescribeServer</c> requests.
+        /// If the AWS CloudFormation stack cannot be deleted, the server cannot be deleted. 
         /// 
         ///  
         /// <para>
@@ -747,10 +743,9 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  An <code>InvalidStateException</code> is thrown when a server deletion is already
-        /// in progress. A <code>ResourceNotFoundException</code> is thrown when the server does
-        /// not exist. A <code>ValidationException</code> is raised when parameters of the request
-        /// are not valid. 
+        ///  An <c>InvalidStateException</c> is thrown when a server deletion is already in progress.
+        /// A <c>ResourceNotFoundException</c> is thrown when the server does not exist. A <c>ValidationException</c>
+        /// is raised when parameters of the request are not valid. 
         /// </para>
         ///  
         /// <para>
@@ -886,9 +881,8 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>ResourceNotFoundException</code> is thrown when the backup does not exist.
-        /// A <code>ValidationException</code> is raised when parameters of the request are not
-        /// valid. 
+        ///  A <c>ResourceNotFoundException</c> is thrown when the backup does not exist. A <c>ValidationException</c>
+        /// is raised when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBackups service method.</param>
@@ -961,9 +955,8 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-        /// A <code>ValidationException</code> is raised when parameters of the request are not
-        /// valid. 
+        ///  A <c>ResourceNotFoundException</c> is thrown when the server does not exist. A <c>ValidationException</c>
+        /// is raised when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEvents service method.</param>
@@ -1032,10 +1025,9 @@ namespace Amazon.OpsWorksCM
         /// 
         ///  
         /// <para>
-        ///  A <code>ResourceNotFoundException</code> is thrown when no recent association or
-        /// disassociation request with the specified token is found, or when the server does
-        /// not exist. A <code>ValidationException</code> is raised when parameters of the request
-        /// are not valid. 
+        ///  A <c>ResourceNotFoundException</c> is thrown when no recent association or disassociation
+        /// request with the specified token is found, or when the server does not exist. A <c>ValidationException</c>
+        /// is raised when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeNodeAssociationStatus service method.</param>
@@ -1106,9 +1098,8 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>ResourceNotFoundException</code> is thrown when the server does not exist.
-        /// A <code>ValidationException</code> is raised when parameters of the request are not
-        /// valid. 
+        ///  A <c>ResourceNotFoundException</c> is thrown when the server does not exist. A <c>ValidationException</c>
+        /// is raised when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeServers service method.</param>
@@ -1179,10 +1170,10 @@ namespace Amazon.OpsWorksCM
         /// 
         ///  
         /// <para>
-        /// A node can can only be disassociated from a server that is in a <code>HEALTHY</code>
-        /// state. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
-        /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-        /// when parameters of the request are not valid. 
+        /// A node can can only be disassociated from a server that is in a <c>HEALTHY</c> state.
+        /// Otherwise, an <c>InvalidStateException</c> is thrown. A <c>ResourceNotFoundException</c>
+        /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
+        /// parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateNode service method.</param>
@@ -1256,10 +1247,10 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  A <code>ValidationException</code> is raised when parameters of the request are not
-        /// valid. A <code>ResourceNotFoundException</code> is thrown when the server does not
-        /// exist. An <code>InvalidStateException</code> is thrown when the server is in any of
-        /// the following states: CREATING, TERMINATED, FAILED or DELETING. 
+        ///  A <c>ValidationException</c> is raised when parameters of the request are not valid.
+        /// A <c>ResourceNotFoundException</c> is thrown when the server does not exist. An <c>InvalidStateException</c>
+        /// is thrown when the server is in any of the following states: CREATING, TERMINATED,
+        /// FAILED or DELETING. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportServerEngineAttribute service method.</param>
@@ -1384,19 +1375,18 @@ namespace Amazon.OpsWorksCM
         #region  RestoreServer
 
         /// <summary>
-        /// Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>,
-        /// <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When
-        /// you run RestoreServer, the server's EC2 instance is deleted, and a new EC2 instance
-        /// is configured. RestoreServer maintains the existing server endpoint, so configuration
-        /// management of the server's client devices (nodes) should continue to work. 
+        /// Restores a backup to a server that is in a <c>CONNECTION_LOST</c>, <c>HEALTHY</c>,
+        /// <c>RUNNING</c>, <c>UNHEALTHY</c>, or <c>TERMINATED</c> state. When you run RestoreServer,
+        /// the server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer
+        /// maintains the existing server endpoint, so configuration management of the server's
+        /// client devices (nodes) should continue to work. 
         /// 
         ///  
         /// <para>
         /// Restoring from a backup is performed by creating a new EC2 instance. If restoration
-        /// is successful, and the server is in a <code>HEALTHY</code> state, AWS OpsWorks CM
-        /// switches traffic over to the new instance. After restoration is finished, the old
-        /// EC2 instance is maintained in a <code>Running</code> or <code>Stopped</code> state,
-        /// but is eventually terminated.
+        /// is successful, and the server is in a <c>HEALTHY</c> state, AWS OpsWorks CM switches
+        /// traffic over to the new instance. After restoration is finished, the old EC2 instance
+        /// is maintained in a <c>Running</c> or <c>Stopped</c> state, but is eventually terminated.
         /// </para>
         ///  
         /// <para>
@@ -1404,10 +1394,9 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  An <code>InvalidStateException</code> is thrown when the server is not in a valid
-        /// state. A <code>ResourceNotFoundException</code> is thrown when the server does not
-        /// exist. A <code>ValidationException</code> is raised when parameters of the request
-        /// are not valid. 
+        ///  An <c>InvalidStateException</c> is thrown when the server is not in a valid state.
+        /// A <c>ResourceNotFoundException</c> is thrown when the server does not exist. A <c>ValidationException</c>
+        /// is raised when parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RestoreServer service method.</param>
@@ -1473,15 +1462,15 @@ namespace Amazon.OpsWorksCM
         /// <summary>
         /// Manually starts server maintenance. This command can be useful if an earlier maintenance
         /// attempt failed, and the underlying cause of maintenance failure has been resolved.
-        /// The server is in an <code>UNDER_MAINTENANCE</code> state while maintenance is in progress.
+        /// The server is in an <c>UNDER_MAINTENANCE</c> state while maintenance is in progress.
         /// 
         /// 
         ///  
         /// <para>
-        ///  Maintenance can only be started on servers in <code>HEALTHY</code> and <code>UNHEALTHY</code>
-        /// states. Otherwise, an <code>InvalidStateException</code> is thrown. A <code>ResourceNotFoundException</code>
-        /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-        /// when parameters of the request are not valid. 
+        ///  Maintenance can only be started on servers in <c>HEALTHY</c> and <c>UNHEALTHY</c>
+        /// states. Otherwise, an <c>InvalidStateException</c> is thrown. A <c>ResourceNotFoundException</c>
+        /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
+        /// parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartMaintenance service method.</param>
@@ -1740,10 +1729,10 @@ namespace Amazon.OpsWorksCM
         #region  UpdateServerEngineAttributes
 
         /// <summary>
-        /// Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code>
+        /// Updates engine-specific attributes on a specified server. The server enters the <c>MODIFYING</c>
         /// state when this operation is in progress. Only one update can occur at a time. You
-        /// can use this command to reset a Chef server's public key (<code>CHEF_PIVOTAL_KEY</code>)
-        /// or a Puppet server's admin password (<code>PUPPET_ADMIN_PASSWORD</code>). 
+        /// can use this command to reset a Chef server's public key (<c>CHEF_PIVOTAL_KEY</c>)
+        /// or a Puppet server's admin password (<c>PUPPET_ADMIN_PASSWORD</c>). 
         /// 
         ///  
         /// <para>
@@ -1751,10 +1740,10 @@ namespace Amazon.OpsWorksCM
         /// </para>
         ///  
         /// <para>
-        ///  This operation can only be called for servers in <code>HEALTHY</code> or <code>UNHEALTHY</code>
-        /// states. Otherwise, an <code>InvalidStateException</code> is raised. A <code>ResourceNotFoundException</code>
-        /// is thrown when the server does not exist. A <code>ValidationException</code> is raised
-        /// when parameters of the request are not valid. 
+        ///  This operation can only be called for servers in <c>HEALTHY</c> or <c>UNHEALTHY</c>
+        /// states. Otherwise, an <c>InvalidStateException</c> is raised. A <c>ResourceNotFoundException</c>
+        /// is thrown when the server does not exist. A <c>ValidationException</c> is raised when
+        /// parameters of the request are not valid. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateServerEngineAttributes service method.</param>

@@ -30,8 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Pair of two related strings. Allowed characters are letters, white space, and numbers
-    /// that can be represented in UTF-8 and the following characters: <code> + - = . _ :
-    /// /</code>
+    /// that can be represented in UTF-8 and the following characters: <c> + - = . _ : /</c>
     /// </summary>
     public partial class KeyValue
     {
@@ -41,7 +40,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The tag key (String). The key can't start with <code>aws:</code>.
+        /// The tag key (String). The key can't start with <c>aws:</c>.
         /// </para>
         ///  
         /// <para>
@@ -49,7 +48,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Pattern: <code>^(?![aA]{1}[wW]{1}[sS]{1}:)([\p{L}\p{Z}\p{N}_.:/=+\-@]+)$</code> 
+        /// Pattern: <c>^(?![aA]{1}[wW]{1}[sS]{1}:)([\p{L}\p{Z}\p{N}_.:/=+\-@]+)$</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -76,7 +75,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// Pattern: <code>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</code> 
+        /// Pattern: <c>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

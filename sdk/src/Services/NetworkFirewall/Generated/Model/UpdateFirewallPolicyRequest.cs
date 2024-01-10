@@ -69,17 +69,17 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>TRUE</code>, Network Firewall checks whether the request can run successfully,
+        /// If set to <c>TRUE</c>, Network Firewall checks whether the request can run successfully,
         /// but doesn't actually make the requested changes. The call returns the value that the
-        /// request would return if you ran it with dry run set to <code>FALSE</code>, but doesn't
-        /// make additions or changes to your resources. This option allows you to make sure that
-        /// you have the required permissions to run the request and that your request parameters
+        /// request would return if you ran it with dry run set to <c>FALSE</c>, but doesn't make
+        /// additions or changes to your resources. This option allows you to make sure that you
+        /// have the required permissions to run the request and that your request parameters
         /// are valid. 
         /// </para>
         ///  
         /// <para>
-        /// If set to <code>FALSE</code>, Network Firewall makes the requested changes to your
-        /// resources. 
+        /// If set to <c>FALSE</c>, Network Firewall makes the requested changes to your resources.
+        /// 
         /// </para>
         /// </summary>
         public bool DryRun
@@ -117,7 +117,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// The updated firewall policy to use for the firewall. You can't add or remove a <a>TLSInspectionConfiguration</a>
         /// after you create a firewall policy. However, you can replace an existing TLS inspection
-        /// configuration with another <code>TLSInspectionConfiguration</code>.
+        /// configuration with another <c>TLSInspectionConfiguration</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -191,10 +191,10 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To make changes to the policy, you provide the token in your request. Network Firewall
         /// uses the token to ensure that the policy hasn't changed since you last retrieved it.
-        /// If it has changed, the operation fails with an <code>InvalidTokenException</code>.
-        /// If this happens, retrieve the firewall policy again to get a current copy of it with
-        /// current token. Reapply your changes as needed, then try the operation again using
-        /// the new token. 
+        /// If it has changed, the operation fails with an <c>InvalidTokenException</c>. If this
+        /// happens, retrieve the firewall policy again to get a current copy of it with current
+        /// token. Reapply your changes as needed, then try the operation again using the new
+        /// token. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

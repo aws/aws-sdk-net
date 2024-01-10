@@ -38,8 +38,8 @@ namespace Amazon.DataPipeline.Model
     /// <para>
     /// Deleting a pipeline cannot be undone. You cannot query or restore a deleted pipeline.
     /// To temporarily pause a pipeline instead of deleting it, call <a>SetStatus</a> with
-    /// the status set to <code>PAUSE</code> on individual components. Components that are
-    /// paused by <a>SetStatus</a> can be resumed.
+    /// the status set to <c>PAUSE</c> on individual components. Components that are paused
+    /// by <a>SetStatus</a> can be resumed.
     /// </para>
     /// </summary>
     public partial class DeletePipelineRequest : AmazonDataPipelineRequest

@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// You can use the <code>CreateBuild</code> operation in the following scenarios:
+    /// You can use the <c>CreateBuild</c> operation in the following scenarios:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -65,8 +65,8 @@ namespace Amazon.GameLift.Model
     ///  </li> </ul> 
     /// <para>
     /// If successful, this operation creates a new build resource with a unique build ID
-    /// and places it in <code>INITIALIZED</code> status. A build must be in <code>READY</code>
-    /// status before you can create fleets with it.
+    /// and places it in <c>INITIALIZED</c> status. A build must be in <c>READY</c> status
+    /// before you can create fleets with it.
     /// </para>
     ///  
     /// <para>
@@ -153,7 +153,7 @@ namespace Amazon.GameLift.Model
         /// A server SDK version you used when integrating your game server build with Amazon
         /// GameLift. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
         /// games with custom game servers</a>. By default Amazon GameLift sets this value to
-        /// <code>4.0.2</code>.
+        /// <c>4.0.2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -180,9 +180,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  
         /// <para>
-        /// If a <code>StorageLocation</code> is specified, the size of your file can be found
-        /// in your Amazon S3 bucket. Amazon GameLift will report a <code>SizeOnDisk</code> of
-        /// 0. 
+        /// If a <c>StorageLocation</c> is specified, the size of your file can be found in your
+        /// Amazon S3 bucket. Amazon GameLift will report a <c>SizeOnDisk</c> of 0. 
         /// </para>
         /// </summary>
         public S3Location StorageLocation

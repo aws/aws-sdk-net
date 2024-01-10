@@ -34,8 +34,8 @@ namespace Amazon.RedshiftServerless.Model
     /// 
     ///  
     /// <para>
-    ///  <code>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot",
-    /// "retentionPeriod": "1"}}"</code> 
+    ///  <c>"{"CreateSnapshot": {"NamespaceName": "sampleNamespace","SnapshotName": "sampleSnapshot",
+    /// "retentionPeriod": "1"}}"</c> 
     /// </para>
     /// </summary>
     public partial class TargetAction

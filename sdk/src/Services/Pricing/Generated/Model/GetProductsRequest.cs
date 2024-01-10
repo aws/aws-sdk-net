@@ -66,7 +66,7 @@ namespace Amazon.Pricing.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are: <code>aws_v1</code> 
+        /// Valid values are: <c>aws_v1</c> 
         /// </para>
         /// </summary>
         public string FormatVersion

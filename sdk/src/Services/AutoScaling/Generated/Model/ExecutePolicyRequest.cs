@@ -67,7 +67,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if the policy type is <code>StepScaling</code> and not supported otherwise.
+        /// Required if the policy type is <c>StepScaling</c> and not supported otherwise.
         /// </para>
         /// </summary>
         public double BreachThreshold
@@ -90,8 +90,8 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid only if the policy type is <code>SimpleScaling</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
+        /// Valid only if the policy type is <c>SimpleScaling</c>. For more information, see <a
+        /// href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling
         /// cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
         /// </para>
         /// </summary>
@@ -110,9 +110,9 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property MetricValue. 
         /// <para>
-        /// The metric value to compare to <code>BreachThreshold</code>. This enables you to execute
-        /// a policy of type <code>StepScaling</code> and determine which step adjustment to use.
-        /// For example, if the breach threshold is 50 and you want to use a step adjustment with
+        /// The metric value to compare to <c>BreachThreshold</c>. This enables you to execute
+        /// a policy of type <c>StepScaling</c> and determine which step adjustment to use. For
+        /// example, if the breach threshold is 50 and you want to use a step adjustment with
         /// a lower bound of 0 and an upper bound of 10, you can set the metric value to 59.
         /// </para>
         ///  
@@ -122,7 +122,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// Required if the policy type is <code>StepScaling</code> and not supported otherwise.
+        /// Required if the policy type is <c>StepScaling</c> and not supported otherwise.
         /// </para>
         /// </summary>
         public double MetricValue

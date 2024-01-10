@@ -32,7 +32,7 @@ namespace Amazon.Appflow.Model
     /// Describes an instance of a connector. This includes the provided name, credentials
     /// ARN, connection-mode, and so on. To keep the API intuitive and extensible, the fields
     /// that are common to all types of connector profiles are explicitly specified at the
-    /// top level. The rest of the connector-specific properties are available via the <code>connectorProfileProperties</code>
+    /// top level. The rest of the connector-specific properties are available via the <c>connectorProfileProperties</c>
     /// field.
     /// </summary>
     public partial class ConnectorProfile
@@ -107,7 +107,7 @@ namespace Amazon.Appflow.Model
         /// <summary>
         /// Gets and sets the property ConnectorProfileName. 
         /// <para>
-        ///  The name of the connector profile. The name is unique for each <code>ConnectorProfile</code>
+        ///  The name of the connector profile. The name is unique for each <c>ConnectorProfile</c>
         /// in the Amazon Web Services account. 
         /// </para>
         /// </summary>

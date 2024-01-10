@@ -47,7 +47,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Asynchronously deletes one or more documents added using the <code>BatchPutDocument</code>
+        /// Asynchronously deletes one or more documents added using the <c>BatchPutDocument</c>
         /// API from an Amazon Q index.
         /// 
         ///  
@@ -259,8 +259,8 @@ namespace Amazon.QBusiness
         /// 
         ///  
         /// <para>
-        ///  <code>CreateDataSource</code> is a synchronous operation. The operation returns 200
-        /// if the data source was successfully created. Otherwise, an exception is raised.
+        ///  <c>CreateDataSource</c> is a synchronous operation. The operation returns 200 if
+        /// the data source was successfully created. Otherwise, an exception is raised.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataSource service method.</param>
@@ -310,15 +310,15 @@ namespace Amazon.QBusiness
         /// 
         ///  
         /// <para>
-        /// To determine if index creation has completed, check the <code>Status</code> field
-        /// returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field
-        /// is set to <code>ACTIVE</code> when the index is ready to use.
+        /// To determine if index creation has completed, check the <c>Status</c> field returned
+        /// from a call to <c>DescribeIndex</c>. The <c>Status</c> field is set to <c>ACTIVE</c>
+        /// when the index is ready to use.
         /// </para>
         ///  
         /// <para>
         /// Once the index is active, you can index your documents using the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_BatchPutDocument.html">
-        /// <code>BatchPutDocument</code> </a> API or the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html">
-        /// <code>CreateDataSource</code> </a> API.
+        /// <c>BatchPutDocument</c> </a> API or the <a href="https://docs.aws.amazon.com/enterpriseq/latest/APIReference/API_CreateDataSource.html">
+        /// <c>CreateDataSource</c> </a> API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIndex service method.</param>
@@ -668,8 +668,8 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Deletes an Amazon Q data source connector. While the data source is being deleted,
-        /// the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code>
-        /// API is set to <code>DELETING</code>.
+        /// the <c>Status</c> field returned by a call to the <c>DescribeDataSource</c> API is
+        /// set to <c>DELETING</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataSource service method.</param>
         /// <param name="cancellationToken">
@@ -719,9 +719,9 @@ namespace Amazon.QBusiness
         ///  
         /// <para>
         /// If you want to delete, update, or replace users or sub groups of a group, you need
-        /// to use the <code>PutGroup</code> operation. For example, if a user in the group "Engineering"
+        /// to use the <c>PutGroup</c> operation. For example, if a user in the group "Engineering"
         /// leaves the engineering team and another user takes their place, you provide an updated
-        /// list of users or sub groups that belong to the "Engineering" group when calling <code>PutGroup</code>.
+        /// list of users or sub groups that belong to the "Engineering" group when calling <c>PutGroup</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteGroup service method.</param>
@@ -1883,7 +1883,7 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Starts a data source connector synchronization job. If a synchronization job is already
-        /// in progress, Amazon Q returns a <code>ConflictException</code>.
+        /// in progress, Amazon Q returns a <c>ConflictException</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartDataSourceSyncJob service method.</param>
         /// <param name="cancellationToken">

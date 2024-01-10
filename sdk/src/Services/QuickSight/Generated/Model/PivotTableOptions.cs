@@ -69,8 +69,8 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property CollapsedRowDimensionsVisibility. 
         /// <para>
         /// The visibility setting of a pivot table's collapsed row dimension fields. If the value
-        /// of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are
-        /// automatically hidden. The default value is <code>VISIBLE</code>.
+        /// of this structure is <c>HIDDEN</c>, all collapsed columns in a pivot table are automatically
+        /// hidden. The default value is <c>VISIBLE</c>.
         /// </para>
         /// </summary>
         public Visibility CollapsedRowDimensionsVisibility
@@ -215,7 +215,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property RowsLabelOptions. 
         /// <para>
         /// The options for the label that is located above the row headers. This option is only
-        /// applicable when <code>RowsLayout</code> is set to <code>HIERARCHY</code>.
+        /// applicable when <c>RowsLayout</c> is set to <c>HIERARCHY</c>.
         /// </para>
         /// </summary>
         public PivotTableRowsLabelOptions RowsLabelOptions
@@ -238,12 +238,12 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TABULAR</code>: (Default) Each row field is displayed in a separate column.
+        ///  <c>TABULAR</c>: (Default) Each row field is displayed in a separate column.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HIERARCHY</code>: All row fields are displayed in a single column. Indentation
-        /// is used to differentiate row headers of different fields.
+        ///  <c>HIERARCHY</c>: All row fields are displayed in a single column. Indentation is
+        /// used to differentiate row headers of different fields.
         /// </para>
         ///  </li> </ul>
         /// </summary>

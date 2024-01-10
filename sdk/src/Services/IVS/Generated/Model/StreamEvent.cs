@@ -60,7 +60,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name that identifies the stream event within a <code>type</code>.
+        /// Name that identifies the stream event within a <c>type</c>.
         /// </para>
         /// </summary>
         public string Name

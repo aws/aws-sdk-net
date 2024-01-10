@@ -58,7 +58,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property User. 
         /// <para>
-        /// An array containing the properties of the Transfer Family user for the <code>ServerID</code>
+        /// An array containing the properties of the Transfer Family user for the <c>ServerID</c>
         /// value that you specified.
         /// </para>
         /// </summary>

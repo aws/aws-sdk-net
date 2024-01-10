@@ -104,22 +104,22 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>associating</code>: The MAC Security (MACsec) secret key is being validated
-        /// and not yet associated with the connection or LAG.
+        ///  <c>associating</c>: The MAC Security (MACsec) secret key is being validated and not
+        /// yet associated with the connection or LAG.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated
+        ///  <c>associated</c>: The MAC Security (MACsec) secret key is validated and associated
         /// with the connection or LAG.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated
+        ///  <c>disassociating</c>: The MAC Security (MACsec) secret key is being disassociated
         /// from the connection or LAG
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated
+        ///  <c>disassociated</c>: The MAC Security (MACsec) secret key is no longer associated
         /// with the connection or LAG.
         /// </para>
         ///  </li> </ul>

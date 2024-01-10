@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
-    /// Allows filtering on the <code>BuyerAccounts</code> of an offer.
+    /// Allows filtering on the <c>BuyerAccounts</c> of an offer.
     /// </summary>
     public partial class OfferBuyerAccountsFilter
     {
@@ -38,7 +38,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property WildCardValue. 
         /// <para>
-        /// Allows filtering on the <code>BuyerAccounts</code> of an offer with wild card input.
+        /// Allows filtering on the <c>BuyerAccounts</c> of an offer with wild card input.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -41,8 +41,8 @@ namespace Amazon.ComputeOptimizer.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>Cpu</code>, <code>Memory</code>, <code>GPU</code>, and <code>GPU_MEMORY</code>
-    /// metrics are the only projected utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a>
+    /// The <c>Cpu</c>, <c>Memory</c>, <c>GPU</c>, and <c>GPU_MEMORY</c> metrics are the only
+    /// projected utilization metrics returned when you run the <a>GetEC2RecommendationProjectedMetrics</a>
     /// action. Additionally, these metrics are only returned for resources with the unified
     /// CloudWatch agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
     /// Memory Utilization with the CloudWatch Agent</a> and <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
@@ -67,8 +67,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Cpu</code> - The projected percentage of allocated EC2 compute units that would
-        /// be in use on the recommendation option had you used that resource during the analyzed
+        ///  <c>Cpu</c> - The projected percentage of allocated EC2 compute units that would be
+        /// in use on the recommendation option had you used that resource during the analyzed
         /// period. This metric identifies the processing power required to run an application
         /// on the recommendation option.
         /// </para>
@@ -79,7 +79,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Memory</code> - The percentage of memory that would be in use on the recommendation
+        ///  <c>Memory</c> - The percentage of memory that would be in use on the recommendation
         /// option had you used that resource during the analyzed period. This metric identifies
         /// the amount of memory required to run an application on the recommendation option.
         /// </para>
@@ -89,25 +89,24 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Memory</code> metric is only returned for resources with the unified CloudWatch
+        /// The <c>Memory</c> metric is only returned for resources with the unified CloudWatch
         /// agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
-        ///  <code>GPU</code> - The projected percentage of allocated GPUs if you adjust your
-        /// configurations to Compute Optimizer's recommendation option.
+        ///  <c>GPU</c> - The projected percentage of allocated GPUs if you adjust your configurations
+        /// to Compute Optimizer's recommendation option.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>GPU_MEMORY</code> - The projected percentage of total GPU memory if you adjust
-        /// your configurations to Compute Optimizer's recommendation option.
+        ///  <c>GPU_MEMORY</c> - The projected percentage of total GPU memory if you adjust your
+        /// configurations to Compute Optimizer's recommendation option.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>GPU</code> and <code>GPU_MEMORY</code> metrics are only returned for resources
-        /// with the unified CloudWatch Agent installed on them. For more information, see <a
-        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
+        /// The <c>GPU</c> and <c>GPU_MEMORY</c> metrics are only returned for resources with
+        /// the unified CloudWatch Agent installed on them. For more information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#nvidia-cw-agent">Enabling
         /// NVIDIA GPU utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note> </li> </ul>

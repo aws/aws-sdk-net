@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Container for the <code>WorkflowDetail</code> data type. It is used by actions that
-    /// trigger a workflow to begin execution.
+    /// Container for the <c>WorkflowDetail</c> data type. It is used by actions that trigger
+    /// a workflow to begin execution.
     /// </summary>
     public partial class WorkflowDetails
     {
@@ -68,13 +68,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove an associated workflow from a server, you can provide an empty <code>OnUpload</code>
+        /// To remove an associated workflow from a server, you can provide an empty <c>OnUpload</c>
         /// object, as in the following example.
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws transfer update-server --server-id s-01234567890abcdef --workflow-details
-        /// '{"OnUpload":[]}'</code> 
+        ///  <c>aws transfer update-server --server-id s-01234567890abcdef --workflow-details
+        /// '{"OnUpload":[]}'</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

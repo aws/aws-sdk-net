@@ -39,8 +39,8 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property LongTermPricingEntries. 
         /// <para>
-        /// Each <code>LongTermPricingEntry</code> object contains a status, ID, and other information
-        /// about the <code>LongTermPricing</code> type. 
+        /// Each <c>LongTermPricingEntry</c> object contains a status, ID, and other information
+        /// about the <c>LongTermPricing</c> type. 
         /// </para>
         /// </summary>
         public List<LongTermPricingListEntry> LongTermPricingEntries
@@ -59,7 +59,7 @@ namespace Amazon.Snowball.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Because HTTP requests are stateless, this is the starting point for your next list
-        /// of returned <code>ListLongTermPricing</code> list.
+        /// of returned <c>ListLongTermPricing</c> list.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

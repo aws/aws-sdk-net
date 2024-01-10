@@ -42,19 +42,19 @@ namespace Amazon.KinesisAnalytics.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NOW</code> - Start reading just after the most recent record in the stream,
-        /// start at the request time stamp that the customer issued.
+        ///  <c>NOW</c> - Start reading just after the most recent record in the stream, start
+        /// at the request time stamp that the customer issued.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TRIM_HORIZON</code> - Start reading at the last untrimmed record in the stream,
-        /// which is the oldest record available in the stream. This option is not available for
-        /// an Amazon Kinesis Firehose delivery stream.
+        ///  <c>TRIM_HORIZON</c> - Start reading at the last untrimmed record in the stream, which
+        /// is the oldest record available in the stream. This option is not available for an
+        /// Amazon Kinesis Firehose delivery stream.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>LAST_STOPPED_POINT</code> - Resume reading from where the application last
-        /// stopped reading.
+        ///  <c>LAST_STOPPED_POINT</c> - Resume reading from where the application last stopped
+        /// reading.
         /// </para>
         ///  </li> </ul>
         /// </summary>

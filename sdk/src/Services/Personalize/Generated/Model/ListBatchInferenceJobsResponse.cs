@@ -58,8 +58,8 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to use to retrieve the next page of results. The value is <code>null</code>
-        /// when there are no more results to return.
+        /// The token to use to retrieve the next page of results. The value is <c>null</c> when
+        /// there are no more results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1500)]

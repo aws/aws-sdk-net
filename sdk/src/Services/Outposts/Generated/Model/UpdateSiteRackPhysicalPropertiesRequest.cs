@@ -36,8 +36,8 @@ namespace Amazon.Outposts.Model
     /// 
     ///  
     /// <para>
-    /// To update a rack at a site with an order of <code>IN_PROGRESS</code>, you must wait
-    /// for the order to complete or cancel the order.
+    /// To update a rack at a site with an order of <c>IN_PROGRESS</c>, you must wait for
+    /// the order to complete or cancel the order.
     /// </para>
     /// </summary>
     public partial class UpdateSiteRackPhysicalPropertiesRequest : AmazonOutpostsRequest
@@ -74,8 +74,8 @@ namespace Amazon.Outposts.Model
         /// <summary>
         /// Gets and sets the property MaximumSupportedWeightLbs. 
         /// <para>
-        /// The maximum rack weight that this site can support. <code>NO_LIMIT</code> is over
-        /// 2000lbs. 
+        /// The maximum rack weight that this site can support. <c>NO_LIMIT</c> is over 2000lbs.
+        /// 
         /// </para>
         /// </summary>
         public MaximumSupportedWeightLbs MaximumSupportedWeightLbs
@@ -100,55 +100,55 @@ namespace Amazon.Outposts.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OPTIC_10GBASE_SR</code>: 10GBASE-SR
+        ///  <c>OPTIC_10GBASE_SR</c>: 10GBASE-SR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_10GBASE_IR</code>: 10GBASE-IR
+        ///  <c>OPTIC_10GBASE_IR</c>: 10GBASE-IR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_10GBASE_LR</code>: 10GBASE-LR
+        ///  <c>OPTIC_10GBASE_LR</c>: 10GBASE-LR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_40GBASE_SR</code>: 40GBASE-SR
+        ///  <c>OPTIC_40GBASE_SR</c>: 40GBASE-SR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_40GBASE_ESR</code>: 40GBASE-ESR
+        ///  <c>OPTIC_40GBASE_ESR</c>: 40GBASE-ESR
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_40GBASE_IR4_LR4L</code>: 40GBASE-IR (LR4L)
+        ///  <c>OPTIC_40GBASE_IR4_LR4L</c>: 40GBASE-IR (LR4L)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_40GBASE_LR4</code>: 40GBASE-LR4
+        ///  <c>OPTIC_40GBASE_LR4</c>: 40GBASE-LR4
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_100GBASE_SR4</code>: 100GBASE-SR4
+        ///  <c>OPTIC_100GBASE_SR4</c>: 100GBASE-SR4
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_100GBASE_CWDM4</code>: 100GBASE-CWDM4
+        ///  <c>OPTIC_100GBASE_CWDM4</c>: 100GBASE-CWDM4
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_100GBASE_LR4</code>: 100GBASE-LR4
+        ///  <c>OPTIC_100GBASE_LR4</c>: 100GBASE-LR4
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_100G_PSM4_MSA</code>: 100G PSM4 MSA
+        ///  <c>OPTIC_100G_PSM4_MSA</c>: 100G PSM4 MSA
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_1000BASE_LX</code>: 1000Base-LX
+        ///  <c>OPTIC_1000BASE_LX</c>: 1000Base-LX
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIC_1000BASE_SX</code> : 1000Base-SX
+        ///  <c>OPTIC_1000BASE_SX</c> : 1000Base-SX
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -168,7 +168,7 @@ namespace Amazon.Outposts.Model
         /// Gets and sets the property PowerConnector. 
         /// <para>
         /// The power connector that Amazon Web Services should plan to provide for connections
-        /// to the hardware. Note the correlation between <code>PowerPhase</code> and <code>PowerConnector</code>.
+        /// to the hardware. Note the correlation between <c>PowerPhase</c> and <c>PowerConnector</c>.
         /// 
         /// </para>
         ///  <ul> <li> 
@@ -297,8 +297,8 @@ namespace Amazon.Outposts.Model
         /// Racks come with two Outpost network devices. Depending on the supported uplink speed
         /// at the site, the Outpost network devices provide a variable number of uplinks. Specify
         /// the number of uplinks for each Outpost network device that you intend to use to connect
-        /// the rack to your network. Note the correlation between <code>UplinkGbps</code> and
-        /// <code>UplinkCount</code>. 
+        /// the rack to your network. Note the correlation between <c>UplinkGbps</c> and <c>UplinkCount</c>.
+        /// 
         /// </para>
         ///  <ul> <li> 
         /// <para>

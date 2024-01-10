@@ -75,7 +75,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property IdentityStore. 
         /// <para>
         /// Specifies the type of your user identity directory. Currently, this supports users
-        /// with an identity type of <code>QUICKSIGHT</code>.
+        /// with an identity type of <c>QUICKSIGHT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -84,9 +84,9 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property ImageTagMutability. 
         /// <para>
         /// The tag mutability setting for the repository. If this parameter is omitted, the default
-        /// setting of <code>MUTABLE</code> will be used which will allow image tags to be overwritten.
-        /// If <code>IMMUTABLE</code> is specified, all image tags within the repository will
-        /// be immutable which will prevent them from being overwritten.
+        /// setting of <c>MUTABLE</c> will be used which will allow image tags to be overwritten.
+        /// If <c>IMMUTABLE</c> is specified, all image tags within the repository will be immutable
+        /// which will prevent them from being overwritten.
         /// </para>
         /// </summary>
         public ImageTagMutability ImageTagMutability
@@ -124,8 +124,8 @@ namespace Amazon.ECR.Model
         /// Gets and sets the property RepositoryName. 
         /// <para>
         /// The name to use for the repository. The repository name may be specified on its own
-        /// (such as <code>nginx-web-app</code>) or it can be prepended with a namespace to group
-        /// the repository into a category (such as <code>project-a/nginx-web-app</code>).
+        /// (such as <c>nginx-web-app</c>) or it can be prepended with a namespace to group the
+        /// repository into a category (such as <c>project-a/nginx-web-app</c>).
         /// </para>
         ///  
         /// <para>

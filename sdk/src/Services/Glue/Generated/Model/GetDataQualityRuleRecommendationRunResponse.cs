@@ -160,7 +160,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfWorkers. 
         /// <para>
-        /// The number of <code>G.1X</code> workers to be used in the run. The default is 5.
+        /// The number of <c>G.1X</c> workers to be used in the run. The default is 5.
         /// </para>
         /// </summary>
         public int NumberOfWorkers
@@ -273,8 +273,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Timeout. 
         /// <para>
         /// The timeout for a run in minutes. This is the maximum time that a run can consume
-        /// resources before it is terminated and enters <code>TIMEOUT</code> status. The default
-        /// is 2,880 minutes (48 hours).
+        /// resources before it is terminated and enters <c>TIMEOUT</c> status. The default is
+        /// 2,880 minutes (48 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

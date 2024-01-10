@@ -62,19 +62,19 @@ namespace Amazon.CodeCommit.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>100644</code> indicates read/write
+        ///  <c>100644</c> indicates read/write
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>100755</code> indicates read/write/execute
+        ///  <c>100755</c> indicates read/write/execute
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>160000</code> indicates a submodule
+        ///  <c>160000</c> indicates a submodule
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>120000</code> indicates a symlink
+        ///  <c>120000</c> indicates a symlink
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -54,14 +54,14 @@ namespace Amazon.ElasticFileSystem.Model
         /// Gets and sets the property ResourceIdType. 
         /// <para>
         /// Specifies the EFS resource ID preference to set for the user's Amazon Web Services
-        /// account, in the current Amazon Web Services Region, either <code>LONG_ID</code> (17
-        /// characters), or <code>SHORT_ID</code> (8 characters).
+        /// account, in the current Amazon Web Services Region, either <c>LONG_ID</c> (17 characters),
+        /// or <c>SHORT_ID</c> (8 characters).
         /// </para>
         ///  <note> 
         /// <para>
         /// Starting in October, 2021, you will receive an error when setting the account preference
-        /// to <code>SHORT_ID</code>. Contact Amazon Web Services support if you receive an error
-        /// and must use short IDs for file system and mount target resources.
+        /// to <c>SHORT_ID</c>. Contact Amazon Web Services support if you receive an error and
+        /// must use short IDs for file system and mount target resources.
         /// </para>
         ///  </note>
         /// </summary>

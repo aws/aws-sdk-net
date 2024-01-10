@@ -31,8 +31,8 @@ namespace Amazon.PersonalizeRuntime.Model
     /// <summary>
     /// Container for the parameters to the GetActionRecommendations operation.
     /// Returns a list of recommended actions in sorted in descending order by prediction
-    /// score. Use the <code>GetActionRecommendations</code> API if you have a custom campaign
-    /// that deploys a solution version trained with a PERSONALIZED_ACTIONS recipe. 
+    /// score. Use the <c>GetActionRecommendations</c> API if you have a custom campaign that
+    /// deploys a solution version trained with a PERSONALIZED_ACTIONS recipe. 
     /// 
     ///  
     /// <para>
@@ -78,7 +78,7 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this parameter, be sure the filter resource is <code>ACTIVE</code>.
+        /// When using this parameter, be sure the filter resource is <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -104,11 +104,11 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// For filter expressions that use an <code>INCLUDE</code> element to include actions,
-        /// you must provide values for all parameters that are defined in the expression. For
-        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude actions,
-        /// you can omit the <code>filter-values</code>. In this case, Amazon Personalize doesn't
-        /// use that portion of the expression to filter recommendations.
+        /// For filter expressions that use an <c>INCLUDE</c> element to include actions, you
+        /// must provide values for all parameters that are defined in the expression. For filters
+        /// with expressions that use an <c>EXCLUDE</c> element to exclude actions, you can omit
+        /// the <c>filter-values</c>. In this case, Amazon Personalize doesn't use that portion
+        /// of the expression to filter recommendations.
         /// </para>
         ///  
         /// <para>

@@ -206,8 +206,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property EnableLniAtDeviceIndex. 
         /// <para>
         ///  Indicates the device position for local network interfaces in this subnet. For example,
-        /// <code>1</code> indicates local network interfaces in this subnet are the secondary
-        /// network interface (eth1). 
+        /// <c>1</c> indicates local network interfaces in this subnet are the secondary network
+        /// interface (eth1). 
         /// </para>
         /// </summary>
         public int EnableLniAtDeviceIndex

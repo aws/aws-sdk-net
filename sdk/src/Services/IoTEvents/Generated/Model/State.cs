@@ -41,8 +41,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property OnEnter. 
         /// <para>
-        /// When entering this state, perform these <code>actions</code> if the <code>condition</code>
-        /// is TRUE.
+        /// When entering this state, perform these <c>actions</c> if the <c>condition</c> is
+        /// TRUE.
         /// </para>
         /// </summary>
         public OnEnterLifecycle OnEnter
@@ -60,8 +60,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property OnExit. 
         /// <para>
-        /// When exiting this state, perform these <code>actions</code> if the specified <code>condition</code>
-        /// is <code>TRUE</code>.
+        /// When exiting this state, perform these <c>actions</c> if the specified <c>condition</c>
+        /// is <c>TRUE</c>.
         /// </para>
         /// </summary>
         public OnExitLifecycle OnExit
@@ -79,8 +79,8 @@ namespace Amazon.IoTEvents.Model
         /// <summary>
         /// Gets and sets the property OnInput. 
         /// <para>
-        /// When an input is received and the <code>condition</code> is TRUE, perform the specified
-        /// <code>actions</code>.
+        /// When an input is received and the <c>condition</c> is TRUE, perform the specified
+        /// <c>actions</c>.
         /// </para>
         /// </summary>
         public OnInputLifecycle OnInput

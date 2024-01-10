@@ -51,7 +51,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlBotMessage. 
         /// <para>
-        ///  <code>TRUE</code> to index bot messages from your Slack workspace team.
+        ///  <c>TRUE</c> to index bot messages from your Slack workspace team.
         /// </para>
         /// </summary>
         public bool CrawlBotMessage
@@ -69,8 +69,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property ExcludeArchived. 
         /// <para>
-        ///  <code>TRUE</code> to exclude archived messages to index from your Slack workspace
-        /// team.
+        ///  <c>TRUE</c> to exclude archived messages to index from your Slack workspace team.
         /// </para>
         /// </summary>
         public bool ExcludeArchived
@@ -111,9 +110,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map Slack data source
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map Slack data source
         /// attributes or field names to Amazon Kendra index field names. To create custom fields,
-        /// use the <code>UpdateIndex</code> API before you map to Slack fields. For more information,
+        /// use the <c>UpdateIndex</c> API before you map to Slack fields. For more information,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Slack data source field names must exist in your Slack
         /// custom metadata.
@@ -166,7 +165,7 @@ namespace Amazon.Kendra.Model
         /// Change log updates your index only if new content was added since you last synced
         /// your data. Updated or deleted content from before you last synced does not get updated
         /// in your index. To capture updated or deleted content before you last synced, set the
-        /// <code>LookBackPeriod</code> to the number of hours you want change log to look back.
+        /// <c>LookBackPeriod</c> to the number of hours you want change log to look back.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=168)]
@@ -254,7 +253,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property SinceCrawlDate. 
         /// <para>
         /// The date to start crawling your data from your Slack workspace team. The date must
-        /// follow this format: <code>yyyy-mm-dd</code>.
+        /// follow this format: <c>yyyy-mm-dd</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
@@ -318,9 +317,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        ///  <code>TRUE</code> to use the Slack change log to determine which documents require
-        /// updating in the index. Depending on the Slack change log's size, it may take longer
-        /// for Amazon Kendra to use the change log than to scan all of your documents in Slack.
+        ///  <c>TRUE</c> to use the Slack change log to determine which documents require updating
+        /// in the index. Depending on the Slack change log's size, it may take longer for Amazon
+        /// Kendra to use the change log than to scan all of your documents in Slack.
         /// </para>
         /// </summary>
         public bool UseChangeLog

@@ -59,8 +59,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelCompositeModelType. 
         /// <para>
-        /// The composite model type. Valid values are <code>AWS/ALARM</code>, <code>CUSTOM</code>,
-        /// or <code> AWS/L4E_ANOMALY</code>.
+        /// The composite model type. Valid values are <c>AWS/ALARM</c>, <c>CUSTOM</c>, or <c>
+        /// AWS/L4E_ANOMALY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

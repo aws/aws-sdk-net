@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeFramework operation.
-    /// Returns the framework details for the specified <code>FrameworkName</code>.
+    /// Returns the framework details for the specified <c>FrameworkName</c>.
     /// </summary>
     public partial class DescribeFrameworkRequest : AmazonBackupRequest
     {

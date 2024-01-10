@@ -117,9 +117,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The state represents the action to take to update the finding Status. Use <code>ARCHIVE</code>
-        /// to change an Active finding to an Archived finding. Use <code>ACTIVE</code> to change
-        /// an Archived finding to an Active finding.
+        /// The state represents the action to take to update the finding Status. Use <c>ARCHIVE</c>
+        /// to change an Active finding to an Archived finding. Use <c>ACTIVE</c> to change an
+        /// Archived finding to an Active finding.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

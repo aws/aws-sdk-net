@@ -30,12 +30,12 @@ namespace Amazon.MachineLearning.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateBatchPrediction operation.
-    /// Updates the <code>BatchPredictionName</code> of a <code>BatchPrediction</code>.
+    /// Updates the <c>BatchPredictionName</c> of a <c>BatchPrediction</c>.
     /// 
     ///  
     /// <para>
-    /// You can use the <code>GetBatchPrediction</code> operation to view the contents of
-    /// the updated data element.
+    /// You can use the <c>GetBatchPrediction</c> operation to view the contents of the updated
+    /// data element.
     /// </para>
     /// </summary>
     public partial class UpdateBatchPredictionRequest : AmazonMachineLearningRequest
@@ -46,7 +46,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionId. 
         /// <para>
-        /// The ID assigned to the <code>BatchPrediction</code> during creation.
+        /// The ID assigned to the <c>BatchPrediction</c> during creation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -65,7 +65,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property BatchPredictionName. 
         /// <para>
-        /// A new user-supplied name or description of the <code>BatchPrediction</code>.
+        /// A new user-supplied name or description of the <c>BatchPrediction</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

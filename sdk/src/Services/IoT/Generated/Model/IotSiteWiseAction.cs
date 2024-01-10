@@ -60,8 +60,8 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The ARN of the role that grants IoT permission to send an asset property value to
-        /// IoT SiteWise. (<code>"Action": "iotsitewise:BatchPutAssetPropertyValue"</code>). The
-        /// trust policy can restrict access to specific asset hierarchy paths.
+        /// IoT SiteWise. (<c>"Action": "iotsitewise:BatchPutAssetPropertyValue"</c>). The trust
+        /// policy can restrict access to specific asset hierarchy paths.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

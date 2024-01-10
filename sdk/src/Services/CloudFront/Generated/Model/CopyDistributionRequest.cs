@@ -36,8 +36,8 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// After you create a staging distribution, you can use <code>UpdateDistribution</code>
-    /// to modify the staging distribution's configuration. Then you can use <code>CreateContinuousDeploymentPolicy</code>
+    /// After you create a staging distribution, you can use <c>UpdateDistribution</c> to
+    /// modify the staging distribution's configuration. Then you can use <c>CreateContinuousDeploymentPolicy</c>
     /// to incrementally move traffic to the staging distribution.
     /// </para>
     ///  
@@ -94,12 +94,12 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Enabled. 
         /// <para>
         /// A Boolean flag to specify the state of the staging distribution when it's created.
-        /// When you set this value to <code>True</code>, the staging distribution is enabled.
-        /// When you set this value to <code>False</code>, the staging distribution is disabled.
+        /// When you set this value to <c>True</c>, the staging distribution is enabled. When
+        /// you set this value to <c>False</c>, the staging distribution is disabled.
         /// </para>
         ///  
         /// <para>
-        /// If you omit this field, the default value is <code>True</code>.
+        /// If you omit this field, the default value is <c>True</c>.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -118,8 +118,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IfMatch. 
         /// <para>
         /// The version identifier of the primary distribution whose configuration you are copying.
-        /// This is the <code>ETag</code> value returned in the response to <code>GetDistribution</code>
-        /// and <code>GetDistributionConfig</code>.
+        /// This is the <c>ETag</c> value returned in the response to <c>GetDistribution</c> and
+        /// <c>GetDistributionConfig</c>.
         /// </para>
         /// </summary>
         public string IfMatch
@@ -138,7 +138,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property PrimaryDistributionId. 
         /// <para>
         /// The identifier of the primary distribution whose configuration you are copying. To
-        /// get a distribution ID, use <code>ListDistributions</code>.
+        /// get a distribution ID, use <c>ListDistributions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -158,7 +158,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Staging. 
         /// <para>
         /// The type of distribution that your primary distribution will be copied to. The only
-        /// valid value is <code>True</code>, indicating that you are copying to a staging distribution.
+        /// valid value is <c>True</c>, indicating that you are copying to a staging distribution.
         /// </para>
         /// </summary>
         public bool Staging

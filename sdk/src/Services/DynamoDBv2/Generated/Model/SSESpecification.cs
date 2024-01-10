@@ -42,9 +42,9 @@ namespace Amazon.DynamoDBv2.Model
         /// <para>
         /// Indicates whether server-side encryption is done using an Amazon Web Services managed
         /// key or an Amazon Web Services owned key. If enabled (true), server-side encryption
-        /// type is set to <code>KMS</code> and an Amazon Web Services managed key is used (KMS
-        /// charges apply). If disabled (false) or not specified, server-side encryption is set
-        /// to Amazon Web Services owned key.
+        /// type is set to <c>KMS</c> and an Amazon Web Services managed key is used (KMS charges
+        /// apply). If disabled (false) or not specified, server-side encryption is set to Amazon
+        /// Web Services owned key.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -65,7 +65,7 @@ namespace Amazon.DynamoDBv2.Model
         /// The KMS key that should be used for the KMS encryption. To specify a key, use its
         /// key ID, Amazon Resource Name (ARN), alias name, or alias ARN. Note that you should
         /// only provide this parameter if the key is different from the default DynamoDB key
-        /// <code>alias/aws/dynamodb</code>.
+        /// <c>alias/aws/dynamodb</c>.
         /// </para>
         /// </summary>
         public string KMSMasterKeyId
@@ -87,8 +87,8 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>KMS</code> - Server-side encryption that uses Key Management Service. The key
-        /// is stored in your account and is managed by KMS (KMS charges apply).
+        ///  <c>KMS</c> - Server-side encryption that uses Key Management Service. The key is
+        /// stored in your account and is managed by KMS (KMS charges apply).
         /// </para>
         ///  </li> </ul>
         /// </summary>

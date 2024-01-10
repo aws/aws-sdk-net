@@ -53,8 +53,8 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Certificates. 
         /// <para>
-        /// The certificate to add. You can specify one certificate per call. Set <code>CertificateArn</code>
-        /// to the certificate ARN but do not set <code>IsDefault</code>.
+        /// The certificate to add. You can specify one certificate per call. Set <c>CertificateArn</c>
+        /// to the certificate ARN but do not set <c>IsDefault</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

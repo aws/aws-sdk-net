@@ -50,9 +50,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CommentFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Box comments to Amazon Kendra index field names. To create custom fields,
-        /// use the <code>UpdateIndex</code> API before you map to Box fields. For more information,
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Box comments to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Box fields. For more information,
         /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Box field names must exist in your Box custom metadata.
         /// </para>
@@ -73,7 +73,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlComments. 
         /// <para>
-        ///  <code>TRUE</code> to index comments.
+        ///  <c>TRUE</c> to index comments.
         /// </para>
         /// </summary>
         public bool CrawlComments
@@ -91,7 +91,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlTasks. 
         /// <para>
-        ///  <code>TRUE</code> to index the contents of tasks.
+        ///  <c>TRUE</c> to index the contents of tasks.
         /// </para>
         /// </summary>
         public bool CrawlTasks
@@ -109,7 +109,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CrawlWebLinks. 
         /// <para>
-        ///  <code>TRUE</code> to index web links.
+        ///  <c>TRUE</c> to index web links.
         /// </para>
         /// </summary>
         public bool CrawlWebLinks
@@ -171,10 +171,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FileFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Box files to Amazon Kendra index field names. To create custom fields,
-        /// use the <code>UpdateIndex</code> API before you map to Box fields. For more information,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Box files to Amazon Kendra index field names. To create custom fields, use
+        /// the <c>UpdateIndex</c> API before you map to Box fields. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Box field names must exist in your Box custom metadata.
         /// </para>
         /// </summary>
@@ -266,10 +266,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property TaskFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Box tasks to Amazon Kendra index field names. To create custom fields,
-        /// use the <code>UpdateIndex</code> API before you map to Box fields. For more information,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Box tasks to Amazon Kendra index field names. To create custom fields, use
+        /// the <c>UpdateIndex</c> API before you map to Box fields. For more information, see
+        /// <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Box field names must exist in your Box custom metadata.
         /// </para>
         /// </summary>
@@ -289,9 +289,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UseChangeLog. 
         /// <para>
-        ///  <code>TRUE</code> to use the Slack change log to determine which documents require
-        /// updating in the index. Depending on the data source change log's size, it may take
-        /// longer for Amazon Kendra to use the change log than to scan all of your documents.
+        ///  <c>TRUE</c> to use the Slack change log to determine which documents require updating
+        /// in the index. Depending on the data source change log's size, it may take longer for
+        /// Amazon Kendra to use the change log than to scan all of your documents.
         /// </para>
         /// </summary>
         public bool UseChangeLog
@@ -329,10 +329,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property WebLinkFieldMappings. 
         /// <para>
-        /// A list of <code>DataSourceToIndexFieldMapping</code> objects that map attributes or
-        /// field names of Box web links to Amazon Kendra index field names. To create custom
-        /// fields, use the <code>UpdateIndex</code> API before you map to Box fields. For more
-        /// information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
+        /// A list of <c>DataSourceToIndexFieldMapping</c> objects that map attributes or field
+        /// names of Box web links to Amazon Kendra index field names. To create custom fields,
+        /// use the <c>UpdateIndex</c> API before you map to Box fields. For more information,
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
         /// data source fields</a>. The Box field names must exist in your Box custom metadata.
         /// </para>
         /// </summary>

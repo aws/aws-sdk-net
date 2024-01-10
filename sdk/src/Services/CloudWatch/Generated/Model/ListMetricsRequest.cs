@@ -54,8 +54,8 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>ListMetrics</code> doesn't return information about metrics if those metrics
-    /// haven't reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+    ///  <c>ListMetrics</c> doesn't return information about metrics if those metrics haven't
+    /// reported data in the past two weeks. To retrieve those metrics, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
     /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a>.
     /// </para>
     /// </summary>
@@ -91,12 +91,12 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property IncludeLinkedAccounts. 
         /// <para>
-        /// If you are using this operation in a monitoring account, specify <code>true</code>
-        /// to include metrics from source accounts in the returned data.
+        /// If you are using this operation in a monitoring account, specify <c>true</c> to include
+        /// metrics from source accounts in the returned data.
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>false</code>.
+        /// The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool IncludeLinkedAccounts
@@ -174,7 +174,7 @@ namespace Amazon.CloudWatch.Model
         /// <para>
         /// When you use this operation in a monitoring account, use this field to return metrics
         /// only from one source account. To do so, specify that source account ID in this field,
-        /// and also specify <code>true</code> for <code>IncludeLinkedAccounts</code>.
+        /// and also specify <c>true</c> for <c>IncludeLinkedAccounts</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -194,8 +194,8 @@ namespace Amazon.CloudWatch.Model
         /// Gets and sets the property RecentlyActive. 
         /// <para>
         /// To filter the results to show only metrics that have had data points published in
-        /// the past three hours, specify this parameter with a value of <code>PT3H</code>. This
-        /// is the only valid value for this parameter.
+        /// the past three hours, specify this parameter with a value of <c>PT3H</c>. This is
+        /// the only valid value for this parameter.
         /// </para>
         ///  
         /// <para>

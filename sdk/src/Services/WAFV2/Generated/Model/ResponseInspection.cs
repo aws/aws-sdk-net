@@ -47,15 +47,15 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// This is part of the <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>
-    /// configurations in <code>ManagedRuleGroupConfig</code>.
+    /// This is part of the <c>AWSManagedRulesATPRuleSet</c> and <c>AWSManagedRulesACFPRuleSet</c>
+    /// configurations in <c>ManagedRuleGroupConfig</c>.
     /// </para>
     ///  
     /// <para>
     /// Enable response inspection by configuring exactly one component of the response to
-    /// inspect, for example, <code>Header</code> or <code>StatusCode</code>. You can't configure
-    /// more than one component for inspection. If you don't configure any of the response
-    /// inspection options, response inspection is disabled. 
+    /// inspect, for example, <c>Header</c> or <c>StatusCode</c>. You can't configure more
+    /// than one component for inspection. If you don't configure any of the response inspection
+    /// options, response inspection is disabled. 
     /// </para>
     /// </summary>
     public partial class ResponseInspection

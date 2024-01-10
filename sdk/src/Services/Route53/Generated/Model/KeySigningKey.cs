@@ -56,9 +56,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers,
-        /// letters, and underscores (_). <code>Name</code> must be unique for each key-signing
-        /// key in the same hosted zone.
+        /// A string used to identify a key-signing key (KSK). <c>Name</c> can include numbers,
+        /// letters, and underscores (_). <c>Name</c> must be unique for each key-signing key
+        /// in the same hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=128)]
@@ -78,8 +78,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property KmsArn. 
         /// <para>
         /// The Amazon resource name (ARN) used to identify the customer managed key in Key Management
-        /// Service (KMS). The <code>KmsArn</code> must be unique for each key-signing key (KSK)
-        /// in a single hosted zone.
+        /// Service (KMS). The <c>KmsArn</c> must be unique for each key-signing key (KSK) in
+        /// a single hosted zone.
         /// </para>
         ///  
         /// <para>
@@ -120,7 +120,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"Service": "dnssec-route53.amazonaws.com"</code> 
+        ///  <c>"Service": "dnssec-route53.amazonaws.com"</c> 
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -386,9 +386,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// The status message provided for the following key-signing key (KSK) statuses: <code>ACTION_NEEDED</code>
-        /// or <code>INTERNAL_FAILURE</code>. The status message includes information about what
-        /// the problem might be and steps that you can take to correct the issue.
+        /// The status message provided for the following key-signing key (KSK) statuses: <c>ACTION_NEEDED</c>
+        /// or <c>INTERNAL_FAILURE</c>. The status message includes information about what the
+        /// problem might be and steps that you can take to correct the issue.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]

@@ -62,7 +62,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of the endpoint. One of: <code>READER</code>, <code>WRITER</code>, <code>ANY</code>.
+        /// The type of the endpoint. One of: <c>READER</c>, <c>WRITER</c>, <c>ANY</c>.
         /// </para>
         /// </summary>
         public string EndpointType

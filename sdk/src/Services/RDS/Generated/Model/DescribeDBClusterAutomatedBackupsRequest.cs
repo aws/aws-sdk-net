@@ -32,7 +32,7 @@ namespace Amazon.RDS.Model
     /// Container for the parameters to the DescribeDBClusterAutomatedBackups operation.
     /// Displays backups for both current and deleted DB clusters. For example, use this operation
     /// to find details about automated backups for previously deleted clusters. Current clusters
-    /// are returned for both the <code>DescribeDBClusterAutomatedBackups</code> and <code>DescribeDBClusters</code>
+    /// are returned for both the <c>DescribeDBClusterAutomatedBackups</c> and <c>DescribeDBClusters</c>
     /// operations.
     /// 
     ///  
@@ -98,24 +98,24 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>status</code> 
+        ///  <c>status</c> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>retained</code> - Automated backups for deleted clusters and after backup replication
+        ///  <c>retained</c> - Automated backups for deleted clusters and after backup replication
         /// is stopped.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and Amazon Resource Names
-        /// (ARNs). The results list includes only information about the DB cluster automated
-        /// backups identified by these ARNs.
+        ///  <c>db-cluster-id</c> - Accepts DB cluster identifiers and Amazon Resource Names (ARNs).
+        /// The results list includes only information about the DB cluster automated backups
+        /// identified by these ARNs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db-cluster-resource-id</code> - Accepts DB resource identifiers and Amazon
-        /// Resource Names (ARNs). The results list includes only information about the DB cluster
-        /// resources identified by these ARNs.
+        ///  <c>db-cluster-resource-id</c> - Accepts DB resource identifiers and Amazon Resource
+        /// Names (ARNs). The results list includes only information about the DB cluster resources
+        /// identified by these ARNs.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -139,7 +139,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property Marker. 
         /// <para>
         /// The pagination token provided in the previous request. If this parameter is specified
-        /// the response includes only records beyond the marker, up to <code>MaxRecords</code>.
+        /// the response includes only records beyond the marker, up to <c>MaxRecords</c>.
         /// </para>
         /// </summary>
         public string Marker
@@ -158,8 +158,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of records to include in the response. If more records exist than
-        /// the specified <code>MaxRecords</code> value, a pagination token called a marker is
-        /// included in the response so that you can retrieve the remaining results.
+        /// the specified <c>MaxRecords</c> value, a pagination token called a marker is included
+        /// in the response so that you can retrieve the remaining results.
         /// </para>
         /// </summary>
         public int MaxRecords

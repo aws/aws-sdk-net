@@ -71,7 +71,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <para>
         /// The version of the application for which you are adding the reference data source.
         /// You can use the <a>DescribeApplication</a> operation to get the current application
-        /// version. If the version specified is not the current version, the <code>ConcurrentModificationException</code>
+        /// version. If the version specified is not the current version, the <c>ConcurrentModificationException</c>
         /// is returned.
         /// </para>
         /// </summary>

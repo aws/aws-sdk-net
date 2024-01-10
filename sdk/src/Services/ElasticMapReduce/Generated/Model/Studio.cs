@@ -193,9 +193,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdcUserAssignment. 
         /// <para>
-        ///  Indicates whether the Studio has <code>REQUIRED</code> or <code>OPTIONAL</code> IAM
-        /// Identity Center user assignment. If the value is set to <code>REQUIRED</code>, users
-        /// must be explicitly assigned to the Studio application to access the Studio. 
+        ///  Indicates whether the Studio has <c>REQUIRED</c> or <c>OPTIONAL</c> IAM Identity
+        /// Center user assignment. If the value is set to <c>REQUIRED</c>, users must be explicitly
+        /// assigned to the Studio application to access the Studio. 
         /// </para>
         /// </summary>
         public IdcUserAssignment IdcUserAssignment
@@ -234,7 +234,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IdpRelayStateParameterName. 
         /// <para>
-        /// The name of your identity provider's <code>RelayState</code> parameter.
+        /// The name of your identity provider's <c>RelayState</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -366,7 +366,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property TrustedIdentityPropagationEnabled. 
         /// <para>
         ///  Indicates whether the Studio has Trusted identity propagation enabled. The default
-        /// value is <code>false</code>. 
+        /// value is <c>false</c>. 
         /// </para>
         /// </summary>
         public bool TrustedIdentityPropagationEnabled
@@ -404,7 +404,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property UserRole. 
         /// <para>
         /// The name of the IAM role assumed by users logged in to the Amazon EMR Studio. A Studio
-        /// only requires a <code>UserRole</code> when you use IAM authentication.
+        /// only requires a <c>UserRole</c> when you use IAM authentication.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]

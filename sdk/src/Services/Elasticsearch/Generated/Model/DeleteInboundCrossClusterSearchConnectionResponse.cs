@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// The result of a <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation.
+    /// The result of a <c><a>DeleteInboundCrossClusterSearchConnection</a></c> operation.
     /// Contains details of deleted inbound connection.
     /// </summary>
     public partial class DeleteInboundCrossClusterSearchConnectionResponse : AmazonWebServiceResponse
@@ -39,7 +39,7 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property CrossClusterSearchConnection. 
         /// <para>
-        /// Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of deleted inbound
+        /// Specifies the <c><a>InboundCrossClusterSearchConnection</a></c> of deleted inbound
         /// connection. 
         /// </para>
         /// </summary>

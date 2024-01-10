@@ -42,20 +42,18 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Sets the end time for a monitoring job window. Express this time as an offset to the
         /// times that you schedule your monitoring jobs to run. You schedule monitoring jobs
-        /// with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601
-        /// duration format. For example, if you want to end the window one hour before the start
-        /// of each monitoring job, you would specify: <code>"-PT1H"</code>.
+        /// with the <c>ScheduleExpression</c> parameter. Specify this offset in ISO 8601 duration
+        /// format. For example, if you want to end the window one hour before the start of each
+        /// monitoring job, you would specify: <c>"-PT1H"</c>.
         /// </para>
         ///  
         /// <para>
         /// The end time that you specify must not follow the start time that you specify by more
-        /// than 24 hours. You specify the start time with the <code>DataAnalysisStartTime</code>
-        /// parameter.
+        /// than 24 hours. You specify the start time with the <c>DataAnalysisStartTime</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is
-        /// required.
+        /// If you set <c>ScheduleExpression</c> to <c>NOW</c>, this parameter is required.
         /// </para>
         /// </summary>
         public string DataAnalysisEndTime
@@ -75,20 +73,18 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// Sets the start time for a monitoring job window. Express this time as an offset to
         /// the times that you schedule your monitoring jobs to run. You schedule monitoring jobs
-        /// with the <code>ScheduleExpression</code> parameter. Specify this offset in ISO 8601
-        /// duration format. For example, if you want to monitor the five hours of data in your
-        /// dataset that precede the start of each monitoring job, you would specify: <code>"-PT5H"</code>.
+        /// with the <c>ScheduleExpression</c> parameter. Specify this offset in ISO 8601 duration
+        /// format. For example, if you want to monitor the five hours of data in your dataset
+        /// that precede the start of each monitoring job, you would specify: <c>"-PT5H"</c>.
         /// </para>
         ///  
         /// <para>
         /// The start time that you specify must not precede the end time that you specify by
-        /// more than 24 hours. You specify the end time with the <code>DataAnalysisEndTime</code>
-        /// parameter.
+        /// more than 24 hours. You specify the end time with the <c>DataAnalysisEndTime</c> parameter.
         /// </para>
         ///  
         /// <para>
-        /// If you set <code>ScheduleExpression</code> to <code>NOW</code>, this parameter is
-        /// required.
+        /// If you set <c>ScheduleExpression</c> to <c>NOW</c>, this parameter is required.
         /// </para>
         /// </summary>
         public string DataAnalysisStartTime
@@ -118,7 +114,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>Hourly: cron(0 * ? * * *)</code> 
+        ///  <c>Hourly: cron(0 * ? * * *)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -126,7 +122,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>cron(0 [00-23] ? * * *)</code> 
+        ///  <c>cron(0 [00-23] ? * * *)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -134,7 +130,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>NOW</code> 
+        ///  <c>NOW</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -142,11 +138,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Daily at noon UTC: <code>cron(0 12 ? * * *)</code> 
+        /// Daily at noon UTC: <c>cron(0 12 ? * * *)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Daily at midnight UTC: <code>cron(0 0 ? * * *)</code> 
+        /// Daily at midnight UTC: <c>cron(0 0 ? * * *)</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -154,7 +150,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>cron(0 [00-23]/[01-24] ? * * *)</code> 
+        ///  <c>cron(0 [00-23]/[01-24] ? * * *)</c> 
         /// </para>
         ///  
         /// <para>
@@ -162,11 +158,11 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Every 12 hours, starting at 5pm UTC: <code>cron(0 17/12 ? * * *)</code> 
+        /// Every 12 hours, starting at 5pm UTC: <c>cron(0 17/12 ? * * *)</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Every two hours starting at midnight: <code>cron(0 0/2 ? * * *)</code> 
+        /// Every two hours starting at midnight: <c>cron(0 0/2 ? * * *)</c> 
         /// </para>
         ///  </li> </ul> <note> <ul> <li> 
         /// <para>
@@ -180,7 +176,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>
-        /// You can also specify the keyword <code>NOW</code> to run the monitoring job immediately,
+        /// You can also specify the keyword <c>NOW</c> to run the monitoring job immediately,
         /// one time, without recurring.
         /// </para>
         /// </summary>

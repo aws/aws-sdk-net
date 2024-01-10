@@ -31,7 +31,7 @@ namespace Amazon.CognitoIdentityProvider.Model
     /// <summary>
     /// Container for the parameters to the AdminDisableUser operation.
     /// Deactivates a user and revokes all access tokens for the user. A deactivated user
-    /// can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code>
+    /// can't sign in, but still appears in the responses to <c>GetUser</c> and <c>ListUsers</c>
     /// API requests.
     /// 
     ///  <note> 
@@ -66,8 +66,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// The username of the user that you want to query or modify. The value of this parameter
         /// is typically your user's username, but it can be any of their alias attributes. If
-        /// <code>username</code> isn't an alias attribute in your user pool, you can also use
-        /// their <code>sub</code> in this request.
+        /// <c>username</c> isn't an alias attribute in your user pool, you can also use their
+        /// <c>sub</c> in this request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]

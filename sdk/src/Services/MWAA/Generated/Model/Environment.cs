@@ -94,8 +94,8 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>,
-        /// <code>2.5.1</code>, <code>2.6.3</code>, <code>2.7.2</code>.
+        /// Valid values: <c>1.10.12</c>, <c>2.0.2</c>, <c>2.2.2</c>, <c>2.4.3</c>, <c>2.5.1</c>,
+        /// <c>2.6.3</c>, <c>2.7.2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -173,7 +173,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property DagS3Path. 
         /// <para>
-        /// The relative path to the DAGs folder in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/dags</code>.
+        /// The relative path to the DAGs folder in your Amazon S3 bucket. For example, <c>s3://mwaa-environment/dags</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
         /// or updating DAGs</a>.
         /// </para>
@@ -214,8 +214,8 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property EndpointManagement. 
         /// <para>
         /// Defines whether the VPC endpoints configured for the environment are created, and
-        /// managed, by the customer or by Amazon MWAA. If set to <code>SERVICE</code>, Amazon
-        /// MWAA will create and manage the required VPC endpoints in your VPC. If set to <code>CUSTOMER</code>,
+        /// managed, by the customer or by Amazon MWAA. If set to <c>SERVICE</c>, Amazon MWAA
+        /// will create and manage the required VPC endpoints in your VPC. If set to <c>CUSTOMER</c>,
         /// you must create, and manage, the VPC endpoints in your VPC.
         /// </para>
         /// </summary>
@@ -234,8 +234,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property EnvironmentClass. 
         /// <para>
-        /// The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>,
-        /// <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
+        /// The environment class type. Valid values: <c>mw1.small</c>, <c>mw1.medium</c>, <c>mw1.large</c>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
         /// MWAA environment class</a>.
         /// </para>
         /// </summary>
@@ -256,7 +256,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access
-        /// Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>.
+        /// Amazon Web Services resources in your environment. For example, <c>arn:aws:iam::123456789:role/my-execution-role</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
         /// MWAA Execution role</a>.
         /// </para>
@@ -333,7 +333,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property MaxWorkers. 
         /// <para>
-        /// The maximum number of workers that run in your environment. For example, <code>20</code>.
+        /// The maximum number of workers that run in your environment. For example, <c>20</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -352,7 +352,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property MinWorkers. 
         /// <para>
-        /// The minimum number of workers that run in your environment. For example, <code>2</code>.
+        /// The minimum number of workers that run in your environment. For example, <c>2</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -371,7 +371,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+        /// The name of the Amazon MWAA environment. For example, <c>MyMWAAEnvironment</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=80)]
@@ -411,8 +411,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property PluginsS3ObjectVersion. 
         /// <para>
-        /// The version of the <code>plugins.zip</code> file in your Amazon S3 bucket. You must
-        /// specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+        /// The version of the <c>plugins.zip</c> file in your Amazon S3 bucket. You must specify
+        /// the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
         /// ID</a> that Amazon S3 assigns to the file.
         /// </para>
         ///  
@@ -422,7 +422,7 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> 
+        ///  <c>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</c> 
         /// </para>
         ///  
         /// <para>
@@ -446,7 +446,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property PluginsS3Path. 
         /// <para>
-        /// The relative path to the file in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/plugins.zip</code>.
+        /// The relative path to the file in your Amazon S3 bucket. For example, <c>s3://mwaa-environment/plugins.zip</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
         /// custom plugins</a>.
         /// </para>
@@ -467,8 +467,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property RequirementsS3ObjectVersion. 
         /// <para>
-        /// The version of the <code>requirements.txt </code> file on your Amazon S3 bucket. You
-        /// must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+        /// The version of the <c>requirements.txt </c> file on your Amazon S3 bucket. You must
+        /// specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
         /// ID</a> that Amazon S3 assigns to the file.
         /// </para>
         ///  
@@ -478,7 +478,7 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> 
+        ///  <c>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</c> 
         /// </para>
         ///  
         /// <para>
@@ -502,9 +502,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property RequirementsS3Path. 
         /// <para>
-        /// The relative path to the <code>requirements.txt</code> file in your Amazon S3 bucket.
-        /// For example, <code>s3://mwaa-environment/requirements.txt</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
+        /// The relative path to the <c>requirements.txt</c> file in your Amazon S3 bucket. For
+        /// example, <c>s3://mwaa-environment/requirements.txt</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
         /// Python dependencies</a>.
         /// </para>
         /// </summary>
@@ -565,7 +565,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property SourceBucketArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting
-        /// files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>.
+        /// files are stored. For example, <c>arn:aws:s3:::my-airflow-bucket-unique-name</c>.
         /// For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
         /// an Amazon S3 bucket for Amazon MWAA</a>.
         /// </para>
@@ -597,7 +597,7 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> 
+        ///  <c>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</c> 
         /// </para>
         ///  
         /// <para>
@@ -621,7 +621,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property StartupScriptS3Path. 
         /// <para>
         /// The relative path to the startup shell script in your Amazon S3 bucket. For example,
-        /// <code>s3://mwaa-environment/startup.sh</code>.
+        /// <c>s3://mwaa-environment/startup.sh</c>.
         /// </para>
         ///  
         /// <para>
@@ -655,12 +655,12 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Indicates the request to create the environment is in progress.
+        ///  <c>CREATING</c> - Indicates the request to create the environment is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details,
-        /// or upgrade the environment version, is in progress and Amazon MWAA is creating a storage
+        ///  <c>CREATING_SNAPSHOT</c> - Indicates the request to update environment details, or
+        /// upgrade the environment version, is in progress and Amazon MWAA is creating a storage
         /// volume snapshot of the Amazon RDS database cluster associated with the environment.
         /// A database snapshot is a backup created at a specific point in time. Amazon MWAA uses
         /// snapshots to recover environment metadata if the process to update or upgrade an environment
@@ -668,48 +668,48 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE_FAILED</code> - Indicates the request to create the environment failed,
-        /// and the environment could not be created.
+        ///  <c>CREATE_FAILED</c> - Indicates the request to create the environment failed, and
+        /// the environment could not be created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - Indicates the request was successful and the environment
-        /// is ready to use.
+        ///  <c>AVAILABLE</c> - Indicates the request was successful and the environment is ready
+        /// to use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Indicates the request was successful, but the process to create
+        ///  <c>PENDING</c> - Indicates the request was successful, but the process to create
         /// the environment is paused until you create the required VPC endpoints in your VPC.
         /// After you create the VPC endpoints, the process resumes.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+        ///  <c>UPDATING</c> - Indicates the request to update the environment is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ROLLING_BACK</code> - Indicates the request to update environment details,
-        /// or upgrade the environment version, failed and Amazon MWAA is restoring the environment
-        /// using the latest storage volume snapshot.
+        ///  <c>ROLLING_BACK</c> - Indicates the request to update environment details, or upgrade
+        /// the environment version, failed and Amazon MWAA is restoring the environment using
+        /// the latest storage volume snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - Indicates the request to delete the environment is in progress.
+        ///  <c>DELETING</c> - Indicates the request to delete the environment is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Indicates the request to delete the environment is complete,
-        /// and the environment has been deleted.
+        ///  <c>DELETED</c> - Indicates the request to delete the environment is complete, and
+        /// the environment has been deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNAVAILABLE</code> - Indicates the request failed, but the environment was
-        /// unable to rollback and is not in a stable state.
+        ///  <c>UNAVAILABLE</c> - Indicates the request failed, but the environment was unable
+        /// to rollback and is not in a stable state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE_FAILED</code> - Indicates the request to update the environment failed,
-        /// and the environment has rolled back successfully and is ready to use.
+        ///  <c>UPDATE_FAILED</c> - Indicates the request to update the environment failed, and
+        /// the environment has rolled back successfully and is ready to use.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -733,8 +733,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value tag pairs associated to your environment. For example, <code>"Environment":
-        /// "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// The key-value tag pairs associated to your environment. For example, <c>"Environment":
+        /// "Staging"</c>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services resources</a>.
         /// </para>
         /// </summary>
@@ -814,7 +814,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property WeeklyMaintenanceWindowStart. 
         /// <para>
         /// The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard
-        /// time that weekly maintenance updates are scheduled. For example: <code>TUE:03:30</code>.
+        /// time that weekly maintenance updates are scheduled. For example: <c>TUE:03:30</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=9)]

@@ -44,9 +44,9 @@ namespace Amazon.RoboMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// Active states include: <code>Pending</code>,<code>Preparing</code>, <code>Running</code>,
-        /// <code>Restarting</code>, <code>RunningFailed</code> and <code>Terminating</code>.
-        /// All other states are terminal states. 
+        /// Active states include: <c>Pending</c>,<c>Preparing</c>, <c>Running</c>, <c>Restarting</c>,
+        /// <c>RunningFailed</c> and <c>Terminating</c>. All other states are terminal states.
+        /// 
         /// </para>
         /// </summary>
         public int MaxConcurrency
@@ -69,10 +69,10 @@ namespace Amazon.RoboMaker.Model
         ///  
         /// <para>
         /// If a batch times out, and there are pending requests that were failing due to an internal
-        /// failure (like <code>InternalServiceError</code>), they will be moved to the failed
-        /// list and the batch status will be <code>Failed</code>. If the pending requests were
-        /// failing for any other reason, the failed pending requests will be moved to the failed
-        /// list and the batch status will be <code>TimedOut</code>. 
+        /// failure (like <c>InternalServiceError</c>), they will be moved to the failed list
+        /// and the batch status will be <c>Failed</c>. If the pending requests were failing for
+        /// any other reason, the failed pending requests will be moved to the failed list and
+        /// the batch status will be <c>TimedOut</c>. 
         /// </para>
         /// </summary>
         public long TimeoutInSeconds

@@ -53,54 +53,53 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>PATCH_SET</code> </b> 
+        ///  <b> <c>PATCH_SET</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>OS</code> | <code>APPLICATION</code> 
+        /// Sample values: <c>OS</c> | <c>APPLICATION</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>PRODUCT</code> </b> 
+        ///  <b> <c>PRODUCT</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>WindowsServer2012</code> | <code>Office 2010</code> | <code>MicrosoftDefenderAntivirus</code>
+        /// Sample values: <c>WindowsServer2012</c> | <c>Office 2010</c> | <c>MicrosoftDefenderAntivirus</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>PRODUCT_FAMILY</code> </b> 
+        ///  <b> <c>PRODUCT_FAMILY</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>Windows</code> | <code>Office</code> 
+        /// Sample values: <c>Windows</c> | <c>Office</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>MSRC_SEVERITY</code> </b> 
+        ///  <b> <c>MSRC_SEVERITY</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>ServicePacks</code> | <code>Important</code> | <code>Moderate</code>
+        /// Sample values: <c>ServicePacks</c> | <c>Important</c> | <c>Moderate</c> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <c>CLASSIFICATION</c> </b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Sample values: <c>ServicePacks</c> | <c>SecurityUpdates</c> | <c>DefinitionUpdates</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>CLASSIFICATION</code> </b> 
+        ///  <b> <c>PATCH_ID</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>ServicePacks</code> | <code>SecurityUpdates</code> | <code>DefinitionUpdates</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b> <code>PATCH_ID</code> </b> 
-        /// </para>
-        ///  
-        /// <para>
-        /// Sample values: <code>KB123456</code> | <code>KB4516046</code> 
+        /// Sample values: <c>KB123456</c> | <c>KB4516046</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -108,12 +107,12 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// When specifying filters for Linux patches, you must specify a key-pair for <code>PRODUCT</code>.
+        /// When specifying filters for Linux patches, you must specify a key-pair for <c>PRODUCT</c>.
         /// For example, using the Command Line Interface (CLI), the following command fails:
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</code>
+        ///  <c>aws ssm describe-available-patches --filters Key=CVE_ID,Values=CVE-2018-3615</c>
         /// 
         /// </para>
         ///  
@@ -122,8 +121,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03
-        /// Key=CVE_ID,Values=CVE-2018-3615</code> 
+        ///  <c>aws ssm describe-available-patches --filters Key=PRODUCT,Values=AmazonLinux2018.03
+        /// Key=CVE_ID,Values=CVE-2018-3615</c> 
         /// </para>
         ///  </important> 
         /// <para>
@@ -131,93 +130,91 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>PRODUCT</code> </b> 
+        ///  <b> <c>PRODUCT</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>AmazonLinux2018.03</code> | <code>AmazonLinux2.0</code> 
+        /// Sample values: <c>AmazonLinux2018.03</c> | <c>AmazonLinux2.0</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NAME</code> </b> 
+        ///  <b> <c>NAME</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>kernel-headers</code> | <code>samba-python</code> | <code>php</code>
-        /// 
+        /// Sample values: <c>kernel-headers</c> | <c>samba-python</c> | <c>php</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>SEVERITY</code> </b> 
+        ///  <b> <c>SEVERITY</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>Critical</code> | <code>Important</code> | <code>Medium</code>
-        /// | <code>Low</code> 
+        /// Sample values: <c>Critical</c> | <c>Important</c> | <c>Medium</c> | <c>Low</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>EPOCH</code> </b> 
+        ///  <b> <c>EPOCH</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>0</code> | <code>1</code> 
+        /// Sample values: <c>0</c> | <c>1</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>VERSION</code> </b> 
+        ///  <b> <c>VERSION</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>78.6.1</code> | <code>4.10.16</code> 
+        /// Sample values: <c>78.6.1</c> | <c>4.10.16</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>RELEASE</code> </b> 
+        ///  <b> <c>RELEASE</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>9.56.amzn1</code> | <code>1.amzn2</code> 
+        /// Sample values: <c>9.56.amzn1</c> | <c>1.amzn2</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ARCH</code> </b> 
+        ///  <b> <c>ARCH</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>i686</code> | <code>x86_64</code> 
+        /// Sample values: <c>i686</c> | <c>x86_64</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>REPOSITORY</code> </b> 
+        ///  <b> <c>REPOSITORY</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>Core</code> | <code>Updates</code> 
+        /// Sample values: <c>Core</c> | <c>Updates</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>ADVISORY_ID</code> </b> 
+        ///  <b> <c>ADVISORY_ID</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>ALAS-2018-1058</code> | <code>ALAS2-2021-1594</code> 
+        /// Sample values: <c>ALAS-2018-1058</c> | <c>ALAS2-2021-1594</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>CVE_ID</code> </b> 
+        ///  <b> <c>CVE_ID</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>CVE-2018-3615</code> | <code>CVE-2020-1472</code> 
+        /// Sample values: <c>CVE-2018-3615</c> | <c>CVE-2020-1472</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>BUGZILLA_ID</code> </b> 
+        ///  <b> <c>BUGZILLA_ID</c> </b> 
         /// </para>
         ///  
         /// <para>
-        /// Sample values: <code>1463241</code> 
+        /// Sample values: <c>1463241</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

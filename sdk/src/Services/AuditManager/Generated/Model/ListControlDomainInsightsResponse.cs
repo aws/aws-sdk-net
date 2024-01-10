@@ -39,8 +39,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlDomainInsights. 
         /// <para>
-        /// The control domain analytics data that the <code>ListControlDomainInsights</code>
-        /// API returned. 
+        /// The control domain analytics data that the <c>ListControlDomainInsights</c> API returned.
+        /// 
         /// </para>
         /// </summary>
         public List<ControlDomainInsights> ControlDomainInsights

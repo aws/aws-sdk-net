@@ -78,8 +78,8 @@ namespace Amazon.LakeFormation.Model
         /// <summary>
         /// Gets and sets the property WorkUnitRanges. 
         /// <para>
-        /// A <code>WorkUnitRangeList</code> object that specifies the valid range of work unit
-        /// IDs for querying the execution service.
+        /// A <c>WorkUnitRangeList</c> object that specifies the valid range of work unit IDs
+        /// for querying the execution service.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

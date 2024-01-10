@@ -70,7 +70,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The encryption algorithm that KMS should use with the public key for an Amazon Web
         /// Services Nitro Enclave to encrypt plaintext values for the response. The only valid
-        /// value is <code>RSAES_OAEP_SHA_256</code>.
+        /// value is <c>RSAES_OAEP_SHA_256</c>.
         /// </para>
         /// </summary>
         public KeyEncryptionMechanism KeyEncryptionAlgorithm

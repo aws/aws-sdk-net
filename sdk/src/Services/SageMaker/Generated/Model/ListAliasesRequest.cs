@@ -100,7 +100,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the previous call to <code>ListAliases</code> didn't return the full set of aliases,
+        /// If the previous call to <c>ListAliases</c> didn't return the full set of aliases,
         /// the call returns a token for retrieving the next set of aliases.
         /// </para>
         /// </summary>

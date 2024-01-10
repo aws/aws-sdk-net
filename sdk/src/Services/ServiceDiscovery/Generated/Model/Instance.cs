@@ -30,7 +30,7 @@ namespace Amazon.ServiceDiscovery.Model
 {
     /// <summary>
     /// A complex type that contains information about an instance that Cloud Map creates
-    /// when you submit a <code>RegisterInstance</code> request.
+    /// when you submit a <c>RegisterInstance</c> request.
     /// </summary>
     public partial class Instance
     {
@@ -42,7 +42,7 @@ namespace Amazon.ServiceDiscovery.Model
         /// Gets and sets the property Attributes. 
         /// <para>
         /// A string map that contains the following information for the service that you specify
-        /// in <code>ServiceId</code>:
+        /// in <c>ServiceId</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -74,17 +74,17 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The configuration for the service that's specified by <code>ServiceId</code> must
-        /// include settings for an <code>A</code> record, an <code>AAAA</code> record, or both.
+        /// The configuration for the service that's specified by <c>ServiceId</c> must include
+        /// settings for an <c>A</c> record, an <c>AAAA</c> record, or both.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// In the service that's specified by <code>ServiceId</code>, the value of <code>RoutingPolicy</code>
-        /// must be <code>WEIGHTED</code>.
+        /// In the service that's specified by <c>ServiceId</c>, the value of <c>RoutingPolicy</c>
+        /// must be <c>WEIGHTED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If the service that's specified by <code>ServiceId</code> includes <code>HealthCheckConfig</code>
+        /// If the service that's specified by <c>ServiceId</c> includes <c>HealthCheckConfig</c>
         /// settings, Cloud Map creates the health check, but it won't associate the health check
         /// with the alias record.
         /// </para>
@@ -95,69 +95,69 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify a value for <code>AWS_ALIAS_DNS_NAME</code>, don't specify values for
-        /// any of the <code>AWS_INSTANCE</code> attributes.
+        /// If you specify a value for <c>AWS_ALIAS_DNS_NAME</c>, don't specify values for any
+        /// of the <c>AWS_INSTANCE</c> attributes.
         /// </para>
         ///  </li> </ul> </dd> <dt>AWS_EC2_INSTANCE_ID</dt> <dd> 
         /// <para>
-        ///  <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <code>AWS_INSTANCE_IPV4</code>
+        ///  <i>HTTP namespaces only.</i> The Amazon EC2 instance ID for the instance. The <c>AWS_INSTANCE_IPV4</c>
         /// attribute contains the primary private IPv4 address.
         /// </para>
         ///  </dd> <dt>AWS_INIT_HEALTH_STATUS</dt> <dd> 
         /// <para>
-        /// If the service configuration includes <code>HealthCheckCustomConfig</code>, you can
-        /// optionally use <code>AWS_INIT_HEALTH_STATUS</code> to specify the initial status of
-        /// the custom health check, <code>HEALTHY</code> or <code>UNHEALTHY</code>. If you don't
-        /// specify a value for <code>AWS_INIT_HEALTH_STATUS</code>, the initial status is <code>HEALTHY</code>.
+        /// If the service configuration includes <c>HealthCheckCustomConfig</c>, you can optionally
+        /// use <c>AWS_INIT_HEALTH_STATUS</c> to specify the initial status of the custom health
+        /// check, <c>HEALTHY</c> or <c>UNHEALTHY</c>. If you don't specify a value for <c>AWS_INIT_HEALTH_STATUS</c>,
+        /// the initial status is <c>HEALTHY</c>.
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_CNAME</dt> <dd> 
         /// <para>
-        /// If the service configuration includes a <code>CNAME</code> record, the domain name
-        /// that you want Route 53 to return in response to DNS queries (for example, <code>example.com</code>).
+        /// If the service configuration includes a <c>CNAME</c> record, the domain name that
+        /// you want Route 53 to return in response to DNS queries (for example, <c>example.com</c>).
         /// </para>
         ///  
         /// <para>
-        /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an <code>CNAME</code> record.
+        /// This value is required if the service specified by <c>ServiceId</c> includes settings
+        /// for an <c>CNAME</c> record.
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV4</dt> <dd> 
         /// <para>
-        /// If the service configuration includes an <code>A</code> record, the IPv4 address that
-        /// you want Route 53 to return in response to DNS queries (for example, <code>192.0.2.44</code>).
+        /// If the service configuration includes an <c>A</c> record, the IPv4 address that you
+        /// want Route 53 to return in response to DNS queries (for example, <c>192.0.2.44</c>).
         /// </para>
         ///  
         /// <para>
-        /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an <code>A</code> record. If the service includes settings for an <code>SRV</code>
-        /// record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>,
-        /// or both.
+        /// This value is required if the service specified by <c>ServiceId</c> includes settings
+        /// for an <c>A</c> record. If the service includes settings for an <c>SRV</c> record,
+        /// you must specify a value for <c>AWS_INSTANCE_IPV4</c>, <c>AWS_INSTANCE_IPV6</c>, or
+        /// both.
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_IPV6</dt> <dd> 
         /// <para>
-        /// If the service configuration includes an <code>AAAA</code> record, the IPv6 address
-        /// that you want Route 53 to return in response to DNS queries (for example, <code>2001:0db8:85a3:0000:0000:abcd:0001:2345</code>).
+        /// If the service configuration includes an <c>AAAA</c> record, the IPv6 address that
+        /// you want Route 53 to return in response to DNS queries (for example, <c>2001:0db8:85a3:0000:0000:abcd:0001:2345</c>).
         /// </para>
         ///  
         /// <para>
-        /// This value is required if the service specified by <code>ServiceId</code> includes
-        /// settings for an <code>AAAA</code> record. If the service includes settings for an
-        /// <code>SRV</code> record, you must specify a value for <code>AWS_INSTANCE_IPV4</code>,
-        /// <code>AWS_INSTANCE_IPV6</code>, or both.
+        /// This value is required if the service specified by <c>ServiceId</c> includes settings
+        /// for an <c>AAAA</c> record. If the service includes settings for an <c>SRV</c> record,
+        /// you must specify a value for <c>AWS_INSTANCE_IPV4</c>, <c>AWS_INSTANCE_IPV6</c>, or
+        /// both.
         /// </para>
         ///  </dd> <dt>AWS_INSTANCE_PORT</dt> <dd> 
         /// <para>
-        /// If the service includes an <code>SRV</code> record, the value that you want Route 53
-        /// to return for the port.
+        /// If the service includes an <c>SRV</c> record, the value that you want Route 53 to
+        /// return for the port.
         /// </para>
         ///  
         /// <para>
-        /// If the service includes <code>HealthCheckConfig</code>, the port on the endpoint that
-        /// you want Route 53 to send requests to. 
+        /// If the service includes <c>HealthCheckConfig</c>, the port on the endpoint that you
+        /// want Route 53 to send requests to. 
         /// </para>
         ///  
         /// <para>
-        /// This value is required if you specified settings for an <code>SRV</code> record or
-        /// a Route 53 health check when you created the service.
+        /// This value is required if you specified settings for an <c>SRV</c> record or a Route 53
+        /// health check when you created the service.
         /// </para>
         ///  </dd> </dl>
         /// </summary>
@@ -176,11 +176,11 @@ namespace Amazon.ServiceDiscovery.Model
         /// <summary>
         /// Gets and sets the property CreatorRequestId. 
         /// <para>
-        /// A unique string that identifies the request and that allows failed <code>RegisterInstance</code>
+        /// A unique string that identifies the request and that allows failed <c>RegisterInstance</c>
         /// requests to be retried without the risk of executing the operation twice. You must
-        /// use a unique <code>CreatorRequestId</code> string every time you submit a <code>RegisterInstance</code>
+        /// use a unique <c>CreatorRequestId</c> string every time you submit a <c>RegisterInstance</c>
         /// request if you're registering additional instances for the same namespace and service.
-        /// <code>CreatorRequestId</code> can be any unique string (for example, a date/time stamp).
+        /// <c>CreatorRequestId</c> can be any unique string (for example, a date/time stamp).
         /// </para>
         /// </summary>
         [AWSProperty(Max=64)]
@@ -203,10 +203,9 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the service that's specified by <code>ServiceId</code> includes settings for an
-        /// <code>SRV</code> record, the value of <code>InstanceId</code> is automatically included
-        /// as part of the value for the <code>SRV</code> record. For more information, see <a
-        /// href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
+        /// If the service that's specified by <c>ServiceId</c> includes settings for an <c>SRV</c>
+        /// record, the value of <c>InstanceId</c> is automatically included as part of the value
+        /// for the <c>SRV</c> record. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/api/API_DnsRecord.html#cloudmap-Type-DnsRecord-Type">DnsRecord
         /// &gt; Type</a>.
         /// </para>
         ///  </li> <li> 
@@ -220,14 +219,14 @@ namespace Amazon.ServiceDiscovery.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify an existing <code>InstanceId</code> and <code>ServiceId</code>, Cloud
-        /// Map updates the existing DNS records. If there's also an existing health check, Cloud
-        /// Map deletes the old health check and creates a new one. 
+        /// If you specify an existing <c>InstanceId</c> and <c>ServiceId</c>, Cloud Map updates
+        /// the existing DNS records. If there's also an existing health check, Cloud Map deletes
+        /// the old health check and creates a new one. 
         /// </para>
         ///  <note> 
         /// <para>
         /// The health check isn't deleted immediately, so it will still appear for a while if
-        /// you submit a <code>ListHealthChecks</code> request, for example.
+        /// you submit a <c>ListHealthChecks</c> request, for example.
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>

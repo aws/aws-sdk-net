@@ -31,8 +31,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
     /// <summary>
     /// Container for the parameters to the ListConfigurations operation.
     /// Retrieves a list of configuration items as specified by the value passed to the required
-    /// parameter <code>configurationType</code>. Optional filtering may be applied to refine
-    /// search results.
+    /// parameter <c>configurationType</c>. Optional filtering may be applied to refine search
+    /// results.
     /// </summary>
     public partial class ListConfigurationsRequest : AmazonApplicationDiscoveryServiceRequest
     {
@@ -69,7 +69,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{"key": "serverType", "value": "webServer"}</code> 
+        ///  <c>{"key": "serverType", "value": "webServer"}</c> 
         /// </para>
         ///  
         /// <para>
@@ -113,9 +113,9 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Token to retrieve the next set of results. For example, if a previous call to ListConfigurations
-        /// returned 100 items, but you set <code>ListConfigurationsRequest$maxResults</code>
-        /// to 10, you received a set of 10 results along with a token. Use that token in this
-        /// query to get the next set of 10.
+        /// returned 100 items, but you set <c>ListConfigurationsRequest$maxResults</c> to 10,
+        /// you received a set of 10 results along with a token. Use that token in this query
+        /// to get the next set of 10.
         /// </para>
         /// </summary>
         public string NextToken

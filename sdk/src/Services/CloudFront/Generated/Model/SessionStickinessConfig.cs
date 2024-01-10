@@ -47,7 +47,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// The value must be less than or equal to <code>MaximumTTL</code>.
+        /// The value must be less than or equal to <c>MaximumTTL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -71,7 +71,7 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  
         /// <para>
-        /// The value must be less than or equal to <code>IdleTTL</code>.
+        /// The value must be less than or equal to <c>IdleTTL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

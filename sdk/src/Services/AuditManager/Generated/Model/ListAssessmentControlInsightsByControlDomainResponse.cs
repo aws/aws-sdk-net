@@ -39,7 +39,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property ControlInsightsByAssessment. 
         /// <para>
-        /// The assessment control analytics data that the <code>ListAssessmentControlInsightsByControlDomain</code>
+        /// The assessment control analytics data that the <c>ListAssessmentControlInsightsByControlDomain</c>
         /// API returned. 
         /// </para>
         /// </summary>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Represents the output of a <code>DeleteTable</code> operation.
+    /// Represents the output of a <c>DeleteTable</c> operation.
     /// </summary>
     public partial class DeleteTableResponse : AmazonWebServiceResponse
     {

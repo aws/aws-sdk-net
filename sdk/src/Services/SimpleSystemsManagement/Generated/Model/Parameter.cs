@@ -64,8 +64,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
-        /// The data type of the parameter, such as <code>text</code> or <code>aws:ec2:image</code>.
-        /// The default is <code>text</code>.
+        /// The data type of the parameter, such as <c>text</c> or <c>aws:ec2:image</c>. The default
+        /// is <c>text</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -150,7 +150,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property SourceResult. 
         /// <para>
         /// Applies to parameters that reference information in other Amazon Web Services services.
-        /// <code>SourceResult</code> is the raw result or response from the source.
+        /// <c>SourceResult</c> is the raw result or response from the source.
         /// </para>
         /// </summary>
         public string SourceResult
@@ -168,13 +168,13 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of parameter. Valid values include the following: <code>String</code>, <code>StringList</code>,
-        /// and <code>SecureString</code>.
+        /// The type of parameter. Valid values include the following: <c>String</c>, <c>StringList</c>,
+        /// and <c>SecureString</c>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// If type is <code>StringList</code>, the system returns a comma-separated string with
-        /// no spaces between commas in the <code>Value</code> field.
+        /// If type is <c>StringList</c>, the system returns a comma-separated string with no
+        /// spaces between commas in the <c>Value</c> field.
         /// </para>
         ///  </note>
         /// </summary>
@@ -197,8 +197,8 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If type is <code>StringList</code>, the system returns a comma-separated string with
-        /// no spaces between commas in the <code>Value</code> field.
+        /// If type is <c>StringList</c>, the system returns a comma-separated string with no
+        /// spaces between commas in the <c>Value</c> field.
         /// </para>
         ///  </note>
         /// </summary>

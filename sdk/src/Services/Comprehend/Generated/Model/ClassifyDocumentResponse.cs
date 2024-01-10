@@ -71,7 +71,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property DocumentMetadata. 
         /// <para>
         /// Extraction information about the document. This field is present in the response only
-        /// if your request includes the <code>Byte</code> parameter. 
+        /// if your request includes the <c>Byte</c> parameter. 
         /// </para>
         /// </summary>
         public DocumentMetadata DocumentMetadata
@@ -90,7 +90,7 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property DocumentType. 
         /// <para>
         /// The document type for each page in the input document. This field is present in the
-        /// response only if your request includes the <code>Byte</code> parameter. 
+        /// response only if your request includes the <c>Byte</c> parameter. 
         /// </para>
         /// </summary>
         public List<DocumentTypeListItem> DocumentType

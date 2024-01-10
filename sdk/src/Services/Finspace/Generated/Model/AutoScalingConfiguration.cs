@@ -44,7 +44,7 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property AutoScalingMetric. 
         /// <para>
-        ///  The metric your cluster will track in order to scale in and out. For example, <code>CPU_UTILIZATION_PERCENTAGE</code>
+        ///  The metric your cluster will track in order to scale in and out. For example, <c>CPU_UTILIZATION_PERCENTAGE</c>
         /// is the average CPU usage across all the nodes in a cluster.
         /// </para>
         /// </summary>
@@ -82,9 +82,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property MetricTarget. 
         /// <para>
-        /// The desired value of the chosen <code>autoScalingMetric</code>. When the metric drops
-        /// below this value, the cluster will scale in. When the metric goes above this value,
-        /// the cluster will scale out. You can set the target value between 1 and 100 percent.
+        /// The desired value of the chosen <c>autoScalingMetric</c>. When the metric drops below
+        /// this value, the cluster will scale in. When the metric goes above this value, the
+        /// cluster will scale out. You can set the target value between 1 and 100 percent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -104,8 +104,8 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property MinNodeCount. 
         /// <para>
         /// The lowest number of nodes to scale. This value must be at least 1 and less than the
-        /// <code>maxNodeCount</code>. If the nodes in a cluster belong to multiple availability
-        /// zones, then <code>minNodeCount</code> must be at least 3.
+        /// <c>maxNodeCount</c>. If the nodes in a cluster belong to multiple availability zones,
+        /// then <c>minNodeCount</c> must be at least 3.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

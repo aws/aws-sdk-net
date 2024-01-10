@@ -59,7 +59,7 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Options. 
         /// <para>
-        /// A list of <code>FieldOption</code> objects.
+        /// A list of <c>FieldOption</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// Metadata assigned to an allocation. Each tag is made up of a <code>key</code> and
-    /// a <code>value</code>.
+    /// Metadata assigned to an allocation. Each tag is made up of a <c>key</c> and a <c>value</c>.
     /// </summary>
     public partial class Tag
     {
@@ -40,8 +39,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// One part of a key-value pair that makes up a <code>tag</code>. A <code>key</code>
-        /// is a label that acts like a category for the specific tag values.
+        /// One part of a key-value pair that makes up a <c>tag</c>. A <c>key</c> is a label that
+        /// acts like a category for the specific tag values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -60,8 +59,8 @@ namespace Amazon.AWSMarketplaceMetering.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// One part of a key-value pair that makes up a <code>tag</code>. A <code>value</code>
-        /// acts as a descriptor within a tag category (key). The value can be empty or null.
+        /// One part of a key-value pair that makes up a <c>tag</c>. A <c>value</c> acts as a
+        /// descriptor within a tag category (key). The value can be empty or null.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -101,7 +101,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property SourceApiAssociationConfig. 
         /// <para>
-        /// The <code>SourceApiAssociationConfig</code> object data.
+        /// The <c>SourceApiAssociationConfig</c> object data.
         /// </para>
         /// </summary>
         public SourceApiAssociationConfig SourceApiAssociationConfig

@@ -61,12 +61,12 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property IsAlias. 
         /// <para>
-        /// When <code>true</code>, specifies whether the domain entry is an alias used by the
-        /// Lightsail load balancer, Lightsail container service, Lightsail content delivery network
-        /// (CDN) distribution, or another Amazon Web Services resource. You can include an alias
-        /// (A type) record in your request, which points to the DNS name of a load balancer,
-        /// container service, CDN distribution, or other Amazon Web Services resource and routes
-        /// traffic to that resource.
+        /// When <c>true</c>, specifies whether the domain entry is an alias used by the Lightsail
+        /// load balancer, Lightsail container service, Lightsail content delivery network (CDN)
+        /// distribution, or another Amazon Web Services resource. You can include an alias (A
+        /// type) record in your request, which points to the DNS name of a load balancer, container
+        /// service, CDN distribution, or other Amazon Web Services resource and routes traffic
+        /// to that resource.
         /// </para>
         /// </summary>
         public bool IsAlias
@@ -127,15 +127,15 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The target IP address (<code>192.0.2.0</code>), or AWS name server (<code>ns-111.awsdns-22.com.</code>).
+        /// The target IP address (<c>192.0.2.0</c>), or AWS name server (<c>ns-111.awsdns-22.com.</c>).
         /// </para>
         ///  
         /// <para>
-        /// For Lightsail load balancers, the value looks like <code>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</code>.
-        /// For Lightsail distributions, the value looks like <code>exampled1182ne.cloudfront.net</code>.
-        /// For Lightsail container services, the value looks like <code>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</code>.
-        /// Be sure to also set <code>isAlias</code> to <code>true</code> when setting up an A
-        /// record for a Lightsail load balancer, distribution, or container service.
+        /// For Lightsail load balancers, the value looks like <c>ab1234c56789c6b86aba6fb203d443bc-123456789.us-east-2.elb.amazonaws.com</c>.
+        /// For Lightsail distributions, the value looks like <c>exampled1182ne.cloudfront.net</c>.
+        /// For Lightsail container services, the value looks like <c>container-service-1.example23scljs.us-west-2.cs.amazonlightsail.com</c>.
+        /// Be sure to also set <c>isAlias</c> to <c>true</c> when setting up an A record for
+        /// a Lightsail load balancer, distribution, or container service.
         /// </para>
         /// </summary>
         public string Target
@@ -163,35 +163,35 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>A</code> 
+        ///  <c>A</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AAAA</code> 
+        ///  <c>AAAA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CNAME</code> 
+        ///  <c>CNAME</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MX</code> 
+        ///  <c>MX</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NS</code> 
+        ///  <c>NS</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SOA</code> 
+        ///  <c>SOA</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SRV</code> 
+        ///  <c>SRV</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TXT</code> 
+        ///  <c>TXT</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

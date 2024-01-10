@@ -30,9 +30,8 @@ namespace Amazon.WAFV2.Model
 {
     /// <summary>
     /// Configures inspection of the response body. WAF can inspect the first 65,536 bytes
-    /// (64 KB) of the response body. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
-    /// 
+    /// (64 KB) of the response body. This is part of the <c>ResponseInspection</c> configuration
+    /// for <c>AWSManagedRulesATPRuleSet</c> and <c>AWSManagedRulesACFPRuleSet</c>. 
     /// 
     ///  <note> 
     /// <para>
@@ -55,7 +54,7 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"FailureStrings": [ "Request failed" ]</code> 
+        /// JSON example: <c>"FailureStrings": [ "Request failed" ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -81,8 +80,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings":
-        /// [ "Account creation successful", "Welcome to our site!" ]</code> 
+        /// JSON examples: <c>"SuccessStrings": [ "Login successful" ]</c> and <c>"SuccessStrings":
+        /// [ "Account creation successful", "Welcome to our site!" ]</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

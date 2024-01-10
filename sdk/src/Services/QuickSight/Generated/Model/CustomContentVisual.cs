@@ -68,7 +68,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ChartConfiguration. 
         /// <para>
-        /// The configuration of a <code>CustomContentVisual</code>.
+        /// The configuration of a <c>CustomContentVisual</c>.
         /// </para>
         /// </summary>
         public CustomContentConfiguration ChartConfiguration

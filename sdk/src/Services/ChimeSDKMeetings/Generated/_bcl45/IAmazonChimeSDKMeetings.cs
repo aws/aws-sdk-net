@@ -136,14 +136,14 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
+        /// Updates <c>AttendeeCapabilities</c> except the capabilities listed in an <c>ExcludedAttendeeIds</c>
         /// table.
         /// 
         ///  <note> 
         /// <para>
         /// You use the capabilities with a set of values that control what the capabilities can
-        /// do, such as <code>SendReceive</code> data. For more information about those values,
-        /// see .
+        /// do, such as <c>SendReceive</c> data. For more information about those values, see
+        /// .
         /// </para>
         ///  </note> 
         /// <para>
@@ -151,40 +151,36 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Video:MaxResolution:None</c> when you create a meeting,
+        /// all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c> for
+        /// <c>AttendeeCapabilities:Video</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Content:MaxResolution:None</c> when you create a
+        /// meeting, all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c>
+        /// for <c>AttendeeCapabilities:Content</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
-        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
-        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
-        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
-        /// your <code>video</code> capability to receive and you set your <code>content</code>
-        /// capability to not receive.
+        /// You can't set <c>content</c> capabilities to <c>SendReceive</c> or <c>Receive</c>
+        /// unless you also set <c>video</c> capabilities to <c>SendReceive</c> or <c>Receive</c>.
+        /// If you don't set the <c>video</c> capability to receive, the response will contain
+        /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
+        /// to receive and you set your <c>content</c> capability to not receive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
-        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
-        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
+        /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
+        /// flow from the attendee to the other meeting participants.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
-        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-        /// the attendee turned on their video or content streams, remote attendees can receive
-        /// those streams, but only after media renegotiation between the client and the Amazon
-        /// Chime back-end server.
+        /// When you change a <c>video</c> or <c>content</c> capability from <c>None</c> or <c>Receive</c>
+        /// to <c>Send</c> or <c>SendReceive</c> , and if the attendee turned on their video or
+        /// content streams, remote attendees can receive those streams, but only after media
+        /// renegotiation between the client and the Amazon Chime back-end server.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -221,14 +217,14 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Updates <code>AttendeeCapabilities</code> except the capabilities listed in an <code>ExcludedAttendeeIds</code>
+        /// Updates <c>AttendeeCapabilities</c> except the capabilities listed in an <c>ExcludedAttendeeIds</c>
         /// table.
         /// 
         ///  <note> 
         /// <para>
         /// You use the capabilities with a set of values that control what the capabilities can
-        /// do, such as <code>SendReceive</code> data. For more information about those values,
-        /// see .
+        /// do, such as <c>SendReceive</c> data. For more information about those values, see
+        /// .
         /// </para>
         ///  </note> 
         /// <para>
@@ -236,40 +232,36 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Video:MaxResolution:None</c> when you create a meeting,
+        /// all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c> for
+        /// <c>AttendeeCapabilities:Video</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Content:MaxResolution:None</c> when you create a
+        /// meeting, all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c>
+        /// for <c>AttendeeCapabilities:Content</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
-        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
-        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
-        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
-        /// your <code>video</code> capability to receive and you set your <code>content</code>
-        /// capability to not receive.
+        /// You can't set <c>content</c> capabilities to <c>SendReceive</c> or <c>Receive</c>
+        /// unless you also set <c>video</c> capabilities to <c>SendReceive</c> or <c>Receive</c>.
+        /// If you don't set the <c>video</c> capability to receive, the response will contain
+        /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
+        /// to receive and you set your <c>content</c> capability to not receive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
-        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
-        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
+        /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
+        /// flow from the attendee to the other meeting participants.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
-        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-        /// the attendee turned on their video or content streams, remote attendees can receive
-        /// those streams, but only after media renegotiation between the client and the Amazon
-        /// Chime back-end server.
+        /// When you change a <c>video</c> or <c>content</c> capability from <c>None</c> or <c>Receive</c>
+        /// to <c>Send</c> or <c>SendReceive</c> , and if the attendee turned on their video or
+        /// content streams, remote attendees can receive those streams, but only after media
+        /// renegotiation between the client and the Amazon Chime back-end server.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -567,8 +559,8 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
-        /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK
-        /// meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// <c>JoinToken</c>. Attendees are automatically deleted when a Amazon Chime SDK meeting
+        /// is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttendee service method.</param>
@@ -602,8 +594,8 @@ namespace Amazon.ChimeSDKMeetings
 
         /// <summary>
         /// Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their
-        /// <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK
-        /// meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
+        /// <c>JoinToken</c>. Attendees are automatically deleted when a Amazon Chime SDK meeting
+        /// is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
         /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAttendee service method.</param>
@@ -1016,17 +1008,17 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Starts transcription for the specified <code>meetingId</code>. For more information,
-        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Starts transcription for the specified <c>meetingId</c>. For more information, refer
+        /// to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
         /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
         /// Guide</i>.
         /// 
         ///  
         /// <para>
-        /// If you specify an invalid configuration, a <code>TranscriptFailed</code> event will
-        /// be sent with the contents of the <code>BadRequestException</code> generated by Amazon
-        /// Transcribe. For more information on each parameter and which combinations are valid,
-        /// refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
+        /// If you specify an invalid configuration, a <c>TranscriptFailed</c> event will be sent
+        /// with the contents of the <c>BadRequestException</c> generated by Amazon Transcribe.
+        /// For more information on each parameter and which combinations are valid, refer to
+        /// the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
         /// API in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         ///  <note> 
@@ -1081,17 +1073,17 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Starts transcription for the specified <code>meetingId</code>. For more information,
-        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Starts transcription for the specified <c>meetingId</c>. For more information, refer
+        /// to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
         /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
         /// Guide</i>.
         /// 
         ///  
         /// <para>
-        /// If you specify an invalid configuration, a <code>TranscriptFailed</code> event will
-        /// be sent with the contents of the <code>BadRequestException</code> generated by Amazon
-        /// Transcribe. For more information on each parameter and which combinations are valid,
-        /// refer to the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
+        /// If you specify an invalid configuration, a <c>TranscriptFailed</c> event will be sent
+        /// with the contents of the <c>BadRequestException</c> generated by Amazon Transcribe.
+        /// For more information on each parameter and which combinations are valid, refer to
+        /// the <a href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
         /// API in the <i>Amazon Transcribe Developer Guide</i>.
         /// </para>
         ///  <note> 
@@ -1152,8 +1144,8 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Stops transcription for the specified <code>meetingId</code>. For more information,
-        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Stops transcription for the specified <c>meetingId</c>. For more information, refer
+        /// to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
         /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
         /// Guide</i>.
         /// 
@@ -1206,8 +1198,8 @@ namespace Amazon.ChimeSDKMeetings
 
 
         /// <summary>
-        /// Stops transcription for the specified <code>meetingId</code>. For more information,
-        /// refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+        /// Stops transcription for the specified <c>meetingId</c>. For more information, refer
+        /// to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
         /// Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer
         /// Guide</i>.
         /// 
@@ -1370,18 +1362,18 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  
         /// <para>
-        /// In addition to the <code>tag:UntagResources</code> permission required by this operation,
+        /// In addition to the <c>tag:UntagResources</c> permission required by this operation,
         /// you must also have the remove tags permission defined by the service that created
         /// the resource. For example, to remove the tags from an Amazon EC2 instance using the
-        /// <code>UntagResources</code> operation, you must have both of the following permissions:
+        /// <c>UntagResources</c> operation, you must have both of the following permissions:
         /// </para>
         ///  
         /// <para>
-        ///  <code>tag:UntagResource</code> 
+        ///  <c>tag:UntagResource</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>ChimeSDKMeetings:DeleteTags</code> 
+        ///  <c>ChimeSDKMeetings:DeleteTags</c> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1439,18 +1431,18 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  
         /// <para>
-        /// In addition to the <code>tag:UntagResources</code> permission required by this operation,
+        /// In addition to the <c>tag:UntagResources</c> permission required by this operation,
         /// you must also have the remove tags permission defined by the service that created
         /// the resource. For example, to remove the tags from an Amazon EC2 instance using the
-        /// <code>UntagResources</code> operation, you must have both of the following permissions:
+        /// <c>UntagResources</c> operation, you must have both of the following permissions:
         /// </para>
         ///  
         /// <para>
-        ///  <code>tag:UntagResource</code> 
+        ///  <c>tag:UntagResource</c> 
         /// </para>
         ///  
         /// <para>
-        ///  <code>ChimeSDKMeetings:DeleteTags</code> 
+        ///  <c>ChimeSDKMeetings:DeleteTags</c> 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -1497,8 +1489,8 @@ namespace Amazon.ChimeSDKMeetings
         ///  <note> 
         /// <para>
         /// You use the capabilities with a set of values that control what the capabilities can
-        /// do, such as <code>SendReceive</code> data. For more information about those values,
-        /// see .
+        /// do, such as <c>SendReceive</c> data. For more information about those values, see
+        /// .
         /// </para>
         ///  </note> 
         /// <para>
@@ -1506,40 +1498,36 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Video:MaxResolution:None</c> when you create a meeting,
+        /// all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c> for
+        /// <c>AttendeeCapabilities:Video</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Content:MaxResolution:None</c> when you create a
+        /// meeting, all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c>
+        /// for <c>AttendeeCapabilities:Content</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
-        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
-        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
-        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
-        /// your <code>video</code> capability to receive and you set your <code>content</code>
-        /// capability to not receive.
+        /// You can't set <c>content</c> capabilities to <c>SendReceive</c> or <c>Receive</c>
+        /// unless you also set <c>video</c> capabilities to <c>SendReceive</c> or <c>Receive</c>.
+        /// If you don't set the <c>video</c> capability to receive, the response will contain
+        /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
+        /// to receive and you set your <c>content</c> capability to not receive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
-        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
-        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
+        /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
+        /// flow from the attendee to the other meeting participants.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
-        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-        /// the attendee turned on their video or content streams, remote attendees can receive
-        /// those streams, but only after media renegotiation between the client and the Amazon
-        /// Chime back-end server.
+        /// When you change a <c>video</c> or <c>content</c> capability from <c>None</c> or <c>Receive</c>
+        /// to <c>Send</c> or <c>SendReceive</c> , and if the attendee turned on their video or
+        /// content streams, remote attendees can receive those streams, but only after media
+        /// renegotiation between the client and the Amazon Chime back-end server.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -1581,8 +1569,8 @@ namespace Amazon.ChimeSDKMeetings
         ///  <note> 
         /// <para>
         /// You use the capabilities with a set of values that control what the capabilities can
-        /// do, such as <code>SendReceive</code> data. For more information about those values,
-        /// see .
+        /// do, such as <c>SendReceive</c> data. For more information about those values, see
+        /// .
         /// </para>
         ///  </note> 
         /// <para>
@@ -1590,40 +1578,36 @@ namespace Amazon.ChimeSDKMeetings
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Video:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Video</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Video:MaxResolution:None</c> when you create a meeting,
+        /// all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c> for
+        /// <c>AttendeeCapabilities:Video</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you specify <code>MeetingFeatures:Content:MaxResolution:None</code> when you create
-        /// a meeting, all API requests that include <code>SendReceive</code>, <code>Send</code>,
-        /// or <code>Receive</code> for <code>AttendeeCapabilities:Content</code> will be rejected
-        /// with <code>ValidationError 400</code>.
+        /// If you specify <c>MeetingFeatures:Content:MaxResolution:None</c> when you create a
+        /// meeting, all API requests that include <c>SendReceive</c>, <c>Send</c>, or <c>Receive</c>
+        /// for <c>AttendeeCapabilities:Content</c> will be rejected with <c>ValidationError 400</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// You can't set <code>content</code> capabilities to <code>SendReceive</code> or <code>Receive</code>
-        /// unless you also set <code>video</code> capabilities to <code>SendReceive</code> or
-        /// <code>Receive</code>. If you don't set the <code>video</code> capability to receive,
-        /// the response will contain an HTTP 400 Bad Request status code. However, you can set
-        /// your <code>video</code> capability to receive and you set your <code>content</code>
-        /// capability to not receive.
+        /// You can't set <c>content</c> capabilities to <c>SendReceive</c> or <c>Receive</c>
+        /// unless you also set <c>video</c> capabilities to <c>SendReceive</c> or <c>Receive</c>.
+        /// If you don't set the <c>video</c> capability to receive, the response will contain
+        /// an HTTP 400 Bad Request status code. However, you can set your <c>video</c> capability
+        /// to receive and you set your <c>content</c> capability to not receive.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change an <code>audio</code> capability from <code>None</code> or <code>Receive</code>
-        /// to <code>Send</code> or <code>SendReceive</code> , and if the attendee left their
-        /// microphone unmuted, audio will flow from the attendee to the other meeting participants.
+        /// When you change an <c>audio</c> capability from <c>None</c> or <c>Receive</c> to <c>Send</c>
+        /// or <c>SendReceive</c> , and if the attendee left their microphone unmuted, audio will
+        /// flow from the attendee to the other meeting participants.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
-        /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-        /// the attendee turned on their video or content streams, remote attendees can receive
-        /// those streams, but only after media renegotiation between the client and the Amazon
-        /// Chime back-end server.
+        /// When you change a <c>video</c> or <c>content</c> capability from <c>None</c> or <c>Receive</c>
+        /// to <c>Send</c> or <c>SendReceive</c> , and if the attendee turned on their video or
+        /// content streams, remote attendees can receive those streams, but only after media
+        /// renegotiation between the client and the Amazon Chime back-end server.
         /// </para>
         ///  </li> </ul>
         /// </summary>

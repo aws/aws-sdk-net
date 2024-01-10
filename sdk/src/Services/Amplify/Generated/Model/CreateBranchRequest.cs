@@ -76,8 +76,8 @@ namespace Amazon.Amplify.Model
         /// <summary>
         /// Gets and sets the property Backend. 
         /// <para>
-        /// The backend for a <code>Branch</code> of an Amplify app. Use for a backend created
-        /// from an CloudFormation stack.
+        /// The backend for a <c>Branch</c> of an Amplify app. Use for a backend created from
+        /// an CloudFormation stack.
         /// </para>
         /// </summary>
         public Backend Backend
@@ -116,7 +116,7 @@ namespace Amazon.Amplify.Model
         /// Gets and sets the property BasicAuthCredentials. 
         /// <para>
         ///  The basic authorization credentials for the branch. You must base64-encode the authorization
-        /// credentials and provide them in the format <code>user:password</code>.
+        /// credentials and provide them in the format <c>user:password</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=2000)]

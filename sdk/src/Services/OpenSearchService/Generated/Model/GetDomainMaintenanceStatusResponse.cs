@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// The result of a <code>GetDomainMaintenanceStatus</code> request that information about
-    /// the requested action.
+    /// The result of a <c>GetDomainMaintenanceStatus</c> request that information about the
+    /// requested action.
     /// </summary>
     public partial class GetDomainMaintenanceStatusResponse : AmazonWebServiceResponse
     {

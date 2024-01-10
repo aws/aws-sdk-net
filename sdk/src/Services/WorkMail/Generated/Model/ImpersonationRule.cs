@@ -62,8 +62,8 @@ namespace Amazon.WorkMail.Model
         /// <summary>
         /// Gets and sets the property Effect. 
         /// <para>
-        /// The effect of the rule when it matches the input. Allowed effect values are <code>ALLOW</code>
-        /// or <code>DENY</code>.
+        /// The effect of the rule when it matches the input. Allowed effect values are <c>ALLOW</c>
+        /// or <c>DENY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

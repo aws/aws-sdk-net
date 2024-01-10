@@ -34,15 +34,14 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// If the distribution doesn't use <code>Aliases</code> (also known as alternate domain
-    /// names or CNAMEs)—that is, if the distribution uses the CloudFront domain name such
-    /// as <code>d111111abcdef8.cloudfront.net</code>—set <code>CloudFrontDefaultCertificate</code>
-    /// to <code>true</code> and leave all other fields empty.
+    /// If the distribution doesn't use <c>Aliases</c> (also known as alternate domain names
+    /// or CNAMEs)—that is, if the distribution uses the CloudFront domain name such as <c>d111111abcdef8.cloudfront.net</c>—set
+    /// <c>CloudFrontDefaultCertificate</c> to <c>true</c> and leave all other fields empty.
     /// </para>
     ///  
     /// <para>
-    /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs),
-    /// use the fields in this type to specify the following settings:
+    /// If the distribution uses <c>Aliases</c> (alternate domain names or CNAMEs), use the
+    /// fields in this type to specify the following settings:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -52,20 +51,19 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code>
-    /// to <code>sni-only</code>. This is recommended. Most browsers and clients support SNI.
-    /// 
+    /// To accept HTTPS connections from only viewers that support SNI, set <c>SSLSupportMethod</c>
+    /// to <c>sni-only</c>. This is recommended. Most browsers and clients support SNI. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To accept HTTPS connections from all viewers, including those that don't support SNI,
-    /// set <code>SSLSupportMethod</code> to <code>vip</code>. This is not recommended, and
-    /// results in additional monthly charges from CloudFront.
+    /// set <c>SSLSupportMethod</c> to <c>vip</c>. This is not recommended, and results in
+    /// additional monthly charges from CloudFront.
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
     /// The minimum SSL/TLS protocol version that the distribution can use to communicate
-    /// with viewers. To specify a minimum version, choose a value for <code>MinimumProtocolVersion</code>.
+    /// with viewers. To specify a minimum version, choose a value for <c>MinimumProtocolVersion</c>.
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValues-security-policy">Security
     /// Policy</a> in the <i>Amazon CloudFront Developer Guide</i>.
     /// </para>
@@ -78,18 +76,18 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ACMCertificateArn</code> 
+    ///  <c>ACMCertificateArn</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>IAMCertificateId</code> 
+    ///  <c>IAMCertificateId</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// All distributions support HTTPS connections from viewers. To require viewers to use
-    /// HTTPS only, or to redirect them from HTTP to HTTPS, use <code>ViewerProtocolPolicy</code>
-    /// in the <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>. To specify
-    /// how CloudFront should use SSL/TLS to communicate with your custom origin, use <code>CustomOriginConfig</code>.
+    /// HTTPS only, or to redirect them from HTTP to HTTPS, use <c>ViewerProtocolPolicy</c>
+    /// in the <c>CacheBehavior</c> or <c>DefaultCacheBehavior</c>. To specify how CloudFront
+    /// should use SSL/TLS to communicate with your custom origin, use <c>CustomOriginConfig</c>.
     /// </para>
     ///  
     /// <para>
@@ -111,15 +109,15 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property ACMCertificateArn. 
         /// <para>
-        /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
+        /// If the distribution uses <c>Aliases</c> (alternate domain names or CNAMEs) and the
+        /// SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-overview.html">Certificate
         /// Manager (ACM)</a>, provide the Amazon Resource Name (ARN) of the ACM certificate.
-        /// CloudFront only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
+        /// CloudFront only supports ACM certificates in the US East (N. Virginia) Region (<c>us-east-1</c>).
         /// </para>
         ///  
         /// <para>
-        /// If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code>
-        /// and <code>SSLSupportMethod</code>.
+        /// If you specify an ACM certificate ARN, you must also specify values for <c>MinimumProtocolVersion</c>
+        /// and <c>SSLSupportMethod</c>.
         /// </para>
         /// </summary>
         public string ACMCertificateArn
@@ -141,15 +139,15 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACMCertificateArn</code> 
+        ///  <c>ACMCertificateArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IAMCertificateId</code> 
+        ///  <c>IAMCertificateId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CloudFrontDefaultCertificate</code> 
+        ///  <c>CloudFrontDefaultCertificate</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -173,15 +171,15 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACMCertificateArn</code> 
+        ///  <c>ACMCertificateArn</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IAMCertificateId</code> 
+        ///  <c>IAMCertificateId</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CloudFrontDefaultCertificate</code> 
+        ///  <c>CloudFrontDefaultCertificate</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -201,26 +199,26 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property CloudFrontDefaultCertificate. 
         /// <para>
-        /// If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
-        /// set this field to <code>true</code>.
+        /// If the distribution uses the CloudFront domain name such as <c>d111111abcdef8.cloudfront.net</c>,
+        /// set this field to <c>true</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs),
-        /// set this field to <code>false</code> and specify values for the following fields:
+        /// If the distribution uses <c>Aliases</c> (alternate domain names or CNAMEs), set this
+        /// field to <c>false</c> and specify values for the following fields:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACMCertificateArn</code> or <code>IAMCertificateId</code> (specify a value
-        /// for one, not both)
+        ///  <c>ACMCertificateArn</c> or <c>IAMCertificateId</c> (specify a value for one, not
+        /// both)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MinimumProtocolVersion</code> 
+        ///  <c>MinimumProtocolVersion</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SSLSupportMethod</code> 
+        ///  <c>SSLSupportMethod</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -239,14 +237,14 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IAMCertificateId. 
         /// <para>
-        /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs) and
-        /// the SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
+        /// If the distribution uses <c>Aliases</c> (alternate domain names or CNAMEs) and the
+        /// SSL/TLS certificate is stored in <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">Identity
         /// and Access Management (IAM)</a>, provide the ID of the IAM certificate.
         /// </para>
         ///  
         /// <para>
-        /// If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
-        /// and <code>SSLSupportMethod</code>. 
+        /// If you specify an IAM certificate ID, you must also specify values for <c>MinimumProtocolVersion</c>
+        /// and <c>SSLSupportMethod</c>. 
         /// </para>
         /// </summary>
         public string IAMCertificateId
@@ -264,9 +262,9 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property MinimumProtocolVersion. 
         /// <para>
-        /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs),
-        /// specify the security policy that you want CloudFront to use for HTTPS connections
-        /// with viewers. The security policy determines two settings:
+        /// If the distribution uses <c>Aliases</c> (alternate domain names or CNAMEs), specify
+        /// the security policy that you want CloudFront to use for HTTPS connections with viewers.
+        /// The security policy determines two settings:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -289,15 +287,14 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// When you're using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>),
-        /// you must specify <code>TLSv1</code> or higher.
+        /// When you're using SNI only (you set <c>SSLSupportMethod</c> to <c>sni-only</c>), you
+        /// must specify <c>TLSv1</c> or higher.
         /// </para>
         ///  
         /// <para>
-        /// If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>
-        /// (you set <code>CloudFrontDefaultCertificate</code> to <code>true</code>), CloudFront
-        /// automatically sets the security policy to <code>TLSv1</code> regardless of the value
-        /// that you set here.
+        /// If the distribution uses the CloudFront domain name such as <c>d111111abcdef8.cloudfront.net</c>
+        /// (you set <c>CloudFrontDefaultCertificate</c> to <c>true</c>), CloudFront automatically
+        /// sets the security policy to <c>TLSv1</c> regardless of the value that you set here.
         /// </para>
         /// </summary>
         public MinimumProtocolVersion MinimumProtocolVersion
@@ -315,32 +312,31 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property SSLSupportMethod. 
         /// <para>
-        /// If the distribution uses <code>Aliases</code> (alternate domain names or CNAMEs),
-        /// specify which viewers the distribution accepts HTTPS connections from.
+        /// If the distribution uses <c>Aliases</c> (alternate domain names or CNAMEs), specify
+        /// which viewers the distribution accepts HTTPS connections from.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers
-        /// that support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server
-        /// name indication (SNI)</a>. This is recommended. Most browsers and clients support
-        /// SNI.
+        ///  <c>sni-only</c> – The distribution accepts HTTPS connections from only viewers that
+        /// support <a href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name
+        /// indication (SNI)</a>. This is recommended. Most browsers and clients support SNI.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vip</code> – The distribution accepts HTTPS connections from all viewers including
+        ///  <c>vip</c> – The distribution accepts HTTPS connections from all viewers including
         /// those that don't support SNI. This is not recommended, and results in additional monthly
         /// charges from CloudFront.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>static-ip</code> - Do not specify this value unless your distribution has been
-        /// enabled for this feature by the CloudFront team. If you have a use case that requires
-        /// static IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
+        ///  <c>static-ip</c> - Do not specify this value unless your distribution has been enabled
+        /// for this feature by the CloudFront team. If you have a use case that requires static
+        /// IP addresses for a distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">Amazon
         /// Web Services Support Center</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If the distribution uses the CloudFront domain name such as <code>d111111abcdef8.cloudfront.net</code>,
+        /// If the distribution uses the CloudFront domain name such as <c>d111111abcdef8.cloudfront.net</c>,
         /// don't set a value for this field.
         /// </para>
         /// </summary>

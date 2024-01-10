@@ -30,7 +30,7 @@ namespace Amazon.AccessAnalyzer.Model
 {
     /// <summary>
     /// This configuration sets the network origin for the Amazon S3 access point or multi-region
-    /// access point to <code>Internet</code>.
+    /// access point to <c>Internet</c>.
     /// </summary>
     public partial class InternetConfiguration
     {

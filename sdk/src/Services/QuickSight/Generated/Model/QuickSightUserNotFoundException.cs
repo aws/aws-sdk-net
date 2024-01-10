@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// The user with the provided name isn't found. This error can happen in any operation
-    /// that requires finding a user based on a provided user name, such as <code>DeleteUser</code>,
-    /// <code>DescribeUser</code>, and so on.
+    /// that requires finding a user based on a provided user name, such as <c>DeleteUser</c>,
+    /// <c>DescribeUser</c>, and so on.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

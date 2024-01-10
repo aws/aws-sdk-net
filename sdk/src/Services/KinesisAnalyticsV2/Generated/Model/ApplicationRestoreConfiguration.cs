@@ -60,8 +60,8 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property SnapshotName. 
         /// <para>
         /// The identifier of an existing snapshot of application state to use to restart an application.
-        /// The application uses this value if <code>RESTORE_FROM_CUSTOM_SNAPSHOT</code> is specified
-        /// for the <code>ApplicationRestoreType</code>.
+        /// The application uses this value if <c>RESTORE_FROM_CUSTOM_SNAPSHOT</c> is specified
+        /// for the <c>ApplicationRestoreType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

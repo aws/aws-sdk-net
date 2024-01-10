@@ -57,8 +57,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property HsmArn. 
         /// <para>
-        /// The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code>
-        /// parameter must be specified.
+        /// The ARN of the HSM. Either the <c>HsmArn</c> or the <c>SerialNumber</c> parameter
+        /// must be specified.
         /// </para>
         /// </summary>
         public string HsmArn
@@ -76,7 +76,7 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property HsmSerialNumber. 
         /// <para>
-        /// The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code>
+        /// The serial number of the HSM. Either the <c>HsmArn</c> or the <c>HsmSerialNumber</c>
         /// parameter must be specified.
         /// </para>
         /// </summary>

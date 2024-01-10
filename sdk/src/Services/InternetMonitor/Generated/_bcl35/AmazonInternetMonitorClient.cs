@@ -605,7 +605,7 @@ namespace Amazon.InternetMonitor
 
         /// <summary>
         /// Return the data for a query with the Amazon CloudWatch Internet Monitor query interface.
-        /// Specify the query that you want to return results for by providing a <code>QueryId</code>
+        /// Specify the query that you want to return results for by providing a <c>QueryId</c>
         /// and a monitor name.
         /// 
         ///  
@@ -684,27 +684,27 @@ namespace Amazon.InternetMonitor
         /// <summary>
         /// Returns the current status of a query for the Amazon CloudWatch Internet Monitor query
         /// interface, for a specified query ID and monitor. When you run a query, check the status
-        /// to make sure that the query has <code>SUCCEEDED</code> before you review the results.
+        /// to make sure that the query has <c>SUCCEEDED</c> before you review the results.
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>QUEUED</code>: The query is scheduled to run.
+        ///  <c>QUEUED</c>: The query is scheduled to run.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code>: The query is in progress but not complete.
+        ///  <c>RUNNING</c>: The query is in progress but not complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code>: The query completed sucessfully.
+        ///  <c>SUCCEEDED</c>: The query completed sucessfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The query failed due to an error.
+        ///  <c>FAILED</c>: The query failed due to an error.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELED</code>: The query was canceled.
+        ///  <c>CANCELED</c>: The query was canceled.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -988,8 +988,8 @@ namespace Amazon.InternetMonitor
         /// <summary>
         /// Start a query to return data for a specific query type for the Amazon CloudWatch Internet
         /// Monitor query interface. Specify a time period for the data that you want returned
-        /// by using <code>StartTime</code> and <code>EndTime</code>. You filter the query results
-        /// to return by providing parameters that you specify with <code>FilterParameters</code>.
+        /// by using <c>StartTime</c> and <c>EndTime</c>. You filter the query results to return
+        /// by providing parameters that you specify with <c>FilterParameters</c>.
         /// 
         ///  
         /// <para>
@@ -1140,7 +1140,7 @@ namespace Amazon.InternetMonitor
         ///  
         /// <para>
         /// A minimum of one tag is required for this call. It returns an error if you use the
-        /// <code>TagResource</code> request with 0 tags.
+        /// <c>TagResource</c> request with 0 tags.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>

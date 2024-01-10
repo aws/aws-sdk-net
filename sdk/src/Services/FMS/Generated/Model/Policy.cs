@@ -90,11 +90,11 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
-        /// Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
-        /// and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify
-        /// an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts
-        /// except for those specified by the <code>ExcludeMap</code>.
+        /// You can specify inclusions or exclusions, but not both. If you specify an <c>IncludeMap</c>,
+        /// Firewall Manager applies the policy to all accounts specified by the <c>IncludeMap</c>,
+        /// and does not evaluate any <c>ExcludeMap</c> specifications. If you do not specify
+        /// an <c>IncludeMap</c>, then Firewall Manager applies the policy to all accounts except
+        /// for those specified by the <c>ExcludeMap</c>.
         /// </para>
         ///  
         /// <para>
@@ -102,19 +102,19 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following
-        /// is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// Specify account IDs by setting the key to <c>ACCOUNT</c>. For example, the following
+        /// is a valid map: <c>{“ACCOUNT” : [“accountID1”, “accountID2”]}</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following
-        /// is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.
+        /// Specify OUs by setting the key to <c>ORG_UNIT</c>. For example, the following is a
+        /// valid map: <c>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify accounts and OUs together in a single map, separated with a comma. For example,
-        /// the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
-        /// : [“ouid111”, “ouid112”]}</code>.
+        /// the following is a valid map: <c>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
+        /// : [“ouid111”, “ouid112”]}</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -133,8 +133,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ExcludeResourceTags. 
         /// <para>
-        /// If set to <code>True</code>, resources with the tags that are specified in the <code>ResourceTag</code>
-        /// array are not in scope of the policy. If set to <code>False</code>, and the <code>ResourceTag</code>
+        /// If set to <c>True</c>, resources with the tags that are specified in the <c>ResourceTag</c>
+        /// array are not in scope of the policy. If set to <c>False</c>, and the <c>ResourceTag</c>
         /// array is not null, only resources with the specified tags are in scope of the policy.
         /// </para>
         /// </summary>
@@ -161,11 +161,11 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify inclusions or exclusions, but not both. If you specify an <code>IncludeMap</code>,
-        /// Firewall Manager applies the policy to all accounts specified by the <code>IncludeMap</code>,
-        /// and does not evaluate any <code>ExcludeMap</code> specifications. If you do not specify
-        /// an <code>IncludeMap</code>, then Firewall Manager applies the policy to all accounts
-        /// except for those specified by the <code>ExcludeMap</code>.
+        /// You can specify inclusions or exclusions, but not both. If you specify an <c>IncludeMap</c>,
+        /// Firewall Manager applies the policy to all accounts specified by the <c>IncludeMap</c>,
+        /// and does not evaluate any <c>ExcludeMap</c> specifications. If you do not specify
+        /// an <c>IncludeMap</c>, then Firewall Manager applies the policy to all accounts except
+        /// for those specified by the <c>ExcludeMap</c>.
         /// </para>
         ///  
         /// <para>
@@ -173,19 +173,19 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify account IDs by setting the key to <code>ACCOUNT</code>. For example, the following
-        /// is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.
+        /// Specify account IDs by setting the key to <c>ACCOUNT</c>. For example, the following
+        /// is a valid map: <c>{“ACCOUNT” : [“accountID1”, “accountID2”]}</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify OUs by setting the key to <code>ORG_UNIT</code>. For example, the following
-        /// is a valid map: <code>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</code>.
+        /// Specify OUs by setting the key to <c>ORG_UNIT</c>. For example, the following is a
+        /// valid map: <c>{“ORG_UNIT” : [“ouid111”, “ouid112”]}</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Specify accounts and OUs together in a single map, separated with a comma. For example,
-        /// the following is a valid map: <code>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
-        /// : [“ouid111”, “ouid112”]}</code>.
+        /// the following is a valid map: <c>{“ACCOUNT” : [“accountID1”, “accountID2”], “ORG_UNIT”
+        /// : [“ouid111”, “ouid112”]}</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -265,13 +265,13 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The administrator can manage and delete the policy.
+        ///  <c>ACTIVE</c> - The administrator can manage and delete the policy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the policy, but they
-        /// can't edit or delete the policy. Existing policy protections stay in place. Any new
-        /// resources that come into scope of the policy won't be protected.
+        ///  <c>OUT_OF_ADMIN_SCOPE</c> - The administrator can view the policy, but they can't
+        /// edit or delete the policy. Existing policy protections stay in place. Any new resources
+        /// that come into scope of the policy won't be protected.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -290,10 +290,10 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property PolicyUpdateToken. 
         /// <para>
-        /// A unique identifier for each update to the policy. When issuing a <code>PutPolicy</code>
-        /// request, the <code>PolicyUpdateToken</code> in the request must match the <code>PolicyUpdateToken</code>
-        /// of the current policy version. To get the <code>PolicyUpdateToken</code> of the current
-        /// policy version, use a <code>GetPolicy</code> request.
+        /// A unique identifier for each update to the policy. When issuing a <c>PutPolicy</c>
+        /// request, the <c>PolicyUpdateToken</c> in the request must match the <c>PolicyUpdateToken</c>
+        /// of the current policy version. To get the <c>PolicyUpdateToken</c> of the current
+        /// policy version, use a <c>GetPolicy</c> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -349,7 +349,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceTags. 
         /// <para>
-        /// An array of <code>ResourceTag</code> objects.
+        /// An array of <c>ResourceTag</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8)]
@@ -371,8 +371,8 @@ namespace Amazon.FMS.Model
         /// The type of resource protected by or in scope of the policy. This is in the format
         /// shown in the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">Amazon
         /// Web Services Resource Types Reference</a>. To apply this policy to multiple resource
-        /// types, specify a resource type of <code>ResourceTypeList</code> and then specify the
-        /// resource types in a <code>ResourceTypeList</code>.
+        /// types, specify a resource type of <c>ResourceTypeList</c> and then specify the resource
+        /// types in a <c>ResourceTypeList</c>.
         /// </para>
         ///  
         /// <para>
@@ -380,31 +380,31 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon Web Services WAF Classic - <code>AWS::ApiGateway::Stage</code>, <code>AWS::CloudFront::Distribution</code>,
-        /// and <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>.
+        /// Amazon Web Services WAF Classic - <c>AWS::ApiGateway::Stage</c>, <c>AWS::CloudFront::Distribution</c>,
+        /// and <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// WAF - <code>AWS::ApiGateway::Stage</code>, <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>,
-        /// and <code>AWS::CloudFront::Distribution</code>.
+        /// WAF - <c>AWS::ApiGateway::Stage</c>, <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>,
+        /// and <c>AWS::CloudFront::Distribution</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  DNS Firewall, Network Firewall, and third-party firewall - <code>AWS::EC2::VPC</code>.
+        ///  DNS Firewall, Network Firewall, and third-party firewall - <c>AWS::EC2::VPC</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Shield Advanced - <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code>, <code>AWS::ElasticLoadBalancing::LoadBalancer</code>,
-        /// <code>AWS::EC2::EIP</code>, and <code>AWS::CloudFront::Distribution</code>.
+        /// Shield Advanced - <c>AWS::ElasticLoadBalancingV2::LoadBalancer</c>, <c>AWS::ElasticLoadBalancing::LoadBalancer</c>,
+        /// <c>AWS::EC2::EIP</c>, and <c>AWS::CloudFront::Distribution</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Security group content audit - <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>,
-        /// and <code>AWS::EC2::Instance</code>.
+        /// Security group content audit - <c>AWS::EC2::SecurityGroup</c>, <c>AWS::EC2::NetworkInterface</c>,
+        /// and <c>AWS::EC2::Instance</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Security group usage audit - <code>AWS::EC2::SecurityGroup</code>.
+        /// Security group usage audit - <c>AWS::EC2::SecurityGroup</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -424,8 +424,8 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property ResourceTypeList. 
         /// <para>
-        /// An array of <code>ResourceType</code> objects. Use this only to specify multiple resource
-        /// types. To specify a single resource type, use <code>ResourceType</code>.
+        /// An array of <c>ResourceType</c> objects. Use this only to specify multiple resource
+        /// types. To specify a single resource type, use <c>ResourceType</c>.
         /// </para>
         /// </summary>
         public List<string> ResourceTypeList

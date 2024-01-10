@@ -41,11 +41,11 @@ namespace Amazon.KinesisVideo.Model
     /// To make sure that you have the latest version of the stream before updating it, you
     /// can specify the stream version. Kinesis Video Streams assigns a version to each stream.
     /// When you update a stream, Kinesis Video Streams assigns a new version number. To get
-    /// the latest stream version, use the <code>DescribeStream</code> API. 
+    /// the latest stream version, use the <c>DescribeStream</c> API. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>UpdateStream</code> is an asynchronous operation, and takes time to complete.
+    ///  <c>UpdateStream</c> is an asynchronous operation, and takes time to complete.
     /// </para>
     /// </summary>
     public partial class UpdateStreamRequest : AmazonKinesisVideoRequest
@@ -102,16 +102,16 @@ namespace Amazon.KinesisVideo.Model
         /// <summary>
         /// Gets and sets the property MediaType. 
         /// <para>
-        /// The stream's media type. Use <code>MediaType</code> to specify the type of content
-        /// that the stream contains to the consumers of the stream. For more information about
-        /// media types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
-        /// Types</a>. If you choose to specify the <code>MediaType</code>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
+        /// The stream's media type. Use <c>MediaType</c> to specify the type of content that
+        /// the stream contains to the consumers of the stream. For more information about media
+        /// types, see <a href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
+        /// Types</a>. If you choose to specify the <c>MediaType</c>, see <a href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
         /// Requirements</a>.
         /// </para>
         ///  
         /// <para>
         /// To play video on the console, you must specify the correct video type. For example,
-        /// if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.
+        /// if the video in the stream is H.264, specify <c>video/h264</c> as the <c>MediaType</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Workflow step details for <code>APPFLOW_INTEGRATION</code> workflow.
+    /// Workflow step details for <c>APPFLOW_INTEGRATION</c> workflow.
     /// </summary>
     public partial class AppflowIntegrationWorkflowStep
     {
@@ -45,7 +45,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BatchRecordsEndTime. 
         /// <para>
-        /// End datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code>
+        /// End datetime of records pulled in batch during execution of workflow step for <c>APPFLOW_INTEGRATION</c>
         /// workflow.
         /// </para>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property BatchRecordsStartTime. 
         /// <para>
-        /// Start datetime of records pulled in batch during execution of workflow step for <code>APPFLOW_INTEGRATION</code>
+        /// Start datetime of records pulled in batch during execution of workflow step for <c>APPFLOW_INTEGRATION</c>
         /// workflow.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// Creation timestamp of workflow step for <code>APPFLOW_INTEGRATION</code> workflow.
+        /// Creation timestamp of workflow step for <c>APPFLOW_INTEGRATION</c> workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -104,8 +104,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property ExecutionMessage. 
         /// <para>
-        /// Message indicating execution of workflow step for <code>APPFLOW_INTEGRATION</code>
-        /// workflow.
+        /// Message indicating execution of workflow step for <c>APPFLOW_INTEGRATION</c> workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -124,7 +123,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property FlowName. 
         /// <para>
-        /// Name of the flow created during execution of workflow step. <code>APPFLOW_INTEGRATION</code>
+        /// Name of the flow created during execution of workflow step. <c>APPFLOW_INTEGRATION</c>
         /// workflow type creates an appflow flow during workflow step execution on the customers
         /// behalf.
         /// </para>
@@ -145,7 +144,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// Last updated timestamp for workflow step for <code>APPFLOW_INTEGRATION</code> workflow.
+        /// Last updated timestamp for workflow step for <c>APPFLOW_INTEGRATION</c> workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -164,7 +163,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property RecordsProcessed. 
         /// <para>
-        /// Total number of records processed during execution of workflow step for <code>APPFLOW_INTEGRATION</code>
+        /// Total number of records processed during execution of workflow step for <c>APPFLOW_INTEGRATION</c>
         /// workflow.
         /// </para>
         /// </summary>
@@ -184,7 +183,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Workflow step status for <code>APPFLOW_INTEGRATION</code> workflow.
+        /// Workflow step status for <c>APPFLOW_INTEGRATION</c> workflow.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

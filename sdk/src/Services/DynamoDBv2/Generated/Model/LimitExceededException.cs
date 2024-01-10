@@ -34,8 +34,8 @@ namespace Amazon.DynamoDBv2.Model
     ///  
     /// <para>
     /// For most purposes, up to 500 simultaneous table operations are allowed per account.
-    /// These operations include <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,<code>UpdateTimeToLive</code>,
-    /// <code>RestoreTableFromBackup</code>, and <code>RestoreTableToPointInTime</code>. 
+    /// These operations include <c>CreateTable</c>, <c>UpdateTable</c>, <c>DeleteTable</c>,<c>UpdateTimeToLive</c>,
+    /// <c>RestoreTableFromBackup</c>, and <c>RestoreTableToPointInTime</c>. 
     /// </para>
     ///  
     /// <para>

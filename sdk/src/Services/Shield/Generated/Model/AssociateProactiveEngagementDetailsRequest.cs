@@ -37,7 +37,7 @@ namespace Amazon.Shield.Model
     ///  
     /// <para>
     /// After you have initialized proactive engagement using this call, to disable or enable
-    /// proactive engagement, use the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+    /// proactive engagement, use the calls <c>DisableProactiveEngagement</c> and <c>EnableProactiveEngagement</c>.
     /// 
     /// </para>
     ///  <note> 
@@ -49,8 +49,7 @@ namespace Amazon.Shield.Model
     /// <para>
     /// The contacts that you provide in the request replace any contacts that were already
     /// defined. If you already have contacts defined and want to use them, retrieve the list
-    /// using <code>DescribeEmergencyContactSettings</code> and then provide it to this call.
-    /// 
+    /// using <c>DescribeEmergencyContactSettings</c> and then provide it to this call. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -73,7 +72,7 @@ namespace Amazon.Shield.Model
         /// <para>
         /// The contacts that you provide here replace any contacts that were already defined.
         /// If you already have contacts defined and want to use them, retrieve the list using
-        /// <code>DescribeEmergencyContactSettings</code> and then provide it here. 
+        /// <c>DescribeEmergencyContactSettings</c> and then provide it here. 
         /// </para>
         ///  </note>
         /// </summary>

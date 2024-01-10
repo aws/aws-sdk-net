@@ -53,12 +53,12 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>LIVE</code>: The extension is registered for use in CloudFormation operations.
+        ///  <c>LIVE</c>: The extension is registered for use in CloudFormation operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DEPRECATED</code>: The extension has been deregistered and can no longer be
-        /// used in CloudFormation operations.
+        ///  <c>DEPRECATED</c>: The extension has been deregistered and can no longer be used
+        /// in CloudFormation operations.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -81,10 +81,10 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Filters must be compatible with <code>Visibility</code> to return valid results. For
-        /// example, specifying <code>AWS_TYPES</code> for <code>Category</code> and <code>PRIVATE</code>
-        /// for <code>Visibility</code> returns an empty list of types, but specifying <code>PUBLIC</code>
-        /// for <code>Visibility</code> returns the desired list.
+        /// Filters must be compatible with <c>Visibility</c> to return valid results. For example,
+        /// specifying <c>AWS_TYPES</c> for <c>Category</c> and <c>PRIVATE</c> for <c>Visibility</c>
+        /// returns an empty list of types, but specifying <c>PUBLIC</c> for <c>Visibility</c>
+        /// returns the desired list.
         /// </para>
         /// </summary>
         public TypeFilters Filters
@@ -103,9 +103,9 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to be returned with a single call. If the number of
-        /// available results exceeds this maximum, the response includes a <code>NextToken</code>
-        /// value that you can assign to the <code>NextToken</code> request parameter to get the
-        /// next set of results.
+        /// available results exceeds this maximum, the response includes a <c>NextToken</c> value
+        /// that you can assign to the <c>NextToken</c> request parameter to get the next set
+        /// of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -125,10 +125,10 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// If the previous paginated request didn't return all the remaining results, the response
-        /// object's <code>NextToken</code> parameter value is set to a token. To retrieve the
-        /// next set of results, call this action again and assign that token to the request object's
-        /// <code>NextToken</code> parameter. If there are no remaining results, the previous
-        /// response object's <code>NextToken</code> parameter is set to <code>null</code>.
+        /// object's <c>NextToken</c> parameter value is set to a token. To retrieve the next
+        /// set of results, call this action again and assign that token to the request object's
+        /// <c>NextToken</c> parameter. If there are no remaining results, the previous response
+        /// object's <c>NextToken</c> parameter is set to <c>null</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -157,22 +157,22 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>FULLY_MUTABLE</code>: The resource type includes an update handler to process
-        /// updates to the type during stack update operations.
+        ///  <c>FULLY_MUTABLE</c>: The resource type includes an update handler to process updates
+        /// to the type during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IMMUTABLE</code>: The resource type doesn't include an update handler, so the
-        /// type can't be updated and must instead be replaced during stack update operations.
+        ///  <c>IMMUTABLE</c>: The resource type doesn't include an update handler, so the type
+        /// can't be updated and must instead be replaced during stack update operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NON_PROVISIONABLE</code>: The resource type doesn't include create, read, and
-        /// delete handlers, and therefore can't actually be provisioned.
+        ///  <c>NON_PROVISIONABLE</c>: The resource type doesn't include create, read, and delete
+        /// handlers, and therefore can't actually be provisioned.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>FULLY_MUTABLE</code>.
+        /// The default is <c>FULLY_MUTABLE</c>.
         /// </para>
         /// </summary>
         public ProvisioningType ProvisioningType
@@ -216,8 +216,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PRIVATE</code>: Extensions that are visible and usable within this account
-        /// and Region. This includes:
+        ///  <c>PRIVATE</c>: Extensions that are visible and usable within this account and Region.
+        /// This includes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -229,13 +229,13 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>PUBLIC</code>: Extensions that are publicly visible and available to be activated
+        ///  <c>PUBLIC</c>: Extensions that are publicly visible and available to be activated
         /// within any Amazon Web Services account. This includes extensions from Amazon Web Services,
         /// in addition to third-party publishers.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The default is <code>PRIVATE</code>.
+        /// The default is <c>PRIVATE</c>.
         /// </para>
         /// </summary>
         public Visibility Visibility

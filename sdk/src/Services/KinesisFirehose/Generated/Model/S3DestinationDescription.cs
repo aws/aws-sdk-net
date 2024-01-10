@@ -65,8 +65,8 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property BufferingHints. 
         /// <para>
-        /// The buffering option. If no value is specified, <code>BufferingHints</code> object
-        /// default values are used.
+        /// The buffering option. If no value is specified, <c>BufferingHints</c> object default
+        /// values are used.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +103,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <summary>
         /// Gets and sets the property CompressionFormat. 
         /// <para>
-        /// The compression format. If no value is specified, the default is <code>UNCOMPRESSED</code>.
+        /// The compression format. If no value is specified, the default is <c>UNCOMPRESSED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

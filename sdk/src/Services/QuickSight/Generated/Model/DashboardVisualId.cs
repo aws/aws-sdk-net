@@ -33,23 +33,22 @@ namespace Amazon.QuickSight.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The <code>DashboardId</code> of the dashboard that has the visual that you want to
-    /// embed.
+    /// The <c>DashboardId</c> of the dashboard that has the visual that you want to embed.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>SheetId</code> of the sheet that has the visual that you want to embed.
+    /// The <c>SheetId</c> of the sheet that has the visual that you want to embed.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The <code>VisualId</code> of the visual that you want to embed.
+    /// The <c>VisualId</c> of the visual that you want to embed.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// The <code>DashboardId</code>, <code>SheetId</code>, and <code>VisualId</code> can
-    /// be found in the <code>IDs for developers</code> section of the <code>Embed visual</code>
-    /// pane of the visual's on-visual menu of the Amazon QuickSight console. You can also
-    /// get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.
+    /// The <c>DashboardId</c>, <c>SheetId</c>, and <c>VisualId</c> can be found in the <c>IDs
+    /// for developers</c> section of the <c>Embed visual</c> pane of the visual's on-visual
+    /// menu of the Amazon QuickSight console. You can also get the <c>DashboardId</c> with
+    /// a <c>ListDashboards</c> API operation.
     /// </para>
     /// </summary>
     public partial class DashboardVisualId
@@ -61,10 +60,10 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DashboardId. 
         /// <para>
-        /// The ID of the dashboard that has the visual that you want to embed. The <code>DashboardId</code>
-        /// can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code>
-        /// pane of the visual's on-visual menu of the Amazon QuickSight console. You can also
-        /// get the <code>DashboardId</code> with a <code>ListDashboards</code> API operation.
+        /// The ID of the dashboard that has the visual that you want to embed. The <c>DashboardId</c>
+        /// can be found in the <c>IDs for developers</c> section of the <c>Embed visual</c> pane
+        /// of the visual's on-visual menu of the Amazon QuickSight console. You can also get
+        /// the <c>DashboardId</c> with a <c>ListDashboards</c> API operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -83,9 +82,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SheetId. 
         /// <para>
-        /// The ID of the sheet that the has visual that you want to embed. The <code>SheetId</code>
-        /// can be found in the <code>IDs for developers</code> section of the <code>Embed visual</code>
-        /// pane of the visual's on-visual menu of the Amazon QuickSight console.
+        /// The ID of the sheet that the has visual that you want to embed. The <c>SheetId</c>
+        /// can be found in the <c>IDs for developers</c> section of the <c>Embed visual</c> pane
+        /// of the visual's on-visual menu of the Amazon QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
@@ -104,9 +103,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VisualId. 
         /// <para>
-        /// The ID of the visual that you want to embed. The <code>VisualID</code> can be found
-        /// in the <code>IDs for developers</code> section of the <code>Embed visual</code> pane
-        /// of the visual's on-visual menu of the Amazon QuickSight console.
+        /// The ID of the visual that you want to embed. The <c>VisualID</c> can be found in the
+        /// <c>IDs for developers</c> section of the <c>Embed visual</c> pane of the visual's
+        /// on-visual menu of the Amazon QuickSight console.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]

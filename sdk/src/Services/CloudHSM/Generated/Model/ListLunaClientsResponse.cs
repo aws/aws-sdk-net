@@ -58,8 +58,8 @@ namespace Amazon.CloudHSM.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this to <code>ListLunaClients</code>
-        /// to retrieve the next set of items.
+        /// If not null, more results are available. Pass this to <c>ListLunaClients</c> to retrieve
+        /// the next set of items.
         /// </para>
         /// </summary>
         public string NextToken

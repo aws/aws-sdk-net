@@ -40,7 +40,7 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property AccountIds. 
         /// <para>
         /// An array of objects that provide details on the activation status of Amazon Inspector
-        /// deep inspection for each of the requested accounts. <pre><code> &lt;/p&gt; </code></pre>
+        /// deep inspection for each of the requested accounts. <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<MemberAccountEc2DeepInspectionStatusState> AccountIds
@@ -59,7 +59,7 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property FailedAccountIds. 
         /// <para>
         /// An array of objects that provide details on any accounts that failed to activate Amazon
-        /// Inspector deep inspection and why. <pre><code> &lt;/p&gt; </code></pre>
+        /// Inspector deep inspection and why. <pre><c> &lt;/p&gt; </c></pre>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
         public List<FailedMemberAccountEc2DeepInspectionStatusState> FailedAccountIds

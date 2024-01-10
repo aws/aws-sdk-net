@@ -85,8 +85,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ManagedRuleSetName. 
         /// <para>
-        /// The name of the managed rule group. For example, <code>AWSManagedRulesAnonymousIpList</code>
-        /// or <code>AWSManagedRulesATPRuleSet</code>.
+        /// The name of the managed rule group. For example, <c>AWSManagedRulesAnonymousIpList</c>
+        /// or <c>AWSManagedRulesATPRuleSet</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -164,8 +164,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ProductTitle. 
         /// <para>
-        /// The display name for the managed rule group. For example, <code>Anonymous IP list</code>
-        /// or <code>Account takeover prevention</code>.
+        /// The display name for the managed rule group. For example, <c>Anonymous IP list</c>
+        /// or <c>Account takeover prevention</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

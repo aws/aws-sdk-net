@@ -122,27 +122,27 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// The valid values for <code>Status</code> are as follows.
+        /// The valid values for <c>Status</c> are as follows.
         /// </para>
         ///  <ul> <li> <ul> <li> 
         /// <para>
-        ///  <code>PASSED</code> - Standards check passed for all evaluated resources.
+        ///  <c>PASSED</c> - Standards check passed for all evaluated resources.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>WARNING</code> - Some information is missing or this check is not supported
-        /// for your configuration.
+        ///  <c>WARNING</c> - Some information is missing or this check is not supported for your
+        /// configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Standards check failed for at least one evaluated resource.
+        ///  <c>FAILED</c> - Standards check failed for at least one evaluated resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>NOT_AVAILABLE</code> - Check could not be performed due to a service outage,
-        /// API error, or because the result of the Config evaluation was <code>NOT_APPLICABLE</code>.
-        /// If the Config evaluation result was <code>NOT_APPLICABLE</code>, then after 3 days,
-        /// Security Hub automatically archives the finding.
+        ///  <c>NOT_AVAILABLE</c> - Check could not be performed due to a service outage, API
+        /// error, or because the result of the Config evaluation was <c>NOT_APPLICABLE</c>. If
+        /// the Config evaluation result was <c>NOT_APPLICABLE</c>, then after 3 days, Security
+        /// Hub automatically archives the finding.
         /// </para>
         ///  </li> </ul> </li> </ul>
         /// </summary>
@@ -161,7 +161,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StatusReasons. 
         /// <para>
-        /// For findings generated from controls, a list of reasons behind the value of <code>Status</code>.
+        /// For findings generated from controls, a list of reasons behind the value of <c>Status</c>.
         /// For the list of status reason codes and their meanings, see <a href="https://docs.aws.amazon.com/securityhub/latest/userguide/securityhub-standards-results.html#securityhub-standards-results-asff">Standards-related
         /// information in the ASFF</a> in the <i>Security Hub User Guide</i>. 
         /// </para>

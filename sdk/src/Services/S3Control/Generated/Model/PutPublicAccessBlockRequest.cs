@@ -36,8 +36,8 @@ namespace Amazon.S3Control.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon
-    /// Web Services account. For this operation, users must have the <code>s3:PutAccountPublicAccessBlock</code>
+    /// Creates or modifies the <c>PublicAccessBlock</c> configuration for an Amazon Web Services
+    /// account. For this operation, users must have the <c>s3:PutAccountPublicAccessBlock</c>
     /// permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html">
     /// Using Amazon S3 block public access</a>.
     /// </para>
@@ -65,7 +65,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code>
+        /// The account ID for the Amazon Web Services account whose <c>PublicAccessBlock</c>
         /// configuration you want to set.
         /// </para>
         /// </summary>
@@ -85,7 +85,7 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property PublicAccessBlockConfiguration. 
         /// <para>
-        /// The <code>PublicAccessBlock</code> configuration that you want to apply to the specified
+        /// The <c>PublicAccessBlock</c> configuration that you want to apply to the specified
         /// Amazon Web Services account.
         /// </para>
         /// </summary>

@@ -255,10 +255,9 @@ namespace Amazon.APIGateway.Model
         /// <summary>
         /// Gets and sets the property MethodSettings. 
         /// <para>
-        /// A map that defines the method settings for a Stage resource. Keys (designated as <code>/{method_setting_key</code>
-        /// below) are method paths defined as <code>{resource_path}/{http_method}</code> for
-        /// an individual method override, or <code>/\*/\*</code> for overriding all methods in
-        /// the stage. 
+        /// A map that defines the method settings for a Stage resource. Keys (designated as <c>/{method_setting_key</c>
+        /// below) are method paths defined as <c>{resource_path}/{http_method}</c> for an individual
+        /// method override, or <c>/\*/\*</c> for overriding all methods in the stage. 
         /// </para>
         /// </summary>
         public Dictionary<string, MethodSetting> MethodSettings
@@ -333,7 +332,7 @@ namespace Amazon.APIGateway.Model
         /// Gets and sets the property Variables. 
         /// <para>
         /// A map that defines the stage variables for a Stage resource. Variable names can have
-        /// alphanumeric and underscore characters, and the values must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.
+        /// alphanumeric and underscore characters, and the values must match <c>[A-Za-z0-9-._~:/?#&amp;=,]+</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Variables

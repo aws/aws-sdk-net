@@ -43,7 +43,7 @@ namespace Amazon.SSOAdmin
     /// 
     ///  <note> 
     /// <para>
-    /// IAM Identity Center uses the <code>sso</code> and <code>identitystore</code> API namespaces.
+    /// IAM Identity Center uses the <c>sso</c> and <c>identitystore</c> API namespaces.
     /// </para>
     ///  </note> 
     /// <para>
@@ -384,9 +384,9 @@ namespace Amazon.SSOAdmin
         ///  <note> 
         /// <para>
         /// If the permission set is already referenced by one or more account assignments, you
-        /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this operation.
-        /// Calling <code>ProvisionPermissionSet</code> applies the corresponding IAM policy updates
-        /// to all assigned accounts.
+        /// will need to call <c> <a>ProvisionPermissionSet</a> </c> after this operation. Calling
+        /// <c>ProvisionPermissionSet</c> applies the corresponding IAM policy updates to all
+        /// assigned accounts.
         /// </para>
         ///  </note>
         /// </summary>
@@ -478,16 +478,16 @@ namespace Amazon.SSOAdmin
         /// </para>
         ///  </note> <note> 
         /// <para>
-        /// As part of a successful <code>CreateAccountAssignment</code> call, the specified permission
+        /// As part of a successful <c>CreateAccountAssignment</c> call, the specified permission
         /// set will automatically be provisioned to the account in the form of an IAM policy.
         /// That policy is attached to the IAM role created in IAM Identity Center. If the permission
         /// set is subsequently updated, the corresponding IAM policies attached to roles in your
-        /// accounts will not be updated automatically. In this case, you must call <code> <a>ProvisionPermissionSet</a>
-        /// </code> to make these updates.
+        /// accounts will not be updated automatically. In this case, you must call <c> <a>ProvisionPermissionSet</a>
+        /// </c> to make these updates.
         /// </para>
         ///  </note> <note> 
         /// <para>
-        ///  After a successful response, call <code>DescribeAccountAssignmentCreationStatus</code>
+        ///  After a successful response, call <c>DescribeAccountAssignmentCreationStatus</c>
         /// to describe the status of an assignment creation request. 
         /// </para>
         ///  </note>
@@ -831,8 +831,8 @@ namespace Amazon.SSOAdmin
         /// 
         ///  <note> 
         /// <para>
-        /// After a successful response, call <code>DescribeInstanceAccessControlAttributeConfiguration</code>
-        /// to validate that <code>InstanceAccessControlAttributeConfiguration</code> was created.
+        /// After a successful response, call <c>DescribeInstanceAccessControlAttributeConfiguration</c>
+        /// to validate that <c>InstanceAccessControlAttributeConfiguration</c> was created.
         /// </para>
         ///  </note>
         /// </summary>
@@ -914,8 +914,8 @@ namespace Amazon.SSOAdmin
         /// 
         ///  <note> 
         /// <para>
-        /// To grant users and groups access to Amazon Web Services account resources, use <code>
-        /// <a>CreateAccountAssignment</a> </code>.
+        /// To grant users and groups access to Amazon Web Services account resources, use <c>
+        /// <a>CreateAccountAssignment</a> </c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1088,8 +1088,8 @@ namespace Amazon.SSOAdmin
         /// 
         ///  <note> 
         /// <para>
-        /// After a successful response, call <code>DescribeAccountAssignmentDeletionStatus</code>
-        /// to describe the status of an assignment deletion request.
+        /// After a successful response, call <c>DescribeAccountAssignmentDeletionStatus</c> to
+        /// describe the status of an assignment deletion request.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2376,19 +2376,19 @@ namespace Amazon.SSOAdmin
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATE_IN_PROGRESS</code> - The instance is in the process of being created.
-        /// When the instance is ready for use, DescribeInstance returns the status of <code>ACTIVE</code>.
-        /// While the instance is in the <code>CREATE_IN_PROGRESS</code> state, you can call only
-        /// DescribeInstance and DeleteInstance operations.
+        ///  <c>CREATE_IN_PROGRESS</c> - The instance is in the process of being created. When
+        /// the instance is ready for use, DescribeInstance returns the status of <c>ACTIVE</c>.
+        /// While the instance is in the <c>CREATE_IN_PROGRESS</c> state, you can call only DescribeInstance
+        /// and DeleteInstance operations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETE_IN_PROGRESS</code> - The instance is being deleted. Returns <code>AccessDeniedException</code>
+        ///  <c>DELETE_IN_PROGRESS</c> - The instance is being deleted. Returns <c>AccessDeniedException</c>
         /// after the delete operation completes. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The instance is active.
+        ///  <c>ACTIVE</c> - The instance is active.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -4090,8 +4090,8 @@ namespace Amazon.SSOAdmin
         /// <summary>
         /// Lists all applications associated with the instance of IAM Identity Center. When listing
         /// applications for an instance in the management account, member accounts must use the
-        /// <code>applicationAccount</code> parameter to filter the list to only applications
-        /// created from that account.
+        /// <c>applicationAccount</c> parameter to filter the list to only applications created
+        /// from that account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApplications service method.</param>
         /// 
@@ -4869,12 +4869,12 @@ namespace Amazon.SSOAdmin
         #region  PutApplicationAssignmentConfiguration
 
         /// <summary>
-        /// Configure how users gain access to an application. If <code>AssignmentsRequired</code>
-        /// is <code>true</code> (default value), users don’t have access to the application unless
-        /// an assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
-        /// API</a>. If <code>false</code>, all users have access to the application. If an assignment
+        /// Configure how users gain access to an application. If <c>AssignmentsRequired</c> is
+        /// <c>true</c> (default value), users don’t have access to the application unless an
+        /// assignment is created using the <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
+        /// API</a>. If <c>false</c>, all users have access to the application. If an assignment
         /// is created using <a href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment</a>.,
-        /// the user retains access if <code>AssignmentsRequired</code> is set to <code>true</code>.
+        /// the user retains access if <c>AssignmentsRequired</c> is set to <c>true</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutApplicationAssignmentConfiguration service method.</param>
         /// 
@@ -5107,8 +5107,8 @@ namespace Amazon.SSOAdmin
         ///  <note> 
         /// <para>
         /// If the permission set is already referenced by one or more account assignments, you
-        /// will need to call <code> <a>ProvisionPermissionSet</a> </code> after this action to
-        /// apply the corresponding IAM policy updates to all assigned accounts.
+        /// will need to call <c> <a>ProvisionPermissionSet</a> </c> after this action to apply
+        /// the corresponding IAM policy updates to all assigned accounts.
         /// </para>
         ///  </note>
         /// </summary>

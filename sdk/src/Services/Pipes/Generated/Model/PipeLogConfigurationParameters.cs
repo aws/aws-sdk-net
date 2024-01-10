@@ -33,20 +33,20 @@ namespace Amazon.Pipes.Model
     /// 
     ///  
     /// <para>
-    /// When you call <code>UpdatePipe</code>, EventBridge updates the fields in the <code>PipeLogConfigurationParameters</code>
+    /// When you call <c>UpdatePipe</c>, EventBridge updates the fields in the <c>PipeLogConfigurationParameters</c>
     /// object atomically as one and overrides existing values. This is by design. If you
     /// don't specify an optional field in any of the Amazon Web Services service parameters
-    /// objects (<code>CloudwatchLogsLogDestinationParameters</code>, <code>FirehoseLogDestinationParameters</code>,
-    /// or <code>S3LogDestinationParameters</code>), EventBridge sets that field to its system-default
+    /// objects (<c>CloudwatchLogsLogDestinationParameters</c>, <c>FirehoseLogDestinationParameters</c>,
+    /// or <c>S3LogDestinationParameters</c>), EventBridge sets that field to its system-default
     /// value during the update. 
     /// </para>
     ///  
     /// <para>
     /// For example, suppose when you created the pipe you specified a Kinesis Data Firehose
     /// stream log destination. You then update the pipe to add an Amazon S3 log destination.
-    /// In addition to specifying the <code>S3LogDestinationParameters</code> for the new
-    /// log destination, you must also specify the fields in the <code>FirehoseLogDestinationParameters</code>
-    /// object in order to retain the Kinesis Data Firehose stream log destination. 
+    /// In addition to specifying the <c>S3LogDestinationParameters</c> for the new log destination,
+    /// you must also specify the fields in the <c>FirehoseLogDestinationParameters</c> object
+    /// in order to retain the Kinesis Data Firehose stream log destination. 
     /// </para>
     ///  
     /// <para>
@@ -101,8 +101,8 @@ namespace Amazon.Pipes.Model
         /// <summary>
         /// Gets and sets the property IncludeExecutionData. 
         /// <para>
-        /// Specify <code>ON</code> to include the execution data (specifically, the <code>payload</code>
-        /// and <code>awsRequest</code> fields) in the log messages for this pipe.
+        /// Specify <c>ON</c> to include the execution data (specifically, the <c>payload</c>
+        /// and <c>awsRequest</c> fields) in the log messages for this pipe.
         /// </para>
         ///  
         /// <para>
@@ -115,7 +115,7 @@ namespace Amazon.Pipes.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is <code>OFF</code>.
+        /// The default is <c>OFF</c>.
         /// </para>
         /// </summary>
         public List<string> IncludeExecutionData

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostExplorer.Model
 {
     /// <summary>
-    /// The cost allocation tag structure. This includes detailed metadata for the <code>CostAllocationTag</code>
+    /// The cost allocation tag structure. This includes detailed metadata for the <c>CostAllocationTag</c>
     /// object.
     /// </summary>
     public partial class CostAllocationTag
@@ -119,11 +119,11 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of cost allocation tag. You can use <code>AWSGenerated</code> or <code>UserDefined</code>
-        /// type tags. <code>AWSGenerated</code> type tags are tags that Amazon Web Services defines
+        /// The type of cost allocation tag. You can use <c>AWSGenerated</c> or <c>UserDefined</c>
+        /// type tags. <c>AWSGenerated</c> type tags are tags that Amazon Web Services defines
         /// and applies to support Amazon Web Services resources for cost allocation purposes.
-        /// <code>UserDefined</code> type tags are tags that you define, create, and apply to
-        /// resources. 
+        /// <c>UserDefined</c> type tags are tags that you define, create, and apply to resources.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

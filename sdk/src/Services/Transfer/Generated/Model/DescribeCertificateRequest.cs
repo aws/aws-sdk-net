@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeCertificate operation.
-    /// Describes the certificate that's identified by the <code>CertificateId</code>.
+    /// Describes the certificate that's identified by the <c>CertificateId</c>.
     /// </summary>
     public partial class DescribeCertificateRequest : AmazonTransferRequest
     {

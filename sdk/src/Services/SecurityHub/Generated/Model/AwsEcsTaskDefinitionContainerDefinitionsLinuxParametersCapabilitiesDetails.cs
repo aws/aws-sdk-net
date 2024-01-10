@@ -45,18 +45,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code>
-        /// | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code>
-        /// | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> |
-        /// <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code>
-        /// | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code>
-        /// | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code>
-        /// | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> |
-        /// <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code>
-        /// | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code>
-        /// | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> |
-        /// <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> |
-        /// <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code>
+        /// Valid values: <c>"ALL"</c> | <c>"AUDIT_CONTROL"</c> |<c> "AUDIT_WRITE"</c> | <c>"BLOCK_SUSPEND"</c>
+        /// | <c>"CHOWN"</c> | <c>"DAC_OVERRIDE"</c> | <c>"DAC_READ_SEARCH"</c> | <c>"FOWNER"</c>
+        /// | <c>"FSETID"</c> | <c>"IPC_LOCK"</c> | <c>"IPC_OWNER"</c> | <c>"KILL"</c> | <c>"LEASE"</c>
+        /// | <c>"LINUX_IMMUTABLE"</c> | <c>"MAC_ADMIN"</c> |<c> "MAC_OVERRIDE"</c> | <c>"MKNOD"</c>
+        /// | <c>"NET_ADMIN"</c> | <c>"NET_BIND_SERVICE"</c> | <c>"NET_BROADCAST"</c> | <c>"NET_RAW"</c>
+        /// | <c>"SETFCAP"</c> | <c>"SETGID"</c> | <c>"SETPCAP"</c> | <c>"SETUID"</c> | <c>"SYS_ADMIN"</c>
+        /// | <c>"SYS_BOOT"</c> | <c>"SYS_CHROOT"</c> | <c>"SYS_MODULE"</c> | <c>"SYS_NICE"</c>
+        /// | <c>"SYS_PACCT"</c> | <c>"SYS_PTRACE"</c> | <c>"SYS_RAWIO"</c> | <c>"SYS_RESOURCE"</c>
+        /// | <c>"SYS_TIME"</c> | <c>"SYS_TTY_CONFIG"</c> | <c>"SYSLOG"</c> | <c>"WAKE_ALARM"</c>
         /// 
         /// </para>
         /// </summary>
@@ -80,18 +77,15 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>"ALL"</code> | <code>"AUDIT_CONTROL"</code> |<code> "AUDIT_WRITE"</code>
-        /// | <code>"BLOCK_SUSPEND"</code> | <code>"CHOWN"</code> | <code>"DAC_OVERRIDE"</code>
-        /// | <code>"DAC_READ_SEARCH"</code> | <code>"FOWNER"</code> | <code>"FSETID"</code> |
-        /// <code>"IPC_LOCK"</code> | <code>"IPC_OWNER"</code> | <code>"KILL"</code> | <code>"LEASE"</code>
-        /// | <code>"LINUX_IMMUTABLE"</code> | <code>"MAC_ADMIN"</code> |<code> "MAC_OVERRIDE"</code>
-        /// | <code>"MKNOD"</code> | <code>"NET_ADMIN"</code> | <code>"NET_BIND_SERVICE"</code>
-        /// | <code>"NET_BROADCAST"</code> | <code>"NET_RAW"</code> | <code>"SETFCAP"</code> |
-        /// <code>"SETGID"</code> | <code>"SETPCAP"</code> | <code>"SETUID"</code> | <code>"SYS_ADMIN"</code>
-        /// | <code>"SYS_BOOT"</code> | <code>"SYS_CHROOT"</code> | <code>"SYS_MODULE"</code>
-        /// | <code>"SYS_NICE"</code> | <code>"SYS_PACCT"</code> | <code>"SYS_PTRACE"</code> |
-        /// <code>"SYS_RAWIO"</code> | <code>"SYS_RESOURCE"</code> | <code>"SYS_TIME"</code> |
-        /// <code>"SYS_TTY_CONFIG"</code> | <code>"SYSLOG"</code> | <code>"WAKE_ALARM"</code>
+        /// Valid values: <c>"ALL"</c> | <c>"AUDIT_CONTROL"</c> |<c> "AUDIT_WRITE"</c> | <c>"BLOCK_SUSPEND"</c>
+        /// | <c>"CHOWN"</c> | <c>"DAC_OVERRIDE"</c> | <c>"DAC_READ_SEARCH"</c> | <c>"FOWNER"</c>
+        /// | <c>"FSETID"</c> | <c>"IPC_LOCK"</c> | <c>"IPC_OWNER"</c> | <c>"KILL"</c> | <c>"LEASE"</c>
+        /// | <c>"LINUX_IMMUTABLE"</c> | <c>"MAC_ADMIN"</c> |<c> "MAC_OVERRIDE"</c> | <c>"MKNOD"</c>
+        /// | <c>"NET_ADMIN"</c> | <c>"NET_BIND_SERVICE"</c> | <c>"NET_BROADCAST"</c> | <c>"NET_RAW"</c>
+        /// | <c>"SETFCAP"</c> | <c>"SETGID"</c> | <c>"SETPCAP"</c> | <c>"SETUID"</c> | <c>"SYS_ADMIN"</c>
+        /// | <c>"SYS_BOOT"</c> | <c>"SYS_CHROOT"</c> | <c>"SYS_MODULE"</c> | <c>"SYS_NICE"</c>
+        /// | <c>"SYS_PACCT"</c> | <c>"SYS_PTRACE"</c> | <c>"SYS_RAWIO"</c> | <c>"SYS_RESOURCE"</c>
+        /// | <c>"SYS_TIME"</c> | <c>"SYS_TTY_CONFIG"</c> | <c>"SYSLOG"</c> | <c>"WAKE_ALARM"</c>
         /// 
         /// </para>
         /// </summary>

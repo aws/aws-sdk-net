@@ -54,7 +54,7 @@ namespace Amazon.OpsWorks.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code> { "12":"on", "13":"on", "14":"on", "15":"on" } </code> 
+    ///  <c> { "12":"on", "13":"on", "14":"on", "15":"on" } </c> 
     /// </para>
     /// </summary>
     public partial class WeeklyAutoScalingSchedule

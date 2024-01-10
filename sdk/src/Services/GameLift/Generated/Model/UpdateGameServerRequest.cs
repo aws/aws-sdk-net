@@ -46,18 +46,18 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To update the game server's utilization status from <code>AVAILABLE</code> (when the
-    /// game server is available to be claimed) to <code>UTILIZED</code> (when the game server
-    /// is currently hosting games). Identify the game server and game server group and specify
-    /// the new utilization status. You can't change the status from to <code>UTILIZED</code>
-    /// to <code>AVAILABLE</code> .
+    /// To update the game server's utilization status from <c>AVAILABLE</c> (when the game
+    /// server is available to be claimed) to <c>UTILIZED</c> (when the game server is currently
+    /// hosting games). Identify the game server and game server group and specify the new
+    /// utilization status. You can't change the status from to <c>UTILIZED</c> to <c>AVAILABLE</c>
+    /// .
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// To report health status, identify the game server and game server group and set health
-    /// check to <code>HEALTHY</code>. If a game server does not report health status for
-    /// a certain length of time, the game server is no longer considered healthy. As a result,
-    /// it will be eventually deregistered from the game server group to avoid affecting utilization
+    /// check to <c>HEALTHY</c>. If a game server does not report health status for a certain
+    /// length of time, the game server is no longer considered healthy. As a result, it will
+    /// be eventually deregistered from the game server group to avoid affecting utilization
     /// metrics. The best practice is to report health every 60 seconds.
     /// </para>
     ///  </li> <li> 
@@ -169,8 +169,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property UtilizationStatus. 
         /// <para>
         /// Indicates if the game server is available or is currently hosting gameplay. You can
-        /// update a game server status from <code>AVAILABLE</code> to <code>UTILIZED</code>,
-        /// but you can't change a the status from <code>UTILIZED</code> to <code>AVAILABLE</code>.
+        /// update a game server status from <c>AVAILABLE</c> to <c>UTILIZED</c>, but you can't
+        /// change a the status from <c>UTILIZED</c> to <c>AVAILABLE</c>.
         /// </para>
         /// </summary>
         public GameServerUtilizationStatus UtilizationStatus

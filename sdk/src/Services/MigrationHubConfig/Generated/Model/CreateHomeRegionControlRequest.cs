@@ -79,8 +79,8 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The account for which this command sets up a home region control. The <code>Target</code>
-        /// is always of type <code>ACCOUNT</code>.
+        /// The account for which this command sets up a home region control. The <c>Target</c>
+        /// is always of type <c>ACCOUNT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

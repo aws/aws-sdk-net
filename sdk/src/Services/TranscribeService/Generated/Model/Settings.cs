@@ -85,8 +85,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>MaxAlternatives</code> in your request, you must also include
-        /// <code>ShowAlternatives</code> with a value of <code>true</code>.
+        /// If you include <c>MaxAlternatives</c> in your request, you must also include <c>ShowAlternatives</c>
+        /// with a value of <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -119,7 +119,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify the <code>MaxSpeakerLabels</code> field, you must set the <code>ShowSpeakerLabels</code>
+        /// If you specify the <c>MaxSpeakerLabels</c> field, you must set the <c>ShowSpeakerLabels</c>
         /// field to true.
         /// </para>
         /// </summary>
@@ -139,7 +139,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property ShowAlternatives. 
         /// <para>
-        /// To include alternative transcriptions within your transcription output, include <code>ShowAlternatives</code>
+        /// To include alternative transcriptions within your transcription output, include <c>ShowAlternatives</c>
         /// in your transcription request.
         /// </para>
         ///  
@@ -150,7 +150,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you include <code>ShowAlternatives</code>, you must also include <code>MaxAlternatives</code>,
+        /// If you include <c>ShowAlternatives</c>, you must also include <c>MaxAlternatives</c>,
         /// which is the maximum number of alternative transcriptions you want Amazon Transcribe
         /// to generate.
         /// </para>
@@ -180,8 +180,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you enable <code>ShowSpeakerLabels</code> in your request, you must also include
-        /// <code>MaxSpeakerLabels</code>.
+        /// If you enable <c>ShowSpeakerLabels</c> in your request, you must also include <c>MaxSpeakerLabels</c>.
         /// </para>
         ///  
         /// <para>
@@ -208,15 +207,15 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// To replace words with <code>***</code>, choose <code>mask</code>.
+        /// To replace words with <c>***</c>, choose <c>mask</c>.
         /// </para>
         ///  
         /// <para>
-        /// To delete words, choose <code>remove</code>.
+        /// To delete words, choose <c>remove</c>.
         /// </para>
         ///  
         /// <para>
-        /// To flag words without changing them, choose <code>tag</code>.
+        /// To flag words without changing them, choose <c>tag</c>.
         /// </para>
         /// </summary>
         public VocabularyFilterMethod VocabularyFilterMethod
@@ -240,8 +239,8 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that if you include <code>VocabularyFilterName</code> in your request, you must
-        /// also include <code>VocabularyFilterMethod</code>.
+        /// Note that if you include <c>VocabularyFilterName</c> in your request, you must also
+        /// include <c>VocabularyFilterMethod</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

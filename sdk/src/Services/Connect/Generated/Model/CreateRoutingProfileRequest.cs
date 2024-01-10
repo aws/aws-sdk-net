@@ -168,7 +168,7 @@ namespace Amazon.Connect.Model
         /// </para>
         ///  
         /// <para>
-        /// The limit of 10 array members applies to the maximum number of <code>RoutingProfileQueueConfig</code>
+        /// The limit of 10 array members applies to the maximum number of <c>RoutingProfileQueueConfig</c>
         /// objects that can be passed during a CreateRoutingProfile API request. It is different
         /// from the quota of 50 queues per routing profile per instance that is listed in <a
         /// href="https://docs.aws.amazon.com/connect/latest/adminguide/amazon-connect-service-limits.html">Amazon

@@ -113,9 +113,9 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// In releases prior to November 14, 2017, this parameter returned <code>attached</code>
-        /// for system disks in the API response. It is now discontinued, but still included in
-        /// the response. Use <code>isAttached</code> instead.
+        /// In releases prior to November 14, 2017, this parameter returned <c>attached</c> for
+        /// system disks in the API response. It is now discontinued, but still included in the
+        /// response. Use <c>isAttached</c> instead.
         /// </para>
         ///  </note>
         /// </summary>
@@ -310,7 +310,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (<code>Disk</code>).
+        /// The Lightsail resource type (<c>Disk</c>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

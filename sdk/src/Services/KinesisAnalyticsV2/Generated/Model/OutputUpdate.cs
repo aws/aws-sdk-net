@@ -30,7 +30,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
 {
     /// <summary>
     /// For a SQL-based Kinesis Data Analytics application, describes updates to the output
-    /// configuration identified by the <code>OutputId</code>.
+    /// configuration identified by the <c>OutputId</c>.
     /// </summary>
     public partial class OutputUpdate
     {

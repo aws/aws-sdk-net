@@ -69,11 +69,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -271,9 +271,9 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// If the plan is for an existing provisioned product, the product must have a <code>RESOURCE_UPDATE</code>
-        /// constraint with <code>TagUpdatesOnProvisionedProduct</code> set to <code>ALLOWED</code>
-        /// to allow tag updates.
+        /// If the plan is for an existing provisioned product, the product must have a <c>RESOURCE_UPDATE</c>
+        /// constraint with <c>TagUpdatesOnProvisionedProduct</c> set to <c>ALLOWED</c> to allow
+        /// tag updates.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

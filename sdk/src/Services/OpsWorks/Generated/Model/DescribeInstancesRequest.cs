@@ -53,7 +53,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceIds. 
         /// <para>
-        /// An array of instance IDs to be described. If you use this parameter, <code>DescribeInstances</code>
+        /// An array of instance IDs to be described. If you use this parameter, <c>DescribeInstances</c>
         /// returns a description of the specified instances. Otherwise, it returns a description
         /// of every instance.
         /// </para>
@@ -73,7 +73,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property LayerId. 
         /// <para>
-        /// A layer ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions
+        /// A layer ID. If you use this parameter, <c>DescribeInstances</c> returns descriptions
         /// of the instances associated with the specified layer.
         /// </para>
         /// </summary>
@@ -92,7 +92,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property StackId. 
         /// <para>
-        /// A stack ID. If you use this parameter, <code>DescribeInstances</code> returns descriptions
+        /// A stack ID. If you use this parameter, <c>DescribeInstances</c> returns descriptions
         /// of the instances associated with the specified stack.
         /// </para>
         /// </summary>

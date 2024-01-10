@@ -53,7 +53,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Arguments. 
         /// <para>
-        /// A map of arguments used to configure the <code>DevEndpoint</code>.
+        /// A map of arguments used to configure the <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -72,7 +72,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name to be assigned to the new <code>DevEndpoint</code>.
+        /// The name to be assigned to the new <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -91,8 +91,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ExtraJarsS3Path. 
         /// <para>
-        /// The path to one or more Java <code>.jar</code> files in an S3 bucket that should be
-        /// loaded in your <code>DevEndpoint</code>.
+        /// The path to one or more Java <c>.jar</c> files in an S3 bucket that should be loaded
+        /// in your <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public string ExtraJarsS3Path
@@ -111,14 +111,14 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ExtraPythonLibsS3Path. 
         /// <para>
         /// The paths to one or more Python libraries in an Amazon S3 bucket that should be loaded
-        /// in your <code>DevEndpoint</code>. Multiple values must be complete paths separated
-        /// by a comma.
+        /// in your <c>DevEndpoint</c>. Multiple values must be complete paths separated by a
+        /// comma.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You can only use pure Python libraries with a <code>DevEndpoint</code>. Libraries
-        /// that rely on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a>
-        /// Python data analysis library, are not yet supported.
+        /// You can only use pure Python libraries with a <c>DevEndpoint</c>. Libraries that rely
+        /// on C extensions, such as the <a href="http://pandas.pydata.org/">pandas</a> Python
+        /// data analysis library, are not yet supported.
         /// </para>
         ///  </note>
         /// </summary>
@@ -155,7 +155,7 @@ namespace Amazon.Glue.Model
         ///  
         /// <para>
         /// You can specify a version of Python support for development endpoints by using the
-        /// <code>Arguments</code> parameter in the <code>CreateDevEndpoint</code> or <code>UpdateDevEndpoint</code>
+        /// <c>Arguments</c> parameter in the <c>CreateDevEndpoint</c> or <c>UpdateDevEndpoint</c>
         /// APIs. If no arguments are provided, the version defaults to Python 2.
         /// </para>
         /// </summary>
@@ -175,7 +175,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfNodes. 
         /// <para>
-        /// The number of Glue Data Processing Units (DPUs) to allocate to this <code>DevEndpoint</code>.
+        /// The number of Glue Data Processing Units (DPUs) to allocate to this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public int NumberOfNodes
@@ -193,13 +193,13 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumberOfWorkers. 
         /// <para>
-        /// The number of workers of a defined <code>workerType</code> that are allocated to the
-        /// development endpoint.
+        /// The number of workers of a defined <c>workerType</c> that are allocated to the development
+        /// endpoint.
         /// </para>
         ///  
         /// <para>
-        /// The maximum number of workers you can define are 299 for <code>G.1X</code>, and 149
-        /// for <code>G.2X</code>. 
+        /// The maximum number of workers you can define are 299 for <c>G.1X</c>, and 149 for
+        /// <c>G.2X</c>. 
         /// </para>
         /// </summary>
         public int NumberOfWorkers
@@ -217,9 +217,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PublicKey. 
         /// <para>
-        /// The public key to be used by this <code>DevEndpoint</code> for authentication. This
-        /// attribute is provided for backward compatibility because the recommended attribute
-        /// to use is public keys.
+        /// The public key to be used by this <c>DevEndpoint</c> for authentication. This attribute
+        /// is provided for backward compatibility because the recommended attribute to use is
+        /// public keys.
         /// </para>
         /// </summary>
         public string PublicKey
@@ -244,9 +244,9 @@ namespace Amazon.Glue.Model
         ///  <note> 
         /// <para>
         /// If you previously created an endpoint with a public key, you must remove that key
-        /// to be able to set a list of public keys. Call the <code>UpdateDevEndpoint</code> API
-        /// with the public key content in the <code>deletePublicKeys</code> attribute, and the
-        /// list of new keys in the <code>addPublicKeys</code> attribute.
+        /// to be able to set a list of public keys. Call the <c>UpdateDevEndpoint</c> API with
+        /// the public key content in the <c>deletePublicKeys</c> attribute, and the list of new
+        /// keys in the <c>addPublicKeys</c> attribute.
         /// </para>
         ///  </note>
         /// </summary>
@@ -266,7 +266,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The IAM role for the <code>DevEndpoint</code>.
+        /// The IAM role for the <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -285,8 +285,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityConfiguration. 
         /// <para>
-        /// The name of the <code>SecurityConfiguration</code> structure to be used with this
-        /// <code>DevEndpoint</code>.
+        /// The name of the <c>SecurityConfiguration</c> structure to be used with this <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -305,7 +304,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 
         /// <para>
-        /// Security group IDs for the security groups to be used by the new <code>DevEndpoint</code>.
+        /// Security group IDs for the security groups to be used by the new <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         public List<string> SecurityGroupIds
@@ -323,7 +322,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// The subnet ID for the new <code>DevEndpoint</code> to use.
+        /// The subnet ID for the new <c>DevEndpoint</c> to use.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -367,24 +366,24 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
+        /// For the <c>Standard</c> worker type, each worker provides 4 vCPU, 16 GB of memory
         /// and a 50GB disk, and 2 executors per worker.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
-        /// memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
-        /// type for memory-intensive jobs.
+        /// For the <c>G.1X</c> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of memory,
+        /// 64 GB disk), and provides 1 executor per worker. We recommend this worker type for
+        /// memory-intensive jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
-        /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
-        /// type for memory-intensive jobs.
+        /// For the <c>G.2X</c> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of memory,
+        /// 128 GB disk), and provides 1 executor per worker. We recommend this worker type for
+        /// memory-intensive jobs.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Known issue: when a development endpoint is created with the <code>G.2X</code> <code>WorkerType</code>
+        /// Known issue: when a development endpoint is created with the <c>G.2X</c> <c>WorkerType</c>
         /// configuration, the Spark drivers for the development endpoint will run on 4 vCPU,
         /// 16 GB of memory, and a 64 GB disk. 
         /// </para>

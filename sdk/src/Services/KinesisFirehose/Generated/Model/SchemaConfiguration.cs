@@ -30,8 +30,8 @@ namespace Amazon.KinesisFirehose.Model
 {
     /// <summary>
     /// Specifies the schema to which you want Kinesis Data Firehose to configure your data
-    /// before it writes it to Amazon S3. This parameter is required if <code>Enabled</code>
-    /// is set to true.
+    /// before it writes it to Amazon S3. This parameter is required if <c>Enabled</c> is
+    /// set to true.
     /// </summary>
     public partial class SchemaConfiguration
     {
@@ -70,9 +70,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
-        /// the <code>CreateDeliveryStream</code> API, then the <code>DatabaseName</code> property
-        /// is required and its value must be specified.
+        /// If the <c>SchemaConfiguration</c> request parameter is used as part of invoking the
+        /// <c>CreateDeliveryStream</c> API, then the <c>DatabaseName</c> property is required
+        /// and its value must be specified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -117,9 +117,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
-        /// the <code>CreateDeliveryStream</code> API, then the <code>RoleARN</code> property
-        /// is required and its value must be specified.
+        /// If the <c>SchemaConfiguration</c> request parameter is used as part of invoking the
+        /// <c>CreateDeliveryStream</c> API, then the <c>RoleARN</c> property is required and
+        /// its value must be specified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -144,9 +144,9 @@ namespace Amazon.KinesisFirehose.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// If the <code>SchemaConfiguration</code> request parameter is used as part of invoking
-        /// the <code>CreateDeliveryStream</code> API, then the <code>TableName</code> property
-        /// is required and its value must be specified.
+        /// If the <c>SchemaConfiguration</c> request parameter is used as part of invoking the
+        /// <c>CreateDeliveryStream</c> API, then the <c>TableName</c> property is required and
+        /// its value must be specified.
         /// </para>
         ///  </important>
         /// </summary>
@@ -167,8 +167,8 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property VersionId. 
         /// <para>
         /// Specifies the table version for the output data schema. If you don't specify this
-        /// version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose uses the
-        /// most recent version. This means that any updates to the table are automatically picked
+        /// version ID, or if you set it to <c>LATEST</c>, Kinesis Data Firehose uses the most
+        /// recent version. This means that any updates to the table are automatically picked
         /// up.
         /// </para>
         /// </summary>

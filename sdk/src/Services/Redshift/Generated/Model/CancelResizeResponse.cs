@@ -239,8 +239,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResizeType. 
         /// <para>
-        /// An enum with possible values of <code>ClassicResize</code> and <code>ElasticResize</code>.
-        /// These values describe the type of resize operation being performed. 
+        /// An enum with possible values of <c>ClassicResize</c> and <c>ElasticResize</c>. These
+        /// values describe the type of resize operation being performed. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -263,8 +263,8 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>NONE</code> | <code>IN_PROGRESS</code> | <code>FAILED</code> |
-        /// <code>SUCCEEDED</code> | <code>CANCELLING</code> 
+        /// Valid Values: <c>NONE</c> | <c>IN_PROGRESS</c> | <c>FAILED</c> | <c>SUCCEEDED</c>
+        /// | <c>CANCELLING</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -287,7 +287,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>multi-node</code> | <code>single-node</code> 
+        /// Valid Values: <c>multi-node</c> | <c>single-node</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -310,7 +310,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <code>KMS</code> and <code>None</code>. 
+        /// Possible values are <c>KMS</c> and <c>None</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

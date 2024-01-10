@@ -59,7 +59,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ReturnValuesOnConditionCheckFailure. 
         /// <para>
-        /// An optional parameter that returns the item attributes for a PartiQL <code>ParameterizedStatement</code>
+        /// An optional parameter that returns the item attributes for a PartiQL <c>ParameterizedStatement</c>
         /// operation that failed a condition check.
         /// </para>
         ///  

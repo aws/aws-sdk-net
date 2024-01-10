@@ -35,8 +35,7 @@ namespace Amazon.LexModelBuildingService.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>lex:GetBotChannelAssociation</code>
-    /// action.
+    /// This operation requires permissions for the <c>lex:GetBotChannelAssociation</c> action.
     /// </para>
     /// </summary>
     public partial class GetBotChannelAssociationRequest : AmazonLexModelBuildingServiceRequest

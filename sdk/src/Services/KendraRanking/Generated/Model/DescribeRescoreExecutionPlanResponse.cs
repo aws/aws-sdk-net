@@ -123,8 +123,8 @@ namespace Amazon.KendraRanking.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// When the <code>Status</code> field value is <code>FAILED</code>, the <code>ErrorMessage</code>
-        /// field contains a message that explains why.
+        /// When the <c>Status</c> field value is <c>FAILED</c>, the <c>ErrorMessage</c> field
+        /// contains a message that explains why.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -181,10 +181,9 @@ namespace Amazon.KendraRanking.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the rescore execution plan. When the value is <code>ACTIVE</code>,
-        /// the rescore execution plan is ready for use. If the <code>Status</code> field value
-        /// is <code>FAILED</code>, the <code>ErrorMessage</code> field contains a message that
-        /// explains why.
+        /// The current status of the rescore execution plan. When the value is <c>ACTIVE</c>,
+        /// the rescore execution plan is ready for use. If the <c>Status</c> field value is <c>FAILED</c>,
+        /// the <c>ErrorMessage</c> field contains a message that explains why.
         /// </para>
         /// </summary>
         public RescoreExecutionPlanStatus Status

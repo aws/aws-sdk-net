@@ -98,8 +98,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current status of the index. When the status is <code>ACTIVE</code>, the index
-        /// is ready.
+        /// The current status of the index. When the status is <c>ACTIVE</c>, the index is ready.
         /// </para>
         /// </summary>
         public IndexStatus Status

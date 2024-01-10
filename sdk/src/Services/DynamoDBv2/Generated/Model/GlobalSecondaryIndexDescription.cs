@@ -50,20 +50,20 @@ namespace Amazon.DynamoDBv2.Model
         /// of reading items from the table and determining whether they can be added to the index.
         /// (Not all items will qualify: For example, a partition key cannot have any duplicate
         /// values.) If an item can be added to the index, DynamoDB will do so. After all items
-        /// have been processed, the backfilling operation is complete and <code>Backfilling</code>
+        /// have been processed, the backfilling operation is complete and <c>Backfilling</c>
         /// is false.
         /// </para>
         ///  
         /// <para>
-        /// You can delete an index that is being created during the <code>Backfilling</code>
-        /// phase when <code>IndexStatus</code> is set to CREATING and <code>Backfilling</code>
-        /// is true. You can't delete the index that is being created when <code>IndexStatus</code>
-        /// is set to CREATING and <code>Backfilling</code> is false. 
+        /// You can delete an index that is being created during the <c>Backfilling</c> phase
+        /// when <c>IndexStatus</c> is set to CREATING and <c>Backfilling</c> is true. You can't
+        /// delete the index that is being created when <c>IndexStatus</c> is set to CREATING
+        /// and <c>Backfilling</c> is false. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// For indexes that were created during a <code>CreateTable</code> operation, the <code>Backfilling</code>
-        /// attribute does not appear in the <code>DescribeTable</code> output.
+        /// For indexes that were created during a <c>CreateTable</c> operation, the <c>Backfilling</c>
+        /// attribute does not appear in the <c>DescribeTable</c> output.
         /// </para>
         ///  </note>
         /// </summary>
@@ -142,19 +142,19 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> - The index is being created.
+        ///  <c>CREATING</c> - The index is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The index is being updated.
+        ///  <c>UPDATING</c> - The index is being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - The index is being deleted.
+        ///  <c>DELETING</c> - The index is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - The index is ready for use.
+        ///  <c>ACTIVE</c> - The index is ready for use.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -197,11 +197,11 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>HASH</code> - partition key
+        ///  <c>HASH</c> - partition key
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RANGE</code> - sort key
+        ///  <c>RANGE</c> - sort key
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>

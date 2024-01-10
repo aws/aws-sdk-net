@@ -60,7 +60,7 @@ namespace Amazon.ServerMigrationService.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return in a single call. The default value is 100.
-        /// To retrieve the remaining results, make another call with the returned <code>NextToken</code>
+        /// To retrieve the remaining results, make another call with the returned <c>NextToken</c>
         /// value. 
         /// </para>
         /// </summary>

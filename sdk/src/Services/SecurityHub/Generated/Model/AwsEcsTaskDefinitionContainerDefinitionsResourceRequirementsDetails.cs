@@ -39,8 +39,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of resource to assign to a container. Valid values are <code>GPU</code> or
-        /// <code>InferenceAccelerator</code>.
+        /// The type of resource to assign to a container. Valid values are <c>GPU</c> or <c>InferenceAccelerator</c>.
         /// </para>
         /// </summary>
         public string Type
@@ -62,13 +61,13 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// For <code>GPU</code>, the value is the number of physical GPUs the Amazon ECS container
+        /// For <c>GPU</c>, the value is the number of physical GPUs the Amazon ECS container
         /// agent reserves for the container.
         /// </para>
         ///  
         /// <para>
-        /// For <code>InferenceAccelerator</code>, the value should match the <code>DeviceName</code>
-        /// attribute of an entry in <code>InferenceAccelerators</code>.
+        /// For <c>InferenceAccelerator</c>, the value should match the <c>DeviceName</c> attribute
+        /// of an entry in <c>InferenceAccelerators</c>.
         /// </para>
         /// </summary>
         public string Value

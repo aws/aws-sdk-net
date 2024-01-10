@@ -42,7 +42,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property AdvancedBackupSettings. 
         /// <para>
-        /// Contains a list of <code>BackupOptions</code> for each resource type.
+        /// Contains a list of <c>BackupOptions</c> for each resource type.
         /// </para>
         /// </summary>
         public List<AdvancedBackupSetting> AdvancedBackupSettings
@@ -61,7 +61,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property BackupPlanArn. 
         /// <para>
         /// An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for example,
-        /// <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.
+        /// <c>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</c>.
         /// </para>
         /// </summary>
         public string BackupPlanArn
@@ -98,9 +98,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The date and time a backup plan is created, in Unix format and Coordinated Universal
-        /// Time (UTC). The value of <code>CreationDate</code> is accurate to milliseconds. For
-        /// example, the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087
-        /// AM.
+        /// Time (UTC). The value of <c>CreationDate</c> is accurate to milliseconds. For example,
+        /// the value 1516925490.087 represents Friday, January 26, 2018 12:11:30.087 AM.
         /// </para>
         /// </summary>
         public DateTime CreationDate

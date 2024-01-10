@@ -35,20 +35,19 @@ namespace Amazon.MediaTailor.Model
     /// 
     ///  
     /// <para>
-    /// As an example, let's say that you set <code>DynamicVariable</code> to <code>scte.event_id</code>
-    /// and <code>Operator</code> to <code>EQUALS</code>, and your playback configuration
-    /// has an ADS URL of <code>https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]</code>.
-    /// And the prefetch request to the ADS contains these values <code>https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30</code>.
+    /// As an example, let's say that you set <c>DynamicVariable</c> to <c>scte.event_id</c>
+    /// and <c>Operator</c> to <c>EQUALS</c>, and your playback configuration has an ADS URL
+    /// of <c>https://my.ads.server.com/path?&amp;podId=[scte.avail_num]&amp;event=[scte.event_id]&amp;duration=[session.avail_duration_secs]</c>.
+    /// And the prefetch request to the ADS contains these values <c>https://my.ads.server.com/path?&amp;podId=3&amp;event=my-awesome-event&amp;duration=30</c>.
     /// MediaTailor will only insert the prefetched ads into the ad break if has a SCTE marker
-    /// with an event id of <code>my-awesome-event</code>, since it must match the event id
-    /// that MediaTailor uses to query the ADS.
+    /// with an event id of <c>my-awesome-event</c>, since it must match the event id that
+    /// MediaTailor uses to query the ADS.
     /// </para>
     ///  
     /// <para>
-    /// You can specify up to five <code>AvailMatchingCriteria</code>. If you specify multiple
-    /// <code>AvailMatchingCriteria</code>, MediaTailor combines them to match using a logical
-    /// <code>AND</code>. You can model logical <code>OR</code> combinations by creating multiple
-    /// prefetch schedules.
+    /// You can specify up to five <c>AvailMatchingCriteria</c>. If you specify multiple <c>AvailMatchingCriteria</c>,
+    /// MediaTailor combines them to match using a logical <c>AND</c>. You can model logical
+    /// <c>OR</c> combinations by creating multiple prefetch schedules.
     /// </para>
     /// </summary>
     public partial class AvailMatchingCriteria
@@ -85,8 +84,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// For the <code>DynamicVariable</code> specified in <code>AvailMatchingCriteria</code>,
-        /// the Operator that is used for the comparison.
+        /// For the <c>DynamicVariable</c> specified in <c>AvailMatchingCriteria</c>, the Operator
+        /// that is used for the comparison.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

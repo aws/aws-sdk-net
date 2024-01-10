@@ -62,8 +62,8 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// A dictionary of errors that communicate why the component version is in an error state.
         /// For example, if IoT Greengrass can't access an artifact for the component version,
-        /// then <code>errors</code> contains the artifact's URI as a key, and the error message
-        /// as the value for that key.
+        /// then <c>errors</c> contains the artifact's URI as a key, and the error message as
+        /// the value for that key.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Errors
@@ -107,18 +107,18 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> – This component version is available and recommended for use.
+        ///  <c>ACTIVE</c> – This component version is available and recommended for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISCONTINUED</code> – This component version has been discontinued by its publisher.
+        ///  <c>DISCONTINUED</c> – This component version has been discontinued by its publisher.
         /// You can deploy this component version, but we recommend that you use a different version
         /// of this component.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> – This component version has been deleted by its publisher,
-        /// so you can't deploy it. If you have any existing deployments that specify this component
+        ///  <c>DELETED</c> – This component version has been deleted by its publisher, so you
+        /// can't deploy it. If you have any existing deployments that specify this component
         /// version, those deployments will fail.
         /// </para>
         ///  </li> </ul>

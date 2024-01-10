@@ -40,7 +40,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  <ol> <li> 
     /// <para>
-    /// Use <code>GetCachePolicyConfig</code> to get the current configuration.
+    /// Use <c>GetCachePolicyConfig</c> to get the current configuration.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.CloudFront.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Call <code>UpdateCachePolicy</code> by providing the entire cache policy configuration,
+    /// Call <c>UpdateCachePolicy</c> by providing the entire cache policy configuration,
     /// including the fields that you modified and those that you didn't.
     /// </para>
     ///  </li> </ol>
@@ -82,8 +82,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier for the cache policy that you are updating. The identifier is
-        /// returned in a cache behavior's <code>CachePolicyId</code> field in the response to
-        /// <code>GetDistributionConfig</code>.
+        /// returned in a cache behavior's <c>CachePolicyId</c> field in the response to <c>GetDistributionConfig</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -103,7 +102,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property IfMatch. 
         /// <para>
         /// The version of the cache policy that you are updating. The version is returned in
-        /// the cache policy's <code>ETag</code> field in the response to <code>GetCachePolicyConfig</code>.
+        /// the cache policy's <c>ETag</c> field in the response to <c>GetCachePolicyConfig</c>.
         /// </para>
         /// </summary>
         public string IfMatch

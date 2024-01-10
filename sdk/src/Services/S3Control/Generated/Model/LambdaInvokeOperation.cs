@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a <code>Lambda Invoke</code> operation.
+    /// Contains the configuration parameters for a <c>Lambda Invoke</c> operation.
     /// </summary>
     public partial class LambdaInvokeOperation
     {
@@ -61,24 +61,23 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property InvocationSchemaVersion. 
         /// <para>
         /// Specifies the schema version for the payload that Batch Operations sends when invoking
-        /// an Lambda function. Version <code>1.0</code> is the default. Version <code>2.0</code>
-        /// is required when you use Batch Operations to invoke Lambda functions that act on directory
-        /// buckets, or if you need to specify <code>UserArguments</code>. For more information,
-        /// see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
+        /// an Lambda function. Version <c>1.0</c> is the default. Version <c>2.0</c> is required
+        /// when you use Batch Operations to invoke Lambda functions that act on directory buckets,
+        /// or if you need to specify <c>UserArguments</c>. For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
         /// Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon
         /// Web Services Storage Blog</i>.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Ensure that your Lambda function code expects <code>InvocationSchemaVersion</code>
-        /// <b>2.0</b> and uses bucket name rather than bucket ARN. If the <code>InvocationSchemaVersion</code>
+        /// Ensure that your Lambda function code expects <c>InvocationSchemaVersion</c> <b>2.0</b>
+        /// and uses bucket name rather than bucket ARN. If the <c>InvocationSchemaVersion</c>
         /// does not match what your Lambda function expects, your function might not work as
         /// expected.
         /// </para>
         ///  </important> <note> 
         /// <para>
         ///  <b>Directory buckets</b> - To initiate Amazon Web Services Lambda function to perform
-        /// custom actions on objects in directory buckets, you must specify <code>2.0</code>.
+        /// custom actions on objects in directory buckets, you must specify <c>2.0</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -99,9 +98,9 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property UserArguments. 
         /// <para>
         /// Key-value pairs that are passed in the payload that Batch Operations sends when invoking
-        /// an Lambda function. You must specify <code>InvocationSchemaVersion</code> <b>2.0</b>
-        /// for <code>LambdaInvoke</code> operations that include <code>UserArguments</code>.
-        /// For more information, see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
+        /// an Lambda function. You must specify <c>InvocationSchemaVersion</c> <b>2.0</b> for
+        /// <c>LambdaInvoke</c> operations that include <c>UserArguments</c>. For more information,
+        /// see <a href="https://aws.amazon.com/blogs/storage/using-lambda-with-s3-batch-operations-and-s3-express-one-zone/">Using
         /// Lambda with Amazon S3 Batch Operations and Amazon S3 Express One Zone</a> in the <i>Amazon
         /// Web Services Storage Blog</i>.
         /// </para>

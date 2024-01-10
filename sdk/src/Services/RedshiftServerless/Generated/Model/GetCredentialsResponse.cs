@@ -41,8 +41,8 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property DbPassword. 
         /// <para>
-        /// A temporary password that authorizes the user name returned by <code>DbUser</code>
-        /// to log on to the database <code>DbName</code>.
+        /// A temporary password that authorizes the user name returned by <c>DbUser</c> to log
+        /// on to the database <c>DbName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -61,10 +61,10 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property DbUser. 
         /// <para>
-        /// A database user name that is authorized to log on to the database <code>DbName</code>
-        /// using the password <code>DbPassword</code>. If the specified <code>DbUser</code> exists
-        /// in the database, the new user name has the same database privileges as the the user
-        /// named in <code>DbUser</code>. By default, the user is added to PUBLIC.
+        /// A database user name that is authorized to log on to the database <c>DbName</c> using
+        /// the password <c>DbPassword</c>. If the specified <c>DbUser</c> exists in the database,
+        /// the new user name has the same database privileges as the the user named in <c>DbUser</c>.
+        /// By default, the user is added to PUBLIC.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -83,7 +83,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property Expiration. 
         /// <para>
-        /// The date and time the password in <code>DbPassword</code> expires.
+        /// The date and time the password in <c>DbPassword</c> expires.
         /// </para>
         /// </summary>
         public DateTime Expiration
@@ -101,8 +101,7 @@ namespace Amazon.RedshiftServerless.Model
         /// <summary>
         /// Gets and sets the property NextRefreshTime. 
         /// <para>
-        /// The date and time of when the <code>DbUser</code> and <code>DbPassword</code> authorization
-        /// refreshes.
+        /// The date and time of when the <c>DbUser</c> and <c>DbPassword</c> authorization refreshes.
         /// </para>
         /// </summary>
         public DateTime NextRefreshTime

@@ -80,8 +80,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property PartitionIndex. 
         /// <para>
-        /// Specifies a <code>PartitionIndex</code> structure to create a partition index in an
-        /// existing table.
+        /// Specifies a <c>PartitionIndex</c> structure to create a partition index in an existing
+        /// table.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

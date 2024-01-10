@@ -42,7 +42,7 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The <code>Id</code> and <code>Name</code> of a <code>SizeConstraintSet</code>.
+    /// The <c>Id</c> and <c>Name</c> of a <c>SizeConstraintSet</c>.
     /// </para>
     /// </summary>
     public partial class SizeConstraintSetSummary
@@ -53,7 +53,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>SizeConstraintSet</code>, if any.
+        /// The name of the <c>SizeConstraintSet</c>, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -72,17 +72,15 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property SizeConstraintSetId. 
         /// <para>
-        /// A unique identifier for a <code>SizeConstraintSet</code>. You use <code>SizeConstraintSetId</code>
-        /// to get information about a <code>SizeConstraintSet</code> (see <a>GetSizeConstraintSet</a>),
-        /// update a <code>SizeConstraintSet</code> (see <a>UpdateSizeConstraintSet</a>), insert
-        /// a <code>SizeConstraintSet</code> into a <code>Rule</code> or delete one from a <code>Rule</code>
-        /// (see <a>UpdateRule</a>), and delete a <code>SizeConstraintSet</code> from AWS WAF
-        /// (see <a>DeleteSizeConstraintSet</a>).
+        /// A unique identifier for a <c>SizeConstraintSet</c>. You use <c>SizeConstraintSetId</c>
+        /// to get information about a <c>SizeConstraintSet</c> (see <a>GetSizeConstraintSet</a>),
+        /// update a <c>SizeConstraintSet</c> (see <a>UpdateSizeConstraintSet</a>), insert a <c>SizeConstraintSet</c>
+        /// into a <c>Rule</c> or delete one from a <c>Rule</c> (see <a>UpdateRule</a>), and delete
+        /// a <c>SizeConstraintSet</c> from AWS WAF (see <a>DeleteSizeConstraintSet</a>).
         /// </para>
         ///  
         /// <para>
-        ///  <code>SizeConstraintSetId</code> is returned by <a>CreateSizeConstraintSet</a> and
-        /// by <a>ListSizeConstraintSets</a>.
+        ///  <c>SizeConstraintSetId</c> is returned by <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

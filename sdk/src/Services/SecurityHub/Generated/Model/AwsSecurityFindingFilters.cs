@@ -328,10 +328,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> CreatedAt
@@ -513,7 +513,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property FindingProviderFieldsTypes. 
         /// <para>
         /// One or more finding types that the finding provider assigned to the finding. Uses
-        /// the format of <code>namespace/category/classifier</code> that classify a finding.
+        /// the format of <c>namespace/category/classifier</c> that classify a finding.
         /// </para>
         ///  
         /// <para>
@@ -541,10 +541,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> FirstObservedAt
@@ -624,10 +624,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> LastObservedAt
@@ -974,10 +974,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ProcessLaunchedAt
@@ -1013,8 +1013,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessParentPid. 
         /// <para>
-        /// The parent process ID. This field accepts positive integers between <code>O</code>
-        /// and <code>2147483647</code>.
+        /// The parent process ID. This field accepts positive integers between <c>O</c> and <c>2147483647</c>.
         /// </para>
         /// </summary>
         public List<NumberFilter> ProcessParentPid
@@ -1072,10 +1071,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ProcessTerminatedAt
@@ -1114,7 +1113,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property ProductFields. 
         /// <para>
         /// A data type where security findings providers can include additional solution-specific
-        /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
+        /// details that aren't part of the defined <c>AwsSecurityFinding</c> format.
         /// </para>
         /// </summary>
         public List<MapFilter> ProductFields
@@ -1605,10 +1604,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ResourceContainerLaunchedAt
@@ -1974,7 +1973,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// A finding type in the format of <code>namespace/category/classifier</code> that classifies
+        /// A finding type in the format of <c>namespace/category/classifier</c> that classifies
         /// a finding.
         /// </para>
         /// </summary>
@@ -1998,10 +1997,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> UpdatedAt
@@ -2101,7 +2100,7 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Note that this field is deprecated. To search for a finding based on its workflow
-        /// status, use <code>WorkflowStatus</code>.
+        /// status, use <c>WorkflowStatus</c>.
         /// </para>
         /// </summary>
         public List<StringFilter> WorkflowState
@@ -2123,78 +2122,78 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code> - The initial state of a finding, before it is reviewed.
+        ///  <c>NEW</c> - The initial state of a finding, before it is reviewed.
         /// </para>
         ///  
         /// <para>
-        /// Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code>
-        /// to <code>NEW</code> in the following cases:
+        /// Security Hub also resets the workflow status from <c>NOTIFIED</c> or <c>RESOLVED</c>
+        /// to <c>NEW</c> in the following cases:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        ///  <c>RecordState</c> changes from <c>ARCHIVED</c> to <c>ACTIVE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Compliance.Status</code> changes from <code>PASSED</code> to either <code>WARNING</code>,
-        /// <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+        ///  <c>Compliance.Status</c> changes from <c>PASSED</c> to either <c>WARNING</c>, <c>FAILED</c>,
+        /// or <c>NOT_AVAILABLE</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>NOTIFIED</code> - Indicates that the resource owner has been notified about
-        /// the security issue. Used when the initial reviewer is not the resource owner, and
-        /// needs intervention from the resource owner.
+        ///  <c>NOTIFIED</c> - Indicates that the resource owner has been notified about the security
+        /// issue. Used when the initial reviewer is not the resource owner, and needs intervention
+        /// from the resource owner.
         /// </para>
         ///  
         /// <para>
         /// If one of the following occurs, the workflow status is changed automatically from
-        /// <code>NOTIFIED</code> to <code>NEW</code>:
+        /// <c>NOTIFIED</c> to <c>NEW</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        ///  <c>RecordState</c> changes from <c>ARCHIVED</c> to <c>ACTIVE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>,
-        /// <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.
+        ///  <c>Compliance.Status</c> changes from <c>PASSED</c> to <c>FAILED</c>, <c>WARNING</c>,
+        /// or <c>NOT_AVAILABLE</c>.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
-        ///  <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe
-        /// that any action is needed.
+        ///  <c>SUPPRESSED</c> - Indicates that you reviewed the finding and do not believe that
+        /// any action is needed.
         /// </para>
         ///  
         /// <para>
-        /// The workflow status of a <code>SUPPRESSED</code> finding does not change if <code>RecordState</code>
-        /// changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        /// The workflow status of a <c>SUPPRESSED</c> finding does not change if <c>RecordState</c>
+        /// changes from <c>ARCHIVED</c> to <c>ACTIVE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered
-        /// resolved. 
+        ///  <c>RESOLVED</c> - The finding was reviewed and remediated and is now considered resolved.
+        /// 
         /// </para>
         ///  
         /// <para>
-        /// The finding remains <code>RESOLVED</code> unless one of the following occurs:
+        /// The finding remains <c>RESOLVED</c> unless one of the following occurs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>RecordState</code> changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+        ///  <c>RecordState</c> changes from <c>ARCHIVED</c> to <c>ACTIVE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Compliance.Status</code> changes from <code>PASSED</code> to <code>FAILED</code>,
-        /// <code>WARNING</code>, or <code>NOT_AVAILABLE</code>.
+        ///  <c>Compliance.Status</c> changes from <c>PASSED</c> to <c>FAILED</c>, <c>WARNING</c>,
+        /// or <c>NOT_AVAILABLE</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In those cases, the workflow status is automatically reset to <code>NEW</code>.
+        /// In those cases, the workflow status is automatically reset to <c>NEW</c>.
         /// </para>
         ///  
         /// <para>
-        /// For findings from controls, if <code>Compliance.Status</code> is <code>PASSED</code>,
-        /// then Security Hub automatically sets the workflow status to <code>RESOLVED</code>.
+        /// For findings from controls, if <c>Compliance.Status</c> is <c>PASSED</c>, then Security
+        /// Hub automatically sets the workflow status to <c>RESOLVED</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

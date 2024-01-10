@@ -147,13 +147,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property CustomerMasterKeySpec. 
         /// <para>
-        /// Instead, use the <code>KeySpec</code> field.
+        /// Instead, use the <c>KeySpec</c> field.
         /// </para>
         ///  
         /// <para>
-        /// The <code>KeySpec</code> and <code>CustomerMasterKeySpec</code> fields have the same
-        /// value. We recommend that you use the <code>KeySpec</code> field in your code. However,
-        /// to avoid breaking changes, KMS supports both fields.
+        /// The <c>KeySpec</c> and <c>CustomerMasterKeySpec</c> fields have the same value. We
+        /// recommend that you use the <c>KeySpec</c> field in your code. However, to avoid breaking
+        /// changes, KMS supports both fields.
         /// </para>
         /// </summary>
         [Obsolete("This field has been deprecated. Instead, use the KeySpec field.")]
@@ -194,15 +194,13 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property DeletionDate. 
         /// <para>
         /// The date and time after which KMS deletes this KMS key. This value is present only
-        /// when the KMS key is scheduled for deletion, that is, when its <code>KeyState</code>
-        /// is <code>PendingDeletion</code>.
+        /// when the KMS key is scheduled for deletion, that is, when its <c>KeyState</c> is <c>PendingDeletion</c>.
         /// </para>
         ///  
         /// <para>
         /// When the primary key in a multi-Region key is scheduled for deletion but still has
-        /// replica keys, its key state is <code>PendingReplicaDeletion</code> and the length
-        /// of its waiting period is displayed in the <code>PendingDeletionWindowInDays</code>
-        /// field.
+        /// replica keys, its key state is <c>PendingReplicaDeletion</c> and the length of its
+        /// waiting period is displayed in the <c>PendingDeletionWindowInDays</c> field.
         /// </para>
         /// </summary>
         public DateTime DeletionDate
@@ -239,8 +237,8 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Specifies whether the KMS key is enabled. When <code>KeyState</code> is <code>Enabled</code>
-        /// this value is true, otherwise it is false.
+        /// Specifies whether the KMS key is enabled. When <c>KeyState</c> is <c>Enabled</c> this
+        /// value is true, otherwise it is false.
         /// </para>
         /// </summary>
         public bool Enabled
@@ -263,7 +261,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is present only when the <code>KeyUsage</code> of the KMS key is <code>ENCRYPT_DECRYPT</code>.
+        /// This value is present only when the <c>KeyUsage</c> of the KMS key is <c>ENCRYPT_DECRYPT</c>.
         /// </para>
         /// </summary>
         public List<string> EncryptionAlgorithms
@@ -282,7 +280,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property ExpirationModel. 
         /// <para>
         /// Specifies whether the KMS key's key material expires. This value is present only when
-        /// <code>Origin</code> is <code>EXTERNAL</code>, otherwise this value is omitted.
+        /// <c>Origin</c> is <c>EXTERNAL</c>, otherwise this value is omitted.
         /// </para>
         /// </summary>
         public ExpirationModelType ExpirationModel
@@ -404,7 +402,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This value is present only when the <code>KeyUsage</code> of the KMS key is <code>GENERATE_VERIFY_MAC</code>.
+        /// This value is present only when the <c>KeyUsage</c> of the KMS key is <c>GENERATE_VERIFY_MAC</c>.
         /// </para>
         /// </summary>
         public List<string> MacAlgorithms
@@ -422,9 +420,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MultiRegion. 
         /// <para>
-        /// Indicates whether the KMS key is a multi-Region (<code>True</code>) or regional (<code>False</code>)
-        /// key. This value is <code>True</code> for multi-Region primary and replica keys and
-        /// <code>False</code> for regional KMS keys.
+        /// Indicates whether the KMS key is a multi-Region (<c>True</c>) or regional (<c>False</c>)
+        /// key. This value is <c>True</c> for multi-Region primary and replica keys and <c>False</c>
+        /// for regional KMS keys.
         /// </para>
         ///  
         /// <para>
@@ -448,7 +446,7 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property MultiRegionConfiguration. 
         /// <para>
         /// Lists the primary and replica keys in same multi-Region key. This field is present
-        /// only when the value of the <code>MultiRegion</code> field is <code>True</code>.
+        /// only when the value of the <c>MultiRegion</c> field is <c>True</c>.
         /// </para>
         ///  
         /// <para>
@@ -456,18 +454,18 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MultiRegionKeyType</code> indicates whether the KMS key is a <code>PRIMARY</code>
-        /// or <code>REPLICA</code> key.
+        ///  <c>MultiRegionKeyType</c> indicates whether the KMS key is a <c>PRIMARY</c> or <c>REPLICA</c>
+        /// key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PrimaryKey</code> displays the key ARN and Region of the primary key. This
-        /// field displays the current KMS key if it is the primary key.
+        ///  <c>PrimaryKey</c> displays the key ARN and Region of the primary key. This field
+        /// displays the current KMS key if it is the primary key.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ReplicaKeys</code> displays the key ARNs and Regions of all replica keys. This
-        /// field includes the current KMS key if it is a replica key.
+        ///  <c>ReplicaKeys</c> displays the key ARNs and Regions of all replica keys. This field
+        /// includes the current KMS key if it is a replica key.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -486,9 +484,9 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// The source of the key material for the KMS key. When this value is <code>AWS_KMS</code>,
-        /// KMS created the key material. When this value is <code>EXTERNAL</code>, the key material
-        /// was imported or the KMS key doesn't have any key material. When this value is <code>AWS_CLOUDHSM</code>,
+        /// The source of the key material for the KMS key. When this value is <c>AWS_KMS</c>,
+        /// KMS created the key material. When this value is <c>EXTERNAL</c>, the key material
+        /// was imported or the KMS key doesn't have any key material. When this value is <c>AWS_CLOUDHSM</c>,
         /// the key material was created in the CloudHSM cluster associated with a custom key
         /// store.
         /// </para>
@@ -510,20 +508,19 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The waiting period before the primary key in a multi-Region key is deleted. This waiting
         /// period begins when the last of its replica keys is deleted. This value is present
-        /// only when the <code>KeyState</code> of the KMS key is <code>PendingReplicaDeletion</code>.
-        /// That indicates that the KMS key is the primary key in a multi-Region key, it is scheduled
+        /// only when the <c>KeyState</c> of the KMS key is <c>PendingReplicaDeletion</c>. That
+        /// indicates that the KMS key is the primary key in a multi-Region key, it is scheduled
         /// for deletion, and it still has existing replica keys.
         /// </para>
         ///  
         /// <para>
         /// When a single-Region KMS key or a multi-Region replica key is scheduled for deletion,
-        /// its deletion date is displayed in the <code>DeletionDate</code> field. However, when
-        /// the primary key in a multi-Region key is scheduled for deletion, its waiting period
-        /// doesn't begin until all of its replica keys are deleted. This value displays that
-        /// waiting period. When the last replica key in the multi-Region key is deleted, the
-        /// <code>KeyState</code> of the scheduled primary key changes from <code>PendingReplicaDeletion</code>
-        /// to <code>PendingDeletion</code> and the deletion date appears in the <code>DeletionDate</code>
-        /// field.
+        /// its deletion date is displayed in the <c>DeletionDate</c> field. However, when the
+        /// primary key in a multi-Region key is scheduled for deletion, its waiting period doesn't
+        /// begin until all of its replica keys are deleted. This value displays that waiting
+        /// period. When the last replica key in the multi-Region key is deleted, the <c>KeyState</c>
+        /// of the scheduled primary key changes from <c>PendingReplicaDeletion</c> to <c>PendingDeletion</c>
+        /// and the deletion date appears in the <c>DeletionDate</c> field.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=365)]
@@ -547,7 +544,7 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// This field appears only when the <code>KeyUsage</code> of the KMS key is <code>SIGN_VERIFY</code>.
+        /// This field appears only when the <c>KeyUsage</c> of the KMS key is <c>SIGN_VERIFY</c>.
         /// </para>
         /// </summary>
         public List<string> SigningAlgorithms
@@ -567,8 +564,8 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// The time at which the imported key material expires. When the key material expires,
         /// KMS deletes the key material and the KMS key becomes unusable. This value is present
-        /// only for KMS keys whose <code>Origin</code> is <code>EXTERNAL</code> and whose <code>ExpirationModel</code>
-        /// is <code>KEY_MATERIAL_EXPIRES</code>, otherwise this value is omitted.
+        /// only for KMS keys whose <c>Origin</c> is <c>EXTERNAL</c> and whose <c>ExpirationModel</c>
+        /// is <c>KEY_MATERIAL_EXPIRES</c>, otherwise this value is omitted.
         /// </para>
         /// </summary>
         public DateTime ValidTo

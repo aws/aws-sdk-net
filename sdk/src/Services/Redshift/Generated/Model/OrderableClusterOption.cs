@@ -59,7 +59,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterType. 
         /// <para>
-        /// The cluster type, for example <code>multi-node</code>. 
+        /// The cluster type, for example <c>multi-node</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]

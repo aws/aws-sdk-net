@@ -41,8 +41,8 @@ namespace Amazon.IVSRealTime.Model
         /// Gets and sets the property FeaturedParticipantAttribute. 
         /// <para>
         /// This attribute name identifies the featured slot. A participant with this attribute
-        /// set to <code>"true"</code> (as a string value) in <a>ParticipantTokenConfiguration</a>
-        /// is placed in the featured slot.
+        /// set to <c>"true"</c> (as a string value) in <a>ParticipantTokenConfiguration</a> is
+        /// placed in the featured slot.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

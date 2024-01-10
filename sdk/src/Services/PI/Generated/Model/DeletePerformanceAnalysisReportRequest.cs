@@ -62,13 +62,13 @@ namespace Amazon.PI.Model
         /// <para>
         /// An immutable identifier for a data source that is unique for an Amazon Web Services
         /// Region. Performance Insights gathers metrics from this data source. In the console,
-        /// the identifier is shown as <i>ResourceID</i>. When you call <code>DescribeDBInstances</code>,
-        /// the identifier is returned as <code>DbiResourceId</code>.
+        /// the identifier is shown as <i>ResourceID</i>. When you call <c>DescribeDBInstances</c>,
+        /// the identifier is returned as <c>DbiResourceId</c>.
         /// </para>
         ///  
         /// <para>
-        /// To use a DB instance as a data source, specify its <code>DbiResourceId</code> value.
-        /// For example, specify <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.
+        /// To use a DB instance as a data source, specify its <c>DbiResourceId</c> value. For
+        /// example, specify <c>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]
@@ -88,7 +88,7 @@ namespace Amazon.PI.Model
         /// Gets and sets the property ServiceType. 
         /// <para>
         /// The Amazon Web Services service for which Performance Insights will return metrics.
-        /// Valid value is <code>RDS</code>.
+        /// Valid value is <c>RDS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

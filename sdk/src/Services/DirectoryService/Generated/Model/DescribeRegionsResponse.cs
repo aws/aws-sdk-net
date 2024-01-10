@@ -39,7 +39,7 @@ namespace Amazon.DirectoryService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If not null, more results are available. Pass this value for the <code>NextToken</code>
+        /// If not null, more results are available. Pass this value for the <c>NextToken</c>
         /// parameter in a subsequent call to <a>DescribeRegions</a> to retrieve the next set
         /// of items.
         /// </para>

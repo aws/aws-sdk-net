@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchServerless.Model
 {
     /// <summary>
-    /// Filter the results of a <code>ListVpcEndpoints</code> request.
+    /// Filter the results of a <c>ListVpcEndpoints</c> request.
     /// </summary>
     public partial class VpcEndpointFilters
     {

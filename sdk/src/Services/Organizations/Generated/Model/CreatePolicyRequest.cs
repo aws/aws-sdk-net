@@ -40,7 +40,7 @@ namespace Amazon.Organizations.Model
     /// </para>
     ///  
     /// <para>
-    /// If the request includes tags, then the requester must have the <code>organizations:TagResource</code>
+    /// If the request includes tags, then the requester must have the <c>organizations:TagResource</c>
     /// permission.
     /// </para>
     ///  
@@ -61,7 +61,7 @@ namespace Amazon.Organizations.Model
         /// Gets and sets the property Content. 
         /// <para>
         /// The policy text content to add to the new policy. The text that you supply must adhere
-        /// to the rules of the policy type you specify in the <code>Type</code> parameter.
+        /// to the rules of the policy type you specify in the <c>Type</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000000)]
@@ -125,8 +125,8 @@ namespace Amazon.Organizations.Model
         /// <para>
         /// A list of tags that you want to attach to the newly created policy. For each tag in
         /// the list, you must specify both a tag key and a value. You can set the value to an
-        /// empty string, but you can't set it to <code>null</code>. For more information about
-        /// tagging, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
+        /// empty string, but you can't set it to <c>null</c>. For more information about tagging,
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_tagging.html">Tagging
         /// Organizations resources</a> in the Organizations User Guide.
         /// </para>
         ///  <note> 

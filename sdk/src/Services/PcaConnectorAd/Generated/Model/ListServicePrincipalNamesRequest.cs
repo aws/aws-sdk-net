@@ -63,8 +63,8 @@ namespace Amazon.PcaConnectorAd.Model
         /// <para>
         /// Use this parameter when paginating results to specify the maximum number of items
         /// to return in the response on each page. If additional items exist beyond the number
-        /// you specify, the <code>NextToken</code> element is sent in the response. Use this
-        /// <code>NextToken</code> value in a subsequent request to retrieve additional items.
+        /// you specify, the <c>NextToken</c> element is sent in the response. Use this <c>NextToken</c>
+        /// value in a subsequent request to retrieve additional items.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -84,8 +84,8 @@ namespace Amazon.PcaConnectorAd.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Use this parameter when paginating results in a subsequent request after you receive
-        /// a response with truncated results. Set it to the value of the <code>NextToken</code>
-        /// parameter from the response you just received.
+        /// a response with truncated results. Set it to the value of the <c>NextToken</c> parameter
+        /// from the response you just received.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

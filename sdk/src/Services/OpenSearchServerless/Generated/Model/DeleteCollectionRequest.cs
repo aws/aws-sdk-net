@@ -60,8 +60,8 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The unique identifier of the collection. For example, <code>1iu5usc406kd</code>. The
-        /// ID is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a>
+        /// The unique identifier of the collection. For example, <c>1iu5usc406kd</c>. The ID
+        /// is part of the collection endpoint. You can also retrieve it using the <a href="https://docs.aws.amazon.com/opensearch-service/latest/ServerlessAPIReference/API_ListCollections.html">ListCollections</a>
         /// API.
         /// </para>
         /// </summary>

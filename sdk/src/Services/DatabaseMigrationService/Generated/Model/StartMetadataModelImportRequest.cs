@@ -86,8 +86,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property Refresh. 
         /// <para>
-        /// If <code>true</code>, DMS loads metadata for the specified objects from the source
-        /// database.
+        /// If <c>true</c>, DMS loads metadata for the specified objects from the source database.
         /// </para>
         /// </summary>
         public bool Refresh

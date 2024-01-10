@@ -80,7 +80,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AnalyticsMetadata. 
         /// <para>
-        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <code>SignUp</code>
+        /// The Amazon Pinpoint analytics metadata that contributes to your metrics for <c>SignUp</c>
         /// calls.
         /// </para>
         /// </summary>
@@ -127,9 +127,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// you use the SignUp API action, Amazon Cognito invokes any functions that are assigned
         /// to the following triggers: <i>pre sign-up</i>, <i>custom message</i>, and <i>post
         /// confirmation</i>. When Amazon Cognito invokes any of these functions, it passes a
-        /// JSON payload, which the function receives as input. This payload contains a <code>clientMetadata</code>
+        /// JSON payload, which the function receives as input. This payload contains a <c>clientMetadata</c>
         /// attribute, which provides the data that you assigned to the ClientMetadata parameter
-        /// in your SignUp request. In your function code in Lambda, you can process the <code>clientMetadata</code>
+        /// in your SignUp request. In your function code in Lambda, you can process the <c>clientMetadata</c>
         /// value to enhance your workflow for your specific needs.
         /// </para>
         ///  
@@ -217,7 +217,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
         /// name.
         /// </para>
         /// </summary>

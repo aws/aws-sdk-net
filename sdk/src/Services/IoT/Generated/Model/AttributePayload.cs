@@ -43,7 +43,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>{\"attributes\":{\"string1\":\"string2\"}}</code> 
+        ///  <c>{\"attributes\":{\"string1\":\"string2\"}}</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -61,17 +61,16 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property Merge. 
         /// <para>
-        /// Specifies whether the list of attributes provided in the <code>AttributePayload</code>
-        /// is merged with the attributes stored in the registry, instead of overwriting them.
+        /// Specifies whether the list of attributes provided in the <c>AttributePayload</c> is
+        /// merged with the attributes stored in the registry, instead of overwriting them.
         /// </para>
         ///  
         /// <para>
-        /// To remove an attribute, call <code>UpdateThing</code> with an empty attribute value.
+        /// To remove an attribute, call <c>UpdateThing</c> with an empty attribute value.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>merge</code> attribute is only valid when calling <code>UpdateThing</code>
-        /// or <code>UpdateThingGroup</code>.
+        /// The <c>merge</c> attribute is only valid when calling <c>UpdateThing</c> or <c>UpdateThingGroup</c>.
         /// </para>
         ///  </note>
         /// </summary>

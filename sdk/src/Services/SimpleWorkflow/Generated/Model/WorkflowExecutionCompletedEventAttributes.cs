@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleWorkflow.Model
 {
     /// <summary>
-    /// Provides the details of the <code>WorkflowExecutionCompleted</code> event.
+    /// Provides the details of the <c>WorkflowExecutionCompleted</c> event.
     /// </summary>
     public partial class WorkflowExecutionCompletedEventAttributes
     {
@@ -39,10 +39,10 @@ namespace Amazon.SimpleWorkflow.Model
         /// <summary>
         /// Gets and sets the property DecisionTaskCompletedEventId. 
         /// <para>
-        /// The ID of the <code>DecisionTaskCompleted</code> event corresponding to the decision
-        /// task that resulted in the <code>CompleteWorkflowExecution</code> decision to complete
-        /// this execution. This information can be useful for diagnosing problems by tracing
-        /// back the chain of events leading up to this event.
+        /// The ID of the <c>DecisionTaskCompleted</c> event corresponding to the decision task
+        /// that resulted in the <c>CompleteWorkflowExecution</c> decision to complete this execution.
+        /// This information can be useful for diagnosing problems by tracing back the chain of
+        /// events leading up to this event.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

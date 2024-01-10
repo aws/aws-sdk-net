@@ -77,8 +77,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property LogLevel. 
         /// <para>
-        /// The <code>errorlevel</code> selection of logs that a user pool sends for detailed
-        /// activity logging.
+        /// The <c>errorlevel</c> selection of logs that a user pool sends for detailed activity
+        /// logging.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

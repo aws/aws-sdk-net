@@ -96,7 +96,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Scope. 
         /// <para>
-        /// The set of user claims to be requested from the IdP. The default is <code>openid</code>.
+        /// The set of user claims to be requested from the IdP. The default is <c>openid</c>.
         /// </para>
         ///  
         /// <para>

@@ -30,7 +30,7 @@ namespace Amazon.EKS.Model
 {
     /// <summary>
     /// Summary information that relates to the category of the insight. Currently only returned
-    /// with certain insights having category <code>UPGRADE_READINESS</code>.
+    /// with certain insights having category <c>UPGRADE_READINESS</c>.
     /// </summary>
     public partial class InsightCategorySpecificSummary
     {
@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property DeprecationDetails. 
         /// <para>
         /// The summary information about deprecated resource usage for an insight check in the
-        /// <code>UPGRADE_READINESS</code> category.
+        /// <c>UPGRADE_READINESS</c> category.
         /// </para>
         /// </summary>
         public List<DeprecationDetail> DeprecationDetails

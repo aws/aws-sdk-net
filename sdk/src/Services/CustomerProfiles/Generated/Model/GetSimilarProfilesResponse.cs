@@ -43,14 +43,14 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property ConfidenceScore. 
         /// <para>
-        /// It only has value when the <code>MatchType</code> is <code>ML_BASED_MATCHING</code>.A
-        /// number between 0 and 1, where a higher score means higher similarity. Examining match
-        /// confidence scores lets you distinguish between groups of similar records in which
-        /// the system is highly confident (which you may decide to merge), groups of similar
-        /// records about which the system is uncertain (which you may decide to have reviewed
-        /// by a human), and groups of similar records that the system deems to be unlikely (which
-        /// you may decide to reject). Given confidence scores vary as per the data input, it
-        /// should not be used as an absolute measure of matching quality.
+        /// It only has value when the <c>MatchType</c> is <c>ML_BASED_MATCHING</c>.A number between
+        /// 0 and 1, where a higher score means higher similarity. Examining match confidence
+        /// scores lets you distinguish between groups of similar records in which the system
+        /// is highly confident (which you may decide to merge), groups of similar records about
+        /// which the system is uncertain (which you may decide to have reviewed by a human),
+        /// and groups of similar records that the system deems to be unlikely (which you may
+        /// decide to reject). Given confidence scores vary as per the data input, it should not
+        /// be used as an absolute measure of matching quality.
         /// </para>
         /// </summary>
         public double ConfidenceScore
@@ -68,7 +68,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property MatchId. 
         /// <para>
-        /// The string <code>matchId</code> that the similar profiles belong to.
+        /// The string <c>matchId</c> that the similar profiles belong to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -105,7 +105,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token from the previous <code>GetSimilarProfiles</code> API call.
+        /// The pagination token from the previous <c>GetSimilarProfiles</c> API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -124,7 +124,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property ProfileIds. 
         /// <para>
-        /// Set of <code>profileId</code>s that belong to the same matching group.
+        /// Set of <c>profileId</c>s that belong to the same matching group.
         /// </para>
         /// </summary>
         public List<string> ProfileIds

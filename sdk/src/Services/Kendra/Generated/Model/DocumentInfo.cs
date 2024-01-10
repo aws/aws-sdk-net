@@ -63,16 +63,16 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>dataSourceId</code> and <code>jobExecutionId</code> must be used together.
+        ///  <c>dataSourceId</c> and <c>jobExecutionId</c> must be used together.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>version</code> is ignored if <code>dataSourceId</code> and <code>jobExecutionId</code>
-        /// are not provided.
+        ///  <c>version</c> is ignored if <c>dataSourceId</c> and <c>jobExecutionId</c> are not
+        /// provided.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If <code>dataSourceId</code> and <code>jobExecutionId</code> are provided, but <code>version</code>
+        /// If <c>dataSourceId</c> and <c>jobExecutionId</c> are provided, but <c>version</c>
         /// is not, the version defaults to "0".
         /// </para>
         ///  </li> </ul>

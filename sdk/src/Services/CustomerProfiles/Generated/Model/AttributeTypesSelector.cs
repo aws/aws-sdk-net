@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Configuration information about the <code>AttributeTypesSelector </code>where the
-    /// rule-based identity resolution uses to match profiles. You can choose how profiles
-    /// are compared across attribute types and which attribute to use for matching from each
-    /// type. There are three attribute types you can configure:
+    /// Configuration information about the <c>AttributeTypesSelector </c>where the rule-based
+    /// identity resolution uses to match profiles. You can choose how profiles are compared
+    /// across attribute types and which attribute to use for matching from each type. There
+    /// are three attribute types you can configure:
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -40,8 +40,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You can choose from <code>Email</code>, <code>BusinessEmail</code>, and <code>PersonalEmail</code>
-    /// 
+    /// You can choose from <c>Email</c>, <c>BusinessEmail</c>, and <c>PersonalEmail</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -49,8 +48,7 @@ namespace Amazon.CustomerProfiles.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You can choose from <code>Phone</code>, <code>HomePhone</code>, and <code>MobilePhone</code>
-    /// 
+    /// You can choose from <c>Phone</c>, <c>HomePhone</c>, and <c>MobilePhone</c> 
     /// </para>
     ///  </li> </ul> </li> <li> 
     /// <para>
@@ -58,20 +56,19 @@ namespace Amazon.CustomerProfiles.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// You can choose from <code>Address</code>, <code>BusinessAddress</code>, <code>MaillingAddress</code>,
-    /// and <code>ShippingAddress</code> 
+    /// You can choose from <c>Address</c>, <c>BusinessAddress</c>, <c>MaillingAddress</c>,
+    /// and <c>ShippingAddress</c> 
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
-    /// You can either choose <code>ONE_TO_ONE</code> or <code>MANY_TO_MANY</code> as the
-    /// <code>AttributeMatchingModel</code>. When choosing <code>MANY_TO_MANY</code>, the
-    /// system can match attribute across the sub-types of an attribute type. For example,
-    /// if the value of the <code>Email</code> field of Profile A and the value of <code>BusinessEmail</code>
-    /// field of Profile B matches, the two profiles are matched on the Email type. When choosing
-    /// <code>ONE_TO_ONE</code> the system can only match if the sub-types are exact matches.
-    /// For example, only when the value of the <code>Email</code> field of Profile A and
-    /// the value of the <code>Email</code> field of Profile B matches, the two profiles are
-    /// matched on the Email type.
+    /// You can either choose <c>ONE_TO_ONE</c> or <c>MANY_TO_MANY</c> as the <c>AttributeMatchingModel</c>.
+    /// When choosing <c>MANY_TO_MANY</c>, the system can match attribute across the sub-types
+    /// of an attribute type. For example, if the value of the <c>Email</c> field of Profile
+    /// A and the value of <c>BusinessEmail</c> field of Profile B matches, the two profiles
+    /// are matched on the Email type. When choosing <c>ONE_TO_ONE</c> the system can only
+    /// match if the sub-types are exact matches. For example, only when the value of the
+    /// <c>Email</c> field of Profile A and the value of the <c>Email</c> field of Profile
+    /// B matches, the two profiles are matched on the Email type.
     /// </para>
     /// </summary>
     public partial class AttributeTypesSelector
@@ -84,16 +81,15 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Address. 
         /// <para>
-        /// The <code>Address</code> type. You can choose from <code>Address</code>, <code>BusinessAddress</code>,
-        /// <code>MaillingAddress</code>, and <code>ShippingAddress</code>.
+        /// The <c>Address</c> type. You can choose from <c>Address</c>, <c>BusinessAddress</c>,
+        /// <c>MaillingAddress</c>, and <c>ShippingAddress</c>.
         /// </para>
         ///  
         /// <para>
-        /// You only can use the Address type in the <code>MatchingRule</code>. For example, if
-        /// you want to match profile based on <code>BusinessAddress.City</code> or <code>MaillingAddress.City</code>,
-        /// you need to choose the <code>BusinessAddress</code> and the <code>MaillingAddress</code>
-        /// to represent the Address type and specify the <code>Address.City</code> on the matching
-        /// rule.
+        /// You only can use the Address type in the <c>MatchingRule</c>. For example, if you
+        /// want to match profile based on <c>BusinessAddress.City</c> or <c>MaillingAddress.City</c>,
+        /// you need to choose the <c>BusinessAddress</c> and the <c>MaillingAddress</c> to represent
+        /// the Address type and specify the <c>Address.City</c> on the matching rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]
@@ -112,8 +108,8 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AttributeMatchingModel. 
         /// <para>
-        /// Configures the <code>AttributeMatchingModel</code>, you can either choose <code>ONE_TO_ONE</code>
-        /// or <code>MANY_TO_MANY</code>.
+        /// Configures the <c>AttributeMatchingModel</c>, you can either choose <c>ONE_TO_ONE</c>
+        /// or <c>MANY_TO_MANY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -132,16 +128,16 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The <code>Email</code> type. You can choose from <code>EmailAddress</code>, <code>BusinessEmailAddress</code>
-        /// and <code>PersonalEmailAddress</code>.
+        /// The <c>Email</c> type. You can choose from <c>EmailAddress</c>, <c>BusinessEmailAddress</c>
+        /// and <c>PersonalEmailAddress</c>.
         /// </para>
         ///  
         /// <para>
-        /// You only can use the <code>EmailAddress</code> type in the <code>MatchingRule</code>.
-        /// For example, if you want to match profile based on <code>PersonalEmailAddress</code>
-        /// or <code>BusinessEmailAddress</code>, you need to choose the <code>PersonalEmailAddress</code>
-        /// and the <code>BusinessEmailAddress</code> to represent the <code>EmailAddress</code>
-        /// type and only specify the <code>EmailAddress</code> on the matching rule.
+        /// You only can use the <c>EmailAddress</c> type in the <c>MatchingRule</c>. For example,
+        /// if you want to match profile based on <c>PersonalEmailAddress</c> or <c>BusinessEmailAddress</c>,
+        /// you need to choose the <c>PersonalEmailAddress</c> and the <c>BusinessEmailAddress</c>
+        /// to represent the <c>EmailAddress</c> type and only specify the <c>EmailAddress</c>
+        /// on the matching rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
@@ -160,16 +156,15 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property PhoneNumber. 
         /// <para>
-        /// The <code>PhoneNumber</code> type. You can choose from <code>PhoneNumber</code>, <code>HomePhoneNumber</code>,
-        /// and <code>MobilePhoneNumber</code>.
+        /// The <c>PhoneNumber</c> type. You can choose from <c>PhoneNumber</c>, <c>HomePhoneNumber</c>,
+        /// and <c>MobilePhoneNumber</c>.
         /// </para>
         ///  
         /// <para>
-        /// You only can use the <code>PhoneNumber</code> type in the <code>MatchingRule</code>.
-        /// For example, if you want to match a profile based on <code>Phone</code> or <code>HomePhone</code>,
-        /// you need to choose the <code>Phone</code> and the <code>HomePhone</code> to represent
-        /// the <code>PhoneNumber</code> type and only specify the <code>PhoneNumber</code> on
-        /// the matching rule.
+        /// You only can use the <c>PhoneNumber</c> type in the <c>MatchingRule</c>. For example,
+        /// if you want to match a profile based on <c>Phone</c> or <c>HomePhone</c>, you need
+        /// to choose the <c>Phone</c> and the <c>HomePhone</c> to represent the <c>PhoneNumber</c>
+        /// type and only specify the <c>PhoneNumber</c> on the matching rule.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4)]

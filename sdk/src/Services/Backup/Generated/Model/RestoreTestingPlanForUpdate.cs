@@ -41,12 +41,12 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointSelection. 
         /// <para>
-        /// Required: <code>Algorithm</code>; <code>RecoveryPointTypes</code>; <code>IncludeVaults</code>
-        /// (<i>one or more</i>).
+        /// Required: <c>Algorithm</c>; <c>RecoveryPointTypes</c>; <c>IncludeVaults</c> (<i>one
+        /// or more</i>).
         /// </para>
         ///  
         /// <para>
-        /// Optional: <i>SelectionWindowDays</i> (<i>'30' if not specified</i>); <code>ExcludeVaults</code>
+        /// Optional: <i>SelectionWindowDays</i> (<i>'30' if not specified</i>); <c>ExcludeVaults</c>
         /// (defaults to empty list if not listed).
         /// </para>
         /// </summary>

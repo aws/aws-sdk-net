@@ -44,7 +44,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>1 vCPU</code> 
+        /// Default: <c>1 vCPU</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=9)]
@@ -88,7 +88,7 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>2 GB</code> 
+        /// Default: <c>2 GB</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=6)]

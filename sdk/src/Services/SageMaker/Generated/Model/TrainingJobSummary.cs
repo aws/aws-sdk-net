@@ -82,8 +82,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TrainingEndTime. 
         /// <para>
         /// A timestamp that shows when the training job ended. This field is set only if the
-        /// training job has one of the terminal statuses (<code>Completed</code>, <code>Failed</code>,
-        /// or <code>Stopped</code>). 
+        /// training job has one of the terminal statuses (<c>Completed</c>, <c>Failed</c>, or
+        /// <c>Stopped</c>). 
         /// </para>
         /// </summary>
         public DateTime TrainingEndTime

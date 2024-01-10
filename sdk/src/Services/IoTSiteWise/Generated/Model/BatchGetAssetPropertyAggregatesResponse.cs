@@ -42,7 +42,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property ErrorEntries. 
         /// <para>
         /// A list of the errors (if any) associated with the batch request. Each error entry
-        /// contains the <code>entryId</code> of the entry that failed.
+        /// contains the <c>entryId</c> of the entry that failed.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +82,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <para>
         /// A list of entries that were not processed by this batch request. because these entries
         /// had been completely processed by previous paginated requests. Each skipped entry contains
-        /// the <code>entryId</code> of the entry that skipped.
+        /// the <c>entryId</c> of the entry that skipped.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,8 +102,8 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property SuccessEntries. 
         /// <para>
         /// A list of entries that were processed successfully by this batch request. Each success
-        /// entry contains the <code>entryId</code> of the entry that succeeded and the latest
-        /// query result.
+        /// entry contains the <c>entryId</c> of the entry that succeeded and the latest query
+        /// result.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -63,10 +63,10 @@ namespace Amazon.AppConfig.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The <code>Content</code> attribute only contains data if the system finds new or updated
-        /// configuration data. If there is no new or updated data and <code>ClientConfigurationVersion</code>
-        /// matches the version of the current configuration, AppConfig returns a <code>204 No
-        /// Content</code> HTTP response code and the <code>Content</code> value will be empty.
+        /// The <c>Content</c> attribute only contains data if the system finds new or updated
+        /// configuration data. If there is no new or updated data and <c>ClientConfigurationVersion</c>
+        /// matches the version of the current configuration, AppConfig returns a <c>204 No Content</c>
+        /// HTTP response code and the <c>Content</c> value will be empty.
         /// </para>
         ///  </important>
         /// </summary>

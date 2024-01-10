@@ -48,7 +48,7 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property AuditCheckConfigurations. 
         /// <para>
-        /// Specifies which audit checks are enabled and disabled for this account. Use <code>DescribeAccountAuditConfiguration</code>
+        /// Specifies which audit checks are enabled and disabled for this account. Use <c>DescribeAccountAuditConfiguration</c>
         /// to see the list of all checks, including those that are currently enabled.
         /// </para>
         ///  
@@ -63,8 +63,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// On the first call to <code>UpdateAccountAuditConfiguration</code>, this parameter
-        /// is required and must specify at least one enabled check.
+        /// On the first call to <c>UpdateAccountAuditConfiguration</c>, this parameter is required
+        /// and must specify at least one enabled check.
         /// </para>
         /// </summary>
         public Dictionary<string, AuditCheckConfiguration> AuditCheckConfigurations

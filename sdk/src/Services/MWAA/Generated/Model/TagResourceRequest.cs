@@ -41,7 +41,7 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
+        /// The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <c>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1224)]
@@ -60,8 +60,8 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value tag pairs you want to associate to your environment. For example, <code>"Environment":
-        /// "Staging"</code>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// The key-value tag pairs you want to associate to your environment. For example, <c>"Environment":
+        /// "Staging"</c>. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
         /// Amazon Web Services resources</a>.
         /// </para>
         /// </summary>

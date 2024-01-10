@@ -106,7 +106,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ConditionalFormatting. 
         /// <para>
-        /// The conditional formatting of a <code>FilledMapVisual</code>.
+        /// The conditional formatting of a <c>FilledMapVisual</c>.
         /// </para>
         /// </summary>
         public FilledMapConditionalFormatting ConditionalFormatting

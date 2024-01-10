@@ -42,7 +42,7 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Key. 
         /// <para>
         /// The key name that can be used to look up or retrieve the associated value. For example,
-        /// <code>Department</code> or <code>Cost Center</code> are common choices.
+        /// <c>Department</c> or <c>Cost Center</c> are common choices.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -61,18 +61,17 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value associated with this tag. For example, tags with a key name of <code>Department</code>
-        /// could have values such as <code>Human Resources</code>, <code>Accounting</code>, and
-        /// <code>Support</code>. Tags with a key name of <code>Cost Center</code> might have
-        /// values that consist of the number associated with the different cost centers in your
-        /// company. Typically, many resources have tags with the same key name but with different
-        /// values.
+        /// The value associated with this tag. For example, tags with a key name of <c>Department</c>
+        /// could have values such as <c>Human Resources</c>, <c>Accounting</c>, and <c>Support</c>.
+        /// Tags with a key name of <c>Cost Center</c> might have values that consist of the number
+        /// associated with the different cost centers in your company. Typically, many resources
+        /// have tags with the same key name but with different values.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Web Services always interprets the tag <code>Value</code> as a single string.
-        /// If you need to store an array, you can store comma-separated values in the string.
-        /// However, you must interpret the value in your code.
+        /// Amazon Web Services always interprets the tag <c>Value</c> as a single string. If
+        /// you need to store an array, you can store comma-separated values in the string. However,
+        /// you must interpret the value in your code.
         /// </para>
         ///  </note>
         /// </summary>

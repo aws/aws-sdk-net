@@ -41,8 +41,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Flat. 
         /// <para>
-        ///  A <code>ListCustomLineItemFlatChargeDetails</code> that describes the charge details
-        /// of a flat custom line item. 
+        ///  A <c>ListCustomLineItemFlatChargeDetails</c> that describes the charge details of
+        /// a flat custom line item. 
         /// </para>
         /// </summary>
         public ListCustomLineItemFlatChargeDetails Flat
@@ -79,8 +79,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Percentage. 
         /// <para>
-        ///  A <code>ListCustomLineItemPercentageChargeDetails</code> that describes the charge
-        /// details of a percentage custom line item. 
+        ///  A <c>ListCustomLineItemPercentageChargeDetails</c> that describes the charge details
+        /// of a percentage custom line item. 
         /// </para>
         /// </summary>
         public ListCustomLineItemPercentageChargeDetails Percentage
@@ -98,8 +98,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the custom line item that indicates whether the charge is a <code>fee</code>
-        /// or <code>credit</code>. 
+        ///  The type of the custom line item that indicates whether the charge is a <c>fee</c>
+        /// or <c>credit</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

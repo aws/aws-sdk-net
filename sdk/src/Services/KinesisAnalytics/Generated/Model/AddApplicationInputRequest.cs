@@ -57,7 +57,7 @@ namespace Amazon.KinesisAnalytics.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>kinesisanalytics:AddApplicationInput</code>
+    /// This operation requires permissions to perform the <c>kinesisanalytics:AddApplicationInput</c>
     /// action.
     /// </para>
     /// </summary>

@@ -32,10 +32,10 @@ namespace Amazon.MarketplaceAgreement.Model
     /// Defines that on graceful expiration of the agreement (when the agreement ends on its
     /// pre-defined end date), a new agreement will be created using the accepted terms on
     /// the existing agreement. In other words, the agreement will be renewed. The presence
-    /// of <code>RenewalTerm</code> in the offer document means that auto-renewal is allowed.
-    /// Buyers will have the option to accept or decline auto-renewal at the offer acceptance/agreement
-    /// creation. Buyers can also change this flag from <code>True</code> to <code>False</code>
-    /// or <code>False</code> to <code>True</code> at anytime during the agreement's lifecycle.
+    /// of <c>RenewalTerm</c> in the offer document means that auto-renewal is allowed. Buyers
+    /// will have the option to accept or decline auto-renewal at the offer acceptance/agreement
+    /// creation. Buyers can also change this flag from <c>True</c> to <c>False</c> or <c>False</c>
+    /// to <c>True</c> at anytime during the agreement's lifecycle.
     /// </summary>
     public partial class RenewalTerm
     {

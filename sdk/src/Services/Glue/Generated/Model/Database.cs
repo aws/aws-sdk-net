@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// The <code>Database</code> object represents a logical grouping of tables that might
-    /// reside in a Hive metastore or an RDBMS.
+    /// The <c>Database</c> object represents a logical grouping of tables that might reside
+    /// in a Hive metastore or an RDBMS.
     /// </summary>
     public partial class Database
     {
@@ -122,8 +122,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property FederatedDatabase. 
         /// <para>
-        /// A <code>FederatedDatabase</code> structure that references an entity outside the Glue
-        /// Data Catalog.
+        /// A <c>FederatedDatabase</c> structure that references an entity outside the Glue Data
+        /// Catalog.
         /// </para>
         /// </summary>
         public FederatedDatabase FederatedDatabase
@@ -198,7 +198,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TargetDatabase. 
         /// <para>
-        /// A <code>DatabaseIdentifier</code> structure that describes a target database for resource
+        /// A <c>DatabaseIdentifier</c> structure that describes a target database for resource
         /// linking.
         /// </para>
         /// </summary>

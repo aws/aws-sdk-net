@@ -61,7 +61,7 @@ namespace Amazon.WellArchitected.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+        /// You can specify <c>WORKLOAD_METADATA</c>, <c>APP_REGISTRY</c>, or both.
         /// </para>
         /// </summary>
         public List<string> WorkloadResourceDefinition

@@ -35,15 +35,15 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// When you use <code>AssociateKmsKey</code>, you specify either the <code>logGroupName</code>
-    /// parameter or the <code>resourceIdentifier</code> parameter. You can't specify both
-    /// of those parameters in the same operation.
+    /// When you use <c>AssociateKmsKey</c>, you specify either the <c>logGroupName</c> parameter
+    /// or the <c>resourceIdentifier</c> parameter. You can't specify both of those parameters
+    /// in the same operation.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Specify the <code>logGroupName</code> parameter to cause all log events stored in
-    /// the log group to be encrypted with that key. Only the log events ingested after the
-    /// key is associated are encrypted with that key.
+    /// Specify the <c>logGroupName</c> parameter to cause all log events stored in the log
+    /// group to be encrypted with that key. Only the log events ingested after the key is
+    /// associated are encrypted with that key.
     /// </para>
     ///  
     /// <para>
@@ -57,13 +57,13 @@ namespace Amazon.CloudWatchLogs.Model
     /// <para>
     /// Associating a key with a log group does not cause the results of queries of that log
     /// group to be encrypted with that key. To have query results encrypted with a KMS key,
-    /// you must use an <code>AssociateKmsKey</code> operation with the <code>resourceIdentifier</code>
-    /// parameter that specifies a <code>query-result</code> resource. 
+    /// you must use an <c>AssociateKmsKey</c> operation with the <c>resourceIdentifier</c>
+    /// parameter that specifies a <c>query-result</c> resource. 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Specify the <code>resourceIdentifier</code> parameter with a <code>query-result</code>
-    /// resource, to use that key to encrypt the stored results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
+    /// Specify the <c>resourceIdentifier</c> parameter with a <c>query-result</c> resource,
+    /// to use that key to encrypt the stored results of all future <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_StartQuery.html">StartQuery</a>
     /// operations in the account. The response from a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetQueryResults.html">GetQueryResults</a>
     /// operation will still return the query results in plain text.
     /// </para>
@@ -96,8 +96,8 @@ namespace Amazon.CloudWatchLogs.Model
     ///  
     /// <para>
     /// If you attempt to associate a KMS key with a log group but the KMS key does not exist
-    /// or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
-    /// error. 
+    /// or the KMS key is disabled, you receive an <c>InvalidParameterException</c> error.
+    /// 
     /// </para>
     /// </summary>
     public partial class AssociateKmsKeyRequest : AmazonCloudWatchLogsRequest
@@ -135,8 +135,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code>
-        /// parameter or the <code>logGroup</code> parameter, but you can't specify both.
+        /// In your <c>AssociateKmsKey</c> operation, you must specify either the <c>resourceIdentifier</c>
+        /// parameter or the <c>logGroup</c> parameter, but you can't specify both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -165,7 +165,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</code> 
+        ///  <c>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:query-result:*</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -176,13 +176,13 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i>
-        /// </code> 
+        ///  <c>arn:aws:logs:<i>REGION</i>:<i>ACCOUNT_ID</i>:log-group:<i>LOG_GROUP_NAME</i> </c>
+        /// 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// In your <code>AssociateKmsKey</code> operation, you must specify either the <code>resourceIdentifier</code>
-        /// parameter or the <code>logGroup</code> parameter, but you can't specify both.
+        /// In your <c>AssociateKmsKey</c> operation, you must specify either the <c>resourceIdentifier</c>
+        /// parameter or the <c>logGroup</c> parameter, but you can't specify both.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

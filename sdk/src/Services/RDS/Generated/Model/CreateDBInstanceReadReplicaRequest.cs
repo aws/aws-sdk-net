@@ -41,7 +41,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// Amazon Aurora doesn't support this operation. To create a DB instance for an Aurora
-    /// DB cluster, use the <code>CreateDBInstance</code> operation.
+    /// DB cluster, use the <c>CreateDBInstance</c> operation.
     /// </para>
     ///  
     /// <para>
@@ -122,7 +122,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property AllocatedStorage. 
         /// <para>
         /// The amount of storage (in gibibytes) to allocate initially for the read replica. Follow
-        /// the allocation rules specified in <code>CreateDBInstance</code>.
+        /// the allocation rules specified in <c>CreateDBInstance</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -182,7 +182,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>us-east-1d</code> 
+        /// Example: <c>us-east-1d</c> 
         /// </para>
         /// </summary>
         public string AvailabilityZone
@@ -233,7 +233,7 @@ namespace Amazon.RDS.Model
         ///  </li> <li> 
         /// <para>
         /// The instance profile name and the associated IAM role name must start with the prefix
-        /// <code>AWSRDSCustom</code>.
+        /// <c>AWSRDSCustom</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -310,10 +310,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for <code>DBParameterGroupName</code>, then Amazon RDS
-        /// uses the <code>DBParameterGroup</code> of the source DB instance for a same Region
-        /// read replica, or the default <code>DBParameterGroup</code> for the specified DB engine
-        /// for a cross-Region read replica.
+        /// If you don't specify a value for <c>DBParameterGroupName</c>, then Amazon RDS uses
+        /// the <c>DBParameterGroup</c> of the source DB instance for a same Region read replica,
+        /// or the default <c>DBParameterGroup</c> for the specified DB engine for a cross-Region
+        /// read replica.
         /// </para>
         ///  
         /// <para>
@@ -388,7 +388,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> </li> </ul> 
         /// <para>
-        /// Example: <code>mydbsubnetgroup</code> 
+        /// Example: <c>mydbsubnetgroup</c> 
         /// </para>
         /// </summary>
         public string DBSubnetGroupName
@@ -479,7 +479,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
+        /// Example: <c>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</c>
         /// 
         /// </para>
         /// </summary>
@@ -511,7 +511,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>123.124.125.126,234.235.236.237</code> 
+        /// Example: <c>123.124.125.126,234.235.236.237</c> 
         /// </para>
         /// </summary>
         public List<string> DomainDnsIps
@@ -541,7 +541,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> 
+        /// Example: <c>mymanagedADtest.mymanagedAD.mydomain</c> 
         /// </para>
         /// </summary>
         public string DomainFqdn
@@ -597,7 +597,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
+        /// Example: <c>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</c>
         /// 
         /// </para>
         /// </summary>
@@ -827,12 +827,12 @@ namespace Amazon.RDS.Model
         /// <para>
         /// The interval, in seconds, between points when Enhanced Monitoring metrics are collected
         /// for the read replica. To disable collection of Enhanced Monitoring metrics, specify
-        /// <code>0</code>. The default is <code>0</code>.
+        /// <c>0</c>. The default is <c>0</c>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringRoleArn</code> is specified, then you must set <code>MonitoringInterval</code>
-        /// to a value other than <code>0</code>.
+        /// If <c>MonitoringRoleArn</c> is specified, then you must set <c>MonitoringInterval</c>
+        /// to a value other than <c>0</c>.
         /// </para>
         ///  
         /// <para>
@@ -840,11 +840,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> 
+        /// Valid Values: <c>0, 1, 5, 10, 15, 30, 60</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>0</code> 
+        /// Default: <c>0</c> 
         /// </para>
         /// </summary>
         public int MonitoringInterval
@@ -863,15 +863,15 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property MonitoringRoleArn. 
         /// <para>
         /// The ARN for the IAM role that permits RDS to send enhanced monitoring metrics to Amazon
-        /// CloudWatch Logs. For example, <code>arn:aws:iam:123456789012:role/emaccess</code>.
-        /// For information on creating a monitoring role, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
+        /// CloudWatch Logs. For example, <c>arn:aws:iam:123456789012:role/emaccess</c>. For information
+        /// on creating a monitoring role, go to <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.html#USER_Monitoring.OS.IAMRole">To
         /// create an IAM role for Amazon RDS Enhanced Monitoring</a> in the <i>Amazon RDS User
         /// Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// If <code>MonitoringInterval</code> is set to a value other than 0, then you must supply
-        /// a <code>MonitoringRoleArn</code> value.
+        /// If <c>MonitoringInterval</c> is set to a value other than 0, then you must supply
+        /// a <c>MonitoringRoleArn</c> value.
         /// </para>
         ///  
         /// <para>
@@ -930,17 +930,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>IPV4</code> 
+        ///  <c>IPV4</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DUAL</code> 
+        ///  <c>DUAL</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The network type is determined by the <code>DBSubnetGroup</code> specified for read
-        /// replica. A <code>DBSubnetGroup</code> can support only the IPv4 protocol or the IPv4
-        /// and the IPv6 protocols (<code>DUAL</code>).
+        /// The network type is determined by the <c>DBSubnetGroup</c> specified for read replica.
+        /// A <c>DBSubnetGroup</c> can support only the IPv4 protocol or the IPv4 and the IPv6
+        /// protocols (<c>DUAL</c>).
         /// </para>
         ///  
         /// <para>
@@ -1000,7 +1000,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon
+        /// If you do not specify a value for <c>PerformanceInsightsKMSKeyId</c>, then Amazon
         /// RDS uses your default KMS key. There is a default KMS key for your Amazon Web Services
         /// account. Your Amazon Web Services account has a different default KMS key for each
         /// Amazon Web Services Region.
@@ -1037,26 +1037,25 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>7</code> 
+        ///  <c>7</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <i>month</i> * 31, where <i>month</i> is a number of months from 1-23. Examples:
-        /// <code>93</code> (3 months * 31), <code>341</code> (11 months * 31), <code>589</code>
-        /// (19 months * 31)
+        /// <c>93</c> (3 months * 31), <c>341</c> (11 months * 31), <c>589</c> (19 months * 31)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>731</code> 
+        ///  <c>731</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Default: <code>7</code> days
+        /// Default: <c>7</c> days
         /// </para>
         ///  
         /// <para>
-        /// If you specify a retention period that isn't valid, such as <code>94</code>, Amazon
-        /// RDS returns an error.
+        /// If you specify a retention period that isn't valid, such as <c>94</c>, Amazon RDS
+        /// returns an error.
         /// </para>
         /// </summary>
         public int PerformanceInsightsRetentionPeriod
@@ -1078,7 +1077,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>1150-65535</code> 
+        /// Valid Values: <c>1150-65535</c> 
         /// </para>
         ///  
         /// <para>
@@ -1102,9 +1101,8 @@ namespace Amazon.RDS.Model
         /// <para>
         /// When you are creating a read replica from one Amazon Web Services GovCloud (US) Region
         /// to another or from one China Amazon Web Services Region to another, the URL that contains
-        /// a Signature Version 4 signed request for the <code>CreateDBInstanceReadReplica</code>
-        /// API operation in the source Amazon Web Services Region that contains the source DB
-        /// instance.
+        /// a Signature Version 4 signed request for the <c>CreateDBInstanceReadReplica</c> API
+        /// operation in the source Amazon Web Services Region that contains the source DB instance.
         /// </para>
         ///  
         /// <para>
@@ -1120,48 +1118,46 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// You must specify this parameter when you create an encrypted read replica from another
-        /// Amazon Web Services Region by using the Amazon RDS API. Don't specify <code>PreSignedUrl</code>
+        /// Amazon Web Services Region by using the Amazon RDS API. Don't specify <c>PreSignedUrl</c>
         /// when you are creating an encrypted read replica in the same Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>
-        /// The presigned URL must be a valid request for the <code>CreateDBInstanceReadReplica</code>
+        /// The presigned URL must be a valid request for the <c>CreateDBInstanceReadReplica</c>
         /// API operation that can run in the source Amazon Web Services Region that contains
         /// the encrypted source DB instance. The presigned URL request must contain the following
         /// parameter values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DestinationRegion</code> - The Amazon Web Services Region that the encrypted
-        /// read replica is created in. This Amazon Web Services Region is the same one where
-        /// the <code>CreateDBInstanceReadReplica</code> operation is called that contains this
-        /// presigned URL.
+        ///  <c>DestinationRegion</c> - The Amazon Web Services Region that the encrypted read
+        /// replica is created in. This Amazon Web Services Region is the same one where the <c>CreateDBInstanceReadReplica</c>
+        /// operation is called that contains this presigned URL.
         /// </para>
         ///  
         /// <para>
         /// For example, if you create an encrypted DB instance in the us-west-1 Amazon Web Services
         /// Region, from a source DB instance in the us-east-2 Amazon Web Services Region, then
-        /// you call the <code>CreateDBInstanceReadReplica</code> operation in the us-east-1 Amazon
-        /// Web Services Region and provide a presigned URL that contains a call to the <code>CreateDBInstanceReadReplica</code>
-        /// operation in the us-west-2 Amazon Web Services Region. For this example, the <code>DestinationRegion</code>
+        /// you call the <c>CreateDBInstanceReadReplica</c> operation in the us-east-1 Amazon
+        /// Web Services Region and provide a presigned URL that contains a call to the <c>CreateDBInstanceReadReplica</c>
+        /// operation in the us-west-2 Amazon Web Services Region. For this example, the <c>DestinationRegion</c>
         /// in the presigned URL must be set to the us-east-1 Amazon Web Services Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the
-        /// read replica in the destination Amazon Web Services Region. This is the same identifier
-        /// for both the <code>CreateDBInstanceReadReplica</code> operation that is called in
-        /// the destination Amazon Web Services Region, and the operation contained in the presigned
-        /// URL.
+        ///  <c>KmsKeyId</c> - The KMS key identifier for the key to use to encrypt the read replica
+        /// in the destination Amazon Web Services Region. This is the same identifier for both
+        /// the <c>CreateDBInstanceReadReplica</c> operation that is called in the destination
+        /// Amazon Web Services Region, and the operation contained in the presigned URL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SourceDBInstanceIdentifier</code> - The DB instance identifier for the encrypted
+        ///  <c>SourceDBInstanceIdentifier</c> - The DB instance identifier for the encrypted
         /// DB instance to be replicated. This identifier must be in the Amazon Resource Name
         /// (ARN) format for the source Amazon Web Services Region. For example, if you are creating
         /// an encrypted read replica from a DB instance in the us-west-2 Amazon Web Services
-        /// Region, then your <code>SourceDBInstanceIdentifier</code> looks like the following
-        /// example: <code>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</code>.
+        /// Region, then your <c>SourceDBInstanceIdentifier</c> looks like the following example:
+        /// <c>arn:aws:rds:us-west-2:123456789012:instance:mysql-instance1-20161115</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1172,16 +1168,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <code>SourceRegion</code>
-        /// (or <code>--source-region</code> for the CLI) instead of specifying <code>PreSignedUrl</code>
-        /// manually. Specifying <code>SourceRegion</code> autogenerates a presigned URL that
-        /// is a valid request for the operation that can run in the source Amazon Web Services
-        /// Region.
+        /// If you are using an Amazon Web Services SDK tool or the CLI, you can specify <c>SourceRegion</c>
+        /// (or <c>--source-region</c> for the CLI) instead of specifying <c>PreSignedUrl</c>
+        /// manually. Specifying <c>SourceRegion</c> autogenerates a presigned URL that is a valid
+        /// request for the operation that can run in the source Amazon Web Services Region.
         /// </para>
         ///  
         /// <para>
-        ///  <code>SourceRegion</code> isn't supported for SQL Server, because Amazon RDS for
-        /// SQL Server doesn't support cross-Region read replicas.
+        ///  <c>SourceRegion</c> isn't supported for SQL Server, because Amazon RDS for SQL Server
+        /// doesn't support cross-Region read replicas.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1283,9 +1278,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For RDS Custom, you must specify this parameter and set it to <code>mounted</code>.
-        /// The value won't be set by default. After replica creation, you can manage the open
-        /// mode manually.
+        /// For RDS Custom, you must specify this parameter and set it to <c>mounted</c>. The
+        /// value won't be set by default. After replica creation, you can manage the open mode
+        /// manually.
         /// </para>
         /// </summary>
         public ReplicaMode ReplicaMode
@@ -1316,8 +1311,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>SourceDBInstanceIdentifier</code> parameter is also
-        /// specified.
+        /// Can't be specified if the <c>SourceDBInstanceIdentifier</c> parameter is also specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1361,8 +1355,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Can't be specified if the <code>SourceDBClusterIdentifier</code> parameter is also
-        /// specified.
+        /// Can't be specified if the <c>SourceDBClusterIdentifier</c> parameter is also specified.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1435,17 +1428,16 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>io1</code> or <code>gp3</code>, you must also include a value
-        /// for the <code>Iops</code> parameter.
+        /// If you specify <c>io1</c> or <c>gp3</c>, you must also include a value for the <c>Iops</c>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>gp2 | gp3 | io1 | standard</code> 
+        /// Valid Values: <c>gp2 | gp3 | io1 | standard</c> 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code> if the <code>Iops</code> parameter is specified. Otherwise,
-        /// <code>gp2</code>.
+        /// Default: <c>io1</c> if the <c>Iops</c> parameter is specified. Otherwise, <c>gp2</c>.
         /// </para>
         /// </summary>
         public string StorageType

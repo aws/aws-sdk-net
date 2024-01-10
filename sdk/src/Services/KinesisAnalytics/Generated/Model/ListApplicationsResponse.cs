@@ -39,7 +39,7 @@ namespace Amazon.KinesisAnalytics.Model
         /// <summary>
         /// Gets and sets the property ApplicationSummaries. 
         /// <para>
-        /// List of <code>ApplicationSummary</code> objects. 
+        /// List of <c>ApplicationSummary</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

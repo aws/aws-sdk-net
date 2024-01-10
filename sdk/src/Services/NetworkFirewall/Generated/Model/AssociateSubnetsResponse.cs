@@ -112,7 +112,7 @@ namespace Amazon.NetworkFirewall.Model
         /// <para>
         /// To make a conditional change to the firewall, provide the token in your update request.
         /// Network Firewall uses the token to ensure that the firewall hasn't changed since you
-        /// last retrieved it. If it has changed, the operation fails with an <code>InvalidTokenException</code>.
+        /// last retrieved it. If it has changed, the operation fails with an <c>InvalidTokenException</c>.
         /// If this happens, retrieve the firewall again to get a current copy of it with a new
         /// token. Reapply your changes as needed, then try the operation again using the new
         /// token. 

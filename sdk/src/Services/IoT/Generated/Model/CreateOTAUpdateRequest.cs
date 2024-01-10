@@ -131,9 +131,9 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property AwsJobTimeoutConfig. 
         /// <para>
         /// Specifies the amount of time each device has to finish its execution of the job. A
-        /// timer is started when the job execution status is set to <code>IN_PROGRESS</code>.
-        /// If the job execution status is not set to another terminal state before the timer
-        /// expires, it will be automatically set to <code>TIMED_OUT</code>.
+        /// timer is started when the job execution status is set to <c>IN_PROGRESS</c>. If the
+        /// job execution status is not set to another terminal state before the timer expires,
+        /// it will be automatically set to <c>TIMED_OUT</c>.
         /// </para>
         /// </summary>
         public AwsJobTimeoutConfig AwsJobTimeoutConfig

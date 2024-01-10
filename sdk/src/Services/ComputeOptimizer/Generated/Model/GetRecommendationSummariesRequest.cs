@@ -38,25 +38,25 @@ namespace Amazon.ComputeOptimizer.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Amazon EC2 instances in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-    /// or <code>Optimized</code>.
+    /// Amazon EC2 instances in an account that are <c>Underprovisioned</c>, <c>Overprovisioned</c>,
+    /// or <c>Optimized</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Auto Scaling groups in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+    /// Auto Scaling groups in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon EBS volumes in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+    /// Amazon EBS volumes in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Lambda functions in an account that are <code>NotOptimized</code>, or <code>Optimized</code>.
+    /// Lambda functions in an account that are <c>NotOptimized</c>, or <c>Optimized</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Amazon ECS services in an account that are <code>Underprovisioned</code>, <code>Overprovisioned</code>,
-    /// or <code>Optimized</code>.
+    /// Amazon ECS services in an account that are <c>Underprovisioned</c>, <c>Overprovisioned</c>,
+    /// or <c>Optimized</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -100,7 +100,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// To retrieve the remaining results, make another request with the returned <code>nextToken</code>
+        /// To retrieve the remaining results, make another request with the returned <c>nextToken</c>
         /// value.
         /// </para>
         /// </summary>

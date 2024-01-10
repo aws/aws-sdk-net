@@ -113,8 +113,8 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property TargetName. 
         /// <para>
         /// The name of the iSCSI target used by an initiator to connect to a volume and used
-        /// as a suffix for the target ARN. For example, specifying <code>TargetName</code> as
-        /// <i>myvolume</i> results in the target ARN of <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+        /// as a suffix for the target ARN. For example, specifying <c>TargetName</c> as <i>myvolume</i>
+        /// results in the target ARN of <c>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</c>.
         /// The target name must be unique across all volumes on a gateway.
         /// </para>
         ///  

@@ -106,8 +106,8 @@ namespace Amazon.Appflow.Model
         ///  The settings that determine how Amazon AppFlow handles an error when placing data
         /// in the Salesforce destination. For example, this setting would determine if the flow
         /// should fail after one insertion error, or continue and attempt to insert every record
-        /// regardless of the initial failure. <code>ErrorHandlingConfig</code> is a part of the
-        /// destination connector details. 
+        /// regardless of the initial failure. <c>ErrorHandlingConfig</c> is a part of the destination
+        /// connector details. 
         /// </para>
         /// </summary>
         public ErrorHandlingConfig ErrorHandlingConfig
@@ -165,7 +165,7 @@ namespace Amazon.Appflow.Model
         /// Gets and sets the property WriteOperationType. 
         /// <para>
         ///  This specifies the type of write operation to be performed in Salesforce. When the
-        /// value is <code>UPSERT</code>, then <code>idFieldNames</code> is required. 
+        /// value is <c>UPSERT</c>, then <c>idFieldNames</c> is required. 
         /// </para>
         /// </summary>
         public WriteOperationType WriteOperationType

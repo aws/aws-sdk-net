@@ -57,20 +57,19 @@ namespace Amazon.Kinesis.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>CreateStream</code> is an asynchronous operation. Upon receiving a <code>CreateStream</code>
-    /// request, Kinesis Data Streams immediately returns and sets the stream status to <code>CREATING</code>.
-    /// After the stream is created, Kinesis Data Streams sets the stream status to <code>ACTIVE</code>.
-    /// You should perform read and write operations only on an <code>ACTIVE</code> stream.
-    /// 
+    ///  <c>CreateStream</c> is an asynchronous operation. Upon receiving a <c>CreateStream</c>
+    /// request, Kinesis Data Streams immediately returns and sets the stream status to <c>CREATING</c>.
+    /// After the stream is created, Kinesis Data Streams sets the stream status to <c>ACTIVE</c>.
+    /// You should perform read and write operations only on an <c>ACTIVE</c> stream. 
     /// </para>
     ///  
     /// <para>
-    /// You receive a <code>LimitExceededException</code> when making a <code>CreateStream</code>
-    /// request when you try to do one of the following:
+    /// You receive a <c>LimitExceededException</c> when making a <c>CreateStream</c> request
+    /// when you try to do one of the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Have more than five streams in the <code>CREATING</code> state at any point in time.
+    /// Have more than five streams in the <c>CREATING</c> state at any point in time.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -86,7 +85,7 @@ namespace Amazon.Kinesis.Model
     ///  
     /// <para>
     /// You can use <a>DescribeStreamSummary</a> to check the stream status, which is returned
-    /// in <code>StreamStatus</code>.
+    /// in <c>StreamStatus</c>.
     /// </para>
     ///  
     /// <para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// The attributes of an <code>Endpoint</code>.
+    /// The attributes of an <c>Endpoint</c>.
     /// </summary>
     public partial class EndpointAttributes
     {

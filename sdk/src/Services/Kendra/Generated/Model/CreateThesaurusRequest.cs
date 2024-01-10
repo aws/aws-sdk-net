@@ -53,8 +53,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A token that you provide to identify the request to create a thesaurus. Multiple calls
-        /// to the <code>CreateThesaurus</code> API with the same client token will create only
-        /// one thesaurus. 
+        /// to the <c>CreateThesaurus</c> API with the same client token will create only one
+        /// thesaurus. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

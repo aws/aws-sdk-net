@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for <code>DescribeFileSystemAliases</code> operation.
+    /// The response object for <c>DescribeFileSystemAliases</c> operation.
     /// </summary>
     public partial class DescribeFileSystemAliasesResponse : AmazonWebServiceResponse
     {
@@ -59,7 +59,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// Present if there are more DNS aliases than returned in the response (String). You
-        /// can use the <code>NextToken</code> value in a later request to fetch additional descriptions.
+        /// can use the <c>NextToken</c> value in a later request to fetch additional descriptions.
         /// 
         /// </para>
         /// </summary>

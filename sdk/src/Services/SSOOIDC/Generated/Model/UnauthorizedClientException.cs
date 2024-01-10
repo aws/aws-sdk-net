@@ -30,7 +30,7 @@ namespace Amazon.SSOOIDC.Model
 {
     /// <summary>
     /// Indicates that the client is not currently authorized to make the request. This can
-    /// happen when a <code>clientId</code> is not issued for a public client.
+    /// happen when a <c>clientId</c> is not issued for a public client.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
@@ -130,7 +130,7 @@ namespace Amazon.SSOOIDC.Model
         /// <summary>
         /// Gets and sets the property Error. 
         /// <para>
-        /// Single error code. For this exception the value will be <code>unauthorized_client</code>.
+        /// Single error code. For this exception the value will be <c>unauthorized_client</c>.
         /// </para>
         /// </summary>
         public string Error

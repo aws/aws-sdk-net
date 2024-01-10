@@ -42,14 +42,13 @@ namespace Amazon.IoT.Model
         /// Gets and sets the property BatchMode. 
         /// <para>
         /// Whether to deliver the Kinesis Data Firehose stream as a batch by using <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-        /// <code>PutRecordBatch</code> </a>. The default value is <code>false</code>.
+        /// <c>PutRecordBatch</c> </a>. The default value is <c>false</c>.
         /// </para>
         ///  
         /// <para>
-        /// When <code>batchMode</code> is <code>true</code> and the rule's SQL statement evaluates
-        /// to an Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
-        /// <code>PutRecordBatch</code> </a> request. The resulting array can't have more than
-        /// 500 records.
+        /// When <c>batchMode</c> is <c>true</c> and the rule's SQL statement evaluates to an
+        /// Array, each Array element forms one record in the <a href="https://docs.aws.amazon.com/firehose/latest/APIReference/API_PutRecordBatch.html">
+        /// <c>PutRecordBatch</c> </a> request. The resulting array can't have more than 500 records.
         /// </para>
         /// </summary>
         public bool BatchMode

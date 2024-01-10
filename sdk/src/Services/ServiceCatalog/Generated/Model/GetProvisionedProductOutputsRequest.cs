@@ -30,7 +30,7 @@ namespace Amazon.ServiceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the GetProvisionedProductOutputs operation.
-    /// This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>,
+    /// This API takes either a <c>ProvisonedProductId</c> or a <c>ProvisionedProductName</c>,
     /// along with a list of one or more output keys, and responds with the key/value pairs
     /// of those outputs.
     /// </summary>
@@ -50,11 +50,11 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>jp</code> - Japanese
+        ///  <c>jp</c> - Japanese
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>zh</code> - Chinese
+        ///  <c>zh</c> - Chinese
         /// </para>
         ///  </li> </ul>
         /// </summary>

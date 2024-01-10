@@ -40,22 +40,22 @@ namespace Amazon.EKS.Model
         /// Gets and sets the property IpFamily. 
         /// <para>
         /// Specify which IP family is used to assign Kubernetes pod and service IP addresses.
-        /// If you don't specify a value, <code>ipv4</code> is used by default. You can only specify
+        /// If you don't specify a value, <c>ipv4</c> is used by default. You can only specify
         /// an IP family when you create a cluster and can't change this value once the cluster
-        /// is created. If you specify <code>ipv6</code>, the VPC and subnets that you specify
-        /// for cluster creation must have both <code>IPv4</code> and <code>IPv6</code> CIDR blocks
-        /// assigned to them. You can't specify <code>ipv6</code> for clusters in China Regions.
+        /// is created. If you specify <c>ipv6</c>, the VPC and subnets that you specify for cluster
+        /// creation must have both <c>IPv4</c> and <c>IPv6</c> CIDR blocks assigned to them.
+        /// You can't specify <c>ipv6</c> for clusters in China Regions.
         /// </para>
         ///  
         /// <para>
-        /// You can only specify <code>ipv6</code> for <code>1.21</code> and later clusters that
-        /// use version <code>1.10.1</code> or later of the Amazon VPC CNI add-on. If you specify
-        /// <code>ipv6</code>, then ensure that your VPC meets the requirements listed in the
-        /// considerations listed in <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning
+        /// You can only specify <c>ipv6</c> for <c>1.21</c> and later clusters that use version
+        /// <c>1.10.1</c> or later of the Amazon VPC CNI add-on. If you specify <c>ipv6</c>, then
+        /// ensure that your VPC meets the requirements listed in the considerations listed in
+        /// <a href="https://docs.aws.amazon.com/eks/latest/userguide/cni-ipv6.html">Assigning
         /// IPv6 addresses to pods and services</a> in the Amazon EKS User Guide. Kubernetes assigns
-        /// services <code>IPv6</code> addresses from the unique local address range <code>(fc00::/7)</code>.
-        /// You can't specify a custom <code>IPv6</code> CIDR block. Pod addresses are assigned
-        /// from the subnet's <code>IPv6</code> CIDR.
+        /// services <c>IPv6</c> addresses from the unique local address range <c>(fc00::/7)</c>.
+        /// You can't specify a custom <c>IPv6</c> CIDR block. Pod addresses are assigned from
+        /// the subnet's <c>IPv6</c> CIDR.
         /// </para>
         /// </summary>
         public IpFamily IpFamily
@@ -73,17 +73,17 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property ServiceIpv4Cidr. 
         /// <para>
-        /// Don't specify a value if you select <code>ipv6</code> for <b>ipFamily</b>. The CIDR
-        /// block to assign Kubernetes service IP addresses from. If you don't specify a block,
-        /// Kubernetes assigns addresses from either the <code>10.100.0.0/16</code> or <code>172.20.0.0/16</code>
-        /// CIDR blocks. We recommend that you specify a block that does not overlap with resources
+        /// Don't specify a value if you select <c>ipv6</c> for <b>ipFamily</b>. The CIDR block
+        /// to assign Kubernetes service IP addresses from. If you don't specify a block, Kubernetes
+        /// assigns addresses from either the <c>10.100.0.0/16</c> or <c>172.20.0.0/16</c> CIDR
+        /// blocks. We recommend that you specify a block that does not overlap with resources
         /// in other networks that are peered or connected to your VPC. The block must meet the
         /// following requirements:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Within one of the following private IP address blocks: <code>10.0.0.0/8</code>, <code>172.16.0.0/12</code>,
-        /// or <code>192.168.0.0/16</code>.
+        /// Within one of the following private IP address blocks: <c>10.0.0.0/8</c>, <c>172.16.0.0/12</c>,
+        /// or <c>192.168.0.0/16</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -91,7 +91,7 @@ namespace Amazon.EKS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Between <code>/24</code> and <code>/12</code>.
+        /// Between <c>/24</c> and <c>/12</c>.
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>

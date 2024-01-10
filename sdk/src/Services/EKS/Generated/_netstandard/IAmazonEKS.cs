@@ -80,7 +80,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -129,7 +129,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -151,11 +151,11 @@ namespace Amazon.EKS
         /// <para>
         /// If you want to authenticate identities using an identity provider, you can create
         /// an identity provider configuration and associate it to your cluster. After configuring
-        /// authentication to your cluster you can create Kubernetes <code>Role</code> and <code>ClusterRole</code>
+        /// authentication to your cluster you can create Kubernetes <c>Role</c> and <c>ClusterRole</c>
         /// objects, assign permissions to them, and then bind them to the identities using Kubernetes
-        /// <code>RoleBinding</code> and <code>ClusterRoleBinding</code> objects. For more information
-        /// see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using
-        /// RBAC Authorization</a> in the Kubernetes documentation.
+        /// <c>RoleBinding</c> and <c>ClusterRoleBinding</c> objects. For more information see
+        /// <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
+        /// Authorization</a> in the Kubernetes documentation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateIdentityProviderConfig service method.</param>
@@ -182,7 +182,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -203,15 +203,14 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// An access entry allows an IAM principal to access your cluster. Access entries can
-        /// replace the need to maintain entries in the <code>aws-auth</code> <code>ConfigMap</code>
-        /// for authentication. You have the following options for authorizing an IAM principal
-        /// to access Kubernetes objects on your cluster: Kubernetes role-based access control
-        /// (RBAC), Amazon EKS, or both. Kubernetes RBAC authorization requires you to create
-        /// and manage Kubernetes <code>Role</code>, <code>ClusterRole</code>, <code>RoleBinding</code>,
-        /// and <code>ClusterRoleBinding</code> objects, in addition to managing access entries.
-        /// If you use Amazon EKS authorization exclusively, you don't need to create and manage
-        /// Kubernetes <code>Role</code>, <code>ClusterRole</code>, <code>RoleBinding</code>,
-        /// and <code>ClusterRoleBinding</code> objects.
+        /// replace the need to maintain entries in the <c>aws-auth</c> <c>ConfigMap</c> for authentication.
+        /// You have the following options for authorizing an IAM principal to access Kubernetes
+        /// objects on your cluster: Kubernetes role-based access control (RBAC), Amazon EKS,
+        /// or both. Kubernetes RBAC authorization requires you to create and manage Kubernetes
+        /// <c>Role</c>, <c>ClusterRole</c>, <c>RoleBinding</c>, and <c>ClusterRoleBinding</c>
+        /// objects, in addition to managing access entries. If you use Amazon EKS authorization
+        /// exclusively, you don't need to create and manage Kubernetes <c>Role</c>, <c>ClusterRole</c>,
+        /// <c>RoleBinding</c>, and <c>ClusterRoleBinding</c> objects.
         /// </para>
         ///  
         /// <para>
@@ -240,7 +239,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -289,7 +288,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -310,18 +309,18 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// The Amazon EKS control plane consists of control plane instances that run the Kubernetes
-        /// software, such as <code>etcd</code> and the API server. The control plane runs in
-        /// an account managed by Amazon Web Services, and the Kubernetes API is exposed by the
-        /// Amazon EKS API server endpoint. Each Amazon EKS cluster control plane is single tenant
-        /// and unique. It runs on its own set of Amazon EC2 instances.
+        /// software, such as <c>etcd</c> and the API server. The control plane runs in an account
+        /// managed by Amazon Web Services, and the Kubernetes API is exposed by the Amazon EKS
+        /// API server endpoint. Each Amazon EKS cluster control plane is single tenant and unique.
+        /// It runs on its own set of Amazon EC2 instances.
         /// </para>
         ///  
         /// <para>
         /// The cluster control plane is provisioned across multiple Availability Zones and fronted
         /// by an Elastic Load Balancing Network Load Balancer. Amazon EKS also provisions elastic
         /// network interfaces in your VPC subnets to provide connectivity from the control plane
-        /// instances to the nodes (for example, to support <code>kubectl exec</code>, <code>logs</code>,
-        /// and <code>proxy</code> data flows).
+        /// instances to the nodes (for example, to support <c>kubectl exec</c>, <c>logs</c>,
+        /// and <c>proxy</c> data flows).
         /// </para>
         ///  
         /// <para>
@@ -331,19 +330,18 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code>
-        /// parameters to enable or disable public and private access to your cluster's Kubernetes
-        /// API server endpoint. By default, public access is enabled, and private access is disabled.
-        /// For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+        /// You can use the <c>endpointPublicAccess</c> and <c>endpointPrivateAccess</c> parameters
+        /// to enable or disable public and private access to your cluster's Kubernetes API server
+        /// endpoint. By default, public access is enabled, and private access is disabled. For
+        /// more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
         /// EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// You can use the <code>logging</code> parameter to enable or disable exporting the
-        /// Kubernetes control plane logs for your cluster to CloudWatch Logs. By default, cluster
-        /// control plane logs aren't exported to CloudWatch Logs. For more information, see <a
-        /// href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+        /// You can use the <c>logging</c> parameter to enable or disable exporting the Kubernetes
+        /// control plane logs for your cluster to CloudWatch Logs. By default, cluster control
+        /// plane logs aren't exported to CloudWatch Logs. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
         /// EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
         /// </para>
         ///  <note> 
@@ -460,8 +458,8 @@ namespace Amazon.EKS
         /// When you create a Fargate profile, you must specify a pod execution role to use with
         /// the pods that are scheduled with the profile. This role is added to the cluster's
         /// Kubernetes <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Role
-        /// Based Access Control</a> (RBAC) for authorization so that the <code>kubelet</code>
-        /// that is running on the Fargate infrastructure can register with your Amazon EKS cluster
+        /// Based Access Control</a> (RBAC) for authorization so that the <c>kubelet</c> that
+        /// is running on the Fargate infrastructure can register with your Amazon EKS cluster
         /// so that it can appear in your cluster as a node. The pod execution role also provides
         /// IAM permissions to the Fargate infrastructure to allow read access to Amazon ECR image
         /// repositories. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">Pod
@@ -475,9 +473,9 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// If any Fargate profiles in a cluster are in the <code>DELETING</code> status, you
-        /// must wait for that Fargate profile to finish deleting before you can create any other
-        /// profiles in that cluster.
+        /// If any Fargate profiles in a cluster are in the <c>DELETING</c> status, you must wait
+        /// for that Fargate profile to finish deleting before you can create any other profiles
+        /// in that cluster.
         /// </para>
         ///  
         /// <para>
@@ -636,7 +634,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -656,9 +654,8 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// Deleting an access entry of a type other than <code>Standard</code> can cause your
-        /// cluster to function improperly. If you delete an access entry in error, you can recreate
-        /// it.
+        /// Deleting an access entry of a type other than <c>Standard</c> can cause your cluster
+        /// to function improperly. If you delete an access entry in error, you can recreate it.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessEntry service method.</param>
@@ -673,7 +670,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -718,7 +715,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -747,7 +744,7 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// If you have managed node groups or Fargate profiles attached to the cluster, you must
-        /// delete them first. For more information, see <code>DeleteNodgroup</code> and <code>DeleteFargateProfile</code>.
+        /// delete them first. For more information, see <c>DeleteNodgroup</c> and <c>DeleteFargateProfile</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCluster service method.</param>
@@ -767,7 +764,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -809,7 +806,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -829,17 +826,16 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// When you delete a Fargate profile, any <code>Pod</code> running on Fargate that was
-        /// created with the profile is deleted. If the <code>Pod</code> matches another Fargate
-        /// profile, then it is scheduled on Fargate with that profile. If it no longer matches
-        /// any Fargate profiles, then it's not scheduled on Fargate and may remain in a pending
-        /// state.
+        /// When you delete a Fargate profile, any <c>Pod</c> running on Fargate that was created
+        /// with the profile is deleted. If the <c>Pod</c> matches another Fargate profile, then
+        /// it is scheduled on Fargate with that profile. If it no longer matches any Fargate
+        /// profiles, then it's not scheduled on Fargate and may remain in a pending state.
         /// </para>
         ///  
         /// <para>
-        /// Only one Fargate profile in a cluster can be in the <code>DELETING</code> status at
-        /// a time. You must wait for a Fargate profile to finish deleting before you can delete
-        /// any other profiles in that cluster.
+        /// Only one Fargate profile in a cluster can be in the <c>DELETING</c> status at a time.
+        /// You must wait for a Fargate profile to finish deleting before you can delete any other
+        /// profiles in that cluster.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteFargateProfile service method.</param>
@@ -859,7 +855,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -897,7 +893,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -940,7 +936,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -988,7 +984,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1021,7 +1017,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1060,7 +1056,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1089,7 +1085,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1110,8 +1106,7 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// Information such as the Kubernetes versions that you can use the add-on with, the
-        /// <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on
-        /// are returned.
+        /// <c>owner</c>, <c>publisher</c>, and the <c>type</c> of the add-on are returned.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAddonVersions service method.</param>
@@ -1125,7 +1120,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1146,14 +1141,14 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// The API server endpoint and certificate authority data returned by this operation
-        /// are required for <code>kubelet</code> and <code>kubectl</code> to communicate with
-        /// your Kubernetes API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Creating
-        /// or updating a <code>kubeconfig</code> file for an Amazon EKS cluster</a>.
+        /// are required for <c>kubelet</c> and <c>kubectl</c> to communicate with your Kubernetes
+        /// API server. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-kubeconfig.html">Creating
+        /// or updating a <c>kubeconfig</c> file for an Amazon EKS cluster</a>.
         /// </para>
         ///  <note> 
         /// <para>
         /// The API server endpoint and certificate authority data aren't available until the
-        /// cluster reaches the <code>ACTIVE</code> state.
+        /// cluster reaches the <c>ACTIVE</c> state.
         /// </para>
         ///  </note>
         /// </summary>
@@ -1171,7 +1166,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1206,7 +1201,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1244,7 +1239,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1279,7 +1274,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1315,7 +1310,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1350,7 +1345,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1374,9 +1369,9 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// This action requires the ID of the association. You can get the ID from the response
-        /// to the <code>CreatePodIdentityAssocation</code> for newly created associations. Or,
-        /// you can list the IDs for associations with <code>ListPodIdentityAssociations</code>
-        /// and filter the list by namespace or service account.
+        /// to the <c>CreatePodIdentityAssocation</c> for newly created associations. Or, you
+        /// can list the IDs for associations with <c>ListPodIdentityAssociations</c> and filter
+        /// the list by namespace or service account.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribePodIdentityAssociation service method.</param>
@@ -1394,7 +1389,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1414,9 +1409,9 @@ namespace Amazon.EKS
         /// 
         ///  
         /// <para>
-        /// When the status of the update is <code>Succeeded</code>, the update is complete. If
-        /// an update fails, the status is <code>Failed</code>, and an error detail explains the
-        /// reason for the failure.
+        /// When the status of the update is <c>Succeeded</c>, the update is complete. If an update
+        /// fails, the status is <c>Failed</c>, and an error detail explains the reason for the
+        /// failure.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUpdate service method.</param>
@@ -1436,7 +1431,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1466,7 +1461,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1515,7 +1510,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1548,7 +1543,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1608,7 +1603,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1638,7 +1633,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1741,7 +1736,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1776,7 +1771,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1814,7 +1809,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1851,7 +1846,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1888,7 +1883,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1950,7 +1945,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -1975,20 +1970,20 @@ namespace Amazon.EKS
         /// </para>
         ///  
         /// <para>
-        /// Cluster connection requires two steps. First, send a <code> <a>RegisterClusterRequest</a>
-        /// </code> to add it to the Amazon EKS control plane.
+        /// Cluster connection requires two steps. First, send a <c> <a>RegisterClusterRequest</a>
+        /// </c> to add it to the Amazon EKS control plane.
         /// </para>
         ///  
         /// <para>
         /// Second, a <a href="https://amazon-eks.s3.us-west-2.amazonaws.com/eks-connector/manifests/eks-connector/latest/eks-connector.yaml">Manifest</a>
-        /// containing the <code>activationID</code> and <code>activationCode</code> must be applied
-        /// to the Kubernetes cluster through it's native provider to provide visibility.
+        /// containing the <c>activationID</c> and <c>activationCode</c> must be applied to the
+        /// Kubernetes cluster through it's native provider to provide visibility.
         /// </para>
         ///  
         /// <para>
         /// After the manifest is updated and applied, the connected cluster is visible to the
         /// Amazon EKS control plane. If the manifest isn't applied within three days, the connected
-        /// cluster will no longer be visible and must be deregistered using <code>DeregisterCluster</code>.
+        /// cluster will no longer be visible and must be deregistered using <c>DeregisterCluster</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RegisterCluster service method.</param>
@@ -2038,7 +2033,7 @@ namespace Amazon.EKS
 
 
         /// <summary>
-        /// Associates the specified tags to an Amazon EKS resource with the specified <code>resourceArn</code>.
+        /// Associates the specified tags to an Amazon EKS resource with the specified <c>resourceArn</c>.
         /// If existing tags on a resource are not specified in the request parameters, they aren't
         /// changed. When a resource is deleted, the tags associated with that resource are also
         /// deleted. Tags that you create for Amazon EKS resources don't propagate to any other
@@ -2113,7 +2108,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2155,7 +2150,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2173,7 +2168,7 @@ namespace Amazon.EKS
         /// <summary>
         /// Updates an Amazon EKS cluster configuration. Your cluster continues to function during
         /// the update. The response output includes an update ID that you can use to track the
-        /// status of your cluster update with <code>DescribeUpdate</code>"/&gt;.
+        /// status of your cluster update with <c>DescribeUpdate</c>"/&gt;.
         /// 
         ///  
         /// <para>
@@ -2207,9 +2202,9 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// Cluster updates are asynchronous, and they should finish within a few minutes. During
-        /// an update, the cluster status moves to <code>UPDATING</code> (this status transition
-        /// is eventually consistent). When the update is complete (either <code>Failed</code>
-        /// or <code>Successful</code>), the cluster status moves to <code>Active</code>.
+        /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
+        /// eventually consistent). When the update is complete (either <c>Failed</c> or <c>Successful</c>),
+        /// the cluster status moves to <c>Active</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateClusterConfig service method.</param>
@@ -2236,7 +2231,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2260,9 +2255,9 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// Cluster updates are asynchronous, and they should finish within a few minutes. During
-        /// an update, the cluster status moves to <code>UPDATING</code> (this status transition
-        /// is eventually consistent). When the update is complete (either <code>Failed</code>
-        /// or <code>Successful</code>), the cluster status moves to <code>Active</code>.
+        /// an update, the cluster status moves to <c>UPDATING</c> (this status transition is
+        /// eventually consistent). When the update is complete (either <c>Failed</c> or <c>Successful</c>),
+        /// the cluster status moves to <c>Active</c>.
         /// </para>
         ///  
         /// <para>
@@ -2295,7 +2290,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2335,7 +2330,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2381,7 +2376,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2425,10 +2420,10 @@ namespace Amazon.EKS
         ///  
         /// <para>
         /// When a node in a managed node group is terminated due to a scaling action or update,
-        /// every <code>Pod</code> on that node is drained first. Amazon EKS attempts to drain
-        /// the nodes gracefully and will fail if it is unable to do so. You can <code>force</code>
-        /// the update if Amazon EKS is unable to drain the nodes as a result of a <code>Pod</code>
-        /// disruption budget issue.
+        /// every <c>Pod</c> on that node is drained first. Amazon EKS attempts to drain the nodes
+        /// gracefully and will fail if it is unable to do so. You can <c>force</c> the update
+        /// if Amazon EKS is unable to drain the nodes as a result of a <c>Pod</c> disruption
+        /// budget issue.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNodegroupVersion service method.</param>
@@ -2455,7 +2450,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">
@@ -2491,7 +2486,7 @@ namespace Amazon.EKS
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ResourceNotFoundException">
         /// The specified resource could not be found. You can view your available clusters with
-        /// <code>ListClusters</code>. You can view your available managed node groups with <code>ListNodegroups</code>.
+        /// <c>ListClusters</c>. You can view your available managed node groups with <c>ListNodegroups</c>.
         /// Amazon EKS clusters and node groups are Amazon Web Services Region specific.
         /// </exception>
         /// <exception cref="Amazon.EKS.Model.ServerException">

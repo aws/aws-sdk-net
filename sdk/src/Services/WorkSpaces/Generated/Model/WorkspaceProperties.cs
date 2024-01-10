@@ -90,8 +90,7 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>Protocols</code> property is case sensitive. Ensure you use <code>PCOIP</code>
-        /// or <code>WSP</code>.
+        /// The <c>Protocols</c> property is case sensitive. Ensure you use <c>PCOIP</c> or <c>WSP</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -140,9 +139,9 @@ namespace Amazon.WorkSpaces.Model
         /// </para>
         ///  <note> <ul> <li> 
         /// <para>
-        /// The <code>MANUAL</code> value is only supported by Amazon WorkSpaces Core. Contact
-        /// your account team to be allow-listed to use this value. For more information, see
-        /// <a href="http://aws.amazon.com/workspaces/core/">Amazon WorkSpaces Core</a>.
+        /// The <c>MANUAL</c> value is only supported by Amazon WorkSpaces Core. Contact your
+        /// account team to be allow-listed to use this value. For more information, see <a href="http://aws.amazon.com/workspaces/core/">Amazon
+        /// WorkSpaces Core</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

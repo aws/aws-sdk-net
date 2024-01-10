@@ -121,11 +121,11 @@ namespace Amazon.PersonalizeRuntime.Model
         /// </para>
         ///  
         /// <para>
-        /// For filter expressions that use an <code>INCLUDE</code> element to include items,
-        /// you must provide values for all parameters that are defined in the expression. For
-        /// filters with expressions that use an <code>EXCLUDE</code> element to exclude items,
-        /// you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't
-        /// use that portion of the expression to filter recommendations.
+        /// For filter expressions that use an <c>INCLUDE</c> element to include items, you must
+        /// provide values for all parameters that are defined in the expression. For filters
+        /// with expressions that use an <c>EXCLUDE</c> element to exclude items, you can omit
+        /// the <c>filter-values</c>.In this case, Amazon Personalize doesn't use that portion
+        /// of the expression to filter recommendations.
         /// </para>
         ///  
         /// <para>
@@ -149,10 +149,9 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <summary>
         /// Gets and sets the property InputList. 
         /// <para>
-        /// A list of items (by <code>itemId</code>) to rank. If an item was not included in the
-        /// training dataset, the item is appended to the end of the reranked list. If you are
-        /// including metadata in recommendations, the maximum is 50. Otherwise, the maximum is
-        /// 500.
+        /// A list of items (by <c>itemId</c>) to rank. If an item was not included in the training
+        /// dataset, the item is appended to the end of the reranked list. If you are including
+        /// metadata in recommendations, the maximum is 50. Otherwise, the maximum is 500.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -173,8 +172,8 @@ namespace Amazon.PersonalizeRuntime.Model
         /// <para>
         /// If you enabled metadata in recommendations when you created or updated the campaign,
         /// specify metadata columns from your Items dataset to include in the personalized ranking.
-        /// The map key is <code>ITEMS</code> and the value is a list of column names from your
-        /// Items dataset. The maximum number of columns you can provide is 10.
+        /// The map key is <c>ITEMS</c> and the value is a list of column names from your Items
+        /// dataset. The maximum number of columns you can provide is 10.
         /// </para>
         ///  
         /// <para>

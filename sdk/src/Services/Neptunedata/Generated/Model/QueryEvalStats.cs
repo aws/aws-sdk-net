@@ -42,7 +42,7 @@ namespace Amazon.Neptunedata.Model
         /// <summary>
         /// Gets and sets the property Cancelled. 
         /// <para>
-        /// Set to <code>TRUE</code> if the query was cancelled, or FALSE otherwise.
+        /// Set to <c>TRUE</c> if the query was cancelled, or FALSE otherwise.
         /// </para>
         /// </summary>
         public bool Cancelled

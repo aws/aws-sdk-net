@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// A JSON-formatted object that contains the available ISO 639-1 language <code>code</code>,
-    /// <code>language</code> name and langauge <code>display</code> value. The language code
-    /// is what should be used in the <a>CreateCase</a> call.
+    /// A JSON-formatted object that contains the available ISO 639-1 language <c>code</c>,
+    /// <c>language</c> name and langauge <c>display</c> value. The language code is what
+    /// should be used in the <a>CreateCase</a> call.
     /// </summary>
     public partial class SupportedLanguage
     {
@@ -42,7 +42,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        ///  2 digit ISO 639-1 code. e.g. <code>en</code> 
+        ///  2 digit ISO 639-1 code. e.g. <c>en</c> 
         /// </para>
         /// </summary>
         public string Code
@@ -60,7 +60,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Display. 
         /// <para>
-        ///  Language display value e.g. <code>ENGLISH</code> 
+        ///  Language display value e.g. <c>ENGLISH</c> 
         /// </para>
         /// </summary>
         public string Display
@@ -78,7 +78,7 @@ namespace Amazon.AWSSupport.Model
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        ///  Full language description e.g. <code>ENGLISH</code> 
+        ///  Full language description e.g. <c>ENGLISH</c> 
         /// </para>
         /// </summary>
         public string Language

@@ -34,7 +34,7 @@ namespace Amazon.Route53.Model
     /// 
     ///  
     /// <para>
-    /// Traffic policy versions are listed in numerical order by <code>VersionNumber</code>.
+    /// Traffic policy versions are listed in numerical order by <c>VersionNumber</c>.
     /// </para>
     /// </summary>
     public partial class ListTrafficPolicyVersionsRequest : AmazonRoute53Request
@@ -46,8 +46,8 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Specify the value of <code>Id</code> of the traffic policy for which you want to list
-        /// all versions.
+        /// Specify the value of <c>Id</c> of the traffic policy for which you want to list all
+        /// versions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=36)]
@@ -66,16 +66,16 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property TrafficPolicyVersionMarker. 
         /// <para>
-        /// For your first request to <code>ListTrafficPolicyVersions</code>, don't include the
-        /// <code>TrafficPolicyVersionMarker</code> parameter.
+        /// For your first request to <c>ListTrafficPolicyVersions</c>, don't include the <c>TrafficPolicyVersionMarker</c>
+        /// parameter.
         /// </para>
         ///  
         /// <para>
-        /// If you have more traffic policy versions than the value of <code>MaxItems</code>,
-        /// <code>ListTrafficPolicyVersions</code> returns only the first group of <code>MaxItems</code>
-        /// versions. To get more traffic policy versions, submit another <code>ListTrafficPolicyVersions</code>
-        /// request. For the value of <code>TrafficPolicyVersionMarker</code>, specify the value
-        /// of <code>TrafficPolicyVersionMarker</code> in the previous response.
+        /// If you have more traffic policy versions than the value of <c>MaxItems</c>, <c>ListTrafficPolicyVersions</c>
+        /// returns only the first group of <c>MaxItems</c> versions. To get more traffic policy
+        /// versions, submit another <c>ListTrafficPolicyVersions</c> request. For the value of
+        /// <c>TrafficPolicyVersionMarker</c>, specify the value of <c>TrafficPolicyVersionMarker</c>
+        /// in the previous response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4)]
@@ -96,10 +96,9 @@ namespace Amazon.Route53.Model
         /// <para>
         /// The maximum number of traffic policy versions that you want Amazon Route 53 to include
         /// in the response body for this request. If the specified traffic policy has more than
-        /// <code>MaxItems</code> versions, the value of <code>IsTruncated</code> in the response
-        /// is <code>true</code>, and the value of the <code>TrafficPolicyVersionMarker</code>
-        /// element is the ID of the first version that Route 53 will return if you submit another
-        /// request.
+        /// <c>MaxItems</c> versions, the value of <c>IsTruncated</c> in the response is <c>true</c>,
+        /// and the value of the <c>TrafficPolicyVersionMarker</c> element is the ID of the first
+        /// version that Route 53 will return if you submit another request.
         /// </para>
         /// </summary>
         public string MaxItems

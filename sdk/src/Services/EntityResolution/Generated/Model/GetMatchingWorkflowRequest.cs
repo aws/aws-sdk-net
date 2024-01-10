@@ -30,7 +30,7 @@ namespace Amazon.EntityResolution.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMatchingWorkflow operation.
-    /// Returns the <code>MatchingWorkflow</code> with a given name, if it exists.
+    /// Returns the <c>MatchingWorkflow</c> with a given name, if it exists.
     /// </summary>
     public partial class GetMatchingWorkflowRequest : AmazonEntityResolutionRequest
     {

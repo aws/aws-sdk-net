@@ -30,13 +30,13 @@ namespace Amazon.Signer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSigningJobs operation.
-    /// Lists all your signing jobs. You can use the <code>maxResults</code> parameter to
-    /// limit the number of signing jobs that are returned in the response. If additional
-    /// jobs remain to be listed, AWS Signer returns a <code>nextToken</code> value. Use this
-    /// value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values.
-    /// You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code>
-    /// parameter and with new values that Signer returns in the <code>nextToken</code> parameter
-    /// until all of your signing jobs have been returned.
+    /// Lists all your signing jobs. You can use the <c>maxResults</c> parameter to limit
+    /// the number of signing jobs that are returned in the response. If additional jobs remain
+    /// to be listed, AWS Signer returns a <c>nextToken</c> value. Use this value in subsequent
+    /// calls to <c>ListSigningJobs</c> to fetch the remaining values. You can continue calling
+    /// <c>ListSigningJobs</c> with your <c>maxResults</c> parameter and with new values that
+    /// Signer returns in the <c>nextToken</c> parameter until all of your signing jobs have
+    /// been returned.
     /// </summary>
     public partial class ListSigningJobsRequest : AmazonSignerRequest
     {
@@ -92,8 +92,8 @@ namespace Amazon.Signer.Model
         /// <para>
         /// Specifies the maximum number of items to return in the response. Use this parameter
         /// when paginating results. If additional items exist beyond the number you specify,
-        /// the <code>nextToken</code> element is set in the response. Use the <code>nextToken</code>
-        /// value in a subsequent request to retrieve additional items. 
+        /// the <c>nextToken</c> element is set in the response. Use the <c>nextToken</c> value
+        /// in a subsequent request to retrieve additional items. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=25)]
@@ -114,7 +114,7 @@ namespace Amazon.Signer.Model
         /// <para>
         /// String for specifying the next set of paginated results to return. After you receive
         /// a response with truncated results, use this parameter in a subsequent request. Set
-        /// it to the value of <code>nextToken</code> from the response that you just received.
+        /// it to the value of <c>nextToken</c> from the response that you just received.
         /// </para>
         /// </summary>
         public string NextToken

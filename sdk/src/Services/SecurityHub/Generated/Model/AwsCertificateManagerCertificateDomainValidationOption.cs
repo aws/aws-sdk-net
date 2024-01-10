@@ -33,7 +33,7 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// The initial validation of each domain name that occurs as a result of the <code>RequestCertificate</code>
+    /// The initial validation of each domain name that occurs as a result of the <c>RequestCertificate</c>
     /// request
     /// </para>
     ///  </li> <li> 

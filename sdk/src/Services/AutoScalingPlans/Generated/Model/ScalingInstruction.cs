@@ -103,7 +103,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  
         /// <para>
-        /// The default is enabled (<code>false</code>). 
+        /// The default is enabled (<c>false</c>). 
         /// </para>
         /// </summary>
         public bool DisableDynamicScaling
@@ -180,7 +180,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property PredictiveScalingMaxCapacityBehavior. 
         /// <para>
         /// Defines the behavior that should be applied if the forecast capacity approaches or
-        /// exceeds the maximum capacity specified for the resource. The default value is <code>SetForecastCapacityToMaxCapacity</code>.
+        /// exceeds the maximum capacity specified for the resource. The default value is <c>SetForecastCapacityToMaxCapacity</c>.
         /// </para>
         ///  
         /// <para>
@@ -188,18 +188,18 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SetForecastCapacityToMaxCapacity</code> - AWS Auto Scaling cannot scale resource
+        ///  <c>SetForecastCapacityToMaxCapacity</c> - AWS Auto Scaling cannot scale resource
         /// capacity higher than the maximum capacity. The maximum capacity is enforced as a hard
         /// limit. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SetMaxCapacityToForecastCapacity</code> - AWS Auto Scaling may scale resource
-        /// capacity higher than the maximum capacity to equal but not exceed forecast capacity.
+        ///  <c>SetMaxCapacityToForecastCapacity</c> - AWS Auto Scaling may scale resource capacity
+        /// higher than the maximum capacity to equal but not exceed forecast capacity.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SetMaxCapacityAboveForecastCapacity</code> - AWS Auto Scaling may scale resource
+        ///  <c>SetMaxCapacityAboveForecastCapacity</c> - AWS Auto Scaling may scale resource
         /// capacity higher than the maximum capacity by a specified buffer value. The intention
         /// is to give the target tracking scaling policy extra capacity if unexpected traffic
         /// occurs. 
@@ -233,7 +233,7 @@ namespace Amazon.AutoScalingPlans.Model
         ///  
         /// <para>
         /// Only valid when configuring predictive scaling. Required if the <b>PredictiveScalingMaxCapacityBehavior</b>
-        /// is set to <code>SetMaxCapacityAboveForecastCapacity</code>, and cannot be used otherwise.
+        /// is set to <c>SetMaxCapacityAboveForecastCapacity</c>, and cannot be used otherwise.
         /// </para>
         ///  
         /// <para>
@@ -255,7 +255,7 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property PredictiveScalingMode. 
         /// <para>
-        /// The predictive scaling mode. The default value is <code>ForecastAndScale</code>. Otherwise,
+        /// The predictive scaling mode. The default value is <c>ForecastAndScale</c>. Otherwise,
         /// AWS Auto Scaling forecasts capacity but does not create any scheduled scaling actions
         /// based on the capacity forecast. 
         /// </para>
@@ -279,33 +279,33 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Auto Scaling group - The resource type is <code>autoScalingGroup</code> and the unique
-        /// identifier is the name of the Auto Scaling group. Example: <code>autoScalingGroup/my-asg</code>.
+        /// Auto Scaling group - The resource type is <c>autoScalingGroup</c> and the unique identifier
+        /// is the name of the Auto Scaling group. Example: <c>autoScalingGroup/my-asg</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// ECS service - The resource type is <code>service</code> and the unique identifier
-        /// is the cluster name and service name. Example: <code>service/default/sample-webapp</code>.
+        /// ECS service - The resource type is <c>service</c> and the unique identifier is the
+        /// cluster name and service name. Example: <c>service/default/sample-webapp</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Spot Fleet request - The resource type is <code>spot-fleet-request</code> and the
-        /// unique identifier is the Spot Fleet request ID. Example: <code>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</code>.
+        /// Spot Fleet request - The resource type is <c>spot-fleet-request</c> and the unique
+        /// identifier is the Spot Fleet request ID. Example: <c>spot-fleet-request/sfr-73fbd2ce-aa30-494c-8788-1cee4EXAMPLE</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DynamoDB table - The resource type is <code>table</code> and the unique identifier
-        /// is the resource ID. Example: <code>table/my-table</code>.
+        /// DynamoDB table - The resource type is <c>table</c> and the unique identifier is the
+        /// resource ID. Example: <c>table/my-table</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// DynamoDB global secondary index - The resource type is <code>index</code> and the
-        /// unique identifier is the resource ID. Example: <code>table/my-table/index/my-table-index</code>.
+        /// DynamoDB global secondary index - The resource type is <c>index</c> and the unique
+        /// identifier is the resource ID. Example: <c>table/my-table/index/my-table-index</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Aurora DB cluster - The resource type is <code>cluster</code> and the unique identifier
-        /// is the cluster name. Example: <code>cluster:my-db-cluster</code>.
+        /// Aurora DB cluster - The resource type is <c>cluster</c> and the unique identifier
+        /// is the cluster name. Example: <c>cluster:my-db-cluster</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -329,42 +329,42 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>autoscaling:autoScalingGroup:DesiredCapacity</code> - The desired capacity
-        /// of an Auto Scaling group.
+        ///  <c>autoscaling:autoScalingGroup:DesiredCapacity</c> - The desired capacity of an
+        /// Auto Scaling group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ecs:service:DesiredCount</code> - The desired task count of an ECS service.
+        ///  <c>ecs:service:DesiredCount</c> - The desired task count of an ECS service.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ec2:spot-fleet-request:TargetCapacity</code> - The target capacity of a Spot
-        /// Fleet request.
+        ///  <c>ec2:spot-fleet-request:TargetCapacity</c> - The target capacity of a Spot Fleet
+        /// request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dynamodb:table:ReadCapacityUnits</code> - The provisioned read capacity for
-        /// a DynamoDB table.
+        ///  <c>dynamodb:table:ReadCapacityUnits</c> - The provisioned read capacity for a DynamoDB
+        /// table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dynamodb:table:WriteCapacityUnits</code> - The provisioned write capacity for
-        /// a DynamoDB table.
+        ///  <c>dynamodb:table:WriteCapacityUnits</c> - The provisioned write capacity for a DynamoDB
+        /// table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dynamodb:index:ReadCapacityUnits</code> - The provisioned read capacity for
-        /// a DynamoDB global secondary index.
+        ///  <c>dynamodb:index:ReadCapacityUnits</c> - The provisioned read capacity for a DynamoDB
+        /// global secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>dynamodb:index:WriteCapacityUnits</code> - The provisioned write capacity for
-        /// a DynamoDB global secondary index.
+        ///  <c>dynamodb:index:WriteCapacityUnits</c> - The provisioned write capacity for a DynamoDB
+        /// global secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rds:cluster:ReadReplicaCount</code> - The count of Aurora Replicas in an Aurora
-        /// DB cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible
+        ///  <c>rds:cluster:ReadReplicaCount</c> - The count of Aurora Replicas in an Aurora DB
+        /// cluster. Available for Aurora MySQL-compatible edition and Aurora PostgreSQL-compatible
         /// edition.
         /// </para>
         ///  </li> </ul>
@@ -390,9 +390,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// </para>
         ///  
         /// <para>
-        /// The default value is <code>KeepExternalPolicies</code>. If the parameter is set to
-        /// <code>ReplaceExternalPolicies</code>, any scaling policies that are external to AWS
-        /// Auto Scaling are deleted and new target tracking scaling policies created. 
+        /// The default value is <c>KeepExternalPolicies</c>. If the parameter is set to <c>ReplaceExternalPolicies</c>,
+        /// any scaling policies that are external to AWS Auto Scaling are deleted and new target
+        /// tracking scaling policies created. 
         /// </para>
         ///  
         /// <para>

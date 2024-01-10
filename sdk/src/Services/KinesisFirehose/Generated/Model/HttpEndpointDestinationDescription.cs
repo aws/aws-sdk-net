@@ -48,7 +48,7 @@ namespace Amazon.KinesisFirehose.Model
         /// <para>
         /// Describes buffering options that can be applied to the data before it is delivered
         /// to the HTTPS endpoint destination. Kinesis Data Firehose teats these options as hints,
-        /// and it might choose to use more optimal values. The <code>SizeInMBs</code> and <code>IntervalInSeconds</code>
+        /// and it might choose to use more optimal values. The <c>SizeInMBs</c> and <c>IntervalInSeconds</c>
         /// parameters are optional. However, if specify a value for one of them, you must also
         /// provide a value for the other. 
         /// </para>
@@ -175,9 +175,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property S3BackupMode. 
         /// <para>
         /// Describes the S3 bucket backup options for the data that Kinesis Firehose delivers
-        /// to the HTTP endpoint destination. You can back up all documents (<code>AllData</code>)
-        /// or only the documents that Kinesis Data Firehose could not deliver to the specified
-        /// HTTP endpoint destination (<code>FailedDataOnly</code>).
+        /// to the HTTP endpoint destination. You can back up all documents (<c>AllData</c>) or
+        /// only the documents that Kinesis Data Firehose could not deliver to the specified HTTP
+        /// endpoint destination (<c>FailedDataOnly</c>).
         /// </para>
         /// </summary>
         public HttpEndpointS3BackupMode S3BackupMode

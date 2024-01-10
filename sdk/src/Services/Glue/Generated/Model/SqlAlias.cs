@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Represents a single entry in the list of values for <code>SqlAliases</code>.
+    /// Represents a single entry in the list of values for <c>SqlAliases</c>.
     /// </summary>
     public partial class SqlAlias
     {

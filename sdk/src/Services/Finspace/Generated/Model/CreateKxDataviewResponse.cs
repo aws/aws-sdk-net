@@ -92,11 +92,11 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SINGLE</code> – Assigns one availability zone per cluster.
+        ///  <c>SINGLE</c> – Assigns one availability zone per cluster.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MULTI</code> – Assigns all the availability zones per cluster.
+        ///  <c>MULTI</c> – Assigns all the availability zones per cluster.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -277,15 +277,15 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CREATING</code> – The dataview creation is in progress.
+        ///  <c>CREATING</c> – The dataview creation is in progress.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> – The dataview is in the process of being updated.
+        ///  <c>UPDATING</c> – The dataview is in the process of being updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> – The dataview is active.
+        ///  <c>ACTIVE</c> – The dataview is active.
         /// </para>
         ///  </li> </ul>
         /// </summary>

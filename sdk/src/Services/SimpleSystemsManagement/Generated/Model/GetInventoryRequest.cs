@@ -30,8 +30,8 @@ namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
     /// Container for the parameters to the GetInventory operation.
-    /// Query inventory information. This includes managed node status, such as <code>Stopped</code>
-    /// or <code>Terminated</code>.
+    /// Query inventory information. This includes managed node status, such as <c>Stopped</c>
+    /// or <c>Terminated</c>.
     /// </summary>
     public partial class GetInventoryRequest : AmazonSimpleSystemsManagementRequest
     {
@@ -45,7 +45,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property Aggregators. 
         /// <para>
         /// Returns counts of inventory types based on one or more expressions. For example, if
-        /// you aggregate by using an expression that uses the <code>AWS:InstanceInformation.PlatformType</code>
+        /// you aggregate by using an expression that uses the <c>AWS:InstanceInformation.PlatformType</c>
         /// type, you can see a count of how many Windows and Linux managed nodes exist in your
         /// inventoried fleet.
         /// </para>

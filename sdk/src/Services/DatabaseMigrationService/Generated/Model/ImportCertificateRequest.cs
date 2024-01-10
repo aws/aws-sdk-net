@@ -63,7 +63,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CertificatePem. 
         /// <para>
-        /// The contents of a <code>.pem</code> file, which contains an X.509 certificate.
+        /// The contents of a <c>.pem</c> file, which contains an X.509 certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -83,12 +83,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property CertificateWallet. 
         /// <para>
         /// The location of an imported Oracle Wallet certificate for use with SSL. Provide the
-        /// name of a <code>.sso</code> file using the <code>fileb://</code> prefix. You can't
-        /// provide the certificate inline.
+        /// name of a <c>.sso</c> file using the <c>fileb://</c> prefix. You can't provide the
+        /// certificate inline.
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> 
+        /// Example: <c>filebase64("${path.root}/rds-ca-2019-root.sso")</c> 
         /// </para>
         /// </summary>
         public MemoryStream CertificateWallet

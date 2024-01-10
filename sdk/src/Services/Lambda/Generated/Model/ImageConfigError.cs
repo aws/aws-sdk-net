@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lambda.Model
 {
     /// <summary>
-    /// Error response to <code>GetFunctionConfiguration</code>.
+    /// Error response to <c>GetFunctionConfiguration</c>.
     /// </summary>
     public partial class ImageConfigError
     {

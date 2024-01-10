@@ -93,8 +93,8 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property TransmitMode. 
         /// <para>
-        /// The transmit mode to use for sending data to the wireless device. This can be <code>0</code>
-        /// for UM (unacknowledge mode) or <code>1</code> for AM (acknowledge mode).
+        /// The transmit mode to use for sending data to the wireless device. This can be <c>0</c>
+        /// for UM (unacknowledge mode) or <c>1</c> for AM (acknowledge mode).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]

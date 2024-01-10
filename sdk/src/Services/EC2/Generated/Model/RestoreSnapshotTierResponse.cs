@@ -41,8 +41,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property IsPermanentRestore. 
         /// <para>
-        /// Indicates whether the snapshot is permanently restored. <code>true</code> indicates
-        /// a permanent restore. <code>false</code> indicates a temporary restore.
+        /// Indicates whether the snapshot is permanently restored. <c>true</c> indicates a permanent
+        /// restore. <c>false</c> indicates a temporary restore.
         /// </para>
         /// </summary>
         public bool IsPermanentRestore

@@ -30,13 +30,13 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// A list of files containing the environment variables to pass to a container. You can
-    /// specify up to ten environment files. The file must have a <code>.env</code> file extension.
-    /// Each line in an environment file should contain an environment variable in <code>VARIABLE=VALUE</code>
-    /// format. Lines beginning with <code>#</code> are treated as comments and are ignored.
+    /// specify up to ten environment files. The file must have a <c>.env</c> file extension.
+    /// Each line in an environment file should contain an environment variable in <c>VARIABLE=VALUE</c>
+    /// format. Lines beginning with <c>#</c> are treated as comments and are ignored.
     /// 
     ///  
     /// <para>
-    /// If there are environment variables specified using the <code>environment</code> parameter
+    /// If there are environment variables specified using the <c>environment</c> parameter
     /// in a container definition, they take precedence over the variables contained within
     /// an environment file. If multiple environment files are specified that contain the
     /// same variable, they're processed from the top down. We recommend that you use unique
@@ -49,11 +49,11 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Linux platform version <code>1.4.0</code> or later.
+    /// Linux platform version <c>1.4.0</c> or later.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Windows platform version <code>1.0.0</code> or later.
+    /// Windows platform version <c>1.0.0</c> or later.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -69,7 +69,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The container entry point interperts the <code>VARIABLE</code> values.
+    /// The container entry point interperts the <c>VARIABLE</c> values.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -81,7 +81,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The file type to use. The only supported value is <code>s3</code>.
+        /// The file type to use. The only supported value is <c>s3</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

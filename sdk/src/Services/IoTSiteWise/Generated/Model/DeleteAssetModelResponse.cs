@@ -38,8 +38,8 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property AssetModelStatus. 
         /// <para>
-        /// The status of the asset model, which contains a state (<code>DELETING</code> after
-        /// successfully calling this operation) and any error message.
+        /// The status of the asset model, which contains a state (<c>DELETING</c> after successfully
+        /// calling this operation) and any error message.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

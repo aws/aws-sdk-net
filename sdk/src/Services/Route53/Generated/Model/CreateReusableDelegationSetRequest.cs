@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model
     ///  
     /// <para>
     /// You can also create a reusable delegation set that uses the four name servers that
-    /// are associated with an existing hosted zone. Specify the hosted zone ID in the <code>CreateReusableDelegationSet</code>
+    /// are associated with an existing hosted zone. Specify the hosted zone ID in the <c>CreateReusableDelegationSet</c>
     /// request.
     /// </para>
     ///  <note> 
@@ -113,10 +113,10 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property CallerReference. 
         /// <para>
-        /// A unique string that identifies the request, and that allows you to retry failed <code>CreateReusableDelegationSet</code>
+        /// A unique string that identifies the request, and that allows you to retry failed <c>CreateReusableDelegationSet</c>
         /// requests without the risk of executing the operation twice. You must use a unique
-        /// <code>CallerReference</code> string every time you submit a <code>CreateReusableDelegationSet</code>
-        /// request. <code>CallerReference</code> can be any unique string, for example a date/time
+        /// <c>CallerReference</c> string every time you submit a <c>CreateReusableDelegationSet</c>
+        /// request. <c>CallerReference</c> can be any unique string, for example a date/time
         /// stamp.
         /// </para>
         /// </summary>

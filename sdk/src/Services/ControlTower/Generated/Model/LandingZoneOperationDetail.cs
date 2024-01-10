@@ -68,19 +68,19 @@ namespace Amazon.ControlTower.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DELETE</code>: The <code>DeleteLandingZone</code> operation. 
+        ///  <c>DELETE</c>: The <c>DeleteLandingZone</c> operation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATE</code>: The <code>CreateLandingZone</code> operation. 
+        ///  <c>CREATE</c>: The <c>CreateLandingZone</c> operation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATE</code>: The <code>UpdateLandingZone</code> operation. 
+        ///  <c>UPDATE</c>: The <c>UpdateLandingZone</c> operation. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESET</code>: The <code>ResetLandingZone</code> operation. 
+        ///  <c>RESET</c>: The <c>ResetLandingZone</c> operation. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -121,15 +121,15 @@ namespace Amazon.ControlTower.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code>: The landing zone operation succeeded. 
+        ///  <c>SUCCEEDED</c>: The landing zone operation succeeded. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code>: The landing zone operation is in progress. 
+        ///  <c>IN_PROGRESS</c>: The landing zone operation is in progress. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The landing zone operation failed. 
+        ///  <c>FAILED</c>: The landing zone operation failed. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

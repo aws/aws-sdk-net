@@ -76,9 +76,9 @@ namespace Amazon.AccessAnalyzer.Model
         /// <summary>
         /// Gets and sets the property Result. 
         /// <para>
-        /// The result of the check for new access. If the result is <code>PASS</code>, no new
-        /// access is allowed by the updated policy. If the result is <code>FAIL</code>, the updated
-        /// policy might allow new access.
+        /// The result of the check for new access. If the result is <c>PASS</c>, no new access
+        /// is allowed by the updated policy. If the result is <c>FAIL</c>, the updated policy
+        /// might allow new access.
         /// </para>
         /// </summary>
         public CheckNoNewAccessResult Result

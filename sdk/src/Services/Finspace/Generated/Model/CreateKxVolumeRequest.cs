@@ -67,7 +67,7 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property AzMode. 
         /// <para>
         /// The number of availability zones you want to assign per cluster. Currently, FinSpace
-        /// only support <code>SINGLE</code> for volumes.
+        /// only support <c>SINGLE</c> for volumes.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -145,7 +145,7 @@ namespace Amazon.Finspace.Model
         /// Gets and sets the property Nas1Configuration. 
         /// <para>
         ///  Specifies the configuration for the Network attached storage (NAS_1) file system
-        /// volume. This parameter is required when you choose <code>volumeType</code> as <i>NAS_1</i>.
+        /// volume. This parameter is required when you choose <c>volumeType</c> as <i>NAS_1</i>.
         /// </para>
         /// </summary>
         public KxNAS1Configuration Nas1Configuration
@@ -202,9 +202,9 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property VolumeType. 
         /// <para>
-        ///  The type of file system volume. Currently, FinSpace only supports <code>NAS_1</code>
-        /// volume type. When you select <code>NAS_1</code> volume type, you must also provide
-        /// <code>nas1Configuration</code>. 
+        ///  The type of file system volume. Currently, FinSpace only supports <c>NAS_1</c> volume
+        /// type. When you select <c>NAS_1</c> volume type, you must also provide <c>nas1Configuration</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

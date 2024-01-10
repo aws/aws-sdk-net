@@ -33,13 +33,13 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// You must specify exactly one setting: either <code>All</code>, <code>IncludedCookies</code>,
-    /// or <code>ExcludedCookies</code>.
+    /// You must specify exactly one setting: either <c>All</c>, <c>IncludedCookies</c>, or
+    /// <c>ExcludedCookies</c>.
     /// </para>
     ///  
     /// <para>
-    /// Example JSON: <code>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id"
-    /// ] }</code> 
+    /// Example JSON: <c>"MatchPattern": { "IncludedCookies": [ "session-id-time", "session-id"
+    /// ] }</c> 
     /// </para>
     /// </summary>
     public partial class CookieMatchPattern

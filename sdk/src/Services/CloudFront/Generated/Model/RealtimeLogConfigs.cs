@@ -120,7 +120,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If there are more items in the list than are in this response, this element is present.
-        /// It contains the value that you should use in the <code>Marker</code> field of a subsequent
+        /// It contains the value that you should use in the <c>Marker</c> field of a subsequent
         /// request to continue listing real-time log configurations where you left off. 
         /// </para>
         /// </summary>

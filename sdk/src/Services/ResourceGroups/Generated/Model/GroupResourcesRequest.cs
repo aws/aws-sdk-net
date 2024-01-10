@@ -39,11 +39,11 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AWS::EC2::HostManagement</code> 
+    ///  <c>AWS::EC2::HostManagement</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>AWS::EC2::CapacityReservationPool</code> 
+    ///  <c>AWS::EC2::CapacityReservationPool</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -59,7 +59,7 @@ namespace Amazon.ResourceGroups.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>resource-groups:GroupResources</code> 
+    ///  <c>resource-groups:GroupResources</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

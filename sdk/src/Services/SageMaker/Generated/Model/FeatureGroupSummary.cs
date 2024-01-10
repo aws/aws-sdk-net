@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The name, ARN, <code>CreationTime</code>, <code>FeatureGroup</code> values, <code>LastUpdatedTime</code>
-    /// and <code>EnableOnlineStorage</code> status of a <code>FeatureGroup</code>.
+    /// The name, ARN, <c>CreationTime</c>, <c>FeatureGroup</c> values, <c>LastUpdatedTime</c>
+    /// and <c>EnableOnlineStorage</c> status of a <c>FeatureGroup</c>.
     /// </summary>
     public partial class FeatureGroupSummary
     {
@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property CreationTime. 
         /// <para>
-        /// A timestamp indicating the time of creation time of the <code>FeatureGroup</code>.
+        /// A timestamp indicating the time of creation time of the <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupArn. 
         /// <para>
-        /// Unique identifier for the <code>FeatureGroup</code>.
+        /// Unique identifier for the <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -81,7 +81,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupName. 
         /// <para>
-        /// The name of <code>FeatureGroup</code>.
+        /// The name of <c>FeatureGroup</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]
@@ -100,9 +100,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FeatureGroupStatus. 
         /// <para>
-        /// The status of a FeatureGroup. The status can be any of the following: <code>Creating</code>,
-        /// <code>Created</code>, <code>CreateFail</code>, <code>Deleting</code> or <code>DetailFail</code>.
-        /// 
+        /// The status of a FeatureGroup. The status can be any of the following: <c>Creating</c>,
+        /// <c>Created</c>, <c>CreateFail</c>, <c>Deleting</c> or <c>DetailFail</c>. 
         /// </para>
         /// </summary>
         public FeatureGroupStatus FeatureGroupStatus
@@ -120,8 +119,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property OfflineStoreStatus. 
         /// <para>
-        /// Notifies you if replicating data into the <code>OfflineStore</code> has failed. Returns
-        /// either: <code>Active</code> or <code>Blocked</code>.
+        /// Notifies you if replicating data into the <c>OfflineStore</c> has failed. Returns
+        /// either: <c>Active</c> or <c>Blocked</c>.
         /// </para>
         /// </summary>
         public OfflineStoreStatus OfflineStoreStatus

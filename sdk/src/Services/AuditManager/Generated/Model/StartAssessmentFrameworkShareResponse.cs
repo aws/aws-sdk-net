@@ -38,8 +38,8 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property AssessmentFrameworkShareRequest. 
         /// <para>
-        ///  The share request that's created by the <code>StartAssessmentFrameworkShare</code>
-        /// API. 
+        ///  The share request that's created by the <c>StartAssessmentFrameworkShare</c> API.
+        /// 
         /// </para>
         /// </summary>
         public AssessmentFrameworkShareRequest AssessmentFrameworkShareRequest

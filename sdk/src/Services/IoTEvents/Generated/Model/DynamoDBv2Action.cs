@@ -37,8 +37,8 @@ namespace Amazon.IoTEvents.Model
     /// 
     ///  
     /// <para>
-    /// You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The
-    /// expressions accept literals, operators, functions, references, and substitution templates.
+    /// You must use expressions for all parameters in <c>DynamoDBv2Action</c>. The expressions
+    /// accept literals, operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
@@ -47,43 +47,43 @@ namespace Amazon.IoTEvents.Model
     ///  <ul> <li> 
     /// <para>
     /// For literal values, the expressions must contain single quotes. For example, the value
-    /// for the <code>tableName</code> parameter can be <code>'GreenhouseTemperatureTable'</code>.
+    /// for the <c>tableName</c> parameter can be <c>'GreenhouseTemperatureTable'</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
     /// For references, you must specify either variables or input values. For example, the
-    /// value for the <code>tableName</code> parameter can be <code>$variable.ddbtableName</code>.
+    /// value for the <c>tableName</c> parameter can be <c>$variable.ddbtableName</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a substitution template, you must use <code>${}</code>, and the template must
-    /// be in single quotes. A substitution template can also contain a combination of literals,
+    /// For a substitution template, you must use <c>${}</c>, and the template must be in
+    /// single quotes. A substitution template can also contain a combination of literals,
     /// operators, functions, references, and substitution templates.
     /// </para>
     ///  
     /// <para>
-    /// In the following example, the value for the <code>contentExpression</code> parameter
-    /// in <code>Payload</code> uses a substitution template. 
+    /// In the following example, the value for the <c>contentExpression</c> parameter in
+    /// <c>Payload</c> uses a substitution template. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>'{\"sensorID\": \"${$input.GreenhouseInput.sensor_id}\", \"temperature\": \"${$input.GreenhouseInput.temperature
-    /// * 9 / 5 + 32}\"}'</code> 
+    ///  <c>'{\"sensorID\": \"${$input.GreenhouseInput.sensor_id}\", \"temperature\": \"${$input.GreenhouseInput.temperature
+    /// * 9 / 5 + 32}\"}'</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// For a string concatenation, you must use <code>+</code>. A string concatenation can
-    /// also contain a combination of literals, operators, functions, references, and substitution
+    /// For a string concatenation, you must use <c>+</c>. A string concatenation can also
+    /// contain a combination of literals, operators, functions, references, and substitution
     /// templates.
     /// </para>
     ///  
     /// <para>
-    /// In the following example, the value for the <code>tableName</code> parameter uses
-    /// a string concatenation. 
+    /// In the following example, the value for the <c>tableName</c> parameter uses a string
+    /// concatenation. 
     /// </para>
     ///  
     /// <para>
-    ///  <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code> 
+    ///  <c>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -92,7 +92,7 @@ namespace Amazon.IoTEvents.Model
     /// </para>
     ///  
     /// <para>
-    /// The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.
+    /// The value for the <c>type</c> parameter in <c>Payload</c> must be <c>JSON</c>.
     /// </para>
     /// </summary>
     public partial class DynamoDBv2Action

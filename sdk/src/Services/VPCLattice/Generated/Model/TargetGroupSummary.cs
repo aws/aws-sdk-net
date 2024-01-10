@@ -106,9 +106,9 @@ namespace Amazon.VPCLattice.Model
         /// <summary>
         /// Gets and sets the property IpAddressType. 
         /// <para>
-        /// The type of IP address used for the target group. The possible values are <code>ipv4</code>
-        /// and <code>ipv6</code>. This is an optional parameter. If not specified, the IP address
-        /// type defaults to <code>ipv4</code>.
+        /// The type of IP address used for the target group. The possible values are <c>ipv4</c>
+        /// and <c>ipv6</c>. This is an optional parameter. If not specified, the IP address type
+        /// defaults to <c>ipv4</c>.
         /// </para>
         /// </summary>
         public IpAddressType IpAddressType

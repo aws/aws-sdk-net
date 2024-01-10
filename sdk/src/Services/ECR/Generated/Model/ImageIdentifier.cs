@@ -39,7 +39,7 @@ namespace Amazon.ECR.Model
         /// <summary>
         /// Gets and sets the property ImageDigest. 
         /// <para>
-        /// The <code>sha256</code> digest of the image manifest.
+        /// The <c>sha256</c> digest of the image manifest.
         /// </para>
         /// </summary>
         public string ImageDigest

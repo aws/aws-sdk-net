@@ -46,43 +46,43 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>complexity</code> – The schema's complexity, for example <code>Simple</code>.
+        ///  <c>complexity</c> – The schema's complexity, for example <c>Simple</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database-id</code> – The ID of the schema's database.
+        ///  <c>database-id</c> – The ID of the schema's database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database-ip-address</code> – The IP address of the schema's database.
+        ///  <c>database-ip-address</c> – The IP address of the schema's database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database-name</code> – The name of the schema's database.
+        ///  <c>database-name</c> – The name of the schema's database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database-engine</code> – The name of the schema database's engine.
+        ///  <c>database-engine</c> – The name of the schema database's engine.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>original-schema-name</code> – The name of the schema's database's main schema.
+        ///  <c>original-schema-name</c> – The name of the schema's database's main schema.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>schema-id</code> – The ID of the schema, for example <code>15</code>.
+        ///  <c>schema-id</c> – The ID of the schema, for example <c>15</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>schema-name</code> – The name of the schema.
+        ///  <c>schema-name</c> – The name of the schema.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>server-ip-address</code> – The IP address of the schema database's server.
+        ///  <c>server-ip-address</c> – The IP address of the schema database's server.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// An example is: <code>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</code>
+        /// An example is: <c>describe-fleet-advisor-schemas --filter Name="schema-id",Values="50"</c>
         /// 
         /// </para>
         /// </summary>
@@ -119,10 +119,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If <code>NextToken</code> is returned by a previous response, there are more results
-        /// available. The value of <code>NextToken</code> is a unique pagination token for each
-        /// page. Make the call again using the returned token to retrieve the next page. Keep
-        /// all other arguments unchanged. 
+        /// If <c>NextToken</c> is returned by a previous response, there are more results available.
+        /// The value of <c>NextToken</c> is a unique pagination token for each page. Make the
+        /// call again using the returned token to retrieve the next page. Keep all other arguments
+        /// unchanged. 
         /// </para>
         /// </summary>
         public string NextToken

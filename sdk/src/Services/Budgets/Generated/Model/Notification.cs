@@ -44,19 +44,19 @@ namespace Amazon.Budgets.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// A notificationType of <code>ACTUAL</code> 
+    /// A notificationType of <c>ACTUAL</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>thresholdType</code> of <code>PERCENTAGE</code> 
+    /// A <c>thresholdType</c> of <c>PERCENTAGE</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A <code>comparisonOperator</code> of <code>GREATER_THAN</code> 
+    /// A <c>comparisonOperator</c> of <c>GREATER_THAN</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// A notification <code>threshold</code> of <code>80</code> 
+    /// A notification <c>threshold</c> of <c>80</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -91,7 +91,7 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property NotificationState. 
         /// <para>
         /// Specifies whether this notification is in alarm. If a budget notification is in the
-        /// <code>ALARM</code> state, you passed the set threshold for the budget.
+        /// <c>ALARM</c> state, you passed the set threshold for the budget.
         /// </para>
         /// </summary>
         public NotificationState NotificationState
@@ -109,8 +109,8 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property NotificationType. 
         /// <para>
-        /// Specifies whether the notification is for how much you have spent (<code>ACTUAL</code>)
-        /// or for how much that you're forecasted to spend (<code>FORECASTED</code>).
+        /// Specifies whether the notification is for how much you have spent (<c>ACTUAL</c>)
+        /// or for how much that you're forecasted to spend (<c>FORECASTED</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -150,13 +150,12 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property ThresholdType. 
         /// <para>
-        /// The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code> thresholds,
-        /// Amazon Web Services notifies you when you go over or are forecasted to go over your
-        /// total cost threshold. For <code>PERCENTAGE</code> thresholds, Amazon Web Services
-        /// notifies you when you go over or are forecasted to go over a certain percentage of
-        /// your forecasted spend. For example, if you have a budget for 200 dollars and you have
-        /// a <code>PERCENTAGE</code> threshold of 80%, Amazon Web Services notifies you when
-        /// you go over 160 dollars.
+        /// The type of threshold for a notification. For <c>ABSOLUTE_VALUE</c> thresholds, Amazon
+        /// Web Services notifies you when you go over or are forecasted to go over your total
+        /// cost threshold. For <c>PERCENTAGE</c> thresholds, Amazon Web Services notifies you
+        /// when you go over or are forecasted to go over a certain percentage of your forecasted
+        /// spend. For example, if you have a budget for 200 dollars and you have a <c>PERCENTAGE</c>
+        /// threshold of 80%, Amazon Web Services notifies you when you go over 160 dollars.
         /// </para>
         /// </summary>
         public ThresholdType ThresholdType

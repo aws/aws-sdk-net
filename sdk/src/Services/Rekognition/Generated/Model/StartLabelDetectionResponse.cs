@@ -38,8 +38,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier for the label detection job. Use <code>JobId</code> to identify the
-        /// job in a subsequent call to <code>GetLabelDetection</code>. 
+        /// The identifier for the label detection job. Use <c>JobId</c> to identify the job in
+        /// a subsequent call to <c>GetLabelDetection</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

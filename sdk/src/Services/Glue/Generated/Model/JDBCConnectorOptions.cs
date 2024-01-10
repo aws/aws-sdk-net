@@ -46,12 +46,12 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property DataTypeMapping. 
         /// <para>
         /// Custom data type mapping that builds a mapping from a JDBC data type to an Glue data
-        /// type. For example, the option <code>"dataTypeMapping":{"FLOAT":"STRING"}</code> maps
-        /// data fields of JDBC type <code>FLOAT</code> into the Java <code>String</code> type
-        /// by calling the <code>ResultSet.getString()</code> method of the driver, and uses it
-        /// to build the Glue record. The <code>ResultSet</code> object is implemented by each
-        /// driver, so the behavior is specific to the driver you use. Refer to the documentation
-        /// for your JDBC driver to understand how the driver performs the conversions.
+        /// type. For example, the option <c>"dataTypeMapping":{"FLOAT":"STRING"}</c> maps data
+        /// fields of JDBC type <c>FLOAT</c> into the Java <c>String</c> type by calling the <c>ResultSet.getString()</c>
+        /// method of the driver, and uses it to build the Glue record. The <c>ResultSet</c> object
+        /// is implemented by each driver, so the behavior is specific to the driver you use.
+        /// Refer to the documentation for your JDBC driver to understand how the driver performs
+        /// the conversions.
         /// </para>
         /// </summary>
         public Dictionary<string, string> DataTypeMapping
@@ -73,12 +73,12 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>BillingCity='Mountain View'</code> 
+        ///  <c>BillingCity='Mountain View'</c> 
         /// </para>
         ///  
         /// <para>
         /// When using a query instead of a table name, you should validate that the query works
-        /// with the specified <code>filterPredicate</code>.
+        /// with the specified <c>filterPredicate</c>.
         /// </para>
         /// </summary>
         public string FilterPredicate
@@ -132,8 +132,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property LowerBound. 
         /// <para>
-        /// The minimum value of <code>partitionColumn</code> that is used to decide partition
-        /// stride.
+        /// The minimum value of <c>partitionColumn</c> that is used to decide partition stride.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -152,9 +151,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property NumPartitions. 
         /// <para>
-        /// The number of partitions. This value, along with <code>lowerBound</code> (inclusive)
-        /// and <code>upperBound</code> (exclusive), form partition strides for generated <code>WHERE</code>
-        /// clause expressions that are used to split the <code>partitionColumn</code>.
+        /// The number of partitions. This value, along with <c>lowerBound</c> (inclusive) and
+        /// <c>upperBound</c> (exclusive), form partition strides for generated <c>WHERE</c> clause
+        /// expressions that are used to split the <c>partitionColumn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -174,7 +173,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property PartitionColumn. 
         /// <para>
         /// The name of an integer column that is used for partitioning. This option works only
-        /// when it's included with <code>lowerBound</code>, <code>upperBound</code>, and <code>numPartitions</code>.
+        /// when it's included with <c>lowerBound</c>, <c>upperBound</c>, and <c>numPartitions</c>.
         /// This option works the same way as in the Spark SQL JDBC reader.
         /// </para>
         /// </summary>
@@ -193,8 +192,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property UpperBound. 
         /// <para>
-        /// The maximum value of <code>partitionColumn</code> that is used to decide partition
-        /// stride.
+        /// The maximum value of <c>partitionColumn</c> that is used to decide partition stride.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

@@ -31,7 +31,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// <summary>
     /// The preference to control which resource type values are considered when generating
     /// rightsizing recommendations. You can specify this preference as a combination of include
-    /// and exclude lists. You must specify either an <code>includeList</code> or <code>excludeList</code>.
+    /// and exclude lists. You must specify either an <c>includeList</c> or <c>excludeList</c>.
     /// If the preference is an empty set of resource type values, an error occurs. For more
     /// information, see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/rightsizing-preferences.html">
     /// Rightsizing recommendation preferences</a> in the <i>Compute Optimizer User Guide</i>.
@@ -44,7 +44,7 @@ namespace Amazon.ComputeOptimizer.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Compute Optimizer only supports the customization of <code>Ec2InstanceTypes</code>.
+    /// Compute Optimizer only supports the customization of <c>Ec2InstanceTypes</c>.
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Compute Optimizer only supports the customization of <code>Ec2InstanceTypes</code>.
+        /// Compute Optimizer only supports the customization of <c>Ec2InstanceTypes</c>.
         /// </para>
         ///  </note>
         /// </summary>

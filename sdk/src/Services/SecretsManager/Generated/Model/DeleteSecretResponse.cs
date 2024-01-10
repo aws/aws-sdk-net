@@ -61,7 +61,7 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// The date and time after which this secret Secrets Manager can permanently delete this
         /// secret, and it can no longer be restored. This value is the date and time of the delete
-        /// request plus the number of days in <code>RecoveryWindowInDays</code>.
+        /// request plus the number of days in <c>RecoveryWindowInDays</c>.
         /// </para>
         /// </summary>
         public DateTime DeletionDate

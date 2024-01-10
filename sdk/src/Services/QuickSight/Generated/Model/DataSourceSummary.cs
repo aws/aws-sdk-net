@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>DataSourceSummary</code> object that returns a summary of a data source.
+    /// A <c>DataSourceSummary</c> object that returns a summary of a data source.
     /// </summary>
     public partial class DataSourceSummary
     {

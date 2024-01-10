@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DatabaseMigrationService.Model
 {
     /// <summary>
-    /// The progress values reported by the <code>AssessmentProgress</code> response element.
+    /// The progress values reported by the <c>AssessmentProgress</c> response element.
     /// </summary>
     public partial class ReplicationTaskAssessmentRunProgress
     {

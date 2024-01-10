@@ -72,7 +72,7 @@ namespace Amazon.ManagedGrafana.Model
         ///  
         /// <para>
         /// To know what versions are available to upgrade to for a specific workspace, see the
-        /// <code>ListVersions</code> operation.
+        /// <c>ListVersions</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

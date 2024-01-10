@@ -41,16 +41,16 @@ namespace Amazon.Kendra.Model
     ///  
     /// <para>
     /// If you want to delete or replace users or sub groups of a group, you need to use the
-    /// <code>PutPrincipalMapping</code> operation. For example, if a user in the group "Engineering"
+    /// <c>PutPrincipalMapping</c> operation. For example, if a user in the group "Engineering"
     /// leaves the engineering team and another user takes their place, you provide an updated
-    /// list of users or sub groups that belong to the "Engineering" group when calling <code>PutPrincipalMapping</code>.
+    /// list of users or sub groups that belong to the "Engineering" group when calling <c>PutPrincipalMapping</c>.
     /// You can update your internal list of users or sub groups and input this list when
-    /// calling <code>PutPrincipalMapping</code>.
+    /// calling <c>PutPrincipalMapping</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>DeletePrincipalMapping</code> is currently not supported in the Amazon Web
-    /// Services GovCloud (US-West) region.
+    ///  <c>DeletePrincipalMapping</c> is currently not supported in the Amazon Web Services
+    /// GovCloud (US-West) region.
     /// </para>
     /// </summary>
     public partial class DeletePrincipalMappingRequest : AmazonKendraRequest
@@ -131,18 +131,18 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property OrderingId. 
         /// <para>
         /// The timestamp identifier you specify to ensure Amazon Kendra does not override the
-        /// latest <code>DELETE</code> action with previous actions. The highest number ID, which
-        /// is the ordering ID, is the latest action you want to process and apply on top of other
+        /// latest <c>DELETE</c> action with previous actions. The highest number ID, which is
+        /// the ordering ID, is the latest action you want to process and apply on top of other
         /// actions with lower number IDs. This prevents previous actions with lower number IDs
         /// from possibly overriding the latest action.
         /// </para>
         ///  
         /// <para>
         /// The ordering ID can be the Unix time of the last update you made to a group members
-        /// list. You would then provide this list when calling <code>PutPrincipalMapping</code>.
-        /// This ensures your <code>DELETE</code> action for that updated group with the latest
-        /// members list doesn't get overwritten by earlier <code>DELETE</code> actions for the
-        /// same group which are yet to be processed.
+        /// list. You would then provide this list when calling <c>PutPrincipalMapping</c>. This
+        /// ensures your <c>DELETE</c> action for that updated group with the latest members list
+        /// doesn't get overwritten by earlier <c>DELETE</c> actions for the same group which
+        /// are yet to be processed.
         /// </para>
         ///  
         /// <para>

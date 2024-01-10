@@ -82,8 +82,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description to be updated as part of the <code>UpdateEnvironmentProfile</code>
-        /// action.
+        /// The description to be updated as part of the <c>UpdateEnvironmentProfile</c> action.
         /// </para>
         /// </summary>
         public string Description
@@ -140,7 +139,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name to be updated as part of the <code>UpdateEnvironmentProfile</code> action.
+        /// The name to be updated as part of the <c>UpdateEnvironmentProfile</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=64)]
@@ -159,8 +158,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property UserParameters. 
         /// <para>
-        /// The user parameters to be updated as part of the <code>UpdateEnvironmentProfile</code>
-        /// action.
+        /// The user parameters to be updated as part of the <c>UpdateEnvironmentProfile</c> action.
         /// </para>
         /// </summary>
         public List<EnvironmentParameter> UserParameters

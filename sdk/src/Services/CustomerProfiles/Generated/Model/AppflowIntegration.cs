@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Details for workflow of type <code>APPFLOW_INTEGRATION</code>.
+    /// Details for workflow of type <c>APPFLOW_INTEGRATION</c>.
     /// </summary>
     public partial class AppflowIntegration
     {
@@ -39,7 +39,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property Batches. 
         /// <para>
-        /// Batches in workflow of type <code>APPFLOW_INTEGRATION</code>.
+        /// Batches in workflow of type <c>APPFLOW_INTEGRATION</c>.
         /// </para>
         /// </summary>
         public List<Batch> Batches

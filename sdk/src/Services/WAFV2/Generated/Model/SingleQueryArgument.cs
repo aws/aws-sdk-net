@@ -39,7 +39,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  
     /// <para>
-    /// Example JSON: <code>"SingleQueryArgument": { "Name": "myArgument" }</code> 
+    /// Example JSON: <c>"SingleQueryArgument": { "Name": "myArgument" }</c> 
     /// </para>
     /// </summary>
     public partial class SingleQueryArgument

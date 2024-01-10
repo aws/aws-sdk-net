@@ -35,8 +35,8 @@ namespace Amazon.Connect.Model
     ///  <important> 
     /// <para>
     /// Certain <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UserIdentityInfo.html">UserIdentityInfo</a>
-    /// parameters are required in some situations. For example, <code>Email</code> is required
-    /// if you are using SAML for identity management. <code>FirstName</code> and <code>LastName</code>
+    /// parameters are required in some situations. For example, <c>Email</c> is required
+    /// if you are using SAML for identity management. <c>FirstName</c> and <c>LastName</c>
     /// are required if you are using Amazon Connect or SAML for identity management.
     /// </para>
     ///  </important> 

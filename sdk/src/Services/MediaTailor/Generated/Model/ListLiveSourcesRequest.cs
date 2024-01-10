@@ -43,8 +43,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of live sources that you want MediaTailor to return in response
-        /// to the current request. If there are more than <code>MaxResults</code> live sources,
-        /// use the value of <code>NextToken</code> in the response to get the next page of results.
+        /// to the current request. If there are more than <c>MaxResults</c> live sources, use
+        /// the value of <c>NextToken</c> in the response to get the next page of results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

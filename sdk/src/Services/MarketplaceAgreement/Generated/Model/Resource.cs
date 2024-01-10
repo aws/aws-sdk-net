@@ -43,8 +43,8 @@ namespace Amazon.MarketplaceAgreement.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// We mention the term resource, which is most commonly a product, so a <code>resourceId</code>
-        /// is also a <code>productId</code>.
+        /// We mention the term resource, which is most commonly a product, so a <c>resourceId</c>
+        /// is also a <c>productId</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -64,8 +64,7 @@ namespace Amazon.MarketplaceAgreement.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type of the resource, which is the product. Values include <code>SaaSProduct</code>
-        /// or <code>AmiProduct</code>.
+        /// Type of the resource, which is the product. Values include <c>SaaSProduct</c> or <c>AmiProduct</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

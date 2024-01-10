@@ -43,7 +43,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property CapacityProviders. 
         /// <para>
         /// The short name or full Amazon Resource Name (ARN) of one or more capacity providers.
-        /// Up to <code>100</code> capacity providers can be described in an action.
+        /// Up to <c>100</c> capacity providers can be described in an action.
         /// </para>
         /// </summary>
         public List<string> CapacityProviders
@@ -62,8 +62,8 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property Include. 
         /// <para>
         /// Specifies whether or not you want to see the resource tags for the capacity provider.
-        /// If <code>TAGS</code> is specified, the tags are included in the response. If this
-        /// field is omitted, tags aren't included in the response.
+        /// If <c>TAGS</c> is specified, the tags are included in the response. If this field
+        /// is omitted, tags aren't included in the response.
         /// </para>
         /// </summary>
         public List<string> Include
@@ -81,13 +81,13 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of account setting results returned by <code>DescribeCapacityProviders</code>
-        /// in paginated output. When this parameter is used, <code>DescribeCapacityProviders</code>
-        /// only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code>
+        /// The maximum number of account setting results returned by <c>DescribeCapacityProviders</c>
+        /// in paginated output. When this parameter is used, <c>DescribeCapacityProviders</c>
+        /// only returns <c>maxResults</c> results in a single page along with a <c>nextToken</c>
         /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeCapacityProviders</code> request with the returned <code>nextToken</code>
-        /// value. This value can be between 1 and 10. If this parameter is not used, then <code>DescribeCapacityProviders</code>
-        /// returns up to 10 results and a <code>nextToken</code> value if applicable.
+        /// another <c>DescribeCapacityProviders</c> request with the returned <c>nextToken</c>
+        /// value. This value can be between 1 and 10. If this parameter is not used, then <c>DescribeCapacityProviders</c>
+        /// returns up to 10 results and a <c>nextToken</c> value if applicable.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -105,10 +105,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous paginated <code>DescribeCapacityProviders</code>
-        /// request where <code>maxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>nextToken</code> value.
+        /// The <c>nextToken</c> value returned from a previous paginated <c>DescribeCapacityProviders</c>
+        /// request where <c>maxResults</c> was used and the results exceeded the value of that
+        /// parameter. Pagination continues from the end of the previous results that returned
+        /// the <c>nextToken</c> value.
         /// </para>
         ///  <note> 
         /// <para>

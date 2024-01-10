@@ -57,7 +57,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Min. 
         /// <para>
-        /// The minimum amount of memory, in MiB. To specify no minimum limit, specify <code>0</code>.
+        /// The minimum amount of memory, in MiB. To specify no minimum limit, specify <c>0</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

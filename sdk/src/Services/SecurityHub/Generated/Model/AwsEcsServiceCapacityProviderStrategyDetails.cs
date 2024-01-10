@@ -41,7 +41,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property Base. 
         /// <para>
         /// The minimum number of tasks to run on the capacity provider. Only one strategy item
-        /// can specify a value for <code>Base</code>.
+        /// can specify a value for <c>Base</c>.
         /// </para>
         ///  
         /// <para>

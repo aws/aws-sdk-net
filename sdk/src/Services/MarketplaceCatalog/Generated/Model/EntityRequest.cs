@@ -39,7 +39,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Catalog. 
         /// <para>
-        /// The name of the catalog the entity is present in. The only value at this time is <code>AWSMarketplace</code>.
+        /// The name of the catalog the entity is present in. The only value at this time is <c>AWSMarketplace</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -52,7 +52,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+        /// You can specify <c>Accounts</c> or <c>DeploymentTargets</c>, but not both.
         /// </para>
         /// </summary>
         public List<string> Accounts
@@ -76,16 +76,16 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <c>SELF</c> is specified. Use <c>SELF</c> for stack sets with self-managed
+        /// permissions.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you are signed in to the management account, specify <code>SELF</code>.
+        /// If you are signed in to the management account, specify <c>SELF</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If you are signed in to a delegated administrator account, specify <code>DELEGATED_ADMIN</code>.
+        /// If you are signed in to a delegated administrator account, specify <c>DELEGATED_ADMIN</c>.
         /// </para>
         ///  
         /// <para>
@@ -115,7 +115,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify <code>Accounts</code> or <code>DeploymentTargets</code>, but not both.
+        /// You can specify <c>Accounts</c> or <c>DeploymentTargets</c>, but not both.
         /// </para>
         /// </summary>
         public DeploymentTargets DeploymentTargets
@@ -149,7 +149,7 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// Repeating this stack set operation with a new operation ID retries all stack instances
-        /// whose status is <code>OUTDATED</code>.
+        /// whose status is <c>OUTDATED</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

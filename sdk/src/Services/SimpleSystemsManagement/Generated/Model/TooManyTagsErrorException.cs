@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The <code>Targets</code> parameter includes too many tags. Remove one or more tags
-    /// and try the command again.
+    /// The <c>Targets</c> parameter includes too many tags. Remove one or more tags and try
+    /// the command again.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

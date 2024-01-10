@@ -35,10 +35,10 @@ namespace Amazon.DatabaseMigrationService.Model
     ///  <note> 
     /// <para>
     /// For a MySQL source or target endpoint, don't explicitly specify the database using
-    /// the <code>DatabaseName</code> request parameter on the <code>CreateEndpoint</code>
-    /// API call. Specifying <code>DatabaseName</code> when you create a MySQL endpoint replicates
-    /// all the task tables to this single database. For MySQL endpoints, you specify the
-    /// database only when you specify the schema in the table-mapping rules of the DMS task.
+    /// the <c>DatabaseName</c> request parameter on the <c>CreateEndpoint</c> API call. Specifying
+    /// <c>DatabaseName</c> when you create a MySQL endpoint replicates all the task tables
+    /// to this single database. For MySQL endpoints, you specify the database only when you
+    /// specify the schema in the table-mapping rules of the DMS task.
     /// </para>
     ///  </note>
     /// </summary>
@@ -102,7 +102,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property DatabaseName. 
         /// <para>
         /// The name of the endpoint database. For a MySQL source or target endpoint, do not specify
-        /// DatabaseName. To migrate to a specific database, use this setting and <code>targetDbType</code>.
+        /// DatabaseName. To migrate to a specific database, use this setting and <c>targetDbType</c>.
         /// </para>
         /// </summary>
         public string DatabaseName
@@ -128,22 +128,22 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ServiceAccessRoleArn</code> - The Amazon Resource Name (ARN) used by the service
-        /// access IAM role. The role must allow the <code>iam:PassRole</code> action.
+        ///  <c>ServiceAccessRoleArn</c> - The Amazon Resource Name (ARN) used by the service
+        /// access IAM role. The role must allow the <c>iam:PassRole</c> action.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BucketName</code> - The name of the S3 bucket to use.
+        ///  <c>BucketName</c> - The name of the S3 bucket to use.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Shorthand syntax for these settings is as follows: <code>ServiceAccessRoleArn=string,BucketName=string</code>
+        /// Shorthand syntax for these settings is as follows: <c>ServiceAccessRoleArn=string,BucketName=string</c>
         /// 
         /// </para>
         ///  
         /// <para>
-        /// JSON syntax for these settings is as follows: <code>{ "ServiceAccessRoleArn": "string",
-        /// "BucketName": "string", } </code> 
+        /// JSON syntax for these settings is as follows: <c>{ "ServiceAccessRoleArn": "string",
+        /// "BucketName": "string", } </c> 
         /// </para>
         /// </summary>
         public DmsTransferSettings DmsTransferSettings
@@ -239,7 +239,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EndpointType. 
         /// <para>
-        /// The type of endpoint. Valid values are <code>source</code> and <code>target</code>.
+        /// The type of endpoint. Valid values are <c>source</c> and <c>target</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -258,13 +258,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property EngineName. 
         /// <para>
-        /// The type of engine for the endpoint. Valid values, depending on the <code>EndpointType</code>
-        /// value, include <code>"mysql"</code>, <code>"oracle"</code>, <code>"postgres"</code>,
-        /// <code>"mariadb"</code>, <code>"aurora"</code>, <code>"aurora-postgresql"</code>, <code>"opensearch"</code>,
-        /// <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>, <code>"db2-zos"</code>,
-        /// <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-        /// <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"docdb"</code>,
-        /// <code>"sqlserver"</code>, <code>"neptune"</code>, and <code>"babelfish"</code>.
+        /// The type of engine for the endpoint. Valid values, depending on the <c>EndpointType</c>
+        /// value, include <c>"mysql"</c>, <c>"oracle"</c>, <c>"postgres"</c>, <c>"mariadb"</c>,
+        /// <c>"aurora"</c>, <c>"aurora-postgresql"</c>, <c>"opensearch"</c>, <c>"redshift"</c>,
+        /// <c>"s3"</c>, <c>"db2"</c>, <c>"db2-zos"</c>, <c>"azuredb"</c>, <c>"sybase"</c>, <c>"dynamodb"</c>,
+        /// <c>"mongodb"</c>, <c>"kinesis"</c>, <c>"kafka"</c>, <c>"elasticsearch"</c>, <c>"docdb"</c>,
+        /// <c>"sqlserver"</c>, <c>"neptune"</c>, and <c>"babelfish"</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -408,8 +407,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify a value for the <code>KmsKeyId</code> parameter, then DMS uses
-        /// your default encryption key.
+        /// If you don't specify a value for the <c>KmsKeyId</c> parameter, then DMS uses your
+        /// default encryption key.
         /// </para>
         ///  
         /// <para>
@@ -633,14 +632,14 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ResourceIdentifier. 
         /// <para>
-        /// A friendly name for the resource identifier at the end of the <code>EndpointArn</code>
-        /// response parameter that is returned in the created <code>Endpoint</code> object. The
-        /// value for this parameter can have up to 31 characters. It can contain only ASCII letters,
-        /// digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive
-        /// hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>.
-        /// For example, this value might result in the <code>EndpointArn</code> value <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>.
-        /// If you don't specify a <code>ResourceIdentifier</code> value, DMS generates a default
-        /// identifier value for the end of <code>EndpointArn</code>.
+        /// A friendly name for the resource identifier at the end of the <c>EndpointArn</c> response
+        /// parameter that is returned in the created <c>Endpoint</c> object. The value for this
+        /// parameter can have up to 31 characters. It can contain only ASCII letters, digits,
+        /// and hyphen ('-'). Also, it can't end with a hyphen or contain two consecutive hyphens,
+        /// and can only begin with a letter, such as <c>Example-App-ARN1</c>. For example, this
+        /// value might result in the <c>EndpointArn</c> value <c>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</c>.
+        /// If you don't specify a <c>ResourceIdentifier</c> value, DMS generates a default identifier
+        /// value for the end of <c>EndpointArn</c>.
         /// </para>
         /// </summary>
         public string ResourceIdentifier
@@ -698,7 +697,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServiceAccessRoleArn. 
         /// <para>
         ///  The Amazon Resource Name (ARN) for the service access role that you want to use to
-        /// create the endpoint. The role must allow the <code>iam:PassRole</code> action.
+        /// create the endpoint. The role must allow the <c>iam:PassRole</c> action.
         /// </para>
         /// </summary>
         public string ServiceAccessRoleArn
@@ -717,7 +716,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SslMode. 
         /// <para>
         /// The Secure Sockets Layer (SSL) mode to use for the SSL connection. The default is
-        /// <code>none</code> 
+        /// <c>none</c> 
         /// </para>
         /// </summary>
         public DmsSslModeValue SslMode

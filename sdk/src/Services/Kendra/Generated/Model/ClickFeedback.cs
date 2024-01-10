@@ -30,7 +30,7 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Gathers information about when a particular result was clicked by a user. Your application
-    /// uses the <code>SubmitFeedback</code> API to provide click information.
+    /// uses the <c>SubmitFeedback</c> API to provide click information.
     /// </summary>
     public partial class ClickFeedback
     {

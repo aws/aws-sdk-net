@@ -50,7 +50,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property AutoScalingGroups. 
         /// <para>
-        ///  The <code>AutoScalingGroups</code> used by this environment. 
+        ///  The <c>AutoScalingGroups</c> used by this environment. 
         /// </para>
         /// </summary>
         public List<AutoScalingGroup> AutoScalingGroups
@@ -177,7 +177,7 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Triggers. 
         /// <para>
-        /// The <code>AutoScaling</code> triggers in use by this environment. 
+        /// The <c>AutoScaling</c> triggers in use by this environment. 
         /// </para>
         /// </summary>
         public List<Trigger> Triggers

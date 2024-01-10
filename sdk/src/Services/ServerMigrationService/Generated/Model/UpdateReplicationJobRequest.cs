@@ -65,7 +65,7 @@ namespace Amazon.ServerMigrationService.Model
         /// <summary>
         /// Gets and sets the property Encrypted. 
         /// <para>
-        /// When true, the replication job produces encrypted AMIs. For more information, <code>KmsKeyId</code>.
+        /// When true, the replication job produces encrypted AMIs. For more information, <c>KmsKeyId</c>.
         /// </para>
         /// </summary>
         public bool Encrypted

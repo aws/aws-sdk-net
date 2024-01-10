@@ -84,7 +84,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FolderType. 
         /// <para>
-        /// The type of folder. By default, <code>folderType</code> is <code>SHARED</code>.
+        /// The type of folder. By default, <c>folderType</c> is <c>SHARED</c>.
         /// </para>
         /// </summary>
         public FolderType FolderType
@@ -125,8 +125,8 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>ParentFolderArn</code> can be null. An empty <code>parentFolderArn</code> creates
-        /// a root-level folder.
+        ///  <c>ParentFolderArn</c> can be null. An empty <c>parentFolderArn</c> creates a root-level
+        /// folder.
         /// </para>
         /// </summary>
         public string ParentFolderArn
@@ -149,7 +149,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  
         /// <para>
-        /// To specify no permissions, omit <code>Permissions</code>.
+        /// To specify no permissions, omit <c>Permissions</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -169,7 +169,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property SharingModel. 
         /// <para>
         /// An optional parameter that determines the sharing scope of the folder. The default
-        /// value for this parameter is <code>ACCOUNT</code>.
+        /// value for this parameter is <c>ACCOUNT</c>.
         /// </para>
         /// </summary>
         public SharingModel SharingModel

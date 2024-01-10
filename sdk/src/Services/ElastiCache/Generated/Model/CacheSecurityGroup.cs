@@ -33,15 +33,15 @@ namespace Amazon.ElastiCache.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>AuthorizeCacheSecurityGroupIngress</code> 
+    ///  <c>AuthorizeCacheSecurityGroupIngress</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreateCacheSecurityGroup</code> 
+    ///  <c>CreateCacheSecurityGroup</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>RevokeCacheSecurityGroupIngress</code> 
+    ///  <c>RevokeCacheSecurityGroupIngress</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

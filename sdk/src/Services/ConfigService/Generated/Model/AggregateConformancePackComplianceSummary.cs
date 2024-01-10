@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ComplianceSummary. 
         /// <para>
-        /// Returns an <code>AggregateConformancePackComplianceCount</code> object. 
+        /// Returns an <c>AggregateConformancePackComplianceCount</c> object. 
         /// </para>
         /// </summary>
         public AggregateConformancePackComplianceCount ComplianceSummary

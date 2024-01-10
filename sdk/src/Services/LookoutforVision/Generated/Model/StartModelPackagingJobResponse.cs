@@ -38,7 +38,7 @@ namespace Amazon.LookoutforVision.Model
         /// <summary>
         /// Gets and sets the property JobName. 
         /// <para>
-        /// The job name for the model packaging job. If you don't supply a job name in the <code>JobName</code>
+        /// The job name for the model packaging job. If you don't supply a job name in the <c>JobName</c>
         /// input parameter, the service creates a job name for you. 
         /// </para>
         /// </summary>

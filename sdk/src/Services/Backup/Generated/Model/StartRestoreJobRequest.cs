@@ -44,8 +44,8 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property CopySourceTagsToRestoredResource. 
         /// <para>
-        /// This is an optional parameter. If this equals <code>True</code>, tags included in
-        /// the backup will be copied to the restored resource.
+        /// This is an optional parameter. If this equals <c>True</c>, tags included in the backup
+        /// will be copied to the restored resource.
         /// </para>
         ///  
         /// <para>
@@ -68,7 +68,7 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IamRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM role that Backup uses to create the target
-        /// resource; for example: <code>arn:aws:iam::123456789012:role/S3Access</code>.
+        /// resource; for example: <c>arn:aws:iam::123456789012:role/S3Access</c>.
         /// </para>
         /// </summary>
         public string IamRoleArn
@@ -87,8 +87,8 @@ namespace Amazon.Backup.Model
         /// Gets and sets the property IdempotencyToken. 
         /// <para>
         /// A customer-chosen string that you can use to distinguish between otherwise identical
-        /// calls to <code>StartRestoreJob</code>. Retrying a successful request with the same
-        /// idempotency token results in a success message with no action taken.
+        /// calls to <c>StartRestoreJob</c>. Retrying a successful request with the same idempotency
+        /// token results in a success message with no action taken.
         /// </para>
         /// </summary>
         public string IdempotencyToken
@@ -112,10 +112,10 @@ namespace Amazon.Backup.Model
         ///  
         /// <para>
         ///  You can get configuration metadata about a resource at the time it was backed up
-        /// by calling <code>GetRecoveryPointRestoreMetadata</code>. However, values in addition
-        /// to those provided by <code>GetRecoveryPointRestoreMetadata</code> might be required
-        /// to restore a resource. For example, you might need to provide a new resource name
-        /// if the original already exists.
+        /// by calling <c>GetRecoveryPointRestoreMetadata</c>. However, values in addition to
+        /// those provided by <c>GetRecoveryPointRestoreMetadata</c> might be required to restore
+        /// a resource. For example, you might need to provide a new resource name if the original
+        /// already exists.
         /// </para>
         ///  
         /// <para>
@@ -124,41 +124,40 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>file-system-id</code>: The ID of the Amazon EFS file system that is backed
-        /// up by Backup. Returned in <code>GetRecoveryPointRestoreMetadata</code>.
+        ///  <c>file-system-id</c>: The ID of the Amazon EFS file system that is backed up by
+        /// Backup. Returned in <c>GetRecoveryPointRestoreMetadata</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Encrypted</code>: A Boolean value that, if true, specifies that the file system
-        /// is encrypted. If <code>KmsKeyId</code> is specified, <code>Encrypted</code> must be
-        /// set to <code>true</code>.
+        ///  <c>Encrypted</c>: A Boolean value that, if true, specifies that the file system is
+        /// encrypted. If <c>KmsKeyId</c> is specified, <c>Encrypted</c> must be set to <c>true</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>KmsKeyId</code>: Specifies the Amazon Web Services KMS key that is used to
-        /// encrypt the restored file system. You can specify a key from another Amazon Web Services
-        /// account provided that key it is properly shared with your account via Amazon Web Services
+        ///  <c>KmsKeyId</c>: Specifies the Amazon Web Services KMS key that is used to encrypt
+        /// the restored file system. You can specify a key from another Amazon Web Services account
+        /// provided that key it is properly shared with your account via Amazon Web Services
         /// KMS.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PerformanceMode</code>: Specifies the throughput mode of the file system.
+        ///  <c>PerformanceMode</c>: Specifies the throughput mode of the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CreationToken</code>: A user-supplied value that ensures the uniqueness (idempotency)
+        ///  <c>CreationToken</c>: A user-supplied value that ensures the uniqueness (idempotency)
         /// of the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>newFileSystem</code>: A Boolean value that, if true, specifies that the recovery
+        ///  <c>newFileSystem</c>: A Boolean value that, if true, specifies that the recovery
         /// point is restored to a new Amazon EFS file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ItemsToRestore</code>: An array of one to five strings where each string is
-        /// a file path. Use <code>ItemsToRestore</code> to restore specific files or directories
-        /// rather than the entire file system. This parameter is optional. For example, <code>"itemsToRestore":"[\"/my.test\"]"</code>.
+        ///  <c>ItemsToRestore</c>: An array of one to five strings where each string is a file
+        /// path. Use <c>ItemsToRestore</c> to restore specific files or directories rather than
+        /// the entire file system. This parameter is optional. For example, <c>"itemsToRestore":"[\"/my.test\"]"</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -178,7 +177,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
         /// <para>
-        /// An ARN that uniquely identifies a recovery point; for example, <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.
+        /// An ARN that uniquely identifies a recovery point; for example, <c>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -201,63 +200,63 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Aurora</code> for Amazon Aurora
+        ///  <c>Aurora</c> for Amazon Aurora
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DocumentDB</code> for Amazon DocumentDB (with MongoDB compatibility)
+        ///  <c>DocumentDB</c> for Amazon DocumentDB (with MongoDB compatibility)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CloudFormation</code> for CloudFormation
+        ///  <c>CloudFormation</c> for CloudFormation
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DynamoDB</code> for Amazon DynamoDB
+        ///  <c>DynamoDB</c> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EBS</code> for Amazon Elastic Block Store
+        ///  <c>EBS</c> for Amazon Elastic Block Store
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EC2</code> for Amazon Elastic Compute Cloud
+        ///  <c>EC2</c> for Amazon Elastic Compute Cloud
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EFS</code> for Amazon Elastic File System
+        ///  <c>EFS</c> for Amazon Elastic File System
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FSx</code> for Amazon FSx
+        ///  <c>FSx</c> for Amazon FSx
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Neptune</code> for Amazon Neptune
+        ///  <c>Neptune</c> for Amazon Neptune
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RDS</code> for Amazon Relational Database Service
+        ///  <c>RDS</c> for Amazon Relational Database Service
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Redshift</code> for Amazon Redshift
+        ///  <c>Redshift</c> for Amazon Redshift
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Storage Gateway</code> for Storage Gateway
+        ///  <c>Storage Gateway</c> for Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>S3</code> for Amazon S3
+        ///  <c>S3</c> for Amazon S3
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Timestream</code> for Amazon Timestream
+        ///  <c>Timestream</c> for Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VirtualMachine</code> for virtual machines
+        ///  <c>VirtualMachine</c> for virtual machines
         /// </para>
         ///  </li> </ul>
         /// </summary>

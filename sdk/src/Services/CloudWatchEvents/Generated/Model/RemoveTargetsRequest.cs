@@ -41,8 +41,8 @@ namespace Amazon.CloudWatchEvents.Model
     ///  
     /// <para>
     /// This action can partially fail if too many requests are made at the same time. If
-    /// that happens, <code>FailedEntryCount</code> is non-zero in the response and each entry
-    /// in <code>FailedEntries</code> provides the ID of the failed target and the error code.
+    /// that happens, <c>FailedEntryCount</c> is non-zero in the response and each entry in
+    /// <c>FailedEntries</c> provides the ID of the failed target and the error code.
     /// </para>
     /// </summary>
     public partial class RemoveTargetsRequest : AmazonCloudWatchEventsRequest
@@ -76,10 +76,10 @@ namespace Amazon.CloudWatchEvents.Model
         /// Gets and sets the property Force. 
         /// <para>
         /// If this is a managed rule, created by an Amazon Web Services service on your behalf,
-        /// you must specify <code>Force</code> as <code>True</code> to remove targets. This parameter
-        /// is ignored for rules that are not managed rules. You can check whether a rule is a
-        /// managed rule by using <code>DescribeRule</code> or <code>ListRules</code> and checking
-        /// the <code>ManagedBy</code> field of the response.
+        /// you must specify <c>Force</c> as <c>True</c> to remove targets. This parameter is
+        /// ignored for rules that are not managed rules. You can check whether a rule is a managed
+        /// rule by using <c>DescribeRule</c> or <c>ListRules</c> and checking the <c>ManagedBy</c>
+        /// field of the response.
         /// </para>
         /// </summary>
         public bool Force

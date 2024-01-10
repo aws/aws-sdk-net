@@ -40,8 +40,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CreateTime. 
         /// <para>
-        /// The timestamp of the reset cache request (<code>1479734909.17</code>) in Unix time
-        /// format.
+        /// The timestamp of the reset cache request (<c>1479734909.17</c>) in Unix time format.
         /// </para>
         /// </summary>
         public DateTime CreateTime

@@ -67,8 +67,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>results</code> value is an array of arrays. Each log event is one object
-        /// in the top-level array. Each of these log event objects is an array of <code>field</code>/<code>value</code>
+        /// The <c>results</c> value is an array of arrays. Each log event is one object in the
+        /// top-level array. Each of these log event objects is an array of <c>field</c>/<c>value</c>
         /// pairs.
         /// </para>
         /// </summary>
@@ -107,9 +107,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
-        /// <code>Complete</code>, <code>Failed</code>, <code>Running</code>, <code>Scheduled</code>,
-        /// <code>Timeout</code>, and <code>Unknown</code>.
+        /// The status of the most recent running of the query. Possible values are <c>Cancelled</c>,
+        /// <c>Complete</c>, <c>Failed</c>, <c>Running</c>, <c>Scheduled</c>, <c>Timeout</c>,
+        /// and <c>Unknown</c>.
         /// </para>
         ///  
         /// <para>

@@ -30,17 +30,17 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAppInstanceUserExpirationSettings operation.
-    /// Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.
+    /// Sets the number of days before the <c>AppInstanceUser</c> is automatically deleted.
     /// 
     ///  <note> 
     /// <para>
-    /// A background process deletes expired <code>AppInstanceUsers</code> within 6 hours
-    /// of expiration. Actual deletion times may vary.
+    /// A background process deletes expired <c>AppInstanceUsers</c> within 6 hours of expiration.
+    /// Actual deletion times may vary.
     /// </para>
     ///  
     /// <para>
-    /// Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active,
-    /// and you can update their expiration settings. The system honors the new settings.
+    /// Expired <c>AppInstanceUsers</c> that have not yet been deleted appear as active, and
+    /// you can update their expiration settings. The system honors the new settings.
     /// </para>
     ///  </note>
     /// </summary>
@@ -52,7 +52,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -71,8 +71,8 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property ExpirationSettings. 
         /// <para>
-        /// Settings that control the interval after which an <code>AppInstanceUser</code> is
-        /// automatically deleted.
+        /// Settings that control the interval after which an <c>AppInstanceUser</c> is automatically
+        /// deleted.
         /// </para>
         /// </summary>
         public ExpirationSettings ExpirationSettings

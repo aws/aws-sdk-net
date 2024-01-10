@@ -61,7 +61,7 @@ namespace Amazon.AugmentedAIRuntime.Model
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// The reason why the human loop failed. A failure reason is returned when the status
-        /// of the human loop is <code>Failed</code>.
+        /// of the human loop is <c>Failed</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

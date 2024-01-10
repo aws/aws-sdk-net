@@ -82,13 +82,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property CurrentParallelism. 
         /// <para>
         /// Describes the current number of parallel tasks that a Flink-based Kinesis Data Analytics
-        /// application can perform. If <code>AutoScalingEnabled</code> is set to True, Kinesis
-        /// Data Analytics can increase this value in response to application load. The service
-        /// can increase this value up to the maximum parallelism, which is <code>ParalellismPerKPU</code>
+        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, Kinesis Data
+        /// Analytics can increase this value in response to application load. The service can
+        /// increase this value up to the maximum parallelism, which is <c>ParalellismPerKPU</c>
         /// times the maximum KPUs for the application. The maximum KPUs for an application is
         /// 32 by default, and can be increased by requesting a limit increase. If application
-        /// load is reduced, the service can reduce the <code>CurrentParallelism</code> value
-        /// down to the <code>Parallelism</code> setting.
+        /// load is reduced, the service can reduce the <c>CurrentParallelism</c> value down to
+        /// the <c>Parallelism</c> setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -108,14 +108,13 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// Gets and sets the property Parallelism. 
         /// <para>
         /// Describes the initial number of parallel tasks that a Flink-based Kinesis Data Analytics
-        /// application can perform. If <code>AutoScalingEnabled</code> is set to True, then Kinesis
-        /// Data Analytics can increase the <code>CurrentParallelism</code> value in response
-        /// to application load. The service can increase <code>CurrentParallelism</code> up to
-        /// the maximum parallelism, which is <code>ParalellismPerKPU</code> times the maximum
-        /// KPUs for the application. The maximum KPUs for an application is 32 by default, and
-        /// can be increased by requesting a limit increase. If application load is reduced, the
-        /// service can reduce the <code>CurrentParallelism</code> value down to the <code>Parallelism</code>
-        /// setting.
+        /// application can perform. If <c>AutoScalingEnabled</c> is set to True, then Kinesis
+        /// Data Analytics can increase the <c>CurrentParallelism</c> value in response to application
+        /// load. The service can increase <c>CurrentParallelism</c> up to the maximum parallelism,
+        /// which is <c>ParalellismPerKPU</c> times the maximum KPUs for the application. The
+        /// maximum KPUs for an application is 32 by default, and can be increased by requesting
+        /// a limit increase. If application load is reduced, the service can reduce the <c>CurrentParallelism</c>
+        /// value down to the <c>Parallelism</c> setting.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -36,9 +36,9 @@ namespace Amazon.ElasticTranscoder.Model
     ///  </important> 
     /// <para>
     /// If you specified one output for a job, information about that output. If you specified
-    /// multiple outputs for a job, the <code>Output</code> object lists information about
-    /// the first output. This duplicates the information that is listed for the first output
-    /// in the <code>Outputs</code> object.
+    /// multiple outputs for a job, the <c>Output</c> object lists information about the first
+    /// output. This duplicates the information that is listed for the first output in the
+    /// <c>Outputs</c> object.
     /// </para>
     /// </summary>
     public partial class JobOutput
@@ -86,10 +86,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property AppliedColorSpaceConversion. 
         /// <para>
-        /// If Elastic Transcoder used a preset with a <code>ColorSpaceConversionMode</code> to
-        /// transcode the output file, the <code>AppliedColorSpaceConversion</code> parameter
-        /// shows the conversion used. If no <code>ColorSpaceConversionMode</code> was defined
-        /// in the preset, this parameter is not be included in the job response.
+        /// If Elastic Transcoder used a preset with a <c>ColorSpaceConversionMode</c> to transcode
+        /// the output file, the <c>AppliedColorSpaceConversion</c> parameter shows the conversion
+        /// used. If no <c>ColorSpaceConversionMode</c> was defined in the preset, this parameter
+        /// is not be included in the job response.
         /// </para>
         /// </summary>
         public string AppliedColorSpaceConversion
@@ -119,13 +119,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid input values include: <code>CEA-608 (EIA-608</code>, first non-empty channel
-        /// only), <code>CEA-708 (EIA-708</code>, first non-empty channel only), and <code>mov-text</code>
-        /// 
+        /// Valid input values include: <c>CEA-608 (EIA-608</c>, first non-empty channel only),
+        /// <c>CEA-708 (EIA-708</c>, first non-empty channel only), and <c>mov-text</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid outputs include: <code>mov-text</code> 
+        /// Valid outputs include: <c>mov-text</c> 
         /// </para>
         ///  
         /// <para>
@@ -140,14 +139,13 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid input values include: <code>dfxp</code> (first div element only), <code>ebu-tt</code>,
-        /// <code>scc</code>, <code>smpt</code>, <code>srt</code>, <code>ttml</code> (first div
-        /// element only), and <code>webvtt</code> 
+        /// Valid input values include: <c>dfxp</c> (first div element only), <c>ebu-tt</c>, <c>scc</c>,
+        /// <c>smpt</c>, <c>srt</c>, <c>ttml</c> (first div element only), and <c>webvtt</c> 
         /// </para>
         ///  
         /// <para>
-        /// Valid outputs include: <code>dfxp</code> (first div element only), <code>scc</code>,
-        /// <code>srt</code>, and <code>webvtt</code>.
+        /// Valid outputs include: <c>dfxp</c> (first div element only), <c>scc</c>, <c>srt</c>,
+        /// and <c>webvtt</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -162,9 +160,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// To remove captions or leave the captions empty, set <code>Captions</code> to null.
-        /// To pass through existing captions unchanged, set the <code>MergePolicy</code> to <code>MergeRetain</code>,
-        /// and pass in a null <code>CaptionSources</code> array.
+        /// To remove captions or leave the captions empty, set <c>Captions</c> to null. To pass
+        /// through existing captions unchanged, set the <c>MergePolicy</c> to <c>MergeRetain</c>,
+        /// and pass in a null <c>CaptionSources</c> array.
         /// </para>
         ///  
         /// <para>
@@ -345,8 +343,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Key. 
         /// <para>
         ///  The name to assign to the transcoded file. Elastic Transcoder saves the file in the
-        /// Amazon S3 bucket specified by the <code>OutputBucket</code> object in the pipeline
-        /// that is specified by the pipeline ID.
+        /// Amazon S3 bucket specified by the <c>OutputBucket</c> object in the pipeline that
+        /// is specified by the pipeline ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -365,11 +363,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PresetId. 
         /// <para>
-        /// The value of the <code>Id</code> object for the preset that you want to use for this
-        /// job. The preset determines the audio, video, and thumbnail settings that Elastic Transcoder
+        /// The value of the <c>Id</c> object for the preset that you want to use for this job.
+        /// The preset determines the audio, video, and thumbnail settings that Elastic Transcoder
         /// uses for transcoding. To use a preset that you created, specify the preset ID that
         /// Elastic Transcoder returned in the response when you created the preset. You can also
-        /// use the Elastic Transcoder system presets, which you can get with <code>ListPresets</code>.
+        /// use the Elastic Transcoder system presets, which you can get with <c>ListPresets</c>.
         /// </para>
         /// </summary>
         public string PresetId
@@ -392,13 +390,12 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>auto</code>, <code>0</code>, <code>90</code>, <code>180</code>, <code>270</code>
-        /// 
+        ///  <c>auto</c>, <c>0</c>, <c>90</c>, <c>180</c>, <c>270</c> 
         /// </para>
         ///  
         /// <para>
-        ///  The value <code>auto</code> generally works only if the file that you're transcoding
-        /// contains rotation metadata.
+        ///  The value <c>auto</c> generally works only if the file that you're transcoding contains
+        /// rotation metadata.
         /// </para>
         /// </summary>
         public string Rotate
@@ -420,26 +417,25 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code>
-        /// is <code>fmp4</code> (Fragmented MP4) or <code>ts</code> (MPEG-TS), <code>SegmentDuration</code>
-        /// is the target maximum duration of each segment in seconds. For <code>HLSv3</code>
-        /// format playlists, each media segment is stored in a separate <code>.ts</code> file.
-        /// For <code>HLSv4</code>, <code>MPEG-DASH</code>, and <code>Smooth</code> playlists,
-        /// all media segments for an output are stored in a single file. Each segment is approximately
-        /// the length of the <code>SegmentDuration</code>, though individual segments might be
-        /// shorter or longer.
+        /// If you specify a preset in <c>PresetId</c> for which the value of <c>Container</c>
+        /// is <c>fmp4</c> (Fragmented MP4) or <c>ts</c> (MPEG-TS), <c>SegmentDuration</c> is
+        /// the target maximum duration of each segment in seconds. For <c>HLSv3</c> format playlists,
+        /// each media segment is stored in a separate <c>.ts</c> file. For <c>HLSv4</c>, <c>MPEG-DASH</c>,
+        /// and <c>Smooth</c> playlists, all media segments for an output are stored in a single
+        /// file. Each segment is approximately the length of the <c>SegmentDuration</c>, though
+        /// individual segments might be shorter or longer.
         /// </para>
         ///  
         /// <para>
         /// The range of valid values is 1 to 60 seconds. If the duration of the video is not
-        /// evenly divisible by <code>SegmentDuration</code>, the duration of the last segment
-        /// is the remainder of total length/SegmentDuration.
+        /// evenly divisible by <c>SegmentDuration</c>, the duration of the last segment is the
+        /// remainder of total length/SegmentDuration.
         /// </para>
         ///  
         /// <para>
-        /// Elastic Transcoder creates an output-specific playlist for each output <code>HLS</code>
+        /// Elastic Transcoder creates an output-specific playlist for each output <c>HLS</c>
         /// output that you specify in OutputKeys. To add an output to the master playlist for
-        /// this job, include it in the <code>OutputKeys</code> of the associated playlist.
+        /// this job, include it in the <c>OutputKeys</c> of the associated playlist.
         /// </para>
         /// </summary>
         public string SegmentDuration
@@ -458,20 +454,20 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property Status. 
         /// <para>
         ///  The status of one output in a job. If you specified only one output for the job,
-        /// <code>Outputs:Status</code> is always the same as <code>Job:Status</code>. If you
-        /// specified more than one output: 
+        /// <c>Outputs:Status</c> is always the same as <c>Job:Status</c>. If you specified more
+        /// than one output: 
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Job:Status</code> and <code>Outputs:Status</code> for all of the outputs is
-        /// Submitted until Elastic Transcoder starts to process the first output.
+        ///  <c>Job:Status</c> and <c>Outputs:Status</c> for all of the outputs is Submitted until
+        /// Elastic Transcoder starts to process the first output.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When Elastic Transcoder starts to process the first output, <code>Outputs:Status</code>
-        /// for that output and <code>Job:Status</code> both change to Progressing. For each output,
-        /// the value of <code>Outputs:Status</code> remains Submitted until Elastic Transcoder
-        /// starts to process the output.
+        /// When Elastic Transcoder starts to process the first output, <c>Outputs:Status</c>
+        /// for that output and <c>Job:Status</c> both change to Progressing. For each output,
+        /// the value of <c>Outputs:Status</c> remains Submitted until Elastic Transcoder starts
+        /// to process the output.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -480,16 +476,15 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When all of the outputs reach a terminal status, <code>Job:Status</code> changes to
-        /// Complete only if <code>Outputs:Status</code> for all of the outputs is <code>Complete</code>.
-        /// If <code>Outputs:Status</code> for one or more outputs is <code>Error</code>, the
-        /// terminal status for <code>Job:Status</code> is also <code>Error</code>.
+        /// When all of the outputs reach a terminal status, <c>Job:Status</c> changes to Complete
+        /// only if <c>Outputs:Status</c> for all of the outputs is <c>Complete</c>. If <c>Outputs:Status</c>
+        /// for one or more outputs is <c>Error</c>, the terminal status for <c>Job:Status</c>
+        /// is also <c>Error</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The value of <code>Status</code> is one of the following: <code>Submitted</code>,
-        /// <code>Progressing</code>, <code>Complete</code>, <code>Canceled</code>, or <code>Error</code>.
-        /// 
+        /// The value of <c>Status</c> is one of the following: <c>Submitted</c>, <c>Progressing</c>,
+        /// <c>Complete</c>, <c>Canceled</c>, or <c>Error</c>. 
         /// </para>
         /// </summary>
         public string Status
@@ -507,7 +502,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property StatusDetail. 
         /// <para>
-        /// Information that further explains <code>Status</code>.
+        /// Information that further explains <c>Status</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -560,36 +555,35 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>{count}</code> (Required)</b>: If you want to create thumbnails, you must
-        /// include <code>{count}</code> in the <code>ThumbnailPattern</code> object. Wherever
-        /// you specify <code>{count}</code>, Elastic Transcoder adds a five-digit sequence number
-        /// (beginning with <b>00001</b>) to thumbnail file names. The number indicates where
-        /// a given thumbnail appears in the sequence of thumbnails for a transcoded file. 
+        ///  <b> <c>{count}</c> (Required)</b>: If you want to create thumbnails, you must include
+        /// <c>{count}</c> in the <c>ThumbnailPattern</c> object. Wherever you specify <c>{count}</c>,
+        /// Elastic Transcoder adds a five-digit sequence number (beginning with <b>00001</b>)
+        /// to thumbnail file names. The number indicates where a given thumbnail appears in the
+        /// sequence of thumbnails for a transcoded file. 
         /// </para>
         ///  <important> 
         /// <para>
-        /// If you specify a literal value and/or <code>{resolution}</code> but you omit <code>{count}</code>,
+        /// If you specify a literal value and/or <c>{resolution}</c> but you omit <c>{count}</c>,
         /// Elastic Transcoder returns a validation error and does not create the job.
         /// </para>
         ///  </important> </li> <li> 
         /// <para>
         ///  <b>Literal values (Optional)</b>: You can specify literal values anywhere in the
-        /// <code>ThumbnailPattern</code> object. For example, you can include them as a file
-        /// name prefix or as a delimiter between <code>{resolution}</code> and <code>{count}</code>.
-        /// 
+        /// <c>ThumbnailPattern</c> object. For example, you can include them as a file name prefix
+        /// or as a delimiter between <c>{resolution}</c> and <c>{count}</c>. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>{resolution}</code> (Optional)</b>: If you want Elastic Transcoder to include
-        /// the resolution in the file name, include <code>{resolution}</code> in the <code>ThumbnailPattern</code>
+        ///  <b> <c>{resolution}</c> (Optional)</b>: If you want Elastic Transcoder to include
+        /// the resolution in the file name, include <c>{resolution}</c> in the <c>ThumbnailPattern</c>
         /// object. 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When creating thumbnails, Elastic Transcoder automatically saves the files in the
-        /// format (.jpg or .png) that appears in the preset that you specified in the <code>PresetID</code>
-        /// value of <code>CreateJobOutput</code>. Elastic Transcoder also appends the applicable
-        /// file name extension.
+        /// format (.jpg or .png) that appears in the preset that you specified in the <c>PresetID</c>
+        /// value of <c>CreateJobOutput</c>. Elastic Transcoder also appends the applicable file
+        /// name extension.
         /// </para>
         /// </summary>
         public string ThumbnailPattern
@@ -609,7 +603,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// Information about the watermarks that you want Elastic Transcoder to add to the video
         /// during transcoding. You can specify up to four watermarks for each output. Settings
-        /// for each watermark must be defined in the preset that you specify in <code>Preset</code>
+        /// for each watermark must be defined in the preset that you specify in <c>Preset</c>
         /// for the current output.
         /// </para>
         ///  

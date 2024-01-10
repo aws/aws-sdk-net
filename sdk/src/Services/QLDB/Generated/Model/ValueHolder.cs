@@ -38,7 +38,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property IonText. 
         /// <para>
-        /// An Amazon Ion plaintext value contained in a <code>ValueHolder</code> structure.
+        /// An Amazon Ion plaintext value contained in a <c>ValueHolder</c> structure.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1048576)]

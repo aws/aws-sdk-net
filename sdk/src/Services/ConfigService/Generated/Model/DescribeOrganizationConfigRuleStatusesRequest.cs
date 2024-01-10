@@ -54,8 +54,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// The maximum number of <code>OrganizationConfigRuleStatuses</code> returned on each
-        /// page. If you do no specify a number, Config uses the default. The default is 100.
+        /// The maximum number of <c>OrganizationConfigRuleStatuses</c> returned on each page.
+        /// If you do no specify a number, Config uses the default. The default is 100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -74,8 +74,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> string returned on a previous page that you use to get
-        /// the next page of results in a paginated response. 
+        /// The <c>nextToken</c> string returned on a previous page that you use to get the next
+        /// page of results in a paginated response. 
         /// </para>
         /// </summary>
         public string NextToken

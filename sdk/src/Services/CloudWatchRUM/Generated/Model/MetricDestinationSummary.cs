@@ -41,7 +41,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// Specifies whether the destination is <code>CloudWatch</code> or <code>Evidently</code>.
+        /// Specifies whether the destination is <c>CloudWatch</c> or <c>Evidently</c>.
         /// </para>
         /// </summary>
         public MetricDestination Destination
@@ -59,8 +59,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// If the destination is <code>Evidently</code>, this specifies the ARN of the Evidently
-        /// experiment that receives the metrics.
+        /// If the destination is <c>Evidently</c>, this specifies the ARN of the Evidently experiment
+        /// that receives the metrics.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
@@ -79,8 +79,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
         /// <para>
-        /// This field appears only when the destination is <code>Evidently</code>. It specifies
-        /// the ARN of the IAM role that is used to write to the Evidently experiment that receives
+        /// This field appears only when the destination is <c>Evidently</c>. It specifies the
+        /// ARN of the IAM role that is used to write to the Evidently experiment that receives
         /// the metrics.
         /// </para>
         /// </summary>

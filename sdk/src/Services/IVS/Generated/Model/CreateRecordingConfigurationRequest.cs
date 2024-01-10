@@ -36,9 +36,9 @@ namespace Amazon.IVS.Model
     /// <para>
     ///  <b>Known issue:</b> In the us-east-1 region, if you use the Amazon Web Services CLI
     /// to create a recording configuration, it returns success even if the S3 bucket is in
-    /// a different region. In this case, the <code>state</code> of the recording configuration
-    /// is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other regions,
-    /// the CLI correctly returns failure if the bucket is in a different region.)
+    /// a different region. In this case, the <c>state</c> of the recording configuration
+    /// is <c>CREATE_FAILED</c> (instead of <c>ACTIVE</c>). (In other regions, the CLI correctly
+    /// returns failure if the bucket is in a different region.)
     /// </para>
     ///  
     /// <para>
@@ -138,10 +138,9 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Array of 1-50 maps, each of the form <code>string:string (key:value)</code>. See <a
-        /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
-        /// Web Services Resources</a> for more information, including restrictions that apply
-        /// to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+        /// Array of 1-50 maps, each of the form <c>string:string (key:value)</c>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services Resources</a> for more information, including restrictions that
+        /// apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
         /// constraints beyond what is documented there.
         /// </para>
         /// </summary>

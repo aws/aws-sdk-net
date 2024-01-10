@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElastiCache.Model
 {
     /// <summary>
-    /// The requested cluster is not in the <code>available</code> state.
+    /// The requested cluster is not in the <c>available</c> state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

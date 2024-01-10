@@ -47,18 +47,17 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REGISTRATION_SUCCESS</code> - The Amazon Web Services resource is successfully
-        /// registered.
+        ///  <c>REGISTRATION_SUCCESS</c> - The Amazon Web Services resource is successfully registered.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGISTRATION_PENDING</code> - Amazon Web Services IoT FleetWise is processing
-        /// the registration request. This process takes approximately five minutes to complete.
+        ///  <c>REGISTRATION_PENDING</c> - Amazon Web Services IoT FleetWise is processing the
+        /// registration request. This process takes approximately five minutes to complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REGISTRATION_FAILURE</code> - Amazon Web Services IoT FleetWise can't register
-        /// the AWS resource. Try again later.
+        ///  <c>REGISTRATION_FAILURE</c> - Amazon Web Services IoT FleetWise can't register the
+        /// AWS resource. Try again later.
         /// </para>
         ///  </li> </ul>
         /// </summary>

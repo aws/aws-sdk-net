@@ -39,12 +39,12 @@ namespace Amazon.Glue.Model
     /// Compatibility mode "DISABLED" restricts any additional schema versions from being
     /// added after the first schema version. For all other compatibility modes, validation
     /// of compatibility settings will be applied only from the second version onwards when
-    /// the <code>RegisterSchemaVersion</code> API is used.
+    /// the <c>RegisterSchemaVersion</c> API is used.
     /// </para>
     ///  
     /// <para>
-    /// When this API is called without a <code>RegistryId</code>, this will create an entry
-    /// for a "default-registry" in the registry database tables, if it is not already present.
+    /// When this API is called without a <c>RegistryId</c>, this will create an entry for
+    /// a "default-registry" in the registry database tables, if it is not already present.
     /// </para>
     /// </summary>
     public partial class CreateSchemaRequest : AmazonGlueRequest
@@ -132,8 +132,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DataFormat. 
         /// <para>
-        /// The data format of the schema definition. Currently <code>AVRO</code>, <code>JSON</code>
-        /// and <code>PROTOBUF</code> are supported.
+        /// The data format of the schema definition. Currently <c>AVRO</c>, <c>JSON</c> and <c>PROTOBUF</c>
+        /// are supported.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -173,8 +173,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property RegistryId. 
         /// <para>
         ///  This is a wrapper shape to contain the registry identity fields. If this is not provided,
-        /// the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:&lt;customer
-        /// id&gt;:registry/default-registry:random-5-letter-id</code>.
+        /// the default registry will be used. The ARN format for the same will be: <c>arn:aws:glue:us-east-2:&lt;customer
+        /// id&gt;:registry/default-registry:random-5-letter-id</c>.
         /// </para>
         /// </summary>
         public RegistryId RegistryId
@@ -192,7 +192,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SchemaDefinition. 
         /// <para>
-        /// The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.
+        /// The schema definition using the <c>DataFormat</c> setting for <c>SchemaName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=170000)]

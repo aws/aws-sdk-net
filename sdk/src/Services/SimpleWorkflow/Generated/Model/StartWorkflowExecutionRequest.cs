@@ -31,7 +31,7 @@ namespace Amazon.SimpleWorkflow.Model
     /// <summary>
     /// Container for the parameters to the StartWorkflowExecution operation.
     /// Starts an execution of the workflow type in the specified domain using the provided
-    /// <code>workflowId</code> and input data.
+    /// <c>workflowId</c> and input data.
     /// 
     ///  
     /// <para>
@@ -48,56 +48,56 @@ namespace Amazon.SimpleWorkflow.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use a <code>Resource</code> element with the domain name to limit the action to only
-    /// specified domains.
+    /// Use a <c>Resource</c> element with the domain name to limit the action to only specified
+    /// domains.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use an <code>Action</code> element to allow or deny permission to call this action.
+    /// Use an <c>Action</c> element to allow or deny permission to call this action.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Constrain the following parameters by using a <code>Condition</code> element with
-    /// the appropriate keys.
+    /// Constrain the following parameters by using a <c>Condition</c> element with the appropriate
+    /// keys.
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>tagList.member.0</code>: The key is <code>swf:tagList.member.0</code>.
+    ///  <c>tagList.member.0</c>: The key is <c>swf:tagList.member.0</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>tagList.member.1</code>: The key is <code>swf:tagList.member.1</code>.
+    ///  <c>tagList.member.1</c>: The key is <c>swf:tagList.member.1</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>tagList.member.2</code>: The key is <code>swf:tagList.member.2</code>.
+    ///  <c>tagList.member.2</c>: The key is <c>swf:tagList.member.2</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>tagList.member.3</code>: The key is <code>swf:tagList.member.3</code>.
+    ///  <c>tagList.member.3</c>: The key is <c>swf:tagList.member.3</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>tagList.member.4</code>: The key is <code>swf:tagList.member.4</code>.
+    ///  <c>tagList.member.4</c>: The key is <c>swf:tagList.member.4</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>taskList</code>: String constraint. The key is <code>swf:taskList.name</code>.
+    ///  <c>taskList</c>: String constraint. The key is <c>swf:taskList.name</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>workflowType.name</code>: String constraint. The key is <code>swf:workflowType.name</code>.
+    ///  <c>workflowType.name</c>: String constraint. The key is <c>swf:workflowType.name</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>workflowType.version</code>: String constraint. The key is <code>swf:workflowType.version</code>.
+    ///  <c>workflowType.version</c>: String constraint. The key is <c>swf:workflowType.version</c>.
     /// </para>
     ///  </li> </ul> </li> </ul> 
     /// <para>
     /// If the caller doesn't have sufficient permissions to invoke the action, or the parameter
     /// values fall outside the specified constraints, the action fails. The associated event
-    /// attribute's <code>cause</code> parameter is set to <code>OPERATION_NOT_PERMITTED</code>.
-    /// For details and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
+    /// attribute's <c>cause</c> parameter is set to <c>OPERATION_NOT_PERMITTED</c>. For details
+    /// and example IAM policies, see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dev-iam.html">Using
     /// IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer Guide</i>.
     /// </para>
     /// </summary>
@@ -129,18 +129,18 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TERMINATE</code> – The child executions are terminated.
+        ///  <c>TERMINATE</c> – The child executions are terminated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>REQUEST_CANCEL</code> – A request to cancel is attempted for each child execution
-        /// by recording a <code>WorkflowExecutionCancelRequested</code> event in its history.
-        /// It is up to the decider to take appropriate actions when it receives an execution
-        /// history with this event.
+        ///  <c>REQUEST_CANCEL</c> – A request to cancel is attempted for each child execution
+        /// by recording a <c>WorkflowExecutionCancelRequested</c> event in its history. It is
+        /// up to the decider to take appropriate actions when it receives an execution history
+        /// with this event.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ABANDON</code> – No action is taken. The child executions continue to run.
+        ///  <c>ABANDON</c> – No action is taken. The child executions continue to run.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -169,9 +169,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash),
-        /// <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code>
-        /// | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.
+        /// The specified string must not contain a <c>:</c> (colon), <c>/</c> (slash), <c>|</c>
+        /// (vertical bar), or any control characters (<c>\u0000-\u001f</c> | <c>\u007f-\u009f</c>).
+        /// Also, it must <i>not</i> be the literal string <c>arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -195,7 +195,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds; an integer greater than or equal to <code>0</code>.
+        /// The duration is specified in seconds; an integer greater than or equal to <c>0</c>.
         /// Exceeding this limit causes the workflow execution to time out. Unlike some of the
         /// other timeout parameters in Amazon SWF, you cannot specify a value of "NONE" for this
         /// timeout; there is a one-year max limit on the time that a workflow execution can run.
@@ -225,8 +225,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property Input. 
         /// <para>
         /// The input for the workflow execution. This is a free form string which should be meaningful
-        /// to the workflow you are starting. This <code>input</code> is made available to the
-        /// new workflow execution in the <code>WorkflowExecutionStarted</code> history event.
+        /// to the workflow you are starting. This <c>input</c> is made available to the new workflow
+        /// execution in the <c>WorkflowExecutionStarted</c> history event.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32768)]
@@ -251,8 +251,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// <para>
         /// Executions of this workflow type need IAM roles to invoke Lambda functions. If you
         /// don't attach an IAM role, any attempt to schedule a Lambda task fails. This results
-        /// in a <code>ScheduleLambdaFunctionFailed</code> history event. For more information,
-        /// see <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
+        /// in a <c>ScheduleLambdaFunctionFailed</c> history event. For more information, see
+        /// <a href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html">https://docs.aws.amazon.com/amazonswf/latest/developerguide/lambda-task.html</a>
         /// in the <i>Amazon SWF Developer Guide</i>.
         /// </para>
         ///  </note>
@@ -295,7 +295,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TaskList. 
         /// <para>
         /// The task list to use for the decision tasks generated for this workflow execution.
-        /// This overrides the <code>defaultTaskList</code> specified when registering the workflow
+        /// This overrides the <c>defaultTaskList</c> specified when registering the workflow
         /// type.
         /// </para>
         ///  <note> 
@@ -306,9 +306,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash),
-        /// <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code>
-        /// | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.
+        /// The specified string must not contain a <c>:</c> (colon), <c>/</c> (slash), <c>|</c>
+        /// (vertical bar), or any control characters (<c>\u0000-\u001f</c> | <c>\u007f-\u009f</c>).
+        /// Also, it must <i>not</i> be the literal string <c>arn</c>.
         /// </para>
         /// </summary>
         public TaskList TaskList
@@ -329,8 +329,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// The task priority to use for this workflow execution. This overrides any default priority
         /// that was assigned when the workflow type was registered. If not set, then the default
         /// task priority for the workflow type is used. Valid values are integers that range
-        /// from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to <code>Integer.MAX_VALUE</code>
-        /// (2147483647). Higher numbers indicate higher priority.
+        /// from Java's <c>Integer.MIN_VALUE</c> (-2147483648) to <c>Integer.MAX_VALUE</c> (2147483647).
+        /// Higher numbers indicate higher priority.
         /// </para>
         ///  
         /// <para>
@@ -354,13 +354,13 @@ namespace Amazon.SimpleWorkflow.Model
         /// Gets and sets the property TaskStartToCloseTimeout. 
         /// <para>
         /// Specifies the maximum duration of decision tasks for this workflow execution. This
-        /// parameter overrides the <code>defaultTaskStartToCloseTimout</code> specified when
-        /// registering the workflow type using <a>RegisterWorkflowType</a>.
+        /// parameter overrides the <c>defaultTaskStartToCloseTimout</c> specified when registering
+        /// the workflow type using <a>RegisterWorkflowType</a>.
         /// </para>
         ///  
         /// <para>
-        /// The duration is specified in seconds, an integer greater than or equal to <code>0</code>.
-        /// You can use <code>NONE</code> to specify unlimited duration.
+        /// The duration is specified in seconds, an integer greater than or equal to <c>0</c>.
+        /// You can use <c>NONE</c> to specify unlimited duration.
         /// </para>
         ///  <note> 
         /// <para>
@@ -390,14 +390,14 @@ namespace Amazon.SimpleWorkflow.Model
         /// The user defined identifier associated with the workflow execution. You can use this
         /// to associate a custom identifier with the workflow execution. You may specify the
         /// same identifier if a workflow execution is logically a <i>restart</i> of a previous
-        /// execution. You cannot have two open workflow executions with the same <code>workflowId</code>
+        /// execution. You cannot have two open workflow executions with the same <c>workflowId</c>
         /// at the same time within the same domain.
         /// </para>
         ///  
         /// <para>
-        /// The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash),
-        /// <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code>
-        /// | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.
+        /// The specified string must not contain a <c>:</c> (colon), <c>/</c> (slash), <c>|</c>
+        /// (vertical bar), or any control characters (<c>\u0000-\u001f</c> | <c>\u007f-\u009f</c>).
+        /// Also, it must <i>not</i> be the literal string <c>arn</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

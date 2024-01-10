@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ComprehendMedical.Model
 {
     /// <summary>
-    /// Contextual information for the entity. The traits recognized by InferICD10CM are <code>DIAGNOSIS</code>,
-    /// <code>SIGN</code>, <code>SYMPTOM</code>, and <code>NEGATION</code>.
+    /// Contextual information for the entity. The traits recognized by InferICD10CM are <c>DIAGNOSIS</c>,
+    /// <c>SIGN</c>, <c>SYMPTOM</c>, and <c>NEGATION</c>.
     /// </summary>
     public partial class ICD10CMTrait
     {

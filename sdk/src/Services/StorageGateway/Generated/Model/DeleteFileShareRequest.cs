@@ -60,14 +60,14 @@ namespace Amazon.StorageGateway.Model
         /// <summary>
         /// Gets and sets the property ForceDelete. 
         /// <para>
-        /// If this value is set to <code>true</code>, the operation deletes a file share immediately
+        /// If this value is set to <c>true</c>, the operation deletes a file share immediately
         /// and aborts all data uploads to Amazon Web Services. Otherwise, the file share is not
         /// deleted until all data is uploaded to Amazon Web Services. This process aborts the
-        /// data upload process, and the file share enters the <code>FORCE_DELETING</code> status.
+        /// data upload process, and the file share enters the <c>FORCE_DELETING</c> status.
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>true</code> | <code>false</code> 
+        /// Valid Values: <c>true</c> | <c>false</c> 
         /// </para>
         /// </summary>
         public bool ForceDelete

@@ -34,14 +34,14 @@ namespace Amazon.ElasticTranscoder.Model
     /// 
     ///  
     /// <para>
-    /// To remove artwork or leave the artwork empty, you can either set <code>Artwork</code>
-    /// to null, or set the <code>Merge Policy</code> to "Replace" and use an empty <code>Artwork</code>
+    /// To remove artwork or leave the artwork empty, you can either set <c>Artwork</c> to
+    /// null, or set the <c>Merge Policy</c> to "Replace" and use an empty <c>Artwork</c>
     /// array.
     /// </para>
     ///  
     /// <para>
-    /// To pass through existing artwork unchanged, set the <code>Merge Policy</code> to "Prepend",
-    /// "Append", or "Fallback", and use an empty <code>Artwork</code> array.
+    /// To pass through existing artwork unchanged, set the <c>Merge Policy</c> to "Prepend",
+    /// "Append", or "Fallback", and use an empty <c>Artwork</c> array.
     /// </para>
     /// </summary>
     public partial class Artwork
@@ -57,7 +57,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property AlbumArtFormat. 
         /// <para>
-        /// The format of album art, if any. Valid formats are <code>.jpg</code> and <code>.png</code>.
+        /// The format of album art, if any. Valid formats are <c>.jpg</c> and <c>.png</c>.
         /// </para>
         /// </summary>
         public string AlbumArtFormat
@@ -95,14 +95,14 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property InputKey. 
         /// <para>
         /// The name of the file to be used as album art. To determine which Amazon S3 bucket
-        /// contains the specified file, Elastic Transcoder checks the pipeline specified by <code>PipelineId</code>;
-        /// the <code>InputBucket</code> object in that pipeline identifies the bucket.
+        /// contains the specified file, Elastic Transcoder checks the pipeline specified by <c>PipelineId</c>;
+        /// the <c>InputBucket</c> object in that pipeline identifies the bucket.
         /// </para>
         ///  
         /// <para>
-        /// If the file name includes a prefix, for example, <code>cooking/pie.jpg</code>, include
-        /// the prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder
-        /// returns an error.
+        /// If the file name includes a prefix, for example, <c>cooking/pie.jpg</c>, include the
+        /// prefix in the key. If the file isn't in the specified bucket, Elastic Transcoder returns
+        /// an error.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -121,7 +121,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property MaxHeight. 
         /// <para>
-        /// The maximum height of the output album art in pixels. If you specify <code>auto</code>,
+        /// The maximum height of the output album art in pixels. If you specify <c>auto</c>,
         /// Elastic Transcoder uses 600 as the default value. If you specify a numeric value,
         /// enter an even integer between 32 and 3072, inclusive.
         /// </para>
@@ -141,9 +141,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property MaxWidth. 
         /// <para>
-        /// The maximum width of the output album art in pixels. If you specify <code>auto</code>,
-        /// Elastic Transcoder uses 600 as the default value. If you specify a numeric value,
-        /// enter an even integer between 32 and 4096, inclusive.
+        /// The maximum width of the output album art in pixels. If you specify <c>auto</c>, Elastic
+        /// Transcoder uses 600 as the default value. If you specify a numeric value, enter an
+        /// even integer between 32 and 4096, inclusive.
         /// </para>
         /// </summary>
         public string MaxWidth
@@ -161,10 +161,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PaddingPolicy. 
         /// <para>
-        /// When you set <code>PaddingPolicy</code> to <code>Pad</code>, Elastic Transcoder may
-        /// add white bars to the top and bottom and/or left and right sides of the output album
-        /// art to make the total size of the output art match the values that you specified for
-        /// <code>MaxWidth</code> and <code>MaxHeight</code>.
+        /// When you set <c>PaddingPolicy</c> to <c>Pad</c>, Elastic Transcoder may add white
+        /// bars to the top and bottom and/or left and right sides of the output album art to
+        /// make the total size of the output art match the values that you specified for <c>MaxWidth</c>
+        /// and <c>MaxHeight</c>.
         /// </para>
         /// </summary>
         public string PaddingPolicy
@@ -186,43 +186,42 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Fit:</code> Elastic Transcoder scales the output art so it matches the value
-        /// that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> without
-        /// exceeding the other value.
+        ///  <c>Fit:</c> Elastic Transcoder scales the output art so it matches the value that
+        /// you specified in either <c>MaxWidth</c> or <c>MaxHeight</c> without exceeding the
+        /// other value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Fill:</code> Elastic Transcoder scales the output art so it matches the value
-        /// that you specified in either <code>MaxWidth</code> or <code>MaxHeight</code> and matches
-        /// or exceeds the other value. Elastic Transcoder centers the output art and then crops
-        /// it in the dimension (if any) that exceeds the maximum value. 
+        ///  <c>Fill:</c> Elastic Transcoder scales the output art so it matches the value that
+        /// you specified in either <c>MaxWidth</c> or <c>MaxHeight</c> and matches or exceeds
+        /// the other value. Elastic Transcoder centers the output art and then crops it in the
+        /// dimension (if any) that exceeds the maximum value. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Stretch:</code> Elastic Transcoder stretches the output art to match the values
-        /// that you specified for <code>MaxWidth</code> and <code>MaxHeight</code>. If the relative
-        /// proportions of the input art and the output art are different, the output art will
-        /// be distorted.
+        ///  <c>Stretch:</c> Elastic Transcoder stretches the output art to match the values that
+        /// you specified for <c>MaxWidth</c> and <c>MaxHeight</c>. If the relative proportions
+        /// of the input art and the output art are different, the output art will be distorted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Keep:</code> Elastic Transcoder does not scale the output art. If either dimension
-        /// of the input art exceeds the values that you specified for <code>MaxWidth</code> and
-        /// <code>MaxHeight</code>, Elastic Transcoder crops the output art.
+        ///  <c>Keep:</c> Elastic Transcoder does not scale the output art. If either dimension
+        /// of the input art exceeds the values that you specified for <c>MaxWidth</c> and <c>MaxHeight</c>,
+        /// Elastic Transcoder crops the output art.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ShrinkToFit:</code> Elastic Transcoder scales the output art down so that its
-        /// dimensions match the values that you specified for at least one of <code>MaxWidth</code>
-        /// and <code>MaxHeight</code> without exceeding either value. If you specify this option,
-        /// Elastic Transcoder does not scale the art up.
+        ///  <c>ShrinkToFit:</c> Elastic Transcoder scales the output art down so that its dimensions
+        /// match the values that you specified for at least one of <c>MaxWidth</c> and <c>MaxHeight</c>
+        /// without exceeding either value. If you specify this option, Elastic Transcoder does
+        /// not scale the art up.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ShrinkToFill</code> Elastic Transcoder scales the output art down so that its
-        /// dimensions match the values that you specified for at least one of <code>MaxWidth</code>
-        /// and <code>MaxHeight</code> without dropping below either value. If you specify this
-        /// option, Elastic Transcoder does not scale the art up.
+        ///  <c>ShrinkToFill</c> Elastic Transcoder scales the output art down so that its dimensions
+        /// match the values that you specified for at least one of <c>MaxWidth</c> and <c>MaxHeight</c>
+        /// without dropping below either value. If you specify this option, Elastic Transcoder
+        /// does not scale the art up.
         /// </para>
         ///  </li> </ul>
         /// </summary>

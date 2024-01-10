@@ -154,7 +154,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ThreadsPerCore. 
         /// <para>
-        /// The number of threads per CPU core you specified under <code>CreateCluster</code>.
+        /// The number of threads per CPU core you specified under <c>CreateCluster</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2)]

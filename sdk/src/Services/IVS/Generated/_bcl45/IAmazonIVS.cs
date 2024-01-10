@@ -60,15 +60,15 @@ namespace Amazon.IVS
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code> <b>Accept:</b> </code> application/json
+    ///  <c> <b>Accept:</b> </c> application/json
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code> <b>Accept-Encoding:</b> </code> gzip, deflate
+    ///  <c> <b>Accept-Encoding:</b> </c> gzip, deflate
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code> <b>Content-Type:</b> </code>application/json
+    ///  <c> <b>Content-Type:</b> </c>application/json
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -113,10 +113,10 @@ namespace Amazon.IVS
     /// <para>
     /// A <i>tag</i> is a metadata label that you assign to an Amazon Web Services resource.
     /// A tag comprises a <i>key</i> and a <i>value</i>, both set by you. For example, you
-    /// might set a tag as <code>topic:nature</code> to label a particular video category.
-    /// See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-    /// Amazon Web Services Resources</a> for more information, including restrictions that
-    /// apply to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
+    /// might set a tag as <c>topic:nature</c> to label a particular video category. See <a
+    /// href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+    /// Web Services Resources</a> for more information, including restrictions that apply
+    /// to tags and "Tag naming limits and requirements"; Amazon IVS has no service-specific
     /// constraints beyond what is documented there.
     /// </para>
     ///  
@@ -171,8 +171,7 @@ namespace Amazon.IVS
     /// <para>
     /// You generate a signature using valid Amazon Web Services credentials that have permission
     /// to perform the requested action. For example, you must sign PutMetadata requests with
-    /// a signature generated from a user account that has the <code>ivs:PutMetadata</code>
-    /// permission.
+    /// a signature generated from a user account that has the <c>ivs:PutMetadata</c> permission.
     /// </para>
     ///  
     /// <para>
@@ -310,16 +309,16 @@ namespace Amazon.IVS
     ///  <ul> <li> 
     /// <para>
     ///  <a>ImportPlaybackKeyPair</a> — Imports the public portion of a new key pair and returns
-    /// its <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> can
-    /// then be used to generate viewer authorization tokens, to grant viewers access to private
-    /// channels (channels enabled for playback authorization).
+    /// its <c>arn</c> and <c>fingerprint</c>. The <c>privateKey</c> can then be used to generate
+    /// viewer authorization tokens, to grant viewers access to private channels (channels
+    /// enabled for playback authorization).
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>GetPlaybackKeyPair</a> — Gets a specified playback authorization key pair and
-    /// returns the <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code>
-    /// held by the caller can be used to generate viewer authorization tokens, to grant viewers
-    /// access to private channels.
+    /// returns the <c>arn</c> and <c>fingerprint</c>. The <c>privateKey</c> held by the caller
+    /// can be used to generate viewer authorization tokens, to grant viewers access to private
+    /// channels.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -328,7 +327,7 @@ namespace Amazon.IVS
     ///  </li> <li> 
     /// <para>
     ///  <a>DeletePlaybackKeyPair</a> — Deletes a specified authorization key pair. This invalidates
-    /// future viewer tokens generated using the key pair’s <code>privateKey</code>.
+    /// future viewer tokens generated using the key pair’s <c>privateKey</c>.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -573,9 +572,9 @@ namespace Amazon.IVS
         /// <para>
         ///  <b>Known issue:</b> In the us-east-1 region, if you use the Amazon Web Services CLI
         /// to create a recording configuration, it returns success even if the S3 bucket is in
-        /// a different region. In this case, the <code>state</code> of the recording configuration
-        /// is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other regions,
-        /// the CLI correctly returns failure if the bucket is in a different region.)
+        /// a different region. In this case, the <c>state</c> of the recording configuration
+        /// is <c>CREATE_FAILED</c> (instead of <c>ACTIVE</c>). (In other regions, the CLI correctly
+        /// returns failure if the bucket is in a different region.)
         /// </para>
         ///  
         /// <para>
@@ -618,9 +617,9 @@ namespace Amazon.IVS
         /// <para>
         ///  <b>Known issue:</b> In the us-east-1 region, if you use the Amazon Web Services CLI
         /// to create a recording configuration, it returns success even if the S3 bucket is in
-        /// a different region. In this case, the <code>state</code> of the recording configuration
-        /// is <code>CREATE_FAILED</code> (instead of <code>ACTIVE</code>). (In other regions,
-        /// the CLI correctly returns failure if the bucket is in a different region.)
+        /// a different region. In this case, the <c>state</c> of the recording configuration
+        /// is <c>CREATE_FAILED</c> (instead of <c>ACTIVE</c>). (In other regions, the CLI correctly
+        /// returns failure if the bucket is in a different region.)
         /// </para>
         ///  
         /// <para>
@@ -814,8 +813,7 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Deletes a specified authorization key pair. This invalidates future viewer tokens
-        /// generated using the key pair’s <code>privateKey</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// generated using the key pair’s <c>privateKey</c>. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
         /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackKeyPair service method.</param>
@@ -840,8 +838,7 @@ namespace Amazon.IVS
 
         /// <summary>
         /// Deletes a specified authorization key pair. This invalidates future viewer tokens
-        /// generated using the key pair’s <code>privateKey</code>. For more information, see
-        /// <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// generated using the key pair’s <c>privateKey</c>. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
         /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeletePlaybackKeyPair service method.</param>
@@ -877,7 +874,7 @@ namespace Amazon.IVS
         /// <para>
         /// If you try to delete a recording configuration that is associated with a channel,
         /// you will get an error (409 ConflictException). To avoid this, for all channels that
-        /// reference the recording configuration, first use <a>UpdateChannel</a> to set the <code>recordingConfigurationArn</code>
+        /// reference the recording configuration, first use <a>UpdateChannel</a> to set the <c>recordingConfigurationArn</c>
         /// field to an empty string, then use DeleteRecordingConfiguration.
         /// </para>
         /// </summary>
@@ -911,7 +908,7 @@ namespace Amazon.IVS
         /// <para>
         /// If you try to delete a recording configuration that is associated with a channel,
         /// you will get an error (409 ConflictException). To avoid this, for all channels that
-        /// reference the recording configuration, first use <a>UpdateChannel</a> to set the <code>recordingConfigurationArn</code>
+        /// reference the recording configuration, first use <a>UpdateChannel</a> to set the <c>recordingConfigurationArn</c>
         /// field to an empty string, then use DeleteRecordingConfiguration.
         /// </para>
         /// </summary>
@@ -1043,10 +1040,10 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets a specified playback authorization key pair and returns the <code>arn</code>
-        /// and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
-        /// used to generate viewer authorization tokens, to grant viewers access to private channels.
-        /// For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Gets a specified playback authorization key pair and returns the <c>arn</c> and <c>fingerprint</c>.
+        /// The <c>privateKey</c> held by the caller can be used to generate viewer authorization
+        /// tokens, to grant viewers access to private channels. For more information, see <a
+        /// href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
         /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlaybackKeyPair service method.</param>
@@ -1067,10 +1064,10 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Gets a specified playback authorization key pair and returns the <code>arn</code>
-        /// and <code>fingerprint</code>. The <code>privateKey</code> held by the caller can be
-        /// used to generate viewer authorization tokens, to grant viewers access to private channels.
-        /// For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Gets a specified playback authorization key pair and returns the <c>arn</c> and <c>fingerprint</c>.
+        /// The <c>privateKey</c> held by the caller can be used to generate viewer authorization
+        /// tokens, to grant viewers access to private channels. For more information, see <a
+        /// href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
         /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPlaybackKeyPair service method.</param>
@@ -1293,10 +1290,9 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Imports the public portion of a new key pair and returns its <code>arn</code> and
-        /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
-        /// viewer authorization tokens, to grant viewers access to private channels. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Imports the public portion of a new key pair and returns its <c>arn</c> and <c>fingerprint</c>.
+        /// The <c>privateKey</c> can then be used to generate viewer authorization tokens, to
+        /// grant viewers access to private channels. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
         /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportPlaybackKeyPair service method.</param>
@@ -1323,10 +1319,9 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Imports the public portion of a new key pair and returns its <code>arn</code> and
-        /// <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate
-        /// viewer authorization tokens, to grant viewers access to private channels. For more
-        /// information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
+        /// Imports the public portion of a new key pair and returns its <c>arn</c> and <c>fingerprint</c>.
+        /// The <c>privateKey</c> can then be used to generate viewer authorization tokens, to
+        /// grant viewers access to private channels. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting
         /// Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportPlaybackKeyPair service method.</param>
@@ -1827,7 +1822,7 @@ namespace Amazon.IVS
         ///  <note> 
         /// <para>
         /// Many streaming client-software libraries automatically reconnect a dropped RTMPS session,
-        /// so to stop the stream permanently, you may want to first revoke the <code>streamKey</code>
+        /// so to stop the stream permanently, you may want to first revoke the <c>streamKey</c>
         /// attached to the channel.
         /// </para>
         ///  </note>
@@ -1862,7 +1857,7 @@ namespace Amazon.IVS
         ///  <note> 
         /// <para>
         /// Many streaming client-software libraries automatically reconnect a dropped RTMPS session,
-        /// so to stop the stream permanently, you may want to first revoke the <code>streamKey</code>
+        /// so to stop the stream permanently, you may want to first revoke the <c>streamKey</c>
         /// attached to the channel.
         /// </para>
         ///  </note>

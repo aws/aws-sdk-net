@@ -39,11 +39,11 @@ namespace Amazon.ElasticLoadBalancingV2.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The state code. The initial state of the load balancer is <code>provisioning</code>.
-        /// After the load balancer is fully set up and ready to route traffic, its state is <code>active</code>.
+        /// The state code. The initial state of the load balancer is <c>provisioning</c>. After
+        /// the load balancer is fully set up and ready to route traffic, its state is <c>active</c>.
         /// If load balancer is routing traffic but does not have the resources it needs to scale,
-        /// its state is<code>active_impaired</code>. If the load balancer could not be set up,
-        /// its state is <code>failed</code>.
+        /// its state is<c>active_impaired</c>. If the load balancer could not be set up, its
+        /// state is <c>failed</c>.
         /// </para>
         /// </summary>
         public LoadBalancerStateEnum Code

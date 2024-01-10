@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// The specified report (<code>ReportName</code>) in the request doesn't exist.
+    /// The specified report (<c>ReportName</c>) in the request doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

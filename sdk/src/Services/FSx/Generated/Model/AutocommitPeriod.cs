@@ -48,8 +48,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Defines the type of time for the autocommit period of a file in an FSx for ONTAP SnapLock
-        /// volume. Setting this value to <code>NONE</code> disables autocommit. The default value
-        /// is <code>NONE</code>. 
+        /// volume. Setting this value to <c>NONE</c> disables autocommit. The default value is
+        /// <c>NONE</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -73,23 +73,23 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Minutes</code>: 5 - 65,535
+        ///  <c>Minutes</c>: 5 - 65,535
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Hours</code>: 1 - 65,535
+        ///  <c>Hours</c>: 1 - 65,535
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Days</code>: 1 - 3,650
+        ///  <c>Days</c>: 1 - 3,650
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Months</code>: 1 - 120
+        ///  <c>Months</c>: 1 - 120
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Years</code>: 1 - 10
+        ///  <c>Years</c>: 1 - 10
         /// </para>
         ///  </li> </ul>
         /// </summary>

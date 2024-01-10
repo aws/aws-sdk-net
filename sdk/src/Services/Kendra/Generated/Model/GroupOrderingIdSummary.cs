@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kendra.Model
 {
     /// <summary>
-    /// Summary information on the processing of <code>PUT</code> and <code>DELETE</code>
-    /// actions for mapping users to their groups.
+    /// Summary information on the processing of <c>PUT</c> and <c>DELETE</c> actions for
+    /// mapping users to their groups.
     /// </summary>
     public partial class GroupOrderingIdSummary
     {
@@ -43,8 +43,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// The reason an action could not be processed. An action can be a <code>PUT</code> or
-        /// <code>DELETE</code> action for mapping users to their groups.
+        /// The reason an action could not be processed. An action can be a <c>PUT</c> or <c>DELETE</c>
+        /// action for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -63,8 +63,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedAt. 
         /// <para>
-        /// The Unix timestamp when an action was last updated. An action can be a <code>PUT</code>
-        /// or <code>DELETE</code> action for mapping users to their groups.
+        /// The Unix timestamp when an action was last updated. An action can be a <c>PUT</c>
+        /// or <c>DELETE</c> action for mapping users to their groups.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedAt
@@ -82,8 +82,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property OrderingId. 
         /// <para>
-        /// The order in which actions should complete processing. An action can be a <code>PUT</code>
-        /// or <code>DELETE</code> action for mapping users to their groups.
+        /// The order in which actions should complete processing. An action can be a <c>PUT</c>
+        /// or <c>DELETE</c> action for mapping users to their groups.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=32535158400000)]
@@ -103,7 +103,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property ReceivedAt. 
         /// <para>
         /// The Unix timestamp when an action was received by Amazon Kendra. An action can be
-        /// a <code>PUT</code> or <code>DELETE</code> action for mapping users to their groups.
+        /// a <c>PUT</c> or <c>DELETE</c> action for mapping users to their groups.
         /// </para>
         /// </summary>
         public DateTime ReceivedAt
@@ -122,8 +122,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The current processing status of actions for mapping users to their groups. The status
-        /// can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
-        /// <code>DELETED</code>, or <code>FAILED</code>.
+        /// can be either <c>PROCESSING</c>, <c>SUCCEEDED</c>, <c>DELETING</c>, <c>DELETED</c>,
+        /// or <c>FAILED</c>.
         /// </para>
         /// </summary>
         public PrincipalMappingStatus Status

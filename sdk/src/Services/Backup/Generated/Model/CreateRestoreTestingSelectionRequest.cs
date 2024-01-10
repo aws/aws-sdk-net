@@ -36,16 +36,16 @@ namespace Amazon.Backup.Model
     /// 
     ///  
     /// <para>
-    /// This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>,
+    /// This consists of <c>RestoreTestingSelectionName</c>, <c>ProtectedResourceType</c>,
     /// and one of the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>ProtectedResourceArns</code> 
+    ///  <c>ProtectedResourceArns</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>ProtectedResourceConditions</code> 
+    ///  <c>ProtectedResourceConditions</c> 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -53,9 +53,9 @@ namespace Amazon.Backup.Model
     /// </para>
     ///  
     /// <para>
-    /// A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code>
-    /// along with <code>ProtectedResourceConditions</code>. Alternatively, you can include
-    /// up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.
+    /// A restore testing selection can include a wildcard value ("*") for <c>ProtectedResourceArns</c>
+    /// along with <c>ProtectedResourceConditions</c>. Alternatively, you can include up to
+    /// 30 specific protected resource ARNs in <c>ProtectedResourceArns</c>.
     /// </para>
     ///  
     /// <para>
@@ -112,16 +112,16 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property RestoreTestingSelection. 
         /// <para>
-        /// This consists of <code>RestoreTestingSelectionName</code>, <code>ProtectedResourceType</code>,
+        /// This consists of <c>RestoreTestingSelectionName</c>, <c>ProtectedResourceType</c>,
         /// and one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ProtectedResourceArns</code> 
+        ///  <c>ProtectedResourceArns</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ProtectedResourceConditions</code> 
+        ///  <c>ProtectedResourceConditions</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -129,9 +129,9 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  
         /// <para>
-        /// A restore testing selection can include a wildcard value ("*") for <code>ProtectedResourceArns</code>
-        /// along with <code>ProtectedResourceConditions</code>. Alternatively, you can include
-        /// up to 30 specific protected resource ARNs in <code>ProtectedResourceArns</code>.
+        /// A restore testing selection can include a wildcard value ("*") for <c>ProtectedResourceArns</c>
+        /// along with <c>ProtectedResourceConditions</c>. Alternatively, you can include up to
+        /// 30 specific protected resource ARNs in <c>ProtectedResourceArns</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

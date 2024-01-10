@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudSearchDomain.Model
 {
     /// <summary>
-    /// Contains the response to a <code>Suggest</code> request.
+    /// Contains the response to a <c>Suggest</c> request.
     /// </summary>
     public partial class SuggestResponse : AmazonWebServiceResponse
     {
@@ -39,8 +39,8 @@ namespace Amazon.CloudSearchDomain.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of a <code>SuggestRequest</code>. Contains the resource ID (<code>rid</code>)
-        /// and how long it took to process the request (<code>timems</code>).
+        /// The status of a <c>SuggestRequest</c>. Contains the resource ID (<c>rid</c>) and how
+        /// long it took to process the request (<c>timems</c>).
         /// </para>
         /// </summary>
         public SuggestStatus Status

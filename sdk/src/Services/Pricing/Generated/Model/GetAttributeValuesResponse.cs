@@ -39,9 +39,8 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property AttributeValues. 
         /// <para>
-        /// The list of values for an attribute. For example, <code>Throughput Optimized HDD</code>
-        /// and <code>Provisioned IOPS</code> are two available values for the <code>AmazonEC2</code>
-        /// <code>volumeType</code>.
+        /// The list of values for an attribute. For example, <c>Throughput Optimized HDD</c>
+        /// and <c>Provisioned IOPS</c> are two available values for the <c>AmazonEC2</c> <c>volumeType</c>.
         /// </para>
         /// </summary>
         public List<AttributeValue> AttributeValues

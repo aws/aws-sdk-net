@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// Conditional formatting options of a <code>FilledMapVisual</code>.
+    /// Conditional formatting options of a <c>FilledMapVisual</c>.
     /// </summary>
     public partial class FilledMapConditionalFormattingOption
     {

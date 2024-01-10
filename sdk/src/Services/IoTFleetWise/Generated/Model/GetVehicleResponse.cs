@@ -66,7 +66,7 @@ namespace Amazon.IoTFleetWise.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"engineType"</code> : <code>"1.3 L R2"</code> 
+        ///  <c>"engineType"</c> : <c>"1.3 L R2"</c> 
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

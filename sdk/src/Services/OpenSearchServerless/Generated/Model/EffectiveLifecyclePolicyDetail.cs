@@ -44,8 +44,8 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property NoMinRetentionPeriod. 
         /// <para>
         /// The minimum number of index retention days set. That is an optional param that will
-        /// return as <code>true</code> if the minimum number of days or hours is not set to a
-        /// index resource.
+        /// return as <c>true</c> if the minimum number of days or hours is not set to a index
+        /// resource.
         /// </para>
         /// </summary>
         public bool NoMinRetentionPeriod
@@ -101,7 +101,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of OpenSearch Serverless resource. Currently, the only supported resource
-        /// is <code>index</code>.
+        /// is <c>index</c>.
         /// </para>
         /// </summary>
         public ResourceType ResourceType

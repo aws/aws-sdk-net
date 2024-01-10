@@ -40,14 +40,13 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    ///  <code>CreateAutoMLJobV2</code> can manage tabular problem types identical to those
-    /// of its previous version <code>CreateAutoMLJob</code>, as well as time-series forecasting,
-    /// non-tabular problem types such as image or text classification, and text generation
-    /// (LLMs fine-tuning).
+    ///  <c>CreateAutoMLJobV2</c> can manage tabular problem types identical to those of its
+    /// previous version <c>CreateAutoMLJob</c>, as well as time-series forecasting, non-tabular
+    /// problem types such as image or text classification, and text generation (LLMs fine-tuning).
     /// </para>
     ///  
     /// <para>
-    /// Find guidelines about how to migrate a <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+    /// Find guidelines about how to migrate a <c>CreateAutoMLJob</c> to <c>CreateAutoMLJobV2</c>
     /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
     /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
     /// </para>
@@ -150,7 +149,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// An array of channel objects that describes the input data and its location. Each channel
-        /// is a named input source. Similar to <code>InputDataConfig</code> supported by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+        /// is a named input source. Similar to <c>InputDataConfig</c> supported by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
         /// Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training
         /// dataset. There is not a minimum number of rows required for the validation dataset.
         /// </para>

@@ -38,8 +38,7 @@ namespace Amazon.Bedrock.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Specifies whether a model version is available (<code>ACTIVE</code>) or deprecated
-        /// (<code>LEGACY</code>.
+        /// Specifies whether a model version is available (<c>ACTIVE</c>) or deprecated (<c>LEGACY</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

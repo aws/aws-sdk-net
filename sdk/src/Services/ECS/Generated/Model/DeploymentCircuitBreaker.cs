@@ -32,7 +32,7 @@ namespace Amazon.ECS.Model
     /// <note> 
     /// <para>
     /// The deployment circuit breaker can only be used for services using the rolling update
-    /// (<code>ECS</code>) deployment type.
+    /// (<c>ECS</c>) deployment type.
     /// </para>
     ///  </note> 
     /// <para>

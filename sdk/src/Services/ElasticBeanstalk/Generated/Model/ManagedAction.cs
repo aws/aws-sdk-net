@@ -96,8 +96,8 @@ namespace Amazon.ElasticBeanstalk.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the managed action. If the action is <code>Scheduled</code>, you can
-        /// apply it immediately with <a>ApplyEnvironmentManagedAction</a>.
+        /// The status of the managed action. If the action is <c>Scheduled</c>, you can apply
+        /// it immediately with <a>ApplyEnvironmentManagedAction</a>.
         /// </para>
         /// </summary>
         public ActionStatus Status

@@ -57,8 +57,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableClass. 
         /// <para>
-        /// The table class of the specified table. Valid values are <code>STANDARD</code> and
-        /// <code>STANDARD_INFREQUENT_ACCESS</code>.
+        /// The table class of the specified table. Valid values are <c>STANDARD</c> and <c>STANDARD_INFREQUENT_ACCESS</c>.
         /// </para>
         /// </summary>
         public TableClass TableClass

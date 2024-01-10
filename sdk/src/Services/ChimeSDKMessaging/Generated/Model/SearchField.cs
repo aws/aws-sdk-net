@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// A <code>Field</code> of the channel that you want to search.
+    /// A <c>Field</c> of the channel that you want to search.
     /// </summary>
     public partial class SearchField
     {
@@ -40,11 +40,11 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// An <code>enum</code> value that indicates the key to search the channel on. <code>MEMBERS</code>
-        /// allows you to search channels based on memberships. You can use it with the <code>EQUALS</code>
+        /// An <c>enum</c> value that indicates the key to search the channel on. <c>MEMBERS</c>
+        /// allows you to search channels based on memberships. You can use it with the <c>EQUALS</c>
         /// operator to get channels whose memberships are equal to the specified values, and
-        /// with the <code>INCLUDES</code> operator to get channels whose memberships include
-        /// the specified values.
+        /// with the <c>INCLUDES</c> operator to get channels whose memberships include the specified
+        /// values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -63,10 +63,10 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Operator. 
         /// <para>
-        /// The operator used to compare field values, currently <code>EQUALS</code> or <code>INCLUDES</code>.
-        /// Use the <code>EQUALS</code> operator to find channels whose memberships equal the
-        /// specified values. Use the <code>INCLUDES</code> operator to find channels whose memberships
-        /// include the specified values.
+        /// The operator used to compare field values, currently <c>EQUALS</c> or <c>INCLUDES</c>.
+        /// Use the <c>EQUALS</c> operator to find channels whose memberships equal the specified
+        /// values. Use the <c>INCLUDES</c> operator to find channels whose memberships include
+        /// the specified values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -85,13 +85,12 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// The values that you want to search for, a list of strings. The values must be <code>AppInstanceUserArns</code>
+        /// The values that you want to search for, a list of strings. The values must be <c>AppInstanceUserArns</c>
         /// specified as a list of strings.
         /// </para>
         ///  <note> 
         /// <para>
-        /// This operation isn't supported for <code>AppInstanceUsers</code> with large number
-        /// of memberships.
+        /// This operation isn't supported for <c>AppInstanceUsers</c> with large number of memberships.
         /// </para>
         ///  </note>
         /// </summary>

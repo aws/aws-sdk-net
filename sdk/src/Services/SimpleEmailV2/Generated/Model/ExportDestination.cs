@@ -43,11 +43,11 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CSV</code> - A comma-separated values file.
+        ///  <c>CSV</c> - A comma-separated values file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>JSON</code> - A Json file.
+        ///  <c>JSON</c> - A Json file.
         /// </para>
         ///  </li> </ul>
         /// </summary>

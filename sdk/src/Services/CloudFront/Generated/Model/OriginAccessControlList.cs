@@ -43,7 +43,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property IsTruncated. 
         /// <para>
-        /// If there are more items in the list than are in this response, this value is <code>true</code>.
+        /// If there are more items in the list than are in this response, this value is <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -80,7 +80,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Marker. 
         /// <para>
-        /// The value of the <code>Marker</code> field that was provided in the request.
+        /// The value of the <c>Marker</c> field that was provided in the request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -119,8 +119,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property NextMarker. 
         /// <para>
         /// If there are more items in the list than are in this response, this element is present.
-        /// It contains the value to use in the <code>Marker</code> field of another request to
-        /// continue listing origin access controls.
+        /// It contains the value to use in the <c>Marker</c> field of another request to continue
+        /// listing origin access controls.
         /// </para>
         /// </summary>
         public string NextMarker

@@ -216,7 +216,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property WatchlistDetails. 
         /// <para>
-        /// Provides information about <code>watchlistDetails</code> and <code>DefaultWatchlistID</code>.
+        /// Provides information about <c>watchlistDetails</c> and <c>DefaultWatchlistID</c>.
         /// 
         /// </para>
         /// </summary>

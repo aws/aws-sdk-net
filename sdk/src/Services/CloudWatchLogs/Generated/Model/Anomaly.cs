@@ -140,8 +140,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property FirstSeen. 
         /// <para>
         /// The date and time when the anomaly detector first saw this anomaly. It is specified
-        /// as epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00
-        /// UTC</code>.
+        /// as epoch time, which is the number of seconds since <c>January 1, 1970, 00:00:00 UTC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -162,7 +161,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// A map showing times when the anomaly detector ran, and the number of occurrences of
         /// this anomaly that were detected at each of those runs. The times are specified in
-        /// epoch time, which is the number of seconds since <code>January 1, 1970, 00:00:00 UTC</code>.
+        /// epoch time, which is the number of seconds since <c>January 1, 1970, 00:00:00 UTC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -181,9 +180,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property IsPatternLevelSuppression. 
         /// <para>
-        /// If this anomaly is suppressed, this field is <code>true</code> if the suppression
-        /// is because the pattern is suppressed. If <code>false</code>, then only this particular
-        /// anomaly is suppressed.
+        /// If this anomaly is suppressed, this field is <c>true</c> if the suppression is because
+        /// the pattern is suppressed. If <c>false</c>, then only this particular anomaly is suppressed.
         /// </para>
         /// </summary>
         public bool IsPatternLevelSuppression
@@ -202,8 +200,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property LastSeen. 
         /// <para>
         /// The date and time when the anomaly detector most recently saw this anomaly. It is
-        /// specified as epoch time, which is the number of seconds since <code>January 1, 1970,
-        /// 00:00:00 UTC</code>.
+        /// specified as epoch time, which is the number of seconds since <c>January 1, 1970,
+        /// 00:00:00 UTC</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
@@ -339,9 +337,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property Priority. 
         /// <para>
         /// The priority level of this anomaly, as determined by CloudWatch Logs. Priority is
-        /// computed based on log severity labels such as <code>FATAL</code> and <code>ERROR</code>
-        /// and the amount of deviation from the baseline. Possible values are <code>HIGH</code>,
-        /// <code>MEDIUM</code>, and <code>LOW</code>.
+        /// computed based on log severity labels such as <c>FATAL</c> and <c>ERROR</c> and the
+        /// amount of deviation from the baseline. Possible values are <c>HIGH</c>, <c>MEDIUM</c>,
+        /// and <c>LOW</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -361,10 +359,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property State. 
         /// <para>
         /// Indicates the current state of this anomaly. If it is still being treated as an anomaly,
-        /// the value is <code>Active</code>. If you have suppressed this anomaly by using the
-        /// <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateAnomaly.html">UpdateAnomaly</a>
-        /// operation, the value is <code>Suppressed</code>. If this behavior is now considered
-        /// to be normal, the value is <code>Baseline</code>.
+        /// the value is <c>Active</c>. If you have suppressed this anomaly by using the <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_UpdateAnomaly.html">UpdateAnomaly</a>
+        /// operation, the value is <c>Suppressed</c>. If this behavior is now considered to be
+        /// normal, the value is <c>Baseline</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -422,7 +419,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property SuppressedUntil. 
         /// <para>
         /// If the anomaly is suppressed, this indicates when the suppression will end. If this
-        /// value is <code>0</code>, the anomaly was suppressed with no expiration, with the <code>INFINITE</code>
+        /// value is <c>0</c>, the anomaly was suppressed with no expiration, with the <c>INFINITE</c>
         /// value.
         /// </para>
         /// </summary>

@@ -85,8 +85,8 @@ namespace Amazon.CognitoIdentityProvider
     /// flows in every use case for this API. You can also make direct REST API requests to
     /// <a href="https://docs.aws.amazon.com/general/latest/gr/cognito_identity.html#cognito_identity_your_user_pools_region">Amazon
     /// Cognito user pools service endpoints</a>. The following links can get you started
-    /// with the <code>CognitoIdentityProvider</code> client in other supported Amazon Web
-    /// Services SDKs.
+    /// with the <c>CognitoIdentityProvider</c> client in other supported Amazon Web Services
+    /// SDKs.
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -493,8 +493,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Adds a user to a group. A user who is in a group can present a preferred-role claim
-        /// to an identity pool, and populates a <code>cognito:groups</code> claim to their access
-        /// and identity tokens.
+        /// to an identity pool, and populates a <c>cognito:groups</c> claim to their access and
+        /// identity tokens.
         /// 
         ///  <note> 
         /// <para>
@@ -553,8 +553,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Adds a user to a group. A user who is in a group can present a preferred-role claim
-        /// to an identity pool, and populates a <code>cognito:groups</code> claim to their access
-        /// and identity tokens.
+        /// to an identity pool, and populates a <c>cognito:groups</c> claim to their access and
+        /// identity tokens.
         /// 
         ///  <note> 
         /// <para>
@@ -806,8 +806,8 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// If <code>MessageAction</code> isn't set, the default is to send a welcome message
-        /// via email or phone (SMS).
+        /// If <c>MessageAction</c> isn't set, the default is to send a welcome message via email
+        /// or phone (SMS).
         /// </para>
         ///  <note> 
         /// <para>
@@ -838,14 +838,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, you can call <code>AdminCreateUser</code> with <code>SUPPRESS</code>
-        /// for the <code>MessageAction</code> parameter, and Amazon Cognito won't send any email.
-        /// 
+        /// Alternatively, you can call <c>AdminCreateUser</c> with <c>SUPPRESS</c> for the <c>MessageAction</c>
+        /// parameter, and Amazon Cognito won't send any email. 
         /// </para>
         ///  
         /// <para>
-        /// In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until
-        /// they sign in and change their password.
+        /// In either case, the user will be in the <c>FORCE_CHANGE_PASSWORD</c> state until they
+        /// sign in and change their password.
         /// </para>
         ///  <note> 
         /// <para>
@@ -893,7 +892,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -944,8 +943,8 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// If <code>MessageAction</code> isn't set, the default is to send a welcome message
-        /// via email or phone (SMS).
+        /// If <c>MessageAction</c> isn't set, the default is to send a welcome message via email
+        /// or phone (SMS).
         /// </para>
         ///  <note> 
         /// <para>
@@ -976,14 +975,13 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Alternatively, you can call <code>AdminCreateUser</code> with <code>SUPPRESS</code>
-        /// for the <code>MessageAction</code> parameter, and Amazon Cognito won't send any email.
-        /// 
+        /// Alternatively, you can call <c>AdminCreateUser</c> with <c>SUPPRESS</c> for the <c>MessageAction</c>
+        /// parameter, and Amazon Cognito won't send any email. 
         /// </para>
         ///  
         /// <para>
-        /// In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until
-        /// they sign in and change their password.
+        /// In either case, the user will be in the <c>FORCE_CHANGE_PASSWORD</c> state until they
+        /// sign in and change their password.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1034,7 +1032,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -1336,37 +1334,37 @@ namespace Amazon.CognitoIdentityProvider
         /// native username + password user, they can't use their password to sign in. If the
         /// user to deactivate is a linked external IdP user, any link between that user and an
         /// existing user is removed. When the external user signs in again, and the user is no
-        /// longer attached to the previously linked <code>DestinationUser</code>, the user must
-        /// create a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+        /// longer attached to the previously linked <c>DestinationUser</c>, the user must create
+        /// a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
         /// 
         ///  
         /// <para>
-        /// The <code>ProviderName</code> must match the value specified when creating an IdP
-        /// for the pool. 
+        /// The <c>ProviderName</c> must match the value specified when creating an IdP for the
+        /// pool. 
         /// </para>
         ///  
         /// <para>
-        /// To deactivate a native username + password user, the <code>ProviderName</code> value
-        /// must be <code>Cognito</code> and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>.
-        /// The <code>ProviderAttributeValue</code> must be the name that is used in the user
-        /// pool for the user.
+        /// To deactivate a native username + password user, the <c>ProviderName</c> value must
+        /// be <c>Cognito</c> and the <c>ProviderAttributeName</c> must be <c>Cognito_Subject</c>.
+        /// The <c>ProviderAttributeValue</c> must be the name that is used in the user pool for
+        /// the user.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code>
-        /// for social IdPs. The <code>ProviderAttributeValue</code> must always be the exact
-        /// subject that was used when the user was originally linked as a source user.
+        /// The <c>ProviderAttributeName</c> must always be <c>Cognito_Subject</c> for social
+        /// IdPs. The <c>ProviderAttributeValue</c> must always be the exact subject that was
+        /// used when the user was originally linked as a source user.
         /// </para>
         ///  
         /// <para>
         /// For de-linking a SAML identity, there are two scenarios. If the linked identity has
-        /// not yet been used to sign in, the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code>
-        /// must be the same values that were used for the <code>SourceUser</code> when the identities
-        /// were originally linked using <code> AdminLinkProviderForUser</code> call. (If the
-        /// linking was done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>,
-        /// the same applies here). However, if the user has already signed in, the <code>ProviderAttributeName</code>
-        /// must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must
-        /// be the subject of the SAML assertion.
+        /// not yet been used to sign in, the <c>ProviderAttributeName</c> and <c>ProviderAttributeValue</c>
+        /// must be the same values that were used for the <c>SourceUser</c> when the identities
+        /// were originally linked using <c> AdminLinkProviderForUser</c> call. (If the linking
+        /// was done with <c>ProviderAttributeName</c> set to <c>Cognito_Subject</c>, the same
+        /// applies here). However, if the user has already signed in, the <c>ProviderAttributeName</c>
+        /// must be <c>Cognito_Subject</c> and <c>ProviderAttributeValue</c> must be the subject
+        /// of the SAML assertion.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1436,37 +1434,37 @@ namespace Amazon.CognitoIdentityProvider
         /// native username + password user, they can't use their password to sign in. If the
         /// user to deactivate is a linked external IdP user, any link between that user and an
         /// existing user is removed. When the external user signs in again, and the user is no
-        /// longer attached to the previously linked <code>DestinationUser</code>, the user must
-        /// create a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
+        /// longer attached to the previously linked <c>DestinationUser</c>, the user must create
+        /// a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.
         /// 
         ///  
         /// <para>
-        /// The <code>ProviderName</code> must match the value specified when creating an IdP
-        /// for the pool. 
+        /// The <c>ProviderName</c> must match the value specified when creating an IdP for the
+        /// pool. 
         /// </para>
         ///  
         /// <para>
-        /// To deactivate a native username + password user, the <code>ProviderName</code> value
-        /// must be <code>Cognito</code> and the <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code>.
-        /// The <code>ProviderAttributeValue</code> must be the name that is used in the user
-        /// pool for the user.
+        /// To deactivate a native username + password user, the <c>ProviderName</c> value must
+        /// be <c>Cognito</c> and the <c>ProviderAttributeName</c> must be <c>Cognito_Subject</c>.
+        /// The <c>ProviderAttributeValue</c> must be the name that is used in the user pool for
+        /// the user.
         /// </para>
         ///  
         /// <para>
-        /// The <code>ProviderAttributeName</code> must always be <code>Cognito_Subject</code>
-        /// for social IdPs. The <code>ProviderAttributeValue</code> must always be the exact
-        /// subject that was used when the user was originally linked as a source user.
+        /// The <c>ProviderAttributeName</c> must always be <c>Cognito_Subject</c> for social
+        /// IdPs. The <c>ProviderAttributeValue</c> must always be the exact subject that was
+        /// used when the user was originally linked as a source user.
         /// </para>
         ///  
         /// <para>
         /// For de-linking a SAML identity, there are two scenarios. If the linked identity has
-        /// not yet been used to sign in, the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code>
-        /// must be the same values that were used for the <code>SourceUser</code> when the identities
-        /// were originally linked using <code> AdminLinkProviderForUser</code> call. (If the
-        /// linking was done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>,
-        /// the same applies here). However, if the user has already signed in, the <code>ProviderAttributeName</code>
-        /// must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must
-        /// be the subject of the SAML assertion.
+        /// not yet been used to sign in, the <c>ProviderAttributeName</c> and <c>ProviderAttributeValue</c>
+        /// must be the same values that were used for the <c>SourceUser</c> when the identities
+        /// were originally linked using <c> AdminLinkProviderForUser</c> call. (If the linking
+        /// was done with <c>ProviderAttributeName</c> set to <c>Cognito_Subject</c>, the same
+        /// applies here). However, if the user has already signed in, the <c>ProviderAttributeName</c>
+        /// must be <c>Cognito_Subject</c> and <c>ProviderAttributeValue</c> must be the subject
+        /// of the SAML assertion.
         /// </para>
         ///  <note> 
         /// <para>
@@ -1539,7 +1537,7 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Deactivates a user and revokes all access tokens for the user. A deactivated user
-        /// can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code>
+        /// can't sign in, but still appears in the responses to <c>GetUser</c> and <c>ListUsers</c>
         /// API requests.
         /// 
         ///  <note> 
@@ -1599,7 +1597,7 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Deactivates a user and revokes all access tokens for the user. A deactivated user
-        /// can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code>
+        /// can't sign in, but still appears in the responses to <c>GetUser</c> and <c>ListUsers</c>
         /// API requests.
         /// 
         ///  <note> 
@@ -2228,7 +2226,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -2344,7 +2342,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -2398,12 +2396,12 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Links an existing user account in a user pool (<code>DestinationUser</code>) to an
-        /// identity from an external IdP (<code>SourceUser</code>) based on a specified attribute
-        /// name and value from the external IdP. This allows you to create a link from the existing
-        /// user account to an external federated user identity that has not yet been used to
-        /// sign in. You can then use the federated user identity to sign in as the existing user
-        /// account. 
+        /// Links an existing user account in a user pool (<c>DestinationUser</c>) to an identity
+        /// from an external IdP (<c>SourceUser</c>) based on a specified attribute name and value
+        /// from the external IdP. This allows you to create a link from the existing user account
+        /// to an external federated user identity that has not yet been used to sign in. You
+        /// can then use the federated user identity to sign in as the existing user account.
+        /// 
         /// 
         ///  
         /// <para>
@@ -2488,12 +2486,12 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Links an existing user account in a user pool (<code>DestinationUser</code>) to an
-        /// identity from an external IdP (<code>SourceUser</code>) based on a specified attribute
-        /// name and value from the external IdP. This allows you to create a link from the existing
-        /// user account to an external federated user identity that has not yet been used to
-        /// sign in. You can then use the federated user identity to sign in as the existing user
-        /// account. 
+        /// Links an existing user account in a user pool (<c>DestinationUser</c>) to an identity
+        /// from an external IdP (<c>SourceUser</c>) based on a specified attribute name and value
+        /// from the external IdP. This allows you to create a link from the existing user account
+        /// to an external federated user identity that has not yet been used to sign in. You
+        /// can then use the federated user identity to sign in as the existing user account.
+        /// 
         /// 
         ///  
         /// <para>
@@ -3112,7 +3110,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  </note> 
         /// <para>
         /// Deactivates a user's password, requiring them to change it. If a user tries to sign
-        /// in after the API is called, Amazon Cognito responds with a <code>PasswordResetRequiredException</code>
+        /// in after the API is called, Amazon Cognito responds with a <c>PasswordResetRequiredException</c>
         /// error. Your app must then perform the actions that reset your user's password: the
         /// forgot-password flow. In addition, if the user pool has phone verification selected
         /// and a verified phone number exists for the user, or if email verification is selected
@@ -3163,7 +3161,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -3231,7 +3229,7 @@ namespace Amazon.CognitoIdentityProvider
         ///  </note> 
         /// <para>
         /// Deactivates a user's password, requiring them to change it. If a user tries to sign
-        /// in after the API is called, Amazon Cognito responds with a <code>PasswordResetRequiredException</code>
+        /// in after the API is called, Amazon Cognito responds with a <c>PasswordResetRequiredException</c>
         /// error. Your app must then perform the actions that reset your user's password: the
         /// forgot-password flow. In addition, if the user pool has phone verification selected
         /// and a verified phone number exists for the user, or if email verification is selected
@@ -3285,7 +3283,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -3332,9 +3330,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Some API operations in a user pool generate a challenge, like a prompt for an MFA
         /// code, for device authentication that bypasses MFA, or for a custom authentication
-        /// challenge. An <code>AdminRespondToAuthChallenge</code> API request provides the answer
-        /// to that challenge, like a code or a secure remote password (SRP). The parameters of
-        /// a response to an authentication challenge vary with the type of challenge.
+        /// challenge. An <c>AdminRespondToAuthChallenge</c> API request provides the answer to
+        /// that challenge, like a code or a secure remote password (SRP). The parameters of a
+        /// response to an authentication challenge vary with the type of challenge.
         /// 
         ///  
         /// <para>
@@ -3418,7 +3416,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -3474,9 +3472,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Some API operations in a user pool generate a challenge, like a prompt for an MFA
         /// code, for device authentication that bypasses MFA, or for a custom authentication
-        /// challenge. An <code>AdminRespondToAuthChallenge</code> API request provides the answer
-        /// to that challenge, like a code or a secure remote password (SRP). The parameters of
-        /// a response to an authentication challenge vary with the type of challenge.
+        /// challenge. An <c>AdminRespondToAuthChallenge</c> API request provides the answer to
+        /// that challenge, like a code or a secure remote password (SRP). The parameters of a
+        /// response to an authentication challenge vary with the type of challenge.
         /// 
         ///  
         /// <para>
@@ -3563,7 +3561,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -3764,27 +3762,27 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// The password can be temporary or permanent. If it is temporary, the user status enters
-        /// the <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in,
-        /// the InitiateAuth/AdminInitiateAuth response will contain the <code>NEW_PASSWORD_REQUIRED</code>
-        /// challenge. If the user doesn't sign in before it expires, the user won't be able to
-        /// sign in, and an administrator must reset their password. 
+        /// the <c>FORCE_CHANGE_PASSWORD</c> state. When the user next tries to sign in, the InitiateAuth/AdminInitiateAuth
+        /// response will contain the <c>NEW_PASSWORD_REQUIRED</c> challenge. If the user doesn't
+        /// sign in before it expires, the user won't be able to sign in, and an administrator
+        /// must reset their password. 
         /// </para>
         ///  
         /// <para>
         /// Once the user has set a new password, or the password is permanent, the user status
-        /// is set to <code>Confirmed</code>.
+        /// is set to <c>Confirmed</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AdminSetUserPassword</code> can set a password for the user profile that Amazon
-        /// Cognito creates for third-party federated users. When you set a password, the federated
-        /// user's status changes from <code>EXTERNAL_PROVIDER</code> to <code>CONFIRMED</code>.
-        /// A user in this state can sign in as a federated user, and initiate authentication
-        /// flows in the API like a linked native user. They can also modify their password and
-        /// attributes in token-authenticated API requests like <code>ChangePassword</code> and
-        /// <code>UpdateUserAttributes</code>. As a best security practice and to keep users in
-        /// sync with your external IdP, don't set passwords on federated user profiles. To set
-        /// up a federated user for native sign-in with a linked native user, refer to <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">Linking
+        ///  <c>AdminSetUserPassword</c> can set a password for the user profile that Amazon Cognito
+        /// creates for third-party federated users. When you set a password, the federated user's
+        /// status changes from <c>EXTERNAL_PROVIDER</c> to <c>CONFIRMED</c>. A user in this state
+        /// can sign in as a federated user, and initiate authentication flows in the API like
+        /// a linked native user. They can also modify their password and attributes in token-authenticated
+        /// API requests like <c>ChangePassword</c> and <c>UpdateUserAttributes</c>. As a best
+        /// security practice and to keep users in sync with your external IdP, don't set passwords
+        /// on federated user profiles. To set up a federated user for native sign-in with a linked
+        /// native user, refer to <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">Linking
         /// federated users to an existing user profile</a>.
         /// </para>
         ///  <note> 
@@ -3852,27 +3850,27 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// The password can be temporary or permanent. If it is temporary, the user status enters
-        /// the <code>FORCE_CHANGE_PASSWORD</code> state. When the user next tries to sign in,
-        /// the InitiateAuth/AdminInitiateAuth response will contain the <code>NEW_PASSWORD_REQUIRED</code>
-        /// challenge. If the user doesn't sign in before it expires, the user won't be able to
-        /// sign in, and an administrator must reset their password. 
+        /// the <c>FORCE_CHANGE_PASSWORD</c> state. When the user next tries to sign in, the InitiateAuth/AdminInitiateAuth
+        /// response will contain the <c>NEW_PASSWORD_REQUIRED</c> challenge. If the user doesn't
+        /// sign in before it expires, the user won't be able to sign in, and an administrator
+        /// must reset their password. 
         /// </para>
         ///  
         /// <para>
         /// Once the user has set a new password, or the password is permanent, the user status
-        /// is set to <code>Confirmed</code>.
+        /// is set to <c>Confirmed</c>.
         /// </para>
         ///  
         /// <para>
-        ///  <code>AdminSetUserPassword</code> can set a password for the user profile that Amazon
-        /// Cognito creates for third-party federated users. When you set a password, the federated
-        /// user's status changes from <code>EXTERNAL_PROVIDER</code> to <code>CONFIRMED</code>.
-        /// A user in this state can sign in as a federated user, and initiate authentication
-        /// flows in the API like a linked native user. They can also modify their password and
-        /// attributes in token-authenticated API requests like <code>ChangePassword</code> and
-        /// <code>UpdateUserAttributes</code>. As a best security practice and to keep users in
-        /// sync with your external IdP, don't set passwords on federated user profiles. To set
-        /// up a federated user for native sign-in with a linked native user, refer to <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">Linking
+        ///  <c>AdminSetUserPassword</c> can set a password for the user profile that Amazon Cognito
+        /// creates for third-party federated users. When you set a password, the federated user's
+        /// status changes from <c>EXTERNAL_PROVIDER</c> to <c>CONFIRMED</c>. A user in this state
+        /// can sign in as a federated user, and initiate authentication flows in the API like
+        /// a linked native user. They can also modify their password and attributes in token-authenticated
+        /// API requests like <c>ChangePassword</c> and <c>UpdateUserAttributes</c>. As a best
+        /// security practice and to keep users in sync with your external IdP, don't set passwords
+        /// on federated user profiles. To set up a federated user for native sign-in with a linked
+        /// native user, refer to <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation-consolidate-users.html">Linking
         /// federated users to an existing user profile</a>.
         /// </para>
         ///  <note> 
@@ -4355,7 +4353,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
         /// name.
         /// </para>
         ///  
@@ -4414,7 +4412,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -4480,7 +4478,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// For custom attributes, you must prepend the <code>custom:</code> prefix to the attribute
+        /// For custom attributes, you must prepend the <c>custom:</c> prefix to the attribute
         /// name.
         /// </para>
         ///  
@@ -4542,7 +4540,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -4595,15 +4593,15 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito returns an <code>Access Token has been revoked</code> error when your
-        /// app attempts to authorize a user pools API request with a revoked access token that
-        /// contains the scope <code>aws.cognito.signin.user.admin</code>.
+        /// Amazon Cognito returns an <c>Access Token has been revoked</c> error when your app
+        /// attempts to authorize a user pools API request with a revoked access token that contains
+        /// the scope <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Cognito no longer accepts a signed-out user's ID token in a <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html">GetId
-        /// </a> request to an identity pool with <code>ServerSideTokenCheck</code> enabled for
-        /// its user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
+        /// </a> request to an identity pool with <c>ServerSideTokenCheck</c> enabled for its
+        /// user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4681,15 +4679,15 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito returns an <code>Access Token has been revoked</code> error when your
-        /// app attempts to authorize a user pools API request with a revoked access token that
-        /// contains the scope <code>aws.cognito.signin.user.admin</code>.
+        /// Amazon Cognito returns an <c>Access Token has been revoked</c> error when your app
+        /// attempts to authorize a user pools API request with a revoked access token that contains
+        /// the scope <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Cognito no longer accepts a signed-out user's ID token in a <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html">GetId
-        /// </a> request to an identity pool with <code>ServerSideTokenCheck</code> enabled for
-        /// its user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
+        /// </a> request to an identity pool with <c>ServerSideTokenCheck</c> enabled for its
+        /// user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -4764,9 +4762,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA)
         /// for a user, with a unique private key that Amazon Cognito generates and returns in
-        /// the API response. You can authorize an <code>AssociateSoftwareToken</code> request
-        /// with either the user's access token, or a session string from a challenge response
-        /// that you received from Amazon Cognito.
+        /// the API response. You can authorize an <c>AssociateSoftwareToken</c> request with
+        /// either the user's access token, or a session string from a challenge response that
+        /// you received from Amazon Cognito.
         /// 
         ///  <note> 
         /// <para>
@@ -4775,12 +4773,12 @@ namespace Amazon.CognitoIdentityProvider
         /// VerifySoftwareToken</a> API request. If you don't verify the software token and your
         /// user pool doesn't require MFA, the user can then authenticate with user name and password
         /// credentials alone. If your user pool requires TOTP MFA, Amazon Cognito generates an
-        /// <code>MFA_SETUP</code> or <code>SOFTWARE_TOKEN_SETUP</code> challenge each time your
-        /// user signs. Complete setup with <code>AssociateSoftwareToken</code> and <code>VerifySoftwareToken</code>.
+        /// <c>MFA_SETUP</c> or <c>SOFTWARE_TOKEN_SETUP</c> challenge each time your user signs.
+        /// Complete setup with <c>AssociateSoftwareToken</c> and <c>VerifySoftwareToken</c>.
         /// </para>
         ///  
         /// <para>
-        /// After you set up software token MFA for your user, Amazon Cognito generates a <code>SOFTWARE_TOKEN_MFA</code>
+        /// After you set up software token MFA for your user, Amazon Cognito generates a <c>SOFTWARE_TOKEN_MFA</c>
         /// challenge when they authenticate. Respond to this challenge with your user's TOTP.
         /// </para>
         ///  </note> <note> 
@@ -4834,9 +4832,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA)
         /// for a user, with a unique private key that Amazon Cognito generates and returns in
-        /// the API response. You can authorize an <code>AssociateSoftwareToken</code> request
-        /// with either the user's access token, or a session string from a challenge response
-        /// that you received from Amazon Cognito.
+        /// the API response. You can authorize an <c>AssociateSoftwareToken</c> request with
+        /// either the user's access token, or a session string from a challenge response that
+        /// you received from Amazon Cognito.
         /// 
         ///  <note> 
         /// <para>
@@ -4845,12 +4843,12 @@ namespace Amazon.CognitoIdentityProvider
         /// VerifySoftwareToken</a> API request. If you don't verify the software token and your
         /// user pool doesn't require MFA, the user can then authenticate with user name and password
         /// credentials alone. If your user pool requires TOTP MFA, Amazon Cognito generates an
-        /// <code>MFA_SETUP</code> or <code>SOFTWARE_TOKEN_SETUP</code> challenge each time your
-        /// user signs. Complete setup with <code>AssociateSoftwareToken</code> and <code>VerifySoftwareToken</code>.
+        /// <c>MFA_SETUP</c> or <c>SOFTWARE_TOKEN_SETUP</c> challenge each time your user signs.
+        /// Complete setup with <c>AssociateSoftwareToken</c> and <c>VerifySoftwareToken</c>.
         /// </para>
         ///  
         /// <para>
-        /// After you set up software token MFA for your user, Amazon Cognito generates a <code>SOFTWARE_TOKEN_MFA</code>
+        /// After you set up software token MFA for your user, Amazon Cognito generates a <c>SOFTWARE_TOKEN_MFA</c>
         /// challenge when they authenticate. Respond to this challenge with your user's TOTP.
         /// </para>
         ///  </note> <note> 
@@ -6148,7 +6146,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -6251,7 +6249,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -7999,7 +7997,7 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Calling this API causes a message to be sent to the end user with a confirmation code
-        /// that is required to change the user's password. For the <code>Username</code> parameter,
+        /// that is required to change the user's password. For the <c>Username</c> parameter,
         /// you can use the username or user alias. The method used to send the confirmation code
         /// is sent according to the specified AccountRecoverySetting. For more information, see
         /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
@@ -8009,9 +8007,9 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// If neither a verified phone number nor a verified email exists, this API returns <code>InvalidParameterException</code>.
-        /// If your app client has a client secret and you don't provide a <code>SECRET_HASH</code>
-        /// parameter, this API returns <code>NotAuthorizedException</code>.
+        /// If neither a verified phone number nor a verified email exists, this API returns <c>InvalidParameterException</c>.
+        /// If your app client has a client secret and you don't provide a <c>SECRET_HASH</c>
+        /// parameter, this API returns <c>NotAuthorizedException</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8073,7 +8071,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -8115,7 +8113,7 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Calling this API causes a message to be sent to the end user with a confirmation code
-        /// that is required to change the user's password. For the <code>Username</code> parameter,
+        /// that is required to change the user's password. For the <c>Username</c> parameter,
         /// you can use the username or user alias. The method used to send the confirmation code
         /// is sent according to the specified AccountRecoverySetting. For more information, see
         /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
@@ -8125,9 +8123,9 @@ namespace Amazon.CognitoIdentityProvider
         /// 
         ///  
         /// <para>
-        /// If neither a verified phone number nor a verified email exists, this API returns <code>InvalidParameterException</code>.
-        /// If your app client has a client secret and you don't provide a <code>SECRET_HASH</code>
-        /// parameter, this API returns <code>NotAuthorizedException</code>.
+        /// If neither a verified phone number nor a verified email exists, this API returns <c>InvalidParameterException</c>.
+        /// If your app client has a client secret and you don't provide a <c>SECRET_HASH</c>
+        /// parameter, this API returns <c>NotAuthorizedException</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8192,7 +8190,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -8672,8 +8670,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// Amazon Cognito issues and assigns a new signing certificate annually. This process
-        /// returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't
-        /// invalidate the original certificate.
+        /// returns a new value in the response to <c>GetSigningCertificate</c>, but doesn't invalidate
+        /// the original certificate.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate service method.</param>
@@ -8707,8 +8705,8 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// Amazon Cognito issues and assigns a new signing certificate annually. This process
-        /// returns a new value in the response to <code>GetSigningCertificate</code>, but doesn't
-        /// invalidate the original certificate.
+        /// returns a new value in the response to <c>GetSigningCertificate</c>, but doesn't invalidate
+        /// the original certificate.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSigningCertificate service method.</param>
@@ -8745,9 +8743,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Gets the user interface (UI) Customization information for a particular app client's
         /// app UI, if any such information exists for the client. If nothing is set for the particular
-        /// client, but there is an existing pool level customization (the app <code>clientId</code>
-        /// is <code>ALL</code>), then that information is returned. If nothing is present, then
-        /// an empty shape is returned.
+        /// client, but there is an existing pool level customization (the app <c>clientId</c>
+        /// is <c>ALL</c>), then that information is returned. If nothing is present, then an
+        /// empty shape is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUICustomization service method.</param>
         /// 
@@ -8782,9 +8780,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Gets the user interface (UI) Customization information for a particular app client's
         /// app UI, if any such information exists for the client. If nothing is set for the particular
-        /// client, but there is an existing pool level customization (the app <code>clientId</code>
-        /// is <code>ALL</code>), then that information is returned. If nothing is present, then
-        /// an empty shape is returned.
+        /// client, but there is an existing pool level customization (the app <c>clientId</c>
+        /// is <c>ALL</c>), then that information is returned. If nothing is present, then an
+        /// empty shape is returned.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetUICustomization service method.</param>
         /// <param name="cancellationToken">
@@ -9006,7 +9004,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -9119,7 +9117,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -9255,15 +9253,15 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito returns an <code>Access Token has been revoked</code> error when your
-        /// app attempts to authorize a user pools API request with a revoked access token that
-        /// contains the scope <code>aws.cognito.signin.user.admin</code>.
+        /// Amazon Cognito returns an <c>Access Token has been revoked</c> error when your app
+        /// attempts to authorize a user pools API request with a revoked access token that contains
+        /// the scope <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Cognito no longer accepts a signed-out user's ID token in a <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html">GetId
-        /// </a> request to an identity pool with <code>ServerSideTokenCheck</code> enabled for
-        /// its user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
+        /// </a> request to an identity pool with <c>ServerSideTokenCheck</c> enabled for its
+        /// user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9336,15 +9334,15 @@ namespace Amazon.CognitoIdentityProvider
         /// </para>
         ///  
         /// <para>
-        /// Amazon Cognito returns an <code>Access Token has been revoked</code> error when your
-        /// app attempts to authorize a user pools API request with a revoked access token that
-        /// contains the scope <code>aws.cognito.signin.user.admin</code>.
+        /// Amazon Cognito returns an <c>Access Token has been revoked</c> error when your app
+        /// attempts to authorize a user pools API request with a revoked access token that contains
+        /// the scope <c>aws.cognito.signin.user.admin</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Amazon Cognito no longer accepts a signed-out user's ID token in a <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetId.html">GetId
-        /// </a> request to an identity pool with <code>ServerSideTokenCheck</code> enabled for
-        /// its user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
+        /// </a> request to an identity pool with <c>ServerSideTokenCheck</c> enabled for its
+        /// user pool IdP configuration in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_CognitoIdentityProvider.html">CognitoIdentityProvider</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -9413,8 +9411,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign
-        /// in a user with a federated IdP with <code>InitiateAuth</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+        /// in a user with a federated IdP with <c>InitiateAuth</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
         /// Adding user pool sign-in through a third party</a>.
         /// 
         ///  <note> 
@@ -9470,7 +9468,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -9517,8 +9515,8 @@ namespace Amazon.CognitoIdentityProvider
 
         /// <summary>
         /// Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign
-        /// in a user with a federated IdP with <code>InitiateAuth</code>. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
+        /// in a user with a federated IdP with <c>InitiateAuth</c>. For more information, see
+        /// <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html">
         /// Adding user pool sign-in through a third party</a>.
         /// 
         ///  <note> 
@@ -9577,7 +9575,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -10836,7 +10834,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -10943,7 +10941,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -10990,9 +10988,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Some API operations in a user pool generate a challenge, like a prompt for an MFA
         /// code, for device authentication that bypasses MFA, or for a custom authentication
-        /// challenge. A <code>RespondToAuthChallenge</code> API request provides the answer to
-        /// that challenge, like a code or a secure remote password (SRP). The parameters of a
-        /// response to an authentication challenge vary with the type of challenge.
+        /// challenge. A <c>RespondToAuthChallenge</c> API request provides the answer to that
+        /// challenge, like a code or a secure remote password (SRP). The parameters of a response
+        /// to an authentication challenge vary with the type of challenge.
         /// 
         ///  
         /// <para>
@@ -11068,7 +11066,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -11124,9 +11122,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <summary>
         /// Some API operations in a user pool generate a challenge, like a prompt for an MFA
         /// code, for device authentication that bypasses MFA, or for a custom authentication
-        /// challenge. A <code>RespondToAuthChallenge</code> API request provides the answer to
-        /// that challenge, like a code or a secure remote password (SRP). The parameters of a
-        /// response to an authentication challenge vary with the type of challenge.
+        /// challenge. A <c>RespondToAuthChallenge</c> API request provides the answer to that
+        /// challenge, like a code or a secure remote password (SRP). The parameters of a response
+        /// to an authentication challenge vary with the type of challenge.
         /// 
         ///  
         /// <para>
@@ -11205,7 +11203,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -11449,13 +11447,13 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code>
-        /// or <code>ClientId</code>, pass null values for all four configuration types.
+        /// Configures actions on detected risks. To delete the risk configuration for <c>UserPoolId</c>
+        /// or <c>ClientId</c>, pass null values for all four configuration types.
         /// 
         ///  
         /// <para>
         /// To activate Amazon Cognito advanced security features, update the user pool to include
-        /// the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+        /// the <c>UserPoolAddOns</c> key<c>AdvancedSecurityMode</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration service method.</param>
@@ -11499,13 +11497,13 @@ namespace Amazon.CognitoIdentityProvider
 
 
         /// <summary>
-        /// Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code>
-        /// or <code>ClientId</code>, pass null values for all four configuration types.
+        /// Configures actions on detected risks. To delete the risk configuration for <c>UserPoolId</c>
+        /// or <c>ClientId</c>, pass null values for all four configuration types.
         /// 
         ///  
         /// <para>
         /// To activate Amazon Cognito advanced security features, update the user pool to include
-        /// the <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
+        /// the <c>UserPoolAddOns</c> key<c>AdvancedSecurityMode</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetRiskConfiguration service method.</param>
@@ -11562,11 +11560,10 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// You can specify app UI customization settings for a single client (with a specific
-        /// <code>clientId</code>) or for all clients (by setting the <code>clientId</code> to
-        /// <code>ALL</code>). If you specify <code>ALL</code>, the default configuration is used
-        /// for every client that has no previously set UI customization. If you specify UI customization
-        /// settings for a particular client, it will no longer return to the <code>ALL</code>
-        /// configuration.
+        /// <c>clientId</c>) or for all clients (by setting the <c>clientId</c> to <c>ALL</c>).
+        /// If you specify <c>ALL</c>, the default configuration is used for every client that
+        /// has no previously set UI customization. If you specify UI customization settings for
+        /// a particular client, it will no longer return to the <c>ALL</c> configuration.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11612,11 +11609,10 @@ namespace Amazon.CognitoIdentityProvider
         ///  
         /// <para>
         /// You can specify app UI customization settings for a single client (with a specific
-        /// <code>clientId</code>) or for all clients (by setting the <code>clientId</code> to
-        /// <code>ALL</code>). If you specify <code>ALL</code>, the default configuration is used
-        /// for every client that has no previously set UI customization. If you specify UI customization
-        /// settings for a particular client, it will no longer return to the <code>ALL</code>
-        /// configuration.
+        /// <c>clientId</c>) or for all clients (by setting the <c>clientId</c> to <c>ALL</c>).
+        /// If you specify <c>ALL</c>, the default configuration is used for every client that
+        /// has no previously set UI customization. If you specify UI customization settings for
+        /// a particular client, it will no longer return to the <c>ALL</c> configuration.
         /// </para>
         ///  <note> 
         /// <para>
@@ -11832,7 +11828,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -11901,7 +11897,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -12116,7 +12112,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -12223,7 +12219,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -12431,9 +12427,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// Each tag consists of a key and value, both of which you define. A key is a general
         /// category for more specific values. For example, if you have two versions of a user
-        /// pool, one for testing and another for production, you might assign an <code>Environment</code>
-        /// tag key to both user pools. The value of this key might be <code>Test</code> for one
-        /// user pool, and <code>Production</code> for the other.
+        /// pool, one for testing and another for production, you might assign an <c>Environment</c>
+        /// tag key to both user pools. The value of this key might be <c>Test</c> for one user
+        /// pool, and <c>Production</c> for the other.
         /// </para>
         ///  
         /// <para>
@@ -12487,9 +12483,9 @@ namespace Amazon.CognitoIdentityProvider
         /// <para>
         /// Each tag consists of a key and value, both of which you define. A key is a general
         /// category for more specific values. For example, if you have two versions of a user
-        /// pool, one for testing and another for production, you might assign an <code>Environment</code>
-        /// tag key to both user pools. The value of this key might be <code>Test</code> for one
-        /// user pool, and <code>Production</code> for the other.
+        /// pool, one for testing and another for production, you might assign an <c>Environment</c>
+        /// tag key to both user pools. The value of this key might be <c>Test</c> for one user
+        /// pool, and <c>Production</c> for the other.
         /// </para>
         ///  
         /// <para>
@@ -13225,8 +13221,7 @@ namespace Amazon.CognitoIdentityProvider
         /// With this operation, your users can update one or more of their attributes with their
         /// own credentials. You authorize this API request with the user's access token. To delete
         /// an attribute from your user, submit the attribute in your API request with a blank
-        /// value. Custom attribute values in this request must include the <code>custom:</code>
-        /// prefix.
+        /// value. Custom attribute values in this request must include the <c>custom:</c> prefix.
         /// 
         ///  <note> 
         /// <para>
@@ -13301,7 +13296,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -13347,8 +13342,7 @@ namespace Amazon.CognitoIdentityProvider
         /// With this operation, your users can update one or more of their attributes with their
         /// own credentials. You authorize this API request with the user's access token. To delete
         /// an attribute from your user, submit the attribute in your API request with a blank
-        /// value. Custom attribute values in this request must include the <code>custom:</code>
-        /// prefix.
+        /// value. Custom attribute values in this request must include the <c>custom:</c> prefix.
         /// 
         ///  <note> 
         /// <para>
@@ -13426,7 +13420,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -13548,7 +13542,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>
@@ -13659,7 +13653,7 @@ namespace Amazon.CognitoIdentityProvider
         /// </exception>
         /// <exception cref="Amazon.CognitoIdentityProvider.Model.InvalidSmsRoleTrustRelationshipException">
         /// This exception is thrown when the trust relationship is not valid for the role provided
-        /// for SMS configuration. This can happen if you don't trust <code>cognito-idp.amazonaws.com</code>
+        /// for SMS configuration. This can happen if you don't trust <c>cognito-idp.amazonaws.com</c>
         /// or the external ID provided in the role does not match what is provided in the SMS
         /// configuration for the user pool.
         /// </exception>

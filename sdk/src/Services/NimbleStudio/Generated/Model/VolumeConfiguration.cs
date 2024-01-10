@@ -33,7 +33,7 @@ namespace Amazon.NimbleStudio.Model
     /// 
     ///  
     /// <para>
-    /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+    /// This parameter is only allowed when <c>sessionPersistenceMode</c> is <c>ACTIVATED</c>.
     /// </para>
     /// </summary>
     public partial class VolumeConfiguration

@@ -30,9 +30,9 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Represents the data binding configuration for a form's input fields at runtime.You
-    /// can use <code>FormInputBindingPropertiesValue</code> to add exposed properties to
-    /// a form to allow different values to be entered when a form is reused in different
-    /// places in an app.
+    /// can use <c>FormInputBindingPropertiesValue</c> to add exposed properties to a form
+    /// to allow different values to be entered when a form is reused in different places
+    /// in an app.
     /// </summary>
     public partial class FormInputBindingPropertiesValue
     {

@@ -47,8 +47,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        ///  The source, <code>AWS_CLOUD_TRAIL</code> or <code>AWS_CODE_DEPLOY</code>, where DevOps
-        /// Guru analysis found the event. 
+        ///  The source, <c>AWS_CLOUD_TRAIL</c> or <c>AWS_CODE_DEPLOY</c>, where DevOps Guru analysis
+        /// found the event. 
         /// </para>
         /// </summary>
         public EventDataSource DataSource
@@ -156,8 +156,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        ///  An <code>EventResource</code> object that contains information about the resource
-        /// that emitted the event. 
+        ///  An <c>EventResource</c> object that contains information about the resource that
+        /// emitted the event. 
         /// </para>
         /// </summary>
         public List<EventResource> Resources
@@ -175,7 +175,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Time. 
         /// <para>
-        ///  A <code>Timestamp</code> that specifies the time the event occurred. 
+        ///  A <c>Timestamp</c> that specifies the time the event occurred. 
         /// </para>
         /// </summary>
         public DateTime Time

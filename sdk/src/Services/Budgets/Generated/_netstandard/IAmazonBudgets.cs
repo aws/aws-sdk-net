@@ -120,10 +120,9 @@ namespace Amazon.Budgets
         /// 
         ///  <important> 
         /// <para>
-        /// Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
-        /// in the syntax at one time. Use the syntax that matches your case. The Request Syntax
-        /// section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
-        /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
+        /// Only one of <c>BudgetLimit</c> or <c>PlannedBudgetLimits</c> can be present in the
+        /// syntax at one time. Use the syntax that matches your case. The Request Syntax section
+        /// shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_CreateBudget.html#API_CreateBudget_Examples">Examples</a>
         /// section. 
         /// </para>
         ///  </important>
@@ -449,7 +448,7 @@ namespace Amazon.Budgets
         /// 
         ///  <important> 
         /// <para>
-        /// The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+        /// The Request Syntax section shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>,
         /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudget.html#API_DescribeBudget_Examples">Examples</a>
         /// section. 
         /// </para>
@@ -669,8 +668,8 @@ namespace Amazon.Budgets
 
 
         /// <summary>
-        /// Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code>
-        /// budgets. Budget history isn't available for <code>ANNUAL</code> budgets.
+        /// Describes the history for <c>DAILY</c>, <c>MONTHLY</c>, and <c>QUARTERLY</c> budgets.
+        /// Budget history isn't available for <c>ANNUAL</c> budgets.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeBudgetPerformanceHistory service method.</param>
         /// <param name="cancellationToken">
@@ -714,7 +713,7 @@ namespace Amazon.Budgets
         /// 
         ///  <important> 
         /// <para>
-        /// The Request Syntax section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
+        /// The Request Syntax section shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>,
         /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_DescribeBudgets.html#API_DescribeBudgets_Examples">Examples</a>
         /// section. 
         /// </para>
@@ -876,16 +875,15 @@ namespace Amazon.Budgets
 
 
         /// <summary>
-        /// Updates a budget. You can change every part of a budget except for the <code>budgetName</code>
-        /// and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code>
+        /// Updates a budget. You can change every part of a budget except for the <c>budgetName</c>
+        /// and the <c>calculatedSpend</c>. When you modify a budget, the <c>calculatedSpend</c>
         /// drops to zero until Amazon Web Services has new usage data to use for forecasting.
         /// 
         ///  <important> 
         /// <para>
-        /// Only one of <code>BudgetLimit</code> or <code>PlannedBudgetLimits</code> can be present
-        /// in the syntax at one time. Use the syntax that matches your case. The Request Syntax
-        /// section shows the <code>BudgetLimit</code> syntax. For <code>PlannedBudgetLimits</code>,
-        /// see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
+        /// Only one of <c>BudgetLimit</c> or <c>PlannedBudgetLimits</c> can be present in the
+        /// syntax at one time. Use the syntax that matches your case. The Request Syntax section
+        /// shows the <c>BudgetLimit</c> syntax. For <c>PlannedBudgetLimits</c>, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_budgets_UpdateBudget.html#API_UpdateBudget_Examples">Examples</a>
         /// section. 
         /// </para>
         ///  </important>

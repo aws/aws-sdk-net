@@ -30,16 +30,16 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetItem operation.
-    /// The <code>GetItem</code> operation returns a set of attributes for the item with the
-    /// given primary key. If there is no matching item, <code>GetItem</code> does not return
-    /// any data and there will be no <code>Item</code> element in the response.
+    /// The <c>GetItem</c> operation returns a set of attributes for the item with the given
+    /// primary key. If there is no matching item, <c>GetItem</c> does not return any data
+    /// and there will be no <c>Item</c> element in the response.
     /// 
     ///  
     /// <para>
-    ///  <code>GetItem</code> provides an eventually consistent read by default. If your application
-    /// requires a strongly consistent read, set <code>ConsistentRead</code> to <code>true</code>.
-    /// Although a strongly consistent read might take more time than an eventually consistent
-    /// read, it always returns the last updated value.
+    ///  <c>GetItem</c> provides an eventually consistent read by default. If your application
+    /// requires a strongly consistent read, set <c>ConsistentRead</c> to <c>true</c>. Although
+    /// a strongly consistent read might take more time than an eventually consistent read,
+    /// it always returns the last updated value.
     /// </para>
     /// </summary>
     public partial class GetItemRequest : AmazonDynamoDBRequest
@@ -84,8 +84,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property AttributesToGet. 
         /// <para>
-        /// This is a legacy parameter. Use <code>ProjectionExpression</code> instead. For more
-        /// information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
+        /// This is a legacy parameter. Use <c>ProjectionExpression</c> instead. For more information,
+        /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/LegacyConditionalParameters.AttributesToGet.html">AttributesToGet</a>
         /// in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -105,9 +105,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property ConsistentRead. 
         /// <para>
-        /// Determines the read consistency model: If set to <code>true</code>, then the operation
-        /// uses strongly consistent reads; otherwise, the operation uses eventually consistent
-        /// reads.
+        /// Determines the read consistency model: If set to <c>true</c>, then the operation uses
+        /// strongly consistent reads; otherwise, the operation uses eventually consistent reads.
         /// </para>
         /// </summary>
         public bool ConsistentRead
@@ -126,7 +125,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property ExpressionAttributeNames. 
         /// <para>
         /// One or more substitution tokens for attribute names in an expression. The following
-        /// are some use cases for using <code>ExpressionAttributeNames</code>:
+        /// are some use cases for using <c>ExpressionAttributeNames</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -148,18 +147,18 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Percentile</code> 
+        ///  <c>Percentile</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The name of this attribute conflicts with a reserved word, so it cannot be used directly
         /// in an expression. (For the complete list of reserved words, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ReservedWords.html">Reserved
         /// Words</a> in the <i>Amazon DynamoDB Developer Guide</i>). To work around this, you
-        /// could specify the following for <code>ExpressionAttributeNames</code>:
+        /// could specify the following for <c>ExpressionAttributeNames</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>{"#P":"Percentile"}</code> 
+        ///  <c>{"#P":"Percentile"}</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -167,7 +166,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>#P = :val</code> 
+        ///  <c>#P = :val</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -195,8 +194,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// A map of attribute names to <code>AttributeValue</code> objects, representing the
-        /// primary key of the item to retrieve.
+        /// A map of attribute names to <c>AttributeValue</c> objects, representing the primary
+        /// key of the item to retrieve.
         /// </para>
         ///  
         /// <para>

@@ -35,7 +35,7 @@ namespace Amazon.NimbleStudio.Model
     ///  
     /// <para>
     /// After invoking this API, invoke GetStreamingSessionStream with the returned streamId
-    /// to poll the resource until it is in the <code>READY</code> state.
+    /// to poll the resource until it is in the <c>READY</c> state.
     /// </para>
     /// </summary>
     public partial class CreateStreamingSessionStreamRequest : AmazonNimbleStudioRequest

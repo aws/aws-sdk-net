@@ -31,7 +31,7 @@ namespace Amazon.QBusiness.Model
     /// <summary>
     /// Container for the parameters to the StartDataSourceSyncJob operation.
     /// Starts a data source connector synchronization job. If a synchronization job is already
-    /// in progress, Amazon Q returns a <code>ConflictException</code>.
+    /// in progress, Amazon Q returns a <c>ConflictException</c>.
     /// </summary>
     public partial class StartDataSourceSyncJobRequest : AmazonQBusinessRequest
     {

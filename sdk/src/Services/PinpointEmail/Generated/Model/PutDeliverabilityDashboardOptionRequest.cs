@@ -52,7 +52,7 @@ namespace Amazon.PinpointEmail.Model
         /// Gets and sets the property DashboardEnabled. 
         /// <para>
         /// Specifies whether to enable the Deliverability dashboard for your Amazon Pinpoint
-        /// account. To enable the dashboard, set this value to <code>true</code>.
+        /// account. To enable the dashboard, set this value to <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

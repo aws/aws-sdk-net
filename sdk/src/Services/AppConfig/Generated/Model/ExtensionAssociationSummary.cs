@@ -30,7 +30,7 @@ namespace Amazon.AppConfig.Model
 {
     /// <summary>
     /// Information about an association between an extension and an AppConfig resource such
-    /// as an application, environment, or configuration profile. Call <code>GetExtensionAssociation</code>
+    /// as an application, environment, or configuration profile. Call <c>GetExtensionAssociation</c>
     /// to get more information about an association.
     /// </summary>
     public partial class ExtensionAssociationSummary
@@ -61,8 +61,8 @@ namespace Amazon.AppConfig.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The extension association ID. This ID is used to call other <code>ExtensionAssociation</code>
-        /// API actions such as <code>GetExtensionAssociation</code> or <code>DeleteExtensionAssociation</code>.
+        /// The extension association ID. This ID is used to call other <c>ExtensionAssociation</c>
+        /// API actions such as <c>GetExtensionAssociation</c> or <c>DeleteExtensionAssociation</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

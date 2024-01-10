@@ -42,7 +42,7 @@ namespace Amazon.WAF.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Contains the identifier and the name of the <code>GeoMatchSet</code>.
+    /// Contains the identifier and the name of the <c>GeoMatchSet</c>.
     /// </para>
     /// </summary>
     public partial class GeoMatchSetSummary
@@ -53,7 +53,7 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property GeoMatchSetId. 
         /// <para>
-        /// The <code>GeoMatchSetId</code> for an <a>GeoMatchSet</a>. You can use <code>GeoMatchSetId</code>
+        /// The <c>GeoMatchSetId</c> for an <a>GeoMatchSet</a>. You can use <c>GeoMatchSetId</c>
         /// in a <a>GetGeoMatchSet</a> request to get detailed information about an <a>GeoMatchSet</a>.
         /// </para>
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.WAF.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A friendly name or description of the <a>GeoMatchSet</a>. You can't change the name
-        /// of an <code>GeoMatchSet</code> after you create it.
+        /// of an <c>GeoMatchSet</c> after you create it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

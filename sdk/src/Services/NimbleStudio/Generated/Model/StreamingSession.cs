@@ -84,23 +84,22 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property AutomaticTerminationMode. 
         /// <para>
         /// Indicates if a streaming session created from this launch profile should be terminated
-        /// automatically or retained without termination after being in a <code>STOPPED</code>
-        /// state.
+        /// automatically or retained without termination after being in a <c>STOPPED</c> state.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// When <code>ACTIVATED</code>, the streaming session is scheduled for termination after
-        /// being in the <code>STOPPED</code> state for the time specified in <code>maxStoppedSessionLengthInMinutes</code>.
+        /// When <c>ACTIVATED</c>, the streaming session is scheduled for termination after being
+        /// in the <c>STOPPED</c> state for the time specified in <c>maxStoppedSessionLengthInMinutes</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// When <code>DEACTIVATED</code>, the streaming session can remain in the <code>STOPPED</code>
-        /// state indefinitely.
+        /// When <c>DEACTIVATED</c>, the streaming session can remain in the <c>STOPPED</c> state
+        /// indefinitely.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
-        /// When allowed, the default value for this parameter is <code>DEACTIVATED</code>.
+        /// This parameter is only allowed when <c>sessionPersistenceMode</c> is <c>ACTIVATED</c>.
+        /// When allowed, the default value for this parameter is <c>DEACTIVATED</c>.
         /// </para>
         /// </summary>
         public AutomaticTerminationMode AutomaticTerminationMode
@@ -266,7 +265,7 @@ namespace Amazon.NimbleStudio.Model
         /// Gets and sets the property SessionPersistenceMode. 
         /// <para>
         /// Determine if a streaming session created from this launch profile can configure persistent
-        /// storage. This means that <code>volumeConfiguration</code> and <code>automaticTerminationMode</code>
+        /// storage. This means that <c>volumeConfiguration</c> and <c>automaticTerminationMode</c>
         /// are configured.
         /// </para>
         /// </summary>
@@ -285,7 +284,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StartedAt. 
         /// <para>
-        /// The time the session entered <code>START_IN_PROGRESS</code> state.
+        /// The time the session entered <c>START_IN_PROGRESS</c> state.
         /// </para>
         /// </summary>
         public DateTime StartedAt
@@ -412,7 +411,7 @@ namespace Amazon.NimbleStudio.Model
         /// <summary>
         /// Gets and sets the property StoppedAt. 
         /// <para>
-        /// The time the session entered <code>STOP_IN_PROGRESS</code> state.
+        /// The time the session entered <c>STOP_IN_PROGRESS</c> state.
         /// </para>
         /// </summary>
         public DateTime StoppedAt
@@ -544,7 +543,7 @@ namespace Amazon.NimbleStudio.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is only allowed when <code>sessionPersistenceMode</code> is <code>ACTIVATED</code>.
+        /// This parameter is only allowed when <c>sessionPersistenceMode</c> is <c>ACTIVATED</c>.
         /// </para>
         /// </summary>
         public VolumeConfiguration VolumeConfiguration

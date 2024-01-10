@@ -77,7 +77,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property VersionId. 
         /// <para>
-        /// The ID value of the version in question. A <code>VersionID</code> is a string representation
+        /// The ID value of the version in question. A <c>VersionID</c> is a string representation
         /// of an integer. Each version is incremented by 1.
         /// </para>
         /// </summary>

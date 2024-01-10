@@ -38,8 +38,8 @@ namespace Amazon.ConnectCases.Model
         /// <summary>
         /// Gets and sets the property Basic. 
         /// <para>
-        /// Content specific to <code>BasicLayout</code> type. It configures fields in the top
-        /// panel and More Info tab of Cases user interface.
+        /// Content specific to <c>BasicLayout</c> type. It configures fields in the top panel
+        /// and More Info tab of Cases user interface.
         /// </para>
         /// </summary>
         public BasicLayout Basic

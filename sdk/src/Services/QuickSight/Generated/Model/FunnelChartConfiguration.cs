@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration of a <code>FunnelChartVisual</code>.
+    /// The configuration of a <c>FunnelChartVisual</c>.
     /// </summary>
     public partial class FunnelChartConfiguration
     {
@@ -44,7 +44,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property CategoryLabelOptions. 
         /// <para>
-        /// The label options of the categories that are displayed in a <code>FunnelChartVisual</code>.
+        /// The label options of the categories that are displayed in a <c>FunnelChartVisual</c>.
         /// </para>
         /// </summary>
         public ChartAxisLabelOptions CategoryLabelOptions
@@ -80,7 +80,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property FieldWells. 
         /// <para>
-        /// The field well configuration of a <code>FunnelChartVisual</code>.
+        /// The field well configuration of a <c>FunnelChartVisual</c>.
         /// </para>
         /// </summary>
         public FunnelChartFieldWells FieldWells
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration of a <code>FunnelChartVisual</code>.
+        /// The sort configuration of a <c>FunnelChartVisual</c>.
         /// </para>
         /// </summary>
         public FunnelChartSortConfiguration SortConfiguration
@@ -116,7 +116,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Tooltip. 
         /// <para>
-        /// The tooltip configuration of a <code>FunnelChartVisual</code>.
+        /// The tooltip configuration of a <c>FunnelChartVisual</c>.
         /// </para>
         /// </summary>
         public TooltipOptions Tooltip
@@ -134,7 +134,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ValueLabelOptions. 
         /// <para>
-        /// The label options for the values that are displayed in a <code>FunnelChartVisual</code>.
+        /// The label options for the values that are displayed in a <c>FunnelChartVisual</c>.
         /// </para>
         /// </summary>
         public ChartAxisLabelOptions ValueLabelOptions
@@ -152,7 +152,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property VisualPalette. 
         /// <para>
-        /// The visual palette configuration of a <code>FunnelChartVisual</code>.
+        /// The visual palette configuration of a <c>FunnelChartVisual</c>.
         /// </para>
         /// </summary>
         public VisualPalette VisualPalette

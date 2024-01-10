@@ -57,9 +57,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property InCluster. 
         /// <para>
-        ///  When set to <code>true</code>, it indicates that data communication among the broker
-        /// nodes of the cluster is encrypted. When set to <code>false</code>, the communication
-        /// happens in plain text. The default value is <code>true</code>.
+        ///  When set to <c>true</c>, it indicates that data communication among the broker nodes
+        /// of the cluster is encrypted. When set to <c>false</c>, the communication happens in
+        /// plain text. The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool InCluster

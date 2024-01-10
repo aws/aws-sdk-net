@@ -58,8 +58,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Action. 
         /// <para>
-        /// The job type. This value is either <code>ArchiveRetrieval</code>, <code>InventoryRetrieval</code>,
-        /// or <code>Select</code>. 
+        /// The job type. This value is either <c>ArchiveRetrieval</c>, <c>InventoryRetrieval</c>,
+        /// or <c>Select</c>. 
         /// </para>
         /// </summary>
         public ActionCode Action
@@ -173,7 +173,7 @@ namespace Amazon.Glacier.Model
         /// Gets and sets the property CreationDate. 
         /// <para>
         /// The UTC date when the job was created. This value is a string representation of ISO
-        /// 8601 date format, for example <code>"2012-03-20T17:03:43.221Z"</code>.
+        /// 8601 date format, for example <c>"2012-03-20T17:03:43.221Z"</c>.
         /// </para>
         /// </summary>
         public DateTime CreationDate
@@ -365,7 +365,7 @@ namespace Amazon.Glacier.Model
         ///  </li> </ul> <ul> <li> 
         /// <para>
         /// Archival jobs that specify a range that is equal to the whole archive, when the job
-        /// status is <code>InProgress</code> 
+        /// status is <c>InProgress</c> 
         /// </para>
         ///  </li> </ul> <ul> <li> 
         /// <para>
@@ -410,8 +410,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The status code can be <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>,
-        /// and indicates the status of the job.
+        /// The status code can be <c>InProgress</c>, <c>Succeeded</c>, or <c>Failed</c>, and
+        /// indicates the status of the job.
         /// </para>
         /// </summary>
         public StatusCode StatusCode
@@ -447,8 +447,8 @@ namespace Amazon.Glacier.Model
         /// <summary>
         /// Gets and sets the property Tier. 
         /// <para>
-        /// The tier to use for a select or an archive retrieval. Valid values are <code>Expedited</code>,
-        /// <code>Standard</code>, or <code>Bulk</code>. <code>Standard</code> is the default.
+        /// The tier to use for a select or an archive retrieval. Valid values are <c>Expedited</c>,
+        /// <c>Standard</c>, or <c>Bulk</c>. <c>Standard</c> is the default.
         /// </para>
         /// </summary>
         public string Tier

@@ -40,7 +40,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// if the overall status is <code>Failed</code>, the reason for the failure.
+        /// if the overall status is <c>Failed</c>, the reason for the failure.
         /// </para>
         /// </summary>
         public string FailureReason

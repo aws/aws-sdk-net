@@ -40,13 +40,13 @@ namespace Amazon.CloudWatchEvidently.Model
         /// <summary>
         /// Gets and sets the property DesiredChange. 
         /// <para>
-        ///  <code>INCREASE</code> means that a variation with a higher number for this metric
-        /// is performing better.
+        ///  <c>INCREASE</c> means that a variation with a higher number for this metric is performing
+        /// better.
         /// </para>
         ///  
         /// <para>
-        ///  <code>DECREASE</code> means that a variation with a lower number for this metric
-        /// is performing better.
+        ///  <c>DECREASE</c> means that a variation with a lower number for this metric is performing
+        /// better.
         /// </para>
         /// </summary>
         public ChangeDirectionEnum DesiredChange

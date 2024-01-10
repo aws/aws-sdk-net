@@ -30,10 +30,9 @@ namespace Amazon.Rekognition.Model
 {
     /// <summary>
     /// An Amazon Rekognition service limit was exceeded. For example, if you start too many
-    /// jobs concurrently, subsequent calls to start operations (ex: <code>StartLabelDetection</code>)
-    /// will raise a <code>LimitExceededException</code> exception (HTTP status code: 400)
-    /// until the number of concurrently running jobs is below the Amazon Rekognition service
-    /// limit.
+    /// jobs concurrently, subsequent calls to start operations (ex: <c>StartLabelDetection</c>)
+    /// will raise a <c>LimitExceededException</c> exception (HTTP status code: 400) until
+    /// the number of concurrently running jobs is below the Amazon Rekognition service limit.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -44,7 +44,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For example, for two devices: <code>device-ids=DeviceId1&amp;device-ids=DeviceId2</code>
+        /// For example, for two devices: <c>device-ids=DeviceId1&amp;device-ids=DeviceId2</c>
         /// 
         /// </para>
         ///  </li> </ul>

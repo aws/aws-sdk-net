@@ -31,9 +31,9 @@ namespace Amazon.CertificateManager.Model
     /// <summary>
     /// Container for the parameters to the AddTagsToCertificate operation.
     /// Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify
-    /// and organize your Amazon Web Services resources. Each tag consists of a <code>key</code>
-    /// and an optional <code>value</code>. You specify the certificate on input by its Amazon
-    /// Resource Name (ARN). You specify the tag by using a key-value pair. 
+    /// and organize your Amazon Web Services resources. Each tag consists of a <c>key</c>
+    /// and an optional <c>value</c>. You specify the certificate on input by its Amazon Resource
+    /// Name (ARN). You specify the tag by using a key-value pair. 
     /// 
     ///  
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.CertificateManager.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</code>
+        ///  <c>arn:aws:acm:region:123456789012:certificate/12345678-1234-1234-1234-123456789012</c>
         /// 
         /// </para>
         ///  

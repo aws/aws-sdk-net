@@ -102,8 +102,8 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify <code>componentRoleArn</code> to allow directly defined components
-        /// to be associated with any environments running in this account.
+        /// You must specify <c>componentRoleArn</c> to allow directly defined components to be
+        /// associated with any environments running in this account.
         /// </para>
         ///  
         /// <para>

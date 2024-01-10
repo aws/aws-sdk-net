@@ -43,8 +43,8 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// Tags may only contain unicode letters, digits, whitespace, or these symbols: <code>_
-        /// . : / = + - @</code>.
+        /// Tags may only contain unicode letters, digits, whitespace, or these symbols: <c>_
+        /// . : / = + - @</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

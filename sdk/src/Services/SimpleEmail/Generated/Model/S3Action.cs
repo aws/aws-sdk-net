@@ -87,12 +87,12 @@ namespace Amazon.SimpleEmail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To use the default master key, provide an ARN in the form of <code>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</code>.
+        /// To use the default master key, provide an ARN in the form of <c>arn:aws:kms:REGION:ACCOUNT-ID-WITHOUT-HYPHENS:alias/aws/ses</c>.
         /// For example, if your Amazon Web Services account ID is 123456789012 and you want to
         /// use the default master key in the US West (Oregon) Region, the ARN of the default
-        /// master key would be <code>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</code>.
-        /// If you use the default master key, you don't need to perform any extra steps to give
-        /// Amazon SES permission to use the key.
+        /// master key would be <c>arn:aws:kms:us-west-2:123456789012:alias/aws/ses</c>. If you
+        /// use the default master key, you don't need to perform any extra steps to give Amazon
+        /// SES permission to use the key.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provided if <code>ActionType</code> is <code>PORT_PROBE</code>. It provides details
-    /// about the attempted port probe that was detected.
+    /// Provided if <c>ActionType</c> is <c>PORT_PROBE</c>. It provides details about the
+    /// attempted port probe that was detected.
     /// </summary>
     public partial class PortProbeAction
     {

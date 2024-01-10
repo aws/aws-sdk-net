@@ -47,11 +47,11 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VOLUME</code> - Default policy for EBS snapshots
+        ///  <c>VOLUME</c> - Default policy for EBS snapshots
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INSTANCE</code> - Default policy for EBS-backed AMIs
+        ///  <c>INSTANCE</c> - Default policy for EBS-backed AMIs
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -108,11 +108,11 @@ namespace Amazon.DLM.Model
         /// <summary>
         /// Gets and sets the property PolicyType. 
         /// <para>
-        /// The type of policy. <code>EBS_SNAPSHOT_MANAGEMENT</code> indicates that the policy
-        /// manages the lifecycle of Amazon EBS snapshots. <code>IMAGE_MANAGEMENT</code> indicates
-        /// that the policy manages the lifecycle of EBS-backed AMIs. <code>EVENT_BASED_POLICY</code>
-        /// indicates that the policy automates cross-account snapshot copies for snapshots that
-        /// are shared with your account.
+        /// The type of policy. <c>EBS_SNAPSHOT_MANAGEMENT</c> indicates that the policy manages
+        /// the lifecycle of Amazon EBS snapshots. <c>IMAGE_MANAGEMENT</c> indicates that the
+        /// policy manages the lifecycle of EBS-backed AMIs. <c>EVENT_BASED_POLICY</c> indicates
+        /// that the policy automates cross-account snapshot copies for snapshots that are shared
+        /// with your account.
         /// </para>
         /// </summary>
         public PolicyTypeValues PolicyType

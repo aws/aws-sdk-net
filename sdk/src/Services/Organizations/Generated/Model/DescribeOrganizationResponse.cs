@@ -42,10 +42,10 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The <code>AvailablePolicyTypes</code> part of the response is deprecated, and you
-        /// shouldn't use it in your apps. It doesn't include any policy type supported by Organizations
+        /// The <c>AvailablePolicyTypes</c> part of the response is deprecated, and you shouldn't
+        /// use it in your apps. It doesn't include any policy type supported by Organizations
         /// other than SCPs. To determine which policy types are enabled in your organization,
-        /// use the <code> <a>ListRoots</a> </code> operation.
+        /// use the <c> <a>ListRoots</a> </c> operation.
         /// </para>
         ///  </important>
         /// </summary>

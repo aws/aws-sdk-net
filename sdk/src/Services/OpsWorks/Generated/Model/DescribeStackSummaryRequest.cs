@@ -31,7 +31,7 @@ namespace Amazon.OpsWorks.Model
     /// <summary>
     /// Container for the parameters to the DescribeStackSummary operation.
     /// Describes the number of layers and apps in a specified stack, and the number of instances
-    /// in each state, such as <code>running_setup</code> or <code>online</code>.
+    /// in each state, such as <c>running_setup</c> or <c>online</c>.
     /// 
     ///  
     /// <para>

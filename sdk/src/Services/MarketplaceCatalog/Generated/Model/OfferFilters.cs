@@ -46,7 +46,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property AvailabilityEndDate. 
         /// <para>
-        /// Allows filtering on the <code>AvailabilityEndDate</code> of an offer.
+        /// Allows filtering on the <c>AvailabilityEndDate</c> of an offer.
         /// </para>
         /// </summary>
         public OfferAvailabilityEndDateFilter AvailabilityEndDate
@@ -64,7 +64,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property BuyerAccounts. 
         /// <para>
-        /// Allows filtering on the <code>BuyerAccounts</code> of an offer.
+        /// Allows filtering on the <c>BuyerAccounts</c> of an offer.
         /// </para>
         /// </summary>
         public OfferBuyerAccountsFilter BuyerAccounts
@@ -82,7 +82,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// Allows filtering on <code>EntityId</code> of an offer.
+        /// Allows filtering on <c>EntityId</c> of an offer.
         /// </para>
         /// </summary>
         public OfferEntityIdFilter EntityId
@@ -100,7 +100,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// Allows filtering on the <code>LastModifiedDate</code> of an offer.
+        /// Allows filtering on the <c>LastModifiedDate</c> of an offer.
         /// </para>
         /// </summary>
         public OfferLastModifiedDateFilter LastModifiedDate
@@ -118,7 +118,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Allows filtering on the <code>Name</code> of an offer.
+        /// Allows filtering on the <c>Name</c> of an offer.
         /// </para>
         /// </summary>
         public OfferNameFilter Name
@@ -136,7 +136,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// Allows filtering on the <code>ProductId</code> of an offer.
+        /// Allows filtering on the <c>ProductId</c> of an offer.
         /// </para>
         /// </summary>
         public OfferProductIdFilter ProductId
@@ -154,7 +154,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ReleaseDate. 
         /// <para>
-        /// Allows filtering on the <code>ReleaseDate</code> of an offer.
+        /// Allows filtering on the <c>ReleaseDate</c> of an offer.
         /// </para>
         /// </summary>
         public OfferReleaseDateFilter ReleaseDate
@@ -172,7 +172,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Allows filtering on the <code>State</code> of an offer.
+        /// Allows filtering on the <c>State</c> of an offer.
         /// </para>
         /// </summary>
         public OfferStateFilter State
@@ -190,7 +190,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Targeting. 
         /// <para>
-        /// Allows filtering on the <code>Targeting</code> of an offer.
+        /// Allows filtering on the <c>Targeting</c> of an offer.
         /// </para>
         /// </summary>
         public OfferTargetingFilter Targeting

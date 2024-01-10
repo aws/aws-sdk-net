@@ -39,10 +39,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InvocationsPerInstance. 
         /// <para>
-        /// The number of invocations sent to a model, normalized by <code>InstanceCount</code>
-        /// in each ProductionVariant. <code>1/numberOfInstances</code> is sent as the value on
-        /// each request, where <code>numberOfInstances</code> is the number of active instances
-        /// for the ProductionVariant behind the endpoint at the time of the request.
+        /// The number of invocations sent to a model, normalized by <c>InstanceCount</c> in each
+        /// ProductionVariant. <c>1/numberOfInstances</c> is sent as the value on each request,
+        /// where <c>numberOfInstances</c> is the number of active instances for the ProductionVariant
+        /// behind the endpoint at the time of the request.
         /// </para>
         /// </summary>
         public int InvocationsPerInstance

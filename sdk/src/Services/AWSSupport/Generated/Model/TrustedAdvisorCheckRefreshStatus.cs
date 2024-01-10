@@ -83,25 +83,24 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>none</code> - The check is not refreshed or the non-success status exceeds
-        /// the timeout
+        ///  <c>none</c> - The check is not refreshed or the non-success status exceeds the timeout
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>enqueued</code> - The check refresh requests has entered the refresh queue
+        ///  <c>enqueued</c> - The check refresh requests has entered the refresh queue
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>processing</code> - The check refresh request is picked up by the rule processing
+        ///  <c>processing</c> - The check refresh request is picked up by the rule processing
         /// engine
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>success</code> - The check is successfully refreshed
+        ///  <c>success</c> - The check is successfully refreshed
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>abandoned</code> - The check refresh has failed
+        ///  <c>abandoned</c> - The check refresh has failed
         /// </para>
         ///  </li> </ul>
         /// </summary>

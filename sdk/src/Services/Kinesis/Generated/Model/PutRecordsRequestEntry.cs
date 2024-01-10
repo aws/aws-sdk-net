@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Kinesis.Model
 {
     /// <summary>
-    /// Represents the output for <code>PutRecords</code>.
+    /// Represents the output for <c>PutRecords</c>.
     /// </summary>
     public partial class PutRecordsRequestEntry
     {

@@ -61,9 +61,9 @@ namespace Amazon.CodeGuruProfiler.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// Unique identifier for each <code>Channel</code> in the notification configuration
-        /// of a Profiling Group. A random UUID for channelId is used when adding a channel to
-        /// the notification configuration if not specified in the request.
+        /// Unique identifier for each <c>Channel</c> in the notification configuration of a Profiling
+        /// Group. A random UUID for channelId is used when adding a channel to the notification
+        /// configuration if not specified in the request.
         /// </para>
         /// </summary>
         public string Id

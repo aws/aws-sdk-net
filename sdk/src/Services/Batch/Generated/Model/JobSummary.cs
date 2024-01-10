@@ -87,9 +87,9 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The Unix timestamp (in milliseconds) for when the job was created. For non-array jobs
-        /// and parent array jobs, this is when the job entered the <code>SUBMITTED</code> state
-        /// (at the time <a>SubmitJob</a> was called). For array child jobs, this is when the
-        /// child job was spawned by its parent and entered the <code>PENDING</code> state.
+        /// and parent array jobs, this is when the job entered the <c>SUBMITTED</c> state (at
+        /// the time <a>SubmitJob</a> was called). For array child jobs, this is when the child
+        /// job was spawned by its parent and entered the <c>PENDING</c> state.
         /// </para>
         /// </summary>
         public long CreatedAt
@@ -205,8 +205,7 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property StartedAt. 
         /// <para>
         /// The Unix timestamp for when the job was started. More specifically, it's when the
-        /// job transitioned from the <code>STARTING</code> state to the <code>RUNNING</code>
-        /// state.
+        /// job transitioned from the <c>STARTING</c> state to the <c>RUNNING</c> state.
         /// </para>
         /// </summary>
         public long StartedAt
@@ -262,8 +261,8 @@ namespace Amazon.Batch.Model
         /// Gets and sets the property StoppedAt. 
         /// <para>
         /// The Unix timestamp for when the job was stopped. More specifically, it's when the
-        /// job transitioned from the <code>RUNNING</code> state to a terminal state, such as
-        /// <code>SUCCEEDED</code> or <code>FAILED</code>.
+        /// job transitioned from the <c>RUNNING</c> state to a terminal state, such as <c>SUCCEEDED</c>
+        /// or <c>FAILED</c>.
         /// </para>
         /// </summary>
         public long StoppedAt

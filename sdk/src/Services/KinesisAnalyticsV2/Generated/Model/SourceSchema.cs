@@ -42,7 +42,7 @@ namespace Amazon.KinesisAnalyticsV2.Model
         /// <summary>
         /// Gets and sets the property RecordColumns. 
         /// <para>
-        /// A list of <code>RecordColumn</code> objects. 
+        /// A list of <c>RecordColumn</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

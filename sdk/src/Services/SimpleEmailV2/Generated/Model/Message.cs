@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Represents the email message that you're sending. The <code>Message</code> object
-    /// consists of a subject line and a message body.
+    /// Represents the email message that you're sending. The <c>Message</c> object consists
+    /// of a subject line and a message body.
     /// </summary>
     public partial class Message
     {

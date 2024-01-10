@@ -117,9 +117,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the total number of results is greater than the number specified in the <code>maxResults</code>,
-        /// the response returns a token in the <code>nextToken</code> field. Use this token when
-        /// making a request to return the next batch of results.
+        /// If the total number of results is greater than the number specified in the <c>maxResults</c>,
+        /// the response returns a token in the <c>nextToken</c> field. Use this token when making
+        /// a request to return the next batch of results.
         /// </para>
         /// </summary>
         public string NextToken

@@ -39,7 +39,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConformancePackComplianceSummaryList. 
         /// <para>
-        /// A list of <code>ConformancePackComplianceSummary</code> objects. 
+        /// A list of <c>ConformancePackComplianceSummary</c> objects. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

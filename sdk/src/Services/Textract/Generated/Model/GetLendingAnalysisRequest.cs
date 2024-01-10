@@ -35,17 +35,17 @@ namespace Amazon.Textract.Model
     /// 
     ///  
     /// <para>
-    /// You start asynchronous text analysis by calling <code>StartLendingAnalysis</code>,
-    /// which returns a job identifier (<code>JobId</code>). When the text analysis operation
-    /// finishes, Amazon Textract publishes a completion status to the Amazon Simple Notification
-    /// Service (Amazon SNS) topic that's registered in the initial call to <code>StartLendingAnalysis</code>.
+    /// You start asynchronous text analysis by calling <c>StartLendingAnalysis</c>, which
+    /// returns a job identifier (<c>JobId</c>). When the text analysis operation finishes,
+    /// Amazon Textract publishes a completion status to the Amazon Simple Notification Service
+    /// (Amazon SNS) topic that's registered in the initial call to <c>StartLendingAnalysis</c>.
     /// 
     /// </para>
     ///  
     /// <para>
     /// To get the results of the text analysis operation, first check that the status value
     /// published to the Amazon SNS topic is SUCCEEDED. If so, call GetLendingAnalysis, and
-    /// pass the job identifier (<code>JobId</code>) from the initial call to <code>StartLendingAnalysis</code>.
+    /// pass the job identifier (<c>JobId</c>) from the initial call to <c>StartLendingAnalysis</c>.
     /// </para>
     /// </summary>
     public partial class GetLendingAnalysisRequest : AmazonTextractRequest
@@ -57,9 +57,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// A unique identifier for the lending or text-detection job. The <code>JobId</code>
-        /// is returned from <code>StartLendingAnalysis</code>. A <code>JobId</code> value is
-        /// only valid for 7 days.
+        /// A unique identifier for the lending or text-detection job. The <c>JobId</c> is returned
+        /// from <c>StartLendingAnalysis</c>. A <c>JobId</c> value is only valid for 7 days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

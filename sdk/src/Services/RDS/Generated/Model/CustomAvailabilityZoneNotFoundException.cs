@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability
+    /// <c>CustomAvailabilityZoneId</c> doesn't refer to an existing custom Availability
     /// Zone identifier.
     /// </summary>
     #if !NETSTANDARD

@@ -54,7 +54,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>60</code> 
+        /// Default: <c>60</c> 
         /// </para>
         /// </summary>
         public int Duration
@@ -78,7 +78,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2009-07-08T18:00Z</code> 
+        /// Example: <c>2009-07-08T18:00Z</c> 
         /// </para>
         /// </summary>
         public DateTime EndTimeUtc
@@ -98,10 +98,9 @@ namespace Amazon.Redshift.Model
         /// <para>
         /// An optional parameter that specifies the starting point to return a set of response
         /// records. When the results of a <a>DescribeEvents</a> request exceed the value specified
-        /// in <code>MaxRecords</code>, Amazon Web Services returns a value in the <code>Marker</code>
-        /// field of the response. You can retrieve the next set of response records by providing
-        /// the returned marker value in the <code>Marker</code> parameter and retrying the request.
-        /// 
+        /// in <c>MaxRecords</c>, Amazon Web Services returns a value in the <c>Marker</c> field
+        /// of the response. You can retrieve the next set of response records by providing the
+        /// returned marker value in the <c>Marker</c> parameter and retrying the request. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=2147483647)]
@@ -121,13 +120,13 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property MaxRecords. 
         /// <para>
         /// The maximum number of response records to return in each call. If the number of remaining
-        /// response records exceeds the specified <code>MaxRecords</code> value, a value is returned
-        /// in a <code>marker</code> field of the response. You can retrieve the next set of records
+        /// response records exceeds the specified <c>MaxRecords</c> value, a value is returned
+        /// in a <c>marker</c> field of the response. You can retrieve the next set of records
         /// by retrying the command with the returned marker value. 
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>100</code> 
+        /// Default: <c>100</c> 
         /// </para>
         ///  
         /// <para>
@@ -162,19 +161,19 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify a cluster identifier when <i>SourceType</i> is <code>cluster</code>.
+        /// Specify a cluster identifier when <i>SourceType</i> is <c>cluster</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify a cluster security group name when <i>SourceType</i> is <code>cluster-security-group</code>.
+        /// Specify a cluster security group name when <i>SourceType</i> is <c>cluster-security-group</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify a cluster parameter group name when <i>SourceType</i> is <code>cluster-parameter-group</code>.
+        /// Specify a cluster parameter group name when <i>SourceType</i> is <c>cluster-parameter-group</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify a cluster snapshot identifier when <i>SourceType</i> is <code>cluster-snapshot</code>.
+        /// Specify a cluster snapshot identifier when <i>SourceType</i> is <c>cluster-snapshot</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -207,21 +206,21 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Specify <code>cluster</code> when <i>SourceIdentifier</i> is a cluster identifier.
+        /// Specify <c>cluster</c> when <i>SourceIdentifier</i> is a cluster identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <code>cluster-security-group</code> when <i>SourceIdentifier</i> is a cluster
-        /// security group name.
+        /// Specify <c>cluster-security-group</c> when <i>SourceIdentifier</i> is a cluster security
+        /// group name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <code>cluster-parameter-group</code> when <i>SourceIdentifier</i> is a cluster
-        /// parameter group name.
+        /// Specify <c>cluster-parameter-group</c> when <i>SourceIdentifier</i> is a cluster parameter
+        /// group name.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Specify <code>cluster-snapshot</code> when <i>SourceIdentifier</i> is a cluster snapshot
+        /// Specify <c>cluster-snapshot</c> when <i>SourceIdentifier</i> is a cluster snapshot
         /// identifier.
         /// </para>
         ///  </li> </ul>
@@ -247,7 +246,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2009-07-08T18:00Z</code> 
+        /// Example: <c>2009-07-08T18:00Z</c> 
         /// </para>
         /// </summary>
         public DateTime StartTimeUtc
@@ -284,7 +283,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2009-07-08T18:00Z</code> 
+        /// Example: <c>2009-07-08T18:00Z</c> 
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -319,7 +318,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>2009-07-08T18:00Z</code> 
+        /// Example: <c>2009-07-08T18:00Z</c> 
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

@@ -137,8 +137,8 @@ namespace Amazon.AppConfig.Model
         /// Gets and sets the property State. 
         /// <para>
         /// The state of the environment. An environment can be in one of the following states:
-        /// <code>READY_FOR_DEPLOYMENT</code>, <code>DEPLOYING</code>, <code>ROLLING_BACK</code>,
-        /// or <code>ROLLED_BACK</code> 
+        /// <c>READY_FOR_DEPLOYMENT</c>, <c>DEPLOYING</c>, <c>ROLLING_BACK</c>, or <c>ROLLED_BACK</c>
+        /// 
         /// </para>
         /// </summary>
         public EnvironmentState State

@@ -39,8 +39,8 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property PackageID. 
         /// <para>
-        /// Internal ID of the package that you want to delete. Use <code>DescribePackages</code>
-        /// to find this value.
+        /// Internal ID of the package that you want to delete. Use <c>DescribePackages</c> to
+        /// find this value.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

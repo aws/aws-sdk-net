@@ -41,7 +41,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property BitDepth. 
         /// <para>
-        /// You can only choose an audio bit depth when you specify <code>flac</code> or <code>pcm</code>
+        /// You can only choose an audio bit depth when you specify <c>flac</c> or <c>pcm</c>
         /// for the value of Audio:Codec.
         /// </para>
         ///  
@@ -51,11 +51,11 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values are <code>16</code> and <code>24</code>.
+        /// Valid values are <c>16</c> and <c>24</c>.
         /// </para>
         ///  
         /// <para>
-        /// The most common bit depth is <code>24</code>.
+        /// The most common bit depth is <c>24</c>.
         /// </para>
         /// </summary>
         public string BitDepth
@@ -73,8 +73,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property BitOrder. 
         /// <para>
-        /// You can only choose an audio bit order when you specify <code>pcm</code> for the value
-        /// of Audio:Codec.
+        /// You can only choose an audio bit order when you specify <c>pcm</c> for the value of
+        /// Audio:Codec.
         /// </para>
         ///  
         /// <para>
@@ -82,7 +82,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// The supported value is <code>LittleEndian</code>.
+        /// The supported value is <c>LittleEndian</c>.
         /// </para>
         /// </summary>
         public string BitOrder
@@ -109,27 +109,26 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>auto</code>: If you specify <code>auto</code>, Elastic Transcoder selects the
-        /// profile based on the bit rate selected for the output file.
+        ///  <c>auto</c>: If you specify <c>auto</c>, Elastic Transcoder selects the profile based
+        /// on the bit rate selected for the output file.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AAC-LC</code>: The most common AAC profile. Use for bit rates larger than 64
-        /// kbps.
+        ///  <c>AAC-LC</c>: The most common AAC profile. Use for bit rates larger than 64 kbps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HE-AAC</code>: Not supported on some older players and devices. Use for bit
-        /// rates between 40 and 80 kbps.
+        ///  <c>HE-AAC</c>: Not supported on some older players and devices. Use for bit rates
+        /// between 40 and 80 kbps.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HE-AACv2</code>: Not supported on some players and devices. Use for bit rates
-        /// less than 48 kbps.
+        ///  <c>HE-AACv2</c>: Not supported on some players and devices. Use for bit rates less
+        /// than 48 kbps.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// All outputs in a <code>Smooth</code> playlist must have the same value for <code>Profile</code>.
+        /// All outputs in a <c>Smooth</c> playlist must have the same value for <c>Profile</c>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -153,7 +152,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Signed. 
         /// <para>
-        /// You can only choose whether an audio sample is signed when you specify <code>pcm</code>
+        /// You can only choose whether an audio sample is signed when you specify <c>pcm</c>
         /// for the value of Audio:Codec.
         /// </para>
         ///  
@@ -163,7 +162,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  
         /// <para>
-        /// The supported value is <code>Signed</code>.
+        /// The supported value is <c>Signed</c>.
         /// </para>
         /// </summary>
         public string Signed

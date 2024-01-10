@@ -37,12 +37,12 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    ///  <code>ModifyDefaultCreditSpecification</code> is an asynchronous operation, which
-    /// works at an Amazon Web Services Region level and modifies the credit option for each
-    /// Availability Zone. All zones in a Region are updated within five minutes. But if instances
-    /// are launched during this operation, they might not get the new credit option until
-    /// the zone is updated. To verify whether the update has occurred, you can call <code>GetDefaultCreditSpecification</code>
-    /// and check <code>DefaultCreditSpecification</code> for updates.
+    ///  <c>ModifyDefaultCreditSpecification</c> is an asynchronous operation, which works
+    /// at an Amazon Web Services Region level and modifies the credit option for each Availability
+    /// Zone. All zones in a Region are updated within five minutes. But if instances are
+    /// launched during this operation, they might not get the new credit option until the
+    /// zone is updated. To verify whether the update has occurred, you can call <c>GetDefaultCreditSpecification</c>
+    /// and check <c>DefaultCreditSpecification</c> for updates.
     /// </para>
     ///  
     /// <para>
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid Values: <code>standard</code> | <code>unlimited</code> 
+        /// Valid Values: <c>standard</c> | <c>unlimited</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

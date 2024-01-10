@@ -54,7 +54,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The <code>AccountID</code> the recommendation is generated for.
+        /// The <c>AccountID</c> the recommendation is generated for.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]
@@ -232,7 +232,7 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property EstimatedROI. 
         /// <para>
         /// The estimated return on investment that's based on the recommended Savings Plans that
-        /// you purchased. This is calculated as <code>estimatedSavingsAmount</code>/ <code>estimatedSPCost</code>*100.
+        /// you purchased. This is calculated as <c>estimatedSavingsAmount</c>/ <c>estimatedSPCost</c>*100.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1024)]

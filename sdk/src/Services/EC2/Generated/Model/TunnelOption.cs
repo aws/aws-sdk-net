@@ -330,8 +330,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property RekeyFuzzPercentage. 
         /// <para>
-        /// The percentage of the rekey window determined by <code>RekeyMarginTimeSeconds</code>
-        /// during which the rekey time is randomly selected.
+        /// The percentage of the rekey window determined by <c>RekeyMarginTimeSeconds</c> during
+        /// which the rekey time is randomly selected.
         /// </para>
         /// </summary>
         public int RekeyFuzzPercentage

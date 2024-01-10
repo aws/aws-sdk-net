@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteGraphqlApi operation.
-    /// Deletes a <code>GraphqlApi</code> object.
+    /// Deletes a <c>GraphqlApi</c> object.
     /// </summary>
     public partial class DeleteGraphqlApiRequest : AmazonAppSyncRequest
     {

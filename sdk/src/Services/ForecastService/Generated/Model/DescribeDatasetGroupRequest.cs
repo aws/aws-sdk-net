@@ -35,24 +35,24 @@ namespace Amazon.ForecastService.Model
     /// 
     ///  
     /// <para>
-    /// In addition to listing the parameters provided in the <code>CreateDatasetGroup</code>
-    /// request, this operation includes the following properties:
+    /// In addition to listing the parameters provided in the <c>CreateDatasetGroup</c> request,
+    /// this operation includes the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    ///  <code>DatasetArns</code> - The datasets belonging to the group.
+    ///  <c>DatasetArns</c> - The datasets belonging to the group.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>CreationTime</code> 
+    ///  <c>CreationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>LastModificationTime</code> 
+    ///  <c>LastModificationTime</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>Status</code> 
+    ///  <c>Status</c> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

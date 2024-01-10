@@ -40,8 +40,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property PredefinedScalingMetricType. 
         /// <para>
-        /// The metric type. The <code>ALBRequestCountPerTarget</code> metric type applies only
-        /// to Auto Scaling groups, Spot Fleet requests, and ECS services.
+        /// The metric type. The <c>ALBRequestCountPerTarget</c> metric type applies only to Auto
+        /// Scaling groups, Spot Fleet requests, and ECS services.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -61,9 +61,9 @@ namespace Amazon.AutoScalingPlans.Model
         /// Gets and sets the property ResourceLabel. 
         /// <para>
         /// Identifies the resource associated with the metric type. You can't specify a resource
-        /// label unless the metric type is <code>ALBRequestCountPerTarget</code> and there is
-        /// a target group for an Application Load Balancer attached to the Auto Scaling group,
-        /// Spot Fleet request, or ECS service.
+        /// label unless the metric type is <c>ALBRequestCountPerTarget</c> and there is a target
+        /// group for an Application Load Balancer attached to the Auto Scaling group, Spot Fleet
+        /// request, or ECS service.
         /// </para>
         ///  
         /// <para>

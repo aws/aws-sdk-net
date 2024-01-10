@@ -64,12 +64,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>gre-key</code> - The ID of a trunk interface association.
+        ///  <c>gre-key</c> - The ID of a trunk interface association.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>interface-protocol</code> - The interface protocol. Valid values are <code>VLAN</code>
-        /// and <code>GRE</code>.
+        ///  <c>interface-protocol</c> - The interface protocol. Valid values are <c>VLAN</c>
+        /// and <c>GRE</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -89,7 +89,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=255)]

@@ -38,9 +38,9 @@ namespace Amazon.Lightsail.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>CreateLoadBalancerTlsCertificate</code> operation supports tag-based access
-    /// control via resource tags applied to the resource identified by <code>load balancer
-    /// name</code>. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
+    /// The <c>CreateLoadBalancerTlsCertificate</c> operation supports tag-based access control
+    /// via resource tags applied to the resource identified by <c>load balancer name</c>.
+    /// For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-controlling-access-using-tags">Amazon
     /// Lightsail Developer Guide</a>.
     /// </para>
     /// </summary>
@@ -57,7 +57,7 @@ namespace Amazon.Lightsail.Model
         /// <para>
         /// An array of strings listing alternative domains and subdomains for your SSL/TLS certificate.
         /// Lightsail will de-dupe the names for you. You can have a maximum of 9 alternative
-        /// names (in addition to the 1 primary domain). We do not support wildcards (<code>*.example.com</code>).
+        /// names (in addition to the 1 primary domain). We do not support wildcards (<c>*.example.com</c>).
         /// </para>
         /// </summary>
         public List<string> CertificateAlternativeNames
@@ -75,7 +75,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property CertificateDomainName. 
         /// <para>
-        /// The domain name (<code>example.com</code>) for your SSL/TLS certificate.
+        /// The domain name (<c>example.com</c>) for your SSL/TLS certificate.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,7 +143,7 @@ namespace Amazon.Lightsail.Model
         /// </para>
         ///  
         /// <para>
-        /// Use the <code>TagResource</code> action to tag a resource after it's created.
+        /// Use the <c>TagResource</c> action to tag a resource after it's created.
         /// </para>
         /// </summary>
         public List<Tag> Tags

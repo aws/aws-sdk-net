@@ -42,9 +42,9 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// The response from a <a>GetSampledRequests</a> request includes an <code>HTTPRequest</code>
-    /// complex type that appears as <code>Request</code> in the response syntax. <code>HTTPRequest</code>
-    /// contains information about one of the web requests that were returned by <code>GetSampledRequests</code>.
+    /// The response from a <a>GetSampledRequests</a> request includes an <c>HTTPRequest</c>
+    /// complex type that appears as <c>Request</c> in the response syntax. <c>HTTPRequest</c>
+    /// contains information about one of the web requests that were returned by <c>GetSampledRequests</c>.
     /// 
     /// </para>
     /// </summary>
@@ -60,19 +60,19 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property ClientIP. 
         /// <para>
-        /// The IP address that the request originated from. If the <code>WebACL</code> is associated
+        /// The IP address that the request originated from. If the <c>WebACL</c> is associated
         /// with a CloudFront distribution, this is the value of one of the following fields in
         /// CloudFront access logs:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>c-ip</code>, if the viewer did not use an HTTP proxy or a load balancer to
-        /// send the request
+        ///  <c>c-ip</c>, if the viewer did not use an HTTP proxy or a load balancer to send the
+        /// request
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>x-forwarded-for</code>, if the viewer did use an HTTP proxy or a load balancer
-        /// to send the request
+        ///  <c>x-forwarded-for</c>, if the viewer did use an HTTP proxy or a load balancer to
+        /// send the request
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -130,7 +130,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property HTTPVersion. 
         /// <para>
-        /// The HTTP version specified in the sampled web request, for example, <code>HTTP/1.1</code>.
+        /// The HTTP version specified in the sampled web request, for example, <c>HTTP/1.1</c>.
         /// </para>
         /// </summary>
         public string HTTPVersion
@@ -149,8 +149,8 @@ namespace Amazon.WAFRegional.Model
         /// Gets and sets the property Method. 
         /// <para>
         /// The HTTP method specified in the sampled web request. CloudFront supports the following
-        /// methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>, <code>OPTIONS</code>,
-        /// <code>PATCH</code>, <code>POST</code>, and <code>PUT</code>. 
+        /// methods: <c>DELETE</c>, <c>GET</c>, <c>HEAD</c>, <c>OPTIONS</c>, <c>PATCH</c>, <c>POST</c>,
+        /// and <c>PUT</c>. 
         /// </para>
         /// </summary>
         public string Method
@@ -168,7 +168,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property URI. 
         /// <para>
-        /// The part of a web request that identifies the resource, for example, <code>/images/daily-ad.jpg</code>.
+        /// The part of a web request that identifies the resource, for example, <c>/images/daily-ad.jpg</c>.
         /// </para>
         /// </summary>
         public string URI

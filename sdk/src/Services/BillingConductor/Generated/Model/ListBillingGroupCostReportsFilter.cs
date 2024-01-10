@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.BillingConductor.Model
 {
     /// <summary>
-    /// The filter used to retrieve specific <code>BillingGroupCostReportElements</code>.
+    /// The filter used to retrieve specific <c>BillingGroupCostReportElements</c>.
     /// </summary>
     public partial class ListBillingGroupCostReportsFilter
     {

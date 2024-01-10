@@ -30,8 +30,8 @@ namespace Amazon.VPCLattice.Model
 {
     /// <summary>
     /// Describes the action for a rule. Each rule must include exactly one of the following
-    /// types of actions: <code>forward </code>or <code>fixed-response</code>, and it must
-    /// be the last action to be performed.
+    /// types of actions: <c>forward </c>or <c>fixed-response</c>, and it must be the last
+    /// action to be performed.
     /// </summary>
     public partial class RuleAction
     {

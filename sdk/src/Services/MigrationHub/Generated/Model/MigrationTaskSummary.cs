@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHub.Model
 {
     /// <summary>
-    /// MigrationTaskSummary includes <code>MigrationTaskName</code>, <code>ProgressPercent</code>,
-    /// <code>ProgressUpdateStream</code>, <code>Status</code>, and <code>UpdateDateTime</code>
-    /// for each task.
+    /// MigrationTaskSummary includes <c>MigrationTaskName</c>, <c>ProgressPercent</c>, <c>ProgressUpdateStream</c>,
+    /// <c>Status</c>, and <c>UpdateDateTime</c> for each task.
     /// </summary>
     public partial class MigrationTaskSummary
     {

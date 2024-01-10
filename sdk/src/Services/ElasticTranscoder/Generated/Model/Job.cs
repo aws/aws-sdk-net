@@ -157,7 +157,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <para>
         /// The value, if any, that you want Elastic Transcoder to prepend to the names of all
         /// files that this job creates, including output files, thumbnails, and playlists. We
-        /// recommend that you add a / or some other delimiter to the end of the <code>OutputKeyPrefix</code>.
+        /// recommend that you add a / or some other delimiter to the end of the <c>OutputKeyPrefix</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -176,10 +176,10 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Outputs. 
         /// <para>
-        /// Information about the output files. We recommend that you use the <code>Outputs</code>
-        /// syntax for all jobs, even when you want Elastic Transcoder to transcode a file into
-        /// only one format. Do not use both the <code>Outputs</code> and <code>Output</code>
-        /// syntaxes in the same request. You can create a maximum of 30 outputs per job. 
+        /// Information about the output files. We recommend that you use the <c>Outputs</c> syntax
+        /// for all jobs, even when you want Elastic Transcoder to transcode a file into only
+        /// one format. Do not use both the <c>Outputs</c> and <c>Output</c> syntaxes in the same
+        /// request. You can create a maximum of 30 outputs per job. 
         /// </para>
         ///  
         /// <para>
@@ -202,7 +202,7 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property PipelineId. 
         /// <para>
-        ///  The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding.
+        ///  The <c>Id</c> of the pipeline that you want Elastic Transcoder to use for transcoding.
         /// The pipeline determines several settings, including the Amazon S3 bucket from which
         /// Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder
         /// puts the transcoded files. 
@@ -227,9 +227,9 @@ namespace Amazon.ElasticTranscoder.Model
         /// </para>
         ///  </important> 
         /// <para>
-        /// If you specify a preset in <code>PresetId</code> for which the value of <code>Container</code>
-        /// is fmp4 (Fragmented MP4) or ts (MPEG-TS), <code>Playlists</code> contains information
-        /// about the master playlists that you want Elastic Transcoder to create.
+        /// If you specify a preset in <c>PresetId</c> for which the value of <c>Container</c>
+        /// is fmp4 (Fragmented MP4) or ts (MPEG-TS), <c>Playlists</c> contains information about
+        /// the master playlists that you want Elastic Transcoder to create.
         /// </para>
         ///  
         /// <para>
@@ -251,8 +251,8 @@ namespace Amazon.ElasticTranscoder.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The status of the job: <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>,
-        /// <code>Canceled</code>, or <code>Error</code>. 
+        ///  The status of the job: <c>Submitted</c>, <c>Progressing</c>, <c>Complete</c>, <c>Canceled</c>,
+        /// or <c>Error</c>. 
         /// </para>
         /// </summary>
         public string Status
@@ -289,30 +289,29 @@ namespace Amazon.ElasticTranscoder.Model
         /// Gets and sets the property UserMetadata. 
         /// <para>
         /// User-defined metadata that you want to associate with an Elastic Transcoder job. You
-        /// specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code>
-        /// pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs
-        /// are returned in the same order in which you specify them.
+        /// specify metadata in <c>key/value</c> pairs, and you can add up to 10 <c>key/value</c>
+        /// pairs per job. Elastic Transcoder does not guarantee that <c>key/value</c> pairs are
+        /// returned in the same order in which you specify them.
         /// </para>
         ///  
         /// <para>
-        /// Metadata <code>keys</code> and <code>values</code> must use characters from the following
-        /// list:
+        /// Metadata <c>keys</c> and <c>values</c> must use characters from the following list:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>0-9</code> 
+        ///  <c>0-9</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>A-Z</code> and <code>a-z</code> 
+        ///  <c>A-Z</c> and <c>a-z</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Space</code> 
+        ///  <c>Space</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The following symbols: <code>_.:/=+-%@</code> 
+        /// The following symbols: <c>_.:/=+-%@</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

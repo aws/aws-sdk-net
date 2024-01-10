@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Specifies the minimum and maximum for the <code>MemoryGiBPerVCpu</code> object when
-    /// you specify <a>InstanceRequirements</a> for an Auto Scaling group.
+    /// Specifies the minimum and maximum for the <c>MemoryGiBPerVCpu</c> object when you
+    /// specify <a>InstanceRequirements</a> for an Auto Scaling group.
     /// </summary>
     public partial class MemoryGiBPerVCpuRequest
     {

@@ -54,9 +54,9 @@ namespace Amazon.Route53Domains.Model
     /// information provided for this domain via the public WHOIS database. You certify that
     /// you are the registrant of this domain name and have the authority to make this decision.
     /// You may withdraw your consent at any time by enabling privacy protection using either
-    /// <code>UpdateDomainContactPrivacy</code> or the Route 53 console. Enabling privacy
-    /// protection removes the contact information provided for this domain from the WHOIS
-    /// database. For more information on our privacy practices, see <a href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.
+    /// <c>UpdateDomainContactPrivacy</c> or the Route 53 console. Enabling privacy protection
+    /// removes the contact information provided for this domain from the WHOIS database.
+    /// For more information on our privacy practices, see <a href="https://aws.amazon.com/privacy/">https://aws.amazon.com/privacy/</a>.
     /// </para>
     ///  </important>
     /// </summary>
@@ -71,10 +71,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AdminPrivacy. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-        /// the information that you entered for the admin contact.
+        /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
+        /// that you entered for the admin contact.
         /// </para>
         ///  <note> 
         /// <para>
@@ -118,10 +118,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property RegistrantPrivacy. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-        /// the information that you entered for the registrant contact (domain owner).
+        /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
+        /// that you entered for the registrant contact (domain owner).
         /// </para>
         ///  <note> 
         /// <para>
@@ -146,10 +146,10 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property TechPrivacy. 
         /// <para>
         /// Whether you want to conceal contact information from WHOIS queries. If you specify
-        /// <code>true</code>, WHOIS ("who is") queries return contact information either for
-        /// Amazon Registrar (for .com, .net, and .org domains) or for our registrar associate,
-        /// Gandi (for all other TLDs). If you specify <code>false</code>, WHOIS queries return
-        /// the information that you entered for the technical contact.
+        /// <c>true</c>, WHOIS ("who is") queries return contact information either for Amazon
+        /// Registrar (for .com, .net, and .org domains) or for our registrar associate, Gandi
+        /// (for all other TLDs). If you specify <c>false</c>, WHOIS queries return the information
+        /// that you entered for the technical contact.
         /// </para>
         ///  <note> 
         /// <para>

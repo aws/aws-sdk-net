@@ -74,7 +74,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Checksum. 
         /// <para>
-        /// Checksum of the bot used to identify a specific revision of the bot's <code>$LATEST</code>
+        /// Checksum of the bot used to identify a specific revision of the bot's <c>$LATEST</c>
         /// version.
         /// </para>
         /// </summary>
@@ -97,17 +97,17 @@ namespace Amazon.LexModelBuildingService.Model
         /// specify whether your use of Amazon Lex is related to a website, program, or other
         /// application that is directed or targeted, in whole or in part, to children under age
         /// 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying
-        /// <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By
-        /// specifying <code>true</code> in the <code>childDirected</code> field, you confirm
-        /// that your use of Amazon Lex <b>is</b> related to a website, program, or other application
-        /// that is directed or targeted, in whole or in part, to children under age 13 and subject
-        /// to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field,
-        /// you confirm that your use of Amazon Lex <b>is not</b> related to a website, program,
-        /// or other application that is directed or targeted, in whole or in part, to children
-        /// under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code>
-        /// field that does not accurately reflect whether your use of Amazon Lex is related to
-        /// a website, program, or other application that is directed or targeted, in whole or
-        /// in part, to children under age 13 and subject to COPPA.
+        /// <c>true</c> or <c>false</c> in the <c>childDirected</c> field. By specifying <c>true</c>
+        /// in the <c>childDirected</c> field, you confirm that your use of Amazon Lex <b>is</b>
+        /// related to a website, program, or other application that is directed or targeted,
+        /// in whole or in part, to children under age 13 and subject to COPPA. By specifying
+        /// <c>false</c> in the <c>childDirected</c> field, you confirm that your use of Amazon
+        /// Lex <b>is not</b> related to a website, program, or other application that is directed
+        /// or targeted, in whole or in part, to children under age 13 and subject to COPPA. You
+        /// may not specify a default value for the <c>childDirected</c> field that does not accurately
+        /// reflect whether your use of Amazon Lex is related to a website, program, or other
+        /// application that is directed or targeted, in whole or in part, to children under age
+        /// 13 and subject to COPPA.
         /// </para>
         ///  
         /// <para>
@@ -209,8 +209,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property EnableModelImprovements. 
         /// <para>
-        /// Indicates whether the bot uses accuracy improvements. <code>true</code> indicates
-        /// that the bot is using the improvements, otherwise, <code>false</code>.
+        /// Indicates whether the bot uses accuracy improvements. <c>true</c> indicates that the
+        /// bot is using the improvements, otherwise, <c>false</c>.
         /// </para>
         /// </summary>
         public bool EnableModelImprovements
@@ -228,8 +228,8 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If <code>status</code> is <code>FAILED</code>, Amazon Lex explains why it failed to
-        /// build the bot.
+        /// If <c>status</c> is <c>FAILED</c>, Amazon Lex explains why it failed to build the
+        /// bot.
         /// </para>
         /// </summary>
         public string FailureReason
@@ -267,7 +267,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Intents. 
         /// <para>
-        /// An array of <code>intent</code> objects. For more information, see <a>PutBot</a>.
+        /// An array of <c>intent</c> objects. For more information, see <a>PutBot</a>.
         /// </para>
         /// </summary>
         public List<Intent> Intents
@@ -341,13 +341,13 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property NluIntentConfidenceThreshold. 
         /// <para>
-        /// The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>,
-        /// <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents
-        /// in a <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
+        /// The score that determines where Amazon Lex inserts the <c>AMAZON.FallbackIntent</c>,
+        /// <c>AMAZON.KendraSearchIntent</c>, or both when returning alternative intents in a
+        /// <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a>
         /// or <a href="https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a>
-        /// response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for
-        /// all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted
-        /// if it is configured for the bot.
+        /// response. <c>AMAZON.FallbackIntent</c> is inserted if the confidence score for all
+        /// intents is below this value. <c>AMAZON.KendraSearchIntent</c> is only inserted if
+        /// it is configured for the bot.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -370,23 +370,23 @@ namespace Amazon.LexModelBuildingService.Model
         /// </para>
         ///  
         /// <para>
-        /// When the status is <code>BUILDING</code> Amazon Lex is building the bot for testing
-        /// and use.
+        /// When the status is <c>BUILDING</c> Amazon Lex is building the bot for testing and
+        /// use.
         /// </para>
         ///  
         /// <para>
-        /// If the status of the bot is <code>READY_BASIC_TESTING</code>, you can test the bot
-        /// using the exact utterances specified in the bot's intents. When the bot is ready for
-        /// full testing or to run, the status is <code>READY</code>.
+        /// If the status of the bot is <c>READY_BASIC_TESTING</c>, you can test the bot using
+        /// the exact utterances specified in the bot's intents. When the bot is ready for full
+        /// testing or to run, the status is <c>READY</c>.
         /// </para>
         ///  
         /// <para>
-        /// If there was a problem with building the bot, the status is <code>FAILED</code> and
-        /// the <code>failureReason</code> field explains why the bot did not build.
+        /// If there was a problem with building the bot, the status is <c>FAILED</c> and the
+        /// <c>failureReason</c> field explains why the bot did not build.
         /// </para>
         ///  
         /// <para>
-        /// If the bot was saved but not built, the status is <code>NOT_BUILT</code>.
+        /// If the bot was saved but not built, the status is <c>NOT_BUILT</c>.
         /// </para>
         /// </summary>
         public Status Status
@@ -404,7 +404,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the bot. For a new bot, the version is always <code>$LATEST</code>.
+        /// The version of the bot. For a new bot, the version is always <c>$LATEST</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

@@ -30,7 +30,7 @@ namespace Amazon.Route53.Model
 {
     /// <summary>
     /// A complex type that contains an optional comment about your hosted zone. If you don't
-    /// want to specify a comment, omit both the <code>HostedZoneConfig</code> and <code>Comment</code>
+    /// want to specify a comment, omit both the <c>HostedZoneConfig</c> and <c>Comment</c>
     /// elements.
     /// </summary>
     public partial class HostedZoneConfig

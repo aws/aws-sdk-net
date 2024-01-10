@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmailV2.Model
     /// the world. When you perform a predictive inbox placement test, you provide a sample
     /// message that contains the content that you plan to send to your customers. Amazon
     /// SES then sends that message to special email addresses spread across several major
-    /// email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code>
+    /// email providers. After about 24 hours, the test is complete, and you can use the <c>GetDeliverabilityTestReport</c>
     /// operation to view the results of the test.
     /// </summary>
     public partial class CreateDeliverabilityTestReportRequest : AmazonSimpleEmailServiceV2Request

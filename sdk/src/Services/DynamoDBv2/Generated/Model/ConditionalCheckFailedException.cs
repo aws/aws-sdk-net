@@ -126,7 +126,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property Item. 
         /// <para>
-        /// Item which caused the <code>ConditionalCheckFailedException</code>.
+        /// Item which caused the <c>ConditionalCheckFailedException</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, AttributeValue> Item

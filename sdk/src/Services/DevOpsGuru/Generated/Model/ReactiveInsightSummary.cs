@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DevOpsGuru.Model
 {
     /// <summary>
-    /// Information about a reactive insight. This object is returned by <code>DescribeInsight.</code>
+    /// Information about a reactive insight. This object is returned by <c>DescribeInsight.</c>
     /// </summary>
     public partial class ReactiveInsightSummary
     {

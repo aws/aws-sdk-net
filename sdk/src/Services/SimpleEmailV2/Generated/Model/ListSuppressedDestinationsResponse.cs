@@ -41,7 +41,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <para>
         /// A token that indicates that there are additional email addresses on the suppression
         /// list for your account. To view additional suppressed addresses, issue another request
-        /// to <code>ListSuppressedDestinations</code>, and pass this token in the <code>NextToken</code>
+        /// to <c>ListSuppressedDestinations</c>, and pass this token in the <c>NextToken</c>
         /// parameter.
         /// </para>
         /// </summary>

@@ -90,7 +90,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>on</code> 
+        /// Default: <c>on</c> 
         /// </para>
         /// </summary>
         public AutoPlacement AutoPlacement
@@ -173,7 +173,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>off</code> 
+        /// Default: <c>off</c> 
         /// </para>
         /// </summary>
         public HostRecovery HostRecovery

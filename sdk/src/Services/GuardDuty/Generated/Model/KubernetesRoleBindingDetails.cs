@@ -43,7 +43,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Kind. 
         /// <para>
-        /// The kind of the role. For role binding, this value will be <code>RoleBinding</code>.
+        /// The kind of the role. For role binding, this value will be <c>RoleBinding</c>.
         /// </para>
         /// </summary>
         public string Kind
@@ -61,7 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>RoleBinding</code>.
+        /// The name of the <c>RoleBinding</c>.
         /// </para>
         /// </summary>
         public string Name
@@ -79,7 +79,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RoleRefKind. 
         /// <para>
-        /// The type of the role being referenced. This could be either <code>Role</code> or <code>ClusterRole</code>.
+        /// The type of the role being referenced. This could be either <c>Role</c> or <c>ClusterRole</c>.
         /// </para>
         /// </summary>
         public string RoleRefKind
@@ -97,8 +97,8 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property RoleRefName. 
         /// <para>
-        /// The name of the role being referenced. This must match the name of the <code>Role</code>
-        /// or <code>ClusterRole</code> that you want to bind to.
+        /// The name of the role being referenced. This must match the name of the <c>Role</c>
+        /// or <c>ClusterRole</c> that you want to bind to.
         /// </para>
         /// </summary>
         public string RoleRefName

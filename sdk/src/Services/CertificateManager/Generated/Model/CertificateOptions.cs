@@ -44,8 +44,8 @@ namespace Amazon.CertificateManager.Model
         /// <summary>
         /// Gets and sets the property CertificateTransparencyLoggingPreference. 
         /// <para>
-        /// You can opt out of certificate transparency logging by specifying the <code>DISABLED</code>
-        /// option. Opt in by specifying <code>ENABLED</code>. 
+        /// You can opt out of certificate transparency logging by specifying the <c>DISABLED</c>
+        /// option. Opt in by specifying <c>ENABLED</c>. 
         /// </para>
         /// </summary>
         public CertificateTransparencyLoggingPreference CertificateTransparencyLoggingPreference

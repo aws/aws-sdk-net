@@ -47,9 +47,9 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ActiveServicesCount. 
         /// <para>
-        /// The number of services that are running on the cluster in an <code>ACTIVE</code> state.
+        /// The number of services that are running on the cluster in an <c>ACTIVE</c> state.
         /// You can view these services with the Amazon ECS <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ListServices.html">
-        /// <code>ListServices</code> </a> API operation. 
+        /// <c>ListServices</c> </a> API operation. 
         /// </para>
         /// </summary>
         public int ActiveServicesCount
@@ -179,7 +179,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property RegisteredContainerInstancesCount. 
         /// <para>
         /// The number of container instances registered into the cluster. This includes container
-        /// instances in both <code>ACTIVE</code> and <code>DRAINING</code> status. 
+        /// instances in both <c>ACTIVE</c> and <c>DRAINING</c> status. 
         /// </para>
         /// </summary>
         public int RegisteredContainerInstancesCount
@@ -197,7 +197,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RunningTasksCount. 
         /// <para>
-        /// The number of tasks in the cluster that are in the <code>RUNNING</code> state. 
+        /// The number of tasks in the cluster that are in the <c>RUNNING</c> state. 
         /// </para>
         /// </summary>
         public int RunningTasksCount

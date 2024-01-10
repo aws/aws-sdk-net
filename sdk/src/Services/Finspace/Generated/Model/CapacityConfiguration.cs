@@ -70,38 +70,35 @@ namespace Amazon.Finspace.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>kx.s.large</code> – The node type with a configuration of 12 GiB memory and
-        /// 2 vCPUs.
+        ///  <c>kx.s.large</c> – The node type with a configuration of 12 GiB memory and 2 vCPUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kx.s.xlarge</code> – The node type with a configuration of 27 GiB memory and
-        /// 4 vCPUs.
+        ///  <c>kx.s.xlarge</c> – The node type with a configuration of 27 GiB memory and 4 vCPUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kx.s.2xlarge</code> – The node type with a configuration of 54 GiB memory and
-        /// 8 vCPUs.
+        ///  <c>kx.s.2xlarge</c> – The node type with a configuration of 54 GiB memory and 8 vCPUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kx.s.4xlarge</code> – The node type with a configuration of 108 GiB memory
-        /// and 16 vCPUs.
+        ///  <c>kx.s.4xlarge</c> – The node type with a configuration of 108 GiB memory and 16
+        /// vCPUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kx.s.8xlarge</code> – The node type with a configuration of 216 GiB memory
-        /// and 32 vCPUs.
+        ///  <c>kx.s.8xlarge</c> – The node type with a configuration of 216 GiB memory and 32
+        /// vCPUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kx.s.16xlarge</code> – The node type with a configuration of 432 GiB memory
-        /// and 64 vCPUs.
+        ///  <c>kx.s.16xlarge</c> – The node type with a configuration of 432 GiB memory and 64
+        /// vCPUs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>kx.s.32xlarge</code> – The node type with a configuration of 864 GiB memory
-        /// and 128 vCPUs.
+        ///  <c>kx.s.32xlarge</c> – The node type with a configuration of 864 GiB memory and 128
+        /// vCPUs.
         /// </para>
         ///  </li> </ul>
         /// </summary>

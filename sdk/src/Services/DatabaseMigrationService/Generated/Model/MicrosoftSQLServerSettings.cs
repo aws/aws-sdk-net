@@ -186,11 +186,11 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ReadBackupOnly. 
         /// <para>
-        /// When this attribute is set to <code>Y</code>, DMS only reads changes from transaction
-        /// log backups and doesn't read from the active transaction log file during ongoing replication.
-        /// Setting this parameter to <code>Y</code> enables you to control active transaction
-        /// log file growth during full load and ongoing replication tasks. However, it can add
-        /// some source latency to ongoing replication.
+        /// When this attribute is set to <c>Y</c>, DMS only reads changes from transaction log
+        /// backups and doesn't read from the active transaction log file during ongoing replication.
+        /// Setting this parameter to <c>Y</c> enables you to control active transaction log file
+        /// growth during full load and ongoing replication tasks. However, it can add some source
+        /// latency to ongoing replication.
         /// </para>
         /// </summary>
         public bool ReadBackupOnly
@@ -245,19 +245,19 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property SecretsManagerAccessRoleArn. 
         /// <para>
         /// The full Amazon Resource Name (ARN) of the IAM role that specifies DMS as the trusted
-        /// entity and grants the required permissions to access the value in <code>SecretsManagerSecret</code>.
-        /// The role must allow the <code>iam:PassRole</code> action. <code>SecretsManagerSecret</code>
-        /// has the value of the Amazon Web Services Secrets Manager secret that allows access
-        /// to the SQL Server endpoint.
+        /// entity and grants the required permissions to access the value in <c>SecretsManagerSecret</c>.
+        /// The role must allow the <c>iam:PassRole</c> action. <c>SecretsManagerSecret</c> has
+        /// the value of the Amazon Web Services Secrets Manager secret that allows access to
+        /// the SQL Server endpoint.
         /// </para>
         ///  <note> 
         /// <para>
         /// You can specify one of two sets of values for these permissions. You can specify the
-        /// values for this setting and <code>SecretsManagerSecretId</code>. Or you can specify
-        /// clear-text values for <code>UserName</code>, <code>Password</code>, <code>ServerName</code>,
-        /// and <code>Port</code>. You can't specify both. For more information on creating this
-        /// <code>SecretsManagerSecret</code> and the <code>SecretsManagerAccessRoleArn</code>
-        /// and <code>SecretsManagerSecretId</code> required to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
+        /// values for this setting and <c>SecretsManagerSecretId</c>. Or you can specify clear-text
+        /// values for <c>UserName</c>, <c>Password</c>, <c>ServerName</c>, and <c>Port</c>. You
+        /// can't specify both. For more information on creating this <c>SecretsManagerSecret</c>
+        /// and the <c>SecretsManagerAccessRoleArn</c> and <c>SecretsManagerSecretId</c> required
+        /// to access it, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Security.html#security-iam-secretsmanager">Using
         /// secrets to access Database Migration Service resources</a> in the <i>Database Migration
         /// Service User Guide</i>.
         /// </para>
@@ -278,8 +278,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property SecretsManagerSecretId. 
         /// <para>
-        /// The full ARN, partial ARN, or friendly name of the <code>SecretsManagerSecret</code>
-        /// that contains the SQL Server endpoint connection details.
+        /// The full ARN, partial ARN, or friendly name of the <c>SecretsManagerSecret</c> that
+        /// contains the SQL Server endpoint connection details.
         /// </para>
         /// </summary>
         public string SecretsManagerSecretId
@@ -299,7 +299,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <para>
         /// Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance,
         /// this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
-        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// in the <c> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</c>
         /// field.
         /// </para>
         /// </summary>
@@ -336,9 +336,9 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property TrimSpaceInChar. 
         /// <para>
-        /// Use the <code>TrimSpaceInChar</code> source endpoint setting to right-trim data on
-        /// CHAR and NCHAR data types during migration. Setting <code>TrimSpaceInChar</code> does
-        /// not left-trim data. The default value is <code>true</code>.
+        /// Use the <c>TrimSpaceInChar</c> source endpoint setting to right-trim data on CHAR
+        /// and NCHAR data types during migration. Setting <c>TrimSpaceInChar</c> does not left-trim
+        /// data. The default value is <c>true</c>.
         /// </para>
         /// </summary>
         public bool TrimSpaceInChar
@@ -394,8 +394,8 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property UseThirdPartyBackupDevice. 
         /// <para>
-        /// When this attribute is set to <code>Y</code>, DMS processes third-party transaction
-        /// log backups if they are created in native format.
+        /// When this attribute is set to <c>Y</c>, DMS processes third-party transaction log
+        /// backups if they are created in native format.
         /// </para>
         /// </summary>
         public bool UseThirdPartyBackupDevice

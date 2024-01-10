@@ -30,7 +30,7 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnectorGroup operation.
-    /// Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code>
+    /// Deletes the specified Amazon Chime Voice Connector group. Any <c>VoiceConnectorItems</c>
     /// and phone numbers associated with the group must be removed before it can be deleted.
     /// 
     ///  <important> 

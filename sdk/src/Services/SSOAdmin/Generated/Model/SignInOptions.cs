@@ -40,7 +40,7 @@ namespace Amazon.SSOAdmin.Model
         /// Gets and sets the property ApplicationUrl. 
         /// <para>
         /// The URL that accepts authentication requests for an application. This is a required
-        /// parameter if the <code>Origin</code> parameter is <code>APPLICATION</code>.
+        /// parameter if the <c>Origin</c> parameter is <c>APPLICATION</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -64,12 +64,12 @@ namespace Amazon.SSOAdmin.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>APPLICATION</code>: IAM Identity Center redirects the customer to the configured
-        /// <code>ApplicationUrl</code>.
+        ///  <c>APPLICATION</c>: IAM Identity Center redirects the customer to the configured
+        /// <c>ApplicationUrl</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IDENTITY_CENTER</code>: IAM Identity Center uses SAML identity-provider initiated
+        ///  <c>IDENTITY_CENTER</c>: IAM Identity Center uses SAML identity-provider initiated
         /// authentication to sign the customer directly into a SAML-based application.
         /// </para>
         ///  </li> </ul>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes a CloudFormation stack record created as a result of the <code>create cloud
-    /// formation stack</code> action.
+    /// Describes a CloudFormation stack record created as a result of the <c>create cloud
+    /// formation stack</c> action.
     /// 
     ///  
     /// <para>
@@ -127,7 +127,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the CloudFormation stack record. It starts with <code>CloudFormationStackRecord</code>
+        /// The name of the CloudFormation stack record. It starts with <c>CloudFormationStackRecord</c>
         /// followed by a GUID.
         /// </para>
         /// </summary>
@@ -146,7 +146,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The Lightsail resource type (<code>CloudFormationStackRecord</code>).
+        /// The Lightsail resource type (<c>CloudFormationStackRecord</c>).
         /// </para>
         /// </summary>
         public ResourceType ResourceType

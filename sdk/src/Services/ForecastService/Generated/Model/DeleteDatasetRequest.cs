@@ -31,8 +31,8 @@ namespace Amazon.ForecastService.Model
     /// <summary>
     /// Container for the parameters to the DeleteDataset operation.
     /// Deletes an Amazon Forecast dataset that was created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDataset.html">CreateDataset</a>
-    /// operation. You can only delete datasets that have a status of <code>ACTIVE</code>
-    /// or <code>CREATE_FAILED</code>. To get the status use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
+    /// operation. You can only delete datasets that have a status of <c>ACTIVE</c> or <c>CREATE_FAILED</c>.
+    /// To get the status use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDataset.html">DescribeDataset</a>
     /// operation.
     /// 
     ///  <note> 

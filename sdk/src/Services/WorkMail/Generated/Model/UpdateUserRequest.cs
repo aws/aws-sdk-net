@@ -32,7 +32,7 @@ namespace Amazon.WorkMail.Model
     /// Container for the parameters to the UpdateUser operation.
     /// Updates data for the user. To have the latest information, it must be preceded by
     /// a <a>DescribeUser</a> call. The dataset in the request should be the one expected
-    /// when performing another <code>DescribeUser</code> call.
+    /// when performing another <c>DescribeUser</c> call.
     /// </summary>
     public partial class UpdateUserRequest : AmazonWorkMailRequest
     {

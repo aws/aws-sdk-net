@@ -39,9 +39,8 @@ namespace Amazon.CloudFormation.Model
     /// encapsulates any requirements that must be met before CloudFormation can proceed with
     /// a stack set operation in that account and Region. CloudFormation invokes the function
     /// each time a stack set operation is requested for that account and Region; if the function
-    /// returns <code>FAILED</code>, CloudFormation cancels the operation in that account
-    /// and Region, and sets the stack set operation result status for that account and Region
-    /// to <code>FAILED</code>.
+    /// returns <c>FAILED</c>, CloudFormation cancels the operation in that account and Region,
+    /// and sets the stack set operation result status for that account and Region to <c>FAILED</c>.
     /// </para>
     ///  
     /// <para>
@@ -61,21 +60,21 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code>: The account gate function has determined that the account
-        /// and Region passes any requirements for a stack set operation to occur. CloudFormation
-        /// proceeds with the stack operation in that account and Region.
+        ///  <c>SUCCEEDED</c>: The account gate function has determined that the account and Region
+        /// passes any requirements for a stack set operation to occur. CloudFormation proceeds
+        /// with the stack operation in that account and Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code>: The account gate function has determined that the account and
-        /// Region doesn't meet the requirements for a stack set operation to occur. CloudFormation
-        /// cancels the stack set operation in that account and Region, and sets the stack set
-        /// operation result status for that account and Region to <code>FAILED</code>.
+        ///  <c>FAILED</c>: The account gate function has determined that the account and Region
+        /// doesn't meet the requirements for a stack set operation to occur. CloudFormation cancels
+        /// the stack set operation in that account and Region, and sets the stack set operation
+        /// result status for that account and Region to <c>FAILED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SKIPPED</code>: CloudFormation has skipped calling the account gate function
-        /// for this account and Region, for one of the following reasons:
+        ///  <c>SKIPPED</c>: CloudFormation has skipped calling the account gate function for
+        /// this account and Region, for one of the following reasons:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -84,7 +83,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set administration
+        /// The <c>AWSCloudFormationStackSetExecutionRole</c> of the stack set administration
         /// account lacks permissions to invoke the function. CloudFormation proceeds with the
         /// stack set operation in this account and Region.
         /// </para>

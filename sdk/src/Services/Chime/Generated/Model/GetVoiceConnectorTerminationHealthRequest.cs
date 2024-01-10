@@ -44,8 +44,8 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// Retrieves information about the last time a SIP <code>OPTIONS</code> ping was received
-    /// from your SIP infrastructure for the specified Amazon Chime Voice Connector.
+    /// Retrieves information about the last time a SIP <c>OPTIONS</c> ping was received from
+    /// your SIP infrastructure for the specified Amazon Chime Voice Connector.
     /// </para>
     /// </summary>
     public partial class GetVoiceConnectorTerminationHealthRequest : AmazonChimeRequest

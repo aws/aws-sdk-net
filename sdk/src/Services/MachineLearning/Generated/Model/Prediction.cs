@@ -29,28 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// The output from a <code>Predict</code> operation: 
+    /// The output from a <c>Predict</c> operation: 
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>Details</code> - Contains the following attributes: <code>DetailsAttributes.PREDICTIVE_MODEL_TYPE
-    /// - REGRESSION | BINARY | MULTICLASS</code> <code>DetailsAttributes.ALGORITHM - SGD</code>
-    /// 
+    ///  <c>Details</c> - Contains the following attributes: <c>DetailsAttributes.PREDICTIVE_MODEL_TYPE
+    /// - REGRESSION | BINARY | MULTICLASS</c> <c>DetailsAttributes.ALGORITHM - SGD</c> 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>PredictedLabel</code> - Present for either a <code>BINARY</code> or <code>MULTICLASS</code>
-    /// <code>MLModel</code> request. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>PredictedScores</code> - Contains the raw classification score corresponding
-    /// to each label. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    ///  <code>PredictedValue</code> - Present for a <code>REGRESSION</code> <code>MLModel</code>
+    ///  <c>PredictedLabel</c> - Present for either a <c>BINARY</c> or <c>MULTICLASS</c> <c>MLModel</c>
     /// request. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PredictedScores</c> - Contains the raw classification score corresponding to each
+    /// label. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <c>PredictedValue</c> - Present for a <c>REGRESSION</c> <c>MLModel</c> request. 
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -79,7 +77,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property PredictedLabel. 
         /// <para>
-        /// The prediction label for either a <code>BINARY</code> or <code>MULTICLASS</code> <code>MLModel</code>.
+        /// The prediction label for either a <c>BINARY</c> or <c>MULTICLASS</c> <c>MLModel</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -113,7 +111,7 @@ namespace Amazon.MachineLearning.Model
         /// <summary>
         /// Gets and sets the property PredictedValue. 
         /// <para>
-        /// The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+        /// The prediction value for <c>REGRESSION</c> <c>MLModel</c>.
         /// </para>
         /// </summary>
         public float PredictedValue

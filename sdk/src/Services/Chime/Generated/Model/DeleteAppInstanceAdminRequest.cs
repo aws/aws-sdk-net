@@ -30,8 +30,8 @@ namespace Amazon.Chime.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppInstanceAdmin operation.
-    /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This
-    /// action does not delete the user.
+    /// Demotes an <c>AppInstanceAdmin</c> to an <c>AppInstanceUser</c>. This action does
+    /// not delete the user.
     /// 
     ///  <important> 
     /// <para>
@@ -55,7 +55,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceAdminArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>'s administrator.
+        /// The ARN of the <c>AppInstance</c>'s administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -74,7 +74,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

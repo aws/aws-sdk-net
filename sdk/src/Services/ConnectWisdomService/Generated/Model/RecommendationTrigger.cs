@@ -30,8 +30,8 @@ namespace Amazon.ConnectWisdomService.Model
 {
     /// <summary>
     /// A recommendation trigger provides context on the event that produced the referenced
-    /// recommendations. Recommendations are only referenced in <code>recommendationIds</code>
-    /// by a single RecommendationTrigger.
+    /// recommendations. Recommendations are only referenced in <c>recommendationIds</c> by
+    /// a single RecommendationTrigger.
     /// </summary>
     public partial class RecommendationTrigger
     {

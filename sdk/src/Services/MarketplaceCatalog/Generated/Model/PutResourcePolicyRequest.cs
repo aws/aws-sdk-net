@@ -30,8 +30,8 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// Container for the parameters to the PutResourcePolicy operation.
-    /// Attaches a resource-based policy to an entity. Examples of an entity include: <code>AmiProduct</code>
-    /// and <code>ContainerProduct</code>.
+    /// Attaches a resource-based policy to an entity. Examples of an entity include: <c>AmiProduct</c>
+    /// and <c>ContainerProduct</c>.
     /// </summary>
     public partial class PutResourcePolicyRequest : AmazonMarketplaceCatalogRequest
     {

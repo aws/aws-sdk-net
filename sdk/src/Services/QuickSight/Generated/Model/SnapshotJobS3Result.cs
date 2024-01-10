@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The Amazon S3 result from the snapshot job. The result includes the <code>DestinationConfiguration</code>
+    /// The Amazon S3 result from the snapshot job. The result includes the <c>DestinationConfiguration</c>
     /// and the Amazon S3 Uri. If an error occured during the job, the result returns information
     /// on the error.
     /// </summary>
@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property S3DestinationConfiguration. 
         /// <para>
-        /// A list of Amazon S3 bucket configurations that are provided when you make a <code>StartDashboardSnapshotJob</code>
+        /// A list of Amazon S3 bucket configurations that are provided when you make a <c>StartDashboardSnapshotJob</c>
         /// API call. 
         /// </para>
         /// </summary>

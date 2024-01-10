@@ -66,8 +66,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property AvailablePluginProperties. 
         /// <para>
-        /// If the package is a <code>ZIP-PLUGIN</code> package, additional information about
-        /// plugin properties.
+        /// If the package is a <c>ZIP-PLUGIN</c> package, additional information about plugin
+        /// properties.
         /// </para>
         /// </summary>
         public PluginProperties AvailablePluginProperties
@@ -214,9 +214,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageStatus. 
         /// <para>
-        /// The current status of the package. The available options are <code>AVAILABLE</code>,
-        /// <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>,
-        /// <code>DELETING</code>, and <code>DELETE_FAILED</code>.
+        /// The current status of the package. The available options are <c>AVAILABLE</c>, <c>COPYING</c>,
+        /// <c>COPY_FAILED</c>, <c>VALIDATNG</c>, <c>VALIDATION_FAILED</c>, <c>DELETING</c>, and
+        /// <c>DELETE_FAILED</c>.
         /// </para>
         /// </summary>
         public PackageStatus PackageStatus

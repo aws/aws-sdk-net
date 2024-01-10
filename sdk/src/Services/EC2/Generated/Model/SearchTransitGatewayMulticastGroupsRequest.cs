@@ -47,44 +47,42 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>group-ip-address</code> - The IP address of the transit gateway multicast group.
+        ///  <c>group-ip-address</c> - The IP address of the transit gateway multicast group.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>is-group-member</code> - The resource is a group member. Valid values are <code>true</code>
-        /// | <code>false</code>.
+        ///  <c>is-group-member</c> - The resource is a group member. Valid values are <c>true</c>
+        /// | <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>is-group-source</code> - The resource is a group source. Valid values are <code>true</code>
-        /// | <code>false</code>.
+        ///  <c>is-group-source</c> - The resource is a group source. Valid values are <c>true</c>
+        /// | <c>false</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>member-type</code> - The member type. Valid values are <code>igmp</code> |
-        /// <code>static</code>.
+        ///  <c>member-type</c> - The member type. Valid values are <c>igmp</c> | <c>static</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-id</code> - The ID of the resource.
+        ///  <c>resource-id</c> - The ID of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>resource-type</code> - The type of resource. Valid values are <code>vpc</code>
-        /// | <code>vpn</code> | <code>direct-connect-gateway</code> | <code>tgw-peering</code>.
+        ///  <c>resource-type</c> - The type of resource. Valid values are <c>vpc</c> | <c>vpn</c>
+        /// | <c>direct-connect-gateway</c> | <c>tgw-peering</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>source-type</code> - The source type. Valid values are <code>igmp</code> |
-        /// <code>static</code>.
+        ///  <c>source-type</c> - The source type. Valid values are <c>igmp</c> | <c>static</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>subnet-id</code> - The ID of the subnet.
+        ///  <c>subnet-id</c> - The ID of the subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>transit-gateway-attachment-id</code> - The id of the transit gateway attachment.
+        ///  <c>transit-gateway-attachment-id</c> - The id of the transit gateway attachment.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -104,7 +102,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results to return with a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>nextToken</code> value.
+        /// results, make another call with the returned <c>nextToken</c> value.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1000)]

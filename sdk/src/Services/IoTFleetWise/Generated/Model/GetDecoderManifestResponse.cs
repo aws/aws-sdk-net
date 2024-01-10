@@ -123,7 +123,7 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The detailed message for the decoder manifest. When a decoder manifest is in an <code>INVALID</code>
+        /// The detailed message for the decoder manifest. When a decoder manifest is in an <c>INVALID</c>
         /// status, the message contains detailed reason and help information.
         /// </para>
         /// </summary>
@@ -180,9 +180,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        ///  The state of the decoder manifest. If the status is <code>ACTIVE</code>, the decoder
-        /// manifest can't be edited. If the status is marked <code>DRAFT</code>, you can edit
-        /// the decoder manifest.
+        ///  The state of the decoder manifest. If the status is <c>ACTIVE</c>, the decoder manifest
+        /// can't be edited. If the status is marked <c>DRAFT</c>, you can edit the decoder manifest.
         /// </para>
         /// </summary>
         public ManifestStatus Status

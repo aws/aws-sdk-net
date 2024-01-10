@@ -37,15 +37,15 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You must specify either <code>anomalyId</code> or <code>patternId</code>, but you
-    /// can't specify both parameters in the same operation.
+    /// You must specify either <c>anomalyId</c> or <c>patternId</c>, but you can't specify
+    /// both parameters in the same operation.
     /// </para>
     ///  
     /// <para>
     /// If you have previously used this operation to suppress detection of a pattern or anomaly,
     /// you can use it again to cause CloudWatch Logs to end the suppression. To do this,
     /// use this operation and specify the anomaly or pattern to stop suppressing, and omit
-    /// the <code>suppressionType</code> and <code>suppressionPeriod</code> parameters.
+    /// the <c>suppressionType</c> and <c>suppressionPeriod</c> parameters.
     /// </para>
     /// </summary>
     public partial class UpdateAnomalyRequest : AmazonCloudWatchLogsRequest
@@ -140,9 +140,8 @@ namespace Amazon.CloudWatchLogs.Model
         /// Gets and sets the property SuppressionType. 
         /// <para>
         /// Use this to specify whether the suppression to be temporary or infinite. If you specify
-        /// <code>LIMITED</code>, you must also specify a <code>suppressionPeriod</code>. If you
-        /// specify <code>INFINITE</code>, any value for <code>suppressionPeriod</code> is ignored.
-        /// 
+        /// <c>LIMITED</c>, you must also specify a <c>suppressionPeriod</c>. If you specify <c>INFINITE</c>,
+        /// any value for <c>suppressionPeriod</c> is ignored. 
         /// </para>
         /// </summary>
         public SuppressionType SuppressionType

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// A <code>GetPredictiveScalingForecast</code> call returns the load forecast for a predictive
+    /// A <c>GetPredictiveScalingForecast</c> call returns the load forecast for a predictive
     /// scaling policy. This structure includes the data points for that load forecast, along
     /// with the timestamps of those data points and the metric specification.
     /// </summary>

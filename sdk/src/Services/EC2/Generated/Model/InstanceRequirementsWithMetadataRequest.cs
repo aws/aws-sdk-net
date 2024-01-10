@@ -35,8 +35,7 @@ namespace Amazon.EC2.Model
     /// 
     ///  
     /// <para>
-    /// If you specify <code>InstanceRequirementsWithMetadataRequest</code>, you can't specify
-    /// <code>InstanceTypes</code>.
+    /// If you specify <c>InstanceRequirementsWithMetadataRequest</c>, you can't specify <c>InstanceTypes</c>.
     /// </para>
     /// </summary>
     public partial class InstanceRequirementsWithMetadataRequest

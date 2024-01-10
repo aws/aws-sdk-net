@@ -141,7 +141,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the access point. This is the value of the <code>Name</code> tag.
+        /// The name of the access point. This is the value of the <c>Name</c> tag.
         /// </para>
         /// </summary>
         public string Name

@@ -47,10 +47,10 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// Amazon Kendra currently does not support using <code>UserGroupResolutionConfiguration</code>
+    /// Amazon Kendra currently does not support using <c>UserGroupResolutionConfiguration</c>
     /// with an Amazon Web Services organization member account for your IAM Identity Center
     /// identify source. You must create your index in the management account for the organization
-    /// in order to use <code>UserGroupResolutionConfiguration</code>.
+    /// in order to use <c>UserGroupResolutionConfiguration</c>.
     /// </para>
     /// </summary>
     public partial class UserGroupResolutionConfiguration

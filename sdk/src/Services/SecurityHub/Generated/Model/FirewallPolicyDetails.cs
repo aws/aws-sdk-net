@@ -60,7 +60,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property StatelessCustomActions. 
         /// <para>
-        /// The custom action definitions that are available to use in the firewall policy's <code>StatelessDefaultActions</code>
+        /// The custom action definitions that are available to use in the firewall policy's <c>StatelessDefaultActions</c>
         /// setting.
         /// </para>
         /// </summary>
@@ -84,9 +84,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>,
-        /// <code>aws:forward_to_sfe</code>), and can optionally include a custom action from
-        /// <code>StatelessCustomActions</code>. 
+        /// You must specify a standard action (<c>aws:pass</c>, <c>aws:drop</c>, <c>aws:forward_to_sfe</c>),
+        /// and can optionally include a custom action from <c>StatelessCustomActions</c>. 
         /// </para>
         /// </summary>
         public List<string> StatelessDefaultActions
@@ -109,9 +108,8 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// You must specify a standard action (<code>aws:pass</code>, <code>aws:drop</code>,
-        /// <code>aws:forward_to_sfe</code>), and can optionally include a custom action from
-        /// <code>StatelessCustomActions</code>. 
+        /// You must specify a standard action (<c>aws:pass</c>, <c>aws:drop</c>, <c>aws:forward_to_sfe</c>),
+        /// and can optionally include a custom action from <c>StatelessCustomActions</c>. 
         /// </para>
         /// </summary>
         public List<string> StatelessFragmentDefaultActions

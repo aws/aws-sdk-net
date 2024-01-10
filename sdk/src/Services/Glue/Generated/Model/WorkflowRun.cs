@@ -67,7 +67,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property ErrorMessage. 
         /// <para>
         /// This error message describes any error that may have occurred in starting the workflow
-        /// run. Currently the only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+        /// run. Currently the only error message is "Concurrent runs exceeded for workflow: <c>foo</c>."
         /// </para>
         /// </summary>
         public string ErrorMessage

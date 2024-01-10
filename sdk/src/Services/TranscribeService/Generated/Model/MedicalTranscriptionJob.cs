@@ -33,11 +33,10 @@ namespace Amazon.TranscribeService.Model
     /// 
     ///  
     /// <para>
-    /// To view the status of the specified medical transcription job, check the <code>TranscriptionJobStatus</code>
-    /// field. If the status is <code>COMPLETED</code>, the job is finished and you can find
-    /// the results at the location specified in <code>TranscriptFileUri</code>. If the status
-    /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
-    /// job failed.
+    /// To view the status of the specified medical transcription job, check the <c>TranscriptionJobStatus</c>
+    /// field. If the status is <c>COMPLETED</c>, the job is finished and you can find the
+    /// results at the location specified in <c>TranscriptFileUri</c>. If the status is <c>FAILED</c>,
+    /// <c>FailureReason</c> provides details on why your transcription job failed.
     /// </para>
     /// </summary>
     public partial class MedicalTranscriptionJob
@@ -66,9 +65,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:33:13.922000-07:00</code> represents a transcription job that
-        /// started processing at 12:33 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:33:13.922000-07:00</c> represents a transcription job that started
+        /// processing at 12:33 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CompletionTime
@@ -108,9 +107,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.761000-07:00</code> represents a transcription job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.761000-07:00</c> represents a transcription job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime CreationTime
@@ -128,54 +127,53 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
-        /// If <code>TranscriptionJobStatus</code> is <code>FAILED</code>, <code>FailureReason</code>
-        /// contains information about why the transcription job request failed.
+        /// If <c>TranscriptionJobStatus</c> is <c>FAILED</c>, <c>FailureReason</c> contains information
+        /// about why the transcription job request failed.
         /// </para>
         ///  
         /// <para>
-        /// The <code>FailureReason</code> field contains one of the following values:
+        /// The <c>FailureReason</c> field contains one of the following values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Unsupported media format</code>.
+        ///  <c>Unsupported media format</c>.
         /// </para>
         ///  
         /// <para>
-        /// The media format specified in <code>MediaFormat</code> isn't valid. Refer to refer
-        /// to the <code>MediaFormat</code> parameter for a list of supported formats.
+        /// The media format specified in <c>MediaFormat</c> isn't valid. Refer to refer to the
+        /// <c>MediaFormat</c> parameter for a list of supported formats.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The media format provided does not match the detected media format</code>.
+        ///  <c>The media format provided does not match the detected media format</c>.
         /// </para>
         ///  
         /// <para>
-        /// The media format specified in <code>MediaFormat</code> doesn't match the format of
-        /// the input file. Check the media format of your media file and correct the specified
-        /// value.
+        /// The media format specified in <c>MediaFormat</c> doesn't match the format of the input
+        /// file. Check the media format of your media file and correct the specified value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid sample rate for audio file</code>.
+        ///  <c>Invalid sample rate for audio file</c>.
         /// </para>
         ///  
         /// <para>
-        /// The sample rate specified in <code>MediaSampleRateHertz</code> isn't valid. The sample
-        /// rate must be between 16,000 and 48,000 hertz.
+        /// The sample rate specified in <c>MediaSampleRateHertz</c> isn't valid. The sample rate
+        /// must be between 16,000 and 48,000 hertz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>The sample rate provided does not match the detected sample rate</code>.
+        ///  <c>The sample rate provided does not match the detected sample rate</c>.
         /// </para>
         ///  
         /// <para>
-        /// The sample rate specified in <code>MediaSampleRateHertz</code> doesn't match the sample
+        /// The sample rate specified in <c>MediaSampleRateHertz</c> doesn't match the sample
         /// rate detected in your input media file. Check the sample rate of your media file and
         /// correct the specified value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid file size: file size too large</code>.
+        ///  <c>Invalid file size: file size too large</c>.
         /// </para>
         ///  
         /// <para>
@@ -185,7 +183,7 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Invalid number of channels: number of channels too large</code>.
+        ///  <c>Invalid number of channels: number of channels too large</c>.
         /// </para>
         ///  
         /// <para>
@@ -210,7 +208,7 @@ namespace Amazon.TranscribeService.Model
         /// <summary>
         /// Gets and sets the property LanguageCode. 
         /// <para>
-        /// The language code used to create your medical transcription job. US English (<code>en-US</code>)
+        /// The language code used to create your medical transcription job. US English (<c>en-US</c>)
         /// is the only supported language for medical transcriptions.
         /// </para>
         /// </summary>
@@ -343,9 +341,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Timestamps are in the format <code>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</code>. For example,
-        /// <code>2022-05-04T12:32:58.789000-07:00</code> represents a transcription job that
-        /// started processing at 12:32 PM UTC-7 on May 4, 2022.
+        /// Timestamps are in the format <c>YYYY-MM-DD'T'HH:MM:SS.SSSSSS-UTC</c>. For example,
+        /// <c>2022-05-04T12:32:58.789000-07:00</c> represents a transcription job that started
+        /// processing at 12:32 PM UTC-7 on May 4, 2022.
         /// </para>
         /// </summary>
         public DateTime StartTime
@@ -405,10 +403,9 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// If the status is <code>COMPLETED</code>, the job is finished and you can find the
-        /// results at the location specified in <code>TranscriptFileUri</code>. If the status
-        /// is <code>FAILED</code>, <code>FailureReason</code> provides details on why your transcription
-        /// job failed.
+        /// If the status is <c>COMPLETED</c>, the job is finished and you can find the results
+        /// at the location specified in <c>TranscriptFileUri</c>. If the status is <c>FAILED</c>,
+        /// <c>FailureReason</c> provides details on why your transcription job failed.
         /// </para>
         /// </summary>
         public TranscriptionJobStatus TranscriptionJobStatus
@@ -427,7 +424,7 @@ namespace Amazon.TranscribeService.Model
         /// Gets and sets the property Type. 
         /// <para>
         /// Indicates whether the input media is a dictation or a conversation, as specified in
-        /// the <code>StartMedicalTranscriptionJob</code> request.
+        /// the <c>StartMedicalTranscriptionJob</c> request.
         /// </para>
         /// </summary>
         public Type Type

@@ -30,8 +30,7 @@ namespace Amazon.MigrationHubConfig.Model
 {
     /// <summary>
     /// The target parameter specifies the identifier to which the home region is applied,
-    /// which is always an <code>ACCOUNT</code>. It applies the home region to the current
-    /// <code>ACCOUNT</code>.
+    /// which is always an <c>ACCOUNT</c>. It applies the home region to the current <c>ACCOUNT</c>.
     /// </summary>
     public partial class Target
     {
@@ -41,8 +40,8 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code>
-        /// for which the control was created. (This must be the current account.) 
+        /// The <c>TargetID</c> is a 12-character identifier of the <c>ACCOUNT</c> for which the
+        /// control was created. (This must be the current account.) 
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]
@@ -61,7 +60,7 @@ namespace Amazon.MigrationHubConfig.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The target type is always an <code>ACCOUNT</code>.
+        /// The target type is always an <c>ACCOUNT</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

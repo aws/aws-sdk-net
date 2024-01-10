@@ -41,7 +41,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property PauseCluster. 
         /// <para>
-        /// An action that runs a <code>PauseCluster</code> API operation. 
+        /// An action that runs a <c>PauseCluster</c> API operation. 
         /// </para>
         /// </summary>
         public PauseClusterMessage PauseCluster
@@ -59,7 +59,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResizeCluster. 
         /// <para>
-        /// An action that runs a <code>ResizeCluster</code> API operation. 
+        /// An action that runs a <c>ResizeCluster</c> API operation. 
         /// </para>
         /// </summary>
         public ResizeClusterMessage ResizeCluster
@@ -77,7 +77,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ResumeCluster. 
         /// <para>
-        /// An action that runs a <code>ResumeCluster</code> API operation. 
+        /// An action that runs a <c>ResumeCluster</c> API operation. 
         /// </para>
         /// </summary>
         public ResumeClusterMessage ResumeCluster

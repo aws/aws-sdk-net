@@ -47,7 +47,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property DomainIdentifier. 
         /// <para>
-        /// The identifier of the Amazon DataZone domain in which to invoke the <code>SearchTypes</code>
+        /// The identifier of the Amazon DataZone domain in which to invoke the <c>SearchTypes</c>
         /// action.
         /// </para>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// The filters for the <code>SearchTypes</code> action.
+        /// The filters for the <c>SearchTypes</c> action.
         /// </para>
         /// </summary>
         public FilterClause Filters
@@ -101,10 +101,10 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call to <code>SearchTypes</code>.
-        /// When the number of results to be listed is greater than the value of <code>MaxResults</code>,
-        /// the response contains a <code>NextToken</code> value that you can use in a subsequent
-        /// call to <code>SearchTypes</code> to list the next set of results. 
+        /// The maximum number of results to return in a single call to <c>SearchTypes</c>. When
+        /// the number of results to be listed is greater than the value of <c>MaxResults</c>,
+        /// the response contains a <c>NextToken</c> value that you can use in a subsequent call
+        /// to <c>SearchTypes</c> to list the next set of results. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]
@@ -123,10 +123,10 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// When the number of results is greater than the default value for the <code>MaxResults</code>
-        /// parameter, or if you explicitly specify a value for <code>MaxResults</code> that is
-        /// less than the number of results, the response includes a pagination token named <code>NextToken</code>.
-        /// You can specify this <code>NextToken</code> value in a subsequent call to <code>SearchTypes</code>
+        /// When the number of results is greater than the default value for the <c>MaxResults</c>
+        /// parameter, or if you explicitly specify a value for <c>MaxResults</c> that is less
+        /// than the number of results, the response includes a pagination token named <c>NextToken</c>.
+        /// You can specify this <c>NextToken</c> value in a subsequent call to <c>SearchTypes</c>
         /// to list the next set of results.
         /// </para>
         /// </summary>
@@ -200,7 +200,7 @@ namespace Amazon.DataZone.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// The specifies the way to sort the <code>SearchTypes</code> results.
+        /// The specifies the way to sort the <c>SearchTypes</c> results.
         /// </para>
         /// </summary>
         public SearchSort Sort

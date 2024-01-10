@@ -30,10 +30,9 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// An exception that Athena received when it called a custom metastore. Occurs if the
-    /// error is not caused by user input (<code>InvalidRequestException</code>) or from the
-    /// Athena platform (<code>InternalServerException</code>). For example, if a user-created
-    /// Lambda function is missing permissions, the Lambda <code>4XX</code> exception is returned
-    /// in a <code>MetadataException</code>.
+    /// error is not caused by user input (<c>InvalidRequestException</c>) or from the Athena
+    /// platform (<c>InternalServerException</c>). For example, if a user-created Lambda function
+    /// is missing permissions, the Lambda <c>4XX</c> exception is returned in a <c>MetadataException</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

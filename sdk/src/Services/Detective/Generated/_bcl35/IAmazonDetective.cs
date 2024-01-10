@@ -170,7 +170,7 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
-        /// The member account status in the graph must be <code>INVITED</code>.
+        /// The member account status in the graph must be <c>INVITED</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AcceptInvitation service method.</param>
@@ -351,13 +351,13 @@ namespace Amazon.Detective
         /// </para>
         ///  
         /// <para>
-        ///  <code>CreateGraph</code> triggers a process to create the corresponding data tables
-        /// for the new behavior graph.
+        ///  <c>CreateGraph</c> triggers a process to create the corresponding data tables for
+        /// the new behavior graph.
         /// </para>
         ///  
         /// <para>
         /// An account can only be the administrator account for one behavior graph within a Region.
-        /// If the same account calls <code>CreateGraph</code> with the same administrator account,
+        /// If the same account calls <c>CreateGraph</c> with the same administrator account,
         /// it always returns the same behavior graph ARN. It does not create a new behavior graph.
         /// </para>
         /// </summary>
@@ -429,26 +429,26 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// <code>CreateMembers</code> is used to send invitations to accounts. For the organization
-        /// behavior graph, the Detective administrator account uses <code>CreateMembers</code>
-        /// to enable organization accounts as member accounts.
+        /// <c>CreateMembers</c> is used to send invitations to accounts. For the organization
+        /// behavior graph, the Detective administrator account uses <c>CreateMembers</c> to enable
+        /// organization accounts as member accounts.
         /// 
         ///  
         /// <para>
-        /// For invited accounts, <code>CreateMembers</code> sends a request to invite the specified
+        /// For invited accounts, <c>CreateMembers</c> sends a request to invite the specified
         /// Amazon Web Services accounts to be member accounts in the behavior graph. This operation
         /// can only be called by the administrator account for a behavior graph. 
         /// </para>
         ///  
         /// <para>
-        ///  <code>CreateMembers</code> verifies the accounts and then invites the verified accounts.
+        ///  <c>CreateMembers</c> verifies the accounts and then invites the verified accounts.
         /// The administrator can optionally specify to not send invitation emails to the member
         /// accounts. This would be used when the administrator manages their member accounts
         /// centrally.
         /// </para>
         ///  
         /// <para>
-        /// For organization accounts in the organization behavior graph, <code>CreateMembers</code>
+        /// For organization accounts in the organization behavior graph, <c>CreateMembers</c>
         /// attempts to enable the accounts. The organization accounts do not receive invitations.
         /// </para>
         ///  
@@ -462,7 +462,7 @@ namespace Amazon.Detective
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The accounts that <code>CreateMembers</code> was able to process. For invited accounts,
+        /// The accounts that <c>CreateMembers</c> was able to process. For invited accounts,
         /// includes member accounts that are being verified, that have passed verification and
         /// are to be invited, and that have failed verification. For organization accounts in
         /// the organization behavior graph, includes accounts that can be enabled and that cannot
@@ -470,8 +470,8 @@ namespace Amazon.Detective
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The accounts that <code>CreateMembers</code> was unable to process. This list includes
-        /// accounts that were already invited to be member accounts in the behavior graph.
+        /// The accounts that <c>CreateMembers</c> was unable to process. This list includes accounts
+        /// that were already invited to be member accounts in the behavior graph.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -551,7 +551,7 @@ namespace Amazon.Detective
         /// 
         ///  
         /// <para>
-        ///  <code>DeleteGraph</code> can only be called by the administrator account for a behavior
+        ///  <c>DeleteGraph</c> can only be called by the administrator account for a behavior
         /// graph.
         /// </para>
         /// </summary>
@@ -620,14 +620,14 @@ namespace Amazon.Detective
         /// <para>
         /// For organization accounts in the organization behavior graph, the Detective administrator
         /// account can always enable the organization account again. Organization accounts that
-        /// are not enabled as member accounts are not included in the <code>ListMembers</code>
-        /// results for the organization behavior graph.
+        /// are not enabled as member accounts are not included in the <c>ListMembers</c> results
+        /// for the organization behavior graph.
         /// </para>
         ///  
         /// <para>
-        /// An administrator account cannot use <code>DeleteMembers</code> to remove their own
-        /// account from the behavior graph. To disable a behavior graph, the administrator account
-        /// uses the <code>DeleteGraph</code> API method.
+        /// An administrator account cannot use <c>DeleteMembers</c> to remove their own account
+        /// from the behavior graph. To disable a behavior graph, the administrator account uses
+        /// the <c>DeleteGraph</c> API method.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMembers service method.</param>
@@ -817,14 +817,13 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Removes the member account from the specified behavior graph. This operation can only
-        /// be called by an invited member account that has the <code>ENABLED</code> status.
+        /// be called by an invited member account that has the <c>ENABLED</c> status.
         /// 
         ///  
         /// <para>
-        ///  <code>DisassociateMembership</code> cannot be called by an organization account in
-        /// the organization behavior graph. For the organization behavior graph, the Detective
-        /// administrator account determines which organization accounts to enable or disable
-        /// as member accounts.
+        ///  <c>DisassociateMembership</c> cannot be called by an organization account in the
+        /// organization behavior graph. For the organization behavior graph, the Detective administrator
+        /// account determines which organization accounts to enable or disable as member accounts.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateMembership service method.</param>
@@ -1529,13 +1528,13 @@ namespace Amazon.Detective
 
         /// <summary>
         /// Rejects an invitation to contribute the account data to a behavior graph. This operation
-        /// must be called by an invited member account that has the <code>INVITED</code> status.
+        /// must be called by an invited member account that has the <c>INVITED</c> status.
         /// 
         ///  
         /// <para>
-        ///  <code>RejectInvitation</code> cannot be called by an organization account in the
-        /// organization behavior graph. In the organization behavior graph, organization accounts
-        /// do not receive an invitation.
+        ///  <c>RejectInvitation</c> cannot be called by an organization account in the organization
+        /// behavior graph. In the organization behavior graph, organization accounts do not receive
+        /// an invitation.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RejectInvitation service method.</param>
@@ -1649,7 +1648,7 @@ namespace Amazon.Detective
 
 
         /// <summary>
-        /// Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.
+        /// Sends a request to enable data ingest for a member account that has a status of <c>ACCEPTED_BUT_DISABLED</c>.
         /// 
         ///  
         /// <para>
@@ -1657,11 +1656,11 @@ namespace Amazon.Detective
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If Detective enabled the member account, then the new status is <code>ENABLED</code>.
+        /// If Detective enabled the member account, then the new status is <c>ENABLED</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// If Detective cannot enable the member account, the status remains <code>ACCEPTED_BUT_DISABLED</code>.
+        /// If Detective cannot enable the member account, the status remains <c>ACCEPTED_BUT_DISABLED</c>.
         /// 
         /// </para>
         ///  </li> </ul>

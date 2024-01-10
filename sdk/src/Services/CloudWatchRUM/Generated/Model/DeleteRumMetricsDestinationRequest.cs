@@ -62,7 +62,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.
+        /// The type of destination to delete. Valid values are <c>CloudWatch</c> and <c>Evidently</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -81,10 +81,9 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property DestinationArn. 
         /// <para>
-        /// This parameter is required if <code>Destination</code> is <code>Evidently</code>.
-        /// If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.
-        /// This parameter specifies the ARN of the Evidently experiment that corresponds to the
-        /// destination to delete.
+        /// This parameter is required if <c>Destination</c> is <c>Evidently</c>. If <c>Destination</c>
+        /// is <c>CloudWatch</c>, do not use this parameter. This parameter specifies the ARN
+        /// of the Evidently experiment that corresponds to the destination to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

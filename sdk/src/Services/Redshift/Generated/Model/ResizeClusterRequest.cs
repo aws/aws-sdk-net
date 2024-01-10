@@ -99,8 +99,8 @@ namespace Amazon.Redshift.Model
         /// Gets and sets the property Classic. 
         /// <para>
         /// A boolean value indicating whether the resize operation is using the classic resize
-        /// process. If you don't provide this parameter or set the value to <code>false</code>,
-        /// the resize type is elastic. 
+        /// process. If you don't provide this parameter or set the value to <c>false</c>, the
+        /// resize type is elastic. 
         /// </para>
         /// </summary>
         public bool Classic

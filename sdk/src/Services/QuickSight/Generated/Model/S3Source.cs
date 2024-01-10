@@ -63,8 +63,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For files that aren't JSON, only <code>STRING</code> data types are supported in input
-        /// columns.
+        /// For files that aren't JSON, only <c>STRING</c> data types are supported in input columns.
         /// </para>
         ///  </note>
         /// </summary>

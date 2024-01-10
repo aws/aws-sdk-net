@@ -99,7 +99,7 @@ namespace Amazon.QBusiness.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// The status of the Amazon Q application. The application is ready to use when the status
-        /// is <code>ACTIVE</code>.
+        /// is <c>ACTIVE</c>.
         /// </para>
         /// </summary>
         public ApplicationStatus Status

@@ -53,15 +53,14 @@ namespace Amazon.DynamoDBv2.Model
     ///  </li> <li> 
     /// <para>
     /// Create a new global secondary index on the table. After the index begins backfilling,
-    /// you can use <code>UpdateTable</code> to perform other operations.
+    /// you can use <c>UpdateTable</c> to perform other operations.
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    ///  <code>UpdateTable</code> is an asynchronous operation; while it is executing, the
-    /// table status changes from <code>ACTIVE</code> to <code>UPDATING</code>. While it is
-    /// <code>UPDATING</code>, you cannot issue another <code>UpdateTable</code> request.
-    /// When the table returns to the <code>ACTIVE</code> state, the <code>UpdateTable</code>
-    /// operation is complete.
+    ///  <c>UpdateTable</c> is an asynchronous operation; while it is executing, the table
+    /// status changes from <c>ACTIVE</c> to <c>UPDATING</c>. While it is <c>UPDATING</c>,
+    /// you cannot issue another <c>UpdateTable</c> request. When the table returns to the
+    /// <c>ACTIVE</c> state, the <c>UpdateTable</c> operation is complete.
     /// </para>
     /// </summary>
     public partial class UpdateTableRequest : AmazonDynamoDBRequest
@@ -97,7 +96,7 @@ namespace Amazon.DynamoDBv2.Model
         /// Gets and sets the property AttributeDefinitions. 
         /// <para>
         /// An array of attributes that describe the key schema for the table and indexes. If
-        /// you are adding a new global secondary index to the table, <code>AttributeDefinitions</code>
+        /// you are adding a new global secondary index to the table, <c>AttributeDefinitions</c>
         /// must include the key element(s) of the new index.
         /// </para>
         /// </summary>
@@ -124,15 +123,14 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONED</code> - We recommend using <code>PROVISIONED</code> for predictable
-        /// workloads. <code>PROVISIONED</code> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
+        ///  <c>PROVISIONED</c> - We recommend using <c>PROVISIONED</c> for predictable workloads.
+        /// <c>PROVISIONED</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.ProvisionedThroughput.Manual">Provisioned
         /// Mode</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAY_PER_REQUEST</code> - We recommend using <code>PAY_PER_REQUEST</code> for
-        /// unpredictable workloads. <code>PAY_PER_REQUEST</code> sets the billing mode to <a
-        /// href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
+        ///  <c>PAY_PER_REQUEST</c> - We recommend using <c>PAY_PER_REQUEST</c> for unpredictable
+        /// workloads. <c>PAY_PER_REQUEST</c> sets the billing mode to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html#HowItWorks.OnDemand">On-Demand
         /// Mode</a>. 
         /// </para>
         ///  </li> </ul>
@@ -176,21 +174,20 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Create</code> - add a new global secondary index to the table.
+        ///  <c>Create</c> - add a new global secondary index to the table.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Update</code> - modify the provisioned throughput settings of an existing global
+        ///  <c>Update</c> - modify the provisioned throughput settings of an existing global
         /// secondary index.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Delete</code> - remove a global secondary index from the table.
+        ///  <c>Delete</c> - remove a global secondary index from the table.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can create or delete only one global secondary index per <code>UpdateTable</code>
-        /// operation.
+        /// You can create or delete only one global secondary index per <c>UpdateTable</c> operation.
         /// </para>
         ///  
         /// <para>
@@ -278,9 +275,9 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// You receive a <code>ResourceInUseException</code> if you try to enable a stream on
-        /// a table that already has a stream, or if you try to disable a stream on a table that
-        /// doesn't have a stream.
+        /// You receive a <c>ResourceInUseException</c> if you try to enable a stream on a table
+        /// that already has a stream, or if you try to disable a stream on a table that doesn't
+        /// have a stream.
         /// </para>
         ///  </note>
         /// </summary>
@@ -299,8 +296,7 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property TableClass. 
         /// <para>
-        /// The table class of the table to be updated. Valid values are <code>STANDARD</code>
-        /// and <code>STANDARD_INFREQUENT_ACCESS</code>.
+        /// The table class of the table to be updated. Valid values are <c>STANDARD</c> and <c>STANDARD_INFREQUENT_ACCESS</c>.
         /// </para>
         /// </summary>
         public TableClass TableClass

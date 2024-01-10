@@ -31,8 +31,8 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the BatchGetTriggers operation.
     /// Returns a list of resource metadata for a given list of trigger names. After calling
-    /// the <code>ListTriggers</code> operation, you can call this operation to access the
-    /// data to which you have been granted permissions. This operation supports all IAM permissions,
+    /// the <c>ListTriggers</c> operation, you can call this operation to access the data
+    /// to which you have been granted permissions. This operation supports all IAM permissions,
     /// including permission conditions that uses tags.
     /// </summary>
     public partial class BatchGetTriggersRequest : AmazonGlueRequest
@@ -42,7 +42,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TriggerNames. 
         /// <para>
-        /// A list of trigger names, which may be the names returned from the <code>ListTriggers</code>
+        /// A list of trigger names, which may be the names returned from the <c>ListTriggers</c>
         /// operation.
         /// </para>
         /// </summary>

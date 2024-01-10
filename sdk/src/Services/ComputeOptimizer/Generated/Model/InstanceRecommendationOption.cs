@@ -87,12 +87,11 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, the migration effort is <code>Low</code> if Amazon EMR is the inferred
-        /// workload type and an Amazon Web Services Graviton instance type is recommended. The
-        /// migration effort is <code>Medium</code> if a workload type couldn't be inferred but
-        /// an Amazon Web Services Graviton instance type is recommended. The migration effort
-        /// is <code>VeryLow</code> if both the current and recommended instance types are of
-        /// the same CPU architecture.
+        /// For example, the migration effort is <c>Low</c> if Amazon EMR is the inferred workload
+        /// type and an Amazon Web Services Graviton instance type is recommended. The migration
+        /// effort is <c>Medium</c> if a workload type couldn't be inferred but an Amazon Web
+        /// Services Graviton instance type is recommended. The migration effort is <c>VeryLow</c>
+        /// if both the current and recommended instance types are of the same CPU architecture.
         /// </para>
         /// </summary>
         public MigrationEffort MigrationEffort
@@ -123,11 +122,10 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The value ranges from <code>0</code> - <code>4</code>, with <code>0</code> meaning
-        /// that the recommended resource is predicted to always provide enough hardware capability.
-        /// The higher the performance risk is, the more likely you should validate whether the
-        /// recommendation will meet the performance requirements of your workload before migrating
-        /// your resource.
+        /// The value ranges from <c>0</c> - <c>4</c>, with <c>0</c> meaning that the recommended
+        /// resource is predicted to always provide enough hardware capability. The higher the
+        /// performance risk is, the more likely you should validate whether the recommendation
+        /// will meet the performance requirements of your workload before migrating your resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4)]
@@ -160,9 +158,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b> <code>Hypervisor</code> </b> — The hypervisor of the recommended instance type
-        /// is different than that of the current instance. For example, the recommended instance
-        /// type uses a Nitro hypervisor and the current instance uses a Xen hypervisor. The differences
+        ///  <b> <c>Hypervisor</c> </b> — The hypervisor of the recommended instance type is different
+        /// than that of the current instance. For example, the recommended instance type uses
+        /// a Nitro hypervisor and the current instance uses a Xen hypervisor. The differences
         /// that you should consider between these hypervisors are covered in the <a href="http://aws.amazon.com/ec2/faqs/#Nitro_Hypervisor">Nitro
         /// Hypervisor</a> section of the Amazon EC2 frequently asked questions. For more information,
         /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
@@ -172,8 +170,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>NetworkInterface</code> </b> — The network interface of the recommended
-        /// instance type is different than that of the current instance. For example, the recommended
+        ///  <b> <c>NetworkInterface</c> </b> — The network interface of the recommended instance
+        /// type is different than that of the current instance. For example, the recommended
         /// instance type supports enhanced networking and the current instance might not. To
         /// enable enhanced networking for the recommended instance type, you must install the
         /// Elastic Network Adapter (ENA) driver or the Intel 82599 Virtual Function driver. For
@@ -185,8 +183,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>StorageInterface</code> </b> — The storage interface of the recommended
-        /// instance type is different than that of the current instance. For example, the recommended
+        ///  <b> <c>StorageInterface</c> </b> — The storage interface of the recommended instance
+        /// type is different than that of the current instance. For example, the recommended
         /// instance type uses an NVMe storage interface and the current instance does not. To
         /// access NVMe volumes for the recommended instance type, you will need to install or
         /// upgrade the NVMe driver. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#instance-networking-storage">Networking
@@ -198,9 +196,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>InstanceStoreAvailability</code> </b> — The recommended instance type does
-        /// not support instance store volumes and the current instance does. Before migrating,
-        /// you might need to back up the data on your instance store volumes if you want to preserve
+        ///  <b> <c>InstanceStoreAvailability</c> </b> — The recommended instance type does not
+        /// support instance store volumes and the current instance does. Before migrating, you
+        /// might need to back up the data on your instance store volumes if you want to preserve
         /// them. For more information, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/back-up-instance-store-ebs/">How
         /// do I back up an instance store volume on my Amazon EC2 instance to Amazon EBS?</a>
         /// in the <i>Amazon Web Services Premium Support Knowledge Base</i>. For more information,
@@ -212,23 +210,23 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>VirtualizationType</code> </b> — The recommended instance type uses the
-        /// hardware virtual machine (HVM) virtualization type and the current instance uses the
-        /// paravirtual (PV) virtualization type. For more information about the differences between
-        /// these virtualization types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">Linux
+        ///  <b> <c>VirtualizationType</c> </b> — The recommended instance type uses the hardware
+        /// virtual machine (HVM) virtualization type and the current instance uses the paravirtual
+        /// (PV) virtualization type. For more information about the differences between these
+        /// virtualization types, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/virtualization_types.html">Linux
         /// AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Linux</i>, or <a
         /// href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/windows-ami-version-history.html#virtualization-types">Windows
         /// AMI virtualization types</a> in the <i>Amazon EC2 User Guide for Windows</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b> <code>Architecture</code> </b> — The CPU architecture between the recommended
-        /// instance type and the current instance is different. For example, the recommended
-        /// instance type might use an Arm CPU architecture and the current instance type might
-        /// use a different one, such as x86. Before migrating, you should consider recompiling
-        /// the software on your instance for the new architecture. Alternatively, you might switch
-        /// to an Amazon Machine Image (AMI) that supports the new architecture. For more information
-        /// about the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
+        ///  <b> <c>Architecture</c> </b> — The CPU architecture between the recommended instance
+        /// type and the current instance is different. For example, the recommended instance
+        /// type might use an Arm CPU architecture and the current instance type might use a different
+        /// one, such as x86. Before migrating, you should consider recompiling the software on
+        /// your instance for the new architecture. Alternatively, you might switch to an Amazon
+        /// Machine Image (AMI) that supports the new architecture. For more information about
+        /// the CPU architecture for each instance type, see <a href="http://aws.amazon.com/ec2/instance-types/">Amazon
         /// EC2 Instance Types</a>.
         /// </para>
         ///  </li> </ul>
@@ -253,10 +251,10 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>Cpu</code> and <code>Memory</code> metrics are the only projected utilization
-        /// metrics returned. Additionally, the <code>Memory</code> metric is returned only for
-        /// resources that have the unified CloudWatch agent installed on them. For more information,
-        /// see <a href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
+        /// The <c>Cpu</c> and <c>Memory</c> metrics are the only projected utilization metrics
+        /// returned. Additionally, the <c>Memory</c> metric is returned only for resources that
+        /// have the unified CloudWatch agent installed on them. For more information, see <a
+        /// href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
         /// Memory Utilization with the CloudWatch Agent</a>.
         /// </para>
         ///  </note>
@@ -280,7 +278,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// The top recommendation option is ranked as <code>1</code>.
+        /// The top recommendation option is ranked as <c>1</c>.
         /// </para>
         /// </summary>
         public int Rank

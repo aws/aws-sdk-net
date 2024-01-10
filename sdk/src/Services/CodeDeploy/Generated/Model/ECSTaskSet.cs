@@ -70,7 +70,7 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property Identifer. 
         /// <para>
-        ///  A unique ID of an <code>ECSTaskSet</code>. 
+        ///  A unique ID of an <c>ECSTaskSet</c>. 
         /// </para>
         /// </summary>
         public string Identifer
@@ -88,11 +88,11 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property PendingCount. 
         /// <para>
-        ///  The number of tasks in the task set that are in the <code>PENDING</code> status during
-        /// an Amazon ECS deployment. A task in the <code>PENDING</code> state is preparing to
-        /// enter the <code>RUNNING</code> state. A task set enters the <code>PENDING</code> status
-        /// when it launches for the first time, or when it is restarted after being in the <code>STOPPED</code>
-        /// state. 
+        ///  The number of tasks in the task set that are in the <c>PENDING</c> status during
+        /// an Amazon ECS deployment. A task in the <c>PENDING</c> state is preparing to enter
+        /// the <c>RUNNING</c> state. A task set enters the <c>PENDING</c> status when it launches
+        /// for the first time, or when it is restarted after being in the <c>STOPPED</c> state.
+        /// 
         /// </para>
         /// </summary>
         public long PendingCount
@@ -110,9 +110,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property RunningCount. 
         /// <para>
-        ///  The number of tasks in the task set that are in the <code>RUNNING</code> status during
-        /// an Amazon ECS deployment. A task in the <code>RUNNING</code> state is running and
-        /// ready for use. 
+        ///  The number of tasks in the task set that are in the <c>RUNNING</c> status during
+        /// an Amazon ECS deployment. A task in the <c>RUNNING</c> state is running and ready
+        /// for use. 
         /// </para>
         /// </summary>
         public long RunningCount
@@ -134,16 +134,16 @@ namespace Amazon.CodeDeploy.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PRIMARY</code>: Indicates the task set is serving production traffic. 
+        ///  <c>PRIMARY</c>: Indicates the task set is serving production traffic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ACTIVE</code>: Indicates the task set is not serving production traffic. 
+        ///  <c>ACTIVE</c>: Indicates the task set is not serving production traffic. 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DRAINING</code>: Indicates the tasks in the task set are being stopped and
-        /// their corresponding targets are being deregistered from their target group. 
+        ///  <c>DRAINING</c>: Indicates the tasks in the task set are being stopped and their
+        /// corresponding targets are being deregistered from their target group. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -181,8 +181,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property TaskSetLabel. 
         /// <para>
-        ///  A label that identifies whether the ECS task set is an original target (<code>BLUE</code>)
-        /// or a replacement target (<code>GREEN</code>). 
+        ///  A label that identifies whether the ECS task set is an original target (<c>BLUE</c>)
+        /// or a replacement target (<c>GREEN</c>). 
         /// </para>
         /// </summary>
         public TargetLabel TaskSetLabel

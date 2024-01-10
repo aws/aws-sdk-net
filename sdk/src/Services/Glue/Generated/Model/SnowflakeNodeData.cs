@@ -59,7 +59,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property Action. 
         /// <para>
         /// Specifies what action to take when writing to a table with preexisting data. Valid
-        /// values: <code> append</code>, <code>merge</code>, <code>truncate</code>, <code>drop</code>.
+        /// values: <c> append</c>, <c>merge</c>, <c>truncate</c>, <c>drop</c>.
         /// </para>
         /// </summary>
         public string Action
@@ -170,9 +170,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property MergeAction. 
         /// <para>
-        /// Specifies a merge action. Valid values: <code>simple</code>, <code>custom</code>.
-        /// If simple, merge behavior is defined by <code>MergeWhenMatched</code> and <code> MergeWhenNotMatched</code>.
-        /// If custom, defined by <code>MergeClause</code>.
+        /// Specifies a merge action. Valid values: <c>simple</c>, <c>custom</c>. If simple, merge
+        /// behavior is defined by <c>MergeWhenMatched</c> and <c> MergeWhenNotMatched</c>. If
+        /// custom, defined by <c>MergeClause</c>.
         /// </para>
         /// </summary>
         public string MergeAction
@@ -209,7 +209,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property MergeWhenMatched. 
         /// <para>
         /// Specifies how to resolve records that match preexisting data when merging. Valid values:
-        /// <code> update</code>, <code>delete</code>.
+        /// <c> update</c>, <c>delete</c>.
         /// </para>
         /// </summary>
         public string MergeWhenMatched
@@ -228,7 +228,7 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property MergeWhenNotMatched. 
         /// <para>
         /// Specifies how to process records that do not match preexisting data when merging.
-        /// Valid values: <code>insert</code>, <code>none</code>.
+        /// Valid values: <c>insert</c>, <c>none</c>.
         /// </para>
         /// </summary>
         public string MergeWhenNotMatched
@@ -282,7 +282,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SampleQuery. 
         /// <para>
-        /// A SQL string used to retrieve data with the <code>query</code> sourcetype.
+        /// A SQL string used to retrieve data with the <c>query</c> sourcetype.
         /// </para>
         /// </summary>
         public string SampleQuery
@@ -319,8 +319,8 @@ namespace Amazon.Glue.Model
         /// Gets and sets the property SelectedColumns. 
         /// <para>
         /// Specifies the columns combined to identify a record when detecting matches for merges
-        /// and upserts. A list of structures with <code>value</code>, <code>label</code> and
-        /// <code> description</code> keys. Each structure describes a column.
+        /// and upserts. A list of structures with <c>value</c>, <c>label</c> and <c> description</c>
+        /// keys. Each structure describes a column.
         /// </para>
         /// </summary>
         public List<Option> SelectedColumns
@@ -338,8 +338,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property SourceType. 
         /// <para>
-        /// Specifies how retrieved data is specified. Valid values: <code>"table"</code>, <code>
-        /// "query"</code>.
+        /// Specifies how retrieved data is specified. Valid values: <c>"table"</c>, <c> "query"</c>.
         /// </para>
         /// </summary>
         public string SourceType
@@ -357,8 +356,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StagingTable. 
         /// <para>
-        /// The name of a staging table used when performing <code>merge</code> or upsert <code>append</code>
-        /// actions. Data is written to this table, then moved to <code>table</code> by a generated
+        /// The name of a staging table used when performing <c>merge</c> or upsert <c>append</c>
+        /// actions. Data is written to this table, then moved to <c>table</c> by a generated
         /// postaction.
         /// </para>
         /// </summary>
@@ -395,8 +394,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property TableSchema. 
         /// <para>
-        /// Manually defines the target schema for the node. A list of structures with <code>value</code>
-        /// , <code>label</code> and <code>description</code> keys. Each structure defines a column.
+        /// Manually defines the target schema for the node. A list of structures with <c>value</c>
+        /// , <c>label</c> and <c>description</c> keys. Each structure defines a column.
         /// </para>
         /// </summary>
         public List<Option> TableSchema
@@ -432,9 +431,8 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Upsert. 
         /// <para>
-        /// Used when Action is <code>append</code>. Specifies the resolution behavior when a
-        /// row already exists. If true, preexisting rows will be updated. If false, those rows
-        /// will be inserted.
+        /// Used when Action is <c>append</c>. Specifies the resolution behavior when a row already
+        /// exists. If true, preexisting rows will be updated. If false, those rows will be inserted.
         /// </para>
         /// </summary>
         public bool Upsert

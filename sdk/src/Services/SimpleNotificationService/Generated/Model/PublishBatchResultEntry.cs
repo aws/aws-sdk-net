@@ -40,7 +40,7 @@ namespace Amazon.SimpleNotificationService.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The <code>Id</code> of an entry in a batch request.
+        /// The <c>Id</c> of an entry in a batch request.
         /// </para>
         /// </summary>
         public string Id
@@ -84,8 +84,8 @@ namespace Amazon.SimpleNotificationService.Model
         /// </para>
         ///  
         /// <para>
-        /// The length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code>
-        /// continues to increase for a particular <code>MessageGroupId</code>.
+        /// The length of <c>SequenceNumber</c> is 128 bits. <c>SequenceNumber</c> continues to
+        /// increase for a particular <c>MessageGroupId</c>.
         /// </para>
         /// </summary>
         public string SequenceNumber

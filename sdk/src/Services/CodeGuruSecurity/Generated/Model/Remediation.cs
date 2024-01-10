@@ -58,8 +58,8 @@ namespace Amazon.CodeGuruSecurity.Model
         /// <summary>
         /// Gets and sets the property SuggestedFixes. 
         /// <para>
-        /// A list of <code>SuggestedFix</code> objects. Each object contains information about
-        /// a suggested code fix to remediate the finding.
+        /// A list of <c>SuggestedFix</c> objects. Each object contains information about a suggested
+        /// code fix to remediate the finding.
         /// </para>
         /// </summary>
         public List<SuggestedFix> SuggestedFixes

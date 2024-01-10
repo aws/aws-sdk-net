@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Elasticsearch.Model
 {
     /// <summary>
-    /// Container for response parameters to the <code><a>ListVpcEndpoints</a></code> operation.
+    /// Container for response parameters to the <c><a>ListVpcEndpoints</a></c> operation.
     /// Returns a list containing summarized details of the VPC endpoints.
     /// </summary>
     public partial class ListVpcEndpointsResponse : AmazonWebServiceResponse

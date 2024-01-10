@@ -35,16 +35,15 @@ namespace Amazon.CloudFront.Model
     ///  
     /// <para>
     /// If you want to invoke one or more Lambda@Edge functions triggered by requests that
-    /// match the <code>PathPattern</code> of the cache behavior, specify the applicable values
-    /// for <code>Quantity</code> and <code>Items</code>. Note that there can be up to 4 <code>LambdaFunctionAssociation</code>
-    /// items in this list (one for each possible value of <code>EventType</code>) and each
-    /// <code>EventType</code> can be associated with only one function.
+    /// match the <c>PathPattern</c> of the cache behavior, specify the applicable values
+    /// for <c>Quantity</c> and <c>Items</c>. Note that there can be up to 4 <c>LambdaFunctionAssociation</c>
+    /// items in this list (one for each possible value of <c>EventType</c>) and each <c>EventType</c>
+    /// can be associated with only one function.
     /// </para>
     ///  
     /// <para>
     /// If you don't want to invoke any Lambda@Edge functions for the requests that match
-    /// <code>PathPattern</code>, specify <code>0</code> for <code>Quantity</code> and omit
-    /// <code>Items</code>.
+    /// <c>PathPattern</c>, specify <c>0</c> for <c>Quantity</c> and omit <c>Items</c>.
     /// </para>
     /// </summary>
     public partial class LambdaFunctionAssociations
@@ -55,9 +54,8 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        ///  <b>Optional</b>: A complex type that contains <code>LambdaFunctionAssociation</code>
-        /// items for this cache behavior. If <code>Quantity</code> is <code>0</code>, you can
-        /// omit <code>Items</code>.
+        ///  <b>Optional</b>: A complex type that contains <c>LambdaFunctionAssociation</c> items
+        /// for this cache behavior. If <c>Quantity</c> is <c>0</c>, you can omit <c>Items</c>.
         /// </para>
         /// </summary>
         public List<LambdaFunctionAssociation> Items

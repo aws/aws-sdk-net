@@ -43,7 +43,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code>
+        /// Format example: <c>arn:aws:geo:region:account-id:resourcetype/ExampleResource</c>
         /// 
         /// </para>
         ///  </li> </ul>

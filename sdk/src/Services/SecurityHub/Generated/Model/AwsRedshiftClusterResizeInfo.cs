@@ -61,7 +61,7 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>ClassicResize</code> 
+        /// Valid values: <c>ClassicResize</c> 
         /// </para>
         /// </summary>
         public string ResizeType

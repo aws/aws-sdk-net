@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MachineLearning.Model
 {
     /// <summary>
-    /// Describes the <code>DataSource</code> details specific to Amazon Redshift.
+    /// Describes the <c>DataSource</c> details specific to Amazon Redshift.
     /// </summary>
     public partial class RedshiftMetadata
     {
@@ -72,7 +72,7 @@ namespace Amazon.MachineLearning.Model
         /// Gets and sets the property SelectSqlQuery. 
         /// <para>
         ///  The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>. Returns
-        /// only if <code>Verbose</code> is true in GetDataSourceInput. 
+        /// only if <c>Verbose</c> is true in GetDataSourceInput. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16777216)]

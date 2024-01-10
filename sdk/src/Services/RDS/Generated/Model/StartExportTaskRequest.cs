@@ -75,23 +75,22 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>database</code> - Export all the data from a specified database.
+        ///  <c>database</c> - Export all the data from a specified database.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database.table</code> <i>table-name</i> - Export a table of the snapshot or
-        /// cluster. This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora
-        /// MySQL.
+        ///  <c>database.table</c> <i>table-name</i> - Export a table of the snapshot or cluster.
+        /// This format is valid only for RDS for MySQL, RDS for MariaDB, and Aurora MySQL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database.schema</code> <i>schema-name</i> - Export a database schema of the
-        /// snapshot or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
+        ///  <c>database.schema</c> <i>schema-name</i> - Export a database schema of the snapshot
+        /// or cluster. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>database.schema.table</code> <i>table-name</i> - Export a table of the database
-        /// schema. This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
+        ///  <c>database.schema.table</c> <i>table-name</i> - Export a table of the database schema.
+        /// This format is valid only for RDS for PostgreSQL and Aurora PostgreSQL.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -166,11 +165,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:aws:s3:::<i>your-s3-bucket</i> </code> 
+        ///  <c>arn:aws:s3:::<i>your-s3-bucket</i> </c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>arn:aws:s3:::<i>your-s3-bucket</i>/*</code> 
+        ///  <c>arn:aws:s3:::<i>your-s3-bucket</i>/*</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

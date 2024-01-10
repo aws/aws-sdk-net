@@ -62,9 +62,9 @@ namespace Amazon.ECRPublic.Model
         /// Gets and sets the property RepositoryName. 
         /// <para>
         /// The name to use for the repository. This appears publicly in the Amazon ECR Public
-        /// Gallery. The repository name can be specified on its own (for example <code>nginx-web-app</code>)
+        /// Gallery. The repository name can be specified on its own (for example <c>nginx-web-app</c>)
         /// or prepended with a namespace to group the repository into a category (for example
-        /// <code>project-a/nginx-web-app</code>).
+        /// <c>project-a/nginx-web-app</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=205)]

@@ -33,13 +33,12 @@ namespace Amazon.Keyspaces.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <code>regionList</code> - up to six Amazon Web Services Regions where the keyspace
-    /// is replicated in.
+    ///  <c>regionList</c> - up to six Amazon Web Services Regions where the keyspace is replicated
+    /// in.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code>
-    /// or <code>MULTI_REGION</code>.
+    ///  <c>replicationStrategy</c> - the required value is <c>SINGLE_REGION</c> or <c>MULTI_REGION</c>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -51,8 +50,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property RegionList. 
         /// <para>
-        ///  The <code>regionList</code> can contain up to six Amazon Web Services Regions where
-        /// the keyspace is replicated in. 
+        ///  The <c>regionList</c> can contain up to six Amazon Web Services Regions where the
+        /// keyspace is replicated in. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=6)]
@@ -71,8 +70,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property ReplicationStrategy. 
         /// <para>
-        ///  The <code>replicationStrategy</code> of a keyspace, the required value is <code>SINGLE_REGION</code>
-        /// or <code>MULTI_REGION</code>. 
+        ///  The <c>replicationStrategy</c> of a keyspace, the required value is <c>SINGLE_REGION</c>
+        /// or <c>MULTI_REGION</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

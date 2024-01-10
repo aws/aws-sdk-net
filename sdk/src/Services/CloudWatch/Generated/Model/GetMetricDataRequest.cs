@@ -30,34 +30,34 @@ namespace Amazon.CloudWatch.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMetricData operation.
-    /// You can use the <code>GetMetricData</code> API to retrieve CloudWatch metric values.
-    /// The operation can also include a CloudWatch Metrics Insights query, and one or more
-    /// metric math functions.
+    /// You can use the <c>GetMetricData</c> API to retrieve CloudWatch metric values. The
+    /// operation can also include a CloudWatch Metrics Insights query, and one or more metric
+    /// math functions.
     /// 
     ///  
     /// <para>
-    /// A <code>GetMetricData</code> operation that does not include a query can retrieve
-    /// as many as 500 different metrics in a single request, with a total of as many as 100,800
-    /// data points. You can also optionally perform metric math expressions on the values
-    /// of the returned statistics, to create new time series that represent new insights
-    /// into your data. For example, using Lambda metrics, you could divide the Errors metric
-    /// by the Invocations metric to get an error rate time series. For more information about
-    /// metric math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
+    /// A <c>GetMetricData</c> operation that does not include a query can retrieve as many
+    /// as 500 different metrics in a single request, with a total of as many as 100,800 data
+    /// points. You can also optionally perform metric math expressions on the values of the
+    /// returned statistics, to create new time series that represent new insights into your
+    /// data. For example, using Lambda metrics, you could divide the Errors metric by the
+    /// Invocations metric to get an error rate time series. For more information about metric
+    /// math expressions, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/using-metric-math.html#metric-math-syntax">Metric
     /// Math Syntax and Functions</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// If you include a Metrics Insights query, each <code>GetMetricData</code> operation
-    /// can include only one query. But the same <code>GetMetricData</code> operation can
-    /// also retrieve other metrics. Metrics Insights queries can query only the most recent
-    /// three hours of metric data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
+    /// If you include a Metrics Insights query, each <c>GetMetricData</c> operation can include
+    /// only one query. But the same <c>GetMetricData</c> operation can also retrieve other
+    /// metrics. Metrics Insights queries can query only the most recent three hours of metric
+    /// data. For more information about Metrics Insights, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/query_with_cloudwatch-metrics-insights.html">Query
     /// your metrics with CloudWatch Metrics Insights</a>.
     /// </para>
     ///  
     /// <para>
-    /// Calls to the <code>GetMetricData</code> API have a different pricing structure than
-    /// calls to <code>GetMetricStatistics</code>. For more information about pricing, see
-    /// <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
+    /// Calls to the <c>GetMetricData</c> API have a different pricing structure than calls
+    /// to <c>GetMetricStatistics</c>. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon
+    /// CloudWatch Pricing</a>.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.CloudWatch.Model
     /// <para>
     /// Data points with a period of less than 60 seconds are available for 3 hours. These
     /// data points are high-resolution metrics and are available only for custom metrics
-    /// that have been defined with a <code>StorageResolution</code> of 1.
+    /// that have been defined with a <c>StorageResolution</c> of 1.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -93,12 +93,12 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
-    /// If you omit <code>Unit</code> in your request, all data that was collected with any
-    /// unit is returned, along with the corresponding units that were specified when the
-    /// data was reported to CloudWatch. If you specify a unit, the operation returns only
-    /// data that was collected with that unit specified. If you specify a unit that does
-    /// not match the data collected, the results of the operation are null. CloudWatch does
-    /// not perform unit conversions.
+    /// If you omit <c>Unit</c> in your request, all data that was collected with any unit
+    /// is returned, along with the corresponding units that were specified when the data
+    /// was reported to CloudWatch. If you specify a unit, the operation returns only data
+    /// that was collected with that unit specified. If you specify a unit that does not match
+    /// the data collected, the results of the operation are null. CloudWatch does not perform
+    /// unit conversions.
     /// </para>
     ///  
     /// <para>
@@ -137,11 +137,11 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For better performance, specify <code>StartTime</code> and <code>EndTime</code> values
-        /// that align with the value of the metric's <code>Period</code> and sync up with the
-        /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
-        /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.
+        /// For better performance, specify <c>StartTime</c> and <c>EndTime</c> values that align
+        /// with the value of the metric's <c>Period</c> and sync up with the beginning and end
+        /// of an hour. For example, if the <c>Period</c> of a metric is 5 minutes, specifying
+        /// 12:05 or 12:30 as <c>EndTime</c> can get a faster response from CloudWatch than setting
+        /// 12:07 or 12:29 as the <c>EndTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -160,9 +160,9 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property LabelOptions. 
         /// <para>
-        /// This structure includes the <code>Timezone</code> parameter, which you can use to
-        /// specify your time zone so that the labels of returned data display the correct time
-        /// for your time zone. 
+        /// This structure includes the <c>Timezone</c> parameter, which you can use to specify
+        /// your time zone so that the labels of returned data display the correct time for your
+        /// time zone. 
         /// </para>
         /// </summary>
         public LabelOptions LabelOptions
@@ -199,10 +199,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property MetricDataQueries. 
         /// <para>
-        /// The metric queries to be returned. A single <code>GetMetricData</code> call can include
-        /// as many as 500 <code>MetricDataQuery</code> structures. Each of these structures can
-        /// specify either a metric to retrieve, a Metrics Insights query, or a math expression
-        /// to perform on retrieved data. 
+        /// The metric queries to be returned. A single <c>GetMetricData</c> call can include
+        /// as many as 500 <c>MetricDataQuery</c> structures. Each of these structures can specify
+        /// either a metric to retrieve, a Metrics Insights query, or a math expression to perform
+        /// on retrieved data. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -221,8 +221,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// Include this value, if it was returned by the previous <code>GetMetricData</code>
-        /// operation, to get the next set of data points.
+        /// Include this value, if it was returned by the previous <c>GetMetricData</c> operation,
+        /// to get the next set of data points.
         /// </para>
         /// </summary>
         public string NextToken
@@ -240,10 +240,10 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property ScanBy. 
         /// <para>
-        /// The order in which data points should be returned. <code>TimestampDescending</code>
-        /// returns the newest data first and paginates when the <code>MaxDatapoints</code> limit
-        /// is reached. <code>TimestampAscending</code> returns the oldest data first and paginates
-        /// when the <code>MaxDatapoints</code> limit is reached.
+        /// The order in which data points should be returned. <c>TimestampDescending</c> returns
+        /// the newest data first and paginates when the <c>MaxDatapoints</c> limit is reached.
+        /// <c>TimestampAscending</c> returns the oldest data first and paginates when the <c>MaxDatapoints</c>
+        /// limit is reached.
         /// </para>
         /// </summary>
         public ScanBy ScanBy
@@ -289,8 +289,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
+        /// If you set <c>Period</c> to 5, 10, or 30, the start time of your request is rounded
+        /// down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
         /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
         /// 10-second period, the start time of your request is rounded down and you receive data
         /// from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes
@@ -299,11 +299,11 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For better performance, specify <code>StartTime</code> and <code>EndTime</code> values
-        /// that align with the value of the metric's <code>Period</code> and sync up with the
-        /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster
-        /// response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.
+        /// For better performance, specify <c>StartTime</c> and <c>EndTime</c> values that align
+        /// with the value of the metric's <c>Period</c> and sync up with the beginning and end
+        /// of an hour. For example, if the <c>Period</c> of a metric is 5 minutes, specifying
+        /// 12:05 or 12:30 as <c>StartTime</c> can get a faster response from CloudWatch than
+        /// setting 12:07 or 12:29 as the <c>StartTime</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -344,11 +344,11 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For better performance, specify <code>StartTime</code> and <code>EndTime</code> values
-        /// that align with the value of the metric's <code>Period</code> and sync up with the
-        /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>EndTime</code> can get a faster response
-        /// from CloudWatch than setting 12:07 or 12:29 as the <code>EndTime</code>.
+        /// For better performance, specify <c>StartTime</c> and <c>EndTime</c> values that align
+        /// with the value of the metric's <c>Period</c> and sync up with the beginning and end
+        /// of an hour. For example, if the <c>Period</c> of a metric is 5 minutes, specifying
+        /// 12:05 or 12:30 as <c>EndTime</c> can get a faster response from CloudWatch than setting
+        /// 12:07 or 12:29 as the <c>EndTime</c>.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +
@@ -405,8 +405,8 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you set <code>Period</code> to 5, 10, or 30, the start time of your request is
-        /// rounded down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
+        /// If you set <c>Period</c> to 5, 10, or 30, the start time of your request is rounded
+        /// down to the nearest time that corresponds to even 5-, 10-, or 30-second divisions
         /// of a minute. For example, if you make a query at (HH:mm:ss) 01:05:23 for the previous
         /// 10-second period, the start time of your request is rounded down and you receive data
         /// from 01:05:10 to 01:05:20. If you make a query at 15:07:17 for the previous 5 minutes
@@ -415,11 +415,11 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  
         /// <para>
-        /// For better performance, specify <code>StartTime</code> and <code>EndTime</code> values
-        /// that align with the value of the metric's <code>Period</code> and sync up with the
-        /// beginning and end of an hour. For example, if the <code>Period</code> of a metric
-        /// is 5 minutes, specifying 12:05 or 12:30 as <code>StartTime</code> can get a faster
-        /// response from CloudWatch than setting 12:07 or 12:29 as the <code>StartTime</code>.
+        /// For better performance, specify <c>StartTime</c> and <c>EndTime</c> values that align
+        /// with the value of the metric's <c>Period</c> and sync up with the beginning and end
+        /// of an hour. For example, if the <c>Period</c> of a metric is 5 minutes, specifying
+        /// 12:05 or 12:30 as <c>StartTime</c> can get a faster response from CloudWatch than
+        /// setting 12:07 or 12:29 as the <c>StartTime</c>.
         /// </para>
         /// </summary>
         [Obsolete("Setting this property results in non-UTC DateTimes not being marshalled correctly. " +

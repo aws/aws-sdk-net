@@ -65,8 +65,8 @@ namespace Amazon.Route53Domains.Model
     /// Use either <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ListOperations.html">ListOperations</a>
     /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
     /// to determine whether the operation succeeded. <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>
-    /// provides additional information, for example, <code>Domain Transfer from Aws Account
-    /// 111122223333 has been cancelled</code>. 
+    /// provides additional information, for example, <c>Domain Transfer from Aws Account
+    /// 111122223333 has been cancelled</c>. 
     /// </para>
     /// </summary>
     public partial class TransferDomainToAnotherAwsAccountRequest : AmazonRoute53DomainsRequest
@@ -78,7 +78,7 @@ namespace Amazon.Route53Domains.Model
         /// Gets and sets the property AccountId. 
         /// <para>
         /// The account ID of the Amazon Web Services account that you want to transfer the domain
-        /// to, for example, <code>111122223333</code>.
+        /// to, for example, <c>111122223333</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]

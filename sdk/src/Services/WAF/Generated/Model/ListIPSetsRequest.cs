@@ -54,10 +54,10 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property Limit. 
         /// <para>
-        /// Specifies the number of <code>IPSet</code> objects that you want AWS WAF to return
-        /// for this request. If you have more <code>IPSet</code> objects than the number you
-        /// specify for <code>Limit</code>, the response includes a <code>NextMarker</code> value
-        /// that you can use to get another batch of <code>IPSet</code> objects.
+        /// Specifies the number of <c>IPSet</c> objects that you want AWS WAF to return for this
+        /// request. If you have more <c>IPSet</c> objects than the number you specify for <c>Limit</c>,
+        /// the response includes a <c>NextMarker</c> value that you can use to get another batch
+        /// of <c>IPSet</c> objects.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -76,10 +76,10 @@ namespace Amazon.WAF.Model
         /// <summary>
         /// Gets and sets the property NextMarker. 
         /// <para>
-        /// AWS WAF returns a <code>NextMarker</code> value in the response that allows you to
-        /// list another group of <code>IPSets</code>. For the second and subsequent <code>ListIPSets</code>
-        /// requests, specify the value of <code>NextMarker</code> from the previous response
-        /// to get information about another batch of <code>IPSets</code>.
+        /// AWS WAF returns a <c>NextMarker</c> value in the response that allows you to list
+        /// another group of <c>IPSets</c>. For the second and subsequent <c>ListIPSets</c> requests,
+        /// specify the value of <c>NextMarker</c> from the previous response to get information
+        /// about another batch of <c>IPSets</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1224)]

@@ -63,9 +63,9 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  
         /// <para>
-        /// When you set this value <code>true</code>, then the messages that are sent from the
-        /// identity are signed using DKIM. If you set this value to <code>false</code>, your
-        /// messages are sent without DKIM signing.
+        /// When you set this value <c>true</c>, then the messages that are sent from the identity
+        /// are signed using DKIM. If you set this value to <c>false</c>, your messages are sent
+        /// without DKIM signing.
         /// </para>
         /// </summary>
         public bool SigningEnabled

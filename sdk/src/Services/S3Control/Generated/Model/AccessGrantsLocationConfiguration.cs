@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// The configuration options of the S3 Access Grants location. It contains the <code>S3SubPrefix</code>
+    /// The configuration options of the S3 Access Grants location. It contains the <c>S3SubPrefix</c>
     /// field. The grant scope, the data to which you are granting access, is the result of
-    /// appending the <code>Subprefix</code> field to the scope of the registered location.
+    /// appending the <c>Subprefix</c> field to the scope of the registered location.
     /// </summary>
     public partial class AccessGrantsLocationConfiguration
     {
@@ -40,19 +40,18 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property S3SubPrefix. 
         /// <para>
-        /// The <code>S3SubPrefix</code> is appended to the location scope creating the grant
-        /// scope. Use this field to narrow the scope of the grant to a subset of the location
-        /// scope. This field is required if the location scope is the default location <code>s3://</code>
+        /// The <c>S3SubPrefix</c> is appended to the location scope creating the grant scope.
+        /// Use this field to narrow the scope of the grant to a subset of the location scope.
+        /// This field is required if the location scope is the default location <c>s3://</c>
         /// because you cannot create a grant for all of your S3 data in the Region and must narrow
-        /// the scope. For example, if the location scope is the default location <code>s3://</code>,
-        /// the <code>S3SubPrefx</code> can be a &lt;bucket-name&gt;/*, so the full grant scope
-        /// path would be <code>s3://&lt;bucket-name&gt;/*</code>. Or the <code>S3SubPrefx</code>
-        /// can be <code>&lt;bucket-name&gt;/&lt;prefix-name&gt;*</code>, so the full grant scope
-        /// path would be or <code>s3://&lt;bucket-name&gt;/&lt;prefix-name&gt;*</code>.
+        /// the scope. For example, if the location scope is the default location <c>s3://</c>,
+        /// the <c>S3SubPrefx</c> can be a &lt;bucket-name&gt;/*, so the full grant scope path
+        /// would be <c>s3://&lt;bucket-name&gt;/*</c>. Or the <c>S3SubPrefx</c> can be <c>&lt;bucket-name&gt;/&lt;prefix-name&gt;*</c>,
+        /// so the full grant scope path would be or <c>s3://&lt;bucket-name&gt;/&lt;prefix-name&gt;*</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the <code>S3SubPrefix</code> includes a prefix, append the wildcard character <code>*</code>
+        /// If the <c>S3SubPrefix</c> includes a prefix, append the wildcard character <c>*</c>
         /// after the prefix to indicate that you want to include all object key names in the
         /// bucket that start with that prefix. 
         /// </para>

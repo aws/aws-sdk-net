@@ -34,8 +34,8 @@ namespace Amazon.DAX.Model
     /// 
     ///  <note> 
     /// <para>
-    /// You cannot use <code>DecreaseReplicationFactor</code> to remove the last node in a
-    /// DAX cluster. If you need to do this, use <code>DeleteCluster</code> instead.
+    /// You cannot use <c>DecreaseReplicationFactor</c> to remove the last node in a DAX cluster.
+    /// If you need to do this, use <c>DeleteCluster</c> instead.
     /// </para>
     ///  </note>
     /// </summary>

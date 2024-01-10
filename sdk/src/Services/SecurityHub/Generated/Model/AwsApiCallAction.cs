@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Provided if <code>ActionType</code> is <code>AWS_API_CALL</code>. It provides details
-    /// about the API call that was detected.
+    /// Provided if <c>ActionType</c> is <c>AWS_API_CALL</c>. It provides details about the
+    /// API call that was detected.
     /// </summary>
     public partial class AwsApiCallAction
     {
@@ -82,8 +82,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CallerType. 
         /// <para>
-        /// Indicates whether the API call originated from a remote IP address (<code>remoteip</code>)
-        /// or from a DNS domain (<code>domain</code>).
+        /// Indicates whether the API call originated from a remote IP address (<c>remoteip</c>)
+        /// or from a DNS domain (<c>domain</c>).
         /// </para>
         /// </summary>
         public string CallerType
@@ -101,8 +101,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property DomainDetails. 
         /// <para>
-        /// Provided if <code>CallerType</code> is <code>domain</code>. Provides information about
-        /// the DNS domain that the API call originated from.
+        /// Provided if <c>CallerType</c> is <c>domain</c>. Provides information about the DNS
+        /// domain that the API call originated from.
         /// </para>
         /// </summary>
         public AwsApiCallActionDomainDetails DomainDetails
@@ -124,10 +124,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public string FirstSeen
@@ -150,10 +150,10 @@ namespace Amazon.SecurityHub.Model
         /// </para>
         ///  
         /// <para>
-        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
-        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
-        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// A correctly formatted example is <c>2020-05-21T20:16:34.724Z</c>. The value cannot
+        /// contain spaces, and date and time should be separated by <c>T</c>. For more information,
+        /// see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section
+        /// 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public string LastSeen
@@ -171,8 +171,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property RemoteIpDetails. 
         /// <para>
-        /// Provided if <code>CallerType</code> is <code>remoteIp</code>. Provides information
-        /// about the remote IP address that the API call originated from.
+        /// Provided if <c>CallerType</c> is <c>remoteIp</c>. Provides information about the remote
+        /// IP address that the API call originated from.
         /// </para>
         /// </summary>
         public ActionRemoteIpDetails RemoteIpDetails

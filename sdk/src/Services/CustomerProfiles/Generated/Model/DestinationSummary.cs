@@ -59,7 +59,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property UnhealthySince. 
         /// <para>
-        /// The timestamp when the status last changed to <code>UNHEALHY</code>.
+        /// The timestamp when the status last changed to <c>UNHEALHY</c>.
         /// </para>
         /// </summary>
         public DateTime UnhealthySince

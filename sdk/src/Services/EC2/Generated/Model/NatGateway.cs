@@ -104,9 +104,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property FailureCode. 
         /// <para>
         /// If the NAT gateway could not be created, specifies the error code for the failure.
-        /// (<code>InsufficientFreeAddressesInSubnet</code> | <code>Gateway.NotAttached</code>
-        /// | <code>InvalidAllocationID.NotFound</code> | <code>Resource.AlreadyAssociated</code>
-        /// | <code>InternalError</code> | <code>InvalidSubnetID.NotFound</code>)
+        /// (<c>InsufficientFreeAddressesInSubnet</c> | <c>Gateway.NotAttached</c> | <c>InvalidAllocationID.NotFound</c>
+        /// | <c>Resource.AlreadyAssociated</c> | <c>InternalError</c> | <c>InvalidSubnetID.NotFound</c>)
         /// </para>
         /// </summary>
         public string FailureCode
@@ -232,28 +231,26 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>pending</code>: The NAT gateway is being created and is not ready to process
-        /// traffic.
+        ///  <c>pending</c>: The NAT gateway is being created and is not ready to process traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>failed</code>: The NAT gateway could not be created. Check the <code>failureCode</code>
-        /// and <code>failureMessage</code> fields for the reason.
+        ///  <c>failed</c>: The NAT gateway could not be created. Check the <c>failureCode</c>
+        /// and <c>failureMessage</c> fields for the reason.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available</code>: The NAT gateway is able to process traffic. This status remains
+        ///  <c>available</c>: The NAT gateway is able to process traffic. This status remains
         /// until you delete the NAT gateway, and does not indicate the health of the NAT gateway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code>: The NAT gateway is in the process of being terminated and
-        /// may still be processing traffic.
+        ///  <c>deleting</c>: The NAT gateway is in the process of being terminated and may still
+        /// be processing traffic.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code>: The NAT gateway has been terminated and is no longer processing
-        /// traffic.
+        ///  <c>deleted</c>: The NAT gateway has been terminated and is no longer processing traffic.
         /// </para>
         ///  </li> </ul>
         /// </summary>

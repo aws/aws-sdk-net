@@ -39,7 +39,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LabelingJobSummaryList. 
         /// <para>
-        /// An array of <code>LabelingJobSummary</code> objects, each describing a labeling job.
+        /// An array of <c>LabelingJobSummary</c> objects, each describing a labeling job.
         /// </para>
         /// </summary>
         public List<LabelingJobSummary> LabelingJobSummaryList

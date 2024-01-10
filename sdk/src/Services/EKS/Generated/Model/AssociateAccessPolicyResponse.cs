@@ -40,7 +40,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property AssociatedAccessPolicy. 
         /// <para>
-        /// The <code>AccessPolicy</code> and scope associated to the <code>AccessEntry</code>.
+        /// The <c>AccessPolicy</c> and scope associated to the <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         public AssociatedAccessPolicy AssociatedAccessPolicy
@@ -76,7 +76,7 @@ namespace Amazon.EKS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The ARN of the IAM principal for the <code>AccessEntry</code>.
+        /// The ARN of the IAM principal for the <c>AccessEntry</c>.
         /// </para>
         /// </summary>
         public string PrincipalArn

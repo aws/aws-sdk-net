@@ -45,7 +45,7 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ApplyImmediately. 
         /// <para>
-        /// If <code>True</code>, the number of replica nodes is increased immediately. <code>ApplyImmediately=False</code>
+        /// If <c>True</c>, the number of replica nodes is increased immediately. <c>ApplyImmediately=False</c>
         /// is not currently supported.
         /// </para>
         /// </summary>
@@ -86,9 +86,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property ReplicaConfiguration. 
         /// <para>
-        /// A list of <code>ConfigureShard</code> objects that can be used to configure each shard
-        /// in a Redis (cluster mode enabled) replication group. The <code>ConfigureShard</code>
-        /// has three members: <code>NewReplicaCount</code>, <code>NodeGroupId</code>, and <code>PreferredAvailabilityZones</code>.
+        /// A list of <c>ConfigureShard</c> objects that can be used to configure each shard in
+        /// a Redis (cluster mode enabled) replication group. The <c>ConfigureShard</c> has three
+        /// members: <c>NewReplicaCount</c>, <c>NodeGroupId</c>, and <c>PreferredAvailabilityZones</c>.
         /// </para>
         /// </summary>
         public List<ConfigureShard> ReplicaConfiguration

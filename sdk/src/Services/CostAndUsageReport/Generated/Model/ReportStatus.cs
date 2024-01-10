@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CostAndUsageReport.Model
 {
     /// <summary>
-    /// A two element dictionary with a <code>lastDelivery</code> and <code>lastStatus</code>
-    /// key whose values describe the date and status of the last delivered report for a particular
+    /// A two element dictionary with a <c>lastDelivery</c> and <c>lastStatus</c> key whose
+    /// values describe the date and status of the last delivered report for a particular
     /// report definition.
     /// </summary>
     public partial class ReportStatus

@@ -53,8 +53,7 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ALL_VISUALS</code>: Applies the filter operation to all visuals in the same
-        /// sheet.
+        ///  <c>ALL_VISUALS</c>: Applies the filter operation to all visuals in the same sheet.
         /// </para>
         ///  </li> </ul>
         /// </summary>

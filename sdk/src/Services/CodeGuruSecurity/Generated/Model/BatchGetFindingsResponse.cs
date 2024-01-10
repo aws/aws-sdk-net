@@ -40,8 +40,7 @@ namespace Amazon.CodeGuruSecurity.Model
         /// Gets and sets the property FailedFindings. 
         /// <para>
         /// A list of errors for individual findings which were not fetched. Each BatchGetFindingsError
-        /// contains the <code>scanName</code>, <code>findingId</code>, <code>errorCode</code>
-        /// and error <code>message</code>.
+        /// contains the <c>scanName</c>, <c>findingId</c>, <c>errorCode</c> and error <c>message</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

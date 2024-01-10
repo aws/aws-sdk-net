@@ -38,8 +38,7 @@ namespace Amazon.ResourceExplorer2.Model
         /// <summary>
         /// Gets and sets the property OrgConfiguration. 
         /// <para>
-        /// Details about the organization, and whether configuration is <code>ENABLED</code>
-        /// or <code>DISABLED</code>.
+        /// Details about the organization, and whether configuration is <c>ENABLED</c> or <c>DISABLED</c>.
         /// </para>
         /// </summary>
         public OrgConfiguration OrgConfiguration

@@ -60,8 +60,8 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  
         /// <para>
-        /// If you retry the operation with the same <code>ClientToken</code>, but with different
-        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// If you retry the operation with the same <c>ClientToken</c>, but with different parameters,
+        /// the retry fails with an <c>IdempotentParameterMismatch</c> error.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -80,7 +80,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property Principals. 
         /// <para>
         /// Specifies a list of principals to whom you want to the resource share. This can be
-        /// <code>null</code> if you want to add only resources.
+        /// <c>null</c> if you want to add only resources.
         /// </para>
         ///  
         /// <para>
@@ -93,26 +93,26 @@ namespace Amazon.RAM.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// An Amazon Web Services account ID, for example: <code>123456789012</code> 
+        /// An Amazon Web Services account ID, for example: <c>123456789012</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
+        /// Resource Name (ARN)</a> of an organization in Organizations, for example: <c>organizations::123456789012:organization/o-exampleorgid</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an organizational unit (OU) in Organizations, for example: <code>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</code>
+        /// An ARN of an organizational unit (OU) in Organizations, for example: <c>organizations::123456789012:ou/o-exampleorgid/ou-examplerootid-exampleouid123</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM role, for example: <code>iam::123456789012:role/rolename</code> 
+        /// An ARN of an IAM role, for example: <c>iam::123456789012:role/rolename</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An ARN of an IAM user, for example: <code>iam::123456789012user/username</code> 
+        /// An ARN of an IAM user, for example: <c>iam::123456789012user/username</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -138,7 +138,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceArns. 
         /// <para>
         /// Specifies a list of <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resource Names (ARNs)</a> of the resources that you want to share. This can be <code>null</code>
+        /// Resource Names (ARNs)</a> of the resources that you want to share. This can be <c>null</c>
         /// if you want to add only principals.
         /// </para>
         /// </summary>

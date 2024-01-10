@@ -51,7 +51,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// If your DB instance is part of a Multi-AZ DB cluster, you can reboot the DB cluster
-    /// with the <code>RebootDBCluster</code> operation.
+    /// with the <c>RebootDBCluster</c> operation.
     /// </para>
     /// </summary>
     public partial class RebootDBInstanceRequest : AmazonRDSRequest

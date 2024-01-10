@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>CategoryFilter</code> filters text values.
+    /// A <c>CategoryFilter</c> filters text values.
     /// 
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration for a <code>CategoryFilter</code>.
+        /// The configuration for a <c>CategoryFilter</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

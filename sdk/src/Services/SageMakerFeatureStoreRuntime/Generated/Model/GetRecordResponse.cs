@@ -39,7 +39,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property ExpiresAt. 
         /// <para>
-        /// The <code>ExpiresAt</code> ISO string of the requested record.
+        /// The <c>ExpiresAt</c> ISO string of the requested record.
         /// </para>
         /// </summary>
         public string ExpiresAt
@@ -57,7 +57,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model
         /// <summary>
         /// Gets and sets the property Record. 
         /// <para>
-        /// The record you requested. A list of <code>FeatureValues</code>.
+        /// The record you requested. A list of <c>FeatureValues</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

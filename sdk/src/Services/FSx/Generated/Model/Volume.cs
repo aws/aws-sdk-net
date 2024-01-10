@@ -51,7 +51,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// A list of administrative actions for the volume that are in process or waiting to
         /// be processed. Administrative actions describe changes to the volume that you have
-        /// initiated using the <code>UpdateVolume</code> action.
+        /// initiated using the <c>UpdateVolume</c> action.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -105,31 +105,31 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The volume is fully available for use.
+        ///  <c>AVAILABLE</c> - The volume is fully available for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATED</code> - The volume has been created.
+        ///  <c>CREATED</c> - The volume has been created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Amazon FSx is creating the new volume.
+        ///  <c>CREATING</c> - Amazon FSx is creating the new volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - Amazon FSx is deleting an existing volume.
+        ///  <c>DELETING</c> - Amazon FSx is deleting an existing volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Amazon FSx was unable to create the volume.
+        ///  <c>FAILED</c> - Amazon FSx was unable to create the volume.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISCONFIGURED</code> - The volume is in a failed but recoverable state.
+        ///  <c>MISCONFIGURED</c> - The volume is in a failed but recoverable state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon FSx hasn't started creating the volume.
+        ///  <c>PENDING</c> - Amazon FSx hasn't started creating the volume.
         /// </para>
         ///  </li> </ul>
         /// </summary>

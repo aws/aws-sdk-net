@@ -40,9 +40,9 @@ namespace Amazon.PaymentCryptographyData.Model
     /// on both ends for comparision without sending or receiving data in ciphertext or plaintext.
     /// You can use this operation to generate a DUPKT, HMAC or EMV MAC by setting generation
     /// attributes and algorithm to the associated values. The MAC generation encryption key
-    /// must have valid values for <code>KeyUsage</code> such as <code>TR31_M7_HMAC_KEY</code>
-    /// for HMAC generation, and they key must have <code>KeyModesOfUse</code> set to <code>Generate</code>
-    /// and <code>Verify</code>.
+    /// must have valid values for <c>KeyUsage</c> such as <c>TR31_M7_HMAC_KEY</c> for HMAC
+    /// generation, and they key must have <c>KeyModesOfUse</c> set to <c>Generate</c> and
+    /// <c>Verify</c>.
     /// </para>
     ///  
     /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.PaymentCryptographyData.Model
         /// <summary>
         /// Gets and sets the property KeyIdentifier. 
         /// <para>
-        /// The <code>keyARN</code> of the MAC generation encryption key.
+        /// The <c>keyARN</c> of the MAC generation encryption key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=7, Max=322)]

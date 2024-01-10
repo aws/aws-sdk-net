@@ -128,8 +128,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  
         /// <para>
-        /// The namespace <code>x-amz-lex:</code> is reserved for special attributes. Don't create
-        /// any request attributes with the prefix <code>x-amz-lex:</code>.
+        /// The namespace <c>x-amz-lex:</c> is reserved for special attributes. Don't create any
+        /// request attributes with the prefix <c>x-amz-lex:</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> RequestAttributes
@@ -152,8 +152,8 @@ namespace Amazon.LexRuntimeV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If the value is <code>text/plain; charset=utf-8</code>, Amazon Lex V2 returns text
-        /// in the response.
+        /// If the value is <c>text/plain; charset=utf-8</c>, Amazon Lex V2 returns text in the
+        /// response.
         /// </para>
         ///  </li> </ul>
         /// </summary>

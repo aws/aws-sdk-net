@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// The response object for the <code>CreateFileSystemFromBackup</code> operation.
+    /// The response object for the <c>CreateFileSystemFromBackup</c> operation.
     /// </summary>
     public partial class CreateFileSystemFromBackupResponse : AmazonWebServiceResponse
     {

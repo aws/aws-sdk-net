@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchEvents.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code that indicates why the target removal failed. If the value is <code>ConcurrentModificationException</code>,
+        /// The error code that indicates why the target removal failed. If the value is <c>ConcurrentModificationException</c>,
         /// too many requests were made at the same time.
         /// </para>
         /// </summary>

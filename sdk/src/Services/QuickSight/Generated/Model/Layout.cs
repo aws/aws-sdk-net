@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// A <code>Layout</code> defines the placement of elements within a sheet.
+    /// A <c>Layout</c> defines the placement of elements within a sheet.
     /// 
     ///  
     /// <para>

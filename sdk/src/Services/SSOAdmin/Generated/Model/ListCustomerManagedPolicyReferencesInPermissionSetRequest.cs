@@ -101,7 +101,7 @@ namespace Amazon.SSOAdmin.Model
         /// <summary>
         /// Gets and sets the property PermissionSetArn. 
         /// <para>
-        /// The ARN of the <code>PermissionSet</code>. 
+        /// The ARN of the <c>PermissionSet</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=1224)]

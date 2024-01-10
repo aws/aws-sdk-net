@@ -43,13 +43,13 @@ namespace Amazon.StorageGateway.Model
     /// </para>
     ///  
     /// <para>
-    /// In the <code>CreateSnapshot</code> request, you identify the volume by providing its
-    /// Amazon Resource Name (ARN). You must also provide description for the snapshot. When
-    /// Storage Gateway takes the snapshot of specified volume, the snapshot and description
-    /// appears in the Storage Gateway console. In response, Storage Gateway returns you a
-    /// snapshot ID. You can use this snapshot ID to check the snapshot progress or later
-    /// use it when you want to create a volume from a snapshot. This operation is only supported
-    /// in stored and cached volume gateway type.
+    /// In the <c>CreateSnapshot</c> request, you identify the volume by providing its Amazon
+    /// Resource Name (ARN). You must also provide description for the snapshot. When Storage
+    /// Gateway takes the snapshot of specified volume, the snapshot and description appears
+    /// in the Storage Gateway console. In response, Storage Gateway returns you a snapshot
+    /// ID. You can use this snapshot ID to check the snapshot progress or later use it when
+    /// you want to create a volume from a snapshot. This operation is only supported in stored
+    /// and cached volume gateway type.
     /// </para>
     ///  <note> 
     /// <para>

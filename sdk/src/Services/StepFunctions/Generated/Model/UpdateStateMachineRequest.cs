@@ -30,18 +30,17 @@ namespace Amazon.StepFunctions.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateStateMachine operation.
-    /// Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>,
-    /// or <code>loggingConfiguration</code>. Running executions will continue to use the
-    /// previous <code>definition</code> and <code>roleArn</code>. You must include at least
-    /// one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code>
-    /// error.
+    /// Updates an existing state machine by modifying its <c>definition</c>, <c>roleArn</c>,
+    /// or <c>loggingConfiguration</c>. Running executions will continue to use the previous
+    /// <c>definition</c> and <c>roleArn</c>. You must include at least one of <c>definition</c>
+    /// or <c>roleArn</c> or you will receive a <c>MissingRequiredParameter</c> error.
     /// 
     ///  
     /// <para>
     /// A qualified state machine ARN refers to a <i>Distributed Map state</i> defined within
-    /// a state machine. For example, the qualified state machine ARN <code>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</code>
-    /// refers to a <i>Distributed Map state</i> with a label <code>mapStateLabel</code> in
-    /// the state machine named <code>stateMachineName</code>.
+    /// a state machine. For example, the qualified state machine ARN <c>arn:partition:states:region:account-id:stateMachine:stateMachineName/mapStateLabel</c>
+    /// refers to a <i>Distributed Map state</i> with a label <c>mapStateLabel</c> in the
+    /// state machine named <c>stateMachineName</c>.
     /// </para>
     ///  
     /// <para>
@@ -55,25 +54,25 @@ namespace Amazon.StepFunctions.Model
     ///  <ul> <li> 
     /// <para>
     /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
-    /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+    /// with a label <c>mapStateLabel</c> in a state machine named <c>myStateMachine</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+    ///  <c>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</c>
     /// 
     /// </para>
     ///  <note> 
     /// <para>
     /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
-    /// the request fails with <code>ValidationException</code>.
+    /// the request fails with <c>ValidationException</c>.
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    /// The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+    /// The following qualified state machine ARN refers to an alias named <c>PROD</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+    ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</c>
     /// 
     /// </para>
     ///  <note> 
@@ -83,17 +82,17 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+    /// The following unqualified state machine ARN refers to a state machine named <c>myStateMachine</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+    ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</c>
     /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// After you update your state machine, you can set the <code>publish</code> parameter
-    /// to <code>true</code> in the same action to publish a new <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>.
+    /// After you update your state machine, you can set the <c>publish</c> parameter to <c>true</c>
+    /// in the same action to publish a new <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>.
     /// This way, you can opt-in to strict versioning of your state machine.
     /// </para>
     ///  <note> 
@@ -103,10 +102,9 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> <note> 
     /// <para>
-    /// All <code>StartExecution</code> calls within a few seconds use the updated <code>definition</code>
-    /// and <code>roleArn</code>. Executions started immediately after you call <code>UpdateStateMachine</code>
-    /// may use the previous state machine <code>definition</code> and <code>roleArn</code>.
-    /// 
+    /// All <c>StartExecution</c> calls within a few seconds use the updated <c>definition</c>
+    /// and <c>roleArn</c>. Executions started immediately after you call <c>UpdateStateMachine</c>
+    /// may use the previous state machine <c>definition</c> and <c>roleArn</c>. 
     /// </para>
     ///  </note>
     /// </summary>
@@ -143,7 +141,7 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// Use the <code>LoggingConfiguration</code> data type to set CloudWatch Logs options.
+        /// Use the <c>LoggingConfiguration</c> data type to set CloudWatch Logs options.
         /// </para>
         /// </summary>
         public LoggingConfiguration LoggingConfiguration
@@ -161,9 +159,8 @@ namespace Amazon.StepFunctions.Model
         /// <summary>
         /// Gets and sets the property Publish. 
         /// <para>
-        /// Specifies whether the state machine version is published. The default is <code>false</code>.
-        /// To publish a version after updating the state machine, set <code>publish</code> to
-        /// <code>true</code>.
+        /// Specifies whether the state machine version is published. The default is <c>false</c>.
+        /// To publish a version after updating the state machine, set <c>publish</c> to <c>true</c>.
         /// </para>
         /// </summary>
         public bool Publish
@@ -241,8 +238,8 @@ namespace Amazon.StepFunctions.Model
         /// </para>
         ///  
         /// <para>
-        /// You can only specify the <code>versionDescription</code> parameter if you've set <code>publish</code>
-        /// to <code>true</code>.
+        /// You can only specify the <c>versionDescription</c> parameter if you've set <c>publish</c>
+        /// to <c>true</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=256)]

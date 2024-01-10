@@ -59,12 +59,12 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The Amazon Resource Name (ARN) of a Amazon Web Services Key Management Service (Amazon
         /// Web Services KMS) key that Amazon SageMaker uses to encrypt your output artifacts
-        /// with Amazon S3 server-side encryption. The SageMaker execution role must have <code>kms:GenerateDataKey</code>
+        /// with Amazon S3 server-side encryption. The SageMaker execution role must have <c>kms:GenerateDataKey</c>
         /// permission.
         /// </para>
         ///  
         /// <para>
-        /// The <code>KmsKeyId</code> can be any of the following formats:
+        /// The <c>KmsKeyId</c> can be any of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -72,7 +72,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"1234abcd-12ab-34cd-56ef-1234567890ab"</code> 
+        ///  <c>"1234abcd-12ab-34cd-56ef-1234567890ab"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</code>
+        ///  <c>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:key/&lt;key-id-12ab-34cd-56ef-1234567890ab&gt;"</c>
         /// 
         /// </para>
         ///  </li> <li> 
@@ -89,7 +89,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"alias/ExampleAlias"</code> 
+        ///  <c>"alias/ExampleAlias"</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -97,8 +97,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</code>
-        /// 
+        ///  <c>"arn:aws:kms:&lt;region&gt;:&lt;account&gt;:alias/&lt;ExampleAlias&gt;"</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>

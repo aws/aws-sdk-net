@@ -47,12 +47,12 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>principal</code> - The ARN of the principal.
+        ///  <c>principal</c> - The ARN of the principal.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>principal-type</code> - The principal type (<code>All</code> | <code>Service</code>
-        /// | <code>OrganizationUnit</code> | <code>Account</code> | <code>User</code> | <code>Role</code>).
+        ///  <c>principal-type</c> - The principal type (<c>All</c> | <c>Service</c> | <c>OrganizationUnit</c>
+        /// | <c>Account</c> | <c>User</c> | <c>Role</c>).
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -73,7 +73,7 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The maximum number of results to return for the request in a single page. The remaining
         /// results of the initial request can be seen by sending another request with the returned
-        /// <code>NextToken</code> value. This value can be between 5 and 1,000; if <code>MaxResults</code>
+        /// <c>NextToken</c> value. This value can be between 5 and 1,000; if <c>MaxResults</c>
         /// is given a value larger than 1,000, only 1,000 results are returned.
         /// </para>
         /// </summary>

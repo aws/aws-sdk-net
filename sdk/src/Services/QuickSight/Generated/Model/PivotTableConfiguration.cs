@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration for a <code>PivotTableVisual</code>.
+    /// The configuration for a <c>PivotTableVisual</c>.
     /// </summary>
     public partial class PivotTableConfiguration
     {
@@ -97,7 +97,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration for a <code>PivotTableVisual</code>.
+        /// The sort configuration for a <c>PivotTableVisual</c>.
         /// </para>
         /// </summary>
         public PivotTableSortConfiguration SortConfiguration

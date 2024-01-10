@@ -45,25 +45,25 @@ namespace Amazon.StepFunctions.Model
     ///  <ul> <li> 
     /// <para>
     /// The following qualified state machine ARN refers to a <i>Distributed Map state</i>
-    /// with a label <code>mapStateLabel</code> in a state machine named <code>myStateMachine</code>.
+    /// with a label <c>mapStateLabel</c> in a state machine named <c>myStateMachine</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</code>
+    ///  <c>arn:partition:states:region:account-id:stateMachine:myStateMachine/mapStateLabel</c>
     /// 
     /// </para>
     ///  <note> 
     /// <para>
     /// If you provide a qualified state machine ARN that refers to a <i>Distributed Map state</i>,
-    /// the request fails with <code>ValidationException</code>.
+    /// the request fails with <c>ValidationException</c>.
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    /// The following qualified state machine ARN refers to an alias named <code>PROD</code>.
+    /// The following qualified state machine ARN refers to an alias named <c>PROD</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</code>
+    ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine:PROD&gt;</c>
     /// 
     /// </para>
     ///  <note> 
@@ -73,16 +73,16 @@ namespace Amazon.StepFunctions.Model
     /// </para>
     ///  </note> </li> <li> 
     /// <para>
-    /// The following unqualified state machine ARN refers to a state machine named <code>myStateMachine</code>.
+    /// The following unqualified state machine ARN refers to a state machine named <c>myStateMachine</c>.
     /// </para>
     ///  
     /// <para>
-    ///  <code>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</code>
+    ///  <c>arn:&lt;partition&gt;:states:&lt;region&gt;:&lt;account-id&gt;:stateMachine:&lt;myStateMachine&gt;</c>
     /// 
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// This API action returns the details for a state machine version if the <code>stateMachineArn</code>
+    /// This API action returns the details for a state machine version if the <c>stateMachineArn</c>
     /// you specify is a state machine version ARN.
     /// </para>
     ///  <note> 
@@ -105,7 +105,7 @@ namespace Amazon.StepFunctions.Model
         /// <para>
         /// If you specify a state machine version ARN, this API returns details about that version.
         /// The version ARN is a combination of state machine ARN and the version number separated
-        /// by a colon (:). For example, <code>stateMachineARN:1</code>.
+        /// by a colon (:). For example, <c>stateMachineARN:1</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

@@ -181,52 +181,52 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>create-in-progress</code> - Resource discovery is being created.
+        ///  <c>create-in-progress</c> - Resource discovery is being created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>create-complete</code> - Resource discovery creation is complete.
+        ///  <c>create-complete</c> - Resource discovery creation is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>create-failed</code> - Resource discovery creation has failed.
+        ///  <c>create-failed</c> - Resource discovery creation has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modify-in-progress</code> - Resource discovery is being modified.
+        ///  <c>modify-in-progress</c> - Resource discovery is being modified.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modify-complete</code> - Resource discovery modification is complete.
+        ///  <c>modify-complete</c> - Resource discovery modification is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modify-failed</code> - Resource discovery modification has failed.
+        ///  <c>modify-failed</c> - Resource discovery modification has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>delete-in-progress</code> - Resource discovery is being deleted.
+        ///  <c>delete-in-progress</c> - Resource discovery is being deleted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>delete-complete</code> - Resource discovery deletion is complete.
+        ///  <c>delete-complete</c> - Resource discovery deletion is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>delete-failed</code> - Resource discovery deletion has failed.
+        ///  <c>delete-failed</c> - Resource discovery deletion has failed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>isolate-in-progress</code> - Amazon Web Services account that created the resource
+        ///  <c>isolate-in-progress</c> - Amazon Web Services account that created the resource
         /// discovery has been removed and the resource discovery is being isolated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>isolate-complete</code> - Resource discovery isolation is complete.
+        ///  <c>isolate-complete</c> - Resource discovery isolation is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>restore-in-progress</code> - Amazon Web Services account that created the resource
+        ///  <c>restore-in-progress</c> - Amazon Web Services account that created the resource
         /// discovery and was isolated has been restored.
         /// </para>
         ///  </li> </ul>

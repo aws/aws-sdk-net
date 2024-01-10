@@ -42,7 +42,7 @@ namespace Amazon.IVS.Model
         /// Gets and sets the property EndTime. 
         /// <para>
         /// Time when the channel went offline. This is an ISO 8601 timestamp; <i>note that this
-        /// is returned as a string</i>. For live streams, this is <code>NULL</code>.
+        /// is returned as a string</i>. For live streams, this is <c>NULL</c>.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -60,7 +60,7 @@ namespace Amazon.IVS.Model
         /// <summary>
         /// Gets and sets the property HasErrorEvent. 
         /// <para>
-        /// If <code>true</code>, this stream encountered a quota breach or failure.
+        /// If <c>true</c>, this stream encountered a quota breach or failure.
         /// </para>
         /// </summary>
         public bool HasErrorEvent

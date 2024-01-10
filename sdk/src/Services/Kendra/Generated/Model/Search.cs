@@ -41,7 +41,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Displayable. 
         /// <para>
-        /// Determines whether the field is returned in the query response. The default is <code>true</code>.
+        /// Determines whether the field is returned in the query response. The default is <c>true</c>.
         /// </para>
         /// </summary>
         public bool Displayable
@@ -60,7 +60,7 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Facetable. 
         /// <para>
         /// Indicates that the field can be used to create search facets, a count of results for
-        /// each value in the field. The default is <code>false</code> .
+        /// each value in the field. The default is <c>false</c> .
         /// </para>
         /// </summary>
         public bool Facetable
@@ -78,10 +78,10 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Searchable. 
         /// <para>
-        /// Determines whether the field is used in the search. If the <code>Searchable</code>
-        /// field is <code>true</code>, you can use relevance tuning to manually tune how Amazon
-        /// Kendra weights the field in the search. The default is <code>true</code> for string
-        /// fields and <code>false</code> for number and date fields.
+        /// Determines whether the field is used in the search. If the <c>Searchable</c> field
+        /// is <c>true</c>, you can use relevance tuning to manually tune how Amazon Kendra weights
+        /// the field in the search. The default is <c>true</c> for string fields and <c>false</c>
+        /// for number and date fields.
         /// </para>
         /// </summary>
         public bool Searchable
@@ -100,8 +100,8 @@ namespace Amazon.Kendra.Model
         /// Gets and sets the property Sortable. 
         /// <para>
         /// Determines whether the field can be used to sort the results of a query. If you specify
-        /// sorting on a field that does not have <code>Sortable</code> set to <code>true</code>,
-        /// Amazon Kendra returns an exception. The default is <code>false</code>.
+        /// sorting on a field that does not have <c>Sortable</c> set to <c>true</c>, Amazon Kendra
+        /// returns an exception. The default is <c>false</c>.
         /// </para>
         /// </summary>
         public bool Sortable

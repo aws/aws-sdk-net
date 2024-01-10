@@ -75,7 +75,7 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier for the invalidation request, for example, <code>IDFDVBD632BHDS5</code>.
+        /// The identifier for the invalidation request, for example, <c>IDFDVBD632BHDS5</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

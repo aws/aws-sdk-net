@@ -98,7 +98,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property StatisticsData. 
         /// <para>
-        /// A <code>ColumnStatisticData</code> object that contains the statistics data values.
+        /// A <c>ColumnStatisticData</c> object that contains the statistics data values.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

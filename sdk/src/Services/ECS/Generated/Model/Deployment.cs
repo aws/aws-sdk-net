@@ -30,7 +30,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// The details of an Amazon ECS service deployment. This is used only when a service
-    /// uses the <code>ECS</code> deployment controller type.
+    /// uses the <c>ECS</c> deployment controller type.
     /// </summary>
     public partial class Deployment
     {
@@ -113,8 +113,8 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The number of consecutively failed tasks in the deployment. A task is considered a
         /// failure if the service scheduler can't launch the task, the task doesn't transition
-        /// to a <code>RUNNING</code> state, or if it fails any of its defined health checks and
-        /// is stopped.
+        /// to a <c>RUNNING</c> state, or if it fails any of its defined health checks and is
+        /// stopped.
         /// </para>
         ///  <note> 
         /// <para>
@@ -176,7 +176,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property NetworkConfiguration. 
         /// <para>
         /// The VPC subnet and security group configuration for tasks that receive their own elastic
-        /// network interface by using the <code>awsvpc</code> networking mode.
+        /// network interface by using the <c>awsvpc</c> networking mode.
         /// </para>
         /// </summary>
         public NetworkConfiguration NetworkConfiguration
@@ -194,7 +194,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PendingCount. 
         /// <para>
-        /// The number of tasks in the deployment that are in the <code>PENDING</code> status.
+        /// The number of tasks in the deployment that are in the <c>PENDING</c> status.
         /// </para>
         /// </summary>
         public int PendingCount
@@ -217,8 +217,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        ///  All tasks that run as part of this service must use the same <code>platformFamily</code>
-        /// value as the service, for example, <code> LINUX.</code>.
+        ///  All tasks that run as part of this service must use the same <c>platformFamily</c>
+        /// value as the service, for example, <c> LINUX.</c>.
         /// </para>
         /// </summary>
         public string PlatformFamily
@@ -238,7 +238,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The platform version that your tasks in the service run on. A platform version is
         /// only specified for tasks using the Fargate launch type. If one isn't specified, the
-        /// <code>LATEST</code> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
+        /// <c>LATEST</c> platform version is used. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">Fargate
         /// Platform Versions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
@@ -257,18 +257,17 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RolloutState. <note> 
         /// <para>
-        /// The <code>rolloutState</code> of a service is only returned for services that use
-        /// the rolling update (<code>ECS</code>) deployment type that aren't behind a Classic
-        /// Load Balancer.
+        /// The <c>rolloutState</c> of a service is only returned for services that use the rolling
+        /// update (<c>ECS</c>) deployment type that aren't behind a Classic Load Balancer.
         /// </para>
         ///  </note> 
         /// <para>
         /// The rollout state of the deployment. When a service deployment is started, it begins
-        /// in an <code>IN_PROGRESS</code> state. When the service reaches a steady state, the
-        /// deployment transitions to a <code>COMPLETED</code> state. If the service fails to
-        /// reach a steady state and circuit breaker is turned on, the deployment transitions
-        /// to a <code>FAILED</code> state. A deployment in <code>FAILED</code> state doesn't
-        /// launch any new tasks. For more information, see <a>DeploymentCircuitBreaker</a>.
+        /// in an <c>IN_PROGRESS</c> state. When the service reaches a steady state, the deployment
+        /// transitions to a <c>COMPLETED</c> state. If the service fails to reach a steady state
+        /// and circuit breaker is turned on, the deployment transitions to a <c>FAILED</c> state.
+        /// A deployment in <c>FAILED</c> state doesn't launch any new tasks. For more information,
+        /// see <a>DeploymentCircuitBreaker</a>.
         /// </para>
         /// </summary>
         public DeploymentRolloutState RolloutState
@@ -304,7 +303,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RunningCount. 
         /// <para>
-        /// The number of tasks in the deployment that are in the <code>RUNNING</code> status.
+        /// The number of tasks in the deployment that are in the <c>RUNNING</c> status.
         /// </para>
         /// </summary>
         public int RunningCount
@@ -384,7 +383,7 @@ namespace Amazon.ECS.Model
         ///  </dd> <dt>ACTIVE</dt> <dd> 
         /// <para>
         /// A service deployment that still has running tasks, but are in the process of being
-        /// replaced with a new <code>PRIMARY</code> deployment.
+        /// replaced with a new <c>PRIMARY</c> deployment.
         /// </para>
         ///  </dd> <dt>INACTIVE</dt> <dd> 
         /// <para>

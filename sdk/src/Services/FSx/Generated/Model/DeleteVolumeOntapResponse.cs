@@ -30,7 +30,7 @@ namespace Amazon.FSx.Model
 {
     /// <summary>
     /// The response object for the Amazon FSx for NetApp ONTAP volume being deleted in the
-    /// <code>DeleteVolume</code> operation.
+    /// <c>DeleteVolume</c> operation.
     /// </summary>
     public partial class DeleteVolumeOntapResponse
     {

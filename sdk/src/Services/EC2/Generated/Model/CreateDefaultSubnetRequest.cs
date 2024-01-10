@@ -30,9 +30,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateDefaultSubnet operation.
-    /// Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified
-    /// Availability Zone in your default VPC. You can have only one default subnet per Availability
-    /// Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
+    /// Creates a default subnet with a size <c>/20</c> IPv4 CIDR block in the specified Availability
+    /// Zone in your default VPC. You can have only one default subnet per Availability Zone.
+    /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create
     /// a default subnet</a> in the <i>Amazon VPC User Guide</i>.
     /// </summary>
     public partial class CreateDefaultSubnetRequest : AmazonEC2Request

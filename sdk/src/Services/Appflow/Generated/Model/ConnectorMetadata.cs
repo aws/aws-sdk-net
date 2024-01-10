@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Appflow.Model
 {
     /// <summary>
-    /// A structure to specify connector-specific metadata such as <code>oAuthScopes</code>,
-    /// <code>supportedRegions</code>, <code>privateLinkServiceUrl</code>, and so on.
+    /// A structure to specify connector-specific metadata such as <c>oAuthScopes</c>, <c>supportedRegions</c>,
+    /// <c>privateLinkServiceUrl</c>, and so on.
     /// </summary>
     public partial class ConnectorMetadata
     {

@@ -31,9 +31,9 @@ namespace Amazon.Glue.Model
     /// <summary>
     /// Container for the parameters to the BatchGetJobs operation.
     /// Returns a list of resource metadata for a given list of job names. After calling the
-    /// <code>ListJobs</code> operation, you can call this operation to access the data to
-    /// which you have been granted permissions. This operation supports all IAM permissions,
-    /// including permission conditions that uses tags.
+    /// <c>ListJobs</c> operation, you can call this operation to access the data to which
+    /// you have been granted permissions. This operation supports all IAM permissions, including
+    /// permission conditions that uses tags.
     /// </summary>
     public partial class BatchGetJobsRequest : AmazonGlueRequest
     {
@@ -42,8 +42,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property JobNames. 
         /// <para>
-        /// A list of job names, which might be the names returned from the <code>ListJobs</code>
-        /// operation.
+        /// A list of job names, which might be the names returned from the <c>ListJobs</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

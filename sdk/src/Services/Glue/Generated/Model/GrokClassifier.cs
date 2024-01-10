@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A classifier that uses <code>grok</code> patterns.
+    /// A classifier that uses <c>grok</c> patterns.
     /// </summary>
     public partial class GrokClassifier
     {

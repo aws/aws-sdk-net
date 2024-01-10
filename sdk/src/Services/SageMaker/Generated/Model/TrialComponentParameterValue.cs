@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// The value of a hyperparameter. Only one of <code>NumberValue</code> or <code>StringValue</code>
+    /// The value of a hyperparameter. Only one of <c>NumberValue</c> or <c>StringValue</c>
     /// can be specified.
     /// 
     ///  
@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property NumberValue. 
         /// <para>
         /// The numeric value of a numeric hyperparameter. If you specify a value for this parameter,
-        /// you can't specify the <code>StringValue</code> parameter.
+        /// you can't specify the <c>StringValue</c> parameter.
         /// </para>
         /// </summary>
         public double NumberValue
@@ -66,7 +66,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property StringValue. 
         /// <para>
         /// The string value of a categorical hyperparameter. If you specify a value for this
-        /// parameter, you can't specify the <code>NumberValue</code> parameter.
+        /// parameter, you can't specify the <c>NumberValue</c> parameter.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2500)]

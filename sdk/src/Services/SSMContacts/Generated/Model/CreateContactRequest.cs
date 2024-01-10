@@ -144,8 +144,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// To create an escalation plan use <code>ESCALATION</code>. To create a contact use
-        /// <code>PERSONAL</code>.
+        /// To create an escalation plan use <c>ESCALATION</c>. To create a contact use <c>PERSONAL</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

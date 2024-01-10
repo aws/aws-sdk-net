@@ -62,7 +62,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
-        /// An array of <code>Channel</code> objects, each of which specifies an input source.
+        /// An array of <c>Channel</c> objects, each of which specifies an input source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]

@@ -31,7 +31,7 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// The resource target configurations for receiving Amazon Chime SDK meeting and attendee
     /// event notifications. The Amazon Chime SDK supports resource targets located in the
-    /// US East (N. Virginia) AWS Region (<code>us-east-1</code>).
+    /// US East (N. Virginia) AWS Region (<c>us-east-1</c>).
     /// </summary>
     public partial class MeetingNotificationConfiguration
     {

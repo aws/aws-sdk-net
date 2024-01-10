@@ -83,16 +83,14 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// If the response from the <code>ListBots</code> operation contains more results than
-        /// specified in the <code>maxResults</code> parameter, a token is returned in the response.
-        /// 
+        /// If the response from the <c>ListBots</c> operation contains more results than specified
+        /// in the <c>maxResults</c> parameter, a token is returned in the response. 
         /// </para>
         ///  
         /// <para>
-        /// Use the returned token in the <code>nextToken</code> parameter of a <code>ListBots</code>
-        /// request to return the next page of results. For a complete set of results, call the
-        /// <code>ListBots</code> operation until the <code>nextToken</code> returned in the response
-        /// is null.
+        /// Use the returned token in the <c>nextToken</c> parameter of a <c>ListBots</c> request
+        /// to return the next page of results. For a complete set of results, call the <c>ListBots</c>
+        /// operation until the <c>nextToken</c> returned in the response is null.
         /// </para>
         /// </summary>
         public string NextToken

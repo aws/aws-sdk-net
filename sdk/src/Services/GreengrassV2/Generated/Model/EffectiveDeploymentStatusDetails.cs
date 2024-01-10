@@ -34,9 +34,9 @@ namespace Amazon.GreengrassV2.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Greengrass nucleus v2.8.0 or later is required to get an accurate <code>errorStack</code>
-    /// and <code>errorTypes</code> response. This field will not be returned for earlier
-    /// Greengrass nucleus versions.
+    /// Greengrass nucleus v2.8.0 or later is required to get an accurate <c>errorStack</c>
+    /// and <c>errorTypes</c> response. This field will not be returned for earlier Greengrass
+    /// nucleus versions.
     /// </para>
     ///  </note>
     /// </summary>
@@ -50,8 +50,8 @@ namespace Amazon.GreengrassV2.Model
         /// <para>
         /// Contains an ordered list of short error codes that range from the most generic error
         /// to the most specific one. The error codes describe the reason for failure whenever
-        /// the <code>coreDeviceExecutionStatus</code> is in a failed state. The response will
-        /// be an empty list if there is no error.
+        /// the <c>coreDeviceExecutionStatus</c> is in a failed state. The response will be an
+        /// empty list if there is no error.
         /// </para>
         /// </summary>
         public List<string> ErrorStack

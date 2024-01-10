@@ -338,8 +338,8 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Applies a scheduled managed action immediately. A managed action can be applied only
-        /// if its status is <code>Scheduled</code>. Get the status and action ID of a managed
-        /// action with <a>DescribeEnvironmentManagedActions</a>.
+        /// if its status is <c>Scheduled</c>. Get the status and action ID of a managed action
+        /// with <a>DescribeEnvironmentManagedActions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction service method.</param>
         /// 
@@ -363,8 +363,8 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Applies a scheduled managed action immediately. A managed action can be applied only
-        /// if its status is <code>Scheduled</code>. Get the status and action ID of a managed
-        /// action with <a>DescribeEnvironmentManagedActions</a>.
+        /// if its status is <c>Scheduled</c>. Get the status and action ID of a managed action
+        /// with <a>DescribeEnvironmentManagedActions</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ApplyEnvironmentManagedAction service method.</param>
         /// <param name="cancellationToken">
@@ -494,7 +494,7 @@ namespace Amazon.ElasticBeanstalk
         /// application. Takes a list of version labels that specify application source bundles
         /// for each of the environments to create or update. The name of each environment and
         /// other required information must be included in the source bundles in an environment
-        /// manifest named <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+        /// manifest named <c>env.yaml</c>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
         /// Environments</a> for details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments service method.</param>
@@ -522,7 +522,7 @@ namespace Amazon.ElasticBeanstalk
         /// application. Takes a list of version labels that specify application source bundles
         /// for each of the environments to create or update. The name of each environment and
         /// other required information must be included in the source bundles in an environment
-        /// manifest named <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
+        /// manifest named <c>env.yaml</c>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose
         /// Environments</a> for details.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ComposeEnvironments service method.</param>
@@ -553,8 +553,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates an application that has one configuration template named <code>default</code>
-        /// and no application versions.
+        /// Creates an application that has one configuration template named <c>default</c> and
+        /// no application versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// 
@@ -574,8 +574,8 @@ namespace Amazon.ElasticBeanstalk
 
 
         /// <summary>
-        /// Creates an application that has one configuration template named <code>default</code>
-        /// and no application versions.
+        /// Creates an application that has one configuration template named <c>default</c> and
+        /// no application versions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateApplication service method.</param>
         /// <param name="cancellationToken">
@@ -608,20 +608,20 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+        /// Specify a commit in an AWS CodeCommit repository with <c>SourceBuildInformation</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+        /// Specify a build in an AWS CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a source bundle in S3 with <code>SourceBundle</code> 
+        /// Specify a source bundle in S3 with <c>SourceBundle</c> 
         /// </para>
         ///  
         /// <para>
-        /// Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use
-        /// the default sample application.
+        /// Omit both <c>SourceBuildInformation</c> and <c>SourceBundle</c> to use the default
+        /// sample application.
         /// </para>
         ///  <note> 
         /// <para>
@@ -683,20 +683,20 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.
+        /// Specify a commit in an AWS CodeCommit repository with <c>SourceBuildInformation</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.
+        /// Specify a build in an AWS CodeBuild with <c>SourceBuildInformation</c> and <c>BuildConfiguration</c>.
         /// </para>
         ///  
         /// <para>
-        /// Specify a source bundle in S3 with <code>SourceBundle</code> 
+        /// Specify a source bundle in S3 with <c>SourceBundle</c> 
         /// </para>
         ///  
         /// <para>
-        /// Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use
-        /// the default sample application.
+        /// Omit both <c>SourceBuildInformation</c> and <c>SourceBundle</c> to use the default
+        /// sample application.
         /// </para>
         ///  <note> 
         /// <para>
@@ -766,8 +766,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// Templates aren't associated with any environment. The <code>EnvironmentName</code>
-        /// response element is always <code>null</code>.
+        /// Templates aren't associated with any environment. The <c>EnvironmentName</c> response
+        /// element is always <c>null</c>.
         /// </para>
         ///  
         /// <para>
@@ -818,8 +818,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        /// Templates aren't associated with any environment. The <code>EnvironmentName</code>
-        /// response element is always <code>null</code>.
+        /// Templates aren't associated with any environment. The <c>EnvironmentName</c> response
+        /// element is always <c>null</c>.
         /// </para>
         ///  
         /// <para>
@@ -987,8 +987,8 @@ namespace Amazon.ElasticBeanstalk
         /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
         /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
         /// this API the first time you create an environment in a region. If the storage location
-        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
-        /// does not create a new bucket.
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
         /// </summary>
         /// 
         /// <returns>The response from the CreateStorageLocation service method, as returned by ElasticBeanstalk.</returns>
@@ -1012,8 +1012,8 @@ namespace Amazon.ElasticBeanstalk
         /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
         /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
         /// this API the first time you create an environment in a region. If the storage location
-        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
-        /// does not create a new bucket.
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
         /// 
@@ -1042,8 +1042,8 @@ namespace Amazon.ElasticBeanstalk
         /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
         /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
         /// this API the first time you create an environment in a region. If the storage location
-        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
-        /// does not create a new bucket.
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1069,8 +1069,8 @@ namespace Amazon.ElasticBeanstalk
         /// Creates a bucket in Amazon S3 to store application versions, logs, and other files
         /// used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call
         /// this API the first time you create an environment in a region. If the storage location
-        /// already exists, <code>CreateStorageLocation</code> still returns the bucket name but
-        /// does not create a new bucket.
+        /// already exists, <c>CreateStorageLocation</c> still returns the bucket name but does
+        /// not create a new bucket.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStorageLocation service method.</param>
         /// <param name="cancellationToken">
@@ -1348,7 +1348,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para>
         /// Updating a running environment with any configuration changes creates a draft configuration
         /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
-        /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
+        /// while the update is in progress or if the update fails. The <c>DeploymentStatus</c>
         /// for the draft configuration indicates whether the deployment is in process or has
         /// failed. The draft configuration remains in existence until it is deleted with this
         /// action.
@@ -1375,7 +1375,7 @@ namespace Amazon.ElasticBeanstalk
         /// <para>
         /// Updating a running environment with any configuration changes creates a draft configuration
         /// set. You can get the draft configuration using <a>DescribeConfigurationSettings</a>
-        /// while the update is in progress or if the update fails. The <code>DeploymentStatus</code>
+        /// while the update is in progress or if the update fails. The <c>DeploymentStatus</c>
         /// for the draft configuration indicates whether the deployment is in process or has
         /// failed. The draft configuration remains in existence until it is deleted with this
         /// action.
@@ -2110,7 +2110,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2128,7 +2128,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2151,7 +2151,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2171,7 +2171,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// This action returns the most recent 1,000 events from the specified <code>NextToken</code>.
+        /// This action returns the most recent 1,000 events from the specified <c>NextToken</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2699,15 +2699,14 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        ///  Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from
-        /// the application server log files of every Amazon EC2 instance in your environment.
-        /// 
+        ///  Setting the <c>InfoType</c> to <c>tail</c> compiles the last lines from the application
+        /// server log files of every Amazon EC2 instance in your environment. 
         /// </para>
         ///  
         /// <para>
-        ///  Setting the <code>InfoType</code> to <code>bundle</code> compresses the application
-        /// server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
-        /// and .NET containers do not support bundle logs. 
+        ///  Setting the <c>InfoType</c> to <c>bundle</c> compresses the application server log
+        /// files for every Amazon EC2 instance into a <c>.zip</c> file. Legacy and .NET containers
+        /// do not support bundle logs. 
         /// </para>
         ///  
         /// <para>
@@ -2742,15 +2741,14 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  
         /// <para>
-        ///  Setting the <code>InfoType</code> to <code>tail</code> compiles the last lines from
-        /// the application server log files of every Amazon EC2 instance in your environment.
-        /// 
+        ///  Setting the <c>InfoType</c> to <c>tail</c> compiles the last lines from the application
+        /// server log files of every Amazon EC2 instance in your environment. 
         /// </para>
         ///  
         /// <para>
-        ///  Setting the <code>InfoType</code> to <code>bundle</code> compresses the application
-        /// server log files for every Amazon EC2 instance into a <code>.zip</code> file. Legacy
-        /// and .NET containers do not support bundle logs. 
+        ///  Setting the <c>InfoType</c> to <c>bundle</c> compresses the application server log
+        /// files for every Amazon EC2 instance into a <c>.zip</c> file. Legacy and .NET containers
+        /// do not support bundle logs. 
         /// </para>
         ///  
         /// <para>
@@ -2984,7 +2982,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// If a property (for example, <code>description</code>) is not provided, the value remains
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
         /// unchanged. To clear these properties, specify an empty string.
         /// </para>
         ///  </note>
@@ -3008,7 +3006,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// If a property (for example, <code>description</code>) is not provided, the value remains
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
         /// unchanged. To clear these properties, specify an empty string.
         /// </para>
         ///  </note>
@@ -3086,7 +3084,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// If a property (for example, <code>description</code>) is not provided, the value remains
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
         /// unchanged. To clear properties, specify an empty string.
         /// </para>
         ///  </note>
@@ -3110,7 +3108,7 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// If a property (for example, <code>description</code>) is not provided, the value remains
+        /// If a property (for example, <c>description</c>) is not provided, the value remains
         /// unchanged. To clear properties, specify an empty string.
         /// </para>
         ///  </note>
@@ -3142,8 +3140,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// If a property (for example, <code>ApplicationName</code>) is not provided, its value
-        /// remains unchanged. To clear such properties, specify an empty string.
+        /// If a property (for example, <c>ApplicationName</c>) is not provided, its value remains
+        /// unchanged. To clear such properties, specify an empty string.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3181,8 +3179,8 @@ namespace Amazon.ElasticBeanstalk
         /// 
         ///  <note> 
         /// <para>
-        /// If a property (for example, <code>ApplicationName</code>) is not provided, its value
-        /// remains unchanged. To clear such properties, specify an empty string.
+        /// If a property (for example, <c>ApplicationName</c>) is not provided, its value remains
+        /// unchanged. To clear such properties, specify an empty string.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3229,13 +3227,13 @@ namespace Amazon.ElasticBeanstalk
         ///  
         /// <para>
         ///  Attempting to update both the release and configuration is not allowed and AWS Elastic
-        /// Beanstalk returns an <code>InvalidParameterCombination</code> error. 
+        /// Beanstalk returns an <c>InvalidParameterCombination</c> error. 
         /// </para>
         ///  
         /// <para>
         ///  When updating the configuration settings to a new template or individual settings,
         /// a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
-        /// environment returns two setting descriptions with different <code>DeploymentStatus</code>
+        /// environment returns two setting descriptions with different <c>DeploymentStatus</c>
         /// values. 
         /// </para>
         /// </summary>
@@ -3267,13 +3265,13 @@ namespace Amazon.ElasticBeanstalk
         ///  
         /// <para>
         ///  Attempting to update both the release and configuration is not allowed and AWS Elastic
-        /// Beanstalk returns an <code>InvalidParameterCombination</code> error. 
+        /// Beanstalk returns an <c>InvalidParameterCombination</c> error. 
         /// </para>
         ///  
         /// <para>
         ///  When updating the configuration settings to a new template or individual settings,
         /// a draft configuration is created and <a>DescribeConfigurationSettings</a> for this
-        /// environment returns two setting descriptions with different <code>DeploymentStatus</code>
+        /// environment returns two setting descriptions with different <c>DeploymentStatus</c>
         /// values. 
         /// </para>
         /// </summary>
@@ -3306,7 +3304,7 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
-        /// be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+        /// be passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
         /// 
         ///  
         /// <para>
@@ -3321,13 +3319,13 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
         /// <para>
-        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
-        /// tags to add in the <code>TagsToAdd</code> parameter.
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tags to
+        /// add in the <c>TagsToAdd</c> parameter.
         /// </para>
         ///  </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> 
         /// <para>
-        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
-        /// tag keys to remove in the <code>TagsToRemove</code> parameter.
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tag keys
+        /// to remove in the <c>TagsToRemove</c> parameter.
         /// </para>
         ///  </dd> </dl> 
         /// <para>
@@ -3374,7 +3372,7 @@ namespace Amazon.ElasticBeanstalk
 
         /// <summary>
         /// Update the list of tags applied to an AWS Elastic Beanstalk resource. Two lists can
-        /// be passed: <code>TagsToAdd</code> for tags to add or update, and <code>TagsToRemove</code>.
+        /// be passed: <c>TagsToAdd</c> for tags to add or update, and <c>TagsToRemove</c>.
         /// 
         ///  
         /// <para>
@@ -3389,13 +3387,13 @@ namespace Amazon.ElasticBeanstalk
         /// </para>
         ///  <dl> <dt>elasticbeanstalk:AddTags</dt> <dd> 
         /// <para>
-        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
-        /// tags to add in the <code>TagsToAdd</code> parameter.
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tags to
+        /// add in the <c>TagsToAdd</c> parameter.
         /// </para>
         ///  </dd> <dt>elasticbeanstalk:RemoveTags</dt> <dd> 
         /// <para>
-        /// Controls permission to call <code>UpdateTagsForResource</code> and pass a list of
-        /// tag keys to remove in the <code>TagsToRemove</code> parameter.
+        /// Controls permission to call <c>UpdateTagsForResource</c> and pass a list of tag keys
+        /// to remove in the <c>TagsToRemove</c> parameter.
         /// </para>
         ///  </dd> </dl> 
         /// <para>

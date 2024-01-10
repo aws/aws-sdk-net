@@ -42,7 +42,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// A <code>BuildBatchFilter</code> object that specifies the filters for the search.
+        /// A <c>BuildBatchFilter</c> object that specifies the filters for the search.
         /// </para>
         /// </summary>
         public BuildBatchFilter Filter
@@ -79,7 +79,7 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>nextToken</code> value returned from a previous call to <code>ListBuildBatches</code>.
+        /// The <c>nextToken</c> value returned from a previous call to <c>ListBuildBatches</c>.
         /// This specifies the next item to return. To return the beginning of the list, exclude
         /// this parameter.
         /// </para>
@@ -103,12 +103,11 @@ namespace Amazon.CodeBuild.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ASCENDING</code>: List the batch build identifiers in ascending order by identifier.
+        ///  <c>ASCENDING</c>: List the batch build identifiers in ascending order by identifier.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DESCENDING</code>: List the batch build identifiers in descending order by
-        /// identifier.
+        ///  <c>DESCENDING</c>: List the batch build identifiers in descending order by identifier.
         /// </para>
         ///  </li> </ul>
         /// </summary>

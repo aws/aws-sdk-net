@@ -30,8 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Contains the configuration parameters for a POST Object restore job. S3 Batch Operations
-    /// passes every object to the underlying <code>RestoreObject</code> API operation. For
-    /// more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.
+    /// passes every object to the underlying <c>RestoreObject</c> API operation. For more
+    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request">RestoreObject</a>.
     /// </summary>
     public partial class S3InitiateRestoreObjectOperation
     {
@@ -43,16 +43,15 @@ namespace Amazon.S3Control.Model
         /// <para>
         /// This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object
         /// remains available in Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier
-        /// and S3 Glacier Deep Archive objects require <code>ExpirationInDays</code> set to 1
-        /// or greater.
+        /// and S3 Glacier Deep Archive objects require <c>ExpirationInDays</c> set to 1 or greater.
         /// </para>
         ///  
         /// <para>
-        /// Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate
-        /// Restore Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive
-        /// Access tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not
-        /// subject to restore expiry, so specifying <code>ExpirationInDays</code> results in
-        /// restore request failure.
+        /// Conversely, do <i>not</i> set <c>ExpirationInDays</c> when creating S3 Initiate Restore
+        /// Object jobs that target S3 Intelligent-Tiering Archive Access and Deep Archive Access
+        /// tier objects. Objects in S3 Intelligent-Tiering archive access tiers are not subject
+        /// to restore expiry, so specifying <c>ExpirationInDays</c> results in restore request
+        /// failure.
         /// </para>
         ///  
         /// <para>
@@ -78,8 +77,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property GlacierJobTier. 
         /// <para>
-        /// S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval
-        /// tiers, but not the <code>EXPEDITED</code> retrieval tier.
+        /// S3 Batch Operations supports <c>STANDARD</c> and <c>BULK</c> retrieval tiers, but
+        /// not the <c>EXPEDITED</c> retrieval tier.
         /// </para>
         /// </summary>
         public S3GlacierJobTier GlacierJobTier

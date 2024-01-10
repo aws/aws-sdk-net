@@ -39,8 +39,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property FailedAssociatedResources. 
         /// <para>
-        ///  A list of <code>AssociateResourceResponseElement</code> for each resource that failed
-        /// association to a percentage custom line item. 
+        ///  A list of <c>AssociateResourceResponseElement</c> for each resource that failed association
+        /// to a percentage custom line item. 
         /// </para>
         /// </summary>
         public List<AssociateResourceResponseElement> FailedAssociatedResources
@@ -58,8 +58,8 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property SuccessfullyAssociatedResources. 
         /// <para>
-        ///  A list of <code>AssociateResourceResponseElement</code> for each resource that's
-        /// been associated to a percentage custom line item successfully. 
+        ///  A list of <c>AssociateResourceResponseElement</c> for each resource that's been associated
+        /// to a percentage custom line item successfully. 
         /// </para>
         /// </summary>
         public List<AssociateResourceResponseElement> SuccessfullyAssociatedResources

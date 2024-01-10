@@ -40,8 +40,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the resource that emitted the event. This corresponds to the <code>Name</code>
-        /// field in an <code>EventResource</code> object. 
+        ///  The name of the resource that emitted the event. This corresponds to the <c>Name</c>
+        /// field in an <c>EventResource</c> object. 
         /// </para>
         /// </summary>
         public string Name
@@ -59,8 +59,8 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        ///  The type of the resource that emitted the event. This corresponds to the <code>Type</code>
-        /// field in an <code>EventResource</code> object. 
+        ///  The type of the resource that emitted the event. This corresponds to the <c>Type</c>
+        /// field in an <c>EventResource</c> object. 
         /// </para>
         /// </summary>
         public string Type

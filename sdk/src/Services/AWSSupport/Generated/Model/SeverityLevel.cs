@@ -45,8 +45,8 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>low</code> | <code>normal</code> | <code>high</code> | <code>urgent</code>
-        /// | <code>critical</code> 
+        /// Valid values: <c>low</c> | <c>normal</c> | <c>high</c> | <c>urgent</c> | <c>critical</c>
+        /// 
         /// </para>
         /// </summary>
         public string Code
@@ -69,8 +69,8 @@ namespace Amazon.AWSSupport.Model
         ///  <note> 
         /// <para>
         /// The values returned by the API are different from the values that appear in the Amazon
-        /// Web Services Support Center. For example, the API uses the code <code>low</code>,
-        /// but the name appears as General guidance in Support Center. 
+        /// Web Services Support Center. For example, the API uses the code <c>low</c>, but the
+        /// name appears as General guidance in Support Center. 
         /// </para>
         ///  
         /// <para>
@@ -78,23 +78,23 @@ namespace Amazon.AWSSupport.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>low</code> - General guidance
+        ///  <c>low</c> - General guidance
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>normal</code> - System impaired
+        ///  <c>normal</c> - System impaired
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>high</code> - Production system impaired
+        ///  <c>high</c> - Production system impaired
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>urgent</code> - Production system down
+        ///  <c>urgent</c> - Production system down
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>critical</code> - Business-critical system down
+        ///  <c>critical</c> - Business-critical system down
         /// </para>
         ///  </li> </ul> </note> 
         /// <para>

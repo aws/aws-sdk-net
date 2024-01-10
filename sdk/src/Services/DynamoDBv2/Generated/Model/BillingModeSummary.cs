@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
-    /// Contains the details for the read/write capacity mode. This page talks about <code>PROVISIONED</code>
-    /// and <code>PAY_PER_REQUEST</code> billing modes. For more information about these modes,
+    /// Contains the details for the read/write capacity mode. This page talks about <c>PROVISIONED</c>
+    /// and <c>PAY_PER_REQUEST</c> billing modes. For more information about these modes,
     /// see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html">Read/write
     /// capacity mode</a>.
     /// 
     ///  <note> 
     /// <para>
-    /// You may need to switch to on-demand mode at least once in order to return a <code>BillingModeSummary</code>
+    /// You may need to switch to on-demand mode at least once in order to return a <c>BillingModeSummary</c>
     /// response.
     /// </para>
     ///  </note>
@@ -54,13 +54,13 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONED</code> - Sets the read/write capacity mode to <code>PROVISIONED</code>.
-        /// We recommend using <code>PROVISIONED</code> for predictable workloads.
+        ///  <c>PROVISIONED</c> - Sets the read/write capacity mode to <c>PROVISIONED</c>. We
+        /// recommend using <c>PROVISIONED</c> for predictable workloads.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PAY_PER_REQUEST</code> - Sets the read/write capacity mode to <code>PAY_PER_REQUEST</code>.
-        /// We recommend using <code>PAY_PER_REQUEST</code> for unpredictable workloads. 
+        ///  <c>PAY_PER_REQUEST</c> - Sets the read/write capacity mode to <c>PAY_PER_REQUEST</c>.
+        /// We recommend using <c>PAY_PER_REQUEST</c> for unpredictable workloads. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -79,8 +79,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property LastUpdateToPayPerRequestDateTime. 
         /// <para>
-        /// Represents the time when <code>PAY_PER_REQUEST</code> was last set as the read/write
-        /// capacity mode.
+        /// Represents the time when <c>PAY_PER_REQUEST</c> was last set as the read/write capacity
+        /// mode.
         /// </para>
         /// </summary>
         public DateTime LastUpdateToPayPerRequestDateTime

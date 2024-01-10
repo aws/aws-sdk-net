@@ -59,8 +59,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LogConfiguration. 
         /// <para>
-        /// The log configuration for the results of the run command actions. Required if <code>Logging</code>
-        /// is <code>NONE</code>.
+        /// The log configuration for the results of the run command actions. Required if <c>Logging</c>
+        /// is <c>NONE</c>.
         /// </para>
         /// </summary>
         public AwsEcsClusterConfigurationExecuteCommandConfigurationLogConfigurationDetails LogConfiguration

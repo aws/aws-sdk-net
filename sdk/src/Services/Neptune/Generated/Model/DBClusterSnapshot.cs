@@ -162,18 +162,18 @@ namespace Amazon.Neptune.Model
         /// </para>
         ///  
         /// <para>
-        /// After you restore a DB cluster using a <code>DBClusterSnapshotIdentifier</code>, you
-        /// must specify the same <code>DBClusterSnapshotIdentifier</code> for any future updates
-        /// to the DB cluster. When you specify this property for an update, the DB cluster is
-        /// not restored from the snapshot again, and the data in the database is not changed.
+        /// After you restore a DB cluster using a <c>DBClusterSnapshotIdentifier</c>, you must
+        /// specify the same <c>DBClusterSnapshotIdentifier</c> for any future updates to the
+        /// DB cluster. When you specify this property for an update, the DB cluster is not restored
+        /// from the snapshot again, and the data in the database is not changed.
         /// </para>
         ///  
         /// <para>
-        /// However, if you don't specify the <code>DBClusterSnapshotIdentifier</code>, an empty
-        /// DB cluster is created, and the original DB cluster is deleted. If you specify a property
+        /// However, if you don't specify the <c>DBClusterSnapshotIdentifier</c>, an empty DB
+        /// cluster is created, and the original DB cluster is deleted. If you specify a property
         /// that is different from the previous snapshot restore property, the DB cluster is restored
-        /// from the snapshot specified by the <code>DBClusterSnapshotIdentifier</code>, and the
-        /// original DB cluster is deleted.
+        /// from the snapshot specified by the <c>DBClusterSnapshotIdentifier</c>, and the original
+        /// DB cluster is deleted.
         /// </para>
         /// </summary>
         public string DBClusterSnapshotIdentifier
@@ -246,7 +246,7 @@ namespace Amazon.Neptune.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted
+        /// If <c>StorageEncrypted</c> is true, the Amazon KMS key identifier for the encrypted
         /// DB cluster snapshot.
         /// </para>
         /// </summary>

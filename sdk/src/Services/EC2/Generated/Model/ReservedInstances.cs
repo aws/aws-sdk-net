@@ -74,7 +74,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property CurrencyCode. 
         /// <para>
         /// The currency of the Reserved Instance. It's specified using ISO 4217 standard currency
-        /// codes. At this time, the only supported currency is <code>USD</code>.
+        /// codes. At this time, the only supported currency is <c>USD</c>.
         /// </para>
         /// </summary>
         public CurrencyCodeValues CurrencyCode

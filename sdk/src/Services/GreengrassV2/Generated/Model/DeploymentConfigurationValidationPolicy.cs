@@ -49,7 +49,7 @@ namespace Amazon.GreengrassV2.Model
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>30</code> 
+        /// Default: <c>30</c> 
         /// </para>
         /// </summary>
         public int TimeoutInSeconds

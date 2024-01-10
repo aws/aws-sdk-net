@@ -78,7 +78,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property AgentVersion. 
         /// <para>
-        /// The agent version. This parameter is set to <code>INHERIT</code> if the instance inherits
+        /// The agent version. This parameter is set to <c>INHERIT</c> if the instance inherits
         /// the default stack setting or to a a version number for a fixed agent version.
         /// </para>
         /// </summary>
@@ -189,8 +189,8 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// An array of <code>BlockDeviceMapping</code> objects that specify the instance's block
-        /// device mappings.
+        /// An array of <c>BlockDeviceMapping</c> objects that specify the instance's block device
+        /// mappings.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -335,7 +335,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InfrastructureClass. 
         /// <para>
-        /// For registered instances, the infrastructure class: <code>ec2</code> or <code>on-premises</code>.
+        /// For registered instances, the infrastructure class: <c>ec2</c> or <c>on-premises</c>.
         /// </para>
         /// </summary>
         public string InfrastructureClass
@@ -354,15 +354,15 @@ namespace Amazon.OpsWorks.Model
         /// Gets and sets the property InstallUpdatesOnBoot. 
         /// <para>
         /// Whether to install operating system and package updates when the instance boots. The
-        /// default value is <code>true</code>. If this value is set to <code>false</code>, you
-        /// must then update your instances manually by using <a>CreateDeployment</a> to run the
-        /// <code>update_dependencies</code> stack command or by manually running <code>yum</code>
-        /// (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the instances. 
+        /// default value is <c>true</c>. If this value is set to <c>false</c>, you must then
+        /// update your instances manually by using <a>CreateDeployment</a> to run the <c>update_dependencies</c>
+        /// stack command or by manually running <c>yum</c> (Amazon Linux) or <c>apt-get</c> (Ubuntu)
+        /// on the instances. 
         /// </para>
         ///  <note> 
         /// <para>
-        /// We strongly recommend using the default value of <code>true</code>, to ensure that
-        /// your instances have the latest security updates.
+        /// We strongly recommend using the default value of <c>true</c>, to ensure that your
+        /// instances have the latest security updates.
         /// </para>
         ///  </note>
         /// </summary>
@@ -419,7 +419,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The instance type, such as <code>t2.micro</code>.
+        /// The instance type, such as <c>t2.micro</c>.
         /// </para>
         /// </summary>
         public string InstanceType
@@ -766,63 +766,63 @@ namespace Amazon.OpsWorks.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>booting</code> 
+        ///  <c>booting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>connection_lost</code> 
+        ///  <c>connection_lost</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>online</code> 
+        ///  <c>online</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>pending</code> 
+        ///  <c>pending</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>rebooting</code> 
+        ///  <c>rebooting</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>requested</code> 
+        ///  <c>requested</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>running_setup</code> 
+        ///  <c>running_setup</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>setup_failed</code> 
+        ///  <c>setup_failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>shutting_down</code> 
+        ///  <c>shutting_down</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>start_failed</code> 
+        ///  <c>start_failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stop_failed</code> 
+        ///  <c>stop_failed</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stopped</code> 
+        ///  <c>stopped</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>stopping</code> 
+        ///  <c>stopping</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>terminated</code> 
+        ///  <c>terminated</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>terminating</code> 
+        ///  <c>terminating</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -859,7 +859,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property Tenancy. 
         /// <para>
-        /// The instance's tenancy option, such as <code>dedicated</code> or <code>host</code>.
+        /// The instance's tenancy option, such as <c>dedicated</c> or <c>host</c>.
         /// </para>
         /// </summary>
         public string Tenancy
@@ -877,7 +877,7 @@ namespace Amazon.OpsWorks.Model
         /// <summary>
         /// Gets and sets the property VirtualizationType. 
         /// <para>
-        /// The instance's virtualization type: <code>paravirtual</code> or <code>hvm</code>.
+        /// The instance's virtualization type: <c>paravirtual</c> or <c>hvm</c>.
         /// </para>
         /// </summary>
         public VirtualizationType VirtualizationType

@@ -142,8 +142,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StatusFilter. 
         /// <para>
-        /// Only returns synchronization jobs with the <code>Status</code> field equal to the
-        /// specified status.
+        /// Only returns synchronization jobs with the <c>Status</c> field equal to the specified
+        /// status.
         /// </para>
         /// </summary>
         public DataSourceSyncJobStatus StatusFilter

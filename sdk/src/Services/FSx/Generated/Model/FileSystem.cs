@@ -60,7 +60,7 @@ namespace Amazon.FSx.Model
         /// <para>
         /// A list of administrative actions for the file system that are in process or waiting
         /// to be processed. Administrative actions describe changes to the Amazon FSx system
-        /// that you have initiated using the <code>UpdateFileSystem</code> operation.
+        /// that you have initiated using the <c>UpdateFileSystem</c> operation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]
@@ -151,8 +151,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemType. 
         /// <para>
-        /// The type of Amazon FSx file system, which can be <code>LUSTRE</code>, <code>WINDOWS</code>,
-        /// <code>ONTAP</code>, or <code>OPENZFS</code>.
+        /// The type of Amazon FSx file system, which can be <c>LUSTRE</c>, <c>WINDOWS</c>, <c>ONTAP</c>,
+        /// or <c>OPENZFS</c>.
         /// </para>
         /// </summary>
         public FileSystemType FileSystemType
@@ -170,8 +170,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property FileSystemTypeVersion. 
         /// <para>
-        /// The Lustre version of the Amazon FSx for Lustre file system, which can be <code>2.10</code>,
-        /// <code>2.12</code>, or <code>2.15</code>.
+        /// The Lustre version of the Amazon FSx for Lustre file system, which can be <c>2.10</c>,
+        /// <c>2.12</c>, or <c>2.15</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
@@ -195,13 +195,13 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Amazon FSx for Lustre <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> deployment
-        /// types only.
+        /// Amazon FSx for Lustre <c>PERSISTENT_1</c> and <c>PERSISTENT_2</c> deployment types
+        /// only.
         /// </para>
         ///  
         /// <para>
-        ///  <code>SCRATCH_1</code> and <code>SCRATCH_2</code> types are encrypted using the Amazon
-        /// FSx service KMS key for your account.
+        ///  <c>SCRATCH_1</c> and <c>SCRATCH_2</c> types are encrypted using the Amazon FSx service
+        /// KMS key for your account.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -238,35 +238,34 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AVAILABLE</code> - The file system is in a healthy state, and is reachable
-        /// and available for use.
+        ///  <c>AVAILABLE</c> - The file system is in a healthy state, and is reachable and available
+        /// for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CREATING</code> - Amazon FSx is creating the new file system.
+        ///  <c>CREATING</c> - Amazon FSx is creating the new file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETING</code> - Amazon FSx is deleting an existing file system.
+        ///  <c>DELETING</c> - Amazon FSx is deleting an existing file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - An existing file system has experienced an unrecoverable failure.
+        ///  <c>FAILED</c> - An existing file system has experienced an unrecoverable failure.
         /// When creating a new file system, Amazon FSx was unable to create the file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISCONFIGURED</code> - The file system is in a failed but recoverable state.
+        ///  <c>MISCONFIGURED</c> - The file system is in a failed but recoverable state.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>MISCONFIGURED_UNAVAILABLE</code> - (Amazon FSx for Windows File Server only)
-        /// The file system is currently unavailable due to a change in your Active Directory
-        /// configuration.
+        ///  <c>MISCONFIGURED_UNAVAILABLE</c> - (Amazon FSx for Windows File Server only) The
+        /// file system is currently unavailable due to a change in your Active Directory configuration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UPDATING</code> - The file system is undergoing a customer-initiated update.
+        ///  <c>UPDATING</c> - The file system is undergoing a customer-initiated update.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -408,7 +407,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  
         /// <para>
-        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <code>StorageCapacity</code>
+        /// Amazon FSx responds with an HTTP status code 400 (Bad Request) if the value of <c>StorageCapacity</c>
         /// is outside of the minimum or maximum values.
         /// </para>
         /// </summary>
@@ -428,9 +427,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// The type of storage the file system is using. If set to <code>SSD</code>, the file
-        /// system uses solid state drive storage. If set to <code>HDD</code>, the file system
-        /// uses hard disk drive storage. 
+        /// The type of storage the file system is using. If set to <c>SSD</c>, the file system
+        /// uses solid state drive storage. If set to <c>HDD</c>, the file system uses hard disk
+        /// drive storage. 
         /// </para>
         /// </summary>
         public StorageType StorageType
@@ -449,16 +448,16 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property SubnetIds. 
         /// <para>
         /// Specifies the IDs of the subnets that the file system is accessible from. For the
-        /// Amazon FSx Windows and ONTAP <code>MULTI_AZ_1</code> file system deployment type,
-        /// there are two subnet IDs, one for the preferred file server and one for the standby
-        /// file server. The preferred file server subnet identified in the <code>PreferredSubnetID</code>
+        /// Amazon FSx Windows and ONTAP <c>MULTI_AZ_1</c> file system deployment type, there
+        /// are two subnet IDs, one for the preferred file server and one for the standby file
+        /// server. The preferred file server subnet identified in the <c>PreferredSubnetID</c>
         /// property. All other file systems have only one subnet ID.
         /// </para>
         ///  
         /// <para>
         /// For FSx for Lustre file systems, and Single-AZ Windows file systems, this is the ID
-        /// of the subnet that contains the file system's endpoint. For <code>MULTI_AZ_1</code>
-        /// Windows and ONTAP file systems, the file system endpoint is available in the <code>PreferredSubnetID</code>.
+        /// of the subnet that contains the file system's endpoint. For <c>MULTI_AZ_1</c> Windows
+        /// and ONTAP file systems, the file system endpoint is available in the <c>PreferredSubnetID</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=50)]

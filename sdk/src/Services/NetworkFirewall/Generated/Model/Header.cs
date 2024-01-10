@@ -46,7 +46,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property Destination. 
         /// <para>
         /// The destination IP address or address range to inspect for, in CIDR notation. To match
-        /// with any address, specify <code>ANY</code>. 
+        /// with any address, specify <c>ANY</c>. 
         /// </para>
         ///  
         /// <para>
@@ -59,22 +59,22 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
+        /// To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <c>192.0.2.44/32</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255,
-        /// specify <code>192.0.2.0/24</code>.
+        /// specify <c>192.0.2.0/24</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
-        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// specify <c>1111:0000:0000:0000:0000:0000:0000:0111/128</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000
-        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <c>1111:0000:0000:0000:0000:0000:0000:0000/64</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -99,8 +99,8 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property DestinationPort. 
         /// <para>
         /// The destination port to inspect for. You can specify an individual port, for example
-        /// <code>1994</code> and you can specify a port range, for example <code>1990:1994</code>.
-        /// To match with any port, specify <code>ANY</code>. 
+        /// <c>1994</c> and you can specify a port range, for example <c>1990:1994</c>. To match
+        /// with any port, specify <c>ANY</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]
@@ -119,10 +119,10 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Direction. 
         /// <para>
-        /// The direction of traffic flow to inspect. If set to <code>ANY</code>, the inspection
-        /// matches bidirectional traffic, both from the source to the destination and from the
-        /// destination to the source. If set to <code>FORWARD</code>, the inspection only matches
-        /// traffic going from the source to the destination. 
+        /// The direction of traffic flow to inspect. If set to <c>ANY</c>, the inspection matches
+        /// bidirectional traffic, both from the source to the destination and from the destination
+        /// to the source. If set to <c>FORWARD</c>, the inspection only matches traffic going
+        /// from the source to the destination. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -141,8 +141,8 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property Protocol. 
         /// <para>
-        /// The protocol to inspect for. To specify all, you can use <code>IP</code>, because
-        /// all traffic on Amazon Web Services and on the internet is IP.
+        /// The protocol to inspect for. To specify all, you can use <c>IP</c>, because all traffic
+        /// on Amazon Web Services and on the internet is IP.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -162,7 +162,7 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property Source. 
         /// <para>
         /// The source IP address or address range to inspect for, in CIDR notation. To match
-        /// with any address, specify <code>ANY</code>. 
+        /// with any address, specify <c>ANY</c>. 
         /// </para>
         ///  
         /// <para>
@@ -175,22 +175,22 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <code>192.0.2.44/32</code>.
+        /// To configure Network Firewall to inspect for the IP address 192.0.2.44, specify <c>192.0.2.44/32</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure Network Firewall to inspect for IP addresses from 192.0.2.0 to 192.0.2.255,
-        /// specify <code>192.0.2.0/24</code>.
+        /// specify <c>192.0.2.0/24</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure Network Firewall to inspect for the IP address 1111:0000:0000:0000:0000:0000:0000:0111,
-        /// specify <code>1111:0000:0000:0000:0000:0000:0000:0111/128</code>.
+        /// specify <c>1111:0000:0000:0000:0000:0000:0000:0111/128</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// To configure Network Firewall to inspect for IP addresses from 1111:0000:0000:0000:0000:0000:0000:0000
-        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <code>1111:0000:0000:0000:0000:0000:0000:0000/64</code>.
+        /// to 1111:0000:0000:0000:ffff:ffff:ffff:ffff, specify <c>1111:0000:0000:0000:0000:0000:0000:0000/64</c>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -214,9 +214,9 @@ namespace Amazon.NetworkFirewall.Model
         /// <summary>
         /// Gets and sets the property SourcePort. 
         /// <para>
-        /// The source port to inspect for. You can specify an individual port, for example <code>1994</code>
-        /// and you can specify a port range, for example <code>1990:1994</code>. To match with
-        /// any port, specify <code>ANY</code>. 
+        /// The source port to inspect for. You can specify an individual port, for example <c>1994</c>
+        /// and you can specify a port range, for example <c>1990:1994</c>. To match with any
+        /// port, specify <c>ANY</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

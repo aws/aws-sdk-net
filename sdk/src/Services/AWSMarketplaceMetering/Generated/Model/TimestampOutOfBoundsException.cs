@@ -29,14 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSMarketplaceMetering.Model
 {
     /// <summary>
-    /// The <code>timestamp</code> value passed in the <code>UsageRecord</code> is out of
-    /// allowed range.
+    /// The <c>timestamp</c> value passed in the <c>UsageRecord</c> is out of allowed range.
     /// 
     ///  
     /// <para>
-    /// For <code>BatchMeterUsage</code>, if any of the records are outside of the allowed
-    /// range, the entire batch is not processed. You must remove invalid records and try
-    /// again.
+    /// For <c>BatchMeterUsage</c>, if any of the records are outside of the allowed range,
+    /// the entire batch is not processed. You must remove invalid records and try again.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

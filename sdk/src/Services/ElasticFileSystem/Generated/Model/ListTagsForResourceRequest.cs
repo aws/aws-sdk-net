@@ -35,7 +35,7 @@ namespace Amazon.ElasticFileSystem.Model
     /// 
     ///  
     /// <para>
-    /// This operation requires permissions for the <code>elasticfilesystem:DescribeAccessPoints</code>
+    /// This operation requires permissions for the <c>elasticfilesystem:DescribeAccessPoints</c>
     /// action.
     /// </para>
     /// </summary>
@@ -68,8 +68,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the
-        /// next page of access point descriptions if the response payload was paginated.
+        /// (Optional) You can use <c>NextToken</c> in a subsequent request to fetch the next
+        /// page of access point descriptions if the response payload was paginated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

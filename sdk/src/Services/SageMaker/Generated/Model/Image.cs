@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// A SageMaker image. A SageMaker image represents a set of container images that are
     /// derived from a common base container image. Each of these container images is represented
-    /// by a SageMaker <code>ImageVersion</code>.
+    /// by a SageMaker <c>ImageVersion</c>.
     /// </summary>
     public partial class Image
     {

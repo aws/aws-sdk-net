@@ -116,7 +116,7 @@ namespace Amazon.AppRunner.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The current state of the App Runner connection. When the state is <code>AVAILABLE</code>,
+        /// The current state of the App Runner connection. When the state is <c>AVAILABLE</c>,
         /// you can use the connection to create an App Runner service.
         /// </para>
         /// </summary>

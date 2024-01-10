@@ -31,7 +31,7 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the CreateEndpointConfig operation.
     /// Creates an endpoint configuration that SageMaker hosting services uses to deploy models.
-    /// In the configuration, you identify one or more models, created using the <code>CreateModel</code>
+    /// In the configuration, you identify one or more models, created using the <c>CreateModel</c>
     /// API, to deploy and the resources that you want SageMaker to provision. Then you call
     /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
     /// API.
@@ -43,30 +43,30 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// In the request, you define a <code>ProductionVariant</code>, for each model that you
-    /// want to deploy. Each <code>ProductionVariant</code> parameter also describes the resources
-    /// that you want SageMaker to provision. This includes the number and type of ML compute
-    /// instances to deploy. 
+    /// In the request, you define a <c>ProductionVariant</c>, for each model that you want
+    /// to deploy. Each <c>ProductionVariant</c> parameter also describes the resources that
+    /// you want SageMaker to provision. This includes the number and type of ML compute instances
+    /// to deploy. 
     /// </para>
     ///  
     /// <para>
-    /// If you are hosting multiple models, you also assign a <code>VariantWeight</code> to
-    /// specify how much traffic you want to allocate to each model. For example, suppose
-    /// that you want to host two models, A and B, and you assign traffic weight 2 for model
-    /// A and 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and
-    /// one-third to model B. 
+    /// If you are hosting multiple models, you also assign a <c>VariantWeight</c> to specify
+    /// how much traffic you want to allocate to each model. For example, suppose that you
+    /// want to host two models, A and B, and you assign traffic weight 2 for model A and
+    /// 1 for model B. SageMaker distributes two-thirds of the traffic to Model A, and one-third
+    /// to model B. 
     /// </para>
     ///  <note> 
     /// <para>
     /// When you call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
     /// a load call is made to DynamoDB to verify that your endpoint configuration exists.
     /// When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
-    /// <code>Eventually Consistent Reads</code> </a>, the response might not reflect the
-    /// results of a recently completed write operation. The response might include some stale
-    /// data. If the dependent entities are not yet in DynamoDB, this causes a validation
-    /// error. If you repeat your read request after a short time, the response should return
-    /// the latest data. So retry logic is recommended to handle these possible issues. We
-    /// also recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+    /// <c>Eventually Consistent Reads</c> </a>, the response might not reflect the results
+    /// of a recently completed write operation. The response might include some stale data.
+    /// If the dependent entities are not yet in DynamoDB, this causes a validation error.
+    /// If you repeat your read request after a short time, the response should return the
+    /// latest data. So retry logic is recommended to handle these possible issues. We also
+    /// recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
     /// before calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
     /// to minimize the potential impact of a DynamoDB eventually consistent read.
     /// </para>
@@ -169,7 +169,7 @@ namespace Amazon.SageMaker.Model
         ///  <note> 
         /// <para>
         /// To be able to pass this role to Amazon SageMaker, the caller of this action must have
-        /// the <code>iam:PassRole</code> permission.
+        /// the <c>iam:PassRole</c> permission.
         /// </para>
         ///  </note>
         /// </summary>
@@ -189,7 +189,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExplainerConfig. 
         /// <para>
-        /// A member of <code>CreateEndpointConfig</code> that enables explainers.
+        /// A member of <c>CreateEndpointConfig</c> that enables explainers.
         /// </para>
         /// </summary>
         public ExplainerConfig ExplainerConfig
@@ -217,38 +217,37 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name ARN: <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code>
-        /// 
+        /// Alias name ARN: <c>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// The KMS key policy must grant permission to the IAM role that you specify in your
-        /// <code>CreateEndpoint</code>, <code>UpdateEndpoint</code> requests. For more information,
-        /// refer to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
+        /// <c>CreateEndpoint</c>, <c>UpdateEndpoint</c> requests. For more information, refer
+        /// to the Amazon Web Services Key Management Service section<a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">
         /// Using Key Policies in Amazon Web Services KMS </a> 
         /// </para>
         ///  <note> 
         /// <para>
         /// Certain Nitro-based instances include local storage, dependent on the instance type.
         /// Local storage volumes are encrypted using a hardware module on the instance. You can't
-        /// request a <code>KmsKeyId</code> when using an instance type with local storage. If
-        /// any of the models that you specify in the <code>ProductionVariants</code> parameter
-        /// use nitro-based instances with local storage, do not specify a value for the <code>KmsKeyId</code>
-        /// parameter. If you specify a value for <code>KmsKeyId</code> when using any nitro-based
-        /// instances with local storage, the call to <code>CreateEndpointConfig</code> fails.
+        /// request a <c>KmsKeyId</c> when using an instance type with local storage. If any of
+        /// the models that you specify in the <c>ProductionVariants</c> parameter use nitro-based
+        /// instances with local storage, do not specify a value for the <c>KmsKeyId</c> parameter.
+        /// If you specify a value for <c>KmsKeyId</c> when using any nitro-based instances with
+        /// local storage, the call to <c>CreateEndpointConfig</c> fails.
         /// </para>
         ///  
         /// <para>
@@ -278,8 +277,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProductionVariants. 
         /// <para>
-        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
-        /// to host at this endpoint.
+        /// An array of <c>ProductionVariant</c> objects, one for each model that you want to
+        /// host at this endpoint.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -298,10 +297,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ShadowProductionVariants. 
         /// <para>
-        /// An array of <code>ProductionVariant</code> objects, one for each model that you want
-        /// to host at this endpoint in shadow mode with production traffic replicated from the
-        /// model specified on <code>ProductionVariants</code>. If you use this field, you can
-        /// only specify one variant for <code>ProductionVariants</code> and one variant for <code>ShadowProductionVariants</code>.
+        /// An array of <c>ProductionVariant</c> objects, one for each model that you want to
+        /// host at this endpoint in shadow mode with production traffic replicated from the model
+        /// specified on <c>ProductionVariants</c>. If you use this field, you can only specify
+        /// one variant for <c>ProductionVariants</c> and one variant for <c>ShadowProductionVariants</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

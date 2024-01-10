@@ -43,8 +43,8 @@ namespace Amazon.WAFRegional.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the <a>RuleGroup</a> that is specified by the <code>RuleGroupId</code> that
-    /// you included in the <code>GetRuleGroup</code> request.
+    /// Returns the <a>RuleGroup</a> that is specified by the <c>RuleGroupId</c> that you
+    /// included in the <c>GetRuleGroup</c> request.
     /// </para>
     ///  
     /// <para>
@@ -58,7 +58,7 @@ namespace Amazon.WAFRegional.Model
         /// <summary>
         /// Gets and sets the property RuleGroupId. 
         /// <para>
-        /// The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get. <code>RuleGroupId</code>
+        /// The <c>RuleGroupId</c> of the <a>RuleGroup</a> that you want to get. <c>RuleGroupId</c>
         /// is returned by <a>CreateRuleGroup</a> and by <a>ListRuleGroups</a>.
         /// </para>
         /// </summary>

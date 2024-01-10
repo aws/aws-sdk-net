@@ -81,11 +81,11 @@ namespace Amazon.QuickSight.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VISIBLE</code>: Shows the axis.
+        ///  <c>VISIBLE</c>: Shows the axis.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>HIDDEN</code>: Hides the axis.
+        ///  <c>HIDDEN</c>: Hides the axis.
         /// </para>
         ///  </li> </ul>
         /// </summary>

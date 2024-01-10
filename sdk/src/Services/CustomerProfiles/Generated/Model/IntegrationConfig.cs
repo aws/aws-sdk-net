@@ -38,7 +38,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property AppflowIntegration. 
         /// <para>
-        /// Configuration data for <code>APPFLOW_INTEGRATION</code> workflow type.
+        /// Configuration data for <c>APPFLOW_INTEGRATION</c> workflow type.
         /// </para>
         /// </summary>
         public AppflowIntegration AppflowIntegration

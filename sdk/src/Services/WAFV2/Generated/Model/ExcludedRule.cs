@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Specifies a single rule in a rule group whose action you want to override to <code>Count</code>.
+    /// Specifies a single rule in a rule group whose action you want to override to <c>Count</c>.
     /// 
     /// 
     ///  <note> 
     /// <para>
-    /// Instead of this option, use <code>RuleActionOverrides</code>. It accepts any valid
-    /// action setting, including <code>Count</code>.
+    /// Instead of this option, use <c>RuleActionOverrides</c>. It accepts any valid action
+    /// setting, including <c>Count</c>.
     /// </para>
     ///  </note>
     /// </summary>
@@ -46,7 +46,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the rule whose action you want to override to <code>Count</code>.
+        /// The name of the rule whose action you want to override to <c>Count</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

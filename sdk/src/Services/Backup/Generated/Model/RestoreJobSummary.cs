@@ -128,7 +128,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// This value is the job count for the specified resource type. The request <code>GetSupportedResourceTypes</code>
+        /// This value is the job count for the specified resource type. The request <c>GetSupportedResourceTypes</c>
         /// returns strings for supported resource types.
         /// </para>
         /// </summary>

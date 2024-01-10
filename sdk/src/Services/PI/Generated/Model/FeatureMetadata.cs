@@ -43,29 +43,29 @@ namespace Amazon.PI.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ENABLED</code> - The feature is enabled on the instance.
+        ///  <c>ENABLED</c> - The feature is enabled on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED</code> - The feature is disabled on the instance.
+        ///  <c>DISABLED</c> - The feature is disabled on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNSUPPORTED</code> - The feature isn't supported on the instance.
+        ///  <c>UNSUPPORTED</c> - The feature isn't supported on the instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ENABLED_PENDING_REBOOT</code> - The feature is enabled on the instance but
-        /// requires a reboot to take effect.
+        ///  <c>ENABLED_PENDING_REBOOT</c> - The feature is enabled on the instance but requires
+        /// a reboot to take effect.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DISABLED_PENDING_REBOOT</code> - The feature is disabled on the instance but
-        /// requires a reboot to take effect.
+        ///  <c>DISABLED_PENDING_REBOOT</c> - The feature is disabled on the instance but requires
+        /// a reboot to take effect.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>UNKNOWN</code> - The feature status couldn't be determined.
+        ///  <c>UNKNOWN</c> - The feature status couldn't be determined.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -36,8 +36,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// The <code>AutoImportPolicy</code> is only supported on Amazon FSx for Lustre file
-    /// systems with a data repository association.
+    /// The <c>AutoImportPolicy</c> is only supported on Amazon FSx for Lustre file systems
+    /// with a data repository association.
     /// </para>
     /// </summary>
     public partial class AutoImportPolicy
@@ -47,26 +47,26 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property Events. 
         /// <para>
-        /// The <code>AutoImportPolicy</code> can have the following event values:
+        /// The <c>AutoImportPolicy</c> can have the following event values:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>NEW</code> - Amazon FSx automatically imports metadata of files added to the
-        /// linked S3 bucket that do not currently exist in the FSx file system.
+        ///  <c>NEW</c> - Amazon FSx automatically imports metadata of files added to the linked
+        /// S3 bucket that do not currently exist in the FSx file system.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CHANGED</code> - Amazon FSx automatically updates file metadata and invalidates
-        /// existing file content on the file system as files change in the data repository.
+        ///  <c>CHANGED</c> - Amazon FSx automatically updates file metadata and invalidates existing
+        /// file content on the file system as files change in the data repository.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DELETED</code> - Amazon FSx automatically deletes files on the file system
-        /// as corresponding files are deleted in the data repository.
+        ///  <c>DELETED</c> - Amazon FSx automatically deletes files on the file system as corresponding
+        /// files are deleted in the data repository.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// You can define any combination of event types for your <code>AutoImportPolicy</code>.
+        /// You can define any combination of event types for your <c>AutoImportPolicy</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=3)]

@@ -211,9 +211,9 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property VmImportTaskId. 
         /// <para>
-        /// The <code>importTaskId</code> (API) or <code>ImportTaskId</code> (CLI) from the Amazon
-        /// EC2 VM import process. Image Builder retrieves information from the import process
-        /// to pull in the AMI that is created from the VM source as the base image for your recipe.
+        /// The <c>importTaskId</c> (API) or <c>ImportTaskId</c> (CLI) from the Amazon EC2 VM
+        /// import process. Image Builder retrieves information from the import process to pull
+        /// in the AMI that is created from the VM source as the base image for your recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

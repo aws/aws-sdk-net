@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionConfiguration. 
         /// <para>
-        /// The <code>Function</code> object.
+        /// The <c>Function</c> object.
         /// </para>
         /// </summary>
         public FunctionConfiguration FunctionConfiguration

@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Visibility. 
         /// <para>
-        /// The visibility configuration of <code>LoadingAnimation</code>.
+        /// The visibility configuration of <c>LoadingAnimation</c>.
         /// </para>
         /// </summary>
         public Visibility Visibility

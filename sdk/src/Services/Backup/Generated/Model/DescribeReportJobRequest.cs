@@ -30,7 +30,7 @@ namespace Amazon.Backup.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeReportJob operation.
-    /// Returns the details associated with creating a report as specified by its <code>ReportJobId</code>.
+    /// Returns the details associated with creating a report as specified by its <c>ReportJobId</c>.
     /// </summary>
     public partial class DescribeReportJobRequest : AmazonBackupRequest
     {

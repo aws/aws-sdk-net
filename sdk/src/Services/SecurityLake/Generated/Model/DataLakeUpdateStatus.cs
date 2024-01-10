@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code>
-    /// API request. This is set to Completed after the configuration is updated, or removed
-    /// if deletion of the data lake is successful.
+    /// The status of the last <c>UpdateDataLake</c> or <c>DeleteDataLake</c> API request.
+    /// This is set to Completed after the configuration is updated, or removed if deletion
+    /// of the data lake is successful.
     /// </summary>
     public partial class DataLakeUpdateStatus
     {
@@ -42,8 +42,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Exception. 
         /// <para>
-        /// The details of the last <code>UpdateDataLake</code>or <code>DeleteDataLake</code>
-        /// API request which failed.
+        /// The details of the last <c>UpdateDataLake</c>or <c>DeleteDataLake</c> API request
+        /// which failed.
         /// </para>
         /// </summary>
         public DataLakeUpdateException Exception
@@ -61,8 +61,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The unique ID for the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code>
-        /// API request.
+        /// The unique ID for the last <c>UpdateDataLake</c> or <c>DeleteDataLake</c> API request.
         /// </para>
         /// </summary>
         public string RequestId
@@ -80,8 +79,8 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the last <code>UpdateDataLake</code> or <code>DeleteDataLake</code>
-        /// API request that was requested.
+        /// The status of the last <c>UpdateDataLake</c> or <c>DeleteDataLake</c> API request
+        /// that was requested.
         /// </para>
         /// </summary>
         public DataLakeStatus Status

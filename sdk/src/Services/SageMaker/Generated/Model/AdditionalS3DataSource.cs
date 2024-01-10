@@ -42,7 +42,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property CompressionType. 
         /// <para>
         /// The type of compression used for an additional data source used in inference or training.
-        /// Specify <code>None</code> if your additional data source is not compressed.
+        /// Specify <c>None</c> if your additional data source is not compressed.
         /// </para>
         /// </summary>
         public CompressionType CompressionType

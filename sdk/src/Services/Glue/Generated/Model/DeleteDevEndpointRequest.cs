@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property EndpointName. 
         /// <para>
-        /// The name of the <code>DevEndpoint</code>.
+        /// The name of the <c>DevEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

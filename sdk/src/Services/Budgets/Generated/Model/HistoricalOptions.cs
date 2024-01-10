@@ -41,24 +41,24 @@ namespace Amazon.Budgets.Model
         /// Gets and sets the property BudgetAdjustmentPeriod. 
         /// <para>
         /// The number of budget periods included in the moving-average calculation that determines
-        /// your auto-adjusted budget amount. The maximum value depends on the <code>TimeUnit</code>
+        /// your auto-adjusted budget amount. The maximum value depends on the <c>TimeUnit</c>
         /// granularity of the budget:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For the <code>DAILY</code> granularity, the maximum value is <code>60</code>.
+        /// For the <c>DAILY</c> granularity, the maximum value is <c>60</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>MONTHLY</code> granularity, the maximum value is <code>12</code>.
+        /// For the <c>MONTHLY</c> granularity, the maximum value is <c>12</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>QUARTERLY</code> granularity, the maximum value is <code>4</code>.
+        /// For the <c>QUARTERLY</c> granularity, the maximum value is <c>4</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For the <code>ANNUALLY</code> granularity, the maximum value is <code>1</code>.
+        /// For the <c>ANNUALLY</c> granularity, the maximum value is <c>1</c>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -78,22 +78,22 @@ namespace Amazon.Budgets.Model
         /// <summary>
         /// Gets and sets the property LookBackAvailablePeriods. 
         /// <para>
-        /// The integer that describes how many budget periods in your <code>BudgetAdjustmentPeriod</code>
-        /// are included in the calculation of your current <code>BudgetLimit</code>. If the first
-        /// budget period in your <code>BudgetAdjustmentPeriod</code> has no cost data, then that
-        /// budget period isn’t included in the average that determines your budget limit. 
+        /// The integer that describes how many budget periods in your <c>BudgetAdjustmentPeriod</c>
+        /// are included in the calculation of your current <c>BudgetLimit</c>. If the first budget
+        /// period in your <c>BudgetAdjustmentPeriod</c> has no cost data, then that budget period
+        /// isn’t included in the average that determines your budget limit. 
         /// </para>
         ///  
         /// <para>
-        /// For example, if you set <code>BudgetAdjustmentPeriod</code> as <code>4</code> quarters,
-        /// but your account had no cost data in the first quarter, then only the last three quarters
-        /// are included in the calculation. In this scenario, <code>LookBackAvailablePeriods</code>
-        /// returns <code>3</code>. 
+        /// For example, if you set <c>BudgetAdjustmentPeriod</c> as <c>4</c> quarters, but your
+        /// account had no cost data in the first quarter, then only the last three quarters are
+        /// included in the calculation. In this scenario, <c>LookBackAvailablePeriods</c> returns
+        /// <c>3</c>. 
         /// </para>
         ///  
         /// <para>
-        /// You can’t set your own <code>LookBackAvailablePeriods</code>. The value is automatically
-        /// calculated from the <code>BudgetAdjustmentPeriod</code> and your historical cost data.
+        /// You can’t set your own <c>LookBackAvailablePeriods</c>. The value is automatically
+        /// calculated from the <c>BudgetAdjustmentPeriod</c> and your historical cost data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60)]

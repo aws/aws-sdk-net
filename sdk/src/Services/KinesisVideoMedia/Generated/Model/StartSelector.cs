@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.KinesisVideoMedia.Model
 {
     /// <summary>
-    /// Identifies the chunk on the Kinesis video stream where you want the <code>GetMedia</code>
+    /// Identifies the chunk on the Kinesis video stream where you want the <c>GetMedia</c>
     /// API to start returning media data. You have the following options to identify the
     /// starting chunk: 
     /// 
@@ -44,10 +44,10 @@ namespace Amazon.KinesisVideoMedia.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<code>AWS_KINESISVIDEO_CONTINUATION_TOKEN</code>).
-    /// If your previous <code>GetMedia</code> request terminated, you can use this tag value
-    /// in your next <code>GetMedia</code> request. The API then starts returning chunks starting
-    /// where the last API ended.
+    /// Each chunk's metadata includes a continuation token as a Matroska (MKV) tag (<c>AWS_KINESISVIDEO_CONTINUATION_TOKEN</c>).
+    /// If your previous <c>GetMedia</c> request terminated, you can use this tag value in
+    /// your next <c>GetMedia</c> request. The API then starts returning chunks starting where
+    /// the last API ended.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -61,8 +61,8 @@ namespace Amazon.KinesisVideoMedia.Model
         /// <summary>
         /// Gets and sets the property AfterFragmentNumber. 
         /// <para>
-        /// Specifies the fragment number from where you want the <code>GetMedia</code> API to
-        /// start returning the fragments. 
+        /// Specifies the fragment number from where you want the <c>GetMedia</c> API to start
+        /// returning the fragments. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -81,9 +81,9 @@ namespace Amazon.KinesisVideoMedia.Model
         /// <summary>
         /// Gets and sets the property ContinuationToken. 
         /// <para>
-        /// Continuation token that Kinesis Video Streams returned in the previous <code>GetMedia</code>
-        /// response. The <code>GetMedia</code> API then starts with the chunk identified by the
-        /// continuation token.
+        /// Continuation token that Kinesis Video Streams returned in the previous <c>GetMedia</c>
+        /// response. The <c>GetMedia</c> API then starts with the chunk identified by the continuation
+        /// token.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -116,13 +116,13 @@ namespace Amazon.KinesisVideoMedia.Model
         ///  </li> <li> 
         /// <para>
         /// FRAGMENT_NUMBER - Start with the chunk after a specific fragment. You must also specify
-        /// the <code>AfterFragmentNumber</code> parameter.
+        /// the <c>AfterFragmentNumber</c> parameter.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// PRODUCER_TIMESTAMP or SERVER_TIMESTAMP - Start with the chunk containing a fragment
         /// with the specified producer or server timestamp. You specify the timestamp by adding
-        /// <code>StartTimestamp</code>.
+        /// <c>StartTimestamp</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -130,8 +130,8 @@ namespace Amazon.KinesisVideoMedia.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <code>startSelectorType</code>,
-        /// you don't provide any additional information in the <code>startSelector</code>.
+        /// If you choose the NOW, EARLIEST, or CONTINUATION_TOKEN as the <c>startSelectorType</c>,
+        /// you don't provide any additional information in the <c>startSelector</c>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -152,8 +152,8 @@ namespace Amazon.KinesisVideoMedia.Model
         /// Gets and sets the property StartTimestamp. 
         /// <para>
         /// A timestamp value. This value is required if you choose the PRODUCER_TIMESTAMP or
-        /// the SERVER_TIMESTAMP as the <code>startSelectorType</code>. The <code>GetMedia</code>
-        /// API then starts with the chunk containing the fragment that has the specified timestamp.
+        /// the SERVER_TIMESTAMP as the <c>startSelectorType</c>. The <c>GetMedia</c> API then
+        /// starts with the chunk containing the fragment that has the specified timestamp.
         /// </para>
         /// </summary>
         public DateTime StartTimestamp

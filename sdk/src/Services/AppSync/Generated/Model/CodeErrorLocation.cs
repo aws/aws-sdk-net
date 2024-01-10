@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Column. 
         /// <para>
-        /// The column number in the code. Defaults to <code>0</code> if unknown.
+        /// The column number in the code. Defaults to <c>0</c> if unknown.
         /// </para>
         /// </summary>
         public int Column
@@ -58,7 +58,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Line. 
         /// <para>
-        /// The line number in the code. Defaults to <code>0</code> if unknown.
+        /// The line number in the code. Defaults to <c>0</c> if unknown.
         /// </para>
         /// </summary>
         public int Line
@@ -76,7 +76,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Span. 
         /// <para>
-        /// The span/length of the error. Defaults to <code>-1</code> if unknown.
+        /// The span/length of the error. Defaults to <c>-1</c> if unknown.
         /// </para>
         /// </summary>
         public int Span

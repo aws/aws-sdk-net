@@ -45,7 +45,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// This operation requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code>
+    /// This operation requires permissions to perform the <c>rekognition:DeleteProjectPolicy</c>
     /// action.
     /// </para>
     /// </summary>

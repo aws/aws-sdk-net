@@ -59,8 +59,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property BuildsNotDeleted. 
         /// <para>
-        /// An array of <code>BuildNotDeleted</code> objects that specify the builds that could
-        /// not be deleted.
+        /// An array of <c>BuildNotDeleted</c> objects that specify the builds that could not
+        /// be deleted.
         /// </para>
         /// </summary>
         public List<BuildNotDeleted> BuildsNotDeleted

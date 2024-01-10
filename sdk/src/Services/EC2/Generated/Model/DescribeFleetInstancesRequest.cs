@@ -52,7 +52,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>instance-type</code> - The instance type.
+        ///  <c>instance-type</c> - The instance type.
         /// </para>
         ///  </li> </ul>
         /// </summary>

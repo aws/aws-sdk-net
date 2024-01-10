@@ -84,7 +84,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property PropertyAlias. 
         /// <para>
         /// The alias that identifies the property, such as an OPC-UA server data stream path
-        /// (for example, <code>/company/windfarm/3/turbine/7/temperature</code>). For more information,
+        /// (for example, <c>/company/windfarm/3/turbine/7/temperature</c>). For more information,
         /// see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/connect-data-streams.html">Mapping
         /// industrial data streams to asset properties</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
@@ -124,7 +124,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property PropertyValues. 
         /// <para>
-        /// The list of property values to upload. You can specify up to 10 <code>propertyValues</code>
+        /// The list of property values to upload. You can specify up to 10 <c>propertyValues</c>
         /// array elements. 
         /// </para>
         /// </summary>

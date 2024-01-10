@@ -59,8 +59,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// Indicates whether DNS servers should be used. Specify <code>False</code> to delete
-        /// the existing DNS servers.
+        /// Indicates whether DNS servers should be used. Specify <c>False</c> to delete the existing
+        /// DNS servers.
         /// </para>
         /// </summary>
         public bool Enabled

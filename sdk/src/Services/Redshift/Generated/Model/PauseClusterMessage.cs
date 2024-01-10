@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Redshift.Model
 {
     /// <summary>
-    /// Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code>
+    /// Describes a pause cluster operation. For example, a scheduled action to run the <c>PauseCluster</c>
     /// API operation.
     /// </summary>
     public partial class PauseClusterMessage

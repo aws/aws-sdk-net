@@ -63,22 +63,22 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property DnsPolicy. 
         /// <para>
-        /// The DNS policy for the pod. The default value is <code>ClusterFirst</code>. If the
-        /// <code>hostNetwork</code> parameter is not specified, the default is <code>ClusterFirstWithHostNet</code>.
-        /// <code>ClusterFirst</code> indicates that any DNS query that does not match the configured
-        /// cluster domain suffix is forwarded to the upstream nameserver inherited from the node.
-        /// If no value was specified for <code>dnsPolicy</code> in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
-        /// API operation, then no value will be returned for <code>dnsPolicy</code> by either
-        /// of <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
+        /// The DNS policy for the pod. The default value is <c>ClusterFirst</c>. If the <c>hostNetwork</c>
+        /// parameter is not specified, the default is <c>ClusterFirstWithHostNet</c>. <c>ClusterFirst</c>
+        /// indicates that any DNS query that does not match the configured cluster domain suffix
+        /// is forwarded to the upstream nameserver inherited from the node. If no value was specified
+        /// for <c>dnsPolicy</c> in the <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_RegisterJobDefinition.html">RegisterJobDefinition</a>
+        /// API operation, then no value will be returned for <c>dnsPolicy</c> by either of <a
+        /// href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobDefinitions.html">DescribeJobDefinitions</a>
         /// or <a href="https://docs.aws.amazon.com/batch/latest/APIReference/API_DescribeJobs.html">DescribeJobs</a>
-        /// API operations. The pod spec setting will contain either <code>ClusterFirst</code>
-        /// or <code>ClusterFirstWithHostNet</code>, depending on the value of the <code>hostNetwork</code>
-        /// parameter. For more information, see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
+        /// API operations. The pod spec setting will contain either <c>ClusterFirst</c> or <c>ClusterFirstWithHostNet</c>,
+        /// depending on the value of the <c>hostNetwork</c> parameter. For more information,
+        /// see <a href="https://kubernetes.io/docs/concepts/services-networking/dns-pod-service/#pod-s-dns-policy">Pod's
         /// DNS policy</a> in the <i>Kubernetes documentation</i>.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>Default</code> | <code>ClusterFirst</code> | <code>ClusterFirstWithHostNet</code>
+        /// Valid values: <c>Default</c> | <c>ClusterFirst</c> | <c>ClusterFirstWithHostNet</c>
         /// 
         /// </para>
         /// </summary>
@@ -97,10 +97,10 @@ namespace Amazon.Batch.Model
         /// <summary>
         /// Gets and sets the property HostNetwork. 
         /// <para>
-        /// Indicates if the pod uses the hosts' network IP address. The default value is <code>true</code>.
-        /// Setting this to <code>false</code> enables the Kubernetes pod networking model. Most
-        /// Batch workloads are egress-only and don't require the overhead of IP allocation for
-        /// each pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host
+        /// Indicates if the pod uses the hosts' network IP address. The default value is <c>true</c>.
+        /// Setting this to <c>false</c> enables the Kubernetes pod networking model. Most Batch
+        /// workloads are egress-only and don't require the overhead of IP allocation for each
+        /// pod for incoming connections. For more information, see <a href="https://kubernetes.io/docs/concepts/security/pod-security-policy/#host-namespaces">Host
         /// namespaces</a> and <a href="https://kubernetes.io/docs/concepts/workloads/pods/#pod-networking">Pod
         /// networking</a> in the <i>Kubernetes documentation</i>.
         /// </para>

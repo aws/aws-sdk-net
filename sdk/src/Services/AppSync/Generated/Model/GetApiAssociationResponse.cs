@@ -38,7 +38,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiAssociation. 
         /// <para>
-        /// The <code>ApiAssociation</code> object.
+        /// The <c>ApiAssociation</c> object.
         /// </para>
         /// </summary>
         public ApiAssociation ApiAssociation

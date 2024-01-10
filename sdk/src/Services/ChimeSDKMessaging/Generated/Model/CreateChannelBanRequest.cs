@@ -31,9 +31,8 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// <summary>
     /// Container for the parameters to the CreateChannelBan operation.
     /// Permanently bans a member from a channel. Moderators can't add banned members to a
-    /// channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then
-    /// <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or
-    /// channels.
+    /// channel. To undo a ban, you first have to <c>DeleteChannelBan</c>, and then <c>CreateChannelMembership</c>.
+    /// Bans are cleaned up when you delete users or channels.
     /// 
     ///  
     /// <para>
@@ -42,9 +41,8 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
-    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
-    /// as the value in the header.
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the ARN of the <c>AppInstanceUser</c>
+    /// or <c>AppInstanceBot</c> that makes the API call as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -76,8 +74,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
-        /// the API call.
+        /// The ARN of the <c>AppInstanceUser</c> or <c>AppInstanceBot</c> that makes the API
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -96,7 +94,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArn. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the member being banned.
+        /// The <c>AppInstanceUserArn</c> of the member being banned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

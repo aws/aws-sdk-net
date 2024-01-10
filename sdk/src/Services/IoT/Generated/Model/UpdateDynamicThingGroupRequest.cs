@@ -72,7 +72,7 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently one index is supported: <code>AWS_Things</code>.
+        /// Currently one index is supported: <c>AWS_Things</c>.
         /// </para>
         ///  </note>
         /// </summary>

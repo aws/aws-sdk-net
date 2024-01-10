@@ -34,8 +34,7 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    ///  Filters which game servers may be claimed when calling <code>ClaimGameServer</code>.
-    /// 
+    ///  Filters which game servers may be claimed when calling <c>ClaimGameServer</c>. 
     /// </para>
     /// </summary>
     public partial class ClaimFilterOption
@@ -46,7 +45,7 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property InstanceStatuses. 
         /// <para>
         /// List of instance statuses that game servers may be claimed on. If provided, the list
-        /// must contain the <code>ACTIVE</code> status.
+        /// must contain the <c>ACTIVE</c> status.
         /// </para>
         /// </summary>
         public List<string> InstanceStatuses

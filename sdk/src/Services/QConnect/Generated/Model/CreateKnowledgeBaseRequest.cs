@@ -36,8 +36,7 @@ namespace Amazon.QConnect.Model
     /// <para>
     /// When using this API, you cannot reuse <a href="https://docs.aws.amazon.com/appintegrations/latest/APIReference/Welcome.html">Amazon
     /// AppIntegrations</a> DataIntegrations with external knowledge bases such as Salesforce
-    /// and ServiceNow. If you do, you'll get an <code>InvalidRequestException</code> error.
-    /// 
+    /// and ServiceNow. If you do, you'll get an <c>InvalidRequestException</c> error. 
     /// </para>
     ///  
     /// <para>
@@ -181,9 +180,9 @@ namespace Amazon.QConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// This KMS key must have a policy that allows <code>kms:CreateGrant</code>, <code>kms:DescribeKey</code>,
-        /// <code>kms:Decrypt</code>, and <code>kms:GenerateDataKey*</code> permissions to the
-        /// IAM identity using the key to invoke Amazon Q.
+        /// This KMS key must have a policy that allows <c>kms:CreateGrant</c>, <c>kms:DescribeKey</c>,
+        /// <c>kms:Decrypt</c>, and <c>kms:GenerateDataKey*</c> permissions to the IAM identity
+        /// using the key to invoke Amazon Q.
         /// </para>
         ///  
         /// <para>

@@ -31,7 +31,7 @@ namespace Amazon.CostExplorer.Model
     /// <summary>
     /// A single daily or monthly Savings Plans utilization rate and details for your account.
     /// A management account in an organization have access to member accounts. You can use
-    /// <code>GetDimensionValues</code> to determine the possible dimension values.
+    /// <c>GetDimensionValues</c> to determine the possible dimension values.
     /// </summary>
     public partial class SavingsPlansUtilizationDetail
     {
@@ -63,7 +63,7 @@ namespace Amazon.CostExplorer.Model
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// The attribute that applies to a specific <code>Dimension</code>.
+        /// The attribute that applies to a specific <c>Dimension</c>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -82,8 +82,8 @@ namespace Amazon.CostExplorer.Model
         /// Gets and sets the property Savings. 
         /// <para>
         /// The amount saved by using existing Savings Plans. Savings returns both net savings
-        /// from savings plans and also the <code>onDemandCostEquivalent</code> of the Savings
-        /// Plans when considering the utilization rate.
+        /// from savings plans and also the <c>onDemandCostEquivalent</c> of the Savings Plans
+        /// when considering the utilization rate.
         /// </para>
         /// </summary>
         public SavingsPlansSavings Savings

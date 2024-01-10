@@ -67,7 +67,7 @@ namespace Amazon.Personalize
         ///  
         /// <para>
         ///  If you use the Similar-Items recipe, Amazon Personalize can add descriptive themes
-        /// to batch recommendations. To generate themes, set the job's mode to <code>THEME_GENERATION</code>
+        /// to batch recommendations. To generate themes, set the job's mode to <c>THEME_GENERATION</c>
         /// and specify the name of the field that contains item names in the input data.
         /// </para>
         ///  
@@ -162,32 +162,30 @@ namespace Amazon.Personalize
         /// </para>
         ///  <important> 
         /// <para>
-        ///  A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
-        /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
-        /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
+        ///  A high <c>minProvisionedTPS</c> will increase your bill. We recommend starting with
+        /// 1 for <c>minProvisionedTPS</c> (the default). Track your usage using Amazon CloudWatch
+        /// metrics, and increase the <c>minProvisionedTPS</c> as necessary.
         /// </para>
         ///  </important> 
         /// <para>
-        /// A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code>
+        /// A transaction is a single <c>GetRecommendations</c> or <c>GetPersonalizedRanking</c>
         /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
-        /// Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>) specifies
-        /// the baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
+        /// Personalize. The minimum provisioned TPS (<c>minProvisionedTPS</c>) specifies the
+        /// baseline throughput provisioned by Amazon Personalize, and thus, the minimum billing
         /// charge. 
         /// </para>
         ///  
         /// <para>
-        ///  If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize auto-scales
-        /// the provisioned capacity up and down, but never below <code>minProvisionedTPS</code>.
-        /// There's a short time delay while the capacity is increased that might cause loss of
-        /// transactions.
+        ///  If your TPS increases beyond <c>minProvisionedTPS</c>, Amazon Personalize auto-scales
+        /// the provisioned capacity up and down, but never below <c>minProvisionedTPS</c>. There's
+        /// a short time delay while the capacity is increased that might cause loss of transactions.
         /// </para>
         ///  
         /// <para>
         /// The actual TPS used is calculated as the average requests/second within a 5-minute
         /// window. You pay for maximum of either the minimum provisioned TPS or the actual TPS.
-        /// We recommend starting with a low <code>minProvisionedTPS</code>, track your usage
-        /// using Amazon CloudWatch metrics, and then increase the <code>minProvisionedTPS</code>
-        /// as necessary.
+        /// We recommend starting with a low <c>minProvisionedTPS</c>, track your usage using
+        /// Amazon CloudWatch metrics, and then increase the <c>minProvisionedTPS</c> as necessary.
         /// </para>
         ///  
         /// <para>
@@ -211,8 +209,8 @@ namespace Amazon.Personalize
         /// </para>
         ///  <note> 
         /// <para>
-        /// Wait until the <code>status</code> of the campaign is <code>ACTIVE</code> before asking
-        /// the campaign for recommendations.
+        /// Wait until the <c>status</c> of the campaign is <c>ACTIVE</c> before asking the campaign
+        /// for recommendations.
         /// </para>
         ///  </note> 
         /// <para>
@@ -303,9 +301,9 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Each dataset type has an associated schema with required field types. Only the <code>Item
-        /// interactions</code> dataset is required in order to train a model (also referred to
-        /// as creating a solution).
+        /// Each dataset type has an associated schema with required field types. Only the <c>Item
+        /// interactions</c> dataset is required in order to train a model (also referred to as
+        /// creating a solution).
         /// </para>
         ///  
         /// <para>
@@ -385,8 +383,8 @@ namespace Amazon.Personalize
         /// <summary>
         /// Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow
         /// Amazon Personalize to export the training data, you must specify an service-linked
-        /// IAM role that gives Amazon Personalize <code>PutObject</code> permissions for your
-        /// Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
+        /// IAM role that gives Amazon Personalize <c>PutObject</c> permissions for your Amazon
+        /// S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting
         /// a dataset</a> in the Amazon Personalize developer guide. 
         /// 
         ///  
@@ -406,8 +404,8 @@ namespace Amazon.Personalize
         ///  To get the status of the export job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetExportJob.html">DescribeDatasetExportJob</a>,
         /// and specify the Amazon Resource Name (ARN) of the dataset export job. The dataset
         /// export is complete when the status shows as ACTIVE. If the status shows as CREATE
-        /// FAILED, the response includes a <code>failureReason</code> key, which describes why
-        /// the job failed. 
+        /// FAILED, the response includes a <c>failureReason</c> key, which describes why the
+        /// job failed. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDatasetExportJob service method.</param>
@@ -492,13 +490,13 @@ namespace Amazon.Personalize
         ///  </li> </ul> 
         /// <para>
         /// To get the status of the dataset group, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a>.
-        /// If the status shows as CREATE FAILED, the response includes a <code>failureReason</code>
+        /// If the status shows as CREATE FAILED, the response includes a <c>failureReason</c>
         /// key, which describes why the creation failed.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must wait until the <code>status</code> of the dataset group is <code>ACTIVE</code>
-        /// before adding a dataset to the group.
+        /// You must wait until the <c>status</c> of the dataset group is <c>ACTIVE</c> before
+        /// adding a dataset to the group.
         /// </para>
         ///  </note> 
         /// <para>
@@ -611,8 +609,7 @@ namespace Amazon.Personalize
         /// To get the status of the import job, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a>,
         /// providing the Amazon Resource Name (ARN) of the dataset import job. The dataset import
         /// is complete when the status shows as ACTIVE. If the status shows as CREATE FAILED,
-        /// the response includes a <code>failureReason</code> key, which describes why the job
-        /// failed.
+        /// the response includes a <c>failureReason</c> key, which describes why the job failed.
         /// </para>
         ///  <note> 
         /// <para>
@@ -676,7 +673,7 @@ namespace Amazon.Personalize
         ///  <note> 
         /// <para>
         /// Only one event tracker can be associated with a dataset group. You will get an error
-        /// if you call <code>CreateEventTracker</code> using the same dataset group as an existing
+        /// if you call <c>CreateEventTracker</c> using the same dataset group as an existing
         /// event tracker.
         /// </para>
         ///  </note> 
@@ -842,35 +839,35 @@ namespace Amazon.Personalize
         /// </para>
         ///  <important> 
         /// <para>
-        /// A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
-        /// recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the
-        /// default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+        /// A high <c>minRecommendationRequestsPerSecond</c> will increase your bill. We recommend
+        /// starting with 1 for <c>minRecommendationRequestsPerSecond</c> (the default). Track
+        /// your usage using Amazon CloudWatch metrics, and increase the <c>minRecommendationRequestsPerSecond</c>
         /// as necessary.
         /// </para>
         ///  </important> 
         /// <para>
         /// When you create a recommender, you can configure the recommender's minimum recommendation
-        /// requests per second. The minimum recommendation requests per second (<code>minRecommendationRequestsPerSecond</code>)
+        /// requests per second. The minimum recommendation requests per second (<c>minRecommendationRequestsPerSecond</c>)
         /// specifies the baseline recommendation request throughput provisioned by Amazon Personalize.
-        /// The default minRecommendationRequestsPerSecond is <code>1</code>. A recommendation
-        /// request is a single <code>GetRecommendations</code> operation. Request throughput
-        /// is measured in requests per second and Amazon Personalize uses your requests per second
-        /// to derive your requests per hour and the price of your recommender usage. 
+        /// The default minRecommendationRequestsPerSecond is <c>1</c>. A recommendation request
+        /// is a single <c>GetRecommendations</c> operation. Request throughput is measured in
+        /// requests per second and Amazon Personalize uses your requests per second to derive
+        /// your requests per hour and the price of your recommender usage. 
         /// </para>
         ///  
         /// <para>
-        ///  If your requests per second increases beyond <code>minRecommendationRequestsPerSecond</code>,
+        ///  If your requests per second increases beyond <c>minRecommendationRequestsPerSecond</c>,
         /// Amazon Personalize auto-scales the provisioned capacity up and down, but never below
-        /// <code>minRecommendationRequestsPerSecond</code>. There's a short time delay while
-        /// the capacity is increased that might cause loss of requests.
+        /// <c>minRecommendationRequestsPerSecond</c>. There's a short time delay while the capacity
+        /// is increased that might cause loss of requests.
         /// </para>
         ///  
         /// <para>
         ///  Your bill is the greater of either the minimum requests per hour (based on minRecommendationRequestsPerSecond)
         /// or the actual number of requests. The actual request throughput used is calculated
         /// as the average requests/second within a one-hour window. We recommend starting with
-        /// the default <code>minRecommendationRequestsPerSecond</code>, track your usage using
-        /// Amazon CloudWatch metrics, and then increase the <code>minRecommendationRequestsPerSecond</code>
+        /// the default <c>minRecommendationRequestsPerSecond</c>, track your usage using Amazon
+        /// CloudWatch metrics, and then increase the <c>minRecommendationRequestsPerSecond</c>
         /// as necessary. 
         /// </para>
         ///  
@@ -900,8 +897,8 @@ namespace Amazon.Personalize
         /// </para>
         ///  <note> 
         /// <para>
-        /// Wait until the <code>status</code> of the recommender is <code>ACTIVE</code> before
-        /// asking the recommender for recommendations.
+        /// Wait until the <c>status</c> of the recommender is <c>ACTIVE</c> before asking the
+        /// recommender for recommendations.
         /// </para>
         ///  </note> 
         /// <para>
@@ -1022,8 +1019,8 @@ namespace Amazon.Personalize
         /// Creates the configuration for training a model. A trained model is known as a solution
         /// version. After the configuration is created, you train the model (create a solution
         /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
-        /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
-        /// the solution is created.
+        /// operation. Every time you call <c>CreateSolutionVersion</c>, a new version of the
+        /// solution is created.
         /// 
         ///  
         /// <para>
@@ -1041,7 +1038,7 @@ namespace Amazon.Personalize
         /// </para>
         ///  <note> 
         /// <para>
-        /// Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution
+        /// Amazon Personalize doesn't support configuring the <c>hpoObjective</c> for solution
         /// hyperparameter optimization at this time.
         /// </para>
         ///  </note> 
@@ -1063,7 +1060,7 @@ namespace Amazon.Personalize
         ///  </li> </ul> 
         /// <para>
         /// To get the status of the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolution.html">DescribeSolution</a>.
-        /// Wait until the status shows as ACTIVE before calling <code>CreateSolutionVersion</code>.
+        /// Wait until the status shows as ACTIVE before calling <c>CreateSolutionVersion</c>.
         /// </para>
         ///  
         /// <para>
@@ -1137,7 +1134,7 @@ namespace Amazon.Personalize
         /// <summary>
         /// Trains or retrains an active solution in a Custom dataset group. A solution is created
         /// using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
-        /// operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>.
+        /// operation and must be in the ACTIVE state before calling <c>CreateSolutionVersion</c>.
         /// A new version of the solution is created every time you call this operation.
         /// 
         ///  
@@ -1175,11 +1172,11 @@ namespace Amazon.Personalize
         ///  </li> </ul> 
         /// <para>
         /// To get the status of the version, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeSolutionVersion.html">DescribeSolutionVersion</a>.
-        /// Wait until the status shows as ACTIVE before calling <code>CreateCampaign</code>.
+        /// Wait until the status shows as ACTIVE before calling <c>CreateCampaign</c>.
         /// </para>
         ///  
         /// <para>
-        /// If the status shows as CREATE FAILED, the response includes a <code>failureReason</code>
+        /// If the status shows as CREATE FAILED, the response includes a <c>failureReason</c>
         /// key, which describes why the job failed.
         /// </para>
         ///  
@@ -1282,9 +1279,9 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code>
-        /// or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For
-        /// more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
+        /// Deletes a dataset. You can't delete a dataset if an associated <c>DatasetImportJob</c>
+        /// or <c>SolutionVersion</c> is in the CREATE PENDING or IN PROGRESS state. For more
+        /// information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataset service method.</param>
         /// <param name="cancellationToken">
@@ -1491,12 +1488,12 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Deletes all versions of a solution and the <code>Solution</code> object itself. Before
-        /// deleting a solution, you must delete all campaigns based on the solution. To determine
-        /// what campaigns are using the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
+        /// Deletes all versions of a solution and the <c>Solution</c> object itself. Before deleting
+        /// a solution, you must delete all campaigns based on the solution. To determine what
+        /// campaigns are using the solution, call <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_ListCampaigns.html">ListCampaigns</a>
         /// and supply the Amazon Resource Name (ARN) of the solution. You can't delete a solution
-        /// if an associated <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS
-        /// state. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
+        /// if an associated <c>SolutionVersion</c> is in the CREATE PENDING or IN PROGRESS state.
+        /// For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSolution service method.</param>
         /// <param name="cancellationToken">
@@ -1615,8 +1612,8 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
-        /// the <code>failureReason</code> key, which describes why.
+        /// When the <c>status</c> is <c>CREATE FAILED</c>, the response includes the <c>failureReason</c>
+        /// key, which describes why.
         /// </para>
         ///  
         /// <para>
@@ -1744,9 +1741,8 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Describes an event tracker. The response includes the <code>trackingId</code> and
-        /// <code>status</code> of the event tracker. For more information on event trackers,
-        /// see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
+        /// Describes an event tracker. The response includes the <c>trackingId</c> and <c>status</c>
+        /// of the event tracker. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeEventTracker service method.</param>
         /// <param name="cancellationToken">
@@ -1864,7 +1860,7 @@ namespace Amazon.Personalize
         /// <para>
         /// Amazon Personalize provides a set of predefined recipes. You specify a recipe when
         /// you create a solution with the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>
-        /// API. <code>CreateSolution</code> trains a model by using the algorithm in the specified
+        /// API. <c>CreateSolution</c> trains a model by using the algorithm in the specified
         /// recipe and a training dataset. The solution, when deployed as a campaign, can provide
         /// recommendations using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
         /// API.
@@ -1913,13 +1909,12 @@ namespace Amazon.Personalize
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When the <code>status</code> is <code>CREATE FAILED</code>, the response includes
-        /// the <code>failureReason</code> key, which describes why.
+        /// When the <c>status</c> is <c>CREATE FAILED</c>, the response includes the <c>failureReason</c>
+        /// key, which describes why.
         /// </para>
         ///  
         /// <para>
-        /// The <code>modelMetrics</code> key is null when the recommender is being created or
-        /// deleted.
+        /// The <c>modelMetrics</c> key is null when the recommender is being created or deleted.
         /// </para>
         ///  
         /// <para>
@@ -2661,7 +2656,7 @@ namespace Amazon.Personalize
 
         /// <summary>
         /// Updates a campaign to deploy a retrained solution version with an existing campaign,
-        /// change your campaign's <code>minProvisionedTPS</code>, or modify your campaign's configuration,
+        /// change your campaign's <c>minProvisionedTPS</c>, or modify your campaign's configuration,
         /// such as the exploration configuration. 
         /// 
         ///  
@@ -2674,7 +2669,7 @@ namespace Amazon.Personalize
         /// <para>
         /// You can still get recommendations from a campaign while an update is in progress.
         /// The campaign will use the previous solution version and campaign configuration to
-        /// generate recommendations until the latest campaign update status is <code>Active</code>.
+        /// generate recommendations until the latest campaign update status is <c>Active</c>.
         /// 
         /// </para>
         ///  </note> 
@@ -2773,7 +2768,7 @@ namespace Amazon.Personalize
         /// starts a full retraining of the models backing your recommender. While the update
         /// completes, you can still get recommendations from the recommender. The recommender
         /// uses the previous configuration until the update completes. To track the status of
-        /// this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+        /// this update, use the <c>latestRecommenderUpdate</c> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
         /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>

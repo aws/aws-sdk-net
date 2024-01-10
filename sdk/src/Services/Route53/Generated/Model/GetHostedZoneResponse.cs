@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53.Model
 {
     /// <summary>
-    /// A complex type that contain the response to a <code>GetHostedZone</code> request.
+    /// A complex type that contain the response to a <c>GetHostedZone</c> request.
     /// </summary>
     public partial class GetHostedZoneResponse : AmazonWebServiceResponse
     {

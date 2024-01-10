@@ -63,10 +63,9 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property DeploymentWaitType. 
         /// <para>
-        ///  The status of the deployment's waiting period. <code>READY_WAIT</code> indicates
-        /// that the deployment is ready to start shifting traffic. <code>TERMINATION_WAIT</code>
-        /// indicates that the traffic is shifted, but the original target is not terminated.
-        /// 
+        ///  The status of the deployment's waiting period. <c>READY_WAIT</c> indicates that the
+        /// deployment is ready to start shifting traffic. <c>TERMINATION_WAIT</c> indicates that
+        /// the traffic is shifted, but the original target is not terminated. 
         /// </para>
         /// </summary>
         public DeploymentWaitType DeploymentWaitType

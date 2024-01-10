@@ -30,8 +30,8 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAppInstanceUserEndpoint operation.
-    /// Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the
-    /// name and <code>AllowMessage</code> values.
+    /// Updates the details of an <c>AppInstanceUserEndpoint</c>. You can update the name
+    /// and <c>AllowMessage</c> values.
     /// </summary>
     public partial class UpdateAppInstanceUserEndpointRequest : AmazonChimeSDKIdentityRequest
     {
@@ -43,9 +43,9 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AllowMessages. 
         /// <para>
-        /// Boolean that controls whether the <code>AppInstanceUserEndpoint</code> is opted in
-        /// to receive messages. <code>ALL</code> indicates the endpoint will receive all messages.
-        /// <code>NONE</code> indicates the endpoint will receive no messages.
+        /// Boolean that controls whether the <c>AppInstanceUserEndpoint</c> is opted in to receive
+        /// messages. <c>ALL</c> indicates the endpoint will receive all messages. <c>NONE</c>
+        /// indicates the endpoint will receive no messages.
         /// </para>
         /// </summary>
         public AllowMessages AllowMessages
@@ -63,7 +63,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>.
+        /// The ARN of the <c>AppInstanceUser</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -82,7 +82,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property EndpointId. 
         /// <para>
-        /// The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+        /// The unique identifier of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=64)]
@@ -101,7 +101,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the <code>AppInstanceUserEndpoint</code>.
+        /// The name of the <c>AppInstanceUserEndpoint</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=1600)]

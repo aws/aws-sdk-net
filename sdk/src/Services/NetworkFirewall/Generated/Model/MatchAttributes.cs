@@ -50,8 +50,8 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify individual ports, for example <code>1994</code> and you can specify
-        /// port ranges, for example <code>1990:1994</code>. 
+        /// You can specify individual ports, for example <c>1994</c> and you can specify port
+        /// ranges, for example <c>1990:1994</c>. 
         /// </para>
         /// </summary>
         public List<PortRange> DestinationPorts
@@ -112,8 +112,8 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify individual ports, for example <code>1994</code> and you can specify
-        /// port ranges, for example <code>1990:1994</code>. 
+        /// You can specify individual ports, for example <c>1994</c> and you can specify port
+        /// ranges, for example <c>1990:1994</c>. 
         /// </para>
         /// </summary>
         public List<PortRange> SourcePorts

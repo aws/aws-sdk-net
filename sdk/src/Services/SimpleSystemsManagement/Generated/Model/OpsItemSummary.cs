@@ -54,7 +54,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property ActualEndTime. 
         /// <para>
-        /// The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.
+        /// The time a runbook workflow ended. Currently reported only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime ActualEndTime
@@ -73,7 +73,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property ActualStartTime. 
         /// <para>
         /// The time a runbook workflow started. Currently reported only for the OpsItem type
-        /// <code>/aws/changerequest</code>.
+        /// <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime ActualStartTime
@@ -223,7 +223,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>/aws/issue</code> 
+        ///  <c>/aws/issue</c> 
         /// </para>
         ///  
         /// <para>
@@ -231,7 +231,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/aws/changerequest</code> 
+        ///  <c>/aws/changerequest</c> 
         /// </para>
         ///  
         /// <para>
@@ -240,7 +240,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>/aws/insight</code> 
+        ///  <c>/aws/insight</c> 
         /// </para>
         ///  
         /// <para>
@@ -265,7 +265,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PlannedEndTime. 
         /// <para>
         /// The time specified in a change request for a runbook workflow to end. Currently supported
-        /// only for the OpsItem type <code>/aws/changerequest</code>.
+        /// only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime PlannedEndTime
@@ -284,7 +284,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Gets and sets the property PlannedStartTime. 
         /// <para>
         /// The time specified in a change request for a runbook workflow to start. Currently
-        /// supported only for the OpsItem type <code>/aws/changerequest</code>.
+        /// supported only for the OpsItem type <c>/aws/changerequest</c>.
         /// </para>
         /// </summary>
         public DateTime PlannedStartTime
@@ -359,8 +359,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The OpsItem status. Status can be <code>Open</code>, <code>In Progress</code>, or
-        /// <code>Resolved</code>.
+        /// The OpsItem status. Status can be <c>Open</c>, <c>In Progress</c>, or <c>Resolved</c>.
         /// </para>
         /// </summary>
         public OpsItemStatus Status

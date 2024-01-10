@@ -57,7 +57,7 @@ namespace Amazon.DevOpsGuru.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// A <code>Timestamp</code> that specifies the time the event occurred. 
+        /// A <c>Timestamp</c> that specifies the time the event occurred. 
         /// </para>
         /// </summary>
         public DateTime Timestamp

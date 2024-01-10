@@ -83,8 +83,8 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property KeyManagementServiceArn. 
         /// <para>
         /// The Amazon resource name (ARN) for a customer managed key in Key Management Service
-        /// (KMS). The <code>KeyManagementServiceArn</code> must be unique for each key-signing
-        /// key (KSK) in a single hosted zone. To see an example of <code>KeyManagementServiceArn</code>
+        /// (KMS). The <c>KeyManagementServiceArn</c> must be unique for each key-signing key
+        /// (KSK) in a single hosted zone. To see an example of <c>KeyManagementServiceArn</c>
         /// that grants the correct permissions for DNSSEC, scroll down to <b>Example</b>. 
         /// </para>
         ///  
@@ -126,7 +126,7 @@ namespace Amazon.Route53.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>"Service": "dnssec-route53.amazonaws.com"</code> 
+        ///  <c>"Service": "dnssec-route53.amazonaws.com"</c> 
         /// </para>
         ///  </li> </ul> </dd> </dl> 
         /// <para>
@@ -150,9 +150,9 @@ namespace Amazon.Route53.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A string used to identify a key-signing key (KSK). <code>Name</code> can include numbers,
-        /// letters, and underscores (_). <code>Name</code> must be unique for each key-signing
-        /// key in the same hosted zone.
+        /// A string used to identify a key-signing key (KSK). <c>Name</c> can include numbers,
+        /// letters, and underscores (_). <c>Name</c> must be unique for each key-signing key
+        /// in the same hosted zone.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=128)]
@@ -172,7 +172,7 @@ namespace Amazon.Route53.Model
         /// Gets and sets the property Status. 
         /// <para>
         /// A string specifying the initial status of the key-signing key (KSK). You can set the
-        /// value to <code>ACTIVE</code> or <code>INACTIVE</code>.
+        /// value to <c>ACTIVE</c> or <c>INACTIVE</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=150)]

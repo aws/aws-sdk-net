@@ -46,7 +46,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The <code>entryId</code>s of a batch request need to be unique within a request.
+        /// The <c>entryId</c>s of a batch request need to be unique within a request.
         /// </para>
         ///  </note>
         /// </summary>

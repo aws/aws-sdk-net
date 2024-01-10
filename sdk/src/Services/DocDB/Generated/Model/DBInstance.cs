@@ -398,8 +398,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        ///  If <code>StorageEncrypted</code> is <code>true</code>, the KMS key identifier for
-        /// the encrypted instance. 
+        ///  If <c>StorageEncrypted</c> is <c>true</c>, the KMS key identifier for the encrypted
+        /// instance. 
         /// </para>
         /// </summary>
         public string KmsKeyId
@@ -454,8 +454,8 @@ namespace Amazon.DocDB.Model
         /// <summary>
         /// Gets and sets the property PerformanceInsightsEnabled. 
         /// <para>
-        /// Set to <code>true</code> if Amazon RDS Performance Insights is enabled for the DB
-        /// instance, and otherwise <code>false</code>.
+        /// Set to <c>true</c> if Amazon RDS Performance Insights is enabled for the DB instance,
+        /// and otherwise <c>false</c>.
         /// </para>
         /// </summary>
         public bool PerformanceInsightsEnabled
@@ -494,7 +494,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property PreferredBackupWindow. 
         /// <para>
         ///  Specifies the daily time range during which automated backups are created if automated
-        /// backups are enabled, as determined by the <code>BackupRetentionPeriod</code>. 
+        /// backups are enabled, as determined by the <c>BackupRetentionPeriod</c>. 
         /// </para>
         /// </summary>
         public string PreferredBackupWindow
@@ -551,7 +551,7 @@ namespace Amazon.DocDB.Model
         /// Gets and sets the property PubliclyAccessible. 
         /// <para>
         /// Not supported. Amazon DocumentDB does not currently support public endpoints. The
-        /// value of <code>PubliclyAccessible</code> is always <code>false</code>.
+        /// value of <c>PubliclyAccessible</c> is always <c>false</c>.
         /// </para>
         /// </summary>
         public bool PubliclyAccessible

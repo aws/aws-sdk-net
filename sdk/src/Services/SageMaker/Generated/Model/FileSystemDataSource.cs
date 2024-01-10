@@ -61,8 +61,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property FileSystemAccessMode. 
         /// <para>
         /// The access mode of the mount of the directory associated with the channel. A directory
-        /// can be mounted either in <code>ro</code> (read-only) or <code>rw</code> (read-write)
-        /// mode.
+        /// can be mounted either in <c>ro</c> (read-only) or <c>rw</c> (read-write) mode.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

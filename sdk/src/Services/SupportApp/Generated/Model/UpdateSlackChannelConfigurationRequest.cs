@@ -128,37 +128,37 @@ namespace Amazon.SupportApp.Model
         /// </para>
         ///  
         /// <para>
-        /// If you specify <code>high</code> or <code>all</code>, at least one of the following
-        /// parameters must be <code>true</code>:
+        /// If you specify <c>high</c> or <c>all</c>, at least one of the following parameters
+        /// must be <c>true</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>notifyOnAddCorrespondenceToCase</code> 
+        ///  <c>notifyOnAddCorrespondenceToCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnCreateOrReopenCase</code> 
+        ///  <c>notifyOnCreateOrReopenCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnResolveCase</code> 
+        ///  <c>notifyOnResolveCase</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you specify <code>none</code>, any of the following parameters that you specify
-        /// in your request must be <code>false</code>:
+        /// If you specify <c>none</c>, any of the following parameters that you specify in your
+        /// request must be <c>false</c>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>notifyOnAddCorrespondenceToCase</code> 
+        ///  <c>notifyOnAddCorrespondenceToCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnCreateOrReopenCase</code> 
+        ///  <c>notifyOnCreateOrReopenCase</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>notifyOnResolveCase</code> 
+        ///  <c>notifyOnResolveCase</c> 
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
@@ -218,7 +218,7 @@ namespace Amazon.SupportApp.Model
         /// <summary>
         /// Gets and sets the property TeamId. 
         /// <para>
-        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <code>T012ABCDEFG</code>.
+        /// The team ID in Slack. This ID uniquely identifies a Slack workspace, such as <c>T012ABCDEFG</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

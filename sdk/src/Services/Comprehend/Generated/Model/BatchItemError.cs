@@ -30,8 +30,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Describes an error that occurred while processing a document in a batch. The operation
-    /// returns on <code>BatchItemError</code> object for each document that contained an
-    /// error.
+    /// returns on <c>BatchItemError</c> object for each document that contained an error.
     /// </summary>
     public partial class BatchItemError
     {

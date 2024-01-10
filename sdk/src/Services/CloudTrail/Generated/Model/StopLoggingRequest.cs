@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     /// the specified trail. Under most circumstances, there is no need to use this action.
     /// You can update a trail without stopping it first. This action is the only way to stop
     /// recording. For a trail enabled in all Regions, this operation must be called from
-    /// the Region in which the trail was created, or an <code>InvalidHomeRegionException</code>
+    /// the Region in which the trail was created, or an <c>InvalidHomeRegionException</c>
     /// will occur. This operation cannot be called on the shadow trails (replicated trails
     /// in other Regions) of a trail enabled in all Regions.
     /// </summary>
@@ -50,7 +50,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  
         /// <para>
-        ///  <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> 
+        ///  <c>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

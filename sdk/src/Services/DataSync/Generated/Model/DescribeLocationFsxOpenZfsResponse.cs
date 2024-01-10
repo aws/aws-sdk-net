@@ -83,7 +83,7 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// Example: <code>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</code> 
+        /// Example: <c>fsxz://us-west-2.fs-1234567890abcdef02/fsx/folderA/folder</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Max=4360)]

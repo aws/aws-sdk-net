@@ -50,7 +50,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property AvailabilityEndDate. 
         /// <para>
-        /// Allows filtering on the <code>AvailabilityEndDate</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>AvailabilityEndDate</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationAvailabilityEndDateFilter AvailabilityEndDate
@@ -68,7 +68,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property CreatedDate. 
         /// <para>
-        /// Allows filtering on the <code>CreatedDate</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>CreatedDate</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationCreatedDateFilter CreatedDate
@@ -86,7 +86,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property EntityId. 
         /// <para>
-        /// Allows filtering on the <code>EntityId</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>EntityId</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationEntityIdFilter EntityId
@@ -104,7 +104,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property LastModifiedDate. 
         /// <para>
-        /// Allows filtering on the <code>LastModifiedDate</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>LastModifiedDate</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationLastModifiedDateFilter LastModifiedDate
@@ -122,7 +122,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ManufacturerAccountId. 
         /// <para>
-        /// Allows filtering on the <code>ManufacturerAccountId</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>ManufacturerAccountId</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationManufacturerAccountIdFilter ManufacturerAccountId
@@ -140,7 +140,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ManufacturerLegalName. 
         /// <para>
-        /// Allows filtering on the <code>ManufacturerLegalName</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>ManufacturerLegalName</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationManufacturerLegalNameFilter ManufacturerLegalName
@@ -158,7 +158,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Allows filtering on the <code>Name</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>Name</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationNameFilter Name
@@ -176,7 +176,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property OfferExtendedStatus. 
         /// <para>
-        /// Allows filtering on the <code>OfferExtendedStatus</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>OfferExtendedStatus</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationOfferExtendedStatusFilter OfferExtendedStatus
@@ -194,7 +194,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductId. 
         /// <para>
-        /// Allows filtering on the <code>ProductId</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>ProductId</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationProductIdFilter ProductId
@@ -212,7 +212,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ProductName. 
         /// <para>
-        /// Allows filtering on the <code>ProductName</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>ProductName</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationProductNameFilter ProductName
@@ -230,7 +230,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ResellerAccountID. 
         /// <para>
-        /// Allows filtering on the <code>ResellerAccountID</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>ResellerAccountID</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationResellerAccountIDFilter ResellerAccountID
@@ -248,7 +248,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property ResellerLegalName. 
         /// <para>
-        /// Allows filtering on the <code>ResellerLegalName</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>ResellerLegalName</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationResellerLegalNameFilter ResellerLegalName
@@ -266,7 +266,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Allows filtering on the <code>Status</code> of a ResaleAuthorization.
+        /// Allows filtering on the <c>Status</c> of a ResaleAuthorization.
         /// </para>
         /// </summary>
         public ResaleAuthorizationStatusFilter Status

@@ -47,8 +47,8 @@ namespace Amazon.DLM.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, specifying <code>^.*Created for policy: policy-1234567890abcdef0.*$</code>
-        /// configures the policy to run only if snapshots created by policy <code>policy-1234567890abcdef0</code>
+        /// For example, specifying <c>^.*Created for policy: policy-1234567890abcdef0.*$</c>
+        /// configures the policy to run only if snapshots created by policy <c>policy-1234567890abcdef0</c>
         /// are shared with your account.
         /// </para>
         /// </summary>

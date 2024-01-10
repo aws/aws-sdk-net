@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMIncidents.Model
 {
     /// <summary>
-    /// An item referenced in a <code>TimelineEvent</code> that is involved in or somehow
-    /// associated with an incident. You can specify an Amazon Resource Name (ARN) for an
-    /// Amazon Web Services resource or a <code>RelatedItem</code> ID.
+    /// An item referenced in a <c>TimelineEvent</c> that is involved in or somehow associated
+    /// with an incident. You can specify an Amazon Resource Name (ARN) for an Amazon Web
+    /// Services resource or a <c>RelatedItem</c> ID.
     /// </summary>
     public partial class EventReference
     {
@@ -41,7 +41,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RelatedItemId. 
         /// <para>
-        /// The ID of a <code>RelatedItem</code> referenced in a <code>TimelineEvent</code>.
+        /// The ID of a <c>RelatedItem</c> referenced in a <c>TimelineEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -61,7 +61,7 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property Resource. 
         /// <para>
         /// The Amazon Resource Name (ARN) of an Amazon Web Services resource referenced in a
-        /// <code>TimelineEvent</code>.
+        /// <c>TimelineEvent</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1000)]

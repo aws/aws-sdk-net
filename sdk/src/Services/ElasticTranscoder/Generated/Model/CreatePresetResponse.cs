@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticTranscoder.Model
 {
     /// <summary>
-    /// The <code>CreatePresetResponse</code> structure.
+    /// The <c>CreatePresetResponse</c> structure.
     /// </summary>
     public partial class CreatePresetResponse : AmazonWebServiceResponse
     {

@@ -30,7 +30,7 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the UnarchiveFindings operation.
-    /// Unarchives GuardDuty findings specified by the <code>findingIds</code>.
+    /// Unarchives GuardDuty findings specified by the <c>findingIds</c>.
     /// </summary>
     public partial class UnarchiveFindingsRequest : AmazonGuardDutyRequest
     {

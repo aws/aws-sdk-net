@@ -42,13 +42,13 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>DetectText</code> operation returns text in an array of <a>TextDetection</a>
-    /// elements, <code>TextDetections</code>. Each <code>TextDetection</code> element provides
-    /// information about a single word or line of text that was detected in the image. 
+    /// The <c>DetectText</c> operation returns text in an array of <a>TextDetection</a> elements,
+    /// <c>TextDetections</c>. Each <c>TextDetection</c> element provides information about
+    /// a single word or line of text that was detected in the image. 
     /// </para>
     ///  
     /// <para>
-    /// A word is one or more script characters that are not separated by spaces. <code>DetectText</code>
+    /// A word is one or more script characters that are not separated by spaces. <c>DetectText</c>
     /// can detect up to 100 words in an image.
     /// </para>
     ///  
@@ -59,12 +59,12 @@ namespace Amazon.Rekognition.Model
     /// relative to the length of the words. This means, depending on the gap between words,
     /// Amazon Rekognition may detect multiple lines in text aligned in the same direction.
     /// Periods don't represent the end of a line. If a sentence spans multiple lines, the
-    /// <code>DetectText</code> operation returns multiple lines.
+    /// <c>DetectText</c> operation returns multiple lines.
     /// </para>
     ///  
     /// <para>
-    /// To determine whether a <code>TextDetection</code> element is a line of text or a word,
-    /// use the <code>TextDetection</code> object <code>Type</code> field. 
+    /// To determine whether a <c>TextDetection</c> element is a line of text or a word, use
+    /// the <c>TextDetection</c> object <c>Type</c> field. 
     /// </para>
     ///  
     /// <para>
@@ -108,7 +108,7 @@ namespace Amazon.Rekognition.Model
         ///  
         /// <para>
         /// If you are using an AWS SDK to call Amazon Rekognition, you might not need to base64-encode
-        /// image bytes passed using the <code>Bytes</code> field. For more information, see Images
+        /// image bytes passed using the <c>Bytes</c> field. For more information, see Images
         /// in the Amazon Rekognition developer guide.
         /// </para>
         /// </summary>

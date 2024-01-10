@@ -71,8 +71,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property AccountRecoverySetting. 
         /// <para>
         /// The available verified method a user can use to recover their password when they call
-        /// <code>ForgotPassword</code>. You can use this setting to define a preferred method
-        /// when a user has more than one method available. With this setting, SMS doesn't qualify
+        /// <c>ForgotPassword</c>. You can use this setting to define a preferred method when
+        /// a user has more than one method available. With this setting, SMS doesn't qualify
         /// for a valid password recovery mechanism if the user also has SMS multi-factor authentication
         /// (MFA) activated. In the absence of this setting, Amazon Cognito uses the legacy behavior
         /// to determine the recovery method where SMS is preferred through email.
@@ -93,7 +93,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property AdminCreateUserConfig. 
         /// <para>
-        /// The configuration for <code>AdminCreateUser</code> requests.
+        /// The configuration for <c>AdminCreateUser</c> requests.
         /// </para>
         /// </summary>
         public AdminCreateUserConfigType AdminCreateUserConfig
@@ -187,7 +187,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <para>
         /// A custom domain name that you provide to Amazon Cognito. This parameter applies only
         /// if you use a custom domain to host the sign-up and sign-in pages for your application.
-        /// An example of a custom domain name might be <code>auth.example.com</code>.
+        /// An example of a custom domain name might be <c>auth.example.com</c>.
         /// </para>
         ///  
         /// <para>
@@ -211,16 +211,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// When active, <code>DeletionProtection</code> prevents accidental deletion of your
-        /// user pool. Before you can delete a user pool that you have protected against deletion,
-        /// you must deactivate this feature.
+        /// When active, <c>DeletionProtection</c> prevents accidental deletion of your user pool.
+        /// Before you can delete a user pool that you have protected against deletion, you must
+        /// deactivate this feature.
         /// </para>
         ///  
         /// <para>
-        /// When you try to delete a protected user pool in a <code>DeleteUserPool</code> API
-        /// request, Amazon Cognito returns an <code>InvalidParameterException</code> error. To
-        /// delete a protected user pool, send a new <code>DeleteUserPool</code> request after
-        /// you deactivate deletion protection in an <code>UpdateUserPool</code> API request.
+        /// When you try to delete a protected user pool in a <c>DeleteUserPool</c> API request,
+        /// Amazon Cognito returns an <c>InvalidParameterException</c> error. To delete a protected
+        /// user pool, send a new <c>DeleteUserPool</c> request after you deactivate deletion
+        /// protection in an <c>UpdateUserPool</c> API request.
         /// </para>
         /// </summary>
         public DeletionProtectionType DeletionProtection
@@ -243,8 +243,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you provide a value for any <code>DeviceConfiguration</code> field, you activate
-        /// the Amazon Cognito device-remembering feature.
+        /// When you provide a value for any <c>DeviceConfiguration</c> field, you activate the
+        /// Amazon Cognito device-remembering feature.
         /// </para>
         ///  </note>
         /// </summary>
@@ -302,7 +302,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property EmailConfigurationFailure. 
         /// <para>
-        /// Deprecated. Review error codes from API requests with <code>EventSource:cognito-idp.amazonaws.com</code>
+        /// Deprecated. Review error codes from API requests with <c>EventSource:cognito-idp.amazonaws.com</c>
         /// in CloudTrail for information about problems with user pool email configuration.
         /// </para>
         /// </summary>
@@ -438,17 +438,16 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OFF</code> - MFA tokens aren't required and can't be specified during user
-        /// registration.
+        ///  <c>OFF</c> - MFA tokens aren't required and can't be specified during user registration.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ON</code> - MFA tokens are required for all user registrations. You can only
-        /// specify required when you're initially creating a user pool.
+        ///  <c>ON</c> - MFA tokens are required for all user registrations. You can only specify
+        /// required when you're initially creating a user pool.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>OPTIONAL</code> - Users have the option when registering to create an MFA token.
+        ///  <c>OPTIONAL</c> - Users have the option when registering to create an MFA token.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -505,9 +504,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property SchemaAttributes. 
         /// <para>
         /// A list of the user attributes and their properties in your user pool. The attribute
-        /// schema contains standard attributes, custom attributes with a <code>custom:</code>
-        /// prefix, and developer attributes with a <code>dev:</code> prefix. For more information,
-        /// see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
+        /// schema contains standard attributes, custom attributes with a <c>custom:</c> prefix,
+        /// and developer attributes with a <c>dev:</c> prefix. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-attributes.html">User
         /// pool attributes</a>.
         /// </para>
         ///  
@@ -650,7 +648,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property UserAttributeUpdateSettings. 
         /// <para>
-        /// The settings for updates to user attributes. These settings include the property <code>AttributesRequireVerificationBeforeUpdate</code>,
+        /// The settings for updates to user attributes. These settings include the property <c>AttributesRequireVerificationBeforeUpdate</c>,
         /// a user-pool setting that tells Amazon Cognito how to handle changes to the value of
         /// your users' email address and phone number attributes. For more information, see <a
         /// href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-email-phone-verification.html#user-pool-settings-verifications-verify-attribute-updates">
@@ -692,9 +690,9 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UsernameConfiguration. 
         /// <para>
         /// Case sensitivity of the username input for the selected sign-in option. For example,
-        /// when case sensitivity is set to <code>False</code>, users can sign in using either
-        /// "username" or "Username". This configuration is immutable once it has been set. For
-        /// more information, see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
+        /// when case sensitivity is set to <c>False</c>, users can sign in using either "username"
+        /// or "Username". This configuration is immutable once it has been set. For more information,
+        /// see <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html">UsernameConfigurationType</a>.
         /// </para>
         /// </summary>
         public UsernameConfigurationType UsernameConfiguration
@@ -713,9 +711,8 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property UserPoolAddOns. 
         /// <para>
         /// User pool add-ons. Contains settings for activation of advanced security features.
-        /// To log user security information but take no action, set to <code>AUDIT</code>. To
-        /// configure automatic security responses to risky traffic to your user pool, set to
-        /// <code>ENFORCED</code>.
+        /// To log user security information but take no action, set to <c>AUDIT</c>. To configure
+        /// automatic security responses to risky traffic to your user pool, set to <c>ENFORCED</c>.
         /// </para>
         ///  
         /// <para>

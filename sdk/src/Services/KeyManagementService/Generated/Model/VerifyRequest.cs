@@ -36,9 +36,9 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     /// Verification confirms that an authorized user signed the message with the specified
     /// KMS key and signing algorithm, and the message hasn't changed since it was signed.
-    /// If the signature is verified, the value of the <code>SignatureValid</code> field in
-    /// the response is <code>True</code>. If the signature verification fails, the <code>Verify</code>
-    /// operation fails with an <code>KMSInvalidSignatureException</code> exception.
+    /// If the signature is verified, the value of the <c>SignatureValid</c> field in the
+    /// response is <c>True</c>. If the signature verification fails, the <c>Verify</c> operation
+    /// fails with an <c>KMSInvalidSignatureException</c> exception.
     /// </para>
     ///  
     /// <para>
@@ -49,10 +49,10 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// To use the <code>Verify</code> operation, specify the same asymmetric KMS key, message,
+    /// To use the <c>Verify</c> operation, specify the same asymmetric KMS key, message,
     /// and signing algorithm that were used to produce the signature. The message type does
     /// not need to be the same as the one used for signing, but it must indicate whether
-    /// the value of the <code>Message</code> parameter should be hashed as part of the verification
+    /// the value of the <c>Message</c> parameter should be hashed as part of the verification
     /// process.
     /// </para>
     ///  
@@ -60,15 +60,15 @@ namespace Amazon.KeyManagementService.Model
     /// You can also verify the digital signature by using the public key of the KMS key outside
     /// of KMS. Use the <a>GetPublicKey</a> operation to download the public key in the asymmetric
     /// KMS key and then use the public key to verify the signature outside of KMS. The advantage
-    /// of using the <code>Verify</code> operation is that it is performed within KMS. As
-    /// a result, it's easy to call, the operation is performed within the FIPS boundary,
-    /// it is logged in CloudTrail, and you can use key policy and IAM policy to determine
-    /// who is authorized to use the KMS key to verify signatures.
+    /// of using the <c>Verify</c> operation is that it is performed within KMS. As a result,
+    /// it's easy to call, the operation is performed within the FIPS boundary, it is logged
+    /// in CloudTrail, and you can use key policy and IAM policy to determine who is authorized
+    /// to use the KMS key to verify signatures.
     /// </para>
     ///  
     /// <para>
     /// To verify a signature outside of KMS with an SM2 public key (China Regions only),
-    /// you must specify the distinguishing ID. By default, KMS uses <code>1234567812345678</code>
+    /// you must specify the distinguishing ID. By default, KMS uses <c>1234567812345678</c>
     /// as the distinguishing ID. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-sm-offline-verification">Offline
     /// verification with SM2 key pairs</a>.
     /// </para>
@@ -82,7 +82,7 @@ namespace Amazon.KeyManagementService.Model
     /// <para>
     ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
     /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-    /// <code>KeyId</code> parameter. 
+    /// <c>KeyId</c> parameter. 
     /// </para>
     ///  
     /// <para>
@@ -113,8 +113,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property DryRun. 
         /// <para>
-        /// Checks if your request will succeed. <code>DryRun</code> is an optional parameter.
-        /// 
+        /// Checks if your request will succeed. <c>DryRun</c> is an optional parameter. 
         /// </para>
         ///  
         /// <para>
@@ -171,7 +170,7 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// To specify a KMS key, use its key ID, key ARN, alias name, or alias ARN. When using
-        /// an alias name, prefix it with <code>"alias/"</code>. To specify a KMS key in a different
+        /// an alias name, prefix it with <c>"alias/"</c>. To specify a KMS key in a different
         /// Amazon Web Services account, you must use the key ARN or alias ARN.
         /// </para>
         ///  
@@ -180,20 +179,20 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> 
+        /// Key ID: <c>1234abcd-12ab-34cd-56ef-1234567890ab</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
+        /// Key ARN: <c>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</c>
         /// 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias name: <code>alias/ExampleAlias</code> 
+        /// Alias name: <c>alias/ExampleAlias</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code> 
+        /// Alias ARN: <c>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</c> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -218,8 +217,8 @@ namespace Amazon.KeyManagementService.Model
         /// Gets and sets the property Message. 
         /// <para>
         /// Specifies the message that was signed. You can submit a raw message of up to 4096
-        /// bytes, or a hash digest of the message. If you submit a digest, use the <code>MessageType</code>
-        /// parameter with a value of <code>DIGEST</code>.
+        /// bytes, or a hash digest of the message. If you submit a digest, use the <c>MessageType</c>
+        /// parameter with a value of <c>DIGEST</c>.
         /// </para>
         ///  
         /// <para>
@@ -243,38 +242,37 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property MessageType. 
         /// <para>
-        /// Tells KMS whether the value of the <code>Message</code> parameter should be hashed
-        /// as part of the signing algorithm. Use <code>RAW</code> for unhashed messages; use
-        /// <code>DIGEST</code> for message digests, which are already hashed.
+        /// Tells KMS whether the value of the <c>Message</c> parameter should be hashed as part
+        /// of the signing algorithm. Use <c>RAW</c> for unhashed messages; use <c>DIGEST</c>
+        /// for message digests, which are already hashed.
         /// </para>
         ///  
         /// <para>
-        /// When the value of <code>MessageType</code> is <code>RAW</code>, KMS uses the standard
-        /// signing algorithm, which begins with a hash function. When the value is <code>DIGEST</code>,
-        /// KMS skips the hashing step in the signing algorithm.
+        /// When the value of <c>MessageType</c> is <c>RAW</c>, KMS uses the standard signing
+        /// algorithm, which begins with a hash function. When the value is <c>DIGEST</c>, KMS
+        /// skips the hashing step in the signing algorithm.
         /// </para>
         ///  <important> 
         /// <para>
-        /// Use the <code>DIGEST</code> value only when the value of the <code>Message</code>
-        /// parameter is a message digest. If you use the <code>DIGEST</code> value with an unhashed
-        /// message, the security of the verification operation can be compromised.
+        /// Use the <c>DIGEST</c> value only when the value of the <c>Message</c> parameter is
+        /// a message digest. If you use the <c>DIGEST</c> value with an unhashed message, the
+        /// security of the verification operation can be compromised.
         /// </para>
         ///  </important> 
         /// <para>
-        /// When the value of <code>MessageType</code>is <code>DIGEST</code>, the length of the
-        /// <code>Message</code> value must match the length of hashed messages for the specified
-        /// signing algorithm.
+        /// When the value of <c>MessageType</c>is <c>DIGEST</c>, the length of the <c>Message</c>
+        /// value must match the length of hashed messages for the specified signing algorithm.
         /// </para>
         ///  
         /// <para>
-        /// You can submit a message digest and omit the <code>MessageType</code> or specify <code>RAW</code>
+        /// You can submit a message digest and omit the <c>MessageType</c> or specify <c>RAW</c>
         /// so the digest is hashed again while signing. However, if the signed message is hashed
         /// once while signing, but twice while verifying, verification fails, even when the message
         /// hasn't changed.
         /// </para>
         ///  
         /// <para>
-        /// The hashing algorithm in that <code>Verify</code> uses is based on the <code>SigningAlgorithm</code>
+        /// The hashing algorithm in that <c>Verify</c> uses is based on the <c>SigningAlgorithm</c>
         /// value.
         /// </para>
         ///  <ul> <li> 
@@ -311,7 +309,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Signature. 
         /// <para>
-        /// The signature that the <code>Sign</code> operation generated.
+        /// The signature that the <c>Sign</c> operation generated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=6144)]

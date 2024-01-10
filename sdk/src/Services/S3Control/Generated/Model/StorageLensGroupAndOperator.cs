@@ -100,8 +100,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MatchObjectAge. 
         /// <para>
-        ///  Contains <code>DaysGreaterThan</code> and <code>DaysLessThan</code> to define the
-        /// object age range (minimum and maximum number of days). 
+        ///  Contains <c>DaysGreaterThan</c> and <c>DaysLessThan</c> to define the object age
+        /// range (minimum and maximum number of days). 
         /// </para>
         /// </summary>
         public MatchObjectAge MatchObjectAge
@@ -119,8 +119,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property MatchObjectSize. 
         /// <para>
-        ///  Contains <code>BytesGreaterThan</code> and <code>BytesLessThan</code> to define the
-        /// object size range (minimum and maximum number of Bytes). 
+        ///  Contains <c>BytesGreaterThan</c> and <c>BytesLessThan</c> to define the object size
+        /// range (minimum and maximum number of Bytes). 
         /// </para>
         /// </summary>
         public MatchObjectSize MatchObjectSize

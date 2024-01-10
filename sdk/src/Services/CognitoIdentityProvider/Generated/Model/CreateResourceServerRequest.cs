@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// Gets and sets the property Identifier. 
         /// <para>
         /// A unique resource server identifier for the resource server. This could be an HTTPS
-        /// endpoint where the resource server is located, such as <code>https://my-weather-api.example.com</code>.
+        /// endpoint where the resource server is located, such as <c>https://my-weather-api.example.com</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -103,8 +103,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// <summary>
         /// Gets and sets the property Scopes. 
         /// <para>
-        /// A list of scopes. Each scope is a key-value map with the keys <code>name</code> and
-        /// <code>description</code>.
+        /// A list of scopes. Each scope is a key-value map with the keys <c>name</c> and <c>description</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=100)]

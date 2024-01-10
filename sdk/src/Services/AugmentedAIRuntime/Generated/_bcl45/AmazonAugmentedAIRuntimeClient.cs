@@ -57,8 +57,8 @@ namespace Amazon.AugmentedAIRuntime
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Start a human loop with the <code>StartHumanLoop</code> operation when using Amazon
-    /// A2I with a <i>custom task type</i>. To learn more about the difference between custom
+    /// Start a human loop with the <c>StartHumanLoop</c> operation when using Amazon A2I
+    /// with a <i>custom task type</i>. To learn more about the difference between custom
     /// and built-in task types, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-task-types-general.html">Use
     /// Task Types </a>. To learn how to start a human loop using this API, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-start-human-loop.html#a2i-instructions-starthumanloop">Create
     /// and Start a Human Loop for a Custom Task Type </a> in the Amazon SageMaker Developer
@@ -308,7 +308,7 @@ namespace Amazon.AugmentedAIRuntime
         /// 
         ///  
         /// <para>
-        /// If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.
+        /// If the human loop was deleted, this operation will return a <c>ResourceNotFoundException</c>.
         /// 
         /// </para>
         /// </summary>
@@ -344,7 +344,7 @@ namespace Amazon.AugmentedAIRuntime
         /// 
         ///  
         /// <para>
-        /// If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code>.
+        /// If the human loop was deleted, this operation will return a <c>ResourceNotFoundException</c>.
         /// 
         /// </para>
         /// </summary>
@@ -384,7 +384,7 @@ namespace Amazon.AugmentedAIRuntime
 
         /// <summary>
         /// Returns information about the specified human loop. If the human loop was deleted,
-        /// this operation will return a <code>ResourceNotFoundException</code> error.
+        /// this operation will return a <c>ResourceNotFoundException</c> error.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHumanLoop service method.</param>
         /// 
@@ -415,7 +415,7 @@ namespace Amazon.AugmentedAIRuntime
 
         /// <summary>
         /// Returns information about the specified human loop. If the human loop was deleted,
-        /// this operation will return a <code>ResourceNotFoundException</code> error.
+        /// this operation will return a <c>ResourceNotFoundException</c> error.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHumanLoop service method.</param>
         /// <param name="cancellationToken">

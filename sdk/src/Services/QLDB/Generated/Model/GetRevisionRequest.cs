@@ -31,7 +31,7 @@ namespace Amazon.QLDB.Model
     /// <summary>
     /// Container for the parameters to the GetRevision operation.
     /// Returns a revision data object for a specified document ID and block address. Also
-    /// returns a proof of the specified revision for verification if <code>DigestTipAddress</code>
+    /// returns a proof of the specified revision for verification if <c>DigestTipAddress</c>
     /// is provided.
     /// </summary>
     public partial class GetRevisionRequest : AmazonQLDBRequest
@@ -45,11 +45,11 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property BlockAddress. 
         /// <para>
         /// The block location of the document revision to be verified. An address is an Amazon
-        /// Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+        /// Ion structure that has two fields: <c>strandId</c> and <c>sequenceNo</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
+        /// For example: <c>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
@@ -69,11 +69,11 @@ namespace Amazon.QLDB.Model
         /// Gets and sets the property DigestTipAddress. 
         /// <para>
         /// The latest block location covered by the digest for which to request a proof. An address
-        /// is an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
+        /// is an Amazon Ion structure that has two fields: <c>strandId</c> and <c>sequenceNo</c>.
         /// </para>
         ///  
         /// <para>
-        /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
+        /// For example: <c>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

@@ -51,8 +51,8 @@ namespace Amazon.DeviceFarm.Model
         /// Gets and sets the property ClientId. 
         /// <para>
         /// Unique identifier for the client. If you want access to multiple devices on the same
-        /// client, you should pass the same <code>clientId</code> value in each call to <code>CreateRemoteAccessSession</code>.
-        /// This identifier is required only if <code>remoteDebugEnabled</code> is set to <code>true</code>.
+        /// client, you should pass the same <c>clientId</c> value in each call to <c>CreateRemoteAccessSession</c>.
+        /// This identifier is required only if <c>remoteDebugEnabled</c> is set to <c>true</c>.
         /// </para>
         ///  
         /// <para>
@@ -208,8 +208,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property RemoteDebugEnabled. 
         /// <para>
-        /// Set to <code>true</code> if you want to access devices remotely for debugging in your
-        /// remote access session.
+        /// Set to <c>true</c> if you want to access devices remotely for debugging in your remote
+        /// access session.
         /// </para>
         ///  
         /// <para>
@@ -251,7 +251,7 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property RemoteRecordEnabled. 
         /// <para>
-        /// Set to <code>true</code> to enable remote recording for the remote access session.
+        /// Set to <c>true</c> to enable remote recording for the remote access session.
         /// </para>
         /// </summary>
         public bool RemoteRecordEnabled
@@ -269,8 +269,8 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SkipAppResign. 
         /// <para>
-        /// When set to <code>true</code>, for private devices, Device Farm does not sign your
-        /// app again. For public devices, Device Farm always signs your apps again.
+        /// When set to <c>true</c>, for private devices, Device Farm does not sign your app again.
+        /// For public devices, Device Farm always signs your apps again.
         /// </para>
         ///  
         /// <para>
@@ -293,9 +293,9 @@ namespace Amazon.DeviceFarm.Model
         /// <summary>
         /// Gets and sets the property SshPublicKey. 
         /// <para>
-        /// Ignored. The public key of the <code>ssh</code> key pair you want to use for connecting
-        /// to remote devices in your remote debugging session. This key is required only if <code>remoteDebugEnabled</code>
-        /// is set to <code>true</code>.
+        /// Ignored. The public key of the <c>ssh</c> key pair you want to use for connecting
+        /// to remote devices in your remote debugging session. This key is required only if <c>remoteDebugEnabled</c>
+        /// is set to <c>true</c>.
         /// </para>
         ///  
         /// <para>

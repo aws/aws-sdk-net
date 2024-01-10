@@ -93,8 +93,8 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// You can prefix your search value with an exclamation mark (<code>!</code>) in order
-        /// to perform negation filters. 
+        /// You can prefix your search value with an exclamation mark (<c>!</c>) in order to perform
+        /// negation filters. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]

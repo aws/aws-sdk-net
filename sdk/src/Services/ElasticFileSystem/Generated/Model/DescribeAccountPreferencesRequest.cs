@@ -41,7 +41,7 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// (Optional) When retrieving account preferences, you can optionally specify the <code>MaxItems</code>
+        /// (Optional) When retrieving account preferences, you can optionally specify the <c>MaxItems</c>
         /// parameter to limit the number of objects returned in a response. The default value
         /// is 100. 
         /// </para>
@@ -62,8 +62,8 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// (Optional) You can use <code>NextToken</code> in a subsequent request to fetch the
-        /// next page of Amazon Web Services account preferences if the response payload was paginated.
+        /// (Optional) You can use <c>NextToken</c> in a subsequent request to fetch the next
+        /// page of Amazon Web Services account preferences if the response payload was paginated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

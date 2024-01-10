@@ -39,16 +39,16 @@ namespace Amazon.Chime.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
+    /// Use privacy = <c>PUBLIC</c> to retrieve all public channels in the account.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list
-    /// the private channels in an account.
+    /// Only an <c>AppInstanceAdmin</c> can set privacy = <c>PRIVATE</c> to list the private
+    /// channels in an account.
     /// </para>
     ///  </li> </ul> <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
+    /// The <c>x-amz-chime-bearer</c> request header is mandatory. Use the <c>AppInstanceUserArn</c>
     /// of the user that makes the API call as the value in the header.
     /// </para>
     ///  </note> <important> 
@@ -76,7 +76,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -95,7 +95,7 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The <c>AppInstanceUserArn</c> of the user that makes the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -152,9 +152,9 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property Privacy. 
         /// <para>
-        /// The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code>
-        /// retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private
-        /// channels. 
+        /// The privacy setting. <c>PUBLIC</c> retrieves all the public channels. <c>PRIVATE</c>
+        /// retrieves private channels. Only an <c>AppInstanceAdmin</c> can retrieve private channels.
+        /// 
         /// </para>
         /// </summary>
         public ChannelPrivacy Privacy

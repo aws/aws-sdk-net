@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Two or more batch entries in the request have the same <code>Id</code>.
+    /// Two or more batch entries in the request have the same <c>Id</c>.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

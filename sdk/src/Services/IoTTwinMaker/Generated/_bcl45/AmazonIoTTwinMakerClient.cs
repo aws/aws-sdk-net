@@ -1619,8 +1619,8 @@ namespace Amazon.IoTTwinMaker
         /// 
         ///  
         /// <para>
-        /// You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>,
-        /// <code>entityId</code>, or <code>workspaceId</code>.
+        /// You must specify a value for either <c>componentName</c>, <c>componentTypeId</c>,
+        /// <c>entityId</c>, or <c>workspaceId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPropertyValue service method.</param>
@@ -1663,8 +1663,8 @@ namespace Amazon.IoTTwinMaker
         /// 
         ///  
         /// <para>
-        /// You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>,
-        /// <code>entityId</code>, or <code>workspaceId</code>.
+        /// You must specify a value for either <c>componentName</c>, <c>componentTypeId</c>,
+        /// <c>entityId</c>, or <c>workspaceId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPropertyValue service method.</param>
@@ -1715,9 +1715,9 @@ namespace Amazon.IoTTwinMaker
         /// 
         ///  
         /// <para>
-        /// You must specify a value for <code>workspaceId</code>. For entity-specific queries,
-        /// specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity
-        /// quries, specify a value for <code>componentTypeId</code>.
+        /// You must specify a value for <c>workspaceId</c>. For entity-specific queries, specify
+        /// values for <c>componentName</c> and <c>entityId</c>. For cross-entity quries, specify
+        /// a value for <c>componentTypeId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPropertyValueHistory service method.</param>
@@ -1761,9 +1761,9 @@ namespace Amazon.IoTTwinMaker
         /// 
         ///  
         /// <para>
-        /// You must specify a value for <code>workspaceId</code>. For entity-specific queries,
-        /// specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity
-        /// quries, specify a value for <code>componentTypeId</code>.
+        /// You must specify a value for <c>workspaceId</c>. For entity-specific queries, specify
+        /// values for <c>componentName</c> and <c>entityId</c>. For cross-entity quries, specify
+        /// a value for <c>componentTypeId</c>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPropertyValueHistory service method.</param>

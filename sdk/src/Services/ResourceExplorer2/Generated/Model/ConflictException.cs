@@ -41,9 +41,9 @@ namespace Amazon.ResourceExplorer2.Model
     /// </para>
     ///  
     /// <para>
-    /// If you attempted to update an index type to <code>AGGREGATOR</code>, then the request
-    /// failed because you already have an <code>AGGREGATOR</code> index in a different Amazon
-    /// Web Services Region.
+    /// If you attempted to update an index type to <c>AGGREGATOR</c>, then the request failed
+    /// because you already have an <c>AGGREGATOR</c> index in a different Amazon Web Services
+    /// Region.
     /// </para>
     /// </summary>
     #if !NETSTANDARD

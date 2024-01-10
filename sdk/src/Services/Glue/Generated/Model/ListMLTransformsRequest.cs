@@ -32,9 +32,9 @@ namespace Amazon.Glue.Model
     /// Container for the parameters to the ListMLTransforms operation.
     /// Retrieves a sortable, filterable list of existing Glue machine learning transforms
     /// in this Amazon Web Services account, or the resources with the specified tag. This
-    /// operation takes the optional <code>Tags</code> field, which you can use as a filter
-    /// of the responses so that tagged resources can be retrieved as a group. If you choose
-    /// to use tag filtering, only resources with the tags are retrieved.
+    /// operation takes the optional <c>Tags</c> field, which you can use as a filter of the
+    /// responses so that tagged resources can be retrieved as a group. If you choose to use
+    /// tag filtering, only resources with the tags are retrieved.
     /// </summary>
     public partial class ListMLTransformsRequest : AmazonGlueRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Filter. 
         /// <para>
-        /// A <code>TransformFilterCriteria</code> used to filter the machine learning transforms.
+        /// A <c>TransformFilterCriteria</c> used to filter the machine learning transforms.
         /// </para>
         /// </summary>
         public TransformFilterCriteria Filter
@@ -102,7 +102,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Sort. 
         /// <para>
-        /// A <code>TransformSortCriteria</code> used to sort the machine learning transforms.
+        /// A <c>TransformSortCriteria</c> used to sort the machine learning transforms.
         /// </para>
         /// </summary>
         public TransformSortCriteria Sort

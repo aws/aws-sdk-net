@@ -41,8 +41,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An identifier returned from the previous <code>ListTagsForResource</code> call. It
-        /// can be used to return the next set of applications in the list.
+        /// An identifier returned from the previous <c>ListTagsForResource</c> call. It can be
+        /// used to return the next set of applications in the list.
         /// </para>
         /// </summary>
         public string NextToken
@@ -60,9 +60,8 @@ namespace Amazon.CodeDeploy.Model
         /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        ///  The ARN of a CodeDeploy resource. <code>ListTagsForResource</code> returns all the
-        /// tags associated with the resource that is identified by the <code>ResourceArn</code>.
-        /// 
+        ///  The ARN of a CodeDeploy resource. <c>ListTagsForResource</c> returns all the tags
+        /// associated with the resource that is identified by the <c>ResourceArn</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1011)]

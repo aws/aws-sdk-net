@@ -127,7 +127,7 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If this response is for a create request that had <code>DryRun</code> set to <code>TRUE</code>,
+        /// If this response is for a create request that had <c>DryRun</c> set to <c>TRUE</c>,
         /// then this ARN is a placeholder that isn't attached to a valid resource.
         /// </para>
         ///  </note>

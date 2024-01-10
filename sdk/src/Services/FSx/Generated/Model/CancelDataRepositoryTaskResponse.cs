@@ -43,29 +43,29 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PENDING</code> - Amazon FSx has not started the task.
+        ///  <c>PENDING</c> - Amazon FSx has not started the task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>EXECUTING</code> - Amazon FSx is processing the task.
+        ///  <c>EXECUTING</c> - Amazon FSx is processing the task.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>FAILED</code> - Amazon FSx was not able to complete the task. For example,
-        /// there may be files the task failed to process. The <a>DataRepositoryTaskFailureDetails</a>
+        ///  <c>FAILED</c> - Amazon FSx was not able to complete the task. For example, there
+        /// may be files the task failed to process. The <a>DataRepositoryTaskFailureDetails</a>
         /// property provides more information about task failures.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUCCEEDED</code> - FSx completed the task successfully.
+        ///  <c>SUCCEEDED</c> - FSx completed the task successfully.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELED</code> - Amazon FSx canceled the task and it did not complete.
+        ///  <c>CANCELED</c> - Amazon FSx canceled the task and it did not complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELING</code> - FSx is in process of canceling the task.
+        ///  <c>CANCELING</c> - FSx is in process of canceling the task.
         /// </para>
         ///  </li> </ul>
         /// </summary>

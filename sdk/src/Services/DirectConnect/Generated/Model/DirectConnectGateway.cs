@@ -102,19 +102,19 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>pending</code>: The initial state after calling <a>CreateDirectConnectGateway</a>.
+        ///  <c>pending</c>: The initial state after calling <a>CreateDirectConnectGateway</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>available</code>: The Direct Connect gateway is ready for use.
+        ///  <c>available</c>: The Direct Connect gateway is ready for use.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleting</code>: The initial state after calling <a>DeleteDirectConnectGateway</a>.
+        ///  <c>deleting</c>: The initial state after calling <a>DeleteDirectConnectGateway</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>deleted</code>: The Direct Connect gateway is deleted and cannot pass traffic.
+        ///  <c>deleted</c>: The Direct Connect gateway is deleted and cannot pass traffic.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDomainName operation.
-    /// Updates a custom <code>DomainName</code> object.
+    /// Updates a custom <c>DomainName</c> object.
     /// </summary>
     public partial class UpdateDomainNameRequest : AmazonAppSyncRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the <code>DomainName</code>.
+        /// A description of the <c>DomainName</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]

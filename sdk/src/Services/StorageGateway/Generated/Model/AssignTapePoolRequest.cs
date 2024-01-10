@@ -45,14 +45,14 @@ namespace Amazon.StorageGateway.Model
         /// Gets and sets the property BypassGovernanceRetention. 
         /// <para>
         /// Set permissions to bypass governance retention. If the lock type of the archived tape
-        /// is <code>Governance</code>, the tape's archived age is not older than <code>RetentionLockInDays</code>,
-        /// and the user does not already have <code>BypassGovernanceRetention</code>, setting
-        /// this to TRUE enables the user to bypass the retention lock. This parameter is set
-        /// to true by default for calls from the console.
+        /// is <c>Governance</c>, the tape's archived age is not older than <c>RetentionLockInDays</c>,
+        /// and the user does not already have <c>BypassGovernanceRetention</c>, setting this
+        /// to TRUE enables the user to bypass the retention lock. This parameter is set to true
+        /// by default for calls from the console.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>TRUE</code> | <code>FALSE</code> 
+        /// Valid values: <c>TRUE</c> | <c>FALSE</c> 
         /// </para>
         /// </summary>
         public bool BypassGovernanceRetention

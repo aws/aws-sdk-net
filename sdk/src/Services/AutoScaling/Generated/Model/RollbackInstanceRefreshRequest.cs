@@ -52,11 +52,11 @@ namespace Amazon.AutoScaling.Model
     ///  </li> <li> 
     /// <para>
     /// The Auto Scaling group has a launch template that uses an Amazon Web Services Systems
-    /// Manager parameter instead of an AMI ID for the <code>ImageId</code> property.
+    /// Manager parameter instead of an AMI ID for the <c>ImageId</c> property.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The Auto Scaling group uses the launch template's <code>$Latest</code> or <code>$Default</code>
+    /// The Auto Scaling group uses the launch template's <c>$Latest</c> or <c>$Default</c>
     /// version.
     /// </para>
     ///  </li> </ul> 

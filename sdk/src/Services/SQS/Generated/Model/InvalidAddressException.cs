@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// The <code>accountId</code> is invalid.
+    /// The <c>accountId</c> is invalid.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

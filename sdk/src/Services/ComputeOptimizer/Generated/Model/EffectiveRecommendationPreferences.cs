@@ -49,7 +49,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, when you specify <code>AWS_ARM64</code> with:
+        /// For example, when you specify <c>AWS_ARM64</c> with:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -89,9 +89,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// A status of <code>Active</code> confirms that the preference is applied in the latest
-        /// recommendation refresh, and a status of <code>Inactive</code> confirms that it's not
-        /// yet applied to recommendations.
+        /// A status of <c>Active</c> confirms that the preference is applied in the latest recommendation
+        /// refresh, and a status of <c>Inactive</c> confirms that it's not yet applied to recommendations.
         /// </para>
         ///  
         /// <para>
@@ -119,9 +118,8 @@ namespace Amazon.ComputeOptimizer.Model
         ///  
         /// <para>
         ///  If the preference is applied in the latest recommendation refresh, an object with
-        /// a valid <code>source</code> value appears in the response. If the preference isn't
-        /// applied to the recommendations already, then this object doesn't appear in the response.
-        /// 
+        /// a valid <c>source</c> value appears in the response. If the preference isn't applied
+        /// to the recommendations already, then this object doesn't appear in the response. 
         /// </para>
         /// </summary>
         public ExternalMetricsPreference ExternalMetricsPreference
@@ -143,9 +141,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  
         /// <para>
-        /// A status of <code>Active</code> confirms that the preference is applied in the latest
-        /// recommendation refresh. A status of <code>Inactive</code> confirms that it's not yet
-        /// applied to recommendations.
+        /// A status of <c>Active</c> confirms that the preference is applied in the latest recommendation
+        /// refresh. A status of <c>Inactive</c> confirms that it's not yet applied to recommendations.
         /// </para>
         /// </summary>
         public InferredWorkloadTypesPreference InferredWorkloadTypes

@@ -62,17 +62,16 @@ namespace Amazon.PI.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values for <code>Metric</code> are:
+        /// Valid values for <c>Metric</c> are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>db.load.avg</code> - A scaled representation of the number of active sessions
-        /// for the database engine.
+        ///  <c>db.load.avg</c> - A scaled representation of the number of active sessions for
+        /// the database engine.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>db.sampledload.avg</code> - The raw number of active sessions for the database
-        /// engine.
+        ///  <c>db.sampledload.avg</c> - The raw number of active sessions for the database engine.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -82,12 +81,11 @@ namespace Amazon.PI.Model
         ///  </li> </ul> 
         /// <para>
         /// If the number of active sessions is less than an internal Performance Insights threshold,
-        /// <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If
-        /// the number of active sessions is greater than the internal threshold, Performance
-        /// Insights samples the active sessions, with <code>db.load.avg</code> showing the scaled
-        /// values, <code>db.sampledload.avg</code> showing the raw values, and <code>db.sampledload.avg</code>
-        /// less than <code>db.load.avg</code>. For most use cases, you can query <code>db.load.avg</code>
-        /// only. 
+        /// <c>db.load.avg</c> and <c>db.sampledload.avg</c> are the same value. If the number
+        /// of active sessions is greater than the internal threshold, Performance Insights samples
+        /// the active sessions, with <c>db.load.avg</c> showing the scaled values, <c>db.sampledload.avg</c>
+        /// showing the raw values, and <c>db.sampledload.avg</c> less than <c>db.load.avg</c>.
+        /// For most use cases, you can query <c>db.load.avg</c> only. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

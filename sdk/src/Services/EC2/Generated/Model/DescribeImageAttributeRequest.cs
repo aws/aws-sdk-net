@@ -61,9 +61,9 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Note</b>: The <code>blockDeviceMapping</code> attribute is deprecated. Using this
-        /// attribute returns the <code>Client.AuthFailure</code> error. To get information about
-        /// the block device mappings for an AMI, use the <a>DescribeImages</a> action.
+        ///  <b>Note</b>: The <c>blockDeviceMapping</c> attribute is deprecated. Using this attribute
+        /// returns the <c>Client.AuthFailure</c> error. To get information about the block device
+        /// mappings for an AMI, use the <a>DescribeImages</a> action.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

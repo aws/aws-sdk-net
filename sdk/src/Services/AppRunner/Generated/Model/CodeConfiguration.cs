@@ -41,8 +41,8 @@ namespace Amazon.AppRunner.Model
         /// Gets and sets the property CodeConfigurationValues. 
         /// <para>
         /// The basic configuration for building and running the App Runner service. Use it to
-        /// quickly launch an App Runner service without providing a <code>apprunner.yaml</code>
-        /// file in the source code repository (or ignoring the file if it exists).
+        /// quickly launch an App Runner service without providing a <c>apprunner.yaml</c> file
+        /// in the source code repository (or ignoring the file if it exists).
         /// </para>
         /// </summary>
         public CodeConfigurationValues CodeConfigurationValues
@@ -64,13 +64,13 @@ namespace Amazon.AppRunner.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>REPOSITORY</code> – App Runner reads configuration values from the <code>apprunner.yaml</code>
-        /// file in the source code repository and ignores <code>CodeConfigurationValues</code>.
+        ///  <c>REPOSITORY</c> – App Runner reads configuration values from the <c>apprunner.yaml</c>
+        /// file in the source code repository and ignores <c>CodeConfigurationValues</c>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>API</code> – App Runner uses configuration values provided in <code>CodeConfigurationValues</code>
-        /// and ignores the <code>apprunner.yaml</code> file in the source code repository.
+        ///  <c>API</c> – App Runner uses configuration values provided in <c>CodeConfigurationValues</c>
+        /// and ignores the <c>apprunner.yaml</c> file in the source code repository.
         /// </para>
         ///  </li> </ul>
         /// </summary>

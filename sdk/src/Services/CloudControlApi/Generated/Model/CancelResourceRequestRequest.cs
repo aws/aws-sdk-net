@@ -36,7 +36,7 @@ namespace Amazon.CloudControlApi.Model
     /// 
     ///  
     /// <para>
-    /// Only resource operations requests with a status of <code>PENDING</code> or <code>IN_PROGRESS</code>
+    /// Only resource operations requests with a status of <c>PENDING</c> or <c>IN_PROGRESS</c>
     /// can be canceled.
     /// </para>
     /// </summary>
@@ -47,8 +47,8 @@ namespace Amazon.CloudControlApi.Model
         /// <summary>
         /// Gets and sets the property RequestToken. 
         /// <para>
-        /// The <code>RequestToken</code> of the <code>ProgressEvent</code> object returned by
-        /// the resource operation request.
+        /// The <c>RequestToken</c> of the <c>ProgressEvent</c> object returned by the resource
+        /// operation request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

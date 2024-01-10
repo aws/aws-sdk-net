@@ -45,18 +45,18 @@ namespace Amazon.NimbleStudio.Model
     /// </para>
     ///  
     /// <para>
-    /// The user role must have the <code>AmazonNimbleStudio-StudioUser</code> managed policy
+    /// The user role must have the <c>AmazonNimbleStudio-StudioUser</c> managed policy attached
+    /// for the portal to function properly.
+    /// </para>
+    ///  
+    /// <para>
+    /// The admin role must have the <c>AmazonNimbleStudio-StudioAdmin</c> managed policy
     /// attached for the portal to function properly.
     /// </para>
     ///  
     /// <para>
-    /// The admin role must have the <code>AmazonNimbleStudio-StudioAdmin</code> managed policy
-    /// attached for the portal to function properly.
-    /// </para>
-    ///  
-    /// <para>
-    /// Your studio roles must trust the <code>identity.nimble.amazonaws.com</code> service
-    /// principal to function properly.
+    /// Your studio roles must trust the <c>identity.nimble.amazonaws.com</c> service principal
+    /// to function properly.
     /// </para>
     /// </summary>
     public partial class Studio

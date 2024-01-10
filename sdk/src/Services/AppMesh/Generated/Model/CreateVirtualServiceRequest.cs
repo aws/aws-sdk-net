@@ -36,9 +36,9 @@ namespace Amazon.AppMesh.Model
     /// <para>
     /// A virtual service is an abstraction of a real service that is provided by a virtual
     /// node directly or indirectly by means of a virtual router. Dependent services call
-    /// your virtual service by its <code>virtualServiceName</code>, and those requests are
-    /// routed to the virtual node or virtual router that is specified as the provider for
-    /// the virtual service.
+    /// your virtual service by its <c>virtualServiceName</c>, and those requests are routed
+    /// to the virtual node or virtual router that is specified as the provider for the virtual
+    /// service.
     /// </para>
     ///  
     /// <para>

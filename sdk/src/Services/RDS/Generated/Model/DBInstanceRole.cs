@@ -42,7 +42,7 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property FeatureName. 
         /// <para>
         /// The name of the feature associated with the Amazon Web Services Identity and Access
-        /// Management (IAM) role. For information about supported feature names, see <code>DBEngineVersion</code>.
+        /// Management (IAM) role. For information about supported feature names, see <c>DBEngineVersion</c>.
         /// </para>
         /// </summary>
         public string FeatureName
@@ -83,17 +83,17 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>ACTIVE</code> - the IAM role ARN is associated with the DB instance and can
-        /// be used to access other Amazon Web Services services on your behalf.
+        ///  <c>ACTIVE</c> - the IAM role ARN is associated with the DB instance and can be used
+        /// to access other Amazon Web Services services on your behalf.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>PENDING</code> - the IAM role ARN is being associated with the DB instance.
+        ///  <c>PENDING</c> - the IAM role ARN is being associated with the DB instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>INVALID</code> - the IAM role ARN is associated with the DB instance, but the
-        /// DB instance is unable to assume the IAM role in order to access other Amazon Web Services
+        ///  <c>INVALID</c> - the IAM role ARN is associated with the DB instance, but the DB
+        /// instance is unable to assume the IAM role in order to access other Amazon Web Services
         /// services on your behalf.
         /// </para>
         ///  </li> </ul>

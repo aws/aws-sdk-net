@@ -139,7 +139,7 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property KmsKeyId. 
         /// <para>
         /// The key ID or alias ARN of the KMS key that Secrets Manager uses to encrypt the secret
-        /// value. If the secret is encrypted with the Amazon Web Services managed key <code>aws/secretsmanager</code>,
+        /// value. If the secret is encrypted with the Amazon Web Services managed key <c>aws/secretsmanager</c>,
         /// this field is omitted. Secrets created using the console use an KMS key ID.
         /// </para>
         /// </summary>
@@ -274,7 +274,7 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property PrimaryRegion. 
         /// <para>
         /// The Region the secret is in. If a secret is replicated to other Regions, the replicas
-        /// are listed in <code>ReplicationStatus</code>. 
+        /// are listed in <c>ReplicationStatus</c>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -297,16 +297,16 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>Failed</code>, which indicates that the replica was not created.
+        ///  <c>Failed</c>, which indicates that the replica was not created.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InProgress</code>, which indicates that Secrets Manager is in the process of
-        /// creating the replica.
+        ///  <c>InProgress</c>, which indicates that Secrets Manager is in the process of creating
+        /// the replica.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>InSync</code>, which indicates that the replica was created.
+        ///  <c>InSync</c>, which indicates that the replica was created.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -418,22 +418,22 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWSCURRENT</code>, which indicates the current version of the secret.
+        ///  <c>AWSCURRENT</c>, which indicates the current version of the secret.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWSPENDING</code>, which indicates the version of the secret that contains
-        /// new secret information that will become the next current version when rotation finishes.
+        ///  <c>AWSPENDING</c>, which indicates the version of the secret that contains new secret
+        /// information that will become the next current version when rotation finishes.
         /// </para>
         ///  
         /// <para>
-        /// During rotation, Secrets Manager creates an <code>AWSPENDING</code> version ID before
-        /// creating the new secret version. To check if a secret version exists, call <a>GetSecretValue</a>.
+        /// During rotation, Secrets Manager creates an <c>AWSPENDING</c> version ID before creating
+        /// the new secret version. To check if a secret version exists, call <a>GetSecretValue</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWSPREVIOUS</code>, which indicates the previous current version of the secret.
-        /// You can use this as the <i>last known good</i> version.
+        ///  <c>AWSPREVIOUS</c>, which indicates the previous current version of the secret. You
+        /// can use this as the <i>last known good</i> version.
         /// </para>
         ///  </li> </ul> 
         /// <para>

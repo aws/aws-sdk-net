@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// The configuration for a <code>TableVisual</code>.
+    /// The configuration for a <c>TableVisual</c>.
     /// </summary>
     public partial class TableConfiguration
     {
@@ -98,7 +98,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SortConfiguration. 
         /// <para>
-        /// The sort configuration for a <code>TableVisual</code>.
+        /// The sort configuration for a <c>TableVisual</c>.
         /// </para>
         /// </summary>
         public TableSortConfiguration SortConfiguration

@@ -134,7 +134,7 @@ namespace Amazon.Lightsail.Model
         /// <summary>
         /// Gets and sets the property Timestamp. 
         /// <para>
-        /// The timestamp (<code>1479816991.349</code>).
+        /// The timestamp (<c>1479816991.349</c>).
         /// </para>
         /// </summary>
         public DateTime Timestamp

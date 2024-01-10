@@ -72,10 +72,10 @@ namespace Amazon.CleanRoomsML.Model
         /// <para>
         /// The list of output sizes of audiences that can be created using this configured audience
         /// model. A request to <a>StartAudienceGenerationJob</a> that uses this configured audience
-        /// model must have an <code>audienceSize</code> selected from this list. You can use
-        /// the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out audience sizes using
-        /// the count of identifiers in the output. You can use the <code>Percentage</code> <a>AudienceSize</a>
-        /// to configure sizes in the range 1-100 percent.
+        /// model must have an <c>audienceSize</c> selected from this list. You can use the <c>ABSOLUTE</c>
+        /// <a>AudienceSize</a> to configure out audience sizes using the count of identifiers
+        /// in the output. You can use the <c>Percentage</c> <a>AudienceSize</a> to configure
+        /// sizes in the range 1-100 percent.
         /// </para>
         /// </summary>
         public AudienceSizeConfig AudienceSizeConfig
@@ -93,7 +93,7 @@ namespace Amazon.CleanRoomsML.Model
         /// <summary>
         /// Gets and sets the property ChildResourceTagOnCreatePolicy. 
         /// <para>
-        /// Provides the <code>childResourceTagOnCreatePolicy</code> that was used for this configured
+        /// Provides the <c>childResourceTagOnCreatePolicy</c> that was used for this configured
         /// audience model.
         /// </para>
         /// </summary>

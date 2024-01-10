@@ -158,29 +158,29 @@ namespace Amazon.Outposts.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PREPARING</code> - Order is received and is being prepared.
+        ///  <c>PREPARING</c> - Order is received and is being prepared.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>IN_PROGRESS</code> - Order is either being built, shipped, or installed. For
-        /// more information, see the <code>LineItem</code> status.
+        ///  <c>IN_PROGRESS</c> - Order is either being built, shipped, or installed. For more
+        /// information, see the <c>LineItem</c> status.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>COMPLETED</code> - Order is complete.
+        ///  <c>COMPLETED</c> - Order is complete.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>CANCELLED</code> - Order is cancelled.
+        ///  <c>CANCELLED</c> - Order is cancelled.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ERROR</code> - Customer should contact support.
+        ///  <c>ERROR</c> - Customer should contact support.
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The following statuses are deprecated: <code>RECEIVED</code>, <code>PENDING</code>,
-        /// <code>PROCESSING</code>, <code>INSTALLING</code>, and <code>FULFILLED</code>. 
+        /// The following statuses are deprecated: <c>RECEIVED</c>, <c>PENDING</c>, <c>PROCESSING</c>,
+        /// <c>INSTALLING</c>, and <c>FULFILLED</c>. 
         /// </para>
         ///  </note>
         /// </summary>

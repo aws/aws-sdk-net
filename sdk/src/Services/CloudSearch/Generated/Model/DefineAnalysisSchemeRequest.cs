@@ -30,7 +30,7 @@ namespace Amazon.CloudSearch.Model
 {
     /// <summary>
     /// Container for the parameters to the DefineAnalysisScheme operation.
-    /// Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code>
+    /// Configures an analysis scheme that can be applied to a <c>text</c> or <c>text-array</c>
     /// field to define language-specific text processing options. For more information, see
     /// <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html"
     /// target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer

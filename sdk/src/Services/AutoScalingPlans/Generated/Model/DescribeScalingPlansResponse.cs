@@ -39,8 +39,8 @@ namespace Amazon.AutoScalingPlans.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token required to get the next set of results. This value is <code>null</code>
-        /// if there are no more results to return.
+        /// The token required to get the next set of results. This value is <c>null</c> if there
+        /// are no more results to return.
         /// </para>
         /// </summary>
         public string NextToken

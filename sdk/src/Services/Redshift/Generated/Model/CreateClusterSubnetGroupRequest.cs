@@ -71,7 +71,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Example: <code>examplesubnetgroup</code> 
+        /// Example: <c>examplesubnetgroup</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=2147483647)]

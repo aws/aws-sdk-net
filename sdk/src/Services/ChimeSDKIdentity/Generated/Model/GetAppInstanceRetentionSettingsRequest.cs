@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAppInstanceRetentionSettings operation.
-    /// Gets the retention settings for an <code>AppInstance</code>.
+    /// Gets the retention settings for an <c>AppInstance</c>.
     /// </summary>
     public partial class GetAppInstanceRetentionSettingsRequest : AmazonChimeSDKIdentityRequest
     {
@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property AppInstanceArn. 
         /// <para>
-        /// The ARN of the <code>AppInstance</code>.
+        /// The ARN of the <c>AppInstance</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

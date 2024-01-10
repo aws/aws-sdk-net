@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Route53Domains.Model
 {
     /// <summary>
-    /// The <code>CancelDomainTransferToAnotherAwsAccount</code> response includes the following
+    /// The <c>CancelDomainTransferToAnotherAwsAccount</c> response includes the following
     /// element.
     /// </summary>
     public partial class CancelDomainTransferToAnotherAwsAccountResponse : AmazonWebServiceResponse
@@ -39,10 +39,9 @@ namespace Amazon.Route53Domains.Model
         /// <summary>
         /// Gets and sets the property OperationId. 
         /// <para>
-        /// The identifier that <code>TransferDomainToAnotherAwsAccount</code> returned to track
-        /// the progress of the request. Because the transfer request was canceled, the value
-        /// is no longer valid, and you can't use <code>GetOperationDetail</code> to query the
-        /// operation status.
+        /// The identifier that <c>TransferDomainToAnotherAwsAccount</c> returned to track the
+        /// progress of the request. Because the transfer request was canceled, the value is no
+        /// longer valid, and you can't use <c>GetOperationDetail</c> to query the operation status.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

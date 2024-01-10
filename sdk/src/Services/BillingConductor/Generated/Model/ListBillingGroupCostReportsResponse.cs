@@ -39,7 +39,7 @@ namespace Amazon.BillingConductor.Model
         /// <summary>
         /// Gets and sets the property BillingGroupCostReports. 
         /// <para>
-        /// A list of <code>BillingGroupCostReportElement</code> retrieved. 
+        /// A list of <c>BillingGroupCostReportElement</c> retrieved. 
         /// </para>
         /// </summary>
         public List<BillingGroupCostReportElement> BillingGroupCostReports

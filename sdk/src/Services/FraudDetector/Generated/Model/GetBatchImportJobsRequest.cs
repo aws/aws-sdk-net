@@ -31,11 +31,10 @@ namespace Amazon.FraudDetector.Model
     /// <summary>
     /// Container for the parameters to the GetBatchImportJobs operation.
     /// Gets all batch import jobs or a specific job of the specified ID. This is a paginated
-    /// API. If you provide a null <code>maxResults</code>, this action retrieves a maximum
-    /// of 50 records per page. If you provide a <code>maxResults</code>, the value must be
-    /// between 1 and 50. To get the next page results, provide the pagination token from
-    /// the <code>GetBatchImportJobsResponse</code> as part of your request. A null pagination
-    /// token fetches the records from the beginning.
+    /// API. If you provide a null <c>maxResults</c>, this action retrieves a maximum of 50
+    /// records per page. If you provide a <c>maxResults</c>, the value must be between 1
+    /// and 50. To get the next page results, provide the pagination token from the <c>GetBatchImportJobsResponse</c>
+    /// as part of your request. A null pagination token fetches the records from the beginning.
     /// </summary>
     public partial class GetBatchImportJobsRequest : AmazonFraudDetectorRequest
     {

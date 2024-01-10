@@ -65,7 +65,7 @@ namespace Amazon.IoTSiteWise.Model
         /// Gets and sets the property DataTypeSpec. 
         /// <para>
         /// The data type of the structure for this property. This parameter exists on properties
-        /// that have the <code>STRUCT</code> data type.
+        /// that have the <c>STRUCT</c> data type.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -122,8 +122,8 @@ namespace Amazon.IoTSiteWise.Model
         ///  </li> <li> 
         /// <para>
         /// If you are calling UpdateAssetModel to modify an <i>existing</i> property: This can
-        /// be either the actual ID in UUID format, or else <code>externalId:</code> followed
-        /// by the external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
+        /// be either the actual ID in UUID format, or else <c>externalId:</c> followed by the
+        /// external ID, if it has one. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
         /// objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -181,7 +181,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The property type (see <code>PropertyType</code>).
+        /// The property type (see <c>PropertyType</c>).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -200,7 +200,7 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property Unit. 
         /// <para>
-        /// The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.
+        /// The unit of the asset model property, such as <c>Newtons</c> or <c>RPM</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

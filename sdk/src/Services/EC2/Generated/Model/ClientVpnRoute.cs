@@ -98,10 +98,10 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Origin. 
         /// <para>
-        /// Indicates how the route was associated with the Client VPN endpoint. <code>associate</code>
+        /// Indicates how the route was associated with the Client VPN endpoint. <c>associate</c>
         /// indicates that the route was automatically added when the target network was associated
-        /// with the Client VPN endpoint. <code>add-route</code> indicates that the route was
-        /// manually added using the <b>CreateClientVpnRoute</b> action.
+        /// with the Client VPN endpoint. <c>add-route</c> indicates that the route was manually
+        /// added using the <b>CreateClientVpnRoute</b> action.
         /// </para>
         /// </summary>
         public string Origin

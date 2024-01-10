@@ -42,8 +42,8 @@ namespace Amazon.CodeBuild.Model
         /// <summary>
         /// Gets and sets the property ExportConfig. 
         /// <para>
-        ///  A <code>ReportExportConfig</code> object that contains information about where the
-        /// report group test results are exported. 
+        ///  A <c>ReportExportConfig</c> object that contains information about where the report
+        /// group test results are exported. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

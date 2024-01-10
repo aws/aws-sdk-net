@@ -129,13 +129,13 @@ namespace Amazon.EMRServerless.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <b>Key Valid Values</b>: <code>SPARK_DRIVER</code>, <code>SPARK_EXECUTOR</code>,
-        /// <code>HIVE_DRIVER</code>, <code>TEZ_TASK</code> 
+        ///  <b>Key Valid Values</b>: <c>SPARK_DRIVER</c>, <c>SPARK_EXECUTOR</c>, <c>HIVE_DRIVER</c>,
+        /// <c>TEZ_TASK</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>Array Members Valid Values</b>: <code>STDOUT</code>, <code>STDERR</code>, <code>HIVE_LOG</code>,
-        /// <code>TEZ_AM</code>, <code>SYSTEM_LOGS</code> 
+        ///  <b>Array Members Valid Values</b>: <c>STDOUT</c>, <c>STDERR</c>, <c>HIVE_LOG</c>,
+        /// <c>TEZ_AM</c>, <c>SYSTEM_LOGS</c> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

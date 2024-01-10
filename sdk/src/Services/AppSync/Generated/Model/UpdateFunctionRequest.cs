@@ -30,7 +30,7 @@ namespace Amazon.AppSync.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateFunction operation.
-    /// Updates a <code>Function</code> object.
+    /// Updates a <c>Function</c> object.
     /// </summary>
     public partial class UpdateFunctionRequest : AmazonAppSyncRequest
     {
@@ -69,9 +69,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Code. 
         /// <para>
-        /// The <code>function</code> code that contains the request and response functions. When
-        /// code is used, the <code>runtime</code> is required. The <code>runtime</code> value
-        /// must be <code>APPSYNC_JS</code>.
+        /// The <c>function</c> code that contains the request and response functions. When code
+        /// is used, the <c>runtime</c> is required. The <c>runtime</c> value must be <c>APPSYNC_JS</c>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32768)]
@@ -90,7 +89,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property DataSourceName. 
         /// <para>
-        /// The <code>Function</code> <code>DataSource</code> name.
+        /// The <c>Function</c> <c>DataSource</c> name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65536)]
@@ -109,7 +108,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The <code>Function</code> description.
+        /// The <c>Function</c> description.
         /// </para>
         /// </summary>
         public string Description
@@ -146,8 +145,8 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property FunctionVersion. 
         /// <para>
-        /// The <code>version</code> of the request mapping template. Currently, the supported
-        /// value is 2018-05-29. Note that when using VTL and mapping templates, the <code>functionVersion</code>
+        /// The <c>version</c> of the request mapping template. Currently, the supported value
+        /// is 2018-05-29. Note that when using VTL and mapping templates, the <c>functionVersion</c>
         /// is required.
         /// </para>
         /// </summary>
@@ -185,7 +184,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The <code>Function</code> name.
+        /// The <c>Function</c> name.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65536)]
@@ -204,7 +203,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property RequestMappingTemplate. 
         /// <para>
-        /// The <code>Function</code> request mapping template. Functions support only the 2018-05-29
+        /// The <c>Function</c> request mapping template. Functions support only the 2018-05-29
         /// version of the request mapping template.
         /// </para>
         /// </summary>
@@ -224,7 +223,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ResponseMappingTemplate. 
         /// <para>
-        /// The <code>Function</code> request mapping template.
+        /// The <c>Function</c> request mapping template.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=65536)]

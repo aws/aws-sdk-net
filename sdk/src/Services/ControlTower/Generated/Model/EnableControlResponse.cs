@@ -39,7 +39,7 @@ namespace Amazon.ControlTower.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The ARN of the <code>EnabledControl</code> resource.
+        /// The ARN of the <c>EnabledControl</c> resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

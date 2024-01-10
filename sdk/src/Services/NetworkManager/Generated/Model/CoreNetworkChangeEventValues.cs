@@ -60,7 +60,7 @@ namespace Amazon.NetworkManager.Model
         /// <summary>
         /// Gets and sets the property Cidr. 
         /// <para>
-        /// For a <code>STATIC_ROUTE</code> event, this is the IP address.
+        /// For a <c>STATIC_ROUTE</c> event, this is the IP address.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]

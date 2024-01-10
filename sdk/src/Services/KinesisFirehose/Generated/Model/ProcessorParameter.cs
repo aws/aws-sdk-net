@@ -40,10 +40,9 @@ namespace Amazon.KinesisFirehose.Model
         /// Gets and sets the property ParameterName. 
         /// <para>
         /// The name of the parameter. Currently the following default values are supported: 3
-        /// for <code>NumberOfRetries</code> and 60 for the <code>BufferIntervalInSeconds</code>.
-        /// The <code>BufferSizeInMBs</code> ranges between 0.2 MB and up to 3MB. The default
-        /// buffering hint is 1MB for all destinations, except Splunk. For Splunk, the default
-        /// buffering hint is 256 KB. 
+        /// for <c>NumberOfRetries</c> and 60 for the <c>BufferIntervalInSeconds</c>. The <c>BufferSizeInMBs</c>
+        /// ranges between 0.2 MB and up to 3MB. The default buffering hint is 1MB for all destinations,
+        /// except Splunk. For Splunk, the default buffering hint is 256 KB. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

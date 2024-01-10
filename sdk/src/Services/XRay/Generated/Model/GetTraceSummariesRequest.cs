@@ -31,26 +31,26 @@ namespace Amazon.XRay.Model
     /// <summary>
     /// Container for the parameters to the GetTraceSummaries operation.
     /// Retrieves IDs and annotations for traces available for a specified time frame using
-    /// an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.
+    /// an optional filter. To get the full traces, pass the trace IDs to <c>BatchGetTraces</c>.
     /// 
     ///  
     /// <para>
     /// A filter expression can target traced requests that hit specific service nodes or
     /// edges, have errors, or come from a known user. For example, the following filter expression
-    /// targets traces that pass through <code>api.example.com</code>:
+    /// targets traces that pass through <c>api.example.com</c>:
     /// </para>
     ///  
     /// <para>
-    ///  <code>service("api.example.com")</code> 
+    ///  <c>service("api.example.com")</c> 
     /// </para>
     ///  
     /// <para>
-    /// This filter expression finds traces that have an annotation named <code>account</code>
-    /// with the value <code>12345</code>:
+    /// This filter expression finds traces that have an annotation named <c>account</c> with
+    /// the value <c>12345</c>:
     /// </para>
     ///  
     /// <para>
-    ///  <code>annotation.account = "12345"</code> 
+    ///  <c>annotation.account = "12345"</c> 
     /// </para>
     ///  
     /// <para>
@@ -129,7 +129,7 @@ namespace Amazon.XRay.Model
         /// <summary>
         /// Gets and sets the property Sampling. 
         /// <para>
-        /// Set to <code>true</code> to get summaries for only a subset of available traces.
+        /// Set to <c>true</c> to get summaries for only a subset of available traces.
         /// </para>
         /// </summary>
         public bool Sampling

@@ -40,7 +40,7 @@ namespace Amazon.FinSpaceData.Model
     ///  </li> <li> 
     /// <para>
     /// You must be a member of a FinSpace user group, where the dataset that you want to
-    /// access has <code>Read Dataset Data</code> permissions.
+    /// access has <c>Read Dataset Data</c> permissions.
     /// </para>
     ///  </li> </ul>
     /// </summary>

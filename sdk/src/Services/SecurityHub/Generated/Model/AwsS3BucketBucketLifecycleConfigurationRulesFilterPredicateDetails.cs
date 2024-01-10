@@ -95,8 +95,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Whether to use <code>AND</code> or <code>OR</code> to join the operands. Valid values
-        /// are <code>LifecycleAndOperator</code> or <code>LifecycleOrOperator</code>.
+        /// Whether to use <c>AND</c> or <c>OR</c> to join the operands. Valid values are <c>LifecycleAndOperator</c>
+        /// or <c>LifecycleOrOperator</c>.
         /// </para>
         /// </summary>
         public string Type

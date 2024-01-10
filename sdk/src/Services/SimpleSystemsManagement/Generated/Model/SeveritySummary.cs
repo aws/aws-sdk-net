@@ -44,7 +44,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// <summary>
         /// Gets and sets the property CriticalCount. 
         /// <para>
-        /// The total number of resources or compliance items that have a severity level of <code>Critical</code>.
+        /// The total number of resources or compliance items that have a severity level of <c>Critical</c>.
         /// Critical severity is determined by the organization that published the compliance
         /// items.
         /// </para>

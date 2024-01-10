@@ -33,9 +33,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// If you are updating an endpoint with the <code>RetainAllVariantProperties</code> option
+    /// If you are updating an endpoint with the <c>RetainAllVariantProperties</c> option
     /// of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpointInput</a>
-    /// set to <code>true</code>, the <code>VariantProperty</code> objects listed in the <code>ExcludeRetainedVariantProperties</code>
+    /// set to <c>true</c>, the <c>VariantProperty</c> objects listed in the <c>ExcludeRetainedVariantProperties</c>
     /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpointInput</a>
     /// override the existing variant properties of the endpoint.
     /// </para>
@@ -51,18 +51,17 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>DesiredInstanceCount</code>: Overrides the existing variant instance counts
-        /// using the <code>InitialInstanceCount</code> values in the <code>ProductionVariants</code>
-        /// of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+        ///  <c>DesiredInstanceCount</c>: Overrides the existing variant instance counts using
+        /// the <c>InitialInstanceCount</c> values in the <c>ProductionVariants</c> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DesiredWeight</code>: Overrides the existing variant weights using the <code>InitialVariantWeight</code>
-        /// values in the <code>ProductionVariants</code> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+        ///  <c>DesiredWeight</c>: Overrides the existing variant weights using the <c>InitialVariantWeight</c>
+        /// values in the <c>ProductionVariants</c> of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>DataCaptureConfig</code>: (Not currently supported.)
+        ///  <c>DataCaptureConfig</c>: (Not currently supported.)
         /// </para>
         ///  </li> </ul>
         /// </summary>

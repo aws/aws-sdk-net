@@ -97,8 +97,8 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property StaticColumns. 
         /// <para>
-        /// The columns that have been defined as <code>STATIC</code>. Static columns store values
-        /// that are shared by all rows in the same partition.
+        /// The columns that have been defined as <c>STATIC</c>. Static columns store values that
+        /// are shared by all rows in the same partition.
         /// </para>
         /// </summary>
         public List<StaticColumn> StaticColumns

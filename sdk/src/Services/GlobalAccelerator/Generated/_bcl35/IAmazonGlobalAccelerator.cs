@@ -59,8 +59,8 @@ namespace Amazon.GlobalAccelerator
     /// <para>
     /// Global Accelerator is a global service that supports endpoints in multiple Amazon
     /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
-    /// or otherwise work with accelerators. That is, for example, specify <code>--region
-    /// us-west-2</code> on Amazon Web Services CLI commands.
+    /// or otherwise work with accelerators. That is, for example, specify <c>--region us-west-2</c>
+    /// on Amazon Web Services CLI commands.
     /// </para>
     ///  </important> 
     /// <para>
@@ -206,16 +206,15 @@ namespace Amazon.GlobalAccelerator
 
 
         /// <summary>
-        /// Add endpoints to an endpoint group. The <code>AddEndpoints</code> API operation is
-        /// the recommended option for adding endpoints. The alternative options are to add endpoints
-        /// when you create an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
+        /// Add endpoints to an endpoint group. The <c>AddEndpoints</c> API operation is the recommended
+        /// option for adding endpoints. The alternative options are to add endpoints when you
+        /// create an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_CreateEndpointGroup.html">CreateEndpointGroup</a>
         /// API) or when you update an endpoint group (with the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
         /// API). 
         /// 
         ///  
         /// <para>
-        /// There are two advantages to using <code>AddEndpoints</code> to add endpoints in Global
-        /// Accelerator:
+        /// There are two advantages to using <c>AddEndpoints</c> to add endpoints in Global Accelerator:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -428,8 +427,8 @@ namespace Amazon.GlobalAccelerator
         /// <para>
         /// Global Accelerator is a global service that supports endpoints in multiple Amazon
         /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
-        /// or otherwise work with accelerators. That is, for example, specify <code>--region
-        /// us-west-2</code> on Amazon Web Services CLI commands.
+        /// or otherwise work with accelerators. That is, for example, specify <c>--region us-west-2</c>
+        /// on Amazon Web Services CLI commands.
         /// </para>
         ///  </important>
         /// </summary>
@@ -563,8 +562,8 @@ namespace Amazon.GlobalAccelerator
         /// <para>
         /// Global Accelerator is a global service that supports endpoints in multiple Amazon
         /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
-        /// or otherwise work with accelerators. That is, for example, specify <code>--region
-        /// us-west-2</code> on Amazon Web Services CLI commands.
+        /// or otherwise work with accelerators. That is, for example, specify <c>--region us-west-2</c>
+        /// on Amazon Web Services CLI commands.
         /// </para>
         ///  </important>
         /// </summary>
@@ -872,7 +871,7 @@ namespace Amazon.GlobalAccelerator
         /// <summary>
         /// Delete an accelerator. Before you can delete an accelerator, you must disable it and
         /// remove all dependent resources (listeners and endpoint groups). To disable the accelerator,
-        /// update the accelerator to set <code>Enabled</code> to false.
+        /// update the accelerator to set <c>Enabled</c> to false.
         /// 
         ///  <important> 
         /// <para>
@@ -1027,7 +1026,7 @@ namespace Amazon.GlobalAccelerator
         /// <summary>
         /// Delete a custom routing accelerator. Before you can delete an accelerator, you must
         /// disable it and remove all dependent resources (listeners and endpoint groups). To
-        /// disable the accelerator, update the accelerator to set <code>Enabled</code> to false.
+        /// disable the accelerator, update the accelerator to set <c>Enabled</c> to false.
         /// 
         ///  <important> 
         /// <para>
@@ -2704,24 +2703,24 @@ namespace Amazon.GlobalAccelerator
         /// 
         ///  
         /// <para>
-        /// The <code>RemoveEndpoints</code> API operation is the recommended option for removing
-        /// endpoints. The alternative is to remove endpoints by updating an endpoint group by
-        /// using the <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
-        /// API operation. There are two advantages to using <code>AddEndpoints</code> to remove
-        /// endpoints instead:
+        /// The <c>RemoveEndpoints</c> API operation is the recommended option for removing endpoints.
+        /// The alternative is to remove endpoints by updating an endpoint group by using the
+        /// <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/API_UpdateEndpointGroup.html">UpdateEndpointGroup</a>
+        /// API operation. There are two advantages to using <c>AddEndpoints</c> to remove endpoints
+        /// instead:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// It's more convenient, because you only need to specify the endpoints that you want
-        /// to remove. With the <code>UpdateEndpointGroup</code> API operation, you must specify
-        /// all of the endpoints in the endpoint group except the ones that you want to remove
-        /// from the group.
+        /// to remove. With the <c>UpdateEndpointGroup</c> API operation, you must specify all
+        /// of the endpoints in the endpoint group except the ones that you want to remove from
+        /// the group.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// It's faster, because Global Accelerator doesn't need to resolve any endpoints. With
-        /// the <code>UpdateEndpointGroup</code> API operation, Global Accelerator must resolve
-        /// all of the endpoints that remain in the group.
+        /// the <c>UpdateEndpointGroup</c> API operation, Global Accelerator must resolve all
+        /// of the endpoints that remain in the group.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2921,8 +2920,8 @@ namespace Amazon.GlobalAccelerator
         /// <para>
         /// Global Accelerator is a global service that supports endpoints in multiple Amazon
         /// Web Services Regions but you must specify the US West (Oregon) Region to create, update,
-        /// or otherwise work with accelerators. That is, for example, specify <code>--region
-        /// us-west-2</code> on Amazon Web Services CLI commands.
+        /// or otherwise work with accelerators. That is, for example, specify <c>--region us-west-2</c>
+        /// on Amazon Web Services CLI commands.
         /// </para>
         ///  </important>
         /// </summary>

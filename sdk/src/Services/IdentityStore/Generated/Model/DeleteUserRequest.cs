@@ -30,7 +30,7 @@ namespace Amazon.IdentityStore.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
-    /// Deletes a user within an identity store given <code>UserId</code>.
+    /// Deletes a user within an identity store given <c>UserId</c>.
     /// </summary>
     public partial class DeleteUserRequest : AmazonIdentityStoreRequest
     {

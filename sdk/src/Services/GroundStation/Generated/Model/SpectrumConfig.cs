@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GroundStation.Model
 {
     /// <summary>
-    /// Object that describes a spectral <code>Config</code>.
+    /// Object that describes a spectral <c>Config</c>.
     /// </summary>
     public partial class SpectrumConfig
     {
@@ -40,21 +40,21 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Bandwidth. 
         /// <para>
-        /// Bandwidth of a spectral <code>Config</code>. AWS Ground Station currently has the
-        /// following bandwidth limitations:
+        /// Bandwidth of a spectral <c>Config</c>. AWS Ground Station currently has the following
+        /// bandwidth limitations:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz
-        /// to 650 MHz.
+        /// For <c>AntennaDownlinkDemodDecodeconfig</c>, valid values are between 125 kHz to 650
+        /// MHz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>AntennaDownlinkconfig</code> valid values are between 10 kHz to 54 MHz.
+        /// For <c>AntennaDownlinkconfig</c> valid values are between 10 kHz to 54 MHz.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+        /// For <c>AntennaUplinkConfig</c>, valid values are between 10 kHz to 54 MHz.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -74,8 +74,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property CenterFrequency. 
         /// <para>
-        /// Center frequency of a spectral <code>Config</code>. Valid values are between 2200
-        /// to 2300 MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
+        /// Center frequency of a spectral <c>Config</c>. Valid values are between 2200 to 2300
+        /// MHz and 7750 to 8400 MHz for downlink and 2025 to 2120 MHz for uplink.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -94,8 +94,8 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property Polarization. 
         /// <para>
-        /// Polarization of a spectral <code>Config</code>. Capturing both <code>"RIGHT_HAND"</code>
-        /// and <code>"LEFT_HAND"</code> polarization requires two separate configs.
+        /// Polarization of a spectral <c>Config</c>. Capturing both <c>"RIGHT_HAND"</c> and <c>"LEFT_HAND"</c>
+        /// polarization requires two separate configs.
         /// </para>
         /// </summary>
         public Polarization Polarization

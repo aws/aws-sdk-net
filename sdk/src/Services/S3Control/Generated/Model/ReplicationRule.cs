@@ -67,11 +67,11 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property DeleteMarkerReplication. 
         /// <para>
-        /// Specifies whether S3 on Outposts replicates delete markers. If you specify a <code>Filter</code>
-        /// element in your replication configuration, you must also include a <code>DeleteMarkerReplication</code>
-        /// element. If your <code>Filter</code> includes a <code>Tag</code> element, the <code>DeleteMarkerReplication</code>
-        /// element's <code>Status</code> child element must be set to <code>Disabled</code>,
-        /// because S3 on Outposts doesn't support replicating delete markers for tag-based rules.
+        /// Specifies whether S3 on Outposts replicates delete markers. If you specify a <c>Filter</c>
+        /// element in your replication configuration, you must also include a <c>DeleteMarkerReplication</c>
+        /// element. If your <c>Filter</c> includes a <c>Tag</c> element, the <c>DeleteMarkerReplication</c>
+        /// element's <c>Status</c> child element must be set to <c>Disabled</c>, because S3 on
+        /// Outposts doesn't support replicating delete markers for tag-based rules.
         /// </para>
         ///  
         /// <para>
@@ -137,8 +137,8 @@ namespace Amazon.S3Control.Model
         /// Gets and sets the property Filter. 
         /// <para>
         /// A filter that identifies the subset of objects to which the replication rule applies.
-        /// A <code>Filter</code> element must specify exactly one <code>Prefix</code>, <code>Tag</code>,
-        /// or <code>And</code> child element.
+        /// A <c>Filter</c> element must specify exactly one <c>Prefix</c>, <c>Tag</c>, or <c>And</c>
+        /// child element.
         /// </para>
         /// </summary>
         public ReplicationRuleFilter Filter
